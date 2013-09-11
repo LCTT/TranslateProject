@@ -1,21 +1,18 @@
-Ubuntu further extends its openness by launching UbuntuVoice, official open-for-participation user experience network
 
-Ubuntu is a massive globally-scaled project, going beyond borders, age, nationality and social status, uniting 20 million users into an area where friendship, affection and performance are acting as the ground on which the Ubuntu operating system firmly stands.
+通过推出ubuntu voice ，ubuntu进一步扩展了其开放性，正式开放供参与用户体验网络
 
-Ubuntu is a user-centric OS, attribute noticed and publicly expressed by Linus Torvalds, too, centering the user's needs, demands, feedback into carefully-crafted interaction behaviors, optimized interfaces and beautiful patterns.
+Ubuntu 是一个巨大的全球规模的项目，超越国界，年龄，国籍和社会地位，使2000万用户在这成为一体，友谊，亲情和特性是作为范围上ubuntu系统的坚固站台。
+Ubuntu是一个以用户为中心的操作系统，特性公告和公开表示由Linus Torvalds,把用户的需求，要求，反馈集中变成精心设计的交互行为，最佳化的界面和美丽的模型。
+Ubuntu设计师赵婷婷宣布激动人心的可用的ubuntu voice，从本质上讲，正式的用户体验，用户向ubuntu应用，产品，目标等提供反馈。
+基本上，通过ubuntu voice，认可的用户将有独特的机会塑造ubuntu最核心的内容，在意义上，通过他们的反馈，帮助设计师形成，加强和推敲即将到来的部分/区域的ubuntu。
 
-The Ubuntu designer Tingting Zhao has announced the exciting availability of UbuntuVoice, essentially, an official user-experience network where users are to provide feedback towards Ubuntu's apps, products, goals, etc.
+有兴趣参与的用户来形容自己：
+• “在超过2000万的voice ubuntu用户里。你将有机会参加各种各样的ubuntu用户研究与不同的产品，并帮助塑造ubuntu的经验。你可以选择一些你感兴趣的。”
+• “保持最新的Ubuntu。 得到定期更新(每两个月)通过电子邮件,比如什么设计师正在使用,如何反馈,用户如何与技术交互时的行为”
+• “获得一些额外的东西。我们的一些研究将有鼓励。或在“Ubuntu糖果”幸运大抽奖的形式，和一些研究是自愿的。”
 
-Basically, via UbuntuVoice, the accepted users will have the unique opportunity of shaping Ubuntu at its very core, in the sense of, via their provided feedback, helping the designers forming, strengthening and refining upcoming components/areas of Ubuntu.
+为了成为Ubuntu voice的一部分，将用户导航到：
+https://docs.google.com/a/canonical.com/forms/d/1xB7vRZiQDcEVCQX-HVqExj0...
 
-The interested-to-participate users are to characterize themselves as wanting to:
-
-"be the voice of over 20 million Ubuntu users. You will have the opportunities to take part in a variety of Ubuntu user research with different products, and help shape the Ubuntu experience. You choose the ones that you are interested in"
-"stay up to date with Ubuntu. Get periodic updates (every two months) via email, such as what designers are working on, how feedback is used, and how users behave when interacting with technology"
-"get a little something extra. Some of our research will come with an incentive, or in the form of a ‘Ubuntu goody’ lucky draw, and some research will be voluntary"
-
-In order to be a part of UbuntuVoice, the users are to navigate to https://docs.google.com/a/canonical.com/forms/d/1xB7vRZiQDcEVCQX-HVqExj0...
-
-UbuntuVoice is yet-another evidence of Ubuntu's openness towards the user, proving its deep serious interest for the user's feedback into a magnificent creation environment where power, solidity and beauty are serving millions of users all over the world.
-
+UbuntuVoice还有另一个证据Ubuntu开放 向用户，证明其深刻严肃的对用户的反馈成宏伟的创作环境,动力,坚固和美丽是数以百万计的用户服务世界各地
 [via: http://iloveubuntu.net/ubuntu-further-extends-its-openness-launching-ubuntuvoice-official-open-participation-user]
