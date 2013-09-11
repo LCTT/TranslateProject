@@ -1,9 +1,9 @@
-**Ubuntu 10.04 LTSÊÜLinuxĞÂÄÚºËÂ©¶´Ó°Ïì**
-    ¼¸ÌìÇ°£¬CanonicalĞû²¼ÁËÒ»¸ö¹ØÓÚ°²È«·½ÃæµÄÍ¨¸æ£¬ĞÂLinuxÄÚºË°üÔÚUbuntu 10.04 LTS(Lucid Lynx)ÏµÍ³¸üĞÂÖĞ·¢ÏÖËÄ¸öÂ©¶´²¢±»¸÷ÖÖ¿ª·¢ÈËÔ±ËùĞŞ¸´£¬
-ÕâËÄ¸öÄÚºËÂ©¶´£º[CVE-2013-1060](http://people.canonical.com/~ubuntu-security/cve/2013/CVE-2013-1060.html), [CVE-2013-1943](http://people.canonical.com/~ubuntu-security/cve/2013/CVE-2013-1943.html), [CVE-2013-2206](http://people.ubuntu.com/~ubuntu-security/cve/CVE-2013-2206), [CVE-2013-4162](http://people.canonical.com/~ubuntu-security/cve/2013/CVE-2013-4162.html) Ó°Ïì×ÅUbuntu 10.04 LTS(Lucid Lynx)µÄ·¢ĞĞ°æ
-Äã¿ÉÒÔµã»÷ÈÎºÎÒ»¸öÁ´½Ó¿´¿´Â©¶´ÈçºÎÓ°ÏìÄãµÄÏµÍ³£¬»òÕßÈ¥ÄÄÀïÉîÈëÁË½â£¬²¢ÇÒÕâ¼¸¸öÂ©¶´Í¬ÑùÓ°ÏìÆäËüLinux²Ù×÷ÏµÍ³.
-ĞŞ¸´ÕâĞ©°²È«È±ÏİĞèÒªÄãÉı¼¶ÄãµÄÏµÍ³µ½linux-image-2.6.32-51 (2.6.32-51.113)¡£ÔËĞĞ¸üĞÂ¹ÜÀí³ÌĞò»òÕß°´ÕÕÏÂÃæÁ´½ÓËµÃ÷https://wiki.ubuntu.com/Security/Upgrades À´¸üĞÂ¡£
-¸üĞÂÍê±Ïºó²»ÒªÍü¼ÇÖØÆôÄãµÄÏµÍ³£¡ÎÒÃÇÍ¬ÑùÌáĞÑUbuntu 12.10,Ubuntu 13.04ºÍUbuntu 12.04µÄÓÃ»§½ÓÊÜÄÚºËµÄ¸üĞÂ¡£
+**Ubuntu 10.04 LTSå—Linuxæ–°å†…æ ¸æ¼æ´å½±å“**
+    å‡ å¤©å‰ï¼ŒCanonicalå®£å¸ƒäº†ä¸€ä¸ªå…³äºå®‰å…¨æ–¹é¢çš„é€šå‘Šï¼Œæ–°Linuxå†…æ ¸åŒ…åœ¨Ubuntu 10.04 LTS(Lucid Lynx)ç³»ç»Ÿæ›´æ–°ä¸­å‘ç°å››ä¸ªæ¼æ´å¹¶è¢«å„ç§å¼€å‘äººå‘˜æ‰€ä¿®å¤ï¼Œ
+è¿™å››ä¸ªå†…æ ¸æ¼æ´ï¼š[CVE-2013-1060](http://people.canonical.com/~ubuntu-security/cve/2013/CVE-2013-1060.html), [CVE-2013-1943](http://people.canonical.com/~ubuntu-security/cve/2013/CVE-2013-1943.html), [CVE-2013-2206](http://people.ubuntu.com/~ubuntu-security/cve/CVE-2013-2206), [CVE-2013-4162](http://people.canonical.com/~ubuntu-security/cve/2013/CVE-2013-4162.html) å½±å“ç€Ubuntu 10.04 LTS(Lucid Lynx)çš„å‘è¡Œç‰ˆ
+ä½ å¯ä»¥ç‚¹å‡»ä»»ä½•ä¸€ä¸ªé“¾æ¥çœ‹çœ‹æ¼æ´å¦‚ä½•å½±å“ä½ çš„ç³»ç»Ÿï¼Œæˆ–è€…å»å“ªé‡Œæ·±å…¥äº†è§£ï¼Œå¹¶ä¸”è¿™å‡ ä¸ªæ¼æ´åŒæ ·å½±å“å…¶å®ƒLinuxæ“ä½œç³»ç»Ÿ.
+ä¿®å¤è¿™äº›å®‰å…¨ç¼ºé™·éœ€è¦ä½ å‡çº§ä½ çš„ç³»ç»Ÿåˆ°linux-image-2.6.32-51 (2.6.32-51.113)ã€‚è¿è¡Œæ›´æ–°ç®¡ç†ç¨‹åºæˆ–è€…æŒ‰ç…§ä¸‹é¢é“¾æ¥è¯´æ˜https://wiki.ubuntu.com/Security/Upgrades æ¥æ›´æ–°ã€‚
+æ›´æ–°å®Œæ¯•åä¸è¦å¿˜è®°é‡å¯ä½ çš„ç³»ç»Ÿï¼æˆ‘ä»¬åŒæ ·æé†’Ubuntu 12.10,Ubuntu 13.04å’ŒUbuntu 12.04çš„ç”¨æˆ·æ¥å—å†…æ ¸çš„æ›´æ–°ã€‚
 
 
 [via: http://news.softpedia.com/news/New-Kernel-Vulnerabilities-Affect-Ubuntu-10-04-LTS-381884.shtml]
