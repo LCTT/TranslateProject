@@ -1,7 +1,5 @@
 Ubuntu further extends its openness by launching UbuntuVoice, official open-for-participation user experience network
 
-[source: http://iloveubuntu.net/ubuntu-further-extends-its-openness-launching-ubuntuvoice-official-open-participation-user]
-
 Ubuntu is a massive globally-scaled project, going beyond borders, age, nationality and social status, uniting 20 million users into an area where friendship, affection and performance are acting as the ground on which the Ubuntu operating system firmly stands.
 
 Ubuntu is a user-centric OS, attribute noticed and publicly expressed by Linus Torvalds, too, centering the user's needs, demands, feedback into carefully-crafted interaction behaviors, optimized interfaces and beautiful patterns.
@@ -19,3 +17,5 @@ The interested-to-participate users are to characterize themselves as wanting to
 In order to be a part of UbuntuVoice, the users are to navigate to https://docs.google.com/a/canonical.com/forms/d/1xB7vRZiQDcEVCQX-HVqExj0...
 
 UbuntuVoice is yet-another evidence of Ubuntu's openness towards the user, proving its deep serious interest for the user's feedback into a magnificent creation environment where power, solidity and beauty are serving millions of users all over the world.
+
+[via: http://iloveubuntu.net/ubuntu-further-extends-its-openness-launching-ubuntuvoice-official-open-participation-user]

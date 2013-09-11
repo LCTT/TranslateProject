@@ -1,7 +1,5 @@
 GNOME Shell 3.10 Beta 2 Implements New System Status Area
 
-[source: http://news.softpedia.com/news/GNOME-Shell-3-10-Beta-2-Implements-New-System-Status-Area-380916.shtml]
-
 The first Beta release of the upcoming GNOME Shell 3.10 has been made available for download a few days ago, a version that brings numerous improvements and fixes lots of bugs. 
 
 GNOME Shell 3.10 Beta 2 improves the submenu styling, tweaks the system actions style, adds support for authentication without username, implements new power-off/end-session dialog design, and implements building of separate binaries for Wayland and X11.
@@ -17,3 +15,5 @@ Thanks to Ray, Giovanni, Jasper, and Emmanuele, the following bugs have been squ
 Among the updated translations, we can mention Polish, Norwegian Bokmal, Tajik, Brazilian Portuguese, German, Lithuanian, Galician, Spanish, Slovak, Slovenian, Catalan, and Belgian. For more details, please check the official raw changelog.
 
 Download GNOME Shell 3.10 Beta 2 right now from Softpedia. Remember that this is a beta version and it should NOT be installed on production machines. It is intended for testing purposes only.
+
+[via: http://news.softpedia.com/news/GNOME-Shell-3-10-Beta-2-Implements-New-System-Status-Area-380916.shtml]

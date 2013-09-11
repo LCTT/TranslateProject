@@ -1,7 +1,5 @@
 GNOME 3.10 Will Have a Beautiful and Handy System Menu
 
-[ Source: http://news.softpedia.com/news/GNOME-3-10-Will-Have-a-Beautiful-and-Handy-System-Menu-380938.shtml ]
-
 The second Beta release of the upcoming GNOME 3.10 desktop environment has been announced last evening, September 5, by Javier Jardón Cabezas from the GNOME release team. 
 
 As we've reported in our in-depth article about the changes brought by the GNOME developers in the latest Beta version of the GNOME-Shell 3.10 package, a new system status area will be implemented in GNOME 3.10.
@@ -21,3 +19,5 @@ The new system status area will not only unify all the indicators, but it will a
 The new system panel, which can be tested right now via the GNOME 3.10 Beta 2 release, also includes shortcuts for the Lock, Shutdown, Restart, Log Out, and Change User functions, as well as for the GNOME Control Panel app.
 
 Download GNOME 3.10 Beta 2 right now from Softpedia. Remember that this is a beta version and it should NOT be installed on production machines. It is intended for testing purposes only.
+
+[via : http://news.softpedia.com/news/GNOME-3-10-Will-Have-a-Beautiful-and-Handy-System-Menu-380938.shtml ]
