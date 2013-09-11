@@ -15,7 +15,8 @@ Ubuntu的设计师赵婷婷已经宣布了Ubuntu Voice的可用性这个令人�
 
 “获得一些额外的东西，我们的一些研究将伴随着奖励，或者是一种‘Ubuntu幸运奖’的形式，有一些研究是自愿的。”
 
-为了成为Ubuntu Voice的一部分，用户请点击：
+想要加入Ubuntu Voice，请点击：
+
 https://docs.google.com/a/canonical.com/forms/d/1xB7vRZiQDcEVCQX-HVqExj0...
 
 Ubuntu Voice是又一个Ubuntu向用户开放的证明，证明了它为用户创设宏伟的创作环境的反馈提供了丰厚的利益。在这里能力、坚固性和美丽为世界各地数百万的用户服务。
