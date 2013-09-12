@@ -1,25 +1,28 @@
-#GNOME 3.10 Will Have a Beautiful and Handy System Menu
+#GNOME 3.10将会有一个漂亮，便捷的系统菜单
 
-The second Beta release of the upcoming GNOME 3.10 desktop environment has been announced last evening, September 5, by Javier Jardón Cabezas from the GNOME release team. 
+昨晚（9月5日），来自GNOME发布组的 Javier Jardón Cabezas 发布了 GNOME3.10 的第二个beta版本。
 
-As we've reported in our in-depth article about the changes brought by the GNOME developers in the latest [Beta version of the GNOME-Shell 3.10](http://news.softpedia.com/news/GNOME-Shell-3-10-Beta-2-Implements-New-System-Status-Area-380916.shtml) package, a new system status area will be implemented in GNOME 3.10.
+如我们之前的深度报道中所描述的，GNOME 开发者们在上一个 [GNOME-Shell 3.10 beta版](http://news.softpedia.com/news/GNOME-Shell-3-10-Beta-2-Implements-New-System-Status-Area-380916.shtml)中所做的改变，在 GNOME 3.10 中将开发一个新的系统状态区。
 
-As you can see from the screenshot below (thanks to Allan Day), the entire design of the system status area has been completely revamped, offering a single menu for all the indicators (sound, Wi-Fi, battery, bluetooth, etc.).
 
-On the currently stable version of the GNOME desktop environment, we found ourselves opening a new panel for each indicator (see the first screenshot for details) every time we want to modify or view something.
+如你从下面的截图所看到的（谢谢 Allan Day 提供），系统状态区的设计已经完全被推翻，它给所有的指示器使用了一个单独的菜单（声音、Wi-Fi、电池、蓝牙等）。
 
-Starting with GNOME 3.10, which will arrive on September 25, 2013, users will find all the indicators mentioned above into a single panel, which will drastically improve the way you interact with your GNOME desktop.
+在当前的 GNOME 桌面的稳定版本中，我们会发现每次要修改或查看一些什么时，我们为每个指示器打开一个新的菜单面板（仔细看第一个截图的细节）。
 
-![img](http://i1-news.softpedia-static.com/images/extra/LINUX/small/gnomesystemmenu-small_001.png)
-The old system status area
+从将在2013年9月25号发布 GNOME 3.10 开始，使用者将会发现所有出现的指示器都使用一个单一的面板菜单，这将大幅度提升你和GNOME桌面的交互体验。
 
-![img](http://i1-news.softpedia-static.com/images/extra/LINUX/small/gnomesystemmenu-small_002.png)
-The new system status area
 
-The new system status area will not only unify all the indicators, but it will also display only information about things you care about. With a single mouse click you will be able to see how much time (percentage is also displayed) you have left on your laptop's battery, connect to mobile broadband or Wi-Fi networks, as well as to change the volume and brightness.
+![img](http://i1-news.softpedia-static.com/images/extra/LINUX/large/gnomesystemmenu-large_001.jpg)
+旧的系统状态区
 
-The new system panel, which can be tested right now via the GNOME 3.10 Beta 2 release, also includes shortcuts for the Lock, Shutdown, Restart, Log Out, and Change User functions, as well as for the GNOME Control Panel app.
+![img](http://i1-news.softpedia-static.com/images/extra/LINUX/large/gnomesystemmenu-large_002.jpg)
+新的系统状态区
 
-[Download GNOME 3.10 Beta 2](http://linux.softpedia.com/get/Desktop-Environment/Gnome/GNOME-3603.shtml) right now from Softpedia. **Remember that this is a beta version and it should NOT be installed on production machines. It is intended for testing purposes only.**
+新系统状态区不仅仅是统一了所有的面板菜单，而且它也将仅显示你所关注的主要信息。用鼠标点击，你可以看到你的笔记本电脑的电量还能剩多少时间使用（也显示百分比）、连接无线宽带或者是WI-Fi、及调整音量和亮度。
+
+
+新的系统面板可以通过 GNOME 3.10 Beta 2发布版本进行测试，它还包括锁定、关机、重启、注销和切换用户等快捷操作，以及访问 GNOME 控制面板。
+
+可以从Softpedia[下载 GNOME 3.10 Beta 2](http://linux.softpedia.com/get/Desktop-Environment/Gnome/GNOME-3603.shtml)。 **切记，这只是一个beta版本，不应该安装在任何生产环境中，仅仅是作为测试用途。**
 
 via : http://news.softpedia.com/news/GNOME-3-10-Will-Have-a-Beautiful-and-Handy-System-Menu-380938.shtml
