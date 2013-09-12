@@ -10,7 +10,7 @@ screenFetch将显示以下详情：
 - 操作系统版本
 - 内核版本
 - 总计运行时间
-- 已安装包的数量
+- 已安装包数量
 - 当前shell详情
 - 当前屏幕分辨率
 - 当前桌面环境
@@ -25,7 +25,7 @@ screenFetch将显示以下详情：
 
 源码安装：
 
-下载 [最新版](http://git.silverirc.com/cgit.cgi/screenfetch.git/). 我下载和安装在/home/sk/Downloads目录.
+下载 [最新版](http://git.silverirc.com/cgit.cgi/screenfetch.git/). 我下载并安装在/home/sk/Downloads目录.
 
 用命令解压：
 
