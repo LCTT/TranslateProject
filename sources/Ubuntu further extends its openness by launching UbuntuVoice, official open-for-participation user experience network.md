@@ -5,7 +5,7 @@ Ubuntu是一个全球规模的巨大项目，超越了国界、年龄、国籍�
 Ubuntu是一个以用户为中心的操作系统，由Linus Torvalds[发布](http://iloveubuntu.net/linus-torvalds-ubuntu-has-generally-had-right-approach-very-user-centric)，把用户的需求，要求以及反馈集中体现在精心设计的交互行为、优化的界面和美丽的样式之中。
 
 Ubuntu的设计师赵婷婷宣布了Ubuntu Voice已可用这个令人兴奋的[消息](http://design.canonical.com/2013/09/join-in-ubuntuvoice-be-the-voice-of-millions-of-ubuntu-users/)，本质上，它是一个正式的用户体验网络，在这里用户可以提供有关Ubuntu的应用、产品、目标等方面的反馈。
-基本上，通过Ubuntu Voice，认证用户将会得到独特的机会来塑造Ubuntu的最核心内容，从某种意义上讲，是通过用户的反馈信息，帮助设计者加工成型，加强和改善Ubuntu即将到来的组件。
+通过Ubuntu Voice，认证用户将会得到独特的机会来塑造Ubuntu的最核心内容，从某种意义上讲，是通过用户的反馈信息，帮助设计者加工成型，加强和改善Ubuntu即将到来的组件。
 
 有兴趣参加这个项目的用户将可以：
 
