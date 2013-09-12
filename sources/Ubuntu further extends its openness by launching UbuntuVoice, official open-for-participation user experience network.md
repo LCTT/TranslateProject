@@ -19,6 +19,6 @@ Ubuntu的设计师赵婷婷已经宣布了Ubuntu Voice的可用性这个令人�
 
 https://docs.google.com/a/canonical.com/forms/d/1xB7vRZiQDcEVCQX-HVqExj0...
 
-Ubuntu Voice是又一个Ubuntu向用户开放的证明，证明了它为用户创设宏伟的创作环境的反馈提供了丰厚的利益。在这里能力、坚固性和美丽为世界各地数百万的用户服务。
+UbuntuVoice 是另一个Ubuntu 对用户开放性的证据，即Ubuntu 对用户反馈深刻关注，并将其转化为一个美妙的创造性环境，服务世界各地成百万的用户。
 
 [via: http://iloveubuntu.net/ubuntu-further-extends-its-openness-launching-ubuntuvoice-official-open-participation-user]
