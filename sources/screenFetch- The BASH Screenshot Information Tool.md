@@ -19,7 +19,7 @@ screenFetch将显示以下详情：
 - CPU详情，如处理器速度、类型
 - 总计及当前内存使用量
 
-###在linux上安装screenFectch
+###在Linux系统中安装screenFectch
 
 您可以通过直接从项目页下载源码包的方式安装，或者从screenFetch git库复制。
 
