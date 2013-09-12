@@ -44,7 +44,7 @@ screenFetch将显示以下详情：
 
 	sk@sk: ~-screenfetch-3.1.0_008
 
-###通过git仓库安装
+###通过git库安装
 
 首先确认你安装了git.
 
