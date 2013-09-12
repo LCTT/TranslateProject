@@ -1,4 +1,4 @@
-##通过推出Ubuntu Voice，Ubuntu进一步扩展了其开放性，正式开放供参与用户体验网络。
+##通过推出Ubuntu Voice，Ubuntu进一步扩展了其开放性，正式开放供参与用户体验网络
 
 Ubuntu是一个全球规模的巨大项目，超越了国界、年龄、国籍和社会地位，汇聚2000万用户，在这里，友谊、情感和性能都成为了Ubuntu操作系统的坚固基础。
 
@@ -17,7 +17,7 @@ Ubuntu的设计师赵婷婷宣布了Ubuntu Voice已可用这个令人兴奋的[�
 
 想要加入Ubuntu Voice，请点击：
 
-https://docs.google.com/a/canonical.com/forms/d/1xB7vRZiQDcEVCQX-HVqExj0...
+https://docs.google.com/a/canonical.com/forms/d/1xB7vRZiQDcEVCQX-HVqExj00O6925pWuCV65n4RjeEM/viewform
 
 UbuntuVoice 是另一个Ubuntu 对用户开放性的证据，即Ubuntu 对用户反馈深刻关注，并将其转化为一个美妙的创造性环境，服务世界各地成百万的用户。
 
