@@ -1,6 +1,6 @@
 #screenFetch: BASH 截图信息工具
 
-[screenFetch](https://github.com/KittyKatt/screenFetch) 是一个“Bash截图信息工具”。在Linux桌面截图终端提取系统/主题信息。它可以被用来生成漂亮的终端主题信息，在每个人截图中看到当前的ASCII分部徽标。
+[screenFetch](https://github.com/KittyKatt/screenFetch) 是一个“Bash截图信息工具”。在Linux桌面截图终端提取系统/主题信息。它可以被用来生成那些漂亮的终端主题信息和ASCII分布标志之一，你可以从现在每位用户的截屏中看到。
 
 它将自动检测你的布局并且在右边显示其ASCII版本的logo和一些有价值的信息。有选项来指定没有字符插图、颜色，在显示信息之上捕获截图，甚至可以自定义截图命令。screenFectch非常容易添加和扩展。
 
