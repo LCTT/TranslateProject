@@ -1,10 +1,10 @@
-#screenFetch: BASH 截图信息工具
+#screenFetch: 命令行信息截图工具
 
-[screenFetch](https://github.com/KittyKatt/screenFetch) 是一个“Bash截图信息工具”。在Linux桌面截图终端提取系统/主题信息。它可以被用来生成那些漂亮的终端主题信息和ASCII分布标志之一，你可以从现在每位用户的截屏中看到。
+[screenFetch](https://github.com/KittyKatt/screenFetch) 是一个“命令行信息截图工具”。它可以在终端上显示系统信息，并进行桌面截图。它能生成漂亮的文本的系统信息和ASCII艺术的发行版LOGO，然后显示在截屏图片中。
 
-它将自动检测你的布局并且在右边显示其ASCII版本的logo和一些有价值的信息。有选项来指定没有字符插图、颜色，在显示信息之上捕获截图，甚至可以自定义截图命令。screenFectch非常容易添加和扩展。
+它会自动检测你的发行版并显示其ASCII版本的LOGO，在其右侧显示系统信息。可以通过选项来指定是否显示LOGO、指定颜色，进行截图，甚至可以自定义截图的命令。screenFectch非常容易添加和扩展。
 
-screenFetch将显示以下详情：
+screenFetch将显示以下系统信息：
 
 - 当前登录用户
 - 操作系统版本
@@ -15,13 +15,13 @@ screenFetch将显示以下详情：
 - 当前屏幕分辨率
 - 当前桌面环境
 - 当前窗口管理器（文件管理器）
-- 合计及空闲磁盘使用百分比
+- 总计及空闲磁盘使用百分比
 - CPU详情，如处理器速度、类型
 - 总计及当前内存使用量
 
-###在Linux系统中安装screenFectch
+###在Linux上安装screenFectch
 
-您可以通过直接从项目页下载源码包的方式安装，或者从screenFetch git库复制。
+您可以通过直接从项目页下载源码包的方式安装，或者从screenFetch git库克隆。
 
 源码安装：
 
@@ -36,13 +36,13 @@ screenFetch将显示以下详情：
 	$ cd screenfetch-3.1.0/
 	$ chmod +x screenfetch-dev
 
-用命令运行：
+在命令行运行：
 
 	$ ./screenfetch-dev
 
 输出示例：
 
-	sk@sk: ~-screenfetch-3.1.0_008
+![img](http://180016988.r.cdn77.net/wp-content/uploads/2013/09/sk@sk-screenfetch-3.1.0_008.png)
 
 ###通过git库安装
 
@@ -56,11 +56,11 @@ screenFetch将显示以下详情：
 
 	# apt-get install git
 
-使用命令复制screenFectch库:
+使用命令克隆screenFectch库:
 
 	# git clone git://github.com/KittyKatt/screenFetch.git screenfetch
 
-复制文件到/usr/bin/目录 并设置执行权限:
+复制文件到/usr/bin/目录，并设置执行权限:
 
 	# cp screenfetch/screenfetch-dev /usr/bin/screenfetch
 	# chmod +x /usr/bin/screenfetch
@@ -70,6 +70,6 @@ screenFetch将显示以下详情：
 	# screenfetch
 
 您将会看到如上面截图所示的结果.
-有问题请查阅我们的Q/A论坛：http://ask.unixmen.com/
+
 
 via: http://www.unixmen.com/screenfetch-bash-screenshot-information-tool/
