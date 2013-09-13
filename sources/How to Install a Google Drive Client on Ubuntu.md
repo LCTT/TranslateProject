@@ -1,6 +1,6 @@
 ##如何在Ubuntu下安装Google云端硬盘客户端
 
-以下教程将为所有的Ubuntu用户讲授如何在你们健壮的Ubuntu操作系统上安装名为Grive的非官方Google云端硬盘客户端。
+以下教程将为所有的Ubuntu用户讲授如何在你们健康的Ubuntu操作系统上安装名为Grive的非官方Google云端硬盘客户端。
 
 正如你所知，Google（大概讨厌Linux用户）没有为其优秀的Google云端硬盘提供Linux客户端。但是不用担心，随着开源社区拥有了一些像Lorenzo Breda一样的天才人物，他们为Linux开发了一个非官方的Google云盘客户端，称作Grive。
 
