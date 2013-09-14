@@ -30,7 +30,7 @@ Linux可以很好地满足用户的全部需求，然后是其中的一部分。
 
 **成名已久的游戏不支持Linux**
 
-对游戏玩家不是什么好消息。
+这对于游戏玩家不是什么好消息。
 
 [1]:http://www.uvureview.com/2013/09/07/linux-is-clearly-the-superior-operating-system/
 
