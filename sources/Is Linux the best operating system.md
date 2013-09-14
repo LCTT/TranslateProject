@@ -1,37 +1,41 @@
-Is Linux the best operating system?
-===================================
 Linux是最好的操作系统吗？
+===================================
 
-Today in Open Source: Is Linux the best operating system? Plus: GOG.com won't support Linux, and a screenshot tour of Ubuntu Studio 13.01 Beta
+今天Open Source的消息：Linux是最好的操作系统吗？另：GOG.com将不会支持Linux，Ubuntu Studio 13.01 Beta的截屏
 
 UVU Review has an article touting Linux as the best operating system. The article covers the following categories:
+UVU Review 有一篇称Linux是最好的操作系统的文章。它包括以下几个方面：
 
 - Price
+- 价格
 - Availability
+- 可用性
 - Maintenance and Repair
+- 维护和修理
 - Software and Updates
+- 软件和更新
 
-> With all due respect, my colleagues are wrong. Linux is hand-down the best option for computing. It isn’t even a competition. Neal Stephenson said: “Macs are hermetically-sealed sedans that look great and have a lot of advertsing. Windows machines are big SUVs that break often, but they’re everywhere and everyone knows how to use them. Linux computers are free tanks that go 90 mph in swamps, get 100 mpg and never break down.”
+> 无意冒犯，我认为我的同事们是错的。Linux是手边用来操作计算机的最好选择，甚至可以说没什么别的像样的选择。Neal Stephenson/*求科普，这是谁*/说：“Mac电脑是密封性能出色的小轿车，看起来很棒而且有不少广告。安装Windows的机器是庞大的SUV，经常坏，但到处都能见到它们并且人人会用。而Linux则是免费的坦克，90mph过沼泽无压力，进个100加仑水也不会坏。”
 
-> I’ve been using Linux for years now and don’t ever plan on switching. We can’t explore all the reasons for its superiority, but here are my main points. I’m assuming you know what an operating system is and that Macintosh, Windows and Linux are all different options.
+> 我用Linux很多年了，从没打算换系统。我们不能找出每一个证明它的优越性的理由，但我总结出几点。我假设你知道什么是操作系统，同时明白Macintosh，Windows，和Linux都是不同的操作系统。
 
-> [More at UVU Review][1]
+> [UVU Review上的详细内容][1]
 
-He makes a strong case for Linux, and while I mostly agree with the article's take, I'm still very hesitant to declare a "best" operating system. Why? The choice of an operating system depends so much on the individual user's needs. This can vary quite a bit depending on the person.
+作者把Linux置于强势。尽管我认同这篇文章的大多观点，但我仍然很犹豫是否宣布一个“最好”的操作系统。为什么呢？选择什么操作系统和每个用户的需求息息相关。不同人的选择会很不一样。
 
-Linux may very well meet all of those needs and then some. Then again, maybe not. It's so hard to generalize about this sort of thing without delving into who the individual is and what his or her computing needs might be on a daily basis.
+Linux可以满足某些要求，某些的一部分。还是那句话，可能不行。不去挖掘谁是适用的个体和他们的在使用计算机方面究竟有那些日常需要的话，很难概括这些东西。
 
-In some cases, a user might not even need a full-blown desktop computer in the first place. Mobile devices have taken over quite a bit, so a user could get by with a mobile solution for email, web browsing, and the various other functions that used to be performed solely by desktop computers.
+某些情况下，一个全功能计算机可能不是用户的首选。移动设备已经很普及，用户可以通过移动设备使用收发邮件、浏览网页等等之前只能由桌面计算机完成的功能。
 
-This of course means that they could be using Linux (Android, Firefox OS, Ubuntu), but they might also opt for iOS or some other mobile operating system. There's a range of non-linux choices available in mobile devices, so it's quite possible that Linux wouldn't be used or missed by a user.
+这当然意味着可以使用Linux（Android, Firefox OS, Ubuntu），但他们也可能选择iOS或者别的什么移动设备操作系统。在移动设备领域，有不少非Linux的选择，所以很可能Linux不被使用或者说被用户错过。
 
-Getting back to the desktop, Linux clearly has a tremendous amount to offer, and I always recommend that people give it a shot in a virtual machine to get their feet wet. But I'm also realistic enough to understand that it might not work for everybody. OS X or Windows might fit the bill better, depending on the user's needs.
+回到桌面来说，Linux明显能被大量提供，我也总是推荐人们在虚拟机里试试Linux以此来让人们接触Linux。但我也够现实，知道这不是对每个人都管用。OS X 或者 Windows 可能更适合他们——这取决于用户的需求。
 
-When you get right down to it, it's very hard to even define what the "best" operating system is for computers. Whatever definition you choose may not work for other people. But Linux is certainly well worth trying, if you do you may just find yourself becoming a Linux convert.
+当你真正静下心来想的时候，会发现很难界定什么样的操作系统是“最好”的。不论你下的定义是什么，不论你做出什么样的选择，对别人恐怕都不管用。不过说到底Linux确实值得一试。如果你试试，你就可能发现你爱上Linux。
 
-**No Linux Game Support from Good Old Games**
+**成名已久的游戏不支持Linux**
 
-Some slightly bad news for Linux gamers.
+对游戏玩家不是什么好消息。
 
 [1]:http://www.uvureview.com/2013/09/07/linux-is-clearly-the-superior-operating-system/
 
