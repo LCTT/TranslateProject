@@ -1,5 +1,6 @@
 Is Linux the best operating system?
 ===================================
+Linux是最好的操作系统吗？
 
 Today in Open Source: Is Linux the best operating system? Plus: GOG.com won't support Linux, and a screenshot tour of Ubuntu Studio 13.01 Beta
 
