@@ -1,7 +1,7 @@
 在ubuntu中安装Nessus漏洞扫描器
 ========================
 
-保卫和防护我们的私人数据的方式上，扫描和识别漏洞在我们的linux机器上是最重要的一步.在这篇文章中，我将教你如何在ubuntu上安装，配置和启动Nessus。你想了解你的对象易受什么样的漏洞影响？那么，读这篇文章并学习**Nessus**.
+保卫和防护我们的私人数据的方式上，扫描和识别漏洞在我们的linux机器上是最重要的一步.在这篇文章中，我将教你如何在ubuntu上安装，配置和启动Nessus。你想了解你的对象易受什么样的漏洞影响？那么，读这篇文章并学习Nessus.
 
 ###什么是Nessus?
 
@@ -44,7 +44,7 @@ via http://www.unixmen.com/install-nessus-on-ubuntu/
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/Vito
+[Vito]:http://linux.cn/space/Vito
 [校对者ID]:http://linux.cn/space/校对者ID
 
 [1]:http://www.tenable.com/products/nessus
