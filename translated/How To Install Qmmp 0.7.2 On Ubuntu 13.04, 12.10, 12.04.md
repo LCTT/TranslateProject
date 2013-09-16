@@ -38,4 +38,16 @@
 	$sudo apt-get update
 更新完后，我们下载qmpp,qmmp-plugin-pack,然后安装它们。
 	$sudo apt-get install qmmp qmmp-plugin-pack;
+
 文章出处：http://www.unixmen.com/install-qmmp-0-7-2-ubuntu-13-04-12-10-12-04/
+
+本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
+
+译者：[lijhg][] 校对：[校对者ID][]
+
+
+[LCTT]:https://github.com/LCTT/TranslateProject
+[Linux中国]:http://linux.cn/portal.php
+[lijhg]:http://linux.cn/space/lijhg
+[校对者ID]:http://linu.xnc/space/校对者ID
+

@@ -36,9 +36,21 @@ MintBox2比上一个版本的MintBox有更快的处理器, 精选AMD G-series处
 
 销售收入的百分之五，会去支持Linux Mint项目.
 
+
+via: http://liliputing.com/2013/09/mintbox-2-now-available-for-order-for-599-mini-pc-with-linux-mint.html
+
+本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
+
+译者：[vito][] 校对：[校对者ID][]
+
+
+[LCTT]:https://github.com/LCTT/TranslateProject
+[Linux中国]:http://linux.cn/portal.php
+[vito]:http://linux.cn/space/vito
+[校对者ID]:http://linu.xnc/space/校对者ID
+
 [1]:http://linuxmint.com/
 [2]:http://fit-pc.com/web/purchasing/order-mintbox/
 [3]:http://www.amazon.com/s/?_encoding=UTF8&camp=1789&creative=390957&field-brandtextbin=fit-PC3&linkCode=ur2&node=172282&tag=bradlindsdigi-20
 
-via: http://liliputing.com/2013/09/mintbox-2-now-available-for-order-for-599-mini-pc-with-linux-mint.html
 

@@ -1,8 +1,9 @@
-##How To Add or Edit a Linux File System Label
+How To Add or Edit a Linux File System Label
+============================================
 
 File system labels are not something you need to have in order to have a functioning Linux operating system, but they can make your computer easier to navigate when you have several disk partitions. In this post I'll show how to add or **edit a Linux file system label** for ext2, ext3, and ext4 disk partitions.
 
-My netbook has 3 OS's installed; Windows XP, Linux Mint, and Xubuntu. Sometimes I want to view files located on one file system from one of the other operating systems. It's convenient to have these [file systems labeled](https://wiki.archlinux.org/index.php/Persistent_block_device_naming), so I know which one to open to find the desired files.
+My netbook has 3 OS's installed; Windows XP, Linux Mint, and Xubuntu. Sometimes I want to view files located on one file system from one of the other operating systems. It's convenient to have these [file systems labeled][1], so I know which one to open to find the desired files.
 
 ###View Linux File System Labels
 
@@ -43,7 +44,7 @@ Unlabeled partition
 
 ###Edit a Linux File System Label with e2label
 
-Looking at the output from **lsblk** I can see that my Linux Mint installation is on /dev/sda3, my home partition is on /dev/sda5, and my Xubuntu installation is on /dev/sda7. I'm going to use [e2label](http://linux.die.net/man/8/e2label) as root to assign labels to these partitions.
+Looking at the output from **lsblk** I can see that my Linux Mint installation is on /dev/sda3, my home partition is on /dev/sda5, and my Xubuntu installation is on /dev/sda7. I'm going to use [e2label][2] as root to assign labels to these partitions.
 
 	sudo e2label /dev/sda3 Mint
 	sudo e2label /dev/sda5 Home
@@ -76,6 +77,22 @@ To remove the label from partition 5:
 
 	sudo e2label /dev/sda5 ""
 
-This tutorial was written by [Linerd](http://tuxtweaks.com/author/Linerd/) and originally appeared on [Tux Tweaks](http://tuxtweaks.com/) at http://tuxtweaks.com/2013/08/edit-a-linux-file-system-label/.
+This tutorial was written by [Linerd][3] and originally appeared on [Tux Tweaks][4] at http://tuxtweaks.com/2013/08/edit-a-linux-file-system-label/.
 
 via: http://tuxtweaks.com/2013/08/edit-a-linux-file-system-label/
+
+本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
+
+译者：[译者ID][] 校对：[校对者ID][]
+
+
+[LCTT]:https://github.com/LCTT/TranslateProject
+[Linux中国]:http://linux.cn/portal.php
+[译者ID]:http://linux.cn/space/译者ID
+[校对者ID]:http://linu.xnc/space/校对者ID
+
+[1]:https://wiki.archlinux.org/index.php/Persistent_block_device_naming
+[2]:http://linux.die.net/man/8/e2label
+[3]:http://tuxtweaks.com/author/Linerd/
+[4]:http://tuxtweaks.com/
+
