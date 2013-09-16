@@ -1,5 +1,5 @@
-How To Add or Edit a Linux File System Label
-============================================
+如何添加或编辑文件系统卷标(Luny正在翻译...)
+=======================
 
 File system labels are not something you need to have in order to have a functioning Linux operating system, but they can make your computer easier to navigate when you have several disk partitions. In this post I'll show how to add or **edit a Linux file system label** for ext2, ext3, and ext4 disk partitions.
 
