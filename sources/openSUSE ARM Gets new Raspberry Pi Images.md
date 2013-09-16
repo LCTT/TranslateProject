@@ -44,9 +44,19 @@ Compared to the old image, this one has some advantages:
 
 If you wanted to play with building images for the Raspberry Pi, this might well be the easiest way doing so! And as always, merge requests are very much welcome.
 
+via: https://news.opensuse.org/2013/09/09/opensuse-arm-gets-new-raspberry-pi-images/
+
+本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
+
+译者：[译者ID][] 校对：[校对者ID][]
+
+[LCTT]:https://github.com/LCTT/TranslateProject
+[Linux中国]:http://linux.cn/portal.php
+[译者ID]:http://linux.cn/space/译者ID
+[校对者ID]:http://linu.xnc/space/校对者ID
+
 [1]:http://www.zq1.de/~bernhard/linux/opensuse/raspberrypi-opensuse-20130907.img.xz
 [2]:https://build.opensuse.org/package/show/devel:ARM:Factory:Contrib:RaspberryPi/altimagebuild
 [3]:https://lizards.opensuse.org/2013/09/07/new-raspberry-pi-image/
 [4]:http://download.opensuse.org/ports/armv6hl/factory/repo/oss/
 
-via: https://news.opensuse.org/2013/09/09/opensuse-arm-gets-new-raspberry-pi-images/

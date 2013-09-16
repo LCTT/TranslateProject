@@ -36,6 +36,17 @@ Now search for Indicator-Synapse in the Dash and launch.
 
 To remove the application simply search for ‘indicator synapse’ in the Ubuntu Software Center, click on its listing, then the ‘remove’ button
 
-[1]:https://apps.ubuntu.com/cat/applications/synapse/
 
 via: http://www.omgubuntu.co.uk/2013/09/spotlight-like-tool-coming-to-pear-os-other-distros
+
+本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
+
+译者：[译者ID][] 校对：[校对者ID][]
+
+
+[LCTT]:https://github.com/LCTT/TranslateProject
+[Linux中国]:http://linux.cn/portal.php
+[译者ID]:http://linux.cn/space/译者ID
+[校对者ID]:http://linu.xnc/space/校对者ID
+
+[1]:https://apps.ubuntu.com/cat/applications/synapse/

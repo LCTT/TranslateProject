@@ -23,7 +23,18 @@ Membership of the CAG is not the same as committing to offer devices. That said,
 
 If the addition of 3 is confirmed then it will be joining [a 13-strong list of carriers who have shown interest][2] in the fledgling upstart OS.
 
+via: http://www.omgubuntu.co.uk/2013/09/mobile-network-3-joins-ubuntu-carrier-advisory-group
+
+本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
+
+译者：[译者ID][] 校对：[校对者ID][]
+
+
+[LCTT]:https://github.com/LCTT/TranslateProject
+[Linux中国]:http://linux.cn/portal.php
+[译者ID]:http://linux.cn/space/译者ID
+[校对者ID]:http://linu.xnc/space/校对者ID
+
 [1]:http://en.wikipedia.org/wiki/Hutchison_Whampoa
 [2]:http://www.omgubuntu.co.uk/tag/cag
 
-via: http://www.omgubuntu.co.uk/2013/09/mobile-network-3-joins-ubuntu-carrier-advisory-group

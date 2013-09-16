@@ -88,6 +88,19 @@ Turnkey has more than a hundred ready-to-run apps These range from such standard
 
 In short, whether you know next to nothing about Linux or you're a senior developer on the Linux kernel team, there's a Linux server for you and your business needs. Enjoy!
 
+
+via: http://www.itworld.com/operating-systems/372236/how-choose-best-linux-server-your-business
+
+本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
+
+译者：[译者ID][] 校对：[校对者ID][]
+
+
+[LCTT]:https://github.com/LCTT/TranslateProject
+[Linux中国]:http://linux.cn/portal.php
+[译者ID]:http://linux.cn/space/译者ID
+[校对者ID]:http://linu.xnc/space/校对者ID
+
 [1]:http://www.itworld.com/slideshow/119061/ubuntu-impresses-test-linux-servers-372374
 [2]:http://www.itworld.com/operating-systems/370104/first-rule-choosing-desktop-linux-distribution-user-know-thyself
 [3]:http://blog.smartbear.com/open-source/yes-open-source-jobs-are-hot-and-we-have-stats-to-prove-it/
@@ -117,6 +130,3 @@ In short, whether you know next to nothing about Linux or you're a senior develo
 [27]:http://www.windowsazure.com/en-us/manage/linux/other-resources/endorsed-distributions/
 [28]:http://www.rackspace.com/knowledge_center/article/choosing-a-linux-distribution
 [29]:http://www.turnkeylinux.org/
-
-via: http://www.itworld.com/operating-systems/372236/how-choose-best-linux-server-your-business
-

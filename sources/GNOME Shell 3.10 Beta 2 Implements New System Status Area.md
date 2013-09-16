@@ -1,4 +1,5 @@
 GNOME Shell 3.10 Beta 2 Implements New System Status Area
+=========================================================
 
 The first Beta release of the upcoming GNOME Shell 3.10 has been made available for download a few days ago, a version that brings numerous improvements and fixes lots of bugs. 
 
@@ -16,4 +17,15 @@ Among the updated translations, we can mention Polish, Norwegian Bokmal, Tajik, 
 
 Download GNOME Shell 3.10 Beta 2 right now from Softpedia. Remember that this is a beta version and it should NOT be installed on production machines. It is intended for testing purposes only.
 
-[via: http://news.softpedia.com/news/GNOME-Shell-3-10-Beta-2-Implements-New-System-Status-Area-380916.shtml]
+via: http://news.softpedia.com/news/GNOME-Shell-3-10-Beta-2-Implements-New-System-Status-Area-380916.shtml
+
+本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
+
+译者：[译者ID][] 校对：[校对者ID][]
+
+
+[LCTT]:https://github.com/LCTT/TranslateProject
+[Linux中国]:http://linux.cn/portal.php
+[译者ID]:http://linux.cn/space/译者ID
+[校对者ID]:http://linu.xnc/space/校对者ID
+

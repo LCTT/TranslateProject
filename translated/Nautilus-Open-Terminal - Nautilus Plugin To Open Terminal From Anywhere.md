@@ -39,8 +39,19 @@ Nautilus-Open-Terminal 是一个让你随处都可以打开终端的nautilus插�
 
 我会向每个人去推荐这个插件，只因使用它之后的优势所在。 一旦你使用了它，你就会发现它所带来的不同.
 
+
+转自：http://mylinuxbook.com/nautilus-open-terminal-nautilus-plugin-to-open-terminal-from-anywhere/
+
+本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
+
+译者：[younel0925][] 校对：[校对者ID][]
+
+
+[LCTT]:https://github.com/LCTT/TranslateProject
+[Linux中国]:http://linux.cn/portal.php
+[younel0925]:http://linux.cn/space/译者ID
+[校对者ID]:http://linu.xnc/space/校对者ID
 [1]:https://launchpad.net/ubuntu/+source/nautilus-open-terminal
 [2]:http://packages.ubuntu.com/lucid/nautilus-open-terminal
 
-转自：http://mylinuxbook.com/nautilus-open-terminal-nautilus-plugin-to-open-terminal-from-anywhere/
 

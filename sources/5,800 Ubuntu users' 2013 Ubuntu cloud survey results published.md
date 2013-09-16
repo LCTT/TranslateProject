@@ -11,4 +11,15 @@ Financial worth of the global cloud market, what percentage finds the cloud envi
 
 Moreover, the explanatory article is paired with a detailed step-by-step slide, where the viewer is to digest each and each measurement.
 
+
 via: http://iloveubuntu.net/5800-ubuntu-users-2013-ubuntu-cloud-survey-results-published
+
+本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
+
+译者：[译者ID][] 校对：[校对者ID][]
+
+
+[LCTT]:https://github.com/LCTT/TranslateProject
+[Linux中国]:http://linux.cn/portal.php
+[译者ID]:http://linux.cn/space/译者ID
+[校对者ID]:http://linu.xnc/space/校对者ID
