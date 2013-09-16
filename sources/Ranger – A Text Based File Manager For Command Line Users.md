@@ -1,4 +1,4 @@
-Ranger – A Text Based File Manager For Command Line Users
+Ranger – 给命令行用户一个基于文本的文件管理器
 =========================================================
 
 Graphical file managers are an integral part of everybody’s day-to-day computer work. Most of the users are happy using the default file manager and aren’t much bothered about exploring alternative file managers. But, when it comes to CLI file managers, users may well be interested in trying various available file managers before settling down with the best — that suits their needs. In this article, we will discuss/review Ranger – a command line based file manager.
