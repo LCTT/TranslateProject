@@ -46,6 +46,6 @@ via: http://mylinuxbook.com/nautilus-open-terminal-nautilus-plugin-to-open-termi
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [译者ID]:http://linux.cn/space/译者ID
-[校对者ID]:http://linu.xnc/space/校对者ID
+[校对者ID]:http://linux.cn/space/校对者ID
 
 [1]:http://mylinuxbook.com/nautilus-open-terminal-nautilus-plugin-to-open-terminal-from-anywhere/

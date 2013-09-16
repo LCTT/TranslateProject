@@ -99,7 +99,7 @@ via: http://www.linuxinsider.com/story/Wireless-Aside-Cr-OS-Linux-Delivers-the-B
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [译者ID]:http://linux.cn/space/译者ID
-[校对者ID]:http://linu.xnc/space/校对者ID
+[校对者ID]:http://linux.cn/space/校对者ID
 
 [1]:http://getchrome.eu/
 [2]:https://susestudio.com/a/jMOVxa/cr-os-linux

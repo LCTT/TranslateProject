@@ -53,7 +53,7 @@ via: https://news.opensuse.org/2013/09/09/opensuse-arm-gets-new-raspberry-pi-ima
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [译者ID]:http://linux.cn/space/译者ID
-[校对者ID]:http://linu.xnc/space/校对者ID
+[校对者ID]:http://linux.cn/space/校对者ID
 
 [1]:http://www.zq1.de/~bernhard/linux/opensuse/raspberrypi-opensuse-20130907.img.xz
 [2]:https://build.opensuse.org/package/show/devel:ARM:Factory:Contrib:RaspberryPi/altimagebuild

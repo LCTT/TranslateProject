@@ -66,7 +66,7 @@ via：http://www.unixmen.com/install-qmmp-0-7-2-ubuntu-13-04-12-10-12-04/
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [神之一手]:http://linux.cn/space/14789
-[jasminepeng]:http://linu.xnc/space/jasminepeng
+[jasminepeng]:http://linux.cn/space/jasminepeng
 
 [1]:http://qmmp.ylsoftware.com/links.php
 
