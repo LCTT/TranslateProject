@@ -41,7 +41,7 @@ via: http://liliputing.com/2013/09/mintbox-2-now-available-for-order-for-599-min
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[vito][] 校对：[校对者ID][]
+译者：[vito][] 校对：[jasminepeng][]
 
 
 [LCTT]:https://github.com/LCTT/TranslateProject
