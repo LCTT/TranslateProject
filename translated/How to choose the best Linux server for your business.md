@@ -7,7 +7,7 @@
 ![img](http://www.itworld.com/sites/default/files/best-penguin.jpg "penguins")
 供图： flickr/Pete
 
-与上千种Linux桌面版本相比，Linux服务器只有可怜的十几种。但想要选对你的企业需要的仍然不是件容易的事情。我可以帮助你。我玩Linux 也有20年了，Linux服务器方面嘛，略懂、略懂。
+与上千种Linux桌面版本相比，Linux服务器只有可怜的十几种。但想要选对适合你的企业需要的仍然不是件容易的事情。我可以帮助你。Linux 方面我有20年经验了，对Linux服务器略懂一二。
 
 
 > [众多Linux服务器测试中Ubuntu的表现][1]
@@ -19,7 +19,7 @@
 今年早些时候我去波特兰参加一个叫做OSCon的开源会议的时候，我确认了一个事实就是每家公司（包括某家叫什么软的）都在考虑[雇佣有开源和Linux工作经验的人][3]。
 
 
-特别地，从已有经验来看，雇主在找有[几年Linux使用经验]的职员的时候都遇到了麻烦。或者确切地说是你需要的来保证你的Linux服务器火车准点的雇员。
+特别地，从已有经验来看，雇主在找有[几年Linux使用经验]的职员的时候都遇到了麻烦。或者确切地说是你需要保证你的Linux服务器火车准点的雇员。
 
 
 
@@ -77,16 +77,16 @@ CentOS 人气很高。如果你有运行在任何网络主机服务上的Apache�
 
 如果你对云计算感兴趣，Ubuntu（像RHEL一样）[和OpenStack结合地很好][23]。另外，Ubuntu的母公司Canonical提供了[Juju][24]，一套非常方便的DevOps（开发/运营）的[工具][25]，这使得Ubuntu的架设、配置、管理、维护、升级和卸载服务器的服务功能变得更简单。
 
-当我们在探讨云的时候，你也应该考虑你是不是真的需要在你的办公室或者数据中心里运行通用Linux服务器。很有可能你能在云的某一特定Linux服务器上提供那些服务。
+当我们在探讨云的时候，你也应该考虑你是不是真的需要在你的办公室或者数据中心里运行通用Linux服务器。很有可能你能在云的某一特定Linux服务器上运行服务。
 
 多数公用云计算服务，如Amazon Web Services(AWS)，Azure和RackSpace，提供Linux服务器。这样的话配置服务器等等一些难做的工作就已经替你做好了。
 
-举个例子，在Amazon Elastic Cloud (AE2)上，Amazon提供了随时可用的Amazon Machine Images (AMIs)，包括上文提到的每一种Linux发行版本，还有它自己的[Amazon Linux][26]可以选择。Microsoft的Azure呢，不管你信不信，[支持CentOS，openSUSE，SUSE和Ubuntu][27]。最后，RackSpace，一个OpenStack的拥护者，[支持大多数主流Linux服务器版本][28]和两个轻量级Linux，Arch和Gentoo。然而，我仅推荐那些特别了解这些Linux发行版（像Debian）这样的人在商用中使用它们，因为风险不小。
+举个例子，在Amazon Elastic Cloud (AE2)上，Amazon提供了随时可用的Amazon Machine Images (AMIs)，包括上文提到的每一种Linux发行版本，还有它自己的[Amazon Linux][26]可以选择。Microsoft的Azure呢，不管你信不信，[支持CentOS，openSUSE，SUSE和Ubuntu][27]。最后，RackSpace，一个OpenStack的拥护者，[支持大多数主流Linux服务器版本][28]和两个轻量级Linux，Arch和Gentoo。然而，像Debian一样,我仅推荐那些特别了解这些Linux发行版的人使用它们作为关键业务服务器。
 
 谁说你就算是在云上都要有一个全功能Linux服务器？你可能只需要一个针对特定工作的Linux服务器。[Turnkey Linux][29]可以满足你。
 
 
-Turnkey基于64位的Debian，但它只有少量的专家可以用它。因为它只提供特定的服务而不是一个全功能的发行版本。
+Turnkey基于64位的Debian，但它需要的专业知识最少。因为它只提供特定的服务而不是一个全功能的发行版本。
 
 Turnkey有超过100个可用的应用。包括Apache，Linux，MySQL，PHP/Python/Perl (LAMP) ；WordPress博客平台；Drupal内容管理系统（CMS）以及像Ushahidi这样的大流量购物服务器，优秀的人际关系管理（CRM）应用Zurmo，人道主义的反馈管理系统Sahana Eden。你可以在AWS，裸机，虚拟机（VM）或者Infrastructure as a Service(IaaS)云上面使用它们。
 
@@ -97,13 +97,13 @@ via: http://www.itworld.com/operating-systems/372236/how-choose-best-linux-serve
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[boredivan][] 校对：[校对者ID][]
+译者：[boredivan][] 校对：[jasminepeng][]
 
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [boredivan]:http://linux.cn/space/boredivan
-[校对者ID]:http://linux.cn/space/校对者ID
+[jasminepeng]:http://linux.cn/space/jasminepeng
 
 [1]:http://www.itworld.com/slideshow/119061/ubuntu-impresses-test-linux-servers-372374
 [2]:http://www.itworld.com/operating-systems/370104/first-rule-choosing-desktop-linux-distribution-user-know-thyself
