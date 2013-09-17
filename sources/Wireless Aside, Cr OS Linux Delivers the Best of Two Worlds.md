@@ -90,8 +90,18 @@ Please send your ideas to me at jack.germain@newsroom.ectnews.com, and I'll cons
 
 And use the Talkback feature below to add your comments!
 
+via: http://www.linuxinsider.com/story/Wireless-Aside-Cr-OS-Linux-Delivers-the-Best-of-Two-Worlds-78918.html
+
+本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
+
+译者：[译者ID][] 校对：[校对者ID][]
+
+[LCTT]:https://github.com/LCTT/TranslateProject
+[Linux中国]:http://linux.cn/portal.php
+[译者ID]:http://linux.cn/space/译者ID
+[校对者ID]:http://linux.cn/space/校对者ID
+
 [1]:http://getchrome.eu/
 [2]:https://susestudio.com/a/jMOVxa/cr-os-linux
 [3]:http://www.novell.com/linux
 
-via: http://www.linuxinsider.com/story/Wireless-Aside-Cr-OS-Linux-Delivers-the-Best-of-Two-Worlds-78918.html

@@ -25,7 +25,17 @@ Ok guys, not it is time for some PiSUSE fun, i mean go and try openSUSE on your 
 
 Source: [openSUSE Lizards][2]
 
+via: http://www.unixmen.com/new-opensuse-raspberry-pi-image/
+
+本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
+
+译者：[译者ID][] 校对：[校对者ID][]
+
+[LCTT]:https://github.com/LCTT/TranslateProject
+[Linux中国]:http://linux.cn/portal.php
+[译者ID]:http://linux.cn/space/译者ID
+[校对者ID]:http://linux.cn/space/校对者ID
+
 [1]:https://build.opensuse.org/package/show/devel:ARM:Factory:Contrib:RaspberryPi/altimagebuild
 [2]:https://lizards.opensuse.org/2013/09/07/new-raspberry-pi-image/
 
-via: http://www.unixmen.com/new-opensuse-raspberry-pi-image/

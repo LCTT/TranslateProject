@@ -1,4 +1,4 @@
-Ranger – A Text Based File Manager For Command Line Users
+Ranger – 给命令行用户一个基于文本的文件管理器
 =========================================================
 
 Graphical file managers are an integral part of everybody’s day-to-day computer work. Most of the users are happy using the default file manager and aren’t much bothered about exploring alternative file managers. But, when it comes to CLI file managers, users may well be interested in trying various available file managers before settling down with the best — that suits their needs. In this article, we will discuss/review Ranger – a command line based file manager.
@@ -70,8 +70,18 @@ Download and installation completed smoothly without any problems.
 
 Ranger is a fine utility that does what is promises to do. I would recommend this utility to those users who work on servers (containing no GUI). If you spend a lot of time on command line and are looking for a good command line file manager, Ranger could be a good option.. If your expectations aren’t too high, ranger should not disappoint you.
 
+via: http://mylinuxbook.com/ranger-command-line-file-manager/
+
+本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
+
+译者：[译者ID][] 校对：[校对者ID][]
+
+[LCTT]:https://github.com/LCTT/TranslateProject
+[Linux中国]:http://linux.cn/portal.php
+[译者ID]:http://linux.cn/space/译者ID
+[校对者ID]:http://linux.cn/space/校对者ID
+
 [1]:http://ranger.nongnu.org/
 [2]:http://ranger.nongnu.org/index.html
 [3]:http://ranger.nongnu.org/download.html
 
-via: http://mylinuxbook.com/ranger-command-line-file-manager/
