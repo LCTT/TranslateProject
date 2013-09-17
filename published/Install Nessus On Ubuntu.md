@@ -45,9 +45,9 @@ via http://www.unixmen.com/install-nessus-on-ubuntu/
 
 
 [LCTT]:https://github.com/LCTT/TranslateProject
-[Linux中国]:http://www.linux.cn/
-[Vito]:http://www.linux.cn/space/Vito
-[Caroline]:http://www.linux.cn/space/14763/
+[Linux中国]:http://linux.cn/portal.php
+[Vito]:http://linux.cn/space/Vito
+[Caroline]:http://linux.cn/space/14763/
 
 [1]:http://www.tenable.com/products/nessus
 [2]:http://www.tenable.com/products/nessus/select-your-operating-system

@@ -20,6 +20,6 @@ via: http://iloveubuntu.net/5800-ubuntu-users-2013-ubuntu-cloud-survey-results-p
 
 
 [LCTT]:https://github.com/LCTT/TranslateProject
-[Linux中国]:http://www.linux.cn/
-[译者ID]:http://www.linux.cn/space/译者ID
-[校对者ID]:http://www.linux.cn/space/校对者ID
+[Linux中国]:http://linux.cn/portal.php
+[译者ID]:http://linux.cn/space/译者ID
+[校对者ID]:http://linux.cn/space/校对者ID

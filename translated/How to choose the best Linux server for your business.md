@@ -101,9 +101,9 @@ via: http://www.itworld.com/operating-systems/372236/how-choose-best-linux-serve
 
 
 [LCTT]:https://github.com/LCTT/TranslateProject
-[Linux中国]:http://www.linux.cn/
-[boredivan]:http://www.linux.cn/space/boredivan
-[校对者ID]:http://www.linux.cn/space/校对者ID
+[Linux中国]:http://linux.cn/portal.php
+[boredivan]:http://linux.cn/space/boredivan
+[校对者ID]:http://linux.cn/space/校对者ID
 
 [1]:http://www.itworld.com/slideshow/119061/ubuntu-impresses-test-linux-servers-372374
 [2]:http://www.itworld.com/operating-systems/370104/first-rule-choosing-desktop-linux-distribution-user-know-thyself

@@ -86,9 +86,9 @@ via: http://tuxtweaks.com/2013/08/edit-a-linux-file-system-label/
 译者：[Luny][] 校对：[Caroline][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
-[Linux中国]:http://www.linux.cn/
-[Luny]:http://www.linux.cn/space/14455/
-[Caroline]:http://www.linux.cn/space/14763/
+[Linux中国]:http://linux.cn/portal.php
+[Luny]:http://linux.cn/space/14455/
+[Caroline]:http://linux.cn/space/14763/
 
 [1]:https://wiki.archlinux.org/index.php/Persistent_block_device_naming
 [2]:http://linux.die.net/man/8/e2label

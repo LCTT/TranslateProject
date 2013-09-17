@@ -47,9 +47,9 @@ Nautilus-Open-Terminal 是一个让你随处都可以打开终端的nautilus插�
 
 
 [LCTT]:https://github.com/LCTT/TranslateProject
-[Linux中国]:http://www.linux.cn/
-[younel0925]:http://www.linux.cn/space/younel0925
-[wxy]:http://www.linux.cn/space/wxy
+[Linux中国]:http://linux.cn/portal.php
+[younel0925]:http://linux.cn/space/younel0925
+[wxy]:http://linux.cn/space/wxy
 [1]:https://launchpad.net/ubuntu/+source/nautilus-open-terminal
 [2]:http://packages.ubuntu.com/lucid/nautilus-open-terminal
 
