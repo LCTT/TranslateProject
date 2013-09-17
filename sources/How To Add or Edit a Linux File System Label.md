@@ -1,17 +1,17 @@
-如何添加或修改文件系统标签
+如何添加或编辑文件系统标签
 ==========================
 
-为了有一个正常运作的Linux操作系统，文件系统标签不是必须的，但当你有几个磁盘分区时文件系统标签可以使你的电脑更容易去定位。在这篇文章中我将展示如何在ext2,ext3和ext4磁盘分区中添加或**修改Linux文件系统标签**。
+为了拥有一个正常运作的Linux操作系统，文件系统标签不是必须的，但当你有几个磁盘分区时文件系统标签可以使你的电脑更容易去定位。在这篇文章中我将展示如何在ext2,ext3和ext4磁盘分区中添加或**编辑Linux文件系统标签**。
 
-我的上网本装有3个操作系统;Windows XP, Linux Mint, 和Xubuntu。有时我想要在其它操作系统上去查看一个文件系统的文件位置，这时候[文件系统标签][1]是非常方便的，因此我可以知道去那个文件系统上找到和打开我想要的文件。
+我的上网本装有3个操作系统;Windows XP, Linux Mint, 和Xubuntu。有时我想要在其它操作系统上去查看一个文件系统的文件位置，这时候[文件系统标签][1]是非常方便的，因此，我知道该打开哪个文件系统来找到所需文件。
 
 ###查看Linux文件系统标签
 
-首先来查看一个文件系统是否有标签可能是非常方便的。你可以用**blkid**命令来查看你的文件系统信息。运行这个命令去查看你的文件系统全部信息可能需要root权限。
+首先让我们看一下哪些文件系统已经有了一个标签，哪些还没有。你可以用**blkid**命令来查看你的文件系统信息。运行这个命令去查看你的文件系统全部信息可能需要root权限。
 
 	sudo blkid -c /dev/null
 
-在我的上网本里输出的信息看起来像这样。
+在我的上网本里输出的信息是这样。
 
 	/dev/sda1: LABEL="WINRE" UUID="80AE-9D55" TYPE="vfat"
 	/dev/sda2: LABEL="OS_Install" UUID="E468676968673A06" TYPE="ntfs"
@@ -24,7 +24,7 @@
 
 	lsblk
 
-在我的Linux Mint 系统上输出看起来像这样。
+在我的Linux Mint 系统上输出的信息是这样。
 
     NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
     sda      8:0    0 149.1G  0 disk 
@@ -38,11 +38,9 @@
 
 正如你看到的,在**blkid**和**lsblk**命令输出信息上，只有我的Windows分区是有标签的，浏览我的文件管理器可以看到每一个分区都有一个通用的名称。
 
-需要修改linux文件系统标签
-
 无标签的分区
 
-###用e2label修改Linux文件系统标签
+###用e2label编辑Linux文件系统标签
 
 查找**lsblk**命令的输出我可以看到我的Linux Mint安装在/dev/sda3分区上，我的/home分区是在/dev/sda5分区上，和我的Xubuntu安装在/dev/sda7分区上。我在root权限下用[e2label][2]命令给在这些分区分配标签。
 
@@ -79,7 +77,7 @@ via: http://tuxtweaks.com/2013/08/edit-a-linux-file-system-label/
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[Luny][] 校对：[校对者ID][]
+译者：[Luny][] 校对：[Caroline][]
 
 
 [LCTT]:https://github.com/LCTT/TranslateProject
