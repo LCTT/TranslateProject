@@ -38,6 +38,7 @@
 
 正如你看到的,在**blkid**和**lsblk**命令输出信息上，只有我的Windows分区是有标签的，浏览我的文件管理器可以看到每一个分区都有一个通用的名称。
 
+![img](http://tuxtweaks.com/wp-content/uploads/2013/08/01-Disks_wm-300x194.png)
 无标签的分区
 
 ###用e2label编辑Linux文件系统标签
