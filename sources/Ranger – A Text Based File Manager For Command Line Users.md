@@ -1,84 +1,84 @@
 Ranger – 给命令行用户一个基于文本的文件管理器
 =========================================================
 
-图形 file managers are an integral part of everybody’s day-to-day computer work. Most of the users are happy using the default file manager and aren’t much bothered about exploring alternative file managers. But, when it comes to CLI file managers, users may well be interested in trying various available file managers before settling down with the best — that suits their needs. In this article, we will discuss/review Ranger – a command line based file manager.
+图形文件管理器是每个人日常电脑工作的一部分。多数用户都乐于使用默认的文件管理器，并且对于探索替代的文件管理器没有太大的困扰。但是，当它涉及到命令行（CLI）文件管理器，用户在稳定下来用最好的之前可能有兴趣尝试各种可用的文件管理器--适合他们的需求。在这篇文章中，我们将讨论/评审Ranger - 基于命令行的文件管理器。
 
 
 ![img](http://mylinuxbook.com/wp-content/uploads/2013/09/ranger-main.png "ranger-main")
-NOTE – All the examples and instructions presented in this article are tested on Ubuntu 13.04.
+注释-这篇文章中的所有示例和使用说明在ubuntu13.04上已通过测试。
 
-##Ranger – The Command Line File Manager
+##Ranger - 命令行文件管理器
 
-Ranger is an ncurses based command line file manager that has a simple and minimalistic user interface. It uses basic vi key bindings for navigation and is capable of previewing files and opening them with default programs.
+Ranger是一个基于命令行的文件管理器窗口菜单，有一个简单而简约的用户界面。它使用基本的vi导航键绑定，能够预览文件和用默认程序打开它们。
 
-###How To Use It
+###如何使用Ranger
 
-Just type the command ranger on command line to execute this utility. Here is a snapshot of ranger when executed on my system from the directory /home/himanshu.
+只需在命令行里键入命令ranger去执行这个程序。这是在我系统上从/home/himanshu目录执行时的ranger快照。
 
 ![img](http://mylinuxbook.com/wp-content/uploads/2013/09/ranger-1.png "ranger-1")
 
-You can see that ranger displays directories, sub-directories and their contents in separate columns. For example, the left most column in the window shown above represents the three directories present in the /home directory of my system. Out of these three, the himanshu directory is currently selected.
+你可以看到在单独的列上ranger显示了目录，子目录，目录里的内容。例如，如上图所示，在窗口最左边一列，代表我的系统在/home/目录下有三个目录。在这三种目录里，himanhu目录是当前已被选择的。
 
-The second column represents the subdirectories of the himanshu directory. Out of these, the subdirectory Pictures is currently selected. Similarly, the third column represents all the files present in the Pictures directory.
+第二列代表himanshu目录的子目录。这些，图片子目录是当前被选择的。同样的，第三列代表呈现在图片目录的所有文件。
 
-NOTE – You can use the left/right arrow keys to select a specific column and then use up/down arrow keys to navigate within that column.
+注释 - 你可以使用左右键选择一个特定的列并且使用上下键穿梭于这些列中。
 
-Ranger uses default programs to display different types of files. For example, when I navigated to the third column shown the earlier screen-shot and pressed enter after selecting the file workspace_switcher.png, here is what showed up :
+Ranger使用默认程序去显示不同类型的文件。例如，当我导航到第三列如之前的截图并且按下我选择的文件workspace_switcher.png。下面会出现：
 
 ![img](http://mylinuxbook.com/wp-content/uploads/2013/09/ranger-2.png "ranger-2")
 
-So you can see that ranger opened the file in an image viewer. Another feature of this file manager is that the files can be previewed within the file manager as soon as they are selected.
+所以，你可以看到ranger在图像浏览器中打开文件。这个文件管理器另一个功能是一被选择就能在文件管理器中预览文件。
 
-Here is an example screen-shot :
+这是示例截图：
 
 ![img](http://mylinuxbook.com/wp-content/uploads/2013/09/ranger-3.png "ranger-3")
 
-So you can see that as soon as the file CMS was selected, a preview of its contents was displayed on right hand side of the window.  If it is desired to read the complete file, just hit the right arrow and the file will be opened in vi/vim editor. Quit the vi/vim editor using :q to come back to file manager.
+所以你可以看到当CMS文件被选中时，预览它的内容被显示在窗口的右边。如果想要读取完整文件，只需点击右键头，文件将在vi/vim编辑器中打开。退出vi/vim编辑器使用：q 回到文件管理器。
 
-NOTE – Preview of Images requires some dependencies to be fulfilled. For more information on this, read the Dependencies section [here][1].
+注释 - 预览图片需要一些依赖被满足。更多方面的信息：[在这里][1]阅读部分依赖关系。
 
-Here are some tips regarding the usage of ranger :
+这是关于使用ranger的一些提示：
 
-- Select a file, press y to copy it and then navigate into the destination folder and then press p to paste.
-- Type **:delete** to delete the currently selected file.
-- Use ? to open the man page of ranger from within the file manager and press q to come back to the file manager.
-- Being ncurses based, the up-down scroll can be easily done through mouse.
+- 选择一个文件，按y复制它，然后导航到目标目录再按p粘贴。
+- 提示：**delete键**去删除当前被选中的文件。 
+- 在文件管理器里使用问号（？）打开ranger的man手册页并且按q回到文件管理器。
+- 基于ncurses，可以很容易的通过鼠标上下滚动。
 
-###Download/Install
+###下载/安装
 
-Here are some important links related to ranger file manager :
+这是相关ranger文件管理器的重要链接：
 
-- [Home Page][2]
-- [Download][3]
+- [主页][2]
+- [下载][3]
 
-I downloaded and installed this utility through command line through apt-get. Ubuntu users can also use Ubuntu Software Centre to download and install this utility. The version used for this review was 1.5.4-1.
+我通过apt-get在命令行下载并安装这个程序。Ubuntu用户也可以使用Ubuntu软件中心下载安装这个程序。本文使用的版本是1.5.4-1。
 
-Download and installation completed smoothly without any problems.
+没有其他问题的话,下载和安装能够顺利完成。
 
-**Pros**
+**优点**
 
-- Easy navigation
-- Minimalistic UI
-- Control using vi/vim style commands
+- 轻松导航
+- 简约的UI
+- 使用vi/vim风格命令控制
 
-**Cons**
+**缺点**
 
-- Good only for basic file management operations
-- Preview features requires dependencies to be fulfilled
+- 只适用于基本的文件管理操作
+- 预览功能需要依赖关系被满足
 
-**Conclusion**
+**总结**
 
-Ranger is a fine utility that does what is promises to do. I would recommend this utility to those users who work on servers (containing no GUI). If you spend a lot of time on command line and are looking for a good command line file manager, Ranger could be a good option.. If your expectations aren’t too high, ranger should not disappoint you.
+ranger被承诺为一个很好的实用程序。我将推荐这个程序给那些工作在服务器上的用户（不含GUI）。如果你花大量的时间在命令行上并且在寻找一个好的命令行管理器，Ranger可能是一个好的选择..如果你的期望不是太高，ranger不会使你失望。
 
 via: http://mylinuxbook.com/ranger-command-line-file-manager/
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[译者ID][] 校对：[校对者ID][]
+译者：[Vito][] 校对：[校对者ID][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/译者ID
+[Vito]:http://linux.cn/space/vito
 [校对者ID]:http://linux.cn/space/校对者ID
 
 [1]:http://ranger.nongnu.org/
