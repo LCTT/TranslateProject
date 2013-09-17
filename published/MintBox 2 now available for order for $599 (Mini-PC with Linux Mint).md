@@ -45,9 +45,9 @@ via: http://liliputing.com/2013/09/mintbox-2-now-available-for-order-for-599-min
 
 
 [LCTT]:https://github.com/LCTT/TranslateProject
-[Linux中国]:http://linux.cn/portal.php
-[vito]:http://linux.cn/space/vito
-[jasminepeng]:http://linux.cn/space/jasminepeng
+[Linux中国]:http://www.linux.cn/
+[vito]:http://www.linux.cn/space/vito
+[jasminepeng]:http://www.linux.cn/space/jasminepeng
 
 [1]:http://linuxmint.com/
 [2]:http://fit-pc.com/web/purchasing/order-mintbox/

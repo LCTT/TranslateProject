@@ -28,9 +28,9 @@ Linux可以很好地满足用户的全部需求及其中的一部分。不过话
 
 
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/portal.php) 荣誉推出。
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://www.linux.cn/) 荣誉推出。
 
-译者：[Ivan](http://linux.cn/space/ivan) 校对：[Caroline](http://linux.cn/space/caroline)，[wxy](http://linux.cn/space/wxy)
+译者：[Ivan](http://www.linux.cn/space/ivan) 校对：[Caroline](http://www.linux.cn/space/caroline)，[wxy](http://www.linux.cn/space/wxy)
 
 via: http://www.itworld.com/operating-systems/372109/linux-best-operating-system
 

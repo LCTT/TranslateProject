@@ -32,9 +32,9 @@ via: http://www.unixmen.com/new-opensuse-raspberry-pi-image/
 译者：[译者ID][] 校对：[校对者ID][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
-[Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/译者ID
-[校对者ID]:http://linux.cn/space/校对者ID
+[Linux中国]:http://www.linux.cn/
+[译者ID]:http://www.linux.cn/space/译者ID
+[校对者ID]:http://www.linux.cn/space/校对者ID
 
 [1]:https://build.opensuse.org/package/show/devel:ARM:Factory:Contrib:RaspberryPi/altimagebuild
 [2]:https://lizards.opensuse.org/2013/09/07/new-raspberry-pi-image/

@@ -31,9 +31,9 @@ via: http://www.omgubuntu.co.uk/2013/09/mobile-network-3-joins-ubuntu-carrier-ad
 
 
 [LCTT]:https://github.com/LCTT/TranslateProject
-[Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/译者ID
-[校对者ID]:http://linux.cn/space/校对者ID
+[Linux中国]:http://www.linux.cn/
+[译者ID]:http://www.linux.cn/space/译者ID
+[校对者ID]:http://www.linux.cn/space/校对者ID
 
 [1]:http://en.wikipedia.org/wiki/Hutchison_Whampoa
 [2]:http://www.omgubuntu.co.uk/tag/cag

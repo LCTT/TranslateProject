@@ -60,8 +60,8 @@ Grive Tools支持以下的Ubuntu发行版：Ubuntu 12.10 (Quantal Quetzal), Ubun
 
 
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/portal.php) 荣誉推出。
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://www.linux.cn/) 荣誉推出。
 
-译者：[Luny](http://linux.cn/space/luny) 校对：[Caroline](http://linux.cn/space/caroline)，[wxy](http://linux.cn/space/wxy)
+译者：[Luny](http://www.linux.cn/space/luny) 校对：[Caroline](http://www.linux.cn/space/caroline)，[wxy](http://www.linux.cn/space/wxy)
 
 via: http://news.softpedia.com/news/How-to-Install-a-Google-Drive-Client-on-Ubuntu-381532.shtml

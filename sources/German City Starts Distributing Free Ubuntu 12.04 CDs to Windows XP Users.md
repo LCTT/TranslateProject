@@ -55,9 +55,9 @@ via: http://www.omgubuntu.co.uk/2013/09/ubuntu-12-04-lts-cds-munich-windows-xp
 译者：[译者ID][] 校对：[校对者ID][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
-[Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/译者ID
-[校对者ID]:http://linux.cn/space/校对者ID
+[Linux中国]:http://www.linux.cn/
+[译者ID]:http://www.linux.cn/space/译者ID
+[校对者ID]:http://www.linux.cn/space/校对者ID
 
 [1]:http://www.omgubuntu.co.uk/2013/09/ubuntu-12-04-lts-cds-munich-windows-xp
 [2]:http://www.muenchen.de/rathaus/Stadtverwaltung/Direktorium/IT-Beauftragte/Aktuelles/linux_cd.html

@@ -33,9 +33,9 @@ via: http://iloveubuntu.net/powerful-ebook-editor-sigil-moved-new-development-ar
 译者：[译者ID][] 校对：[校对者ID][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
-[Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/译者ID
-[校对者ID]:http://linux.cn/space/校对者ID
+[Linux中国]:http://www.linux.cn/
+[译者ID]:http://www.linux.cn/space/译者ID
+[校对者ID]:http://www.linux.cn/space/校对者ID
 
 [1]:http://iloveubuntu.net/powerful-ebook-editor-sigil-moved-new-development-area-looking-code-contributions-and-active
 [2]:http://sigildev.blogspot.ro/2013/09/sigil-status.html

@@ -23,9 +23,9 @@ Torvalds 对他的小伙伴们保证，“万一出现最坏的情况，我会�
 Linux 内核3.12仍处于早期开发阶段，并且还需要经过适当的测试。这些新改变包括改良的电源管理、新的KVM虚拟化功能、更好的声音驱动、EXT4文件系统以及F2FS文件系统的新功能。
 
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/portal.php) 荣誉推出。
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://www.linux.cn/) 荣誉推出。
 
-译者：[vito](http://linux.cn/space/vito) 校对：[Caroline](http://linux.cn/space/caroline)，[wxy](http://linux.cn/space/wxy)
+译者：[vito](http://www.linux.cn/space/vito) 校对：[Caroline](http://www.linux.cn/space/caroline)，[wxy](http://www.linux.cn/space/wxy)
 
 via: http://www.techweekeurope.co.uk/news/torvalds-dead-ssd-delays-3-12-linux-kernel-126895
 
