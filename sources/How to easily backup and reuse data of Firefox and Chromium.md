@@ -11,7 +11,7 @@ In Ubuntu, the user can hassle-free install the open-source [Chromium](apt://chr
 
 There are numerous situations when the user must move the data gathered by Chromium and Firefox, in order to utilize it under other Ubuntu installations, other computers (located in different physical non-home locations), as well as to save the data, in oder to avoid faulty situations (harddisk damages, physical lost of one's computer, etc).
 
-很多情况下，用户必须移动Firefox和Chromium产生的数据，这样做有时是为了能在其它的Ubuntu设备或其它的电脑（放在其它地方而没有放在家里的电脑）上使用这些数据，也有时是为了在出现意外情况时（硬盘损坏、电脑丢失等）保护数据。 
+然而很多情况下，用户会遇到不得不移动Firefox和Chromium产生的数据的情况，例如为了能在其它的Ubuntu设备或其它的电脑（放在其它地方而没有放在家里的电脑）上使用这些数据，或者为了在出现意外情况时（硬盘损坏、电脑丢失等）保护数据。 
 
 While there are several sync-based services and tools, the below-presented method offers a quick, fast, reliable and always accessible manner of immediately (re)using the data gathered by Chromium and Firefox (data meaning web history, passwords, download history, bookmarks, etc, essentially, everything done with Chromium and Firefox).
 
