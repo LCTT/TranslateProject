@@ -83,7 +83,7 @@ via: http://tuxtweaks.com/2013/08/edit-a-linux-file-system-label/
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[Luny][] 校对：[Caroline][http://linux.cn/space/14763/]
+译者：[Luny][] 校对：[Caroline][]
 
 
 [LCTT]:https://github.com/LCTT/TranslateProject
