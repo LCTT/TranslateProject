@@ -39,6 +39,7 @@
 正如你看到的,在**blkid**和**lsblk**命令输出信息上，只有我的Windows分区是有标签的，浏览我的文件管理器可以看到每一个分区都有一个通用的名称。
 
 ![img](http://tuxtweaks.com/wp-content/uploads/2013/08/01-Disks_wm-300x194.png)
+
 无标签的分区
 
 ###用e2label编辑Linux文件系统标签
@@ -61,6 +62,10 @@ sudo blkid -c /dev/null
     /dev/sda7: UUID="99feb5c5-25a6-47a3-aa2c-6d466c0094ab" TYPE="ext4" LABEL="Xubuntu"
 
 我可以看到标签已经被应用了。检查我的文件管理器我同样可以看到我10.0GB的分区现在显示的是Xubuntu标签。
+
+![img](http://tuxtweaks.com/wp-content/uploads/2013/08/02_Disks_wm-300x194.png)
+
+有标签的文件系统
 
 ###提示
 
