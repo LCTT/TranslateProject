@@ -65,7 +65,7 @@ via:http://www.unixmen.com/winusb-create-bootable-windows-usb-linux/
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [译者ID]:http://linux.cn/space/译者ID
-[校对者ID]:http://linu.xnc/space/校对者ID
+[校对者ID]:http://linux.cn/space/校对者ID
 
 [1]:http://www.unixmen.com/winusb-create-bootable-windows-usb-linux/
 [2]:http://congelli.eu/prog_info_winusb.html
