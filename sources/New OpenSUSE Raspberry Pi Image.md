@@ -1,3 +1,4 @@
+翻译中....
 New OpenSUSE Raspberry Pi Image
 ===============================
 
