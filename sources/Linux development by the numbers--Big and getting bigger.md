@@ -1,17 +1,26 @@
 Linux development by the numbers: Big and getting bigger
+越来越大！数字大话Linux的发展：
 ================================================================================
-The open-source operating system project is steadily growing through any number of measurements: programmers, updates, and changes per hour.
+The open-source operating system project is steadily growing through any number of measurements: programmers, updates, 
+这个开源的操作系统项目在各种评价指标中都在稳定地成长：程序开发人员数量、更新次数以及每小时变化次数。
+and changes per hour.
 --------------------------------------------------------------------------------
 ![](http://asset0.cbsistatic.com/cnwk.1d/i/tim2/2013/09/17/Linux-developers-contributing_610x342.png)
-
+  
 The number of developers creating Linux has steadily increased from version 3.0, released July 21, 2011, to version 3.10, released June 30, 2013.
+从2011-7-21发布的3.0版本到2013-6-30发布的3.10版本的过程中，创造Linux的开发人员数量一直保持着稳定地增长。
 (Credit: data from Linux Foundation; chart by Stephen Shankland/CNET) 
-
+ 
 Linux is growing -- that we knew. Now we know how fast.
+过去我们知道Linux一直在成长，现在我们认识到Linux如何快速地成长。
+In the last two years, the number of developers who collectively create Linux has increased from 1,131 with version 3.0 
+根据Linu基金会最新的Linux开发年会的报告，在过去的两年中，通过合作方式打造Linux的开发人员数量从2011年3.0版本的1131个人涨
+in July 2011 to 1,392 with version 3.10, released in June 2013, according to the Linux Foundation's latest [annual Linux development report][1]. Also on the rise: the lines of code in the project, the number of changes accepted into each new 了2013年3.10版本的1392个人。同时增长的还有：项目代码的行数，每个新版本吸纳的改变数和这写改变到达的频次。
+到
+version, and the frequency at which those changes arrive.
 
-In the last two years, the number of developers who collectively create Linux has increased from 1,131 with version 3.0 in July 2011 to 1,392 with version 3.10, released in June 2013, according to the Linux Foundation's latest [annual Linux development report][1]. Also on the rise: the lines of code in the project, the number of changes accepted into each new version, and the frequency at which those changes arrive.
-
-"This rate of change continues to increase, as does the number of developers and companies involved in the process; thus far, the development process has proved that it is able to scale up to higher speeds without trouble," the study concluded. 
+"This rate of change continues to increase, as does the number of developers and companies involved in the process; thus 研究总结出，“在开发人员和一些公司的参与到该进程中，使得改变的速度仍在不停地增长，就目前来看，发展的进程揭示出了”
+far, the development process has proved that it is able to scale up to higher speeds without trouble," the study concluded. 
 
 ![](http://asset1.cbsistatic.com/cnwk.1d/i/tim2/2013/09/17/Linux-lines-of-code_610x377.png)
 
