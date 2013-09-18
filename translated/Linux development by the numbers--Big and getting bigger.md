@@ -1,5 +1,5 @@
 Linux development by the numbers: Big and getting bigger
-越来越大！数字大话Linux的发展：
+越来越....！数字大话Linux的发展：
 ================================================================================
 The open-source operating system project is steadily growing through any number of measurements: programmers, updates, 
 这个开源的操作系统项目在各种评价指标中都在稳定地成长：程序开发人员数量、更新次数以及每小时变化次数。
