@@ -1,20 +1,21 @@
 WinUSB: Create A Bootable Windows USB In Linux
+WinUSB: 在linux上建立一个可引导的Windows USB
 ==========
-Hello Guys,
+大家好,
 
-Am not coming to promote the use of Microsoft Windows here. But this about how to create a bootable from Linux as you know, there is one this tools on Windows, Power ISO which does the job very well too.
+我不是来这里促进微软windows使用的,如你所见这是关于如何建立一个可引导启动的usb,当然在windows上也有一个工作的很好的工具,Power IOS.
 
-You might remember at point in college or house when someone needs to create a bootable windows USB either from a DVD or .ISO file but you are not on a Microsoft Windows to do this with either Power ISO, etc.
+你可能还记得在学校或者家里有时需要从DVD或者.iso文件建立一个可引导启动的windows USB,但你是不是在微软的Windows上使用Power IOS等等来做的.
 
-On Linux you can Unetbootin, but newer Unetbootin versions  no longer support, but you can use older versions and you need to format the USB to NTFS before doing this.  Which is some how complicated to new users.
+在linux上逆可以用Unetbootin,但是新版的Unetbootin不长时间支持版,你可以使用旧版本,在这之前还有你需要将USB格式化位NTFS格式.这对一个新手是很复杂的办法.
 
-Today am going to introduce you to the **winusb** tool, if you have never heard about it, no problem just continue reading.
+现在,我来介绍一**winusb**工具,如果逆从来没有听过它,不要紧继续读下去.
 
-**[WinUSB](http://congelli.eu/prog_info_winusb.html)** is a simple command line tool used to create Windows Installation’s or bootable USB stick under Linux.
+**[WinUSB](http://congelli.eu/prog_info_winusb.html)** 是一个在linux上用来建立Windows安装或者可引导usb的简单的命令行工具.
 
-First we have to install **winusb** and then we look at how to use it.
+首先我们安装 **winusb** 之后我们来看如何使用它.
 
-Installing **winusb** via PPA:
+安装**winusb** via PPA:
 
 $ sudo add-apt-repository ppa:colingille/freshlight $ sudo apt-get update $ sudo apt-get install winusb - See more at: http://www.unixmen.com/winusb-create-bootable-windows-usb-linux/#sthash.ZPxLBx2c.dpuf
 
@@ -22,7 +23,7 @@ $ sudo add-apt-repository ppa:colingille/freshlight $ sudo apt-get update $ sudo
     $ sudo apt-get update
     $ sudo apt-get install winusb
 
-WinUSB also works from the command line (terminal), we can create a Windows 7 or Windows Vista USB installer by running the following commands from the terminal (as a root user):
+WinUSB也可以在命令行工作(终端),我们可以在终端中使用下面命令(需要root权限)建立一个Windows 7或者windows Vista USB安装器:
 
     $ sudo winusb --format <iso path> <device>
 
@@ -30,9 +31,9 @@ WinUSB also works from the command line (terminal), we can create a Windows 7 or
 
     $ sudo winusb --format Desktop/SETHO/Win7.iso /dev/sdc1
 
-where **Desktop/SETHO/Win7.iso** is the path of the .iso file and **/dev/sdc1** is the device path. (**Note**: to get the device path use the **df** command)
+**Desktop/SETHO/Win7.iso** 是.iso文件路径,**/dev/sdc1**是设备路径.(**NOTE**:用**df**命令获得设备路径)
 
-To install a Windows ISO on **NTFS** partition and edit the Master Boot Record (MBR) of the device use the following commands:
+安装一个Windows ISO 在**NTFS**分区,用下面命令编辑主引导记录(MBR):
 
     $ sudo winusb --install <iso path> <partition>
 
@@ -40,17 +41,17 @@ To install a Windows ISO on **NTFS** partition and edit the Master Boot Record (
 
     $ sudo winusb --format Desktop/SETHO/Win7.iso /dev/sdd1
 
-where **/dev/sdd1** is the partition path.
+**/dev/sdd1**是分区路径
 
-**WinUSB** also has the Graphical User Interface (GUI) if you don’t like the command line, but you must try to learn hoe to love the command line now. Which is also simple to understand.
+如果你不喜欢命令行,你应该试着学习它爱上它,**WinUSB**也有很容易理解的图形界面(GUI)
 
-This can be launched from the dash:
+可以从dash启动:
 
 **Dash > WinUSB**
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/09/WinUSB_dash.png)
 
-After launching, you select the .iso and the device, then click on install.
+启动之后,选择.iso文件和设备,点击安装.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/09/WinUSB.png)
 
