@@ -16,6 +16,7 @@ Linux is growing -- that we knew. Now we know how fast.
 In the last two years, the number of developers who collectively create Linux has increased from 1,131 with version 3.0 
 根据Linu基金会最新的Linux开发年会的报告，在过去的两年中，通过合作方式打造Linux的开发人员数量从2011年3.0版本的1131个人涨
 in July 2011 to 1,392 with version 3.10, released in June 2013, according to the Linux Foundation's latest [annual Linux development report][1]. Also on the rise: the lines of code in the project, the number of changes accepted into each new 了2013年3.10版本的1392个人。同时增长的还有：项目代码的行数，每个新版本吸纳的改变数和这写改变到达的频次。
+到
 version, and the frequency at which those changes arrive.
 
 "This rate of change continues to increase, as does the number of developers and companies involved in the process; thus 研究总结出，“在开发人员和一些公司的参与到该进程中，使得改变的速度仍在不停地增长，就目前来看，发展的进程揭示出了”
