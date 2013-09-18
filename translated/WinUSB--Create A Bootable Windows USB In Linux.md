@@ -1,4 +1,3 @@
-
 WinUSB: 在linux上建立一个可引导的Windows USB
 ==========
 大家好,
@@ -7,7 +6,7 @@ WinUSB: 在linux上建立一个可引导的Windows USB
 
 你可能还记得在学校或者家里有时需要从DVD或者.iso文件建立一个可引导启动的windows USB,但你是不是在微软的Windows上使用Power IOS等等来做的.
 
-在linux上你可以用Unetbootin,但是新版的Unetbootin再支持,你可以使用旧版本,在这之前还有你需要将USB格式化位NTFS格式.这对新手来说确实很复杂.
+在linux上你可以用Unetbootin,但是新版的Unetbootin不再支持,你可以使用旧版本,在这之前还有你需要将USB格式化位NTFS格式.这对新手来说确实很复杂.
 
 现在,我来介绍一个**winusb**工具,如果你从来没有听过它,没关系，请继续读下去.
 
