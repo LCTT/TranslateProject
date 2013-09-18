@@ -3,10 +3,10 @@ Linux development by the numbers: Big and getting bigger
 The open-source operating system project is steadily growing through any number of measurements: programmers, updates, and changes per hour.
 --------------------------------------------------------------------------------
 ![](http://asset0.cbsistatic.com/cnwk.1d/i/tim2/2013/09/17/Linux-developers-contributing_610x342.png)
-
+  
 The number of developers creating Linux has steadily increased from version 3.0, released July 21, 2011, to version 3.10, released June 30, 2013.
 (Credit: data from Linux Foundation; chart by Stephen Shankland/CNET) 
-
+ 
 Linux is growing -- that we knew. Now we know how fast.
 
 In the last two years, the number of developers who collectively create Linux has increased from 1,131 with version 3.0 in July 2011 to 1,392 with version 3.10, released in June 2013, according to the Linux Foundation's latest [annual Linux development report][1]. Also on the rise: the lines of code in the project, the number of changes accepted into each new version, and the frequency at which those changes arrive.
