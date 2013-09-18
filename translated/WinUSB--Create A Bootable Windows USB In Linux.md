@@ -12,7 +12,7 @@ WinUSB: 在linux上建立一个可引导的Windows USB
 
 **[WinUSB](http://congelli.eu/prog_info_winusb.html)** 是一个在linux上用来建立Windows安装或者可引导usb的简单的命令行工具.
 
-首先我们安装 **winusb** 之后我们来看如何使用它.
+我们先来安装 **winusb**， 之后我们来看如何使用它.
 
 安装**winusb** via PPA:
 
