@@ -1,4 +1,5 @@
 German City Starts Distributing Free Ubuntu 12.04 CDs to Windows XP Users
+德国某城市开始免费向WinXP用户分发Ubuntu12.04 CD光盘
 ================================================================================
 Ahead of the severing of official support for Microsoft Windows XP next year, the German city of Munich have begun offering free Ubuntu 12.04 LTS CDs in select local libraries.
 
