@@ -1,15 +1,15 @@
-WinUSB: Create A Bootable Windows USB In Linux
+
 WinUSB: 在linux上建立一个可引导的Windows USB
 ==========
 大家好,
 
-我不是来这里促进微软windows使用的,如你所见这是关于如何建立一个可引导启动的usb,当然在windows上也有一个工作的很好的工具,Power IOS.
+我不是来这里促进微软windows使用的,如你所见这是关于如何创建一个可引导的usb,在Windows中也有一个这样的工具，它就是工作性能良好的Power ISO.
 
 你可能还记得在学校或者家里有时需要从DVD或者.iso文件建立一个可引导启动的windows USB,但你是不是在微软的Windows上使用Power IOS等等来做的.
 
-在linux上逆可以用Unetbootin,但是新版的Unetbootin不长时间支持版,你可以使用旧版本,在这之前还有你需要将USB格式化位NTFS格式.这对一个新手是很复杂的办法.
+在linux上你可以用Unetbootin,但是新版的Unetbootin再支持,你可以使用旧版本,在这之前还有你需要将USB格式化位NTFS格式.这对新手来说确实很复杂.
 
-现在,我来介绍一**winusb**工具,如果逆从来没有听过它,不要紧继续读下去.
+现在,我来介绍一个**winusb**工具,如果你从来没有听过它,没关系，请继续读下去.
 
 **[WinUSB](http://congelli.eu/prog_info_winusb.html)** 是一个在linux上用来建立Windows安装或者可引导usb的简单的命令行工具.
 
@@ -43,7 +43,7 @@ WinUSB也可以在命令行工作(终端),我们可以在终端中使用下面�
 
 **/dev/sdd1**是分区路径
 
-如果你不喜欢命令行,你应该试着学习它爱上它,**WinUSB**也有很容易理解的图形界面(GUI)
+**WinUSB**同样有GUI，如果你不喜欢命令行,你应该试着学习它爱上它,其实它很简单易懂.
 
 可以从dash启动:
 
@@ -61,12 +61,12 @@ via:http://www.unixmen.com/winusb-create-bootable-windows-usb-linux/
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[译者ID][] 校对：[校对者ID][]
+译者：[译者ID][] 校对：[Caroline][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [译者ID]:http://linux.cn/space/译者ID
-[校对者ID]:http://linux.cn/space/校对者ID
+[Caroline]:http://linux.cn/space/14763
 
 [1]:http://www.unixmen.com/winusb-create-bootable-windows-usb-linux/
 [2]:http://congelli.eu/prog_info_winusb.html 
