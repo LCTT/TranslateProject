@@ -1,4 +1,4 @@
-The Linux Mint Repositories are Closed on September 18
+9月18日，Linux Mint信息库关闭
 ==========
 **Clement Lefebvre has announced earlier today, September 17, 2013, that the main software repositories for the popular Linux Mint operating system will be closed for maintenance on September 18, 2013.**
 
