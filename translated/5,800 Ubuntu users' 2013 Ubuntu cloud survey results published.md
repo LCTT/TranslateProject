@@ -16,3 +16,4 @@ via: http://iloveubuntu.net/5800-ubuntu-users-2013-ubuntu-cloud-survey-results-p
 [Linux中国]:http://linux.cn/portal.php
 [译者ID]:http://linux.cn/space/神之一手
 [校对者ID]:http://linux.cn/space/校对者ID
+ 
