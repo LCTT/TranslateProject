@@ -1,7 +1,7 @@
-德国城市开始免费向WinXP用户分发Ubuntu12.04光盘
-================================================================================
+德国慕尼黑开始免费向WinXP用户分发Ubuntu12.04光盘
+=======================================
 
-眼瞅着明年微软即将终止对WindowsXP的官方支持，德国城市慕尼黑已经开始向当地选出的一些图书馆免费提供Ubuntu12.04 LTS CD光盘。
+**眼瞅着明年微软即将终止对WindowsXP的官方支持，德国城市慕尼黑已经开始向当地选出的一些图书馆免费提供Ubuntu12.04 LTS CD光盘。**
 
 ![The Linux CD Distributed by Munich](http://www.omgubuntu.co.uk/wp-content/uploads/2013/09/linuxcd-800_kl.jpg)
 
@@ -53,12 +53,12 @@ via: http://www.omgubuntu.co.uk/2013/09/ubuntu-12-04-lts-cds-munich-windows-xp
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[Mr小眼儿][] 校对：[校对者ID][]
+译者：[Mr小眼儿][] 校对：[wxy][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/14801
-[校对者ID]:http://linux.cn/space/校对者ID
+[Mr小眼儿]:http://linux.cn/space/14801
+[wxy]:http://linux.cn/space/wxy
 
 [1]:http://www.omgubuntu.co.uk/2013/09/ubuntu-12-04-lts-cds-munich-windows-xp
 [2]:http://www.muenchen.de/rathaus/Stadtverwaltung/Direktorium/IT-Beauftragte/Aktuelles/linux_cd.html
