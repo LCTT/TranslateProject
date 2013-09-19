@@ -35,7 +35,7 @@ via: http://iloveubuntu.net/powerful-ebook-editor-sigil-moved-new-development-ar
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [Vito]:http://linux.cn/space/vito
-[校对者ID]:http://linux.cn/space/校对者ID
+[Jiefu]:http://linux.cn/space/Jiefu
 
 [1]:http://iloveubuntu.net/powerful-ebook-editor-sigil-moved-new-development-area-looking-code-contributions-and-active
 [2]:http://sigildev.blogspot.ro/2013/09/sigil-status.html
