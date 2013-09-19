@@ -30,7 +30,7 @@ via: http://www.omgubuntu.co.uk/2013/09/hp-china-ubuntu-retail-stores-expansion
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/Jiefu
+[Jiefu]:http://linux.cn/space/Jiefu
 [Caroline]:http://linux.cn/space/14763
 
 [1]:http://www.omgubuntu.co.uk/2013/09/dell-to-increase-number-of-stores-selling-ubuntu-loaded-laptops
