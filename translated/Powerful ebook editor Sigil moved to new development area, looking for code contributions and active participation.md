@@ -18,13 +18,13 @@ Sigil拥有众多特点:
 
 但是, 似乎目前Sigil正在经历一条艰难之路, 也就是说, 它缺少代码参与与投入.
 
-今天, Sigil的主要维护者[宣布](http://sigildev.blogspot.ro/2013/09/sigil-status.html)Sigil "到现在为止有零个外来贡献者"， "在线支持" 由于不存在参与到项目中.
+今天, Sigil的主要维护者[宣布](http://sigildev.blogspot.ro/2013/09/sigil-status.html)Sigil "到现在为止有零个外来贡献者"， 因为缺少开发者参与而处在“垂死边缘”.
 
 因此, 开发者已将Sigil移动到GitHub上托管(从之前的Google Code上), 希望新的开发区,--GitHub--, 可以吸引新的感兴趣的开发者参与这个项目的开发, "我决定将项目搬到GitHub以帮助吸引贡献者"，开发者表示.
 
-在[https://github.com/user-none/Sigil](https://github.com/user-none/Sigil)，新的开发参与平台是可利用的.
+该项目的新地址在[https://github.com/user-none/Sigil](https://github.com/user-none/Sigil).
 
-"Sigil的观点非常漂亮.我不敢说他将来会怎么样，但是我希望转移到GitHub后有更多的人可以参与进来，以帮助Sigil继续成长".
+"Sigil的观点非常漂亮.我不敢说他将来会怎么样，但是我希望转移到GitHub后有更多的人可以参与进来，帮助Sigil继续成长".
 
 via: http://iloveubuntu.net/powerful-ebook-editor-sigil-moved-new-development-area-looking-code-contributions-and-active
 
