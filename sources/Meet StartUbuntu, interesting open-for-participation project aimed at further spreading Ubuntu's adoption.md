@@ -1,4 +1,5 @@
 Meet StartUbuntu, interesting open-for-participation project aimed at further spreading Ubuntu's adoption 
+相遇StartUbuntu——一个有趣的开放共同参与的项目，目的是为了更广泛的扩展Ubuntu的认可度
 ================================================================================
 Ubuntu is a powerful, solid and no-compromise operating system centering numerous features, professional designs and user-centric interactions, OS used by 20 million users across the globe.
 
