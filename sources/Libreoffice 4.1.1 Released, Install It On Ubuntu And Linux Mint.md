@@ -1,3 +1,4 @@
+翻译中
 Libreoffice 4.1.1 Released, Install It On Ubuntu And Linux Mint
 ===============================================================
 
