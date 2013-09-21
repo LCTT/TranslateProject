@@ -20,6 +20,6 @@ via: http://news.softpedia.com/news/The-Linux-Mint-Repositories-are-Closed-on-Se
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [Vito]:http://linux.cn/space/Vito
-[校对者ID]:http://linux.cn/space/14763
+[Caroline]:http://linux.cn/space/14763
 
 [1]:http://blog.linuxmint.com/?p=2448
