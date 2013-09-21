@@ -1,3 +1,4 @@
+翻译中
 $350-$400 Solar-powered Ubuntu laptop SOL to be launched worldwide in December 2013 
 ==========
 [SOL](http://solaptop.com/en/products/laptops/) is a definitely interesting project, presenting itself as a solar-powered family of laptops rooted in low prices and exciting capabilities.
