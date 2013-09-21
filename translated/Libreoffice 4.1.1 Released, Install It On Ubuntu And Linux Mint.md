@@ -43,4 +43,4 @@ via: http://www.unixmen.com/libreoffice-4-1-1-released-install-ubuntu-linux-mint
 [译者ID]:http://linux.cn/space/译者ID
 [校对者ID]:http://linux.cn/space/校对者ID
 
-[1]:http://www.libreoffice.org/download/release-notes/
+[1]:http://www.libreoffice.org/download/release-notes/ 
