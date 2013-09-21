@@ -1,19 +1,25 @@
 Meet StartUbuntu, interesting open-for-participation project aimed at further spreading Ubuntu's adoption 
-相遇StartUbuntu——一个有趣的开放共同参与的项目，目的是为了更广泛的扩展Ubuntu的认可度
+相遇StartUbuntu——一个有趣的开放共同参与的项目，它目的是为了更广泛的扩展Ubuntu的认可度
 ================================================================================
 Ubuntu is a powerful, solid and no-compromise operating system centering numerous features, professional designs and user-centric interactions, OS used by 20 million users across the globe.
+Ubuntu是一个强大、稳定并且不妥协的操作系统，它集中了大量的优点、专业的设计以及以用户为中心的交互界面，在全球拥有2000万的用户。
 
 Ubuntu has both power and looks, therefore, awareness has the capacity to always increase its number of users, awareness at a planetary scale having the capacity to extend Ubuntu's usage deeper and deeper all over Earth.
+Ubuntu既有强大的功能又有好看的界面。因此，它有能力让使用它的用户的数量不断增加，这同时也让Ubuntu的使用越来越广泛。
 
 [StartUbuntu](https://launchpad.net/startubuntu) is an interesting full-of-potential initiative created by third-party users concerned with the now's OS-usage percentages at a global scale, project designed in mind with pushing Ubuntu into the hands of more and more users.
+StartUbuntu是一个充满潜力的有趣的创新，它是由一群在全球范围内关注现代操作系统使用率的第三方用户创建的。项目设计的目标是把Ubuntu送到越来越多的人手中。
 
 A definitely exciting aspect of the StartUbuntu project is its clarity and sharp focus, meaning, the project aims at attracting users from Windows XP via a handy strategy: offering the full Ubuntu family of flavors to users of Windows XP seeking to change their OS.
+StartUbuntu项目清晰而明确的目标无疑是让人兴奋的，它旨在利用一个方便的策略来将用户从Windows XP处吸引过来：为那些正寻求改变他们系统的Windows XP用户提供整套Ubuntu家族软件。
 
 The Ubuntu alternative is to be offered to former XP users due to XP's end-of-life reaching in April 8th, 2014 (and thus its users looking for a new OS).
+Ubuntu是要给那些曾经的XP用户提供一个选择，由于XP系统将在2014年4月8日结束它的生命周期，因此它的用户正在寻找一个新的系统。
 
 ![](http://iloveubuntu.net/pictures_me/startubuntu%20version%202.png)
 
 The StartUbuntu project has just been resurrected, moving itself to version 2 of the project with refreshed goals and more strengthened precisely-conceived action phases, including:
+StartUbuntu项目刚刚被复活，而且已经移到了第二版，更新了项目目标，设立了更多的严格构思过的行动步骤，包括：
 
 - phase 0 (define the project and clearly expose its goals in the open)
 - phase 1 (build an open-for-participation team)
