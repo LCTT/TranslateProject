@@ -19,7 +19,7 @@ hardware will change even more.
 
 ###Hardware Innovation's Future
 
-Yet Torvalds considered that hardware innovation might at some point slow down. He said he's interested in seeing how the industry will react when Moore's Law no longer works. In his view, it's just a matter of physics with how far silicon innovation can go.
+Yet Torvalds considered that hardware innovation might at some point slow down. He said he's interested in seeing how the industry will react when [Moore's Law][1] no longer works. In his view, it's just a matter of physics with how far silicon innovation can go.
 
 "The reason why Linux runs well on cell phones is because cell phones grew up, and they are thousands of times more powerful than the original machine I used to build Linux," Torvalds said. "People like to pay lip service to Moore's Law, but in 10 years it will be really tough."
 
@@ -43,3 +43,14 @@ While Torvalds has a full life outside Linux, it is at the core of his existence
 "I don't see any project coming along being more interesting to me than Linux," Torvalds said. "I couldn't imagine filling the void in my life if I didn't have Linux."
 
 via : http://www.eweek.com/developer/linus-torvalds-talks-linux-development-at-linuxcon.html
+
+本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
+
+译者：[译者ID][] 校对：[校对者ID][]
+
+[LCTT]:https://github.com/LCTT/TranslateProject
+[Linux中国]:http://linux.cn/portal.php
+[译者ID]:http://linux.cn/space/译者ID
+[校对者ID]:http://linux.cn/space/校对者ID
+
+[1]:http://en.wikipedia.org/wiki/Moore%27s_law
