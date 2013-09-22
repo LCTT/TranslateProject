@@ -10,7 +10,7 @@ Ubuntu曾企图征服FOSS（Free and Open Source Software自由和开源软件�
 
 看起来这个小组当前的目标是为Fedora20准备一个足够的技术预览，至少目前是这样。这不是一个工作实现项目，但至少应该会给人们一个值得期待的idea。
 
-Ubuntu13.10预定于10月份发布，在这个特殊的时间点上，Canonical是否会急切的使出全力力推Mir，目前还并不明朗。
+Ubuntu13.10预定于10月份发布，在这个特殊的时间点上，Canonical是否会急切的使出全力推出Mir，目前还并不明朗。
 
 Schaller在他的博客中还写道，“因此，一旦确信用户不会感到负面影响，我们才会最终用Wayland替代X。所以，在Fedora21中默认采用Wayland还是X，这仍然是一个悬而未决的问题。”
 
