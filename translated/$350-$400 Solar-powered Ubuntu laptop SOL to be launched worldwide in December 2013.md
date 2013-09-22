@@ -24,7 +24,6 @@ SOL的规格参数:(应该不用译吧..)
 - Bluetooth: Integrated Digital Core BT4.0
 
 SQL设有多种风格,外观好看标新立异,醒目的标志图案,通过多种颜色过滤外观,包括深色,灰色,绿色,红色;结果:一个优雅的移动设备。
-=======
 
 ![](http://iloveubuntu.net/pictures_me/sol%20laptop%201.jpg)
 ![](http://iloveubuntu.net/pictures_me/sol%20laptop%202.jpg)
