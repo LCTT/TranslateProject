@@ -1,14 +1,14 @@
  在CentOS 6.4上安装Ampache流媒体服务
 ==========
-[Ampache][2]是一个基于网页的音频/视频的流媒体软件和文件管理器。它允许你使用几乎所有互联网设备从任何地方去访问你的音乐和视频。它不是一个媒体管理器,它只是在一个有用的方式上使用存在的已组织的媒体文件。所以，你必须意识到管理和组织这些媒体文件。
+[Ampache][2]是一个基于网页的音频/视频的流媒体软件和文件管理器。你可以使用几乎所有互联网设备从任何地方去访问你的音乐和视频。它不是一个媒体管理器,只是有效利用了现有分类好的媒体文件。所以，你必须有意识地组织管理这些媒体文件。
 
 **方案**
 
-这个指南是在CentOS 6.4上测试的,虽然，它几乎应该工作在所有基于RHEL的系统上。在这篇指南中, 我的测试机的主机名和IP地址是**server.unixmen.com** 和 **192.168.1.201/24**.在你自己适当的地方改变这些值。
+尽管它应该在几乎所有基于RHEL系统上工作，但这个指南是在CentOS 6.4上测试的。在这篇指南中, 我的测试机主机名和IP地址分别为**server.unixmen.com** 和 **192.168.1.201/24**.你可以根据自己的地址适当改变这些值。
 
-**先决条件**
+**前提**
 
-你的服务器上应该安装和配置了Apache，MySQL和PHP（LAMP）。 参考任何以下链接之一去安装LAMP服务。
+你的服务器上应该安装和配置了Apache，MySQL和PHP（LAMP）。参考以下链接中的任何一个来安装LAMP服务。
 
 - 在CentOS 6.4上安装LAMP(Apache, MariaDB, PHP)服务。 
 
@@ -68,11 +68,11 @@
 
     # wget https://github.com/ampache/ampache/archive/3.6-alpha6.zip
 
-**注释:** 这里你可以用两种方法来访问你的流媒体服务网站。
+**注释:** 这里你可以使用以下两种方法来访问你的流媒体服务网站。
 
-1. 直接从网站根目录, 通过导航到**http://domain-name/**你可以成功访问你的网站。
+1. 直接从网站根目录访问, 这样你可以通过导航到**http://domain-name/**来访问你的网站。
 
-2.或者网站根目录和从主机网站的分目录创建一个sub目录，即可使用URL**http://domain-name/sub-directory-name**成功访问你的网站。
+2. 另外，你可以在网站根目录和主机网站子目录中创建一个子目录，这样你可使用URL**http://domain-name/sub-directory-name**成功访问你的网站。
 
 此时, 因为测试目的,我将要在sub目录下访问我的流媒体网站。
 
@@ -84,7 +84,7 @@
 
     # mv ampache-3.6-alpha6/ /var/www/html/ampache
 
-设置ampache/config目录的写权限。
+设置ampache/config目录的写入权限。
 
     # chmod -R 777 /var/www/html/ampache/config/
 
@@ -92,7 +92,7 @@
 
 打开浏览器在地址栏中输入**http://domain-name/ampache**或**http://ip-address/ampache**。
 
-接下来就会出现。点击**Start configuration（开始配置）**。
+将会出现下面界面。点击**Start configuration（开始配置）**。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/09/Ampache-Pour-lAmour-de-la-Musique-Install-Mozilla-Firefox_001.png)
 
@@ -108,11 +108,11 @@
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/09/Ampache-Pour-lAmour-de-la-Musique-Install-Mozilla-Firefox_008.png)
 
-最后，Ampache将要求你更新最新版本。点击Update（更新）。
+最后，Ampache将要求你更新到最新版本。点击Update（更新）。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/09/Ampache-Update-Mozilla-Firefox_010.png)
 
-That’s it（这该肿么翻译）。现在Apmache已经安装完成。为进一步配置，我建议你阅读官方Ampache Wiki页。
+就是这样，现在你已经成功安装Apmache。为进一步配置，我建议你阅读官方[Ampache Wiki][]。
 
 via:http://www.unixmen.com/setup-streaming-media-server-ampache/
 
@@ -120,6 +120,7 @@ via:http://www.unixmen.com/setup-streaming-media-server-ampache/
 
 译者：[Vito][] 校对：[校对者ID][]
 
+[Ampache Wiki]:http://ampache.org/wiki/start
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [Vito]:http://linux.cn/space/Vito
