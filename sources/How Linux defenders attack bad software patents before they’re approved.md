@@ -1,4 +1,5 @@
 How Linux defenders attack bad software patents before they’re approved
+Linux守护者们怎样在恶意软件专利被批准之前干掉它们
 ================================================================================
 Group identifies dangerous patents and tries to cut them down to size.
 --------------------------------------------------------------------------------
