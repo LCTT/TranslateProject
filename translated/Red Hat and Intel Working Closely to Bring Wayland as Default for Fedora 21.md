@@ -26,4 +26,4 @@ via:http://news.softpedia.com/news/Red-Hat-and-Intel-Working-Closely-to-Bring-Wa
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [Mr小眼儿]:http://linux.cn/space/14801
-[校对者ID]:http://linux.cn/space/校对者ID
+[校对者ID]:http://linux.cn/space/校对者ID 
