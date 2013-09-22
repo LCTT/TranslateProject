@@ -112,20 +112,20 @@
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/09/Ampache-Update-Mozilla-Firefox_010.png)
 
-就是这样，现在你已经成功安装Apmache。为进一步配置，我建议你阅读官方[Ampache Wiki][]。
+对了，就是这样！现在你已经成功安装Apmache。为进一步配置，我建议你阅读官方的[Ampache Wiki][]。
 
 via:http://www.unixmen.com/setup-streaming-media-server-ampache/
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[Vito][] 校对：[校对者ID][]
+译者：[Vito][] 校对：[Caroline][]
 
-[Ampache Wiki]:http://ampache.org/wiki/start
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [Vito]:http://linux.cn/space/Vito
-[校对者ID]:http://linux.cn/space/校对者ID
+[Caroline]:http://linux.cn/space/14763
 
+[Ampache Wiki]:http://ampache.org/wiki/start
 [1]:http://www.unixmen.com/setup-streaming-media-server-ampache/
 [2]:https://github.com/ampache/ampache/
 [3]:https://github.com/ampache/ampache/tags
