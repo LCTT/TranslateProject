@@ -1,5 +1,5 @@
 技术胜过教条——关于开源的一些见解
-================================================================================
+============================
 
 为何Marten Mickos 是开源领域中最受尊敬的领导者之一，本文将告诉你原因。
 --------------------------------------------------------------------------------
@@ -7,13 +7,11 @@
 ![Technology Trumps Dogma, And Other Open Source Insights](http://readwrite.com/files/styles/630_0su/public/files/files/cloud/marten-mickos.jpg)
 
 
-几周前，我访问了Eucalyptus System的CEO Marten Mickos，想请他[就开源领域中的人员构成变化问题发表一些看法](http://readwrite.com/2013/08/27/linux-turns-22-but-open-source-is-eternal#awesm=~oh8KYvjJatv2EW)。他也确实这么做了，而且是用明显的Mickos风格。
-
+几周前，我拜访了Eucalyptus System的CEO Marten Mickos，想请他[就开源领域中的人员构成变化问题发表一些看法](http://readwrite.com/2013/08/27/linux-turns-22-but-open-source-is-eternal#awesm=~oh8KYvjJatv2EW)。他也确实给出了他的看法，而且是用明显的Mickos风格。
 
 我本打算分享Mickos所有天才般的见解，但不幸的是，由于篇幅限制，很多精彩言论只能被迫砍掉。Mickos曾经帮助MySQL成为世界上最受欢迎的数据库，如今，他正尝试让一个开源云计算产品达到同样的高度。
 
-经历过多次成功与失败后，Mickos有无数有关开源的智慧分享给我们。例如当开源开发者一直在努力回避企业对某一个开源项目的影响时，Mickos却提醒我们，金钱是至关重要的发展资金，更何况营销和文档。那种爱好和平拒绝金钱的开源项目只能是一个神话。
-
+经历过多次成功与失败后，Mickos有无数有关开源的智慧分享给我们。例如当开源开发者一直在努力回避企业对某一个开源项目的影响时，Mickos却提醒我们，金钱是至关重要的发展资金，更何况营销和文档。那种爱好和平、拒绝金钱的开源项目只能是一个神话。
 
 **金钱对于开源的重要性...**
 
@@ -76,15 +74,15 @@ FOSS（Free Open Source Software自由及开源软件）许可证及其管理模
 最成功的开源项目往往以开发者为目标。而那些供普通消费者或非技术人员使用的产品往往并不成功。但往往也有一些著名的例外，例如Firefox,Android,也许OpenOffice也算一个。
 
 
-via:http://readwrite.com/2013/09/13/marten-mickos-interview-open-source-mysql-eucalyptus#awesm=~ohyLw9yLiVE59U
+via:http://readwrite.com/2013/09/13/marten-mickos-interview-open-source-mysql-eucalyptus
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[Mr小眼儿][] 校对：[校对者ID][]
+译者：[Mr小眼儿][] 校对：[wxy][]
 
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/14801
-[校对者ID]:http://linux.cn/space/校对者ID
+[Mr小眼儿]:http://linux.cn/space/14801
+[wxy]:http://linux.cn/space/wxy
 
