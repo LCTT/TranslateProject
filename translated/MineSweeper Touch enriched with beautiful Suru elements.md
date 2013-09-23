@@ -9,7 +9,7 @@ Suru在官方的核心应用程序中可谓是“一流公民”了，但是，�
 
 [MineSweeper Touch](https://launchpad.net/minesweeper-touch)是一款将可爱的扫雷游戏化身到Ubuntu SDK界面的奇特游戏。最近，随着新式的Suru风格在其视图中的融入，MineSweeper Touch又增添了相当有趣的外观和体验。
 
-结果：当运行MineSweeper Touch时，用户会发现紫色的背景衬托着紫红色的圆角小方块，揭开这些分开放置的小方块时，它们会像显示游戏细节的已开拓区域一样变成白色的。
+这样，当运行MineSweeper Touch时，用户会发现紫色的背景衬托着紫红色的圆角小方块，揭开这些分开放置的小方块时，它们会像显示游戏细节的已开拓区域一样变成白色的。
 
 ![](http://iloveubuntu.net/pictures_me/MineSweeper%20Touch%20suru%20style%201.png)
 
