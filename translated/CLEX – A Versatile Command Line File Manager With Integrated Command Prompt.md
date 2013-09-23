@@ -87,4 +87,4 @@ via:http://mylinuxbook.com/clex-a-versatile-command-line-file-manager/
 [1]:http://mylinuxbook.com/clex-a-versatile-command-line-file-manager/
 [2]:http://www.clex.sk/about.html
 [3]:http://www.clex.sk/download/
-[4]:http://www.clex.sk/help/file_intro.html
+[4]:http://www.clex.sk/help/file_intro.html 
