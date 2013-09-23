@@ -1,5 +1,5 @@
 MineSweeper Touch增添了漂亮的Suru元素
-================================================================================
+==================================
 
 设计是Ubuntu下一代组件至关重要的部分，设计正逐步但已可见地在区域、元素和部件等方面实施，整体的设计能量正把Unbuntu的下一代组件提升到一个优越的、现代的以及创新的水平。
 
@@ -23,7 +23,7 @@ via: http://iloveubuntu.net/minesweeper-touch-enriched-beautiful-suru-elements
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[译者ID][晨光] 校对：[Caroline][]
+译者：晨光 校对：[Caroline][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
