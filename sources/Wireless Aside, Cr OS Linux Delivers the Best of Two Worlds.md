@@ -1,6 +1,8 @@
 Wireless Aside, Cr OS Linux Delivers the Best of Two Worlds
 ===========================================================
 
+【翻译中】
+
 **It is easy to be misled about exactly what Cr OS is. This open source OS project first debuted in 2009 as Chrome OS Linux. Last September its developers changed the name to Cr OS Linux. Even with a recent name change for this distro, it can be mistaken for other Linux OS projects that resemble Google's Chrome OS. Think Chromebook here.**
 
 The [Cr OS Linux][1] distribution is an interesting blend of the Cinnamon desktop with a special edition of the Chromium Web browser.
