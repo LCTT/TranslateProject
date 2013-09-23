@@ -14,7 +14,7 @@ Now, let's explore the 7 lightweight markup languages at hand. For each title we
 - **[MultiMarkdown][2]** 	--Based on Markdown with additional features
 - **[AsciiDoc][3]** 	--Presentable text document format for writing articles
 - **[Textile][4]** 	--Billed as a "humane web text generator"
-- **[Texy][5]** 	--Text-to-XHTML formatter and converter library
+- **[Texy][5]** 	--Text-to-XHTML formatter and converter library 
 - **[Tome][6]** 	--Markup Language and Tool Suite for Authors
 - **[reStructuredText][7]** 	--Markup Syntax and Parser Component of Docutils
 
