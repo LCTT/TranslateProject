@@ -84,7 +84,7 @@ via: http://mylinuxbook.com/ledger-command-line-accounting-tool-2/
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
-[Vito]:http://linux.cn/space/译者ID
+[译者ID]:http://linux.cn/space/译者ID
 [校对者ID]:http://linux.cn/space/校对者ID
 
 [1]:http://www.gnucash.org/
