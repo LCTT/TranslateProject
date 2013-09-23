@@ -1,4 +1,5 @@
 Glances – An All In One System Monitoring Tool
+Glances -一个一站式的系统监视器
 ================================================================================
 There are very few command line tools that aim to provide a user with maximum possible information irrespective of the terminal size. Most of the utilities respond in similar manner — Either the display of information gets messed up or tool gives an error. But, one such tool that displays a lot of system/network monitoring related information from a 80X24 terminal to any bigger size terminal is **Glances**.
 
