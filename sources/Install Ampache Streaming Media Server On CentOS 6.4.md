@@ -1,4 +1,4 @@
- 在CentOS 6.4上安装Ampache流媒体服务
+Install Ampache Streaming Media Server On CentOS 6.4
 ==========
 [Ampache][2] is a a web based audio/video streaming software and file manager. It allows you to access your music & videos from anywhere, using almost any internet enabled device. It isn’t a media organizer, it just use the existing organized media files in a useful way. So you must be aware of managing and organizing the media files.
 
@@ -116,7 +116,7 @@ via:http://www.unixmen.com/setup-streaming-media-server-ampache/
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[Vito][] 校对：[校对者ID][]
+译者：[译者ID][] 校对：[校对者ID][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php

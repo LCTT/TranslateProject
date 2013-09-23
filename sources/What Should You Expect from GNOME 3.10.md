@@ -1,6 +1,4 @@
-skdjfksjdf
-
-    【开始翻译】
+What Should You Expect from GNOME 3.10
 ==========
 **GNOME 3.10 should be released this month, on September 25, and every Linux users who uses it expects the unexpected, so we thought it would be a very good idea to preview some of its upcoming features.**
 
