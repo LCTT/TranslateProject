@@ -31,4 +31,4 @@ via: http://iloveubuntu.net/minesweeper-touch-enriched-beautiful-suru-elements
 
 [1]:http://iloveubuntu.net/minesweeper-touch-enriched-beautiful-suru-elements
 [2]:https://launchpad.net/minesweeper-touch
-[3]:https://code.launchpad.net/~flscogna/minesweeper-touch/trunk-1
+[3]:https://code.launchpad.net/~flscogna/minesweeper-touch/trunk-1 
