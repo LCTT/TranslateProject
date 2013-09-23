@@ -1,20 +1,21 @@
- 在CentOS 6.4上安装Ampache流媒体服务
-==========
-[Ampache][2]是一个基于网页的音频/视频流媒体软件和文件管理器。你可以使用几乎所有互联网设备从任何地方去访问你的音乐和视频。它不是一个媒体管理器,只是有效利用了现有分类好的媒体文件。所以，你必须有意识地组织管理这些媒体文件。
+在CentOS 6.4上安装Ampache流媒体服务
+================================
 
-**方案**
+[Ampache][1]是一个基于WEB的音频/视频流媒体软件和文件管理器。你可以使用几乎所有的互联网设备从任何地方去访问你的音乐和视频。它不是一个媒体管理器,只是有效利用了现有分类好的媒体文件。所以，你必须预先组织好这些媒体文件。
 
-尽管它应该在几乎所有基于RHEL系统上工作，但这个指南是在CentOS 6.4上测试的。在这篇指南中, 我的测试机主机名和IP地址分别为**server.unixmen.com** 和 **192.168.1.201/24**.你可以根据自己的地址适当改变这些值。
+###方案
 
-**前提**
+尽管它应该在几乎所有基于RHEL的系统上工作，但这个指南是在CentOS 6.4上测试的。在这篇指南中, 我的测试机主机名和IP地址分别为**server.unixmen.com** 和 **192.168.1.201/24**.你可以根据自己的地址适当改变这些值。
+
+###前提
 
 你的服务器上应该安装和配置了Apache，MySQL和PHP（LAMP）。参考以下链接中的任何一个来安装LAMP服务。
 
-- 在CentOS 6.4上安装LAMP(Apache, MariaDB, PHP)服务。 
+- [在CentOS 6.4上安装LAMP(Apache, MariaDB, PHP)服务。][2] 
 
 或者
 
-- 在CentOS 6.4上安装LAMP(Apache, MySQL, PHP)服务。
+- [在CentOS 6.4上安装LAMP(Apache, MySQL, PHP)服务。][3]
 
 > 译者注：注意，两种安装方式的数据库是不同的
 
@@ -22,7 +23,7 @@
 
     # yum install php-mcrypt php-pdo php-cli php-mysql php-gd php-xml libtool-ltdl mhash mcrypt -y
 
-**为Ampache创建数据库用户**
+###为Ampache创建数据库用户
 
 例如, 这里，我将要创建一个名为“**ampachedb**”的数据库用户和“**ampachedb**”用户的密码为“**centos**”的数据。你可以根据你的喜好来定义数据库。
 
@@ -48,7 +49,7 @@
     MariaDB [(none)]&gt; exit
     Bye
 
-**调整防火墙/路由器的设置**
+###调整防火墙/路由器的设置
 
 允许apache的默认端口“80”通过防火墙/路由器。编辑 /etc/sysconfig/iptables 文件,
 
@@ -62,9 +63,9 @@
 
     # /etc/init.d/iptables restart
 
-**获取Ampache**
+###获取Ampache
 
-[在这下载Ampache][3]最新版本或者从你的终端输入以下命令去下载。
+[在这下载Ampache][4]最新版本或者从你的终端输入以下命令去下载。
 
     # wget https://github.com/ampache/ampache/archive/3.6-alpha6.zip
 
@@ -88,7 +89,7 @@
 
     # chmod -R 777 /var/www/html/ampache/config/
 
-**开始安装**
+###开始安装
 
 打开浏览器在地址栏中输入**http://domain-name/ampache**或**http://ip-address/ampache**。
 
@@ -112,9 +113,10 @@
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/09/Ampache-Update-Mozilla-Firefox_010.png)
 
-对了，就是这样！现在你已经成功安装Apmache。为进一步配置，我建议你阅读官方的[Ampache Wiki][]。
+对了，就是这样！现在你已经成功安装Apmache。为进一步配置，我建议你阅读官方的[Ampache Wiki][5]。
 
 via:http://www.unixmen.com/setup-streaming-media-server-ampache/
+
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
@@ -125,7 +127,8 @@ via:http://www.unixmen.com/setup-streaming-media-server-ampache/
 [Vito]:http://linux.cn/space/Vito
 [Caroline]:http://linux.cn/space/14763
 
-[Ampache Wiki]:http://ampache.org/wiki/start
-[1]:http://www.unixmen.com/setup-streaming-media-server-ampache/
-[2]:https://github.com/ampache/ampache/
-[3]:https://github.com/ampache/ampache/tags
+[1]:https://github.com/ampache/ampache/
+[2]:http://www.unixmen.com/install-lamp-apache-with-mariadb-and-php-on-centosrhelscientific-linux-6/
+[3]:http://www.unixmen.com/install-lamp-server-in-centos-6-4-rhel-6-4/
+[4]:https://github.com/ampache/ampache/tags
+[5]:http://ampache.org/wiki/start
