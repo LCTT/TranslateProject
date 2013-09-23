@@ -1,6 +1,6 @@
 Ubuntuzilla: 简单的方式来安装最新的Mozilla软件
 ================================================================================
-[**Ubuntuzilla**][1] 是一个包含最近最新版本**Mozilla Firefox,MOzilla Thunderbird**,还有**Mozilla Seamonkey**软件的**APT**仓库,这个仓库将工作于Ubuntu还有所有的Debian衍生发行版。Ubuntuzilla 有一个[支持论坛][2]在[Ubuntu论坛][3]的第三方项目区域,因此,如果用户有任何问题,意见或者建议就可以使用它。
+[**Ubuntuzilla**][1] 是一个包含最近最新版本 **Mozilla Firefox,MOzilla Thunderbird** ,还有 **Mozilla Seamonkey** 软件的 **APT** 仓库,这个仓库将工作于Ubuntu还有所有的Debian衍生发行版。Ubuntuzilla 有一个[支持论坛][2]在[Ubuntu论坛][3]的第三方项目区域,因此,如果用户有任何问题,意见或者建议就可以使用它。
 
 **为什么要用Ubuntuzilla?**
 
@@ -9,7 +9,7 @@ Ubuntuzilla: 简单的方式来安装最新的Mozilla软件
 
 **加入Ubuntuzilla仓库**
 
-加入Ubuntuzilla 没有什么难的,但是如果你已经在使用旧版的ubuntuzilla脚本,你应该先删除掉。否则当安装Mozilla软件的时候由于已存在将会得到一个指向本地**/usr/bin/**的链接。
+加入Ubuntuzilla 没有什么难的,但是如果你已经在使用旧版的ubuntuzilla脚本,你应该先删除掉。否则当安装Mozilla软件的时候由于已存在将会得到一个指向本地 **/usr/bin/** 的链接。
 
 
 
@@ -19,7 +19,7 @@ Ubuntuzilla: 简单的方式来安装最新的Mozilla软件
 
 首先,明智的选择是备份已存在的Firefox/Thunderbird/Seamonkey用户个人文件。它被存放在你的home文件夹。Firefox 和Seamonkey 个人文件存放在 **.mozilla** 文件夹中。Thunderbird 的个人文件存放在 **.thunderbird** 或者 **.mozilla-thunderbird** 文件夹里。
 
-使用任意编辑器打开**/etc/apt/sources.list**文件。
+使用任意编辑器打开 **/etc/apt/sources.list** 文件。
 
     $ sudo nano /etc/apt/sources.list
 
