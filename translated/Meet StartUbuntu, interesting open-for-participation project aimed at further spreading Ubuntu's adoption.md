@@ -1,4 +1,3 @@
-
 相遇StartUbuntu——一个有趣的开放共同参与的项目，它目的是为了更广泛的扩展Ubuntu的认可度
 ================================================================================
 
@@ -39,5 +38,5 @@ via: http://iloveubuntu.net/meet-startubuntu-interesting-open-participation-proj
 [校对者ID]:http://linux.cn/space/校对者ID
 
 [1]:http://iloveubuntu.net/meet-startubuntu-interesting-open-participation-project-aimed-further-spreading-ubuntus-adoption
-[2]:https://launchpad.net/startubuntu
+[2]:https://launchpad.net/startubuntu 
 [3]:https://wiki.ubuntu.com/StartUbuntu
