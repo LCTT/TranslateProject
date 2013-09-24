@@ -1,7 +1,7 @@
 Ubuntuzilla: 安装最新版Mozilla软件的简单方法
 ================================================================================
 
-[**Ubuntuzilla**][1] 是一个包含最新版本**Mozilla Firefox，Mozilla Thunderbird**，和**Mozilla Seamonkey**软件的**APT**仓库，这个仓库将适用于Ubuntu以及所有的Debian衍生发行版。Ubuntuzilla在[Ubuntu论坛][3]的第三方项目区域有一个[支持论坛][2]，因此，如果用户有任何问题、意见或者建议就可以使用它来反馈。
+[**Ubuntuzilla**][1] 是一个包含最新版本 **Mozilla Firefox，Mozilla Thunderbird** ，和 **Mozilla Seamonkey** 软件的 **APT** 仓库，这个仓库将适用于Ubuntu以及所有的Debian衍生发行版。Ubuntuzilla在[Ubuntu论坛][3]的第三方项目区域有一个[支持论坛][2]，因此，如果用户有任何问题、意见或者建议就可以使用它来反馈。
 
 ###为什么要用Ubuntuzilla?
 
