@@ -29,12 +29,12 @@ via: http://iloveubuntu.net/meet-startubuntu-interesting-open-participation-proj
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[markvv][] 校对：[校对者ID][]
+译者：[markvv][] 校对：[Caroline][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [译者ID]:http://linux.cn/space/译者ID
-[校对者ID]:http://linux.cn/space/校对者ID
+[Caroline]:http://linux.cn/space/14763
 
 [1]:http://iloveubuntu.net/meet-startubuntu-interesting-open-participation-project-aimed-further-spreading-ubuntus-adoption
 [2]:https://launchpad.net/startubuntu 
