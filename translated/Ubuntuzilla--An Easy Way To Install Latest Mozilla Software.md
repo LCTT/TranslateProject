@@ -74,4 +74,4 @@ via: http://www.unixmen.com/ubuntuzilla-easy-way-install-latest-mozilla-products
 
 [1]:http://sourceforge.net/apps/mediawiki/ubuntuzilla/index.php?title=Main_Page
 [2]:http://ubuntuforums.org/forumdisplay.php?f=251
-[3]:http://ubuntuforums.org/
+[3]:http://ubuntuforums.org/ 
