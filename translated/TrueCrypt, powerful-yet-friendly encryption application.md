@@ -92,4 +92,4 @@ via: http://iloveubuntu.net/truecrypt-powerful-yet-friendly-encryption-applicati
 [校对者ID]:http://linux.cn/space/校对者ID
 
 [1]:http://www.truecrypt.org/
-[2]:http://www.truecrypt.org/downloads
+[2]:http://www.truecrypt.org/downloads 
