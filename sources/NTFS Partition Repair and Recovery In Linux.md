@@ -1,4 +1,5 @@
 NTFS Partition Repair and Recovery In Linux
+NTFS分区在linux的修复与恢复
 ================================================================================
 Once again we find ourselves in the unenviable position of bailing out one of our Windows friends/family/acquaintances/business associates or other assorted persons. Although we don’t have their particular day to day challenges, we do often find that we are the “go to” person when they have issues. Heaven forbid, we may have even had our own issues with our Windows partition/drive (after all, we have to game sometime and despite the efforts of Steam, Linux just isn’t a gamer’s dream yet). Let’s take a look at a couple of scenarios that may come up that we can fix with our handy Linux distribution and some of the NTFS partition recovery tools at our disposal.
 
