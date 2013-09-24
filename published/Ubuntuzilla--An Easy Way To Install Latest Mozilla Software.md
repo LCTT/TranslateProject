@@ -9,7 +9,7 @@ Ubuntuzilla: 安装最新版Mozilla软件的简单方法
 
 ###添加Ubuntuzilla仓库
 
-添加Ubuntuzilla并不困难，但是如果你已经在使用旧版的ubuntuzilla脚本，你应该先删除掉它，否则由于已经有了一个**/usr/bin**下的符号链接，再安装时候会出错。
+添加Ubuntuzilla并不困难，但是如果你已经在使用旧版的ubuntuzilla脚本，你应该先删除掉它，否则由于已经有了一个**/usr/bin**下的符号链接，在安装时候后，依旧会使用旧版的脚本。
 
 运行一下命令来移除旧版本的Ubuntuzilla脚本：
 
