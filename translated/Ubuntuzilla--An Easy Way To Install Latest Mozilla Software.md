@@ -1,7 +1,7 @@
 Ubuntuzilla: 安装最新版Mozilla软件的简单方法
 ================================================================================
 
-[**Ubuntuzilla**][1] 是一个包含最新版本**Mozilla Firefox,MOzilla Thunderbird**,还有**Mozilla Seamonkey**软件的**APT**仓库,这个仓库将适用于Ubuntu以及所有的Debian衍生发行版。Ubuntuzilla在[Ubuntu论坛][3]的第三方项目区域有一个[支持论坛][2],因此,如果用户有任何问题、意见或者建议就可以使用它。
+[**Ubuntuzilla**][1] 是一个包含最新版本 **Mozilla Firefox,MOzilla Thunderbird** ,还有 **Mozilla Seamonkey** 软件的**APT**仓库,这个仓库将适用于Ubuntu以及所有的Debian衍生发行版。Ubuntuzilla在[Ubuntu论坛][3]的第三方项目区域有一个[支持论坛][2],因此,如果用户有任何问题、意见或者建议就可以使用它。
 
 **为什么要用Ubuntuzilla?**
 
@@ -17,7 +17,7 @@ Ubuntuzilla: 安装最新版Mozilla软件的简单方法
 
 首先，强烈建议大家备份已存在的Firefox/Thunderbird/Seamonkey用户个人文件。它被存放在你的主目录。Firefox 和Seamonkey个人文件存放在 **.mozilla** 目录中。Thunderbird 的个人文件存放在 **.thunderbird** 或者 **.mozilla-thunderbird** 目录中。
 
-使用任意编辑器打开**/etc/apt/sources.list**文件。
+使用任意编辑器打开 **/etc/apt/sources.list** 文件。
 
     $ sudo nano /etc/apt/sources.list
 

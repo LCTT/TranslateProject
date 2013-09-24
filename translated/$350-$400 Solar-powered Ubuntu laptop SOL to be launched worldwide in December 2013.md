@@ -29,7 +29,7 @@ SQL设有多种风格,外观好看标新立异,醒目的标志图案,通过多�
 ![](http://iloveubuntu.net/pictures_me/sol%20laptop%202.jpg)
 ![](http://iloveubuntu.net/pictures_me/sol%20laptop%203.jpg)
 
-David Snir, 一名SOL开发者,他已经在Google+上 [分享](https://plus.google.com/109344265064351301756/posts/1F8DG57aBUy)了关于SQL(全球)即将发售的消息:"我们离**全球发布(2013年12月)**时间越来越近",让用户们知道2013年12月这一时间的目的是为了使Ubuntu-powered SOL笔记本在全球的销售畅通可行。
+David Snir, 一名SOL开发者,他已经在Google+上 [分享](https://plus.google.com/109344265064351301756/posts/1F8DG57aBUy)了关于SQL(全球)即将发售的消息:"我们离 **全球发布(2013年12月)** 时间越来越近",让用户们知道2013年12月这一时间的目的是为了使Ubuntu-powered SOL笔记本在全球的销售畅通可行。
 
 在价格上,SOL笔记本将会在350-400美元之间，还有必要的税（取决于国家）。
 
