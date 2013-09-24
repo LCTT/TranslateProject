@@ -1,4 +1,5 @@
 Lightweight Markup Languages
+轻量级标记语言
 ================================================================================
 A lightweight markup language is a modern system for annotating a document in a way that is syntactically distinguishable from the text, and designed with a simple readable syntax. In fact, the syntax is so basic that anyone can quickly learn to use these markup languages. The key advantage of this type of language is that it is designed to be easy to enter the annotated text in a text editor, and at the same time easy to follow the document source.
 
