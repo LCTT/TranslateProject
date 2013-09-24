@@ -1,21 +1,21 @@
 Ubuntuzilla: 安装最新版Mozilla软件的简单方法
 ================================================================================
 
-[**Ubuntuzilla**][1] 是一个包含最新版本**Mozilla Firefox,MOzilla Thunderbird**,还有**Mozilla Seamonkey**软件的**APT**仓库,这个仓库将适用于Ubuntu以及所有的Debian衍生发行版。Ubuntuzilla在[Ubuntu论坛][3]的第三方项目区域有一个[支持论坛][2],因此,如果用户有任何问题、意见或者建议就可以使用它。
+[**Ubuntuzilla**][1] 是一个包含最新版本**Mozilla Firefox，Mozilla Thunderbird**，和**Mozilla Seamonkey**软件的**APT**仓库，这个仓库将适用于Ubuntu以及所有的Debian衍生发行版。Ubuntuzilla在[Ubuntu论坛][3]的第三方项目区域有一个[支持论坛][2]，因此，如果用户有任何问题、意见或者建议就可以使用它来反馈。
 
-**为什么要用Ubuntuzilla?**
+###为什么要用Ubuntuzilla?
 
-回答这个很简单。对于一个特定版本的Ubuntu,官方仓库包含这个版本的Ubuntu发布日期时的软件包的最新版本。发布之后，再次更新的软件包不被加入这个仓库,以便安全修复异常。使用Ubuntuzilla的用户可以得到并及时更新还没有加入到Ubuntu/Debian官方仓库的Mozilla软件,听起来还不错吧?恩,就是这样。
+回答这个很简单。对于一个特定版本的Ubuntu发行版，官方仓库包含这个版本的Ubuntu发布日期时的软件包的最新版本。发布之后，再次更新的软件包不被加入这个仓库，除非是修复安全漏洞。使用Ubuntuzilla的用户可以得到，并及时更新还没有加入到Ubuntu/Debian官方仓库的Mozilla软件，听起来还不错吧?恩，就是这样。
 
-**添加Ubuntuzilla仓库**
+###添加Ubuntuzilla仓库
 
-添加Ubuntuzilla并不困难,但是如果你已经在使用旧版的ubuntuzilla脚本,你应该先删除掉。否则当安装Mozilla软件的时候由于已存在将会得到一个指向本地**/usr/bin/**的链接。
+添加Ubuntuzilla并不困难，但是如果你已经在使用旧版的ubuntuzilla脚本，你应该先删除掉它，否则由于已经有了一个**/usr/bin**下的符号链接，再安装时候会出错。
 
 运行一下命令来移除旧版本的Ubuntuzilla脚本：
 
     $ sudo ubuntuzilla.py -a remove -p <package-name>
 
-首先，强烈建议大家备份已存在的Firefox/Thunderbird/Seamonkey用户个人文件。它被存放在你的主目录。Firefox 和Seamonkey个人文件存放在 **.mozilla** 目录中。Thunderbird 的个人文件存放在 **.thunderbird** 或者 **.mozilla-thunderbird** 目录中。
+首先，强烈建议大家备份已存在的Firefox/Thunderbird/Seamonkey的用户个人文件。它被存放在你的主目录。Firefox和Seamonkey个人文件存放在 **.mozilla** 目录中。Thunderbird 的个人文件存放在 **.thunderbird** 或者 **.mozilla-thunderbird** 目录中。
 
 使用任意编辑器打开**/etc/apt/sources.list**文件。
 
@@ -27,7 +27,7 @@ Ubuntuzilla: 安装最新版Mozilla软件的简单方法
 
 保存并退出文件。
 
-使用以下命令在keyring中添加下面的包签名key：
+使用以下命令在apt 的 keyring中添加下面的软件包签名公钥：
 
     $ sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com C1289A29
 
@@ -45,7 +45,7 @@ Ubuntuzilla: 安装最新版Mozilla软件的简单方法
 
     $ sudo apt-get install thunderbird-mozilla-build
 
-**安装MOzilla Seamonkey:**
+**安装Mozilla Seamonkey:**
 
     $ sudo apt-get install seamonkey-mozilla-build
 
@@ -66,7 +66,7 @@ via: http://www.unixmen.com/ubuntuzilla-easy-way-install-latest-mozilla-products
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/译者ID
+[flsf01]:http://linux.cn/space/flsf01
 [Caroline]:http://linux.cn/space/14763
 
 [1]:http://sourceforge.net/apps/mediawiki/ubuntuzilla/index.php?title=Main_Page
