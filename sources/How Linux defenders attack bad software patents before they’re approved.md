@@ -1,64 +1,66 @@
-How Linux defenders attack bad software patents before they’re approved
-Linux守护者们怎样在恶意软件专利被批准之前干掉它们
+Linux Defenders怎样先发制人阻止恶意的软件专利被批准
 ================================================================================
-Group identifies dangerous patents and tries to cut them down to size.
+这个小组识别危险的专利并且试着还原它们的本来面目。
 --------------------------------------------------------------------------------
 ![](http://cdn.arstechnica.net/wp-content/uploads/2013/09/linux-penguin.jpg)
 
-Despite the rise in the number of patent trolls launching lawsuits affecting open source software, there are some glimmers of hope. The America Invents Act that was signed into law in September 2011 has provided new ways to prevent the issuance of over-broad software patents that could fuel future lawsuits.
+尽管专利巨头们发起的与日俱增的诉讼影响到了开源软件，但还有一线希望。2011年9月注册成立的America Invents Act 提供了新的途径来阻止那些将来可能引起诉讼的过于宽泛的软件专利。
 
-In a session at LinuxCon today, [Linux Defenders][1] director Andrea Casillas explained how the group is using rights granted by the new law to fight patent applications. A project of the Open Invention Network, Software Freedom Law Center, and Linux Foundation, Linux Defenders examines the 6,000 new patent applications published each week, attempting to identify those that are potentially threatening to Linux and open source. Then, the group looks for prior art that would invalidate at least some of the claims in the patents.
+今天的 LinuxCon 上的一个会议上，[Linux Defenders][1] 的负责人 Andrea Casillas 解释了这个组织怎样利用新法律赋予的权利去和专利申请做斗争。Open Invention Network 的一个项目 Software Freedom Law Center 和 Linux 基金会以及 Linux Defenders 检查了每周公布的6000项专利，尝试着去甄别那些 Linux 和 开源软件潜在的威胁。然后它们寻找能使至少一部分专利申请站不住脚的先例。
 
-The next step is working with Linux technologists to file defensive publications, which are not patents themselves but describe an invention and place it in the public record, preventing new patents from being granted that cover the same technology. These are typically two- to three-page descriptions of the technology, which the US Patent and Trademark Office (USPTO) examiners can read when conducting their review of prior art that might invalidate or limit the scope of a new patent application. Linux Defenders has filed about 200 of these defensive publications.
+下一步就是协同 Linux 技术专家编纂防御性公共出版物，虽然它们不是专利，但它们描述了某一发明并把它放入公开的档案以阻止新的包括该技术的专利的批准。
 
-"We'll work with authors or inventors or developers to take submissions, edit them, and work hand in hand with them to make these publications more effective," Casillas said, urging the Linux community to help the group identify dangerous patents and find prior art.
+“我们将和作者或发明者或者开发者一起小心谨慎地编辑它们，密切合作使那些出版物更有效。” Casillas 说。他一直主张 Linux 社区帮助这个小组发现危险的专利和寻找先例。
 
-Defensive publications are an old strategy, but it's become more accessible to the public because of the America Invents Act, Casillas explained. "This is the first time examiners have welcomed the public interaction," she said. "Any individual can electronically submit up to three pieces of prior art at no cost per application."
+防御性公共出版物是旧的策略，但它将会因为 America Ivents Act 而越来越接近公众的生活。Casillas 解释说：“这是审查人员第一次欢迎公众的互动。任何个人都可以免费递交电子版的关于先例的申请。”
 
-Linux Defenders has filed defensive publications related to patent applications from Microsoft, Apple, and others. Generally, Casillas said defensive publications aren't going to force a company to abandon a patent application. Rather, they might force the company to limit the scope of the patent application's claims.
+Linux Defenders 已经编纂好了与来自 Microsoft，Apple和其它公司的专利申请有关的防御性公共出版物。概括来说，Casillas 说防御性公共出版物不是要去迫使某家公司放弃某一专利，而是要迫使某家公司缩小它们申请的专利包括的范围。
 
-When asked if Linux Defenders could name examples of patent applications that were limited because of this process, Casillas and her colleagues said they're still working on a method of measuring its effectiveness. Within 6 to 9 months, they expect to implement a tool that lets them track when patent examiners use the defensive publications in the patent review process.
 
-Linux Defenders also targets patents that have already been issued, but Casillas noted that the legal standard for invalidating patents after they're awarded is very high.
+当被问起 Linux Defenders 能否为因为它们的工作而被限制的专利申请的案例命名，Casillas 和她的同事们说他们仍然在寻找评估它的有效性的方法。{>_<反正我是不知道原文在说什么}在6到9个月里，他们希望找到一个工具来能跟踪记录专利研究者们在复审中使用防御性公共出版物的情况。
 
-**One patent lawsuit “could make Red Hat go away”**
+Linux Denfenders 同时也把矛头指向已经通过的专利。但 Casillas 提醒说要推倒已经批准的专利的法律标准非常高。
 
-In a separate session at LinuxCon yesterday, Red Hat's Fedora engineering manager Tom Callaway discussed legal threats to open source.
+**专利诉讼“能让 Red Hat 走得更远”**
 
-Red Hat has criticized patent trolls and taken many steps to [protect itself and its customers from them][2]. Callaway said the threat can't be understated. "I do not overestimate this. Red Hat is not a small company in our industry, in open source. We're possibly the biggest. One good loss at trial on a serious set of patents could make Red Hat go away. It would be gone. That's the seriousness of patents and that's how chilling they are on our industry," he said.
+昨天 LinuxCon 上一个单独的会议上，Red Hat 的 Fedora 项目经理 Tom Callaway 讨论了开源的法律威胁。
 
-In all likelihood, Red Hat isn't going anywhere. The company has a good track record defending itself and its customers in court against patent trolls. It indemnifies customers against lawsuits as part of its software subscription program, and it has built up a portfolio of defensive patents.
+Red Hat 批评了专利并且采取很多措施[保护它和它的用户远离专利困扰][2]。Callaway 说那些威胁不可理喻。“我不是说大话，Red Hat 在我们开源产业里不是一个小公司，我们可能是最大的。一个关键专利诉讼的失利可以让 Red Hat 在这行干不下去。这就是专利的重要性，也足见在业界它是多么让人闻风丧胆。”
 
-While paid subscriptions to Red Hat Enterprise Linux entitle customers to extra protection, Red Hat is also working on making sure Fedora—which costs users nothing—is protected from legal trouble. The company does that by analyzing all the code and making sure every piece is licensed properly, sometimes removing and replacing problematic code. This has negative consequences for the software. "We have this problem a lot in Fedora. Patents keep us from doing the things that we want to do," Callaway said.
+当然，Red Hat 不会被扫地出门的。它有一个保护自己及用户的在法庭上对抗专利限制的非常好的跟踪记录。它保护着用户远离诉讼并把它当做软件售后服务来做，并且它已经控制了一系列防御用的专利。
 
-In a recent case involving Rackspace and Red Hat, a company called Uniloc tried to get money from Rackspace for using Red Hat's Linux-based servers. Uniloc's case was thrown out, with the judge saying its patent claim is invalid because it describes a relatively simple math operation.
 
-But defending those cases costs money, and even Red Hat has occasionally paid money to patent trolls to settle cases without going to trial.
+尽管付费的 RHEL 会员资格给了用户额外的保护，Red Hat 也正在保证 Fedora ——它是免费的——远离法律纠纷。它是这么做的：分析所有代码，确保每段代码都使用合适的许可，有时移除或重写有嫌疑的代码。这会导致软件产生负面的结果。“我们在 Fedora 中遇到了很多问题。专利使我们不能按照我们所想要的方式去做事。”Callaway 这么说。
 
-Callaway expressed frustration about over-broad patents. Some patents are "so vague they could mean anything," he said. "They could be applied to almost anything, and the patent trolls are betting on that, that you won't fight it."
+在最近的与 Rackspace 和 Red Hat 有关的案子里，一个叫做 Uniloc 公司想要从 Rackspace 处获得费用，因为后者使用了 Red Hat 的基于 Linux 的服务器。Uniloc 的案子以其败诉告终。判决说它的专利声明无效，因为它描述了一个相关的简单的数学操作。
 
-**Helping patent examiners identify bad patents**
+但是应对这些诉讼很费钱。甚至 Red Hat 有时付专利费避免打官司。
 
-Those over-broad patents, again, are what Linux Defenders is trying to stop. Vague patents often get approved in part because patent examiners spend no more than 20 hours on each application, Casillas said.
+Callaway 在过分宽泛的专利面前流露出了挫败感。某些专利是“如此的模糊以至于它们可以指任何东西，”他说，“它们可以被应用到几乎任何地方，并且专利持有者打赌认定你不会去计较。”
 
-The amount of time is "pretty staggering considering how long the process takes and how important the issuance of a patent can be," she said. The 20 hours "includes going through the application, making sure it complies with formatting, your basic legal requirements, but also determining the scope of the invention."
 
-The examiner spends about seven to eight hours searching for prior art, whether in the form of patents or other publicly available descriptions of technology, she said.
+**帮助专利审查人员识别恶意专利**
 
-By submitting defensive publications, complete with tags making them more easily discoverable by patent examiners, Linux Defenders hopes to make the USPTO more effective.
+那些过分宽泛的专利，正是 Linux Defenders 想要去阻止的。模糊的专利经常被某种程度地允许因为专利审查人员用在每个申请上的时间不会超过20小时。Casillas这样告诉我们。
 
-"We're not adding to their increasing workload," Casillas said. "We're helping them with these relevant publications."
+总的时间是“相当难以置信，考虑到这个过程要多久还有这个专利的发布有多种要。”他说。那20小时“包括了浏览申请，确定它按格式编辑，你的基本合法需求。但这段时间决定着这个发明的前景。”
+
+专利审查人员用7到8个小时搜索先例，不论是专利形式的还是其它公共可及的技术描述，她说。
+
+通过提交防御性公共出版物，提取标签以使专利审查人员更容易找到，Linux Defenders 希望使USPTO更加有效。
+
+“我们不是要增加他们的工作负担，”Casillas 说，“我们是要用有关的出版物帮助他们。”
 
 
 via: http://arstechnica.com/tech-policy/2013/09/how-linux-defenders-attack-software-patents-before-theyre-approved/
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[译者ID][] 校对：[校对者ID][]
+译者：[boredivan][] 校对：[校对者ID][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/译者ID
+[boredivan]:http://linux.cn/space/boredivan
 [校对者ID]:http://linux.cn/space/校对者ID
 
 [1]:http://linuxdefenders.org/
