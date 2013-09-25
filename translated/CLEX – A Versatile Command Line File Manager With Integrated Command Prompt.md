@@ -32,7 +32,7 @@ CLEX是一款基于命令行的文件管理器，它拥有一个漂亮轻巧的�
 
 ![](http://mylinuxbook.com/wp-content/uploads/2013/09/clex-4.png)
 
-除此以外，CLEX还提供了一系列很好用的快捷键组合，按下Alt+M查看。
+除此以外，CLEX还提供了一系列很好用的快捷键组合，按下Alt+M查看。 
 
 ![](http://mylinuxbook.com/wp-content/uploads/2013/09/clex-5.png)
 
