@@ -16,7 +16,7 @@ Linux Defenders怎样先发制人阻止恶意软件专利被批准
 
 Linux Defenders 已经编纂好了与来自 Microsoft，Apple和其它公司的专利申请有关的防御性公共出版物。概括来说，Casillas 说防御性公共出版物不是要去迫使某家公司放弃某一专利，而是要迫使某家公司缩小它们申请的专利包括的范围。
 
-当被问起 Linux Defenders 能否为因为它们的工作而被限制的专利申请的案例命名，Casillas 和她的同事们说他们仍然在寻找评估它的有效性的方法。在6到9个月里，他们希望找到一个工具来能跟踪记录专利研究者们在复审中使用防御性公共出版物的情况。
+当被问起 Linux Defenders 能否说出因为这个过程而受限的专利申请的案例时，Casillas 和她的同事们说他们仍然在寻找评估它的有效性的方法。在6到9个月里，他们希望能找到一个工具来跟踪记录专利研究者们在复审中使用防御性公共出版物的情况。
 
 Linux Denfenders 同时也把矛头指向已经通过的专利。但 Casillas 提醒说要推倒已经批准的专利的法律标准非常高。
 
@@ -54,12 +54,12 @@ via: http://arstechnica.com/tech-policy/2013/09/how-linux-defenders-attack-softw
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[boredivan][] 校对：[校对者ID][]
+译者：[boredivan][] 校对：[Caroline][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [boredivan]:http://linux.cn/space/boredivan
-[校对者ID]:http://linux.cn/space/校对者ID
+[Caroline]:http://linux.cn/space/14763
 
 [1]:http://linuxdefenders.org/
 [2]:http://www.networkworld.com/news/2011/050511-red-hat-ceo-patents.html 
