@@ -11,7 +11,7 @@ Please enjoy our screenshot tour for the Fedora 20 Alpha GNOME Live DVD release.
 Download Fedora 20 Alpha GNOME Live DVD
 
 - [Fedora 20 Alpha (torrent) GNOME Live DVD 32-bit][1][torrent1] [972 MB]
-- [Fedora 20 Alpha (torrent) GNOME Live DVD 64-bit][2][torrent2] [8441 GB]
+- [Fedora 20 Alpha (torrent) GNOME Live DVD 64-bit][2][torrent2] [960 MB]
 - [Fedora 20 Alpha (torrent) KDE Live DVD 32-bit][3][torrent1] [930 MB]
 - [Fedora 20 Alpha (torrent) KDE Live DVD 64-bit][4][torrent2] [966 MB]
 - [Fedora 20 Alpha (torrent) Xfce Live CD 32-bit][5][torrent1] [630 MB]
@@ -31,7 +31,7 @@ via: http://news.softpedia.com/news/Fedora-20-Alpha-GNOME-Live-DVD-Screenshot-To
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[译者ID][] 校对：[校对者ID][]
+译者：[Mr小眼儿][] 校对：[校对者ID][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
