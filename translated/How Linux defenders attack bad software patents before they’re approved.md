@@ -64,4 +64,4 @@ via: http://arstechnica.com/tech-policy/2013/09/how-linux-defenders-attack-softw
 [校对者ID]:http://linux.cn/space/校对者ID
 
 [1]:http://linuxdefenders.org/
-[2]:http://www.networkworld.com/news/2011/050511-red-hat-ceo-patents.html
+[2]:http://www.networkworld.com/news/2011/050511-red-hat-ceo-patents.html 
