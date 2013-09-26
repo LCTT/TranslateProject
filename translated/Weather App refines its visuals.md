@@ -38,5 +38,5 @@ via:http://iloveubuntu.net/weather-app-refines-its-visuals
 [Mr小眼儿]:http://linux.cn/space/14801
 [校对者ID]:http://linux.cn/space/校对者ID
 
-[1]:http://developer.ubuntu.com/get-started/
+[1]:http://developer.ubuntu.com/get-started/ 
 [2]:https://launchpad.net/ubuntu-weather-app
