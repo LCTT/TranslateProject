@@ -1,24 +1,25 @@
-Ubuntu Touch HD Screenshot Tour – The Road So Far   Vito
-================================================================================
-Ubuntu Touch will be released in a little over a month, which means that the operating systems is getting pretty close to its stable version. We took a look at the interface and functions and we put together a comprehensive screenshot tour.
+Ubuntu Touch HD 截图赏 - 至今走过的路
+===
 
-The general feel and design that has been presented back in January for Ubuntu Touch has been kept, but the operating system is no longer full of dummy apps. Most of applications included by default are now working.
+Ubuntu Touch将在一个多月发布，这意味着这个这个操作系统已经接近其稳定版本。我们拿来看看界面和功能并且我们拼凑一个综合的截图赏。
 
-This means that if you download and install today Ubuntu Touch you will have a minimally working phone. You will be able to call and receive calls, and to send and receive SMS messages. The browser is also working, along with the image viewer and the gallery.
+早在一月，Ubuntu Touch已受人资助，其常规的感觉和设计已经被提交，但是操作系统不再是完整的虚拟应用程序。大多数应用程序默认包含现在进行的工作。
 
-Other features include a minimal Contacts feature, a smoother launcher, a calendar, and camera. This latest app includes a lot of features and some of them are not even available on other operating systems.
+这个意思是，如果你今天下载和安装Ubuntu Touch，你将有一个最低限度的工作电话。你将能够打电话和接电话，发送和接受短信。浏览器同样在工作，一起工作还有图像查看器和图库。
 
-There are still a few problems with some of the base features, such as the clock, which can’t be set manually, and there isn’t an alarm app available.
+其他功能包括一个最小限度的联系人功能，一个平滑启动器，一个日历和相机。这个最新的应用程序包括很多功能，并且它们中的一些在其他操作系统上甚至是不可用的。
 
-As expected, this is not a stable version and it will not provide a smooth ride. Canonical has implemented an OTA update functionality and the developers are pushing updates on a daily basis. When the 1.0 version will be made available, on October 17 if everything goes well, Ubuntu Touch should be a lot better.
+仍然有一些基本特性的一些问题，比如，时钟，不能手动设置，闹钟程序也是不可用的。
 
-Ubuntu Touch is developed, so far, for the Nexus 4 and 7 devices from LG and Google, but it’s expected to arrive on multiple other devices with the help of the XDA developers.
+正如预期的，这不是个稳定版本并且它将不提供稳定版本。Canonical公司实施了OTA更新功能和开发人员在日常基础上推动更新。何时做出可用的1.0版本，在10月17日如果一切顺利，Ubuntu Touch应该会好很多。
 
-If just these features will be available by the time of the launch, including a way to import Gmail contacts and a simple email application, a lot of users will be ready to abandon their current operating system.
+Ubuntu Touch是成熟的，到目前为止，Nexus 4和7来自LG和Google，但是预计随着XDA开发者的帮助下在多个其他设备上成功配置。
 
-If you don’t know already, Ubuntu Touch is an operating system developed by Canonical for phones and tablets. It features a design without buttons and it relies solely on touch input, hence the name.
+如果只是通过发起活动之时这些功能将可用，包括导入Gmail联系人的方法和一个简单的邮件应用程序，很多用户将准备放弃他们当前的操作系统。
 
-Check the gallery below to see how the interface has evolved and what are the features implemented so far.
+如果你不知道，Ubuntu Touch是一个由Canonical公司为电话和平板自主研发的操作系统。它的特性是一个没有按钮的设计和其仅依靠触摸输入，因此得名。
+
+检查下面图库去看看界面如何演变和到目前为止执行了什么功能。
 
 ![](http://i1-news.softpedia-static.com/images/news2/Ubuntu-Touch-Screenshot-Tour-The-Road-So-Far-385145-2.jpg)
 
@@ -69,13 +70,13 @@ Check the gallery below to see how the interface has evolved and what are the fe
 ![](http://i1-news.softpedia-static.com/images/news2/Ubuntu-Touch-Screenshot-Tour-The-Road-So-Far-385145-26.jpg)
 
 
-via: http://news.softpedia.com/news/Ubuntu-Touch-Screenshot-Tour-The-Road-So-Far-385145.shtml
+via: <http://news.softpedia.com/news/Ubuntu-Touch-Screenshot-Tour-The-Road-So-Far-385145.shtml>
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[译者ID][] 校对：[校对者ID][]
+译者：[VIto][] 校对：[校对者ID][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/译者ID
+[VIto]:http://linux.cn/space/VIto
 [校对者ID]:http://linux.cn/space/校对者ID
