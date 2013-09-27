@@ -39,6 +39,6 @@ via: http://www.eweek.com/mobile/google-android-is-open-source-linuxcon.html
 [校对者ID]:http://linux.cn/space/校对者ID
 
 [1]:http://www.linuxplanet.com/linuxplanet/reports/7150/1/
-[2]:http://www.datamation.com/open-source/linux-3.3-boosts-linux-mobility.html
+[2]:http://www.datamation.com/open-source/linux-3.3-boosts-linux-mobility.html 
 [3]:http://developer.android.com/reference/android/os/PowerManager.WakeLock.html
 
