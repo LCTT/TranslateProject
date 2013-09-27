@@ -1,4 +1,4 @@
-Ubuntu Touch HD Screenshot Tour – The Road So Far
+Ubuntu Touch HD Screenshot Tour – The Road So Far   Vito
 ================================================================================
 Ubuntu Touch will be released in a little over a month, which means that the operating systems is getting pretty close to its stable version. We took a look at the interface and functions and we put together a comprehensive screenshot tour.
 
