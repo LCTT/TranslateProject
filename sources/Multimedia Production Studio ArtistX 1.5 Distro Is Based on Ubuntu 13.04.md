@@ -1,3 +1,5 @@
+Vito
+
 Multimedia Production Studio ArtistX 1.5 Distro Is Based on Ubuntu 13.04
 ==========
 **ArtistX 1.5, an Ubuntu-based distribution that aims to enable artists and creators from a number of fields to work via a live and free environment, has just been released.**
