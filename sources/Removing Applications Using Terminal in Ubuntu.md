@@ -1,4 +1,5 @@
 Removing Applications Using Terminal in Ubuntu
+在Ubuntu中使用终端删除应用程序
 ================================================================================
 You are a Linux user (Ubuntu). You always install applications from the terminal using **apt-get** install.
 
