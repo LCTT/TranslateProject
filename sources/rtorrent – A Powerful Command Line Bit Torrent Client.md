@@ -1,4 +1,4 @@
-rtorrent – A Powerful Command Line Bit Torrent Client
+·翻译中」rtorrent – A Powerful Command Line Bit Torrent Client
 ================================================================================
 If you avoid using a CLI based torrent client because you think that it might be very complex to use. Think again. I believe that CLI based bit torrent clients are far more addictive once you are used to any of them — you can start and monitor the progress from within your terminal window and that too very easily . In this article, we will discuss a powerful command line bit torrent client — **rtorrent**.
 
