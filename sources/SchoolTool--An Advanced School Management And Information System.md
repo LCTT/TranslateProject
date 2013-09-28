@@ -1,3 +1,5 @@
+Vito
+
 SchoolTool: An Advanced School Management And Information System
 ================================================================================
 [**SchoolTool**][1] is an Open Source, free, web based student information system designed for schools around the world. It is developed and distributed by [Shuttleworth][2] foundation with strong support for translation, localization and automated deployment and updates via the **Ubuntu Linux installer** and **package management system**.
