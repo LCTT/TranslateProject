@@ -7,7 +7,7 @@
 Pacifica 图标主题的灵感来源这个世界最美丽的linux操作系统elementary OS,像Nitrux, Faenza, Moka以及Plastico这些精美的图标主题,为linxu世界带来了一些我们期待已久的新元素。
 
 
-Francisco Villarroel是Pacifica图标主题的主要开发者和设计者.他用bokehlicia这个名字发布在Deviantart网站上,[而bokehlicia正式这款超凡的图标主题诞生之处][1].
+Francisco Villarroel是Pacifica图标主题的主要开发者和设计者.他用bokehlicia这个名字发布在Deviantart网站上,[而bokehlicia正是这款超凡的图标主题诞生之处][1].
 
 
 现在说说技术细节,可以告诉你们,我们已经在Arch Linux系统上使用一个纯净的GNOME3桌面环境测试了它,不过,感谢Carlos Gomes，Ubuntu 12.04 LTS (穿山甲)的用户也可以通过elementary OS PPA安装。
