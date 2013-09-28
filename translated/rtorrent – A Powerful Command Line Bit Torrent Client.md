@@ -167,7 +167,7 @@ via: http://mylinuxbook.com/rtorrent-bit-torrent-client/
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/flsf01
+[flsf01]:http://linux.cn/space/flsf01
 [校对者ID]:http://linux.cn/space/校对者ID
 
 [1]:http://libtorrent.rakshasa.no/export/1170/trunk/rtorrent/doc/rtorrent.rc
