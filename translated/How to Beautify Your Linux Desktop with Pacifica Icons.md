@@ -37,11 +37,9 @@ Pacifica图标主题依赖elementary图标主题,当然默认的gnome和hicolor�
 
 对于Arch Linux用户,使用你们最喜欢的AUR助手(译者注:比如yaourt)[安装pacifica-icon-theme包][2].Arch Linux用户也使用上面的指令来设置新的Pacifica图标主题.
 
-对于其他用户,不要犹豫,在你的Linux系统上手动下载安装Pacifica图标主题,或者用这些图表做你想做的任何事情.
-
+对于其他用户,不要犹豫,在你的Linux系统上手动下载安装Pacifica图标主题,或者用这些图标做你想做的任何事情.
 
 如果你在学习本教程中有任何问题,请在下面写下评论。
-
 
 via: http://news.softpedia.com/news/How-to-Beautify-You-Linux-Desktop-with-Pacifica-Icons-385877.shtml
 
