@@ -1,7 +1,7 @@
 LinuxCon大会：Google Android是开源产品
 =======================================
 
-**Google的首席开源执行官在LinuxCon大会上说明了为何Android是开源的以及为何开源是Android成功的关键因素**
+_**Google的首席开源执行官在LinuxCon大会上说明了为何Android是开源的以及为何开源是Android成功的关键因素**_
 
 9月16日，新奥尔良，LinuxCon大会，负责开源的Google董事Chris DiBona在主题演讲中发布了一条关键信息：Android是一款开源产品。
 
