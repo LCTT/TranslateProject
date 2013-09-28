@@ -1,4 +1,5 @@
 Quick-n-easy command-line tips
+快速简单的命令行小贴士
 ================================================================================
 Most weeks I get questions from people asking for quick bits of advice. Sometimes a person is looking for a helpful guide or a specific command or a command-line short-cut to performing a specific task. Here are three tasks people have approached me with recently and some easy ways to accomplish those tasks.
 
