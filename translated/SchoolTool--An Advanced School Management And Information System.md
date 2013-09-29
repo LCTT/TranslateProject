@@ -1,22 +1,23 @@
 SchoolTool：先进的学院管理和信息系统
 ===
 
-[SchoolTool][1]是为全世界学校设计的一个开源的，免费的，基于网页的学生信息系统。它是由[Shuttleworth][2]研发并发布与翻译提供有力支持，定位，自动化部署和更新是通过 **Ubuntu Linux 安装程序** 和 **包管理系统** 。
+[SchoolTool][1]是一个基于网页的开源免费学生信息系统，为世界各地的学校而设计。它是由[Shuttleworth][2]研发并发布，基于翻译、定位和自动化部署的有力支持，通过 **Ubuntu Linux 安装程序** 和 **包管理系统** 更新。
 
-SchoolTool是在GPL2下许可的并且写在 **Python** 使用 **Zope 3** 框架。  这个项目的主要目标是创建一个简单的turnkey模式（一个“交钥匙”的“工程项目管理模式”）学生管理和信息系统，包括人数统计，学分表，到场人数，日历和为小学和中学的学校报告。
+SchoolTool是经GPL2许可，使用**Zope 3**框架并用**Python**语言编写。这个项目的主要目标是创建一个简单的turnkey模式（译者注：一个“交钥匙”的“工程项目管理模式”）学生管理和信息系统，包括中小学人数统计、学分表、出勤、日历和报告。
 
  **功能** 
 
 - 可定制学生和教师的人数统计和其他个人的数据
-- 教师，学生和他们的监护人的联系管理
+- 为教师，学生和监护人提供联人管理
 - 教师学分表
+- 全校评估数据收集和报告卡
 - 班级到场人数和每日出勤分数
 - 学校，群组，个人和资源预定日历
 - 跟踪和管理学生的干预措施
 
  **安装SchoolTool**  
 
-SchoolTool核心开发团队强烈建议和推荐在Ubuntu 12.04或之后版本安装SchoolTool。后来他们为多个系统创建了软件包，其核心开发团队不支持它们。
+SchoolTool核心开发团队强烈建议和推荐在Ubuntu 12.04或之后版本安装SchoolTool。他们为多个系统创建了软件包，但其核心开发团队不支持它们。
 
 SchoolTool是在官方软件仓库中找到的，所以，我们可以用命令来安装它：
 
@@ -60,7 +61,7 @@ Your School » Today
 
  **更改管理员密码**  
 
-SchoolTool默认的管理员账户是“ **manger** ”，密码是“ **schooltool** ”。登陆使用以上认证。
+SchoolTool默认的管理员账户是“ **manger** ”，密码是“ **schooltool** ”。登录使用以上认证。
 
 ![](https://github-camo.global.ssl.fastly.net/73cb5246b481dc56dddd9442d0f0bbad855abdcb/687474703a2f2f3138303031363938382e722e63646e37372e6e65742f77702d636f6e74656e742f75706c6f6164732f323031332f30392f5363686f6f6c546f6f6c2d41646d696e6973747261746f722d2543322542422d50617373776f72642d4d6f7a696c6c612d46697265666f785f3030342e706e67)
 
@@ -74,7 +75,7 @@ SchoolTool Administrator » Password
 
  **服务设置**  
 
-登陆管理员账户。在Server部分，你将发现你的SchoolTool服务的细节。
+登录管理员账户。在Server部分，你将发现你的SchoolTool服务器的细节。
 
 ![](https://github-camo.global.ssl.fastly.net/08fad4d7a23d79d23d123f4e3a1ab718298fbe30/687474703a2f2f3138303031363938382e722e63646e37372e6e65742f77702d636f6e74656e742f75706c6f6164732f323031332f30392f5365727665722d4d6f7a696c6c612d46697265666f785f3030352e706e67)
 
@@ -82,9 +83,9 @@ Server
 
  **设置外发邮件**  
 
-SchoolTool并不扮演一个像Sendmail或Postfix的邮件服务。它将像邮件客户端一样发送邮件，如Thunderbird, Evolution。
+SchoolTool并不像Sendmail或Postfix扮演着邮件服务器的工作。它将像邮件客户端一样发送邮件，如Thunderbird, Evolution。
 
-若要在SchoolTool中启用邮件功能，登陆管理账户并转到Server列表。点击 **Outgoing Email** 链接。在那之后，点击黄色铅笔图标去更改邮件设置。填满smtp，Email和password并单击apply。
+若要在SchoolTool中启用邮件功能，登录管理账户并转到Server列表。点击 **Outgoing Email** 链接。在那之后，点击黄色铅笔图标去更改邮件设置。填充smtp，Email和password并单击apply。
 
 ![](https://github-camo.global.ssl.fastly.net/9e1824737fe4657922dcf41a575edfe7c57d6843/687474703a2f2f3138303031363938382e722e63646e37372e6e65742f77702d636f6e74656e742f75706c6f6164732f323031332f30392f5365727665722d2543322542422d4f7574676f696e672d456d61696c2d53657474696e67732d4d6f7a696c6c612d46697265666f785f3030382e706e67)
 
@@ -92,7 +93,7 @@ Server » Outgoing Email Settings
 
  **设置日历**  
 
-重要的是按照你的区域位置设置日历。点击Server部分的 **Calendar** 列表。选择你的时区，对我来说，是 **Asia/Kolkatta** 。
+按照你的区域位置设置日历很重要。点击Server部分的 **Calendar** 列表。选择你的时区，我的设置是 **Asia/Kolkatta** 。
 
 ![](https://github-camo.global.ssl.fastly.net/dfbb5c8fe482677c189c3eb507e9a31ac5ae6a4f/687474703a2f2f3138303031363938382e722e63646e37372e6e65742f77702d636f6e74656e742f75706c6f6164732f323031332f30392f5365727665722d2543322542422d43616c656e6461722d53657474696e67732d4d6f7a696c6c612d46697265666f785f3030392e706e67)
 
@@ -102,7 +103,7 @@ Server » Calendar Settings
 
  **设置学校**  
 
-在这里我们想起简短和最大一部分需要更多的时间并把事情做好。在这一篇文章中我们不能覆盖所有。所以，我推荐你去访问SchoolTool官方[文档][3]，经过一个接一个的部分设置你的相应的学校。它需要几个小时或几天的时间来设置整个学校的设置。别害怕，它不是个困难的任务：SchoolTool团队在其网站有一个准备充分的自我帮助文档和截图。你不必去其他任何地方学习SchoolTool。通过SchoolTool文档页学习并DIY。
+现在我们来介绍简明又重要的部分，它需要我们花费更多的时间和精力来完成。本文并不能覆含所有内容，所以我推荐你去访问SchoolTool官方[文档][3]，一个接一个仔细浏览每一部分，按照要求设置你的学校。完成整个学校的设置需要花费可能会花费几个小时甚至几天的时间。别害怕，它并不困难：SchoolTool团队在其网站为用户充分准备了自我帮助的文档和截图。你不必去其他任何地方学习SchoolTool，通过SchoolTool文档页就能学习并DIY。
 
  **参考文献：**  
 
@@ -113,12 +114,12 @@ via： <http://www.unixmen.com/schooltool-advanced-school-management-information
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[Vito][] 校对：[校对者ID][]
+译者：[Vito][] 校对：[Caroline][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [Vito]:http://linux.cn/space/Vito
-[校对者ID]:http://linux.cn/space/校对者ID
+[Caroline]:http://linux.cn/space/14763
 
 [1]:http://schooltool.org/
 [2]:http://www.shuttleworthfoundation.org/
