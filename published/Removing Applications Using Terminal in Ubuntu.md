@@ -9,9 +9,9 @@
 
 这是一个简单的教程，指导你如何删除已经安装的软件包。
 
-1. 打开终端（ctrl + alt + t）
+a. 打开终端（ctrl + alt + t）
 
-2. 输入
+b. 输入
 
     $ dpkg --list
 
@@ -37,11 +37,11 @@
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/09/vlc_grep.png)
 
-3. 查找要删除的包名字，这里我要使用**sox**。
+c. 查找要删除的包名字，这里我要使用**sox**。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/09/remove_SoX.png)
 
-4. 只删除一个软件包，使用下面的命令：
+d. 只删除一个软件包，使用下面的命令：
 
     $ sudo apt-get remove <packagename>
 
@@ -53,7 +53,7 @@
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/09/sox2.png)
 
-5. 要删除一个包以及它的配置文件，输入：
+e. 要删除一个包以及它的配置文件，输入：
 
     $ sudo apt-get --purge remove <packagename>
 
@@ -66,9 +66,9 @@ via: http://www.unixmen.com/removing-applications-using-terminal-ubuntu/
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[译者ID][markvv] 校对：[Caroline][]
+译者：[markvv][] 校对：[Caroline][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/译者ID
+[markvv]:http://linux.cn/space/markvv
 [Caroline]:http://linux.cn/space/14763
