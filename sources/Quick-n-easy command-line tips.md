@@ -1,34 +1,34 @@
-Quick-n-easy command-line tips
+快速便捷的命令行小贴士
 ================================================================================
-Most weeks I get questions from people asking for quick bits of advice. Sometimes a person is looking for a helpful guide or a specific command or a command-line short-cut to performing a specific task. Here are three tasks people have approached me with recently and some easy ways to accomplish those tasks.
+最近几周里，我总是收到人们询问一些快速零散的问题。有时候一个人是在寻找一个有帮助的建议，或者一个具体的命令，或者一个命令行捷径，以完成一个特定的任务。本篇将介绍最近人们向我提出的三个问题，以及完成这些任务的简单方法。
 
-The first scenario we will look at is copying all of the files in a directory tree that have been modified in the past month from their current location to another directory. The exact solution in this case may depend on whether you want to maintain the structure of the directory tree or if you are dumping all of the files from one directory tree into a specific place. If we are dumping all of our files into one folder, perhaps for archiving purposes, then we might use the find command. Using find we can search for files based on when they were last modified and then copy the files we locate to a specific place. Such a command might look like this:
+第一个场景是，我们要找到那些在过去的一个月中被改动过的文件，并将他们从当前的位置复制到另一个目录中去。在这种情况下，能否精确的解决取决于你复制文件的时候是否保持了原来的文件树结构，还是你仅仅只是把所有文件全部复制到了一个指定的地方。如果我们只是想把所有的文件保存到一个文件夹中，或许这样做是为了将这些文件归档，那么我们可以使用find这条命令。通过使用find命令，我们能够根据文件被修改的时间查找到他们的位置，然后复制他们到指定的地方。这条命令看起来是这样：
 
     find Documents -mtime -30 -exec cp "{}" Backup \;
 
-The above command locates files stored in the Documents folder that have been modified in the past 30 days. These files are then copied into another directory, called Backup. The find command performs the copy procedure using the copy (cp) command. We can search for files which have been modified more or less recently by changing the mtime parameter, which is set to the past 30 days in the above example.
+上面这条命令会在Documents文件夹中查找在过去30天内被修改过的文件。这些文件之后将会被复制到另一个叫Backup的目录中去。**find**命令将会通过调用**cp**命令来执行复制这一操作。通过修改**mtime**这条参数，我们可以查找到最近某个时间内被修改过的文件，在上面这个例子中它被设定为在过去的30天内。
 
-More often, we will want to preserve the structure of the source and destination directories. Quite often people wish to synchronize the contents of one directory with another and run a script to keep the two directories in step with each other. For cases such as these we will probably want to use the rsync command. This utility copies new files, and files which have been modified, from one directory to another while maintaining the layout of the original directory:
+更多的时候，我们会想要在把文件复制到目标文件夹后，仍然能够保留源文件夹的目录结构。很多时候，人们都希望两个文件夹的内容同步，然后他们会运行一个脚本来使他们保持一致。这种情况下，我们可能会用到**rsync**这条命令了。这个工具会把新文件、修改过的文件从一个复制到另一个目录中去，同时保持源目录的展示结构：
 
     rsync -a Documents/ Backup
 
-The above example makes sure the files existing in Documents also exist in the Backup directory without copying any files unnecessarily.
+上面的例子，它会先找到哪些文件在Documents中和Backup中都存在，以便不再复制这些不必要的文件。
 
-A common task we may wish to perform is to locate a word in a text file and replace all instances of that word with another word. As an example, imagine I have a document in which I've referred to a person as "Becky", but I've decided it would be better to use the more formal sounding "Rebecca". The following command would be useful for making this simple correction throughout the file:
+有一个我们都会做的很普遍的工作，就是在一个文本文件中找到一个单词，然后用另一个单词把这个词在文本中的所有实例都替换掉。比如，假设我有一个文档中提到一个人名叫“Becky”，但是我后来决定还是用稍微正式点的称呼“Rebecca”为好。对文件中的这个简单的改动，下面这条命令会起到作用：
 
     perl -pi -e 's/Becky/Rebecca/' mydocument.txt
 
-This miniature Perl script executes a search for all instances of the text "Becky" in our document and changes the text to read "Rebecca". The text to be changed is read from (and saved back to) the mydocument.txt file.
+这条微型的Perl脚本会查询文档中所有“Becky”的实例，并且将之改为“Rebecca”。程序首先读取名为mydocument.txt这个要改动的文档，待修改完毕后再保存回去。
 
-One common concern is what to do with sensitive data on a hard drive prior to the drive being given to another person or thrown away. Some of us keep banking or tax information on our computers and it is good to be able to destroy that data before the drive is handed off to someone else. There are a few ways to do this and there are several tools available. One of my personal favourites, as it works on individual files as well as full devices, is the shred command. To overwrite the contents of a file we can run shred as follows:
+一个普遍关注的问题是，在一个硬盘要给别人或者被扔掉之前，需要对其中存储的敏感数据做些什么。有些人会在电脑里保存一些银行的业务数据或者税务信息，那么这些数据最好在你的硬盘被转手到别人之前被彻底清理掉。现在有一些方法和工具可以让你使用。我最喜欢的一个是**shred**这条命令，它不仅能对单一文件进行处理，同样也能对整个设备进行处理。要重写一个文件里面的内容，我们可以这样运行**shred**：
 
     shred mytaxes.odt
 
-The above example removes the contents of the file, but does not delete the file itself from our hard drive. To also erase the file after the data has been destroyed we can run:
+上面这个例子中，它会移除文件里存的内容，但并不会把文件本身从硬盘中删除掉。如果要清除文件的内容同时删除掉这个文件，我们可以这样运行：
 
     shred -u mytaxes.odt
 
-It is important to note shred does not always work on all file systems, especially newer file systems which feature journal support. The shred manual page includes notes on which file system may not work well with the shred command. When dealing with sensitive information it may be best to erase the entire drive. The shred command can do this too. The following example removes all of our data from the first hard drive attached to the computer. Use this with extreme caution:
+需要强调的一点是，**shred**并不是在所有的文件系统中都能正常运行，尤其是那些带有日志功能的比较新的文件系统。在**shred**的操作手册中写明了哪些文件系统运行这个程序的时候会出问题。当处理敏感数据的时候，最好的方法也许是清除掉整张硬盘。**shred**同样也能办到。下面这个例子中，显示了如何移除掉我们电脑中第一块硬盘内的所有数据。使用这条命令一定要非常小心：
 
     shred /dev/sda
 
@@ -37,7 +37,7 @@ via: http://distrowatch.com/weekly.php?issue=20130923
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[译者ID][] 校对：[校对者ID][]
+译者：[译者ID][markvv] 校对：[校对者ID][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
