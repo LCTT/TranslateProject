@@ -1,3 +1,5 @@
+Vito
+
 Multimedia Production Studio ArtistX 1.5 Distro Is Based on Ubuntu 13.04
 ==========
 **ArtistX 1.5, an Ubuntu-based distribution that aims to enable artists and creators from a number of fields to work via a live and free environment, has just been released.**
@@ -29,7 +31,7 @@ via: http://news.softpedia.com/news/Multimedia-Production-Studio-ArtistX-1-5-Dis
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[译者ID][] 校对：[校对者ID][]
+译者：[Vito][] 校对：[校对者ID][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
