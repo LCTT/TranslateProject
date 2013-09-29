@@ -33,7 +33,7 @@ via: http://news.softpedia.com/news/Multimedia-Production-Studio-ArtistX-1-5-Dis
 
 译者：[Vito][] 校对：[校对者ID][]
 
-[LCTT]:https://github.com/LCTT/TranslateProject
+[LCTT]:https://github.com/LCTT/TranslateProject 
 [Linux中国]:http://linux.cn/portal.php
 [Vito]:http://linux.cn/space/Vito
 [校对者ID]:http://linux.cn/space/校对者ID
