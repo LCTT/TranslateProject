@@ -48,7 +48,7 @@ SchoolTool是在官方软件仓库中找到的，所以，我们可以用命令�
 
 保存并关闭文件。重启schoolTool服务。
 
-	$ sudo service schooltool restart
+	$ sudo service schooltool restart 
 
 现在，你可以从你的浏览器上用URL **http://ip-address:7080** 来访问SchoolTool网页控制台。你将看到一个空白的日历，如下图所示。
 
