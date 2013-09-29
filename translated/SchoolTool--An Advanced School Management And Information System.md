@@ -15,7 +15,7 @@ SchoolTool是经GPL2许可，使用 **Zope 3** 框架并用 **Python** 语言编
 - 学校，群组，个人和资源预定日历
 - 跟踪和管理学生的干预措施
 
- **安装SchoolTool**  
+**安装SchoolTool**  
 
 SchoolTool核心开发团队强烈建议和推荐在Ubuntu 12.04或之后版本安装SchoolTool。他们为多个系统创建了软件包，但其核心开发团队不支持它们。
 
