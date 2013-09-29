@@ -1,3 +1,5 @@
+Vito
+
 Nautilus Gksu Plugin – Add ‘Open As Administrator’ Option To Your Right Click Menu
 ================================================================================
 For past few days, I was missing a right-click menu option (in nautilus file manager) to open a file/folder as administrator. Reason being, for every operation that required root privileges, I had to go back to the command line terminal and use sudo. It’s not that I am not used to command line but still I wanted at least the availability of something equivalent to [sudo or su][1]). I searched around and found a nautilus plugin — **Nautilus-Gksu**.
