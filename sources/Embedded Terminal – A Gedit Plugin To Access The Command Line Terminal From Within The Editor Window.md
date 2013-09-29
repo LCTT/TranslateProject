@@ -1,3 +1,5 @@
+Vito
+
 Embedded Terminal – A Gedit Plugin To Access The Command Line Terminal From Within The Editor Window
 ================================================================================
 Sometimes while working with GUI based programs in Linux, you have to hop between the program window and the command line window. This consumes a bit of time. A terminal window embedded inside the program window is the best solution to this problem. I am not sure about all the other programs but if you are looking for such a solution for gedit, then there is a plug-in — **Embedded Terminal** — that lets you access command line terminal from within the gedit window.
