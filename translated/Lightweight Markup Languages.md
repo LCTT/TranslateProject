@@ -33,7 +33,7 @@ via: http://www.linuxlinks.com/article/20130921022758982/LightweightMarkupLangua
 [译者ID]:http://linux.cn/space/译者ID
 [校对者ID]:http://linux.cn/space/校对者ID
 
-[1]:http://daringfireball.net/projects/markdown/
+[1]:http://daringfireball.net/projects/markdown/ 
 [2]:http://fletcherpenney.net/multimarkdown/
 [3]:http://www.methods.co.nz/asciidoc/
 [4]:http://textile.sitemonks.com/
