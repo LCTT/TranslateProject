@@ -1,6 +1,5 @@
 rtorrent - 强大的命令行BT客户端
 ================================================================================
-If you avoid using a CLI based torrent client because you think that it might be very complex to use. Think again. I believe that CLI based bit torrent clients are far more addictive once you are used to any of them — you can start and monitor the progress from within your terminal window and that too very easily . In this article, we will discuss a powerful command line bit torrent client — **rtorrent**.
 如果你因为认为torrent命令行客户端对我们很复杂从而逃避使用它.请三思.我相信一旦使用过任何一个基于命令行的BT客户端,你就会上瘾 - 你可以非常容易的在你的终端窗口启动和监控进度. 在这篇文章中,我们将会讨论一个强大的命令行BT客户端 - **rtorrent** .
 
 **NOTE** - 文中展示的所有示例和指令都已经在Ubuntu 13.04中测试过.
