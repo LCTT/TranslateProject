@@ -1,5 +1,5 @@
 轻量级标记语言
-================================================================================
+===========
 
 轻量级标记语言是一种时髦的系统语言，它用不同的方式标注文档，并且设计了简单易读的语法。事实上，它的语法非常之简单以至于任何人都能快速的掌握这些标记语言。这类语言最大的优点在于，用户使用一个普通的文本编辑器就可以在源文档中方便的输入注释文本。
 
@@ -21,17 +21,17 @@
 
 
 
-
+---
 
 via: http://www.linuxlinks.com/article/20130921022758982/LightweightMarkupLanguages.html
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[译者ID][markvv] 校对：[Caroline][]
+译者：[markvv][] 校对：[Caroline][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/译者ID
+[markvv]:http://linux.cn/space/markvv
 [Caroline]:http://linux.cn/space/14763
 
 [1]:http://daringfireball.net/projects/markdown/ 
