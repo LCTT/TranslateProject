@@ -1,4 +1,5 @@
 Add a metallic variation to Saucy's default wall with Aqua Graphite wallpaper
+翻译中
 ================================================================================
 In every Ubuntu development cycle, the implemented-by-default wallpapers are gathered from two sources: on one hand, there is the submission contest, where creative artists submit images to a dedicated Flickr pool, on the other hand, there is the default wallpaper.
 
