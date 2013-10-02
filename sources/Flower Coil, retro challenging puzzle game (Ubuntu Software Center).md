@@ -1,4 +1,4 @@
-Flower Coil, retro challenging puzzle game (Ubuntu Software Center)
+Flower Coil, retro challenging puzzle game (Ubuntu Software Center)翻译中
 ================================================================================
 Flower Coil is a retro game centering a simplistic-yet-enjoyable action, forcing the user to attentively utilize each and each movement, in oder to complete the tasks.
 
