@@ -1,17 +1,17 @@
 lmctfy - Let Me Contain That For you 讓我用集裝箱為你的程式打包
 ====================================
-Imctfy(發音是 lem-kut-fee)是谷歌[Google](http://www.google.com)開發的容器棧，可以為Linux程式提供容器（container）。這些容器可以讓一台機器上的不同程式使用相互隔離的資源。這可以讓那些程式以獨佔的方式運行在一台機器上。這些程式也可以擁有容器，因此能夠創建和管理屬於他們自己的子容器。
+lmctfy (發音是 lem-kut-fee)是谷歌[Google](http://www.google.com)開發的容器棧，可以為Linux程式提供容器（container）。這些容器可以讓一台機器上的不同程式使用相互隔離的資源。這可以讓那些程式以獨佔的方式運行在一台機器上。這些程式也可以擁有容器，因此能夠創建和管理屬於他們自己的子容器。
 
 這項項目旨在提供一組以用戶的意圖為原點的高級API，來實現對容器概念的抽象化。這些創建的容器自身也通過繼承也可以擁有了自己的容器、也能夠杯其他的用戶程序所管理。
 
 Lmctfy是為某些特定的場景（配置環境）設計、實現的，所以可能不能在所有場景（配置環境）中正常運作。我們目標是為更多的場景（配置環境）提供更多的支持，所以你可以為這項項目[貢獻](#貢獻])你的補丁 或是 在[郵件列表](#郵件列表)中發送郵件，這樣我們可以朝著[路線圖](#路線圖)前進。
 
-Imctfy 內包含一個C++庫 和一個CLI（命令行界面程序）
+lmctfy  內包含一個C++庫 和一個CLI（命令行界面程序）
 lmctfy is released as both a C++ library and a CLI.
 
 ## 最新進展
 
-Imctfy 還是一個在beta階段程式，目前仍在高度的開發中。最新的版本是0.1。她目前只支持CPU和內存資源的隔離。點擊查看我們的[路線圖](#路線圖)查看各部分的開發情況，點擊查看[貢獻](#貢獻)。
+lmctfy  還是一個在beta階段程式，目前仍在高度的開發中。最新的版本是0.1。她目前只支持CPU和內存資源的隔離。點擊查看我們的[路線圖](#路線圖)查看各部分的開發情況，點擊查看[貢獻](#貢獻)。
 
 ## 從此開始
 
@@ -21,7 +21,7 @@ Imctfy 還是一個在beta階段程式，目前仍在高度的開發中。最新
 
 編譯本程序需要使用make和g++4.7。lmcfy使用了C++11，所以需要支援這項feature的編譯器。我們在 **Ubuntu 12.04+** 上測試過編譯。如果有為其他環境的編譯提供支援的補丁，我們很哈皮而且希望這越多越好。
 
-Imctfy 依賴下列幾個庫，需要這些庫存在於你的計算機系統裡。
+lmctfy  依賴下列幾個庫，需要這些庫存在於你的計算機系統裡。
 * [Protocol Buffers](https://code.google.com/p/protobuf/)
 * [gflags](https://code.google.com/p/gflags/)
 * [RE2](https://code.google.com/p/re2/)
@@ -55,7 +55,7 @@ make -j <進程數> check
 
 ### 初始化
 
-lmctfy已經在 **Ubuntu 12.04+** 和 **Ubuntu 3.3** and **3.8** 內核上測試過。Imctfy當一台機器的所有容器都是運行她得時候 運轉得最好。所以不建議讓她運行在  [LXC](http://lxc.sourceforge.net/) 或者 其他container系統上（儘管在某些特殊得配置下這能夠跑起來）。
+lmctfy已經在 **Ubuntu 12.04+** 和 **Ubuntu 3.3** and **3.8** 內核上測試過。lmctfy 當一台機器的所有容器都是運行她得時候 運轉得最好。所以不建議讓她運行在  [LXC](http://lxc.sourceforge.net/) 或者 其他container系統上（儘管在某些特殊得配置下這能夠跑起來）。
 
 為了運行lmctfy，我們必須首先初始化計算機。這只需要運行一次就可以，而且一般是在計算機第一次啓動時候就完成了。當cgroup的hierarchies已經掛載了，接下來通常一個空的配置會可以讓lmctfy自動監測到目前的掛載。
 
@@ -83,8 +83,7 @@ lmctfy init "
   }"
 ```
 
-這樣，機器就可以被lmctfy使用、進行容器的操作。
-The machine should now be ready to use `lmctfy` for container operations.
+這樣，機器就可以被`lmctfy`使用、進行容器的操作。
 
 ## 容器的命名
 
@@ -173,7 +172,6 @@ lmctfy run -n /test "echo hello from a daemon"
 ### 其他
 
 鍵入`lmctfy help`查看全部的命令和文檔
-Use `lmctfy help` to see the full command listing and documentation.
 
 ## C++ Library
 
