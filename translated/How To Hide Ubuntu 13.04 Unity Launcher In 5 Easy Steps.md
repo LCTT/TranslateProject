@@ -76,5 +76,5 @@ via: http://mylinuxbook.com/hide-unity-launcher-ubuntu-13-04/
 [flsf]:http://linux.cn/space/flsf01
 [校对者ID]:http://linux.cn/space/校对者ID
 
-[1]:http://ubuntuforums.org/showthread.php?t=2147537
+[1]:http://ubuntuforums.org/showthread.php?t=2147537 
 
