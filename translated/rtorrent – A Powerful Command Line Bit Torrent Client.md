@@ -1,6 +1,7 @@
 rtorrent - 强大的命令行BT客户端
 ================================================================================
-如果你因为认为torrent命令行客户端对我们很复杂从而逃避使用它.请三思.我相信一旦使用过任何一个基于命令行的BT客户端,你就会上瘾 - 你可以非常容易的在你的终端窗口启动和监控进度. 在这篇文章中,我们将会讨论一个强大的命令行BT客户端 - **rtorrent** .
+
+如果你因为觉得torrent命令行客户端使用繁琐而避免使用它.请三思，我相信一旦使用过任何一个基于命令行的BT客户端,你就会上瘾 - 你可以非常轻松地在你的终端窗口启动和监控进度. 在这篇文章中,我们将会讨论一个强大的命令行BT客户端 - **rtorrent** .
 
 **NOTE** - 文中展示的所有示例和指令都已经在Ubuntu 13.04中测试过.
 
@@ -19,14 +20,14 @@ rtorrent 是一个用来轻松下载文件的命令行BT客户端(基于ncurses)
 ![](http://mylinuxbook.com/wp-content/uploads/2013/09/rtorrent-3.png)
 
 
-好吧,我同意这个主窗口看起来是有一点难看而且显示的信息有一点点混乱.不要担心,只要在你的键盘上按下enter就会有一个提示出现在窗口底部.
+好吧,我同意这个主窗口看起来并不是很美观，而且显示的信息有一点点混乱.不要担心,只要在你的键盘上按下enter就会有一个提示出现在窗口底部.
 
 这是截图:
 
 ![](http://mylinuxbook.com/wp-content/uploads/2013/09/rtorrent-4.png)
 
 
-留意这个出现在屏幕上的提示load.normal> .下一步仅需输入torrent文件的名字. 例如,我用这个torrent文件名 **Fedora-20-Alpha-x86_64-DVD.torrent**.
+注意这个出现在屏幕上的提示load.normal> .下一步仅需输入torrent文件的名字. 例如,我用这个torrent文件名 **Fedora-20-Alpha-x86_64-DVD.torrent**.
 
 
 ![](http://mylinuxbook.com/wp-content/uploads/2013/09/rtorrent-6.png)
@@ -42,7 +43,7 @@ rtorrent 是一个用来轻松下载文件的命令行BT客户端(基于ncurses)
 
 ![](http://mylinuxbook.com/wp-content/uploads/2013/09/rtorrent-8.png)
 
-留意在torrent文件信息开头显示的 \*\*stars\*\* . 现在,按下 Ctrl+s 开始下载.
+注意在torrent文件信息开头显示的 \*\*stars\*\* . 现在,按下 Ctrl+s 开始下载.
 
 ![](http://mylinuxbook.com/wp-content/uploads/2013/09/rtorrent-9.png)
 
@@ -55,13 +56,13 @@ rtorrent现在已经开始下载当前文件了. 用 **Ctrl+d** 停止下载,再
 
 一些重要的关于rtorrent的链接:
 
-- 主页
-- 下载链接
+- [主页][5]
+- [下载链接][6]
 
 
 Ubuntu 用户可以从Ubuntu软件中心下载rtorrent. 现在使用的版本是0.9.2.
 
-rtorrent 下载安装之后,你必须设置一个资源文件(配置文件) - **.rtorrent.rc** . 否则程序无法正常启动,直到这个文件放好. 下图就是我没有设置 **~/rtorrent.rc** 运行程序的结果.
+rtorrent 下载安装之后,你必须设置一个资源文件(配置文件) - **.rtorrent.rc** . 这个文件必须放置好，否则程序无法正常启动. 下图就是我没有设置 **~/rtorrent.rc** 运行程序的结果.
 
 ![](http://mylinuxbook.com/wp-content/uploads/2013/09/rtorrent-1.png)
 
@@ -128,7 +129,7 @@ rtorrent 下载安装之后,你必须设置一个资源文件(配置文件) - **
 
 注意 - 这个资源文件引用自[这个链接][2].
 
-要使用这个资源文件,不要忘记运行下面的命令(建立必要的资源文件中提到的目录):
+要使用这个资源文件,不要忘记运行下面的命令(建立资源文件中提到的目录):
 
 
     mkdir /home/<your-username>/rTempDownloadFiles
@@ -137,39 +138,41 @@ rtorrent 下载安装之后,你必须设置一个资源文件(配置文件) - **
     mkdir /home/<your-username>/rWatch
 
 
-用你自己的用户名替换 <your-username>.还有,确保资源文件的名字是 **.rtorrent.rc** (前面有一个点) 不要用 **rtorrent.rc**,把它保存在你的home目录(我的是/home/himashu).
+用你自己的用户名替换 <your-username>.还有,确保资源文件的名字是 **.rtorrent.rc** (前面有一个点) 不是 **rtorrent.rc**,把它保存在你的home目录(我的是/home/himashu).
 
-想知道更多关于使用rtorren, 请读[用户指南][3]. 还可以在rtorrent中通过[详细教程][4].
+想知道更多关于使用rtorren, 请读[用户指南][3]. 还可以在rtorrent中浏览[详细教程][4].
 
-**赞成**
+**优点**
 
 - 功能丰富
 - 大量的自定义选项
 
-**反对**
+**缺点**
 
 - 初始配置时需要一点精力
 - 用户可能需要一些时间来习惯
 
 **结论**
 
-rtorrent 是为那些想要用命令行BT客户端来代替基于GUI的客户端的用户准备的.虽然它需要为初始化配置付出一些精力并且需要一些练习来习惯,但是这些精力是值得的.尝试一下,它一定会打动你.
+rtorrent 是为那些想要用命令行BT客户端来代替基于GUI的客户端的用户准备的.虽然它需要为初始化配置付出一些精力并且需要一些操作来习惯,但是这些精力是值得的.尝试一下,它一定会给你留下深刻印象.
 
-*你使用基于CLI的BT客户端?它的正反两方面意见怎么样?和我们分享你的经历.*
+*你使用基于CLI的BT客户端吗?它有什么优势和弊端?和我们分享你的经历.*
 
 
 via: http://mylinuxbook.com/rtorrent-bit-torrent-client/
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[flsf01][] 校对：[校对者ID][]
+译者：[flsf01][] 校对：[Caroline][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [flsf01]:http://linux.cn/space/flsf01
-[校对者ID]:http://linux.cn/space/校对者ID
+[Caroline]:http://linux.cn/space/14763
 
 [1]:http://libtorrent.rakshasa.no/export/1170/trunk/rtorrent/doc/rtorrent.rc
 [2]:http://ankursinha.fedorapeople.org/misc/rtorrentconf/rtorrent.rc
 [3]:http://libtorrent.rakshasa.no/wiki/RTorrentUserGuide
 [4]:http://fsk141.com/rtorrent-the-complete-guide/
+[5]:http://libtorrent.rakshasa.no/
+[6]:http://libtorrent.rakshasa.no/wiki/Download
