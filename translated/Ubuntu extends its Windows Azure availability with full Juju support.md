@@ -1,4 +1,3 @@
-Ubuntu extends its Windows Azure availability with full Juju support
 Juju全面支持，Ubuntu扩展了其Windows Azure的可用性
 ==========
 
