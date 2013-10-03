@@ -157,7 +157,7 @@ lmctfy run -n /test "echo hello from a daemon"
 Use `lmctfy help` to see the full command listing and documentation.
 
 ## C++ Library
-The library is comprised of the `::containers::lmctfy::ContainerApi` factory which creates, gets, destroys, and detects `::containers::lmctfy::Container` objects that can be used to interact with individual containers. Full documentation for the lmctfy C++ library can be found in [lmctfy.h](/include/lmctfy.h). 
+The library is comprised of the `::containers::lmctfy::ContainerApi` factory which creates, gets, destroys, and detects `::containers::lmctfy::Container` objects that can be used to interact with individual containers. Full documentation for the lmctfy C++ library can be found in [lmctfy.h](/include/lmctfy.h).
 
 ## Roadmap
 
@@ -192,7 +192,7 @@ Some of the relevant kernel patches:
 
 ## Contributing
 
-Interested in contributing to the project? Feel free to send a patch or take a look at our [roadmap](#roadmap) for ideas on areas of contribution. Follow [Getting Started](#getting-started) above and it should get you up and running. If not, let us know so we can help and improve the instructions. 
+Interested in contributing to the project? Feel free to send a patch or take a look at our [roadmap](#roadmap) for ideas on areas of contribution. Follow [Getting Started](#getting-started) above and it should get you up and running. If not, let us know so we can help and improve the instructions.
 
 ## Mailing List
 
@@ -204,7 +204,7 @@ via: https://github.com/google/lmctfy/
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[译者ID][] 校对：[校对者ID][]
+译者：[译者ID][Chilledheart](http://linux.cn/space/Chilledheart) 校对：[校对者ID][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
