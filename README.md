@@ -1,9 +1,9 @@
 简介
 -------------------------------
 
-LCTT是Linux中国社区（ http://linux.cn/ ）的翻译组，负责从国外优秀媒体翻译Linux相关的技术、资讯、杂文等内容。
+LCTT是Linux中国社区（[http://linux.cn/]()）的翻译组，负责从国外优秀媒体翻译Linux相关的技术、资讯、杂文等内容。
 
-LCTT已经拥有十余名成员，并欢迎更多的Linux志愿者加入我们的团队。
+LCTT已经拥有十余名活跃成员，并欢迎更多的Linux志愿者加入我们的团队。
 
 LCTT的组成
 -------------------------------
@@ -24,17 +24,34 @@ LCTT的组成
 
 加入的成员，请先阅读[WIKI 如何开始](https://github.com/LCTT/TranslateProject/wiki/如何开始)。
 
-见习成员和正式成员
+如何开始
 -------------------------------
 
-初次加入的成员，作为见习成员，请先fork本项目[TranslateProject](https://github.com/LCTT/TranslateProject)。
+请阅读[WIKI](https://github.com/LCTT/TranslateProject/wiki)。
 
-完成一篇后，发起pull请求，合并到主干。一旦被采纳，即可被接纳为正式成员，从而可以直接在主干上提交。
-
-看看WIKI
+活跃成员
 -------------------------------
 
-需要帮助？请阅读[WIKI](https://github.com/LCTT/TranslateProject/wiki)。
+目前活跃成员有：
+[wxy](https://github.com/wxy)，
+[carolinewuyan](https://github.com/carolinewuyan)，
+[vito-L](https://github.com/vito-L)，
+[tinyeyeser](https://github.com/tinyeyeser)，
+[woodboow](https://github.com/woodboow)，
+[DeadFire](https://github.com/DeadFire)，
+[flsf](https://github.com/flsf)，
+[theo-l](https://github.com/theo-l)，
+[jasminepeng](https://github.com/jasminepeng)，
+[boredivan](https://github.com/boredivan)，
+[Linchenguang](https://github.com/Linchenguang)，
+[gamelifedong](https://github.com/gamelifedong)，
+[Maclauring](https://github.com/Maclauring)，
+[lijhg](https://github.com/lijhg)，
+[liuaiping](https://github.com/liuaiping)，
+[younel0925](https://github.com/younel0925)。
+（更新于2013/10/3）
+
+谢谢大家的支持！
 
 历史
 -------------------------------
@@ -42,3 +59,4 @@ LCTT的组成
 * 2013/09/10 倡议并得到了大家的积极响应，成立翻译组。
 * 2013/09/11 采用github进行翻译协作，并开始进行选题翻译。
 * 2013/09/16 公开发布了翻译组成立消息后，又有新的成员申请加入了。并从此建立见习成员制度。
+* 2013/09/24 鉴于大家使用Github的水平不一，容易导致主仓库的一些错误，因此换成了常规的fork+PR的模式来进行翻译流程。

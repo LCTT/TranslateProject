@@ -1,3 +1,5 @@
+Vito
+
 Travel support applications to attend openSUSE Summit opened!
 ================================================================================
 We are happy to announce the Travel Team is ready to receive applications for sponsorships to attend to [openSUSE Summit][1] 2013.
