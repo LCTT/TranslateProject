@@ -1,3 +1,5 @@
+Vito
+
 Calculator App updated with optimized show/hide calculation description
 ================================================================================
 [Ubuntu Touch Core Apps][1] is an official project where a set of core applications is presently being developed, apps ranging from music players to weather tools and RSS readers.
