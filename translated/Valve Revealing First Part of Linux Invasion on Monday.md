@@ -2,7 +2,7 @@
 Valve Revealing First Part of Linux Invasion on Monday
 ================================================================================
 On Monday Valve tossed up a teaser site promising new info.
-
+在星期一
 Just days after Gabe Newell hinted to a possible Steam Box reveal next week, [Valve Software on Friday sent along this link][1] stating that the Steam Universe is expanding in 2014. Placed under the heading is a large-screen HDTV with a portal glaring back like a blue-black eye, and three smaller portals underneath, one of which has a countdown timer (71 hours to go at this writing).
 
 "Last year, we shipped a software feature called Big Picture, a user-interface tailored for televisions and gamepads," the company teases. "This year we've been working on even more ways to connect the dots for customers who want Steam in the living-room. Soon, we'll be adding you to our design process, so that you can help us shape the future of Steam."
