@@ -229,6 +229,8 @@ Features include:
 - Quota journaling
 - Implements discard/TRIM
 
+
+
 ---
 
 via: http://www.linuxlinks.com/article/20130927180305497/JournalingFileSystems.html
