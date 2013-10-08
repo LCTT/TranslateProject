@@ -37,4 +37,4 @@ via: <http://iloveubuntu.net/calculator-app-updated-optimized-showhide-calculati
 [校对者ID]:http://linux.cn/space/校对者ID
 
 [1]:https://launchpad.net/ubuntu-phone-coreapps
-[2]:https://launchpad.net/ubuntu-calculator-app
+[2]:https://launchpad.net/ubuntu-calculator-app 
