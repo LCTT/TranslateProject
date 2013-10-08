@@ -1,4 +1,5 @@
 3 Good CD And DVD Burning Tools For Ubuntu
+Ubuntu下的三个CD/DVD刻录工具
 ================================================================================
 About a week ago my friend asked me to help him with some information about some good cd/dvd apps in Ubuntu, because he was planning to give a try to Linux. This guy is a windows user, but the software he uses in Windows costs so much he can not afford anymore. So, why not use free software to burn your favourite movies and music files? There are also free alternatives in windows operating system, but since my friend is moving to Linux world, lets give him information about three free cd and dvd burning tools for Ubuntu Linux.
 
