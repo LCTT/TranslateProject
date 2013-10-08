@@ -25,4 +25,4 @@ via: http://iloveubuntu.net/add-metallic-variation-saucys-default-wall-aqua-grap
 [校对者ID]:http://linux.cn/space/校对者ID
 
 [1]:https://twitter.com/Mesq/status/383221778257936384
-[2]:http://farm3.staticflickr.com/2831/9950159855_fa8077e928_o.png
+[2]:http://farm3.staticflickr.com/2831/9950159855_fa8077e928_o.png 
