@@ -29,12 +29,12 @@ via: <http://iloveubuntu.net/calculator-app-updated-optimized-showhide-calculati
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[Vito][] 校对：[校对者ID][]
+译者：[Vito][] 校对：[Caroline][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [Vito]:http://linux.cn/space/Vito
-[校对者ID]:http://linux.cn/space/校对者ID
+[Caroline]:http://linux.cn/space/14763
 
 [1]:https://launchpad.net/ubuntu-phone-coreapps
 [2]:https://launchpad.net/ubuntu-calculator-app 
