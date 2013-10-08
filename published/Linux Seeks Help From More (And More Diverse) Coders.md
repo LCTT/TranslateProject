@@ -1,5 +1,6 @@
 Linux正寻求更多更加多样化的程序猿和程序媛们
-================================================================================
+====================================
+
 ![](http://www.wired.com/wiredenterprise/wp-content/uploads/2013/09/linuxcon.jpeg)
 
 *Sarah Sharp(照片中的白富美)和Linus Torvalds(右起第二位)在LinuxCon大会上。照片提供：Linux基金会*
@@ -30,23 +31,24 @@ Torvalds有埋怨人嘴不饶人的习惯，这个夏天，Sharp曾因此在内�
 
 尽管Linux大部分都是由白种男人们写就，但是社区正在朝着改变的方向[艰难前进][5]。Sharp自己就协调了一个实习生计划，用来帮助女程序媛加入开源项目。（当时在大会上，她说现场就有两位她的程序媛小伙伴也来参会，为的就是能在这里找份工作）。同时，这也是LinuxCon有史以来的首次，有妹纸在午餐会上出现。
 
-此次大会共有60位左右的女性参会，Linux基金会的一位发言人Jennifer Cloer说，“我真没想到会有这么多妹纸……”。
+此次大会共有60位左右的女性参会，Linux基金会的一位女发言人Jennifer Cloer说，“我真没想到会有这么多妹纸……”。
 
-对了，还有件事值得一提。从去年开始*，LinuxCon已经开始提供女性尺码的大会T恤了。
+对了，还有件事值得一提。从去年开始，LinuxCon已经开始提供女性尺码的大会T恤了。
 
-**东部时间2013年9月19日17:55 更正：稍早的一篇报道中写道，今年是第一年LinuxCon大会提供女性T恤。其实他们从去年2012年就已开始。特此更正。*
+*东部时间2013年9月19日17:55 更正：稍早的一篇报道中写道，今年是第一年LinuxCon大会提供女性T恤。其实他们从去年2012年就已开始。特此更正。*
 
+---
 
 via: http://www.wired.com/wiredenterprise/2013/09/linuxcon/
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[Mr小眼儿][] 校对：[校对者ID][]
+译者：[Mr小眼儿][] 校对：[wxy][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [Mr小眼儿]:http://linux.cn/space/14801
-[校对者ID]:http://linux.cn/space/校对者ID
+[wxy]:http://linux.cn/space/wxy
 
 [1]:http://www.wired.com/wiredenterprise/2013/07/linus-torvalds-right-to-offend/
 [2]:http://www.youtube.com/watch?v=84Sx0E13gAo&feature=youtu.be
