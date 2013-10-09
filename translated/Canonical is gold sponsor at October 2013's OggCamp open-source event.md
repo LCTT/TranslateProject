@@ -1,4 +1,4 @@
-Canonical成为2013年10月份奥格夏令营开源活动的金牌赞助商
+Canonical成为2013年10月份奥格夏令营开源活动的金牌赞助商 
 ================================================================================
 [奥格夏令营(OggCamp)][1]是一个快乐有趣的聚会，计算机达人们聚在一起，“整个周末都充满乐趣”。夏令营成员们一起生活，一起讨论，内容涵盖自由开源软件、知识共享、项目协作以及天才黑客活动等一切热门话题。
 
@@ -31,4 +31,4 @@ via: http://iloveubuntu.net/canonical-gold-sponsor-october-2013s-oggcamp-open-so
 [校对者ID]:http://linux.cn/space/校对者ID
 
 [1]:http://oggcamp.org/
-[2]:http://oggcamp.org/event/
+[2]:http://oggcamp.org/event/ 
