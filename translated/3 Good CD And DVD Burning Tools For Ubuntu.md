@@ -1,6 +1,6 @@
 Ubuntu下的三个CD/DVD刻录工具
 ================================================================================
-大约一周前，我的朋友向我寻求一些帮助，是关于在Ubuntu下有哪些好用的CD/DVD刻录软件的。此人本是windows的用户，但是由于Windows下的软件花费巨大，超出他的承受能力，因此他开始计划尝试使用Linux系统了。为什么不用那些免费的软件来把你喜欢的电影和音乐刻录到光盘里呢？其实windows操作系统中也有免费的替代产品，但是既然我的朋友正在走向Linux世界，让我们给他一些信息，介绍三个可以在Ubuntu Linux系统下使用的免费CD/DVD刻录工具吧。
+大约一周前，我的朋友向我寻求一些帮助，是关于在Ubuntu下有哪些好用的CD/DVD刻录软件。此人本是windows的用户，但是由于他使用的Windows软件花费巨大，超出他的承受能力，因此他开始计划尝试使用Linux系统了。为什么不用那些免费的软件来把你喜欢的电影和音乐刻录到光盘里呢？其实windows操作系统中也有免费的替代产品，但是既然我的朋友正在走向Linux世界，让我们给他一些信息，介绍三个可以在Ubuntu Linux系统下使用的免费CD/DVD刻录工具吧。
 
 **Brasero Disc Burner**
 
@@ -26,7 +26,7 @@ Ubuntu下的三个CD/DVD刻录工具
 - 支持编辑CD-TEXT信息
 - 能够多区段刻录音频CD
 - 能够使用所有可以被本地安装的Gstreamer所处理的音频文件(ogg，flac，mp3，...)。
-- 能够在被删除的文件夹内查询音频文件
+- 能够在已删除的文件夹内查询音频文件
 - 在曲目间完全无噪音的编辑
 
 你可以在[here][1]读到完整的功能列表。
@@ -35,7 +35,7 @@ Ubuntu下的三个CD/DVD刻录工具
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/burning_tools2.png)
 
-K3b是另一个能够完成大多数CD/DVD刻录任务的免费工具。这个功能丰富的软件有一个很方便的用户界面，并且能够处理蓝光或者高清DVD光盘。
+K3b是另一个能够完成大多数CD/DVD刻录任务的免费工具。这个功能丰富的软件有一个使用便捷的用户界面，并且能够处理蓝光或者高清DVD光盘。
 
 该软件包含三个基本部分：
 
@@ -51,7 +51,7 @@ K3b是另一个能够完成大多数CD/DVD刻录任务的免费工具。这个�
 
 当点击代表CD/DVD的驱动器图标时，K3b会展示出相关内容，并允许做一些更进一步的操作。比如翻录音频CD。
 
-K3b能够自动修改MP3和OGG的文件名为“艺术家-标题.mp3”这样的通用格式，可以通过托拽来刻录数据CD或者ISO镜像，可以创建eMovix格式的CD/DVD，能够把音频光碟翻录成任意CD数据库所支持的格式……这些还只是K3b的部分功能。你可以从[这里][2]阅读他的更多资料。
+K3b能够把MP3和OGG的文件自动重命名为“艺术家-标题.mp3”这样的通用格式，可以通过托拽来刻录数据CD或者ISO镜像，可以创建eMovix格式的CD/DVD，能够把音频光碟翻录成任意CD数据库所支持的格式……这些还只是K3b的部分功能。你可以从[这里][2]阅读更多有关它的功能的资料。
 
 **Xfburn**
 
@@ -67,12 +67,12 @@ via: http://www.unixmen.com/3-good-cd-dvd-burning-tools-ubuntu/
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[译者ID][markvv] 校对：[校对者ID][]
+译者：[译者ID][markvv] 校对：[Caroline][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [译者ID]:http://linux.cn/space/markvv
-[校对者ID]:http://linux.cn/space/校对者ID
+[Caroline]:http://linux.cn/space/14763
 
 [1]:https://projects.gnome.org/brasero/
 [2]:http://www.k3b.org/
