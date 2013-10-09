@@ -223,13 +223,12 @@ via: http://www.linuxlinks.com/article/20130927180305497/JournalingFileSystems.h
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[flsf][] 校对：[Caroline][]，[wxy][]
+译者：[flsf][] 校对：[Caroline][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [flsf]:http://linux.cn/space/flsf01
 [Caroline]:http://linux.cn/space/14763
-[wxy]:http://linux.cn/space/wxy
 
 [1]:ftp://ftp.kernel.org/pub/linux/kernel/people/sct/ext3/
 [2]:http://oss.sgi.com/projects/xfs/
