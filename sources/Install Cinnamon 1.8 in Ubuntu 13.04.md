@@ -1,3 +1,5 @@
+Vito
+
 Install Cinnamon 1.8 in Ubuntu 13.04
 ================================================================================
 We have talked about what [Cinnamon][1] and [Nemo File Manage][2])r is in some of our [previous articles][3]. But if you still don’t know what Cinnamon is, here you are:
