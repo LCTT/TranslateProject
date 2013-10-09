@@ -21,11 +21,11 @@ via: http://iloveubuntu.net/ubuntu-extends-its-windows-azure-availability-full-j
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[jiefu][] 校对：[Caroline][]
+译者：[晨光][] 校对：[Caroline][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
-[jiefu]:http://linux.cn/space/jiefu
+[晨光]:http://linux.cn/space/14800
 [Caroline]:http://linux.cn/space/14763
 
 [1]:https://juju.ubuntu.com/
