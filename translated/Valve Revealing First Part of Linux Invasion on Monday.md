@@ -1,38 +1,40 @@
-翻译中theo
-Valve Revealing First Part of Linux Invasion on Monday
-================================================================================
-On Monday Valve tossed up a teaser site promising new info.
-在星期一
-Just days after Gabe Newell hinted to a possible Steam Box reveal next week, [Valve Software on Friday sent along this link][1] stating that the Steam Universe is expanding in 2014. Placed under the heading is a large-screen HDTV with a portal glaring back like a blue-black eye, and three smaller portals underneath, one of which has a countdown timer (71 hours to go at this writing).
+Valve 在星期一揭露进军Linux的首要计划
+==============================
 
-"Last year, we shipped a software feature called Big Picture, a user-interface tailored for televisions and gamepads," the company teases. "This year we've been working on even more ways to connect the dots for customers who want Steam in the living-room. Soon, we'll be adding you to our design process, so that you can help us shape the future of Steam."
+在星期一Valve为一家有前途的急转弯网站匆匆准备了新信息。
 
-Valve said in an email that next week, the company will be talking about steps it's taking to make Steam more accessible on televisions and the living room. The first announcement will be on Monday morning, hence the first portal with the countdown timer. That said, bookmark the link and see what the company has in store beginning next week.
+仅仅在Gabe Newell暗示可能在下周揭露蒸汽盒几天之后，[Valve软件在星期五发送了这条链接][1]声明表示，蒸汽宇宙会在2014年进行扩展。在标题下方放置的是一个大屏的HDTV和一个炫目的网站门户--背景看起来像一个兰黑色的眼，在其下方有三个较小的门户，其中一个有一个倒计时器（在写这边报道时还剩71个小时）
 
-[During LinuxCon in New Orleans earlier this week][2], Gabe Newell said that Linux is the future of PC gaming because there are no closed networks; it's an open-source environment that ultimately will provide a cheaper gaming platform for PC gamers because there's no added OS costs. Updates should also not be an issue with an open environment -- he said it took six months just to get an app update approved by Apple.
+“去年，我们发布了一个软件特征称作大视角，是一款为电视机和游戏控制器定制的用户接口，”这家公司自嘲道。“今年我们大量的工作注重于点连接的更多方式上，来满足那些想要在客厅里拥有蒸汽的用户需求”
 
-Valve has already proven its Linux dedication by launching a standalone Linux client in February, and added 198 games to its Linux library. However, Newell hinted to the possible Linux-based Steam Box by illustrating how Linux can eliminate the complexities of having hardware with proprietary software in the living room. Gamers want their systems to be simple and not locked to specific hardware sets for many years.
 
-He said that bringing Steam to Linux "was a signal for our development partners that we really were serious about this Linux thing we were talking about." The company is also contributing to the LLDB debugger project and co-developing an additional debugger. Currently, [Linux gaming accounts for less than one percent of the market][3], including players, player minutes, and revenue. Valve looks to change that.
+Valve在邮件中说道，明年公司将会讨论关于促使Steam在电视机和客厅之间的更好访问性要进行的一系列步骤。根据第一个网站门户上的倒计时，关于首份通告会在星期一上午发布。也就是说，收藏这个链接以便在下周伊始可以看到公司店里有什么稀奇事物。
 
-"It feels a bit funny coming here and telling you guys that Linux and open source are the future of gaming," Newell said after walking on stage. "Sort of like going to Rome and teaching Catholicism to the Pope, so bear with me."
+[在本周前几天的新奥尔良的LinuxCon会议中][2],Gabe Newell说道，Linux将是PC游戏的未来，因为不会再有封闭的网络；开源环境最终会为PC游戏玩家提供提供便宜的游戏平台，因为没有了附加的操作系统成本。在开放环境下更新也不再是问题--他指出一款应用的更新仅仅通过Apple的批准就需要花费6个月的时间。
 
-Rumors surrounding Steam Box have focused on the user's ability to upgrade the device when needed, which is why everyone was sure that Xi3 Corp's Piston machine was the flagship device. But sources close to the two companies said the relationship fizzled during CES 2013 in January, so now we're left wondering what will actually power Valve's platform. Yet the company has stated several times in the past that Steam Box won't be a specific hardware set, but more like a Steam Box certification for multiple hardware solutions from partners.
+Valve在二月份通过运行单独的一台Linux客户端并添加了198个游戏到其Linux库中已经证明了Linux的尽心尽力。然而，Newell通过在客厅演示了Linux是怎样利用装有自己的软件的硬件来消除复杂性暗示了基于Linux蒸汽盒的可能性。游戏玩家希望他们的系统简单而且在有限时间内不会被锁定在特定的硬件上。
 
-"Next week, we're going to be rolling out more information about how we get [living room unification], and what are the hardware opportunities that we see for bringing Linux into the living room and potentially pointing further down the road to how we can get it even more unified in mobile."
+他指出将蒸汽机领入Linux“是给我我们开发合作伙伴的一个信号来说明我们关于Linux事项的讨论是真正严肃的。” 公司同样也为LLDB调试器做出了贡献而且共同开发了另外一个调试器。当前，[Linux游戏帐号还少于市场份额的1%][3]，包括游戏玩家数、游戏时间和收益。Valve想要改变这一状况。
 
-See you Monday.
+“到此为止感觉有些有趣，伙计们，告诉你们Linux和开源将会是游戏的未来，”Newell在走上台之后说。“有点像到罗马将给教皇教授天主教，忍受一下我吧。”
 
+围绕蒸汽盒的谣言集中在用户在必要的时候更新设备的能力，也是每个人确信Xi3公司的活塞机器是一款优秀的设备。当然这家公司已经在过去声明了几次蒸汽盒不想成为一个特定硬件集合，而是更像是来自合作伙伴的多种硬件解决的一种认证解决方案。
+
+“下周，我们将会公开我们关于客厅统一的更多信息，以及我们看到的将Linux带入客厅时硬件的机会和在不久的未来我们可以通过移动电话带来的更统一化的潜力”
+
+星期一见
+
+---
 
 via: http://www.tomshardware.com/news/valve-gabe-newell-steam-box-linux-monday,24342.html
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[译者ID][] 校对：[校对者ID][]
+译者：[theo-l][] 校对：[校对者ID][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/译者ID
+[theo-l]:http://linux.cn/space/theo-l
 [校对者ID]:http://linux.cn/space/校对者ID
 
 [1]:http://steampowered.com/livingroom
