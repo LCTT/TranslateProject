@@ -2,16 +2,22 @@ GParted 0.16.2 Review
 回顾GParted 0.16.2
 ================================================================================
 **GParted is probably one of the most important applications on the Linux platform and it's also one of the most useful and recognizable pieces of software.**
+**GParted可能是Linux平台上最重要的应用程序之一了，并且它也是最有用最易识别的软件之一。**
 
 It would be incorrect to talk about GParted as a standalone application. To be fair, this is the GTK+ frontend to GNU Parted, but the developers have done a lot more than just provide a simple interface for an otherwise cumbersome and difficult software.
+不能够把GParted作为一个独立的应用程序来讨论。公平的说，它本是采用GTK+开发的GNU Parted的前端程序。但是由于开发人员做了许多工作，使得它的功能已经不仅仅只是给这个复杂而难用的软件提供一个简单的图形界面了。
 
 GParted was launched back in 2004 and the developers have been working on it ever since. The process is slow and the latest version released (and reviewed by us) is 0.16.2. Keep in mind that almost 10 years of active development have passed.
+GParted项目启动于2004年，自从那时起开发人员一直在不断的完善它。这个过程是缓慢的，最新发布的版本号是0.16.2（该版本已经被我们审核过）。难以想象这个开发工作一下就持续了几乎10年。
 
 Users will find that GParted is not the only tool in the shed. A live operating system is also available, by the name of GParted Live. This is capable of running on virtually anything that comes with an optical drive or USB port, including Mac systems.
+用户会发现GParted不仅仅是唯一的工具。同样可以使用一个名叫GParted Live的操作系统，它无需安装即可直接使用。它可以在任何带有光盘或者USB接口的系统上直接运行，包括Mac操作系统。
 
 It would be hard to imagine the Linux world without this tool, but we also have to say that it's not the only application able to do this work.
+很难想像在Linux世界中没有这个工具会怎样，但是我们也不得不说，它并不是完成这方面工作唯一工具。
 
 **Installation**
+**安装**
 
 This is a tricky one. The GParted developers only provide the latest version of their application as source, which means that if you really want the best version, you will have to do some compiling. This is the bad news.
 
