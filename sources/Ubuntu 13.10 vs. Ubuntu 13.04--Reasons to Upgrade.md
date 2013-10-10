@@ -36,5 +36,5 @@ via: http://news.softpedia.com/news/Ubuntu-13-10-vs-Ubuntu-13-04-Reasons-to-Upgr
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/14901/
+[Timeszoro]:http://linux.cn/space/14901/
 [校对者ID]:http://linux.cn/space/校对者ID
