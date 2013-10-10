@@ -1,4 +1,5 @@
 GParted 0.16.2 Review
+回顾GParted 0.16.2
 ================================================================================
 **GParted is probably one of the most important applications on the Linux platform and it's also one of the most useful and recognizable pieces of software.**
 
