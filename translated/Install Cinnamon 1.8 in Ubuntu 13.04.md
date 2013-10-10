@@ -47,5 +47,5 @@ via: http://www.unixmen.com/install-cinnamon-1-8-ubuntu-13-04/
 [1]:http://www.unixmen.com/cinnamon-and-nemo-file-manager-in-ubuntu-13-0413-10/
 [2]:http://cinnamon.linuxmint.com/
 [3]:http://en.wikipedia.org/wiki/Nemo_(file_manager)
-[4]:http://linuxmint.com/
+[4]:http://linuxmint.com/ 
 [5]:http://cinnamon.linuxmint.com/?p=261
