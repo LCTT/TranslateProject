@@ -11,3 +11,5 @@ RHEL6.5包含对已有特性的各种升级，以及在订阅管理服务(Subscr
 4. LibreOffice升级到4.0分支版本。众所周知，RHEL吸收的产品无一不是经过开发人员慎之又慎的挑选，确保其稳定性是长时间考验过的。基于这点，RHEL6.5吸收LibreOffice4.0不能不说是一个惊喜。  
 
 完整的release note可查看官方文档。
+
+via: http://news.softpedia.com/news/Red-Hat-Enterprise-Linux-6-5-Beta-Can-Control-Windows-8-Installations-389761.shtml
