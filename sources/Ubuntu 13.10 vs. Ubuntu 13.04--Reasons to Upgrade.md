@@ -32,9 +32,9 @@ via: http://news.softpedia.com/news/Ubuntu-13-10-vs-Ubuntu-13-04-Reasons-to-Upgr
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[译者ID][] 校对：[校对者ID][]
+译者：[Timeszoro][] 校对：[校对者ID][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/译者ID
+[Timeszoro]:http://linux.cn/space/14901/
 [校对者ID]:http://linux.cn/space/校对者ID
