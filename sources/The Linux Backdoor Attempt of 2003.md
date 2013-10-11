@@ -34,11 +34,11 @@ via: https://freedom-to-tinker.com/blog/felten/the-linux-backdoor-attempt-of-200
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[译者ID][] 校对：[校对者ID][]
+译者：[Mr小眼儿][] 校对：[校对者ID][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/译者ID
+[Mr小眼儿]:http://linux.cn/space/14801
 [校对者ID]:http://linux.cn/space/校对者ID
 
 [1]:https://freedom-to-tinker.com/blog/kroll/software-transparency-debian-openssl-bug/
