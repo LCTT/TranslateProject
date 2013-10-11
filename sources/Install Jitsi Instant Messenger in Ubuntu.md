@@ -1,121 +1,118 @@
-Install Jitsi Instant Messenger in Ubuntu
+在Ubuntu下安装Jitsi Instant Messenger（Jisti即时信使）
 ================================================================================
-[Jitsi][1] is an open source and multi platform audio/video Internet phone and instant messenger written in Java. It supports some of the most popular instant messaging and telephony protocols such as SIP, Jabber/XMPP (and hence Facebook and Google Talk), AIM, ICQ, MSN, Yahoo! Messenger.
+[Jitsi][1] 是Java编写的开源的、多平台的音频/视频网络电话和即时通信软件。它支持一些最流行的即时通信和电信协议，比如：SIP，Jabber/XMPP（因此才有了Facebook和Google Talk），AIM，ICQ，MSN，Yahoo! Messenger。
 
-Jitsi is also considered a good alternative to Skype.
+Jitsi也被认为是Skype的一个很好的替代者。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/About-Jitsi.png)
 
-**Installing Jitsi**
+**安装Jitsi**
 
-Press Ctrl+Alt+T on your keyboard to open terminal. When it opens, run below command to download it:
+按下键盘上的Ctrl+Alt+T组合键打开终端。在打开的终端中输入如下命令下载Jitsi：
 
-**32 Bit:**
+**32位系统：**
 
     $ wget https://download.jitsi.org/jitsi/debian/jitsi_2.2-latest_i386.deb
 
-**64 Bit:**
+**64位系统：**
 
     $ wget https://download.jitsi.org/jitsi/debian/jitsi_2.2-latest_amd64.deb
 
-Run the command below for both 32 and 64 bit systems:
+对于32位和64位系统都运行如下命令：
 
     $ sudo dpkg -i jitsi_2.2-latest_*.deb
 
-The above command installs Jitsi 2.2 on your system and add its repository to your system, making it easy for updates.
-
-The above command installs Jitsi 2.2 on your system and add its repository to your system, making it easy for updates. - See more at: http://www.unixmen.com/install-jitsi-instant-messenger-ubuntu/#sthash.Ax75AebB.dpuf
+以上命令将在你的系统中安装Jitsi 2.2，并且在你的系统中添加Jitsi的资源库，这将使你以后能够更加容易的升级。 - 查看更多内容: http://www.unixmen.com/install-jitsi-instant-messenger-ubuntu/#sthash.Ax75AebB.dpuf
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/jitsi_main.png)
 
-**Some Features of Jitsi are:**
+**Jitsi的一些特色：**
 
-**Supported Protocols/Networks**
+**支持的协议/网络**
 
 - SIP XMPP (Jabber)
-- GoogleTalk (via XMPP) Facebook (via XMPP)
-- .NET Messenger Service (commonly known as MSN or Windows Live Messenger), Yahoo! Messenger,
-AIM ICQ
+- GoogleTalk (使用XMPP) Facebook (使用XMPP)
+- .NET Messenger Service (通常叫做MSN或者是Windows Live Messenger)，Yahoo! Messenger，AIM ICQ
 
-**Calls**
+**通话**
 
-- SIP XMPP MSN
-- Audio calls not planned due to EOL
-- Video Calls not planned due to EOL
-- Desktop streaming not planned due to EOL
-- Desktop sharing not planned due to EOL
-- Audio conference calls not planned due to EOL
-- Audio level display not planned due to EOL
-- Call recording not planned due to EOL
-- Attended transfer not planned due to EOL
-- Blind transfer not planned due to EOL
-- Call encryption with SDES/SRTP and ZRTP not planned due to EOL
-- Mute not planned due to EOL
-- Hold not planned due to EOL
-- Support for ICE work in progress not planned due to EOL
-- Support for TURN work in progress not planned due to EOL
-- Wideband audio with SILK, G.722 and Speex not planned due to EOL
-- Noise suppression not planned due to EOL
-- Echo cancellation not planned due to EOL
+-                   SIP                 XMPP                    MSN
+- 音频通话          支持                支持                    由于项目终止而没有计划
+- 视频通话          支持                支持                    由于项目终止而没有计划
+- 桌面流            支持                支持                    由于项目终止而没有计划
+- 桌面共享          支持                支持                    由于项目终止而没有计划
+- 音频电话会议      支持                支持                    由于项目终止而没有计划
+- 音频级别显示      支持                支持                    由于项目终止而没有计划
+- 通话录音          支持                支持                    由于项目终止而没有计划
+- 指定转接          支持                支持                    由于项目终止而没有计划
+- 电话盲转          支持                支持                    由于项目终止而没有计划
+- 通过SDES/SRTP和ZRTP实现通话加密          支持          支持          由于项目终止而没有计划
+- 通话静音          支持                支持                    由于项目终止而没有计划
+- 通话保持          支持                支持                    由于项目终止而没有计划
+- 支持ICE           正在进行            支持                    由于项目终止而没有计划
+- 支持TURN          正在进行            支持                    由于项目终止而没有计划
+- 使用SILK，G.722和Speex的宽带音频          支持        支持            由于项目终止而没有计划
+- 噪声抑制          支持                支持                    由于项目终止而没有计划
+- 回声消除          支持                支持                    由于项目终止而没有计划
 
-**Instant Messaging**
+**即时通信**
 
 - XMPP MSN Yahoo! ICQ/AIM SIP
-- Presence
-- One-to-one chats
-- Multi-user chats
-- File transfer
-- OTR encryption
+- 存在  支持    支持    支持    支持    支持
+- 一对一聊天  支持    支持    支持    支持    支持
+- 多用户聊天  支持    支持    支持    支持    不支持
+- 文件传输  支持    支持    支持    支持    不支持
+- OTR加密  支持    支持    支持    支持    不支持
 
-More features [here][2]
+更多特性 [点击这里][2]
 
-**Using Jitsi**
+**使用Jitsi**
 
-Jitsi can be launched from the terminal by typing:
+Jitsi能够通过在终端中执行如下命令来运行
 
     $ jitsi
 
-Or from the dash
+或者从dash中运行
 
 **Dash > Jitsi**
 
-Adding an account:
+添加账户
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/addnew.png)
 
-For this tutorial, am going to login with Gtalk.
+点击 **select network（选择网络）**.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Add-new-account_0051.png)
 
-Click **select network**.
+在这个教程中，使用Gtalk帐号进行登录
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/select_account.png)
 
-Enter your **username** and **password** as required.
+按要求输入你的**username（用户名）** 和 **password（密码）**。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/login.png)
 
-And you are online.
+然后你就在线了。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Jitsi_online.png)
 
-Chat window.
+聊天窗口。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/chat.png)
 
-For other Linux distros, visit Jitsi [download page][3]
+对于其他Linux发行版，请访问Jitsi[下载页面][3]
 
 --------------------------------------------------------------------------------
 
-via: http://www.unixmen.com/install-jitsi-instant-messenger-ubuntu/
+来自: http://www.unixmen.com/install-jitsi-instant-messenger-ubuntu/
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[译者ID][] 校对：[校对者ID][]
+译者：[DOGGED][] 校对：[校对者ID][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/译者ID
+[译者ID]:http://linux.cn/space/DOGGED
 [校对者ID]:http://linux.cn/space/校对者ID
 
 [1]:https://jitsi.org/Main/HomePage
