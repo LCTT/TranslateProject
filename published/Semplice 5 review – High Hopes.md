@@ -1,5 +1,6 @@
 寄予厚望——Semplice 5抢先看
-================================================================================
+=======================
+
 有时，我会尝试一个看起来还不错的桌面发行版，因为我想看看它到底有多好，能否为Linux桌面世界带来些许新鲜空气。所以，这次我将目标瞄向了Semplice，一个基于Debian不稳定分支的桌面发行版。
 
 据说它的名字源于“simple”，开发者们将其解释演绎为“KISS原则(KISS principle)”。（译者注，KISS原则，Keep It Simple, Stupid，直译为“保持简单、愚蠢”，你可以理解为“简约不简单”，囧）
@@ -50,7 +51,7 @@
 
 ![](http://www.linuxbsdos.com/wp-content/uploads/2013/09/SempliceDesktop5-600x451.png)
 
-由于遵循KISS原则，标准路径中的home目录是不存在的，你需要自己创建他们。
+由于遵循KISS原则，标准路径中的home目录是不存在的，你需要自己创建他们，汗~。
 
 ![](http://www.linuxbsdos.com/wp-content/uploads/2013/09/SempliceFM-598x475.png)
 
@@ -88,21 +89,18 @@ Semplice 5 默认并不安装办公套件，因此需要我们自己安装一个
 下载安装32位、64位系统ISO镜像点击[这里][1]。阅读发布公告点击[这里][2]。
 
 
-
-
-
 --------------------------------------------------------------------------------
 
 via: http://www.linuxbsdos.com/2013/09/27/semplice-5-review-high-hopes/
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[Mr小眼儿][] 校对：[校对者ID][]
+译者：[Mr小眼儿][] 校对：[wxy][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [Mr小眼儿]:http://linux.cn/space/14801
-[校对者ID]:http://linux.cn/space/校对者ID
+[wxy]:http://linux.cn/space/wxy
 
 [1]:http://semplice-linux.org/download
 [2]:http://semplice-linux.org/blog/2013/09/semplice-5-released
