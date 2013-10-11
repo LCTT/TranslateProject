@@ -50,7 +50,7 @@ via: http://www.unixmen.com/installing-xscreensaver-ubuntu/
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/译者ID
+[译者ID]:http://linux.cn/space/译者ID 
 [校对者ID]:http://linux.cn/space/校对者ID
 
 [1]:http://www.jwz.org/xscreensaver/faq.html
