@@ -25,4 +25,4 @@ via: http://www.unixmen.com/ubuntu-touch-ubuntu-os-smartphone-almost-ready/
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [星誓云梦]:http://linux.cn/space/14670
-[校对者ID]:http://linux.cn/space/校对者ID
+[校对者ID]:http://linux.cn/space/校对者ID 
