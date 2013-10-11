@@ -1,5 +1,4 @@
 Music App ‘Musique’ Adds Album Sorting, Gapless Playback and Playlist Tweaks
-翻译中
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2013/10/cartoon_clouds_and_blue_sky-wallpaper-1152x864.jpg)
 
