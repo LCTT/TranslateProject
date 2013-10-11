@@ -1,4 +1,4 @@
-Installing XScreenSaver In Ubuntu
+翻译中by Luox Installing XScreenSaver In Ubuntu
 ================================================================================
 This tutorial intention is to show you how to add screen savers in Ubuntu 12.04 (although in other Ubuntu versions) which does not with any screen savers. But, many people new to computers and Linux, don’t know about the screensaver, what is a screensaver?
 
