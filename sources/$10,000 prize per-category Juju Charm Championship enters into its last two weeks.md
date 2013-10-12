@@ -20,14 +20,9 @@ Juju Charm Championship is fully open for participation to every developer posse
 
 via: http://iloveubuntu.net/10000-prize-category-juju-charm-championship-enters-its-last-two-weeks
 
-本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[译者ID][] 校对：[校对者ID][]
-
-[LCTT]:https://github.com/LCTT/TranslateProject
-[Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/译者ID
-[校对者ID]:http://linux.cn/space/校对者ID
+译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
 
 [1]:https://juju.ubuntu.com/
 [2]:https://juju.ubuntu.com/charm-championship/

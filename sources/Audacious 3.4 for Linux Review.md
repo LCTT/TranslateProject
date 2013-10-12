@@ -93,14 +93,9 @@ The software has a simple interface, it doesn't hog any of the system's resource
 
 via: http://www.softpedia.com/reviews/linux/Audacious-Review-387093.shtml
 
-本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[译者ID][] 校对：[校对者ID][]
-
-[LCTT]:https://github.com/LCTT/TranslateProject
-[Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/译者ID
-[校对者ID]:http://linux.cn/space/校对者ID
+译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
 
 [1]:http://distfiles.audacious-media-player.org/audacious-3.4.1.tar.bz2
 [2]:http://audacious-media-player.org/download

@@ -74,14 +74,9 @@ Steven J. Vaughan-Nichols, aka sjvn, has been writing about technology and the b
 
 via: http://www.zdnet.com/ubuntu-13-10-review-a-great-linux-desktop-gets-better-7000021825/
 
-本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[译者ID][] 校对：[校对者ID][]
-
-[LCTT]:https://github.com/LCTT/TranslateProject
-[Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/译者ID
-[校对者ID]:http://linux.cn/space/校对者ID
+译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
 
 [1]:http://www.canonical.com/
 [2]:http://www.ubuntu.com/
