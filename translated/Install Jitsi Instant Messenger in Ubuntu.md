@@ -108,12 +108,12 @@ Jitsi能够通过在终端中执行如下命令来运行
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[SCUSJS]校对：[校对者ID][]
+译者：[SCUSJS]校对：[jasminepeng][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [SCUSJS]:http://blog.csdn.net/scusjs
-[校对者ID]:http://linux.cn/space/校对者ID
+[jasminepeng]:http://linux.cn/space/jasminepeng
 
 [1]:https://jitsi.org/Main/HomePage
 [2]:https://jitsi.org/Main/Features
