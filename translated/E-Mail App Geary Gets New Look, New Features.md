@@ -16,11 +16,13 @@ Geary现在有 **每个账户搜索** **自动保存e-mails草稿** 和 **一个
 侧边栏显示 **每个文件夹的未读数目** ,账户和文件夹使用了一个套新的单色图标;工具栏已被一个新的'菜单按钮'刷新.
 
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2013/10/Screen-Shot-2013-10-04-at-14.25.09.png)
+
 *Geary的新菜单按钮和侧边栏图标*
 
 e-mail列表默认隐藏取消星号和读取状态图标,鼠标悬停显示选择.当检查时,它们保持可见.
 
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2013/10/Screen-Shot-2013-10-04-at-14.24.23.png)
+
 *顶部 - 底部:未读&加星; 读和取消加星;未读*
 
 **在Ubuntu安装Geary0.4**
