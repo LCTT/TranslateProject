@@ -25,9 +25,9 @@ via: http://iloveubuntu.net/ubuntu-desktop-guide-updated-saucy-ubuntu-1310
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[Timeszoro][] 校对：[校对者ID][]
+译者：[Timeszoro][] 校对：[jasminepeng][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [Timeszoro]:http://linux.cn/space/14901/
-[校对者ID]:http://linux.cn/space/校对者ID
+[jasminepeng]:http://linux.cn/space/jasminepeng
