@@ -26,7 +26,7 @@ Jitsi也被认为是Skype的一个很好的替代者。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/jitsi_main.png)
 
-**Jitsi的一些特色：**
+**Jitsi的部分功能：**
 
 **支持的协议/网络**
 
@@ -101,6 +101,8 @@ Jitsi能够通过在终端中执行如下命令来运行
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/chat.png)
 
 对于其他Linux发行版，请访问Jitsi[下载页面][3]
+
+如有问题，请访问我们的 Q/A 论坛 : http://ask.unixmen.com/ - 更多信息请参见: http://www.unixmen.com/install-jitsi-instant-messenger-ubuntu/#sthash.TuH8ZN0b.dpuf
 
 --------------------------------------------------------------------------------
 
