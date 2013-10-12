@@ -1,4 +1,3 @@
-
 在Ubuntu中安装XscreenSaver--屏幕保护
 ================================================================================
 
@@ -61,11 +60,11 @@ via: http://www.unixmen.com/installing-xscreensaver-ubuntu/
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：星誓云梦 校对：[校对者ID][]
+译者：星誓云梦 校对：[jasminepeng][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/译者ID
-[校对者ID]:http://linux.cn/space/校对者ID
+[星誓云梦]:http://linux.cn/space/星誓云梦
+[jasminepeng]:http://linux.cn/space/jasminepeng
 
 [1]:http://www.jwz.org/xscreensaver/faq.html
