@@ -1,4 +1,4 @@
-E-Mail App Geary Gets New Look, New Features
+[翻译 by chenjintao]E-Mail App Geary Gets New Look, New Features
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2013/10/Screen-Shot-2013-10-04-at-14.30.29.png)
 *All New Look: Geary 0.4 Is Now Available to Download*
