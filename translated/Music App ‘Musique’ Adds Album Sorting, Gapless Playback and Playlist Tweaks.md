@@ -32,4 +32,4 @@ via: http://www.omgubuntu.co.uk/2013/10/musique-1-3-update-adds-album-sorting
 [校对者ID]:http://linux.cn/space/校对者ID
 
 [1]:http://flavio.tordini.org/musique-1-3
-[2]:apt:musique
+[2]:apt:musique 
