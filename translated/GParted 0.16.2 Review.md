@@ -81,6 +81,6 @@ via: http://www.softpedia.com/reviews/linux/GParted-Review-387094.shtml
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [译者ID]:http://linux.cn/space/markvv
-[校对者ID]:http://linux.cn/space/校对者ID
+[校对者ID]:http://linux.cn/space/校对者ID 
 
 [1]:http://sourceforge.net/projects/gparted/files/gparted/gparted-0.16.2/gparted-0.16.2.tar.bz2/download
