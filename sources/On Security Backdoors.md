@@ -1,4 +1,4 @@
-On Security Backdoors
+[翻译中 by chenjintao]On Security Backdoors
 =====================
 
 I [wrote][1] Monday about revelations that the NSA might have been inserting backdoors into security standards. Today I want to talk through two cases where the NSA has been accused of backdooring standards, and use these cases to differentiate between two types of backdoors.
