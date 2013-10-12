@@ -1,10 +1,11 @@
 爱的初体验！第二弹！多图！ —— GNOME 3.10（体验环境：Arch Linux）
-================================================================================
-**经过2周左右的测试，Arch Linux开发者们今天早些时候（10月7日）在稳定频道发布了GNOME3.10桌面环境，用户们终于可以升级使用了6个月之久的GNOME 3.8了。**
+======================================================
+
+**经过2周左右的测试，Arch Linux开发者们今天早些时候（10月7日）在稳定频道发布了GNOME3.10桌面环境，用户们终于可以升级他们已经使用了6个月之久的GNOME 3.8了。**
 
 作为其中一名用户，我非常高兴在我的Arch Linux机子上进行了一次纯粹的GNOME 3.10体验。同时，我可以非常骄傲的说，GNOME 3.10桌面环境运行得非常好，而且界面美观，就像期待中的一样棒！
 
-首先我想提醒大家，早在上个月9月25号，GNOME项目就已经对3.10版的发布进行了官方声明，这些天来，我一直对声明中介绍的新特性充满兴奋与期待。
+首先我想提醒大家，早在上个月9月25号，GNOME项目组就已经宣告发布了3.10版的，这些天来，我一直对发布公告中介绍的新特性充满兴奋与期待。
 
 如果你也正在使用Arch Linux与GNOME作为你的主要桌面环境，那么现在你只需要在终端中输入命令“sudo pacman -Syu”，就可以将GNOME更新至3.10版本。别忘了重启电脑后，更新才能生效哦~
 
@@ -40,14 +41,10 @@
 
 via: http://news.softpedia.com/news/First-Look-at-GNOME-3-10-on-Arch-Linux-389114.shtml
 
-本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[Mr小眼儿][] 校对：[校对者ID][]
+译者：[tinyeyeser](https://github.com/tinyeyeser) 校对：[wxy](https://github.com/wxy)
 
-[LCTT]:https://github.com/LCTT/TranslateProject
-[Linux中国]:http://linux.cn/portal.php
-[Mr小眼儿]:http://linux.cn/space/14801
-[校对者ID]:http://linux.cn/space/校对者ID
 
 [1]:http://news.softpedia.com/news/GNOME-3-10-Brings-Maps-Music-and-GNOME-Software-Apps-386048.shtml
 [2]:http://news.softpedia.com/news/GNOME-3-10-Introduces-Its-Own-Software-Center-386202.shtml
