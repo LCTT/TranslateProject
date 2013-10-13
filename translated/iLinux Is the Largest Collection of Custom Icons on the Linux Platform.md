@@ -25,5 +25,5 @@ via: http://news.softpedia.com/news/iLinux-Is-the-Largest-Collection-of-Custom-I
 
 译者：[Vito](https://github.com/vito-L) 校对：[校对者ID](https://github.com/校对者ID)
 
-[1]:http://haniahmed.deviantart.com/art/iLinux-icons-v-8-5-354470161
+[1]:http://haniahmed.deviantart.com/art/iLinux-icons-v-8-5-354470161 
 
