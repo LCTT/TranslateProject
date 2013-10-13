@@ -1,3 +1,4 @@
+translating by theo-l
 Ubuntu developers announced Oxide, Chromium-powered library to be used in Ubuntu Touch's web-browser and Ubuntu SDK by Ubuntu 14.04 LTS
 ================================================================================
 By installing Ubuntu, 30 million users from all over the world get an immediately-usable and powerful operating system, as well as security and maintenance support specific to the installed version of Ubuntu (LTS or standard).
