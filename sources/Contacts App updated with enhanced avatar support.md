@@ -1,4 +1,4 @@
-Contacts App updated with enhanced avatar support 翻译中 FineFan
+Contacts App updated with enhanced avatar support
 ================================================================================
 The fresh new next-generation applications of the next-generation Ubuntu are being gradually erected and solidified via a multiple-sided approach, including a set of core applications created by third-party developers mixed with Ubuntu coders and Ubuntu designers, as well as more official applications created by Ubuntu developers and Ubuntu designers.
 
@@ -26,7 +26,7 @@ via: http://iloveubuntu.net/contacts-app-updated-enhanced-avatar-support
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[FineFan](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
 
 [1]:https://launchpad.net/address-book-app
 [2]:http://iloveubuntu.net/contacts-app-updated-avatar-editing-support
