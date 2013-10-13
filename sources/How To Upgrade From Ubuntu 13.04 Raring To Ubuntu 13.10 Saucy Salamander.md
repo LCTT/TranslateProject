@@ -1,4 +1,4 @@
-How To Upgrade From Ubuntu 13.04 Raring To Ubuntu 13.10 Saucy Salamander
+(runningwater翻译中)How To Upgrade From Ubuntu 13.04 Raring To Ubuntu 13.10 Saucy Salamander
 ================================================================================
 **Ubuntu 13.10 Saucy** will be released on **October 17th**. Hope it will come with lot of improvements and features than Ubuntu 13.04 Raring and the previous versions. Everybody are curiously waiting to see what Ubuntu 13.10 will offer to Ubuntu lovers. Ubuntu 13.10 Final beta is already out a week before.
 
@@ -99,4 +99,4 @@ via: http://www.unixmen.com/upgrade-ubuntu-13-04-raring-ubuntu-13-10-saucy-salam
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
