@@ -23,7 +23,7 @@ via: http://news.softpedia.com/news/iLinux-Is-the-Largest-Collection-of-Custom-I
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[Vito](https://github.com/vito-L) 校对：[carolinewuyan](https://github.com/校对者ID)
+译者：[Vito](https://github.com/vito-L) 校对：[carolinewuyan](https://github.com/carolinewuyan)
 
 [1]:http://haniahmed.deviantart.com/art/iLinux-icons-v-8-5-354470161 
 
