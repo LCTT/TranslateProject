@@ -1,4 +1,4 @@
-Contacts App updated with enhanced avatar support
+Contacts App updated with enhanced avatar support 翻译中 FineFan
 ================================================================================
 The fresh new next-generation applications of the next-generation Ubuntu are being gradually erected and solidified via a multiple-sided approach, including a set of core applications created by third-party developers mixed with Ubuntu coders and Ubuntu designers, as well as more official applications created by Ubuntu developers and Ubuntu designers.
 
