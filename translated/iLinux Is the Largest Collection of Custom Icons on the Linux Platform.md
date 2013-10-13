@@ -15,7 +15,7 @@ iLinux图标的开发商设法获得那些类似的图标（在一些情况下�
 	sudo apt-get update
 	sudo apt-get install ilinux-icons
 
-为了应用这些图标你还需要Ubuntu Tweak或GNOME Tweak工具。你还可以查看开发商的[官方网站][1]的更多信息。
+为了应用这些图标你还需要Ubuntu Tweak或GNOME Tweak Tool。你还可以查看开发商的[官方网站][1]的更多信息。
 
 --------------------------------------------------------------------------------
 
