@@ -1,3 +1,4 @@
+		翻译中...............luox
 Shotwell 0.15 released with new features and fixes
 ================================================================================
 Ubuntu ships by default [Shotwell][1], handy image manager and basic editor permitting both image-gallery management and basic image editing, latter proving itself useful in numerous and numerous situations.
