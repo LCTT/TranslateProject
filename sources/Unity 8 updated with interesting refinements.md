@@ -22,14 +22,9 @@ Unity 8 is [available][2] for testing via Ubuntu 13.10's Ubuntu Software Center.
 
 via: http://iloveubuntu.net/unity-8-updated-interesting-refinements
 
-本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[译者ID][] 校对：[校对者ID][]
-
-[LCTT]:https://github.com/LCTT/TranslateProject
-[Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/译者ID
-[校对者ID]:http://linux.cn/space/校对者ID
+译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
 
 [1]:https://launchpad.net/unity8
 [2]:apt://unity8

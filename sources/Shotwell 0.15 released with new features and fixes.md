@@ -1,3 +1,4 @@
+		翻译中...............luox
 Shotwell 0.15 released with new features and fixes
 ================================================================================
 Ubuntu ships by default [Shotwell][1], handy image manager and basic editor permitting both image-gallery management and basic image editing, latter proving itself useful in numerous and numerous situations.
@@ -36,14 +37,9 @@ Shotwell 0.15 has already landed in Ubuntu 13.10 via the regular updates.
 
 via: http://iloveubuntu.net/shotwell-015-released-new-features-and-fixes
 
-本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[译者ID][] 校对：[校对者ID][]
-
-[LCTT]:https://github.com/LCTT/TranslateProject
-[Linux中国]:http://linux.cn/portal.php
-[译者ID]:http://linux.cn/space/译者ID
-[校对者ID]:http://linux.cn/space/校对者ID
+译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
 
 [1]:http://www.yorba.org/projects/shotwell/
 [2]:http://blog.yorba.org/eric/2013/10/shotwell-0-15-has-arrived.html
