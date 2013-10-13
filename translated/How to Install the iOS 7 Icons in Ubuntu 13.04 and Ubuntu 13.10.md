@@ -49,7 +49,6 @@ Ubuntu 13.04、Ubuntu 13.10安iOS装图标：
 这个图标集大概有300个，所以你的操作系统中的部分应用程序图标还是老样子。
 
 享受你的新图标吧！
---------------------------------------------------------------------------------
 
 via: http://news.softpedia.com/news/How-to-Install-the-iOS-7-Icons-in-Ubuntu-13-04-and-Ubuntu-13-10-387709.shtml
 
