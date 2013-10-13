@@ -17,7 +17,8 @@
 ![](http://iloveubuntu.net/pictures_me/old%20vs%20new%202%20weather%20beijing.png)
 
 那么我们如何安装天气预报软件3.0呢？
-添加下面的官方PPA（Ubuntu 13.04，Ubuntu 13.10）就可以了！
+
+添加下面的官方PPA（Ubuntu 13.04，Ubuntu 13.10）就可以了。
 
     sudo add-apt-repository ppa:ubuntu-sdk-team/ppa && sudo add-apt-repository ppa:ubuntu-touch-coreapps-drivers/daily
 
