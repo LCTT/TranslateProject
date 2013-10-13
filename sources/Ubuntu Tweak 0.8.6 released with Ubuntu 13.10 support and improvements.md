@@ -1,3 +1,4 @@
+	翻译中 ---Vic___
 Ubuntu Tweak 0.8.6 released with Ubuntu 13.10 support and improvements
 ================================================================================
 Ubuntu Tweak is a powerful, advanced tweaking tool featuring a massive amount of functionalities and tweakable options, permitting an in-depth tweaking of the desktop via a clear, clean interface.
