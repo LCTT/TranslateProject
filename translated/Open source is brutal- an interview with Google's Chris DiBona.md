@@ -79,6 +79,6 @@ Chris DiBona是谷歌开源执行总监。他也是开源界杰出的领军人�
 
 via: https://opensource.com/business/13/10/interview-chris-dibona
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出 
 
 译者：[l3b2w1](https://github.com/l3b2w1) 校对：[校对者ID](https://github.com/校对者ID)
