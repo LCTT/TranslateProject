@@ -1,31 +1,31 @@
 我们正在见证Ubuntu的没落？
 ========================================
 
-真正的历史总在事情发生多年以后才会写就。但是，当将来某天自由软件的历史最终定稿的时候，我始终相信，今年，将作为Ubuntu没落的初始之年而被载入史册。
+真正的历史总在事情发生多年以后才会写就。但是，我越来越相信，当将来某天自由软件的历史最终定稿的时候，去年，将作为Ubuntu没落的初始之年而被载入史册。
 
-起初，这个想法可能看起来荒谬可笑或者不怀好意。因为你仍能看到Ubuntu的狂热支持者们在为其每一个发行版的改进鼓掌叫好呐喊助威；记者们也还在谄媚地报道Ubuntu创始人Mark Shuttleworth所说的每一句话；
+起初，这个想法可能看起来荒谬可笑或者不怀好意。因为你仍能看到Ubuntu的狂热支持者们在为其每一个发行版的改进鼓掌叫好呐喊助威；记者们也还在谄媚地报道Ubuntu创始人Mark Shuttleworth所说的每一句话。
 
 社区负责人Jono Bacon正在为Ubuntu Touch移动操作系统开发一个新的应用开发者社区；最近，Ubuntu的商业部门Canonical还公布了一些重大项目，例如与中国政府合作，为其开发[国家级的中文操作系统][1]，以及被Linux基金会选中负责实现[Steam][2]游戏平台等等。
 
-然而，[Ubuntu在Google上搜索量][3]的锐减趋势也许能说明一些问题。除了Android和Mageia，其他Linux[主流发行版][4]情况虽然与Ubuntu类似，都有所下降，但事实是，即便这样，却没有哪个发行版像Ubuntu一样下降得如此厉害 —— 搜索量还不到2007年10月的一半，为2006年六月以来的最低值。
+然而，[Ubuntu在Google上搜索量][3]的锐减趋势也许能说明一些问题。除了Android和Mageia，其他Linux[主流发行版][4]情况类似，都有所下降，但事实是，即便这样，却没有哪个发行版像Ubuntu一样下降得如此厉害 —— 搜索量还不到2007年10月的一半，为2006年六月以来的最低值。
 
 一直以来，质疑都在持续。Shuttleworth曾经希望能引领自由软件，但现在Ubuntu和Canonical已经将他们自己孤立于自由软件社区之外。就在去年，社区已经多次暗示，它至少部分感到权利被剥夺。
 
-最糟糕的的是，去年，Ubuntu发起的倡议一再被否决，Canonical盈利能力也出现了明显的持续下降。所有这些现象，看起来好像其决策层已经陷入一片难以挽回的混乱，当然，如果这些真的可以挽回的话。
+最糟糕的的是，去年，Ubuntu发起的倡议一再被否决，Canonical盈利能力也出现了明显的持续下降。所有这些现象，看起来好像该组织已经陷入一片难以挽回的混乱，当然，如果这些真的可以挽回的话。
 
 ###半途而废
 
-和去年形成鲜明对比的是Ubuntu的早几年。2005年到2007年，三年间，Ubuntu成为了Linux桌面世界最新最伟大的希望之星，连评论界都鲜见关于Ubuntu的负面文章，在此之前，评论界一直在声讨Debian注资不足或是质疑某个古怪暴发户投资的动机。
+和去年形成鲜明对比的是Ubuntu的早几年。2005年到2007年，三年间，Ubuntu成为了Linux桌面世界最新最伟大的希望之星，批评言论主要限于那些认为没有给Debian足够荣誉或是质疑某个古怪暴发户投资动机的人。
 
-在那些风光的年月里，Ubuntu确实做出了很多努力，大大推进了Linux桌面系统的易用性与普遍性。也许最值得铭记的就是它对多语言环境和键盘区域切换（键盘多输入法？）的支持，现在这已成为各大主流发行版的标准。
+在那些风光的年月里，Ubuntu确实做出了很多努力，大大推进了Linux桌面系统的易用性与普遍性。也许最值得铭记的就是它对多语言环境和键盘区域切换的支持，现在这已成为各大主流发行版的标准。
 
-但好景不长，渐渐地，Ubuntu和Canonical开始将自己孤立于主流自由软件社区之外。Shuttleworth的那些美好初衷，诸如项目协作、强调易用性等等，都被严重忽略了。GNOME开发也开始变得急功近利 —— GNOME社区也许认为这是一种进步 —— Shuttleworth甘愿放弃Canonical CEO的职位，也要参与主导开发让他疯狂着迷的Unity。
+但好景不长，渐渐地，Ubuntu和Canonical开始将自己孤立于主流自由软件社区之外。Shuttleworth的那些美好初衷，诸如项目协作、强调易用性等等，都被严重忽略了。由于对GNOME开发速度不满 —— 也或者是被GNOME社区视为爆发户 —— Shuttleworth开始了Unity 接口开发，他对此如此着迷，以致甘愿放弃Canonical CEO的职位。
 
 由此，Unity以及与之相关的一切迅速成为了新版Ubuntu发布的关注焦点。由于Canonical不断要求完善的压力（很少有人注意到这是跳票的真正原因），有时软件包的开发像之前一样无法赶上发布进度，这样就使得开发团队总是无法得到Ubuntu社区的肯定。
 
-在这种情况下，开发团队被迫将所有的精力都放在了Unity上，结果就是，华而不实的Unity终于能更好地匹配在移动设备，而不是工作站或笔记本电脑上了。经Distrowatch的统计，尽管有多达[75个发行版][5]是由Ubuntu衍生而来，但其中只有[11个发行版][4]默认采用了Unity。Ubuntu家族尚且如此，其他的主流发行版就更不会采用Unity了，更不要说推动它的发展。
+虽然在Unity上赋予了很多开发努力，结果却是Unity更适于匹配移动设备，而不是工作站或笔记本电脑。经Distrowatch的统计，尽管有多达[79个发行版][5]是由Ubuntu衍生而来，但其中只有[11个发行版][4]默认采用了Unity。Ubuntu家族尚且如此，其他的主流发行版就更不会采用Unity了，更不要说推动它的发展。
 
-同样的情况还发生在[Upstart][6]上，Ubuntu使用它代替了init服务；最近，Ubuntu还用[Mir][7]代替了Wayland，而被替换下场的Wayland，正是其他发行版一直看好的X系统的最佳替代者。
+同样的情况还发生在[Upstart][6]上，Ubuntu使用它代替init服务；以及最近的[Mir][7]，Ubuntu用其代替Wayland，而被替换下场的Wayland，正是其他发行版一直看好的X Window系统的最佳替代者。
 
 Ubuntu为什么要这么做？Upstart和Mir虽然都保留着自由软件许可，但其实它们都在Canonical的实际控制之下，Canonical主要通过[贡献者协议][8]将所有权利都划归到了公司手里。
 
@@ -79,12 +79,12 @@ via: http://www.datamation.com/open-source/are-we-witnessing-the-decline-of-ubun
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[Mr小眼儿][] 校对：[校对者ID][]
+译者：[Mr小眼儿][] 校对：[jasminepeng][ ]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [Mr小眼儿]:http://github/tinyeyeser
-[校对者ID]:http://linux.cn/space/校对者ID
+[jasminepeng]:http://linux.cn/space/jasminepeng
 
 [1]:http://www.canonical.com/content/canonical-and-chinese-standards-body-announce-ubuntu-collaboration
 [2]:http://games.slashdot.org/story/13/02/14/2318247/valve-officially-launches-steam-for-linux
