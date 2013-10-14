@@ -53,5 +53,5 @@ via: http://www.omgubuntu.co.uk/2013/10/geary-0-4-released-with-new-look-new-fea
 [1]:http://www.omgubuntu.co.uk/2013/10/shotwell-0-15-released-fixes-improvements
 [2]:http://www.omgubuntu.co.uk/2013/04/geary-fundraiser-fails-at-half-way-mark
 [3]:https://launchpad.net/~yorba/+archive/ppa
-[4]:apt://geary
+[4]:apt://geary 
 
