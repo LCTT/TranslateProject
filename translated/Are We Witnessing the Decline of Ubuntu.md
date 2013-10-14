@@ -79,12 +79,12 @@ via: http://www.datamation.com/open-source/are-we-witnessing-the-decline-of-ubun
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[Mr小眼儿][] 校对：[校对者ID][]
+译者：[Mr小眼儿][] 校对：[jasminepeng][]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
 [Mr小眼儿]:http://github/tinyeyeser
-[校对者ID]:http://linux.cn/space/校对者ID
+[jasminepeng]:http://linux.cn/space/jasminepeng
 
 [1]:http://www.canonical.com/content/canonical-and-chinese-standards-body-announce-ubuntu-collaboration
 [2]:http://games.slashdot.org/story/13/02/14/2318247/valve-officially-launches-steam-for-linux
