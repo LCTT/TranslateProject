@@ -1,3 +1,4 @@
+will.qian is translating this article 
 Unity 8 updated with interesting refinements
 ================================================================================
 [Unity 8][1] is the next-generation Unity aimed at and being developed in mind with Ubuntu converged, Unity 8 that is to deliver beauty, power and professional designs for phones, tablets and desktops.
