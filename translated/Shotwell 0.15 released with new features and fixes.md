@@ -32,6 +32,7 @@ Shotwell 已经更新到0.15版本,介绍了最新的特征和修复了大量已
 添加以下 **官方** PPA(Ubuntu 12.10, Ubuntu 13.04)
 
     sudo add-apt-repository ppa:yorba/ppa 
+    
     sudo apt-get update
     sudo apt-get install shotwell
 
