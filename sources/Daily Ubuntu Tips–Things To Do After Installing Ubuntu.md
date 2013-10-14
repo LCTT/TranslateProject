@@ -1,3 +1,5 @@
+Linchenguang翻译中
+
 Daily Ubuntu Tips–Things To Do After Installing Ubuntu
 ================================================================================
 Many users from Windows find themselves stuck when starting out with Ubuntu. It’s a completely different from Windows and getting confortable with it may not be the easiest thing at first. Ubuntu is way different from Windows. The commands, the layout of the file system and application names are all foreign to many. But heck, we’re here to help.
