@@ -1,3 +1,4 @@
+翻译中
 Mastering the “Kill” Command in Linux
 ================================================================================
 It doesn’t matter which operating system you are using, you will surely come across a misbehaving application that lock itself up and refuse to close. In Linux (and Mac), there is this “kill” command that you can use to terminate the application forcefully. In this tutorial, we will show you the various way you can make use of the “kill” command to terminate an application.
