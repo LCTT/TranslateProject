@@ -79,7 +79,7 @@ via: http://www.datamation.com/open-source/are-we-witnessing-the-decline-of-ubun
 
 本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
 
-译者：[Mr小眼儿][] 校对：[jasminepeng][]
+译者：[Mr小眼儿][] 校对：[jasminepeng][ ]
 
 [LCTT]:https://github.com/LCTT/TranslateProject
 [Linux中国]:http://linux.cn/portal.php
