@@ -1,3 +1,4 @@
+(runningwater认领)
 Linux Terminal: Seeing the unseen characters with cat!
 ================================================================================
 Sometimes a program or software don’t start for a syntax error, and if you check the files there is nothing wrong..apparently.
@@ -65,7 +66,7 @@ via: http://linuxaria.com/pills/linux-terminal-seeing-the-unseen-characters-with
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
 
 [1]:
 [2]:
