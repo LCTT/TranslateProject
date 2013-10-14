@@ -1,3 +1,5 @@
+Vito
+
 apt-fast: Improve apt-get Download Speed
 ================================================================================
 **[apt-fast][1]** is a “**shell script wrapper**” for **apt-get** and **aptitude** that can drastically improve APT download times by downloading packages with multiple connections per package. apt-fast uses **aria2c** or **axel** download managers to speed up the APT download time. Just like the traditional apt-get package manager, apt-fast supports almost all apt-get functions such as **install, remove, update, upgrade, dist-upgrade** etc. And one more notable feature is it supports proxy too.
