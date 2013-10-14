@@ -46,4 +46,4 @@ via: http://iloveubuntu.net/shotwell-015-released-new-features-and-fixes
 译者：[Luoxcat](https://github.com/Luoxcat) 校对：[caroline](https://github.com/carolinewuyan)
 
 [1]:http://www.yorba.org/projects/shotwell/
-[2]:http://blog.yorba.org/eric/2013/10/shotwell-0-15-has-arrived.html 
+[2]:http://blog.yorba.org/eric/2013/10/shotwell-0-15-has-arrived.html  
