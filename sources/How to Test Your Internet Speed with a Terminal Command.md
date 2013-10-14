@@ -1,3 +1,4 @@
+翻译中
 How to Test Your Internet Speed with a Terminal Command
 ================================================================================
 ![](http://img.gawkerassets.com/img/190w8luc8u8jjjpg/original.jpg)
