@@ -21,19 +21,21 @@ Shotwell 已经更新到0.15版本,介绍了最新的特征和修复了大量已
 
 -Youtube 插件 OAuth / OpenID 的使用 
 
-- 加强视频文件的导入
+ - 加强视频文件的导入
 
--优化了视频的缩略图
+ -优化了视频的缩略图
 
--修复了很多漏洞
+ -修复了很多漏洞
  
 我们怎么**安装** Shotwell 0.15呢?
 
 添加以下 **官方** PPA(Ubuntu 12.10, Ubuntu 13.04)
 
-Shotwell 0.15 已经登入Ubuntu 13.10,你只需要定期的更新软件,便会帮你自动安装,享受它带给你的乐趣吧!
+    sudo add-apt-repository ppa:yorba/ppa 
+    sudo apt-get update
+    sudo apt-get install shotwell
 
---------------------------------------------------------------------------------
+Shotwell 0.15 已经登入Ubuntu 13.10,你只需要定期的更新软件,便会帮你自动安装,享受它带给你的乐趣吧!
 
 
 via: http://iloveubuntu.net/shotwell-015-released-new-features-and-fixes
