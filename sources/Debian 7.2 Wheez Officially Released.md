@@ -1,4 +1,4 @@
-Debian 7.2 "Wheezy" Officially Released
+【SCUSJS翻译中】Debian 7.2 "Wheezy" Officially Released
 ================================================================================
 **The Debian project announced the immediate availability for download of the second maintenance release of the Debian 7 Linux operating system.**
 
