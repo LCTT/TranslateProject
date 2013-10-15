@@ -1,3 +1,4 @@
+翻译认领：Vic020
 Salvation Prophecy Military Space Epic Arrives on Steam for Linux
 ===
 
