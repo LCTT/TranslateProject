@@ -5,7 +5,7 @@
 
 起初，这个想法可能看起来荒谬可笑或者不怀好意。因为你仍能看到Ubuntu的狂热支持者们在为其每一个发行版的改进鼓掌叫好呐喊助威；记者们也还在谄媚地报道Ubuntu创始人Mark Shuttleworth所说的每一句话。
 
-社区负责人Jono Bacon正在为Ubuntu Touch移动操作系统开发一个新的应用开发者社区；最近，Ubuntu的商业部门Canonical还公布了一些重大项目，例如与中国政府合作，为其开发[国家级的中文操作系统][1]，以及被Linux基金会选中负责实现[Steam][2]游戏平台等等。
+> 社区负责人Jono Bacon正在为Ubuntu Touch移动操作系统开发一个新的应用开发者社区；最近，Ubuntu的商业部门Canonical还公布了一些重大项目，例如与中国政府合作，为其开发[国家级的中文操作系统][1]，以及被Linux基金会选中负责实现[Steam][2]游戏平台等等。
 
 然而，[Ubuntu在Google上搜索量][3]的锐减趋势也许能说明一些问题。除了Android和Mageia，其他Linux[主流发行版][4]情况类似，都有所下降，但事实是，即便这样，却没有哪个发行版像Ubuntu一样下降得如此厉害 —— 搜索量还不到2007年10月的一半，为2006年六月以来的最低值。
 
@@ -17,7 +17,7 @@
 
 和去年形成鲜明对比的是Ubuntu的早几年。2005年到2007年，三年间，Ubuntu成为了Linux桌面世界最新最伟大的希望之星，批评言论主要限于那些认为没有给Debian足够荣誉或是质疑某个古怪暴发户投资动机的人。
 
-在那些风光的年月里，Ubuntu确实做出了很多努力，大大推进了Linux桌面系统的易用性与普遍性。也许最值得铭记的就是它对多语言环境和键盘区域切换的支持，现在这已成为各大主流发行版的标准。
+在那些风光的年月里，Ubuntu确实做出了很多努力，大大推进了Linux桌面系统的易用性与普遍性。也许最值得铭记的就是它对多语言环境和本地化键盘切换的支持，现在这已成为各大主流发行版的标准。
 
 但好景不长，渐渐地，Ubuntu和Canonical开始将自己孤立于主流自由软件社区之外。Shuttleworth的那些美好初衷，诸如项目协作、强调易用性等等，都被严重忽略了。由于对GNOME开发速度不满 —— 也或者是被GNOME社区视为爆发户 —— Shuttleworth开始了Unity 接口开发，他对此如此着迷，以致甘愿放弃Canonical CEO的职位。
 
@@ -37,9 +37,9 @@ Canonical将自己孤立得越发遥远，它却越想控制整个Ubuntu社区�
 
 Canonical之所以这样，也许可以解释为这是越来越坚定想努力盈利的结果。尽管Canonical一直在忙于宣布获得了新的合作与支持，但是[这些声明][10]中却总是缺少任何提及合作资金数额的词句。要说这是遗漏了？经过长达九年的商业化运行，很难想象他们会漏掉任何可以报道的好消息。但是，无论原因是什么，Canonical已经越来越多地不经任何商讨，就将它的决定强加给Ubuntu志愿者社区。
 
-其中的许多决定都是很琐碎的。范围从决定不再支持完全自由许可的Ubuntu版本或者一个基于KDE的版本,到标题栏图标的重新定位，以及替换[HUD][11]菜单的介绍。
+其中的许多决定都是很琐碎的。范围从决定不再支持完全自由许可的Ubuntu版本或者一个基于KDE的版本，到标题栏图标的重新定位，以及替换[HUD][11]菜单的介绍。
 
-其实，在争论中，解决问题并不是最重要的，重要的是解决问题时人们之间的关系。与Canonical不同，Ubuntu每天的运行看起来就像是任何预期中规范的自由软件项目一样，有讨论有商议。而Canonical呢？据说，Canonical公司中的高级雇员经常滥用否决权，即便是礼貌的否定，都可能会导致摩擦 —— 更何况，这种否定还常常是粗鲁的。Canonical已经不再欢迎开诚布公的讨论，而是借着“为了让Ubuntu成功”的名义越来越倾向于扼杀人们的不同意见。
+其实，在争论中，解决问题并不是最重要的，重要的是解决问题时人们之间的关系。与Canonical不同，Ubuntu社区每天的运行看起来就像是任何预期中规范的自由软件项目一样，有讨论有商议。而Canonical呢？据说，Canonical公司中的高级雇员经常滥用否决权，即便是礼貌的否定，都可能会导致摩擦 —— 更何况，这种否定还常常是粗鲁的。Canonical已经不再欢迎开诚布公的讨论，而是借着“为了让Ubuntu成功”的名义越来越倾向于扼杀人们的不同意见。
 
 矛盾积蓄久了终会爆发。经过长时间的公开质问，Ubuntu社区贡献者们的地位仍得不到肯定，2013年2月，许多人开始考虑退出社区（事实上，貌似只有一个人付诸行动）
 
@@ -75,16 +75,14 @@ Canonical用了一年时间来[解决个人隐私问题][13]，但即使这样�
 
 到底是扭转颓势，还是依靠不疼不痒的措施加速没落，这些都是未知数。接下来的这几年会很有趣，充满变数，让我们拭目以待！
 
+---
+
 via: http://www.datamation.com/open-source/are-we-witnessing-the-decline-of-ubuntu-1.html
 
-本文由 [LCTT][] 原创翻译，[Linux中国][] 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[Mr小眼儿][] 校对：[jasminepeng][ ]
+译者：[tinyeyeser](https://github.com/tinyeyeser) 校对：[jasminepeng](https://github.com/jasminepeng)
 
-[LCTT]:https://github.com/LCTT/TranslateProject
-[Linux中国]:http://linux.cn/portal.php
-[Mr小眼儿]:http://github/tinyeyeser
-[jasminepeng]:http://linux.cn/space/jasminepeng
 
 [1]:http://www.canonical.com/content/canonical-and-chinese-standards-body-announce-ubuntu-collaboration
 [2]:http://games.slashdot.org/story/13/02/14/2318247/valve-officially-launches-steam-for-linux
