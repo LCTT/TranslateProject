@@ -95,7 +95,7 @@ Software Updater会让你确认是否仍要升级。点击**Start Upgrade**就�
 
 --------------------------------------------------------------------------------
 
-via: http://www.unixmen.com/upgrade-ubuntu-13-04-raring-ubuntu-13-10-saucy-salamander/
+via: http://www.unixmen.com/upgrade-ubuntu-13-04-raring-ubuntu-13-10-saucy-salamander/ 
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
