@@ -1,3 +1,4 @@
+will.qian is translating this article.
 Linux RNG May Be Insecure After All
 ================================================================================
 > As a followup to Linus's [opinion people skeptical of the Linux random number generator][1], a new paper [analyzes the robustness of /dev/urandom and /dev/random][2] . From the paper: 'From a practical side, we also give a precise assessment of the security of the two Linux PRNGs, /dev/random and /dev/urandom. In particular, we show several attacks proving that these PRNGs are not robust according to our definition, and do not accumulate entropy properly. These attacks are due to the vulnerabilities of the entropy estimator and the internal mixing function of the Linux PRNGs. These attacks against the Linux PRNG show that it does not satisfy the "robustness" notion of security, but it remains unclear if these attacks lead to actual exploitable vulnerabilities in practice.'
