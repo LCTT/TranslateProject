@@ -1,4 +1,4 @@
-Install Rhythmbox 3.0 In Ubuntu 13.10 Or 13.04
+【SCUSJS翻译中】Install Rhythmbox 3.0 In Ubuntu 13.10 Or 13.04
 ================================================================================
 Rhythmbox 3.0 was released more than a month ago, bringing an improved user interface, Python 3 support for the plugins and more. Unfortunately, the new version didn't make it into Ubuntu 13.10, but there's a PPA you can use to install it (also available for Ubuntu 13.04).
 
