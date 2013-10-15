@@ -1,3 +1,4 @@
+        Luox翻译中.........
 Calibre 1.6 released with handy mark-book feature
 ================================================================================
 [Calibre][1] is a free open-source ebook library management tool, designed in mind with satisfying a diverse and complex range of ebook-related requirements and necessities, offering powerful conversion process, dedicated ebook reader, hassle-free library creation and management, online service integration, etc, basically, a modern ebook experience.
