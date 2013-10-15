@@ -1,3 +1,5 @@
+coolpigs is translating this article
+
 Installing a Desktop Algorithmic Trading Research Environment using Ubuntu Linux and Python
 ================================================================================
 In this article I want to discuss how to set up a robust, efficient and interactive development environment for algorithmic trading strategy research making use of Ubuntu Desktop Linux and the Python programming language. We will utilise this environment for nearly all subsequent algorithmic trading articles.
