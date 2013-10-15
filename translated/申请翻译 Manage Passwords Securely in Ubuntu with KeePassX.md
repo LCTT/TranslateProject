@@ -1,4 +1,4 @@
-Manage Passwords Securely in Ubuntu with KeePassX
+保护密码的利器：Ubuntu 之 KeePassX
 ================================================================================
 **With security issues becoming more and more important, the emphasis on secure passwords (as well as other methods like multiple step authentication) has never been greater.**
 
