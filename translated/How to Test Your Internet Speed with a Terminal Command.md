@@ -13,6 +13,7 @@
 任何linux PC(译者注:一般,我们所说的PC是指'IBM PC兼容机',此架构中的中央处理器采用英特尔或超微等厂商所生产的中央处理器)能够运行wget命令.[Windows][3]和[Mac][4]用户需要下载这个程序,但是功能差不多是一样的.点击链接可以了解更多.
 
 [怎样从终端测试你的网速][5] | Make Tech Easier
+
 --------------------------------------------------------------------------------
 
 via: http://lifehacker.com/how-to-test-your-internet-speed-with-a-terminal-command-1364123567
