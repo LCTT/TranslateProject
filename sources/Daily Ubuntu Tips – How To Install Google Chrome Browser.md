@@ -1,4 +1,4 @@
-Daily Ubuntu Tips – How To Install Google Chrome Browser
+[scusjs占坑]Daily Ubuntu Tips – How To Install Google Chrome Browser
 ================================================================================
 For new users who are just starting out with Ubuntu and want to install Google Chrome browser, here’s the quickest way to do it. There are many ways to install Google Chrome in Ubuntu. Some prefer going directly to [Google Chrome download page][1] and getting the **deb** installer.
 
