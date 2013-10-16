@@ -1,15 +1,12 @@
-(runningwater认领)
-Linux Terminal: Seeing the unseen characters with cat!
+Linux终端：用cat命令查看隐藏的字符
 ================================================================================
-Sometimes a program or software don’t start for a syntax error, and if you check the files there is nothing wrong..apparently.
-There are a lot of characters that usually are not printed if you use a normal text editor, but you can easily check if they are present with your terminal and the command cat.
+时常，某个程序或软件并没有语法错误，并且你检查它的相关内容也确实没有发现问题。这是因为你用普通文本编辑器软件来查看的时候，有许多字符没有显示出来，但在终端下面使用cat命令可以很容易的检测出是否存在这些字符。
 
-As first thing let’s create a simple text file with these special characters, open a terminal and run the command:
+首先，我们创建一个简单的文本文件，写入一些特殊的字符。打开终端，运行命令：
 
     printf 'testing\012\011\011testing\014\010\012more testing\012\011\000\013\000even more testing\012\011\011\011\012' > /tmp/testing.txt
 
-Now if you open the file with an editor you’ll have different results.
-A simple cat will show:
+现在用不同的编辑器软件打开，显示的结果不会相同。用简单的cat打开将显示：
 
     $ cat /tmp/testing.txt 
     testing
@@ -19,7 +16,7 @@ A simple cat will show:
      
     even more testing
     
-While if you open it with nano or vim you’ll see :
+然而用nano或者vim打开，将会看到：
 
     testing
                 testing^L^H
@@ -27,9 +24,9 @@ While if you open it with nano or vim you’ll see :
     more testing
         ^@^K^@even more testing
 
-Now we can see some options of cat to print special characters.
+现在我们给cat加上一些选项参数，以便能显示出特殊字符来。
 
-1) Use cat -T to display TAB characters as ^I
+1) 用cat -T命令来显示TAB键的字符^I
 
     cat -T /tmp/testing.txt
     testing
@@ -40,7 +37,7 @@ Now we can see some options of cat to print special characters.
       even more testing
     ^I^I^I
 
-2) Use cat -E to display $ at end of each line
+2) 用cat -E命令来显示行尾的结束字符$
 
     $ cat -E /tmp/testing.txt
     testing$
@@ -51,7 +48,7 @@ Now we can see some options of cat to print special characters.
     even more testing$
     			$
 
-3) Use a simple cat -A to show up all the invisible characters:
+3) 用简单的cat -A命令就可以显示所有不可见的字符：
 
     $ cat -A /tmp/testing.txt
     testing$

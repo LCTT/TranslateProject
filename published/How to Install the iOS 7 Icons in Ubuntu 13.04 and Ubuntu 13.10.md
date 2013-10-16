@@ -1,11 +1,11 @@
 如何在Ubuntu 13.04和13.10上安装iOS 7的图标
-================================================================================
+==================================
 
 **这个简单的教程将指导你如何在你的Ubuntu 12.04、13.04和13.10上安装苹果iOS 7操作系统的所有图标。**
 
 ![](http://i1-news.softpedia-static.com/images/news2/How-to-Install-the-iOS-7-Icons-in-Ubuntu-13-04-and-Ubuntu-13-10-387709-2.jpg)
 
-上面是效果图，安装完的图标虽然看起来改变不大，但是对于审美观来讲却是重大提高，如果Canonical没有在每一个发行版中使用种类图标，那你将不会那么容易识别出Ubuntu，差异甚微。
+上面是效果图，安装的图标虽然并不多，但是对于外观的改进来讲却是重大提高。如果Canonical没有在每一个发行版中使用差异甚小的同类图标，那你就不太容易分辨出Ubuntu。
 
 以前在Ubuntu安装主题、图标甚至是鼠标光标，那叫一个麻烦，但是近几年这事变得容易多了。想要安装新的图标，只需要输入几条命令就行。
 
@@ -21,7 +21,7 @@
 
     sudo apt-get install gnome-tweak-tool
 
-你会发现这个软件在Ubuntu下是以Tweak Tool命名的。
+你会发现这个软件在Ubuntu下叫做Tweak Tool。
 
 安装PPA，然后更新一下：
 
@@ -49,6 +49,8 @@ Ubuntu 13.04、Ubuntu 13.10安iOS装图标：
 这个图标集大概有300个，所以你的操作系统中的部分应用程序图标还是老样子。
 
 享受你的新图标吧！
+
+---
 
 via: http://news.softpedia.com/news/How-to-Install-the-iOS-7-Icons-in-Ubuntu-13-04-and-Ubuntu-13-10-387709.shtml
 
