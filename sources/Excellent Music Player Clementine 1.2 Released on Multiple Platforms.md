@@ -1,3 +1,5 @@
+              翻译中ByLuox.....^0^......
+
 Excellent Music Player Clementine 1.2 Released on Multiple Platforms
 ================================================================================
 **Clementine 1.2, a multiplatform music player inspired by Amarok 1.4, focusing on a fast and easy-to-use interface for searching and playing your music, has been released and it features some pretty interesting new features.**
