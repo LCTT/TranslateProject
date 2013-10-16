@@ -30,7 +30,7 @@ via: http://www.liberiangeek.net/2013/10/daily-ubuntu-tips-restore-machine-previ
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Timeszoro](https://github.com/Timeszoro) 校对：[校对者ID](https://github.com/校对者ID)
 
 [1]:http://teejeetech.blogspot.com/2013/10/introducing-timeshift.html
 [2]:
