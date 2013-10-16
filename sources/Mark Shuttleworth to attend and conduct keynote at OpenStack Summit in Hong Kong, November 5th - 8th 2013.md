@@ -1,3 +1,6 @@
+
+    翻译认领Vic020
+
 Mark Shuttleworth to attend and conduct keynote at OpenStack Summit in Hong Kong, November 5th - 8th 2013
 ================================================================================
 By analyzing [Canonical][1], the inquirer is to observe several attributes, among which vision, bold goals and according-to actions, attributes that have gradually positioned Canonical at the top of the computing world, where it is leading a significant portion of innovation spanning across all relevant form factors and computing environments.
