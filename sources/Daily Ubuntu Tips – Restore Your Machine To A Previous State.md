@@ -33,12 +33,3 @@ via: http://www.liberiangeek.net/2013/10/daily-ubuntu-tips-restore-machine-previ
 译者：[Timeszoro](https://github.com/Timeszoro) 校对：[校对者ID](https://github.com/校对者ID)
 
 [1]:http://teejeetech.blogspot.com/2013/10/introducing-timeshift.html
-[2]:
-[3]:
-[4]:
-[5]:
-[6]:
-[7]:
-[8]:
-[9]:
-[10]:
