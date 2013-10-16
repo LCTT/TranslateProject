@@ -27,4 +27,4 @@ via: http://iloveubuntu.net/unity-8-updated-interesting-refinements
 译者：[will.qian](https://github.com/willqian) 校对：[校对者ID](https://github.com/校对者ID)
 
 [1]:https://launchpad.net/unity8
-[2]:apt://unity8
+[2]:apt://unity8 
