@@ -3,7 +3,7 @@
 
 ![img](http://i1-news.softpedia-static.com/images/news-700/Salvation-Prophecy-Military-Space-Epic-Arrives-on-Steam-for-Linux.jpg?1381742049)
 
-**由Firedance Games公司开发的《救赎预言》，在Steam游戏平台发布，现已经在Linux平台推出。**
+**由Firedance Games公司在Steam平台开发并发布的游戏《救赎预言》，现已在Linux平台推出。**
 
 根据开发人员介绍，《救赎预言》是一款太空军事题材游戏，玩家不仅可以扮演战斗机驾驶员在太空中战斗，还可以在行星表面以FPS模式对抗。
 
