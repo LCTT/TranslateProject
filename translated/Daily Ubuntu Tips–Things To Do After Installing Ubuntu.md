@@ -34,4 +34,4 @@ via: http://www.liberiangeek.net/2013/10/daily-ubuntu-tipsthings-to-do-after-ins
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[Linchenguang](https://github.com/Linchenguang) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Linchenguang](https://github.com/Linchenguang) 校对：[校对者ID](https://github.com/校对者ID) 
