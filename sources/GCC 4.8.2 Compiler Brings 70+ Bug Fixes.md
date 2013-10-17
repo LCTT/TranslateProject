@@ -1,3 +1,4 @@
+crowner翻译
 GCC 4.8.2 Compiler Brings 70+ Bug Fixes
 ================================================================================
 Jakub Jelinek of Red Hat released GNU Compiler Collection 4.8.2 this morning.
