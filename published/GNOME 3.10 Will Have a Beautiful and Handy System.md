@@ -13,10 +13,10 @@
 
 
 ![img](http://i1-news.softpedia-static.com/images/extra/LINUX/large/gnomesystemmenu-large_001.jpg)
-新的系统状态区
+旧的系统状态区
 
 ![img](http://i1-news.softpedia-static.com/images/extra/LINUX/large/gnomesystemmenu-large_002.jpg)
-旧的系统状态区
+新的系统状态区
 
 新系统状态区不仅仅是统一了所有的面板菜单，而且它也将仅显示你所关注的主要信息。用鼠标点击，你可以看到你的笔记本电脑的电量还能剩多少时间使用（也显示百分比）、连接无线宽带或者是WI-Fi、及调整音量和亮度。
 
