@@ -1,70 +1,72 @@
-(runningwater翻译中)Top Things To Do After Installing Ubuntu 13.10 ‘Saucy Salamander’
+Ubuntu13.10 - Saucy Salamander(活泼的蝾螈)安装后的首要事情
 ================================================================================
-**Ubuntu 13.10 Saucy Salamander** will be released on coming **October 17th** with many new salient features, updates and significant performance improvements. In this brief how-to let us discuss how we can enhance Ubuntu 13.10 further for day to day activities. This post we will share some interesting insight and ideas about what you can and should do after a successful installation.
+将于**10月17日**发布的**Ubuntu 13.10 Saucy Salamander**，有着许多新的显着特点，较大的更新及明显的性能改进。这篇简短的操作手册（how-to）将会讨论在日常的使用中怎么样进一步提升Ubuntu 13.10的性能。
 
-If you have already a previous release of Ubuntu, and want to upgrade to the latest 13.10 version, then please follow our step by step guide [upgrade to Ubuntu 13.10 Saucy Salamander][1].
+如果你已经装有Ubuntu以前的版本，想升级到最新的13.10的话，请参照着我们的指南一步一步操作。[升级到Ubuntu 13.10 Saucy Salamander][1]。
 
-First of all, after fresh installation of Ubuntu 13.10 Saucy, check the following few things first.
+首先，在全新安装Ubuntu 13.10 Saucy后，第一步就是检查如下的几件事情。
 
-**A. If sound is working, if not, [check our previous post to resolve the issue][2].
+**A. 它能正常的跑起来吗，如果不能，[查看我们以前发表的文章来解决相应的问题][2]。**
 
-B. If wifi connection speed is normal or if it is too slow, [check our previous post to resolve the issue][3].**
+**B. wifi连接速度是否正常，如果太慢，[查看我们以前发表的文章来解决相应的问题][3]。**
 
-## 1. Update System ##
+## 1. 更新系统 ##
 
-After install the Ubuntu 13.10 Saucy, the first and important thing to do is update/upgrade software repositories and make sure your systems contains latest versions of all softwares.
+安装完Ubuntu 13.10 Saucy后，首要的事情就是更新或升级软件源库，确保你的系统中的所有软件都能更新到最新版本。
 
     $ sudo apt-get update && sudo apt-get upgrade
 
-## 2. Ubuntu Tweak ##
+## 2. 安装Ubuntu Tweak软件 ##
 
-**Ubuntu Tweak** is a must have application for Ubuntu and it’s derivatives. It is an application to config Ubuntu easier for everyone. It provides many useful desktop and system options that the default desktop environment doesn’t provide. Using Ubuntu Tweak you can install all needed applications with a simple click, you can change the window buttons from Left to right…etc.
+在Ubuntu系统或它的衍生发行版系统上，**Ubuntu Tweak**是必须有的。它是一个应用程序，使用它，任何人都能很容易的配置Ubuntu系统。它提供了很多有用的桌面和系统选项，这些都是默认的桌面环境没有提供的。使用Ubuntu Tweak，只需要一个简单的点击，就可以安装所有需要的应用程序，还可以改变默认的从左到右的窗口按钮排列方式等等……。
 
-**Read our [Interview with Ding Zhou of Ubuntu Tweak][4].**
+**阅读[专访Ubuntu Tweak的作者周鼎][4]。**
 
-**Install Ubuntu Tweak via PPA**
+**通过PPA安装Ubuntu Tweak**
 
-**Note**: Ubuntu-Tweak Stable PPA is not ready yet. But there is an another PPA is available to install Ubutun-Tweak from the team.
+**注意**： 稳定的 Ubuntu-Tweak PPA还没有准备好，但有一个来源于讨论组并可用的PPA可以安装Ubutun-Tweak。
 
-Open terminal and enter the following commands:
+打开终端，输入如下命令：
 
     $ sudo add-apt-repository ppa:tualatrix/next
     $ sudo apt-get update 
     $ sudo apt-get install ubuntu-tweak
 
-Most of the applications listed in this post, can be installed from Ubuntu Tweak Center with one click.
+这篇文章里提到的大部分应用程序，都可以在Ubuntu Tweak中心找到，并且通过点击就可安装。
 
-If you want to learn how to use [Ubuntu Tweak, read our previous post][5].
+如果你想学习怎么样使用[Ubuntu Tweak，请阅读我们以前的帖子文章][5]。
 
-## 3. Desktop Environments ##
+## 3. 桌面环境 ##
 
-**Don’t like Unity in Ubuntu 13.10, why don’t you give a try to Cinnamon or Gnome?**
+**不喜欢Ubuntu 13.10默认的Unity，为什么不试试Cinnamon或者Gnome呢？**
 
-Cinnamon is a GNOME 3 fork that allow you to have a panel at the bottom with a classic Menu, this is useful for people that want to use Ubuntu with a classic Bottom Menu. Cinnamon is available in the default repositories of Ubuntu 13.10, therefore you can install it with the following command.
+Cinnamon是GNOME 3的一个分支，它提供了一个有经典菜单的底部面板，这对于想使用经典底部菜单的Ubuntu用户来说相当有用。Ubuntu 13.10的默认源库里已经提供了Cinnamon，因此输入下面的命令就能安装。
 
-If you want to install the most recent version of cinnamon, then add the follow the steps below.
+    sudo apt-get install cinnamon（译者注：原文缺失？！）
+
+如果你想安装最新版本的cinnamon，就增加如下步骤：
 
     sudo add-apt-repository ppa:gwendal-lebihan-dev/cinnamon-nightly
     sudo apt-get update
     sudo apt-get install cinnamon
 
-Logout from the current session and select Cinnamon as your desktop session at the user login prompt. Now you’ll able to get the Cinnamon Desktop Environment.
+注销当前登陆会话，然后在登陆提示窗口选择Cinnamon作为桌面会话。现在就可以进入Cinnamon的桌面环境。
 
-**Warning**: Latest version of Cinnamon corrupts Unity both on Ubuntu 13.04 and 13.10. Hope this bug will be fixed soon before the Ubuntu 13.10 stable release. For more information please refer this [link][7].
+**警告**： 最新版本的Cinnamon会破坏原来的Unity，这在Ubuntu 13.04版本和13.10版本上都发现了同样的问题。希望在 Ubuntu 13.10稳定版本发布前会修复这个bug。欲了解更多信息，请参阅此[链接][7]。
 
-**Install GNOME 3 in Ubuntu 13.10**
+**在Ubuntu 13.10上安装GNOME 3**
 
-To install GNOME 3 in Ubuntu 13.10, enter the following command:
+要在Ubuntu 13.10上安装GNOME 3，输入如下命令：
 
     sudo apt-get install gnome-shell ubuntu-gnome-desktop
 
-During installation, the installer will ask you to select the login manager of your choice (LightDM is the default Unity manager and GDM is the GNOME default — Both will work).
+在安装期间，安装程序会让你选择登陆显示管理器（LightDM是Unity桌面默认的标准，GDM是GNOME桌面默认的标准，任一个都可以）。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Menu_001.png)
 
-## 4. Accounts Configuration ##
+## 4. 账户配置 ##
 
-**Configure UbuntuOne Account**
+**配置UbuntuOne账户**
 
 **UbuntuOne** enables users to store files online and sync them between computers and mobile devices, as well as stream audio and music from cloud to mobile devices. If you have already an account, you will need top sing in, setup a folder in your computer and start synchronizing your data, contacts, photos …etc.
 
@@ -100,7 +102,7 @@ Try the following cool Icon collections.
 
 Want to change the default icons to something that match your taste? [Check this nice collection of icons for Ubuntu][10] (PPA included).
 
-## 6. Multimedia ##
+## 6. 多媒体软件选择 ##
 
 **- Players
 
@@ -168,7 +170,7 @@ Alternatively enter the following command to install flash plugins.
 
     sudo apt-get install flashplugin-installer
 
-## 9. Torrent Softwares ##
+## 9. BT软件 ##
 
 **uTorrent:**
 
@@ -186,7 +188,7 @@ Open terminal and type the following commands:
 
     sudo apt-get install deluge
 
-## 10. Messengers ##
+## 10. 即使消息软件 ##
 
 Here is the list of recommended Messengers for your system. Don’t install everything. Install one by one and pick up the right one for your requirement and delete the rest.
 
@@ -216,7 +218,7 @@ For details about Jitsi please check our previous article in the following link.
 
 [Install Jitsi Instant Messenger in Ubuntu][21]
 
-## 11. Gaming & Emulators ##
+## 11. 游戏或模拟器 ##
 
 **Gaming made easy with Playdeb:**
 
@@ -336,7 +338,7 @@ To install Compiz use the following command:
 
     sudo apt-get install compiz compizconfig-settings-manager compiz-plugins
 
-## 14. Desktop Effects ##
+## 14. 桌面特效 ##
 
 Want to spice-up your desktop with awesome wallpapers, well you can use the following two programs to change your desktop wallpapers in a particular interval.
 
