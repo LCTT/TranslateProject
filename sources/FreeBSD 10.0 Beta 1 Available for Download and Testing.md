@@ -1,3 +1,4 @@
+crowner翻译
 FreeBSD 10.0 Beta 1 Available for Download and Testing
 ================================================================================
 **FreeBSD 10.0 Beta 1, an operating system for x86, ARM, IA-64, PowerPC, PC-98, and UltraSPARC architectures, has been released and it's now available for download and testing.**

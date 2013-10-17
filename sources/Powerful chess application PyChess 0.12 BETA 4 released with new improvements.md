@@ -1,3 +1,4 @@
+翻译中
 Powerful chess application PyChess 0.12 BETA 4 released with new improvements
 ================================================================================
 [PyChess][1] is a lovely enjoyable chess application presenting itself as an advanced manner of digesting chess activities, stressing one's brain and chess skills with intelligent computer opponents, while exposing its activities with user-friendly intuitive visuals and details.
