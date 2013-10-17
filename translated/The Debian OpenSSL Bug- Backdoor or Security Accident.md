@@ -58,4 +58,4 @@ via: https://freedom-to-tinker.com/blog/kroll/software-transparency-debian-opens
 [16]:http://www.xkcd.com/424/
 [17]:http://www.roeckx.be/journal/
 [18]:http://lists.debian.org/debian-devel-announce/2009/02/msg00009.html
-[19]:http://research.swtch.com/openssl
+[19]:http://research.swtch.com/openssl 
