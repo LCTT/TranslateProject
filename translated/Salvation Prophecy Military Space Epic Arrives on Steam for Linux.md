@@ -1,13 +1,13 @@
-太空战争史诗巨作《救赎预言》登陆Linux
+太空军事题材巨作《救赎预言》登陆Linux Steam游戏平台
 ================================================================================
 
 ![img](http://i1-news.softpedia-static.com/images/news-700/Salvation-Prophecy-Military-Space-Epic-Arrives-on-Steam-for-Linux.jpg?1381742049)
 
-**Firedance Games公司在steam上发布了自主开发的《救赎预言》 并且支持Linux平台**
+**由Firedance Games公司开发的《救赎预言》，在Steam游戏平台发布，现已经在Linux平台推出。**
 
-根据开发者的介绍，《救赎语言》是一个太空战争史诗巨作，让玩家可以在太空扮演战斗机驾驶员战斗，也可以在行星表面以FPS模式对抗。
+根据开发人员介绍，《救赎预言》是一款太空军事题材游戏，玩家不仅可以扮演战斗机驾驶员在太空中战斗，还可以在行星表面以FPS模式对抗。
 
-“激烈的战斗和舰队的碰撞。入侵者强化自己的殖民地，原住民的土地生灵涂炭，但最大的威胁却是一个即将到来的世界毁灭的预言。你必须寻找出来自遥远外星世界的秘密, 并且掌握远古的力量来抵抗即将到来的风暴” 来自官方介绍 [synopsis][1].
+官方的[产品介绍][1]为“太空舰队碰撞冲突引发激烈的战斗，入侵者与强化的殖民地人群交战。然而，最大的危险是世界即将毁灭的世界末日预言。你必须寻找出来自遥远外星世界的奥秘, 并掌握远古的力量来抵抗即将到来的风暴。” 
 
 Linux系统最低配置要求：
 
@@ -17,14 +17,14 @@ Linux系统最低配置要求：
     显卡：NVIDIA GeForce 8600 GT、 ATI Radeon HD 2600 或者更好
     硬盘：至少1GB可用空间
 
-更多详情请关注Steam官方网站[website][2]。
+更多详情请关注Steam[官方网站][2]。
 ---
 
 via: http://news.softpedia.com/news/Salvation-Prophecy-Military-Space-Epic-Arrives-on-Steam-for-Linux-390849.shtml
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[Vic___](https://github.com/Vic020) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Vic___](https://github.com/Vic020) 校对：[Caroline](https://github.com/carolinewuyan)
 
 [1]:http://store.steampowered.com/news/11613/
 [2]:http://store.steampowered.com/app/248450/
