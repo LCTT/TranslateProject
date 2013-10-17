@@ -1,3 +1,5 @@
+lenky0401翻译中...
+
 Daily Ubuntu Tips – Disable Ubuntu Lock Screen
 ================================================================================
 When you’re new to Ubuntu, there are some things you wouldn’t know right away. These like changing your password, disabling features and creating new user account. One thing that new users often ask about when testing out Ubuntu is how to turn off the lock screen or stop Ubuntu screen from going dark.
