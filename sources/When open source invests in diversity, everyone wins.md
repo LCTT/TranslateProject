@@ -1,4 +1,4 @@
-When open source invests in diversity, everyone wins
+l3b2w1 translating When open source invests in diversity, everyone wins
 ================================================================================
 ![](http://opensource.com/sites/default/files/imagecache/image-full-size/images/business/BUSINESS_Results_Recos_LL.png)
 
