@@ -1,4 +1,4 @@
-Daily Ubuntu Tips – Adding User Accounts In Ubuntu
+[scusjs占坑]Daily Ubuntu Tips – Adding User Accounts In Ubuntu
 ================================================================================
 Ubuntu is a multi-user operating system. Multi-user OS means that more than one users are access the computer with separate and individual profile with home folder, documents, and settings. User A can login and make changes to his/her profile without affecting user **B’s** profile.
 

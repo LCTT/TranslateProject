@@ -1,4 +1,4 @@
-Daily Ubuntu Tips – Easiest Way To Access Your Files From Windows
+[scusjs占坑]Daily Ubuntu Tips – Easiest Way To Access Your Files From Windows
 ================================================================================
 Whether you’re a new user or someone with deep knowledge working with Ubuntu and Windows, one thing that’s true is using Samba is the best way to share / access Ubuntu files from Windows. It’s also easy to setup and manage using many other third-party tools.
 
