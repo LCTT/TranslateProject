@@ -1,20 +1,20 @@
-              翻译中ByLuox.....^0^......
+各大平台,发布优秀的Clementine音乐播放器 1.2版
 
-Excellent Music Player Clementine 1.2 Released on Multiple Platforms
 ================================================================================
-**Clementine 1.2, a multiplatform music player inspired by Amarok 1.4, focusing on a fast and easy-to-use interface for searching and playing your music, has been released and it features some pretty interesting new features.**
+
+**Clementine 1.2, 是受到了Amarok 1.4的启发制作的多平台音乐播放器,关注一个对于搜索和播放音乐的快速而又易于使用的界面,并已经发布,同时带有漂亮而又有趣的新特性.**
 
 ![](http://i1-news.softpedia-static.com/images/news2/Excellent-Music-Player-Clementine-1-2-Released-on-Multiple-Platforms-391342-2.png)
 
-Clementine is an excellent media player, and it has been adopted in a lot of new distributions. It's extremely stable and it's made for people who don't actually like the new direction taken by the current generation of music players.
+Clmentine 是一个卓越的媒体播放器,并被一些新的放行版所采用,它是极其稳定的,也不会那些习惯现在的播放的人产生不习惯.
 
-“This release is compatible with the Clementine Remote application for Android which lets you control Clementine remotely from an Android device.”
+这个版本也兼容安卓的Climentine远程控制程序,它能让你用你的安卓设备远程控制Clementine
 
-“Clementine also adds support for Subsonic. And you can now listen to your music stored in Box, Dropbox, Skydrive and Ubuntu One. Last major new feature is the ability to "star" your playlists, so you can safely close them and restore them later from the new "Playlist" tab we've added in the left sidebar,” reads the [announcement][1].
+'Clemntine 也添加了对Subsonic的支持.现在你能听存储在Box,Dropbox,Skydrive和Ubuntu One中的音乐.最后一个主要的特性是能星标你的播放列表,我们能在左侧工具条上添加的新的播放列表条目中安全的关闭和恢复他们',从[公告][2]中读取
 
-A complete list of changes and new features can be found in the official [announcement][2].
+能在官方[公告][2]了解关于新版本的变化和新特性的完整列表.
 
-**Download Clementine 1.2**
+**下载Clementine 1.2**
 
 - [tar.gz][3][sources] [9.30 MB]
 - [Ubuntu 13.04 DEB i386][4][ubuntu_deb] [7.10 MB]
@@ -31,7 +31,7 @@ via: http://news.softpedia.com/news/Excellent-Music-Player-Clementine-1-2-Releas
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Luoxcat](https://github.com/Luoxcat) 校对：[校对者ID](https://github.com/校对者ID)
 
 [1]:http://code.google.com/p/clementine-player/source/browse/Changelog?name=release-1.2
 [2]:http://www.clementine-player.org/
