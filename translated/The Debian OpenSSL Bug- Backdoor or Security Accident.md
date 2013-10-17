@@ -1,9 +1,9 @@
 Debian OpenSSL Bug - 后门还是安全事故?
 ======================================================
 
-周一，Ed 写了篇文章《软件透明度》[1]，主旨是如果软件开发的过程是透明的，那么软件本身对恶意的后门（无心的安全漏洞）更具抵抗性。
-软件透明的因素包括公开源代码，可以获取一个项目的追踪议题，以及允许参与内部开发者会议。他提到一种情况，在这儿我想详细讨论一下：
-2008年，Debian项目（一个流行的用于web服务器的linux发行版），宣称[2]Debian中OpenSSL[3]的伪随机数生成器遭到破解，已经不安全了。
+周一，Ed 写了篇文章《软件透明度》[1]，主旨是如果软件开发的过程是透明的，那么软件对恶意的后门（以及无心的安全漏洞）更具抵抗性。
+软件透明的因素包括公开源代码，可以读取或为一个项目的追踪议题做出贡献，以及参与内部开发讨论。他提到一种情况，在这儿我想详细讨论一下：
+2008年，Debian项目（一个用于web服务器的很流行的linux发行版），宣称[2]Debian中OpenSSL[3]的伪随机数生成器遭到破解，已经不安全了。
 
 首先，了解一些背景信息：伪随机数生成器（PRNG）就是一个程序，假定代号为F。给定一个随机种子s，通过F(s)进行处理后，
 会得到一个长的比特流。如果我和你都使用同样的种子s，两个人会得到同样的比特流。但是如果我随机选择一个s，也不告诉你s是什么，
@@ -43,7 +43,7 @@ via: https://freedom-to-tinker.com/blog/kroll/software-transparency-debian-opens
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[l3b2w1](https://github.com/l3b2w1) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[l3b2w1](https://github.com/l3b2w1) 校对：[jasminepeng](https://github.com/jasminepeng)
 
 
 [1]:https://freedom-to-tinker.com/blog/felten/software-transparency/
