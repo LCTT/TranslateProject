@@ -1,4 +1,4 @@
-Ubuntu13.10 - Saucy Salamander(活泼的蝾螈)安装后的首要事情
+安装Ubuntu13.10 - Saucy Salamander(活泼的蝾螈)后的首要事情
 ================================================================================
 将于**10月17日**发布的**Ubuntu 13.10 Saucy Salamander**，有着许多新的显着特点，较大的更新及明显的性能改进。这篇简短的操作手册（how-to）将会讨论在日常的使用中怎么样进一步提升Ubuntu 13.10的性能。
 
@@ -68,53 +68,53 @@ Cinnamon是GNOME 3的一个分支，它提供了一个有经典菜单的底部�
 
 **配置UbuntuOne账户**
 
-**UbuntuOne** enables users to store files online and sync them between computers and mobile devices, as well as stream audio and music from cloud to mobile devices. If you have already an account, you will need top sing in, setup a folder in your computer and start synchronizing your data, contacts, photos …etc.
+**UbuntuOne**让用户在线存储文件，然后在电脑和移动设备之间同步，也可以从云端获取音频和音乐到移动设备。如果你已经有一个帐号，你需要在顶部登陆，然后在您的电脑上设置一个文件夹，并开始同步你的数据，通讯录，照片等。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Ubuntu-One_005.png)
 
-Also you can run **UbuntuOne** from the left side unity launcher:
+你也可以从左为的unity启动器里运行**UbuntuOne**：
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Selection_004.png)
 
-**Configure Online Accounts**
+**配置网上帐户**
 
-One of the top things you need to do is to setup your online accounts (Facebook, twitter…). To do that click on the **gear** button on the top right corner and select **System Settings**.
+你需要做的首要事情之一就是设置你的网上帐户（Facebook，twitter……）。要做到这一点，直接点击右上角**齿轮形状**的按钮，并选择**系统设置**。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Menu_007.png)
 
-Then select Online Accounts (see below).
+然后选择网上帐户（如下所示）。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/System-Settings_008.png)
 
-Now setup your online accounts and get notifications in Ubuntu.
+现在设置您的网上帐户，并在Ubuntu可以得到通知。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Online-Accounts_010.png)
 
-## 5. System Monitoring & Eye Candy Tools ##
+## 5. 系统监控和外观糖果工具##
 
-**Install Conky for Ubuntu 13.10**
+**为Ubuntu 13.10安装Conky工具**
 
-**[Conky][8]** is a free, light-weight system monitor for X, that displays any information on your desktop. There are many nice themes available for conky that can display clock, CPU usage, RAM usage, swap, disk, net and more. Check [our previous post for installation and configuration][9] of conky in Ubuntu 12.04, 12.10, 13.04 and Ubuntu 13.10.
+**[Conky] [8]**是一款免费的，轻量级的X窗口系统监控软件，能在您的桌面上显示任何的信息。有许多漂亮的主题可以选择，用来显示时钟、CPU使用率、内存使用率、交换空间信息，磁盘信息、网络信息或更多的系统信息。查看我们以前发表的关于在Ubuntu 12.04, 12.10,13.04或Ubuntu 13.10环境中[安装及配置conky的相关文章][9]。
 
-**Don’t like the default icons, Wanna try some cool icons? **
+**不喜欢默认的图标，想尝试一些很酷的图标？**
 
-Try the following cool Icon collections.
+试试下面很酷的图标集。
 
-Want to change the default icons to something that match your taste? [Check this nice collection of icons for Ubuntu][10] (PPA included).
+需要更改默认的图标，以符合您的口味？[查看这个漂亮的Ubuntu的图标集][10] (包含PPA)。
 
 ## 6. 多媒体软件选择 ##
 
-**- Players
+- 播放器
 
-1-VLC Media Player:**
+**1-VLC 媒体播放器：**
 
-[VLC][11] is the best media player for Linux it play almost everything, it has many features that you can not find in any other media player, read this post if you want to know what VLC can do: [25 things you can do with VLC Media player][12]!
+在Linux平台上[VLC][11]是最好的媒体播放器，它几乎能播放所有的媒体文件，而且还具有其它多媒体播放器所没有的特性。如果你想知道VLC有些什么功能，请读读这篇文章：[VLC媒体播放器能做的25件事][12]！
 
-You can install VLC from Ubuntu Software Center or via terminal by using the following command:
+通过Ubuntu软件中心或者在终端中使用下面的命令就能安装VLC：
 
     sudo apt-get install vlc
 
-Or install the most recent version 2.1.1 using the following PPA.
+或者使用下面的PPA来安装最新的2.1.1版本。
 
     sudo add-apt-repository ppa:videolan/stable-daily
     sudo apt-get update
@@ -122,109 +122,109 @@ Or install the most recent version 2.1.1 using the following PPA.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/About_014.png)
 
-**2- XMBC:**
+**2- XMBC：**
 
-**[XBMC][13]** is an award-winning free and open source (GPL) software media player and entertainment hub for digital media. XBMC is available for Linux, OS X, Windows, and the original Xbox. While XBMC functions very well as a standard media player application for your computer, it has been designed to be the perfect companion for your HTPC. Supporting an almost endless range of remote controls, and combined with its beautiful interface and powerful skinning engine, XBMC feels very natural to use from the couch and is the ideal solution for your home theater.
+**[XBMC][13]**是一个屡获殊荣的免费和开源（GPL）媒体播放器软件及数字媒体娱乐中心。XBMC可以运行在Linux、OSX、windows及原来的Xbox平台上。XBMC做为一个标准的计算机媒体播放器应用程序，功能十分强大，它已经被设计为您的[HTPC][40]的最佳伴侣。因为它支持几乎是无限的远程控制，并配有漂亮的界面和强大的皮肤引擎，坐在沙发上操作非常舒适，所以XBMC是您的家庭影院的理想解决方案。
 
-Open terminal and copy the following commands:
+打开终端，拷贝下面的命令执行：
 
     sudo apt-get install xbmc
 
-**- Video Editors
+- 视频编辑
 
-Openshot video editor:**
+**Openshot视频编辑器：**
 
-My favorite Video editor is [Openshot][14], the best existing actually for Linux. You can install Openshot from Ubuntu Software Center, but if you want to install the latest release, you can do that by adding the following repositories:
+我喜欢的视频编辑器是[Openshot][14]，Linux平台专用的最好软件。可以直接从Ubuntu软件中心进行安装，但想安装最新发行版本的话，你得把下面的源库添加上：
 
-**Note**: PPA is not yet working in 13.10 at the time of writing this article. Hope it will be updated soon.
+**注释**： 在写这篇文章的时候，13.10版本下，PPA还不可用。希望不久就会更新可用。
 
     sudo add-apt-repository ppa:openshot.developers/ppa
     sudo apt-get update
     sudo apt-get install openshot openshot-doc
 
-Read also our [interview with Jonathan Thomas][15] the main developer of Openshot.
+也可以读读[采访乔纳森·托马斯][15]这文章。他是Openshot的主要开发者。
 
-**- Video Encoders
+- 视频编码器
 
-Handbrake:**
+**Handbrake:**
 
-Check our previous article to know about the powerful video encoder called “Handbrake”.
+查看我们以前的文章来了解这款叫做“Handbrake”的强大视频编码器软件。
 
-[Encode Movies And Videos Using Handbrake][16]
+[使用Handbrake对电影和视频编码][16]
 
-## 7. Install Common Codecs And Enable DVD playback ##
+## 7. 安装常用编解码器以便能播放DVD ##
 
-Perhaps installing a few common codecs might give you better sensibility of your system:
+也许安装几个常见的编解码器，可能会提升您的系统的可用性：
 
     sudo apt-get install gstreamer0.10-plugins-ugly gstreamer0.10-ffmpeg libxine1-ffmpeg gxine mencoder libdvdread4 totem-mozilla icedax tagtool easytag id3tool lame nautilus-script-audio-convert libmad0 mpg321 gstreamer1.0-libav
 
-To play encrypted DVDs, the libdvdcss2 package is essential. libdvdcss is a simple library designed for accessing DVDs like a block device without having to bother about the decryption.
+要播放加密的DVD，libdvdcss 2包是必不可少的。libdvdcss是一个简单的，专门设计来访问DVD的库，就像访问块设备一样轻松，而不用考虑是否需要解密。
 
     sudo /usr/share/doc/libdvdread4/./install-css.sh
 
-## 8. Enable Flash Support On Browsers ##
+## 8. 让浏览器支持Flash ##
 
-**For Ubuntu 32 bit & 64 bit**: To be able to watch some videos and see flash website in your browser (Firefox/Chrome), you need to install flash plugin, go to **Ubuntu Software Center** and search word “**flash**” and install it.
+**在32位或64位的Ubuntu系统上**： 为了能用浏览器（Firefox/Chrome）观看视频及浏览flash网站，你需要安装flash插件。打开**Ubuntu软件中心**搜索"**flash**",然后安装。
 
-Alternatively enter the following command to install flash plugins.
+另外也可以输入下面的命令来安装flash插件。
 
     sudo apt-get install flashplugin-installer
 
 ## 9. BT软件 ##
 
-**uTorrent:**
+**uTorrent：**
 
-**uTorrent** is a lightweight and efficient BitTorrent client for Linux, Windows OS and Mac OS. The installation of uTorrent in Linux is different from Windows and Mac OS. In Linux, uTorrent runs as a web server. You will access uTorrent from your browser. You should start the uTorrent server in order to access it from your browser.
+**uTorrent**是一款轻量级和高效能的BT客户端软件，它可以运行在Linux系统、windows系统和Mac系统上。uTorrent在Linux系统上的安装与在windows系统和Max系统上安装大不相同。在Linux中，uTorrent是做为网页服务端（web server）来运行的，但你可以在浏览器中访问。为了能在浏览器上访问，你应该先开启他的服务。
 
-Check our previous article to know more about uTorrent.
+查看我们以前的文章来了解更多的uTorrent信息。
 
-[How To Install uTorrent Client in Ubuntu/Debian/Linux Mint][17]
+[在Ubuntu/Debian/Linux Mint中怎样安装uTorrent客户端][17]
 
-**Deluge:**
+**Deluge：**
 
-The Deluge application was designed to be a full-featured torrent client. Deluge uses libtorrent in its back-end and PyGTK for its user interface and is currently usable on POSIX-compliant operating systems. It is intended to bring a native, full-featured client to GTK desktop environments such as GNOME and Xfce. An official Windows port is also available.
+Deluge应用程序是一个全功能的BT客户端。它后端使用libtorrent库，用户界面（UI）使用PyGTK，并且在目前POSIX兼容的操作系统也可运行。它的目的是给像GNOME和Xfce等GTK桌面环境带来原生的、全功能客户端应用程序。官方的windows端口也开放可用。
 
-Open terminal and type the following commands:
+打开终端，输入如下命令：
 
     sudo apt-get install deluge
 
 ## 10. 即使消息软件 ##
 
-Here is the list of recommended Messengers for your system. Don’t install everything. Install one by one and pick up the right one for your requirement and delete the rest.
+这里是为您的系统推荐的消息软件列表。不要所有的都安装。一个一个的装，找出最合你的一款，然后删除其它的。
 
-[Pidgin][18],The best messenger client and 30 plugins, you can do voice and video chat with friends.
+[Pidgin][18]，最好的即时消息客户软件，有30个插件，你能和朋友进行语音或视频聊天。
 
-To install Pidgin, enter the following command:
+要安装Pidgin，键入如下命令：
 
     $ sudo apt-get install pidgin
 
-[aMSN][19] is a free windows Live Messenger clone. aMSN attempts to emulate the look and feel of Windows Live Messenger, and supports many of its features.
+[aMSN][19]是一款免费的windows Live Messenger的克隆版本软件。aMSN在外观和感觉上很像windows Live Messenger，并且支持windows Live Messenger的很多功能。
 
-aMSN has features not present in Windows Live Messenger. Users can set alarms, are able to see others who have removed them from their contact list, and are able to open many profiles at once. It is also very customizable, with extensions and themes available at the main site.
+aMSN具有Windows Live Messenger没有的功能。用户可以设置报警器，能够查看把自己从他们的联系人删除的用户的信息，能够一次打开多个人个介绍页面。它也具有可定制功能，在主页面上可以自定义主题及定义扩展。
 
-To install aMsn, enter the following command in your terminal.
+要安装aMSN，在你的终端中键入如下命令：
 
     $ sudo apt-get install amsn
 
-**Skype:**
+**Skype：**
 
-If you’re want to install Skype, check our previous post: [How to install Skype in Ubuntu 13.04 ‘Raring Ringtail][20]’
+如果你想安装Skype，查看我们以前的文章：[Ubuntu 13.04 ‘Raring Ringtail’中如何安装Skype][20]
 
 **Jitsi:**
 
-Jitsi is an open source and multi platform audio/video Internet phone and instant messenger written in Java. It supports some of the most popular instant messaging and telephony protocols such as SIP, Jabber/XMPP (and hence Facebook and Google Talk), AIM, ICQ, MSN, Yahoo! Messenger.
+Jitsi是用Java编写的，开源多平台的音频/视频网络电话和即时通讯软件。它支持一些最流行的像SIP、Jabber/ XMPP协议（有 hence Facebook和Google Talk）、AIM、ICQ、MSN、雅虎通等即时通讯和电话协议。
 
-For details about Jitsi please check our previous article in the following link.
+For details about Jitsi please check our previous article in the following link.至于详细的Jitsi介绍，请点击下面的连接来查看我们以前的文章。
 
-[Install Jitsi Instant Messenger in Ubuntu][21]
+[在Ubuntu中安装Jitsi即时通讯软件][21]
 
 ## 11. 游戏或模拟器 ##
 
-**Gaming made easy with Playdeb:**
+**有了Playdeb游戏变得容易了：**
 
-If you are a grate fan of gaming so is important to add PlayDeb repositories to your Lucid Lynx. PlayDeb is a gaming repository for Ubuntu aimed to provide titles already available on getdeb.net in an easier to install and update format. You can install many games by a simple click.
+如果你是游戏发烧友，添加PlayDeb源到你的开机上就很有必要了。PlayDeb是一个Ubuntu的游戏源库。在getdeb.net网站上已经提供了一个简单的安装和更新格式标题，你只要通过简单的点击就能安装很多游戏。
 
-[Click to install PlayDeb repositories][22]
+[点击安装PlayDeb源库][22]
 
 **Wine**
 
@@ -449,3 +449,4 @@ via: http://www.unixmen.com/top-things-installing-ubuntu-13-10/
 [37]:http://www.opera.com/browser/
 [38]:http://www.google.com/chrome/index.html?hl=en-GB&brand=CHMB&utm_campaign=nl&utm_source=nl-ha-emea-nl-bk&utm_medium=ha
 [39]:http://www.unixmen.com/how-to-install-google-earth-in-linux/
+[40]:http://baike.baidu.com/view/57872.htm
