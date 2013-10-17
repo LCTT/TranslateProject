@@ -29,6 +29,6 @@ via: http://news.softpedia.com/news/FreeBSD-10-0-Beta-1-Available-for-Download-a
 
 鏈枃鐢?[LCTT](https://github.com/LCTT/TranslateProject) 鍘熷垱缈昏瘧锛孾Linux涓浗](http://linux.cn/) 鑽ｈ獕鎺ㄥ嚭
 
-璇戣€咃細[璇戣€匢D](https://github.com/璇戣€匢D) 鏍″锛歔鏍″鑰匢D](https://github.com/鏍″鑰匢D)
+璇戣€咃細[crowner](https://github.com/璇戣€匢D) 鏍″锛歔鏍″鑰匢D](https://github.com/鏍″鑰匢D)
 
 [1]:http://lists.freebsd.org/pipermail/freebsd-current/2013-October/045524.html
