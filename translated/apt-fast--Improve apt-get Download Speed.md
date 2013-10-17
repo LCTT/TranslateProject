@@ -1,4 +1,6 @@
 apt-fast：改善apt-get下载速度
+===
+
 
 apt-fast是一个为 **apt-get** 和 **aptitude** 的“ **shell脚本封装** ”，通过用每个包的多种连接的方式下载包可以大大改善APT下载时间。apt-fast使用aria2c或axel下载管理器去加快APT下载时间。就像传统的apt-get包管理器，apt-fast支持几乎所有的apt-get功能，如， **install** , **remove** , **update** , **upgrade** , **dist-upgrade** 等等。并且一个显著的特征是它也支持proxy。
 
