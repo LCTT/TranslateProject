@@ -1,32 +1,32 @@
-Linchenguang翻译中
-
-Daily Ubuntu Tips–Things To Do After Installing Ubuntu
+Ubuntu小技巧——安装Ubuntu后做什么
 ================================================================================
-Many users from Windows find themselves stuck when starting out with Ubuntu. It’s a completely different from Windows and getting confortable with it may not be the easiest thing at first. Ubuntu is way different from Windows. The commands, the layout of the file system and application names are all foreign to many. But heck, we’re here to help.
 
-If  you’re coming from Windows or Mac OS X and want to learn Ubuntu, you’re in the right place. We try to help new users get started with Ubuntu. Our slogan here is “**Tutorials for newbies**”, which is rightly so.
+许多Windows用户开始使用Ubuntu时都感到很困惑。Ubuntu与Windows截然不同，想要轻松驾驭Ubuntu 可不是一件简单的事情。Ubuntu的使用方式不同于Windows。命令行、文件系统的布局和应用程序的名称对许多新用户都会很陌生。但是不用管那些，我们会提供帮助。
 
-Most of our tutorials are not for pros. They are for people who are just starting out with Windows and Ubuntu. So, for all your Ubuntu needs, keep coming back.
+如果你以前是Windows或者Mac OS X用户现在想学Ubuntu，那你来对地方了。我们正努力帮助新用户开始Ubuntu之旅。我们的口号理所当然就是“**菜鸟教程**”。
 
-Now, back to the topic.  One of our readers asked us this question few days ago.
+我们的教程大多不是针对专业人士的，而是面向刚开始学习Windows和Ubuntu的新手。所以，为了你所有的Ubuntu需求，经常回来转转。.
 
-> What should you do first after installing Ubuntu?
+好了，言归正传。几天前一个读者问了我们如下一个问题。
 
-Simple. When you first install Ubuntu, there are many things you may want to get started with. But the most important thing is to get it right. Don’t worry about the difficult things, those you’ll learn later.
+> 安装好Ubuntu后首先要做什么？
 
-Here are the first few things you’ll want do after installing Ubuntu. There might be more, but these are important.
+很简单，第一次安装Ubuntu时，你可能有很多事情想做。但是最重要的是让它正常工作。不要担心难事，这些你很快就会明白。
 
-- Update your system – The very first thing is to update your system. Updating allows you to install newer packages and install fixes for other programs. The commands below will show you how to properly update your system when using Ubuntu.
+这里有一些安装好Ubuntu之后你最初想要做的事。可能你想做的比这还多，但这些是比较重要的。
+
+- 更新系统 －首先更新你的系统。系统更新可以让你安装比较新的软件包和一些其它程序的修正。使用Ubuntu时你可以使用下面的命令正确地进行系统更新。
 
     sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove
 
-- Another thing to do right after installing Ubuntu is to run the below command. This command helps you install codecs or packages that were left out of Ubuntu for legal reasons. Ubuntu comes without these important programs and they are very useful. Without them you may not be able to listen to music, watch movies and do other things. So, if you installed Ubuntu and can’t play some DVDs or listen to music CDs, then run the commands below.
+- 安装好Ubuntu后要做的另外一件事就是运行下面的命令。这条命令能帮助你安装编解码器和因法律原因而排除在Ubuntu外的软件包。Ubuntu并未预装这些比较重要的程序。而没有这些程序你可能无法听音乐、看电影或者做其它的事情。所以，如果你安装了Ubuntu但是不能播放DVD或者听音乐CD，那就运行下面的命令吧。
 
     sudo apt-get install ubuntu-restricted-extras
 
-The commands above are not the only commands you’ll run in Ubuntu, but they are few of the first you should run after installing Ubuntu. I hope this helps.
 
-Enjoy!
+以上这些命令并非你将在Ubuntu运行的全部的命令，但它们是安装好Ubuntu后你首先要运行的。希望这些能帮助到你。
+
+祝你玩的开心！
 
 --------------------------------------------------------------------------------
 
@@ -34,4 +34,4 @@ via: http://www.liberiangeek.net/2013/10/daily-ubuntu-tipsthings-to-do-after-ins
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Linchenguang](https://github.com/Linchenguang) 校对：[校对者ID](https://github.com/校对者ID)
