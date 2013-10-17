@@ -1,3 +1,4 @@
+                        伸个懒腰-----------------------
 Daily Ubuntu Tips – Adding Users To Existing Groups
 ================================================================================
 For new users and newbies who are just starting out with Ubuntu, managing users and groups can be challenging especially since the old users and group management tool doesn’t come with Ubuntu anymore. In prior versions of Ubuntu, one could easily manage users and group with the users-admin tool which is part of Gnome system tools.
