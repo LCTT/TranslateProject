@@ -1,4 +1,4 @@
-Top Things To Do After Installing Ubuntu 13.10 ‘Saucy Salamander’
+(runningwater翻译中)Top Things To Do After Installing Ubuntu 13.10 ‘Saucy Salamander’
 ================================================================================
 **Ubuntu 13.10 Saucy Salamander** will be released on coming **October 17th** with many new salient features, updates and significant performance improvements. In this brief how-to let us discuss how we can enhance Ubuntu 13.10 further for day to day activities. This post we will share some interesting insight and ideas about what you can and should do after a successful installation.
 
@@ -406,7 +406,7 @@ via: http://www.unixmen.com/top-things-installing-ubuntu-13-10/
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
 
 [1]:http://www.unixmen.com/upgrade-ubuntu-13-04-raring-ubuntu-13-10-saucy-salamander/
 [2]:http://www.unixmen.com/2012003-howto-resolve-nosound-problem-on-ubuntu/
