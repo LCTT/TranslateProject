@@ -1,17 +1,17 @@
-Ubuntu小技巧——安装Ubuntu后做什么
+日常Ubuntu使用小技巧——安装Ubuntu后做什么
 ================================================================================
 
-许多Windows用户开始使用Ubuntu时都感到很困惑。Ubuntu与Windows截然不同，想要轻松驾驭Ubuntu 可不是一件简单的事情。Ubuntu的使用方式不同于Windows。命令行、文件系统的布局和应用程序的名称对许多新用户都会很陌生。但是不用管那些，我们会提供帮助。
+许多Windows用户开始使用Ubuntu时都感到束手无策。Ubuntu与Windows截然不同，想要轻松驾驭Ubuntu可不是一件简单的事情。Ubuntu的使用方式不同于Windows。许多用户对命令行、文件系统的布局和应用程序的名称都感到陌生。但是不用管那些，我们会提供帮助。
 
 如果你以前是Windows或者Mac OS X用户现在想学Ubuntu，那你来对地方了。我们正努力帮助新用户开始Ubuntu之旅。我们的口号理所当然就是“**菜鸟教程**”。
 
 我们的教程大多不是针对专业人士的，而是面向刚开始学习Windows和Ubuntu的新手。所以，为了你所有的Ubuntu需求，经常回来转转。.
 
-好了，言归正传。几天前一个读者问了我们如下一个问题。
+好了，言归正传。几天前一个读者问了我们一个问题，如下：
 
 > 安装好Ubuntu后首先要做什么？
 
-很简单，第一次安装Ubuntu时，你可能有很多事情想做。但是最重要的是让它正常工作。不要担心难事，这些你很快就会明白。
+很简单，第一次安装Ubuntu时，你可能有很多事情想做。但是最重要的是让它正常工作。不要担心遇到难题，这些你很快就会明白。
 
 这里有一些安装好Ubuntu之后你最初想要做的事。可能你想做的比这还多，但这些是比较重要的。
 
@@ -26,7 +26,7 @@ Ubuntu小技巧——安装Ubuntu后做什么
 
 以上这些命令并非你将在Ubuntu运行的全部的命令，但它们是安装好Ubuntu后你首先要运行的。希望这些能帮助到你。
 
-祝你玩的开心！
+使用愉快！
 
 --------------------------------------------------------------------------------
 
@@ -34,4 +34,4 @@ via: http://www.liberiangeek.net/2013/10/daily-ubuntu-tipsthings-to-do-after-ins
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[Linchenguang](https://github.com/Linchenguang) 校对：[校对者ID](https://github.com/校对者ID) 
+译者：[Linchenguang](https://github.com/Linchenguang) 校对：[Caroline](https://github.com/carolinewuyan) 
