@@ -1,4 +1,4 @@
-Ubuntu 13.10 Released – But Is It An Essential Upgrade?
+l3b2w1 translating Ubuntu 13.10 Released – But Is It An Essential Upgrade?
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2013/10/Screen-Shot-2013-10-16-at-15.43.jpg)
 

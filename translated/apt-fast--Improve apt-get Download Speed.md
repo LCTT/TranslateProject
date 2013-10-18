@@ -20,7 +20,7 @@ apt-fast是一个为 **apt-get** 和 **aptitude** 的“ **shell脚本封装** �
 
 	sudo apt-get install apt-fast
 
-在安装期间，它将问你下载包的最大链接数。
+在安装期间，它将要求你输入下载包的最大链接数。
 
 ![](https://github-camo.global.ssl.fastly.net/d9cba93cec82d5f2e442cb462f441df68cca57fb/687474703a2f2f3138303031363938382e722e63646e37372e6e65742f77702d636f6e74656e742f75706c6f6164732f323031332f31302f736b40736b2d5f3030332e706e67 )
 
@@ -30,13 +30,13 @@ apt-fast是一个为 **apt-get** 和 **aptitude** 的“ **shell脚本封装** �
 
 我发现 **aria2** 下载管理器已经随着apt-fast的安装而自动安装。所以，你不必单独安装aria2。
 
-如果你想重新配置apt-fast选项，你可以使用命令：
+如果你想重新配置apt-fast选项，你可以使用命令： 
 
 	sudo dpkg-reconfigure apt-fast
     
 **用法**
 
-与apt-get相同的功能，我们可以使用：
+与apt-get功能相似，我们可以使用：
 
     apt-fast install package
     
@@ -74,6 +74,6 @@ via: http://www.unixmen.com/improve-apt-get-download-speed-apt-fast/
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[Vito](https://github.com/Vito) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Vito](https://github.com/Vito) 校对：[Caroline](https://github.com/carolinewuyan)
 
 [1]:https://github.com/ilikenwf/apt-fast
