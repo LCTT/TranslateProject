@@ -33,7 +33,7 @@ via: http://news.softpedia.com/news/Excellent-Music-Player-Clementine-1-2-Releas
 
 译者：[Luoxcat](https://github.com/Luoxcat) 校对：[校对者ID](https://github.com/校对者ID)
 
-[1]:http://code.google.com/p/clementine-player/source/browse/Changelog?name=release-1.2
+[1]:http://code.google.com/p/clementine-player/source/browse/Changelog?name=release-1.2 
 [2]:http://www.clementine-player.org/
 [3]:https://clementine-player.googlecode.com/files/clementine-1.2.0.tar.gz
 [4]:https://clementine-player.googlecode.com/files/clementine_1.2.0%7Eraring_i386.deb
