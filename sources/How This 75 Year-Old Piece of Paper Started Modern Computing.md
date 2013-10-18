@@ -1,3 +1,4 @@
+[翻译中 by chenjintao]
 How This 75 Year-Old Piece of Paper Started Modern Computing
 =====
 
