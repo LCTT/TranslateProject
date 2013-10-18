@@ -4,11 +4,11 @@
 
 ![img](http://cdn2.sbnation.com/uploads/chorus_image/image/20983497/construction_web.0_cinema_720.0.jpg)
 
-Linux平台只需要一款杀手级游戏就能杀入主流游戏市场，DICE创意总监Lars Gustavsson如是告诉记者，他还透露，开发工作室其实“非常愿意”入驻Linux平台。
+**Linux平台只需要一款杀手级游戏就能杀入主流游戏市场，DICE创意总监Lars Gustavsson如是告诉记者，他还透露，开发工作室其实“非常愿意”入驻Linux平台。**
 
 “我们之所以如此强烈想要入驻Linux，原因只有一个”，Gustavsson说，“就如同Xbox凭借着光晕(Halo）一举成功逆袭并使粉丝们为之疯狂 —— 通常，只需要一款杀手级应用或游戏，人们就更愿意去[适应新平台] —— 对于Linux来说，这并不难，例如，它只需要一款能吸引人们主动去玩的游戏而已。”
 
-“我认为，即使这样，消费者正变得越来越挑剔，所以，我们必须说服他们如何才愿意玩某一款游戏，并将其作为日常生活的一部分，”他解释道，工作室目前已经开始使用Linux服务器，因为Linux在这方面本就是最佳选择。
+“我认为，即使这样，消费者正变得越来越挑剔，所以，我们必须说服他们如何才愿意玩某一款游戏，并将其作为日常生活的一部分，”他解释道，工作室目前已经开始使用Linux服务器，因为Linux在这方面本就是最佳选择。”
 
 ![img](http://cdn3.sbnation.com/assets/3368657/detailed_web_0.jpg)
 
@@ -47,7 +47,7 @@ Linux平台只需要一款杀手级游戏就能杀入主流游戏市场，DICE�
 
 via: http://www.polygon.com/2013/10/12/4826190/linux-only-needs-one-killer-game-to-explode-says-battlefield-director
 
-译者：[小眼儿](https://github.com/tinyeyeser) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[小眼儿](https://github.com/tinyeyeser) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

@@ -1,4 +1,4 @@
-GNOME Control Center 3.10.1 Released with Multiple Improvements
+(翻译中)GNOME Control Center 3.10.1 Released with Multiple Improvements
 ================================================================================
 **GNOME Control Center, GNOME's main interface for configuration of various aspects of your desktop, is now at version 3.10.1.**
 
@@ -26,7 +26,7 @@ via: http://news.softpedia.com/news/GNOME-Control-Center-3-10-1-Released-with-Mu
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
 
 [1]:http://ftp.acc.umu.se/pub/GNOME/sources/gnome-control-center/3.10/gnome-control-center-3.10.1.news
 [2]:http://ftp.acc.umu.se/pub/GNOME/sources/gnome-control-center/3.10/gnome-control-center-3.10.1.tar.xz
