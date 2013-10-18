@@ -1,7 +1,7 @@
 各大平台发布优秀的Clementine音乐播放器 1.2版
 ================================================================================
 
-**已发布的 Clementine 1.2 是一款多平台音乐播放器，它的创作灵感来源于Amarok 1.4，关注焦点在于它快速搜索和播放音乐且便于使用的用户界面，它带有漂亮又有趣的新特性。**
+**已发布的 Clementine 1.2 是一款多平台音乐播放器，它的创作灵感来源于Amarok 1.4，关注焦点在于它快速搜索和播放音乐且便于使用的用户界面，它具有非常有趣的新特性。**
 
 ![](http://i1-news.softpedia-static.com/images/news2/Excellent-Music-Player-Clementine-1-2-Released-on-Multiple-Platforms-391342-2.png)
 
