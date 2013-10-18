@@ -1,3 +1,4 @@
+                            好好学习  天天向上    Luox
 System 76 Ubuntu Touchscreen Laptop Now Available to Pre-Order
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2013/10/daru4-wallpaper-fall-homepage-750x423.jpg)
