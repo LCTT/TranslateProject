@@ -1,4 +1,4 @@
-Lubuntu 13.10 (Saucy Salamander) Officially Released – Screenshot Tour
+(翻译中...)Lubuntu 13.10 (Saucy Salamander) Officially Released – Screenshot Tour
 ================================================================================
 **Lubuntu 13.10 (Saucy Salamander) has been officially released and it's now available for download.**
 
@@ -52,7 +52,7 @@ via: http://news.softpedia.com/news/Lubuntu-13-10-Saucy-Salamander-Officially-Re
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
 
 [1]:https://wiki.ubuntu.com/SaucySalamander/ReleaseNotes/Lubuntu
 [2]:http://cdimage.ubuntu.com/lubuntu/releases/13.10/release/lubuntu-13.10-alternate-i386.iso

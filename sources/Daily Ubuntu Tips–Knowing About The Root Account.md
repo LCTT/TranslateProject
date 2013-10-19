@@ -1,4 +1,8 @@
 Linchenguang翻译中
+<<<<<<< HEAD
+
+=======
+>>>>>>> edbf7c720ed93c3ddb37e07c96fe0d522724535b
 Daily Ubuntu Tips–Knowing About The Root Account
 ================================================================================
 For new users who just starting with Ubuntu and wanting to know about the root account, here’s a brief post that gives you a little insight about the root account and how / why to use it.  You see, every Ubuntu edition comes with a root account.
