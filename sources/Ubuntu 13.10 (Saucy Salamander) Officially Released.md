@@ -1,4 +1,4 @@
-Ubuntu 13.10 (Saucy Salamander) Officially Released
+occupied by rogetfan Ubuntu 13.10 (Saucy Salamander) Officially Released
 ================================================================================
 **Canonical has announced that the next installment of their operating system, Ubuntu 13.10 (Saucy Salamander) has been officially released and it's now available for download.**
 
