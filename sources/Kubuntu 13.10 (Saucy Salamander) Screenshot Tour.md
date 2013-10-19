@@ -1,4 +1,4 @@
-Kubuntu 13.10 (Saucy Salamander) Screenshot Tour
+occupied by rogetfan Kubuntu 13.10 (Saucy Salamander) Screenshot Tour
 ================================================================================
 **The new Kubuntu 13.10 (Saucy Salamander) is now available for download, so it's time to see how much it has changed from the previous release with the help of a small screenshot tour.**
 
