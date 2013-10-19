@@ -1,5 +1,4 @@
-[翻译中 by chenjintao]
-How This 75 Year-Old Piece of Paper Started Modern Computing
+一张75年前的纸，打开了现代计算机的新时代
 =====
 
 ![img](http://rack.1.mshcdn.com/media/ZgkyMDEzLzEwLzEzL2VhL1hlcm94LjM4ODIwLmpwZwpwCXRodW1iCTk1MHg1MzQjCmUJanBn/2f9f894a/5ef/Xerox.jpg)
@@ -7,7 +6,6 @@ How This 75 Year-Old Piece of Paper Started Modern Computing
 1938年10月22曰，纽约市皇后区阿斯托里亚的一间公寓内，专利代理人卡尔逊（Chester Carlson）和他的助手，奥地利物理学家柯乃伊（Otto Kornei）利用一个上午的时间制作了世界上第一张静电复印件(卡尔逊经过3年研究，在1938年成功实现世界上第一个静电复印实验——译者注)，从此开创了计算机的新时代！这是一个改变世界的时刻，这是一个激动人心的时刻！然后他们就去吃午餐了:D
 
 75年来，复印产业成了美国公司的中流砥柱。即使在平板电脑和PDF大行其道的今天，去年一年时间，“多功能打印机”销量为1900万台，交易额为309亿美元(来自顾能公司的数据)。你也许忘了上次使用打印机是在什么时候了，但IDC分析师Angèle Boyd指出去年全球打印了3万亿张纸，其中１万亿张来自美国。在一些公司里，一个员工每个月打印300到400张纸是再平常不过的事了。打印机生意保持如此令人吃惊的强大，其革命性已经远超当年卡尔逊刚发明模拟式静电复印机的时候了。
-
 
 静电打印机提升了企业的生产力，增强了商务交流。顾能公司负责调查、绘图和打印业务的副总裁Ken Weilerstein指出，大部分白领的工作任务就是以各种各样的形式阅读和创建文档。Tim Burners-Lee在1991年将超文本技术引入到互联网，用于链接不同计算机内部的文档。
 
@@ -35,41 +33,41 @@ Ken Weilerstein说：“打印机改变了人们处理文档的方式，在人�
 
 这是一部大概在1960年播出的广告：http://www.youtube.com/embed/kNGdqC7QJYI
 
-###现代计算机Era
+###现代计算机时代
 
-This Mad Men era would come to a close in the 1980s as PCs began replacing typewriters. Carlson's invention would also be used to create the laser printer, which obviated single-function copiers. As a result, no one in the industry calls Xerox's machines copiers anymore. Instead, they are known as "multifunction printers."
+直到80年代PC机开始代替打字机，施乐复印机的疯狂时代才告终结。人们依靠卡尔逊的发明创造了激光打印机，从此淘汰了功能单一的复印机。这个时候，已经没有人会把施乐的机器简单地称为复印机了，它们早已变成多功能打印机。
 
-That wasn't the only threat to Xerox's business. By the 1970s, Japanese competitors were offering their own cheaper version of Xerox's copiers. Xerox lost its effective monopoly, but managed to stay on the cutting edge of technology, Weilerstein says, by developing its own laser printer business. Then in 1990, Xerox introduced Docutech, a technology that let you turn a printer effectively into a printing press. Xerox scored another coup in 2000 with iGen, a color laser printer that could spit out 100 pages a minute. "By the mid-2000s, they didn't have anything exclusive at all," Weilerstein says, "and they began suffering economically."
+而这还不是施乐公司生意上所面临的唯一挑战。70年代曰本公司提供了与施乐复印机同性能但更便宜的产品。Weilerstein说：施乐失去了复印机领域的垄断地位，但凭借其在激光打印机产业的发展，施乐依然站在科技的前沿。到90年代，施乐开发Docutech系统，这种技术让你从打印机年代直接进入到印刷机年代。之后施乐又研发了iGen2000，这是种能彩印的激光打印机，能在1分钟内打印100页复印件。“然而在2000年之后的一段时间内，施乐公司再没有突出的作为，”Weilerstein说道，“并且他们还遭遇经济危机。”
 
-Xerox wasn't hit as hard as its Rochester neighbor, Eastman Kodak, which is now a [shadow of its former self][1].
+施乐没有像它在罗彻斯特的邻居——伊士曼柯达一样遭遇打击。现在的柯达[处于相当阴暗的时期][1]。
 
-Partially that's because — unlike film — printing paper documents remains a lucrative business. There are sectors of the economy — including the federal government — where employees still print a few thousand pages a month. Weilerstein acknowledges that the use of print will continue to decline over time. "It's probably a generational factor," he says. However "it isn't really disappearing."
+部分原因是文档打印依然是一个高利润的生意，虽然还不能和电影产业相比。打印业务涉及多个生意，包括联邦政府，这些部门的员工每个月需要打印上千份文档。Weilerstein指出要打印业务完全消失还需要很长时间：“打印业务也许是老一代的产品，但它还不会轻易消失。”
 
-Bolstered by the continued need for multifunction printers, Xerox has the opportunity to reinvent itself as a provider of primarily digital documents and services. The company laid the groundwork for such a move by embracing the managed print services business in the last decade. MPS essentially outsources the printing aspect of the office and gives IT departments one less task to monitor.
+鉴于市场对多功能打印机的持续需求，慢慢强大起来的施乐终于有机会将自己转型成数字文档和服务的供应商。在过去的十年里，这家公司为打印管理服务(MPS)生意做了大量基础性工作。企业的所有有关打印的业务都可以外包给MPS来完成，达到减小企业工作量的目的。
 
-However, since paper printing is on a long-term downward trend, Xerox is trying to anticipate where the market will go next. "Now the question is what will they do after this," says Weilerstein. "They will take this idea of a service that manages your printers and turn that into a service that handles how you handle docs in digital form."
+然而随着打印业务长期的持续下滑，施乐试着预测市场的走向。“现在的问题是他们接下来会怎么做，”Weilerstein说，“他们会取消管理你的打印机的念头，转而为你提供另外一种服务：按你的意愿帮你处理数字形式的文档。”
 
-" I think there's a great desire among IT [departments] to get rid of paper," says the IDC's Boyd. "A lot of people, including Xerox, are actively trying to help them."
+“我认为IT部门实行无纸办公是一个非常大的需求”，来自IDC（国际数据公司）的Boyd说，“很多公司，包括施乐，都在为他们提供解决方案。”
 
-Weilerstein's view is that since all communication is basically documents, Xerox has a chance to become a leader in "managed content services." Such services would help organizations cut down on the use of print. Though paper is still a useful communications medium, many printed pages are symptoms of problems involving poor interconnection between the different sources of information where workers obtain information and the different destinations to which they must apply it," Weilerstein wrote in a recent white paper on the subject.
+Weilerstein的观点是当所有的交流都是依赖文档时，施乐有机会成为“内容管理服务（MCS）”生意的领导者。这种服务能让企业不再使用打印机。Weilerstein在白皮书上写到：“虽然纸质文档依旧是交流的有效载体，但是当员工将不同来源的信息打印成纸质文档，并想将它们用于不同目的时，太多的文档反而无法形成有效的交流。”
 
-MCS would address the advertising orders that a broadcast network still receives by fax or provide a means to let a chemical manufacturer's employees scan their handwritten notes into a searchable digital archive.
+在广播信息都是靠传真接收的时代，MCS应该接受广告订单；或者提供一种方式，将化工厂员工随手记下的笔记传到可供查阅的数码产品中。
 
 ![img](http://rack.3.mshcdn.com/media/ZgkyMDEzLzEwLzExLzUwL0NoZXN0ZXJDYXJsLjAyZTI2LmpwZwpwCXRodW1iCTEyMDB4OTYwMD4/a1da164c/352/Chester-Carlson.jpg)
 
-Carlson's Legacy
+卡尔逊和他的静电打印机
 
-In promoting a largely paperless future, Xerox would not only transition its business but help cut down on needless waste. However, the company has lots of competition on the document front, most notably from Adobe, the inventor of the Portable Document Format (PDF).
+在推动无纸办公的过程中，施乐不应该只是将它的生意转型，还应该帮助企业内不必要的浪费。然而，施乐还面临大量的竞争对手，最大的对手就是Adobe公司，PDF文档格式的发明者。
 
-Adobe, whose legacy is in desktop printing rather than hardware, appears to have a natural advantage over Xerox. Apple aside, it's rare that a company associated with the invention of an old technology manages to also become a leader in the technology that replaces it.
+Adobe过去是做桌面打印（即通过电脑等电子手段进行文档编辑——译者注）而非纸质打印的，在这次转型过程中表现了很大的优势，对施乐造成很大的压力。然后是苹果公司，自己赖以生存的老技术被新技术取代后，能迅速变成新技术的领导者，这在历史上是很罕见的(TODO: 这是什么历史事件？)。
 
-Yet even if Xerox ultimately fails, Carlson's contribution to tech history is assured, if a bit obscure to most. A serial inventor, Carlson didn't have much to show for his other ideas — including a raincoat with gutters and a shoe-cleaning machine — but his one great invention is a testament to how the market rewards perseverance and vision. His death was an illustration of how little we sometimes know of the inner life of public figures.
+即使施乐彻底失败了，卡尔逊在科技史上的贡献也是毋庸置疑的。卡尔逊的其他发明：带有流水沟的雨衣、洗鞋器等，但是他最重要的发明是一个证据，证明市场的永恒前进和视野的不断开阔。他的死向我们阐明了在公共生活中我们对精神生活了解是如此的少（TODO: 没明白这是要说什么，回头网上搜搜）。
 
-Almost exactly 30 years after Carlson and Kornei slaved over their invention in that Astoria apartment, Carlson took a trip back to New York from his Rochester home for a business meeting. Finding he had some down time, he ducked into a movie theater to catch He Who Rides a Tiger featuring Tom Bell and Judi Dench. After the movie, an usher saw Carlson, who appeared to be dozing in his seat. He hadn't. Carlson succumbed to a heart attack — his second that year.
+1968年，卡尔逊和柯乃伊在阿斯托里亚的公寓内辛辛苦苦地发明静电复印技术的30年之后，卡尔逊从罗彻斯特家里回到纽约，去参加一个商业会议。他发现离开会还有一些时间，于是他走进一家电影院观看《骑虎之人（He Who Rides a Tiger）》，主演是Tom Bell和Judi Dench。当电影结束时，一个服务员看见了卡尔逊，此刻他正在位子上睡觉，没有再醒过来。卡尔逊因心脏病去世——那是他那年第二次心脏病发作。
 
-He died with an estimated fortune of $150 million, making him one of the wealthiest men in the country in 1968. That estimate was wrong, though. Carlson had actually given away much of his wealth by then. As he told his wife, Carlson had a curious ambition for a business titan. He wanted to "die a poor man."
+他死后，人们估计他拥有大约1.5亿美元的遗产，这笔钱使他成为1968年全美最有钱的富翁之一。然而他们估计错了，卡尔逊将他的绝大部分财产都捐了出去。他曾对妻子说他对那种成为商业巨头的野心表示很不理解，他只想作为一个穷人死去。
 
-Images: Xerox
+图片来源：施乐公司
 
 ---
 
@@ -77,7 +75,7 @@ via: http://mashable.com/2013/10/13/xerox-history-of-copying/
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[chenjintao](https://github.com/chenjintao) 校对：[校对者ID](https://github.com/校对者ID)
 
 
 [1]:http://www.usatoday.com/story/money/business/2013/09/03/kodak-bankruptcy-ends/2759965/
