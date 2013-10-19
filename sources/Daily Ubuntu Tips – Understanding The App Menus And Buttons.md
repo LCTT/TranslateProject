@@ -1,3 +1,4 @@
+crowner翻译
 Daily Ubuntu Tips – Understanding The App Menus And Buttons
 ================================================================================
 Ubuntu is a decent operating system. It can do almost anything a modern OS can do and sometimes, even better. If you’re new to Ubuntu, there are some things you won’t know right away. Things that are common to power users may not be so common to you and this series called ‘Daily Ubuntu Tips’ is here to help you, the new users learn how to configure and manage Ubuntu easily.
