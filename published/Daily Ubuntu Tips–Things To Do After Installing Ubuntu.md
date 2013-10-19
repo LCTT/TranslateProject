@@ -1,11 +1,11 @@
-日常Ubuntu使用小技巧——安装Ubuntu后做什么
-================================================================================
+每日Ubuntu小技巧——安装Ubuntu后做什么
+==================================
 
-许多Windows用户开始使用Ubuntu时都感到束手无策。Ubuntu与Windows截然不同，想要轻松驾驭Ubuntu可不是一件简单的事情。Ubuntu的使用方式不同于Windows。许多用户对命令行、文件系统的布局和应用程序的名称都感到陌生。但是不用管那些，我们会提供帮助。
+许多Windows用户开始使用Ubuntu时都感到束手无策。Ubuntu与Windows截然不同，想要轻松驾驭Ubuntu可不是一件简单的事情。Ubuntu的使用方式不同于Windows。许多用户对命令行、文件系统的布局和应用程序的名称都感到陌生。但是不用担心，我们会提供帮助的。
 
 如果你以前是Windows或者Mac OS X用户现在想学Ubuntu，那你来对地方了。我们正努力帮助新用户开始Ubuntu之旅。我们的口号理所当然就是“**菜鸟教程**”。
 
-我们的教程大多不是针对专业人士的，而是面向刚开始学习Windows和Ubuntu的新手。所以，为了你所有的Ubuntu需求，经常回来转转。.
+我们的教程大多不是针对专业人士的，而是面向刚开始学习Windows和Ubuntu的新手。所以，在Ubuntu上遇到了任何困扰，都可以回来转转。
 
 好了，言归正传。几天前一个读者问了我们一个问题，如下：
 
@@ -32,6 +32,7 @@
 
 via: http://www.liberiangeek.net/2013/10/daily-ubuntu-tipsthings-to-do-after-installing-ubuntu/
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 译者：[Linchenguang](https://github.com/Linchenguang) 校对：[Caroline](https://github.com/carolinewuyan) 
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
