@@ -1,106 +1,105 @@
-翻译中
-Why I can’t live without Linux
+没有Linux我活不了
 ================================================================================
-This is written targeting users who might want to try Linux. But also with some facts that Linux users should be aware and feel proud of.
+这是对那些想要试一试Linux的人写的.并且这些对身为Linux的用户应该感到荣幸.
 
-Bored to read long stories? Navigate to the final part “**To compile it all**”.
+觉得长文无聊?那直接到最后一部分 "**所有内容的整理**".
 
-### Why I can’t live without Linux? ###
+### 为什么没有Linux我活不了? ###
 
-Well I am biased and I have my own reasons. When I turn on my Linux machine after days/months, it just boots like a charm. You will be surprised to know that most OS doesn’t boot this way.
+我存在偏见是有我自己的原因的.当我打开我的Linux机器几天/几个月后,它的启动实在太美妙了.你将会惊讶的知道大多数操作系统没有这样的启动方式.
 
-### Consider few scenarios: ###
 
-1. Your machine crashes more often.
-1. It’s too damn slow.
-1. Files/folders getting created/deleted without your intervention.
-1. Machine shuts down for no reason.
+### 考虑几个情况: ###
 
-What’s the catch? Your machine is infected by a virus. Now, it hardly happens in Linux. Hardly implies “never at all” here :)
+1. 你的机器经常崩溃.
+1. 它令人发指的慢.
+1. 文件/文件夹的建立/删除没有你的干预.
+1. 机器莫名其妙的关闭.
 
-### So why/how? ###
+有什么收获?你的机器感染了病毒.现在,它几乎不会发生在Linux上.在这里可以说"根本没有" :)
 
-Consider 100 people coding/reviewing something or even 1000s doing it. Still Linux is much bigger with the visibility that almost any developer in the world can see “what is being coded?” and point out if there is a flaw.
+### 为什么/怎么做? ###
 
-**On 14 March 1994, Linux 1.0.0 was released, with 176,250 lines of code.
-As of 2013, the Linux 3.10 release had 15,803,499 lines of code.**
+感受一下100个人正在在编写/检查甚至是1000个人正在干.Linux是如此的引人关注,几乎在全世界上的任何开发者都可以看到"代码写的是什么?"并且指出哪里有缺陷.
+
+** 1994年3月14日,Linux 1.0.0发布,拥有176.250行代码.
+到2013年,Linux 3.10发布时,已经有了15,803,499行代码.**
  
-And another thing, is the way Linux has been designed. Unlike few other OS, In Linux, almost all complex tasks requires root permission. Say, in windows, you’re navigating to some random system folder and deleting something (so, why would you do that? Say, some virus did that. Well, it can. Also I have seen people who do it to get more memory ). Nothing happens, but at the time of next reboot.. (I am scared to say more). Whereas in Linux, it prompts for root password whenever you try to do something with the system. What if I am root and I messed up the system? This is worst case scenario, but still there are lot of people out there to guide you how to fix it.
+另外一件事,Linux的设计方式.不像一些其它的操作系统,在Linux上,几乎所有的复杂任务都需要root权限.在windows上,你随机进入一些系统文件夹并且删除一些东西之后(为什么你会这么做呢?恩,一些病毒会这么做.并且它能够这么做.我看到过一些人为了获得更多的内存也会这么做).什么都没有发生,但是在你下一次启动时...(我不敢说太多了).而在Linux上,当你试图做一些关于系统的事情它会提示你需要root密码.如果我是root并且我又搞砸了系统怎么办?这是最坏的情况,但是这里还是会有很多人指导你如何解决问题.
 
-**How would you feel when some random guys in the street come running to help you, when you fell down? Love and support is priceless. You gotta feel it.**
+**当你摔倒的时候,一群不认识的人在街上跑过来帮助你,你会有什么感觉?爱和支持是无价的.你会感受到的.**
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/linux.png)
 
-**The stability** – There are Linux machines running eternally. A simple “uptime” command would let you know how long the machine has been running. You never need to turn it off at all. Pretty much hot swappable. Of course there are other OS machines that reports equally high uptime, but again, Linux machines are less prone to crashes, blue screen of death (:D) and as such, unless and until you mess it up.
+**稳定性** - 永远运行的Linux机器. 一个简单的"uptime"命令可以让你知道机器已经运行了多久.你永远不需要关机.机智的热插拔.当然这在其它操作系统的机器报告了同样长的运行时间,但同样,Linux机器很少崩溃,蓝屏死机(:D),除非是你搞死了它.
 
-As the old saying goes “**Linux is user friendly, but not idiot friendly**”
+老话说得好 "**Linux是用户友好,不是白痴友好**"(译者注:貌似在拉仇横?)
 
-There must be lot of things you might be doing to protect your machine from viruses/trojans. As a study says, the average time before a windows get affected after connecting to internet is 40 minutes, whereas Linux – Like a boss. That too, you don’t need to install anything apart from the base OS itself.
+有许多必要的事情你应该做以保护你的机器免于病毒/木马.一项研究说,windows连接到网络之后平均40分钟的时间就会受到影响,然而Linux - 像一个老板.那就是,你除了基本操作系统本身不需要安装任何东西.
 
-**Enhanced security** – Iptables, an awesome command line utility to setup firewall. Also, there are lot of other innovations like *port knocking, chroot jail* and as such.
+**安全性增强** - Iptables, 一个极好的命令行工具用来设置firewall.同样,还有许多其它创新,比如*端口试探(port knocking),chroot监狱(译者注:维基百科:chroot是在unix系统的一个操作,用于对当前的程序和它的子进程改变真实的磁盘根目录.一个被改变根目录的程序不可以访问和命名在被改变根目录外的文件,那个根目录叫做"chroot监狱（chroot jail,chroot prison)").
 
-**SELinux** – Say you gave full access permission to a file, still other won’t be able to access it, if SELinux is enforcing and set.
+**SELinux** - 你给一个文件所有的访问权限,其他人仍然不能访问它,如果SELinux设置执行.
 
-Other OS source codes are accessible to only people who work on that, whereas, Linux, everyone can access the source code, which means mistakes are less likely and even if somethings wrong, fixes are made in no time. Say that you have suffered a security attack, then the corresponding company of that OS might release a patch in a month’s time or week’s time, which means your system continues to be vulnerable for time being. But Linux, with countless people’s contribution & active participation, it’s far better, not better, just the best.
+其它操作系统的源代码仅仅是在上面工作的人才可以看到,然而,对于Linux,每个人都可以看到源代码,这意味着错误的可能性很小,即使有一些错误发生,也可以及时修复.假如你受到了安全攻击,相应操作系统的公司可能会用一个月发或者一周时间布一个补丁,这就意味着你的系统在这段时间人然是脆弱的.但是Linux有无数人的贡献&积极参与,这是非常好的,不求更好,只求最好.
 
-Also, say, if the OS company doesn’t fix the bug, then what? Well, you just got to live with that. Whereas in linux, there are lot of people of fix it, or if you’re a better programmer, maybe you shall fix it and thus contribute it to the open source community. **The joy of giving!**
+所以说,如果操作系统公司不修复bug,之后会怎么样?好,你只能和bug生活在一起了.然而在linux,有许多人修复bug,或者如果逆是一个更好的程序员,或许你应该修复它并且贡献到开源社区. **分享快乐!**
 
-Why would you buy an OS, when there is a lot better OS (Linux), which is a freeware and opensource. Note that the opportunity to learn is much when you decide to go with opensource. If you’re a good programmer, you shall take the source code, build it /design it & use it your way.
+为什么你还要购买一个操作系统,当有更好的操作系统(Linux),它是免费并且开源的.当你决定使用开源的,你将有机会会学习到很多.如果你是一个好的程序员,你应该拿到开源到吗,构建它/设计它&使用它用你自己的方式.
 
-**People all around the world put their time and brain in bringing you an OS, which would compete every other OS, that exists in market and that is Linux.**
+**世界各地的人们付出他们的是键和头脑带给你一个操作系统,它与其它操作系统竞争,并且在市场上存在,它就是Linux.**
 
-**No crapware** – Alright, the OS is open source. What about other utilities? Well, there are lot of open source utilities out there which can be used, whereas in case of other OS, where almost all software might ask you to subscribe for the service, upgrade/buy.  And the worst part is, after few days of using a software, you might come to know that it’s just a 30 days trial. And these softwares comes installed along with your OS. On the other hand, In Linux, you will never experience such frustrations.
+**没有crapware**(译者注:附赠软件,是一个贬义的俚语) - 这个操作系统是开源的.关于其它工具?恩,有许多开源工具可以在上面使用,而在其它操作统统中,大部分软件可能会问你是否订购服务,升级/购买.更差的是,在用了几天之后,你可能会发现这个玩意儿竟然只有30天的试用期.在这方面,Linux上永远不会让你经历这样的失意.
 
-**Also, Linux comes with pre-installed applications and hence you’re good to get started just after installation.**
+**Linux自带预装应用,因此你可以在安装之后很好的开始使用.**
+在linux上,大部分驱动是内核自带的,因此当你使用一些硬件组件时不用去到处寻找驱动程序.
 
-In linux, most of the drivers comes along with the kernel, so you need not go search for a driver whenever you need to use some hardware component.
+如果你仅仅是一个正常的桌面用户,没有多少事情要用命令行(CLI)来做 - Linux带有各种桌面,比如Gnome,KDE,没错你可以称呼它为 "**下一代桌面环境**"
 
-If you’re just a normal desktop user, with nothing much to do with the CLI – well, Linux comes with various desktops like Gnome, KDE and yep, you can call it “**next generation of desktops**”
+你有没有体验过你的操作系统在一段时间行动迟缓,而你通过重新安装解决了这个问题.恩,试试Linux吧,你会有一个惊喜的.它从第一天开始到很多年都会运行飞快并且反映灵敏,因此允许你专注于工作,而不用处理操作系统的反映迟缓.
 
-Have you ever experienced your OS getting sluggish as days passes, and re-install resolves the problem. Well, try Linux and you will be surprised. It runs fast and responsive for years since day one and hence allow you to concentrate on work, rather on handling OS frustrations.
 
-**No backdoors** – When you don’t have any idea about source code of an OS, how can you be sure that there are no backdoors. What if the manufacturer company did integrated a backdoor, which would kill your privacy by sharing your data whenever you connect to internet? In Linux, everything is open. And hence no backdoors can be introduced into the OS.
+**没有后门(backdoor)** - 当你不了解一个操作系统开源代码时,你怎么能确保它没有后门呢.如果制造商公司留了一个和谐的后门,当你连接到网络的时候,这会让你的隐私无所遁形.在Linux上任何东西都是开放的.因此没有后门可以引入到操作系统里.
 
-Here comes another interesting fact: Almost every one using windows might have got frustrated for the fact that you need to reboot your machine, whenever you update some software, or the OS itself. Linux doesn’t demand such reboots. Linux is stable and runs perfectly for years without rebooting.
+这里要谈另一个有趣的事: 大部分使用windows的用户可能会有一个沮丧的事就是当升级一些软件或者操作系统的时候需要重启机器.Linux不需要这样的重启.Linux是一个稳定的,完美运行多年也不需要重启的系统.
 
-**Let the old boxes taste life again** – Linux runs perfectly well on even old hardware, unlike other OS which demands you a new hardware, just for the sake of using it.
+**让老机器品味新生** - Linux甚至可以在很老的硬件上完美运行,不像其它的操作系统,需要新的硬件,仅仅是为了使用它.
 
-### To compile it all.. ###
+### 所有内容的整理..###
+当你得到免费的东西,为什么还要非法使用(盗版)
 
-why to use illegally, when you’re getting something for free
+- 让老机器新生
+- 开机很快
+- 随时更新
+- 没有crapware(垃圾软件)
+- 没有后门
+- 没有病毒
+- 稳定性
+- 兼容性
+- 安全增强
+- 快速响应
+- Linux不需要碎片整理
+- 那么，选择Linux有影响力在这个环境. (Google it)
+- 自由和无限的支持 -论坛，邮件列表，IRC频道
+- 工作区的功能 - 下一代桌面
+- 没有大麻烦
+- 报告bug和得到修复
+- 你不会感到孤单.
+- 贡献东西回来，感觉争辩.给予快乐。
+- 其它操作系统是一个公司的,微软拥有的Windows,苹果拥有Mac OS.
+- Linux?恩,我们拥有它.
 
-- Give life to old boxes
-- Get started in no time
-- update in a go
-- No crapware
-- No backdoors
-- No virus
-- Stability
-- Compatibility
-- Enhanced security
-- Fast and responsive
-- Linux doesn’t need defragmentation
-- Well, choosing linux did have an influence on the environment.  (Google it)
-- Free and unlimited support -forums, mailing lists, IRC channels
-- Workspaces feature – Next generation of desktops
-- No big mess
-- Report bugs and get it fixed
-- You don’t have to feel alone.
-- Contribute something back and feel contended. The joy of giving.
-- Other OS are being owned by a company. Microsoft owns windows, Apple owns Mac-OS.
-- And Linux? Well, we own it.
+总之,你可以品味自由的感觉 - 这是无价的. 你要体验一下它,不仅仅是阅读文章.
 
-Above all, the sense of freedom that you taste – priceless. You gotta experience it, rather just reading.
+对我来说, **linuxing 是沉思**. 对你呢? :)
 
-For me, **Linuxing is meditating**. How about, for you? :)
+**如果你同意我,cheers!把linux倒入你的硬件并享受它.**
 
-**Well, if you agree with me, cheers! Time to pour linux into your hardware and enjoy the drink.**
+**如果你不同意我,再一次,cheers.来证明我错了,你需要试试它.**
 
-**Well, if you don’t agree with me, cheers, again. For that, to prove me wrong, you need to try it anyway.**
+Google "linuxing urban dictionary"(译者注:urban dictionary是一个专供网友来发表对一些特殊的单词或短语的解释,这上面有许多正常词典里面查不到的词条,即使是正常词典里面有的在这里也会有新的精辟的解释.里面对于每一个词条会有提供很多网友的解释,而你可以投票),来,笑一个 :D
 
-Google “Linuxing urban dictionary” and have a laugh :D
-
-Thanks for reading. Cheers !
+谢谢阅读.Cheers!
 
 --------------------------------------------------------------------------------
 
