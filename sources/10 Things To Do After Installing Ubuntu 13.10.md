@@ -1,3 +1,4 @@
+刚装了个，正好看看bycrowner
 10 Things To Do After Installing Ubuntu 13.10
 ================================================================================
 **Ubuntu 13.10 is out, you’ve upgraded, and you’re wondering what to do now. Don’t fret – here are 10 things to do after installing Ubuntu 13.10.**
