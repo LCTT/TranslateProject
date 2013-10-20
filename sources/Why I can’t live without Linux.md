@@ -1,3 +1,4 @@
+翻译中
 Why I can’t live without Linux
 ================================================================================
 This is written targeting users who might want to try Linux. But also with some facts that Linux users should be aware and feel proud of.
