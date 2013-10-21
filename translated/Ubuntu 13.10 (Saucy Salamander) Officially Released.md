@@ -84,7 +84,7 @@ via: http://news.softpedia.com/news/Ubuntu-13-10-Saucy-Salamander-Officially-Rel
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[rogetfan](https://github.com/rogetfan) 校对：[校对者ID](https://github.com/校对者ID)
 
 [1]:http://www.canonical.com/content/latest-ubuntu-1310-includes-first-step-mobile-pc-convergence
 [2]:http://releases.ubuntu.com/saucy/ubuntu-13.10-desktop-i386.iso
