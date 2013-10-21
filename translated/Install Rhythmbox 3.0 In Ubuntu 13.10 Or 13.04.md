@@ -47,4 +47,4 @@ Rhythmbox 3.0现在可以在一个由Jacob Zimmermann维护的一个为Ubuntu 13
 [1]:http://ftp.acc.umu.se/pub/GNOME/sources/rhythmbox/3.0/rhythmbox-3.0.news
 [2]:http://www.webupd8.org/2012/08/rhythmbox-third-party-plugins-ubuntu-ppa.html
 [3]:http://www.webupd8.org/2013/08/rhythmbox-coverart-browser-plugin-gets.html
-[4]:http://xpressubuntu.wordpress.com/2013/10/06/how-to-install-rhythmbox-3-0-in-saucy/
+[4]:http://xpressubuntu.wordpress.com/2013/10/06/how-to-install-rhythmbox-3-0-in-saucy/ 
