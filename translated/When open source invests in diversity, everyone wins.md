@@ -45,7 +45,7 @@ via: http://opensource.com/life/13/10/interview-jessica-mckellar
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[译者ID](https://github.com/l3b2w1) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[译者ID](https://github.com/l3b2w1) 校对：[jasminepeng](https://github.com/jasminepeng)
 
 [1]:http://web.mit.edu/jesstess/www/
 [2]:https://twistedmatrix.com/trac/
