@@ -1,4 +1,4 @@
-Daily Ubuntu Tips – Protect Your Home Folders
+occupied by rogetfan Daily Ubuntu Tips – Protect Your Home Folders
 ================================================================================
 Few days ago we [showed][1] you how to change your home folder in Ubuntu so that only authorized users may see your content. We said that the adduser utility creates user’s directories in such a way that make them world readable. This means that any all users who have accounts on the machine will be able to browse and view content in your home directory by default,
 
