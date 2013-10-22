@@ -1,8 +1,9 @@
-每日Ubuntu技巧 - 让Windows访问你文件的最简单的方法
-================================================================================
-不管你是一个小白用户或者使用Ubuntu和Windows的大牛，使用Samba来让Windows访问Ubuntu文件是最好的方式。通过许多第三方工具可以很轻松的安装和管理。
+每日Ubuntu小技巧  —— 让Windows访问你文件的最简单的方法
+==============================================
 
-对于想要了解怎么从Windows快速访问Ubuntu文件的新用户或者新手来说，这篇短文将会告诉你该怎么做。我们的目标是要帮助新用户。我们经历将这篇教程写得通俗易懂，以便让小白用户看懂而不会遇到太大的困难。
+不管你是一个新手还是精通Ubuntu和Windows的大牛，让Windows访问Ubuntu文件的最好的方式都是使用Samba。通过许多第三方工具可以很轻松的安装和管理。
+
+对于想要了解怎么从Windows快速访问Ubuntu文件的新用户或者新手来说，这篇短文将会告诉你该怎么做。我们的目标是要帮助新用户。我们尽量将这篇教程写得通俗易懂，以便让新手看懂而不会遇到太大的困难。
 
 在这里我们不会太注重了解Samba是什么或者怎么将它配置加入域这类细节。我们要做的就是告诉你怎么在Ubuntu中安装和设置Samba，让Windows可以访问Ubuntu的文件。
 
@@ -16,7 +17,7 @@
 
     sudo gedit /etc/samba/smb.conf
 
-文件打开后，查找如下行并取消其注释（删掉行首的“；”）。它应该是这样的：
+文件打开后，查找如下行并取消其注释（删掉行首的“;”）。它应该是这样的：
 
     security = user
 
@@ -26,7 +27,7 @@
 
     [homes]
 
-这将会允许用户访问访问home目录中的文件夹及文件。比如说，如果你注释掉了[homes]，用户可以通过键入服务器名加用户名的方式访问home目录。
+这将会允许用户访问访问home目录中的文件夹及文件。比如说，如果你 **取消** 注释了[homes]，用户可以通过键入服务器名加用户名的方式访问home目录。
 
     \\192.168.0.2\username
 
@@ -34,9 +35,9 @@
 
     sudo smbpasswd -a usernmame
 
-用你自己的用户名替代username。
+用你自己的用户名替代上述的username。
 
-当提示创建密码时，创建并确认即可。最后，重启Samba或者重启计算机。
+当提示创建密码时，创建并确认即可。最后，重启Samba服务或者重启计算机。
 
 通过Windows访问文件时，点击**开始 –> 运行**然后输入如下内容。或者打开资源管理器输入如下内容，如图。
 
@@ -50,6 +51,7 @@ Enjoy!
 
 来自: http://www.liberiangeek.net/2013/10/daily-ubuntu-tips-easiest-way-access-files-windows/
 
+译者：[SCUSJS](https://github.com/scusjs) 校对：[wxy](https://github.com/wxy)
+
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[SCUSJS](https://github.com/scusjs) 校对：[校对者ID](https://github.com/校对者ID)
