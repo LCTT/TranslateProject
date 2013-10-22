@@ -105,6 +105,6 @@ Google "linuxing urban dictionary"(译者注:urban dictionary是一个专供网�
 
 via: http://www.unixmen.com/cant-live-without-linux/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[flsf](https://github.com/flsf) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
