@@ -1,12 +1,12 @@
-(翻译中...)Lubuntu 13.10 (Saucy Salamander) Officially Released – Screenshot Tour
+Lubuntu 13.10 (俏皮的蝾螈)正式发布－截图欣赏
 ================================================================================
-**Lubuntu 13.10 (Saucy Salamander) has been officially released and it's now available for download.**
+**Lubuntu13.10（俏皮的蝾螈）已经正式发布了，现在可供下载。**
 
-Canonical has announced the release of the final version for its upcoming Ubuntu Linux operating system, including Lubuntu 13.10 (Saucy Salamander).
+Canonical公司宣布，其即将推出的包括Lubuntu13.10（俏皮的蝾螈）在内的Ubuntu Linux操作系统最终版本已经发布了。
 
-There aren't too many differences from the previous update, but the distribution comes with a new version of pcmanfm / libfm (1.1.0) including a built-in search utility, artwork improvements, featuring new wallpapers, community wallpapers, new icons, and quite a few other things.
+虽然与以前的发布版本没有太大的不同，但是此发布版引入了新的pcmanfm / libfm (1.1.0)版本，包含一个内置的搜索工具，新壁纸、社区壁纸性能及新图标艺术观赏性的改进，以及其它一此功能的改进。
 
-The system requirements have remained the same: “A Pentium II or Celeron system with 128 MB of RAM is probably a bottom-line configuration that may yield slow yet usable system with a standard Lubuntu desktop.”
+硬件配置要求仍然是相同的：具有128 MB内存的奔腾II或赛扬的机器是运行此系统的最低配置，但要运行标准的Lubuntu桌面环境有可能会非常慢甚至就不能运行。
 
 ![](http://i1-news.softpedia-static.com/images/news2/Lubuntu-13-10-Saucy-Salamander-Officially-Released-Screenshot-Tour-392208-2.jpg)
 
@@ -32,9 +32,9 @@ The system requirements have remained the same: “A Pentium II or Celeron syste
 
 ![](http://i1-news.softpedia-static.com/images/news2/Lubuntu-13-10-Saucy-Salamander-Officially-Released-Screenshot-Tour-392208-13.jpg)
 
-More details about this release can be found in the official [announcement][1].
+关于此版本的更多细节，可以查看官方[公告][1]。
 
-Download the Lubuntu 13.10 (Saucy Salamander):
+下载Lubuntu 13.10 (Saucy Salamander):
 
 - [Lubuntu 13.10 (ISO) 32-bit Alternate CD][2][iso] [663 MB]
 - [Lubuntu 13.10 (ISO) 64-bit Alternate CD][3][iso] [674 MB]
