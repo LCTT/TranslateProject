@@ -28,4 +28,4 @@ via: http://news.softpedia.com/news/Xubuntu-13-10-Saucy-Salamander-Officially-Re
 
 [1]:https://wiki.ubuntu.com/SaucySalamander/ReleaseNotes/Xubuntu
 [2]:http://cdimage.ubuntu.com/xubuntu/releases/13.10/release/xubuntu-13.10-desktop-i386.iso
-[3]:http://cdimage.ubuntu.com/xubuntu/releases/13.10/release/xubuntu-13.10-desktop-amd64.iso
+[3]:http://cdimage.ubuntu.com/xubuntu/releases/13.10/release/xubuntu-13.10-desktop-amd64.iso 
