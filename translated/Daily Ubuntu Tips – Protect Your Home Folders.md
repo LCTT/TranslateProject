@@ -44,7 +44,7 @@ via: http://www.liberiangeek.net/2013/09/daily-ubuntu-tips-protect-home-folders/
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[rogetfan](https://github.com/rogetfan) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[rogetfan](https://github.com/rogetfan) 校对：[jasminepeng](https://github.com/jasminepeng)
 
 [1]:http://www.liberiangeek.net/2013/09/daily-ubuntu-tipsprevent-users-browsing-folders/
 [2]:http://www.liberiangeek.net/2013/09/daily-ubuntu-tipsprevent-users-browsing-folders/
