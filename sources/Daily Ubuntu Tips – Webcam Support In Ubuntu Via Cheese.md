@@ -1,3 +1,4 @@
+occupied by rogetfan
 Daily Ubuntu Tips – Webcam Support In Ubuntu Via Cheese
 ================================================================================
 For new users who are just starting with Ubuntu, here’s some information that may help you if you want to use webcam in Ubuntu. You see, Ubuntu aims to support the vast majority of webcam right out of the box. Most webcam manufacturers don’t provide drivers for for Linux systems, including Ubuntu. So Linux developers must do the hard work by enabling support for most webcam devices in the Linux Kernel.
