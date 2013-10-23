@@ -1,3 +1,6 @@
+翻译中 by times
+
+
 8 Things To Do After Installing Ubuntu 13.10 (Saucy Salamander)
 ================================================================================
 Ubuntu 13.10 was released today and for those of you who plan on doing a clean install, here are 8 useful things to do after the installation.
