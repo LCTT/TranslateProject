@@ -1,126 +1,125 @@
-各种NoSQL的比较
+各种 NoSQL 的比较 TODO: 中英文之间需要半角空格
 ================
 
-即使关系型数据库依然是非常有用的工具，它们持续几十年的垄断地位就要走到头了。现在已经存在无数能撼动关系型数据库地位的NoSQL，当然，这些NoSQL还无法完全取代它们。（也就是说，关系型数据库还是处理关系型事务的最佳方式。）
+即使关系型数据库依然是非常有用的工具，它们持续几十年的垄断地位就要走到头了。现在已经存在无数能撼动关系型数据库地位的 NoSQL，当然，这些 NoSQL 还无法完全取代它们。（也就是说，关系型数据库还是处理关系型事务的最佳方式。）
 
-NoSQL与NoSQL之间的区别，要远大于SQL与SQL之间的区别。所以软件架构师必须要在项目一开始就选好一款合适的NoSQL。
+NoSQL 与 NoSQL 之间的区别，要远大于 SQL 与 SQL 之间的区别。所以软件架构师必须要在项目一开始就选好一款合适的 NoSQL。
 
-考虑到这种情况，本文为大家介绍以下几种NoSQL之间的区别：[Cassandra][], [Mongodb][], [CouchDB][], [Redis][], [Riak][], [Couchbase (ex-Membase)][], [Hypertable][], [ElasticSearch][], [Accumulo][], [VoltDB][], [Kyoto Tycoon][], [Scalaris][], [Neo4j][]和[HBase][]:
+考虑到这种情况，本文为大家介绍以下几种 NoSQL 之间的区别：[Cassandra][], [Mongodb][], [CouchDB][], [Redis][], [Riak][], [Couchbase (ex-Membase)][], [Hypertable][], [ElasticSearch][], [Accumulo][], [VoltDB][], [Kyoto Tycoon][], [Scalaris][], [Neo4j][]和[HBase][]:
 
-##最流行的NoSQL
+##最流行的 NoSQL
 
-###MongoDB (2.2)
+###MongoDB 2.2版
 
-**编程语言：** C++
+**开发语言：** C++
 
-**要点：** 保留SQL中一些用户友好的特性（查询、索引等）。
+**主要特性：** 保留 SQL 中一些用户友好的特性（查询、索引等）。
 
 **许可证：** AGPL (发起者: Apache)
 
-**支持的数据结构：** 自定义，二进制（BSON）
+**数据传输、存储的格式：** 自定义，二进制（ BSON 文档格式）
 
 - 主/从备份（支持自动故障切换功能）
 - 自带数据分片功能
-- 通过javascript表达式提供数据查询
-- 服务器端完全支持javascript脚本
-- 比CouchDB更好的升级功能
+- 通过 javascript 表达式提供数据查询
+- 服务器端完全支持 javascript 脚本
+- 比 CouchDB 更好的升级功能
 - 数据存储使用内存映射文件技术
 - 功能丰富，性能不俗
-- 最好开启日志功能（使用--journal参数）
-- 在32位系统中，内存限制在2.5GB
-- 空数据库占用192MB空间
-- 使用GridFS（不是真正的文件系统）来保存大数据和元数据
+- 最好开启日志功能（使用 --journal 参数）
+- 在 32 位系统中，内存限制在 2.5GB
+- 空数据库占用 192MB 空间
+- 使用 GridFS（不是真正的文件系统）来保存大数据和元数据
 - 支持对数据建立索引
 - 数据中心意识
 
-**应用场景：**动态查询；需要定义索引而不是map/reduce功能；提高大数据库性能；想使用CouchDB但数据IO量太大，CouchDB无法满足要求。
+**应用场景：**动态查询；需要定义索引而不是 map/reduce 功能；提高大数据库性能；想使用 CouchDB 但数据的 IO 吞吐量太大，CouchDB 无法满足要求。MongoDB 可以满足你的需求。
 
-**For example:** For most things that you would do with MySQL or PostgreSQL, but having predefined columns really holds you back.
-**案例：**想布署MySQL或PostgreSQL，但它们存在的预定义处理语句和预定义变量让你望而却步。
+**使用案例：**想布署 MySQL 或 PostgreSQL，但它们存在的预定义处理语句和预定义变量让你望而却步。这个时候，MongoDB 是你可以考虑的选项。
 
-###Riak (V1.2)
+###Riak 1.2版
 
-**Written in:** Erlang & C, some JavaScript
+**开发语言：** Erlang、C、以及一些 JavaScript
 
-**Main point:** Fault tolerance
+**主要特性：**容错机制（当一份数据失效，服务会自动切换到备份数据，保证服务一直在线 —— 译者注）
 
-**License:** Apache
+**许可证：** Apache
 
-**Protocol:** HTTP/REST or custom binary
+**数据传输、存储的格式：** HTTP/REST 架构，自定义二进制格式
 
-- Stores blobs
-- Tunable trade-offs for distribution and replication
-- Pre- and post-commit hooks in JavaScript or Erlang, for validation and security.
-- Map/reduce in JavaScript or Erlang
-- Links & link walking: use it as a graph database
-- Secondary indices: but only one at once
-- Large object support (Luwak)
-- Comes in "open source" and "enterprise" editions
-- Full-text search, indexing, querying with Riak Search
-- In the process of migrating the storing backend from "Bitcask" to Google's "LevelDB"
-- Masterless multi-site replication replication and SNMP monitoring are commercially licensed
+- 可存储 BLOB（binary large object，二进制大对象，比如一张图片、一个声音文件 —— 译者注）。
+- 可在分部式存储和备份存储之间作协调。
+- 为了保证可验证性和安全性，Riak 在 JS 和 Erlaing 中提供提交前（pre-commit）和提交后（post-commit）钩子（hook）函数（你可以在提交数据前执行一个 hook，或者在提交数据后执行一个 hook —— 译者注）。
+- JS 和 Erlang 提供映射和简化（map/reduce）编程模型。
+- 使用 links 和 link walking 图形化数据库（link 用于描述对象之间的关系，link walking 是一个用于查询对象关系的进程 —— 译者注）。
+- 次要标记（secondaty indeces，开发者在写数据时可用多个名称来标记一个对象 —— 译者注），一次只能用一个。
+- 支持大数据对象（Luwak）（Luwak 是 Riak 中的一个服务层，为大数据量对象提供简单的、面向文档的抽象，弥补了 Riak 的 Key/Value 存储格式在处理大数据对象方面的不足 —— 译者注）。
+- 提供“开源”和“企业”两个版本。
+- 提供“全文搜索”（可能就是允许用户在不提供 table/volume 等信息，对一个表进行文本字段的搜索，瞎猜的，望指正 —— 译者注）。
+- 正在将存储后端从“Bitcask”迁移到 Google 的“LevelDB”上。
+- 企业版本提供多点备份（各点地位平等，非主从架构）和SNMP监控功能。
 
-**Best used:** If you want something Dynamo-like data storage, but no way you're gonna deal with the bloat and complexity. If you need very good single-site scalability, availability and fault-tolerance, but you're ready to pay for multi-site replication.
+**应用场景：**假如你想要类似 Dynamo 的数据库，但不想要它的庞大和复杂；假如你需要良好的单点可扩展性、可用性和容错能力，但不想为多点备份买单。 Riak 能满足你的需求。
 
-**For example:** Point-of-sales data collection. Factory control systems. Places where even seconds of downtime hurt. Could be used as a well-update-able web server.
+**使用案例：**销售点数据收集；工厂控制系统；必须实时在线的系统；需要易于升级的网站服务器。
 
-###CouchDB (V1.2)
+###CouchDB 1.2版
 
-**Written in:** Erlang
+**开发语言：** Erlang
 
-**Main point:** DB consistency, ease of use
+**主要特性：**数据一致性；易于使用
 
-**License:** Apache
+**许可证：** Apache
 
-**Protocol:** HTTP/REST
+**数据传输格式：** HTTP/REST
 
-- Bi-directional (!) replication,
-- continuous or ad-hoc,
-- with conflict detection,
-- thus, master-master replication. (!)
-- MVCC - write operations do not block reads
-- Previous versions of documents are available
-- Crash-only (reliable) design
-- Needs compacting from time to time
-- Views: embedded map/reduce
-- Formatting views: lists & shows
-- Server-side document validation possible
-- Authentication possible
-- Real-time updates via '_changes' (!)
-- Attachment handling
-- thus, CouchApps (standalone js apps)
+- 双向复制（一种同步技术，每个备份点都有一份它们自己的拷贝，允许用户在存储点断线的情况下修改数据，当存储节点重新上线时，CouchDB 会对所有节点同步这些修改 —— 译者注）。
+- 支持持续同步或者点对点同步。
+- 支持冲突检测。
+- 支持主主互备（多个数据库时时同步数据，起到备份和分摊用户并行访问量的作用 —— 译者注）。
+- 多版本并发控制（MVCC），写操作时不需要阻塞读操作（或者说不需要锁住数据库）。
+- 向下兼容。
+- 可靠的 crash-only 设计（所谓 crash-only，就是程序出错时，只需重启下程序，丢弃内存的所有数据，不需要执行复杂的数据恢复操作 —— 译者注）。
+- 需要实时压缩数据。
+- 视图（文档是 CouchDB 的核心概念，CouchDB 中的视图声明了如何从文档中提取数据，以及如何对提取出来的数据进行处理 —— 译者注）：内嵌映射和简化（map/reduce）编程模型。
+- 格式化的views字段：lists（包含把视图运行结果转换成非 JSON 格式的方法）和 shows（包含把文档转换成非 JSON 格式的方法）（在 CouchDB 中，一个 Web 应用是与一个设计文档相对应的。在设计文档中可以包含一些特殊的字段，views 字段包含永久的视图定义 —— 译者注）。
+- 可能会提供服务器端文档验证的功能。
+- 可能提供身份认证功能。
+- 通过 _changes 函数实时更新数据。
+- 链接处理（attachment：couchDB 的每份文档都可以有一个 attachment，就像一份 email 有它的网址 —— 译者注）。
+- 有个 CouchApps（第三方JS的应用）。
 
-**Best used:** For accumulating, occasionally changing data, on which pre-defined queries are to be run. Places where versioning is important.
+**应用场景：**用于随机数据量多、需要预定义查询的地方；用于版本控制比较重要的地方。
 
-**For example:** CRM, CMS systems. Master-master replication is an especially interesting feature, allowing easy multi-site deployments.
+**使用案例：**可用于客户关系管理（CRM），内容管理系统（CMS）；可用于主主互备甚至多机互备。
 
-###Redis (V2.4)
+###Redis 2.4版
 
-**Written in:** C/C++
+**开发语言：** C/C++
 
-**Main point:** Blazing fast
+**主要特性：**快到掉渣
 
-**License:** BSD
+**许可证：** BSD
 
-**Protocol:** Telnet-like
+**数据传输方式：** 类似 Telnet
 
-- Disk-backed in-memory database,
-- Currently without disk-swap (VM and Diskstore were abandoned)
-- Master-slave replication
-- Simple values or hash tables by keys,
-- but complex operations like ZREVRANGEBYSCORE.
-- INCR & co (good for rate limiting or statistics)
-- Has sets (also union/diff/inter)
-- Has lists (also a queue; blocking pop)
-- Has hashes (objects of multiple fields)
-- Sorted sets (high score table, good for range queries)
-- Redis has transactions (!)
-- Values can be set to expire (as in a cache)
-- Pub/Sub lets one implement messaging (!)
+- Redis 是一个内存数据库（in-memory database，简称 IMDB，将数据放在内存进行读写，这才是“快到掉渣”的真正原因 —— 译者注），磁盘只是提供数据持久化（即将内存的数据写到磁盘）的功能（这类数据库被称为“disk backed”数据库）。
+- 当前不支持将磁盘作为 swap 分区，虚拟内存（VM）和 Diskstore 方式都没加到此版本（Redis 的数据持久化共有4种方式：定时快照、基于语句追加、虚拟内存、diskstore。其中 VM 方式由于性能不好以及不稳定的问题，已经被作者放弃，而 diskstore 方式还在实验阶段 —— 译者注）。
+- 主从备份
+- 存储结构为简单的 key/value 或 hash 表。
+- 但是操作比较复杂，比如：ZREVRANGEBYSCORE。
+- 支持 INCR（INCR key 就是将key中存储的数值加一 —— 译者注）命令（对限速和统计有帮助）。
+- 支持sets数据类型（以及 union/diff/inter）。
+- 支持 lists （以及 queue/blocking pop）。
+- 支持 hash sets （多级对象）。
+- 支持 sorted sets（高效率的表，在范围查找方面有优势）。
+- 支持事务处理。
+- 缓存中的数据可被标记为过期
+- Pub/Sub 操作能让用户发送信息。
 
-**Best used:** For rapidly changing data with a foreseeable database size (should fit mostly in memory).
+**应用场景：**适合布署快速多变的小规模数据（可以完全运行在存在中）。
 
-**For example:** Stock prices. Analytics. Real-time data collection. Real-time communication. And wherever you used memcached before.
+**使用案例：**股价系统、分析系统、实时数据收集系统、实时通信系统、以及取代 memcached。
 
 ##Clones of Google's Bigtable
 
