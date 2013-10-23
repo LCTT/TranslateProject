@@ -1,3 +1,5 @@
+翻译中 by小眼儿
+
 Linus Torvalds Smashes the Fedora Project, Calls Them Stupid
 ================================================================================
 **Linus Torvalds posted a very simple and direct message on Google+ addressed to the Fedora people. What followed next involved accusations and various veiled insults.**
