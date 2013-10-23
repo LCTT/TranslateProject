@@ -1,3 +1,4 @@
+(翻译中......)
 gcp – Advanced Command Line File Copier Inspired By cp
 ================================================================================
 A few weeks back, we discussed [advanced copy][1] (modified cp command that shows progress bar). A reader dropped in a comment pointing out another utility that also provides basic cp command functionality but along with some advanced features. So, in this article, lets discuss the very same command line utility — **gcp**.
@@ -121,7 +122,7 @@ If you are fed up of waiting blindly while copying large files through standard 
 
 via: http://mylinuxbook.com/gcp-advanced-command-line-file-copier-inspired-by-cp/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
