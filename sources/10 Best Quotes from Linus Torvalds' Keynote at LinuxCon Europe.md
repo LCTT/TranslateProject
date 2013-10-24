@@ -1,3 +1,4 @@
+l3b2w1 translaing……
 10 Best Quotes from Linus Torvalds' Keynote at LinuxCon Europe
 ================================================================================
 ![](http://www.linux.com/images/stories/41373/Linus-and-Dirk.jpg)
