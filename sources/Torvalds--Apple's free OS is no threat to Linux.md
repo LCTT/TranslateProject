@@ -1,3 +1,5 @@
+翻译中 by小眼儿
+
 Torvalds: Apple's free OS is no threat to Linux
 ================================================================================
 ### The Linux creator says he will keep working on the OS until he gets bored or his doctor decides he cannot do it anymore ###
