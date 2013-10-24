@@ -1,3 +1,5 @@
+翻译中 by小眼儿
+
 Torvalds: SteamOS will "really help" Linux on desktop
 ================================================================================
 Linus Torvalds has welcomed the arrival of Valve’s Linux-based platform, SteamOS, and said it could boost Linux on desktops.
