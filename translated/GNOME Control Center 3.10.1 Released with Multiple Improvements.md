@@ -29,4 +29,4 @@ via: http://news.softpedia.com/news/GNOME-Control-Center-3-10-1-Released-with-Mu
 译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
 
 [1]:http://ftp.acc.umu.se/pub/GNOME/sources/gnome-control-center/3.10/gnome-control-center-3.10.1.news
-[2]:http://ftp.acc.umu.se/pub/GNOME/sources/gnome-control-center/3.10/gnome-control-center-3.10.1.tar.xz
+[2]:http://ftp.acc.umu.se/pub/GNOME/sources/gnome-control-center/3.10/gnome-control-center-3.10.1.tar.xz 
