@@ -75,7 +75,7 @@ via: http://mashable.com/2013/10/13/xerox-history-of-copying/
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[chenjintao](https://github.com/chenjintao) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[chenjintao](https://github.com/chenjintao) 校对：[jasminepeng](https://github.com/jasminepeng)
 
 
 [1]:http://www.usatoday.com/story/money/business/2013/09/03/kodak-bankruptcy-ends/2759965/
