@@ -22,7 +22,7 @@ LCTT的组成
 
 请首先加入翻译组的QQ群，群号是：131864150，加群时请说明是志愿者。
 
-加入的成员，请先阅读[WIKI 如何开始](https://github.com/LCTT/TranslateProject/wiki/如何开始)。
+加入的成员，请先阅读[WIKI 如何开始](https://github.com/LCTT/TranslateProject/wiki/01-如何开始)。
 
 如何开始
 -------------------------------
