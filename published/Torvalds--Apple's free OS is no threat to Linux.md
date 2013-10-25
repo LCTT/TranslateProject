@@ -10,7 +10,7 @@ Torvalds：苹果的免费OS对Linux根本不构成威胁
 
 本周三，爱丁堡，欧洲LinuxCon大会，Torvalds在其中一次访谈中说，Linux作为操作系统已经走过了22个年头，而苹果在周二关于免费提供操作系统的决定和Linux的哲学相比，是完全不同的，事实上，Torvalds说自己使用开源产品而不是免费软件，其中一个原因就是，开源和免费有根本上的不同。
 
-虽然苹果的Mavericks更新可能是免费的，但是它并不开源，人们如果想要使用该操作系统，仍然需要购买昂贵的硬件。他说：“事实上，苹果推出的免费OS完全是一个和免费毫不相干的噱头，我认为它完全不会影响到Linux。”
+虽然苹果的Mavericks更新可能是免费的，但是它并不开源，人们如果想要使用该操作系统，仍然需要购买昂贵的硬件。他说：“事实上，苹果[推出的免费OS][1]完全是一个和免费毫不相干的噱头，我认为它完全不会影响到Linux。”
 
 当被问道什么情况下选择退休的时候，Torvalds说他一直以来从未考虑过退休，“关于这个，大伙儿还是省省心吧，等到时候再说。”但他表示，如果将来某一天，他觉得自己写不动代码，或是医生告诉他应该停止的时候，他就会退休。
 
@@ -28,6 +28,8 @@ Torvalds说他并没有若干年内终止Linux的计划。“我从没有过这�
 
 via: http://www.infoworld.com/t/linux/torvalds-apples-free-os-no-threat-linux-229355
 
-译者：[Mr小眼儿](http://blog.csdn.net/tinyeyeser) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Mr小眼儿](http://blog.csdn.net/tinyeyeser) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
+
+[1]:http://www.infoworld.com/t/mac-os-x/apples-biggest-new-announcement-was-the-free-os-x-upgrade-229257
