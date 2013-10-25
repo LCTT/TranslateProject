@@ -1,21 +1,30 @@
-occupied by rogetfan Ubuntu 13.10 (Saucy Salamander) Officially Released
-Ubuntu 13.10（俏皮的蝾螈）官方版发布
+Ubuntu 13.10（俏皮的蝾螈）的下载链接
 ================================================================================
-**Canonical 已经声明他们下一代操作系统 ——Ubuntu 13.10(俏皮的蝾螈)官方版已经发布，并可以下载了。**
+**Canonical 宣布他们下一代操作系统 —— Ubuntu 13.10(俏皮的蝾螈)官方版已经发布，并可以下载了。**
 
 ![](http://i1-news.softpedia-static.com/images/news2/Ubuntu-13-10-Saucy-Salamander-Officially-Released-391964-2.jpg)
+
 和上一版本Ubuntu13.04（铆足了劲的猫熊）相比，Ubuntu 13.10(俏皮的蝾螈)看起来好像并没有多大变。但是至少在系统的稳定性上，还是有着明显的变化。
+
 新版本内核的加入是Ubuntu众多重要变化中比较突出的一个，这样一来Ubuntu就拥有了最新的稳定版内核。
-这对新硬件的拥有者来说，绝对是一个令人兴奋的消息。这样一来，他们就能够尽情享受新系统给他们带来的乐趣，而不会因突如其来的麻烦而困扰。
-通过哪些开发者，Ubuntu13.10囊括了3.11.0-12.19版本的Linux内核，它是基于v3.11.3的上游版本开发而成的。
+这对新硬件的拥有者来说，绝对是一个令人兴奋的消息。这样一来，他们就能够尽情享受新系统给他们带来的乐趣，而不会因意外的麻烦而困扰。
+
+通过开发者的努力，Ubuntu13.10囊括了3.11.0-12.19版本的Linux内核，它是基于v3.11.3的上游版本开发而成的。
+
 其他比较重要的改进包括一系列AppArmor性能的提升，这在开发周期中就已经吸引了不少的目光。
-For example, support has been added for fine-grained DBus mediation for bus, binding name, object path, interface and member/method, AppArmor has been integrated with several services as part of the ApplicationConfinement work in support of click packages and the Ubuntu appstore, and the support for policy generation via the aa-easyprof tool and apparmor-easyprof-ubuntu policy has been improved.
-例如，支持精细数据总线的调停，绑定名称，项目路径，接口，成员和方法。AppArmor已经被集成到许多服务，他们有些作为ApplicationConfinement
+
+例如，支持精细数据总线的调停，绑定名称，项目路径，接口，成员和方法。AppArmor已经被集成到几个服务当中，它们作为ApplicationConfinement的一部分，支持在Ubuntu 应用商店和软件包方式安装；也支持通过aa-easyprof工具生成规则，并且apparmor-easyprof-ubuntu规则也被改进了
+
 伴随Ubuntu13.10(俏皮的蝾螈)而来的图形界面依旧是Unity7，而不是万众瞩目的Unity8，这不得不说是一种遗憾。不过没关系，Unity8将会被应用在手机中，到时候就可以和大家见面了。
-在任何情况下，用户都会享受"101 Scopes" 升级。之前应为Lenses而著名的Scopes已经被更好的集成在Unity中，它能够提为用户的询问提供更多的回答。
+
+在任何情况下，用户都会享受"101 Scopes" 升级。之前称之为Lenses的Scopes已经被更好的集成在Unity中，它能够提为用户的询问提供更多的回答。
+
 用户只要打开软件源然后按Alt+F2并录入"update-manager"(没有引号)到命令框里面，就能够马上更新到最新版本的Ubuntu。
+
 这将会触发一系列的升级并且不需要你等待太多的时间。只需要遵循说明，你就会马上完成Ubuntu13.10安装。
-##如果你想要感受不一样的安装体验，就来下载Ubuntu 13.10(俏皮的蝾螈)吧##
+
+##如果你想要全新安装，就来下载Ubuntu 13.10(俏皮的蝾螈)吧##
+
 **下载 Ubuntu 13.10 (Saucy Salamander).**
 
 - [Ubuntu 13.10 (ISO) 32-bit][2][iso] [895 MB]
@@ -84,7 +93,7 @@ via: http://news.softpedia.com/news/Ubuntu-13-10-Saucy-Salamander-Officially-Rel
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[rogetfan](https://github.com/rogetfan) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[rogetfan](https://github.com/rogetfan) 校对：[wxy](https://github.com/wxy)
 
 [1]:http://www.canonical.com/content/latest-ubuntu-1310-includes-first-step-mobile-pc-convergence
 [2]:http://releases.ubuntu.com/saucy/ubuntu-13.10-desktop-i386.iso

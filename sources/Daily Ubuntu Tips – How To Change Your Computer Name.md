@@ -1,3 +1,5 @@
+	翻译中啦，Vic___
+
 Daily Ubuntu Tips – How To Change Your Computer Name
 ================================================================================
 Another blog post that is geared towards new Ubuntu users or newbies. This post shows you how to easily change your computer name when using Ubuntu. Many users will never worry about changing their computer name or hostname in Ubuntu. In most cases, that’s the least of their worries.

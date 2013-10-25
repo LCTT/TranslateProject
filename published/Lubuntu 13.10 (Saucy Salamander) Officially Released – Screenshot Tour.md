@@ -1,4 +1,4 @@
-Lubuntu 13.10 (俏皮的蝾螈)正式发布－截图欣赏
+Lubuntu 13.10 (俏皮的蝾螈)截图欣赏
 ================================================================================
 **Lubuntu13.10（俏皮的蝾螈）已经正式发布了，现在可供下载。**
 
@@ -52,7 +52,7 @@ via: http://news.softpedia.com/news/Lubuntu-13-10-Saucy-Salamander-Officially-Re
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[wxy](https://github.com/wxy)
 
 [1]:https://wiki.ubuntu.com/SaucySalamander/ReleaseNotes/Lubuntu
 [2]:http://cdimage.ubuntu.com/lubuntu/releases/13.10/release/lubuntu-13.10-alternate-i386.iso
