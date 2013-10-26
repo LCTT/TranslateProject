@@ -1,3 +1,5 @@
+Translating---------------geekpi
+
 02 The Linux Kernel: The Source Code
 ================================================================================
 After the kernel source code is downloaded and uncompressed, users will see many folders and files. It may be a challenge trying to find a particular file. Thankfully, the source code is sorted in a specific way. This enables developers to find any given file or part of the kernel.
