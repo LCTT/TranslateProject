@@ -1,3 +1,4 @@
+                              翻译中  Luox
 Metal Backup and Recovery Is Now Possible with Debian-Based Clonezilla Live 2.2.0-13
 ================================================================================
 Clonezilla Live 2.2.0-13, a Linux distribution based on DRBL, Partclone, and udpcast that allows users to do bare metal backup and recovery, is now available for testing.
