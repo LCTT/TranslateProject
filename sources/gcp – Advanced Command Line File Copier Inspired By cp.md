@@ -1,51 +1,50 @@
-(翻译中......)
-gcp – Advanced Command Line File Copier Inspired By cp
+gcp – 灵感来自CP的高级命令行文件拷贝工具
 ================================================================================
-A few weeks back, we discussed [advanced copy][1] (modified cp command that shows progress bar). A reader dropped in a comment pointing out another utility that also provides basic cp command functionality but along with some advanced features. So, in this article, lets discuss the very same command line utility — **gcp**.
+几周前，我们讨论了[高级拷贝][1](修改于cp命令，让其可以显示复制进度条)。一位读者在注释中指出其他实用工具不仅也提供了基本的cp命令功能，而且还提供cp不具有的高级功能。所以，这篇文章里，我们将会讨论非常相似的命令行工具－**gcp**。
 
-### gcp – Advanced Command Line File Copier ###
+### gcp – 高级命令行文件拷贝器 ###
 
-gcp — as the manual suggests — is an advanced command line file copier that is inspired by the standard [cp command][2] but provides various advanced features like progress bar indicator, source lists, continuous copying even if there is a problematic file etc.
+gcp — 根据操作手册介绍 — 是一款高级命令行文件拷贝工具软件，其灵感来自于标准的 [cp命令工具][2]， 但它提供了像进度条显示、源文件列表、拷贝过程中出现错误文件不中断继续拷贝等cp所不具有的各项高级功能。
 
-Here is a complete list of options :
+下面是完整的选项列表：
 
 ![](http://mylinuxbook.com/wp-content/uploads/2013/10/gcp-main.png)
 
-### Testing Environment ###
+### 测试环境###
 
-- OS – Ubuntu 13.04
-- Shell – Bash 4.2.45
-- Application – gcp 0.1.3
+- 操作系统 – Ubuntu 13.04
+- Shell工具 – Bash 4.2.45
+- 应用程序 – gcp 0.1.3
 
-### A Brief Tutorial ###
+### 简短的教程 ###
 
-Here are some of the examples of gcp command :
+下面是一些gcp命令的例子：
 
-**1. Transfer Progress Indicator**
+**1. 复制进度显示**
 
-The gcp command provides transfer progress indicator so that the user is aware of the current status of the copying process.
+gcp命令提供了进度显示功能，以便用户能监控到复制操作的时时状态。
 
-Here is an example :
+下面是例子：
 
 ![](http://mylinuxbook.com/wp-content/uploads/2013/10/gcp-1.png)
 
-So you can see that the gcp command provides details like complete file size, percentage of copy complete, transfer rate and time left for the copy operation to complete.
+所以，你可以看到，gcp命令显示了如文件大小、复制完成的百分比、传输速率和复制操作完成的剩余时间等的所有细节。
 
-**2. Copy Directories Recursively Through -r Option**
+**2. 使用-r选项递归的拷贝目录**
 
-To copy complete directories recursively, use -r option.
+要递归拷贝完整的目录，可以使用-r选项。
 
-Here is an example :
+下面是例子：
 
 ![](http://mylinuxbook.com/wp-content/uploads/2013/10/gcp-2.png)
 
-So you can see that the gcp command shows the transfer indicator taking in account the complete size of the folder.
+所以，你可以看到，gcp命令显示了用来统计所有文件夹大小的复制情况的进度条。
 
-**3. Elaborate Error Descriptions**
+**3. 精心设计的错误描述显示**
 
-In case of any error, the gcp command displays descriptive error messages pinning down the individual culprit file.
+任何情况的错误，gcp命令都会把导致拷贝失败的文件的信息显示出来。
 
-Here is an example :
+下面是例子：
 
 ![](http://mylinuxbook.com/wp-content/uploads/2013/10/gcp-3.png)
 
@@ -132,3 +131,4 @@ via: http://mylinuxbook.com/gcp-advanced-command-line-file-copier-inspired-by-cp
 [4]:http://wiki.goffi.org/wiki/Gcp/en
 [5]:http://wiki.goffi.org/wiki/Gcp/en
 [6]:http://www.hecticgeek.com/2012/03/gcp-command-line-file-copy-ubuntu-linux/
+
