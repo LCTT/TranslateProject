@@ -1,4 +1,4 @@
-翻译中 by times
+注：这篇文章的原文不小心被删了。所以我保留了英文部分。麻烦校正玩把英文部分删掉。谢谢。
 
 
 8 Things To Do After Installing Ubuntu 13.10 (Saucy Salamander)
@@ -233,7 +233,11 @@ Another way to save power and prevent your laptop from overheating (the tool als
 
 **Note: if you plan on using the hybrid graphics solution under step 4 for Nvidia Optimus, don't install Bumblebee!**
 
+**注意：如果你想在显卡自动切换技术的第4步采用混合显卡时，请不要安装Bumblebee**
+
 To install Bumblebee, click the button below:
+
+点击下面的按钮进行安装：
 
 [![](https://apps.ubuntu.com/assets/images/scbutton-free-200px.png)][12]
 
@@ -253,78 +257,117 @@ Currently there's a [**bug**][13] in Ubuntu 13.10 that prevents "optirun" from w
 
     sudo ln -s /usr/lib/i386-linux-gnu/libturbojpeg.so.0 /usr/lib/i386-linux-gnu/libturbojpeg.so
 
+- 64位系统
 - 64bit:
 
     sudo ln -s /usr/lib/x86_64-linux-gnu/libturbojpeg.so.0 /usr/lib/x86_64-linux-gnu/libturbojpeg.so
 
 When you want to use the Nvidia graphics card for an application, run:
 
+当你想用Nvidia显卡时，运行：
+
     optirun APP-EXECUTABLE
 
 replacing "APP-EXECUTABLE" with the application (or game) executable.
 
+将"APP-EXECUTABLE"替换为你要运行的软件或者游戏的可执行文件。
+
 ### 6. Install codecs, Java and encrypted DVD playback ###
+### 6. 安装 编解码器, Java 和 加密DVD播放 ###
 
 To be able to play most audio and video formats, install **Ubuntu Restricted Extras** by clicking the button below:
+
+如果需要播放更多类型的音频视频文件，那就安装 **Ubuntu Restricted Extras** 吧
 
 [![](https://apps.ubuntu.com/assets/images/scbutton-free-200px.png)][14]
 
 Or install it using the following command:
 
+或者输入下面的命令行：
+
     sudo apt-get install ubuntu-restricted-extras
 
 I suggest to also install the **unrestricted versions of libavformat and libavcodec** so you don't encounter issues with missing codecs when trying to use some video editors or transcoders - install them by clicking the button below:
 
+我建议再安装一下“libavformat 和 libavcodec的无限制版”，这样当你使用一些编辑器或者转换器的时候就不会出现丢失编码丢失的情况。点击下面的按钮进行安装：
+
 [![](https://apps.ubuntu.com/assets/images/scbutton-free-200px.png)][15]
 
 Or by using the following command:
+或者输入一下命令行：
 
     sudo apt-get install libavformat-extra-53 libavcodec-extra-53
 
 You may also need Java, but you must figure out what you need. Most users will only need **OpenJRE** and the Java browser plugin which you can install by clicking the button below:
 
+你可能需要Java,但是你得明确你到底需要的是什么，不少用户仅仅使用**OpenJRE**和java游览器插件，你可以点击下面的按钮安装：
+
 [![](https://apps.ubuntu.com/assets/images/scbutton-free-200px.png)][16]
 
 Or by using the following command:
+
+或者输入命令行：
 
     sudo apt-get install icedtea-7-plugin openjdk-7-jre
 
 For development, you'll also want **OpenJDK** which you can install by using the button below:
 
+对于开发者而言，你可能需要**OpenJDK**,点击下面的按钮进行安装:
+
 [![](https://apps.ubuntu.com/assets/images/scbutton-free-200px.png)][17]
 
 Or by using the following command:
 
+或者输入下面的命令行:
+
     sudo apt-get install openjdk-7-jdk
 
+
 If for various reasons, you need **Oracle Java** (the package includes JDK, JRE and the browser plugin), you can install [**Oracle Java 7**][18] by using the following commands:
+
+如果你因为某些原因需要安装**Oracle Java**（包含JDK,JRE,游览器插件的包）时，你可以通过下面的命令进行安装[**Oracle Java 7**][18] ：
 
     sudo add-apt-repository ppa:webupd8team/java
     sudo apt-get update
     sudo apt-get install oracle-java7-installer
 
+
 **Encrypted DVD playback**: the Medibuntu repository [**no longer exists**][19] and while most packages in the archive are obsolete or unnecessary because most are now in the official Ubuntu repository or have better equivalents, livdvdcss is still required for playing encrypted DVDs. 
 
+**加密DVD播放**： 由于现在很多安装包都能在官方的库中找到，或者有更好的替代物，Medibuntu也渐渐的[**被废弃**][19]了。但是在播放加密视频时仍然需要livdvdcss包。
+
 You can enable encrypted DVD playback in Ubuntu 13.10 by using the following commands:
+
+ 输入以下指令启动加密DVD播放功能:
 
     sudo apt-get install libdvdread4
     sudo /usr/share/doc/libdvdread4/install-css.sh
 
 ### 7. Get the latest Rhythmbox and VLC ###
 
+ ### 7. 安装最新的 Rhythmbox 和 VLC ###
+
 ![](http://dl.dropboxusercontent.com/u/1113424/img/rhythmbox-n-vlc.png)
 
 Two popular applications: Rhythmbox and VLC, haven't been updated to the latest version in Ubuntu 13.10. If you want to install the latest version for these apps, you can use PPAs.
 
+在Ubuntu13.10中，Rhythmbox 和 VLC并没有升级到最新的版本，如果你想安装最新的版本，你可以使用PPAs
+ 
 Please note that by upgrading Rhythmbox, the plugins in the Rhythmbox [**third-party plugins PPA**][20] will stop working. The plugins Rhythmbox ships with will obviously work.
 
+请注意：升级Rhythmbox后，里面的[**第三方插件**][20]将停止工作。Rhythmbox插件可以正常的运行。
+
 **Rhythmbox** (version in Ubuntu 13.10: 2.99.1, version in PPA: 3.0.1):
+
+**Rhythmbox**（Ubuntu 13.10下的版本：2.99.1，PPA中的版本：3.0.1）：
 
     sudo add-apt-repository ppa:jacob/media
     sudo apt-get update
     sudo apt-get install rhythmbox
 
 **VLC** (version in Ubuntu 13.10: 2.0.8, version in the PPA: 2.1.0):
+
+**VLC**（Ubuntu 13.10下的版本：2.0.8，PPA中的版本：2.1.0）：
 
     sudo add-apt-repository ppa:videolan/stable-daily
     sudo apt-get update
@@ -337,6 +380,8 @@ Please note that by upgrading Rhythmbox, the plugins in the Rhythmbox [**third-p
 
 
 The type-ahead find feature was remove from Nautilus starting with version 3.6. Later versions perform a search in the current directory and all its subdirectories when you start typing a file name. And this makes it unusable at times so if you find this behavior annoying, you can install Nautilus patched to allow [**disabling recursive search**][21] (you can easily enable it back if you want).
+
+在Nautilus V3.6之后，提前键入查找功能就被去除掉了。之后版本的搜索就只是在当前文件夹和其子文件下进行搜索。这用起来就很不爽了，如果你为此感到烦恼的话就安装Nautilus的补丁[**禁用递归搜索**][21]（你可以很方便的启用它）。
 
 **To upgrade Nautilus to the patched version that allows disabling recursive search, use the following commands:**
 
@@ -379,7 +424,7 @@ To use it, select a file (picture, text or document, sound file and so on) and p
 
 **Now it's your turn. What are the first things you install or tweak after a fresh Ubuntu installation?**
 
-**现在就是你的时间啦，在Ubuntu安装介绍之后你会选择哪个作为第一个安装的呢？**
+**你的时间到啦！在Ubuntu安装介绍之后，你会选择哪个作为第一个安装的呢？**
 --------------------------------------------------------------------------------
 
 via: http://www.webupd8.org/2013/10/8-things-to-do-after-installing-ubuntu.html
