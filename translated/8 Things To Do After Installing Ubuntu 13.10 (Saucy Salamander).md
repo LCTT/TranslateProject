@@ -344,8 +344,8 @@ You can enable encrypted DVD playback in Ubuntu 13.10 by using the following com
     sudo /usr/share/doc/libdvdread4/install-css.sh
 
 ### 7. Get the latest Rhythmbox and VLC ###
+### 7. 安装最新的 Rhythmbox 和 VLC ###
 
- ### 7. 安装最新的 Rhythmbox 和 VLC ###
 
 ![](http://dl.dropboxusercontent.com/u/1113424/img/rhythmbox-n-vlc.png)
 
