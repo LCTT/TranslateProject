@@ -1,3 +1,4 @@
+[translating by bazz2]
 Cloud tool Juju GUI 0.11 released with new features and enhancements
 ================================================================================
 Solid-as-a-rock desktops, polished phones and advanced cloud tools are the ground on which [Canonical][1] stands, company being characterized by speed in development, bold decisions and an overall innovative quality, innovation setting Canonical as a serious partner for Dell, HP and OpenStack Foundation, as well as delivering freshness and modernism in the IT world.
