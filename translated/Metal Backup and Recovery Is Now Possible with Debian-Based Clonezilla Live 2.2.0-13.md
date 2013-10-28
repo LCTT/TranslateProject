@@ -1,18 +1,20 @@
-Metal Backup and Recovery Is Now Possible with Debian-Based Clonezilla Live 2.2.0-13
+现在可以通过基于Debian的Clonezilla(再生龙) Live 2.2.0-13 备份和恢复设备
+
 ================================================================================
-Clonezilla Live 2.2.0-13, a Linux distribution based on DRBL, Partclone, and udpcast that allows users to do bare metal backup and recovery, is now available for testing.
+
+Clonezilla Live 2.2.0-13,一个基于DRBL,Partclone,和udpcast的Linux发行版,允许用户完成一些裸金属的备份和还原,目前还只是测试版.
 
 ![](http://i1-news.softpedia-static.com/images/news2/Metal-Backup-and-Recovery-Is-Now-Possible-with-Debian-Based-Clonezilla-Live-2-2-0-13-391374-2.jpg)
 
-[Clonezilla Live 2.2.0-13][1] is a new development version for this distribution and the developers have chosen to move a little faster with the numbering systems. There are no major differences, but some packages have been updated.
+[Clonezilla Live 2.2.0-13][1] 是这个放行版的最新开发版本,开发人员已经选择添加了一些快一点的编号系统,没有太大的差异,但是一些包已经更新了.
 
-“The underlying GNU/Linux operating system was upgraded. This release is based on the Debian Sid repository (as of 2013/Oct/14). Package drbl has been updated to 2.5.12-drbl1, and clonezilla has been updated to 3.7.15-drbl1,” reads the announcement.
+“底层的GNU/Linux操作系统已经升级,这次放行版基于Debian Sid库(2013-10-14).DRBL包已经更新到2.5.12-drbl1,clonezilla更新到了3.7.15-drbl1,” 从公告中摘取.
 
-The developers also integrated Samba 4.0.10, which isn't exactly the last stable one released, but it's still recently new.
+开发者还集成了Samba 4.0.10,这不是最后的稳定释放版本,但它仍然是最新的.
 
-Remember that this is a development version and it should NOT be installed on production machines. It is intended for testing purposes only.
+请注意这是个开发版本,请不要安装在生产机上.这只用于测试的目的.
 
-**Download Clonezilla Live 2.2.0-13**
+**下载 Clonezilla Live 2.2.0-13**
 
 - [Clonezilla LiveCD 2.1.2-53 (ISO) i486 Stable][2][iso] [120 MB]
 - [Clonezilla LiveCD 2.1.2-53 (ISO) i686 PAE Stable][3][iso] [121 MB]
@@ -27,7 +29,7 @@ via: http://news.softpedia.com/news/Metal-Backup-and-Recovery-Is-Now-Possible-wi
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Luoxcat](https://github.com/Luoxcat) 校对：[校对者ID](https://github.com/校对者ID)
 
 [1]:http://free.nchc.org.tw/clonezilla-live/testing/ChangeLog-Clonezilla-live.txt
 [2]:http://downloads.sourceforge.net/clonezilla/clonezilla-live-2.1.2-53-i486.iso
