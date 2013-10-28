@@ -1,8 +1,6 @@
 occupied by rogetfan
-Daily Ubuntu Tips – Webcam Support In Ubuntu Via Cheese
 Ubuntu每日贴士——Ubuntu中通过Cheese支持Webcom
 ================================================================================
-For new users who are just starting with Ubuntu, here’s some information that may help you if you want to use webcam in Ubuntu. You see, Ubuntu aims to support the vast majority of webcam right out of the box. Most webcam manufacturers don’t provide drivers for for Linux systems, including Ubuntu. So Linux developers must do the hard work by enabling support for most webcam devices in the Linux Kernel.
 对于一些Ubuntu的新用户，如果你们想在Ubuntu中使用webcam的话，这里有一些信息能够帮助到你们。正如你们说知道的那样，Ubuntu致力于支持绝大多数webcom（right out of the box 网络翻译为开箱，我在这里并不这样认为，所以暂时不去翻译）大多数webcom生产商并不为Linux系统提供驱动，包括Ununtu。所以，Linux开发者们必须能够尽最大努力让webcom设备在Linux内核中能够运行。
 Webcam support for Linux is provided by the Linux UVC Project’s [UVC][1] driver.  The aim of this project is to provide a universal USB support for webcam in the same way a general USB driver handles USB devices like thumb drives, external USB devices and others.
 支持Linux的webcam驱动由Linux UVC项目提供[UVC][1]。该项目意图为webam提供一个万能USB支持，就像一个通用USB驱动控制一些USB设备，例如U盘，外部USB设备和其他一些设备。
