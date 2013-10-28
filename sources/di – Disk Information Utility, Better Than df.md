@@ -1,3 +1,4 @@
+(翻译中 runningwater)
 di – Disk Information Utility, Better Than df
 ================================================================================
 If you are a Linux command line user, you would have definitely used the df command to check disk usage for file systems. Though df is a popular command but still it does not provide some advanced features like actual disk space that is available to a user, various useful display formats etc. There is another command line utility available that not only provides these advanced features but also all the features that df provides. In this article, we will discuss the disk information utility — **di**.
@@ -254,7 +255,7 @@ To conclude, di command provides some very useful features over and above what d
 
 via: http://mylinuxbook.com/di-a-disk-information-utility/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
