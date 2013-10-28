@@ -1,23 +1,22 @@
-(翻译中 by runningwater)
-Create And Manage Encrypted Folders in Linux With encfs
+Linux系统上用encfs创建和管理加密文件夹
 ================================================================================
-here are times when you want certain information on your computer protected from prying eyes. One way to protect your information is to encrypt your home directory. However, that does not protect your information when you are logged on to your computer. I've shown in the past how you can [use Cryptkeeper to create an encrypted folder on your system][1]. Cryptkeeper is a graphical front end to **encfs**. encfs allows you to create an encrypted folder and then mount it as a user filesystem using [FUSE][2]. In this tutorial I'll show how to use encfs from the command line to create and manage an encrypted folder on Linux.
+如果你想使你计算机上的某些信息免于被窥视的话，这儿正是所到之地。保护信息的一种方法就是加密你的home目录，但是一旦你登陆系统后，你的home目录下的信息将暴露于外。过去，我已经写过关于怎样[在你的系统上使用Cryptkeeper来创建加密的文件夹][1]。Cryptkeeper是一个图形前端，后端是**encfs**。encfs允许你创建一个加密的文件夹，然后把它当作使用[FUSE][2]来实现的用户文件系统来挂载。在这篇教程里，我会教你怎么在Linux系统上的命令行下面使用encfs工具来创建和管理一个加密的文件夹。
 
 ![](http://tuxtweaks.com/wp-content/uploads/2013/10/encfs.png)
 
-### Install encfs ###
+### 安装encfs ###
 
-If you are using Ubuntu or one of its derivatives like Linux Mint, you should be able to find encfs in your software repositories. In this case you can install it with
+如果你使用的是Ubuntu或者它的衍生版本中的一种如Linux Mint的话，在软件源库当中应该能找到encfs。这种情况，可以用下面的命令来安装
 
     sudo apt-get install encfs
 
-### Create an Encrypted Folder with encfs ###
+### 用encfs创建加密文件夹 ###
 
-Once encfs is installed on your system, you can create an encrypted folder in your home directory. In this example, I'm going to create an encrypted folder called tuxtweaks. This will be done from a terminal window. You will need to provide full path names when creating a new folder. You can use standard shortcuts though, as I will show.
+一旦在系统中安装好了encfs后，你就能在home目录下创建一个加密的文件夹。在这个示例当中，我将会创建一个叫做tuxtweaks的加密文件夹，这通过终端窗口就可以实现。当创建一个新的文件夹的时候，你需要指定全路径名，当然也可以使用如下所示的标准快捷方式。
 
     encfs ~/.tuxtweaks ~/tuxtweaks
 
-This will create two folders. The first one, .**tuxtweaks**, will contain the encrypted information. The second one, tuxtweaks, is where the decrypted version will be mounted when you want to access your information. If neither of these folders exist already, you will be prompted asking if you want to create them. Enter '**y**' at the prompts to allow the folders to be created. You should then see something like the following:
+这会创建两个文件夹。第一个.**tuxtweaks**,它包含被加密的信息；第二个tuxtweaks,当你想要访问信息的时候，解密的版本信息将会挂载到下面。如果这些文件夹都不存在，系统将会提示询问是否创建它们。在提示下面键入‘**y**’以允许创建文件夹，然后你应该能看到如下所示的一些信息：
 
     Creating new encrypted volume.
     Please choose from one of the following options:
