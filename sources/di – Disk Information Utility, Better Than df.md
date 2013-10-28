@@ -1,3 +1,4 @@
+                翻译中  Luox
 di – Disk Information Utility, Better Than df
 ================================================================================
 If you are a Linux command line user, you would have definitely used the df command to check disk usage for file systems. Though df is a popular command but still it does not provide some advanced features like actual disk space that is available to a user, various useful display formats etc. There is another command line utility available that not only provides these advanced features but also all the features that df provides. In this article, we will discuss the disk information utility — **di**.
