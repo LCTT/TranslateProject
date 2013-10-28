@@ -40,4 +40,4 @@ Canonical提供了安装Ubuntu Touch 13.10所有必要的工具。这是一个�
 
 译者：[coolpigs](https://github.com/coolpigs) 校对：[校对者ID](https://github.com/校对者ID)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出 
