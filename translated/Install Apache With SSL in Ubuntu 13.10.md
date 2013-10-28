@@ -1,8 +1,8 @@
-Ubuntu 13.10 安装Apache和SSL
+在Ubuntu 13.10 下安装支持SSL的Apache
 
 ================================================================================
 
-通过这个简短的教程,让我来给你展示如何安装Apache与SSL的支持.以下是我的试验机的详细说明:
+通过这个简短的教程,让我来指导你如何安装支持SSL的Apache.以下是我的试验机的详细说明:
 
 ### 系统信息 ###
 
@@ -120,15 +120,12 @@ Ubuntu 13.10 安装Apache和SSL
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/apache-cert.png)
 
-完成了.再见!
-
-You’re done. Cheers!
-"完成了.再见!"
+安装成功，尽情享用！
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/install-apache-ssl-ubuntu-13-10/
 
-译者：[Luoxcat](https://github.com/Luoxcat) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Luoxcat](https://github.com/Luoxcat) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
