@@ -1,3 +1,4 @@
+翻译中 by小眼儿
 The future of Linux: Evolving everywhere
 ================================================================================
 *InfoWorld* - Mark Shuttleworth's recent closure of [Ubuntu Linux bug No. 1][1] ("Microsoft has a majority market share") placed a meaningful, if somewhat controversial, exclamation point on how far Linux has come since Linus Torvalds rolled out the first version of the OS in 1991 as a pet project.
