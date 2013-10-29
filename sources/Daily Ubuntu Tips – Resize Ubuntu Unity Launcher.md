@@ -1,3 +1,5 @@
+	Vic020翻译中
+
 Daily Ubuntu Tips – Resize Ubuntu Unity Launcher
 ================================================================================
 Here’s another tip for users who are new to Ubuntu. This series aims to help new users to Ubuntu configure and manage their computer easily. It’s not geared towards Ubuntu power users or pros, rather users who are just starting with Ubuntu.
