@@ -1,3 +1,4 @@
+(翻译中 by runningwater)
 Create And Manage Encrypted Folders in Linux With encfs
 ================================================================================
 here are times when you want certain information on your computer protected from prying eyes. One way to protect your information is to encrypt your home directory. However, that does not protect your information when you are logged on to your computer. I've shown in the past how you can [use Cryptkeeper to create an encrypted folder on your system][1]. Cryptkeeper is a graphical front end to **encfs**. encfs allows you to create an encrypted folder and then mount it as a user filesystem using [FUSE][2]. In this tutorial I'll show how to use encfs from the command line to create and manage an encrypted folder on Linux.
@@ -60,7 +61,7 @@ What will you use encfs for? Let me know in the comments.
 
 via: http://tuxtweaks.com/2013/10/encrypted-folders-linux-encfs/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

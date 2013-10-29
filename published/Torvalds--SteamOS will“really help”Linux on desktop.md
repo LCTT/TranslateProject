@@ -33,7 +33,7 @@ Torvalds并没有提到某个具体的公司，但之前[他曾对Google的Chrom
 
 via: http://www.pcpro.co.uk/news/384934/torvalds-steamos-will-really-help-linux-on-desktop
 
-译者：[Mr小眼儿](http://blog.csdn.net/tinyeyeser) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Mr小眼儿](http://blog.csdn.net/tinyeyeser) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
