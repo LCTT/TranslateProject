@@ -1,62 +1,61 @@
-flsf
-ttyrec & ttyplay – Record And Play Terminal Sessions In Linux
+ttyrec & ttyplay - Linux记录播放终端会话
 ================================================================================
-Sometimes you might want to record a terminal session in order to save a complex command line operation for your future reference or for knowledge sharing purpose. Then you might also want the recorded file size to be as small as possible and finally a player that would play the recorded file at a playback speed of your desire. In this article we will discuss two command line utilities (**ttyrec and ttyplay**) that let you record, save and play terminal sessions.
+有些时候你可能想要记录一个终端会话为了保存一个复杂的命令行操作为将来使用的参考或者是为了知识分享。你可能也想记录的文件尺寸尽可能的小一点并且希望当播放记录文件时可以做一个快速回放。在这个文章中我们将讨论两个命令行工具（ **ttyrec 和 ttyplay** ）来供你记录，保存和播放终端会话。
 
 ### ttyrec & ttyplay ###
 
-As the names suggest, the ttyrec command is used for recording terminal sessions while the ttyplay command is used for playing the sessions recorded by ttyrec.
+看名字就知道ttyrec命令是用来记录终端会话的，ttyplay是用来播放ttyrec记录的会话的。
 
-Here are the snapshots of the man pages of these utilities :
+这里是这些工具的man截图：
 
 **> ttyrec**
 
 ![](http://mylinuxbook.com/wp-content/uploads/2013/10/ttyrec-main.png)
 
-** > ttyplay **
+**> ttyplay**
 
 ![](http://mylinuxbook.com/wp-content/uploads/2013/10/ttyplay-main.png)
 
-### Testing Environment ###
+### 测试环境 ###
 
-- OS – Ubuntu 13.04
+- 系统 – Ubuntu 13.04
 - Shell – Bash 4.2.45
-- Application – ttyrec 1.0.8-5 & ttyplay 1.0.8-5
+- 应用 – ttyrec 1.0.8-5 & ttyplay 1.0.8-5
 
-### A Brief Tutorial ###
+### 简明教程 ###
 
-Here is how you can use these commands to record and play terminal sessions.
+下面告诉你怎么用这些命令来记录和播放一个终端会话。
 
-**Step-1**
+**步骤-1**
 
-To start recording the terminal session, just run the following command :
+开始记录一个终端会话，只需要运行下面的命令：
 
-    $ ttyrec [File-name]
+    $ ttyrec [文件名]
 
-The argument [**File-name**] (in the command shown above) is optional but if used, should be replaced by the a name of your choice. The recorded file will be saved with this name. If you do not specify any file name, ttyrec will use **ttyrecord** as the default file name.
+参数 **[文件名]** (上面显示的命令)是一个选项如果要使用，就要用一个你想要用的名字。这个记录文件将会用这个名字保存下来。如果你没有指定一个文件名，ttyrec就会用 **ttyrecord** 作为缺省文件名。
 
-**Step-2**
+**步骤-2**
 
-The session is now being recorded, yo can run the commands that you want to be recorded. The ttyrec command can even record sessions related to command line utilities like vi, nano, emacs, lynx etc.
+现在就开始记录会话了，当你想要记录的时候你就可以运行这个命令。ttyrec命令甚至可以记录命令行类似vi，nano，emacs，lynx等这些命令行工具的会话。
 
-**Step-3**
+**步骤-3**
 
-Once you are done with the terminal session, just execute the **exit** command and the recording session will end. The recorded file will be saved in the current directory.
+到你想要结束终端会话的时候，只需要运行 **exit** 命令,这个会话记录就会结束。记录文件将会保存在当前文件夹下。
 
-You can play this file by running the following command :
+你可以运行下面的命令播放这个文件:
 
-    $ ttyplay [File-name]
+    $ ttyplay [文件名]
 
-The argument [**File-name**] is the name of the recorded file which is the same name that was passed as argument to **ttyrec** command. If no file name was used with ttyrec command then the default file name is **ttyrecord**.
+参数 **[文件名]** 就是记录文件名,也就是通过 **ttyrec** 命令给定参数一样的那个名字。如果没有指定文件名，那么缺省文件名就是 **ttyrecord** 。
 
-Once you run ttyplay command, the playback of recorded session will start. Here are some of the hot-keys that you can use while the playback session is ON :
+当你运行ttyplay，回放会话记录就会开始。这里给出一些当你回放会话的时候你可以用的快捷键。
 
-- Press ‘+’ or ‘f’ key to speed up the playback session to twice the normal playback speed.
-- Press ‘-’ or ‘s’ key to slow down the playback session to half the normal playback speed.
-- Press ’0′ to pause the playback.
-- Press ’1′ to bring back the playback to normal speed.
+- ‘+’或‘f’键可以加速到两倍正常播放速度。
+- ‘-’或‘s’键可以减慢到一般正常播放速度。
+- ‘0’可以暂停。
+- ‘1’可以回到正常播放速度。
 
-Here are some of the other options supported by the ttyrec and ttyplay commands :
+这有一些其它ttyrec和ttyplay命令支持的选项：
 
 **> ttyrec**
 
@@ -66,51 +65,50 @@ Here are some of the other options supported by the ttyrec and ttyplay commands 
 
 ![](http://mylinuxbook.com/wp-content/uploads/2013/10/ttyplay-1.png)
 
-There is another small utility **ttytime** that can be used to display the time of the session recorded by the ttyrec utility. It’s easy to use and requires only the recorded file name as the command line argument.
+还有另一个小工具 **ttytime** 可以用来显示用ttyrec工具会话记录的时间。很容易使用并且只需要记录文件名作为命令行参数。
 
-Here is an example :
-
+举一个例子：
     $ ttytime record_file 
          29    record_file
 
-So you can see that the ttytime command displayed the time of session recorded in the file record_file.
+这样你就可以看到ttytime命令显示的会话记录文件record_file的时间。
 
-Here is a useful video that describes the usage of ttyrec and ttyplay commands :
+这有一个ttyrec和ttyplay命令的很有用的视频：
 
 - [youtube video][1]
 
-### Download/Install/Configure ###
+### 下载/安装/配置 ###
 
-Here are some of the important links related to these utilities :
+这有一些关于这些工具的重要的链接：
 
-- [Home Page][2]
-- [Download Link][3]
+- [主页][2]
+- [下载链接][3]
 
-You can download ttyrec, ttyplay and ttytime in one go by just installing ttyrec with any command line download manager like apt-get or yum. Ubuntu users can download and install these utilities through Ubuntu Software Centre also.
+你可以使用任何命令行下载管理器比如apt-get或者yum来下载ttyrec，ttyplay和ttytime。Ubuntu用户也可以通过Ubuntu软件中心下载安装这些工具。
 
-### Pros ###
+### 赞同 ###
 
-- Lightweight and easy to use
-- Can record sessions of various popular command line utilities like vi, nano, lynx etc.
-- Almost no learning curve.
+- 轻量级并且易用
+- 可以记录多种流行的命令行工具比如vi，nano，lynx等
+- 没有学习曲线。
 
-### Cons ###
+### 反对 ###
 
-- Doesn’t work on IRIX 6.4
-- Depends on terminal size
-- Doesn’t come pre-installed in most of the Linux distributions.
+- 不能在IRIX6.4下工作
+- 依赖终端尺寸
+- 大多数Linux发行版没有预案装。
 
-### Conclusion ###
+### 结论 ###
 
-If you are looking for some lightweight command line tools for recording and playing terminal sessions on Linux then ttyrec and ttyplay are ideal tools to get started. I really liked the ease with which they can be used. Try these utilities, you’ll not be disappointed.
+如果你正在找一些Linux轻量级命令行工具用来记录播放终端会话，那么ttyrec和ttyplay是理想的工具。我真的喜欢使用它们带来的轻松。试一下这些工具，你不会失望的。
 
-**Have you ever used ttyrec, ttyplay or any other terminal recording/playing utility? Share your experience with us.**
+**你使用过ttyrec，ttyplay或者其它的终端 记录/播放 工具？分享你的经历给我们吧。**
 
 --------------------------------------------------------------------------------
 
 via: http://mylinuxbook.com/ttyrec-ttyplay-record-and-play-terminal-sessions-in-linux/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[flsf](https://github.com/flsf) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
