@@ -1,3 +1,5 @@
+(翻译中 by whatever1992)
+
 Disable Amazon & Remote Content Fetching In Ubuntu 13.10
 ================================================================================
 Now that Ubuntu 13.10 has been released, it’s now time to sit back and configure some settings that will suit your needs. Ubuntu 13.10 comes with many things and some of those may not be what you want when you install or upgrade Ubuntu.
