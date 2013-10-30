@@ -1,3 +1,4 @@
+flsf
 ttyrec & ttyplay – Record And Play Terminal Sessions In Linux
 ================================================================================
 Sometimes you might want to record a terminal session in order to save a complex command line operation for your future reference or for knowledge sharing purpose. Then you might also want the recorded file size to be as small as possible and finally a player that would play the recorded file at a playback speed of your desire. In this article we will discuss two command line utilities (**ttyrec and ttyplay**) that let you record, save and play terminal sessions.
