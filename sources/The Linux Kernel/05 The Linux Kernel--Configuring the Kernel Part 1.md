@@ -1,3 +1,5 @@
+Translating------------------geekpi
+
 05 The Linux Kernel: Configuring the Kernel Part 1
 ================================================================================
 ![](http://www.linux.org/attachments/slide-jpg.299/)
