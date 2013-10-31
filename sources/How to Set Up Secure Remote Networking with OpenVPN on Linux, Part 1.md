@@ -1,3 +1,4 @@
+(正在翻译 by whatever1992)
 How to Set Up Secure Remote Networking with OpenVPN on Linux, Part 1
 ================================================================================
 It's always been prudent to wrap a warm comfy layer of encryption over your Internet travels to foil snoops of all kinds, and with our own government slurping up every bit wholesale it's more crucial than ever. OpenVPN is the top choice for protecting networking over untrusted networks. Today we'll learn a quick way to set up OpenVPN so you can securely access your home server when you're on the road.
