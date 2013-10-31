@@ -1,4 +1,4 @@
-为什么我离不开Linux？
+【观点】离了Linux，我就活不了！
 ================================================================================
 
 本文是为那些想要尝试Linux的用户所写，不过如果你已经是一名Linuxer，这里也有一些你应该知道并为之自豪的事实。
@@ -36,7 +36,7 @@
 
 老话说得好 “**Linux是很坚强的，除非，面对的是熊孩子！**”
 
-为了使机器远离病毒、木马，你需要做很多工作。一项研究表明，（在没有任何防护措施的情况下，）连接到网络之后，windows被入侵的平均时间是40分钟，而Linux - 像一个老板，也就是说，除了基本的操作系统本身，不需要安装任何东西（，黑客也无法入侵）。
+为了使机器远离病毒、木马，你需要做很多工作。一项研究表明，（在没有任何防护措施的情况下，）连接到网络之后，windows被入侵的平均时间是40分钟，而在Linux上 - 你就像老板一样什么都不用做，也就是说，在操作系统之外不需要安装任何东西（，黑客也无法入侵）。
 
 **安全性增强** - Iptables。这个命令行工具用来设置防火墙是极好的。同样，还有许多其它创新工具，比如*端口试探(port knocking)，chroot监狱（译者注：chroot是在unix系统的一个操作，用于改变当前程序及其子进程真实的磁盘根目录。改变根目录后的程序无法访问或命名正常路径下的文件。这样的根目录就叫做"chroot监狱（chroot jail,chroot prison)"——来自维基百科 ）。
 
@@ -107,6 +107,6 @@ Google 一下"linuxing urban dictionary”（译者注：urban dictionary是一�
 
 via: http://www.unixmen.com/cant-live-without-linux/
 
-译者：[flsf](https://github.com/flsf) 校对：[Caroline](https://github.com/carolinewuyan) 
+译者：[flsf](https://github.com/flsf) 校对：[Caroline](https://github.com/carolinewuyan) ，[Mr小眼儿](http://blog.csdn.net/tinyeyeser)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
