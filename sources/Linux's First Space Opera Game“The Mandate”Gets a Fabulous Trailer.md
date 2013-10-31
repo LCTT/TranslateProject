@@ -1,3 +1,4 @@
+                  ^O^  Luox翻译了
 Linux's First Space Opera Game "The Mandate" Gets a Fabulous Trailer
 ================================================================================
 Perihelion Interactive has announced the release of the first gameplay trailer for one of the most promising space-related games on Kickstater, The Mandate.

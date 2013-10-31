@@ -14,7 +14,7 @@ Ubuntu 14.04 LTS服务器版和桌面版计划于2014年4月份发布。
 
 via: http://www.omgubuntu.co.uk/2013/10/ubuntu-14-04-lts-named-trusty-tahr
 
-译者：[Mr小眼儿](http://blog.csdn.net/tinyeyeser) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Mr小眼儿](http://blog.csdn.net/tinyeyeser) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
