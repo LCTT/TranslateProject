@@ -1,3 +1,4 @@
+Translating by l3b2w1
 Seven reasons why closed source is better than open source, or so it seems
 ================================================================================
 ![](http://opensource.com/sites/default/files/imagecache/image-full-size/images/business/BUSINESS_asusual_deadend.png)
