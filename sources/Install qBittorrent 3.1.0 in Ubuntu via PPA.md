@@ -1,3 +1,4 @@
+翻译中 by Linux-pdz
 Install qBittorrent 3.1.0 in Ubuntu via PPA
 ================================================================================
 [qBittorrent][1] is a cross platform free and open source bittorrent client designed as an alternative the popular [µtorrent][2] client written in C++ / Qt4, using the libtorrent-rasterbar library. qBittorrent is developed by volunteers. The latest version, qBittorrent 3.1.0 released on October 12th 2013.Bittorrent client. qBittorrent is fast, stable, light, it supports unicode and it provides a good integrated search engine. It also comes with UPnP port forwarding / NAT-PMP, encryption (Vuze compatible), FAST extension (mainline) and PeX support (utorrent compatible).
