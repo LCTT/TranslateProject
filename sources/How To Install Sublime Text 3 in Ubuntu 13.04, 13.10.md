@@ -1,3 +1,4 @@
+                                    翻译by  Luox
 How To Install Sublime Text 3 in Ubuntu 13.04, 13.10
 ================================================================================
 [Sublime Text][1] is a popular text and source code editor. Thanks to [Webupd8][2] team’s PPA repository, we can now install Sublime Text 3 via PPA which is now available to both unregistered and registered users.
