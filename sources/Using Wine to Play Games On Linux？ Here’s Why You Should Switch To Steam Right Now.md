@@ -1,3 +1,4 @@
+翻译中 by Linux-pdz
 Using Wine to Play Games On Linux? Here’s Why You Should Switch To Steam Right Now
 ================================================================================
 ![](http://main.makeuseoflimited.netdna-cdn.com/wp-content/uploads/2012/12/steamforlinux.png)

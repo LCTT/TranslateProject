@@ -1,3 +1,4 @@
+翻译中 by Linux-pdz
 Daily Ubuntu Tips–Change The Logon Screen Background
 ================================================================================
 Here’s a simple tip that shows you how to change Ubuntu logon screen background with custom images. Ubuntu logon screen is ok and maybe better than most Linux distributions, but if you want to show custom images like ones that remind you of special places and things, you may be able to change it using the steps below.
