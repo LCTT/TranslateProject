@@ -1,3 +1,4 @@
+flsf
 Linux Pmap Command – Find How Much Memory Process Use
 ================================================================================
 Pmap provide memory map of a process, The pmap command display the memory usage map of a process or multiple processes. Pmap reports information about the address space or memory usage map of a process. Pmap is actually a Sun OS command and Linux supports only very limited number of features. But it is very helpful for finding the complete address space of a process. To check [memory usage of process][1] we need PID or unique process ID of running process, we can get PID from /proc or regular commands like top or ps.
