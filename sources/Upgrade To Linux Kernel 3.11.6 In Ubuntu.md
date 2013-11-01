@@ -1,3 +1,5 @@
+                        翻译中 Luox
+
 Upgrade To Linux Kernel 3.11.6 In Ubuntu
 ================================================================================
 Ubuntu 13.10 may have been released yesterday but chances are you’re still running Linux Kernel 3.11.0. Sticking with the current kernel in Ubuntu 13.10 isn’t a bad thing. In fact, it’s not always recommended to upgrade Linux Kernel outside of your Linux distribution’s official repositories tested for a particular version.
