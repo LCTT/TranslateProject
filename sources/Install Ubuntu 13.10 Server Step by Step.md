@@ -1,3 +1,5 @@
+                                  疯狂站坑
+                      
 Install Ubuntu 13.10 Server Step by Step
 ================================================================================
 Yesterday was a big day for Canonical and Ubuntu fans. Yes, After 6 months long effective development, Ubuntu 13.10 Desktop & Server, Lubuntu 13.10, Kubuntu 13.10 was finally made available to download.
