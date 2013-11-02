@@ -1,3 +1,4 @@
+翻译中 by Linux-pdz
 CISCO Announce New Open Source H.264 Codec
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2012/04/youtube.jpg)
