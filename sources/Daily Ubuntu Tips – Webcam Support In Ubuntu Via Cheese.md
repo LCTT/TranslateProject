@@ -1,34 +1,31 @@
 occupied by rogetfan
 Ubuntu每日贴士——Ubuntu中通过Cheese支持Webcom
 ================================================================================
-对于一些Ubuntu的新用户，如果你们想在Ubuntu中使用webcam的话，这里有一些信息能够帮助到你们。正如你们说知道的那样，Ubuntu致力于支持绝大多数webcom（right out of the box 网络翻译为开箱，我在这里并不这样认为，所以暂时不去翻译）大多数webcom生产商并不为Linux系统提供驱动，包括Ununtu。所以，Linux开发者们必须能够尽最大努力让webcom设备在Linux内核中能够运行。
-Webcam support for Linux is provided by the Linux UVC Project’s [UVC][1] driver.  The aim of this project is to provide a universal USB support for webcam in the same way a general USB driver handles USB devices like thumb drives, external USB devices and others.
-支持Linux的webcam驱动由Linux UVC项目提供[UVC][1]。该项目意图为webam提供一个万能USB支持，就像一个通用USB驱动控制一些USB设备，例如U盘，外部USB设备和其他一些设备。
+    对于一些Ubuntu的新用户，如果你们想在Ubuntu中使用webcam的话，这里有一些信息能够帮助到你们。正如你们说知道的
+那样，Ubuntu致力于支持绝大多数webcom（right out of the box 网络翻译为开箱，我在这里并不这样认为，所以暂时不
+去翻译）大多数webcom生产商并不为Linux系统提供驱动，包括Ununtu。所以，Linux开发者们必须能够尽最大努力让webcom设备在Linux内核中能够运行。
+    支持Linux的webcam驱动由Linux UVC项目提供[UVC][1]。
+该项目意图为webam提供一个万能USB支持，就像一个通用USB驱动控制一些USB设备，例如U盘，外部USB设备和其他一些设备。
 The vast majority of USB webcam out there should work with Linux systems, including Ubuntu with the support of the Linux UVC project driver. If you want to purchase a webcam for your Ubuntu computer, but want to make sure it’s supported, [check out the UVC supported webcam list][2].
+大多数主流的USB webcam设备都可以在Linux系统下工作，其中包括支持Linux UVC项目驱动的Ubuntu。如果你想为你的Ubuntu计算机购
+买一个webcam设备,又不确信它是否能被支持，最好参照一下下面的列表[check out the UVC supported webcam list][2].
+    上面列出的webcam都能够很方便地应用在Linux机器中。因此，在为你的机器购买webcam之前，查看一下列表并找到你喜欢的某块
+在购买一个支持Linux系统的模块之后，你需要一个程序来操纵你的摄像头。现如今，最流行的Ubuntu webcam程序叫做Cheese.Cheese 允许用户访问自己的webcam并方便地播放视频。
 
-Webcam on the list above support Linux machines easily. So, before purchasing webcam for your machine check out the list and find the model you like and purchase it.
-
-After purchasing a model that supports Linux systems, you’ll need an application in to display or view your videos. Currently the most popular webcam application for Ubuntu is Cheese. Cheese allows you to access your webcam and display the video easily.
-
-To install Cheese, run the commands below.
-
-    sudo apt-get install cheese
-
-After installing it, open it via Unity Dash and launch it. If the webcam device is already attached, Cheese should begin showing the video from the webcam.
-
-If you have a laptop equipped with webcam, chances are it should work because support for generic USB webcam is common with Ubuntu. All you have to do is install Cheese and enjoy!
-
-If you can’t get your current webcam to work in Ubuntu, you may have to purchase a model that works.
-
-Enjoy!
-
+    输入以下命令安装Cheese
+        sudo apt-get install cheese
+    安装完成之后，在Unity Dash中打开它就能运行。如果webcam驱动已经载入，Cheese就能够从Webcam中输出视频。
+    只要你有一个配备了webcam的笔记本电脑，那它就可以工作，因为大多数USB webcam设备是在Ubuntu中通用的。
+你该做的就是安装Cheese并享受它
+如果你不能令当前的webcam在Ubuntu中工作，就应该尝试购买一个能够工作的模块!
+尽情享受吧！
 --------------------------------------------------------------------------------
 
 via: http://www.liberiangeek.net/2013/09/daily-ubuntu-tips-webcam-support-ubuntu-via-cheese/
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[rogetfan](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
 
 [1]:https://help.ubuntu.com/community/UVC
 [2]:http://www.ideasonboard.org/uvc/
