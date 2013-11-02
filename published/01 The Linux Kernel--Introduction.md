@@ -11,7 +11,7 @@
 
 Linux内核也是一个抢占式多任务内核。这意味该内核可以暂停一些任务来保证任何应用都有机会来使用CPU。举个例子，如果一个应用正在运行但是正在等待一些数据，内核会把这个应用暂停并允许其他的程序使用新释放的CPU资源，直到数据到来。否则的话，系统就会浪费资源给那些正在等待数据或者其他程序执行的的任务。内核将会强制程序去等待或者停止使用CPU。没有内核的允许，应用程序不能脱离暂停或者使用CPU。
 
-Linux内核使得设备作为文件显示在/dev文件夹下。举个例子，USB端口位于/dev/bus/usb。硬盘分区则位于/dev/disk/分区。因为这个特性，许多人说：“在Linux上，一切皆文件”。举个例子，如果一个用户想要访问在存储卡上的数据，他们能通过设备文件访问这些数据。（译注：此处原文是“If a user wanted to access data on their memory card, for example, they **cannot** access the data through these device files.”，但根据上下文和实际经验看，应该是**“can 能”**）
+Linux内核使得设备作为文件显示在/dev文件夹下。举个例子，USB端口位于/dev/bus/usb。硬盘分区则位于/dev/disk/分区。因为这个特性，许多人说：“在Linux上，一切皆文件”。（不过这些设备文件不能被直接使用，——译者补充）举个例子，如果一个用户想要访问在存储卡上的数据，他们是不能通过设备文件访问到这些数据的。（译注：此处原文是“If a user wanted to access data on their memory card, for example, they cannot access the data through these device files.”，但根据上下文，此处语境不对，所以做了相应补充。据“食梦-”的提示，原文也有人对此提出了质疑，作者做了如下解释：http://www.linux.org/threads/%EF%BB%BFthe-linux-kernel-introduction.4203/#post-12623）
 
 Linux内核是可移植的。可移植性是Linux流行的一个最重要的原因。可移植性使得内核可以工作在各种处理器和系统上。一些内核支持的处理器的型号包括：Alpha、AMD、ARM、C6X、Intel、x86、Microblaze、MIPS、PowerPC、SPARC、UltraSPARC等，这还不是全部的列表。
 
