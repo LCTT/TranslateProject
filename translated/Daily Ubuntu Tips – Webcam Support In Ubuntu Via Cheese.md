@@ -6,7 +6,6 @@ Ubuntu每日贴士——Ubuntu中通过Cheese支持Webcom
 去翻译）大多数webcom生产商并不为Linux系统提供驱动，包括Ununtu。所以，Linux开发者们必须能够尽最大努力让webcom设备在Linux内核中能够运行。
     支持Linux的webcam驱动由Linux UVC项目提供[UVC][1]。
 该项目意图为webam提供一个万能USB支持，就像一个通用USB驱动控制一些USB设备，例如U盘，外部USB设备和其他一些设备。
-The vast majority of USB webcam out there should work with Linux systems, including Ubuntu with the support of the Linux UVC project driver. If you want to purchase a webcam for your Ubuntu computer, but want to make sure it’s supported, [check out the UVC supported webcam list][2].
 大多数主流的USB webcam设备都可以在Linux系统下工作，其中包括支持Linux UVC项目驱动的Ubuntu。如果你想为你的Ubuntu计算机购
 买一个webcam设备,又不确信它是否能被支持，最好参照一下下面的列表[check out the UVC supported webcam list][2].
     上面列出的webcam都能够很方便地应用在Linux机器中。因此，在为你的机器购买webcam之前，查看一下列表并找到你喜欢的某块
