@@ -1,3 +1,4 @@
+翻译中 by Linux-pdz
 3 Ways to Access And Use Cloud Storage (SkyDrive etc.) In Linux
 ================================================================================
 ![](http://main.makeuseoflimited.netdna-cdn.com/wp-content/uploads/2013/10/linux-cloud-840x420.jpg)
