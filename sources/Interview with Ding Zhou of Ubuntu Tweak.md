@@ -1,3 +1,4 @@
+(translating by runningwater)
 Interview with Ding Zhou of Ubuntu Tweak
 ================================================================================
 [Ubuntu tweak][1] is a well known application which allows Ubuntu users to tweak various aspects of their system. The founder of the project, Ding Zhou aka Tualatrix Chou, is talking to us about the nature and the usability of Ubuntu Tweak, the relation with Canonical and the future plans of the project. Enjoy
@@ -88,6 +89,6 @@ via: http://www.unixmen.com/interview-with-ding-zhou-of-ubuntu-tweak/
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
 
 [1]:http://ubuntu-tweak.com/
