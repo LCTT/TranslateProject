@@ -1,3 +1,4 @@
+(translating by flyingwitholdlady)
 KDE vs GNOME: Settings, Apps, Widgets
 =====================================
 
