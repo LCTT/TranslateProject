@@ -24,37 +24,37 @@ Linux系统上用encfs创建和管理加密文件夹
      enter "p" for pre-configured paranoia mode,
      anything else, or an empty line will select standard mode.
 
-If you want the strongest encryption, enter '**p**' at the prompt. Otherwise, just hit **[Enter]** and your new encrypted folder will be created with the standard options.
+如果你想要最高级别的加密文件夹的话，在提示符下输入**p**选项。否则只需敲击**[Enter]键**，就会以标准选项来创建新的加密文件夹。
 
-After that you'll see several messages listing the parameters of your new encrypted volume along with some warnings, and then a prompt to create a password for encryption. Make sure to use a password you will remember because there is no password recovery mechanism. After entering and verifying your password, the new folder will be created and mounted, ready to use.
+之后，你将会看到新加密卷的参数列表及一些警告信息，随之提示符会让输入一个密码。确保不要忘记使用的密码，回为没有密码找回机制。在输入密码能以第二次输入校验通过后，新的文件夹会被创建出来，并自动挂载进文件系统，就可以开始使用了。
 
-### Using Your Encrypted Folder ###
+### 使用加密文件夹 ###
 
-With your new encrypted folder mounted, you can use it just like any other folder on your system with the exception that hard links will not work if you set it up in paranoia mode. I expect this won't be an issue for most users. Let's go ahead and create a simple text file in the new folder to test it out.
+一旦新加密文件夹被挂载上，它就跟你系统上的其它文件夹一样的使用，但如果你把它设置为paranoia模式的话，使用它的硬链接会出现不可用的异常。我想，这对大多数用户来说并不是问题。让我们继续吧，在新文件夹里创建一个简单的文本文件，然后用它来做测试。
 
     echo "GNU/Linux is my favorite computer operating system." >~/tuxtweaks/test.txt
 
-Using the terminal or the file manager, you can see that you now have a new file called **test.txt** in the **tuxtweaks** folder. Upon opening this file you can see that it is a perfectly readable text file. Now navigate to your **~/.tuxtweaks** folder. This is the encrypted version of your folder. You can see that the file names don't match and if you try to view the contents of the files you'll find that they are scrambled.
+在终端下或在文件系统管理器下，你都能看到在**tuxtweaks**目录里已经有一个叫做**test.txt**的新文件。打开此文件可看到这里一个完全可读的文本文件。现在切换到**~/.tuxtweaks**目录下，这是你文件夹的加密版本，可以看到这里的文件名不一样了，如里你查看此文件的内容话，会发现是乱糟糟的。
 
-### Unmounting an encfs Encrypted Folder ###
+### 卸载encfs创建的加密文件夹 ###
 
-Once you are done accessing or creating data in your encrypted folder, it's best to unmount it so that your information is safely hidden away. encfs doesn't have its own command to do this. Since it created a user file system it takes advantage of the FUSE packages to handle unmounting. We'll use the fusermount command to unmount our encrypted folder.
+一旦你完成文件访问或者数据创建等操作，最好把加密文件夹卸载，以便里面的信息安全的隐藏掉。encfs自身不带有卸载的命令，一旦用它创建了用户文件系统，就可以利用FUSE包来处理卸载任务。下面我们会使用fusermount命令来卸载我们的加密文件夹。
 
     fusermount -u ~/tuxtweaks
 
-Navigating your home directory you can see that the tuxtweaks directory is still there. If you enter that folder though you'll find that it is empty.
+切换到home目录下，会看到tuxtweaks目录仍然存在，但进入文件夹，你会发现里面是空的。
 
-### Mount an Encrypted Folder with encfs ###
+### 挂载用encfs创建的加密文件夹 ###
 
-The next time you want to access your encrypted data, you'll need to mount it again to decrypt it. You can just use the same command you used to create the folder in the first place.
+下一次你想要访问加密数据的话，你需要重新加载并解密它，仅仅只需要使用跟我们在第一步创建此文件夹相同的命令就可以。
 
     encfs ~/.tuxtweaks ~/tuxtweaks
 
-### Uses ###
+### 使用 ###
 
-I find that using **encfs** encrypted folders is a handy way to securely store financial information such as tax returns as well as for storing lists of log-in credentials. This way I only need to remember the password for my encrypted folder, then I can access my list of other log-in ID's and passwords.
+我发现使用**encfs**加密文件夹来安全地存储财务信息非常便捷，比如纳税申报表以及用于存储日志列表凭据。这样我只需要记住我加密文件夹的密码，然后就可以进入访问记录有其他登录ID和密码的名单文件。
 
-What will you use encfs for? Let me know in the comments.
+你会使用encfs来做什么呢？在评论中给我们分享吧。
 
 --------------------------------------------------------------------------------
 
