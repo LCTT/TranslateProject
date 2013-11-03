@@ -1,26 +1,25 @@
-flsf
-Linux Pmap Command – Find How Much Memory Process Use
+Linux Pmap 命令 - 查看进程用了多少内存
 ================================================================================
-Pmap provide memory map of a process, The pmap command display the memory usage map of a process or multiple processes. Pmap reports information about the address space or memory usage map of a process. Pmap is actually a Sun OS command and Linux supports only very limited number of features. But it is very helpful for finding the complete address space of a process. To check [memory usage of process][1] we need PID or unique process ID of running process, we can get PID from /proc or regular commands like top or ps.
+Pmap 提供进程的内存映射，pmap命令显示一个或多个进程的内存状态。Pmap报告进程地址空间和内存状态信息。Pmap实际上是一个Sun OS命令，linux仅支持有限的功能。但是它还是对查看完整的进程地址空间很有帮助。检查[进程内存状态][1]我们需要PID或者运行的进程的唯一进程ID,我们可以在/proc或者常规命令比如top或ps得到它.
 
-### Syntax or usage  ###
+### 语法或用法  ###
 
     #pmap PID
 
-or
+或者
 
     #pmap [options] PID
 
-In outout it display total address, kbytes, mode and mapping.
+在输出中它显示全部的地址,kbytes,mode还有mapping。
 
-### Options ###
+### 选项 ###
 
-    -x extended Show the extended format.
-    -d device Show the device format.
-    -q quiet Do not display some header/footer lines.
-    -V show version Displays version of program.
+    -x extended显示扩展格式
+    -d device显示设备格式
+    -q quiet不显示header/footer行
+    -V 显示版本信息
 
-### Memory usage map of single process ###
+### 单一进程内存状态 ###
 
     [root@info ~]# pmap 1013
 
@@ -59,13 +58,13 @@ In outout it display total address, kbytes, mode and mapping.
     
     total 8232K
 
-### Memory usage map of multiple processes ###
+### 多进程内存状态 ###
 
-We can check memory map of multiple processes by inserting multiple PIDs. Add multiple PIDs with adding space.
+我们可以检查多进程内存通过插入多个PID。加入多个PID中间需要空格。
 
     pmap 1013 1217 1118
 
-### Extended memory map about a process ###
+### 扩展进程内存 ###
 
     [root@info ~]# pmap -x 1013
     1013: /usr/sbin/sshd
@@ -94,9 +93,9 @@ We can check memory map of multiple processes by inserting multiple PIDs. Add mu
     ——– ——- ——- ——- ——-
     total kB 8232 – – -
 
-Here Address, Kbyte, Dirty, RSS, mode and mapping containd information as below
+这里的Address，Kbyte，Dirty，RSS，mode还有mapping包含在下面
 
-### Extended and Device Format Fields ###
+### 扩展和设备格式区域 ###
 
     Address: start address of map
     Kbytes: size of map in kilobytes
@@ -111,7 +110,7 @@ Here Address, Kbyte, Dirty, RSS, mode and mapping containd information as below
 
 via: http://linoxide.com/linux-command/pmap-command/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[flsf](https://github.com/flsf) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
