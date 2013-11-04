@@ -1,4 +1,4 @@
-Daily Ubuntu Tips–Update To LibreOffice Latest In Ubuntu Via PPA
+【SCUSJS占坑】Daily Ubuntu Tips–Update To LibreOffice Latest In Ubuntu Via PPA
 ================================================================================
 For every new Ubuntu you install, you’ll also have LibreOffice, the office productivity tool that allows you to create and manage documents. Most people are aware of Microsoft Word, Excel, PowerPoint and Outlook but few know about LibreOffice.
 
