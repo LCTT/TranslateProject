@@ -1,9 +1,9 @@
-禁用Ubuntu 13.10的Amazon和远程内容获取
+禁用Ubuntu 13.10的Amazon及远程内容获取
 ================================================================================
 
 Ubuntu 13.10已经发布一段时间了，是时候坐下来配置一下系统来满足你的要求。Ubuntu 13.10配备了很多东西，当你安装或者升级时其实有些并不是你所需要的。
 
-举个例子，当你安装或者升级到Ubuntu 13.10时，会自动启用Amazon和一些其他商业购物。当你打开Unity Dash时这些Lens就会显示。当你在Dash处执行搜索时，类似Amazon的远程数据源中符合你搜索内容的选项也会发送过来。
+举个例子，当你安装或者升级到Ubuntu 13.10时，会自动启用Amazon和一些其他商业购物网站的功能。当你打开Unity Dash时这些Lens就会显示。当你在Dash处执行搜索时，类似Amazon的远程数据源中符合你搜索内容的选项也会发送过来。
 
 这些由Canonical公司提供的新增特性可能对某些人有用，但是对另一些用户，这些特性可能是他们不需要的。
 
@@ -13,7 +13,7 @@ Ubuntu 13.10已经发布一段时间了，是时候坐下来配置一下系统�
 
 这篇简单的教程就是教你当使用Ubuntu 13.10时如何快速禁用Amazon和所有远程内容获取。
 
-在你的键盘上按组合键 **Ctrl – Alt –  T** 会显示终端或控制台。当它打开后运行下面的命令去禁用该功能。
+在你的键盘上按组合键 **Ctrl – Alt –  T** 显示终端。当它打开后运行下面的命令去禁用该功能。
 
     gsettings set com.canonical.Unity.Lenses remote-content-search 'none'
 
@@ -29,6 +29,6 @@ Enjoy!
 
 via: http://www.liberiangeek.net/2013/10/disable-amazon-remote-content-fetching-ubuntu-13-10/
 
-译者：[whatever1992](https://github.com/whatever1992) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[whatever1992](https://github.com/whatever1992) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
