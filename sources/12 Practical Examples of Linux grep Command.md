@@ -1,3 +1,5 @@
+翻译中 by小眼儿
+
 12 Practical Examples of Linux grep Command
 ================================================================================
 Have you ever been confronted with the task of looking for a particular string or pattern in a file, yet have no idea where to start looking? Well then, here is **grep** to the rescue!
