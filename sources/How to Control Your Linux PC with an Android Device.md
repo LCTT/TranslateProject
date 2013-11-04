@@ -1,3 +1,4 @@
+KayGuoWhu翻译中
 How to Control Your Linux PC with an Android Device
 ================================================================================
 **The following tutorial will teach all Linux users how to install SSH on their systems, in order to access their computers remotely from an Android tablet of smartphone.**
