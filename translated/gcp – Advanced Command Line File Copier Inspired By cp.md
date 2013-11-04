@@ -121,7 +121,7 @@ gcp命令还提供了各式名样的其它有用选项。要查看完整的选�
 
 via: http://mylinuxbook.com/gcp-advanced-command-line-file-copier-inspired-by-cp/
 
-译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
