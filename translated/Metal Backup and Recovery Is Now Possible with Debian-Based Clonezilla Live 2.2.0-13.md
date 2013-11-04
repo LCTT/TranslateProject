@@ -31,7 +31,7 @@ via: http://news.softpedia.com/news/Metal-Backup-and-Recovery-Is-Now-Possible-wi
 
 译者：[Luoxcat](https://github.com/Luoxcat) 校对：[校对者ID](https://github.com/校对者ID)
 
-[1]:http://free.nchc.org.tw/clonezilla-live/testing/ChangeLog-Clonezilla-live.txt
+[1]:http://free.nchc.org.tw/clonezilla-live/testing/ChangeLog-Clonezilla-live.txt 
 [2]:http://downloads.sourceforge.net/clonezilla/clonezilla-live-2.1.2-53-i486.iso
 [3]:http://downloads.sourceforge.net/clonezilla/clonezilla-live-2.1.2-53-i686-pae.iso
 [4]:http://downloads.sourceforge.net/clonezilla/clonezilla-live-2.1.2-53-amd64.iso
