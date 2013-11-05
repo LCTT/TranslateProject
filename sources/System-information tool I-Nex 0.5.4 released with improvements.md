@@ -1,3 +1,4 @@
+flsf
 System-information tool I-Nex 0.5.4 released with improvements
 ================================================================================
 [I-Nex][1] is a free open-source handy system-information tool, gathering, categorizing and displaying relevant informations about one's computer into a clean, clear interface.
