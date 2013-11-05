@@ -1,3 +1,5 @@
+翻译中 by小眼儿
+
 Linux 4.0 may have only bug fixes, no new features
 ================================================================================
 > Linux creator Torvalds seeks comment on proposal for a bug-fix and stability release in about a year
