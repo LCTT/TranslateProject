@@ -11,7 +11,8 @@
 
 在购买一个支持Linux系统的模块之后，你需要一个应用程序来播放或者观看视频。现如今，最流行的Ubuntu webcam应用程序是Cheese.Cheese 允许用户访问自己的webcam并能够轻松播放视频。
 
-    输入以下命令安装Cheese
+输入以下命令安装Cheese  
+    
     sudo apt-get install cheese
     
 安装完成之后，在Unity Dash中打开它就能运行。如果webcam驱动已经载入，Cheese就能够从Webcam中输出视频。
