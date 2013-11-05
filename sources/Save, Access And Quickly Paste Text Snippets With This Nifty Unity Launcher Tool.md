@@ -1,3 +1,4 @@
+crowner挖的无底洞，争取早日填上
 Save, Access And Quickly Paste Text Snippets With This Nifty Unity Launcher Tool
 ================================================================================
 **Repeatedly typing out certain information – like e-mail or home addresses, verbose terminal commands, and well timed quotes from cult TV shows – can be a chore.**

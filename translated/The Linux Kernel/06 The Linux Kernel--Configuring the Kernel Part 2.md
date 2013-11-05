@@ -1,70 +1,72 @@
-06 Linux 内核: 内核配置(Part 2)
+戴文的Linux内核专题：06 内核配置(2)
 ================================================================================
 ![](http://www.linux.org/attachments/slide-jpg.351/)
 
-第二部分我们讲配置内核IRQ子系统。中断请求(IRQ)硬件发给处理器的一个信号，它暂时停止一个正在运行的程序并允许一个特殊的程序在它的位置上运行。
+这一部分我们讲配置内核IRQ子系统。中断请求(IRQ)是硬件发给处理器的一个信号，它暂时停止一个正在运行的程序并允许一个特殊的程序占用CPU运行。
 
-这个目录中的第一个问题属于内核特性(Expose hardware/virtual IRQ mapping via debugfs (IRQ_DOMAIN_DEBUG))询问的是硬件的IRQ数量以及相应的是否可以使用虚拟调式文件系统映射。这个用作调试目的。大多数用户不需要用到，所以我选择了"no".
+这个目录中的第一个问题属于内核特性(Expose hardware/virtual IRQ mapping via debugfs (IRQ\_DOMAIN\_DEBUG))（通过debugfs来显示硬件/虚拟的IRQ映射），它询问是否可以使用虚拟的调试文件系统来映射硬件及对应Linux上的IRQ中断号。这个用作调试目的，大多数用户不需要用到，所以我选择了"no"。
 
-下一个标题显示"Timers subsystem". 第一个有关定时器子系统的问题是"“Tickless System (Dynamic Ticks) (NO_HZ)". 我选择了"yes",这会启用一个无滴答系统。这意味着定时器中断将会按需使用。定时器中断允许任务以特定的时间间隔执行。下一个问题(High Resolution Timer Support (HIGH_RES_TIMERS))问的是是否支持高分辨率定时器。并不是所有的硬件支持这个。通常地说，如果硬件很慢或很旧，那么选择"no",否则像我一样选择"yes".
+下一个标题显示"Timers subsystem"（计时器子系统）。第一个有关定时器子系统的问题是“Tickless System (Dynamic Ticks) (NO\_HZ)”（无CPU滴答系统）。我选择了“yes”，这会启用一个无滴答系统。这意味着定时器中断将会按需使用，定时器中断允许任务以特定的时间间隔执行。下一个问题(High Resolution Timer Support (HIGH\_RES\_TIMERS))问的是是否支持高精度定时器。并不是所有的硬件支持这个，通常地说，如果硬件很慢或很旧，那么选择"no",否则像我一样选择"yes".
 
-下一个标题"CPU/Task time and stats accounting",这个是关于进程的追踪。第一个问题看上去像这样
+下一个标题"CPU/Task time and stats accounting"（CPU/任务用时与状态统计），这个是关于进程的追踪。第一个问题看上去像这样：
 
-Cputime accounting
-1. Simple tick based cputime accounting (TICK_CPU_ACCOUNTING)
-2. Full dynticks CPU time accounting (VIRT_CPU_ACCOUNTING_GEN) (NEW)
-3. Fine granularity task level IRQ time accounting (IRQ_TIME_ACCOUNTING)
+Cputime accounting （CPU用时统计）
 
-TICK_CPU_ACCOUNTING会在每个CPU滴答检测/proc/stat。这是默认的选项，这个统计方法非常简单
+1. Simple tick based cputime accounting (TICK\_CPU\_ACCOUNTING) （简单基于滴答的用时统计）
+2. Full dynticks CPU time accounting (VIRT\_CPU\_ACCOUNTING\_GEN) (NEW) （全动态滴答的用时统计）
+3. Fine granularity task level IRQ time accounting (IRQ\_TIME\_ACCOUNTING) （细粒度的任务级IRQ用时统计）
 
-注意：CPU滴答是抽象测量CPU时间的方式。每个处理器，操作系统和安装方式都不同，比如说，一个更强大的处理器会比老的处理器拥有更多的CPU滴答。如果你安装了一个Linux系统接着在同一块磁盘上重新安装了它。你可能会得到一个更快或更慢的CPU滴答时间(至少一些计算机技术书上这么说)。通常来讲，一个更快的时钟速度意味着更多的时间滴答。
+TICK_CPU_ACCOUNTING会在每个CPU滴答中检测/proc/stat。这是默认的选项，这个记账方法非常简单。
 
-如果启用了VIRT_CPU_ACCOUNTING_GEN，任务和CPU时间统计将由监视内核-用户边界实现。这个选择的代价是会增加额外的开销。
+注意：CPU滴答是抽象测量CPU时间的方式。每个处理器、操作系统和安装的系统都不同，比如说，一个更强大的处理器会比老的处理器拥有更多的CPU滴答。如果你安装了一个Linux系统，然后接着在同一块磁盘上重新安装了它，你可能会得到一个更快或更慢的CPU滴答时间(至少一些计算机技术书上这么说)。通常来讲，一个更快的时钟速度意味着更多的CPU滴答。
 
-IRQ_TIME_ACCOUNTING统计方式通过检测IRQ状态间的时间戳工作，这个性能开销很小。
+如果启用了VIRT\_CPU\_ACCOUNTING_GEN，任务和CPU时间统计将由监视内核-用户边界实现。这个选择的代价是会增加额外的开销。
 
-我选择了"1"并被询问有关BSD统计"BSD Process Accounting (BSD_PROCESS_ACCT)"的问题.这个内核特性会记录每个进程不同的关闭信息。为了得到一个更小和更快的内核，我选择了"no".
+IRQ\_TIME\_ACCOUNTING记账方式则通过检测IRQ状态间的时间戳工作，这个性能开销很小。
+
+我选择了"1"并被询问有关BSD记账"BSD Process Accounting (BSD\_PROCESS\_ACCT)"（BSD进程记账）的问题。这个内核特性会记录每个进程不同的关闭信息。为了得到一个更小和更快的内核，我选择了"no".
 
 下一组问题看上去就像下面这样。
 
-Export task/process statistics through netlink (TASKSTATS)
-Enable per-task delay accounting (TASK_DELAY_ACCT)
-Enable extended accounting over taskstats (TASK_XACCT)
+- Export task/process statistics through netlink (TASKSTATS) （通过netlink导出任务/进程统计数据）
+- Enable per-task delay accounting (TASK\_DELAY\_ACCT) （启用针对每个任务的延迟统计）
+- Enable extended accounting over taskstats (TASK\_XACCT) （启用taskstats的扩展统计）
 
-TASKSTATS使内核可以通过网络套接字导出进程统计。网络套接字是内核和用户空间进程间IPC通信的一种形式。TASK_DELAY_ACCT监视进程并延迟关心资源的访问。比如，TASK_DELAY_ACCT可以看到X进程正在为了CPU时间而等待。这个进程接着就会被给予一些CPU时间如果TASK_DELAY_ACCT观察到进程已经等待了太长时间。TASK_XACCT收集额外的统计数据。为了更小的内核负载我会禁用这个。
+TASKSTATS使内核可以通过网络套接字导出进程统计。网络套接字是内核和用户空间进程间IPC通信的一种形式。TASK_DELAY\_ACCT监视进程并注意资源访问的延迟。比如，TASK_DELAY_ACCT可以看到X进程正在为了CPU时间而等待，如果TASK\_DELAY\_ACCT观察到进程已经等待了太长时间，这个进程接着就会被给予一些CPU时间。TASK\_XACCT会收集额外的统计数据，为了更小的内核负载我会禁用这个。
 
-现在接下来的目录就会显示出来-RCU子系统。读-拷贝修改子系统是一种低负载的同步机制，它允许程序查看到正在被修改/更新的文件。配置工具已经回答了第一个问题。
+现在接下来的目录就会显示RCU子系统：读取-复制-更新子系统是一种低负载的同步机制，它允许程序查看到正在被修改/更新的文件。配置工具已经回答了第一个问题。
 
-RCU Implementation
-> 1. Tree-based hierarchical RCU (TREE_RCU)
+RCU Implementation （RCU 实现方式）
+
+\> 1. Tree-based hierarchical RCU (TREE\_RCU) （树形分层结构的RCU）
+
 choice[1]: 1
 
-这是RCU类型的选择。除了TREE_RCU，还有classic RCU(更老的实现)。下一个问题(Consider userspace as in RCU extended quiescent state (RCU_USER_QS) [N/y/?])问的是RCU是否可以在CPU运行在用户空间时设置一个特殊的状态。这个选项通常被禁用因为这回增加太多消耗。下面是另一个RCU问题(Tree-based hierarchical RCU fanout value (RCU_FANOUT) [64]),问的是关于换出值。下一个问题(ree-based hierarchical RCU leaf-level fanout value (RCU_FANOUT_LEAF) [16]),是另外一个关于转出值的问题但它只处理叶级。还有另外一个RCU问题(Disable tree-based hierarchical RCU auto-balancing (RCU_FANOUT_EXACT) [N/y/?]),询问是否禁用RCU自动平衡。
+这里就选择“1”。除了TREE\_RCU，还有classic RCU(更老的实现)。下一个问题(Consider userspace as in RCU extended quiescent state (RCU\_USER\_QS) [N/y/?])（是否在用户空间记录扩展的安静状态）问的是RCU是否可以在CPU运行在用户空间时设置一个特殊的状态。这个选项通常被禁用，因为这会增加太多消耗。下面是另一个RCU问题(Tree-based hierarchical RCU fanout value (RCU\_FANOUT) [64])（树形分层结构的RCU端点数），问的是关于端点数。下一个问题(Tree-based hierarchical RCU leaf-level fanout value (RCU\_FANOUT\_LEAF) [16])（树形分层结构的RCU叶级端点数），是另外一个关于端点数的问题，但它只处理叶级。还有另外一个RCU问题(Disable tree-based hierarchical RCU auto-balancing (RCU\_FANOUT\_EXACT) [N/y/?])（是否禁用树形分层结构的RCU的自动平衡），询问是否禁用RCU自动平衡树，而采用上述的端点数。
 
-接下来，配置脚本将会询问"Accelerate last non-dyntick-idle CPU's grace periods (RCU_FAST_NO_HZ)"。在这之后会显示"Offload RCU callback processing from boot-selected CPUs (RCU_NOCB_CPU)";
+接下来，配置脚本将会询问"Accelerate last non-dyntick-idle CPU's grace periods (RCU\_FAST\_NO\_HZ)"（加速最后的非dyntick-idle CPU的RCU宽限期）。在这之后会显示"Offload RCU callback processing from boot-selected CPUs (RCU\_NOCB\_CPU)"（从选择引导的CPU里面卸载RCU回调）。（译注：此处作者没做解释。前一个能够节省电力，但是降低了性能；后一个用于调试。）
 
-下一个问题非常重要(Kernel .config support (IKCONFIG))。开发人员可以选择保存由该配置工具生成的设置到一个文件中。这个文件可以放在内核中,也可在一个模块中,或者完全不保存。这个文件安可以被想要编译一个完全跟某人相同内核的开发者使用。这个文件还可以帮助开发人员使用一个更新的编译器重新编译一个内核。举例来说,开发人员配置并编译了一个内核。然而编译器有一些bug,但开发人员仍然需要使用这些设置的内核。值得庆幸的是,开发人员可以升级他们的编译器并使用设置文件来节省他们重新配置内核的时间。开发人员也可以在另一台计算机上保存源代码和配置文件并编译内核。至于另一个目的,开发人员可以加载该文件,并根据需要调整设置。我选择保存配置文件在一个模块中。这个问题 "Enable access to .config through /proc/config.gz (IKCONFIG_PROC)"询问这个文件是否是可以访问的。我选择了"yes"。
+下一个问题非常重要(Kernel .config support (IKCONFIG))（内核的.config支持）。开发人员可以选择保存由这个配置工具生成的设置到一个文件中。这个文件可以放在内核中，也可在一个模块中，或者完全不保存。这个文件可以被想要编译一个完全跟某人相同内核的开发者使用。这个文件还可以帮助开发人员使用一个更新的编译器重新编译一个内核。举例来说，开发人员配置并编译了一个内核，然而编译器有一些bug，但开发人员仍然需要一个使用这些设置的内核。而值得庆幸的是，开发人员可以升级他们的编译器，并使用设置文件来节省他们重新配置内核的时间。开发人员也可以在另一台计算机上保存源代码和配置文件并编译内核。至于另一个目的，开发人员可以加载该文件，并根据需要调整设置。我选择保存配置文件在一个模块中，这个问题 "Enable access to .config through /proc/config.gz (IKCONFIG\_PROC)"（启用通过/proc/config.gz来访问.config的功能）是询问这个文件是否是可以通过这次方式访问的，我选择了"yes"。
 
-下一个问题是内核使用多大的log缓冲区(Kernel log buffer size (16 => 64KB, 17 => 128KB) (LOG_BUF_SHIFT) [17])。更小的缓冲区意味着它无法像更大的缓冲区那样保持日志更长的时间。这个选择取决于开发者想要日志保持的时间。我选择的是"12"。
+下一个问题是内核使用多大的log缓冲区(Kernel log buffer size (16 => 64KB, 17 => 128KB) (LOG\_BUF\_SHIFT) [17])（内核日志缓冲区大小）。小的缓冲区意味着它无法像更大的缓冲区那样保持日志更长的时间。这个选择取决于开发者想要日志保持的时间，我选择的是"12"。
 
-接着，出现了另外一个问题。该问题询问关于是否启用NUMA(非一致性内存访问)知道内存/任务的布置的设置(Automatically enable NUMA aware memory/task placement (NUMA_BALANCING_DEFAULT_ENABLED))。如果设置了并且是NUMA的机器，那么NUMA自动平衡就会启用。在NUMA下，处理器可以比非本地内存(在另一台处理器上的内存或者处理器之间的共享内存)更快地访问它的本地内存。如果上面启用了(我启用了)，那么最好对这个问题"Memory placement aware NUMA scheduler (NUMA_BALANCING)"回答"yes"。这是一个NUMA调度器。
+接着，出现了另外一个问题。该问题询问关于是否启用NUMA(非一致性内存访问)的内存/任务的均衡(Automatically enable NUMA aware memory/task placement (NUMA_BALANCING\_DEFAULT\_ENABLED))（自动启用NUMA的内存/任务均衡）。如果在NUMA的机器上设置了该选项，那么NUMA自动平衡就会启用。在NUMA下，处理器可以比非本地内存(内存分配给另外一个处理器或在处理器之间共享的内存)更快地访问它的本地内存。如果上面启用了(我启用了)，那么最好对这个问题"Memory placement aware NUMA scheduler (NUMA\_BALANCING)"（由NUMA调度器进行内存分配）回答"yes"，这是一个NUMA调度器。
 
-在新的标题"Control Group support"下，因为先前的选择，"Control Group support (CGROUPS)"被自动地回答了"yes"。
+在新的标题"Control Group support"（Cgroup支持）下，因为先前的选择，"Control Group support (CGROUPS)"（Cgroup支持）被自动地回答了"yes"。
 
-以下设定(Example debug cgroup subsystem (CGROUP_DEBUG))是启动用于调式cgroup框架的一个简单的cgroup子系统。下一个选项(Freezer cgroup subsystem (CGROUP_FREEZER))可以让程序员可以冻结或者解冻cgroup内的任务。
+以下设定(Example debug cgroup subsystem (CGROUP\_DEBUG))（导出Cgroup子系统的调试信息）是启用一个用于调试cgroup框架的一个简单cgroup子系统。下一个选项(Freezer cgroup subsystem (CGROUP\_FREEZER))（冻结Cgroup子系统）可以让程序员可以冻结或解冻cgroup内的任务。
 
-注意：cgroup是一个进程组。
+注意：cgroup是一组进程。
 
-Next, we are asked “Device controller for cgroups (CGROUP_DEVICE)”. Cgroups (Control Groups) is a feature used to control resource usage. Answering “yes” will allow cgroup whitelists for the devices cgroups can open or mknod (system call for creating a file system node).
-下面我们要求回答"Device controller for cgroups (CGROUP_DEVICE)"。cgroup(控制组)是一种用来控制资源使用的特性。回答"yes"可以允许设备cgroup的白名单可以使用open和mknod系统调用(用来创建文件系统节点的系统调用)。
+下面我们要求回答"Device controller for cgroups (CGROUP\_DEVICE)"(Cgroup的设备控制器)。cgroup(控制组)是一种用来控制资源使用的特性。回答"yes"可以允许设备cgroup的白名单可以使用open和mknod系统调用(用来创建文件系统节点的系统调用)。
 
-下一个问题(Cpuset support (CPUSETS))询问的是内核是否可以创建和管理CPUSETS。这允许管理员可以在一个系统上动态分配各组内存节点并分配任务在这些内存上运行。这通常用于SMP和NUMA系统中。我这个问题回答的是"no"。
+下一个问题(Cpuset support (CPUSETS))（CPU分组支持）询问的是内核是否可以创建和管理CPU分组。这允许管理员可以在一个系统上动态分配各组内存节点，并分配任务在这些内存上运行。这通常用于SMP和NUMA系统中。我这个问题回答的是"no"。
 
 注意：请记住，如果我没有指定我选的是什么，那么我选的就是默认选项。
 
-启用cgroup统计子系统(Simple CPU accounting cgroup subsystem (CGROUP_CPUACCT))会生成一个资源控制器来监控在一个cgroup组内的独立任务的CPU使用情况。我选择了"no"。
+启用cgroup统计子系统(Simple CPU accounting cgroup subsystem (CGROUP\_CPUACCT))（Cgroup子系统的简单CPU统计）会生成一个资源控制器来监控在一个cgroup组内的独立任务的CPU使用情况。我选择了"no"。
 
-资源计数器(Resource counters (RESOURCE_COUNTERS))使控制器独立资源能够统计工作在cgroup上的设备。我选择了"no"。
+资源计数器(Resource counters (RESOURCE\_COUNTERS))使控制器独立资源能够统计工作在cgroup上的设备。我选择了"no"。
 
 下一个问题(Enable perf_event per-cpu per-container group (cgroup) monitoring (CGROUP_PERF))允许开发者扩展扩展每个CPU的模式，使它可以只监控运行在特定CPU上的一个特别的cgroup组的线程。
 
