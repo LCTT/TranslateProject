@@ -1,44 +1,46 @@
-                                  疯狂站坑
-                      
-Install Ubuntu 13.10 Server Step by Step
-================================================================================
-Yesterday was a big day for Canonical and Ubuntu fans. Yes, After 6 months long effective development, Ubuntu 13.10 Desktop & Server, Lubuntu 13.10, Kubuntu 13.10 was finally made available to download.
+一步步安装Ubuntu 13.10服务版
 
-You might want to check out our existing guides:
+================================================================================
+
+昨天对于Canonical和Ubuntu粉丝来说是一个值得庆祝的日子.不错,在漫长六个月的有效开发,Ubuntu 13.10 桌面版&服务版,Lubuntu 13.10, kubuntu 13.10终于可以下载了!.
+
+你可以会先看看我们现有的指南:
 
 - >>> [pUbuntu 13.10 has been released | Installation instructions with screenshots][1]
+
 - >>> [How to upgrade from Ubuntu 13.04 Raring to Ubuntu 13.10 Saucy Salamander][2]
+
 - >>> [Top things to do after installing Ubuntu 13.10 Saucy Salamander][3](注：这个文章我们翻译过，可以把链接改成我们发布的地址，发布的时候删除包括括号在内的这些文字)
 
-In the above awesome series, we want to add one more guide about **Ubuntu 13.10 server installation**. Here you go.
+上面都是是佷棒的文章,我们想再添加一个关于**Ubuntu 13.10服务版的安装**的指南.就是这样.
 
-Download the latest version of **[Ubuntu 13.10 server edition here][4]**. Boot your server with latest Ubuntu 13.10 server ISO. You will see the following like screen.
+下载最新的版本**[Ubuntu 13.10 服务版][4]**.用最新的Ubuntu 13.10服务版镜像引导你的服务器.你将会看到类似下面的显示.
 
-Select your desired language.
+选择您需要的语言.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Server1.png)
 
-Click Install Ubuntu Server.
+点击安装Ubuntu服务版.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Server2.png)
 
-Select Installation language.
+选择安装语言.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Server3.png)
 
-Select your Country.
+选择你的国家.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Server4.png)
 
-Configure locale settings.
+配置区域设置.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Server5.png)
 
-Detect keyboard layout.
+检测键盘布局.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Server6.png)
 
-Select the keyboard layout.
+选择键盘布局.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Server7.png)
 
@@ -46,67 +48,67 @@ Select the keyboard layout.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Server9.png)
 
-Enter your server hostname.
+输入你的服务器主机名.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Server10.png)
 
-Enter the username.
+输入用户名.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Server11.png)
 
-Choose user password.
+设置用户密码.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Server12.png)
 
-If you want to encrypt the user home directory, select Yes, else select No.
+如果你想加密用户主目录,选择Yes,否则选择No.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Server13.png)
 
-Select the partitioning method.
+选择分区方案.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Server14.png)
 
-Now installation will begin.
+开始安装.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Server15.png)
 
-If you have any proxy server on your network, enter the proxy server IP address.
+如果在你的网络上有代理服务,输入代理服务的IP地址.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Server16.png)
 
-Select Install security updates automatically and press enter.
+选择安装安全更新,然后回车.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Server17.png)
 
-Choose the software to install.
+选择要安装的软件.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Server18.png)
 
-Click Yes to install Grub boot loader. 
+点击Yes安装Grub引导装载程序.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Server20.png)
 
-Installation is completed now. Select Continue to reboot the server.
+安装完成以后.选择继续重启服务器.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Server21.png)
 
-Login to Ubuntu server.
+登入Ubuntu服务器.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Server22.png)
 
-Enter the username and password to login.
+输入用户名和密码登入.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Server23.png)
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/10/Server24.png)
 
-That’s it. Your Ubuntu 13.10 server is up and running now.
+这就是这次的指南.现在你的Ubuntu 13.10 服务版已经启动运行了.
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/install-ubuntu-server-13-10-step-step/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Luoxcat](https://github.com/Luoxcat) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
