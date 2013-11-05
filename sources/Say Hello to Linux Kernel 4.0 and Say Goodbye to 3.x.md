@@ -1,3 +1,6 @@
+
+翻译中 by小眼儿
+
 Say Hello to Linux Kernel 4.0 and Say Goodbye to 3.x
 ================================================================================
 **Linus Tovalds is now thinking about changing the numbering of the kernel pretty soon, to 4.0, to mark the launch of a bug fix release.**
