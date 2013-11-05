@@ -1,15 +1,15 @@
-现在可以通过基于Debian的Clonezilla(再生龙) Live 2.2.0-13 备份和恢复设备
+通过Clonezilla(再生龙) Live 2.2.0-13 进行冷备份及恢复
 ================================================================================
 
-Clonezilla Live 2.2.0-13,是一个基于DRBL,Partclone,和udpcast的Linux发行版,允许用户完成一些裸机备份和还原,目前还只是测试版.
+Clonezilla Live 2.2.0-13是一个基于DRBL、Partclone和udpcast的Linux发行版，允许用户完成一些裸机备份和还原，目前还只是测试版。
 
 ![](http://i1-news.softpedia-static.com/images/news2/Metal-Backup-and-Recovery-Is-Now-Possible-with-Debian-Based-Clonezilla-Live-2-2-0-13-391374-2.jpg)
 
-[Clonezilla Live 2.2.0-13][1] 是这个发行版的最新开发版本,开发人员已经选择加快更新版本号.没有太大的差异,但是一些包已经更新了.
+[Clonezilla Live 2.2.0-13][1] 是这个发行版的最新开发版本，开发人员已经准备加快版本迭代。这个版本没有太大的变化，只是更新了一些包。
 
-公告宣布：“基本的GNU/Linux操作系统已经升级,这次放行版基于Debian Sid库(2013-10-14).DRBL包已经更新到2.5.12-drbl1,clonezilla更新到了3.7.15-drbl1,” .
+通告说：“基本的GNU/Linux操作系统已经升级，这次发行版基于Debian Sid库(2013-10-14)。DRBL包已经更新到2.5.12-drbl1，clonezilla更新到了3.7.15-drbl1。” 
 
-开发者还集成了Samba 4.0.10,这不是最后的稳定发布版本,但它仍然是最新的.
+开发者还集成了Samba 4.0.10，这不是最后的稳定发布版本，但它仍然是最新的。
 
 请注意这是个开发版本,请不要安装在生产机上.这只用于测试目的.
 
