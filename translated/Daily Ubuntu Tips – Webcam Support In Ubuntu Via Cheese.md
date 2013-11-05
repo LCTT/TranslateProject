@@ -27,4 +27,4 @@ via: http://www.liberiangeek.net/2013/09/daily-ubuntu-tips-webcam-support-ubuntu
 译者：[rogetfan](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
 
 [1]:https://help.ubuntu.com/community/UVC
-[2]:http://www.ideasonboard.org/uvc/
+[2]:http://www.ideasonboard.org/uvc/ 
