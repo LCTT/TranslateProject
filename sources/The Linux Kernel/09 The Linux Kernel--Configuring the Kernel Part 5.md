@@ -1,4 +1,3 @@
-occupied by rogetfan
 09 The Linux Kernel: Configuring the Kernel Part 5
 ================================================================================
 ![](http://www.linux.org/attachments/slide-jpeg.428/)
