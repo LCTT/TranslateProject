@@ -61,7 +61,7 @@ ttyrec & ttyplay - Linux记录播放终端会话
 
 ![](http://mylinuxbook.com/wp-content/uploads/2013/10/ttyrec-1.png)
 
-> ttyplay
+**> ttyplay**
 
 ![](http://mylinuxbook.com/wp-content/uploads/2013/10/ttyplay-1.png)
 
