@@ -44,7 +44,7 @@
 
 只是一些配置项，然后操作系统已经准备就绪。
 
-1）一个静态IP让一切变得更容易，切换eth0的网络设置：
+1）一个静态IP让一切变得更容易，切换eth0的网络设置： 
     >>> sudo nano -w /etc/network/interfaces  
     
 更改eth0 `iface eth0 inet dhcp` 行，如下所示（更改以满足你的家庭网络设置）：
