@@ -1,3 +1,5 @@
+translating by coolpigs
+
 How to Install Linux Kernel 3.12 in Ubuntu 13.10
 ================================================================================
 **Ubuntu 13.10 users don't have to look with envy at the new Linux kernels that are released, and they can update their systems with relative ease.**
