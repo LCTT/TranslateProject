@@ -1,3 +1,4 @@
+                翻译  中   L u o x
 10 Lesser Known Linux Commands – Part 2
 ================================================================================
 Continuing the last conversation from [11 Lesser Known Useful Linux Commands – Part I][1]（注：此文已经被其他网站翻译，链接：[http://www.searchsv.com.cn/showcontent_77595.htm][2]或者：[http://www.oschina.net/translate/11-lesser-known-useful-linux-commands][5]) here in this article we will be focusing on other lesser known Linux commands, that will prove to be very much useful in managing Desktop and Server.
