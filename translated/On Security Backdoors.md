@@ -29,7 +29,7 @@ John说，NSA及其代理部门始终在降低该标准的安全水平与执行�
 
 ---
 
-via: https://freedom-to-tinker.com/blog/felten/on-security-backdoors/
+via: https://freedom-to-tinker.com/blog/felten/on-security-backdoors/ 
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
