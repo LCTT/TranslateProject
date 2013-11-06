@@ -1,3 +1,5 @@
+翻译中 by小眼儿
+
 The Halloween Documents: Microsoft's Anti-Linux Strategy 15 Years Later
 ================================================================================
 > It's been 15 years since leaked memos revealed Microsoft's anti-Linux and open source strategy. Here's how it failed.
