@@ -1,3 +1,5 @@
+translating by coolpigs
+
 How to Make a YouTube Instructional Screencast Video on Linux
 ================================================================================
 A picture is worth a thousand words, and a well-crafted how-to video is darned near priceless. Linux has all the tools you need to make high-quality and useful instructional videos. We shall make a simple screencast with the wonderful Kdenlive video editor and the Audacity audio recorder and editor, and learn how to share this splendid screencast on YouTube.
