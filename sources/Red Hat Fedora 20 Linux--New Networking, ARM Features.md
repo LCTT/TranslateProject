@@ -1,3 +1,4 @@
+[being translated by bazz2]
 Red Hat Fedora 20 Linux: New Networking, ARM Features
 ================================================================================
 The latest edition of [Fedora Linux][1], the open source operating system that helps form the basis for [Red Hat][2]'s (RHT) enterprise server platform, is set to debut soon -- though a couple weeks later than initially planned, as bugs have held up the release.  Still, it could bring some of this autumn's biggest changes in desktop Linux when it appears in December.
