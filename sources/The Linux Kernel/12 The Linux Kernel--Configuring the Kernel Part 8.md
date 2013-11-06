@@ -1,3 +1,5 @@
+Translating---------------geekpi
+
 12 The Linux Kernel: Configuring the Kernel Part 8
 ================================================================================
 ![](http://www.linux.org/attachments/slide-jpg.484/)
