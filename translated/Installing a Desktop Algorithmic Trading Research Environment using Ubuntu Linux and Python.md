@@ -2,22 +2,22 @@
 ================================================================================
 这篇文章将讨论在ubuntu下,使用Python编程语言,来搭建一个强大,高效和易交互的算法交易策略研究环境.几乎所有的后续的算法交易文章都将利用此环境.
 
-搭建此环境需要安装以下软件,它们都是开源的或免费下载的:
+搭建此环境需要安装以下软件,它们都是开源且免费下载的:
 
-- [Oracle VirtualBox][1] - 虚拟机
+- [Oracle VirtualBox][1] - 用于虚拟操作系统
 - [Ubuntu Desktop Linux][2] - 作为我们的虚拟操作系统
 - [Python][3] - 核心编程环境
-- [NumPy][4]/[SciPy][5] - 快速、高效的数组和矩阵运算
-- [IPython][6] - Python的可视化交互环境
-- [matplotlib][7] - 图形化的虚拟数据
-- [pandas][8] - 数据“冲突”和时间序列分析
-- [scikit-learn][9] - 机器学习和人工智能算法
+- [NumPy][4]/[SciPy][5] - 用于快速、高效的数组和矩阵运算
+- [IPython][6] - 用于Python的可视化交互开发
+- [matplotlib][7] - 用于数据的图形可视化
+- [pandas][8] - 用于数据“冲突”和时间序列分析
+- [scikit-learn][9] - 用于机器学习和人工智能算法
 
-这些工具（配合合适的 [证券master数据库][10]），将使我们能够创建一个快速可交互的策略研究环境。Pandas是专为数据“冲突”设计的，它可以高效地导入和清洗时间序列数据。NumPy/SciPy在底层运行，使得系统被很好的优化。IPython/matplotlib (和qtconsole，详见下文)使结果可视化可交互并快速迭代。scikit-learn可让我们将机器学习技术应用到我们的策略中，以进一步提高性能。
+这些工具（配合合适的 [证券master数据库][10]），将使我们能够创建一个快速可交互的策略研究环境。Pandas是专为数据“冲突”设计的，它可以高效地导入和清洗时间序列数据。NumPy/SciPy在底层运行，使得系统被很好的优化。IPython/matplotlib (以及qtconsole，详见下文)使结果可视化可交互并快速迭代。scikit-learn可让我们将机器学习技术应用到我们的策略中，以进一步提高性能。
 
-请注意，我写这篇教程是为了那些无法或不愿意直接安装ubuntu系统的windows或Mac OSX用户，通过VirtualBox来搭建此环境。VirtualBox使我们可在host操作系统中创建一个虚拟机，可模拟guest操作系统，而丝毫不影响host操作系统。由此我们可以在完整安装Ubuntu前练习Ubuntu和Python工具。如果已经安装Ubuntu桌面系统，可跳过“在Ubuntu下安装Python研究环境包”这一节。
+请注意，我写这篇教程是为了那些无法或不愿意直接安装ubuntu系统的windows或Mac OSX用户，通过VirtualBox来搭建此环境。VirtualBox使我们可在host操作系统中创建一个虚拟机，可模拟guest操作系统，而丝毫不影响host操作系统。由此我们可以在完整安装Ubuntu前练习Ubuntu和Python工具。如果已经安装Ubuntu桌面系统，可直接跳到“在Ubuntu下安装Python研究环境包”这一节。
 
-##安装VirtualBoX和Ubuntu##
+##安装VirtualBoX和Ubuntu Linux##
 
 Mac OSX操作系统上关于VirtualBox安装的部分已经写过了，这里将简单的移到Windows环境中。一旦各种host操作系统下的VirtualBox安装完毕，其它过程就都一样了。
 
@@ -25,13 +25,13 @@ Mac OSX操作系统上关于VirtualBox安装的部分已经写过了，这里将
 
 **下载Ubuntu桌面磁盘镜像**
 
-打开收藏夹，导航到[Ubuntu 桌面][11]主页，然后选择Ubuntu 13.04：
+打开Web浏览器，导航到[Ubuntu 桌面][11]主页，然后选择Ubuntu 13.04：
 
 ![](https://s3.amazonaws.com/quantstart/media/images/qs-python-ubuntu-install-0004.png)
 
 *下载Ubuntu13.04（64位（如适用））*
 
-你会被问及是否愿意捐赠一些money，不过这个是可选的。进入下载页面后选择Ubuntu 13.04。你需要选择是否要下载32位或64位版本。很可能你是64位系统，但如果你有疑问，那么选择32位。在Mac OSX系统上，Ubuntu桌面ISO磁盘镜像将保存到下载目录下。安装VirtualBox后我们就要用到它了。
+你会被问及是否愿意捐赠一些money，不过这个是可选的。进入下载页面后选择Ubuntu 13.04。你需要选择是否要下载32位或64位版本。很可能你是64位系统，但如果你有疑问，那么选择32位。在Mac OSX系统上，Ubuntu桌面ISO磁盘镜像将保存到Downloads目录下。安装VirtualBox后我们就要用到它了。
 
 
 **下载和安装VirtualBox**
@@ -49,20 +49,20 @@ Mac OSX操作系统上关于VirtualBox安装的部分已经写过了，这里将
 
 *双击安装包图标，安装VirtualBox*
 
-打开后，按照安装说明操作，保持默认（除非你觉得有必要修改他们！）。VirtualBox安装完毕后，可从Applications文件夹中打开（可通过Finder搜索到）。VirtualBox运行过程中它的图标将出现在Dock栏里,如果你以后想经常以虚拟机方式使用Ubuntu,你可以将VirtualBox图标永久保存在Dock栏中:
+打开后，按照安装说明操作，保持默认（除非你觉得有必要修改他们！）。VirtualBox安装完毕后，可从Applications文件夹中打开（可通过Finder搜索到）。VirtualBox运行过程中它的图标将出现在下面的Dock栏里,如果你以后想经常以虚拟机方式使用Ubuntu,你可以将VirtualBox图标永久保存在Dock栏中:
 
 
 ![](https://s3.amazonaws.com/quantstart/media/images/qs-python-ubuntu-install-0008.png)
 
 *还没有磁盘镜像的VirtualBox*
 
-点击类似齿轮的图标,创建一个新的虚拟盒子(也就是虚拟机),命名为"Ubuntu Desktop 13.04 Algorithmic Trading"(你可以使用别的类似的描述):
+点击“新建”（类似齿轮的图标）,创建一个新的“virtual box”(例如，虚拟操作系统),命名为"Ubuntu Desktop 13.04 Algorithmic Trading"(你可以使用别的类似的描述):
 
 ![](https://s3.amazonaws.com/quantstart/media/images/qs-python-ubuntu-install-0009.png)
 
 *命名我们的新虚拟环境*
 
-分配虚拟机内存.因为是测试系统,所以我只分配了512Mb.一个实际的回溯引擎因为效率原因需要一个本地安装(这样才能明显分配到更多内存):
+分配虚拟机内存.因为是测试系统,所以我只分配了512Mb.一个实际的backtesting引擎因为效率原因可能需要本地安装(因此需分配多的多的内存):
 
 ![](https://s3.amazonaws.com/quantstart/media/images/qs-python-ubuntu-install-0010.png)
 
@@ -74,7 +74,6 @@ Mac OSX操作系统上关于VirtualBox安装的部分已经写过了，这里将
 
 *选择镜像所使用的硬盘类型*
 
-You will now see a complete system with listed details:
 完整系统的详细信息如下: 
 
 ![](https://s3.amazonaws.com/quantstart/media/images/qs-python-ubuntu-install-0012.png)
@@ -114,7 +113,7 @@ You will now see a complete system with listed details:
 
 *输入您的用户名和密码（此密码是管理员密码）*
 
-现在， Ubuntu将安装文件。它应该是比较快的，因为它是从硬盘复制到硬盘！完成后VirtualBox将重启。如果不自行重启，你可以去菜单强制关机。接下来将回到Ubuntu的登录界面：
+现在， Ubuntu将安装文件。它应该是比较快的，因为它是从硬盘复制到硬盘！完成后VirtualBox将重启。如果不自行重启，你可以去菜单强制重启。接下来将回到Ubuntu的登录界面：
 
 
 ![](https://s3.amazonaws.com/quantstart/media/images/qs-python-ubuntu-install-0019.png)
@@ -128,22 +127,22 @@ You will now see a complete system with listed details:
 
 *Ubuntu桌面登录后的整体界面*
 
-最后需要做的事是点击火狐图标，通过访问一个网站（我选择QuantStart.com，有意思吧！），来测试互联网/网络功能是正确的：
+最后需要做的事是点击火狐图标，通过访问一个网站（我选择QuantStart.com，有意思吧！），来测试互联网/网络功能正常：
 
 
 ![](https://s3.amazonaws.com/quantstart/media/images/qs-python-ubuntu-install-0021.png)
 
-*Ubuntu中的火狐浏览器（注：原文此处为"The Ubuntu Desktop login screen"）*
+*Ubuntu中的火狐浏览器
 
-现在Ubuntu桌面已经安装完毕，接下来，我们就可以开始安装的算法交易研究环境软件包。
+现在Ubuntu桌面已经安装完毕，接下来，我们就可以开始安装算法交易研究环境软件包。
 
-## Installing the Python Research Environment Packages on Ubuntu ## 在Ubuntu上安装Python研究环境软件包
+## 在Ubuntu上安装Python研究环境软件包  
 
 点击左上角的搜索按钮，在输入框里输入“Terminal”，弹出命令行界面。双击终端图标启动终端：
 
 ![](https://s3.amazonaws.com/quantstart/media/images/qs-python-ubuntu-install-0022.png)
 
-**Ubuntu中的终端界面（注：原文此处为"Ubuntu Desktop login screen"）*
+**Ubuntu中的终端界面*
 
 所有后续的命令都在此终端输入。
 
@@ -159,13 +158,13 @@ You will now see a complete system with listed details:
 
     E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
 
-为了解决这个问题，你只需再次运行"sudo apt-get -y update"或者万一第一种方式不起作用，你可以在该站点([http://penreturns.rc.my/2012/02/could-not-get-lock-varlibaptlistslock.html][13])上查看是否有其他的命令。
+为了解决这个问题，再次运行"sudo apt-get -y update"或者它不起作用，你可以在该站点([http://penreturns.rc.my/2012/02/could-not-get-lock-varlibaptlistslock.html][13])上查看是否有其他的命令。
 
-一旦这些更新命令成功执行，接下来我们需要安装Python，NumPy/SciPy，matplotlib，pandas，scikit-learn和IPython。我们将开始安装Python开发包和编译器，编译器将在编译所有软件的时候用到：
+一旦这两个更新命令成功执行，接下来我们需要安装Python，NumPy/SciPy，matplotlib，pandas，scikit-learn和IPython。我们将从Python开发包和编译器开始安装，编译器将在编译所有软件的时候用到：
 
     sudo apt-get install python-pip python-dev python2.7-dev build-essential liblapack-dev libblas-dev
 
-一旦安装必要的软件包，我们就可以通过pip，即Python包管理器，安装NumPy的。pip将下载NumPy的zip包，然后从源代码编译。请记住，编译需要花费一些时间，大概10-20分钟！
+一旦必要的软件包已安装，我们就可以通过pip，即Python包管理器，安装NumPy。pip将下载NumPy的zip包，然后从源代码编译。请记住，编译需要花费一些时间，大概10-20分钟！
 
     sudo pip install numpy
 
@@ -238,11 +237,11 @@ NumPy安装完了后,我们需要在继续之前检查它是否可用。如果�
     Index: []
     >>> exit()
 
-最后, 我们需要安装IPython.这是一个交互式的Python解释器，它提供了一个更精简的工作流相比标准的Python控制台。在以后的教程中，我将讲述IPython在算法交易开发中的充分的用处：
+最后, 我们需要安装IPython.这是一个交互式的Python解释器，它相比标准的Python控制台，提供了一个更精简的工作流。在以后的教程中，我将讲述IPython在算法交易开发中的完整用途：
 
     sudo pip install ipython
 
-虽然IPython本身已经相当有用，但它通过包含qtconsole可以有更强大的能力,qtconsole提供了内联matplotlib可视化的能力。尽管如此，它需要多一点点的工作以使它启动和运行。
+虽然IPython本身已经相当有用，它通过包含qtconsole可以有更强大的能力,qtconsole提供了内联matplotlib可视化的能力。尽管如此，它需要多一点点的工作以使它启动和运行。
 
 首先，我们需要安装[Qt库][14]。对于这一点，你可能需要更新你的软件包（我做了！）：
 
