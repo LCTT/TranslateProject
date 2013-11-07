@@ -1,3 +1,4 @@
+translating by Linux-pdz
 Game-editor Leadwerks 3.1 demoed as running on Ubuntu with native look & feel
 ================================================================================
 [Leadwerks][1] is a versatile game-development application, currently traversing a porting-to-Linux road with the purpose of enabling game-development actions running natively on Linux (Ubuntu).
