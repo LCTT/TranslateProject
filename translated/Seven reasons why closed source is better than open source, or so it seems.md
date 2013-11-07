@@ -1,56 +1,47 @@
-Seven reasons why closed source is better than open source, or so it seems
 闭源(或者看起来似乎)优于开源的七个缘由
 ================================================================================
 ![](http://opensource.com/sites/default/files/imagecache/image-full-size/images/business/BUSINESS_asusual_deadend.png)
-
-It might seem strange coming from the founder of OpenLogic, a company focused on helping others succeed with open source, but the fact is that closed source is better than open source in certain situations.  
+ 
 开源在某些情况下优于开源，看起来似乎挺奇怪的，因为这样的观点来竟然自于OpenLogic的创办人，而该公司专注于在开源领域提供帮助。  
 
 针对闭源……
-With closed source…
 
-**1. You never have to fix components when something goes wrong.**  
-**1. 出了问题，不用自己搞定。**
-
-With any software, things occasionally go wrong. When this happens with open source software, you, or an engineer who owes you a favor, may need to spend time debugging the problem. This entails reading through code, working with an open source community, or your open source support provider, and applying a fix. With closed source, on the other hand, once you determine that the problem lies in your vendor's code, you're all done! All you have to do is file a ticket and wait. Sure, you may have to wait a few months or years for the fix, and sometimes it never comes at all, but there's nothing you can do about that! Just kick back, relax, and hope for the best.  
-只要是软件，难保不出问题。要是开源软件出了这事儿，要么你自己，要么某个欠你人情债的工程师，总得有个人要花费时间排除bug。通览代码，求助于开源社区或者开源软件的提供商，通过这些手段来解决问题。
+**1. 出了问题，不用自己搞定。**  
+ 
+只要是软件，难保不出问题。要是开源软件出了这事儿，要么你自己，要么某个欠你人情债的工程师，总得有个人要花费时间排除bug。通览代码，求助于开源社区或者开源软件的供应商，通过这些手段来解决问题。
 但是闭源呢，一旦你确定开发商代码出了问题，ok，你的工作到此为止！ 你只需发个文件，等着就行了。
 当然，可能会等上几个月或者几年，问题才能得到解决，更甚者永远得不到答复。但是除此之外，你还能做什么呢。 把问题踢回去，放松，期待最好的解决方案，仅此而已。
-
-**2. You don't have to worry about contributing your changes back to a community.**  
+  
 **2. 不必担心贡献回流到社区。**  
 
-With open source, there's an expectation that if you fix a bug or make an improvement, you'll contribute your code back to the community that can help test and maintain it over time. With closed source, you never have to contribute anything to anybody. Of course, that's because you can't change the code as you don't have access to it, but you may create your own workarounds to problems you run into. Sure, you might have to keep working around the same issues version after version, but at least you never have to work with the community to make the solution better for others.
 如果用的是开源软件， 很有可能， 你解决了一个bug或者做出了改善，之后你的代码就会进入到社区，随着时间的推移从而帮助测试或者维护。闭源就不同了，你根本用不着给任何人做任何事情。当然，那是因为你接触不到代码，所以也修改不了，但是你可以针对遇到的问题创建自己的解决方案。你可以一直只针对同一个问题，改善再改善，一个版本接着一个版本，至少用不着跟社区打交道，为其他人提供更好的解决方法。
 
-**3. You don't have to think about open source licensing terms and compliance issues.**  
 **3. 你不必考虑开源许可条款及规定事宜。**
 
-With open source, you have to comply with the license terms specified by the components you're using. It can take some time to understand the terms of an Apache Software License versus a General Public License (GPL), for example. Depending on which open source components you use and how you use them (e.g., distributing to third parties or using only for internal purposes), different license terms may apply (e.g., attributing the open source component in your documentation). Companies like OpenLogic make it easy to understand and comply with open source licensing terms, but with closed source, you don't have to worry about any of this! Your vendor's license agreement takes away all of your rights to the software and makes it nearly impossible to consider any usage not explicitly approved by your corporate attorneys, so you don't even have to think about it. Sure, you have to deal with license counting, surprise software compliance audits, terms that worsen over time, and nearly incomprehensible legalese, but at least you don't have to understand how you're using open source components.  
-针对开源，你必须符合遵循所使用的组件的许可条款。
+针对开源，你必须遵循所使用的组件的许可条款。例如，想要搞明白Apache软件许可证和GPL之间的区别与联系，是需要花费一定的时间的。使用哪一种许可证取决于你所用的开源组件以及你如何使用这些组件(发布给第三方或者内部使用)，据此都有不同的许可证可供应用（可附加到文档中进行说明）。像OpenLogic这样的公司可以很容易地理解并遵守开源许可，但是针对闭源，你大可不必担心这类事情！你的供应商的许可协议把有关软件的所有的权利都收走了，如果没有你的公司的律师明确同意的情况下，打算以独有的方式使用软件几乎是不可能的，想都不要想。当然，你还得对付许可证计数，突如其来的软件合规性审计，随着时间的推移而恶化的条款，几乎难以理解的法律术语，但至少你不必了解如何使用开源组件。
 
-**4. You don't have to choose among dozens of options for every component.**
+**4. 你用不着为每个组件在众多选项中进行选择**
 
-Open source offers lots of solutions when considering a database, web server, application server, programming language, GUI framework, and the like. In practically every category, you can find robust offerings built in a variety of languages with different architectural approaches. It's also very common to find similar tools that are optimized for different use cases (e.g., performance versus scalability versus simplicity). To make sure a tool will work best for your particular use case, download it and give it a try. With closed source, you don't have to contend with so many options. You only have to explore two or three large vendors in each market. You can save time if the vendors don't offer free trials, or make it hard to get started by forcing you to pay for a trial or sign trial agreements up front.
+针对数据库，Web服务器，应用服务器，编程语言，图形用户界面框架，类似的方面等等，开源都提供了大量的解决方案。在每一个特定的领域，你都可以找到运用不同的架构方法，使用各种语言构建的健壮的成品。找一款功能相似的工具很容易，这些工具都针对不同的使用场合进行了优化（性能、可扩展性、简洁之间的比较）。为了确信一个工具软件在既定场合下功能够满足需求，可以下载下来，试用一下。使用闭源软件的话，你就用不着对付那么多的选项。你只需要在每个领域探索两三个大厂商提供的产品。如果供应商没有提供免费试用版本，或者很难说服你为试用品买单，甚至签署试用协议，那你就节省时间了。
 
-**5. You don't have to look around for slideshows.**
+**5. 你不必四处找幻灯片**  
+  
+如果打算找一些会议简报，架构图表，截图，以及其他软件相关的文档，这需要花费一定的时间。使用开源软件，你得读百科，访问论坛，还有邮件列表，才能获取到你需要的相关组件的信息。使用闭源软件，一通电话就足够了，只需坐在自己舒适的办公室，会有西装革履的专业人士把PowerPoint演示文稿寄送到你的面前。
+当然，你得预先提供自己的联系方式，销售人员是不会不给你打电话的。这样看来，至少自己没必要粗略地在网上搜索漂亮的图形。
 
-It can take some time to find conference presentations, architectural diagrams, screenshots, and other documentation for any software, but with open source you might have to read wikis, forums, and email lists to get the information you need about a particular component. With closed source, you're never more than a phone call away from a nice PowerPoint presentation delivered right in the comfort of your office by professional salespeople in nice suits. Sure, you'll have to provide your contact information up front and the salespeople will never stop calling you, but at least you don't have to search the web for glossy slides with beautiful graphics.
+**6. 你无需到处寻求技术支持**
 
-**6. You don't have to look around for technical support.**
+你可以得到来自开源社区，自己的工程师，或专业开源组织的帮助。这可能需要一些时间，以决定是否要服务等级协议（SLA）的支持便于在保证的时间内得到答复，就像从OpenLogic那里获得帮助一样，或者如果你觉得随意的话可以张贴问题到邮件列表，自己解决。闭源就不同了，你根本不需要担忧从哪获得帮助。而且，你可能根本用不着和工程师当面交谈，只需要知道给谁打电话就OK了。
 
-You can get open source support from a community, your own engineers, or professional open source support organizations. It can take some time to decide whether you want Service Level Agreement (SLA) support with guaranteed response times like you can get from OpenLogic, or if you feel comfortable posting issues to mailing lists or doing your own support. With closed source, you never have to worry about where you're going to get support. Sure, you might not ever get to speak to an actual engineer, but at least you always know who to call.
+**7. 认输就行了**
 
-**7. You can just throw in the towel.**
+开源软件，总会有办法解决问题，打补丁，改善，强化，重构，升级，或者重写。没可能跟闭源那样，甩手走开。当然，你可以谩骂开发出这个导致问题的软件的社区，但是你仍然可以解决问题，从社区或者组织那里获得帮助，或者自己动手解决。   
 
-With open source, there's always a way to get something fixed, patched, improved, enhanced, refactored, upgraded, or rewritten. There's no easy way to throw up your arms and walk away like there is with closed source. Sure, you can curse the community that developed the open source component causing you problems, but you can usually work around the issue, get help from the community or a support organization, or even fix the issue yourself. It's just not nearly as satisfying as cursing a commercial vendor and calling it a day.
-
-So, there you have it. Seven good reasons why closed source is better than open source. Do you have others you'd like to share?
-
+嗯，你都了解了。为甚么闭源优于开源的几条缘由。你还有要补充的吗？
 --------------------------------------------------------------------------------
 
 via: http://opensource.com/business/13/10/seven-reasons-closed-better-than-open-source
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[译者ID](https://github.com/l3b2w1) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
