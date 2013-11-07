@@ -117,7 +117,7 @@ Ubuntu’s新的‘Smart Scopes’服务承诺做成一个有帮助的工具，�
 
 via: http://www.omgubuntu.co.uk/2013/10/10-things-installing-ubuntu-13-10
 
-译者：[crowner](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[crowner](https://github.com/译者ID) 校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
