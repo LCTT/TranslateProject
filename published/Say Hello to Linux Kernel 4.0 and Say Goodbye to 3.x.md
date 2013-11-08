@@ -2,8 +2,6 @@ Linux内核4.0就要来了！准备对3.x说再见吧！
 ================================================================================
 **Linux Torvalds目前正在考虑尽快更换内核的版本号到4.0，新版本将主要专注于bug修复**
 
-![](http://i1-news.softpedia-static.com/images/news2/Say-Hello-to-Linux-Kernel-4-0-and-Say-Goodbye-to-3-x-396734-2.jpg)
-
 据Linux内核开发维护人员介绍，不远的将来，为了便于管理，Linux的内核版本号将从3.x跳到4.x。Linus Torvalds表示会尽快将其付诸实施。
 
 他在Linux内核3.12的[声明][1]中说道：“我不希望我们再有类似2.x那样令人发狂的版本号经历，因此很快某个时候，我们将直接从3.x跳到4.x，这样版本号更短，更便于记忆。虽然目前暂时还未实现，但是我会尽快，可能最多一年左右吧，到时也许是3.19什么的，之后，就会是4.0。”
@@ -20,7 +18,7 @@ Linus说，“之所以我提到‘4.0’，是因为如果我们用几乎一年
 
 via: http://news.softpedia.com/news/Say-Hello-to-Linux-Kernel-4-0-and-Say-Goodbye-to-3-x-396734.shtml
 
-译者：[Mr小眼儿](http://blog.csdn.net/tinyeyeser) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Mr小眼儿](http://blog.csdn.net/tinyeyeser) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
