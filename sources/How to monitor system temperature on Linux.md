@@ -1,3 +1,5 @@
+                                我知道psensor  我知道  我翻译
+                        
 How to monitor system temperature on Linux
 ================================================================================
 In most cases, you are not supposed to be worried about the temperature of your computer. Barring manufacturing defects, hardware is designed so that its temperature does not exceed maximum operating temperature. But even without any hardware fault, overheating can occur due to various software issues, e.g., buggy graphics card driver, misconfigured fan control program, malfunctioning CPU frequency scaling daemon, etc.
