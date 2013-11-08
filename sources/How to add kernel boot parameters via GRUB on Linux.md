@@ -1,3 +1,6 @@
+
+**【晨光】翻译中**
+
 How to add kernel boot parameters via GRUB on Linux
 ================================================================================
 The Linux kernel can be supplied with various parameters during boot time or at run time. These parameters customize the default behavior of the kernel, or inform the kernel about hardware configuration. Kernel parameters can be changed at run time by modifying files in /proc or /sys, while certain kernel parameters need be passed to the kernel at boot time by a boot loader such as GRUB or LILO.
