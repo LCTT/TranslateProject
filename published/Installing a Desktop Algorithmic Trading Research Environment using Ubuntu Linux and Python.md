@@ -1,6 +1,7 @@
 在Ubuntu下用Python搭建桌面算法交易研究环境
-================================================================================
-这篇文章将讨论在ubuntu下,使用Python编程语言,来搭建一个强大,高效和易交互的算法交易策略研究环境.几乎所有的后续的算法交易文章都将利用此环境.
+====================================
+
+这篇文章将讨论在ubuntu下，使用Python编程语言来搭建一个强大、高效和易交互的算法交易策略研究环境。我们后继的算法交易文章都将利用此环境。
 
 搭建此环境需要安装以下软件,它们都是开源且免费下载的:
 
@@ -15,11 +16,11 @@
 
 这些工具（配合合适的 [证券master数据库][10]），将使我们能够创建一个快速可交互的策略研究环境。Pandas是专为数据“冲突”设计的，它可以高效地导入和清洗时间序列数据。NumPy/SciPy在底层运行，使得系统被很好的优化。IPython/matplotlib (以及qtconsole，详见下文)使结果可视化可交互并快速迭代。scikit-learn可让我们将机器学习技术应用到我们的策略中，以进一步提高性能。
 
-请注意，我写这篇教程是为了那些无法或不愿意直接安装ubuntu系统的windows或Mac OSX用户，通过VirtualBox来搭建此环境。VirtualBox使我们可在host操作系统中创建一个虚拟机，可模拟guest操作系统，而丝毫不影响host操作系统。由此我们可以在完整安装Ubuntu前练习Ubuntu和Python工具。如果已经安装Ubuntu桌面系统，可直接跳到“在Ubuntu下安装Python研究环境包”这一节。
+请注意，我写这篇教程是为了那些无法或不愿意直接安装ubuntu系统的windows或Mac OSX用户，通过VirtualBox来搭建此环境。VirtualBox使我们可在主控操作系统中创建一个虚拟机，可模拟guest操作系统，而丝毫不影响主控操作系统。由此我们可以在完整安装Ubuntu前练习Ubuntu和Python工具。如果已经安装Ubuntu桌面系统，可直接跳到“在Ubuntu下安装Python研究环境包”这一节。
 
 ##安装VirtualBoX和Ubuntu Linux##
 
-Mac OSX操作系统上关于VirtualBox安装的部分已经写过了，这里将简单的移到Windows环境中。一旦各种host操作系统下的VirtualBox安装完毕，其它过程就都一样了。
+Mac OSX操作系统上关于VirtualBox安装的部分已经写过了，这里将简单的移到Windows环境中。一旦各种主控操作系统下的VirtualBox安装完毕，其它过程就都一样了。
 
 开始安装前，我们需要先下载Ubuntu和VirtualBox。
 
@@ -158,7 +159,7 @@ Mac OSX操作系统上关于VirtualBox安装的部分已经写过了，这里将
 
     E: Could not get lock /var/lib/dpkg/lock - open (11: Resource temporarily unavailable)
 
-为了解决这个问题，再次运行"sudo apt-get -y update"或者它不起作用，你可以在该站点([http://penreturns.rc.my/2012/02/could-not-get-lock-varlibaptlistslock.html][13])上查看是否有其他的命令。
+为了解决这个问题，再次运行"sudo apt-get -y update"，如果它不起作用，你可以在该站点([http://penreturns.rc.my/2012/02/could-not-get-lock-varlibaptlistslock.html][13])上查看是否有其他的命令。
 
 一旦这两个更新命令成功执行，接下来我们需要安装Python，NumPy/SciPy，matplotlib，pandas，scikit-learn和IPython。我们将从Python开发包和编译器开始安装，编译器将在编译所有软件的时候用到：
 
