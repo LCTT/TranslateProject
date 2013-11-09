@@ -1,3 +1,5 @@
+翻译中 by小眼儿
+
 How to set up web-based network traffic monitoring system on Linux
 ================================================================================
 When you are tasked with monitoring network traffic on the local network, you can consider many different options to do it, depending on the scale/traffic of the local network, monitoring platforms/interface, types of backend database, etc.
