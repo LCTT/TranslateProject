@@ -1,3 +1,4 @@
+Translating by l3b2w1
 Linux Desktop In The Enterprise: Ubuntu Vs. Windows
 ================================================================================
 The "year of the Linux desktop" has been prophesied by Linux supporters almost every year for the last decade. This was once a lofty goal in the Microsoft-dominated enterprise, but times are changing. Linux has grown into a formidable competitor in the smartphone and cloud computing markets, which has caught Microsoft off guard. More importantly, Google, IBM, Red Hat, Facebook, and Netflix have made huge investments into Linux innovations.
