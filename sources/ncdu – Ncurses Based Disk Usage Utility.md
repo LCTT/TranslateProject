@@ -1,3 +1,4 @@
+translating by Linux-pdz
 ncdu – Ncurses Based Disk Usage Utility
 ================================================================================
 uts a few days back, we discussed [gt5][1] (a graphical front-end to du). Continuing with this series of du alternatives, today we will discuss a ncurses based disk usage utility that can be run on a remote server set-up which does not have a graphical environment. The command line utility we are about to discuss is **ncdu**.
