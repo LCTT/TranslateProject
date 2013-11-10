@@ -22,7 +22,7 @@ Fedora 20 的目标是完全支持 ARM 设备（特别是 ARM7hl），这个目�
 
 via: http://thevarguy.com/open-source-application-software-companies/red-hat-fedora-20-linux-new-networking-arm-features
 
-译者：[bazz2](https://github.com/bazz2) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[bazz2](https://github.com/bazz2) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
