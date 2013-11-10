@@ -102,7 +102,7 @@ The command you used in the above step  created a few subdirectories in /tmp. Yo
 
 via: http://linoxide.com/linux-command/rpm-command-query/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[FingerLiu](https://github.com/FingerLiu) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
