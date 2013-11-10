@@ -1,3 +1,5 @@
+Translating------geekpi
+
 17 The Linux Kernel: Configuring the Kernel Part 13
 ================================================================================
 ![](http://www.linux.org/attachments/slide-jpg.555/)
