@@ -1,3 +1,4 @@
+being translated by bazz2
 10 Years of Xen: Transforming a Dinosaur Into a Bird 
 ================================================================================
 Xen Hypervisor development started at [Cambridge University][1] as part of the [Xenoserver][2] research project in the late 90’s. The goal of Xenoserver was ambitious:
