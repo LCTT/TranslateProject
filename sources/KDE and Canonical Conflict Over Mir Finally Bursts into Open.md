@@ -1,3 +1,4 @@
+                        这几天盖帽了   -.-   Luox
 KDE and Canonical Conflict Over Mir Finally Bursts into Open
 ================================================================================
 The conflict that has been brewing between the KDE developers and Canonical has finally exploded in a flurry of statements which show just how many problems the Mir display server has caused.
