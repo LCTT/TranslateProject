@@ -1,3 +1,4 @@
+翻译中 by Linux-pdz
 Package Management Using YUM In Red Hat Linux
 ================================================================================
 ![](http://linoxide.com/wp-content/uploads/2013/11/yum-package-install.png)
