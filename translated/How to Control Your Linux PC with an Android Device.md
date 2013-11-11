@@ -60,7 +60,7 @@ JuiceSSH似乎是安卓上最好的SSH客户端之一，而且是免费的。同
 --------------------------------------------------------------------------------
 
 via: http://news.softpedia.com/news/How-to-Control-Your-Linux-PC-with-an-Android-Device-396004.shtml
-
+ 
 译者：[KayGuoWhu](https://github.com/KayGuoWhu) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
