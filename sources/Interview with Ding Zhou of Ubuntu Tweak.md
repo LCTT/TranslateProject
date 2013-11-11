@@ -1,11 +1,10 @@
-(translating by runningwater)
-Interview with Ding Zhou of Ubuntu Tweak
+专访Ubuntu Tweak的作者周鼎
 ================================================================================
-[Ubuntu tweak][1] is a well known application which allows Ubuntu users to tweak various aspects of their system. The founder of the project, Ding Zhou aka Tualatrix Chou, is talking to us about the nature and the usability of Ubuntu Tweak, the relation with Canonical and the future plans of the project. Enjoy
+[Ubuntu tweak][1]是一款知名度很高的应用程序软件，Ubuntu用户可以用它来调整系统的性能、功能等各个细节。项目的创始人，周鼎又名Tualatrix Chou，正与我们分享Ubuntu Tweak的特性、使用感觉以及它跟Canonical的关系，并且勾勒了项目的未来计划蓝图。享受吧！
 
-**When did you start using linux and at what point did you decide to develop Ubuntu tweak?**
+**你什么时候开始使用linux的，并基于什么使你决定开发Ubuntu tweak？**
 
-I started using Linux when I just started my college life at late 2006. I was learning C programming then, a friend recommended that Linux is a great platform to learn programming. So I started my Linux life from the Fedora Core 6. But after just one week I switched to Ubuntu 6.10, because Ubuntu had a better community in China , and also had very good and fast repositories/mirrors. I fall in love with Ubuntu immediately, and switched from Windows in just one week.
+我开始使用Linux是在2006年底，那时刚开始我的大学生活。当时我正在学C编程语言，一个朋友建议说要学习编程的话Linux是最好的平台环境，所以我就开始了我的Linux生涯，是从Fedora Core 6开始的。但用了仅仅只有一周的时间，我就换成Ubuntu 6.10,因为Ubuntu在中国有更好的社区，也有更好更快的源库/镜像。我立马就爱上了Ubuntu，就一周时间，就从Windows环境完全切换到Ubuntu环境。
 
 After half years’ both happy and hard time with Ubuntu, I realized that Ubuntu was not so friendly for Chinese people, because after a fresh installation, people had to config the font, input method and many others. So I decided to develop an application to help the newbies to easily config Ubuntu.
 
