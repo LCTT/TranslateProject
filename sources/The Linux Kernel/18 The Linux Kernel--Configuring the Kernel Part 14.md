@@ -1,3 +1,4 @@
+[**TODO**|DOING|DONE] keng by FingerLiu
 18 The Linux Kernel: Configuring the Kernel Part 14
 ================================================================================
 ![](http://www.linux.org/attachments/slide-jpg.566/)
@@ -113,6 +114,6 @@ In the next article, we will continue to configure the USB networking system.
 
 via: http://www.linux.org/threads/the-linux-kernel-configuring-the-kernel-part-14.4765/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[FingerLiu](https://github.com/FingerLiu) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
