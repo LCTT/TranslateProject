@@ -1,6 +1,4 @@
-
-
-如何使用LibreOffice把DOCX, DOC, RTF, ODT 转换成PDF
+如何使用LibreOffice把DOCX,DOC,RTF,ODT转换成PDF
 ================================================================================
 在学校、公司、政府，或者是在网页传播的书籍、文档、报告、教程等等文档均被封装成各种格式。
 
@@ -28,7 +26,7 @@
 
 via: http://iloveubuntu.net/how-convert-docx-doc-rtf-odt-pdf-libreoffice
 
-译者：[NearTan](https://github.com/NearTan) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[NearTan](https://github.com/NearTan) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
