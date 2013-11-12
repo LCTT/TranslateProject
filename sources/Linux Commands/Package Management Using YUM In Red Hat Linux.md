@@ -1,19 +1,17 @@
-翻译中 by Linux-pdz
-Package Management Using YUM In Red Hat Linux
-================================================================================
+在红帽Linux中使用YUM包管理器
+===
 ![](http://linoxide.com/wp-content/uploads/2013/11/yum-package-install.png)
 
-**Yum** is a utility provided in RHEL based systems to install,remove and search packages. It can do lot more than just installing and removing and that’s what I will demonstrate in this article.
+**YUM**是RHEL系系统中提供的一个安装，卸载和搜索软件包的工具。它能做的不仅仅是安装、卸载软件包，它能做的还有更多，下面我们将在本文中为你展示。
 
-Yum installs the package dependencies automatically, for example yum install httpd will install https apache server and it’s required dependencies automatically. Something that is not that easy while installing through rpm. with rpm you have to download all the required dependencies and then install accordingly.
+YUM可以自动安装软件包的依赖，例如当你使用yum安装http时，它还会自动安装https apache服务以及它依赖的软件包。通过rpm软件包安装时就没有这么方便咯（译注：就是不会自动处理软件包依赖问题咯！），你必须下载所有它依赖的软件包，然后依序安装它们。
 
-The yum utility fetches the package information from a hosted repository (usually by the OS vendor). A repository is basically a collection of rpm’s that are supposed to work on a particular architecture. For example there would be a separate repository for 32 and 64 bit systems, and same goes with RHEL Version 5 and Version 6. You can host your local repository and configure yum to search,install packages from the local repository. In the following examples I will show you some other stuff we can do with yum rather than install and remove but for the sake of understanding I will use httpd package for exempts on my Amazon EC2 RHEL 6.4 server.
+yum工具从远端服务器上的软件仓库（通常由系统提供商提供）内获取软件包的信息。一个软件仓库基本上是被认为能在特定架构上运行的一系列rpm软件包的集合。例如，对于32位和64位系统各有一个软件仓库，还有针对RHEL5以及RHEL6的软件仓库。你也可以建立一个本地仓库，配置你的yum让其从你的本地仓库里搜索安装软件包。在接下来的例子中，我将想你展示一些yum除了在安装和卸载软件之外可以做的其它事情。为了理解起见，我将在我的Amazon EC2 RHEL 6.4服务器上使用httpd软件包最为例子。
 
-### Search package from repository ###
+###从软件仓库里搜索软件包
+	# yum search httpd
 
-    # yum search httpd
-    
-    Loaded plugins: amazon-id, rhui-lb, security
+	Loaded plugins: amazon-id, rhui-lb, security
     =============================================== N/S Matched: httpd ==========
     httpd.x86_64 : Apache HTTP Server
     httpd-devel.i686 : Development interfaces for the Apache HTTP server
@@ -23,24 +21,24 @@ The yum utility fetches the package information from a hosted repository (usuall
     mod_dav_svn.x86_64 : Apache httpd module for Subversion server
     mod_dnssd.x86_64 : An Apache HTTPD module which adds Zeroconf support
 
-For a more detailed output use the below command:
+想获得详细的输出信息，可以使用下面的命令：
+	
+	# yum provides httpd
 
-    # yum provides httpd
-    
-    Loaded plugins: amazon-id, rhui-lb, security
+	Loaded plugins: amazon-id, rhui-lb, security
     httpd-2.2.15-26.el6.x86_64 : Apache HTTP Server
     Repo : rhui-REGION-rhel-server-releases
     Matched from:
 
-**yum provides */httpd** Searches in yum packages to find the package that contains a httpd.
- 
-### Provide a list of all Package Groups. ###
+*yum provides httpd*在软件仓库里搜索含有httpd的软件包
 
-    # yum grouplist
+###提供所有软件组列表
 
-The above command will show you the installed and available package group. You can install an individual package group with group install option. For example we will install package group PHP Support. This package group contains the required php packages.
+	# yum grouplist
 
-    # yum groupinstall PHP Support
+以上命令将为你显示已经安装的以及可用的软件组。你可以安装一个的软件组并可对组内软件进行选择。例如，我们将安装一个PHP支持的软件组。这个软件组内包含PHP需要的软件包。
+
+	# yum groupinstall PHP Support
     
     Loaded plugins: amazon-id, downloadonly, rhui-lb, security
     Setting up Group Process
@@ -126,9 +124,9 @@ The above command will show you the installed and available package group. You c
     
     Complete!
 
-### Install package using YUM ###
+###使用YUM安装软件包
 
-A package can be installed using yum install command as below:
+可以使用yum命令安装软件包，如下所示：
 
     #  yum install httpd
     
@@ -169,28 +167,28 @@ A package can be installed using yum install command as below:
     Installed size: 3.6 M
     Is this ok [y/N]: y
 
-As you can see yum added additional packages with httpd installation. This is called the dependency resolution done by yum.
+如你所见，在安装httpd时yum安装了额外的软件包。这叫做被yum完成的依赖解析。
 
-If you want yum not to prompt for the [y/N] option. Use **yum install -y httpd**
+假如你不想让yum弹出[y/N]选项，可以使用**yum install -y httpd**
 
-**Update an existing package using yum update command.**
+**使用yum命令更新一个已存在的软件包**
 
     # yum update httpd
     Loaded plugins: amazon-id, rhui-lb, security
     Setting up Update Process
     No Packages marked for Update
 
-That means the httpd package is the latest version in the yum’s repository.
+这意味着你系统中安装的httpd软件包已经是yum软件仓库里的最新版本的了。
 
-**Update all packages on the server.**
+**更新系统中所有的软件包**
 
-    # yum update
+	# yum update
 
-the above command will update all the packages including kernel package to the latest version that means your OS will be updated to the latest provided by RHEL.
+以上的命令将根系你系统上的所有软件包到最新版本，包括内核软件包，这意味着你的系统更新到了RHEL提供的最新版本了。
 
-### Download RPM without installing ### 
+###下载RPM软件包但是不安装
 
-Use yum to download RPM package from RHN or CentOS repository without installing it. You have to install a plugin for yum first to have yum download the rpm only. The utility name is yum-downloadonly and can be installed through yum as below:
+使用yum从RHEL或者CentOS的软件仓库里下载RPM软件包但是不安装。你首先需要下载一个插件让yum只下载rpm软件包而不安装。插件名字叫downloadonly，可以通过yum安装，如下所示：
 
     # yum install yum-downloadonly
     Loaded plugins: amazon-id, rhui-lb, security
@@ -229,19 +227,19 @@ Use yum to download RPM package from RHN or CentOS repository without installing
     
     Complete!
 
-Now you can just download a package from repository without installing it by using this command:
+现在你就可以从软件仓库里只下载软件包而不安装了，命令如下：
 
-    # yum install httpd-devel –downloadonly
+	# yum install httpd-devel -downloadonly
 
-By default packages are downloaded to **/var/cache/yum/<arch\>** directory but you can download them a specified location by adding another option to yum command
+默认情况下软件包会被下载到**/var/cache/yum/<arch\>**目录，但是你可以添加额外选项将其下载到指定位置
 
-    # yum install httpd-devel –downloadonly –downloaddir=/opt
+	# yum install httpd-devel -downloadonly -downloaddir=/opt
 
-If you have a rpm of a package but you don’t have the dependencies and you do not know where to get that. you can still have yum to install that rpm and get the required dependencies from the repository. Let’s install the httpd-devel-2.2.15-29.el6_4.x86_64 RPM that we just downloaded.
+假如你有一个rpm软件包但是没有它所依赖的软件包，你不知道到哪去得到它所依赖的软件包。你仍然可以通过yum安装这个rpm软件包然后从软件仓库里得到它所依赖的软件包。让我们安装刚刚下载的httpd-devel-2.2.15-29.el6_4.x86_64 RPM软件包。
 
-    #  yum localinstall /opt/httpd-devel-2.2.15-29.el6_4.x86_64.rpm
-    
-    Loaded plugins: amazon-id, downloadonly, rhui-lb, security
+	# yum localinstall /opt/httpd-devel-2.2.15-29.el6_4.x86_64.rpm
+
+	Loaded plugins: amazon-id, downloadonly, rhui-lb, security
     Setting up Local Package Process
     Examining /opt/httpd-devel-2.2.15-29.el6_4.x86_64.rpm: httpd-devel-2.2.15-29.el6_4.x86_64
     Marking /opt/httpd-devel-2.2.15-29.el6_4.x86_64.rpm to be installed
@@ -345,11 +343,11 @@ If you have a rpm of a package but you don’t have the dependencies and you do 
     
     Complete!
 
-### Removing packages using yum. ###
+###使用yum卸载软件包
 
-yum remove Remove a package.
+格式为yum remove 要卸载的软件包。举例如下：
 
-    # yum remove httpd
+	# yum remove httpd
     Failed to set locale, defaulting to C
     Loaded plugins: amazon-id, downloadonly, rhui-lb, security
     Setting up Remove Process
@@ -400,9 +398,9 @@ yum remove Remove a package.
     
     Complete!
 
-### List all installed packages ###
+###列出所有安装的软件包
 
-If you want to list all the installed packages then you can use yum list installed command. This is useful in combination with grep or to check whether a specific package has been installed. This is similar to query installed packages with rpm -qa command.
+假如你要列出你系统上安装的所有软件包，你可以使用命令yum list installed。这条命令结合grep命令是非常有用的，可以用来检查某个特定的软件包是否已被安装。这与使用rpm -qa命令询问已经安装的软件包相似。
 
     # yum list installed
     Loaded plugins: amazon-id, downloadonly, rhui-lb, security
@@ -428,10 +426,10 @@ If you want to list all the installed packages then you can use yum list install
     .
     Output Truncated.
 
-### List the available repository from which packages are being queried, installed and updated. ###
+###列出用于搜索、安装和更新软件包的可用软件仓库
 
-    # yum repolist
-    
+	# yum repolist
+
     Loaded plugins: amazon-id, downloadonly, rhui-lb, security
     repo id repo name status
     rhui-REGION-client-config-server-6 Red Hat Update Infrastructure 2.0 Client Configuration Server 6 4
@@ -443,6 +441,6 @@ If you want to list all the installed packages then you can use yum list install
 
 via: http://linoxide.com/linux-command/package-management-yum-redhat-linux/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Linux-pdz](https://github.com/Linux-pdz) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
