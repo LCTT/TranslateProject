@@ -1,3 +1,4 @@
+翻译中 by Linux-pdz
 SBackup: A Simple Backup Solution For Your Linux Desktop
 ================================================================================
 **SBackup**, Simple Backup, is an Open Source, easy to use backup solution intended for desktop use. It can backup any subset of files and folders. All configuration is accessable via Gnome interface. File and paths can be included and excluded directly or by regex, It supports local and as well as remote backups. Though it looks simple, it has many features to meet the advanced backup functionality.
