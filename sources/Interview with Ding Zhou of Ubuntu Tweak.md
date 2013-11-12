@@ -6,11 +6,11 @@
 
 我开始使用Linux是在2006年底，那时刚开始我的大学生活。当时我正在学C编程语言，一个朋友建议说要学习编程的话Linux是最好的平台环境，所以我就开始了我的Linux生涯，是从Fedora Core 6开始的。但用了仅仅只有一周的时间，我就换成Ubuntu 6.10,因为Ubuntu在中国有更好的社区，也有更好更快的源库/镜像。我立马就爱上了Ubuntu，就一周时间，就从Windows环境完全切换到Ubuntu环境。
 
-After half years’ both happy and hard time with Ubuntu, I realized that Ubuntu was not so friendly for Chinese people, because after a fresh installation, people had to config the font, input method and many others. So I decided to develop an application to help the newbies to easily config Ubuntu.
+在苦乐参半的半年使用时间后，我意识到Ubuntu对中国用户来说不是太友好，因为全新安装系统后，用户必须得自己配置字体、输入法以及其它很多很多设置。所以，我决定开发出一款应用程序来帮助新手，让他们很简单的就可以对系统做相应配置。
 
-So at July 2007, I started to develop Ubuntu Tweak. At that point, only for Chinese people, but soon I made Ubuntu Tweak be an international application and released its first version at Sep 2007
+因此在2007年7月，我就开始开发Ubuntu Tweak,刚开始的时候，仅仅提供了汉语版本的，但很快就考虑了Ubuntu Tweak的国际版本，并且在2007年9月份就发布了首个国际版本。
 
-**Ubuntu tweak is already a very successful project. Many Ubuntu users use it to tweak various aspects of their system. Tell us a few words about what Ubuntu Tweak can do.**
+**Ubuntu tweak已经是非常成功的项目了。很多Ubutu用户用它来调整系统的性能、功能等各个细节。能给我们谈论下Ubuntu Tweak能做些什么吗？**
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2012/03/tualatrix1.jpg)
 
