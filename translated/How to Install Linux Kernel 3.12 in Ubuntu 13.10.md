@@ -38,4 +38,4 @@ Ubuntu用户只有等到14.04 LTS发布以后，才能得到一个较新版本�
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-[1]:http://kernel.ubuntu.com/~kernel-ppa/mainline/v3.12-saucy/
+[1]:http://kernel.ubuntu.com/~kernel-ppa/mainline/v3.12-saucy/ 
