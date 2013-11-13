@@ -1,3 +1,4 @@
+翻译中 by Linux-pdz
 How to Install the Latest NVIDIA 331.20 Driver in Ubuntu 13.10
 ================================================================================
 **The installation of new NVIDIA drivers can be a problem sometimes, especially if you are not accustomed with the way things usually work on a Linux operating system.**
