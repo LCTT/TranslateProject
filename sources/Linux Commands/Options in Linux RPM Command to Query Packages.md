@@ -1,3 +1,5 @@
+Translating----------------geekpi
+
 Options in Linux RPM Command to Query Packages
 ================================================================================
 RPM is RedHat Package Manager, used to install/remove/update and query the packages in Red Hat based linux. RHEL and the systems based on it uses rpm command to do that.  The following example demonstrates the use of rpm query feature and shows different ways you can query rpm database and restore configuration file.
