@@ -1,3 +1,5 @@
+Translating-------------geekpi
+
 Mikko Hypponen: Open Source Software Will Make the World More Secure
 ================================================================================
 Open source software can be one answer to combating the global surveillance of innocent citizens, said security expert Mikko Hypponen in his keynote last week at [LinuxCon and CloudOpen Europe][1] in Edinburgh.
