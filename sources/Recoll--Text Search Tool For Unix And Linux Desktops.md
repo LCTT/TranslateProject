@@ -1,3 +1,4 @@
+翻译中 by Linux-pdz
 Recoll: Text Search Tool For Unix And Linux Desktops
 ================================================================================
 [Recoll][1] is a text search tool for Unix and Linux desktops. Recoll finds keywords inside documents as well as file names.
