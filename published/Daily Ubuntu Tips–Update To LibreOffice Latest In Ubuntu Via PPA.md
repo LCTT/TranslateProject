@@ -1,10 +1,10 @@
-Ubuntu每日小技巧——通过PPA升级你Ubuntu的LibreOffice到最新版
+Ubuntu每日小技巧：通过PPA升级你的LibreOffice
 ================================================================================
 对于每一个你新安装的Ubuntu系统，你都会拥有一个可以让你办公的办公工具——LibreOffice。很多人都知道微软公司的的Word、Excel、PowerPoint和Outlook，但是很少有人知道LibreOffice。
 
 LibreOffice靠来自全世界的志愿者来维护，由一个慈善基金会支持。它是Linux社区的一款主要的免费办公工具。它可以安装在Windows，Mac OS X和Linux等系统的计算机上。
 
-就在5天前（译注：好吧，这个翻译稿拖了5天了~~，原文为“今天”），一个新的版本将面向公众开放了。Windows，Mac OS X和Linux用户可以直接从下载页面下载最新版本了。
+就在5天前（译注：好吧，这个翻译稿拖了5天了~~，原文为“今天”。），一个新的版本将面向公众开放了。Windows，Mac OS X和Linux用户可以直接从下载页面下载最新版本了。
 
 Ubuntu用户拥有添加LibreOffice软件仓库到自己的电脑来安装升级最新版的优势。如果你想要在最新版本可用时最快的得到它，这种方法将会很有用。
 
@@ -30,6 +30,6 @@ Enjoy!
 
 via: http://www.liberiangeek.net/2013/11/daily-ubuntu-tipsupdate-to-libreoffice-latest-in-ubuntu-via-ppa/
 
-译者：[SCUSJS](https://github.com/scusjs) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[SCUSJS](https://github.com/scusjs) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
