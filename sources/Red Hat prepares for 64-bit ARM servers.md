@@ -1,3 +1,5 @@
+(translating by whatever1992)
+
 Red Hat prepares for 64-bit ARM servers
 ================================================================================
 > ARM processors could lead to server racks with thousands of nodes, the Red Hat ARM chief predicts

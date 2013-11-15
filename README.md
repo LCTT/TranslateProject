@@ -33,23 +33,32 @@ LCTT的组成
 -------------------------------
 
 目前活跃成员有：
-[wxy](https://github.com/wxy)，
-[carolinewuyan](https://github.com/carolinewuyan)，
-[vito-L](https://github.com/vito-L)，
-[tinyeyeser](https://github.com/tinyeyeser)，
-[woodboow](https://github.com/woodboow)，
-[DeadFire](https://github.com/DeadFire)，
-[flsf](https://github.com/flsf)，
-[theo-l](https://github.com/theo-l)，
-[jasminepeng](https://github.com/jasminepeng)，
-[boredivan](https://github.com/boredivan)，
-[Linchenguang](https://github.com/Linchenguang)，
-[gamelifedong](https://github.com/gamelifedong)，
-[Maclauring](https://github.com/Maclauring)，
-[lijhg](https://github.com/lijhg)，
-[liuaiping](https://github.com/liuaiping)，
-[younel0925](https://github.com/younel0925)。
-（更新于2013/10/3）
+[wxy](https://github.com/wxy),
+[carolinewuyan](https://github.com/carolinewuyan),
+[tinyeyeser](https://github.com/tinyeyeser),
+[vito-L](https://github.com/vito-L),
+[DeadFire](https://github.com/DeadFire),
+[flsf](https://github.com/flsf),
+[jasminepeng](https://github.com/jasminepeng),
+[luoxcat](https://github.com/Luoxcat),
+[woodboow](https://github.com/woodboow),
+[geekpi](https://github.com/geekpi),
+[runningwater](https://github.com/runningwater),
+[Linux-pdz](https://github.com/Linux-pdz),
+[bazz2](https://github.com/bazz2),
+[theo-l](https://github.com/theo-l),
+[scusjs](https://github.com/scusjs),
+[Linchenguang](https://github.com/Linchenguang),
+[Vic020](https://github.com/Vic020),
+[l3b2w1](https://github.com/l3b2w1),
+[crowner](https://github.com/crowner),
+[boredivan](https://github.com/boredivan),
+[rogetfan](https://github.com/rogetfan),
+[willqian](https://github.com/willqian),
+[Maclauring](https://github.com/Maclauring),
+[small-Wood](https://github.com/small-Wood),
+[lijhg](https://github.com/lijhg),
+（更新于2013/11/13）
 
 谢谢大家的支持！
 
@@ -62,3 +71,5 @@ LCTT的组成
 * 2013/09/24 鉴于大家使用Github的水平不一，容易导致主仓库的一些错误，因此换成了常规的fork+PR的模式来进行翻译流程。
 * 2013/10/11 根据对LCTT的贡献，划分了Core Translators组，最先的加入成员是vito-L和tinyeyeser。
 * 2013/10/12 取消对LINUX.CN注册用户的依赖，在QQ群内、文章内都采用github的注册ID。
+* 2013/10/18 正式启动man翻译计划。
+* 2013/11/10 举行第一次北京线下聚会。
