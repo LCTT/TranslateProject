@@ -1,3 +1,5 @@
+translating by coolpigs
+
 10 basic examples of linux netstat command
 ================================================================================
 ### Netstat ###
