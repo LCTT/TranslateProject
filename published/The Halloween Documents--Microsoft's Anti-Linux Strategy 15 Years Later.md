@@ -2,7 +2,7 @@
 ================================================================================
 > 自从微软的反Linux、反开源战略备忘录泄露以来，已经整整过去了15个年头。让我们来回顾一下，这一战略是如何失败的。
 
-![](http://thevarguy.com/site-files/thevarguy.com/files/imagecache/medium_img/uploads/2013/10/trickortreat2.jpg)
+![](http://thevarguy.com/site-files/thevarguy.com/files/imagecache/medium_img/uploads/2013/10/trickortreat2.jpg) 
 
 15年前，当时临近万圣节，Eric S. Raymond发布了第一份“[万圣节档案(Halloween Documents)][1]”，文档揭露了微软专门针对Linux与开源的秘密战略。那时，“恐惧、未知与怀疑（fear, uncertainty and doubt - FUD）”这样的词汇第一次被收入辞典，到了今天，很多情况已经改变，而未曾改变的又有哪些？微软和开源世界今天能够和睦相处了吗？
 
@@ -19,11 +19,12 @@
 今天，值得我们再次重温万圣节档案，提醒自己不要逃避开源世界的竞争。长远来看，开源软件开发模式能够大大地增进繁荣共享软件市场，而引入开源技术及其开发模式的公司，例如红帽，其发展远比那些因为“恐惧、未知与怀疑（FUD）”而固步自封的公司要好得多。如今的红帽已经拥有更加平稳的盈利潜力，在上文提到的多个开源领域都有持续的业务增长，例如云计算和大数据，相比之下，微软、甚至苹果，如果想要在这些领域有所扩展，则要在新的硬件种类方面面对高昂费用和更加危险的投资。
 
 总结：不管是糖果还是软件，分享，都是前进的方向。万圣节快乐！
+
 --------------------------------------------------------------------------------
 
 via: http://thevarguy.com/open-source-application-software-companies/halloween-documents-microsofts-anti-linux-strategy-15-yea
 
-译者：[Mr小眼儿](http://blog.csdn.net/tinyeyeser) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Mr小眼儿](http://blog.csdn.net/tinyeyeser) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

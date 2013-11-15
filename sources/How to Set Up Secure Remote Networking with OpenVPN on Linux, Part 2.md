@@ -1,3 +1,4 @@
+[Being translated by bazz2]
 How to Set Up Secure Remote Networking with OpenVPN on Linux, Part 2
 ================================================================================
 Greetings fellow Linux users, and welcome to the second part of our glorious OpenVPN series. When last we met we learned how to set up a [simple OpenVPN encrypted tunnel][1] between a home server and a remote node, such as a laptop. Today we're adding refinements such as how to daemonize OpenVPN so we don't have to start it manually, use Network Manager for easy connecting to our remote server, and access services.
