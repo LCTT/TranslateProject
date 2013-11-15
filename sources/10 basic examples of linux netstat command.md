@@ -1,3 +1,4 @@
+[DONING]BY FingerLiu
 10 basic examples of linux netstat command
 ================================================================================
 ### Netstat ###
@@ -272,7 +273,7 @@ And do leave your feedback and suggestions in the comments box below.
 
 via: http://www.binarytides.com/linux-netstat-command-examples/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[FingerLiu](https://github.com/FingerLiu) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
