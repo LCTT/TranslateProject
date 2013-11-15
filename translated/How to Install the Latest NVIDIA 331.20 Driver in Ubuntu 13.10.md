@@ -41,7 +41,7 @@ via: http://news.softpedia.com/news/How-to-Install-the-Latest-NVIDIA-331-20-Driv
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [1]:
-[2]:
+[2]: 
 [3]:
 [4]:
 [5]:
