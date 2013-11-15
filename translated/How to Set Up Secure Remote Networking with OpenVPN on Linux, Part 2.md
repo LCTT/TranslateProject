@@ -1,47 +1,46 @@
-[Being translated by bazz2]
-How to Set Up Secure Remote Networking with OpenVPN on Linux, Part 2
+OpenVPN 安全手册[part 2]
 ================================================================================
-Greetings fellow Linux users, and welcome to the second part of our glorious OpenVPN series. When last we met we learned how to set up a [simple OpenVPN encrypted tunnel][1] between a home server and a remote node, such as a laptop. Today we're adding refinements such as how to daemonize OpenVPN so we don't have to start it manually, use Network Manager for easy connecting to our remote server, and access services.
+欢迎所有 Linux 用户回来继续看我们的 OpenVPN 系列的第二部分。上次我们讲到如何让远端计算机（如笔记本电脑）[通过简单的加密隧道]登录到家里的服务器。今天我们接着讲进阶部分：比如设置 OpenVPN 开机启动，省得我们每次重启服务器的时候都要手动开启 OpenVPN 服务；比如使用 Network Manager 简化访问到远程服务器的过程。
 
-### Network Manager Integration ###
+### 整合到 Network Manager ###
 
-Network Manager is a nice OpenVPN client; just make sure you have the network-manager-openvpn plugin installed. We'll use our example configurations from part 1. Open your Network Manager configuration and find the window where you set up a new VPN connection. This looks different on KDE and GNOME, but the information you'll need is the same. When you start you need to see an OpenVPN connection type, like in figure 1; if you don't see this then the plugin is missing. (The figures are from GNOME.)
+Network Manager 是一个不错的 OpenVPN 客户端；你只需要安装 network-manager-openvpn 这个插件。我们继续《OpenVPN 安全手册》第一部分使用的配置。打开 Network Manager 配置界面，进入“新建 VPN 连接”的窗口。这个界面布局在 KDE 和 GNOME 下面看起来有点不一样，但是大体的信息是一样的。开始的时候你需要选择 OpenVPN 作为你的 VPN 连接类型，就像图1所示；如果你没看到 OpenVPN 的选项，说明你没有安装好插件。（图1是一张 GNOME 下面的图片。）
 
 ![](http://www.linux.com/images/stories/41373/figu-1-openvpn-nm.jpg)
 
-*Figure 1: Creating a new OpenVPN client config in Network Manager.*
+*图1：在 Network Manager 上新建 OpenVPN 客户端 *
 
-Figure 2 shows the main configuration screen. Starting from the top:
+图2显示了配置主界面。从上到下分别为：
 
-- Whatever name you want for this connection.
-- The Gateway is the IP address of your remote server.
-- Select Static Key from the dropdown menu,
-- Then use the filepicker to find the key you want to use.
-- This is not a directional key, so select None.
-- The remote and local IP addresses are your virtual OpenVPN addresses, from your /etc/openvpn/foo.conf files.
-- We did not set a password.
-- "Available to all users" or just you, whichever you want.
+- 连接名，任取一个。
+- 远程服务器的网关。
+- 下拉菜单选择静态密钥（Static Key）。
+- 然后通过文件浏览器找到静态密钥文件。
+- 这个不是方向性的密钥，所以 Key Direction 这里设为 None。
+- 远程 IP 和 本地 IP 是我们在上一部分已经设置好的虚拟 OpenVPN 地址，可分别通过 /etc/openvpn/studio.conf 和 /etc/openvpn/shop.conf 文件获得。
+- 我们无需设置密码，所以“Show passwords”复选框为空。
+- 这个连接是“所有人都可用”，还是只有你可用，随你喜欢。
 
 ![](http://www.linux.com/images/stories/41373/fig-2-openvpn-nm-1.jpg)
 
-*Figure 2: Main Network Manager configuration for OpenVN client.*
+*图2：Network Manager 配置 OpenVPN 客户端主界面*
 
-Save, and then use Network Manager to connect. Easy peasey! Now you can connect and disconnect with the click of a button (figure 3).
+保存然后就可以使用 Network Manager 建立连接了。So easy，妈妈再也不用担心你的学习了！看见图3了么？你现在只需点击一下高亮的按钮就可以连接到你的家庭服务器，或从你的家庭服务器中断开连接。
 
 ![](http://www.linux.com/images/stories/41373/fig-3-openvpn-nm-3.jpg)
 
-### Run OpenVPN Automatically ###
+### OpenVPN 开机启动 ###
 
-It's simple to start up OpenVPN manually, but you might want to daemonize it on your server for convenience, and to survive accidental reboots. On Debian/Ubuntu/great-thundering-herd-of-spawn distros this is handled automatically: when you install OpenVPN it's configured to automatically start at boot. So, after installation you need to reboot, or start the daemon with one of these commands:
+手动开启 OpenVPN 很简单，但是你也许想要更简单，让它能够在服务器重启的时候跟着自动启动。在 Debian/Ubuntu 以及绝大部分发行版中，当你安装完 OpenVPN 的时候就被设置为开机启动的。所以你需要重启系统，或者按下面的方法启动后台进程：
 
     $ sudo /etc/init.d/openvpn start
     $ sudo service openvpn start
 
-The first command is the old-fashioned way, and the second command uses the service command. service first appeared in Red Hat Linux back in the olden days, and if your distro doesn't install it by default it's probably lurking in the repos if you want to use it.
+第一个命令是比较老的启动方法，第二个命令使用了“service”命令。“service”命令第一次出现在 Red Hat 发行版中，如果你的发行版中没有安装这个命令，你需要从你的软件源里面去找到它。
 
-Fedora uses the systemd init system, in contrast to Ubuntu which uses Upstart, and Debian still uses good old SysV init. If you have multiple OpenVPN configurations in /etc/openvpn you can start each one selectively in systemd, like this:
+Ubuntu使用 Upstart 管理服务进程，Debain 使用的老的 SysV，而 Fedora 使用“systemd”。如果你在 /etc/openvpn 目录下配置了多个 OpenVPN 的服务，你可以通过“systemd”的命令启动你要的服务：
 
-    # systemctl start systemctl start openvpn@studio.service
+    # systemctl start openvpn@studio.service
 
 Where "studio.service" references our example /etc/openvpn/studio.conf file from part one. This invocation does not survive a reboot, so it's just like running openvpn /etc/openvpn/studio.conf, which is how we started OpenVPN sessions manually in part 1. You should be able to daemonize OpenVPN on systemd with chkconfig:
 
