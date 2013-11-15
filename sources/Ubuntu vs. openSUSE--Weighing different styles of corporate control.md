@@ -1,3 +1,4 @@
+翻译中 by Linux-pdz
 Ubuntu vs. openSUSE: Weighing different styles of corporate control
 ================================================================================
 *Ubuntu and openSUSE approach their Linux distros in much different ways. Which do you prefer?*
