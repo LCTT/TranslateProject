@@ -1,19 +1,24 @@
-翻译中 by Linux-pdz
-Ubuntu vs. openSUSE: Weighing different styles of corporate control
-================================================================================
-*Ubuntu and openSUSE approach their Linux distros in much different ways. Which do you prefer?*
+Ubuntu vs openSUSE：不同的公司控制风格
+====
+*Ubuntu和OpenSUSE以不同的方式对待他们的Linux发行版。你更喜欢哪种方式呢/*
 
-It's no secret that a rather large portion of Linux development is funded by companies with a financial interest in seeing Linux be improved. (And, by "Linux," I mean "All the various pieces and parts that make up a complete Linux-based system.") But there is a pretty major difference between how various companies go about that.
+相当一部分linux开发者社区接受那些有意改善Linux的公司的资助，这早已不是秘密（这里我指的组成一个完整Linux系统的任何部分）。但是许多公司进行资助的方式却有很大不同。
 
-Let's take a look at two high-profile examples: Ubuntu and openSUSE.
+让我们看看两个很显眼的例子：Ubuntu和openSUSE。
 
-Both are distributions of Linux. Both are large, long-standing and highly successful projects with a large community of both volunteers and paid workers. Yet the difference between the two is fairly extreme, and highly important.
+这两者都是Linux发行版。两者都是一个大的且长期持续成功的项目且有一个包含志愿者和付费工作者的社区。然而两者之间的不同还是相当明显而且非常重要。
+Mark Shuttleworth
+对于Ubuntu，它发展的主要方向是由其Canonical的团队和它的首脑Mark Shuttleworth决定的。当谈到Canonical确实控制Ubuntu的时候，我们呢很快就会想起两个例子，例如Unity（Ubuntu采用的用户界面）和Mir（Ubuntu的显示服务）。在许多案例中，母公司都会在没有协商的情况下设定目标、项目和优先级。例如，Ubuntu的Unity用户界面最为Canonical公司广泛战略目标来说是必须的。一些社区成员喜欢Unity用户界面，另一些讨厌这样的用户界面。但是，不管怎么说，不管你喜欢还是讨厌它，Unity都已经成为Ubuntu的默认用户界面了。
 
-For Ubuntu, the primary direction is set by the team at Canonical and its head-master, Mark Shuttleworth. Examples such as Unity (Ubuntu's in-house user interface) and Mir (Ubuntu's in-house display server) quickly jump to mind when talking about how Canonical really “steers the ship” of Ubuntu. Goals, projects and priorities put into place by the parent company are, in many cases, simply non-negotiable (so to speak). Ubuntu's Unity user interface, for example, was a must-have for Canonical as it was part of their broader strategy. Some community members love it. Some hate it. But, either way, it's happening.
+但是这是一件坏事吗？我不确信它到底是好还是坏。这只是这个项目如何与公司相处的问题。
 
-But is that bad? I'm not really convinced that it is either good or bad. It's simply how it is with that particular project and company.
+于此形成对比的是OpenSUSE，它也有一个公司掌控者，好吧，是SUSE。关键的不同点是SUSE以“SUSE Linux企业版”的形式提供一个商业发行版。尽管OpenSUSE（社区Linux发行版）与SUSE Linux发行版（商业发行版）在技术上有许多重叠之处。。。然而在专业上，两者是不同的。
 
-Contrast that with openSUSE, who also has a "corporate master" in the form of, well, SUSE. The key difference there being that SUSE has a commercial offering in the form of "SUSE Linux Enterprise." And, while there is a great deal of technical overlap between openSUSE (the community Linux distro) and SUSE Linux Enterprise (the commercial offering)...the two are not, technically, the same.
+这意味着SUSE对待openSUSE时可以更多的采取放手不管的方式，他们的兴趣就是寻找那些被改善的关键性技术（例如，Btrfs文件系统），检测以及打包社区发行版中那些他们想包含在商业发行版中的软件包，但是社区发行版与商业发行版分离的方式与Canonical采取方式相比，给他们提供了更大的灵活性。
+
+这种方法
+
+
 
 Which means that SUSE, as a company, can afford to take a more “hands-off” approach to working with openSUSE. Sure, they have a vested interest in seeing key bits of technology (such as, say, Btrfs) be improved, tested and packaged with the community distro – as they may wish to include it in the commercial offering – but the separation between the community and commercial systems provides them with a bit more flexibility, in this regard, than Canonical presently has.
 
