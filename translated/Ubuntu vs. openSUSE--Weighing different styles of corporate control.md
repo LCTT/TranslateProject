@@ -16,22 +16,16 @@ Mark Shuttleworth
 
 这意味着SUSE对待openSUSE时可以更多的采取放手不管的方式，他们的兴趣就是寻找那些被改善的关键性技术（例如，Btrfs文件系统），检测以及打包社区发行版中那些他们想包含在商业发行版中的软件包，但是社区发行版与商业发行版分离的方式与Canonical采取方式相比，给他们提供了更大的灵活性。
 
-这种方法
+这种方法和红帽对待Fedora的方式非常相似，已经成为了一个公司使用社区Linux发行版为基础销售企业水平的Linux系统的一种成功路径。
 
+不过，诚实的说两种模式我都看到了有点和缺点。在组织上以及管理上（公众部分）他们都面临着各自的难题。实际上，这两种方法与它们的不同点比起来，相同点更多一些。
 
-
-Which means that SUSE, as a company, can afford to take a more “hands-off” approach to working with openSUSE. Sure, they have a vested interest in seeing key bits of technology (such as, say, Btrfs) be improved, tested and packaged with the community distro – as they may wish to include it in the commercial offering – but the separation between the community and commercial systems provides them with a bit more flexibility, in this regard, than Canonical presently has.
-
-This is similar to the way Red Hat works with the Fedora project, and seems to be a generally successful approach as a mechanism for a company that sells enterprise-level Linux systems to utilize a community Linux distro as a foundation.
-
-I'll be honest. I see benefits and drawbacks to both models. Both have their challenges in terms of organization and management (and public perception). And, in all reality, there is more in common than not with the two approaches.
-
-I'd love to hear your thoughts on this. Do you prefer to have a singular captain at the helm of your community-based Linux distro (sort of a "benevolent dictator")? Or do like the big decisions of your Linux distro to be a bit more community-driven? Should companies behind a given flavor of Linux rule with an iron fist, or be more hands-off? Leave your thoughts in the comments.
+我非常愿意听到你们对此的看法。你是更喜欢你的以社区为基础的Linux发行版有一个单一的领袖还是更喜欢你Linux发行版的大多数决定都是有社区驱动的呢？公司是否应该强势控制Linux发行版，还是应该大胆放手让社区来决定呢？请在评论里留言，让我们知道你的看法。
 
 --------------------------------------------------------------------------------
 
 via: http://www.networkworld.com/community/node/84250
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Linux-pdz](https://github.com/Linux-pdz) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
