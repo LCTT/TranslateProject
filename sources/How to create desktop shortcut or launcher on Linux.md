@@ -1,3 +1,4 @@
+翻译中 by Linux-pdz
 How to create desktop shortcut or launcher on Linux
 ================================================================================
 If you have a program you use regularly on Linux desktop, you may want to create a "desktop shortcut", so you can launch the program by simply clicking on the shortcut. While most GUI programs automatically create their desktop shortcut during installation, some GUI programs or terminal applications may require you to set up associated shortcuts manually.
