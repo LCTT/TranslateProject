@@ -7,7 +7,7 @@
 
 ![](http://main.makeuseoflimited.netdna-cdn.com/wp-content/uploads/2013/10/linux_accessing_cloud_ubuntu_one.jpg)
 
-使用这种方式的明显好处就是你可以通过使用他们各自的官方应用访问你的各种云存储。目前，提供官方Linux客户端的服务提供商有[SpiderOak](1), [Dropbox](2), [Ubuntu One](3),[Copy](5)。[Ubuntu One](3)虽不出名但的确是[一个不错的云存储竞争着](4)。[Copy][5]是提供比Dropbox更多空间，是[Dropbox的替代选择](6)。使用这些官方Linux客户端可以保持你的电脑与他们的服务器之间的通信，还可以让你进行属性设置，如选择性同步。
+使用这种方式的明显好处就是你可以通过使用他们各自的官方应用访问你的各种云存储。目前，提供官方Linux客户端的服务提供商有[SpiderOak](1), [Dropbox](2), [Ubuntu One](3),[Copy](5)。[Ubuntu One](3)虽不出名但的确是[一个不错的云存储竞争着](4)。[Copy][5]则提供比Dropbox更多的空间，是[Dropbox的替代选择之一](6)。使用这些官方Linux客户端可以保持你的电脑与他们的服务器之间的通信，还可以让你进行属性设置，如选择性同步。
 
 对于普通桌面用户，使用官方客户端是最好的选择，因为官方客户端可以提供最多的功能和最好的兼容性。使用它们也很简单，只需要下载他们对应你的发行版的软件包，然后安装安装完后在运行一下就Ok了。安装客户端时，它一般会指导你完成这些简单的过程。
 
@@ -27,7 +27,7 @@
 
 这些一旦完成，你就可以这个脚本执行各种任务了，例如上传、下载、删除、移动、复制、创建文件夹、查看文件、共享文件、查看文件信息和取消共享。对于全部的语法解释，你可以查看一下[这个页面](9)。
 
-###[Storage Made Easy](7)将SkyDrive带到Linux上
+###通过[Storage Made Easy](7)将SkyDrive带到Linux上
 
 微软并没有提供SkyDrive的官方Linux客户端，这一点也不令人惊讶。但是你并不意味着你不能在Linux上访问SkyDrive，记住：SkyDrive的web版本是可用的。
 
@@ -35,11 +35,11 @@
 
 ![](http://main.makeuseoflimited.netdna-cdn.com/wp-content/uploads/2013/10/linux_accessing_cloud_configure_skydrive.jpg)
 
-为了使用Stroage Made Easy，你首先需要创建一个他们的账号。完成账号创建后，你需要回到控制界面，选择“Add a Cloud Provider”。在这儿，你可以选择SkyDrive API 然后填入登陆信息。添加完登陆信息后，点击授权按钮以便给予必要的授权。然后，你就可以下载它的Linux客户端并安装它了。
+为了使用Stroage Made Easy，你首先需要创建一个他们的账号。完成账号创建后，你需要回到控制界面，选择“Add a Cloud Provider”。在这儿，你可以选择SkyDrive API 然后填入登录信息。添加完登录信息后，点击授权按钮以便给予必要的授权。然后，你就可以下载它的Linux客户端并安装它了。
 
 ![](http://main.makeuseoflimited.netdna-cdn.com/wp-content/uploads/2013/10/linux_accessing_cloud_storagemadeeasy.jpg)
 
-第一次启动时。它会要求你登陆，还有询问你要把云存储挂载到什么地方。在你做完了这些后，你就可以浏览你选择的文件夹，你还可以访问你的Storage Made Easy空间以及你的SkyDrive空间了!这种方法对于那些想在Linux上使用SkyDrive的人来说非常好，对于想把他们的多个云存储服务整合到一个地方的人来说也很不错。这种方法的缺点是你无法使用他们各自官方客户端中可以使用的特殊功能。
+第一次启动时。它会要求你登录，还有询问你要把云存储挂载到什么地方。在你做完了这些后，你就可以浏览你选择的文件夹，你还可以访问你的Storage Made Easy空间以及你的SkyDrive空间了！这种方法对于那些想在Linux上使用SkyDrive的人来说非常好，对于想把他们的多个云存储服务整合到一个地方的人来说也很不错。这种方法的缺点是你无法使用他们各自官方客户端中可以使用的特殊功能。
 
 因为现在在你的Linux桌面上也可以使用SkyDrive，接下来你可能需要阅读一下我写的[SkyDrive与Google Drive的比较](8)以便于知道究竟哪种更适合于你。
 
