@@ -1,3 +1,4 @@
+翻译中 by Linux-pdz
 Outreach Program for Women Seeks New Linux Kernel Interns
 ================================================================================
 The interns who worked with The Linux Foundation as part of the [FOSS Outreach Program for Women][1] this summer come from diverse backgrounds and levels of experience, but they now have at least one thing in common (besides their gender). They can all add “Linux kernel hacker” to their resume.
