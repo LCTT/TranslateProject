@@ -1,3 +1,4 @@
+crowner的坑
 Daily Ubuntu Tips – Change Samba Workgroup And Computer Name
 ================================================================================
 Here’s another question new users to Ubuntu asked the most. The answer to the question is simple but when you’re new to anything, it takes time to fully understand it.
