@@ -1,11 +1,11 @@
 ncdu-基于Ncurses的磁盘实用工具
 ===
 
-几天前，我们谈论了[gt5][1]（一个具有图形前端的磁盘实用工具）。接着上次，继续介绍可供选择的磁盘实用工具，我们今天要讨论的是一个基于ncurese的磁盘实用工具，可以远程运行但没有图形界面。我们要介绍的这个命令行工具叫做**ncdu**。
+几天前，我们讨论了[gt5][1]（一个具有图形前端的磁盘实用工具）。接着上次，继续介绍这个命令系列-du可选命令，我们今天要讨论的是一个基于ncurese的磁盘实用工具，可以远程运行但没有图形环境。我们要介绍的这个命令行工具叫做**ncdu**。
 
 ###ncdu-基于Ncurses的du可选程序
 
-这个命令行工具是一个基于curses版本的标准du命令。它可帮你在没有安装图形环境的情况下快速查看系统的磁盘使用统计
+这个命令行工具是一个基于curses版本的标准du命令。它可帮助你在没有安装图形环境的情况下快速查看系统的磁盘使用统计。
 
 ![](http://mylinuxbook.com/wp-content/uploads/2013/10/ncdu-main.png)
 
@@ -14,13 +14,13 @@ ncdu-基于Ncurses的磁盘实用工具
 - Shell – Bash 4.2.45
 - 应用 – ncdu 1.9
 
-###一个简要手册
+###简明教程
 
-这儿是一些ncdu命令的例子：
+以下是一些ncdu命令的例子：
 
 **1. 默认输出**
 
-执行以下**ncdu**命令，你会观察到，它会先扫描磁盘然后以递减的顺序显示各个目录下的空间使用情况。
+执行以下**ncdu**命令，你会观察到，它会先扫描磁盘然后降序显示各个目录下的空间使用情况。
 
 **> 扫描**
 
@@ -60,11 +60,11 @@ ncdu-基于Ncurses的磁盘实用工具
 
 ![](http://mylinuxbook.com/wp-content/uploads/2013/10/ncdu-4.png)
 
-如你所见，在输出结果的第二竖列显示了每个目录的占用的空间占总的磁盘空间的百分比。
+如你所见，在输出结果的第二竖列显示了每个目录所占用的空间占总的磁盘空间的百分比。
 
 **5. 获悉有关所有可使用快捷键的**
 
-按**？**可获得有关快捷键，格式以及有关ncdu版本的信息。
+按**？**可获得相关快捷键、格式以及有关ncdu版本的信息。
 
 下面给出一些例子：
 
@@ -74,14 +74,14 @@ ncdu-基于Ncurses的磁盘实用工具
 
 ![](http://mylinuxbook.com/wp-content/uploads/2013/10/ncdu-5-3.png)
 
-想知道有关命令行选项以及其他信息，可前往[ncdu命令的Man页面][2]。
+想知道有关命令行选项以及其它信息，可前往[ncdu命令的Man页面][2]。
 
 ###下载/安装/配置
 
-这儿是一些有关ncdu命令的重要链接
+以下是一些有关ncdu命令的重要链接
 
- - [Home Page][3]
- - [Download Link][4]
+ - [主页][3] 
+ - [下载链接][4]
 
 当然，你也可以通过命令方式下载安装，比如apt-get，yum等。另外，Ubuntu用户可使用Ubuntu软件中心下载安装这个工具。
 
@@ -105,7 +105,7 @@ ncdu-基于Ncurses的磁盘实用工具
 
 via: http://mylinuxbook.com/ncdu-ncurses-based-disk-usage-utility/
 
-译者：[Linux-pdz](https://github.com/Linux-pdz) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Linux-pdz](https://github.com/Linux-pdz) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
