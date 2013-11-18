@@ -1,3 +1,5 @@
+Translating-------------geekpi
+
 Deciphering Top
 ================================================================================
 When curious about the performance of a server, one of the first places I stop is "top". Top is not perfect, not by a long shot, but it does provide a decent point in time snapshot of the server, and attempts to answer the question of "what is going on right now?". Unfortunatly, the output of top can easily be misinterpreted if you do not have a good understanding of the different fields of data presented.
