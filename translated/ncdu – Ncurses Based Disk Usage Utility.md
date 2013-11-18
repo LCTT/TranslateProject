@@ -80,7 +80,7 @@ ncdu-基于Ncurses的磁盘实用工具
 
 这儿是一些有关ncdu命令的重要链接
 
- - [Home Page][3]
+ - [Home Page][3] 
  - [Download Link][4]
 
 当然，你也可以通过命令方式下载安装，比如apt-get，yum等。另外，Ubuntu用户可使用Ubuntu软件中心下载安装这个工具。
