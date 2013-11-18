@@ -32,7 +32,6 @@ To install Samba, run the commands below.
 
 尽情享受吧！
 
-
 --------------------------------------------------------------------------------
 
 via: http://www.liberiangeek.net/2013/11/daily-ubuntu-tips-change-samba-workgroup-and-computer-name/
