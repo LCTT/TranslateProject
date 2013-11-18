@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 (translating by whatever1992)
 
+=======
+crowner的坑
+>>>>>>> 6ee657b05c5722935988e91e1fc2bfdb9e6f6c79
 Daily Ubuntu Tips – Change Samba Workgroup And Computer Name
 ================================================================================
 Here’s another question new users to Ubuntu asked the most. The answer to the question is simple but when you’re new to anything, it takes time to fully understand it.

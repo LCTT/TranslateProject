@@ -1,14 +1,14 @@
-10年 Xen：从恐龙进化到鸟类
+Xen的十年：从恐龙进化到鸟类
 ================================================================================
-Xen Hypervisor 项目原来是上世纪90年代末[剑桥大学][1] [Xenoserver][2] 项目的子项目。Xenoserver 有一个宏大的目标。
+Xen Hypervisor 项目原来是上世纪90年代末[剑桥大学][1] [Xenoserver][2] 项目的子项目。Xenoserver 有一个宏大的目标：
 
 这个宏大目标就是建立一个大规模的分布式计算系统的公共基础框架。想像一下，当 Xenoserver 执行平台布署在全世界范围内，所有人都可以共享可执行代码，代码贡献者可以按代码被执行时产生的硬件消耗收取一定的费用。这将会鼓励负载均衡、消除单点瓶颈，甚至可以在这个平台上实现营利。
 
-在今天，这种模式被称为“云计算”。而 Xen Hypervisor （确切来说是现在的 Xen Hypervisor）是最大的云平台。不仅亚马逊 Web 服务（AWS）和 Rackspace 公有云是基于 Xen 的，就连最近的大规模云平台[Verizon公有云][3]也将 Xen 作为他们的服务供应者。
+在今天，这种模式被称为“云计算”。而 Xen Hypervisor （确切来说是现在的 Xen Hypervisor）是最大的云平台。不仅亚马逊 Web 服务（AWS）和 Rackspace 公有云是基于 Xen 的，就连最近的大规模云平台[Verizon公有云][3]也将 Xen 作为他们的服务供应基础。
 
 ### 10周岁生日快乐 ###
 
-2003年10月21日，Xen Hypervisor 在[第19届 ACM 计算机原理研讨会][4]上作为一个开源项目首次出现在大众眼前。距今刚好过10年，在这里祝 Xen 项目生日快乐！
+2003年10月21日，Xen Hypervisor 在[第19届 ACM 计算机原理研讨会][4]上作为一个开源项目首次出现在大众眼前。距今已经10年，在这里祝 Xen 项目生日快乐！
 
 ### 业界第一的劣势：像恐龙一样，不适者淘汰 ###
 
@@ -18,7 +18,7 @@ Xen Hypervisor 项目原来是上世纪90年代末[剑桥大学][1] [Xenoserver]
 
 ### 快速转型：从恐龙进化到鸟类 ###
 
-像 Xen 一样能够从众多错误中回过神来的开源项目并不多，而 Xen 通过一系列措施做到了这一点。提出有效的管理方法、努力与其他开源项目合作、重启市场营销力量、踏踏实实与用户和开发者一起工作，这些努力终于让 Xen 获得新生。换句话说，Xen 已经完成从恐龙到鸟类的进化。如果你想知道我们是如何做到这点的，何不加入到我的 Linux 大会欧洲站的课题[Xen 项目：收获的教训][5]？其他你可能感兴趣的课题有[加强你的 Xen 云的安全][6]和[Xen：专为云设计的开源虚拟机管理程序][7]。
+像 Xen 一样能够从众多错误中回过神来的开源项目并不多，而 Xen 通过一系列措施做到了这一点。提出有效的管理方法、努力与其他开源项目合作、重启市场营销力量、踏踏实实与用户和开发者一起工作，这些努力终于让 Xen 获得新生。换句话说，Xen 已经完成从恐龙到鸟类的进化。如果你想知道我们是如何做到这点的，何不加入到我的 Linux 大会欧洲站的课题[Xen 项目：收获的教训][5]？其他你可能感兴趣的课题还有[加强你的 Xen 云的安全][6]和[Xen：专为云设计的开源虚拟机管理程序][7]。
 
 ![](http://www.linux.com/images/stories/41373/Xen-flying-Panda.jpg)
 
@@ -36,7 +36,7 @@ Xen Hypervisor 项目原来是上世纪90年代末[剑桥大学][1] [Xenoserver]
 
 via: http://www.linux.com/news/enterprise/cloud-computing/743330-10-years-of-xen-transforming-a-dinosaur-into-a-bird/
 
-译者：[bazz2](https://github.com/bazz2) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[bazz2](https://github.com/bazz2) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
