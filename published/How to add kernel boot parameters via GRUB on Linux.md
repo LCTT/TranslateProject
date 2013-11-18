@@ -1,7 +1,7 @@
 如何在linux上通过GRUB添加内核参数
 ================================================================================
 
-我们可以在linux内核启动时为其提供各种各样的参数。这些参数可以自定义内核默认的行为，或者通知内核关于硬件的配置信息。内核参数应在内核启动时通过引导装载程序如GRUB或LILO传递给内核。
+我们可以在linux内核启动时为其提供各种各样的参数。这些参数可以自定义内核默认的行为，或者通知内核关于硬件的配置信息。内核参数应在内核启动时通过引导装载程序，如GRUB或LILO传递给内核。
 
 在本教程中，我将会描述**如何在linux上通过GRUB添加内核参数**。
 
@@ -9,11 +9,11 @@
 
 ### 在Debian或Ubuntu上添加内核启动参数###
 
-在基于Debian的系统上，如果你想在系统启动时添加内核参数，你可以编辑 /etc/default/grub 目录下的GRUB配置模板。在 GRUB_CMDLINE_LINUX_DEFAULT 变量中以 “name=value” 的格式添加内核参数。
+在基于Debian的系统上，如果你想在系统启动时添加内核参数，你可以编辑 /etc/default/grub 目录下的GRUB配置模板。在 GRUB\_CMDLINE\_LINUX\_DEFAULT 变量中以 “name=value” 的格式添加内核参数。
 
     $ sudo -e /etc/default/grub 
 
-> GRUB_CMDLINE_LINUX_DEFAULT="...... name=value"
+> GRUB\_CMDLINE\_LINUX\_DEFAULT="...... name=value"
 
 然后运行下面的命令来生成一个GRUB的配置文件。
 
@@ -25,11 +25,11 @@
 
 ### 在Fedora上添加内核启动参数 ###
 
-在Fedora上，想要在启动时添加内核参数，你可以编辑 /etc/default/grub目录下的 GRUB 配置模板。在 GRUB_CMDLINE_LINUX 变量中以 “name=value” 的格式添加内核参数。
+在Fedora上，想要在启动时添加内核参数，你可以编辑 /etc/default/grub目录下的 GRUB 配置模板。在 GRUB\_CMDLINE\_LINUX 变量中以 “name=value” 的格式添加内核参数。
 
     $ sudo -e /etc/default/grub 
 
-> GRUB_CMDLINE_LINUX="...... name=value"
+> GRUB\_CMDLINE\_LINUX="...... name=value"
 
 然后运行下面的命令生成 GRUB2 配置文件。
 
@@ -47,7 +47,7 @@
 
 via: http://xmodulo.com/2013/11/add-kernel-boot-parameters-via-grub-linux.html
 
-译者：[Linchenguang](https://github.com/Linchenguang) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Linchenguang](https://github.com/Linchenguang) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
