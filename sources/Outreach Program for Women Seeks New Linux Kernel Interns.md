@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 延伸项目为Linux内核寻找新的女性实习生
 ===
 作为[FOSS针对女性的延伸项目][1]，这个夏季工作在Linux基金会的实习生们有着多样的背景和水平也高低不等，但是她们至少有一件事情是相同的（除去她们的性别之外）。她们可以在自己的履历中添加一项“Linux内核工作者”。
+=======
+翻译中 by Linux-pdz
+Outreach Program for Women Seeks New Linux Kernel Interns
+================================================================================
+The interns who worked with The Linux Foundation as part of the [FOSS Outreach Program for Women][1] this summer come from diverse backgrounds and levels of experience, but they now have at least one thing in common (besides their gender). They can all add “Linux kernel hacker” to their resume.
+>>>>>>> 580c8e9dc6b7eb6242523c497d19cecb4c8738bd
 
 ![](http://www.linux.com/images/stories/41373/OPW-kernel-contributions-9.jpg)
 

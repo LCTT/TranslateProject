@@ -1,8 +1,8 @@
-让Linux更友好
+让Linux更加可用（Accessibility）
 ================================================================================
-一个令人吃惊的事实是，多于十亿人多多少少有着某种程度的残疾。就是说全球大约15%的人在生理上、感知上、心智上有缺陷，导致他们难以活动、看和听，以及学习。世界上3.5亿人有不同程度的视觉障碍。计算机技术发展地越快，这些人就越会被疏远，除非有计算机软件的开发可以满足他们的需求。
+一个令人吃惊的事实是，至少十亿人或多或少有着某种程度的残疾。就是说全球大约15%的人在生理上、感知上、心智上会有缺陷，导致他们难以活动、观看、收听以及学习。世界上3.5亿人有不同程度的视觉障碍。计算机技术发展地越快，这些人就越会被疏远，除非计算机软件的开发可以满足他们的需求。
 
-可用性是表示一个产品、设备、服务或者环境在不考虑具体细节的情况下能被多少人使用的程度。可用性可以被看作接触和利用一个系统或者实体的能力。可用性至关重要。社会和谐不是一个慈善行动，而是人类基本的权利。
+可用性是表示一个产品、设备、服务或者环境在不考虑具体细节的情况下能被多少人使用的程度。可用性可以被看作接触和利用一个系统或者实体的能力。可用性至关重要，社会和谐不是一个慈善行动，而是人类基本的权利。
 
 我们见证了Linux软件和发行版本在使每个人融入社会方面做的突出贡献。举个例子来说，GNOME Accessibility Project 为图形界面用户开发了开源的可用性解决方案。Ubuntu有一个可用性团队致力于使Ubuntu能被更广范围的人使用。不得不提的是Vinux Project，一个基于Ubuntu的发行版本，针对失明和视力有障碍的用户进行了优化。
 
@@ -13,20 +13,20 @@
 
 ### 通用辅助 ###
 
-- [Easystroke][1] Gesture recognition program
-- [Simon][2] 	Flexible speech recognition software
-- [Orca Screen Reader][3] 	Scriptable screen reader
-- [Julius][4] 	Two-pass large vocabulary continuous speech recognition engine
-- [Florence Virtual Keyboard][5] 	Extensible scalable virtual keyboard
-- [Caribou][6] 	Configurable on screen keyboard with scanning mode
-- [Dasher][7] 	Graphical predictive text input system
-- [xvkbd][8] 	Virtual (graphical) keyboard program
+- [Easystroke][1] 笔画识别软件
+- [Simon][2] 	灵活的语音识别软件
+- [Orca Screen Reader][3] 	可编程的屏幕阅读器
+- [Julius][4] 	Two-pass策略的大词汇持续语音识别引擎
+- [Florence Virtual Keyboard][5] 	扩展的可伸缩虚拟键盘
+- [Caribou][6] 	可配置的带有扫描模式的屏幕键盘
+- [Dasher][7] 	图形化的预测文本输入系统
+- [xvkbd][8] 	虚拟（图形）键盘系统
 
 --------------------------------------------------------------------------------
 
 via: http://www.linuxlinks.com/article/20131109042823957/UniversalAccess.html
 
-译者：[boredivan](https://github.com/boredivan) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[boredivan](https://github.com/boredivan) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
