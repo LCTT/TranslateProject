@@ -1,3 +1,5 @@
+翻译中 by小眼儿
+
 Apache OpenOffice vs. LibreOffice
 ================================================================================
 > The two open source office productivity suites are similar, yet one appears to have a slight advantage.
