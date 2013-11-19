@@ -1,3 +1,5 @@
+                                    Luoxcat Translating
+
 9 Linux Uname Command Examples To Get Operating System Details
 ================================================================================
 ![](http://linoxide.com/wp-content/uploads/2013/11/linux-uname-command.png)
