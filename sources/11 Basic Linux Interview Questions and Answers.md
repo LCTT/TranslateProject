@@ -1,3 +1,5 @@
+l3b2w1 translating 
+
 11 Basic Linux Interview Questions and Answers
 ================================================================================
 Theories apart, we are proud to announce a new section on Tecmint, dedicated to Linux Interview. Here we will bring to you Linux Interview Questions and all other aspects of Linux, which is must for a professional in this cut-throat competition world.
