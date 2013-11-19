@@ -1,3 +1,6 @@
+Translating--------------geekpi
+
+
 Suse Linux Enterprise expands regular support to 10 years
 ================================================================================
 **Suse expands general support on customer requests** 
