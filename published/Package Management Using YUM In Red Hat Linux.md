@@ -30,7 +30,7 @@ yum工具从远端服务器上的软件仓库（通常由OS提供商提供）获
     Repo : rhui-REGION-rhel-server-releases
     Matched from:
 
-*yum provides httpd*在软件仓库里搜索含有httpd的软件包。
+**yum provides httpd**在软件仓库里搜索含有httpd的软件包。
 
 ###提供所有软件组列表
 
@@ -44,20 +44,20 @@ yum工具从远端服务器上的软件仓库（通常由OS提供商提供）获
     Setting up Group Process
     Warning: Group Support does not exist.
     Resolving Dependencies
-    –> Running transaction check
-    —> Package php.x86_64 0:5.3.3-23.el6_4 will be installed
-    –> Processing Dependency: php-common(x86-64) = 5.3.3-23.el6_4 for package: php-5.3.3-23.el6_4.x86_64
-    –> Processing Dependency: php-cli(x86-64) = 5.3.3-23.el6_4 for package: php-5.3.3-23.el6_4.x86_64
-    —> Package php-gd.x86_64 0:5.3.3-23.el6_4 will be installed
-    –> Processing Dependency: libXpm.so.4()(64bit) for package: php-gd-5.3.3-23.el6_4.x86_64
-    —> Package php-pdo.x86_64 0:5.3.3-23.el6_4 will be installed
-    —> Package php-pear.noarch 1:1.9.4-4.el6 will be installed
-    —> Package php-xml.x86_64 0:5.3.3-23.el6_4 will be installed
-    –> Running transaction check
-    —> Package libXpm.x86_64 0:3.5.10-2.el6 will be installed
-    —> Package php-cli.x86_64 0:5.3.3-23.el6_4 will be installed
-    —> Package php-common.x86_64 0:5.3.3-23.el6_4 will be installed
-    –> Finished Dependency Resolution
+    -> Running transaction check
+    --> Package php.x86_64 0:5.3.3-23.el6_4 will be installed
+    -> Processing Dependency: php-common(x86-64) = 5.3.3-23.el6_4 for package: php-5.3.3-23.el6_4.x86_64
+    -> Processing Dependency: php-cli(x86-64) = 5.3.3-23.el6_4 for package: php-5.3.3-23.el6_4.x86_64
+    --> Package php-gd.x86_64 0:5.3.3-23.el6_4 will be installed
+    -> Processing Dependency: libXpm.so.4()(64bit) for package: php-gd-5.3.3-23.el6_4.x86_64
+    --> Package php-pdo.x86_64 0:5.3.3-23.el6_4 will be installed
+    --> Package php-pear.noarch 1:1.9.4-4.el6 will be installed
+    --> Package php-xml.x86_64 0:5.3.3-23.el6_4 will be installed
+    -> Running transaction check
+    --> Package libXpm.x86_64 0:3.5.10-2.el6 will be installed
+    --> Package php-cli.x86_64 0:5.3.3-23.el6_4 will be installed
+    --> Package php-common.x86_64 0:5.3.3-23.el6_4 will be installed
+    -> Finished Dependency Resolution
     
     Dependencies Resolved
     
@@ -92,7 +92,7 @@ yum工具从远端服务器上的软件仓库（通常由OS提供商提供）获
     (6/8): php-pdo-5.3.3-23.el6_4.x86_64.rpm | 75 kB 00:00
     (7/8): php-pear-1.9.4-4.el6.noarch.rpm | 393 kB 00:00
     (8/8): php-xml-5.3.3-23.el6_4.x86_64.rpm | 103 kB 00:00
-    ———————————————————————-
+    -----------------------------------------------
     Total 2.9 MB/s | 4.5 MB 00:01
     Running rpm_check_debug
     Running Transaction Test
@@ -133,18 +133,18 @@ yum工具从远端服务器上的软件仓库（通常由OS提供商提供）获
     Loaded plugins: amazon-id, rhui-lb, security
     Setting up Install Process
     Resolving Dependencies
-    –> Running transaction check
-    —> Package httpd.x86_64 0:2.2.15-29.el6_4 will be installed
-    –> Processing Dependency: httpd-tools = 2.2.15-29.el6_4 for package: httpd-2.2.15-29.el6_4.x86_64
-    –> Processing Dependency: apr-util-ldap for package: httpd-2.2.15-29.el6_4.x86_64
-    –> Processing Dependency: libaprutil-1.so.0()(64bit) for package: httpd-2.2.15-29.el6_4.x86_64
-    –> Processing Dependency: libapr-1.so.0()(64bit) for package: httpd-2.2.15-29.el6_4.x86_64
-    –> Running transaction check
-    —> Package apr.x86_64 0:1.3.9-5.el6_2 will be installed
-    —> Package apr-util.x86_64 0:1.3.9-3.el6_0.1 will be installed
-    —> Package apr-util-ldap.x86_64 0:1.3.9-3.el6_0.1 will be installed
-    —> Package httpd-tools.x86_64 0:2.2.15-29.el6_4 will be installed
-    –> Finished Dependency Resolution
+    -> Running transaction check
+    --> Package httpd.x86_64 0:2.2.15-29.el6_4 will be installed
+    -> Processing Dependency: httpd-tools = 2.2.15-29.el6_4 for package: httpd-2.2.15-29.el6_4.x86_64
+    -> Processing Dependency: apr-util-ldap for package: httpd-2.2.15-29.el6_4.x86_64
+    -> Processing Dependency: libaprutil-1.so.0()(64bit) for package: httpd-2.2.15-29.el6_4.x86_64
+    -> Processing Dependency: libapr-1.so.0()(64bit) for package: httpd-2.2.15-29.el6_4.x86_64
+    -> Running transaction check
+    --> Package apr.x86_64 0:1.3.9-5.el6_2 will be installed
+    --> Package apr-util.x86_64 0:1.3.9-3.el6_0.1 will be installed
+    --> Package apr-util-ldap.x86_64 0:1.3.9-3.el6_0.1 will be installed
+    --> Package httpd-tools.x86_64 0:2.2.15-29.el6_4 will be installed
+    -> Finished Dependency Resolution
     
     Dependencies Resolved
     
@@ -171,7 +171,7 @@ yum工具从远端服务器上的软件仓库（通常由OS提供商提供）获
 
 假如你不想让yum弹出[y/N]选项，可以使用**yum install -y httpd**
 
-**使用yum update 命令更新一个已存在的软件包**
+####使用yum update 命令更新一个已存在的软件包
 
     # yum update httpd
     Loaded plugins: amazon-id, rhui-lb, security
@@ -180,7 +180,7 @@ yum工具从远端服务器上的软件仓库（通常由OS提供商提供）获
 
 这意味着你系统中安装的httpd软件包已经是yum软件仓库里的最新版本的了。
 
-**更新服务器上所有的软件包**
+####更新服务器上所有的软件包
 
 	# yum update
 
@@ -188,15 +188,15 @@ yum工具从远端服务器上的软件仓库（通常由OS提供商提供）获
 
 ###下载RPM软件包但是不安装
 
-使用yum从RHEL或者CentOS的软件仓库里下载RPM软件包但是不安装。你首先需要下载一个插件让yum只下载rpm软件包而不安装。插件名字叫downloadonly，可以通过yum安装，如下所示：
+可以使用yum从RHEL或者CentOS的软件仓库里下载RPM软件包但是不安装。你首先需要下载一个插件让yum只下载rpm软件包而不安装。插件名字叫downloadonly，可以通过yum安装，如下所示：
 
     # yum install yum-downloadonly
     Loaded plugins: amazon-id, rhui-lb, security
     Setting up Install Process
     Resolving Dependencies
-    –> Running transaction check
-    —> Package yum-plugin-downloadonly.noarch 0:1.1.30-14.el6 will be installed
-    –> Finished Dependency Resolution
+    -> Running transaction check
+    --> Package yum-plugin-downloadonly.noarch 0:1.1.30-14.el6 will be installed
+    -> Finished Dependency Resolution
     
     Dependencies Resolved
     
@@ -235,7 +235,7 @@ yum工具从远端服务器上的软件仓库（通常由OS提供商提供）获
 
 	# yum install httpd-devel -downloadonly -downloaddir=/opt
 
-假如你有一个rpm软件包但是没有它所依赖的软件包，你不知道到哪去得到它所依赖的软件包。你仍然可以通过yum安装这个rpm软件包,并从软件仓库里得到它所依赖的软件包。让我们安装刚刚下载的httpd-devel-2.2.15-29.el6_4.x86_64 RPM软件包。
+假如你有一个rpm软件包但是没有它所依赖的软件包，你不知道到哪去得到它所依赖的软件包。你仍然可以通过yum安装这个rpm软件包，并从软件仓库里得到它所依赖的软件包。让我们安装刚刚下载的httpd-devel-2.2.15-29.el6_4.x86_64 RPM软件包。
 
 	# yum localinstall /opt/httpd-devel-2.2.15-29.el6_4.x86_64.rpm
 
@@ -244,34 +244,34 @@ yum工具从远端服务器上的软件仓库（通常由OS提供商提供）获
     Examining /opt/httpd-devel-2.2.15-29.el6_4.x86_64.rpm: httpd-devel-2.2.15-29.el6_4.x86_64
     Marking /opt/httpd-devel-2.2.15-29.el6_4.x86_64.rpm to be installed
     Resolving Dependencies
-    –> Running transaction check
-    —> Package httpd-devel.x86_64 0:2.2.15-29.el6_4 will be installed
-    –> Processing Dependency: apr-devel for package: httpd-devel-2.2.15-29.el6_4.x86_64
-    –> Processing Dependency: apr-util-devel for package: httpd-devel-2.2.15-29.el6_4.x86_64
-    –> Running transaction check
-    —> Package apr-devel.x86_64 0:1.3.9-5.el6_2 will be installed
-    —> Package apr-util-devel.x86_64 0:1.3.9-3.el6_0.1 will be installed
-    –> Processing Dependency: openldap-devel for package: apr-util-devel-1.3.9-3.el6_0.1.x86_64
-    –> Processing Dependency: expat-devel for package: apr-util-devel-1.3.9-3.el6_0.1.x86_64
-    –> Processing Dependency: db4-devel for package: apr-util-devel-1.3.9-3.el6_0.1.x86_64
-    –> Running transaction check
-    —> Package db4-devel.x86_64 0:4.7.25-18.el6_4 will be installed
-    –> Processing Dependency: db4-cxx = 4.7.25-18.el6_4 for package: db4-devel-4.7.25-18.el6_4.x86_64
-    –> Processing Dependency: db4 = 4.7.25-18.el6_4 for package: db4-devel-4.7.25-18.el6_4.x86_64
-    –> Processing Dependency: libdb_cxx-4.7.so()(64bit) for package: db4-devel-4.7.25-18.el6_4.x86_64
-    —> Package expat-devel.x86_64 0:2.0.1-11.el6_2 will be installed
-    —> Package openldap-devel.x86_64 0:2.4.23-32.el6_4.1 will be installed
-    –> Processing Dependency: cyrus-sasl-devel >= 2.1 for package: openldap-devel-2.4.23-32.el6_4.1.x86_64
-    –> Running transaction check
-    —> Package cyrus-sasl-devel.x86_64 0:2.1.23-13.el6_3.1 will be installed
-    —> Package db4.x86_64 0:4.7.25-17.el6 will be updated
-    –> Processing Dependency: db4 = 4.7.25-17.el6 for package: db4-utils-4.7.25-17.el6.x86_64
-    —> Package db4.x86_64 0:4.7.25-18.el6_4 will be an update
-    —> Package db4-cxx.x86_64 0:4.7.25-18.el6_4 will be installed
-    –> Running transaction check
-    —> Package db4-utils.x86_64 0:4.7.25-17.el6 will be updated
-    —> Package db4-utils.x86_64 0:4.7.25-18.el6_4 will be an update
-    –> Finished Dependency Resolution
+    -> Running transaction check
+    --> Package httpd-devel.x86_64 0:2.2.15-29.el6_4 will be installed
+    -> Processing Dependency: apr-devel for package: httpd-devel-2.2.15-29.el6_4.x86_64
+    -> Processing Dependency: apr-util-devel for package: httpd-devel-2.2.15-29.el6_4.x86_64
+    -> Running transaction check
+    --> Package apr-devel.x86_64 0:1.3.9-5.el6_2 will be installed
+    --> Package apr-util-devel.x86_64 0:1.3.9-3.el6_0.1 will be installed
+    -> Processing Dependency: openldap-devel for package: apr-util-devel-1.3.9-3.el6_0.1.x86_64
+    -> Processing Dependency: expat-devel for package: apr-util-devel-1.3.9-3.el6_0.1.x86_64
+    -> Processing Dependency: db4-devel for package: apr-util-devel-1.3.9-3.el6_0.1.x86_64
+    -> Running transaction check
+    --> Package db4-devel.x86_64 0:4.7.25-18.el6_4 will be installed
+    -> Processing Dependency: db4-cxx = 4.7.25-18.el6_4 for package: db4-devel-4.7.25-18.el6_4.x86_64
+    -> Processing Dependency: db4 = 4.7.25-18.el6_4 for package: db4-devel-4.7.25-18.el6_4.x86_64
+    -> Processing Dependency: libdb_cxx-4.7.so()(64bit) for package: db4-devel-4.7.25-18.el6_4.x86_64
+    --> Package expat-devel.x86_64 0:2.0.1-11.el6_2 will be installed
+    --> Package openldap-devel.x86_64 0:2.4.23-32.el6_4.1 will be installed
+    -> Processing Dependency: cyrus-sasl-devel >= 2.1 for package: openldap-devel-2.4.23-32.el6_4.1.x86_64
+    -> Running transaction check
+    --> Package cyrus-sasl-devel.x86_64 0:2.1.23-13.el6_3.1 will be installed
+    --> Package db4.x86_64 0:4.7.25-17.el6 will be updated
+    -> Processing Dependency: db4 = 4.7.25-17.el6 for package: db4-utils-4.7.25-17.el6.x86_64
+    --> Package db4.x86_64 0:4.7.25-18.el6_4 will be an update
+    --> Package db4-cxx.x86_64 0:4.7.25-18.el6_4 will be installed
+    -> Running transaction check
+    --> Package db4-utils.x86_64 0:4.7.25-17.el6 will be updated
+    --> Package db4-utils.x86_64 0:4.7.25-18.el6_4 will be an update
+    -> Finished Dependency Resolution
     
     Dependencies Resolved
     
@@ -345,21 +345,21 @@ yum工具从远端服务器上的软件仓库（通常由OS提供商提供）获
 
 ###使用yum卸载软件包
 
-使用 yum remove 卸载软件包。举例如下：
+使用 **yum remove** 卸载软件包。举例如下：
 
 	# yum remove httpd
     Failed to set locale, defaulting to C
     Loaded plugins: amazon-id, downloadonly, rhui-lb, security
     Setting up Remove Process
     Resolving Dependencies
-    –> Running transaction check
-    —> Package httpd.x86_64 0:2.2.15-29.el6_4 will be erased
-    –> Processing Dependency: httpd-mmn = 20051115 for package: php-5.3.3-23.el6_4.x86_64
-    –> Processing Dependency: httpd = 2.2.15-29.el6_4 for package: httpd-devel-2.2.15-29.el6_4.x86_64
-    –> Running transaction check
-    —> Package httpd-devel.x86_64 0:2.2.15-29.el6_4 will be erased
-    —> Package php.x86_64 0:5.3.3-23.el6_4 will be erased
-    –> Finished Dependency Resolution
+    -> Running transaction check
+    --> Package httpd.x86_64 0:2.2.15-29.el6_4 will be erased
+    -> Processing Dependency: httpd-mmn = 20051115 for package: php-5.3.3-23.el6_4.x86_64
+    -> Processing Dependency: httpd = 2.2.15-29.el6_4 for package: httpd-devel-2.2.15-29.el6_4.x86_64
+    -> Running transaction check
+    --> Package httpd-devel.x86_64 0:2.2.15-29.el6_4 will be erased
+    --> Package php.x86_64 0:5.3.3-23.el6_4 will be erased
+    -> Finished Dependency Resolution
     
     Dependencies Resolved
     
@@ -400,7 +400,7 @@ yum工具从远端服务器上的软件仓库（通常由OS提供商提供）获
 
 ###列出所有安装的软件包
 
-假如你要列出你系统上安装的所有软件包，你可以使用yum list installed命令。这条命令结合grep命令是非常有用的，可以用来检查某个特定的软件包是否已被安装。这与使用rpm -qa命令询问已经安装的软件包相似。
+假如你要列出你系统上安装的所有软件包，你可以使用**yum list installed**命令。这条命令结合grep命令是非常有用的，可以用来检查某个特定的软件包是否已被安装。这与使用rpm -qa命令询问已经安装的软件包相似。
 
     # yum list installed
     Loaded plugins: amazon-id, downloadonly, rhui-lb, security
@@ -426,7 +426,7 @@ yum工具从远端服务器上的软件仓库（通常由OS提供商提供）获
     .
     Output Truncated.
 
-###列出可用软件库，软件包从这里查询，安装并更新
+###列出可用的软件库，通过它们可以查询、安装和更新软件包
 
 	# yum repolist
 
