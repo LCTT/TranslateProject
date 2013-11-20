@@ -1,3 +1,6 @@
+Translating-------------geekpi
+
+
 10 Lesser Known Commands for Linux – Part 3
 ================================================================================
 ![](http://www.tecmint.com/wp-content/uploads/2013/11/10-Lesser-Known-Linux-Commands.png)
