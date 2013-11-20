@@ -1,3 +1,5 @@
+翻译中 by小眼儿
+
 Linux Mint 16 “Petra” Cinnamon RC Has Been Released!
 ================================================================================
 After six months of incremental development on top of stable and reliable technologies the Linux Mint developer team has announced the release of [Linux Mint 16 Petra Cinnamon Edition][1]. This new release of Linux Mint includes updated software, new features and many fixes.
