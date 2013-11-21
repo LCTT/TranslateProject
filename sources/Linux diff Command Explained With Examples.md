@@ -1,3 +1,6 @@
+Translating--------------geekpi
+
+
 Linux diff Command Explained With Examples
 ================================================================================
 ![](http://linoxide.com/wp-content/uploads/2013/11/linux-diff-command.png)
