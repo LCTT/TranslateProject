@@ -1,3 +1,4 @@
+                                    翻译中 Luox
 Daily Ubuntu Tips – Create Virtual Network Cards In Ubuntu Linux
 ================================================================================
 This tutorial is for users who want to experiment a bit with Ubuntu Linux. It not for everyone, especially those with machines that are used in production.
