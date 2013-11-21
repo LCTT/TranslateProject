@@ -120,7 +120,7 @@ Recoll支持两种索引计划：
 
 via: http://www.unixmen.com/recoll-text-searching-tool-linux-desktops/
 
-译者：[Linux-pdz](https://github.com/Linux-pdz) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Linux-pdz](https://github.com/Linux-pdz) 校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
