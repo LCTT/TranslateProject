@@ -102,7 +102,7 @@ SBackup 可在 Ubuntu、Linux Mint 和 Debian 的默认仓库中获得，所以�
 
 ### Schedule ###
 
-在这个选项中，你可以计划具体的备份时间。点击 **Simple** 选项，可以按每小时、每日、每周、每月来设置你的计划备份时间。
+在这个选项中，你可以设定具体的备份时间。点击 **Simple** 选项，可以按每小时、每日、每周、每月来设置你的计划备份时间。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/11/Simple-Backup-Suite_010.jpg)
 
