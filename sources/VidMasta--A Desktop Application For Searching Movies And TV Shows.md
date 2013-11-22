@@ -1,3 +1,4 @@
+翻译中 by Linux-pdz
 VidMasta: A Desktop Application For Searching Movies And TV Shows
 ================================================================================
 Ever wanted to search for a Movie or a TV shows from your desktop or searching for a application to do it for you whenever you want? Here is a application to fulfil your needs.

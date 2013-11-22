@@ -1,3 +1,4 @@
+翻译中 by Linux-pdz
 Play A Crossword Game With Adobe’s Leaked Passwords
 ================================================================================
 A **crossword** game with **Adobe’s** Leaked Passwords is now available for playing at [http://zed0.co.uk/crossword/][1]. The author of this game, created the crossword to highlight how insecure most common memorable passwords are and how little you should trust that corporations, such as Adobe, are following best practice when it comes to storing them.

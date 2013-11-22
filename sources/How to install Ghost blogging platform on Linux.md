@@ -1,5 +1,9 @@
+
     neartan占坑
 
+=======
+翻译中 by Linux-pdz
+>>>>>>> 8aaeae6b88050a64fdfc96886a70ee0f3224b744
 How to install Ghost blogging platform on Linux
 ================================================================================
 [Ghost][1] is a relatively new blog publishing platform which started out as a [£25,000 Kickstarter project][2]. While WordPress is still the dominant blogging tool on the web, it has now evolved into a general content management platform with tons of third party developed features, and over time has become increasingly cumbersome and complex to maintain. On the other hand, now only a couple of months old, Ghost promises to remain as a pure blogging platform with slick user-centric publishing interface.

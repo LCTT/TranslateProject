@@ -1,4 +1,3 @@
-
 SBackup: 在 linux 下的一个简单的备份软件
 ================================================================================
 
@@ -45,7 +44,7 @@ SBackup 可在 Ubuntu、Linux Mint 和 Debian 的默认仓库中获得，所以�
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/11/Configuration-Profile-Manager_005.jpg)
 
-现在看到 SBackup 的配置文件已经被切换到“sk”
+现在看到 SBackup 的配置文件已经被切换到“sk” 
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/11/Simple-Backup-Suite_006.jpg)
 
