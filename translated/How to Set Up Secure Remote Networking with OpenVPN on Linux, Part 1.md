@@ -98,7 +98,7 @@ OpenVPN 本身是比较容易配置的，最麻烦的是处理防火墙和动态
 
 via: http://www.linux.com/learn/tutorials/743590-secure-remote-networking-with-openvpn-on-linux
 
-译者：[bazz2](https://github.com/bazz2) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[bazz2](https://github.com/bazz2) 校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
