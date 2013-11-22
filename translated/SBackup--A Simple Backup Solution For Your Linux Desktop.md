@@ -1,7 +1,7 @@
-SBackup: 在 linux 下的一个简单的备份软件
+SBackup: 一个Linux下的简单备份软件
 ================================================================================
 
-**SBackup** 是一个开源易用的简单备份软件。它可以备份任意文件或者文件夹的一部分。所有的配置文件可以通过 Gnome 界面进行访问。文件和路径可以直接通过正则表达式进行添加和排除。它支持本地备份和远程备份。虽然它看起来简单，但是它有着许多常见的高级备份功能。
+**SBackup** 是一个简单易用的开源备份软件。它可以备份任意文件或者文件夹的一部分。所有的配置文件可以通过 Gnome 界面进行访问。文件和路径可以直接通过正则表达式进行添加和排除。它支持本地备份和远程备份。虽然它看起来简单，但是它有着许多常见的高级备份功能。
 
 ### 特点 ###
 
@@ -102,7 +102,7 @@ SBackup 可在 Ubuntu、Linux Mint 和 Debian 的默认仓库中获得，所以�
 
 ### Schedule ###
 
-在这部分，你可以计划具体的备份时间。点击 **Simple** 选项，可以按小时、每日、星期、月来设置你的计划备份时间。
+在这个选项中，你可以设定具体的备份时间。点击 **Simple** 选项，可以按每小时、每日、每周、每月来设置你的计划备份时间。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/11/Simple-Backup-Suite_010.jpg)
 
@@ -116,17 +116,17 @@ SBackup 可在 Ubuntu、Linux Mint 和 Debian 的默认仓库中获得，所以�
 
 ### Purging ###
 
-在这部分内，可以删除超过一定时间的备份文件。在默认配置下，超过30天的备份文件将被删除。
+在这个选项里，可以删除超过一定时间的备份文件。在默认配置下，超过30天的备份文件将被删除。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/11/Simple-Backup-Suite_0111.jpg)
 
 ### Report ###
 
-Report 是最后一个选项卡，在这里你可以设置接收备份完成通知的邮箱。输入你的邮箱ID、SMTP服务地址、邮箱用户名、密码后，点击 Test mail settings。需要留意的是，在保存设置前要先测试邮件功能。
+Report 是最后一个选项卡，在这里你可以设置接收备份完成通知的邮箱。输入你的邮箱ID、SMTP服务地址、邮箱用户名、密码后，点击 Test mail settings。需要留意的是，在测试邮箱设置前，点击工具栏中的Save Configuration按钮保存你的配置。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/11/Simple-Backup-Suite_0121.jpg)
 
-你将在完成测试邮箱后看到 “Test Successful” 字样。
+你将在完成测试邮箱设置后看到 “Test Successful” 字样。
 
 ### 开始备份 ###
 
@@ -138,7 +138,7 @@ Report 是最后一个选项卡，在这里你可以设置接收备份完成通�
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/11/sbackup-config-gtk_024.jpg)
 
-现在备份的进程已经在后台开始运行，你可以通过在通知栏上的状态显示来监视备份的进程。（这句话不太确定）
+现在备份的进程已经在后台开始运行，你可以通过在通知栏上的状态显示来监视备份的进程。
 
 完成备份之后，关闭 SBackup ，并且确认备份文件保存在指定的目录。例子中我保存的目录是/home/sk/My Backup。
 
@@ -165,7 +165,7 @@ Report 是最后一个选项卡，在这里你可以设置接收备份完成通�
 
 via: http://www.unixmen.com/linux-desktop-backup-made-easy-sbackup/
 
-译者：[NearTan](https://github.com/NearTan) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[NearTan](https://github.com/NearTan) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
