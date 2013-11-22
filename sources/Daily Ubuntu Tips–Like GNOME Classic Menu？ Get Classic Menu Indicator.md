@@ -1,3 +1,4 @@
+翻译中 by Linux-pdz
 Daily Ubuntu Tips–Like GNOME Classic Menu? Get Classic Menu Indicator
 ================================================================================
 Daily Ubuntu Tips–Like GNOME Classic Menu? Get Classic Menu Indicator

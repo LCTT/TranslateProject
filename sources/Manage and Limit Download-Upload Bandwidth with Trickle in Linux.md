@@ -1,3 +1,4 @@
+翻译中 by Linux-pdz
 Manage and Limit Download/Upload Bandwidth with Trickle in Linux
 ================================================================================
 Have you ever encountered situations where one application dominated you all network bandwidth? If you have ever been in a situation where one application ate all your traffic, then you will value the role of the trickle bandwidth shaper application. Either you are a system admin or just a Linux user, you need to learn how to control the upload and download speeds for applications to make sure that your network bandwidth is not burned by a single application.
