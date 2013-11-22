@@ -53,12 +53,16 @@ ntopng安装完毕之后，接下来，新建一个ntopng配置目录，然后�
     $ sudo mkir /etc/ntopng -p 
 
     $ sudo -e /etc/ntopng/ntopng.start 
+    
+修改如下：
 
 > --local-networks "192.168.1.0/24"
 > 
 > --interface 1
 
     $ sudo -e /etc/ntopng/ntopng.conf 
+
+修改如下：
 
 > -G=/var/run/ntopng.pid
 
@@ -77,8 +81,7 @@ ntopng安装完毕之后，接下来，新建一个ntopng配置目录，然后�
 ntopng默认监听TCP的3000端口，使用下列命令加以确认。
 
     $ sudo netstat -nap|grep ntopng
-
-> tcp        0      0 0.0.0.0:3000            0.0.0.0:*      LISTEN     29566/ntopng
+    tcp        0      0 0.0.0.0:3000            0.0.0.0:*      LISTEN     29566/ntopng
 
 ###基于Web界面的网络流量监控###
 
@@ -88,16 +91,21 @@ ntopng默认监听TCP的3000端口，使用下列命令加以确认。
 
 下面是一些截图。
 
-top流的实时可视化图像
+**top流的实时可视化图像**
+
 [![](http://farm4.staticflickr.com/3830/10487165303_8bf0b25668_z.jpg)][8]
 
-top主机的实时统计，包括top协议和top AS数量
+**top主机的实时统计，包括top协议和top AS数量**
+
 [![](http://farm3.staticflickr.com/2886/10486988416_7c8770e823_z.jpg)][9]
 
-基于DPI的自动程序/服务探索生成的的实时数据报告
+**基于DPI的自动程序/服务探索生成的的实时数据报告**
 
-历史流量数据分析
-[![](http://farm8.staticflickr.com/7379/10486995114_f0b58243a8_z.jpg)][10]
+[![](http://farm6.staticflickr.com/5500/10486988386_641608ecac_z.jpg)][10]
+
+**历史流量数据分析**
+
+[![](http://farm8.staticflickr.com/7379/10486995114_f0b58243a8_z.jpg)][11]
 
 --------------------------------------------------------------------------------
 
@@ -116,4 +124,5 @@ via: http://xmodulo.com/2013/10/set-web-based-network-traffic-monitoring-linux.h
 [7]:http://xmodulo.com/go/fedora_guide
 [8]:http://www.flickr.com/photos/xmodulo/10487165303/
 [9]:http://www.flickr.com/photos/xmodulo/10486988416/
-[10]:http://www.flickr.com/photos/xmodulo/10486995114/
+[10]:http://www.flickr.com/photos/xmodulo/10486988386/
+[11]:http://www.flickr.com/photos/xmodulo/10486995114/
