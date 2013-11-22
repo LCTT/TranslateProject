@@ -1,3 +1,4 @@
+翻译中 by Linux-pdz
 Daily Ubuntu Tips–Make The Mouse Left-handed For Left Hand Users
 ================================================================================
 The computer mouse was designed to be operated mostly using your index finger (the finger next to your thumb). By default, the mouse is configured for right-handed users. When you turn on your machine the first time, in most cases you will have to use your right index finger to click on things.
