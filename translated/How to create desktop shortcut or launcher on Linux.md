@@ -1,13 +1,14 @@
 如何在Linux的桌面上创建快捷方式或启动器
 ===
-假如在Linux桌面系统中有一个程序你经常使用，你可能想去创建一个“桌面快捷方式”，以便于你在桌面只要点击一下快捷方式就可以启动它。大多数带有图形界面的程序会在安装时自动在桌面上创建快捷方式，还有一些图形界面程序或者命令行程序可能需要你手动创建快捷方式。
+如果在Linux桌面系统中你经常使用一个程序，你可能想去创建一个“桌面快捷方式”，以便于你在桌面只要点击一下快捷方式就可以启动它。不过大多数带有图形界面的程序会在安装时自动在桌面上创建快捷方式，还有一些图形界面程序或者命令行程序可能需要你手动创建快捷方式。
 
 在这个手册里，我将告诉你**如何在不同的Linux桌面上添加桌面快捷方式**。
 
-一个桌面快捷方式是由内含该APP元信息（例如，app的名字，启动命令或者图标位置等）的.desktop文件所表示的。桌面快捷方式文件放置于**／usr/share/applications**或者**~/.local/share/applications**处。前一个目录存储每个人都可以使用桌面快捷方式，而后一个目录则含有特定用户创建的快捷方式。
+一个桌面快捷方式是由内含该APP元信息（例如，app的名字，启动命令或者图标位置等）的.desktop文件所表示的。桌面快捷方式文件放置于**／usr/share/applications**或者**~/.local/share/applications**处。前一个目录存储的桌面快捷方式每个用户都可以使用，而后一个目录则含有仅仅为特定用户创建的快捷方式。
 
 ###使用命令行创建桌面快捷方式
-为特定程序或命令创建桌面快捷方式，你可以使用任意文本编辑器创建一个.desktop文件，然后把它放到**/usr/share/applications**或者**~/.local/share/applications**处。一个典型的.desktop文件像下面这样。
+
+为特定程序或命令创建桌面快捷方式，你可以使用任意文本编辑器创建一个.desktop文件，然后把它放到**/usr/share/applications**或者**~/.local/share/applications**处。一个典型的.desktop文件如下图所示。
 
 	[Desktop Entry]
 	Encoding=UTF-8
@@ -21,17 +22,17 @@
 	Categories=Application;Network;Security;		#categories in which this app should be listed.
 	Comment[en_US]=yEd Graph Editor					#comment which appears as a tooltip.
 
-除了手动创建.desktop文件之外，依据你的系统所采用的桌面环境的不同有不同的创建应用快捷方式的方法，接下来我们将会讲解这方法。
+除了手动创建.desktop文件之外，依据你的系统所采用的桌面环境的不同有不同的创建应用快捷方式的方法，接下来的教程我将为你讲解。
 
 ###在GNOME桌面下创建快捷方式
 
-在GNOME桌面环境下，你可以使用gnome-desktop-item-edit很容易的去创建一个桌面快捷方式。
+在GNOME桌面环境下，你可以使用gnome-desktop-item-edit轻松创建创建一个桌面快捷方式。
 
 	$ gonme-desktop-item-edit ~/.local/share/applications --create-new
 
-在这个例子中，gnome-desktop-item-edit会在目录～/.local/share/applications中自动创建一个桌面启动器文件。若是想自定义快件方式图标或者其它信息，你可以手动编辑.desktop文件。
+在这个例子中，gnome-desktop-item-edit会在目录～/.local/share/applications中自动创建一个桌面启动器文件。若是想自定义快捷方式图标或者其它信息，你可以手动编辑.desktop文件。
 
-假如你的系统上没有安装gnome-desktop-item-edit（例如，在Ubuntu上），你可以依照下面方式安装：
+如果在你的系统上，gnome-desktop-item-edit不可用（例如，在Ubuntu上），你可以依照下面方式安装：
 
 	$ sudo apt-get install --no-install-recommends gnome-panel
 
@@ -43,7 +44,7 @@ kickoff是KDE桌面默认的应用启动器。可以直接在kickoff里添加新
 
 [![](http://farm3.staticflickr.com/2839/10848506344_7949638fe0.jpg)][1]
 
-在你要创建快捷方式的合适分类处右击，点击位于顶部的“新条目”按钮，键入应用的名字。
+在你要创建快捷方式的合适分类处（例如， "Utilities"）右击，点击位于顶部的“新条目”按钮，键入应用的名字。
 
 [![](http://farm8.staticflickr.com/7459/10848418496_ac6de897fe_z.jpg)][2]
 
@@ -69,7 +70,7 @@ kickoff是KDE桌面默认的应用启动器。可以直接在kickoff里添加新
 
 via: http://xmodulo.com/2013/11/create-desktop-shortcut-launcher-linux.html
 
-译者：[Linux-pdz](https://github.com/Linux-pdz) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Linux-pdz](https://github.com/Linux-pdz) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
