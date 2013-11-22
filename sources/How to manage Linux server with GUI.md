@@ -1,3 +1,4 @@
+[being translated] by thinkinglk
 How to manage Linux server with GUI
 ================================================================================
 A typical Linux server runs in a command line interface (CLI) environment, preloaded with bare essential tools needed to install and configure various headless services. Compared to a full-blown GUI desktop image, such a minimal setup is advantageous in terms of security, resource consumption and speed.
