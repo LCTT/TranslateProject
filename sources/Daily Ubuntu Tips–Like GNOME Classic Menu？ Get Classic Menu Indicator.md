@@ -1,3 +1,4 @@
+		Vic020的	wc
 Daily Ubuntu Tips–Like GNOME Classic Menu? Get Classic Menu Indicator
 ================================================================================
 Daily Ubuntu Tips–Like GNOME Classic Menu? Get Classic Menu Indicator
