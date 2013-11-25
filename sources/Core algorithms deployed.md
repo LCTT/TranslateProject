@@ -1,3 +1,6 @@
+Translating-------------geekpi
+
+
 Core algorithms deployed
 ================================================================================
 Algorithms that are the main driver behind a system are, in my opinion, easier to find in non-algorithms courses for the same reason theorems with immediate applications are easier to find in applied mathematics rather than pure mathematics courses. It is rare for a practical problem to have the exact structure of the abstract problem in a lecture. To be argumentative, I see no reason why fashionable algorithms course material such as Strassen's multiplication, the AKS primality test, or the Moser-Tardos algorithm is relevant for low-level practical problems of implementing a video database, an optimizing compiler, an operating system, a network congestion control system or any other system. The value of these courses is learning that there are intricate ways to exploit the structure of a problem to find efficient solutions. Advanced algorithms is also where one meets simple algorithms whose analysis is non-trivial. For this reason, I would not dismiss simple randomized algorithms or PageRank.
