@@ -4,13 +4,13 @@
 
 ### 什么是 ping 工具###
 
-在传授一些关于ping工具真实大观的实例前,先让我来解释一下这个命令行工具及其目的.ping工具通常用来测试一台主机在互联网协议(IP)网络内的连通性.其名字源于主动声纳法,这是用来在水下创建一个脉冲声音(ping)并遇到周围的对象而返回信号.用这个方法是对ping网络工具最通俗易懂的解释.ping工具对一台主机发送回应请求然后等待ICMP响应.
+在传授一些关于ping工具真实大观的实例前,先让我来介绍一下这个命令行工具及其目的.ping工具通常用来测试一台主机在互联网协议(IP)网络内的可达性.其名字源于主动声纳法——在水下创建一个脉冲声音信号(ping)并侦听周围物体的返回信号.该方法同样生动描述了ping网络工具的工作原理.ping工具对一台主机发送回应请求然后等待ICMP响应.
 
 用于实践ping工具的一些例子:
 
 ### 查询主机的IP地址 ###
 
-有时候你需要得到某一台的IP地址,你可以使用ping工具如图一所示.键入ping命令后面跟上要查询的主机名.
+有时候你需要得到某一台主机的IP地址,如图一.只需要键入ping命令后面跟上要查询的主机名.
 
     ping www.omgubuntu.com
 
@@ -22,13 +22,13 @@
 
     ping -V
 
-正如你从图二见到的,我正在用ping utility,iputils-sss20101006
+正如你从图二见到的,我正在使用的是“ping utility,iputils-sss20101006”
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/11/ping2.png)
 
 ### 自动退出 ping ###
 
-当你用‘ping 主机’命令ping一台机器,ping时无法停止必需按CTRL+C强行退出,或者你可以用 -c (count)选项指定发送包的数量.当用-c选项,当网络管理员(无论那个用户)发送了指定数量的包,无需按CTRL+C,ping进程会自动停止. 
+当你用‘ping 主机’命令ping一台机器时，ping自己无法停止，你必需按下CTRL+C强行退出,或者你可以用 -c (count)选项指定发送包的数量.使用-c选项,当网络管理员(其实普通用户也可以)发送完指定数量的包之后,无需按CTRL+C,ping进程就会自动停止. 
 
     ping -c 13 127.0.0.1
 
@@ -40,7 +40,7 @@
 
 ### 指定数据包之间的时间间隔 ###
 
-你知道ping每秒钟发送一个数据包吗?你要加快还是减慢呢?用 -i 选项能指定包之间的时间间隔.用下列命令快速发送或慢速发送包.
+你知道ping每秒钟发送一个数据包吗?你喜欢快一点还是慢一点?用 -i 选项能指定包之间的时间间隔.用下列命令快速发送或慢速发送包.
 
 ###  每0.13秒发送一个包 ###
 
@@ -56,7 +56,7 @@
 
     ping -c 13 -i 3
 
-用39秒发出13个数据包,数据包的时间间隔为三秒.
+总共花费39秒发出13个数据包,数据包的时间间隔为三秒.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/11/ping6.png)
 
@@ -64,6 +64,6 @@
 
 via: http://www.unixmen.com/five-examples-ping-utility/
 
-译者：[Luoxcat](https://github.com/Luoxcat) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Luoxcat](https://github.com/Luoxcat) 校对：[Mr小眼儿](http://blog.csdn.net/tinyeyeser)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

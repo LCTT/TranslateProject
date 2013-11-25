@@ -114,6 +114,6 @@ Uname也可以透露你在运行的操作系统.用**-o**参数可以实现这�
 
 via: http://linoxide.com/linux-command/uname-command/
 
-译者：[Luoxcat](https://github.com/Luoxcat) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Luoxcat](https://github.com/Luoxcat) 校对：[Mr小眼儿](http://blog.csdn.net/tinyeyeser)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
