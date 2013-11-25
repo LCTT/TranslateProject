@@ -2,7 +2,7 @@
 ================================================================================
 ![](http://linoxide.com/wp-content/uploads/2013/11/linux-diff-command.png)
 
-在比较文件的时候，通常会用GUI软件。很少有人真正会为了这个目的使用命令行工具。虽然说使用命令行来比较文件/目录，并不像一件小事儿那样容易，但是如果你是一个Linux使用者，那么我想你应该知道如何通过命令行比较文件，因为你一旦使用了它，会感觉它绝对是一个快速的方法。
+在比较文件的时候，通常会用基于GUI的软件。很少有人真正会为了这个目的使用命令行工具。虽然说使用命令行来比较文件/目录并不像一件小事儿那样容易，但是如果你是一个Linux使用者，那么我想你应该知道如何通过命令行比较文件，因为一旦使用了它，你会认为它绝对是一个快速的方法。
 
 在本篇中，我们将通过一些实例来学习如何使用diff命令。
 
@@ -169,7 +169,7 @@ diff命令还提供了更多的命令行选项。阅读[man page][1]来获取完
 
 via: http://linoxide.com/linux-command/linux-diff-command-examples/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
