@@ -1,6 +1,6 @@
 Mark Shuttleworth后悔“茶党”的言论以及Canonical公司犯的错
 ================================================================================
-** Mark Shuttleworth, Canonical公司的创始人,澄清了他“茶党”的言论和为个人言论而表示歉意。**
+**Mark Shuttleworth, Canonical公司的创始人,澄清了他“茶党”的言论和为个人言论而表示歉意。**
 
 ![](http://i1-news.softpedia-static.com/images/news2/Mark-Shuttleworth-Regrets-the-quot-Tea-Party-quot-Remarks-and-Other-Canonical-Mistakes-398819-2.jpg)
 
