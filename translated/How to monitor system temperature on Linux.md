@@ -96,7 +96,7 @@ psensor的窗口将显示一个可用传感器的列表,并可视化从这些传
 
 via: http://xmodulo.com/2013/11/monitor-system-temperature-linux.html
 
-译者：[Luoxcat](https://github.com/Luoxcat) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Luoxcat](https://github.com/Luoxcat) 校对：[Mr小眼儿](http://blog.csdn.net/tinyeyeser)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
