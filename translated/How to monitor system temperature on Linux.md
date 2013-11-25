@@ -14,11 +14,11 @@
 还有[hddtemp][2],它可以通过读取[S.M.A.R.T.][3]参数来测量温度；
 今天我们要介绍的是[psensor][4]，这是一款前端图形化界面温度监测工具，能够可视化显示CPU、Nvidia/ATI/AMD各家显卡以及硬盘等多个硬件设备的温度。
 
-接下来，我将描述如何设置psensor来监控CPUs和硬盘的温度.
+接下来，我将描述如何设置psensor来监控CPUs和硬盘的温度。
 
 ### 在Linux 桌面系统中安装 psensor###
 
-使用psensor可视化显示系统温度，需要基于其他工具诸如lm-sensors和hddtemp等获得的数据。因此你需要在安装psensor的同时,一并安装这两款工具.
+使用psensor可视化显示系统温度，需要基于其他工具诸如lm-sensors和hddtemp等获得的数据。因此你需要在安装psensor的同时，一并安装这两款工具。
 
 在Debian或Ubuntu下安装psensor:
 
@@ -48,25 +48,25 @@
 
     $ sudo make install 
 
-这里注意，由于需要GTK3库的支持,psensor无法与搭载GNOME2桌面的CentOs或RHEL 6兼容.
+这里注意，由于需要GTK3库的支持，psensor无法与搭载GNOME2桌面的CentOs或RHEL 6兼容。
 
 ### 在Linux中配置 psensor ###
 
-在启动 psensor之前,你需要先配置lm_sensors和hddtemp.
+在启动 psensor之前，你需要先配置lm_sensors和hddtemp。
 
 #### lm_sensors 配置 ####
 
-运行以下命令,配置lm_sensors,每一项都选择YES.
+运行以下命令，配置lm_sensors，每一项都选择YES。
 
     $ sudo sensors-detect 
 
-这个命令将会探查和检测你硬件中嵌入的传感器(包括CPUs,储存控制器,I/O芯片),然后自动决定系统中哪个驱动模块需要载入并监测其温度。
+这个命令将会探查和检测你硬件中嵌入的传感器(包括CPUs、储存控制器、I/O芯片)，然后自动决定系统中哪个驱动模块需要载入并监测其温度。
 
-一旦传感器检测完成,你需要把检测到的驱动模块添加到/etc配置中,这样它们才可以在开机时自动加载.
+一旦传感器检测完成，你需要把检测到的驱动模块添加到/etc配置中，这样它们才可以在开机时自动加载。
 
-在Debian或Ubuntu下,检测到的驱动模块将会被添加到/et/modules.在Fedora下,驱动信息会添加到/etc/sysconfig/lm_sersors.
+在Debian或Ubuntu下，检测到的驱动模块将会被添加到/et/modules.在Fedora下，驱动信息会添加到/etc/sysconfig/lm_sersors。
 
-接下来,继续加载必要的模块,如下:
+接下来，继续加载必要的模块，如下:
 
 Ubuntu:
 
@@ -82,9 +82,9 @@ Fedora
 
 #### hddtemp 配置 ####
 
-你还需要启动hddtemp,监控硬盘驱动器的温度.
+你还需要启动hddtemp，监控硬盘驱动器的温度。
 
-运行下列命令,作为一个守护进程启动hddtemp. 记得把“/dev/sda”替换成你系统上的硬盘驱动器.
+运行下列命令，作为一个守护进程启动hddtemp。记得把“/dev/sda”替换成你系统上的硬盘驱动器。
 
     $ sudo hddtemp -d /dev/sda 
 
@@ -94,11 +94,11 @@ Fedora
 
     $ psensor 
 
-psensor窗口将显示一个可用的传感器列表,并将传感器中读出的温度可视化显示出来.你可以选择性地启用或禁用任意一个传感器.
+psensor窗口将显示一个可用的传感器列表，并将传感器中读出的温度可视化显示出来。你可以选择性地启用或禁用任意一个传感器。
 
 [![](http://farm8.staticflickr.com/7448/10719475225_f89b6f7191_z.jpg)][5]
 
-另外,你可以为每个传感器设置警报级别,这样当传感器温度超过某一阈值时，你就能得到通知了.
+另外，你可以为每个传感器设置警报级别,这样当传感器温度超过某一阈值时，你就能得到通知了。
 
 psensor默认使用的温度单位是“摄氏度”，最新的版本（0.7-0.8）支持在摄氏与华氏之间转换温度单位，如果你用的版本比较旧（例如0.6.x）并且不支持温度单位转换，Ubuntu用户可以通过PPA仓库来安装最新版的psensor，Debian用户则可以通过源代码来安装。
 
