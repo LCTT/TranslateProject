@@ -2,27 +2,35 @@
 
 ================================================================================
 
-在大多数情况下,你无需担心你电脑的温度.除非制造缺陷,设计硬件一般都不会超过最大的工作温度.但即使没有任何硬件故障,各样的软件问题也会导致硬件过热,例如,显卡驱动的大量bug,错误风扇控制程序配置,CPU频率调节守护进程的故障,等.
+在大多数情况下,你无需担心你的电脑温度.除非制造上的缺陷,硬件设计一般不会使其超过最高工作温度.但即使没有任何硬件故障,各种各样的软件问题也会导致硬件过热,例如,显卡驱动的严重bug,风扇控制程序的错误配置,CPU调频守护进程的故障,等等.
 
-过热可能会严重到对你硬件造成永久性的伤害.所以小心你系统上的任何过热问题.如果有适当的温度监控系统,那再好不过了,这样在系统温度突然急速上升时可以第一时间收到警告.
+严重的过热可能会对硬件造成永久性的伤害.所以应当时刻小心你系统上的任何过热问题.因此，如果有合适的温度监控系统，能在系统温度突然急速上升时，第一时间向用户发出警报，岂不美哉？
 
-在这个教程,我将描述**如何在Linux下监控系统温度**.
+于是，本教程,我将描述**如何在Linux下监控系统温度**.
 
-在Linux下有几个允许你检查和监控各种系统组件的用户级工具.
+首先，在Linux下有许多用户级工具可以用于检查和监控各种系统组件的温度.
 
-[lm-sensors][1] 是一款从硬件嵌入式传感器获取信息,以达到监测温度,电压,湿度和风扇
+例如[lm-sensors][1]，它可以从硬件嵌入式传感器获取信息,以达到监测温度、电压、湿度和风扇的作用；
+还有[hddtemp][2],它可以通过读取[S.M.A.R.T.][3]参数来测量温度；
+今天我们要介绍的是[psensor][4]，这是一款前端图形化界面温度监测工具，可视化显示CPU、Nvidia/ATI/AMD各家显卡以及硬盘等多个硬件设备的温度。
 
-在下文中,我将会描述如何设置psensor来监控CPUs和硬盘的温度.
+接下来，我将描述如何设置psensor来监控CPUs和硬盘的温度.
 
-### 在Linux 桌面版上安装 psensor###
+### 在Linux 桌面系统中安装 psensor###
 
-psensor可以可视化系统温度,但其中信息的获取是基于其他类似lm-sensors和hddtemp的工具.因此你需要在安装psensor的同时,一并安装所需工具.
+psensor能够可视化显示系统温度，需要基于其他类似lm-sensors和hddtemp等工具得到的数据。因此你需要在安装psensor的同时,一并安装所需工具.
 
 在Debian或Ubuntu下安装psensor:
 
     $ sudo apt-get install lm-sensors hddtemp psensor
 
-在Fedora下安装psensor
+在Ubuntu下还可以通过PPA仓库安装最新版本的psensor：
+
+    $ sudo add-apt-repository ppa:jfi/ppa
+    $ sudo apt-get update
+    $ sudo apt-get install lm-sensors hddtemp psensor
+
+在Fedora下安装psensor：
 
     $ sudo yum install lm_sensors hddtemp
 
@@ -40,7 +48,7 @@ psensor可以可视化系统温度,但其中信息的获取是基于其他类似
 
     $ sudo make install 
 
-由于必需要有GTK3库,psensor不能跟搭载GNOME2桌面的CentOs或RHEL 6兼容.
+这里注意，由于必需要有GTK3库的支持,psensor无法与搭载GNOME2桌面的CentOs或RHEL 6兼容.
 
 ### 在Linux中配置 psensor ###
 
@@ -48,7 +56,7 @@ psensor可以可视化系统温度,但其中信息的获取是基于其他类似
 
 #### lm_sensors 配置 ####
 
-允许以下命令,配置lm_sensors,每一项都选择YES.
+运行以下命令,配置lm_sensors,每一项都选择YES.
 
     $ sudo sensors-detect 
 
