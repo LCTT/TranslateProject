@@ -1,3 +1,4 @@
+                            翻译中  Luox
 10 Most Dangerous Commands – You Should Never Execute on Linux
 ================================================================================
 Linux command line is productive, useful and interesting but sometimes it may be very much dangerous specially when you are not sure what you are doing. This article is not intended to make you furious of **Linux** or **Linux command** line. We just want to make you aware of some of the commands which you should think twice before you execute them.
