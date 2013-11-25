@@ -1,3 +1,5 @@
+翻译中 by小眼儿
+
 NSA Asked Linus Torvalds To Give Them Backdoor Access In Linux, Says MEP
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2011/01/DSC01782.jpg)
