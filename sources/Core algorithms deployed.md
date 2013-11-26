@@ -1,213 +1,208 @@
-Translating-------------geekpi
-
-
-Core algorithms deployed
+已部署的核心算法
 ================================================================================
-Algorithms that are the main driver behind a system are, in my opinion, easier to find in non-algorithms courses for the same reason theorems with immediate applications are easier to find in applied mathematics rather than pure mathematics courses. It is rare for a practical problem to have the exact structure of the abstract problem in a lecture. To be argumentative, I see no reason why fashionable algorithms course material such as Strassen's multiplication, the AKS primality test, or the Moser-Tardos algorithm is relevant for low-level practical problems of implementing a video database, an optimizing compiler, an operating system, a network congestion control system or any other system. The value of these courses is learning that there are intricate ways to exploit the structure of a problem to find efficient solutions. Advanced algorithms is also where one meets simple algorithms whose analysis is non-trivial. For this reason, I would not dismiss simple randomized algorithms or PageRank.
+在我看来，一个系统背后主要驱动的算法更容易在非算法课程上找到，同理，目前的程序更容易在应用数学而不是理论数学中找到。在讲座中，很少有实际问题有一个抽象问题的精确就够。追根究底地说，我认为没有理由为何流行算法课程资料。诸如Strassen乘法，AKS素性测试、或者Moser-Tardos算法与底层实际问题，如实现视频数据库、优化的编译器、操作系统、网络拥堵控制系统或者其他系统有相关。这些课程的价值是学习利用错综复杂的方法找出问题的结构而找出有效的解决方案。高级算法也满足了一些简单算法，这些分析并不平凡。正是由于这个原因，我不会不理会简单随机算法或者PageRank。
 
-I think you can choose any large piece of software and find basic and advanced algorithms implemented in it. As a case study, I've done this for the Linux kernel, and shown a few examples from Chromium.
+我想你可以选择任何一个大型软件并会内部实现了发现基础和高级的算法。作为一个研究案例，我选择了Linux内核，并会示例一些Chromium里面的例子。
 
-### Basic Data Structures and Algorithms in the Linux kernel ###
+### Linux内核中的基本数据结构和算法 ###
 
-Links are to the [source code on github][1].
+链接在这里([source code on github][1])。
 
-1.[Linked list][2], [doubly linked list][3], [lock-free linked list][4].
+1.[链表][2], [双向链表][3], [无锁链表][4]。
 
-2.[B+ Trees][5] with comments telling you what you can't find in the textbooks.
+2.[B+ 树][5]的注释会告诉你无法在教科书上找到的东西。
 
-> A relatively simple B+Tree implementation. I have written it as a learning exercise to understand how B+Trees work. Turned out to be useful as well.
+> 一个相对简单的B+树的实现。我把它作为一个学习练习来帮助理解B+树是如何工作的。这同样也被证明是有用的。
 > 
 > ...
 > 
-> A tricks was used that is not commonly found in textbooks. The lowest values are to the right, not to the left. All used slots within a node are on the left, all unused slots contain NUL values. Most operations simply loop once over all slots and terminate on the first NUL.
+> 一个技巧在教科书中并不常见。最小的值在右侧而不是在左侧。所有在一个节点里用到的槽都在左侧,所有没有用到的槽包含了空值(NUL)。大多数操作只简单地遍历所有的槽一次并在第一个空值时(NUL)终止。
 
-3.[Priority sorted lists][6] used for [mutexes][7], [drivers][8], etc.
+3.[优先排序列表][6] 用于 [互斥量][7]、[驱动][8]等等。
 
-4.[Red-Black trees][9] are [used][10] for scheduling, virtual memory management, to track file descriptors and directory entries,etc.
+4.[红黑树][9][用于][10]调度、虚拟内存管理、追踪文件描述符和目录项等。
 
-5.[Interval trees][11]
+5.[区间树][11]
 
-6.[Radix trees][12], are used for [memory management][13], NFS related lookups and networking related functionality.
+6.[根树][12]用于[内存管理][13]，NFS相关查询和网络相关功能。
 
-> A common use of the radix tree is to store pointers to struct pages;
+> 根树一个通用的用处是存储指针到结构页中。
 
-7.[Priority heap][14], which is literally, a textbook implementation, used in the [control group system][15].
+7.[优先级堆][14]，是一个字面上的教科书实现，用于[cgroup][15]。
 
-> Simple insertion-only static-sized priority heap containing pointers, based on CLR, chapter 7
+> 第七章中,简单的基于CLR的只插入,含有指针的静态大小优先级堆
 
-8.[Hash functions][16], with a reference to Knuth and to a paper.
+8.[哈希函数][16]，参考了Knuth和一篇论文。
 
-> Knuth recommends primes in approximately golden ratio to the maximum integer representable by a machine word for multiplicative hashing. Chuck Lever verified the effectiveness of this technique:
+> Knuth建议约黄金比例的素数通过对乘法散列机器字的最大整数表示。Chuck Lever验证了该技术的有效性：
 > 
 > [http://www.citi.umich.edu/techreports/reports/citi-tr-00-1.pdf][17]
 > 
-> These primes are chosen to be bit-sparse, that is operations on them can use shifts and additions instead of multiplications for machines where multiplications are slow.
+> 这些素数的选择是位稀疏的，他们可以通过移位和加法操作，而不必使用乘法器，乘法器是很慢的。
 
-9.Some parts of the code, such as [this driver][18], implement their own hash function.
+9.一部分代码，比如[这个驱动][18],实现了他们自己的哈希函数。
 
-> hash function using a Rotating Hash algorithm
+> 哈希函数使用了一种旋转哈希算法
 > 
-> Knuth, D. The Art of Computer Programming, Volume 3: Sorting and Searching, Chapter 6.4. Addison Wesley, 1973
+> Knuth, D. 计算机程序设计艺术, 卷 3: 排序与搜索, 第6.7章. Addison Wesley, 1973
 
-10.[Hash tables][19] used to implement [inodes][20], f[ile system integrity checks][21] etc.
+10.[哈希表][19]用于实现[inode][20],[文件系统完整性检测][21]等等。
 
-11.[Bit arrays][22], which are used for dealing with flags, interrupts, etc. and are featured in Knuth Vol. 4.
+11.[位数组][22]用于处理标志位、中断等等。并在Knuth的卷4中阐述。
 
-12.[Semaphores][23] and [spin locks][24]
+12.[信号量][23]和[自旋锁][24]
 
-13.[Binary search][25] is used for [interrupt handling][26], [register cache lookup][27], etc.
+13.[二分查找][25]用于[中断处理][26],[寄存器缓存查询][27]等等。
 
-14.[Binary search with B-trees][28]
+14.[B树的二分查找][28]。
 
-15.[Depth first search][29] and variant used in [directory configuration][30].
+15.[深度优先搜索][29]被广泛地用于[目录配置中][30]。
 
-> Performs a modified depth-first walk of the namespace tree, starting (and ending) at the node specified by start_handle. The callback function is called whenever a node that matches the type parameter is found. If the callback function returns a non-zero value, the search is terminated immediately and this value is returned to the caller.
+> 执行一个修改过的遍历深度优先的命名空间树，以指定的start_handle节点开始以及结束。回调函数会在任何一个参数匹配的节点被发现时被调用。如果回调函数返回了一个非0值，搜索将会激励结束并且将返回值给调用者。
 
-16.[Breadth first search][31] is used to check correctness of locking at runtime.
+16.[广度有限搜索][31]用于检测运行时锁定的正确性。
 
-17.[Merge sort][32] on linked lists is used for [garbage collection][33], [file system management][34], etc.
+17.链表中的[归并排序][32]用于[垃圾收集][33],[文件系统管理][34]等等。
 
-18.[Bubble sort][35] is amazingly implemented too, in a driver library.
+18.[冒泡排序][35]在一个驱动库中也是一个令人惊讶的实现。
 
-19.[Knuth-Morris-Pratt string matching][36],
+19.[Knuth-Morris-Pratt 字符串匹配][36],
 
-> Implements a linear-time string-matching algorithm due to Knuth, Morris, and Pratt [1]. Their algorithm avoids the explicit computation of the transition function DELTA altogether. Its matching time is O(n), for n being length(text), using just an auxiliary function PI[1..m], for m being length(pattern), precomputed from the pattern in time O(m). The array PI allows the transition function DELTA to be computed efficiently "on the fly" as needed. Roughly speaking, for any state "q" = 0,1,...,m and any character "a" in SIGMA, the value PI["q"] contains the information that is independent of "a" and is needed to compute DELTA("q", "a") 2. Since the array PI has only m entries, whereas DELTA has O(m|SIGMA|) entries, we save a factor of |SIGMA| in the preprocessing time by computing PI rather than DELTA.
+> 根据Knuth、Morris和Pratt [1]实现了一个线性时间的字符串匹配算法。他们的算法避免了转换函数的显式地计算DELTA。对于长度为n的文本，其匹配时间是O(n),对于长度为m的模式(pattern)，仅使用一个辅助函数PI[1 . .m],预先计算模式的时间为O(m)。数组PI允许转换函数DELTA被实时有效地计算。粗略地说,对于任何状态"q"= 0,1,…、m和在SIGMA中的任何字符"a",PI["q"]的值包含的信息是独立的"a"并需要计算DELTA("q","a") 2.既然PI只有m个记录,而DELTA有O(m |SIGMA|)个记录,在预处理时间计算PI而不是DELTA的时候，我们可以节省一个因数|SIGMA|
 > 
-> [1] Cormen, Leiserson, Rivest, Stein Introdcution to Algorithms, 2nd Edition, MIT Press
+> [1] Cormen, Leiserson, Rivest, Stein，算法介绍，第二版，MIT出版社
 > 
-> [2] See finite automation theory
+> [2] 见有限自动机原理
 
-20.[Boyer-Moore pattern matching][37] with references and recommendations for when to prefer the alternative.
+20.[Boyer-Moore 模式匹配][37]是在找替代品时的参考和建议。
 
-> Implements Boyer-Moore string matching algorithm:
+> 实现了Boyer-Moore字符串匹配算法:
 > 
-> [1] A Fast String Searching Algorithm, R.S. Boyer and Moore. Communications of the Association for Computing Machinery, 20(10), 1977, pp. 762-772. [http://www.cs.utexas.edu/users/moore/publications/fstrpos.pdf][38]
+> [1] 一个快速的字符串搜索算法，R.S. Boyer and Moore.计算机通信协会，20(10), 1977, pp. 762-772. [http://www.cs.utexas.edu/users/moore/publications/fstrpos.pdf][38]
 > 
-> [2] Handbook of Exact String Matching Algorithms, Thierry Lecroq, 2004 [http://www-igm.univ-mlv.fr/~lecroq/string/string.pdf][39]
+> [2] 准确的字符串匹配算法手册，Thierry Lecroq, 2004 [http://www-igm.univ-mlv.fr/~lecroq/string/string.pdf][39]
 > 
-> Note: Since Boyer-Moore (BM) performs searches for matchings from right to left, it's still possible that a matching could be spread over multiple blocks, in that case this algorithm won't find any coincidence.
+> 注:由于Boyer-Moore(BM)从右到左搜索匹配,仍然有可能匹配分布在多个块,在这种情况下该算法不会找到任何巧合。
 > 
-> If you're willing to ensure that such thing won't ever happen, use the Knuth-Pratt-Morris (KMP) implementation instead. In conclusion, choose the proper string search algorithm depending on your setting.
+> 如果你愿意确保这样的事情永远不会发生,那使用Knuth-Pratt-Morris(KMP)实现。总之,根据您的设置适当地选择字符串搜索算法。
 > 
-> Say you're using the textsearch infrastructure for filtering, NIDS or
-> any similar security focused purpose, then go KMP. Otherwise, if you really care about performance, say you're classifying packets to apply Quality of Service (QoS) policies, and you don't mind about possible matchings spread over multiple fragments, then go BM.
+> 如果你正在用文本搜索器进行过滤,NIDS或任何类似的注重安全的目的,那么使用KMP。否则,如果你真的关心性能,并且你对数据包进行分类以使用服务质量(QoS)政策,且你不介意匹配可能分布分散,那么用BM。
 
-### Data Structures and Algorithms in the Chromium Web Browser ###
+### Chromium 浏览器中的数据结构和算法 ###
 
-Links are to the [source code on Google code][40]. I'm only going to list a few. I would suggest using the search feature to look up your favourite algorithm or data structure.
+链接在这里([source code on Google code][40])。我只会列出一部分。我建议使用搜索来找到你最喜欢的算法或者数据结构。
 
-1.[Splay trees][41].
+1.[伸展树][41]。
 
 > The tree is also parameterized by an allocation policy (Allocator). The policy is used for allocating lists in the C free store or the zone; see zone.h.
 
-2.[Voronoi diagrams][42] are used in a demo.
+2.[Voronoi diagrams][42]用于一个示例。
 
-3.[Tabbing based on Bresenham's algorithm][43].
+3.[基于Bresenham的标志算法][43]
 
-There are also such data structures and algorithms in the third-party code included in the Chromium code.
+也有这样的第三方的数据结构和算法包含在Chromium代码中。
 
-1.[Binary trees][44]
-2.[Red-Black trees][45]
+1.[二叉树][44]
 
-> Conclusion of Julian Walker
+2.[红黑树][45]
+
+> Julian Walker的总结
 > 
-> Red black trees are interesting beasts. They're believed to be simpler than AVL trees (their direct competitor), and at first glance this seems to be the case because insertion is a breeze. However, when one begins to play with the deletion algorithm, red black trees become very tricky. However, the counterweight to this added complexity is that both insertion and deletion can be implemented using a single pass, top-down algorithm. Such is not the case with AVL trees, where only the insertion algorithm can be written top-down. Deletion from an AVL tree requires a bottom-up algorithm.
-> 
+> 红黑树是有趣的野兽。他们被认为比AVL树(它们的直接竞争对手)简单,乍一看这似乎是由于插入是一项轻松的乐事。然而,当你开始玩删除算法,红黑树变得非常棘手。然而, 平衡物增加了复杂性,插入和删除可以使用单通道,实现自上而下的算法。这与AVL树情况不一样,只能写自顶向下插入算法。删除从AVL树需要自下而上的算法。
 > ...
 > 
-> Red black trees are popular, as most data structures with a whimsical name. For example, in Java and C++, the library map structures are typically implemented with a red black tree. Red black trees are also comparable in speed to AVL trees. While the balance is not quite as good, the work it takes to maintain balance is usually better in a red black tree. There are a few misconceptions floating around, but for the most part the hype about red black trees is accurate.
+> 红黑树是很流行的,因为大多数数据结构都有一个古怪的名字。比如,在Java和c++库映射结构通常用红黑树实现。红黑树的速度也与AVL树相当。而AVL树平衡不是很好,需要保持平衡的工作红黑树通常更好。有一些误解被流传,但在大多数情况下对红黑树的宣传是准确的。
 
-3.[AVL trees][46]
+3.[AVL 树][46]
 
-4.[Rabin-Karp string matching][47] is used for compression.
+4.[Rabin-Karp字符串匹配][47]用于比较。
 
-5.[Compute the suffixes of an automaton][48].
+5.[计算机器人后缀][48]
 
-6.[Bloom filter][49] implemented by Apple Inc.
+6.由Apple公司实现的[布隆过滤器][49]
 
-7.[Bresenham's algorithm][50].
+7.[Bresenham 算法][50].
 
-### Programming Language Libraries ###
+### 编程语言库 ###
 
-I think they are worth considering. The programming languages designers thought it was worth the time and effort of some engineers to implement these data structures and algorithms so others would not have to. The existence of libraries is part of the reason we can find basic data structures reimplemented in software that is written in C but less so for Java applications. 
+我想这个问题值得思考。编程语言设计者们认为这值得花一些工程师时间和精力来实现这些数据结构和算法，这样其他人你不必这么做了。库的存在是我们可以在一些用C写的软件，但比Java少，重新实现了基础数据结构的部分原因。
 
-1.The [C++ STL][51] includes lists, stacks, queues, maps, vectors, and algorithms for [sorting][52], [searching and heap manipulation][53]. 
+1.[C++ STL][51]包含了链表、栈、队列、map、向量和对[排序][52]、[搜索和堆操作][53]算法。
 
-2.[The Java API][54] is very extensive and covers much more.
+2.[Java API][54]是非常广阔的并且覆盖了更多。
+3.[Boost C++ 库][55]包含了像 Boyer-Moore以及Knuth-Morris-Pratt字符串匹配算法。
 
-3.The [Boost C++ library][55] includes algorithms like Boyer-Moore and Knuth-Morris-Pratt string matching algorithms.
+### 分配和调度算法 ###
 
-### Allocation and Scheduling Algorithms ###
+我发现这些很有趣,因为即使他们被称为启发式,您使用的策略规定了算法类型和需要的数据结构，因此，所以需要人们知道栈和队列。
 
-I find these interesting because even though they are called heuristics, the policy you use dictates the type of algorithm and data structure that are required, so one need to know about stacks and queues. 
+1.最近最少使用算法可以用不同的方法实现。Linux内核有一种[基于列表的实现][56]。
 
-1.Least Recently Used can be implemented in multiple ways. A [list-based implementation][56] in the Linux kernel.
+2.其他的还有先入先出、最常使用、和轮循。
 
-2.Other possibilities are First In First Out, Least Frequently Used, and Round Robin.
+3.FIFO的一个变种用于VAX/VMS系统。
 
-3.A variant of FIFO was used by the VAX/VMS system.
+4.[Richard Carr][58]的[时钟算法][57]用于Linux中的页面替换。
 
-4.[The Clock algorithm][57] by [Richard Carr][58] is used for page frame replacement in Linux.
+5.Intel i860处理器是一种随即替代策略。
 
-5.he Intel i860 processor used a random replacement policy.
+6.[自适应置换高速缓存][59]用于一些IBM存储控制器中，也曾经用于PostgreSQL中([虽然仅仅因为一些专利问题][60]）。
 
-6.[Adaptive Replacement Cache][59] is used in some IBM storage controllers, and was used in PostgreSQL though [only briefly due to patent concerns][60]. 
+7.Knuth在计算机程序设计艺术，卷1中讨论过的[Buddy内存分配算法][61]内用于Linux内核中，jemalloc并发分配器被用于FreeBSD和[facebook][62]中。
 
-7.The [Buddy memory allocation algorithm][61], which is discussed by Knuth in TAOCP Vol. 1 is used in the Linux kernel, and the jemalloc concurrent allocator used by FreeBSD and in [facebook][62].
+### *nix系统核心工具 ###
 
-### Core utils in *nix systems ###
+1.*grep*和*awk*同时实从正则表达式中实现NFA的Thompson-McNaughton-Yamada构造，这显然击败了[Perl的实现][63]。
 
-1.*grep* and awk both implement the Thompson-McNaughton-Yamada construction of NFAs from regular expressions, which apparently [even beats the Perl implementation][63]. 
+2.*tsort*实现了拓扑排序。
 
-2.*tsort* implements topological sort.
+3.*fgrep*实现了[Aho-Corasick字符串匹配算法][64]。
 
-3.*fgrep* implements the [Aho-Corasick string matching algorithm][64].
+4.*GNU grep*，根据作者Mike Haertel实现了[Boyer-Mooresuan算法][65]。
 
-4.*GNU grep*, [implements the Boyer-Moore algorithm][65] according to the author Mike Haertel. 
+5.Unix上的crypt(1)实现了一个在Enigma机器上的不同加密算法。
 
-5.crypt(1) on Unix implemented a variant of the encryption algorithm in the Enigma machine.
+6.[*Unix diff*][66]由Doug McIllroy实现，基于和James Hunt合作编写的圆形。它比用于计算Levenshtein距离的标准动态规划算法执行地更好。[Linux 版本][67]计算最短编辑距离。
 
-6.[*Unix diff*][66] implemented by Doug McIllroy, based on a prototype co-written with James Hunt, performs better than the standard dynamic programming algorithm used to compute Levenshtein distances. The [Linux version][67] computes the shortest edit distance. 
+### 加密算法 ###
 
-### Cryptographic Algorithms ###
+这可能回事一个非常长的列表。加密算法在所有执行安全通信和交易的程序中都有实现。
 
-This could be a very long list. Cryptographic algorithms are implemented in all software that can perform secure communications or transactions.
+1.[Merkle 树][68]，特别是 Tiger Tree Hash变种，被用于点对点应用，比如[GTK Gnutella][69]和[LimeWire][70]。
 
-1.[Merkle trees][68], specifically the Tiger Tree Hash variant, were used in peer-to-peer applications such as [GTK Gnutella][69] and [LimeWire][70].
+2.[MD5][71]被用于提供软件包的校验和并被用于在*nix系统上的完整性检测(([Linux 实现][72]))，同样也在Windows和OSX中支持。
 
-2.[MD5][71] is used to provide a checksum for software packages and is used for integrity checks on *nix systems ([Linux implementation][72]) and is also supported on Windows and OS X.
+3.[OpenSSL][73]实现了很多加密算法包括AES、Blowfish、DES、SHA-1、SHA-2、RSA、DES等等
 
-3.[OpenSSL][73] implements many cryptographic algorithms including AES, Blowfish, DES, SHA-1, SHA-2, RSA, DES, etc.
+### 编译器 ###
 
-### Compilers ###
+1.[LALR 解析][74]用yacc和bison实现。
 
-1.[LALR parsing][74] is implemented by yacc and bison.
+2.支配算法被用于大多数基于SSA形式的编译器优化。
 
-2.Dominator algorithms are used in most optimizing compilers based on SSA form.
+3.lex和flex编译正则表达式成为NFA。
 
-3.lex and flex compile regular expressions into NFAs.
+### 压缩和图像处理 ###
 
-### Compression and Image Processing  ###
+1.用于GIF图片格式的[Lempel-Ziv][75]算法用图形操作程序实现，从*unix工具转化到复杂的程序。
 
-1.[The Lempel-Ziv][75] algorithms for the GIF image format are implemented in image manipulation programs, starting from the *nix utility convert to complex programs.
+2.行程长度编码用于产生PCX文件(用于原始的画笔程序)，是被压缩的BMP和TIFF文件。
 
-2.Run length encoding is used to generate PCX files (used by the original Paintbrush program), compressed BMP files and TIFF files.
+3.小波压缩是JPEG2000的基础，所以所有生成JPEG2000文件的数码相机会支持这个算法。
 
-3.Wavelet compression is the basis for JPEG 2000 so all digital cameras that produce JPEG 2000 files will be implementing this algorithm. 
+4.Reed-Solomon纠错在[Linux内核][76]、CD驱动器、条形码读取器、结合从Voyager中的卷积图像传输中实现。
 
-4.Reed-Solomon error correction is implemented in [the Linux kernel][76], CD drives, barcode readers and was combined with convolution for image transmission from Voyager.
+### 冲突驱动语句学习算法 (CDCL) ###
 
-###  ###Conflict Driven Clause Learning
+自2000以来，SAT求解器在工业标准的运行时间(通常是硬件工业，虽然其他地方也被使用)以近乎指数的方式每年下跌。这发展中很重要的一部分是冲突驱动语句学习算法，它结合了Davis Logemann和Loveland在约束规划和人工智能研究中关于语句学习的原始论文中的布尔约束传播算法。特定地，工业造型，SAT被认为是一个简单的问题([见这个讨论][77])。对我而言，这个一个最近最好的成功故事因为它结合了这几年算法的前进推广、聪明的工程理念、实验性的评估、齐心协力地解决一个问题。[Malik and Zhang的CACM文章][78]值得阅读。这个算法在许多大学中教授(我参加了4个地方都是如此)，但是通常在一个逻辑或者形式方法课上。
 
-Since the year 2000, the running time of SAT solvers on industrial benchmarks (usually from the hardware industry, though though other sources are used too) has decreased nearly exponentially every year. A very important part of this development is the Conflict Driven Clause Learning algorithm that combines the Boolean Constraint Propagation algorithm in the original paper of Davis Logemann and Loveland with the technique of clause learning that originated in constraint programming and artificial intelligence research. For specific, industrial modelling, SAT is considered an easy problem ([see this discussion][77]). To me, this is one of the greatest success stories in recent times because it combines algorithmic advances spread over several years, clever engineering ideas, experimental evaluation, and a concerted communal effort to solve the problem. The [CACM article by Malik and Zhang][78] is a good read. This algorithm is taught in many universities (I have attended four where it was the case) but typically in a logic or formal methods class.
-
-Applications of SAT solvers are numerous. IBM, Intel and many other companies have their own SAT solver implementations. The [package manager][78] in OpenSUSE also uses a SAT solver.
+SAT求解器的应用有很多。IBM，Intel和许多其他公司都有他们的SAT求解器是西安。OpenSuse的[包管理器][78]同样使用了一个SAT求解器。
 
 --------------------------------------------------------------------------------
 
 via: http://cstheory.stackexchange.com/questions/19759/core-algorithms-deployed/19773#19773
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
