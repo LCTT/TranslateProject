@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-    NearTan认领
-=======
 hongchuntang wc
 
->>>>>>> 181b97c7467f6f6c937d208d0fa78a6de06d42e7
 13 Linux Cat Command Examples To Manage (Display,Sort,Create etc) Files
 ================================================================================
 ![](http://linoxide.com/wp-content/uploads/2013/11/linux-cat-command.png)
