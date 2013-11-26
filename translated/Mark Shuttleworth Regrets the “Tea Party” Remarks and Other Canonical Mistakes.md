@@ -6,7 +6,7 @@ Mark Shuttleworth后悔“茶派”笔谈以及其他典型错误
 
 我们看到Mark Shuttleworth不是每天连续道歉两次, 很有可能这是他第一次发生这样的事情。
 
-[第一个道歉][1] 来自fixubuntu.com的主人,他是一封来自Canonical公司法律团队的收件人。Micah F. Lee,该网站背后的家伙,写了一篇关于这些问题以及在许多论坛和网站对此事进行了长时间讨论。
+[第一个道歉][1] 来自fixubuntu.com的主人,他是Canonical公司法律团队邮件的收件人。Micah F. Lee,该网站背后的家伙,写了一篇关于这些问题以及在许多论坛和网站对此事进行了长时间讨论。
 
 Mark Shuttleworth首先在Google+向他道歉,但是他同样在他的个人博客上写了很多正式文本,这通常是保留了有重要意义的事情。
 
