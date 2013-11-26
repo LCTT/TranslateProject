@@ -1,4 +1,4 @@
-如何在Linux平台上安装Ghost博客平g
+如何在Linux平台上安装Ghost博客平台
 ===
 [Ghost][1]是一个相对较新的博客发布平台，它开始众筹平台kickstarter上的一个[£25,000的众筹项目][2]。尽管WordPress依然是网上主流的博客工具，但它现在已然是一个拥有众多第三方开发功能的通用内容管理平台，发展到现在已经逐渐变得笨重、复杂以至于难以维护。但于此同时，仅仅诞生才几个月的Ghost坚持用户为中心，打造精雕细琢的用户界面，承诺要做一个纯粹的博客平台。
 
@@ -6,7 +6,7 @@
 
 ###在Linux上安装Ghost
 
-Ghost是使用Node.js框架编写的。因此，首先你需要在你的Linux系统上[安装Node.js框架][3]。确保Node.js的版本为0.10或者更高。接下来，登录入[http://ghost.org][1](需要注册)，然后下载Ghost的源代码。记者按照下面的步骤安装：
+Ghost是使用Node.js框架编写的。因此，首先你需要在你的Linux系统上[安装Node.js框架][3]。确保Node.js的版本为0.10或者更高。接下来，登录入[http://ghost.org][1](需要注册)，然后下载Ghost的源代码。记着按照下面的步骤安装：
 	
 	$ sudo mkdir -p /var/www/ghost
 	$ sudo unzip ghost-0.3.3.zip -d /var/www/ghost
@@ -14,7 +14,7 @@ Ghost是使用Node.js框架编写的。因此，首先你需要在你的Linux系
 	$ sudo npm install --production
 
 ###启动前先配置Ghost
-在你启动Ghost之前，按照下面的步骤在/var/www/ghost/config.js位置创建它的配置文件。使用你的主机的IP地址替换掉“YOUR_IP”。
+在你启动Ghost之前，按照下面的步骤在/var/www/ghost/config.js位置创建它的配置文件。使用你的主机IP地址替换掉“YOUR_IP”。
 
 	$ cd /var/www/ghost
 	$ sudo cp config.example.js config.js
@@ -24,14 +24,14 @@ Ghost是使用Node.js框架编写的。因此，首先你需要在你的Linux系
 
 搞到这一步，你就可以准备去启动Ghost咯。
 
-要注意的是，Ghost可以以两种不同的模式运行：“开发者模式”和“用户模式”。为了安全起见，Ghost将两种模式的配置文件（/var/www/ghost/content/data）分开存放。例如，两种不同的模式使用不同的数据库文件（例如位于/var/www/content/data的ghostdev.db和ghost.db）。
+要注意的是，Ghost可以以两种不同的模式运行：“开发者模式”和“用户模式”。为了安全起见，Ghost将两种模式的配置文件（/var/www/ghost/config.js）分开存放。例如，两种不同的模式使用不同的数据库文件（例如位于/var/www/content/data的ghostdev.db和ghost.db）。
 
 使用一下命令就可以启动Ghost。Ghost默认以开发者模式运行。
 
 	$ cd /var/www/ghost
 	$ sudo npm start
 
-Ghost成功运行后，终端中会有以下输出信息，告诉你Ghost正运行在<YOUR_IP>:2368（译者注：端口号）。
+Ghost成功运行后，终端中会有以下输出信息，告诉你Ghost正运行在<YOUR_IP>:2368（译者注：2368为端口号）。
 
 [![](http://farm8.staticflickr.com/7317/10881189204_d714f11321_z.jpg)][4]
 
@@ -73,7 +73,7 @@ Ghost成功运行后，终端中会有以下输出信息，告诉你Ghost正运�
 
 via: http://xmodulo.com/2013/11/install-ghost-blogging-platform-linux.html
 
-译者：[Linux-pdz](https://github.com/Linux-pdz) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Linux-pdz](https://github.com/Linux-pdz) 校对：[Mr小眼儿](http://blog.csdn.net/tinyeyeser)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
