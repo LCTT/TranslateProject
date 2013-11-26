@@ -33,7 +33,7 @@ via: http://www.omgubuntu.co.uk/2013/11/nsa-ask-linus-torvalds-include-backdoors
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [1]:http://www.nsa.gov/
-[2]:http://youtu.be/EkpIddQ8m2s?t=3h09m06s
+[2]:http://youtu.be/EkpIddQ8m2s?t=3h09m06s 
 [3]:http://www.youtube.com/watch?v=7gRsgkdfYJ8
 [4]:http://mashable.com/2013/09/19/linus-torvalds-backdoor-linux/
 [5]:http://www.telegraph.co.uk/technology/internet-security/10459081/Yahoo-to-encrypt-internal-traffic-following-NSA-revelations.html
