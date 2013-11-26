@@ -4,7 +4,7 @@
 
 ![](http://linoxide.com/wp-content/uploads/2013/11/linux-uname-command.png)
 
-当你在控制台模式下，无法通过‘鼠标右键 > 关于’获取操作系统的信息。这时，在Linux下，你可以使用**uname**命令，帮助你完成这些工作。 Uname是**unix name**的缩写。在控制台中实际使用的时候只需键入**uname**。
+当你在控制台模式下，无法通过“鼠标右键 > 关于”获取操作系统的信息。这时，在Linux下，你可以使用**uname**命令，帮助你完成这些工作。 Uname是**unix name**的缩写。在控制台中实际使用的时候只需键入**uname**。
 
 当你输入uname不带参数时，它仅仅显示你的操作系统的名字。
 
