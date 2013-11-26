@@ -1,24 +1,26 @@
-13 Linux Cat Command Examples To Manage (Display,Sort,Create etc) Files
+﻿[doing]By Stduolc
+13 Linux中使用cat命令来管理(显示，排序，创建等.)文件的例子
 ================================================================================
 ![](http://linoxide.com/wp-content/uploads/2013/11/linux-cat-command.png)
 
-In Linux operating system most of configuration files, logs even shell scripts are in text file format. There is why we have numbers of text editors in Linux. When you just need to see the content of those files, you can use a simple command named cat.
+在linux操作系统中，大多都配置文件、日志甚至Shell脚本都是采用文本格式。这就是为什么在Linux系统中，我们有很多的文本编辑器。当你只需要查看这些文件里的内容，而不需要更改他们时，你可以使用一个简单的命令cat。
 
-From cat manual page it says
+取自cat手册页，说明如下：
 
-> cat is a command that concatenate files and print on the standard output
+> cat是能够将关联的文件输出到标准输出的命令。
 
-Cat is built-in command in Linux. I believe that all of Linux distribution has this Cat command by default. Let’s start to use how to use it.
+cat 是Linux的内建命令。我相信，linux的所有发行版都默认具有cat命令。下面我们开始学习使用cat吧！
 
-### 1. View the content of file ###
+### 1. 查看文件内容 ###
 
-The easiest way to use cat is just type ‘cat file_name’.
+最简单的使用方式是直接输入“cat file_name”。
 
     # cat /etc/issue
 
     CentOS release 5.10 (Final)
     Kernel \r on an \m
 
+### 2. 输入行号
 ### 2. Put the line number on the fly ###
 
 When reading a configuration file it may that you have a long configuration file. It will be easier to if you can put line numbers on the fly. Use -n parameter to fulfill this purpose.
