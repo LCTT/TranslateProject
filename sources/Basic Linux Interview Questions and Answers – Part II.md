@@ -1,3 +1,4 @@
+﻿[doing] stduolc
 Basic Linux Interview Questions and Answers – Part II
 ================================================================================
 Continuing the Interview Series, we are giving 10 Questions here, in this article. These questions and the questions in the future articles doesn’t necessarily means they were asked in any interview. We are presenting you an interactive learning platform through these kind of posts, which surely will be helpful.
@@ -157,7 +158,7 @@ That’s all for now. I hope these above questions might be very helpful to you.
 
 via: http://www.tecmint.com/basic-linux-interview-questions-and-answers-part-ii/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[stduolc](https://github.com/stduolc) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
