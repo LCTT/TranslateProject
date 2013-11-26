@@ -12,11 +12,11 @@
 
 2.[B+ 树][5]的注释会告诉你无法在教科书上找到的东西。
 
-> A relatively simple B+Tree implementation. I have written it as a learning exercise to understand how B+Trees work. Turned out to be useful as well.
+> 一个相对简单的B+树的实现。我把它作为一个学习练习来帮助理解B+树是如何工作的。这同样也被证明是有用的。
 > 
 > ...
 > 
-> A tricks was used that is not commonly found in textbooks. The lowest values are to the right, not to the left. All used slots within a node are on the left, all unused slots contain NUL values. Most operations simply loop once over all slots and terminate on the first NUL.
+> 一个技巧在教科书中并不常见。最小的值在右侧而不是在左侧。所有在一个节点里用到的槽都在左侧,所有没有用到的槽包含了空值(NUL)。大多数操作只简单地遍历所有的槽一次并在第一个空值时(NUL)终止。
 
 3.[优先排序列表][6] 用于 [互斥量][7]、[驱动][8]等等。
 
@@ -26,25 +26,25 @@
 
 6.[根树][12]用于[内存管理][13]，NFS相关查询和网络相关功能。
 
-> A common use of the radix tree is to store pointers to struct pages;
+> 根树一个通用的用处是存储指针到结构页中。
 
 7.[优先级堆][14]，是一个字面上的教科书实现，用于[cgroup][15]。
 
-> Simple insertion-only static-sized priority heap containing pointers, based on CLR, chapter 7
+> 第七章中,简单的基于CLR的只插入,含有指针的静态大小优先级堆
 
 8.[哈希函数][16]，参考了Knuth和一篇论文。
 
-> Knuth recommends primes in approximately golden ratio to the maximum integer representable by a machine word for multiplicative hashing. Chuck Lever verified the effectiveness of this technique:
+> Knuth建议约黄金比例的素数通过对乘法散列机器字的最大整数表示。Chuck Lever验证了该技术的有效性：
 > 
 > [http://www.citi.umich.edu/techreports/reports/citi-tr-00-1.pdf][17]
 > 
-> These primes are chosen to be bit-sparse, that is operations on them can use shifts and additions instead of multiplications for machines where multiplications are slow.
+> 这些素数的选择是位稀疏的，他们可以通过移位和加法操作，而不必使用乘法器，乘法器是很慢的。
 
 9.一部分代码，比如[这个驱动][18],实现了他们自己的哈希函数。
 
-> hash function using a Rotating Hash algorithm
+> 哈希函数使用了一种旋转哈希算法
 > 
-> Knuth, D. The Art of Computer Programming, Volume 3: Sorting and Searching, Chapter 6.4. Addison Wesley, 1973
+> Knuth, D. 计算机程序设计艺术, 卷 3: 排序与搜索, 第6.7章. Addison Wesley, 1973
 
 10.[哈希表][19]用于实现[inode][20],[文件系统完整性检测][21]等等。
 
@@ -58,7 +58,7 @@
 
 15.[深度优先搜索][29]被广泛地用于[目录配置中][30]。
 
-> Performs a modified depth-first walk of the namespace tree, starting (and ending) at the node specified by start_handle. The callback function is called whenever a node that matches the type parameter is found. If the callback function returns a non-zero value, the search is terminated immediately and this value is returned to the caller.
+> 执行一个修改过的遍历深度优先的命名空间树，以指定的start_handle节点开始以及结束。回调函数会在任何一个参数匹配的节点被发现时被调用。如果回调函数返回了一个非0值，搜索将会激励结束并且将返回值给调用者。
 
 16.[广度有限搜索][31]用于检测运行时锁定的正确性。
 
@@ -68,26 +68,25 @@
 
 19.[Knuth-Morris-Pratt 字符串匹配][36],
 
-> Implements a linear-time string-matching algorithm due to Knuth, Morris, and Pratt [1]. Their algorithm avoids the explicit computation of the transition function DELTA altogether. Its matching time is O(n), for n being length(text), using just an auxiliary function PI[1..m], for m being length(pattern), precomputed from the pattern in time O(m). The array PI allows the transition function DELTA to be computed efficiently "on the fly" as needed. Roughly speaking, for any state "q" = 0,1,...,m and any character "a" in SIGMA, the value PI["q"] contains the information that is independent of "a" and is needed to compute DELTA("q", "a") 2. Since the array PI has only m entries, whereas DELTA has O(m|SIGMA|) entries, we save a factor of |SIGMA| in the preprocessing time by computing PI rather than DELTA.
+> 根据Knuth、Morris和Pratt [1]实现了一个线性时间的字符串匹配算法。他们的算法避免了转换函数的显式地计算DELTA。对于长度为n的文本，其匹配时间是O(n),对于长度为m的模式(pattern)，仅使用一个辅助函数PI[1 . .m],预先计算模式的时间为O(m)。数组PI允许转换函数DELTA被实时有效地计算。粗略地说,对于任何状态"q"= 0,1,…、m和在SIGMA中的任何字符"a",PI["q"]的值包含的信息是独立的"a"并需要计算DELTA("q","a") 2.既然PI只有m个记录,而DELTA有O(m |SIGMA|)个记录,在预处理时间计算PI而不是DELTA的时候，我们可以节省一个因数|SIGMA|
 > 
-> [1] Cormen, Leiserson, Rivest, Stein Introdcution to Algorithms, 2nd Edition, MIT Press
+> [1] Cormen, Leiserson, Rivest, Stein，算法介绍，第二版，MIT出版社
 > 
-> [2] See finite automation theory
+> [2] 见有限自动机原理
 
 20.[Boyer-Moore 模式匹配][37]是在找替代品时的参考和建议。
 
-> Implements Boyer-Moore string matching algorithm:
+> 实现了Boyer-Moore字符串匹配算法:
 > 
-> [1] A Fast String Searching Algorithm, R.S. Boyer and Moore. Communications of the Association for Computing Machinery, 20(10), 1977, pp. 762-772. [http://www.cs.utexas.edu/users/moore/publications/fstrpos.pdf][38]
+> [1] 一个快速的字符串搜索算法，R.S. Boyer and Moore.计算机通信协会，20(10), 1977, pp. 762-772. [http://www.cs.utexas.edu/users/moore/publications/fstrpos.pdf][38]
 > 
-> [2] Handbook of Exact String Matching Algorithms, Thierry Lecroq, 2004 [http://www-igm.univ-mlv.fr/~lecroq/string/string.pdf][39]
+> [2] 准确的字符串匹配算法手册，Thierry Lecroq, 2004 [http://www-igm.univ-mlv.fr/~lecroq/string/string.pdf][39]
 > 
-> Note: Since Boyer-Moore (BM) performs searches for matchings from right to left, it's still possible that a matching could be spread over multiple blocks, in that case this algorithm won't find any coincidence.
+> 注:由于Boyer-Moore(BM)从右到左搜索匹配,仍然有可能匹配分布在多个块,在这种情况下该算法不会找到任何巧合。
 > 
-> If you're willing to ensure that such thing won't ever happen, use the Knuth-Pratt-Morris (KMP) implementation instead. In conclusion, choose the proper string search algorithm depending on your setting.
+> 如果你愿意确保这样的事情永远不会发生,那使用Knuth-Pratt-Morris(KMP)实现。总之,根据您的设置适当地选择字符串搜索算法。
 > 
-> Say you're using the textsearch infrastructure for filtering, NIDS or
-> any similar security focused purpose, then go KMP. Otherwise, if you really care about performance, say you're classifying packets to apply Quality of Service (QoS) policies, and you don't mind about possible matchings spread over multiple fragments, then go BM.
+> 如果你正在用文本搜索器进行过滤,NIDS或任何类似的注重安全的目的,那么使用KMP。否则,如果你真的关心性能,并且你对数据包进行分类以使用服务质量(QoS)政策,且你不介意匹配可能分布分散,那么用BM。
 
 ### Chromium 浏览器中的数据结构和算法 ###
 
@@ -107,13 +106,12 @@
 
 2.[红黑树][45]
 
-> Conclusion of Julian Walker
+> Julian Walker的总结
 > 
-> Red black trees are interesting beasts. They're believed to be simpler than AVL trees (their direct competitor), and at first glance this seems to be the case because insertion is a breeze. However, when one begins to play with the deletion algorithm, red black trees become very tricky. However, the counterweight to this added complexity is that both insertion and deletion can be implemented using a single pass, top-down algorithm. Such is not the case with AVL trees, where only the insertion algorithm can be written top-down. Deletion from an AVL tree requires a bottom-up algorithm.
-> 
+> 红黑树是有趣的野兽。他们被认为比AVL树(它们的直接竞争对手)简单,乍一看这似乎是由于插入是一项轻松的乐事。然而,当你开始玩删除算法,红黑树变得非常棘手。然而, 平衡物增加了复杂性,插入和删除可以使用单通道,实现自上而下的算法。这与AVL树情况不一样,只能写自顶向下插入算法。删除从AVL树需要自下而上的算法。
 > ...
 > 
-> Red black trees are popular, as most data structures with a whimsical name. For example, in Java and C++, the library map structures are typically implemented with a red black tree. Red black trees are also comparable in speed to AVL trees. While the balance is not quite as good, the work it takes to maintain balance is usually better in a red black tree. There are a few misconceptions floating around, but for the most part the hype about red black trees is accurate.
+> 红黑树是很流行的,因为大多数数据结构都有一个古怪的名字。比如,在Java和c++库映射结构通常用红黑树实现。红黑树的速度也与AVL树相当。而AVL树平衡不是很好,需要保持平衡的工作红黑树通常更好。有一些误解被流传,但在大多数情况下对红黑树的宣传是准确的。
 
 3.[AVL 树][46]
 
@@ -194,7 +192,7 @@
 
 4.Reed-Solomon纠错在[Linux内核][76]、CD驱动器、条形码读取器、结合从Voyager中的卷积图像传输中实现。
 
-### 冲突驱动语句学习算法 (CDCL)###
+### 冲突驱动语句学习算法 (CDCL) ###
 
 自2000以来，SAT求解器在工业标准的运行时间(通常是硬件工业，虽然其他地方也被使用)以近乎指数的方式每年下跌。这发展中很重要的一部分是冲突驱动语句学习算法，它结合了Davis Logemann和Loveland在约束规划和人工智能研究中关于语句学习的原始论文中的布尔约束传播算法。特定地，工业造型，SAT被认为是一个简单的问题([见这个讨论][77])。对我而言，这个一个最近最好的成功故事因为它结合了这几年算法的前进推广、聪明的工程理念、实验性的评估、齐心协力地解决一个问题。[Malik and Zhang的CACM文章][78]值得阅读。这个算法在许多大学中教授(我参加了4个地方都是如此)，但是通常在一个逻辑或者形式方法课上。
 
