@@ -1,4 +1,3 @@
-
 每日Ubuntu 小技巧 - Get Geary，Ubuntu下的一个轻量级Email 阅读器
 ================================================================================
 
@@ -34,7 +33,7 @@ Geary 还支持IMAP 协议，你可以使用Google, Yahoo 和Microsoft 这样的
 
 然后再运行以下命令卸载Geary 。
 
-    sudo apt-get remove geary
+    sudo apt-get remove geary 
 
 就这么简单~
 
