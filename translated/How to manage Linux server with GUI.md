@@ -23,7 +23,7 @@ Webmin 是一个用`Perl`语言写的轻型 (~20 MB) 系统配置工具。 Webmi
     $ wget http://prdownloads.sourceforge.net/webadmin/webmin_1.660_all.deb
     $ sudo rpm -U webmin-1.660-1.noarch.rpm 
 
-### 使用 Webmin ###
+### 使用 Webmin ### 
 
 一旦你安装了Webmin, 你可以通过在浏览器中输入 https://<HOST_IP>:10000 来使用。 如果你开启了防火墙， 请确保TCP端口 10000 没有被使用。
 
