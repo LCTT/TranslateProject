@@ -1,13 +1,13 @@
-每日Ubuntu小技巧——在Ubuntu下使用一款轻量级的Email阅读器-Geary
+每日Ubuntu小技巧：一款轻量级的Email阅读器Geary
 ================================================================================
 
 正如大家所知，Ubuntu 本身自带可以收发邮件的客户端——Thunderbird，当然它也支持Gmail，Yahoo Mail，Microsoft Outlook 等等支持IMAP协议的邮件服务。
 
-Thunderbird 是一个功能强大的邮件客户端，只要email客户端所支持的功能，它都能够做到。但是如果你想选择一个能在够在GNOME 下运行的轻量级客户端，Geary 是一个不错的选择。
+Thunderbird 是一个功能强大的邮件客户端，只要email客户端所需要的功能，它都能够做到。但是如果你想选择一个能在够在GNOME 下运行的轻量级客户端，Geary 是一个不错的选择。
 
 Geary 是一个界面简洁，能让你快捷方便的地阅读邮件的免费程序。它所有的对话均展示在一个简洁的面板上，这样你可以不必点击鼠标来切换消息。
 
-Geary 还支持IMAP 协议，你可以使用Google, Yahoo 和 Microsoft 这样的在线邮箱服务来收发电子邮件。
+Geary 还支持IMAP 协议，所以你可以使用Google, Yahoo 和 Microsoft 这样的在线邮箱服务。
 
 以Ubuntu 13.10用户为例，Geary 可以在Ubuntu 的软件中心获取。只要运行以下命令即可安装Geary 。
 
