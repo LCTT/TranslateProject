@@ -1,3 +1,4 @@
+翻译中by Linux-pdz
 Daily Ubuntu Tips–Protect Your Computers Using OpenDNS’ Secure DNS Infrastructure
 ================================================================================
 The Internet is a jungle. Everyone – good and bad is connected to the same Internet we’re all connected to. Folks whose business is to infect your computer with nasty viruses and those who seek to protect the good guys are all connected.
