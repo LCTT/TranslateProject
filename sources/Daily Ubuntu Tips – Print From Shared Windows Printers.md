@@ -1,3 +1,4 @@
+翻译中 by Linux-pdz
 Daily Ubuntu Tips – Print From Shared Windows Printers
 ================================================================================
 For users with both Windows and Ubuntu machines and a single printer, this blog post is going to show you how to share a printer in Windows and allow Ubuntu machines to printer to it.
