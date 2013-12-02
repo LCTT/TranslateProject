@@ -14,7 +14,7 @@
 
 ![](http://www.liberiangeek.net/wp-content/uploads/2013/11/printersharingubuntu.png)
 
-接着，选择“**Sharing（分享）**”标签页，勾选‘**Share this printer（共享这台打印机）**’复选框来共享。记住共享打印机的名字，因为你要使用这个共享名来连接这台打印机。
+接着，选择“**Sharing（共享）**”标签页，勾选‘**Share this printer（共享这台打印机）**’复选框来共享。记住共享打印机的名字，因为你要使用这个共享名来连接这台打印机。
 
 ![](http://www.liberiangeek.net/wp-content/uploads/2013/11/printersharingubuntu1.png)
 
