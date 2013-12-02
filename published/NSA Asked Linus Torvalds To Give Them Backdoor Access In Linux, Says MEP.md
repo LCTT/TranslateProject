@@ -1,12 +1,12 @@
-欧洲议会：NSA曾要求Linus Torvalds允许他们在Linux中植入后门
+这是玩笑吗？Linux之“祖父”认为NSA曾要求在Linux中植入后门
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2011/01/DSC01782.jpg)
 
 *照片中为大神Linus(左)和Benjamin Humphrey（译者注：该小伙儿为本文原文出处‘OMG！Ubuntu！’的联合创始人之一，现已离开OMGUbuntu）！照片摄于2011年*
 
-美国国家安全局（[**NSA**][1]）宣称，他们曾经要求Linux的创始人，Linus Torvalds，在GNU/Linux中建立一个他们可以访问的“后门”。
+美国国家安全局（[**NSA**][1]）被称，他们曾经要求Linux的创始人，Linus Torvalds，在GNU/Linux中建立一个他们可以访问的“后门”。
 
-这绝非谣言，Linus的父亲，Nils Torvalds如此说道。
+这绝非谣言，Linus的父亲，Nils Torvalds如此说道。（译注：也许Nils可以算做是Linux的祖父？好吧，我是标题党，啦啦啦~ :D 无论如何，感谢他生了一个好儿子！ ）
 
 作为欧洲议会（MEP）的成员之一，Nils出席了最近关于“欧盟公民监视问题”的委员会质询会议。根据爱德华·斯诺登泄露出的一些NSA文档，委员会对文档中列出的一些公司代表就所谓的“合作”进行了质询。
 

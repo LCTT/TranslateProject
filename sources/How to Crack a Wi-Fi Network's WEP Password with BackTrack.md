@@ -1,3 +1,4 @@
+[翻译中]by stduolc
 How to Crack a Wi-Fi Network's WEP Password with BackTrack
 ================================================================================
 ![](http://img.gawkerassets.com/img/17idgc21242wbjpg/ku-xlarge.jpg)
