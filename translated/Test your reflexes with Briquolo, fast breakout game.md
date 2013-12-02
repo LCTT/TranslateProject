@@ -18,7 +18,7 @@ Briquolo　0.5.7是[可靠的][2]自由软件,可通过Ubuntu软件中心安装(
 
 via: http://iloveubuntu.net/test-your-reflexes-briquolo-fast-breakout-game
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Luoxcat](https://github.com/Luoxcat) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
