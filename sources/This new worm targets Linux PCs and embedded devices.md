@@ -1,3 +1,4 @@
+[this is bazz2, if you wanna translate this article, no way :P]
 This new worm targets Linux PCs and embedded devices
 ================================================================================
 **The malware spreads by exploiting a 2012 vulnerability in PHP, Symantec researchers said**
