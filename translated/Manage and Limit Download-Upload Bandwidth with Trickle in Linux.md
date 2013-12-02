@@ -149,7 +149,7 @@ root@oltjano-X55CR:/usr/bin# trickle -h
 
 via: http://www.tecmint.com/manage-and-limit-downloadupload-bandwidth-with-trickle-in-linux/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
