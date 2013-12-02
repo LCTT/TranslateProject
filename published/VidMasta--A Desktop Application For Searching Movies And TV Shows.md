@@ -1,19 +1,14 @@
-VidMasta:一个搜索电影和电视剧的桌面应用
+VidMasta:搜索和观看在线电影、电视剧的神器
 ===
+
 你是否曾经想要从桌面搜索电影或电视剧，或者搜寻能够随时为你搜索这些东西的应用程序？这儿有一个应用可以满足你的需要。
 
-[**VidMasta**][1]是一个免费，
-
-
-VidMasta: A Desktop Application For Searching Movies And TV Shows
-================================================================================
-Ever wanted to search for a Movie or a TV shows from your desktop or searching for a application to do it for you whenever you want? Here is a application to fulfil your needs.
-
-[**VidMasta**][1] is free, cross-platform, federated search desktop application to read about, preview, watch, and download any movie or television titles that are being shared online. It will run on Linux, Windows and Mac OS X.
+[**VidMasta**][1]是一个免费的、跨平台的的应用，它将搜索、浏览、评论、观看和下载那些在线分享的视频和电视剧等功能融为一体。它可以运行在Linux、Windows和Mac OS X上。
 
 ###特点
 
-使用VidMasta，你可以做到一下这些：
+使用VidMasta，你可以做到以下这些：
+
 - 观看或下载任何格式的电影或电视剧
 - 支持的格式是：TV，DVD，720P，1080P。
 - 匿名链接并自动过滤不受信任的IP，可以使用代理，还可以使用加密连接。
@@ -34,8 +29,7 @@ Ever wanted to search for a Movie or a TV shows from your desktop or searching f
 
 ###在Linux上安装VidMasta
 
-在安装VidMasta之前，你应该在你的Linux桌面系统中安装最新版的Java。
-从[这儿][4]下载最新版。进入你下载的文件夹，使用下面的命令安装它：
+在安装VidMasta之前，你应该在你的Linux桌面系统中安装最新版的Java。从[这儿][4]下载最新版。进入你下载的文件夹，使用下面的命令安装它：
 
 	sudo java -jar vidmasta-setup-16.7.jar
 
@@ -89,7 +83,9 @@ Ever wanted to search for a Movie or a TV shows from your desktop or searching f
 
 是不是很酷？
 
-需要注意的是，若你不能下载最新的电影或电视剧时，也许是因为版权问题或者地理原因。你也可以尝试一下安装最新版的Java并禁用掉屏蔽广告程序，再去播放或下载电影。
+需要注意的是，若你不能下载最新的电影或电视剧时，也许是因为版权问题或者国家原因。
+
+你也可以尝试一下安装最新版的Java并禁用掉屏蔽广告程序，再去播放或下载电影。
 
 你是否对此很期待呢？赶紧把它下载下来安装到你的系统中，祝你使用愉快！
 
@@ -97,7 +93,7 @@ Ever wanted to search for a Movie or a TV shows from your desktop or searching f
 
 via: http://www.unixmen.com/vidmasta-desktop-application-searching-movies-tv-shows/
 
-译者：[Linux-pdz](https://github.com/Linux-pdz`) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Linux-pdz](https://github.com/Linux-pdz`) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
