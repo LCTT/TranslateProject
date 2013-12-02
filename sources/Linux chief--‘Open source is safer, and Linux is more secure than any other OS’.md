@@ -1,3 +1,5 @@
+l3b2w1 translating……
+
 Linux chief: ‘Open source is safer, and Linux is more secure than any other OS
 ================================================================================
 In an interview with Linux Foundation executive director Jim Zemlin, VentureBeat got a bird’s-eye view of the future of the open-source operating system for 2014.
