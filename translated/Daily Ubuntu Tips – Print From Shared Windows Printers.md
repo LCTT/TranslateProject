@@ -38,7 +38,7 @@
 
 ![](http://www.liberiangeek.net/wp-content/uploads/2013/11/printersharingubuntu4.png)
 
-好好享受吧！
+好好享受吧！ 
 
 --------------------------------------------------------------------------------
 
