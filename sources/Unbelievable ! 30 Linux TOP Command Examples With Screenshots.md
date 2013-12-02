@@ -1,3 +1,6 @@
+Translating-----------------geekpi
+
+
 Unbelievable ! 30 Linux TOP Command Examples With Screenshots
 ================================================================================
 The top command in Linux displays the running processes on the system. One of the most important tools for a system administrator. It is used extensively for monitoring the load on a server. In this article, we explore the top command in detail. The top command is an interactive command. Many commands are available when top is running. We will explore these commands as well.
