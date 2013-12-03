@@ -1,3 +1,4 @@
+(translating by whatever1992)
 Install Oracle Java 7 in Elementary OS ‘Luna’ Via PPA
 ================================================================================
 **Question**: How can I install Oracle Java 7 in Elemetary OS Luna?
