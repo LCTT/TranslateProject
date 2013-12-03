@@ -1,3 +1,4 @@
+    Vic020不好意思的WC
 How To Display And Set Hostname in Linux
 ================================================================================
 ![](http://linoxide.com/wp-content/uploads/2013/11/hostname-command-linux.jpg)
