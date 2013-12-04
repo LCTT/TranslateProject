@@ -1,4 +1,3 @@
-
 13 Linux Cat命令管理(显示，排序，建立)文件实例
 ================================================================================
 ![](http://linoxide.com/wp-content/uploads/2013/11/linux-cat-command.png)
@@ -61,7 +60,7 @@ cat是一条linux内置命令. 几乎所有linux发行版都内置.接下来请�
 
     # cat -T /etc/hosts
 
-    # Do not remove the following line, or various programs
+    # Do not remove the following line, or various programs 
     # that require network functionality will fail.
     127.0.0.1^I^Ilocalhost.localdomain localhost
     ::1^I^Ilocalhost6.localdomain6 localhost6
