@@ -1,3 +1,4 @@
+	Vic020走起
 GCC 4.9 Is Now In Bug-Fixes-Only Stage 3 Mode
 ================================================================================
 [GCC 4.9][1] with [its many new features][2] is aiming for a release in the first half of 2014. As of this morning the GCC code-base will not accept new features as it's under a big-fixing-only flag.
