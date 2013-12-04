@@ -145,6 +145,6 @@ Hostname命令可以使用多个参数和一些别名如：dnsdomainname命令�
 
 via: http://linoxide.com/linux-command/display-set-hostname-linux/
 
-译者：[Vic___](https://blog.csdn.net/Vic___) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Vic___](http://blog.csdn.net/Vic___) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
