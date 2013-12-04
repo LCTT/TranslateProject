@@ -1,3 +1,5 @@
+翻译中 by小眼儿
+
 How to Crack a Wi-Fi Network's WPA Password with Reaver
 ================================================================================
 ![](http://img.gawkerassets.com/img/17pw3mgej3x93jpg/ku-xlarge.jpg)
