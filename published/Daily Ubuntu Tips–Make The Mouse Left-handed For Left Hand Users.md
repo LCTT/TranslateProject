@@ -1,8 +1,9 @@
 每日Ubuntu小技巧－让鼠标适合左利手用户
-================================================================================
+================================
+
 电脑的鼠标被设计成使用食指（大拇指旁边的那个手指）完成大部分操作。默认情况下鼠标为右利手用户配置。打开电脑时，多数情况下你会使用食指完成点击动作。
 
-事实上，许多左利手用户习惯把鼠标放到键盘的左边，然后用中指进行单击操作。这并不是左利手用户使用鼠标最好的方法。
+事实上，许多左利手用户（俗称左撇子）习惯把鼠标放到键盘的左边，然后用中指进行单击操作。但这并不是左利手用户使用鼠标最好的方法。
 
 这个简短的教程为想要正确地使用左手操作鼠标的用户而编写。它将会帮助左利手用户将鼠标设置成用食指点击鼠标主键的操作模式。
 
@@ -26,6 +27,6 @@
 
 via: http://www.liberiangeek.net/2013/11/daily-ubuntu-tipsmake-the-mouse-left-handed-for-left-hand-users/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Linchenguang](https://github.com/Linchenguang) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

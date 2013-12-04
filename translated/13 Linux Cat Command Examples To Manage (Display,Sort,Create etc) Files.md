@@ -1,15 +1,14 @@
-
-13 Linux Cat命令管理(显示，排序，建立)文件实例
+13个 Linux Cat命令管理(显示，排序，建立)文件实例
 ================================================================================
 ![](http://linoxide.com/wp-content/uploads/2013/11/linux-cat-command.png)
 
-Linux系统中，许多配置文件，Logs文件，甚至shell脚本都使用文本文件格式，因此,Linux系统存在着多种文本编辑器，但当你仅仅想要查看一下它们里的内容时，可使用cat命令。
+在Linux系统中，大多数配置文件、Logs文件，甚至shell脚本都使用文本文件格式，因此,Linux系统存在着多种文本编辑器，但当你仅仅想要查看一下这些文件的内容时，可使用一个简单的命令-cat.
 
 cat手册里这样描述：
 
 > cat命令读取文件内容，并输出到标准设备上面
 
-cat是一条linux内置命令. 几乎所有linux发行版都内置.接下来请跟随我来一起使用它.
+cat是一条linux内置命令. 几乎所有linux发行版都内置.接下来，让我们开始学习如何使用.
 
 ### 1. 显示文件内容 ###
 
@@ -20,9 +19,9 @@ cat是一条linux内置命令. 几乎所有linux发行版都内置.接下来请�
     CentOS release 5.10 (Final)
     Kernel \r on an \m
 
-### 2. 在行首显示行号 ###
+### 2. 在运行中显示行号 ###
 
-当在读取内容很多的配置文件时，加上-n参数可实现在行首显示行号。
+当在读取内容很多的配置文件时，在运行中显示行号将会使操作变简单，加上-n参数可以实现.
 
 
     # cat -n /etc/ntp.conf
@@ -40,7 +39,7 @@ cat是一条linux内置命令. 几乎所有linux发行版都内置.接下来请�
 
 ### 3. 在行首显示非空行号 ###
 
-类似于-n参数，-b也在行首显示行号.但它显示的行号为非空行行号
+类似于-n参数，-b也在运行中显示行号.区别在于-b只显示非空行行号.
 
     #cat -b /etc/ntp.conf
 
@@ -61,7 +60,7 @@ cat是一条linux内置命令. 几乎所有linux发行版都内置.接下来请�
 
     # cat -T /etc/hosts
 
-    # Do not remove the following line, or various programs
+    # Do not remove the following line, or various programs 
     # that require network functionality will fail.
     127.0.0.1^I^Ilocalhost.localdomain localhost
     ::1^I^Ilocalhost6.localdomain6 localhost6
@@ -90,7 +89,7 @@ cat是一条linux内置命令. 几乎所有linux发行版都内置.接下来请�
 
 ### 7. 每页满屏显示 ###
 
-当文件内容超过一屏显示范围时,可结合cat命令与其它命令满屏显示.使用管道符 ( | ).
+当文件内容显示不适合你的屏幕, 可结合cat命令与其它命令满屏显示.使用管道符 ( | ).
 
     # cat /proc/meminfo | less
 
@@ -101,8 +100,11 @@ cat是一条linux内置命令. 几乎所有linux发行版都内置.接下来请�
 ### 8. 同时查看2个文件中的内容 ###
 
 位于/root文件夹里有两人文件取名linux及desktop，每个文件含有以下内容 :
+
 **Linux** : ubuntu, centos, redhat, mint and slackware
+
 **Desktop** : gnome kde, xfce, enlightment, and cinnamon
+
 当你想同时查看两文件中的内容时，可按如下方法 :
 
     # cat /root/linux /root/desktop
@@ -120,7 +122,7 @@ cat是一条linux内置命令. 几乎所有linux发行版都内置.接下来请�
 
 ### 9. 排序显示 ###
 
-类似. 你也可结合 **sort**管道符对内容进行排序显示. 举例 :
+类似. 你也可以结合cat命令与其它命令来进行自定义输出. 如结合 **sort**管道符对内容进行排序显示. 举例 :
 
     # cat /root/linux | sort
 
@@ -132,7 +134,7 @@ cat是一条linux内置命令. 几乎所有linux发行版都内置.接下来请�
 
 ### 10. 输入重定向 ###
 
-你也可将显示结果输出重定向到屏幕或另一个文件. 只需要使用 > 符号即可输出生成到另一个文件.
+你也可将显示结果输出重定向到屏幕或另一个文件. 只需要使用 > 符号（大于号）即可输出生成到另一个文件.
 
     # cat /root/linux > /root/linuxdistro
 
@@ -149,7 +151,7 @@ Linux下有多种方法新建文件. 其中使用cat就是方法之一.
     Windows
     MacOS
 
-当你打入cat > operating_system,它会生成一个operating_system的文件. 然后下面会显示空行. 此时你可输入内容.比如我们输入Unix, Linux, Windows and MacOS. 输入完成后, **按Ctrl-D**存盘退出cat. 此时你会发现当前文件夹下会生成一个包含你刚才输入内容的叫 **operating_system**的文件.
+当你输入cat > operating_system,它会生成一个operating_system的文件. 然后下面会显示空行. 此时你可输入内容.比如我们输入Unix, Linux, Windows and MacOS. 输入完成后, **按Ctrl-D**存盘退出cat. 此时你会发现当前文件夹下会生成一个包含你刚才输入内容的叫 **operating_system**的文件.
 
 ### 12.向文件中追加内容 ###
 
@@ -175,7 +177,7 @@ Linux下有多种方法新建文件. 其中使用cat就是方法之一.
 
 ### 13. 重定向输入 ###
 
-你可使用 **<**命令将文件输入到cat中 .
+你可使用 **<**命令（小于号）将文件输入到cat中.
 
     # cat < /root/linux
 
@@ -207,6 +209,6 @@ Linux下有多种方法新建文件. 其中使用cat就是方法之一.
 
 via: http://linoxide.com/linux-command/13-cat-command-examples/
 
-译者：[hongchuntang](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[hongchuntang](https://github.com/译者ID) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
