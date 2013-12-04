@@ -1,3 +1,6 @@
+translating-----------------geekpi
+
+
 10 basic examples of Linux ps command
 ================================================================================
 ### Linux ps command ###
