@@ -102,6 +102,7 @@ cat是一条linux内置命令. 几乎所有linux发行版都内置.接下来，�
 位于/root文件夹里有两人文件取名linux及desktop，每个文件含有以下内容 :
 
 **Linux** : ubuntu, centos, redhat, mint and slackware
+
 **Desktop** : gnome kde, xfce, enlightment, and cinnamon
 
 当你想同时查看两文件中的内容时，可按如下方法 :
