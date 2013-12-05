@@ -137,7 +137,7 @@ Hostname命令可以使用多个参数和一些别名如：dnsdomainname命令�
     Resolving ‘dev-machine.bris.co.id’ …
      Result: h_name=’dev-machine.bris.co.id’
     Result: h_aliases=’dev-machine’
-    Result: h_addr_list=’192.168.0.104’
+    Result: h_addr_list=’192.168.0.104’ 
     bris.co.id
 
 感到熟悉？是的，这个结果与**dnsdomainname -v**命令是相同的，同样包含上面的内容。
