@@ -1,8 +1,8 @@
-Linux中如何显示和设置Hostname
+如何在Linux中显示和设置主机名
 ================================================================================
 ![](http://linoxide.com/wp-content/uploads/2013/11/hostname-command-linux.jpg)
 
-随着连接到网络的计算机数量越来越多，每一台计算机都需要有一个属性来区别于其它计算机。和现实世界中的人一样，计算机也有一个叫做hostname（主机名称）的属性。
+随着连接到网络的计算机数量越来越多，每一台计算机都需要有一个属性来区别于其它计算机。和现实世界中的人一样，计算机也有一个叫做hostname（主机名）的属性。
 
 ### 什么是hostname ###
 
@@ -33,7 +33,7 @@ Hostname是在你第一次安装Linux的时候设置。其中有一个步骤Linu
 
 你**需要使用root权限**，或者同样的权限来设置/修改你计算机的主机名。#标识证明你是root用户。上述命令把你的计算机主机名设置成为**dev-machine**。如果你没有收到任何报错信息，那么你的hostname已经改变了。再一次使用hostname命令检查，看看结果。
 
-使用hostname命令设置你的hostname**不是永久的**。当你重启你的计算机，你的设定将会失效。**为了永久改变**，你必须手动修改hostname配置文件。
+使用hostname命令设置你的hostname **不是永久的** 。当你重启你的计算机，你的设定将会失效。 **为了永久改变** ，你必须手动修改hostname配置文件。
 
 **On Debian / Ubuntu based Linux**
 **基于Linux 的 Debian / Ubuntu**
@@ -117,7 +117,7 @@ Hostname命令可以使用多个参数和一些别名如：dnsdomainname命令�
     $ hostname -s
     dev-machine
 
-* 这个命令将会产生与输入hostname同样的结果 *
+*这个命令将会产生与只输入hostname同样的结果*
 
 **显示FQDN格式**
 
