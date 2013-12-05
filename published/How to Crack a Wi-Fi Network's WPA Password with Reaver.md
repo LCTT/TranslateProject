@@ -2,7 +2,7 @@
 ================================================================================
 ![](http://img.gawkerassets.com/img/17pw3mgej3x93jpg/ku-xlarge.jpg)
 
-Wi-Fi网络能够让我们便利地访问因特网，但同时，我们又不希望隔壁抠门猥琐男总是蹭我们的网，所以自然要给WiFi加个密码，对吧？于是，好消息是，也许你已经看过我的另一篇文章，“[如何轻易破解WEP密码][1]”,所以你使用了更稳固的WPA安全协议。
+Wi-Fi网络能够让我们便利地访问因特网，但同时，我们又不希望隔壁抠门猥琐男总是蹭我们的网，所以自然要给WiFi加个密码，对吧？于是，好消息是，也许你已经看过我的另一篇文章，“[如何轻易破解WEP密码][1]”，所以你使用了更稳固的WPA安全协议。
 
 但坏消息是，现在有一款自由开源新工具——[Reaver][2]，已经挖掘出了无线路由器的一个漏洞，由此能够破解绝大多数路由器上的密码。今天，我就来一步步介绍，如何使用Reaver破解WPA/WPA2密码。最后我会给出相应的防范对策。
 
@@ -22,7 +22,7 @@ Wi-Fi网络能够让我们便利地访问因特网，但同时，我们又不希
 
 - **配有DVD光驱、支持WiFi的电脑**。BackTrack支持大多数的笔记本无线网卡，这一点对于大多数读者应该没什么问题。同时，你的电脑需要有一个DVD光驱，这样才能从BackTrack光盘启动。我的测试环境是一台用了6年的MacBook Pro。
 
-- **附近要有采用WPA加密的WiFi网络**。没WiFi网，你破解谁去=。= ……一会我会在“Reaver的工作原理部分”介绍，WiFi防护设置是如何产生安全漏洞、WPA破解是如何成为可能的。
+- **附近要有采用WPA加密的WiFi网络**。没WiFi网，你破解谁去 =。=  ……一会我会在“Reaver的工作原理部分”介绍，WiFi防护设置是如何产生安全漏洞、WPA破解是如何成为可能的。
 
 - **最后，你还需要一点点的耐心**。这是整个实验的最后一步，使用Reaver破解WPA密码并不难，它采用的是暴力破解，因此，你的电脑将会测试大量不同的密码组合，来尝试破解路由器，直到最终找到正确的密码。我测试的时候，Reaver花了大概两个半小时破解了我的WiFi密码。[Reaver的主页][6]上介绍，一般这个时间在4到10个小时之间，视具体情况而定。
 
@@ -53,7 +53,7 @@ Reaver已经加入了BackTrack的最新版软件包，只是还没有集成到li
 
     apt-get install reaver
 
-如果一切顺利，Reaver现在应该已经安装好了。如果你刚才的下载安装操作使用的是WiFi上网，那么在继续下面的操作之前，请先断开网络连接，并假装不知道WiFi密码=。= 接下来我们要准备破解它~
+如果一切顺利，Reaver现在应该已经安装好了。如果你刚才的下载安装操作使用的是WiFi上网，那么在继续下面的操作之前，请先断开网络连接，并假装不知道WiFi密码 =。=  接下来我们要准备破解它~
 
 ####第3步：搜集设备信息，准备破解####
 
@@ -131,22 +131,22 @@ Reaver已经加入了BackTrack的最新版软件包，只是还没有集成到li
 
 via: http://lifehacker.com/5873407/how-to-crack-a-wi+fi-networks-wpa-password-with-reaver
 
-译者：[Mr小眼儿](http://blog.csdn.net/tinyeyeser) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Mr小眼儿](http://blog.csdn.net/tinyeyeser) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [1]:http://lifehacker.com/5305094/how-to-crack-a-wi+fi-networks-wep-password-with-backtrack
-[2]:http://go.redirectingat.com/?id=33330X911647&site=lifehacker.com&xs=1&isjs=1&url=http%3A%2F%2Fcode.google.com%2Fp%2Freaver-wps%2F&xguid=&xcreo=0&sref=http%3A%2F%2Flifehacker.com%2F5873407%2Fhow-to-crack-a-wi%2Bfi-networks-wpa-password-with-reaver&pref=http%3A%2F%2Flifehacker.com%2F5953047%2Fhow-to-crack-wep-and-wpa-wi%2Bfi-passwords&xtz=-480&abp=1
+[2]:http://code.google.com/p/reaver-wps/
 [3]:http://www.youtube.com/embed/z1c1OIMbmb0?wmode=transparent&rel=0&autohide=1&showinfo=0&enablejsapi=1
-[4]:http://go.redirectingat.com/?id=33330X911647&site=lifehacker.com&xs=1&isjs=1&url=http%3A%2F%2Fwww.backtrack-linux.org%2Fdownloads%2F&xguid=&xcreo=0&sref=http%3A%2F%2Flifehacker.com%2F5873407%2Fhow-to-crack-a-wi%2Bfi-networks-wpa-password-with-reaver&pref=http%3A%2F%2Flifehacker.com%2F5953047%2Fhow-to-crack-wep-and-wpa-wi%2Bfi-passwords&xtz=-480&abp=1
-[5]:http://go.redirectingat.com/?id=33330X911647&site=lifehacker.com&xs=1&isjs=1&url=http%3A%2F%2Fwww.backtrack-linux.org%2Fdownloads%2F&xguid=&xcreo=0&sref=http%3A%2F%2Flifehacker.com%2F5873407%2Fhow-to-crack-a-wi%2Bfi-networks-wpa-password-with-reaver&pref=http%3A%2F%2Flifehacker.com%2F5953047%2Fhow-to-crack-wep-and-wpa-wi%2Bfi-passwords&xtz=-480&abp=1
-[6]:http://go.redirectingat.com/?id=33330X911647&site=lifehacker.com&xs=1&isjs=1&url=http%3A%2F%2Fcode.google.com%2Fp%2Freaver-wps%2F&xguid=&xcreo=0&sref=http%3A%2F%2Flifehacker.com%2F5873407%2Fhow-to-crack-a-wi%2Bfi-networks-wpa-password-with-reaver&pref=http%3A%2F%2Flifehacker.com%2F5953047%2Fhow-to-crack-wep-and-wpa-wi%2Bfi-passwords&xtz=-480&abp=1
+[4]:http://www.backtrack-linux.org/downloads/
+[5]:http://www.backtrack-linux.org/downloads/
+[6]:http://code.google.com/p/reaver-wps/
 [7]:http://lifehacker.com/5305094/how-to-crack-a-wi+fi-networks-wep-password-with-backtrack
-[8]:http://go.redirectingat.com/?id=33330X911647&site=lifehacker.com&xs=1&isjs=1&url=http%3A%2F%2Farstechnica.com%2Fbusiness%2Fnews%2F2011%2F12%2Fresearchers-publish-open-source-tool-for-hacking-wifi-protected-setup.ars&xguid=&xcreo=0&sref=http%3A%2F%2Flifehacker.com%2F5873407%2Fhow-to-crack-a-wi%2Bfi-networks-wpa-password-with-reaver&pref=http%3A%2F%2Flifehacker.com%2F5953047%2Fhow-to-crack-wep-and-wpa-wi%2Bfi-passwords&xtz=-480&abp=1
-[9]:http://go.redirectingat.com/?id=33330X911647&site=lifehacker.com&xs=1&isjs=1&url=http%3A%2F%2Farstechnica.com%2Fbusiness%2Fnews%2F2012%2F01%2Fhands-on-hacking-wifi-protected-setup-with-reaver.ars&xguid=&xcreo=0&sref=http%3A%2F%2Flifehacker.com%2F5873407%2Fhow-to-crack-a-wi%2Bfi-networks-wpa-password-with-reaver&pref=http%3A%2F%2Flifehacker.com%2F5953047%2Fhow-to-crack-wep-and-wpa-wi%2Bfi-passwords&xtz=-480&abp=1
-[10]:http://go.redirectingat.com/?id=33330X911647&site=lifehacker.com&xs=1&isjs=1&url=http%3A%2F%2Fdd-wrt.com%2F&xguid=&xcreo=0&sref=http%3A%2F%2Flifehacker.com%2F5873407%2Fhow-to-crack-a-wi%2Bfi-networks-wpa-password-with-reaver&pref=http%3A%2F%2Flifehacker.com%2F5953047%2Fhow-to-crack-wep-and-wpa-wi%2Bfi-passwords&xtz=-480&abp=1
-[11]:http://go.redirectingat.com/?id=33330X911647&site=lifehacker.com&xs=1&isjs=1&url=http%3A%2F%2Fcode.google.com%2Fp%2Freaver-wps%2Fissues%2Fdetail%3Fid%3D44&xguid=&xcreo=0&sref=http%3A%2F%2Flifehacker.com%2F5873407%2Fhow-to-crack-a-wi%2Bfi-networks-wpa-password-with-reaver&pref=http%3A%2F%2Flifehacker.com%2F5953047%2Fhow-to-crack-wep-and-wpa-wi%2Bfi-passwords&xtz=-480&abp=1
-[12]:http://go.redirectingat.com/?id=33330X911647&site=lifehacker.com&xs=1&isjs=1&url=http%3A%2F%2Fdd-wrt.com%2Fwiki%2Findex.php%2FSupported_Devices&xguid=&xcreo=0&sref=http%3A%2F%2Flifehacker.com%2F5873407%2Fhow-to-crack-a-wi%2Bfi-networks-wpa-password-with-reaver&pref=http%3A%2F%2Flifehacker.com%2F5953047%2Fhow-to-crack-wep-and-wpa-wi%2Bfi-passwords&xtz=-480&abp=1
+[8]:http://arstechnica.com/business/news/2011/12/researchers-publish-open-source-tool-for-hacking-wifi-protected-setup.ars
+[9]:http://arstechnica.com/business/news/2012/01/hands-on-hacking-wifi-protected-setup-with-reaver.ars
+[10]:http://dd-wrt.com/
+[11]:http://code.google.com/p/reaver-wps/issues/detail?id=44
+[12]:http://dd-wrt.com/wiki/index.php/Supported_Devices
 [13]:http://lifehacker.com/5821773/how-to-monitor-your-internet-usage-so-you-dont-exceed-your-data-cap
 [14]:http://lifehacker.com/5756233/get-more-out-of-your-dd+wrt-router-with-an-external-drive?tag=ddwrt
 [15]:http://lifehacker.com/5680670/turn-your-dd+wrt-enabled-router-into-a-whole-house-ad-blocker?tag=ddwrt
