@@ -1,3 +1,5 @@
+translating by zsJacky
+
 Setup FTP Server On openSUSE 13.1
 ================================================================================
 **vsftpd** (**V**ery **S**ecure **F**ile **T**ransport **P**rotocol **D**aemon) is a secure, fast FTP server for Unix/Linux systems. In this how-to article, let us see how to setup a basic FTP server using vsftpd on openSUSE 13.1.
@@ -182,7 +184,7 @@ That’s it for now. Your FTP server is ready to use. Enjoy!
 
 via: http://www.unixmen.com/setup-ftp-server-opensuse-13-1/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[zsJacky](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

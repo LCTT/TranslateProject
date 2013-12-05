@@ -1,15 +1,13 @@
-(translating by whatever1992)
-Install Oracle Java 7 in Elementary OS ‘Luna’ Via PPA
+使用PPA在Elementary OS 'Luna'上安装Oracle Java 7
 ================================================================================
-**Question**: How can I install Oracle Java 7 in Elemetary OS Luna?
+**问题**: 我该如何在 Elemetary OS Luna 上安装Oracle Java 7？
 
-**Answer**: To install Java 7 in Elementary OS Luna follow the steps below:
+**回答**: 在 Elementary OS Luna 安装 Java 7 的步骤如下:
+由于Elementary OS是基于Ubuntu，所以我们允许使用具有多种Java包的**WEPUD8 PPA**。
 
-Since Elementary OS is Ubuntu based we are at liberty to use **WEPUD8 PPA** which has various Java packages in it.
+1. 打开终端。
 
-1. Open Terminal.
-
-2. Run the command below to add Java PPA to your repository:
+2. 运行以下指令添加Java的PPA到你的软件仓:
 
     $ sudo add-apt-repository ppa:webupd8team/java
 
@@ -19,7 +17,7 @@ Since Elementary OS is Ubuntu based we are at liberty to use **WEPUD8 PPA** whic
     More info: https://launchpad.net/~webupd8team/+archive/java
     Press [ENTER] to continue or ctrl-c to cancel adding it
 
-3. Press ENTER to continue
+3. 按回车继续
 
     gpg: keyring `/tmp/tmpB5WwDG/secring.gpg' created
     gpg: keyring `/tmp/tmpB5WwDG/pubring.gpg' created
@@ -30,11 +28,11 @@ Since Elementary OS is Ubuntu based we are at liberty to use **WEPUD8 PPA** whic
     gpg: imported: 1 (RSA: 1)
     OK
 
-4. Now update your system
+4. 现在更新你的系统
 
     $ sudo apt-get update
 
-5. Install Java 7 by running the command below:
+5. 运行以下命令安装Java 7:
 
     $ sudo apt-get install oracle-java7-installer
 
@@ -60,21 +58,21 @@ Since Elementary OS is Ubuntu based we are at liberty to use **WEPUD8 PPA** whic
     After this operation, 473 kB of additional disk space will be used.
     Do you want to continue [Y/n]?
 
-6. Type **Y** for Yes and Press enter to continue installation.
+6. 输入代表Yes的**Y**以及回车键继续安装。
 
-7. During the installation, you need to agree to the license to continue. Select **OK**.
+7. 在安装过程中，你需要同意条款才能继续。选择**OK**。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/11/JDK-ask1.png)
 
-8. Then Select **Yes** to continue.
+8. 然后选择**Yes**继续。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/11/JDK-ask2.png)
 
-9. Now relax for the packages to be downloaded and installed automatically:
+9. 现在请等待安装包的下载与自动安装:
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/11/JDK-Downloading.png)
 
-7. Installation has been completed successfully. You can now check the version of Java from the Terminal:
+10. 安装完成。你可以在终端上查看Java版本:
 
     $ java -version
     java version "1.7.0_45"
@@ -85,6 +83,6 @@ Since Elementary OS is Ubuntu based we are at liberty to use **WEPUD8 PPA** whic
 
 via: http://www.unixmen.com/install-oracle-java-7-elementary-os-luna-via-ppa/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[whatever1992](https://github.com/whatever1992) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
