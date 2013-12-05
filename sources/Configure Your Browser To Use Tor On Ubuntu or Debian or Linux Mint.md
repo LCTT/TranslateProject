@@ -1,4 +1,4 @@
-onfigure Your Browser To Use Tor On Ubuntu/Debian/Linux Mint
+Configure Your Browser To Use Tor On Ubuntu/Debian/Linux Mint
 ================================================================================
 **Tor**, **T**he **O**nion **R**outer, is a network of Virtual Tunnels that allows users to communicate securely and as well as anonymously over Internet. Tor allows organizations and individuals to share information over public networks without compromising their privacy. We can use Tor to keep websites from tracking us and also our family members, or to connect to news sites, instant messaging services, or the websites which are blocked by the Internet providers and Network Administrators.
 
