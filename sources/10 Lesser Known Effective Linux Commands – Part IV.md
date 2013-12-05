@@ -1,3 +1,5 @@
+                翻译中　　Luox
+
 10 Lesser Known Effective Linux Commands – Part IV
 ================================================================================
 Continuing the **Lesser Known** series, this fourth article of the series will let you know some useful **funny** and **animated** commands. Here we go into the practical session, without much theory.
