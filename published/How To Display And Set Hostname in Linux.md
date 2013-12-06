@@ -31,12 +31,11 @@ Hostname是在你第一次安装Linux的时候设置。其中有一个步骤Linu
     $ hostname
     dev-machine
 
-你**需要使用root权限**，或者同样的权限来设置/修改你计算机的主机名。#标识证明你是root用户。上述命令把你的计算机主机名设置成为**dev-machine**。如果你没有收到任何报错信息，那么你的hostname已经改变了。再一次使用hostname命令检查，看看结果。
+你**需要使用root权限**，或者等同root的权限来设置/修改你计算机的主机名。“#”标识证明你是root用户。上述命令把你的计算机主机名设置成为**dev-machine**。如果你没有收到任何报错信息，那么你的hostname已经改变了。再一次使用hostname命令检查，看看结果。
 
 使用hostname命令设置你的hostname **不是永久的** 。当你重启你的计算机，你的设定将会失效。 **为了永久改变** ，你必须手动修改hostname配置文件。
 
-**On Debian / Ubuntu based Linux**
-**基于Linux 的 Debian / Ubuntu**
+**Debian / Ubuntu系的Linux**
 
 你可以在 **/etc/hostname** 和 **/etc/hosts** 文件夹中找到这个文件
 
@@ -55,8 +54,7 @@ Hostname是在你第一次安装Linux的时候设置。其中有一个步骤Linu
 
 你将会发现不用重启你的linux它就即刻生效。
 
-**On RedHat / CentOS based Linux**
-**基于Linux的 RedHat / CentOS**
+**RedHat / CentOS系的Linux**
 
 你可以在 **/etc/hosts** 和 **/etc/sysconfig/networks** 文件夹中找到这个文件。
 
@@ -67,7 +65,7 @@ Hostname是在你第一次安装Linux的时候设置。其中有一个步骤Linu
     127.0.0.1 localhost.localdomain localhost dev-machine
     ::localhost 127.0.0.1
 
-/etc/sysconfig/network
+**/etc/sysconfig/network**
 
     NETWORKING=yes
     NETWORKING_IPV6=no
@@ -82,7 +80,7 @@ Hostname是在你第一次安装Linux的时候设置。其中有一个步骤Linu
 
 在本篇文章，dnsdomainname命令的结果是 **bris.co.id**。
 
-如果你看见结果是 (**none**),那么你的机器**没有配置FQDN（Fully Qualified Domain Name 完全符合标准的域名）** 。Dnsdomainname命令摘取来自**/etc/hosts**文件的信息。你应该配置它为完全符合标准的域名格式。接下来一个简单的例子：
+如果你看见结果是 (**none**)，那么你的机器**没有配置FQDN（Fully Qualified Domain Name 完全符合标准的域名）** 。dnsdomainname命令摘取来自**/etc/hosts**文件的信息。你应该配置它为FQDN格式。下面是一个简单的例子：
 
 **/etc/hosts**
 
@@ -99,9 +97,9 @@ Hostname是在你第一次安装Linux的时候设置。其中有一个步骤Linu
     Result: h_aliases=’dev-machine’
     Result: h_addr_list=’192.168.0.104’
 
-### 如何显示hostname更多细节信息###
+### 如何显示hostname的更多细节信息###
 
-Hostname命令可以使用多个参数和一些别名如：dnsdomainname命令。这些参数在每日操作中是有用的。下面这些命令的结果是基于**/etc/hosts**的上述配置。
+Hostname命令可以使用多个参数和一些别名，比如dnsdomainname命令就是它的一个别名。这些参数在每日操作中是有用的。下面这些命令的结果是基于**/etc/hosts**的上述配置。
 
 **显示IP地址**
 
@@ -126,7 +124,7 @@ Hostname命令可以使用多个参数和一些别名如：dnsdomainname命令�
 
 **显示细节信息**
 
-所有的参数包括上述信息，都可以通过使用参数**-v 和 -d** 来概括。让我们来看一个例子。
+所有的参数包括上述信息，都可以通过使用参数**-v** 和 **-d** 来概括。让我们来看一个例子。
 
     $ hostname -v -d
     gethostname()=’dev-machine.bris.co.id’

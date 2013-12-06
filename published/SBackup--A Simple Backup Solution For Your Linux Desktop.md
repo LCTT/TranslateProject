@@ -62,19 +62,19 @@ SBackup 可在 Ubuntu、Linux Mint 和 Debian 的默认仓库中获得，所以�
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/11/Simple-Backup-Suite_001.jpg)
 
-### General ###
+#### General选项卡 ####
 
 在 General 选项内，你可以选择多久进行一次完整备份，默认是7天。每7天 SBackup 将会进行一次完整的备份。你也可以选择备份的压缩格式。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/11/Simple-Backup-Suite_0021.jpg)
 
-### Include ###
+#### Include选项卡 ####
 
 这个选项不需要解释太多，你可以添加 SBackup 要备份的文件或目录。这里可以选择备份单独的文件或者完整的目录，我删除了所有的目录仅仅保留了“Resume”
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/11/Simple-Backup-Suite_0031.jpg)
 
-### Exclude ###
+#### Exclude选项卡 ####
 
 如同 Include 选项，我们可以选择备份时排除的文档和目录，只需要选择要排除的文档和目录的路径即可。在默认配置下，/media, /var/run/, /var/cache/, /var/spool/ 和 /vat/tmp/ 目录均被排除
 
@@ -92,7 +92,7 @@ SBackup 可在 Ubuntu、Linux Mint 和 Debian 的默认仓库中获得，所以�
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/11/Simple-Backup-Suite_0071.jpg)
 
-### Destination ###
+#### Destination选项卡 ####
 
 在这里你可以选择备份存放的路径，正如我之前提到的，你可以把备份的文档或文件夹存放在硬盘或者远程的 FTP 或 NAS。这里我将把备份保存在 /home/sk/My Backup 目录下。
 
@@ -100,7 +100,7 @@ SBackup 可在 Ubuntu、Linux Mint 和 Debian 的默认仓库中获得，所以�
 
 **提示:** 在备份前确认目录有足够的空间保存备份文件
 
-### Schedule ###
+#### Schedule选项卡 ####
 
 在这个选项中，你可以设定具体的备份时间。点击 **Simple** 选项，可以按每小时、每日、每周、每月来设置你的计划备份时间。
 
@@ -114,13 +114,13 @@ SBackup 可在 Ubuntu、Linux Mint 和 Debian 的默认仓库中获得，所以�
 
     lrwxrwxrwx 1 root root 33 Nov  8 15:34 /etc/cron.daily/sbackup -> /usr/share/sbackup/sbackup-launch
 
-### Purging ###
+#### Purging选项卡 ####
 
 在这个选项里，可以删除超过一定时间的备份文件。在默认配置下，超过30天的备份文件将被删除。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/11/Simple-Backup-Suite_0111.jpg)
 
-### Report ###
+#### Report选项卡 ####
 
 Report 是最后一个选项卡，在这里你可以设置接收备份完成通知的邮箱。输入你的邮箱ID、SMTP服务地址、邮箱用户名、密码后，点击 Test mail settings。需要留意的是，在测试邮箱设置前，点击工具栏中的Save Configuration按钮保存你的配置。
 
