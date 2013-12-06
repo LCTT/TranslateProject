@@ -1,3 +1,4 @@
+	Vic020的WC
 CentOS 6.5 desktop installation guide with screenshots
 ================================================================================
 ### CentOS 6.5 released ###
