@@ -1,3 +1,5 @@
+翻译中 by小眼儿
+
 Vim is your new IDE
 ================================================================================
 **Kill all the GUIs. Mouse is your enemy. Keyboard is your only friend.**
