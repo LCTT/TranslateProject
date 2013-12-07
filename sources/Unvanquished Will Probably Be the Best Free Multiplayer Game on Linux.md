@@ -1,3 +1,4 @@
+[翻译中] by KayGuoWhu
 Unvanquished Will Probably Be the Best Free Multiplayer Game on Linux
 ================================================================================
 **Unvanquished, a free, open-source first-person shooter combining real-time strategy elements with a futuristic and sci-fi setting, has just received its 22nd update. Actually it's 22.1, but who's counting?**
