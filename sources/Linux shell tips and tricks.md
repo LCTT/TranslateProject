@@ -1,3 +1,7 @@
+Translating------------geekpi
+
+
+
 Linux shell tips and tricks
 ================================================================================
 I’m using Linux shell (Bash) on daily basis, but I often forgot some useful command or shell tip. Yes, I can remember commands, but I can’t say that if I used it just once for specific task. Then I started to write Linux shell tips in text file on my Dropbox account and now I decided to share that. This list will be updated over time. Also keep in mind that for some tips you will need to install additional software on your Linux distribution.
