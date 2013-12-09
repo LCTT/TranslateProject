@@ -1,40 +1,40 @@
 [翻译中] by KayGuoWhu
-Unvanquished Will Probably Be the Best Free Multiplayer Game on Linux
+Unvanquished 可能成为Linux上最好的免费多人游戏
 ================================================================================
-**Unvanquished, a free, open-source first-person shooter combining real-time strategy elements with a futuristic and sci-fi setting, has just received its 22nd update. Actually it's 22.1, but who's counting?**
+**Unvanquished，一款免费的、开源的并将实时策略元素和未来科幻设定相结合的第一人称视角的射击游戏，已经收到了它的第22次更新。事实上，版本是22.1，但是是谁在计数呢？**
 
 ![](http://i1-news.softpedia-static.com/images/news2/Unvanquished-Will-Probably-Be-the-Best-Free-Multiplayer-Game-on-Linux-405956-2.jpg)
 
 ![](http://www.unvanquished.net/images/20131202-snowstation.jpg)
 
-Even if Unvanquished is still in its Alpha stages, the developers have added a lot of new features and the game has become a lot more playable.
+即便Unvanquished仍处在内部测试阶段，但开发者们已经添加了很多新特性，使得这款游戏的可玩性更强。
 
-The Unvanquished Alpha 22.1 has received a few engine changes, some gameplay changes, a new map, a new version of an existing map, and more.
+Unvanquished的内部测试版22. 1已经接受了一些改变。包括引擎，游戏设置，一个新地图，一个已有地图的新版本，
+还有更多。
 
-Snowstation is the new map integrated in the game. According to the developer, it has a simple layout, essentially a loop, and a snow-covered outside area forming part of that loop.
+Snowstation是集成在这款游戏中的新地图。据开发者透露，它拥有一个简单的设计，必要的环路和用来形成这个环路的一部分的雪地场景。
 
-“We're now using C++ for all engine code. A few things are a bit different – some commands are changed a little or renamed and some output looks different. One which you'll probably notice while playing is marking for deconstruction – you'll need to rebind that key. The reason is that /if has lost its modifier key support; you'll need to use /modcase instead,” reads the announcement.
+公告里写道：“我们使用C++编写所有的引擎代码。一些地方变得有点不同——一些指令被略微更改或重命名，一些输出看起来不同。你可能会注意到在进行标记结构时，需要重新绑定关键字。原因是/if已经失去修改关键字的支持，你需要使用/modcase代替”。
 
-### Highlight of Unvanquished Alpha 22.1: ###
+### Unvanquished Alpha 22.1的亮点：###
 
-• The jetpack has been added. Users have to hold down the jump key and fly – but you can't hover anymore and you only have a limited amount of fuel;
-• The reasons “under attack” messages are reported have been changed;
-• Human weapons will be refilled or recharged automatically when close to a suitable building and not in use;
-• Repeaters are now effectively small reactors and they will provide power even when there is no reactor around;
-• FXAA now works with Mesa in OpenGL 2.1 contexts.
+• 喷气机已经被加入。玩家必须按住跳跃键然后飞翔 - 但你不能一直翱翔，你只有有限的燃料；
+• 被报告的“受到攻击”消息的原因已经被改变；
+• 当接近合适的建筑时，人类的武器将被自动填充或充电,而不是使用；
+• 中继器现在是有效的小型反应堆，当周围没有反应堆时，它们能提供能量；
+• 在OpenGL 2.1的环境中FXAA和Mesa一起工作。
 
-More details about this amazingly-looking game can be found on the official [website][1]. Keep in mind that this is a work in progress and bugs are bound to appear.
+关于这款看起来让人很惊奇的游戏的更多细节可以在官方网站 [网址][1]上找到。请注意这是一个正在进行中的工作，所以错误是一定会出现的。
 
-**Download Unvanquished Alpha 22.1 right now:**
+**立即下载Unvanquished Alpha 22.1**
 
 - [Debian/Ubuntu DEB ALL][2][ubuntu_deb] [0 KB]
 - [Arch Linux package][2][binary] [0 KB]
-
 --------------------------------------------------------------------------------
 
 via: http://news.softpedia.com/news/Unvanquished-Will-Probably-Be-the-Best-Free-Multiplayer-Game-on-Linux-405956.shtml
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[KayGuoWhu](https://github.com/KayGuowhu) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
