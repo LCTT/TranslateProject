@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 专访Ubuntu Tweak的作者周鼎
-=======
-Interview with Ding Zhou of Ubuntu Tweak
->>>>>>> faa2ec23f5c4c34f9c618978025f401834a1cc2f
 ================================================================================
 [Ubuntu tweak][1]是一款知名度很高的应用程序软件，Ubuntu用户可以用它来调整系统的性能、功能等各个细节。项目的创始人，周鼎又名Tualatrix Chou，正与我们分享Ubuntu Tweak的特性、使用感觉以及它跟Canonical的关系，并且勾勒了项目的未来计划蓝图。享受吧！
 
@@ -18,15 +14,15 @@ Interview with Ding Zhou of Ubuntu Tweak
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2012/03/tualatrix1.jpg)
 
-Ubuntu Tweak can be used to toggle the desktop icon display, set the fonts, enable/disable the user switch, logo.
+Ubuntu Tweak可以用来切换桌面图表的显示方式、设置字体、启用/禁用多用户切换功能以及登陆的标识（logo）等等。
 
-In the latest version of Ubuntu Tweak (0.6), you can also use it to tweak your Unity desktop.ut and shutdown functions.
+在最新的Ubuntu Tweak 0.6版本中，你也可以调整你的Unity桌面以及关机功能。
 
-You can also use Ubuntu Tweak to cleanup system cruft to free space and make system clean.
+你也能使用Ubuntu Tweak来清理系统的垃圾以释放空间和使系统保持干净。
 
-**Canonical decides not to include Ubuntu Tweak in their distro by default. What does that mean? Is there some kind of risk for inexperienced users who want to tweak their system using your application?**
+**Canonical在他们的默认发布源中不考虑加入Ubuntu Tweak。这意味着什么？这对那些没有经验，但又想要使用你的应用程序来调整他们的系统的用户来说，存在某些风险吗？**
 
-That’s right. Because in the previous version of Ubuntu Tweak, it provided a feature to enable the popular PPA, I wasn’t able to ensure all the PPA were safe, so Ubuntu Tweak had some security risks.
+对的。因为在以前的Ubuntu Tweak发布版本中，为流行的PPA都提供了可用源，但我不能保证所有的PPA都是安全的，所以Ubuntu Tweak会有一些安全风险。
 
 As you see, Source Center has been removed since 0.6. But please don’t mix the “include default by Ubuntu” and “put into the repository”, Ubuntu Tweak first should be put into the universal repository, then can be included by default in Ubuntu.
 
@@ -92,6 +88,6 @@ via: http://www.unixmen.com/interview-with-ding-zhou-of-ubuntu-tweak/
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
 
 [1]:http://ubuntu-tweak.com/
