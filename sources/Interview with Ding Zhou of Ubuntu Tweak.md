@@ -48,19 +48,19 @@ Ubuntu Tweak可以用来切换桌面图表的显示方式、设置字体、启�
 
 如大家所见，Ubuntu 12.04已经增加了隐藏/显示切换功能，Launcher的大小在系统设置中也可以自定义设置。我认为Unity将会有更多的可配置功能。
 
-**一般来说，你认为Canonical公司开发Unity桌面环境是正确的决策吗？他们与 Gnome开发者之间有合作争议，这有些是是不可避免的是吗？**
+**一般来说，你认为Canonical公司开发Unity桌面环境是正确的决策吗？他们与 Gnome开发者之间有合作争议，这有些是不可避免的吗？**
 
-Yes, I think it’s the right decision for Canonical. If you look back three years, when Ubuntu first introduced the Indicator for GNOME Panel, it was a better design than the original GNOME Panel applet. But there’s some problematic collaboration between Canonical and GNOME Developers, so it has never landed in GNOME, until in GNOME 3, the GNOME Shell itself removed the GNOME Panel, and the design of GNOME Shell panel is almost the same as that of the Indicator. If they could share the same API, the desktop Linux world would be better.是的，对于Canonical公司来说，我觉得他们的决策很正确。回顾三年前，
+是的，对于Canonical公司来说，我觉得他们的决策很正确。回顾三年前，当Ubuntu首次引入基于GNOME Panel的Indicator，它的设计就要比原来直接的GNOME Panel小程序更优雅。但Canonical开发者和GNOME开发者之间合作有些问题，因为他们从来没有着眼于GNOME。直到GNOME 3的面世，情况才有所好转，它的GNOME Shell已经从GNOME Panel移出来了，并且GNOME Shell的面板已经和上面提到的Indicator用的是同一套设计方式。如果他们之间共用相同的API的话，桌面Linux应该会更好用。
 
-So, between the company, community and GNOME, the different opinions for user interface finally made the Unity desktop out.
+所以来自于公司、社区、GNOME桌面等的不同的关于用户界面的见解，综合起来最终就形成了Unity。
 
-I think it’s a good thing, at least I like Unity more than GNOME Shell right now.
+我认为这是好事。至少，到目前为至，比起GNOME Shell来说，我更喜欢Unity。
 
-**Although you are developing an Ubuntu specialized application, I suppose you are using another distro for more advanced users. What is your distro of choice and why?**
+**虽然你正在开发的是一款Ubuntu系统专用的程序，但我假设你为了使用更多的高级用户功能，会使用其它的发行版本。你会选择哪些发行版本呢？为什么？**
 
-Of course, I had played with Fedora, Arch, OpenSUSE, especially with Gentoo, I had been using it for one year long. It’s my second favourite Linux distribution, because it has one of the most advanced package management systems.
+当然，我已经玩过Fedora,、Arch、 OpenSUSE，特别是Gentoo，我已经整整使用了一年。它是我第二喜欢的Linux发行系统，因为它拥有一个最先进的包管理系统。
 
-But now I only use Ubuntu for desktop and server, I also use Mac OS X. I got many design inspiration from it :)
+但现在我仅仅只会使用Ubuntu的桌面版本和服务版，也使用Mac OS X，很多的设计灵感就来自于它 :)
 
 **Can Ubuntu Tweak, be tweaked or forked or changed a little bit, in order to become useful in other linux distributions like Fedora, or OpenSuse, or Debian? Is the idea of a “Linux Tweak” application that people would choose distro and desktop environment plausible or not?**
 
