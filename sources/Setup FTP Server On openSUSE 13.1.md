@@ -1,48 +1,48 @@
 translating by zsJacky
 
-Setup FTP Server On openSUSE 13.1
+在openSUSE 13.1中配置FTP服务器
 ================================================================================
-**vsftpd** (**V**ery **S**ecure **F**ile **T**ransport **P**rotocol **D**aemon) is a secure, fast FTP server for Unix/Linux systems. In this how-to article, let us see how to setup a basic FTP server using vsftpd on openSUSE 13.1.
+**vsftpd** （**非常****安全的****文件****传输****协议****守护进程**） 是Unix/Linux系统中的一个安全快速的FTP服务器。 在这篇 how-to 文章中，让我们看看在openSUSE 13.1中怎样使用vsftpd来配置一个基本的FTP服务器。
 
-### Install vsftpd ###
+### 安装 vsftpd ###
 
-Login as root user and Enter the following the following command.
+作为root用户登录然后输入以下的命令。
 
     # zypper in vsftpd
 
-Start vsftpd service and make it to start automatically on every reboot.
+启动 vsftpd 服务然后设置让它在每次系统重启时自动启动
 
     # systemctl enable vsftpd.service
     # systemctl start vsftpd.service
 
-### Configure vsftpd ###
+### 配置 vsftpd ###
 
-Create a folder for ftp users.
+为ftp用户新建一个文件夹。
 
     # mkdir /srv/ftp
 
-Create a group called **ftp-users**.
+创建一个叫 **ftp-users** 的组。
 
     # groupadd ftp-users
 
-Let us create a sample user called unixmen with home directory **/srv/ftp** and group **ftp-users**.
+让我们来创建一个叫unixmen的示例用户 并设置其主目录为 **/srv/ftp** 组为**ftp-users**。
 
     # useradd -g ftp-users -d /srv/ftp/ unixmen
 
-Set password for the new user.
+为新用户设置密码。
 
     # passwd unixmen
 
-Make the ftp home directory **/srv/ftp/** accessible by ftp users.
+使ftp主目录 **/srv/ftp/** 可以被ftp用户所访问。
 
     # chmod 750 /srv/ftp/
     # chown unixmen:ftp-users /srv/ftp/
 
-Edit file vsftpd.conf,
+编辑 vsftpd.conf 文件
 
     # nano /etc/vsftpd.conf
 
-Make the changes as shown below.
+设置如下的更改。
 
     [...]
     #Uncomment and  Set YES to enable write.
@@ -67,11 +67,11 @@ Make the changes as shown below.
     ## Add at the end of this  file ##
     use_localtime=YES
 
-Save and exit file.
+保存并退出文件。
 
-### Test FTP Server Locally ###
+### 测试本地FTP服务器 ###
 
-First let us try to login to our FTP server as shown below.
+首先 让我们按如下步骤尝试登陆FTP服务器
 
     # ftp localhost
     Trying ::1:21 ...
@@ -85,23 +85,22 @@ First let us try to login to our FTP server as shown below.
     Using binary mode to transfer files.
     ftp>
 
-As you in the above output, we will be able to login to ftp server using unixmen user.
+正如你在上面所输出的那样, 我们将能够用unixmen用户登录到ftp服务器。
+### 测试远程FTP服务器 ###
 
-### Test FTP Server Remotely ###
-
-By default openSUSE built-in firewall won’t allow to login to FTP from remote systems. So let us allow vsftpd service through suse firewall. To do that go to **Yast -> Security and Users -> Firewall**.
+默认地 openSUSE内置的防火墙不允许从远程系统登陆FTP。所以让我们允许vsftpd服务通过suse的防火墙。然后我们需要打开： **Yast -> 安全性与用户 -> 防火墙**.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/11/openSUSE-12.3-Running-Oracle-VM-VirtualBox_001.jpg)
 
-In the Firewall section, go to **Allowed Services**. In the zone selection drop down box, select **External Zone** and in Service to Allow drop-down box, select **vsftpd server** and click add.
+在防火墙界面，进入 **允许服务**. 在区域选择下拉框中，选择 **外部区域** 在服务允许下拉框中，选择 **vsftpd 服务器** 然后点击添加。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/11/openSUSE-12.3-Running-Oracle-VM-VirtualBox_004.jpg)
 
-Click Next and close Yast Control center.
+单击下一步并关闭Yast控制中心
 
-Now try to connect from a remote system.
+现在尝试从远程系统连接FTP。
 
-I tried to login to FTP server from my ubuntu desktop.
+我试着从我的ubuntu桌面系统登录FTP服务器。
 
     sk@sk:~$ ftp 192.168.1.53
     Connected to 192.168.1.53.
@@ -114,43 +113,42 @@ I tried to login to FTP server from my ubuntu desktop.
     Using binary mode to transfer files.
     ftp>
 
-As you see in the above output, I will be able to connect to FTP server. If you doesn’t allow the vsftpd service through firewall you will get a Connection timed out error.
+正如你在上面输出中所看到的，我将能够连接到ftp服务器。如果不允许vsftpd服务通过防火墙， 你将会得到一个连接超时的错误。
 
-### Connect from Browser ###
+### 从浏览器连接 ###
 
-Open up your browser and Navigate to **ftp://ip-address/**. Enter the ftp user name and password.
+打开你的浏览器并导航到**ftp://ip-address/**。输入ftp用户名和密码。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/11/Index-of-ftp-192.168.1.53-Mozilla-Firefox_005.jpg)
 
-### Connect to FTP server using FileZilla ###
+### 使用FileZilla连接到FTP服务器 ###
 
-Working from command-line mode might be little bit annoying to newbies. So let us install a graphical FTP client called [**Filezilla**][1] to get things done quite easier:
+对于新手来说，在命令行模式下工作可能会很烦恼。所以让我们来安装一个叫[**Filezilla**][1]的图形化的FTP客户端。它可以让我们登陆FTP变得更加简单:
 
-Mostly all distribution will have filezilla client in their official repository. To install filezilla on Linux based systems enter the following command:
+几乎所有的发行版在他们的官方软件仓库中都有filezilla客户端。 为了在基于Linux的系统上安装filezilla 需要键入以下的命令:
 
-On Ubuntu based systems:
+在基于Ubuntu的系统中:
 
     $ sudo apt-get install filezilla
 
-On Fedora/Redhat systems:
+在Fedora/Redhat系统中:
 
     $ sudo yum install filezilla
-
-On openSUSE:
+在openSUSE中:
 
     # zypper in filezilla
 
-After installing filezilla open it. Enter the ftp server IP address, user name and password and click quickconnect.
+安装完fielzilla后打开它。输入ftp服务器的IP地址，用户名和密码，然后点击快速链接。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/11/unixmen@192.168.1.53-FileZilla_006.jpg)
 
-For added security, you can restrict FTP access to certain users by adding them to **/etc/vsftpd.chroot_list** file.
+为了增加安全性，你可以通过将用户添加到 **/etc/vsftpd.chroot_list**文件中来限制特定用户对FTP服务器的访问。
 
-Edit vsftpd.conf file,
+编辑 vsftpd.conf 文件,
 
     nano /etc/vsftpd.conf
 
-Make the changes as shown below.
+设置如下的更改.
 
     [...]
     # Uncomment and set YES
@@ -159,26 +157,26 @@ Make the changes as shown below.
     chroot_list_file=/etc/vsftpd.chroot_list
     [...]
 
-Create **file /etc/vsftpd.chroot_list**,
+创建 **文件 /etc/vsftpd.chroot_list**,
 
     nano /etc/vsftpd.chroot_list
 
-Add the users that you want to give access to FTP server. I added the user **unixmen**.
+添加你希望其能够访问FTP服务器的用户。我添加了用户**unixmen**。
 
     unixmen
 
-Restart ftp service.
+重启ftp服务.
 
     # systemctl restart vsftpd.service
 
-Now you will be able to connect to FTP server with users who are listed in the chroot list file.
+现在你将能够使用chroot_list文件中列出的用户来连接到FTP服务器。
 
-If users other than in the chroot list want to access FTP server, they will get the following error.
+如果chroot_list以外的用户想访问FTP服务器， 他们将得到如下的错误。
 
     500 OOPS: could not read chroot() list file:/etc/vsftpd.chroot_list
     ftp: Login failed
 
-That’s it for now. Your FTP server is ready to use. Enjoy!
+现在就是这样。 你的FTP服务器已经可以使用了。 享受吧!
 
 --------------------------------------------------------------------------------
 
