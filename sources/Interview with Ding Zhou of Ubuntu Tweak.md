@@ -36,21 +36,21 @@ Ubuntu Tweak可以用来切换桌面图表的显示方式、设置字体、启�
 
 **开发Ubuntu Tweak的有多少人？**
 
-If you say “programmer”, I’m the only one. But we have designers: the logo was designed by M.Sharp, Kevin Chou helped to design the mockup UI of Ubuntu Tweak, it became the 0.6. And currently Jeonkwan Chan are helping me polish the UI, it will become 0.7. Anyone can be involved in the development of Ubuntu Tweak, if they like 如果你说的是“代码开发者”，就仅仅我一个，但我们有很多设计人员：logo是M.Sharp设计的，Kevin Chou帮助设计了Ubuntu Tweak的用户界面(UI)原型，他就是0.6版本的样子。现在Jeonkwan Chan正在帮我重新美化用户界面 :)
+如果你说的是“代码开发者”，就仅仅我一个，但我们有很多设计人员：logo是M.Sharp设计的，Kevin Chou帮助设计了Ubuntu Tweak的用户界面(UI)原型，他就是0.6版本的样子。现在Jeonkwan Chan正在帮我重新美化用户界面,将会用在0.7版本上。任何人，只要愿意就可以加入到Ubuntu Tweak的开发中来:)
 
-**When Unity came out on 11.04, a lot of Ubuntu users complained about the lack of configurability. What is your opinion on that, and what are the adaptability-configurability that this particular desktop environment can have?**
+**在Ubuntu11.04版本中当Unity出现时，许多Ubuntu用户抱怨其可配置性不好，您对这个怎么看的？这个特殊的桌面环境能有些什么多适用性的配置能力呢？**
 
-I’d like a desktop to have adaptability-configurability, that’s the advantage of Linux, isn’t it?
+我喜欢桌面系统的可配置高适应性，这是Linux系统的优点，不是吗？
 
-For example, I don’t like the auto-hide feature of Unity Launcher, so I set it to never hide.
+例如，我不喜欢Unity Launcher的自动隐藏功能，所以我设置让他不会隐藏。
 
-Actually, Unity is configurable, the only thing that Unity is missing (through the ccsm) is that you can’t place Launcher to bottom or right – that’s maybe unfriendly for the left-handedness. Hah, just a joke.
+事实上，Unity是可配置的，仅仅是它缺少CompizConfig设置管理器，所以你不能把Unity Launcher放到桌面底部或右面，这对左撇子来说很不友好。哈哈，开玩笑的。
 
-As you can see, Ubuntu 12.04 has already added the hide/show toggle, Launcher size setting in system settings, I think Unity will be more configurable in the future.
+如大家所见，Ubuntu 12.04已经增加了隐藏/显示切换功能，Launcher的大小在系统设置中也可以自定义设置。我认为Unity将会有更多的可配置功能。
 
-**In general, do you think that the development of the Unity desktop environment was the right decision for Canonical? Was it something inevitable because of the problematic collaboration they had with the Gnome developers?**
+**一般来说，你认为Canonical公司开发Unity桌面环境是正确的决策吗？他们与 Gnome开发者之间有合作争议，这有些是是不可避免的是吗？**
 
-Yes, I think it’s the right decision for Canonical. If you look back three years, when Ubuntu first introduced the Indicator for GNOME Panel, it was a better design than the original GNOME Panel applet. But there’s some problematic collaboration between Canonical and GNOME Developers, so it has never landed in GNOME, until in GNOME 3, the GNOME Shell itself removed the GNOME Panel, and the design of GNOME Shell panel is almost the same as that of the Indicator. If they could share the same API, the desktop Linux world would be better.
+Yes, I think it’s the right decision for Canonical. If you look back three years, when Ubuntu first introduced the Indicator for GNOME Panel, it was a better design than the original GNOME Panel applet. But there’s some problematic collaboration between Canonical and GNOME Developers, so it has never landed in GNOME, until in GNOME 3, the GNOME Shell itself removed the GNOME Panel, and the design of GNOME Shell panel is almost the same as that of the Indicator. If they could share the same API, the desktop Linux world would be better.是的，对于Canonical公司来说，我觉得他们的决策很正确。回顾三年前，
 
 So, between the company, community and GNOME, the different opinions for user interface finally made the Unity desktop out.
 
