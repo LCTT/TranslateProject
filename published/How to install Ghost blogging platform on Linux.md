@@ -1,6 +1,6 @@
 如何在Linux平台上安装Ghost博客平台
 ===
-[Ghost][1]是一个相对较新的博客发布平台，它开始于众筹平台kickstarter上一个[£25,000英镑的众筹项目][2]。尽管WordPress依然是网上主流的博客工具，但它现在已然是一个拥有众多第三方开发功能的通用内容管理平台，发展到现在已经逐渐变得笨重、复杂以至于难以维护。但于此同时，仅仅诞生才几个月的Ghost坚持以用户为中心，打造精雕细琢的用户界面，承诺要做一个纯粹的博客平台。
+[Ghost][1]是一个相对较新的博客发布平台，它开始于众筹平台kickstarter上一个[£25,000英镑的众筹项目][2]。尽管WordPress依然是网上主流的博客工具，但它现在已然是一个拥有众多第三方开发功能的通用内容管理平台，发展到现在已经逐渐变得笨重、复杂以至于难以维护。但与此同时，仅仅诞生才几个月的Ghost坚持以用户为中心，打造精雕细琢的用户界面，承诺要做一个纯粹的博客平台。
 
 在本教程中，我将描述**如何在Linux中设置Ghost博客平台**。
 
@@ -35,7 +35,7 @@ Ghost成功运行后，终端中会有以下输出信息，告诉你Ghost正运�
 
 [![](http://farm8.staticflickr.com/7317/10881189204_d714f11321_z.jpg)][4]
 
-在你的浏览器中键入 http://<YOUR_IP>:2368，身份校验后你就会看到Ghost的初始页面。
+在你本机的浏览器中键入 http://<YOUR_IP>:2368，身份校验后你就会看到Ghost的初始页面。
 
 [![](http://farm4.staticflickr.com/3750/10881348733_f77d220de6_z.jpg)][5]
 
@@ -57,10 +57,12 @@ Ghost成功运行后，终端中会有以下输出信息，告诉你Ghost正运�
 你也可以检查一下forever活动进程列表：
 
 	$ sudo forever list
+	
+-
 
->     info:    Forever processes running
->     data:        uid  command         script   forever pid   logfile                     uptime
->     data:    [0] cH0O /usr/bin/nodejs index.js 15355   15357 /home/dev/.forever/cH0O.log 0:0:0:37.741 
+     info:    Forever processes running
+     data:        uid  command         script   forever pid   logfile                     uptime
+     data:    [0] cH0O /usr/bin/nodejs index.js 15355   15357 /home/dev/.forever/cH0O.log 0:0:0:37.741 
 
 假如你看到以上信息，意味着Ghost已经成功以后台进程运行咯。
 

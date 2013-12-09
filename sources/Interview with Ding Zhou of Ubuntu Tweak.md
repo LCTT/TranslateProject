@@ -1,28 +1,28 @@
-Interview with Ding Zhou of Ubuntu Tweak
+专访Ubuntu Tweak的作者周鼎
 ================================================================================
-[Ubuntu tweak][1] is a well known application which allows Ubuntu users to tweak various aspects of their system. The founder of the project, Ding Zhou aka Tualatrix Chou, is talking to us about the nature and the usability of Ubuntu Tweak, the relation with Canonical and the future plans of the project. Enjoy
+[Ubuntu tweak][1]是一款知名度很高的应用程序软件，Ubuntu用户可以用它来调整系统的性能、功能等各个细节。项目的创始人，周鼎又名Tualatrix Chou，正与我们分享Ubuntu Tweak的特性、使用感觉以及它跟Canonical的关系，并且勾勒了项目的未来计划蓝图。享受吧！
 
-**When did you start using linux and at what point did you decide to develop Ubuntu tweak?**
+**你什么时候开始使用linux的，并基于什么使你决定开发Ubuntu tweak？**
 
-I started using Linux when I just started my college life at late 2006. I was learning C programming then, a friend recommended that Linux is a great platform to learn programming. So I started my Linux life from the Fedora Core 6. But after just one week I switched to Ubuntu 6.10, because Ubuntu had a better community in China , and also had very good and fast repositories/mirrors. I fall in love with Ubuntu immediately, and switched from Windows in just one week.
+我开始使用Linux是在2006年底，那时刚开始我的大学生活。当时我正在学C编程语言，一个朋友建议说要学习编程的话Linux是最好的平台环境，所以我就开始了我的Linux生涯，是从Fedora Core 6开始的。但用了仅仅只有一周的时间，我就换成Ubuntu 6.10,因为Ubuntu在中国有更好的社区，也有更好更快的源库/镜像。我立马就爱上了Ubuntu，就一周时间，就从Windows环境完全切换到Ubuntu环境。
 
-After half years’ both happy and hard time with Ubuntu, I realized that Ubuntu was not so friendly for Chinese people, because after a fresh installation, people had to config the font, input method and many others. So I decided to develop an application to help the newbies to easily config Ubuntu.
+在苦乐参半的半年使用时间后，我意识到Ubuntu对中国用户来说不是太友好，因为全新安装系统后，用户必须得自己配置字体、输入法以及其它很多很多设置。所以，我决定开发出一款应用程序来帮助新手，让他们很简单的就可以对系统做相应配置。
 
-So at July 2007, I started to develop Ubuntu Tweak. At that point, only for Chinese people, but soon I made Ubuntu Tweak be an international application and released its first version at Sep 2007
+因此在2007年7月，我就开始开发Ubuntu Tweak,刚开始的时候，仅仅提供了汉语版本的，但很快就考虑了Ubuntu Tweak的国际版本，并且在2007年9月份就发布了首个国际版本。
 
-**Ubuntu tweak is already a very successful project. Many Ubuntu users use it to tweak various aspects of their system. Tell us a few words about what Ubuntu Tweak can do.**
+**Ubuntu tweak已经是非常成功的项目了。很多Ubutu用户用它来调整系统的性能、功能等各个细节。能给我们谈论下Ubuntu Tweak能做些什么吗？**
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2012/03/tualatrix1.jpg)
 
-Ubuntu Tweak can be used to toggle the desktop icon display, set the fonts, enable/disable the user switch, logo.
+Ubuntu Tweak可以用来切换桌面图表的显示方式、设置字体、启用/禁用多用户切换功能以及登陆的标识（logo）等等。
 
-In the latest version of Ubuntu Tweak (0.6), you can also use it to tweak your Unity desktop.ut and shutdown functions.
+在最新的Ubuntu Tweak 0.6版本中，你也可以调整你的Unity桌面以及关机功能。
 
-You can also use Ubuntu Tweak to cleanup system cruft to free space and make system clean.
+你也能使用Ubuntu Tweak来清理系统的垃圾以释放空间和使系统保持干净。
 
-**Canonical decides not to include Ubuntu Tweak in their distro by default. What does that mean? Is there some kind of risk for inexperienced users who want to tweak their system using your application?**
+**Canonical在他们的默认发布源中不考虑加入Ubuntu Tweak。这意味着什么？这对那些没有经验，但又想要使用你的应用程序来调整他们的系统的用户来说，存在某些风险吗？**
 
-That’s right. Because in the previous version of Ubuntu Tweak, it provided a feature to enable the popular PPA, I wasn’t able to ensure all the PPA were safe, so Ubuntu Tweak had some security risks.
+对的。因为在以前的Ubuntu Tweak发布版本中，为流行的PPA都提供了可用源，但我不能保证所有的PPA都是安全的，所以Ubuntu Tweak会有一些安全风险。
 
 As you see, Source Center has been removed since 0.6. But please don’t mix the “include default by Ubuntu” and “put into the repository”, Ubuntu Tweak first should be put into the universal repository, then can be included by default in Ubuntu.
 
@@ -88,6 +88,6 @@ via: http://www.unixmen.com/interview-with-ding-zhou-of-ubuntu-tweak/
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
 
 [1]:http://ubuntu-tweak.com/
