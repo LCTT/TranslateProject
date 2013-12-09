@@ -24,19 +24,19 @@ Ubuntu Tweak可以用来切换桌面图表的显示方式、设置字体、启�
 
 对的。因为在以前的Ubuntu Tweak发布版本中，为流行的PPA都提供了可用源，但我不能保证所有的PPA都是安全的，所以Ubuntu Tweak会有一些安全风险。
 
-As you see, Source Center has been removed since 0.6. But please don’t mix the “include default by Ubuntu” and “put into the repository”, Ubuntu Tweak first should be put into the universal repository, then can be included by default in Ubuntu.
+如你们所见，从0.6版本后Ubuntu Tweak就已经从源中心（Source Center）移除了，但请不要混淆“Ubuntu默认包含”和“加入源仓库”这两个概念。Ubuntu Tweak首先应该要被加入通用资源仓库，然后才能被Ubuntu默认包含。
 
-From the bug reports and user feedback, Ubuntu Tweak has became a lot more stable and easy to use than the old versions.
+从错误报告和用户反馈来看，Ubuntu Tweak已经比老版本更加稳定及更易使用。
 
-**What kind of support or collaboration (if any) you have from/with Canonical and the Ubuntu developers?**
+**你有收到来自Canonical和Ubuntu开发者的支持或有跟他们合作（不论什么）的事项吗，是哪些方面的？**
 
-Of course I received some help from the company, they helped me try to put Ubuntu Tweak into repository. It is still a work in progress.
+当然，我得到Canonical公司的一些帮助，他们试着帮我把Ubuntu Tweak放入源仓库。这工作现在仍然在进行。
 
-I also received a lot of help from community, people help to translate, design, test and report bugs, and some of them even submitted patch for it.
+也得到社区的很多热心帮助，他们帮我翻译、设计、测试、报告错误，甚至提交代码分支。
 
-**How many people are involved in the development of Ubuntu Tweak?**
+**开发Ubuntu Tweak的有多少人？**
 
-If you say “programmer”, I’m the only one. But we have designers: the logo was designed by M.Sharp, Kevin Chou helped to design the mockup UI of Ubuntu Tweak, it became the 0.6. And currently Jeonkwan Chan are helping me polish the UI, it will become 0.7. Anyone can be involved in the development of Ubuntu Tweak, if they like :)
+If you say “programmer”, I’m the only one. But we have designers: the logo was designed by M.Sharp, Kevin Chou helped to design the mockup UI of Ubuntu Tweak, it became the 0.6. And currently Jeonkwan Chan are helping me polish the UI, it will become 0.7. Anyone can be involved in the development of Ubuntu Tweak, if they like 如果你说的是“代码开发者”，就仅仅我一个，但我们有很多设计人员：logo是M.Sharp设计的，Kevin Chou帮助设计了Ubuntu Tweak的用户界面(UI)原型，他就是0.6版本的样子。现在Jeonkwan Chan正在帮我重新美化用户界面 :)
 
 **When Unity came out on 11.04, a lot of Ubuntu users complained about the lack of configurability. What is your opinion on that, and what are the adaptability-configurability that this particular desktop environment can have?**
 
