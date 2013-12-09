@@ -1,3 +1,4 @@
+[翻译中] by KayGuowhu
 Intel Haswell Linux Virtualization: KVM vs. Xen vs. VirtualBox
 ==============================================================
 
