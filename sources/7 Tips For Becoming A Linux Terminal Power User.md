@@ -1,3 +1,5 @@
+hyaocuk is translating
+
 7 Tips For Becoming A Linux Terminal Power User
 ================================================================================
 The Linux terminal is much more than merely entering commands into it. If you master the basic tricks, it will assist you in mastering the Bash shell that is used as default on a number of Linux distributions. 
