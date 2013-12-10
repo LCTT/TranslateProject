@@ -1,37 +1,35 @@
-[翻译中] by KayGuowhu
-Intel Haswell Linux Virtualization: KVM vs. Xen vs. VirtualBox
+英特尔Haswell上的Linux虚拟化：KVM，Xen与VirtualBox的比较
 ==============================================================
 
-The latest chapter to our lengthy [Intel Haswell][1] on [Linux saga][2] is virtualization benchmarks. From Fedora 19 with the very latest software components for Linux virtualization, the performance of KVM, Xen, and VirtualBox were benchmarked from the Intel Core i7 4770K "Haswell" CPU.
+我们在[Linux saga][2]上漫长的[Intel Haswell][1]的最新章节是虚拟化基准测试。为Linux虚拟化搭载了最新软件组件的Fedora 19，KVM，Xen和VirtualBox的性能都是在Intel酷睿i7 4770K的“Haswell”处理器上进行基准测试。
 
-Since last month's Haswell launch we have published many benchmarks of the new Intel CPUs but not being covered at Phoronix until today is the Linux virtualization performance for Haswell. With Intel hardware virtualization enabled, KVM, Xen, and VirtualBox were compared from a clean Fedora 19 64-bit installation.
+自从上个月推出Haswell以来，我们已经发布了许多和这款全新的英特尔处理器相关的基准测试，但并没有涵盖Phoronix,一直到今天才发布Haswell的Linux虚拟化性能测试。在启用英特尔硬件虚拟化下，把从一个纯净的Fedora 19 的64位安装KVM，Xen和Virtualbox进行了比较。
 
-Fedora 19 presently has the Linux 3.9.8 kernel with GCC 4.8.1, Mesa 9.2.0-devel, and an EXT4 file-system. All of the virtualization components were obtained from the Fedora 19 repository, including QEMU 1.4.2, Xen 4.2.2, and the libvirt / virt-manager components. Xen and KVM virtualization were setup through virt-manager. VirtualBox 4.2.16 was obtained from VirtualBox.org and installed on Fedora 19.
+目前Fedora 19拥有搭载GCC 4.8.1的Linux 3.9.8版本内核，Mesa 9.2.0开发库和一个EXT4文件系统。所有的虚拟化组件都从Fedora 19的仓库中获取的，包括QEMU 1.4.2, Xen 4.2.2和libvirt/virt-manager组件。Xen和KVM的虚拟化通过virt-manager来建立。VirtualBox 4.2.16则是通过VirtualBox.org获取并安装在Fedora 19中。
 
 ![](http://www.phoronix.net/image.php?id=intel_haswell_virtualization&image=intel_haswell_virtualization_med)
 
-The Intel Core i7 4770K system had 16GB of RAM and a 240GB OCZ Vertex 3 SSD. During testing, each VM had access to all eight logical cores (four physical cores + Hyper Threading), access to 12GB of the system's 16GB of RAM, and a 16GB virtual disk.
+英特尔酷睿i7 4770K系统拥有16GB的内存和240GB的OCZ Vertex 3 固态硬盘。在测试中，每一个虚拟机有机会获取全部八个逻辑核心（四个物理核心和超线程），16GB内存中的12GB以及16GB的虚拟磁盘。
 
-The KVM, Xen, and VirtualBox performance from Fedora 19 Linux 3.9 with the Intel Core i7 "Haswell" processor were also compared to the "bare metal" results when the benchmarks were running on the host without any form of virtualization or other means of abstraction. VMware's products weren't benchmarked in this article since their EULA restricts public benchmarking (though VMware has been okay with us running such benchmarks in the past) and their trial software being limited to running on four CPU cores, but a separate article will look at the Xen/KVM/VMware performance on other hardware in the future.
+在采用英特尔酷睿i7 “Haswell”处理器的Linux 3.9版本内核的Fedora 19上获得的KVM，Xen和VirtualBox的性能也和在没有任何形式的虚拟化或其它抽象方式上运行基准测试的“裸机”的性能进行了对比。VMWare的产品没有在这篇文章里被测试，因为它们的EULA特性限制了公用基准测试（尽管VMware在过去能够正常地运行这样的基准测试）和它们的试用软件只能限制运行在四核CPU上。但另外一篇文章会着眼于未来在其它硬件上XEN/KVM/VMware的性能。
 
 ![](http://openbenchmarking.org/embed.php?i=1307064-SO-VIRTFEDOR07&sha=9083341&p=2)
 
-All of this Linux virtualization benchmarking was handled in a fully automated and reproducible manner using the open-source [Phoronix Test Suite][3] software and hosting by [OpenBenchmarking.org][4]. With using a virtual disk and with Xen/KVM not having a reliable means of shared 3D access to the host's driver/GPU, most of the benchmarks within this article are computational focused to look at the performance overhead for the different Linux virtualization methods.
+这一切的Linux虚拟化基准测试采用完全自动化和可重复的方式进行处理，使用开源软件[Phoronix Test Suite][3]以及由[OpenBenchmarking.org][4]支持。在使用虚拟磁盘而且Xen/KVM都没有采用访问主机驱动或GPU以共享3D的可靠手段的情况下，这篇文章里的大部分基准测试都是集中在为不同Linux虚拟化方法计算性能开销上。
 
 ![](http://openbenchmarking.org/embed.php?i=1307064-SO-VIRTFEDOR07&sha=16f6601&p=2)
 
-Disk benchmarking wasn't a main focus of this virtualization testing since only a virtual disk was being used on the host's file-system. However, when comparing these three Linux virtualization methods against the bare metal results, KVM on the Linux 3.9 kernel was performing the best followed by Xen. Oracle's VirtualBox was running just 66% the speed of the host's PostMark mail server performance while KVM was at 96% the performance and Xen at 83% the host's speed.
+磁盘测试在这里并不是虚拟化测试的一个重点，因为只有一个虚拟磁盘被主机的文件系统使用。然而，当把这三种Linux虚拟化方法与裸机结果进行比较时，运行在Linux 3.9内核上的KVM性能最好，其次是Xen。Oracle的Virtual仅仅跑出了主机上PostMark邮件服务器性能的66%，而KVM跑出了性能的96%，Xen是83%。
 
 ![](http://openbenchmarking.org/embed.php?i=1307064-SO-VIRTFEDOR07&sha=ee1f01f&p=2)
 
-For the Dolfyn Computational Fluid Dynamics workload, there aren’t any major changes in performance against the bare metal results when running on KVM or Xen. However, VirtualBox is noticeably slower.
+对于Dolfyn计算流体动力学的工作量，当运行在KVM或Xen上时，和裸机的运行结果相比并没有任何重大的变化。然而，VirtualBox则是明显变慢了。
 
 ![](http://openbenchmarking.org/embed.php?i=1307064-SO-VIRTFEDOR07&sha=1a54755&p=2)
 
 ![](http://openbenchmarking.org/embed.php?i=1307064-SO-VIRTFEDOR07&sha=b3c948c&p=2)
 
-
-The FFTE and HMMer results were similar to Dolfyn where Xen and KVM were leading to great performance results with very little overhead, but Oracle VM VirtualBox was much slower.
+FFTE和HMMer的结果和Dolfyn类似：Xen和KVM在很小的工作负载下获得很好的性能，但Oracle的VirtualBox则满得多。
 
 ![](http://openbenchmarking.org/embed.php?i=1307064-SO-VIRTFEDOR07&sha=78137b2&p=2)
 
@@ -39,11 +37,11 @@ The FFTE and HMMer results were similar to Dolfyn where Xen and KVM were leading
 
 ![](http://openbenchmarking.org/embed.php?i=1307064-SO-VIRTFEDOR07&sha=8d2ce17&p=2)
 
-John The Ripper was crashing when being run under VirtualBox.
+当约翰开膛手这款游戏在VirtualBox中运行时，则直接崩溃了。
 
 ![](http://openbenchmarking.org/embed.php?i=1307064-SO-VIRTFEDOR07&sha=6bd26cc&p=2)
 
-Xen virtualization on the Linux 3.9 kernel with Fedora 19 strikes its first performance win when running the TTSIOD renderer.
+运行TTSIOD渲染器时，在Linux 3.9 内核的Fedora 19上运行的Xen虚拟化方法获得了它的第一次性能胜利。
 
 ![](http://openbenchmarking.org/embed.php?i=1307064-SO-VIRTFEDOR07&sha=4a440fd&p=2)
 
@@ -61,13 +59,13 @@ Xen virtualization on the Linux 3.9 kernel with Fedora 19 strikes its first perf
 
 ![](http://openbenchmarking.org/embed.php?i=1307064-SO-VIRTFEDOR07&sha=3e91cb0&p=2)
 
-Overall, Xen and KVM virtualization worked out great on Fedora 19 in conjunction with the Intel Core i7 4770K CPU. The performance overhead of these virtualization methods were minimal on the Haswell processor. While Xen and KVM were running great on the new Intel CPU, Oracle's VirtualBox (the latest release, v4.2.16) was much slower than Xen and KVM. The benefit VirtualBox has though is means of guest 3D acceleration, which will be benchmarked again in a future Phoronix article. Also to be benchmarked soon on Phoronix will be the relative overhead of the different virtualization methods when comparing Haswell to previous generations of Intel processors as well as AMD's competition.
+总之，运行在搭载英特尔酷睿i7 4770K处理器Fedora 19上的Xen和KVM虚拟化技术工作良好。这些虚拟化方法在Haswell处理器上的性能开销是最小的。当Xen和KVM在这款全新的英特尔处理器上运行良好的时候，Oracle的VirtualBox（最新版本，v4.2.16）相对慢得多。虽然VirtualBox的一个优点是客户机3D加速，但这会在未来的一篇Phoronix文章中再次进行测试。当把Haswell和前几代的英特尔处理器和AMD处理器比较时不同虚拟化方法的性对开销也会在不久之后在Phoronix上进行测试。
 
 --------------------------------------------------------------------------------
 
 via: http://www.phoronix.com/scan.php?page=article&item=intel_haswell_virtualization
 
-译者：[译者ID](http://blog.csdn.net/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[译者ID](http://github.com/KayGuoWhu) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
