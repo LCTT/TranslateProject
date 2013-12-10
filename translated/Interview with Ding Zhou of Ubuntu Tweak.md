@@ -62,25 +62,25 @@ Ubuntu Tweak可以用来切换桌面图表的显示方式、设置字体、启�
 
 但现在我仅仅只会使用Ubuntu的桌面版本和服务版，也使用Mac OS X，很多的设计灵感就来自于它 :)
 
-**Can Ubuntu Tweak, be tweaked or forked or changed a little bit, in order to become useful in other linux distributions like Fedora, or OpenSuse, or Debian? Is the idea of a “Linux Tweak” application that people would choose distro and desktop environment plausible or not?**
+**Ubuntu Tweak能调整调整做几个分支或者改变一点点，以便能在其它的 linux 发行版本比如 Fedora、OpenSue 或者 Debian 上使用吗？有做成统一的一个叫做“Linux Tweak”的应用程序，用户不管选择什么样的发布版本或桌面环境都可以用这种想法吗？不知道是否可行？**
 
-Yes, Ubuntu Tweak can be easily adapted to be used under other distributions. Ubuntu Tweak is modular and very easy to hack.
+可以的，要让 Ubuntu Tweak 在其它发行版本中运行非常容易。它是模块化的，很轻松的就可以重构(hack)。
 
-In 2008, I released an “Ubuntu Tweak for Fedora”, but finally I gave up the maintenance of this version cause I should keep focus on Ubuntu, and I also don’t have that much energy.
+2008年的时候，我就发布了一版 Fedora 的“Ubuntu Tweak for Fedora”，但最终我放弃维护这个版本了，因为我主要关注Ubuntu版本的，所以没有那么多精力。
 
-**So what is the future of Ubuntu Tweak? Maybe Canonical will embrace it making it a default part of their distro, or they could use it to base their own tweaking tool. What do you think and what will be your next steps?**
+**那Ubuntu Tweak的未来计划是什么？也许Canonical公司会内嵌进系统，然后把它做为发布版本默认的工具或者他们会基于他们自己的系统调整工具来使用它。您认为呢？您的下一步计划会是什么的呢？**
 
-Of course the future of Ubuntu Tweak will be bright. Hah.
+Ubuntu Tweak的未来当然会一片光明。哈哈。
 
-I have already started the process of putting Ubuntu Tweak to the Software Center, it would be easier if users can install Ubuntu Tweak from the Software Center.
+我已经开始实现把Ubuntu Tweak加入软件中心这个工作了。如果用户能从软件中心直接安装Ubuntu Tweak，它会更容易。
 
-Now I’m focusing on developing the 0.7 version, It will be a better polished and well integrated version for Unity desktop than ever before, and it will also introduce some useful new features. I’d like to adapt Ubuntu Tweak to work better under Unity desktop as much as possible.
+现在我正在开发0.7版本的，它将更美观，并且与Unity桌面的集成度更好，也加入了一些很有用的新功能。我想使Ubuntu Tweak在 Unity 桌面环境下尽可能的发挥作用。
 
-I plan to release the new version along with Ubuntu 12.04, hope everyone will like it :)
+跟随着Ubuntu 12.04的发布，我也计划发布新的版本，希望大家喜欢 :)
 
-And one more thing to tell, I’ve already joined Canonical, in Beijing, and response for OEM things. Although Ubuntu Tweak is still a personal project and I’m not involved in the development of Ubuntu, I will try to move to the development team when possible :)
+还有一件事要透露下，我已经加入Canonical北京公司，负责处理OEM的事情。虽然 Ubuntu Tweak 仍是一个个人项目，我还没有参与进Ubuntu的开发任务，但有可能话我会试着加入开发团队 :)
 
-**That was great! Thanks Tualatrix.**
+**太伟大了！谢谢Tualatrix。**
 
 --------------------------------------------------------------------------------
 
