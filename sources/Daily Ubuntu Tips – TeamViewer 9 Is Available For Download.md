@@ -1,3 +1,5 @@
+hyaocuk is TRANSLATING
+
 Daily Ubuntu Tips – TeamViewer 9 Is Available For Download
 ================================================================================
 TeamViewer, the popular remote support and desktop sharing tool has been updated to version 9 for Windows, Mac OS X and Linux computers, including Ubuntu. TeamViewer allows you to control any computer over the internet from anywhere.
