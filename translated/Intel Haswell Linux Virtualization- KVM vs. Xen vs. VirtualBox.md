@@ -65,7 +65,7 @@ FFTE和HMMer的结果和Dolfyn类似：Xen和KVM在很小的工作负载下获�
 
 via: http://www.phoronix.com/scan.php?page=article&item=intel_haswell_virtualization
 
-译者：[译者ID](http://github.com/KayGuoWhu) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[KayGuoWhu](http://github.com/KayGuoWhu) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
