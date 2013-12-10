@@ -1,3 +1,5 @@
+tomatoKiller 翻译中
+
 10 Linux Interview Questions and Answers for Linux Beginners – Part 3
 ================================================================================
 Continuing the **Interview Questions** series, with a big thanks for the nice feedback on last two articles of this series, we are here presenting **10 questions** again for interactive learning.
