@@ -1,3 +1,5 @@
+hyaocuk is TRANSLATING
+
 Daily Ubuntu Tips–Change The Language You Use In Ubuntu
 ================================================================================
 Ubuntu, a modern and powerful operating system also allows you to use your desktop in dozens of other languages. By default, there are few language packs installed when you first setup Ubuntu. If you want Ubuntu to support more languages, you must install additional language packs. Not all languages are support, but most languages that are in used and written are supported. This brief tutorial is going to show you how to make this happen.
