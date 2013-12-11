@@ -1,3 +1,4 @@
+(申领 by runningwater)
 Proprietary Unix Continues to Fall
 ================================================================================
 Analysts at International Data Corporation (IDC) posted a [press release][1] Wednesday highlighting the rapid decline of IBM's AIX and P-Series hardware. Along side the drop in proprietary Unix systems is an associated rise in sales of X86 servers running Linux. IBM has clearly identified this as a long term trend, investing $1 billion dollars in Linux development on Power systems. With the reported 20% drop in sales, the writing my finally be on the wall for AIX.
@@ -16,7 +17,7 @@ IBM may not be able to turn things around for AIX, but they could prolong its li
 
 via: http://ostatic.com/blog/proprietary-unix-continues-to-fall
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
