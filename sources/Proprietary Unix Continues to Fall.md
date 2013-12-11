@@ -1,7 +1,6 @@
-(申领 by runningwater)
-Proprietary Unix Continues to Fall
+专有 Unix 持续缩减
 ================================================================================
-Analysts at International Data Corporation (IDC) posted a [press release][1] Wednesday highlighting the rapid decline of IBM's AIX and P-Series hardware. Along side the drop in proprietary Unix systems is an associated rise in sales of X86 servers running Linux. IBM has clearly identified this as a long term trend, investing $1 billion dollars in Linux development on Power systems. With the reported 20% drop in sales, the writing my finally be on the wall for AIX.
+国际数据公司（IDC）的分析师在周三投寄了一篇[新闻稿][1]凸显出IBM 的 AIX 系统和 P-系列的硬件持有量已经快速下降。伴随着专有 Unix 系统下跌的同时，相关的运行着 Linux 系统的 X86 服务器销量却在崛起。IBM 已经明确指出这是一个长期趋势，所以投资了10亿美元用在基于 Power 系统的 Linux 开发。与新闻报道的 AIX 20％销售额下降的同时，我的这篇文章终于发布出来。
 
 I've had the dubious pleasure of administering both AIX and Linux systems for the past several years, and if I could pick and choose, I would take the flexibility and ease of use of Linux and the stability of Power. In my experience, AIX is difficult to set up, and difficult to change after it is set up, but once it is up and running it just runs. A properly configured AIX server can run for years without intervention, but when that time for modification comes, which it always does, prepare for a long hard slog. By contrast, Linux has become exponentially easier to manage over the years, thanks to the contributions of thousands of developers and sysadmins, as well as the contributions of big name corporations. As reported by [Infoworld][2]:
 
