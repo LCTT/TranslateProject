@@ -1,3 +1,4 @@
+translating by KayGuoWhu
 Daily Ubuntu Tips – Copy CD & DVD Discs Using Ubuntu
 ================================================================================
 Ubuntu, a powerful and modern operating system can perform many tasks. You can use Ubuntu to create documents, browse the internet, listen to music and burn or copy media discs.
