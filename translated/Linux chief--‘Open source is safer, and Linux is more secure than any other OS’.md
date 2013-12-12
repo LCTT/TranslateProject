@@ -31,7 +31,7 @@ Zemlin 为我们解释了 GNU/Linux 为什么以及如何使自身成为内心�
 
 [视频游戏发行商] Valve [及其SteamOS下的工作][1] 正在促使更多的消费者走进Linux，就像逐渐占据主导地位的Android和其他运行Linux的电子设备一样，比如电视、家电、汽车等，当然还有更多。
 
-**VentureBeat: 针对手机的Ubuntu Edge, 对它有何看法？ 对于2014-2015年Linux/Ubuntu手机市场走势，你作何预测？*
+**VentureBeat: 针对手机的Ubuntu Edge, 对它有何看法？ 对于2014-2015年Linux/Ubuntu手机市场走势，你作何预测？**
 
 **Zemlin**:我希望看到潜在的有趣的新产品进入市场，尤其是基于Linux的产品。很难说每年哪款产品会成为手机市场的新宠。
 
