@@ -1,3 +1,5 @@
+翻译中 by tomatoKiller
+
 Basic Linux Interview Questions and Answers – Part II
 ================================================================================
 Continuing the Interview Series, we are giving 10 Questions here, in this article. These questions and the questions in the future articles doesn’t necessarily means they were asked in any interview. We are presenting you an interactive learning platform through these kind of posts, which surely will be helpful.
