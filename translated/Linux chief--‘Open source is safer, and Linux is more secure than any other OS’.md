@@ -84,7 +84,7 @@ Linux和开源理念将会逐渐融入主流消费者的生活。三星使用lin
 via: http://venturebeat.com/2013/11/26/linux-chief-open-source-is-safer-and-linux-is-more-secure-than-any-other-os-exclusive/
 
 译者：[译者ID](https://github.com/l3b2w1) 校对：[校对者ID](https://github.com/校对者ID)
-
+ 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [1]:http://venturebeat.com/2013/09/23/steamos-valves-linux-based-operating-system-for-the-tv-and-living-room/
