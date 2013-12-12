@@ -29,15 +29,15 @@
 ###用户推荐###
 
 - [YouCompleteMe][14]，由Reddit用户hnasarat推荐。它安装起来稍微麻烦一些，但是支持非常强大的语法补全，包括C、Ruby、Python、PHP等许多语言。
-- [Ag][15]，由*gckjk*推荐，大多数Reddit用户都知道它，这是升级版的`ack`，速度快了3到5倍。通过读取 `.gitignore`和 `.hgignore`，甚至`.agignore`，从而达到忽略匹配文件的作用。
+- [Ag][15]，由*gckjk*推荐，大多数Reddit用户都知道它，这是升级版的`ack`，速度快了3到5倍。它能读取 `.gitignore`和 `.hgignore`，或者`.agignore`，从而忽略一些被版本控制软件所忽略的匹配文件（译注：不加入版本库的文件，我想你大多数时候没有搜索它的意图）。
 - [Emmet][16]，由另一个资深reddit用户*damnated*推荐。这是一款`Sparkup`的替代品，可以非常方便快速地用标签标记字符串。链接里有示例演示视频。
-- [Unite][17]由网友 basetta推荐，它可以作为前面多个插件的替代品。你可以用它搜索文件（就像`CtrlP`），搜索文档内容（就像`ack`或`ag`），还可以在下拉历史或缓冲区间进行自由移动和切换。所有这些功能都集成在了这一个插件里，非常方便！
+- [Unite][17]由网友 basetta推荐，它可以作为前面多个插件的集大成者。你可以用它搜索文件（就像`CtrlP`），搜索文档内容（就像`ack`或`ag`），还可以在下拉历史或缓冲区间进行自由移动和切换。所有这些功能都集成在了这一个插件里，非常方便！
 
 --------------------------------------------------------------------------------
 
 via: http://devcharm.com/pages/18-vim-is-your-new-ide
 
-译者：[Mr小眼儿](http://blog.csdn.net/tinyeyeser) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Mr小眼儿](http://blog.csdn.net/tinyeyeser) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
