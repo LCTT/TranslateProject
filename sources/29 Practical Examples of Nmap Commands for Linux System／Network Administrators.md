@@ -1,3 +1,4 @@
+    Vic020的WC
 29 Practical Examples of Nmap Commands for Linux System/Network Administrators
 ================================================================================
 The **Nmap** aka **Network Mapper** is an open source and a very versatile tool for Linux system/network administrators. **Nmap** is used for **exploring networks, perform security scans, network audit** and **finding open ports** on remote machine. It scans for Live hosts, Operating systems, packet filters and open ports running on remote hosts.
