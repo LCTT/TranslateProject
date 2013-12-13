@@ -87,7 +87,7 @@ Linux 面试基础问题 - 3
 - nano
 - 以上答案全都不对
 
-Answer : ‘**cat**‘ 命令用来创建并且显示文件
+> **答** : ‘**cat**‘ 命令用来创建并且显示文件
 
 ### 10. 哪层协议用于支持用户和程序，如支持密码、资源分享、文件传输和网络管理？ ###
 
@@ -97,7 +97,7 @@ Answer : ‘**cat**‘ 命令用来创建并且显示文件
 - 第七层协议
 - 以上答案全都不对
 
-> **答案** : ‘**第七层协议**‘
+> **答** : ‘**第七层协议**‘
 
 --------------------------------------------------------------------------------
 
@@ -108,4 +108,4 @@ via: http://www.tecmint.com/linux-interview-questions-and-answers-for-linux-begi
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [1]:http://linux.cn/article-2315-1.html
-[2]:http://www.tecmint.com/basic-linux-interview-questions-and-answers-part-ii/
+[2]:http://linux.cn/article-2370-1.html
