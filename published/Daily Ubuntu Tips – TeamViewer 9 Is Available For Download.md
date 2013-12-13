@@ -1,4 +1,4 @@
-每日 Ubuntu 小技巧 - TeamViewer 9 可供下载了
+每日Ubuntu小技巧 - 使用TeamViewer连接远程桌面 
 ================================================================================
 TeamViewer，是一款热门的远程支持和桌面共享工具，并且它的Windows版、Mac OS X版和Linux版(包含Ubuntu)已经更新到版本 9 了。TeamViewer 允许你在任何地方通过网络控制任何电脑。
 
@@ -32,7 +32,7 @@ Ubuntu 用户可以 [从这链接下载并运行 TeamViewer][2]
 
     sudo dpkg -i teamviewer_linux*.deb; sudo apt-get -f install
 
-好好享受吧！
+去试试吧！
 
 ![](http://www.liberiangeek.net/wp-content/uploads/2013/12/teamviewer9ubuntu.png)
 
