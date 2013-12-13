@@ -27,7 +27,7 @@ Ubuntu 用户可以 [从这链接下载并运行 TeamViewer][2]
 对于 **64位操作系统**, 使用下面的链接.
 
     wget http://download.teamviewer.com/download/teamviewer_linux_x64.deb
-
+ 
 最后，运行下面的命令来安装。
 
     sudo dpkg -i teamviewer_linux*.deb; sudo apt-get -f install
