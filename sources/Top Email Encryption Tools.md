@@ -1,3 +1,4 @@
+[Translating by SteveArcher]
 Top Email Encryption Tools
 ================================================================================
 Email continues to be one of the most popular and useful functions of a Linux system. Being able to keep in touch with your friends, family, and colleagues is essential for any platform. As the scope of email threats keeps increasing, systems for email security and encryption have become more complex and more of a necessity. Protecting email from unauthorized access and inspection is important particularly because the protocols that govern email do not include encryption. Email was not designed with any privacy or security in mind. The consequence of the lack of security is that email can be compromised on the sender's device, on a network, on a server, and on the recipient's device.
