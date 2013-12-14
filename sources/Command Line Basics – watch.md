@@ -1,64 +1,62 @@
-Translating---------------geeekpi
-
-Command Line Basics – watch
+Linux 基础命令 – watch
 ================================================================================
-There are several log files in a Linux system. Keeping an eye on these log files can be one of the important tasks of a Linux System administrator. You can easily view the end of a log file [using the tail command][1]. But if you want to monitor that file all day long it's pretty tedious to enter the tail command every few minutes to check on that log file. You could write a short [script  with an infinite loop][2] to check the file periodically, but it turns out that there is already a program to handle repetitive tasks for you.
+linux系统里有一些日志文件。观察这些日志文件是系统管理员的一个重要任务。你可以很方便地[使用tail命令][1]观察它们。但是如果你想要长时间监视这些文件,每几分钟使用tail检查那些日志文件是一件很乏味的事情。你会写一个短小的[无限循环的脚本][2]来周期性地检查文件,但是它会导致已经有程序为你处理了重复的任务。
 
-### The Linux watch Command ###
+### Linux watch 命令 ###
 
-The **watch** command in Linux provides a way to handle repetitive tasks. By default **watch** will repeat the command that follows it every two seconds. As you can imagine, watch is a great tool to keep an eye on log files. Here's an example.
+Linux中的**watch** 命令提供了一种方式处理重复的任务。默认上**watch**会每2秒重复执行命令。就如你想的,watch是一个很好的观察log文件的工具。下面是一个例子。
 
     watch tail /var/log/syslog
 
-In order to stop the command execution, just use the standard kill sequence, **[Ctrl]+C**.
+想要停止命令的执行,只要使用标准的kill流程, **[Ctrl]+C**。
 
-![Using the Linux watch command to monitor the syslog](http://tuxtweaks.com/wp-content/uploads/2013/12/Watch_01_wm.png)
-*Using the Linux watch command to monitor the syslog*
+![使用Linux watch命令监测syslog](http://tuxtweaks.com/wp-content/uploads/2013/12/Watch_01_wm.png)
+*使用Linux watch命令监测syslog*
 
-You can change the time interval by issuing the **-n** switch and specifying the interval in seconds. To check the log file every 10 seconds, try this.
+你可以使用**-n**开关改变并指定时间间隔。要想每10秒检测日志文件,试试这个。
 
     watch -n 10 tail /var/log/syslog
 
-### The Linux watch Command with a Pipe ###
+### 带有管道的watch命令 ###
 
-The **watch** command isn't limited to viewing log files. It can be used to repeat any command you give it. If you have your system [set up to monitor the CPU temperature][3], you can use **watch** to view that with the **sensors** command.
+**watch**没有被限制浏览日志文件。它可以用来重复你给它的任何命令。如果你要[监测CPU的温度][3],你可以使用**watch**后跟上**sensord**命令来查看。
 
     watch -n 1 sensors
 
-The output on my netbook looks like this:
+我电脑上的输出看上去就像这样:
 
     acpitz-virtual-0
     Adapter: Virtual device
     temp1:        +45.0°C  (crit = +100.0°C)
 
-I'd like to filter this output to only show the temperature output without all of the rest.
+我想过滤一下这个输出来只显示温度而不显示其他的。
 
-I can use this command to view it one time.
+我可以使用这个命令来查看
 
     sensors | grep temp | awk '{ print $2 }'
 
-Keep in mind that the watch command will repeat the first command that is sees. Care must be taken when pipelining one command to the next. This can be managed by placing your command pipeline inside quotes.
+记住,watch命令会重复它后面的第一个命令。必须要注意命令后面跟上管道的情况。你可以将你的命令放在引号里面来管理。
 
     watch -n1 "sensors | grep temp | awk '{ print $2 }'"
 
-![Using the Linux watch command with a pipe](http://tuxtweaks.com/wp-content/uploads/2013/12/Watch_02_wm.png)
-*Using the Linux watch command with a pipe*
+![带管道的watch命令](http://tuxtweaks.com/wp-content/uploads/2013/12/Watch_02_wm.png)
+*带管道的watch命令*
 
-### Use watch as a clock ###
+### 将watch作为时钟 ###
 
-As you've probably noticed by now, the **watch** command shows the time that the command was executed in the upper right corner of the terminal window. We can use **watch** as a simple clock by passing an empty command line argument. We can just enclose a space in quotes to act as the empty command.
+就像你现在已经注意到的,**watch**执行后会在你的终端的右上角显示时间。我们可以通过传给watch一个空的命令参数来把它作为一个简单的时钟。 我们可以将一个空格包含在引号中来作为一个空的参数。
 
     watch -n 1 " "
 
-So you can see, this gives another meaning for the command name, **watch**. You can use it just like your wrist watch.
+如你所见,这给予这个命令另外一个意义,**手表(watch)**。你可以把它作为你的腕表。
 
-So now you know how to use the Linux watch command. What repetitive tasks will you use it to handle?
+现在你知道如何使用Linux的watch命令。你要用它处理什么重复任务?
 
 --------------------------------------------------------------------------------
 
 via: http://tuxtweaks.com/2013/12/linux-watch-command/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
