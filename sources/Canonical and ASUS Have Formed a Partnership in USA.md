@@ -1,3 +1,4 @@
+[translated BY stduolc]
 Canonical and ASUS Have Formed a Partnership in USA
 ================================================================================
 **Canonical and ASUS have formed a partnership that would enable the hardware vendor to equip a couple of its laptops with the Ubuntu operating system.**
