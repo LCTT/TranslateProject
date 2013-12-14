@@ -1,4 +1,4 @@
-Daily Ubuntu Tips — Install VMware Workstation In Ubuntu
+[scusjs占坑]Daily Ubuntu Tips — Install VMware Workstation In Ubuntu
 ================================================================================
 VMware Workstation is a Type-2 commercial virtualization software. It’s Type-2 because is runs on top of existing operation systems and the computer it’s running on is known as the host computer.
 
