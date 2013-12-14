@@ -1,3 +1,5 @@
+Translating---------------geeekpi
+
 Command Line Basics – watch
 ================================================================================
 There are several log files in a Linux system. Keeping an eye on these log files can be one of the important tasks of a Linux System administrator. You can easily view the end of a log file [using the tail command][1]. But if you want to monitor that file all day long it's pretty tedious to enter the tail command every few minutes to check on that log file. You could write a short [script  with an infinite loop][2] to check the file periodically, but it turns out that there is already a program to handle repetitive tasks for you.
