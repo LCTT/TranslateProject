@@ -1,18 +1,17 @@
-Linux 下使用Trickle管理和限制下载/上传带宽
+Linux 下使用Trickle限制下载/上传带宽
 ================================================================================
-你有没有遇到过一个程序占用了你所有的网络带宽的情况？如果你遇到过，那么你就需要限制带宽的应用。不管你是一个系统管理员还是一名普通Linux用户，您都要学习如何控制应用的上传和下载速度来确保你的网络带宽不会被一个程序耗光。
+
+你有没有遇到过一个程序占用了你所有的网络带宽的情况？如果你遇到过，那么你就需要限制带宽的应用。不管你是一个系统管理员还是一名普通Linux用户，您都应该学习如何控制应用的上传和下载速度来确保你的网络带宽不会被一个程序耗光。
 
 ![](http://www.tecmint.com/wp-content/uploads/2013/11/Bandwidth-limit-trickle.png)
 
 ### Trickle 是什么? ###
 
-**Trickle**是一款带宽整形器,用来限制如**Firefox, FTP , SSH**以及其他使用网络带宽的程序的带宽使用。你希望你的**Youtube**音乐体验影响到你的ftp下载么？如果不想，请继续阅读这篇文章，学习如何在你的机器上安装和使用trickle。
-
+**Trickle**是一款带宽控制供给，用来限制如**Firefox, FTP , SSH**以及其他使用网络带宽的程序的带宽。你希望你的**Youtube**音乐体验影响到你的ftp下载么？如果不想，请继续阅读这篇文章，学习如何在你的机器上安装和使用trickle。
 
 ### 怎样在Linux上安装Trickle ###
 
-trickle工具有它自己的依赖包，安装和使用trickle之前必须安装“**libevent 库**”，不过这个库在大多数现在的Linux机器上已经默认安装。
-
+trickle工具有一些依赖包，安装和使用trickle之前必须安装“**libevent 库**”，不过这个库在大多数现在的Linux机器上已经默认安装。
 
 #### 在 Debian/Ubuntu/Linux Mint 上####
 
@@ -32,15 +31,13 @@ trickle工具有它自己的依赖包，安装和使用trickle之前必须安装
 
 Trickle通过控制socket数据读写量来控制和限制应用的**上传/下载**速度。它使用另一个版本的**BSD**套接字API，但是区别是trickle还管理socket调用。
 
-要注意的是trickle使用动态链接和加载，所以它只对于使用"Glibc库"的程序有用。由于trickle可以设置数据在socket上的传输延迟，显然它可以用来限制一个应用的网络带宽。
-
+要注意的是trickle使用动态链接和加载，所以它只对于使用"Glibc库"的程序有用。由于trickle可以设置数据在socket上的传输延迟，所以它可以用来限制一个应用的网络带宽。
 
 ### Trickle不能做什么？ ###
 
 Trickle不能用于限制使用**UDP**协议的应用的带宽，它只可用于**TCP**连接，但是你要知道它也并不是对所有的**TCP**连接有效。如果你一直仔细地看这篇文章，你可以猜到原因是什么。你还记得trickle只对使用**Glibc库**应用有效吧？
 
 还要说一下,trickle无法工作在使用静态链接的可执行程序上。
-
 
 ### 确定Trickle是否可运行在某个特定应用上 ###
 
@@ -65,14 +62,14 @@ Trickle不能用于限制使用**UDP**协议的应用的带宽，它只可用于
 
 ### 学习如何使用Trickle ###
 
-使用下面的命令打印trickle工具的**版本**。
+使用下面的命令输出trickle工具的**版本**。
 
     root@oltjano-X55CR:~# trickle -V
     trickle: version 1.07
 
 Linux有很多命令行工具使测试(实验)变得有趣和美丽。下面的命令使用[wget 工具][1]来下载最新的Pear OS镜像.
 
-root@oltjano-X55CR:~# wget http://sourceforge.net/projects/pearoslinux/files/Pear%20OS%208/pearos8-i386.iso/download
+	root@oltjano-X55CR:~# wget http://sourceforge.net/projects/pearoslinux/files/Pear%20OS%208/pearos8-i386.iso/download
 
     --2013-11-20 11:56:32--  http://sourceforge.net/projects/pearoslinux/files/Pear%20OS%208/pearos8-i386.iso/download
     Resolving sourceforge.net (sourceforge.net)... 216.34.181.60
@@ -93,8 +90,6 @@ root@oltjano-X55CR:~# wget http://sourceforge.net/projects/pearoslinux/files/Pea
     
     0% [                                                                                                    ] 30,78,278    381KB/s  eta 1h 50m
 从输出可以看到，下载速度大约是**381 KB/s**。我想限制下载速度到**13 K/s**，这样我就可以用我的带宽做其他的事情了。下面的命令用来限制wget速度到**13 K/s**。
-
-    root@oltjano-X55CR:~# trickle -d 13 wget http://sourceforge.net/projects/pearoslinux/files/Pear%20OS%208/pearos8-i386.iso/download 
     
     ravisaive@ravisaive-OptiPlex-380:~$ trickle -d 13 wget http://sourceforge.net/projects/pearoslinux/files/Pear%20OS%208/pearos8-i386.iso/download
 
@@ -117,7 +112,7 @@ root@oltjano-X55CR:~# wget http://sourceforge.net/projects/pearoslinux/files/Pea
     
     0% [                                                                                                   ] 2,01,550    13.1KB/s  eta 21h 5m
 
-从输出可以看到，下载速度被限制到了**13K/s**。下载将会持续**21小时5分钟**。上面的“**-d**”选项表示下载，还可以结合使用 “**-d**”选项和上传选项(**-u**),如下例所示。
+从输出可以看到，下载速度被限制到了**13K/s**。下载将会持续**21小时5分钟**。上面的“**-d**”选项表示下载，还可以结合使用 “**-d**”选项和上传选项(**-u**)，如下例所示。
 
     # trickle -u 100 -d 50 ftp
 
@@ -127,7 +122,7 @@ root@oltjano-X55CR:~# wget http://sourceforge.net/projects/pearoslinux/files/Pea
 
 每个命令行工具都对用户提供了帮助，使用"trickle -h"命令来找出更多trickle工具的用法。
 
-root@oltjano-X55CR:/usr/bin# trickle -h
+	root@oltjano-X55CR:/usr/bin# trickle -h
 
     Usage: trickle [-hvVs] [-d <rate>] [-u <rate>] [-w <length>] [-t <seconds>]
                    [-l <length>] [-n <path>] command ...
