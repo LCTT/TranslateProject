@@ -1,3 +1,4 @@
+[翻译中] by KayGuowhu
 How to Upgrade to GNOME 3.10 in Ubuntu 13.10
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2013/09/header-bars.jpg)
