@@ -1,3 +1,5 @@
+hyaocuk is TRANSLATING
+
 Senior researchers analyzed LibreOffice with interesting conclusions
 ================================================================================
 Users, editors, state departments, teams and city administrations are enjoying [LibreOffice][1], free open-source office suite proving itself a clear success across the globe with more and more adoptions, more and more positive feedback.
