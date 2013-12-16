@@ -38,7 +38,7 @@ via: http://news.softpedia.com/news/How-to-Repack-Deb-Files-on-Debian-and-Ubuntu
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-[1]:http://ailoo.net/2009/06/repack-a-deb-archive-with-dpkg-deb/
+[1]:http://ailoo.net/2009/06/repack-a-deb-archive-with-dpkg-deb/ 
 [2]:
 [3]:
 [4]:
