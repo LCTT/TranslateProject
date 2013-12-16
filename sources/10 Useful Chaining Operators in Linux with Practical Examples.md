@@ -1,3 +1,7 @@
+Translating-------------geekpi
+
+
+
 10 Useful Chaining Operators in Linux with Practical Examples
 ================================================================================
 Chaining of Linux commands means, combining several commands and make them execute based upon the behaviour of operator used in between them. Chaining of commands in Linux, is something like you are writing [short shell scripts][1] at the shell itself, and executing them from the terminal directly. Chaining makes it possible to automate the process. Moreover, an unattended machine can function in a much systematic way with the help of chaining operators.
