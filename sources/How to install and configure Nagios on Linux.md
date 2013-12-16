@@ -1,4 +1,3 @@
-Translating by icybreaker
 How to install and configure Nagios on Linux
 ================================================================================
 [Nagios][1] is one of the most powerful network monitoring systems, which is widely used in the industry. It can actively monitor any network, and generate audio/email warnings and alerts when any problem is detected. The check types and alert timers are fully customizable.
