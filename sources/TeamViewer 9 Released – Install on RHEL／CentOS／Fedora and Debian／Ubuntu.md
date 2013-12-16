@@ -1,3 +1,4 @@
+(翻译中 by runningwater)
 TeamViewer 9 Released – Install on RHEL/CentOS/Fedora and Debian/Ubuntu
 ================================================================================
 This guide shows how to install **Teamviewer 9** on **RedHat, CentOS, Fedora** and **Debian**, **Ubuntu**, **Linux Mint**, **Xubuntu** systems. **Teamviewer** is a one of the most popular application for remote assistant, Desktop sharing or transferring files between computers, web conferencing and online meetings etc. Teamviewer is a proprietary application. 
@@ -90,7 +91,7 @@ Teamviewer application running on my **Linux Mint 15**.
 
 via: http://www.tecmint.com/how-to-install-teamviewer-on-linux-distributions/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
