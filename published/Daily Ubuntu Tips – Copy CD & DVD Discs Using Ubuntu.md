@@ -1,6 +1,7 @@
 每日Ubuntu小技巧 - 使用Ubuntu拷贝CD和DVD光盘
 ================================================================================
-Ubuntu，一个功能强大的现代操作系统，可以执行很多任务。你可以使用Ubuntu创建文档，浏览网页，聆听音乐，以及烧录或拷贝媒体光盘。
+
+Ubuntu是一个功能强大的现代操作系统，可以执行很多任务。你可以使用Ubuntu创建文档，浏览网页，聆听音乐，以及烧录或拷贝媒体光盘。
 
 就像Windows和Max OS X一样，Ubuntu是无所不能的！
 
@@ -12,14 +13,14 @@ Brasero光盘烧录机安装在UBuntu的每一个版本上。它是Ubuntu上默�
 
 下面列出来的是Brasero的一些特性：
 - 创建数据CD/DVD时自动过滤隐藏和损坏的文件
-- 同时支持多个绘画，可以执行磁盘文件的完整性
-- 可以在忙碌中烧录视频CD/DVD[on the fly翻译不合适]
-- 可以拷贝CD/DVD到系统硬盘
-- 可以擦除CD/DVD
+- 同时支持多个会话，可以执行磁盘文件的完整性检查
+- 可以即时烧录视频CD/DVD
+- 可以镜像CD/DVD内容到硬盘
+- 可以擦除可擦写CD/DVD
 
-还有很多其它的功能。如果你想找一个Ubuntu上简便的磁盘刻录机，在做任何操作前请先检查这个软件。
+还有很多其它的功能。如果你想找一个Ubuntu上简便的磁盘刻录机，在做任何操作前请先看看这个软件。
 
-为了开始使用Brasero去烧录CD/DVD光盘，请确保你的电脑安装了CD/DVD烧录机。如果没有，你将无法成功烧录。如果你的电脑符合要求，将你想要翻录的数据插入CD/DVD，然后进入Dash，搜索Brasero。
+要开始使用Brasero去烧录CD/DVD光盘，请确保你的电脑安装了CD/DVD烧录机。如果没有，显然你无法烧录。如果你的电脑符合要求，将你想要翻录的数据光盘插入CD/DVD，然后进入Dash，搜索Brasero。
 
 当Brasero打开后，选择磁盘拷贝。这个功能会拷贝一个光盘里的内容，然后将其写入到另一个光盘中。如果这是你想要的，请继续。
 
@@ -36,10 +37,11 @@ Brasero光盘烧录机安装在UBuntu的每一个版本上。它是Ubuntu上默�
 安装完成后，Brasero会开始拷贝光盘。如果最终光盘完成拷贝，系统会提示你插入一张空白的可写入的CD/DVD光盘以便写入拷贝。插入它然后等待完成将内容写入光盘的操作。
 
 当你完成以上操作时，移除光盘，就可以使用烧录好的光盘了！
+
 --------------------------------------------------------------------------------
 
 via: http://www.liberiangeek.net/2013/12/daily-ubuntu-tips-copy-cd-dvd-discs-using-ubuntu/
 
-译者：[KayGuoWhu](https://github.com/KayGuoWhu) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[KayGuoWhu](https://github.com/KayGuoWhu) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
