@@ -1,4 +1,4 @@
-12 Linux内核: 配置内核 (Part 8)
+戴文的Linux内核专题：12 配置内核(8)
 ================================================================================
 ![](http://www.linux.org/attachments/slide-jpg.484/)
 
@@ -12,7 +12,7 @@
 
 下一个要配置的网络特性是"ARP daemon support"。这让内核有一张IP地址表以及它们相应的在内部缓存中的硬件地址。ARP代表的是地址解析协议(Address-Resolution-Protocol)。
 
-为了额外的安全，"TCP syncookie support"应该要启用。这保护计算机免于受到SVN洪水攻击。黑客或者恶意软件可能会发送SVN信息给一台服务器来消耗它的资源，以便让真实的访客无法使用服务器提供的服务。SVN消息会打开一个计算机和服务器之间的连接。Syncookie会阻断不正当的SVN消息。那么，真实的用户可以仍旧访问访问网站而没有黑客消耗带宽。服务器应该启用这个特性。
+为了额外的安全，"TCP syncookie support"应该要启用。这保护计算机免于受到SYN洪水攻击。黑客或者恶意软件可能会发送SYN信息给一台服务器来消耗它的资源，以便让真实的访客无法使用服务器提供的服务。SYN消息会打开一个计算机和服务器之间的连接。Syncookie会阻断不正当的SYN消息。那么，真实的用户可以仍旧访问访问网站，而黑客则没办法浪费你的带宽。服务器应该启用这个特性。
 
 下面的特性是用于 "Virtual (secure) IP: tunneling"。隧道是一个网络协议到另外一个网络协议的封装。当在使用虚拟私人网络(VPN)时需要使用安全隧道。
 
@@ -20,7 +20,7 @@
 
 在这之后，启用"ESP transformation"增加对IPSec封装安全协议的支持。这是加密与可选择的数据验证的安全措施。
 
-如果启用了这个特性(IP: IPComp transformation)，Linux内核会支持IP负载压缩协议。这是一种无损压缩系统。无损指的是数据仍在它的完整形式。在解压缩后，数据在压缩前后没有变化。压缩在加密前先执行。由于更少的数据传输，所以这个压缩协议可以加速网络。
+如果启用了这个特性(IP: IPComp transformation)，Linux内核会支持IP负载压缩协议。这是一种无损压缩系统。无损指的是数据仍会保持完整，在解压缩后，数据在压缩前后没有变化。压缩在加密前先执行。由于更少的数据传输，所以这个压缩协议可以加速网络。
 
 下面三个设置用于处理不同的IPsec特性("IP: IPsec transport mode"、"IP: IPsec tunnel mode"和"IP: IPsec BEET mode")。IPSec代表的是因特网安全协议(Internet Protocol SECurity).两台计算机之间并且/或者服务器间的传输模式是默认的IPSec模式。传输模式使用AH或者ESP头并且只加密IP头。在隧道模式下，IP头和负载会被加密。隧道模式通常用于连接网关到服务器/服务器或者服务器到服务器。BEET模式(Bound End-to-End Tunnel)不会在IP地址改变时重连。BEET模式下的连接会仍然存在。BEET模式比其他几种模式使用更少的字节。
 
@@ -38,7 +38,7 @@ TCP连接可以被MD5保护(TCP: MD5 Signature Option support)。这用于保护
 
 下面的特性是一个特殊的隐私特性(IPv6: Privacy Extensions (RFC 3041) support)。这使得系统在网络接口中生成并使用不同的随即地址。
 
-注意：没有计算机是真正随机的。计算机中随机数和随机字串通常称为伪随机。
+注意：计算机中没有数据是真正随机的。计算机中随机数和随机字串通常称为伪随机。
 
 在多路由的网络中，这个特性允许系统能够更有效地计算出该使用哪一个(IPv6: Router Preference (RFC 4191))。
 
@@ -132,6 +132,6 @@ LAN仿真(LANE)仿真了ATM网络上的LAN服务(LAN Emulation (LANE) support)�
 
 via: http://www.linux.org/threads/the-linux-kernel-configuring-the-kernel-part-8.4525/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
