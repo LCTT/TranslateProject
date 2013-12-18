@@ -1,4 +1,4 @@
-11 Linux内核: 配置内核 (Part 7)
+戴文的Linux内核专题：11 配置内核(7)
 ================================================================================
 ![](http://www.linux.org/attachments/slide-jpeg.474/)
 
@@ -6,11 +6,11 @@
 
 进程地址空间标识符(Process Address Space Identifiers (PASIDs))允许PCI设备同时访问多个IO地址空间(PCI PASID support)。这个特性需要一个支持PASIDs支持的IOMMU。
 
-下面我们可以启用/禁用"PCI IO-APIC hotplug support"。APIC代表高级可编程中断控制器(Advanced Programmable Interrupt Controllers)。可编程中断控制器(PIC)收集所有来自不同源发给一个或者多个CPU流水线的中断。高级PIC与PIC一样，但是它们有更多的特性像高级中断管理和更多的优先级模型。热插拔一种在系统在运行时加入一件设备的能力并且不需要重启。这个驱动是为了PCI主板能拥有处理输入/输出APIC热插拔的能力。
+下面我们可以启用/禁用"PCI IO-APIC hotplug support"。APIC代表高级可编程中断控制器(Advanced Programmable Interrupt Controllers)。可编程中断控制器(PIC)收集所有来自不同源发给一个或者多个CPU流水线的中断。高级PIC与PIC一样，但是它们有更多的特性像高级中断管理和更多的优先级模型。热插拔是一种在系统在运行时加入一件设备的能力并且不需要重启。这个驱动是为了PCI主板能拥有处理输入/输出APIC热插拔的能力。
 
 在这之后，下面的问题询问的是启用"ISA-style DMA support"。在前文中提到过，DMA是直接内存访问，它是一种设备无需借助CPU直接访问内存的能力。ISA代表的是工业标准架构(Industry Standard Architecture),它是一种像PCI的总线标准。这个特性允许在ISA主板上支持DMA。
 
-现在，我们可以移步到"PCCard (PCMCIA/CardBus) support"。PCMCIA代表的是个人计算机存储卡国际协会(Personal Computer Memory Card International Association)。PC卡、PCMCIA卡和Cardbus卡都是卡片形状的笔记本外设。
+现在，我们可以移步到"PC Card (PCMCIA/CardBus) support"。PCMCIA代表的是个人计算机存储卡国际协会(Personal Computer Memory Card International Association)。PC卡、PCMCIA卡和Cardbus卡都是卡片形状的笔记本外设。
 
 下一个PCMCIA选项处理"16-bit PCMCIA support"。一些旧的计算机使用16位PCMCIA卡。
 
@@ -38,7 +38,7 @@ CardBus是16位PCMCIA的更新32位版本。这个驱动提供对这类设备的
 
 对于带有支持CompactPCI热插拔支持的CompactPCI卡的系统，启用"CompactPCI Hotplug driver"。
 
-下面，我们有一个选项对于另一种COmpactPCI系统卡(Ziatech ZT5550 CompactPCI Hotplug)。
+下面，我们有一个选项对于另一种CompactPCI系统卡(Ziatech ZT5550 CompactPCI Hotplug)。
 
 使用#ENUM热插拔信号通过标准IO口作为系统注册位的CompactPCI卡需要这个驱动(Generic port I/O CompactPCI Hotplug)。
 
@@ -100,15 +100,15 @@ IPsec安全联合定位器可以当这个特性启用时(Transformation migrate 
 
 如果这是一个路由器Linux系统的内核,那就启用这个选项(IP: advanced router)。
 
-下面的特性启用了，那么IP地址会在启动时自动配置(IP: kernel level autoconfiguration)。当用户希望不用配置就能连接到一个网络时是很有用的。
+如果下面的特性启用了，那么IP地址会在启动时自动配置(IP: kernel level autoconfiguration)。当用户希望不用配置就能连接到一个网络时是很有用的。
 
-启用另外DHCP协议支持，那么Linux系统可以通过网络像NFS挂载它的根文件系统并且使用DHCP发现IP地址(IP: DHCP support)。这允许Linux系统通过网络拥有它的远程根文件系统而不必用户在每次系统启动时手动管理进程。
+启用了DHCP协议支持，那么Linux系统可以通过网络像NFS挂载它的根文件系统并且使用DHCP发现IP地址(IP: DHCP support)。这允许Linux系统通过网络拥有它的远程根文件系统而不必用户在每次系统启动时手动管理进程。
 
 下面的选项和上面的类似除了使用的是BOOTP而不是DHCP(IP: BOOTP support。BOOTP是自举协议；这个协议使用UDP而不是TCP并且只能使用IPv4网络
 
-RARP是一个由于BOOTP和DHCP如今已经废除了的旧协议，但是它仍可以加到内核中(IP: RARP support)。
+RARP是一个被BOOTP和DHCP替代了的旧协议，但是它仍可以加到内核中(IP: RARP support)。
 
-网络协议可以在另一个概念中使用，称作"隧道"。这个特性可以用在Linux内核中(IP: tunneling)。安全shell协议(The secure shell protocol (SSH))就是隧道协议的一个例子。这个特性需要SSH。
+网络协议可以在另一个概念中使用，称作"隧道"。这个特性可以用在Linux内核中(IP: tunneling)。安全shell协议(The secure shell protocol (SSH))就是隧道协议的一个例子。SSH需要这个特性。
 
 下面的驱动可以多路复用通用路由封装包(GRE (Generic Routing Encapsulation))(IP: GRE demultiplexer)。多路复用是一个使单个信号进入不同部分的过程(这不会复制消息，只是分解它)。GRE是一种隧道协议。
 
@@ -122,6 +122,6 @@ RARP是一个由于BOOTP和DHCP如今已经废除了的旧协议，但是它仍�
 
 via: http://www.linux.org/threads/the-linux-kernel-configuring-the-kernel-part-7.4490/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
