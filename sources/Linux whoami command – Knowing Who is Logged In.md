@@ -1,3 +1,4 @@
+(翻译中 by runningwater)
 Linux whoami command – Knowing Who is Logged In
 ================================================================================
 Generally, on your console you will find a **username is printed** on the command prompt. But in some shell such as **csh**, by default you will not see your username there. So this command particularly is used with the shell which don’t print the username on their shell.
@@ -44,6 +45,6 @@ Whoami command is also used when you are doing su activity (switch user). This c
 
 via: http://linoxide.com/linux-command/linux-whoami-command/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
