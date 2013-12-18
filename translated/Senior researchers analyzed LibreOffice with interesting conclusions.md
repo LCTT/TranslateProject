@@ -27,4 +27,4 @@ via: http://iloveubuntu.net/senior-researchers-analyzed-libreoffice-interesting-
 
 [1]:http://www.libreoffice.org/
 [2]:http://www.sciencedirect.com/science/article/pii/S0164121213002744
-[3]:http://www.sciencedirect.com/science/article/pii/S0164121213002744/pdfft?md5=4b986a117fb06cc127b854cb5f622bec&pid=1-s2.0-S0164121213002744-main.pdf
+[3]:http://www.sciencedirect.com/science/article/pii/S0164121213002744/pdfft?md5=4b986a117fb06cc127b854cb5f622bec&pid=1-s2.0-S0164121213002744-main.pdf 
