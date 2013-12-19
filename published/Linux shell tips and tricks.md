@@ -1,36 +1,38 @@
-Linux sheel 贴士和技巧
+Linux shell中的那些小把戏
 ================================================================================
-我日常使用Linux shell(Bash),但是我经常忘记一些有用的命令或者shell技巧。是的,我能记住一些命令但是我不能说只在特定的任务上使用一次。那么我就开始在我的Dropbox账号里用文本文件写下这些Linux shell的贴士,现在我决定共享它。这个表我以后还会更新。记住,这里的一些贴士需要在你的Linux发行版上安装额外的软件。
+我日常使用Linux shell(Bash)，但是我经常忘记一些有用的命令或者shell技巧。是的，我能记住一些命令，但是肯定不会只在特定的任务上使用一次，所以我就开始在我的Dropbox账号里用文本文件写下这些Linux shell的小技巧，现在我决定共享它给你。这个表我以后还会更新。记住，这里的一些贴士需要在你的Linux发行版上安装额外的软件。
 
 在bash中检查远程端口是否打开:
 
     echo >/dev/tcp/8.8.8.8/53 && echo "open"
 
-终止进程:
+将进程挂起:
 
     Ctrl + z 
 
 将进程移到前台:
 
     fg
+    
+（译注，挂起的进程是不执行的，如果希望在后台执行，可以使用bg命令，并且指定通过jobs命令获得的任务号。）
 
 生成随机16进制数字,n是字符的数量:
 
     openssl rand -hex n
 
-在当前shell中从一个文件中执行命令:
+在当前shell中执行一个文件中的命令（译注：这个文件不是一个bash脚本，比如.bashrc、bash_profile等）:
 
     source /home/user/file.name
 
-提取前5个字符的字串:
+提取字符串的前5个字符:
 
     ${variable:0:5}
 
-SSH调试模式:
+打开SSH调试模式（译注：当你遇到SSH连接问题时很有用）:
 
     ssh -vvv user@ip_address
 
-带pem key的SSH
+使用pem key的进行SSH连接：
 
     ssh user@ip_address -i key.pem
 
@@ -38,11 +40,11 @@ SSH调试模式:
 
     wget -r --no-parent --reject "index.html*" http://hostname/ -P /home/user/dirs
 
-创建多个目录:
+同时创建多个目录:
 
     mkdir -p /home/user/{test,test1,test2}
 
-列出带子进程的进程树:
+以树状列出进程及子进程:
 
     ps axwef
 
@@ -58,7 +60,7 @@ SSH调试模式:
 
     hdparm -Tt /dev/sda
 
-从文本中获取md5值:
+获取文本的md5值:
 
     echo -n "text" | md5sum
 
@@ -66,7 +68,7 @@ SSH调试模式:
 
     xmllint --noout file.xml
 
-在新的目录中提取tar.gz文件:
+将tar.gz文件解压到指定目录:
 
     tar zxvf package.tar.gz -C new_dir
 
@@ -74,7 +76,7 @@ SSH调试模式:
 
     curl -I http://www.example.com
 
-修改一些文件或目录的时间戳 (YYMMDDhhmm):
+修改一些文件或目录的时间戳 (格式为：YYMMDDhhmm):
 
     touch -t 0712250000 file
 
@@ -86,7 +88,7 @@ SSH调试模式:
 
     LANG=c < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-16};echo;
 
-快速创建一个文件的备份:
+快速创建一个文件的备份（扩展名是.bkp）:
 
     cp some_file_name{,.bkp}
 
@@ -94,7 +96,7 @@ SSH调试模式:
 
     smbclient -U "DOMAIN\user" //dc.domain.com/share/test/dir
 
-在历史中运行命令 (这里在第100行):
+运行history中的命令 (这里在history中的第100个):
 
     !100
 
@@ -102,11 +104,11 @@ unzip到目录中:
 
     unzip package_name.zip -d dir_name
 
-多行文字 (按 CTRL + d 退出):
+输入多行文字 (按 CTRL + d 退出):
 
     cat > test.txt
 
-创建空白的文件或者已存在的文件:
+创建空白的文件或者清空已存在的文件:
 
     > test.txt
 
@@ -114,16 +116,16 @@ unzip到目录中:
 
     ntpdate ntp.ubuntu.com
 
-netstat 显示所有tcp4监听的端口:
+netstat 显示所有IPv4的TCP监听的端口:
 
     netstat -lnt4 | awk '{print $4}' | cut -f2 -d: | grep -o '[0-9]*'
 
-将qcow2图像转化成raw:
+将qcow2的镜像转化成raw格式:
 
     qemu-img convert -f qcow2 -O raw precise-server-cloudimg-amd64-disk1.img \
                                      precise-server-cloudimg-amd64-disk1.raw
 
-重复运行命令,显示它的输出 (默认2s刷新):
+重复运行命令并显示它的输出 (默认2秒重复一次):
 
     watch ps -ef
 
@@ -131,17 +133,17 @@ netstat 显示所有tcp4监听的端口:
 
     getent passwd
 
-以读写模式挂载root:
+以读写模式挂载根文件系统:
 
     mount -o remount,rw /
 
-挂在目录 (适合于符号链接不成功的情况下):
+挂载目录 (适合于符号链接不能工作的情况下):
 
     mount --bind /source /destination
 
-发送动态更新给DNS:
+发送DNS动态更新给DNS:
 
-    nsupdate < <EOF
+    nsupdate <<EOF
     update add $HOST 86400 A $IP
     send
     EOF
@@ -150,7 +152,7 @@ netstat 显示所有tcp4监听的端口:
 
     grep -r "some_text" /path/to/dir
 
-列出10个最大的已打开的文件:
+列出10个最大的系统中已打开的文件:
 
     lsof / | awk '{ if($7 > 1048576) print $7/1048576 "MB "$9 }' | sort -n -u | tail
 
@@ -162,15 +164,15 @@ netstat 显示所有tcp4监听的端口:
 
     vim + some_file_name
 
-git clone特定branch (master):
+git clone特定branch (本例是master分支):
 
     git clone git@github.com:name/app.git -b master
 
-git切换到另外一个branch (develop):
+git切换到另外一个branch (本例是develop分支):
 
     git checkout develop
 
-git删除一个branch(myfeature):
+git删除一个branch(本例是myfeature):
 
     git branch -d myfeature
 
@@ -198,23 +200,23 @@ Git push 新的branch到远程:
 
     < test.txt sed -n '50,60p'
 
-运行最后的命令 (如果是: mkdir /root/test, 下面会运行: sudo mkdir /root/test):
+以sudo权限重新运行上一个执行的命令 (如果是: mkdir /root/test, 下面会运行: sudo mkdir /root/test)（译注：当你执行一个命令忘记sudo时，可以这样重新执行，而不必再把完整命令敲一遍）:
 
     sudo !!
 
-创建临时RAM文件系统 - ramdisk (首先创建在 /tmpram 目录):
+创建临时RAM文件系统 - ramdisk (请先创建 /tmpram 目录):
 
     mount -t tmpfs tmpfs /tmpram -o size=512m
 
-Grep完整单词:
+Grep完整的单词（译注：而不是其它单词的一部分）:
 
     grep -w "name" test.txt
 
-需要特权模式在一个文件后追加文本:
+提升权限后在一个文件后追加文本:
 
     echo "some text" | sudo tee -a /path/file
 
-列出所有的kill信号:
+列出所有支持的kill信号:
 
     kill -l
 
@@ -226,7 +228,7 @@ Grep完整单词:
 
     kill -9 $$
 
-扫描网络找出打开的端口:
+扫描网络来找出开放的端口:
 
     nmap -p 8081 172.20.0.0/16
 
@@ -234,15 +236,15 @@ Grep完整单词:
 
     git config --global user.email "me@example.com"
 
-如果你有未提交的commit,与master同步:
+如果你有未提交的commit，与master同步:
 
     git pull --rebase origin master
 
-将文件中含有txt的所有文件移动到/home/user:
+将文件名中含有txt的所有文件移动到/home/user:
 
     find -iname "*txt*" -exec mv -v {} /home/user \;
 
-一行行合并文件:
+按行将两个文件中的对应行合并显示:
 
     paste test.txt test1.txt
 
@@ -254,19 +256,19 @@ shell中的进度条:
 
     echo "hosts.sampleHost 10 `date +%s`" | nc 192.168.200.2 3000
 
-转换tab到空格:
+转换tab为空格:
 
     expand test.txt > test1.txt
 
 跳过bash历史:
 
-    < <space>>cmd
+    <<空格>>cmd
 
-回到先前的工作目录:
+回到之前的工作目录:
 
     cd -
 
-切割大的tar.gz文件 (每个 100MB) 并还原:
+切割大的tar.gz文件为几个文件 (每个100MB)，并还原:
 
     split –b 100m /path/to/large/archive /path/to/output/files
     cat files* > archive
@@ -287,7 +289,7 @@ shell中的进度条:
 
     lsblk -f
 
-找出末尾空格的文件:
+找出文件中带有末尾空格的文件:
 
     find . -type f -exec egrep -l " +$" "{}" \;
 
@@ -305,6 +307,6 @@ shell中的进度条:
 
 via: http://www.techbar.me/linux-shell-tips/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

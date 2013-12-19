@@ -20,7 +20,7 @@ Unigine 引擎正是由 Unigine 公司开发的， 同时这公司还开发了 H
 - 密杂草丛的高度现已实现同步。
 - 修复了在渲染非 Flash 闪屏时崩溃的漏洞。
 
-所有平台的完整新特性列表，可以在官方的[公告]中找到。[1].
+所有平台的完整新特性列表，可以在官方的[公告][1]中找到。.
 
 要记住 UNIGINE 引擎只针对商业企业，并不向广大用户提供试用版。
 
@@ -28,19 +28,9 @@ Unigine 引擎正是由 Unigine 公司开发的， 同时这公司还开发了 H
 
 via: http://news.softpedia.com/news/UNIGINE-Is-Probably-the-Best-Gaming-Engine-on-Linux-404484.shtml
 
-译者：[hyaocuk](https://github.com/hyaocuk) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[hyaocuk](https://github.com/hyaocuk) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [1]:http://www.unigine.com/devlog/2013/11/27/113
-[2]:
-[3]:
-[4]:
-[5]:
-[6]:
-[7]:
-[8]:
-[9]:
-[10]:
-[11]:
-[12]:
+

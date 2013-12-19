@@ -1,10 +1,10 @@
-戴文的Linux内核专题：13 内核配置(9)
+戴文的Linux内核专题：13 配置内核(9)
 ================================================================================
 ![](http://www.linux.org/attachments/slide-jpg.498/)
 
-Novell网络协议，IPX通常用于Windows系统和NetWare服务器(The IPX protocol)。IPX代表网间分组交换(Internetwork Packet Exchange)。这是一个网络层协议通常与传输层的SPX协议同时使用。
+Novell的网络协议IPX通常用于Windows系统和NetWare服务器(The IPX protocol)。IPX代表网间分组交换(Internetwork Packet Exchange)。这是一个网络层协议通常与传输层的SPX协议同时使用。
 
-为了是NetWare服务器在服务的网络中有相同的IPX地址，启用下一个特性(IPX: Full internal IPX network)。不然，每个网络都会看到服务器一个不同的IPX地址。
+为了使NetWare服务器在服务的网络中有相同的IPX地址，启用下一个特性(IPX: Full internal IPX network)。不然，每个网络都会看到服务器一个不同的IPX地址。
 
 注意：IPX协议使用IPX寻址，而不是IP寻址。IP地址不是计算机网络中唯一的网络地址。
 
@@ -30,7 +30,7 @@ Nokia调制解调器使用的电话网络协议通常称作"PhoNet"(Phonet proto
 
 支持物理层 IEEE 802.15.4协议的SoftMac设备可以启用这个特性(Generic IEEE 802.15.4 Soft Networking Stack (mac802154))。
 
-当有许多包需要传输是，内核必须决定先发送哪一个(它们不能一次全部发送)，所以这个特性帮助内核区分包的优先级(QoS and/or fair queuing)。如果不启用这个，那么内核会使用"first come, first serve approach"("谁先到，谁先服务")。这可能意味着紧急的网络消息需要等待轮到它们传输。
+当有许多包需要传输时，内核必须决定先发送哪一个(它们不能一次全部发送)，所以这个特性帮助内核区分包的优先级(QoS and/or fair queuing)。如果不启用这个，那么内核会使用"first come, first serve approach"("谁先到，谁先服务")。这可能意味着紧急的网络消息需要等待才能轮到它们传输。
 
 在有数据中心服务器的网络中，这个特性强烈建议启用(Data Center Bridging support)。这个特性增强了以太网对数据中心网络的连接。
 
@@ -76,20 +76,19 @@ NET/ROM的一个替代是"Packet Layer Protocol (PLP)"(包层协议)，它可以
 
 如果启用了(一些选项)，Linux内核可以支持很多CAN设备(主要是控制器)和接口。所有的CAN驱动都是对于这些设备的不同品牌和型号。在配置工具中，它们有以下这些标题。
 
-
-Virtual Local CAN Interface (vcan)
-Serial / USB serial CAN Adaptors (slcan)
-Platform CAN drivers with Netlink support
-Enable LED triggers for Netlink based drivers
-Microchip MCP251x SPI CAN controllers
-Janz VMOD-ICAN3 Intelligent CAN controller
-Intel EG20T PCH CAN controller
-Philips/NXP SJA1000 devices
-Bosch C_CAN/D_CAN devices
-Bosch CC770 and Intel AN82527 devices
-CAN USB interfaces
-Softing Gmbh CAN generic support
-Softing Gmbh CAN pcmcia cards
+- Virtual Local CAN Interface (vcan)
+- Serial / USB serial CAN Adaptors (slcan)
+- Platform CAN drivers with Netlink support
+- Enable LED triggers for Netlink based drivers
+- Microchip MCP251x SPI CAN controllers
+- Janz VMOD-ICAN3 Intelligent CAN controller
+- Intel EG20T PCH CAN controller
+- Philips/NXP SJA1000 devices
+- Bosch C_CAN/D_CAN devices
+- Bosch CC770 and Intel AN82527 devices
+- CAN USB interfaces
+- Softing Gmbh CAN generic support
+- Softing Gmbh CAN pcmcia cards
 
 像Linux中的其他许多特性，CAN设备同样可以启用调试能力(CAN devices debugging messages)。再说一次，记住你内核的目的，你需要调试还是需要性能?
 
@@ -150,6 +149,6 @@ mac80211同样支持debugfs特性(Export mac80211 internals in DebugFS)。
 
 via: http://www.linux.org/threads/the-linux-kernel-configuring-the-kernel-part-9.4568/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

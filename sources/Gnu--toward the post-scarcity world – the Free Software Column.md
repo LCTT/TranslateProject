@@ -1,4 +1,3 @@
-[Translating by SteveArcher]
 Gnu: toward the post-scarcity world – the Free Software Column
 ================================================================================
 **It is 30 years since Richard Stallman announced that he was going to write a complete UNIX-compatible software system called GNU, pioneering the idea of free and open source software, but the struggle continues **
