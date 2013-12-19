@@ -25,7 +25,7 @@ TeamViewer 9发布－基于RHEL/CentOS/Fedora和Debian/Ubuntu的安装
 
 你可以在 [teamviewer_linux.rpm][2] 上下载到基于 Linux 发行版本的 rpm 包。
 
-    # wget http://www.teamviewer.com/download/teamviewer_linux.rpm
+    # wget http://www.teamviewer.com/download/teamviewer_linux.rpm 
 
 让我们开始安装吧。进入你的下载包所在的目录，执行如下的 yum 命令来安装，它将会自动安装需要的依赖包。
 
