@@ -1,23 +1,20 @@
-Translating----------------------geekpi
-
-
-Linux lsusb Command to Print information about USB on System
+Linux中打印系统中USB信息的lsusb命令
 ================================================================================
-**Universal Serial Bus** or **USB** was designed to standardize the connection of computer peripherals such as keyboards, pointing devices, printers, digital cameras, portable media players, disk drives and network adapters) – Source : [Wikipedia][1]
+**通用串行总线**或者**USB**被设计成为连接计算机外设的标准，如键盘、定位装置、打印机、数码相机、便携式媒体播放器、磁盘和网络适配器等等 - 来源：[Wikipedia][1]
 
-![lsusb linux command](http://linoxide.com/wp-content/uploads/2013/12/lsusb-linux-command.jpg)
+![lsusb 命令](http://linoxide.com/wp-content/uploads/2013/12/lsusb-linux-command.jpg)
 
-Since it becoming a industry standard, now it’s hard to see a computer without USB port on it. The usage of USB Flashdisk makes it more popular. On Linux, we have **lsusb** to list the USB devices and its properties.
+既然它成为了一个工业标准，那么现在很难看到一个没有USB口的计算机了。USB闪存的使用使得它更加流行。在Linux上，我们使用**lsusb**来列出USB设备和它的属性。
 
-### What is lsusb ###
+### lsusb是什么 ###
 
-From it’s manual page, lsusb is defined as :
+从它的手册上，lsusb定义成：
 
-A utility for displaying information about USB buses in the system and the devices connected to them.
+显示系统中和连接到系统的USB总线信息的工具。
 
-How to run lsusb
+如何运行lsusb。
 
-To run lsusb, you can type lsusb directly from console.
+要运行lsusb，你可以直接在控制台输入lsusb。
 
     $ lsusb
 
@@ -32,20 +29,20 @@ To run lsusb, you can type lsusb directly from console.
     Bus 002 Device 003: ID 17ef:4811 Lenovo Integrated Webcam [R5U877]
     Bus 008 Device 002: ID 0a5c:217f Broadcom Corp. Bluetooth Controller
 
-**lsusb** will show you the drivers and device which is internally attach on your system.
+**lsusb**会显示驱动和内部连接到你系统的设备。
 
-This is how to read the output. I grab the last line from above output :
+这是如何理解输出。我抓取了上面输出的最后一行：
 
 #### Bus 008 Device 002 : ID 0a5c:217f Broadcom Corp. Bluetooth Controller ####
 
-- **Bus 008** : means where the device is attached
-- **Device 002** : means this is the second device that attach
-- **ID** : means the ID number of this device
-- **Broadcom Corp**. Bluetooth Controller : means its manufacture name and device name
+- **Bus 008** : 设备连接的地方
+- **Device 002** : 连接到总线上的第二台设备
+- **ID** : 设备的ID
+- **Broadcom Corp**. Bluetooth Controller :生产商名字和设备名
 
-We also see that we also have USB 2.0 root hub drivers and USB 1.1 root hub drivers attach in our system.
+我们同样可以看到在我们的系统中同时使用了USB2.0 root hub驱动和USB 1.1 root hub驱动。
 
-This is also shown using [dmesg][2] command. Here’s an example of it.
+用[dmsg][2]命令同样可以看到。下面是一个例子。
 
     $ dmesg |grep -i usb
 
@@ -62,9 +59,9 @@ This is also shown using [dmesg][2] command. Here’s an example of it.
     [ 0.768236] ohci_hcd: USB 1.1 ‘Open’ Host Controller (OHCI) Driver
     [ 0.768251] uhci_hcd: USB Universal Host Controller Interface driver 
 
-### How to list USB details ###
+### 如何列出USB详细信息 ###
 
-Use **-v** paramater to do it. Here’s a sample of it.
+使用**-v**选项来开启。下面是一个例子。
 
     $ lsusb -v
 
@@ -99,13 +96,13 @@ Use **-v** paramater to do it. Here’s a sample of it.
     wMaxPacketSize 0×0040 1x 64 bytes
     bInterval 1
 
-### Find how many USB devices are connected ###
+### 找出连接了多少USB设备 ###
 
-To find it use this command
+使用上面的命令来找到
 
     $ find /dev/bus
 
-Then you will have an output like this :
+接着你会看到像下面的输出：
 
     /dev/bus
     /dev/bus/usb
@@ -129,7 +126,7 @@ Then you will have an output like this :
     /dev/bus/usb/001
     /dev/bus/usb/001/001
 
-Using **lsusb** command **combine with -D** parameter, you can print the detail of specific device. Here’s a sample to view Broadcom Bluetooth device.
+使用**lsusb** 命令 **紧接 -D** 选项，你可以打印特定设备的详细信息。下面是一个博通蓝牙设备的示例。
 
     $ lsusb -D /dev/bus/usb/008/002
 
@@ -202,22 +199,22 @@ Using **lsusb** command **combine with -D** parameter, you can print the detail 
     wMaxPacketSize 0×0040 1x 64 bytes
     bInterval 1 
 
-### Find your Mass Storage ###
+### 找出大容量存储设备 ###
 
-Since **lsusb -v** give us a very detail information, you may miss something to read. We can focus to specific information using grep command. Here are some samples.
+既然 **lsusb -v**给我们很详细的信息，那么你或许会错过一些信息。我们可以使用grep命令指定特定的信息。
 
-Mass storage will have a vendor name and ID. We can use it as a starting point.
+大容量存储设备会有一个供应商名和ID。我们可以用它作为一个起点。
 
     $ lsusb -v |grep -Ei ‘(idVendor|Mass\ Storage)’
 
     idVendor 0×1005 Apacer Technology, Inc.
     bInterfaceClass 8 Mass Storage
 
-You can see, that we have one USB Mass Storage attached on our system from Apacer Technology, Inc.
+你可以看到，我们系统上有一个来自Apacer Technology, Inc的USB大容量存储设备。
 
-### Dump the physical USB device hierarchy as a tree ###
+### 以树层级结构输出USB设备 ###
 
-Use **-t** parameter to fulfill this purpose.
+使用 **-t**选项满足这个要求
 
     $ lsusb -t
 
@@ -233,20 +230,20 @@ Use **-t** parameter to fulfill this purpose.
     |__ Port 6: Dev 3, If 1, Class=’bInterfaceClass 0x0e not yet handled’, Driver=uvcvideo, 480M
     /: Bus 01.Port 1: Dev 1, Class=root_hub, Driver=ehci_hcd/6p, 480M
 
-The number **12M and 480M** is **indicate the transfer rate speed** of USB type.
+数字**12M和480M** 是**指USB类型的传输速率**。
 
-- 12M means 12Mbit/s which is a USB 1.0 / 1.1 type
-- 480M means 480Mbit/s which is a USB 2.0 type
+- 12M 意味着 USB 1.0 / 1.1的速率是 12Mbit/s
+- 480M 意味着 USB 2.0的速率是 480Mbit/s
 
-If you found 5.0G, it means that you have USB 3.0 type. It has 5.0Gbit/s transfer rate. Linux recognize the detail of USB devices from **/var/lib/usbutils/usb.ids** . Or you can visit to [Linux-USB.org][3] to get the newest list of USB ID’s.
+如果你找到5.0G，那意味这你有USB 3.0类型接口。它有5.0Gbit/s的传输速率。Linux从**/var/lib/usbutils/usb.ids**识别USB设备的详细信息。
 
-That’s all about lsusb command on daily basis. You can use lsusb command to do a diagnostic activity about your USB devices on your system. As usual, you can explore more detail by reading lsusb manual page. Just type **man lsusb** to see its manual page.
+这些就是lsusb命令的基础。你可以用lsusb命令追你的系统上的USB设备做一个诊断。一般来说，你可以通过lsusb的手册探索命令的更多详细细节。只要输入**man lsab**来打开它的手册。
 
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/linux-command/linux-lsusb-command-print-usb/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
