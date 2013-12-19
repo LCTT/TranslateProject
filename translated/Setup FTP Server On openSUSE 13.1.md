@@ -33,7 +33,7 @@ translating by zsJacky
 
     # passwd unixmen
 
-使ftp主目录 **/srv/ftp/** 可以被ftp用户所访问。
+使ftp主目录 **/srv/ftp/** 可以被ftp用户所访问。 
 
     # chmod 750 /srv/ftp/
     # chown unixmen:ftp-users /srv/ftp/
