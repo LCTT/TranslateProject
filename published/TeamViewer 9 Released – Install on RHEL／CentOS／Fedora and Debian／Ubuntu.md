@@ -1,14 +1,14 @@
-TeamViewer 9发布－基于RHEL/CentOS/Fedora和Debian/Ubuntu安装
+TeamViewer 9发布－在Linux下安装运行
 ================================================================================
-这篇指南介绍了怎么样在 **RedHat、 CentOS、 Fedora** 和 **Debian**、 **Ubuntu**、 **Linux Mint**、 **Xubuntu** 等这些系统中安装 **Teamviewer 9**。**Teamviewer** 是一款流行的应用软件，用于远程辅助、桌面共享、计算机之间互传文件、网络会议及在线会议等方面，并且它是一款专业应用程序。而且，个人用户可以免费使用。Teamviewer可以运行在 **Windows、Linux、Mac OS、Android** 系统以及 **iPhone** 设备上，它使用 **WINE** 应用程序来运行，并且他们已经集成在一起，所以我们用的时候不需单独[安装 WINE 程序][1]了。 **Teamviewer** 并不是原生的 **Linux** 应用程序。
+这篇指南介绍了怎么样在 **RedHat、 CentOS、 Fedora** 和 **Debian**、 **Ubuntu**、 **Linux Mint**、 **Xubuntu** 等这些系统中安装 **Teamviewer 9**。**Teamviewer** 是一款流行的应用软件，用于远程辅助、桌面共享、计算机之间互传文件、网络会议及在线会议等方面，并且它是一款专业应用程序。而且，个人用户可以免费使用。Teamviewer可以运行在 **Windows、Linux、Mac OS、Android** 系统以及 **iPhone** 设备上，它使用它自己集成的 **WINE** 环境来运行，所以我们用的时候不需单独[安装 WINE 程序][1]了。 **Teamviewer** 并不是原生的 **Linux** 应用程序。
 
-最近，最新的稳定版本 **TeamViewer 9** 已经发布了，有了些新的功能和性能的改进。在 **TeamViewer 9** 中增加的一些新功能特性，其要点如下：
+最新的稳定版本 **TeamViewer 9** 近期已经发布了，有了些新的功能和性能的改进。在 **TeamViewer 9** 中增加的一些新功能特性，其要点如下：
 
 ### Windows、Linux 和 Mac 系统下的功能特性 ###
 
 - 在不同的选项卡中打开多个链接
 - 支持局域网唤醒
-- 支持为 TeamViewer 帐户添加双重身份验证
+- 支持为 TeamViewer 帐户添加双因子身份验证
 - 支持 Windows 8.1 和 Mac OS X Mavericks 系统
 - 能保存自定义模块，如uickSupport、QuickJoin等等
 - 集成了应用程序编程接口(API) 
@@ -25,8 +25,7 @@ TeamViewer 9发布－基于RHEL/CentOS/Fedora和Debian/Ubuntu安装
 
     # wget http://www.teamviewer.com/download/teamviewer_linux.rpm 
 
-让我们开始安装吧。进入你的下载包所在的目录，执行如下的 yum 命令来安装，它将会自动安装需要的依赖包。
-
+然后开始安装。进入你的下载包所在的目录，执行如下的 yum 命令来安装，它将会自动安装需要的依赖包。
     
     # yum install teamviewer_linux.rpm
 
