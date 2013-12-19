@@ -1,3 +1,6 @@
+Translating----------------------geekpi
+
+
 Linux lsusb Command to Print information about USB on System
 ================================================================================
 **Universal Serial Bus** or **USB** was designed to standardize the connection of computer peripherals such as keyboards, pointing devices, printers, digital cameras, portable media players, disk drives and network adapters) – Source : [Wikipedia][1]
