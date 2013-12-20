@@ -1,3 +1,4 @@
+[翻译中] by KayGuoWhu
 Linux mpstat Command – Reports Processors Related Statistics
 ================================================================================
 Generally today computer is using multiple processors. Or maybe 1 physical processor with 4 cores inside. On server side, more processors or cores means more power. But the other side, application also more power consumption. You may find a situation when your cpu utilization is high but you feel that you don’t running anything. On Linux system, you can monitor this activity using **mpstat**.
