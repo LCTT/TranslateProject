@@ -59,7 +59,7 @@ Linux date命令 - 显示和设置系统日期与时间
     Friday December 06 2013
 
     $ date +”%A %B %d %Y %T”
-    Friday December 06 2013 00:30:37
+    Friday December 06 2013 00:30:37 
 
     $ date +”%A %B-%d-%Y %c”
     Friday December-06-2013 12:30:37 AM WIB
