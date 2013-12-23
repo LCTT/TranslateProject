@@ -1,3 +1,6 @@
+Translating------------------geekpi
+
+
 25 The Linux Kernel: Configuring the Kernel Part 21
 ================================================================================
 ![](http://www.linux.org/attachments/slide-jpg.689/)
