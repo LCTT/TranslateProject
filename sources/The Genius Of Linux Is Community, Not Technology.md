@@ -1,3 +1,5 @@
+翻译中  by tomatoKiller
+
 The Genius Of Linux Is Community, Not Technology
 ================================================================================
 > Linux never fulfilled its original promise as an old-school desktop operating system. But its everywhere in 2013, driven by a vibrant community.
