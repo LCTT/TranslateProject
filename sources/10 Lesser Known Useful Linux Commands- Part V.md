@@ -1,3 +1,5 @@
+翻译中 Luox
+
 10 Lesser Known Useful Linux Commands- Part V
 ================================================================================
 After four highly appreciated and such a successful series of Articles on “**Lesser Known Linux Commands**” we are here presenting you the last article on this series, obviously not the least. The previous articles are:
