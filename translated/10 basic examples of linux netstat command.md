@@ -1,17 +1,16 @@
-[this is bazz2]
-10 basic examples of linux netstat command
+netstat 的10个基本用法
 ================================================================================
-### Netstat ###
+### Netstat 简介 ###
 
-Netstat is a command line utility that can be used to list out all the network (socket) connections on a system. It lists out all the tcp, udp socket connections and the unix socket connections. Apart from connected sockets it can also list listening sockets that are waiting for incoming connections. So by verifying an open port 80 you can confirm if a web server is running on the system or not. This makes it a very useful tool for network and system administrators. So in this tutorial we shall be checking out few examples of how to use netstat to find information about network connections and open ports on a system.
+Netstat 是一款命令行工具，可用于列出系统上所有的网络套接字连接情况，包括 tcp, udp 以及 unix 套接字，另外它还能列出处于监听状态（即等待接入请求）的套接字。如果你想确认系统上的 Web 服务有没有起来，你可以查看80端口有没有打开。以上功能使 netstat 成为网管和系统管理员的必备利器。在这篇教程中，我会列出几个例子，教大家如何使用 netstat 去查找网络连接信息和系统开启的端口号。
 
-Here is a quick intro to netstat from the man pages
+以下的简单介绍来自 netstat 的 man 手册：
 
-> netstat - Print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships
+> netstat - 打印网络连接、路由表、连接的数据统计、伪装连接以及广播域成员。
 
-### 1. List out all connections ###
+### 1. 列出所有连接 ###
 
-The first and most simple command is to list out all the current connections. Simply run the netstat command with the a option.
+第一个要介绍的，是最简单的命令：列出所有当前的连接。使用 -a 选项即可。
 
     $ netstat -a
 
@@ -41,11 +40,11 @@ The first and most simple command is to list out all the current connections. Si
     unix  2      [ ACC ]     STREAM     LISTENING     12403    @/tmp/dbus-IDgfj3UGXX
     unix  2      [ ACC ]     STREAM     LISTENING     40202    @/dbus-vfs-daemon/socket-6nUC6CCx
 
-The above command shows all connections from different protocols like tcp, udp and unix sockets. However this is not quite useful. Administrators often want to pick out specific connections based on protocols or port numbers for example.
+上述命令列出 tcp, udp 和 unix 协议下所有套接字的所有连接。然而这些信息还不够详细，管理员往往需要查看某个协议或端口的具体连接情况。
 
-### 2. List only TCP or UDP connections ###
+### 2. 只列出 TCP 或 UDP 协议的连接 ###
 
-To list out only tcp connections use the t options.
+使用 -t 选项列出 TCP 协议的连接：
 
     $ netstat -at
     Active Internet connections (servers and established)
@@ -57,7 +56,7 @@ To list out only tcp connections use the t options.
     tcp        0      0 enlightened.local:37892 ABTS-North-Static-:http ESTABLISHED
     .....
 
-Similarly to list out only udp connections use the u option.
+使用 -u 选项列出 UDP 协议的连接：
 
     $ netstat -au
     Active Internet connections (servers and established)
@@ -72,11 +71,11 @@ Similarly to list out only udp connections use the u option.
     udp6       0      0 ip6-localhost:ntp       [::]:*                             
     udp6       0      0 [::]:ntp                [::]:*
 
-The above output shows both ipv4 and ipv6 connections.
+上面同时显示了 IPv4 和 IPv6 的连接。
 
-### 3. Disable reverse dns lookup for faster output ###
+### 3. 禁用反向域名解析，加快查询速度 ###
 
-By default, the netstat command tries to find out the hostname of each ip address in the connection by doing a reverse dns lookup. This slows down the output. If you do not need to know the host name and just the ip address is sufficient then suppress the hostname lookup with the n option.
+默认情况下 netstat 会通过反向域名解析技术查找每个 IP 地址对应的主机名。这会降低查找速度。如果你觉得 IP 地址已经足够，而没有必要知道主机名，就使用 -n 选项禁用域名解析功能。
 
     $ netstat -ant
     Active Internet connections (servers and established)
@@ -87,11 +86,11 @@ By default, the netstat command tries to find out the hostname of each ip addres
     tcp        0      0 192.168.1.2:33324       173.194.36.117:443      ESTABLISHED
     tcp6       0      0 ::1:631                 :::*                    LISTEN
 
-The above command shows ALL TCP connections with NO dns resolution. Got it ? Good.
+上述命令列出所有 TCP 协议的连接，没有使用域名解析技术。So easy ? 非常好。
 
-### 4. List out only listening connections ###
+### 4. 只列出监听中的连接 ###
 
-Any network daemon/service keeps an open port to listen for incoming connections. These too are like socket connections and are listed out by netstat. To view only listening ports use the l options.
+任何网络服务的后台进程都会打开一个端口，用于监听接入的请求。这些正在监听的套接字也和连接的套接字一样，也能被 netstat 列出来。使用 -l 选项列出正在监听的套接字。
 
     $ netstat -tnl
     Active Internet connections (only servers)
@@ -100,14 +99,14 @@ Any network daemon/service keeps an open port to listen for incoming connections
     tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN     
     tcp6       0      0 ::1:631                 :::*                    LISTEN
 
-Now we can see only listening tcp ports/connections. If you want to see all listening ports, remove the t option. If you want to see only listening udp ports use the u option instead of t.
-Make sure to remove the 'a' option, otherwise all connections would get listed and not just the listening connections.
+现在我们可以看到处于监听状态的 TCP 端口和连接。如果你查看所有监听端口，去掉 -t 选项。如果你只想查看 UDP 端口，使用 -u 选项，代替 -t 选项。
+注意：不要使用 -a 选项，否则 netstat 会列出所有连接，而不仅仅是监听端口。
 
-### 5. Get process name/pid and user id ###
+### 5. 获取进程名、进程号以及用户 ID ###
 
-When viewing the open/listening ports and connections, its often useful to know the process name/pid which has opened that port or connection. For example the Apache httpd server opens port 80. So if you want to check whether any http server is running or not, or which http server is running, apache or nginx, then track down the process name.
+查看端口和连接的信息时，能查看到它们对应的进程名和进程号对系统管理员来说是非常有帮助的。举个栗子，Apache 的 httpd 服务开启80端口，如果你要查看 http 服务是否已经启动，或者 http 服务是由 apache 还是 nginx 启动的，这时候你可以看看进程名。
 
-The process details are made available by the 'p' option.
+使用 -p 选项查看进程信息。
 
     ~$ sudo netstat -nlpt
     Active Internet connections (only servers)
@@ -116,9 +115,9 @@ The process details are made available by the 'p' option.
     tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN      661/cupsd       
     tcp6       0      0 ::1:631                 :::*                    LISTEN      661/cupsd
 
-When using the p option, netstat must be run with root privileges, otherwise it cannot detect the pids of processes running with root privileges and most services like http and ftp often run with root privileges.
+使用 -p 选项时，netstat 必须运行在 root 权限之下，不然它就不能得到运行在 root 权限下的进程名，而很多服务包括 http 和 ftp 都运行在 root 权限之下。
 
-Along with process name/pid its even more useful to get the username/uid owning that particular process. Use the e option along with the p option to get the username too.
+相比进程名和进程号而言，查看进程的拥有者会更有用。使用 -ep 选项可以同时查看进程名和用户名。
 
     $ sudo netstat -ltpe
     Active Internet connections (only servers)
@@ -127,16 +126,16 @@ Along with process name/pid its even more useful to get the username/uid owning 
     tcp        0      0 localhost:ipp           *:*                     LISTEN      root       9755        661/cupsd       
     tcp6       0      0 ip6-localhost:ipp       [::]:*                  LISTEN      root       9754        661/cupsd
 
-The above example lists out Listening connections of Tcp type with Process information and Extended information.
-The extended information contains the username and inode of the process. This is a useful command for network administrators.
+上面列出 TCP 协议下的监听套接字，同时显示进程信息和一些额外信息。
+这些额外的信息包括用户名和进程的索引节点号。这个命令对网管来说很有用。
 
-**Note** - If you use the n option with the e option, the uid would be listed and not the username.
+**注意** - 假如你将 -n 和 -e 选项一起使用，User 列的属性就是用户的 ID 号，而不是用户名。
 
-### 6. Print statistics ###
+### 6. 打印统计数据 ###
 
-The netstat command can also print out network statistics like total number of packets received and transmitted by protocol type and so on.
+netstat 可以打印出网络统计数据，包括某个协议下的收发包数量。
 
-To list out statistics of all packet types
+下面列出所有网络包的统计情况：
 
     $ netstat -s
     Ip:
@@ -157,11 +156,11 @@ To list out statistics of all packet types
             destination unreachable: 125
     ... OUTPUT TRUNCATED ...
 
-To print out statistics of only select protocols like TCP or UDP use the corresponding options like t and u along with the s option. Simple!
+如果想只打印出 TCP 或 UDP 协议的统计数据，只要加上对应的选项（-t 和 -u）即可，so easy。
 
-### 7. Display kernel routing information ###
+### 7. 显示内核路由信息 ###
 
-The kernel routing information can be printed with the r option. It is the same output as given by the route command. We also use the n option to disable the hostname lookup.
+使用 -r 选项打印内核路由信息。打印出来的信息与 route 命令输出的信息一样。我们也可以使用 -n 选项禁止域名解析。
 
     $ netstat -rn
     Kernel IP routing table
@@ -169,9 +168,9 @@ The kernel routing information can be printed with the r option. It is the same 
     0.0.0.0         192.168.1.1     0.0.0.0         UG        0 0          0 eth0
     192.168.1.0     0.0.0.0         255.255.255.0   U         0 0          0 eth0
 
-### 8. Print network interfaces ###
+### 8. 打印网络接口 ###
 
-The netstat command can also print out the information about the network interfaces. The i option does the task.
+netstat 也能打印网络接口信息，-i 选项就是为这个功能而生。
 
     $ netstat -i
     Kernel Interface table
@@ -179,7 +178,7 @@ The netstat command can also print out the information about the network interfa
     eth0       1500 0     31611      0      0 0         27503      0      0      0 BMRU
     lo        65536 0      2913      0      0 0          2913      0      0      0 LRU
 
-The above output contains information in a very raw format. To get a more human friendly version of the output use the e option along with i.
+上面输出的信息比较原始。我们将 -e 选项和 -i 选项搭配使用，可以输出用户友好的信息。
 
     $ netstat -ie
     Kernel Interface table
@@ -202,19 +201,19 @@ The above output contains information in a very raw format. To get a more human 
               collisions:0 txqueuelen:0 
               RX bytes:305297 (305.2 KB)  TX bytes:305297 (305.2 KB)
 
-The above output is similar to the output shown by the ifconfig command.
+上面的输出信息与 ifconfig 输出的信息一样。
 
-### 9. Get netstat output continuously ###
+### 9. netstat 持续输出 ###
 
-Netstat can output connection information continuously with the c option.
+我们可以使用 netstat 的 -c 选项持续输出信息。
 
     $ netstat -ct
 
-The above command will output tcp connections continuously.
+这个命令可持续输出 TCP 协议信息。
 
-### 10. Display multicast group information ###
+### 10. 显示多播组信息 ###
 
-The g option will display the multicast group information for IPv4 and IPv6 protocols.
+选项 -g 会输出 IPv4 和 IPv6 的多播组信息。
 
     $ netstat -g
     IPv6/IPv4 Group Memberships
@@ -232,13 +231,13 @@ The g option will display the multicast group information for IPv4 and IPv6 prot
     wlan0           1      ip6-allnodes
     wlan0           1      ff01::1
 
-### More examples of netstat command ###
+### 更多用法 ###
 
-Okay, we covered the basic examples of netstat command above. Now its time to do some geek stuff with style.
+目前为止我们列出了 netstat 的基本用法，现在让我们一起来 geek 吧～
 
-### Print active connections ###
+### 打印 active 状态的连接 ###
 
-Active socket connections are in "ESTABLISHED" state. So to get all current active connections use netstat with grep as follows
+active 状态的套接字连接用 "ESTABLISHED" 字段表示，所以我们可以使用 grep 命令获得 active 状态的连接：
 
     $ netstat -atnp | grep ESTA
     (Not all processes could be identified, non-owned process info
@@ -246,13 +245,13 @@ Active socket connections are in "ESTABLISHED" state. So to get all current acti
     tcp        0      0 192.168.1.2:49156       173.255.230.5:80        ESTABLISHED 1691/chrome     
     tcp        0      0 192.168.1.2:33324       173.194.36.117:443      ESTABLISHED 1691/chrome
 
-To watch a continous list of active connections, use the watch command along with netstat and grep
+配合 watch 命令监视 active 状态的连接：
 
     $ watch -d -n0 "netstat -atnp | grep ESTA"
 
-### Check if a service is running ###
+### 查看服务是否在运行 ###
 
-If you want to check if a server like http,smtp or ntp is running or not, use grep again.
+如果你想看看 http,smtp 或 ntp 服务是否在运行，使用 grep。
 
     $ sudo netstat -aple | grep ntp
     udp        0      0 enlightened.local:ntp   *:*                                 root       17430       1789/ntpd       
@@ -263,17 +262,17 @@ If you want to check if a server like http,smtp or ntp is running or not, use gr
     udp6       0      0 [::]:ntp                [::]:*                              root       17423       1789/ntpd       
     unix  2      [ ]         DGRAM                    17418    1789/ntpd
 
-So we found that ntp server is running. Grep for http or smtp or whatever you are looking for.
+从这里可以看到 ntp 服务正在运行。使用 grep 命令你可以查看 http 或 smtp 或其它任何你想查看的服务。
 
-Well, that was most of what netstat is used for. If you are looking for more advanced information or want to dig deeper, read up the netstat manual (man netstat).
+好了，netstat 的大部分功能都介绍过了，如果你想知道 netstat 更高级的功能，阅读它的手册吧（man netstat）。
 
-And do leave your feedback and suggestions in the comments box below.
+欢迎在下面留下你的反馈和建议。
 
 --------------------------------------------------------------------------------
 
 via: http://www.binarytides.com/linux-netstat-command-examples/
 
-译者：[FingerLiu](https://github.com/FingerLiu) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[bazz2](https://github.com/bazz2) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

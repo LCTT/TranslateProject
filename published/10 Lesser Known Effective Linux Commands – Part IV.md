@@ -1,19 +1,19 @@
-10个鲜为人知的Linux命令(4)
+十个鲜为人知的 Linux 命令 - Part 4
 ================================================================================
-Continuing the **Lesser Known** series, this fourth article of the series will let you know some useful **funny** and **animated** commands. Here we go into the practical session, without much theory.
+
 继续我们的"鲜为人知"系列，本系列的第四篇会让你了解一些**有趣** 又 **动态**的命令。这里我们进入实际的教程，没有很多理论。
 
 ![](http://www.tecmint.com/wp-content/uploads/2013/11/10-Lesser-Known-Effective-Commands-.png)
 
-- [11 Lesser Known Useful Linux Commands – Part I][1]
-- [10 Lesser Known Linux Commands – Part 2][2]
-- [10 Lesser Known Commands for Linux – Part 3][3]
+- [十一个鲜为人知的 Linux 命令 - Part 1][1]
+- [十个鲜为人知的 Linux 命令 - Part 2][2]
+- [十个鲜为人知的 Linux 命令 - Part 3][3]
 
-本系列的第四篇包含了另外的鲜为人知的Linux命令，这些值得去了解。也许你已经知道了这些命令，毫无疑问你是一个有经验的Linux用户并且乐于探索。
+本系列的第四篇包含了另外的鲜为人知的Linux命令，这些值得去了解。也许你已经知道了这些命令，毫无疑问你是一个勇于探索的资深Linux用户。
 
 ### 32. strace Command ###
 
-**strace**是一个调试工具并被主要用于Linux的故障排除。它可能在你的系统内没有默认安装，你可能需要**apt** 或者 **yum**安装所需要的包。
+**strace**是一个调试工具并被主要用于Linux的故障排除。它可能在你的系统内没有默认安装，你可能需要**apt** 或者 **yum** 安装所需要的包。
 
 使用strace命令追踪一个命令的执行。
 
@@ -41,18 +41,17 @@ Continuing the **Lesser Known** series, this fourth article of the series will l
     mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f29b0de6000
     mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f29b0de5000
     ....
-**strace**命令接收大量的参数和选项，请参考man页来获取详细信息。
+**strace**命令有大量的参数和选项，请参考man页来获取详细信息。
 
 ### 33. disown -a && exit 命令 ###
 
-大多数系统管理员使用[screen 命令][4]来控制运行在终端后台的作业。让我们假设一下如果你有一个长期运行的作业并想要将它从终端中**分离**，你可以用screen命令来这么做。但是如果你不知道如何使用screen，那么disown可以用来救急。
+大多数系统管理员使用[screen 命令][4]来控制运行在终端后台的作业。让我们假设一下如果你有一个长期运行的作业并想要将它从终端中**脱离**，你可以用screen命令来这么做。但是如果你不知道如何使用screen，那么disown可以用来救急。
 
-disown命令可以在后台持续运行作业即使你关闭了终端会话。disown命令的语法是:
-
+disown命令可以在后台持续运行任务，即使你关闭了终端会话。disown命令的语法是:
 
     root@tecmint [~]# Command; disown -a && exit
 
-为了在终端中再次分离长期运行的作业，使用**jobs**命令来找出作业号，接着使用disown **%n**，这里的**%n**是作业号。为了验证作业确实在运行，使用**ps** 或者 [top 命令][5]。**nohup**命令也是一个disown命令的替代品。
+为了在终端中再次脱离一个已经长期运行的任务（译注：可能已经bg运行了，但是并没有脱离终端），使用**jobs**命令来找出任务号，接着使用disown **%n**，这里的**%n**是作业号。为了验证作业确实在运行，使用**ps** 或者 [top 命令][5]。**nohup**命令也是一个disown命令的替代品。
 
 ### 34. getconf LONG_BIT 命令 ###
 
@@ -61,8 +60,6 @@ disown命令可以在后台持续运行作业即使你关闭了终端会话。di
     root@tecmint [~]# getconf LONG_BIT
 
     32
-
-- [下载Linux命令备忘单][5]
 
 ### 35. 终端上显示日期 ###
 
@@ -76,11 +73,11 @@ disown命令可以在后台持续运行作业即使你关闭了终端会话。di
 
 ### 36. convert 命令 ###
 
-在写教程的时候，我经常需要生成输出，很多时候是图片格式。上面的命令集合并不适合我。假设我需要tree命令的图片格式的输出(对 **/etc/x11** 目录 )。
+在写教程的时候，我经常需要生成输出，很多时候是图片格式的输出。上面的命令集合并不适合我。假设我需要tree命令的图片格式的输出(对 **/etc/x11** 目录 )。
 
     root@tecmint:/etc/X11# tree | convert label:@- /home/avi/tree.png
 
-上面命令的输出可以在一个特定的位置(这里是我的家目录)下看到，文件名是**tree.png**。
+上面命令的输出可以在一个特定的位置(这里是我的主目录)下看到，文件名是**tree.png**。
 
 ### 37. watch -t -n1 “date +%T|figlet” ###
 
@@ -98,9 +95,9 @@ disown命令可以在后台持续运行作业即使你关闭了终端会话。di
     | | |_| |_ / __/ \__, |_ ___) |__   _|
     |_|\___/(_)_____|  /_/(_)____/   |_|
 
-### 38. host and dig 命令 ###
+### 38. host 和 dig 命令 ###
 
-虽然“**host**” 和 “**dig**”命令不那么鲜为人知，但是仍并不常被使用。host命令是**DNS**查询工具。
+虽然“**host**” 和 “**dig**”命令不那么鲜为人知，仍然很少使用。host命令是一个**DNS**查询工具。
 
     root@tecmint [~]# host www.google.com
 
@@ -112,6 +109,7 @@ disown命令可以在后台持续运行作业即使你关闭了终端会话。di
     www.google.com has address 173.194.66.103
     www.google.com has IPv6 address 2a00:1450:400c:c03::68
 
+（译注：事实上，我觉得dig命令是最强大的，自从有了dig，我就再也不用 nslookup 了。）
 
     root@tecmint [~]# dig www.google.com
 
@@ -122,7 +120,7 @@ disown命令可以在后台持续运行作业即使你关闭了终端会话。di
 
 ### 39. dstat 命令 ###
 
-**dstat**是一个多用的工具，它会依据系统资源生成统计。默认上你的系统可能没有安装‘**dstat**‘。在使用这个多彩的描述系统信息的生成器前使用**apt** 或者 **yum**来安装。
+**dstat**是一个多用途的工具，它会依据系统资源生成统计。默认情况下你的系统可能没有安装‘**dstat**‘。在使用这个彩色的描述系统信息的生成器前使用**apt** 或者 **yum**来安装。
 
     root@tecmint [~]# dstat
 
@@ -133,8 +131,6 @@ disown命令可以在后台持续运行作业即使你关闭了终端会话。di
 ‘**bind -p**‘会显示所有的**BASH** shell可用的快捷方式。
 
     root@tecmint [~]# bind -p
-
-#### Sample Output ####
 
     "\C-g": abort 
     "\C-x\C-g": abort 
@@ -165,7 +161,7 @@ disown命令可以在后台持续运行作业即使你关闭了终端会话。di
 
     root@tecmint [~]# touch /forcefsck
 
-今天这些就是全部。因为你们爱‘**鲜为人知的命令**‘ ,因此我们将继续这个系列,本系列的下一篇文章将很快发布。
+今天这些就是全部。因为你们爱‘**鲜为人知的命令**‘ ，因此我们将继续这个系列，本系列的下一篇文章将很快发布。
 
 不要走开继续关注**Tecmint**。不要忘记在评论栏里留下你们有价值的反馈。帮我们一个忙，喜爱、分享我们的文章，并帮我们传播。
 
@@ -173,13 +169,13 @@ disown命令可以在后台持续运行作业即使你关闭了终端会话。di
 
 via: http://www.tecmint.com/10-lesser-known-effective-linux-commands-part-iv/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-[1]:http://www.tecmint.com/11-lesser-known-useful-linux-commands/
-[2]:http://www.tecmint.com/10-lesser-known-linux-commands-part-2/
-[3]:http://www.tecmint.com/10-lesser-known-commands-for-linux-part-3/
+[1]:http://linux.cn/article-2258-1.html
+[2]:http://linux.cn/article-2265-1.html
+[3]:http://linux.cn/article-2284-1.html
 [4]:http://www.tecmint.com/screen-command-examples-to-manage-linux-terminals/
 [5]:http://www.tecmint.com/12-top-command-examples-in-linux/
 [6]:http://tecmint.tradepub.com/free/w_makb09/prgm.cgi

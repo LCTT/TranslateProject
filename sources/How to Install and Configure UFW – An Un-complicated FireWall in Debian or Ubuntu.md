@@ -1,3 +1,4 @@
+(translating by runningwater)
 How to Install and Configure UFW – An Un-complicated FireWall in Debian/Ubuntu
 ================================================================================
 Since computers are connected to each other, services are growing fast. **Email, Social Media, Online Shop, Chat** until **Web Conferencing** are services that used by user. But on the other side this connectivity just likes a double-side knife. It’s also possible to send bad messages to those computers like **Virus, malware, trojan-apps** are one of them.
@@ -266,7 +267,7 @@ As I stated above, the ufw firewall can able to do whatever that iptables can do
 
 via: http://www.tecmint.com/how-to-install-and-configure-ufw-firewall/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
