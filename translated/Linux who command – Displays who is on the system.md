@@ -1,5 +1,3 @@
-l3b2w1 translating ……
-
 Linux who command – Displays who is on the system
 ================================================================================
 As a system administrator, we need to ensure who is on the system on a particular time. We must keep on eye to our servers. But of course we can’t do that for 24 hours a day. On Linux system, we can use who command to see who is on the system
