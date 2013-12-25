@@ -1,105 +1,87 @@
-Linux who command – Displays who is on the system
+Linux who 命令 – 显示系统登录者
 ================================================================================
-As a system administrator, we need to ensure who is on the system on a particular time. We must keep on eye to our servers. But of course we can’t do that for 24 hours a day. On Linux system, we can use who command to see who is on the system
+作为一名系统管理员，我们需要弄清楚在一个特定的时间点都有谁活跃在系统上。我们必须严密监视我们的服务器。但是，当然，不可能一天24小时都盯着系统。在linux系统中，我们可以使用who命令查看登录者信息。
 
-### What is who command ###
+### 什么是 who 命令 ###
+**who**命令一个打印用户信息的工具，**当前都有谁登录到系统中**。who命令只会显示真正登录到系统中的用户。它不会打印那些通过**su**命令切换用户的登陆者。
 
-**who** command is a tool print information about users **who are currently logged in**. who command only see a real user who logged in. It won’t see a user that doing **su** command (switch user).
-
-### How to use who command ###
-
-On most Linux distribution, who command is already installed. To use it, just type who on your console. Running it without options will print a default output.
-
+### 如何使用who命令 ###
+在大多数linux发行版中，who命令都是默认安装上的。想使用该命令，只需在控制台敲命令就行了。不带选项的话，运行该命令产生默认输出。
     $ who
 
 ![](http://linoxide.com/wp-content/uploads/2013/12/who_default.png)
 
-#### Here’s how to read the output : ####
+#### 如何理解输出: ####
 
-- 1st column show the user name
-- 2nd column show how the user connected. Tty means the user is connected directly to the computer, while pts means the user is connected from remote
-- 3rd and 4th columns show the date and time
-- 5th column show the IP Address where the users are connected
+- 第一列显示用户名称
+- 第二列显示用户连接方式。Tty意味着用户直接连接到电脑上，而pts意味着远程登录。
+- 第三、四列分别显示日期和时间
+- 第五列显示用户登录IP地址。
 
-### Using who command with options ###
+### 使用带参数的who命令 ###
+Who命令有一些参数用于调整输出。以下是常用的例子。
 
-Who command has some options to make the custom output. Here are some samples on day-to-day usage.
-
-#### Indicate the time and date of the last reboot ####
-
-To do this, use **-b** options
-
+#### 显示上一次重新启动的时间和日期 ####
+使用 **-b** 选项
     $ who -b
 
 ![](http://linoxide.com/wp-content/uploads/2013/12/who_b.png)
 
-We can see that system was boot the computer on December 21st , 2013 at 3:52 PM
+可以看到系统启动是在2013年12月21日，下午3:52。
 
-#### Indicate the current run-level of the init process ####
+#### 显示初始化进程的当前运行级别 ####
 
-With -r option, who will print a current run-level of the init process.
-
+使用 -r 选项，who命令会打印出初始化进程的当前运行级别
     $ who -r
 
 ![](http://linoxide.com/wp-content/uploads/2013/12/who_r.png)
 
-The output show us that the current run-level on December 21st , 2013 at 3:52 PM was run-level 2.
+输出显示2013年12月21日，下午3:52系统以 级别2 开始运行。
+#### 为每一列添加标题 ####
 
-#### Put header above every column ####
-
-Use -H option to put a header above every column
+使用 -H 选项为每一列添加标题
 
     $ who -H
 
 ![](http://linoxide.com/wp-content/uploads/2013/12/who_H.png)
 
-#### Print only information about current terminal ####
-
-We can use **-m** option to do this.
-
+#### 只打印当前运行终端的相关信息 ####
+可以使用**-m**选项。
     $ who -m
 
 ![](http://linoxide.com/wp-content/uploads/2013/12/who_m.png)
 
-#### Count how many user that currently logged in ####
-
-If you have many users logged in at the same time, this -q option will help you to count them.
-
+#### 对当前登录用户数量计数 ####
+如果系统同时有多人登录在线，-q 选项协助你完成计数功能。
     $ who -q
 
 ![](http://linoxide.com/wp-content/uploads/2013/12/who_q.png)
 
-#### Add idle time and PID information ####
-
-By default, who will not print Idle Time and PID information. To add those information, use -u option. Don’t forget to use -H option to make it easier to read.
-
+#### 附加空闲时间和PID信息 ####
+默认情况下，who命令不会打印空闲时间和PID信息。如果打算显示这些东西，使用-u选项。不要忘记使用 -H选项让信息显示更加人性化，易读一些 。
     $ who -u -H
 
 ![](http://linoxide.com/wp-content/uploads/2013/12/who_u.png)
 
-**The idle time** contains the number of hours and minutes since last activity occurred. So 00:13 means that user leni has been idle for 13 minutes. **The dot (.) sign** tell us that the terminal has seen activity on the last minute. During that time, we can call it “current”. **The PID** is a process ID of the user’s shell.
+**空闲时间** 包含了最近最后一次活动以来消逝的时间. 所以，00:13 意思是 用户leni已经13分钟没执行过命令了. ** (.)符号** 意思是该终端过去的一分钟有过活动。**PID** 是用户shell程序的进程ID号。
 
-#### Show login process ####
-
-To show it, we can use **-l** option.
-
+#### 显示 login 进程####
+使用**-l**选项
     $ who -l
 
 ![](http://linoxide.com/wp-content/uploads/2013/12/who_l.png)
+	
+第一列只显示系统登录守护进程的名字。上面快照中的数字 967, 971等是进程ID。
 
-The 1st column only show Login name which refer to System. The number 967, 971 etc on the screenshot above tell us the PID.
-
-#### Display all the information ####
-
-Using **-a** option will showing us all information. Here’s a sample.
-
+#### 显示所有信息 ####
+使用**-a**选项会显示所有信息。例如：
     $ who -a
 
 ![](http://linoxide.com/wp-content/uploads/2013/12/who_a.png)
 
-#### Conclusion ####
+####总结####
+你会发现who命令跟w命令在某些方面有些相像。不要为此感到疑惑，为什么linux要实现这些在功能上相近的命令。你可以使用你认为对你来说适用于某种场合的命令。请查阅who命令手册，了解更多详细信息。
 
-You will found that who command is similar with [w command][1] in some ways. Don’t be confused about why Linux has some similar command in term its functionality. You can use what you think the best for you and suit the situation you are facing. Please consult to who manual page by typing man who from your console to explore it more detail.
 - See more at: http://linoxide.com/linux-command/linux-who-command/#sthash.CU0bq3e4.dpuf
 
 --------------------------------------------------------------------------------
