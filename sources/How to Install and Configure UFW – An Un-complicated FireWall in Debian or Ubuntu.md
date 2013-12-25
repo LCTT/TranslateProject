@@ -1,15 +1,14 @@
-(translating by runningwater)
-How to Install and Configure UFW – An Un-complicated FireWall in Debian/Ubuntu
+Debian/Ubuntu系统中安装和配置UFW－简单的防火墙
 ================================================================================
-Since computers are connected to each other, services are growing fast. **Email, Social Media, Online Shop, Chat** until **Web Conferencing** are services that used by user. But on the other side this connectivity just likes a double-side knife. It’s also possible to send bad messages to those computers like **Virus, malware, trojan-apps** are one of them.
+自从计算机互连后，各种服务迅速增长。像用户使用的**电子邮件、社交媒体、在线商城、即时聊天**甚至**网络会议**等服务如雨后春笋般出现。但从另一方面来说，这些连接服务也具有双面刃，比如他们当中的**病毒、恶意软件、特洛伊木马**等会向计算机发送恶意消息。
 
-![UFW Firewall for Ubuntu](http://www.tecmint.com/wp-content/uploads/2013/12/UFW-Firewall.jpeg)
+![Ubuntu下的 UFW 防火墙](http://www.tecmint.com/wp-content/uploads/2013/12/UFW-Firewall.jpeg)
 
-*Install UFW Firewall*
+*安装 UFW 防火墙*
 
-The Internet, as the biggest computer network is not always fill with good people. In order to make sure our computers / servers are safe, we need to protect it.
+作为最大的计算机网络，互联网上总是有些不怀好意的人。因此，为了确保我们的计算机或服务器的安全，我们需要进行保护。
 
-One of the must have component on your computer / servers is **Firewall**. From **Wikipedia**, a definition is:
+在你的计算机或服务器上一个必须有的组件就是**防火墙**。在**维基百科**中，其定义是：
 
 > In computing, a firewall is a software or hardware-based network security system that controls the incoming and outgoing network traffic by analysing the data packets and determining whether they should be allowed through or not, based on applied rule set.
 
