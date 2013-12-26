@@ -1,3 +1,4 @@
+translating by pandachow
 How to Install SteamOS in VirtualBox
 ================================================================================
 **The following tutorial will teach all Linux users how to install Valve's brand new SteamOS GNU/Linux operating system in a virtual machine, using the powerful and popular VirtualBox software.**
