@@ -93,7 +93,7 @@ GNOME 3.10还有一些不错的新特性，应用-[包括GNOME天气，音乐盒
 
 via: http://www.omgubuntu.co.uk/2013/12/upgrade-gnome-3-10-ubuntu-13-10
 
-译者：[KAyGuoWhu](https://github.com/KayGuoWhu) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[KAyGuoWhu](https://github.com/KayGuoWhu) 校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
