@@ -1,3 +1,5 @@
+Translating by @Zanux
+
 Juju ice-cream icon design
 ================================================================================
 Who doesn’t like ice-cream? Here in the design team we sure do! In the last few weeks we’ve been preparing a special Juju demo for the OpenStack Summit in Hong Kong and we’ve created some very ‘tasty’ icons for it. We thought it would be nice to show you how those icons were created, so here’s a little insight on the design process.
