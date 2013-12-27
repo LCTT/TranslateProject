@@ -1,3 +1,6 @@
+Translating----------------geekpi
+
+
 Linux vmstat Command – Tool to Report Virtual Memory Statistics
 ================================================================================
 As we already know that computer must have memory which called RAM to make the computer works. RAM is refer to a physical memory that planted into the computer mainboard. This RAM is used to load applications such as browser, word processor and so on. So actually, programs that you are using are running on the memory.
