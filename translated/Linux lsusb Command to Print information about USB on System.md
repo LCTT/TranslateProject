@@ -1,16 +1,16 @@
 Linux中打印系统中USB信息的lsusb命令
 ================================================================================
-**通用串行总线**或者**USB**被设计成为连接计算机外设的标准，如键盘、定位装置、打印机、数码相机、便携式媒体播放器、磁盘和网络适配器等等 - 来源：[Wikipedia][1]
+**通用串行总线**或者**USB**被设计成为连接计算机外设的标准，如键盘、鼠标、打印机、数码相机、便携式媒体播放器、磁盘和网络适配器等等 - 来源：[Wikipedia][1]
 
 ![lsusb 命令](http://linoxide.com/wp-content/uploads/2013/12/lsusb-linux-command.jpg)
 
 既然它成为了一个工业标准，那么现在很难看到一个没有USB口的计算机了。USB闪存的使用使得它更加流行。在Linux上，我们使用**lsusb**来列出USB设备和它的属性。
 
-### lsusb是什么 ###
+### 什么是lsusb ###
 
-从它的手册上，lsusb定义成：
+在它的手册上，lsusb定义成：
 
-显示系统中和连接到系统的USB总线信息的工具。
+显示系统中以及连接到系统的USB总线信息的工具。
 
 如何运行lsusb。
 
@@ -31,18 +31,18 @@ Linux中打印系统中USB信息的lsusb命令
 
 **lsusb**会显示驱动和内部连接到你系统的设备。
 
-这是如何理解输出。我抓取了上面输出的最后一行：
+下面介绍如何理解输出。我抓取了上面输出的最后一行：
 
 #### Bus 008 Device 002 : ID 0a5c:217f Broadcom Corp. Bluetooth Controller ####
 
-- **Bus 008** : 设备连接的地方
-- **Device 002** : 连接到总线上的第二台设备
+- **Bus 008** : 指明设备连接到哪
+- **Device 002** : 表明这是连接到总线上的第二台设备
 - **ID** : 设备的ID
-- **Broadcom Corp**. Bluetooth Controller :生产商名字和设备名
+- **Broadcom Corp. Bluetooth Controller** :生产商名字和设备名
 
 我们同样可以看到在我们的系统中同时使用了USB2.0 root hub驱动和USB 1.1 root hub驱动。
 
-用[dmsg][2]命令同样可以看到。下面是一个例子。
+用[dmesg][2]命令同样可以看到。下面是一个例子。
 
     $ dmesg |grep -i usb
 
@@ -98,7 +98,7 @@ Linux中打印系统中USB信息的lsusb命令
 
 ### 找出连接了多少USB设备 ###
 
-使用上面的命令来找到
+使用下面的命令
 
     $ find /dev/bus
 
@@ -218,32 +218,32 @@ Linux中打印系统中USB信息的lsusb命令
 
     $ lsusb -t
 
-    /: Bus 08.Port 1: Dev 1, Class=root_hub, Driver=uhci_hcd/2p, 12M
-    /: Bus 07.Port 1: Dev 1, Class=root_hub, Driver=uhci_hcd/2p, 12M
-    /: Bus 06.Port 1: Dev 1, Class=root_hub, Driver=uhci_hcd/2p, 12M
-    /: Bus 05.Port 1: Dev 1, Class=root_hub, Driver=uhci_hcd/2p, 12M
-    /: Bus 04.Port 1: Dev 1, Class=root_hub, Driver=uhci_hcd/2p, 12M
-    /: Bus 03.Port 1: Dev 1, Class=root_hub, Driver=uhci_hcd/2p, 12M
-    /: Bus 02.Port 1: Dev 1, Class=root_hub, Driver=ehci_hcd/6p, 480M
+    /: Bus 08.Port 1: Dev 1, Class=root\_hub, Driver=uhci_hcd/2p, 12M
+    /: Bus 07.Port 1: Dev 1, Class=root\_hub, Driver=uhci_hcd/2p, 12M
+    /: Bus 06.Port 1: Dev 1, Class=root\_hub, Driver=uhci_hcd/2p, 12M
+    /: Bus 05.Port 1: Dev 1, Class=root\_hub, Driver=uhci_hcd/2p, 12M
+    /: Bus 04.Port 1: Dev 1, Class=root\_hub, Driver=uhci_hcd/2p, 12M
+    /: Bus 03.Port 1: Dev 1, Class=root\_hub, Driver=uhci_hcd/2p, 12M
+    /: Bus 02.Port 1: Dev 1, Class=root\_hub, Driver=ehci_hcd/6p, 480M
     |__ Port 1: Dev 4, If 0, Class=stor., Driver=usb-storage, 480M
     |__ Port 6: Dev 3, If 0, Class=’bInterfaceClass 0x0e not yet handled’, Driver=uvcvideo, 480M
     |__ Port 6: Dev 3, If 1, Class=’bInterfaceClass 0x0e not yet handled’, Driver=uvcvideo, 480M
-    /: Bus 01.Port 1: Dev 1, Class=root_hub, Driver=ehci_hcd/6p, 480M
+    /: Bus 01.Port 1: Dev 1, Class=root\_hub, Driver=ehci_hcd/6p, 480M
 
 数字**12M和480M** 是**指USB类型的传输速率**。
 
 - 12M 意味着 USB 1.0 / 1.1的速率是 12Mbit/s
 - 480M 意味着 USB 2.0的速率是 480Mbit/s
 
-如果你找到5.0G，那意味这你有USB 3.0类型接口。它有5.0Gbit/s的传输速率。Linux从**/var/lib/usbutils/usb.ids**识别USB设备的详细信息。
+如果你找到5.0G，那意味这你有USB 3.0类型接口。它有5.0Gbit/s的传输速率。Linux从**/var/lib/usbutils/usb.ids**识别USB设备的详细信息。或者你可以访问[Linux-USB.org][3]获取最新的USB ID列表。
 
-这些就是lsusb命令的基础。你可以用lsusb命令追你的系统上的USB设备做一个诊断。一般来说，你可以通过lsusb的手册探索命令的更多详细细节。只要输入**man lsab**来打开它的手册。
+这些就是lsusb命令的基础。你可以用lsusb命令对你的系统上的USB设备做一个诊断。一般来说，你可以通过lsusb的手册探索命令的更多详细细节。只要输入**man lsab**来打开它的手册。
 
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/linux-command/linux-lsusb-command-print-usb/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[Mr小眼儿](http://blog.csdn.net/tinyeyeser)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
