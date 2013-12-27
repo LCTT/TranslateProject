@@ -1,4 +1,5 @@
 translating by zsJacky
+小眼儿继续翻译中~
 
 GNOME’s File Manager Will Be More User Friendly
 ================================================================================

@@ -17,14 +17,14 @@ OpenPGP 是使用最广泛的电子邮件加密协议标准。无论你使用的
 - [Enigmail][1] 	Mozilla 系列的 OpenPGP 电子邮件加密软件
 ![](http://www.linuxlinks.com/portal/content/reviews/Email/Screenshot-Enigmail.png)
 - [Mailvelope][2] 	谷歌与火狐浏览器的扩展插件
-- [GnuPG][3] 	加密模糊数据通信
-- [Mymail-Crypt for Gmail][4] 	简易电子邮件加密软件
+- [GnuPG][3] 	为数据和通信提供加密或签名保护
+- [Mymail-Crypt for Gmail][4] 	简易电子邮件解决方案
 
 --------------------------------------------------------------------------------
 
 via: http://www.linuxlinks.com/article/2013120707481589/EmailEncryption.html
 
-译者：[SteveArcher](https://github.com/SteveArcher) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[SteveArcher](https://github.com/SteveArcher) 校对：[Mr小眼儿](http://blog.csdn.net/tinyeyeser)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

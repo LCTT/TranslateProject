@@ -1,11 +1,11 @@
-示例说明10个Linux中有用打的链接操作符
+示例说明10个Linux中常用又好用的链接操作符
 ================================================================================
-Linux命令中的链接的意思是，结合几个命令并基于它们之间操作符的行为执行。Linux中的链接命令，有些像你在shell中写[短小的shell脚本]，并直接在终端中执行。链接使得自动处理变得可能。不仅如此，一个无人看管的机器在链接操作符的帮助下如此有条理地运行。
+Linux命令中的链接的意思是，通过操作符的行为将几个命令组合执行。Linux中的链接命令，有些像你在shell中写[短小的shell脚本][1]，并直接在终端中执行。链接使得自动处理变得可能。不仅如此，一个无人看管的机器在链接操作符的帮助下能够十分有条理地运行。
 
 ![Linux中的10个链接操作符](http://www.tecmint.com/wp-content/uploads/2013/12/Chaining-Operators-in-Linux.png)
 *Linux中的10个链接操作符*
 
-本文旨在常用的**链接操作符**，并作简短的描述和相关的肯定能提高你生产力的例子，除了有时能降低系统负载外还能让你写出简短有意义的代码。
+本文旨在介绍一些常用的**链接操作符**，通过简短的描述和相关的例子帮助读者提高生产力、降低系统负载、写出更加简短有意义的代码。
 
 ### 1. 和号操作符 (&) ###
 
@@ -25,13 +25,13 @@ Linux命令中的链接的意思是，结合几个命令并基于它们之间操
 
     root@localhost:/home/tecmint# apt-get update ; apt-get upgrade ; mkdir test
 
-创建了一个‘**test**‘文件夹
+上述命令先后执行了update和upgrade，最后在当前工作目录下创建了一个‘**test**‘文件夹
 
 ### 3. 与操作符 (&&) ###
 
-如果第一个命令执行成功(译者注: 原文为“if the execution of first command fails”，译者认为与上下文意思不同)，**与操作符 (&&)**会执行第二个命令，也就是说，第一个命令退出状态是**1**。这个命令在检查最后一个命令的执行状态时很有用。
+如果第一个命令执行成功，**与操作符 (&&)**会执行第二个命令，也就是说，第一个命令退出状态是**0**。（译注：原文的这里明显写错了，我们进行了改译，有兴趣的读者可以参看原文以及原文下面的评论）。这个命令在检查最后一个命令的执行状态时很有用。
 
-比如，我想使用**[links command][2]**在终端中访问网站**tecmint.com**，但在这之前我需要检查主机是否**在线**或者**不在线**。
+比如，我想使用**[links command][2]**在终端中访问网站**tecmint.com**，但在这之前我需要检查主机是否**在线**或**不在线**。
 
     root@localhost:/home/tecmint# ping -c3 www.tecmint.com && links www.tecmint.com
 
@@ -43,7 +43,7 @@ Linux命令中的链接的意思是，结合几个命令并基于它们之间操
 
     tecmint@localhost:~$ apt-get update || links tecmint.com
 
-上面的命令中，由于**用户**不允许**更新**系统，这意味着第一个命令的退出状态是’**1**′,因此最后一个命令‘**links tecmint.com**‘会执行。
+上面的命令中，由于该**用户**不允许**更新**系统，这意味着第一个命令的退出状态是’**1**′,因此最后一个命令‘**links tecmint.com**‘会执行。
 
 如果第一个命令成功执行并且退出状态是‘**0**‘呢？很明显的，第二个命令不会执行。
 
@@ -82,7 +82,7 @@ Linux命令中的链接的意思是，结合几个命令并基于它们之间操
 
 上面的操作符实际上是‘**与**‘和‘**或**‘操作符的组合。它很像‘**if-else**‘语句。
 
-比如，让我们ping **tecmint.com**，如果成功打印‘**已验证**‘，否则打印‘**主机故障**‘。
+比如，我们ping **tecmint.com**，如果成功打印‘**已验证**‘，否则打印‘**主机故障**‘。
 
     tecmint@localhost:~/tecmint$ ping -c3 www.tecmint.com && echo "Verified" || echo "Host Down"
 
@@ -109,7 +109,7 @@ Linux命令中的链接的意思是，结合几个命令并基于它们之间操
 
 ### 7. 管道操作符 (|) ###
 
-**PIPE**在第一个命令的输出作为第二个命令的输入时很有用。比如，‘**ls -l**‘的输出通过管道到‘**less**‘，并看一下输出。
+**PIPE**在将第一个命令的输出作为第二个命令的输入时很有用。比如，‘**ls -l**‘的输出通过管道到‘**less**‘，并看一下输出。
 
     tecmint@localhost:~$ ls -l | less
 
@@ -125,23 +125,27 @@ Linux命令中的链接的意思是，结合几个命令并基于它们之间操
 
     “The file does not exist”
 
+（LCTT注：原文这里应该也是复制或书写的时候，出现了一些问题，例子中并没有出现小标题中的"{}"操作符，这里我们原文翻译了，关于这里，有兴趣的同学请在评论中和我们交流~）
+
 ### 9. 优先操作符 () ###
 
 这个操作符可以让命令以优先顺序执行。
 
     Command_x1 &&Command_x2 || Command_x3 && Command_x4.
 
-在上面的伪代码中，如果**Command_x1**执行失败了会怎么样，**Command_x2**, **Command_x3**, **Command_x4**没有一个会自行，对于这种，我们使用**优先操作符**。
+在上面的伪代码中，如果**Command_x1**执行失败了会怎么样，**Command_x2**, **Command_x3**, **Command_x4**没有一个会执行，对于这种情况，我们使用**优先操作符**。
 
     (Command_x1 &&Command_x2) || (Command_x3 && Command_x4)
 
-在上面的伪代码中，如果**Command_x1**执行失败，**Command_x2**同样失败，但是**Command_x3**会继续执行， **Command_x4**会依赖于 **Command_x3**的退出状态。
+在上面的伪代码中，如果**Command_x1**执行失败，**Command_x2**不会执行，但是**Command_x3**会继续执行， **Command_x4**会依赖于 **Command_x3**的退出状态。
 
 ### 10. 连接符 (\) ###
 
 **连接符 (\)**如它名字所说，被用于连接shell中跨越多行的命令。比如，下面的命令会打开文本文件**test(1).txt**。
 
-    tecmint@localhost:~/Downloads$ nano test\(1\).txt
+    tecmint@localhost:~/Downloads$ nano test\
+    (1\
+    ).txt
 
 今天就到这里，我会近日开始另外一个有趣的文章。不要走开，继续关注**Tecmint**。不要忘记在评论栏里提出有价值的反馈。
 
@@ -149,7 +153,7 @@ Linux命令中的链接的意思是，结合几个命令并基于它们之间操
 
 via: http://www.tecmint.com/chaining-operators-in-linux-with-practical-examples/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[Mr小眼儿](http://blog.csdn.net/tinyeyeser)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

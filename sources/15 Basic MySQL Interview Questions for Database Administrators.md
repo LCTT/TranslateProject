@@ -1,3 +1,4 @@
+[bazz2 咩哈哈哈哈哈]
 15 Basic MySQL Interview Questions for Database Administrators
 ================================================================================
 Prior to This Article, three articles has already been published in ‘[Linux Interview][1]‘ Section and all of them were highly appreciated by our notable readers, however we were receiving feedback to make this interactive learning process, section-wise. From idea to action, we are providing you **15 MySQL Interview Questions**.
