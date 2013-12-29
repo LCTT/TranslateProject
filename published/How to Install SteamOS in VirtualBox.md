@@ -83,7 +83,7 @@
 
 via: http://news.softpedia.com/news/How-to-Install-SteamOS-in-VirtualBox-409363.shtml
 
-译者：[pandachow](https://github.com/pandachow) 校对：[wxy](https://github.com/wxy)
+译者：[pandachow](https://github.com/ailurus1991) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

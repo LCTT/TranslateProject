@@ -1,3 +1,4 @@
+translating by ailurus1991 (previous ID: pandachow)
 How to stitch photos together on Linux
 ================================================================================
 If you are an avid photographer, you will probably have several stunning panoramic photos in your portfolio. You don't have to be a professional photographer, nor need specialized equipment to create dramatic panoramic pictures. In fact, there are quite a few picture stitch apps (online or offline, desktop or mobile), which can easily create a panoramic view of a scene from two or more overlapping pictures.
