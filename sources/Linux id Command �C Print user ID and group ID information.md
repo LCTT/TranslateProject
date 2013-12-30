@@ -1,3 +1,7 @@
+Translating---------------------geekpi
+
+
+
 Linux id Command – Print user ID and group ID information
 ================================================================================
 To log in into a computer, we need a username. Username is an identity to recognized by a computer. Based on it, computer will apply a set of rules to a someone that log in with that username. On Linux system we can use **id** command.
