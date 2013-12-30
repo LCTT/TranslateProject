@@ -6,7 +6,7 @@
 
 OpenPGP 是使用最广泛的电子邮件加密协议标准。无论你使用的是电子邮件客户端，还是 Web 客户端，你都可以通过 OpenPGP 协议来加密你的电子邮件。
 
-很少有哪些电子邮件应用程序会默认安装 PGP 协议。不过幸运的是，Linux 下有不少简单而又易用的开源加密软件。
+很少有哪些电子邮件应用程序会默认安装 PGP 功能。不过幸运的是，Linux 下有不少简单而又易用的开源加密软件。
 
 为了更直观地对比这些加密软件的效果，我们列出了以下清单。
 
@@ -15,7 +15,6 @@ OpenPGP 是使用最广泛的电子邮件加密协议标准。无论你使用的
 ### 电子邮件加密工具 ###
 
 - [Enigmail][1] 	Mozilla 系列的 OpenPGP 电子邮件加密软件
-![](http://www.linuxlinks.com/portal/content/reviews/Email/Screenshot-Enigmail.png)
 - [Mailvelope][2] 	谷歌与火狐浏览器的扩展插件
 - [GnuPG][3] 	为数据和通信提供加密或签名保护
 - [Mymail-Crypt for Gmail][4] 	简易电子邮件解决方案
@@ -28,7 +27,7 @@ via: http://www.linuxlinks.com/article/2013120707481589/EmailEncryption.html
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-[1]:http://www.enigmail.net/
-[2]:http://www.mailvelope.com/
-[3]:http://www.gnupg.org/
-[4]:https://chrome.google.com/webstore/detail/mymail-crypt-for-gmail/jcaobjhdnlpmopmjhijplpjhlplfkhba
+[1]:http://www.linuxlinks.com/article/20080722152918438/Enigmail.html
+[2]:http://www.linuxlinks.com/article/20131207142352926/Mailvelope.html
+[3]:http://www.linuxlinks.com/article/20080502162011504/GnuPG.html
+[4]:http://www.linuxlinks.com/article/20131207152244140/Mymail-Crypt-for-Gmail.html
