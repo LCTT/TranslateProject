@@ -39,4 +39,4 @@ via: http://news.softpedia.com/news/GNOME-s-File-Manager-Will-Be-More-User-Frien
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-[1]:http://afaikblog.wordpress.com/2013/12/11/nautilus-next/
+[1]:http://afaikblog.wordpress.com/2013/12/11/nautilus-next/ 
