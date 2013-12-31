@@ -1,3 +1,4 @@
+[bazz2 再来一篇，翻完吃饭]
 Daily Ubuntu Tips – Do Nothing When Laptop Lid Is Closed
 ================================================================================
 Ubuntu, a powerful and modern operation system is being used by millions of individual users and businesses around the world. From basic workstation to advanced engineering machines, Ubuntu is powering them all.
