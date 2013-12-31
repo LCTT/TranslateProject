@@ -1,3 +1,4 @@
+[翻译中] by KayGuoWhu
 New Ubuntu 14.04 Icons Are Drop-Dead Gorgeous, Might Not Arrive in Desktop Version
 ================================================================================
 **Canonical is preparing a facelift for the Ubuntu 14.04 LTS and the new icons that are being designed right now surpass anything that's been done before.**
