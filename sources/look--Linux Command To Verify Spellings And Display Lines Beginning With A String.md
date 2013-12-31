@@ -1,3 +1,6 @@
+Tranalating-------------------geekpi
+
+
 look : Linux Command To Verify Spellings And Display Lines Beginning With A String
 ================================================================================
 Have you ever felt the need of a command line utility in Linux through which you can verify spellings? A utility that can display lines in file which contain a particular string as a prefix? Well, in this article we will discuss the **look** command in Linux that is capable of doing both these tasks.
