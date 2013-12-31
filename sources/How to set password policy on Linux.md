@@ -1,3 +1,4 @@
+[bazz2, Hello PAM]
 How to set password policy on Linux
 ================================================================================
 User account management is one of the most critical jobs of system admins. In particular, password security should be considered the top concern for any secure Linux system. In this tutorial, I will describe **how to set password policy on Linux**.
