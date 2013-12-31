@@ -1,3 +1,4 @@
+translating by ailurus1991
 Understanding Linux cd Command with Examples
 ================================================================================
 The cd command is the most basic command in *nix world. What linux cd command does is it changes your current working directory. This article details about this command, what this command can do and the internals about the command.
