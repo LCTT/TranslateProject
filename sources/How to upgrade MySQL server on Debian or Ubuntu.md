@@ -1,3 +1,4 @@
+[bazz2 今天天气很好，朝北房间伤不起，手冷求温暖]
 How to upgrade MySQL server on Debian or Ubuntu
 ================================================================================
 One of routine tasks for system admins is to update installed programs with the latest patches and hotfixes, as well as upgrade software to a more recent release with new bells and whistles. The latest MySQL 5.6 was released early this year, targeting [better performance and scalability][1]. For those of you wanting to try out the latest bleeding edge MySQL, I will describe **how to upgrade MySQL server on Debian or Ubuntu**.
