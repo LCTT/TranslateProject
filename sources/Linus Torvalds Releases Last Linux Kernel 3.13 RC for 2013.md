@@ -1,3 +1,4 @@
+翻译中 by小眼儿
 Linus Torvalds Releases Last Linux Kernel 3.13 RC for 2013
 ================================================================================
 **Linus Torvalds has announced the immediate availability of the sixth Release Candidate in the 3.13 branch of the kernel.**
