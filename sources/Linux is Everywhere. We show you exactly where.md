@@ -1,3 +1,5 @@
+翻译中 by小眼儿
+
 Linux is Everywhere. We show you exactly where
 ================================================================================
 ![](http://www.linuxfederation.com/wp-content/uploads/2013/12/open-source-world.jpg)
