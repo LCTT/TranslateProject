@@ -1,3 +1,5 @@
+翻译 by Luox
+
 14 New Linux Distros That Were Introduced In 2013
 ================================================================================
 ![](http://www.efytimes.com/admin/useradmin/photo/TuxRoot.jpg)
