@@ -28,7 +28,7 @@
 
 使用 apt-get 卸载时不要用 purge 选项，这会删除 MySQL 配置文件和其它一些以后要用到的数据。
 
-步骤5： 安装 MySQL 依赖包（内核异步 IO 访问库），MySQL 5.5以后都依赖它。
+步骤5： 安装 MySQL 依赖包（内核异步 IO 访问库），MySQL 5.5以后都依赖它。 
 
     $ sudo apt-get install libaio1
 
