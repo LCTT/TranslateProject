@@ -28,7 +28,7 @@ Debian/Ubuntu系统中安装和配置UFW－简单的防火墙
 
 #### UFW 基本用法 ####
 
-首先，用如下命令来检查下系统上是否已经安装了 **UFW** 。
+首先，用如下命令来检查下系统上是否已经安装了 **UFW** 。 
 
     $ sudo dpkg --get-selections | grep ufw
 
