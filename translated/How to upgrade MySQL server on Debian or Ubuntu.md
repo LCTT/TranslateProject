@@ -1,6 +1,6 @@
 教你在 Debian 和 Ubuntu 上升级 MySQL
 ================================================================================
-系统管理员的一个日常任务就是升级服务，为服务打上补丁包或升级一些花哨的功能。今年早些时候，最新的 MySQL 5.6发布，目标是提供[更好的性能和扩展能力][1]。如果你对此有点兴趣，倒是可以看看我写的这篇 **如何在 Debian 和 Ubuntu 上升级 MySQL**。
+系统管理员的日常工作之一就是升级服务，为服务打上补丁包或升级一些花哨的功能。2013年初，最新的 MySQL 5.6发布，目标是提供[更好的性能和扩展能力][1]。如果你对此有点兴趣，倒是可以看看我写的这篇 **如何在 Debian 和 Ubuntu 上升级 MySQL**。
 
 在这篇教程中，我会假设你已经[通过 apt-get 安装了 MySQL][2]。写这篇文章的时候，大部分 Linux 发行版上部署的都是 MySQL 5.5。这里我将向你们介绍如何从 MySQL 5.5升级到5.6。
 
@@ -28,7 +28,7 @@
 
 使用 apt-get 卸载时不要用 purge 选项，这会删除 MySQL 配置文件和其它一些以后要用到的数据。
 
-步骤5： 安装 MySQL 依赖包（内核异步 IO 访问库），MySQL 5.5以后都依赖它。 
+步骤5： 安装 MySQL 依赖包（内核异步 IO 访问库），MySQL 5.5以及之后的版本都依赖它。 
 
     $ sudo apt-get install libaio1
 
@@ -106,9 +106,9 @@ Ubuntu 或 Linux Mint 上：
 
     $ sudo /opt/mysql/server-5.6/bin/mysql_upgrade -v -u root -p
 
-### 解决升级过程产生的问题 ###
+### 解决 MySQL 升级过程中产生的问题 ###
 
-如果 Ubuntu 下的 MySQL 服务启动时出现如下错误，就是 AppArmor 服务引起的问题。你需要更新 AppArmor 的配置文件，参考第11步。
+如果 Ubuntu 下的 MySQL 服务启动时出现如下错误，就是由于旧版 MySQL AppArmor 配置文件禁止其运行而引起。你需要参考步骤11来更新 AppArmor 的配置文件。
 
     Dec 20 19:57:48 ubuntu kernel: [ 5856.960592] type=1400 audit(1387598268.807:39): apparmor="STATUS" operation="profile_replace" name="/usr/sbin/mysqld" pid=25216 comm="apparmor_parser"
 
@@ -116,9 +116,9 @@ Ubuntu 或 Linux Mint 上：
 
 via: http://xmodulo.com/2013/12/upgrade-mysql-server-debian-ubuntu.html
 
-译者：[bazz2](https://github.com/bazz2) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[bazz2](https://github.com/bazz2) 校对：[Caroline](https://github.com/carolinewuyan)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[LCTT](http://linux.cn/) 荣誉推出
 
 [1]:http://dev.mysql.com/tech-resources/articles/whats-new-in-mysql-5.6.html
 [2]:http://xmodulo.com/2013/06/how-to-install-mysql-server-and-client-on-linux.html
