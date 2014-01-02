@@ -1,3 +1,5 @@
+yechunxiao19 翻译中
+
 Move Dropbox’s Folder To An External Drive In Ubuntu
 ================================================================================
 Few weeks ago we showed you how to [move Dropbox folder to an external drive using Microsoft Windows][1]. That tutorial was well received. The same can be done in Ubuntu for those who are using Ubuntu as their operating system.
