@@ -44,7 +44,7 @@ Netstat 是一款命令行工具，可用于列出系统上所有的网络套接
 
 ### 2. 只列出 TCP 或 UDP 协议的连接 ###
 
-使用 -t 选项列出 TCP 协议的连接：
+使用 **-t** 选项列出 TCP 协议的连接：
 
     $ netstat -at
     Active Internet connections (servers and established)
@@ -56,7 +56,7 @@ Netstat 是一款命令行工具，可用于列出系统上所有的网络套接
     tcp        0      0 enlightened.local:37892 ABTS-North-Static-:http ESTABLISHED
     .....
 
-使用 -u 选项列出 UDP 协议的连接：
+使用 **-u** 选项列出 UDP 协议的连接：
 
     $ netstat -au
     Active Internet connections (servers and established)
@@ -75,7 +75,7 @@ Netstat 是一款命令行工具，可用于列出系统上所有的网络套接
 
 ### 3. 禁用反向域名解析，加快查询速度 ###
 
-默认情况下 netstat 会通过反向域名解析技术查找每个 IP 地址对应的主机名。这会降低查找速度。如果你觉得 IP 地址已经足够，而没有必要知道主机名，就使用 -n 选项禁用域名解析功能。
+默认情况下 netstat 会通过反向域名解析技术查找每个 IP 地址对应的主机名。这会降低查找速度。如果你觉得 IP 地址已经足够，而没有必要知道主机名，就使用 **-n** 选项禁用域名解析功能。
 
     $ netstat -ant
     Active Internet connections (servers and established)
@@ -90,7 +90,7 @@ Netstat 是一款命令行工具，可用于列出系统上所有的网络套接
 
 ### 4. 只列出监听中的连接 ###
 
-任何网络服务的后台进程都会打开一个端口，用于监听接入的请求。这些正在监听的套接字也和连接的套接字一样，也能被 netstat 列出来。使用 -l 选项列出正在监听的套接字。
+任何网络服务的后台进程都会打开一个端口，用于监听接入的请求。这些正在监听的套接字也和连接的套接字一样，也能被 netstat 列出来。使用 **-l** 选项列出正在监听的套接字。
 
     $ netstat -tnl
     Active Internet connections (only servers)
@@ -99,14 +99,15 @@ Netstat 是一款命令行工具，可用于列出系统上所有的网络套接
     tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN     
     tcp6       0      0 ::1:631                 :::*                    LISTEN
 
-现在我们可以看到处于监听状态的 TCP 端口和连接。如果你查看所有监听端口，去掉 -t 选项。如果你只想查看 UDP 端口，使用 -u 选项，代替 -t 选项。
-注意：不要使用 -a 选项，否则 netstat 会列出所有连接，而不仅仅是监听端口。
+现在我们可以看到处于监听状态的 TCP 端口和连接。如果你查看所有监听端口，去掉 **-t** 选项。如果你只想查看 UDP 端口，使用 **-u** 选项，代替 **-t** 选项。
+
+注意：不要使用 **-a** 选项，否则 netstat 会列出所有连接，而不仅仅是监听端口。
 
 ### 5. 获取进程名、进程号以及用户 ID ###
 
 查看端口和连接的信息时，能查看到它们对应的进程名和进程号对系统管理员来说是非常有帮助的。举个栗子，Apache 的 httpd 服务开启80端口，如果你要查看 http 服务是否已经启动，或者 http 服务是由 apache 还是 nginx 启动的，这时候你可以看看进程名。
 
-使用 -p 选项查看进程信息。
+使用 **-p** 选项查看进程信息。
 
     ~$ sudo netstat -nlpt
     Active Internet connections (only servers)
@@ -115,9 +116,9 @@ Netstat 是一款命令行工具，可用于列出系统上所有的网络套接
     tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN      661/cupsd       
     tcp6       0      0 ::1:631                 :::*                    LISTEN      661/cupsd
 
-使用 -p 选项时，netstat 必须运行在 root 权限之下，不然它就不能得到运行在 root 权限下的进程名，而很多服务包括 http 和 ftp 都运行在 root 权限之下。
+使用 **-p** 选项时，netstat 必须运行在 root 权限之下，不然它就不能得到运行在 root 权限下的进程名，而很多服务包括 http 和 ftp 都运行在 root 权限之下。
 
-相比进程名和进程号而言，查看进程的拥有者会更有用。使用 -ep 选项可以同时查看进程名和用户名。
+相比进程名和进程号而言，查看进程的拥有者会更有用。使用 **-ep** 选项可以同时查看进程名和用户名。
 
     $ sudo netstat -ltpe
     Active Internet connections (only servers)
@@ -127,9 +128,10 @@ Netstat 是一款命令行工具，可用于列出系统上所有的网络套接
     tcp6       0      0 ip6-localhost:ipp       [::]:*                  LISTEN      root       9754        661/cupsd
 
 上面列出 TCP 协议下的监听套接字，同时显示进程信息和一些额外信息。
+
 这些额外的信息包括用户名和进程的索引节点号。这个命令对网管来说很有用。
 
-**注意** - 假如你将 -n 和 -e 选项一起使用，User 列的属性就是用户的 ID 号，而不是用户名。
+**注意** - 假如你将 **-n** 和 **-e** 选项一起使用，User 列的属性就是用户的 ID 号，而不是用户名。
 
 ### 6. 打印统计数据 ###
 
@@ -156,11 +158,11 @@ netstat 可以打印出网络统计数据，包括某个协议下的收发包数
             destination unreachable: 125
     ... OUTPUT TRUNCATED ...
 
-如果想只打印出 TCP 或 UDP 协议的统计数据，只要加上对应的选项（-t 和 -u）即可，so easy。
+如果想只打印出 TCP 或 UDP 协议的统计数据，只要加上对应的选项（**-t** 和 **-u**）即可，so easy。
 
 ### 7. 显示内核路由信息 ###
 
-使用 -r 选项打印内核路由信息。打印出来的信息与 route 命令输出的信息一样。我们也可以使用 -n 选项禁止域名解析。
+使用 **-r** 选项打印内核路由信息。打印出来的信息与 route 命令输出的信息一样。我们也可以使用 **-n** 选项禁止域名解析。
 
     $ netstat -rn
     Kernel IP routing table
@@ -170,7 +172,7 @@ netstat 可以打印出网络统计数据，包括某个协议下的收发包数
 
 ### 8. 打印网络接口 ###
 
-netstat 也能打印网络接口信息，-i 选项就是为这个功能而生。
+netstat 也能打印网络接口信息，**-i** 选项就是为这个功能而生。
 
     $ netstat -i
     Kernel Interface table
@@ -178,7 +180,7 @@ netstat 也能打印网络接口信息，-i 选项就是为这个功能而生。
     eth0       1500 0     31611      0      0 0         27503      0      0      0 BMRU
     lo        65536 0      2913      0      0 0          2913      0      0      0 LRU
 
-上面输出的信息比较原始。我们将 -e 选项和 -i 选项搭配使用，可以输出用户友好的信息。
+上面输出的信息比较原始。我们将 **-e** 选项和 **-i** 选项搭配使用，可以输出用户友好的信息。
 
     $ netstat -ie
     Kernel Interface table
@@ -205,7 +207,7 @@ netstat 也能打印网络接口信息，-i 选项就是为这个功能而生。
 
 ### 9. netstat 持续输出 ###
 
-我们可以使用 netstat 的 -c 选项持续输出信息。
+我们可以使用 netstat 的 **-c** 选项持续输出信息。
 
     $ netstat -ct
 
@@ -213,7 +215,7 @@ netstat 也能打印网络接口信息，-i 选项就是为这个功能而生。
 
 ### 10. 显示多播组信息 ###
 
-选项 -g 会输出 IPv4 和 IPv6 的多播组信息。
+选项 **-g** 会输出 IPv4 和 IPv6 的多播组信息。
 
     $ netstat -g
     IPv6/IPv4 Group Memberships
@@ -272,19 +274,8 @@ active 状态的套接字连接用 "ESTABLISHED" 字段表示，所以我们可�
 
 via: http://www.binarytides.com/linux-netstat-command-examples/
 
-译者：[bazz2](https://github.com/bazz2) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[bazz2](https://github.com/bazz2) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-[1]:
-[2]:
-[3]:
-[4]:
-[5]:
-[6]:
-[7]:
-[8]:
-[9]:
-[10]:
-[11]:
-[12]:
+
