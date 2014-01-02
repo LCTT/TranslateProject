@@ -35,7 +35,7 @@
 如果你是 root 用户，你可以通过使用波浪号加任何一个用户名来切换到该用户的 home 目录下。在一些 Linux 发行版中，没有特权的用户默认是没有权限访问其他用户的 home 目录的。
 ![](http://linoxide.com/wp-content/uploads/2013/12/09.cd_home_user.png)
 
-再来看，*.* 目录代表的是当前目录，而 *..* 代表的是上级目录。所以我们可以使用 *..* 来回到上级目录。
+再来看，. 目录代表的是当前目录，而 .. 代表的是上级目录。所以我们可以使用 .. 来回到上级目录。
 ![](http://linoxide.com/wp-content/uploads/2013/12/10.cd_parent.png)
 
 大部分情况下，. 是不会改变你的 PWD。举例来看：
@@ -53,7 +53,7 @@ Changing PWD with absolute path:
 ![](http://linoxide.com/wp-content/uploads/2013/12/14cd_rel_path.png)
 
 我们可以在两个目录切换：
-*cd -* 命令可以返回上一次的工作目录，我们可以使用它在两个不同的目录中快速切换。
+cd - 命令可以返回上一次的工作目录，我们可以使用它在两个不同的目录中快速切换。
 ![](http://linoxide.com/wp-content/uploads/2013/12/15.cd_toggle.png)
 
 我们上一次的工作目录会被储存在 OLDPWD 这个变量中。但是如果你在一个新开启的终端中来使用的话，会报出下面的错误：
@@ -65,7 +65,7 @@ Changing PWD with absolute path:
 比如，不妨使用 *?* 这个万能药：
 ![](http://linoxide.com/wp-content/uploads/2013/12/17.cd_question_mark_wild_card.png)
 
-使用 ***：
+使用 *：
 ![](http://linoxide.com/wp-content/uploads/2013/12/18.cd_star_wild_card.png)
 
 --------------------------------------------------------------------------------
