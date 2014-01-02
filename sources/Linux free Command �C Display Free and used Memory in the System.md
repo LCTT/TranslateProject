@@ -1,3 +1,7 @@
+Translating---------------------geekpi
+
+
+
 Linux free Command – Display Free and used Memory in the System
 ================================================================================
 System administrator must maintain the health of their server. One of the critical component is memory. When server memory is full utilized, it can slow down the server performance. To monitor memory utilization, Linux have another command that called free.
