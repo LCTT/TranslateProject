@@ -1,20 +1,18 @@
-Ubuntu Stores Your Wi-Fi Passwords By Default!
+Ubuntu默认存储你的Wi-Fi密码!
 ================================================================================
 
-### Akagi201 is TRANSLATING
+Ubuntu可能不像你想象的那么安全．据报道，Linux驱动的发行版在home目录外存储Wi-Fi配置文件，这使得它们更易于被访问。这包括Wi-Fi配置文件的密码。报道说，一个用户指出，Wi-Fi密码在Ubuntu上是不加密的，因为它们都存储在home目录之外。此文件夹虽然可以在操作系统的安装过程中进行加密。
 
-Ubuntu is not as secure as you perhaps thought it to be. According to reports, the Linux-driven distribution stores its Wi-Fi profiles outside its home folder, which makes them more accessible. This includes passwords for the Wi-Fi profiles. Reports say that a user pointed out that Wi-Fi passwords on Ubuntu aren’t encrypted as they are stored outside the Home folder. This folder though can be encrypted during the OS’ installation.
+"最近，我偶然发现了一个事实，NetworkManager默认存储WiFi配置文件*包括明文密码*到/etc/NetworkManager/system-connections/.我认为这不是用户所期​​望的，当他/她开启了home目录加密，正因为如此，应该以某种方式纠正." - Softpedia引用邮件列表中Per Guth的话。
 
-“I recently stumbled over the fact, that NetworkManager by default stores Wifi profiles *including clear text passwords* under ‘/etc/NetworkManager/system-connections/.’ I think that is not what one expects when he/she turns on home folder encryption and should because of that be corrected somehow,” Softpedia quoted user Per Guth from a mailing list.
+这个问题显然是为了让“所有用户都可以连接到这个网络”，即默认情况下启用该选项的结果。为了关掉此功能，用户必须打开Network Indicator，然后去Edit Connection。然后选择在Edit上的Select Network and clock。在General选项卡，取消勾选，以将其关闭。
 
-The issue is apparently a result of “All users may connect to this network”, the option that is enabled by default. In order to switch this feature off, users have to open the Network Indicator and go to Edit Connections. Then choose Select Network and clock on Edit. In the General tab here, untick the option in order to switch it off.
-
-Unchecking the option reportedly moves the password into the required folder, but the Softpedia report speculated that majority of the users won’t be aware of this issue. Whether Canonical will make any changes to this or not remains to be seen. 
+取消选中该选项据说会移动密码进入所需的文件夹，但Softpedia报告推测，大多数用户不会注意到这个问题。Canonical是否会进行任何更改，还有待观察。
 
 --------------------------------------------------------------------------------
 
 via: http://www.efytimes.com/e1/fullnews.asp?edid=125483
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Akagi201](https://github.com/Akagi201) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
