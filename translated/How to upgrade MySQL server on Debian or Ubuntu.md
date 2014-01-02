@@ -118,7 +118,7 @@ via: http://xmodulo.com/2013/12/upgrade-mysql-server-debian-ubuntu.html
 
 译者：[bazz2](https://github.com/bazz2) 校对：[Caroline](https://github.com/carolinewuyan)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[LCTT](http://linux.cn/) 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [1]:http://dev.mysql.com/tech-resources/articles/whats-new-in-mysql-5.6.html
 [2]:http://xmodulo.com/2013/06/how-to-install-mysql-server-and-client-on-linux.html
