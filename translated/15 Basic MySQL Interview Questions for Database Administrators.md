@@ -27,7 +27,7 @@
 
     Threads: 1  Questions: 112138  Slow queries: 1  Opens: 1485  Flush tables: 1  Open tables: 64  Queries per second avg: 22.567.
 
-### 问题2：如何关闭或开启 MySQL 服务？ ###
+### 问题2：如何关闭或开启 MySQL 服务？ ### 
 
 >  **答案**：运行命令 **service mysqld start;** 开启服务；运行命令 **service mysqld stop** 停止服务。
 
