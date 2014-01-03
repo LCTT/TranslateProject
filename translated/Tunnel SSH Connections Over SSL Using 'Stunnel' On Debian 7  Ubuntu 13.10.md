@@ -1,36 +1,32 @@
-Translating---------------geekpi
-
-
-
-Tunnel SSH Connections Over SSL Using ‘Stunnel’ On Debian 7 / Ubuntu 13.10
+在Debian 7/Ubuntu 13.10 使用SSH隧道链接
 ================================================================================
-**stunnel** is designed to work as an SSL encryption wrapper between remote client and local (inetd-startable) or remote server. It can be used to add SSL functionality to commonly used inetd daemons like POP2, POP3, and IMAP servers without any changes in the programs code. Stunnel uses the OpenSSL library for cryptography, so it supports whatever cryptographic algorithms are compiled into the library. In simple words, stunnel can be used to turn any insecure port to a secure encrypted port.
+**隧道** 被设计用于远端和本地(inetd-startable)或远端服务器间的SSL加密封装。它被用于加入SSL功能作为超级守护进程，像POP2，POP3和IMAP服务而不必改变程序代码。隧道使用OpenSSL库用于加密，因此它支持任何被编译进库的加密算法。简而言之，隧道可以使任何一个不安全的端口变得安全加密。
 
-In this tutorial, i will describe how to tunnel SSH over SSL using stunnel. The setup is pretty simple. You’ll need stunnel installed on both your client PC and a remote PC with sshd already running.
+在本篇中，我会描述如何通过SSL使用SSH隧道。这个步骤非常简单。你需要在你的客户端PC和远程PC都已经安装运行了sshd。
 
-I am using two systems as mentioned below.
+我正在使用下面提到的两个系统。
 
-Remote System:
+远程系统:
 
-    Operating System: Debian 7
-    IP address: 192.168.1.200/24
+    操作系统: Debian 7
+    IP 地址: 192.168.1.200/24
 
-Client(Local) System:
+客户端(本地) 系统:
 
-    Operating system: Ubuntu 13.04 desktop
-    IP address: 192.168.1.100/24
+    操作系统: Ubuntu 13.04 desktop
+    IP 地址: 192.168.1.100/24
 
-#### Configure Remote System ####
+#### 配置远程系统 ####
 
-Let us install stunnel package in our remote Debian 7 server.
+让我们在远程Debian 7服务器上安装stunnel包。
 
     # apt-get install stunnel4
 
-Now let us create a SSL certificate as shown below.
+现在让我们像下面那样创建一个SSL证书。
 
     # openssl genrsa 1024 > stunnel.key
 
-Sample output:
+示例输出:
 
     Generating RSA private key, 1024 bit long modulus
     ............................................++++++
@@ -39,7 +35,7 @@ Sample output:
 
     # openssl req -new -key stunnel.key -x509 -days 1000 -out stunnel.crt
 
-You will be asked to answer for a couple of questions such as Country, State, company details etc.
+你会被询问若干个问题如国家、州、公司细节等。
 
     You are about to be asked to enter information that will be incorporated
     into your certificate request.
@@ -59,11 +55,11 @@ You will be asked to answer for a couple of questions such as Country, State, co
     # cat stunnel.crt stunnel.key > stunnel.pem
     # mv stunnel.pem /etc/stunnel/
 
-Now we have to configure stunnel to tunnel **443(https)** to **22(ssh)**. This can be done by creating a new file **stunnel.conf** under **/etc/stunnel/** directory:
+现在我们需要配置stunnel来将 **443(https)**隧道到**22(ssh)**。这可以通过在**/etc/stunnel/**目录下创建**stunnel.conf**文件来实现：
 
      # vi /etc/stunnel/stunnel.conf
 
-Add the following lines:
+并加入下面的行:
 
     pid = /var/run/stunnel.pid
     cert = /etc/stunnel/stunnel.pem
@@ -71,15 +67,15 @@ Add the following lines:
     accept = 192.168.1.200:443
     connect = 127.0.0.1:22
 
-The above lines says stunnel that where to look for the certificate file and where to accept and forward ssh connections. In our case, stunnel will accept the incoming traffic on port 443 and forward it back to port 22.
+上面的几行说明了stunnel在哪里寻找证书文件和哪里接收和转发ssh链接。在本例中，stunnel会接收来自443端口的流量并会转发给22端口。
 
-Save and close the file.
+保存并关闭文件。
 
-Now let us enable stunnel service. To do that, edit file **/etc/default/stunnel4**:
+现在让我们启用stunnel服务。要这么做，编辑文件 **/etc/default/stunnel4**:
 
     # vi /etc/default/stunnel4
 
-Change the line **Enabled = 0** to **1**.
+改变行从 **Enabled = 0** 到 **1**。
 
     # /etc/default/stunnel
     # Julien LEMOINE <speedblue@debian.org>
@@ -93,23 +89,23 @@ Change the line **Enabled = 0** to **1**.
     # Change to one to enable ppp restart scripts
     PPP_RESTART=0
 
-Then start stunnel service with command:
+接着使用命令启用stunnel服务:
 
     # service stunnel4 start
 
-#### Configure Local System ####
+#### 配置本地系统 ####
 
-Install stunnel with command:
+用这个命令安装stunnel:
 
     $ sudo apt-get install stunnel4
 
-We need the same certificate file(stunnel.pem) from the remote system. Copy the remote system **stunnel.pem** file to our local system and save it in the same location(i.e /etc/stunnel).
+我们需要远程系统上相同的证书文件(stunnel.pem)。复制远程系统上的 **stunnel.pem**文件到我们本地系统中并在相同的位置保存(也就是 /etc/stunnel)。
 
-creating a new file **stunnel.conf** under **/etc/stunnel/** directory:
+在 **/etc/stunnel/**目录下创建新的文件**stunnel.conf**：
 
     $ sudo vi /etc/stunnel/stunnel.conf
 
-Add the following lines:
+加入下面的行:
 
     pid = /var/run/stunnel.pid
     cert = /etc/stunnel/stunnel.pem
@@ -118,13 +114,13 @@ Add the following lines:
     accept=443
     connect=192.168.1.200:443
 
-Save and close the file. Here 192.168.1.200 is our remote system IP.
+保存并关闭文件。这里的192.168.1.200是我们的远程系统IP。
 
-Now let us enable stunnel service. To do that, edit file **/etc/default/stunnel4**:
+现在让我们启用stunnel服务。要这么做，编辑文件**/etc/default/stunnel4**:
 
     $ sudo vi /etc/default/stunnel4
 
-Change the line **Enabled = 0** to **1**.
+改变行从 **Enabled = 0** 到 **1**.
 
     # /etc/default/stunnel
     # Julien LEMOINE <speedblue@debian.org>
@@ -138,17 +134,17 @@ Change the line **Enabled = 0** to **1**.
     # Change to one to enable ppp restart scripts
     PPP_RESTART=0
 
-Then start stunnel service with command:
+接着使用命令启用stunnel服务:
 
     $ sudo service stunnel4 start
 
-#### Test SSH connection ####
+#### 测试SSH连接 ####
 
-Now we’re good to go. You’ll be able to connect to your remote machine using command:
+现在这样已经很好了，你可以使用命令连接到你的远程机器上了：
 
     $ ssh sk@localhost -v -p 443
 
-Sample output:
+示例输出:
 
     OpenSSH_6.1p1 Debian-4, OpenSSL 1.0.1c 10 May 2012
     debug1: Reading configuration data /etc/ssh/ssh_config
@@ -216,11 +212,11 @@ Sample output:
     Last login: Mon Dec 30 15:12:22 2013 from localhost
     sk@server:~$
 
-Or you can simply use the command:
+或者你可以简单地使用下面的命令:
 
     $ ssh -p 443 sk@localhost
 
-Sample output:
+示例输出:
 
     sk@localhost's password: 
     Linux server 3.2.0-4-486 #1 Debian 3.2.51-1 i686
@@ -235,19 +231,20 @@ Sample output:
     Last login: Mon Dec 30 15:22:08 2013 from localhost
     sk@server:~$
 
-Now you’ll be able to make ssh connection to your remote system, but all the traffic tunneled through SSL.
+现在你可以用ssh连接到你的远程机器上了，但是所有的流量通过SSL隧道。
 
 You’re done now! You can SSH to your remote system even when the ssh default 22 is blocked by any firewall.
+你已经完成了！你可以使用SSH到你的远程系统即使ssh的默认端口被防火墙阻止了。
 
-Reference Links:
+参考链接:
 
-- **[stunnel homepage][1]**
+- **[stunnel 主页][1]**
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/tunnel-ssh-connections-ssl-using-stunnel-debian-7-ubuntu-13-10/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
