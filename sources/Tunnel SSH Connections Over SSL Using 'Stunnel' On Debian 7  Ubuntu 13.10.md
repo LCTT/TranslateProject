@@ -1,3 +1,7 @@
+Translating---------------geekpi
+
+
+
 Tunnel SSH Connections Over SSL Using ‘Stunnel’ On Debian 7 / Ubuntu 13.10
 ================================================================================
 **stunnel** is designed to work as an SSL encryption wrapper between remote client and local (inetd-startable) or remote server. It can be used to add SSL functionality to commonly used inetd daemons like POP2, POP3, and IMAP servers without any changes in the programs code. Stunnel uses the OpenSSL library for cryptography, so it supports whatever cryptographic algorithms are compiled into the library. In simple words, stunnel can be used to turn any insecure port to a secure encrypted port.
