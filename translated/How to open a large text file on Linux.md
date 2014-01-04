@@ -6,98 +6,98 @@ Linux 中如何打开一个大文本文件
 
 ### Vim 的 LargeFile 插件 ###
 
-Vim text editor boasts of various plugins (or scripts) which can extend Vim's functionality. One such Vim plugin is [LargeFile plugin][1].
+文本编辑器拥有大量的插件（或脚本），它们能扩展 VIM 的功能。其中的一个是 [LargeFile plugin][1].Vim。
 
-The LargeFile plugin allows you to load and edit large files more quickly, by turning off several Vim features such as events, undo, syntax highlighting, etc.
+LargeFile 插件可以使大文件更迅速的被加载和编辑，它是通过关闭 VIM 的一些像事件、回退、语法高亮等功能来实现的。
 
-To install the LargeFile plugin on Vim, first make sure that you have Vim installed.
+要在 VIM 上安装 LargeFile 插件，首先要确认是否已经安装 VIM。
 
-On Debian, Ubuntu or Linux Mint:
+在 Debian、 Ubuntu 或 Linux Mint 系统中:
 
     $ sudo apt-get install vim 
 
-On Fedora, CentOS or RHEL:
+在 Fedora、CentOS 或 RHEL 系统中:
 
     $ sudo yum install vim-enhanced 
 
-Then download the LargFile plugin from [Vim website][2]. The latest version of the plugin is 5, and it will be saved in Vimball format (.vba extension).
+可以从 [Vim website][2] 上下载 LargFile 插件，最新版本号是5，下载的文件将会保存为 Vimball 格式（以 .vba 结尾）。
 
-To install the plugin in your home directory, you can open the .vba file with Vim as follows.
+要在你的 home 目录下安装插件，如下所示用 VIM 打开 .vba 文件。
 
     $ gunzip LargeFile.vba.gz
     $ vim LargeFile.vba 
 
-Enter ":so %" and press ENTER within Vim window to install the plugin in your home directory.
+在 VIM 窗体上输入 “:so %”，然后按回车键，就可以在你的 home 目录下安装这个插件了。
 
 [![](http://farm3.staticflickr.com/2805/11313669824_335e73ebb8_z.jpg)][3]
 
-After this, enter ":q" to quit Vim.
+完成后，输入 “:q” 退出 VIM。
 
-The plugin will be installed at ~/.vim/plugin/LargeFile.vim. Now you can start using Vim as usual.
+这个插件将会被安装在 ~/.vim/plugin/LargeFile.vim 下。现在可以像平常一样使用 VIM 了。
 
-What this plugin does is to turn off events, undo, syntax highlighting, etc. when a "large" file is loaded on Vim. By default, files bigger than 100MB are considered "large" by the plugin. To change this setting, you can edit ~/.vimrc file (create one if it does not exist).
+当在 VIM 中装载一个“大”文件的时候，这个插件起的作用就是关掉事件、回退、语法高亮等功能。默认情况下大于 100MB 的文件就会被插件认为是“大文件”。要改变也个默认设置，你可以编辑 ~/.vimrc 文件（如果不存在就创建一个）。
 
-To change the minimum size of large files to 10MB, add the following entry to ~/.vimrc.
+如要把大文件的标准最小定为 10MB 的话，可以在 ~/.vimrc 中添加
 
 > let g:LargeFile=10
 
-While the LargeFile plugin can help you speed up file loading, Vim itself still cannot handle editing an extremely large file very well, because it tries to load the entire file in memory. For example, when a 1GB file is loaded on Vim, it takes as much memory and swap space, as shown in the top output below.
+虽然 LargeFile 可以加速文件装载的速度，但 VIM 自身对编辑相当大的文件支持不太好，因为它会一下子把整个文件都加载进内存。例如，用 VIM 装载 1G　大小的文件，它就会占很多内存和交换空间，如下图所示的顶部输出。
 
-So if your files are significantly bigger than the physical memory of your Linux system, you can consider other options, as explained below.
+所以如果你的文件明显大于你 Linux 系统的物理内存的话，就要考虑其它的选择，如下所述。
 
-### glogg Log Explorer ###
+### glogg 日志资源管理器 ###
 
-If all you need is "read-only" access to a text file, and you don't have to edit it, you can consider [glogg][4], which is a GUI-based standalone log analyzer. The glogg analyzer supports filtered views of an input text file, based on extended regular expressions and wildcards.
+如果你只需要查看一个文本文件，并不会对它做编辑，可以考虑下　[glogg][4]。它是一款基于图形用户界面的独立日志分析器。该　glogg　分析器支持通过正则表达式和通配符来对要打开的文本文件进行过滤和筛选，使用户只看到其真正关注的内容。
 
-To install glogg on Debian (Wheezy and higher), Ubuntu or Linux Mint:
+在 Debian (Wheezy 版本或更高版本)、Ubuntu 或 Linux Mint 系统中安装 glogg :　
 
     $ sudo apt-get install glogg 
 
-To install glogg on Fedora (17 or higher):
+在 Fedora (17 版本或更高版本)　系统中安装 glogg :
 
     $ sudo yum install glogg 
 
-To open a text file with glogg:
+用 glogg 打开文本文件 :
 
     $ glogg test.log 
 
-glogg can open a large text file pretty fast. It took me around 12 seconds to open a 1GB log file.
+glogg 能很快的打开一个大文本文件。我花了大约 12 秒就打开了一个 1G 的日志文件。
 
 [![](http://farm8.staticflickr.com/7354/11313640286_4ebee2b959_z.jpg)][5]
 
-You can enter a regular expression in the "Text" field, and press "Search" button. It supports case-insensitive search and auto-refresh features. After searching, you will see a filtered view at the bottom window.
+在 "Text" 区域，你可以输入正则表达式，然后点击 "Search" 按纽，它支持表达式大小写敏感搜索以及自动刷新功能。搜索后，在窗体底部会显示出筛选的结果内容。
 
-Compared to Vim, glogg is much more lightweight after a file is loaded. It was using only 83MB of physical memory after loading a 1GB log file.
+从装载文件来跟 VIM 对比， glogg　显得更轻量级，在加载完一个 1G 的日志文件后，它仅仅只使用了 83M 的物理内存。
 
 [![](http://farm3.staticflickr.com/2851/11313594455_d57c700c4b_z.jpg)][6]
 
-### JOE Text Editor ###
+### JOE 文体编辑器 ###
 
-[JOE][7] is a light-weight terminal based text editor released under GPL. JOE is one of few text editors with large file support, allows opening and editing files larger than memory.
+[JOE][7] 是GPL下发布一个轻量级的基于终端的文本编辑器。JOE 是一款支持大文件，可以打开和编辑比物理内存大的文件的文本编辑器。
 
-Besides, JOE supports various powerful text editing features, such as non-destructive editing, search and replace with regular expression, unlimited undo/redo, syntax highlighting, etc.
+此外，JOE支持各种功能强大的文本编辑功能，如非破坏性编辑，用正则表达式搜索和替换，无限次的撤销/重做，语法高亮等。
 
-To install JOE on Debian, Ubuntu or Linux Mint:
+在 Debian、Ubuntu 或 Linux Mint 系统中安装 JOE:
 
     $ sudo apt-get install joe 
 
-To install JOE on Fedora, CentOS or RHEL:
+在 Fedora、CentOS 或 RHEL 系统中安装 JOE:
 
     $ sudo yum install joe 
 
-To open a text file for editing, run:
+要打开编辑文本文件，请运行:
 
     $ joe test.log 
 
 [![](http://farm4.staticflickr.com/3684/11317402126_406058bf78_z.jpg)][8]
 
-Loading a large file on JOE is a little bit sluggish, compared to glogg above. It took around 30 seconds to load a 1GB file. Still, that's not too bad, considering that a file is fully editable now. Once a file is loaded, you can start editing a file in terminal mode, which is quite fast.
+相比上面提到的 glogg 来说，用 JOE 加载一个大文本文件会有点卡，加载一个 1G 的文件要用将近 30 秒的时间，不过考虑到要对文件进行全文编辑，这还能忍受。一旦文件加载完成，就可以在相当快捷的终端模式中编辑此文件。
 
 The memory consumption of JOE is impressive. To load and edit a 1GB text file, it only takes 47MB of physical memory.
 
 [![](http://farm4.staticflickr.com/3728/11317483233_2017b5878b_z.jpg)][9]
 
-If you know any other way to open/edit a large text file on Linux, share your knowledge!
+如果你还知道在 Linux 中打开/编辑大文本文件的其它方法的话，请跟我们分享！
 
 --------------------------------------------------------------------------------
 
