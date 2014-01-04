@@ -3,7 +3,7 @@
 
 LCTT是Linux中国社区（[http://linux.cn/]()）的翻译组，负责从国外优秀媒体翻译Linux相关的技术、资讯、杂文等内容。
 
-LCTT已经拥有十余名活跃成员，并欢迎更多的Linux志愿者加入我们的团队。
+LCTT已经拥有三十余名活跃成员，并欢迎更多的Linux志愿者加入我们的团队。
 
 LCTT的组成
 -------------------------------
@@ -20,7 +20,7 @@ LCTT的组成
 加入我们
 -------------------------------
 
-请首先加入翻译组的QQ群，群号是：131864150，加群时请说明是志愿者。
+请首先加入翻译组的QQ群，群号是：131864150，加群时请说明是志愿者。加入后记得修改您的群名片为您的github的ID。
 
 加入的成员，请先阅读[WIKI 如何开始](https://github.com/LCTT/TranslateProject/wiki/01-如何开始)。
 
@@ -33,32 +33,40 @@ LCTT的组成
 -------------------------------
 
 目前活跃成员有：
-[wxy](https://github.com/wxy),
-[carolinewuyan](https://github.com/carolinewuyan),
-[tinyeyeser](https://github.com/tinyeyeser),
-[vito-L](https://github.com/vito-L),
-[DeadFire](https://github.com/DeadFire),
-[flsf](https://github.com/flsf),
-[jasminepeng](https://github.com/jasminepeng),
-[luoxcat](https://github.com/Luoxcat),
-[woodboow](https://github.com/woodboow),
-[geekpi](https://github.com/geekpi),
-[runningwater](https://github.com/runningwater),
-[Linux-pdz](https://github.com/Linux-pdz),
-[bazz2](https://github.com/bazz2),
-[theo-l](https://github.com/theo-l),
-[scusjs](https://github.com/scusjs),
-[Linchenguang](https://github.com/Linchenguang),
-[Vic020](https://github.com/Vic020),
-[l3b2w1](https://github.com/l3b2w1),
-[crowner](https://github.com/crowner),
-[boredivan](https://github.com/boredivan),
-[rogetfan](https://github.com/rogetfan),
-[willqian](https://github.com/willqian),
-[Maclauring](https://github.com/Maclauring),
-[small-Wood](https://github.com/small-Wood),
-[lijhg](https://github.com/lijhg),
-（更新于2013/11/13）
+- CORE [wxy](https://github.com/wxy),
+- CORE [carolinewuyan](https://github.com/carolinewuyan),
+- CORE [DeadFire](https://github.com/DeadFire),
+- CORE [tinyeyeser](https://github.com/tinyeyeser),
+- CORE [geekpi](https://github.com/geekpi),
+- CORE [vito-L](https://github.com/vito-L),
+- CORE [jasminepeng](https://github.com/jasminepeng),
+- [luoxcat](https://github.com/Luoxcat),
+- [flsf](https://github.com/flsf),
+- [runningwater](https://github.com/runningwater),
+- [Linux-pdz](https://github.com/Linux-pdz),
+- [woodboow](https://github.com/woodboow),
+- [bazz2](https://github.com/bazz2),
+- [Vic020](https://github.com/Vic020),
+- [crowner](https://github.com/crowner),
+- [KayGuoWhu](https://github.com/KayGuoWhu),
+- [scusjs](https://github.com/scusjs),
+- [Linchenguang](https://github.com/Linchenguang),
+- [theo-l](https://github.com/theo-l),
+- [l3b2w1](https://github.com/l3b2w1),
+- [hyaocuk](https://github.com/hyaocuk),
+- [boredivan](https://github.com/boredivan),
+- [NearTan](https://github.com/NearTan),
+- [rogetfan](https://github.com/rogetfan),
+- [whatever1992](https://github.com/whatever1992),
+- [icybreaker](https://github.com/icybreaker),
+- [ailurus1991](https://github.com/ailurus1991),
+- [Maclauring](https://github.com/Maclauring),
+- [small-Wood](https://github.com/small-Wood),
+- [willqian](https://github.com/willqian),
+- [stduolc](https://github.com/stduolc),
+- [SteveArcher](https://github.com/SteveArcher),
+- [lijhg](https://github.com/lijhg),
+（更新于2014/1/2）
 
 谢谢大家的支持！
 
@@ -73,3 +81,4 @@ LCTT的组成
 * 2013/10/12 取消对LINUX.CN注册用户的依赖，在QQ群内、文章内都采用github的注册ID。
 * 2013/10/18 正式启动man翻译计划。
 * 2013/11/10 举行第一次北京线下聚会。
+* 2014/01/02 增加了Core Translators 成员: geekpi。

@@ -1,13 +1,14 @@
-[bazz2 咩哈哈哈哈哈]
-15 Basic MySQL Interview Questions for Database Administrators
+15个 MySQL 基础面试题，DBA 准备好了吗？
 ================================================================================
-Prior to This Article, three articles has already been published in ‘[Linux Interview][1]‘ Section and all of them were highly appreciated by our notable readers, however we were receiving feedback to make this interactive learning process, section-wise. From idea to action, we are providing you **15 MySQL Interview Questions**.
+
+此前我们已经有发表过[Linux 面试基础问答]共3篇文章，获得读者的好评，同时我们得到反馈，有些读者希望这种交互式学习方法能够做得更加灵活。心动不如行动，我们这就为您奉上**15道 MySQL 面试题**
 
 ![](http://www.tecmint.com/wp-content/uploads/2013/12/Mysql-Interview-Questions.png)
 
-### 1. How would you check if MySql service is running or not? ###
 
-> **Answer** : Issue the command “**service mysql status**” in ‘Debian’ and “**service mysqld status**” in RedHat. Check the output, and all done.
+### 问题1：你如何确定 MySQL 是否处于运行状态？ ###
+
+> **答案**： Debian 上运行命令 **service mysql status;**；RedHat 上运行命令 **service mysqld status;**。然后看看输出即可。
 
     root@localhost:/home/avi# service mysql status
 
@@ -26,9 +27,9 @@ Prior to This Article, three articles has already been published in ‘[Linux In
 
     Threads: 1  Questions: 112138  Slow queries: 1  Opens: 1485  Flush tables: 1  Open tables: 64  Queries per second avg: 22.567.
 
-### 2. If the service is running/stop how would you stop/start the service? ###
+### 问题2：如何关闭或开启 MySQL 服务？ ### 
 
-> **Answer** : To start MySql service use command as **service mysqld start** and to stop use **service mysqld stop**.
+>  **答案**：运行命令 **service mysqld start;** 开启服务；运行命令 **service mysqld stop** 停止服务。
 
     root@localhost:/home/avi# service mysql stop
 
@@ -40,9 +41,9 @@ Prior to This Article, three articles has already been published in ‘[Linux In
 
     Checking for corrupt, not cleanly closed and upgrade needing tables..
 
-### 3. How will you login to MySQL from Linux Shell? ###
+### 问题3：如何通过 Shell 登入 MySQL？ ###
 
-> **Answer** : To connect or login to MySQL service, use command: **mysql -u root -p**.
+>  **答案**：运行命令 **mysql -u root -p;**
 
     root@localhost:/home/avi# mysql -u root -p 
     Enter password: 
@@ -60,9 +61,9 @@ Prior to This Article, three articles has already been published in ‘[Linux In
 
     mysql>
 
-### 4. How will you obtain list of all the databases? ###
+### 问题4：如何列出所有数据库？ ###
 
-> **Answer** : To list all currently running databases run the command on mysql shell as: **show databases**;
+>  **答案**：运行命令 **show databases;**
 
     mysql> show databases; 
     +--------------------+ 
@@ -81,9 +82,9 @@ Prior to This Article, three articles has already been published in ‘[Linux In
     +--------------------+ 
     10 rows in set (0.14 sec)
 
-### 5. How will you switch to a database, and start working on that? ###
+### 问题5： 如何切换到某个数据库并在上面工作？ ###
 
-> **Answer** : To use or switch to a specific database run the command on mysql shell as: **use database_name**;
+>  **答案**：运行命令 **use database_name;** 进入名为 database_name 的数据库。
 
     mysql> use cloud; 
     Reading table information for completion of table and column names 
@@ -92,9 +93,9 @@ Prior to This Article, three articles has already been published in ‘[Linux In
     Database changed 
     mysql>
 
-### 6. How will you get the list of all the tables, in a database? ###
+### 问题6：如何列出某个数据库内所有表？ ###
 
-> **Answer** : To list all the tables of a database use the command on mysql shell as: **show tables**;
+>  **答案**：在当前数据库运行命令 **show tables;**
 
     mysql> show tables; 
     +----------------------------+ 
@@ -113,9 +114,9 @@ Prior to This Article, three articles has already been published in ‘[Linux In
     +----------------------------+ 
     10 rows in set (0.00 sec)
 
-### 7. How will you get the Field Name and Type of a MySql table? ###
+### 问题7：如何获取表内所有 Field 对象的名称和类型？ ###
 
-> **Answer** : To get the Field Name and Type of a table use the command on mysql shell as: **describe table_name**;
+>  **答案**：运行命令 **describe table_name;** 查看名为 table_name 的表。
 
     mysql> describe oc_users; 
     +----------+--------------+------+-----+---------+-------+ 
@@ -126,25 +127,25 @@ Prior to This Article, three articles has already been published in ‘[Linux In
     +----------+--------------+------+-----+---------+-------+ 
     2 rows in set (0.00 sec)
 
-### 8. How will you delete a table? ###
+### 问题8：如何删除表？ ###
 
-> **Answer** : To delte a specific table use the command on mysql shell as: **drop table table_name**;
+>  **答案**：运行命令 **drop table table_name;**
 
     mysql> drop table lookup; 
 
     Query OK, 0 rows affected (0.00 sec)
 
-### 9. What about database? How will you delete a database? ###
+### 问题9：如何删除数据库？ ###
 
-> **Answer** : To delte a specific database use the command on mysql shell as: **drop database database-name**;
+>  **答案**：运行命令 **drop database database-name;**
 
     mysql> drop database a1; 
 
     Query OK, 11 rows affected (0.07 sec)
 
-### 10. How will you see all the contents of a table? ###
+### 问题10：如何查看表内所有数据？ ###
 
-> **Answer** : To view all the contents of a particular table use the command on mysql shell as: **select * from table_name**;
+>  **答案**：运行命令 **select * from table_name;**
 
     mysql> select * from engines; 
     +------------+---------+----------------------------------------------------------------+--------------+------+------------+ 
@@ -161,9 +162,9 @@ Prior to This Article, three articles has already been published in ‘[Linux In
     +------------+---------+----------------------------------------------------------------+--------------+------+------------+ 
     8 rows in set (0.00 sec)
 
-### 11. How will you see all the data in a field (say, uid), from table (say, oc_users)? ###
+### 问题11：如何从 oc_users 这个表获取一个 field 对象（比如 uid）的所有数据？ ###
 
-> **Answer** : To view all the data in a field use the command on mysql shell as: **select uid from oc_users**;
+>  **答案**：运行命令 **select uid from oc_users;**。
 
     mysql> select uid from oc_users; 
     +-----+ 
@@ -173,9 +174,9 @@ Prior to This Article, three articles has already been published in ‘[Linux In
     +-----+ 
     1 row in set (0.03 sec)
 
-### 12. Say you have a table ‘xyz’, which contains several fields including ‘create_time’ and ‘engine’. The field ‘engine’ is populated with two types of data ‘Memory’ and ‘MyIsam’. How will you get only ‘create_time’ and ‘engine’ from the table where engine is ‘MyIsam’? ###
+### 问题12：假设你有一个表，名为 ‘xyz’，存在多个 field，如 create_time 和 engine。名为 engine 的 field 由 ‘Memoty’ 和 ‘MyIsam’ 两种数值组成。如何只列出 create_time 和 engine 这两列并且 engine 的值为 ‘MyIsam’？ ###
 
-> **Answer** : Use the command on mysql shell as: **select create_time, engine from xyz where engine=”MyIsam”**;
+>  **答案**：运行命令 **select create_time, engine from xyz where engine = ”MyIsam”;**
 
     mysql> select create_time, engine from xyz where engine="MyIsam";
 
@@ -200,9 +201,9 @@ Prior to This Article, three articles has already been published in ‘[Linux In
     +---------------------+--------+ 
     132 rows in set (0.29 sec)
 
-### 13. How will you show all the records from table ‘xrt’ where name is ‘tecmint’ and web_address is ‘tecmint.com’? ###
+### 问题13：如何列出表 ‘xrt’ 内 name 域值为 ‘tecmint’，web_address 域值为 ‘tecmint.com’ 的所有数据？ ###
 
-> **Answer** : Use the command on mysql shell as: **select * from xrt where name = “tecmint” and web_address = “tecmint.com”**;
+>  **答案**：运行命令 **select * from xrt where name = “tecmint” and web_address = “tecmint.com”;**
 
     mysql> select  * from xrt where name = "tecmint" and web_address = “tecmint.com”;
     +---------------+---------------------+---------------+ 
@@ -213,9 +214,9 @@ Prior to This Article, three articles has already been published in ‘[Linux In
     | 41                 |  tecmint               | tecmint.com  |
     +---------------+---------------------+----------------+
 
-### 14. How will you show all the records from table ‘xrt’ where name is not ‘tecmint’ and web_address is ‘tecmint.com’? ###
+### 问题14：如何列出表 ‘xrt’ 内 name 域值_不_为 ‘tecmint’，web_address 域值为 ‘tecmint.com’ 的所有数据？ ###
 
-> **Answer** : Use the command on mysql shell as: **select * from xrt where name != “tecmint” and web_address = “tecmint.com”**;
+>  **答案**：运行命令 **select * from xrt where name != "tecmint" and web_address = "tecmint.com";**
 
     mysql> select * from xrt where name != ”tecmint” and web_address = ”tecmint.com”;
 
@@ -225,9 +226,9 @@ Prior to This Article, three articles has already been published in ‘[Linux In
     | 1173          |  tecmint            | tecmint.com   |
     +---------------+---------------------+----------------+
 
-### 15. You need to know total number of row entry in a table. How will you achieve it? ###
+### 问题15：你需要知道表内行数，这个该怎么做？
 
-> **Answer** : Use the command on mysql shell as: **select count(*) from table_name**;
+>  **答案**：运行命令 **select count(*) from table_name;**
 
     mysql> select count(*) from Tables; 
 
@@ -238,7 +239,7 @@ Prior to This Article, three articles has already been published in ‘[Linux In
     +----------+ 
     1 row in set (0.01 sec)
 
-That’s all for now. How you feel about this ‘**Linux Interview Question**‘ section. Don’t forget to provide us with your valuable feedback in our comment section.
+以上是文章的所有内容。你觉得这篇‘**Linux 面试题回答**’对你有任何帮助吗？别忘了在下面留言，写上你的意见。
 
 --------------------------------------------------------------------------------
 

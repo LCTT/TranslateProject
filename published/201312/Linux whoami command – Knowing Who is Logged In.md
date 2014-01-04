@@ -4,7 +4,7 @@ Linux系统 whoami 命令 – 知晓当前登录用户
 
 ### 怎么样运行 whoami ###
 
-运行这个命令，你只需要输入 whoami 。下面的例子中我们使用的是 chs shell 终端。
+运行这个命令，你只需要输入 whoami 。下面的例子中我们使用的是 csh shell 终端。
 
     % whoami
 

@@ -96,7 +96,7 @@ Who命令有一些参数用于调整输出。以下是常用的例子。
 
 via: http://linoxide.com/linux-command/linux-who-command/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[Caroline](https://github.com/carolinewuyan)
+译者：[l3b2w1](https://github.com/l3b2w1) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

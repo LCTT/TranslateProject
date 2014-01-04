@@ -102,6 +102,7 @@ Linux mpstat 命令- 报告处理器的相关统计信息
     (C) Sebastien Godard (sysstat orange.
 
 这就是在linux系统上快速使用mpstat的方法。想要了解更多细节，可以输入 **man mpstat**来查看mpstat的手册。
+
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/linux-command/linux-mpstat-command/
