@@ -85,7 +85,7 @@
 
 ### 开始安装ownCloud ###
 
-通过你的网页浏览器导航到 **http://ip-address/owncloud** or **http://domain-name/owncloud** 。
+通过你的网页浏览器导航到 **http://ip-address/owncloud** 或 **http://domain-name/owncloud** 。
 
 **注意**：如果遇到任何权限错误，禁用SELinux并再试一次。
 
