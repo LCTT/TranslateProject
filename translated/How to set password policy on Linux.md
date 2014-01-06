@@ -44,7 +44,7 @@ Debian、Ubuntu 或 Linux Mint 系统上：
 
 > password   requisite    pam_cracklib.so retry=3 minlen=10 difok=3
 
-CentOS、Fedora、RHEL 系统上：
+CentOS、Fedora、RHEL 系统上： 
 
     $ sudo vi /etc/pam.d/system-auth 
 
