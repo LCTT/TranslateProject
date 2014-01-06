@@ -1,14 +1,16 @@
-15个 MySQL 基础面试题，DBA 准备好了吗？
+15个 MySQL 基础面试题，DBA 们准备好了吗？
 ================================================================================
 
-此前我们已经有发表过[Linux 面试基础问答][1]共3篇文章，获得读者的好评，同时我们得到反馈，有些读者希望这种交互式学习方法能够做得更加灵活。心动不如行动，我们这就为您奉上 **15个 MySQL 面试题**
+此前我们已经有发表过Linux 面试基础问答之[一][1]、[二][2]和[三][3]共3篇文章，获得读者的好评，同时我们得到反馈，有些读者希望这种交互式学习方法能够做得更加灵活。心动不如行动，我们这就为您奉上 **15个 MySQL 面试题**
 
 ![](http://www.tecmint.com/wp-content/uploads/2013/12/Mysql-Interview-Questions.png)
 
 
 ### 问题1：你如何确定 MySQL 是否处于运行状态？ ###
 
-> **答案**： Debian 上运行命令 **service mysql status;**，在RedHat 上运行命令 **service mysqld status;**。然后看看输出即可。
+> **答案**： Debian 上运行命令 **service mysql status**，在RedHat 上运行命令 **service mysqld status**。然后看看输出即可。
+
+-
 
     root@localhost:/home/avi# service mysql status
 
@@ -27,9 +29,12 @@
 
     Threads: 1  Questions: 112138  Slow queries: 1  Opens: 1485  Flush tables: 1  Open tables: 64  Queries per second avg: 22.567.
 
-### 问题2：如何开启或停止 MySQL 服务？ ### 
 
->  **答案**：运行命令 **service mysqld start;** 开启服务；运行命令 **service mysqld stop** 停止服务。
+### 问题2：如何开启或停止 MySQL 服务？ ###
+
+>  **答案**：运行命令 **service mysqld start** 开启服务；运行命令 **service mysqld stop** 停止服务。
+
+-
 
     root@localhost:/home/avi# service mysql stop
 
@@ -43,7 +48,9 @@
 
 ### 问题3：如何通过 Shell 登入 MySQL？ ###
 
->  **答案**：运行命令 **mysql -u root -p;**
+>  **答案**：运行命令 **mysql -u root -p**
+
+-
 
     root@localhost:/home/avi# mysql -u root -p 
     Enter password: 
@@ -64,6 +71,8 @@
 ### 问题4：如何列出所有数据库？ ###
 
 >  **答案**：运行命令 **show databases;**
+
+-
 
     mysql> show databases; 
     +--------------------+ 
@@ -86,6 +95,8 @@
 
 >  **答案**：运行命令 **use database_name;** 进入名为 database_name 的数据库。
 
+-
+
     mysql> use cloud; 
     Reading table information for completion of table and column names 
     You can turn off this feature to get a quicker startup with -A 
@@ -96,6 +107,8 @@
 ### 问题6：如何列出某个数据库内所有表？ ###
 
 >  **答案**：在当前数据库运行命令 **show tables;**
+
+-
 
     mysql> show tables; 
     +----------------------------+ 
@@ -118,6 +131,8 @@
 
 >  **答案**：运行命令 **describe table_name;**
 
+-
+
     mysql> describe oc_users; 
     +----------+--------------+------+-----+---------+-------+ 
     | Field    | Type         | Null | Key | Default | Extra | 
@@ -131,6 +146,8 @@
 
 >  **答案**：运行命令 **drop table table_name;**
 
+-
+
     mysql> drop table lookup; 
 
     Query OK, 0 rows affected (0.00 sec)
@@ -139,6 +156,8 @@
 
 >  **答案**：运行命令 **drop database database-name;**
 
+-
+
     mysql> drop database a1; 
 
     Query OK, 11 rows affected (0.07 sec)
@@ -146,6 +165,8 @@
 ### 问题10：如何查看表内所有数据？ ###
 
 >  **答案**：运行命令 **select * from table_name;**
+
+-
 
     mysql> select * from engines; 
     +------------+---------+----------------------------------------------------------------+--------------+------+------------+ 
@@ -166,6 +187,8 @@
 
 >  **答案**：运行命令 **select uid from oc_users;**
 
+-
+
     mysql> select uid from oc_users; 
     +-----+ 
     | uid | 
@@ -174,9 +197,11 @@
     +-----+ 
     1 row in set (0.03 sec)
 
-### 问题12：假设你有一个名为 ‘xyz’ 的表，它存在多个 field，如 ‘create_time’ 和 ‘engine’。名为 engine 的 field 由 ‘Memoty’ 和 ‘MyIsam’ 两种数值组成。如何只列出 ‘create_time’ 和 ‘engine’ 这两列并且 engine 的值为 ‘MyIsam’？ ###
+### 问题12：假设你有一个名为 ‘xyz’ 的表，它存在多个字段，如 ‘create_time’ 和 ‘engine’。名为 engine 的字段由 ‘Memoty’ 和 ‘MyIsam’ 两种数值组成。如何只列出 ‘create_time’ 和 ‘engine’ 这两列并且 engine 的值为 ‘MyIsam’？ ###
 
 >  **答案**：运行命令 **select create_time, engine from xyz where engine = ”MyIsam”;**
+
+-
 
     mysql> select create_time, engine from xyz where engine="MyIsam";
 
@@ -205,6 +230,8 @@
 
 >  **答案**：运行命令 **select * from xrt where name = “tecmint” and web_address = “tecmint.com”;**
 
+-
+
     mysql> select  * from xrt where name = "tecmint" and web_address = “tecmint.com”;
     +---------------+---------------------+---------------+ 
     | Id                  | name                   | web_address | 
@@ -218,6 +245,8 @@
 
 >  **答案**：运行命令 **select * from xrt where name != "tecmint" and web_address = "tecmint.com";**
 
+-
+
     mysql> select * from xrt where name != ”tecmint” and web_address = ”tecmint.com”;
 
     +---------------+---------------------+---------------+ 
@@ -229,6 +258,8 @@
 ### 问题15：如何知道表内行数？
 
 >  **答案**：运行命令 **select count(*) from table_name;**
+
+-
 
     mysql> select count(*) from Tables; 
 
@@ -245,8 +276,10 @@
 
 via: http://www.tecmint.com/basic-mysql-interview-questions-for-database-administrators/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[Caroline](https://github.com/carolinewuyan)
+译者：[bazz2](https://github.com/bazz2) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-[1]:http://www.tecmint.com/category/interview-questions/
+[1]:http://linux.cn/article-2315-1.html
+[2]:http://linux.cn/article-2370-1.html
+[3]:http://linux.cn/article-2371-1.html
