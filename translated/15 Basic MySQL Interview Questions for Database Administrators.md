@@ -1,14 +1,14 @@
 15个 MySQL 基础面试题，DBA 准备好了吗？
 ================================================================================
 
-此前我们已经有发表过[Linux 面试基础问答]共3篇文章，获得读者的好评，同时我们得到反馈，有些读者希望这种交互式学习方法能够做得更加灵活。心动不如行动，我们这就为您奉上**15道 MySQL 面试题**
+此前我们已经有发表过[Linux 面试基础问答][1]共3篇文章，获得读者的好评，同时我们得到反馈，有些读者希望这种交互式学习方法能够做得更加灵活。心动不如行动，我们这就为您奉上 **15个 MySQL 面试题**
 
 ![](http://www.tecmint.com/wp-content/uploads/2013/12/Mysql-Interview-Questions.png)
 
 
 ### 问题1：你如何确定 MySQL 是否处于运行状态？ ###
 
-> **答案**： Debian 上运行命令 **service mysql status;**；RedHat 上运行命令 **service mysqld status;**。然后看看输出即可。
+> **答案**： Debian 上运行命令 **service mysql status;**，在RedHat 上运行命令 **service mysqld status;**。然后看看输出即可。
 
     root@localhost:/home/avi# service mysql status
 
@@ -27,7 +27,7 @@
 
     Threads: 1  Questions: 112138  Slow queries: 1  Opens: 1485  Flush tables: 1  Open tables: 64  Queries per second avg: 22.567.
 
-### 问题2：如何关闭或开启 MySQL 服务？ ### 
+### 问题2：如何开启或停止 MySQL 服务？ ### 
 
 >  **答案**：运行命令 **service mysqld start;** 开启服务；运行命令 **service mysqld stop** 停止服务。
 
@@ -116,7 +116,7 @@
 
 ### 问题7：如何获取表内所有 Field 对象的名称和类型？ ###
 
->  **答案**：运行命令 **describe table_name;** 查看名为 table_name 的表。
+>  **答案**：运行命令 **describe table_name;**
 
     mysql> describe oc_users; 
     +----------+--------------+------+-----+---------+-------+ 
@@ -162,9 +162,9 @@
     +------------+---------+----------------------------------------------------------------+--------------+------+------------+ 
     8 rows in set (0.00 sec)
 
-### 问题11：如何从 oc_users 这个表获取一个 field 对象（比如 uid）的所有数据？ ###
+### 问题11：如何从表（比如 oc_users ）中获取一个 field 对象（比如 uid）的所有数据？ ###
 
->  **答案**：运行命令 **select uid from oc_users;**。
+>  **答案**：运行命令 **select uid from oc_users;**
 
     mysql> select uid from oc_users; 
     +-----+ 
@@ -174,7 +174,7 @@
     +-----+ 
     1 row in set (0.03 sec)
 
-### 问题12：假设你有一个表，名为 ‘xyz’，存在多个 field，如 create_time 和 engine。名为 engine 的 field 由 ‘Memoty’ 和 ‘MyIsam’ 两种数值组成。如何只列出 create_time 和 engine 这两列并且 engine 的值为 ‘MyIsam’？ ###
+### 问题12：假设你有一个名为 ‘xyz’ 的表，它存在多个 field，如 ‘create_time’ 和 ‘engine’。名为 engine 的 field 由 ‘Memoty’ 和 ‘MyIsam’ 两种数值组成。如何只列出 ‘create_time’ 和 ‘engine’ 这两列并且 engine 的值为 ‘MyIsam’？ ###
 
 >  **答案**：运行命令 **select create_time, engine from xyz where engine = ”MyIsam”;**
 
@@ -214,7 +214,7 @@
     | 41                 |  tecmint               | tecmint.com  |
     +---------------+---------------------+----------------+
 
-### 问题14：如何列出表 ‘xrt’ 内 name 域值_不_为 ‘tecmint’，web_address 域值为 ‘tecmint.com’ 的所有数据？ ###
+### 问题14：如何列出表 ‘xrt’ 内 name 域值不为 ‘tecmint’，web_address 域值为 ‘tecmint.com’ 的所有数据？ ###
 
 >  **答案**：运行命令 **select * from xrt where name != "tecmint" and web_address = "tecmint.com";**
 
@@ -226,7 +226,7 @@
     | 1173          |  tecmint            | tecmint.com   |
     +---------------+---------------------+----------------+
 
-### 问题15：你需要知道表内行数，这个该怎么做？
+### 问题15：如何知道表内行数？
 
 >  **答案**：运行命令 **select count(*) from table_name;**
 
@@ -239,13 +239,13 @@
     +----------+ 
     1 row in set (0.01 sec)
 
-以上是文章的所有内容。你觉得这篇‘**Linux 面试题回答**’对你有任何帮助吗？别忘了在下面留言，写上你的意见。
+以上是文章的全部内容。这篇‘**Linux 面试题**’对您有任何帮助吗？别忘了在下面留言，写出您的宝贵意见。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/basic-mysql-interview-questions-for-database-administrators/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[译者ID](https://github.com/译者ID) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
