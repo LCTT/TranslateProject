@@ -1,3 +1,4 @@
+乌龙茶翻译中
 "The Debian Administrator’s Handbook" updated for Debian 7 Wheezy, published and freely available for download
 ================================================================================
 Months and months ago, the Debian developers [published][1] The Debian Administrator's Handbook, essentially, a comprehensive book about Debian's internals presented with clarity, user-friendliness and properly-structured informations.
