@@ -1,8 +1,8 @@
-Linux 上的密码设置策略
+如何在 Linux 上设置密码策略
 ================================================================================
 用户帐号管理是系统管理员最重要的工作之一。而密码安全是系统安全中最受关注的一块。在本教程中，我将为大家介绍**如何在 Linux 上设置密码策略**。
 
-假设你已经在你的 Linux 系统上使用了 [PAM (Pluggable Authentication Modules，插入式验证模块)][1]，因为这些年所有的 Linux 发行版都在用它。
+假设你已经在你的 Linux 系统上使用了 [PAM (Pluggable Authentication Modules，插入式验证模块)][1]，因为近些年所有的 Linux 发行版都在使用它。
 
 ### 准备工作 ###
 
@@ -12,13 +12,13 @@ Debian、Ubuntu 或 Linux Mint 系统上：
 
     $ sudo apt-get install libpam-cracklib 
 
-CentOS、Fedora、RHEL 系统已经安装了 cracklib PAM 模块，所以在这些系统上无需执行上面的操作。
+CentOS、Fedora、RHEL 系统已经默认安装了 cracklib PAM 模块，所以在这些系统上无需执行上面的操作。
 
 为了强制实施密码策略，我们需要修改 /etc/pam.d 目录下的 PAM 配置文件。一旦修改，策略会马上生效。
 
 注意：此教程中的密码策略只对非 root 用户有效，对 root 用户无效。
 
-### 禁止使用老的密码 ###
+### 禁止使用旧密码 ###
 
 看下同时有 “password” 和 “pam_unix.so” 字段并且附加有 “remember=5” 的那行，它表示禁止使用最近用过的5个密码（己使用过的密码会被保存在 /etc/security/opasswd 下面）。
 
@@ -44,7 +44,7 @@ Debian、Ubuntu 或 Linux Mint 系统上：
 
 > password   requisite    pam_cracklib.so retry=3 minlen=10 difok=3
 
-CentOS、Fedora、RHEL 系统上：
+CentOS、Fedora、RHEL 系统上： 
 
     $ sudo vi /etc/pam.d/system-auth 
 
@@ -96,7 +96,7 @@ CentOS、Fedora、RHEL 系统上：
 
     $ sudo chage -E 6/30/2014 -m 5 -M 90 -I 30 -W 14 xmodulo 
 
-上面的命令将密码期限设为2014年6月3日。另外，修改密码的最小周期为5天，最长周期为90天。密码过期前14天会提醒用户，过期后帐号会被锁住30天。
+上面的命令将密码期限设为2014年6月3日。另外，修改密码的最短周期为5天，最长周期为90天。密码过期前14天会发送消息提醒用户，过期后帐号会被锁住30天。
 
 [![](http://farm4.staticflickr.com/3779/11640903324_474963b7bb.jpg)][2]
 
@@ -104,7 +104,7 @@ CentOS、Fedora、RHEL 系统上：
 
 via: http://xmodulo.com/2013/12/set-password-policy-linux.html
 
-译者：[bazz2](https://github.com/bazz2) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[bazz2](https://github.com/bazz2) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

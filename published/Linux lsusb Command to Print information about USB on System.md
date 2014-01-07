@@ -1,20 +1,18 @@
-Linux中打印系统中USB信息的lsusb命令
+Linux中显示系统中USB信息的lsusb命令
 ================================================================================
-**通用串行总线**或者**USB**被设计成为连接计算机外设的标准，如键盘、鼠标、打印机、数码相机、便携式媒体播放器、磁盘和网络适配器等等 - 来源：[Wikipedia][1]
+**通用串行总线**（**USB**）被设计成为连接计算机外设的标准，如键盘、鼠标、打印机、数码相机、便携式媒体播放器、磁盘和网络适配器等等 - 来源：[Wikipedia][1]
 
 ![lsusb 命令](http://linoxide.com/wp-content/uploads/2013/12/lsusb-linux-command.jpg)
 
-既然它成为了一个工业标准，那么现在很难看到一个没有USB口的计算机了。USB闪存的使用使得它更加流行。在Linux上，我们使用**lsusb**来列出USB设备和它的属性。
+它已经成为了一个工业标准，现在很难看到一个没有USB口的计算机了。USB闪存的使用使得它更加流行。在Linux上，我们可以使用**lsusb**来列出USB设备和它的属性。
 
 ### 什么是lsusb ###
 
 在它的手册上，lsusb定义成：
 
-显示系统中以及连接到系统的USB总线信息的工具。
+> 显示系统中以及连接到系统的USB总线信息的工具。
 
-如何运行lsusb。
-
-要运行lsusb，你可以直接在控制台输入lsusb。
+如何运行lsusb? 要运行lsusb，你可以直接在控制台输入lsusb。
 
     $ lsusb
 
@@ -33,9 +31,9 @@ Linux中打印系统中USB信息的lsusb命令
 
 下面介绍如何理解输出。我抓取了上面输出的最后一行：
 
-#### Bus 008 Device 002 : ID 0a5c:217f Broadcom Corp. Bluetooth Controller ####
+	Bus 008 Device 002 : ID 0a5c:217f Broadcom Corp. Bluetooth Controller
 
-- **Bus 008** : 指明设备连接到哪
+- **Bus 008** : 指明设备连接到哪（哪条总线）
 - **Device 002** : 表明这是连接到总线上的第二台设备
 - **ID** : 设备的ID
 - **Broadcom Corp. Bluetooth Controller** :生产商名字和设备名
@@ -126,7 +124,7 @@ Linux中打印系统中USB信息的lsusb命令
     /dev/bus/usb/001
     /dev/bus/usb/001/001
 
-使用**lsusb** 命令 **紧接 -D** 选项，你可以打印特定设备的详细信息。下面是一个博通蓝牙设备的示例。
+使用**lsusb** 命令 的**-D** 选项，你可以打印特定设备的详细信息。下面是一个博通蓝牙设备的示例。
 
     $ lsusb -D /dev/bus/usb/008/002
 
