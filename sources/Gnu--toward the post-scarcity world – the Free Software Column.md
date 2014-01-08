@@ -1,6 +1,7 @@
+(translating by SteveArcher)
 Gnu: toward the post-scarcity world – the Free Software Column
 ================================================================================
-**It is 30 years since Richard Stallman announced that he was going to write a complete UNIX-compatible software system called GNU, pioneering the idea of free and open source software, but the struggle continues **
+**It is 30 years since Richard Stallman announced that he was going to write a complete UNIX-compatible software system called GNU, pioneering the idea of free and open source software, but the struggle continues**
 
 ![](http://www.linuxuser.co.uk/wp-content/uploads/2011/04/Richard-Hillesley-200x150.jpg)
 
@@ -34,6 +35,6 @@ Free software owes much to the obduracy and insights of Stallman, but as he sugg
 
 via: http://www.linuxuser.co.uk/features/gnu-toward-the-post-scarcity-world-the-free-software-column
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

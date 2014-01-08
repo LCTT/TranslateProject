@@ -1,3 +1,5 @@
+**【chenguang翻译中】**
+
 How to integrate Google Calendar in Linux desktop
 ================================================================================
 Google Calendar is one of the most popular web applications. One can access or sync Google Calendar across multiple devices either via web interface or with native apps. In Linux, there are several ways to access Google Calendar natively, such as by using email client plugins (e.g., Evolution or Thunderbird) or calendar apps (e.g., Sunbird or Rainlendar). These solutions, however, typically involve installing unnecessarily bulky software which you will probably not need.

@@ -1,9 +1,7 @@
-
 2013新出的 14 个Linux发行版
-
 ================================================================================
 
-![](http://www.efytimes.com/admin/useradmin/photo/TuxRoot.jpg)
+![](http://itsfoss.com/wp-content/uploads/2013/12/New-Linux-Born.jpeg)
 
 
 2013年是开源界丰收的一年。随着Android系统的崛起，在移动设备领域拥有超过85%的市场份额，让Linux前所未有的站在了最前沿。已经在日益增多的报道关于基于Linux发行版受欢迎度增加呈现出来，在今年新出了13个新的发行版。如果你不巧错过了他们，那么瞧一瞧吧！
@@ -50,13 +48,12 @@
 
 14. **[OpenMandriva][14]** LX: 该发行版基于俄罗斯的 ROSA 发行版。该发行版也受 Mandriva 发行版的支持。事实上，早些时候 Mandriva 也是由 ROSA 分支出来的。
 
-Source: ItsFoss.com
 
 --------------------------------------------------------------------------------
 
 via: http://itsfoss.com/new-linux-distros-2013/
 
-译者：[Luoxcat](https://github.com/Luoxcat) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Luoxcat](https://github.com/Luoxcat) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

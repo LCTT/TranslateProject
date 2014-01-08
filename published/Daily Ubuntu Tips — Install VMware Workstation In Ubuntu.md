@@ -1,9 +1,8 @@
 每日Ubuntu小技巧 - 在Ubuntu上面安装VMware Workstation
 ================================================================================
-VMware Workstation是一款“第二类”商用虚拟化软件。被称为“第二类”是因为它是运行在现有的操作系统之上的，而正在运行的计算机则成为其宿主机。
+VMware Workstation是一款“第二类（Type-2）”商用虚拟化软件。被称为“第二类”是因为它是运行在现有的操作系统之上的，而正在运行的计算机则成为其宿主机。
 
 你可以使用VMware Workstation在宿主机上同时运行各自具有独立操作系统的多个客户机。客户机可以是32位或者64位的操作系统。VMware Workstation支持Windows，Mac OS X，Solaris和许多其他系统。
-
 
 这篇简短的教程将会教你怎么在Ubuntu上面安装VMware Workstation。
 
@@ -33,7 +32,9 @@ VMware Workstation是一款“第二类”商用虚拟化软件。被称为“�
 
     sudo ./VMware-Workstation-Full*.bundle
 
-在完成安装前按照向导进行选择。当所有工作完成后，从Dash打开它并开始创建客户机。
+在完成安装前按照向导进行选择。
+
+当所有工作完成后，从Dash打开它并开始创建客户机。
 
 ![](http://www.liberiangeek.net/wp-content/uploads/2013/12/vmwareworkstationubuntu.png)
 

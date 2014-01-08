@@ -1,3 +1,4 @@
+(翻译中 by runningwater)
 Configure Your Browser To Use Tor On Ubuntu/Debian/Linux Mint
 ================================================================================
 **Tor**, **T**he **O**nion **R**outer, is a network of Virtual Tunnels that allows users to communicate securely and as well as anonymously over Internet. Tor allows organizations and individuals to share information over public networks without compromising their privacy. We can use Tor to keep websites from tracking us and also our family members, or to connect to news sites, instant messaging services, or the websites which are blocked by the Internet providers and Network Administrators.
@@ -63,7 +64,7 @@ That’s it. Good Luck! Stay Safe!
 
 via: http://www.unixmen.com/configure-browser-use-tor-ubuntu-debian-linux-mint/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
