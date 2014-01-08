@@ -244,7 +244,7 @@
 
 --------------------------------------------------------------------------------
 
-via: http://www.tecmint.com/10-lesser-known-useful-linux-commands-part-v/
+via: http://www.tecmint.com/10-lesser-known-useful-linux-commands-part-v/ 
 
 译者：[Luoxcat](https://github.com/Luoxcat) 校对：[校对者ID](https://github.com/校对者ID)
 
