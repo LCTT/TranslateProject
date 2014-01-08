@@ -17,7 +17,7 @@
 
 ### 42. lsb_release ###
 
- **‘lsb_release’** 命令会打印特殊发行版的信息。如果 **lsb_release** 还没安装，你可以在基于 **Debain** 的发行版中用命令 apt**‘lsb-core’** 安装，在基于 **Red Hat** 系统下用 yum **‘redhat-lsb’** 来安装包。 
+ **‘lsb_release’** 命令会打印特殊发行版的信息。如果 **lsb_release** 还没安装，你可以在基于 **Debain** 的发行版中用命令 apt **‘lsb-core’** 安装，在基于 **Red Hat** 系统下用 yum **‘redhat-lsb’** 来安装包。 
 
     # lsb_release -a
 
