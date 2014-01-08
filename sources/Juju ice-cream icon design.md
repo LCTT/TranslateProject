@@ -1,3 +1,4 @@
+seonlee2013 translating
 Juju ice-cream icon design
 ================================================================================
 Who doesn’t like ice-cream? Here in the design team we sure do! In the last few weeks we’ve been preparing a special Juju demo for the OpenStack Summit in Hong Kong and we’ve created some very ‘tasty’ icons for it. We thought it would be nice to show you how those icons were created, so here’s a little insight on the design process.
@@ -64,6 +65,6 @@ The whole process took 4 days from brief to final icons, which is quite a tight 
 
 via: http://design.canonical.com/2013/11/juju-ice-cream-icon-design/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[seonlee2013](https://github.com/seonlee2013) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
