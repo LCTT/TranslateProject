@@ -1,3 +1,5 @@
+翻译ing Luox
+
 Daily Ubuntu Tips – Mount Partitions In Ubuntu From Your Desktop GUI
 ================================================================================
 Not very long ago if you had asked a seasoned Linux user how to mount partitions in Ubuntu, they would’ve told you to use the fstab file in the **/etc/** directory. It seemed like this was the only way to mount partitions in Linux systems, including Ubuntu.
