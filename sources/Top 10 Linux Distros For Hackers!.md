@@ -1,3 +1,6 @@
+Translating----------------geekpi
+
+
 Top 10 Linux Distros For Hackers!
 ================================================================================
 Hackers and security researchers need their tools at hand always. Many of them are based on the popular Ubuntu and Debian operating system and come with a number of hacking tools installed.
@@ -28,7 +31,7 @@ Hackers and security researchers need their tools at hand always. Many of them a
 
 via: http://www.efytimes.com/e1/fullnews.asp?edid=125775
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
