@@ -1,10 +1,11 @@
 十个鲜为人知的Linux命令 - Part 5
-
 ================================================================================
 
-在以前四篇文章受到高度赞赏之后，我们将为如此成功的系列文章“**鲜为人知的Linux命令**”呈上最后一篇好文，好吧，显然是骗你得了。上几篇文章：
+在前四篇 **“鲜为人知的Linux命令”** 系列文章受到高度赞赏之后，我们将为广大读者呈上此系列的最后一篇文章，虽然是最后一篇，但是其重要性毫不逊于前几篇。
 
 ![](http://www.tecmint.com/wp-content/uploads/2013/12/10-Lesser-Known-Useful-Commands-V.png)
+
+前几篇文章的地址如下：
 
 - [11 Lesser Known Useful Linux Commands – Part I][1]
 
@@ -16,7 +17,7 @@
 
 ### 42. lsb_release ###
 
- ‘lsb_release‘ 命令会打印特殊发行版的信息。如果**lsb_release**还没安装，你可以在基于Debain的发行版中用命令‘apt-get install **lsb-core‘**安装，或者在基于**Red Hat**系统下用‘yum install**redhat-lsb**‘来安装包。 
+ **‘lsb_release’** 命令会打印特殊发行版的信息。如果 **lsb_release** 还没安装，你可以在基于 **Debain** 的发行版中用命令 apt**‘lsb-core’** 安装，在基于 **Red Hat** 系统下用 yum **‘redhat-lsb’** 来安装包。 
 
     # lsb_release -a
 
@@ -30,25 +31,25 @@
 
     Codename:       Final
 
-**注意：**选项‘**-a**‘，会显示有关**版本，ID，详情，发行号**和**研发代号**的可用信息。
+**注意：**选项‘**-a**‘，会显示有关**版本、ID、详情、发行号**和**研发代号**的全部可用信息。
 
 ### 43. nc -zv localhost 80 ###
 
-检查**80**端口是否被打开。我们可以用任何其他端口号替换‘**80**‘来检查端口是否被打开或关闭。
+检查 **80** 端口是否被打开。我们可以用任何其他端口号替换‘**80**’来检查端口是否被打开或关闭。
 
     $ nc -zv localhost 80
 
-    Connection to localhost 80 port [tcp/http] succeeded![译注：出现该信息表示80端口已被打开。]
+    Connection to localhost 80 port [tcp/http] succeeded!（译注：出现该信息表示80端口已被打开。）
 
-检查**8080**端口是否启用
+检查 **8080** 端口是否启用
 
     $ nc -zv localhost 8080
 
-    nc: connect to localhost port 8080 (tcp) failed: Connection refused[译注：该信息显示了8080端口并未打开。]
+    nc: connect to localhost port 8080 (tcp) failed: Connection refused（译注：该信息显示了8080端口并未打开。）
 
 ### 44. curl inpinfo.io ###
 
-该命令会输出并提供**IP 地址**的‘**地理位置**‘。
+该命令会输出并提供 **IP 地址** 的 **‘地理位置’** 。
 
     $ curl ipinfo.io 
 
@@ -68,7 +69,7 @@
 
 ### 45. find . -user root ###
 
-该命令会输出(**root**)用户所拥有的文件，[译注：即owner为root]。下面是在当前目录下列出的所有 ‘root’用户拥有的文件。
+该命令会输出( **root** )用户所拥有的文件（译注：即owner为root）。下面是在当前目录下列出的所有 ‘root’用户拥有的文件。
 
     # find . -user root
 
@@ -90,7 +91,7 @@
 
     ./.bash_history
 
-在当前路径下列出所有‘**avi**‘用户拥有的文件
+在当前路径下列出所有 **‘avi’** 用户拥有的文件
 
     # find . -user avi
 
@@ -116,7 +117,7 @@
 
 ### 46. sudo apt-get build-dep ffmpeg ###
 
-该命令会在相应的包安装时自动构建依赖关系。因此包安装的过程是非常流畅和容易的。
+该命令会在相应的包安装时自动构建依赖关系。因此包安装的过程将非常流畅，也是非常容易的。
 
     # apt-get build-dep ffmpeg
 
@@ -140,7 +141,7 @@
 
 ### 47. lsof -iTCP:80 -sTCP:LISTEN ###
 
-该命令会输出所用正在使用**80**端口的**进程/服务**的名称。为了更好的理解，在**80**端口运行下列命令在，它会列出所用运行在该端口的**进程/服务**。
+该命令会输出所用正在使用 **80** 端口的 **进程/服务** 的名称。为了更好的理解，在 **80** 端口运行下列命令，它会列出所用运行在该端口的 **进程/服务** 。
 
     root@localhost:/home/avi# lsof -iTCP:80 -sTCP:LISTEN
 
@@ -158,7 +159,7 @@
 
     apache2 1668 www-data 5u IPv6 5805 0t0 TCP *:www (LISTEN)
 
-同样，你可以检查运行在端口**22**的进程/服务。
+同样，你可以检查运行在端口 **22** 的进程/服务。
 
     root@localhost:/home/avi# lsof -iTCP:22 -sTCP:LISTEN
 
@@ -190,7 +191,7 @@
 
     ./Desktop/squeeze.iso
 
-在当前目录递归的列出所用大于**1000 MB**的文件。
+在当前目录递归的列出所用大于 **1000 MB** 的文件。
 
     root@localhost:/home/avi# find -size +1000M
 
@@ -206,13 +207,13 @@
 
 ### 49. pdftk ###
 
-**pdftk**命令用来合并几个pdf文件。你必须安装有**pdftk**程序。如果还没有，请用apt或yum来获取相应的包。
+**pdftk**命令用来合并几个pdf文件。你必须安装有 **pdftk** 程序。如果还没有，请用apt或yum来获取相应的包。
 
     $ pdftk 1.pdf 2.pdf 3.pdf …. 10.pdf cat output merged.pdf
 
 ### 50. ps -LF -u user_name ###
 
-该命令会输出一个用户的进程和线程。选项“**L**”（列出线程），选项“-F”（完整格式化）
+该命令会输出一个用户的进程和线程。选项“**L**”（列出线程），选项“**-F**”（完整格式化）
 
     $ ps -LF -u avi
 
@@ -236,17 +237,17 @@
 
 ### 51. Startx — :1 ###
 
-分享**X**会话，意味着需要频繁的登入或登出，这就需要**startx**来救场。这个命令建立了一个新的会话从而避免了在一个会话中反复的登入和登出。为了在X会话间进行交换，我们可以通过‘**ctrl+Alt+F7**‘和‘**ctrl+Alt+F8**‘的组合键。
+分享 **X** 会话，意味着需要频繁的登入或登出，这就需要 **startx** 来救场。这个命令建立了一个新的会话从而避免了在一个会话中反复的登入和登出。为了在X会话间进行交换，我们可以通过‘**ctrl+Alt+F7**’和‘**ctrl+Alt+F8**’的组合键来完成。
 
-**注意**：快捷键“**ctrl+Alt+F1～F6**“是为了控制台会话准备的，而“**ctrl+Alt+F７～F12**“则为X会话服务。因此我们有**6**个控制台会话和**6**个X会话，不需要频繁的登入登出。上面的顺序适用于大多数的发行版，然而不同发行版可能会有不同的实现。我在Debian中尝试过，运行的很好。
+**注意**：快捷键“**ctrl+Alt+F1～F6**“是为了控制台会话准备的，而“**ctrl+Alt+F７～F12**”则为X会话服务。因此我们有**6**个控制台会话和**6**个X会话，不需要频繁的登入登出。上面的顺序适用于大多数的发行版，然而不同发行版可能会有不同的实现。我在Debian中尝试过，运行的很好。
 
-以上就是今天的所有内容。我们如有需要会在以后的文章中继续发布“鲜为人知的命令”，不要忘记留下你对我们文章和‘**鲜为人知的Linux命令**‘系列的宝贵意见。我会很快带来我的新文章，直到那时，要保持健康,链接到**Tecmint**哦。
+以上就是今天的所有内容。我们如有需要会在以后的文章中继续发布“鲜为人知的命令”，不要忘记留下你对我们文章和‘ **鲜为人知的Linux命令** ’系列的宝贵意见。我会很快带来我的新文章，敬请期待。直到那时，要保持电脑健康,记得常回 **Tecmint** 看看哦。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/10-lesser-known-useful-linux-commands-part-v/ 
 
-译者：[Luoxcat](https://github.com/Luoxcat) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Luoxcat](https://github.com/Luoxcat) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
