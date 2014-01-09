@@ -1,3 +1,5 @@
+翻译中 by TImeszoro
+
 Daily Ubuntu Tips — Windows Disk Management Equivalent In Ubuntu
 ================================================================================
 For new users just starting out with Ubuntu who have some knowledge of Microsoft Windows, one question keeps coming up in most Ubuntu forums online. One of our readers asked us the same questions few days ago.
