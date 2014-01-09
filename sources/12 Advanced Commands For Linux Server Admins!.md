@@ -1,3 +1,7 @@
+Translating---------geekpi
+
+
+
 12 Advanced Commands For Linux Server Admins!
 ================================================================================
 So, you've read many tutorials and watched many videos and now you are an advanced Linux user. Well, congratulations. But there's still more to learn! Here is a list of Linux commands that will come in handy when you are the almighty admin! 
