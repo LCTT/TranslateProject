@@ -1,4 +1,4 @@
-如何在Ubuntu 13.10中升级GNOME版本到 3.10?
+如何在Ubuntu 13.10中升级GNOME 到 3.10?
 ================================================================================
 
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2013/09/header-bars.jpg)
@@ -7,16 +7,15 @@
 
 GNOME桌面的最新版本在2013年9月发布，随之而来的是一系列改进的功能、应用程序和可用性的调整。从对高分辨率屏幕的支持到客户端应用窗口上的美化，GNOME 3.10无疑是一个引人注目的升级版本。
 
-好消息是：假设你正在运行Ubuntu 13.10，拥有不错的网络连接和命令行水平，那么你无需继续使用一个过时版本的GNOME。
+好消息是：假设你正在运行Ubuntu 13.10，拥有不错的网络操作和命令行水平，那么你无需继续使用一个过时版本的GNOME。
 
 ### 在Ubuntu 13.10 上如何升级到GNOME 3.10 ###
 
-为了那些爱略过前言,直奔主题的读者,我还要重申两点: 
+为了那些爱略过前言直奔主题的读者，我还要重申两点: 
 
-**要使用本方法安装GNOME 3.10,需运行 Ubuntu 13.10版本。**
+**要使用本方法安装GNOME 3.10，需运行 Ubuntu 13.10版本。**
 
-**GNOME 3.10还未在 Ubuntu 13.10上测试，所以升级风险自付。**
-
+**GNOME 3.10还未在 Ubuntu 13.10上测试，所以升级风险自负。**
 
 首先，让我们添加GNOME 3 的PPA到Ubuntu的软件资源中。这个操作可以使用图形界面完成，但使用命令更容易一些。
 
@@ -34,18 +33,17 @@ GNOME桌面的最新版本在2013年9月发布，随之而来的是一系列改�
 
 这个决定完全取决于你；UBuntu的Unity Greeter和**GNOME的显示管理器**都能让你很轻松地在桌面会话之间切换（如果你想保持在Unity界面或者另一个桌面将很方便），但仅仅只有GDM提供给GNOME特定的功能，譬如锁屏通知。
 
-当你确定选择后，使用上下键选择，然后敲击‘确认\返回’键以确认。安装便会继续进行。
-
+当你确定选择后，使用上下键选择，然后敲击‘确认/返回’键以确认。安装便会继续进行。
 
 ### 增加额外的功能 ###
 
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2013/09/gnome-music.jpg)
 
-GNOME 3.10还有一些不错的新特性和应用-[包括GNOME天气，音乐盒及地图][1] 以及其它各种各样的改变。因为并不是所有的特性都足够稳定以致于可以被包含在我们之前添加的GNOME 3 PPA中，所以如果你想使用它们，就需要利用到一对额外的GNOME PPA。
+GNOME 3.10还有一些不错的新特性和应用-[包括GNOME天气，音乐盒及地图][1] 以及其它各种各样的改变。因为并不是所有的特性都足够稳定以致于可以被包含在我们之前添加的GNOME 3 PPA中，所以如果你想使用它们，就需要利用到两个额外的GNOME PPA。
 
-现在-你需要意识到很重要的是-在这些仓库里的一些包据说有稳定性问题。这些问题大多是小问题，譬如应用程序崩溃和损坏。但还是有潜在的可能，导致像使GNOME完全崩溃这样的重大问题。
+现在，你需要意识到很重要的是，在这些仓库里的一些包据说有稳定性问题。这些问题大多是小问题，譬如应用程序崩溃和损坏。但还是有潜在的可能，导致像使GNOME完全崩溃这样的重大问题。
 
-除开这个警告，在终端里打开一个新的选项卡，输入下列命令：
+除开这个警告不说，在终端里打开一个新的选项卡，输入下列命令：
 
     sudo add-apt-repository ppa:gnome3-team/gnome3-staging
     sudo add-apt-repository ppa:gnome3-team/gnome3
@@ -66,7 +64,6 @@ GNOME 3.10还有一些不错的新特性和应用-[包括GNOME天气，音乐盒
 首先，你会发现**在系统设置里“Online Accounts”有两个入口**。其中，有钥匙图标的是Unity版的，另一个有插孔符号的是GNOME版的。
 
 一些应用程序可能会要求你往Unity中添加账户（Shotwell, Gwibber, Empathy），有一些可能是要求往GNOME中添加(Evolution, Documents, Contacts)。
-
 
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2013/04/online-accounts.jpg)
 
@@ -90,7 +87,6 @@ GNOME 3.10还有一些不错的新特性和应用-[包括GNOME天气，音乐盒
     sudo ppa-purge ppa:gnome3-team/gnome3
 
 完成后，你就剩下了原来的 GNOME 3.8 桌面。如果你不再想保留GNOME Shell了，你可以执行下列命令去卸载它：
-Once completed you should be left with the stock GNOME 3.8 desktop. 
 
     sudo apt-get remove gnome-shell ubuntu-gnome-desktop
 
