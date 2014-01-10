@@ -1,3 +1,6 @@
+Translating---------------geekpi
+
+
 userdel Command - Delete User Account from Linux system
 ================================================================================
 Maintaining users on the server means add them, modify them and delete them. When a user is no longer need on the system for any reasons, we should delete it to avoid security breach. On Linux system we have **userdel** command to delete a user
