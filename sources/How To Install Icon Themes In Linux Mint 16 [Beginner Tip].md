@@ -1,3 +1,4 @@
+@乌龙茶 翻译中
 How To Install Icon Themes In Linux Mint 16 [Beginner Tip]
 ================================================================================
 If you think the default Mint themes and icons are not good enough for you, why not change it? In this quick tip for beginners, we shall see how to **install icon themes in Linux Mint 16** and more than that **how to change the icons in Linux Mint**. We shall see this quick tutorial by installing gorgeous Moka icon themes.
