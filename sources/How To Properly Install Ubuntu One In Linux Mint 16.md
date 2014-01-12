@@ -1,3 +1,4 @@
+乌龙茶 翻译中
 How To Properly Install Ubuntu One In Linux Mint 16
 ================================================================================
 ![](http://itsfoss.com/wp-content/uploads/2014/01/Ubuntu-One-Linux-Mint.jpg)
