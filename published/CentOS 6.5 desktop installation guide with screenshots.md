@@ -1,4 +1,4 @@
-CentOS 6.5 桌面版安装教程附带大量截图
+图解 CentOS 6.5 桌面版安装
 ================================================================================
 ### CentOS 6.5 新版本发布 ###
 
@@ -8,12 +8,12 @@ CentOS 6.5 迎来了新的更新包和新功能。可以在[release notes][2]中
 
 ### 主要更新 ###
 
-> 精密时间协议 - 以前仅是一个科技预览版 - 现在已经完整支持了！以下设备支持网络时间戳：bnx2x,tg3 , e1000e , igb , ixgbe ,sfc。
-> OpenSSL 升级到1.0.1版本
-> OpenSSL、NSS支持TLS1.1和1.2
-> KVM得到大量加强。包括提升对VMDK文件和VHDX文件的只读，CPU支持热插拔以及升级了 virt-v2v-/virt-p2v-conversion 工具
-> Hyper-V 和 VMware 驱动升级
-> 升级到 Evolution（2.32）和 Libre Office（4.0.4）
+- 精密时间协议 - 以前仅是一个科技预览版 - 现在已经完整支持了！以下设备支持网络时间戳：bnx2x,tg3 , e1000e , igb , ixgbe ,sfc。
+- OpenSSL 升级到1.0.1版本
+- OpenSSL、NSS支持TLS1.1和1.2
+- KVM得到大量加强。包括提升对VMDK文件和VHDX文件的只读，CPU支持热插拔以及升级了 virt-v2v-/virt-p2v-conversion 工具
+- Hyper-V 和 VMware 驱动升级
+- 升级到 Evolution（2.32）和 Libre Office（4.0.4）
 
 ### 下载 ###
 

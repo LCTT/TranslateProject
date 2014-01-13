@@ -103,7 +103,7 @@ The memory consumption of JOE is impressive. To load and edit a 1GB text file, i
 
 via: http://xmodulo.com/2013/12/open-large-text-file-linux.html
 
-译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
