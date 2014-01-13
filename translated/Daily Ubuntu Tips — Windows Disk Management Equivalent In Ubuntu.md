@@ -1,4 +1,3 @@
-
 Ubuntu每日小贴士：在Ubuntu中有和Windows下的磁盘管理一样的工具么？
 ================================================================================
 
@@ -48,6 +47,6 @@ Ubuntu下有个很相似的软件叫做GNOME 磁盘功能中心，这个工具�
 
 via: http://www.liberiangeek.net/2014/01/daily-ubuntu-tips-windows-disk-management-equivalent-in-ubuntu/
 
-译者：[Timeszoro](https://github.com/译者ID) 校对：[校对者ID](https://github.com/Timeszoro)
+译者：[Timeszoro](https://github.com/译者ID) 校对：[校对者ID](https://github.com/Timeszoro) 
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
