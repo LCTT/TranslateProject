@@ -1,39 +1,38 @@
-(翻译中 by runningwater)
-Configure Your Browser To Use Tor On Ubuntu/Debian/Linux Mint
+Ubuntu/Debian/Linux Mint 系统中使用 Tor 配置你的浏览器
 ================================================================================
-**Tor**, **T**he **O**nion **R**outer, is a network of Virtual Tunnels that allows users to communicate securely and as well as anonymously over Internet. Tor allows organizations and individuals to share information over public networks without compromising their privacy. We can use Tor to keep websites from tracking us and also our family members, or to connect to news sites, instant messaging services, or the websites which are blocked by the Internet providers and Network Administrators.
+**Tor**, **T**he **O**nion **R**outer (洋葱路由)，是一种虚拟通道网络，它可使用户安全以及匿名的进行互联网通信。Tor 可以让组织及个人通过公共网络分享信息而不用担心隐私会泄露。我们可以用 Tor 来避免网站追踪我们及我们家人的信息，也可以用来连接新闻网站、即时通讯服务或者那些被网络提供商和网络管理员封锁的网站。
 
-Tor was originally designed, implemented, and deployed as a third-generation [onion routing project of the U.S. Naval Research Laboratory][1]. It was originally developed with the U.S. Navy in mind, for the primary purpose of protecting government communications. Today, it is used every day for a wide variety of purposes by normal people, the military, journalists, law enforcement officers, activists, and many others.
+Tor 最初是当做第三代[美国海军研究实验室的洋葱路由项目][1]而设计、实现及发展起来的。在美国海军心中，最初设计的目的是为了政府通信的安全，但今天，每天都以各式各样的目的而被普通人、军队、记者、执法人员、活动家以及其他更多的人使用。
 
-In this quick how-to let us learn how to use Tor with our browsers. The steps provided here were tested on Ubuntu 13.04 Desktop, but it should work on all Debian/Ubuntu and its derivatives.
+这篇快速教程中，我们会学到怎么在浏览器上使用 Tor。下面所示的操作步骤是 Ubuntu 13.04 桌面系统中测试的，但它在所有的 Debian/Ubuntu 系统及它们的衍生系统中应该也适用。
 
-### Install Tor & Vidalia On Ubuntu / Debian / Linux Mint ###
+### 在 Ubuntu / Debian / Linux Mint 上安装 Tor 和 Vidalia ###
 
-Tor is available in the default repositories of Debian/Ubuntu, but they might be bit outdated. So add Tor repository to your distribution source lists.
+Tor 在 Debian/Ubuntu 系统的默认源库中已经存在，但它们有点过时了。所以得把 Tor 源库加入你的发布版本的源列表中。
 
-Edit file **/etc/apt/sources.list**,
+编辑 **/etc/apt/sources.list** 文件，
 
     $ sudo nano /etc/apt/sources.list
 
-Add the following lines depending upon your distribution version. As i am testing this on my Ubuntu 13.04 desktop, i added the following lines.
+根据你系统的发行版本添加如下的一行。因为在我的 Ubuntu 13.04 桌面系统上做测试，所以我添加了如下的一行。
 
     [...]
     deb     http://deb.torproject.org/torproject.org raring main
 
-Save and close the file. If you’re using Ubuntu 13.10, then the lines should be,
+保存并关闭文件。如果你使用的是 buntu 13.10 系统，添加行应该是，
 
     deb     http://deb.torproject.org/torproject.org saucy main
 
-For Debian 7 Wheezy,
+Debian 7 Wheezy 如下：
 
     deb     http://deb.torproject.org/torproject.org wheezy main
 
-Add the gpg key using following commands:
+用如下命令添加 gpg 键：
 
     $ gpg --keyserver keys.gnupg.net --recv 886DDD89 
     $ gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | sudo apt-key add -
 
-Update the repository list and install vidalia using commands:
+用下面命令更新源库列表及安装 vidalia：
 
     $ sudo apt-get update
     $ sudo apt-get install tor vidalia deb.torproject.org-keyring
