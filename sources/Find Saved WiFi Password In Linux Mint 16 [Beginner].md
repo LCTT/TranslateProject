@@ -1,3 +1,4 @@
+乌龙茶 翻译中
 Find Saved WiFi Password In Linux Mint 16 [Beginner]
 ================================================================================
 When you connect to a wireless network using WEP, WPA or WPA2-PSK, the password is saved in Linux Mint (or any other OS) when you use “connect automatically”. Imagine a situation where you need to know the WiFi password and you have not noted it down somewhere for e.g., if you need to provide the password to a visitor. You can easily retrieve the password of an earlier connected wireless network.
