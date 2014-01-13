@@ -12,17 +12,17 @@ Linus Torvalds还在[12月18号庆祝了自己的生日][1]，但并没有大操
 
 ###Linux内核3.13 RC6的亮点###
 
-• 修正了音频pins的数目（drm/radeon/dce6)
-• 在Cayman上禁用了SS(drm/radeon/dpm)
-• 检查了扬声器分配和SAD代码中的0计数（drm/radeon)
-• 修复了热插拔块设备时的内存泄露问题
-• 修复了SDHI资源的大小
-• 修复了执行缓存中分配内存失败后仍然释放引用的问题（drm/i9150)
-• 修复了reset_status中对batch_obj的错误引用释放
-• Sandybridge+启用了正确的GMCH_CTRL注册
-• 对废弃的消息JBD->JBD2进行了重命名
-• 增加对ValleyView Soc的支持
-• 增加对PWM背光电源的支持
+- 修正了音频pins的数目（drm/radeon/dce6)
+- 在Cayman上禁用了SS(drm/radeon/dpm)
+- 检查了扬声器分配和SAD代码中的0计数（drm/radeon)
+- 修复了热插拔块设备时的内存泄露问题
+- 修复了SDHI资源的大小
+- 修复了执行缓存中分配内存失败后仍然释放引用的问题（drm/i9150)
+- 修复了reset_status中对batch_obj的错误引用释放
+- Sandybridge+启用了正确的GMCH_CTRL注册
+- 对废弃的消息JBD->JBD2进行了重命名
+- 增加对ValleyView Soc的支持
+- 增加对PWM背光电源的支持
 
 完整的修改、改进、修复列表请参看官方[修改日志][2]。
 
