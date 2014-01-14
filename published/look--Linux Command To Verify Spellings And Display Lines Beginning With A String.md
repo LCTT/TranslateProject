@@ -49,7 +49,7 @@ look: Linux 下验证拼写并显示以某字符串开头的行的命令
 
 #### 下载/安装/配置 ####
 
-下面是关于look命令的一些终于链接：
+下面是关于look命令的一些链接：
 
 - 主页 [*如果你知道这个工具的主页的话让我知道一下*]
 - 下载链接
@@ -73,7 +73,7 @@ look命令成了**util-linux**包的一部分，它在大多数Linux发行版中
 
 via: http://mylinuxbook.com/look-verify-spellings-and-display-lines/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
