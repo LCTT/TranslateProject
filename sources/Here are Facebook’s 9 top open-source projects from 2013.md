@@ -1,5 +1,3 @@
-coolpigs translating
-
 Here are Facebook’s 9 top open-source projects from 2013
 ================================================================================
 Facebook and open-source software go together like Jay-Z and Beyoncé — you just can’t have one without the other.
