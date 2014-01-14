@@ -1,3 +1,4 @@
+[翻译中 by KayGuoWhu]
 How to Dual Boot Ubuntu and Windows Properly
 ================================================================================
 **Despite what Microsoft would have you believe, a Linux and a Windows operating system can coexist peacefully on the same PC. This is a tutorial that will teach you how to get an Ubuntu system to run in parallel with a Windows OS.**
