@@ -1,5 +1,3 @@
-hyaocuk is TRANSLATING
-
 Top 10 Linux Games of 2013
 ================================================================================
 **With 2013 wrapping up, we’ve brought together 10 of our favourite Linux games of the past year.**

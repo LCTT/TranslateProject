@@ -1,3 +1,4 @@
+乌龙茶 翻译中
 Ubuntu Will Reach True Convergence Before Microsoft, Says Shuttleworth
 ================================================================================
 **The traditional six-monthly Ubuntu release cycle could become a thing of the past, Ubuntu’s founder has suggested.**

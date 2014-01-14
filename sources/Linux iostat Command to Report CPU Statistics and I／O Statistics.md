@@ -1,4 +1,3 @@
-[marked stduolc]
 Linux iostat Command to Report CPU Statistics and I/O Statistics
 ================================================================================
 A Central Processing Unit or CPU is the brain of the computer. All of processing command is run here. Input / Ouput or I/O also play critical roles. The disks is used to provide data to processor and keeps the data which has been processed by CPU. One of the methods for measuring processor utilization and I/O utilization is to use **iostat** command. From its utilization we can decide do we need to add more resources or not.

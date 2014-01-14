@@ -1,4 +1,3 @@
-[翻译中 by KayGuoWhu]
 Solving HIPPA, HITECH, SSAE16 Server Compliance Issues with Next Generation Datacenters
 ================================================================================
 ![](http://www.atlantic.net/wp-content/uploads/2013/12/next-generation-datacenter.jpg)

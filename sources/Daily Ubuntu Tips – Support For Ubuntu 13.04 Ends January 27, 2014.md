@@ -1,3 +1,4 @@
+先来篇儿短的练练手儿
 Daily Ubuntu Tips – Support For Ubuntu 13.04 Ends January 27, 2014
 ================================================================================
 If you’re currently Ubuntu 13.04 Raring Ringtail, it may be time to upgrade to the next version because support for it will end January 27 of this year.
