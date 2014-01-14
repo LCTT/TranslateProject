@@ -2,7 +2,7 @@
 ================================================================================
 ![](http://itsfoss.com/wp-content/uploads/2014/01/Ubuntu-One-Linux-Mint.jpg)
 
-由于[Linux Mint][1]是基于 Ubuntu 的，所以我认为 Ubuntu One 应该是预装程序之一。不过我错了。我自行从 Software Manager 安装了 Ubuntu One，令我惊讶的是，它居然无法正常运行。在这篇教程中我们会告诉你 **在 Linux Mint 16中如何安装 Ubuntu One ** 以及如何正常运行它。
+由于[Linux Mint][1]是基于 Ubuntu 的，所以我认为 Ubuntu One 应该是预装程序之一。不过我错了。我自行从 Software Manager 安装了 Ubuntu One，令我惊讶的是，它居然无法正常运行。在这篇教程中我们会告诉你**如何在 Linux Mint 16中安装 Ubuntu One** 以及如何正常运行它。
 
 ### 在Linux Mint 16 中安装 Ubuntu One: ###
 
