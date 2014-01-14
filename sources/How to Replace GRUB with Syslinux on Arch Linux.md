@@ -1,45 +1,45 @@
-翻译中 by dy2009
-How to Replace GRUB with Syslinux on Arch Linux
+
+在Arch上使用Syslinux替代GRUB
 ================================================================================
-**The following tutorial will teach existing Arch Linux users how to install replace the GRUB boot loader in their operating systems with Syslinux, which offers a simple, fast, and more modern boot loader.**
+
+这个教程用于告诉Arch Linux的使用者在Arch下安装Syslinux——一个轻量级、快速并且现代感十足的系统引导程序，并替换掉系统自带的GRUB引导程序。
 
 ![](http://i1-news.softpedia-static.com/images/news2/How-to-Replace-GRUB-with-Syslinux-on-Arch-Linux-415394-2.jpg)
 
-Actually, Syslinux is not a single boot loader, as it’s comprised of multiple boot loaders that are capable of booting from local drives, over the network via PXE, as well as removable media. In addition, it supports both MBR and GPT disks, as well as RAID setups.
+实际上，Syslinux不是一个简单的开机启动装载程序，它有几种开机载入的功能，能够在本地载入，通过PXE网络载入，以及通过可移动媒体。并且，它还同时支持MBR和GPT磁盘，以及RAID设置。
 
-Before you jump to the actual installation process, you should know that Syslinux supports the following filesystems: FAT, EXT2, EXT3, EXT4, and Btrfs. You should also know that Syslinux can boot from both UEFI and BIOS machines, and it is not capable (at the moment) of accessing files from partitions other than its own.
+在开始你实际操作之前，你需要了解Syslinux支持如下文件系统：FAT，EXT2，EXT3，EXT4和Btrfs。而且Syslinux能够运行在支持UEFI或BIOS的机器上，到目前为止，Syslinux还只能访问自己所在的分区。
 
-Also, keep in mind that replacing GRUB with Syslinux is an optional thing, not something that you should really do because “something else will happen.” Only people who want to try something new, who are bored with the look of the GRUB boot loader should install Syslinux, otherwise keep running GRUB.
+在你替换GRUB启动之前，请认真考虑这只是一个可选的操作，这个操作有可能会给你带来一些麻烦。如果说你只是想尝试一下新鲜的事物，或是已经厌倦了GRUB的界面，没问题来尝试尝试Syslinux吧。
 
-### Installing Syslinux on your Arch box ###
-
-Knowing all of the above, we should proceed with the installation of Syslinux, replacing your old GRUB Legacy or GRUB2 boot loader. Open a terminal and execute the following command to install Syslinux
+###在Arch box 中安装Syslinux ###
+通过上面的了解，我们来开始安装Syslinux，并替换掉已有的GRUB或者GRUB2启动程序。打开一个终端，输入如下命令来安装Syslinux
 
 sudo pacman -S syslinux
 
-After installation, you should notice a message that will instruct you how to deploy the Syslinux boot loader on a BIOS or a UEFI system. BIOS users are the luckiest ones, as they will only have to run the syslinux-install_update script created by Matthew Gyurgyik in order to successfully deploy Syslinux on their systems.
+安装完成后，你应该注意到一条消息，将指导您如何部署SYSLINUX引导装载程序，分别在BIOS或UEFI机器上。BIOS用户比较幸运，因为他们只需要运行syslinux-install_update 脚本就行了，这个脚本是Matthew Gyurgyik编写的，用来在BIOS机器上成功的部署Syslinux。
 
-### Deploying Syslinux on your Arch box ###
+###在Arch box上部署Syslinux###
 
-Those of you who have a separate /boot partition should make sure that it is mounted before executing the script above. In the same terminal window, execute the following command:
+如果你拥有的是一个单独的/boot分区，你要保证你是在/boot分区上执行的这个脚本。在终端中输入如下命令：
 
 sudo syslinux-install_update -i -a -m
 
-The script will install the necessary files, mark the partition with the boot flag, and install the MBR boot code.
+这个脚本会安装必需的文件，并且用启动标记标记分区，同时会安装MBR引导代码。
 
-### Configuring Syslinux ###
+###配置Syslinux###
 
-This is a very important step and no one should ignore it, because your computer will no longer boot if Syslinux is not configured properly. You have been warned!
+这是非常非常重要的一步，任何人都不能忽略它，因为如果你的Syslinux没有正确的配置，你的电脑将不能启动。请再次注意。
 
-Syslinux can now be configured via the /boot/syslinux/syslinux.cfg file. Take a look at [the official Arch Linux page of Syslinux][1] for detailed configuration instructions. When done, reboot your system to see the new boot loader.
+目前，Syslinux能通过/boot/syslinux/syslinux.cfg文件进行配置。在[the official Arch Linux page of Syslinux][1] 中查看详细的配置指令。当你配置成功后，重启你的系统然后来看看新的启动引导程序效果如何！
 
-Do not hesitate to use our commenting system below in case you encounter any issues with the tutorial.
+如果你有任何的问题，请毫不犹豫的在评论中提出！
 
 --------------------------------------------------------------------------------
 
 via: http://news.softpedia.com/news/How-to-Replace-GRUB-with-Syslinux-on-Arch-Linux-415394.shtml
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[dy2009](https://github.com/dy2009) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
