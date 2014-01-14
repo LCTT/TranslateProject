@@ -1,4 +1,3 @@
-[翻译中 by KayGuoWhu]
 How to Replace GRUB with Syslinux on Arch Linux
 ================================================================================
 **The following tutorial will teach existing Arch Linux users how to install replace the GRUB boot loader in their operating systems with Syslinux, which offers a simple, fast, and more modern boot loader.**
