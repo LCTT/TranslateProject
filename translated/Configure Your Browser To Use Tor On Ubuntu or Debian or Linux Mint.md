@@ -37,27 +37,27 @@ Debian 7 Wheezy 如下：
     $ sudo apt-get update
     $ sudo apt-get install tor vidalia deb.torproject.org-keyring
 
-During installation, you’ll be asked which user should be able to control Tor service. Select the user and click Ok.
+在安装期间，你会被问到要用哪一个用户来负责 Tor 服务，选择一个用户然后点击 OK。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/12/sk@sk-_013.jpg)
 
-Now Vidalia is installed and running.
+现在 Vidalia 已经安装运行了。
 
-### Configure Firefox Browser ###
+### 配置火狐浏览器 ###
 
-Open your browser. Go to **Edit -> Preferences -> Advanced -> Network ->Settings**. Select manual Proxy Configuration. In the SOCKS Host column, enter **localhost** or **127.0.0.1** and in the port column enter **9050** as shown in the below screenshot.
+打开浏览器。进入 **编辑 -> 首选项 -> 高级 -> 网络 ->设置**。如下截图所示，选择手动配置代理，在 SOCKS Host 一栏，输入 **localhost** 或者 **127.0.0.1**，在端口一栏输入 **9050**。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2013/12/Firefox-Preferences_015.jpg)
 
-Now point your browser with URL **https://check.torproject.org/**. You will see a green message that indicates: “**Congratulations. This browser is configured to use Tor**”. Red message indicate that Tor is not setup. Refer the following screenshot.
+现在，在浏览器上输入网址 **https://check.torproject.org/**。你会看到一个绿色的讯息：“**恭喜。这个浏览器配置为可以使用Tor**“。红色的消息表明 Tor 还没有设置。请参考下面的截图。
 
-![Are you using Tor? - Mozilla Firefox_014](http://180016988.r.cdn77.net/wp-content/uploads/2013/12/Are-you-using-Tor-Mozilla-Firefox_014.jpg)
+![你使用 Tor 吗? - Mozilla Firefox_014](http://180016988.r.cdn77.net/wp-content/uploads/2013/12/Are-you-using-Tor-Mozilla-Firefox_014.jpg)
 
-The same settings are applicable for all browsers, just open the Browser settings/preferences window, find the Network settings, Enter **127.0.0.1** in proxy server column and **9050** in port box. To disable Tor, Select **Use System Proxy settings** on browser settings.
+相同的设置适用于所有浏览器，只要打开浏览器设置/首选项窗口，找到网络设置，在代理服务器栏中输入 **127.0.0.1**,在端口选项框中输入**9050**。要禁用 Tor，选择**使用系统代理设置**。
 
-**Note**: If you want to use Tor for anonymous web browsing, please read our article about [Tor Browser Bundle][2]. It comes with readily configured Tor and a browser patched for better anonymity. To use SOCKS directly (for instant messaging, Jabber, IRC, etc), you can point your application directly at Tor (localhost port 9050), but see [this FAQ entry][3] for why this may be dangerous.
+**注意**: 如果你想使用 Tor 匿名浏览网页，请阅读我们有关[Tor浏览器套件][2]的文章,它提供了易于配置的Tor以及浏览器补丁包，以使匿名访问更方便。要直接使用SOCKS（即时通讯，Jabber，IRC等），你可以直接在 Tor（本地端口9050）配置里指向你的应用程序，但需要先看看[这些FAQ条目] [3]来了解这么做的风险。
 
-That’s it. Good Luck! Stay Safe!
+就这么多。好运吧！保持安全！
 
 --------------------------------------------------------------------------------
 
