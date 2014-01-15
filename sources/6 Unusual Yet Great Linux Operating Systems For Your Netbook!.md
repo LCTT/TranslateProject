@@ -1,3 +1,4 @@
+翻译ing by Luoxcat
 6 Unusual Yet Great Linux Operating Systems For Your Netbook!
 ================================================================================
 > The beauty of Linux-based operating systems is that they can be customised as per the requirements. So, here we present top 6 unusual yet interesting distros for netbooks! 
