@@ -1,3 +1,4 @@
+  Vic020 挑个短的吧
 2014: The year of the Linux car?
 > ================================================================================
 > You read that right: Not the year of the Linux desktop, the year of the Linux car. Major automotive companies are investing in making Linux their cars' operating system of choice.
