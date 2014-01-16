@@ -1,3 +1,4 @@
+translating by icybreaker
 Collectl is a powerful tool to monitor system resources on Linux
 ================================================================================
 ### Monitoring system resources ###
