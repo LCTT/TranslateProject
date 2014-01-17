@@ -1,4 +1,3 @@
-Crowner's crown
 Setup Apache 2.4 and Php FPM with mod proxy fcgi on Ubuntu 13.10
 ================================================================================
 ### mod_proxy_fcgi ###
