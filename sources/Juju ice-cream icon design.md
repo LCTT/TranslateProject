@@ -1,14 +1,16 @@
 seonlee2013 translating
+
 Juju ice-cream icon design
+================================================================================
 Juju 雪糕图标设计
 ================================================================================
 Who doesn’t like ice-cream? Here in the design team we sure do! In the last few weeks we’ve been preparing a special Juju demo for the OpenStack Summit in Hong Kong and we’ve created some very ‘tasty’ icons for it. We thought it would be nice to show you how those icons were created, so here’s a little insight on the design process.
-谁不喜欢雪糕？
+谁不喜欢雪糕？我们的设计团队肯定喜欢！过去几周，我们为正在香港举办的OpenStack峰会准备了特别的Juju演示，而且我们为它创作了一些非常’可口‘的图标。我们觉得向大家展示这些图标如何被创建出来很有趣，因此以下便是设计过程的一些小见解。
 
 ### The brief ###
-
+### 概要 ###
 We wanted to replace the normal Juju icons for something a little bit more special in order to explain to people that visited the Ubuntu stand what kind of things Juju can do. We decided to use the idea of an ice-cream with toppings and sauce which you can build in the same way that you can build services in Juju.
-
+我们想将常用的Juju图标替换为某种更为特别的，以便于人们在访问Ubuntu时能Juju能做些什么。
 The best part of this demo is that people would actually get the ice-cream they had ‘built’ in Juju in real life!
 
 ![](http://design.canonical.com/wp-content/uploads/1-juju.jpg)
@@ -16,7 +18,7 @@ The best part of this demo is that people would actually get the ice-cream they 
 *The Juju interface, with its default icons*
 
 ### Finding good concepts ###
-
+### 寻找好概念中
 The first thing I needed to do was to find good concepts to present ice-creams and toppings in an icon format. Toppings were going to be especially tricky, as they can be very small and therefore hard to make out at small sizes.
 
 I initially sketched and designed some ideas that were using a kind of flat look. This worked well for the ice-cream, but not so much for the toppings — I soon noticed they had to be semi-realistic to be recognisable.
