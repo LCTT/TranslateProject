@@ -1,4 +1,4 @@
-5 Things To Love And Hate About Ubuntu 13.10
+【kingname翻译中】5 Things To Love And Hate About Ubuntu 13.10
 ================================================================================
 Ubuntu 13.10 made a lot of noise before and after its arrival. The OS takes Canonical to a whole new level, especially with the big year that Linux has had in 2013. But now that the dust has settled and there's less talk, let us take a look at five things that you might like and five things that you may hate in the OS.
 
