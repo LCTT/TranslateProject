@@ -1,33 +1,34 @@
-29 Practical Examples of Nmap Commands for Linux System/Network Administrators
+对于Linux系统/网络管理员的nmap的29个实例
 ================================================================================
-The **Nmap** aka **Network Mapper** is an open source and a very versatile tool for Linux system/network administrators. **Nmap** is used for **exploring networks, perform security scans, network audit** and **finding open ports** on remote machine. It scans for Live hosts, Operating systems, packet filters and open ports running on remote hosts.
+**Nmap**亦称为**Network Mapper**(网络映射)是一个开源并且通用的用于Linux系统/网络管理员的工具。**nmap**用于**探索网络、执行安全扫描、网络核查**并且**找出开放端口**在远程机器上。它扫描在线主机、操作系统、包过滤和运行在远程主机的开放端口。
 
-![Nmap Commands](http://www.tecmint.com/wp-content/uploads/2013/12/Nmap-Commands.png)
-*Nmap Commands and Examples*
+![Nmap 命令](http://www.tecmint.com/wp-content/uploads/2013/12/Nmap-Commands.png)
+*Nmap 命令和示例*
 
-I’ll be covering most of **NMAP** usage in two different parts and this is the first part of nmap serious. Here in this setup, I have used two servers without firewall to test the working of the Nmap command.
+我会在两个不同部分覆盖大部分**NMAP**的使用，这篇是nmap系列的第一部分(译注:原文为I’ll be covering most of NMAP usage in two different parts and this is the first part of nmap serious,这里serious可能为笔误，应该为series)。在这个步骤来，我有两个没有防火墙的服务器来测试nmap命令的工作。
 
 - 192.168.0.100 – server1.tecmint.com
 - 192.168.0.101 – server2.tecmint.com
 
-### Nmap command usage ###
+### Nmap 命令使用 ###
 
     # nmap [Scan Type(s)] [Options] {target specification}
 
-### How to Install NMAP in Linux ###
+### 如何在Linux上安装nmap ###
 
-Most of the today’s Linux distributions like **Red Hat, CentOS, Fedoro, Debian** and **Ubuntu** have included **Nmap** in their default package management repositories called [Yum][1] and [APT][2]. The both tools are used to install and manage software packages and updates. To install **Nmap** on distribution specific use the following command.
+**Nmap** on distribution specific use the following command.
+如今大部分Linux发行版像**Red Hat, CentOS, Fedoro, Debian** 和 **Ubuntu**已经包含了**nmap**在它们默认的包管理仓库中，名为[Yum][1] 和 [APT][2]。这两者用于安装和管理软件包和更新。为了在特定发行版上安装**nmap**，使用下面的命令。
 
     # yum install nmap		[on Red Hat based systems]
     $ sudo apt-get install nmap	[on Debian based systems]
 
-Once you’ve install latest nmap application, you can follow the example instructions provided in this article.
+一旦你已经安装了最新的nmap程序，你可以跟着这篇文章中的示例指令来。
 
-### 1. Scan a System with Hostname and IP Address ###
+### 1. 带主机名和IP地址扫描系统 ###
 
-The **Nmap** tool offers various methods to scan a system. In this example, I am performing a scan using hostname as **server2.tecmint.com** to find out all open ports, services and MAC address on the system.
+**nmap**工具提供了不同的方法来扫描一个系统。在这个例子中，我使用主机名为**server2.tecmint.com**的机器执行扫描来找出所有开放端口，服务和系统上的MAC地址。
 
-#### Scan using Hostname ####
+#### 使用主机名扫描 ####
 
     [root@server1 ~]# nmap server2.tecmint.com
     
@@ -46,7 +47,7 @@ The **Nmap** tool offers various methods to scan a system. In this example, I am
     Nmap finished: 1 IP address (1 host up) scanned in 0.415 seconds
     You have new mail in /var/spool/mail/root
 
-#### Scan using IP Address ####
+#### 使用IP地址扫描 ####
 
     [root@server1 ~]# nmap 192.168.0.101
 
@@ -65,9 +66,9 @@ The **Nmap** tool offers various methods to scan a system. In this example, I am
     Nmap finished: 1 IP address (1 host up) scanned in 0.465 seconds
     You have new mail in /var/spool/mail/root
 
-### 2. Scan using “-v” option ###
+### 2. 使用"-v"选项扫描 ###
 
-You can see that the below command with “**-v**” option is giving more detailed information about the remote machine.
+你可以看到带"-v"选项的命令给出了关于远程机器的更多信息。
 
     [root@server1 ~]# nmap -v server2.tecmint.com
 
@@ -97,9 +98,9 @@ You can see that the below command with “**-v**” option is giving more detai
     Nmap finished: 1 IP address (1 host up) scanned in 0.485 seconds
                    Raw packets sent: 1681 (73.962KB) | Rcvd: 1681 (77.322KB)
 
-#### Scan Multiple Hosts ####
+#### 扫描多台主机 ####
 
-You can scan multiple hosts by simply writing their IP addresses or hostnames with Nmap.
+你可以简单地通过在namap后写上它们的IP地址或者主机名来扫描多台主机。
 
     [root@server1 ~]# nmap 192.168.0.101 192.168.0.102 192.168.0.103
 
@@ -116,9 +117,9 @@ You can scan multiple hosts by simply writing their IP addresses or hostnames wi
     MAC Address: 08:00:27:D9:8E:D7 (Cadmus Computer Systems)
     Nmap finished: 3 IP addresses (1 host up) scanned in 0.580 seconds
 
-### 4. Scan a whole Subnet ###
+### 4. 扫描整个子网 ###
 
-You can scan a whole subnet or IP range with Nmap by providing *** wildcard** with it.
+你可以通过**通配符**来使nmap扫描整个子网或者IP段。
 
     [root@server1 ~]# nmap 192.168.0.*
 
@@ -144,11 +145,11 @@ You can scan a whole subnet or IP range with Nmap by providing *** wildcard** wi
     Nmap finished: 256 IP addresses (2 hosts up) scanned in 5.550 seconds
     You have new mail in /var/spool/mail/root
 
-On above output you can see that nmap scanned a whole subnet and gave the information about those hosts which are **Up** in the **Network**.
+从上面的输出你可以看到nmap扫描了整个子网，并给出了**网络**中**在线**主机的信息。
 
-### 5. Scan Multiple Servers using last octet of IP address ###
+### 5. 使用IP地址的最后八位扫描多台主机 ###
 
-You can perform scans on multiple IP address by simple specifying last octet of IP address. For example, here I performing a scan on IP addresses 192.168.0.101, 192.168.0.102 and 192.168.0.103.
+你可以简单地通过指定IP地址的最后8位执行扫描多台主机。比如说，这里我在IP地址为192.168.0.101, 192.168.0.102 and 192.168.0.103的机器上执行了扫描。
 
     [root@server1 ~]# nmap 192.168.0.101,102,103
 
@@ -167,11 +168,11 @@ You can perform scans on multiple IP address by simple specifying last octet of 
     Nmap finished: 3 IP addresses (1 host up) scanned in 0.552 seconds
     You have new mail in /var/spool/mail/root
 
-### 6. Scan list of Hosts from a File ###
+### 6. 从文件中扫描主机列表 ###
 
-If you have more hosts to scan and all host details are written in a file , you can directly ask nmap to read that file and perform scans. Let’s see how to do that.
+如果你有更多的自己要扫描，并且所有的主机细节写在一个文件中，你可以直接让namp读取它并执行扫描。让我们看看要怎么做。
 
-Create a text file called “**nmaptest.txt**” and define all the IP addresses or hostname of the server that you want to do a scan.
+创建一个名为“**nmaptest.txt**”的文本文件，并定义所有你想要扫描的IP地址或者服务器的主机名。
 
     [root@server1 ~]# cat > nmaptest.txt
 
@@ -179,7 +180,7 @@ Create a text file called “**nmaptest.txt**” and define all the IP addresses
     server2.tecmint.com
     192.168.0.101
 
-Next, run the following command with “**iL**” option with nmap command to scan all listed IP address in the file.
+接着，带“**iL**”运行nmap命令来扫描文件中所有列出的IP地址。
 
     [root@server1 ~]# nmap -iL nmaptest.txt
 
@@ -217,9 +218,9 @@ Next, run the following command with “**iL**” option with nmap command to sc
 
     Nmap finished: 3 IP addresses (3 hosts up) scanned in 2.047 seconds
 
-### 7. Scan an IP Address Range ###
+### 7. 扫描一个IP段 ###
 
-You can specify an IP range while performing scan with Nmap.
+在使用nmap扫描时，你可以指定一个IP段。
 
     [root@server1 ~]# nmap 192.168.0.101-110
 
@@ -237,9 +238,9 @@ You can specify an IP range while performing scan with Nmap.
 
     Nmap finished: 10 IP addresses (1 host up) scanned in 0.542 seconds
 
-### 8. Scan Network Excluding Remote Hosts ###
+### 8. 排除远程主机扫描网络 ###
 
-You can exclude some hosts while performing a full network scan or when you are scanning with wildcards with “**–exclude**” option.
+你可以在执行全网扫描的时候排除一些主机，或者在使用通配符扫描时使用“**–exclude**”选项。
 
     [root@server1 ~]# nmap 192.168.0.* --exclude 192.168.0.100
 
@@ -258,9 +259,9 @@ You can exclude some hosts while performing a full network scan or when you are 
     Nmap finished: 255 IP addresses (1 host up) scanned in 5.313 seconds
     You have new mail in /var/spool/mail/root
 
-### 9. Scan OS information and Traceroute ###
+### 9. 扫描系统信息及路由跟踪 ###
 
-With Nmap, you can detect which OS and version is running on the remote host. To enable OS & version detection, script scanning and traceroute, we can use “**-A**” option with NMAP.
+使用nmap，你可以检测到运行在远程主机上的操作系统和版本。为了启用OS和版本检测，脚本扫描和跟踪路由，我们可以使用带 “**-A**” 选项使用nmap。
 
     [root@server1 ~]# nmap -A 192.168.0.101
 
@@ -293,11 +294,11 @@ With Nmap, you can detect which OS and version is running on the remote host. To
     Nmap finished: 1 IP address (1 host up) scanned in 22.271 seconds
     You have new mail in /var/spool/mail/root
 
-In above Output, you can see that nmap is came up with TCP/IP fingerprint of the OS running on remote hosts and being more specific about the port and services running on the remote hosts.
+在上面的输出中，你可以看到运行在远程主机上操作系统的TCP/IP指纹和更详细的运行在远程主机上的特定端口和服务。
 
-### 10. Enable OS Detection with Nmap ###
+### 10. 使用nmap启用系统检测 ###
 
-Use the option “-O” and “-osscan-guess” also helps to discover OS information.
+使用选项“-O”和“-osscan-guess”同样帮助发现OS信息。
 
     [root@server1 ~]# nmap -O server2.tecmint.com
 
@@ -330,9 +331,9 @@ Use the option “-O” and “-osscan-guess” also helps to discover OS inform
     Nmap finished: 1 IP address (1 host up) scanned in 11.064 seconds
     You have new mail in /var/spool/mail/root
 
-### 11. Scan a Host to Detect Firewall ###
+### 11. 扫描主机来检测防火墙 ###
 
-The below command will perform a scan on a remote host to detect if any packet filters or Firewall is used by host.
+下面的命令会在远程主机上执行扫描来检测主机上是否使用了任何包过滤器或者防火墙。
 
     [root@server1 ~]# nmap -sA 192.168.0.101
 
@@ -343,9 +344,9 @@ The below command will perform a scan on a remote host to detect if any packet f
     Nmap finished: 1 IP address (1 host up) scanned in 0.382 seconds
     You have new mail in /var/spool/mail/root
 
-### 12. Scan a Host to check its protected by Firewall ###
+### 12. 扫描主机以检查其受到防火墙保护 ###
 
-To scan a host if it is protected by any packet filtering software or Firewalls.
+为了扫描一个主机是否受到任何包过滤器软件或者防火墙保护。
 
     [root@server1 ~]# nmap -PN 192.168.0.101
 
@@ -363,9 +364,9 @@ To scan a host if it is protected by any packet filtering software or Firewalls.
 
     Nmap finished: 1 IP address (1 host up) scanned in 0.399 seconds
 
-### 13. Find out Live hosts in a Network ###
+### 13. 找出网络中在线主机 ###
 
-With the help of “**-sP**” option we can simply check which hosts are live and up in Network, with this option nmap skips port detection and other things.
+在“**-sP**”选项的bang帮助下，我们可以简单地检测网络中的主机是否在线,带这个选项后nmap会跳过端口检测和其他事情。
 
     [root@server1 ~]# nmap -sP 192.168.0.*
 
@@ -375,9 +376,9 @@ With the help of “**-sP**” option we can simply check which hosts are live a
     MAC Address: 08:00:27:D9:8E:D7 (Cadmus Computer Systems)
     Nmap finished: 256 IP addresses (2 hosts up) scanned in 5.109 seconds
 
-### 14. Perform a Fast Scan ###
+### 14. 执行快速扫描 ###
 
-You can perform a fast scan with “**-F**” option to scans for the ports listed in the nmap-services files and leaves all other ports.
+你可以带“**-F**”选项扫描所有列在nmap服务文件中的端口而留下其他端口。
 
     [root@server1 ~]# nmap -F 192.168.0.101
 
@@ -394,18 +395,18 @@ You can perform a fast scan with “**-F**” option to scans for the ports list
 
     Nmap finished: 1 IP address (1 host up) scanned in 0.322 seconds
 
-### 15. Find Nmap version ###
+### 15. 找出nmap版本 ###
 
-You can find out Nmap version you are running on your machine with “**-V**” option.
+你可以使用“**-V**”选项找出运行在你机器上的nmap版本。
 
     [root@server1 ~]# nmap -V
 
     Nmap version 4.11 ( http://www.insecure.org/nmap/ )
     You have new mail in /var/spool/mail/root
 
-### 16. Scan Ports Consecutively ###
+### 16. 连续扫描端口 ###
 
-Use the “**-r**” flag to don’t randomize.
+使用“**-r**”选项而不随机化。
 
     [root@server1 ~]# nmap -r 192.168.0.101
 
@@ -423,9 +424,9 @@ Use the “**-r**” flag to don’t randomize.
 
     Nmap finished: 1 IP address (1 host up) scanned in 0.363 seconds
 
-17. Print Host interfaces and Routes
+### 17. 打印主机接口及路由 ###
 
-You can find out host interface and route information with nmap by using “**–iflist**” option.
+你可以使用nmap的“**–iflist**”选项来找出主机接口和路由信息。
 
     [root@server1 ~]# nmap --iflist
 
@@ -440,11 +441,11 @@ You can find out host interface and route information with nmap by using “**�
     192.168.0.0/0 eth0
     169.254.0.0/0 eth0
 
-In above output, you can see that map is listing interfaces attached to your system and their respective routes.
+在上面的输出中，你可以看到清单列出了连接到你系统中的接口和它们相应的路由。
 
-### 18. Scan for specific Port ###
+### 18. 扫描特定端口 ###
 
-There are various options to discover ports on remote machine with Nmap. You can specify the port you want nmap to scan with “**-p**” option, by default nmap scans only **TCP** ports.
+nmap使用不同的选项来发现远程机器上的端口。你可以用“**-p**”选项指定你想扫描的端口，默认上，nmap只会扫描**TCP**端口。
 
     [root@server1 ~]# nmap -p 80 server2.tecmint.com
 
@@ -456,9 +457,9 @@ There are various options to discover ports on remote machine with Nmap. You can
 
     Nmap finished: 1 IP address (1 host up) sca
 
-### 19. Scan a TCP Port ###
+### 19. 扫描TCP端口 ###
 
-You can also specify specific port types and numbers with nmap to scan.
+你同样可以指定nmap扫描的端口类型和号码。
 
     [root@server1 ~]# nmap -p T:8888,80 server2.tecmint.com
 
@@ -471,7 +472,7 @@ You can also specify specific port types and numbers with nmap to scan.
 
     Nmap finished: 1 IP address (1 host up) scanned in 0.157 seconds
 
-### 20. Scan a UDP Port ###
+### 20. 扫描UDP端口 ###
 
     [root@server1 ~]# nmap -sU 53 server2.tecmint.com
 
@@ -484,7 +485,7 @@ You can also specify specific port types and numbers with nmap to scan.
 
     Nmap finished: 1 IP address (1 host up) scanned in 0.157 seconds
 
-### 21. Scan Multiple Ports ###
+### 21. 扫描多个端口 ###
 
 You can also scan multiple ports using option “**-p**“.
 
@@ -499,15 +500,16 @@ You can also scan multiple ports using option “**-p**“.
 
     Nmap finished: 1 IP address (1 host up) scanned in 0.190 seconds
 
-### 22. Scan Ports by Network Range ###
+### 22. 扫描网络的端口范围 ###
 
 You can scan ports with ranges using expressions.
+你可以使用表达式扫描端口范围
 
     [root@server1 ~]#  nmap -p 80-160 192.168.0.101
 
-### 23. Find Host Services version Numbers ###
+### 23. 找出主机服务版本号 ###
 
-We can find out service’s versions which are running on remote hosts with “**-sV**” option.
+我们可以使用“**-sV**”选项找出运行在远程主机的服务版本号。
 
     [root@server1 ~]# nmap -sV 192.168.0.101
 
@@ -525,9 +527,9 @@ We can find out service’s versions which are running on remote hosts with “*
 
     Nmap finished: 1 IP address (1 host up) scanned in 12.624 seconds
 
-#### 24. Scan remote hosts using TCP ACK (PA) and TCP Syn (PS) ####
+#### 24. 使用 TCP ACK (PA) 和 TCP Syn (PS) 扫描远程主机 ####
 
-Sometimes packet filtering firewalls blocks standard **ICMP** ping requests, in that case, we can use **TCP ACK** and **TCP Syn** methods to scan remote hosts.
+有时包过滤防火墙阻止了标准**ICMP**ping请求，在这个情况下，我们可以使用**TCP ACK**和**TCP Syn**方法来扫描远程主机。
 
     [root@server1 ~]# nmap -PS 192.168.0.101
 
@@ -546,7 +548,7 @@ Sometimes packet filtering firewalls blocks standard **ICMP** ping requests, in 
     Nmap finished: 1 IP address (1 host up) scanned in 0.360 seconds
     You have new mail in /var/spool/mail/root
 
-### 25. Scan Remote host for specific ports with TCP ACK ###
+### 25. 用TCP ACK扫描远程主机的特定端口###
 
     [root@server1 ~]# nmap -PA -p 22,80 192.168.0.101
 
@@ -560,7 +562,7 @@ Sometimes packet filtering firewalls blocks standard **ICMP** ping requests, in 
     Nmap finished: 1 IP address (1 host up) scanned in 0.166 seconds
     You have new mail in /var/spool/mail/root
 
-### 26. Scan Remote host for specific ports with TCP Syn ###
+### 26. 用TCP SYN扫描远程主机的特定端口 ###
 
     [root@server1 ~]# nmap -PS -p 22,80 192.168.0.101
 
@@ -574,7 +576,7 @@ Sometimes packet filtering firewalls blocks standard **ICMP** ping requests, in 
     Nmap finished: 1 IP address (1 host up) scanned in 0.165 seconds
     You have new mail in /var/spool/mail/root
 
-### 27. Perform a stealthy Scan ###
+### 27. 执行隐秘扫描 ###
 
     [root@server1 ~]# nmap -sS 192.168.0.101
 
@@ -593,7 +595,7 @@ Sometimes packet filtering firewalls blocks standard **ICMP** ping requests, in 
     Nmap finished: 1 IP address (1 host up) scanned in 0.383 seconds
     You have new mail in /var/spool/mail/root
 
-### 28. Check most commonly used Ports with TCP Syn ###
+### 28. 用TCP SYN扫描最常用的端口 ###
 
     [root@server1 ~]# nmap -sT 192.168.0.101
 
@@ -612,7 +614,7 @@ Sometimes packet filtering firewalls blocks standard **ICMP** ping requests, in 
     Nmap finished: 1 IP address (1 host up) scanned in 0.406 seconds
     You have new mail in /var/spool/mail/root
 
-### 29. Perform a tcp null scan to fool a firewall ###
+### 29. 执行tcp空扫描来愚弄防火墙 ###
 
     [root@server1 ~]# nmap -sN 192.168.0.101
 
@@ -631,13 +633,13 @@ Sometimes packet filtering firewalls blocks standard **ICMP** ping requests, in 
     Nmap finished: 1 IP address (1 host up) scanned in 1.584 seconds
     You have new mail in /var/spool/mail/root
 
-That’s it with **NMAP** for now, I’ll be coming up more creative options of **NMAP** in our second part of this serious. Till then, stay tuned with us and don’t forget to share your valuable comments.
+这些就是目前**NMAP** 的用法，我会写出更有创造性的**NMAP**的第二部分(译注:原文为 I’ll be coming up more creative options of **NMAP** in our second part of this serious,这里serious可能为笔误，应该为series)。接着，不要走开也别忘了分享你们有价值的评论。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/nmap-command-examples/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
