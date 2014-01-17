@@ -1,3 +1,4 @@
+Seonlee2013 首次翻译中
 The Fedora Project Will No Longer Name Its Linux Distributions
 ================================================================================
 **The Fedora Project has a very colorful history of naming its distributions, but that will come to an end with Fedora 21.**
