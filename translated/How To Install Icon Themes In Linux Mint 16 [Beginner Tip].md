@@ -27,7 +27,7 @@
 
 现在你可能已经意识到为什么我说在Linux Mint的图标更改稍微隐藏了。至少第一眼，你不会找到一个选项来改变图标。只改变图标，选择**Other settings**并点击**Icons**。你会在这找到所有的图标设置。选择你喜欢的一个。
 
-![](http://itsfoss.com/wp-content/uploads/2014/01/Change_Icon_Linux_Mint.jpeg)
+![](http://itsfoss.com/wp-content/uploads/2014/01/Change_Icon_Linux_Mint.jpeg) 
 
 改变会立即生效，并不需要重启。下面是我的Linux Mint使用Moka图标主题后的桌面：
 
