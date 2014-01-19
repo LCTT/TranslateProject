@@ -1,3 +1,4 @@
+liuaiping翻译中
 28 The The Linux Kernel--Compiling and Installing
 ================================================================================
 ![](http://www.linux.org/attachments/slide-jpg.762/)
