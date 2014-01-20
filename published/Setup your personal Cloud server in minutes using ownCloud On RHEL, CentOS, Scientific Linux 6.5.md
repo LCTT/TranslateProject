@@ -1,4 +1,4 @@
-分分钟使用ownCloud在RHEL，CentOS，Scientific Linux 6.5上安装你自己的个人云服务
+使用ownCloud在Linux安装你的个人云服务
 ================================================================================
 [ownCloud][1]是一个免费开源的软件，用于为分享文件，日历，联系人，书签和个人音频/视频。非常容易安装和管理。
 
@@ -45,11 +45,11 @@
     MariaDB [(none)]> exit
     Bye
 
-### 获取owncloud ###
+### 获取ownCloud ###
 
 切换到你的apache root目录并下载ownCloud最新版
 
-转到Apache root文件目录并下载最新版owncloud。
+转到Apache root文件目录并下载最新版ownCloud。
 
     # wget http://download.owncloud.org/community/owncloud-6.0.0a.tar.bz2
 
@@ -105,7 +105,7 @@
 
 via: http://www.unixmen.com/setup-your-personal-cloud-server-in-minutes-using-owncloud/
 
-译者：[Vito](https://github.com/vito-L) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Vito](https://github.com/vito-L) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
