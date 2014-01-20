@@ -6,7 +6,7 @@
 
 Linux支持两种不同的康柏智能阵列控制器：(Compaq SMART2 support)和(Compaq Smart Array 5xxx support)。阵列控制器是将物理存储单元表现为逻辑单元的设备。这些控制可能同样实现了基于硬件的RAID。硬件和软件RIAD的不同是简单的。Linux管理并见到软件RIAD。Linux将硬件RAID视为另外的存储单元。这意味着Linux没有意识到设备就是RAID驱动器。硬件(阵列控制器)独立于内核管理着RAID系统。这对于系统的性能更好因为内核不必配置或者管理RAID。注意，不同的阵列控制器有不同的RAID能力。
 
-上面提到的阵列控制器可以通过这个驱动反问SCSI磁带(SCSI tape drive support for Smart Array 5xxx)。SCSI磁带是使用SCSI协议的磁带。
+上面提到的阵列控制器可以通过这个驱动访问SCSI磁带(SCSI tape drive support for Smart Array 5xxx)。SCSI磁带是使用SCSI协议的磁带机。
 
 PCI RAID控制器Mylex DAC960、AcceleRAID和eXtremeRAID在这个驱动中支持(Mylex DAC960/DAC1100 PCI RAID Controller support)。PCI RAID控制器是一个连接到PCI卡的阵列控制器。RAID控制器是拥有RAID功能的阵列控制器。
 
@@ -49,7 +49,7 @@ Linux内核可以使用可擦写光盘作为缓存空间(Enable write caching)�
 
 下面的驱动允许虚拟块设备创建为virtio(Virtio block driver)。virtio是IO虚拟化平台。
 
-一些旧的硬盘还要一个特殊的驱动(Very old hard disk (MFM/RLL/IDE) driver)。
+一些非常老的硬盘还要一个特殊的驱动(Very old hard disk (MFM/RLL/IDE) driver)。
 
 这里有一个驱动用于先前提到的Rados设备(Rados block device (RBD))。
 
@@ -62,17 +62,18 @@ Linux内核可以使用可擦写光盘作为缓存空间(Enable write caching)�
 如果电位器是连接到SPI总线，那么需要这个驱动(support SPI bus connection)。
 
 注意:Linux内核支持很多传感器因为Linux内核经常用于天气设备和机器人。
+
 这个驱动用于IBM RSA(Condor)服务处理器(Device driver for IBM RSA service processor)。
 
 内核同样支持PCI Sensable PHANToM设备驱动(Sensable PHANToM (PCI))。
 
 这个驱动指引不同来自并行追踪接口(Parallel Trace Interface (PTI))的追踪数据发往Intel Penwell PTI口 (Parallel Trace Interface for MIPI P1149.7 cJTAG standard)。这个被指领的数据用于调试目的。
 
-一些带有IOC4芯片的SGI IO控制器需要这个驱动(SGI IOC4 Base IO support)。SGI IO是由SCI管理的输入/输出舍必。IOC4芯片控制着许多由这些设备执行的任务。这是一个基础驱动。其他对这些设备的驱动依赖于这个驱动。
+一些带有IOC4芯片的SGI IO控制器需要这个驱动(SGI IOC4 Base IO support)。SGI IO是由SCI管理的输入/输出设备。IOC4芯片控制着许多由这些设备执行的任务。这是一个基础驱动。其他对这些设备的驱动依赖于这个驱动。
 
 这里有很少的TI闪存媒体适配器驱动在Linux内核中，(TI Flash Media interface support) 和(TI Flash Media PCI74xx/PCI76xx host adapter support)。
 
-这个	驱动("Integrated Circuits ICS932S401")用于ICS932S401时钟控制芯片。
+这个驱动("Integrated Circuits ICS932S401")用于ICS932S401时钟控制芯片。
 
 Atmel同步串行通信外设(Synchronized Serial Communication peripheral (SSC))有一个驱动在内核中(Device driver for Atmel SSC peripheral)。这个设备提供点对点的设备间的串行连接。
 
@@ -83,12 +84,13 @@ Atmel同步串行通信外设(Synchronized Serial Communication peripheral (SSC)
 这个驱动让应用可以与HP工业标准服务器中的iLO管理处理器通信(Channel interface driver for the HP iLO processor)。"iLO"代表的是"Integrity Integrated Lights-Out".iLO允许远程服务器管理。
 
 Linux内核支持ALS APDS9802光敏传感器(Medfield Avago APDS9802 ALS Sensor module)。一些其他支持的传感器包括：
-Intersil ISL29003 ambient light sensor
-Intersil ISL29020 ambient light sensor
-Taos TSL2550 ambient light sensor
-ROHM BH1780GLI ambient light sensor
-BH1770GLC / SFH7770 combined ALS - Proximity sensor
-APDS990X combined als and proximity sensors
+
+- Intersil ISL29003 ambient light sensor
+- Intersil ISL29020 ambient light sensor
+- Taos TSL2550 ambient light sensor
+- ROHM BH1780GLI ambient light sensor
+- BH1770GLC / SFH7770 combined ALS - Proximity sensor
+- APDS990X combined als and proximity sensors
 
 注意：如果内核是为广泛的计算机编译的话，大多数驱动应该以模块形式加入。
 
@@ -116,6 +118,6 @@ Silicon微控制器使用Silicon实验室C2端口，这需要一个特殊的驱�
 
 via: http://www.linux.org/threads/the-linux-kernel-configuring-the-kernel-part-11.4640/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
