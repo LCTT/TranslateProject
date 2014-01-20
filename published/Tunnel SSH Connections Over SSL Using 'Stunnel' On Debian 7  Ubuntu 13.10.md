@@ -1,8 +1,9 @@
-在Debian 7/Ubuntu 13.10 使用SSH隧道链接
+在Debian 7/Ubuntu 13.10 上使用隧道封装SSH连接
 ================================================================================
-**隧道** 被设计用于远端和本地(inetd-startable)或远端服务器间的SSL加密封装。它被用于加入SSL功能作为超级守护进程，像POP2，POP3和IMAP服务而不必改变程序代码。隧道使用OpenSSL库用于加密，因此它支持任何被编译进库的加密算法。简而言之，隧道可以使任何一个不安全的端口变得安全加密。
 
-在本篇中，我会描述如何通过SSL使用SSH隧道。这个步骤非常简单。你需要在你的客户端PC和远程PC都已经安装运行了sshd。
+**隧道** 被设计用于远端客户端和本地(可通过inetd启动)或远端服务器间的SSL加密封装。它可以用于为inetd进程增加SSL功能，像POP2（译注：厄，POP2这个服务还有人用么？），POP3和IMAP服务而不必改变程序代码。隧道使用OpenSSL库用于加密，因此它支持任何被编译进库的加密算法。简而言之，隧道可以使任何一个不安全的端口变得安全加密。
+
+在本篇中，我会描述如何通过SSL水稻封装SSH。这个步骤非常简单。你需要在你的客户端PC和远程PC都已经安装运行了sshd。
 
 我正在使用下面提到的两个系统。
 
@@ -75,7 +76,7 @@
 
     # vi /etc/default/stunnel4
 
-改变行从 **Enabled = 0** 到 **1**。
+改变行从 **ENABLED = 0** 到 **1**。
 
     # /etc/default/stunnel
     # Julien LEMOINE <speedblue@debian.org>
@@ -120,7 +121,7 @@
 
     $ sudo vi /etc/default/stunnel4
 
-改变行从 **Enabled = 0** 到 **1**.
+改变行从 **ENABLED = 0** 到 **1**.
 
     # /etc/default/stunnel
     # Julien LEMOINE <speedblue@debian.org>
@@ -233,8 +234,7 @@
 
 现在你可以用ssh连接到你的远程机器上了，但是所有的流量通过SSL隧道。
 
-You’re done now! You can SSH to your remote system even when the ssh default 22 is blocked by any firewall.
-你已经完成了！你可以使用SSH到你的远程系统即使ssh的默认端口被防火墙阻止了。
+你已经完成了！即使ssh的默认端口被防火墙阻止了，你仍然可以使用SSH到你的远程系统。
 
 参考链接:
 
@@ -244,7 +244,7 @@ You’re done now! You can SSH to your remote system even when the ssh default 2
 
 via: http://www.unixmen.com/tunnel-ssh-connections-ssl-using-stunnel-debian-7-ubuntu-13-10/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

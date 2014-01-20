@@ -1,5 +1,6 @@
 Linux无处不在！让我来告诉你它到底在哪！
 ================================================================================
+
 ![](http://www.linuxfederation.com/wp-content/uploads/2013/12/open-source-world.jpg)
 
 “[Linux][1]无处不在。大到空间站，小到微波炉，都能看到Linux的强大威力。”可能你听过很多前面这样的描述，也许你会想“真的假的？是夸张？还是确实如此？”我可以负责任的告诉你，的确如此！那些世界上最大的公司都在使用Linux。也许听到那些公司的名字你都不会相信，那么，准备好环游世界吧！我会向你展示Linux到底在哪，人们又是如何使用Linux的~
@@ -16,7 +17,7 @@ Linux无处不在！让我来告诉你它到底在哪！
 
 美国国家核安全管理局运行着世界上速度排名第十的超级计算机 —— IBM Roadrunner，它使用的就是红帽企业版Linux，它的操作系统为[Fedora][5]。
 
-美国佛罗里达Largo市市政府使用Linux，“在全市范围内广泛节省了大量开支”，从而赢得了国际赞誉。
+美国佛罗里达Largo市政府使用Linux，“在全市范围内广泛节省了大量开支”，从而赢得了国际赞誉。
 
 2012年6月，美国海军与雷神公司（Raytheon）签署了一项将近2800万美元的合同，后者将为其Northup-Grumman MQ8B型火力侦察无人机的垂直起降舰队安装Linux地面站控制软件。合同中包含了马里兰州克森特河海军航空站为Linux系统的准备工作已经先行支付的 $5,175,075美元。
 
@@ -38,7 +39,7 @@ Linux无处不在！让我来告诉你它到底在哪！
 
 - **中国** - 国有“爱存不存”银行（ICBC，有人也叫工商银行）以它的web服务器和一个新的终端平台为基础，已经在其全部20000个营业网点安装了Linux。
 
-中华人民共和国为了其技术独立，仅仅使用Linux作为其龙芯处理器家族的操作系统。
+这个国家为了其技术独立，仅仅使用Linux作为其龙芯处理器家族的操作系统。
 
 - **古巴** - 来自古巴大学信息科学专业的学生们开发了他们自己的Linux发行版——Nova，为的就是替代政府与公民电脑上的微软Windows操作系统，该项目现在已经得到了古巴政府的支持，并成功部署了超过8000台电脑。
 
@@ -147,24 +148,25 @@ Linux在商业领域的服务器上有非常广泛的应用，而且已经持续
 综上，这些就是我所知道的使用Linux的地方，当然，这些绝对不是真实数字的全部，甚至沧海一粟都算不上。请在评论中自由留言，如果我遗漏了哪些使用Linux的国家或公司，请在评论中提出来，我会尽快把它们添加到列表中~
 
 数据与资料来源: [维基百科][13]
+
 --------------------------------------------------------------------------------
 
 via: http://www.linuxfederation.com/linux-everywhere/
 
-译者：[Mr小眼儿](http://blog.csdn.net/tinyeyeser) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Mr小眼儿](http://blog.csdn.net/tinyeyeser) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-[1]:http://www.linuxfederation.com/linux-everywhere/www.linux.org
-[2]:http://www.linuxfederation.com/linux-everywhere/www.redhat.com
-[3]:http://www.linuxfederation.com/linux-everywhere/www.apache.org
+[1]:http://www.linux.org
+[2]:http://www.redhat.com
+[3]:http://www.apache.org
 [4]:https://drupal.org/
-[5]:http://www.linuxfederation.com/linux-everywhere/fedoraproject.org
-[6]:http://www.linuxfederation.com/linux-everywhere/www.debian.org
-[7]:http://www.linuxfederation.com/linux-everywhere/www.opensuse.org
-[8]:http://www.linuxfederation.com/linux-everywhere/www.ubuntu.com
-[9]:http://www.linuxfederation.com/linux-everywhere/www.kubuntu.org
-[10]:http://www.linuxfederation.com/linux-everywhere/www.edubuntu.org
+[5]:http://fedoraproject.org
+[6]:http://www.debian.org
+[7]:http://www.opensuse.org
+[8]:http://www.ubuntu.com
+[9]:http://www.kubuntu.org
+[10]:http://www.edubuntu.org
 [11]:https://www.suse.com/
 [12]:https://www.scientificlinux.org/
 [13]:https://en.wikipedia.org/wiki/Main_Page

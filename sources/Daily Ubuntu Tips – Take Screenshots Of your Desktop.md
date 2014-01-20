@@ -1,3 +1,5 @@
+翻译中 by liuaiping
+
 Daily Ubuntu Tips – Take Screenshots Of your Desktop
 ================================================================================
 Ubuntu, a powerful and modern operating system allows you to perform many tasks. From creating and editing documents using LibreOffice Productivity Suite to enhancing an image with GIMP, Ubuntu is super!
