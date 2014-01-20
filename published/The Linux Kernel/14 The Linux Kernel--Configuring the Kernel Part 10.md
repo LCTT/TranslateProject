@@ -67,7 +67,7 @@ NFC要处理HCI帧需要启用下面一个特性(NFC HCI implementation)。
 
 使用固态硬盘的系统需要MTD的支持(Memory Technology Device (MTD) support)。MTD设备是固态存储设备。典型的存储设备与固态硬盘(SSD)不同。用于磁盘单元的标准常规不适用于SSD(读、写、擦除)。
 
-大多数会桌面电脑否有并口(一个有25个洞的连接器)，所以他们需要这个特性(Parallel port support)。并口在其他许多鲜为人知的应用中通常用于打印机和ZIP驱动器。并口有25针。
+大多数会桌面电脑带有并口(一个有25个洞的连接器)，所以他们需要这个特性(Parallel port support)。并口在其他许多鲜为人知的应用中通常用于打印机和ZIP驱动器。并口有25针。
 
 对IBM兼容计算机启用这个特性(PC-style hardware)。它们是不同类型的计算机。除了IBM计算机(通常运行Windows),还有苹果计算机。Linxu可以运行在几乎所有类型的计算机上。
 
@@ -116,13 +116,14 @@ PCMCIA的并口支持可以启用(Support for PCMCIA management for PC-style por
 Imation SuperDisks需要Shuttle EP1284芯片的支持(Support c7/c8 chips)。
 
 一些其他的并行IDE协议可以启用，包括：
-Shuttle EPIA protocol
-Freecom IQ ASIC-2 protocol - (用于Maxell Superdisks)
-FreeCom power protocol
-KingByte KBIC-951A/971A protocols
-KT PHd protocol - (用于2.5英寸外置并口硬盘)
-OnSpec 90c20 protocol
-OnSpec 90c26 protocol
+
+- Shuttle EPIA protocol
+- Freecom IQ ASIC-2 protocol - (用于Maxell Superdisks)
+- FreeCom power protocol
+- KingByte KBIC-951A/971A protocols
+- KT PHd protocol - (用于2.5英寸外置并口硬盘)
+- OnSpec 90c20 protocol
+- OnSpec 90c26 protocol
 
 注意：这些协议以及支持的插入并口的设备意味着这些都类似于热插拔设备,就像USB设备插入USB端口一样。USB和火线人仍旧是使用最流行的端口,因为它们的大小和速度。一个并口设备单元大于USB闪存因为并口大于USB端口。
 
@@ -134,6 +135,6 @@ OnSpec 90c26 protocol
 
 via: http://www.linux.org/threads/the-linux-kernel-configuring-the-kernel-part-10.4613/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
