@@ -1,3 +1,5 @@
+翻译ing by Luox 
+
 15 Linux cp Command Examples - Create a Copy of Files and Directories
 ================================================================================
 Copying files or directories is one of basic activity in every operating system. Backup activity is basically is creating a copy of files and directories. On Linux system, we can use **cp** command to do it.
