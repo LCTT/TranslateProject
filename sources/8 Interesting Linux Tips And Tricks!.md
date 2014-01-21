@@ -1,3 +1,6 @@
+Translating-------------geekpi
+
+
 8 Interesting Linux Tips And Tricks!
 ================================================================================
 We keep bringing you tips and tricks for Linux from time to time. Keeping in tune with this practice, here are eight most interesting tips and tricks that we received recently from out readers. We hope you like it. Read on...
