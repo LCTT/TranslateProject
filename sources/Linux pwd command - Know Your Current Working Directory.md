@@ -1,10 +1,12 @@
+	NearTan领取
+
 Linux pwd command - Know Your Current Working Directory
 ================================================================================
 Where you are inside a deep directory, sometimes you may want to know where exactly you are. With this pwd command, you can do it.
 
 ### What is pwd ###
 
-Pwd is a command to print name of current / working directory. When we are “lost” into a deep directory, we can always reveal where we are.
+Pwd is a command to print name of current / working directory. When we are “lost” into a deep directory, we can always reveal where we are. 
 
 ### How to use it ###
 
