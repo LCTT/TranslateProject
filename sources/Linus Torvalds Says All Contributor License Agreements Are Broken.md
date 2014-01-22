@@ -1,3 +1,4 @@
+[bazz2 切克闹]
 Linus Torvalds Says All Contributor License Agreements Are Broken
 ================================================================================
 **A controversy regarding Canonical's CLA has been going on for a couple of days, and now even Linus Torvalds has entered the discussion, although in a more peaceful manner.**
