@@ -30,3 +30,4 @@ via: http://itsfoss.com/find-wifi-password-linux-mint-16/
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [1]:http://itsfoss.com/how-to-find-saved-wireless-wifi-passwords-ubuntu/
+ 
