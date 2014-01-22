@@ -81,7 +81,7 @@ OAuth的认证结果将会保存在 ～/.gcalcli_oauth 文本文件中。
 
 ### 用 gcalcli 在命令行中访问Google Calendar ###
 
-你现在就快可以用 gcalcli 访问Google Calendar 了。
+你现在就快可以用 gcalcli 访问Google Calendar 了。 
 
 
 在你的家目录创建如下的一个 gcalcli 配置文件。将你先前获得的 OAuth 用户 ID 和 密码按下面格式写进去。
