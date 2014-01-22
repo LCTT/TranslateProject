@@ -1,3 +1,6 @@
+Translating-----------geekpi
+
+
 20 Linux ls Command Examples to Display the Entries of Directory
 ================================================================================
 One of the basic command in Linux is ls. Without this command, we may find difficulties to explore the content if directories. This command must known by everyone who want to learn Linux.
