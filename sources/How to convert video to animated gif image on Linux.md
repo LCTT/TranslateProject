@@ -1,3 +1,4 @@
+[翻译中 by KayGuoWhu]
 How to convert video to animated gif image on Linux
 ================================================================================
 Once thought of as outdated art forms, animated GIF images have now come back. If you haven't noticed, quite a few online sharing and social networking sites are now supporting animated GIF images, for example, on [Tumblr][1], [Flickr][2], [Google+][3], and [partly on Facebook][4]. Due to their ease of consumption and sharing, GIF-ed animations are now part of mainstream Internet culture.
