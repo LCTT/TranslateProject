@@ -1,3 +1,4 @@
+乌龙茶 翻译中
 Conky Harmattan Is A Stylish Desktop Companion For Linux
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/01/conky-harmatten.jpg)
