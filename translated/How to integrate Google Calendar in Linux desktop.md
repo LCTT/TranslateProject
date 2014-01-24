@@ -120,7 +120,7 @@ OAuth的认证结果将会保存在 ～/.gcalcli_oauth 文本文件中。
 **重要提醒**：上面脚本中的 ‘^[’ 必须是**真正的 ESCAPE 键**( 也就是说在 vi 中按 Ctrl-V 然后按 Esc )。
 
 
-这个脚本程序将 VT100 转义序列转成Unicode组件图字符。这是[必须的一步][10]，因为 Conky 不支持 gcalcli 使用的 ASNII 的线条艺术。
+这个脚本程序将 VT100 转义序列转成Unicode组件图字符。这是[必须的一步][10]，因为 Conky 不支持 gcalcli 使用的 ASNII 字符画。
 
 最后，在你的家目录中创建下面的 Conky 配置文件。
 
