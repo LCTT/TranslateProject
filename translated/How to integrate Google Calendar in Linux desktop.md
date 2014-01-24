@@ -49,7 +49,7 @@ Google Calendar 是时下最流行的网页应用程序之一。用户可以通�
 
 [![](http://farm4.staticflickr.com/3810/11216308465_1008fc1bb3_z.jpg)][4]
 
-支持 Google Calendar API
+### 支持 Google Calendar API ###
 
 认证后，下一步就是支持 Google Calendar 的 API 访问。gcalcli 通过 Google Calendar API 访问Google Calendar 。但是，如果要使用 Google API 就必须明确你的 Google 帐号支持 Google API。
 
