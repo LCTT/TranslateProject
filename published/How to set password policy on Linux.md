@@ -2,11 +2,11 @@
 ================================================================================
 用户帐号管理是系统管理员最重要的工作之一。而密码安全是系统安全中最受关注的一块。在本教程中，我将为大家介绍**如何在 Linux 上设置密码策略**。
 
-假设你已经在你的 Linux 系统上使用了 [PAM (Pluggable Authentication Modules，插入式验证模块)][1]，因为近些年所有的 Linux 发行版都在使用它。
+假设你已经在你的 Linux 系统上使用了 [PAM (Pluggable Authentication Modules，插入式验证模块)][1]，因为这些年所有的 Linux 发行版都在使用它。
 
 ### 准备工作 ###
 
-安装 PAM 模块，获得 cracklib 的支持。cracklib 能提供额外的密码检查能力。
+安装 PAM 的 cracklib 模块，cracklib 能提供额外的密码检查能力。
 
 Debian、Ubuntu 或 Linux Mint 系统上：
 
@@ -20,7 +20,7 @@ CentOS、Fedora、RHEL 系统已经默认安装了 cracklib PAM 模块，所以�
 
 ### 禁止使用旧密码 ###
 
-看下同时有 “password” 和 “pam_unix.so” 字段并且附加有 “remember=5” 的那行，它表示禁止使用最近用过的5个密码（己使用过的密码会被保存在 /etc/security/opasswd 下面）。
+找到同时有 “password” 和 “pam_unix.so” 字段并且附加有 “remember=5” 的那行，它表示禁止使用最近用过的5个密码（己使用过的密码会被保存在 /etc/security/opasswd 下面）。
 
 Debian、Ubuntu 或 Linux Mint 系统上：
 
@@ -36,7 +36,7 @@ CentOS、Fedora、RHEL 系统上：
 
 ### 设置最短密码长度 ###
 
-找到同时有 “password” 和 “pam_cracklib.so” 字段并且附加有 “minlen=10” 的那行，它表示最小密码长度为（10 - <# of types>）。这里的 <# of types> 表示类型数量。PAM 提供4种类型符号作为密码（大写字母、小写字母、数字和标点符号）。如果你的密码同时用上了这4种类型的符号，并且你的 minlen 设为10，那么最短的密码长度允许是6个字符。
+找到同时有 “password” 和 “pam_cracklib.so” 字段并且附加有 “minlen=10” 的那行，它表示最小密码长度为（10 - 类型数量）。这里的 “类型数量” 表示不同的字符类型数量。PAM 提供4种类型符号作为密码（大写字母、小写字母、数字和标点符号）。如果你的密码同时用上了这4种类型的符号，并且你的 minlen 设为10，那么最短的密码长度允许是6个字符。
 
 Debian、Ubuntu 或 Linux Mint 系统上：
 
