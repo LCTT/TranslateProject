@@ -1,3 +1,5 @@
+翻译 ing Luoxcat
+
 Create Directory - subdirectory, other than that What mkdir command do in Linux
 ================================================================================
 After knowing about ls command for listing entries inside directory, we are now moving to creating directory in Linux system. On Linux, we can use **mkdir** command. Mkdir is short for “make directory”.
