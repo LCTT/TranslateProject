@@ -1,3 +1,7 @@
+Translating---------------geekpi
+
+
+
 Built in Audit Trail Tool – Last Command in Linux
 ================================================================================
 ![](http://linoxide.com/wp-content/uploads/2013/12/linux-last-command.jpg)
