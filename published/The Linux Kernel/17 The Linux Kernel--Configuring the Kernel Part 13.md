@@ -72,7 +72,7 @@ MD框架需要多路径支持(Multipath I/O support)。MD框架就是多设备(M
 
 这个驱动会发现最有效的到存储设备的路径来读取和写入(I/O Path Selector based on the number of in-flight I/Os)。
 
-=下面的一个驱动和以上相同，但是会寻找最快路径(I/O Path Selector based on the service time)。
+下面的一个驱动和以上相同，但是会寻找最快路径(I/O Path Selector based on the service time)。
 
 如果一个逻辑卷上的物理存储单元正忙，如果可能的话，这个特性会允许读取/写入到另一个物理卷上。
 
@@ -124,6 +124,6 @@ SCSI同样也可以支持光纤通道主机适配器(Fusion MPT ScsiHost drivers
 
 via: http://www.linux.org/threads/the-linux-kernel-configuring-the-kernel-part-13.4714/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
