@@ -1,16 +1,12 @@
-Translating---------------geekpi
-
-
-
-Built in Audit Trail Tool – Last Command in Linux
+内置审计跟踪工具- Linux last命令
 ================================================================================
 ![](http://linoxide.com/wp-content/uploads/2013/12/linux-last-command.jpg)
 
-If you are working as a server administrator, you may understand that you have to protect your server. Not only from the outside, but you have to protect it from the inside. Linux has one built-in command to see who is the last logged in user into your server.
+如果你是一个服务器管理员，你或许理解你要保护你的服务器。不仅是从外部，还要从内部保护。linux有一个内置工具来看到最后登陆服务器的用户
 
-The command is **last**. This command is **very useful for audit trail**. Let’s start to see what can last to do for you.
+这个命令是**last**。命令**对于追踪非常有用**。让我们来看一下last可以为你做些什么。
 
-### What is the function of Last command ###
+### last命令的功能是什么 ###
 
 **Last** display a list of all user logged in (and out) from **/var/log/wtmp** since the file was created. This file is binary file which cannot view by text editor such as Vi, Joe or another else. This trick is pretty smart because user (or root) can not modify the file as they want.
 
