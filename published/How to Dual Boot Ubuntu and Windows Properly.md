@@ -1,18 +1,19 @@
 如何正确双启动Ubuntu和Windows双系统
 ================================================================================
-**尽管微软想让你信任Windows，但一个Linux操作系统和一个Windows操作系统可以在同一台PC上和平共存。这个手册会指导你如何让一个Ubuntu系统和Windows操作系统并行运行。**
+
+**尽管微软想让你信任Windows，但一个Linux操作系统和一个Windows操作系统可以在同一台PC上和平共存。这个文章会指导你如何让一个Ubuntu系统和Windows操作系统并行运行。**
 
 ![](http://i1-news.softpedia-static.com/images/news2/How-to-Dual-Boot-Ubuntu-and-Windows-Properly-415377-2.jpg)
 
-你必须考虑两种场景，同时你也必须决定哪一种适合你。这里必须要考虑安装顺序。在你已经安装好Ubuntu操作系统后再安装Windows会有一点问题，因为微软似乎不太关心其他用户。
+你必须考虑两种场景，同时你也必须决定哪一种适合你。这里必须要考虑安装顺序。在你已经安装好Ubuntu操作系统后再安装Windows会有一点问题，因为微软似乎不太在意其他小伙伴。
 
 如果你是在已经安装好Windows后安装Ubuntu，那么事情会变得简单多了，几乎没有任何工作和准备是必需的。
 
-让我们开始处理更加困难的问题。如果你已经有一个Ubuntu系统，想安装Windows，你会丢掉GRUB，它是默认的引导程序。Windows不会关心它，并会擦除它。
+让我们开始处理更加困难的问题。如果你已经有一个Ubuntu系统，想安装Windows，你会丢掉GRUB，它是默认的引导程序。Windows不会在意它，并会擦除它。
 
-如果你已经犯了这个错误，但你并没有重写Linux分区，请别沮丧。数据仍然在那里，你需要的是一个含有Ubuntu（最新到13.10版本）的可启动live CD。你需要安装一个名为Boot-Repair的应用程序，使用PPA完成。
+如果你已经犯了这个错误，但你并没有重写Linux分区，请别沮丧。数据仍然在那里，你需要的是一个含有Ubuntu（最新到13.10版本）的可启动live CD。你需要安装一个名为Boot-Repair的应用程序，使用PPA来安装它。
 
-记住，如果你使用USB记忆棒，安装应用会相当简单，因为Ubuntu是混合镜像。启动一个Ubuntu会话，打开终端，然后输入下列指令：
+记住，如果你使用U盘，安装应用会相当简单，因为Ubuntu安装镜像是混合镜像。用Live CD启动一个Ubuntu会话，打开终端，然后输入下列指令：
 
     sudo add-apt-repository ppa:yannubuntu/boot-repair && sudo apt-get update
     sudo apt-get install -y boot-repair && (boot-repair &)
@@ -29,6 +30,6 @@
 
 via: http://news.softpedia.com/news/How-to-Dual-Boot-Ubuntu-and-Windows-Properly-415377.shtml
 
-译者：[KayGuoWhu](https://github.com/KayGuoWhu) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[KayGuoWhu](https://github.com/KayGuoWhu) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
