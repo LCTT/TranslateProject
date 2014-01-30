@@ -4,7 +4,7 @@
 
 你好！ 准备好读另一篇很酷的Linux内核文章了么?
 
-接下来，在我们的长期追求中，我们可以启用/禁用"Fusion MPT logging facility"。MPT代表"Message Passing Technology"(消息传递技术)。Fusion驱动是由LSI Logic公司开发。MPT一种进程间使用的特定消息策略。这个技术是同步的意味着进程将会等待所需的消息。
+接下来，在这个任务中，我们可以启用/禁用"Fusion MPT logging facility"。MPT代表"Message Passing Technology"(消息传递技术)。Fusion驱动是由LSI Logic公司开发。MPT一种进程间使用的特定消息策略。这个技术是同步的意味着进程将会等待所需的消息。
 
 在这之后，如果计算机处理拥有火线端口就应该启用"FireWire driver stack"。如果没有，那么就没有必要去启动一个不会使用到的火线驱动。火线很像USB。不过在协议、速度、物理形状和端口布局上不同。通常上，苹果设备使用火线和USB。一些PC有火线端口，但是不像USB口那样普及。
 
@@ -113,6 +113,6 @@ Pegasus USB是USB转以太网的适配器/转换器(USB Pegasus/Pegasus-II based
 
 via: http://www.linux.org/threads/the-linux-kernel-configuring-the-kernel-part-14.4765/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
