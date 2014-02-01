@@ -1,12 +1,14 @@
 8个有趣的Linux提示与技巧！
 ================================================================================
-我们时不时给你带来关于Linux的提示与技巧。和这个实践保持一致，这里有8个我们从读者收到最有趣的提示和技巧。我们希望你喜欢它。请继续读下去。。。
+
+我们时不时给你带来关于Linux的提示与技巧。和这个系列保持一致，这里有8个我们从读者收到最有趣的提示和技巧。我们希望你喜欢它。请继续读下去。。。
 
 ![](http://www.efytimes.com/admin/useradmin/photo/j4lm23703PM1182014.jpg)
 
 ### 以它们的大小列出文件 ###
 
 如果你想要一个基于它们大小排序的文件列表，你可以使用下面的命令。
+
 它会以递减顺序排列文件。
 
     # ls -l | grep ^- | sort -nr -k 5 | more
@@ -21,7 +23,8 @@ sumedh.gajbhiye1985@gmail.com*
 ### 重置奇怪的终端 ###
 
 如果感觉你的bash终端错误地显示垃圾的提示字符信息，并无论你输入任何命令都显示非ASCII字符-下面的命令可以让事情回到正轨。
-在终端输入下面的命令并按回车：
+
+在终端盲打输入（译注：因为你其实看不到你输入的这些字符的正确显示，不过尽管输入好了！）下面的命令并按回车：
 
     # reset
 
@@ -35,7 +38,9 @@ cdsudheer@gmail.com*
 ### 记录并回放终端会话 ###
 
 下面是一个简单的贴士来记录并回放终端回放。它通过使用命令script和scriptreplay。
+
 这在使用终端制作教程时非常方便。
+
 要开始记录你的终端会话，使用下面的命令：
 
     $ script -t 2> timing.log -a output.session
@@ -49,6 +54,7 @@ cdsudheer@gmail.com*
     $ exit
 
 这里，script命令取两个文件作为参数timing.log(它记录了每个命令执行的时间信息)和output.session(存储了命令的输出)。
+
 现在，要回访记录的会话，使用下面所示的scriptplay。
 
     $ scriptreplay timing.log output.session
@@ -61,6 +67,7 @@ abhishekkumarsingh.cse@gmail.com*
 ### 使用shell脚本生成随机数 ###
 
 有时当你想要用shell脚本编程时，可能需要生成一个随机数来用于脚本。
+
 这里是获得一个3位随机数的代码。
 
     var=$(dd if=/dev/urandom count=1 2> /dev/null | cksum | cut -f1 -d” “ | cut -c 3-5);
@@ -72,13 +79,16 @@ abhishekkumarsingh.cse@gmail.com*
 
 ### 以root用户运行Linux上的软件 ###
 
-作为一名root用户，为了让软件运行在Linux上，你不得不在软件的16进制转储文件中改变字符串geteuid到getppid。
+作为一名root用户，为了让某些不能在root身份运行的软件运行（译注：典型的是google chrome），你需要在软件的二进制文件中改变geteuid调用为getppid。
+
 这个技术在操作系统中非常有用，比如backtrack，这里的大多数安装工作都以root用户完成。
+
 比如:为了以root用户运行Google Chrome，使用下面的命令:
 
     # hexedit /opt/google/chome/chrome
 
 接着按下Ctrl+S并在16进制转储文件中搜寻geteuid字符串。用字符串getppid代替。按下Ctrl+X来保存并退出编辑器。
+
 现在浏览器就可以以root用户运行了。
 
     # google-chrome
@@ -88,8 +98,8 @@ mbhanderi24@gmail.com*
 
 ### 用gzip压缩优化你的站点 ###
 
-压缩是一种简单、有效的方法来节约带宽和加速你的站点。
-在压缩的帮助下，任何站点的主页面会从100KB变成10KB。
+压缩是一种简单、有效的方法来节约带宽和加速你的站点。在压缩的帮助下，多数站点的主页面会从100KB变成10KB。
+
 为了在Apache Web服务器中启用这个特性，你需要在httpd.conf中包含deflate_module，并且在Apache配置文件中加入下面的行 (/etc/httpd/conf/httpd.conf)来压缩text、html、 javascript、 css 和 xml 文件:
 
     AddOutputFilterByType DEFLATE text/plain
@@ -114,7 +124,8 @@ munishtotech@gmail.com*
     echo -e “Server$gh\n”
 
 现在，为了在登陆时检查服务器负载，通过/root/.bashrc调用sload.sh脚本。
-记住如下允许脚本权限：
+
+记住如下设置脚本权限：
 
     # chmod 755 /root/sload.sh
 
@@ -131,15 +142,15 @@ munishtotech@gmail.com*
 *—Ranjith Kumar T,
 ranjith.stc@gmail.com*
 
-### 在特定时间开始你的作业 ###
+### 在特定时间开始你的任务 ###
 
 你可以使用下面的命令来在特定时间调度你的作业：
 
     # at 2015
 
     > >vlc /music/rockstar.mp3
-这个命令会在2015小时后使用vlc播放器播放rockstar.mp3。
-你可以在at命令后跟上-l选项来检查挂起的作业：
+
+这个命令会在2015小时后使用vlc播放器播放rockstar.mp3。你可以在at命令后跟上-l选项来检查挂起的作业：
 
     # at -l
 
@@ -152,6 +163,6 @@ acmeofmanas@gmail.com*
 
 via: http://www.efytimes.com/e1/fullnews.asp?edid=127250
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
