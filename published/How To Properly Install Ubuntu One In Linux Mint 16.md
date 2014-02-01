@@ -8,11 +8,11 @@
 
 当你通过 Software Manager 安装 Ubuntu One 客户端以后，你准备打开并配置它时，你甚至都无法在菜单搜索里面找到它。就像是完全没有安装过一样。但你查看 Software Manager，又显示它已经安装完成了。问题到底出在哪了？
 
-问题的关键是 **Ubuntu One installer** 已经转交 **ubuntuone-control-panel-qt** 包了。这个包没有安装，你的 Ubuntu One 就无法运行。要解决这个问题，打开终端 (Ctrl+Alt+T)并运行下面的命令：
+问题的关键是 **Ubuntu One installer** 需要 **ubuntuone-control-panel-qt** 包。这个包没有安装，你的 Ubuntu One 的安装过程就无法运行。要解决这个问题，打开终端 (Ctrl+Alt+T)并运行下面的命令：
 
     sudo apt-get install ubuntuone-control-panel-qt
 
-现在你在菜单里面搜索，你会发现 Ubuntu One 已经存在了。现在你可以配置账户，进行同步。现在你可能觉得你已经解决了所有的问题，这时你会发现 **Ubuntu One indicator 并没出现在面板上**。
+现在你在菜单里面搜索，你会发现 Ubuntu One 已经存在了。现在你可以配置账户，选择哪些同步和哪些不同步。现在你可能觉得你已经解决了所有的问题，这时你会发现 **Ubuntu One 指示器并没出现在面板上**。
 
 ### 在 Linux Mint 16 中安装 Ubuntu One indicator: ###
 
@@ -22,7 +22,7 @@
     sudo apt-get update 
     sudo apt-get install indicator-ubuntuone
 
-注销并重新登录后，你会看到 indicator 出现在面板中。与此同时，你的 Ubuntu One 也全部安装完成了。我希望这篇 **在 Linux Mint 中安装 Ubuntu One** 会对你有所帮助。欢迎提出问题和建议。
+注销并重新登录后，你会看到这个指示器已经出现在面板中。与此同时，你的 Ubuntu One 也全部安装完成了。我希望这篇 **在 Linux Mint 中安装 Ubuntu One** 会对你有所帮助。欢迎提出问题和建议。
 
 --------------------------------------------------------------------------------
 
