@@ -4,19 +4,19 @@
 
 所以，你们中的一些人会好奇怎样才能生成这样的动态GIF图片。已经有各种各样专门用来生成动态GIF图片的在线或离线工具。另一种选择是创建一副动态GIF图片时关闭现有的视频剪辑。在这个教程中，我会描述**在Linux上如何将一段视频文件转换成一副动态GIF图片**。
 
-作用一个更有用的例子，让我展示如何**将一个YouTube视频转换成一副动态GIF图片**。
+作为一个更有用的例子，让我展示如何**将一个YouTube视频转换成一副动态GIF图片**。
 
 ### 第一步：下载YouTube视频 ###
 
-首先，下载一个你想要转换的YouTube视频。你可以使用[youtube-dl][5]这个工具将YouTube视频保存为MP3文件。假设你把你最爱的YouTube视频保存为"funny.mp3"。
+首先，下载一个你想要转换的YouTube视频。你可以使用[youtube-dl][5]这个工具将YouTube视频保存为MP4文件。假设你把你最爱的YouTube视频保存为"funny.mp4"。（译注：对于墙内的同学，请无视YT吧，自行去好人楼主那里寻找一个MP4吧，;-}）
 
 ### 第二步：从视频中解压视频帧 ###
 
 接下来，在Linux系统上[安装FFmpeg][5]，我会用这个工具去解压从视频中解压出视频帧。
 
-下面的指令会解压出独立的视频帧，将它们保存为GIF图片。确保使用注入("out%04d.gif")的输出文件格式。这样，独立的帧就被合适地命名并保存。
+下面的指令会解压出独立的视频帧，将它们保存为GIF图片。确保使用诸如("out%04d.gif")的输出文件格式。这样，独立的帧就被合适地命名并保存。
 
-    ffmpeg -t <duration> -ss <starting position in hh:mm:ss format> -i <input_video> out%04d.gif
+    ffmpeg -t <时长> -ss <hh:mm:ss格式的开始位置> -i <视频文件> out%04d.gif
 
 例如，如果你想解压输入视频的视频帧，从第10秒开始，每5秒一帧，请运行下列命令。
 
@@ -30,10 +30,9 @@
 
 首先，如果你还没有的话，在Linux系统上[安装ImageMagick][7]。
 
+    convert -delay <帧数>x<每秒帧数> -loop 0 out*gif <输出文件>
 
-    convert -delay <ticks>x<ticks-per-second> -loop 0 out*gif <output-gif-file>
-
-在这个命令中，"-delay"是控制动态速度的选项。这个选项表示在显示下一帧画面前需要等待的［秒数］（不好翻译？）。"-loop 0"选项表示动画的无限次循环。如果你愿意，你可以指定"-loop N"让动画只重复N次。
+在这个命令中，"-delay"是控制动态速度的选项。这个选项表示在显示下一帧画面前需要等待的秒数：帧数/每秒帧数 。"-loop 0"选项表示动画的无限次循环。如果你愿意，你可以指定"-loop N"让动画只重复N次。
 
 例如，为了生成一副每秒20帧和循环无数次的动态GIF图片，使用如下命令。
 
@@ -49,14 +48,15 @@
 
 现在你已经准备好在你的社交网络上分享制作完成的GIF图片。下面是一副我从一个可爱的YouTube视频中生成的GIF样例图片。
 
-享受吧！:-)
+享受技术带来的乐趣吧！:-)
+
 [![](http://farm8.staticflickr.com/7372/10988763123_4e89a18085_o.gif)][8]
 
 --------------------------------------------------------------------------------
 
 via: http://xmodulo.com/2013/11/convert-video-animated-gif-image-linux.html
 
-译者：[KayGuoWhu](https://github.com/KayGuoWhu) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[KayGuoWhu](https://github.com/KayGuoWhu) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
