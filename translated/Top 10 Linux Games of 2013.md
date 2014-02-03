@@ -11,7 +11,7 @@
 
 ### 盖瑞模组 ###
 
-！[承载么？](http://www.omgubuntu.co.uk/wp-content/uploads/2013/12/garrysmod-prophunt.jpg)
+![承载么？](http://www.omgubuntu.co.uk/wp-content/uploads/2013/12/garrysmod-prophunt.jpg)
 *承载么？*
 
 盖瑞模组是一个沙盘游戏，但是不为玩家设立目标，神奇隐藏在从一系列的Source引擎游戏中装载的道具和社区不断创造的各种游戏模式中。
