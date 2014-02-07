@@ -8,7 +8,7 @@ CuteMarkEd是一个非常有用的Qt文本编辑器，可以提供数学表达�
 
 ### CuteMarkEd 0.9.0 的亮点: ###
 
-- 加入了一个代码片段系统;
+- 加入了一个代码补齐系统;
 - 加入 "Go to Line" 菜单;
 - 在查找/替换功能中加入了新的"case sensitive," "whole words only," 和 "use regular expressions" 选项。
 - 支持将选中的单词加入用户词典;
