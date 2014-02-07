@@ -1,3 +1,4 @@
+[一起领了吧 —— bazz2]
 Two Pi R 2: Web Servers
 ================================================================================
 In my last [article][1][注：此文章在另一篇原文“Two Pi R”中], I talked about how even though an individual Raspberry Pi is not that redundant, two Pis are. I described how to set up two Raspberry Pis as a fault-tolerant file server using the GlusterFS clustered filesystem. Well, now that we have redundant, fault-tolerant storage shared across two Raspberry Pis, we can use that as a foundation to build other fault-tolerant services. In this article, I describe how to set up a simple Web server cluster on top of the Raspberry Pi foundation we already have. 
