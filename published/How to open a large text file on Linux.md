@@ -20,7 +20,7 @@ LargeFile 插件可以使大文件更迅速的被加载和编辑，它是通过�
 
     $ sudo yum install vim-enhanced 
 
-可以从 [Vim website][2] 上下载 LargFile 插件，最新版本号是5，下载的文件将会保存为 Vimball 格式（以 .vba 结尾）。
+可以从 [Vim website][1] 上下载 LargFile 插件，最新版本号是5，下载的文件将会保存为 Vimball 格式（以 .vba 结尾）。
 
 要在你的 home 目录下安装插件，用 VIM 打开 .vba 文件，如下所示。
 
@@ -29,7 +29,7 @@ LargeFile 插件可以使大文件更迅速的被加载和编辑，它是通过�
 
 在 VIM 窗体上输入 “:so %”，然后按回车键，就可以在你的 home 目录下安装这个插件了。
 
-[![](http://farm3.staticflickr.com/2805/11313669824_335e73ebb8_z.jpg)][3]
+![](http://farm3.staticflickr.com/2805/11313669824_335e73ebb8_z.jpg)
 
 完成后，输入 “:q” 退出 VIM。
 
@@ -42,13 +42,14 @@ LargeFile 插件可以使大文件更迅速的被加载和编辑，它是通过�
 > let g:LargeFile=10
 
 虽然 LargeFile 可以加速文件装载的速度，但 VIM 自身对编辑相当大的文件支持不太好，因为它会一下子把整个文件都加载进内存。例如，用 VIM 装载 1G　大小的文件，它就会占很多内存和交换空间，如下图所示的顶部输出。
-[![](http://farm6.staticflickr.com/5519/11313640366_0064c698ac_z.jpg)][4]
+
+![](http://farm6.staticflickr.com/5519/11313640366_0064c698ac_z.jpg)
 
 所以如果你的文件明显大于你 Linux 系统的物理内存的话，就要考虑其它的选择，如下所述。
 
 ### glogg 日志资源管理器 ###
 
-如果你只需要查看一个文本文件，并不对它做编辑，可以考虑下　[glogg][5]。它是一款基于图形用户界面的独立日志分析器。该　glogg　分析器支持通过正则表达式和通配符来对要打开的文本文件进行过滤和筛选，使用户只看到其真正关注的内容。
+如果你只需要查看一个文本文件，并不对它做编辑，可以考虑下　[glogg][2]。它是一款基于图形用户界面的独立日志分析器。这个　glogg　分析器支持通过正则表达式和通配符来对要打开的文本文件进行过滤和筛选，使用户只看到其真正关注的内容。
 
 在 Debian (Wheezy 版本或更高版本)、Ubuntu 或 Linux Mint 系统中安装 glogg :　
 
@@ -64,17 +65,17 @@ LargeFile 插件可以使大文件更迅速的被加载和编辑，它是通过�
 
 glogg 能很快的打开一个大文本文件。我花了大约 12 秒就打开了一个 1G 的日志文件。
 
-[![](http://farm8.staticflickr.com/7354/11313640286_4ebee2b959_z.jpg)][6]
+![](http://farm8.staticflickr.com/7354/11313640286_4ebee2b959_z.jpg)
 
 在 "Text" 区域，你可以输入正则表达式，然后点击 "Search" 按纽，它支持表达式大小写敏感搜索以及自动刷新功能。搜索后，在窗体底部会显示出筛选的结果内容。
 
-[![](http://farm3.staticflickr.com/2851/11313594455_d57c700c4b_z.jpg)][7]
+![](http://farm3.staticflickr.com/2851/11313594455_d57c700c4b_z.jpg)
 
 从装载文件来跟 VIM 对比， glogg　显得更轻量级，在加载完一个 1G 的日志文件后，它仅仅只使用了 83M 的物理内存。
 
 ### JOE 文体编辑器 ###
 
-[JOE][8] 是GPL下发布的一个轻量级的基于终端的文本编辑器。JOE 是一款少有的支持大文件的文本编辑器，可以打开和编辑比物理内存大的文件。
+[JOE][3] 是GPL下发布的一个轻量级的基于终端的文本编辑器。JOE 是一款少有的支持大文件的文本编辑器，可以打开和编辑比物理内存大的文件。
 
 此外，JOE支持各种功能强大的文本编辑功能，如非破坏性编辑，用正则表达式搜索和替换，无限次的撤销/重做，语法高亮等。
 
@@ -90,13 +91,13 @@ glogg 能很快的打开一个大文本文件。我花了大约 12 秒就打开�
 
     $ joe test.log 
 
-[![](http://farm4.staticflickr.com/3684/11317402126_406058bf78_z.jpg)][9]
+![](http://farm4.staticflickr.com/3684/11317402126_406058bf78_z.jpg)
 
 相比上面提到的 glogg 来说，用 JOE 加载一个大文本文件会有点卡，加载一个 1G 的文件要用将近 30 秒的时间，不过考虑到要对文件进行全文编辑，这还能忍受。一旦文件加载完成，就可以在相当快捷的终端模式中编辑此文件。
 
 JOE的内存消耗令人印象深刻。加载并编辑一个1GB的文本文件，只花费47MB的物理内存。
 
-[![](http://farm4.staticflickr.com/3728/11317483233_2017b5878b_z.jpg)][10]
+![](http://farm4.staticflickr.com/3728/11317483233_2017b5878b_z.jpg)
 
 如果你还知道在 Linux 中打开/编辑大文本文件的其它方法的话，请跟我们分享！
 
@@ -109,11 +110,5 @@ via: http://xmodulo.com/2013/12/open-large-text-file-linux.html
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [1]:http://www.vim.org/scripts/script.php?script_id=1506
-[2]:http://www.vim.org/scripts/script.php?script_id=1506
-[3]:http://www.flickr.com/photos/xmodulo/11313669824/
-[4]:http://glogg.bonnefon.org/
-[5]:http://www.flickr.com/photos/xmodulo/11313640286/
-[6]:http://www.flickr.com/photos/xmodulo/11313594455/
-[7]:http://joe-editor.sourceforge.net/
-[8]:http://www.flickr.com/photos/xmodulo/11317402126/
-[9]:http://www.flickr.com/photos/xmodulo/11317483233/
+[2]:http://glogg.bonnefon.org/
+[3]:http://joe-editor.sourceforge.net/
