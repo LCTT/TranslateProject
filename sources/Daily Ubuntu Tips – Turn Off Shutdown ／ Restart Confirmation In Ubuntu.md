@@ -1,43 +1,44 @@
-Daily Ubuntu Tips – Turn Off Shutdown / Restart Confirmation In Ubuntu
+每天Ubuntu小知识 - 在Ubuntu中的关机/重启确认
 ================================================================================
-For those just starting with Ubuntu, there are many new things to learn and many of the Linux tutorials online are not intended for beginners.
 
-Here, we take a different approach. Most if not all of our tutorials are for beginners.
 
-This post is also a beginner’s post and it’s going to show those just leaning Ubuntu how to disable the shutdown, restart and logout confirmation box each time they execute these commands.
+对于Ubuntu绿手来说，有很多新东西要学，但是网上很多教程不是针对新手的。
 
-You see, Ubuntu is configured to always prompt you with a dialog box when you wish to shutdown, restart or logout of your session.
+在这里，我们不走寻常路。如果大多数教程不是适合初学者。
 
-This is a safeguard and it prevents you from mistakenly shutting down or restarting your computer when you don’t intent to.
+这篇文章也是一个新手的文章，并且展示如何在每次执行shutdown，restart，logout时禁用确定框。
 
-Not everyone wants to be asked every time he/she want to turn of Ubuntu. Folks who are in hurry most of the time may accidentally leave their computer running even though they select the shutdown command and not confirming the action when prompted.
+Ubuntu总是配置好了一个对话框，每当你要shutdown，reastart或者logout的时候提示你。
 
-This brief tutorial is going to show you how to turn it off so you don’t get prompted each time you want to shutdown your machine.
+这是一个保护措施，防止你本不打算这样做的时候错误执行关机。
 
-When this feature is activated, it prompts you with the following screen.
+不是所有人都想每次关机的时候都被询问。忙碌的小伙伴可能就让Ubuntu就那么开着，因为他shutdown了，但是忘了确认那个该死的对话框。
 
+这个教程主要是告诉你关机的时候，如何可以避免那个对话框。
+
+当这个特性被激活，你将会收到下面的提示。
 > Are you sure you want to close all programs and shutdown your computer?
 
-Run the commands below to turn it off.
+运行下面命令关掉它。
 
-Press **Ctrl – Alt – T** on your keyboard to open the terminal. When it opens, run the commands below on the terminal windows and press Enter.
+按下键盘上的**Ctrl – Alt – T**打开终端。然后敲击下面的命令
 
     gsettings set com.canonical.indicator.session suppress-logout-restart-shutdown true
 
-That’s it! You’ll never be prompted again when you click shutdown, restart or logout of Ubuntu.
+就是这些，你就再也不会被该死的确认对话框骚扰了。
 
-To undo the changes and bring back the confirmation, run the commands below
+如果想恢复这个对话框，敲下面的命令就可以了
 
     gsettings set com.canonical.indicator.session suppress-logout-restart-shutdown false
 
 ![](http://www.liberiangeek.net/wp-content/uploads/2014/01/shutdownubuntuconfirm.png)
 
-Enjoy!
+干巴爹！
 
 --------------------------------------------------------------------------------
 
 via: http://www.liberiangeek.net/2014/01/daily-ubuntu-tips-turn-off-shutdown-restart-confirmation-in-ubuntu/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[ggaaooppeenngg](https://github.com/ggaaooppeenngg) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
