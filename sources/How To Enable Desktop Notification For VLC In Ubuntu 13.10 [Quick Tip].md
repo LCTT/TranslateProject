@@ -1,3 +1,6 @@
+Translating-------geeki
+
+
 How To Enable Desktop Notification For VLC In Ubuntu 13.10 [Quick Tip]
 ================================================================================
 I must say VLC is by far the best media player out there for playing video files. There are a number of hidden features of VLC  media player which you may not even know about. One such feature is desktop notification. In this quick tip, we shall see **how to enable desktop notification for VLC in Ubuntu 13.10** and other versions.
