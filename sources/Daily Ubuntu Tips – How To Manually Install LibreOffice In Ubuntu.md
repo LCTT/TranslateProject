@@ -1,3 +1,4 @@
+乌龙茶 翻译中
 Daily Ubuntu Tips – How To Manually Install LibreOffice In Ubuntu
 ================================================================================
 This brief tutorial is going to show you how to manually install LibreOffice in Ubuntu. As you may already know, LibreOffice comes pre-installed in Ubuntu.
