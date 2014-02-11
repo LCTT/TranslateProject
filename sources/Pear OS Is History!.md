@@ -1,3 +1,4 @@
+(翻译中by runningwater)
 Pear OS Is History!
 ================================================================================
 ![](http://itsfoss.com/wp-content/uploads/2014/01/RIP_PearOS.jpeg)
@@ -22,7 +23,7 @@ With Pear OS gone, its users may [install Elementary OS Luna][5], another Ubuntu
 
 via: http://itsfoss.com/pear-os-history/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/译者ID) 校对：[校对者ID](https://github.com/runningwater)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
