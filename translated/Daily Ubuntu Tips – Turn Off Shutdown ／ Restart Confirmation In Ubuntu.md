@@ -33,7 +33,7 @@ Ubuntu总是配置好了一个对话框，每当你要shutdown，reastart或者l
 
 ![](http://www.liberiangeek.net/wp-content/uploads/2014/01/shutdownubuntuconfirm.png)
 
-干巴爹！
+干巴爹！ 
 
 --------------------------------------------------------------------------------
 
