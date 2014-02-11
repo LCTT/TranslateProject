@@ -1,26 +1,29 @@
-Ubuntu 每日小贴士 – 在Ubuntu中如何手动安装LibreOffice
+每日 Ubuntu 小贴士——如何在 Ubuntu 中手动安装 LibreOffice
 ================================================================================
-这个简短的教程将告诉你如何在Ubuntu中手动安装LibreOffice。正如你已经知道的那样，LibreOffice已经预装Ubuntu中了。
 
-这个版本是Ubuntu的定制版本，能够在Ubuntu里面更好的工作。它也集成了Ubuntu的应用菜单和其他设置。
+这个简短教程将指导你如何在 Ubuntu 中手动安装 LibreOffice。正如你所知，LibreOffice 已经预装在 Ubuntu 中了。
 
-LibreOffice在它的[下载页面][1]的官方版本和你从Ubuntu获得的默认版本是不同的。你并不是获得了一个非标准版本，但它定制了一下再加入到Ubunut软件库中。
+这个版本是 Ubuntu 的定制版本，能够在 Ubuntu 中更好的工作。它也集成了 Ubuntu 的应用菜单和其它设置。
 
-如果你想使用LibreOffice的官方标准版，你必须从[下载页面][1]手动下载。这意味着，完全卸载当前版本并从官方下载页面下载.deb包。
+[下载页面][1]中的 LibreOffice 官方版本和你从 Ubuntu 获得的默认版本是不同的。你获得的并不是一个非标准版本，但它稍加定制再加入到 Ubunut 软件库中。
 
-要做到这一点你必须先完全从Ubuntu的清除的LibreOffice。
+如果你想使用 LibreOffice 的官方标准版，你必须从[下载页面][1]手动下载。这意味着，完全卸载当前版本并从官方下载页面下载.deb包。
 
-### 从Ubuntu中卸载LibreOffice ###
+要做到这一点你必须先完全从 Ubuntu 中清除 LibreOffice。
 
-要在Ubuntu中手动安装LibreOffice的官方版本，必须先卸载当前版。在Ubuntu中要卸载的LibreOffice，运行下面的命令。
+### 从 Ubuntu 中卸载 LibreOffice ###
+
+要在 Ubuntu 中手动安装 LibreOffice 的官方版本，必须先卸载当前版。在 Ubuntu 中要卸载 LibreOffice，运行下面的命令。
 
     sudo apt-get remove --purge libreoffice* && sudo apt-get autoremove
 
-运行以上命令之后，重启你的电脑。当你再次登录以后，从[下载页面][1]下载LibreOffice的.deb包。
+运行以上命令之后，重启你的电脑。当你再次登录以后，从[下载页面][1]下载 LibreOffice 的.deb包。
 
-### 在Ubuntu中手动安装LibreOffice ###
+### 在 Ubuntu 中手动安装 LibreOffice ###
 
-下载.deb包后，打开终端，在你的home目录进入Downloads文件夹。默认情况下，Firefox下载的文件保存在。
+下载.deb包后，打开终端，在你的 home 目录进入 Downloads 文件夹。默认情况下，Firefox下载的文件保存在那里。
+
+    cd ~/Downloads
 
 ![](http://www.liberiangeek.net/wp-content/uploads/2014/01/libreofficemanualinstall.png)
 
@@ -28,27 +31,25 @@ LibreOffice在它的[下载页面][1]的官方版本和你从Ubuntu获得的默�
 
     tar -xvf LibreOffice_*.tar.gz
 
-解压.tar.gz文件后，你会在Downloads文件夹下看到一个新的LibreOffice Deb文件夹。要开始手动安装LibreOffice，运行下面的命令。
+解压.tar.gz文件后，你会在 Downloads 文件夹下看到一个新的 LibreOffice Deb 文件夹。要开始手动安装 LibreOffice，运行下面的命令。
 
     sudo dpkg -i LibreOffice_*/DEBS/*.deb
 
-运行上面的命令后，LibreOffice将被安装并可以使用了。
+运行上面的命令后，LibreOffice 将被安装并可以使用了。
  
-接下来，进入Unity Dash并启动LibreOffice。这就是你如何在Ubuntu中手动安装LibreOffice。
+接下来，进入 Unity Dash 并启动 LibreOffice。以上就是指导你在 Ubuntu 中手动安装 LibreOffice 的方法。
 
 ![](http://www.liberiangeek.net/wp-content/uploads/2014/01/libreofficemanualinstall1.png)
 
-如果在Ubuntu中手动安装LibreOffice，你将很有可能每次有新版本时手动更新。
+如果在 Ubuntu 中手动安装 LibreOffice，很有可能每次有版本更新和安全更新时你必须手动更新。
 
-Or you may just want Canonical (Ubuntu parent company) handle LibreOffice installation and patch / updates management via its repository.
-
-或者你仅仅希望Canonical（Ubuntu母公司）通过它的储存库进行LibreOffice的安装和补丁/更新管理。
+或者你仅仅希望 Canonical（Ubuntu母公司）通过它的储存库进行 LibreOffice 的安装和补丁/更新管理。
 
 --------------------------------------------------------------------------------
 
 via: http://www.liberiangeek.net/2014/01/daily-ubuntu-tips-how-to-manually-install-libreoffice-in-ubuntu/
 
-译者：[乌龙茶](https://github.com/yechunxiao19) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[乌龙茶](https://github.com/yechunxiao19) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
