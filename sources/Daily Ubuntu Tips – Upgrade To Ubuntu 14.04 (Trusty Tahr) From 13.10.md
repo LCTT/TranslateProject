@@ -1,3 +1,6 @@
+Translating---------------geekpi
+
+
 Daily Ubuntu Tips – Upgrade To Ubuntu 14.04 (Trusty Tahr) From 13.10
 ================================================================================
 Although Ubuntu 14.04 isn’t scheduled to be released anytime soon, those that like to try bleeding edge software and OS can now do an in-place upgrade to Ubuntu 14.04 from 13.10.
