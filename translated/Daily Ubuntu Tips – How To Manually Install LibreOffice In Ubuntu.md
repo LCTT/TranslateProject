@@ -33,7 +33,7 @@ LibreOffice在它的[下载页面][1]的官方版本和你从Ubuntu获得的默�
     sudo dpkg -i LibreOffice_*/DEBS/*.deb
 
 运行上面的命令后，LibreOffice将被安装并可以使用了。
-
+ 
 接下来，进入Unity Dash并启动LibreOffice。这就是你如何在Ubuntu中手动安装LibreOffice。
 
 ![](http://www.liberiangeek.net/wp-content/uploads/2014/01/libreofficemanualinstall1.png)
