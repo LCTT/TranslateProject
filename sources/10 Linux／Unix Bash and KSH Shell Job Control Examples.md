@@ -1,3 +1,5 @@
+重出江湖 :p 翻译Ing Luox
+
 10 Linux/Unix Bash and KSH Shell Job Control Examples
 ================================================================================
 ![](http://s0.cyberciti.org/uploads/cms/2014/02/unix-llnux-shell-job-control-series.jpg)
