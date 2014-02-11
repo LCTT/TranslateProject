@@ -1,3 +1,4 @@
+乌龙茶翻译中
 Daily Ubuntu Tips – Intel Graphics Installer 1.0.3 Released – Supports Ubuntu 13.10
 ================================================================================
 For those using desktops or laptops with Intel graphic cards running Ubuntu Linux 13.10, here’s something they might want to do – Install Intel Graphic Installer for Linux.
