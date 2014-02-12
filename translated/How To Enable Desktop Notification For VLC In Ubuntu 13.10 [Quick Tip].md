@@ -38,7 +38,7 @@
 
 --------------------------------------------------------------------------------
 
-via: http://itsfoss.com/enable-desktop-notification-vlc-ubuntu/
+via: http://itsfoss.com/enable-desktop-notification-vlc-ubuntu/ 
 
 译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
 
