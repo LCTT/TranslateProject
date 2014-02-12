@@ -1,3 +1,6 @@
+Translating---------------geekpi
+
+
 Daily Ubuntu Tips – Skype Minor Update Fixes PulseAudio, 64-bit Issues
 ================================================================================
 A minor update for Skype was recently released for Linux systems, including Ubuntu that fixes issues with PulseAudio 3.x and 4.x audio noise, resolves crash on Ubuntu/Debian 64-bit systems due to missing libasound2-plugins:i386 and others.
