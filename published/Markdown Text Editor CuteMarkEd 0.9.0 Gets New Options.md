@@ -1,4 +1,4 @@
-Maekdown文本编辑器CuteMarkEd 0.9.0 有了新的选择
+Maekdown编辑器CuteMarkEd的新功能
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Markdown-Text-Editor-CuteMarkEd-0-9-0-Gets-News-Options-421082-2.png)
 
@@ -20,13 +20,13 @@ CuteMarkEd是一个非常有用的Qt文本编辑器，可以提供数学表达�
 
 - [CuteMarkEd 0.9.0 tar.gz][2] [源码] [372 KB]
 
-记住这是一个开发板，不应该在生产机器上安装。它只用于测试目的。
+记住这是一个开发 版本，不应该在生产机器上安装。它只用于测试目的。
 
 --------------------------------------------------------------------------------
 
 via: http://news.softpedia.com/news/Markdown-Text-Editor-CuteMarkEd-0-9-0-Gets-News-Options-421082.shtml
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
