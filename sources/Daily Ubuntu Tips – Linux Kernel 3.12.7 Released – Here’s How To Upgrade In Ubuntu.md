@@ -1,3 +1,4 @@
+    Vic020的坑
 Daily Ubuntu Tips – Linux Kernel 3.12.7 Released – Here’s How To Upgrade In Ubuntu
 ================================================================================
 Linux Kernel version 3.12.7 mainline has just been released and this brief tutorial is going to show you how to easily upgrade in Ubuntu. If you’re running Ubuntu 13.10 and below, chances are your system doesn’t have this latest kernel installed.
