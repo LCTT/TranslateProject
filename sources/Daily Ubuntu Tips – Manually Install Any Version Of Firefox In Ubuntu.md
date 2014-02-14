@@ -1,3 +1,4 @@
+乌龙茶 翻译中
 Daily Ubuntu Tips – Manually Install Any Version Of Firefox In Ubuntu
 ================================================================================
 Firefox is the primary web browser in Ubuntu. It comes pre-installed and added to Ubuntu default software repositories which get updated with the latest version of Firefox automatically.
