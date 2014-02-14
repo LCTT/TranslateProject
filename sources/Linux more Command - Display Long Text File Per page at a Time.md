@@ -1,3 +1,4 @@
+zpl1025
 Linux more Command - Display Long Text File Per page at a Time
 ================================================================================
 If you are used to working with Linux, you will find a lot of file text in Linux world. Configuration files and log files are usually kept in text format. But those file are usually have long content. You can not view them all in one page. So we need to to pagination to those file. And to do that, we can use **more** command.
