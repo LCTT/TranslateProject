@@ -1,3 +1,4 @@
+乌龙茶 翻译中
 How To Install Gnome 3.10 In Ubuntu 13.10
 ================================================================================
 ![](http://itsfoss.com/wp-content/uploads/2014/01/Install_Gnome_310_Ubuntu_1310.jpeg)
