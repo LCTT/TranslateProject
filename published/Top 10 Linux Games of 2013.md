@@ -37,7 +37,7 @@
 
 ### 失忆症：猪猡的机器  ###
 
-![](ttp://www.omgubuntu.co.uk/wp-content/uploads/2013/09/amnesia-machine-for-pigs.jpg)
+![](http://www.omgubuntu.co.uk/wp-content/uploads/2013/09/amnesia-machine-for-pigs.jpg)
 
 当我们[在九月份][6]评论“失忆症：猪猡的机器”时，我们发现这部作品的气氛和它的前作一样令人胆战心惊，并且值得我们跋涉过种种不算太难的谜题去探寻属于维多路亚时代的游戏场景以及蒸汽朋克式的机械装置。
 
