@@ -3,7 +3,7 @@
 
 ![](http://itsfoss.com/wp-content/uploads/2014/02/Google-keep-logo.jpg)
 
-最近, Google Keep 已经成为我在 Android 最喜欢用的笔记应用。而在 Ubuntu 的工作中, 我同样想做一些快速笔记。既然 Google Keep 可以在设备间同步, 这样**在 Ubuntu 上安装 Google Keep **也有意义了。在这个快速技巧中,我会向你展示如何在 Ubuntu 13.10 或者其它 Linux 发行版上安装 Google Keep。
+最近, Google Keep 已经成为我在 Android 最喜欢用的笔记应用。而在 Ubuntu 的工作中, 我同样想做一些快速笔记。既然 Google Keep 可以在设备间同步, 这样 **在 Ubuntu 上安装 Google Keep ** 也有意义了。在这个快速技巧中,我会向你展示如何在 Ubuntu 13.10 或者其它 Linux 发行版上安装 Google Keep。
 
 如果你是一个 Google Chrome 用户,你可能知道 Google 的'桌面应用'。可以在 Chrome 在线商店的**桌面**集合中找到很多应用。不像运行在浏览器的常规 Chrome 应用,这些'桌面应用'独立运行,像桌面应用那样。我们会看见如何将这个新的特性以原生 Ubuntu 应用形式安装 chrome 应用。
 
