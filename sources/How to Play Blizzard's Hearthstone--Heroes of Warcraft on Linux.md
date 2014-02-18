@@ -1,3 +1,4 @@
+zpl1025 translating
 How to Play Blizzard's Hearthstone: Heroes of Warcraft on Linux
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/How-to-Play-Blizzard-s-Hearthstone-Heroes-of-Warcraft-on-Linux-424410-3.jpg)
