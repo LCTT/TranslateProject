@@ -1,3 +1,6 @@
+Translating------------------geekpi
+
+
 How to visually observe the partitions' usage with Ubuntu 13.10's Disk Usage Analyzer
 ================================================================================
 Movies, books, audio tracks are among the content types often populating the user's harddisk, aspect that usually generates various issues, such as lack of space and not clearly understanding its main cause.
