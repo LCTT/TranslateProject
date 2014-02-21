@@ -57,11 +57,9 @@ Nginx 能正常工作后，配置第二个树莓派。因为我们已经将配�
     $ sudo ln -s /etc/nginx/sites-available/cluster .
     $ sudo /etc/init.d/nginx restart
 
-### Two DNS A Records ###
-### Two DNS A Records ###
+### DNS 服务器上配置两条 A 记录 ###
 
-So, now I have two Web hosts that can host the same content, but the next step in this process is an important part of what makes this setup redundant. Although you definitely could set up a service like heartbeat with some sort of floating IP address that changed from one Raspberry Pi to the next depending on what was up, an even better approach is to use two DNS A records for the same hostname that point to each of the Raspberry Pi IPs. Some people refer to this as DNS load balancing, because by default, DNS lookups for a hostname that has multiple A records will return the results in random order each time you make the request: 
-现在两个主机共享同一份文件，下一步是设置冗余系统的关键步骤。虽然你完全可以设置一个类似心跳的服务用于轮询检测哪个树莓派的 Web 服务是开启的，但这里有个更好的方法：两个 DNS 服务器记录一个主机名，这就是传说中的 DNS 负载均衡，DNS 
+现在两个主机共享同一份文件，下一步是设置冗余系统的关键步骤。虽然你完全可以设置一个类似心跳的服务用于轮询检测哪个树莓派的 Web 服务是开启的，但这里有个更好的方法：两个 DNS 服务器使用 A 记录（译注：A 记录就是将域名转化为 IP 地址的记录，DNS 包含很多记录方式，如 A 记录、PTR 记录、MX 记录等等）同一个主机名，这就是传说中的 DNS 负载均衡，DNS 访问主机时，如果主机名对应多个 IP 地址，DNS 会随机返回这些 IP 地址的顺序：
 
     $ dig twopir.example.com A +short
     192.168.0.121
@@ -70,19 +68,19 @@ So, now I have two Web hosts that can host the same content, but the next step i
     192.168.0.122
     192.168.0.121
 
-Because the results are returned in random order, clients should get sent evenly between the different hosts, and in effect, multiple A records do result in a form of load balancing. What interests me about a host having multiple A records though isn't as much the load balancing as how a Web browser handles failure. When a browser gets two A records for a Web host, and the first host is unavailable, the browser almost immediately will fail over to the next A record in the list. This failover is fast enough that in many cases it's imperceptible to the user and definitely is much faster than the kind of failover you might see in a traditional heartbeat cluster.
+因为返回随机的顺序，用户可以均匀地往两台服务器发送请求，这个负载均衡的机制就是由 DNS 服务器的多条 A 记录来提供。相对于 DNS 的负载均衡技术，我更感兴趣的是 Web 浏览器如何处理请求失败的情况。当浏览器通过网页主机获得两条 A 记录，并且第一条记录所在的主机当机了，浏览器几乎立刻就切到另一条记录上。切换效率快到用户根本察觉不出来，这可比传统的心跳线轮循请求主机快多了。
 
-So, go to the same DNS server you used to add the first A record and add a second record that references the same hostname but a different IP address—the IP address of the second host in the cluster. Once you save your changes, perform a dig query like I performed above and you should get two IP addresses back. 
+所以在你正在使用的 DNS 服务器上添加你的树莓派集群的两个 IP 地址，然后试试 dig 命令，就像我在上面使用过的一样，你也应该能得到两个 IP 地址。
 
-Once you have two A records set up, the cluster is basically ready for use and is fault-tolerant. Open two terminals and log in to each Raspberry Pi, and run `tail -f /var/log/nginx/access.log` so you can watch the Web server access then load your page in a Web browser. You should see activity on the access logs on one of the servers but not the other. Now refresh a few times, and you'll notice that your browser should be sticking to a single Web server. After you feel satisfied that your requests are going to that server successfully, reboot it while refreshing the Web page multiple times. If you see a blip at all, it should be a short one, because the moment the Web server drops, you should be redirected to the second Raspberry Pi and be able to see the same index page. You also should see activity in the access logs. Once the first Raspberry Pi comes back from the reboot, you probably will not even be able to notice from the perspective of the Web browser. 
+当你为同一个域名设置好了两个 A 记录，这套集群就可以提供容错服务了。打开两个终端并分别登录到两个树莓派，运行 tail -f /var/log/ngnix/access.log 命令，你可以监视 Web 服务器的访问情况。当你通过浏览器访问网页时，你可以看到在一台树莓派上产生了访问日志，而在另外一台的日志里什么也没有出现。现在你可以刷新几次页面，当你觉得你对能成功访问到 Web 服务器感到满意了，你可以重启响应你请求的那台树莓派，然后再刷新几次页面。也许浏览器上会出现一个短暂的不可访问信号，但会马上重定向到第二台树莓派上，你会看到一样的页面，并且你能通过终端访问日志了解具体情况。当第一台树莓派启动后，你在浏览器上根本不会察觉到。
 
-Experiment with rebooting one Raspberry Pi at a time, and you should see that as long as you have one server available, the site stays up. Although this is a simplistic example, all you have to do now is copy over any other static Web content you want to serve into /mnt/gluster1/www, and enjoy your new low-cost fault-tolerant Web cluster. 
+随机重启一台树莓派，只要有一台在线，Web 服务器就能提供服务。这是一个非常简单的案例，你可以把你其它的静态文件放到 /mnt/gluster1/www 上，为你提供真正有价值的服务，现在好好享受你的低成本容错集群 Web 服务器吧。
 
 --------------------------------------------------------------------------------
 
 via: http://www.linuxjournal.com/content/two-pi-r-2-web-servers
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[bazz2](https://github.com/bazz2) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
