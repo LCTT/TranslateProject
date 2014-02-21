@@ -1,3 +1,5 @@
+翻译中 by小眼儿
+
 2014 Linux Jobs Report: Demand for Linux Expertise Drives Hiring Priorities
 ================================================================================
 *Finding Linux talent moves up on priority list for hiring managers*
