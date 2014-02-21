@@ -2,7 +2,7 @@ Pear OS 系统已成为历史！
 ================================================================================
 ![](http://itsfoss.com/wp-content/uploads/2014/01/RIP_PearOS.jpeg)
 
-2014年伊始就看到了再一个 Linux 发布版本的消亡。这一次是外形跟 Mac 系统很相似的 [Pear OS][1] 系统高调的说再见了。从现在开始，Pear OS 不在提供下载了。从一月三十一号起，Pear Cloud 服务也会离线。
+2014年伊始就看到了又一个 Linux 发布版本的消亡。这一次是外形跟 Mac 系统很相似的 [Pear OS][1] 系统高调的说再见了。从现在开始，Pear OS 不在提供下载了。从一月三十一号起，Pear Cloud 服务也会离线。
 
 跟[2013年终止的 Linux 发行版本][2]不一样，Pear OS 并不是因为缺乏资金或人为权利的原因而终止的，而是被不知名的大企业（我希望不是 Apple 公司 :P）所收购。他们将会把 Pear OS 作为自有产品，这就意味着社区不能对 Pear OS 创建分支（fork）及继续使用。
 
@@ -12,7 +12,7 @@ Pear OS 系统已成为历史！
 
 相同的消息在 Pear OS 的官网上也挂出来了，大卫在告别的消息中感谢用户和开发者对他们的支持。
 
-也许这就可以解释同为什么 Pear OS 8 那么幼稚（译者注：此处找不到好的词汇，请校对修正）。大卫已经很少专注在 Pear OS 的开发上了，他正忙着敲定这笔交易呢。{可以读读:[Pear OS 8 评论][4]}
+也许这就可以解释了为什么 Pear OS 8 像一个失控的越野车一样。大卫已经很少专注在 Pear OS 的开发上了，他正忙着敲定这笔交易呢。{可以读读:[Pear OS 8 评论][4]}
 
 在社区网站上我看到了很多愤怒的消息，因为它背叛了开源的“宗旨”。在一定程度上，虽然这种爆发的情绪是可以理解的，但这是大卫的权利，他有权利选择他认为的更好的未来。他表示他会转到另一个方向，也许又会开启一个新的企业。我希望他得未来式幸运的。
 
@@ -22,7 +22,7 @@ Pear OS 已经不在，他的用户可能会[安装 Elementary OS Luna][5]，另
 
 via: http://itsfoss.com/pear-os-history/
 
-译者：[runningwater](https://github.com/译者ID) 校对：[校对者ID](https://github.com/runningwater)
+译者：[runningwater](https://github.com/译者ID) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

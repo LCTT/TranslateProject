@@ -1,3 +1,5 @@
+##<<Linchenguang翻译中
+
 Moving or Rename File / Directory in Linux - 10 Practical mv Command Examples
 ================================================================================
 After knowing about [copy command][1], the next command which is related is mv command. When you want to move files from one place to another and you don’t want to duplicate it, then **mv command** is absolutely right for this task.

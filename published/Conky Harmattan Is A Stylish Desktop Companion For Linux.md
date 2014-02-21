@@ -1,4 +1,4 @@
-Conky Harmattan是一款时尚的Linux桌面助手
+Conky Harmattan ： 一款时尚的Linux桌面助手
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/01/conky-harmatten.jpg)
 
@@ -8,9 +8,9 @@ Conky Harmattan是一款时尚的Linux桌面助手
 
 ![Several themes and modes are included](http://www.omgubuntu.co.uk/wp-content/uploads/2014/01/Screen-Shot-2014-01-21-at-20.42.42.png)
 
-**Conky Harmattan**，一个来源于deviantArt用户Zagortenay333的新主题收集器，也不例外。虽然屏幕截图显示的是一个一定要打动大多数人的时尚桌面小工具，但看到了解到它的复杂配置后估计会吓跑许多人了。
+**Conky Harmattan**，一个来源于deviantArt用户Zagortenay333的新的主题收集器，同样也不例外。虽然屏幕截图显示的是一个能打动大多数人的时尚桌面小工具，但看到了解到它的复杂配置后估计会吓跑许多人了。
 
-为了帮助使用者，它的作者提供了**一步一步的安装指导**，安装过程未按正常状况进行，**有效“故障排除” 手册**列出如何修复一些最常见的问题。
+为了帮助使用者，它的作者提供了**一步一步的安装指导**，如果安装过程未按正常状况进行，它也提供了一个**有用的“故障排除” 手册**告诉你如何修复一些最常见的问题。
 
 Harmatten包括：
 
@@ -19,9 +19,9 @@ Harmatten包括：
 - **2种天气模式**
 - **天气单位转换**
 
-默认情况下Harmattan是“固定”；这意味着你不能使用你的鼠标移动它。相对的，你需要调整'x'和'y'的值就在conky-config文件的安装过程中 - 在“faff”一栏中打勾另一个！
+不像大多数Conky主题，Harmattan不会将别人屏幕的样子复制到你的屏幕上。
 
-不像大多数Conky主题Harmattan不要求你跳转至lua你看到的其余内容复制到你的屏幕上。
+默认情况下Harmattan是“固定”；你需要按下ALT键并用鼠标点击和移动它。或者你也可以在设置中调整conky-config中的'x'和'y'值 - 这会浪费不少时间。此外，也别忘记修改Yahoo!天气预报小部件的地区代码，它在.conkyrc里面。
 
 ### 获取Harmattan Conky ###
 
@@ -36,13 +36,13 @@ Harmatten包括：
 
 之后提取Harmattan文件，按Ctrl + H在Nautilus文件浏览器查看“隐藏”的文件。
 
-最后，根据’安装‘指导进行。
+最后，根据‘Installation’指导进行。
 
 --------------------------------------------------------------------------------
 
 via: http://www.omgubuntu.co.uk/2014/01/conky-harmattan-for-linux
 
-译者：[乌龙茶](https://github.com/yechunxiao19) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[乌龙茶](https://github.com/yechunxiao19) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
