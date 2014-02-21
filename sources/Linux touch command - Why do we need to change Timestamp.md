@@ -1,3 +1,4 @@
+翻译ing Luoxcat
 Linux touch command - Why do we need to change Timestamp?
 ================================================================================
 We may use touch command in Linux to create an empty file. Of course we can use another command such as vi, nano or any editing tools to do it. But you may need more steps do it. But do know it that the main function of touch command is not create an empty file?

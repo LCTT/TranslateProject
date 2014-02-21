@@ -1,5 +1,6 @@
-如何将Google Calendar 集成到Linux桌面
+如何在Linux桌面墙纸上显示Google Calendar
 ================================================================================
+
 Google Calendar 是时下最流行的网页应用程序之一。用户可以通过网络接口或者本地的应用程序跨设备访问或同步 Google Calendar。在 Linux 上，有很多方法可以本地访问 Google Calendar，比如用电子邮件客户端插件（如 Evolution 或 Thunderbird ）或者用日历应用程序（如 Sunbird 或 Rainklendar）。这些方法通常都需要安装不必要的大型软件，这些软件你很可能根本不需要。
 
 如果你只是想在本地的 Linux 上翻翻 Google Calendar 或者用它设置提醒，那么你可以考虑使用[Google Calendar 命令行接口（或者 gcalcli）][1]，这是一种更轻型化的方法。对于 Linux 桌面操作系统用户来说，好处不止这些，如果将 gcalcli 与[Conky][2]搭配使用你就可以把 Google Calendar 透明地融入桌面主题。
@@ -8,7 +9,7 @@ Google Calendar 是时下最流行的网页应用程序之一。用户可以通�
 
 ### 在 Linux 安装 gcalcli ###
 
-在安装 gcalcli 之前，要确保你正在用的是 Phython 2 而不是 Phython 3 ，因为 Phython 3 与 gcalcli 不兼容。
+在安装 gcalcli 之前，要确保你正在用的是 Python 2 而不是 Python 3 ，因为 Python 3 与 gcalcli 不兼容。
 
 如果是在 Debian、Ubuntu 或 Linux Mint 上可以用下面的命令安装 gcalcli 
 
@@ -19,8 +20,7 @@ Google Calendar 是时下最流行的网页应用程序之一。用户可以通�
     $ cd gcalcli
     $ sudo python setup.py install 
 
-**温馨提醒**：Ubuntu 或 Linux Mint 标准容器中虽然有 gcalcli，但是这些版本并不包含其最新的特性和针对 bug 的修复。所以这里推荐按以上所述的方法由源文件构建 gcalcli。
-
+**温馨提醒**：Ubuntu 或 Linux Mint 的软件库中虽然有 gcalcli，但是这些版本并不包含其最新的特性和针对 bug 的修复。所以这里推荐按以上所述的方法由源文件构建 gcalcli。
 
 对于Fedora 、CentOS 或 RHEL，可按如下方法安装。
 
@@ -51,13 +51,13 @@ Google Calendar 是时下最流行的网页应用程序之一。用户可以通�
 
 ### 支持 Google Calendar API ###
 
-认证后，下一步就是支持 Google Calendar 的 API 访问。gcalcli 通过 Google Calendar API 访问Google Calendar 。但是，如果要使用 Google API 就必须明确你的 Google 帐号支持 Google API。
+认证后，下一步就是支持 Google Calendar 的 API 访问。gcalcli 通过 Google Calendar API 访问Google Calendar 。但是，如果要使用 Google API 就必须明确设置你的 Google 帐号支持 Google API。
 
 首先到：[https://cloud.google.com/console][5]。点击项目列表下的“API Project ”
 
-转到“Apiary & auth ”下面的“APIs”你会看见一个 Google APIs 列表。点击“Calendar API”的开关按钮使其能支持 API。
+转到“APIs & auth ”下面的“APIs”你会看见一个 Google APIs 列表。点击“Calendar API”的开关按钮使其能支持 API。
 
-现在转到“Apiary & auth”下的“Registered apps”那里，去注册 gcalcli app。点击最顶端的“Registered app”按钮。
+现在转到“APIs & auth”下的“Registered apps”那里，去注册 gcalcli app。点击最顶端的“Registered app”按钮。
 
 [![](http://farm8.staticflickr.com/7293/11216363656_c203b6dfa2_z.jpg)][6]
 
@@ -99,20 +99,20 @@ OAuth的认证结果将会保存在 ～/.gcalcli_oauth 文本文件中。
 
     $ vi ~/bin/gcal.sh 
 
-> #!/bin/sh
-> 
-> gcalcli --conky calw 2 |
->     sed -e 's/^[(0\x71^[(B/?/g' \
->         -e 's/^[(0\x78^[(B/?/g' \
->         -e 's/^[(0\x6A^[(B/?/g' \
->         -e 's/^[(0\x6B^[(B/?/g' \
->         -e 's/^[(0\x6C^[(B/?/g' \
->         -e 's/^[(0\x6D^[(B/?/g' \
->         -e 's/^[(0\x6E^[(B/?/g' \
->         -e 's/^[(0\x74^[(B/?/g' \
->         -e 's/^[(0\x75^[(B/?/g' \
->         -e 's/^[(0\x76^[(B/?/g' \
->         -e 's/^[(0\x77^[(B/?/g'
+	#!/bin/sh
+
+ 	gcalcli --conky calw 2 |
+      sed -e 's/^[(0\x71^[(B/?/g' \
+          -e 's/^[(0\x78^[(B/?/g' \
+          -e 's/^[(0\x6A^[(B/?/g' \
+          -e 's/^[(0\x6B^[(B/?/g' \
+          -e 's/^[(0\x6C^[(B/?/g' \
+          -e 's/^[(0\x6D^[(B/?/g' \
+          -e 's/^[(0\x6E^[(B/?/g' \
+          -e 's/^[(0\x74^[(B/?/g' \
+          -e 's/^[(0\x75^[(B/?/g' \
+          -e 's/^[(0\x76^[(B/?/g' \
+          -e 's/^[(0\x77^[(B/?/g'
 
     $ chmod +x ~/bin/gcal.sh 
 
@@ -120,51 +120,51 @@ OAuth的认证结果将会保存在 ～/.gcalcli_oauth 文本文件中。
 **重要提醒**：上面脚本中的 ‘^[’ 必须是**真正的 ESCAPE 键**( 也就是说在 vi 中按 Ctrl-V 然后按 Esc )。
 
 
-这个脚本程序将 VT100 转义序列转成Unicode组件图字符。这是[必须的一步][10]，因为 Conky 不支持 gcalcli 使用的 ASNII 字符画。
+这个脚本程序将 VT100 转义序列转成Unicode组件图字符。这是[必须的一步][10]，因为 Conky 不支持 gcalcli 使用的 ANSI 字符画。
 
 最后，在你的家目录中创建下面的 Conky 配置文件。
 
     $ vi ~/.conkyrc 
 
-> alignment top_right
-> maximum_width 630
-> minimum_size 330 10
-> gap_x 25
-> gap_y 50
-> 
-> own_window yes
-> own_window_type conky
-> own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
-> own_window_transparent yes
-> own_window_argb_visual yes
-> own_window_argb_value 0
-> 
-> update_interval 300
-> background no
-> 
-> border_width 1
-> default_color cornflowerblue
-> default_outline_color white
-> default_shade_color white
-> double_buffer no
-> draw_borders no
-> draw_graph_borders no
-> draw_outline no
-> draw_shades no
-> max_port_monitor_connections 64
-> max_specials 512
-> max_user_text 16384
-> text_buffer_size 8096
-> no_buffers yes
-> out_to_console no
-> uppercase no
-> use_xft yes
-> xftfont Bitstream Vera Sans Mono:size=10
-> 
-> TEXT
-> *** Google Calendar Agenda ***
-> ${execpi 300 gcalcli --conky agenda}
-> ${execpi 300 ~/bin/gcal.sh}
+    alignment top_right
+    maximum_width 630
+    minimum_size 330 10
+    gap_x 25
+    gap_y 50
+  
+    own_window yes
+    own_window_type conky
+    own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+    own_window_transparent yes
+    own_window_argb_visual yes
+    own_window_argb_value 0
+ 
+    update_interval 300
+    background no
+  
+    border_width 1
+    default_color cornflowerblue
+    default_outline_color white
+    default_shade_color white
+    double_buffer no
+    draw_borders no
+    draw_graph_borders no
+    draw_outline no
+    draw_shades no
+    max_port_monitor_connections 64
+    max_specials 512
+    max_user_text 16384
+    text_buffer_size 8096
+    no_buffers yes
+    out_to_console no
+    uppercase no
+    use_xft yes
+    xftfont Bitstream Vera Sans Mono:size=10
+  
+    TEXT
+    *** Google Calendar Agenda ***
+    ${execpi 300 gcalcli --conky agenda}
+    ${execpi 300 ~/bin/gcal.sh}
 
 这个 Conky 配置文件会直接在你的桌面主题上显示你的 Google Calendar 的一个日程表和一个两个星期的时间表。
 

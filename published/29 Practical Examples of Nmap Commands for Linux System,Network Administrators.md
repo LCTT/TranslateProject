@@ -1,11 +1,13 @@
-对于Linux系统/网络管理员的nmap的29个实例
+给Linux系统/网络管理员的nmap的29个实用例子
 ================================================================================
-**Nmap**亦称为**Network Mapper**(网络映射)是一个开源并且通用的用于Linux系统/网络管理员的工具。**nmap**用于**探索网络、执行安全扫描、网络核查**并且**找出开放端口**在远程机器上。它扫描在线主机、操作系统、包过滤和运行在远程主机的开放端口。
+
+**Nmap**亦称为**Network Mapper**(网络映射)是一个开源并且通用的用于Linux系统/网络管理员的工具。**nmap**用于**探查网络、执行安全扫描、网络核查**并且在远程机器上**找出开放端口**。它可以扫描在线的主机、操作系统、包过滤器和远程主机上的开放端口。
 
 ![Nmap 命令](http://www.tecmint.com/wp-content/uploads/2013/12/Nmap-Commands.png)
+
 *Nmap 命令和示例*
 
-我会在两个不同部分覆盖大部分**NMAP**的使用，这篇是nmap系列的第一部分(译注:原文为I’ll be covering most of NMAP usage in two different parts and this is the first part of nmap serious,这里serious可能为笔误，应该为series)。在这个步骤来，我有两个没有防火墙的服务器来测试nmap命令的工作。
+我会分两个章节讲述**NMAP**的常见的使用方法，这篇是nmap系列的第一部分(译注:原文为I’ll be covering most of NMAP usage in two different parts and this is the first part of nmap serious,这里serious可能为笔误，应该为series)。在这个步骤里，我用两个没有防火墙的服务器来测试nmap命令的工作。
 
 - 192.168.0.100 – server1.tecmint.com
 - 192.168.0.101 – server2.tecmint.com
@@ -16,13 +18,12 @@
 
 ### 如何在Linux上安装nmap ###
 
-**Nmap** on distribution specific use the following command.
-如今大部分Linux发行版像**Red Hat, CentOS, Fedoro, Debian** 和 **Ubuntu**已经包含了**nmap**在它们默认的包管理仓库中，名为[Yum][1] 和 [APT][2]。这两者用于安装和管理软件包和更新。为了在特定发行版上安装**nmap**，使用下面的命令。
+如今大部分Linux发行版像**Red Hat, CentOS, Fedoro, Debian** 和 **Ubuntu**已经在它们默认的包管理仓库中包含了**nmap**，可以通过[Yum][1] 和 [APT][2]安装、管理和更新软件包。在这些发行版上安装**nmap**，可以使用下面的命令。
 
-    # yum install nmap		[on Red Hat based systems]
-    $ sudo apt-get install nmap	[on Debian based systems]
+    # yum install nmap		[基于 Red Hat 的发行版]
+    $ sudo apt-get install nmap	[基于 Debian 的发行版]
 
-一旦你已经安装了最新的nmap程序，你可以跟着这篇文章中的示例指令来。
+安装了最新的nmap程序之后，你就可以跟着这篇文章中的示例指令来学习了。
 
 ### 1. 带主机名和IP地址扫描系统 ###
 
@@ -147,7 +148,7 @@
 
 从上面的输出你可以看到nmap扫描了整个子网，并给出了**网络**中**在线**主机的信息。
 
-### 5. 使用IP地址的最后八位扫描多台主机 ###
+### 5. 使用IP地址的最后一段扫描多台主机 ###
 
 你可以简单地通过指定IP地址的最后8位执行扫描多台主机。比如说，这里我在IP地址为192.168.0.101, 192.168.0.102 and 192.168.0.103的机器上执行了扫描。
 
@@ -170,7 +171,7 @@
 
 ### 6. 从文件中扫描主机列表 ###
 
-如果你有更多的自己要扫描，并且所有的主机细节写在一个文件中，你可以直接让namp读取它并执行扫描。让我们看看要怎么做。
+如果你有更多的主机要扫描，并且所有的主机都写在一个文件中，你可以直接让namp读取它并执行扫描。让我们看看要怎么做。
 
 创建一个名为“**nmaptest.txt**”的文本文件，并定义所有你想要扫描的IP地址或者服务器的主机名。
 
@@ -180,7 +181,7 @@
     server2.tecmint.com
     192.168.0.101
 
-接着，带“**iL**”运行nmap命令来扫描文件中所有列出的IP地址。
+接着，带“**iL**”参数运行nmap命令来扫描文件中所有列出的IP地址。
 
     [root@server1 ~]# nmap -iL nmaptest.txt
 
@@ -218,9 +219,9 @@
 
     Nmap finished: 3 IP addresses (3 hosts up) scanned in 2.047 seconds
 
-### 7. 扫描一个IP段 ###
+### 7. 扫描一个IP范围 ###
 
-在使用nmap扫描时，你可以指定一个IP段。
+在使用nmap扫描时，你可以指定一个IP范围。
 
     [root@server1 ~]# nmap 192.168.0.101-110
 
@@ -238,7 +239,7 @@
 
     Nmap finished: 10 IP addresses (1 host up) scanned in 0.542 seconds
 
-### 8. 排除远程主机扫描网络 ###
+### 8. 扫描网络时排除部分主机 ###
 
 你可以在执行全网扫描的时候排除一些主机，或者在使用通配符扫描时使用“**–exclude**”选项。
 
@@ -259,9 +260,11 @@
     Nmap finished: 255 IP addresses (1 host up) scanned in 5.313 seconds
     You have new mail in /var/spool/mail/root
 
-### 9. 扫描系统信息及路由跟踪 ###
+### 9. 扫描系统信息 ###
 
-使用nmap，你可以检测到运行在远程主机上的操作系统和版本。为了启用OS和版本检测，脚本扫描和跟踪路由，我们可以使用带 “**-A**” 选项使用nmap。
+（译注：原文这里提到了traceroute，实在并无此内容，删除之）
+
+使用nmap，你可以检测到运行在远程主机上的操作系统和版本。要启用OS及其版本检测，我们可以使用带 “**-A**” 选项使用nmap。
 
     [root@server1 ~]# nmap -A 192.168.0.101
 
@@ -298,7 +301,7 @@
 
 ### 10. 使用nmap启用系统检测 ###
 
-使用选项“-O”和“-osscan-guess”同样帮助发现OS信息。
+使用选项“-O”或“-osscan-guess”同样可以发现OS信息。
 
     [root@server1 ~]# nmap -O server2.tecmint.com
 
@@ -346,7 +349,7 @@
 
 ### 12. 扫描主机以检查其受到防火墙保护 ###
 
-为了扫描一个主机是否受到任何包过滤器软件或者防火墙保护。
+扫描检测一个主机是否受到任何包过滤器软件或者防火墙保护。
 
     [root@server1 ~]# nmap -PN 192.168.0.101
 
@@ -366,7 +369,7 @@
 
 ### 13. 找出网络中在线主机 ###
 
-在“**-sP**”选项的bang帮助下，我们可以简单地检测网络中的主机是否在线,带这个选项后nmap会跳过端口检测和其他事情。
+在“**-sP**”选项的bang帮助下，我们可以简单地检测网络中的主机是否在线,带这个选项后nmap会跳过端口检测和其他检测。
 
     [root@server1 ~]# nmap -sP 192.168.0.*
 
@@ -378,7 +381,7 @@
 
 ### 14. 执行快速扫描 ###
 
-你可以带“**-F**”选项扫描所有列在nmap服务文件中的端口而留下其他端口。
+你可以带“**-F**”选项仅扫描所有列在nmap-services文件中的端口。
 
     [root@server1 ~]# nmap -F 192.168.0.101
 
@@ -406,7 +409,7 @@
 
 ### 16. 连续扫描端口 ###
 
-使用“**-r**”选项而不随机化。
+使用“**-r**”选项而不随机排列端口的扫描顺序。
 
     [root@server1 ~]# nmap -r 192.168.0.101
 
@@ -424,9 +427,9 @@
 
     Nmap finished: 1 IP address (1 host up) scanned in 0.363 seconds
 
-### 17. 打印主机接口及路由 ###
+### 17. 显示主机接口及路由 ###
 
-你可以使用nmap的“**–iflist**”选项来找出主机接口和路由信息。
+你可以使用nmap的“**–iflist**”选项来列出本机的主机接口和路由信息。
 
     [root@server1 ~]# nmap --iflist
 
@@ -441,11 +444,11 @@
     192.168.0.0/0 eth0
     169.254.0.0/0 eth0
 
-在上面的输出中，你可以看到清单列出了连接到你系统中的接口和它们相应的路由。
+在上面的输出中，你可以看到上述清单列出了你系统中的已经启用的接口及它们相应的路由。（译注：这样你就知道可以通过这些接口扫描哪些网络了）
 
 ### 18. 扫描特定端口 ###
 
-nmap使用不同的选项来发现远程机器上的端口。你可以用“**-p**”选项指定你想扫描的端口，默认上，nmap只会扫描**TCP**端口。
+nmap使用不同的选项来发现远程机器上的端口。你可以用“**-p**”选项指定你想扫描的TCP端口。默认上，nmap只会扫描**TCP**端口。
 
     [root@server1 ~]# nmap -p 80 server2.tecmint.com
 
@@ -459,7 +462,7 @@ nmap使用不同的选项来发现远程机器上的端口。你可以用“**-p
 
 ### 19. 扫描TCP端口 ###
 
-你同样可以指定nmap扫描的端口类型和号码。
+当然，你可以指定nmap扫描的端口类型（TCP或UDP）和端口号。
 
     [root@server1 ~]# nmap -p T:8888,80 server2.tecmint.com
 
@@ -487,7 +490,7 @@ nmap使用不同的选项来发现远程机器上的端口。你可以用“**-p
 
 ### 21. 扫描多个端口 ###
 
-You can also scan multiple ports using option “**-p**“.
+你可以使用“**-p**”选项来指定多个要扫描的端口。
 
     [root@server1 ~]# nmap -p 80,443 192.168.0.101
 
@@ -502,14 +505,13 @@ You can also scan multiple ports using option “**-p**“.
 
 ### 22. 扫描网络的端口范围 ###
 
-You can scan ports with ranges using expressions.
-你可以使用表达式扫描端口范围
+你也可以使用表达式指定扫描端口的范围。
 
     [root@server1 ~]#  nmap -p 80-160 192.168.0.101
 
 ### 23. 找出主机服务版本号 ###
 
-我们可以使用“**-sV**”选项找出运行在远程主机的服务版本号。
+我们可以使用“**-sV**”选项找出远程主机上运行的服务及其版本号。
 
     [root@server1 ~]# nmap -sV 192.168.0.101
 
@@ -639,7 +641,7 @@ You can scan ports with ranges using expressions.
 
 via: http://www.tecmint.com/nmap-command-examples/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
