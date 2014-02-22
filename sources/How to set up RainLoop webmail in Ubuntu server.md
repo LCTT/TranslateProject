@@ -31,11 +31,11 @@
     # find . -type f -exec chmod 644 {} \;
     # chown –R www-data:www-data /var/www/webmail 
 
-我们几乎已经准备好使用RainLoop。最后，通过管理面板进行调整，接下来会有详细描述。
+我们几乎已经准备好使用RainLoop。最后，通过管理面板进调整，接下来会有详细描述。
 
 ### 通过管理面板首次配置 ###
 
-很多配置参数用界面友好的管理面板就能调整。使用以下凭证进行管理面板。
+很多配置参数用界面友好的管理面板就能调整。使用以下凭证进入管理面板。
 
 1. URL: http://IP/webmail/?admin
 1. user: admin
