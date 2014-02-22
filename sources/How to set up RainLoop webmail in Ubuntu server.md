@@ -1,23 +1,22 @@
-Translating...
-How to set up RainLoop webmail in Ubuntu server
+如何在Ubuntu server中设置RainLoop网页邮件
 ================================================================================
-Webmail is undoubtedly an essential part of any mail server. While native email client software has typically more features compared to webmail services, accessing IMAP or SMTP server ports via an email client from outside of the trusted network can sometimes be tricky. Moreover, while you need a designated workstation, laptop, or mobile device to use an email client, you can use webmail services from anywhere as long as you have an Internet connection.
+网页邮件无疑是任何邮件服务器必不可少的一部分。而本地邮件客户端通常比网页邮件有更多的功能，通过电子邮件客户端从外部可信的网络访问IMAP或SMTP有时会很棘手。再则，当你需要一个特定的工作站，笔记本电脑，或移动设备去使用一个电子邮件客户端，你可以通过任何地方使用网页邮件服务，只要你接入互联网。
 
-This tutorial will focus on setting up [RainLoop][1] webmail on an Ubuntu server running Apache. RainLoop is PHP-based webmail, and has the following features.
+本文将重点关注在一个运行Apache的Ubuntu服务器上设置[RainLoop][1]网页邮件。RainLoop是基于PHP的网页邮件，并且有一下功能。
 
-- Supports apache, nginx and other web servers.
-- Standard interface supplemented with a gallery of themes to select from.
-- Free to use for personal and non-profit projects. 
+- 支持apache，nginx和其他网页服务。
+- 标准接口补充了一个画廊主题可供选择。
+- 为个人和非盈利项目免费使用。 
 
-As of this writing, there is no support for email filtering and out-of office auto replies yet.
+在写这篇文章时，RainLoop还不支持邮件过滤和不在公司时的自动回复。
 
-### Install RainLoop on Ubuntu Server ###
+### 在Ubuntu服务器上安装RainLoop ###
 
-First of all, necessary packages are set up in the server.
+首先，在服务器上设置必备的软件包。
 
     # apt-get install wget unzip apache2 php5 php5-mysql libmysqlclient15-dev mysql-server poppassd 
 
-Next, RainLoop is downloaded and installed.
+接下来，下载和安装RainLoop。
 
     # mkdir /var/www/webmail
     # cd /var/www/webmail
@@ -25,65 +24,65 @@ Next, RainLoop is downloaded and installed.
     # unzip Rainloop-1.6.3.706-e3c14e17bc4370a1561bcc68d1d494fd.zip
     # rm Rainloop-*.zip 
 
-Then necessary permission is set.
+然后设置必要的权限。
 
     # cd /var/www/webmail
     # find . -type d -exec chmod 755 {} \;
     # find . -type f -exec chmod 644 {} \;
     # chown –R www-data:www-data /var/www/webmail 
 
-We are almost ready to use RainLoop. Final adjustments are made through the admin panel, which will be described next.
+我们几乎已经准备好使用RainLoop。最后，通过管理面板进行调整，接下来会有详细描述。
 
-### First-Time Configuration via Admin Panel ###
+### 通过管理面板首次配置 ###
 
-Most configuration parameters can be adjusted with a user-friendly admin panel. The admin panel is accessible using the following credentials.
+很多配置参数用界面友好的管理面板就能调整。使用以下凭证进行管理面板。
 
 1. URL: http://IP/webmail/?admin
 1. user: admin
 1. Pass: 12345 
 
-Of course it is recommended to change the default password as soon as possible. We will use the admin panel to adjust the following settings.
+当然，建议尽快修改默认密码。我们将使用管理面板去调整一下设置。
 
-### Add Domains ###
+### 增加域 ###
 
-Domain settings is available at Admin Panel > Domains > Add Domain Page. The recommended server IP is localhost i.e., 127.0.0.1. Based on the server configuration, RainLoop can be configured to use IMAP/IMAPS or SMTP/SMTPS. Also, make sure that the 'Use short login form' checkbox is enabled.
+在管理面板>域>增加域页面设置有效的域。建议服务器IP是本地服务器，如127.0.0.1。基于服务器配置，RainLoop可以配置使用IMAP/IMAPS或SMTP/SMTPS。并且，确认‘使用短登录表单’复选框已勾选。
 
 ![](http://www.flickr.com/photos/xmodulo/12603680854/)
 
-Settings can be verified using the ‘Test Connection’ button.
+使用‘测试连接’按钮验证设置。
 
-### Enable Contacts ###
+### 启用联系人 ###
 
-The contacts feature needs database support. We will be using MySQL for enabling contacts. The database required by RainLoop can be created manually as follows.
+联系人功能需要数据库支持。我们将为联系人使用MySQL数据库。RainLoop可以手动创建所需的数据库，如下。
 
     # mysql -u root -p 
 
     mysqlcreate database rainloop;
     mysqlexit;
 
-Now this feature can be enabled from Admin Panel > Contacts page.
+现在这个功能可以通过管理面板>联系人页面启用。
 
 ![](http://www.flickr.com/photos/xmodulo/12603262215/)
 
-Once again, settings can be checked using the ‘Test’ button.
+再来一次，使用‘测试’按钮检查设置。
 
-### Enable Password Changing Plugin ###
+### 启动密码更改插件 ###
 
-Email accounts in most Linux-based mail servers are actual users of the operating system with their own UID and GID. Therefore, changing the password of these accounts has been tricky in the past. Fortunately, today there are tools available that can get the job done. One such tool is poppassd.
+在多数linux的邮件账户的邮件服务器是用自己的UID和GID的操作系统的实际用户。因此，在过去更改这些账户的密码是很棘手的。幸好，今天有工具可以完成这个工作。这样的一个工具是poppassd。
 
-The first step is to install poppassd on the server, which can be done with apt-get.
+第一步是在服务器上安装poppassd，可以用apt-get。
 
     # apt-get install poppassd 
 
-Next, to allow RainLoop to use poppassd, install RainLoop plugin for poppassd from Admin Panel > Packages page.
+接下来，去允许RainLoop使用poppassd，从管理面板>软件包页面安装RainLoop插件poppassd。
 
 ![](http://www.flickr.com/photos/xmodulo/12603357113/)
 
-Finally, the poppassd plugin can be enabled from Admin Panel > Plugins page.
+最后，poppassd插件可以从管理面板>插件页面启用。
 
 ![](http://www.flickr.com/photos/xmodulo/12603681254/)
 
-Now that all the parameters are set, a user can log in by providing their credentials as shown in the screenshot.
+现在所有参数已设置，用户可以从他们提供的凭证登录，如截图所示。
 
 - URL: http://IP/webmail
 - user: user@domain
@@ -91,13 +90,13 @@ Now that all the parameters are set, a user can log in by providing their creden
 
 ![](http://www.flickr.com/photos/xmodulo/12603357333/)
 
-Hope this helps.
+希望这篇文章能帮助到你。
 
 --------------------------------------------------------------------------------
 
 via: http://xmodulo.com/2014/02/rainloop-webmail-ubuntu-server.html
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Vito](https://github.com/vito-L) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
