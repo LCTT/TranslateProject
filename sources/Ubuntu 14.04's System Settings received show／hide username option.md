@@ -1,3 +1,6 @@
+Translating-------------geekpi
+
+
 Ubuntu 14.04's System Settings received show/hide username option
 ================================================================================
 As you know, Ubuntu 14.04 is currently in development, process that is to generate the upcoming Ubuntu 14.04 LTS in the next months.
