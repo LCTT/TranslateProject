@@ -1,3 +1,4 @@
+[翻译中] by KayGuoWhu
 Mark Shuttleworth interview: Taking Ubuntu beyond desktops
 ================================================================================
 He may have stepped back from the CEO role at Canonical, but Mark Shuttleworth is still very much the public face of Ubuntu.

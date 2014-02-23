@@ -1,3 +1,5 @@
+Translating by Hao-Ding
+
 Hardware, software, standards
 =============================
 

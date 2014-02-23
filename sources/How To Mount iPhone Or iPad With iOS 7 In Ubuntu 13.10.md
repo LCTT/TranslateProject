@@ -1,3 +1,4 @@
+zpl1025 translating
 How To Mount iPhone Or iPad With iOS 7 In Ubuntu 13.10
 ================================================================================
 I got an iPhone 5 with iOS 7 couple of months back. I tried to connect iPhone or iPad with Linux (Ubuntu and Linux Mint), it was recognized and it asked me whether I “trust this computer”?

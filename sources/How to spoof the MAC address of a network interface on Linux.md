@@ -1,3 +1,4 @@
+[bazz2 #$*@!^#@%]
 How to spoof the MAC address of a network interface on Linux
 ================================================================================
 A 48-bit MAC address (e.g., 08:4f:b5:05:56:a0) is a globally unique identifier associated with a physical network interface, which is assigned by a manufacturer of the corresponding network interface card. Higher 24 bits in a MAC address (also known as OUI or "Organizationally Unique Identifier") uniquely identify the organization which has issued the MAC address, so that there is no conflict among all existing MAC addresses.
