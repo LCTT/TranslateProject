@@ -1,3 +1,6 @@
+Translating---------------geekpi
+
+
 How to convert an HTML web page to PNG image on Linux
 ================================================================================
 One of the easiest way to screen capture a particular web page as a PNG image is by using [CutyCapt][1], which is a convenient command line Linux tool for converting any HTML webpage to a variety of vector and bitmat image formats (e.g., SVG, PDF, PS, PNG, JPEG, TIFF, GIF). Internally, CutyCapt uses WebKit rendering engine to export webpage rendering output to an image file. Built with Qt, CutyCapt is actually a cross-platform application available for other platforms such as Windows as well.
