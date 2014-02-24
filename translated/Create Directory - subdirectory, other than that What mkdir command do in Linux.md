@@ -1,7 +1,7 @@
 在 Linux 下用 mkdir 命令来创建目录和子目录
 
 ==============================================================================
-了解了用 ls 命令在目录中列出条目后，现在我们要学习在 Linux 系统下创建目录。在 Linux 下，我们可以使用 **mkdir** 命令。Mkdir 是“make directory” 缩写词。
+了解了用 ls 命令在目录中列出条目后，现在我们要学习在 Linux 系统下创建目录。在 Linux 下，我们可以使用 **mkdir** 命令。Mkdir 是“make directory” 的缩写词。
 
 ### mkdir 是什么呢 ###
 
@@ -23,7 +23,7 @@ Mkdir 是一个用来在 Linux 系统下创建目录的命令。此命令属于�
 
 ![mkdir directory exist](http://linoxide.com/wp-content/uploads/2014/01/mkdir_error.png)
 
-另外创建目录的首要条件 **你必须要有进入创建目录的目标路径的权限**。当你无法取得权限时 mkdir 会报告这个错误。
+另外一个创建目录的首要条件是， **在想要创建目录的目标路径下你必须具有访问权限**。当你无法取得权限时 mkdir 会报告这个错误。
 
 ![mkdir permission denied](http://linoxide.com/wp-content/uploads/2014/01/mkdir_permission_denied.png)
 
@@ -35,21 +35,21 @@ Mkdir 是一个用来在 Linux 系统下创建目录的命令。此命令属于�
 
 ![create multiple directories](http://linoxide.com/wp-content/uploads/2014/01/mkdir_multiple.png)
 
-### 添加包含子目录的目录 [译注：递归的创建目录] ###
+### 添加包含子目录的目录 [译注：递归地创建目录] ###
 
-当你要创建的目录包含有它的子目录时，你需要使用 -p 参数。如果 mkdir 找不到父目录，那么这个参数会首先帮助创建父目录。比如说我们要创建名为 **letter** 的目录，在它的目录下包含有子目录 **important**。那么语法会像这样子：
+当你要创建的目录包含子目录时，你需要使用 -p 参数。如果 mkdir 找不到父目录，那么这个参数会首先帮助创建父目录。比如说我们要创建名为 **letter** 的目录，在它的目录下包含有子目录 **important**。那么语法会像这样子：
 
    $ mkdir -p letter/important
 
 ![mkdir sub-directory](http://linoxide.com/wp-content/uploads/2014/01/mkdir_p.png)
 
-### 设置权限 ###
+### 设置访问权限 ###
 
 使用 **-m** 参数，我们可以给即将生成的新目录设置权限。示例如下：
 
    $ mkdir -m=r-- letter
 
-上面的命令会创建一个名为 letter 的目录，同时给予**目录的所有者，用户组和其他用户权限** 
+上面的命令会创建一个名为 letter 的目录，同时为**目录所有者、用户组和其他用户**针对该目录赋予**只读权限**
 
 ![mkdir set privilege](http://linoxide.com/wp-content/uploads/2014/01/mkdir_m.png)
 
@@ -69,6 +69,6 @@ Mkdir 命令也属于一个最基础的命令，对于想要学习 Linux 的朋�
 
 via: http://linoxide.com/linux-command/linux-mkdir-command/
 
-译者：[Luoxcat](https://github.com/Luoxcat) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Luoxcat](https://github.com/Luoxcat) 校对：[Mr小眼儿](http://blog.csdn.net/tinyeyeser)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
