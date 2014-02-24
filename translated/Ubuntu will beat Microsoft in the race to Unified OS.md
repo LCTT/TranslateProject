@@ -24,7 +24,7 @@ Shuttleworth也暗示Canonical将会改变Ubuntu的6个月的发布周期，并�
 
 via: http://www.linuxfederation.com/ubuntu-will-beat-microsoft/
 
-译者：ThomazL(https://github.com/Ft-lou) 校对：[校对者ID](https://github.com/校对者ID)
+译者：ThomazL(https://github.com/ThomazL) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
