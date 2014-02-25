@@ -1,4 +1,4 @@
->>Linchenguang翻译中
+>>**Linchenguang翻译中**
 
 20 Funny Commands of Linux or Linux is Fun in Terminal
 ================================================================================
