@@ -1,3 +1,4 @@
+>>Translating by ThomazL
 10 Useful Random Linux Interview Questions and Answers
 ================================================================================
 To a little surprise this time we are not presenting Interview question on any specific subject but on random topics. These question will surely help you in cracking Interviews beside adding to your Knowledge.
