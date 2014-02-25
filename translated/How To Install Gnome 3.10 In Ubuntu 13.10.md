@@ -49,7 +49,7 @@ Unity无聊或者就是简单地讨厌它？为何不**在Ubuntu 13.10中安装G
 
     sudo ppa-purge ppa:gnome3-team/gnome3-staging
     sudo ppa-purge ppa:gnome3-team/gnome3-next
-
+ 
 在Ubuntu13.10版本库中是可以恢复Gnome 3.10到Gnome 3.8。要完全删除的Gnome3，使用以下命令：
 
     sudo apt-get remove gnome-shell ubuntu-gnome-desktop
