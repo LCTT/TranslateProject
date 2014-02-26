@@ -1,3 +1,5 @@
+>>**Linchenguang翻译中**
+
 20 Funny Commands of Linux or Linux is Fun in Terminal
 ================================================================================
 **Linux** is fun! **Huhhh**. OK so you don’t believe me. Mind me at the end of this article you will have to believe that **Linux** is actually a fun box.
