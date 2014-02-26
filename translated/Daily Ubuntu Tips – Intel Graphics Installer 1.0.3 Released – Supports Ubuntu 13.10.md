@@ -26,7 +26,7 @@
 
 下载完成后，运行以下命令进行安装。
 
-    sudo dpkg -i intel-linux-graphics-installer*.deb; sudo apt-get -f install
+    sudo dpkg -i intel-linux-graphics-installer*.deb; sudo apt-get -f install 
 
 安装安装程序后，进入Unity Dash搜索安装程序。打开它后，继续。它会为你的设备搜索并确定正确的驱动程序。
 
