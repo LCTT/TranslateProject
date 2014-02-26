@@ -1,40 +1,37 @@
-Translating----------------geekpi
-
-
-How To Execute bin Files In Linux
+如何在Linux下执行bin文件
 ================================================================================
-Hi **linux** geeks,
+嗨，各位**Linux**极客们，
 
-In this short tutorial I will teach you how to install **.bin** files in your Linux machine. Not scary terminal commands, I promise! But I will also show how to do it from the terminal.
+在这篇简短的教程中，我会教你如何在你的Linux机器上安装**.bin**文件。不要害怕终端命令，我保证！但是我同样会展示如何在终端上这么做。
 
-What is  a .bin file?
+什么是.bin文件？
 
-A .bin file is a self extracting binary file for Linux and Unix-like operating systems.  Before executing a .bin file you need to give it executive permissions. This can be done from the terminal or from the gui. If you like to practise terminal commands then open a new terminal and run the following command to give the file execute permissions.
+.bin文件是在Linux和类Unix操作系统上的自执行文件。在执行.bin文件前，你需要给它执行权限。这可以通过命令行或者gui做到。如果你喜欢用命令行那么打开一个新的终端并运行如下的命令来给予文件执行权限。
 
     chmod +x filename.bin
 
-The execute it with the following command.
+接着用下面的命令执行。
 
     ./filename.bin
 
-Make sure you are a superuser when typing the above commands.
+确保你在运行上面的命令的时候是超级用户。
 
-How to do the same thing from the gui? Go to the folder where you have the .bin file and right click on it with your mouse, then go to properties like shown in the picture below.
+如何从gui做相同的事情？进入.bin文件的目录并点击鼠标右键，接着如下图所示进入属性。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/02/exec1.png)
 
-Go to **Permissions** and tick **Allow executing file as a program**.
+选择**权限**并点击**运行以程序运行文件**。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/02/exec2.png)
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/02/exec3.png)
 
-Double click the file and it will be executed. It is done.
+双击文件后它就会执行。完成。
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/execute-bin-files-linux/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
