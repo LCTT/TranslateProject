@@ -1,3 +1,4 @@
+YangYuxiang 翻译中
 What if Linus Torvalds Would Have Accepted Job Proposal of Steve Jobs?
 ================================================================================
 **Linus Torvalds**, the man behind the wonderful project **Linux** and **Git** was offered job by **Steve Jobs**, the founder of **Apple Inc**. **Torvalds** never met **Bill Gates**, the founder of **Microsoft** but he met **Jobs** in the year **2000** when he was working with **Transmeta** corporation, an American fabless semiconductor company. **Jobs** invited **Torvalds** to **Cupertino Camps** of Apple. Torvalds was offered thick salary and remarkable position within the organization and was supposed to do **Non-Linux** things at Apple. This was the point, Torvalds disagreed. Moreover Torvalds did not like the Mac Kernel, **Mach**.
