@@ -1,3 +1,6 @@
+Translating----------------geekpi
+
+
 How To Execute bin Files In Linux
 ================================================================================
 Hi **linux** geeks,
