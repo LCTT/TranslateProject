@@ -1,5 +1,4 @@
-
-Linux cp 命令的15个示例 - 创建文件和目录的副本*
+Linux cp 命令的15个示例 - 创建文件和目录的副本
 
 ================================================================================
 
@@ -107,7 +106,7 @@ Linux cp 命令的15个示例 - 创建文件和目录的副本*
 #### 6. 不随符号链接拷贝原文件  #####[译注:意思是只拷贝符号链接文件]
 
 
-我们可以用 **-p** 选项来实现。当对符号链接使用 cp 命令，它会照原样拷贝它自身。来看看下面的示例。
+我们可以用 **-P** 选项来实现。当对符号链接使用 cp 命令，它会照原样拷贝它自身。来看看下面的示例。
 
     $ cp -P file_6.txt ./movie
 
@@ -131,8 +130,6 @@ Linux cp 命令的15个示例 - 创建文件和目录的副本*
 
 
 #### 8. 文件归档 ####
-
-When we are going to copy a directory, we will use **-r** or **-R** option. But we can also use **-a** option to archive file. This will create an **exact copy** of files and directories including symbolic links if any. Here’s a sample :
 
 当我们去拷贝一个目录时，我们会用**-r**或者**-R**选项。但是我们也可以用**-a**选项来归档文件。这样会创建文件和目录的**准确套录**，如果有的话也可以包括符号链接。下面是示例：[译注：-a 会保留原文件或目录的属性]
 
@@ -194,8 +191,8 @@ When we are going to copy a directory, we will use **-r** or **-R** option. But 
 
 - **none, off**:从不备份(即使给出 --backup)
 - **numbered, t**:用编号备份
-- **existing, nil** :如果编号备份存在则使用编号备份，否者用简易备份[也就是用波浪号]
-- **simple, never** :使用简易备份
+- **existing, nil** :如果编号备份存在则使用编号备份，否者用简易备份[译注：也就是用波浪号]
+- **simple, never** :总是使用简易备份
 
 
 #### 13. 只拷贝文件属性 ####
@@ -234,12 +231,12 @@ cp 命令也提供给我们 **--attributes-only** 选项。顾名思义，这个
 ### 总结 ###
 
 
-cp 命令是 Linux 下最基础的命令之一。对于那些想要学习 Linux 的人，必须得把这个命令掌握。当然你也可以在你的终端下键入 **man cp** 或者 cp **--help** 来显示更多帮助信息。
+cp 命令是 Linux 下最基础的命令之一。对于那些想要学习 Linux 的人，必须得把这个命令掌握。当然你也可以在你的终端下键入 **man cp** 或者 **cp --help** 来显示更多帮助信息。
 
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/linux-command/linux-cp-command/
 
-译者：[Luoxcat](https://github.com/Luoxcat) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Luoxcat](https://github.com/Luoxcat) 校对：[Mr小眼儿](http://blog.csdn.net/tinyeyeser)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
