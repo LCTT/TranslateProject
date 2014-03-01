@@ -1,3 +1,4 @@
+[bazz2 hehehehehehe]
 Usability and Open Source
 ================================================================================
 The Linux Journal posted [an excellent article][1] today by [Jim Hall][2] about usability and open source software. Usability is far too often glossed over, or ignored completely in open source projects. Other times, usability is confused with design, and the thought that making something look pretty will have the same desired affect as making it easy to use. It is understandable that usability is often overlooked in open source projects. After all, developers already know how to use their own software, and are generally familiar with their chosen environment. Open source may well be about “scratching your own itch”, but if you would like your project to appeal to a wider audience, even an informal usability test could go a long ways.
