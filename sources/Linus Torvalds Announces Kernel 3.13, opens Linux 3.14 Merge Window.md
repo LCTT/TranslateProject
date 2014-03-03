@@ -1,3 +1,4 @@
+>> Translating by ThomazL
 Linus Torvalds Announces Kernel 3.13, opens Linux 3.14 Merge Window
 ================================================================================
 Linux Kernel 3.13 has been released. However, it must be noted that the final release doesn’t bring in anything new except for a few fixes and the patch from rc8 is fairly small in size as it has a small number of architecture updates including those for ARM, PowerPC, x86, SPARC and driver updates including GPU and networking.
