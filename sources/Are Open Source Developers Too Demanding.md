@@ -1,3 +1,4 @@
+[Translating by SteveArcher]
 Are Open Source Developers Too Demanding?
 ================================================================================
 **Open source invites participation, including criticism. But do developers sometimes take it too far?**
