@@ -2,9 +2,9 @@
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/How-to-Play-Blizzard-s-Hearthstone-Heroes-of-Warcraft-on-Linux-424410-3.jpg)
 
-** 《炉石传说：魔兽英雄传》是暴雪娱乐开发的一款免费的集换式卡牌游戏。花点工夫，你也可以在Linux上玩这个游戏。 **
+**《炉石传说：魔兽英雄传》是暴雪娱乐开发的一款免费的集换式卡牌游戏。花点工夫，你也可以在Linux上玩这个游戏。**
 
-像Windows平台的大多数游戏一样，《炉石传说：魔兽英雄传》也可以在Wine的帮助下在Linux上运行（wine不是模拟器）。不过只是安装一下还不够，你得稍微调整一下才行。
+像Windows平台的大多数游戏一样，《炉石传说：魔兽英雄传》也可以在Wine的帮助下在Linux上运行（Wine Is Not an Emulator）。不过只是安装一下还不够，你得稍微调整一下才行。
 
 非常感谢[迈克尔 华盛顿][1]（Google+上Gaming On Linux社区的版主）和[迈克尔 斯佩斯][2]（winehq.org的维护者），他们整理汇总了所有需要的指令，现在玩炉石传说只是输入几个命令就好了。
 
@@ -21,23 +21,23 @@
 
 ### dbghelp ###
 
-    运行winecfg
-    选择Libraries标签，在New override for library框中输入dbghelp
-    点击Add，然后在提示框里选择Yes
-    在Existing overrides列表中点击dbghelp
-    点击Edit
-    设置成Disabled
-    点击Ok，搞定
+- 运行winecfg
+- 选择Libraries标签，在New override for library框中输入dbghelp
+- 点击Add，然后在提示框里选择Yes
+- 在Existing overrides列表中点击dbghelp
+- 点击Edit
+- 设置成Disabled
+- 点击Ok，搞定
 
 ### msvcp100 ###
 
-    运行winecfg
-    选择Libraries标签, 在New override for library框中输入msvcp100
-    点击Add, 然后在提示框中选择Yes
-    在Existing overrides列表中点击msvcp100
-    点击Edit
-    设置成native,embedded
-    点击Ok，搞定
+- 运行winecfg
+- 选择Libraries标签, 在New override for library框中输入msvcp100
+- 点击Add, 然后在提示框中选择Yes
+- 在Existing overrides列表中点击msvcp100
+- 点击Edit
+- 设置成native,embedded
+- 点击Ok，搞定
 
 你还需要在终端里运行下面的命令，并等待运行结束。
 
@@ -51,7 +51,7 @@
 
 via: http://news.softpedia.com/news/How-to-Play-Blizzard-s-Hearthstone-Heroes-of-Warcraft-on-Linux-424410.shtml
 
-译者：[zpl1025](https://github.com/zpl1025) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[zpl1025](https://github.com/zpl1025) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
