@@ -1,3 +1,4 @@
+>>Translating by ThomazL =)
 Because You Can: Windows 8 GTK Theme For Linux
 ================================================================================
 The weather is pretty torrid here in my home town at present, but it will likely pale to the storm that this post will generate: yes, I’m writing about a Windows GTK theme. 
