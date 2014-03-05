@@ -1,3 +1,4 @@
+好坑 乌龙茶占了
 GitHub's New Atom Text Editor Is Open Source, Sort Of, Though Not Really
 ================================================================================
 **GitHub has a new not-very-open open-source text editor, and nobody seems to care.**
