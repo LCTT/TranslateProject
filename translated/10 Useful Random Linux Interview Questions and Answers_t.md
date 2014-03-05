@@ -53,7 +53,7 @@
 
 > **答案**： 当你尝试杀X server的进程时，系统不会让你像使用'/etc/init.d/gdm stop'一样正常的退出X server。我们需要执行一个使X server重启的特别的键位组合'Ctrl+ Alt+ Back Space'。
 
-6.告诉我命令'ping'和'ping6'的区别？
+6.告诉我命令'ping'和'ping6'的区别？ 
 
 > **答案**： 这两个命令有同样的功能，但'ping6'命令可被用于ipv6的IP地址。
 
