@@ -4,11 +4,21 @@ Linux内核3.13已经发布了。但是需要注意的是发布的最终版本�
 
 ![](http://www.efytimes.com/admin/useradmin/photo/Z82K112446AM1212014.jpeg)
 
-重要的更新包括：nftables-iptables的继承者，针对高性能SSD的块层(block layer)的翻新，一个功耗上限(power capping)的框架来限制在Intel RAPL(Running Average Power Limit)设备中的功耗，优化的squashfs性能，默认开启AMD Radeon的电源管理和AMD Radeon GPU的自动切换，优化NUMA和hugepage的性能，默认开启TCP Fast Open(TFO)，支持NFC支付，支持High-availability Seamless Redundancy(HSR)协议，新驱动以及各种小改进。
+重要的更新包括：
+- nftables —— iptables的继承者
+- 针对高性能SSD的块层(block layer)的翻新
+- 一个功耗上限(power capping)的框架来限制在Intel RAPL(Running Average Power Limit)设备中的功耗
+- 优化的squashfs性能
+- 默认开启AMD Radeon的电源管理和AMD Radeon GPU的自动切换
+- 优化NUMA和hugepage的性能
+- 默认开启TCP Fast Open(TFO)
+- 支持NFC支付
+- 支持High-availability Seamless Redundancy(HSR)协议
+- 新驱动以及各种小改进。
 
 ###为高性能SSD储存设计的可伸缩块层(block layer)###
 
-这次更新包括了Linux块层(block layer)的新设计，基于两个阶段的队列：第一层是为了提交IO的每个CPU中的队列，在这之后是在硬件层面的提交队列。实验表明这种双层面队列的设计可以实现每秒数百万的IO交换，压榨了NVM-Express或PCI-E设备在多核CPU支持下的性能，在压榨性能的同时，这种设计仍能够提供块层的大众接口以及一些方便的特性。
+这次更新包括了Linux块层(block layer)的新设计，基于两个阶段的队列：第一层是为了提交IO的每个CPU中的队列，在这之后是在硬件层面的提交队列。实验表明这种双层面队列的设计可以实现每秒数百万的IO交换，压榨出了NVM-Express或PCI-E设备在多核CPU支持下的性能，在压榨性能的同时，这种设计仍能够提供块层的大众接口以及一些方便的特性。
 
 ###nftables，iptables的继承者###
 
@@ -28,7 +38,7 @@ Linux内核3.13已经发布了。但是需要注意的是发布的最终版本�
 
 ###优化性能的NUMA系统###
 
-本次更新包含了很多政策可以将处理过程移至其占用内存旁从而加快处理速度，这些新的政策也可以处理同一分页被不同进程占用以及巨大透明内存分页等情况。新的sysctls命令可以实现NUMA功能的开启/禁用以及调节。
+本次更新包含了很多策略可以将处理过程移至其占用内存旁，从而加快处理速度，这些新的策略也可以处理同一分页被不同进程占用以及巨大透明内存分页等情况。新的sysctls命令可以实现NUMA功能的开启/禁用以及调节。
 
 ###优化在巨大工作量下的内存分页表的伸缩性###
 
@@ -36,7 +46,7 @@ Linux内核3.13已经发布了。但是需要注意的是发布的最终版本�
 
 ###提升Squashfs的性能###
 
-Squashfs，被大量live distribution，安装包以及一些嵌入式Linux distribution采用的只读文件系统，有了一个重要的优化使得它在同步读取的工作中有了巨大的性能提升。
+Squashfs，被大量live发行版、安装包以及一些嵌入式Linux发行版采用的只读文件系统，有了一个重要的优化使得它在同步读取的工作中有了巨大的性能提升。
 
 ###应用可以限制网络传输层的运算速率###
 
@@ -60,7 +70,7 @@ Squashfs，被大量live distribution，安装包以及一些嵌入式Linux dist
 
 via: http://www.efytimes.com/e1/fullnews.asp?edid=127445
 
-译者：[ThomazL](https://github.com/ThomazL) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[ThomazL](https://github.com/ThomazL) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
