@@ -60,7 +60,7 @@ Everyday Linux 是由 Seth Anderson，Chirs Neves 和 Mark Cockrell 主持，并
 
 我经常在一些文章末尾得到一些评论，指明发行版并不是操作系统，它是发行版又或者 Linux 不是一个操作系统，GNU/Linux 才是。这看来似乎是永不结束的讨论。
 
-在很多个月之前，我很幸运我能够以[嘉宾的身份在 Everyday Linux podcast][6] 中登场。
+在好几个月之前，我很幸运我能够以[嘉宾的身份在 Everyday Linux podcast][6] 中登场。
 
 ### 5. Going Linux ###
 
@@ -104,7 +104,7 @@ Ubuntu UK Podcast 是一个英国的 Podcast，由 Laura Cowen，Mark Johnson �
 
 节目通常会谈论过去一个星期有关 Linux 的新闻，其中覆盖了从发行到信息安全等各方面的内容。
 
-据对值得收听，尤其如果你不是一个特别容易被冒犯的人。
+绝对值得收听，尤其如果你不是一个特别容易被冒犯的人。
 
 ### 8. Linux Luddites ###
 
@@ -140,7 +140,7 @@ Podcasts 更多的是娱乐和推送新闻，并且相对于收听普通的收�
 
 via: http://www.everydaylinuxuser.com/2014/02/top-9-linux-podcasts.html
 
-译者：[hyaocuk](https://github.com/hyaocuk) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[hyaocuk](https://github.com/hyaocuk) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
