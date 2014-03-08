@@ -1,5 +1,4 @@
-(翻译中 by runningwater)
-How to Wipe Free Disk Space in Linux
+在 Linux 中擦除可用的磁盘空间
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/How-to-Wipe-Free-Disk-Space-in-Linux-429965-2.jpg)
 
