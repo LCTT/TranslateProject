@@ -1,3 +1,4 @@
+(translating by runningwater)
 10 ssh options for a Secure shell for Safe Data Communication
 ================================================================================
 A system administrator may have managed more than 1 servers. Then those servers may located in different places. Visiting the servers one by one may not the best way to manage them. Then a remote method can be an effective way to manage them. One of the common aplication for remote activity is **SSH**.
@@ -184,6 +185,6 @@ We believe that SSH is used in wide-range area. Security and flexibility is one 
 
 via: http://linoxide.com/linux-command/learn-ssh-connection-options/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
