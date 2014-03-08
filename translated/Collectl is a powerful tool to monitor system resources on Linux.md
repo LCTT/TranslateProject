@@ -1,17 +1,16 @@
-translating by icybreaker
-Collectl is a powerful tool to monitor system resources on Linux
+Linux系统监控神器--Collectl
 ================================================================================
-### Monitoring system resources ###
+### 系统资源监控 ###
 
-Linux system admins often need to monitor system resources like cpu, memory, disk, network etc to make sure that the system is in a good condition. And there are plenty of commands like iotop, top, free, htop, sar etc to do the task. Today we shall take a look at a tool called collectl that can be used to measure, monitor and analyse system performance on linux.
+为使系统良好运转,Linux系统管理员经常需要监测cpu,内存,磁盘,网络等系统信息。Linux上已有iotop,top,free,htop,sar等丰富的常规工具来实现监测功能。今天让我们走进Collectl来了解这个集测试监控分析系统性能为一体的Linux工具。
 
-Collectl is a nifty little program that does a lot more than most other tools. It comes with a extensive set of options that allow users to not only measure the values of multiple different system metrics but also save the data for later analysis. Unlike other tools, which are designed to measure only a specific system parameter, collectl can monitor different parameters at the same time and report them in a suitable manner.
+Collectl作为一个轻量级的监控工具,在同类工具中是功能最全的。用户可监测不同的复杂系统矩阵值,并可保留数据以做之后的分析。不同于其他只用来监测特定系统参数的工具,Collectl可以同时监测不同的变量,并以合适的方式记录它们。
 
-From the [project website][1] ...
+来自[专题网站][1] ...
 
-> Unlike most monitoring tools that either focus on a small set of statistics, format their output in only one way, run either interatively or as a daemon but not both, collectl tries to do it all. You can choose to monitor any of a broad set of subsystems which currently include buddyinfo, cpu, disk, inodes, infiniband, lustre, memory, network, nfs, processes, quadrics, slabs, sockets and tcp.
+> 不同于或聚焦于一小组统计数据、采用唯一输出方式,或采用迭代、作为守护进程运行的大部分监测工具,collectl可以同时全部实现。用户可选择广泛子系统中的任一系统来监测包括buddyinfo,CPU,磁盘,索引节点,无线带宽,lustre,内存,网络,网络文件系统,进程,二次型,slabs,套接口及TCP等信息。
 
-Take a peek at the command before we start digging deeper.
+深入学习前让我们先看以下命令。
 
     $ collectl
     waiting for 1 second sample...
@@ -22,29 +21,29 @@ Take a peek at the command before we start digging deeper.
        1   0  1222   2647      0      0     92      3      0      2      0       1 
        1   0   763   1722      0      0     80      3      0      1      0       2
 
-The cpu usage, disk io, and network activity is being logged every second. The data is not difficult to read for those who understand it. The list keeps growing at a defined time interval and is easily loggable to a file. And collectl provides necessary options to record, search and do other useful things with the data.
+CPU使用率,磁盘输入输出和网络活动以每秒为单位来加载。对可以理解这些数据的人来说这些信息很容易读懂。这项列表在给定的时间间隔里值会持续增加并可直接形成一项文件跟踪日志。collectl工具提供了各种命令来对这些数据进行记录,查找及做其他处理。
 
-### Install collectl ###
+### 安装collectl工具 ###
 
-Ubuntu/Debian and the likes have Collectl is available in the default repositories, so just apt it.
+对Ubuntu/Debian用户来说Collectl是默认资源,所以使用apt命令便可获取。
 
     $ sudo apt-get install collectl
 
-Fedora/CentOS too have it in the repos, so grab it with yum.
+Fedora/CentOS用户使用yum命令便可获取。
 
     $ yum install collectl
 
-### Usage ###
+### 使用 ###
 
-#### Essential theory - Collectl subsystems ####
+#### 必要的理论 - Collectl子系统 ####
 
-Different types of system resources that can be measured are called subsystems. Like cpu, memory, network bandwidth and so on. If you just run the collectl command, it will show the cpu, disk and network subsystems in a batch mode output. That has already been shown above.
+子系统是可检测到的不同系统资源类型。像CPU,内存,带宽等等都可构成一个子系统。只运行collectl命令将以批处理模式输出CPU,磁盘和网络子系统信息,我们在上文已看到相关内容。
 
-According to the man page, collectl identifies the following subsystems. 
+从操作说明可以看到,Collectl可以识别以下子系统。
 
-    SUMMARY SUBSYSTEMS
+    子系统总结
 
-    b - buddy info (memory fragmentation)
+    b - buddy info (内存碎片)
     c - CPU
     d - Disk
     f - NFS V3 Data
@@ -58,12 +57,9 @@ According to the man page, collectl identifies the following subsystems.
     x - Interconnect
     y - Slabs (system object caches)
    
-    DETAIL SUBSYSTEMS
+    子系统详细列表
    
-    This is the set of detail data from which in most cases the corresponding summary data is derived.  There are currently 2 types that
-    do not have corresponding summary data and those are "Environmental" and "Process".  So, if one has 3 disks  and  chooses  -sd,  one
-    will  only  see a single total taken across all 3 disks.  If one chooses -sD, individual disk totals will be reported but no totals.
-    Choosing -sdD will get you both.
+    这是一组详细信息,大部分情况下都会由相应的总结数据衍生出来。目前“环境变量”和“进程”2类没有相应的总结数据。如果有3个磁盘,选择-sd,将只会看到3个磁盘组合出的单一信息。如果选择-sD,将会分别显示各磁盘信息。
 
     C - CPU
     D - Disk
@@ -78,11 +74,11 @@ According to the man page, collectl identifies the following subsystems.
     Y - Slabs (system object caches)
     Z - Processes
 
-To monitor and measure a particular subsystem use the "-s" option and add the subsytem identifier to it. Now lets try out a few examples.
+使用“-s”来监测特定的子系统并向其添加子系统的识别项。现在让我们举几个例子。
 
-##$# 1. Monitor cpu usage ####
+#### 1. 监测cpu使用率 ####
 
-To monitor just the summary of cpu usage use "-sc"
+用“-sc”实现CPU总使用率的监测
 
     $ collectl -sc
     waiting for 1 second sample...
@@ -91,12 +87,12 @@ To monitor just the summary of cpu usage use "-sc"
        3   0  1800   3729 
        3   0  1767   3599
 
-To observe each cpu individually, use "C". It will output multiple lines together, one for each cpu.
-
+使用“-C”观察各个单独的CPU使用情况。结果将会输出多行,分别对应一个CPU。
     $ collectl -sC
     waiting for 1 second sample...
     
     # SINGLE CPU STATISTICS
+
     #   Cpu  User Nice  Sys Wait IRQ  Soft Steal Idle
           0     3    0    0    0    0    0     0   96
           1     3    0    0    0    0    0     0   96
@@ -107,11 +103,11 @@ To observe each cpu individually, use "C". It will output multiple lines togethe
           2     1    0    0    0    0    0     0   98
           3     4    0    1    0    0    0     0   95
 
-Using the C and c option together will fetch you both individual measures and the summary stats in a mmore comprehensive manner, if you need.
+如果需要,可以同时使用C和c来获取单项CPU监测数据和汇总数据。
 
-#### 2. Monitor memory ####
+#### 2. 内存监测 ####
 
-Use the m subsystem to check the memory
+使用m子系统查看内存。
 
     $ collectl -sm
     waiting for 1 second sample...
@@ -121,22 +117,23 @@ Use the m subsystem to check the memory
        2G 220M   1G   1G 210M   3G 
        2G 220M   1G   1G 210M   3G
 
-Should not be difficult to interpret.
-The M option would give further details about the memory.
+不难解释。
+M用来查看更多内存的详细信息。
 
     $ collectl -sM
     waiting for 1 second sample...
 
     # MEMORY STATISTICS 
+
     # Node    Total     Used     Free     Slab   Mapped     Anon   Locked    Inact Hit%
          0    7975M    5939M    2036M  215720K  372184K        0    6652K    1434M    0
          0    7975M    5939M    2036M  215720K  372072K        0    6652K    1433M    0
 
-Does that look similar to what free reports ?
+这类似于免费报告吗？
 
-#### 3. Check disk usage ####
+#### 3. 查看磁盘使用情况 ####
 
-The d and D options provide the summary and details on disk usage.
+d和D可以查看磁盘使用的概况和详细情况。
 
     $ collectl -sd
     waiting for 1 second sample...
@@ -156,13 +153,13 @@ The d and D options provide the summary and details on disk usage.
     sda              1      0    2    1      17      1    5    3       2     2     6      2    1
     sda              0      0    0    0      92     11    5   18      18     1    12     12    5
 
-Another option that provides extended information is the "--verbose" option. It expands the summary to include more information but is not identical to using D.
+“--verbose”命令可以用来查看附加信息。和D命令不同,它将概况扩展,包含了更多信息。
 
     $ collectl -sd --verbose
 
-#### 4. Report multiple systems together ####
+#### 4. 同时报告多系统情况 ####
 
-So lets say you want a report of cpu, memory and disk io together, then use the subsystems together.
+如果想要同时得到CPU,内存和磁盘报告,那么同时使用子命令组合来实现。
 
     $ collectl -scmd
     waiting for 1 second sample...
@@ -171,9 +168,9 @@ So lets say you want a report of cpu, memory and disk io together, then use the 
        4   0  2187   4334   1G 221M   1G   1G 210M   3G      0      0      0      0 
        3   0  1896   4065   1G 221M   1G   1G 210M   3G      0      0     20      5
 
-#### 5. Display time with the stats ####
+#### 5. 显示统计时间 ####
 
-To display the time in each line along with the measurements, use the T option. And over that, to specify options, you need to use the "-o" switch.
+若要将每行的监测信息和时间一同显示,使用T命令。为指定命令,前面需加“-o”来转换。
 
     $ collectl -scmd -oT
     waiting for 1 second sample...
@@ -183,11 +180,11 @@ To display the time in each line along with the measurements, use the T option. 
     12:03:06    3   0  1884   3810   1G 225M   1G   1G 212M   3G      0      0      0      0 
     12:03:07    3   0  2011   4060   1G 225M   1G   1G 212M   3G      0      0      0      0
 
-You could also display the time in milliseconds with "-oTm".
+使用“-oTm”可将时间换成毫秒显示。
 
-#### 6. Change sample count ####
+#### 6. 改变样本计数 ####
 
-Every row the collectl reports is a snapshot or sample. And it takes these snapshots at regular intervals, say 1 second. The i option sets the interval and c option sets the sample count.
+collectl报告的每行都是一份快照或样本,它通常设定定期间隔如1秒来取样。i可用来设置时间间隔,c用来设置样本计数。
 
     $ collectl -c1 -sm
     waiting for 1 second sample...
@@ -195,7 +192,7 @@ Every row the collectl reports is a snapshot or sample. And it takes these snaps
     #Free Buff Cach Inac Slab  Map 
        1G 261M   1G   1G 228M   3G
 
-To change interval use the i options
+使用i命令可改变时间间隔。
 
     $ collectl -sm -i2
     waiting for 2 second sample...
@@ -203,15 +200,15 @@ To change interval use the i options
     #Free Buff Cach Inac Slab  Map 
        1G 261M   1G   1G 229M   3G
 
-The above command would collect memory stats every 2 seconds.
+上面的命令设定每2秒收集一次内存信息。
 
-#### 7. Use collectl like iotop ####
+#### 7. 像iotop一样使用collectl ####
 
-Out of the plenty options, the "top" option makes collectl report process-wise statistics much like iostat/top commands. The list is continuously updated and can be sorted on a number of fields.
+top命令将collectl像iostat/top工具一样进行智能统计。列表会持续更新,且可以使用不同字段实现排序。
 
     $ collectl --top iokb
 
-The output looks like this
+输出如下
 
     # TOP PROCESSES sorted by iokb (counters are /sec) 09:44:57
     # PID  User     PR  PPID THRD S   VSZ   RSS CP  SysT  UsrT Pct  AccuTime  RKB  WKB MajF MinF Command
@@ -225,21 +222,21 @@ The output looks like this
         8  root     20     2    0 S     0     0  2  0.00  0.00   0  00:00.00    0    0    0    0 rcu_bh 
         9  root     20     2    0 S     0     0  0  0.00  0.00   0  00:00.00    0    0    0    0 rcuob/0
 
-The output is very similar to the top command and it sorts the process by the amount of disk io in descending order.
+上面的输出很像top命令,并且它以磁盘数量降序排列进程。
 
-To display only top 5 processes use it as follows
+若只想显示上面的5项进程,可用以下命令实现
 
     $ collectl --top iokb,5
 
-To learn about what fields the above list can be sorted, use the following command
+若想学习上面的列表里哪些字段可以排序,使用如下命令
 
     $ collectl --showtopopts
-    The following is a list of --top's sort types which apply to either
-    process or slab data.  In some cases you may be allowed to sort
-    by a field that is not part of the display if you so desire
-    
+   
+    下面是应用于进程或数据的最高排序类型列表。某些情况下你可能会使用某一字段进行排序,但它并非显示的一部分。
+
     TOP PROCESS SORT FIELDS
-    
+    进程排序字段
+
     Memory
       vsz    virtual memory
       rss    resident (physical) memory
@@ -292,13 +289,13 @@ To learn about what fields the above list can be sorted, use the following comma
       totpct    percent change in memory sizes
       name      slab names
 
-#### 8. Use collectl like top ####
+#### 8. 像top一样使用collectl ####
 
-To make collectl report like top, we just have to report processes ordered by the cpu usage.
+为使collectl像top,我们只需以CPU使用率排序输出进程。
 
     $ collectl --top
 
-The output should be like this
+输出如下
 
     # TOP PROCESSES sorted by time (counters are /sec) 14:08:46
     # PID  User     PR  PPID THRD S   VSZ   RSS CP  SysT  UsrT Pct  AccuTime  RKB  WKB MajF MinF Command
@@ -310,21 +307,20 @@ The output should be like this
      1186  root     20  1152    4 S  502M   76M  0  0.00  0.01   1  03:02.96    0    0    0    0 /usr/bin/X 
      1334  www-data 20  1329    0 S   87M    1M  2  0.00  0.01   1  00:00.85    0    0    0    0 nginx:
 
-You can also display sub system information along with the above
+上面的命令也可用于显示子系统信息。
 
     $ collectl --top -scm
 
-#### 9. List processes like ps ####
+#### 9. 像ps一样列出进程 ####
 
-To just list out the processes like ps command, without updating continously, just set the sample count to 1 with the "c" options
-
+为像ps命令一样列出所有进程且没有后续更新,用“c”命令让其计数至1.
     $ collectl -c1 -sZ -i:1
 
-The above command will list out all the processes much like "ps -e". The 'procfilt' option can be used to filter out specific processes from the process. The 'procopts' option can be used to specify another set of options for fine tune the process list display.
+上面的命令将会列出类似“ps -e”命令的所有进程。“procfilt”用于从所有进程中过滤出特定的进程信息。“procopts”用于指定另一组微调进程列表显示的命令。
 
-#### 10. Use collectl like vmstat ####
+#### 10. 像vmstat一样使用collectl ####
 
-Collectl has got a direct option to make it behave like vmstat
+Collectl有内置命令来完成像vmstat一样的功能。
 
     $ collectl --vmstat
     waiting for 1 second sample...
@@ -334,9 +330,9 @@ Collectl has got a direct option to make it behave like vmstat
       1  0      0  1733M   242M  1922M  1137M   710M    0    0     0     0 1906  3886  1  0  98  0
       1  0      0  1733M   242M  1922M  1137M   710M    0    0     0     0 1739  3480  3  0  96  0
 
-#### 11. Detailed information about subsystems ####
+#### 11. 子系统的详细信息 ####
 
-The following command would collect "5 samples" of CPU statistics at "1 second" interval and print detailed information (verbose) along with the time.
+下面的命令以一秒为间隔统计5次CPU信息并和时间一起显示出详细信息（冗长）。
 
     $ collectl -sc -c5 -i1 --verbose -oT
     waiting for 1 second sample...
@@ -349,23 +345,22 @@ The following command would collect "5 samples" of CPU statistics at "1 second" 
     14:22:13     15     0     0     0     0     0     0    84     4  1241   2429     0   866     1   0.78  0.86  0.78    1    0
     14:22:14     11     0     0     0     0     0     0    88     4  1270   2488     0   866     0   0.80  0.87  0.78    0    0
 
-Change the "-s" parameter to view a different subsystem.
+改变"-s"变量查看不同的子系统。
 
-### Summary ###
+### 总结 ###
 
-The post so far was just a bird's view of this amazing tool called collectl. It should have given a fair idea of how flexible it is. The discussion however leaves out various other features of collectl which include the ability to record and "playback" the captured data, export data for various file formats and data formats that can be used with external tools for analysis etc.
+本文的介绍不过是对collectl这个强大工具的一些浅见。本文本希望展示它有多灵活,其实通过以上的讨论仍让我们了解了包括记录及回寻捕获的数据,以多种文件格式导出数据并将数据转换为可被广泛的工具分析的格式等等功能的实现。
 
-Another major feature that collectl supports is running as a service that allows for remote monitoring making it a perfect tool for keeping a watch on resources of remote linux machines or an entire server cluster.
+collectl提供的另一大功能便是像服务器一样运行,对远程Linux机器或完整的服务器集群提供远程监控,其表现堪称完美。
 
-Collectl is accompanied with an additional set of tools named [Collectl Utils][2] (colmux, colgui, colplot) that can be used to process and analyse the data collected. May be we shall take a look at those in another post.
+Collectl同另一批可用于处理分析收集的数据名为[Collectl实用工具][2] (colmux, colgui, colplot)的功能相契合。如果有机会,我们在之后的文章中会介绍它们。
 
-Check the man page to learn more about the options. I would also recommend checking out the [FAQs][3] to get a quick idea about collectl. Next, read up the [collectl documentation][4] for more indepth examples to get beyond the basics. There is also a [command equivalence matrix][5] which maps the more common commands like sar, iostat, netstat, top with their collectl equivalents.
-
+为更详细的了解Collectl工具,请登录主页来学习更多的功能。笔者建议查看[FAQs][3]来快速了解collectl,读取[collectl文档][4]获取深层次的例子。[等价命令矩阵][5]也可定位至更多的像sar,iostat,netstat,top等和collectl功能部分等价的常用工具。
 --------------------------------------------------------------------------------
 
 via: http://www.binarytides.com/collectl-monitor-system-resources-linux/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[译者ID](https://github.com/icybreaker) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
