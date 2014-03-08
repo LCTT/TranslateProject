@@ -1,3 +1,6 @@
+Translating-------------geekpi
+
+
 Should Canonical Drop the Current Background Theme for Ubuntu 14.04 LTS?
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Should-Canonical-Drop-the-Curent-Background-Theme-for-Ubuntu-14-04-LTS-420737-2.jpg)
