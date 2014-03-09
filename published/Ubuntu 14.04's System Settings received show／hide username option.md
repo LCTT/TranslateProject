@@ -10,13 +10,12 @@ Ubuntu 14.04 中系统设置中加入了显示/隐藏用户选项
 
 ![](http://iloveubuntu.net/pictures_me/system%20settings%20show%20hide%20username.png)
 
-The entry is handy, for example, if you want to take a screenshot of your desktop with your username visible, you are to 1 click-away check the option, shortly after you can unclutter the Unity panel by disabling the option without requiring non-default applications.
-这个选项很方便,比如,你想要截一张带有你用户名的桌面截图,你只要单击选项, 不久之后你就可以通过禁用它来整理你的Unity面板而不必使用非默认的程序。
+这个选项很方便，比如，你想要截一张带有你用户名的桌面截图，你只要单击选项，不久之后你就可以通过禁用它来整理你的Unity面板而不必使用非默认的程序。
 
 --------------------------------------------------------------------------------
 
 via: http://iloveubuntu.net/ubuntu-1404s-system-settings-received-showhide-username-option
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
