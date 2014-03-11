@@ -1,3 +1,4 @@
+>>translating by ThomazL
 ClassicMenu Indicator Rekindles Old GNOME 2 Feeling in Ubuntu 14.04 LTS
 ================================================================================
 **There are a lot of Ubuntu users who still don't like Unity and who feel that the GNOME 2 solution of displaying the menus was the way to go. The ClassicMenu Indicator offers a compromise that might satisfy everyone.**
