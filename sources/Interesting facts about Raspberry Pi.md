@@ -1,3 +1,6 @@
+Translating------------geekpi
+
+
 Interesting facts about Raspberry Pi
 ================================================================================
 Raspberry Pi celebrated its second birthday last week. Since its debut on February 29, 2012, Raspberry Pi has ushered in a whole new generation of tiny, inexpensive, single-board computers. Numerous Raspberry Pi based DIY project ideas are popping up over the web, and there are many use cases of Raspberry Pi as low-cost learning media in the developing world. Celebrating its second birthday, I am going to share in this post several **interesting facts about Raspberry Pi**.
