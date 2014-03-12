@@ -1,9 +1,8 @@
-罪过 罪过 翻译 by Luoxcat
-First Look At Ubuntu 14.04 Default Wallpapers. Download Now!
+Ubuntu 14.04 默认壁纸先睹为快,赶紧下载吧！
 ================================================================================
-Ubuntu 14.04 LTS, scheduled to [release on 17 April][1], has [revealed the default set of wallpapers][2] that would be included in the latest release. These wallpapers were chosen as best among numerous entries submitted in [Ubuntu 14.04 Wallpaper Contest][3]. There are in total 11 of them which is slightly less than expected.
+Ubuntu 14.04 LTS, 预期[在4月17日发行][1],最新的发行版也会收录[已经透露地默认壁纸][2]。这些壁纸都是从[Ubuntu 14.04 壁纸大赛][3]中大量作品里精选出来的。总共有11张,略少于预期目标。
 
-### Ubuntu 14.04 default wallpapers: ###
+### Ubuntu 14.04 默认壁纸: ###
 
 ![](http://itsfoss.com/wp-content/uploads/2014/03/Backyard-Mushrooms-Kurt-Zitzelman.jpg)
 
@@ -27,15 +26,15 @@ Ubuntu 14.04 LTS, scheduled to [release on 17 April][1], has [revealed the defau
 
 ![](http://itsfoss.com/wp-content/uploads/2014/03/Water-web-Tom-Kijas.jpg)
 
-- [Download all Ubuntu 14.04 wallpapers][4]
+- [下载全部 Ubuntu 14.04 壁纸][4]
 
-Mushrooms one looks quite soothing to me. Which one you liked the most?
+看着那张蘑菇壁纸我感到非常的舒畅。你最喜欢哪一张呢？
 
 --------------------------------------------------------------------------------
 
 via: http://itsfoss.com/ubuntu-1404-default-wallpapers-download/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Luoxcat](https://github.com/Luoxcat) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
