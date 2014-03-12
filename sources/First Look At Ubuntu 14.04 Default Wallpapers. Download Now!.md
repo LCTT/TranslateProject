@@ -1,3 +1,4 @@
+罪过 罪过 翻译 by Luoxcat
 First Look At Ubuntu 14.04 Default Wallpapers. Download Now!
 ================================================================================
 Ubuntu 14.04 LTS, scheduled to [release on 17 April][1], has [revealed the default set of wallpapers][2] that would be included in the latest release. These wallpapers were chosen as best among numerous entries submitted in [Ubuntu 14.04 Wallpaper Contest][3]. There are in total 11 of them which is slightly less than expected.
