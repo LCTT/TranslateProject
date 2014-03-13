@@ -1,22 +1,22 @@
-如何在Ubuntu server中设置RainLoop网页邮件
+如何在 Ubuntu server 中设置 RainLoop 网页邮件
 ================================================================================
-网页邮件无疑是任何邮件服务器必不可少的一部分。而本地邮件客户端通常比网页邮件有更多的功能，通过电子邮件客户端从外部可信的网络访问IMAP或SMTP有时会很棘手。再则，当你需要一个特定的工作站，笔记本电脑，或移动设备去使用一个电子邮件客户端，你可以通过任何地方使用网页邮件服务，只要你接入互联网。
+网页邮件无疑是任何邮件服务器必不可少的一部分。而本地邮件客户端通常比网页邮件的功能更多，通过电子邮件客户端从外部可信的网络访问IMAP或SMTP有时会很棘手。再则，当你需要一个特定的工作站、笔记本电脑或者移动设备去使用一个电子邮件客户端，你可以在任何地方使用网页邮件服务，只要你接入互联网。
 
-本文将重点关注在一个运行Apache的Ubuntu服务器上设置[RainLoop][1]网页邮件。RainLoop是基于PHP的网页邮件，并且有一下功能。
+本教程的重点是在一个运行 Apache 的 Ubuntu 服务器上设置[RainLoop][1]网页邮件。RainLoop 是基于 PHP 的网页邮件，并且有以下功能。
 
-- 支持apache，nginx和其他网页服务。
-- 标准接口补充了一个画廊主题可供选择。
-- 为个人和非盈利项目免费使用。 
+- 支持apache，nginx和其它网页服务器。
+- 标准接口补充了一个主题库可供选择。
+- 个人和非盈利项目可免费使用。 
 
-在写这篇文章时，RainLoop还不支持邮件过滤和不在公司时的自动回复。
+在写这篇文章时，RainLoop 还不支持邮件过滤和不在公司时的自动回复。
 
-### 在Ubuntu服务器上安装RainLoop ###
+### 在 Ubuntu 服务器上安装 RainLoop ###
 
 首先，在服务器上设置必备的软件包。
 
     # apt-get install wget unzip apache2 php5 php5-mysql libmysqlclient15-dev mysql-server poppassd 
 
-接下来，下载和安装RainLoop。
+接下来，下载和安装 RainLoop。
 
     # mkdir /var/www/webmail
     # cd /var/www/webmail
@@ -31,11 +31,11 @@
     # find . -type f -exec chmod 644 {} \;
     # chown –R www-data:www-data /var/www/webmail 
 
-我们几乎已经准备好使用RainLoop。最后，通过管理面板进调整，接下来会有详细描述。
+我们马上就可以使用 RainLoop 了。最后，通过管理面板进行调整，接下来会有详细描述。
 
 ### 通过管理面板首次配置 ###
 
-很多配置参数用界面友好的管理面板就能调整。使用以下凭证进入管理面板。
+很多配置参数通过一款界面友好的管理面板就能调整。使用以下凭证进入管理面板。
 
 1. URL: http://IP/webmail/?admin
 1. user: admin
@@ -45,7 +45,7 @@
 
 ### 增加域 ###
 
-在管理面板>域>增加域页面设置有效的域。建议服务器IP是本地服务器，如127.0.0.1。基于服务器配置，RainLoop可以配置使用IMAP/IMAPS或SMTP/SMTPS。并且，确认‘使用短登录表单’复选框已勾选。
+在 管理面板> 域> 增加域 页面设置有效的域。建议服务器 IP 是本地服务器，如 127.0.0.1。基于服务器配置，RainLoop 可以配置使用 IMAP/IMAPS 或 SMTP/SMTPS。并且，确认‘使用短登录表单’复选框已勾选。
 
 ![](http://www.flickr.com/photos/xmodulo/12603680854/)
 
@@ -53,7 +53,7 @@
 
 ### 启用联系人 ###
 
-联系人功能需要数据库支持。我们将为联系人使用MySQL数据库。RainLoop可以手动创建所需的数据库，如下。
+联系人功能需要数据库支持。我们将使用 MySQL 数据库启用联系人。RainLoop 可以手动创建所需的数据库，如下。
 
     # mysql -u root -p 
 
@@ -68,17 +68,17 @@
 
 ### 启动密码更改插件 ###
 
-在多数linux的邮件账户的邮件服务器是用自己的UID和GID的操作系统的实际用户。因此，在过去更改这些账户的密码是很棘手的。幸好，今天有工具可以完成这个工作。这样的一个工具是poppassd。
+在多数 linux 的邮件账户的邮件服务器是用自己的 UID 和 GID 操作系统的实际用户。因此，在过去更改这些账户的密码是很棘手的。幸好，今天有工具可以完成这个工作。这个工具是 poppassd。
 
-第一步是在服务器上安装poppassd，可以用apt-get。
+第一步是在服务器上安装 poppassd，可以用 apt-get 来完成。
 
     # apt-get install poppassd 
 
-接下来，去允许RainLoop使用poppassd，从管理面板>软件包页面安装RainLoop插件poppassd。
+接下来，去允许 RainLoop 使用 poppassd，从 管理面板> 软件包 页面安装 RainLoop 插件 poppassd。
 
 ![](http://www.flickr.com/photos/xmodulo/12603357113/)
 
-最后，poppassd插件可以从管理面板>插件页面启用。
+最后，poppassd 插件可以从 管理面板> 插件页面启用。
 
 ![](http://www.flickr.com/photos/xmodulo/12603681254/)
 
@@ -96,7 +96,7 @@
 
 via: http://xmodulo.com/2014/02/rainloop-webmail-ubuntu-server.html
 
-译者：[Vito](https://github.com/vito-L) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Vito](https://github.com/vito-L) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

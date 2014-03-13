@@ -13,11 +13,12 @@ Unity控制中心，除了它的名字外，与原来的系统设置一样保持
 ![](http://iloveubuntu.net/pictures_me/unity%20control%20center%20ubuntu%2014.04%20default.png)
 
 根据开发者说法，复刻过程是为了保持基于GNOME的系统设置程序能够在Ubuntu 14.04 LTS上使用，而接下来的Ubuntu版本可能会使用基于Qt/QML的系统设置。
+
 --------------------------------------------------------------------------------
 
 via: http://iloveubuntu.net/unity-control-center-arrived-ubuntu-1404-default
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

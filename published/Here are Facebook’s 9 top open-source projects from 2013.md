@@ -1,6 +1,6 @@
 2013年Facebook排名前9位的开源项目
 ================================================================================
-Facebook和开源项目之间的关系就像Jay-Z和碧昂丝一样 — 二者缺一不可
+Facebook和开源项目之间的关系就像Jay-Z和碧昂丝一样 —— 二者缺一不可
 
 如果把Blue Ivy看作是后两者结合的产物的话，那么这个孩子就相当于Facebook的React, Rebound, HipHop, 以及其他的一些开源项目.
 
@@ -26,7 +26,7 @@ Facebook和开源项目之间的关系就像Jay-Z和碧昂丝一样 — 二者�
 
 via: http://venturebeat.com/2013/12/20/here-are-facebooks-9-top-open-source-projects-from-2013/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Linchenguang ](https://github.com/Linchenguang ) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

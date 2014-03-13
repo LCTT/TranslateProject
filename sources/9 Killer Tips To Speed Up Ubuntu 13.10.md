@@ -1,3 +1,4 @@
+zpl1025 translating
 9 Killer Tips To Speed Up Ubuntu 13.10
 ================================================================================
 ![](http://itsfoss.com/wp-content/uploads/2014/01/Speed_Up_Ubuntu_1310.jpg)
