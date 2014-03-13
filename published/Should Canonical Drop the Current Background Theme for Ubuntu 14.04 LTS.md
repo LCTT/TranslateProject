@@ -14,6 +14,6 @@ Ubuntu 14.04 LTS (Trusty Tahr) 或许是时候撼动这件事了。Canonical同�
 
 via: http://news.softpedia.com/news/Should-Canonical-Drop-the-Curent-Background-Theme-for-Ubuntu-14-04-LTS-420737.shtml
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
