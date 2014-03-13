@@ -6,8 +6,9 @@
 
 你可能会说“没什么大不了”。毕竟它不是火箭科学。你可以进入**系统设置> 声音设定** 并且可以简单地选择你想要的输入输出源。**声音切换器**没有做新的或者Ubuntu没有提供的功能，它只是简化整个过程。我想这可能是为什么这个没有列在[最佳Ubuntu指示器程序][2]中的原因。
 
-How often do you need to change the audio source? For me, I have to change the audio source each time to [get sound through HDMI in external monitor][3]. And then I have to do it again after disconnecting the HDMI cable. This applet indicator comes handy for people like me who frequently switch between audio source and are lazy\![](http://itsfoss.com/wp-includes/images/smilies/icon_razz.gif)
-你多久需要改变音频源？对于我来说，我不得不在每次从外部监视器的HDMI获取声音时切换音频源。并且我不得不在拔掉HDMI线时重新这么做。这个小程序指示器对于像我这样经常切换音频源又懒的很是很方便的\![](http://itsfoss.com/wp-includes/images/smilies/icon_razz.gif)
+
+你多久需要改变音频源？对于我来说，我不得不在每次从外部监视器的HDMI获取声音时切换音频源。并且我不得不在拔掉HDMI线时重新这么做。这个小程序指示器对于像我这样经常切换音频源又懒的很是很方便的。
+![](http://itsfoss.com/wp-includes/images/smilies/icon_razz.gif)
 
 ### 在Ubuntu中安装音频切换器: ###
 
