@@ -1,36 +1,33 @@
-Translating---------------------geekpi
-
-
-
-Easily Switch Audio Sources With Sound Switcher Indicator In Ubuntu
+在Ubuntu内使用声音切换器简单切换音频源
 ================================================================================
 ![](http://itsfoss.com/wp-content/uploads/2014/02/Sound_switcher_Indicator.jpeg)
 
-Sound Switcher Indicator is an applet indicator developed by [Dmitry Kann][1]. The purpose of the applet indicator is very simple, it lets you switch between different audio sources such as integrated speakers, headphone and HDMI in two mouse clicks.
+声音切换器是由[Dmitry Kann][1]开发的小程序。这个程序的目的很简单，让你在不同的音频源如喇叭、耳机和HDMI之间点击两下鼠标就能切换。
 
-Big deal, you may say. After all its no rocket science. You can go to **System Settings-> Sound Settings** and can easily choose the input or output source you want. **Sound Switcher Indicator** does not do something new or something that Ubuntu does not provide, it just simplifies the whole process. This may be one of the reason why it may not be counted as one of the [best indicator applets for Ubuntu][2].
+你可能会说“没什么大不了”。毕竟它不是火箭科学。你可以进入**系统设置> 声音设定** 并且可以简单地选择你想要的输入输出源。**声音切换器**没有做新的或者Ubuntu没有提供的功能，它只是简化整个过程。我想这可能是为什么这个没有列在[最佳Ubuntu指示器程序][2]中的原因。
 
 How often do you need to change the audio source? For me, I have to change the audio source each time to [get sound through HDMI in external monitor][3]. And then I have to do it again after disconnecting the HDMI cable. This applet indicator comes handy for people like me who frequently switch between audio source and are lazy![](http://itsfoss.com/wp-includes/images/smilies/icon_razz.gif)
+你多久需要改变音频源？对于我来说，我不得不在每次从外部监视器的HDMI获取声音时切换音频源。并且我不得不在拔掉HDMI线时重新这么做。这个小程序指示器对于像我这样经常切换音频源又懒的很是很方便的![](http://itsfoss.com/wp-includes/images/smilies/icon_razz.gif)
 
-### Install Sound Switcher Indicator in Ubuntu: ###
+### 在Ubuntu中安装音频切换器: ###
 
-Open a terminal and use the following commands to install Sound Switcher Indicator in Ubuntu:
+打开一个终端并且使用下面的命令在Ubuntu中安装音频切换器：
 
     sudo apt-add-repository ppa:yktooo/ppa
     sudo apt-get update
     sudo apt-get install indicator-sound-switcher
 
-#### Important note: ####
+#### 重要提示: ####
 
-Sound Switcher Indicator does not start automatically. To start it automatically, you’ll have to add it to **Startup Applications**. Open **Startup Applications** and click on **Add**. Here, give it a name, Sound Switcher for example and use “indicator-sound-switcher” (without quotes)  in **Command** section. Let me know if you have issues adding it to start up applications.
+音频切换器不会自动启动。为了自动启动，你要把它加到**启动程序**中。打开**启动程序**并点击**添加**。这里，给它一个名字，比如就称声音切换器，并是在**命令**部分使用 “indicator-sound-switcher”(没有引号)。如果你在加入启动程序遇到问题时请告诉我。
 
-What you think of Sound Switcher Indicator? Do small applets like these are beneficial for users? Do let us know of your views.
+你认为音频切换器怎么样？像这样的小程序对用户有好处么？让我们知道你的看法。
 
 --------------------------------------------------------------------------------
 
 via: http://itsfoss.com/sound-switcher-indicator-ubuntu/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
