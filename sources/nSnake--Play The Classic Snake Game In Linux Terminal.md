@@ -1,3 +1,5 @@
+(translating by intermerlin)
+
 nSnake: Play The Classic Snake Game In Linux Terminal
 ================================================================================
 You know what was the best thing about old Nokia handsets back in early 2000′s? The [Snake Game][1]. I had wasted considerable time on this silly yet addictive game. While the good old Nokia phones are replaced by smartphones today and Snake game is replaced by other silly addictive games such as [Temple Run][2] etc Snake still has its own charm.
