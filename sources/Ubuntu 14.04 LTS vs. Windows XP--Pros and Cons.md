@@ -1,3 +1,5 @@
+### Viz 开始翻译
+
 Ubuntu 14.04 LTS vs. Windows XP: Pros and Cons
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Ubuntu-14-04-LTS-vs-Windows-XP-Pros-and-Cons-430084-2.jpg)
