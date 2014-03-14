@@ -1,127 +1,126 @@
-zpl1025 translating
-9 Killer Tips To Speed Up Ubuntu 13.10
+九大技巧给你的Ubuntu 13.10提速
 ================================================================================
 ![](http://itsfoss.com/wp-content/uploads/2014/01/Speed_Up_Ubuntu_1310.jpg)
 
-Whether you have a fresh install of Ubuntu 13.10 or upgraded to it, you might have experienced that after using Ubuntu for some times, the system starts running slow. In this article we shall see several tweaks and **tips to make Ubuntu run faster**.
+不管你的Ubuntu 13.10系统是重新安装的或是从以前旧版本升级的，在使用了一段时间后，你应该会感觉到系统开始变慢。在这篇文章中，我们将了解到一些**让你的Ubuntu运行得更快的技巧**。
 
-Before we see how to improve overall system performance in Ubuntu 13.10, first lets ponder on why the system gets slower overtime. There could be several reasons for it. You may have a humble computer with basic configuration. You might have installed several applications which are eating up resources at boot time. Endless reasons in fact.
+在我们动手提高Ubuntu 13.10的整体系统性能之前，先思考下为什么系统会随着时间变慢。这里可能有很多原因，比如，你可能有一台简单设置了一下的低配电脑，你可能安装了很多在开机时吃掉系统资源的应用程序。实际上有各种理由。
 
-Here I have listed several small tweaks that will help you speed up Ubuntu a little. There are some best practices as well which you can employ to get a smoother and improved system performance. You can choose to follow all or some of it. All of them adds up a little to give you a smoother, quicker and faster Ubuntu.
+在这里列出了一些小技巧，能帮你提高一点Ubuntu的速度。还有一些很好的技巧，可以用来提高系统性能，让系统运行更流畅。你可以选择尝试所有技巧或者其中的一部分，他们每一个都可以让你的Ubuntu更流畅，更敏捷，更迅速。
 
-### Tips to make Ubuntu 13.10 run faster: ###
+### 让Ubuntu 13.10运行更快的技巧: ###
 
-I have used these tweaks with Ubuntu 13.10 but I believe that the same can be used in older Ubuntu versions as well as other Linux distributions which are based on Ubuntu such as Linux Mint, Elementary OS Luna etc.
+我已经在我的Ubuntu 13.10上应用过这些技巧，但是我相信它们同样可以应用在旧版本的Ubuntu系统上，或者其他基于Ubuntu的Linux发行版，比如：Linux Mint，Elementary OS Luna等等。
 
-Reduce the default grub load time:
+减少grub默认的引导等待时间：
 
-The grub gives you 10 seconds to change between dual boot OS or to go in recovery etc. To me, its too much. It also means you will have to sit beside your computer and press the enter key to boot in to Ubuntu as soon as possible. A little time taking, ain’t it? First trick would be to change this boot time. If you are more comfortable with a GUI tool, read this article to [change grub time and boot order with Grub Customizer][1].
+grub默认会给你10秒钟时间来选择要引导的系统或是进入恢复模式，这对于我来说太长了。这意味着你得呆在电脑边上按下确认键来立刻引导Ubuntu。是不是觉得有点浪费时间？第一个小技巧就是改变引导时间。如果你更喜欢GUI工具，可以阅读这篇文章[通过Grub Customizer调整grub等待时间和引导顺序][1]。
 
-For the rest of us, you can simply use the following command to open grub configuration:
+对其他人来说，只需要通过下面的简单命令来打开grub配置文件：
 
     sudo gedit /etc/default/grub &
 
-And change **GRUB_TIMEOUT=10** to **GRUB_TIMEOUT=2**. This will change the boot time to 2 seconds. Prefer not to put 0 here as you will lost the privilege to change between OS and recovery options. Once you have changed the grub configuration, use the following command to make the change count:
+把**GRUB_TIMEOUT=10**改为**GRUB_TIMEOUT=2**，这样就可以把引导等待时间改成2秒。最好不要改成0，因为这样你就不能选择其他操作系统或者恢复模式了。在修改完成后，用下面的命令使改动生效：
 
     sudo update-grub
 
-### Manage the start up applications: ###
+### 管理开机启动应用程序： ###
 
-Overtime you tend to start installing applications. If you are a regular It’s FOSS reader, you might have installed many apps from [App of the week][2] series. Some of these apps are started at each start up and of course resources will be busy in running these applications. Result: a slow computer for a significant time duration at each boot. Go in Unity Dash and look for **Startup Applications**:
+慢慢的你开始安装各种应用程序。如果你是It’s FOSS的读者，你可能安装了许多[本周最佳应用程序][2]系列里推荐的应用。这里面很多应用都会开机启动，程序运行肯定会要消耗系统资源，结果就是：一台每次开机都要很长时间的缓慢电脑。打开Unity Dash，然后找到**Startup Applications**：
 
 ![](http://itsfoss.com/wp-content/uploads/2014/01/Startup_Applications_Ubuntu.jpeg)
 
-In here, look at what applications are loaded at start up. Now think if you there are any applications which you don’t require to be started up every time you boot in to Ubuntu. Feel free to remove them:
+在里面，检查一下那些开机启动的程序，考虑一下哪些是你觉得没有必要每次开机都启动的程序，然后尽情地移除吧。
 
 ![](http://itsfoss.com/wp-content/uploads/2014/01/Startup_applications_ubuntu_1310.jpeg)
 
-But what if you don’t want to remove the applications from start up? For example if you installed one of the [best indicator applets for Ubuntu 13.10][3], you will want them to be started automatically at each boot. What you can do here is to delay some the start of some of the programs. This way you will free up the resource at boot time and your applications will be started automatically, after sometime. In the previous picture click on Edit and change the run command with a sleep option. For example if you want to delay the running of Dropbox indicator for lets say 20 seconds, you just need to **add a command** like this in the existing command:
+万一你不想从开机启动列表里移除程序呢？比如说，你安装了[Ubuntu 13.10里最好的提示插件][3]里推荐的程序，你希望它们可以在每次开机时都自动启动。这种情况可以这样处理，为应用程序的启动设定一个等待时间。这样，你可以缓解一点启动时的资源占用，而你的应用程序仍然会自动启动，在一段时间后。在前一张图中，点击Edit，然后在运行的命令中加入一个等待。例如，如果你想延迟20秒再启动Dropbox提示，只需要在当前的命令前面**增加一条命令**：
 
-    sleep 10;
+    sleep 20;
 
-So, the command ‘**dropbox start -i**‘ changes to ‘**sleep 20; drobox start -i**‘. Which means that now Drobox will start with a 20 seconds delay. You can change the start time of other start up applications in similar fashion.
+这样，命令‘**dropbox start -i**‘变成了‘**sleep 20; dropbox start -i**‘。这就意味着Dropbox的启动会有20秒延迟。你可以像这样为其他开机启动的应用程序设置一个等待时间。
 
 ![](http://itsfoss.com/wp-content/uploads/2014/01/Edit_startup_applications_Ubuntu.jpeg)
 
-### Install preload to speed up application load time: ###
+### 安装preload来加速应用程序加载时间： ###
 
-Preload is a daemon that runs in background and analyzes user behavior and frequently run applications. Open a terminal and use the following command to install preload:
+Preload是个后台程序，会分析用户的行为和常用的程序。打开终端，用下面的命令安装preload：
 
     sudo apt-get install preload
 
-After installing it, restart your computer and forget about it. It will be working in background. [[Read more about preload][4]]
+安装完后重启电脑，然后就可以把它忘了，它会在后台运行。[[更多关于preload的信息][4]]
 
-### Choose the best mirror for software updates: ###
+### 选择最快的软件升级镜像服务器： ###
 
-It’s good to verify that you are using the best mirror to update the software. Ubuntu software repository are mirrored across the globe and it is quite advisable to use the one which is nearest to you. This will result in a quicker system update as it reduces the time to get the packages from the server.
+最好检查一下自己用来升级软件的镜像服务器是最快的。Ubuntu软件仓库在全球各地都有镜像服务器，建议选择一个离自己最近的。这样可以减少从服务器下载升级包的时间，所以软件升级会更快。
 
-In **Software & Updates->Ubuntu Software tab->Download From** choose **Other** and there after click on **Select Best Server**:
+在**Software & Updates->Ubuntu Software tab->Download From**里选择**Other**，然后点击**Select Best Server**：
 
 ![](http://itsfoss.com/wp-content/uploads/2014/01/Ubuntu_software_Center_Mirror.jpeg)
 
-It will run a test and tell you which is the best mirror for you. Normally, the best mirror is already set but as I said, no harm in verifying it. Also, this may result in some delay in getting the updates if the nearest mirror where the repository is cached is not updated frequently. This is useful for people with relatively slower internet connection. You can also these tips to [speed up wifi speed in Ubuntu][5].
+系统会自动测试并告诉你哪个镜像服务器是最快的。通常来说，系统默认会选择最快的镜像服务器，但是，检查一下总是没有坏处。不过，如果保存升级包的距离最近的镜像服务器并没有经常保持同步的话，获取更新的时候可能会有点延时。对于网络连接速度比较慢的人来说，这个方法很有用。你可以在文章[加速Ubuntu的WIFI速度][5]里更深入地了解这些提示
 
-### Use apt-fast instead of apt-get for a speedy update: ###
+### 用apt-fast代替apt-get来加速更新： ###
 
-apt-fast is a shellscript wrapper for “apt-get” that improves updated and package download speed by downloading packages from multiple connection simultaneously. If you frequently use terminal and apt-get to install and update the packages, you may want to give apt-fast a try. Install apt-fast via official PPA using the following commands:
+apt-fast是用来代替“apt-get”的的一个shell脚本程序，它通过多线程的方式改善了更新和下载安装包的速度。如果你经常用终端和apt-get来安装和升级软件的话，可以试试apt-fast。用下面的命令通过官方PPA安装apt-fast：
 
     sudo add-apt-repository ppa:apt-fast/stable
     sudo apt-get update
     sudo apt-get install apt-fast
 
-### Remove language related ign from apt-get update: ###
+### 从apt-get更新中移除语言相关的ign： ###
 
-Have you ever noticed the output of sudo apt-get update? There are three kind of lines in it, **hit**, **ign** and **get**. You can read their meaning [here][6]. If you look at IGN lines, you will find that most of them are related to language translation. If you use all the applications, packages in English, there is absolutely no need of a translation of package database from English to English.
+你有没有注意过sudo apt-get update的输出？里面有三类标志，**hit**，**ign**和**get**。你可以在[这里][6]了解它们的含义。检查一下包含IGN的行，你会发现它们大多数都是语言翻译相关的。如果你所有的程序和安装包都是英文的，那完全没有必要检查从英文到英文的安装包数据库。
 
-If you suppress this language related updates from apt-get, it will slightly increase the apt-get update speed. To do that, open the following file:
+如果你跳过apt-get的语言相关的更新，能够轻微地提高apt-get update的速度。想这样做的话，在终端里输入下面的命令：
 
     sudo gedit /etc/apt/apt.conf.d/00aptitude
 
-And add the following line at the end of this file:
+然后在文件末尾加入下面这行：
 
     Acquire::Languages "none";
 
 ![](http://itsfoss.com/wp-content/uploads/2014/01/ign_language-apt_get_update.jpeg)
 
-### Reduce overheating: ###
+### 减少系统过热： ###
 
-Overheating is a common problem in computers these days. An overheated computer runs quite slow. It takes ages to open a program when your CPU fan is running like Usain Bolt. There are two tools which you can use to reduce overheating and thus get a better system performance in Ubuntu 13.10, TLP and CPUFREQ.
+如今，过热是计算机的一个普遍问题，一台过热的电脑运行得非常缓慢。如果你的CPU风扇跑得像尤塞恩.博尔特一样快的话，会需要超长的时间来打开一个程序。在Ubuntu 13.10中有两个工具可以帮助减少系统过热来实现更好的系统性能，TLP和CPUFREQ。
 
-To install and use TLP, use the following commands in a terminal:
+通过下面的终端命令来安装使用TLP：
 
     sudo add-apt-repository ppa:linrunner/tlp
     sudo apt-get update
     sudo apt-get install tlp tlp-rdw
     sudo tlp start
 
-You don’t need to do anything after installing TLP. It works in background. To install CPUFREQ indicator use the following command:
+在安装完TLP后不需要做其他额外的事情，它会在后台运行。用下面的命令安装CPUFREQ提示工具：
 
     sudo apt-get install indicator-cpufreq
 
-Restart your computer and use the **Powersave** mode in it:
+然后重启电脑，然后选择CPUFREQ的**Powersave**模式：
 
 ![](http://itsfoss.com/wp-content/uploads/2013/11/CPUFREQ-indicator.jpeg)
 
-### Tweak LibreOffice to make it faster: ###
+### 调整LibreOffice让它运行更快： ###
 
-If you are a frequent user of office product, then you may want to tweak the default LibreOffice a bit to make it faster. You will be tweaking memory option here. Open LibreOffice and go to **Tools->Options**. In there, choose **Memory** from left side bar and enable **Systray Quickstarter** along with increasing memory allocation.
+如果你经常使用办公软件，那你应该会想调整一下默认的LibreOffice，让它运行得更快些。这里会调整一下内存选项。打开LibreOffice，然后选择**Tools->Options**，然后在左边栏里选择**Memory**，并激活**System Quickstarter**来增加内存占用。
 
 ![](http://itsfoss.com/wp-content/uploads/2013/08/LibreOffice_Memory_option_1.jpeg)
 
-You can read more about [how to speed up LibreOffice][7] in detail.
+你可以看一下[如何加速LibreOffice][7]了解更多的细节。
 
-### Use lighter alternatives of different applications: ###
+### 使用软件的轻量替代： ###
 
- This is more of a suggestion and liking. Some of the default or popular applications are resource heavy and may not be suitable for a low end computer. What you can do is to use some alternates to these applications. For example, use [AppGrid][8] instead of Ubuntu Software Center. Use [Gdebi][9] to install packages. Use AbiWord instead of LibreOffice Writer etc.
+这个更像是推荐和喜好。有些系统默认或流行的软件都需要占用大量系统资源，这并不适合一般的低配置电脑。这种情况下，你可以选择使用这些软件的一些替代程序。比如，用[AppGrid][8]来替代Ubuntu Software Center；用[Gdebi][9]来安装软件；用AbiWord来代替LibreOffice Writer等等。
 
-That’s conclude the collection of tips to **make Ubuntu 13.10 faster**. I am sure these tips would provide overall a better system performance. Do you have some tricks up your sleeves as well to **speed up Ubuntu 13.10**? Did these tips helped you as well? Do share your views. Questions, suggestions are always welcomed. Feel free to drop to the comment section.
+这些就是我搜集的**让Ubuntu 13.10运行更快**的技巧。我相信这些小技巧可以整体提升系统性能表现。你是否也有一些隐藏的技巧来**加速Ubuntu 13.10**？这些小技巧对你是不是有帮助？请和大家分享你的看法，随时欢迎提出任何问题或建议，不要吝啬留下你的评论。
 
 
 --------------------------------------------------------------------------------
 
 via: http://itsfoss.com/speed-up-ubuntu-1310/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[zpl1025](https://github.com/zpl1025) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
