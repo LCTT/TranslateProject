@@ -37,11 +37,12 @@ Linux基金会是一个非营利性组织，意在推动Linux的成长和协调�
 ###
 
 注册商标：The Linux Foundation, Linux Standard Base, MeeGo, OpenDaylight, Tizen和Yocto Project都属于Linux基金会的注册商标。OpenBEL是OpenBEL集团的注册商标。Linux是Linus Torvalds的注册商标。
+
 --------------------------------------------------------------------------------
 
 via: http://www.linuxfoundation.org/news-media/announcements/2014/02/2014-linux-jobs-report-demand-linux-expertise-drives-hiring
 
-译者：[Mr小眼儿](http://blog.csdn.net/tinyeyeser) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Mr小眼儿](http://blog.csdn.net/tinyeyeser) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

@@ -1,6 +1,6 @@
 树莓派使用实例之：2 Pi R 第二篇：Web服务器
 ================================================================================
-在我的上一篇[文章][1]中讲过如何做一个冗余系统：两个树莓派布署上 GlusterFS 集群文件系统，就变成一个容错文件服务器了。在这篇文章中我们会基于这个冗余系统构建另一个容错服务：建立一个简单的 Web 服务器集群。
+在我的上一篇[文章][1]中讲过如何做一个高可用系统：两个树莓派布署上 GlusterFS 集群文件系统，就变成一个容错文件服务器了。在这篇文章中我们会基于这个高可用系统构建另一个容错服务：建立一个简单的 Web 服务器集群。
 
 可能你没有看过我的上一篇文章，那我就在这里简单回顾一下上次的内容。我有两个树莓派：Pi1 和 Pi2。Pi1 的 IP 地址为 192.168.0.121，Pi2 的 IP 地址为 192.168.0.122。我把它们组合成为 GlusterFS 集群系统，共享一个存储卷，卷名为 gv0。并且这个 gv0 被挂载在两个树莓派上，挂载点都是 /mnt/gluster1，这样一来，两个树莓派能同时访问到这个共享卷。最后我测试了下系统的容错性，将共享卷挂载到第三个物理机上，并执行共享卷上的一个简单的脚本：打印系统时间并输出到 gv0 上的一个文件内，然后轮着关掉两台树莓派，检测这个冗余系统是否还能用。
 
@@ -27,7 +27,7 @@ Nginx 安装好后，创建配置文件 /mnt/gluster1/cluster ，内容如下：
 
 注意：我这里把服务器命名为“twopir”，你可以根据自己爱好命名你的网站。另外我把 Web 服务器的根目录设置为 /mng/gluster1/www。这样，我就能把我的静态文件放在这个共享存储系统内，从而让两个树莓派主机都访问到它们。
 
-现在删除默认的 Nginx 配置文件，将上面配好的配置文件作为 Nginx 的配置文件。在 Debian 系统中，Nginx 将它的文件像 Apache 一样放在 sites-available 和 site-enabled 两个目录下面。虚拟主机配置文档放在 sites-available 中，而 sites-enabled 目录包含了你想生效的配置文件的软链接。
+现在删除默认的 Nginx 配置文件，将上面配好的配置文件作为 Nginx 的配置文件。在 Debian 系统中，Nginx 将它的配置文件像 Apache 一样放在 sites-available 和 site-enabled 两个目录下面。虚拟主机配置文档放在 sites-available 中，而 sites-enabled 目录包含了你想生效的配置文件的软链接。
 
     $ cd /etc/nginx/sites-available
     $ sudo ln -s /mnt/gluster1/cluster .
@@ -44,7 +44,7 @@ Nginx 安装好后，创建配置文件 /mnt/gluster1/cluster ，内容如下：
 
     $ sudo /etc/init.d/nginx restart
 
-现在去 DNS 服务器为192.168.0.121的树莓派配置记录。你可以根据自己的情况配置你自己的域名和 IP 地址。现在在浏览器上输入 http://twopor/ 然后出现默认的 Nginx 首页。如果你查看下 /var/log/nginx/access.log 文件，你可以看到点击网页留下的记录。
+现在去 DNS 服务器为192.168.0.121的树莓派配置记录。你可以根据自己的情况配置你自己的域名和 IP 地址。现在在浏览器上输入 http://twopir/ 然后出现默认的 Nginx 首页。如果你查看下 /var/log/nginx/access.log 文件，你可以看到点击网页留下的记录。
 
 Nginx 能正常工作后，配置第二个树莓派。因为我们已经将配置文件都放在 GlusterFS 共享目录下，我们现在要做的只是安装 Nginx，创建相关的软链接，重启 Nginx：
 
@@ -59,7 +59,7 @@ Nginx 能正常工作后，配置第二个树莓派。因为我们已经将配�
 
 ### DNS 服务器上配置两条 A 记录 ###
 
-现在两个主机共享同一份文件，下一步是设置冗余系统的关键步骤。虽然你完全可以设置一个类似心跳的服务用于轮询检测哪个树莓派的 Web 服务是开启的，但这里有个更好的方法：两个 DNS 服务器使用 A 记录（译注：A 记录就是将域名转化为 IP 地址的记录，DNS 包含很多记录方式，如 A 记录、PTR 记录、MX 记录等等）同一个主机名，这就是传说中的 DNS 负载均衡，DNS 访问主机时，如果主机名对应多个 IP 地址，DNS 会随机返回这些 IP 地址的顺序：
+现在两个主机共享同一份文件，下一步是设置冗余系统的关键步骤。虽然你完全可以设置一个类似心跳的服务用于轮询检测哪个树莓派的 Web 服务是开启的，但这里有个更好的方法：给同一个主机名指定两个 DNS 的 A 记录，分别指向你的两个树莓派（译注：A 记录就是将域名转化为 IP 地址的记录，DNS 包含很多记录方式，如 A 记录、PTR 记录、MX 记录等等），这就是传说中的 DNS 负载均衡，DNS 访问主机时，如果主机名对应多个 IP 地址，DNS 会随机返回这些 IP 地址的顺序：
 
     $ dig twopir.example.com A +short
     192.168.0.121
@@ -80,8 +80,8 @@ Nginx 能正常工作后，配置第二个树莓派。因为我们已经将配�
 
 via: http://www.linuxjournal.com/content/two-pi-r-2-web-servers
 
-译者：[bazz2](https://github.com/bazz2) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[bazz2](https://github.com/bazz2) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-[1]:http://www.linuxjournal.com/content/two-pi-r
+[1]:http://linux.cn/article-2587-1.html
