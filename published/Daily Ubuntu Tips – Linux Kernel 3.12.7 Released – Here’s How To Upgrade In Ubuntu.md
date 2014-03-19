@@ -1,4 +1,4 @@
-每日 Ubuntu 小技巧——Linux Kernel 3.12.7发布，让我教你怎样在 Ubuntu 中升级
+每日 Ubuntu 小技巧：怎样在Ubuntu升级新的 Linux Kernel 3.12.7
 ================================================================================
 
 Linux Kernel 版本3.12.7主线已经发布了，而这篇简短教程将会向你展示怎样简单地在 Ubuntu 中升级。如果你正好运行 Ubuntu 13.10 或者更低版本，还碰巧你的系统还不是安装最新的内核，读完吧。
@@ -50,6 +50,7 @@ Linux Kernel 是 linux 操作系统的核心，包括了 Ubuntu。内核使 Ubun
     sudo apt-get remove linux-headers-3.12.7-* linux-image-3.13.7-*
 
 好好享受吧！
+
 --------------------------------------------------------------------------------
 
 via: http://www.liberiangeek.net/2014/01/daily-ubuntu-tips-linux-kernel-3-12-7-released-heres-how-to-upgrade-in-ubuntu/
