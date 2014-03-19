@@ -3,19 +3,15 @@
 ![](http://i1-news.softpedia-static.com/images/news2/Ubuntu-14-04-LTS-vs-Windows-XP-Pros-and-Cons-430084-2.jpg)
 
 **越来越多的人期待着 Ubuntu 14.04 LTS (Trusty Tahr) 的发布，并希望她能在不改变用户习惯的前提下替代 Windows XP。
-因此我们将在本文尝试给大家分析下这个两个系统的优缺点**
+因此我们将在本文尝试给大家分析下这个两个系统的优缺点。**
 
-很多 Windows XP 用户在微软宣布四月份后即将停止对他们的操作系统提供安全更新后作出改变。
-他们像大多数改用 Linux 的用户一样，有着大量的系统操作和兼容性方面各式各样的问题。
-而事实是这些原 XP 用户可能顾虑太多了，理由如下：
+很多 Windows XP 用户在微软宣布四月份后即将停止对他们的操作系统提供安全更新后作出改变。他们像大多数改用 Linux 的用户一样，有着大量的系统操作和兼容性方面各式各样的问题。而事实是这些原 XP 用户可能顾虑太多了，理由如下：
 
 ### 安装 ###
 
-如果你在一生中哪怕就装过一次 Windows，祝贺你，因为你已经知道该如何安装 Ubuntu 这类的系统了。
-Ubuntu 为用户提供了一个很直观而且没有太多复杂选项的安装界面。
+如果你在一生中哪怕就装过一次 Windows，祝贺你，因为你已经知道该如何安装 Ubuntu 这类的系统了。Ubuntu 为用户提供了一个很直观而且没有太多复杂选项的安装界面。
 
-唯一可能会使你疑惑的就是系统分区时出现的大量陌生词汇了，比如“交换空间(swap)”和“EXT4文件系统”。
-不过好消息是在 Linux 下你或许永远不需要多个分区了。
+唯一可能会使你疑惑的就是系统分区时出现的大量陌生词汇了，比如“交换空间(swap)”和“EXT4文件系统”。不过好消息是在 Linux 下你或许永远不需要多个分区了。
 
 ![](http://i1-news.softpedia-static.com/images/news2/Ubuntu-14-04-LTS-vs-Windows-XP-Pros-and-Cons-430084-3.jpg)
 
@@ -85,6 +81,6 @@ Linux 有所有你需要的功能，没有任何理由不去使用一个基于�
 
 via: http://news.softpedia.com/news/Ubuntu-14-04-LTS-vs-Windows-XP-Pros-and-Cons-430084.shtml
 
-译者：[VizV](https://github.com/vizv) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[VizV](https://github.com/vizv) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
