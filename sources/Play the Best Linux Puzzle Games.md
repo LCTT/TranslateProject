@@ -1,3 +1,4 @@
+zpl1025 translating
 Play the Best Linux Puzzle Games
 ================================================================================
 Linux has a prodigious library of free games many of which are released under an open source license. A large proportion of these open source games are eye catching. Popular games often have full motion video, vector graphics, 3D graphics, realistic 3D rendering, animation, texturing, a physics engine, and much more. Early computer games did not have these graphic techniques. The earliest video games were text games or text-based games that used text characters rather than vector or bitmapped graphics.
