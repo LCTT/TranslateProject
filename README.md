@@ -3,7 +3,7 @@
 
 LCTT是Linux中国社区（[http://linux.cn/]()）的翻译组，负责从国外优秀媒体翻译Linux相关的技术、资讯、杂文等内容。
 
-LCTT已经拥有三十余名活跃成员，并欢迎更多的Linux志愿者加入我们的团队。
+LCTT已经拥有四十余名活跃成员，并欢迎更多的Linux志愿者加入我们的团队。
 
 LCTT的组成
 -------------------------------
@@ -36,37 +36,45 @@ LCTT的组成
 - CORE [wxy](https://github.com/wxy),
 - CORE [carolinewuyan](https://github.com/carolinewuyan),
 - CORE [DeadFire](https://github.com/DeadFire),
-- CORE [tinyeyeser](https://github.com/tinyeyeser),
 - CORE [geekpi](https://github.com/geekpi),
+- CORE [tinyeyeser](https://github.com/tinyeyeser),
 - CORE [vito-L](https://github.com/vito-L),
 - CORE [jasminepeng](https://github.com/jasminepeng),
 - [luoxcat](https://github.com/Luoxcat),
-- [flsf](https://github.com/flsf),
 - [runningwater](https://github.com/runningwater),
-- [Linux-pdz](https://github.com/Linux-pdz),
-- [woodboow](https://github.com/woodboow),
 - [bazz2](https://github.com/bazz2),
+- [flsf](https://github.com/flsf),
+- [Linux-pdz](https://github.com/Linux-pdz),
 - [Vic020](https://github.com/Vic020),
-- [crowner](https://github.com/crowner),
+- [woodboow](https://github.com/woodboow),
 - [KayGuoWhu](https://github.com/KayGuoWhu),
-- [scusjs](https://github.com/scusjs),
 - [Linchenguang](https://github.com/Linchenguang),
+- [crowner](https://github.com/crowner),
+- [yechunxiao19](https://github.com/yechunxiao19),
+- [scusjs](https://github.com/scusjs),
+- [hyaocuk](https://github.com/hyaocuk),
 - [theo-l](https://github.com/theo-l),
 - [l3b2w1](https://github.com/l3b2w1),
-- [hyaocuk](https://github.com/hyaocuk),
-- [boredivan](https://github.com/boredivan),
 - [NearTan](https://github.com/NearTan),
+- [boredivan](https://github.com/boredivan),
+- [liuaiping](https://github.com/liuaiping),
+- [zpl1025](https://github.com/zpl1025),
 - [rogetfan](https://github.com/rogetfan),
 - [whatever1992](https://github.com/whatever1992),
 - [icybreaker](https://github.com/icybreaker),
+- [ThomazL](https://github.com/ThomazL),
+- [SteveArcher](https://github.com/SteveArcher),
+- [FineFan](https://github.com/FineFan),
 - [ailurus1991](https://github.com/ailurus1991),
 - [Maclauring](https://github.com/Maclauring),
 - [small-Wood](https://github.com/small-Wood),
 - [willqian](https://github.com/willqian),
 - [stduolc](https://github.com/stduolc),
-- [SteveArcher](https://github.com/SteveArcher),
 - [lijhg](https://github.com/lijhg),
-（更新于2014/1/2）
+- [tomatoKiller](https://github.com/tomatoKiller),
+- [zsJacky](https://github.com/zsJacky),
+
+（更新于2014/3/12）
 
 谢谢大家的支持！
 
