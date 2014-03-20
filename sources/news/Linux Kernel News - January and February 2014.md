@@ -1,5 +1,4 @@
-[bazz2 owns this]
-Linux Kernel News - January and February 2014
+Linux 内核新闻－2014年1月的和2月的
 ================================================================================
 I am reporting the Linux project activity for the past two months in this article. Blame it on me being heads down to get some development work done. Without further ado, let's get started on catching up.
 
