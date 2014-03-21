@@ -1,9 +1,9 @@
 Linux 系统实时监控的瑞士军刀 —— Glances
 ================================================================================
 早些时候，我们提到过有很多可以用来监视系统性能的 Linux [系统监视工具][1]。
-但我们估计，或许更多的用户会倾向与基本每个 Linux 发行版都在带的工具 (**top** 命令)。
+但我们估计，或许更多的用户会倾向与基本每个 Linux 发行版都在带的工具 （**top** 命令）。
 
-[top 命令]是 Linux 下的一个实时任务管理器，
+[top 命令][2]是 Linux 下的一个实时任务管理器，
 同时也是为了在 **GNU/Linux** 发行版中寻找系统性能方面的瓶颈，并帮助我们作出正确操作的常用系统监视工具。
 她有着一个很为简洁的界面，并自带少量的且可以帮助我们快速了解系统性能的实用选项。
 
@@ -13,98 +13,104 @@ Linux 系统实时监控的瑞士军刀 —— Glances
 为了达到这个目标，这里我们将介绍一款超牛逼的系统监视程序 —— **Glances**。
 她可以自动高亮利用最高系统资源的程序，并为 Linux/Unix 服务器提供尽可能多的信息。
 
-### What is Glances? ###
+### 什么是 Glances？ ###
 
-**Glances** is a cross-platform command-line curses-based system monitoring tool written in **Python** language which use the **psutil** library to grab informations from the system. With Glance, we can monitor **CPU, Load Average, Memory, Network Interfaces, Disk I/O, Processes** and **File System** spaces utilization.
+**Glances** 是一个由 Python 编写并使用 **psutil** 库来从系统抓取信息且基于 curses 开发的跨平台命令行系统监视工具。
+通过 Glances，我们可以监视 **CPU，平均负载，内存，网络流量，磁盘 I/O，其他处理器** 和 **文件系统** 空间的利用情况。
 
-Glances is a free tool and licensed under **GPL** to monitory **GNU/Linux** and **FreeBSD** operating systems. There are lots of interesting options available in Glances as well. One of the main features we have seen in Glances is that we can set thresholds (**careful**, **warning** and **critical**) in configuration file and informations will be shown in colors which indicates the bottleneck in the system.
+Glances 是一个被用来监视 **GNU/Linux** 和 **FreeBSD** 操作系统的 **GPL** 授权的自由软件。
+Glances 同时也提供了很多实用的选项。
+其中我们能够在配置文件见到的一项主要的功能就是设置关键值及相应的标签 （**careful[小心]**, **warning[警告]** 和 **critical[严重]**），
+然后她会自动帮我们用不同颜色标出系统达到某个瓶颈的信息。
 
-### Glances Features ###
+### Glances 主要功能 ###
 
-- CPU Informations (user related applications, system core programs and idle programs.
-- Total memory Information including RAM, Swap, Free memory etc.
-- The average CPU load for the past 1min, 5mins and 15 mins.
-- Network Download/Upload rates of network connections.
-- Total number of processes, active ones, sleeping processes etc.
-- Disk I/O related (read or write) speed details
-- Currently mounted devices disk usages.
-- Top processes with their CPU/Memory usages, Names and location of application.
-- Shows the current date and time at bottom.
-- Highlights processes in Red that consumes highest system resources.
+- CPU 信息 （用户的相关应用, 系统核心程序和空闲程序）
+- 总内存信息，包括了物理内存，交换空间和空闲内存等等
+- 过去 1 分钟、5 分钟和 15 分钟平均的 CPU 负载
+- 网络链接的下行和上行速度
+- 处理器总数，以及其活动状态
+- 硬盘 I/O 相关（读写）速度详情
+- 当前挂载设备的磁盘使用情况
+- 高 CPU 和内存使用的进程名，和相关应用的位置
+- 在底部显示当前日期和时间
+- 将消耗最高系统资源的进程用红色标出
 
-Here is an example screen grab of Glances.
+下面是一个 Glances 的使用截图：
 
 ![Glances View](http://www.tecmint.com/wp-content/uploads/2014/02/Glances-Monitoring.jpeg)
 
-### Installation of Glances in Linux/Unix Systems ###
+### 在 Linux/Unix 系统种安装 Glances ###
 
-Although it’s a very young utility, you can install “**Glances**” in **Red Hat** based systems by turning on [EPEL repository][3] and then run the following command on the terminal.
+虽然这个工具的发布并不早，但你仍然可以在 **Red Hat** 分支的系统中将 [EPEL 软件源][3]开启并在终端用下面的命令来安装 “**Glances**”
 
-#### On RHEL/CentOS/Fedora ####
+#### 对于 RHEL/CentOS/Fedora 发行版 ####
 
     # yum install -y glances
 
-#### On Debian/Ubuntu/Linux Mint ####
+#### 对于 Debian/Ubuntu/Linux Mint 发行版 ####
 
     $ sudo apt-add-repository ppa:arnaud-hartmann/glances-stable
     $ sudo apt-get update
     $ sudo apt-get install glances
 
-### Usage of Glances ###
+### 如何使用 Glances ###
 
-To start, issue the basic syntax on the terminal.
+首先，你需要在终端中输入以下命令
 
     # glances
 
 ![Glances Preview – Ubuntu 13.10](http://www.tecmint.com/wp-content/uploads/2014/02/Glances-Screen.jpeg)
 
-Press ‘**q**‘ or (‘**ESC**‘ or ‘**Ctrl&C**‘ also works) to quit from Glances terminal. Here, is the another screen grab taken from the **CentOS 6.5** system.
+按下 ‘**q**‘ （‘**ESC**‘ 和 ‘**Ctrl&C**‘ 也可以） 退出 Glances 终端。
+这里是从 **CentOS 6.5** 截取的另一张截图：
 
 ![Glances Preview – CentOS 6.5](http://www.tecmint.com/wp-content/uploads/2014/02/Glances-Screen-Centos.jpeg)
 
-y default, interval time is set to ’**1**‘ second. But you can define the custom interval time while running glances from the terminal.
+Glances 的默认刷新频率是 **1** （秒），但是你可以通过在终端执行下面的命令来手动定义其刷新频率
 
     # glances -t 2
 
-### Glances Color Codes ###
+### Glances 中颜色的含义 ###
 
-Meaning of Glances color code:
+Glances 会用一下几种颜色来代表状态：
 
-- GREEN: OK (everything is fine)
-- BLUE: CAREFUL (need attention)
-- VIOLET: WARNING (alert)
-- RED: CRITICAL (critical)
+- 绿色：OK（一切正常）
+- 蓝色：CAREFUL（需要注意）
+- 紫色：WARNING（警告）
+- 红色：CRITICAL（严重）
 
-We can set thresholds in configuration file. By default thresholds set is (**careful=50, warning=7**0 and **critical=90**), we can customized as per our needs. The default configuration file is located at ‘**/etc/glances/glances.conf**’.
+阀值可以在配置文件中设置，一般阀值被默认设置为（**careful=50**、**warning=70**、**critical=90**）。
+我们可以按照自己的需求在配置文件（默认在 **/etc/glances/glances.conf**）中自定义。
 
-### Glances Options ###
+### Glances 的选项 ###
 
-Besides, several command line options, glances provides many more **hot keys** to find output information while glances is running. Below are the list of several hot keys.
+除了很多命令行选项之外，Glances 还提供了更多的可在其运行时开关输出信息选项的**快捷键**，下面是一些例子：
 
-- a – Sort processes automatically
-- c – Sort processes by CPU%
-- m – Sort processes by MEM%
-- p – Sort processes by name
-- i – Sort processes by I/O rate
-- d – Show/hide disk I/O stats ols
-- f – Show/hide file system statshddtemp
-- n – Show/hide network stats
-- s – Show/hide sensors stats
-- y – Show/hide hddtemp stats
-- l – Show/hide logs
-- b – Bytes or bits for network I/Oools
-- w – Delete warning logs
-- x – Delete warning and critical logs
-- x – Delete warning and critical logs
-- 1 – Global CPU or per-CPU stats
-- h – Show/hide this help screen
-- t – View network I/O as combination
-- u – View cumulative network I/O
-- q – Quit (Esc and Ctrl-C also work)
+- a – 对进程自动排序
+- c – 按 CPU 百分比对进程排序
+- m – 按内存百分比对进程排序
+- p – 按进程名字母顺序对进程排序
+- i – 按读写频率（I/O）对进程排序
+- d – 显示/隐藏磁盘 I/O 统计信息
+- f – 显示/隐藏文件系统统计信息
+- n – 显示/隐藏网络接口统计信息
+- s – 显示/隐藏传感器统计信息
+- y – 显示/隐藏硬盘温度统计信息
+- l – 显示/隐藏日志（log）
+- b – 切换网络 I/O 单位（Bytes/bits）
+- w – 删除警告日志
+- x – 删除警告和严重日志
+- 1 – 切换全局 CPU 使用情况和每个 CPU 的使用情况
+- h – 显示/隐藏这个帮助画面
+- t – 以组合形式浏览网络 I/O
+- u – 以累计形式浏览网络 I/O
+- q – 退出（‘**ESC**‘ 和 ‘**Ctrl&C**‘ 也可以）
 
-### Use Glances on Remote Systems ###
+### 远程使用 Glances ###
 
-With the Glances, you can even monitor remote systems too. To use ‘**glances**‘ on remote systems, run the ‘**glances -s**‘ (-s enables server/client mode) command on the server.
+你甚至也可以通过 Glances 来监视远程系统。
+要在远程系统使用 ‘**glances**’，需要在服务器运行 ‘**glances -s**’（-s 启动服务器/客户端模式）命令。
 
     # glances -s
 
@@ -113,29 +119,32 @@ With the Glances, you can even monitor remote systems too. To use ‘**glances**
     Password (confirm): 
     Glances server is running on 0.0.0.0:61209
 
-**Note** : Once, you issue ‘**glances**‘ command, it will prompt you to define the password for the Glances server. Define the password and hit enter, you see glances running on port **61209**.
+**注意**：当你执行了‘**glances**’命令后，她会让你为 Glances 服务器设置密码。
+当你设置完毕，你将看到 “Glances server is running on 0.0.0.0:61209” （Glances 服务器正在 0.0.0.0 的 61209 端口运行）
 
-Now, go to the remote host and execute the following command to connect to a Glances server by specifying IP address or hostname as shown below. Here ‘**172.16.27.56**‘ is my glances server IP Address.
+当 Glances 服务器启动后，到本地执行下面的命令来指定服务器IP地址或主机名以链接。
+注：这里的 ‘**172.16.27.56**’ 是我 Glances 服务器的 IP 地址。
 
     # glances -c -P 172.16.27.56
 
-Below are few notable points that user must know while using glances in server/client mode.
+下面是一些在使用服务器/客户端模式时必须知道的事情：
 
-    * In server mode, you can set the bind address -B ADDRESS and listening TCP port -p PORT.
-    * In client mode, you can set the TCP port of the server -p PORT.
-    * Default binding address is 0.0.0.0, but it listens on all network interfaces at port 61209.
-    * In server/client mode, limits are set by the server side.
-    * You can also define a password to access to the server -P password.
+    * 在服务器模式，你可以通过 `-B 地址` 来设置绑定地址，也可以通过 `-p 端口` 来绑定 TCP 端口
+    * 在客户端模式，你可以通过同样的 `-p 端口` 来指定服务器端口
+    * 默认的绑定地址是 0.0.0.0，但这么做会监听所有网络接口的指定端口
+    * 在服务器/客户端模式下，限制将视服务器的设置而决定
+    * 你也可以在命令行下用过 `-P 密码` 的方式来为服务器端设置一个密码
 
-### Conclusion ###
+### 总结 ###
 
-**Glances** is a much resources friendly tool for most users. But if you’re a system administrator who’d like to quickly get overall “idea” about systems by just glancing at command line, then this tool will be must have tool for system administrators.
+**Glances** 对于大多用户而言是个在系统资源上提供过多信息的工具。
+但是如果你是一个想要仅从命令行就能快速获取系统整体状况的系统管理员，那这个工具绝对是你的必备利器。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/glances-an-advanced-real-time-system-monitoring-tool-for-linux/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[VizV](https://github.com/vizv) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
