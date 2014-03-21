@@ -140,6 +140,12 @@ Glances 会用一下几种颜色来代表状态：
 **Glances** 对于大多用户而言是个在系统资源上提供过多信息的工具。
 但是如果你是一个想要仅从命令行就能快速获取系统整体状况的系统管理员，那这个工具绝对是你的必备利器。
 
+### 译者注 ###
+
+1. 请不要将 glances（本文中的工具）和 glance（一个 OpenStack 的工具）这两个包搞混了
+2. Ubuntu 官方 Extra 源中的 glances 因为 python 库移动的问题导致无法正常使用
+但可以通过建立软链接的方式临时修复：sudo ln -s /usr/lib/python2.7/dist-packages/glances /usr/share/pyshared/glances
+
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/glances-an-advanced-real-time-system-monitoring-tool-for-linux/
