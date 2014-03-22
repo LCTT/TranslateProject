@@ -1,3 +1,5 @@
+	neartan translating
+
 Windows 7 & 8 Complete Transformation Pack Out for Ubuntu, Debian 8, and Arch Linux
 ================================================================================
 **A new version of Windows 7/8 Transformation Pack for LXDE has been made available by its developer, bringing the much needed Arch Linux support.**
