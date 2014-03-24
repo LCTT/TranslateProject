@@ -1,86 +1,84 @@
-(translating by runningwater)
-10 ssh options for a Secure shell for Safe Data Communication
+用作安全数据通信的 Secure shell 的10个 ssh 命令选项
 ================================================================================
-A system administrator may have managed more than 1 servers. Then those servers may located in different places. Visiting the servers one by one may not the best way to manage them. Then a remote method can be an effective way to manage them. One of the common aplication for remote activity is **SSH**.
+一个系统管理员可能会同时管理着多台服务器，这些服务器也许会放在不同的地方。要亲自一台一台的去访问来管理她们显然不是最好的方法，通过远程控制的方法应该是最有效的。远程访问最通用的一款应用程序是 **SSH**。
 
-### What is SSH ###
+### SSH 是什么 ###
 
-**SSH or Secure Shell** is a cryptographic network protocol. The data through this protocol will be encrypted to ensure that no one can read if the data leaked in the middle. To use SSH, the destination machine should have a SSH server application installed because **SSH is a client-server model**. SSH is usually used when you want to remote hosts in a secure way over the insecure network such as the Internet.
+**SSH（全称 Secure Shell)**是一种加密的网络协议。使用该协议的数据将被加密，如果在传输中间数据泄漏，也可以确保没有人能读取出有用信息。要使用 SSH，目标机器应该安装 SSH 服务端应用程序，因为 **SSH 是基于客户-服务模式的。** 当你想安全的远程到主机，可中间的网络（比如因特网）并不安全，通常这种情况下就会使用 SSH。
 
-### Installing SSH ###
+### 安装 SSH ###
 
-Modern Linux should have installed SSH by default. If its not, we can install it manually. The easiest way to install SSH is through your Linux package manager.
+的 Linux 系统默认已经安装了 SSH。如果碰巧你的机器没装，我们可以手工来安装一下。最简单的方式就是使用 Linux 包管理器。
 
-### On Debian / Ubuntu Linux based : ###
+### 基于 Debian / Ubuntu 的系统 : ###
 
-#### Install ssh-client ####
+#### 安装 ssh-client ####
 
     $ sudo apt-get install openssh-client
 
-#### Install ssh-server ####
+#### 安装 ssh-server ####
 
     $ sudo apt-get install openssh-server
 
-### On RedHat / CentOS Linux based : ###
+### 基于 RedHat / CentOS 的系统 : ###
 
     # yum install openssh-server openssh-clients
 
-Once SSH is installed we can check it by typing **ssh** from your Linux console.
+SSH 一旦安装上，我们就可以在终端下输入 **ssh** 来检查下安装的是否正常。
 
 ![An ssh client](http://linoxide.com/wp-content/uploads/2014/02/ssh_client.png)
 
-### Using SSH ###
+### 使用 SSH ###
 
-SSH provides a lot of options to be used. In this article we will cover some options that may useful in day-to-day operations.
+提供了许多可使用的选项。这篇文章会介绍一些我们在日常操作中经常使用的选项。
 
-#### 1. Run SSH without no options ####
+#### 1. 无选项参数运行 SSH ####
 
-A common way to use SSH is without any options. Just type “**ssh** ”. Here’s a sample :
+通常使用 SSH 的方式就是不加任何选项参数,仅仅输入 "**ssh**"。下面是示例：
 
     $ ssh 192.168.0.103
 
 ![SSH connecti confirmation](http://linoxide.com/wp-content/uploads/2014/02/ssh_ask_connect.png)
 
-When the first time you connect to destination host, ssh will confirm you about the authenticity of the destination host. If you answer No****, then SSH will not continue while **if you said Yes**, SSH will continue.
+第一次连接目标主机时，ssh 会让你确认目标主机的真实性。如果你回答的是 **NO**，SSH 将不会继续连接，只有回答 **Yes** 才会继续。
 
 ![Connecting to SSH](http://linoxide.com/wp-content/uploads/2014/02/ssh_connect.png)
 
-The next time you login into the same host, SSH will not ask you a confirmation. The authenticity oft the host by default is saved under /home/user/.ssh folder in every user.
+下一次再登陆此主机时，SSH 就不会提示确认消息了。对此主机的真实验证信息已经默认保存在每个用户的 /home/user/.ssh 文件里。
 
-#### 2. Specify a username for login ####
+#### 2. 指定登陆用户 ####
 
-By default, ssh will try to connect using active user as a username. On the previous command, ssh will try to login into the server using a username named pungki. This is because user pungki on the client side, is running ssh client.
+默认的，ssh 会尝试用当前用户作为用户名来连接。在上面的示例命令中，ssh 会尝试用用户名叫 pungki 的用户身份来登入服务器，这是因为用户 pungki 正在客户机上使用 ssh 客服端软件。 
 
-What about if in the destination host, there is no user named pungki? Then you must supply a username that exist in the destination host. To specify the username from the beginning, use -l option
+假如目标主机上没有叫 pungki 的用户呢？这时你就必须提供一个目标主机上存在的用户名。从一开始就要指定用户名的，可以使用 -l 选项参数。
 
     $ ssh -l leni 192.168.0.103
 
 ![Ssh using -l option](http://linoxide.com/wp-content/uploads/2014/02/ssh_l.png)
 
-We can also type like this :
+我们也可以这样输入：
 
     $ ssh leni@192.168.0.0103
 
 ![Another way to supply username](http://linoxide.com/wp-content/uploads/2014/02/ssh_l_2.png)
 
-#### 3. Specify the port ####
+#### 3. 指定端口 ####
 
-**SSH default port is 22**. Most of modern Linux are open port 22. If you run ssh without defining a port, then ssh will direct the request via port 22.
+**SSH 默认使用的端口号是 22。**大多现代的 Linux 系统 22 端口都是开放的。如果你运行 ssh 程序而没有指定端口号，它直接就是通过 22 端口发送请求的。
 
-But some system administrator may changed the default SSH port. Let say that the port now is 1234. To contact that host, use **-p** option followed by SSH port.
+一些系统管理员会改变 SSH 的默认端口号。让我们试试，现在端口号是 1234.要连上那主机，就要使用 ***-p** 选项，后面在加上 SSH 端口号。
 
     $ ssh 192.168.0.103 -p 1234
 
-To change the port number, we need to modify the **/etc/ssh/ssh_config**.
-Find the line :
+要改变端口号，我们需要修改 **/etc/ssh/ssh_config** 文件，找到此行：
 
     Port 22
 
-Change it into another port, for example above, is 1234. Then restart the SSH service.
+把它换成其他的端口号，比如上面示例的 1234 端口，然后重启 SSH 服务。
 
-#### 4. Request compression on every data ####
+#### 4.对所有数据请求压缩 ####
 
-With this option, all data which sent and received via SSH will be compressed. The data still encrypted. To use compression with SSH, use **-C** option.
+有了这个选项，所有通过 SSH 发送或接收的数据将会被压缩，并且任然是加密的。要使用 SSH 的压缩功能，使用 **-C** 选项。
 
     $ ssh -C 192.168.0.103
 
