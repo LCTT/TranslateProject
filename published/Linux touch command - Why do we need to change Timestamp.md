@@ -8,7 +8,7 @@ Linux touch 命令 - 为什么我们需要改变时间戳？
 
 ### 为什么我们需要使用 touch 命令 ###
 
-既然 touch 命令描述的是改变时间戳，那么我们可能会想为什么我们需要去改变时间戳呢?这个问题会引发我们的深思。然而，我想有个理由可以解释为什么我们需要使用它。如果你参加了一个跨海的开源项目，那么时间戳可能变得很重要。编译源代码文件可能需要同一地区的时间戳。如果未统一，程序可能会编译失败。
+既然 touch 命令描述的是改变时间戳，那么我们可能会想为什么我们需要去改变时间戳呢?这个问题会引发我们的深思。然而，我想有个理由可以解释为什么我们需要使用它。如果你参加了一个全球范围的开源项目，那么时间戳可能变得很重要。编译源代码文件可能需要同一地区的时间戳。如果未统一，程序可能会编译失败。（译注：有强迫症的同学也很喜欢这个命令——就看不得乱七八糟的时间，;>）
 
 ### 不带任何选项下运行 touch ###
 
@@ -90,7 +90,7 @@ Linux touch 命令 - 为什么我们需要改变时间戳？
 
 现在**我们要将日期2014年1月14日改为2013年12月20日**。可以使用下列命令：
 
-    $ touch -d ‘'10-December-2013' file_3.txt
+    $ touch -d '10-December-2013' file_3.txt
 
 ![Change date using -d option](http://linoxide.com/wp-content/uploads/2014/01/touch_d_date.png)
 
@@ -159,6 +159,6 @@ Linux touch 命令 - 为什么我们需要改变时间戳？
 
 via: http://linoxide.com/linux-command/linux-touch-command/
 
-译者：[Luoxcat](https://github.com/Luoxcat) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Luoxcat](https://github.com/Luoxcat) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
