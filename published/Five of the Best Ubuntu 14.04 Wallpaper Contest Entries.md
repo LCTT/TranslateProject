@@ -14,7 +14,7 @@ Christos Kyriazidis 的 boat2
 
 ### 2. 雾中日出 ###
 
-![](http://farm6.staticflickr.com/5476/11416120446_00468648c1_c.jpg)
+![](http://farm6.staticflickr.com/5476/11416120446_00468648c1_c.jpg) 
 
 Brian Fox的雾中日出
 
@@ -26,7 +26,7 @@ Eduardo Diez Viñuela的IMGP8832
 
 ### 4. 旅行 ###
 
-![](http://www.flickr.com/photos/goldenfox27/12735618625/)
+![](http://farm4.staticflickr.com/3702/12735618625_0bb7cc61a4_c.jpg)
 
 Goldenfox的旅行
 
@@ -45,11 +45,12 @@ Gilberto Fotos的翠鸟
 Hjalte Nielsen的棕色的猫
 
 但是谁在乎我们这里的惊讶！-作品池里的哪幅作品你希望成为默认图片？
+
 --------------------------------------------------------------------------------
 
 via: http://www.omgubuntu.co.uk/2014/02/ubuntu-14-04-wallpaper-picks
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
