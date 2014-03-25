@@ -4,9 +4,9 @@
 
 ![从Vim访问剪切板](http://www.tecmint.com/wp-content/uploads/2014/02/vim-clipboard-content.jpeg)
 
-比如，要拷贝高亮的文本，我们使用‘**y**‘命令，并用‘x‘来剪切。但是，**vim**剪切板的内容默认上(不是**gVim**)不能被其他的vim示例访问。
+比如，要拷贝高亮的文本，我们使用‘**y**’命令，并用‘x’来剪切。但是，**vim**(不是**gVim**)剪切板的内容默认情况下是不能被其他的vim实例访问的。
 
-Vim使用‘**+**‘寄存器指向系统剪切板。你可以运行‘**vim ­­–version**‘，如果你看不到像“**+xterm_clipboard**”和“­**xterm_clipboard**“，那么内部剪切板将不能被外部**vim**访问。
+Vim版本信息中使用‘**+**’表示启用了系统剪切板。你可以运行‘**vim ­­–version**’，如果你看不到像“**+xterm_clipboard**”而是显示“­**xterm_clipboard**“，那么会使用内部剪切板，其将不能被其它的**vim**实例访问。
 
 ### 安装gvim和parcellite ###
 
@@ -14,7 +14,7 @@ Vim使用‘**+**‘寄存器指向系统剪切板。你可以运行‘**vim ­�
 
     # yum install -y gvim
 
-下面启用[RPMForge 仓库][1]安装**parcellite** 包。Parcellite是一款轻量级，小巧而免费的Linux剪切板管理工具。
+然后，使用[RPMForge 仓库][1]安装**parcellite** 包。Parcellite是一款轻量级，小巧而免费的Linux剪切板管理工具。
 
     # yum install -y parcellite
 
@@ -70,7 +70,7 @@ Vim使用‘**+**‘寄存器指向系统剪切板。你可以运行‘**vim ­�
 
 这个alias是内置的用于将一些命令绕到其他命令上。这样每次当vim命令运行时，相应的别名会启动默认带剪切板的gVim。
 
-现在，用类似的方式编辑你的‘**.vimrc**‘文件(以防你没有 **.vimrc**文件，生成这样一个文件然后再回来)。
+现在，用类似的方式编辑你的‘**.vimrc**’文件(以防你没有 **.vimrc**文件，生成这样一个文件然后再回来)。
 
     # vim ~/.vimrc
 
@@ -78,13 +78,13 @@ Vim使用‘**+**‘寄存器指向系统剪切板。你可以运行‘**vim ­�
 
     autocmd VimLeave * call system("echo -n $'" . escape(getreg(), "'") . "' | xsel -ib")
 
-现在在vim中打开任何文件并高亮部分文本(使用'v'命令)并按下'y'。尝试在vim外面的任何地方粘帖(关闭之后或者不用关闭vim)，你就完成了。
+现在在vim中打开任何文件并高亮部分文本(使用'v'命令)并按下'y'。尝试在vim外面的任何地方粘帖(关不关vim都行)，你就发现vim里面复制的内容被粘帖出来了。
 
-### 生成 .vimrc 文件 ###
+### 附：生成 .vimrc 文件 ###
 
 运行下面的命令来生成**.vimrc**文件（如果你已做了就跳过这部分）。
 
-    # cd   [This will put you in home directory]       
+    # cd   [返回到你的主目录]       
     # vim .vimrc
 
 在vim中在按下ESC键后运行下面的命令（在vim中，每个命令是在按下ESC键后也就是带你进入命令模式后运行的）。
@@ -96,7 +96,7 @@ Vim使用‘**+**‘寄存器指向系统剪切板。你可以运行‘**vim ­�
 
 via: http://www.tecmint.com/accessing-clipboard-contents-across-multiple-instances-of-vim-from-terminal/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
