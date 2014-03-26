@@ -1,3 +1,4 @@
+[translating] by KayGuoWhu
 Google embraces open source for 10th year of Summer of Code
 ================================================================================
 For many, open source is believed to be the future. If you aren't familiar, in basic terms, open source is software that is accompanied by free to distribute source code. By having the source code, users can see the guts of the program they are using. This is in contrast to closed source software, like most of Microsoft's, where the code is hidden to retain intellectual property and make a profit.
