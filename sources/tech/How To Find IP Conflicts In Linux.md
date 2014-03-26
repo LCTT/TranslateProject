@@ -1,3 +1,6 @@
+Translating------------------geekpi
+
+
 How To Find IP Conflicts In Linux
 ================================================================================
 You all know what IP addresses are, right? How they are assigned to devices on a network to represent them. They are assigned by DHCP servers and the change frequently. Now there are two kinds of IP’s. The dynamic ones who change frequently (a few times a day) and the static ones who, as the name suggests, are static, as in they don’t change. Sometimes that creates conflicts. When a dynamic IP is assigned and there is already another device on the network with the same static IP. Or it can happen when there are more than one DHCP servers giving IP’s on the same network from the same subnet. If you’re having connectivity issues and suspect it is due to IP conflict you can use a tool called arp-scan to detect them.
