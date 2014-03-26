@@ -1,4 +1,4 @@
-在Ubuntu 13.10上怎么连接装有iOS 7的iPhone或iPad
+在Ubuntu 上怎么连接装有iOS 7的iPhone或iPad
 ================================================================================
 在几个月前我买了一个安装了iOS 7系统的iPhone 5手机。当我试着把iPhone或者iPad连接到Linux电脑（Ubuntu和Linux Mint）上时，它能够被识别，会提示我：“是否信任这台电脑”？
 
@@ -50,9 +50,9 @@
 
 --------------------------------------------------------------------------------
 
-via: 
+via: http://itsfoss.com/mount-iphone-ipad-ios-7-ubuntu-13-10/
 
-译者：[zpl1025](https://github.com/zpl1025) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[zpl1025](https://github.com/zpl1025) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
