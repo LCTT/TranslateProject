@@ -82,8 +82,7 @@ SSH 一旦安装上，我们就可以在终端下输入 **ssh** 来检查下安�
 
     $ ssh -C 192.168.0.103
 
-This option will be useful if your connection is slow, such as using a modem. But when you are using a fast connection such as LAN or higher, than compression will be slow down your transfer rate.
-The level of compression can be controlled using **-o** option followed by **CompressionLevel** option. But this option will only applied for SSH-1.
+如果你的连网速度很慢的话，比如用 modem 上网，这个选项非常有用。但如果你使用的是像 LAN 或其它更高级网络的话，压缩反而会降低你的传输速度。可以使用 **-o** 选项加上**压缩级别参数**来控制压缩的级别，但这个选项仅仅只在 SSH-1 下起作用。
 
 #### 5. Define a cipher algorithm ####
 
