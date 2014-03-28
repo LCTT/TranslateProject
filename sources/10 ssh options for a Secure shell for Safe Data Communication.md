@@ -84,45 +84,45 @@ SSH 一旦安装上，我们就可以在终端下输入 **ssh** 来检查下安�
 
 如果你的连网速度很慢的话，比如用 modem 上网，这个选项非常有用。但如果你使用的是像 LAN 或其它更高级网络的话，压缩反而会降低你的传输速度。可以使用 **-o** 选项加上**压缩级别参数**来控制压缩的级别，但这个选项仅仅只在 SSH-1 下起作用。
 
-#### 5. Define a cipher algorithm ####
+#### 5. 指定一个加密算法 ####
 
-SSH provides some cipher algorithms to be used. These algorithms can be seen inside **/etc/ssh/ssh_config or ~/.ssh/config file** (if exist).
+SSH 提供了一些可用的加密算法。可以在 **/etc/ssh/ssh_config or ~/.ssh/config ** 文件中看到（如果存在的话）。
 
 ![SSH cipher configuration example](http://linoxide.com/wp-content/uploads/2014/02/ssh_cipher.png)
 
-Let say you want to use **blowfish** algorithm for encrypting your SSH session. Then you can put this line into your **/etc/ssh/ssh_config or ~/.ssh/config** file :
+让我们试试比如你想使用 **blowfish** 算法来加密你的 SSH 会话，那么你只要把这一行加入你的 **/etc/ssh/ssh_config or ~/.ssh/config** 文件就可以：
 
     Cipher blowfish
 
-By default, SSH will use 3des algorithm
+默认的，SSH 会使用 3des 算法。
 
-#### 6. Turn on debug mode ####
+#### 6. 打开调试模式 ####
 
-For some reason, we may want to debug the SSH connection that we want to create. SSH provides **-v** option to do this.
+因为某些原因，我们想要追踪调试我们建立的 SSH 连接情况。SSH 提供的 **-v** 选项参数正是为此而设的。
 
     $ ssh -v 192.168.0.103
 
 ![debug ssh connection](http://linoxide.com/wp-content/uploads/2014/02/ssh_v.png)
 
-#### 7. Bind source address ####
+#### 7. 绑定源地址 ####
 
-If your client has more than 2 IP Address, you might not know which IP Address is used to create a connection to the SSH server.
+如果你的客服端有多于两个以上的 IP 地址，你就不可能分得清楚在使用哪一个 IP 连接到 SSH 服务器。
 
 ![More than 1 IP Address](http://linoxide.com/wp-content/uploads/2014/02/ifconfig.png)
 
-To solve this situation, we can use -b option which will bind an IP Address to SSH connection. This IP Address will be used as the source address of the connection.
+为了解决这种情况，我们可以使用 **-b** 选项来绑定一个IP 地址。这个 IP 将会被使用做建立连接的源地址。
 
     $ ssh -b 192.168.0.200 -l leni 192.168.0.103
 
-On the server side, we can check the established connection to the server using netstat. We see that 192.168.0.200 connection is established.
+服务端，我们可以使用 netstat 命令来检查到服务的连接是否建立。可以看到 IP 为 192.168.0.200 的连接已经建立。
 
 ![Bind address using SSH](http://linoxide.com/wp-content/uploads/2014/02/ssh_bind.png)
 
-#### 8. Use other configuration file ####
+#### 8. 使用其他配置文件 ####
 
-By default, ssh will use a ssh configuration file which located in **/etc/ssh/ssh_config**. This file is applied to system wide. If you want to apply particular setting to specific user, you should put it in **~/.ssh/config** file. If you don’t see it, you can create it.
+默认情况下，ssh 会使用位于 **/etc/ssh/ssh_config** 的配置文件。这个配置文件作用于系统的所有用户。但你想要为特定的用户指定特殊的设置的话，可以把配置放入 **~/.ssh/config** 文件中。如果此文件不存在，可以手工创建一个。
 
-Here’s a sample of a custom **ssh_config**. This config is located in **/home/pungki directory**.
+下面是一个通用 **ssh_config** 文件配置的例子。这配置文件位于 **/home/pungki** 目录下。
 
     Host 192.168.0.*
     ForwardX11 yes
@@ -132,51 +132,51 @@ Here’s a sample of a custom **ssh_config**. This config is located in **/home/
     Protocol 2
     HashKnownHosts yes
 
-To use a specific config file, we can use **-F** option.
+要使用指定的配置文件，可以使用 **-F** 选项。
 
     $ ssh -F /home/pungki/my_ssh_config 192.168.0.101
 
 ![Specify your ssh_config](http://linoxide.com/wp-content/uploads/2014/02/ssh_F.png)
 
-### 9. Use SSH X11 Forwarding ###
+### 9. 使用 SSH X11 Forwarding ###
 
-For some reason, you may want to display a X11 application on the server into your client computer. SSH provides **-X** option to do this. But in order to enable this feature, we need some preparation. Here’s the settings
+某些时候，你可能想把服务端的 X11 应用程序显示到客服端计算机上，SSH 提供了 **-X** 选项。但要启用这功能，我们需要做些准备，下面是它的设置：
 
-On the server side, you need to enable line **ForwardX11 yes or X11Forward yes** in **/etc/ssh/ssh_config**. Then restart your SSH server.
+在服务器端，你需要使 **/etc/ssh/ssh_config** 文件中的行设置成 **ForwardX11 yes 或者 X11Forwad yes**，以启用 X11 Forwarding，重启 SSH 服务程序。
 
-Then on the client side, type **ssh -X user@host** :
+然后在客服端，输入 **ssh -X user@host**:
 
     $ ssh -X leni@192.168.0.101
 
-Once you have logged on, you can check it by typing :
+一旦登陆，可以输入：
 
     $ echo $DISPLAY
 
-You should see something like
+来检查，你应该可以看到向如下所示的
 
     localhost:10:0
 
-Then to run an application, just type the command of the application. Let say you want to run xclock application. Then type :
+随后就可以运行应用了，仅仅只能输入应用程序的命令。让我们试试，比如想运行 xclock 程序，输入：
 
     $ xclock
 
 ![Use X11 Formading](http://linoxide.com/wp-content/uploads/2014/02/ssh_Y.png)
 
-When it run, actually you are running the xclock application on the remote system, but display it on your local system.
+它就运行起来了，xclock 确实是运行在远端系统的，但它在你的本地系统里显示了。
 
 ![xclock](http://linoxide.com/wp-content/uploads/2014/02/xclock.png)
 
-#### 10. Trusted X11 Forwading ####
+#### 10. 可信任的 X11 转发 ####
 
-If you pretty sure that your network is secure, then you may want to use **Trusted X11 Forwarding**. This mean that the remote X11 clients will have full access to the original X11 display. To use this option, we can use **-Y** option.
+如果你敢肯定你的网络是安全的，那么你可以使用**可信任的 X11 转发机制**。这意味着远程的 X11 客服端可以完全的访问源 X11 显示内容。要使用此功能，可以使用 **-Y** 选项。
 
     $ ssh -Y leni@192.168.0.101
 
 ![SSH _Y for trusted connection](http://linoxide.com/wp-content/uploads/2014/02/ssh_Y1.png)
 
-### Conclusion ###
+### 结论 ###
 
-We believe that SSH is used in wide-range area. Security and flexibility is one of the SSH offer to the user. As usual we can always type **man ssh** and **man ssh_config** to display its manual pages and explore more detail.
+我们相信 SSH 的使用范围非常之广。SSH 给用户提供了网络连接的极大安全性和灵活性。通常我们都会输入 **man ssh** 和 **man ssh_config** 来显示它的用户手册及查看更多的细节。
 
 --------------------------------------------------------------------------------
 
