@@ -1,9 +1,6 @@
-Translating--------------geekpi
-
-
-Linux Commands Cheat Sheet in Black & White
+Linux 命令黑白备忘录
 ================================================================================
-Keep this linux cheat sheet on your desk printed , I am sure you will learn them quick and will be a linux expert very soon. We have added had both pdf and image (png) format of the cheat sheet. Please keep us posted if you need us to add more commands. Command are categorized 13 sections according its usage.We have designed the command in white color with black background as we often use on linux shell. We have added bit red color for attraction :-).
+在你的桌面上保留一份打印的备忘录，我保证你会很快学会并成为一个专家。我们已经同时加入pdf和图片(png)两种格式的备忘录。如果你需要我们加入更多命令请保留我们的文章。命令依据它们的用途被分类成13类。我们将命令设计在如我们经常使用的linux shell那样的黑底白字。我们还加入了一些红色来提升注意。:-)
 
 ![](http://linoxide.com/guide/linux-cheat-sheet.png)
 
@@ -11,6 +8,6 @@ Keep this linux cheat sheet on your desk printed , I am sure you will learn them
 
 via: http://linoxide.com/linux-command/linux-commands-cheat-sheet/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/译者ID) 校对：[geekpi](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
