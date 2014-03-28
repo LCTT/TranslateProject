@@ -68,7 +68,7 @@ Nokto 没有自己的图标集，但它是一个很漂亮的黑色主题。要�
 
 via: http://itsfoss.com/best-themes-ubuntu-1310/
 
-译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

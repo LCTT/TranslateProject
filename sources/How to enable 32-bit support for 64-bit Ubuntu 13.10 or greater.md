@@ -1,3 +1,4 @@
+crowner translating 
 How to enable 32-bit support for 64-bit Ubuntu 13.10 or greater
 ================================================================================
 Most of you who use Ubuntu/Debian based distributions prefer the 64-bit mode, right? That’s because 64-bit architecture utilizes the full capabilities of your hardware. It enables you to use applications with intensive memory requirements and actually use them without having to wait for an hour after every little thing you do. Now, there are merits to 32-bit mode, most notably the fact that there are not many incompatibility problems with it. Every time Java did an update there was confusion as most users didn’t have the required libraries. In the past, some other early applications and drivers simply did not have 64-bit versions.
