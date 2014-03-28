@@ -1,3 +1,4 @@
+(translating by runningwater)
 Daily Ubuntu Tips – Manually Install Oracle Java JDK 8 In Ubuntu
 ================================================================================
 This brief tutorial is going to show you how to manually install Oracle Java JDK 8, which was just recently released in Ubuntu. This method will show you how to download the package from its download page and install it in Ubuntu without using external PPAs or third party sources.
@@ -54,7 +55,7 @@ Enjoy!
 
 via: http://www.liberiangeek.net/2014/03/daily-ubuntu-tips-manually-install-oracle-java-jdk-8-in-ubuntu/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
