@@ -1,3 +1,6 @@
+Translating--------------geekpi
+
+
 Linux Commands Cheat Sheet in Black & White
 ================================================================================
 Keep this linux cheat sheet on your desk printed , I am sure you will learn them quick and will be a linux expert very soon. We have added had both pdf and image (png) format of the cheat sheet. Please keep us posted if you need us to add more commands. Command are categorized 13 sections according its usage.We have designed the command in white color with black background as we often use on linux shell. We have added bit red color for attraction :-).
