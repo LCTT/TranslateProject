@@ -1,3 +1,5 @@
+intermerlin Translating
+
 What Options you use for Linux killall Command ? I have 5 Options
 ================================================================================
 Linux command line offers various commands to kill a process. For example, the ‘kill’ command can be used to kill a process by passing its PID as an argument, the ‘pkill’ command takes a pattern as an input and all the matching running processes are killed. But there exists a command ‘killall’, which exactly matches the argument name by default, and kills the matching process. In this article, we will discuss this command with some practical examples.
