@@ -1,3 +1,7 @@
+Translating-----------geekpi
+
+
+
 How To Look Up Dictionary Definitions Via Terminal
 ================================================================================
 Most people when they find a word they’re not familiar with, they Google it. Either that or they have a favorite online dictionary that provides an answer. What happens when you have no network connectivity? Or maybe you have an older distribution of Linux and you don’t have a GUI? You need to look it up offline. A good way to do that is here.
