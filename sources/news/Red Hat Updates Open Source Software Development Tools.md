@@ -1,3 +1,4 @@
+[translating] by KayGuoWhu
 Red Hat Updates Open Source Software Development Tools
 ================================================================================
 [Red Hat][1] (RHT) has updated its lineup of open source programming languages and development tools known as Red Hat Software Collections, which are now available in a beta release of version 1.1 The development suite complements (but is released independently of) the company's flagship [Red Hat Enterprise Linux][2] (RHEL) product.
