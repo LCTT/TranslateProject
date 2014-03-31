@@ -1,3 +1,4 @@
+(翻译中 by runningwater)
 Daily Ubuntu Tips – Install NetBeans IDE 8.0 In Ubuntu
 ================================================================================
 NetBeans 8.0 has just been released and this brief tutorial is going to show you how to easily install it in Ubuntu if you haven’t already done so. For developers who need help installing NetBeans in Ubuntu, this post will guide you.
@@ -48,7 +49,7 @@ Enjoy!
 
 via: http://www.liberiangeek.net/2014/03/daily-ubuntu-tips-install-netbeans-ide-8-0-in-ubuntu/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
