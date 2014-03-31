@@ -26,7 +26,7 @@ CDC网络控制模型(NCM)同样有一个驱动提供了规范(CDC NCM support)�
 
 再说一次，还有更多的驱动用于供货商特定设备。
 
-有趣的事实：Linux被用于制作James Cameron的电影"泰坦尼克"的特效。
+	有趣的事实：Linux被用于制作James Cameron的电影"泰坦尼克"的特效。
 
 "CDC Phonet support"是用于使用Phonet的Nokia USB调制解调器。(译注：Phonet是Nokia开发的面向数据包的通信协议,仅用于Nokia maemo/meego产品)
 
@@ -40,7 +40,7 @@ CDC网络控制模型(NCM)同样有一个驱动提供了规范(CDC NCM support)�
 
 内核开发者可能注意到一些无线设备可以支持QoS。QoS代表"Quality of Service"(服务质量)。这个特性给予网络传输优先级。假设需要通过网络传输两组数据。只有一个可以先发送。QoS会先发送最重要的数据。
 
-有趣的事实：技术上来说，Linux并不是一个操作系统。Linux是一种内核而GNU/Linux是操作系统。。
+	有趣的事实：技术上来说，Linux并不是一个操作系统。Linux是一种内核而GNU/Linux才是操作系统。
 
 WAN卡需要"Generic HDLC layer"。HDLC代表"High-Level Data Link Control"(高级数据链路控制)。这是一个数据链路层协议。
 
@@ -72,7 +72,7 @@ HDLC同样支持PPP(Synchronous Point-to-Point Protocol (PPP) support)和X.25(X.
 
 VMware使用vmxnet3虚拟以太网需要这个驱动(VMware VMXNET3 ethernet driver)。当在为大量用户编译内核时，最好将这个启用为一个模块，因为一些人可能并不希望在VMware上使用以太网。
 
-Hyper-V虚拟网络需要这个驱动(Microsoft Hyper-V virtual network driver)。你可能想知道这个是否与微软的Hyper-V相同。使得，Linux支持Hyper-V。
+Hyper-V虚拟网络需要这个驱动(Microsoft Hyper-V virtual network driver)。你可能想知道这个是否与微软的Hyper-V相同？是的，Linux支持Hyper-V。
 
 数字电话服务ISDN由这个驱动提供(ISDN support)。ISDN代表"Integrated Services Digital Network"(综合业务数字网)。在法国，ISDN被称为RNIS，代表" Réseau numérique à intégration de services"。有一台ISDN适配器，计算机可以开始并接收语音呼叫。这允许计算机用来做因待机或者其他一些电话服务设备。ISDN同样也可以携带视频信息。
 
@@ -88,7 +88,7 @@ Hyper-V虚拟网络需要这个驱动(Microsoft Hyper-V virtual network driver)�
 
 注意：当为广泛的用户组编译内核时，包含大多数或者全部输入设备作为模块，因为通常不知道用户可能插到计算机上的设备类型。
 
-有趣的事实：Vanilla内核就是Linux自己的原始内核，是未改变的状态。
+	有趣的事实：Vanilla内核就是Linux自己的原始内核，是未改变的状态。
 
 "Mouse interface"对于鼠标创建了两个不同的设备文件。这两个设备文件是/dev/input/mouseX 和 /dev/input/mice。
 
@@ -116,6 +116,6 @@ Hyper-V虚拟网络需要这个驱动(Microsoft Hyper-V virtual network driver)�
 
 via: http://www.linux.org/threads/the-linux-kernel-configuring-the-kernel-part-15.4793/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
