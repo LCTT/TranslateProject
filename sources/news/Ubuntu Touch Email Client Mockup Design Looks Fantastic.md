@@ -1,3 +1,5 @@
+translating by tomatoKiller
+
 Ubuntu Touch Email Client Mockup Design Looks Fantastic
 ================================================================================
 One of the most anticipated applications for Ubuntu Touch is by far the email app, and heavy battles are being fought on that front. Now, a designer proposed a look for the new app and shared a mockup on Google+.
