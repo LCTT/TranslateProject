@@ -1,5 +1,6 @@
 How To Play 3D Movies In Ubuntu
 ================================================================================
+Translating
 Dear linux geeks,
 
 **Q:** I downloaded a very high quality 3D movie, but when I try to play it with VLC media player the screen is split in two parts and I don’t like to watch the move like that.
