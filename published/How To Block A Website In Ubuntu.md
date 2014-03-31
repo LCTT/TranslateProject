@@ -10,9 +10,7 @@
 
 请确保您有使用此方法时在机器上处于root用户访问状态，因为**/etc/hosts文件**文件由root用户拥有的，所以它不能被不被普通用户编辑。
 
-你需要在**/etc/hosts**文件中编辑什么那？
-
-root权限和一个文本编辑器。
+编辑 **/etc/hosts** 文件您需要什么？root权限和一个文本编辑器。
 
 在本教程中我将用我喜欢的文本编辑器，vim。好了，打开一个新的终端（**CTRL+ALT+T**），然后运行下面的命令来打开/etc/hosts文件进行编辑。
 
@@ -28,7 +26,7 @@ root权限和一个文本编辑器。
 
 我的表弟是沉迷于Facebook的社交网络，每次他发现我的笔记本电脑的时候，他就打开它，并去facebook.com陪陪他的朋友。
 
-我应该怎么做那？
+我应该怎么做呢？
 
 我编辑**/etc/hosts**文件，这样他想访问的网站就像已关闭了一样。
 
@@ -38,6 +36,6 @@ root权限和一个文本编辑器。
 
 via: http://www.unixmen.com/block-website-ubuntu/
 
-译者：[乌龙茶](https://github.com/yechunxiao19) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[乌龙茶](https://github.com/yechunxiao19) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
