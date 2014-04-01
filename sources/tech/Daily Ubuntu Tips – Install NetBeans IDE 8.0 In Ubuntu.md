@@ -1,15 +1,14 @@
-(翻译中 by runningwater)
-Daily Ubuntu Tips – Install NetBeans IDE 8.0 In Ubuntu
+日常 Ubuntu 小技巧 - Ubuntu 中安装 NetBeans IDE 8.0
 ================================================================================
-NetBeans 8.0 has just been released and this brief tutorial is going to show you how to easily install it in Ubuntu if you haven’t already done so. For developers who need help installing NetBeans in Ubuntu, this post will guide you.
+NetBeans 8.0 刚刚发布，如果你还没有安装的话，这篇简短的教程将会演示如何在 Ubuntu 系统上快速的安装。对安装 NetBeans 需要帮助的开发者来说，这往篇文章会是不错的指导。
 
-For those who don’t know what NetBeans is, it’s an IDE application that allows users to quickly and efficiently develop and build desktop, mobile and web applications.
+给那些还不知道 NetBeans 的解释下，NetBeans 是一款 IDE 应用软件工具，用户可以快速、高效的开发和构建桌面应用程序、移动应用程序及网页应用程序。
 
-It’s free and open-source and is supported by a vast community of users and developers.
+它是免费及和开源的产品，并且由很多用户及开发者所组成的一个巨大社区所支持。
 
-Some of the features that were released in version 8 are, support for JDK 8 editor and tools enhancements, Tomcat 8.0 support, enhanced CDI integration, a new Maven graph layout switcher, new editor for supporting and creating JQuery widgets and plugins, and HTML 5, PHP 5.5 support.
+在发布的版本 8 里面增加的一些功能是：对 JDK 8 编辑器和工具增强功能的支持、Tomcat 8.0 的支持、CDI 增强功能集成、一个新的 Maven 图形布局切换器、一个支持和创造 JQuery 控件和插件的编辑器、HTML 5 及 PHP 5.5 的支持。
 
-For more about this release, [check out its release page][1].
+关于此发布版本更多细节，[请查看它的发布主页][1]。
 
 There are two primary ways to download and install NetBeans IDE. One is downloading a package file that combines JDK 8 and NetBeans. This combination allows for the development of applications on the Java platform.
 
