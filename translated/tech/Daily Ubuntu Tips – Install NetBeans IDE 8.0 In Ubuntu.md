@@ -10,39 +10,39 @@ NetBeans 8.0 刚刚发布，如果你还没有安装的话，这篇简短的教�
 
 关于此发布版本更多细节，[请查看它的发布主页][1]。
 
-There are two primary ways to download and install NetBeans IDE. One is downloading a package file that combines JDK 8 and NetBeans. This combination allows for the development of applications on the Java platform.
+下载和安装 NetBeans IDE 有两种主要的方式。一种是下载包含 JDK8 和 NetBeans 的一个包文件。这种组合使得运行在 Java 平台的应用程序可扩展性很强。
 
-To get this package, [download it from here][2].
+[从这儿下载][2]，可获得此包。
 
-Another way to get NetBeans is go download and install it directly from its download page. There, you have the option to download the complete package which contains, NetBeans Platform SDK, Java SE, Java FX, Java EE, Java ME, HTML5, C/C++, Groovy, PHP and Apache Tomcat 8.0.
+另外一种获得 NetBeans 的方法就是直接从它的官方下载页面来下载和安装。这种方式，可以有选择性的下载包含有像 NetBeans 平台 SDK、Java FX、Java EE、Java ME、HTML5、C/C++、Groovy、PHP 和 Apache 的 Tomcat 8.0 等组件的完全包。
 
-There are five options of the package to download. Choose the package you wish to download and click the Download button.
+有五个可选的下载包，选择您想要的一个，然后点击下按钮。
 
-To get these packages, visit [NetBeans download page][3].
+要获得这些包，请浏览[ NetBeans 下载页面][3]。
 
-### Install Java JDK first before installing NetBeans ###
+### 安装 NetBeans 前安装 Java JDK ###
 
-Before you can install NetBeans, you must first install Java JDK. Without it, NetBeans won’t install. To lean how to install Java  JDK, read [this post][4].
+在安装 NetBeans 前，必须要安装 Java JDK。没有 JDK，NetBeans 是安装不上的。关于怎么安装 Java JDK 的知识，可以读读 [这篇文章][4]。
 
-After installing Java JDK, continue below to install NetBeans.
+安装了 Java JDK 后，继续下面的 NetBeans 安装。
 
-If you chose the Oracle version, then JDK is already packaged into the file. All you have to do is run the executable to install both JDK and NetBeans.
+如果您选择的是 Oracle 公司的版本的话，JDK 已经集成在下载包文件中了，您需要做的就是运行可执行文件把 JDK 和 NetBeans 都安装上。
 
-Once you’ve downloaded the package you want, run the commands below to make the package executable.
+下载好您需要的安装包后，运行如下的命令，使安装包变为可执行状态。
 
     chmod +x ~/Downloads/netbeans-8.0-linux*.sh
 
-the commands above assume that the file was downloaded in your Downloads folder in Ubuntu
+上面的命令是假设这个文件已经下载到您的 Ubuntu 系统的下载目录中了。
 
-Next, run the commands below to begin the installation.
+下一步，运行如下命令来开始安装。
 
     sh -c " ~/Downloads/netbeans-8.0-linux*.sh"
 
-Follow the wizard until the installation is complete.
+根据安装向导操作，直到安装完成。
 
 ![netbeans-ubuntu](http://www.liberiangeek.net/wp-content/uploads/2014/03/netbeansubuntu.png)
 
-Enjoy!
+享受吧！
 
 --------------------------------------------------------------------------------
 
