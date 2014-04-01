@@ -1,4 +1,4 @@
-Linux 内核新闻－2014年1月及2月
+Linux 内核事件回顾－2014年1月及2月
 ================================================================================
 过去两个月来，我一直在本文中更新报道Linux项目的进展情况。请原谅我最近在埋头于一些开发工作。闲话少说，让我们赶紧把落下的功课补上。
 
@@ -51,18 +51,18 @@ Jiri Slaby正在接管3.12稳定分支的长期维护工作。Greg KH将继续�
 ### 最新稳定版及扩展版发布 ###
 
 #### Release	Version	Projected EOL ####
-Stable 3.13	3.13.6	Not announced
-Stable 3.12	3.12.14	Not announced
-Stable 3.11	3.11.10	EOL November 29 2013
-Longterm 3.10	3.10.33	September 2015
-Longterm 3.4	3.4.82	October 2014
-Longterm 3.2	3.2.55	2016
-Longterm 3.0	3.0.101	EOL October 22 2013
-Longterm 2.6.34	2.6.34.15 	EOL February 10 2014
-Longterm 2.6.32	2.6.32.61 	mid-2014
-Extended stable 3.11.y.z	3.11.10.6	[Extended Stable][8]
-Extended stable 3.8.y.z	3.8.13.19	[Extended Stable][9]
-Extended stable 3.5.y.z	3.5.7.31	[Extended Stable][10]
+	Stable 3.13	3.13.6	Not announced
+	Stable 3.12	3.12.14	Not announced
+	Stable 3.11	3.11.10	EOL November 29 2013
+	Longterm 3.10	3.10.33	September 2015
+	Longterm 3.4	3.4.82	October 2014
+	Longterm 3.2	3.2.55	2016
+	Longterm 3.0	3.0.101	EOL October 22 2013
+	Longterm 2.6.34	2.6.34.15 	EOL February 10 2014
+	Longterm 2.6.32	2.6.32.61 	mid-2014
+	Extended stable 3.11.y.z	3.11.10.6	[Extended Stable][8]
+	Extended stable 3.8.y.z	3.8.13.19	[Extended Stable][9]
+	Extended stable 3.5.y.z	3.5.7.31	[Extended Stable][10]
 
 如果你还想知道这些稳定版的发布是如何管理的，或者新版多久发布一次，详见[Active kernel releases][11]。
 
@@ -96,7 +96,7 @@ Linux3.14-rc5的声明中，Linus Torvalds说道“下一周，下一个rc。一
 
 via: http://www.linuxjournal.com/content/linux-kernel-news-january-and-february-2014
 
-译者：[Mr小眼儿](http://blog.csdn.net/tinyeyeser) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Mr小眼儿](http://blog.csdn.net/tinyeyeser) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
