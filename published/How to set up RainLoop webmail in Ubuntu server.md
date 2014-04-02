@@ -1,8 +1,8 @@
-如何在 Ubuntu server 中设置 RainLoop 网页邮件
+如何在 Ubuntu server 中设置 RainLoop Webmail
 ================================================================================
-网页邮件无疑是任何邮件服务器必不可少的一部分。而本地邮件客户端通常比网页邮件的功能更多，通过电子邮件客户端从外部可信的网络访问IMAP或SMTP有时会很棘手。再则，当你需要一个特定的工作站、笔记本电脑或者移动设备去使用一个电子邮件客户端，你可以在任何地方使用网页邮件服务，只要你接入互联网。
+Webmail无疑是任何邮件服务器必不可少的一部分。虽然本地邮件客户端通常比Webmail的功能更多，但通过电子邮件客户端从外部可信的网络访问IMAP或SMTP有时会很棘手。再者，当你需要在一个特定的工作站、笔记本电脑或者移动设备去使用一个电子邮件客户端时，你可以在任何地方使用Webmail服务，只要你接入互联网。
 
-本教程的重点是在一个运行 Apache 的 Ubuntu 服务器上设置[RainLoop][1]网页邮件。RainLoop 是基于 PHP 的网页邮件，并且有以下功能。
+本教程的重点是在一个运行 Apache 的 Ubuntu 服务器上安装配置[RainLoop][1] Webmail。RainLoop 是基于 PHP 的Webmail，并且有以下功能。
 
 - 支持apache，nginx和其它网页服务器。
 - 标准接口补充了一个主题库可供选择。
@@ -43,11 +43,11 @@
 
 当然，建议尽快修改默认密码。我们将使用管理面板去调整一下设置。
 
-### 增加域 ###
+### 增加邮件域 ###
 
 在 管理面板> 域> 增加域 页面设置有效的域。建议服务器 IP 是本地服务器，如 127.0.0.1。基于服务器配置，RainLoop 可以配置使用 IMAP/IMAPS 或 SMTP/SMTPS。并且，确认‘使用短登录表单’复选框已勾选。
 
-![](http://www.flickr.com/photos/xmodulo/12603680854/)
+![](http://farm4.staticflickr.com/3736/12603680854_eb22bd8eb8_z.jpg)
 
 使用‘测试连接’按钮验证设置。
 
@@ -62,7 +62,7 @@
 
 现在这个功能可以通过管理面板>联系人页面启用。
 
-![](http://www.flickr.com/photos/xmodulo/12603262215/)
+![](http://farm8.staticflickr.com/7452/12603262215_2299bdafc5_z.jpg)
 
 再来一次，使用‘测试’按钮检查设置。
 
@@ -76,11 +76,11 @@
 
 接下来，去允许 RainLoop 使用 poppassd，从 管理面板> 软件包 页面安装 RainLoop 插件 poppassd。
 
-![](http://www.flickr.com/photos/xmodulo/12603357113/)
+![](http://farm4.staticflickr.com/3734/12603357113_a966caf534_z.jpg)
 
 最后，poppassd 插件可以从 管理面板> 插件页面启用。
 
-![](http://www.flickr.com/photos/xmodulo/12603681254/)
+![](http://farm8.staticflickr.com/7356/12603681254_56fc0b3e9f_z.jpg)
 
 现在所有参数已设置，用户可以从他们提供的凭证登录，如截图所示。
 
@@ -88,7 +88,7 @@
 - user: user@domain
 - pass: password 
 
-![](http://www.flickr.com/photos/xmodulo/12603357333/)
+![](http://farm4.staticflickr.com/3721/12603357333_724fbddaff_z.jpg)
 
 希望这篇文章能帮助到你。
 
