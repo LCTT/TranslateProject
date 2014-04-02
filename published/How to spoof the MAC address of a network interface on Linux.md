@@ -1,12 +1,12 @@
 Linux 上的 MAC 地址欺骗
 ================================================================================
-网卡生产商在每一张网卡（NIC）在出厂时都会在上面刻上一个48位的全球唯一标识符（GUID，例如08:4f:b5:05:56:a0），这串 GUID 就是网卡的 MAC 地址，用于确定一张网卡的身份。MAC 地址的高24位叫 OUI(Organizationally Unique Identifier)，是为网卡设置 MAC 地址的组织的标识符，这样一来，不同组织设置的 MAC 地址就不会冲突了。
+网卡生产商在每一张网卡（NIC）在出厂时都会在上面刻上一个48位的全球唯一标识符（GUID，例如08:4f:b5:05:56:a0），这串 GUID 就是网卡的 MAC 地址，用于确定一张网卡的身份。MAC 地址的高24位叫 OUI(Organizationally Unique Identifier 组织唯一标示符)，是为网卡设置 MAC 地址的组织的标识符，这样一来，不同组织设置的 MAC 地址就不会冲突了。（译注：实际生产中，并不是每个网络设备都有不同的MAC地址，有时候地址空间不足，生产商会给发往不同地区国家的产品中用相同的地址空间。）
 
 虽然 MAC 地址由厂商指定，但用户可以改变它，这就是传说中的“MAC 地址欺骗”。本文将向大家展示**如何在 Linux 上玩 MAC 地址欺骗**。
 
 ### 为什么要玩 MAC 地址欺骗？ ###
 
-想要理由？这里就给几个比较有技术含量的理由。 一些网络供应商会通过绑定你家路由器上的 MAC 地址来验证你的身份，这个时候如果你的路由器坏了，你怎么办？你可以暂时把你的电脑的 MAC 地址改成你家路由器的 MAC 地址，让你的 ISP 重新将你连入外网。
+想要理由？这里就给几个比较有技术含量的理由。 一些网络供应商会通过绑定你家路由器上的 MAC 地址来验证你的身份，这个时候如果你的路由器坏了，你怎么办？你可以暂时把你的电脑的 MAC 地址改成你家路由器的 MAC 地址，让你的 ISP 重新将你连入外网。（译注：有这种事情么？）
 
 很多 DHCP 服务器会依赖 MAC 地址来分配 IP 地址。如果你想换一个分配给你的 IP 地址，你可以改改你的 MAC 地址。这样一来，你不必等着 DHCP 服务器给你重新分一个 IP 地址，而是马上就能得到一个新的。
 
@@ -61,7 +61,7 @@ macchanger 这个命令可以让你把 MAC 地址改成不同生产厂商的序�
 
     $ macchanger -l | grep -i juniper 
 
-![](http://www.flickr.com/photos/xmodulo/12602895995/)
+![](https://c2.staticflickr.com/8/7409/12602895995_eeea1f7516.jpg)
 
 显示一块网卡原来的 MAC 地址和伪装的 MAC 地址：
 
@@ -113,7 +113,7 @@ macchanger 这个命令可以让你把 MAC 地址改成不同生产厂商的序�
 
 via: http://xmodulo.com/2014/02/spoof-mac-address-network-interface-linux.html
 
-译者：[bazz2](https://github.com/bazz2) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[bazz2](https://github.com/bazz2) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
