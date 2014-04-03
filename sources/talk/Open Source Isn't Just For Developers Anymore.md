@@ -1,3 +1,4 @@
+[translating] blueabysm
 Open Source Isn't Just For Developers Anymore
 ================================================================================
 > Once a developer's hobby, a new survey finds open source is increasingly being driven
