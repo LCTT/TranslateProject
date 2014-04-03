@@ -1,3 +1,6 @@
+Translating----------geekpi
+
+
 2048 Now Available For Offline Play In Ubuntu
 ================================================================================
 ![](http://itsfoss.com/wp-content/uploads/2014/03/2048_ubuntu_game.jpeg)
