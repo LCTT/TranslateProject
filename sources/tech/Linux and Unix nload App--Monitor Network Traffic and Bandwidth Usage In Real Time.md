@@ -1,3 +1,4 @@
+[translating] blueabysm
 Linux and Unix nload App: Monitor Network Traffic and Bandwidth Usage In Real Time
 ================================================================================
 If you want to monitor network throughput on the command line interface, use nload application. It is a console application which monitors network traffic and bandwidth usage in real time. It visualizes the in and outgoing traffic using two graphs and provides additional info like total amount of transferred data and min/max network usage.
