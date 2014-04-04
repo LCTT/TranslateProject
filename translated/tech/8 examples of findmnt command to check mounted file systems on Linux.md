@@ -1,32 +1,31 @@
-Translating
-8 examples of findmnt command to check mounted file systems on Linux
+检查Linux中已挂载的文件系统的findmnt命令的8个例子
 ================================================================================
-### Mounted file systems and devices ###
+### 已挂载的文件系统和设备 ###
 
-The more common command to check mounted file systems on linux is the mount command which is used to not only list mounted devices, but also mount and unmount them as and when needed. Here is another nifty command called findmnt, that can be used to take a quick look at what is mounted where and with what options. 
+linux中更常用的检查已挂载的文件系统的是mount命令，不仅用于列出已挂载的设备，而且可以在需要的时候挂载和卸载。这有一个叫做findmnt的俏皮的命令，它可以用于快速查看挂载位置和选项。
 
-### Install findmnt ###
+### 安装findmnt ###
 
-The findmnt command comes from the packages util-linux which is installed by default on most distros like Ubuntu, Fedora, Debian
+findmnt命令来自util-linux软件包，默认安装在大多数像Ubuntu，Fedora，Debian发行版
 
     $ aptitude search util-linux
     i   util-linux                     - Miscellaneous system utilities
 
     $ yum info util-linux
 
-### Using findmnt ###
+### 使用findmnt ###
 
-#### 1. List the file systems ####
+#### 1. 列出文件系统 ####
 
-Running findmnt without any options would simply list out all the mounted file systems in a tree style layout.
+执行没有任何选项的findmnt将简单的在树形结构中列出所有已挂载的文件系统。
 
     $ findmnt
 
 ![](http://www.binarytides.com/blog/wp-content/uploads/2014/03/findmnt.png)
 
-#### 2. Output in list format ####
+#### 2. 以列表形式输出 ####
 
-The output can be formatted as a plain list, instead of the default tree style, using the l option making it convenient to read.
+输出可以格式化为一个简单的列表，而不是默认的树形结构，使用l（键盘u和o中间那个，不是数字1）选项使它方便阅读。
 
     $ findmnt -l
     TARGET                   SOURCE                              FSTYPE  OPTIONS
@@ -52,9 +51,9 @@ The output can be formatted as a plain list, instead of the default tree style, 
     /sys/fs/cgroup/systemd   systemd                             cgroup  rw,nosu
     /run/user/1000/gvfs      gvfsd-fuse                          fuse.gv rw,nosu
 
-#### 3. df style output ####
+#### 3. df格式输出 ####
 
-Findmnt can produce a df style output reporting free and used disk space with the "-D" or "--df" option.
+Findmnt可以用“-D”或“-df”选项创造一个df格式的输出报告空闲和已用磁盘空间。
 
     $ findmnt -D
     SOURCE                  FSTYPE       SIZE   USED   AVAIL USE% TARGET
@@ -67,11 +66,11 @@ Findmnt can produce a df style output reporting free and used disk space with th
     tmpfs                   tmpfs     1001.5M    60K 1001.5M   0% /tmp
     /dev/sda1               ext4       476.2M 107.7M  339.6M  23% /boot
 
-Note that the above option is not available till util-linux version 2.20, which happened to be the latest version on Ubuntu 13.10
+注意以上选项直到util-linux2.20版本都不可用，碰巧的是最新版在Ubuntu13.10
 
-#### 4. Read file systems from fstab ####
+#### 4. 从fstab读取文件系统 ####
 
-With the '-s' or '--fstab' option, findmnt shall read file systems only from the /etc/fstab file and /etc/fstab.d directory.
+使用“-s”或“-fstab”选项，findmnt将只从/etc/fstab文件和/etc/fstab.d目录读取文件系统。
 
     $ findmnt -s
     TARGET SOURCE                                    FSTYPE OPTIONS
@@ -79,19 +78,18 @@ With the '-s' or '--fstab' option, findmnt shall read file systems only from the
     /boot  UUID=18cde604-1c65-4ec8-8a8d-385df50ada3b ext4   defaults
     swap   /dev/mapper/fedora-swap                   swap   defaults
 
-#### 5. Filter filesystems by type ####
+#### 5. 通过类型过滤文件系统 ####
 
-Findmnt can print out only specific file systems based on the type, for example ext4.
-Multiple system types can be specified separated by a comma.
+Findmnt可以打印出只基于类型的特定的文件系统，例如ext4，多个系统类型可以指定一个逗号分隔。
 
     $ findmnt -t ext4
     TARGET  SOURCE                  FSTYPE OPTIONS
     /       /dev/mapper/fedora-root ext4   rw,relatime,seclabel,data=ordered
     └─/boot /dev/sda1               ext4   rw,relatime,seclabel,data=ordered
 
-#### 6. Raw output ####
+#### 6. 原始输出 ####
 
-If you prefer a raw style ugly looking output then use the '-r' or '--raw' option.
+如果你喜欢原始风格难看的输出，那么使用“-r”或“--raw”选项。
 
     $ findmnt --raw
     TARGET SOURCE FSTYPE OPTIONS
@@ -117,17 +115,17 @@ If you prefer a raw style ugly looking output then use the '-r' or '--raw' optio
 
 That looks very neat
 
-#### 7. Search by source device ####
+#### 7. 通过源设备查找 ####
 
-To find the file system by the source device, specify the device path with or without the '-S' option
+通过源设备查找文件系统，指定设备路径包括/不包括“-S”选项。
 
     $ findmnt -S /dev/sda1
     TARGET SOURCE    FSTYPE OPTIONS
     /boot  /dev/sda1 ext4   rw,relatime,seclabel,data=ordered
 
-#### 8. Search by mount point ####
+#### 8. 通过挂载点查找 ####
 
-To search file system by the mount directory , specify the directory with or without the '-T'/'--target' option.
+通过挂载目录查找文件系统，指定目录包括/不包括“-T /--target”选项。
 
     $ findmnt -T /
     TARGET SOURCE                  FSTYPE OPTIONS
@@ -137,14 +135,14 @@ To search file system by the mount directory , specify the directory with or wit
     TARGET                  SOURCE    FSTYPE  OPTIONS
     /media/4668484A68483B47 /dev/sda5 fuseblk rw,nosuid,nodev,relatime,user_id=0
 
-### Summary ###
+### 总结 ###
 
-That was a little introduction to the findmnt command. There are few more options supported by findmnt which can be found in the man page.
+这是一个findmnt命令的简要介绍。findmnt更多的选项可以在man手册页中找到。
 
 --------------------------------------------------------------------------------
 
 via: http://www.binarytides.com/linux-findmnt-command/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Vito](https://github.com/vito-L) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
