@@ -1,3 +1,4 @@
+Translating
 8 examples of findmnt command to check mounted file systems on Linux
 ================================================================================
 ### Mounted file systems and devices ###
