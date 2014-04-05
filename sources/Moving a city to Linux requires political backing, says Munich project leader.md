@@ -1,3 +1,4 @@
+[translating] blueabysm
 Moving a city to Linux requires political backing, says Munich project leader
 ================================================================================
 > Munich city authority has migrated almost 15,000 PCs from Windows NT to its own Linux distribution
