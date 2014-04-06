@@ -41,7 +41,7 @@
 
 译自：http://readwrite.com/2014/03/26/open-source-development-business-managers-users-linux-foundation-study#feed=/hack&awesm=~ozHpY5jaMeoZsu
 
-译者：[blueabysm](https://github.com/blueabysm) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[sailing](https://github.com/blueabysm) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
