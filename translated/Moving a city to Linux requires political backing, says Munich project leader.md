@@ -58,7 +58,7 @@ Hofmann 在对这个城市的未来信心满怀的时候也认识到并不是所
 
 译自: http://www.computerworld.com/s/article/9245353/Moving_a_city_to_Linux_requires_political_backing_says_Munich_project_leader?taxonomyId=122
 
-译者：[blueabysm](https://github.com/blueabysm) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[sailing](https://github.com/blueabysm) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
