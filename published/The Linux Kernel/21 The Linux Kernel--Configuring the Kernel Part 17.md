@@ -26,7 +26,7 @@
 
 "Hangcheck timer"用于检测系统是否被锁定。这个定时器监视着锁定进程。当一个进程被冻结了，定时器就开启。当定时器停止后，如果进程还没有重启或者关闭，那么定时器会强迫进程关闭。
 
-引用Linus Torvalds的话：可移植性是对于那些无法写新程序的人而言的。
+> 引用Linus Torvalds的话：可移植性是对于那些无法写新程序的人而言的。
 
 使用Trusted Computing Group(可信赖计算组)规范的TPM安全芯片会需要这个驱动(TPM Hardware Support)。
 
@@ -46,7 +46,7 @@ I2C系统启用这个特性可以生成调试信息(I2C Core debugging messages)
 
 下一个驱动生成额外的I2C调试信息(I2C Algorithm debugging messages)。
 
-引用Linus Torvalds的话：Linux中没有原始设备的原因似乎我个人任何原始设备是一个愚蠢的注意。
+> 引用Linus Torvalds的话：Linux中没有原始设备的原因似乎我个人任何原始设备是一个愚蠢的注意。
 
 下面的驱动会使I2C驱动生成调试信息(I2C Bus debugging messages)。
 
@@ -70,7 +70,7 @@ SCSI的RDMA协议同样可以通过InfiniBand传输(InfiniBand SCSI RDMA Protoco
 
 EDAC可以用来设置发送调试信息给Linux的日志系统(Debugging)。
 
-引用Linus Torvalds的话：没有人可以第一次创造如此好的代码，除了我。
+> 引用Linus Torvalds的话：没有人可以第一次创造如此好的代码，除了我。
 
 "Machine Check Exceptions"(机器检测异常)(MCEs)通过这个驱动被转化成可读的信息(Decode MCEs in human-readable form (only on AMD for now))。MCEs是由CPU检测到的硬件错误。MCEs通常触发内核错误。
 
@@ -80,7 +80,7 @@ EDAC可以用来设置发送调试信息给Linux的日志系统(Debugging)。
 
 下面，还有很多用于特定设备组的检测和纠正错误的驱动。
 
-引用Linus Torvalds的话：理论和实践有时会冲突。那这个发生时，理论输了。每次都是。
+> 引用Linus Torvalds的话：理论和实践有时会冲突。那这个发生时，理论输了。每次都是。
 
 现在我们可以进入实时时钟("Real Time Clock")。这通常缩写为"RTC"。RTC一直跟随着时间。
 
@@ -122,7 +122,7 @@ DMA系统可以使用网络减小CPU使用(Network: TCP receive copy offload)。
 
 via: http://www.linux.org/threads/the-linux-kernel-configuring-the-kernel-part-17.4875/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
