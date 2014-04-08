@@ -14,15 +14,15 @@
 
 > **答案**： 为了追踪系统中发生的事件，我们需要用到叫做syslogd的这个后台程序。syslogd这个后台程序可以追踪系统信息并将其保存到指定的日志文件中。
 
-在命令行运行'syslogd'这个应用会在路径'/var/log/syslog'中生成一个日志文件。syslogd应用对解决Linux系统中的问题十分有用。标准生成的日志文件和下面这个例子很像。
+启用'syslogd'这个后台进程会在路径'/var/log/syslog'中生成一个日志文件。syslogd应用对解决Linux系统中的问题十分有用。标准生成的日志文件和下面这个例子很像。
 
-![syslongd](http://www.tecmint.com/wp-content/uploads/2014/02/syslongd.jpg)
+![syslogd](http://www.tecmint.com/wp-content/uploads/2014/02/syslongd.jpg)
 
 3.如何禁止特定IP访问FTP服务器？
 
 > **答案**： 我们可以通过运用tcp_wrapper来禁止可疑的IP访问。首先在路径'/etc/vsftpd.conf'的配置文件中，将tcp_wrapper这个参数设置为"tcp_wrapper=YES"，然后在'/etc/host.deny'文件中加入可疑的IP地址。
 
-###禁止访问的IP地址###
+**禁止访问的IP地址**
 
 打开'/etc/hosts.deny'文件。
 
@@ -47,11 +47,11 @@
 
 4.告诉我们Telnet和SSH之间的区别？
 
-> **答案**： Telnet和SSH都是用来远程管理系统的协议。与Telnet直接传输数据正好相反，安全的SSH通信协议需要通信中有密钥的交换，这说明telnet相比较于SSH更加不安全。
+> **答案**： Telnet和SSH都是用来远程管理系统的协议。与Telnet直接传输数据正好相反，安全的SSH通信协议需要通信中有密钥的交换，这说明telnet相比较于SSH不安全。
 
 5.你需要终止你的X server，但当你尝试杀进程的时候，你遇到了表示不能退出X server的错误信息。你准备怎么做？
 
-> **答案**： 当你尝试杀X server的进程时，系统不会让你像使用'/etc/init.d/gdm stop'一样正常的退出X server。我们需要执行一个使X server重启的特别的键位组合'Ctrl+ Alt+ Back Space'。
+> **答案**： 当你尝试杀X server的进程时，系统不会让你像使用'/etc/init.d/gdm stop'一样正常的退出X server。我们需要执行一个使X server重启的特别的键位组合'Ctrl+ Alt+ BackSpace'。
 
 6.告诉我命令'ping'和'ping6'的区别？ 
 
@@ -65,7 +65,7 @@
 
 8.locate和slocate命令的区别？
 
-> **答案**： slocate(secure locate)会寻找所有用户有权限访问的文件，然而locate会搜索所有更新过的结果。
+> **答案**： slocate(secure locate)会寻找所有用户有权限访问的文件，然而locate会搜索（它的数据库里面的）所有更新过的结果。
 
 9.你要在当前目录中所有“.txt”文件中搜索“Tecmint”这个字符串，你怎么做？
 
@@ -85,6 +85,6 @@
 
 via: http://www.tecmint.com/useful-random-linux-interview-questions-and-answers/
 
-译者：ThomazL(https://github.com/ThomazL) 校对：[校对者ID](https://github.com/校对者ID)
+译者：ThomazL(https://github.com/ThomazL) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

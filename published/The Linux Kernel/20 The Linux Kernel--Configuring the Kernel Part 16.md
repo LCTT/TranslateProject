@@ -22,7 +22,7 @@ PS/2复用同样需要一个驱动(TQC PS/2 multiplexer)。
 
 ARC FPGA平台对于PS/2控制器需要特殊的驱动(ARC PS/2 support)。
 
-注意：我想要说清楚这篇文章中讨论的PS/2空孩子气并不是Sony的PlayStation上的游戏控制器。这篇文章讨论的是6针鼠标/键盘端口。控制器是一种有PS/2端口的卡。
+注意：我想要说清楚这篇文章中讨论的PS/2控制器并不是Sony的PlayStation上的游戏控制器。这篇文章讨论的是6针鼠标/键盘端口。控制器是一种有PS/2端口的卡。
 
 "Gameport support"提供对15针gameport的支持。gameport是一种曾经被很多游戏设备使用直到USB端口的发明的15针口。
 
@@ -46,7 +46,7 @@ ForteMedia FM801 PCI音频控制器在卡上有一个音频控制器(ForteMedia 
 
 虚拟终端可以用这个驱动作为系统控制台(Support for console on virtual terminal)。系统控制台管理着登陆和内核信息/警告。
 
-虚拟终端必须通过控制台驱动与物理终端交互(Support for binding and unbinding console drivers)。在虚拟终端可以这么做之前，控制台驱动必须被加载。当虚拟终端关闭后，控制台终端必须被卸载。
+虚拟终端必须通过控制台驱动与物理终端交互(Support for binding and unbinding console drivers)。在虚拟终端可用之前，控制台驱动必须被加载。当虚拟终端关闭后，控制台终端必须被卸载。
 
 下一个驱动提供了对Unix98 PTY驱动的支持(Unix98 PTY support)。这是Unix98伪终端。
 
@@ -64,7 +64,7 @@ ForteMedia FM801 PCI音频控制器在卡上有一个音频控制器(ForteMedia 
 
 这个驱动支持GSM MUX协议(GSM多路复用)(GSM MUX line discipline support (EXPERIMENTAL))。
 
-下一个驱动启用kmen设备文件(/dev/kmem virtual device support)。kmem通常用于内核调试。kmem可以用于读取某些内核变量和状态。
+下一个驱动启用kmem设备文件(/dev/kmem virtual device support)。kmem通常用于内核调试。kmem可以用于读取某些内核变量和状态。
 
 Stallion卡上面有许多串口Stallion multiport serial support)。这个驱动特别支持这块卡。
 
@@ -112,6 +112,6 @@ RSA串口同样也在Linux内核中支持(Support RSA serial ports)。RSA代表�
 
 via: http://www.linux.org/threads/the-linux-kernel-configuring-the-kernel-part-16.4835/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

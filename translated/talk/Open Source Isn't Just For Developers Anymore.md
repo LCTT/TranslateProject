@@ -35,13 +35,13 @@
 
 这不该是个令人震惊的消息。随着自由开源软件运动的成熟，约束较少的协议方式比如基于 GNU 通用许可协议（GPL）的 Apache 渐渐得到了青睐，运动本身的理念也走下神坛被越来越多地接受和采纳。巨大变革已经产生，[Github 一代常常回避各种正式许可协议][2]这一点已经成为事实（不过反过来也为自己带来了商业上的麻烦）。
 
-在各行各业里，组织都迫于压力降低成本提高产出，交付软件产品的时限也远比以往严格。作为其中之一的 Google 曾说，没有开源和开放标准，就没有今天的 Google。其他组织也逐渐发现了这一点。
+在各行各业里，组织都迫于压力降低成本提高产出，交付软件产品的时限也远比以往严格。作为其中之一的 Google 曾说，没有开源和开放标准，就没有今天的 Google。其他组织也逐渐意识到了这一点。
 
 --------------------------------------------------------------------------------
 
 译自：http://readwrite.com/2014/03/26/open-source-development-business-managers-users-linux-foundation-study#feed=/hack&awesm=~ozHpY5jaMeoZsu
 
-译者：[blueabysm](https://github.com/blueabysm) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[sailing](https://github.com/blueabysm) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
