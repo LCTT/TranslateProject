@@ -1,3 +1,4 @@
+[translating] sailing
 What is good video editing software on Linux?
 ================================================================================
 A video editor allows you to handle various post-production video editing jobs which typically involve arranging, cutting, pasting, trimming, and otherwise enhancing (e.g., adding effects to) video clips through the timeline interface. In modern video editing software, things like multi-codec import/transcoding, non-linear video editing, or even HD video support are pretty much standard nowadays.
