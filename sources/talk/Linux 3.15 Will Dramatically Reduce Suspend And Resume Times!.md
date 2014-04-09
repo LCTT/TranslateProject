@@ -1,3 +1,6 @@
+Translating----------geekpi
+
+
 Linux 3.15 Will Dramatically Reduce Suspend And Resume Times!
 ================================================================================
 The upcoming Linux 3.15 kernel that is anticipated for release in mid-2014 will come with a large number of ACPI and power management updates. Thanks to the update, Linux systems will suspend and resume faster in the days to come.
