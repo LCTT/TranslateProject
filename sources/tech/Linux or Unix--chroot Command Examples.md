@@ -1,3 +1,5 @@
+翻译ing by Luoxcat
+
 Linux / Unix: chroot Command Examples
 ================================================================================
 I am a new Linux and Unix user. How do I change the root directory of a command? How do I change the root directory of a process such as web-server using a chroot command to isolate file system? How do I use a chroot to recover password or fix the damaged Linux/Unix based environment?
