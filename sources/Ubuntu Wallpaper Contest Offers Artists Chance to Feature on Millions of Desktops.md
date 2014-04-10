@@ -1,3 +1,4 @@
+Translating by icybreaker
 Ubuntu Wallpaper Contest Offers Artists Chance to Feature on Millions of Desktops
 ================================================================================
 **Ubuntu is giving amateur and professional artists alike the chance to have their work seen by millions of people across the world.**
