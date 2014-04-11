@@ -1,3 +1,4 @@
+(translating by runningwater)
 How to Change Umask Value Permanently in Linux
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/How-to-Change-Umask-Value-Permanently-in-Linux-435026-2.jpg)
@@ -35,6 +36,6 @@ Do not hesitate to drop a comment below if you encounter any issues with this tu
 
 via: http://news.softpedia.com/news/How-to-Change-Umask-Value-Permanently-in-Linux-435026.shtml
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
