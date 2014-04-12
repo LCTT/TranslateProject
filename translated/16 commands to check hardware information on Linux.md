@@ -1,14 +1,15 @@
-16 commands to check hardware information on Linux
+[ translating by stallonederek ]
+Linux中16个常用的查询主机硬件信息的命令
 ================================================================================
-### Hardware information ###
+### 硬件信息 ###
 
-Like for every thing, there are plenty of commands to check information about the hardware of your linux system. Some commands report only specific hardware components like cpu or memory while the rest cover multiple hardware units.
+在linux系统中，有很多命令可以用于查询主机的硬件信息，有些命令仅仅针对于特定的硬件部件，比如cpu，内存等，而有些命令可以查询很多的硬件信息。
 
-This post takes a quick look at some of the most commonly used commands to check information and configuration details about various hardware peripherals and devices. The list includes lscpu, hwinfo, lshw, dmidecode, lspci etc.
+这篇帖子简单地带大家了解一下最常用的查询各种硬件信息的命令，其中包括lscpu,hwinfo,lshw,dmidecode,lspci等等。
 
 ### 1. lscpu ###
 
-The lscpu command reports information about the cpu and processing units. It does not have any further options or functionality.
+lscpu命令可以用来查询处理器cpu的详细信息，只需要简单地输入lscpu即可，如下所示，它本身也没有提供更多选项和功能可供选择。
 
     $ lscpu
     Architecture:          x86_64
@@ -32,9 +33,9 @@ The lscpu command reports information about the cpu and processing units. It doe
     L2 cache:              2048K
     NUMA node0 CPU(s):     0-3
 
-### 2. lshw - List Hardware ###
+### 2. lshw - 显示硬件信息列表 ###
 
-A general purpose utility, that reports detailed and brief information about multiple different hardware units such as cpu, memory, disk, usb controllers, network adapters etc. Lshw extracts the information from different /proc files.
+这个命令用途广泛，它可以根据你的需求以详细或概要的形式列出许多个不同硬件的参数信息，其中包括cpu，内存，磁盘，usb控制器，网卡等等，lshw实质上是从/proc文件目录下的不同文件中提取对应的硬件信息。
 
     $ sudo lshw -short
 
@@ -85,13 +86,13 @@ A general purpose utility, that reports detailed and brief information about mul
     /0/3            scsi4       storage     
     /0/3/0.0.0      /dev/cdrom  disk        DVD RW DRU-190A
 
-Check out the following post to learn more about lshw
+点击下面的帖子，可以对lshw有更多的了解。
 
 [Get hardware information on Linux with lshw command][1]
 
 ### 3. hwinfo - Hardware Information ###
 
-Hwinfo is another general purpose hardware probing utility that can report detailed and brief information about multiple different hardware components, and more than what lshw can report.
+hwinfo同样是一个使用非常广泛的硬件信息查询命令，类似于lshw，它同样详细或概要地报告多个部件的硬件信息，但不同的是，它有时可以给出比lshw更多的信息。
 
     $ hwinfo --short
     cpu:                                                            
@@ -141,14 +142,13 @@ Hwinfo is another general purpose hardware probing utility that can report detai
 
     ... TRUNCATED ...
 
-heck out our previous post on hwinfo
+点击下面的链接可以查看更多关于hwinfo的信息。
 
 [Check hardware information on Linux with hwinfo command][2]
 
-### 4. lspci - List PCI ###
+### 4. lspci - 显示pci总线相关信息 ###
 
-The lspci command lists out all the pci buses and details about the devices connected to them.
-The vga adapter, graphics card, network adapter, usb ports, sata controllers, etc all fall under this category.
+lscpi命令可以列出pci总线上信息，以及所有连接到pci总线上的设备信息，比如vga适配器，显卡，网卡，usb端口，sata控制器等等。
 
     $ lspci
     00:00.0 Host bridge: Intel Corporation 82G35 Express DRAM Controller (rev 03)
@@ -174,21 +174,21 @@ The vga adapter, graphics card, network adapter, usb ports, sata controllers, et
     03:00.0 IDE interface: JMicron Technology Corp. JMB368 IDE controller
     04:05.0 FireWire (IEEE 1394): LSI Corporation FW322/323 [TrueFire] 1394a Controller (rev 70)
 
-Filter out specific device information with grep.
+可以使用grep命令筛选出特定的设备信息。
 
     $ lspci -v | grep "VGA" -A 12
 
-### 5. lsscsi - List scsi devices ###
+### 5. lsscsi - 列出scsi设备信息 ###
 
-Lists out the scsi/sata devices like hard drives and optical drives.
+列出scsi/sata设备信息，比如硬盘驱动器，光盘驱动器。
 
     $ lsscsi
     [3:0:0:0]    disk    ATA      ST3500418AS      CC38  /dev/sda 
     [4:0:0:0]    cd/dvd  SONY     DVD RW DRU-190A  1.63  /dev/sr0
 
-### 6. lsusb - List usb buses and device details ###
+### 6. lsusb - 列出usb总线信息，及设备信息 ###
 
-This command shows the USB controllers and details about devices connected to them. By default brief information is printed. Use the verbose option "-v" to print detailed information about each usb port
+该命令可以显示USB控制器及连接到控制的设备信息。默认情况下，只显示概要信息，可以通过-v选项指示其显示更多的硬件信息。
 
     $ lsusb
     Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
@@ -200,19 +200,19 @@ This command shows the USB controllers and details about devices connected to th
     Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
     Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
 
-On the above system, 1 usb port is being used by the mouse.
+上面信息显示，在该系统中，有一个usb端口正被鼠标占用。
 
 ### 7. Inxi ###
 
-Inxi is a 10K line mega bash script that fetches hardware details from multiple different sources and commands on the system, and generates a beautiful looking report that non technical users can read easily.
+inxi命令是一个大的bash脚本文件，其通过从不同的信息来源和命令中获取硬件信息，最后能给出一个非常美观的，特别适合于非专业人员阅读的硬件信息报告。
 
     $ inxi -Fx
 
 ![](http://www.binarytides.com/blog/wp-content/uploads/2014/04/inxi-linux.png)
 
-### 8. lsblk - List block devices ###
+### 8. lsblk - 列出块设备信息 ###
 
-List out information all block devices, which are the hard drive partitions and other storage devices like optical drives and flash drives
+列出所有块设备信息，其中包括硬盘分区信息，以及其他存储设备，如光盘，闪存等。
 
     $ lsblk
     NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
@@ -225,9 +225,9 @@ List out information all block devices, which are the hard drive partitions and 
     └─sda8   8:8    0 198.5G  0 part /media/13f35f59-f023-4d98-b06f-9dfaebefd6c1
     sr0     11:0    1  1024M  0 rom
 
-### 9. df - disk space of file systems ###
+### 9. df - 显示文件系统的磁盘空间信息 ###
 
-Reports various partitions, their mount points and the used and available space on each.
+报告各种挂载的文件系统信息，其中包括挂载点，已用的，可用的磁盘空间。
 
     $ df -H
     Filesystem      Size  Used Avail Use% Mounted on
@@ -241,9 +241,9 @@ Reports various partitions, their mount points and the used and available space 
     /dev/sda8       210G  149G   51G  75% /media/13f35f59-f023-4d98-b06f-9dfaebefd6c1
     /dev/sda5       105G   31G   75G  30% /media/4668484A68483B47
 
-### 10. Pydf - Python df ###
+### 10. Pydf - python版本的df ###
 
-An improved df version written in python, that displays colored output that looks better than df
+一个增强型的python版的df命令，可以以不同的颜色显示所查询的信息，看起来比df更好看。
 
     $ pydf
     Filesystem Size Used Avail Use%          Mounted on                                 
@@ -253,7 +253,7 @@ An improved df version written in python, that displays colored output that look
 
 ### 11. fdisk ###
 
-Fdisk is a utility to modify partitions on hard drives, and can be used to list out the partition information as well.
+fdisk命令可以用来修改硬盘分区表信息，也可以用来显示硬盘分区表信息
 
     $ sudo fdisk -l
 
@@ -274,7 +274,7 @@ Fdisk is a utility to modify partitions on hard drives, and can be used to list 
 
 ### 12. mount ###
 
-The mount is used to mount/unmount and view mounted file systems.
+mount命令可以用来挂载设备，当然也可以用来查看系统中设备的挂载情况。
 
     $ mount | column -t
     /dev/sda6    on  /                                            type  ext4             (rw,errors=remount-ro)
@@ -297,13 +297,13 @@ The mount is used to mount/unmount and view mounted file systems.
     systemd      on  /sys/fs/cgroup/systemd                       type  cgroup           (rw,noexec,nosuid,nodev,none,name=systemd)
     gvfsd-fuse   on  /run/user/1000/gvfs                          type  fuse.gvfsd-fuse  (rw,nosuid,nodev,user=enlightened)
 
-Again, use grep to filter out only those file systems that you want to see
+同样，可以使用grep命令来筛选出想看的文件系统信息。
 
     $ mount | column -t | grep ext
 
-### 13. free - Check RAM ###
+### 13. free - 查看RAM信息 ###
 
-Check the amount of used, free and total amount of RAM on system with the free command.
+查看系统中RAM的使用情况，包括已使用空间，未使用空间，以及总空间。
 
     $ free -m
                  total       used       free     shared    buffers     cached
@@ -313,37 +313,37 @@ Check the amount of used, free and total amount of RAM on system with the free c
 
 ### 14. dmidecode ###
 
-The dmidecode command is different from all other commands. It extracts hardware information by reading data from the [SMBOIS data structures][3] (also called DMI tables).
+dmidecode命令不同于其他的命令，它是通过读取SMBOIS数据结构（也称为DMI表）中数据来提取硬件信息。
 
-    # display information about the processor/cpu
+    # 显示处理器信息
     $ sudo dmidecode -t processor
 
-    # memory/ram information
+    # 显示内存信息
     $ sudo dmidecode -t memory
 
-    # bios details
+    # 显示bios信息
     $ sudo dmidecode -t bios
 
-Check out the man page for more details.
+查看man手册获取更多信息。
 
-### 15. /proc files ###
+### 15. /proc 文件系统 ###
 
-Many of the virtual files in the /proc directory contain information about hardware and configurations. Here are some of them
+在/proc目录下的许多虚拟文件包含了很多有关硬件参数及配置的信息。
 
-CPU/Memory information
+CPU、内存信息
 
-    # cpu information
+    # cpu信息
     $ cat /proc/cpuinfo
 
-    # memory information
+    # 内存信息
     $ cat /proc/meminfo
 
-Linux/kernel information
+Linux内核信息
 
     $ cat /proc/version
     Linux version 3.11.0-12-generic (buildd@allspice) (gcc version 4.8.1 (Ubuntu/Linaro 4.8.1-10ubuntu7) ) #19-Ubuntu SMP Wed Oct 9 16:20:46 UTC 2013
 
-SCSI/Sata devices
+SCSI/Sata设备信息
 
     $ cat /proc/scsi/scsi 
     Attached devices:
@@ -354,7 +354,7 @@ SCSI/Sata devices
       Vendor: SONY     Model: DVD RW DRU-190A  Rev: 1.63
       Type:   CD-ROM                           ANSI  SCSI revision: 05
 
-Partitions
+分区信息
 
     $ cat /proc/partitions 
     major minor  #blocks  name
@@ -370,7 +370,7 @@ Partitions
 
 ### 16. hdparm ###
 
-The hdparm command gets information about sata devices like hard disks.
+hdparm命令可以获取sata设备如硬盘等设备信息。
 
     $ sudo hdparm -i /dev/sda
 
@@ -390,17 +390,17 @@ The hdparm command gets information about sata devices like hard disks.
 
      * signifies the current active mode
 
-### Summary ###
+### 总结 ###
 
-Each of the command has a slightly different method of extracting information, and you may need to try more than one of them, while looking for specific hardware details. However they are available across most linux distros, and can be easily installed from the default repositories.
+每一个命令在获取信息的方式会稍微有些不同，在查询某一设备时，你也有可能要结合多个命令才能获取你想要的硬件信息。不过，这些命令都可以在大多数的linux发行版中找到，可以很容易地从默认的仓库中获取安装。
 
-On the desktop there are gui tools, for those who do not want to memorise and type commands. Hardinfo, I-nex are some of the popular ones that provide detailed information about multiple different hardware components.
+在桌面版系统中，这也存在一下图形界面的工具，可以方便大家记忆和使用，比如Hardinfo,I-nex就是其中非常流行的工具，他们可以提供多个硬件部件的详细信息。
 
 --------------------------------------------------------------------------------
 
 via: http://www.binarytides.com/linux-commands-hardware-info/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[stallonederek](https://github.com/stallonederek) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
