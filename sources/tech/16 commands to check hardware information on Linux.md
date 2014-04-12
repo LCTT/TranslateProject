@@ -1,3 +1,4 @@
+[ translating by stallonederek ]
 16 commands to check hardware information on Linux
 ================================================================================
 ### Hardware information ###
