@@ -4,7 +4,7 @@ Linux 3.15 会动态减少挂起和恢复时间！
 
 ![Linux 3.15 kernel, ACPI, power management updates, Linux systems, Rafael Wysocki, asynchronous threads, Nvidia's Maxwell architecture, Linux kernel 3.14](http://www.efytimes.com/admin/useradmin/photo/kDMH35305PM3242014.jpg)
 
-拉斐尔·维索斯基，一名在英特尔负责维护linux内核电源管理代码的人员，指出了这一变化列表。Phoronix的报道引用了"对用户可见的在Linux 3.15 的内核中应该会减少系统挂起和恢复的时间，感谢启用了更多的异步线程。" Linux 3.15 也许同样会带来Nvidia Maxwell架构的基础支持。更多的细节还需等待。
+拉斐尔·维索斯基，一名在英特尔负责维护linux内核电源管理代码的人员，指出了这一变化。Phoronix的报道引用了"对用户可见的在Linux 3.15 的内核中应该会减少系统挂起和恢复的时间，感谢启用了更多的异步线程。" Linux 3.15 也许同样会带来Nvidia Maxwell架构的基础支持。更多的细节还需等待。
 
 同时，最新的稳定版Linux内核是3.13.6。Linux创始人，林纳斯·托瓦兹官方宣布即将到来的3.14的第6版候选发布版。RC6是Linux 3.14-rc5的继任者。现在可以下载来测试了。然而，因为它是一个开发版本，它不该在生产机上安装。
 
@@ -14,6 +14,6 @@ Linux 3.15 会动态减少挂起和恢复时间！
 
 via: http://www.efytimes.com/e1/fullnews.asp?edid=133613
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
