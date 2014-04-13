@@ -1,4 +1,4 @@
-哪个视频编辑软件在 Linux 上好用？
+十一款 Linux 上的视频编辑软件横评
 ================================================================================
 视频编辑器能让你完成各式各样的视频后期制作的活儿，包括常见的编排、剪切、拼接、剪辑以及其他通过时间轴界面的视频片段增强功能（例如为视频片段增加特效）。在现代的视频编辑软件中，像多编解码器导入/转码、非线性视频编辑甚至是高清视频支持，都早已变成了行业标准。
 
@@ -145,7 +145,7 @@
 
 译自: http://xmodulo.com/2014/03/good-video-editing-software-linux.html
 
-译者：[sailing](https://github.com/blueabysm) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[sailing](https://github.com/blueabysm) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
