@@ -1,28 +1,24 @@
-Translating--------------geekpi
-
-
-
-Beautiful Zukitwo Theme Is the First One for GNOME 3.12
+美丽的Zukitwo是Gnome 3.12上的第一个主题
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Beautiful-Zukitwo-Theme-Is-the-First-One-for-GNOME-3-12-434833-2.jpg)
 
-**Zukitwo, a beautiful theme designed for GNOME 3.12 that makes use of the GTK2 engine Murrine and the GTK2 pixbuf engine, is now at version 2014.03.29.**
+**Zukitwo是一个为Gnome 3.12 设计的美丽主题，它利用了GTK2引擎Murrine和GTK2 pixbuf引擎，目前的版本是2014.03.29。**
 
-The Zukitwo theme was updated shortly after the release of GNOME 3.12 and it’s probably the first theme to support the new version of GNOME. A lot of other themes will probably follow soon but, coincidentally, Zukitwo is also one of the best ones around.
+Zukitwo在Gnome 3.12 发布不就之后就已经更新，并且它可能是第一个支持新版本Gnome的主题。许多其他的主题可能会很快就会跟上，但是，巧合地，Zukitwo是其中最棒的之一。
 
-According to the changelog, the GNOME 3.12 update is practically the only thing that’s different from the previous version, but there is also something noteworthy. Users of older version of GNOME should not upgrade to the new build. This is made exclusively for the GNOME 3.12 users.
+根据变更记录，Gnome 3.12 更新很以前没有很大的不同，但是仍有一些引人注意的。Gnome的老版本用户不应该升级到新版本。这是专门为Gnome 3.12 用户准备的。
 
-The funny thing about this fact is that there are no GNOME 3.12 users as of yet. Even if the new updated desktop environment has been released, there aren't any Linux distributions out there that are using it, so it’s going to be difficult to test it.
+这个事实的一个可笑之处是还没有Gnome 3.12的用户。即使新的桌面环境更新已经释出了，但是还没有哪个Linux发行版在使用它，因此这很难去测试它。
 
-The theme has two requirements: GTK2 engine Murrine 0.98.1.1 or later and GTK2 pixbuf engine or the gtk(2)-engines package.
+这个主题有两个要求：GTK2引擎Murrine 0.98.1.1或者更新和GTK2 pixbuf引擎或者gtk(2)-engines包。
 
-Check out the changelog for a complete list of fixes. [Download Zukitwo 2014.03.29][1] right now from gnome.org.
+检查一下更新日志来获取完整的修复列表。现在就从gnome.org上下载[Zukitwo 2014.03.29][1]
 
 --------------------------------------------------------------------------------
 
 via: http://news.softpedia.com/news/Beautiful-Zukitwo-Theme-Is-the-First-One-for-GNOME-3-12-434833.shtml
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
