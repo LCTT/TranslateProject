@@ -1,3 +1,4 @@
+[translating] sailing
 Ultimate Edition 3.9 Linux Distro Is a Complete Mess
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Ultimate-Edition-3-9-Linux-Distro-Is-a-Complete-Mess-436797-2.jpg)
