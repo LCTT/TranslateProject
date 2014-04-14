@@ -10,7 +10,7 @@ Linux 和 Windows 不一样，它可不是 Microsoft 花钱雇人做的，而是
 
 这一点使得 Linux 跻身全世界最安全的操作系统之列。好吧，百分之百的安全是不存在的，但使用 Linux 能保证安全在你身边寸步不离，这是 Google、Facebook、Twitter、IBM、NASA 等公司使用 Linux 的唯一理由。这里列出了[使用 Linux 的世界顶级公司和组织][1]。Linux 是个非常轻量级的操作系统，却既能支持最前沿的新硬件，也能支持几十年前的老硬件。
 
-现在，如果关于 Linux 的概念已经勾起了你的兴致，我们来看看房间里的下一头大象（译注：原文是 the next elephant in the room。the elephant in the room 通常指显而易见却避而不见的问题）—— 你在 Windows XP 下最爱的应用程序。Linux 环境有你在 Windows 下爱用的绝大部分应用程序，包括 Firefox、Chrome、Steam、VLC、Skype 和 Team Viewer。如果你找不到你某个你在 Windows 上用过的软件，那么试试 Linux 环境下数量庞大的替代品吧。与你的 Windows 应用程序相比，它们的功能更强大，而且都是协作开发的。
+现在，如果关于 Linux 的概念已经勾起了你的兴致，我们来看看房间里的下一头大象（译注：原文是 the next elephant in the room。the elephant in the room 通常指显而易见却避而不谈的问题）—— 你在 Windows XP 下最爱的应用程序。Linux 环境有你在 Windows 下爱用的绝大部分应用程序，包括 Firefox、Chrome、Steam、VLC、Skype 和 Team Viewer。如果你找不到你某个你在 Windows 上用过的软件，那么试试 Linux 环境下数量庞大的替代品吧。与你的 Windows 应用程序相比，它们的功能更强大，而且都是协作开发的。
 
 列举几个常见的替代方案：Libre Office 可以代替 Microsoft Office，Thunderbird 可以替代 Outlook，Gimp 可以替代 Adobe Photoshop，它们全都永久免费，而且你不用为每年的小更新升级支付数百美元。你不会像用 Windows 那样只有很少的几种应用程序可供选择（这是 Microsoft 的垄断行为造成的），也就是说，任何时候如果你对 Libre Office 不满意，你都可以改用另一个非常可靠的办公软件套件 Open Office。
 
