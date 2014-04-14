@@ -1,3 +1,4 @@
+zpl1025 translating
 File encryption with GNU Privacy Guard
 ================================================================================
 Encryption ensures that files are stored in an encrypted form whether you are transmitting it over the Internet, backing it up on a server, carrying it on USB or on your laptop. Encrypting your data makes it unreadable to anyone but you or intended recipient, thus preventing unwanted access to it.
