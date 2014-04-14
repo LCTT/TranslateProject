@@ -1,3 +1,4 @@
+[translating] sailing
 A Beginners Guide for XP Users to Switch to Linux
 ================================================================================
 ![](http://www.linuxfederation.com/wp-content/uploads/2014/04/Switch_To_linux.jpeg)
