@@ -1,3 +1,4 @@
+crowner 验尸中
 5 Ways To Check If Linux OS is 32 bit or 64 Bit
 ================================================================================
 Sometimes Linux newbies get confused while downloading a software because the download page offers them both 32 bit and 64 bit versions of the same software. It is important to know whether your Linux OS is 32-bit or 64-bit, as this information is required while doing various tasks. In this article, we will discuss five different ways to check if your Linux OS is 32-bit or 64-Bit.
