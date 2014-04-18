@@ -1,3 +1,4 @@
+>> Translating by ThomazL
 How to speed read on Linux
 ================================================================================
 Have you heard of speed reading? Me neither. At least not before a startup called Spritz [raised 3.5 Millions][1] in seed money to develop an API that supposedly allows a user to read 1,000 words per minute.
