@@ -1,51 +1,54 @@
-Xperience UI Concept Could Be the Most Beautiful Linux Desktop
+Xperience UI 设计理念 —— 优雅的 Linux 桌面设计欣赏
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Xperience-UI-Concept-Could-Be-the-Most-Beautiful-Linux-Desktop-430087-2.jpg)
 
-**The Xperience UI is a proof of concept developed for a Nitrux built OS, and if it will ever be brought to fruition, it will probably be one of the most beautiful desktops around.**
+**Xperience UI 是一个基于 Nitrux 发行板的一个界面设计的概念作品，如果其开发能够完成，它将有可能成为当今最漂亮的桌面之一。**
 
-Most Linux desktop can be easily recognized by the members of the community and even if some people manage to get the operating system to look interesting, the Nitrux Xperience UI concept is absolutely gorgeous.
+即使有些人很会折腾并使他们的桌面看起来更帅些，大多数 Linux 桌面仍可以轻易的被社区中的其他成员识别。
+如今折腾的人有福利了，Nitrux Xperience UI 带来了相当华丽的设计理念。
 
-Nitrux developers are mostly known for the icon packs and for a few other endeavors, but the quality of this desktop surpasses almost everything that we can find today.
+Nitrux 的开发者们之前最为他们的图标及一些其他设计而闻名，而如今这款桌面的界面设计质量几乎可以与现今我们能找到的任何的顶级设计相媲美。
 
-It reminds a little of elementary OS, but at the same time it features a very serious and distinctive look. It’s hard to see of the details, but the notification area, the lockscreen, and the dashbroad are to die for.
+这些设计或许会让大家想起一些来自 Elementary OS 的元素，但同时她也有着非常严谨而独特的风格。
+即使这些细节很难被观察到，我们仍可以从通知区域、锁屏、或是主面板感受到设计者对其的精雕细琢。
 
-The concept seems to be oriented towards touch screens, but it would also do wonders on a desktop system. We can only hope that one of the upcoming distros that are supposed to be in development under the Nitrux wing will actually look like this.
+这些设计理念虽然看起来很倾向于触屏设备，她仍然可以完美的融入到一个桌面系统中。
+也许我们只能寄予期望给今后的某个 Nitrus 麾下的发行板可以采用这个设计了。
 
-Even if it will never make it (although we have high hopes that it will), this is proof that Linux designs is head and shoulders above all other operating systems out there.
+即使今后没人会实现这个设计（虽然我们很大把握有人会去折腾），这个设计仍然证明了 Linux 的设计也可以从头到脚都远远超出所有其他的操作系统。
 
 ![](http://i1-news.softpedia-static.com/images/news2/Xperience-UI-Concept-Could-Be-the-Most-Beautiful-Linux-Desktop-430087-3.jpg)
 
-Desktop
+桌面
 
 ![](http://i1-news.softpedia-static.com/images/news2/Xperience-UI-Concept-Could-Be-the-Most-Beautiful-Linux-Desktop-430087-4.jpg)
 
-Mini-Dash Apps
+Mini 启动面板 - 应用程序
 
 ![](http://i1-news.softpedia-static.com/images/news2/Xperience-UI-Concept-Could-Be-the-Most-Beautiful-Linux-Desktop-430087-5.jpg)
 
-Mini-Dash - Notifications
+Mini 启动面板 - 通知区域
 
 ![](http://i1-news.softpedia-static.com/images/news2/Xperience-UI-Concept-Could-Be-the-Most-Beautiful-Linux-Desktop-430087-6.jpg)
 
-Mini-Dash - Recent Documents
+Mini 启动面板 - 最近的文档
 
 ![](http://i1-news.softpedia-static.com/images/news2/Xperience-UI-Concept-Could-Be-the-Most-Beautiful-Linux-Desktop-430087-7.jpg)
 
-Mini-Dash - Quick Settings
+Mini 启动面板 - 快速设置
 
 ![](http://i1-news.softpedia-static.com/images/news2/Xperience-UI-Concept-Could-Be-the-Most-Beautiful-Linux-Desktop-430087-8.jpg)
 
-Mini-Dash - Shutdown
+Mini 启动面板 - 关机
 
 ![](http://i1-news.softpedia-static.com/images/news2/Xperience-UI-Concept-Could-Be-the-Most-Beautiful-Linux-Desktop-430087-9.jpg)
 
-Dashboard
+主面板
 
 --------------------------------------------------------------------------------
 
 via: http://news.softpedia.com/news/Xperience-UI-Concept-Could-Be-the-Most-Beautiful-Linux-Desktop-430087.shtml
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[VizV](https://github.com/vizv) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
