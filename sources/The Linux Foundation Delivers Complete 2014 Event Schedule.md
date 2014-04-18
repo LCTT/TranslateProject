@@ -1,3 +1,4 @@
+zpl1025 mark
 The Linux Foundation Delivers Complete 2014 Event Schedule
 ================================================================================
 he Linux Foundation has changed up its mode of planning events, and has released its schedule of events for the entire year.  A new video is also being launched with the announcement, which is live here: [The Linux Foundation Event Experience][1]. Here are more details on what this year's foundation events will focus on.
