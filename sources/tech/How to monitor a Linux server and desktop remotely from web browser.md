@@ -1,3 +1,6 @@
+Translating-----------geekpi
+
+
 How to monitor a Linux server and desktop remotely from web browser
 ================================================================================
 When it comes to monitoring a Linux box, there are more than enough options to choose from. While there are many production-quality monitoring solutions (e.g., Nagios, Zabbix, Zenoss), boasting of fancy UI, monitoring scalability, comprehensive reporting capabilities, etc., these solutions are probably an overkill for most of us end users. If all you need is to check the basic status (e.g., CPU load, memory usage, active processes) of a remote Linux server or desktop, consider [linux-dash][1].
