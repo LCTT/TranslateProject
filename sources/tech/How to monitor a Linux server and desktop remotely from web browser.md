@@ -1,21 +1,18 @@
-Translating-----------geekpi
-
-
-How to monitor a Linux server and desktop remotely from web browser
+如何从Web浏览器远程监视Linux服务器和桌面
 ================================================================================
-When it comes to monitoring a Linux box, there are more than enough options to choose from. While there are many production-quality monitoring solutions (e.g., Nagios, Zabbix, Zenoss), boasting of fancy UI, monitoring scalability, comprehensive reporting capabilities, etc., these solutions are probably an overkill for most of us end users. If all you need is to check the basic status (e.g., CPU load, memory usage, active processes) of a remote Linux server or desktop, consider [linux-dash][1].
+当你要监视一台Linux机器时，你会有很多的选择。虽然这里有很多产品质量监控方案(比如  Nagios、 Zabbix、 Zenoss)，它们拥有华丽的UI，可扩展监控，易于理解的报告等等，这些方案对于大多数终端用户都过于强大了。如果你只需检查Linux服务器或桌面的基本状态（比如，CPU负载、内存使用、活跃进程），就请考虑一下[linux-dash][1]
 
-linux-dash is a web-based lightweight monitoring dashboard for Linux machines, which can display, in real-time, various system properties, such as CPU load, RAM usage, disk usage, Internet speed, network connections, RX/TX bandwidth, logged-in users, running processes etc. linux-dash does not come with any backend database for storing long-term statistics. Simply drop in linux-dash app in an existing web server (e.g., Apache, Nginx), and you are good to go. It is a quick and easy way to set up remote monitoring for personal projects.
+linux-dash是一款面向Linux机器的基于web的轻量级监控面板，可以事实显示不同的系统属性，比如CPU负载、内存使用、磁盘使用、网络速度、网络连接、RX/TX带宽、登陆用户、运行中的进程等等。linux-dash没有后端数据库库来存储长期统计。在任何已有web服务器(如Apache、Nginx)上运行linux-dash，你就可以用了。这是一个快速又简单的方法来对个人项目进行远程监控。
 
-In this tutorial, I am going to describe **how to set up linux-dash in Nginx web server on Linux**. Nginx is preferred over Apache web server due to its lightweight engine.
+在这篇教程中，我会描述**如何在Linux的Nginx web服务器上设置linux-dash**。Nginx在这里比Apache更好因为它更轻量。
 
-### Set up linux-dash on Debian, Ubuntu or Linux Mint ###
+### 在Debian、Ubuntu或者Linux Mint上设置linux-dash ###
 
-First, install Nginx web server with php-fpm.
+首先，安装带php-fpm的Nginx web服务器。
 
     $ sudo apt-get install git nginx php5-json php5-fpm php5-curl
 
-Configure Nginx for linux-dash app by creating /etc/nginx/conf.d/linuxdash.conf as follows. In this example, we are going to use port 8080.
+为linux-dash创建如下Nginx配置文件/etc/nginx/conf.d/linuxdash.conf。 本例中，我们使用8080端口。
 
     $ sudo vi /etc/nginx/conf.d/linuxdash.conf 
 
@@ -54,11 +51,11 @@ Configure Nginx for linux-dash app by creating /etc/nginx/conf.d/linuxdash.conf 
         }
     }
 
-Disable the default site configuration.
+禁止默认站点配置。
 
     $ sudo rm /etc/nginx/sites-enabled/default
 
-Configure php-fpm by editing /etc/php5/fpm/pool.d/www.conf. Make sure to edit "user", "group" and "listen" directives as shown below. You can keep the rest of the configuration unchanged.
+编辑/etc/php5/fpm/pool.d/www.conf来配置php-fpm。确保按如下编辑"user", "group" 和 "listen"指令。你可以不改变剩下的配置。
 
     $ sudo vi /etc/php5/fpm/pool.d/www.conf 
 
@@ -68,26 +65,26 @@ Configure php-fpm by editing /etc/php5/fpm/pool.d/www.conf. Make sure to edit "u
 > listen = /var/run/php5-fpm.sock
 > . . .
 
-Proceed to download and install linux-dash.
+开始下载并安装linux-dash。
 
     $ git clone https://github.com/afaqurk/linux-dash.git
     $ sudo cp -r linux-dash/ /var/www/
     $ sudo chown -R www-data:www-data /var/www
 
-Restart Nginx web server as well as php5-fpm to finalize installation.
+重启Nginx与php-fpm来完成安装。
 
     $ sudo service php5-fpm restart
     $ sudo service nginx restart 
 
-### Set up linux-dash on CentOS, Fedora or RHEL ###
+### 在CentOS、Fedora、RHEL上设置linux-dash ###
 
-On CentOS, it is necessary to [enable EPEL repository][2] first.
+在CentOS上，需要首先[启用EPEL仓库][2]
 
-Install Nginx web server and php-fpm component.
+安装Nginx与php-fpm组件。
 
     $ sudo yum install git nginx php-common php-fpm 
 
-To configure Nginx for linux-dash app, create /etc/nginx/conf.d/linuxdash.conf as follows.
+为linux-dash程序配置Nginx，如下创建/etc/nginx/conf.d/linuxdash.conf
 
     $ sudo vi /etc/nginx/conf.d/linuxdash.conf 
 
@@ -126,7 +123,7 @@ To configure Nginx for linux-dash app, create /etc/nginx/conf.d/linuxdash.conf a
         }
     }
 
-Next, configure php-fpm by editing /etc/php-fpm.d/www.conf. In this file, make sure to set "listen", "user" and "group" fields as below. You can leave the rest of the configuration unchanged.
+接下来，编辑/etc/php-fpm.d/www.conf来配置php-fpm。在这个文件中，确保按如下编辑"user", "group" 和 "listen"字段。你可以不改变剩下的配置。
 
     $ sudo vi /etc/php-fpm.d/www.conf 
 
@@ -136,26 +133,26 @@ Next, configure php-fpm by editing /etc/php-fpm.d/www.conf. In this file, make s
 > group = nginx
 > . . .
 
-Download and install linux-dash under /var/www.
+在/var/wwwx下载并安装linux-dash。
 
     $ git clone https://github.com/afaqurk/linux-dash.git
     $ sudo cp -r linux-dash/ /var/www/
     $ sudo chown -R nginx:nginx /var/www 
 
-Finally, restart Nginx web server as well as php-fpm, and set them to auto-start upon boot.
+最后，重启Nginx和php-fpm，并设置开机自启。
 
     $ sudo service php-fpm restart
     $ sudo service nginx restart
     $ sudo chkconfig nginx on
     $ sudo chkconfig php-fpm on 
 
-In this example, we have configured linux-dash to use TCP port 8080. So make sure that the firewall is not blocking TCP port 8080.
+在本例中，我们已经配置linux-dash使用TCP端口8080。所以确保防火墙没有阻止TCP 8080端口。
 
-### Monitor a Linux Machine with linux-dash ###
+### 用linux-dash监视Linux机器 ###
 
-To access linux-dash from a web browser, simply go to http://<linux-IP-address>:8080/linux-dash/ on your web browser.
+要在web浏览器上访问linux-dash，只需在web浏览器中输入http://<linux ip地址>:8080/linux-dash/
 
-Below are the screenshots of linux-dash. The web dashboard consists of several widgets, each of which displays particular system properties. You can customize the look of the web dashboard by rearranging and/or closing some of the widgets. [Here][3] is a demo site set up by the creator of linux-dash.
+下面是linux-dash的截图。web面板包含了几个小部件，每个都会显示特性的系统参数。你可以通过重安排并且/或者关闭一些小部件来自定义web面板的外观。[这里][3]是一个linux-dash创建者的演示站点。
 
 ![](https://farm8.staticflickr.com/7268/13799855404_249533c250_z.jpg)
 
@@ -166,7 +163,7 @@ Below are the screenshots of linux-dash. The web dashboard consists of several w
 
 via: http://xmodulo.com/2014/04/monitor-linux-server-desktop-remotely-web-browser.html
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
