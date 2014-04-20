@@ -1,5 +1,6 @@
 从 XP 迁移到 Linux 的入门指南
 =================================================================================
+
 ![](http://www.linuxfederation.com/wp-content/uploads/2014/04/Switch_To_linux.jpeg)
 
 Microsoft 已经不再支持 Windows XP 了。大多数人也许并不关心这事儿，但对于知道使用服务终止的软件会有麻烦的你来说，做点儿改变的时候到了。你可以安装同样落伍的 Windows 7，或者安装没人喜欢的 Windows 8。或者，你可以从风格众多的 Linux 中选择一款来安装，化身成为 Linux 用户这个精英团体的一员。
@@ -28,7 +29,7 @@ Linux 目前有数百个发行版，[Distrowatch][2] 按流行度顺序列出了
 
 译自: http://www.linuxfederation.com/beginners-guide-xp-users-switch-linux/
 
-译者：[sailing](https://github.com/blueabysm) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[sailing](https://github.com/blueabysm) 校对：[wxy](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
