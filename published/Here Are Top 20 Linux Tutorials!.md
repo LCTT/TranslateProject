@@ -1,20 +1,20 @@
-20篇最佳Linux入门教程！
+分享20篇Linux入门教程
 ================================================================================
-需要学习Linux但是不知道怎么开始？没事，因特网充满了数不尽的资源和教程，他们可以让你一步一步地享受体验Linux的精华之旅。所有必须要做的是选择那个适合你的教程，然后开始享受！
+需要学习Linux但是不知道怎么开始？没事，因特网充满了数不尽的资源和教程，他们可以让你一步一步地享受体验Linux的精华之旅。所有必须要做的是选择那个适合你的教程，然后开始你的Linux之旅！
 
 ![](http://www.efytimes.com/admin/useradmin/photo/XdLx24932PM3182014.jpg)
 
 #### 1. [Linux Knowledge Base and Tutorial][1] ####
 
-这篇教程超越了基础知识，提供给你必要的知识来了解Linux系统。
+这篇教程不仅仅是基础知识，还提供给你了解Linux系统的必要的知识。
 
 #### 2. [HowtoForge - Linux Howtos and Tutorials][2] ####
 
-由多篇教程组成:如何转换Outlook PST 到 Thunderbird/Evolution兼容的SBD格式，如何准备一个CentOS 5.10 x86_64架构的服务器来安装ISPconfig 3 以及其他等等
+由多篇教程组成：包括如何转换Outlook PST 到 Thunderbird/Evolution兼容的SBD格式；如何准备一个CentOS 5.10 x86_64架构的服务器来安装ISPconfig 3 以及其他等等。
 
 #### 3. [UNIX / Linux Tutorial for Beginners][3] ####
 
-Unix 和linux 的新手指导教程。8个简单的教程，覆盖了UNIX/Linux的基础命令。
+Unix 和 linux 的新手指导教程。8个简单的教程，覆盖了UNIX/Linux的基础命令。
 
 #### 4. [Linux Shell Scripting Tutorial - A Beginner's handbook][4] ####
 
@@ -22,7 +22,7 @@ Unix 和linux 的新手指导教程。8个简单的教程，覆盖了UNIX/Linux�
 
 #### 5. [LinuxCommand.org: Learn the Linux command line. Write shell scripts][5] ####
 
-为新的命令行用户设计，537页容量包含了LinuxCommand.org上实质的部分但是拥有大量的细节。除了基础的命令行使用和shell脚本，这篇文章还包含了大量编程使用的命令章节，也有很多高级主题。
+为新的命令行用户设计。它出版的《The Linux Command Line》一书多达537页，增加了大量的细节，采用CC协议，可以[从此下载][21]。除了基础的命令行使用和shell脚本，这篇文章还包含了大量编程使用的命令章节，也有很多高级主题。
 
 #### 6. [bash commands - Linux MAN Pages][6] ####
 
@@ -36,7 +36,7 @@ Unix 和linux 的新手指导教程。8个简单的教程，覆盖了UNIX/Linux�
 
 #### 9. [LinuxCommand.org: Learning the shell][9] ####
 
-简单得表达了，shell是一个程序，你可以使用键盘输入命令让操作系统来运行。在早些时候，它是UNIX电脑上唯一可用的用户界面。如今，除了像shell命令行的用户界面，我们有了图形用户界面。
+这篇文章是介绍shell的。
 
 #### 10. [The Linux Documentation Project][10] ####
 
@@ -62,11 +62,11 @@ Unix 和linux 的新手指导教程。8个简单的教程，覆盖了UNIX/Linux�
 
 #### 16. [Linux Newbie Guide: Shortcuts And Commands][16] ####
 
-linux中，一个实用的方法，来快速使用我们最常使用的命令
+选择介绍了linux中实用的命令。
 
 #### 17. [Debian Linux Tutorial][17] ####
 
-这个指导界面带你领略，安装Debian Linux操作系统，和在一个系统中建立一个最常见的网络类型的互联网和局域网服务器。
+这个指导界面带你领略，如何安装Debian Linux操作系统，和在一个系统中建立一个最常见的互联网和局域网服务器。
 
 #### 18. [YoLinux: Index of Linux Tutorials][18] ####
 
@@ -82,7 +82,7 @@ Linux教程和技术关于Linux桌面和服务器配置的信息和实例。无�
 
 via: http://www.efytimes.com/e1/fullnews.asp?edid=132962
 
-译者：[Vic020](http://www.vicyu.net) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Vic020](http://www.vicyu.net) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
@@ -106,3 +106,4 @@ via: http://www.efytimes.com/e1/fullnews.asp?edid=132962
 [18]:http://www.yolinux.com/TUTORIALS/
 [19]:http://www.linux-tutorial.info/modules.php?name=MContent&pageid=224
 [20]:http://www.linux.org/
+[21]:http://sourceforge.net/projects/linuxcommand/files/TLCL/13.07/TLCL-13.07.pdf/download
