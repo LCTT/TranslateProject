@@ -12,13 +12,13 @@ Ultimate Edition 的上一个版本很接地气，有点儿有意思的功能。
 
 Ultimate Edition 3.9 被当做一个稳定的发行版，它鼓励用户使用它时要有信心，我们只好问自己，为什么会有人有信心。
 
-[官方网站的公告][1]包含有关这次发布的更多详情。你可以 下载 Linux 发行版 [Ultimate Edition 3.9][2]。
+[官方网站的公告][1]包含有关这次发布的更多详情。你可以下载 Linux 发行版 [Ultimate Edition 3.9][2] 试试看。
 
 ---------------------------------------------------------------------------------
 
 译自: http://news.softpedia.com/news/Ultimate-Edition-3-9-Linux-Distro-Is-a-Complete-Mess-436797.shtml
 
-译者：[sailing](https://github.com/blueabysm) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[sailing](https://github.com/blueabysm) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
