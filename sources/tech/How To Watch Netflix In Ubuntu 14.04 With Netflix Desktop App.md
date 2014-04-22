@@ -1,3 +1,6 @@
+Translating--------------geekpi
+
+
 How To Watch Netflix In Ubuntu 14.04 With Netflix Desktop App
 ================================================================================
 Watching Netflix on Windows is easy. You can use the web browser or the desktop app but its not the same story in Linux. It does not work by default in Linux as Netflix requires [Microsoft Silverlight][1] and since it’s “the Microsoft”, it is obviously not available on Linux. So is there no way we can use Neflix in Linux? Of course, there is. In this article we shall see how to watch Netflix in Ubuntu 14.04 (and perhaps older versions such as 13.10, 13.04 etc as well).
