@@ -1,3 +1,5 @@
+> Translating by ThomazL
+
 Building A Raspberry Pi VPN Part Two: Creating An Encrypted Client Side
 ================================================================================
 > You built a functional VPN server! Now what?
