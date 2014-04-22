@@ -1,3 +1,5 @@
++ translating    ------- by tenght
+
 Canonical's Ubuntu 14.04 focuses on the long haul
 ================================================================================
 > The server edition of Ubuntu 14.04 comes with Docker and better support for solid-state disks
