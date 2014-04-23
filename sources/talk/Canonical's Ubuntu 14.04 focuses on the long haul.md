@@ -18,7 +18,7 @@ Canonical公司的Ubuntu Server产品经理Mark Baker说：“当人们移动到
 
 Due to factors such as the emergence of cloud services, about 70 percent of CIOs plan to revaluate their choices in IT vendors within the next few years, [according to a Gartner survey][1]. "We are seeing evidence of that," Baker said.
 
-鉴于一些类似于云服务的急切因素，在未来几年内，约百分之70的CIO打算重新评估他们在IT供应商的选择，[according to a Gartner survey][1].Baker说：“我们看到这方面的证据。”
+鉴于一些类似于云服务的急切因素，在未来几年内，约百分之70的CIO打算重新评估他们在IT供应商的选择，[根据Gartner的调查][1].Baker说：“我们看到这方面的证据。”
 
 With Thursday's release of the server edition of its Linux distribution, Ubuntu 14.04, Canonical will emphasize how it can be used for organizations as the base for running large mission-critical applications in hosted environments. The release comes with long-term support and many cloud-friendly software programs, such as Docker and the latest edition of OpenStack.
 
@@ -45,11 +45,11 @@ With Thursday's release of the server edition of its Linux distribution, Ubuntu 
 > 
 > Long-term support comes at a good time, given the increasing severity of bugs being found in the infrastructure software, such as the severe OpenSSL Heartbleed bug [that rendered countless Web applications vulnerable to attack][2].
 >
->长期支持来的正是时候，他将找出日益严重的基础软件安全漏洞，如OpenSSL的“心脏出血”安全漏洞[that rendered countless Web applications vulnerable to attack][2].
+>长期支持来的正是时候，他将找出日益严重的基础软件安全漏洞，如OpenSSL的“心脏出血”安全漏洞[这使无数的Web应用程序容易受到攻击][2].
 
 Also last week, Microsoft discontinued support for its Windows XP OS, potentially leaving millions of users [open to attack][3].
 
-上周，微软停止支持Windows XP操作系统，可能丢失数以百万计的用户[open to attack][3].
+上周，微软停止支持Windows XP操作系统，可能会使数以百万计的用户[遭受攻击][3].
 
 About 70 percent of those using the server edition of Ubuntu use the LTS versions of the OS, Baker noted.
 
@@ -69,17 +69,27 @@ The company has done a lot of interoperability work with other hardware and soft
 
 The package includes the latest version of the OpenStack cloud-hosting software, called Icehouse, [due to be released Thursday][4].
 
-该包包括最新的OpenStack云托管软件，称为冰室[due to be released Thursday][4].
+该包包括最新的OpenStack云托管软件，称为冰室[定于星期四发布][4].
 
 This is notable in that OpenStack itself will only support each release through the next two releases, [a duration that has been until now about 18 months][5].
 
+值得注意的是OpenStack本身只会通过接下来的下两个版本来对每个版本进行支持[一直到现在大约18个月][5].
+
 Ubuntu 14.04 is also the first to include Docker,[a Linux container technology that provides a lighter-weight alternative to running full virtual machines][6].
+
+这也是Ubuntu 14.04第一次包含Docker，[一个开源的Linux应用容器引擎，支持轻量级运行完整的虚拟机][6]
 
 This is also the first edition to include XFS, a high performance 64-bit journaling file system first developed by SGI (Silicon Graphics). Canonical competitor Red Hat [plans to use XFS][7] as the default file system for the next edition of its Red Hat Enterprise Linux (RHEL) distribution.
 
+这也包括XFS第一版，一个最初由SGI(硅图形)公司开发的高性能的64位日志文件系统。Canonical公司的竞争对手Red Hat[计划使用XFS][7]作为小红帽Linux企业版(RHEL)的默认文件系统。
+
 Red Hat also includes Docker and OpenStack in RHEL.
 
+小红帽Linux企业版中同样包含Docker和OpenStack。
+
 Canonical has also equipped Ubuntu to work more effectively with solid-state disks (SSDs). Ubuntu 14.04 comes with Linux kernel version 3.13, [released in January][8]. Linux 3.13 includes a new technology called Multi-Queue Block Layer, which improves read-write performance on SSD disks [by spreading the work across multiple cores][9].
+
+同样的，Canonical公司的Ubuntu也将更有效的支持固态硬盘(SSDs)。Ubuntu 14.04配备了Linux 3.13 内核，[一月份发布的][8]。Linux 3.13包括一个称为多队列块层的新技术，通过将作业分发到多核提高了SSD磁盘读写性能。
 
 --------------------------------------------------------------------------------
 
