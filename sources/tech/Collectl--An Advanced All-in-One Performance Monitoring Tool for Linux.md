@@ -1,3 +1,6 @@
+** Linchenguang is translating this essay
+===============================================================================
+
 Collectl: An Advanced All-in-One Performance Monitoring Tool for Linux
 ================================================================================
 The most important duty of a Linux system administrator is to make sure the system he/she is administering is in a very good condition. There are many tools available for a Linux system admins that can help to monitor and display processes in a system such as top and htop, but none of these tools can compete with **collectl**.
