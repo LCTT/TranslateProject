@@ -1,3 +1,5 @@
++ translating    ---------------by tenght 
+
 Easy Arduino: Two Projects To Help You Get Started
 ================================================================================
 > Many Arduino projects are based on just two simple programs.
