@@ -26,7 +26,7 @@ bino安装完成后通过应用程序，音视频，Bino来启动，或者只需
 
 --------------------------------------------------------------------------------
 
-via: http://www.unixmen.com/play-3d-movies-ubuntu/
+via: http://www.unixmen.com/play-3d-movies-ubuntu/ 
 
 译者：[Vito](https://github.com/vito-L) 校对：[校对者ID](https://github.com/校对者ID)
 
