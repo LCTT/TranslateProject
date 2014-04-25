@@ -27,7 +27,7 @@
 
 3. 当被询问是否替换fontconfig软件包的freetype2时，回答YES。完成后重启你的计算机。
 
-### Infinality for Fedora ###
+### Infinality for Fedora ### 
 
 1. 在终端窗口中执行如下命令
 
