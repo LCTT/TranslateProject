@@ -46,7 +46,7 @@ JDK 8 是一个重要的发行版本，也加入了最新的叫做 Lambda 表达
 
 要验证下 Java 是否已经完全安装的话，可以运行下面的命令来测试。
 
-    java –version
+    java –version 
 
 敬请享受吧！
 
