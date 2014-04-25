@@ -1,3 +1,4 @@
+# Viz 再占领一篇！
 Ubuntu 14.10 to Be Called Utopic Unicorn
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Ubuntu-14-10-to-Be-Called-Utopic-Unicorn-439028-2.jpg)
@@ -24,7 +25,7 @@ All hail Utopic Unicorn!
 
 via: http://news.softpedia.com/news/Ubuntu-14-10-to-Be-Called-Utopic-Unicorn-439028.shtml
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[VizV](https://github.com/VizV) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
