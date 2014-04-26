@@ -1,6 +1,6 @@
 nSnake: 在Linux的终端上玩经典的贪食蛇游戏
 ================================================================================
-你知道20世纪末的那些古老的诺基亚手机上最棒的东西是什么吗？ [贪食蛇][1] 我以前在这个看似无聊但却让人上瘾的游戏上花费了大把的时间。在古老的诺基亚手机被智能手机取代的同时，贪食蛇也被另外的无聊但却令人上瘾的游戏取代了，比如说：[神庙逃亡][2]。但是，贪食蛇本身的魅力仍在。
+你知道20世纪末的那些古老的诺基亚手机上最棒的东西是什么吗？ [贪食蛇][1]! 我以前在这个看似无聊但却让人上瘾的游戏上花费了大把的时间。在古老的诺基亚手机被智能手机取代的同时，贪食蛇也被另外的无聊但却令人上瘾的游戏取代了，比如说：[神庙逃亡][2]。但是，贪食蛇本身的魅力仍在。
 
 在Android，iOS以及Web上有很多可以玩的贪食蛇游戏。另外，在Linux终端上也有类似的游戏。对，你没有听错，Linux终端上真的有。
 
@@ -28,7 +28,7 @@ nSnake: 在Linux的终端上玩经典的贪食蛇游戏
 
 via: http://itsfoss.com/nsnake-play-classic-snake-game-linux-terminal/
 
-译者：[intermerlin](https://github.com/intermerlin) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[intermerlin](https://github.com/intermerlin) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

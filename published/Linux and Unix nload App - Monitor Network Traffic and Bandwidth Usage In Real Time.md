@@ -1,6 +1,8 @@
-Linux 和 Unix 下 nload 应用程序：实时监控网络流量和带宽使用
+在 Linux/UNIX 终端下使用 nload 实时监控网络流量和带宽使用
 =================================================================================
 如果你想在命令行界面监控网络吞吐量，nload 应用程序是个不错的选择。它是一个实时监控网络流量和带宽使用的控制台应用程序，使用两个图表可视化地展示接收和发送的流量，并提供诸如数据交换总量、最小/最大网络带宽使用量等附加信息。
+
+###安装###
 
 #### 在 CentOS/RHEL/Red Hat/Fedora Linux 上安装 nload ####
 
@@ -65,6 +67,8 @@ Linux 和 Unix 下 nload 应用程序：实时监控网络流量和带宽使用
 
     # make install
 
+### 使用 ###
+
 如何使用 nload 显示当前网络使用量呢？
 
 基本语法是：
@@ -83,17 +87,17 @@ Linux 和 Unix 下 nload 应用程序：实时监控网络流量和带宽使用
 
 ![Fig. 01: nload command in action](http://s0.cyberciti.org/uploads/cms/2014/03/nload-command-linux-unix-screenshot-output.jpg)
 
-图01: 使用 nload 命令
+*图01: 使用 nload 命令*
 
 #### 操控 nload 应用程序 ####
 
 nload 命令一旦执行就会开始监控网络设备，你可以使用下列快捷键操控 nload 应用程序。
 
 1. 你可以按键盘上的 ← → 或者 Enter/Tab 键在设备间切换。
-1. 按 F2 显示选项窗口。
-1. 按 F5 将当前设置保存到用户配置文件。
-1. 按 F6 从配置文件重新加载设置。
-1. 按 q 或者 Ctrl+C 退出 nload。
+2. 按 F2 显示选项窗口。
+3. 按 F5 将当前设置保存到用户配置文件。
+4. 按 F6 从配置文件重新加载设置。
+5. 按 q 或者 Ctrl+C 退出 nload。
 
 #### 设置显示刷新间隔 ####
 
@@ -131,7 +135,7 @@ GIF 动画 01 - 使用 nload 命令
 
 译自: http://www.cyberciti.biz/networking/nload-linux-command-to-monitor-network-traffic-bandwidth-usage/
 
-译者：[blueabysm](https://github.com/blueabysm) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[blueabysm](https://github.com/blueabysm) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

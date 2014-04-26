@@ -1,6 +1,6 @@
-可以下种子的 5 个命令行工具
+在终端上访问网站和下载文件
 ================================================================================
-Linux 命令行工具很牛逼，Linux 命令行以及一些第三方应用让 Linux 变得更牛逼。Linux 命令行工具可以用于下载种子，可以上网冲浪。
+Linux 命令行工具很牛逼，Linux 命令行以及一些第三方应用让 Linux 变得更牛逼。Linux 命令行工具可以用于下载种子和文件，可以上网冲浪。
 
 ![5 Command Line Internet Tools](http://www.tecmint.com/wp-content/uploads/2014/02/Command-Line-Internet-Tools.jpg)
 
@@ -119,7 +119,7 @@ W3m 也是大多数发行版的默认配置，也可通过 **apt** 或 **yum** �
 
 #### Elinks的基本用法 ####
 
-# elinks www.tecmint.com
+	elinks www.tecmint.com
 
 ![Elinks Command Line Web Browsing](http://www.tecmint.com/wp-content/uploads/2014/02/Elinks.jpeg)
 
@@ -127,7 +127,7 @@ W3m 也是大多数发行版的默认配置，也可通过 **apt** 或 **yum** �
 
 via: http://www.tecmint.com/command-line-tools-for-downloading-file-and-browsing-websites/
 
-译者：[bazz2](https://github.com/bazz2) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[bazz2](https://github.com/bazz2) 校对：[wxy](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

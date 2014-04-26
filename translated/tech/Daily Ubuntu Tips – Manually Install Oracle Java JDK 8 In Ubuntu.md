@@ -1,6 +1,6 @@
-日常 Ubuntu 小技巧 - 在 Ubuntu 中手工安装 Oracle 的 Java JDK 8
+每日 Ubuntu 小技巧 - 在 Ubuntu 中手动安装 Oracle Java JDK 8
 ================================================================================
-这篇简短的教程将会演示如何在 Ubuntu 系统中安装 Oracle 公司最新发布的 Java JDK 8.这儿使用的方法是教你如何从下载页面下载安装包，然后在 Ubuntu 中安装，并未使用通过从外部的 PPA 或者从第三方源代码的安装方法。
+这篇简短的教程将会演示如何在 Ubuntu 系统中安装 Oracle 公司最新发布的 Java JDK 8。这里使用的方法是教你如何从下载页面下载安装包，然后不使用外部的 PPA 或者第三方源代码在 Ubuntu 中安装。
 
 这种方法不需要依赖于第三方的源仓库。你只需要从 Oracle 的官方下载页直接下载，然后安装就行。
 
@@ -12,11 +12,11 @@ JDK 8 是一个重要的发行版本，也加入了最新的叫做 Lambda 表达
 
 要下载和安装 Java JDK8，请访问[下载页][2]获得最新的发行版本。根据你机器的 Ubuntu 系统的情况可以选择下载 32 位或 64 位的发行版本。
 
-这儿是[下载页面][3]
+这里是[下载页面][3]
 
 在下载之前，您必须接受许可协议。
 
-下载文件，保存。在 Ubuntu 系统中 Firefox 浏览器会把它下载的东西自动保存到 **~/Downloads** 目录下。
+下载文件，保存。在 Ubuntu 系统中 Firefox 浏览器会默认保存到 **~/Downloads** 目录下。
 
 ![oracle-jdk8-ubuntu ](http://www.liberiangeek.net/wp-content/uploads/2014/03/oraclejdk8ubuntu.png)
 
@@ -46,15 +46,15 @@ JDK 8 是一个重要的发行版本，也加入了最新的叫做 Lambda 表达
 
 要验证下 Java 是否已经完全安装的话，可以运行下面的命令来测试。
 
-    java –version
+    java –version 
 
-敬请享受吧！
+好好享受吧！
 
 --------------------------------------------------------------------------------
 
 via: http://www.liberiangeek.net/2014/03/daily-ubuntu-tips-manually-install-oracle-java-jdk-8-in-ubuntu/
 
-译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
