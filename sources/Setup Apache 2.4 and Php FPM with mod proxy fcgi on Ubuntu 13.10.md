@@ -1,7 +1,7 @@
 没人领我就继续做吧
 Setup Apache 2.4 and Php FPM with mod proxy fcgi on Ubuntu 13.10
 ================================================================================
-### mod_proxy_fcgi ###
+### mod\_proxy\_fcgi ###
 
 The module mod_proxy_fcgi is a new one and it allows apache to connect to/forward requests to an external fastcgi process manager like php fpm. This allows for a complete separation between the running of php scripts and Apache. Earlier we had to use modules like mod_fcgid and mod_fastcgi which all had some limitations. Mod_fcgid for example did not properly utilise the process management capability of php-cgi whereas mod_fastcgi is a third party module.
 
