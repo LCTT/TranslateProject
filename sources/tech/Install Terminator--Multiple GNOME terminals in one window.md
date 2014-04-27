@@ -1,3 +1,4 @@
+[bazz2 hehe]
 Install Terminator – Multiple GNOME terminals in one window
 ================================================================================
 Terminator is a program that allows users to set up flexible arrangements of GNOME terminals. It is aimed at those who normally arrange lots of terminals near each other, but don’t want to use a frame based window manager.
