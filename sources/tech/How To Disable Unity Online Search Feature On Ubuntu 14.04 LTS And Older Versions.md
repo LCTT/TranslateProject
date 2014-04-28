@@ -1,3 +1,5 @@
++ translating     ----------by tenght
+
 How To Disable Unity Online Search Feature On Ubuntu 14.04 LTS And Older Versions
 ================================================================================
 Whenever, you start typing in Unity Dash to search for an application or a file in your computer, your search terms will be automatically sent to third parties such as Amazon, and the third parties will display the relevant results (mostly ads) depending upon your search terms. If you don’t like this feature and feel this is really annoying to you, you can disable it.
