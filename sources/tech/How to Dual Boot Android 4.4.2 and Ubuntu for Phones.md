@@ -1,3 +1,7 @@
+Trnalsting--------geekpi
+
+
+
 How to Dual Boot Android 4.4.2 and Ubuntu for Phones
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Hot-to-Dual-Boot-Android-4-4-2-and-Ubuntu-for-Phones-438840-2.jpg)
