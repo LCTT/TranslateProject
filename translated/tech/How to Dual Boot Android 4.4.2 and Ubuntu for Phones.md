@@ -1,4 +1,4 @@
-如何在Phone上实现Ubuntu和Android 4.4.2 双启动
+如何在电话上实现Ubuntu和Android 4.4.2 双启动
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Hot-to-Dual-Boot-Android-4-4-2-and-Ubuntu-for-Phones-438840-2.jpg)
 
