@@ -1,46 +1,42 @@
-Trnalsting--------geekpi
-
-
-
-How to Dual Boot Android 4.4.2 and Ubuntu for Phones
+如何在Phone上实现Ubuntu和Android 4.4.2 双启动
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Hot-to-Dual-Boot-Android-4-4-2-and-Ubuntu-for-Phones-438840-2.jpg)
 
-**Testing Ubuntu for phones is now even simpler with an application that is capable of installing the new operating system from Canonical without having to delete Android. Getting a dual boot system in place will perhaps turn the attention of even more users towards the new open source platform for mobiles and tablets.**
+**现在在电话上测试Ubuntu变得更加简单，可以从Canonical上获得一个程序，它可以安装新的操作系统而不必删除Andorid。能够双启动的系统获取可以将用户的注意力转移到新的手机和平板的开源平台上。**
 
-Canonical has a simple procedure explained on its website on how to install Ubuntu for phones, but that implies deleting Android and getting the new operating system in place. The Ubuntu developers have done a great job so far and the new OS is looking great, but if you decide to return to Android, you will need to delete Ubuntu and install Google’s OS. That means that you will have to set up the phone all over again, which can be bothersome.
+Canonical在它的网站上有一个有一个流程解释了如何在电话上安装Ubuntu，但是这暗示了需要删除Android系统来获得新的操作系统。Ubuntu的开发者已经做了大量的工作来使这个新的系统看上去不错，但是如果你决定返回Android，你需要删除Ubuntu并安装Google的系统。这意味这你不得不重复设置你的电话，这可能会比较麻烦。
 
-Fortunately, there is a solution for this problem and it's called [MultiROM Manager][1], an application developed by Vojtech Bocek. It's available on Google Play and will only work on Nexus 7 (2012 & 2013), Nexus 4, and Nexus 5.
+幸运的是，现在有一个称为[MultiROM Manager][1]的解决方案，它由Vojtech Bocek开发，现在已经在Google Play上并且只可工作在Nexus 7 (2012 & 2013)、 Nexus 4 和 Nexus 5上。
 
-On the other hand, Ubuntu Touch only works on Nexus 4 Phone (mako), Nexus 7 (2013) Tablet (flo), and Nexus 10 Tablet (manta), so unless you have one of these devices, you won't be able to safely do this procedure (it might work, but there are no guarantees and you might brick the device and/or lose all your data.)
+另一方面，Ubuntu Touch只可工作在Nexus 4 (mako) 、Nexus 7 (2013) 平板 (flo)和 Nexus 10 平板 (manta)，因此除非你有这些设备，否则你可能不能安全地执行这些步骤(它可能可以工作，但是不保证会让你的设备变砖同时/或者失去所有的数据。)
 
-First of all, you will need an unlocked phone, which shouldn't be a problem since you already have a Nexus device. You will also have to be root in Android so that you can install the operating system from inside the application itself.
+首先，你需要一台未解锁的设备，既然你有一台Nexus的设备这不应该是一个问题。你同样需要已经root了你的Andorid设备，这样你才能在应用内部安装操作系统。
 
-A number of tools will be necessary for this work. First off all, you will need to install ADB (Android Debug Bridge), which is provided by Canonical along with some of its tools. You will have to run a few commands in a terminal:
+有很多工具可以完成这个工作。首先，你需要安装ADB(Android Debug Bridge), 它有Canonical随着它的工具一起提供。你需要在终端下运行下面的命令：
 
     sudo add-apt-repository ppa:phablet-team/tools
     sudo apt-get update
     sudo apt-get install ubuntu-device-flash
 
-Now, you will need to download two packages, [TWRP 2.7.0.0][2] and [SuperSU][3] binary, which will actually make you root. Copy the SuperSU binary zip to the phone's memory. Run this command to go to the bootloader:
+现在，你需要下载两个二进制包，[TWRP 2.7.0.0][2] 和 [SuperSU][3]，它们可以确保你已经root。复制SuperSU的二进制zip包到你的电话内存中，运行下面的命令进入bootloader:
 
     sudo reboot bootloader
 
-Unzip the TWRP files on your computer and install the images with the following command (replace recovery.img with the name of the file you have downloaded):
+在你的电脑上解压TWRP文件，并用下面的命令安装镜像(用你下载的文件名代替recovery.img)
 
     fastboot flash recovery recovery.img
 
-Navigate from the bootloader menu to recovery and you will now have TWRP 2.7.0.0 in place. Run TWRP and install the SuperSU binary, followed by a reboot.
+从bootloader菜单进入recovery，你就会看到TWRP 2.7.0.0在那里。运行TWRP并安装SuperSU二进制包，接着重启。
 
-You now have root access in Android. Install MultiROM Manager, apply the patches, and download Ubuntu for phones. The application will ask for root access and the installation will go on smoothly. When you reboot you will be prompted with a small screen that allows you to choose what system you want to run. Choose Ubuntu and you are good to go.
+现在你已经有root访问权限了。安装Multi Manager，应用补丁，并为电话下载Ubuntu。应用会要求root权限，接着安装会顺利进行。当你重启的时候你会看到一个小窗口提示你选择你要运行的系统。选择Ubuntu后你就可以运行了。
 
-Enjoy!
+享受吧！
 
 --------------------------------------------------------------------------------
 
 via: http://news.softpedia.com/news/Hot-to-Dual-Boot-Android-4-4-2-and-Ubuntu-for-Phones-438840.shtml
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
