@@ -1,3 +1,4 @@
+[zzlyzq translating]
 How to set up a secondary DNS server in CentOS
 ================================================================================
 In the [previous tutorial][1], we created a primary DNS server (ns1) for a test domain example.tst. In this tutorial, we will create a secondary DNS server (ns2) for the same domain by using bind package on CentOS.
