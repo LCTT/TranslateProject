@@ -1,3 +1,4 @@
+translating --------------------------- by jutzyn
 How has the Press Reacted to Ubuntu 14.04? We Round Up the Reviews
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/04/ubuntu-desktop.jpg)
