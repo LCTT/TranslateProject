@@ -1,3 +1,4 @@
+yujianxuechuan is translating this 
 Daily Ubuntu Tips – Ubuntu One Shuts Down, Switch To Dropbox Or Box Cloud Services
 ================================================================================
 With Canonical’s [decision to shutdown Ubuntu One cloud file services][1], you may be looking for other services to host your data. Although there are many cloud services, just few of the big players support Linux, including Ubuntu.
