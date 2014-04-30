@@ -1,3 +1,6 @@
+Translating----------------geekpi
+
+
 How to close an open DNS resolver
 ================================================================================
 The DNS server that we have created in the [previous tutorial][1] is an open DNS resolver. An open resolver does not filter any incoming requests, and accepts queries from any source IP address.
