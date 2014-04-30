@@ -1,19 +1,16 @@
-Translating----------------geekpi
-
-
-How to close an open DNS resolver
+如何关闭一个开放的DNS解析器
 ================================================================================
-The DNS server that we have created in the [previous tutorial][1] is an open DNS resolver. An open resolver does not filter any incoming requests, and accepts queries from any source IP address.
+我们在[之前的教程中][1]创建的DNS服务器是一个开放DNS解析器。开放解析器不会过滤任何来源请求，并会接受来自所有IP的查询、
 
-Unfortunately, an open resolver can become an easy target to attackers. For example, attackers can initiate a Denial of Service (DoS) or even worse, a Distributed Denial of Service (DDoS) attack on the open DNS server. These attacks can also be combined with IP spoofing, where all the reply packets will be directed to a victim’s spoofed IP address. In another attack scenario called [DNS amplification attacks][2], an open DNS server can actively participate in the attacks.
+不幸的是，开放解析器很容易成为一个攻击目标。比如，攻击者可以发起一个拒绝服务攻击(DoS)或者更糟，一个分布式拒绝服务攻击(DDoS)在开放DNS服务器上。这些也可与IP欺骗结合，将应答包指向受害者被欺骗的IP地址。在另外的场合下称作[DNS放大攻击][2]，开放的DNS服务器很容易就会成为攻击的对象。
 
-According to [openresolverproject.org][3], it is not advisable to run an open resolver unless necessary. Most companies keep their DNS servers accessible to only their customers. This tutorial will focus on how to configure a DNS server so that it stops being an open resolver and responds only to valid customers.
+根据[openresolverproject.org][3]，除非有必要，运行一个开放解析器是不明智的。大多数公司要让它们的DNS服务器仅对他们的客户开放。本篇教程会只要集中于如何配置一个DNS服务器来使它停止开放解析且仅对有效的客户响应。
 
-### Tuning Firewall ###
+### 调整防火墙 ###
 
-As DNS runs on UDP port 53, system admins may attempt to allow port 53 for client IP addresses only, and block the port from the rest of the Internet. Though this will work, there are going to be some problems. Since the communication between the root servers and the DNS servers use port 53 as well, we have to make sure that the IP addresses of the root servers are also allowed on UDP port 53 in the firewall.
+由于DNS运行在UDP的53端口上，系统管理可能试图仅允许来自53端口的客户端IP地址，并阻止剩余的因特网端口。虽然这可以工作，但是也会有一些问题。既然根服务器与DNS服务器的通信也用53端口，我们不得不在防火墙内也确保UDP 53端口被允许。
 
-A sample firewall script is provided below. For production servers, make sure that the rules match your requirements and also comply with company security policies.
+一个防火墙示例如下所示。对于生产服务器，确保你的规则匹配你的要求并遵守与公司安全制度。
 
     # vim firewall-script 
 
@@ -31,16 +28,16 @@ A sample firewall script is provided below. For production servers, make sure th
     ## making the rules persistent ##
     service iptables save
 
-Make the script executable and run it.
+让脚本可执行并运行它。
 
     # chmod +x firewall-script
     # ./firewall-script 
 
-### Blocking Recursive Queries ###
+### 阻止递归查询 ###
 
-DNS queries can be primarily [categorized][4] as recursive and iterative queries. For a recursive query, the server responds to the client with either the answer or an error message. If the answer is not available in the server cache, the server communicates with the root servers to obtain authoritative name servers. The servers keeps looking up until it gets an answer, or until the query times out. For an iterative query, on the other hand, the server simply refers the client to another server who would be able to process, thus leading to less processing on the server itself.
+DNS查询主要可以[分为][4]递归查询和迭代查询。对于递归查询,服务器会响应客户端应答或者错误信息。如果应答不在服务器的缓存中，服务器会与根服务器通信并获得授权域名服务器。服务器会不停查询知道获得结果，或者请求超时。对于迭代查询，另一个方面讲，服务器会将客户端指向另外一个可能可以处理的服务器上，那么就会减少服务器自身的处理。
 
-We can control the IP addresses that are allowed for recursive queries. We modify the configuration file /etc/named.conf and add/modify the following parameters.
+我们可以控制运行递归查询的IP地址。我们修改位于/etc/named.conf的配置文件并增加/修改下面的参数。
 
     # vim /etc/named.conf
 
@@ -56,19 +53,19 @@ We can control the IP addresses that are allowed for recursive queries. We modif
             allow-recursion { customer-a; customer-b; };
     };
 
-### Tuning Firewall for Open Resolver ###
+### 调整用于开放解析器的防火墙 ###
 
-If you must run an open resolver, it is recommended that you tune the firewall properly so that your server cannot be exploited. [smurfmonitor repository][5] provides a powerful set of iptables rules that can be used in open resolvers, such as blocking requests for domains involved in DNS amplification attacks. The repository is updated periodically, and it is highly recommended for DNS server admins.
+如果你必须运行一个开放解析器，建议你适当调节一下你的服务器，这样就不会被利用了。[smurfmonitor 仓库][5]提供了强大的一组可以用于开放解析器的iptables规则，比如阻止来自DNS放大攻击的域名解析请求。这个仓库会定期地更新，强烈建议DNS服务器管理员使用它。
 
-To sum up, attacks on open DNS resolvers are common, especially for DNS servers without proper security. This tutorial demonstrated how to disable an open DNS server. We have also seen how iptables can be used to add an additional layer of security to an open DNS server.
+总的来说，对于开放DNS解析器的攻击是很常见的，特别是对于没有适当安全防护的DNS服务器而言。这个教程延时了如何禁止一个开放DNS服务器。我们同样看到了如何使用iptables在一个开放DNS服务器上加上一层安全防护。
 
-Hope this helps.
+希望这对你有用。
 
 --------------------------------------------------------------------------------
 
 via: http://xmodulo.com/2014/04/close-open-dns-resolver.html
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
