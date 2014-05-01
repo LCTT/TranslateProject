@@ -1,52 +1,58 @@
-** Linchenguang is translating this essay
-===============================================================================
+Collectl: 一个高级全能的Linux性能监控工具
 
-Collectl: An Advanced All-in-One Performance Monitoring Tool for Linux
 ================================================================================
-The most important duty of a Linux system administrator is to make sure the system he/she is administering is in a very good condition. There are many tools available for a Linux system admins that can help to monitor and display processes in a system such as top and htop, but none of these tools can compete with **collectl**.
+
+对于一个Linux系统管理员来说确保自己管理的系统处于一个良好的状态是其首要责任。Linux系统管理员可以找到有很多工具来帮助自己监控和显示系统中的进程，例如 top 和 htop ,但是这些工具都不能与**collectl**相媲美。 
 
 ![Collectl: Linux Performance Monitoring](http://www.tecmint.com/wp-content/uploads/2014/04/Collectl-Linux-Monitoring.jpg)
 
-**collectl** is a very nice feature rich command-line utility that can be used to collect performance data that describes the current system status. Unlike most of the other monitoring tools, collectl does not focus in a limited number of system metrics, instead it can gather information on many different types of system resources such as cpu, disk, memory, network, sockets, tcp, inodes, infiniband, lustre, memory, nfs, processes, quadrics, slabs and buddyinfo.
 
-A very good thing about using **collectl** is that it can also play the role of utilities that are designed with only a specific purpose such as top, ps, iotop and many others. What are some features that make **colleclt** a useful tool?
+**collectl**是一款非常优秀并且有着丰富的命令行功能的实用程序，你可以用它来采集描述当前系统状态的性能数据。不同于大多数其它的系统监控工具，collectl 并非仅局限于有限的系统度量，相反，它可以收集许多不同类型的系统资源如 cpu 、disk、memory 、network 、sockets 、 tcp 、inodes 、infiniband 、 lustre 、memory、nfs、processes、quadrics、slabs和buddyinfo等。
 
-After doing a lot of research I have compiled a list with some of the most important features of the collectl command-line utility for you guys.
+使用**collectl**的另一个好处就是它可以替代那些有特殊用途的工具如 top、ps、iotop 等还有其它许多这样的工具。那么**collectl**有什么特性而使其成为一个有用的工具呢？
 
-### Collectl Features ###
 
-- It can run interactively, as a daemon or both.
-- It can display the output in many formats.
-- It has the ability to monitor almost any subsystem.
-- It can play the role of many other utilities such as ps, top, iotop, vmstat.
-- It has the ability to record and playback the captured data.
-- It can export the data in various file formats. (this is very useful when you want to analyse the data with external tools).
-- It can run as a service to monitor remote machines or an entire server cluster.
-- It can display the data in the terminal, write to a file or a socket.
+做过研究后我总结了 collectl 的命令行功能的一些非常重要的特性。
 
-### How to Install collectl in Linux ###
+### Collectl 特性 ###
 
-The **collectl** utility runs on all Linux distributions, the only thing it requires to run is perl, so make sure that you have **Perl** installed in your machine before installing collectl in your machine.
+- 可以交互式地运行或作为一个守护进程，或同时二者兼备地运行。
 
-#### On Debian/Ubuntu/Linux Mint ####
+- 可以以多种格式显示输出。
 
-The following command can be used to install the collectl utility in Debian based machines such as Ubuntu.
+- 可以监控几乎所有的子系统。
 
-#### On Debian/Ubuntu/Linux Mint ####
+- 可以替代许多工具如 ps、top、iotop、vmstat。
 
-The following command can be used to install the collectl utility in Debian based machines such as Ubuntu.
+- 可以记录并回放捕获的数据。
+
+-可以将数据导出成多种数据格式。（这在你想用外部工具分析数据时非常有用） 
+
+- 可以作为一个服务来监控远程机或者整个服务器集群。
+
+- 可以在终端显示数据，写入数据到文件或者一个套接字。
+
+### 如何在Linux上安装collectl###
+
+
+**collectl**可以在所有的Linux发行版上运行，唯一需要的就是perl语言，所以一定要确保在安装**collectl**之前你的电脑上已经安装了**Perl**。
+
+#### 对于Debian/Ubuntu/Linux Mint ####
+
+下面的命令可以用来在以Debian为基础的设备如Ubuntu 上安装collectl。
 
     $ sudo apt-get install collectl
 
-#### On RHEL/CentOS/Fedora ####
+#### 对于RHEL/CentOS/Fedora ####
 
-If you are using Red Hat based distro, you can easily grab it from the repos with the yum command.
+如果你正在使用基于红帽的发行版，你可以用yum命令轻松获取它。
 
     # yum install collectl
 
-### Some Practical Examples Of The collectl Utility ###
+### 一些关于collectl的实例 ###
 
-Once the installation of the collectl tool is finished, you can easily run it from the terminal, even without any option. The following command will display information on cpu, disk and network stats in a very short and human readable format.
+
+安装好collectl之后，你可以轻松得在终端运行它，你甚至不需要任何选项。下面的命令将会以简短的人性化的格式显示cpu、硬盘和网络信息。
 
     # collectl
 
@@ -64,17 +70,20 @@ Once the installation of the collectl tool is finished, you can easily run it fr
       16   2   732   1348      0      0      0      0      1      1      0       1 
       22   4   993   1615      0      0     56      3      1      2      0       3
 
-As you guys can see from the above output displayed in the terminal screen, it is very easy to work with the system metrics values present in the command output because it appears on a single line.
 
-When the collectl utility is executed without any option it displays information about the following subsystems:
+正如上面终端上所显示的，我们很容易观察该命令输出的系统度量值，因为它只显示一整行。
+
+
+不加任何参数执行collectl会显示下面子系统的信息
 
 - cpu
 - disks
 - network
 
-**Note**: In our case, a subsystem is every type of a system resource that can be measured.
+**提示**：在这里，一个子系统是每一种可以测量的系统资源。
 
-You can also display statistics for all subsystems except slabs by combining the command with the **–all** option like shown below.
+你也可以显示除slabs以外各个子系统的统计数据，这要结合下面的**-all**选项来实现。
+
 
     # collectl --all
 
@@ -90,10 +99,12 @@ You can also display statistics for all subsystems except slabs by combining the
       26   5   823   1238  396  428   1G 175M   1G 683M 193M   1G ssslkjjebbk      0      0      0      0      2     11      3       9    0    0    0    0  622    0    0    0   8160 240828      0      0    0    0 
       15   1   753   1276  361  391   1G 175M   1G 683M 193M   1G ssslkjjebbk      0      0     40      3      1      2      0       3    0    0    0    0  623    0    0    0   8160 240829      0      0    0    0
 
-But, how do you monitor the cpu usage with the help of the utility? The ‘-s‘ option should be used to controls which subsystem data is to be collected or played back.
 
-For example the following command can be used to monitor the summary of the cpu usage.
 
+但是，你如何用它来监控cpu的利用情况呢？ ‘s’ 选项可以用来控制需要收集和回放的数据。
+
+
+例如下面的命令可以用来对cpu使用情况进行一个总结。
     # collectl -sc
 
     waiting for 1 second sample...
@@ -110,6 +121,8 @@ For example the following command can be used to monitor the summary of the cpu 
       15   1   764   1268
 
 What happens when you combine the command with “**scdn**“? The best way to learn how to use command-line tools is to practice as much as possible, so run the following command in your terminal and see what is going to happen.
+
+当你将这个命令与“**scdn**”结合时会发生什么呢？学习命令行工具最好的方式就是多加练习，所以运行下面的命令看看会发生什么吧。
 
     # collectl -scdn
 
@@ -128,9 +141,10 @@ What happens when you combine the command with “**scdn**“? The best way to l
       14   1   779   1383      0      0     48      6      1      1      0       1 
       11   2   795   1285      0      0      0      0      2     14      1      14
 
-You can easily understand that the default option is “**cdn**“, it stands for cpu, disks and network data. The result of the command is the same with the output of “**collectl -scn**“
 
-If you want to collect data about the memory, use the following command.
+你可以很容易地理解默认选项中的“**cdn**”，它代表cpu、硬盘和网络数据。运行添加这个选项的collectl命令的输出和“**collectl －scn**”的输出一样。
+
+如果你想采集内存的数据，用下面的命令。
 
     # collectl -sm
 
@@ -146,9 +160,9 @@ If you want to collect data about the memory, use the following command.
        1G 177M   1G 684M 193M   1G 
        1G 177M   1G 684M 193M   1G
 
-The above output is very useful when you want to get some detailed information on your memory usage, free memory and other important stuff for the performance of your system.
+上面的输出在你想要进一步了解内存使用信息，空闲的内存或者与你系统性能有关的重要资料时非常有用。
 
-How about some data on tcp? Use the following command to do it.
+如果想搜集一点儿tcp的数据呢？使用下面的命令来实现吧。
 
     # collectl -st
 
@@ -167,7 +181,8 @@ How about some data on tcp? Use the following command to do it.
         0    0    0    0 
         0    0    0    0
 
-After you have gained some experience you can easily combine options to get the results you want. For example you can combine the “**t**” for tcp and “**c**” for cpu. The following command does that.
+
+当你熟练到一定程度时，你就可以很轻松地得到你想要的结果了。例如你可以将关于tcp的“**t**”选项和关于cpu的“**c**”选项组合到一起。下面的命令就是如此。
 
     # collectl -stc
 
@@ -185,7 +200,8 @@ After you have gained some experience you can easily combine options to get the 
       17   3   755   1218    0    0    0    0 
       14   2   788   1321    0    0    0    0
 
-It is hard for us humans to remember all the available options so I am posting the summary list of subsystems supported by the tool.
+
+对于我们普通大众来说记住这些选项很困难，所以这里我整理出了这个工具支持的选项的列表。
 
 - **b** – buddy info (memory fragmentation)
 - **c** – CPU
@@ -201,7 +217,7 @@ It is hard for us humans to remember all the available options so I am posting t
 - **x** – Interconnect
 - **y** – Slabs (system object caches)
 
-A very important piece of data for a system administrator or a Linux user is the data collected on disk usage. The following command will help you to monitor the disk usage.
+对于一个系统管理员或者一个Linux用户来说很重要的一种数据就是硬盘的使用情况。下面的命令可以帮你监控硬盘使用情况。
 
     # collectl -sd
 
@@ -218,7 +234,8 @@ A very important piece of data for a system administrator or a Linux user is the
           0      0    100      7 
           0      0      0      0
 
-You can also use the “**-sD**” option to collect data on individual disks, but you have to know that information on total disks will not be reported.
+
+你也可以使用“**-sD**”选项来采集单个硬盘的数据，但是你必须知道全部硬盘的信息不会被报告。
 
     # collectl -sD
 
@@ -242,6 +259,8 @@ You can also use the “**-sD**” option to collect data on individual disks, b
 
 You can also use other detail subsystems to collect detailed data. The following is a list of the detail subsystems.
 
+你也可以使用其它详细的子系统来采集详细的数据。下面是详细子系统的一个列表。
+
 - **C** – CPU
 - **D** – Disk
 - **E** – Environmental data (fan, power, temp), via ipmitool
@@ -254,9 +273,9 @@ You can also use other detail subsystems to collect detailed data. The following
 - **Y** – Slabs (system object caches)
 - **Z** – Processes
 
-There are many available options in the collectl utility, but there is not enough time and space to cover them all in only one article. However it is worth mentioning and teaching how to use the utility as **top** and **ps**.
+collectl工具中有许多选项，但是仅用一篇文章来介绍肯定是介绍不过来的。然而如何将它当作**top**和**ps**工具来使用还是值得一提的。
 
-It is very easy to make collectl work as the top utility, just run the following command in your terminal and you will see the similar output the **top** tool gives you when it is executed in your Linux system.
+很容易将collectl当作top来使用，只要在Linux 系统的终端运行下面的命令你就会看到和**top**工具类似的输出。
 
     # collectl --top
 
@@ -287,6 +306,8 @@ It is very easy to make collectl work as the top utility, just run the following
 
 And now last but not least, to use the collectl utility as the ps tool run the following command in your terminal. You will get information about processes in your system the same way as you do when you run the “**ps**” command in your terminal.
 
+最后，当然不是说这不重要，我们在终端运行下面的命令就可以将collectl用作ps工具了。
+你可以得到关于你系统进程的信息，这和在终端运行“**ps**”命令是一样的。
     # collectl -c1 -sZ -i:1
 
     waiting for 1 second sample...
@@ -315,9 +336,10 @@ And now last but not least, to use the collectl utility as the ps tool run the f
        21  root     20     2    0 S     0     0  0  0.00  0.00   0  00:00.00    0    0    0    0 bdi-default 
        22  root      0     2    0 S     0     0  0  0.00  0.00   0  00:00.00    0    0    0    0 kintegrityd
 
-I am very sure that many Linux system administrators will like this tool and will feel its power when using it to the fullest. If you like to advance your knowledge about collectl to the next level refer to its manual pages and keep practicing.
 
-Just type the following command in your terminal and start reading.
+我确信许多系统管理员将会喜欢这个工具并且在充分利用它后会感受到它的强大。如果你想增进你对collectl的了解达到新的层面，你可以去参阅collectl的man手册并勤加练习。
+
+在你的终端键入下面的命令开始阅读吧。
 
     # man collectl
 
@@ -329,7 +351,7 @@ Just type the following command in your terminal and start reading.
 
 via: http://www.tecmint.com/linux-performance-monitoring-with-collectl-tool/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Linchenguang](https://github.com/Linchenguang) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
