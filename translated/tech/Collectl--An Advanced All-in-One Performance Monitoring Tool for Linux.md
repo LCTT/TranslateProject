@@ -342,7 +342,7 @@ And now last but not least, to use the collectl utility as the ps tool run the f
 
     # man collectl
 
-### Reference Links ###
+### 参考链接 ###
 
 - [collectl Homepage][1]
 
