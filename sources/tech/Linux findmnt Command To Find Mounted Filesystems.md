@@ -1,3 +1,4 @@
+[zzlyzq translating...]
 Linux findmnt Command To Find Mounted Filesystems
 ================================================================================
 The command findmnt is used to find mounted filesystems in Linux. This command will look for a particular filesystem in /etc/fstab, /etc/mtab or /proc/self/mountinfo.
