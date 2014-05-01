@@ -1,3 +1,4 @@
+[this is bazz2, over]
 Improving The Linux Desktop
 ================================================================================
 Ken Starks writing for Foss Force asks [What Would You Do to Improve Linux?][1], and I'm glad he did, because I have a list. Oh my do I have a list. For me, the Linux desktop has been full of promise, but the promise has always been just out of reach. It's been full of "the next version is going to be awesome", for every version that comes out. It's been chasing fifty rabbits at once, and almost catching a few. Linux desktops, I think it's time we had a talk.
