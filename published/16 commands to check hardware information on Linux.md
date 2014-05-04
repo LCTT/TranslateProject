@@ -1,5 +1,4 @@
-[ translating by stallonederek ]
-Linux中16个常用的查询主机硬件信息的命令
+Linux硬件信息命令大全
 ================================================================================
 ### 硬件信息 ###
 
@@ -88,11 +87,11 @@ lscpu命令可以用来查询处理器cpu的详细信息，只需要简单地输
 
 点击下面的帖子，可以对lshw有更多的了解。
 
-[Get hardware information on Linux with lshw command][1]
+[在Linux上使用lshw命令获取硬件信息][1]
 
 ### 3. hwinfo - Hardware Information ###
 
-hwinfo同样是一个使用非常广泛的硬件信息查询命令，类似于lshw，它同样详细或概要地报告多个部件的硬件信息，但不同的是，它有时可以给出比lshw更多的信息。
+hwinfo同样是一个使用非常广泛的硬件信息查询命令，类似于lshw，它同样可以详细或概要地报告多个部件的硬件信息，但不同的是，它有时可以给出比lshw更多的信息。
 
     $ hwinfo --short
     cpu:                                                            
@@ -144,11 +143,11 @@ hwinfo同样是一个使用非常广泛的硬件信息查询命令，类似于ls
 
 点击下面的链接可以查看更多关于hwinfo的信息。
 
-[Check hardware information on Linux with hwinfo command][2]
+[在Linux上使用hwinfo命令获取硬件信息][2]
 
 ### 4. lspci - 显示pci总线相关信息 ###
 
-lscpi命令可以列出pci总线上信息，以及所有连接到pci总线上的设备信息，比如vga适配器，显卡，网卡，usb端口，sata控制器等等。
+lscpi命令可以列出pci总线上信息，以及所有连接到pci总线上的设备信息，比如VGA适配器，显卡，网卡，usb端口，sata控制器等等。
 
     $ lspci
     00:00.0 Host bridge: Intel Corporation 82G35 Express DRAM Controller (rev 03)
@@ -204,7 +203,7 @@ lscpi命令可以列出pci总线上信息，以及所有连接到pci总线上的
 
 ### 7. Inxi ###
 
-inxi命令是一个大的bash脚本文件，其通过从不同的信息来源和命令中获取硬件信息，最后能给出一个非常美观的，特别适合于非专业人员阅读的硬件信息报告。
+inxi命令是一个大的bash脚本文件，其通过从不同的信息来源和命令中获取硬件信息，最后能给出一个颜色高亮的，适合于非专业人员阅读的硬件信息报告。
 
     $ inxi -Fx
 
@@ -241,7 +240,7 @@ inxi命令是一个大的bash脚本文件，其通过从不同的信息来源和
     /dev/sda8       210G  149G   51G  75% /media/13f35f59-f023-4d98-b06f-9dfaebefd6c1
     /dev/sda5       105G   31G   75G  30% /media/4668484A68483B47
 
-### 10. Pydf - python版本的df ###
+### 10. pydf - python版本的df ###
 
 一个增强型的python版的df命令，可以以不同的颜色显示所查询的信息，看起来比df更好看。
 
@@ -394,13 +393,13 @@ hdparm命令可以获取sata设备如硬盘等设备信息。
 
 每一个命令在获取信息的方式会稍微有些不同，在查询某一设备时，你也有可能要结合多个命令才能获取你想要的硬件信息。不过，这些命令都可以在大多数的linux发行版中找到，可以很容易地从默认的仓库中获取安装。
 
-在桌面版系统中，这也存在一下图形界面的工具，可以方便大家记忆和使用，比如Hardinfo,I-nex就是其中非常流行的工具，他们可以提供多个硬件部件的详细信息。
+在桌面版系统中，还有一个便于使用的图形界面的工具，比如Hardinfo、I-nex就是其中非常流行的工具，他们可以提供多个硬件部件的详细信息。
 
 --------------------------------------------------------------------------------
 
 via: http://www.binarytides.com/linux-commands-hardware-info/
 
-译者：[stallonederek](https://github.com/stallonederek) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[stallonederek](https://github.com/stallonederek) 校对：[wxy](https://github.com/校wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

@@ -1,14 +1,14 @@
-如何通过终端查询字典定义
+如何在Linux命令行下查询字典？
 ================================================================================
-大多数人在遇到他们不熟悉的单词时会查询google。或者他们有一个最喜欢的在线字典来提供答案。当你在没有网络连接的时候怎么办？或者你只有一个古老的Linux发行版且你没有GUI界面？你需要离线查找。一个好的方法在这里。
+大多数人在遇到他们不熟悉的单词时会查询google。或者他们用一个最喜欢的在线字典来提供答案。当你在没有网络连接的时候怎么办？或者你只有一个古老的Linux发行版且你没有GUI界面？你需要离线查找的话，这里有一个好的方法。
 
-首先你需要本地设置dicted。**Dicted** 是一个字典数据库服务器。它允许你访问在线字典。但是等一下，这是我们希望避免的，对么？一个通过因特网的连接。这是为什么你要在本地设置。这是一个命令行客户端。
+首先你需要本地设置dictd。**dictd** 是一个字典数据库服务器。它允许你访问在线字典。但是等一下，我们不是要离线使用么？这是为什么我们要将其安装到本地的原因。它带有一个命令行客户端。
 
 要在Ubuntu或者Debian上安装你要输入：
 
     $ sudo apt-get install dictd
 
-这个很简单。现在你需要安装用的字典。安装完每个字典插件后dicted都会自动重启加载它的数据库。让我们来英语字典和英语词库（查询近义词）
+这个很简单。现在你需要安装用的字典。安装完每个字典插件后dictd都会自动重新加载它的数据库。让我们来安装英语字典和英语同义词词典。
 
 输入：
 
@@ -27,9 +27,9 @@
     dict-freedict-eng-deu - Dict package for English-German Freedict dictionary
     dict-freedict-eng-fra - Dict package for English-French Freedict dictionary
 
-你成功安装完成dicted之后你可以查找定义。
+现在你已成功安装dictd了，之后你就可以查找字典了。
 
-首先，让我们检查一下dicted服务是否在运行并且安装了什么数据库：
+首先，让我们检查一下dictd服务是否在运行并且安装了什么数据库：
 
     $ dict -I
 
@@ -42,16 +42,16 @@
     gcide              203645       3859 kB         12 MB         38 MB
     moby-thesaurus      30263        528 kB         10 MB         28 MB
 
-为了查询一个你需要的单词定义，你需要使用一个你已经安装的特别字典。让我们检查一下英语（gcid）：
+为了查询一个单词，你可以指定要查询的字典。让我们查询一下English one字典（gcid）：
 
-    $ dict -d gcide [word you want to look up]
+    $ dict -d gcide [你要查的单词]
 
-如果你不使用**-d** 参数，dicted会搜寻所有的已有数据库并返回匹配的定义。
+如果你不使用**-d** 参数，dictd会搜寻所有的安装字典并返回匹配的结果。
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/look-dictionary-definitions-via-terminal/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

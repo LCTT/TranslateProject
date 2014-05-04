@@ -1,6 +1,6 @@
 Linux基金会发布了2014年全部活动安排
 ================================================================================
-Linux基金会改变了原有的活动计划模式，而是公布了一整年的所有活动安排。与此同时还发布了一部视频，可以在这里在线观看：[Linux基金会活动体验][1]。下面介绍一下今年的基金会活动重点关注方向的更多细节。
+Linux基金会改变了原有的活动计划模式，提前公布了一整年的所有活动安排。与此同时还发布了一部视频，可以在这里在线观看：[Linux基金会活动体验][1]。下面介绍一下今年的基金会活动重点关注方向的更多细节。
 
 2014年活动安排，包括了北美和欧洲的LinuxCon和CloudOpen，以及Linux Foundation Collaboration Summit，Embedded Linux Conference，Android Builders Summit，和ApacheCon等等。今年北美的LinuxCon和CloudOpen会在芝加哥和Linux Kernel Summit一起合作举行。欧洲的Linux Con和CloudOpen会在德国的杜塞尔多夫举行，一起的还有Embedded Linux Conference, KVM Forum以及Linux Plumbers Conference。
 
@@ -88,7 +88,7 @@ CloudOpen聚集了驱动云服务以及大数据生态环境的开源项目，�
 
 via: http://ostatic.com/blog/the-linux-foundation-delivers-complete-2014-event-schedule
 
-译者：[zpl1025](https://github.com/zpl1025) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[zpl1025](https://github.com/zpl1025) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

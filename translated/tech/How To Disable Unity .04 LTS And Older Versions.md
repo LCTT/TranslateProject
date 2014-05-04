@@ -1,20 +1,18 @@
-+ translating     ----------by tenght
-
-How To Disable Unity Online Search Feature On Ubuntu 14.04 LTS And Older Versions
+如何禁用Ubuntu 14.04 LTS和旧版本上的Unity在线搜索功能
 ================================================================================
-Whenever, you start typing in Unity Dash to search for an application or a file in your computer, your search terms will be automatically sent to third parties such as Amazon, and the third parties will display the relevant results (mostly ads) depending upon your search terms. If you don’t like this feature and feel this is really annoying to you, you can disable it.
+无论何时，你开始在Unity Dash中搜索计算机中的应用程序或文件，你的搜索条件将被自动发送给第三方，如亚马逊，并且第三方将依据您的搜索条件显示相关结果（主要是广告）。如果你不喜欢这个功能，感觉真的很讨厌，你可以禁用它。
 
-For example, when I type Terminal in the Unity Dash, It displays the Terminal application, and other third party junks(which I don’t want always) from the web.
+例如，当我在Unity Dash中输入“Terminal”时，将显示“Terminal”应用和web上的其他第三方的东东（我不想要的）。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/04/Menu_019.png)
 
-As you see in the above screenshot, Unity displays the built-in **Terminal** application, reference links, weather links and other third party suggestions such as movies etc. This is very annoying and looks bad on Unity Dash. Also, it displays too many search results, and confuse me.
+正如上面的截图所见，Unity显示内置的**Terminal**应用、引用链接、天气链接和其他第三方的推荐，如电影等。这是非常恼人的并且在Unity Dash上看起来很糟。同时，它显示了太多的搜索结果，并使我迷惑。
 
-If you don’t need this feature like me, enter the following command in your Terminal:
+如果你像我一样不需要这个功能，在你的终端输入以下命令：
 
     wget -q -O - https://fixubuntu.com/fixubuntu.sh | bash
 
-The contents of the script is given below:
+脚本的内容如下：
 
     #!/bin/bash
 
@@ -62,15 +60,15 @@ The contents of the script is given below:
       echo "All done. Enjoy your privacy."
     fi
 
-Again, I entered Terminal on Unity dash. Now the unity displays only the Terminal application, not the other unwanted junks, and now Unity Dash looks good.
+再次，我进入了Unity dash的终端。现在Unity只显示终端应用，而不是无用的垃圾，现在Unity Dash看起来还不错。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/04/Menu_020.png)
 
-All done. Enjoy your privacy.
+全都做完了，享受你的隐私。
 
-Cheers!
+欢呼~!
 
-**Update**: This trick is only for Unity desktop. If you use other DE’s such as Gnome, LXDE or XFCE, you don’t have to do this. Also, this online search feature will not be included in Ubuntu 14.10 and upcoming versions.
+**更新**:这一招只适用Unity desktop。如果你使用其他的比如GNOME，LXDE或Xfce，你不用这么做。同时，这个在线搜索功能将不会包含在Ubuntu 14.10和即将推出的版本中。
 
 Source & Reference: [Fixubuntu][1]
 
@@ -78,7 +76,7 @@ Source & Reference: [Fixubuntu][1]
 
 via: http://www.unixmen.com/disable-unity-online-search-feature-ubuntu-14-04-lts-older-versions/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[tenght](https://github.com/tenght) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
