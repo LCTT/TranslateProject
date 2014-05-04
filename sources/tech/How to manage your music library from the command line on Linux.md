@@ -1,3 +1,7 @@
+Translating-------geekpi
+
+
+
 How to manage your music library from the command line on Linux
 ================================================================================
 The command line in Linux is probably one of the scariest experience for a newcomer there is. I remember spending hours back in the day trying to decode an error message in my terminal. However, it was completely worth it. If I had to pick only one reason for a newcomer to learn to deal with the command line properly today, it would probably be for the possibility to manage a music library entirely from the terminal. The software I prefer to do this is [cmus][1], short for "C* MUsic Player" as it is written entirely in C.
