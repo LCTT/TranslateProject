@@ -6,7 +6,7 @@ linux中更常用的检查已挂载的文件系统的是mount命令，不仅用�
 
 ### 安装findmnt ###
 
-findmnt命令来自util-linux软件包，默认安装在大多数像Ubuntu，Fedora，Debian发行版
+findmnt命令来自util-linux软件包，默认安装在大多数像Ubuntu，Fedora，Debian发行版 
 
     $ aptitude search util-linux
     i   util-linux                     - Miscellaneous system utilities
