@@ -1,3 +1,4 @@
+(翻译中 by runningwater)
 Why htop Command Compete Linux top Command
 ================================================================================
 The top command in Linux is used to display a real-time view of processes that are running in the system. It provides very useful information like CPU utilization, memory consumption, and more, related to every process. But, do you know there exists another command line utility ‘htop’ that provides more information and features when compared with the traditional top command. In this article, we will discuss the ‘htop’ command with examples.
@@ -85,6 +86,6 @@ Apart from the hot keys explained till now, the htop command also provides usefu
 
 via: http://linoxide.com/linux-command/linux-htop-command/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
