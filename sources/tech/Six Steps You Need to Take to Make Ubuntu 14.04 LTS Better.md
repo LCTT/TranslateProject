@@ -1,5 +1,7 @@
 Six Steps You Need to Take to Make Ubuntu 14.04 LTS Better
 ================================================================================
+Hao-Ding Translating.
+
 ![](http://i1-news.softpedia-static.com/images/news2/Six-Step-You-Need-to-Take-to-Make-Ubuntu-14-04-LTS-Better-439341-2.jpg)
 
 **Ubuntu 14.04 LTS (Trusty Tahr) is a very good operating system but, like most Linux distributions out there, it's far from what users might call an optimal setup. There are numerous reasons for this fact, but we can detail a few steps that will make your Ubuntu experience increase a great deal.**
