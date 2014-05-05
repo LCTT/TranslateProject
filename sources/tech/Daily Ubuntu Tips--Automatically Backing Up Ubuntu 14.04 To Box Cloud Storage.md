@@ -1,3 +1,7 @@
+Translating-----------geekpi
+
+
+
 Daily Ubuntu Tips – Automatically Backing Up Ubuntu 14.04 To Box Cloud Storage
 ================================================================================
 Now that you’ve upgraded or installed Ubuntu 14.04, here’s another thing you might want to do to protect your new system: Back it up!
