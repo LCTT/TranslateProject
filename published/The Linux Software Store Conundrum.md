@@ -14,7 +14,7 @@ Linux软件商店的困境
 
 尽管在Linux桌面环境有很多"其他"可用的软件商店，但实际上没有哪个像Ubuntu软件中心那样支持付费应用。而我看到的唯一一个像Ubuntu软件中心那样可以在Linux桌面下发布付费应用的是Valve公司的[Steam][3]数字软件管理器，作为发行付费Linux游戏的商店而闻名。我发现Steam已经用来在其他平台[发行软件][4]，所以我认为，Steam也完全可以为Linxu用户发行付费软件。
 
-不像其他软件发布工具，Steam专门设计了比其他Linux替代方案更为清晰的付费处理方式。而且，Steam用一种奇妙的光线来展示游戏和软件的名字，所以，用户在浏览这些名字的时候能够选中适合自己需求的应用。
+不像其他软件发布工具，Steam专门设计了比其他Linux替代方案更为清晰的付费处理方式。而且，Steam用一种炫目的方式来展示游戏和软件的名字，所以，用户在浏览这些名字的时候能够选中适合自己需求的应用。
 
 我并没有建议把Steam当作搜索开源软件的最佳替代方案，我坚决反对这种想法。我的建议是，Steam可以成为一个专门处理拥有专利的应用或游戏软件的跨发行版的选择。
 
@@ -50,7 +50,7 @@ Linux软件商店的困境
 
 via: http://www.datamation.com/open-source/the-linux-software-store-conundrum-1.html
 
-译者：[zpl1025](https://github.com/zpl1025) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[zpl1025](https://github.com/zpl1025) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
