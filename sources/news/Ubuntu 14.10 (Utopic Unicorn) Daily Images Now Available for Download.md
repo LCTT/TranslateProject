@@ -1,3 +1,4 @@
+linuhap翻译中
 Ubuntu 14.10 (Utopic Unicorn) Daily Images Now Available for Download
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Ubuntu-14-10-Utopic-Unicorn-Daily-Images-Now-Available-for-Download-439725-2.jpg)
