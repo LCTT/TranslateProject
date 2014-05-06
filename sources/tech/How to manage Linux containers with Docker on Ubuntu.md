@@ -1,3 +1,4 @@
+[bazz2 is here]
 How to manage Linux containers with Docker on Ubuntu
 ================================================================================
 While full hardware virtualization such as KVM, Xen or Hyper-V is great at running fully isolated instances of multiple operating systems on a physical host, it comes with various overheads in terms of performance, resource, and provisioning time. Depending on your use cases, full machine virtuailization may actually not be necessary.
