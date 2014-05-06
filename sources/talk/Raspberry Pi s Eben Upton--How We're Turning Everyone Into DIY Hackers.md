@@ -1,4 +1,3 @@
-Translating by yujianxuechuan
 Raspberry Pi's Eben Upton: How We're Turning Everyone Into DIY Hackers
 ================================================================================
 > Inside the mind that prototyped a $35 computer for tinkerers.
