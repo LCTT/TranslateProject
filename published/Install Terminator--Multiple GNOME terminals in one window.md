@@ -1,12 +1,12 @@
 安装 Terminator：一个支持多终端的终端
 ================================================================================
-Terminator 是一个程序，它可让用户自由地排列多个 GNOME 终端，而不用通过窗口管理器来实现，比较合适需要同时使用多个终端的用户。
+Terminator 是一个程序，它可让用户自由地排布多个 GNOME 终端，而不用通过窗口管理器来实现，比较适合需要同时打开多个终端的用户。
 
 ### 特性 ###
 
 - 在一个窗口显示多个终端
-- 可在上面使用你自己喜欢的 shell (Bash、zsh 等等，Terminator 不会限制它们)
-- 当前工作终端与当前非工作终端的标题背景颜色不同（见图1）
+- 可在上面的窗口里面使用你自己喜欢的 shell (Bash、zsh 等等，Terminator 不会限制它们)
+- 当前工作终端与当前非工作终端的标题背景颜色明显区分（见图1）
 
 ### 安装 ###
 
@@ -34,6 +34,6 @@ Fedora/CentOS 系统:
 
 via: http://www.unixmen.com/install-terminator-multiple-gnome-terminals-one-window/
 
-译者：[bazz2](https://github.com/bazz2) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[bazz2](https://github.com/bazz2) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
