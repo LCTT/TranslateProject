@@ -52,7 +52,7 @@
 
 #### 5. 通过系统设置的方法 ####
 
-如果你使用的是 Ubuntu 12.04 或更高, 你可以很简单地在 ** AllSettings -> Details** 里查看你的系统结构。
+如果你使用的是 Ubuntu 12.04 或更高, 你可以很简单地在** AllSettings -> Details**里查看你的系统结构。
 
 ![details](http://mylinuxbook.com/wp-content/uploads/2014/04/details.png)
 
