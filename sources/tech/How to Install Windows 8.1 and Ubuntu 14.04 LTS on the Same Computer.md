@@ -1,3 +1,4 @@
+translating by owen-carter 
 How to Install Windows 8.1 and Ubuntu 14.04 LTS on the Same Computer
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/How-to-Install-Windows-8-1-and-Ubuntu-14-04-LTS-on-the-Same-Computer-440356-2.jpg)
