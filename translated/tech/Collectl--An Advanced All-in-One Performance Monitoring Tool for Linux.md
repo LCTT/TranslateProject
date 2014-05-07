@@ -41,7 +41,7 @@ Collectl: 一个高级全能的Linux性能监控工具
 下面的命令可以用来在以Debian为基础的设备如Ubuntu 上安装collectl。
 
     $ sudo apt-get install collectl
-
+ 
 #### 对于RHEL/CentOS/Fedora ####
 
 如果你正在使用基于红帽的发行版，你可以用yum命令轻松获取它。
