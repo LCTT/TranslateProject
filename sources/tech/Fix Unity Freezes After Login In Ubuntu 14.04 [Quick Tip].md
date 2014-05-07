@@ -1,3 +1,4 @@
+[traslating ggaaooppeenngg]
 Fix Unity Freezes After Login In Ubuntu 14.04 [Quick Tip]
 ================================================================================
 If you upgraded Ubuntu 13.10 to Ubuntu 14.04, you might end up with **Unity freezing at login time**. You boot in to Ubuntu 14.04, enter your credential and the system just hangs up, freezes. If you are lucky, you might see mouse cursor, background wallpaper but nothing else. **No Unity launcher, no top panel** etc. Basically you will have Ubuntu in an unusable state.
