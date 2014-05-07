@@ -1,6 +1,6 @@
-你给Linux的killall命令用什么选项?我有5个！
+五个你可能不了解的killall选项
 ================================================================================
-Linux的命令行提供很多命令来杀死进程。比如，你可以向“kill”命传递一个PID来杀死进程；“pkill”命令使用一个pattern作为输入，所以和pattern匹配的进程都被杀死。(这个pattern我该如何翻译，求校对指导）
+Linux的命令行提供很多命令来杀死进程。比如，你可以向“kill”命传递一个PID来杀死进程；“pkill”命令使用一个正则表达式作为输入，所以和该模式匹配的进程都被杀死。
 
 但是还有一个命令叫“killall”，默认情况下，它精确地匹配参数名，然后杀死匹配进程。在这篇文章中，我们将讨论有关这个命令的实际应用。
 
@@ -8,7 +8,7 @@ Linux的命令行提供很多命令来杀死进程。比如，你可以向“kil
 
 ### Linux 的 killall 命令 ###
 
-killall命令可以用来给一个特定的进程发送一个信号。这个信号默认情况下是由SIGTERM指定的，但也可以由killall命令使用参数来指定。
+killall命令可以用来给一个特定的进程发送一个信号。这个信号默认情况下是SIGTERM，但也可以由killall命令使用参数来指定其它信号。
 
 现在让我们通过一些实际的例子来看看这个命令的实际用法。
 
@@ -44,9 +44,9 @@ killall命令可以用来给一个特定的进程发送一个信号。这个信�
     $ killall TEST
     TEST: no process found
 
-你可以看到，killall命令赵不到叫做“TEST”的进程，但是“test”进程是确确实实的在运行的。
+你可以看到，killall命令找不到叫做“TEST”的进程，但是“test”进程是确确实实的在运行的。
 
-来让killall命令忽略大小写，可以使用-I选项。例如：
+来让killall命令忽略大小写，可以使用-I选项（大写i）。例如：
 
     $ killall -I TEST
     [1]- Terminated ./test
@@ -93,7 +93,7 @@ killall命令可以用来终止多个进程。
 
 你可以使用-s选项（后面跟一个信号名）来向一个进程发送特殊信号。
 
-想要知道所有可以发送的信号，可以使用-l选项来获取：
+想要知道所有可以发送的信号，可以使用-l选项（小写L）来获取：
 
     $ killall -l
     HUP INT QUIT ILL TRAP ABRT IOT BUS FPE KILL USR1 SEGV USR2 PIPE ALRM TERM
@@ -104,13 +104,13 @@ killall支持上面的所有信号。
 
 看着这些信号的名字，可能你心里就会嘀咕：这些信号都是干什么的？
 
-使用下面的命令来获取所有信号的说明：（注：译者添加）
+译者注：使用下面的命令来获取所有信号的说明：
 
    $ man 7 signal
 
 ### 我需要和大家讨论一件事情 ###
 
-killall命令的man说：假如进程的名字的长度小于等于15，默认情况下就会匹配完整的名称。
+killall命令的man说：假如进程的名字的长度小于等于15，默认情况下就会以完整名称匹配。
 
 比如，假设有两个名字很长的进程：
 
@@ -145,7 +145,7 @@ killall命令的man说：假如进程的名字的长度小于等于15，默认�
 
 我不太确定，是我进行的尝试中有不对的地方，还是这是killall的一个bug。假如你在评论中写上你的观点，我会非常感激。
 
-顺便说一下，这是我机器上killall命令的详细信息：
+顺便说一下，这是我机器上killall命令的版本信息：
 
     $ killall --version
     killall (PSmisc) 22.20
@@ -160,6 +160,6 @@ killall命令的man说：假如进程的名字的长度小于等于15，默认�
 
 via: http://linoxide.com/linux-command/linux-killall-my-options/
 
-译者：[intermerlin](https://github.com/intermerlin) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[intermerlin](https://github.com/intermerlin) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

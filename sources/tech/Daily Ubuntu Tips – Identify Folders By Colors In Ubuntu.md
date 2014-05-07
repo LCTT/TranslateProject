@@ -1,3 +1,5 @@
+{Translating}Linchenguang
+=======================================================
 Daily Ubuntu Tips – Identify Folders By Colors In Ubuntu
 ================================================================================
 Here’s a brief tip that will show you how to identify folders by colors in Ubuntu 14.04 or previous with this nifty tool. This tool which is called **Folder Color**, allows users to change the color of folders in Nautilus so they could easily indentify and distinguish them from others.
