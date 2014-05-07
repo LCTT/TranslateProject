@@ -1,10 +1,9 @@
-Ubuntu 每日贴士- 让Ubuntu 14.04 Trusty Tahr 变得更好
+每日Ubuntu技巧 ：让Trusty Tahr变得更好
 ================================================================================
 
+Ubuntu 14.04 Trusty Tahr 已发布，如果你是其中之一的安装者，你需要做一些事来提升你的使用体验。
 
-Ubuntu 14.04 Trusty Tahr 已于昨日发布，如果你是其中之一的安装者，你需要做一些事来提升你的使用体验。
-
-对于那些更新，这可能已经做了你不必再去做它，除非你没有在Ubuntu 13.10 里做这些。
+对于那些升级，这可能已经做完了，你不必再去做它，除非你没有在Ubuntu 13.10 里做这些。
 
 Ubuntu 并不是完全开箱即用的。有一些可以提升体验的包和工具由于合法问题被Canonical排除在外。
 
@@ -12,9 +11,9 @@ Ubuntu 并不是完全开箱即用的。有一些可以提升体验的包和工�
 
 如果你希望做上面这些事情，你必须继续下去来学习如何解决这些问题。
 
-对于已经安装Ubuntu 13.10 并且希望升级的人，[阅读这边文章][1]，或者点击下面的链接。
+对于已经安装Ubuntu 13.10 并且准备升级的人，[阅读这篇文章][1]，或者点击下面的链接。
 
-当你已经升级或者安装了Ubuntu 14.04，打开你的命令行，接着运行下面的命令来安装缺失的可以在Ubuntu上更简易地播放媒体文件的包。
+当你已经升级或者安装好了Ubuntu 14.04，打开你的命令行，接着运行下面的命令来安装缺失的可以在Ubuntu上更简易地播放媒体文件的包。
 
     sudo apt-get install ubuntu-restricted-extras
 
@@ -36,13 +35,13 @@ Ubuntu 并不是完全开箱即用的。有一些可以提升体验的包和工�
 
 希望这对你有帮助。
 
-享受吧！
+祝你体验愉快！
 
 --------------------------------------------------------------------------------
 
 via: http://www.liberiangeek.net/2014/04/daily-ubuntu-tips-make-ubuntu-14-04-trusty-tahr-perform-better/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
