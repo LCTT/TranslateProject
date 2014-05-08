@@ -1,3 +1,4 @@
+linuhap翻译中
 Ubuntu Fixes Security Flaw in 14.04 LTS Lock Screen
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2013/10/security-key.jpg)
