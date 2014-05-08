@@ -1,4 +1,4 @@
-Ubuntu After Install – 帮你在Ubuntu 14.04/13.10/13.04/12.10/12.04上自动安装流行的软件
+Ubuntu After Install – 帮你在Ubuntu上自动安装流行的软件
 ================================================================================
 
 在你刚刚更新或者是安装了一个新的Ubuntu桌面版之后，你是不是想安装一些有用的并且必要的软件呢？当然。但是，为了打造一个完美的Ubuntu系统，你会需要付出很大的努力。你还会吗？你会怎么去做？你真的会去手动通过添加软件源或者是下载**.deb**包去寻找和安装每一个软件？或者不分青红皂白安装所有的软件？我觉得这将是一个漫长的过程，并且你们也不知道你们需要什么软件去打造这么一个完美的Ubuntu桌面。
@@ -38,7 +38,7 @@ Ubuntu After Install – 帮你在Ubuntu 14.04/13.10/13.04/12.10/12.04上自动�
 - **p7zip** 强大的7zip压缩/解压工具
 - 还有一些即将到来的新特性
 
-### 在Ubuntu 12.04或者更新的系统上 安装‘Ubuntu After Install’ ###
+### 在Ubuntu 12.04或者更新一些的系统上 安装‘Ubuntu After Install’ ###
 
 添加‘Ubuntu After Install’ PPA 并且执行以下命令
 
@@ -46,7 +46,7 @@ Ubuntu After Install – 帮你在Ubuntu 14.04/13.10/13.04/12.10/12.04上自动�
     sudo apt-get update
     sudo apt-get install ubuntu-after-install
 
-你也可以手动下载 .deb 文件 [这][1], 并且手动安装.
+你也可以从[这里][1]手动下载 .deb 文件，并且手动安装。
 
 ### 使用说明 ###
 
@@ -76,13 +76,13 @@ Ubuntu After Install – 帮你在Ubuntu 14.04/13.10/13.04/12.10/12.04上自动�
 
 在之前，我们刚刚提到了[Ubuntu Tweak][2]。 **Ubuntu Tweak**和**Ubuntu After Install**是类似的工具, 但是Ubuntu Tweak有着比Ubuntu After Install更多的特点。 Ubuntu After Tool只是为了帮你安装了所有最好的和日常使用的软件, 而Ubuntu的调整工具会做对额外的东西，如定制您的Ubuntu桌面和更多。
 
-不要再在网络上寻找所谓的Ubuntu必备软件上浪费你的宝贵的时间。Ubuntu Tweak和Ubuntu After Install就是为了帮助那些正在寻找Ubuntu必备软件的人准备的。所以，不要再犹豫，马上使用他们！
+不要再在网络上寻找所谓的Ubuntu必备软件上浪费你的宝贵的时间。Ubuntu Tweak和Ubuntu After Install就是为了帮助那些正在寻找Ubuntu必备软件的人准备的。所以，不要再犹豫，马上使用它们！
 
-希望他能帮助你，就说这么多了。
+希望能帮助到你，就说这么多了。
 
 祝你好运!
 
-Source & Reference:
+来源与参考:
 
 - [The Fan Club Website][3]
 
