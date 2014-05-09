@@ -1,4 +1,4 @@
-linuhap
+linuhap翻译中
 How To Create A Live USB Of Ubuntu 14.04 In Windows 7 & 8
 ================================================================================
 First step of installing Ubuntu is to create a live USB or disk. If you are using Windows XP, 7, 8 or 8.1, you can use Universal USB Installer to create a live USB. It’s my favorite and extremely easy to use. Let’s see how to easily make a live USB of Ubuntu i Windows 8.
