@@ -1,3 +1,5 @@
+Translating by JonathanKang..............................................................
+
 New Unreal Tournament Game to Arrive on Linux for Free
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/New-Unreal-Tournament-Game-to-Arrive-on-Linux-for-Free-441291-3.jpg)
