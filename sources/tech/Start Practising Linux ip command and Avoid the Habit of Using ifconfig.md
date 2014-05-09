@@ -1,3 +1,4 @@
+[KayGuoWhu Translating ]
 Start Practising Linux ip command and Avoid the Habit of Using ifconfig
 ================================================================================
 The linux **ip** command is similar to **ifconfig**, but more powerful and is intended to be a replacement for it. With ip you have the advantage of performing several network administration tasks with only one command. ifconfig is one of the deprecated command within net-tools that has not been maintained for many years. The functionalities of many commands is retained with more features under iproute2 suite.
