@@ -1,4 +1,4 @@
-Ubuntu修复了14.04 LTS（长期支持版）上锁屏的安全漏洞
+Ubuntu修复了14.04 LTS 上锁屏的安全漏洞
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2013/10/security-key.jpg)
 
@@ -12,7 +12,7 @@ Ubuntu修复了14.04 LTS（长期支持版）上锁屏的安全漏洞
 
 漏洞演示的一个视频[可以在YouTube上看到][3]。
 
-黑客仅限于利用本地访问，并不能远程运行。
+这个漏洞的攻击仅能影响到本地环境，并不能远程运行。
 
 ### 其他锁屏问题的修复 ###
 
@@ -23,7 +23,7 @@ Ubuntu修复了14.04 LTS（长期支持版）上锁屏的安全漏洞
 
 随着受很多商业，教育机构和企业喜爱的Ubuntu LTS（长期支持版）的发布，这些问题可能是坏消息。但是，如果有问题的话，这都显示Canonical公司在应对和修复问题上是多么迅速——这是非常让人放心的。
 
-这也显示了七月份当第一个版本发布时，该公司在决定只提示当前长期支持版用户升级到 14.04 LTS 是多么机敏。这三个月的额外的缓冲时间给ubuntu社区和它的开发者的超级英雄殿堂更多时间去检测和修复安全问题比如以上这些问题。
+这也表明了该公司在决定在七月份时只提示当前LTS用户升级到 14.04 LTS 是多么机敏。这三个月的额外的缓冲时间给ubuntu社区和它的开发者的超级英雄殿堂更多时间去检测和修复安全问题比如以上这些问题。
 
 如果你正在使用Ubuntu 14.04 LTS，记得经常检查和安装更新。
 
@@ -31,7 +31,7 @@ Ubuntu修复了14.04 LTS（长期支持版）上锁屏的安全漏洞
 
 via: http://www.omgubuntu.co.uk/2014/04/ubuntu-fixes-security-flaw-trusty-login-screen
 
-译者：[译者linuhap](https://github.com/linuhap) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[linuhap](https://github.com/linuhap) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
