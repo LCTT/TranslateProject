@@ -1,3 +1,4 @@
+linuhap翻译中。。。
 Fix Adobe Flash Player Issue In Chromium In Ubuntu 14.04
 ================================================================================
 One of the first few [things to do after installing Ubuntu 14.04][1] is to install Adobe Flash Player. Normally, if you install [Ubuntu Restricted Extras][2], Flash Player should be working and you should be able to watch online videos from websites like You Tube etc.
