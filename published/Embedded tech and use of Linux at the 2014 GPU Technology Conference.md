@@ -22,7 +22,7 @@
 
 via: http://opensource.com/life/14/4/gpu-technology-conference-2014
 
-译者：[zpl1025](https://github.com/zpl1025) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[zpl1025](https://github.com/zpl1025) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
