@@ -10,9 +10,6 @@ UEFI有“安全启动”这个特点，引导程序只会启动那些得到UEFI
 
 现在在关于安全启动，充斥着各种各样的杂音。由于这些传闻，有些人几乎认为在预装Windows8的电脑上启动到Linux是不可能的，虽然在ARM上这是真的。但是安全引导可以在基于Intel的系统上被禁用。老实说，**禁用UEFI安全启动**不是一个艰巨的任务，同样的双启动的Linux与Windows 8 也不是。
 
-While it is fairly straight forward to access BIOS settings, you press F10 or F12 at boot time, it’s not the same case with UEFI. To access UEFI settings, you’ll have to go from within Windows. Let’s see how to access UEFI settings to disable secure boot in Windows 8.
-
-
 虽然在当年BIOS时，这是相当简单的，在启动的时候按F10或F12键即可。但是在UEFI的世界里，就不一样了。要访问UEFI设置，你就必须到Windows中去。让我们来看看如何访问UEFI设置禁用Windows8安全启动。
 
 #### Step 1: 进入PC设置 ####
