@@ -39,6 +39,7 @@ Enjoy!
          现在选择较小的分区和选择交换文件。就这些了。当你点击下一步，安装程序将启动，你将要选择的名称，密码，和其他细节。
         下次当你启动你时将得到一个简单的操作系统，将让你选择你喜欢的操作系统列表。
          尽情享受！
+
 via: http://news.softpedia.com/news/How-to-Install-Windows-8-1-and-Ubuntu-14-04-LTS-on-the-Same-Computer-440356.shtml
 
 译者：[CHINAANSHE](https://github.com/CHINAANSHE) 校对：[校对者ID](https://github.com/校对者ID)
