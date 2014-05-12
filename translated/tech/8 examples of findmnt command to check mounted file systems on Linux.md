@@ -1,12 +1,12 @@
-检查Linux中已挂载的文件系统的findmnt命令的8个例子
+Linux 中 findmnt 命令检查已挂载的文件系统的8个实例
 ================================================================================
 ### 已挂载的文件系统和设备 ###
 
-linux中更常用的检查已挂载的文件系统的是mount命令，不仅用于列出已挂载的设备，而且可以在需要的时候挂载和卸载。这有一个叫做findmnt的俏皮的命令，它可以用于快速查看挂载位置和选项。
+linux 中更常用的检查已挂载的文件系统的是 mount 命令，不仅用于列出已挂载的设备，而且可以在需要的时候挂载和卸载。这有一个叫做 findmnt 的超赞命令，它可以用于快速查看挂载位置和选项。
 
 ### 安装findmnt ###
 
-findmnt命令来自util-linux软件包，默认安装在大多数像Ubuntu，Fedora，Debian发行版
+findmnt 命令来自 util-linux 软件包，默认安装在大多数发行版中，如 Ubuntu，Fedora，Debian
 
     $ aptitude search util-linux
     i   util-linux                     - Miscellaneous system utilities
@@ -17,7 +17,7 @@ findmnt命令来自util-linux软件包，默认安装在大多数像Ubuntu，Fed
 
 #### 1. 列出文件系统 ####
 
-执行没有任何选项的findmnt将简单的在树形结构中列出所有已挂载的文件系统。
+无任何选项运行 findmnt，只会以树形结构图的方式列出所有已挂载的文件系统。
 
     $ findmnt
 
@@ -53,7 +53,7 @@ findmnt命令来自util-linux软件包，默认安装在大多数像Ubuntu，Fed
 
 #### 3. df格式输出 ####
 
-Findmnt可以用“-D”或“-df”选项创造一个df格式的输出报告空闲和已用磁盘空间。
+Findmnt 可以用“-D”或“-df”选项创建一个 df 格式的输出报告空闲和已用磁盘空间。
 
     $ findmnt -D
     SOURCE                  FSTYPE       SIZE   USED   AVAIL USE% TARGET
@@ -66,11 +66,11 @@ Findmnt可以用“-D”或“-df”选项创造一个df格式的输出报告空
     tmpfs                   tmpfs     1001.5M    60K 1001.5M   0% /tmp
     /dev/sda1               ext4       476.2M 107.7M  339.6M  23% /boot
 
-注意以上选项直到util-linux2.20版本都不可用，碰巧的是最新版在Ubuntu13.10
+需要注意的是，以上选项 util-linux2.20 之前的版本都不可用，它正好是 Ubuntu13.10 上的最新版本
 
 #### 4. 从fstab读取文件系统 ####
 
-使用“-s”或“-fstab”选项，findmnt将只从/etc/fstab文件和/etc/fstab.d目录读取文件系统。
+使用“-s”或“-fstab”选项，findmnt 将只从/etc/fstab文件和/etc/fstab.d目录读取文件系统。
 
     $ findmnt -s
     TARGET SOURCE                                    FSTYPE OPTIONS
@@ -80,7 +80,7 @@ Findmnt可以用“-D”或“-df”选项创造一个df格式的输出报告空
 
 #### 5. 通过类型过滤文件系统 ####
 
-Findmnt可以打印出只基于类型的特定的文件系统，例如ext4，多个系统类型可以指定一个逗号分隔。
+Findmnt 可以打印出只基于类型的特定的文件系统，例如 ext4，多个系统类型可以指定一个逗号分隔。
 
     $ findmnt -t ext4
     TARGET  SOURCE                  FSTYPE OPTIONS
@@ -89,7 +89,7 @@ Findmnt可以打印出只基于类型的特定的文件系统，例如ext4，多
 
 #### 6. 原始输出 ####
 
-如果你喜欢原始风格难看的输出，那么使用“-r”或“--raw”选项。
+如果你喜欢原始风格的输出，那么使用“-r”或“--raw”选项。
 
     $ findmnt --raw
     TARGET SOURCE FSTYPE OPTIONS
@@ -113,7 +113,7 @@ Findmnt可以打印出只基于类型的特定的文件系统，例如ext4，多
     /sys/fs/cgroup/systemd systemd cgroup rw,nosuid,nodev,noexec,relatime,name=systemd
     /run/user/1000/gvfs gvfsd-fuse fuse.gvfsd-fuse rw,nosuid,nodev,relatime,user_id=1000,group_id=1000
 
-That looks very neat
+看起来非常整洁
 
 #### 7. 通过源设备查找 ####
 
@@ -137,12 +137,12 @@ That looks very neat
 
 ### 总结 ###
 
-这是一个findmnt命令的简要介绍。findmnt更多的选项可以在man手册页中找到。
+这是一个 findmnt 命令的简要介绍。关于 findmnt 的更多选项可以在 man 手册页中找到。
 
 --------------------------------------------------------------------------------
 
 via: http://www.binarytides.com/linux-findmnt-command/
 
-译者：[Vito](https://github.com/vito-L) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Vito](https://github.com/vito-L) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
