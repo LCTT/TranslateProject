@@ -1,3 +1,4 @@
+translating by icybreaker
 How to Upgrade to GNOME 3.12 in Ubuntu 14.04
 ================================================================================
 ![You can upgrade to GNOME 3.12 – but it’s not advised](http://www.omgubuntu.co.uk/wp-content/uploads/2014/03/Screen-Shot-2014-03-26-at-21.53.58-350x200.png)
