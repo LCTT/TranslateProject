@@ -1,25 +1,35 @@
-# Viz 再占领一篇！
-Ubuntu 14.10 to Be Called Utopic Unicorn
+Ubuntu 14.10 —— 来自乌托邦的独角兽
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Ubuntu-14-10-to-Be-Called-Utopic-Unicorn-439028-2.jpg)
 
-**Mark Shuttleworth, the founder of Canonical, has chosen the name of the next Ubuntu, 14.10, and it will be called Utopic Unicorn.**
+**Mark Shuttleworth，Canonical 的创始人，已经为 Ubuntu 的下一个版本 (14.10) 起好了名字，新版本的名字将是乌托邦的独角兽。**
 
-The Ubuntu developers don't usually take a lot of rest between development cycles, which means that work on Ubuntu 14.10 will start any day now and, in six months’ time, in October 2014, we'll have a new release. Granted, it won't be an LTS version, but Mark Shuttleworth wants the development team to test the waters on what's possible and make some big leaps forward.
+Ubuntu 的开发者们并不经常在两个开发周期之间停顿太久，也就是说 Ubuntu 14.10 的工作将可能在最近的某一天开始，并经过六个月的时间，在 2014 年十月份放出一个新的版本。
+当然，她不会是一个 LTS 版本，但是 Mark Shuttleworth 希望其开发团队尽可能的试水可能的改进以为将来的迈进做准备。
 
-“So bring your upstanding best to the table – or the forum – or the mailing list – and let’s make something amazing. Something unified and upright, something about which we can be universally proud. And since we’re getting that once-every-two-years chance to make fresh starts and dream unconstrained dreams about what the future should look like, we may as well go all out and give it a dreamlike name. Let’s get going on the utopic unicorn. Give it stick,” said Mark Shuttleworth in his regular [announcement][1].
+“拿出你的最佳表现给大家，展现给论坛，展现给邮件列表，我们要做些出色的事情。一些和谐而大气的事情，一些我们可以一直引以为傲的事情。
+由于我们正处于两年一次的崭新开始，可以不受拘束的展望下未来的情景，我们同样可以给她一个梦幻的名字。
+让我们骑上来自乌托邦的独角兽。刺向未来，” Mark Shuttleworth 在他的例行[发布会][1]上说道。
 
-The name of Utopic Unicorn is a little different from what we’d usually expect. None of the names chosen so far has been mythical, which makes Ubuntu 14.10 a peculiar version. Either he couldn't find a real and interesting animal to use for the name, or he just couldn't resist to the use of Unicorn.
+乌托邦的独角兽这个名字的确有些出人意料。先前的名字从来没带有如此的神秘色彩，也就造就了 Ubuntu 14.10 这一独特的版本。
+或许他本人没法找到一个有趣而有真正存在的动物来命名，或者他仅仅是无法抗拒独角兽的魅力。
 
-Canonical doesn't leave the name choosing process to the community, like Fedora does. It would generate the most bizarre names and it's likely Ubuntu would end up with some funky codename that no one really likes.
+Canonical 并没有像 Fedora 那样将命名权交给社区。
+如此一来也就有可能会产生这样奇怪的名字，或许有天 Ubuntu 将会得到些没人喜欢的奇怪开发代号。
 
-From what Mark Shuttleworth has been describing in his post, it seems that Ubuntu developers have been given a blank check to make something different. This doesn't mean that the next Ubuntu will be radically different, but if we keep in mind that it's a system with only a nine-month support period, it's very likely that they will experiment a great deal.
+从 Mark Shuttleworth 的帖子中所描述的来看，就像是给开发者做出的变动打了张空头支票。
+这并不代表下一代 Ubuntu 将会截然不同，但单单从系统将被支持九个月时间上来看，他们或许会很了劲儿的折腾一票。
 
-“The discipline of an LTS constrains our creativity – our users appreciate the results of a focused effort on performance and stability and maintainability, and we appreciate the spring cleaning that comes with a focus on technical debt. But the point of spring cleaning is to make room for fresh ideas and new art, and our next release has to raise the roof in that regard. And what a spectacular time to be unleashing creativity in Ubuntu,” also noted Mark Shuttleworth.
+“LTS 版本将会约束我们的创造力 —— 我们的用户虽然更乐意于巩固性能、稳定和可维护性，但我们更倾向于技术累赘的清扫。
+这个清扫的目的是为新的创意与设计腾出空间，并为下个版本添砖加瓦。
+这将是个多么壮观释放创造力的时刻啊，” Mark Shuttleworth 也这么提到。
 
-It's also very likely that Ubuntu developers will try to get a little bit closer to their convergence goal of having a single codebase running on all the platforms. It won't be ready in this cycle, but we will probably see some major improvements.
+同时 Ubuntu 的开发者们也十分可能会尝试向多平台整合的目标靠拢直至所有平台使用同一代码库。
+这虽然不会在这个开发周期准备就需，但我们很肯能能看到一些主要的改进。
 
-All hail Utopic Unicorn!
+乌托邦独角兽万岁！
+
+（译者注：由于马克叔风骚的文笔，译者正在去往医院抢救的路上……精通英文者建议看原文）
 
 --------------------------------------------------------------------------------
 
@@ -30,22 +40,3 @@ via: http://news.softpedia.com/news/Ubuntu-14-10-to-Be-Called-Utopic-Unicorn-439
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [1]:http://www.markshuttleworth.com/archives/1363
-[2]:
-[3]:
-[4]:
-[5]:
-[6]:
-[7]:
-[8]:
-[9]:
-[10]:
-[11]:
-[12]:
-[13]:
-[14]:
-[15]:
-[16]:
-[17]:
-[18]:
-[19]:
-[20]:
