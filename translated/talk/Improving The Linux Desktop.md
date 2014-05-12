@@ -18,7 +18,7 @@ Linux 桌面是建立在成千上万的软件基础之上的，每个软件由�
 
 via: http://ostatic.com/blog/improving-the-linux-desktop
 
-译者：[bazz2](https://github.com/bazz2) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[bazz2](https://github.com/bazz2) 校对：[Mr小眼儿](http://blog.csdn.net/tinyeyeser)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
