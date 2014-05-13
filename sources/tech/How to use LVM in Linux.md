@@ -1,3 +1,5 @@
+Vic020 在被关，我就急
+
 How to use LVM in Linux
 ================================================================================
 Logical Volume Manager (LVM) is a versatile disk management system that can easily be used in Linux or similar operating systems. Traditional partitions are created in fixed sizes, and resizing them is a tedious process. On the other hand, LVM creates and manages "logical" volumes off of physical hard disks, and provides administrators the flexibility to extend and shrink logical volumes easily on demand without damaging stored data. Additional hard disks can be added to LVM at will, further increasing existing logical volumes. LVM does not need reboot as long as the kernel is aware of the existence of a partition.

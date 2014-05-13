@@ -1,3 +1,4 @@
+linuhap翻译中
 Coverity scan report finds open source software quality outpaces proprietary code for first time
 ================================================================================
 ![](http://www.ciol.com/IMG/550/80550/synopsys-logo-370x264.jpg)
