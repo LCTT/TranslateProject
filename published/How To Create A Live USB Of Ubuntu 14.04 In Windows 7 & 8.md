@@ -1,6 +1,6 @@
-如何在windows 7 或 8 系统中制作一个Ubuntu 14.04 的USB随身碟（Live USB）
+如何在win 7/8 中制作一个Ubuntu 14.04 的USB随身碟
 ================================================================================
-安装Ubuntu的第一步是制作一个随身碟。如果你正在使用Windows XP，7，8 或者 8.1，你可以用Universal USB Installer去创建一个Live USB。这是我最喜欢用的，而且它很容易使用。让我们看看如何很容易地在Windows 8 里制作一个Ubuntu的Live USB 。
+安装Ubuntu的第一步是制作一个随身碟。如果你正在使用Windows XP，7，8 或者 8.1，你可以用Universal USB Installer去创建一个Live USB。这是我最喜欢用的方法，而且它很容易使用。让我们看看如何很容易地在Windows 8 里制作一个Ubuntu的Live USB 。
 
 ### 在Windows里制作live USB的步骤： ###
 
@@ -36,7 +36,7 @@
 
 via: http://itsfoss.com/create-live-usb-of-ubuntu-in-windows/
 
-译者：[linuhap](https://github.com/linuhap) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[linuhap](https://github.com/linuhap) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
