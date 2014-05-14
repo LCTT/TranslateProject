@@ -1,115 +1,91 @@
 Linux-pdz重又复出，先占一坑哦！
-Making Linux Feel at Home
+
+轻松愉快的使用Linux
 ================================================================================
-**Hiring Tux is a smart move for both small and large businesses. Linux once was considered a hobbyist's operating system, but it has come a long way and now is considered enterprise class. It is considered very stable and secure. Linux can easily be customized, and there is a huge community eager to help out. Those are just some of the reasons to migrate to the Linux desktop.**
+**无论企业大小，应用Linux都是一个明智的选择。Linux曾经被认为是爱好者的系统,但现在它已经取得了长足的进步，已经被认可为企业级系统。Linux运行非常平稳、安全，而且可以很容易的对系统进行定制以满足特定需求，另外，还可以从遍布全球的社区获得帮助。这些只是往Linux桌面系统迁移的众多理由中的一部分。**
 
-Migrating to a different operating system is never easy. Keeping the Windows opened or not chewing on a MacIntosh can be a frustrating and costly experience. Buying new upgraded hardware to keep up with costly new software releases is often an exercise in futility.
+当然迁移到一个新的操作系统从来都不是一件容易的事。但是使用Windows系统或者啃不到苹果系统也是一件令人沮丧或花费高昂的事，因为wndows系统的不断推陈出新，你常常仅仅为了跟上软件发布的节奏而不得不花钱升级硬件。
 
-Running a Linux distribution at home or in a small office environment can be a productive endeavor that brings cost savings and increased efficiency. Adopting a Linux server system instead of playing catch-up with a Microsoft infrastructure is often a smart business move for enterprise environments.
+在家用计算机或者小型办公室内运行Linux操作系统也是一种提高生产力的尝试，这样不仅可以节省开支而且还能提高效率。在企业应用中采用Linux服务器系统代替微软的的服务器产品常常是一个聪明的商业决策。
 
-However, the process of giving up a comfort zone around a familiar operating system often seems more of a challenge than it actually is. Individual users and SMBs can move into the Linux desktop in stages. The software is free, and users already have suitable hardware that can function with both platforms.
+然而，跳离舒服区域，与你熟悉的操作系统说拜拜是困难的，甚至会在你心中放大它真实的困难程度。个人用户以及商业用户可以分阶段迁移到Linux桌面发行版。使用的软件要在两种平台上都能运行，硬件也要在两种平台下均能兼容。
 
-Many larger enterprises already run their own Linux server silos and integrate Linux desktop use where it fits more easily. The growing use of cloud-based software lets office workers use their workstations without realizing any major change occurred.
+许多大型企业都已经在运行他们自己的Linux服务器版本，而且整合了Linux桌面系统并将其应用在容易且适合的地方。随着云端软件的大量使用，让人们在不觉察的情况下开始使用工作站来处理文档。
 
-"Migrating to Linux is based on the use case. If you are home or are a developer, you are going to want to use all the power available in Linux. That is a no-brainer. There is no one easy way to migrate to another operating system. No one use case fits all. It is dependent on the user base," Mike Vitale, chief technology officer for [TalkPoint][1], told LinuxInsider.
+"往Linux的迁移要依据使用情景。假如你是在家自用或是需要从事开发工作，你立马就可以转移到Linux上，并享受它的强大功能。这不存在什么障碍。但是往另一个操作系统迁移并没有一条捷径。没有任何一种案例可以适用于所有的情况。仍然要看用户基础如何,"Mike Vitale,[TalkPoint][1]的首席技术官，告诉LinuxInsider。
 
-Working with enterprise clients in SMB environments, Vitale sees a growing movement of individual users and corporate leaders taking advantage of new technologies that draw them toward Linux.
+在拓展客户的商业活动中，Vitale看到个人以及企业利用新技术将用户吸引到Linux来正日益成为一种新趋势。
 
-### Comfort Counts ###
+###几种舒服的方式
+Chrome OS以及装载这种基于Linux系统的廉价笔记本电脑这是这些新型技术的一种。
 
-One of those Linux technologies is the Chrome OS and the low-cost laptop computers now powered by the Linux-based Chrome browser OS.
+对于那些已经熟悉Google chrome浏览器或者开源的chromium浏览器的用户，使用chromebook来迁移到Linux系统将是一件非常容易的事情。
 
-For users already familiar with Google's Chrome browser or the open source Chromium browser project, using a Chromebook or cloud-based delivery system makes migrating to Linux an easy walk in the park.
+"用户并不关心用的是何种操作系统，而关注的是应用，如这儿的浏览器。我们发现用户使用电脑时85%的时间是花费在浏览器上,"Thomas Deng，[Splashtop][2]联合创始人和产品管理的副总裁，告诉LinuxInsider。
 
-"One of the issues, regardless of which OS is used, is the browser capabilities. We have found that 85 percent of the time the user is in a browser," Thomas Deng, cofounder and senior vice president of product management for [Splashtop][2], told LinuxInsider.
-
-There's a growing interest in people adapting to newer technologies with quick learning curves, Deng observed. People use a variety of products. So migrating to an OS that resembles what they use on another device makes for a smoother transition.
+Deng发现，人们会对那些容易上手的新技术抱有浓厚的兴趣。人们会使用多种产品，所以迁移到一个操作系统应该像他们使用另一种设备那样具有平滑的过渡。
 
 ### hrome Craze Caters ###
 
-Mobile device users both at home and at work are becoming proficient with Linux without knowing it. They move back and forth among several operating systems. With that familiarity comes a comfort zone for open source. Using cross-platform software delivered from a cloud platform is an added migration measure.
+无论在家还是在办公室工作，与人们形影不离的移动设备早已让人们对Linux运用娴熟，但是却对其毫不知晓。人们在几个操作系统间来回切换。增加人们对开源操作系统的熟悉度，尤其使用那种跨平台的并且可以进行云同步数据的软件会大大降低人们迁移到新操作系统的难度。
 
-"What Google is doing is really interesting with the office suite. Google is opening the door with its Chrome OS now," said Vitale.
+“Google现在对办公室套件很感兴趣，现在它正在用chrome OS打开了这扇大门，”Vitale说。
 
-A good example of opening doors while shutting Windows is how his company uses Chrome-driven tools in-house. For instance, TalkPoint uses the ChromeBox appliance.
+让人们可以不再依赖windows的一个好方法就是在公司内使用基于浏览器的工具。例如，TalkPoint就是使用chromeBox应用。
 
-"That is opening the door for multimedia teams and traditional AV users. We are seeing a lot of inroads with that technology," Vitale explained.
-
+“这为多媒体团队和传统的影视制作用户提供了新的途径。我们看到了越来越多类似的技术正在不断涌现，”Vitale解释说。
 ### Tablets Tackle Tradition ###
 
-Another instance of Linux devices paving the way for desktop OS migration is the popularity of the Android OS. Add to this the Linux distros retooled for smartphones and tablets.
+Android OS的流行也为往桌面Linux的迁移打下了基础。这种Linux发行版重塑了智能手机以及平板电脑。
+“只要人们迁移到Linux，人们就会对其用户界面逐渐变得熟悉，尤其是现在人们对Windows 8的界面感到不满，据我所知，现在人人都想重新换回Windows 7,”Vitale说。
 
-"As far as migrating people to Linux goes, people are getting more comfortable with the tablet interface, especially with their unhappiness over the Windows 8 interface. Everyone I know is trying to turn it back to Windows 7," said Vitale.
+###云时代下Linux的巨大影响力
 
-### Cloud Has Linux Clout ###
+Deng注意到，人们倾向于使用他们熟悉的生产力工具，例如MS office系列的字处理软件，而对Windows平台的开源替代产品却往往并不熟悉，因此在工作流程中使用开源软件这样对完全转换到Linux桌面系统时是很有帮助的。
+他还指出另一个趋势，那就是Windows用户对开源软件如何塑造出非常流行的Google Docs 和 Google chrome浏览器的并不知晓。
+“还有一种往Linux迁移的容易方式就是转而使用云端应用，”Deng说。“当然最有效的往Linux迁移的方式是教育用户。Chromebook现在已被广发的采用，它是一种很容易的往Linux迁移的途径。”
 
-People expect to use their familiar productivity tools like MS Office for word processing. There is less familiarity with open source products on the Windows platform, so integrating open source before starting a move to fully implementing the Linux desktop helps, noted Deng.
+###充满魅力的企鹅
 
-That trend of Windows users not knowing about open source is changing with the popularity of Google Docs and the Google Chrome browser, he pointed out.
+企业无论大小，应用这种以企鹅为吉祥物的Linux系统都是一种明智的选择。Linux是一种成熟平稳且灵活的操作系统，Shaun Seller，[Vision Solutions][3]的高级产品经理。
+“根据你的商业需要，对于小型企业来说，Linux系统是微软系统之外的很好的选择，甚至运行Linux系统还可以给你带来优势。”Seller告诉LinuxSider。
+曾经Linux被认为是一个爱好者的系统。经过很长时间的发展，现在它已经成为能担当企业应用重任的系统。它运行平稳而安全，而且可以很容易的进行定制，并且有庞大的社区可以寻求帮助，他说。这些只是你往Linux迁移的众多理由中的一些。
 
-"What is also easing the transition to Linux is the shift to using cloud applications," Deng said. "Educating the user is the most effective way to move users into Linux. The Chromebook is becoming very widely adopted. It is an easy migration path into Linux."
 
-### Tux the Mighty ###
+###优秀的商业替代
 
-Hiring Tux, the Penguin that is the Linux mascot, is a smart move for both small and large businesses. It is a mature, stable and flexible operating system that definitely can do the job, according to Shaun Seller, senior product manager at [Vision Solutions][3].
-
-"For a small business, running Linux is a compelling alternative to other operating systems and may provide advantages, depending on your business needs," Seller told LinuxInsider.
-
-It once was considered a hobbyist's operating system. Linux has come a long way and now is considered enterprise class. It is considered very stable and secure. Linux can easily be customized, and there is a huge community eager to help out, he said. Those are just some of the reasons to migrate to the Linux desktop.
-
-### Good Business Cents ###
-
-Leveraging more of the community support model can create cost savings, Seller said. Linux is available free with community support or through subscriptions that offer full technical support. Some Linux distributions also come with things like hardware and software certifications, which may be important for some work environments.
-
-For example, small businesses and larger enterprises can run a distribution such as CentOS or OpenSuse completely or in combination with a subscription-based version from [Red Hat][4] or Suse. Even with a full subscription model, Linux offers a lower total cost of ownership and better return on investment than Windows or traditional Unix, explained Seller.
-
-"I believe it makes sense for smaller businesses to take a close look at Linux," added Sellers. "Linux has a bright future, as open source software in general is helping drive innovation at a fast pace, with help and collaboration from the community, and companies like IBM and Red Hat."
-
+更多的利用社区的帮助可以节省开支，Seller说。Linux是免费的并且由社区驱动的，或者可以通过订阅来获得完全的技术支持。一些Linux发行版还会进行硬件或软件认证，这对有些应用环境可能是非常重要的。
+例如，中小企业可以在运行CentOS或者OpenSuse这类发行版，在同时使用来自[Red Hat][4] 或者Suse的订阅版本。即使全部使用订阅版本，Linux也比windows或者传统的Unix具有更低的总体拥有成本以及较好的投资回报率，Seller解释到。
+“我相信小企业看一看Linux将是非常有意义的，”Sellers补充到。“由于开源软件正在快速的驱动创新，而且还有来自社区以及IBM和红帽这样企业的帮助和协作，Linux的未来正越来越光明。”
 ### Cozy but Cautious ###
 
-Operating systems can produce divided loyalties within families and workplaces. Take the case of Walker White, CTO of [BDNA][5]. He uses Linux as a desktop OS at home, but his family is not so enthusiastic about his computing passion.
+个案例。他在家使用Linux作为桌面操作系统，但是他的家人却对他的做法毫无兴趣。
+“我的家人使用Mac电脑。他们并不考虑实际表现只盲目的听信市场宣传以及天花乱坠的广告。而我却在家里发起了更多使用Linux的圣战，”White告诉LinuxInsider。
+在他们公司内也是相似的状况，他说。虽然他们公司内并不是所有人都在使用Linux桌面版系统，但是他已经为其打下了在工作中更多使用Linux的基础。
+BDNA在公司内更多的使用Google的应用。公司已经把越来越多的事情迁移到了云端提供商
+“当我切换到类似[OpenOffice][6]这类应用时，在你完全熟悉它之前，它的操作的确有些隐晦。从市场的角度来考虑，开发者可以改变一下设计方式。苹果就是靠在人们看到它的30s内久赢得了人们的喜爱，尤其是年轻人以及孩子。在公司内我也常常看到这种现象，”他说。
+###在Linux中应用苹果之道
+人们购买新设备时往往更倾向于购买高端的MacBook Pro，White解释到。即使他们常常使用的应用仅仅依赖于网上应用，BDNA的人们也要购买光线闪亮的、频频被广告的硬件。
+为了打破这种看法，便不得不将操作系统和硬件分离。将用户与操作系统隔离开也是这场战斗的一部分，当然这要在应用程序无论在本地还是云端都能运行良好，while说。
+“甚至一些简单的事情，例如文件管理，它并不与特定的操作系统有关，但是操作系统却允许我们在熟悉的应用中进行文件管理，”他说。
 
-"My family members use Mac gear. They blindly follow the marketing ploys and the feature hype without any consideration of performance and such. I am on a personal holy war at home to try slipping more allegiance towards Linux," White told LinuxInsider.
+###使其变得舒适
+操作系统在多大程度上控制着用户？这个问题是迁移到Linux的关键，Whites说。
+想想Chromebook以及Android手机和平板电脑的成功吧。消费者真的需要知道他们运行的是Linux操作系统吗？
+“我觉得往Linux进行迁移以及Linux桌面版系统在家庭中的成功与我们在多大程度上依赖线上应用有关，”White说。“因为我在家使用Linux，所以发现了这一点。”
+你是否在家中或者商业环境以及小型办公环境中使用Linux，其中很重要的一点是用户对Linux上面他们将要使用的工具以及各种特性是否感到舒适。这包括分享文件、创建文件以及与这相关的各种事情，他解释到。
 
-There are similar allegiance struggles in his company, he said, where the Linux desktop is not yet universally used -- but he is laying the foundation for a wider Linux deployment at work.
+###迁移措施
 
-BDNA uses the Google applications internally quite a bit. The company is migrating more and more things to cloud-based offerings. However, that will take more support from ongoing preparations.
-
-"When I switch over to applications like [OpenOffice][6], that operation has to be really seamless for it to start getting better adoption. From a pure marketing perspective, developers need to change the game a little bit. Apple is winning the hearts and minds of the young kids and the younger generations through their 30s. I see that attitude often at my company," he said.
-
-### Tux Takes On Apple ###
-
-Requests for new equipment are very specific to the high-end MacBook Pro, explained White. Even though the tools they mostly are using are based online, workers BDNA want the flashy, highly advertised hardware names.
-
-To break that view, he has to separate function from OS and hardware. Part of that battle is to insulate the user from the operating system itself. That can happen only when the industry has productivity applications both online and offline, according to While.
-
-"Even simple things like using file managers need to focus on not the OS but what that OS allows us to do within the apps that we use," he said.
-
-### Making Comfy Complete ###
-
-How much should an operating system control the computer user? That question is critical in migrating to Linux, said Whites.
-
-Consider the growing success of the Chromebook and Android phones and tablets. Do consumers really need to know they are running Linux?
-
-"I think the key to Linux migration and success of the Linux desktop in the home is tied to how much can we actually do online," White said. "Since I use Linux at home, I see the advantages."
-
-Whether you start at the consumer level at home or move up to the business user in the home or in a small business setting, it's important that users be comfortable with all of the tools and features they use. That includes things like sharing and creating documents, and everything that goes along with that, he explained.
-
-### Migrating Measures ###
-
-As for marketing, software and hardware makers need to put less emphasis on the operating system. For example, Chromebook is gaining acceptance in much the same way as Apple sells the MacBook. Google is not so much hawking a Linux OS as it is selling an appliance, White reasoned.
-
-"What developers really need to do is change the focus, so users get comfortable with Linux in their homes without dwelling on using a non-Windows or non-Mac operating system. Whatever you use has to be able to do the things you want it to do. Something like Chromebook does that with Linux under the covers," he pointed out.
-
-Computer makers must first start to break that mold of "it is Windows" or "it is a Mac." Until that happens, migrating to Linux will be a steep climb, White concluded.
-
-"It is not about branding the OS," he said. "It is about the capabilities of the devices the OS runs."
-
+对于市场来说，无论软件还是硬件制造商都需要淡化操作系统。例如，Chromebook就是采用苹果销售MacBook的方式来获得成功,Google在销售应用时并么有强调它是基于Linux系统的，White强调。
+“开发者许多做的事是改变用户的关注点，因为当用户不在细究他用的是windows还是mac时他就会对Linux使用的舒服且自在。
+用户心中总会在心中想，这个是Windows呢，还是mac呢？计算机制造商只有打破了用户心中这种先入为主，迁移到Linux的难度才会大大降低。
+“操作系统的种类并不重要，”他说“搭载操作系统的设备能用来做什么才是最重要的。”
 --------------------------------------------------------------------------------
 
 via: http://www.linuxinsider.com/story/80415.html
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Linux-pdz](https://github.com/Linux-pdz) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
