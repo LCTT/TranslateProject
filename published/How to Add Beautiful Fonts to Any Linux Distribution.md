@@ -1,4 +1,4 @@
-如何给任何一款 Linux 发行版添加漂亮的字体
+如何给任意一款 Linux 发行版添加漂亮的字体
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/How-to-Add-Beautiful-Fonts-to-Any-Linux-Distribution-434835-2.jpg)
 
@@ -13,17 +13,22 @@
 ### Infinality for Arch Linux ###
 
 1. 将infinality-bundle，infinality-bundle-multilib （用于使用64位系统的用户）和infinality-bundle-fonts仓库添加到你的 /etc/pacman.conf文件中：
+ 
+    	[infinality-bundle]
+    	Server = http://bohoomil.com/repo/$arch
 
-    [infinality-bundle]
-    Server = http://bohoomil.com/repo/$arch
+    	[infinality-bundle-multilib]
+   	 	Server = http://bohoomil.com/repo/multilib/$arch
 
-    [infinality-bundle-multilib]
-    Server = http://bohoomil.com/repo/multilib/$arch
+    	[infinality-bundle-fonts]
+    	Server = http://bohoomil.com/repo/fonts
 
-    [infinality-bundle-fonts]
-    Server = http://bohoomil.com/repo/fonts
+2. 执行 sudo pacman -Syu 命令用来刷新仓库，然后运行 
 
-2. 执行 sudo pacman -Syu 命令用来刷新仓库，然后运行 `sudo pacman -S infinality-bundle infinality-bundle-multilib ibfonts-meta-extended` （用于64位系统） 或者 `sudo pacman -S infinality-bundle ibfonts-meta-extended` （用于32位系统）。
+    	sudo pacman -S infinality-bundle infinality-bundle-multilib ibfonts-meta-extended （用于64位系统） 
+
+		sudo pacman -S infinality-bundle ibfonts-meta-extended （用于32位系统）
+
 
 3. 当被询问是否替换 fontconfig 软件包的 freetype2 时，回答YES。完成后重启你的计算机。
 
@@ -31,14 +36,18 @@
 
 1. 在终端窗口中执行如下命令
 
-    sudo rpm -Uvh http://www.infinality.net/fedora/linux/infinality-repo-1.0-1.noarch.rpm
-    sudo yum install freetype-infinality fontconfig-infinality
+    	sudo rpm -Uvh http://www.infinality.net/fedora/linux/infinality-repo-1.0-1.noarch.rpm
+    	sudo yum install freetype-infinality fontconfig-infinality
 
 2. 重启你的机器。
 
 ### Infinality for openSUSE ###
 
-1. 添加 Infinality 官方仓库 `http://download.opensuse.org/repositories/home:/namtrac:/subpixel/openSUSE_13.1/` ，打开YaST中的库选项卡，选择namtrac:subpixel仓库，并打击“切换系统包的版本到这个仓库”。
+1. 添加 Infinality 官方仓库：
+
+
+		http://download.opensuse.org/repositories/home:/namtrac:/subpixel/openSUSE_13.1/
+打开YaST中的库选项卡，选择namtrac:subpixel仓库，并打击“切换系统包的版本到这个仓库”。
 
 2. 标记 namtrac:subpixel 中所有还没有安装的包来进行安装，然后从 openSUSE 官方软件仓库中安装 fontconfig-infinality 包。
 
@@ -52,15 +61,15 @@
 
 1. 在终端中执行下面的命令（一个一个执行，每一行之后敲击回车）：
 
-    echo “deb http://ppa.launchpad.net/no1wantdthisname/ppa/ubuntu raring main” | sudo tee /etc/apt/sources.list.d/infinality.list
-    echo “deb-src http://ppa.launchpad.net/no1wantdthisname/ppa/ubuntu raring main” | sudo tee -a /etc/apt/sources.list.d/infinality.list
-    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E985B27B
+    	echo “deb http://ppa.launchpad.net/no1wantdthisname/ppa/ubuntu raring main” | sudo tee /etc/apt/sources.list.d/infinality.list
+    	echo “deb-src http://ppa.launchpad.net/no1wantdthisname/ppa/ubuntu raring main” | sudo tee -a /etc/apt/sources.list.d/infinality.list
+    	sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E985B27B
 
 2. 执行以下命令来升级你的系统并安装 Infinality 包：
 
-    sudo apt-get update
-    sudo apt-get upgrade
-    sudo apt-get install fontconfig-infinality
+    	sudo apt-get update
+   	 	sudo apt-get upgrade
+    	sudo apt-get install fontconfig-infinality
 
 3. 重启你的计算机。
 
