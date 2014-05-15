@@ -1,3 +1,4 @@
+liushui312 translating
 Install Spotify In Ubuntu 14.04 & Linux Mint 17
 ================================================================================
 Spotify is the most popular streaming music service these days. While you can listen it via its web interface, you can also install a desktop client of Spotify in Linux. This gives you some additional features such as listening to local music in Spotify, sync local music to Spotify server or sync local music to iPhone, iPod or other mobile devices.
