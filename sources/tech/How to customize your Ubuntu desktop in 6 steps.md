@@ -1,3 +1,4 @@
+JonathanKang is translating
 How to customize your Ubuntu desktop in 6 steps
 ================================================================================
 ![](http://www.muktware.com/wp-content/uploads/2014/05/ubuntu-customize-1.jpg)
