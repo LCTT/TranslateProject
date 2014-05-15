@@ -34,49 +34,49 @@
 
 ### 2. 通过 F9 键发送信号 ###
 
-The htop command provides you with a way through which you can easily send any signal to a process from within the htop window. All you have to do is to press F9.
+HTOP 命令提供了某种功能，通过此功能您可以很容易地在 HTOP 窗口内给一个进程发送任意的信号。您需要做的就是按下 F9 键。
 
 ![signals](http://linoxide.com/wp-content/uploads/2014/01/signals.png)
 
-As you can see, the left part of the window now lists all the available signals, while the right part lists the processes. Just select and signal, then select a process, and then press enter to send the signal to the process.
+如你所见，窗口的左边部分列出的是可用的信号，右边部分列出的是进程。只要选中信号，并选择一个进程，然后按下 enter 键，选中的信号就会发送到此进程。
 
-### 3. Get a tree view of the processes ###
+### 3. 显示进程的树状视图 ###
 
-The htop command also provides a tree view of the processes. All you have to do is to press F5.
+HTOP 命令也提供了进程的树状视图查看功能。您需要做的就是按下 F5 键。
 
-Here is an example of htop displaying information in a tree view :
+下面是 htop 显示树形视图信息的例子:
 
 ![treeView](http://linoxide.com/wp-content/uploads/2014/01/treeView.png)
 
-To come out of tree view, press the F5 key again.
+要退出树状视图模式，请再一次按下 F5 键。
 
-### 4. Search Processes Through F3 key ###
+### 4. 通过 F3 键搜索进程 ###
 
-The htop command provides an easy way to search processes. All you have to do is to press F3 key and a text box will appear at the bottom of the window.
+HTOP 命令提供了易用的方式来搜索进程。您需要做就是按下 F3 键，一个文本框就会出现在窗口底部。
 
-Here is an example :
+下面是例子:
 
 ![search](http://linoxide.com/wp-content/uploads/2014/01/search1.png)
 
-As you can see, a text prompt ‘Search’ appears at the bottom of the window. You can type the name of the process here and press enter to search it. If the htop command is able to find it, it will select the entry of that process in its output.
+如您所见，一条名为‘搜索’的文本提示框在窗口底部出现了，您可以在这儿输出进程的名字然后回车搜索。如果找到，它会在列出的进程列表里选中此进程。
 
-### 5. Colour Tag An Entry Through Space Key ###
+### 5. 通过空格键来设置颜色标注进程条目 ###
 
-In real-time view of processes running in the system, one of the main problem is to follow a process. This is because the entries keep on refreshing, and their order keeps on changing. The htop command provides an easy solution to this problem: Colour tagging. Yes, you can colour tag an entry so that it is displayed in a different colour, and hence becomes easy to follow.
+在系统中运行着的实时进程视图中，要追踪某个进程是个大问题。因为整个列表在不停的刷新着，进程的排列顺序也在变动着。为了这个问题， HTOP  提供了一个很简单的解决方案：颜色标注。是的，你可以标注一个进程条目，它会以不同的颜色显示，因此要追踪它就变得容易了。
 
-To colour tag an entry, all you have to do is to select the entry and press ‘space’ key. For example, in the screen-shot below, I have colour tagged three entries :
+要标注某个进程条目，需要做的就是选中此条目，然后按下‘空格’键。例如，在下面的截图示例中，我已经颜色标注了三个进程条目:
 
 ![color-tag](http://linoxide.com/wp-content/uploads/2014/01/color-tag.png)
 
-So this way, you can easily follow the process(es) you desire.
+所以通过此种方法，你就能很轻松的追踪想查看的进程。
 
-### 6. Command line options ###
+### 6. 命令行选项 ###
 
-Apart from the hot keys explained till now, the htop command also provides useful command line options. Some of them are :
+除了上面介绍的一些热键，htop 还提供了很有用的命令行选项。下面是其中一部分:
 
-- **-s Option** : To sort a particular column. For example, htop -s PID will sort the PID column output.
-- **-u Option** : To display process information related to a particular user. For example, htop -u himanshu will display process information related to the user himanshu.
-- **-d option** : To introduce delay between updates. For example, htop -d 100 will make sure that htop output updates after 1 sec (as the argument to -d is considered to be in tenths of seconds).
+- **-s 选项** : 按指定的列排序。例如，**htop -s PID** 命令会按 PID 列的大小排序来显示。
+- **-u 选项** : 显示指定的用户的进程信息列表。例如，**htop -u himanshu** 命令会只显示出用户名为 himanshu 的相关进程。
+- **-d 选项** : 设置刷新的延迟时间。例如，**htop -d 100** 命令会使输出在1秒后才会刷新（参数 -d 可以考虑是十分之一秒的时间）。
 
 --------------------------------------------------------------------------------
 
