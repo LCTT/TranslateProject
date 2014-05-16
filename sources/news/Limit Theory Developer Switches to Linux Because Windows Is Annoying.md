@@ -1,3 +1,4 @@
+linuhap 翻译中
 Limit Theory Developer Switches to Linux Because Windows Is Annoying
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Limit-Theory-Developer-Switches-to-Linux-Because-Windows-is-Annoying-441642-3.jpg)
