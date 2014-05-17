@@ -81,7 +81,7 @@ Conky是一个轻量级桌面系统监视软件。该软件本身是非常简单
 
 via: http://www.muktware.com/2014/05/customize-ubuntu-desktop-6-steps/26750
 
-译者：[译者ID](https://github.com/JonathanKang) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[JonathanKang](https://github.com/JonathanKang) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
