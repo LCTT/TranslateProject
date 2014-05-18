@@ -1,3 +1,6 @@
+##########Will be translate by rekii<travelwithheart@yeah.net>########
+
+
 Why htop Command Compete Linux top Command
 ================================================================================
 The top command in Linux is used to display a real-time view of processes that are running in the system. It provides very useful information like CPU utilization, memory consumption, and more, related to every process. But, do you know there exists another command line utility ‘htop’ that provides more information and features when compared with the traditional top command. In this article, we will discuss the ‘htop’ command with examples.
