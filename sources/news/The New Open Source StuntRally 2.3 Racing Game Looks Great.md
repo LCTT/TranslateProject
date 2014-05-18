@@ -1,3 +1,5 @@
+Mike Coder Translating
+
 The New Open Source StuntRally 2.3 Racing Game Looks Great
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/The-new-Open-Source-StuntRally-2-3-Racing-Game-Looks-Great-441726-2.jpg)
