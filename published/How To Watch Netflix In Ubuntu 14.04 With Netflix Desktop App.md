@@ -1,6 +1,6 @@
-如何在Ubuntu 14.04中使用Netflix桌面应用观看Netflix
+如何在Ubuntu 14.04中观看Netflix
 ================================================================================
-在Windows中观看Netflix是很容易的。你可以使用网络浏览器或者桌面程序，但这在linux中并不同。这在linux中默认并不可行，这是因为Netflix需要[Microsoft Silverlight][1]，同时由于这是"微软"的,很明显这无法在Linux上使用。所以在Linux上就没法使用Netflix了么？当然有办法。本篇中我们就会看到如何在Ubuntu 14.04上观看Netflix(或许在老版本中如13.10和13.04等也可以)。
+在Windows中观看Netflix是很容易的。你可以使用网络浏览器或者桌面程序，但这在linux中并不同。这在linux中默认并不可行，这是因为Netflix需要[Microsoft Silverlight][1]，同时由于这是"微软"的，很明显这无法在Linux上使用。所以在Linux上就没法使用Netflix了么？当然有办法。本篇中我们就会看到如何在Ubuntu 14.04上观看Netflix(或许在老版本中如13.10和13.04等也可以)。
 
 ### 如何在Ubuntu 14.04 中观看Netflix: ###
 
@@ -41,15 +41,15 @@ At first run, it will install some Wine related stuff. Let it do that. Afterward
 
 ### 在USA之外的Ubuntu上使用Netflix : ###
 
-你注意到上面的Netflix桌面应用了么？它说Netflix不支持我所在的国家地区(也就是说，法国)。我不是Netflix的粉丝但是我写了一篇[如何在美国之外轻松观看Netflix][4]。如果你想要在美国之外观看Netflix，你需要改变DNS设置。Tunlr是一个已经关闭的免费服务。
+你注意到上面的Netflix桌面应用了么？它说Netflix不支持我所在的国家地区(也就是说，法国)。我不是Netflix的粉丝，不过我写了一篇[如何在美国之外轻松观看Netflix][4]。如果你想要在美国之外观看Netflix，你需要改变DNS设置才行。
 
-作为替代，我使用 [Unlocator][5]，在beta状态下还是免费的。很容易使用且体验良好。Unlocator现在不再免费了，但是如果你愿意每月花$5，[Unlocator][5]是一个很棒的DNS解锁服务器。
+文中提到的Tunlr是一个已经关闭的免费服务。作为替代，我还使用 [Unlocator][5]，在beta状态下还是免费的。很容易使用且体验良好。Unlocator现在不再免费了，但是如果你愿意每月花$5，[Unlocator][5]是一个很棒的DNS解锁服务器。
 
 --------------------------------------------------------------------------------
 
 via: http://itsfoss.com/netflix-ubuntu-1404-desktop-app/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

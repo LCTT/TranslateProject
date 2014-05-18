@@ -1,12 +1,12 @@
-如何禁用Ubuntu 14.04 LTS和旧版本上的Unity在线搜索功能
+如何禁用 Ubuntu 14.04 LTS 和旧版本上的 Unity 在线搜索功能
 ================================================================================
-无论何时，你开始在Unity Dash中搜索计算机中的应用程序或文件，你的搜索条件将被自动发送给第三方，如亚马逊，并且第三方将依据您的搜索条件显示相关结果（主要是广告）。如果你不喜欢这个功能，感觉真的很讨厌，你可以禁用它。
+无论何时，你开始在 Unity Dash 搜索计算机中的应用程序或文件时，你的检索词将被自动发送给第三方，如亚马逊，并且第三方将依据您的搜索词显示相关结果（主要是广告）。如果你不喜欢这个功能，感觉真的打扰到你，你可以禁用它。
 
-例如，当我在Unity Dash中输入“Terminal”时，将显示“Terminal”应用和web上的其他第三方的东东（我不想要的）。
+例如，当我在 Unity Dash 中输入 “Terminal” 时，将显示 “Terminal” 应用和 web 上其他第三方的东东（我不想要这些）。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/04/Menu_019.png)
 
-正如上面的截图所见，Unity显示内置的**Terminal**应用、引用链接、天气链接和其他第三方的推荐，如电影等。这是非常恼人的并且在Unity Dash上看起来很糟。同时，它显示了太多的搜索结果，并使我迷惑。
+正如上面的截图所见，Unity显示内置的 **Terminal** 应用、引用链接、天气链接和其他第三方的推荐，如电影等。这是非常恼人的并且在 Unity Dash 上看起来很糟。同时，它显示了太多的搜索结果，并使我迷惑。
 
 如果你像我一样不需要这个功能，在你的终端输入以下命令：
 
@@ -60,11 +60,11 @@
       echo "All done. Enjoy your privacy."
     fi
 
-再次，我进入了Unity dash的终端。现在Unity只显示终端应用，而不是无用的垃圾，现在Unity Dash看起来还不错。
+再次，我进入到 Unity dash 的终端。现在 Unity 只显示终端应用，而不是无用的垃圾，现在 Unity Dash 看起来还不错。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/04/Menu_020.png)
 
-全都做完了，享受你的隐私。
+全部搞定，享受你的个人隐私吧。
 
 欢呼~!
 
@@ -76,7 +76,7 @@ Source & Reference: [Fixubuntu][1]
 
 via: http://www.unixmen.com/disable-unity-online-search-feature-ubuntu-14-04-lts-older-versions/
 
-译者：[tenght](https://github.com/tenght) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[tenght](https://github.com/tenght) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
