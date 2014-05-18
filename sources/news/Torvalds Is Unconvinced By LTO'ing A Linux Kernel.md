@@ -1,3 +1,4 @@
+owen-carter translating
 Torvalds Is Unconvinced By LTO'ing A Linux Kernel
 ================================================================================
 Yesterday patches were published via a pull request to [enable experimental LTO support for the Linux 3.15 kernel][1], but Linus Torvalds hasn't yet decided whether he will accept this code in the upstream Linux kernel... Linus doesn't yet see the benefits in link-time optimizations for the kernel and isn't sure whether this code is ready yet to be mainlined.
