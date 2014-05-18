@@ -1,3 +1,5 @@
+Translating by GoLinux!
+
 Git 1.9.3 Version Control System Officially Released
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Git-1-9-3-Version-Control-System-Officially-Released-441600-2.jpg)
