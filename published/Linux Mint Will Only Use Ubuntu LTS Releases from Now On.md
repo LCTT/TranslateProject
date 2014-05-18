@@ -1,4 +1,4 @@
-Linux Mint Will Only Use Ubuntu LTS Releases from Now On
+Linux Mint以后将只基于Ubuntu LTS进行开发
 ================================================================================
 ![Linux Mint 17](http://i1-news.softpedia-static.com/images/news2/Linux-Mint-Will-Only-Used-Ubuntu-LTS-Releases-From-Now-On-442225-2.jpg)
 
