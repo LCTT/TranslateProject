@@ -1,3 +1,5 @@
+Translating by GOLinux ...
+
 How to set up a primary DNS server using CentOS
 ================================================================================
 Any operational domain has at least two DNS servers, one being called a primary name server (ns1), and the other a secondary name server (ns2). These servers are typically operated for DNS failover: If one server goes down, the other server becomes an active DNS server. More sophisticated failover mechanisms involving load balancers, firewalls and clusters are also possible.
