@@ -331,6 +331,14 @@ The Ubuntu Installer app needs to be installed as an Android (preinstalled) syst
 
 The extra permissions that the Ubuntu installer app needs are just two: **cache partition write access** to store the downloaded files for Ubuntu installation and **power management** capability to reboot the system.
 
+--------------------------------------------------------------------------------
+
+via: https://wiki.ubuntu.com/Touch/DualBootInstallation
+
+译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
+
 [1]:https://wiki.ubuntu.com/Touch/Devices#Working_with_phablet-flash
 [2]:https://wiki.ubuntu.com/Touch/DualBootInstallation#Installation
 [3]:https://wiki.ubuntu.com/Touch/DualBootInstallation#DualBootInstallerReference
