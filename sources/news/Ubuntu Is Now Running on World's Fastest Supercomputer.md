@@ -1,3 +1,4 @@
+linuhap 翻译中。。。
 Ubuntu Is Now Running on World's Fastest Supercomputer
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Ubuntu-Is-Now-Running-on-World-s-Fastest-Supercomputer-442733-2.jpg)
