@@ -69,7 +69,7 @@ Windows 8的：在Windows 8中，你需要进入一般的PC设置，并选择**�
 
 --------------------------------------------------------------------------------
 
-via: http://itsfoss.com/disable-uefi-secure-boot-in-windows-8/
+via: http://itsfoss.com/disable-uefi-secure-boot-in-windows-8/ 
 
 译者：[MikeCoder](https://github.com/MikeCoder) 校对：[校对者ID](https://github.com/校对者ID)
 
