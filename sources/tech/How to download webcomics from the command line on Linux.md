@@ -1,4 +1,4 @@
-
+disylee来占坑2014-5-20
 How to download webcomics from the command line on Linux
 ================================================================================
 Do you never miss a new strip from xkcd? Read webcomics regularly? Or would you like to back up all the strips of your favorite website? Hopefully, the open source community has the solution: a command line program to download all your favorite webcomics from your terminal.
