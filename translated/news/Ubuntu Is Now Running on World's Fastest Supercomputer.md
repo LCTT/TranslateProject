@@ -16,7 +16,7 @@ Canonical公司正在推动中国市场而且公司已经试图用Ubuntu Kylin�
 
 via: http://news.softpedia.com/news/Ubuntu-Is-Now-Running-on-World-s-Fastest-Supercomputer-442733.shtml
 
-译者：[linuhap](https://github.com/linuhap) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[linuhap](https://github.com/linuhap) 校对：[校对者ID](https://github.com/校对者ID) 
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
