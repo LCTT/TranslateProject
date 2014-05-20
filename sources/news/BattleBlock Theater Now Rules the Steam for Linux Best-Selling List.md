@@ -1,3 +1,4 @@
+linuhap 翻译中
 BattleBlock Theater Now Rules the Steam for Linux Best-Selling List
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/BattleBlock-Theater-Now-Rules-the-Steam-for-Linux-Best-Selling-List-442722-2.jpg)
