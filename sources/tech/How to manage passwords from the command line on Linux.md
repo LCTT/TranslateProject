@@ -1,3 +1,4 @@
+Translating by shipsw
 How to manage passwords from the command line on Linux
 ================================================================================
 With password-based authentication so prevalent online these days, you may need or already use some sort of password management tool to keep track of all the passwords you are using. There are various online or offline services or software tools for that matter, and they vary in terms of their sophistication, user interface or target environments (e.g., enterprises or end users). For example, there are a few GUI-based password managers for end users, such as [KeePass(X)][1].
