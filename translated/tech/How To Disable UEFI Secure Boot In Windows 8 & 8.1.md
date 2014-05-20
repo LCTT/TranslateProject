@@ -46,7 +46,7 @@ Windows 8的：在Windows 8中，你需要进入一般的PC设置，并选择**�
 
 ![](http://itsfoss.com/wp-content/uploads/2014/05/Troubleshoot_Windows8_1.jpg)
 
-在高级选项菜单中，选择** UEFI 固件设置**：
+在高级选项菜单中，选择**UEFI固件设置**：
 
 ![](http://itsfoss.com/wp-content/uploads/2014/05/Troubleshoot_Windows8_2.jpg)
 
@@ -62,7 +62,7 @@ Windows 8的：在Windows 8中，你需要进入一般的PC设置，并选择**�
 
 ![](http://itsfoss.com/wp-content/uploads/2014/05/Disable_Secure_Boot_Windows8.jpg)
 
-接下来，您将到 Windows 正常开机。现在，您应该可以双启动 Windows8 与 Ubuntu 或其它 Linux 操作系统。我会在未来的日子里写关于如何双启动Ubuntu与Windows 8 UEFI。敬请关注。
+接下来，您将到 Windows 正常开机。现在，您应该可以双启动 Windows8 与 Ubuntu 或其它 Linux 操作系统。在未来的日子里我会写关于如何双启动 Ubuntu 与 Windows 8 UEFI 的教程。敬请关注。
 
 我希望这个教程可以帮助您禁用 Windows8 和 Windows8.1 的安全引导。如有任何疑问或建议，欢迎随时评论。
 
