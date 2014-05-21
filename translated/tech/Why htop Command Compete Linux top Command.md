@@ -1,6 +1,6 @@
 为什么 Linux 的 htop 命令优于 top 命令
 ================================================================================
-在 Linux 系统中，top 命令用来显示系统中正在运行的进程的实时状态，它显示了像 CPU 利用情况、内存消耗情况，以及每个进程情况等十分有用的信息。你应该知道，与传统的 top 命令功能一样的，还存在另一个命令行工具 'htop'，但它有更加强大的功能及能显示更多的信息。这篇文章，我们会用实例来讨论这个 'htop' 命令。
+在 Linux 系统中，top 命令用来显示系统中正在运行的进程的实时状态，它显示了一些非常有用的信息，比如 CPU 利用情况、内存消耗情况，以及每个进程情况等。但是，你知道吗？还有另外一个命令行工具 'htop'，它与传统的 top 命令功能一样，但它有更加强大的功能及能显示更多的信息。这篇文章，我们会用实例来讨论这个 'htop' 命令。
 
 ### Linux 中的 htop 命令 ###
 
@@ -38,7 +38,7 @@ HTOP 命令提供了某种功能，通过此功能您可以很容易地在 HTOP 
 
 ![signals](http://linoxide.com/wp-content/uploads/2014/01/signals.png)
 
-如你所见，窗口的左边部分列出的是可用的信号，右边部分列出的是进程。只要选中信号，并选择一个进程，然后按下 enter 键，选中的信号就会发送到此进程。
+如你所见，窗口的左边部分列出的是所有可用的信号，右边部分列出的是进程。只要选中信号，并选择一个进程，然后按下 enter 键，选中的信号就会发送到此进程。
 
 ### 3. 显示进程的树状视图 ###
 
@@ -68,7 +68,7 @@ HTOP 命令提供了易用的方式来搜索进程。您需要做就是按下 F3
 
 ![color-tag](http://linoxide.com/wp-content/uploads/2014/01/color-tag.png)
 
-所以通过此种方法，你就能很轻松的追踪想查看的进程。
+所以通过此方法，你就能很轻松地追踪想查看的进程。
 
 ### 6. 命令行选项 ###
 
@@ -82,6 +82,6 @@ HTOP 命令提供了易用的方式来搜索进程。您需要做就是按下 F3
 
 via: http://linoxide.com/linux-command/linux-htop-command/
 
-译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
