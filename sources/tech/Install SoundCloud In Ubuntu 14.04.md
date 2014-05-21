@@ -1,3 +1,5 @@
+Translating by GOLinux ...
+
 Install SoundCloud In Ubuntu 14.04
 ================================================================================
 [SoundCloud][1] is a great platform to discover alternate or indi music. If you are a fan of SoundCloud, you may want to try it as a ‘desktop app’ for Ubuntu 14.04, earlier versions and other Linux distributions such as Linux Mint, Elementary OS etc.
