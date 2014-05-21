@@ -1,3 +1,5 @@
+JonathanKang is translating
+
 Best Icon Themes For Ubuntu 14.04
 ================================================================================
 ![](http://itsfoss.com/wp-content/uploads/2014/05/Ubuntu_Trusty_Tahr_Best_Icons.jpeg)
