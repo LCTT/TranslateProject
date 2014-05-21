@@ -1,3 +1,5 @@
+Translating...
+
 Ubuntu AIO DVD Puts All Ubuntu 14.04 Flavors In One Disk
 ================================================================================
 Ubuntu has several official flavors based on different desktop environments. The default Ubuntu comes with Unity desktop where as Kubuntu is with [KDE][1], Lubuntu with [LXDE][2], Xubuntu with [Xfce][3]. There are some other flavors as well but these are the most popular official desktop flavors.
