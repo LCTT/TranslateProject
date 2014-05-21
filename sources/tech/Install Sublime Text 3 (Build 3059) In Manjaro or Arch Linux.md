@@ -1,3 +1,5 @@
+alim0x tranalating
+
 Install Sublime Text 3 (Build 3059) In Manjaro/Arch Linux
 ================================================================================
 [Sublime Text 3][1] is currently in beta. The latest build is 3059. We are going to install Sublime Text 3 build 3059 from AUR, from AUR.
