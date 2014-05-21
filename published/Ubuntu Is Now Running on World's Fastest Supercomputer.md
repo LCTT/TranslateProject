@@ -1,5 +1,6 @@
-Ubuntu现在运行在世界最快超级计算机上Ubuntu Is Now Running on World's Fastest Supercomputer
-================================================================================
+Ubuntu现在运行在世界最快超级计算机上
+=========================================================================
+
 ![](http://i1-news.softpedia-static.com/images/news2/Ubuntu-Is-Now-Running-on-World-s-Fastest-Supercomputer-442733-2.jpg)
 
 **Canonical公司意图创建最常用的Linux桌面发行版，然而它也成为了最成功的服务器操作系统之一。事实上，Ubuntu Server, Ubuntu Openstack 和 Ubuntu的编制工具Juju，正在运行在世界上最强的超级计算机上。**
