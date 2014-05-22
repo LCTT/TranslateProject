@@ -1,3 +1,5 @@
+Translating by GOLinux ...
+
 How to manage ip addresses and subnets with phpIPAM
 ================================================================================
 A typical network/system admin is responsible for managing one or more subnets within the network under control. For example, when a LAN segment is assigned a /24 subnet, a total of 254 IP addresses can be used for different purposes. To keep track of what IP addresses are assigned to which hosts, some sort of documentation is needed. The easiest way to do it would be maintaining a single spreadsheet which documents IP address allocation information. This works like a charm for a small network with only one admin. However, relying on a spreadsheet is not convenient and can be error-prone with multiple large networks. Worse, if there are multiple admins involved, updating the spreadsheet could be tricky as each admin could often end up with different versions of the document.
