@@ -29,7 +29,7 @@
 
 输出样例：
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2014/04/output2.png)
+![](http://180016988.r.cdn77.net/wp-content/uploads/2014/04/output2.png) 
 
 **-t** 这个参数可以设置生成截图的超时时间。**-t 0** 则表示禁用超时参数。
 
