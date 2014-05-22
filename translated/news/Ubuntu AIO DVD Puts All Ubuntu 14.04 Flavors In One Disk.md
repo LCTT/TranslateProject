@@ -1,14 +1,14 @@
-通过Ubuntu AIO DVD将Ubuntu 14.04的所有版本刻录到一张光盘里
+通过 Ubuntu AIO DVD 将 Ubuntu 14.04 的所有版本刻录到一张光盘
 ================================================================================
-Ubuntu有基于不同的桌面环境几个官方版本。默认的Ubuntu自带Unity桌面，Kubuntu的则是[KDE] [1]，Lubuntu用[LXDE] [2]，Xubuntu自带[Xfce] [3]。除此之外，还有一些其他的版本，但这些是最流行的官方桌面版本。
+Ubuntu 有基于不同桌面环境的几个官方版本。默认的 Ubuntu 自带 Unity 桌面，Kubuntu 则是[KDE] [1]，Lubuntu 用[LXDE] [2]，Xubuntu 自带[Xfce] [3]。除此之外，还有一些其它的版本，但这些是最流行的官方桌面版本。
 
-你该如何选择最适合你的Ubuntu？一种方法是下载的Ubuntu的不同版本的ISO镜像并且[通过Live CD或者USB实时运行] [4]。但是，这将意味着你将会下载多个ISO文件，一个个地写入USB盘或者Live CD。太傻了。
+你该如何选择最适合你的 Ubuntu？一种方法是下载 Ubuntu 不同版本的 ISO 镜像并且[通过Live CD或者USB实时运行] [4]。但是，这将意味着你将会下载多个 ISO 文件，一个个地写入 USB 盘或者 Live CD。有点麻烦，是吧？
 
-这就是[Ubuntu AIO(ALL IN ONE)][5]出现的原因。该项目是由[Start Ubuntu] [6]小组部分成员发起的，Ubuntu的AIO DVD可以让你在一张光盘或者一个U盘中尝试Ubuntu Unity，Lubuntu，Xubuntu，Kubuntu的和Ubuntu Gnome等不同版本。
+这就是[Ubuntu AIO(ALL IN ONE)][5]出现的原因。该项目是由[Start Ubuntu] [6]小组部分成员发起的，Ubuntu 的 AIO DVD 可以让你在一张光盘或者一个U盘中尝试 Ubuntu Unity，Lubuntu，Xubuntu，Kubuntu 和 Ubuntu Gnome 等不同版本。
 
 ![](http://itsfoss.com/wp-content/uploads/2014/05/Ubuntu-AIO-DVD.jpg)
 
-当然Ubuntu AIO也有一些缺点。首先它体积太大了，有将近4.7GB。所以，它不适合于标准的4GB U盘。而且它只有两个版本，第一个是64位版本，包括有Ubuntu，Kubuntu的和Ubuntu Gnome，另外一个，则包含有32位版本的Xubuntu和Lubuntu。尽管有缺点，这是一个不错的项目，可以帮助我们选择恰当的Ubuntu版本。
+当然 Ubuntu AIO 也有一些缺点。首先它体积太大了，有将近4.7GB。所以，它不适合于标准的4GB U盘。而且它只有两个版本，第一个是64位版本，包括有 Ubuntu，Kubuntu 和 Ubuntu Gnome，另外一个，则包含有32位版本的 Xubuntu 和 Lubuntu。尽管有缺点，这是一个不错的项目，可以帮助我们选择恰当的 Ubuntu 版本。
 
 下载 Ubuntu AIO DVD
 
@@ -17,12 +17,13 @@ Ubuntu有基于不同的桌面环境几个官方版本。默认的Ubuntu自带Un
 
 点[此][9]了解更多。
 
-享受Ubuntu吧！
+享受 Ubuntu 吧！
+
 --------------------------------------------------------------------------------
 
 via: http://itsfoss.com/ubuntu-aio-dvd-puts-ubuntu-1404-flavors-disk/
 
-译者：[MikeCoder](https://github.com/MikeCoder) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[MikeCoder](https://github.com/MikeCoder) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
