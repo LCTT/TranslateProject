@@ -1,3 +1,5 @@
+alim0x translating
+
 Aura-Powered Google Chrome Now Available on Linux
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/05/Screen-Shot-2014-05-21-at-00.00.22.png)
