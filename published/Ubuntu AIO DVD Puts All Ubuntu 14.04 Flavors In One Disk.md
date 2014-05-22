@@ -1,4 +1,4 @@
-通过 Ubuntu AIO DVD 将 Ubuntu 14.04 的所有版本刻录到一张光盘
+神器！将 Ubuntu 14.04 的所有分支刻录到一张DVD
 ================================================================================
 Ubuntu 有基于不同桌面环境的几个官方版本。默认的 Ubuntu 自带 Unity 桌面，Kubuntu 则是[KDE] [1]，Lubuntu 用[LXDE] [2]，Xubuntu 自带[Xfce] [3]。除此之外，还有一些其它的版本，但这些是最流行的官方桌面版本。
 
@@ -8,14 +8,14 @@ Ubuntu 有基于不同桌面环境的几个官方版本。默认的 Ubuntu 自�
 
 ![](http://itsfoss.com/wp-content/uploads/2014/05/Ubuntu-AIO-DVD.jpg)
 
-当然 Ubuntu AIO 也有一些缺点。首先它体积太大了，有将近4.7GB。所以，它不适合于标准的4GB U盘。而且它只有两个版本，第一个是64位版本，包括有 Ubuntu，Kubuntu 和 Ubuntu Gnome，另外一个，则包含有32位版本的 Xubuntu 和 Lubuntu。尽管有缺点，这是一个不错的项目，可以帮助我们选择恰当的 Ubuntu 版本。
+当然 Ubuntu AIO 也有一些缺点。首先它体积太大了，有将近4.7GB。所以，它不适合于标准的4GB U盘（你得刻录到光盘，或者虚拟光盘）。而且它只有两个版本，第一个是64位版本，包括有 Ubuntu，Kubuntu 和 Ubuntu Gnome，另外一个，则包含有32位版本的 Xubuntu 和 Lubuntu。尽管有缺点，这是一个不错的项目，可以帮助我们选择恰当的 Ubuntu 版本。
 
 下载 Ubuntu AIO DVD
 
 - [Sourceforge][7]
 - [Softpedia][8]
 
-点[此][9]了解更多。
+[点此][9]了解更多。
 
 享受 Ubuntu 吧！
 
