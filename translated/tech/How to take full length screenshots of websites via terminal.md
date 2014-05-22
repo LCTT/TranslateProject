@@ -2,13 +2,13 @@
 ================================================================================
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/04/Screenshot-790x526.png)
 
-这是一个名叫 **Tsamis Konstantinos** 的访客所发的帖子。他是一个 Linux 和开源软件的狂热用户，也是一个 Unixmen 的常客。你可以通过他的邮箱 **tsamis73@gmail.com** 联系他：
+这是一个名叫 **Tsamis Konstantinos** 的访客所发的帖子。他是一个 Linux 和开源软件的狂热用户，也是 Unixmen 的常客。你可以通过他的邮箱 **tsamis73@gmail.com** 联系他：
 
-除了记笔记以外我们经常用截图来帮我们记忆，或是将看到的一些东西发给别人。
+与其记笔记或是把看到的内容发送给其他人，我们更经常通过截屏来帮助我们记忆。
 但是通常情况下，如果一个网页超出了屏幕高度，我们就得用多张截图去截取其全部内容。
 
 对于 Linux，你将会有一个更好的解决方案：使用一个 GNOME 的应用来截取某个链接的整个页面。
-这个应用叫做 **gnome-web-photo**，而这篇文章将介绍如何按照和使用她。
+这个应用叫做 **gnome-web-photo**，这篇文章将介绍如何安装和使用它。
 
 在 Ubuntu 和 Debian 的分支下：
 
@@ -47,13 +47,12 @@
 
 注意这个应用并不兼容 **.jpg** 格式。
 
-这个应用应该对各类用户都有所帮助。
-我经常对网页进行缩略图和完整长度的截图，希望对你也有所帮助。
+这个应用应该对各类用户都有所帮助。我经常对网页进行缩略图和完整长度的截图，希望对你也有所帮助。
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/take-full-length-screenshots-websites-via-terminal/
 
-译者：[VizV](https://github.com/vizv) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[VizV](https://github.com/vizv) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
