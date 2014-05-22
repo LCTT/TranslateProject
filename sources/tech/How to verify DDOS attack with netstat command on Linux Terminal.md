@@ -1,3 +1,4 @@
+Translating by shipsw
 How to verify DDOS attack with netstat command on Linux Terminal
 ================================================================================
 ![](http://cdn.linuxaria.com/wp-content/uploads/2010/12/terminal1.jpg)
