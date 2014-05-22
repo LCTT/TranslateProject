@@ -1,3 +1,4 @@
+﻿【小冰来了】
 Smallest OS for Raspberry Pi, piCore 5.3, Returns with Linux Kernel 3.14.4
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Smallest-OS-for-Raspberry-Pi-piCore-5-3-Returns-with-Linux-Kernel-3-14-4-443246-2.jpg)
