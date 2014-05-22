@@ -1,3 +1,5 @@
+JonathanKang is translating
+
 Native Spotify for Linux Client Updated With New Dark Design
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/05/spotify.jpg)
