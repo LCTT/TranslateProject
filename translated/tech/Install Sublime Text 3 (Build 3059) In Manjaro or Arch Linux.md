@@ -1,12 +1,10 @@
-alim0x tranalating
-
-Install Sublime Text 3 (Build 3059) In Manjaro/Arch Linux
+在Manjaro/Arch Linux上安装Sublime Text 3 (Build 3059)
 ================================================================================
-[Sublime Text 3][1] is currently in beta. The latest build is 3059. We are going to install Sublime Text 3 build 3059 from AUR, from AUR.
+[Sublime Text 3][1]目前还处于beta测试状态，目前最新的版本为Build 3059。 这个教程中我们将通过AUR安装Sublime Text 3 build 3059。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/05/Sublime_text_3_manjaro.png)
 
-Open terminal and run the command below, follow the Y/N questions to continue.
+打开终端并运行下列命令, 选择是否(Y/N)继续安装（这里选择Y）。
 
     sudo yaourt -S sublime-text-dev
 
@@ -27,10 +25,10 @@ Open terminal and run the command below, follow the Y/N questions to continue.
 
 ----------
 
-    ==> sublime-text-dev install/upgrade note:
+    ==> sublime-text-dev 安装/升级 提示:
      ------------------------------------------------------------------------------
-     To disable in-application reminders about new Sublime Text dev versions,
-     add the following setting to your User Preferences file:
+     要禁用程序内Sublime Text开发版新版提醒，
+     在你的个人偏好文件(User Preferences file)加入以下设置:
      "update_check": false
     ------------------------------------------------------------------
 
@@ -40,7 +38,7 @@ Open terminal and run the command below, follow the Y/N questions to continue.
 
 via: http://www.unixmen.com/install-sublime-text-3-build-3059-manjaroarch-linux/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[alim0x](https://github.com/alim0x) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
