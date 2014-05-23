@@ -1,3 +1,5 @@
+wwhio 翻译中
+
 Google Chrome's PDF Rendering Engine Released as Open Source
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Google-Chrome-s-PDF-Rendering-Engine-Released-as-Open-Source-443461-2.jpg)
