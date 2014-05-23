@@ -1,29 +1,24 @@
 Linux / Unix：chroot 命令实例讲解
 ================================================================================
-我是刚接触 Linux 和 Unix 的新手。我该如何改变一个命令的根目录？我要怎样改变一个进程的根目录呢，比如用 chroot 命令将web服务与文件系统隔离？我要如何使用 chroot 恢复密码或修复基于 Linux/Unix的受损坏的环境？
+> 我是一个刚接触 Linux 和 Unix 的新手。我该如何改变一个命令的根目录？我要怎样改变一个进程的根目录呢，比如用 chroot 命令将web服务与文件系统隔离？我要如何使用 chroot 恢复密码或修复基于 Linux/Unix的受损坏的环境？
 
 ![](http://s0.cyberciti.org/uploads/faq/2014/02/chroot-command.jpg)
 
-在 Linux和类 Unix 系统下每一个进程/命令的当前工作目录称之为进程/命令的根目录。你可以使用 chroot 命令改变一个命令的根目录，这最终将会改变当前运行的进程及其子进程的根目录。
+在 Linux和类 Unix 系统下每一个进程/命令的当前工作目录称之为进程/命令的根目录（译注：译者以为此处有误，实际上没有进行过chroot的进程，其根目录是系统的根目录，而不是其工作目录）。你可以使用 chroot 命令改变一个命令的根目录，这最终将会改变当前运行的进程及其子进程的根目录。
 
-	chroot 命令详情
-	描述：更改根目录
-	类型：进程管理
-	难度：高级
-	Root 授权：Yes
+如果一个进程/命令运行在一个不能访问外部根目录文件的已修改环境中。这种修改环境通常被称为"监禁目录"（jail）或是"chroot 监禁"。只有特权进程和根用户才能使用 chroot 命令。然而这通常是很有用的：
 
-如果一个进程/命令运行在一个不能访问外部根目录文件的已修改环境中。这个修改环境通常被称为"监禁目录"或是"chroot jail"。只有特权进程和根用户才能使用 chroot 命令。然而这通常是很有用的：
-
-1. 将特权分配给未授权的进程，例如 Web 服务或 DNS 服务。
+1. 将特权分配给无特权的进程，例如 Web 服务或 DNS 服务。
 1. 建立测试环境。
-1. 不使程序或系统崩溃下，运行旧程序或不兼容 ABI 的程序。
+1. 不使程序或系统崩溃下，运行旧程序或 ABI 兼容的程序。
 1. 系统恢复。
 1. 重新安装引导装载程序，例如 Grub 或 Lilo。
 1. 密码找回，重置一个已丢失的密码等。
 
 ### 用途 ###
 
-> chroot 命令 **改变其当前的根目录到指定目录,然后运行命令**,如果支持的话，可以运行一个用户的登陆shell的交互式副本。请注意并不是每一个程序都可以使用 chroot 命令。
+> chroot 命令 **改变其当前目录，并将根目录变为指定目录,然后如果提供了命令则运行命令**，也可以运行一个用户的交互式shell的副本（译注：即bash等。）。请注意并不是每一个程序都可以使用 chroot 命令。
+
 ### 语法 ###
 
 基本语法如下：
@@ -54,7 +49,7 @@ Linux / Unix：chroot 命令实例讲解
 
     $ cp -v /bin/{bash,ls} $J/bin
 
-将所需库文件拷贝到$J。可以用 ldd 命令打印出 bash 所依赖的共享库。
+将所需库文件拷贝到$J。可以用 ldd 命令找到 bash 所依赖的共享库。
 
     $ ldd /bin/bash
 
@@ -121,27 +116,27 @@ Linux / Unix：chroot 命令实例讲解
     # ls /etc/
     # ls /var/
 
-改变了根目录的 bash 和 ls 程序现在被锁定在$HOME/$J这个特殊目录中，而且不能再访问外部的目录树，这个目录可以看做是它们的"/"(root)目录。如果配置正确的话,这会极大增强安全性。我通常用这种技术锁定以下的应用程序。
+改变了根目录的 bash 和 ls 程序现在被监禁在$HOME/$J这个特殊目录中，而且不能再访问外部的目录树，这个目录可以看做是它们的"/"(root)目录。如果配置正确的话,这会极大增强安全性。我通常用这种技术锁定以下的应用程序。
 
 1. [Apache - Red Hat / CentOS: Chroot Apache 2 Web Server][3]
 1. [Nginx - Linux nginx: Chroot (Jail) Setup][4]
 1. [Chroot Lighttpd web server on a Linux based system][5]
 1. Chroot mail server.
-1. Chroot Bind DNS server and more.
+1. Chroot Bind DNS server 等等
 
-### 如何退出 chroot jail呢？ ###
+### 如何退出 chroot 监禁呢？ ###
 
 键入 exit 即可
 
     $ exit
 
-会话样例：
+上述会话样例如下：
 
 [![Animated gif 01: Linux / Unix: Bash Chroot ls Command Demo](http://s0.cyberciti.org/uploads/faq/2013/01/bash-chroot-ls-demo.gif)][6]
 
 Gif 动画01: Linux / Unix: Bash Chroot ls 命令演示 
 
-### 查找服务是否存在于 chrooted jail 内###
+### 查找服务是否存在于 chrooted 监禁内###
 
 你可以用下面两个命令[轻松的找出 Postfix 邮件服务是否已经 chrooted]：
 
@@ -165,7 +160,7 @@ PID 8613 指向了 / (root) 也就是说这个程序的根目录并没有被改�
 
 ### 用 chroot 救援和修复软件RAID(磁盘阵列)系统 ###
 
-我先假设基于软阵列的 Linux 系统无法正常启动。所以你[需要用Live CD或用网络远程进入内核应急模式][8]来修复系统。在这个例子中，我用了 Live Linux DVD/CD 启动基于 RHEL 的系统，然后再 chroot 到 /dev/sda1 和/或 /dev/md0 修复问题：
+我先假设基于软RAID的 Linux 系统无法正常启动。所以你[需要用Live CD或用基于网络的内核应急模式][8]来修复系统。在这个例子中，我用了 Live Linux DVD/CD 启动一个基于 RHEL 的系统，然后再 chroot 到 /dev/sda1 和 /或 /dev/md0 修复问题：
 
     ## 在 Live CD 的提示符下，键入以下命令来恢复数据。##
     ## /dev/sda1 系统主分区##
@@ -198,7 +193,7 @@ PID 8613 指向了 / (root) 也就是说这个程序的根目录并没有被改�
     umount {dev,sys,[...],}
     reboot
 
-别急，还有更精彩的内容！
+**别急，还有更精彩的内容！**
 
 查看nixCraft下所有其他有关 chroot 命令的文章：
 
@@ -209,10 +204,10 @@ PID 8613 指向了 / (root) 也就是说这个程序的根目录并没有被改�
 
 ### 在 Linux 和 类Unix 系统下 chroot 应用程序的注意事项 ###
 
-你应该一直用 chroot 特性吗？从上面的例子看出，这个程序是相当简单的，但是最终可能出现几种不同的问题而结束，例如：
+你应该在各种情况下都用 chroot 特性吗？从上面的例子看出，这个程序是相当简单的，但是最终可能出现几种不同的问题而结束，例如：
 
 1.在 jail 中缺失库文件可能直接导致 jail 崩溃。 
-1.一些复杂的程序不好被 chroot。所以我建议你要么尝试[真正的jail,例如FreeBSD提供的][13]，要么用虚拟化解决，比如[Linux 下的 KVM][14]。
+1.一些复杂的程序不好被 chroot。所以我建议你要么尝试[真正的jail，例如FreeBSD提供的][13]，要么用虚拟化解决，比如[Linux 下的 KVM][14]。
 1.正在运行某一程序的 jail 不能再运行其他程序，不能更改任何文件，也不能"假设"另一个用户的身份。放宽这些限制，会降低你的安全性，请根据具体情况 chroot。
 
 还要注意：
@@ -220,12 +215,11 @@ PID 8613 指向了 / (root) 也就是说这个程序的根目录并没有被改�
 1. 当你升级本地程序时，不要忘记升级已 chroot 的程序。
 1. 并非所有程序能够或者应该被 chroot。
 1. 任何需要 root 权限操作的程序，对其 chroot 是没意义的。因为通常 root 用户都能脱离 chroot。 
-1. Chroot 并不一个高招。更精的可以学习[如何保护和加强系统的各个部分][15]
+1. Chroot 并不一个高招。更多的可以学习[如何保护和加强系统的各个部分][15]
 
-### choort 命令选项 ###
+### choort 部分命令选项 ###
 
 取自 man 帮助页面[chroot(8)][16]:
-
 
       --userspec=USER:GROUP  使用指定的 用户 和 组 (ID 或 名称)
       --groups=G_LIST        指定补充组 g1,g2,..,gN 
@@ -240,9 +234,9 @@ PID 8613 指向了 / (root) 也就是说这个程序的根目录并没有被改�
 
 --------------------------------------------------------------------------------
 
-via: 
+via: http://www.cyberciti.biz/faq/unix-linux-chroot-command-examples-usage-syntax/
 
-译者：[Luoxcat](https://github.com/Luoxcat) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Luoxcat](https://github.com/Luoxcat) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

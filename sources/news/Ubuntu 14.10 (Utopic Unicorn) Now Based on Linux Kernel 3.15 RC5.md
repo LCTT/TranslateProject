@@ -1,3 +1,4 @@
+﻿【小冰来了+1】
 Ubuntu 14.10 (Utopic Unicorn) Now Based on Linux Kernel 3.15 RC5
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Ubuntu-14-10-Utopic-Unicorn-Now-Based-on-Linux-Kernel-3-15-RC5-443260-2.jpg)
