@@ -10,7 +10,7 @@
 
 这个主题包有一些很容易满足的依赖：gtk2-engines-murrine，gtk2-engines-pixbuf，以及 compton。安装过程十分简单，安装说明所有人也都能够轻易理解。
 
-这个主题包可能最接近于用户长期以来习惯的Windows 7或Windows 8的外观，但它可以用来帮助人们更容易地迁移到Linux。
+这个主题包就外观来说可能最接近于用户长期以来习惯的Windows 7或Windows 8，但它可以用来帮助人们更容易地迁移到Linux。
 
 你可以从[gnome-look.org][1]下载WinAte ————Windows 7/8主题包。
 
