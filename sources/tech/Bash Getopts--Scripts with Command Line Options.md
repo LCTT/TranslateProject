@@ -1,3 +1,5 @@
+CNprober 翻译中<619913541,travelwithheart@yeah.net>
+
 Bash Getopts – Scripts with Command Line Options
 ================================================================================
 I've always wanted to know how to create command line options for my Bash scripts. After some research I found there are two functions available to handle this; **getopt** and **getopts**. I'm not going to get into the debate about which one is better. **getopts** is a shell builtin and seems a little easier to implement than **getopt**, so I'll go with that for now.
