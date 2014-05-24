@@ -1,5 +1,7 @@
 The Open Source Witch Hunts Have Returned
 ================================================================================
+![](http://readwrite.com/files/styles/1400_0/public/fields/shutterstock-open-gate.jpg)
+
 > The open source community has been turning on itself lately, just like the good old days.
 
 Open source has gone soft. We used to pass the time with hangings of the ideologically impure, but of late we've had this weird obsession with sharing code and innovation. 
