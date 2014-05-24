@@ -1,5 +1,3 @@
-alim0x translating
-
 How to take a screenshot from the command line on Linux
 ================================================================================
 There are various flavors of Linux screenshot utilities, including desktop-specific screenshot programs (e.g., KSnapshot for KDE, gnome-screenshot for GNOME, Screenshooter for Xfce), or general screenshot utilities (e.g., Shutter). One of unique screenshot utilities is Scrot (short for "SCReen shOT"), which is a **command-line screenshot utility**. While its interface is minimalistic, Scrot is, feature-wise, as powerful as other dedicated GUI-based screen capture tools. For example, Scrot supports delayed screenshot, adjustable quality/size, command line pipelining, etc. If you are one of those command line junkies, Scrot is a useful tool to add to your arsenal. In this tutorial, I will describe **how to take a screenshot from the command line with Scrot**.
