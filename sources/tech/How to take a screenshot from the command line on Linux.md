@@ -1,4 +1,5 @@
-translating by johnhoow...
+
+>>>>>>> 1bd34edaaab188663f64e94507b157ac82ed8d96
 
 How to take a screenshot from the command line on Linux
 ================================================================================
