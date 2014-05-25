@@ -6,7 +6,7 @@ Ubuntu 的开发者声明将开发一个仅基于 Unity 8的新风格
 
 用户现在可以下载安装一个 Unity 8 的预览版了，如果用的是 Ubuntu 14.04 LTS 并且满足安装需要的话。现在，新的桌面已经还不能在旧的驱动环境下运行因为它还需要依赖于 Mir，而这玩意儿还没有获得 NVIDIA  和 AMD 的官方支持。
 
-在任何情况下，有一个新的 Ubuntu 风格对于开发者在新的生态环境中测试他们的创意都会有巨大的帮助而且从　USB Stick 里启动十分方便还能体验大多数的移植性应用。In any case, having a new Ubuntu flavor would greatly help developers test their ideas in a fresh ecosystem that is easy to run from a USB stick and that already features most of the ported applications.
+在任何情况下，有一个新的 Ubuntu 风格对于开发者在新的生态环境中测试他们的创意都会有巨大的帮助而且从　USB Stick 里启动十分方便还能体验大多数的移植性应用。
 
 “The桌面环境开发组很希望为 Ubuntu 增加一个新的风格（嘘~，我们不是计划现在就发型一个正式的版本） ，这个风格将包括为触屏项目开发的Unity 8桌面和新的应用。最初的意图是提供一个产品使得开发人员可以在做一个基于该软件的桌面产品的时候可以计算出所需要的的工作量，并建立一个可以由实验来找出所需的最佳结合方式的空间。”
 
