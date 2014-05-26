@@ -1,3 +1,5 @@
+#Translating by shipsw#
+
 Ubuntu Touch and Android Dual Boot Installation
 ===================================
 
