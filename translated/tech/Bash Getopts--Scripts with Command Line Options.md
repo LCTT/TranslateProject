@@ -1,14 +1,15 @@
-CNprober 翻译中<619913541,travelwithheart@yeah.net>
+CNprober<travelwithheart@yeah.net, QQ619913541> 翻译完成
 
-Bash Getopts – Scripts with Command Line Options
+Bash Getopts - 让你的脚本支持命令行参数
 ================================================================================
-I've always wanted to know how to create command line options for my Bash scripts. After some research I found there are two functions available to handle this; **getopt** and **getopts**. I'm not going to get into the debate about which one is better. **getopts** is a shell builtin and seems a little easier to implement than **getopt**, so I'll go with that for now.
+
+以前我总想知道如何为我的Bash脚本创建命令行参数。经过搜索，我发现了2个函数可以处理这个问题，**getopt** 函数和 **getopts** 函数。我无意争论哪一个函数更好的。**getopts** 是一个shell内建命令，而且似乎比 **getopt** 更容易实现这个功能，所以在这篇文章里我准备讲讲getopts。
 
 ### bash getopts ###
 
-I started out just trying to figure out how to process command line switches in my scripts. Eventually, I added some other useful functionality that makes this a good starting template for any interactive script. I've also included a help function with text formatting to make it a little easier to read.
+开始的时候，我只试着处理传递给脚本的命令行参数。最后，我添加了另外一些有用的功能函数，使得这个脚本可以成为其他任何交互式脚本处理命令行的开始模板。我还添加了一个纯文本格式的帮助函数，让脚本更加容易阅读。
 
-Rather than go into a lengthy explanation of how **getopts** works in **bash**, I think it's simpler to just show some working code in a script.
+与其来一长段文字解释 **getopts** 在bash中是如何工作的，我认为不如直接来一个能工作的脚本更让人觉得轻松一些。
 
     #!/bin/bash
     
@@ -31,7 +32,7 @@ Rather than go into a lengthy explanation of how **getopts** works in **bash**, 
     OPT_C=C
     OPT_D=D
     
-    #Set fonts for Help.
+    #Set fonts for Help.[译注: 这里tput用来更改终端文本属性,比如加粗，高亮等]
     NORM=`tput sgr0`
     BOLD=`tput bold`
     REV=`tput smso`
@@ -60,9 +61,8 @@ Rather than go into a lengthy explanation of how **getopts** works in **bash**, 
     ### Start getopts code ###
     
     #Parse command line flags
-    #If an option should be followed by an argument, it should be followed by a ":".
-    #Notice there is no ":" after "h". The leading ":" suppresses error messages from
-    #getopts. This is required to get my unrecognized option code to work.
+	#如果选项需要后跟参数，在选项后面加":"
+	#注意"-h"选项后面没有":"，因为他不需要参数。选项字符串最开始的":"是用来去掉来自getopts本身的报错的，同时获取不能识别的选项。（译注：如果选项字符串不以":"开头，发生错误（非法的选项或者缺少参数）时，getopts会向错误输出打印错误信息；如果以":"开头，则不会打印[在man中叫slient error reporting]，同时将出错的选项赋给OPTARG变量）
     
     while getopts :a:b:c:d:h FLAG; do
       case $FLAG in
@@ -92,8 +92,7 @@ Rather than go into a lengthy explanation of how **getopts** works in **bash**, 
         \?) #unrecognized option - show help
           echo -e \\n"Option -${BOLD}$OPTARG${NORM} not allowed."
           HELP
-          #If you just want to display a simple error message instead of the full
-          #help, remove the 2 lines above and uncomment the 2 lines below.
+		  #在这里如果你不想打印完整的帮助信息，只想显示简单的错误信息，去掉上面的两行，同时使用下面的两行。
           #echo -e "Use ${BOLD}$SCRIPT -h${NORM} to see the help documentation."\\n
           #exit 2
           ;;
@@ -107,14 +106,12 @@ Rather than go into a lengthy explanation of how **getopts** works in **bash**, 
     
     ### Main loop to process files ###
     
-    #This is where your main file processing will take place. This example is just
-    #printing the files and extensions to the terminal. You should place any other
-    #file processing tasks within the while-do loop.
-    
+	#这里你可以用你的脚本处理逻辑来替代。这个例子只是在终端中打印文件的文件名和后缀名。你可以把任意其他的文件处理任务放到这个while-do循环中。   
+
     while [ $# -ne 0 ]; do
       FILE=$1
       TEMPFILE=`basename $FILE`
-      #TEMPFILE="${FILE##*/}"  #This is another way to get the base file name.
+      #TEMPFILE="${FILE##*/}"  #另外一种获取不带后缀的文件名的方法。
       FILE_BASE=`echo "${TEMPFILE%.*}"`  #file without extension
       FILE_EXT="${TEMPFILE##*.}"  #file extension
     
@@ -129,33 +126,33 @@ Rather than go into a lengthy explanation of how **getopts** works in **bash**, 
     
     exit 0
 
-Paste the above text into a text editor and then save it somewhere in your executable path. I chose to call the script **options** and I saved it under **/home/linerd/bin**. Once you save it, make sure to make it executable.
+将上面的代码复制到你的文本编辑器里，然后保存到你的可执行路径下。我将这个脚本命名为 **options** 并保存到 **/home/linerd/bin** 路径下。保存之后记得给你的脚本添加可执行权限。
 
     chmod +x ~/bin/options
 
-Now you can run the script. Try running it with the **-h** switch to show the help information.
+现在脚本已经可以运行了。试试用 **-h** 参数来打印帮助信息吧。
 
     options -h
 
-Now try running it with an unsupported option.
+遇到不支持的选项，脚本同样可以给出提示，并打印帮助信息。
 
     options -z
 
-Finally, getopts can handle your command line options in any order. The only rule is that the file or files you are processing have to come after all of the option switches.
+最后，getopts可以以任意的顺序处理你给的命令行参数。唯一的限制是你要处理的文件必须放在所有参数的最后。
 
     options -d bar -c chu -b man -a foo example1.txt example2.txt
 
-So you can see from these examples how you can set variables in your scripts with command line options. There's more  going on than just getopts in this script, but I think these are valuable additions that make this a good starting template for new scripts. If you'd like to learn more about bash getopts, you can find the documentation buried deep within the bash man page in the "Builtins" section. You can also find info in the [Bash Reference Manual][1].
+现在你可以从这些例子里看到如何通过命令行参数给脚本里的变量赋值。这个脚本里除了getopts还有很多其他的东西，但是我认为这些就足以成为一个新脚本的开头模板了。如果你有兴趣更深入地学习bash的getopts，你可以找找深埋在man page的“Builtins”这一节里的文档，也可以从 [Bash Reference Manual][1] 找到信息。
 
-### What Next? ###
+### 接下来呢? ###
 
-So what will you use getopts for? Let me know in the comments.
+你会用getops来干什么呢？在评论里告诉我吧。
 
 --------------------------------------------------------------------------------
 
 via: http://tuxtweaks.com/2014/05/bash-getopts/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[daisy_love_daisy](https://github.com/CNprober) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

@@ -2,7 +2,7 @@
 ================================================================================
 ![](http://www.linux.org/attachments/slide-jpg.616/)
 
-你好！准备好下一篇文章了么？在本篇中，我们将会讨论辅助屏幕。辅助显示是一些小的LCD屏幕；大多数小于或等于128x64。接着，我们会讨论用户空间IO驱动，一些虚拟驱动，Hyper-V，开发中驱动，IOMMU，和其他一些内核特性。
+你好！准备好阅读下一篇文章了么？在本篇中，我们将会讨论辅助显示。辅助显示是一些小的LCD屏幕；大多数小于或等于128x64。接着，我们会讨论用户空间IO驱动，一些虚拟驱动，Hyper-V，开发中驱动，IOMMU，和其他一些内核特性。
 
 第一个配置辅助显示的驱动是"KS0108 LCD Controller"。KS0108 LCD Controller是由三星制造的图形控制器。
 
@@ -44,7 +44,7 @@
 
 ![](http://www.linux.org/attachments/kernel_18-png.617/)
 
-下面，我们会配置开发中的驱动。这些驱动人在开发当中，可能会变化很快，或者还没到Linux内核的质量标准。这个分类中的驱动只有Android驱动(在内核3.9.4中)。是的，Andorid使用Linux内核，这使得Andorid编程一个Linux系统。然而，这仍然有争议。如果内核是用于Android，那么最好启用所有的驱动。
+下面，我们会配置处于开发阶段的驱动。这些驱动正在开发当中，可能会变化很快，或者还没到Linux内核的质量标准。这个分类中的驱动只有Android驱动(在内核3.9.4中)。是的，Andorid使用Linux内核，这使得Andorid变成了一个Linux系统。然而，这仍然有争议。如果内核是用于Android，那么最好启用所有的驱动。
 
 "Android Binder IPC Driver"提供了对于Binder的支持，它允许Andorid系统进程间相互通信。
 
@@ -58,7 +58,7 @@
 
 "Android alarm driver"使内核在设定的间隔后唤醒。
 
-在配置晚开发中的驱动后，下面的驱动用于X86平台。这些驱动是 X86 (32-bit)的供应商/设备特定硬件。
+在配置完开发阶段的驱动后，下面的驱动用于X86平台。这些驱动是 X86 (32-bit)的供应商/设备特定硬件。
 
 下一个驱动是"Mailbox Hardware Support"。这个框架控制邮箱队列和硬件邮箱系统的中断信号。
 
@@ -106,6 +106,6 @@ Linux内核提供了大量不同的加速器、放大器模数转换器、惯性
 
 via: http://www.linux.org/threads/the-linux-kernel-configuring-the-kernel-part-18.4896/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

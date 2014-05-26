@@ -1,8 +1,9 @@
-用WinAte主题包将Ubuntu/Debian Jessie变成Windows 7/Windows 8
+用WinAte主题包将Ubuntu/Debian Jessie扮成Windows 7/8
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Turn-Ubuntu-and-Debian-Jessie-into-Windows-7-and-Windows-8-with-WinAte-Theme-Pack-443302-3.jpg)
 
-**WinAte最近刚刚收到一个更新，这个主题包能够将你的Ubuntu/Debian变得看起来像Windows 7/Windows 8。**
+**WinAte最近刚刚发布一个更新，这个主题包能够将你的Ubuntu/Debian变得看起来像Windows 7/Windows 8。**
+（译注，虽然很多人对将好好的Linux扮成Windows不以为然，不过未尝不是一个有趣的体验？）
 
 曾经有段时间你可以轻易地改变绝大多数Linux发行版的外观，使得他们看起来像是Windows的一个副本，但那种时光已经一去不复返了。只有少数Linux发行版的外观仍能够被修改，而Ubuntu和Debian Jessie正在此列。
 
@@ -18,7 +19,7 @@
 
 via: http://news.softpedia.com/news/Turn-Ubuntu-and-Debian-Jessie-into-Windows-7-and-Windows-8-with-WinAte-Theme-Pack-443302.shtml
 
-译者：[alim0x](https://github.com/alim0x) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[alim0x](https://github.com/alim0x) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

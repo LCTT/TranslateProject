@@ -24,17 +24,17 @@
     sudo add-apt-repository ppa:numix/ppa
     sudo apt-get update && sudo apt-get install numix-gtk-theme
 
-为了使该主题生效，我们需要打开Unity Tweak Tool，选择“外观标题”下的“主题”选项，然后在“已有主题”一栏中选择该主题。只要相应的软件仓库名字一直，对于其他主题，你就可以重复该过程来应用。你可以登陆[Gnome-Look.org][3]获得更多的主题。另一个和Numix主题很相似的主题是Moka，你可以在[http://mokaproject.com/][4]获得更多关于Moka主题的信息。
+为了使该主题生效，我们需要打开Unity Tweak Tool，选择“外观标题”下的“主题”选项，然后在“已有主题”一栏中选择该主题。只要相应的软件仓库名字一致，对于其他主题，你可以重复该过程来应用。你可以访问[Gnome-Look.org][3]获得更多的主题。另一个和Numix主题很相似的主题是Moka，你可以在[http://mokaproject.com/][4]获得更多关于Moka主题的信息。
 
 ### 3. 安装图标 ###
 
-以上截图中使用的图标是来自Numix主题的Numix圆形图标。你可以通过在终端输入以下命令来安装该图标：
+以上截图中使用的图标是来自Numix主题的Numix圆形图标。你可以通过在终端输入以下命令来安装该图标集：
 
     sudo apt-add-repository ppa:numix/ppa
     sudo apt-get update
     sudo apt-get install numix-icon-theme-circle
 
-为了使该图标生效，我们需要在Unity Tweak Tool中选择“图标”选项，然后选择该图标集。再一次声明，这个方法对于任何图标集是可行的。Moka也提供给你的桌面带来多彩的、一致性设计的图标集。
+为了使该图标集生效，我们需要在Unity Tweak Tool中选择“图标”选项，然后选择该图标集。再一次声明，这个方法对于任何图标集是可行的。Moka也提供给你的桌面带来多彩的、一致性设计的图标集。
 
 ### 4. 安装conky系统监视软件 ###
 
@@ -69,19 +69,19 @@ Conky是一个轻量级桌面系统监视软件。该软件本身是非常简单
 
 如果对于你来说Unity Tweak Tool不够强大，那么你可以尝试[Compiz设置管理器][8].
 
-### 警告: ###
+**警告:**
 
 如果错误的设置被应用的话，Compiz设置管理器可能会损害到你的系统。所以使用时要格外小心。你可以看到Ubuntu系统中隐藏的各种设置。你可以在Ubuntu软件中心获取该软件或者终端输入以下命令来安装：
 
     sudo apt-get install compiz compizconfig-settings-manager compiz-fusion-plugins-extra compiz-fusion-plugins-main compiz-plugins
 
-现在你的Ubuntu桌面变得具有超能力了！所有的这些步骤都有成千上万种选择，所以折腾是无极限的。还在等什么？还不赶紧去享受你的新Ubuntu桌面！
+现在你的Ubuntu桌面变得具有超棒了！所有的这些步骤都有成千上万种选择，所以折腾是无极限的。还在等什么？还不赶紧去享受你的新Ubuntu桌面！
 
 --------------------------------------------------------------------------------
 
 via: http://www.muktware.com/2014/05/customize-ubuntu-desktop-6-steps/26750
 
-译者：[JonathanKang](https://github.com/JonathanKang) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[JonathanKang](https://github.com/JonathanKang) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
