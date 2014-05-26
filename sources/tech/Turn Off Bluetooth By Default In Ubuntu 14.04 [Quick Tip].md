@@ -1,3 +1,5 @@
+alim0x translating
+
 Turn Off Bluetooth By Default In Ubuntu 14.04 [Quick Tip]
 ================================================================================
 ![](http://itsfoss.com/wp-content/uploads/2014/05/Bluetooth_Ubuntu.jpeg)
