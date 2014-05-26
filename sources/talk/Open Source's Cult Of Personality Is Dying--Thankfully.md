@@ -1,3 +1,4 @@
+[小冰在此]
 Open Source's Cult Of Personality Is Dying—Thankfully
 ================================================================================
 Roy Rubin, co-founder of the popular [Magento][1] open-source project, [announced this week][2] he is bowing out of the project he helped launch back in 2008.
