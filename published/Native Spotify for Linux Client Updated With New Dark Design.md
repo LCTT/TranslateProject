@@ -1,15 +1,12 @@
-本土化Spotify Linux客户端更新，添加新的黑色设计元素
+Spotify 原生Linux客户端更新，暗黑风格来袭
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/05/spotify.jpg)
 
-**Linux版本的Spotify得到了更新，这一次带着同上个月其他主流服务商对其应用的更加扁平和更加黑色化的设计。**
+**继streaming service上个月在其它平台上发布它的应用之后，以同样的扁平化和黑色风格的设计，Linux版本的Spotify客户端也发布了更新。**
 
-金属质感的灰色元素和白色清爽的条区设计形成了基于黑色和浅黑色的颜色设计方案。由于受旧时设计的限制，甚至这次新设计没有给该公司的green商标留出空间。
-
-> ‘Spotify相关负责人说这种设计可以突出软件的内容’
+金属质感的灰色元素和白色清爽的条区设计形成了基于黑色的风格，以黑色和浅黑色的颜色为主。甚至公司的绿色的商标也不能幸免，以奇怪的颜色出现在各种地方。
 
 在作曲家和个人资料条目中图片的设计上均采用了圆形的设计元素，并且在导航栏和播放控制按钮的地方采用了iOS 7风格。
-Rounded elements have been introduced on artist and profile photos, while navigation and player controls buttons have been given iOS 7-style thin line makeovers.
 
 Spotify官方说道这种设计风格突出了软件的内容，他们将之比作“*熄掉所有灯光的剧场。*”
 
@@ -17,11 +14,11 @@ Spotify官方说道这种设计风格突出了软件的内容，他们将之比�
 
 现在，该软件已不再提供32位的版本。
 
-如果长期处于预览阶段，Linux下的本土化Spotify客户端将**支持免费和订阅账户**。
+由于长期处于预览阶段，Linux下的原生Spotify客户端**支持免费和订阅账户**。
 
 ### 安装Spotify ###
 
-要在Ubuntu 14.04 LTS上安装Spotify，你可以打开terminal终端，然后输入下面的命令。
+要在Ubuntu 14.04 LTS上安装Spotify，你可以打开终端，然后输入下面的命令。
 
 首先将Spotify官方的软件仓库添加到你的软件源列表中：
 
@@ -41,6 +38,6 @@ Spotify官方说道这种设计风格突出了软件的内容，他们将之比�
 
 via: http://www.omgubuntu.co.uk/2014/05/spotify-linux-preview-update-new-design
 
-译者：[JonathanKang](https://github.com/JonathanKang) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[JonathanKang](https://github.com/JonathanKang) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
