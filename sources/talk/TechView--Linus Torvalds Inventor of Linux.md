@@ -1,3 +1,4 @@
+Request for translating by GOLinux
 TechView: Linus Torvalds, Inventor of Linux
 ================================================================================
 ![](http://images.huffingtonpost.com/2012-06-27-techscapelogocolumn1.jpg)
