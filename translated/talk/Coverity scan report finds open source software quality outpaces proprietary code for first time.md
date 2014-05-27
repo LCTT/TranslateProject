@@ -1,4 +1,4 @@
-Coverity扫描报告首次发现开源软件质量超过专有软件
+Coverity 扫描报告首次发现开源软件质量超过专有软件
 ================================================================================
 ![](http://www.ciol.com/IMG/550/80550/synopsys-logo-370x264.jpg)
 
@@ -42,6 +42,6 @@ Coverity今天也宣布已经开放了Coverity扫描服务，允许任何对开�
 
 via: http://www.ciol.com/ciol/features/213112/coverity-scan-report-source-software-quality-outpaces-proprietary-code/page/1
 
-译者：[linuhap](https://github.com/linuhap) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[linuhap](https://github.com/linuhap) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
