@@ -342,7 +342,7 @@ Ubuntu 安装器需要安装为 Android 系统应用。 和用户分区的应用
 
 via: https://wiki.ubuntu.com/Touch/DualBootInstallation
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[shipsw](https://github.com/shipsw) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
