@@ -1,8 +1,8 @@
 戴文的Linux内核专题：24 配置内核 (20)
 ================================================================================
-![](http://www.linux.org/attachments/slide-jpg.663/)
+![](http://www.linux.org/attachments/slide-jpg.663/.jpg)
 
-欢迎进入Linux内核系列文章的下一篇!本篇我们就爱哪个会继续配置文件系统。
+欢迎进入Linux内核系列文章的下一篇!本篇我们继续配置文件系统。
 
 首先，我们启用"General filesystem local caching manager"，它允许内核存储文件系统缓存。这可以增加在存储空间开销上的性能。
 
@@ -18,7 +18,7 @@
 
 为了增强网络文件系统的速度，启用接下来的驱动(Filesystem caching on files)。这个特性允许整个本地文件系统被用于远程文件系统和存储单元的缓存。Linux内核会管理这个分区。
 
-有两种不同的用于的调试驱动用于本地缓存系统和远程文件系统，它们是(Debug CacheFiles)和(Gather latency information on CacheFiles)。
+有两种不同的用于调试的驱动可用于本地缓存系统和远程文件系统，它们是(Debug CacheFiles)和(Gather latency information on CacheFiles)。
 
 大多数通常的光盘文件系统是ISO 9660标准的ISO-9660，故名(ISO 9660 CDROM file system support)。这个驱动用于读/写主流的光盘。
 
@@ -125,7 +125,7 @@ flash友好型文件系统(Flash-Friendly FileSystem)是一种对于闪存设备
 
 via: http://www.linux.org/threads/the-linux-kernel-configuring-the-kernel-part-20.4957/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
