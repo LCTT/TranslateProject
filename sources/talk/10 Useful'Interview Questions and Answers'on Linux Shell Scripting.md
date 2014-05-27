@@ -1,3 +1,4 @@
+Translating by GOLinux ... Any question?
 10 Useful ‘Interview Questions and Answers’ on Linux Shell Scripting
 ================================================================================
 Greeting of the day. The vastness of Linux makes it possible to come up with a unique post every time. We ‘**The-Tecmint-Team**‘ works to provide our readers with unique contents which is useful for them from career perspective as well as adding to the Knowledge base. Here is an attempt and it is on our readers to judge how far we succeed.
