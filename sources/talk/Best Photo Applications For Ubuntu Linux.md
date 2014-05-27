@@ -1,4 +1,4 @@
-Translating by GOLinux ...
+Translating by GOLinux ... Anybody want this?
 Best Photo Applications For Ubuntu Linux
 ================================================================================
 ![](http://itsfoss.com/wp-content/uploads/2014/05/Image_Applications_Linux.jpeg)
