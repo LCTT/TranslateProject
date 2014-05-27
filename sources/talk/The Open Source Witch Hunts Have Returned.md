@@ -1,3 +1,4 @@
+[小冰在此]
 The Open Source Witch Hunts Have Returned
 ================================================================================
 ![](http://readwrite.com/files/styles/1400_0/public/fields/shutterstock-open-gate.jpg)

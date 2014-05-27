@@ -1,3 +1,4 @@
+[小冰在此]
 Pros' Secrets and Red Hat 7 and PCLinuxOS 2014.05 Reviews
 ================================================================================
 ![](http://www.tuxmachines.org/images/redhatlogo.png)

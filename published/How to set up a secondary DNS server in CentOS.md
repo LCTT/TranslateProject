@@ -1,5 +1,3 @@
-[Translated by zzlyzq]
-
 如何在CentOS中创建辅域名服务器
 ================================================================================
 在[上篇教程][1]里，我们为一个测试域exmample.tst创建了一个主域名服务器（ns1）。在本篇中，我们会在CentOS中使用bind包为相同的域创建一个辅域名服务器（ns2）。
@@ -13,7 +11,7 @@
 
 ### 设置主机名 ###
 
-就像主域名服务器一样，辅域名服务器的主机名也应当是一个合适的正式域名。
+就像主域名服务器一样，辅域名服务器的主机名也应当是一个完全限定域名（FQDN）。
 
     # vim /etc/sysconfig/network
 
@@ -26,14 +24,14 @@
 设置之后，可以用下面的命令来查看主机名称。
 
     # hostname
+----
+	ns2.example.tst
 
-> ns2.example.tst
-
-在进行下面的步骤之前，确保所有三台[3]服务器的主机名称已经被正确设置。
+在进行下面的步骤之前，确保所有三台服务器的主机名称已经被正确设置。
 
 ### 安装软件包 ###
 
-就像[主服务器][2]一样，配置一台辅域名服务器可以使用chroot或者不用。必须的软件包可以使用yum轻松安装。
+就像[主服务器][1]一样，配置一台辅域名服务器可以使用chroot或者不用。必须的软件包可以使用yum轻松安装。
 
 不使用 chroot:
 
@@ -45,17 +43,15 @@
 
 ### 为区域文件的传输准备配置文件 ###
 
-在CentOS中使用bind创建域名服务器后,默认设置允许所有的区域文件被任意服务器同步。安全起见，我们需要配置主域名服务器，只允许它允许辅域名服务器进行同步。
+在CentOS中使用bind创建域名服务器后，默认设置允许所有的区域文件被任意服务器同步。安全起见，我们需要配置主域名服务器，只允许它允许辅域名服务器进行同步。
 
 #### 1. 主域名服务器 ####
-
 
 不使用chroot：
 
     # vim /etc/named.conf
 
 使用chroot：
-
 
     # vim /var/named/chroot/etc/named.conf
 
@@ -65,14 +61,14 @@
         type master;
         file "example-fz"; ## 文件example-fz在主域名服务器上 ##
         allow-update { none; };
-        allow-transfer {172.16.1.4; }; ## 辅域名服务器被允许 ##
+        allow-transfer {172.16.1.4; }; ## 允许辅域名服务器进行传输 ##
     };
 
     zone "1.16.172.in-addr.arpa" IN {
         type master;
         file "rz-172-16-1"; ##文件rz-172-16-1在主域名服务器上##
         allow-update { none; };
-        allow-transfer {172.16.1.4; }; ## 辅域名服务器被允许 ##
+        allow-transfer {172.16.1.4; }; ## 允许辅域名服务器进行传输 ##
     };
 
 #### 2. 辅域名服务器 ####
@@ -84,7 +80,6 @@
     # cp /usr/share/doc/bind-9.8.2/sample/etc/named.rfc1912.zones /etc/named.conf
 
 使用chroot：
-
 
     # cp /usr/share/doc/bind-9.8.2/sample/etc/named.rfc1912.zones /var/named/chroot/etc/named.conf
 
@@ -100,7 +95,7 @@
             type slave;  ## 该主机为辅域名服务器 ##
             file "example-fz"; ## 这个文件会被自动创建 ##
             //allow-update { none; };
-            allow-transfer {172.16.1.3; };  ## 定义必要时进行传输的主域名服务器 ##
+            allow-transfer {172.16.1.3; };  ## 定义必要时进行从其传输的主域名服务器 ##
             masters {172.16.1.3; }; ## 定义主域名服务器 ##
     };
 
@@ -112,7 +107,7 @@
             masters {172.16.1.3; };
     };
 
-### 结束配置 ###
+### 结束工作 ###
 
 为了确保没有权限相关的问题，我们需要做如下调整。
 
@@ -129,8 +124,7 @@
     # service named restart
     # chkconfig named on
 
-如果不出意外，辅域名服务器应该会向主域名服务器请求一个区域的传输,并且产生自己的/var/named。日志文件/var/log/messages会包含一些named服务
-的有用信息，包括区域文件传输过程中的信息。
+如果不出意外，辅域名服务器应该会向主域名服务器请求一个区域的传输，并且产生自己的/var/named目录。日志文件/var/log/messages会包含一些named服务的有用信息，包括区域文件传输过程中的信息。
 
 ### 测试一个辅域名服务器 ###
 
@@ -161,15 +155,15 @@
 
     > exit
 
-### 排除障碍 ###
+### 排错提示 ###
 
 1. 我们无需在辅域名服务器上创建任何区域文件。所有的区域文件都会与主域名服务器进行同步。
 
 2. 辅域名服务器上的named服务会定期与主服务器进行同步。如果你想来一次及时的同步，可以使用命令"rncd retransfer <FQDN>"。如下：
 
-    # rndc retransfer example.tst
+    	# rndc retransfer example.tst
 
-3. 只有当主服务器上区域文件的serial数字被修改/变大的时候，辅域名服务器才会进行更新。
+3. 只有当主服务器上区域文件的serial数字被修改变大的时候，辅域名服务器才会进行更新。
 
 4. 确保用户named可以对文件夹/var/named或者/var/named/chroot/var/named（使用chroot的情况下）进行写操作。
 
@@ -185,10 +179,8 @@
 
 via: http://xmodulo.com/2014/04/secondary-dns-server-centos.html
 
-译者：[zzlyzq](https://github.com/zzlyzq) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[zzlyzq](https://github.com/zzlyzq) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-[1]:http://xmodulo.com/2014/04/primary-dns-server-using-centos.html
-[2]:http://xmodulo.com/2014/04/primary-dns-server-using-centos.html
-[3]:译者注，怎么可能是三呢，我认为应该是二
+[1]:http://linux.cn/article-3092-1.html
