@@ -8,7 +8,7 @@ Ubuntu Linux上的最佳照片应用程序
 ### Linux中的图像编辑应用 ###
 当我提到图像编辑时，我是指铁杆专业风格的照片编辑。换句话讲，我是在讨论[Photoshop][2]。而对于Adobe Photoshop的Linux替代品而言，只有一个名字浮现在我脑海里，那就是[GIMP][3]。GIMP是一个跨平台、全功能、专业级别的编辑软件，几乎囊括了Photoshop的全部功能。与Photoshop不同的是，GIMP对于所有平台都免费，如Linux，Windows，OS X等等。
 
-你可以从Ubuntu软件中心来为Ubuntu安装GIMP。
+你可以从Ubuntu软件中心来为Ubuntu安装GIMP。 
 
 如果你醉心于Photoshop，并且对于调整GIMP的外观和快捷键有一定难度，那我推荐你使用[Gimpshop][4]。它是一个基于GIMP，而又有Photoshop风格的应用程序，也是免费的。
 ### Linux中的照片管理应用 ###
