@@ -1,10 +1,10 @@
 戴文的Linux内核专题：23 配置内核 (19)
 ================================================================================
-![](http://www.linux.org/attachments/slide-jpg.626/)
+![](http://www.linux.org/attachments/slide-jpg.626/.jpg)
 
 欢迎进入Linux内核系列文章的下一篇！我们正在接近配置过程的终点。在这篇文章中，我们将会讨论固件驱动和文件系统驱动。
 
-这个分类中的第一个驱动是寻找启动盘(BIOS Enhanced Disk Drive calls determine boot disk)。有时，Linux不会知道那个盘是启动盘。这个驱动允许内核询问BIOS。Linux接着在sysfs上存储信息。Linux需要知道这些来设置bootloader。
+这个分类中的第一个驱动是寻找启动盘(BIOS Enhanced Disk Drive calls determine boot disk)。有时，Linux不会知道哪个盘是启动盘。这个驱动允许内核询问BIOS。Linux接着在sysfs上存储信息。Linux需要知道这些来设置bootloader。
 
 即使BIOS EDD服务被编译进了内核，这个选项可以设置这些服务不激活(Sets default behavior for EDD detection to off )。EDD代表的是"Enhanced Disk Drive"(增强磁盘驱动器)。
 
@@ -30,7 +30,7 @@
 
 "Ext2 POSIX Access Control Lists"增加了额外的非原生的权限模型。
 
-"Ext2 Security Labels"增强了有SELinux提供的安全性。
+"Ext2 Security Labels"增强了由SELinux提供的安全性。
 
 启用"Ext2 execute in place support"允许可执行文件在当前的位置执行而不必在页缓存中执行。
 
@@ -80,7 +80,7 @@ Linux系统也支持NIL-FileSystem(NILFS2 file system support)。[http://www.lin
 
 为了支持一些文件系统使用到的flock()系统调用，启用这个驱动(Enable POSIX file locking API)。禁用这个去的那个会减少11KB的内核大小。这个驱动提供了文件锁定。文件锁定是一个允许进程在某刻读取文件的过程。这通常用于网络文件系统，就像NFS。
 
-"Dnotify support"驱动是一个古老的文件系统通知系统，它提醒文件系统上的事件的用户空间。它的一个用处和它的继承者被用于监控应用的文件系统。某个应用告诉守护进程需要监视哪些事件。不然，每个用户空间应用需要它们自己完成这个任务。
+"Dnotify support"驱动是一个古老的文件系统通知系统，它提醒文件系统上的事件的用户空间。它和它的继承者被用于监控应用的文件系统。某个应用告诉守护进程需要监视哪些事件。不然，每个用户空间应用需要它们自己完成这个任务。
 
 记住，Dnotify是一个古老的系统，那么什么是新的通知系统？它就是由这个驱动提供的Inotify (Inotify support for userspace)。
 
@@ -106,14 +106,13 @@ Linux系统也支持NIL-FileSystem(NILFS2 file system support)。[http://www.lin
 
 一个特殊的FUSE扩展可以用于在用户空间使用字符设备Character device in Userspace support)。
 
-In the next article, we will discuss caches, optical disc filesystems, FAT32 on Linux, and other interesting filesystem topics. Mahalo! 
 下一篇文章中，我们会继续讨论缓存，光盘文件系统，Linux上的FAT32和其他有趣的文件系统话题。谢谢！
 
 --------------------------------------------------------------------------------
 
 via: http://www.linux.org/threads/the-linux-kernel-configuring-the-kernel-part-19.4929/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
