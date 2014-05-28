@@ -2,15 +2,15 @@ Apache Tomcat 7.0.54现已可供下载
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Apache-Tomcat-7-0-54-Now-Available-for-Download-443862-2.jpg)
 
-**Apache Tomcat 7.0.54，一个在Java社区进程之下开发的Java Servlet和JavaServer Pages技术的开源软件实现，现已可供下载。**
+**Apache Tomcat 7.0.54，一个在JCP规范之下开发的Java Servlet和JSP技术的开源软件实现，现已可供下载。**
 
-自上一个Apache Tomcat版本的发布已经有段时日了， 但这仅仅意味着开发者们有更多的时间来对软件作出修补和更改。这是一个源码软件包，所以常规用户并不一定真的需要它。
+自上一个Apache Tomcat版本的发布已经有段时日了， 但这仅仅意味着开发者们有更多的时间来对软件作出修补和更改。这是一个源码软件包，所以普通用户并不一定真的需要它。
 
 通过更新日志得知，定制的UTF-8解码器已经被修复，在AprLifecycleListener的FIPS模式中加入了更多的管理选项，如果一个应用从已销毁的会话中调用session.invalidate()而导致的无限循环已经可被避免，在添加一个Mbean通知监听器时，移除一个Mbean监听器现在将还原所有执行的操作，以及关于完成部署和其执行时间的信息已被添加到日志文件之中。
 
-另外，一些理论上可能会发生内存泄漏的位置上已经做了修补，当使用JAASMemoryLoginModule时的用户认证已被修复，在反斜杠处理时的回归已得到纠正。
+另外，一些理论上可能会发生内存泄漏的位置上已经做了修补，当使用JAASMemoryLoginModule时的用户认证已被修复，在反斜杠处理时的回溯已得到纠正。
 
-在来源归档的官方更新日志中可以找到一份完整的变更，修复以及新特性的列表。
+在源代码归档的官方更新日志中可以找到一份完整的变更，修复以及新特性的列表。
 
 ### 下载 Apache Tomcat 7.0.54 (violetagg): ###
 
@@ -25,7 +25,7 @@ Apache Tomcat 7.0.54现已可供下载
 
 via: http://news.softpedia.com/news/Apache-Tomcat-7-0-54-Now-Available-for-Download-443862.shtml
 
-译者：[alim0x](https://github.com/alim0x) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[alim0x](https://github.com/alim0x) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
