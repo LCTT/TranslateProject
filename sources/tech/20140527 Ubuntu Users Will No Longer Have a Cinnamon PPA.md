@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Ubuntu Users Will No Longer Have a Cinnamon PPA
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Ubuntu-Users-Will-No-Longer-Have-a-Cinnamon-PPA-443933-2.jpg)
