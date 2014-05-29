@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Add Windows Like Bottom Taskbar In Ubuntu Unity 14.04
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/05/Windows_Taskbar_ubuntu.jpeg)
