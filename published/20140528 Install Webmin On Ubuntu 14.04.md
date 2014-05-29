@@ -2,7 +2,7 @@
 ================================================================================
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/05/webmin-790x586.jpg)
 
-[Webmin][1]是一个开源的基于网页的Unix/Linux系统管理工具。通过使用Webmin，你可以在浏览器上设置和安装所有的系统服务，包括:DNS,DHCP,Apache,NFS和Samba等等。因此，有了这个，你就再也不需要去记住所有的修改配置的命令了。
+[Webmin][1]是一个开源的基于网页的Unix/Linux系统管理工具。通过使用Webmin，你可以在浏览器上设置和安装所有的系统服务，包括:DNS、DHCP、Apache、NFS和Samba等等。因此，有了这个，你就再也不需要去记住所有的修改配置的命令了。
 
 
 ### 使用官方软件源在Ubuntu 14.04 LTS上安装Webmin ###
@@ -31,7 +31,7 @@
 
     sudo apt-get install webmin
 
-如果你想从远程系统访问webmin的控制台,就在防火墙里开启webmin的默认端口“10000”
+如果你想从远程系统访问webmin的控制台，就在防火墙里开启webmin的默认端口“10000”
 
     sudo ufw allow 10000
 
@@ -51,7 +51,7 @@
 
 via: http://www.unixmen.com/install-webmin-ubuntu-14-04/
 
-译者：[MikeCoder](https://github.com/MikeCoder) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[MikeCoder](https://github.com/MikeCoder) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
