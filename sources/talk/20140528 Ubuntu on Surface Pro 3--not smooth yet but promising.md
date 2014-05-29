@@ -1,3 +1,5 @@
+alim0x translating
+
 Ubuntu on Surface Pro 3 – not smooth yet but promising
 ================================================================================
 ![](http://www.muktware.com/wp-content/uploads/2014/05/surface_pro_3.jpg)
