@@ -1,3 +1,6 @@
+Translating-----------geekpi
+
+
 Setup Backup Server Using Bacula And Webmin On Ubuntu 14.04
 ================================================================================
 **Bacula** is an open source network backup solution that permits you to backup and restore the data’s from a local or group of remote networked computers. It is very easy in terms of installation and configuration with many advanced storage management features.
