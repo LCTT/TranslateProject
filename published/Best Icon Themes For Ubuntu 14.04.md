@@ -1,8 +1,8 @@
-Ubuntu 14.04 最棒的图标主题
+五个 Ubuntu 14.04 最佳图标集
 ================================================================================
 ![](http://itsfoss.com/wp-content/uploads/2014/05/Ubuntu_Trusty_Tahr_Best_Icons.jpeg)
 
-还在苦苦寻找方法来让你的 Ubuntu 14.04 更加漂亮吗？那就赶紧给你的系统换套图标吧！如果你还没发现哪些图标主题很棒，不用着急，我已经整理了一些适用于**Ubuntu 14.04的最佳图标集**。不过在欣赏这些图标集之前，我还是先向你介绍一下如何应用图标主题吧。
+还在苦苦折腾让你的 Ubuntu 14.04 更加漂亮的方法吗？那就赶紧给你的系统换套图标吧！如果你还没发现哪些图标主题很棒，不用着急，我已经整理了一些适用于**Ubuntu 14.04的最佳图标集**。不过在欣赏这些图标集之前，我还是先向你介绍一下如何应用图标主题吧。
 
 ### 如何在 Ubuntu 系统中应用新图标集： ###
 
@@ -46,7 +46,7 @@ Ubuntu 14.04 最棒的图标主题
     sudo apt-get update
     sudo apt-get install numix-icon-theme numix-icon-theme-circle
 
-#### Uniform: #### 
+#### Uniform: ####
 
 ![](http://itsfoss.com/wp-content/uploads/2014/05/Uniform_Icons.jpeg)
 
