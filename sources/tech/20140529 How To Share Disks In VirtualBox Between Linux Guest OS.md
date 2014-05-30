@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 How To Share Disks In VirtualBox Between Linux Guest OS
 ================================================================================
 Let me show you in this small  tutorial, how to share 1 disk between 2 Linux guests os in Virtualbox.
