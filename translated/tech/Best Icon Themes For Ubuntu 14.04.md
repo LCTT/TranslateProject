@@ -46,7 +46,7 @@ Ubuntu 14.04最棒的图标主题
     sudo apt-get update
     sudo apt-get install numix-icon-theme numix-icon-theme-circle
 
-#### Uniform: ####
+#### Uniform: #### 
 
 ![](http://itsfoss.com/wp-content/uploads/2014/05/Uniform_Icons.jpeg)
 
