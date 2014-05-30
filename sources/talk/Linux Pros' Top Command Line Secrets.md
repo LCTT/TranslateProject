@@ -1,3 +1,4 @@
+No one wanna get it? OK. Let me do it. GOLinux ...
 Linux Pros' Top Command Line Secrets
 ================================================================================
 ![](http://www.linuxinsider.com/images/rw509807/command-line.jpg)
