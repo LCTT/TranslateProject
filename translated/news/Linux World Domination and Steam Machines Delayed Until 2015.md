@@ -18,7 +18,7 @@ Valve 并不是一个守时的公司，看起来即将到来的 Steam Machines �
 
 这可能意味着需要解决掉一些问题，但是 Steam Machines 远没有完成。很可能他们的 SteamOS 操作系统并没有准备好应付这么艰巨的任务。驱动程序也有些问题需要较长的时间去修复。
 
-AMD的技术支持太差了，Valve 确实是想使得 Steam Machines 项目成为一个有竞争力项目。最大的问题就是价格，将会比 PS4 和 Xbox 高多了。
+AMD的支持太差了，Valve 确实是想使得 Steam Machines 项目成为一个有竞争力项目。最大的问题就是价格，将会比 PS4 和 Xbox 高多了。
 
 Valve 和控制台厂商需要更多时间去降低成本，提高产品和软硬件的质量。他们也需要更多的游戏进驻，所以将 Linux domination of the world 推迟了六个月，推迟到2015年，这也许不是件坏事。
 
