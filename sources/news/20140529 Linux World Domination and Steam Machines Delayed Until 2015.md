@@ -1,3 +1,4 @@
+##Translating by shipsw##
 Linux World Domination and Steam Machines Delayed Until 2015
 ================================================================================
 ![The Steam Machines will not be ready in 2014](http://i1-news.softpedia-static.com/images/news2/Linux-World-Domination-and-Steam-Machines-Delayed-Until-2015-444271-2.jpg)
