@@ -1,3 +1,5 @@
+alim0x translating
+
 GNOME Online Accounts 3.13.2 Adds Support for Photos and Maps
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/GNOME-Online-Accounts-3-13-2-Adds-Support-or-Photos-and-Maps-444249-2.jpg)
