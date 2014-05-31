@@ -1,5 +1,3 @@
-占坑。。。。
-
 Fix “Cannot Add PPA” Error In Ubuntu 14.04 & Linux Mint
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/05/PPA_Error_Ubuntu.jpeg)
