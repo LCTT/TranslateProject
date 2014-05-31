@@ -1,6 +1,6 @@
-在Ubuntu 14.04 和 Linux Mint 17 中安装 Spotify
+在Ubuntu/Mint中安装 Spotify
 ================================================================================
-Spotify 是一个现今非常流行的流媒体音乐服务。不仅可以在网页上访问其服务，而且可以在 linux 中安装其桌面客户端。这个客户端增加了额外的功能，比如监听本地音乐和同步本地音乐到Spotify 服务器、iPhone 、iPod等其它移动设备。
+Spotify 是一个现今非常流行的流媒体音乐服务。不仅可以在网页上访问其服务，而且可以在 linux 中安装其桌面客户端。这个客户端增加了额外的功能，比如听播放本地音乐和同步本地音乐到Spotify 服务器、或同步本地音乐到iPhone 、iPod等其它移动设备。
 
 在本文将讨论如何快速 **在 Ubuntu 14.04 安装 Spotify ** 以及其它基于 Debian 的发行版，如 Linux Mint, Elementary OS, Bodhi 等等。
 
@@ -29,7 +29,7 @@ Spotify 是一个现今非常流行的流媒体音乐服务。不仅可以在网
 
 via: http://itsfoss.com/install-spotify-ubuntu-1404/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[liushui312](https://github.com/liushui312) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
