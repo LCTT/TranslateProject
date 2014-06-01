@@ -1,3 +1,4 @@
+Translating by GOLinux...
 Linux script command - A recorder inside your Terminal
 ================================================================================
 When you are working on the terminal or console, you may want to record what you have done in the terminal. The recording can be used as a documentation about what happen in terminal. Let say you are working together with some Linux Administrators at the same time. Or you let someone to remote your server. You may want to record about what happen in the terminal. To do this, you can use script command.
