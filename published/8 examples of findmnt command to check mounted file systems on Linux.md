@@ -1,8 +1,8 @@
-Linux 中 findmnt 命令检查已挂载的文件系统的8个实例
+findmnt 命令的八个应用实例
 ================================================================================
 ### 已挂载的文件系统和设备 ###
 
-linux 中更常用的检查已挂载的文件系统的是 mount 命令，不仅用于列出已挂载的设备，而且可以在需要的时候挂载和卸载。这有一个叫做 findmnt 的超赞命令，它可以用于快速查看挂载位置和选项。
+linux 中常用的检查已挂载的文件系统的是 mount 命令，不仅用于列出已挂载的设备，而且可以在需要的时候挂载和卸载。另外还有一个叫做 findmnt 的超赞命令，它可以用于快速查看挂载位置和选项。
 
 ### 安装findmnt ###
 
@@ -113,7 +113,7 @@ Findmnt 可以打印出只基于类型的特定的文件系统，例如 ext4，�
     /sys/fs/cgroup/systemd systemd cgroup rw,nosuid,nodev,noexec,relatime,name=systemd
     /run/user/1000/gvfs gvfsd-fuse fuse.gvfsd-fuse rw,nosuid,nodev,relatime,user_id=1000,group_id=1000
 
-看起来非常整洁
+看起来非常整洁（译注，亲爱的读者你也这样觉得么？）。
 
 #### 7. 通过源设备查找 ####
 
