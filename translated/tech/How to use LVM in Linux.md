@@ -1,22 +1,20 @@
-Vic020 在被关，我就急
-
-How to use LVM in Linux
+Linux LVM简明教程
 ================================================================================
-Logical Volume Manager (LVM) is a versatile disk management system that can easily be used in Linux or similar operating systems. Traditional partitions are created in fixed sizes, and resizing them is a tedious process. On the other hand, LVM creates and manages "logical" volumes off of physical hard disks, and provides administrators the flexibility to extend and shrink logical volumes easily on demand without damaging stored data. Additional hard disks can be added to LVM at will, further increasing existing logical volumes. LVM does not need reboot as long as the kernel is aware of the existence of a partition.
+LVM是一个多才多艺的硬盘系统工具。无论在Linux或者其他相似的系统，都是非常的好用。传统分区使用固定大小分区，重新分区十分麻烦。但是，LVM创建和管理从硬盘中分出来的“逻辑”卷，提供管理员弹性管理逻辑卷的扩大缩小，操作简单，还不损坏已存储的数据。附加硬盘可以随意增加到LVM，而且可以直接增加已经存在的逻辑卷。LVM不需要重启而只要内核知道分区的存在。
 
-LVM uses a hierarchical structure as it can be seen in the following diagram.
+LVM使用分层结构，如下图所示。
 
 ![](https://farm3.staticflickr.com/2910/14127487464_96b24a906b_z.jpg)
 
-At the top, we have physical volumes. One or more physical volumes are used to create a volume group. Logical volumes are then created from these volume groups. As long as there is space available in the volume group, we can create logical volumes from the volume group. File system is created on these logical volumes, which are then mounted and accessible in the operating system.
+图中顶层，首先是实际的物理卷。下一层，一个或多个物理卷可以用来创建卷组。再下一层，然后逻辑卷的创建基于卷组。只要在卷组中有可用空间，就可以随心所欲的创建逻辑卷。最下面层，文件系统的分区就是从逻辑卷上创建，然后可以在操作系统挂载和访问。
 
-### LVM Test Scenario ###
+### LVM测试说明 ###
 
-This tutorial will describe **how to use LVM to create and manage LVM volumes in Linux**. The tutorial will be divided into two parts. In the first part, we will create several logical volumes on one hard disk, and mount them in /lvm-mount directory. We will then resize the created volumes. In the second part, we will add additional volumes created from a second hard disk to LVM.
+本文将介绍**怎么在linux中创建和管理LVM卷**。我们将会分成两个部分。第一个部分，我们首要要在一个硬盘上创建多个逻辑卷，然后将它们挂载在/lvm-mount目录。然后我们将要对创建好的卷调整大小。而第二部分，我们将会从另外一块硬盘增加额外的卷到LVM中。
 
-### Preparing Disk Partitions ###
+### 准备磁盘分区 ###
 
-Disk partitions are created using fdisk. We will create three partitions of 1 GB each, though identical sized partitions are not mandatory. Also, the partitions are created as type '8e' to make them compatible with LVM.
+通过使用fdisk，创建磁盘分区。我们需要创建3个1G分区，注意，相同大小的分区不是强制的。同样，分区需要使用‘8e’类型来使他们兼容LVM。
 
     # fdisk /dev/sdb 
 
@@ -37,7 +35,7 @@ Disk partitions are created using fdisk. We will create three partitions of 1 GB
     Hex code (type L to list codes): 8e ## code for LVM
     Changed system type of partition 1 to 8e (Linux LVM)
 
-We repeat the same steps to create two other partitions. After the partitions are created, we should get an output similar to this:
+重复上面的操作来创建其他两个分区。分区创建完成后，我们应该有类似如下的输出：
 
     # fdisk -l 
 
@@ -48,15 +46,15 @@ We repeat the same steps to create two other partitions. After the partitions ar
     /dev/sdb2             133         264     1060290   8e  Linux LVM
     /dev/sdb3             265         396     1060290   8e  Linux LVM
 
-### Preparing Physical Volumes ###
+### 准备物理卷 ###
 
-The newly created partitions are used to store physical volumes. LVM can work with different sized physical volumes.
+刚创建的分区是用来储存物理卷的。LVM可以在不同大小的物理卷上工作。
 
     # pvcreate /dev/sdb1
     # pvcreate /dev/sdb2
     # pvcreate /dev/sdb3 
 
-Physical volumes can be verified using the following command. The following section contains partial output. "/dev/sdb2" is a new physical volume of "1.01 GiB".
+使用下列命令检查物理卷已经创建。下面截取部分输出。"/dev/sdb2"是一个新的"1.01 GiB"物理卷。
 
     # pvdisplay 
 
@@ -73,17 +71,18 @@ Physical volumes can be verified using the following command. The following sect
       Allocated PE          0
       PV UUID               jszvzz-ENA2-g5Pd-irhV-T9wi-ZfA3-0xo092
 
-Physical volumes can be deleted using the following command.
+使用下列命令可以删除物理卷。
 
     # pvremove /dev/sdb1 
 
-### Preparing Volume Groups ###
+### 准备卷组 ###
 
-The following command creates a volume group named 'volume-group1' by using the physical volumes /dev/sdb1, /dev/sdb2 and /dev/sdb3.
+
+下列命令用来创建名为'volume-group1'的卷组，使用/dev/sdb1, /dev/sdb2 和 /dev/sdb3创建。
 
     # vgcreate volume-group1 /dev/sdb1 /dev/sdb2 /dev/sdb3
 
-Volume groups can be verified using the following command.
+使用下列命令可以来验证卷组。
 
     # vgdisplay 
 
@@ -110,19 +109,20 @@ Volume groups can be verified using the following command.
       Free  PE / Size       774 / 3.02 GiB
       VG UUID               bwd2pS-fkAz-lGVZ-qc7C-TaKv-fFUC-IzGNBK
 
-We can view used/total size of the volume group from the output. Logical volumes take the space of the volume group. As long as there is free space available in the volume group, we can create logical volumes.
 
-Volume groups can be deleted using the following command.
+从输出中，我们可以看见卷组的使用量/总量。物理卷给卷组提供空间。只要在这个卷组中还有可用空间，我们就可以随意创建逻辑卷。
+
+使用下列命令删除卷组。
 
     # vgremove volume-group1 
 
-### Creating Logical Volumes ###
+### 创建逻辑卷 ###
 
-The following command creates a logical volume named 'lv1' of size 100MB. We are using small sized partitions to reduce processing time. The logical volume will take its space from the volume group defined earlier.
+下列命令创建一个名为'1v1'、大小为100MB的逻辑卷。我们使用小分区减少执行时间。逻辑卷使用之前创建的卷组的空间。
 
     # lvcreate -L 100M -n lv1 volume-group1 
 
-Logical volumes can be verified using the command lvdisplay.
+逻辑卷使用lvdisplay命令查看。
 
     # lvdisplay 
 
@@ -143,42 +143,43 @@ Logical volumes can be verified using the command lvdisplay.
       - currently set to     256
       Block device           253:2
 
-Now that the logical volume is ready, we can format and mount the logical volume like any other ext2/3/4 partition.
+现在逻辑卷已经准备好了，我们可以格式化和挂载逻辑卷，就像ext2/3/4分区一样！
 
     # mkfs.ext4 /dev/volume-group1/lv1
     # mkdir /lvm-mount
     # mount /dev/volume-group1/lv1 /lvm-mount/ 
 
-Once the logical volume is mounted, we can access it by reading/writing to the mount point /lvm-mount/. To create and mount additional logical volumes, we can repeat this process.
+一旦逻辑卷挂载，我们就可以到挂载点/lvm-mount/读取/写入了。为了创建和挂载额外的逻辑卷，我们重复这个过程。
 
-Finally, we can delete any logical volume with lvremove.
+最后，使用lvremove我们可以删除逻辑卷。
 
     # umount /lvm-mount/
     # lvremove /dev/volume-group1/lv1 
 
-### Expanding an LVM Volume ###
+### 扩展一个LVM卷 ###
 
-The ability to resize a logical volume is the best part about using LVM. This section will discuss how we can expand an existing logical volume. We will be expanding the previously created logical volume 'lv1' to 200 MB.
+调整逻辑卷大小的功能是LVM最好的部分。这个章节会讨论我们怎么样扩展一个存在的逻辑卷。接下来，我们将会扩展先前创建的逻辑卷‘lv1’扩大到200MB。
 
-Note that after resizing a logical volume, we also need to resize the file system to match. This extra step varies depending on which file system is created in the volume. In this tutorial, we created ext4 file system on 'lv1', so the instruction here focused on ext4 file system (it is compatible with ext2/3 file system as well). The sequence of the commands is important.
+注意，调整逻辑卷大小之后，也需要对文件系统调整大小进行匹配。有个额外的步骤各不相同,这取决于创建文件系统的类型。在本文中，我们使用'lv1'创建了ext4类型的文件系统，所以这里的操作是针对ext4文件系统的。（它也兼容ext2/3文件系统）。命令的执行顺序是很重要的。
 
-First, we unmount the volume.
+首先，我们卸载掉lv1卷
 
     # umount /lvm-mount/ 
 
-Then, the size of the volume is set to be 200M.
+然后，设置卷的大小为200M
 
     # lvresize -L 200M /dev/volume-group1/lv1 
 
-Next, the disk is checked for errors.
+接下来，检查磁盘错误
 
     # e2fsck -f /dev/volume-group1/lv1 
 
-After that, the ext4 information is updated.
+完成以后，ext4信息已经更新。
 
     # resize2fs /dev/volume-group1/lv1 
 
-The logical volume should be extended to 200 MB by now. We can verify it by checking the LV status.
+现在，这个逻辑卷应该已经扩展到200MB了。我们检查LV的状态来验证。
+
 
     # lvdisplay 
 
@@ -199,27 +200,28 @@ The logical volume should be extended to 200 MB by now. We can verify it by chec
       - currently set to     256
       Block device           253:2
 
-Now the logical volume can be mounted again, and be used just like any partition.
+现在，这个逻辑卷可以再次挂载，同样这个方法使用其他分区。
 
-### Shrinking an LVM Volume ###
+### 缩减一个LVM卷 ###
 
-This section will cover the method of reducing the size of an LVM. The sequence of the commands is important. Again, this instruction is valid for ext2/3/4 file system.
+这章节介绍缩减LVM卷大小的方法。命令的顺序同样重要。并且，下列命令对ext2/3/4文件系统同样有效。
 
-Note that reducing the size of the logical volume to a value less than stored data will end in loss of data.
 
-First, the volume is unmounted.
+注意减少逻辑卷的大小值若小于储存的数据大小，会出现数据丢失。
+
+首先，卸载掉卷。
 
     # umount /dev/volume-group1/lv1
 
-Then, the volume is checked for errors.
+然后，检测磁盘错误。
 
     # e2fsck -f /dev/volume-group1/lv1 
 
-Next, the ext4 information is updated.
+接下来，更新ext4信息。
 
     # resize2fs /dev/volume-group1/lv1 100M 
 
-After that, the logical volume is reduced.
+完成以后，减少逻辑卷大小
 
     # lvresize -L 100M /dev/volume-group1/lv1 
 
@@ -229,7 +231,7 @@ After that, the logical volume is reduced.
 >   Reducing logical volume lv1 to 100.00 MiB
 >   Logical volume lv1 successfully resized
 
-Finally, the updated size of the logical volume is verified.
+最后，验证调整后的逻辑卷大小。
 
     # lvdisplay 
 
@@ -250,11 +252,12 @@ Finally, the updated size of the logical volume is verified.
       - currently set to     256
       Block device           253:2
 
-### Expanding a Volume Group ###
+### 扩展一个卷组 ###
 
-This section will cover the method of expanding a volume group by adding a new physical volume to the volume group. Let us assume that our volume group 'volume-group1' is full, and needs to be expanded. Our current hard disk (sdb) does not have any spare partitions, and we have added another hard disk (sdc). We will see how we can expand the volume group by adding a partition from sdc.
+本节将讨论扩展卷组的方法，将一个物理卷添加到卷组。让我们假设我们的卷组'volume-group1'已经满了，需要扩大。收上的硬盘（sdb）已经没有其他空闲分区，我们添加了另外一个硬盘（sdc）。我们将看到如何从sdc扩展一个卷组，并增加一个分区。
 
-To check the current state of VG.
+
+检测现在卷组状态
 
     # vgdisplay volume-group1 
 
@@ -281,7 +284,7 @@ To check the current state of VG.
       Free  PE / Size       749 / 2.93 GiB
       VG UUID               bwd2pS-fkAz-lGVZ-qc7C-TaKv-fFUC-IzGNBK
 
-First, we create a 2 GB partition sdc1 of type LVM (8e) as explained earlier in the tutorial. 
+首先，我们创建一个2GB分区sdc1，类型为LVM（8e），如教程前所述。
 
     # fdisk /dev/sdc 
 
@@ -305,15 +308,15 @@ First, we create a 2 GB partition sdc1 of type LVM (8e) as explained earlier in 
     Command (m for help): w
     The partition table has been altered!
 
-Then, we create a physical volume /dev/sdc1.
+然后，我们创建一个物理卷 /dev/sdc1
 
     # pvcreate /dev/sdc1 
 
-Now that the physical volume is ready, we can simply add it to the existing volume group 'volume-group1'.
+现在，物理卷已经准备好了，我们可以简单地将它增加到已存在的卷组'volume-group1'上。
 
     # vgextend volume-group1 /dev/sdc1 
 
-We can verify it using vgdisplay.
+使用vgdisplay来验证。
 
     # vgdisplay 
 
@@ -340,16 +343,16 @@ We can verify it using vgdisplay.
       Free  PE / Size       1262 / 4.93 GiB
       VG UUID               bwd2pS-fkAz-lGVZ-qc7C-TaKv-fFUC-IzGNBK
 
-Note that although we have used a separate disk for demonstration, any disk of type '8e' can be used for expanding a volume group.
+注意，尽管我们使用一个单独的磁盘做示范，其实只要是‘8e’类型的磁盘都可以用来扩展卷组。
 
-To sum up, LVM is a very powerful tool for creating and managing resizable partitions. In this tutorial, we have seen how dynamic partitions can be created and used using LVM. We have also seen the method of expanding/reducing the logical volumes and volume groups, and adding new hard disks to LVM.
+总结一下，LVM是一个非常给力的工具，用来创建和管理可变大小的分区。本文中，我们已经看见了动态分区如何在LVM中创建和使用。我们也看见了扩展/缩小逻辑卷和卷组的方法，和如何增加一个新的磁盘到LVM。
 
-Hope this helps.
+希望对你有帮助。
 
 --------------------------------------------------------------------------------
 
 via: http://xmodulo.com/2014/05/use-lvm-linux.html
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Vic___](http://www.vicyu.net) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
