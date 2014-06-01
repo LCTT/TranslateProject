@@ -1,3 +1,5 @@
+alim0x translating
+
 Why No Flash Support for Linux Is Good for Open Source
 ================================================================================
 > The upcoming end of support for Adobe Flash in the open source Chromium browser for Linux is actually a good thing for the Linux world.
