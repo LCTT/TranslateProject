@@ -2,14 +2,13 @@ Linux大神们的顶级命令行秘诀
 ================================================================================
 ![](http://www.linuxinsider.com/images/rw509807/command-line.jpg)
 
-> "Command-line secrets? There aren't any such things," said blogger Robert Pogson. "Desperate newbie? Type 'help.' Still need a hint? Type 'man whatever.' Want more diversity? Type 'ls /bin /sbin /usr/bin /usr/sbin | less,' pick out a few gems and type 'man whatever' all night long. I've been at it more than a decade. Still having fun." Of course, "one can be addicted to the point of destruction."
-> “命令行秘诀？根本就没这玩样。”博主罗伯特·柏格森说。“新手们，你们失望了？那就猛敲‘help’吧。还想要点提示？随便‘man’个什么吧。想更多来点不同？敲‘ls /bin /sbin /usr/bin /usr/sbin | less’，随便捡几个宝贝命令出来，整晚地‘man’去吧。我已经干那活超过十年了，到现在还玩得不亦乐乎。”当然，“
-**W**ell it was a relatively quiet week here in the Linux blogosphere, giving residents a long-overdue opportunity to catch their collective breath, enjoy a few Tequila Tux cocktails and take stock of all the FOSS-related happenings that have taken place over the past few weeks.
+> “命令行秘诀？根本就没这玩样。”博主罗伯特·柏格森说。“新手们，你们失望了？那就猛敲‘help’吧。还想要点提示？随便‘man’个什么吧。想更多来点不同？敲‘ls /bin /sbin /usr/bin /usr/sbin | less’，随便捡几个宝贝命令出来，整晚地‘man’去吧。我已经干那活超过十年了，到现在还玩得不亦乐乎。”当然，“某人可要对破坏之类的事情上瘾了。”
 
-Among the highlights, for those who missed them, were [the awarding][1] of the [IEEE][2] Computer Society's 2014 Computer Pioneer Award to none other than Linus Torvalds; [the arrival][3] of Tails OS 1.0; and, perhaps most exciting of all, [the release][4] of Seattle-based band [netcat's][5] debut album as a Linux kernel module.
+**好**吧，Linux博客圈这里这周相对比较平静，给网民们一个拖了很久的机会集体喘口气吧，去享受一下龙舌兰、燕尾服、鸡尾酒带来的欢快吧，然后评估一下过去几周来发生的和自由开放软件相关的事件吧。
 
-"Are you ever listening to an album, and thinking 'man, this sounds good, but I wish it crossed from user-space to kernel-space more often!'" netcat wrote on its Facebook page. "We got you covered. Our album is now fully playable as a loadable Linux kernel module."
+有些人错过了这些重大新闻：[IEEE][2]的[颁奖礼][1]，计算机世界的2014计算机先驱奖正是颁发给了李纳斯·托沃兹；Tails OS 1.0的[到来][3]；以及，也许是最令人激动的事情，位于西雅图的乐队[网猫][5][发布了][4]作为Linux内核模块的首张唱片。
 
+“你是否曾经在听一张专辑的时候想过‘伙计，这听起来不错，但是我希望它能经常从用户空间过渡到内核空间去！’”网猫在Facebook上写道，“我们会全力支持你的。我们的专辑现在完全可以作为一个可加载的Linux内核模块来播放。”
 Linux Girl thought she had seen it all here in the Linux world, but now she realizes she was wrong. Thank you, netcat, for keeping life interesting!
 
 ### 'Command Line Secrets'  ###
