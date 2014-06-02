@@ -2,7 +2,7 @@
 ================================================================================
 当前，完全硬件虚拟化技术（KVM、Xen、Hyper-V 等）能在一个物理主机上很好地运行多个互相独立的操作系统，但这也带来一些问题：性能不佳，资源浪费，系统反应迟缓等。有时候对用户来说，完全的硬件虚拟化并不是最好的选择。
 
-一种替代方案是使用轻量级虚拟化技术 —— 所谓的 [Linux Container 容器][1] (LXC)，它提供的是系统级虚拟化。与跑虚拟机相比，LXC 可以在一个轻量级沙箱容器里面跑多个 Linux 操作系统。当你需要设置一些易于克隆的开发环境、测试环境，或想在安全沙盒里安装应用时，LXC 就非常有用了。
+一种替代方案是使用轻量级虚拟化技术 —— 所谓的 [LinuX Container 容器][1] (LXC)，它提供的是系统级虚拟化。与跑虚拟机相比，LXC 可以在一个轻量级沙箱容器里面跑多个 Linux 操作系统。当你需要设置一些易于克隆的开发环境、测试环境，或想在安全沙盒里安装应用时，LXC 就非常有用了。
 
 [Docker][2] 是一个开源工具，可以让用户方便地布署 Linux Container 容器。Docker 很快变成了 container 技术的非官方标准，从而被 [Ubuntu][3] 和 [Red Hat][4]等众多发行版吸收进去。
 
@@ -25,8 +25,8 @@
 下一步是编辑 Docker 配置文件，确定 Docker 可执行文件的路径：
 
     $ sudo vi /etc/default/docker.io
-
-> DOCKER="/usr/bin/docker.io"
+	
+	DOCKER="/usr/bin/docker.io"
 
 重启 Docker 服务：
 
@@ -102,7 +102,7 @@ Docker 使用 Linux 桥接技术与其他容器通信，以及连通外网。安
 
 via: http://xmodulo.com/2014/05/manage-linux-containers-docker-ubuntu.html
 
-译者：[bazz2](https://github.com/bazz2) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[bazz2](https://github.com/bazz2) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
