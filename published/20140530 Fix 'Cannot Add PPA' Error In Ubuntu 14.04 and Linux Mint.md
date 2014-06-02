@@ -1,4 +1,4 @@
-修复Ubuntu 14.04和Linux Mint中无法添加PPA源的错误
+如何修复Ubuntu/Mint中无法添加PPA源的错误
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/05/PPA_Error_Ubuntu.jpeg)
 
@@ -28,7 +28,7 @@
 
 via: http://itsfoss.com/fix-add-ppa-error-ubuntu-1404-linux-mint/
 
-译者：[alim0x](https://github.com/alim0x) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[alim0x](https://github.com/alim0x) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

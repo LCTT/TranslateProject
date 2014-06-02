@@ -1,4 +1,4 @@
-在VirtualBox中的Linux客户机系统间共享磁盘
+如何在VirtualBox中的Linux客户机系统间共享磁盘
 ================================================================================
 在本教程中，让我来给你们展示一下如何在VirtualBox中的两个Linux客户机系统间共享一个磁盘。
 
@@ -42,6 +42,6 @@
 
 via: http://www.unixmen.com/share-disks-virtualbox-linux-guest-os/
 
-译者：[GOLinux](https://github.com/GOLinux) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[GOLinux](https://github.com/GOLinux) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
