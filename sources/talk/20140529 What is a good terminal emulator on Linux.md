@@ -1,3 +1,7 @@
+Translating--------geekpi
+
+
+
 What is a good terminal emulator on Linux?
 ================================================================================
 A good terminal emulator is a sufficient reason to choose Linux over Windows or Mac. Any power user of Linux would agree on that. By accessing the shell, a user can easily perform tasks that would be impossible, or too repetitive to perform from a graphical environment. But the choice of your terminal emulator is important since it can be the single application that you use the most. I will try to give you a well furnished list of good terminal emulators on Linux, from the classics, to the most exotic, but always efficient and original.
