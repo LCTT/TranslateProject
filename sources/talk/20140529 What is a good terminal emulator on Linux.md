@@ -1,90 +1,86 @@
-Translating--------geekpi
-
-
-
-What is a good terminal emulator on Linux?
+Linux上有哪些好的终端模拟器?
 ================================================================================
-A good terminal emulator is a sufficient reason to choose Linux over Windows or Mac. Any power user of Linux would agree on that. By accessing the shell, a user can easily perform tasks that would be impossible, or too repetitive to perform from a graphical environment. But the choice of your terminal emulator is important since it can be the single application that you use the most. I will try to give you a well furnished list of good terminal emulators on Linux, from the classics, to the most exotic, but always efficient and original.
+一个好的终端模拟器是一个很好的理由去选择Linux而不是Windows或者Mac。任何Linux的资深用户都会同意这点。通过访问shell，用户可以完成在图形环境下不可能或者太重复的任务。但是终端模拟器的选择是非常重要的，因为它会成为你使用最多的程序。我会尝试列出在Linux上好的终端模拟器的一份清单，从经典的到奇特的，但是它们都是有效率且原始的。
 
-If you deem a terminal application not cited here worthy, please let us know in the comments. There are a lot of them out there, and most are completely worthy of your attention.
+如果你认为存在好的终端程序在这里没有提到，请在评论区让我们知道。这里很多没有提到，大多数是值得你注意的。
 
 ### 1. Gnome-terminal ###
 
 ![](https://farm4.staticflickr.com/3699/14100905190_478812cae2_z.jpg)
 
-Let's start with the "classical" terminals, and for Gnome, Gnome-terminal is as classical as it gets. It supports different user profiles, tabs, text re-sizing, transparent background, and a high degree of customization. As its name suggests, it fits in perfectly in a Gnome environment.
+让我们先从“经典”终端开始，对于Gnome而言，Gnome-terminal和Gnome一样经典。它支持不同的用户配置，标签，文本调整，背景转换，和高度的自定义。如它名字暗示的那样，它适用于Gnome环境。
 
 ### 2. Konsole ###
 
 ![](https://farm3.staticflickr.com/2897/14101006647_ec13565200_z.jpg)
 
-Also a big name, Konsole is pretty much the equivalent of Gnome-terminal for KDE environments. One of the few additions is that Konsole supports a split-view mode as well as directory bookmarking.
+同样大名鼎鼎，Konsole在KDE环境下等同于Gnome-terminal。Konsole额外支持一点是分割视图和目录书签。
 
-### 3. (Xfce) Terminal ###
+### 3. (Xfce) terminal ###
 
 ![](https://farm3.staticflickr.com/2928/14100857759_fa29cc968e_z.jpg)
 
-Xfce users also have their own terminal with xfce4-terminal. The idea is to get a product similar to Gnome-terminal in appearance, but much lighter in terms of resources needed. The result is very customizable, but without user profile functionality or transparent background.
+Xfce用户同样有他们的Xfce4终端。这个项目的目的是得到一个Gnome-terminal在外观上相似的产品，但是在资源需求上会少很多。结果是非常可自定义化，但是没有用户配置功能或者透明背景。
 
 ### 4. LXTerminal ###
 
 [![](https://farm6.staticflickr.com/5569/14100905020_dd2b3e830e_z.jpg)][1]
 
-To finish with the most famous terminals for desktop environment, LXTerminal is designed for LXDE environments. As you can imagine, it is even lighter and faster than xfce-terminal, leaving behind complex customization and advanced options, just to keep the tabs.
+为了完成在桌面环境下的最著名终端，LXTerminal是为LXDE环境设计的。如你所想象的，它甚至比xfce-terminal更轻量快速，去除了复杂的自定义和高级选项，只保持了标签。
 
 ### 5. Terminator ###
 
 ![](https://farm4.staticflickr.com/3726/14100980857_1591317b8a_z.jpg)
 
-Now let's get to the Rolls-Royce of terminal emulators. Terminator is one of the most complete software out there. It includes tab, split-view horizontal and vertical, screen captures, user profiles, plugins, and layout manager. Probably more options than you will ever need. The downside is the weight, and the heavy resource consumption. Up to you what you sacrifice.
+现在让我们进入终端模拟器中的劳斯莱斯，Terminator是这里最完整的一款，它包括了标签、水平和垂直分割视图、屏幕捕捉、用户配置、插件、布局管理。可能还有一些你永远都不要的选项。它的缺点是大小，和大量的资源消耗。这些就是你会牺牲的东西。
 
 ### 6. Tilda ###
 
 [![](https://farm6.staticflickr.com/5585/14284203351_2c25a33cb4_z.jpg)][2]
 
-There is also a completely different style of terminal, the so called "drop-down" type. If you like to have your terminal always at the stroke of a key, you might enjoy the next three software options. First, Tilda is the epitome of the drop-down terminal. It is environment free and pretty light. You can set the degree of transparency or even a different background, and then choose from which side of the screen it should appear. Past that, do not expect anything too complex like tabs or split-view. Tilda only does one thing: appear quickly when you need it.
+这里还有一款完全不同的一款终端，它称为“下拉”式。如果你喜欢你的终端总是处于关键的行程，也许你会喜欢下面的三个软件选项。首先，Tilda是下拉式终端的缩影。它不依赖于环境并且非常轻量。你可以设置透明度或者甚至是不同的背景，接下来选中一边的屏幕会显示出来。除去这个，不要期待太复杂的比如标签或者分割视图。Tilda只做一件事：在你需要的时候快速显示出来。
 
 ### 7. Guake ###
 
 ![](https://farm4.staticflickr.com/3733/14285529772_aa824b5e39_z.jpg)
 
-For those of you who like the concept of Tilda, but prefer something more integrated with Gnome, you should try Guake. Concerning the functionalities, they are more or less similar to Tilda. The difference between the two is mostly cosmetic.
+对于喜欢Tilda的概念，但是更喜欢与Gnome结合更紧密的东西，你应该试试Guake。考虑到功能，它多多少少与Tilda相似。两者之间最大的不同是Guake更美观。
 
 ### 8. Yakuake ###
 
 [![](https://farm6.staticflickr.com/5274/14100857589_142fdc4153_z.jpg)][3]
 
-But KDE users are not forgotten either, with Yakuake, which is basically the alternative to Guake for KDE environments. It proposes the same things as Guake, in addition to a tabbed interface and users profiles.
+KDE也不会忘记的Yakuake，它通常是KDE环境下的Guake的替代品。它和Quake一样处理相同的事，除了标签化接口和用户配置。
 
 ### 9. Terra ###
 
 ![](https://farm4.staticflickr.com/3700/14307721343_0e55878bb0_z.jpg)
 
-And for power users, who liked Terminator and want it as a drop-down, I propose you Terra which is the best of both worlds. In between Guake and Terminator, Terra supports split-view and tabs while being a drop-down.
+对于喜欢Terminator和下拉式的资深用户而言，我假设Terra是这两个世界中最好的。在Guake和Terminator之间，Terra在下拉式中支持分割视图和标签。
 
 ### 10. rxvt ###
 
 ![](https://farm3.staticflickr.com/2916/14307721303_805fe977ce_o.png)
 
-If your goal is to be as lightweight as possible, and that you want something close to xterm, then rxvt is for you. With no tabs, no customization, no split-view, no anything, rxvt is the must when it comes to ultra-lightweight. If sometimes you need the bare minimum, then rxvt is for you.
+如果你的目标是尽可能的轻量，你希望接近xterm，那么rxvt就是为你设计的。它没有标签和自定义，没有分割视图，没有任何东西，要极轻量就用rxvt。如果有时你只需要刚好够的功能，那么rxvt就是为你而生的。
 
 ### 11. Sakura ###
 
 ![](https://farm4.staticflickr.com/3823/14287031834_d8a5ac966f_z.jpg)
 
-As lesser known terminal emulator, Sakura is based on GTK but does not require a full Gnome installation. Unlike rxvt, Sakura has a few extras, like tabs and color customization, but tries to keep it simple and basic. So if you want the basics in a lightweight environment-free software, Sakura is probably where to turn to.
+作为一款并不有名的终端模拟器，Sakura基于GTK但是并不需要完整的Gnome安装。不像rxvt，Sakura有一些额外的功能，像标签和颜色自定义，但是它尝试保持简单和基础。因此如果你想要一款不针对特定环境的基础终端，Sakura可能是你想要的。
 
 ### 12. Terminology ###
 
 ![](https://farm4.staticflickr.com/3706/14264408226_a0223861ae_z.jpg)
 
-One of the most exotic terminal out there is Terminology. Originally designed for Enlightenment, it proposes the classical functions that we kept seeing so far, and also throws in a few more that I have not seen before. Among them, the possibility to stream media straight from the terminal, and even thumbnails for file listing. 
+这里面最奇异的终端是Terminology。它原本是为Enlightment设计的，它提出了目前我们看到的经典功能，并且还有我之前没有见过的功能。在这之中有，直接在终端中传输流媒体，甚至是文件列表略缩图。
 
 --------------------------------------------------------------------------------
 
 via: http://xmodulo.com/2014/05/good-terminal-emulator-linux.html
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
