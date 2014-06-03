@@ -1,3 +1,4 @@
+Mine, mine, Translating by GOLinux ...
 Why We Shouldn't Accept Bad Linux Ports
 ================================================================================
 Thanks to the recent fiasco of The Witcher 2 I wanted to write down some thoughts on why we shouldn't accept bad quality ports from developers.
