@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 App Grid Is A Superior Ubuntu Software Center Alternative
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/05/app-grid.png)
