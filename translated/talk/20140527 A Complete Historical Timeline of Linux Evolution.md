@@ -117,7 +117,7 @@ CNprober 翻译完成<travelwithheart@yeah.net, 619913541>
 
 --------------------------------------------------------------------------------
 
-via: http://www.linuxfederation.com/complete-historical-timeline-linux-evolution/
+via: http://www.linuxfederation.com/complete-historical-timeline-linux-evolution/ 
 
 译者：[love\\_daisy\\_love](https://github.com/CNprober) 校对：[校对者ID](https://github.com/校对者ID)
 
