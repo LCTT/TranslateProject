@@ -16,7 +16,7 @@ Linux发展编年表
 
 		" Making Linux GPL'd was definitely the best thing I ever did."
 
-**1月29号** :  Andrew S. Tanenbaum向comp.os.minix邮件列表发送了一封名为[LINUX is obsolete][3]的邮件。总的来说，这次被一些人升级为“战火”的争论是关于Linux和内核架构的。Tanenbaum争辩说宏内核比微内核更加高级，所以Linux是过时的。
+**1月29号** :  Andrew S. Tanenbaum向comp.os.minix邮件列表发送了一封名为[LINUX is obsolete][3]的邮件。总的来说，这次被一些人升级为“战火”的争论是关于Linux和内核架构的。Tanenbaum争辩说微内核比宏内核更加高级，所以Linux是过时的。
 
 **4月5号** : 第一个Linux新闻组，comp.os.linux由Ari Lemmke提议和开通。
 
@@ -111,7 +111,7 @@ Linux发展编年表
 
 ### 2013 ###
 
-**12月13号** : Valve公司发布基于Linux的StreamOS操作系统，这是一个视频游戏控制台系统。
+**12月13号** : Valve公司发布基于Linux的SteamOS操作系统，这是一个视频游戏控制台系统。
 
 --------------------------------------------------------------------------------
 
