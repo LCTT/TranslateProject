@@ -1,3 +1,4 @@
+Translating by john...
 Command line secrets
 ================================================================================
 There are loads of really good reasons to use the command line. It’s the most powerful and concise method of interacting with your computer, as we show in [issue 3 of Linux Voice][1]. However, we decided to take a moment to look at some of its more obscure (and some would say pointless) uses.
