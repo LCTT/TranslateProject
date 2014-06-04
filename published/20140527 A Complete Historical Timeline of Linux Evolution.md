@@ -1,8 +1,8 @@
-一份完整的Linux发展年表
+Linux发展编年表
 ================================================================================
 ![](http://www.linuxfederation.com/wp-content/uploads/2014/05/linux-evolution.jpg)
 
-我们周围到处都有Linux的身影，在家中、公司里、大学、实验室，太空空间站。但是过去它不像现在一样是计算机发展的中坚力量，它只是开始于一个芬兰大学生的个人爱好。现在的Linux已经从一个个人爱好发展成了一场计算机革命。在这篇文章里，我们向你展示最完整的Linux23年发展的历史年表。
+[我们周围到处都有Linux的身影][0]，在家中、公司里、大学、实验室，太空空间站。但是过去它不像现在一样是计算机发展的中坚力量，它只是开始于一个芬兰大学生的个人爱好。现在的Linux已经从一个个人爱好发展成了一场计算机革命。在这篇文章里，我们向你展示最完整的Linux 23年来发展的历史年表。
 
 ### 1991 ###
 
@@ -12,21 +12,21 @@
 
 ### 1992 ###
 
-**1月5号** : Linux [v0.12 release][1] 版本的内核重新以GUN GPL的协议发布。原来的许可证是禁止任何商业用途的。通过这次协议变更，发布和出售修改或未修改版的Linux成为了可能，只要你将这些复制版本以相同的GPL许可证发布，并且有相对应完整的源代码。在后来的一次[采访][2]中,Linus对许可证的更改说了这样一句话（让Linux遵守GPL绝对是我干过的最正确的事）：
+**1月5号** : Linux [v0.12 release][1] 版本的内核重新以GUN GPL的协议发布。原来的许可证是禁止任何商业用途的。通过这次协议变更，发布和出售修改或未修改版的Linux成为了可能，只要你将这些复制版本以相同的GPL许可证发布，并且有相对应完整的源代码。在后来的一次[采访][2]中，Linus对这次许可证的更改说了这样一句话（让Linux遵守GPL绝对是我干过的最正确的事）：
 
-		" Making Linux GPL’d was definitely the best thing I ever did."
+		" Making Linux GPL'd was definitely the best thing I ever did."
 
 **1月29号** :  Andrew S. Tanenbaum向comp.os.minix邮件列表发送了一封名为[LINUX is obsolete][3]的邮件。总的来说，这次被一些人升级为“战火”的争论是关于Linux和内核架构的。Tanenbaum争辩说宏内核比微内核更加高级，所以Linux是过时的。
 
 **4月5号** : 第一个Linux新闻组，comp.os.linux由Ari Lemmke提议和开通。
 
-**5月21号** : Peter MacDonald 发布第一个独立的Linux安装包SLS。可以通过软盘安装，包括比较前沿的TCP-IP网络支持和X Window视窗系统。建议至少预留10M的磁盘空间来安装。
+**5月21号** : Peter MacDonald 发布第一个独立的Linux安装包SLS。可以通过软盘安装，包括比较前沿的TCP-IP网络支持和X Window系统。建议至少预留10M的磁盘空间来安装。
 
 ### 1993 ###
 
 **6月17号** : Slackware Linux由Patrick Volkerding发布。[Slackware][4]被认为是第一个取得广泛成功的Linux发行版，而且它现在还在使用。
 
-**8月16号** : Ian Murdock（Debian中的'ian'）发布了第一个Debian Linux的发行版。Debian是最有影响力的Linux发行版，是MEPIS，Mint，Ubuntu和很多其它发行版的鼻祖。
+**8月16号** : Ian Murdock（Debian中的'ian'）发布了第一个Debian Linux的发行版。Debian是最有影响力的Linux发行版之一，是MEPIS，Mint，Ubuntu和很多其它发行版的鼻祖。
 
 **8月19号** : Matt Welsh写的《Linux Installation and Getting Started》第1版出版，这是第一本关于Linux的书籍。
 
@@ -34,15 +34,15 @@
 
 **3月14号** : [Linux内核V1.0][5]发布。它支持基于i386单处理器的计算机系统。这3年来，内核代码库已经增长到了176,250行。
 
-**3月26号** : 第一期《Linux Journal》杂志发行。这一期杂志的特点是记录了一次对Linus Torvalds的采访和一些Phil Hughes, Robert “Bob” Young, Michael K. Johnson, Arnold Robbins, Matt Welsh, Ian A写的文章。
+**3月26号** : 第一期《Linux Journal》杂志发行。这一期杂志的特点是发表了一篇对Linus Torvalds的采访和一些Phil Hughes, Robert “Bob” Young, Michael K. Johnson, Arnold Robbins, Matt Welsh, Ian A写的文章。
 
 **8月15号** : Willian R. Della Croce, Jr. 申请了“Linux”商标，9月进行了注册。Della Croce在不知道Linux社区财政窘迫的前提下，向煊赫的“Linux公司”写了一封信，要求他们为“Linux”商标使用支付费用。直到1997年，这次风波以将商标转让给代表所有请愿者和Linux使用者的Linus Torvalds而告终。
 
-**11月3号** : Red Hat的共同创始人Marc Ewing宣布可以以49.95美元的零售价格获得Red Hat Software Linux的CD-ROM和30天的安装支持。2012年Red Hat成为[第一家10亿美元的开源公司][6]。
+**11月3号** : Red Hat的共同创始人Marc Ewing宣布可以以49.95美元的零售价格获得Red Hat Software Linux的CD-ROM和30天的安装支持。2012年Red Hat成为[第一家市值达10亿美元的开源公司][6]。
 
 ### 1995 ###
 
-**4月4号** : 开展了第一个专门针对Linux的贸易展和会议系列，名字叫Linux Expo。这成为接下来几年中，最流行和备受关注的年度Linux盛会。贸易展和会议的入场券价格是4美元。3年后，Red Hat接管了这个展会，也是主要的赞助商。
+**4月4号** : 开展了第一个专门针对Linux的贸易展和会议系列，名字叫Linux Expo。这成为接下来几年中，最流行和备受关注的年度Linux盛会。贸易展和会议的入场券价格是4美元。3年后，Red Hat接管了组织工作，同时也是主要的赞助商。
 
 ### 1996 ###
 
@@ -89,11 +89,11 @@
 
 ### 2004 ###
 
-**10月20号** : [Ubuntu][10]以一个不同寻常的版本号4.10和怪异的版本代号“Warty Warthog”（长满疙瘩的非洲疣猪）进入大家的生活。用这个版本号是因为发布日期是2004年10月。Ubuntu的开发由Cannonical Ltd公司主导，公司的创始人是Mark Shuttleworth（就是那个不到30岁的亿万富翁，钱多的不知道怎么花，只能烧钱上太空的游一圈的人--译注）。虽然不是内核的主要贡献者，然而对于Linux台式机和笔记本电脑的采用，Ubuntu扮演着一个重要的角色。
+**10月20号** : [Ubuntu][10]以一个不同寻常的版本号4.10和怪异的版本代号“Warty Warthog”（长满疙瘩的非洲疣猪）进入大家的生活。用这个版本号是因为发布日期是2004年10月。Ubuntu的开发由Cannonical Ltd公司主导，公司的创始人是Mark Shuttleworth（就是那个不到30岁的亿万富翁，钱多的不知道怎么花，只能烧钱上太空的游一圈的人--译注）。Ubuntu虽然不是内核的主要贡献者，然而对于Linux的台式机和笔记本电脑的普及，Ubuntu扮演着一个重要的角色。
 
 ### 2007 ###
 
-**6月6号** : 华硕在2007的台北电脑展上展出了两款“易PC”（Eee PC）：701和1001.第1批易PC预装的是Xandros Linux，这是一个基于Debian，轻量级的为适应小屏幕进行过优化的Linux发行版。
+**6月6号** : 华硕在2007的台北电脑展上展出了两款“易PC”（Eee PC）：701和1001。第1批易PC预装的是Xandros Linux，这是一个基于Debian，轻量级的为适应小屏幕进行过优化的Linux发行版。
 
 **8月8号** : 2007年Linux基金会由[开源发展实验室(OSDL)][11]和[自由标准组织(FSG)][12]联合成立。这个基金会目的是赞助Linux创始人Linus的工作。基金会得到了主要的Linux和开源公司，包括富士通，HP，IBM，Intel，NEC，Oracle，Qualcomm，三星和来自世界各地的开发者的支持。
 
@@ -121,6 +121,7 @@ via: http://www.linuxfederation.com/complete-historical-timeline-linux-evolution
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
+[0]:http://linux.cn/article-2480-1.html
 [1]:https://www.kernel.org/pub/linux/kernel/Historic/old-versions/RELNOTES-0.12
 [2]:http://j.mp/fs-pragmatist
 [3]:https://en.wikipedia.org/wiki/Tanenbaum%E2%80%93Torvalds_debate
