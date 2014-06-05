@@ -27,7 +27,7 @@ via: http://thevarguy.com/ubuntu/052214/ubuntu-linux-community-manager-jono-baco
 [1]:http://www.jonobacon.org/
 [2]:http://www.xprize.org/
 [3]:http://www.jonobacon.org/2014/05/19/goodbye-canonical-hello-xprize/
-[4]:http://www.xprize.org/about/who-we-are
+[4]:http://www.xprize.org/about/who-we-are 
 [5]:http://markshuttleworth.com/
 [6]:http://thevarguy.com/ubuntu/ubuntu-software-store-will-your-kids-try-it
 [7]:http://thevarguy.com/open-source-application-software-companies/tensions-between-ubuntu-fedora-mount-over-new-website
