@@ -1,28 +1,28 @@
-Vic020 
-Why We Shouldn't Accept Bad Linux Ports
+为什么我们不接收不良Linux 接口
 ================================================================================
-Thanks to the recent fiasco of The Witcher 2 I wanted to write down some thoughts on why we shouldn't accept bad quality ports from developers.
+由于最近The Witcher 2的惨败，我想写下些想法，为什么我们不应该接受来自开发人员的不良接口。
 
-Only in recent years have we had so many damned games in our Linux libraries that you now see comments from Linux gamers like "I've got too many games already!" which I imagine now sounds familiar to a lot of you. We have never before seen so much attention from developers thanks to Valve & Steam.
+最近几年在我们linux的游戏库有太多该死的游戏，导致你现在可以看到来自linux玩家的评论“我已经有很多游戏了！”现在我可以想象到很多熟悉的声音。感谢Valve&Steam，之前我们从来没有看见过这么多自来开发者的注意力。
 
-Also thanks to the push from developers we are seeing ports come along that are quite frankly lazy or just downright buggy to the point of being unplayable for a majority of people.
+同样由于开发者的提交，我们看见了伴随而来的接口，它们，坦率地说，质量十分的糟糕或者说对于多数人们彻彻底底的不会用。
 
-The problem is if we keep accepting ports at a sub-par quality then Linux will gain a reputation for having low quality games. Think about that big picture for a moment, seriously.
+这个问题就是如果我们继续接受低水平质量的接口，Linux就会赢得一个游戏质量水平低的声誉。严肃地想想一个贴图的大怪兽。
 
-Imagine if you will that AAA developers started pushing out more games for Linux using technology like this "eON" that was used to port The Witcher 2. Let's say we have a lot of them and it suddenly looks like Linux has a lot of big-name games. You then have plenty of people trying out Linux, and seeing that their games run with terrible performance on the exact same hardware giving them the impression that Linux itself is bad for gaming. That's not good for anyone.
+再想象一下，一个3A开发者给linux推送大量游戏，使用用了The Witcher2接口“eON”的技术。那就是说我们有了大量开发者，就像突然看起来Linux有很多大牌游戏了。然后你可以看见大量的人尝试Linux，却看见它们的游戏运行者糟糕的画面，在同等硬件水品下，就会给它们一个印象，linux对游戏不友好。所以，这对所有人都不好。
 
-I've seen many people say "the toolkit used to port doesn't matter?". That in my eyes is a very naive statement to make. Of course it matters, it can mean the difference of light and day in the quality of a game on Linux. Which directly goes back to my point above about the perception of Linux gaming.
-You can still say the toolkit doesn't matter and use whatever comparison/analogy you fancy, but if the toolkit is the root cause of the issue, like it will be 99% of the time when we are talking about computer software then yes, it does of course matter.
 
-I've seen comments now from other major websites stating we should just accept them and be thankful we have them at all. That is an idiotic statement from people who don't look at the bigger picture.
+我已经看见许多人说“工具包用于接口真的没关系？”。这在我的眼里看来是一个非常天真的声明。当然，这有关系， 它意味Linux的游戏质量光和天的不同。它直接导致我回到关于Linux游戏的认知之上的观点。
+你可以坚持说工具包没有关系和使用任何比较/类比你幻想，但如果工具包是导致问题的根源，如同当我们讨论计算机软件它会占用99%的时间，是的，它当然有关系！
+
+如今，我已经看见许多评论，来自其他主流网页声明，我们应该接受它们并且作感谢状，我们毕竟拥有他们。那真是个白痴的声明，那些不看大局的人。
 
 ![](http://www.gamingonlinux.com/uploads/articles/article_images/1401025331gol2.jpg)
 
-Think about the developers and publishers who will see it as acceptable to push terrible Linux ports out the door and call it a day with only profits in mind. The consumer perception of Linux gaming would worsen yet again with even more bad quality ports.
+想想，那些开发者和发行商认为可以接受推送的糟糕linux接口送出了门，总有一天得召回。它们的脑里只有利润。消费者对Linux游戏的感知就会进一步恶化，就是因为这些不良的接口。
 
-I am all for ports from developers, of course I am I run this site after-all. I as a customer however do not want to pay for games that would work on Windows, but run like a snail on Linux, why should I? Why should you?
+我完全赞同来子开发者的接口，当然毕竟我运行着这个网站。但是，我作为一个消费者不愿意在windows可运行的游戏付钱，可是在linux运行得却像蜗牛，为什么我应该？为什么你应该？
 
-Final added point: You should never attack a developer when they reach out to the community having issues, that's not acceptable. Feedback is fine, but name calling is childish and makes Linux again look bad. 
+最后增加一个观点：当开发者研究出有问题，发布在社区，你们应该从不攻击它们，这是不可接受的。反馈是很好，骂人是很孩子气，这使得Linux再一次看起来糟糕。
 
 --------------------------------------------------------------------------------
 
