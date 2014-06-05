@@ -1,3 +1,4 @@
+GOLinux在此蹲着，不怕臭的来抢。。。
 Write your first Linux Kernel module
 ================================================================================
 > Ever wanted to start hacking the kernel? Don’t have a clue how to begin? Let us show you how it’s done…
