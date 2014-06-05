@@ -1,3 +1,5 @@
+#Translating by shipsw#
+
 How to monitor Nginx web server from the command line in real time
 ================================================================================
 Once Nginx web server is [up and running][1] in a production environment, you will want to monitor its activity in real time. In fact, general network monitoring software such as [Nagios][2], Zabbix, Munin provide support for real-time Nginx monitoring.
