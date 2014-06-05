@@ -2,45 +2,51 @@ Linux大神们的顶级命令行秘诀
 ================================================================================
 ![](http://www.linuxinsider.com/images/rw509807/command-line.jpg)
 
-> "Command-line secrets? There aren't any such things," said blogger Robert Pogson. "Desperate newbie? Type 'help.' Still need a hint? Type 'man whatever.' Want more diversity? Type 'ls /bin /sbin /usr/bin /usr/sbin | less,' pick out a few gems and type 'man whatever' all night long. I've been at it more than a decade. Still having fun." Of course, "one can be addicted to the point of destruction."
-> “命令行秘诀？根本就没这玩样。”博主罗伯特·柏格森说。“新手们，你们失望了？那就猛敲‘help’吧。还想要点提示？随便‘man’个什么吧。想更多来点不同？敲‘ls /bin /sbin /usr/bin /usr/sbin | less’，随便捡几个宝贝命令出来，整晚地‘man’去吧。我已经干那活超过十年了，到现在还玩得不亦乐乎。”当然，“
-**W**ell it was a relatively quiet week here in the Linux blogosphere, giving residents a long-overdue opportunity to catch their collective breath, enjoy a few Tequila Tux cocktails and take stock of all the FOSS-related happenings that have taken place over the past few weeks.
+<<<<<<< HEAD
+> “命令行秘诀？根本就没这玩样。”博主罗伯特·柏格森说。“新手们，你们失望了？那就猛敲‘help’吧。还想要点提示？随便‘man’个什么吧。想更多来点不同？敲‘ls /bin /sbin /usr/bin /usr/sbin | less’，随便捡几个宝贝命令出来，整晚地‘man’去吧。我已经干那活超过十年了，到现在还玩得不亦乐乎。”当然，“某人可要对破坏之类的事情上瘾了。”
+=======
+> “命令行秘诀？根本就没这玩样。”博主罗伯特·柏格森说。“失望了吧，新手？那就猛敲‘help’吧。还想要点提示？随便‘man’个什么吧。想更多来点不同？敲‘ls /bin /sbin /usr/bin /usr/sbin | less’，随便捡几个宝贝命令出来，整晚地‘man’去吧。我已经干那活超过十年了，到现在还玩得不亦乐乎。”当然，“某人可要对破坏之类的事情上瘾了。”
+>>>>>>> 51f3aeffb27a659d5154c500cf16bafe572a4007
 
-Among the highlights, for those who missed them, were [the awarding][1] of the [IEEE][2] Computer Society's 2014 Computer Pioneer Award to none other than Linus Torvalds; [the arrival][3] of Tails OS 1.0; and, perhaps most exciting of all, [the release][4] of Seattle-based band [netcat's][5] debut album as a Linux kernel module.
+**好**吧，Linux博客圈这里这周相对比较平静，给网民们一个拖了很久的机会集体喘口气吧，去享受一下龙舌兰、燕尾服、鸡尾酒带来的欢快吧，然后评估一下过去几周来发生的和自由开放软件相关的事件吧。
 
-"Are you ever listening to an album, and thinking 'man, this sounds good, but I wish it crossed from user-space to kernel-space more often!'" netcat wrote on its Facebook page. "We got you covered. Our album is now fully playable as a loadable Linux kernel module."
+有些人错过了这些重大新闻：[IEEE][2]的[颁奖礼][1]，计算机世界的2014计算机先驱奖正是颁发给了李纳斯·托沃兹；Tails OS 1.0的[到来][3]；以及，也许是最令人激动的事情，位于西雅图的乐队[网猫][5][发布了][4]作为Linux内核模块的首张唱片。
 
+“你是否曾经在听一张专辑的时候想过‘伙计，这听起来不错，但是我希望它能经常从用户空间过渡到内核空间去！’”网猫在Facebook上写道，“我们会全力支持你的。我们的专辑现在完全可以作为一个可加载的Linux内核模块来播放。”
+<<<<<<< HEAD
 Linux Girl thought she had seen it all here in the Linux world, but now she realizes she was wrong. Thank you, netcat, for keeping life interesting!
+=======
+Linux女孩曾经认为她自己已经完全进入Linux世界了，但是她现在却意识到她的想法是错误的。谢谢你们，网猫，是你们让生活一直这么有趣！
+>>>>>>> 51f3aeffb27a659d5154c500cf16bafe572a4007
 
-### 'Command Line Secrets'  ###
+### ‘命令行秘诀’ ###
 
 ![](http://www.linuxinsider.com/images/article_images/linuxgirl_bg_pinkswirl_150x245.jpg)
 
-Speaking of interesting, there's nothing like a little shop talk around the bar to pass the time during a quiet week, and last week afforded a dose of that as well. Life is good here in the Linux blogosphere!
+说到有趣，没什么比围坐在吧台前谈论行业内的事情来度过平静的一周更带劲了，而上周搞了一次。Linux博客圈内的生活很惬意。
 
-The forum was Linux Voice -- that shiny, new magazine alert readers may remember [launched late last year][6] -- and the topic was none other than [command line secrets][7].
+座谈会内容是Linux声音杂志——那本闪亮的新杂志让读者可以记得它是[去年年底发布的][6]——而谈话的主题恰恰就是[命令行秘诀][7]
 
-Linux Girl couldn't resist.
+Linux女孩要忍不住了。
 
-### 'It Manages to Render Most Web Pages'  ###
+###  ‘它打算渲染大多数网页’  ###
 
-"There are loads of really good reasons to use the command line," wrote the masterminds at Linux Voice. "It's the most powerful and concise method of interacting with your computer.
+“有很多使用命令行的真正的好理由，”Linux声音的策划者写道，“它是让你和计算机进行交互的强大而简明的方法“
 
-"However, we decided to take a moment to look at some of its more obscure (and some would say pointless) uses," they added.
+“然而，我想花点时间来看看它里头一些更为晦涩的用法（有人会说毫无意义，不值得去做了）。“他们补充说。
 
-Top of the magazine's list is the elinks Web browser: "It might not be as colorful as its more famous rivals, but it manages to render most Web pages," they explained. "As well has having geek-chic, it can come in handy when you just need to quickly check if a Web page is accessible from a computer you only have SSH access to."
+杂志列表顶端是elinks网页浏览器：“它可能看起来没有它的竞争对手那样光彩照人，但它打算渲染大多数网页。”他们解释道，“它也有着极客时尚，当你需要快速检查你是否能从只能通过SSH访问的计算机上去访问网页时，它就会派上用场了。“
 
-The list goes on from there to include looking up definitions on Wikipedia, among other tips.
+列表从那里继续，包含了从维基百科上查阅一些定义等其它一些实用的小建议。
 
-Down at the Broken Windows Lounge, patrons had plenty of suggestions of their own.
+从破窗休息室下来，老主顾们获得了大量他们自己的建议。
 
-### 'Great for Maintenance'  ###
+### '对维护很重要'  ###
 
-"Very nice tips on CL commands, very nice," enthused Google+ blogger Alessandro Ebersol, for example. "But they forgot [cowsay][8], which is great for having some laughs in the darkness of a terminal."
+“命令行命令的提示很不错，真的很不错。”比如，Google+博主亚历桑德鲁：埃伯索尔满怀热情地说，“但是他们忘了[cowsay][8]，它可以用来在黑漆漆的终端里博你一笑。“
+”命令行对于维护很重要。“他补充说，”大家可以使用bash脚本来自动化，只需按几个快捷键（或者只要一个就行）来完成复杂的任务。”
 
-The command line "is great for maintenance," he added. "One can automate with bash scripts and make complex tasks with few (or just one) keystrokes."
-
-Other command line secrets Ebersol would add to the original list are sl (steam locomotive), along with [these nuggets][9]:
+其它命令行秘诀，埃伯索尔会把它们放进原始列表的是sl（蒸汽机车），还有这些[这些金点子][9]：
 
     * % cat "food in cans"
     cat: can't open food in cans
@@ -53,47 +59,46 @@ Other command line secrets Ebersol would add to the original list are sl (steam 
     * % man: why did you get a divorce?
     man:: Too many arguments.
 
-### 'The Most Precious Gem'  ###
+### '最珍贵的精华'  ###
 
-"Command-line secrets? There aren't any such things," blogger [Robert Pogson][10] told Linux Girl. "Desperate newbie? Type 'help.' Still need a hint? Type 'man whatever.' Want more diversity? Type 'ls /bin /sbin /usr/bin /usr/sbin | less,' pick out a few gems and type 'man whatever' all night long. I've been at it more than a decade. Still having fun."
+“命令行秘诀？根本没这玩样。”博主[罗伯特：伯格森][10]告诉Linux女孩道，”失望了吧，新手？那就猛敲‘help’吧。还想要点提示？随便‘man’个什么吧。想更多来点不同？敲‘ls /bin /sbin /usr/bin /usr/sbin | less’，随便捡几个宝贝命令出来，整晚地‘man’去吧。我已经干那活超过十年了，到现在还玩得不亦乐乎。”
+		
+伯格森记不得多久以前他发现了‘ssh’，但是“它是自由/开源软件世界中最珍贵的精华了。“他说。
 
-Pogson doesn't remember how long ago he discovered 'ssh,' but "it's the most precious gem of the FLOSS world," he said.
+”ssh的强大力量在于，你可以在一台计算机上输入命令获得快乐，你更可以在100台计算机上干同样的事情来获得100倍的快乐。“他补充道，”当然，要输入100次命令可不是闹着玩的。所以，学习一下通过ssh安全地无密码登陆，可以让ssh的远程登陆透明化。“
+### '带着尊重来用吧'  ###
 
-"The awesome power of ssh is that the joy you have with typing commands on one computer can allow you a hundred times the joy on 100 computers," he added. "Of course, it's not fun to type passwords 100 times, so learn to use secure passwordless logins with ssh to make logging in remotely transparent."
+当然，”就像干任何快乐的事一样，有人会沉迷于搞破坏。“伯格森警告道，”作为root用户，你可以输入命令来删除所有的东西，或者把这一切搞乱。“
 
-### 'Use It With Respect'  ###
+”这是核心选择权，就像处理世界事务一样，在按下那个键之前一定要三思而后行，评估干这事所产生的结果，带着尊重和高尚的动机来使用它。“他补充道。
 
-Of course, "just as with any pleasurable activity, one can be addicted to the point of destruction," Pogson warned. "As root, you can type commands to delete everything or otherwise mess things up.
+”我曾经删除了一个文件系统，因为我的大拇指蹭到了空格键调出了一个命令。“伯格森总结道，”坦白地说，我只干过这样的事情一次。“
 
-"This is the nuclear option, and just as world leaders should sit on their hands and think carefully before pushing the button, value this power and use it with respect and higher motivations," he added.
+### '很强大'  ###
 
-"I once deleted a file system because my thumb dragged the space bar into a command," Pogson concluded. "I only did that once. Honest."
+Google+博主贡萨洛：贝拉斯科C不那么热情。
 
-### 'Very Powerful'  ###
+“即使[GUI][11]工具更易用，在*nix领域，命令行仍然很强大。“他告诉Linux女孩，”甚至一些有能力的MacOS用户也用它们。”
 
-Google+ blogger Gonzalo Velasco C. was no less enthusiastic.
+对于贡萨洛：贝拉斯科C他自己而言，“我想要掌握的唯一一些命令是进程控制和杀死命令，想要使用ctrl+alt+退格键，因为我可以用来处理给我造成麻烦的那个进程，我还想要掌握tar.gz文件的管理——那玩样到现在还让我头痛。“他说。
 
-"Even though the [GUI][11] tools are easier, in the *nix universe, the command line remains very powerful," he told Linux Girl. "Even some power MacOS users use them."
+#### '你正在做错事' ####
 
-As for Gonzalo Velasco C. himself, "the only commands I would like to master are the process control and killing, to use with ctrl+alt+backspace, so I can handle the one process that is giving me trouble, and the tar.gz files management -- that to this very day remains a pain for me," he said.
+最后一点，但并非不重要，SoylentNews博主hairyfeet有一个完全不同的观点。
 
-#### 'Ur Doing It Wrong' ####
+“我只想谈一件事情来充实一下命令行界面这个报道：如果你不干IT，而且做着一些重复的事情，而这些事情只是很简单、很原始地去记录一些有用的事情，但你还在用命令行，那么‘你在走一条不归路’“hairyfeet告诉Linux女孩，”命令行界面没什么神奇——它只是1970年代以来的一个图形化界面！“
 
-Last but not least, SoylentNews blogger hairyfeet had a different perspective altogether.
+今天，有很多“有用的图形化界面，这要多亏了CPU频率和内存的增加，而不是一美元店里的廉价手表——我们甚至有IDE和脚本语言大大超过70年代那个复辟古董货，在广域网或者局域网上工作，并与操作系统最底层交互，一切都在变得更易用，这多亏了智能感应和自动完成这样的技术。“他解释说，”所以上天作证，如果你不是那3%的系统管理员，工作在以字节计数的世界里，你会把那一堆垃圾从陈年旧帐中翻出来？
 
-"The only thing I would add to a story about CLI is this: If you aren't working in IT and performing repetitive tasks where having an extremely simplistic, primitive way to script something is useful, and yet you are still using CLI, then 'ur doing it wrong,'" hairyfeet told Linux Girl. "A CLI isn't magic -- it's a GUI from the 1970s!"
+Hairyfeet的最佳命令行建议？“不要——被21世纪那些不切实际的想法所左右，学学怎样真正来使用语言和工具吧。“他总结道，”让命令行成为泡影，把软盘都扔进历史的垃圾桶吧。“
 
-Today there are "useful GUIs thanks to actually having more CPU and RAM than a dollar-store watch -- we even have IDEs and scripting languages that can run rings around that 70s throwback, work across the WAN or LAN and interact with the deepest levels of the OS, all while being easier to use thanks to technologies like intellisense and autocomplete," he explained. "So why in God's name, if you aren't one of the 3 percent who are administering systems where every single byte counts, would you be dragging that old pile of junk out of mothballs?"
-
-Hairyfeet's best CLI advice? "Don't -- join the rest of the planet in the 21st century and learn how to use real languages and tools," he concluded. "Let CLI join bubble memory and floppies on the dustbin of history."
-
-> atherine Noyes is always on duty in her role as Linux Girl, whose cape she has worn since 2007. A mild-mannered journalist by day, she spends her evenings haunting the seedy bars and watering holes of the Linux blogosphere in search of the latest gossip. You can also find her on [Twitter][12] and [Google+][13].
+> 银汉鱼诺伊斯总是尽忠职守当好她的Linux女孩，那件斗篷她从2007穿到现在了。作为一个白天举止温和的女记者，她晚上像逛夜店一样，为了搜寻最新的小道消息，在Linux博客圈上灌水。你也能在 [Twitter][12]和[Google+][13]上找到她。
 
 --------------------------------------------------------------------------------
 
 via: http://www.linuxinsider.com/story/80437.html?rss=1
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[GOLinux](https://github.com/GOLinux) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
