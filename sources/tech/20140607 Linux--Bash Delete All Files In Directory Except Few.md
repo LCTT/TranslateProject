@@ -1,3 +1,5 @@
+>> chenguang is translating 
+
 Linux: Bash Delete All Files In Directory Except Few
 ================================================================================
 ![](http://s0.cyberciti.org/images/category/old/terminal.png)

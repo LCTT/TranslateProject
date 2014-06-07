@@ -1,3 +1,4 @@
+CNprober 翻译中...
 How to turn Vim into a full-fledged IDE
 ================================================================================
 If you code a little, you know how handy an Integrated Development Environment (IE) can be. Java, C, Python, they all become a lot more accessible when the IDE software is checking the syntax for you, compiling in the background, or importing the libraries you need. On the other hand, if you are on Linux, you might also know how handy Vim can be when it comes to text editing. So naturally, you would like to get all the features of an IDE from Vim.
