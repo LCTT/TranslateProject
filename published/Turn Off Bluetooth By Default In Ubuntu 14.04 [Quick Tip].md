@@ -1,4 +1,4 @@
-在Ubuntu 14.04中默认关闭蓝牙[快速秘诀]
+如何在Ubuntu 14.04中默认关闭蓝牙
 ================================================================================
 ![](http://itsfoss.com/wp-content/uploads/2014/05/Bluetooth_Ubuntu.jpeg)
 
@@ -10,7 +10,7 @@
 
 ### 在Ubuntu 14.04中默认关闭蓝牙： ###
 
-打开一个终端并使用以下命令来安装[gksu][2]（如果你还没有安装它的话）。
+打开一个终端并使用以下命令来安装[gksu][2]（如果你还没有安装它的话）（译注：如果你已经有了gksu，那么可以使用它；如果还没有，也不想安装，那你使用sudo一样可以）。
 
     sudo apt-get install gksu
 
@@ -32,13 +32,13 @@ gksu是用来在以root权限运行程序时输入密码的程序。当你已经
 
 这一小部分只是对我们做了什么进行简短的解释。您并不一定要阅读完这一部分。您可以直接跳到评论部分留下您的建议和感谢 :)
 
-rc.local文件是用来记录在系统启动的时候运行的各种shell命令的。这些命令是用户定义的。在一个干净的安装中，rc.local文件中没有任何命令。我们做的就是在这里面加入命令 **rfkill block bluetooth**。[rfkill][3]是一个用来查询各种开关，按钮和底层系统接口状态的工具。我们在rc.local中使用这个命令来在每次启动的时候软关闭（译注：与其对应的是硬关闭，指通过硬件开关来关闭）蓝牙。我希望这些能把原理解释的清楚一点。
+rc.local文件是用来记录在系统启动的时候运行的各种shell命令的。这些命令是用户定义的。在一个新的安装中，rc.local文件中没有任何命令。我们做的就是在这里面加入命令 **rfkill block bluetooth**。[rfkill][3]是一个用来查询各种开关，按钮和底层系统接口状态的工具。我们在rc.local中使用这个命令来在每次启动的时候软关闭（译注：与其对应的是硬关闭，指通过硬件开关来关闭）蓝牙。我希望这些能把原理解释的清楚一点。
 
 --------------------------------------------------------------------------------
 
 via: http://itsfoss.com/turn-off-bluetooth-by-default-in-ubuntu-14-04/
 
-译者：[alim0x](https://github.com/alim0x) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[alim0x](https://github.com/alim0x) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

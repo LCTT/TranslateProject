@@ -1,4 +1,3 @@
-（翻译中 by runningwater）
 Encrypting Your Cat Photos
 ================================================================================
 The truth is, I really don't have anything on my hard drive that I would be upset over someone seeing. I have some cat photos. I have a few text files with ideas for future books and/or short stories, and a couple half-written starts to NaNoWriMo novels. It would be easy to say that there's no point encrypting my hard drive, because I have nothing to hide. The problem is, we wrongly correlate a "desire for privacy" with "having something to hide". I think where I live, in America, we've taken our rights to privacy for granted. Rather than the traditional "he must be hiding porn or bombs", think about something a little more mundane.
