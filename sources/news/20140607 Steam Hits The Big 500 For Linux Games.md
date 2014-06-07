@@ -1,3 +1,5 @@
+alim0x translating
+
 Steam Hits The Big 500 For Linux Games
 ================================================================================
 ![](http://www.gamingonlinux.com/uploads/articles/article_images/1401998399steam.png)
