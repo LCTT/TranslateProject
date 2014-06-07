@@ -1,5 +1,3 @@
-GOLinux Translating!
-
 Guide To Install Ubuntu 14.04 In Dual Boot Mode With Windows 8 Or 8.1 UEFI
 ================================================================================
 ![](http://itsfoss.com/wp-content/uploads/2014/05/Dual_Boot_Windows8_Ubuntu_1404.jpeg)
