@@ -1,3 +1,4 @@
+好吧，这么长的东东，GOLinux来占了吧。
 Making Linux Feel at Home
 ================================================================================
 **Hiring Tux is a smart move for both small and large businesses. Linux once was considered a hobbyist's operating system, but it has come a long way and now is considered enterprise class. It is considered very stable and secure. Linux can easily be customized, and there is a huge community eager to help out. Those are just some of the reasons to migrate to the Linux desktop.**
