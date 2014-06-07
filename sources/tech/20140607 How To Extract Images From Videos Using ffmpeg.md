@@ -1,3 +1,4 @@
+linuhap翻译中
 How To Extract Images From Videos Using ffmpeg
 ================================================================================
 Hi unixmen readers,
