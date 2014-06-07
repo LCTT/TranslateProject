@@ -1,3 +1,5 @@
+alim0x translating
+
 Ubuntu One Formally Shuts Down
 ================================================================================
 **Ubuntu One is now formally in shut-down. You have until July 31 to grab your files or they will be lost forever. **
