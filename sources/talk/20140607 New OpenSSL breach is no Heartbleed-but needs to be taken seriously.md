@@ -1,3 +1,4 @@
+[translating BY lolipop]
 New OpenSSL breach is no Heartbleed, but needs to be taken seriously
 ================================================================================
 > Summary: While the newest OpenSSL security problems are troubling, and you should address it, it's nothing as bad as Heartbleed.
