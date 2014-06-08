@@ -1,5 +1,3 @@
-Translating by GOLinux ...
-
 How to launch applications differently with Gnome-Pie on Linux desktop
 ================================================================================
 The biggest complaint you can hear those days about Ubuntu is the new Unity interface. I remember leaving for Archlinux precisely when Unity started to rise, and when it was made clear that it was here to stay. However, Unity indirectly has led to good consequences: it allowed other distributions and other desktop environments to become more prominent as people were unhappy with it. If your system can support it, no one is against a bit of eye candy.
