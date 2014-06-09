@@ -1,3 +1,7 @@
+Translating-----------geekpi
+
+
+
 How To Know If Your System Has USB 3.0 Port In Linux [Quick Tip]
 ================================================================================
 Most of the new computers come with USB 3.0 ports these days. But **how can you know if your computer has USB 3.0 port** or not? In this quick tip, we shall see how to find if your system has USB 3 or USB 2 in Linux.
