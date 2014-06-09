@@ -16,7 +16,7 @@ Canonical在今年早些时候宣布[将会关闭这项服务][1],理由是缺�
 
 Canonical也和云存储迁移服务商[mover.io][2]达成合作，允许用户直接从Ubuntu One向其它服务，比如Dropbox，Google Drive以及Copy导入文件。
 
-Mover，一个将Ubuntu One形容为“...一个世界级的文件同步及分享产品”的云存储迁移服务商，现向Ubuntu One用户免费提供数据迁移服务，尽管它需要用户创建一个账户。该公司通常只允许免费用户迁移最多2GB的数据。
+Mover，一个云存储迁移服务商，它盛誉Ubuntu One为“...一个世界级的文件同步及分享产品”，现向Ubuntu One用户免费提供数据迁移服务，尽管它需要用户创建一个账户。该公司通常只允许免费用户迁移最多2GB的数据。
 
 向了解通过mover.io将你的数据迁移到Google Drive的更多细节，请查阅下列知识库文章。
 
@@ -32,7 +32,7 @@ Mover，一个将Ubuntu One形容为“...一个世界级的文件同步及分�
 
 via: http://www.omgubuntu.co.uk/2014/06/ubuntu-one-discontinued-grab-files-now
 
-译者：[alim0x](https://github.com/alim0x) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[alim0x](https://github.com/alim0x) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
