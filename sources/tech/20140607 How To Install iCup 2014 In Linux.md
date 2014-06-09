@@ -1,33 +1,32 @@
-Vic020
-How To Install iCup 2014 In Linux
+用iCup在linux追世界杯
 ================================================================================
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/06/icup2014-790x389.png)
 
-Hi linux geeks,
+嗨，Linux 极客们，
+ 
+在本文简短的叙述中，我将教你如何在Linux中安装一个非常棒的2014FIFA世界杯APP。这个应用叫iCup，支持Windows，Mac以及伟大的Linux。
 
-In this short tutorial, I will teach you how to install a very nice app for the 2014 FIFA World Cup in your Linux distribution. The application is called iCup and is available for Windows, Mac and Linux.
+我看足球比赛已经有很长的时间了，所以我得我的电脑上安装这样的应用来保持更新2014世界杯的最新情况。我不想在我朋友们面前看起来一无所知。iCup应用正好提供了每一场赛程、比分、球队教练组等信息。更有提供实时比赛更新，给你正在进行的比赛的最新数据。
 
-It has been a very long time since I have watched a football match so I thought to install this app on my machine to stay updated with the latest statistics on World Cup 2014. I don’t want to look like an ignorant regarding football in front of my friends. The iCup application can provide information on matches schedule, scorers, team coaches and formations of every match. There are also real time updates that give you the latest data during the matches.
+### 支持一下功能： ###
 
-### It supports the following features: ###
+- 30种语言支持，完全本地化（使用语言菜单选择）
+- 可以随意调整窗口大小的独家灵活的界面
+- 可按天、阶段检索的比赛日历
+- 可视化分组
+- 支持自动转变比赛时间来适应本地时间和格式
+- 一键化社交网络发表比赛评论（支持Facebook，Google+和Twitter）
+- 支持代理（支持基本认证和摘要认证方法）
 
-- Fully localizable on the fly in about 30 languages (use the language menu into the option panel)
-- Exclusive flexible user interface that adapt the data size to the window dimensions
-- Searchable matches calendar also groupable by day or stage
-- Graphical visualization of groups and 2° stage
-- Support for the conversion of the matches dates and time based on your local timezone and your system format.
-- Direct linking for commenting the results into your preferred social network (Facebook, Google+ and Twitter)
-- Proxy support (basic and digest authentication method supported)
+我已经在Ubuntu12.04LTS上测试并且运很好！目前为止，我没有经历过任何错误或崩溃。你可以十分轻松地安装这个很棒的应用，通过[官方网站][1]你可以得到压缩包，然后你可以解压到任何你喜欢的地方。解压完成后，双击iCup 2014 FREE- Brazil运行。
 
-I have tested it on my Ubuntu 12.04 LTS system and it works great. I have not experienced any errors or crashes so far. You can easily install this great app on your system by grabbing a copy of it on the [official website][1] and then extract the archive on your favourite destination. Once the archive is extracted, double click on iCup 2014 FREE – Brazil and the app will open.
-
-iCup is very useful to me, I hope you find it useful too.
+iCup 对我非常有用，我希你也能享受到。
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/install-icup-2014-linux/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Vic020](http://www.vicyu.net) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
