@@ -1,5 +1,3 @@
-第四步中的步骤根据实际情况进行了适当修改，Windows操作以及Ubuntu安装过程中的名词根据中文版实际情况进行了修改。第六步中从USB启动的步骤感觉不大对，需要确认。第六步第三段实际中选择语言和安装或试用在同一界面，选择语言那句翻译需要确认。
-
 在UEFI模式下安装Ubuntu 14.04与Windows 8/8.1双启动
 ================================================================================
 ![](http://itsfoss.com/wp-content/uploads/2014/05/Dual_Boot_Windows8_Ubuntu_1404.jpeg)
@@ -32,11 +30,11 @@
 
 ![](http://itsfoss.com/wp-content/uploads/2014/05/disk_partition.jpeg)
 
-在磁盘管理工具中，右键点击你想划分并压缩的卷。在我的演示中，我选择C盘进行压缩卷，划分出未分配空间：
+在磁盘管理工具中，右键点击你想划分并缩小的卷。在我的演示中，我选择C盘的卷进行缩小，划分出未分配空间：
 
 ![](http://itsfoss.com/wp-content/uploads/2014/05/disk_partition_Windows8.jpeg)
 
-你可以就这么保留着未分配空间。我们会在安装Ubuntu时用到它。
+缩小后出现的未分配空间就放在那里好了，不用对其分区和格式化。我们会在安装Ubuntu时用到它。
 
 #### 第四步：在Windows中禁用快速启动 [可选] ####
 
@@ -48,13 +46,15 @@
 
 这是最重要的步骤。Windows 8新的安全启动（secure boot）原本是针对rootkit病毒的安全特性，但它也阻止了Windows和Linux的双启动。为了实现Windows和Linux的双启动，我们必须在UEFI中禁用安全启动（secure boot）。
 
+可以参见：[如何在 Win8 上禁用 UEFI 安全引导以安装Linux][4]。
+
 #### 第六步：安装Ubuntu，与Windows 8共存 ####
 
 一旦你禁用了安全启动（secure boot），那就是时候安装Ubuntu了。我希望你像第二步中提到的一样创建了一个USB启动盘。插入U盘，然后从U盘启动系统。
 
-要从USB启动，需要在Windows中选择从USB启动选项。从电脑设置（像UEFI）中选择或在点击重新启动的时候按住Shift键。
+要从USB启动，需要在Windows中选择从USB启动的选项。从电脑设置（像UEFI）中选择选项或在点击“重新启动”的时候按住Shift键。
 
-当你启动到live USB模式后，你会看到试用（try）或者安装（install）Ubuntu。选择语言，然后点击安装Ubuntu（install）。接下来是关于硬盘空间，电源和网络连接等等的一些检查。只需点击**继续**。
+当你用USB启动盘启动后，你会看到试用（try）或者安装（install）Ubuntu的选择，这里要点击“安装”。另外在屏幕上不多的设置选项里面，你可以选择你用的语言。接下来是关于硬盘空间，电源和网络连接等等的一些检查。只需点击**继续**。
 
 ![](http://itsfoss.com/wp-content/uploads/2014/05/Installing_Windows8_Ubuntu.jpeg)
 
@@ -62,11 +62,11 @@
 
 ![](http://itsfoss.com/wp-content/uploads/2014/05/Installing_Windows8_Ubuntu_1.jpeg)
 
-还记得我们事先划分的未分配空间吗？我们将用它来创建根分区（Root），交换空间（Swap）以及家目录（Home）。选择空闲（free space）然后点击加号（+）。
+还记得我们事先划分的未分配空间吗？我们将用它来创建根分区（ / ），交换空间（Swap）以及家目录（Home）。选择空闲（free space）然后点击加号（+）。
 
 ![](http://itsfoss.com/wp-content/uploads/2014/05/Installing_Windows8_Ubuntu_2.jpeg)
 
-它会给你提供创建Linux分区的选项。我们正在创建根分区（Root）。10-20GB空间就足够了。选择大小（Size），选择Ext 4作为文件系统以及/（意思是根-root）作为挂载点（Mount point）。
+它会给你提供创建Linux分区的选项。我们正在创建根分区 /。10到20GB空间就足够了。选择大小（Size），然后选择Ext 4作为文件系统以及 /（意思是根）作为挂载点（Mount point）。
 
 ![](http://itsfoss.com/wp-content/uploads/2014/05/Installing_Windows8_Ubuntu_3.png)
 
@@ -78,7 +78,7 @@
 
 ![](http://itsfoss.com/wp-content/uploads/2014/05/Installing_Windows8_Ubuntu_5.png)
 
-分配好了根分区（Root），交换空间（Swap）和家目录（Home）之后，点击**现在安装（Install Now）**：
+分配好了根分区（ / ），交换空间（Swap）和家目录（Home）之后，点击**现在安装（Install Now）**：
 
 ![](http://itsfoss.com/wp-content/uploads/2014/05/Installing_Windows8_Ubuntu_6.jpeg)
 
@@ -92,10 +92,11 @@
 
 via: http://itsfoss.com/install-ubuntu-1404-dual-boot-mode-windows-8-81-uefi/
 
-译者：[alim0x](https://github.com/alim0x) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[alim0x](https://github.com/alim0x) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [1]:http://itsfoss.com/install-ubuntu-dual-boot-mode-windows/
 [2]:http://www.makeuseof.com/tag/6-safest-ways-to-backup-restore-your-files-in-windows-7-8/
 [3]:http://www.pendrivelinux.com/universal-usb-installer-easy-as-1-2-3/
+[4]:http://linux.cn/article-3061-1.html
