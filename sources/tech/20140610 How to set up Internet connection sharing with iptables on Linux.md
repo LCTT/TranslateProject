@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 How to set up Internet connection sharing with iptables on Linux
 ================================================================================
 In this tutorial, I'll explain how to share a single Internet connection among multiple devices on Linux. While consumer-grade WiFi routers have become mainstream nowadays, making this problem a non-issue, suppose you don't have one at home. However, say you have a Linux box already assembled with a modem and a LAN card. The modem is connected to the Internet with a dynamic public IP address, and the LAN card connected to your switch/hub. Other devices (Linux/Windows PC, laptop) are connected to the switch without having any Internet connection. To share the Internet connection of the Linux box, you have to turn the box into a gateway, so that it can relay traffic to and from other devices.
