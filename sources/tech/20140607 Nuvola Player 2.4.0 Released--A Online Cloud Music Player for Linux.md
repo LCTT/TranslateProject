@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Nuvola Player 2.4.0 Released – A Online Cloud Music Player for Linux
 ================================================================================
 **Nuvola Player** is an open source player that runs cloud music services such as Amazon Cloud Player, Bandcamp, Deezer, 8tracks, Google Play Music, Grooveshark, Hyper Machine and Pandora in its own web interface and provides integration with a Linux desktop.
