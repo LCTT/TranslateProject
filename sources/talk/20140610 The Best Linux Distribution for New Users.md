@@ -1,3 +1,4 @@
+linuhap翻译中
 The Best Linux Distribution for New Users
 ================================================================================
 This is a debate that most certainly brings out the beast in many a Linux user. The argument doesn't generally boil down to which distribution is truly best suited for new users, but which distribution is favored by those in the debate. If we set our personal preferences aside, a clearer picture can arise. But even that clarity can quickly get obscured by the needs and desires of the new users. Given that, I decided to take a different approach to finding the “best distro for new users." My criteria for best distribution must not only be easy to use, but also must appeal to a more modern design aesthetic brought about by the ever-growing thrust of the mobile interface metaphor.
