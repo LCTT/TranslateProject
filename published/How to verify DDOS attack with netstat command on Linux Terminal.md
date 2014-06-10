@@ -9,7 +9,7 @@ Dos攻击或者DDos攻击目的是使服务器或者网络资源耗尽，使其�
 
 netstat命令的用户手册描述其作用是用来显示网络连接、路由表、接口统计、伪连接和组播成员的。
 
-## 一些例子和解释 ##
+### 一些例子和解释 ###
 
     netstat -na
 
@@ -47,18 +47,19 @@ netstat命令的用户手册描述其作用是用来显示网络连接、路由�
     
 列出所有连接到本机80端口的IP地址和其连接数。80端口一般是用来处理HTTP网页请求。
 
-## 如何减少DOS攻击 ##
+### 如何减少DOS攻击 ###
 
 一旦你获得攻击服务器的IP地址你就可以使用以下命令拒绝此IP的所有连接。
 
     iptables -A INPUT 1 -s $IPADRESS -j DROP/REJECT
 
 注意，你需要将 $IPADRESS 替换成需要拒绝连接的IP地址。
+
 执行完以上命令后，使用以下命令结束所有的httpd连接以清理系统。
 
     killall -KILL httpd
 
-    然后执行以下命令重启httpd服务。
+然后执行以下命令重启httpd服务。
 
     service httpd start           #RedHat 系统 
     
@@ -70,7 +71,7 @@ netstat命令的用户手册描述其作用是用来显示网络连接、路由�
 
 via: http://linuxaria.com/howto/how-to-verify-ddos-attack-with-netstat-command-on-linux-terminal
 
-译者：[shipsw](https://github.com/shipsw) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[shipsw](https://github.com/shipsw) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

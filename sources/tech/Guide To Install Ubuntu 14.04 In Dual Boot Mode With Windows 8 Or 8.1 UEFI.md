@@ -1,4 +1,4 @@
-GOLinux Translating!
+alim0x translating
 
 Guide To Install Ubuntu 14.04 In Dual Boot Mode With Windows 8 Or 8.1 UEFI
 ================================================================================

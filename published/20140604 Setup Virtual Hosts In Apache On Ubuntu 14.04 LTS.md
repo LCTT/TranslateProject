@@ -1,70 +1,71 @@
-disylee 占一个，不要跟我抢啦~~
-Setup Virtual Hosts In Apache On Ubuntu 14.04 LTS
+在Ubuntu 14.04 LTS系统中设置Apache虚拟主机
 ================================================================================
-**Virtual Hosts** are used to setup more than one domain or websites using a single IP address. This is very useful if anybody wants to run multiple websites using a single IP address on single VPS.
 
-In this tutorial, let me show how to setup virtual hosts in Apache web server on Ubuntu 14.04 LTS. Be mindful that this tutorial is only tested On Ubuntu 14.04 32bit edition. I may not issue any assurance that this will work on all other Ubuntu lower versions and Ubuntu derivatives.
+**虚拟主机**常用于在一个单独的IP地址上提供多个域名的网站服务。如果有人想在单个VPS的单个IP地址运行多个网站，这是非常有用的。
 
-### Scenario ###
+在这个教程中，让我告诉你如何设置在Ubuntu 14.04 LTS的Apache网页服务器设置虚拟主机。请注意，这个教程只针对Ubuntu14.04的32位版本。
 
-For this tutorial, I will be using Ubuntu 14.04 32bit LTS, and I am going to host two testing websites called “**unixmen1.local**” and “**unixmen2.local**”. My test box IP address and hostname are **192.168.1.250/24** and **server.unixmen.local** respectively. Change the virtual domain names as per your requirement.
+我不保证它也可以工作在其它更低的Ubuntu版本或者Ubuntu衍生版本（虽然可能过程是类似的）。
 
-### Install Apache Webserver ###
+###方案###
 
-Prior to install apache server, let us update our Ubuntu server:
+在这个教程中，我会使用Ubuntu 14.04 32位 LTS，并搭建2个测试网站分别命名为“**unixmen1.local**” 和 “**unixmen2.local**”.我的测试机分别为**192.168.1.250/24**和**server.unixmen.local**。你可以根据你的需要更改虚拟域名。
+
+###安装Apache网站服务器###
+
+安装apache服务器之前，我们来更新一下我们的Ubuntu服务器：
 
     sudo apt-get update
 
-Now, install apache web server using the following command:
+然后，用下面命令来安装apache网络服务器：
 
     sudo apt-get install apache2
 
-After installing apache server, let us test whether the webserver is working properly or not by navigating to the URL **http://ip-address/**.
-
+安装apache服务器之后，让我们通过这个URL **http://你的服务器的IP地址/** 来测试网站服务器是否正常工作
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/06/Apache2-Ubuntu-Default-Page-It-works-Mozilla-Firefox_001.png)
 
-As you see in the above picture, apache webserver is working.
+如你所见，apache服务器已经工作了。
 
-### Setting Up Virtual Hosts ###
+###设置虚拟主机###
 
-#### 1. Create Virtual Directories ####
+#### 1.创建虚拟目录 ##
 
-Now, let us proceed to setup virtual hosts. As I mentioned earlier, I am going to host two virtual hosts called “**unixmen1.local**”, and “**unixmen2.local**”.
+现在，让我们继续安装虚拟主机。正如我先前所述，我要新建2台虚拟主机分别命名为“**unixmen1.local**”和“**unixmen2.local**”.
 
-Create a public to place the two virtual hosts data’s.
+创建一个公用的文件夹来存放这两台虚拟主机的数据。
 
-First, let us create a directory for unixmen1.local site:
+首先，让我们为unixmen1.local这个站点创建一个目录：
 
     sudo mkdir -p /var/www/unixmen1.local/public_html
 
-Then, create the directory for unixmen2.local site:
+接着，为for unixmen2.local站点创建一个目录：
 
     sudo mkdir -p /var/www/unixmen2.local/public_html
 
-#### 2. Setting Up Ownership and Permissions ####
+### 2. 设置所有者和权限 ####
 
-The above directories are owned by root user now. We should change the ownership of these two directories to the regular user, instead of root user.
+上面目录现在只有root拥有权限。我们需要修改这2个目录的拥有权给普通用户，而不仅仅是root用户。
 
     sudo chown -R $USER:$USER /var/www/unixmen1.local/public_html/
     sudo chown -R $USER:$USER /var/www/unixmen2.local/public_html/
 
-The “**$USER**” variable indicates the currently logged in user.
+“**$USER**”变量指向了当前的登录用户。
 
-Set the read permissions to the apache web root (/var/www) directory, so that everyone can read files from that directory.
+设置读写权限给apache网页根目录（/var/www）及其子目录，这样每个人都可以从目录中读取文件。
 
     sudo chmod -R 755 /var/www/
 
-We have created the directories for holding the websites data’s and assigned the necessary permissions and ownership to them.
+这样，我们就创建好了一些文件夹来保存网络相关数据并分配必要的权限和所属用户。	
 
-#### 4. Create Sample pages for Virtual Hosts ####
+#### 4. 为虚拟主机创建示例页 ####
 
-Now, we have to the sample pages to be served through the websites. First, let us create a sample page to the **unixmen1.local** virtual host.
+现在，我们给网站增加示例页。第一步，让我们给虚拟主机**unixmen1.local**创建一个示例页。
 
-Create a index.html for unixmen1.local virtual host,
+给unixmen1.local虚拟主机创建一个示例页，
 
     sudo vi /var/www/unixmen1.local/public_html/index.html
 
-Add the following contents:
+添加以下内容：
 
     <html>
      <head>
@@ -75,13 +76,15 @@ Add the following contents:
      </body>
     </html>
 
-Save and close the file.
 
-Similarly, add the sample page to the second virtual host.
+保存并关闭文件。
+
+同样的，添加示例页到第二台虚拟主机。
 
     sudo vi /var/www/unixmen2.local/public_html/index.html
 
-Add the following contents:
+
+添加以下内容：
 
     <html>
      <head>
@@ -92,22 +95,22 @@ Add the following contents:
      </body>
     </html>
 
-Save and close the file.
+保存并关闭文件。
 
-#### 5. Create Virtual Host Files ####
+#### 5. 创建虚拟主机配置文件####
 
-By default, apache comes with a default virtual host file called 000-default.conf. We will copy the **000-default.conf** file contents to our new virtual host files.
+默认情况下，apache有一个默认的虚拟主机文件叫000-default.conf。我们将会复制**000-default.conf**文件内容到我们新的虚拟主机配置文件中。
 
     sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/unixmen1.local.conf
     sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/unixmen2.local.conf
 
-Make sure the virtual host files contains .conf extension at the end.
+确保虚拟主机配置文件末尾包含.conf扩展名。
 
-Now, modify the unximen1.local.conf file to reflect with our new own values.
+现在，修改unximen1.local.conf文件以符合需求。
 
     sudo vi /etc/apache2/sites-available/unixmen1.local.conf
 
-Make the relevant changes that reflect to the unixmen1 site.
+使相关的变化直接呈现在unixmen1站点中（译注：以“#”开头的注释行可以忽略。）。
 
     <VirtualHost *:80>
             # The ServerName directive sets the request scheme, hostname and port that
@@ -141,11 +144,12 @@ Make the relevant changes that reflect to the unixmen1 site.
             #Include conf-available/serve-cgi-bin.conf
     </VirtualHost>
 
-Like wise, modify the second virtual host file.
+
+同理，修改第二台主机文件。
 
     sudo vi /etc/apache2/sites-available/unixmen2.local.conf
 
-Make the relevant changes that reflect to the unixmen2 site.
+使相关的修改在unixmen2 站点呈现出来。
 
     <VirtualHost *:80>
             # The ServerName directive sets the request scheme, hostname and port that
@@ -179,50 +183,51 @@ Make the relevant changes that reflect to the unixmen2 site.
             #Include conf-available/serve-cgi-bin.conf
     </VirtualHost>
 
-After modifying the virtual hosts files, disable the default virtual host (000.default.conf), and enable new virtual hosts as shown below.
+
+修改虚拟主机文件后，禁用默认的虚拟主机配置（000.default.conf)，然后启用新的虚拟主机配置，如下所示。
 
     sudo a2dissite 000-default.conf
     sudo a2ensite unixmen1.local.conf
     sudo a2ensite unixmen2.local.conf
 
-Finally, restart the apache service.
+最后，重启apache服务器。
 
     sudo service apache2 restart
 
-That’s it. Now, we successfully configured the apache virtual hosts on our Ubuntu server.
+就是这样。现在，我们成功地配置了apach虚拟主机在我们的Ubuntu服务器上
 
-Testing Virtual Hosts
+###测试虚拟主机###
 
-Edit file **/etc/hosts**,
+编辑**/etc/hosts**文件，
 
     sudo vi /etc/hosts
 
-Add the virtual domain names one by one as shown below.
+在文件末尾添加如下所示的虚拟域名。
 
-    [...]
     192.168.1.250   unixmen1.local
     192.168.1.250   unixmen2.local
 
-Save and close the file.
+保存并关闭文件。
 
-Open up your browser and point to the URL **http://unixmen1.local** or **http://unixmen2.local**. You should see the sample pages which we created earlier.
+打开你的浏览器并访问**http://unixmen1.local** 或 **http://unixmen2.local**。你将会看到我们之前创建的示例页。
 
-**Unixmen1.local Test page:**
+**Unixmen1.local 测试页:**
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/06/www.unixmen1.local-Mozilla-Firefox_004.png)
 
-**Unixmen2.local Test page:**
+
+**Unixmen2.local 测试页**
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/06/www.unixmen2.local-Mozilla-Firefox_005.png)
 
-If you want to access these sites from your remote systems, you should add the actual domain name records in your DNS server. Hence, I don’t have any actual domain names and DNS server, I tested this only on my local system, and Its worked perfectly as I expected.
+如果你想从你的远程系统访问这些站点，你需要在你的DNS服务器添加实际域名记录。不过，我没有真实的域名和DNS服务器，我只想通过我的本地系统测试，那么它刚好如我所愿地工作。
 
-Cheers!
+Cheers！
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/setup-virtual-hosts-apache-ubuntu-14-04-lts/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[disylee](https://github.com/disylee) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
