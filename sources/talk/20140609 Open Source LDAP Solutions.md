@@ -1,3 +1,4 @@
+GOLinux get it.
 Open Source LDAP Solutions
 ================================================================================
 LDAP (Lightweight Directory Access Protocol) is an application protocol for accessing directory services. It runs on a layer above the TCP/IP stack incorporating simplified encoding methods, and offers a convenient way to connect to, search, and modify Internet directories, specifically X.500-based directory services. It is an open, vendor-neutral, industry standard application protocol. LDAP utilizes a client-server model.
