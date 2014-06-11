@@ -1,3 +1,5 @@
+Mike Translating...
+
 HTG Explains: What’s the Difference Between Linux and BSD?
 ================================================================================
 ![](http://cdn.howtogeek.com/wp-content/uploads/2014/06/freebsd-devil-mascot-and-ubuntu-linux.jpg)
