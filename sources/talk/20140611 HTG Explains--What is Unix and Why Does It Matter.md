@@ -1,3 +1,4 @@
+[translating | sailing]
 HTG Explains: What is Unix and Why Does It Matter?
 ================================================================================
 ![](http://cdn.howtogeek.com/wp-content/uploads/2014/02/ken-thompson-and-dennis-richie-at-pdp-11.jpg)
