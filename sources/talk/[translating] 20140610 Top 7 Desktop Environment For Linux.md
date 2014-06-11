@@ -1,4 +1,6 @@
 Top 7 Desktop Environment For Linux
+
+translating by wwhio
 ================================================================================
 Standard Linux circulations regularly default to one of two desktop environments, KDE or GNOME. Both of these give clients an instinctive and attractive desktop, and also offering a verity of media inbuilt softwares, system programs, games, utilities, web development tools, programming tools and so on. These two desktops center all the more on giving clients a cutting edge computing environment with all the accessories emphasized in Windows OS, instead of minimizing the measure of system resources they require.
 
