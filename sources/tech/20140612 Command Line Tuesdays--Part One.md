@@ -1,3 +1,4 @@
+别占我的，该系列GOLinux独占了。
 Command Line Tuesdays – Part One
 ================================================================================
 Here we are geekos, back in action! Sorry it’s been a while, but let me just assure you we’re back on track, raging to meet the deadlines and to, well, have some fun :)
