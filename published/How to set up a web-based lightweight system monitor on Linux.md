@@ -1,17 +1,19 @@
-在Linux上配置基于web的轻量级系统监控
+Monitorix ：支持服务器和树莓派的轻量级系统监控系统
 ================================================================================
-有时候，我们作为普通用户或者系统管理员，需要知道系统运行是否良好。与系统状态相关的许多问题，都可以通过检查活动服务生成的日志文件来获得答案。然而，即便对于历经数个春秋的系统管理员而言，要检查日志文件的每个细节都不是件容易的事。这也是为什么他们依赖于监控软件的原因，监控软件能够从不同的源收集信息，并以易于理解的格式给出分析报告，如图表、可视化图像、统计数据等。
+有时候，无论是普通用户还是系统管理员，都需要知道系统运行是否良好。与系统状态相关的许多问题，都可以通过检查运行的服务所生成的日志文件来获得答案。然而，即便对于干过几年的系统管理员而言，要检查日志文件的每个细节都不是件容易的事。这也是为什么他们依赖于监控软件的原因，监控软件能够从不同的源收集信息，并以易于理解的格式给出分析报告，如图表、可视化图像、统计数据等。
 
-市面上流传着许多复杂的系统监控软件，诸如[Cacti][1], [Nagios][2], Zabbix, Munin此类。在本文中，我们选取了一个轻量级的监控工具——Monitorix，该工具设计用于在Linux/BSD上监控系统资源和许多熟知的第三方应用程序。由于专为资源有限的嵌入式系统而优化，Monitorix以使用简单，消耗内存资源少而著称。它内建了一个HTTP服务器用于提供web界面，并使用PRDtool来存储时间序列统计数据，该PRDtoo可以很容易地和任何脚本语言整合，如Perl，Python，shell脚本，Ruby等。
+市面上流传着许多复杂的系统监控软件，诸如[Cacti][1], [Nagios][2], Zabbix, Munin此类。在本文中，我们向您介绍一个轻量级的监控工具——Monitorix，该工具设计用于在Linux/BSD上监控系统资源和许多熟知的第三方应用程序。由于专为资源有限的嵌入式系统而优化，Monitorix以使用简单，消耗内存资源少而著称。它内建了一个HTTP服务器用于提供web界面，并使用RRDtool数据库来存储时间序列统计数据，RRDtool可以很容易地和任何脚本语言整合，如Perl，Python，shell脚本，Ruby等。
+
 ### 主要特性 ###
+
 这里列出了Monitorix的主要特性。要查看完整列表，请参阅[官方网站][3]
 
-- 系统负载和系统服务需求
+- 当前系统负载和系统服务
 - CPU/GPU温度传感器
-- 磁盘温度和健康
+- 磁盘温度和健康度
 - 网络/端口流量和网络状况统计
 - 邮件统计
-- Web服务器统计（Apache，Nginx，Light图片的）
+- Web服务器统计（Apache，Nginx，Lighttpd）
 - MySQL负载和统计
 - Squid代理统计
 - NFS服务器/客户端统计
@@ -28,8 +30,7 @@
 
     $ sudo yum install monitorix 
 
-
-要配置Monitorix，打开/etc/monitorix/monitorix.conf配置文件，并修改选项。关于Monitorix的配置文件细节，可以查阅[http://www.monitorix.org/documentation.html][6]。
+要配置Monitorix，打开`/etc/monitorix/monitorix.conf`配置文件，并修改选项。关于Monitorix的配置文件细节，可以查阅[http://www.monitorix.org/documentation.html][6]。
 
 默认情况下，内建的HTTP服务器监听8080端口。因此，确保你的防火墙没有阻止TCP 8080端口。
 
@@ -40,9 +41,10 @@
 启动你喜爱的Web浏览器，然后通过http://<host-ip-address>:8080/monitorix来访问Monitorix的Web界面。
 
 ### 在Archlinux上安装并配置Monitorix ###
+
 在Archlinux上，可以从[AUR][7]上下载Monitorix包。
 
-默认情况下，Archlinux上是禁用内建HTTP服务器的。要启用内建的HTTP服务器，请编辑/etc/monitorix.conf文件的如下区块。
+默认情况下，在Archlinux上是禁用了其内建HTTP服务器的。要启用内建的HTTP服务器，请编辑/etc/monitorix.conf文件的如下区块。
 
     <httpd_builtin>
             enabled = y
@@ -65,10 +67,11 @@
 打开你喜欢的Web浏览器，然后通过http://<host-ip-address>:8080/monitorix来访问Monitorix的Web界面。
 
 ### 在Debian和Ubuntu上安装并配置Monitorix ###
+
 对于Debian家族，Monitorix可以通过两种方式安装：手工安装或通过第三方软件仓库。
+
 #### 手工安装(用于Debian) ####
 
-Install all dependent packages first.
 首先安装所有依赖包。
 
     $ sudo apt-get install rrdtool perl libwww-perl libmailtools-perl libmime-lite-perl librrds-perl libdbi-perl libxml-simple-perl libhttp-server-simple-perl libconfig-general-perl libio-socket-ssl-perl
@@ -82,6 +85,7 @@ Install all dependent packages first.
     $ sudo service apache2 reload 
 
 #### 通过软件仓库安装 (用于Ubuntu) ####
+
 在/etc/apt/source.list中添加以下行来启用Izzysoft仓库。
 
     deb http://apt.izzysoft.de/ubuntu generic universe
@@ -100,14 +104,15 @@ Install all dependent packages first.
 
     $ sudo service monitorix start 
 
-要配置Monitorix，请使用文本编辑器编辑/etc/monitorix/monitorix.conf，并重启Monitorix服务。
+要配置Monitorix，请使用文本编辑器编辑`/etc/monitorix/monitorix.conf`，并重启Monitorix服务。
 
     $ sudo service monitorix restart 
 
-用于Ubuntu的内建Web服务器默认将被启用。要从Web查看监控结果，在你喜爱的Web浏览器中访问http://<host-ip-address>8080/monitorix。
+用于Ubuntu的内建Web服务器默认启用。要从Web查看监控结果，在你喜爱的Web浏览器中访问http://<host-ip-address>8080/monitorix。
 
 ### 在Raspberry Pi上安装并配置Monitorix ###
-如果想要在Raspberry Pi（基于Debian）上安装Monitorix，你不能使用上面提到的Izzysoft仓库，因为它不提供Monitorix的ARM端口。取而代之的是，你可以参照如下基于Debian的手工安装。
+
+如果想要在Raspberry Pi（基于Debian）上安装Monitorix，你不能使用上面提到的Izzysoft仓库，因为它不提供Monitorix的ARM移植。取而代之的是，你可以参照如下基于Debian的手工安装。
 
 首先，安装需要的软件包。
 
@@ -125,7 +130,7 @@ Install all dependent packages first.
 
 安装完成后，我们需要像下面这样对Monitorix配置稍作修改。
 
-用你喜爱的文本编辑器打开/etc/monitorix/monitorix.conf，向下滚动文本直到你找到<graphs enable>。搜索“raspberrypi = n”，并用“y”替换“n”，这将启用对Raspberry Pi时钟频率、温度和电压的监控。
+用你喜爱的文本编辑器打开`/etc/monitorix/monitorix.conf`，向下滚动文本直到你找到<graphs enable>。搜索“raspberrypi = n”，并用“y”替换“n”，这将启用对Raspberry Pi时钟频率、温度和电压的监控。
 
 编辑完成后，重启Monitorix服务。
 
@@ -159,7 +164,7 @@ Monitorix主屏幕:
 
 via: http://xmodulo.com/2014/05/web-based-lightweight-system-monitor-linux.html
 
-译者：[GOLinux](https://github.com/GOLinux) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[GOLinux](https://github.com/GOLinux) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
