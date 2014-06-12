@@ -1,3 +1,5 @@
+alim0x translating
+
 Dpkg Vulnerabilities Closed in Ubuntu 14.04
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Dpkg-Vulnerabilities-Closed-in-Ubuntu-14-04-446282-2.jpg)
