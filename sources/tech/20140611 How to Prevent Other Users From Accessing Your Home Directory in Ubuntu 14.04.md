@@ -1,3 +1,4 @@
+Translating by GOLinux
 How to Prevent Other Users From Accessing Your Home Directory in Ubuntu 14.04
 ================================================================================
 ![](http://cdn.howtogeek.com/wp-content/uploads/2014/05/00_lead_image_home_directory.png)
