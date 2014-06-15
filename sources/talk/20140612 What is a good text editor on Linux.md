@@ -1,3 +1,6 @@
+CNprober 翻译中
+
+
 What is a good text editor on Linux?
 ================================================================================
 Want to launch a heated debate among Linux aficionados? Ask them what is their favorite text editor. In the open source community, choosing a software to write text with, and potentially to write code with, is such an important decision that choosing a football team or a game console is less dangerous. But anyone new to Linux should not be apprehensive of the plethora of advice and the variety of trolls on the topic, and instead try to get familiar with a bunch of different text editors in the first place. So today I shall propose you a non-exhaustive thematic list of what you can find to write text with on Linux. This list will (try to) exclude the full-fledge IDEs, which are only made for programming, and the editors made specifically for LaTex. If you are interested in the latter, I can recommend you to [this post][1].
