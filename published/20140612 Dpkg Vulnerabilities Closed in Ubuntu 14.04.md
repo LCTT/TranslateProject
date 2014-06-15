@@ -6,7 +6,7 @@ Ubuntu 14.04中Dpkg的漏洞已被修复
 
 Canonical公司刚刚放出dpkg包的一个更新，修复了这个用于所有Ubuntu版本的重要软件中的一个问题。
 
-“这个问题是在dpkg在解压源码包的时候发现的，它会使dpkg不能正确地处理某些补丁。如果一位用户或一个自动化系统被欺骗而解压了特别修改过的源码包，远程攻击者就能修改目标解压路径之外的文件，导致拒绝服务攻击或潜在的获取系统权限的风险。”安全通知中这样写道。
+“我们发现这个问题出现在dpkg在解压源码包的时候，它会使dpkg不能正确地处理某些补丁。如果一位用户或一个自动化系统被欺骗而解压了特别修改过的源码包，远程攻击者就能修改目标解压路径之外的文件，导致拒绝服务攻击或潜在的获取系统权限的风险。”安全通知中这样写道。
 
 想了解这个问题的更多细节描述，你可以查看Canonical的[安全通知][1]。Canonical建议用户尽快升级自己的系统。
 
@@ -18,7 +18,7 @@ Canonical公司刚刚放出dpkg包的一个更新，修复了这个用于所有U
 
 via: http://news.softpedia.com/news/Dpkg-Vulnerabilities-Closed-in-Ubuntu-14-04-446282.shtml
 
-译者：[alim0x](https://github.com/alim0x) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[alim0x](https://github.com/alim0x) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
