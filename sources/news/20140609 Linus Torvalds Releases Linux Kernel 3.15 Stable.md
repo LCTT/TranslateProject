@@ -1,5 +1,3 @@
-hunanchenxingyu translating ....
-================================================================================
 Linus Torvalds Releases Linux Kernel 3.15 Stable
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Linus-Torvalds-Releases-Linux-Kernel-3-15-Stable-445785-2.jpg)
