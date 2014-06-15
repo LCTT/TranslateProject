@@ -1,3 +1,4 @@
+jiajia translating...
 Has Microsoft really changed its attitude toward open source?
 ================================================================================
 > **In today's open source roundup: Microsoft may or may not have a new attitude toward open source. Plus: Android versus Windows, and Cinnamon versus Unity in Ubuntu 14.04**
