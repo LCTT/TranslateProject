@@ -1,27 +1,26 @@
-CNprober 翻译中
+CNprober 翻译完成。<travelwithheart@yeah.net, 619913541>
 
-
-What is a good text editor on Linux?
+优秀的Linux文本编辑器
 ================================================================================
-Want to launch a heated debate among Linux aficionados? Ask them what is their favorite text editor. In the open source community, choosing a software to write text with, and potentially to write code with, is such an important decision that choosing a football team or a game console is less dangerous. But anyone new to Linux should not be apprehensive of the plethora of advice and the variety of trolls on the topic, and instead try to get familiar with a bunch of different text editors in the first place. So today I shall propose you a non-exhaustive thematic list of what you can find to write text with on Linux. This list will (try to) exclude the full-fledge IDEs, which are only made for programming, and the editors made specifically for LaTex. If you are interested in the latter, I can recommend you to [this post][1].
+
+想要挑起狂热Linux爱好者之间的激烈争辩吗？那就问他们什么是他们最喜欢的文本编辑器。在开源社区中，选择一个用来写文本，或者更进一步，用来写代码的编辑器，比选择一个球队或者游戏控制器还要重要。但是任何一个Linux新手都不需要为大把大把的建议和各种各样的煽动而感到焦虑不安，取而代之，先去试着熟悉熟悉一堆不同的文本编辑器吧。所以今天我将要给你建议一个简单主题的列表，里面的编辑器都可以用在Linux下编辑文本。这个列表会排除那些成熟的只用来写代码的IDE，也不包括那些专门的进行LaTex排版的编辑器。如果你对后者感兴趣，我可以建议你去看看[这里][1].
 
 ### 1. Vim & Emacs ###
 
 ![](https://farm3.staticflickr.com/2936/14371977196_1a4522359b_z.jpg)
 
-Let's go straight to the big guys. When someone asks about text editors on Linux in a room, one person will immediately respond [Vim][2] and another will say [Emacs][3]. And there are very good reasons for that. They are both very powerful editors, with a lot of features, a lot of plugins, and a very strong community ready to support anyone. If you are not familiar with them at all, it would be a bit hard to describe the extent of their capabilities. But put simply, they allow you to move very quickly within the text, make huge edits very simply, record macros, and do basically any crazy things you might want to do with text. The downside to both of them is that the learning process to control what you are doing is unavoidable and takes time. Past this point, I will not sink into the debate of declaring one better than another, but really recommend that everyone learn at least one of the two.
-
+让我们直接从这两个最大咖的开始。当有人在一个聊天室里问关于Linux下的编辑器时，会有一个人立马回答[Vim][2]，然后会有另外一个说[Emacs][3]. 之所以会这样，是有很充分的理由的。这两个都是非常强大的编辑器，有很多的特性，很多插件，很强大的社区支持。如果你一点都不熟悉他们的话，要描述清楚他们功能的有多么强大是有点困难的。但是简单来讲，它们允许你非常快速的在文本中移动，简单地做出大量的修改，记录宏以及你能想到基本上任何疯狂的编辑方式。这两个编辑器都有的缺点是不可避免的学习过程并且需要花费一定的时间。讲完这点之后，我不会陷入到哪一个更好的争论中去，但是我真的想建议每一个人至少学习这两者之一。
 ![](https://farm4.staticflickr.com/3916/14393718612_a880b86a52_z.jpg)
 
 ### 2. Sublime Text & Lime & Atom ###
 
 ![](https://farm3.staticflickr.com/2917/14391734181_0f0ec76e4f_z.jpg)
 
-Another text editor which has been on the rise for these past years is [Sublime Text][4]. Some may see it as a friendlier version of Vim or Emacs, clearly designed for programming. Indeed, it retains some similarities like the batch edition and the goto function which will remind some of Emacs or [an energized Vim][5]. However, it remains more visual and accessible. Also, the large number of plugins will seduce those inclined to customization.
+另一个在过去几年冉冉升起的文本编辑器是[Sublime Text][4].一些人可能会将它视为Vim或者Emacs的友好版，专为编程而设计的。事实上，它保持了一些与Vim和Emacs的相似特性。比如，批量编辑和函数跳转都会让人或多或少想起Emacs或者[一个充满活力的Vim][5].然而，它保留了更多的可视性并且更加容易使用。同样，大量的插件引诱大家进行个性化定制。
 
-The only gray point to Sublime Text is its license: if you only use open-source, go away. Hopefully, to deal with that, an ambitious clone called [Lime][6] appeared recently. It is still under heavy development, but the spirit is here: a similar experience to Sublime Text, with the after taste of open source. Nothing more to say except admiring the effort.
+Sublime Text唯一的“污点”是它的许可证：如果你只使用开源软件的话，你可以放弃它了。为此，最近出现了一个雄心勃勃的克隆版 [Lime][6] 。这个软件正处在繁重的开发当中，但是它的精神是：跟Sublime Text相似的用户体验，但是带着开源的韵味。对于Lime，除了满满的期待没有更多要说的了。
 
-Even more recently, [Atom][7], the official competition to Sublime Text coming from GitHub was released also as open source. Wanting to provide a full-featured out of the box editor, Atom comes packaged with all you need to jump around files, use code snippets, etc. However, its strength remains in its easy customization process based on HTML and CSS, and its Node.js integration. This is as far as we will go in this list before actually reaching the definition of an IDE.
+离现在更近的，GitHub以开源形式发布了[Atom][7]，展开了与Sublime Text正式的竞争。Atom打包了所有你想要的文件跳转，代码片段使用等特性，提供一个完整特性的编辑器而不是简单的编辑框。使用HTML，CSS和集成Node.js环境，可以轻易地定制文本处理过程，这正是他魅力所在。这其实已经要涉及到IDE的定义了，我们的列表最多会覆盖到这里。
 
 ![](https://www.flickr.com/photos/xmodulo/14395083745/)
 
@@ -29,7 +28,7 @@ Even more recently, [Atom][7], the official competition to Sublime Text coming f
 
 ![](https://farm3.staticflickr.com/2927/14371977076_c95a557233_z.jpg)
 
-If we leave the realm of the super-powered editors, we can turn to what I see as the "desktop environment classics." These editors are more traditional in the sense that some can be enhanced with plugins, but that their focus is simply to write text. If you have an idea in mind and want to jolt down something before you forget about it (I blame video games for my short attentions span), you are not going to learn or even need the shortcuts in Vim or Sublime Text. You just want to some blank space. The good thing about these editors is that they are more or less well integrated with your desktop environment. In this category, [Gedit][8] and [Kate][9], for Gnome and KDE respectively, mirror their environment, and are customizable via plugins, which makes it easier to write LaTeX, for example. [Mousepad][10] and [Leafpad][11] are more appropriate for lightweight desktops like Xfce and LXDE. They are in a way close to Windows' notepad. So if you are looking for flexibility and accessibility, pick here.
+如果我们离开这些超级厉害的编辑器，我们可以转向我认为的“桌面环境经典版”编辑器。这些编辑器感觉上更加的传统，有些也可以用插件进行强化，但是它们的重点是简单输入。如果你头脑里有一些想法想要在忘记之前赶快记下来（我必须怪罪那些视频游戏让我的注意力范围变小）。[译注：这一句意思应该是作者因为玩游戏导致注意力下降，记不住东西，所以需要快速的记下头脑中的东西以免忘掉] 你不需要学习Vim或者Sublime Text的快捷键。你只需要一些空白的地方进行输入。这类编辑器的好处是他们或多或少的和你的桌面环境集成在一起。在这一类编辑器中， Gnome 下的 [Gedit][8] 和 KDE下的 [Kate][9] 都很好的集成在桌面系统中，可以通过插件进行个性化定制。比如，更容易的进行LaTeX排版。[Mousepad][10] 和 [Leafpad][11] 更适合于轻量级的桌面，比如Xfce和LXDE。它们在某种程度上很像Windows的记事本。所以，如果你需要的是灵活和便捷，请选择他们。
 
 [![](https://farm6.staticflickr.com/5522/14415259703_d3885b3952_z.jpg)][12]
 
@@ -37,11 +36,12 @@ If we leave the realm of the super-powered editors, we can turn to what I see as
 
 ![](https://farm3.staticflickr.com/2938/14208641327_49fc7286ba_z.jpg)
 
-Another popular "family" of text editors is the distraction-free editors. If you like to have Facebook or Twitter opened constantly in the background, or receive an email every five minutes, you know how difficult it can be to focus on that essay due tomorrow, or this code not compiling. In this case, you need an editor that will take the whole space on the screen, and block everything else.
+另外一个流行的文本编辑器“大家庭”是“无分心编辑器”。如果你喜欢在后台持续地开着Facebook或者Twitter，或者每5分钟就收一次邮件，你就会知道把注意力集中在那篇明天就过期的散文或者这些还没编译通过的代码是多么困难的事。如果是这样，你需要一个编辑器，它可以占满整个屏幕空间，并且屏蔽掉所有的其他事情。
 
-Probably the least favorite of this kind is Nano. If you want to block any distraction, go without X server. It is simple and straightforward. In fact, George R. R. Martin, the author of Game of Thrones, recently [revealed in an interview][13] that he uses a similar DOS Word processor to write his novels.
+也许这类编辑器里面最不受欢迎的是Nano。如果你想屏蔽所有分心的事，关掉X server（[译注：关掉桌面，只用文字终端界面，Nano就是工作在这种模式下]）。这是最简单和直接的方式。事实上，《权力游戏(Game of Thrones)》的作者Geogge R. R. Martin最近就在[一次采访][13]中说他使用一个类似DOS Word的文本处理程序写他的小说。
 
-If you prefer something a bit more keen on the eye, you could like my personal favorite: [Qute][14]. No fancy features, maybe a bit of LaTeX to look nice, but the weight is really on the interface. It proposes a beautiful navigation and edition experience. If you are uneasy because of the terminal, Qute is a good alternative.
+如果你想要一款更顺眼一点的编辑器，你可以试试我的最爱：[Qute][14]. 没有酷炫的特性，也许有一点LaTeX排版使它开起来更美观，但是重点其实是在他的界面的。它提供了一个舒适的导航和编辑体验。如果你对终端感觉不太舒服，Qute是个不错的选择。
+
 
 ![](https://farm3.staticflickr.com/2927/14395083485_7f8f0d6d59_z.jpg)
 
@@ -49,19 +49,18 @@ If you prefer something a bit more keen on the eye, you could like my personal f
 
 ![](https://farm4.staticflickr.com/3845/14395083565_b07b33abf0_z.jpg)
 
-Finally, an office suite is also a text editor. I doubt you can code easily on that, but it will certainly be more appropriate for plain text and more quick to pick up than LaTeX. In this category, it would be impossible to avoid [LibreOffice][15] and [Calligra][16], the two behemoth in term of featues and fame. I like both of them, but a lot of people have a clear preference for the former over the latter. If you miss Microsoft Word, you will be in your realm. A bit of the underdog, [Abiword][17] is a lightweight alternative to those. If you goal is just to edit a word document, and you do not care about spreadsheets or databases, Abiword will do the trick while preserving the features.
-
+最后，办公套件也是文本编辑器。我很怀疑你能否轻松的用办公套件编程，但是它确实更适合纯文本编辑，也比LaTeX更容易学习。在这类编辑器中，[LibreOffice][15] 和 [Calligra][16] 是没办法绕过去的。这两个编辑器因为他们丰富的特性和响亮的名声成为这类编辑器中的巨兽。这两者我都喜欢，但是很多人明确的偏向于前者。如果你怀念微软的Word处理软件，你会有自己的选择。稍处下风的[Abiword][17]相对前面的两个是一个轻量级的选择。如果你的目的只是编辑一个文本文档，不关心电子表格或者数据库，Abiword的特性可以达到理想的效果。
 ![](https://farm3.staticflickr.com/2915/14371976966_4d252928ec_z.jpg)
 
-To conclude briefly, if I had one advice to give, it would be to pick the editor that people around you use. If for some crazy reason everyone you know uses LibreOffice to code in C, or Sublime Text to write a novel, and that you have to do something similar, you should follow the trend. The reason being that if you encounter a problem and need some help, it will be easier for them to bring it to you.
+简单总结一下，如果我有一条建议给你，那么就是选择你周围的人正在用的编辑器。如果因为某些疯狂的理由，每一个你周围的人都用LibreOffice写C程序，或者用Sublime Text写小说，而你也要做同样的事，你应该跟随潮流。原因就是当你遇到一个问题需要帮助的时候，他们可以更容易的给你提供帮助。
 
-What is your favorite text editor? What do you use it for? Please let us know in the comments.
+你最喜欢的文本编辑器是什么？你用它来干嘛？请在评论里告我们吧。
 
 --------------------------------------------------------------------------------
 
 via: http://xmodulo.com/2014/06/good-text-editor-linux.html
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[love_daisy_love](https://github.com/CNprober) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
