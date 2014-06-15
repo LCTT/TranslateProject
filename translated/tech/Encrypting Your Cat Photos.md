@@ -57,15 +57,15 @@
 
 ### 加密 USB 驱动盘 ###
 
-Like I mentioned earlier, there are many options when it comes to encryption. One of the more popular methods of encrypting partitions is the LUKS (Linux Unified Key Setup) system. A USB drive with a LUKS-formatted partition should be detected automatically by most systems. In fact, if you're using a desktop environment like Ubuntu Desktop, encrypting a USB drive is a simple check box during the formatting process. Although that's a perfectly acceptable way to encrypt your USB drive, I'm going to demonstrate how to do it on the command line, so you understand what's actually happening behind the scenes. 
+如我前面提到的，要加密有很多可选的方式方法。加密磁盘分区最通用的一种方法是 LUKS（Linux Unified Key Setup） 系统。一个使用 LUKS 格式化分区的 USB 驱动盘可以被大多数系统自动被别到。实际上，如果你使用的是像 Ubuntu 桌面这样的桌面环境系统的话，加密 USB 驱动盘其实就是在格式化过程中简单的勾选上一个复选框而已。虽然这是加密 USB 盘最容易让人接受的方式，但我还是想演示如何在命令行下进行加密，因为这种方式可以让你明白在加密的后面具体发生了什么。
 
-#### Step 1: identify your USB drive. ####
+#### 步骤 1: 识别您的 USB 驱动盘。 ####
 
-If you type `dmesg` after plugging in your USB drive, you should get all sorts of system information, including the device name of your freshly plugged-in USB device. Make sure you have the correct device identified, because what you're doing will destroy any data on the drive. You wouldn't want to format the wrong disk accidentally. (It should go without saying, but I'll say it anyway, make sure there's nothing on your USB drive that you want to save—this is a destructive process.) 
+在您插入 USB 驱动盘后，如果输入 `dmesg` 命令，将会显示出所有的系统信息，包括刚插入的 USB 驱动盘的设备名字。 确保设备标识是正确的，因为后面要进行的操作会破坏驱动盘上的所有数据。您也不想一不小心就格式化掉正常的磁盘吧。（虽然不用提醒，但我还是要说，确保您的 USB 驱动盘已经没有你想保留的数据，因为这是一个破坏性的过程。）
 
-#### Step 2: partition the USB drive. ####
+#### 步骤 2: 对 USB 驱动盘进行分区。 ####
 
-Assuming that your USB drive is the /dev/sdb device on your system, you need to create a single partition on the drive. Let's use fdisk. Below is the interaction with fdisk required. Basically, you create a new empty partition with the o command, then write changes with w. Then, you'll restart fdisk and use the n command to create a new primary partition, using the defaults so that the entire drive is used: 
+假设，在您的系统上 USB 驱动盘是 /dev/sdb 这个设备，您需要在这个驱动上创建一个单分区。我们使用 fdisk 命令。下面是 fdisk 必须的交互操作。一般地，用 o 命令来创建一个新的空分区，然后用 w 命令来保存设置。然后重新运行 fdisk 命令，并用 n 命令来创建一个新的主分区，接下来保持默认的以使用整个设备空间：
 
     # sudo fdisk /dev/sdb
 
@@ -93,7 +93,7 @@ Assuming that your USB drive is the /dev/sdb device on your system, you need to 
     Command (m for help): w
     The partition table has been altered!
 
-Now you have a USB drive with a single partition (/dev/sdb1), but there is no filesystem on it. That's exactly what you want, because the LUKS system creates an encryption layer on the partition before you put a filesystem on it. So before creating a filesystem, let's create the LUKS layer on the partition, using the cryptsetup program. If you don't have cryptsetup, search for it in your distribution's repository; it should be there. To create the LUKS encrypted partition layer: 
+现在你的 USB 驱动盘有了一个单分区了（/dev/sdb1），但还没有文件系统，这正是我们所想要的，因为 LUKS 系统需要在创建文件系统前在您的分区上创建一个加密层。因此，在创建文件系统之前，就让我们在分区上先创建一个 LUKS 层吧，可以使用 cryptsetup 程序。如果您还没有安装 cryptsetup 的话，可以搜索您系统发布版本的仓库源，里有就有。下面就开始创建 LUKS 加密分区层:
 
     # cryptsetup luksFormat /dev/sdb1
 
@@ -105,9 +105,9 @@ Now you have a USB drive with a single partition (/dev/sdb1), but there is no fi
     Enter LUKS passphrase:
     Verify passphrase: 
 
-Follow the directions, and be sure to remember your passphrase! Note, that a "passphrase" is usually more than just a word. It's most often a phrase, thus the name. The longer the phrase, the tougher to crack.
+按照提示的操作，一定要确保记得您的密码！注意，这儿的“密码单词”不仅仅只表示一个单词。这只是一个习惯，因而得名，设置的越长，越难被破解。
 
-Once the process completes, you have an encrypted partition, but it's not mounted or formatted yet. The first step is to mount the partition, which again uses the cryptsetup utility: 
+Once the process completes, you have an encrypted partition, but it's not mounted or formatted yet. The first step is to mount the partition, which again uses the cryptsetup utility: 一但上面的操作完成，就创建好了一个加密的分区，但它还没有被挂载或格式化。
 
     # cryptsetup luksOpen /dev/sdb1 my_crypto_disk
     Enter passphrase for /dev/sdb1:
