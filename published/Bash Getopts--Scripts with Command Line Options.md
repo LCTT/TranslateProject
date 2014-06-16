@@ -1,5 +1,3 @@
-CNprober<travelwithheart@yeah.net, QQ619913541> 翻译完成
-
 Bash Getopts - 让你的脚本支持命令行参数
 ================================================================================
 
@@ -152,7 +150,7 @@ Bash Getopts - 让你的脚本支持命令行参数
 
 via: http://tuxtweaks.com/2014/05/bash-getopts/
 
-译者：[daisy_love_daisy](https://github.com/CNprober) 校对：[校对者ID](https://github.com/校对者ID)
+译者： CNprober \<travelwithheart@yeah.net, QQ619913541\> 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

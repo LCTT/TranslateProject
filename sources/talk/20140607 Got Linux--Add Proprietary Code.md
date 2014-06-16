@@ -1,3 +1,5 @@
+jiajia translating...
+
 Got Linux? Add Proprietary Code
 ================================================================================
 ![](http://www.linuxinsider.com/images/rw661226/linux-enterprise-proprietary-code.jpg)

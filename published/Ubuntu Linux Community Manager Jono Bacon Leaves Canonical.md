@@ -2,7 +2,7 @@ Ubuntu Linux社区经理Jono Bacon离开Canonical公司
 ================================================================================
 ![](http://thevarguy.com/site-files/thevarguy.com/files/imagecache/medium_img/uploads/2014/05/jonobacon.jpg)
 
-几天后，Canonical——Ubuntu Linux背后的公司，将告别其任职已久的社区经理。[Jono Bacon][1]，一直是 Ubuntu 业界最熟悉的面孔之一，他将在[XPRIZE基金会][2]任新职。
+Canonical——Ubuntu Linux背后的公司，其任职已久的社区经理将离职。[Jono Bacon][1]，一直是 Ubuntu 业界最熟悉的面孔之一，他将在[XPRIZE基金会][2]任新职。
 
 Bacon于2006年加入Canonical，从[其博客可知][3]他是在收到XPRIZE的录用通知后决定离开Canonical的，XPRIZE[自称][4]为“创新引擎”和“造福人类的催化剂”。他将会在XPRIZE就任社区主管，施展他过去八年中在帮助协调Ubuntu社区方面所获得的能力。
 
