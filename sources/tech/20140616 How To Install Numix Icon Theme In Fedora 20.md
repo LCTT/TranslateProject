@@ -1,3 +1,4 @@
+Translating by GoLinux ...
 How To Install Numix Icon Theme In Fedora 20
 ================================================================================
 [Numix Themes][1] have been around for a while now and I think most of us know about it. In a previous post, I’ve written about [how to install Numix theme and other community forks on Manjaro Linux][2].
