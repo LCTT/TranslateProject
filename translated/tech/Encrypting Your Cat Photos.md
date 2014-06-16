@@ -107,29 +107,29 @@
 
 按照提示的操作，一定要确保记得您的密码！注意，这儿的“密码单词”不仅仅只表示一个单词。这只是一个习惯，因而得名，设置的越长，越难被破解。
 
-Once the process completes, you have an encrypted partition, but it's not mounted or formatted yet. The first step is to mount the partition, which again uses the cryptsetup utility: 一但上面的操作完成，就创建好了一个加密的分区，但它还没有被挂载或格式化。
+一但上面的操作完成，就创建好了一个加密的分区，但它还没有被挂载或格式化。要做的第一步就是挂载分区，可以再一次使用 cryptsetup 工具：
 
     # cryptsetup luksOpen /dev/sdb1 my_crypto_disk
     Enter passphrase for /dev/sdb1:
 
-When you type in your passphrase, the device name you entered will be mounted like a virtual hard drive. Usually, it's mounted under /dev/mapper/devicename, so this example mounts a partition at /dev/mapper/my_crypto_disk.
+当输入完密码后，您输入名字的设备就会像虚拟硬盘一样被挂载上。通常，它挂载在 /dev/mapper/devicename 目录下，所以这个例子所示的分区就挂载到了 /dev/mapper/my_crypto_disk 目录。
 
-This device is now being accessed as an unencrypted volume. As long as it stays mounted, it will act like any other unencrypted volume. That means you need to write a filesystem to it if you want to use it: 
+现在这个设备就可当做未加密的卷来访问了。 只要它一被挂载，就跟其它未加密的卷是一样的了，这就意味着您想要使用它的话就需要先写入文件系统：
 
     # mkfs.vfat /dev/mapper/my_crypto_disk -n my_crypto_disk
     mkfs.vfat 3.0.9 (31 Jan 2010)
 
-Now the drive is fully functional and can be mounted like any other disk. In fact, when you put the USB drive into your computer, if you have a modern GUI desktop, it should prompt you for a password and mount it automatically. Then you can eject it like a normal disk, and it will be encrypted until you next enter your passphrase. It's simple to unmount and, therefore, re-encrypt the drive on the command line too, using cryptsetup: 
+现在驱动功能完备，可以像其它驱动盘一样正常挂载使用了。实际上，如果你使用的是现代的图形用户界面系统的话，只要你把 USB 驱动盘一插入计算机，将会提示您输入密码，然后就自动挂载上了。退出的时候跟普通盘一样，里面存储的数据会被加密，直到下次输入密码。在命令行里使用 cryptsetup 卸载以及重加密驱动盘也是很简单的：
 
     # cryptsetup luksClose my_crypto_disk
 
-That's Only the Tip of the Iceberg
+这仅仅只是冰山一角
 
-In this article, my hope is to peel back some of the mystery behind encryption. It's simple to encrypt and decrypt a file. It's not too much more difficult (especially if you use the GUI desktop tools) to encrypt an entire USB drive. With most distributions, it's possible to encrypt the entire home directory during the installation process! When encryption is set up on your entire home directory, however, there are some issues you need to address. For example, jobs that run while you're not logged in most likely will not have access to your home directory. If you have cron jobs that need access to your home directory, you should rewrite them to access data elsewhere on the system. I find a happy medium between security and convenience is to encrypt a USB drive and store my personal data on it.
+写这篇文章，我的目的是希望剥开加密后面的秘密。加密和解密单个文件很简单，要加密整个 USB 驱动盘也不是太困难（如果使用的是图形用户界面工具就更容易了）。对于大多数系统的发布版本来说，在安装过程中就可以对整个 home 目录进行加密。加密是对您的整个 home 目录起作用，然而有些问题就需要特别处理了。例如，您没登陆时就运行的任务在大多数情况下是不会访问您的 home 目录的，但如果您有调度任务需要访问 home 目录的话，应该进行修改，让其访问系统中其它目录的数据。我觉得安全和便利平衡的中庸之道还是加密 USB 驱动盘，然后在上面存储个人资料。
 
-Once you get the encryption bug, I must warn you, you'll want to start encrypting everything. That's not a bad thing, but like the home directory scenario, you'll run into a few snags. Cross-platform accessibility is a big one if you go between systems. For situations like that, I highly recommend [TrueCrypt][1]. I've mentioned TrueCrypt in UpFront pieces before, but it's basically an open-source, cross-platform encryption system that allows you to encrypt files, folders, partitions and more while being able to access that data on any system. Windows, Mac and Linux clients are all available, and the community has great support.
+我必须警告您，一但您考虑安全的问题，就会想要把任何东西都加密起来。这不是什么坏的事情，但是像要对 home 目录加密这种情况，是会碰到一些问题的。如果您使用不用系统的话，跨平台访问也是个大问题。像这种情况，我强烈建议您使用 [TrueCrypt][1]。在前期的文章片段里我提到过 TrueCrypt，它是一款开源的，跨平台的加密系统软件。可以对文件、文件夹、分区等等进行加密，同时可以在任何系统中访问加密的数据。像 Windows、Mac 及 Linux 客户端都可以使用。社区也有大力的支持。
 
-You don't have to have something to hide in order to desire encryption for your files. Just like it's wise to lock your house at night, even if you live in a good neighborhood, it's a smart move to encrypt your personal data. If you want to share your photos of Mr Whiskerton in his cute little beanie hat with everyone on the Internet, that's your right. But others don't need to see those things if they're being nosey and poking around your hard drive! 
+希望对文件进行加密的目的并不是为了隐藏某些东西。就像即使您有个好邻居，最好夜里也得锁门一样，对您的个人数据进行加密也是个很正常的举动。如果您想在网上与大家分享你的 Whiskerton 先生戴着可爱的小豆豆帽子的照片的话，这是您的权利。但其它的人，比如他们索检你硬盘的时候，就不需要让看到了。
 
 --------------------------------------------------------------------------------
 
