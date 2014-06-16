@@ -1,17 +1,17 @@
-如何使用命令行实时监控 Nginx 网站服务器
+ngxtop：在命令行实时监控 Nginx 的神器
 ================================================================================
 Nginx网站服务器在生产环境中[运行][1]的时候需要进行实时监控。实际上，诸如[Nagios][2], Zabbix, Munin 的网络监控软件是支持 Nginx 监控的。
 
 如果你不需要以上软件提供的综合性报告或者长期数据统计功能，只是需要一种快速简便的办法去监控 Nginx 服务器的请求的话，我建议你采用一个叫 [ngxtop][3] 的命令行工具。
 
 
-你马上就会发现 ngxtop 从界面和名称都借鉴了著名的top命令。ngxtop 是通过分析 Nginx 或者其他的日志文件，使用类似 top 命令的界面实时展示出来的。你可以说你知道的其他高端监控工具，但是在简洁这方面 ngxtop 无疑是最好的。简单是不是就意味着不可替代。
+你马上就会发现 ngxtop 从界面和名称都借鉴了著名的top命令。ngxtop 是通过分析 Nginx 或者其他的日志文件，使用类似 top 命令的界面实时展示出来的。你可以说你知道的其他高端监控工具，但是在简洁这方面 ngxtop 无疑是最好的。简单就意味着不可替代。
 
 本指南中，我将介绍如何使用 ngxtop 实时监控 Nginx 网站服务器。
 
 ### Linux 上安装 ngxtop ###
 
-首先在 Linux 系统中安装依赖库[pip][4]。
+首先在 Linux 系统中安装依赖库[pip][4]（LCTT译注：ngxtop是用python编写的）。
 
 然后使用如下命令安装 ngxtop。
 
@@ -27,12 +27,12 @@ Nginx网站服务器在生产环境中[运行][1]的时候需要进行实时监�
 
 这里是一些通用选项。
 
-- **-l <file>**: 日志文件的完整路径 (Nginx 或 Apache2)
+- **-l <file>**: 指定日志文件的完整路径 (Nginx 或 Apache2)
 - **-f <format>**: 日志格式
-- **--no-follow**: 处理当前日志文件的快照，而不是实时处理日志文件
+- **--no-follow**: 处理当前已经写入的日志文件，而不是实时处理新添加到日志文件的日志
 - **-t <seconds>**: 更新频率
-- **-n <number>**: 命令显示行数
-- **-o <var>**: 排序规则(默认 行数)
+- **-n <number>**: 显示行号
+- **-o <var>**: 排序规则(默认是访问计数)
 - **-a <exp> ..., --a <exp> ...**: 添加表达式(一般是聚合表达式如： sum, avg, min, max 等)到输出中。
 - **-v**: 输出详细信息
 - **-i <filter-expression>**: 只处理符合规则的记录
@@ -95,7 +95,7 @@ ngxtop 默认会从其配置文件 (/etc/nginx/nginx.conf) 中查找 Nginx 日�
 
 via: http://xmodulo.com/2014/06/monitor-nginx-web-server-command-line-real-time.html
 
-译者：[shipsw](https://github.com/shipsw) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[shipsw](https://github.com/shipsw) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
