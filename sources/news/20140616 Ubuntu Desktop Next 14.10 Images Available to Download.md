@@ -1,36 +1,35 @@
 2q1w2007翻译中
-Ubuntu Desktop Next 14.10 Images Available to Download
+下一代Ubuntu14.10镜像已开放下载
 ================================================================================
-![Unity 8′s tablet face](http://www.omgubuntu.co.uk/wp-content/uploads/2014/05/1.jpg)
-Unity 8′s tablet face
+![Ubuntu 运行在8寸平板上](http://www.omgubuntu.co.uk/wp-content/uploads/2014/05/1.jpg)
+Ubuntu 运行在8寸平板上
 
-**Desktop builds of Ubuntu 14.10 using Unity 8 and Mir by default have [been made available][1] to download — not that most users will want to.**
+**不像大多数用户想得那样，Ubuntu 14.10 的桌面版默认使用Unity 8和Mir[已可下载][1]**
 
-Plans for a separate Unity 8 desktop flavour were [discussed last month][2]. The aim of the images is to provide developers and testers with a means to identify and document the types of changes needed to tailor both fledgling technologies to traditional desktop usage.
+Ubuntu 14.10镜像计划提供单独的Unity 8桌面 [上个月讨论的][2]。 提供此镜像目的是给开发者和测试人员提供一个识别并记录从传统界面到使用两种新技术的界面的变化的手段
 
-What these images are not is any sort of stable consumer release ready for production testing. These builds are, and will continue to be, highly unstable, buggy and in a state of feature flux from now up until October — and possibly beyond. Anyone expecting a polished, useable or ‘converged’ desktop will be sorely disappointed as the Unity 8 desktop ISO currently uses the Tablet UI.
+此镜像并不为为任何稳定的消费者进行生产测试。这个版本会并将会是极不稳定而充满bug的，在十月之前还会不断有变动。所有想要一个完美的、可用的或统一的的桌面的人都会失望因为Unity 8 桌面版 ISO 用的是平板的UI。
 
-### Work Getting Underway ###
+### 工作进行中 ###
 
-Work on building competent window management features into Mir and Unity 8 is only just getting underway. Similarly, since desktop-grade graphics chips are yet to add Mir compatible GPU drivers the experience will vary wildly between hardware and users. Virtual machine support is also not a given.
+为Mir和Unity 8建立足够的窗口管理特性的工作正在进行中。同样的，在桌面显卡完全兼容Mir之前，硬件和用户之间发生的经历将会不同，而且不会支持虚拟机。支持
 
-As Unity 8 on the desktop starts to come together users won’t be presented with a UI too dissimilar to what they’re used to, hinted Ubuntu’s founder Mark Shuttleworth in a recent video Q&A.
+桌面Unity 8界面将开始融合，用户会提出界面与原来相差太大的问题，详见Ubuntu的创始人Mark Shuttleworth最近的视频的问答模块
 
-This is good news. Microsoft tried to foist a tablet, touch-orientated UI on desktop users with Windows 8. Reception was mixed and the critical mauling severe. It has had to continually issue “refinements” — ‘concessions’ if you want to be cynical — to counter the complaints.
+这是个好消息，微软在桌面Windows8上强加了平板界面和为触摸屏设计的UI。结果被骂的不轻，不得不不断地发出"改进"来对付投诉——在你吐槽后让步。
 
-### Download Unity 8 Desktop Builds ###
+### 下载Unity 8桌面版本 ###
+按计划 Ubuntu 14.10，预定在 10 月 23 日发行稳定版，将继续基于 X.Org，Compiz 和Unity 7。运行在Mir的Unity8预计将在 2016 年 4 月作出下一个 LTS 之前,成为新的的默认桌面。
 
-Regular Ubuntu 14.10, due for release on October 23, will continue to be based on X.Org, Compiz and Unity 7. Unity 8 running on Mir is expected to be made default desktop before the next LTS, due in April 2016.
+此版本还不具有可用性，下方链接的镜像只是为了协助开发人员测试和完善，不是为了用户适应新的TARDIS样式。
 
-Largely unusable at this point, the images linked to below are designed primarily to assist developers test and improve, not help Joe User spin TARDIS-style to Ubuntu’s future.
-
-- [Download Ubuntu Desktop Next 14.10 (.iso)][3]
+- [下载下一代Ubuntu14.10 (.iso)][3]
 
 --------------------------------------------------------------------------------
 
 via:http://www.omgubuntu.co.uk/2014/06/unity-8-daily-build-images-go-live 
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[2q1w2007](https://github.com/2q1w2007) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
