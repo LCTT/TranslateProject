@@ -1,3 +1,4 @@
+2q1w2007翻译中
 Ubuntu Desktop Next 14.10 Images Available to Download
 ================================================================================
 ![Unity 8′s tablet face](http://www.omgubuntu.co.uk/wp-content/uploads/2014/05/1.jpg)
