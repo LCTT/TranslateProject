@@ -1,3 +1,4 @@
+-------------translating by tenght~
 9 commands to check hard disk partitions and disk space on Linux
 ================================================================================
 In this post we are taking a look at some commands that can be used to check up the partitions on your system. The commands would check what partitions there are on each disk and other details like the total size, used up space and file system etc.
