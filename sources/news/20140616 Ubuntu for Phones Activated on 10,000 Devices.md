@@ -1,3 +1,4 @@
+zpl1025
 Ubuntu for Phones Activated on 10,000 Devices
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Ubuntu-for-Phones-Activated-on-10-000-Devices-446824-2.jpg)
