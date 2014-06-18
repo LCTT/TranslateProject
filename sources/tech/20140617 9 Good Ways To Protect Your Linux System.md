@@ -1,3 +1,4 @@
+Translating by GoLinux ...
 9 Good Ways To Protect Your Linux System
 ================================================================================
 Securing your Linux-based system is very important nowadays. But you have to know how to do this. A simple anti-malware software is usually not good enough and you need to take some other steps. Try these,
