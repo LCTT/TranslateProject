@@ -5,6 +5,8 @@ LCTT是Linux中国社区（[http://linux.cn/](http://linux.cn/)）的翻译组�
 
 LCTT已经拥有近百余名活跃成员，并欢迎更多的Linux志愿者加入我们的团队。
 
+![logo](http://img.linux.net.cn/static/image/common/linuxcn_qqq_lctt.gif)
+
 LCTT的组成
 -------------------------------
 
@@ -40,41 +42,50 @@ LCTT的组成
 - CORE [tinyeyeser](https://github.com/tinyeyeser),
 - CORE [vito-L](https://github.com/vito-L),
 - CORE [jasminepeng](https://github.com/jasminepeng),
+- CORE [willqian](https://github.com/willqian),
+- CORE [vizv](https://github.com/vizv),
 - [luoxcat](https://github.com/Luoxcat),
 - [runningwater](https://github.com/runningwater),
 - [bazz2](https://github.com/bazz2),
 - [flsf](https://github.com/flsf),
-- [Linux-pdz](https://github.com/Linux-pdz),
 - [Vic020](https://github.com/Vic020),
-- [woodboow](https://github.com/woodboow),
+- [Linux-pdz](https://github.com/Linux-pdz),
 - [KayGuoWhu](https://github.com/KayGuoWhu),
-- [Linchenguang](https://github.com/Linchenguang),
 - [crowner](https://github.com/crowner),
+- [woodboow](https://github.com/woodboow),
+- [Linchenguang](https://github.com/Linchenguang),
+- [zpl1025](https://github.com/zpl1025),
+- [blueabysm](https://github.com/blueabysm),
 - [yechunxiao19](https://github.com/yechunxiao19),
 - [scusjs](https://github.com/scusjs),
 - [hyaocuk](https://github.com/hyaocuk),
 - [theo-l](https://github.com/theo-l),
-- [l3b2w1](https://github.com/l3b2w1),
 - [NearTan](https://github.com/NearTan),
-- [boredivan](https://github.com/boredivan),
-- [liuaiping](https://github.com/liuaiping),
-- [zpl1025](https://github.com/zpl1025),
-- [rogetfan](https://github.com/rogetfan),
-- [whatever1992](https://github.com/whatever1992),
-- [icybreaker](https://github.com/icybreaker),
 - [ThomazL](https://github.com/ThomazL),
+- [l3b2w1](https://github.com/l3b2w1),
+- [boredivan](https://github.com/boredivan),
+- [rogetfan](https://github.com/rogetfan),
+- [liuaiping](https://github.com/liuaiping),
+- [whatever1992](https://github.com/whatever1992),
+- [tenght](https://github.com/tenght),
+- [linuhap](https://github.com/linuhap),
+- [icybreaker](https://github.com/icybreaker),
 - [SteveArcher](https://github.com/SteveArcher),
 - [FineFan](https://github.com/FineFan),
 - [ailurus1991](https://github.com/ailurus1991),
-- [Maclauring](https://github.com/Maclauring),
-- [small-Wood](https://github.com/small-Wood),
-- [willqian](https://github.com/willqian),
-- [stduolc](https://github.com/stduolc),
-- [lijhg](https://github.com/lijhg),
+- [zzlyzq](https://github.com/zzlyzq),
 - [tomatoKiller](https://github.com/tomatoKiller),
+- [small-Wood](https://github.com/small-Wood),
+- [ggaaooppeenngg](https://github.com/ggaaooppeenngg),
+- [yujianxuechuan](https://github.com/yujianxuechuan),
+- [Hao-Ding](https://github.com/Hao-Ding),
+- [Maclauring](https://github.com/Maclauring),
+- [lijhg](https://github.com/lijhg),
 - [zsJacky](https://github.com/zsJacky),
+- [stduolc](https://github.com/stduolc),
 
-（更新于2014/3/12）
+
+（更新于2014/05/16）
 
 谢谢大家的支持！
 
@@ -91,3 +102,4 @@ LCTT的组成
 * 2013/11/10 举行第一次北京线下聚会。
 * 2014/01/02 增加了Core Translators 成员: geekpi。
 * 2014/05/04 更换了新的QQ群：198889102
+* 2014/05/16 增加了Core Translators 成员: will.qian、vizv。
