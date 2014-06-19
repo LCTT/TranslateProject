@@ -1,3 +1,4 @@
+translating by owen-carter
 Improve Battery Life with Laptop Mode Tools 1.65
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Improve-Battery-Life-with-Laptop-Mode-Tools-1-65-447397-2.jpg)
