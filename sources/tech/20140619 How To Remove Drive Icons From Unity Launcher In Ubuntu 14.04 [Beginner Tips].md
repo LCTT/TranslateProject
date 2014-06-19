@@ -1,3 +1,5 @@
+Translating by lousam
+
 How To Remove Drive Icons From Unity Launcher In Ubuntu 14.04 [Beginner Tips]
 ================================================================================
 **A question sent by a reader**: How can I remove those drive icons from Unity Launcher in Ubuntu 14.04? I never use it and it eats up space in the launcher.
