@@ -1,3 +1,4 @@
+owen-carter translating 
 10 Linux Platforms Meant For Embedded Systems 
 ==========================================
 Linux has a wide variety of uses. The platform is used by many for simple home use, while it is also the chosen platform for programmers and hackers. In addition, Linux is widely used in embedded systems and there are distributions that are tailored specifically to such systems. Here are 10 Linux platforms that can work great on embedded systems!
@@ -34,6 +35,7 @@ This one has a pretty simple and easy-to-use interface and offers the unique sit
 
 ### 8. [eLux NG][8] ###
 
+owen-carter  translating
 This one adds new models to the list of supported processors for eLux.
 
 ### 9. [Embedded Coyote Linux][9] ###
