@@ -1,3 +1,6 @@
+
+>>chenguang is translating it 
+
 How to Rescue a Non-booting GRUB 2 on Linux
 ================================================================================
 ![Figure 1: GRUB 2 menu with cool Apollo 17 background.](http://www.linux.com/images/stories/41373/grub-command-shell.jpg)
