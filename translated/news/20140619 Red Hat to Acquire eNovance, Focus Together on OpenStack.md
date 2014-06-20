@@ -1,29 +1,30 @@
-Red Hat to Acquire eNovance, Focus Together on OpenStack
+红帽携手eNovance，共进OpenStack市场
 ================================================================================
 ![](http://farm4.static.flickr.com/3108/3191608123_67e1da2b79_o.jpg)
 
-In conjunction with the recent OpenStack Summit in Atlanta, Red Hat had confirmed many new OpenStack-centric initiatives, one of which was that the company [is collaborating][1] with eNovance, a leader in the open source cloud computing market, tto drive Network Functions Virtualization (NFV) and telecommunications features into OpenStack. Now, Red Hat has [announced][2] that it will acquire eNovance for about  70 million euros, or $95 million, in cash and stock.
+正在OpenStack峰会于亚特兰大举办的同时,红帽确认了数项与OpenStack相关的项目。其中一项是，红帽正与开源云计算市场的领导者eNovance进行  [合作][1] 。双方将推动网络功能虚拟（Network Functions Virtualization）和电信功能融入OpenStack. 红帽 [宣布][2] 将以七千万欧元或九千五百万美金的现金和股票，购买eNovance.
 
-eNovance is an important player on the OpenStack scene, and is especially known for its work with telecommunications companies.  eNovance helps service providers and large-scale private enterprises build and deploy cloud infrastructures quickly and cost effectively, and will create new lines of business for Red Hat.
-As noted by IDC analysts Laura DuBois and Ashish Nadkarni in their recent recap of the spring 2014 OpenStack Summit, "Integrators such as eNovance will continue to assist cloud service providers and enterprises in building large OpenStack clouds. ... The future for OpenStack is looking very bright."
+eNovance 是OpenStack市场上重要的角色， 特别以其和电信公司的合作而为人所知。eNovance帮助服务提供商和大型私企搭建部署云基础架构，快速且成本低廉。这也将为红帽开创新的产品线。
 
-eNovance is one of the top 10 contributors to the upstream OpenStack project, and is the only European Gold Member company of the OpenStack Foundation. The company has more than 150 global customers, including Alcatel-Lucent, AXA, Cisco, Cloudwatt, and Ericsson. The company has offices in Paris; Montreal; and Bangalore, India.
+IDC 分析员 Laura DuBois and Ashish Nadkarni 在2014春季OpenStack 峰会上指出 “像eNovance这样的集成商将继续助力云服务提供商和企业，建立OpenStack云。OpenStack的前景开起来十分光明。"
 
-Red Hat and eNovance [first partnered in 2013][3] to deliver OpenStack implementation and integration services to joint customers, based on the Red Hat Enterprise Linux OpenStack Platform.  At OpenStack Summit in May, the two companies announced an [expanded collaboration][4] to drive Network Functions Virtualization (NFV) and telecommunications innovations into OpenStack, aimed at delivering the industry’s most complete, carrier-grade telecommunications offering based on Linux, Kernel-based Virtual Machine (KVM), and OpenStack.
+eNovance 是OpenStack十大上游贡献者之一, 也是OpenStack 基金唯一的欧洲金牌合作商。 该公司在全球有超过150家客户，包括 Alcatel-Lucent, AXA, Cisco, Cloudwatt, and Ericsson.  在巴黎、蒙特利尔、班加罗尔、印度，都设有办公室。
 
-Raphaël Ferreira, co-founder & chief executive officer, eNovance, said in a statement:
+2013年，红帽和 eNovance 第一次展开[合作][3] ，为其共同客户，提供OpenStack 部署和集成服务。该服务基于Red Hat Enterprise Linux OpenStack 平台。 五月的OpenStack峰会上, 两家公司宣布了 [进一步的合作][4] ，推动网络功能虚拟(NFV) 和电信在OpenStack上的创新, 意在提供业界最完整、电信级的 通讯服务，基于Linux, 基于内核的虚拟机 (KVM), 和 OpenStack.
 
-> “eNovance, like Red Hat, understands the transformative power OpenStack can have on the enterprise market when it is both deployed and integrated in the right fashion. We are excited to become part of Red Hat, a company that not only offers one of the best-in-class OpenStack distributions on the market today, but also which shares our common belief that OpenStack is best deployed and integrated in a continuous and seamless manner."
+eNovance的联合创始人、首席执行官Raphaël Ferreira, 在声明中说:
+
+> “和红帽一样，eNovance理解OpenStack改变企业市场的力量，当其正确部署且集成时。 我们非常高兴能成为红帽的一部分。红帽不仅仅提供一流的OpenStack发行版本, 也和我们一样坚信： 最好以连续、无缝的方式部署、集成OpenStack."
 
 --------------------------------------------------------------------------------
 
 via: http://ostatic.com/blog/red-hat-to-acquire-enovance-focus-together-on-openstack
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[tengpeng](https://github.com/tengpeng) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [1]:http://www.redhat.com/about/news/press-archive/2014/5/red-hat-and-enovance-to-deliver-carrier-grade-openstack
 [2]:http://www.marketwatch.com/story/red-hat-to-acquire-enovance-a-leader-in-openstack-integration-services-2014-06-18
 [3]:http://cts.businesswire.com/ct/CT?id=smartlink&url=http%3A%2F%2Fwww.redhat.com%2Fabout%2Fnews%2Fpress-archive%2F2013%2F11%2Fred-hat-and-enovance-partner-to-accelerate-adoption-of-red-hat-enterprise-linux-openstack-platform&esheet=50888828&newsitemid=20140618005543&lan=en-US&anchor=first+partnered+in+2013&index=1&md5=1721061ca22652d2a4413085db70361b
-[4]:http://cts.businesswire.com/ct/CT?id=smartlink&url=http%3A%2F%2Fwww.redhat.com%2Fabout%2Fnews%2Fpress-archive%2F2014%2F5%2Fred-hat-and-enovance-to-deliver-carrier-grade-openstack&esheet=50888828&newsitemid=20140618005543&lan=en-US&anchor=expanded+collaboration&index=2&md5=a34aaf179e4aac7417917e55c991ef87
+[4]:http://cts.businesswire.com/ct/CT?id=smartlink&ppppppppt-pt-lopppppppppptpt-lpt-pt-locapt-pt-ptptppptppppt-ptptptppp
