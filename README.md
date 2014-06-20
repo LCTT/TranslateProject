@@ -1,9 +1,11 @@
 简介
 -------------------------------
 
-LCTT是Linux中国社区（[http://linux.cn/]()）的翻译组，负责从国外优秀媒体翻译Linux相关的技术、资讯、杂文等内容。
+LCTT是Linux中国社区（[http://linux.cn/](http://linux.cn/)）的翻译组，负责从国外优秀媒体翻译Linux相关的技术、资讯、杂文等内容。
 
-LCTT已经拥有三十余名活跃成员，并欢迎更多的Linux志愿者加入我们的团队。
+LCTT已经拥有近百余名活跃成员，并欢迎更多的Linux志愿者加入我们的团队。
+
+![logo](http://img.linux.net.cn/static/image/common/linuxcn_qqq_lctt.gif)
 
 LCTT的组成
 -------------------------------
@@ -20,7 +22,7 @@ LCTT的组成
 加入我们
 -------------------------------
 
-请首先加入翻译组的QQ群，群号是：131864150，加群时请说明是志愿者。加入后记得修改您的群名片为您的github的ID。
+请首先加入翻译组的QQ群，群号是：198889102，加群时请说明是志愿者。加入后记得修改您的群名片为您的github的ID。
 
 加入的成员，请先阅读[WIKI 如何开始](https://github.com/LCTT/TranslateProject/wiki/01-如何开始)。
 
@@ -36,37 +38,63 @@ LCTT的组成
 - CORE [wxy](https://github.com/wxy),
 - CORE [carolinewuyan](https://github.com/carolinewuyan),
 - CORE [DeadFire](https://github.com/DeadFire),
-- CORE [tinyeyeser](https://github.com/tinyeyeser),
 - CORE [geekpi](https://github.com/geekpi),
+- CORE [tinyeyeser](https://github.com/tinyeyeser),
 - CORE [vito-L](https://github.com/vito-L),
 - CORE [jasminepeng](https://github.com/jasminepeng),
+- CORE [willqian](https://github.com/willqian),
+- CORE [vizv](https://github.com/vizv),
+- CORE [GOLinux](https://github.com/GOLinux),
 - [luoxcat](https://github.com/Luoxcat),
-- [flsf](https://github.com/flsf),
 - [runningwater](https://github.com/runningwater),
-- [Linux-pdz](https://github.com/Linux-pdz),
-- [woodboow](https://github.com/woodboow),
 - [bazz2](https://github.com/bazz2),
 - [Vic020](https://github.com/Vic020),
+- [flsf](https://github.com/flsf),
+- [alim0x](https://github.com/alim0x),
 - [crowner](https://github.com/crowner),
+- [Linux-pdz](https://github.com/Linux-pdz),
 - [KayGuoWhu](https://github.com/KayGuoWhu),
-- [scusjs](https://github.com/scusjs),
 - [Linchenguang](https://github.com/Linchenguang),
-- [theo-l](https://github.com/theo-l),
-- [l3b2w1](https://github.com/l3b2w1),
+- [woodboow](https://github.com/woodboow),
+- [zpl1025](https://github.com/zpl1025),
+- [yechunxiao19](https://github.com/yechunxiao19),
+- [blueabysm](https://github.com/blueabysm),
+- [linuhap](https://github.com/linuhap),
+- [scusjs](https://github.com/scusjs),
 - [hyaocuk](https://github.com/hyaocuk),
-- [boredivan](https://github.com/boredivan),
+- [theo-l](https://github.com/theo-l),
 - [NearTan](https://github.com/NearTan),
+- [l3b2w1](https://github.com/l3b2w1),
+- [ThomazL](https://github.com/ThomazL),
+- [MikeCoder](https://github.com/MikeCoder),
+- [shipsw](https://github.com/shipsw),
+- [boredivan](https://github.com/boredivan),
+- [jiajia9linuxer](https://github.com/jiajia9linuxer),
+- [icybreaker](https://github.com/icybreaker),
+- [liuaiping](https://github.com/liuaiping),
+- [tenght](https://github.com/tenght),
 - [rogetfan](https://github.com/rogetfan),
 - [whatever1992](https://github.com/whatever1992),
-- [icybreaker](https://github.com/icybreaker),
-- [ailurus1991](https://github.com/ailurus1991),
-- [Maclauring](https://github.com/Maclauring),
-- [small-Wood](https://github.com/small-Wood),
-- [willqian](https://github.com/willqian),
-- [stduolc](https://github.com/stduolc),
+- [2q1w2007](https://github.com/2q1w2007),
+- [disylee](https://github.com/disylee),
 - [SteveArcher](https://github.com/SteveArcher),
+- [JonathanKang](https://github.com/JonathanKang),
+- [zzlyzq](https://github.com/zzlyzq),
+- [FineFan](https://github.com/FineFan),
+- [ailurus1991](https://github.com/ailurus1991),
+- [yujianxuechuan](https://github.com/yujianxuechuan),
+- [tomatoKiller](https://github.com/tomatoKiller),
+- [stduolc](https://github.com/stduolc),
+- [Maclauring](https://github.com/Maclauring),
+- [Hao-Ding](https://github.com/Hao-Ding),
+- [small-Wood](https://github.com/small-Wood),
+- [zsJacky](https://github.com/zsJacky),
+- [CHINAANSHE](https://github.com/CHINAANSHE),
+- [ggaaooppeenngg](https://github.com/ggaaooppeenngg),
 - [lijhg](https://github.com/lijhg),
-（更新于2014/1/2）
+
+
+（更新于2014/06/18）
 
 谢谢大家的支持！
 
@@ -82,3 +110,6 @@ LCTT的组成
 * 2013/10/18 正式启动man翻译计划。
 * 2013/11/10 举行第一次北京线下聚会。
 * 2014/01/02 增加了Core Translators 成员: geekpi。
+* 2014/05/04 更换了新的QQ群：198889102
+* 2014/05/16 增加了Core Translators 成员: will.qian、vizv。
+* 2014/06/18 由于GOLinux令人惊叹的翻译速度和不错的翻译质量，升级为Core Translators 成员。
