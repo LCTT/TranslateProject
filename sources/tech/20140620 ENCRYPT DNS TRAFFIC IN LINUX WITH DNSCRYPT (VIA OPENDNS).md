@@ -1,3 +1,5 @@
+[Tranlation] in progress -- [213edu][https://github.com/213edu]
+
 ENCRYPT DNS TRAFFIC IN LINUX WITH DNSCRYPT (VIA OPENDNS)
 ================================================================================
 **DNSCrypt, as its name suggests, encrypts DNS traffic between your computer and OpenDNS, in the same way SSL turns HTTP traffic into HTTPS encrypted traffic.**
