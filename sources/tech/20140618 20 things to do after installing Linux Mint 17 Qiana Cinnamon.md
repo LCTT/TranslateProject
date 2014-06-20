@@ -1,3 +1,4 @@
+Translating by GOLinux
 20 things to do after installing Linux Mint 17 Qiana Cinnamon
 ================================================================================
 ### Linux Mint 17 Qiana Cinnamon ###
