@@ -1,3 +1,5 @@
+Translation in progress [213edu][https://github.com/213edu]
+
 How To Install Linux On A MacBook Pro Retina
 ================================================================================
 ![](http://main.makeuseoflimited.netdna-cdn.com/wp-content/uploads/2014/05/linux-macbook-pro-retina-840x420.jpg?ec7b17)
