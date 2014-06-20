@@ -1,34 +1,24 @@
 2q1w2007占坑
-Celebrating 30 Years of X
+庆祝下X已经30岁了!
 ================================================================================
-The X.Org Foundation is proud to announce a special birthday: 30 years ago,
-on 19 June 1984, Bob Scheifler announced the X Window System.
+X.org基金会很自豪地宣布一个特别的日子：30年前，1984年六月19日，Bob Scheifler发布了X窗口系统。
 
 [https://en.wikipedia.org/wiki/X11#Introduction][1]
 
-Over these 30 years, X has come to be the base for Unix desktops everywhere.
-With desktop environments such as GNOME, KDE, XFCE, Unity, Enlightenment,
-millions of users are using X as the underlying technology today.
+在这30年中，X作为UNIX桌面无处不在。通过使用桌面环境如GNOME，KDE，Xfce，Unity，Enlightenment，在今天，数以百万计的用户使用X作为底层技术。
 
-The X developers have pushed the boundaries and moved X from a system
-originally written to run on the CPU of a VAX VS100 to one that runs the
-GUI on today's laptops with 3D rendering capabilities. Indeed, X predates
-the concept of a Graphics Processing Unit (GPU) as we currently know it, and
-even the company that popularized this term in 1999, Nvidia.
+X的开发者做出了巨大的突破，把X从运行在VAX VS100 CPU的一个程序发展成为在今天的笔记本电脑上渲染3D界面的程序。事实上，X的出现早于图形处理单元（GPU）概念的出现，甚至是比推广这项技术公司——于1999上市的Nvidia更早。
 
-X continues to see improvements and despite its long service record, it will
-stay with us for a while longer.
+尽管X已经服务了很长时间，但是X仍将做出改进并继续陪伴我们。
 
-And in case you're wondering, X predates:
+请不要感到惊奇, X的出现早于:
 
 - Linux, FreeBSD, NetBSD, OpenBSD, Solaris, Microsoft Windows
 - POSIX, C89, C99, C++, Java
-- the World Wide Web
-- the GPL and the FSF
+- 万维网
+- GPL 和 FSF
 
-X was one of the first major open source software projects, years before the
-terms Free Software and Open Source Software were commonplace. Celebrate with
-us, for without X, the desktop would not be what it is today.
+X是第一个主要的开源软件项目，比Free Software 和 Open Source Software更早。和我们一起庆祝吧，因为没有X，桌面会不会是今天这个样子。
 
 -The X.Org Board of Directors
 
@@ -36,7 +26,7 @@ us, for without X, the desktop would not be what it is today.
 
 via: http://comments.gmane.org/gmane.comp.freedesktop.xorg.announce/2177
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[2q1w2007](https://github.com/2q1w2007) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
