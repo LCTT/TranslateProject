@@ -1,4 +1,4 @@
-Translating by  CHINAANSHE 
+Translation in progress [213edu][https://github.com/213edu]
 
 How To Install Linux On A MacBook Pro Retina
 ================================================================================
