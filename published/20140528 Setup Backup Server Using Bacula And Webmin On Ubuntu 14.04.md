@@ -1,8 +1,8 @@
 在Ubuntu 14.04 上使用Bacula和Webmin设置备份服务器
 ================================================================================
-**Bacula**是一个开源网络备份解决方案,允许你在本地或者远程计算机组上备份或者还原数据。许多高级存储管理特性配置与安装是很容易的。
+**Bacula**是一个开源网络备份解决方案，允许你在本地或者远程计算机组上备份或者还原数据。配置与安装很容易，并支持许多高级存储管理特性。
 
-主机名是**server.unixmen.local**。现在让我们进入教程吧。
+本教程中，让我们来学习一下如何在Ubuntu 14.04服务器上安装和配置Bacula。我的机器的IP是**192.168.1.250/24**，主机名是**server.unixmen.local**。现在让我们进入教程吧。
 
 ### 安装 Bacula ###
 
@@ -34,7 +34,7 @@ Bacula默认使用Postfix MTA。安装过程中，你会被要求配置Postfix�
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/05/sk@server-_0041.png)
 
-输入服务器完整网域名称：
+输入服务器完整域名（FQDN）：
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/05/sk@server-_0051.png)
 
@@ -46,7 +46,7 @@ Bacula默认使用Postfix MTA。安装过程中，你会被要求配置Postfix�
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/05/sk@server-_0071.png)
 
-设置bacula-director-mysql密码注册数据库。如果空白，会生成一个随机密码。
+设置数据库的bacula-director-mysql用户的密码。如果留空不输入，会生成一个随机密码。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/05/sk@server-_0081.png)
 
@@ -88,7 +88,7 @@ Bacula有很多配置文件需要我们配置。
     }
     [...]
 
-滚动到“list of files to be backed up”字段，并设置备份的目录。本篇教程中，我希望备份“**/home/sk**”目录。所以我包这个目录包含进了“File”参数中。
+滚动到“list of files to be backed up”字段，并设置备份的目录。本篇教程中，我希望备份“**/home/sk**”目录。所以我把这个目录包含进了“File”参数中。
 
     [...]
      
@@ -121,9 +121,9 @@ Bacula有很多配置文件需要我们配置。
 
 保存并关闭文件。
 
-**更新 Bacula 存储守护进程设置:**
+**更新 Bacula 存储守护进程设置：**
 
-编辑 **/etc/bacula/bacula-sd.conf**,
+编辑 **/etc/bacula/bacula-sd.conf**，
 
     sudo vi /etc/bacula/bacula-sd.conf
 
@@ -163,7 +163,6 @@ Bacula有很多配置文件需要我们配置。
 使用下面的命令在Ubuntu 14.04上安装Webmin。
 
 - [在 Ubuntu 14.04 LTS上安装Webmin][1]
-注：此链接文章在另一篇里，如果也翻译发布了，那么可以更改这个链接地址
 
 现在使用URL https://ip-address:10000进入Webmin界面。在左边的窗格中进入系统标签并点击模块配置链接。如果在系统下没有找到它，在未使用模块一栏中查找。
 
@@ -183,8 +182,8 @@ Bacula有很多配置文件需要我们配置。
 
 via: http://www.unixmen.com/setup-backup-server-using-bacula-webmin-ubuntu-14-04/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-[1]:http://www.unixmen.com/install-webmin-ubuntu-14-04/
+[1]:http://linux.cn/article-3113-1.html
