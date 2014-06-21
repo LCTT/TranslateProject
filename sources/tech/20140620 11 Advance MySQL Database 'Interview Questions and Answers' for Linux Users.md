@@ -1,3 +1,4 @@
+translating by johnhoow...
 11 Advance MySQL Database “Interview Questions and Answers” for Linux Users
 ================================================================================
 We have already published two MySQL articles, well appreciated by Tecmint Community. This is the third article on MySQL Interview series and sixteen in the the Interview Genre Column.
