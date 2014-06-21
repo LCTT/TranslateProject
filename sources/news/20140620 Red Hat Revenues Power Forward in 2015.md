@@ -1,5 +1,8 @@
 Red Hat Revenues Power Forward in 2015
 ================================================================================
+
+Translating by MandW
+
 Red Hat reported its first quarter fiscal 2015 revenues on June 18, showing continued demand and momentum for its Linux and open-source technologies. Red Hat has been particularly busy of late, acquiring a pair of companies and launching its Red Hat Enterprise Linux 7 (RHEL) flagship platform.
 
 For the quarter, Red Hat reported revenue of $424 million, which is a 17 percent year-over-year gain.
