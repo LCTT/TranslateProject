@@ -1,3 +1,5 @@
+[Translating] --213edu
+
 How to enable testing and unstable repository on Debian
 ================================================================================
 Testing/Unstable sources
