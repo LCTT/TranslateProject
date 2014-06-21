@@ -10,7 +10,6 @@ DNSCrypt刚问世的时候，官方公布为是一款只有Mac才能用的工具
 
 这是世界上第一款加密DNS通信的工具，虽然TOR可以加密DNS的请求，但毕竟它们只是在出口节点加密而已。
 
-> It doesn’t require any changes to domain names or how they work, it simply provides a method for securely encrypting communication between our customers and our DNS servers in our data centers.
 > 这款工具并不需要对域名或其工作方式做任何的改变，它只是提供了个该工具的用户与机房里的DNS服务器之间的加密方式而已。
 
 您可以在[GitHub][3]的[OpenSND DNSCrypt][2]页面阅读更多的相关信息。
