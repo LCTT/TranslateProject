@@ -1,19 +1,16 @@
 translating by johnhoow...
-11 Advance MySQL Database “Interview Questions and Answers” for Linux Users
+给linux用户的11个高级MySQL数据库面试问题和答案
 ================================================================================
-We have already published two MySQL articles, well appreciated by Tecmint Community. This is the third article on MySQL Interview series and sixteen in the the Interview Genre Column.
+我们已经发表了两篇MySQL的文章,非常感谢Tecmint社区的大力支持.这是MySQL面试系列的第三篇文章,并且在面试专栏中排第16.
+- [15个基本的MySQL面试问题][1]
+- [给中级人员的10个MySQL面试问题][1]
 
-- [15 Basic MySQL Interview Questions][1]
-- [10 MySQL Database Interview Questions for Intermediates][1]
-注：上面这两篇文章我们都翻译过，可以适当修改成我们的链接
+![11个MySQL面试问题](http://www.tecmint.com/wp-content/uploads/2014/06/MySQL-Interview-Questions.jpeg)
 
-![11 MySQL Interview Questions](http://www.tecmint.com/wp-content/uploads/2014/06/MySQL-Interview-Questions.jpeg)
+感谢你们这一路上对我们的支持.这篇文章主要针对MySQL的实用性,讲面试方面的问题.
 
-We have reached here all because of yours support and we seek the same in future form your end. Here in this article we will be concentrating on the practical aspect of MySQL, the question relevant for Interview aspect.
-
-### 1. Using SELECT statement find the version of the server you are running and print the name of the current database? ###
-
-**Ans**: The below MySQL command will show server version and currently selected Database.
+### 1. 如何使用SELECT语句找到你正在运行的服务器的版本并打印出当前数据库的名称? ###
+**答案**:下面的语句的结果会显示服务器的版本和当前的数据库名称 
 
      mysql> SELECT VERSION(), DATABASE();
      
@@ -24,7 +21,7 @@ We have reached here all because of yours support and we seek the same in future
      +-------------------------+------------+
      1 row in set (0.06 sec)
 
-In the Database Column it is showing **NULL** value because we have not selected any database. So, select database as shown in the following command.
+在Database一栏中显示**NULL**是因为我们当前没有选择任何数据库.因此,使用下面的语句先选择一个数据库,就能看到相应的结果.
 
     mysql> use Tecmint;
     
@@ -44,9 +41,9 @@ In the Database Column it is showing **NULL** value because we have not selected
     +-------------------------+------------+
     1 row in set (0.00 sec)
 
-### 2. USE NOT Operator (!) to select all the users except ‘SAM’ from a table say ‘Tecmint’ ###
+### 2. 使用非运算符(!)从表"Tecmint"中列出除了user等于"SAM"的所有记录
 
-**Ans**: The below statement will show all the columns of all the users from table ‘**Tecmint**‘ except the user ‘**SAM**‘.
+**答案**:使用下面的语句 
 
     mysql> SELECT * FROM Tecmint WHERE user !=SAM;
     
@@ -57,9 +54,10 @@ In the Database Column it is showing **NULL** value because we have not selected
     | 2001-05-15 08:50:57 | TIM     | venus  | phil     | venus   | 978   | 
     +---------------------+---------+---------+---------+---------+-------+
 
-### 3. Is it possible to implement ‘AND’ with NOT (!) Operator. ###
+### 3. 是否能够使用非运算符(!)来实现'AND'运算
 
-**Ans**: The AND operator is used when we use (=) and the operator OR is used when we use (!=). An example of (=) with AND Operator.
+**答案**: The AND operator is used when we use (=) and the operator OR is used when we use (!=). An example of (=) with AND Operator.
+**答案**: 
 
     mysql> SELECT * FROM mail WHERE user = SAM AND root = phil
 
