@@ -2,7 +2,7 @@
 ================================================================================
 **正如SSL能将HTTP通信变为加密过的HTTPS通信，DNSCrypt, 物如其名， 是一款能加密您电脑与OpenDNS之间的通信的小神器。**
 
-DNSCrypt刚问世的时候，官方公布为是一款只有Mac才能用的工具，但根据最近一片由OpenDNS发的[文章][1]表明，虽然还没有用户界面，但其实当Mac版DNSCrypt推出的时候源码已经放到了Github上了， Linux的用户也可以安装以及使用哦！
+DNSCrypt刚问世的时候，官方公布它只是一款Mac才能用的工具，但根据最近一篇由OpenDNS发的[文章][1]表明，虽然还没有用户界面，但其实当Mac版DNSCrypt推出的时候源码已经放到了Github上了， Linux的用户也可以安装以及使用哦！
 
 ### 为神马要使用 DNSCrypt? ###
 
@@ -22,7 +22,7 @@ DNSCrypt刚问世的时候，官方公布为是一款只有Mac才能用的工具
 
 ![](http://4.bp.blogspot.com/-WLefdXHIzwg/Tz45kGKAZdI/AAAAAAAAH0k/KLBnWJom6-g/s1600/edit-network.png)
 
-然后把您的DNS服务器调成"127.0.0.1" - 在GNOME界面下的话，只要到Network Connections（网络连接）选项然后选择"Edit"并在"DNS servers"输入"127.0.0.1"就好了。如果您用的是DHCP的话，请选择Automatic (DHCP) addresses only"， 这样的话才会进入DNS服务器。然后只要重连便可。
+然后把您的DNS服务器调成"127.0.0.1" - 在GNOME界面下的话，只要到Network Connections（网络连接）选项然后选择"Edit"并在"DNS servers"输入"127.0.0.1"就好了。如果您用的是DHCP的话，请选择Automatic (DHCP) addresses only"， 这样的话才能输入DNS服务器。然后只要重连网络便可。
 
 您可以访问这条[链接][5]来测试您连接到了OpenDNS了没。
 
@@ -34,7 +34,7 @@ DNSCrypt刚问世的时候，官方公布为是一款只有Mac才能用的工具
 
 如果您想在Ubuntu设置开机启动，您可以使用这个[Upstart脚本][7]。
 
-注： 在Ubuntu 12.04版在127.0.0.1有个本地的DNS cache （dnsmasq）在跑，所以已经把改脚本改成让DNSCrypt使用127.0.0.2了， 所以按照上面的教程，应该把127.0.0.1换成127.0.0.2了。
+注： 在Ubuntu 12.04版在127.0.0.1有个本地的DNS cache 服务器（dnsmasq）在跑，所以已经把改脚本改成让DNSCrypt使用127.0.0.2了， 所以按照上面的教程，应该把127.0.0.1换成127.0.0.2了。
 
 要安装此脚本请使用以下的指令（要首先解压下下来的压缩文件）：
 
@@ -49,13 +49,13 @@ DNSCrypt刚问世的时候，官方公布为是一款只有Mac才能用的工具
 
     sudo stop dnscrypt
 
-[下载DNSCrypt][8] (.deb, .rpm以及源码都可供下载哦！)
+[下载DNSCrypt][8] (.deb、 .rpm以及源码都可供下载哦！)
 
 --------------------------------------------------------------------------------
 
 via: http://www.webupd8.org/2012/02/encrypt-dns-traffic-in-linux-with.html
 
-译者：[213edu](https://github.com/213edu) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[213edu](https://github.com/213edu) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
