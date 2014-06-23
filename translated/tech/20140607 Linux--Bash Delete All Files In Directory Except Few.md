@@ -108,4 +108,4 @@ via: http://www.cyberciti.biz/faq/linux-bash-delete-all-files-in-directory-excep
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [1]:http://www.manpager.com/linux/man1/bash.1.html
-[2]:http://www.manpager.com/linux/man1/find.1.html
+[2]:http://www.manpager.com/linux/man1/find.1.html 
