@@ -2,11 +2,12 @@ Linux：使用bash删除目录中的特定文件
 ================================================================================
 ![](http://s0.cyberciti.org/images/category/old/terminal.png)
 
-我是一个Linux新手用户。现在我需要清理一个下载目录中的文件，其实我就是想删除～/Download/文件夹下面除了以下格式的文件外所以其它文件：
+我是一名Linux新用户。现在我需要清理一个下载目录中的文件，其实我就是想从～/Download/文件夹删去除了以下格式的文件外所以其它文件：
+
 *.iso - 所有的iso格式的文件。
 *.zip - 所有zip格式的文件。
 
-我如何在一个基于Linux，OS X 或者Unix-like系统上的bash shell中删除特定的文件呢？
+我如何在一个基于Linux，OS X 或者 Unix-like 系统上的bash shell中删除特定的文件呢？
 
 Bash shell 支持丰富的文件模式匹配符例如：
 
@@ -19,7 +20,7 @@ Bash shell 支持丰富的文件模式匹配符例如：
 这里你需要用系统内置的shopt命令来开启shell中的extglob选项，然后你就可以使用扩展的模式符了，这些模式匹配符如下：
 
 1. ?(pattern-list) － 匹配零次或一次给定的模式。
-1. *(pattern-list) －至少匹配零次给定的模式。
+1. *(pattern-list) － 至少匹配零次给定的模式。
 1. +(pattern-list) － 至少匹配一次给定的模式。
 1. @(pattern-list) － 匹配一次给定的模式。
 1. !(pattern-list) － 匹配所有除给定模式以外的模式。
@@ -60,6 +61,7 @@ rm 命令的语法格式为：
 ### 策略 #2: 使用bash的 GLOBIGNORE 变量删除指定文件以外的所有文件 ###
 
 摘自 [bash(1)][1] 手册页:
+
 > 一个用冒号分开的模式列表定义了被路径扩展忽略的文件的集合。如果一个文件同时与路径扩展模式和GLOBIGNORE中的模式匹配，那么它就从匹配列表中移除了。
 
 要删除所有文件只保留 zip 和 iso 文件，应如下设置 GLOBIGNORE：
@@ -84,7 +86,7 @@ rm 命令的语法格式为：
     find /dir/ -type f -not -name 'PATTERN' -print0 | xargs -0 -I {} rm [options] {}
  
 
-为了删除 ～/source 目录下除 php 以外的文件，键入：
+想要删除 ～/source 目录下除 php 以外的文件，键入：
 
     find ~/sources/ -type f -not -name '*.php' -delete
 
@@ -103,7 +105,7 @@ rm 命令的语法格式为：
 
 via: http://www.cyberciti.biz/faq/linux-bash-delete-all-files-in-directory-except-few/
 
-译者：[Linchenguang](https://github.com/Linchenguang) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Linchenguang](https://github.com/Linchenguang) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
