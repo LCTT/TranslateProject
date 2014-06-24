@@ -227,7 +227,7 @@ fdisk和sfdisk显示完整的大量的可以花些时间来解释的信息，，
 --------------------------------------------------------------------------------
 
 via: http://www.binarytides.com/linux-command-check-disk-partitions/
-
+ 
 译者：[tenght](https://github.com/tenght) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
