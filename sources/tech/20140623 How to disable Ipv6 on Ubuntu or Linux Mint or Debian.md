@@ -1,3 +1,6 @@
+Translating--------------geekpi
+
+
 How to disable Ipv6 on Ubuntu, Linux Mint, Debian
 ================================================================================
 ### Ipv6 ###
