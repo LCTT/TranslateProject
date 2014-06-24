@@ -1,10 +1,10 @@
-使用`Nginx和Apache`安装RainLoop Webmail(一个网页邮件客户端)
+在Arch上使用Nginx/Apache安装RainLoop Webmail
 ================================================================================
-Rainloop是一个使用PHP编写的，开源免费的网页邮件客户端。他支持包括Google,Yahoo,OutLook在内的主流的邮件服务器，当然，他也支持你自己的本地邮件服务器。他主要的表现看起来像使用IMAP和SMTP协议的MUA(邮件客户端)。
+Rainloop是一个使用PHP编写的，开源免费的网页邮件客户端。他支持包括Google、Yahoo、OutLook在内的主流的邮件服务器，当然，他也支持你自己的本地邮件服务器。它看起来大致就像使用IMAP和SMTP协议的MUA(邮件客户端)一样。
 
 #### RainLoop 示例 ####
 
-可以看一下作者编写的安装文档： [http://demo.rainloop.net/][1].
+可以看一下RainLoop作者安装的演示页面： [http://demo.rainloop.net/][1]。
 
 ![在Arch Linux上安装RainLoop](http://www.tecmint.com/wp-content/uploads/2014/05/Install-RainLoop-in-Arch-Linux.jpg)
 在Arch Linux上安装RainLoop
@@ -17,24 +17,28 @@ If you also need references on installing Rainloop on **Debian** and **Red Hat**
 
 如果你还是需要一篇在**Debian** 和 **Red Hat** 安装 RainLoop Webmail 的教程，你可以看这篇文章：
 
-- [Install RainLoop Webmail on Debian and Red Hat based Systems][2]
+- [在 Debian 和 RedHat 系的 Linux 上安装 RainLoop Webmail][2]
+
+以及在 **Ubuntu** 服务器中安装 RainLoop Webmail 的教程，你可以看这篇文章：
+
+- [如何在 Ubuntu server 中设置 RainLoop Webmail][8]
 
 ### 系统要求 ###
 
 #### 对 Nginx ####
 
-- [Install LEMP (Nginx, PHP, MySQL with MariaDB engine and PhpMyAdmin) in Arch Linux][3]
-- [Create Virtual Hosts in Nginx Web Server][4]
+- [在 Arch Linux 上安装 LEMP (Nginx, PHP, MySQL/MariaDB 和 PhpMyAdmin)][3]
+- [在 Nginx 上创建虚拟主机][4]
 
 #### 对 Apache ####
 
-- [Install LAMP (Linux, Apache, MySQL/MariaDB, and PHP/PhpMyAdmin) in Arch Linux][5]
+- [在 Arch Linux 上安装 LAMP (Linux, Apache, MySQL/MariaDB 和 PHP/PhpMyAdmin)][5]
 
-### Step 1:为 Nginx 或者 Apache 提供虚拟Host###
+### Step 1:在 Nginx 或者 Apache 上创建虚拟主机###
 
-**1.** 假设你已经配置您的服务器（**Nginx**或**Apache**），如上面介绍的链接描述的，你需要做的第一件事是在Hosts文件里创建一个指向**的Arch Linux*系统的IP。
+**1.** 假设你已经如上面介绍的链接所述，配置好了您的服务器（**Nginx**或**Apache**），你需要做的第一件事是在Hosts文件里创建一个原始解析记录，以指向**的Arch Linux**系统的IP。
 
-对与Linux系统，修改 **/etc/hosts** 文件并且在你得localhost下添加 Rainloop virtual 域。如下：
+对于Linux系统，修改 **/etc/hosts** 文件并且在你的localhost条目之下添加 Rainloop 的虚拟域。如下：
 
     127.0.0.1	localhost.localdomain  localhost     rainloop.lan
     192.168.1.33	rainloop.lan
@@ -42,11 +46,11 @@ If you also need references on installing Rainloop on **Debian** and **Red Hat**
 ![Add Domain Host Entry](http://www.tecmint.com/wp-content/uploads/2014/05/Install-RainLoop-in-Arch-Linux-01.jpg)
 添加域信息
 
-对于Windows系统，则修改 **C:\Windows\System32\drivers\etc\hosts** 并且将接下来的内容添加到你的文件里：
+如果是Windows系统，则修改 **C:\Windows\System32\drivers\etc\hosts** 并且将接下来的内容添加到你的文件里：
 
     192.168.1.33       rainloop.lan
 
-**2.** After you verify local domain using **ping** command, create the necessary **Virtual Hosts** and **SSL** configurations for **Apache** or **Nginx**.
+**2.** 使用 **ping** 命令确认本地的 Rainloop 域名创建成功之后，然后在 **Apache** 或 **Nginx** 中创建所需的 **虚拟主机** 和 **SSL** 配置。
 
 #### Nginx 虚拟主机 ####
 
@@ -141,10 +145,10 @@ If you also need references on installing Rainloop on **Debian** and **Red Hat**
 
     $ sudo nginx_gen_ssl.sh
 
-![Generate Certificate and Keys](http://www.tecmint.com/wp-content/uploads/2014/05/Install-RainLoop-in-Arch-Linux-04.jpg\)
+![Generate Certificate and Keys](http://www.tecmint.com/wp-content/uploads/2014/05/Install-RainLoop-in-Arch-Linux-04.jpg)
 生成证书和密钥
 
-生成证书和SSL密钥后，创建Rainloop**根**网络服务器的文件路径（Rainloop PHP文件所在的位置），然后启用虚拟主机，并重新启动Nginx的守护进程，应用配置。
+生成证书和SSL密钥后，创建Rainloop Web服务器**根**的文件路径（Rainloop PHP文件所在的位置），然后启用虚拟主机，并重新启动Nginx的守护进程，应用配置。
 
     $ sudo mkdir -p /srv/www/rainloop
     $ sudo n2ensite rainloop
@@ -232,7 +236,7 @@ If you also need references on installing Rainloop on **Debian** and **Red Hat**
 输入组织信息
 
 After the Certificate and SSL keys are created, add Rainloop **DocumentRoot** path, then enable Virtual Hosts and restart Apache daemon to apply configurations.
-在证书和密钥建立之后，添加RainLoop **DocumentRoot**目录，之后激活虚拟主机，并且重启Apache应用设置。
+在证书和密钥建立之后，创建 RainLoop 的 **DocumentRoot** 所指向的目录，之后激活虚拟主机，并且重启Apache应用设置。
 
     $ sudo mkdir -p /srv/www/rainloop
     $ sudo a2ensite rainloop
@@ -244,11 +248,11 @@ After the Certificate and SSL keys are created, add Rainloop **DocumentRoot** pa
 
 ### Step 2: 添加必要的PHP支持 ###
 
-**3.** 无论您使用的是**Apache**或**Nginx**Web服务器，您需要激活**php.ini**文件下中的PHP扩展，包括新的服务器**DocumentRoot**目录。
+**3.** 无论您使用的是**Apache**或**Nginx**Web服务器，您需要激活**php.ini**文件下中的PHP扩展，并将新服务器的**DocumentRoot**目录放到 open_basedir 配置中。
 
     $ sudo nano /etc/php/php.ini
 
-找到并且取消如下的PHP扩展的注释：
+找到并且取消如下的PHP扩展的注释（LCTT译注，即启用这些模块）：
 
     extension=iconv.so
     extension=imap.so
@@ -258,12 +262,11 @@ After the Certificate and SSL keys are created, add Rainloop **DocumentRoot** pa
     extension=openssl.so ( enables IMAPS and SMTP SSL protocols on mail servers)
     extension=pdo_mysql.so
 
-open_basedir语句应该看起来和这个一样。
+open_basedir语句应该看起来类似如下：
 
     open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps/:/etc/webapps/:/srv/www/
 
-**4.** After the **php.ini** file was modified restart your server than check **phpinfo** file to see if **SSL** protocols are enabled.
-**4.** 在修改好**php.ini**之后，重启你得服务器，然后检查 **phpinfo** 文件，去看看**SSL**协议是否已经激活。
+**4.** 在修改好**php.ini**之后，重启你的服务器，然后检查 **phpinfo()** 输出，去看看**SSL**协议是否已经激活。
 
     ----------对于 Apache Web 服务器----------
     $ sudo systemctl restart httpd
@@ -275,22 +278,22 @@ open_basedir语句应该看起来和这个一样。
     $ sudo systemctl restart php-fpm
 
 ![Check PHP Information](http://www.tecmint.com/wp-content/uploads/2014/05/Install-RainLoop-in-Arch-Linux-10.png)
-Check PHP Information
+查看 PHP 信息
 
 ### Step 3: 下载和安装 RainLoop Webmail ###
 
-**5.**现在是时候从官方网站下载并解压缩Rainloop应用到文档根目录，但是需要首先安装**wget的**和**unzip**程序。
+**5.**现在可以从官方网站下载Rainloop应用并解压缩到文档根目录了，但是需要首先安装**wget的**和**unzip**程序（LCTT译注，如果你已经有了可以忽略此步）。
 
     $ sudo pacman -S unzip wget
 
-**6.** 使用**wget**命令或通过使用浏览器导航到[http://rainloop.net/downloads/] [6]下载最新的源码包Rainloop zip归档。
+**6.** 使用**wget**命令或通过使用浏览器访问[http://rainloop.net/downloads/] [6]下载最新的源码包Rainloop 压缩包。
 
     $ wget http://repository.rainloop.net/v1/rainloop-latest.zip
 
 ![Download RainLoop Package](http://www.tecmint.com/wp-content/uploads/2014/05/Install-RainLoop-in-Arch-Linux-11.png)
 下载 RainLoop 包
 
-**7.** 下载过程完成后，解压Rainloop归档到虚拟主机文档根目录路径( **/srv/www/rainloop/** )。
+**7.** 下载过程完成后，解压Rainloop压缩包到虚拟主机文档根目录路径( **/srv/www/rainloop/** )。
 
     $ sudo unzip rainloop-latest.zip -d  /srv/www/rainloop/
 
@@ -309,7 +312,7 @@ Check PHP Information
 
 **9.** Rainloop应用程序可以通过两种方式进行配置：使用浏览器或者系统shell。如果要在终端配置就打开和编辑位于**/ srv/www/rainloop/data/_data_da047852f16d2bc7352b24240a2f1599/_default_/configs/**的application.ini**文件。
 
-**10.** 若要从浏览器访问管理界面，使用下面的URL地址** https://rainloop.lan/?admin**，然后提供默认的应用程序用户名密码。
+**10.** 若要从浏览器访问管理界面，使用下面的URL地址** https://rainloop.lan/?admin**，然后提供输入默认的应用程序用户名密码，如下：
 
     User= admin
     Password= 12345
@@ -317,7 +320,7 @@ Check PHP Information
 ![Rainloop Web Interface](http://www.tecmint.com/wp-content/uploads/2014/05/Install-RainLoop-in-Arch-Linux-14.png)
 Rainloop Web 界面
 
-**11.** 首次登录后，你将被警告更改默认密码，所以我劝你做这一点。
+**11.** 首次登录后，你会被警示需要更改默认密码，所以我劝你做这一点。
 
 ![Change Default Password](http://www.tecmint.com/wp-content/uploads/2014/05/Install-RainLoop-in-Arch-Linux-15.png)
 修改默认 Password
@@ -325,7 +328,7 @@ Rainloop Web 界面
 ![Set New Admin Password](http://www.tecmint.com/wp-content/uploads/2014/05/Install-RainLoop-in-Arch-Linux-16.png)
 设置新的 Admin Password
 
-**12.** 如果您要启用**Contact**，就登录到MySQL数据库并创建上有一个特权用户和一个新的数据库，然后提供**Contacts**字段的数据库凭据。
+**12.** 如果您要启用**Contact**（联系人）功能，就登录到MySQL数据库并创建一个新的数据库及其用户，然后提供在**Contacts**字段里面输入数据库信息。
 
     mysql -u root -p
     create database if not exists rainloop;
@@ -338,9 +341,9 @@ Rainloop Web 界面
 在 RainLoop 中激活联系人
 
 ![Enter Contact Database Details](http://www.tecmint.com/wp-content/uploads/2014/05/Install-RainLoop-in-Arch-Linux-18.png)
-添加联系人数据
+添加联系人数据库配置
 
-**13.** 默认情况下Rainloop提供** Gmail**，**Yahoo**和**Outlook**的邮件服务器的配置文件，但是你如果愿意，你也可以添加其他的邮件服务器域。
+**13.** 默认情况下Rainloop提供了** Gmail**，**Yahoo**和**Outlook**的邮件服务器的配置文件，但是你如果愿意，你也可以添加其他的邮件服务器域。
 
 ![Default Mail Domains](http://www.tecmint.com/wp-content/uploads/2014/05/Install-RainLoop-in-Arch-Linux-19.png)
 默认 Mail 域
@@ -348,26 +351,26 @@ Rainloop Web 界面
 ![Add New Domain](http://www.tecmint.com/wp-content/uploads/2014/05/Install-RainLoop-in-Arch-Linux-20.png)
 添加新域
 
-**14.** 登录你的邮件服务器，浏览** https://rainloop.lan**，并提供您的域名服务器验证信息。
+**14.** 登录你的邮件服务器，访问** https://rainloop.lan**，并提供您的域名服务器验证信息。
 
 ![Login to Mail Domain](http://www.tecmint.com/wp-content/uploads/2014/05/Install-RainLoop-in-Arch-Linux-21.png)
-登录到邮件页面
+登录到Yahoo邮件页面
 
 ![Login to Gmail Domain](http://www.tecmint.com/wp-content/uploads/2014/05/Install-RainLoop-in-Arch-Linux-22.png)
 登录Gmail
 
 ![RainLoop Email Interface](http://www.tecmint.com/wp-content/uploads/2014/05/Install-RainLoop-in-Arch-Linux-23.png)
-RainLoop Email 界面
+RainLoop 登录后的Email 界面
 
 想要了解更多的文件，可以访问：[http://rainloop.net/docs/][7].
 
-通过Rainloop你可以从浏览器中访问具有Internet连接的任何邮件服务器。唯一的缺憾就是在Arch Linux下使用Rainloop应用的人缺乏修改电子邮件帐户密码的poppassd插件包。
+通过Rainloop你可以从浏览器中访问具有Internet连接的任何邮件服务器。唯一的缺憾就是在Arch Linux下使用Rainloop应用的话，少一个修改电子邮件帐户密码的poppassd插件包。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/install-rainloop-webmail-in-arch-linux/
 
-译者：[MikeCoder](https://github.com/MikeCoder) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[MikeCoder](https://github.com/MikeCoder) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
@@ -378,3 +381,4 @@ via: http://www.tecmint.com/install-rainloop-webmail-in-arch-linux/
 [5]:http://www.tecmint.com/install-lamp-in-arch-linux/
 [6]:http://rainloop.net/downloads/
 [7]:http://rainloop.net/docs/
+[8]:http://linux.cn/article-2794-1.html
