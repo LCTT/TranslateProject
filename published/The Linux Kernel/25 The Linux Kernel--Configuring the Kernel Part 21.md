@@ -1,20 +1,20 @@
 戴文的Linux内核专题：25 配置内核 (21)
 ================================================================================
-![](http://www.linux.org/attachments/slide-jpg.689/)
+![](http://www.linux.org/attachments/slide-jpg.689/.jpg)
 
-大家好！本篇我们将会配置Linux内核的网路文件系统支持。网络文件系统是一个通过网络远程访问计算机的远程文件系统。
+大家好！本篇我们将会配置Linux内核的网络文件系统支持。网络文件系统是一个可以通过网络远程访问计算机的远程文件系统。
 
-首先，"NFS client support"驱动允许linux系统使用NFS网络文件系统。这里还有3个不同版本的NFS - (NFS client support for NFS version 2)、 (NFS client support for NFS version 3)、 (NFS client support for NFS version 4) 和 (NFS client support for NFSv4.1)。如果你有一个处理NFS的网络，找出你正在使用NFS的版本，或者启用所有的NFS驱动。
+首先，"NFS client support"驱动允许linux系统使用NFS网络文件系统。这里还有3个不同版本的NFS - (NFS client support for NFS version 2)、 (NFS client support for NFS version 3)、 (NFS client support for NFS version 4) 和 (NFS client support for NFSv4.1)。如果你有一个使用NFS的网络，找出你正在使用NFS的版本，或者启用所有的NFS驱动。
 
-交换空间并不需要在本地存储单元上。这个驱动允许Linux使用NFS作为远程交换空间(Provide swap over NFS support)。
+交换空间并不需要总在本地存储单元上。这个驱动允许Linux使用NFS作为远程交换空间(Provide swap over NFS support)。
 
 NFS系统可以通过缓存系统加速 (Provide NFS client caching support)。这是一个本地缓存。
 
-启用这个驱动允许DNS对NFS服务器使用主机名(Use the legacy NFS DNS resolver)。
+启用这个驱动允许NFS服务器使用DNS解析器(Use the legacy NFS DNS resolver)。
 
 "NFS server support"给予需要满足这个需求的服务器提供了NFS的特性。其他一些NFS驱动包括(NFS server support for NFS version 3) 和 (NFS server support for NFS version 4)。
 
-"NFS server manual fault injection"驱动是一个调试驱动，它允许开发者让NFS服务器认为在NFS上发生了一个错误。特别地，这是用于测试服务器如何处理NFS错误。
+"NFS server manual fault injection"驱动是一个调试驱动，它允许开发者让NFS服务器认为在NFS上发生了一个错误。特别地，这用于测试服务器如何处理NFS错误。
 
 "Secure RPC: Kerberos V mechanism"被用于RPC安全调用。由于安全原因，没有这个特性，NFS无法被加入到内核中。
 
@@ -26,8 +26,7 @@ CIFS是一个用于Samba和Windows服务器的虚拟文件系统(CIFS support (a
 
 有两个特性被用于调试或监视CIFS驱动(CIFS statistics) 和 (Extended statistics)。
 
-
-一个特殊的需要在有LANMAN安全的服务器上需要(Support legacy servers which use weaker LANMAN security)。LANMAN或者LM哈希是一种有一些弱点的特殊的密码哈希函数。
+要在服务器上支持LANMAN安全需要一个特定的驱动(Support legacy servers which use weaker LANMAN security)。LANMAN或者LM哈希是一种较弱的特殊的密码哈希函数。
 
 CIFS在被挂载到安全服务器上之前需要Kerberos票据(Kerberos/SPNEGO advanced session setup)。这个驱动提供了CIFS使用能够提供票据的用户空间工具的能力。
 
@@ -37,7 +36,7 @@ CIFS在被挂载到安全服务器上之前需要Kerberos票据(Kerberos/SPNEGO 
 
 CIFS有两个其他的调试工具(Enable CIFS debugging routines) 和 (Enable additional CIFS debugging routines)。
 
-CIFS有"DFS feature support",它允许共享在被移除后仍可以访问。DFS代表"Distributed FileSystem"(分布式文件系统)。
+CIFS有"DFS feature support"，它允许共享在被移除后仍可以访问。DFS代表"Distributed FileSystem"(分布式文件系统)。
 
 SMB2是CIFS的一个提升替代品(SMB2 network file system support)。SMB2代表的是"Server Message Block version 2"(服务器消息块第2版)。
 
@@ -85,7 +84,7 @@ Linux内核有一个实验性的驱动，通过9P2000协议访问Plan 9资源(Pl
 
 这个设定分会启用/禁用普遍不需要或者废除的符号 (Enable unused/obsolete exported symbols)。然而，一些模块可能需要这些符号。启用这个会增加内核的大小。Linux用户很少会需要这些符号。通常上，禁用这个特性，除非你了解一个重要的模块需要这个符号。
 
-如果启用这个shehi，内核会在用户内核头上执行健康检查(Run 'make headers_check' when building vmlinux)。
+如果启用这个设施，内核会在用户内核头上执行健康检查(Run 'make headers_check' when building vmlinux)。
 
 在编译期，这个特性会检查无效的引用(Enable full Section mismatch analysis)。
 
@@ -115,6 +114,6 @@ Linux内核有一个实验性的驱动，通过9P2000协议访问Plan 9资源(Pl
 
 via: http://www.linux.org/threads/the-linux-kernel-configuring-the-kernel-part-21.4988/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
