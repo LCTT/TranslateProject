@@ -1,6 +1,7 @@
-如何在Linux中知道你的系统是否有USB 3.0 端口[快速技巧]
+[小白技巧]如何在Linux中知道你的系统是否有USB 3.0 端口
 ================================================================================
-Most of the new computers come with USB 3.0 ports these days. But **how can you know if your computer has USB 3.0 port** or not? In this quick tip, we shall see how to find if your system has USB 3 or USB 2 in Linux.
+
+近来的大多数的新计算机都有了USB 3.0接口了。但是**你怎么知道你的计算机有没有USB 3.0接口**？这篇短文中，我们会告诉如何在Linux下知道你的系统上有USB 3还是USB3接口。
 
 ### 在Linux终端中检测是否有USB 3.0 端口 ###
 
@@ -16,7 +17,7 @@ Most of the new computers come with USB 3.0 ports these days. But **how can you 
 
 ### 辨别哪个口是USB 3.0 ###
 
-通常USB 3.0 口被标记为SS（“Super Speed”的缩写）。如果你的系统制造商没有标记SS或者USB 3,那么你可以检查端口的内部通常是颜色的。
+通常USB 3.0 口被标记为SS（“Super Speed”的缩写）。如果你的系统制造商没有标记SS或者USB 3,那么你可以检查端口的内部通常是蓝色的。
 
 ![find usb 3.0 port](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/06/usb3.0port.jpg)
 
@@ -26,6 +27,6 @@ Most of the new computers come with USB 3.0 ports these days. But **how can you 
 
 via: http://itsfoss.com/find-usb-3-port-linux/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
