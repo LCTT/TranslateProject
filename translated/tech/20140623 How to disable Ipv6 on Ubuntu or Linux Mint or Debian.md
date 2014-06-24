@@ -1,17 +1,14 @@
-Translating--------------geekpi
-
-
-How to disable Ipv6 on Ubuntu, Linux Mint, Debian
+如何在Ubuntu,Linux Mint,Debian上禁用Ipv6
 ================================================================================
 ### Ipv6 ###
 
-Ipv6 is the next version of the addressing scheme Ipv4 that is currently being used to assign numerical address to domain names like google.com over the internet.
+IPv6是寻址方案Ipv4的下一个版本,被用来给如google.com这样的域名分配数字地址。
 
-Ipv6 allows for more addresses than what Ipv4 supports. However it is not yet widely supported and its adoption is still in progress.
+Ipv6比Ipv4支持更多的地址。然而，它还没有被广泛支持，还在被接受的过程中。
 
-### Does your system support ipv6 ? ###
+### 你的系统支持Ipv6么? ###
 
-For Ipv6 to work for you, there are many things needed. First of all you need a system/OS that supports IPv6. Ubuntu Linux Mint and most modern distros do that. If you take a look at the output of ifconfig you can see ipv6 addresses assigned to the network interfaces
+为了支持Ipv6，需要很多事情。首先你需要系统/操作系统支持Ipv6。Ubuntu，Linux Mint，和大多是现代发行版都支持它。如果你看一下ifconfig指令的输出，你就会看见你的网络接口被分配了ipv6地址。
 
     $ ifconfig
     eth0      Link encap:Ethernet  HWaddr 00:1c:c0:f8:79:ee  
@@ -33,14 +30,15 @@ For Ipv6 to work for you, there are many things needed. First of all you need a 
               collisions:0 txqueuelen:0 
               RX bytes:4900560 (4.9 MB)  TX bytes:4900560 (4.9 MB)
 
-Check the line "inet6 addr".
+看一下行“inet6 addr”。
 
-Next you need a router/modem that also supports ipv6. And beyond that, your ISP must also support ipv6.
+接下来你需要一个支持ipv6的路由器/调制解调器。额外地，你的ISP也必须支持ipv6。
 
-Instead of checking every part of the network infrastructure, its better to just find out if you can connect to websites over ipv6.
-There are lots of websites that test ipv6 support on your connection. Check out [http://testmyipv6.com/][1] for example.
+除了检查网络设备的每一部分，最好查出你是否可以通过ipv6访问网站。
 
-The kernel parameters that enable ipv6 are as follows
+有很多网站可以检测你的连接是否支持ipv6. 这里就是个例子：[http://testmyipv6.com/][1]
+
+下面是在内核中启用ipv6的参数：
 
     $ sysctl net.ipv6.conf.all.disable_ipv6
     net.ipv6.conf.all.disable_ipv6 = 0
@@ -51,18 +49,18 @@ The kernel parameters that enable ipv6 are as follows
     $ sysctl net.ipv6.conf.lo.disable_ipv6
     net.ipv6.conf.lo.disable_ipv6 = 0
 
-The same can be also be checked from the proc files
+同样可以在proc文件中检查
 
     $ cat /proc/sys/net/ipv6/conf/all/disable_ipv6
     0
 
-Note that the variables control "disabling" of ipv6. So setting them to 1 would disable ipv6
+注意这里的变量是控制ipv6的“禁用”。所以设置1就会禁用ipv6。
 
-### Disable ipv6 if its not supported ###
+### 如果它不支持就禁用ipv6 ###
 
-So if ipv6 is not supported on your network infrastructure, it might be useful to disable it all together. Why ? It can cause issues like delayed domain lookups, un-necessary attempts to connect to ipv6 addresses causing delay in network connection etc.
+如果你的网络设备中不支持ipv6，那最好就全部禁用它们。为什么？因为这回引起延迟域查询，在网络连接中不必要地尝试连接到ipv6地址导致延迟等等问题。
 
-I did come across some problems like that. The apt-get command occasionally tries to connect to ipv6 addresses and fails and then retries an ipv4 address. Take a look at this output
+我也遇到过像这样的问题，apt-get命令偶尔会尝试连接到ipv6地址失败接着检索ipv4地址。看一下下面的输出。
 
     $ sudo apt-get update
     Ign http://archive.canonical.com trusty InRelease
@@ -74,32 +72,32 @@ I did come across some problems like that. The apt-get command occasionally trie
     
     .....
 
-Errors like those have been more frequent in the recent Ubuntu versions, probably because they try to use Ipv6 more than before.
+像这样的错误在最近的Ubuntu中更频繁了，或许它比以前更频繁地尝试使用IPv6地址。
 
-I noticed similar issues happen in other applications like Hexchat and also Google Chrome which would sometimes take longer than usual to lookup a domain name.
+我在其他的应用上也注意到了相似的问题，如Hexchat，同样Google Chrome也会有时会在查询域名的时候花费更长的时间。
 
-So the best solution is to disable Ipv6 entirely to get rid of those things. It takes only a small configuration and can help you solve many network issues on your system. Users have even reported an increase in internet speed.
+所以最好的方案是完全禁用Ipv6来摆脱这些事情。这只需要一点点配置但可以帮助你解决很多你系统上的很多问题。用户甚至反应这可以加速网络。
 
-#### Disable Ipv6 - Method 1 ####
+#### 禁用 Ipv6 - 方案1 ####
 
-Edit the file - /etc/sysctl.conf
+编辑文件 - /etc/sysctl.conf
 
     $ sudo gedit /etc/sysctl.conf
 
-And fill in the following lines at the end of that file
+在文件的最后加入下面的行。
 
     # IPv6 disabled
     net.ipv6.conf.all.disable_ipv6 = 1
     net.ipv6.conf.default.disable_ipv6 = 1
     net.ipv6.conf.lo.disable_ipv6 = 1
 
-Save the file and close it
+保存并关闭
 
-Restart sysctl with
+重启sysctl
 
     $ sudo sysctl -p
 
-Check the output of ifconfig again and there should be no ipv6 address
+再次检查ifconfig的输出，这里应该没有ipv6地址了。
 
     $ ifconfig
     eth0      Link encap:Ethernet  HWaddr 08:00:27:5f:28:8b  
@@ -111,28 +109,29 @@ Check the output of ifconfig again and there should be no ipv6 address
               RX bytes:1501691 (1.5 MB)  TX bytes:104883 (104.8 KB)
 
 If it does not work, then try rebooting the system and check ifconfig again.
+如果不行，尝试重启系统并再次检查ifconfig
 
-#### Disable ipv6 - GRUB method ####
+#### 禁用 ipv6 - GRUB 方案 ####
 
-Ipv6 can also be disabled by editing the grub configuration file
+Ipv6同样可以通过编辑grub配置文件禁用。
 
     $ sudo gedit /etc/default/grub
 
-Look for the line containing "GRUB_CMDLINE_LINUX" and edit it as follows
+查找包含"GRUB_CMDLINE_LINUX"的行，并如下编辑：
 
     GRUB_CMDLINE_LINUX="ipv6.disable=1"
 
-The same can also be added to the value of the variable named "GRUB_CMDLINE_LINUX_DEFAULT" and either would work. Save the file, close it and regenerate the grub configuration
+同样可以加入名为"GRUB_CMDLINE_LINUX_DEFAULT"的变量，这同样有用。保存并关闭文件，重新生成grub配置。
 
     $ sudo update-grub2
 
-Reboot. Now ipv6 should be disabled.
+重启，现在ipv应该就已经禁用了。
 
 --------------------------------------------------------------------------------
 
 via: http://www.binarytides.com/disable-ipv6-ubuntu/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
