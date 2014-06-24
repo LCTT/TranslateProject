@@ -1,9 +1,10 @@
 查看Linux硬盘分区和磁盘空间的9个命令
 ================================================================================
 
-在这篇文章中，我们将看看用来检查你的系统分区的一些命令，这些命令将检查每个磁盘的分区情况和其他细节，例如总大小，用完的空间和文件系统等。
+在这篇文章中，我们来了解一些用来检查你的系统分区的一些命令，这些命令将检查每个磁盘的分区情况和其它细节，例如总空间容量，已用完的空间和文件系统等。
 
-像fdisk，sfdisk和cfdisk命令是一般分区工具，不仅可以显示分区信息，还可以修改。
+像fdisk，sfdisk和cfdisk命令这样的常规分区工具，不仅可以显示分区信息，还可以修改。
+
 ### 1. fdisk ###
 
 Fdisk是检查磁盘上分区的最常用命令，fdisk命令可以显示分区和细节，如文件系统类型，但是它并不报告每个分区的大小。
@@ -36,9 +37,10 @@ Fdisk是检查磁盘上分区的最常用命令，fdisk命令可以显示分区�
     /dev/sdb1   *        2048     7907327     3952640    b  W95 FAT32
 
 单独显示了每个设备的详细信息：大小，秒，ID和单个分区。
+
 ### 2. sfdisk ###
 
-Sfdisk是另一种跟fdisk目的相似的实用工具，但具有更多的功能。它可以以MB为单位显示每个分区的大小。
+Sfdisk是另一种跟fdisk用途相似的实用工具，但具有更多的功能。它能够以MB为单位显示每个分区的大小。
 
     $ sudo sfdisk -l -uM
     
@@ -79,7 +81,7 @@ Cfdisk是一个基于ncurses（提供字符终端处理库，包括面板和菜�
 
 ![linux cfdisk disk partitions](http://www.binarytides.com/blog/wp-content/uploads/2014/06/linux-cfdisk.png)
 
-Cfdisk工作在同一个分区，所以如果你需要看某一磁盘的细节，可以把设备名传给Cfdisk。
+Cfdisk一次只能列出一个分区，所以如果你需要看某一磁盘的细节，可以把设备名传给Cfdisk。
 
     $ sudo cfdisk /dev/sdb
 
@@ -138,7 +140,7 @@ Df是不是一个分区工具，但它打印出挂装文件系统的细节，Df�
     /dev/sda8       196G  154G   33G  83% /media/13f35f59-f023-4d98-b06f-9dfaebefd6c1
     /dev/sda5        98G   37G   62G  38% /media/4668484A68483B47
 
-为了只显示真正的磁盘分区与分区类型，可以这样使用Df：
+要只显示真正的磁盘分区与分区类型，可以这样使用Df：
 
     $ df -h --output=source,fstype,size,used,avail,pcent,target -x tmpfs -x devtmpfs
     Filesystem     Type     Size  Used Avail Use% Mounted on
@@ -150,7 +152,7 @@ Df是不是一个分区工具，但它打印出挂装文件系统的细节，Df�
 
 ### 6. pydf ###
 
-用Python写的Df的改进版本，以一个易于阅读的方式打印出所有磁盘分区。
+它是用Python写的Df的改进版本，以一个方便阅读的方式打印出所有磁盘分区。
 
     $ pydf
     Filesystem Size Used Avail Use%             Mounted on                                 
@@ -198,7 +200,7 @@ lsblk能够显示每个设备的更多信息，如标签和模型，更多请查
 
 ### 9. hwinfo ###
 
-hwinfo是一个通用的硬件信息的工具，可以用来打印出磁盘和分区表，输出不再像上面的命令那样打印每个分区的详细信息。
+hwinfo是一个通用的硬件信息的工具，可以用来打印出磁盘和分区表，但是输出不再像上面的命令那样打印每个分区的详细信息。
 
     $ hwinfo --block --short
     disk:                                                           
@@ -215,19 +217,18 @@ hwinfo是一个通用的硬件信息的工具，可以用来打印出磁盘和�
     cdrom:
       /dev/sr0             SONY DVD RW DRU-190A
 
-### Summary ###
 ### 总结 ###
 
-parted的输出简洁而完整的得到不同分区的概述、上面的文件系统以及总空间。pydf和df被限制为只显示和他们一样的已挂载的文件系统。
+parted的输出可以得到简洁而完整的不同分区的概述、上面的文件系统以及总空间。pydf和df被限制为只显示和它们一样的已挂载的文件系统。
 
-fdisk和sfdisk显示完整的大量的可以花些时间来解释的信息，，cfdisk是一个互动的分区工具，每次显示一个单一的设备。
+fdisk和sfdisk显示完整大量的信息，需要花些时间来解释。cfdisk是一个互动的分区工具，每次显示一个单一的设备。
 
-来尝试下吧，别忘了在下面评论哟！
+来尝试下这些命令吧，别忘了在下面评论哟！
 
 --------------------------------------------------------------------------------
 
 via: http://www.binarytides.com/linux-command-check-disk-partitions/
-
-译者：[tenght](https://github.com/tenght) 校对：[校对者ID](https://github.com/校对者ID)
+ 
+译者：[tenght](https://github.com/tenght) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
