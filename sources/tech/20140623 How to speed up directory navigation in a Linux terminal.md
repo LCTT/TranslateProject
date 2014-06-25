@@ -1,3 +1,4 @@
+Translating by GOLinux
 How to speed up directory navigation in a Linux terminal
 ================================================================================
 As useful as navigating through directories from the command line is, rarely anything has become as frustrating as repeating over and over "cd ls cd ls cd ls ..." If you are not a hundred percent sure of the name of the directory you want to go to next, you have to use ls. Then use cd to go where you want to. Hopefully, a lot of terminals and shell languages now propose a powerful auto-completion feature to cope with that problem. But it remains that you have to hit the tabulation key frenetically all the time. If you are as lazy as I am, you will be very interested in autojump. autojump is a command line utility that allows you to jump straight to your favorite directory, regardless of where you currently are.
