@@ -1,3 +1,5 @@
+CNprober翻译中。。。619913541
+
 Betty: Translate English Phrases Into Linux Commands
 ================================================================================
 **Betty** is an open source tool that translates English-like phrases into Linux commands. The main goal of this project is to use the Linux powered systems through natural language input. Let us see some examples how it works.
