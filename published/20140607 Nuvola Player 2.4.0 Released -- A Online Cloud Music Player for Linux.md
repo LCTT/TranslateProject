@@ -1,28 +1,30 @@
 Linux下的在线云音乐播放器 —— Nuvola Player 2.4.0发布
 ================================================================================
-**Nuvola Player**是一个开源的播放器，在它自身的web界面中运行像Amazon云播放器，Bandcamp，Deezer，8tracks，Google Play音乐，Grooveshark，Hyper Machine以及Pandora等等云音乐服务，同时它也能整合到Linux桌面中。
+**Nuvola Player**是一个开源的播放器，可以在其web界面中运行像Amazon云播放器，Bandcamp，Deezer，8tracks，Google Play音乐，Grooveshark，Hyper Machine以及Pandora等等云音乐服务，同时它也能整合到Linux桌面中。
 
 该应用程序以插件的形式提供了大量的功能特性，像桌面通知、系统托盘、多媒体键、媒体播放器小程序、停靠栏菜单、歌词、last.fm等等。
 
-**2014年5月31日**，**Nuvola Player 2.4.0**的一个新版本发布了 —— 它带来了一些新的特性，包括两个新的服务罗技媒体服务器和这是我的果酱，以及众多的bug修复。
+**2014年5月31日**，**Nuvola Player 2.4.0**的一个新版本发布了 —— 它带来了一些新的特性，包括两个新的服务“Logitech Media Server”和“This is My Jam ”，以及众多的bug修复。
 
 ### 这个发布中有什么新东西 ###
 
-- 删除了破损的隐藏Google+按钮选项，因为Google修改代码过于频繁。
+- 删除了破损的隐藏Google+按钮选项，因为Google修改代码过于频繁了。
 - 加快了服务设置的启用速度，不需要再重新加载。
 - 修复了暂停和播放/暂停动作开关。
 - 为Chrome添加了兼容问题警告桌面通知。
 - 提供了页面内导航按钮（现在用户可以在Google Play标识旁边的顶部栏中找到它）。
-- 添加了罗技媒体服务器和这是我的果酱服务。
+- 添加了“Logitech Media Server”和“This is My Jam ”服务。
 - 包含了对鼠标后退/前进按钮的支持。
 - 修复了对GNOME锁屏通知的支持。
 
 要查看完整的特性列表，请访问官方发行[声明页面][1]
 
-### 在Debian, Ubuntu和Linux Mint中安装Nuvola Player ###
+## 在Debian, Ubuntu和Linux Mint中安装Nuvola Player ##
+
 官方的Nuvola Player仓库中包含了**Ubuntu 14.04, 13.10, 12.10, 12.04**以及**Linux Mint 17, 16, 15, 14.**可用的二进制包，你可以通过添加Nuvola Player仓库到你的系统中来安装二进制包‘nuvolaplayer’。
 
-#### 在Ubuntu和Linux Mint上 ####
+### 在Ubuntu和Linux Mint上 ###
+
 打开终端并运行以下一系列命令：
 
     $ sudo add-apt-repository ppa:nuvola-player-builders/stable
@@ -36,7 +38,8 @@ Linux下的在线云音乐播放器 —— Nuvola Player 2.4.0发布
 
     $ sudo apt-get --no-install-recommends install nuvolaplayer
 
-#### 在Debian上 ####
+### 在Debian上 ###
+
 对于**Debian Wheezy**和**Debian Sid**，可以从官方仓库中获取稳定的Nuvola Player二进制包。你可以使用下面这一堆命令来安装最新的稳定版。
 
 首先，打开终端并导入公钥，然后添加仓库到‘**sources.list**‘文件，接着像下面这样进行一次系统更新来安装nuvolaplayer。
@@ -97,7 +100,7 @@ Rdio音乐服务
 
 via: http://www.tecmint.com/install-nuvola-player-in-linux/
 
-译者：[GOLinux](https://github.com/GOLinux) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[GOLinux](https://github.com/GOLinux) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
