@@ -10,7 +10,7 @@ translating by johnhoow...
 感谢你们这一路上对我们的支持.这篇文章主要针对MySQL的实用性,讲面试方面的问题.
 
 ### 1. 如何使用SELECT语句找到你正在运行的服务器的版本并打印出当前数据库的名称? ###
-**答案**:下面的语句的结果会显示服务器的版本和当前的数据库名称 
+**Ans**:下面的语句的结果会显示服务器的版本和当前的数据库名称 
 
      mysql> SELECT VERSION(), DATABASE();
      
@@ -43,7 +43,7 @@ translating by johnhoow...
 
 ### 2. 使用非运算符(!)从表"Tecmint"中列出除了user等于"SAM"的所有记录
 
-**答案**:使用下面的语句 
+**Ans**:使用下面的语句 
 
     mysql> SELECT * FROM Tecmint WHERE user !=SAM;
     
@@ -56,12 +56,11 @@ translating by johnhoow...
 
 ### 3. 是否能够使用非运算符(!)来实现'AND'运算
 
-**答案**: The AND operator is used when we use (=) and the operator OR is used when we use (!=). An example of (=) with AND Operator.
-**答案**: 
+**Ans**: 我们使用’=’号和OR运算符或者'!='和AND运算符，下面是'='和AND运算符的例子
 
     mysql> SELECT * FROM mail WHERE user = SAM AND root = phil
 
-An Example of (!=) with OR Operator.
+'!='和OR运算符的例子
 
     mysql> SELECT * FROM mail WHERE user != SAM OR root != phil
     
@@ -71,15 +70,15 @@ An Example of (!=) with OR Operator.
     | 2001-05-14 14:42:21 | Anthony | venus   | barb    | venus   | 98151 | 
     +---------------------+---------+---------+---------+---------+-------+
 
-- = : means Equal to
-- != : Not Equal to
-- ! : represents NOT Operator
+- = : 等于
+- != : 不等于
+- ! : 非运算符
 
-The AND & OR are treated as joining operators in MySQL.
+AND和OR在MySQL中被看作加入运算符
 
-### 4. What IFNULL() statement is used for in MySQL? ###
+### 4. IFNULL()语句在MySQL中有什么作用? ###
 
-**Ans**: The Query in MySQL can be written precisely using **IFNULL()** statement. The IFNULL() statement test its first argument and returns if it’s not NULL, or returns its second argument, otherwise.
+**Ans**: **IFNULL**语句的使用使得MySQL中的查询更加精确。IFNULL()语句先测试它的的一个参数，若不为空就返回该参数的值，否则返回第二个参数的值
 
     mysql> SELECT name, IFNULL(id,'Unknown') AS 'id' FROM taxpayer;
     
@@ -93,10 +92,12 @@ The AND & OR are treated as joining operators in MySQL.
     +---------+---------+
 
 ### 5. You want to see only certain rows from a result set from the beginning or end of a result set. How will you do it? ###
+### 5. 如果你只想知道从一个结果集的开头或者结尾开始的特定条数的行记录改如何实现？
 
-**Ans**: We need to use **LIMIT** clause along with ORDER BY to achieve the above described scenario.
+**Ans**: 我们可以用**LIMIT**和**ORDER BY**从句。
 
 #### Show 1 Record ####
+#### 显示一行记录 ####
 
     mysql> SELECT * FROM name LIMIT 1;
     
@@ -106,7 +107,7 @@ The AND & OR are treated as joining operators in MySQL.
     | 1  | Fred | 1970-04-13 | black | lutefisk,fadge,pizza | 0    | 
     +----+------+------------+-------+----------------------+------+
 
-#### Show 5 Record ####
+#### 显示5行记录 ####
 
     mysql> SELECT * FROM profile LIMIT 5;
     
@@ -120,7 +121,7 @@ The AND & OR are treated as joining operators in MySQL.
     | 5  | Sean | 1963-07-04 | blue  | burrito,curry         | 5    | 
     +----+------+------------+-------+-----------------------+------+
 
-----------
+#### 显示按照ORDER BY排序后的第一条记录 ####
 
     mysql> SELECT * FROM profile ORDER BY birth LIMIT 1;
     
@@ -130,20 +131,20 @@ The AND & OR are treated as joining operators in MySQL.
     | 9  | Dick | 1952-08-20 | green | lutefisk,fadge | 0    | 
     +----+------+------------+-------+----------------+------+
 
-### 6. Oracle Vs MySQL. Which one and Why? ###
+### 6. Oracle 和 MySQL.改如何选择? ###
 
-**Ans**: Well both has its advantages and disadvantages. As a matter of time I prefer MySQL.
+**Ans**: 它们都有各自的优点和缺点。
 
-#### Reason for Selection MySQL Over oracle ####
+#### 选择MySQL而不选orcale的原因 ####
 
-- Mysql is FOSS.
-- MySQL is portable.
-- MYSQL supports both GUI as well as Command Prompt.
-- MySQL Administration is supported over Query Browser.
+- 开源
+- 轻便快捷  
+- 有命令行和图形界面
+- 能通过查询器进行数据库的管理
 
-### 7. How will you get current date in MySQL? ###
+### 7. MySQL中如何得到当前日期? ###
 
-**Ans**: Getting current date in MySQL is as simple as executing the below SELECT Statement.
+**Ans**: 使用CURRENT_DATE()函数
 
     mysql> SELECT CURRENT_DATE();
     
@@ -154,9 +155,9 @@ The AND & OR are treated as joining operators in MySQL.
     +----------------+
 
 ### 8. How will you export tables as an XML file in MySQL? ###
+### 8. MySQL中如何将表导出为XML文件? ###
 
-**Ans**: We use ‘-e‘ (export) option to export MySQL table or the whole database into an XML file. With large tables we may need to implement it manually but for small tables, applications like phpMyAdmin can do the job.
-A native command of MySQL can do it.
+**Ans**: 使用'-e'(export)参数来把MySQL表或整个数据库导出到XML文件。当处理大型表的时候或许我们需要手动导出，但是只是导出小文件的话可以直接使用想phpMyAdmin这样的工具。
 
     mysql -u USER_NAME –xml -e 'SELECT * FROM table_name' > table_name.xml
 
