@@ -1,3 +1,4 @@
+ggaaooppeenng  translatihg
 Advanced Directory Navigations Tips and Tricks in Linux
 ================================================================================
 Directory navigation is one of the most basic concepts when it comes to understanding any command line system. Although it’s not a very difficult thing to understand when it comes to Linux, there are certain tips and tricks that can enhance your experience, and help you do things faster. In this article, we will discuss some advanced directory navigation tips.
