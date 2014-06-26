@@ -1,3 +1,7 @@
+Translating--------------geekpi
+
+
+
 How to sync Microsoft OneDrive on Linux
 ================================================================================
 [OneDrive][1] (previously known as SkyDrive) is a popular cloud storage offering from Microsoft. Currently OneDrive offers 7GB free storage for every new signup. As you can imagine, OneDrive is well integrated with other Microsoft software products. Microsoft also offers a standalone OneDrive client which automatically backs up pictures and videos taken by a camera to OneDrive storage. But guess what. This client is available for all major PC/mobile platforms except Linux. "OneDrive on any device, any time"? Well, it is not there, yet.
