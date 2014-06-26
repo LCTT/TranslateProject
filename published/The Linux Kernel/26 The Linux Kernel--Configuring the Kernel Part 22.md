@@ -1,6 +1,6 @@
 戴文的Linux内核专题：26 配置内核 (22)
 ================================================================================
-![](http://www.linux.org/attachments/slide-jpg.703/)
+![](http://www.linux.org/attachments/slide-jpg.703/.jpg)
 
 你好！本篇我们将继续配置"kernel hacks",接着我们会配置整个安全系统。
 
@@ -14,7 +14,7 @@ Alpha和s390处理器需要配置下一个特性(Force weak per-cpu definitions)
 
 "Latency measuring infrastructure"驱动提供了延迟检测工具LatencyTop，以找出用户空间中由于内核执行/任务而被阻碍/干扰的对象。
 
-下面，我们有一个子菜单名为"Tracers",它包含了不同追踪器的列表。追踪器是一段监视不同内核函数的代码。每次某个特定的函数启动，追踪器将被调用来检测函数。
+下面，我们有一个子菜单名为"Tracers"，它包含了不同追踪器的列表。追踪器是一段监视不同内核函数的代码。每次某个特定的函数启动，追踪器将被调用来检测函数。
 
 下面的模块用来测试红黑树库的性能(Red-Black tree test)。红黑树是一个排序和搜索算法。
 
@@ -28,9 +28,9 @@ printk()函数可以用来打印不同的调试信息，如果这个特性启用
 
 Atomic64自我测试检查系统是否支持原子操作(Perform an atomic64_t self-test at boot)。这是一个32位系统执行64位操作。
 
-这个驱动提供了对于所有可能的RAID6恢复系统的自我测试(Self test for hardware accelerated raid6 recovery)。
+这个驱动提供了对于所有可能的RAID6恢复系统的自检(Self test for hardware accelerated raid6 recovery)。
 
-注意：自我测试是底层测试并且在绝大多数系统硬件和软件开启和执行前侦查软件。自我测试搜索硬件，失败的设备等等。自我测试也可能被编成应用测试它本身。
+注意：自检是底层测试并且在绝大多数系统硬件和软件开启和执行前侦查软件。自检搜索硬件，失败的设备等等。自检也可能被编成应用以测试它本身。
 
 在"Kernel Hacking"菜单中(如果你是用的是像ncurses那样的菜单接口)，有一个名为"Sample kernel code"的子菜单。在以后的文章中，我们会讨论如何实现自定义/自制内核模块。只要记住这里是启用你自己的模块。
 
@@ -62,7 +62,7 @@ printk()打印不同的消息到dmsg的启动界面，但是在串行和控制�
 
 下面的驱动提供了对"copy_from_user()"系统调用的基本测试（Strict copy size checks)。copy_fcrom_user()从用户空间拷贝数据块到内核空间中。
 
-这里还有一个自我测试；它用于NNI(NMI Selftest)。
+这里还有一个自检；它用于NMI(NMI Selftest)。
 
 现在，我们会进入"Security Options"，如果你使用像ncurses的基于菜单的接口时。第一个选项允许访问内核中存储的键和验证令牌(Enable access key retention support)。这有很多原因用到，像访问加密文件系统。
 
@@ -114,6 +114,6 @@ Yama是另外一个LSM(Yama support)。如果启用这个特性Yama可以与另�
 
 via: http://www.linux.org/threads/the-linux-kernel-configuring-the-kernel-part-22.5017/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
