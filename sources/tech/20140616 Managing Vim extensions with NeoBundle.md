@@ -1,3 +1,4 @@
+[bazz2 hehehe]
 Managing Vim extensions with NeoBundle
 ================================================================================
 [NeoBundle][1] is a third-generation extension manager for [Vim][2], building on [Vundle][3], which builds on [Pathogen][4]. In an earlier article, I [advised against using Neobundle][5] because of its rapid development and minimal English documentation. Now, more than a year later, both problems are more manageable.
