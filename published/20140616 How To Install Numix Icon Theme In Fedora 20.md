@@ -36,7 +36,7 @@ Numix图标主题张冠李戴，Fedora 20劲爆酷爽
 
 via: http://www.unixmen.com/install-numix-icon-theme-fedora-20/
 
-译者：[GOLinux](https://github.com/GOLinux) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[GOLinux](https://github.com/GOLinux) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
