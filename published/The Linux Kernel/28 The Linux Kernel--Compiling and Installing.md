@@ -26,7 +26,7 @@
 
 要是想编译一个如你目前内核一样特性的内核，输入这条命令"zcat /proc/config.gz > .config"。这个文件可能不存在，如果是这样，你可能需要询问你发行版/内核的开发者这个文件。"zcat"命令解压并写入数据到一个".config"文件中。记住把".config"放到合适的位置。这个文件应该放置在Linux内核目录下，并允许它替换当前的文件。接着，像往常一样编译安装你的内核即可。
 
-交叉编译稍微有点不同。为目标系统配置内核。确保内核配置完后，它是以交叉编译配置的。当交叉编译时，需要熟悉两条术语。"Host"是执行编译的系统，"Target"是接收新内核的系统。确保Host主机系统有合适的编译器。比如，对于ARM系统的交叉编译，用户需要在主机系统上有gcc-arm-linux-gnueabi。通常来说，开发者可以在他们的包管理器上搜寻或者Google到合适/最好的适合他们需要的交叉编译器。比如用于ARM系统交叉编译的命令是"make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi-"。"ARCH=arm"指的是目标处理器的类型，"CROSS_COMPILE"指明了交叉编译器。注意交叉编译器前面缺少了"gcc-"并以连字符结束。这是用户在使用交叉编译器作为参数使用时必须使用的格式。模块可以通过输入"make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- modules"来交叉编译。为了在目标系统上安装内核，将内核文件夹复制到目标系统上。一旦文件已在目标系统上并在该目录下打开了终端，输入"make install && make modules_install"。当然你必须是root或者使用"sudo"。
+交叉编译稍微有点不同。为目标系统配置内核。确保内核配置完后，它是以交叉编译配置的。当交叉编译时，需要熟悉两条术语。"Host"是执行编译的系统，"Target"是接收新内核的系统。确保Host主机系统有合适的编译器。比如，对于ARM系统的交叉编译，用户需要在主机系统上有gcc-arm-linux-gnueabi。通常来说，开发者可以在他们的包管理器上搜寻或者Google到合适/最好的适合他们需要的交叉编译器。比如用于ARM系统交叉编译的命令是"make ARCH=arm CROSS\_COMPILE=arm-linux-gnueabi-"。"ARCH=arm"指的是目标处理器的类型，"CROSS\_COMPILE"指明了交叉编译器。注意交叉编译器前面缺少了"gcc-"并以连字符结束。这是用户在使用交叉编译器作为参数使用时必须使用的格式。模块可以通过输入"make ARCH=arm CROSS\_COMPILE=arm-linux-gnueabi- modules"来交叉编译。为了在目标系统上安装内核，将内核文件夹复制到目标系统上。一旦文件已在目标系统上并在该目录下打开了终端，输入"make install && make modules_install"。当然你必须是root或者使用"sudo"。
 
 信息：Kernel.org放了一个支持的交叉编译器列表([https://www.kernel.org/pub/tools/crosstool/][1])。
 
