@@ -1,13 +1,13 @@
 2q1w2007翻译中
-Google Forks Open Source OpenSSL Web Security Code
+谷歌分支了开源的 OpenSSL 网站安全代码
 ================================================================================
-> Google's BoringSSL, a fork of the open source OpenSSL software for encrypting Web data, will spread the open source community's resources thinner.
+> 谷的 BoringSSL, 一个开源用来加盟网站数据的的OpenSSL分支，将会向开源社区提交代码
 
 ![](http://thevarguy.com/site-files/thevarguy.com/files/imagecache/medium_img/uploads/2014/06/grayscale6jpgcropdisplay.jpg)
 
-In the wake of [Heartbleed][1], there may soon be as many variants of the open source OpenSSL software for encrypting Web traffic as there are Pokemon characters—or something like that. A few days ago, Google (GOOG) became the latest organization to announce its own OpenSSL spin, which it's calling BoringSSL.
+因为[Heartbleed][1]暴露出的脆弱, 用来加密网页传输的开源OpenSSL的变种可能和口袋妖怪里的角色一样多。前两天, Google (GOOG) 成为了最早宣布自己的OpenSSL分支的组织,其分支叫做BoringSSL。
 
-Google developer Adam Langley announced BoringSSL—a name he described as "aspirational," presumably because Google hopes the new software will prove more drama-free than OpenSSL—in a [blog post][2] on June 20.
+Google的开发者Adam Langley announced BoringSSL—a name he described as "aspirational," presumably because Google hopes the new software will prove more drama-free than OpenSSL—in a [blog post][2] on June 20.
 
 Google has made its own modifications to the OpenSSL code for some time for use in Chrome and other offerings, Langley said. But going forward, the company intends to fork OpenSSL entirely to create a separate solution, a change it hopes will simplify development on Google's end.
 
