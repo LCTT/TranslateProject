@@ -1,5 +1,3 @@
-Translating by shipsw
-
 Linux Screenshot App Shutter Updates with Bug Fixes, New Icon
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/06/shutter.jpg)
