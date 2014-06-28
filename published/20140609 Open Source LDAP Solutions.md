@@ -22,7 +22,7 @@ LDAP（轻量级目录访问协议）是一个用于访问目录服务的应用�
 
 via: http://www.linuxlinks.com/article/20140607022012848/LDAPSolutions.html
 
-译者：[GOLinux](https://github.com/GOLinux) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[GOLinux](https://github.com/GOLinux) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
