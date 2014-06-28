@@ -1,23 +1,22 @@
-[Translating] --213edu
-
 How to enable testing and unstable repository on Debian
+如何在Debian启用测试版/不稳定版的库（testing and unstable repository）
 ================================================================================
-Testing/Unstable sources
+为何要启用测试版/不稳定版？
 
-The testing and unstable repositories of Debian provide with a higher version of software applications than what is present in the stable repository. Note that these names are actually aliases such that the stable repository points to the current Debian stable release and the Testing repository is what is going to be part of the next Debian stable release. So at the time of this post, Wheezy 7.x is the Stable release and Jessie is the Testing source which is going to be the next stable release.
+测试版/不稳定版的Debian给开发者提供了一个比当前稳定版更新的环境以及软件。你们注意到了么？其实这些稳定版啊不稳定版啊神马的都是别名，比方说稳定版其实就是Debian的稳定发行版，而测试版将会是下一个Debian的稳定发行版（当然那是测试后的事了）。截至发稿为止，当前Debian的稳定发行版是Wheezy 7.x，将会成为下一个稳定版的测试版则是Jessie。
 
-At times, when you need to get a more recent version of a particular application, then the testing/unstable repository is a good option. I had the task of installing Apache 2.4.x onto a Debian wheezy system. But the repo had only 2.2.x and the testing repo had the required 2.4.x version. So the solution is to grab it from the testing repo.
+当你需要一款应用的最新版本的时候，启用测试版/不稳定版将会是不二的选择。当初我工作需要安装个Apache的 2.4.x到我的Debian Wheezy。测试版需要的是2.4.x的，可是我的repo只有2.2.x的。所以最好的解决方案当时是在测试版下下来啦。
 
-Most of the time, when looking for newer versions of software applications, we would fiddle with the "Testing" repository only.
+通常来说当我们想尝试最新版本的应用时都应只会使用测试版的系统。
 
-This post is going to show you how to setup the Testing and Unstable sources on a Debian system and how to install software from them, without breaking your existing system.
+在这篇文章里我将教大家如何在不弄坏你系统的前提下设置好测试、不稳定版的Debain系统病在上面安装软件。
 
->     Stable < Testing < Unstable
+>     Stable < Testing < Unstable （稳定 < 测试版 < 不稳定版）
 >     Wheezy < Jessie < Sid
 
-### 1. Setup the apt sources for testing/unstable repo ###
+### 1. 设置测试版/不稳定版的apt源 ###
 
-The first step is to add the testing/unstable sources to your sources.list file. The /etc/apt/sources.list file on a Debian wheezy system looks something like this by default.
+第一步是把测试版/不稳定版的源加到你的sources.list文件里。在Debian Wheezy系统上，/etc/apt/sources.list理应长得像这样：
 
     $ cat /etc/apt/sources.list
 
@@ -29,10 +28,11 @@ The first step is to add the testing/unstable sources to your sources.list file.
     deb-src http://security.debian.org/ wheezy/updates main
     ...
 
-Note down the url of the repository server - http://http.us.debian.org/debian/
-This repository server is a mirror that is located nearest to you. It shall be different in your sources.list file. The same shall be used in the next steps
+把你repo服务器的链接记下来，比如：http://http.us.debian.org/debian/
 
-To add the testing and unstable sources you need to add something like this to your sources.list file
+这个repo服务器将会是离你最近的一个服务器； 在不同的地理位置会有不同的url，这个将会用于下一步。
+
+如果想加测试/不稳定源，则需要在sources.list文件加上这些东西：
 
     # Testing repository - main, contrib and non-free branches
     deb http://http.us.debian.org/debian testing main non-free contrib
@@ -48,23 +48,25 @@ To add the testing and unstable sources you need to add something like this to y
     deb http://http.us.debian.org/debian unstable main non-free contrib
     deb-src http://http.us.debian.org/debian unstable main non-free contrib
 
-The format is
+格式将会是
     
     deb <respository server/mirror> <repository name> <sub branches of the repo>
+    (deb <上一步弄的服务器/镜像url> <repo的名字> <repo底下的分支>)
 
-Instead of testing/unstable the corresponding codenames jessie and sid can also be used
+当然啦，除了用testing或者unstable这么烂的词，他们的名称也是能使用的，比如Jessie或者Sid
     
     deb http://http.us.debian.org/debian jessie main non-free contrib
     deb http://security.debian.org/ jessie/updates main contrib non-free
     deb http://http.us.debian.org/debian sid main non-free contrib
 
-### 2. Do some apt pinning - Important ! ###
+### 2. Do some apt pinning - Important ! ### <-怎么翻译
 
-> After adding the testing and unstable repos, if you update the system then all available updates for all installed applications would be installed right away, leading the system to an unpredictable state.
+> 在加了测试/不稳定的repo之后，当你更新系统的时候所有安装过并且可用的软件就会立马更新，而后你的系统就被你玩火自焚了。
 
-Therefore some rules have to be setup in order to restrict the package selection during regular updates/upgrades.
+所以在在升级的时候我们必须要加一些限制，才能让我们在升级的时候选择特定的包。 《-这句被我翻译坏了帮帮忙修一下
 
 This is done through "apt pinning" where we tell the apt system to use only the stable system as always, but we may select to install a particular package from the testing or unstable repository if we wish to.
+在这里，我们可以使用apt pinning来告诉apt系统哪些包需要保持不动，哪些包需要
 
 The apt pinning preferences can be configured into either of the following 2 files.
 
