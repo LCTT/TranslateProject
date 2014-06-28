@@ -1,8 +1,8 @@
 戴文的Linux内核专题：27 配置内核 (23)
 ================================================================================
-![](http://www.linux.org/attachments/slide-jpg.735/)
+![](http://www.linux.org/attachments/slide-jpg.735/.jpg)
 
-欢迎来到内核配置的下一章！本篇中我们会配置密码API，虚拟化和运行库。密码学指的是在需要的计算机之间加密和安全通信。用户可能加密数据以保证是收件人而不是黑客收到数据。
+欢迎来到内核配置的下一章！本篇中我们会配置密码API，虚拟化和运行库。密码学指的是在需要的计算机之间加密和安全通信的科学。用户可能加密数据以保证是收件人而不是黑客收到数据。
 
 Linux内核需要在内核中启用"Cryptographic algorithm manager"(密码算法管理器)。这个特性提供了操作内核的加密特性所需的软件。
 
@@ -93,7 +93,7 @@ CORDIC algorithm - 双曲线和三角函数。
 JEDEC DDR data - JEDEC双倍数据速率SD-RAM规范
 
 
-你猜怎么了？我们已经完成便宜内核。在23篇之后，我敢肯定这是你的感觉 -
+你猜怎么了？我们已经完成配置内核。在23篇之后，我敢肯定这是你的感觉 -
 
 视频链接:[http://www.youtube.com/embed/barWV7RWkq0?wmode=opaque][1]
 
@@ -107,7 +107,7 @@ JEDEC DDR data - JEDEC双倍数据速率SD-RAM规范
 
 via: http://www.linux.org/threads/the-linux-kernel-configuring-the-kernel-part-23.5112/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
