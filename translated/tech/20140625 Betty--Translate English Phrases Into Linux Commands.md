@@ -1,66 +1,67 @@
-CNprober翻译中。。。619913541
+CNprober翻译完成。。。619913541
 
-Betty: Translate English Phrases Into Linux Commands
+Betty：通过大白话执行Linux命令
 ================================================================================
-**Betty** is an open source tool that translates English-like phrases into Linux commands. The main goal of this project is to use the Linux powered systems through natural language input. Let us see some examples how it works.
 
-### Installation ###
+**Betty** 是一个将类英语短语翻译成Linux命令的开源工具。这个项目的主要目的是让大家可以通过输入自然语言来使用强大的Linux系统。让我们来看一下它是怎么工作的。
 
-Betty installation is very simple and straight forward. Make sure you’ve installed the following prerequisites packages.
+### 安装 ###
 
-#### On Debian based systems: ####
+Betty的安装非常简单直接。首先确认你已经安装了下面这些依赖包[译注，需要安装至少Ruby1.9以上版本]。
+
+#### 对于基于Debian的系统：####
 
     sudo apt-get install git curl ruby
 
-On RPM based systems:
+####对于基于RPM的系统：####
 
     yum install git curl ruby
 
-Now, git clone the Betty repository to any preferred location. I am going to clone the betty repo in my home directory **i.e /home/sk/**.
+现在git工具把Betty库clone到你自定义的任何路径。这里我克隆到我的home目录，**例如 /home/sk/**.
 
     git clone https://github.com/pickhardt/betty
 
-Add the betty alias in your bashrc file.
+添加betty的别名到你的bashrc配置文件。
 
     sudo nano ~/.bashrc
 
-Add the following line at the end:
+将下列行添加到文件的末尾：
 
     alias betty="/home/sk/betty/main.rb"
 
-Make sure you’ve replaced the correct path of the betty directory.
+确保你已经正确地设置好了betty的路径。
 
-It’s done. Now, it’s time to play with betty.
+好了，现在是时候和betty好好地玩耍了。
 
-### Usage ###
+### 用法 ###
 
-You should include the word “betty” in-front of every English phrases. As you may know already, if we want to know the user name of our system, we run the following command:
+你应该在英语短语之前加上单词“betty”。你也许已经知道，如果我们想知道在系统中我们的用户名，应该运行下面的命令：
 
     whoami
 
-Sample output:
+输出是这样的：
 
   sk
 
-As you see above, my current user name is **sk**. Well, now we can get the same result using betty as shown below.
+如你所见，我当前登录的用户名是 **sk**. 现在我也可以通过下面的betty命令获取相同的结果。
 
     betty whats my username
 
-Sample output:
+输出是这样的：
 
     Betty: Running whoami
     sk
 
-Cool, isn’t it? Yes. Betty understands the normal English phrase “whats my username” that I entered, and ran the command “whoami” automatically, and finally displayed the correct output.
+真的好酷，是不是？Betty理解我输入的“whats my username”短语，然后运行“whoami”命令，最后输出结果。
 
-Let us see some other commands too.
+让我们也来看其他命令。
 
-Betty will respond in multiple ways if you didn’t enter exactly what you’re looking for. For example, we run the following command:
+如果你的输入不够准确，Betty也能以多种方式回应你。例如，我们运行下面的命令：
 
     betty whats my name
 
-Betty isn’t sure whether she should find the system username or full name. In this case, she will ask you multiple questions to find the exact result. As you see below, Betty asks me which command(whoami or  finger $(whoami) | sed ‘s/.*: *//;q’) should I want to execute. I just want it to display my username, so i chose number **1**.
-
+Betty不确定她应该查找系统用户名还是用户全名。这种情况下，她会询问你多个问题来找到准确的结果。如你下面所见，Betty问我想要运行哪一条命令（whoami 还是 finger $(whoami) | sed 's/.*:*//;q')[译注，需要你的系统已经安装finger]。我只想知道我的用户名，所以我选择数字**1**。
+ 
     Betty: Okay, I have multiple ways to respond.
     Betty: Enter the number of the command you want me to run, or N (no) if you don't want me to run any.
     [1] whoami
@@ -71,13 +72,14 @@ Betty isn’t sure whether she should find the system username or full name. In 
     Betty: Running whoami
     sk
 
-### Compress And Uncompress Folders ###
+### 压缩和解压缩文件夹 ###
 
-If you want to compress a file or a folder, use the following command. For example, I want to compress a folder called “test” folder in my home directory.
+如果你想要压缩一个文件或者文件夹，用下面的命令。例如，我想压缩我home目录下的“test”文件夹。
+
 
     betty compress test/ test.tar.gz
 
-Sample output:
+输出是这样的：
 
     Betty: Running tar -czvf test.tar.gz test/
     test/
@@ -86,11 +88,11 @@ Sample output:
     test/home/sk/test/
     test/home/sk/test/sample
 
-Similarly, we can use the following command to uncompress an archive file.
+类似的，我们可以用下面的命令来解压缩一个归档文件。
 
     betty uncompress test.tar.gz
 
-Sample output:
+输出是这样的：
 
     Betty: Running mkdir test &&  tar -zxvf test.tar.gz -C test
     test/
@@ -99,11 +101,11 @@ Sample output:
     test/home/sk/test/
     test/home/sk/test/sample
 
-### Complete list of Betty commands ###
+### 完整的Betty命令行列表 ###
 
-Betty tool has some command formats. It doesn’t understand if you put the command “what is my user name” instead of “whats my username”. So, you have to enter the correct English phrase that supported by Betty.
+Betty工具有一些命令格式。如果你输入“what is my user name”而不是“whats my username”，它是不能识别的。所以，你只能输入Betty支持的英语短语。
 
-The complete list of supported commands are given below.
+下面给出一个Betty支持的完整的命令行列表。
 
     Count:
     betty how many words are in this directory
@@ -183,11 +185,11 @@ The complete list of supported commands are given below.
     betty turn web on
     betty please tell me what is the weather like in London
 
-Betty seems very nice tool to Linux novice users. Hope this tool will useful for you too.
+对Linux初级使用者来说，Betty似乎是一个非常nice的工具。希望这个工具对你也会非常有用。
 
 Cheers!
 
-Source:
+源代码：
 
 - [Betty Homepage][1]
 
@@ -195,7 +197,7 @@ Source:
 
 via: http://www.unixmen.com/betty-translate-english-phrases-linux-commands/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[love_daisy_love](https://github.com/CNprober) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
