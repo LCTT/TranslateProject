@@ -1,3 +1,4 @@
+ss 占一个
 Does Linux Lack a Killer App?
 ================================================================================
 ![](http://www.linuxinsider.com/images/rw302843/linux-killer-app.jpg)
