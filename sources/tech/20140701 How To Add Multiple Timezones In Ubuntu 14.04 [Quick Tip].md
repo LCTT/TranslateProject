@@ -1,3 +1,5 @@
+JonathanKang is translating
+
 How To Add Multiple Timezones In Ubuntu 14.04 [Quick Tip]
 ================================================================================
 If you have to deal with multiple timezones on a regular basis, you would definitely appreciate if your desktop clock could show multiple timezones. As an expat, I have to keep the track of time in both France and India. In Ubuntu, you can easily change the settings to add multiple timezones.
