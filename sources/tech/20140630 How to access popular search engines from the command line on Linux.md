@@ -1,3 +1,5 @@
+JonathanKang is translating
+
 How to access popular search engines from the command line on Linux
 ================================================================================
 Why would anyone want to search things on the Internet via a terminal? I don't know. There are probably a lot of reasons. But since an answer that no one asked for is always less frustrating than a question that no one can answer, here is a list of popular search engines with the command-line tools that allow you to access them from a Linux terminal.
