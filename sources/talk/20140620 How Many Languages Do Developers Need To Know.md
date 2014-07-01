@@ -1,3 +1,5 @@
+翻译中 by小眼儿
+
 How Many Languages Do Developers Need To Know?
 ================================================================================
 ![](http://readwrite.com/files/styles/1400_0/public/fields/code%20example%20Flickr%20Ruiwen%20Chua.jpg)
@@ -69,7 +71,7 @@ Lead image by [Flickr user Ruiwen Chua][11], CC 2.0
 
 via: http://readwrite.com/2014/06/17/apple-swift-facebook-hack-google-dart
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Mr小眼儿](https://github.com/tinyeyeser) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
