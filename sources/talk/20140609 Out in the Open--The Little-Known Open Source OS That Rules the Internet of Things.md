@@ -1,4 +1,4 @@
-Out in the Open: The Little-Known Open Source OS That Rules the Internet of Things
+Translating by toknow-gh Out in the Open: The Little-Known Open Source OS That Rules the Internet of Things
 ================================================================================
 ![](http://www.wired.com/wp-content/uploads/2014/06/Contiki-ipv6-rpl-cooja-simulation.png)
 Image: Adnk/[Wikipedia][1]

@@ -1,3 +1,4 @@
+translating by owen-carter
 Top500 Supercomputer Remains Stuck at 33.86 Petaflops/s
 ================================================================================
 The Tianhe-2 first jumped onto the world's supercomputing stage a year ago, taking the crown of world's most powerful computer. At the time, the Tianhe-2 was rated with a performance of 33.86 petaflops per second.

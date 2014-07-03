@@ -1,3 +1,4 @@
+[bazz2 own this article]
 Performance benchmarks: KVM vs. Xen
 ================================================================================
 After having some interesting discussions last week around KVM and Xen performance improvements over the past years, I decided to do a little research on my own. The last complete set of benchmarks I could find were from the [Phoronix Haswell tests in 2013][1]. There were [some other benchmarks from 2011][2] but those were hotly debated due to the Xen patches headed into kernel 3.0.
