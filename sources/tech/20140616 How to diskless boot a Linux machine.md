@@ -1,3 +1,5 @@
+alim0x translating
+
 How to diskless boot a Linux machine
 ================================================================================
 Diskless booting implies that a client computer does not have any disk storage when booting an operating system. In that case, the computer can load the kernel as well as the root filesystem from a remote NFS server over network. It may use several different methods to load the kernel and the root filesystem from an NFS server: RARP, BOOTP or DHCP protocols. In this tutorial, I will use BOOTP/DHCP protocol because they are supported by many network cards.
