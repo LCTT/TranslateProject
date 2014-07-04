@@ -1,33 +1,43 @@
-[bazz2 own this article]
 Performance benchmarks: KVM vs. Xen
+KVM和Xen的性能基准测试
 ================================================================================
 After having some interesting discussions last week around KVM and Xen performance improvements over the past years, I decided to do a little research on my own. The last complete set of benchmarks I could find were from the [Phoronix Haswell tests in 2013][1]. There were [some other benchmarks from 2011][2] but those were hotly debated due to the Xen patches headed into kernel 3.0.
+在上周，我们讨论了 KVM 和 Xen 的性能上一些令人感兴趣的话题后，我打算自己做一些这方面的研究。我能找到的最新的资料，是来自[2013年 Phoronix Haswell 性能评测][1]上的基准测试。当然，还有[2011年的评测][2]，由于 Xen 已经被收录进 Kernel 3.0，这些曾经都是热门话题。
 
 The 2011 tests had a [good list of benchmarks][3] and I’ve done my best to replicate that list here three years later. I’ve removed two or three of the benchmark tests because they didn’t run well without extra configuration or they took an extremely long time to run.
+2011年的测试提供了[许多很好的基准报表][3]，我尽最大努力把它们列出的属性重新测试一遍，但少测了两三个基准测试，原因是它们在未经特定优化的配置后跑出来的数据不是很好，或者它们需要跑很长时间才能得到结果。
 
-### Testing environment ###
+### 测试环境 ###
 
 My testing setup consists of two identical SuperMicro servers. Both have a single [Intel Xeon E3-1220][4] (four cores, 3.10GHz), 24GB Kingston DDR3 RAM, and four Western Digital RE-3 160GB drives in a RAID 10 array. BIOS versions are identical.
+测试环境由两台一模一样的超微服务器组成，都配备一颗[Intel 至强 E3-1220][4]（4核，3.10GHz），24G 金士顿 DDR3 内存，4块西数 RE-3 160G 磁盘（组成 RAID10 阵列）。另外 BIOS 也是一模一样。
 
 All of the tests were run in Fedora 20 (with SELinux enabled) for the hosts and the virtual machines. Very few services were left running during the tests. Here are the relevant software versions:
+所有测试项目（即实体机和虚拟机）都在 Fedora 20 （开 SELinux）上进行，并且测试过程中没有跑很多的不相关的服务。这里列一下相关服务的版本：
 
 - Kernel: 3.14.8
 - For KVM: qemu-kvm 1.6.2
 - For Xen: xen 4.3.2
 
 All root filesystems are XFS with the default configuration. Virtual machines were created using virt-manager using the default configuration available for KVM and Xen. Virtual disks used raw images and were allotted 8GB RAM with 4 virtual CPU’s. Xen guests used [PVHVM][5].
+根文件系统是 XFS，使用默认配置。虚拟机使用 virt-manager 来创建（virt-mamager 也使用默认配置）。虚拟磁盘使用 raw 镜像，容量为 8GB，虚拟4颗 CPU。Xen 虚拟机使用 [PVHVM][5] 建立虚拟磁盘。
 
 ### Caveats ###
+### 警告 ###
 
 One might argue that Fedora’s parent owner, Red Hat, puts a significant amount of effort into maintaining and improving KVM within their distribution. Red Hat hasn’t made significant contributions to Xen in years and they [made the switch to KVM back in 2009][6]. I’ve left this out of scope for these tests, but it’s still something worth considering.
+也许有人会争辩说 Fedora 是红帽公司所有，红帽一直在维护 KVM，而 Xen 则自从[在2009年红帽重新选择 KVM 作为虚拟化产品][6]后，再没得到这个公司的维护。在本测试中这个因素不会对结果产生任何影响，不过可以在心里稍微注意一下。
 
 Also, contention was tightly controlled and minimized. On most virtualized servers, you’re going to have multiple virtual machines fighting for CPU time, disk I/O, and access to the network. These tests didn’t take that type of activity into consideration. One hypervisor might have poor performance at low contention but then perform much better than its competitors when contention for resources is high.
+不考虑资源竞争产生的影响。在大多数虚拟服务器上，你可以跑多个虚拟机，而这些虚拟机会争用 CPU 时间片、磁盘 IO、网络带宽等等资源。在本测试中也不考虑这些因素。一台虚拟机抢到资源少，性能就差，而另一台抢得多，性能就好（LCTT：它们的性能总和，就可以大致当作是 KVM 或 Xen 的性能了）。
 
-These tests were performed only on Intel CPU’s. Results may vary on AMD and ARM.
+本测试运行在 Intel 的 CPU 上。如果使用的是 AMD 或 ARM，可能有些数据会不一样。
 
 ### Results ###
+### 结果 ###
 
 The tests against the bare metal servers served as a baseline for the virtual machine tests. The deviation in performance between the two servers without virtualization was at 0.51% or less.
+本测试使用裸机作为虚拟服务测试的基准设备。在不跑虚拟机的情况下，两台裸机的性能偏差不会大于0.51%
 
 KVM’s performance fell within 1.5% of bare metal in almost all tests. Only two tests fell outside that variance. One of those tests was the 7-Zip test where KVM was 2.79% slower than bare metal. Oddly enough, KVM was 4.11% faster than bare metal with the PostMark test (which simulates a really busy mail server). I re-ran the PostMark tests again on both servers and those results fell within 1% of my original test results. I’ll be digging into this a bit more as my knowledge of virtio’s internals isn’t terribly deep.
 
