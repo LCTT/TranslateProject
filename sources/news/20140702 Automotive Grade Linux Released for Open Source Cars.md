@@ -1,3 +1,4 @@
+linuhap translating
 Automotive Grade Linux Released for Open Source Cars
 ================================================================================
 > The Linux Foundation and its partners have released the first version of Automotive Grade Linux, the open source platform for use inside connected cars.
