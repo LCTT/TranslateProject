@@ -1,8 +1,8 @@
-How to find and kill misbehaving MySQL queries
+怎样去查找并杀掉非法的MySQL查询
 ================================================================================
-Sometimes the complexity of a relational database system can be overwhelming. Fortunately, that complexity is an advantage, as with MySQL's tools for managing queries. In this tutorial, I will show you **how to find and kill any misbehaving MySQL queries**.
+有时,相关数据库系统的复杂性可能被压倒.幸运地,这种复杂性是一种优势,与 MySQL工具一起管理查询. 在本教程中, 我将向你们展示 **怎样去查找并杀掉任何非法的MySQL查询**.
 
-To view the currently-running queries, log in to the MySQL console and run the 'show processlist' command:
+为了浏览当前正在运行的查询, 登陆到MySQL终端，然后运行‘show processlist’命令:
 
     mysql> show processlist; 
 
@@ -16,9 +16,10 @@ To view the currently-running queries, log in to the MySQL console and run the '
     +--------+--------+-----------------+---------+---------+-------+-------+------------------+-----------+---------------+-----------+
     4 rows in set (0.03 sec)
 
-The first column you should look at is 'Time', which is the number of seconds the process has been "doing the thing it's doing". A process whose command is 'Sleep' is waiting for a query to come in, so it's not consuming any resources. For any other process, however, a 'Time' of more than a few seconds indicates a problem.
+首先 你应该查看'Time'项, 这里记录了进程执行 "doing the thing it's doing" 操作的秒数. ‘command’项处于‘Sleep’
+状态的进程正在等待查询, 因此,它并没有消耗任何资源. 对于其他任何进程而言，‘Time’超过一定的秒数表明出现问题.
 
-In this case, the only query running is our 'show processlist' command. Let's see what it looks like if we have a poorly-written query running:
+在这种情况下,只能通过运行‘show processlist’命令来查询.如果我们有一个糟糕的写查询，让我们来看看情况如何:
 
     mysql> show processlist; 
 
@@ -34,19 +35,19 @@ In this case, the only query running is our 'show processlist' command. Let's se
     +--------+--------+-----------------+-----------+---------+-------+--------------+----------------------------------+-----------+---------------+-----------+
     6 rows in set (0.00 sec)
 
-Ah! Now we see there is a query that's been running for almost 30 seconds. If we don't want to let it run its course, we can kill it by passing its 'Id' to the kill command:
+啊哈！现在我们看到这里的查询几乎运行了30s. 如果我们不想让它继续运行，可以使用它的'Id'去执行kill命令:
 
     mysql> kill 132033;
     Query OK, 0 rows affected (0.00 sec)
     mysql> 
 
-(Note that MySQL will always report 0 rows affected, because we're not altering any data.)
+(注意 由于我们没有改变任何数据,MySQL总是报告0行被影响.)
 
-Judicious use of the kill command can clean up a backlog of queries. Remember, however, that it's not a permanent solution - if those queries came from your application, you need to rewrite them, or you'll continue to see the same issue reappear.
+明智的使用kill命令能够清除积压的查询.记住,但那不是一种永久的方法 - 如果这些查询来自你的应用,你需要去重写它们,或者将继续看到相同的问题.
 
-### See Also ###
+### 另请参阅 ###
 
-MySQL's documentation on the different 'Command' values:
+关于不同‘Command’的MySQL文档:
 
 - [https://dev.mysql.com/doc/refman/5.7/en/thread-commands.html][1]
 
@@ -54,7 +55,7 @@ MySQL's documentation on the different 'Command' values:
 
 via: http://xmodulo.com/2014/07/find-kill-misbehaving-mysql-queries.html
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[hunanchenxingyu](https://github.com/hunanchenxingyu) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
