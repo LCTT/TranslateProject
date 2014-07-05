@@ -1,3 +1,5 @@
+hunanchenxingyu translating ...
+================================================================================
 How to find and kill misbehaving MySQL queries
 ================================================================================
 Sometimes the complexity of a relational database system can be overwhelming. Fortunately, that complexity is an advantage, as with MySQL's tools for managing queries. In this tutorial, I will show you **how to find and kill any misbehaving MySQL queries**.
