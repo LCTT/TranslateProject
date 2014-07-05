@@ -1,4 +1,4 @@
-zsJacky translating
+alim0x translating
 
 How to diskless boot a Linux machine
 ================================================================================
