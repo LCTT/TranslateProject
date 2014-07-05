@@ -1,3 +1,4 @@
+>> Translating by ThomazL
 How to install Raspberry Pi camera board
 ================================================================================
 [The Raspberry Pi camera (Pi Cam) board][1] was first released for sale in May 2013. This first release is equipped with a 5 Megapixel sensor, and connects through a ribbon cable to the CSI connector on the Raspberry Pi. The second release of Raspberry Pi camera board, which is called [Pi NoIR][2], has the same sensor, but without the IR filter. It has capability to see near IR wavelengths (700 - 1000 nm) like a security camera, and of course it is sacrificing the color rendition. 
