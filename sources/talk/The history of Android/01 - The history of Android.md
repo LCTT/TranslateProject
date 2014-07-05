@@ -1,3 +1,5 @@
+alim0x translating
+
 The history of Android
 ================================================================================
 > Follow the endless iterations from Android 0.5 to Android 4.4.

@@ -1,6 +1,6 @@
 到底开发者需要掌握多少门语言？
 ================================================================================
-![](http://readwrite.com/files/styles/1400_0/public/fields/code%20example%20Flickr%20Ruiwen%20Chua.jpg)
+![](http://a2.files.readwrite.com/image/upload/c_fill,h_900,q_70,w_1600/MTIyNzYyNjIwNDU2Njk4NDcw.jpg)
 
 > 诸如Apple、Facebook及Google这样的大公司正在开发他们自己的编程语言，开发者们被迫只有适应。
 
@@ -69,7 +69,7 @@ Watson-Hamblin就主张说，当每家公司都为了自家需要发明自己的
 
 via: http://readwrite.com/2014/06/17/apple-swift-facebook-hack-google-dart
 
-译者：[Mr小眼儿](http://blog.csdn.net/tinyeyeser) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Mr小眼儿](http://blog.csdn.net/tinyeyeser) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
