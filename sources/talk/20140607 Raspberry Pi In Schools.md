@@ -1,4 +1,3 @@
-zpl1025 translating
 Raspberry Pi In Schools
 ================================================================================
 > Teaching the world to code is a noble goal, but how is it going to work in practice?
