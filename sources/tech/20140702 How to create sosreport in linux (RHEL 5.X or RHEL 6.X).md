@@ -1,3 +1,6 @@
+Translating--------geekpi
+
+
 How to create sosreport in linux (RHEL 5.X / RHEL 6.X)
 ================================================================================
 **Sosreport** is a command in linux (**RHEL / CentOS**) which collects **system configuration** and diagnostic information of your linux box like running kernel version, loaded modules, and system and service configuration files. This command also runs external programs to collect further information, and stores this output in the resulting archive.
