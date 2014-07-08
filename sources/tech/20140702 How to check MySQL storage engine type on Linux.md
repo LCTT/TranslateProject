@@ -1,3 +1,5 @@
+Translating---------geekpi
+
 How to check MySQL storage engine type on Linux
 ================================================================================
 > **Question**: I need to know whether my MySQL database table is MyISAM or Innodb type. How can I check the type of a MySQL database table? 
