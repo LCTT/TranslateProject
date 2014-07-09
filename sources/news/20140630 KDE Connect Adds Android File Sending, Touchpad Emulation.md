@@ -1,4 +1,7 @@
+BOOKJOY IS TRANSLATING......
+
 KDE Connect Adds Android File Sending, Touchpad Emulation
+KDE连接
 ================================================================================
 **A new version of KDE Connect for Android that adds a number of new features has been released.**
 
