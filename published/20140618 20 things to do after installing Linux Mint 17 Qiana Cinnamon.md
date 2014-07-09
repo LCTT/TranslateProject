@@ -1,12 +1,12 @@
-安装Linux Mint 17 Qiana Cinnamon后要做的20件事
+安装Linux Mint 17后要做的20件事
 ================================================================================
 ### Linux Mint 17 Qiana Cinnamon ###
 
 Linux Mint 17已经[发布][1]，定名为Qiana。Mint是Linux最佳发行版之一，它定位于桌面用户，关注可用性和简洁。它携带了风格迥异的桌面环境，如Mate以及Cinnamon，并基于不同的发行版，如Ubuntu或Debian。
 
-在本文中，我们使用的是Linux Mint 17的cinnamon版本。要获取更多关于Cinnamon版本的信息（包括下载链接），可以访问 - [http://blog.linuxmint.com/?p=2626][2]
+在本文中，我们使用的是Linux Mint 17的cinnamon版本。要获取更多关于Cinnamon版本的信息（包括下载链接），可以访问 - http://linux.cn/article-3260-1.html
 
-下载适合你系统的正确的iso，烧录成dvd，或者也可以制作成usb启动盘来启动。安装完毕了，是时候来使用一些优化工具和基本应用程序来优化系统性能和体验，让你系统激情澎湃吧！
+下载适合你系统的正确的iso，烧录成dvd，或者也可以制作成usb启动盘来启动。安装完毕，是时候来使用一些优化工具和基本应用程序来优化系统性能和体验，让你系统激情澎湃吧！
 
 ### 1. 更新系统 ###
 
@@ -34,6 +34,7 @@ Chronium浏览器可以在仓库中获取。
     $ sudo apt-get install chromium-browser
 
 至于Google Chrome，请访问google.com/chrome下载deb包，并使用gdebi来安装。
+
     # 64 位
     $ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     $ sudo gdebi google-chrome-stable_current_amd64.deb
@@ -46,7 +47,7 @@ Chronium浏览器可以在仓库中获取。
 
 Mint上默认安装adobe flash插件包（adobe-flashplugin），因此，你可以在Firefox中畅玩flash游戏，也可以尽情享受网页版视频了。
 
-Google Chrome现在使用了基于flash player的Pepper API，而且该插件也内建于Chrome中，因此，你也不需要为它做任何事情了。
+Google Chrome现在使用了基于flash player的Pepper API，而且该插件也内建于Chrome中，因此，你也不需要为它额外做任何事情了。
 
 然而对于Chronium，基于flash player的Pepper没有被囊括进来（因为它不是个自由组件），所以你需要手动安装了。
 
@@ -71,11 +72,11 @@ Google Chrome现在使用了基于flash player的Pepper API，而且该插件也
 
 ### 6. 安装专有驱动 ###
 
-如果你有一张英伟达或者ati的图形卡，或者broadcom的无线网卡，那么请安装厂商提供的专有驱动，这些驱动会为你带来最佳的硬件性能。
+如果你有一张Nvidia或者ati的图形卡，或者broadcom的无线网卡，那么请安装厂商提供的专有驱动，这些驱动会为你带来最佳的硬件性能。
 
-要安装英伟达驱动，你可以参照先前的这篇文章
+要安装Nvidia驱动，你可以参照先前的这篇文章
 
-如何在Linux Mint上安装最新的Nvidia驱动
+[如何在Linux Mint上安装最新的Nvidia驱动][3]
 
 ### 7. 安装Dropbox ###
 
@@ -83,7 +84,7 @@ Linux mint仓库已经提供了dropbox的客户端软件包，所以你不必满
 
     $ sudo apt-get install dropbox python-gpgme
 
-如果你还是比较喜欢从官方网站下载，那么出门可直达[https://www.dropbox.com/install?os=lnx][4]，请遵照说明下载用于Ubuntu的deb安装包。
+如果你还是比较喜欢从官方网站下载，那么翻墙可直达[https://www.dropbox.com/install?os=lnx][4]，请遵照说明下载用于Ubuntu的deb安装包。（LCTT译注：墙内用户还是忽视此条吧。）
 
 Copy是另外一个云存储解决方案，它也有本地Linux客户端。详情可查阅[copy.com][5]，它也有[ppa仓库][6]。
 
@@ -95,7 +96,7 @@ Skype可以在Ubuntu canonical合作仓库中找到。
 
 ### 9. 安装rar和其它归档工具 ###
 
-要想在Nemo这样的文件管理器中通过上下文菜单创建rar归档，请安装rar工具。安装rar的同时，请安装其它几个包以增加对其它归档格式的支持。
+要想在Nemo这样的文件管理器中通过上下文菜单创建rar归档，请安装rar工具。安装rar的同时，也可安装其它几个包以增加对其它归档格式的支持。
 
     $ sudo apt-get install unace p7zip-rar sharutils rar arj lunzip lzip
 
@@ -109,15 +110,13 @@ Diodon在cinnamon桌面上似乎存在一些问题，在历史列表增长时会
     # 或者
     $ sudo apt-get install clipit
 
-然后，你可以从应用程序菜单中启动它们，它们应该会在你每次登陆时启动。
+然后，你可以从应用程序菜单中启动它们，它们应该会在你每次登录时启动。
 
 ### 11. 优化桌面 ###
 
 #### 1. 修复系统托盘上的日期格式 ####
 
-在底部面板右边的时间小程序只显示了时间，它也可以设置显示日期。右击底部面板右边的日期-时间小程序，然后点击配置
-Check the box labelled "Use a custom date format" and fill in
-选中标有“使用自定义日期格式”的选框，然后填入
+在底部面板右边的时间小程序只显示了时间，它也可以设置显示日期。右击底部面板右边的日期-时间小程序，然后点击配置，选中标有“使用自定义日期格式”的选框，然后填入
 
     %B %e, %I:%M %p
 
@@ -133,12 +132,11 @@ Check the box labelled "Use a custom date format" and fill in
 
 你也许注意到，Firefox默认选择了Yahoo搜索引擎，而搜索引擎列表中并没有Google。点击“管理搜索引擎” > 获取更多搜索引擎，它会带你去[http://www.linuxmint.com/searchengines.php][7]。
 
-向下拉动滚动条到商业搜索引擎部分，找到并点击Google图标。进入下一页后，再次点击搜索引擎列表，而这次你会看到“添加Google”选项，点击它就可以用上Google搜索了。
+向下拉动滚动条到商业搜索引擎部分，找到并点击Google图标。进入下一页后，再次点击搜索引擎列表，而这次你会看到“添加Google”选项，点击它就可以用上Google搜索了。（LCTT译注：墙内用户也请忽略此条。怒！）
 
 ### 12. 优化字体渲染 ###
 
-Linux mint默认使用Dejavu Sans字体，它看起来真普通啊。你可以使用Droid和Noto字体获得好看得多视觉享受。请参照我们先前的教程，它会一步一步带你渐入佳境。
-[如何在Linux Mint上获得华丽好看的字体][8]
+Linux mint默认使用Dejavu Sans字体，它看起来真普通啊。你可以使用Droid和Noto字体获得好看得多视觉享受。请参照我们先前的教程，它会一步一步带你渐入佳境。[如何在Linux Mint上获得华丽好看的字体][8]
 
 ### 13. Guake下拉终端 ###
 
@@ -172,7 +170,7 @@ Linux Mint自带了Transmission，这是个简洁而高效的torrent客户端。
 
 ### 16. Hardinfo - 系统信息工具 ###
 
-Hardinfo是一个十分便利的gui工具，它可以用来报告大量完整的系统硬件信息。你可以通过它来集中查看处理器、内存、存储设备、网络配置、打印机、usb设备、声音/视频适配器等等信息。它具有测试和评估系统性能的功能。
+Hardinfo是一个十分便利的GUI工具，它可以用来报告大量完整的系统硬件信息。你可以通过它来集中查看处理器、内存、存储设备、网络配置、打印机、usb设备、声音/视频适配器等等信息。它具有测试和评估系统性能的功能。
 
     $ sudo apt-get install hardinfo
 
@@ -236,31 +234,33 @@ Linux确实有一些酷爽的游戏，很具娱乐性，而且是免费的。注
 #### 为Google Chrome/Chronium提供Java小程序支持 ####
 
 默认情况下已经安装了"icedtea-plugin"，用以为firefox提供java小程序支持。 
+
 然而，Chrome和Chronium却不再支持基于NPAPI的插件。因此java小程序，在没有获得基于Pepper api的java插件前，java小程序是不能在这些浏览器中工作的。要查看更多信息，请往[这里][9]。
 
 #### 更多应用程序 ####
 
 如果你正在为你的Mint盒子寻找更多的应用程序，那么这里列出了一部分更好的应用程序，所有这些都可以在软件管理器中安装。
-Opera - 网页浏览器
-Gnome Encfs Manager - 管理使用Encfs加密的文件和文件夹
-Smplayer - 多媒体播放器
-Rhythmbox, Clementine - 音乐播放器
-Openshot, Kdenlive - 视频编辑器
-Audacity - 音频编辑器
-Inkscape - 图形和图像编辑
-Gparted - 分区编辑器
-Gufw - 防火墙配置工具
-qBittorrent, Vuze - Torrent客户端
-Gwenview - 图像浏览
-Team viewer - 远程桌面
-Tv-maxe - 查看电视频道
-Grub Customizer - 修改GRUB启动菜单设置
-Linrunner TLP - 电源管理工具，对笔记本节电很有用
-Virtualbox - 虚拟化
-Kazam, recordMyDesktop - 桌面录像/演示
-Bleachbit - 通过删除旧的/临时文件释放磁盘空间
-Cheese - 使用网络摄像头拍照
-Shutter - 带有众多功能的屏幕截图工具
+
+* Opera - 网页浏览器
+* Gnome Encfs Manager - 管理使用Encfs加密的文件和文件夹
+* Smplayer - 多媒体播放器
+* Rhythmbox, Clementine - 音乐播放器
+* Openshot, Kdenlive - 视频编辑器
+* Audacity - 音频编辑器
+* Inkscape - 图形和图像编辑
+* Gparted - 分区编辑器
+* Gufw - 防火墙配置工具
+* qBittorrent, Vuze - Torrent客户端
+* Gwenview - 图像浏览
+* Team viewer - 远程桌面
+* Tv-maxe - 查看电视频道
+* Grub Customizer - 修改GRUB启动菜单设置
+* Linrunner TLP - 电源管理工具，对笔记本节电很有用
+* Virtualbox - 虚拟化
+* Kazam, recordMyDesktop - 桌面录像/演示
+* Bleachbit - 通过删除旧的/临时文件释放磁盘空间
+* Cheese - 使用网络摄像头拍照
+* Shutter - 带有众多功能的屏幕截图工具
 
 那么，请选择你喜欢的那些，并尽情享受Linux Mint吧！！
 
@@ -279,7 +279,7 @@ Linux Mint论坛
 
 via: http://www.binarytides.com/better-linux-mint-17-cinnamon/
 
-译者：[GOLinux](https://github.com/GOLinux) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[GOLinux](https://github.com/GOLinux) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
