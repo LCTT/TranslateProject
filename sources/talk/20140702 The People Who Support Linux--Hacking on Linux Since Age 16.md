@@ -4,9 +4,9 @@ The People Who Support Linux: Hacking on Linux Since Age 16
 ![](http://www.linux.com/images/stories/41373/Yitao-Li.png)
 
 Pretty much all of the projects in software developer [Yitao Li's GitHub repository][1] were developed on his Linux machine. None of them are necessarily Linux-specific, he says, but he uses Linux for “everything.”
-
+他说：“几乎所有的软件开发项目都是在Linux上开发的。没有一个项目是必须使用Linux的，但是我却用它做任何项目。”
 For example: “coding / scripting, web browsing, web hosting, anything cloud-related, sending / receiving PGP signed emails, tweaking IP table rules, flashing OpenWrt image into routers, running one version of Linux kernel while compiling another version, doing research, doing homework (e.g., typing math equations in Tex), and many others...” Li said via email.
-
+例如:Li通过邮件说："编写代码/脚本，网页浏览，网站代管，任何与云有关的工作，发送或者接收使用PGP数字签名的电子邮件，调整IP表的规则，把OpenWet镜像写入路由器，在运行一个内核的版本是可以编译另一个版本，研究，在家里办公（比如用Tex写数学方程式）
 Of all the projects in his repository his favorite is a school project developed in C++ with libpthread and libfuse to understand and correctly implement PAXOS-based distributed locking, key-value service, and eventually a distributed filesystem. He tested it using a number of test scripts on both single-core and multi-core machines.
 
 “One can learn something about distributed consensus protocol by implementing the PAXOS protocol correctly (or at least mostly correctly) such that the implementation will pass all the tests,” he said. “And of course once that is accomplished, one can also earn some bragging rights. Besides, a distributed filesystem can be useful in many other programming projects.”
