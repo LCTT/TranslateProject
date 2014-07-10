@@ -1,3 +1,4 @@
+cvsher 翻译中
 Command Line Tuesdays – Part Four
 ================================================================================
 Heya there geekos! New week, new adventure!
