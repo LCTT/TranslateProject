@@ -22,9 +22,12 @@
 
 ###cp###
 cp是一个用于复制文件或者目录的命令，它的用法相当的简单。进入到你想复制的文件所在的目录，然后使用如下命令
-	·cp file1 file2· -复制一个文件
+
+`cp file1 file2` -复制一个文件
+
 或者
-	·cp file1 file2 ... directory· -从当前工作目录复制多个文件到指定的目录。
+
+`cp file1 file2 ... directory` -从当前工作目录复制多个文件到指定的目录。
 
 下表是mr Shotts给出的cp命令的一些选项：
 
@@ -32,9 +35,12 @@ cp是一个用于复制文件或者目录的命令，它的用法相当的简单
 
 ###mv###
 mv是今天的第二个命令，我们可以使用mv来重命名一个文件或目录，或者移动一个文件或目录。我们可以这样使用mv命令。
-	·mv filename1  filename2· -若想将文件filename1重命名为filename2。
+
+`mv filename1  filename2` -若想将文件filename1重命名为filename2。
+
 或者
-	·mv file directory· -若想将一个文件移动到某个目录。
+
+`mv file directory` -若想将一个文件移动到某个目录。
 
 下表是一些mv命令的实例
 
@@ -42,9 +48,12 @@ mv是今天的第二个命令，我们可以使用mv来重命名一个文件或�
 
 ###rm###
 rm命令是用于删除文件或目录，它的用法比较直接，如下：
-	rm file
+
+`rm file`
+
 或者
-	rm -r driectory
+
+`rm -r driectory`
 
 这里也有一个包含rm其他选项的表
 
@@ -54,7 +63,9 @@ rm命令是用于删除文件或目录，它的用法比较直接，如下：
 
 ###mkdir###
 mkdir是用于创建目录.它是今天最简单的一个命令：
-	mkdir directory
+
+`mkdir directory`
+
 看，目录成功创建了！
 
 这是本周的内容，下周二再见，致以最真诚的问候！
