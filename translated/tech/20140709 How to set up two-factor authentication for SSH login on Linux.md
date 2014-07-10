@@ -19,8 +19,7 @@
 Google认证器会问一些问题，如果你不确定，就回答"Yes"。这个应急备用验证码(图中 emergency scratch codes）可以在你丢失被绑定的安卓设备的情况下恢复访问，并且设备也不再生成一次性密码。所以最好将应急备用验证码妥善保存。
 ### 在安卓设备上运行Google认证器 ###
 
-我们需要在安卓设备上安装[Google Authenticator app][6]才能完成双因子认证，到Google Play下载并安装一个。
-在安卓设备上运行Google认证器，找到下图所示中的配置菜单。
+我们需要在安卓设备上安装[Google Authenticator app][6]才能完成双因子认证，到Google Play下载并安装一个。在安卓设备上运行Google认证器，找到下图所示中的配置菜单。
 ![](https://farm6.staticflickr.com/5574/14554094476_bfc070d242_z.jpg)
 
 你可以选择"Scan a barcode" 或者"Enter provided key"选项。"Scan a barcode"允许你扫描QR码来完成密钥的输入，在此可能需要先安装扫描软件[Barcode Scanner app][7]。如果选择"Enter provided key"选项，你可以使用键盘输入验证密钥，如下图所示：
@@ -46,7 +45,7 @@ Google认证器会问一些问题，如果你不确定，就回答"Yes"。这个
 
 ChallengeResponseAuthentication yes
 
-Finally, restart SSH server.
+
 最后，重启SSH服务。
 在 Ubuntu, Debian, Linux Mint:
 
@@ -65,7 +64,6 @@ Finally, restart SSH server.
 在绑定的安卓设备上运行Google认证器，获得一个一次性验证码，该验证码30秒内有效，一旦过期，将重新生成一个新的验证码。
 ![](https://farm3.staticflickr.com/2937/14389989618_d9355dcbb2_z.jpg)
 
-Now log in to the SSH server as you normally do.
 现在和往常一样，使用SSH登录终端
     $ ssh user@ssh_server 
 
