@@ -1,3 +1,4 @@
+Translating by Alisa-annie
 The People Who Support Linux: Hacking on Linux Since Age 16 
 ================================================================================
 ![](http://www.linux.com/images/stories/41373/Yitao-Li.png)
