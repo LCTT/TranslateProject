@@ -1,14 +1,14 @@
-如何在Ubuntu,Linux Mint,Debian上禁用IPv6
+如何在Ubuntu,Linux Mint,Debian上禁用Ipv6
 ================================================================================
-### IPv6 ###
+### Ipv6 ###
 
-IPv6是寻址方案IPv4的下一个版本，被用来给域名分配数字地址。
+IPv6是寻址方案Ipv4的下一个版本,被用来给如google.com这样的域名分配数字地址。
 
-IPv6比IPv4支持更多的地址。然而，它还没有被广泛支持，还在被接受的过程中。
+Ipv6比Ipv4支持更多的地址。然而，它还没有被广泛支持，还在被接受的过程中。
 
-### 你的系统支持IPv6么? ###
+### 你的系统支持Ipv6么? ###
 
-为了支持IPv6，需要很多事情。首先你需要系统/操作系统支持IPv6。Ubuntu，Linux Mint，和大多是现代发行版都支持它。如果你看一下ifconfig指令的输出，你就会看见你的网络接口被分配了IPv6地址。
+为了支持Ipv6，需要很多事情。首先你需要系统/操作系统支持Ipv6。Ubuntu，Linux Mint，和大多是现代发行版都支持它。如果你看一下ifconfig指令的输出，你就会看见你的网络接口被分配了ipv6地址。
 
     $ ifconfig
     eth0      Link encap:Ethernet  HWaddr 00:1c:c0:f8:79:ee  
@@ -32,13 +32,13 @@ IPv6比IPv4支持更多的地址。然而，它还没有被广泛支持，还在
 
 看一下行“inet6 addr”。
 
-接下来你需要一个支持ipv6的路由器/调制解调器。此外，你的ISP也必须支持IPv6。
+接下来你需要一个支持ipv6的路由器/调制解调器。额外地，你的ISP也必须支持ipv6。
 
-除了检查网络设备的每一部分，最好查出你是否可以通过IPv6访问网站。
+除了检查网络设备的每一部分，最好查出你是否可以通过ipv6访问网站。
 
-有很多网站可以检测你的网络连接是否支持IPv6. 这里就是个例子：[http://testmyipv6.com/][1]
+有很多网站可以检测你的连接是否支持ipv6. 这里就是个例子：[http://testmyipv6.com/][1]
 
-下面是在内核中启用IPv6的参数：
+下面是在内核中启用ipv6的参数：
 
     $ sysctl net.ipv6.conf.all.disable_ipv6
     net.ipv6.conf.all.disable_ipv6 = 0
@@ -54,13 +54,13 @@ IPv6比IPv4支持更多的地址。然而，它还没有被广泛支持，还在
     $ cat /proc/sys/net/ipv6/conf/all/disable_ipv6
     0
 
-注意这里的变量是控制IPv6的“禁用”。所以设置1就会禁用IPv6。
+注意这里的变量是控制ipv6的“禁用”。所以设置1就会禁用ipv6。
 
-### 如果它不支持就禁用IPv6 ###
+### 如果它不支持就禁用ipv6 ###
 
-如果你的网络设备中不支持IPv6，那最好就全部禁用它们。为什么？因为这会引起域名查询延迟，在网络连接中不必要地尝试连接到IPv6地址导致延迟等等问题。
+如果你的网络设备中不支持ipv6，那最好就全部禁用它们。为什么？因为这回引起延迟域查询，在网络连接中不必要地尝试连接到ipv6地址导致延迟等等问题。
 
-我也遇到过像这样的问题，apt-get命令偶尔会尝试连接到IPv6地址失败接着检索IPv4地址。看一下下面的输出。
+我也遇到过像这样的问题，apt-get命令偶尔会尝试连接到ipv6地址失败接着检索ipv4地址。看一下下面的输出。
 
     $ sudo apt-get update
     Ign http://archive.canonical.com trusty InRelease
@@ -76,9 +76,9 @@ IPv6比IPv4支持更多的地址。然而，它还没有被广泛支持，还在
 
 我在其他的应用上也注意到了相似的问题，如Hexchat，同样Google Chrome也会有时会在查询域名的时候花费更长的时间。
 
-所以最好的方案是完全禁用IPv6来摆脱这些事情。这只需要一点点配置但可以帮助你解决很多你系统上的很多问题。用户甚至反应这可以加速网络。
+所以最好的方案是完全禁用Ipv6来摆脱这些事情。这只需要一点点配置但可以帮助你解决很多你系统上的很多问题。用户甚至反应这可以加速网络。
 
-#### 禁用 IPv6 - 方案1 ####
+#### 禁用 Ipv6 - 方案1 ####
 
 编辑文件 - /etc/sysctl.conf
 
@@ -97,7 +97,7 @@ IPv6比IPv4支持更多的地址。然而，它还没有被广泛支持，还在
 
     $ sudo sysctl -p
 
-再次检查ifconfig的输出，这里应该没有IPv6地址了。
+再次检查ifconfig的输出，这里应该没有ipv6地址了。
 
     $ ifconfig
     eth0      Link encap:Ethernet  HWaddr 08:00:27:5f:28:8b  
@@ -108,11 +108,12 @@ IPv6比IPv4支持更多的地址。然而，它还没有被广泛支持，还在
               collisions:0 txqueuelen:1000 
               RX bytes:1501691 (1.5 MB)  TX bytes:104883 (104.8 KB)
 
+If it does not work, then try rebooting the system and check ifconfig again.
 如果不行，尝试重启系统并再次检查ifconfig
 
-#### 禁用 IPv6 - GRUB 方案 ####
+#### 禁用 ipv6 - GRUB 方案 ####
 
-IPv6同样可以通过编辑grub配置文件禁用。
+Ipv6同样可以通过编辑grub配置文件禁用。
 
     $ sudo gedit /etc/default/grub
 
@@ -124,13 +125,13 @@ IPv6同样可以通过编辑grub配置文件禁用。
 
     $ sudo update-grub2
 
-重启，现在IPv6应该就已经禁用了。
+重启，现在ipv应该就已经禁用了。
 
 --------------------------------------------------------------------------------
 
 via: http://www.binarytides.com/disable-ipv6-ubuntu/
 
-译者：[geekpi](https://github.com/geekpi) ，校对：[wxy](https://github.com/wxy)
+译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
