@@ -1,4 +1,3 @@
-nd0104 is translating
 New Linux Podcast App ‘Vocal’ Hits Beta, Ready for Testing
 ================================================================================
 **Back in April we found ourselves enamoured by a promising new [podcast app for Ubuntu called ‘Vocal‘][1].  Well, the app has since gone from being a stylish mockup to real working code — and you can help test it.**
