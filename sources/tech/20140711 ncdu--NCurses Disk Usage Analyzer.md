@@ -1,3 +1,5 @@
+hunanchenxingyu translating....
+================================================================================
 ncdu – NCurses Disk Usage Analyzer
 ================================================================================
 [Ncdu][1] (NCurses Disk Usage)  is a ncurses-based du viewer. It provides a fast and easy-to-use interface through the well-known [du][2] command. It displays percentages of disk usage and also allow you to browse through directories via ncurses library.
