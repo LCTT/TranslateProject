@@ -1,14 +1,12 @@
-hunanchenxingyu translating....
+ncdu – 基于Ncurses库的磁盘使用分析器
 ================================================================================
-ncdu – NCurses Disk Usage Analyzer
-================================================================================
-[Ncdu][1] (NCurses Disk Usage)  is a ncurses-based du viewer. It provides a fast and easy-to-use interface through the well-known [du][2] command. It displays percentages of disk usage and also allow you to browse through directories via ncurses library.
+[Ncdu][1] (NCurses Disk Usage)  是一个基于Ncurses库的du命令浏览器. 它通过众所周知的[du][2]命令，为用户提供一个快速且容易被使用的接口. 它显示磁盘使用的百分比且允许你通过ncurses库去浏览目录.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/07/ncdu-about.png)
 
-### Installation ###
+### 安装 ###
 
-ncdu has been ported to most Linux distros and can be installed via official repos.
+ncdu已经被移植到大多数linux发行版本，可从官方资源库中安装.
 
 Arch / Manajaro and Derivatives:
 
@@ -24,9 +22,9 @@ Fedora and Derivatives:
 
     sudo yum install ncdu
 
-Check [here][3] for other distros.
+在[这里][3]检查其他的发行版本.
 
-### Using ncdu ###
+### 使用 ncdu ###
 
 Keys:
 
@@ -42,27 +40,27 @@ Keys:
 - t             — Toggle dirs before files when sorting
 - g            – Show percentage and/or graph
 
-To use ncdu, Open your terminal and run
+为使用ncdu，请打开终端并且运行
 
     ncdu
 
-this starts scanning the directories.
+开始扫描目录.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/07/ncdu-scanning.png)
 
-When scanning is done you can easily see the file / directory sizes.
+当扫描完成后，你能够很容易的查看文件/目录的大小.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/07/done-scanning.png)
 
-Delete file confirm:
+确认删除文件:
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/07/ncdu-delete-confirm.png)
 
-Read the ncdu manual [here][4] or run:
+在[这里][4] 阅读ncdu命令手册或运行:
 
     man ncdu
 
-**Credit**: Ncdu was suggested by two of our readers **BasketCase** and **Sama Vim** in the post [Linux Basics: How To Find Size of Directory Commands][5].
+**荣誉**: 有两位读者**BasketCase**和**Sama Vim**在阅读[Linux Basics: How To Find Size of Directory Commands][5]之后 向我们推荐Ncdu工具.
 注：上面这个链接已经做成原文
 
 Enjoy!
@@ -71,7 +69,7 @@ Enjoy!
 
 via: http://www.unixmen.com/ncdu-ncurses-disk-usage-analyzer/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[hunanchenxingyu](https://github.com/hunanchenxingyu) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
