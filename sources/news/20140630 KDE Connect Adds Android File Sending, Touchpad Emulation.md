@@ -8,7 +8,7 @@ KDE Connect增加安卓文件发送、触摸板模拟
 
 如今的安卓版本KDE和Plasma Desktop允许已经连接（到电脑的）设备的触屏作为你电脑的触摸板使用KDE Connect for Android and the Plasma desktop(注：Plasma 工作空间是KDE项目提供的所有图形环境总称。目前有三个Plasma子项目：Plasma Desktop用于传统的桌面电脑和笔记本电脑、Plasma Netbook用于上网本，以及Plasma Active用于平板电脑。)
 
-另一个无线输入设备作为鼠标使用，但仍然不支持像两个手指划动或右击这样的多点触摸This additional wireless input device will act just like a basic mouse, though doesn’t (yet) support multitouch features like two finger scrolling or right-clicking.
+另一个无线输入设备作为鼠标使用，但仍然不支持像两个手指划动或右击这样的多点触摸。
 
 安卓的共享intent现在支持KED Connect，允许你通过Dolphin文件管理的菜单或者用命令项推送文件的方式，从安卓发送文件到桌面，反之亦然。
 
