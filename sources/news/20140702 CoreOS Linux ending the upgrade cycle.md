@@ -1,3 +1,4 @@
+linuhap 翻译中
 CoreOS Linux ending the upgrade cycle
 ================================================================================
 > CoreOS launches commercially supported version of its Linux distribution and vows to do away with manual upgrading

@@ -1,3 +1,4 @@
+暑假 先来一发 Luoxcat 翻译
 Command Line Tuesdays – Part Three
 ================================================================================
 Today, mr Shotts takes us on a first part of a guided tour through our file system. We’ll learn how to visit, list files within directories and we’ll learn to use some options for the first time. So let’s begin with the first command of the week.
