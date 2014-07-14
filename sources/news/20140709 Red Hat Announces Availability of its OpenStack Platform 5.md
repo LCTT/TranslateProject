@@ -1,3 +1,4 @@
+nd0104 is translating
 Red Hat Announces Availability of its OpenStack Platform 5
 ================================================================================
 ![](http://farm4.static.flickr.com/3108/3191608123_67e1da2b79_o.jpg)
