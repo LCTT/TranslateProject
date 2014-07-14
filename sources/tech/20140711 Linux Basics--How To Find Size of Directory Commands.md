@@ -1,3 +1,4 @@
+cvsher翻译中
 Linux Basics: How To Find Size of Directory Commands
 ================================================================================
 This is the first in a series of posts in coming where I’ll be writing about some **basic commands** that that will be of good use to new users.
