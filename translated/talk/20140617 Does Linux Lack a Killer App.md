@@ -1,18 +1,18 @@
-Does Linux Lack a Killer App?
+Linux 缺乏一款杀手级应用程序吗？
 ================================================================================
 ![](http://www.linuxinsider.com/images/rw302843/linux-killer-app.jpg)
 
-**What Linux needs most is games, said Hyperlogos blogger Martin Espinoza. However, "if you were trying to narrow it down to one app, it would probably still be Photoshop. For all the talk of how great GIMP has become, usability is still an abject nightmare, and in spite of the OSS community's self-back-patting regarding documentation, there is no documentation for GIMP which is not pathetic."**
+**Linux 最需要的就是游戏， Hyperlogos 的博主 Martin Espinoza 如是说。然而，“如果您把它限定到一款应用程序的话，最需要的很可能仍是 Photoshop 。尽管大家都在谈论 GIMP 已经变得多么多么强大，但它的易用性仍然是个悲催的噩梦；虽然开源社区有些相关的文档，但 GIMP 仍是处在缺乏文档的可怜状态。”**
 
-Well the days are heating up here in the Linux blogosphere, and FOSS fans are flocking to the Broken Windows Lounge as much for the frosty air-conditioning as for the conversation.
+这些日子这儿越来越热了，Linux 博客世界和 FOSS 论坛的粉丝们都蜂拥入带有破窗的休息室，边吹着冷空调，边讨论此话题。
 
-Even Linux Girl, whose days generally involve far more pavement-pounding than she'd like, has found herself seeking solace in the blogobar's arctic climes far more often than she probably should.
+甚至是 [Linux Girl][9]，这些天也被这些越来越多的潮流所冲击，正在 blogobar 上寻求能使其降温的慰籍，而且越来越频繁。
 
-It's a good thing she has been, though, or she might have missed the latest juicy debate. "What killer app is Linux missing?" was the question that [kicked things off][1], and the discussion has been escalating ever since.
+虽然她们这样做比较正确，但或许她们已经错过了最鲜最美味可口的辩论大餐。“Linux 缺少什么样的杀手级应用程序？”这个问题[已经扩大化了][1],关于此的讨论越演越烈，已经超出以往任何时候。
 
-"The Free Software world is incredibly rich, and covers pretty much all bases," **Linux Voice's** Mike Saunders began. "We have a wealth of desktop, server, development and multimedia tools to choose from -- some of which are the best in their field.
+开源软件世界的软件是如此令人难以置信的丰富，几乎涵盖了所有的领域，” **Linux Voice** 的 Mike Saunders 开头说到。“我们有桌面端的、服务端的、开发相关的及多媒体工具等一大笔来自开源世界的财富可以选择 -- 其中的某些还是在相关领域中最好的呢。”
 
-"But what is missing?" Sanders went on provocatively. "Is there a killer app that prevents you from running Linux 24x7 on your main machine?"
+“但还缺少什么吗？” Sanders 接下来提出可争议的话题。“是不是存在一款杀手级应用程序，它会使你的主机不能 24x7 小时的在运行？”
 
 There was a momentary lull in the conversation around the bar as patrons pondered the suggestion. Linux Girl tried to enjoy the fleeting peace, but it didn't last for more than an instant.
 
@@ -110,3 +110,4 @@ via:
 [6]:http://hyperlogos.org/
 [7]:http://www.kde.org/
 [8]:http://linuxrants.com/
+[9]:http://www.linux-girl.com
