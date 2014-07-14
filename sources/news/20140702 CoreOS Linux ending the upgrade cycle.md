@@ -1,19 +1,19 @@
-linuhap 翻译中
 CoreOS Linux ending the upgrade cycle
+CoreOS Linux结束升级周期
 ================================================================================
-> CoreOS launches commercially supported version of its Linux distribution and vows to do away with manual upgrading
+> CoreOS发布了他的Linux发行版的商用支持版，并且宣称将废除手动更新。
 
-IDG News Service - Hoping to simplify life for system administrators, CoreOS has launched a commercial Linux distribution that continually updates itself, eliminating the need to perform major upgrades.
+国际数据集团新闻社消息——CoreOS发布了商用Linux发行版，以期能简化系统管理员的生活。这个Linux发行版可持续进行自动更新，不需要进行重大升级。
 
-CoreOS is offering its namesake Linux distribution as a commercial service, [starting][1] at $100 a month.
+CoreOS提供其同名的Linux发行版做为商业服务，开始为一个月100美元。
 
-"Businesses today can begin to think of CoreOS as an extension of their OS team, and for enterprise Linux customers this is the last migration they will ever need," said Alex Polvi, founder and CEO of CoreOS, in a statement.
+“商家现在可以开始考虑将CoreOS作为他们系统团队的延伸，对于企业Linux客户，这将是他们会需要的最后一次迁移。”CoreOS的创始人和CEO在一份声明中这样说。
 
-Commercial Linux subscriptions are nothing new: Both [Red Hat][2] and [Suse][3] offer commercial subscriptions for their respective distributions.
+商业Linux订阅并不是什么新鲜事：[Red Hat][2]和[Suse][3]都在为他们各自的发行版提供商业订阅。
 
-Because the applications and libraries these Linux-based companies use are open source and freely available, the cost of the subscriptions doesn't cover the software itself, but rather pays for the updates, bug fixes, integration and technical support for when issues occur.
+因为这些以Linux为基础的公司使用的应用程序和库都是开源和免费提供的，所以订阅的费用不包括软件本身，而收费来自更新，漏洞修复，集成以及发生问题时的技术支持。
 
-CoreOS will be different from these distributions, the company asserted, in that there will be no major updates, which typically require updating all the packages in the distribution at once. Instead, updates and new features will be streamed automatically to the copy of the OS and applied as soon as they are ready.
+CoreOS公司声称，CoreOS将会和这些发行版不同，它将不会有重大更新，而这些更新通常需要一次更新更新所有的包。它的更新和新特征将会在就绪后自动。。。。CoreOS will be different from these distributions, the company asserted, in that there will be no major updates, which typically require updating all the packages in the distribution at once. Instead, updates and new features will be streamed automatically to the copy of the OS and applied as soon as they are ready.
 
 The service offers a dashboard, called CoreUpdate, that provides controls for designating which software packages should get updated, should the administrator not want all the packages to be updated automatically.
 

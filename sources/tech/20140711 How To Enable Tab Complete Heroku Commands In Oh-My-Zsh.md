@@ -1,3 +1,5 @@
+JonathanKang is translating
+
 How To Enable Tab Complete Heroku Commands In Oh-My-Zsh
 ================================================================================
 **Heroku** Client is the (Command Line Interface) CLI tool for creating and managing Heroku apps.
