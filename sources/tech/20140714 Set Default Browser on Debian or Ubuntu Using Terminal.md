@@ -1,3 +1,5 @@
+[su-kaiyao]翻译中
+
 [Quick Tip] Set Default Browser on Debian/Ubuntu Using Terminal
 ================================================================================
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/07/Browsers-790x436.jpg)
