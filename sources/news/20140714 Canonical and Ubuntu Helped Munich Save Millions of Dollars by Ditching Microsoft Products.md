@@ -1,3 +1,5 @@
+[su-kaiyao]翻译中
+
 Canonical and Ubuntu Helped Munich Save Millions of Dollars by Ditching Microsoft Products
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Canonical-and-Ubuntu-Helped-Munich-Save-Millions-of-Dollars-By-Ditching-Microsoft-Products-450571-2.jpg)
