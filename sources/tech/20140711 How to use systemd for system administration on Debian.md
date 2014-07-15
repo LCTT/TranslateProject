@@ -1,4 +1,3 @@
-Love-xuan翻译中
 How to use systemd for system administration on Debian
 ================================================================================
 Soon enough, hardly any Linux user will be able to escape the ever growing grasp that systemd imposes on Linux, unless they manually opt out. systemd has created more technical, emotional, and social issues than any other piece of software as of late. This predominantly came to show in the [heated discussions][1] also dubbed as the 'Init Wars', that occupied parts of the Debian developer body for months. While the Debian Technical Comittee finally decided to include systemd in Debian 8 "Jessie", there were efforts to [supersede the decision][2] by a General Resolution, and even threats to the health of developers in favor of systemd.
