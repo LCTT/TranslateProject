@@ -7,11 +7,11 @@
 
 Curlew可以转换超过100种不同的格式、显示文件的详细信息、转换预览、插入字幕等等。
 
-根据变更日志，转换前后实例的最后大小和位置会被记住、加入了一些失去对话图标、文件系统会在挂起前同步。
+此次更新包括：该软件打开时会记住上次的窗口大小和位置、增加了丢失了的对话框图标、在系统挂起前会主动同步文件系统。
 
-这个程序有一些依赖：至少Python 2.7 （小于3.0）、python-gobject 3.0、gir1.2-gtk 3.0、 ffmpeg 0.8、libav-tools 0.8、 mencoder、libavcodec-extra、xdg-utils、mediainfo。
+这个程序需要的依赖环境包括：Python 2.7及其以上 （但是不兼容3.x）、python-gobject 3.0、gir1.2-gtk 3.0、 ffmpeg 0.8、libav-tools 0.8、 mencoder、libavcodec-extra、xdg-utils和mediainfo等。
 
-来自noobslab.com的人提供一种通过PPA来简单地安装这个应用的方法。你要做的是在命令行下输入少量的命令（你需要使用root权限来生效） 
+来自noobslab.com的兄弟们提供一种通过PPA来简单地安装这个应用的方法。你要做的是在命令行下输入少量的命令（你需要有root权限才行） 
 
     sudo add-apt-repository ppa:noobslab/apps
     sudo apt-get update
@@ -30,7 +30,7 @@ Curlew可以转换超过100种不同的格式、显示文件的详细信息、�
 
 via: http://news.softpedia.com/news/Open-Source-Multimedia-Converter-Curlew-0-1-22-3-Is-Out-448028.shtml
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
