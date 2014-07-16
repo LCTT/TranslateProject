@@ -1,3 +1,4 @@
+nd0104 is translate
 How to check RPM package dependencies on Fedora, CentOS or RHEL
 ================================================================================
 A typical RPM package on Red Hat-based systems requires all its dependent packages be installed to function properly. For end users, the complexity of such RPM dependency is hidden by package managers (e.g., yum or DNF) during package install/upgrade/removal process. However, if you are a sysadmin or a RPM maintainer, you need to be well-versed in RPM dependencies to maintain run-time environment for the system or roll out up-to-date RPM specs.

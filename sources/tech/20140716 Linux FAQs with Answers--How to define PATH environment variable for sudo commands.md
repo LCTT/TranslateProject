@@ -1,3 +1,4 @@
+nd0104 is translate
 Linux FAQs with Answers--How to define PATH environment variable for sudo commands
 ================================================================================
 > **Question**: I built and installed a program in /usr/local/bin. The program requires root privilege to run. But when I try to run the program with sudo, I get "sudo: XXXXX: command not found" error. Somehow /usr/local/bin is not included in the PATH environment variable. How can I fix this problem? 
