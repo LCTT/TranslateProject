@@ -1,3 +1,5 @@
+[su-kaiyao]翻译中
+
 5 Simple Ways To Make Cinnamon Feel at Home on Ubuntu
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/07/des.jpg)
