@@ -1,4 +1,4 @@
-Linux截屏软件Shutter获得更新，修复bug，更换新图标
+Linux 截屏软件 Shutter 更新了新图标，修复了漏洞
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/06/shutter.jpg)
 
@@ -6,9 +6,9 @@ Linux截屏软件Shutter获得更新，修复bug，更换新图标
 
 这款开源并且功能强大的截屏工具可以让你选择桌面的任意区域、指定应用窗口或者整个屏幕区域来进行截屏。此外，你还可以添加注释、文本或者特效。
 
-0.91版本修复了若干之前遗留的bug，包括在Ubuntu 14.04中缩略图无法正常地在应用切换栏中显示的问题。由于'imm.io'在今年早些停止服务，所以此次更新还取消了将截图上传到Pixlr图像服务的选项。
+0.91版本修复了若干明显的bug，包括在Ubuntu 14.04中缩略图无法正常地在应用切换栏中显示的问题。由于'imm.io'在今年早期停止服务，所以此次更新还取消了将截图上传到Pixlr图像服务的选项。
 
-最后，这次更新突出了由Lucas Romero Di Benedetto精心设计的百叶窗相机式的应用图标。
+最后，这次更新突出了由 Lucas Romero Di Benedetto 精心设计的相机快门式应用图标。
 
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/06/compare-350x200.png) 
 
@@ -28,7 +28,7 @@ Linux截屏软件Shutter获得更新，修复bug，更换新图标
 
 via: http://www.omgubuntu.co.uk/2014/06/shutter-0-91-new-icon
 
-译者：[JonathanKang](https://github.com/JonathanKang) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[JonathanKang](https://github.com/JonathanKang) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
