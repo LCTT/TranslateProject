@@ -10,7 +10,7 @@ Linux截屏软件Shutter获得更新，修复bug，更换新图标
 
 最后，这次更新突出了由Lucas Romero Di Benedetto精心设计的百叶窗相机式的应用图标。
 
-![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/06/compare-350x200.png)
+![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/06/compare-350x200.png) 
 
 ### 在Ubuntu环境下安装Shutter 0.91版本 ###
 
