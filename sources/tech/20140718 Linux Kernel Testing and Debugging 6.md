@@ -97,6 +97,18 @@ We covered a lot of ground in this paper. I leave you with a few references for 
 
 I would like to thank Khalid Aziz, Oracle for his review, proof reading, and valuable suggestions for improvement. My special thanks to Mauro Chehab, Samsung and Guy Martin, Samsung for their review and feedback at various stages of writing this paper. I would like to extend my thanks to Greg Kroah-Hartman, Linux Foundation for his review. My special thanks to Ibrahim Haddad, Samsung for his support and encouragement without which, I would probably have never set out to write this paper in the first place. 
 
+----------
+
+![](http://www.linuxjournal.com/files/linuxjournal.com/ufiles/pictures/picture-1088573.jpg)
+
+Author:[Shuah Khan][a]
+
+Shuah Khan is a Senior Linux Kernel Developer at Samsung's Open Source Group.
+She is a Linux Kernel Contributor who focuses on IOMMU, DMA, Linux Power
+Management, and PCIe, in addition to helping with stable release kernel
+maintenance testing and bug fixes. Shuah has several years of Unix kernel
+development experience. She has also contributed to OpenHPI, and LLDP projects.
+
 --------------------------------------------------------------------------------
 
 via: http://www.linuxjournal.com/content/linux-kernel-testing-and-debugging?page=0,5
@@ -123,3 +135,4 @@ via: http://www.linuxjournal.com/content/linux-kernel-testing-and-debugging?page
 [16]:http://lwn.net/Kernel/LDD3/
 [17]:http://events.linuxfoundation.org/slides/lfcs2010_hiramatsu.pdf
 [18]:http://events.linuxfoundation.org/images/stories/slides/elc2013_porter.pdf
+[a]:http://www.linuxjournal.com/users/shuah-khan
