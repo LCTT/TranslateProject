@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 How to simulate key press and mouse movement in Linux
 ================================================================================
 Have you ever dreamed of your computer doing stuff automatically for you? Probably not if you just watched Terminator. But except for that, scripting and task automation are every power user's dreams. If a lot of solutions exist today to fit such goal, it is sometimes hard to pick the simple, smart, and efficient one out of the lot. I cannot pretend to have found it myself, but in the mean time, my preference goes to neat software called xdotool. Its approach is intuitive as it stands as an X11 automation tool. In other words, xdotool can simulate key presses and even mouse events from reading a text file.
