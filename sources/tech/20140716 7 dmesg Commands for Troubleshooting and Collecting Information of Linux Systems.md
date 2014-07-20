@@ -1,3 +1,5 @@
+Translating by cvsher
+
 7 ‘dmesg’ Commands for Troubleshooting and Collecting Information of Linux Systems
 ================================================================================
 The ‘dmesg‘ command displays the messages from the kernel ring buffer. A system passes multiple runlevel from where we can get lot of information like system architecture, cpu, attached device, RAM etc. When computer boots up, a kernel (core of an operating system) is loaded into memory. During that period number of messages are being displayed where we can see hardware devices detected by kernel.
