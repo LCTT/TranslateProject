@@ -1,3 +1,4 @@
+@@ -1,63 +0,0 @@
 Linux基础，如何在命令行中查看目录的大小
 =====================================================================
 这是写给Liunx新用户的一系列文章中的第一篇，在这系列文章我将会写一些对新用户来说非常好用的**Linux基础命令**。
@@ -61,3 +62,4 @@ via: http://www.unixmen.com/linux-basics-find-size-directory-commands/
 译者：[cvsher](https://github.com/cvsher) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
+

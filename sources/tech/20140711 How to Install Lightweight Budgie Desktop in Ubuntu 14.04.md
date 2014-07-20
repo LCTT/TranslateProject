@@ -1,3 +1,4 @@
+Love-xuan 翻译中
 How to Install Lightweight Budgie Desktop in Ubuntu 14.04
 ================================================================================
 **If you follow us over on Twitter you may have caught a glimpse of a screenshot we shared recently, along with the invitation to name the desktop environment pictured. **
