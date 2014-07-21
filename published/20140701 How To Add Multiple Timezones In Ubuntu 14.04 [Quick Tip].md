@@ -1,4 +1,4 @@
-如何在Ubuntu 14.04中添加多时区时间 [小技巧]
+[小白技巧]如何在Ubuntu 14.04中添加多个时区时间
 ================================================================================
 如果你需要和多时区时间打交道的话，你一定希望你的电脑时钟可以显示多个时区的时间。作为一个移居国外的人，我需要关注法国和印度的时间。在Ubuntu系统中，你可以进行简易的设置来添加多时区时间。
 
@@ -6,7 +6,7 @@
 
 ### 在Ubuntu 14.04系统中添加多时区时间 ###
 
-打开系统设置（按下标有微软徽标的按键，在Dash中搜索“系统设置”），进入”时间&日期“选项。
+打开系统设置（按下标有微软徽标的按键，在Dash中搜索“系统设置”），进入“时间&日期”选项。
 
 接下来，进入**时钟**标签页，找到**其他时区时间**选项，然后点击**选择地区**按钮。
 
@@ -20,7 +20,7 @@
 
 ![multiple timezone displayed in Ubuntu 14.04](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/06/Multiple_Timezones_display_Ubuntu.png)
 
-好好的感受Ubuntu多时区时钟给你带来的便捷吧。:) 
+体验下Ubuntu多时区时钟给你带来的便捷吧。:) 
 
 ----------
 
@@ -34,7 +34,7 @@
 
 via: http://itsfoss.com/add-multiple-timezones-ubuntu-1404/
 
-译者：[JonathanKang](https://github.com/JonathanKang) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[JonathanKang](https://github.com/JonathanKang) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
