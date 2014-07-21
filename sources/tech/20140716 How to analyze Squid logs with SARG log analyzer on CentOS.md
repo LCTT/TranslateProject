@@ -1,3 +1,6 @@
+Translating-----geekpi
+
+
 How to analyze Squid logs with SARG log analyzer on CentOS
 ================================================================================
 In a [previous tutorial][1], we show how to configure a transparent proxy with Squid on CentOS. Squid provides many useful features, but analyzing a raw Squid log file is not straightfoward. For example, how could you analyze the time stamps and the number of hits in the following Squid log?
