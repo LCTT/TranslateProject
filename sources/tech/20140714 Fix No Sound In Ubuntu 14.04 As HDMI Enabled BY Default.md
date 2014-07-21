@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Fix No Sound In Ubuntu 14.04 As HDMI Enabled BY Default
 ================================================================================
 Sound problem is not new in Ubuntu. I have previously written on various ways to [fix “no sound” issue in Ubuntu][1]. But the soud issue I am going to discuss here is different than those mentioned in the other article.
