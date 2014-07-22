@@ -1,3 +1,5 @@
+[su-kaiyao]翻译中
+
 10 Useful Interview Questions and Answers on Linux Commands
 ================================================================================
 Linux command Line and the interaction of users with Linux Shell with Linux Commands is the most wonderful part of Linux and is one of the most widely topic from interview point. Here in this article we are coming up with 10 wonderful questions that are important from the interview perspective and will surely add to yours knowledge base.
