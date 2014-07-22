@@ -1,3 +1,4 @@
+Love-xuan 翻译中
 Display Song Lyrics On Desktop In Ubuntu 14.04
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/07/display_lyrics_desktop_Ubuntu.jpeg)
