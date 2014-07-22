@@ -1,3 +1,5 @@
+cereuz is translating
+
 The history of Android
 ================================================================================
 ![Left: the Milestone 5 home screen showing the “all" button, two dock icons, and four recent apps. Center: the home screen with the app list open. Right: the power menu.](http://cdn.arstechnica.net/wp-content/uploads/2013/12/homescree052n.jpg)
