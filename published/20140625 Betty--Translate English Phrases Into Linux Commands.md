@@ -1,5 +1,3 @@
-CNprober翻译完成。。。619913541
-
 Betty：通过大白话执行Linux命令
 ================================================================================
 
@@ -7,7 +5,7 @@ Betty：通过大白话执行Linux命令
 
 ### 安装 ###
 
-Betty的安装非常简单直接。首先确认你已经安装了下面这些依赖包[译注，需要安装至少Ruby1.9以上版本]。
+Betty的安装非常简单直接。首先确认你已经安装了下面这些依赖包[LCTT译注，需要安装至少Ruby1.9以上版本]。
 
 #### 对于基于Debian的系统：####
 
@@ -17,7 +15,7 @@ Betty的安装非常简单直接。首先确认你已经安装了下面这些依
 
     yum install git curl ruby
 
-现在git工具把Betty库clone到你自定义的任何路径。这里我克隆到我的home目录，**例如 /home/sk/**.
+现在用git工具把Betty库clone到你自定义的任何路径。这里我克隆到我的home目录，**例如 /home/sk/**.
 
     git clone https://github.com/pickhardt/betty
 
@@ -35,7 +33,7 @@ Betty的安装非常简单直接。首先确认你已经安装了下面这些依
 
 ### 用法 ###
 
-你应该在英语短语之前加上单词“betty”。你也许已经知道，如果我们想知道在系统中我们的用户名，应该运行下面的命令：
+你应该在英语短语之前加上单词“betty” [LCTT译注，你自然可以用你的小甜心的名字来替换这个不是知道是谁的Betty :>]。你也许已经知道，如果我们想知道在系统中我们的用户名，应该运行下面的命令：
 
     whoami
 
@@ -60,7 +58,7 @@ Betty的安装非常简单直接。首先确认你已经安装了下面这些依
 
     betty whats my name
 
-Betty不确定她应该查找系统用户名还是用户全名。这种情况下，她会询问你多个问题来找到准确的结果。如你下面所见，Betty问我想要运行哪一条命令（whoami 还是 finger $(whoami) | sed 's/.*:*//;q')[译注，需要你的系统已经安装finger]。我只想知道我的用户名，所以我选择数字**1**。
+Betty不确定她应该查找系统用户名还是用户全名。这种情况下，她会询问你多个问题来找到准确的结果。如你下面所见，Betty问我想要运行哪一条命令（whoami 还是 finger $(whoami) | sed 's/.*:*//;q')[LCTT译注，需要你的系统已经安装finger]。我只想知道我的用户名，所以我选择数字**1**。
  
     Betty: Okay, I have multiple ways to respond.
     Betty: Enter the number of the command you want me to run, or N (no) if you don't want me to run any.
@@ -75,7 +73,6 @@ Betty不确定她应该查找系统用户名还是用户全名。这种情况下
 ### 压缩和解压缩文件夹 ###
 
 如果你想要压缩一个文件或者文件夹，用下面的命令。例如，我想压缩我home目录下的“test”文件夹。
-
 
     betty compress test/ test.tar.gz
 
@@ -197,7 +194,7 @@ Cheers!
 
 via: http://www.unixmen.com/betty-translate-english-phrases-linux-commands/
 
-译者：[love_daisy_love](https://github.com/CNprober) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[love\_daisy\_love](https://github.com/CNprober) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
