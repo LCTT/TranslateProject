@@ -44,7 +44,7 @@ Ubuntu 14.04中修复默认启用HDMI后没有声音问题
 ![](http://1.gravatar.com/avatar/20749c268f5d3e4d2c785499eb6a17c0?s=100&r=pg&d=mm)
 
 关于Abhishek
-
+ 
 我是Abhishek Prakash，It's F.O.S.S.的“创立者”，我有一个通信系统工程的硕士学位。我酷爱Linux和开源。我使用Ubuntu，信奉知识分享。除了Linux之外，我也喜爱经典的侦探推理小说，是Agatha Christie作品的超级粉丝。大家尽可以在[Google+][g]上将我圈进去，并追随[@abhishek_pc][t]
 
 --------------------------------------------------------------------------------
