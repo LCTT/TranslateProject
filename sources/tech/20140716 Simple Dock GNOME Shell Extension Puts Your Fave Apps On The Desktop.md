@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 ‘Simple Dock’ GNOME Shell Extension Puts Your Fave Apps On The Desktop
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/07/screenshot_815_1.jpg)
