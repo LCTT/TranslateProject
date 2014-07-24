@@ -62,7 +62,7 @@ RetroPie安装文档：[https://github.com/petrockblog/RetroPie-Setup][2]
 
 via: http://www.linuxjournal.com/content/super-pi-brothers
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[zpl1025](https://github.com/zpl1025) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
