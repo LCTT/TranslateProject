@@ -1,3 +1,4 @@
+【Jelly翻译中】
 Oracle Linux 7.0 OS Has XFS as Default File System and Unbreakable Enterprise Kernel Release 3
 ================================================================================
 ![The new Oracle Linux 7.0 is out](http://i1-news.softpedia-static.com/images/news2/Oracle-Linux-7-0-OS-Has-XFS-as-Default-File-System-and-Unbreakable-Enterprise-Kernel-Release-3-451894-2.jpg)
