@@ -1,11 +1,10 @@
-如何在linux中创建sosreport（RHEL 5.X / RHEL 6.X）
+如何用sosreport在Linux上创建诊断信息
 ================================================================================
-**Sosreport**是linux中的一个命令**RHEL / CentOS**)，它会收集**系统配置**和你linux机器上如正在运行的内核版本、加载的模块和系统和服务配置文件之类的诊断信息。这个命令同样可以运行外部的程序来收集更多的信息，并存储这些输出到一个结论文档中。
+**Sosreport**是**RHEL / CentOS**上的一个命令，它会收集**系统配置**和你linux机器上的诊断信息，如正在运行的内核版本、加载的模块和系统和服务配置文件之类的信息。这个命令同样可以运行外部的程序来收集更多的信息，并存储这些输出到一个结论文档中。
 
 Sosreport在你需要获得redhat的技术支持时需要它。Redhat的支持工程师会要求你服务器上的sosreport来用于故障排除。
 
-To run sosreport , **sos** package should be installed. Sos package is part of default installation in most of linux. If for any reason this package is no installed , then use below yum command to install **sos package** :
-要运行sosreport，需要安装**sos** 包。Sos包是大多是linux的默认安装包中的一部分。如果有任何原因没有安装，那么运行下面的yum命令来安装**sos 包** :
+要运行sosreport，需要安装**sos** 包。sos包是大多是linux的默认安装包中的一部分。如果因为某种原因没有安装，那么运行下面的yum命令来安装**sos 包** :
 
     # yum install sos 
 
@@ -15,7 +14,7 @@ To run sosreport , **sos** package should be installed. Sos package is part of d
 
     # sosreport 
 
-这条命令正常情况下会在**几分钟**里完成。根据本地配置，在某些情况下，某些选项可能需要更长的时间才能完成。一旦完成，sosreport将在**/ tmp目录**目录中生成压缩文件。不同版本使用不同的压缩方案（** gz，bz2，或xz**）。该文件应提供给红帽的支持代表（在开放的情况下通常作为附件）。
+这条命令正常情况下会在**几分钟**里完成。根据本地配置，在某些情况下，某些选项可能需要更长的时间才能完成。一旦完成，sosreport将在**/ tmp目录**目录中生成一个压缩文件。不同版本使用不同的压缩方案（** gz，bz2，或xz**）。该文件应提供给红帽的支持代表（在开放的情况下通常作为附件）。
 
 **注意**：sosreport需要root权限才能运行。
 
@@ -38,6 +37,6 @@ sosreport命令有一个**模块化结构**，并允许用户启用和禁用模�
 
 via: http://www.linuxtechi.com/how-to-create-sosreport-in-linux/
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

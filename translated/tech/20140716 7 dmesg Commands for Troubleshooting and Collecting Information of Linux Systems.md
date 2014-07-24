@@ -1,24 +1,24 @@
-7 ‘dmesg’ Commands for Troubleshooting and Collecting Information of Linux Systems
-================================================================================
-The ‘dmesg‘ command displays the messages from the kernel ring buffer. A system passes multiple runlevel from where we can get lot of information like system architecture, cpu, attached device, RAM etc. When computer boots up, a kernel (core of an operating system) is loaded into memory. During that period number of messages are being displayed where we can see hardware devices detected by kernel.
+在linux系统中处理故障和收集系统信息的7种‘dmesg’的用法
+==========================================================
+‘dmesg’命令显示linux内核的环形缓冲区信息，我们可以从中获得诸如系统架构，cpu，挂载的硬件，RAM等多个运行级别的大量的系统信息。当计算机启动时，系统内核（操作系统的核心部分）将会被加载到内存中。在加载的过程中会显示很多的信息，在这些信息中我们可以看到内核检测硬件设备。
 
 ![dmesg Command Examples](http://www.tecmint.com/wp-content/uploads/2014/07/dmesg-Command-Examples.png)
-dmesg Command Examples
+dmesg 命令的使用范例
 
-The messages are very important in terms of diagnosing purpose in case of device failure. When we connect or disconnect hardware device on the system, with the help of dmesg command we come to know detected or disconnected information on the fly. The dmesg command is available on most **Linux and Unix** based Operating System.
+‘dmesg’命令设备故障的诊断是非常重要的。在‘dmesg’命令的帮助下进行硬件的连接或断开连接操作时，我们可以看到硬件的检测或者断开连接的信息。‘dmesg’命令在多数基于**Linux**和**Unix**的操作系统中都可以使用。
 
-Let’s throw some light on most famous tool called ‘dmesg’ command with their practical examples as discussed below. The exact syntax of dmesg as follows.
+下面我们展示一些最负盛名的‘dmesg’命令工具以及其实际使用举例。‘dmesg’命令的使用语法如下。
 
-    # dmseg [options...]
+    # dmesg [options...]
 
-### 1. List all loaded Drivers in Kernel ###
+### 1. 列出加载到内核中的所有驱动 ###
 
-We can use text-manipulation tools i.e. ‘**more**‘, ‘**tail**‘, ‘**less**‘ or ‘**grep**‘ with dmesg command. As output of dmesg log won’t fit on a single page, using dmesg with pipe more or less command will display logs in a single page.
+我们可以使用如‘**more**’。 ‘**tail**’, ‘**less** ’或者‘**grep**’的文字处理工具来处理‘dmesg’命令的输出。由于dmesg日志的输出不适合在一页中完全显示，因此我们使用管道（pipe）将其输出送到more或者less命令中进行分页显示。
 
     [root@tecmint.com ~]# dmesg | more
     [root@tecmint.com ~]# dmesg | less
 
-#### Sample Output ####
+### 输出 ###
 
     [    0.000000] Initializing cgroup subsys cpuset
     [    0.000000] Initializing cgroup subsys cpu
@@ -49,9 +49,9 @@ We can use text-manipulation tools i.e. ‘**more**‘, ‘**tail**‘, ‘**les
     [    0.000000] NX (Execute Disable) protection: active
     .....
 
-### 2. List all Detected Devices ###
+### 列出所有被检测到的硬件 ###
 
-To discover which hard disks has been detected by kernel, you can search for the keyword “**sda**” along with “**grep**” like shown below.
+要显示所有被内核检测到的硬盘设备，你可以使用‘**grep**’命令搜索‘**sda**’关键词，如下：
 
     [root@tecmint.com ~]# dmesg | grep sda
     
@@ -68,11 +68,9 @@ To discover which hard disks has been detected by kernel, you can search for the
     [   24.330762] EXT4-fs (sda7): mounted filesystem with ordered data mode. Opts: (null)
     [   24.561015] EXT4-fs (sda8): mounted filesystem with ordered data mode. Opts: (null)
 
-**NOTE**: The ‘sda’ first SATA hard drive, ‘sdb’ is the second SATA hard drive and so on. Search with ‘hda’ or ‘hdb’ in the case of IDE hard drive.
+**注解** ‘sda’表示第一块 SATA硬盘，‘sdb’表示第二块SATA硬盘。若想查看IDE硬盘搜索‘hda’或‘hdb’关键词。
 
-### 3. Print Only First 20 Lines of Output ###
-
-The ‘head’ along with dmesg will show starting lines i.e. ‘dmesg | head -20′ will print only 20 lines from the starting point.
+### 3. 只输出dmesg命令的前20行日志 ###
 
     [root@tecmint.com ~]# dmesg | head  -20
     
@@ -97,9 +95,9 @@ The ‘head’ along with dmesg will show starting lines i.e. ‘dmesg | head -2
     [    0.000000] BIOS-e820: [mem 0x000000007dc5cc00-0x000000007dc5ebff] ACPI data
     [    0.000000] BIOS-e820: [mem 0x000000007dc5ec00-0x000000007fffffff] reserved
 
-### 4. Print Only Last 20 Lines of Output ###
+### 只输出dmesg命令最后20行日志 ###
 
-The ‘tail’ along with dmesg command will print only 20 last lines, this is useful in case we insert removable device.
+当我们插入可以出的硬件是在‘dmesg’命令后跟随‘tail’命令来输出‘dmesg’命令的最后20行日志是非常有用的。
 
     [root@tecmint.com ~]# dmesg | tail -20
     
@@ -124,17 +122,16 @@ The ‘tail’ along with dmesg command will print only 20 last lines, this is u
     readahead-collector: sorting
     readahead-collector: finished
 
-### 5. Search Detected Device or Particular String ###
-
-It’s difficult to search particular string due to length of dmesg output. So, filter the lines with are having string like ‘**usb**‘ ‘**dma**‘ ‘**tty**‘ and ‘**memory**‘ etc. The ‘**-i**’ option instruct to [grep command][1] to ignore the case (upper or lower case letters).
+### 5. 搜索包含特定字符串的被检测到的硬件 ###
+由于‘dmesg’命令的输出实在太长了，在其中搜索某个特定的字符串是非常困难的。因此，有必要过滤出一些包含‘**usb**’ ‘**dma**’ ‘**tty**’ ‘**memory**’等字符串的日志行。[grep 命令][1] 的‘**-i**’选项表示忽略大小写。
 
     [root@tecmint.com log]# dmesg | grep -i usb
     [root@tecmint.com log]# dmesg | grep -i dma
     [root@tecmint.com log]# dmesg | grep -i tty
     [root@tecmint.com log]# dmesg | grep -i memory
 
-#### Sample Output ####
-
+###输出###
+  
     [    0.000000] Scanning 1 areas for low memory corruption
     [    0.000000] initial memory mapped: [mem 0x00000000-0x01ffffff]
     [    0.000000] Base memory trampoline at [c009b000] 9b000 size 16384
@@ -157,19 +154,19 @@ It’s difficult to search particular string due to length of dmesg output. So, 
     [    1.360318] Freeing unused kernel memory: 880K (c1962000 - c1a3e000)
     [    1.429066] [drm] Memory usable by graphics device = 2048M
 
-### 6. Clear dmesg Buffer Logs ###
+### 6. 清空dmesg缓冲区日志 ###
 
-Yes, we can clear dmesg logs if required with below command. It will clear dmesg ring buffer message logs till you executed the command below. Still you can view logs stored in ‘**/var/log/dmesg**‘ files. If you connect any device will generate dmesg output.
+我们可以使用如下命令来清空dmesg的日志。该命令会清空dmesg环形缓冲区中的日志。但是你依然可以查看存储在‘**/var/log/dmesg**’文件中的日志。你连接任何的设备都会产生dmesg日志输出。
 
     [root@tecmint.com log]# dmesg -c
 
-### 7. Monitoring dmesg in Real Time ###
+### 7. 实时监控dmesg日志输出 ###
 
-Some distro allows command ‘tail -f /var/log/dmesg’ as well for real time dmesg monitoring.
+在某些发行版中可以使用命令‘tail -f /var/log/dmesg’来实时监控dmesg的日志输出。
 
     [root@tecmint.com log]# watch "dmesg | tail -20"
 
-**Conclusion**: The dmesg command is useful as dmesg records all the system changes done or occur in real time. As always you can man dmesg to get more information.
+**结论**：dmesg命令在系统dmesg记录实时更改或产生的情况下是非常有用的。你可以使用man dmesg来获取关于dmesg更多的信息。
 
 ----------
 
@@ -181,13 +178,13 @@ Narad Shrestha
 - [Facebook profile][f]
 - [Google+ profile][g]
 
-He has over 10 years of rich IT experience which includes various Linux Distros, FOSS and Networking. Narad always believes sharing IT knowledge with others and adopts new technology with ease.
+他在IT领域拥有超过10年的丰富经验，其中包括各种Linux发行版，开源软件和网络。 Narad始终坚持与人分享知识和自如的运用新技术。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/dmesg-commands/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[cvsher](https://github.com/cvsher) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
@@ -195,3 +192,4 @@ via: http://www.tecmint.com/dmesg-commands/
 [t]:http://twitter.com/@nrdshrestha
 [f]:http://facebook.com/narad.shrestha.9
 [g]:http://plus.google.com/104542109955805873615?rel=author
+
