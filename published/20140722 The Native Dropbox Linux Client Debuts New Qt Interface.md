@@ -23,7 +23,7 @@ Dropbox开发人员提醒参与测试的人，目前大部分新界面“还很�
 
 新UI使用了（目前）系统自带的QT界面主题。它本身也不算很丑，不过在Ubuntu桌面上看起来不怎么合适，特别是和之前的版本比较。据说内存占用也变多了，在空闲情况下有时候会从60MB一下子跳到178MB。那些使用低端设备的人应该忍耐一下试用这个版本的诱惑－至少在这个特别的问题解决之后。
 
-Dropbox 2.11.0 (Experimental) for Linux的完整改动日志：
+Dropbox 2.11.0 (试验版本) for Linux的完整改动日志：
 
 - 用QT重写了Windows & Linux界面
 - 在移动和重命名文件后会尝试识别
@@ -48,9 +48,7 @@ Dropbox 2.11.0 (Experimental) for Linux的完整改动日志：
 
 via: http://www.omgubuntu.co.uk/2014/07/dropbox-experimental-linux-build-qt-rewrite
 
-原文作者：[Joey-Elijah Sneddon][a]
-
-译者：[zpl1025](https://github.com/zpl1025) 校对：[校对者ID](https://github.com/校对者ID)
+原文作者：[Joey-Elijah Sneddon][a] 译者：[zpl1025](https://github.com/zpl1025) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
