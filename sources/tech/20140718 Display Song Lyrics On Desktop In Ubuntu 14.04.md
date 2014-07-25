@@ -1,47 +1,45 @@
-Love-xuan 翻译中
-Display Song Lyrics On Desktop In Ubuntu 14.04
+在Ubuntu上显示桌面歌词
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/07/display_lyrics_desktop_Ubuntu.jpeg)
 
-Apart from free streaming music, what I like the most in [Spotify][1] is its lyrics plugin. At times I don’t understand all of the words of the song, specially if it’s rap. [TuneWiki][2] plugin comes handy in this case. While TuneWiki has plugins for Windows Media Player and iTune, what options do we have on desktop Linux?
+除了免费的流媒体音乐外,我最喜欢[Spotify][1]的地方就是它的歌词插件了。有时候我听不懂一首歌里面的所有歌词，尤其是rap。[TuneWiki][2]插件在这种情况下就派得上用场了。但TuneWiki仅有支持Windows和iTune的插件，那我们在linux桌面上有什么选择呢？
 
-If you have been using desktop Linux for sometime, you might have heard of [OSD Lyrics][3]. It is a small application that **displays song lyrics on the desktop**. You can use it with several audio players such as Rythmbox, [Banshee][4], [Clementine][5] etc.
+如果你使用过Linux桌面一段时间，你也许听过[OSD Lyrics][3]。它是一个显示桌面歌词的小程序。你可以借助一些音乐播放器来使用它，比如Rythmbox，[Banshee][4]，[Clementine][5]等等。
 
-### Install OSD Lyrics in Ubuntu 14.04 and Linux Mint 17 ###
+### 在Ubuntu 14.04和Linux mint 17上安装OSD Lyrics ###
 
-OSD Lyrics was actively maintained through its official PPA about 2 years back. There is no development anymore. While the PPA is no longer usable, the executables (.deb) can be downloaded from the website. Though these executables are originally for Ubuntu 12.04 Precise Pangolin, these files work very well in Ubuntu 14.04 also. Let’s see **how to install OSD Lyrics in Ubuntu 14.04 and Linux Mint 17**.
+两年以前OSD Lyrics在它的官方仓库中被积极地维护，但现在对它的开发已经停止了。尽管这个PPA已经不可用，但可以通过网络下载OSD Lyrics的安装包。虽然这些安装执行文件最初是为Ubuntu 12.02设计的，但这些文件也能在Ubuntu 14.04上很良好地工作。我们一起看看怎么在UUUUbuntu 14.04和 Linux mint 17上安装OSD Lyrics。
 
-Go to the [download page of OSD Lyrics][6]. Get the .deb files depending upon [whether you are using 32 bit or 64 bit Ubuntu][7]. You will find the files on the top.
+[前往下载页下载OSDLyrics][6]，根据你是使用[32位还是64位的ubuntu][7]来下载相应的.deb 文件。你会在网页的上方找到这些文件。
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/07/OSD_Lyrics_Download.jpeg)
 
-Once downloaded, just double click on it to install it via Ubuntu Software Center. Alternatively, you can [use Gdebi to quickly install .deb packages][8].
+下载完成后，通过双击它来使用Ubuntu软件中心来安装。另外，你也可以使用[Gdebi ][8]来快速地安装.deb安装包。
 
-### How to display lyrics in Ubuntu and Linux Mint using OSD Lyrics ###
+### 怎样在Ububtu和linux mnit 上使用OSD Lyrics使用歌词 ###
 
-Once installed, you can run OSD Lyrics from the Unity Dash:
+安装完成后，你可以从Unity Dash运行OSD Lyrics :
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/07/Open_OSD_Lyrics_Ubuntu.jpeg)
 
-On the first run, it will detect the existing players which are compatible with OSD Lyrics. You can set a default player which will be opened automatically each time you start OSD Lyrics.
+首次运行时，OSD Lyrics会检测你的系统中能被它支持的播放器。你可以设定一个默认播放器，以后当你运行OSD Lyrics时它就会自动启动 。
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/07/OSD_Lyrics_Default_Player.jpeg)
 
-One thing to note is that unlike [Shazam][9] etc, OSD Lyrics doesn’t find the lyrics from the audio, rather it uses the information linked to the music files such as name, album, artist etc. So make sure that you have music files from “respectable sources” or keep the file information correct and updated.
+有一件事值得注意，那就是OSD Lyrics不像[Shazam][9]等一样，它不是通过音频来寻找歌词，而是通过比如名称，专辑，艺术家等信息来关联音乐文件。所以你得确保你的音乐文件的来源正当，或者是你得保持你的音乐文件的信息是正确和已经更新了的。
 
-If it recognizes the music files, it will display the lyrics on the desktop in Karaoke format:
+如果OSD Lyrics辨认出了音乐文件，它就会用卡拉OK格式在桌面上显示歌词了:（译者注：OSD Lyrics可以自动在千千静听和虾米歌词站点在线下载歌词，这对我们中文用户来说是个福音）
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/07/Dsiplay_Lyrics_Ubuntu.jpeg)
 
-There are plenty of configuration options available with OSD Lyrics. You can change the font, size behavior of the lyrics display among many other things.
+OSD Lyrics有大量设置选项，你可以改变歌词字体的种类，大小等等其它许多设置。
 
-How do you like OSD Lyrics? Do you use some other Lyrics plugin? Do share your views with rest of us.
-
+你认为OSD Lyrics怎么样？你使用其它的一些歌词插件吗？闲余时间请和我们分享你的看法。
 --------------------------------------------------------------------------------
 
 via: http://itsfoss.com/display-song-lyrics-desktop-ubuntu-1404/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[Love-xuan](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
