@@ -1,8 +1,8 @@
-如何在Linux上检查MySQL的存储引擎类型
+[小白技巧]如何在Linux上检查MySQL数据表的存储引擎类型
 ================================================================================
 > **提问**: 我想要知道我的MySQL数据库是MyISAM还是Innodb类型。我该如何检查MySQL数据库表的类型？
 
-MySQl主要使用两种存储引擎：**MyISAM and Innodb**。MyISAM是非事务的，因此拥有读取更快，然而InnoDB完全支持细颗粒的事务锁定（比如：commit/rollback）。当你创建一张新的MySQL表时，你要选择它的类型（也就是存储引擎）。如果没有选择，你就会使用与预设置的默认引擎。
+MySQl主要使用两种存储引擎：**MyISAM 和 Innodb**。MyISAM是非事务的，因此拥有读取更快，然而InnoDB完全支持细颗粒度的事务锁定（比如：commit/rollback）。当你创建一张新的MySQL表时，你要选择它的类型（也就是存储引擎）。如果没有选择，你就会使用与预设置的默认引擎。
 
 如果你想要知道已经存在的MySQL数据表的类型，这里有几种方法达到。
 
@@ -34,7 +34,7 @@ MySQl主要使用两种存储引擎：**MyISAM and Innodb**。MyISAM是非事务
 
 via: http://ask.xmodulo.com/check-mysql-storage-engine-type-linux.html
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
