@@ -1,3 +1,5 @@
+hunanchenxingyu translating ....
+================================================================================
 How to Merge Directory Trees in Linux using cp Command
 ================================================================================
 How to merge two directory trees with similar layout into a third directory? Let us consider the following example to understand the problem.
