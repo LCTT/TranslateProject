@@ -1,12 +1,13 @@
-Ubuntu 14.04中修复默认启用HDMI后没有声音问题
+Ubuntu 14.04中修复默认启用HDMI后没有声音的问题
 ================================================================================
-声音问题在Ubuntu中是老生常谈了。先前我已经在[修复Ubuntu中的“无声”问题][1]一文中写到了多种方法，但是我在此正要谈及的声音问题跟在另外一篇文章中提到的不同。
 
-因此，我安装了Ubuntu 14.04，实际上是重新安装了一遍。一如既往，我将[全新安装Ubuntu 14.04后要做的事][2]全部又重新做了一遍。然后，我意识到系统突然失声了。当我正侦查问题所在之时，我发现了一件奇怪的事情。我检查了[alsamixer][3]，发现它的状况有点离奇：
+声音问题在Ubuntu中是老生常谈了。先前我已经在[修复Ubuntu中的“无声”问题][1]一文中写到了多种方法，但是我在此正要谈及的声音问题跟在另外一篇文章中提到的有所不同。
+
+因此，我安装了Ubuntu 14.04，实际上是重新安装了一遍。一如既往，我将[全新安装Ubuntu 14.04后要做的事][2]全部又重新做了一遍。然后，我意识到系统突然失声了。当我正侦查问题所在之时，我发现了一件奇怪的事情。我检查了[alsamixer][3]，发现它的状况有点离奇。
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/06/alsamixer_Set_HDMI_Default.jpeg)
 
-正如你能看到的，**alsamixer中默认设置了HDMI**。这意味着默认情况下将使用HDMI输出，而不是内建扬声器。这就是我从系统上内建扬声器无法获得声音的原因。
+正如你能看到的，**alsamixer中默认设置了HDMI**。这意味着默认情况下将使用HDMI输出，而不是内置扬声器。这就是我从系统上内置扬声器无法获得声音的原因。
 
 使用下面的命令来检查alsamixer的状态：
 
@@ -20,7 +21,7 @@ Ubuntu 14.04中修复默认启用HDMI后没有声音问题
 
     aplay -l
 
-这会列出设备，卡号之类的东西。注意，向下检查模拟输出使用的卡和设备编号。对于我而言，输出看上去像这样：
+这会列出设备，卡号之类的东西。注意，向下检查模拟输出使用的卡和设备编号。我的输出如下所示：
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/07/AlsaMixer_List_Device.jpeg)
 
@@ -28,14 +29,14 @@ Ubuntu 14.04中修复默认启用HDMI后没有声音问题
 
     sudo gedit /etc/asound.conf
 
-上面的命令也会打开文件，将下面的行添加进去，当然将卡和设备编号替换成你自己的：
+上面的命令也会打开文件，将下面两行添加进去，当然将卡和设备编号替换成你自己的：
 
     defaults.pcm.card 1
     defaults.pcm.device 0
 
-保存文件，并重启计算机。现在，你应该听到了声音了吧。需要提一下的是，这对所有的Linux发行版都有效，像Linux Mint，Elementary OS，Fedora，Arch Linux等等都行。正如我先前说的，该“失声疗法”仅针对HDMI被设置为默认设备的情况。对于其它情况，你可以阅读[关于在Ubuntu和Linux Mint中修复失声问题这篇文章][4]。
+保存文件，并重启计算机。现在，你应该听到声音了吧。需要提一下的是，这对所有的Linux发行版都有效，如Linux Mint，Elementary OS，Fedora，Arch Linux等等都可以。正如我之前所说，该“失声疗法”仅针对HDMI被设置为默认设备的情况。对于其它情况，你可以阅读[关于在Ubuntu和Linux Mint中修复失声问题这篇文章][4]。
 
-你可以尽情使用评论部分来告诉我这个方法是否有疗效，或者你有更好的方法来处理该问题，你也可以告诉我。再见了！
+您可以尽情发表评论来告诉我这个方法是否有疗效，或者您有更好的方法来处理该问题，也可以告诉我。再见了！
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-includes/images/smilies/icon_smile.gif)
 
@@ -44,14 +45,14 @@ Ubuntu 14.04中修复默认启用HDMI后没有声音问题
 ![](http://1.gravatar.com/avatar/20749c268f5d3e4d2c785499eb6a17c0?s=100&r=pg&d=mm)
 
 关于Abhishek
-
+ 
 我是Abhishek Prakash，It's F.O.S.S.的“创立者”，我有一个通信系统工程的硕士学位。我酷爱Linux和开源。我使用Ubuntu，信奉知识分享。除了Linux之外，我也喜爱经典的侦探推理小说，是Agatha Christie作品的超级粉丝。大家尽可以在[Google+][g]上将我圈进去，并追随[@abhishek_pc][t]
 
 --------------------------------------------------------------------------------
 
 via: http://itsfoss.com/fix-sound-ubuntu-1404/
 
-译者：[GOLinux](https://github.com/GOLinux) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[GOLinux](https://github.com/GOLinux) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
