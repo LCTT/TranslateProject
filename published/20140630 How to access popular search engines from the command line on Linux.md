@@ -1,8 +1,11 @@
 主流搜索引擎闯入Linux命令行世界
 ================================================================================
+（LCTT译注：这里，我们姑且认为您身处能够访问Internet的地方！）
+
 为什么会有人要从终端搜索互联网上的东西？我不清楚，这里头可能有许多的原因。但是，因为没人要求答案总比没人知道答案少令人失望一点。这里，列出了一些流行的搜索引擎的命令行工具，可以让你们通过Linux终端来访问它们。
 
 ### 1. Google ###
+
 让我们从一个巨头开始吧：Bing！好吧，只是开个玩笑，事实上应该是Google。坦白讲，你根本不需要使用命令行工具来进行Google搜索。只需要简简单单的一个命令：
 
     $ xdg-open https://www.google.com/search?q="[query]"
@@ -84,11 +87,12 @@ Twitter是迎合潮流的一个很好的搜索引擎。我们已经在[如何在
 #### Adrien Brochard ####
 
 我是一位来自法国的Linux爱好者。在尝试了多个发行版后，我最后认可了Archlinux。然而，我一直在试着通过积累一些知识和技巧来改善我的系统。
+
 --------------------------------------------------------------------------------
 
 via: http://xmodulo.com/2014/06/access-popular-search-engines-command-line-linux.html
 
-译者：[GOLinux](https://github.com/GOLinux) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[GOLinux](https://github.com/GOLinux) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
