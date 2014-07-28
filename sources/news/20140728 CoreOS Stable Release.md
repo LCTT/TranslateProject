@@ -1,7 +1,7 @@
 2q1w2007翻译中
-CoreOS Stable Release
+稳定版CoreOS发布
 ================================================================================
-First off, [Happy SysAdmin Day][1]. We think we have a pretty good SysAdmin surprise in store for you today as we are announcing the CoreOS stable release channel. Starting today, you can begin running CoreOS in production. This version is the most tested, secure and reliable version available for users wanting to run CoreOS. This is a huge milestone for us. Since our first alpha release in August 2013:
+首先, [SysAdmin节快乐][1]/*这是个什么奇葩节日*/。We think we have a pretty good SysAdmin surprise in store for you today as we are announcing the CoreOS stable release channel. Starting today, you can begin running CoreOS in production. This version is the most tested, secure and reliable version available for users wanting to run CoreOS. This is a huge milestone for us. Since our first alpha release in August 2013:
 
 - 191 releases have been tagged
 - Tested on hundreds of thousands of servers on the alpha and beta channels
