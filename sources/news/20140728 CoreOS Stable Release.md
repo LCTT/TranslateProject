@@ -1,3 +1,4 @@
+Translating by lfzark
 CoreOS Stable Release
 ================================================================================
 First off, [Happy SysAdmin Day][1]. We think we have a pretty good SysAdmin surprise in store for you today as we are announcing the CoreOS stable release channel. Starting today, you can begin running CoreOS in production. This version is the most tested, secure and reliable version available for users wanting to run CoreOS. This is a huge milestone for us. Since our first alpha release in August 2013:
