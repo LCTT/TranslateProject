@@ -8,7 +8,7 @@
 
 ### 在Ubuntu 14.04和Linux mint 17上安装OSD Lyrics ###
 
-两年以前 OSD Lyrics 在它的官方仓库中被积极地维护，但现在对它的开发已经停止了。尽管这个PPA已经不可用，但可以通过网络下载OSD Lyrics的安装包。虽然这些安装执行文件最初是为 Ubuntu 12.02 设计的，但这些文件也能在 Ubuntu 14.04 上良好地工作。我们一起看看怎么在 Ubuntu 14.04 和 Linux mint 17 上安装OSD Lyrics。
+两年以前 OSD Lyrics 它的官方仓库还在积极地维护，但现在对它的开发已经停止了。尽管这个PPA已经不可用，但可以通过网络下载OSD Lyrics的安装包。虽然这些安装执行文件最初是为 Ubuntu 12.02 设计的，但这些文件也能在 Ubuntu 14.04 上良好地工作。我们一起看看怎么在 Ubuntu 14.04 和 Linux mint 17 上安装OSD Lyrics。
 
 [前往下载页下载OSDLyrics][6]，根据你是使用[32位还是64位的ubuntu][7]来下载相应的.deb 文件。你会在网页的上方找到这些文件。
 
@@ -35,11 +35,12 @@
 OSD Lyrics有大量设置选项，你可以改变歌词字体，文字大小等等。
 
 你认为 OSD Lyrics 怎么样？你还使用其它歌词插件吗？欢迎您和我们分享。
+
 -------------------------------------------------------------------------------- 
 
 via: http://itsfoss.com/display-song-lyrics-desktop-ubuntu-1404/
 
-译者：[Love-xuan](https://github.com/译者ID) 校对：[Caroline](https://github.com/carolinewuyan)
+译者：[Love-xuan](https://github.com/Love-xuan) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
