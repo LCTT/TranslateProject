@@ -1,3 +1,4 @@
+translating by cvsher
 Command Line Tuesdays – Part Five
 ================================================================================
 Yes, you’ve guessed what time it is! It’s time to rrrrrrrrummmbleeeee! And this time, we’ll learn how to work with commands. So without further ado, let’s get to business.
