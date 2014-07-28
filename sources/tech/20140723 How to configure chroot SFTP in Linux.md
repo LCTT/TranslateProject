@@ -1,32 +1,31 @@
-Translating by GOLinux... 
-How to configure chroot SFTP in Linux
+在Linux中为SFTP配置chroot环境
 ================================================================================
-There are **some scenario** where system admin wants only few users should be  allowed to transfer files to Linux boxes not ssh. We can achieve this by setting up **SFTP** in chroot environment.
+在**某些环境**中，系统管理员想要允许极少数用户传输文件到Linux盒子中，而非ssh。要实现这一目的，我们可以使用**SFTP**，并为其构建chroot环境。
 
-### Background of SFTP & chroot : ###
+### SFTP & chroot背景： ###
 
-**SFTP** stands for **SSH File Transfer protocol or Secure File Transfer Protocol**. SFTP provides file access, file transfer, and file management functionalities over any reliable data stream. When we configure SFTP in chroot environment , then only allowed users will be limited to their **home directory** , or we can say allowed users will be in jail like environment where they can’t even change their directory.
+**SFTP**是值**SSH文件传输协议（SSH File Transfer protocol）或安全文件传输协议（Secure File Transfer Protocol）**，它提供了任何可信数据流下的文件访问、文件传输以及文件管理功能。当我们为SFTP配置chroot环境后，只有被许可的用户可以访问，并被限制到它们的**家目录**中，或者我们可以这么说：被许可的用户将处于牢笼环境中，在此环境中它们甚至不能切换它们的目录。
 
-In article we will configure **Chroot SFTP in RHEL 6.X** & **CentOS 6.X**. We have one user ‘**Jack**’ , this users will be allowed to transfer files on linux box but no ssh access.
+在本文中，我们将配置**RHEL 6.X** & **CentOS 6.X中的SFTP Chroot环境**。我们开启一个用户帐号‘**Jack**’，该用户将被允许在Linux盒子上传输文件，但没有ssh访问权限。
 
-### Step:1  Create a group ###
+### 步骤：1  创建组 ###
 
     [root@localhost ~]# groupadd  sftp_users
 
-### Step:2 Assign the secondary group(sftp_users) to the user. ###
+### 步骤：2 分配附属组(sftp_users)给用户 ###
 
-If the users doesn’t exist on system , use below command :
+如果用户在系统上不存在，使用以下命令创建：
 
     [root@localhost ~]# useradd  -G sftp_users  -s /sbin/nologin  jack
     [root@localhost ~]# passwd jack
 
-For **already existing users** , use below usermod command :
+对于**已经存在的用户**，使用以下usermod命令进行修改：
 
     [root@localhost ~]# usermod –G sftp_users  -s /sbin/nologin  jack
 
-**Note** : if you want to change the **default home directory** of users , then use ‘**-d**’ option in useradd and usermod  command and set the **correct permissions**.
+**注意**：如果你想要修改用户的**默认家目录**，那么在useradd和usermod命令中使用‘**-d**’选项，并设置**合适的权限**。
 
-### Step:3 Now edit the config file “/etc/ssh/sshd_config” ###
+### 步骤：3 现在编辑配置文件 “/etc/ssh/sshd_config” ###
 
     # vi /etc/ssh/sshd_config
     #comment out the below line and add a line like below
@@ -40,42 +39,42 @@ For **already existing users** , use below usermod command :
       ChrootDirectory %h                      
       ForceCommand internal-sftp
 
-#### Where : ####
+#### 此处： ####
 
-- **Match Group sftp_users** – This indicates that the following lines will be matched only for users who belong to group sftp_users
-- **ChrootDirectory %h** – This is the path(default user's home directory) that will be used for chroot after the user is authenticated. So, for Jack, this will be /home/jack.
-- **ForceCommand internal-sftp** – This forces the execution of the internal-sftp and ignores any command that are mentioned in the ~/.ssh/rc file.
+- **Match Group sftp_users** – 该参数指定以下的行将仅仅匹配sftp_users组中的用户
+- **ChrootDirectory %h** – 该参数指定用户验证后用于chroot环境的路径（默认的用户家目录）。对于Jack，该路径就是/home/jack。
+- **ForceCommand internal-sftp** – 该参数强制执行内部sftp，并忽略任何~/.ssh/rc文件中的命令。
 
-Restart the ssh service
+重启ssh服务
 
     # service sshd restart
 
-### Step:4 Set the Permissions : ###
+### 步骤：4 设置权限： ###
 
     [root@localhost ~]# chmod 755 /home/jack
     [root@localhost ~]# chown root /home/jack
     [root@localhost ~]# chgrp -R sftp_users /home/jack
 
-If You want that jack user should be allowed to upload files , then create a upload folder with the below permissions ,
+如果你想要允许jack用户上传文件，那么创建一个上传文件夹，设置权限如下：
 
     [root@localhost jack]# mkdir /home/jack/upload
     [root@localhost jack]# chown jack. /home/jack upload/
 
-### Step:5  Now try to access the system & do testing ###
+### 步骤：5  现在尝试访问系统并进行测试 ###
 
-Try to access the system via ssh 
+尝试通过ssh访问系统 
 
 ![](http://www.linuxtechi.com/wp-content/uploads/2014/07/ssh-try.png)
 
-As You can see below jack user is logged in  via SFTP and can't change the directory becuase of chroot environment.
+正如下图所示，用户jack通过SFTP登录，而且因为chroot环境不能切换目录。
 
 ![](http://www.linuxtechi.com/wp-content/uploads/2014/07/sftp-login.png)
 
-Now do the **uploading and downloading** testing as shown below:
+现在进行**上传和下载**测试，如下图：
 
 ![](http://www.linuxtechi.com/wp-content/uploads/2014/07/sftp-upload-download.png)
 
-As we can see above , both uploading & downloading working fine for jack user.
+正如上图所示，jack用户的上传下载功能都工作得很好。
 
 --------------------------------------------------------------------------------
 
@@ -83,7 +82,7 @@ via: http://www.linuxtechi.com/configure-chroot-sftp-in-linux/
 
 原文作者：[Pradeep Kumar][a]
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[GOLinux](https://github.com/GOLinux) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
