@@ -1,3 +1,5 @@
+alim0x translating
+
 The history of Android
 ================================================================================
 ![From left to right: Android 0.9’s home screen, add drawer, and shortcut deletion interfaces.](http://cdn.arstechnica.net/wp-content/uploads/2013/12/09hom2e.png)
