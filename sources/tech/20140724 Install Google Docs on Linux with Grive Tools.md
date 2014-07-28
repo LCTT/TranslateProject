@@ -1,3 +1,4 @@
+nd0104 is translate
 Install Google Docs on Linux with Grive Tools
 ================================================================================
 Google Drive is two years old now and Google’s cloud storage solution seems to be still going strong thanks to its integration with Google Docs and Gmail. There’s one thing still missing though: a lack of an official Linux client. Apparently Google has had one floating around their offices for a while now, however it’s not seen the light of day on any Linux system.
