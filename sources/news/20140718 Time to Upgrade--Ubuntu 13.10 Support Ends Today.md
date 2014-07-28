@@ -1,3 +1,4 @@
+nd0104 is translate
 Time to Upgrade: Ubuntu 13.10 Support Ends Today
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/04/upgrade-available.jpg)
