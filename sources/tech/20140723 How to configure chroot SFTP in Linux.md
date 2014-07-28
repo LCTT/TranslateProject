@@ -1,3 +1,4 @@
+Translating by GOLinux... 
 How to configure chroot SFTP in Linux
 ================================================================================
 There are **some scenario** where system admin wants only few users should be  allowed to transfer files to Linux boxes not ssh. We can achieve this by setting up **SFTP** in chroot environment.
