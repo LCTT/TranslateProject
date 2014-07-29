@@ -5,51 +5,51 @@
 
 > 我们支持保护隐私,不为我们有自己的秘密需要保护,只是我们认为保护隐私应该成为一项基本人权。所以我们坚信无论谁在什么时候行使这项权利,都应该不受拘束的获取必须的工具和服务。OpenVPN就是这样一种服务并且有多种工具(客户端) 来让我们利用并享受这种服务。
 
-By establishing a connection to an [OpenVPN][1] server, we basically create a secure communications channel between our device and the remote host OpenVPN runs on. Although traffic flowing between these two end-points can be intercepted, it is strongly encrypted and thus practically useless to the interceptor. In addition to the OpenVPN acting as the facilitator of this encrypted channel (or tunnel), we may configure the server to also play the role of our Internet gateway. By doing so, we can for example hook up to any open, inherently insecure WiFi network, then immediately connect to the remote OpenVPN server and start using any Internet-enabled application without worrying of prying eyes or bored administrators. (Note though that we still need to trust any administrator in the vicinity of the OpenVPN server. But more on that towards the end of the post.)
+通过与一个[OpenVPN][1]服务器建立连接,我们基本上在我们的设备和远端运行OpenVPN的主机之间建立了一个安全的通信通道。尽管在两个端点之间的通信可能被截获,但是信息是经过高强度加密的所以实际上它对于攻击者没什么用。OpenVPN除了扮演加密通信通道的调解人,我们也可以通过设置使服务器扮演因特网网管的角色。通过这种方式,我们可以连接任何不安全的Wifi,然后迅速的链接到远程的OpenVPN服务器并在不需要考虑偷窥的人或者无聊的管理员的情况下运行需要上网的程序。(注意:OpenVPN服务器旁还是需要信任的管理员的。)
 
-This article is a step-by-step guide on how to setup OpenVPN on [Ubuntu Server 14.04 LTS][2]. The OpenVPN host computer may be a VPS in the cloud, a virtual machine running on one of our computers at home, or even that somewhat aged box we tend to forget we have.
+这篇文章将一步一步的教会你如何在[Ubuntu Server 14.04 LTS][2]上安装OpenVPN。OpenVPN所在的主机可能是云上的一台VPS,一台在我们家里某台电脑上运行的虚拟机,或者是一个老到你都快忘了的设备。
 
-### Step 01 -- System Preparation ###
+### 第一步 -- 准备系统 ###
 
-We gain access to a command shell in the Ubuntu Server host, for example by remotely connecting to it via SSH, and immediately refresh the local repository database:
+我们需要Ubuntu Server主机的一个命令行终端,比如通过SSH从远程访问它。首先需要更新它的本地仓库数据:
 
     sub0@delta:~$ sudo apt-get update
 
-To perform any upgrades for all installed packages and the operating system itself, we type:
+进行操作系统和已安装的包的升级,输入:
 
     sub0@delta:~$ sudo apt-get dist-upgrade
 
-If a new kernel gets pulled in, a system reboot will be required. After refreshing and upgrading, it’s time to install OpenVPN:
+如果升级了新内核,那就需要重启。当更新完成后,就该安装OpenVPN了:
 
     sub0@delta:~$ sudo apt-get -y install openvpn easy-rsa dnsmasq
 
-Notice that we installed three packages with apt-get:
+注意,我们用apt-get安装了三个包:
 
-- openvpn provides the core of OpenVPN
-- easy-rsa contains some handy scripts for key management
-- dnsmasq is the name server we’ll be using later on, when our OpenVPN server box/VM will assume the role of a router for all OpenVPN clients`
+- openvpn提供了OpenVPN的核心
+- easy-rsa包含了一些有用的密钥管理脚本
+- dnsmasq是当我们的OpenVPN所在的主机将扮演客户端的路由器时会用到的域名服务器
 
-### Step 02 -- Master certificate and private key for the Certificate Authority ###
+### 第二步 -- 生成证书和私钥 ###
 
-The most important –and admittedly the most crucial– step during the setup of an OpenVPN server, is the establishment of a corresponding Public Key Infrastructure (PKI). This infrastructure comprises the following:
+这是安装OpenVPNZ中最重要和最关键的一步,目的是建立公钥基础设施(PKI)。包括如下内容:
 
-- A certificate (public key) and a private key for the OpenVPN server
-- A certificate and a private key for any OpenVPN client
-- A master certificate and a private key for the Certificate Authority (CA). This private key is used for signing the OpenVPN certificate as well as the client certificates.
+- 为OpenVPN服务器创建一个证书(公钥)和一个私钥
+- 为每个OpenVPN客户端创建证书和私钥
+- 建立一个认证机构(CA)并创建证书和私钥。这个私钥用来给OpenVPN服务器和客户端的证书签名
 
-Beginning with the latter, we create a convenient working directory
+从最后一个做起,我们先建立一个目录:
 
     sub0@delta:~$ sudo mkdir /etc/openvpn/easy-rsa
 
-and then copy easy-rsa’s files to it:
+然后把easy-rsa的文件拷过去:
 
     sub0@delta:~$ sudo cp -r /usr/share/easy-rsa/* /etc/openvpn/easy-rsa
 
-Before we actually create the keys for the CA, we open /etc/openvpn/easy-rsa/vars for editing (we like the nano text editor but this is just our preference):
+在我们创建CA的私钥之前,我们先编辑/etc/openvpn/easy-rsa/vars(我们喜欢用nano,不过这只是我们的喜好,你爱用什么用什么):
 
     sub0@delta:~$ sudo nano /etc/openvpn/easy-rsa/vars
 
-Towards the end of the file we assign values to a set of variables which are read during the creation of the master certificate and private key. Take a look at the variables we assigned values to:
+在文件的尾部,我们设置主证书和密钥的信息:
 
     export KEY_COUNTRY="GR"
     export KEY_PROVINCE="Central Macedonia"
@@ -61,9 +61,9 @@ Towards the end of the file we assign values to a set of variables which are rea
     export KEY_OU="Parabing"
     export KEY_ALTNAMES="VPNsRUS"
 
-It goes without saying that you may assign different values, more appropriate for your case. Also take particular note of the last line, in which we set a value to the KEY_ALTNAMES variable. This line is not part of the original vars file but we nevertheless append it at the end of said file, or the build-ca script we’re going to run next will fail.
+你可以根据自己的情况设置不同的值。特别注意最后KEY_ALTNAMES这一行,尽管这不是原本vars文件中有的但是我们还是把它加到文件的尾部,不然建立CA的脚本会运行失败。
 
-To save the changes in vars we hit [CTRL+O] followed by the [Enter] key. To quit nano we hit [CTRL+X]. Now, we gain access to the root account and move on to building of the master certificate and private key:
+保存更改,我们得按[CTRL+O]然后按[Enter]。想退出nano，请按[CTRL+X]。 Now, we gain access to the root account and move on to building of the master certificate and private key:
 
     sub0@delta:~$ sudo su
     root@delta:/home/sub0# cd /etc/openvpn/easy-rsa
