@@ -63,7 +63,7 @@
 
 你可以根据自己的情况设置不同的值。特别注意最后KEY_ALTNAMES这一行,尽管这不是原本vars文件中有的但是我们还是把它加到文件的尾部,不然建立CA的脚本会运行失败。
 
-保存更改,我们得按[CTRL+O]然后按[Enter]。想退出nano，请按[CTRL+X]。 Now, we gain access to the root account and move on to building of the master certificate and private key:
+保存更改,我们得按[CTRL+O]然后按[Enter]。想退出nano，请按[CTRL+X]。Now, we gain access to the root account and move on to building of the master certificate and private key:
 
     sub0@delta:~$ sudo su
     root@delta:/home/sub0# cd /etc/openvpn/easy-rsa
