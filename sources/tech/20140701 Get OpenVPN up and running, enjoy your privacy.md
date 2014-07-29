@@ -1,9 +1,9 @@
 2q1w2007翻译中
-Get OpenVPN up and running, enjoy your privacy
+搭建并运行OpenVPN,享受你的隐私生活
 ================================================================================
 ![](http://parabing.com/assets/uploads/2014/06/openVPN-featured.jpg)
 
-> We are fanatic supporters of privacy. Not so much because we have super secrets to hide, but because we consider privacy as a basic human right. So we believe that anytime anyone chooses to exercise that right on the net, then they should have unencumbered access to all the necessary tools and services. OpenVPN is such a service and there are also many tools (clients) which allow us to utilize and enjoy that service.
+> 我们支持保护隐私,不为我们有自己的秘密需要保护,只是我们认为保护隐私应该成为一项基本人权。所以我们坚信无论谁在什么时候行使这项权利,都应该不受拘束的获取必须的工具和服务。OpenVPN就是这样一种服务并且有多种工具(客户端) 来让我们利用并享受这种服务。
 
 By establishing a connection to an [OpenVPN][1] server, we basically create a secure communications channel between our device and the remote host OpenVPN runs on. Although traffic flowing between these two end-points can be intercepted, it is strongly encrypted and thus practically useless to the interceptor. In addition to the OpenVPN acting as the facilitator of this encrypted channel (or tunnel), we may configure the server to also play the role of our Internet gateway. By doing so, we can for example hook up to any open, inherently insecure WiFi network, then immediately connect to the remote OpenVPN server and start using any Internet-enabled application without worrying of prying eyes or bored administrators. (Note though that we still need to trust any administrator in the vicinity of the OpenVPN server. But more on that towards the end of the post.)
 
