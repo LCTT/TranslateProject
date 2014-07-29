@@ -1,3 +1,4 @@
+2q1w2007翻译中
 Get OpenVPN up and running, enjoy your privacy
 ================================================================================
 ![](http://parabing.com/assets/uploads/2014/06/openVPN-featured.jpg)
