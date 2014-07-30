@@ -1,3 +1,4 @@
+Translating by GoLinux ...
 Linux FAQs with Answers--How to check which fonts are used in a PDF document
 ================================================================================
 > **Question**: I would like to know what fonts are used or embedded in a PDF file. Is there a Linux tool which can check which fonts are used in a PDF document? 
