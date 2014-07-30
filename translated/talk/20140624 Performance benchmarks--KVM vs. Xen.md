@@ -79,7 +79,7 @@ Xen 的性能相对宿主机而言差异就比较大了。有3个测试性能下
 
 via: http://major.io/2014/06/22/performance-benchmarks-kvm-vs-xen/
 
-译者：[bazz2](https://github.com/bazz2) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[bazz2](https://github.com/bazz2) 校对：[ReiNoir](https://github.com/reinoir)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
