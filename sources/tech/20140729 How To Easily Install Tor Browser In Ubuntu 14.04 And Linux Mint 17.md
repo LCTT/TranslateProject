@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 How To Easily Install Tor Browser In Ubuntu 14.04 And Linux Mint 17
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/07/Tor_Browser_Ubuntu.jpeg)
