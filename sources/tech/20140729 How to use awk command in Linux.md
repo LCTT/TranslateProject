@@ -1,3 +1,5 @@
+Translating------geekpi
+
 How to use awk command in Linux
 ================================================================================
 Text processing is at the heart of Unix. From pipes to the /proc subsystem, the "everything is a file" philosophy pervades the operating system and all of the tools built for it. Because of this, getting comfortable with text-processing is one of the most important skills for an aspiring Linux system administrator, or even any power user, and awk is one of the most powerful text-processing tools available outside general-purpose programming languages.
