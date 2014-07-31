@@ -1,3 +1,5 @@
+[translated by blueabysm]
+
 Linux System Administration Skills are Changing 
 ================================================================================
 When was the last time you compiled a kernel? For many of the latest generation of Linux admins, the answer is really simple: never. I am one of those, provided we don't count a few times I tried it just for fun, then couldn't see why I would need a custom kernel and went back to my out-of-the-box kernel.  

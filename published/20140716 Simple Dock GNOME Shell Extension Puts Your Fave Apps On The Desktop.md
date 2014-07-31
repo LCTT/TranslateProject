@@ -1,14 +1,14 @@
 “Simple Dock” GNOME Shell扩展乾坤大挪移，钟爱应用桌面展现
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/07/screenshot_815_1.jpg)
+ 
+**我爱GNOME Shell，但是我痛恨的是费力从隐藏屏幕中找到我所钟爱的应用或者在我正运行的应用间切换。**
 
-**我爱GNOME Shell，但是我痛恨的是话费力气从隐藏屏幕中找到我所钟爱的应用或者在我正运行的应用间切换。**
+这么说，听起来就像我是个老古董，像是一个UX勒德分子，也像是某个过分沉溺于Unity可用性瘾君子，但我，像阅读本文的许多人一样，喜欢将app启动器/切换器放到桌面上。这是一个用户所熟悉并且快捷的工作方式。
 
-这么说，好像听起来我是个老古董，像是一个UX勒德分子，也像是某个过分沉溺于Unity可用性瘾君子，但我，像阅读本文的许多人一样，喜欢将app启动器/切换器放到桌面上。这是一个熟悉、快速的工作方式。
+而GNOME Shell，从设计上看，却完全是个不同的世界。它将所有这一切隐藏起来 —— 从消息中心和通知，到工作区和应用列表。它弱化了审美效果，包含了这样的道理：帮助用户专注于最重要的部分。
 
-而GNOME Shell，从设计上看，却完全是个不同的世界。它将所有这一切隐藏起来 —— 从消息中心和通知，到工作区和应用列表。它是最小美学，包含这样的道理：帮助用户专注于最重要的部分。
-
-但是对我而言，我的桌面需要比一个美化的相框更多的东西。
+但是对我而言，我的桌面需要的不仅仅是一个美化的相框。
 
 ### GNOME Shell之美 ###
 
@@ -23,7 +23,7 @@
 - 拖放收藏
 - 覆盖活动启动按钮 
 
-想要吗？如果你正在Ubuntu 13.10或更高版本上使用GNOME Shell，那么你可以使用它。只需在支持的浏览器（Firefox, GNOME Web之类）中访问下面的链接就可以导航到GNOME扩展页面，然后将页面上开个从“off”拖动到“on”上。
+你也想要吗？如果你正在Ubuntu 13.10或更高版本上使用GNOME Shell，那么你可以使用它。只需在支持的浏览器（Firefox, GNOME Web之类）中访问下面的链接就可以导航到GNOME扩展页面，然后将页面上开个从“off”拖动到“on”上。
 
 - [GNOME Shell扩展中的Simple Dock][1]
 
@@ -33,7 +33,7 @@
 
 via: http://www.omgubuntu.co.uk/2014/07/simple-dock-gnome-shell-extension
 
-译者：[GOLinux](https://github.com/GOLinux) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[GOLinux](https://github.com/GOLinux) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
