@@ -1,3 +1,5 @@
+alim0x translating
+
 The history of Android
 ================================================================================
 ![Android 0.9 showing off a horizontal home screen—a feature that wouldn’t make it to later versions.](http://cdn.arstechnica.net/wp-content/uploads/2013/12/horizontal.png)

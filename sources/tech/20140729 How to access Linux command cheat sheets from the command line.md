@@ -1,3 +1,4 @@
+Translating by GOLinux...
 How to access Linux command cheat sheets from the command line
 ================================================================================
 The power of Linux command line is its flexibility and versatility. Each Linux command comes with its share of command line options and parameters. Mix and match them, and even chain different commands with pipes and redirects. You get yourself literally hundreds of use cases even with a few basic commands, and it's hard even for seasoned system admins to get used to them all. That's when command line cheat sheets come to our rescue.
