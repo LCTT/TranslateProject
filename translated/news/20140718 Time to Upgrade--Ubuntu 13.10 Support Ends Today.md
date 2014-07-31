@@ -22,7 +22,7 @@ Youtobe 视频地址：[http://www.youtube.com/embed/1EiRQ-znEcI?feature=oembed]
 
 via: http://www.omgubuntu.co.uk/2014/07/ubuntu-13-10-support-ends-today
 
-译者：[nd0104](https://github.com/nd0104) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[nd0104](https://github.com/nd0104) 校对：[ReiNoir](https://github.com/reinoir)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
