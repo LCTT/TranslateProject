@@ -35,7 +35,7 @@
 
 - 为OpenVPN服务器创建一个证书(公钥)和一个私钥
 - 为每个OpenVPN客户端创建证书和私钥
-- 建立一个认证机构(CA)并创建证书和私钥。这个私钥用来给OpenVPN服务器和客户端的证书签名
+- 建立一个证书颁发机构(CA)并创建证书和私钥。这个私钥用来给OpenVPN服务器和客户端的证书签名
 
 从最后一个做起,我们先建立一个目录:
 
@@ -61,7 +61,7 @@
     export KEY_OU="Parabing"
     export KEY_ALTNAMES="VPNsRUS"
 
-你可以根据自己的情况设置不同的值。特别注意最后KEY_ALTNAMES这一行,尽管这不是原本vars文件中有的但是我们还是把它加到文件的尾部,不然建立CA的脚本会运行失败。
+你可以根据自己的情况设置不同的值。特别注意最后KEY_ALTNAMES这一行,尽管这不是原本vars文件中有的但是我们还是把它加到文件的尾部,不然build-ca脚本会运行失败。
 
 保存更改,我们得按[CTRL+O]然后按[Enter]。想退出nano，请按[CTRL+X]。现在,我们要获得root访问权限,继续生成主证书和私钥:
 
@@ -147,9 +147,9 @@
 
 当脚本成功运行完的时候,我们就得到了服务器的证书(keys/delta.crt)和私钥(keys/delta.key)。注意服务器证书被CA的私钥签名了。
 
-### 第四步 -- 创建Diffie-Hellman参数 ###
+### 第四步 -- 生成Diffie-Hellman参数 ###
 
-幸亏有了Diffie-Hellman参数,我们才能在不安全的通信通道里安全的交换密钥。为了创建它我们需要键入:
+幸亏有了Diffie-Hellman参数,我们才能在不安全的通信通道里安全的交换密钥。为了生成它我们需要键入:
 
     root@delta:/etc/openvpn/easy-rsa# sh build-dh
     Generating DH parameters, 2048 bit long safe prime, generator 2
@@ -162,24 +162,24 @@
     .......................................++*++*++*
     root@delta:/etc/openvpn/easy-rsa#
 
-The certificates, private keys and the file containing the Diffie-Hellman parameters we just generated, are all stored into the /etc/openvpn/easy-rsa/keys directory. So up until now we have five files in total and in our case they are as follows:
+证书,私钥和包含Diffie-Hellman参数的文件已生成,它们都储存在/etc/openvpn/easy-rsa/keys,所以我们到现在为止已经有如下五个文件了:
 
-1. **ca.crt** – the certificate of the Certificate Authority
-2. **ca.key** – the private key of the CA
-3. **delta.crt** – the certificate of the OpenVPN server
-4. **delta.key** – the private key of the OpenVPN server
-5. **dh2048.pem** – the Diffie-Hellman parameters file
+1. **ca.crt** – 证书颁发机构(CA)的证书
+2. **ca.key** – CA的私钥
+3. **delta.crt** – OpenVPN服务器的证书
+4. **delta.key** – OpenVPN服务器的私钥
+5. **dh2048.pem** – Diffie-Hellman参数文件
 
-In all likelihood, the keys for your own OpenVPN server are named differently. We now need to copy all files but the ca.key over to the /etc/openvpn directory:
+你自己的OpenVPN服务器命名可能和我们的不同。现在我们需要拷贝除了ca.key的文件到/etc/openvpn:
 
     root@delta:/etc/openvpn/easy-rsa# cd keys
     root@delta:/etc/openvpn/easy-rsa/keys# cp ca.crt delta.crt delta.key dh2048.pem /etc/openvpn
     root@delta:/etc/openvpn/easy-rsa/keys# cd ..
     root@delta:/etc/openvpn/easy-rsa#
 
-### Step 05 -- Certificates and private keys for the OpenVPN clients ###
+### 第五步 -- 为OpenVPN客户端生成证书和私钥 ###
 
-Let’s assume we’d like to connect to the OpenVPN server from our laptop. That’s actually a very common scenario and in order to be able to do so we first need to generate a certificate as well as a private key for the client, i.e. our laptop. There’s a script for that and it lives in the /etc/openvpn/easy-rsa directory:
+试想我们的笔记本要连接OpenVPN服务器。为了实现这个很常见的情况,我们首先需要为客户端(比如:我们的笔记本)生成证书和私钥,在/etc/openvpn/easy-rsa有一个脚本帮我们完成这项工作:
 
     root@delta:/etc/openvpn/easy-rsa# source vars
     NOTE: If you run ./clean-all, I will be doing a rm -rf on /etc/openvpn/easy-rsa/keys
@@ -229,7 +229,7 @@ Let’s assume we’d like to connect to the OpenVPN server from our laptop. Tha
     Data Base Updated
     root@delta:/etc/openvpn/easy-rsa#
 
-The base name we chose for the keys was “laptop”, so after the build-key finished we got keys/laptop.crt (certificate) and keys/laptop.key (private key). Those two keys for the particular client along with the CA’s certificate file go together, and it’s a good idea to copy them to a directory where our user (sub0) has full access to. We can, for example, create a new directory in the user’s home directory and copy those three files there:
+我们为密钥选取的名字是"laptop",当build-key脚本运行完之后,我们就得到了在keys/laptop.crt的证书和在keys/laptop.key的私钥。有了这两个文件和CA的证书,我们得把这三个文件拷贝到用户有(比如用户sub0)权访问的地方。比如我们可以在用户的home文件夹中新建一个目录并把三个文件拷贝过去:
 
     root@delta:/etc/openvpn/easy-rsa# mkdir /home/sub0/ovpn-client
     root@delta:/etc/openvpn/easy-rsa# cd keys
@@ -238,11 +238,11 @@ The base name we chose for the keys was “laptop”, so after the build-key fin
     root@delta:/etc/openvpn/easy-rsa/keys# cd ..
     root@delta:/etc/openvpn/easy-rsa#
 
-The directory ovpn-client must be securely copied to our laptop. We are allowed to distribute those three files to more than one clients, as long as they are all ours. Of course, should we need a different certificate-private key couple, we run the build-key script again.
+ovpn-client文件夹必须安全的拷贝到我们的笔记本电脑上。我们可以给多个客户端分发这三个文件。当然了,等我们需要一个不一样的证书-私钥对的时候只要再次运行build-key脚本即可。
 
-### Step 06 -- OpenVPN server configuration ###
+### 第六步 -- OpenVPN服务器设置 ###
 
-In a little while our OpenVPN server will be up and running. But first, there are some configuration changes that need to be made. There’s a sample configuration file in /usr/share/doc/openvpn/examples/sample-config-files which is excellent for our setup. That file is named server.conf.gz:
+等会我们的OpenVPN服务器就要启动并运行了。但是开始的时候,我们需要更改一些设置。在/usr/share/doc/openvpn/examples/sample-config-files中有一个简易的配置文件,它很适合我们的教程,这个文件叫server.conf.gz:
 
     root@delta:/etc/openvpn/easy-rsa# cd /etc/openvpn
     root@delta:/etc/openvpn# cp /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz .
@@ -250,36 +250,36 @@ In a little while our OpenVPN server will be up and running. But first, there ar
     root@delta:/etc/openvpn# mv server.conf delta.conf
     root@delta:/etc/openvpn#
 
-As you can see, we copied server.conf.gz into the /etc/openvpn directory, uncompressed it and renamed it to delta.conf. You may choose any name you like for your OpenVPN server’s configuration file, as long as it has the “.conf” extension. Whatever the base name, we now open the configuration file with nano:
+如你所见,我们把server.conf.gz拷贝到/etc/openvpn,解压并重命名到delta.conf。你可以按个人喜好给OpenVPN服务器配置文件取名字,但是它必须有".conf"扩展名。我们现在用nano打开配置文件:
 
     root@delta:/etc/openvpn# nano delta.conf
 
-Here are the changes and additions we should make.
+下面是我们应该做出的更改。
 
-- First, we locate the lines
+- 首先,定位到这一行
 
     cert server.crt
     key server.key
 
-and make sure they reflect the names of our OpenVPN server’s certificate and private key. In our case, those lines were changed into
+确认OpenVPN服务器证书和私钥的位置和名称,在我们的例子中,这两行要改成
 
     cert delta.crt
     key delta.key
 
-- We locate the line
+- 然后定位到这一行
 
     dh dh1024.pem
 
-and replace “1024″ with “2048″:
+用"2048"代替"1024":
 
     dh dh2048.pem
 
-- At the end of the configuration file we add the following two lines:
+- 在配置文件的末尾,我们添加下面这两行:
 
     push "redirect-gateway def1"
     push "dhcp-option DNS 10.8.0.1"
 
-Those last two lines instruct the clients to use OpenVPN as the default gateway to the Internet, and also use 10.8.0.1 as the server to deal with DNS requests. Notice that 10.8.0.1 is the IP address of the tunnel network interface OpenVPN automatically creates upon startup. If the clients were to use any other server for name resolution, then we would have a situation in which all DNS requests were served from a possibly untrustworthy server. To avoid such DNS leaks, we instruct all OpenVPN clients to use 10.8.0.1 as the DNS server.
+最后这两行指示客户端用OpenVPN作为默认的网关,并用10.8.0.1作为DNS服务器。注意10.8.0.1是OpenVPN启动时自动创建的隧道接口的IP。If the clients were to use any other server for name resolution, then we would have a situation in which all DNS requests were served from a possibly untrustworthy server. To avoid such DNS leaks, we instruct all OpenVPN clients to use 10.8.0.1 as the DNS server.
 
 We start our OpenVPN server like this:
 
@@ -489,7 +489,7 @@ via: http://parabing.com/2014/06/openvpn-on-ubuntu/
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-[1]:http://en.wikipedia.org/wiki/Openvpn
+[1]:http://zh.wikipedia.org/wiki/Openvpn
 [2]:http://www.ubuntu.com/server
 [3]:http://swupdate.openvpn.net/downloads/openvpn-client.msi
 [4]:https://code.google.com/p/tunnelblick
