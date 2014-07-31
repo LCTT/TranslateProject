@@ -31,7 +31,7 @@
 
 ### 第二步 -- 生成证书和私钥 ###
 
-这是安装OpenVPNZ中最重要和最关键的一步,目的是建立公钥基础设施(PKI)。包括如下内容:
+这是安装OpenVPN中最重要和最关键的一步,目的是建立公钥基础设施(PKI)。包括如下内容:
 
 - 为OpenVPN服务器创建一个证书(公钥)和一个私钥
 - 为每个OpenVPN客户端创建证书和私钥
@@ -63,7 +63,7 @@
 
 你可以根据自己的情况设置不同的值。特别注意最后KEY_ALTNAMES这一行,尽管这不是原本vars文件中有的但是我们还是把它加到文件的尾部,不然建立CA的脚本会运行失败。
 
-保存更改,我们得按[CTRL+O]然后按[Enter]。想退出nano，请按[CTRL+X]。Now, we gain access to the root account and move on to building of the master certificate and private key:
+保存更改,我们得按[CTRL+O]然后按[Enter]。想退出nano，请按[CTRL+X]。现在,我们要获得root访问权限,继续生成主证书和私钥:
 
     sub0@delta:~$ sudo su
     root@delta:/home/sub0# cd /etc/openvpn/easy-rsa
@@ -93,11 +93,11 @@
     Email Address [nobody@parabing.com]:
     root@delta:/etc/openvpn/easy-rsa#
 
-In our example the default answers were used for all the questions. After the build-ca script finishes we have the file for the master certificate (keys/ca.crt) and also the file for the private key (keys/ca.key). The latter must be kept secret at all costs.
+在我们的实例中,所有问题的答案都选择了默认的。在运行了build-ca脚本后,我们就获得了主证书文件(keys/ca.crt)和对应的私钥(keys/ca.key)。私钥必须不计代价的保密。
 
-### Step 03 -- Certificate and private key for the OpenVPN server ###
+### 第三步 -- 生成OpenVPN服务器的证书和私钥 ###
 
-Before we make a certificate and private key for our OpenVPN server, we need to pick a name for it. We decided to name ours “delta” and then ran the build-key-server script to get the keys:
+在我们为OpenVPN服务器生成证书和密钥之前,我们得给他起个名。我决定把它叫"delta",然后运行build-key-server脚本来获取证书和密钥:
 
     root@delta:/etc/openvpn/easy-rsa# sh build-key-server delta
     Generating a 1024 bit RSA private key
@@ -145,11 +145,11 @@ Before we make a certificate and private key for our OpenVPN server, we need to 
     Data Base Updated
     root@delta:/etc/openvpn/easy-rsa#
 
-The script successfully finished and we got a certificate (keys/delta.crt) as well as a private key (keys/delta.key) for our server. Note that the server certificate is signed by the CA’s private key.
+当脚本成功运行完的时候,我们就得到了服务器的证书(keys/delta.crt)和私钥(keys/delta.key)。注意服务器证书被CA的私钥签名了。
 
-### Step 04 -- Diffie-Hellman parameters ###
+### 第四步 -- 创建Diffie-Hellman参数 ###
 
-The secure passing of keys over an insecure communications channel is made possible thanks to a well-known technique involving the so called Diffie-Hellman parameters. To generate those we just type
+幸亏有了Diffie-Hellman参数,我们才能在不安全的通信通道里安全的交换密钥。为了创建它我们需要键入:
 
     root@delta:/etc/openvpn/easy-rsa# sh build-dh
     Generating DH parameters, 2048 bit long safe prime, generator 2
