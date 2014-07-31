@@ -1,3 +1,5 @@
+Translating By lfzark
+
 Linux System Administration Skills are Changing 
 ================================================================================
 When was the last time you compiled a kernel? For many of the latest generation of Linux admins, the answer is really simple: never. I am one of those, provided we don't count a few times I tried it just for fun, then couldn't see why I would need a custom kernel and went back to my out-of-the-box kernel.  
@@ -39,7 +41,7 @@ via: http://www.linux.com/news/enterprise/systems-management/780956-linux-system
 
 原文作者：[Walter Heck][a]
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[lfzark](https://github.com/lfzark) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
