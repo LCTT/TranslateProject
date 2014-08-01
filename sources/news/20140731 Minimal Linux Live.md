@@ -1,3 +1,5 @@
+Tranlating By lfzark 
+
 Minimal Linux Live
 ================================================================================
 Minimal Linux Live is a set of Linux shell scripts which automatically build minimal Live Linux OS based on Linux [kernel][1] and [BusyBox][2]. All necessary source codes are automatically downloaded and all build operations are fully encapsulated in the scripts. 
