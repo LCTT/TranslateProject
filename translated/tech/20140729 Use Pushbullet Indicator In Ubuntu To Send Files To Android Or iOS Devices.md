@@ -62,3 +62,17 @@ Pushbullet的使用, 一个ubuntu系统下向Android/iOS设备推送文件的Ind
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-includes/images/smilies/icon_smile.gif)
 
+--------------------------------------------------------------------------------
+
+via: http://itsfoss.com/pushbullet-indicator-ubuntu/
+
+作者：[Abhishek][a]
+译者：[lfzark](https://github.com/lfzark)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
+
+[a]:http://itsfoss.com/author/Abhishek/
+[1]:https://www.pushbullet.com/
+[2]:http://www.atareao.es/
+[3]:https://www.pushbullet.com/
