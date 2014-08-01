@@ -1,3 +1,5 @@
+[su-kaiyao] 翻译中
+
 LibreOffice 4.3 Goes Live, Includes Fix for 11 Year Old Bug
 ================================================================================
 > If you long to write 'monster paragraphs' in the open-source office suite, this is the release for you

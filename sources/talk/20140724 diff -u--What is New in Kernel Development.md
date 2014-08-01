@@ -1,3 +1,4 @@
+[translating by KayGuoWhu]
 diff -u: What's New in Kernel Development
 ================================================================================
 Once in a while someone points out a POSIX violation in Linux. Often the answer is to fix the violation, but sometimes Linus Torvalds decides that the POSIX behavior is broken, in which case they keep the Linux behavior, but they might build an additional POSIX compatibility layer, even if that layer is slower and less efficient.
