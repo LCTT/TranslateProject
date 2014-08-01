@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Command Line “Somedays” – Part Six
 ================================================================================
 Hey guys. Yes, it’s Wednesday, and yes, we’re a day late. Reason? [This awesome announcement][1], that had to take the whole glory of Tuesday. Also, in the future, if there’s an important announcement/release announcement from the project, the CLT series will be postponed.
