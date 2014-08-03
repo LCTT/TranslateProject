@@ -63,7 +63,7 @@
 
 你可以根据自己的情况设置不同的值。特别注意最后KEY_ALTNAMES这一行,尽管这不是原本vars文件中有的但是我们还是把它加到文件的尾部,不然build-ca脚本会运行失败。
 
-保存更改,我们得按[CTRL+O]然后按[Enter]。想退出nano，请按[CTRL+X]。现在,我们要获得root访问权限,继续生成主证书和私钥:
+保存更改,我们得按[CTRL+O]然后按[Enter]。想退出nano，请按[CTRL+X]。现在,我们要获得root访问权限,继续生成主证书和私钥(LCTT译注:请注意命令行账户发生了改变):
 
     sub0@delta:~$ sudo su
     root@delta:/home/sub0# cd /etc/openvpn/easy-rsa
@@ -229,7 +229,7 @@
     Data Base Updated
     root@delta:/etc/openvpn/easy-rsa#
 
-我们为密钥选取的名字是"laptop",当build-key脚本运行完之后,我们就得到了在keys/laptop.crt的证书和在keys/laptop.key的私钥。有了这两个文件和CA的证书,我们得把这三个文件拷贝到用户有(比如用户sub0)权访问的地方。比如我们可以在用户的home文件夹中新建一个目录并把三个文件拷贝过去:
+我们为密钥选取的名字是"laptop",当build-key脚本运行完之后,我们就得到了在keys/laptop.crt的证书和在keys/laptop.key的私钥。有了这两个文件和CA的证书,我们得把这三个文件拷贝到用户有(比如用户sub0)权访问的地方。比如我们可以在用户的home目录中新建一个目录并把三个文件拷贝过去:
 
     root@delta:/etc/openvpn/easy-rsa# mkdir /home/sub0/ovpn-client
     root@delta:/etc/openvpn/easy-rsa# cd keys
@@ -242,7 +242,7 @@ ovpn-client文件夹必须安全的拷贝到我们的笔记本电脑上。我们
 
 ### 第六步 -- OpenVPN服务器设置 ###
 
-等会我们的OpenVPN服务器就要启动并运行了。但是开始的时候,我们需要更改一些设置。在/usr/share/doc/openvpn/examples/sample-config-files中有一个简易的配置文件,它很适合我们的教程,这个文件叫server.conf.gz:
+等会我们的OpenVPN服务器就要启动并运行了。但是开始的时候,我们需要更改一些设置。在/usr/share/doc/openvpn/examples/sample-config-files中有一个示例配置文件,它很适合我们的教程,这个文件叫server.conf.gz:
 
     root@delta:/etc/openvpn/easy-rsa# cd /etc/openvpn
     root@delta:/etc/openvpn# cp /usr/share/doc/openvpn/examples/sample-config-files/server.conf.gz .
@@ -279,13 +279,13 @@ ovpn-client文件夹必须安全的拷贝到我们的笔记本电脑上。我们
     push "redirect-gateway def1"
     push "dhcp-option DNS 10.8.0.1"
 
-最后这两行指示客户端用OpenVPN作为默认的网关,并用10.8.0.1作为DNS服务器。注意10.8.0.1是OpenVPN启动时自动创建的隧道接口的IP。If the clients were to use any other server for name resolution, then we would have a situation in which all DNS requests were served from a possibly untrustworthy server. To avoid such DNS leaks, we instruct all OpenVPN clients to use 10.8.0.1 as the DNS server.
+最后这两行指示客户端用OpenVPN作为默认的网关,并用10.8.0.1作为DNS服务器。注意10.8.0.1是OpenVPN启动时自动创建的隧道接口的IP。如果客户用别的域名解析服务,那么我们就得提防不安全的DNS服务器。为了避免这种弱点,我们建议所有OpenVPN客户端使用10.8.0.1作为DNS服务器。
 
-We start our OpenVPN server like this:
+我们以这种方式来开始运行OpenVPN服务器:
 
     root@delta:/etc/openvpn# service openvpn start
 
-By default, OpenVPN listens for connections on port 1194/UDP. One way to see that is with the netstat tool:
+默认的,OpenVPN服务器监听1194/UDP端口。一种查看的方法是使用netstat工具:
 
     root@delta:/etc/openvpn# netstat -anup
     Active Internet connections (servers and established)
@@ -297,37 +297,37 @@ By default, OpenVPN listens for connections on port 1194/UDP. One way to see tha
     udp6       0      0 :::60622                :::*                                555/dhclient
     udp6       0      0 :::53                   :::*                                2756/dnsmasq
 
-All is well, though we have no properly configured DNS server for the clients yet.
+看起来一切运行的不错,但是我们还没设置DNS服务器呢。
 
-### Step 07 -- A DNS service for OpenVPN clients ###
+### 第七步 -- 为OpenVPN客户端搭建DNS ###
 
-That’s why we’ve installed dnsmasq for. We open up its configuration file
+这就是为什么我们要安装dnsmasq,打开它的配置文件。
 
     root@delta:/etc/openvpn# nano /etc/dnsmasq.conf
 
-locate this line
+定位到这行:
 
     #listen-address=
 
-and change it into the following one:
+把它换成下面这样:
 
     listen-address=127.0.0.1, 10.8.0.1
 
-We also locate this line
+然后定位到这行:
 
     #bind-interfaces
 
-and delete the hash character on the left:
+把"#"删了:
 
-bind-interfaces
+    bind-interfaces
 
-To make dnsmasq take these changes into account, we just restart the service:
+为了让dnsmasq应用这些更改,我们重启它:
 
     root@delta:/etc/openvpn# service dnsmasq restart
      * Restarting DNS forwarder and DHCP server dnsmasq [ OK ]
     root@delta:/etc/openvpn#
 
-As it is now, dnsmasq listens for DNS requests from the loopback (lo) and also from the tunnel (tun0) interface. The output of netstat confirms that:
+现在,dnamasq在本地回环(lo)和隧道(tun0)接口监听DNS请求。netstat的输出看起来是这个样子的:
 
     root@delta:/etc/openvpn# netstat -anup
     Active Internet connections (servers and established)
@@ -339,25 +339,25 @@ As it is now, dnsmasq listens for DNS requests from the loopback (lo) and also f
     udp        0      0 0.0.0.0:68              0.0.0.0:*                           638/dhclient
     udp6       0      0 :::39148                :::*                                638/dhclient
 
-### Step 08 -- Router functionality ###
+### 第八步 -- 路由功能 ###
 
-We want the VM/box our OpenVPN server runs on to behave like a router, and that means that IP forwarding must be enabled. To enable it right now, from the root account we just type
+我们希望在一些"盒子"或虚拟机上运行的OpneVPN有路由的功能,这意味着要开启IP转发.为了打开它,我们用root账户键入:
 
     root@delta:/etc/openvpn# echo "1" > /proc/sys/net/ipv4/ip_forward
 
-To make this setting persistent across reboots we open up /etc/sysctl.conf
+为了让这个设置重启也好用,我们编辑 /etc/sysctl.conf:
 
     root@delta:/etc/openvpn# nano /etc/sysctl.conf
 
-locate the line
+编辑这行:
 
     #net.ipv4.ip_forward=1
 
-and remove the hash character on the left:
+把"#"删了:
 
     net.ipv4.ip_forward=1
 
-There are also some iptables-related rules we should activate:
+还需要激活一些iptables相关的规则:
 
     root@delta:/etc/openvpn# iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
     root@delta:/etc/openvpn# iptables -A FORWARD -s 10.8.0.0/24 -j ACCEPT
@@ -365,7 +365,7 @@ There are also some iptables-related rules we should activate:
     root@delta:/etc/openvpn# iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
     root@delta:/etc/openvpn#
 
-And of course we want these rules activated every time Ubuntu boots up, so we add them inside /etc/rc.local:
+当然了,我们希望每次Ubuntu启动的时候,这些规则都好用。所以我们得把它们加到/etc/rc.local里:
 
     #!/bin/sh -e
     #
@@ -389,15 +389,15 @@ And of course we want these rules activated every time Ubuntu boots up, so we ad
      
     exit 0
 
-Please notice the line before the last one:
+请注意倒数第二行:
 
 service dnsmasq restart
 
-> This is crucial: During system startup dnsmasq tries to come up before OpenVPN does. But without OpenVPN there is no tunnel interface (tun0) present so naturally dnsmasq fails. A bit later, when /etc/rc.local is read the tun0 interface is present, so at this point we restart dnsmasq and everything is as it's supposed to be.
+> 这非常重要:在系统启动时,dnsmasq会尝试在OpenVPN之前启动。但是OpenVPN启动之前是没有隧道(tun0)接口的,所以dnsmasq自然就挂了。过了一阵,当/etc/rc.local读到隧道(tun0)接口出现时,它会在这时重启dnsmasq然后就一切如你所愿了。
 
-### Step 09 -- Client configuration ###
+### 第九步 -- 客户端设置 ###
 
-In Step 05 we created the directory ovpn-client inside our user’s home directory (/home/sub0, in our example). In there we have the CA certificate plus the client certificate and private key. There’s only one file missing and that’s the configuration file for the client. A sample file we can use is inside /usr/share/doc/openvpn/examples/sample-config-files:
+在第五步,我们在用户的home目录里我们建立了ovpn-client文件夹(在我们的例子里是/home/sub0)。在哪里有CA的证书和客户端证书和私钥。现在只缺客户端配置文件了,在/usr/share/doc/openvpn/examples/sample-config-files有一个示例配置文件:
 
     root@delta:/etc/openvpn# exit
     exit
@@ -405,15 +405,15 @@ In Step 05 we created the directory ovpn-client inside our user’s home directo
     sub0@delta:~/ovpn-client$ cp /usr/share/doc/openvpn/examples/sample-config-files/client.conf .
     sub0@delta:~/ovpn-client$
 
-We open up client.conf for editing and immediately locate the following line:
+我们编需要辑client.conf,定位到这一行:
 
     remote my-server-1 1194
 
-This “my-server-1″ string is a placeholder and we are now going to replace it for our server’s public domain name or public IP. If we do have a public domain name already assigned to the server, then there’s nothing more to do than put it in place of my-server-1. Things get a tiny bit more involved if there’s no public domain name for our server. What’s the public IP for it? One way to find out is by typing the following:
+"my-server-1"是一个占位符,现在我们要把它换成我们自己服务器的公网域名或IP。如果我们已经给服务器分配域名了,那只要把它填到my-server-1的位置。如果没有域名,那么得获取公网IP。如何获取呢?一种方式是键入下列命令:
 
     sub0@delta:~/ovpn-client$ curl ipecho.net/plain ; echo
 
-(If instead of a numeric IP address you get an error, just wait a few seconds and try again.) So now we know our server’s public IP, but is it static or dynamic? Well, if we’re dealing with a server at home or even at the office, chances are it has a dynamic IP address. In that case it is advisable to use a free dynamic DNS service, such as the one provided by http://www.noip.com. In the case of NoIP, assuming we have chosen the free domain dnsalias.net then we may end up with a line like this
+(如果不是一个数字的IP地址, 或是发生错误,那就等会再试。)So now we know our server’s public IP, but is it static or dynamic? Well, if we’re dealing with a server at home or even at the office, chances are it has a dynamic IP address. In that case it is advisable to use a free dynamic DNS service, such as the one provided by http://www.noip.com. In the case of NoIP, assuming we have chosen the free domain dnsalias.net then we may end up with a line like this
 
     remote ovpn.dnsalias.net 1194
 
