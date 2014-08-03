@@ -1,3 +1,5 @@
+[su-kaiyao]翻译中
+
 How To Install Java On Ubuntu 14.04
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/07/Install_Java_Ubuntu_Linux_Mint.jpeg)
