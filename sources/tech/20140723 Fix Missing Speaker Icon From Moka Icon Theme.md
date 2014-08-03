@@ -1,3 +1,4 @@
+Translating by GOLinux...
 Fix Missing Speaker Icon From Moka Icon Theme [Quick Tip]
 ================================================================================
 [Moka][1] is a beautiful icon theme. It has been constantly featured among the [best icon themes available for Ubuntu][2]. But there is little issue with Moka in Ubuntu 14.04. If you use Moka icons in Ubuntu 14.04 with Unity, you’ll find that speaker icon used for sound is missing:
