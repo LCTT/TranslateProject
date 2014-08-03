@@ -1,3 +1,4 @@
+linuhap翻译中
 CoreOS Linux ending the upgrade cycle
 CoreOS Linux结束升级周期
 ================================================================================
