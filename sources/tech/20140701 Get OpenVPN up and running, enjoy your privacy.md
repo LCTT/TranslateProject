@@ -279,7 +279,7 @@ ovpn-client文件夹必须安全的拷贝到我们的笔记本电脑上。我们
     push "redirect-gateway def1"
     push "dhcp-option DNS 10.8.0.1"
 
-最后这两行指示客户端用OpenVPN作为默认的网关,并用10.8.0.1作为DNS服务器。注意10.8.0.1是OpenVPN启动时自动创建的隧道接口的IP。如果客户用别的域名解析服务,那么我们就得提防不安全的DNS服务器。为了避免这种弱点,我们建议所有OpenVPN客户端使用10.8.0.1作为DNS服务器。
+最后这两行指示客户端用OpenVPN作为默认的网关,并用10.8.0.1作为DNS服务器。注意10.8.0.1是OpenVPN启动时自动创建的隧道接口的IP。如果客户用别的域名解析服务,那么我们就得提防不安全的DNS服务器。为了避免这种泄露,我们建议所有OpenVPN客户端使用10.8.0.1作为DNS服务器。
 
 我们以这种方式来开始运行OpenVPN服务器:
 
@@ -413,73 +413,73 @@ service dnsmasq restart
 
     sub0@delta:~/ovpn-client$ curl ipecho.net/plain ; echo
 
-(如果不是一个数字的IP地址, 或是发生错误,那就等会再试。)So now we know our server’s public IP, but is it static or dynamic? Well, if we’re dealing with a server at home or even at the office, chances are it has a dynamic IP address. In that case it is advisable to use a free dynamic DNS service, such as the one provided by http://www.noip.com. In the case of NoIP, assuming we have chosen the free domain dnsalias.net then we may end up with a line like this
+(如果不是一个数字的IP地址, 或是发生错误,那就等会再试。)所以我们现在知道我们的服务器公网IP了,但是它是动态的还是静态的呢?当我们把服务器架设在家或者办公室的时候,极有可能就是动态IP。如果是动态IP的话,可以用免费的动态域名服务(DDNS),比如[No-IP](http://www.noip.com)的服务。如果使用No-IP,假设我们选择了免费的域名dnsalias.net,那么这一行应该像这样填写:
 
     remote ovpn.dnsalias.net 1194
 
-where “ovpn” is the hostname we’ve given to the server. On the other hand, if our server is hosted in the cloud then it probably has a static public IP address. In that case, the remote directive inside client.conf will look like the following:
+"ovpn"是我们给服务器起的主机名。如果我们的服务器在云上,那么它可能有一个静态IP。如果有静态IP的话,那么这一行应该是这样的:
 
     remote 1.2.3.4 1194
 
-There are two more lines we need to modify:
+还要修改两行:
 
     cert client.crt
     key client.key
 
-In our case, the certificate and private key files for the client are named laptop.crt and laptop.key respectively, so our client.conf contains these two lines:
+在我们的例子里,客户端的证书和密钥的名字分别是laptop.crt和laptop.key所以我们的client.conf要包含下面这两行:
 
     cert laptop.crt
     key laptop.key
 
-After making sure the changes to client.conf are saved, we need to securely transfer the whole ovpn-client directory to the client. One way to do so is by using the scp command (secure copy or copy over SSH). An alternative is provided by the excellent and free FileZilla, which supports FTP over SSH connections (SFTP).
+在确认保存client.conf的修改之后,我们需要安全的把整个ovpn-client文件夹传输到客户端。一种方式是使用scp命令(安全拷贝或在SSH上拷贝)。另一种方式由优秀而免费的软件FileZilla提供,使用在SSH上运行的FTP(SFTP)。
 
-### Step 10 -- Connecting and testing ###
+### 第十步 -- 连接并测试 ###
 
 ![](http://parabing.com/assets/uploads/2014/06/01-Firewall.png)
 
 
-So how do we actually connect to the remote OpenVPN server? It all depends on the type of the device we have in hand and of course on the operating system is runs. In a bit we are going to examine the cases of four different OS families — or OS categories, if you will: Linux, Windows, OS X and iOS/Android. Note though that no matter the device or the OS, for the connection to be successful we need to be outside of the OpenVPN server’s local network. In addition, if there’s a firewall in front of the server –and it probably is– then we ought to put a new rule in place which essentially states something like this:
+所以我们到底怎么样才能链接到远程的OpenVPN服务器的呢?它完全取决于我们手中现有的设备类型，当然也取决于所运行的操作系统。我们将在四种不同类别的操作系统上运行,Linux, Windows, OS X和iOS/Android。注意,无论在什么设备和系统上,我们都得在OpenVPN服务器的本地网络外才能连接成功。此外,如果在服务器前有防火墙,我们需要增加一条这样的规则:
 
-*Redirect all incoming UDP packets for port 1194 to port 1194/UDP of the server’s public-facing network interface.*
+*把所有从1194/UDP端口收到的包转发到服务器公网接口的1194/UDP端口。*
 
-That’s some simple firewall rule, don’t you think? And without further ado, let’s establish our first connection to the fabulous OpenVPN server of ours.
+这是一个简单的防火墙规则。事不宜迟,让我们与我们难以置信的OpenVPN服务器建立第一个连接吧。
 
-**Linux**. All we need is the openvpn package installed. One way to connect to the remote OpenVPN server is to fire up a terminal, change to the ovpn-client directory and from the root user account –or with the assistance of sudo– type something like this:
+**Linux**: 我们只需安装openvpn包。一种连接远程OpenVPN服务器的方式是新建一个终端,切换到ovpn-client文件夹并以root身份或使用sudo来键入下列命令:
 
     /usr/sbin/openvpn --config client.conf
 
-Anytime we want to terminate the connection we just hit [CTRL+C].
+任何时候,如果我们需要终止OpenVPN,按[CTRL+C]就行了。
 
-**Windows**. A free OpenVPN client is the so called [OpenVPN Desktop Client][3]. The configuration file client.conf must be renamed to client.ovpn and that’s the file we should give to the OpenVPN Desktop Client. The application will read client.ovpn and create a new connection profile for the OpenVPN server.
+**Windows**: 有一个免费的OpenVPN客户端软件叫做[OpenVPN Desktop Client][3]。 配置文件client.conf需要重命名成client.ovpn,这就是我们需要提供给OpenVPN Desktop Client的文件。程序会读取client.ovpn并给OpenVPN服务器生成一个新的连接配置。
 
 ![](http://parabing.com/assets/uploads/2014/06/02-Connected.jpg)
 
-**OS X**. A free OpenVPN client for OS X is [tunnelblick][4]. There is also [Viscosity][5] which is commercial and happens to be our favorite. Viscosity will read client.conf and create a new connection profile for the remote server.
+**OS X**: [tunnelblick][4]是一款可以连接OpenVPN的免费开源OS X软件。[Viscosity][5]也可以但它是商业软件,不过我们喜欢。Viscosity会读取client.conf并给OpenVPN服务器生成一个新的连接配置。
 
-iOS/Android. An excellent choice is OpenVPN connect. It is free of charge and available from the [App Store][6] as well as the Google [Play store][7].
+**iOS/Android**: OpenVPN connect是绝佳的选择。它是免费的且可以从[App Store][6]和[Google Play store][7]获得
 
-Regardless of the computing platform, sometimes we’d like to check if we’re actually using the OpenVPN server we think we’re using. One way to do that is by following this simple 4-step procedure:
+不管是什么平台,有时我们想检验我们是否真的使用OpenVPN连接了。一种检验方法是完成下面这简单的4步:
 
-Prior to connecting to the OpenVPN server we…
+在连接到OpenVPN服务器前我们需要…
 
-- visit a site such as [whatip.com][8] and take note of our public IP
-- visit [dnsleaktest.com][10, perform the standard test, take note of the name servers we’re using
+- 打开[whatip.com][8]记录我们的公网IP
+- 打开[dnsleaktest.com][10],运行标准测试(standard test),记录我们的域名解析服务器
 
 ![](http://parabing.com/assets/uploads/2014/06/03-DNS.png)
 
-After connecting to the OpenVPN server we repeat the above two steps. If we get two different public IPs, this means we do go out on the net through the remote OpenVPN server. In addition, if we get two different sets of name servers, then there are no DNS leaks.
+在连接到OpenVPN服务器后重复这两部。如果我们获取到两个不同的公网IP,这意味着我们的网络出口已在远端OpenVPN服务器那。此外,如果获取了两个不同的域名解析服务器,那么就不存在DNS泄露的问题了。
 
-### Final thoughts ###
+### 感言 ###
 
-I use three different OpenVPN servers, all custom-made. One of them runs on the pfSense router at my home office in Thessaloniki, Greece. I use this server when I’m out of office and want secure access to the home LAN. The other two OpenVPN servers are hosted on two different VPSes, one in Reykjavik, Iceland, and the other in New Jersey, USA. Whenever I’m out and about and feel like using a random WiFi hotspot, I don’t even have to think of the security implications: I simply connect to the Reykjavik server and start surfing the web normally. There are also some times when I want to casually check out a service which is geographically restricted to the US. In these not-so-common cases the New Jersey server comes in handy, for when I connect to it I get a public IP from the U, S of A and hence access to that otherwise restricted service. It is worth noting that some service providers maintain blacklists with numerous well-known VPN companies. And that’s *exactly* one of the advantages of setting up your own OpenVPN server on a VPS provider of your choosing: It’s unlikely that this provider is blacklisted.
+我用三个不同的OpenVPN服务器,都是定制的。 一个运行在希腊Thessaloniki的家庭办公室的pfSense路由。当我不在办公室时,我用这个服务器安全的连接到局域网。剩下的两个服务器在两个不同的VPS上,一个在冰岛雷克雅未克,另一个在美国纽泽西州。当我在外且需要任意用一个WiFi热点的时候,我不必考虑安全问题:我只需简单的连接到雷克雅未克的服务器然后正常上网。有时我想看看限制用户地理位置在美国的服务。在这种不太常见的情况下,新泽西的服务器就派上用场了,当我连接时,我就获得了美国的一个公网IP,这样就可以访问有地理位置限制的服务了。值得注意的是,一些服务会把一些知名的VPN公司的IP列入黑名单。这是在你选的VPS提供商建立自己的OpenVPN*十分重要*的一个优点:这不大可能被列入黑名单.
 
-No matter where the physical location of your server is, OpenVPN ensures that the traffic flow between the client and the server is strongly encrypted. What happens to the traffic leaving the OpenVPN server is another story. Depending on the application-layer protocol it may still be encrypted, but it could be unencrypted as well. So unless you have absolute control of the OpenVPN server and of the local network it belongs to, you cannot fully trust the administrator at the other end. The moral of this is apparent: If you really care about your privacy, then you should keep in mind that your own behavior may indeed undermine it.
+无论你的物理位置在哪, OpenVPN确保客户端和服务器之间的数据流是高度加密的。没有OpenVPN的数据则是另一种情况。 取决于不同的应用层协议，它可能仍然是加密的，但它也可能是未加密的。所以除非你对OpenVPN服务器和它的本地网络有绝对的控制权,你不能完全相信另一端的管理员。这种精神是显而易见的:如果你真的在乎你自己的隐私,那么你需要注意你的行为可能在破坏它。
 
-One example will hopefully get the point across. You have a well configured OpenVPN server in the cloud. You use any random WiFi hotspot anytime you feel like it and without the slightest bit of worry, thanks to that heroic OpenVPN server. Then you fire up your favorite mail client to get your email from this good, old mail server which still uses plain SMTP. Guess what? Your username and password leave the OpenVPN server in plain text, i.e. unencrypted. At the same time a bored administrator in the vicinity of the OpenVPN server could be easily sniffing-out your credentials and storing them in their ever-growing list named “random happy people.txt”.
+一个例子是我们有希望点对点传输。我们有一个在云上配置好的OpenVPN服务器。当需要任意用一个WiFi热点的时候,你没有丝毫的担心,因为你连在OpenVPN服务器上。然后你打开你最喜欢的电子邮件客户端从一个依然使用SMTP的老服务器收信。你猜会发生什么?你的用户名和密码以未加密的纯文本格式离开OpenVPN服务器。与此同时一个在你OpenVPN服务器附近的带宽管理员很容易就嗅探出你的证书并记录到他们越来越长的名叫"random happy people.txt"的列表。
 
-So what do you do? Simple. You continue using your OpenVPN server, but refrain from using applications which talk old and/or insecure protocols.
+所以你该做什么?很简单。你应该继续使用OpenVPN服务器，但不要使用应用了旧的或不安全的协议的应用程序。
 
-Enjoy your brand new OpenVPN server!
+享受你的OpenVPN服务器吧!
 
 --------------------------------------------------------------------------------
 
