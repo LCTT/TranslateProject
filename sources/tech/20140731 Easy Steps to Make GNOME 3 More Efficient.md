@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Easy Steps to Make GNOME 3 More Efficient
 ================================================================================
 Few Linux desktops have brought about such controversy as GNOME 3. It’s been ridiculed, scorned, and hated since it was first released. Thing is, it’s actually a very good desktop. It’s solid, reliable, stable, elegant, simple... and with a few minor tweaks and additions, it can be made into one of the most efficient and user-friendly desktops on the market.
