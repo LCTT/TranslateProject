@@ -64,5 +64,5 @@ via: http://www.tecmint.com/10-useful-interview-questions-and-answers-on-linux-c
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
  
-[a]:http://www.tecmint.com/author/avishek/
+[a]:http://www.tecmint.com/author/avishek/ 
 
