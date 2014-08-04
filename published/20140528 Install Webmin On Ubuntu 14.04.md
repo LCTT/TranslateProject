@@ -45,11 +45,12 @@
 ![Webmin 1.690 on server.unixmen.local (Ubuntu Linux 14.04)](http://180016988.r.cdn77.net/wp-content/uploads/2014/05/Webmin-1.690-on-server.unixmen.local-Ubuntu-Linux-14.04-Mozilla-Firefox_011.png)
 
 就是这样简单。现在你就可以图形化地管理和配置你的Ubuntu服务器了。欢呼吧！
+
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/install-webmin-ubuntu-14-04/
 
-译者：[KayGuoWhu](https://github.com/KayGuoWhu) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[KayGuoWhu](https://github.com/KayGuoWhu) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
