@@ -485,7 +485,7 @@ service dnsmasq restart
 
 via: http://parabing.com/2014/06/openvpn-on-ubuntu/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[2q1w2007](https://github.com/2q1w2007) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
