@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 How to Create an Ubuntu Kiosk Computer
 ================================================================================
 **Linux distributions can be as feature-packed or as stripped back as needed, powering anything from inner-city signage to city council desktops.**
