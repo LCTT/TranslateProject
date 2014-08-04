@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Linux FAQs with Answers--How to check if I am in a running screen session
 ================================================================================
 > **Question**: I often use screen command to run multiple pseudo terminal sessions. Oftentimes I find it difficult to remember whether I am inside a screen session, or in a regular terminal. Is there any convenient way to check whether or not I am inside a running screen session? 
