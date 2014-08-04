@@ -1,3 +1,6 @@
+Translating---------geekpi
+
+
 How to access SoundCloud from the command line in Linux
 ================================================================================
 If you enjoy music streaming and originally-created sounds, you cannot have missed [SoundCloud][1]. Based in Germany, this cloud streaming service is now famous and well-established for any music adventurer. And naturally, as a Linux enthusiast, you might wonder how to join your passion for Linux with your love for music. As a solution, I advise you to check out Soundcloud2000, **a command line client for SoundCloud** born out of the [Music Hack Day Stockholm '13][2].
