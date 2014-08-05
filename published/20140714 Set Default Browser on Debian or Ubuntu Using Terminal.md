@@ -10,9 +10,9 @@
 虽然，使用浏览器主界面来设置默认浏览器很方便，但是有时，你需要远程来操作。
 
 要做到这一点，你只需打开终端，然后执行下述命令：
-```
-sudo update-alternatives --config x-www-browser
-```
+
+	sudo update-alternatives --config x-www-browser
+
 之后输入你想设置为默认浏览器的号码，这样就搞定了！
 
 截图如下：
