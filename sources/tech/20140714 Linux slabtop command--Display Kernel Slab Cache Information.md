@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Linux slabtop command - Display Kernel Slab Cache Information
 ================================================================================
 The Linux kernel needs to allocate memory for temporary objects such as task or device structures and inodes. The caching memory allocator manages caches of these types of objects. The modern Linux kernel implements this caching memory allocator to hold the caches called the slabs. Different types of slab caches are maintained by the slab allocator. This article concentrates on the slabtop command which shows real-time kernel slab cache information.
