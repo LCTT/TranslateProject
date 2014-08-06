@@ -1,7 +1,6 @@
-[translating sailing]
-20 Amazing Linux Blogs For Beginners!
+初学者福利 —— 20 个超赞的 Linux 博客
 ================================================================================
-Whether you're a newbie looking to venture into the world of Linux and open source or a pro in search for some inspiration, well, blogs are the one stop shop to all your needs. Blogs are an excellent resource of information coming in from real time users like you and me who are looking to help other fellow users grasp concepts in simple language and easy format.
+你是刚刚开启 Linux 开源世界奇幻旅程的新人还是寻求灵感的老鸟？不论你是谁，博客都能给你提供一站式服务，满足你的所有需要。博客是一种言辞简洁格式清晰的信息来源，这些信息都源于现实世界里像你我一样乐于帮助他人掌握知识的人。
 
 1.[Ubuntux][1]
 
@@ -47,7 +46,7 @@ Whether you're a newbie looking to venture into the world of Linux and open sour
 
 via: http://www.efytimes.com/e1/fullnews.asp?edid=144715
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[sailing](https://github.com/blueabysm)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
