@@ -1,3 +1,4 @@
+[translating by KayGuoWhu]
 How to install and configure Nvidia Optimus driver on Ubuntu
 ================================================================================
 Nvidia Optimus is a hybrid GPU system which utilises what is known as "discrete switching" and has been long associated with headaches and limitations on Linux systems. After years of wait, Ubuntu 14.04 with its shiny new kernel finally shipped with proprietary driver compatibility that can be installed easily. This article will guide you through the installation process after quick background of Nvidia Optimus for the unfamiliar readers. For the seasoned destroyer of Xorg configuration, you can quickly jump to the installation section below.

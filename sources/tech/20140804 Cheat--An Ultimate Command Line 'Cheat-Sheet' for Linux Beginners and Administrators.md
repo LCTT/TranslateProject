@@ -1,3 +1,5 @@
+[su-kaiyao]翻译中
+
 Cheat – An Ultimate Command Line ‘Cheat-Sheet’ for Linux Beginners and Administrators
 ================================================================================
 What you do when you are not sure of the command you are running especially in case of complex commands which uses a lot of options. We use man pages to get some help in such situation. Some of the other options may include commands like ‘**help**‘, ‘**whereis**‘ and ‘**whatis**‘. But all has their Pros and Cons.
