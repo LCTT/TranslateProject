@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Linux FAQs with Answers--How to enable and configure desktop sharing on Linux Mint Cinnamon desktop
 ================================================================================
 > **Question**: I was trying to enable desktop sharing via Vino VNC server (vino-server) on Linux Mint 17 Cinnamon desktop. However, I notice that vino-preferences tool which allows us to configure vino-server (e.g., sharing option, security, notification on/off) no longer exists. Also, I cannot find desktop sharing menu on Cinnamon desktop. How can I configure desktop sharing via vino-server on the latest Linux Mint 17 Cinnamon desktop? 
