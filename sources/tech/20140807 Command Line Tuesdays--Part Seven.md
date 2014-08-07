@@ -1,3 +1,5 @@
+translating by cvsher
+
 Command Line Tuesdays – Part Seven
 ================================================================================
 Heya geekos. I’ve checked the ‘curriculum’, and we’re at part 7 of 8 as of today. Which means there will be one more – and sadly final – CLT next tuesday. So for today, let’s deal with some **permissions**!
