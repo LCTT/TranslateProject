@@ -1,34 +1,34 @@
 2q1w2007翻译中
-French City Toulouse Saved 1 Million Euro With LibreOffice
+法国图卢兹市通过使用Libreoffice省了100万欧元
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/07/FRance_LibreOffice.jpg)
 
-[Toulouse][1], France’s 4th largest city located in south-west France, has saved one million Euro by migrating to Open Source office suite [LibreOffice][2].
+[图卢兹][1],是法国第四大城市,坐落于法国西南部,它通过迁移到开源办公套件[LibreOffice][2]已经节省了一百万欧元。
 
-Migrating to LibreOffice was one of the key project of city’s new digital policy. The migration started in 2012 after the political decision for the switch was taken in 2011. It took one and a half-year for the migration to complete and as of today, 90% of the desktops (used by around 10,000 people working for the city) run LibreOffice.
+迁移到LibreOffice是这个城市新的数字化政策的重要部分。在2011年作出决定后,2012年开始迁移。迁移总共花费了一年半,到今天已有90%的桌面(10000工作人员)运行LibreOffice。
 
-As per the city officials, software licenses for office suite costs around 1.8 million Euro every three years. The migration cost about 800,000 Euro. The city already saved around a million Euro.
+政府每三年的办公软件授权大约要花180万欧元,而迁移总共花了80万欧元。所以城市总共省了100万欧元。
 
-It all started after Pierre Cohen was elected as the mayor of Toulouse in 2008. Cohen, an IT professional, started working on a digital policy with special focus on Open Source. It was his and his associate Erwane Monthubert’s efforts that city of Toulouse decided to switch to Open Source in 2011.
+一切起始于Pierre Cohen在2008年被选作卢兹市市长。Cohen是一位IT专家,他的数字化政策起始于对开源软件的特别关注。正式他和他的副手(his associate)Erwane Monthubert的努力下,图卢兹市在2011年决定切换到开源软件。
 
-It’s not just LibreOffice. Most of the official web portals of Toulouse like toulouse.fr, toulouse-metropole.fr, data.grandtoulouse.fr are supported by free software. Alfresco is the choice for collaborative tools.
+不只是LibreOffice。大多数的图卢兹市的官方门户网站,比如toulouse.fr、toulouse-metropole.fr、toulouse-metropole.fr和data.grandtoulouse.fr,由自由软件支持。Alfresco被选作协同工具。
 
-Switching to Open Source seems to be a trend in European cities. In neighboring Spain Valencia and [Canary Islands ditched Microsoft Office and saved in millions][3]. [French Metropolitan Police developed its own Linux OS][4] based on Ubuntu. List is endless and I hope my current city, Cote de Azur joins this list soon.
+切换到开源软件看起来正在成为欧洲城市的潮流。在临近的西班牙瓦伦西亚和[加那利群岛抛弃了Microsoft Office节省了几百万][3]。[法国首都的警察开发了他们自己的Linux OS][4]基于Ubuntu。列表没有终结,我希望我目前的城市Cote de Azur可以不久后加入这个列表。
 
-Read full report [here][5].
+点[这里][5]阅读所有报道。
 
 --------------------------------------------------------------------------------
 
 via: http://itsfoss.com/french-city-toulouse-saved-1-million-euro-libreoffice/
 
 作者：[Abhishek][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[2q1w2007](https://github.com/2q1w2007)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://itsfoss.com/author/Abhishek/
-[1]:http://en.wikipedia.org/wiki/Toulouse
+[1]:http://zh.wikipedia.org/wiki/%E5%9B%BE%E5%8D%A2%E5%85%B9
 [2]:http://www.libreoffice.org/
 [3]:http://itsfoss.com/canary-islands-saves-700000-euro-open-source/
 [4]:http://itsfoss.com/french-national-police-switch-37000-desktops-to-linux/
