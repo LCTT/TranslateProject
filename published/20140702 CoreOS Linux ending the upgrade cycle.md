@@ -1,4 +1,4 @@
-CoreOS Linux结束升级周期
+CoreOS Linux终结升级周期
 ================================================================================
 > CoreOS发布了他的Linux发行版的商用支持版，并且宣称将废除手动更新。
 
@@ -10,13 +10,13 @@ CoreOS提供其同名的Linux发行版做为商业服务，开始为一个月100
 
 商业Linux订阅并不是什么新鲜事：[Red Hat][2]和[Suse][3]都在为他们各自的发行版提供商业订阅。
 
-因为这些以Linux为基础的公司使用的应用程序和库都是开源和免费提供的，所以订阅的费用不包括软件本身，而收费来自更新，漏洞修复，集成以及发生问题时的技术支持。
+因为这些以Linux为基础的公司使用的应用程序和库都是开源和免费提供的，所以订阅的费用不包括软件本身，而收费来自更新、漏洞修复、集成以及发生问题时的技术支持。
 
 CoreOS公司声称，CoreOS将会和这些发行版不同，它将不会有重大更新，而在那些发行版中这些更新通常需要一次更新所有的包。在CoreOS中，它的更新和新特征将会在就绪后自动安装入操作系统中。
 
 服务中提供了一个叫做CoreUpdate的仪表盘，如果管理员不想自动更新所有包，它可用于标明选取哪些软件包获取更新。
 
-CoreUpdate可以同时管理多个机器，而且提供了滚回功能——在更新引起问题可使用。
+CoreUpdate可以同时管理多个机器，而且提供了回滚功能——在更新引起问题可使用。
 
 CoreOS于去年十二月发布，它的设计旨在[关注][4]开源操作系统内核的新兴使用——用于大量基于云计算的虚拟服务器。
 
@@ -30,14 +30,14 @@ CoreOS周一还宣布他们收到了来自Kleiner Perkins Caulfield and Byers风
 
 ----------
 
-Joab Jackson负责IDG新闻服务机构中企业软件和通用技术的新闻。Twitter上关注Joab[@Joab_Jackson][6]。Joab的电子邮箱地址是[Joab_Jackson@idg.com][7]
+作者Joab Jackson负责IDG新闻服务机构中企业软件和通用技术的新闻。Twitter上关注Joab[@Joab_Jackson][6]。Joab的电子邮箱地址是[Joab_Jackson@idg.com][7]
 
 
 --------------------------------------------------------------------------------
 
 via: http://www.computerworld.com/s/article/9249460/CoreOS_Linux_ending_the_upgrade_cycle?taxonomyId=122
 
-译者：[linuhap](https://github.com/linuhap) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[linuhap](https://github.com/linuhap) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
