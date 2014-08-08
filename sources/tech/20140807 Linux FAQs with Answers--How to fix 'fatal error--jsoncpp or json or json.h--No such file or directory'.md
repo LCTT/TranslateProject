@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Linux FAQs with Answers--How to fix “fatal error: jsoncpp/json/json.h: No such file or directory”
 ================================================================================
 > **Question**: I am trying compile a C++ application, but I am getting the following error:
