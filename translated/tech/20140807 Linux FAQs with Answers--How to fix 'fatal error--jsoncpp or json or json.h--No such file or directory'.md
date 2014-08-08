@@ -1,23 +1,22 @@
-Translating by GOLinux ...
-Linux FAQs with Answers--How to fix “fatal error: jsoncpp/json/json.h: No such file or directory”
+Linux常见问题与答案——如何修复“fatal error: jsoncpp/json/json.h: No such file or directory”问题
 ================================================================================
-> **Question**: I am trying compile a C++ application, but I am getting the following error:
-> 
-> "fatal error: jsoncpp/json/json.h: No such file or directory"
-> 
-> How can I fix this problem? 
+>**问题**：我试着编译一个C++程序，但是我碰到了以下错误：
+>
+>“fatal error: jsoncpp/json/json.h: No such file or directory”
+>
+>我怎样修复这个问题呢？
 
-The error indicates that you are missing JsonCpp development files (i.e., JsonCpp library and header files). [JsonCpp][1] is a C++ library for JSON-formatted data manipulation. Here is how to install JsonCpp development files on various Linux distros.
+该错误指出你缺少JsonCpp开发文件（例如，JsonCpp库和头文件）。[JsonCpp][1]是一个用于JSON格式数据复制的C++库。下面给出了在不同Linux发行版上安装JsonCpp开发文件的方法。
 
-On Debian, Ubuntu or Linux Mint:
+在Debian, Ubuntu或者Linux Mint上：
 
     $ sudo apt-get install libjsoncpp-dev
 
-On Fedora:
+在Fedora上：
 
     $ sudo yum install jsoncpp-devel
 
-On CentOS, JsonCpp is not available as a pre-built package. So you can build and install JsonCpp from the source as follows.
+在CentOS上，没有JsonCpp的预编译包。因此你可以通过以下方法从源码构建一个JsonCpp包并安装。
 
     $ sudo yum install cmake
     $ git clone https://github.com/open-source-parsers/jsoncpp.git
@@ -32,7 +31,7 @@ On CentOS, JsonCpp is not available as a pre-built package. So you can build and
 
 via: http://ask.xmodulo.com/fix-fatal-error-jsoncpp.html
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[GOLinux](https://github.com/GOLinux)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
