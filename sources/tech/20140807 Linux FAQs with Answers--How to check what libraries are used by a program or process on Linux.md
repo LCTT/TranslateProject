@@ -1,3 +1,4 @@
+[translating by KayGuoWhu]
 Linux FAQs with Answers--How to check what libraries are used by a program or process on Linux
 ================================================================================
 > **Question**: I would like to know which shared libraries are loaded at run-time when I invoke a particular executable. Is there any way to identify shared library dependencies of a program executable or a running process on Linux?
