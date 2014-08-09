@@ -1,3 +1,5 @@
+    Vic020
+
 Check Hard drive for bad sectors or bad blocks in linux
 ================================================================================
 **badblocks** is the command or utility in linux like operating system which can **scan** or test our **hard disk** and **external drive** for **bad sectors**. Bad sectors or **bad blocks** is the space of the disk which can't be used due to the **permanent damage** or OS is unable to access it. 
