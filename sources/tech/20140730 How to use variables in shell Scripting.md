@@ -1,3 +1,5 @@
+
+Translating by GOLinux ...
 How to use variables in shell Scripting
 ================================================================================
 In every **programming** language **variables** plays an important role , in Linux shell scripting we are using two types of variables : **System Defined Variables** & **User Defined Variables**.
