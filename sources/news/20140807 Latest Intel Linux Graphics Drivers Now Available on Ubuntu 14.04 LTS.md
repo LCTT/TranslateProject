@@ -1,3 +1,4 @@
+linuhap翻译中
 Latest Intel Linux Graphics Drivers Now Available on Ubuntu 14.04 LTS
 ================================================================================
 ![Intel Makes it Easy to Install Drivers](http://www.omgubuntu.co.uk/wp-content/uploads/2014/01/intel-driver-update-utility-unity.jpg)
