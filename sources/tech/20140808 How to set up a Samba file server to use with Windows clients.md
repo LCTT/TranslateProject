@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 How to set up a Samba file server to use with Windows clients
 ================================================================================
 According to the [Samba][1] project web site, Samba is an open source/free software suite that provides seamless file and print services to SMB/CIFS clients. Unlike other implementations of the SMB/CIFS networking protocol (such as LM Server for HP-UX, LAN Server for OS/2, or VisionFS), Samba (along with its source code) is freely available (at no cost to the end user), and allows for interoperability between Linux/Unix servers and Windows/Unix/Linux clients. 
