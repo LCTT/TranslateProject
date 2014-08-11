@@ -1,77 +1,78 @@
-
-Translating by GOLinux ...
-Echo Command with Practical Examples
+Echo命令实例
 ================================================================================
-echo command is built in **shell command** , which is used to display the value of a **variable** or **print a line of text**. 
 
-Echo command plays a important role in building a shell script.
+echo命令是内建的**shell命令**，用于显示**变量**的值或者**打印一行文本**。
+
+echo命令在构建shell脚本时扮演着重要的角色。
  
-### Synatx : ###
+### 语法： ###
 
     # echo [Options] [String]
 
-The items in square brackets are optional. A string can be defined as  finite sequence of characters (like letters, numerals, symbols  punctuation marks).
+方括号中的项目是可选的。字符串可以定义为字符的有限序列（如字母，数字，符号，标点符号）。
 
-When echo command is used without any options or strings, echo returns a blank line on the display screen followed by the command prompt on the subsequent line. This is because pressing the ENTER key is a signal to the system to start a new line, and thus echo repeats this signal.
+当echo命令不带任何选项或字符串使用时，它会在显示屏上返回一个空白行，后面换一行跟上命令提示符。这是因为按下回车键就是发送一个信号给系统以开始一个新行，而echo重复了该信号。
  
-### Options : ###
+### 选项： ###
 
 
-- -n     do not output the trailing newline
-- -e     enable interpretation of backslash escapes
-- -E     disable interpretation of backslash escapes (default)
+- -n     不要输出衍生的新行
+- -e     启用反斜线转义解释
+- -E     禁用反斜线转义解释（默认）
 
-If -e is in effect, the following sequences are recognized:
 
-- \\     backslash
-- \a     alert (BEL)
-- \b     backspace
-- \c     produce no further output
-- \e     escape
-- \f     form feed
-- \n     new line
-- \r     carriage return
-- \t     horizontal tab
-- \v     vertical tab
-- \0NNN  byte with octal value NNN (1 to 3 digits)
-- \xHH   byte with hexadecimal value HH (1 to 2 digits)
+如果-e生效，下列序列被识别：
 
-### Example :1  Display the value of System Defined Variables ###
+- \\     反斜线
+- \a     警告（BEL）
+- \b     反斜线
+- \c     不产生进一步输出
+- \e     转义
+- \f     换页
+- \n     新行
+- \r     换行字符
+- \t     水平制表
+- \v     垂直制表
+- \0NNN  八进制值表示的字节NNN（1到3个数字）
+- \xHH   十六进制值表示的字节NNN（1到2个数字）
 
-Using the set command , we can list the system define variables and to print the vaule of these variables we can use echo command :
+### 样例：1  显示系统定义的变量的值 ###
+
+使用set命令，我们可以列出系统定义的变量。而要打印这些变量的值，我们可以使用echo命令：
 
     jack@localhost:~$ echo $USER
     jack
     jack@localhost:~$ echo $HOME
     /home/jack
 
-### Example:2 Display the value of User defined Variables : ###
+### 样例：2 显示用户定义的变量的值 ###
 
     jack@nextstep4it:~$ var1=`date`
     jack@nextstep4it:~$ echo "Today's date  time is : $var1"
     Today's date  time is : Mon Jul 28 13:11:37 IST 2014
 
-### Example:3 Display the text String ###
+### 样例：3 显示文本字符串 ###
 
     jack@nextstep4it:~$ echo " Hi this echo command testing"
     Hi this echo command testing
 
-### Example:4 Use of backspace in echo command ###
+### 样例：4 在echo命令中使用反斜线 ###
 
     jack@nextstep4it:~$ echo -e "Ubuntu \bis \bthe \bbest \bDesktop \bOS"
 
-Above Command will Print :
+上述命令将打印：
+
 UbuntuisthebestDesktopOS
 
-### Example:5  Use of  tab space in echo command ###
+### 样例：5  在echo命令中使用制表符空格 ###
 
     nextstep4it@nextstep4it:~$ echo -e "Ubuntu \tis \tthe \tbest \tDesktop \tOS"
 
-Above command will show below output :
+上述命令将显示如下输出：
 
 Ubuntu is the best Desktop OS
 
-### Example:6 Use of Vertical tab in echo Command ###
+### 样例：6 在echo命令中使用垂直制表符 ###
 
     jack@nextstep4it:~$ echo -e "Ubuntu \vis \vthe \vbest \vDesktop \vOS"
     Ubuntu
@@ -81,9 +82,9 @@ Ubuntu is the best Desktop OS
                                 Desktop
                                               OS
 
-### Example:7  Colored output of echo command ###
+### 样例：7  设置echo命令彩色输出 ###
 
-echo command can change the font style, background color of fonts and font colors. Escape sequence \033 can be used to alter font properties. -e option has to be used in order to the escape sequence be in effect. Some of escape codes are listed below :
+echo命令可以修改字体类型，字体背景色以及字体颜色，转义序列\033可以用于改变字体属性。要使转义序列生效，必须使用-e选项。下面列出了部分转义代码：
 
 - [0m: Normal
 - [1m: Bold fonts
@@ -110,12 +111,12 @@ echo command can change the font style, background color of fonts and font color
 - [46m: Background color changes to Sky Blue
 - [47m: Background color changes to Light Grey
 
-Below command will print the output in red color.
+下面的命令将用红色打印输出。
 
     jack@nextstep4it:~$ echo -e "\033[31mMagic of Linux\033[0m"
     Magic of Linux
 
-Below Command will print “Magic of Linux” in bold style and red background color.
+下面的命令将以粗体以及红色背景打印出“Magic of Linux”。
 
     nextstep4it@nextstep4it:~$ echo -e "\033[1m\033[41mMagic of Linux\033[0m"
     Magic of Linux
@@ -124,7 +125,7 @@ Below Command will print “Magic of Linux” in bold style and red background c
 
 via: http://www.nextstep4it.com/categories/unix-command/echo-command/
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[GOLinux](https://github.com/GOLinux)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
