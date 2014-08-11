@@ -1,3 +1,5 @@
+
+Translating by GOLinux ...
 Echo Command with Practical Examples
 ================================================================================
 echo command is built in **shell command** , which is used to display the value of a **variable** or **print a line of text**. 
