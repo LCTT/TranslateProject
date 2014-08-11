@@ -1,3 +1,4 @@
+[translating by KayGuoWhu]
 Linux FAQs with Answers--How to check the last time system was rebooted on Linux
 ================================================================================
 > **Question**: Is there a way to quickly check how long a Linux system has been running? That is, how can I find out the last time a Linux system was rebooted? 
