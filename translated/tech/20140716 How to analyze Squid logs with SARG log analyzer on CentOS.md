@@ -18,7 +18,7 @@ SARG（或者说是Squid分析报告生成器）是一款基于web的工具，�
 
     # yum install gcc make wget httpd crond 
 
-在启动时加载必要的服务
+在启动时加载必要的服务 
 
     # service httpd start; service crond start
     # chkconfig httpd on; chkconfig crond on 
