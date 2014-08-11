@@ -1,23 +1,23 @@
-Latest Intel Linux Graphics Drivers Now Available on Ubuntu 14.04 LTS
+最新的英特尔Linux图形驱动程序现在可在Ubuntu 14.04 LTS上使用
 ================================================================================
 ![Intel Makes it Easy to Install Drivers](http://www.omgubuntu.co.uk/wp-content/uploads/2014/01/intel-driver-update-utility-unity.jpg)
-Intel Makes it Easy to Install Drivers
+英特尔使驱动安装变得简单
 
-**A new version of the Intel [Linux Graphics Installer][1] is available to download.**
+**新版本的英特尔[Linux图形安装程序][1]可下载。**
 
-The open-source utility offers an easy way to get the latest graphics and video drivers for supported Intel hardware in Ubuntu.
+这个开源的工具为获取最新的（在Ubuntu上已支持的因特尔设备的）图形和视频驱动提供了简易的途径。
 
-In **version 1.0.6** the 2014Q2 graphics stack released [at the end of June][2] is made available to Ubuntu 14.04 LTS for the first time.
+在**版本1.0.6**中首次使其[六月底][2]发布的2014Q2图形堆栈可在Ubuntu 14.04中使用。
 
-It brings better Bay Trail performance, power saving optimisations, and improves support for Intel Broadwell chips.
+它也带来了更好的Bay Trail性能，节能优化，并且改善了对英特尔Broadwell芯片的支持。
 
-Running the latest available stack is the best way for Linux users to “*…stay current with the latest enhancements, optimisations, and fixes,*” say Intel.
+对Linux用户来说，想要向Intel所说的那样“保持当前最新的改进,优化,和修复”，最好的方法就是运行最新可用的堆栈。
 
-### Download ###
+### 下载 ###
 
-The latest version of the Graphics Installer supports Ubuntu 14.04 LTS and Fedora 20. Ubuntu 13.10 users can continue to use the tool, but won’t be able to grab the most recent set of drivers.
+最新版本的图形安装程序支持Ubuntu 14.04 LTS和Fedora 20。Ubuntu 13.10的用户可以继续使用这个工具，但不能获取最新的驱动程序。
 
-Debian installers for Ubuntu 14.04 LTS [32 bit][3] or [64 bit][4] are available from the 01.org website, link below.
+Ubuntu 14.04 LTS [32位][3]或[64位][4]可用的的Deb安装包可在 01.org 网站下载，链接如下。
 
 - [Download Intel Graphics Installer 1.0.6 for Ubuntu][5]
 
@@ -26,7 +26,7 @@ Debian installers for Ubuntu 14.04 LTS [32 bit][3] or [64 bit][4] are available 
 via: http://www.omgubuntu.co.uk/2014/08/intel-graphics-installer-linux-updated-1-0-6
 
 作者：[Joey-Elijah Sneddon][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[linuhap](https://github.com/linuhap)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
