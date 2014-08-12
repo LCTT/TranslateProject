@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 ‘Ifconfig’ Command Not Found In CentOS 7 Minimal Installation – A Quick Tip To Fix It
 ================================================================================
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/08/centos7-790x493.jpg)
