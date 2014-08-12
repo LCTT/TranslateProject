@@ -1,3 +1,5 @@
+[su-kaiyao]翻译中
+
 How to improve your productivity in terminal environment with Tmux
 ================================================================================
 The introduction of the mouse was a wonderful innovation in making computers more accessible to average people. But for programmers and sysadmins, moving our hands off the keyboard while working on a computer can be distracting.
