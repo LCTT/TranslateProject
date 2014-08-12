@@ -1,19 +1,18 @@
-Translating by GOLinux ...
-‘Ifconfig’ Command Not Found In CentOS 7 Minimal Installation – A Quick Tip To Fix It
+CentOS 7最小化安装后找不到‘ifconfig’命令——修复小提示
 ================================================================================
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/08/centos7-790x493.jpg)
 
-As we all know, “**ifconfig**” command is used to configure a network interfaces in GNU/Linux systems. It displays the details of a network interface card like IP address, MAC Address, and the status of a network interface card etc. But, this command is obsolete, and is not found in the minimal versions of RHEL 7 and its clones like CentOS 7, Oracle Linux 7, and Scientific Linux 7.
+就像我们所知道的，“**ifconfig**”命令用于配置GNU/Linux系统的网络接口。它显示网络接口卡的详细信息，包括IP地址，MAC地址，以及网络接口卡状态之类。但是，该命令已经过时了，而且在最小化版本的RHEL 7以及它的克隆版本CentOS 7，Oracle Linux 7以和Scientific Linux 7中也找不到该命令。
 
-### How do I find IP and other details of a network interface In CentOS Minimal server? ###
+### 在CentOS最小化服务器版本中如何查找网卡IP和其它详细信息？ ###
 
-CentOS 7 minimal systems, use the commands “**ip addr**” and “**ip link**” to find the details of a network interface card. To know the statistics use “**ip -s link**”.
+CentOS 7最小化系统，使用“**ip addr**”和“**ip link**”命令来查找网卡详情。要知道统计数据，可以使用“**ip -s link**”。
 
-To view the details of the network interface cards, enter the following commands:
+要查看网卡细节，输入以下命令：
 
     ip addr
 
-Sample output:
+输出样例：
 
     1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436 qdisc noqueue state UNKNOWN 
         link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -25,22 +24,22 @@ Sample output:
         inet 127.0.0.1/32 scope host venet0
         inet 192.168.1.101/32 brd 192.168.1.101 scope global venet0:0
 
-To view the statistics of your network interfaces, enter the command:
+要查看网络接口统计数据，输入命令：
 
     ip link
 
-Sample output:
+输出样例：
 
     1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436 qdisc noqueue state UNKNOWN mode DEFAULT 
         link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     2: venet0: <BROADCAST,POINTOPOINT,NOARP,UP,LOWER_UP> mtu 1500 qdisc noqueue state UNKNOWN mode DEFAULT 
         link/void
 
-OR
+或者
 
     ip -s link
 
-Sample output:
+输出样例：
 
     1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436 qdisc noqueue state UNKNOWN mode DEFAULT 
         link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -55,13 +54,13 @@ Sample output:
         TX: bytes  packets  errors  dropped carrier collsns 
         300403     4249     0       0       0       0
 
-### How do I enable and use “ifconfig” Command in CentOS 7 minimal servers? ###
+### 在CentOS 7最小化服务器版本中如何启用并使用“ifconfig”命令？ ###
 
-If you don’t know where to find the ifconfig command, follow the simple steps provided below. First let us find out which packages will provide ifconfig command. To do that , enter the following command:
+如果你不知道在哪里可以找到ifconfig命令，请按照以下简单的步骤来找到它。首先，让我们找出哪个包提供了ifconfig命令。要完成这事，输入以下命令：
 
     yum provides ifconfig
 
-Sample Output:
+输出样例：
 
     Loaded plugins: fastestmirror
     Loading mirror speeds from cached hostfile
@@ -73,21 +72,21 @@ Sample Output:
     Matched from:
     Filename    : /usr/sbin/ifconfig
 
-Or you can use the following command too.
+或者你也可以使用以下命令。
 
     yum whatprovides ifconfig
 
-Here, “provides” or “whatprovides” switches are used to find out which package provides some feature or file.
+这里，“provides”或者“whatprovides”开关用于找出某个包提供了某些功能或文件。
 
-As you see in the above output, the **net-tools** package provides the ifconfig command. So, let us install net-tools package to use ifconfig command.
+就像你在上面的输出中所看到的，**net-tools**包提供了ifconfig命令。因此，让我们安装net-tools包来使用ifconfig命令。
 
     yum install net-tools
 
-Now, you’ll be able to use the command **ifconfig** as usual.
+现在，你就可以像以往一样使用**ifconfig**命令了。
 
     ifconfig -a
 
-Sample output:
+输出样例：
 
     lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 16436
             inet 127.0.0.1  netmask 255.0.0.0
@@ -110,14 +109,14 @@ Sample output:
             inet 192.168.1.101  netmask 255.255.255.255  broadcast 192.168.1.101  destination 192.168.1.101
             unspec 00-00-00-00-00-00-00-00-00-00-00-00-00-00-00-00  txqueuelen 0  (UNSPEC)
 
-Enjoy!
+尽情享受吧！
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/ifconfig-command-found-centos-7-minimal-installation-quick-tip-fix/
 
 作者：[Senthilkumar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[GOLinux](https://github.com/GOLinux)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
