@@ -21,7 +21,7 @@ echo命令在构建shell脚本时扮演着重要的角色。
 - -E     禁用反斜线转义解释（默认）
 
 
-如果-e生效，下列序列被识别：
+如果使用-e选项，则可以使用如下转义序列：
 
 - \\     反斜线
 - \a     警告（BEL）
@@ -86,30 +86,29 @@ Ubuntu is the best Desktop OS
 
 echo命令可以修改字体类型，字体背景色以及字体颜色，转义序列\033可以用于改变字体属性。要使转义序列生效，必须使用-e选项。下面列出了部分转义代码：
 
-- [0m: Normal
-- [1m: Bold fonts
-- [2m: Font color changes to Purple
-- [4m: Underlined fonts
-- [7m: Invert foreground and background colors
-- [8m: Invisible fonts
-- [9m: Cross lined fonts
-- [30m: Font color changes to Grey 
-- [31m: Font color changes to Red
-- [32m: Font color changes to Green
-- [33m: Font color changes to Brown
-- [34m: Font color changes to Blue
-- [35m: Font color changes to Violet
-- [36m: Font color changes to Sky Blue
-- [37m: Font color changes to Light Grey
-- [38m: Font color changes to Black
-- [40m: Background color changes to Black
-- [41m: Background color changes to Red
-- [42m: Background color changes to Green
-- [43m: Background color changes to Brown
-- [44m: Background color changes to Blue
-- [45m: Background color changes to Violet
-- [46m: Background color changes to Sky Blue
-- [47m: Background color changes to Light Grey
+- [0m: 正常
+- [1m: 粗体
+- [4m: 字体加上下划线
+- [7m: 逆转前景和背景色
+- [8m: 不可见字符
+- [9m: 跨行字体
+- [30m: 灰色字体 
+- [31m: 红色字体
+- [32m: 绿色字体
+- [33m: 棕色字体
+- [34m: 蓝色字体
+- [35m: 紫色字体
+- [36m: 浅蓝色字体
+- [37m: 浅灰字体
+- [38m: 黑色字体
+- [40m: 黑色背景
+- [41m: 红色背景
+- [42m: 绿色背景
+- [43m: 棕色背景
+- [44m: 蓝色背景
+- [45m: 紫色背景
+- [46m: 浅蓝色背景
+- [47m: 浅灰色背景
 
 下面的命令将用红色打印输出。
 
@@ -126,6 +125,6 @@ echo命令可以修改字体类型，字体背景色以及字体颜色，转义�
 via: http://www.nextstep4it.com/categories/unix-command/echo-command/
 
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
