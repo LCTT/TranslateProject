@@ -8,7 +8,7 @@ Linux 老鸟们可能会笑话我们，但你不能否认：随着越来越多�
 
 然后，我们又见证了虚拟机技术的商品化。使用 Amazon 云主机或者 VPS 的用户也许永远不用在裸机上部署 Linux。随着混合云和私有云的日益普及，甚至很多企业级的系统管理员都不需要在裸机上部署 Linux——登录 Web 管理界面，一次性就能搞定不止 5 台 Apache 虚拟机。
 
-时下最新的两个趋势（一个是配置管理，另一个看起来很前沿（其实一点儿都不前沿）—— 像 docker 这样的部署工具包）隐藏了更多 Linux 底层技术细节。每当客户要求我们在 [OlinData][1] 上配置 Linux 机器时，我们的第一个动作就是安装配置 [Puppet][2]。有了功能强大值得信赖的 Puppet 模块，手工配置也更快更简单了。
+时下最新的两个趋势：一个是配置管理，另一个看起来很前沿（其实一点儿都不前沿）—— 像 docker 这样的部署工具包，它们隐藏了更多 Linux 底层技术细节。每当客户要求我们在 [OlinData][1] 上配置 Linux 机器时，我们的第一个动作就是架设 [Puppet][2]。有了功能强大值得信赖的 Puppet 模块，手工配置也更快更简单了。
 
 例如，我可以这样使用 Puppet 在新机器上安装 Apache:
 
@@ -19,7 +19,7 @@ Linux 老鸟们可能会笑话我们，但你不能否认：随着越来越多�
       }
     }
 
-在这种环境下，我甚至都不用在机器上打日志。通过 [Jenkins][3] 这样的不间断部署工具，我可以完全自动化部署我的基础设施代码，并确保它们通过了我预置的测试。
+在这种环境下，我甚至都不用在机器上打开日志。通过 [Jenkins][3] 这样的不间断部署工具，我可以完全自动化部署我的基础设施代码，并确保它们通过了我预置的测试。
 
 ### 系统管理员技能日益升级 ###
 
@@ -28,9 +28,8 @@ Linux 老鸟们可能会笑话我们，但你不能否认：随着越来越多�
 底层 Linux 技能需求会完全消失么？当然不会。除了商业服务器部署之外，Linux 还有大量其他用途。同时，人们也从底层操作知识中获益颇丰。最重要的是，如果你的简历上体现出了这些技能，我（还有很多其他老板）总是会优先选择你，而不是那些尚未掌握这些技能的候选人。因为你也不知道啥时候你就用上这些技能了！
 
 ----------
-![Walter Heck —— 荷兰开源培训顾问公司 Olindata 公司 CEO](http://www.linux.com/images/stories/41373/Walter-Heck.jpg)
 
-Walter Heck 是 Olindata 公司（一个 Linux 基金会授权的培训机构）的创始人兼 CEO，这里是计划中[由 OlinData 提供的 Linux 基金会官方培训课程单][4].
+Walter Heck 是 荷兰开源培训顾问公司 Olindata（一个 Linux 基金会授权的培训机构）的创始人兼 CEO，这里是计划中[由 OlinData 提供的 Linux 基金会官方培训课程单][4].
 
 --------------------------------------------------------------------------------
 
@@ -38,7 +37,7 @@ via: http://www.linux.com/news/enterprise/systems-management/780956-linux-system
 
 原文作者：[Walter Heck][a]
 
-译者：[sailing](https://github.com/blueabysm) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[sailing](https://github.com/blueabysm) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
