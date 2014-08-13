@@ -1,4 +1,4 @@
-Linux有问必答--如何查看Linux上程序或进程用到的库
+Linux有问必答：如何查看Linux上程序或进程用到的库
 ================================================================================
 > **问题**：我想知道当我调用一个特定的可执行文件在运行时载入了哪些共享库。是否有方法可以明确Linux上可执行程序或运行进程的共享库依赖关系？
 
@@ -11,7 +11,7 @@ Linux有问必答--如何查看Linux上程序或进程用到的库
 
 ![](https://farm4.staticflickr.com/3872/14846153231_195cfff0f0_z.jpg)
 
-注意并不推荐为任何不可信的第三方可执行程序运行ldd，因为某些版本的ldd可能会直接调用可执行程序来明确其库文件依赖关系，这样可能不安全。
+注意！并不推荐为任何不可信的第三方可执行程序运行ldd，因为某些版本的ldd可能会直接调用可执行程序来明确其库文件依赖关系，这样可能不安全。
 
 取而代之的是用一个更安全的方式来显示一个未知应用程序二进制文件的库文件依赖，使用如下命令：
 
@@ -19,7 +19,7 @@ Linux有问必答--如何查看Linux上程序或进程用到的库
 
 ![](https://farm6.staticflickr.com/5552/14849218545_e3b667e742_o.png)
 
-查看运行进程的共享库依赖关系（注：这里缺少###的标题格式？）
+###查看运行进程的共享库依赖关系###
 
 如果你想要找出被一个运行中的进程载入的共享库，你可以使用pldd命令，它会显示出在运行时被载入一个进程里的所有共享对象。
 
@@ -40,6 +40,6 @@ Linux有问必答--如何查看Linux上程序或进程用到的库
 via: http://ask.xmodulo.com/check-library-dependency-program-process-linux.html
 
 译者：[KayGuoWhu](https://github.com/KayGuoWhu)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
