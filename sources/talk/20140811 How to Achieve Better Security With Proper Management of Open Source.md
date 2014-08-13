@@ -1,3 +1,4 @@
+[sailing]
 How to Achieve Better Security With Proper Management of Open Source
 ================================================================================
 ![Bill Ledingham is the Chief Technology Officer (CTO) and Executive Vice President of Engineering at Black Duck Software.](http://www.linux.com/images/stories/41373/Bill-Ledingham.jpg)

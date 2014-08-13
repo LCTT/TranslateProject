@@ -1,4 +1,4 @@
-修复Moka图标主题丢失的扬声器图标【快速提示】
+[小技巧]修复Moka图标主题丢失的扬声器图标
 ================================================================================
 
 [Moka][1]是一个漂亮的图标主题，它在[Ubuntu可用的最佳图标主题][2]中扮演着重要的角色。但在Ubuntu 14.04中，Moka有那么点小缺憾。如果你在Ubuntu 14.04的Unity中使用摩卡，你会发现用于调节声音的扬声器图标不见了：
@@ -28,7 +28,7 @@ via: http://itsfoss.com/fix-missing-speaker-icon-from-moka/
 
 原文作者：[Abhishek][a]
 
-译者：[GOLinux](https://github.com/GOLinux) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[GOLinux](https://github.com/GOLinux) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
