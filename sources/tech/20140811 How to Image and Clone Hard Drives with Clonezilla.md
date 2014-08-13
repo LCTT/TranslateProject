@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 How to Image and Clone Hard Drives with Clonezilla
 ================================================================================
 ![Figure 1: Creating a partition on the USB stick for Clonezilla.](http://www.linux.com/images/stories/41373/fig-1-gparted.jpeg)
