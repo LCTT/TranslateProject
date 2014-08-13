@@ -1,3 +1,4 @@
+zpl1025
 When Linux Was Perfect Enough
 ================================================================================
 The other day my colleague, friend and sometimes partner-in-crime, Ken Starks, published [an article][1] here on FOSS Force on one of his favorite gripes: things that don’t work right in Linux. This time he was complaining about a font issue in Mint when using KDE. This is nothing new from Ken. In the past he’s written other articles about broken aspects of various Linux distros that never seem to get fixed. It’s his contention that these “small” bugs, which remain unfixed release after release after release, are largely responsible for desktop Linux’s failure to take hold with the general public.
