@@ -1,4 +1,4 @@
-Linux常见问题与答案——如何检查我是否处于一个运行着的screen会话中
+Linux FAQ与答案：如何检查我是否处于一个运行着的screen会话中
 ================================================================================
 >**问题**：我经常使用screen命令来运行多个伪终端会话。好多次，我发现都记不得自己是否在一个screen会话中，还是在一个常规终端中。是否有一种简便的方法来检查我是否在一个运行着的screen会话中？
 
@@ -19,6 +19,6 @@ Linux常见问题与答案——如何检查我是否处于一个运行着的scr
 via: http://ask.xmodulo.com/check-running-screen-session.html
 
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
