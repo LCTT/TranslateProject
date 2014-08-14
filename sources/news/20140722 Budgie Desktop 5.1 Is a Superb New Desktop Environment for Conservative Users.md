@@ -1,3 +1,4 @@
+linuhap翻译中
 Budgie Desktop 5.1 Is a Superb New Desktop Environment for Conservative Users
 ================================================================================
 ![](http://i1-news.softpedia-static.com/images/news2/Budgie-Desktop-5-1-Is-a-Superb-New-Desktop-Environment-For-Conservative-Users-451477-2.jpg)
