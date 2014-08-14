@@ -1,3 +1,4 @@
+owen-carter translating
 Red Hat aims to standardize Linux for 64-bit ARM servers
 ================================================================================
 > Red Hat wants Linux for ARM servers to avoid the fragmentation that plagued Unix in decades past
