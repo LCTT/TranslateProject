@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Command Line Tuesdays – Part Eight
 ================================================================================
 Yo yo, geekos! Here we are, for the final chapter of our CLT hangout. Today, we’ll be talking about job control through which we’ll learn how to control processes running on our computer!
