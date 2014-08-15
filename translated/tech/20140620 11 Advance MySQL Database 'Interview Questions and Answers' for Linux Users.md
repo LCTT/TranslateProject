@@ -130,7 +130,7 @@ AND和OR在MySQL中被看作连接运算符
 
 ### 6. Oracle 和 MySQL该如何选择，为什么? ###
 
-**答**: 它们都有各自的优点和缺点。考虑到时间因素，我倾向于MySQL。
+**答**：它们都有各自的优点和缺点。考虑到时间因素，我倾向于MySQL。
 
 #### 选择MySQL而不选orcale的原因 ####
 
@@ -141,7 +141,7 @@ AND和OR在MySQL中被看作连接运算符
 
 ### 7. MySQL中如何得到当前日期? ###
 
-**答**: 在MySQL中获取当前日期就是如下的SELECT语句这么简单。
+**答**：在MySQL中获取当前日期就是如下的SELECT语句这么简单。
 
     mysql> SELECT CURRENT_DATE();
     
@@ -153,7 +153,7 @@ AND和OR在MySQL中被看作连接运算符
 
 ### 8. MySQL中如何将表导出为XML文件? ###
 
-**答**: 我们可以使用'-e'(export)选项来把MySQL表或整个数据库导出到XML文件。当处理大型表的时候我们可能需要手动导出，不过对于小表的话可以直接使用想phpMyAdmin等这样的工具。
+**答**：我们可以使用'-e'(export)选项来把MySQL表或整个数据库导出到XML文件。当处理大型表的时候我们可能需要手动导出，不过对于小表的话可以直接使用想phpMyAdmin等这样的工具。
 
     mysql -u USER_NAME -xml -e 'SELECT * FROM table_name' > table_name.xml
 
@@ -161,7 +161,7 @@ AND和OR在MySQL中被看作连接运算符
 
 ### 9. MySQL_pconnect是什么? 它和MySQL_connect有什么区别? ###
 
-**答**: MySQL_pconnect()打开一个持久的数据库连接，这意味着数据库不是在每次页面加载的时候被打开一个新连接，因此我们不能使用MySQL_close()来关闭一个持久的连接
+**答**：MySQL_pconnect()打开一个持久的数据库连接，这意味着数据库不是在每次页面加载的时候被打开一个新连接，因此我们不能使用MySQL_close()来关闭一个持久的连接
 
 MySQL_pconnect和MySQL_connect最简要的区别是：
 
@@ -169,7 +169,7 @@ MySQL_pconnect和MySQL_connect最简要的区别是：
 
 ### 10. 当你需要查看一个名为'mysql'的数据库中'user'表中的所有索引时，你会如何做? ###
 
-**答**: 下面的命令将会显示出‘user’表中所有的索引
+**答**：下面的命令将会显示出‘user’表中所有的索引
 
     mysql> show index from user;
     +-------+------------+----------+--------------+-------------+-----------+-------------+----------+--------+------+------------+---------+---------------+ 
@@ -182,7 +182,7 @@ MySQL_pconnect和MySQL_connect最简要的区别是：
 
 ### 11. 什么是CSV表? ###
 
-**答**: CSV是逗号分隔值（Comma-Separated Values）或也被称为字符分隔值（Character-Separated Values）的缩写。CSV表以纯文本和表格形式来存储数据。
+**答**：CSV是逗号分隔值（Comma-Separated Values）或也被称为字符分隔值（Character-Separated Values）的缩写。CSV表以纯文本和表格形式来存储数据。
 
 每一条记录都使用特定的分隔符隔开(如逗号,分号,...)，并且每条记录都有着顺序相同的列。CSV表最广泛地被用来存储用于导入和导出的电话联系人，并能够用来存储任何类型的纯文本数据。
 
@@ -192,7 +192,7 @@ MySQL_pconnect和MySQL_connect最简要的区别是：
 
 via: http://www.tecmint.com/mysql-advance-interview-questions/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[译者ID](https://github.com/译者ID) 校对：[ReiNoir](https://github.com/reinoir)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
