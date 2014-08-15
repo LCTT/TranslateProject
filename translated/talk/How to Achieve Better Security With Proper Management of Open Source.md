@@ -1,6 +1,7 @@
 How to Achieve Better Security With Proper Management of Open Source
 ================================================================================
 ![作者 Bill Ledingham 是 Black Duck Software 公司的首席技术官（CTO）兼工程执行副总裁](http://www.linux.com/images/stories/41373/Bill-Ledingham.jpg)
+
 Bill Ledingham 是 Black Duck Software 公司的首席技术官（CTO）兼工程执行副总裁。
 
 越来越多的公司意识到，要想比对手率先开发出高质量具有创造性的软件，关键在于积极使用开源项目。软件版本更迭要求市场推广速度足够快，成本足够低，而仅仅使用商业源代码已经无法满足这些需求了。如果不能选择最合适的开源软件集成到自己的项目里，一些令人称道的点子怕是永无出头之日了。
