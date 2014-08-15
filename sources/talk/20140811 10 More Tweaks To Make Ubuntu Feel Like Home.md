@@ -1,3 +1,4 @@
+[guodongxiaren translating]
 10 More Tweaks To Make Ubuntu Feel Like Home
 ================================================================================
 ![](http://main.makeuseoflimited.netdna-cdn.com/wp-content/uploads/2014/08/ubuntu-home-840x420.jpg?15f1a2)
