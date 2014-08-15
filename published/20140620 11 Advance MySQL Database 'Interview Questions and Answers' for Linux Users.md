@@ -192,7 +192,7 @@ MySQL_pconnect和MySQL_connect最简要的区别是：
 
 via: http://www.tecmint.com/mysql-advance-interview-questions/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[ReiNoir](https://github.com/reinoir)
+译者：[GOLinux](https://github.com/GOLinux) 校对：[ReiNoir](https://github.com/reinoir)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
