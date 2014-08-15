@@ -1,3 +1,4 @@
+[Translating by SteveArcher]
 Lime Text: An Open Source Alternative Of Sublime Text
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/08/Lime_Text_Editor.jpeg)
