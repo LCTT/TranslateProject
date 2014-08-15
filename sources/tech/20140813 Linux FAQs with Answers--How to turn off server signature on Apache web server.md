@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Linux FAQs with Answers--How to turn off server signature on Apache web server
 ================================================================================
 > **Question**: Whenever Apache2 web server returns error pages (e.g., 404 not found, 403 access forbidden pages), it shows web server signature (e.g., Apache version number and operating system info) at the bottom of the pages. Also, when Apache2 web server serves any PHP pages, it reveals PHP version info. How can I turn off these web server signatures in Apache2 web server? 
