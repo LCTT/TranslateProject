@@ -1,4 +1,4 @@
-Linux常见问题及答案——如何在Linux Mint Cinnamon桌面启用并配置桌面共享
+Linux有问必答：如何在Linux Mint Cinnamon启用桌面共享
 ================================================================================
 
 >**问题**：我试着在Linux Mint 17 Cinnamon桌面上通过Vino VNC服务器（vino-server）启用桌面共享。但是，我发现用来配置vino-server（如，共享选项，安全，通知开/关）的vino首选项工具已经不复存在了。同时，我也的Cinnamon桌面上也找不到共享菜单。我怎样才能在最新的Linux Mint 17 Cinnamon桌面上通过vino-server配置桌面共享？
@@ -20,7 +20,7 @@ Linux常见问题及答案——如何在Linux Mint Cinnamon桌面启用并配�
 ![](https://farm4.staticflickr.com/3916/14843965473_e68598b01b_z.jpg)
 
 最重要的是，点击“enabled”来激活桌面远程访问。除此之外，你还可以自定义其它选项。
-For example, you can enable VNC password authentication by changing the following fields:
+
 例如，你可以通过修改以下字段来启用VNC密码验证：
 
 - **authentication-methods**: 设置为 ['vnc']
@@ -49,6 +49,6 @@ For example, you can enable VNC password authentication by changing the followin
 via: http://ask.xmodulo.com/enable-configure-desktop-sharing-linux-mint-cinnamon-desktop.html
 
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
