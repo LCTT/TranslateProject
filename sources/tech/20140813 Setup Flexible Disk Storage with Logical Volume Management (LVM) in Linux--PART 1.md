@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Setup Flexible Disk Storage with Logical Volume Management (LVM) in Linux – PART 1
 ================================================================================
 **Logical Volume Management (LVM)** makes it easier to manage disk space. If a file system needs more space, it can be added to its logical volumes from the free spaces in its volume group and the file system can be re-sized as we wish. If a disk starts to fail, replacement disk can be registered as a physical volume with the volume group and the logical volumes extents can be migrated to the new disk without data loss.
