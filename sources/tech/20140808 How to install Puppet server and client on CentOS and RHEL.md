@@ -1,3 +1,4 @@
+[sailing]
 How to install Puppet server and client on CentOS and RHEL
 ================================================================================
 As a system administrator acquires more and more systems to manage, automation of mundane tasks gets quite important. Many administrators adopted the way of writing custom scripts, that are simulating complex orchestration software. Unfortunately, scripts get obsolete, people who developed them leave, and without an enormous level of maintenance, after some time these scripts will end up unusable. It is certainly more desirable to share a system that everyone can use, and invest in tools that can be used regardless of one's employer. For that we have several systems available, and in this howto you will learn how to use one of them - Puppet.
