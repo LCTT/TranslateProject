@@ -1,3 +1,4 @@
+[Translating by SteveArcher]
 Top 10 Free Linux Games
 ================================================================================
 If the term “Can I game on it?” has been bothering you while thinking to switch on Linux from Windows platform, then here is an answer for that – “Go for it!”. Thanks to the Open source community who has been consistently developing different genre games for Linux OS and the online content distribution platform – Steam, there is no dearth of good commercial games which are as fun to play on Linux as on its other counterparts (like Windows).
