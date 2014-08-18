@@ -22,7 +22,7 @@ via: http://itsfoss.com/lime-text-open-source-alternative/
 
 作者：[bhishek][a]
 译者：[SteveArcher](https://github.com/SteveArcher)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[ReiNoir](https://github.com/reinoir)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
