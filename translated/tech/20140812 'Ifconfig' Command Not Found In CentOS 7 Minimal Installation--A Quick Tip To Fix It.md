@@ -2,7 +2,7 @@ CentOS 7最小化安装后找不到‘ifconfig’命令——修复小提示
 ================================================================================
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/08/centos7-790x493.jpg)
 
-就像我们所知道的，“**ifconfig**”命令用于配置GNU/Linux系统的网络接口。它显示网络接口卡的详细信息，包括IP地址，MAC地址，以及网络接口卡状态之类。但是，该命令已经过时了，而且在最小化版本的RHEL 7以及它的克隆版本CentOS 7，Oracle Linux 7以和Scientific Linux 7中也找不到该命令。
+就像我们所知道的，“**ifconfig**”命令用于配置GNU/Linux系统的网络接口。它显示网络接口卡的详细信息，包括IP地址，MAC地址，以及网络接口卡状态之类。但是，该命令已经过时了，而且在最小化版本的RHEL 7以及它的克隆版本CentOS 7，Oracle Linux 7和Scientific Linux 7中也找不到该命令。 
 
 ### 在CentOS最小化服务器版本中如何查找网卡IP和其它详细信息？ ###
 
@@ -56,7 +56,7 @@ CentOS 7最小化系统，使用“**ip addr**”和“**ip link**”命令来�
 
 ### 在CentOS 7最小化服务器版本中如何启用并使用“ifconfig”命令？ ###
 
-如果你不知道在哪里可以找到ifconfig命令，请按照以下简单的步骤来找到它。首先，让我们找出哪个包提供了ifconfig命令。要完成这事，输入以下命令：
+如果你不知道在哪里可以找到ifconfig命令，请按照以下简单的步骤来找到它。首先，让我们找出哪个包提供了ifconfig命令。要完成这项任务，输入以下命令：
 
     yum provides ifconfig
 
@@ -117,7 +117,7 @@ via: http://www.unixmen.com/ifconfig-command-found-centos-7-minimal-installation
 
 作者：[Senthilkumar][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
