@@ -1,4 +1,4 @@
-10个调整让Ubuntu找到家的感觉
+10个调整让Ubuntu找到家的感觉 
 ================================================================================
 ![](http://main.makeuseoflimited.netdna-cdn.com/wp-content/uploads/2014/08/ubuntu-home-840x420.jpg?15f1a2)
 
@@ -24,7 +24,7 @@
 
     sudo apt-get install indicator-multiload
 
-然后在Dash里面找到它并且打开。
+然后在Dash里面找到它并且打开。 
 
 ### 天气指示器 ###
 
