@@ -1,3 +1,5 @@
+translating by cvsher
+
 How to Extend/Reduce LVM’s (Logical Volume Management) in Linux – Part II
 ================================================================================
 Previously we have seen how to create a flexible disk storage using LVM. Here, we are going to see how to extend volume group, extend and reduce a logical volume. Here we can reduce or extend the partitions in Logical volume management (LVM) also called as flexible volume file-system.
