@@ -22,7 +22,7 @@
 
 ![](https://farm4.staticflickr.com/3868/14837993244_0fa525eb35_z.jpg)
 
-现在让我们来安装Samba吧（下面的截图来自Debian 7[Wheezy]服务器上的安装）：
+现在让我们来安装Samba吧（下面的截图来自Debian 7[Wheezy]服务器上的安装）： 
 
 在Debian上：
 
