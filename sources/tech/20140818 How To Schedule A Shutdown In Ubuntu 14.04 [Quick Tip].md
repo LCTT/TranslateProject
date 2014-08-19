@@ -1,3 +1,5 @@
+[su-kaiyao]翻译中
+
 How To Schedule A Shutdown In Ubuntu 14.04 [Quick Tip]
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/08/Schedule_Shutdown_Ubuntu.jpeg)

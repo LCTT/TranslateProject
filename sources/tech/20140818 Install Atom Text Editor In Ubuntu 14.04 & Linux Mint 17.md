@@ -1,3 +1,5 @@
+[su-kaiyao]翻译中
+
 Install Atom Text Editor In Ubuntu 14.04 & Linux Mint 17
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/08/Install_Atom_In_Ubuntu_Linux_Mint.jpeg)
