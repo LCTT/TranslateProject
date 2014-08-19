@@ -1,10 +1,10 @@
-设置Samba文件服务器以使用Windows客户端
+怎样设置Samba文件服务器以使用Windows客户端
 ================================================================================
-根据[Samba][1]项目网站所述，Samba是一个开源/自由软件套件，提供了到SMB/CIFS客户端的无缝文件和打印服务。不同于其它SMB/CIFS网络协议部署（如HP-UX的LM服务器，OS/2的LAN服务器，或者VisionFS），Samba（及其源代码）是可以自由获取的（终端用户无需付费），允许在Linux/Unixt服务器和Windows/Unix/Linux客户端之间的互操作。
+根据[Samba][1]项目网站所述，Samba是一个开源/自由软件套件，提供了到SMB/CIFS客户端的无缝文件和打印服务。不同于其它SMB/CIFS网络协议部署（如HP-UX的LM服务器，OS/2的LAN服务器，或者VisionFS），Samba（及其源代码）是可以自由获取的（终端用户无需付费），允许在Linux/Unixt服务器和Windows/Unix/Linux客户端之间互操作。
 
 出于这些理由，Samba在不同操作系统（除了Linux）共存的网络中首选的文件服务器解决方案——最常见的结构是多个微软Windows客户端访问安装有Samba的Linux服务器，该情形也是本文将要解决的问题。
 
-请注意，另外一方面，如果我们的网络仅仅是由基于Unix的客户端（如Linux，AIX，或者Solaris，还可以举更多的例子）组成，我们可以考虑使用NFS（尽管在此种情况下Samba仍然是可选方案），它可以提供更快的速度。
+请注意，另外一方面，如果我们的网络仅仅是由基于Unix的客户端（如Linux，AIX，或者Solaris，等等）组成，我们可以考虑使用NFS（尽管在此种情况下Samba仍然是可选方案），它可以提供更快的速度。 
 
 ### 在Debian和CentOS中安装Samba ###
 
@@ -58,7 +58,7 @@
     public = yes
     writeable = yes
 
-我们现在必须重启Samba——以防万一——使用testparm命令来检查smb.conf文件的语法错误：
+我们现在必须重启Samba—以防万一—使用testparm命令来检查smb.conf文件的语法错误：
 
     # service samba restart
     # testparm 
@@ -113,25 +113,27 @@
 
 ![](https://farm4.staticflickr.com/3867/14837993054_081dc9b0dc_z.jpg)
 
-每个文件系统具有最多5种类型，能够强制使用的配额限制：用户软限制，用户硬限制，组软限制，组硬限制，以及宽限期限。
+每个文件系统最多有5种类型，能够强制使用的配额限制：用户软限制，用户硬限制，组软限制，组硬限制，以及宽限期限。
 
 我们现在将为/home文件系统启用磁盘配额，在/etc/fstab文件对应的/home文件系统行现存的默认选项后添加usrquota和grpquto挂载选项，然后重新挂载文件系统以令修改生效：
 
 ![](https://farm6.staticflickr.com/5561/14653806067_b8b0dc2333_z.jpg)
 
-接下来，我们需要在**/home**目录各自创建两个文件以用于作为用户和组配额的数据库文件：**aquota.user**和**aquota.group**。然后，我们将生成启用配合后每个文件系统的当前磁盘使用表：
+接下来，我们需要在**/home**目录创建两个文件以用于作为用户和组配额的数据库文件：**aquota.user**和**aquota.group**。然后，我们将生成启用配额后每个文件系统的当前磁盘使用表：
 
     # quotacheck -cug /home
     # quotacheck -avugm 
 
 ![](https://farm6.staticflickr.com/5584/14837265971_654e8f3bc0_o.png)
 
+尽管已经为/home文件系统启用磁盘配额，我们还没有给任何用户或组设置权限。检查现有用户/组的配额信息：
+
     # quota -u <username>
     # quota -g <groupname> 
 
 ![](https://farm6.staticflickr.com/5582/14653735848_8de88d69c4_o.png)
 
-最后，在这最后两步中，使用quotatool命令来为每个用户和/或组来分配磁盘配额（注意，该任务也可以使用edquota来完成，但是quotatool更为直接，更不易犯错）。
+在这最后几步中，使用quotatool命令来为每个用户和/或组来分配磁盘配额（注意，该任务也可以使用edquota来完成，但是quotatool更为直接，更不易犯错）。
 
 要为用户xmodulo设置软限制为4MB，硬限制为5MB，xmodulo组为10MB/15MB：
 
@@ -150,7 +152,7 @@ via: http://xmodulo.com/2014/08/samba-file-server-windows-clients.html
 
 作者：[Gabriel Cánepa][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
