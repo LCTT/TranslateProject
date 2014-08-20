@@ -12,96 +12,96 @@ Linux系统中使用 DD 命令测试 USB 和 SSD 硬盘的读写速度
 
 ### 测试方法 ###
 
-Mount the drive and navigate into it from the terminal. Then use the dd command to first write a file using fixed sized blocks. Then read the same file out using the same block site.
+挂载上驱动盘，终端上进入此盘目录下。然后使用 DD 命令，首先写入固定大小块的一个文件，接着读取这个文件。
 
-The general syntax of the dd command looks like this
+DD 命令通用语法格式如下：
 
     dd if=path/to/input_file of=/path/to/output_file bs=block_size count=number_of_blocks
 
-When writing to the drive, we simply read from /dev/zero which is a source of infinite useless bytes. And when read from the drive, we read the file written earlier and send it to /dev/null which is nowhere. In the whole process, dd keeps track of the speed with which the transfer takes place and reports it.
+当写入到驱动盘的时候，我们简单的从无穷无用字节的源 /dev/zero 读取，当从驱动盘读取的时候，我们读取的是刚才的文件，并把输出结果发送到无用的 /dev/null。在整个操作过程中， DD 命令会跟踪数据传输的速度并且报告出结果。
 
-### SSD ###
+### 固态硬盘 ###
 
-The SSD that we are using is a "Samsung Evo 120GB" ssd. It is a beginner level ssd that comes within a decent budget and is also my first SSD. It is also one of the best performing ssds, in the market.
+我们使用的是一块“三星 Evo 120G” 的固态硬盘。它性价比很高，很适合刚开始用固态硬盘的用户，也是我的第一块固态硬盘，并且在市场上表现的也非常不错。
 
-In this test the ssd is connected to a sata 2.0 port.
+这次实验中，我们把硬盘接在 SATA 2.0 端口上。
 
-#### Write speed ####
+#### 写入速度 ####
 
-Lets first write to the ssd
+首先让我们写入固态硬盘
 
     $ dd if=/dev/zero of=./largefile bs=1M count=1024
     1024+0 records in
     1024+0 records out
     1073741824 bytes (1.1 GB) copied, 4.82364 s, 223 MB/s
 
-Block size is actually quite large. You can try with smaller sizes like 64k or even 4k.
+的大小实际上是相当大的。你可以尝试用更小的尺寸如 64 K甚至是 4K 的。
 
-#### Read speed ####
+#### 读取速度 ####
 
-Now read back the same file. However, first clear the memory cache to ensure that the file is actually read from drive.
+现在读回这个文件。但是，得首先清除内存的缓存，以确保这个文件确实是从驱动盘读取的。
 
-Run the following command to clear the memory cache
+运行下面的命令来清除内存缓存
 
     $ sudo sh -c "sync && echo 3 > /proc/sys/vm/drop_caches"
 
-Now read the file
+现在读取此文件
 
     $ dd if=./largefile of=/dev/null bs=4k
     165118+0 records in
     165118+0 records out
     676323328 bytes (676 MB) copied, 3.0114 s, 225 MB/s
 
-The Arch Linux wiki has a page full of information about the read/write speed of various SSDs from different vendors like Intel, Samsung, Sandisk etc. Check it out at the following url.
+在 Arch Linux 的维基页上有一整页的关于从同的厂商，如英特尔、三星、Sandisk 等提供的各类固态硬盘的读/写速度的信息。点击如下的 url 可得到得到想着信息。
 
 [https://wiki.archlinux.org/index.php/SSD_Benchmarking][1]
 
 ### USB ###
 
-In this test we shall measure the read and write speed of ordinary usb/pen drives. The drives are plugged to standard usb 2 ports. The first one is a sony 4gb usb drive and the second is a strontium 16gb drive.
+此次实验我们会测量普通的 USB/随身笔的读写速度。驱动盘都是接入标准的 USB 2.0 端口的。首先用的是一个 4GB 大小的 sony USB 驱动盘，随后用的是一个 16GB 大小的 strontium 驱动盘。
 
-First plug the drive into the port and mount it, so that it is readable. Then navigate into the mount directory from the command line.
+首先把驱动盘插入端口，并挂载上，使其可读的。然后从命令行下面进入挂载的文件目录下。
 
-#### Sony 4GB - Write ####
+#### Sony 4GB - 写入 ####
 
-In this test, the dd command is used to write 10,000 chunks of 8 Kbyte each to a single file on the drive.
+这个实验中，用 DD 命令向驱动盘写入一个有 10000 块，每块 8K 字节的文件。
 
     # dd if=/dev/zero of=./largefile bs=8k count=10000
     10000+0 records in
     10000+0 records out
     81920000 bytes (82 MB) copied, 11.0626 s, 7.4 MB/s
 
-So the write speed is around 7.5 MBytes/s. This is a low figure.
+因此，写入速度约为7.5兆字节/秒。这是一个很低的数字。
 
-#### Sony 4GB - Read ####
+#### Sony 4GB - 读取 ####
 
-The same file is read back to test the read speed. Run the following command to clear the memory cache
+把相同的文件读取回来，测试速度。首先运行如下命令清除内存缓存
 
     $ sudo sh -c "sync && echo 3 > /proc/sys/vm/drop_caches"
 
-Now read the file using the dd command
+现在就可以使用 DD 命令来读取文件了
 
     # dd if=./largefile of=/dev/null bs=8k
     8000+0 records in
     8000+0 records out
     65536000 bytes (66 MB) copied, 2.65218 s, 24.7 MB/s
 
-The read speed comes out around 25 Mbytes/s which is a more or less the standard for cheap usb drives.
+读取速度出来大约是25兆字节/秒，这大致跟廉价 USB 驱动盘的标准相匹配吧。
 
-> USB 2.0 has a theoretical maximum signaling rate of 480 Mbits/s or 60 Mbytes/s. However due to various constraints the maximum throughput is restricted to around 280 Mbit/s or 35 Mbytes/s. Beyond this the actual speed achieved depends on the quality of the pen drives and other factors too.
+> USB2.0 理论上最大信号传输速率为480兆比特/秒，最小为60兆字节/秒。然而，由于各种限制实际传输速率大约280兆比特/秒和35兆字节/秒之间。除了这个，实际的速度还取决于驱动盘本身的质量好坏以及其他的因素。
 
-And the above usb drive was plugged inside a USB 2.0 port and it achieved a read speed of 24.7 Mbytes/s which is not very bad. But the write speed lags much behind
+上面实验中， USB 驱动盘插入USB 2.0 端口，读取的速度达到了 24.7兆字节/秒，这是很不错的读速度。但写入速度就不敢恭维了。
 
-Now lets do the same test with a Strontium 16gb drive. Strontium is another very cheapy brand, although usb drives are reliable.
+下面让我们用 Strontium 的 16GB 的驱动盘来做相同的实验。虽然 Strontium 的 USB 驱动盘很稳定，但它也是一款很便宜的品牌。
 
-#### Strontium 16gb write speed ####
+#### Strontium 16gb 盘写入速度 ####
 
     # dd if=/dev/zero of=./largefile bs=64k count=1000
     1000+0 records in
     1000+0 records out
     65536000 bytes (66 MB) copied, 8.3834 s, 7.8 MB/s
 
-Strontium 16gb read speed
+#### Strontium 16gb 盘读取速度 ####
 
     # sudo sh -c "sync && echo 3 > /proc/sys/vm/drop_caches"
     
@@ -110,9 +110,9 @@ Strontium 16gb read speed
     8000+0 records out
     65536000 bytes (66 MB) copied, 2.90366 s, 22.6 MB/s
 
-The read speed is lower than the Sony drive.
+它的读取速度就要比 Sony 的低了。
 
-### Resources ###
+### 参考资料 ###
 
 - [http://en.wikipedia.org/wiki/USB][2]
 - [https://wiki.archlinux.org/index.php/SSD_Benchmarking][1]
@@ -121,9 +121,9 @@ The read speed is lower than the Sony drive.
 
 ![](http://0.gravatar.com/avatar/e23f2767e6907e798da5b28694a2bf28?s=64&d=&r=G)
 
-About Silver Moon
+关于 Silver Moon
 
-Php developer, blogger and Linux enthusiast. He can be reached at [m00n.silv3r@gmail.com][e]. Or find him on [Google+][g]
+Php 开发者, 博主 和 Linux 爱好者. 通过 [m00n.silv3r@gmail.com][e] 或者 [Google+][g] 可联系到他。
 
 --------------------------------------------------------------------------------
 
