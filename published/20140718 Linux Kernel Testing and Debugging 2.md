@@ -1,4 +1,4 @@
-Linux 内核测试与调试 - 2
+Linux 内核测试与调试（2）
 ================================================================================
 ### 编译安装稳定版内核 ###
 
@@ -79,7 +79,7 @@ linux-next 状态的内核源码：
 
 ### 打补丁 ###
 
-Linux 内核的补丁是一个文本文件，包含新源码与老源码之间的改变量。每个补丁只包含自己依赖的源码的增量，除非它被特意包含进一系列补丁之中。打补丁方法如下：
+Linux 内核的补丁是一个文本文件，包含新源码与老源码之间的差异。每个补丁只包含自己所依赖的源码的改动，除非它被特意包含进一系列补丁之中。打补丁方法如下：
 
     patch -p1 < file.patch
 
@@ -101,6 +101,6 @@ Linux 内核的补丁是一个文本文件，包含新源码与老源码之间�
 
 via: http://www.linuxjournal.com/content/linux-kernel-testing-and-debugging?page=0,1
 
-译者：[bazz2](https://github.com/bazz2) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[bazz2](https://github.com/bazz2) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
