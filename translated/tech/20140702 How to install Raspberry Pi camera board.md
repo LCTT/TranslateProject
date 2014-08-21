@@ -94,7 +94,7 @@ raspivid 的输出是一段未压缩的 H.264 视频流，而且这段视频没�
 
 via: http://xmodulo.com/2014/07/install-raspberry-pi-camera-board.html
 
-译者：[ThomazL](https://github.com/ThomazL) 校对：[校对者id](https://github.com/校对者id)
+译者：[ThomazL](https://github.com/ThomazL) 校对：[reinoir](https://github.com/reinoir)
 
 本文由 [lctt](https://github.com/lctt/translateproject) 原创翻译，[linux中国](http://linux.cn/) 荣誉推出
 
