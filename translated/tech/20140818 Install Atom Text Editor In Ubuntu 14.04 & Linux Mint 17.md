@@ -15,7 +15,7 @@
 
 因为Atom正处于测试阶段，截止到我写这篇文章前，还没有Linux下的二进制文件。但是不用担心，你不需要亲自去编译这些代码（当然如果你乐意的话，你也可以这么做）。感谢[Webupd8 team’s][5]的努力，我们拥有一个可以很容易将Atom安装在32位和64位系统上的PPA
 
-打开终端，然后使用下面的命令行：
+打开终端，然后使用下面的命令行： 
 
 	sudo add-apt-repository ppa:webupd8team/atom
 	sudo apt-get update
