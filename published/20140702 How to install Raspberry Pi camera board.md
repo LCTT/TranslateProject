@@ -49,7 +49,7 @@
 
     $ raspistill -o keychain.jpg -t 2000 
 
-这句命令将会让摄像头曝光 2000ms 来拍摄一张照片，然后保存为 keychain.jpg。下面就是一张由 Pi Cam 拍摄的我的小熊公仔钥匙链。
+这句命令将在 2000ms 后拍摄一张照片，然后保存为 keychain.jpg。下面就是一张由 Pi Cam 拍摄的我的小熊公仔钥匙链。
 
 ![](https://farm4.staticflickr.com/3845/14530919095_ea0f37045a_z.jpg)
 
