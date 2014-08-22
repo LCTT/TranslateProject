@@ -9,7 +9,7 @@
 
 ### 阶段 1: 在linux上安装VirtualBox ###
 
-**1.** 大多数的Linux发行版中，官方源都有VirtualBox，例如在Ubuntu中安装
+**1.** 大多数的Linux发行版中，官方源都有VirtualBox，例如在Ubuntu中安装 
 
     $ sudo apt-get install virtualbox
 
