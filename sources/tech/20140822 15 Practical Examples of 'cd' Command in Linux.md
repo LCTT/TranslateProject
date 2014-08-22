@@ -1,3 +1,5 @@
+[su-kaiyao]翻译中
+
 15 Practical Examples of ‘cd’ Command in Linux
 ================================================================================
 In Linux **‘cd‘ (Change Directory)** command is one of the most important and most widely used command for newbies as well as system administrators. For admins on a headless server, ‘**cd**‘ is the only way to navigate to a directory to check log, execute a program/application/script and for every other task. For newbie it is among those initial commands they make their hands dirty with.
