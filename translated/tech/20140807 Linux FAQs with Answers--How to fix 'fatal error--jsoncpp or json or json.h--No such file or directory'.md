@@ -16,7 +16,7 @@ Linux常见问题与答案——如何修复“fatal error: jsoncpp/json/json.h:
 
     $ sudo yum install jsoncpp-devel
 
-在CentOS上，没有JsonCpp的预编译包。因此你可以通过以下方法从源码构建一个JsonCpp包并安装。
+在CentOS上，没有JsonCpp的预编译包。因此你可以通过以下源码构建一个JsonCpp包并安装。
 
     $ sudo yum install cmake
     $ git clone https://github.com/open-source-parsers/jsoncpp.git
@@ -32,7 +32,7 @@ Linux常见问题与答案——如何修复“fatal error: jsoncpp/json/json.h:
 via: http://ask.xmodulo.com/fix-fatal-error-jsoncpp.html
 
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
