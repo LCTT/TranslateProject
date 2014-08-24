@@ -1,3 +1,6 @@
+Translating-----------geekpi
+
+
 15 Practical Examples of ‘echo’ command in Linux
 ================================================================================
 **echo** is one of the most commonly and widely used built-in command for Linux bash and C shells, that typically used in scripting language and batch files to display a line of text/string on standard output or a file.
