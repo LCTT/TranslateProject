@@ -135,7 +135,7 @@ Linux 内核通过配置选项、调试用的 API、接口和框架来支持动�
 
 via:http://www.linuxjournal.com/content/linux-kernel-testing-and-debugging?page=0,3 
 
-译者：[bazz2](https://github.com/bazz2) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[bazz2](https://github.com/bazz2) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
