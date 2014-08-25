@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Linux Systemd - Start/Stop/Restart Services in RHEL / CentOS 7
 ================================================================================
 One of the major changes in RHEL  / CentOS 7.0 is the swtich to **systemd**, a system and service manager, that replaces SysV and Upstart used in previous releases of Red Hat Enterprise Linux. systemd is compatible with SysV and Linux Standard Base init scripts.
