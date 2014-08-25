@@ -1,3 +1,4 @@
+[translating by KayGuoWhu]
 How to remove file metadata on Linux
 ================================================================================
 A typical data file often has associated "metadata" which is descriptive information about the file, represented in the form of a set of name-value pairs. Common metadata include creator's name, tools used to generate the file, file creation/update date, location of creation, editing history, etc. EXIF (images), RDF (web resources), DOI (digital documents) are some of popular metadata standards.
