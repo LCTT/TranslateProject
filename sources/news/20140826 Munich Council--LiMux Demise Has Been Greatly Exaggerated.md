@@ -1,3 +1,4 @@
+[sailing]
 Munich Council: LiMux Demise Has Been Greatly Exaggerated
 ================================================================================
 ![LiMux – Munich City Council’s Official OS](http://www.omgubuntu.co.uk/wp-content/uploads/2014/07/limux-4-kde-desktop.jpg)
