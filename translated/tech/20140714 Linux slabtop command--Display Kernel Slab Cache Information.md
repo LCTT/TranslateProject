@@ -31,7 +31,7 @@ Linux内核需要为临时对象如任务或者设备结构和节点分配内存
 
 #### 2.3 输出一次： ####
 
--o或--once选项不会刷新输出，它仅仅将一次输出结果丢给STDOUT，然后退出。
+-o或--once选项不会刷新输出，它仅仅将一次输出结果丢给STDOUT，然后退出。 
 
 ![Output once and exit](http://linoxide.com/wp-content/uploads/2014/07/005.slabtop_output_once.png)
 
