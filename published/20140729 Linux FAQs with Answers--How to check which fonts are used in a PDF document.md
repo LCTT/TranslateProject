@@ -1,4 +1,4 @@
-Linux常见问题及答案——如何检查PDF文档中使用了哪种字体
+Linux有问必答：如何检查PDF中使用了哪种字体
 ================================================================================
 
 >**问题**：我想要知道PDF文件中使用了什么字体，或者嵌入了什么字体。Linux中有工具可以检查PDF文档中使用了哪种字体吗？
@@ -34,6 +34,6 @@ Linux常见问题及答案——如何检查PDF文档中使用了哪种字体
 via: http://ask.xmodulo.com/check-which-fonts-are-used-pdf-document.html
 
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
