@@ -1,3 +1,5 @@
+[su-kaiyao]翻译中
+
 Linux Terminal: speedtest_cli checks your real bandwidth speed.
 ================================================================================
 ![](http://www.speedtest.net/result/3700218352.png)
