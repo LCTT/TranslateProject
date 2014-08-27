@@ -1,4 +1,4 @@
-Linux 内核测试和调试 - 5
+Linux 内核测试和调试（5）
 ================================================================================
 ### 仿真环境下进行 Linux 电源管理子系统测试 ###
 
@@ -85,6 +85,6 @@ git bisect 是一个非常有用非常强大的工具，用于将 git 上的一�
 
 via: http://www.linuxjournal.com/content/linux-kernel-testing-and-debugging?page=0,4
 
-译者：[bazz2](https://github.com/bazz2) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[bazz2](https://github.com/bazz2) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

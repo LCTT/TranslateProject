@@ -1,12 +1,12 @@
-在Linux中为SFTP配置chroot环境
+在 Linux 中为非 SSH 用户配置 SFTP 环境
 ================================================================================
-在**某些环境**中，系统管理员想要允许极少数用户传输文件到Linux盒子中，而非ssh。要实现这一目的，我们可以使用**SFTP**，并为其构建chroot环境。
+在**某些环境**中，系统管理员想要允许极少数用户在可以传输文件到Linux机器中，但是不允许使用 SSH。要实现这一目的，我们可以使用**SFTP**，并为其构建chroot环境。
 
 ### SFTP & chroot背景： ###
 
-**SFTP**是值**SSH文件传输协议（SSH File Transfer protocol）或安全文件传输协议（Secure File Transfer Protocol）**，它提供了任何可信数据流下的文件访问、文件传输以及文件管理功能。当我们为SFTP配置chroot环境后，只有被许可的用户可以访问，并被限制到它们的**家目录**中，或者我们可以这么说：被许可的用户将处于牢笼环境中，在此环境中它们甚至不能切换它们的目录。
+**SFTP**是指**SSH文件传输协议（SSH File Transfer protocol）或安全文件传输协议（Secure File Transfer Protocol）**，它提供了可信数据流下的文件访问、文件传输以及文件管理功能。当我们为SFTP配置chroot环境后，只有被许可的用户可以访问，并被限制到他们的**家目录**中，换言之：被许可的用户将处于牢笼环境中，在此环境中它们甚至不能切换它们的目录。
 
-在本文中，我们将配置**RHEL 6.X** & **CentOS 6.X中的SFTP Chroot环境**。我们开启一个用户帐号‘**Jack**’，该用户将被允许在Linux盒子上传输文件，但没有ssh访问权限。
+在本文中，我们将配置**RHEL 6.X** 和 **CentOS 6.X中的SFTP Chroot环境**。我们开启一个用户帐号‘**Jack**’，该用户将被允许在Linux机器上传输文件，但没有ssh访问权限。
 
 ### 步骤：1  创建组 ###
 
@@ -14,7 +14,7 @@
 
 ### 步骤：2 分配附属组(sftp_users)给用户 ###
 
-如果用户在系统上不存在，使用以下命令创建：
+如果用户在系统上不存在，使用以下命令创建（ LCTT 译注：这里给用户指定了一个不能登录的 shell，以防止通过 ssh 登录）：
 
     [root@localhost ~]# useradd  -G sftp_users  -s /sbin/nologin  jack
     [root@localhost ~]# passwd jack
@@ -23,7 +23,7 @@
 
     [root@localhost ~]# usermod –G sftp_users  -s /sbin/nologin  jack
 
-**注意**：如果你想要修改用户的**默认家目录**，那么在useradd和usermod命令中使用‘**-d**’选项，并设置**合适的权限**。
+**注意**：如果你想要修改用户的**默认家目录**，那么可以在useradd和usermod命令中使用‘**-d**’选项，并设置**合适的权限**。
 
 ### 步骤：3 现在编辑配置文件 “/etc/ssh/sshd_config” ###
 
@@ -33,7 +33,7 @@
     Subsystem sftp internal-sftp
     
     # add Below lines  at the end of file
-    Match Group sftp_users
+      Match Group sftp_users
       X11Forwarding no
       AllowTcpForwarding no
       ChrootDirectory %h                      
@@ -42,7 +42,7 @@
 #### 此处： ####
 
 - **Match Group sftp_users** – 该参数指定以下的行将仅仅匹配sftp_users组中的用户
-- **ChrootDirectory %h** – 该参数指定用户验证后用于chroot环境的路径（默认的用户家目录）。对于Jack，该路径就是/home/jack。
+- **ChrootDirectory %h** – 该参数指定用户验证后用于chroot环境的路径（默认的用户家目录）。对于用户 Jack，该路径就是/home/jack。
 - **ForceCommand internal-sftp** – 该参数强制执行内部sftp，并忽略任何~/.ssh/rc文件中的命令。
 
 重启ssh服务
@@ -82,7 +82,7 @@ via: http://www.linuxtechi.com/configure-chroot-sftp-in-linux/
 
 原文作者：[Pradeep Kumar][a]
 
-译者：[GOLinux](https://github.com/GOLinux) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[GOLinux](https://github.com/GOLinux) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

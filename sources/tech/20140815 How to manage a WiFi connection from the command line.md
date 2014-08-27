@@ -1,3 +1,4 @@
+(translating by runningwater)
 How to manage a WiFi connection from the command line
 ================================================================================
 Whenever you install a new Linux distribution on a computer, it is in general recommended that you connect to the internet via a wired connection. There are two main reasons for this: one, your wireless adapter may not have the right driver loaded; second, if you are installing from the command line, managing WiFi is scary. I always tried to avoid dealing with WiFi over the command line. But in the Linux world, there is no place for fear. If you do not know how to do something, that is the only reason you need to go ahead and learn it. So I forced myself to learn how to manage a WiFi connection from the command line on Linux.
@@ -67,7 +68,7 @@ What other ways would you recommend to connect via WiFi from the command line? P
 via: http://xmodulo.com/2014/08/manage-wifi-connection-command-line.html
 
 作者：[Adrien Brochard][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
