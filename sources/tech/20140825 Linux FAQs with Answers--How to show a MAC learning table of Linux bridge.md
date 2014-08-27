@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Linux FAQs with Answers--How to show a MAC learning table of Linux bridge
 ================================================================================
 > **Question**: I would like to check MAC address learning status of a Linux bridge that I created with brctl tool. How can I view the MAC learning table (or forwarding table) of a Linux bridge? 
