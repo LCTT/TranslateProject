@@ -8,7 +8,7 @@ Linux 常见问题（有答案的哦）-- 如何为sudo命令定义PATH环境变
 
 为了改变PATH在sudo会话中的初始值，打开/etc/sudoers文件并编辑，找到"secure_path"一行，"secure_path"中包含的路径就将在sudo会话中的PATH变量中生效。
 
-添加所需要的路径(如 /usr/local/bin）到"secure_path"下，在开篇所遇见的问题就将迎刃而解。
+添加所需要的路径(如 /usr/local/bin）到"secure_path"下，在开篇所遇见的问题就将迎刃而解。 
     Defaults    secure_path = /sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin
 
 
