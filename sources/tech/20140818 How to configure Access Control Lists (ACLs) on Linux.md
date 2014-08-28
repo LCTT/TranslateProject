@@ -1,3 +1,5 @@
+    Vic020
+
 How to configure Access Control Lists (ACLs) on Linux
 ================================================================================
 Working with permissions on Linux is rather a simple task. You can define permissions for users, groups or others. This works really well when you work on a desktop PC or a virtual Linux instance which typically doesn't have a lot of users, or when users don't share files among themselves. However, what if you are a big organization where you operate NFS or Samba servers for diverse users. Then you will need to be neat picky and set up more complex configurations and permissions to meet the requirements of your organization.
