@@ -1,3 +1,4 @@
+[toly]
 Linus Torvalds is my hero, says 13 year old Zachary DuPont
 ================================================================================
 ![](http://www.themukt.com/wp-content/uploads/2014/08/Linus_torvalds_zach_1.jpg)
