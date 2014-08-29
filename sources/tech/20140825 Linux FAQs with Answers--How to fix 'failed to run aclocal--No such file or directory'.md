@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Linux FAQs with Answers--How to fix “failed to run aclocal: No such file or directory”
 ================================================================================
 > **Question**: I am trying to build a program on Linux. The development release of the program comes with "autogen.sh" script. When I run it to create configure script, however, I am getting the following error:
