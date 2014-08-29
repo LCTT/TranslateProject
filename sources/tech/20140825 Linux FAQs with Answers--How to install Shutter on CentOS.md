@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Linux FAQs with Answers--How to install Shutter on CentOS
 ================================================================================
 > **Question**: I would like to try out Shutter screenshot program on my CentOS desktop. However, when I tried to install Shutter with yum, it says "No package shutter available." How can I install Shutter on CentOS? 
