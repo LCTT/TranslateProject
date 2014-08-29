@@ -3,7 +3,7 @@
 In our past following articles, we’ve shown some useful articles on some funny commands of Linux, which shows that Linux is not as complex as it seems and can be fun if we know how to use it. Linux command line can perform any complex task very easily and with perfection and can be interesting and joyful.
 
 - [20 Funny Commands of Linux – Part I][1]注，此篇的原文应该翻译过，文件名应该是：20 Funny Commands of Linux or Linux is Fun in Terminal
-- [Fun in Linux Terminal – Play with Word and Character Counts][2]
+- [Fun in Linux Terminal – Play with Word and Character Counts][2]注：这篇文章刚刚补充上
 
 ![Funny Linux Commands](http://www.tecmint.com/wp-content/uploads/2014/08/Funny-Linux-Commands.png)
 Funny Linux Commands
