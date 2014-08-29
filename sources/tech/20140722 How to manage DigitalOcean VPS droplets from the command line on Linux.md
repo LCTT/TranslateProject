@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 How to manage DigitalOcean VPS droplets from the command line on Linux
 ================================================================================
 [DigitalOcean][1] is one of the [hottest][2] new kids in the block in the cloud VPS hosting market. While not offering as comprehensive service portfolio as Amazon Web Services and the likes, DigitalOcean is already a strong contender for the best Linux-based cloud VPS service targeted at small businesses and developers, thanks to their competitive pricing and user-friendly management interface.
