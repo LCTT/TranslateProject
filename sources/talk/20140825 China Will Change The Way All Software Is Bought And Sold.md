@@ -1,3 +1,5 @@
+chi1shi2 is translating.
+
 China Will Change The Way All Software Is Bought And Sold
 ================================================================================
 ![](http://a5.files.readwrite.com/image/upload/c_fill,h_900,q_70,w_1600/MTE5NDg0MDYyMzQ4MzE0MTI3.jpg)
