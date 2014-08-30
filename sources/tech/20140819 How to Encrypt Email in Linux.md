@@ -1,3 +1,4 @@
+[translating by KayGuoWhu]
 How to Encrypt Email in Linux
 ================================================================================
 ![Kgpg provides a nice GUI for creating and managing your encryption keys.](http://www.linux.com/images/stories/41373/fig-1-kgpg.png)
