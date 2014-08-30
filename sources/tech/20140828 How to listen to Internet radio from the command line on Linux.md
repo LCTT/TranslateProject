@@ -1,3 +1,4 @@
+translating by cvsher(2014-08-30)
 How to listen to Internet radio from the command line on Linux
 ================================================================================
 For those of you system admins and Linux aficionados who spend a great deal of your time in front of Linux screen, do you know that ambient noise from online/local radio station can actually be a productivity booster? Believe or not, it is known that moderate level of ambient sound such as music or chatter can actually fuel your creativity at your workplace. If you like the idea of working with music on, maybe this tutorial is useful to you, as I am going to show you **how to listen to Pandora online radio from the command lin**e.
