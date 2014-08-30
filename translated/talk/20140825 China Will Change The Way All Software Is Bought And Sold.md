@@ -53,7 +53,7 @@
 原文: http://readwrite.com/2014/08/12/china-opensource-software-ip-programmers-united-states
 
 作者：[Matt Asay][a]
-译者：[译者ID](https://github.com/chi1shi2)
+译者：[chi1shi2](https://github.com/chi1shi2)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
