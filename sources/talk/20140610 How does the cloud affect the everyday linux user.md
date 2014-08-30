@@ -1,3 +1,5 @@
+barney-ro translating 
+
 How does the cloud affect the everyday linux user?
 ================================================================================
 ### Introduction ###
