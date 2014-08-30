@@ -61,7 +61,7 @@ paniobar的基本用法是输入如下命令：
 
 ![](https://farm6.staticflickr.com/5559/14993326991_ccdffd0fa6_z.jpg)
 
-###将Pianobar配置为自动启动###
+###将Pianobar配置为自动登录###
 你可以再一个单独的配置文件中配置Pianobar的各项默认配置。例如：你可以将你的登录信息配置到配置文件中，这样你就不用每次都要手动输入。下面是如何创建一个配置文件的示例：
 
 >  $ mkdir -p ~/.config/pianobar
