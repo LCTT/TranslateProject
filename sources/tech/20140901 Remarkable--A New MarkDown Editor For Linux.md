@@ -1,3 +1,5 @@
+[su-kaiyao]翻译中
+
 Remarkable: A New MarkDown Editor For Linux
 ================================================================================
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/08/remarkable-about.png)
