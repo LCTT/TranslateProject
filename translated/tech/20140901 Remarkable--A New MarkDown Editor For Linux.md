@@ -1,9 +1,9 @@
-Remarkable：一个新的Linux平台MarkDown编辑器
+Remarkable：Linux平台下一个新的MarkDown编辑器
 ===
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/08/remarkable-about.png)
 
-[Remarkable][1]是一个全新，免费，全功能的Linux发行版Markdown编辑器。它拥有许多特性，比如：在线预览，这让你的Markdown编辑变得更加容易。它是一个轻量级的编辑器，而且它还有一个简洁的用户界面(UI)。
+[Remarkable][1]是一个全新，免费，功能齐全的Linux发行版Markdown编辑器。它拥有许多特性，比如：在线预览，这让你的Markdown编辑变得更加容易。它是一个轻量级的编辑器，而且它还有一个简洁的用户界面(UI)。
 
 下面是Remarkable的主要特性：
 
@@ -22,7 +22,7 @@ Remarkable：一个新的Linux平台MarkDown编辑器
 
 ### 安装 ###
 
-根据你不同的Linux发行版本，Remarkable拥有许多可供使用的编译源，下面是不同Linux发行版以及它们对应的安装文件
+根据不同的Linux发行版本，Remarkable拥有许多可供使用的编译源，下面是不同Linux发行版以及它们对应的安装文件
 
 #### Ubuntu / Linux Mint: ####
 
@@ -43,7 +43,7 @@ via: http://www.unixmen.com/remarkable-new-markdown-editor-linux/
 
 作者：[Enock Seth Nyamador][a]
 译者：[su-kaiyao](https://github.com/su-kaiyao)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
