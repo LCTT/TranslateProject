@@ -36,7 +36,7 @@ Swapnil Bhartiya和扎克里杜邦
 via: http://www.themukt.com/2014/08/24/linus-torvalds-hero-says-13-years-old-zachary-dupont/
 
 作者：[wapnil Bhartiya][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[luoyutiantang](https://github.com/luoyutiantang)
 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
