@@ -1,3 +1,5 @@
+Mikecoder Translating...
+
 Fun in Linux Terminal – Play with Word and Character Counts
 ================================================================================
 Linux command line has a lot of fun around itself and many tedious task can be performed very easily yet with perfection. Playing with words and characters, their frequency in a text file, etc is what we are going to see in this article.
