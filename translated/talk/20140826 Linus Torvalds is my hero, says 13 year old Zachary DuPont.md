@@ -1,6 +1,5 @@
 “林纳斯·托瓦兹是我的英雄”13岁的扎卡里杜邦说
 ================================================================================
-![](http://www.themukt.com/wp-content/uploads/2014/08/Linus_torvalds_zach_1.jpg)
 
 Zachary DuPon是一名6年级的学生，他马上年满13岁。他过去是Arch liunx的用户，并期待着尽快安装Gentoo Linux。
 
