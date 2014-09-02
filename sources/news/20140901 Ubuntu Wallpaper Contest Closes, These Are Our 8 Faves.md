@@ -1,3 +1,5 @@
+Translating By lfzark
+
 Ubuntu Wallpaper Contest Closes, These Are Our 8 Faves
 ================================================================================
 **Put your lens caps on, your stylus down, unplug your Wacom tablets and step away from the GIMP: the [Ubuntu 14.10 Wallpaper Contest][1] is now over.**
