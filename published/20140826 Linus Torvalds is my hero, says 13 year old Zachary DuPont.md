@@ -7,7 +7,7 @@ Zachary DuPon的故事是这样的-他的学校组织了一个活动，要求学
 
 由于林纳斯在家工作，他没有透露自己的办公地点，Zach的信送到了Linux基金会，工作人员会在发送给林纳斯之前浏览全部的信件内容。当基金会看到了这封信，他们联系了扎克的学校，慷慨地邀请他做客LinuxCon，这样他就能见到他的英雄本人。
 
-linux的执行董事长Jim Zemlin在主题小组讨论过后，引领Zach来到人群中。Zach见到了林纳斯并得到了linux之父签名的linux圣经；他也得到了林纳斯签名自传《只为了好玩：一次偶然的革命》[1]
+linux的执行董事长Jim Zemlin在主题小组讨论过后，引领Zach来到人群中。Zach见到了林纳斯并得到了linux之父签名的《linux圣经》；他也得到了林纳斯签名自传[《只为了好玩：一次偶然的革命》][1]
 
 ![Linus Torvalds signing a book for Zachary DuPont](http://www.themukt.com/wp-content/uploads/2014/08/Linus_torvalds_zach_1.jpg)
 林纳斯·托瓦兹为扎克里杜邦签名
@@ -16,7 +16,7 @@ linux的执行董事长Jim Zemlin在主题小组讨论过后，引领Zach来到�
 扎克里杜邦一家
 
 ![Swapnil Bhartiya with Zachary DuPont](http://www.themukt.com/wp-content/uploads/2014/08/swapnil_zach.jpg)
-Swapnil Bhartiya和扎克里杜邦
+本文作者 Swapnil Bhartiya和扎克里杜邦
 
 我不想失去这个机会，所以他们和林纳斯交谈一结束，我就走向这个家庭，安排了这次视频采访。我是一个两岁孩子的父亲，而作为一名父亲，我着实对Zach自信、清晰，明确的思想所感到惊讶。
 
@@ -24,18 +24,18 @@ Swapnil Bhartiya和扎克里杜邦
 
 - 他使用Arch linux。
 - 他打算一旦他擅长编程就做出自己的贡献。
-- 他没有提交任何漏洞报告，并且他认为他应该这样做。他也表示他没有出现任何漏洞。
+- 他没有提交任何漏洞报告，并且他认为他应该这样做。他也表示他没有发现任何漏洞。
 - 他对WINE没太大的兴趣。
 - 他喜欢KDE的原始桌面，但是它在他的网关机器上工作不是很好。
 - 他是一个装有XFCE桌面环境的Debian GNU/linux用户。
 
-林纳斯也许是扎克英雄，但是扎克是整个GNU/linux和自由软件社区的英雄，他不断地提醒我们，未来尽在我们掌握中。
+林纳斯也许是扎克的英雄，但是扎克是整个GNU/linux和自由软件社区的英雄，他不断地提醒我们，未来尽在我们掌握中。
 
 --------------------------------------------------------------------------------
 
 via: http://www.themukt.com/2014/08/24/linus-torvalds-hero-says-13-years-old-zachary-dupont/
 
-作者：[wapnil Bhartiya][a]
+作者：[Swapnil Bhartiya][a]
 译者：[luoyutiantang](https://github.com/luoyutiantang)
 校对：[Caroline](https://github.com/carolinewuyan)
 
