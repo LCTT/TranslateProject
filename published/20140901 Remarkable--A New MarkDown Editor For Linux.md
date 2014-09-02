@@ -8,21 +8,21 @@ Remarkable：Linux平台下一个新的MarkDown编辑器
 下面是Remarkable的主要特性：
 
 - 实时预览
-- 支持Github Markdown
+- 支持Github Markdown 语法
 - 支持导出为PDF和HTML
 - 自定义CSS
 - 语法高亮
 - 高度可定制
-- 活字计数
+- 字数实时计数
 - 键盘快捷键
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/08/remarkable-full.png)
 
-你可以观看[这部YouTube视频][2]了解Linux下的Remakable
+你可以观看[这部YouTube视频][2]（请自备梯子:-]）了解Linux下的Remakable。
 
 ### 安装 ###
 
-根据不同的Linux发行版本，Remarkable拥有许多可供使用的编译源，下面是不同Linux发行版以及它们对应的安装文件
+根据不同的Linux发行版本，Remarkable拥有许多可供使用的安装源，下面是不同Linux发行版以及它们对应的安装文件
 
 #### Ubuntu / Linux Mint: ####
 
@@ -34,9 +34,10 @@ Remarkable：Linux平台下一个新的MarkDown编辑器
 
 #### Arch Linux (AUR): ####
 
-    sudo yaourt -S remarkable
+	sudo yaourt -S remarkable
 
-享受吧！
+喜欢吗？
+
 ---
 
 via: http://www.unixmen.com/remarkable-new-markdown-editor-linux/
