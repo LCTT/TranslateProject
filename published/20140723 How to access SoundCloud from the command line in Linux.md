@@ -1,6 +1,6 @@
 如何在Linux命令行下访问SoundCloud
 ================================================================================
-如果你喜欢流媒体音乐和原创音乐，你不能错过[SoundCloud][1]。这家云流媒体服务总部设在德国，这对任何音乐爱好者都非常有名且完善。自然，作为一个Linux爱好者，你可能想知道如何在Linux中加入你对音乐的热情。作为一个解决方案，我建议你使用Soundcloud2000，**SoundCloud的命令行客户端**脱胎于[Music Hack Day Stockholm '13][2]。
+如果你喜欢流媒体音乐和原创音乐，你不能错过[SoundCloud][1]。这家云流媒体服务总部设在德国，这对任何音乐爱好者都非常有名，且功能完善。自然，作为一个Linux爱好者，你可能想知道如何在Linux中体现你对音乐的热情。作为一个解决方案，我建议你使用Soundcloud2000，这是一个脱胎于[Music Hack Day Stockholm '13][2]的**SoundCloud的命令行客户端**。
 
 ### 安装 ###
 
@@ -43,24 +43,24 @@ Soundcloud2000非常容易使用。有些人甚至会说简单。我喜欢它的
 
 ![](https://farm4.staticflickr.com/3861/14494436719_b5536f7b67_z.jpg)
 
-这可能是Soundcloud2000的主要默认之一。而导航没有优化过，我寄予厚望的改善和支持的软件还是很年轻的。
+这可能是Soundcloud2000的主要缺陷之一。虽然导航没有优化过，但是我对这个很年轻的软件的改善和支持还是寄予厚望的。
 
-### 红利 ###
+### 奖励 ###
 
-另外一个额外的红利：如果你喜欢在终端上使用SoundCloud的想法，但不想安装任何额外的软件（也许你不能），我劝你去[cmd.fm][6]。该网站是一个伪装的SoundCloud，因为它隐藏在一个shell接口后。
+另外一个额外的奖励：如果你喜欢在终端上使用SoundCloud的想法，但不想安装任何额外的软件（也许你不能），我劝你去[cmd.fm][6]。该网站是一个伪装的SoundCloud，它隐藏在一个shell界面后。
 
 [![](https://farm6.staticflickr.com/5580/14494448218_a16b05e3ee_z.jpg)][7]
 
 输入“help”可以得到命令列表，这比Soundcloud2000长很多。比如，我看到：
 
-- _genres to list all genres
-- _play random to play a random track
-- _pause to pause the current track
-- _playlist new to make a new playlist
-- _loop to loop current track
-- _cinema to watch and ASCII version of Star Wars which completely blew my mind. 
+- _genres 列出所有流派
+- _play random 随机播放
+- _pause 暂停播放
+- _playlist new 建立新的播放节目单
+- _loop 循环播放
+- _cinema 如同星球大战一样的字幕
 
-它甚至支持通过tab键自动完成流派
+它甚至支持通过tab键自动补完流派名称
 
 最后，Soundcloud2000的确是一个整洁的程序。我们可以原谅其目前的缺陷，因为它还年轻。我真的希望它会成长，并包含更多的功能（并从潜在的cmd.fm得到的灵感）。
 
@@ -74,7 +74,7 @@ via: http://xmodulo.com/2014/07/access-soundcloud-command-line-linux.html
 
 原文作者：[Adrien Brochard][a]
 
-译者：[geekpi](https://github.com/geekpi) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
