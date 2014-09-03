@@ -1,3 +1,4 @@
+[Translating by SteveArcher]
 KDE Plasma 5—For those Linux users undecided on the kernel’s future
 ================================================================================
 > Review—new release straddles traditional desktop needs, long term multi-device plans.
