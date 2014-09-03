@@ -31,7 +31,7 @@
 
 >/usr/local/lib
 
-重载所有的共享库
+重载所有的共享库 
 
 就这样，Pianobar已经在Fedora系统中安装完成。
 
