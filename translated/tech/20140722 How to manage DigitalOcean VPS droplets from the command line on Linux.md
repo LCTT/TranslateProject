@@ -156,7 +156,7 @@ Tugboat要求Ruby 1.9及更高版本，你需要升级Ruby来解决该问题。�
 
 /usr/local/share/ruby/site_ruby/rubygems/core_ext/kernel_require.rb:55:in `require': cannot load such file -- json/pure (LoadError)
 
-安装以下gem来修复该问题。
+安装以下gem来修复该问题。 
 
     $ sudo gem install json_pure 
 
