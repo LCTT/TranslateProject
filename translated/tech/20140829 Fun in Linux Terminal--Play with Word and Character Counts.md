@@ -1,20 +1,18 @@
-Fun in Linux Terminal – Play with Word and Character Counts
+Linux终端的乐趣之把玩Word Counts
 ================================================================================
-Linux command line has a lot of fun around itself and many tedious task can be performed very easily yet with perfection. Playing with words and characters, their frequency in a text file, etc is what we are going to see in this article.
+Linux 命令行有很多的乐趣，我们可以很容易并且完善地执行很多繁琐的任务。比如，我们计算一个文本文件中字和字符的出现频率，则是我们打算在这篇文章中讲到的。
 
-The only command that comes to our mind, for tweaking Linux command line to manipulate words and characters from a text file is [wc command][1].
+立刻来到我们脑海的命令，计算字和字符在一个文本文件中出现频率的 Linux 命令是 [wc 命令] [1]。
 
 ![Fun with Word and Letter Counts in Shell](http://www.tecmint.com/wp-content/uploads/2014/03/Linux-Word-Count.png)
 
-A ‘**wc**‘ command which stands for word count is capable of Printing Newline, word & byte counts from a text file.
-
-To work with the small scripts to analyze text file, we must have a text file. To maintain uniformity, we are creating a text file with the output of man command, as described below.
+在使用的脚本来分析文本文件之前，我们必须有一个文本文件。为了保持一致性，我们将创建一个文本文件，man命令的输出如下所述。
 
     $ man man > man.txt
 
-The above command creates a text file ‘**man.txt**‘ with the content of ‘**manual page**‘ for ‘man‘ command.
+以上命令是将man命令的使用方式导入到**man.txt**文件里。
 
-We want to check the most common words, in the above created ‘**Text File**‘ by running the below script.
+我们希望能得到最平常的单词，对之前我们新建的文件执行如下脚本。
 
     $ cat man.txt | tr ' '  '\012' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]' | grep -v '[^a-z]' | sort | uniq -c | sort -rn | head
 
@@ -31,9 +29,9 @@ We want to check the most common words, in the above created ‘**Text File**‘
     64 if 
     63 be
 
-The above one liner simple script shows, ten most frequently appearing words and their frequency of appearance, in the text file.
+上面的脚本，输出了最常使用的十个单词。
 
-How about breaking down a word into individual using following command.
+如何看单个的字母呢？那就用如下的命令。
 
     $ echo 'tecmint team' | fold -w1
 
@@ -51,9 +49,9 @@ How about breaking down a word into individual using following command.
     a 
     m
 
-**Note**: Here, ‘-w1′ is for width.
+**Note**: `-w1`只是设定了长度
 
-Now we will be breaking down every single word in a text file, sort the result and get the desired output with the frequency of ten most frequent characters.
+现在我们将从那个文本文件中掰下来的每一个字母，对结果进行排序，得到所需的输出频率的十个最常见的字符。
 
     $ fold -w1 < man.txt | sort | uniq -c | sort -rn | head
 
@@ -70,7 +68,7 @@ Now we will be breaking down every single word in a text file, sort the result a
     1224 r
     1021 l
 
-How about getting most frequent characters in the text file with uppercase and lowercase differently along with their occurrence frequency.
+如何区分大小写呢？之前我们都是乎略大小写的。所以，用如下命令。
 
     $ fold -w1 < man.txt | sort | tr '[:lower:]' '[:upper:]' | uniq -c | sort -rn | head -20
 
@@ -97,7 +95,7 @@ How about getting most frequent characters in the text file with uppercase and l
     352 Y 
     344 .
 
-Check the above output, where punctuation mark is included. Lets strip out punctuation, with ‘**tr**‘ command. Here we go:
+请检查上面的输出，标点符号居然包括在内。让我们干掉他，用**tr** 命令。GO:
 
     $ fold -w1 < man.txt | tr '[:lower:]' '[:upper:]' | sort | tr -d '[:punct:]' | uniq -c | sort -rn | head -20
 
@@ -124,7 +122,7 @@ Check the above output, where punctuation mark is included. Lets strip out punct
        504 G 
        352 Y
 
-Now I have three text files, lets run the above one liner script to see the output.
+现在，我们有了三个文本，那就让我们用如下命令查看结果吧。
 
     $ cat *.txt | fold -w1 | tr '[:lower:]' '[:upper:]' | sort | tr -d '[:punct:]' | uniq -c | sort -rn | head -8
 
@@ -139,7 +137,7 @@ Now I have three text files, lets run the above one liner script to see the outp
        1632 S 
        1580 O
 
-Next we will be generating those infrequent letters that are at least ten letters long. Here is the simple script.
+下一步我们将会生成那些罕见的至少十个字母长的单词。以下是简单的脚本：
 
     $ cat man.txt | tr '' '\012' | tr '[:upper:]' '[:lower:]' | tr -d '[:punct:]' | tr -d '[0-9]' | sort | uniq -c | sort -n |  grep -E '..................' | head
 
@@ -156,18 +154,17 @@ Next we will be generating those infrequent letters that are at least ten letter
     1               activate local mode  format and display  local  manual  files 
     1               acute accent
 
-**Note**: The more and more dots in the above script till all the results are generated. We can use .{10} to get ten character matches.
+**Note**: 上面的.越来越多，其实，我们可以使用.{10} 得到同样的效果。
 
-These simple scripts, also make us know most frequent appearing words and characters in English.
+这些简单的脚本，让我们知道最频繁出现的单词和英语中的字符。
 
-That’s all for now. I’ll be here again with another interesting and off the beat topic worth knowing, which you people will love to read. Don’t forget to provide us with your valuable feedback in comment section, below.
-
+这就是现在。我会在这里再一次提到另一个有趣的话题，你应该会喜欢读。还有别忘了向我们提供您的宝贵意见的评论部分。
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/play-with-word-and-character-counts-in-linux/
 
 作者：[Avishek Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[MikeCoder](https://github.com/MikeCoder)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
