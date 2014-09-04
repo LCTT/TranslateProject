@@ -1,3 +1,4 @@
+[Translating by SteveArcher]
 The Masked Avengers
 ================================================================================
 > How Anonymous incited online vigilantism from Tunisia to Ferguson.
