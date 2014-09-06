@@ -1,3 +1,6 @@
+Translating-----------geekpi
+
+
 Linux FAQs with Answers--How to set a static MAC address on VMware ESXi virtual machine
 ================================================================================
 > **Question**: I want to assign a static MAC address to a virtual machine (VM) on VMware ESXi. However, when I attempt to start a VM with a static MAC address, the VM fails to start and throws an error "00:0c:29:1f:4a:ab is not an allowed static Ethernet address. It conflicts with VMware reserved MACs". How can I set a static MAC address on VMware ESXi VMs? 
