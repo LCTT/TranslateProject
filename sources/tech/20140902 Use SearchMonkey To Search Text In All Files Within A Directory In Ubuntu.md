@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Use SearchMonkey To Search Text In All Files Within A Directory In Ubuntu
 ================================================================================
 At times we need to search files which contain some particular text or words in them. This often happens if you are a developer or programmer. Now, one can always use [Linux commands to find all files containing specific text][1], but not everyone is command line fan. I have seen excellent programmers that rely on GUI tool than command line.
