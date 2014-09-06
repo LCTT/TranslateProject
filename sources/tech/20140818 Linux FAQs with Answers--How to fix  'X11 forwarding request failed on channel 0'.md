@@ -1,3 +1,6 @@
+Translating----------geekpi
+
+
 Linux FAQs with Answers--How to fix “X11 forwarding request failed on channel 0″
 ================================================================================
 > **Question**: When I tried to SSH to a remote host with X11 forwarding option, I got "X11 forwarding request failed on channel 0" error after logging in. Why am I getting this error, and how can I fix this problem? 
