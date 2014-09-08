@@ -1,3 +1,4 @@
+>>Linchenguang is translating
 Linux TCP/IP networking: net-tools vs. iproute2
 ================================================================================
 Many sysadmins still manage and troubleshoot various network configurations by using a combination of ifconfig, route, arp and netstat command-line tools, collectively known as net-tools. Originally rooted in the BSD TCP/IP toolkit, the net-tools was developed to configure network functionality of older Linux kernels. Its development in the Linux community so far has ceased since 2001. Some Linux distros such as Arch Linux and CentOS/RHEL 7 have already deprecated net-tools in favor of iproute2.
