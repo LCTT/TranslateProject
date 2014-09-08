@@ -1,3 +1,6 @@
+Translating----geekpi
+
+
 Linux FAQs with Answers--How to enable Nux Dextop repository on CentOS or RHEL
 ================================================================================
 > **Question**: I would like to install a RPM package which is available only in Nux Dextop repository. How can I set up Nux Dextop repository on CentOS or RHEL? 
