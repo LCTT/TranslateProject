@@ -1,6 +1,6 @@
 使用Linux命令行管理DigitalOcean VPS水滴
 ================================================================================
-[DigitalOcean][1]是云VPS主机市场中最炙手可热的新生儿。虽然没有提供像Amazon之类一样的综合服务业务，DigitalOcean已经成为定位于中小型企业和开发者的基于Linux的最佳云VPS服务的强有力的竞争者，这都得归功于他们具有竞争力的价格和对用户友好的管理界面。
+[DigitalOcean][1]是云VPS主机市场中最炙手可热的新生儿。虽然没有提供像Amazon之类一样的综合服务业务，但DigitalOcean定位于中小型企业和开发者，已经成为基于Linux的最佳云VPS服务的强有力竞争者，这都得归功于它们具有竞争力的价格和用户友好的管理界面。
 
 ![](https://farm4.staticflickr.com/3841/14501627500_2ef275ac1c_z.jpg)
 
@@ -20,13 +20,13 @@
     $ sudo yum install ruby-devel
     $ sudo gem install tugboat 
 
-要在CentOS上安装tugboat，首先[安装或升级到最新的Ruby][5]，因为在CentOS 6.5以及更早的版本上，默认的Ruby不满足拖船所需的最小版本（1.9及更高版本）。安装Ruby 1.9及更高版本后，请按如下方式安装tugboat。
+要在CentOS上安装tugboat，首先[安装或升级到最新的Ruby][5]，因为在CentOS 6.5以及更早的版本上，默认的Ruby不满足Tugboat所需的最小版本（1.9及更高版本）。安装Ruby 1.9及更高版本后，请按如下方式安装tugboat。
 
     $ sudo gem install tugboat 
 
 ### tugboat首次使用配置 ###
 
-在安装完后，就该实行一次配置，配置涉及了授权tugboat访问DigitalOcean帐号。
+在安装完后，就该进行一次配置，其中包括授权tugboat访问DigitalOcean帐号。
 
 转到[https://cloud.digitalocean.com/api_access][6]，并创建新的API密钥，记录客户ID和API密钥。
 
@@ -36,11 +36,11 @@
 
     $ tugboat authorize 
 
-在提示你输入客户ID和API密钥时，请输入。它会询问几个其它问题，目前你可以接受默认的回答。我们打算在今后自定义默认设置。
+在提示你输入客户ID和API密钥时，请输入。它会询问几个其它问题，目前你可以接受默认的回答。我们将会在后面自定义默认设置。
 
 [![](https://farm6.staticflickr.com/5596/14685122101_dba50fc86b_z.jpg)][7]
 
-现在，让我们自定义默认水滴设置，以反映你典型的使用状况。要那么做，首先检查水滴提供的可用的东西（如，可用的镜像、区域、大小）。
+现在，让我们自定义默认水滴设置，以反映你典型的使用状况。要做到这一点，首先检查水滴提供的可用设置项（如，可用的镜像、区域、大小）。
 
 运行以下命令，它会列出可用的水滴镜像。选取使用一个默认镜像，并记录相关的ID。
 
@@ -80,7 +80,7 @@
       private_networking: 'false'
       backups_enabled: 'false'
 
-### 创建并添加SSH密钥到数字海洋 ###
+### 创建并添加SSH密钥到DigitalOcean ###
 
 要访问水滴实例，一个安全的方式是通过[密钥验证][8]的SSH连接到该实例。
 
@@ -104,7 +104,7 @@
 
     ssh_key: '182710'
 
-### 拖船的基本用法 ###
+### Tugboat的基本用法 ###
 
 这里列出了tugboat命令行的一些基本使用情况。
 
@@ -138,7 +138,7 @@
 
     $ tugboat resize <name-of-droplet> -s <image-id> 
 
-如果你想要知道特定命令的更多选项，运行：
+如果你想要了解特定命令的更多选项，运行：
 
     $ tugboat help <command> 
 
@@ -146,7 +146,7 @@
 
 ### 排障 ###
 
-1. 当我运行tugboat命令时，它出错了，并出现以下错误。
+1. 当我运行tugboat命令时，它出现以下错误。
 
     /usr/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require': /usr/lib/ruby/gems/1.8/gems/tugboat-0.2.0/lib/tugboat/cli.rb:12: syntax error, unexpected ':', expecting kEND (SyntaxError)
 
@@ -156,7 +156,7 @@ Tugboat要求Ruby 1.9及更高版本，你需要升级Ruby来解决该问题。�
 
 /usr/local/share/ruby/site_ruby/rubygems/core_ext/kernel_require.rb:55:in `require': cannot load such file -- json/pure (LoadError)
 
-安装以下gem来修复该问题。
+安装以下gem来修复该问题。 
 
     $ sudo gem install json_pure 
 
@@ -166,7 +166,7 @@ via: http://xmodulo.com/2014/07/manage-digitalocean-vps-droplets-command-line-li
 
 原文作者：[Dan Nanni][a]
 
-译者：[GOLinux](https://github.com/GOLinux) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[GOLinux](https://github.com/GOLinux) 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
