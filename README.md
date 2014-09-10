@@ -125,4 +125,4 @@ LCTT的组成
 * 2014/05/04 更换了新的QQ群：198889102
 * 2014/05/16 增加了Core Translators 成员: will.qian、vizv。
 * 2014/06/18 由于GOLinux令人惊叹的翻译速度和不错的翻译质量，升级为Core Translators 成员。
-* 2014/09/09 LCTT 一周年，做一年总结。并将曾任 CORE 的成员分组为 Senior，以表彰他们的贡献。
+* 2014/09/09 LCTT 一周年，做一年[总结](http://linux.cn/article-3784-1.html)。并将曾任 CORE 的成员分组为 Senior，以表彰他们的贡献。
