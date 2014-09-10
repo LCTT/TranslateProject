@@ -1,3 +1,5 @@
+[su-kaiyao]翻译中
+
 With Apple Watch Unveiled, Could an Ubuntu Smartwatch Be Next?
 ================================================================================
 **Apple today confirmed its long-rumoured foray into the wearable computing market with the launch of ‘Apple Watch’.**
