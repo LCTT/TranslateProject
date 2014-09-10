@@ -2,39 +2,39 @@
 ================================================================================
 无论何时要安装一款新的 Linux 发行系统，一般的建议都是让您通过有线连接来接到互联网的。这主要的原因有两条：第一，您的无线网卡也许安装的驱动不正确而不能用；第二，如果您是从命令行中来安装系统的，管理 WiFi 就非常可怕。我总是试图避免在命令行中处理 WiFi 。但 Linux 的世界，应具有无所畏惧的精神。如果您不知道怎样操作，您需要继续往下来学习之，这就是写这篇文章的唯一原因。所以我强迫自己学习如何在命令行中管理 WiFi 连接。
 
-There are of course multiple ways to connect to a WiFi from the command line. But for the sake of this post, and as an advice, I will try to use the most basic way: the one that uses programs and utilities included in the "default packages" of any distribution. Or at least I will try. An obvious reason for this choice is that the process can potentially be reproduced on any Linux computer. The downside is its relative complexity.通过命令行来设置连接到 WiFi 当然有很多种方法，但在这篇文章里，也是一个建议，我将会作用最基本的方法：那就是使用在任何发布版本中都有的包含在“默认包”里的程序和工具。
+通过命令行来设置连接到 WiFi 当然有很多种方法，但在这篇文章里，也是一个建议，我将会作用最基本的方法：那就是使用在任何发布版本中都有的包含在“默认包”里的程序和工具。或者我偏向于使用这一种方法。使用此方法显而易见的好处是这个操作过程能在任意有 Linux 系统的机器上复用。不好的一点是它相对来说比较复杂。
 
-First, I will assume that you have the correct drivers loaded for your wireless LAN card. There is no way to start anything without that. And if you don't, you should take a look at the Wiki and documentation for your distribution.
+首先，我假设您们都已经正确安装了无线网卡的驱动程序。没有这前提，后续的一切都如镜花水月。如果您你机器确实没有正确安装上，您应该看看关于您的发布版本的维基和文档。
 
-Then you can check which interface supports wireless connections with the command
+然后您就可以用如下命令来检查是哪一个接口来支持无线连接的
 
     $ iwconfig
 
 ![](https://farm6.staticflickr.com/5578/14725621337_b174a3029c_z.jpg)
 
-In general, the wireless interface is called wlan0. There are of course exceptions, but for the rest of this tutorial, I will call it that way.
+一般来说，无线接口都叫做 wlan0。当然也有例外的，但在这篇教程中我们将会一直用通用叫法。
 
-Just in case, you should make sure that the interface is up with:
+以防万一，你得确认下以使此接口服务是启动着的：
 
     $ sudo ip link set wlan0 up
 
-Once you know that your interface is operational, you should scan for nearby wireless networks with:
+一但确认了无线接口是工作着的，你就可以用如下命令来扫描附近的无线网络了：
 
     $ sudo iw dev wlan0 scan | less 
 
 ![](https://farm4.staticflickr.com/3847/14909117931_e2f3d0feb0_z.jpg)
 
-From the output, you can extract the name of the network (its SSID), its signal power, and which type of security it uses (e.g., WEP, WPA/WPA2). From there, the road splits into two: the nice and easy, and the slightly more complicated case.
+根据扫描出的结果，可以得到网络的名字（它的 SSID），它的信息强度，以及它使用的是哪个安全加密的（如：WEP、WPA/WPA2）。从此时起，将会分成两条路线：情况很好的和容易的以及情况稍微复杂的。
 
-If the network you want to connect to is not encrypted, you can connect straight to it with:
+如果您想连接的网络是没有加密的，您可以用下面的命令直接连接：
 
     $ sudo iw dev wlan0 connect [network SSID]
 
-If the network uses WEP encryption, it is also quite easy:
+如果网络是用 WEP 加密的，也非常容易：
 
     $ sudo iw dev wlan0 connect [network SSID] key 0:[WEP key]
 
-But everything gets worse if the network uses WPA or WPA2 protocols. In this case, you have to use the utility called wpa_supplicant, which is not always included by default. You then have to modify the file at /etc/wpa_supplicant/wpa_supplicant.conf to add the lines:
+但网络使用的是 WPA 或 WPA2 协议的话，事情就不好办了。这种情况，您就得使用叫做 wpa_supplicant 的工具，它默认是没有启用的。需要修改 /etc/wpa_supplicant/wpa_supplicant.conf 文件，增加如下行：
 
     network={
         ssid="[network ssid]"
@@ -42,25 +42,25 @@ But everything gets worse if the network uses WPA or WPA2 protocols. In this cas
         priority=1
     }
 
-I recommend that you append it at the end of the file, and make sure that the other configurations are commented out. Be careful that both the ssid and the passphrase are case sensitive. You can also technically put the name of the access point as the ssid, and wpa_supplicant will replace it with the proper ssid.
+我建议你​​在文件的末尾添加它，并确保其他配置都注释掉。要注意 SSID 和密码字串都是大小写敏感的。在技术上您也可以把接入点的名称当做是 SSID，使用 wpa_supplicant 工具的话会有合适的 SSID 来替代这个名字。 
 
-Once the configuration file is completed, launch this command in the background:
+一旦配置文件修改完成后，在后台启动此命令：
 
     $ sudo wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
 
-Finally, whether you connected to an open or a secure network, you have to get an IP address. Simply use:
+最后，无论是连到开放的网络还是加密的安全网络，您都得获取 IP 地址。简单地使用如下命令：
 
     $ sudo dhcpcd wlan0
 
-If everything goes well, you should get a brand new local IP via DHCP, and the process will fork in the background. If you want to be sure that you are connected, you can always check again with:
+如果一切顺利的话，您应该已经通过 DHCP 获取到了一个全新的本地 IP，这个过程是在后台自动完成的。如果想确认下是否真正连接上的话，您可以再一次输入如下命令检查：
 
     $ iwconfig
 
 ![](https://farm4.staticflickr.com/3904/14725573368_7110407db8_z.jpg)
 
-To conclude, I think that getting over the first step is completely worth it. You never know when your GUI will be down, or when you cannot access a wired connection, so getting ready now seems very important. Also, as mentioned before, there are a lot of ways (e.g., NetworkManager, [wicd][1], [netcfg][2], [wifi][3]) to manage a wireless connection. If I try to stick to the most basic way, I know that in some cases, the utilities that I used may not even be available to you, and that you would have to download them prior to that. On the other side of the balance, there are some more advanced programs, which are definitely not included in the "default packages," which will greatly simplify the whole process. But as a general advice, it is good to stick to the basics at first.
+最后，我认为多次重复第一步的检查操作是很有必要的。您永远不会知道什么时候您的图形用户界面挂了，或者是什么时候不能访问无线连接了，所以现在就准备着用命令来检测吧。还有，前面提到过的，有很多种方式（如 NetworkManager、[wicd][1]、[netcfg][2]、[wifi][3] 等等）来管理无线连接。我坚持使用最基本的方式，但在某些情况下，我使用的工具可能您还没有，所以您在之前就得先下载它们。另一方面，有很多高级的应用程序，他们确实是不包含在“默认包”里面的，使用它们会大大简化操作过程。但一般建议是开始的话最好从基本的来。
 
-What other ways would you recommend to connect via WiFi from the command line? Please let us know in the comments.
+关于从命令行来管理连接 WiFi 您还有其他方式方法吗？请在评论中让我们知道。
 
 --------------------------------------------------------------------------------
 
