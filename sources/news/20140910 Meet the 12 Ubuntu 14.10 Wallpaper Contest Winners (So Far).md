@@ -1,3 +1,4 @@
+translating by Tino
 Meet the 12 Ubuntu 14.10 Wallpaper Contest Winners (So Far)
 ================================================================================
 Get ready to glance over a group of images you’ll be seeing a whole lot more of in the coming months. Yes, the winners of the [Ubuntu 14.10 Wallpaper contest][1] have been unveiled.
