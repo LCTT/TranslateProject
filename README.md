@@ -1,11 +1,11 @@
 简介
 -------------------------------
 
-LCTT是Linux中国社区（[http://linux.cn/](http://linux.cn/)）的翻译组，负责从国外优秀媒体翻译Linux相关的技术、资讯、杂文等内容。
+LCTT是“Linux中国”（[http://linux.cn/](http://linux.cn/)）的翻译组，负责从国外优秀媒体翻译Linux相关的技术、资讯、杂文等内容。
 
 LCTT已经拥有近百余名活跃成员，并欢迎更多的Linux志愿者加入我们的团队。
 
-![logo](http://img.linux.net.cn/static/image/common/linuxcn_qqq_lctt.gif)
+![logo](http://img.linux.net.cn/static/image/common/lctt_logo.png)
 
 LCTT的组成
 -------------------------------
@@ -18,11 +18,10 @@ LCTT的组成
 
 **发布**，负责将校对后的文章，排版进行发布。
 
-
 加入我们
 -------------------------------
 
-请首先加入翻译组的QQ群，群号是：198889102，加群时请说明是志愿者。加入后记得修改您的群名片为您的github的ID。
+请首先加入翻译组的QQ群，群号是：198889102，加群时请说明是“志愿者”。加入后记得修改您的群名片为您的github的ID。
 
 加入的成员，请先阅读[WIKI 如何开始](https://github.com/LCTT/TranslateProject/wiki/01-如何开始)。
 
@@ -39,62 +38,75 @@ LCTT的组成
 - CORE [carolinewuyan](https://github.com/carolinewuyan),
 - CORE [DeadFire](https://github.com/DeadFire),
 - CORE [geekpi](https://github.com/geekpi),
-- CORE [tinyeyeser](https://github.com/tinyeyeser),
-- CORE [vito-L](https://github.com/vito-L),
-- CORE [jasminepeng](https://github.com/jasminepeng),
-- CORE [willqian](https://github.com/willqian),
-- CORE [vizv](https://github.com/vizv),
 - CORE [GOLinux](https://github.com/GOLinux),
-- [luoxcat](https://github.com/Luoxcat),
+- CORE [reinoir](https://github.com/reinoir),
+- Senior [tinyeyeser](https://github.com/tinyeyeser),
+- Senior [vito-L](https://github.com/vito-L),
+- Senior [jasminepeng](https://github.com/jasminepeng),
+- Senior [willqian](https://github.com/willqian),
+- Senior [vizv](https://github.com/vizv),
 - [runningwater](https://github.com/runningwater),
+- [luoxcat](https://github.com/Luoxcat),
 - [bazz2](https://github.com/bazz2),
 - [Vic020](https://github.com/Vic020),
-- [flsf](https://github.com/flsf),
 - [alim0x](https://github.com/alim0x),
+- [KayGuoWhu](https://github.com/KayGuoWhu),
+- [zpl1025](https://github.com/zpl1025),
+- [blueabysm](https://github.com/blueabysm),
+- [flsf](https://github.com/flsf),
 - [crowner](https://github.com/crowner),
 - [Linux-pdz](https://github.com/Linux-pdz),
-- [KayGuoWhu](https://github.com/KayGuoWhu),
 - [Linchenguang](https://github.com/Linchenguang),
-- [woodboow](https://github.com/woodboow),
-- [zpl1025](https://github.com/zpl1025),
-- [yechunxiao19](https://github.com/yechunxiao19),
-- [blueabysm](https://github.com/blueabysm),
 - [linuhap](https://github.com/linuhap),
+- [2q1w2007](https://github.com/2q1w2007),
+- [yechunxiao19](https://github.com/yechunxiao19),
+- [woodboow](https://github.com/woodboow),
+- [su-kaiyao](https://github.com/su-kaiyao),
 - [scusjs](https://github.com/scusjs),
 - [hyaocuk](https://github.com/hyaocuk),
-- [theo-l](https://github.com/theo-l),
-- [NearTan](https://github.com/NearTan),
-- [l3b2w1](https://github.com/l3b2w1),
-- [ThomazL](https://github.com/ThomazL),
 - [MikeCoder](https://github.com/MikeCoder),
-- [shipsw](https://github.com/shipsw),
-- [boredivan](https://github.com/boredivan),
+- [ThomazL](https://github.com/ThomazL),
+- [theo-l](https://github.com/theo-l),
 - [jiajia9linuxer](https://github.com/jiajia9linuxer),
+- [SteveArcher](https://github.com/SteveArcher),
+- [l3b2w1](https://github.com/l3b2w1),
+- [NearTan](https://github.com/NearTan),
+- [shipsw](https://github.com/shipsw),
+- [disylee](https://github.com/disylee),
+- [Love-xuan](https://github.com/Love-xuan),
+- [boredivan](https://github.com/boredivan),
+- [cvsher](https://github.com/cvsher),
+- [owen-carter](https://github.com/owen-carter),
+- [JonathanKang](https://github.com/JonathanKang),
+- [tenght](https://github.com/tenght),
 - [icybreaker](https://github.com/icybreaker),
 - [liuaiping](https://github.com/liuaiping),
-- [tenght](https://github.com/tenght),
 - [rogetfan](https://github.com/rogetfan),
+- [nd0104](https://github.com/nd0104),
 - [whatever1992](https://github.com/whatever1992),
-- [2q1w2007](https://github.com/2q1w2007),
-- [disylee](https://github.com/disylee),
-- [SteveArcher](https://github.com/SteveArcher),
-- [JonathanKang](https://github.com/JonathanKang),
-- [zzlyzq](https://github.com/zzlyzq),
-- [FineFan](https://github.com/FineFan),
-- [ailurus1991](https://github.com/ailurus1991),
+- [lfzark](https://github.com/lfzark),
+- [CNprober](https://github.com/CNprober),
+- [213edu](https://github.com/213edu),
+- [johnhoow](https://github.com/johnhoow),
 - [yujianxuechuan](https://github.com/yujianxuechuan),
+- [ggaaooppeenngg](https://github.com/ggaaooppeenngg),
+- [zzlyzq](https://github.com/zzlyzq),
+- [ailurus1991](https://github.com/ailurus1991),
+- [FineFan](https://github.com/FineFan),
 - [tomatoKiller](https://github.com/tomatoKiller),
 - [stduolc](https://github.com/stduolc),
 - [Maclauring](https://github.com/Maclauring),
-- [Hao-Ding](https://github.com/Hao-Ding),
-- [small-Wood](https://github.com/small-Wood),
 - [zsJacky](https://github.com/zsJacky),
+- [Hao-Ding](https://github.com/Hao-Ding),
+- [luoyutiantang](https://github.com/luoyutiantang),
+- [small-Wood](https://github.com/small-Wood),
 - [CHINAANSHE](https://github.com/CHINAANSHE),
-- [ggaaooppeenngg](https://github.com/ggaaooppeenngg),
+- [guodongxiaren](https://github.com/guodongxiaren),
+- [cereuz](https://github.com/cereuz),
 - [lijhg](https://github.com/lijhg),
 
 
-（更新于2014/06/18）
+（更新于2014/09/09）
 
 谢谢大家的支持！
 
@@ -113,3 +125,4 @@ LCTT的组成
 * 2014/05/04 更换了新的QQ群：198889102
 * 2014/05/16 增加了Core Translators 成员: will.qian、vizv。
 * 2014/06/18 由于GOLinux令人惊叹的翻译速度和不错的翻译质量，升级为Core Translators 成员。
+* 2014/09/09 LCTT 一周年，做一年总结。并将曾任 CORE 的成员分组为 Senior，以表彰他们的贡献。
