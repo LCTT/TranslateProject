@@ -1,3 +1,4 @@
+translating by szrlee
 Colourful ! systemd vs sysVinit Linux Cheatsheet
 ================================================================================
 **systemd** is the new init system, starting with Fedora and now adopted in many distributions like RedHat, Suse and Centos. Historically, most of us have been using traditional SysV init scripts normally residing in /etc/rc.d/init.d/. These scripts invoke a daemon binary which will then fork a background process. Even though shell scripts are very flexible, tasks like supervising processes and parallelized execution ordering are difficult to implement. With the introduction of systemd’s new-style daemons it is easier to supervise and control them at runtime and it simplifies their implementation.
@@ -13,7 +14,7 @@ There are a lot of new [systemd commands available on rhel / centos 7.0][1]注�
 via: http://linoxide.com/linux-command/systemd-vs-sysvinit-cheatsheet/
 
 作者：[Bobbin Zachariah][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[szrlee](https://github.com/szrlee)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

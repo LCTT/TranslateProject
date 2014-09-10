@@ -1,3 +1,4 @@
+﻿(translating by runningwater)
 Why Do Some Old Programming Languages Never Die?
 ================================================================================
 > We like what we already know.
@@ -73,7 +74,7 @@ Lead image by [Blake Patterson][4]
 via: http://readwrite.com/2014/09/02/programming-language-coding-lifetime
 
 作者：[Lauren Orsini][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

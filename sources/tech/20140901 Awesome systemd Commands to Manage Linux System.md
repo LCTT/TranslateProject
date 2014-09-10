@@ -1,3 +1,4 @@
+(translating by szrlee)
 Awesome ! systemd Commands to Manage Linux System
 ================================================================================
 Systemd is the new system and service manager for Linux. It is a replacement for init system and can manage system startup and services. It starts up and supervises the entire system. In article we are using [centos 7.0 installed with systemd 216 version][1] and the latest version is [available for download from freedesktop.org][2].
@@ -272,7 +273,7 @@ The systemd brings out the whole new approach to interacting with your operating
 via: http://linoxide.com/linux-command/linux-systemd-commands/
 
 作者：[Raghu][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[szrlee](https://github.com/szrlee)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
