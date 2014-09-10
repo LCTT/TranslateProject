@@ -1,3 +1,4 @@
+wangjiezhe translating
 What are better alternatives to basic command line utilities
 ================================================================================
 The command line can be scary especially at the beginning. You might even experience some command-line-induced nightmare. Over time, however, we all realize that the command line is actually not that scary, but extremely useful. In fact, the lack of shell is what gives me an ulcer every time I have to use Windows. The reason for the change in perception is that the command line tools are actually smart. The basic utilities, what you are given to work with on any Linux terminal, are very powerful. But very powerful is never enough. If you want to make your command line experience even more pleasant, here are a few applications that you can download to replace the default ones, and will provide you with far more features than the originals.
