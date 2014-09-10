@@ -1,4 +1,4 @@
-translating by szrlee
+translated by szrlee
 Colourful ! systemd vs sysVinit Linux Cheatsheet
 ================================================================================
 **systemd** is the new init system, starting with Fedora and now adopted in many distributions like RedHat, Suse and Centos.
