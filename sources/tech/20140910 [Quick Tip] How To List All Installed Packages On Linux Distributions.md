@@ -1,3 +1,4 @@
+2q1w2007翻译中
 [Quick Tip] How To List All Installed Packages On Linux Distributions
 ================================================================================
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/09/linux-790x536.png)
