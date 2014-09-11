@@ -26,7 +26,7 @@ There are several ways to find out the last system reboot time,
 
     $ uptime 
 
-![](https://farm4.staticflickr.com/3915/14881660192_58f2843969_o.png)
+![](https://farm4.staticflickr.com/3915/14881660192_58f2843969_o.png) 
 
 --------------------------------------------------------------------------------
 
