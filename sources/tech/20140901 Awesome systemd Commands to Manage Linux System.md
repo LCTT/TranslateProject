@@ -1,15 +1,27 @@
 (translating by szrlee)
 Awesome ! systemd Commands to Manage Linux System
+
+酷！用systemd命令来管理linux系统
 ================================================================================
-Systemd is the new system and service manager for Linux. It is a replacement for init system and can manage system startup and services. It starts up and supervises the entire system. In article we are using [centos 7.0 installed with systemd 216 version][1] and the latest version is [available for download from freedesktop.org][2].
+Systemd is the new system and service manager for Linux.
+
+Systemd是一种新的linux系统服务管理器。
+
+It is a replacement for init system and can manage system startup and services. It starts up and supervises the entire system. In article we are using [centos 7.0 installed with systemd 216 version][1] and the latest version is [available for download from freedesktop.org][2].
+
+它替换了init系统，能够管理系统的启动过程和一些系统服务，一旦启动起来，就将监管整个系统。
 
 With new player in town, PID 1 is occupied by “systemd” and can be seen from pstree command as well:
+
+因为linux系统里这一新的玩家，PID 1被“systemd”占据了，这能通过pstree命令看到。
 
     [root@linoxide ~]# pstree
 
 ![](http://linoxide.com/wp-content/uploads/2014/08/01.systemd_pstree.png)
 
 Lets explore what systemd is capable of and what possibilities we have with the new replacement for sysVinit.
+
+那么现在让我们来探索systemd擅长什么，它又有多大的可能性成为sysVinit的新的替代品。
 
 ### 1. Faster startup ###
 
