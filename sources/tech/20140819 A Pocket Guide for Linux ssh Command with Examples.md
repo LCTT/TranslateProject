@@ -1,3 +1,5 @@
+(henryfour's translating)
+
 A Pocket Guide for Linux ssh Command with Examples
 ================================================================================
 If you have been in the IT world for quite some time you probably have heard about SSH, how great a tool it is and all its cool security features. In this tutorial you will learn how to use SSH in a few minutes and login to your remote computers seamlessly and securely.
@@ -123,7 +125,7 @@ With the above commands you will be able to use SSH with ease. There is more to 
 via: http://linoxide.com/linux-command/pocket-guide-linux-ssh-command/
 
 作者：[Bobbin Zachariah][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[henryfour](https://github.com/henryfour)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
