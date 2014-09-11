@@ -1,17 +1,11 @@
 (translated by szrlee)
-Awesome ! systemd Commands to Manage Linux System
 
-酷！用systemd命令来管理linux系统
+真的超赞！用systemd命令来管理linux系统！
 ================================================================================
-Systemd is the new system and service manager for Linux.
 
 Systemd是一种新的linux系统服务管理器。
 
-It is a replacement for init system and can manage system startup and services. It starts up and supervises the entire system. In article we are using [centos 7.0 installed with systemd 216 version][1] and the latest version is [available for download from freedesktop.org][2].
-
 它替换了init系统，能够管理系统的启动过程和一些系统服务，一旦启动起来，就将监管整个系统。在本文中，我们用的是[centos 7.0 installed with systemd 216 version][1]和最新版本[available for download from freedesktop.org][2]。
-
-With new player in town, PID 1 is occupied by “systemd” and can be seen from pstree command as well:
 
 因为linux系统里这一新的玩家，PID 1被“systemd”占据了，这能通过**pstree**命令看到。
 
@@ -19,21 +13,13 @@ With new player in town, PID 1 is occupied by “systemd” and can be seen from
 
 ![](http://linoxide.com/wp-content/uploads/2014/08/01.systemd_pstree.png)
 
-Lets explore what systemd is capable of and what possibilities we have with the new replacement for sysVinit.
-
 那么现在让我们来探索systemd擅长什么，它又有多大的可能性成为sysVinit的新的替代品。
 
 ### 1. Faster startup ###
 
-The sysvinit starts the processes serially, one at a time.
-
 sysvinit一次一个串行地启动进程。
 
-Systemd starts services in parallel and starts only those services which are actually required, reducing the boot time significantly.
-
 而Systemd则并行地启动系统服务进程，并且最初仅启动确实被依赖的那些服务，极大地减少了系统引导的时间。
-
-You can get the boot process duration with the following command:
 
 你可以用下面的命令看到系统引导的过程：
 
@@ -41,15 +27,11 @@ You can get the boot process duration with the following command:
 
 ![](http://linoxide.com/wp-content/uploads/2014/08/02.systemd_analyze.png)
 
-The command systemd-analyze time also shows the same information.
-
 **systemd-analyze time**也能够显示同样的内容。
 
     [root@linoxide ~]# systemd-analyze time
 
 ![](http://linoxide.com/wp-content/uploads/2014/08/03.systemd_analyze2.png)
-
-If you want to print a list of all running units, the blame option to systemd-analyze command can provide you with that, ordered by the time taken to initialize.
 
 如果你想以初始化时间排序打印出所有正在运行unit的列表，那么**systemd-analyze**命令可以帮助你完成这个任务。
 
@@ -57,19 +39,13 @@ If you want to print a list of all running units, the blame option to systemd-an
 
 ![](http://linoxide.com/wp-content/uploads/2014/08/04.systemd_blame.png)
 
-The above screen shows only a small number of processes, you can scroll through the list with arrows just like in less pager.
-
 上面的截屏只显示了小部分进程，你可以就像less分页器那样用箭头滚动列表。
 
 ### 2. The systemctl command ###
 
-The systemctl command is the most talked command that comes with systemd. You can manage a whole lot of your system with this command. Let’s explore this command before going any further:
-
 systemctl命令是自systemd出现以来被广泛讨论的命令。你可以通过这个命令管理你的整个系统，让我们通过探究这个命令来更进一步。
 
 #### 2.1 List Units ####
-
-systemctl command without any option lists all the running units. The list-units switch also does the same.
 
 **systemctl**命令可以带上list-units也可以什么选项都不带来列出所有正在运行的unit。
 
@@ -83,27 +59,19 @@ or
 
 #### 2.2 Listing failed units ####
 
-The failed units can be listed with --failed switch.
-
 运行失败的unit可以用带--failed选项的命令显示出来。
 
     [root@linoxide ~]# systemctl --failed
 
 ![](http://linoxide.com/wp-content/uploads/2014/08/06.systemd_failed.png)
 
-You will see the use of systemctl command at many places in this article.
-
 你可以在这篇文章很多地方看到systemctl的用法。
 
 ### 3. Managing services ###
 
-Let us now see how services can be managed with systemd.
-
 让我们来看看systemd是怎么管理系统服务的。
 
 #### 3.1 Active services ####
-
-All the active services can be checked with the following command:
 
 所有被激活的服务可以同下面这条命令来查看。
 
@@ -112,8 +80,6 @@ All the active services can be checked with the following command:
 ![](http://linoxide.com/wp-content/uploads/2014/08/07.systemd_active_services.png)
 
 #### 3.2 Service status ####
-
-In the sysvinit, we could use the “service” command to manage the services, but with systemd, the systemctl command is used to manage services. In order to see whether a service is running or not, we can use the systemctl command like this:
 
 在sysvinit中，我们可以用“**service**”命令来管理服务，但在systemd中，我们用systemctl这个命令。
 我们可以用下面这个命令来查看服务是否在运行。
@@ -124,21 +90,15 @@ In the sysvinit, we could use the “service” command to manage the services, 
 
 #### 3.3 Start a service ####
 
-To start a service, again we use the systemctl command as:
-
 用下面这条命令来启动服务。
 
     [root@linoxide ~]# systemctl start dnsmasq
-
-As opposed to service command, this command does not give any output. But of course, we can check the status of the service once again to confirm that its started successfully:
 
 相对于**service**服务，这个命令不进行输出。但是毋庸置疑，我们可以通过再次查看这个刚刚被启动的服务的status（状态）来确认他是否被成功地启动了。
 
 ![](http://linoxide.com/wp-content/uploads/2014/08/09.systemd_start.png)
 
 #### 3.4 Stopping a service ####
-
-Now you are smart enough and already know the command to stop a service with systemd:
 
 现在聪明的你一定知道怎么在systemd下用命令来关闭服务了吧。
 
@@ -148,8 +108,6 @@ Now you are smart enough and already know the command to stop a service with sys
 
 #### 3.5 Restart a service ####
 
-Similarly, restarting a service is managed using ‘systemctl restart ‘:
-
 类似的，重启系统服务是用‘**systemctl restart**’来管理的。
 
     [root@linoxide ~]# systemctl restart dnsmasq
@@ -158,15 +116,11 @@ Similarly, restarting a service is managed using ‘systemctl restart ‘:
 
 #### 3.6 Reload a service ####
 
-In case we need to reload the configuration of service (say ssh), without restarting it, we can use the command:
-
 在我们需要重新加载服务的配置文件又不想重启这个服务（例如ssh）时，我们可以用这个命令。
 
     [root@linoxide ~]# systemctl reload sshd
 
 ![](http://linoxide.com/wp-content/uploads/2014/08/12.systemd_reload.png)
-
-Although all of the above syntax are working, the official documentation suggests that these command be run with following syntax:
 
 虽然上述命令的语法是可以工作的，但是官方文档建议我们用下面这种语法形式来运行命令：
 
@@ -176,13 +130,9 @@ Although all of the above syntax are working, the official documentation suggest
 
 ### 4. Managing services at boot ###
 
-The chkconfig command was used to manage services at boot. The same command systemd is used with systemd to manage services at boot.
-
 **chkconfig**命令被用来管理系统引导时的服务。同样用systemd也可以管理boot时的系统服务。
 
 #### 4.1 Checking service status at boot ####
-
-In order to check if a service is enabled on boot or not:
 
 这条命令用来确定服务是否是引导时启动的。
 
@@ -192,8 +142,6 @@ In order to check if a service is enabled on boot or not:
 
 #### 4.2 Enable a service at boot ####
 
-systemctl command can be used like this to enable a service at boot (this corresponds to sysvinit ‘chkconfig on’)
-
 **systemctl**命令是这样来enable（使之在引导时启动）一个服务的。（这相当于sysvinit中的‘**chkconfig on**’）
 
     [root@linoxide ~]# systemctl enable dnsmasq.service
@@ -201,8 +149,6 @@ systemctl command can be used like this to enable a service at boot (this corres
 ![](http://linoxide.com/wp-content/uploads/2014/08/15.systemd_enable.png)
 
 #### 4.3 Disable a service at boot ####
-
-Similarly, the services can be disabled at boot with systemctl command:
 
 类似的，使服务不在引导时启动用这个命令。
 
@@ -212,8 +158,6 @@ Similarly, the services can be disabled at boot with systemctl command:
 
 ### 5. Managing Remote systems ###
 
-Typically, all of the above systemctl commands can be used to manage a remote host with systemctl command itself. This will use ssh for communication with the remote host. All you need to do is add the user and host to systemctl command like this:
-
 所有刚才提到的systemctl命令通常都能被用来管理远程主机，完成这个任务将用到**ssh**来进行通讯。你只需要像这样将远程主机和用户名
 添加到systemctl命令后。
 
@@ -222,9 +166,6 @@ Typically, all of the above systemctl commands can be used to manage a remote ho
 ![](http://linoxide.com/wp-content/uploads/2014/08/17.systemd_remote.png)
 
 ### 6. Managing targets: ###
-
-Systemd has concept of targets having similar purpose to runlevels in sysVinit.
-The runlevels in sysVinit were mostly numeric (0,1,2,…). Here are the runlevels in sysVinit with their systemd counterparts:
 
 Systemd有一个完成与sysVinit的runlevels相似任务的构想。
 sysVinit的runlevels大多是以数字分级的。这里是runlevers在systemd中的对应元素。
@@ -245,8 +186,6 @@ sysVinit的runlevels大多是以数字分级的。这里是runlevers在systemd�
 
 #### 6.1 Changing current target ####
 
-The current target(runlevel) can be changed with the command:
-
 当前target可以用这个命令切换。
 
     [root@linoxide ~]# systemctl isolate graphical.target
@@ -255,15 +194,11 @@ The current target(runlevel) can be changed with the command:
 
 #### 6.2 List current target ####
 
-If you want to see what target you are in, you need to list all the corresponding units. It might not feel at home with this new way, but its the way systemd works.
-
 如果你想查看你正处于哪个target中，你需要列出相应的units。虽然这样操作可能让你不太爽，但是这就是systemd工作的方式。
 
     [root@linoxide ~]# systemctl list-units --type=target
 
 ![](http://linoxide.com/wp-content/uploads/2014/08/19.systemd_targets.png)
-
-You can see “graphical.target” listed here. This is what we changed our target into. Now let’s change the runlevel again to multi-user.target and then analyze this output:
 
 你可以看到“graphical.target”列在此处，这就是我们刚才切换到的target。现在，让我们切换runlever到multi-user.target然后分析下列命令的输出。
 
@@ -274,15 +209,13 @@ You can see “graphical.target” listed here. This is what we changed our targ
 
 #### 6.3 List default target ####
 
-To list the default target, we use systemctl command like this:
+用这个systemctl命令来查看默认target。
 
     [root@linoxide ~]# systemctl get-default
 
 ![](http://linoxide.com/wp-content/uploads/2014/08/21.systemd_get_default.png)
 
 #### 6.4 Change default target ####
-
-The default target can be set with set-default command with systemctl:
 
 通过systemctl的set-default命令可以将某个target设置成默认target。
 
@@ -292,7 +225,6 @@ The default target can be set with set-default command with systemctl:
 
 ### 7. Logging in systemd ###
 
-The systemd has its own logging system called journald. It replaces the syslog daemon from sysVinit. The command journalctl is used to read the logs.
 
 journald是systemd独有的日志系统，替换了sysVinit中的syslog守护进程。命令**journalctl**用来读取日志。
 
@@ -302,8 +234,6 @@ journald是systemd独有的日志系统，替换了sysVinit中的syslog守护进
 
 #### 7.1 Boot messages ####
 
-To see all boot messages, run the command “journalctl -b”.
-
 运行**journalctl -b**命令来查看所有引导日志。
 
     [root@linoxide ~]# journalctl -b
@@ -312,7 +242,6 @@ To see all boot messages, run the command “journalctl -b”.
 
 #### 7.2 Follow logs ####
 
-The following command follows the system logs in real time (similar to tail -f).
 
 下面这个命令可以即时显示系统日志（类似**tail -f**）。
 
@@ -322,8 +251,6 @@ The following command follows the system logs in real time (similar to tail -f).
 
 #### 7.3 Service specific logs ####
 
-To check logs specific to a particular service or executable, use journalctl like this:
-
 你可以像这样运用**journalctl**来查看你只想看到的服务或可执行程序的日志。
 
     [root@linoxide ~]# journalctl /usr/sbin/dnsmasq
@@ -331,8 +258,6 @@ To check logs specific to a particular service or executable, use journalctl lik
 ![](http://linoxide.com/wp-content/uploads/2014/08/26.systemd_specific.png)
 
 ### 8. Power management ###
-
-The systemctl command can be used to put the system down, or reboot or hibernate.
 
 systemctl命令也可以用来关机，重启或者休眠。
 
@@ -347,8 +272,6 @@ To poweroff, reboot, suspend and hibernate, use the following commands respectiv
     [root@linoxide ~]# systemctl hibernate
 
 ### 9. Bonus ###
-
-The systemd brings out the whole new approach to interacting with your operating system. The systemd is so full of features. For example, you can get the hostname and other useful features about your Linux machine, you can use hostnamectl command
 
 **systemd**带来了一整套与操作系统交互的新途径，并且极具特色。举个栗子，你可以用hostnamectl命令来获得你的linux机器的hostname和其它有用的独特信息。
 
