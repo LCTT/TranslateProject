@@ -9,11 +9,11 @@ Systemd是一种新的linux系统服务管理器。
 
 It is a replacement for init system and can manage system startup and services. It starts up and supervises the entire system. In article we are using [centos 7.0 installed with systemd 216 version][1] and the latest version is [available for download from freedesktop.org][2].
 
-它替换了init系统，能够管理系统的启动过程和一些系统服务，一旦启动起来，就将监管整个系统。
+它替换了init系统，能够管理系统的启动过程和一些系统服务，一旦启动起来，就将监管整个系统。在本文中，我们用的是[centos 7.0 installed with systemd 216 version][1]和最新版本[available for download from freedesktop.org][2]。
 
 With new player in town, PID 1 is occupied by “systemd” and can be seen from pstree command as well:
 
-因为linux系统里这一新的玩家，PID 1被“systemd”占据了，这能通过pstree命令看到。
+因为linux系统里这一新的玩家，PID 1被“systemd”占据了，这能通过**pstree**命令看到。
 
     [root@linoxide ~]# pstree
 
@@ -25,14 +25,25 @@ Lets explore what systemd is capable of and what possibilities we have with the 
 
 ### 1. Faster startup ###
 
-The sysvinit starts the processes serially, one at a time. Systemd starts services in parallel and starts only those services which are actually required, reducing the boot time significantly.
+The sysvinit starts the processes serially, one at a time.
+
+sysvinit一次一个串行地启动进程。
+
+Systemd starts services in parallel and starts only those services which are actually required, reducing the boot time significantly.
+
+而Systemd则并行地启动系统服务进程，并且最初仅启动确实被依赖的那些服务，极大地减少了系统引导的时间。
+
 You can get the boot process duration with the following command:
+
+你可以用下面的命令看到系统引导的过程：
 
     [root@linoxide ~]# systemd-analyze
 
 ![](http://linoxide.com/wp-content/uploads/2014/08/02.systemd_analyze.png)
 
 The command systemd-analyze time also shows the same information.
+
+**systemd-analyze time**也能够显示同样的内容。
 
     [root@linoxide ~]# systemd-analyze time
 
