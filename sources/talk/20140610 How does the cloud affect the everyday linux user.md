@@ -1,32 +1,29 @@
 barney-ro translating 
 
-How does the cloud affect the everyday linux user?
 “云”是怎么影响每一位linux用户的？
 ================================================================================
-### Introduction ###
 ### “云”简介 ###
 
-Cloud computing is one of those terms you hear about and see all the time whether it is in the national newspapers, online news websites, podcasts, technical blogs, technical news sites or on radio and television.
-不论是报纸、在线资讯、播客、科技博客、科技门户网站，甚至是电台和电视。“云计算”都是一个永恒不变的主题。
-It is a fairly woolly term that encompasses so many things but what exactly is it?
-然而，因为“云计算”包含了太多的东西，现在并没有一个明确的定义，所以你认为怎样“云计算”应该是什么呢？
-> **Cloud computing** is a term used to refer to a model of network computing where a program or application runs on a connected server or servers rather than on a local computing device such as a PC, tablet or smartphone. Like the traditional client-server model or older mainframe computing,[1] a user connects with a server to perform a task. The difference with cloud computing is that the computing process may run on one or many connected computers at the same time, utilizing the concept of virtualization. With virtualization, one or more physical servers can be configured and partitioned into multiple independent “virtual” servers, all functioning independently and appearing to the user to be a single physical device. Such virtual servers are in essence disassociated from their physical server, and with this added flexibility, they can be moved around and scaled up or down on the fly without affecting the end user. The computing resources have become “granular”, which provides end user and operator benefits including on-demand self-service, broad access across multiple devices, resource pooling, rapid elasticity and service metering capability.[2]
-> **云计算** 过去常常被当做是网络计算的一个参考模型，网络计算就是把用户程序或者是应用运行在一个联网的服务器或者是一个服务器集群，而不是像个人电脑、平板以及智能手机这一类运算设备。比如像传统的client-server模型和老一代的大型服务器，[1]用户通过连接服务器来执行一项任务，这和“云计算”是不同的，“云计算”是利用虚拟化的技术，把计算进程是同时运行在多个服务器上。利用虚拟技术，越来越多的物理化的服务器被配置和划分成更多的独立“虚拟”服务器。每个服务独立运行，就像是运行在一个独立的物理服务器上一样。这种虚拟服务器本质上还是从他们的物理服务器分离出来的，这种灵活的配置方式使得人们可以随意的按照意愿移动服务器和按比例分配资源而不影响最终的用户，计算机资源已成“颗粒”，给用户和管理人员提供方便，包括提供按需自助服务，支持更广泛的跨平台之间的访问，资源共享，快速弹性，服务计量能力。[2]
+不论是报纸、在线资讯、播客、科技博客、科技门户网站，甚至是电台和电视。“云计算”都是人们津津乐道永恒不变的主题。
 
-The above quote was obviously taken from Wikipedia.
+然而，因为“云计算”包含了太多的东西，现在并没有一个明确的定义，所以你认为怎样“云计算”应该是什么呢？
+
+> **云计算** 过去常常被当做是网络计算的一个模型，网络计算就是把用户程序或者是应用运行在一个联网的服务器或是一个服务器集群，而不是像个人电脑、平板以及智能手机这一类运算设备。比如像传统的客户机-服务器模型 (client-server) 和老一代的大型机，[1]用户通过连接服务器来执行一项任务。这和“云计算”是不同的，“云计算”是利用虚拟化的技术，把运算进程运行在一个或多个服务器上。利用虚拟技术，越来越多的物理化的服务器被配置和划分成多个独立的“虚拟”服务器，每个服务独立运行，对于用户来说，就像是运行在一个独立的物理服务器上一样。虚拟服务器本质上还是从他们的物理服务器中分离出来的，由于这种灵活的配置方式，使得人们可以按照意愿移动服务器和按比例分配资源而不影响最终的用户体验。计算机资源已成“颗粒”，给用户和管理人员提供方便，包括提供按需自助服务，支持更广泛的跨平台之间的访问，资源共享，快速重新部署，可被监控与量测服务。[2]
+
 以上引用摘自维基百科。
-In the past we either used dumb terminals to connect to a mainframe or more recently desktop computers connected to applications on in-house servers which in turn connected to databases also kept on site.
-在过去，我们要么用哑终端连接大型电脑主机，要么用桌面电脑连接运行在内部服务器上的应用，这种轮转的连接方式现在依然还存在与网上。
-The management of the desktops, applications and servers were all local and all had to be supported by the company who owned them.
-对于所有桌面、应用和服务器的管理都需要本地化，都需要来自该服务所有公司的支持。
-Whilst this might be great for software houses it isn’t good business for other companies such as banks, insurance companies and oil companies. Information Technology is not a banking function in the same way catering isn’t a function of drilling oil out of the ground.
-然而这只对软件公司等少数的公司有利，却对其他的一些公司不利，比如说银行、保险公司和石油公司，信息技术没有银行的职能，就像是做餐饮的没有石油钻进的技术一样。
-Large companies have long since outsourced many functions to dedicated companies. For example outside catering companies provide the staff canteen and we all know about the offshore call centres handling customer calls for the banks.
-大公司早已把很多服务外包给专业的公司。例如，餐饮公司给他们的员工提供食堂，和我们所熟知的离岸呼叫中心处理银行的客户电话。
-IT has also become an offshore function with a number of support and development functions shipped out to China, India, Malaysia and Eastern Europe.
-IT行业也逐渐变成转向外包，许多的技术支持和开发的业务都被打包给中国、印度、马来西亚和东欧。
-Cloud computing is different to the typical model in that it is all about virtualisation. It is about putting applications on virtual servers which could all be in one location or could be thousands of miles apart but the point is it doesn’t matter because it is somebody else’s job to make sure they work.
-云计算在虚拟化方面与传统的典型模型有很大的不同，这种虚拟化的技术把服务运行与虚拟服务器上，服务器可以被放置在同一个地方或者是相隔千山万水，但是，这并不重要，你也不用担心，因为那将是别人的工作。
+
+在过去，我们要么用哑终端连接大型电脑主机，要么用桌面电脑连接运行在内部服务器上的应用，这种轮询的连接方式还依然存在于网上。
+
+现在，所有桌面、应用和服务器的管理都已经本地化，都需要来自该公司的技术支持。
+
+然而这只对软件公司等少数的公司有利，却对其他的一些商业公司不利，比如说银行、保险公司和石油公司。信息技术公司没有银行的职能，就好像是做餐饮的钻不出地下的石油一样。
+
+大公司早已把很多服务外包给专业的公司。例如，餐饮公司为他们的员工提供食堂，和我们所熟知的离岸呼叫中心处理银行业务的客户电话。
+
+IT 行业的很多服务也逐渐转向外包，许多的技术支持和开发的业务都被打包给中国、印度、马来西亚和东欧。
+
+云计算与传统的典型模型有很大不同的一方面在于虚拟化，这种虚拟化的技术把服务运行于虚拟服务器上，服务器可以被放置在同一个地方或者是相隔千山万水，但是，这并不重要，你也不用担心，因为那不是你该担心的事情。
+
 > In common usage the term “the cloud” has become a shorthand way to refer to cloud computing infrastructure.[4] The term came from the cloud symbol that network engineers used on network diagrams to represent the unknown (to them) segments of a network.[5] Marketers have further popularized the phrase “in the cloud” to refer to software, platforms and infrastructure that are sold “as a service”, i.e. remotely through the Internet.
 > 通常，“云计算”已经成为云计算基础设施的简称。[4]这个术语来源于早年一些网络工程师用云状的符号表示那些对他们来说未知的网络片段。[5]营销者普及了这个云的概念，指的是软件、平台和一些可以买卖的基础设施。比如，远程登录互联网。
 
