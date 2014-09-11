@@ -123,7 +123,7 @@ With the above commands you will be able to use SSH with ease. There is more to 
 via: http://linoxide.com/linux-command/pocket-guide-linux-ssh-command/
 
 作者：[Bobbin Zachariah][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[henryfour](https://github.com/henryfour)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
