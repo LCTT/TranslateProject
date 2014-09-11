@@ -68,7 +68,7 @@ getdeb仓库给我们提供了[安装包][3]，按照下面的步骤，就可以
 
 ### 基本用法 ###
 
-你可以不带任何选项地运行speedtest_cli.py，然后你会在终端获得关于你带宽速度的报告，这就是我蹩脚的意大利Adsl输出：
+你可以不带任何选项地运行speedtest_cli.py，然后你会在终端获得关于你带宽速度的报告，这就是我蹩脚的意大利Adsl输出： 
 
 	$ ./speedtest_cli.py
 	Retrieving speedtest.net configuration...
