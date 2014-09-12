@@ -24,77 +24,75 @@ IT 行业的很多服务也逐渐转向外包，许多的技术支持和开发�
 
 云计算与传统的典型模型有很大不同的一方面在于虚拟化，这种虚拟化的技术把服务运行于虚拟服务器上，服务器可以被放置在同一个地方或者是相隔千山万水，但是，这并不重要，你也不用担心，因为那不是你该担心的事情。
 
-> In common usage the term “the cloud” has become a shorthand way to refer to cloud computing infrastructure.[4] The term came from the cloud symbol that network engineers used on network diagrams to represent the unknown (to them) segments of a network.[5] Marketers have further popularized the phrase “in the cloud” to refer to software, platforms and infrastructure that are sold “as a service”, i.e. remotely through the Internet.
-> 通常，“云计算”已经成为云计算基础设施的简称。[4]这个术语来源于早年一些网络工程师用云状的符号表示那些对他们来说未知的网络片段。[5]营销者普及了这个云的概念，指的是软件、平台和一些可以买卖的基础设施。比如，远程登录互联网。
+> 现在，“云计算”已经成为云计算基础设施的简称。[4]这个术语来源于早年一些网络工程师用云状的符号表示那些对他们来说未知的网络。[5]后来，营销者普及了这个云的概念，指的是软件、平台和一些可以买卖的基础设施。比如，远程登录互联网。
 
-This article is therefore all about the cloud and what it means for the everyday linux user and what it can do for you and what, if any, pitfalls are there.
-因此，这篇文章讲了和云相关的所有，对于linux的用户来说，这意味着你想做什么和它能为自己做些什么，如果可能，资源就在就是现成的。
-From an end user and home user point of view, cloud computing has basically come to mean any service that is hosted online.
-从一个终端用户和家庭使用者的角度来看，云计算就是提供在线服务。
-So here goes, which cloud services are useful for an everyday linux user?
-所以，让我们来说一下云能给linux用户提供哪些有用的服务？
-### Email ###
+因此，这篇文章讲述了和云相关的所有，对于linux的用户来说，这意味着你想用它做什么和它能为自己做些什么，当然，这有可能也会给我们造成一些误区。
+
+从一个终端用户和家庭使用者的角度来看，云计算最基本的就是提供在线服务。
+
+所以，让我们来说一说云能到底能给没一位linux用户提供些什么有用的服务？
+
 ### 电子邮件 ###
-I would be very surprised if you are reading this and you don’t have an email account.
+
 当你读到这里的时候，如果你还没有一个电子邮箱，我只能说你OUT了。
-PC Advisor magazine analysed the top 6 emails services back in March, 2014 consisting of Outlook, GMail, Yahoo, iCloud, AOL and GMX.
-据PC杂志顾问分析，截至2014三月份，电子邮箱的用户最多的分别是Outlook、GMail、Yahoo、icloud、AOL和GMX。
-### Office Suites ###
+
+据PC杂志顾问分析，截至2014三月份，电子邮箱的用户最多的前六名分别是Outlook、GMail、Yahoo、icloud、AOL和GMX。
+
 ### 办公套件 ###
-As well as an email client one of the most commonly used tools required by everyone is an office suite.
-和电子邮件客户端一样，对于每个人来说，最常用的一个工具之一就是办公套件。
-In the past people would toddle off down to PC World, buy a computer and come home with a great big machine and half a dozen CDs containing 5 programs you definitely won’t use and Microsoft Works which was a cheap and virtually useless cut down version of Microsoft Office.
-从人们蹒跚学步到现在的个人电脑，以前，买一个电脑会带回一个超大型的机器和半打子刻有几个没用的程序的CD，微软工作软件（Microsoft Works）是一个廉价，而且无用到几乎要砍掉的微软office版本。
-Now you don’t even need an office suite on your computer even though there are some great free choices out there including LibreOffice and Kingsoft.
-而现在，你甚至不需要在电脑上安装任何的办公套件，即便是有LibreOffice和Kingsoft这样好的软件供选择。
-The obvious choices are of course Google Docs and Office 365. Does Office 365 work for Linux? Well this article from PC Pro in 2012 seems to suggest that it does.
-最好的选择当然是Google Docs和Office 365。对于Office 365能否很好的运行于Linux平台，这篇来自2012专业电脑的文章似乎说明了这个问题。
+
+和电子邮件客户端一样，对于每个人来说，另一个最常用的工具之一就是办公套件。
+
+在以前，当人们刚刚进入电脑世界的时候，买一个电脑会带回一个超大型的机器和半打子CD，刻着几个没用的 (Microsoft Works) 微软工作软件。 (译者注：Microsoft Works Mirosoft Works是微软的一种家用综合软件，它主要面向低端的家庭用户,提供基本的能提高生活效率的工具,比如提供简单的文档处理、数据库、电子表格的入门级办公包功能。) 微软工作软件是一个廉价，而且无用到几乎要砍掉的微软office版本。
+
+而现在，你甚至不需要在你的电脑上安装任何的办公套件，即便是有LibreOffice和Kingsoft这样好的软件供选择。
+
+最好的选择当然是Google Docs和Office 365。对于Office 365能否很好的运行于Linux平台，这篇来自2012期专业电脑的文章似乎说明了这个问题。
+
 ![](http://www.linuxnews.pro/wp-content/uploads/2014/06/office365_1.png)
 
-I don’t believe everything I read though so I signed up to Office 365 to see what would happen.
-有人说我不相信我刚刚读到的，所以，我登录了Office365，像看看到底是怎样。
-Signing up was free for a month and I was presented with a list of online applications that I could use which included Word, Excel and Outlook.
-登录得到了一个月的试用期，并且给我赠送了包括Word、Excel、和Outlook等一些在线应用。
+有人说我不相信我刚刚读到的，我也是，所以，我注册并登录了Office 365，想看看到底是什么情况。
+
+注册，可以免费试用一个月，并且会赠送了包括Word、Excel、和Outlook等一些在线应用。
+
 ![](http://www.linuxnews.pro/wp-content/uploads/2014/06/office365_2.png)
 
-All looked to be going well. I started Microsoft Word, chose a template to use and then of course it didn’t work at all.
-一切看起来挺好，我打开了Microsoft Word,选择了一个模板来使用，当然并没有打开成功。
-Office 365 isn’t yet supported on Linux and to be honest you don’t need it. Move on.
-Office 365 并不支持linux设备，况且，说实话，你也不需要。so，咱们继续。
+一切看起来都挺好，我打开了Microsoft Word，选择了一个模板来使用，当然根本就没有打开成功。
+
+Office 365 并没有很好的支持linux设备，况且，说实话，你也不需要这东西。so，咱们继续。
+
 ![](http://www.linuxnews.pro/wp-content/uploads/2014/06/office365_3.png)
 
-Google Docs works and for home use it is perfect. There are hundreds of templates for the word processing and presentation tools and the spreadsheet application does most things although it doesn’t really replace Excel because you haven’t got hundreds of wannabe developers creating naff macros and VBA scripts everywhere.
-Google Docs对于一般的办公支持非常完美，他们能完成很多的事情，并且有很多的模板针对文字处理，演示工具，电子表格等。即使他代替不了Excel，因为他并没有成百上千的开发人员为其创建宏和编写VBA脚本。
+Google Docs对于一般的办公支持非常完美，它能完成很多的事情，并且有很多的模板针对文字处理，演示工具，电子表格等。即使它始终也代替不了Excel，因为他并没有成百上千的开发人员为其创建宏和编写VBA脚本。
+
 ![](http://www.linuxnews.pro/wp-content/uploads/2014/06/zoho_1.png)
 
-Another alternative to Office 365 is Zoho.
-另一个可供选择的office条件是Zoho。
-Similar to Google Docs, Zoho includes a word processor, spreadsheet tool, presentation tool and mail.
+另一个可供选择的办公套件是Zoho。
+
 和Google Docs一样，Zoho也包含有文字处理工具，演示程序，电子表格程序和电子邮件。
-There are finance and CRM tools as well.
+
 此外，还有很多金融和客户管理系统。
+
 ![](http://www.linuxnews.pro/wp-content/uploads/2014/06/zoho_2.png)
 
-The interface for the tools is actually very nice and clean.
 这个工具的界面看起来真的很简洁，很棒。
-Services such as Google Docs and Zoho also give you the power of collaboration.
-像Google Docs和Zoho这些在线服务给予了人们相互协作的便利。
-Documents can be shared and worked on by different people in different locations.
+
+它和Google Docs和Zoho这些在线服务一样，给予了人们相互协作的便利。
+
 很多文档被不同的人分享，然后在不同的地方被不同的人修改完善。
-This site provides a good list of alternative choices to Google Docs and Zoho.
-这个网站提供了一些很好的选择来代替Google Docs和Zoho。
-### Online File Storage ###
+
+这里会给出一些理由来帮助你从Google Docs和Zoho中选择一个适合你的办公套件。
+
 ### 在线文件存储 ###
-Another good service provided by Google Docs and Zoho is the ability to store the documents and files you create online.
-Google Docs和Zoho给我们提供了其他一些很好的服务，比如说，你们可以线上存储很多文档和创建很多文件。
-There are other services however such as Dropbox that are used to exclusively store your documents in the cloud.
+
+Google Docs和Zoho给我们提供了其他一些很好的服务，就是很好的线上存储能力，你们可以线上存储很多文档和创建很多文件。
+
 也有一些其他的服务,比如说Dropbox,仅仅只提供在云存储服务。
-The benefit of storing files with services like Dropbox is that if your house is burgled or catches fire then you have an offshore backup that remains intact. You can also access your files anywhere.
-像Dropbox这样的云存储的好处是如果你的东西被偷了或者是房子着火了，而这时，你仍然有一份离岸备份时安好无缺的。你仍然可以在任何地方获取你的文件。
-Dropbox is free for up to 2 gigabytes of use. If you have a lot more data, and most of us do nowadays, then there is a $ 9.99 monthly plan that is available allowing for 100 gigabytes. There is also a business version available from $ 15 a month.
-Dropbox对于前2G的容量是免费的，如果你还有更多的东西要存储，每天还有更多的事情要做，每个月9.9美刀，你就能拥有100G的存储空间，另外，也提供商务版本，每个月15美刀。
-There are of course alternatives to Dropbox and this site provides a list of the best online backup solutions.
-当然，我们也有Dropbox的替代解决方案，这个网站也提供了最好的一些在线备份的方案。
+
+像Dropbox这样的云存储的好处是如果你的东西被偷了或者是不小心房子着火了，而这时，你仍然有一份离岸备份是安好无缺的。你仍然可以在任何地方获取你的文件。
+
+Dropbox对于前2G的容量是免费的，如果你还有更多的东西要存储，每天还有更多的事情要做，每个月只要9.9美刀，你就能拥有100G的存储空间，另外，Dropbox也提供商务版本，每个月15美刀。
+
+当然，并不是说Dropbox没有可替代的方案，这个网站也提供了很多很好的一些在线备份的方案。
 ### Photos ###
 ### 相片 ###
 Since the introduction of digital cameras and more recently smart phones, more and more of us have memory cards full of photos.
