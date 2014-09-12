@@ -1,3 +1,4 @@
+2q1w2007翻译中
 QuiteRSS: RSS Reader For Desktop Linux
 ================================================================================
 [QuiteRSS][1] is a free and [open source][2] RSS/Atome reader available for Windows , Linux and Mac. Written in C++/QT, it comes with a number of features.
