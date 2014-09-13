@@ -1,3 +1,4 @@
+translating by cvsher
 Linux Performance Monitoring with Vmstat and Iostat Commands
 ================================================================================
 This is our on-going series of commands and performance monitoring in **Linux**. **Vmstat** and **Iostat** both commands are available on all major **Unix-like (Linux/Unix/FreeBSD/Solaris)** Operating Systems.
