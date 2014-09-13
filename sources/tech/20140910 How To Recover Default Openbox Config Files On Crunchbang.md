@@ -1,3 +1,6 @@
+Translating------------geekpi
+
+
 How To Recover Default Openbox Config Files On Crunchbang
 ================================================================================
 [CrunchBang][1] is a Debian GNU/Linux based distribution offering a great blend of speed, style and substance. Using the nimble Openbox window manager, it is highly customizable and provides a modern, full-featured GNU/Linux system without sacrificing performance.
