@@ -1,3 +1,4 @@
+disylee占个坑！来翻译了！
 Ubuntu Touch Now Has a Torrent Client in the Ubuntu Store
 ================================================================================
 ![DowNow](http://i1-news.softpedia-static.com/images/news2/Ubuntu-Touch-Now-Has-a-Torrent-Clinent-in-the-Ubuntu-Store-457538-2.jpg)

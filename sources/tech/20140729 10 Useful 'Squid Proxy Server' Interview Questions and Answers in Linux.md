@@ -1,3 +1,4 @@
+Translating by ZTinoZ
 10 Useful “Squid Proxy Server” Interview Questions and Answers in Linux
 ================================================================================
 It’s not only to System Administrator and Network Administrator, who listens the phrase Proxy Server every now and then but we too. Proxy Server is now a corporate culture and is the need of the hour. Proxy server now a days is implemented from small schools, cafeteria to large MNCs. Squid (also known as proxy) is such an application which acts as proxy server and one of the most widely used tool of its kind.

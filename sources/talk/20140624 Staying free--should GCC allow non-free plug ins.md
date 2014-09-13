@@ -1,3 +1,5 @@
+CNprober translating..
+
 Staying free – should GCC allow non-free plug ins?
 ================================================================================
 > Arguments in favour of the use of non-free plug-ins in GCC have again been raised on GCC mailing-lists, but are trumped by the arguments for GCC as a vehicle for free software development

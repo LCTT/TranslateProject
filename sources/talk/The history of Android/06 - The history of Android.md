@@ -1,3 +1,5 @@
+alim0x translating
+
 The history of Android
 ================================================================================
 ![The T-Mobile G1](http://cdn.arstechnica.net/wp-content/uploads/2014/04/t-mobile_g1.jpg)
