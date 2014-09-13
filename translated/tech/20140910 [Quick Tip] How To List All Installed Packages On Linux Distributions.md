@@ -1,12 +1,13 @@
-[Quick Tip] How To List All Installed Packages On Linux Distributions
+2q1w2007翻译中
+[小贴士] 怎么在Linux发行版下列出所有安装了的包
 ================================================================================
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/09/linux-790x536.png)
 
-To list all installed package on a Linux system depends on which distribution you are running and the package management mode used.
+列出所有安装了的包的方法取决于你用什么发行版以及包管理器。
 
-In this tutorial, we are going to look at commands on some of the notable and popularly used distros.
+在这个教程里，我们将提供主流发行版的命令。
 
-**NOTE**: You can pipe the less command OR redirected to a text file using the redirection operator (>). Below are examples
+**注意**: 你可以用管道筛选或者用重定向符（>）来把结果重定向到一个文件。例子如下。
 
     example | less
 
@@ -38,14 +39,14 @@ In this tutorial, we are going to look at commands on some of the notable and po
 
     dpkg -l
 
-Good day.
+祝你有好的一天。
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/quick-tip-list-installed-packages-linux-distributions/
 
 作者：[Enock Seth Nyamador][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[2q1w2007](https://github.com/2q1w2007)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

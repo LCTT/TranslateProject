@@ -1,3 +1,4 @@
+johnhoow translating...
 Install UberWriter Markdown Editor In Ubuntu 14.04
 ================================================================================
 Quick tutorial to show you **how to install UberWriter markdown editor in Ubuntu 14.04** for free via official PPA.

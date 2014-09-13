@@ -1,4 +1,4 @@
-12张Ubuntu 14.10壁纸竞赛获奖壁纸（至今）
+12张Ubuntu 14.10壁纸竞赛（目前为止的）获奖壁纸
 ================================================================================
 让我们欣赏一组你在未来几个月会看到一大堆的图片吧。是的，在[Ubuntu 14.10壁纸竞赛获奖者壁纸][1]已经公布了。
 
@@ -8,7 +8,7 @@
 
 ### 让我们瞧瞧这几张获奖图片 ###
 
-你能在下面看到目前选出的作品。重点是现在目前，比赛的组织者[**Iain Farrell所说的**][3] “…awaiting a couple from people but if they don’t come back to me we’ll have to go without!” .  
+你能在下面看到目前选出的作品。需要强调的是，这是到目前为止的，如比赛的组织者[**Iain Farrell所说的**][3] ：“我还在等一些回复，不过如果他们不给我回复就只能不包括他们的了！”   
 
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/09/utopic.jpg)
 
@@ -68,12 +68,12 @@ via: http://www.omgubuntu.co.uk/2014/09/ubuntu-14-10-wallpaper-contest-winners
 
 作者：[Joey-Elijah Sneddon][a]
 译者：[ZTinoZ](https://github.com/ZTinoZ)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:https://plus.google.com/117485690627814051450/?rel=author
 [1]:http://www.omgubuntu.co.uk/2014/08/ubuntu-14-10-wallpaper-contest
-[2]:http://www.omgubuntu.co.uk/2014/08/best-ubuntu-wallpaper-contest-entries-1410
+[2]:http://linux.cn/article-3745-1.html
 [3]:https://bugs.launchpad.net/ubuntu/+source/ubuntu-wallpapers/+bug/1354341/comments/2
 [4]:https://bugs.launchpad.net/ubuntu/+source/ubuntu-wallpapers/+bug/1354341/+attachment/4199899/+files/14.10%20images.zip
