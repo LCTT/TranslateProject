@@ -1,3 +1,4 @@
+guodongxiarn 翻译中
 How to share on linux the output of your shell commands
 ================================================================================
 Some time ago I posted an article about [shelr.tv][1] a website and a service that was made to allow you to share your [terminal][2] records directly from the website.
