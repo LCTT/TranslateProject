@@ -1,3 +1,5 @@
+barney-ro translating 
+
 Why Your Company Needs To Write More Open Source Software - ReadWrite
 ================================================================================
 > Real innovation doesn't happen behind closed doors.
