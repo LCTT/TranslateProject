@@ -1,25 +1,25 @@
-10个实用的关于linux中squid代理服务器的采访问答
+10个实用的关于linux中squid代理服务器的访谈问答
 ================================================================================
-It’s not only to System Administrator and Network Administrator, who listens the phrase Proxy Server every now and then but we too. Proxy Server is now a corporate culture and is the need of the hour. Proxy server now a days is implemented from small schools, cafeteria to large MNCs. Squid (also known as proxy) is such an application which acts as proxy server and one of the most widely used tool of its kind.
+不仅是系统管理员和网络管理员时不时会听到“代理服务器”这个词，我们也经常听到。代理服务器已经是一种企业的文化，而且那是需要时间来积累的。它现在也在一些小型的学校或者大型跨国公司的自助餐厅里得到了实现。Squid（也可做代理服务）就是这样一个应用程序，它既可以被作为代理服务器，同时也是在其同类工具中比较被广泛使用的一种。
 
 This Interview article aims at strengthening your base from Interview point on the ground of proxy server and squid.
 
 ![Squid Interview Questions](http://www.tecmint.com/wp-content/uploads/2014/07/Squid-Interview-Questions.png)
-Squid Interview Questions
+以下为访谈问答的内容
 
 ### 1. What do you mean by Proxy Server? What is the use of Proxy Server in Computer Networks? ###
 
-> **Answer** : A Proxy Server refers to physical machine or Application which acts intermediate between client and resource provider or server. A client seeks for file, page or data from the the proxy server and proxy server manages to get the requested demand of client fulfilled by handling all the complexities in between.
+> **回答** : A Proxy Server refers to physical machine or Application which acts intermediate between client and resource provider or server. A client seeks for file, page or data from the the proxy server and proxy server manages to get the requested demand of client fulfilled by handling all the complexities in between.
 
 Proxy servers are the backbone of WWW (World Wide Web). Most of the proxies of today are web proxies. A proxy server handles the complexity in between the Communication of client and Server. Moreover it provides anonymity on the web which simply means your identity and digital footprints are safe. Proxies can be configured to allow which sites client can see and which sites are blocked.
 
 ### 2. What is Squid? ###
 
-> **Answer** : Squid is an Application software released under GNU/GPL which acts as a proxy server as well as web cache Daemon. Squid primarily supports Protocol like HTTP and FTP however other protocols like HTTPS, SSL,TLS, etc are well supported. The feature web cache Daemon makes web surfing faster by caching web and DNS for frequently visited websites. Squid is known to support all major platforms including Linux, UNIX, Microsoft Windows and Mac.
+> **回答** : Squid is an Application software released under GNU/GPL which acts as a proxy server as well as web cache Daemon. Squid primarily supports Protocol like HTTP and FTP however other protocols like HTTPS, SSL,TLS, etc are well supported. The feature web cache Daemon makes web surfing faster by caching web and DNS for frequently visited websites. Squid is known to support all major platforms including Linux, UNIX, Microsoft Windows and Mac.
 
 ### 3. What is the default port of squid and how to change its operating port? ###
 
-> **Answer** : The default port on which squid runs is 3128. We can change the operating port of squid from default to any custom unused port by editing its configuration file which is located at /etc/squid/squid.conf as suggested below.
+> **回答** : The default port on which squid runs is 3128. We can change the operating port of squid from default to any custom unused port by editing its configuration file which is located at /etc/squid/squid.conf as suggested below.
 
 Open ‘/etc/squid/squid.conf’ file and with your choice of editor.
 
@@ -35,7 +35,7 @@ Restart the squid service as shown below.
 
 ### 4. You works for a company the management of which ask you to block certain domains through squid proxy server. What are you going to do? ###
 
-> **Answer** : Blocking domain is a module which is implemented well in the configuration file. We just need to perform a little manual configuration as suggested below.
+> **回答** : Blocking domain is a module which is implemented well in the configuration file. We just need to perform a little manual configuration as suggested below.
 
 a. Create a file say ‘blacklist’ under directory ‘/etc/squid’.
 
