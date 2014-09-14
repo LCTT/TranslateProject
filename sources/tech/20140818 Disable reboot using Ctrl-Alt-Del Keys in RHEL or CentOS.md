@@ -1,3 +1,4 @@
+2q1w2007翻译中
 Disable reboot using Ctrl-Alt-Del Keys in RHEL / CentOS
 ================================================================================
 In Linux , It's a security concern for us  to allow anyone  to **reboot** the server using  **Ctrl-Alt-Del keys**. It is always recommended in production boxes that one should disable reboot uisng Ctrl-Alt-Del keys.
