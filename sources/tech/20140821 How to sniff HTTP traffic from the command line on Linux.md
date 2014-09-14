@@ -1,3 +1,4 @@
+SPccman is translating
 How to sniff HTTP traffic from the command line on Linux
 ================================================================================
 Suppose you want to sniff live HTTP web traffic (i.e., HTTP requests and responses) on the wire for some reason. For example, you may be testing experimental features of a web server. Or you may be debugging a web application or a RESTful service. Or you may be trying to troubleshoot [PAC (proxy auto config)][1] or check for any malware files surreptitiously downloaded from a website. Whatever the reason is, there are cases where HTTP traffic sniffing is helpful, for system admins, developers, or even end users.
