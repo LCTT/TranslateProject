@@ -1,12 +1,16 @@
 barney-ro translating 
 
 Why Your Company Needs To Write More Open Source Software - ReadWrite
+为什么你的公司需要参与更多的开源软件的编写
 ================================================================================
 > Real innovation doesn't happen behind closed doors.
+>闭关锁国是产生不了革新的。
 
 ![](http://a5.files.readwrite.com/image/upload/c_fill,h_900,q_70,w_1600/MTE5NDg0MDYxMTkxMzQxNTgz.jpg)
 
 **The Wall Street Journal [thinks][1] it's news that Zulily is developing** "more software in-house." It's not. At all. As [Eric Raymond wrote][2] years ago, 95% of the world's software is written for use, not for sale. The reasons are many, but one stands out: as Zulily CIO Luke Friang declares, it's "nearly impossible for a [off the shelf] solution to keep up with our pace."
+
+**华尔街日报 [称][1] 有消息表明，Zulily正在开发** 更多的内部软件，但实则不是。正如多年前[Eric Raymond写到][2]，全世界95%的软件写来用的，而不是售卖。原因很多，但是其中有一个比较突出：正如Zulily的CIO Luke Friang所说，基本上是没有一个[不用定制]软件解决方案能跟上我们的步伐。 
 
 True now, just as it was true 20 years ago.
 
@@ -53,7 +57,7 @@ Lead image courtesy of Shutterstock.
 via: http://readwrite.com/2014/08/16/open-source-software-business-zulily-erp-wall-street-journal
 
 作者：[Matt Asay][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[barney-ro](https://github.com/barney-ro)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
