@@ -1,3 +1,5 @@
+alim0x translating
+
 How To Uninstall Ubuntu Linux From Windows 8 Dual Boot
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/09/Guide_Uninstall_Ubuntu_Windows_dual_Boot.jpeg)
