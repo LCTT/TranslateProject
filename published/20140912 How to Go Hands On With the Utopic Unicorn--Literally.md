@@ -2,7 +2,7 @@
 ================================================================================
 **想要知道如何在正式发布前上手体验乌托邦独角兽（Utopic Unicorn）？现在你就可以做到！—— 真的是[“上手”][1]体验哦~！**
 
-显然是为了庆祝即将发布的同名Ubuntu，Canonical上线了一款“手把手教你独角兽折纸指南”。这一活动将作为该公司[2014 Deconstruct][2] 大会的一部分出现，大会于九月上旬在英国Brighton举办。
+显然是为了庆祝即将发布的同名Ubuntu，Canonical上线了一款“手把手教你独角兽折纸指南”。这一活动作为该公司[2014 Deconstruct][2] 大会的一部分出现，大会于九月上旬在英国Brighton举办。
 
 ![Image: Alejandra Obregon](http://www.omgubuntu.co.uk/wp-content/uploads/2014/09/ubuntu-unicorns-750x745.jpg)
 
@@ -26,7 +26,7 @@ via: http://www.omgubuntu.co.uk/2014/09/unicorn-origami-download-pdf-ubuntu-utop
 
 作者：[Joey-Elijah Sneddon][a]
 译者：[Mr小眼儿](http://blog.csdn.net/tinyeyeser)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
