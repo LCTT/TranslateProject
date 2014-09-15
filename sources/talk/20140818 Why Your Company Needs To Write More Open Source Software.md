@@ -14,17 +14,31 @@ Why Your Company Needs To Write More Open Source Software - ReadWrite
 
 True now, just as it was true 20 years ago.
 
+20年前是这样，现在也是这样。
+
 But one thing is different, and it's something the WSJ completely missed. Historically software developed in-house was zealously kept proprietary because, the reasoning went, it was the source of a firm's competitive advantage. Today, however, companies increasingly realize the opposite: there is far more to be gained by open sourcing in-house software than keeping it closed.
+
+但是有一点是不同的，这也正是华尔街日报完全忘掉的地方。这也正是历史上开发的内部软件始终保持着专有的原因了，因为这是一个公司的核心竞争力。然而今天，越来越多的公司意识到另一面：开源内部软件将会比保持专有获益更多。
 
 Which is why your company needs to contribute more open-source code. Much more.
 
+这也就是为什么你的公司需要为开源项目做出更多的贡献。
+
 We've gone through an anomalous time these past 20 years. While most software continued to be written for internal use, most of the attention has been focused on vendors like SAP and Microsoft that build solutions that apply to a wide range of companies.
+
+过去的20年，对我们来说是很不一样的，很多开发的软件都是为了内部的使用，大多数人的精力都放在像SAP和微软这样的厂商建立的应用广泛的企业级解决方案。
 
 That's the theory, anyway.
 
+不管怎么说，这都是推测。
+
 In practice, buyers spent a small fortune on license fees, then a 5X multiple on top of that to make the software fit their requirements. For example, a company may spend $100,000 on an ERP system, but they're going to spend another $500,000 making it work. 
 
+在实践中，买方花费很少的钱购买license，然后花5倍的精力来使软件试用他们的需求。比如说，一个公司可能在一个ERP系统上花费100，000美元，但是他们还得继续花费500，000来维持软件正常运行。
+
 One of the reasons open source took off, even in applications, was that companies could get a less functional product for free (or a relatively inexpensive fee) and then spend their implementation dollars tuning it to their needs. Either way, customization was necessary, but the open source approach was less costly and arguably more likely to result in a more tailored result.
+
+使开源软件甚至是应用程序正式发展起来的原因之一是很多公司可以免费获得一些功能性的产品（或者是一个相对便宜的费用），然后定制为他们所需要的，不管怎样，个性化是有必要的，但是开源的根本是使成本更低，按理来说，也能产生更好的结果。
 
 Meanwhile, technology vendors doubled-down on "sameness," as Redmonk analyst [Stephen O'Grady describes][3]:
 
