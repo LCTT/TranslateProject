@@ -1,6 +1,6 @@
-Linux FAQ -- 如何在VMware ESXi虚拟机上设置静态MAC地址。
+Linux有问必答：如何在VMware ESXi虚拟机上设置静态MAC地址
 ================================================================================
-> **问题**:我想给VMware ESXi上的一台虚拟机分配一个静态的MAC地址。然而当我开始这么做的时候，虚拟机就不能启动了不且抛出了一个这样一个错误"00:0c:29:1f:4a:ab is not an allowed static Ethernet address. It conflicts with VMware reserved MACs"（00:0c:29:1f:4a:ab不是一个合法的静态以太网地址。它与VMWare的保留MAC地址冲突）。我该如何在VMware ESXi虚拟机上设置静态MAC地址？
+> **问题**:我想给VMware ESXi上的一台虚拟机分配一个静态的MAC地址。然而当我开始这么做的时候，虚拟机就不能启动了，并且抛出了一个这样一个错误"00:0c:29:1f:4a:ab is not an allowed static Ethernet address. It conflicts with VMware reserved MACs"（00:0c:29:1f:4a:ab不是一个合法的静态以太网地址。它与VMWare的保留MAC地址冲突）。我该如何在VMware ESXi虚拟机上设置静态MAC地址？
 
 当你在VMware ESXi上创建虚拟机时，虚拟机的每个网络接口就被分配了一个动态的NAC地址。如果你想要改变默认的行为并给你的虚拟机分配一个静态MAC地址时就这样做
 
@@ -16,7 +16,7 @@ Linux FAQ -- 如何在VMware ESXi虚拟机上设置静态MAC地址。
 
 首先关闭你想要分配静态MAC地址的虚拟机。
 
-[对你的ESXi主机启用SSH访问][1]如果你还没这么做的话。接着通过SSH登录ESXi主机。
+[对你的ESXi主机启用SSH访问][1]，如果你还没这么做的话。接着通过SSH登录ESXi主机。
 
 移到你虚拟机的.vmx文件所在目录。
 
@@ -35,7 +35,7 @@ Linux FAQ -- 如何在VMware ESXi虚拟机上设置静态MAC地址。
 via: http://ask.xmodulo.com/static-mac-address-vmware-esxi-virtual-machine.html
 
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
