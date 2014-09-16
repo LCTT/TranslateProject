@@ -11,11 +11,11 @@
 ### 1. 什么是代理服务器？代理服务器在计算机网络中有什么用途？ ###
 
 > **回答** : 代理服务器是指那些作为客户端和资源提供商或服务器之间的中间件的物理机或者应用程序。客户端从代理服务器中寻找文件、页面或者是数据而且代理服务器能处理客户端与服务器之间所有复杂事务从而满足客户端的生成的需求。
-代理服务器是WWW（万维网）的支柱，它们其中大部分都是网页代理。一台代理服务器能处理客户端与服务器之间的复杂通信事务。此外，它在网络上提供的是匿名信息那就意味着你的身份和浏览痕迹都是安全的。代理可以去配置允许哪些网站的客户能看到，哪些网站被屏蔽了。
+代理服务器是WWW（万维网）的支柱，它们其中大部分都是Web代理。一台代理服务器能处理客户端与服务器之间的复杂通信事务。此外，它在网络上提供的是匿名信息那就意味着你的身份和浏览痕迹都是安全的。代理可以去配置允许哪些网站的客户能看到，哪些网站被屏蔽了。
 
 ### 2. Squid是什么? ###
 
-> **回答** : Squid是一个在GNU/GPL协议下发布的即可作为代理服务器同时也可作为网页缓存守护进程的应用软件。Squid主要是支持像HTTP和FTP那样的协议但是对其它的协议比如HTTPS，SSL,TLS等同样也能支持。其特点是网页缓存守护进程通过从经常上访问的网站里缓存网页和DNS从而让上网速度更快。Squid支持所有的主流平台，包括Linux，UNIX，微软公司的Windows和苹果公司的Mac。
+> **回答** : Squid是一个在GNU/GPL协议下发布的即可作为代理服务器同时也可作为Web缓存守护进程的应用软件。Squid主要是支持像HTTP和FTP那样的协议但是对其它的协议比如HTTPS，SSL,TLS等同样也能支持。其特点是Web缓存守护进程通过从经常上访问的网站里缓存Web和DNS从而让上网速度更快。Squid支持所有的主流平台，包括Linux，UNIX，微软公司的Windows和苹果公司的Mac。
 
 ### 3. Squid的默认端口是什么？怎么去修改它的操作端口？ ###
 
@@ -37,7 +37,7 @@
 
 > **回答** : 屏蔽域名是一个在配置文件中实现的功能模块。我们只需要执行一个小的手动配置即可，建议如下。
 
-a. 在 ‘/etc/squid’ 路径下创建一个名为 ‘blacklist’ 的文件。
+a. 在 ‘/etc/squid’ 目录下创建一个名为 ‘blacklist’ 的文件。
 
     # touch /etc/squid/blacklist
 
@@ -70,41 +70,41 @@ f. 保存配置文件并退出，重启Squid服务让其生效。
 
 > **回答** : 媒体范围限制是Squid的一种特殊的功能，它只从服务器中获取所需要的数据而不是整个文件。这个功能很好的实现了用户在各种视频流媒体网站如YouTube和Metacafe看视频时，可以点击视频中的进度条来选择进度，因此整个视频不用全部都加载，除了一些需要的部分。
 
-Squid部分下载功能的特点是很好地实现了在Windows更新时下载的文件能以一个个小数据包的形式暂停。正因为它的这个特点，正在下载文件的Windows机器能不用担心数据会丢失，从而进行恢复下载。Squid让媒体范围限制和部分下载功能只在存储一个完整文件的复件之后实现。此外，Moreover the partial download gets deleted and not cached when user points to another page until Squid is specially configured somehow.
+Squid部分下载功能的特点是很好地实现了在Windows更新时下载的文件能以一个个小数据包的形式暂停。正因为它的这个特点，正在下载文件的Windows机器能不用担心数据会丢失，从而进行恢复下载。Squid让媒体范围限制和部分下载功能只在存储一个完整文件的复件之后实现。此外，当用户指向另一个页面时，Squid要以某种方式进行特殊地配置，部分下载下来的文件才会不被删除且留有缓存。
 
-### 6. What is reverse proxy in squid? ###
+### 6. 什么是Squid的反向代理？ ###
 
-> **回答** : Reverse proxy is a feature of Squid which is used to accelerate the web surfing for end user. Say the Real server ‘RS’ contains the resource and ‘PS’ is the proxy Server. The client seek some data which is available at RS. It will rely on RS for the specified data for the first time and the copy of that specified data gets stored on PS for configurable amount of time. For every request for that data from now PS becomes the real source. This results in Less traffic, Lesser CPU usages, Lesser web resource utilization and hence lesser load to actual server RS. But RS has no statistics for the total traffic since PS acted as actual server and no Client reached RS. ‘X-Forwarded-For HTTP’ can be used to log the client IP although on RS.
+> **回答** : 反向代理是Squid的一个特点，这个功能被用来加快最终用户的上网速度。缩写为 ‘RS’ 的原服务器包含了所有资源，而代理服务器则叫 ‘PS’ 。客户端寻找RS所提供的数据，第一次指定的数据和它的复件会经过多次配置从RS上存储在PS上。这样的话每次从PS上请求的数据就等于就是从原服务器上获取的。这样就会减轻网络拥堵，减少CPU使用率，降低网络资源的利用率从而缓解原来实际服务器的负载压力。但是RS统计不了总流量的数据因为PS分担了部分原服务器的任务。‘X-Forwarded-For HTTP’ 就能记录下通过HTTP代理或负载均衡方式连接到RS的客户端最原始的IP地址。
 
-Technically it is feasible to use single squid server to act both as normal proxy server and reverse proxy server at the same point of time.
+严格意义上来说，用单个Squid服务器同时作为正向代理服务器和反向代理服务器是可行的。
 
-### 7. Since Squid can be used as web-cache Daemon, is it possible to Clear its Cache? How? ###
+### 7. 由于Squid能作为一个Web缓存守护进程，那缓存可以删除吗？怎么删除？ ###
 
-> **回答** : No Doubt! Squid acts as web-cache Daemon which is used to accelerate web surfing still it is possible to clear its cache and that too very easily.
+> **回答** : 当然！作为一个Web缓存守护进程，Squid能加快网页的访问速度，清除缓存也是非常简单的。
 
-a. First stop Squid proxy server and delete cache from the location ‘/var/lib/squid/cache’ directory.
+a. 首先停止Squid代理服务，然后从这个 ‘/var/lib/squid/cache’ 目录中删除缓存。
 
     # service squid stop
     # rm -rf /var/lib/squid/cache/*<
 
-b. Create Swap directories.
+b. 创建交换分区目录。
 
     # squid -z
 
-### 8. A client approaches you, who is working. They want the web access time be restricted for their children. How will you achieve this scenario? ###
+### 8. 你身边有一台客户机，而你正在工作，如果想要限制儿童的访问时间段，你会怎么去设置那个场景？ ###
 
-Say the web access allow time be 4′o clock to 7′o clock in the evening for three hours, sharply form Monday to Friday.
+把允许访问的时间设置成晚上4点到7点三个小时，跨度为星期一到星期五。
 
-a. To restrict web access between 4 to 7 from Monday to Friday, open the Squid configuration file.
+a. 想要限制Web访问时间在星期一到星期五的晚上4点到7点，要先打开Squid的配置文件。
 
     # nano /etc/squid/squid.conf
 
-b. Add the following lines and save the file and exit.
+b. 在配置文件中添加如下行，保存文件并退出。
 
     acl ALLOW_TIME time M T W H F 16:00-19:00
     shttp_access allow ALLOW_TIME
 
-c. Restart the Squid Service.
+c. 重启Squid服务。
 
     # service squid restart
 
