@@ -1,3 +1,4 @@
+guodongxiaren 翻译中
 8 Options to Trace/Debug Programs using Linux strace Command
 ================================================================================
 The strace is the tool that helps in debugging issues by tracing system calls executed by a program. It is handy when you want to see how the program interacts with the operating system, like what system calls are executed in what order.
