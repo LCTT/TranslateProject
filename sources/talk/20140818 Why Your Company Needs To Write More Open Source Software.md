@@ -38,13 +38,19 @@ In practice, buyers spent a small fortune on license fees, then a 5X multiple on
 
 One of the reasons open source took off, even in applications, was that companies could get a less functional product for free (or a relatively inexpensive fee) and then spend their implementation dollars tuning it to their needs. Either way, customization was necessary, but the open source approach was less costly and arguably more likely to result in a more tailored result.
 
-使开源软件甚至是应用程序正式发展起来的原因之一是很多公司可以免费获得一些功能性的产品（或者是一个相对便宜的费用），然后定制为他们所需要的，不管怎样，个性化是有必要的，但是开源的根本是使成本更低，按理来说，也能产生更好的结果。
+使开源软件甚至是应用程序正式发展起来的原因之一是很多公司可以免费获得一些功能性的产品（或者是一个相对便宜的费用获得产品），然后定制为他们所需要的，当然，不管怎样，个性化是有必要的，而且开源的根本是使成本更低，按理来说，这样的定制或许能产生更好的结果。
 
 Meanwhile, technology vendors doubled-down on "sameness," as Redmonk analyst [Stephen O'Grady describes][3]:
 
+同时，开发者尽量的减少同类之间的相似之处。作为分析师，[Stephen O'Grady认为][3]:
+
 > The mainstream technology industry has, in recent years, eschewed specialization. Virtual appliances, each running a version of the operating system customized for an application or purpose, have entirely failed to dent the sales of general purpose alternatives such as RHEL or Windows. For better than twenty years, the answer to any application data persistence requirement has meant one thing: a relational database. If you were talking about enterprise application development, you were talking about Java. And so on.
 
+> 在最近几年看，主流技术产业都有意避开专业化。运行着定制操作系统的虚拟设备，已经彻底败给了像RHEL和Windowns这些通用的操作系统。最快20年，任何程序的数据保存都意味着一件事：一个关联的数据库，如果你谈论的是企业级应用开发，那么你谈论的是Java，等等。
+
 Along the way, however, companies discovered that vendors weren't really meeting their needs, even for well-understood product categories like Content Management Systems. They needed different, not same.
+
+开源的道路上，然而，有些公司也发现，有些开发者给不了他们所想要的，即便是很好理解的产品类别，比如像内容管理系统，他们需要的是不是，而不是相似。
 
 So the customers went rogue. They became vendors. Sort of.
 
