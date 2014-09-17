@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Linux FAQs with Answers--How to find and remove obsolete PPA repositories on Ubuntu
 ================================================================================
 > **Question**: I was trying to re-synchronize package index files by running apt-get update. But I am getting the following "404 Not Found" errors. Looks like I cannot fetch the latest index from some third-party PPA repositories that I've added before. How can I clean up such broken and old PPA repositories?
