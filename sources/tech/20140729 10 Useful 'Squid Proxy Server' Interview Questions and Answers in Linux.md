@@ -108,13 +108,13 @@ c. 重启Squid服务。
 
     # service squid restart
 
-### 9. Squid stores data in which file format? ###
+### 9. Squid存储的数据是什么文件格式？ ###
 
-> **回答** : Data stored by Squid is in ufs format. Ufs is the old well-known Squid storage format.
+> **回答** : Squid存储的数据是UFS文件格式的。UFS是一种老的，使用比较广泛的Squid存储格式
 
-### 10. Where do cache gets stored by squid? ###
+### 10. Squid的缓存会存储到哪里？ ###
 
-> **回答** : A squid stores cache in special folder at the location ‘/var/spool/squid’.
+> **回答** : Squid存储的缓存是位于 ‘/var/spool/squid’ 的特殊目录下。
 
 以上就是全部内容了，很快我还会带着其它有趣的内容回到这里，届时还请继续关注Tecmint。别忘了告诉我们你的反馈和评论。
 
