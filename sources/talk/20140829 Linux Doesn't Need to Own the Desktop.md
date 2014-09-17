@@ -1,3 +1,4 @@
+Translating by ZTinoZ
 Linux Doesn't Need to Own the Desktop
 ================================================================================
 Linus Torvalds issued Linux 3.17 rc-2 on Monday of this week, and [he deviated from his normal schedule][1] in doing so, because August 25 happens to mark the 23rd anniversary of the original Linux announcement. "Hello everybody out there using minix," Torvalds wrote.
