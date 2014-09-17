@@ -1,3 +1,4 @@
+    Vic020
 Linux FAQs with Answers--How to remove PPA repository from command line on Ubuntu
 ================================================================================
 > **Question**: I added a third-party PPA repository on my Ubuntu box some time ago. How can I remove the PPA repository? 
