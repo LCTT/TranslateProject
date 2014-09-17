@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Linux FAQs with Answers--How to expand an XFS file system
 ================================================================================
 > **Question**: I have extra space in my disk, so I want to grow the size of an existing XFS file system created on it, in order to fully utilize the extra space. What is a proper way to expand an XFS file system? 
