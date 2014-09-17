@@ -1,3 +1,5 @@
+alim0x translating
+
 The history of Android
 ================================================================================
 ![Both screens of the Email app. The first two screenshots show the combined label/inbox view, and the last shows a message.](http://cdn.arstechnica.net/wp-content/uploads/2014/01/email2lol.png)
