@@ -1,36 +1,25 @@
 barney-ro translating 
 
-Why Your Company Needs To Write More Open Source Software - ReadWrite
-为什么你的公司需要参与更多的开源软件的编写
+为什么你的公司需要参与更多开源软件的编写
 ================================================================================
-> Real innovation doesn't happen behind closed doors.
->闭关锁国是产生不了革新的。
+>闭关锁国是产生不了创新的。
 
 ![](http://a5.files.readwrite.com/image/upload/c_fill,h_900,q_70,w_1600/MTE5NDg0MDYxMTkxMzQxNTgz.jpg)
 
-**The Wall Street Journal [thinks][1] it's news that Zulily is developing** "more software in-house." It's not. At all. As [Eric Raymond wrote][2] years ago, 95% of the world's software is written for use, not for sale. The reasons are many, but one stands out: as Zulily CIO Luke Friang declares, it's "nearly impossible for a [off the shelf] solution to keep up with our pace."
 
-**华尔街日报 [称][1] 有消息表明，Zulily正在开发** 更多的内部软件，但实则不是。正如多年前[Eric Raymond写到][2]，全世界95%的软件写来用的，而不是售卖。原因很多，但是其中有一个比较突出：正如Zulily的CIO Luke Friang所说，基本上是没有一个[不用定制]软件解决方案能跟上我们的步伐。 
-
-True now, just as it was true 20 years ago.
+**华尔街日报 [称][1]，有消息表明，Zulily正在开发** 更多的内部软件，但实际上根本不是。多年前[Eric Raymond写道][2]，全世界95%的软件写来用的，而不是售卖。原因很多，但是其中有一个比较突出：正如Zulily的CIO Luke Friang所说，几乎没有一个[现成的]软件解决方案能跟上我们的步伐。 
 
 20年前是这样，现在也是这样。
 
-But one thing is different, and it's something the WSJ completely missed. Historically software developed in-house was zealously kept proprietary because, the reasoning went, it was the source of a firm's competitive advantage. Today, however, companies increasingly realize the opposite: there is far more to be gained by open sourcing in-house software than keeping it closed.
+但是有一点是不同的，这也正是华尔街日报完全忽略的地方。而这也正是历史上开发的内部软件始终保持着专有的原因了，因为这是一个公司的核心竞争力。然而今天，越来越多的公司意识到另一面：开源内部软件将会比保持专有获益更多。
 
-但是有一点是不同的，这也正是华尔街日报完全忘掉的地方。这也正是历史上开发的内部软件始终保持着专有的原因了，因为这是一个公司的核心竞争力。然而今天，越来越多的公司意识到另一面：开源内部软件将会比保持专有获益更多。
+这也就是为什么你的公司需要为开源项目做出更多的贡献。记住是更多。
 
-Which is why your company needs to contribute more open-source code. Much more.
-
-这也就是为什么你的公司需要为开源项目做出更多的贡献。
-
-We've gone through an anomalous time these past 20 years. While most software continued to be written for internal use, most of the attention has been focused on vendors like SAP and Microsoft that build solutions that apply to a wide range of companies.
-
-过去的20年，对我们来说是很不一样的，很多开发的软件都是为了内部的使用，大多数人的精力都放在像SAP和微软这样的厂商建立的应用广泛的企业级解决方案。
+我们经历了一个很不一样的20年，那时很多软件的开发都是为了内部的使用，大多数人的精力都放在由SAP和微软这样的厂商建立的应用广泛的企业级解决方案。
 
 That's the theory, anyway.
 
-不管怎么说，这都是推测。
+不管怎么说，这都是一个理论。
 
 In practice, buyers spent a small fortune on license fees, then a 5X multiple on top of that to make the software fit their requirements. For example, a company may spend $100,000 on an ERP system, but they're going to spend another $500,000 making it work. 
 
@@ -50,28 +39,47 @@ Meanwhile, technology vendors doubled-down on "sameness," as Redmonk analyst [St
 
 Along the way, however, companies discovered that vendors weren't really meeting their needs, even for well-understood product categories like Content Management Systems. They needed different, not same.
 
-开源的道路上，然而，有些公司也发现，有些开发者给不了他们所想要的，即便是很好理解的产品类别，比如像内容管理系统，他们需要的是不是，而不是相似。
+开源的道路上，然而，有些公司也发现，有些开发者给不了他们所想要的，即便是很好理解的产品类别，比如像内容管理系统，他们需要的创造性的不同，而不是相似。
 
 So the customers went rogue. They became vendors. Sort of.
 
+所以顾客没了，他们有一部分上角色变成了供应商。
+
 As is often the case, [O'Grady nails][4] this point. Writing in 2010, O'Grady uncovers an interesting trend: "Software vendors are facing a powerful new market competitor: their customers." 
+
+这是常有的事，[O'Grady指出了][4]这一点。2010年，O'Grady发现了一个有趣的现象：“软件提供商正面对着一个强有力的市场竞争者：他们的顾客。”
 
 Think about the most visible technologies today. Most are open source, and nearly all of them were originally written for some company's internal use, or some developer's hobby. Linux, Git, Hadoop, Cassandra, MongoDB, Android, etc. None of these technologies were originally written to be sold as products.
 
+想想今天的高科技，大多数都是开源的，几乎所有的项目一开始都是某些公司的内部项目，或者是有些开发者的爱好，Linux，Git，Hadoop，Cassandra，MongDB，Android，等等。没有一个技术起初是为了售卖而产生的。
+
 Instead, they were developed by companies—usually Web companies—building software to "[scratch their own itches][5]," to use the open source phrase. And unlike previous generations of in-house software developed at banks, hospitals and other organizations, they open sourced the code. 
+
+相反，这些项目通常是由一些公司维护，他们使用开源的资源来构建软件并[完善软件][5]，这主要是一些Web公司。不像以前银行，医院和一些组织开发的软件职工内部使用，他们开源源码。
 
 While [some companies eschew developing custom software][6] because they don't want to maintain it, open source (somewhat) mitigates this by letting a community grow up to extend and maintain a project, thereby amortizing the costs of development for the code originators. Yahoo! started Hadoop, but its biggest contributors today are Cloudera and Hortonworks. Facebook kickstarted Cassandra, but DataStax primarily maintains it today. And so on.
 
+虽然，[有些公司避免定制软件][6]，因为他们不想自己维护它，开源(稍微)减轻了这些发展中公司的压力来维护一个项目。从而为项目发起人均摊项目的开发成本，Yahoo，开始于Hadoop，但是现在最大的贡献者是Cloudera和Hortonworks。Facebook开始于Cassandra，但是现在DataStax是主要维护者。等等。
+
 Today real software innovation doesn't happen behind closed doors. Or, if it does, it doesn't stay there. It's open source, and it's upending decades of established software orthodoxy.
+
+今天，真正的软件创新并不是闭门造车能造出来的，即便是可以，它也不会在那儿，开源项目颠覆了几十年的软件开发传统。
 
 Not that it's for the faint of heart. 
 
+不是说这是一颗卑微的心。
+
 The best open-source projects [innovate very fast][7]. Which is not the same as saying anyone will care about your open-source code. There are [significant pros and cons to open sourcing your code][8]. But one massive "pro" is that the best developers want to work on open code: if you need to hire quality developers, you need to give them an open source outlet for their work. (Just [ask Netflix][9].)
+
+最好的开源项目[发展得很快][7]，这并不意味着有人在乎你的开源代码。[开放你的源码有显著的优缺点][8]，其中一个很重要的优点是很多伟大的开发者都希望为开源做出贡献：如果你也想找一个伟大的开发者，你需要给他们一个开放的源代码来让他们工作。（去[问Netflix][9]）
 
 But that's no excuse to sit on the sidelines. It's time to get involved, and not for the good of some ill-defined "community." No, the primary beneficiary of open-source software development is you and your company. Better get started.
 
+但是，没有理由在一边光看着，现在正是时候参与了，而不是一些不清楚的社区。不，开源最大的参与者正是你们和你们的公司。尽快开始吧。
+
 Lead image courtesy of Shutterstock.
 
+主要的图片来自Shutterstock(注：Shutterstock是美国的一家摄影图片网站。)。
 --------------------------------------------------------------------------------
 
 via: http://readwrite.com/2014/08/16/open-source-software-business-zulily-erp-wall-street-journal
