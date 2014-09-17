@@ -1,37 +1,37 @@
-    Vic020
-Linux FAQs with Answers--How to remove PPA repository from command line on Ubuntu
+Linux FAQ - Ubuntu如何使用命令行移除PPA仓库
 ================================================================================
-> **Question**: I added a third-party PPA repository on my Ubuntu box some time ago. How can I remove the PPA repository? 
+> **问题**: 前段时间，我的Ubuntu增加了一个第三方的PPA仓库，如何才能移除这个PPA仓库呢？
 
-A Personal Package Archives (PPA) is a Ubuntu way to allow independent developers and contributors to build and distribute any custom packages as a third-party APT repository via Launchpad. If you are a Ubuntu user, chances are that you have added some popular third-party PPA repositories to your Ubuntu system. If you want to remove any pre-configured PPA repository, here is how to do it.
+个人软件包档案（PPA）是Ubuntu独有的解决方案，允许独立开发者和贡献者构建、贡献任何定制的软件包来作为通过启动面板的第三方APT仓库。如果你是Ubuntu用户，有可能你已经增加一些流行的第三方PPA仓库到你的Ubuntu系统。如果你需要删除掉已经预先配置好的PPA仓库，下面将教你怎么做。
 
-Suppose you have a third-party PPA repository named "ppa:webapps/preview" added on your Ubuntu system, as follows.
+
+假如你有一个第三方PPA仓库叫“ppa:webapps/preview”增加到了你的系统中，如下。
 
     $ sudo add-apt-repository ppa:webapps/preview
 
-If you want to **delete a PPA repository alone**, run the following command.
+如果你想要 **单独地删除一个PPA仓库**，运行下面的命令。
 
      $ sudo add-apt-repository --remove ppa:someppa/ppa 
 
-Note that the above command does not touch any packages installed or upgraded from the PPA itself.
+注意，上述命令不会同时删除任何已经安装或更新的软件包。
 
-If you want to **delete a PPA repository as well as all packages installed/upgraded from the PPA**, you can use ppa-purge command.
+如果你想要 **完整的删除一个PPA仓库并包括来自这个PPA安装或更新过的软件包**，你需要ppa-purge命令。
 
-To install ppa-purge package:
+安装ppa-purge软件包：
 
     $ sudo apt-get install ppa-purge 
 
-To remove a PPA repository and all its packages from the command line:
+删除PPA仓库和与之相关的软件包，运行下列命令：
 
     $ sudo ppa-purge ppa:webapps/preview 
 
-These methods can be useful when you [identify and purge broken PPA repositories][1]（注：此文原文在同一个更新中，文件名：“20140915 Linux FAQs with Answers--How to find and remove obsolete PPA repositories on Ubuntu.md”） after distro upgrade.
+特别滴，在发行版更新后，你需要[分辨和清除已损坏的PPA仓库][1]，这个方法特别有用！
 
 --------------------------------------------------------------------------------
 
 via: http://ask.xmodulo.com/how-to-remove-ppa-repository-from-command-line-on-ubuntu.html
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[Vic___](http://www.vicyu.net)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
