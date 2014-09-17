@@ -13,56 +13,56 @@ shell脚本中的变量是用来**调用**一个**数值**或者**字符值**的
 <table width="100%" cellspacing="1" cellpadding="1">
   <tbody>
     <tr>
-      <td><strong> System Defined Variables </strong></td>
-      <td><strong> Meaning </strong></td>
+      <td><strong>系统定义的变量 </strong></td>
+      <td><strong>意义 </strong></td>
     </tr>
     <tr>
       <td> BASH=/bin/bash </td>
-      <td> Shell Name </td>
+      <td>  Bash Shell 名称 </td>
     </tr>
     <tr>
       <td> BASH_VERSION=4.1.2(1) </td>
-      <td> Bash Version </td>
+      <td> Bash 版本 </td>
     </tr>
     <tr>
       <td> COLUMNS=80 </td>
-      <td> No. of columns for our screen </td>
+      <td> 你的屏幕宽度（列数） </td>
     </tr>
     <tr>
       <td> HOME=/home/linuxtechi </td>
-      <td> Home Directory of the User </td>
+      <td> 用户家目录 </td>
     </tr>
     <tr>
       <td> LINES=25 </td>
-      <td> No. of columns for our screen </td>
+      <td> 你的屏幕高度（行数） </td>
     </tr>
     <tr>
       <td> LOGNAME=LinuxTechi </td>
-      <td> LinuxTechi Our logging name </td>
+      <td> 当前登录用户的名字 </td>
     </tr>
     <tr>
       <td> OSTYPE=Linux </td>
-      <td> OS type </td>
+      <td> 操作系统类型 </td>
     </tr>
     <tr>
       <td> PATH=/usr/bin:/sbin:/bin:/usr/sbin </td>
-      <td> Path Settings </td>
+      <td> 可执行文件搜索路径  </td>
     </tr>
     <tr>
       <td> PS1=[\u@\h \W]\$ </td>
-      <td> Prompt Settings </td>
+      <td> 命令行提示符 </td>
     </tr>
     <tr>
       <td> PWD=/home/linuxtechi </td>
-      <td> Current Working Directory </td>
+      <td> 当前工作目录 </td>
     </tr>
     <tr>
       <td> SHELL=/bin/bash </td>
-      <td> Shell Name </td>
+      <td> Shell 名称 </td>
     </tr>
     <tr>
       <td> USERNAME=linuxtechi </td>
-      <td> User name who is currently login to system </td>
+      <td> 当前登录的用户名 </td>
     </tr>
   </tbody>
 </table>
@@ -87,7 +87,7 @@ shell脚本中的变量是用来**调用**一个**数值**或者**字符值**的
     $ echo “The cost of the item is $15”
     The cost of the item is 5
 
-很明显，那不是我们说希望的。无论何时，当脚本遇见引号中的美元符号时，它都会认为你是在调用一个变量。在本例中，改脚本试着显示**变量$1**（而这个变量并没有定义），然后显示数字5。要显示实际上的美元符号，你**必须前置**一个**反斜线字符**：
+很明显，那不是我们说希望的。无论何时，当脚本遇见引号中的美元符号时，它都会认为你是在调用一个变量。在本例中，该脚本试着显示**变量$1**（而这个变量并没有定义），然后显示数字5。要显示实际上的美元符号，你**必须前置**一个**反斜线字符**：
 
     $ echo “The cost of the item is \$15”
     The cost of the item is $15
@@ -98,7 +98,7 @@ shell脚本中的变量是用来**调用**一个**数值**或者**字符值**的
 
 这些变量由**用户**定义。shell脚本允许我们在脚本中设置并使用我们**自己的变量**。设置变量允许你**临时存储数据**并在脚本中使用，让shell脚本看起来像一个真正的计算机程序。
 
-**用户变量**可以是任何不超过**20个字母，数字**的文本字符串，或者**一个下划线字符**。用户变量是大小写敏感的，因此，变量Var1和变量var1是不同的变量。这个小规则常常让新手编写脚本时麻烦重重。
+**用户变量**可以是任何不超过**20个的字母、数字**或者**下划线字符**的文本字符串（LCTT 译注：变量只能以字母或下划线开头）。用户变量是大小写敏感的，因此，变量Var1和变量var1是不同的变量。这个小规则常常让新手编写脚本时麻烦重重。
 
 我们可以通过**等于号**为变量赋值。变量，等于号和值（对于新手又是个麻烦的地方）之间不能有空格。下面是几个给用户变量赋值的例子：
 
@@ -130,7 +130,7 @@ shell脚本为变量值**自动确定数据类型**。shell脚本内定义的变
     Jessica checked in 5 days ago
     $
 
-每次变量被**调用**，它都会产生当前分配给它的值。记住这一点很重要，当调用一个变量值时，你使用**美元符号**，但是当调用一个变量来为其分配一个值时，你不能用美元符号。下面用例子来说明：
+每次变量被**调用**，它都会变成了当前分配给它的值。有一点很重要，当调用一个变量值时，你使用**美元符号**，但是当为一个变量分配一个值时，你不能用美元符号。下面用例子来说明：
 
     $ cat test4
     #!/bin/bash
@@ -180,7 +180,7 @@ shell会在**反引号**中运行命令，然后将输出结果赋值给变量te
     $ ./test5
     The date and time are: Mon Jan 31 20:23:25 EDT 2011
 
-**注**：在bash中，你也可以选用$(...)语法来替换反引号(`)，它有个优点就是可以重用。
+**注**：在bash中，你也可以选用$(...)语法来替换反引号(`)，它有个优点就是可以重用（re-entrant）。
 
 例：
 
@@ -192,8 +192,8 @@ shell会在**反引号**中运行命令，然后将输出结果赋值给变量te
 via: http://www.linuxtechi.com/variables-in-shell-scripting/
 
 作者：[Pradeep Kumar][a]
-译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[	](https://github.com/GOLinux)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
