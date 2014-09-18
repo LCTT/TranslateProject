@@ -1,3 +1,4 @@
+Translating by ZTinoZ
 Linus Torvalds Promotes Linux for Desktops, Embedded Computing
 ================================================================================
 > Linux kernel developer and open source leader Linus Torvalds spoke recently about the future of desktop Linux and Linux for embedded devices.
