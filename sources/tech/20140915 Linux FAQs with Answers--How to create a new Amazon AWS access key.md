@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Linux FAQs with Answers--How to create a new Amazon AWS access key
 ================================================================================
 > **Question**: I was asked to provide an **AWS access key ID** and **secret access key** when configuring an application which requires access to my Amazon AWS account. How can I create a new AWS access key? 
