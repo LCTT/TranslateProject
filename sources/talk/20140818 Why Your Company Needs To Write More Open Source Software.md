@@ -5,7 +5,7 @@
 ![](http://a5.files.readwrite.com/image/upload/c_fill,h_900,q_70,w_1600/MTE5NDg0MDYxMTkxMzQxNTgz.jpg)
 
 
-**华尔街日报 [称][1]，有消息表明，Zulily正在开发** 更多的内部软件，但实际上根本不是。多年前[Eric Raymond写道][2]，全世界95%的软件写来用的，而不是售卖。原因很多，但是其中有一个比较突出：正如Zulily的CIO Luke Friang所说，几乎没有一个[现成的]软件解决方案能跟上我们的步伐。 
+**华尔街日报 [称][1]，有消息表明，Zulily正在开发** 更多的内部软件，但实际上根本不是。多年前[Eric Raymond写道][2]，全世界95%的软件写来用的，而不是售卖。原因很多，但是其中有一个比较突出：正如Zulily的CIO Luke Friang所说，几乎没有一个[非定制]软件解决方案能跟上我们的步伐。 
 
 20年前是这样，现在也是这样。
 
