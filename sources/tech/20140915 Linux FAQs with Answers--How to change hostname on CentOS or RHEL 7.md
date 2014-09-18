@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Linux FAQs with Answers--How to change hostname on CentOS or RHEL 7
 ================================================================================
 > Question: What is a proper way to change hostname on CentOS / RHEL 7 (permanently or temporarily)? 
