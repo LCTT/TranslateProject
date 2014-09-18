@@ -17,37 +17,25 @@ barney-ro translating
 
 我们经历了一个很不一样的20年，那时很多软件的开发都是为了内部的使用，大多数人的精力都放在由SAP和微软这样的厂商建立的应用广泛的企业级解决方案。
 
-That's the theory, anyway.
-
 不管怎么说，这都是一个理论。
 
-In practice, buyers spent a small fortune on license fees, then a 5X multiple on top of that to make the software fit their requirements. For example, a company may spend $100,000 on an ERP system, but they're going to spend another $500,000 making it work. 
+在实践中，买方花费很少的钱购买license，然后至少付出5倍以上的代价来使软件符合他们的需求。比如说，一个公司可能在一个ERP系统上花费  100,000美元，但是他们还得继续花费500,000来维持软件正常运行。
 
-在实践中，买方花费很少的钱购买license，然后花5倍的精力来使软件试用他们的需求。比如说，一个公司可能在一个ERP系统上花费100，000美元，但是他们还得继续花费500，000来维持软件正常运行。
+开源软件甚至是应用程序正式发展起来的原因之一是很多公司可以免费获得一些功能性的产品（或者是以一个相对便宜的费用获得产品）， 然后定制 为他们所需要的。不管怎样，定制是有必要的，而且开源的根本是使成本更低，或许说，这样的定制或许能产生更好的结果。
 
-One of the reasons open source took off, even in applications, was that companies could get a less functional product for free (or a relatively inexpensive fee) and then spend their implementation dollars tuning it to their needs. Either way, customization was necessary, but the open source approach was less costly and arguably more likely to result in a more tailored result.
+同时，开发者尽量的减少同类之间的相似之处。作为Redmonk分析师，[Stephen O'Grady认为][3]:
 
-使开源软件甚至是应用程序正式发展起来的原因之一是很多公司可以免费获得一些功能性的产品（或者是一个相对便宜的费用获得产品），然后定制为他们所需要的，当然，不管怎样，个性化是有必要的，而且开源的根本是使成本更低，按理来说，这样的定制或许能产生更好的结果。
+> 从最近几年看，主流技术产业都有意避开专业化。运行在定制操作系统上的虚拟设备，已经彻底败给了RHEL和Windowns这些通用的操作系统。 最快20年，任何程序的数据保存都意味着一件事：一个关联的数据库，如果你要做的是企业级应用开发，那么你首先要接触的是Java，等等。
 
-Meanwhile, technology vendors doubled-down on "sameness," as Redmonk analyst [Stephen O'Grady describes][3]:
-
-同时，开发者尽量的减少同类之间的相似之处。作为分析师，[Stephen O'Grady认为][3]:
-
-> The mainstream technology industry has, in recent years, eschewed specialization. Virtual appliances, each running a version of the operating system customized for an application or purpose, have entirely failed to dent the sales of general purpose alternatives such as RHEL or Windows. For better than twenty years, the answer to any application data persistence requirement has meant one thing: a relational database. If you were talking about enterprise application development, you were talking about Java. And so on.
-
-> 在最近几年看，主流技术产业都有意避开专业化。运行着定制操作系统的虚拟设备，已经彻底败给了像RHEL和Windowns这些通用的操作系统。最快20年，任何程序的数据保存都意味着一件事：一个关联的数据库，如果你谈论的是企业级应用开发，那么你谈论的是Java，等等。
-
-Along the way, however, companies discovered that vendors weren't really meeting their needs, even for well-understood product categories like Content Management Systems. They needed different, not same.
-
-开源的道路上，然而，有些公司也发现，有些开发者给不了他们所想要的，即便是很好理解的产品类别，比如像内容管理系统，他们需要的创造性的不同，而不是相似。
+开源的道路上，然而，有些公司也发现，有些销售商不能很好地飚速他们所想要的，即便是很好理解的产品类别，如像内容管理系统，他们需要 知道的是产品亮点，而不希望是一个模子刻出来的。
 
 So the customers went rogue. They became vendors. Sort of.
 
-所以顾客没了，他们有一部分上角色变成了供应商。
+所以顾客没了，他们中有一部分上转变变成了供应商。
 
 As is often the case, [O'Grady nails][4] this point. Writing in 2010, O'Grady uncovers an interesting trend: "Software vendors are facing a powerful new market competitor: their customers." 
 
-这是常有的事，[O'Grady指出了][4]这一点。2010年，O'Grady发现了一个有趣的现象：“软件提供商正面对着一个强有力的市场竞争者：他们的顾客。”
+这是常有的事，[O'Grady指出了][4]这一点。2010年，O'Grady发现了一个有趣的现象：“软件提供商正面对着一个强有力的市场竞争者：他们的 顾客。” 
 
 Think about the most visible technologies today. Most are open source, and nearly all of them were originally written for some company's internal use, or some developer's hobby. Linux, Git, Hadoop, Cassandra, MongoDB, Android, etc. None of these technologies were originally written to be sold as products.
 
@@ -71,7 +59,7 @@ Not that it's for the faint of heart.
 
 The best open-source projects [innovate very fast][7]. Which is not the same as saying anyone will care about your open-source code. There are [significant pros and cons to open sourcing your code][8]. But one massive "pro" is that the best developers want to work on open code: if you need to hire quality developers, you need to give them an open source outlet for their work. (Just [ask Netflix][9].)
 
-最好的开源项目[发展得很快][7]，这并不意味着有人在乎你的开源代码。[开放你的源码有显著的优缺点][8]，其中一个很重要的优点是很多伟大的开发者都希望为开源做出贡献：如果你也想找一个伟大的开发者，你需要给他们一个开放的源代码来让他们工作。（去[问Netflix][9]）
+最好的开源项目[发展得很快][7]，这并不意味着有人在乎你的开源代码。[开放你的源码有显著的优缺点][8]，其中一个很重要的优点是很多伟 大的开发者都希望为开源做出贡献：如果你也想找一个伟大的开发者，你需要给他们一个开放的源代码来让他们工作。（去[问Netflix][9]）
 
 But that's no excuse to sit on the sidelines. It's time to get involved, and not for the good of some ill-defined "community." No, the primary beneficiary of open-source software development is you and your company. Better get started.
 
