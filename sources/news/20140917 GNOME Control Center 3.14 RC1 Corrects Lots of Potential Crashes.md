@@ -1,3 +1,5 @@
+alim0x translating
+
 GNOME Control Center 3.14 RC1 Corrects Lots of Potential Crashes
 ================================================================================
 ![GNOME Control Center in Arch Linux](http://i1-news.softpedia-static.com/images/news2/GNOME-Control-Center-3-14-RC1-Correct-Lots-of-Potential-Crashes-458986-2.jpg)
