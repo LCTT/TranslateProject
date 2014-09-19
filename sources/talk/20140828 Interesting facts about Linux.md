@@ -1,3 +1,5 @@
+translating by barney-ro
+
 Interesting facts about Linux
 ================================================================================
 Today, August, 25th, is the 23rd birthday of Linux. The modest [Usenet post][1] made by a 21 year old student at the University of Helsinki on August 25th, 1991, marks the birth of the venerable Linux as we know it today.
@@ -49,7 +51,7 @@ Happy birthday, Linux!
 via: http://xmodulo.com/2014/08/interesting-facts-linux.html
 
 作者：[Dan Nanni][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[barney-ro](https://github.com/barney-ro)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

@@ -1,5 +1,4 @@
-2q1w2007翻译中
-[小贴士] 怎么在Linux发行版下列出所有安装了的包
+怎么在Linux发行版下列出所有安装了的包
 ================================================================================
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/09/linux-790x536.png)
 
@@ -39,7 +38,7 @@
 
     dpkg -l
 
-祝你有好的一天。
+祝你一天好心情。
 
 --------------------------------------------------------------------------------
 
@@ -47,7 +46,7 @@ via: http://www.unixmen.com/quick-tip-list-installed-packages-linux-distribution
 
 作者：[Enock Seth Nyamador][a]
 译者：[2q1w2007](https://github.com/2q1w2007)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
