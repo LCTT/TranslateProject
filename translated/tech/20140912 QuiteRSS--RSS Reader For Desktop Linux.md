@@ -38,7 +38,7 @@ QuiteRSS是一个不错的开源RSS阅读器，尽管我更喜欢[Feedly][6]。�
 --------------------------------------------------------------------------------
 
 via: http://itsfoss.com/quiterss-rss-reader-desktop-linux/
-
+ 
 作者：[Abhishek][a]
 译者：[2q1w2007(https://github.com/2q1w2007)
 校对：[校对者ID](https://github.com/校对者ID)
