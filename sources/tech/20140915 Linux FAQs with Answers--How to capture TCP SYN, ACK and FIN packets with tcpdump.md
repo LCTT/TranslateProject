@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Linux FAQs with Answers--How to capture TCP SYN, ACK and FIN packets with tcpdump
 ================================================================================
 > **Question**: I want to monitor TCP connection dynamics (e.g., three-way handshake for connection establishment, and four-way handshake for connection tear-down). For that, I need to capture only TCP control packets such as those with SYN, ACK or FIN flag set. How can I use tcpdump to capture TCP SYN, ACK, and/or FYN packets only? 
