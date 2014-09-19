@@ -1,3 +1,4 @@
+zpl1025
 Make Downloading Files Effortless
 ================================================================================
 A download manager is computer software that is dedicated to the task of downloading files, optimizing bandwidth usage, and operating in a more organized way. Some web browsers, such as Firefox, include a download manager as a feature, but their implementation lacks the sophistication of a dedicated download manager (or add-ons for the web browser), without using bandwidth optimally, and without good file management features.
