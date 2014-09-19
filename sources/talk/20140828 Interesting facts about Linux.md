@@ -1,10 +1,15 @@
 translating by barney-ro
 
 Interesting facts about Linux
+Linux趣事
 ================================================================================
 Today, August, 25th, is the 23rd birthday of Linux. The modest [Usenet post][1] made by a 21 year old student at the University of Helsinki on August 25th, 1991, marks the birth of the venerable Linux as we know it today.
 
+今天，8月25号，是Linux的第23个生日。1991年，8月25日，21岁的赫尔辛基大学的学生发布了举世闻名的[Usenet post][1]，标志着现在世界著名的Linux正式诞生。
+
 Fast forward 23 years, and now Linux is everywhere, not only installed on end user desktops, [smartphones][2] and embedded systems, but also fulfilling the needs of [leading enterprises][3] and powering mission-critical systems such as [US Navy's nuclear submarines][4] and [FAA's air traffic control][5]. Entering the era of ubiquitous cloud computing, Linux is continuing [its dominance][6] as by far the most popular platform for the cloud.
+
+
 
 Celebrating the 23rd birthday of Linux today, let me show you **some interesting facts and history you may not know about Linux**. If there is anything to add, feel free to share it in the comments. In this article, I will use the terms "Linux", "kernel" or "Linux kernel" interchangeably to mean the same thing.
 
