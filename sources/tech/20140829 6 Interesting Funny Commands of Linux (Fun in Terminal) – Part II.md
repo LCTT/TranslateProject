@@ -1,3 +1,4 @@
+wangjiezhe translating
 6 Interesting Funny Commands of Linux (Fun in Terminal) – Part II
 ================================================================================
 In our past following articles, we’ve shown some useful articles on some funny commands of Linux, which shows that Linux is not as complex as it seems and can be fun if we know how to use it. Linux command line can perform any complex task very easily and with perfection and can be interesting and joyful.
@@ -96,7 +97,7 @@ That’s all for now. I’ll be here again with another interesting article. Til
 via: http://www.tecmint.com/linux-funny-commands/
 
 作者：[Avishek Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wangjiezhe](https://github.com/wangjiezhe)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

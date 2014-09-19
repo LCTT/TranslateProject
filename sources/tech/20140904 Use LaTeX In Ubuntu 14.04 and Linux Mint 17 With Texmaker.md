@@ -1,3 +1,4 @@
+johnhoow translating...
 Use LaTeX In Ubuntu 14.04 and Linux Mint 17 With Texmaker
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/09/texmaker_Ubuntu.jpeg)
