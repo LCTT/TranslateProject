@@ -90,7 +90,7 @@ httpry就会监听指定的网络接口，并且实时的显示捕获到的HTTP�
 via: http://xmodulo.com/2014/08/sniff-http-traffic-command-line-linux.html
 
 作者：[Dan Nanni][a]
-译者：[译者ID](https://github.com/DoubleC)
+译者：[DoubleC](https://github.com/DoubleC)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
