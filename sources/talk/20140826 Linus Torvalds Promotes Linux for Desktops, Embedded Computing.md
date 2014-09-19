@@ -10,11 +10,11 @@ Linus Torvalds推动Linux的桌面与嵌入式计算的发展
 
 所以，关注Torvalds所说的话是很值得的， "我还是挺想要桌面的。"  [上周他在LinuxCon大会上这样说道][2] 那标志着他仍然着眼于作为使个人机更加强大的操作系统Linux的未来，尽管十年来Linux桌面市场的分享一直很少，而且大部分围绕Linux的商业活动都去涉及服务器或者安卓手机硬件去了。
 
-但是，Torvalds还说，确保Linux桌面能有个可期待的未来意味着ensuring a strong future for desktop Linux means solving an "infrastructure problem" that stems, he seems to believe, from the broader open source software ecosystem and the hardware world. It's not the core Linux code itself that's at issue, and making the channel friendly for desktop Linux is a feat Torvalds and his fellow kernel developers probably have little power to achieve on their own. That's up to app developers, hardware manufacturers and other parties who have the power to deliver computing platforms based on Linux that people will readily use.
+但是，Torvalds还说，确保Linux桌面能有个伟大的未来意味着解决了受阻的 “基础设施问题”，好像庞大的开源软件生态系统和硬件世界让他充满信心。这不是Linux核心代码本身的问题，而是要让Linux桌面渠道友好，这可能是伟大的Torvalds和他开发同伴们所需要花精力去达到的目标。这取决于app的开发者、硬件制造商和其它有志于实现人们能方便使用基于Linux的计算平台的各方力量。
 
-另一方面，Torvalds also mentioned a hope that kernel developers might streamline the Linux code for embedded devices—a task that might be at odds in some ways with making the kernel more desktop-friendly. But that's not necessarily the case, and at any rate, given that Linux is designed to be so modular, there's no reason a single kernel code base can't meet the needs of desktop users and embedded developers equally well, depending on which chunks they choose to use.
+另一方面，Torvalds也提到了他的憧憬，就是内核开发者们能简化嵌入式装置中的Linux代码——一个在让内核更加桌面友好化上会导致很多分歧的任务。但这也不一定，因为无论如何，Linux都是以模块化设计的，单内核代码库不能同时满足桌面用户和嵌入式开发者的需求，这是没有道理的，因为这取决于他们使用的模块。
 
-As a longtime desktop Linux user who would also like to see more Linux-powered embedded devices, I'm hoping Torvalds's aspirations in both regards will be realized, and that I will one day be able to do everything I need using only Linux, whether it's on a desktop computer, a mobile phone, the car or anywhere else.
+作为一个长时间想看到更多搭载Linux的嵌入式设备出现的Linux桌面用户，我希望Torvalds的所有愿望都可以实现，到那时我就能只用Liunx来做所有我想做的事情，无论是在电脑桌面上、手机上、车上、或者是任何其它的地方。
 
 --------------------------------------------------------------------------------
 
