@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Check how much do you type with WhatPulse on Linux
 ================================================================================
 ![](http://cdn.linuxaria.com/wp-content/uploads/2014/08/whatpulse.png)
