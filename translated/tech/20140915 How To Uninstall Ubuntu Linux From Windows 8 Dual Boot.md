@@ -2,15 +2,15 @@
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/09/Guide_Uninstall_Ubuntu_Windows_dual_Boot.jpeg)
 
-我在过去已经多次涉及过了[在UEFI模式下安装Ubuntu 14.04与Windows 8/8.1双启动][1]的话题。 但是要怎么从**Windows双启动中卸载Ubuntu呢**？下面我们将看到的教程适用于任意的Linux操作系统，如Ubuntu，Linux Mint，Elementary OS或其它任意Linux发行版。
+我在过去已经多次涉及到[在UEFI模式下安装Ubuntu 14.04与Windows 8/8.1双启动][1]的话题。 但是要怎么从**Windows双启动中卸载Ubuntu呢**？下面我们将看到的教程适用于任意的Linux操作系统，如Ubuntu，Linux Mint，Elementary OS或其它任意Linux发行版。
 
-如果你认为[在双启动模式下安装Ubuntu与Windows 8共存][2]是件难事，而从Windows双启动中移除Ubuntu将是很简单的的话，你的想法并不是完全错误的。如果你有个Windows安装介质的话，从Windows双启动中卸载Linux将是轻而易举的。
+如果你认为[在双启动模式下安装Ubuntu与Windows 8共存][2]是件难事，而从Windows双启动中移除Ubuntu将是很简单的，你的想法并不是完全错误的。如果你有个Windows安装介质的话，从Windows双启动中卸载Linux将是轻而易举的。
 
 这个教程将教你如何在有**Windows 8/8.1安装介质**的情况下将Linux从Windows 8或Windows 8.1双启动中完全移除。
 
 ### 将Ubuntu从Windows 8双启动中安全卸载 ###
 
-你有没有Windows 8安装介质以及是否有Windows 8.1安装在你系统上这都不重要。它同样工作得很好。但是我不能说在Windows 7上也一样。如果你身边有你的Windows安装盘，让我们开始从Windows双启动中移除Ubuntu的进程吧。
+你有没有Windows 8安装介质以及是否已经安装了Windows 8.1在你系统上这都不重要。它同样工作得很好。但是我不能说在Windows 7上也一样。如果你身边有Windows安装盘，让我们开始从Windows双启动中移除Ubuntu的进程吧。
 
 从双启动中删除Linux分为两部分。第一部分是删除Linux安装的所在分区。第二部分是修复Windows启动引导，因为简单地将Linux分区删除会引起[“Grub rescue”错误][3]。
 
@@ -50,7 +50,7 @@
 
 #### 第二部分：修复Windows启动引导 ####
 
-一旦你删除了Linux分区，就是时候修复Windows启动引导了。这里的图片看起来可能不是很清楚，因为相对于Windows来说[在Ubuntu下对登录画面进行截图][4]要简单的多。我用手机拍下了这些照片。
+一旦你删除了Linux分区，就是时候修复Windows启动引导了。这里的图片看起来可能不是很清楚，因为相对于Windows来说[在Ubuntu下对登录画面进行截图][4]要简单的多。我用手机相机拍下了这些照片。
 
 **第一步：**
 
@@ -88,7 +88,7 @@
 
     bootrec.exe /fixmbr
 
-正常情况下，它是立即生效的。你甚至都不用等。
+正常情况下，它是立即生效的，你甚至都不用等。
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/09/Uninstall_Linux_Windows_Dualboot_5.jpg)
 
@@ -116,7 +116,7 @@ via: http://itsfoss.com/uninstall-ubuntu-linux-windows-dual-boot/
 
 作者：[Abhishek][a]
 译者：[alim0x](https://github.com/alim0x)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
