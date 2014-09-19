@@ -18,7 +18,7 @@
 
 **第一步：**
 
-登录Windows。按下 **Windows+R** 然后在其中运行 diskmgmt.msc 命令。它将会打开Windows磁盘管理工具。
+登录Windows。按下 **Windows+R** 然后在其中运行 diskmgmt.msc 命令。它将会打开Windows磁盘管理工具。 
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/09/Disk_Mgmt.jpg)
 
