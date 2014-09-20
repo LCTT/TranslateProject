@@ -1,3 +1,5 @@
+Translating----------geekpi
+
 Another Italian City Says Goodbye To Microsoft Office, Will Switch To OpenOffice Soon
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/08/Turin_Open_Source.jpg)
