@@ -1,3 +1,5 @@
+[su-kaiyao]翻译中
+
 Linux FAQs with Answers--How to create a MySQL database from the command line
 ================================================================================
 > **Question**: I have a MySQL server up and running somewhere. How can I create and populate a MySQL database from the command line? 
