@@ -9,11 +9,15 @@ Today, August, 25th, is the 23rd birthday of Linux. The modest [Usenet post][1] 
 
 Fast forward 23 years, and now Linux is everywhere, not only installed on end user desktops, [smartphones][2] and embedded systems, but also fulfilling the needs of [leading enterprises][3] and powering mission-critical systems such as [US Navy's nuclear submarines][4] and [FAA's air traffic control][5]. Entering the era of ubiquitous cloud computing, Linux is continuing [its dominance][6] as by far the most popular platform for the cloud.
 
-
+23年以后的今天，linux已经无处不在，不仅仅被安装于桌面系统，[智能手机][2]和嵌入式系统，甚至也被[龙头企业][3]用于他们的关键系统，比如说像[美国海军的核潜艇][4]（US Navy's nuclear submarines）和[联邦航空局的空中管制系统][5](FAA's air traffic control)。进入无处不在的云计算时代，linux在云计算平台方面仍然保持着它的优势。
 
 Celebrating the 23rd birthday of Linux today, let me show you **some interesting facts and history you may not know about Linux**. If there is anything to add, feel free to share it in the comments. In this article, I will use the terms "Linux", "kernel" or "Linux kernel" interchangeably to mean the same thing.
 
+今天，我们一起庆祝linux 23岁生日，就让我们告诉你**一些你可能不知道的linux趣事和linux历史**。如果有什么要补充的，请在评论中分享出来。在这篇文章里，我可能用会用“linux”，“kernel”和“Linux kernel”交换着表示同一个意思。
+
 1. There is a never-ending debate on whether or not Linux is an operating system. Technically, the term "Linux" refers to the kernel, a core component of an operating system. Folks who argue that Linux is not an operating system are operating system purists who think that the kernel alone does not make the whole operating system, or free software ideologists who believe that the largest free operating system should be named "[GNU/Linux][7]" to give credit where credit is due (i.e., [GNU project][8]). On the other hand, some developers and programmers have a view that Linux qualifies as an operating system in a sense that it implements the [POSIX standard][9].
+
+1.关于linux是否是一个开源的操作系统这种争论总是无休无止的。事实上，“Linux”操作系统的核心组件参照的是kernel（内核）。而反派认为Linux不是一个纯粹的操作系统，因为他们认为仅仅一个kernel并不是一个操作系统，自由软件的推崇者认为最大的操作系统应叫做“[GNU/Linux][7]”把功劳归于应得的人（比如：[GNU project][8]）。另一方面，一些linux的开发者认为，linux拥有成为一个操作系统的资格，因为它实现了[POSIX标准][8]。
 
 2. According to openhub.net, the majority (95%) of Linux is written in C language. The second popular language for Linux is assembly language (2.8%). The dominance of C lanaguage over C++ is no surprise given Linus's stance on C++. Here is the programming language breakdown for Linux.
 
