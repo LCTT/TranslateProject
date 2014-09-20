@@ -1,3 +1,4 @@
+2q1w2007翻译中
 One of the Smallest Distros in the World, Tiny Core, Gets a Fresh Update
 ================================================================================
 ![Tiny Core desktop](http://i1-news.softpedia-static.com/images/news2/One-of-the-Smallest-Distros-in-the-World-Tiny-Core-Gets-a-Fresh-Update-458785-2.jpg)
