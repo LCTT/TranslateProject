@@ -1,34 +1,34 @@
 2q1w2007翻译中
-One of the Smallest Distros in the World, Tiny Core, Gets a Fresh Update
+世界上最小的发行版之一Tiny Core有了新的更新
 ================================================================================
 ![Tiny Core desktop](http://i1-news.softpedia-static.com/images/news2/One-of-the-Smallest-Distros-in-the-World-Tiny-Core-Gets-a-Fresh-Update-458785-2.jpg)
 
-Tiny Core desktop
+Tiny Core
 
-**Robert Shingledecker has announced the immediate availability for download of the final version of the Tiny Core 5.4 Linux operating system, which also happens to be one the smaller operating systems in the world.**
+**Robert Shingledecker 刚刚发布了最新可用的最终版本的Tiny Core 5.4,这也使它成为世界上最小的发行版之一**
 
-The name of the distro says pretty much everything about the operating system, but the developers have integrated some interesting packages and a very light desktop to match it. This latest iteration only had a single Release Candidate and it's one of the quietest releases made so far. 
+发行版的名字说明了一切,但是开发者依然集成了一些有意思的包和一个轻量的桌面。这次最新的迭代只有一个候选版本,而且它将会是有史以来最安静的版本。
 
-"Tiny Core is simply an example of what the Core Project can produce, an 12MB FLTK/FLWM desktop. The user has complete control over which applications and/or additional hardware to have supported, be it for a desktop, a netbook, an appliance, or server, selectable by the user by installing additional applications from online repositories, or easily compiling most anything you desire using tools provided," says the dev on the official website.
+官网上的开发者说"Tiny Core是一个简单的例子来示范核心项目可以提供什么。,它提供了一个12MB的FLTK/FLWM桌面。用户对提供的程序和外加的硬件有完整的控制权。你可以把它用在桌面、笔记本或者服务器上,这可以由用户在从在线库中安装附加程序时选择,或者用提供的工具编译大多数你需要的。"
 
-According to the changelog, entries for nfs server have been added, 'Done' is now printed in a new lin, and udev has been updated to version 174 to fix a race condition.
+根据更新日志,NFS的入口被添加,'Done'将在新的一行里显示,udev也升级到174来修复竞态条件问题。
 
-A complete list of updates and changes can be found in the official [announcement][1].
+关于修改和升级的完整内容可以在官方的[声明][1]里找到。
 
-You can download Tiny Core Linux 5.4.
+你可以下载Tiny Core Linux 5.4.
 
 - [Tiny Core Linux 5.4 (ISO)][2][iso] [14 MB]
 - [Tiny Core Plus 5.4 (ISO)][3][iso] [72 MB]
 - [Core 5.4 (ISO)][4][iso] [8.90 MB]
 
-The distribution is Live, so you can test it before installing it.
+这些分发都有Live,你可以在安装之前试用。
 
 --------------------------------------------------------------------------------
 
 via: http://news.softpedia.com/news/One-of-the-Smallest-Distros-in-the-World-Tiny-Core-Gets-a-Fresh-Update-458785.shtml
 
 作者：[Silviu Stahie][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[2q1w2007](https://github.com/2q1w2007)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
