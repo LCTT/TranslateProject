@@ -25,39 +25,49 @@ Celebrating the 23rd birthday of Linux today, let me show you **some interesting
 
 ![](https://farm4.staticflickr.com/3845/15025332121_055cfe3a2c_z.jpg)
 
-3. Linux has been built by a total of [13,036 contributors][10] worldwide. The most prolific contributor is, of course, Linus Torvalds himself, who has committed code more than 20,000 times over the course of the lifetime of Linux. The following figures show the all-time top-10 contributors of Linux in terms of commit counts.
+3.Linux has been built by a total of [13,036 contributors][10] worldwide. The most prolific contributor is, of course, Linus Torvalds himself, who has committed code more than 20,000 times over the course of the lifetime of Linux. The following figures show the all-time top-10 contributors of Linux in terms of commit counts.
 
 3.在世界上，Linux已经被[13,036个贡献者][10]创建和修改。当然，贡献最多的还是Linus Torvalds自己。在他的一生中，他提交了20,000以上的代码。下图显示了所有提交次数最多的前十位Linux贡献者。
 
 ![](https://farm4.staticflickr.com/3837/14841786838_7a50625f9d_b.jpg)
 
-4. The total source lines of code (SLOC) of Linux is over 17 million. The estimated cost for the entire code base is 5,526 person-years, or over 300M USD according to [basic COCOMO model][11]. 
+4.The total source lines of code (SLOC) of Linux is over 17 million. The estimated cost for the entire code base is 5,526 person-years, or over 300M USD according to [basic COCOMO model][11]. 
 
-4.Linux的代码行（SLOC）有超过1700万行。估计整个代码库的花费大概是5,526人年，或者是超过300M（1M=10*1000万亿）美元，[基于 模型的基本估算法][11]（basic COCOMO model）。
+4.Linux的代码行（SLOC）有超过1700万行。估计整个代码库的花费大概是5,526人年，或者是超过300M（1M=10*1000万亿）美元，[基于模型的基本估算法][11]（basic COCOMO model）。
 
-5. Enterprises have not been simply consumers of Linux. Their employees have been [actively participated][12] in the development of Linux. The figure below shows the top-10 corporate sponsors of Linux kernel development, in terms of total commit counts from their employees, as of year 2013. They include commercial Linux distributors (Red Hat, SUSE), chip/embedded system makers (Intel, Texas Instruments, Wolfson), non-profits (Linaro), and other IT power houses (IBM, Samsung, Google).
+5.Enterprises have not been simply consumers of Linux. Their employees have been [actively participated][12] in the development of Linux. The figure below shows the top-10 corporate sponsors of Linux kernel development, in terms of total commit counts from their employees, as of year 2013. They include commercial Linux distributors (Red Hat, SUSE), chip/embedded system makers (Intel, Texas Instruments, Wolfson), non-profits (Linaro), and other IT power houses (IBM, Samsung, Google).
 
-
+5.企业并不是单纯的Linux消费者。他们的员工也在[积极参与][12]Linux的开发。下图显示了前十的Linux内核开发商，他们员工2013年提交次数的总和。他们包括linux的上夜班发行者(Red Hat,SUSE),芯片/嵌入式系统制造商（Intel，Texas Instrument，wolfson），非盈利性组织（Linaro）和其他的IT公司（IBM，Samsung，Google）。
 
 ![](https://farm6.staticflickr.com/5573/14841856427_a5a1828245_o.png)
 
-6. The official mascot of Linux is "Tux", a friendly penguin character. The idea of using a cuddly penguin as a mascot/logo was in fact [first conceived and asserted][13] by Linus himself. Why penguin? Personally Linus is fond of penguins, despite the fact that he once was bitten by a ferocious penguin, causing him infected with a disease.
+6.The official mascot of Linux is "Tux", a friendly penguin character. The idea of using a cuddly penguin as a mascot/logo was in fact [first conceived and asserted][13] by Linus himself. Why penguin? Personally Linus is fond of penguins, despite the fact that he once was bitten by a ferocious penguin, causing him infected with a disease.
 
-7. A Linux "distribution" contains the Linux kernel, supporting GNU utilities/libraries, and other third-party applications. According to [distrowatch.com][14], there are a total of 286 actively maintained Linux distrutions. The oldest among them is [Slackware][15] whose very first release 1.0 became available in 1993.
+6.Linux的官方吉祥物是“小企鹅”，一个非常可爱的企鹅标志。[第一次提出][13]并决定小企鹅作为Linux吉祥物/标志这个想法的是Linus自己。为什么是小企鹅呢？Linus本人很喜欢企鹅，尽管他曾经被一只凶猛的企鹅咬伤过，还导致他得了一场病。
 
-8. Kernel.org, which is the main repository of Linux source code, was [compromised][16] by an unknown attacker in August, 2011, who managed to tamper with several kernel.org's servers. In an effort to tighten up access policies of the Linux kernel, Linux foundation recently [turned on][17] two-factor authentication at the official Git repositories hosting the Linux kernel.
+7.A Linux "distribution" contains the Linux kernel, supporting GNU utilities/libraries, and other third-party applications. According to [distrowatch.com][14], there are a total of 286 actively maintained Linux distrutions. The oldest among them is [Slackware][15] whose very first release 1.0 became available in 1993.
 
-9. The dominance of Linux on top 500 supercomputers [continues to rise][18]. As of June 2014, 97% of the world-fastest computers are powered by Linux.
+7.一个Linux系统“包括”Linux内核，支持GUN的组件和库，和一些第三方的应用。[distrowatch网站][14]显示，现在总共有286个活跃的Linux发行版。其中最老的一个版本叫[Slackware][15],它是从1993年正式发布出来的一个可用的版本。
 
-10. Spacewatch, a research group of Lunar and Planetary Laboratory at the University of Arizona, named several asteroids ([9793 Torvalds][19], [9882 Stallman][20], [9885 Linux][21] and [9965 GNU][22]) after GNU/Linux and their creators, in recognition of the free operating system which was instrumental in their asteroid survey activities.
+8.Kernel.org, which is the main repository of Linux source code, was [compromised][16] by an unknown attacker in August, 2011, who managed to tamper with several kernel.org's servers. In an effort to tighten up access policies of the Linux kernel, Linux foundation recently [turned on][17] two-factor authentication at the official Git repositories hosting the Linux kernel.
 
-11. In the modern history of Linux kernel development, there was a big jump in kernel version: from 2.6 to 3.0. The [renumbering to version 3][23] actually did not signify any major restructuring in kernel code, but was simply to celebrate the 20 year milestone of the Linux kernel.
+8.Kernel.org是一个Linux源码的主要仓库，曾经在2011年被一个匿名的攻击者[攻陷][16],攻击者打算篡改kernel.org的服务器。为了加强linux内核的访问策略，Linux基金会最近在Linux内核的Git官方托管的仓库上[开启了][17]双重认证。
 
-12. In 2000, Steve Jobs at Apple Inc. [tried to hire][24] Linus Torvalds to have him drop Linux development and instead work on "Unix for the biggest user base," which was OS X back then. Linus declined the offer.
+9.The dominance of Linux on top 500 supercomputers [continues to rise][18]. As of June 2014, 97% of the world-fastest computers are powered by Linux.
 
-13. The [reboot()][25] system call in the Linux kernel requires two magic numbers. The second magic number comes from the [birth dates][26] of Linus Torvalds and his three daughters.
+9.Linux在500强超级计算机的优势还在[增加][18]。截至2014年6月，速度最快的97%的计算机都是运行在Linux上面的。
 
-14. With so many fans of Linux around the world, there are [criticisms][27] on current Linux distributions (mainly desktops), such as limited hardware support, lack of standardization, instability due to short upgrade/release cycles, etc. During the [Linux kernel panel][28] at LinuxCon 2014, Linus was quoted as saying "I still want the desktop" when asked where he thinks Linux should go next.
+10.Spacewatch, a research group of Lunar and Planetary Laboratory at the University of Arizona, named several asteroids ([9793 Torvalds][19], [9882 Stallman][20], [9885 Linux][21] and [9965 GNU][22]) after GNU/Linux and their creators, in recognition of the free operating system which was instrumental in their asteroid survey activities.
+
+
+
+11.In the modern history of Linux kernel development, there was a big jump in kernel version: from 2.6 to 3.0. The [renumbering to version 3][23] actually did not signify any major restructuring in kernel code, but was simply to celebrate the 20 year milestone of the Linux kernel.
+
+12.In 2000, Steve Jobs at Apple Inc. [tried to hire][24] Linus Torvalds to have him drop Linux development and instead work on "Unix for the biggest user base," which was OS X back then. Linus declined the offer.
+
+13.The [reboot()][25] system call in the Linux kernel requires two magic numbers. The second magic number comes from the [birth dates][26] of Linus Torvalds and his three daughters.
+
+14.With so many fans of Linux around the world, there are [criticisms][27] on current Linux distributions (mainly desktops), such as limited hardware support, lack of standardization, instability due to short upgrade/release cycles, etc. During the [Linux kernel panel][28] at LinuxCon 2014, Linus was quoted as saying "I still want the desktop" when asked where he thinks Linux should go next.
 
 If you know any interesting facts about Linux, feel free to share them in the comments.
 
