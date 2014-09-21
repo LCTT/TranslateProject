@@ -17,19 +17,27 @@ Celebrating the 23rd birthday of Linux today, let me show you **some interesting
 
 1. There is a never-ending debate on whether or not Linux is an operating system. Technically, the term "Linux" refers to the kernel, a core component of an operating system. Folks who argue that Linux is not an operating system are operating system purists who think that the kernel alone does not make the whole operating system, or free software ideologists who believe that the largest free operating system should be named "[GNU/Linux][7]" to give credit where credit is due (i.e., [GNU project][8]). On the other hand, some developers and programmers have a view that Linux qualifies as an operating system in a sense that it implements the [POSIX standard][9].
 
-1.关于linux是否是一个开源的操作系统这种争论总是无休无止的。事实上，“Linux”操作系统的核心组件参照的是kernel（内核）。而反派认为Linux不是一个纯粹的操作系统，因为他们认为仅仅一个kernel并不是一个操作系统，自由软件的推崇者认为最大的操作系统应叫做“[GNU/Linux][7]”把功劳归于应得的人（比如：[GNU project][8]）。另一方面，一些linux的开发者认为，linux拥有成为一个操作系统的资格，因为它实现了[POSIX标准][8]。
+1.关于linux是否是一个开源的操作系统这种争论总是无休无止的。事实上，“Linux”操作系统的核心组件参照的是kernel（内核）。而 反派认为Linux不是一个纯粹的操作系统，因为他们认为仅仅一个kernel并不是一个操作系统，自由软件的推崇者认为最大的操作系统应叫做“[GNU/Linux][7]”把功劳归于应得的人（比如：[GNU project][8]）。另一方面，一些linux的开发者认为，linux拥有成为一个操作系统的资格，因为它实现了[POSIX标准][9]。
 
 2. According to openhub.net, the majority (95%) of Linux is written in C language. The second popular language for Linux is assembly language (2.8%). The dominance of C lanaguage over C++ is no surprise given Linus's stance on C++. Here is the programming language breakdown for Linux.
+
+2.从openhub网站的额统计来看，绝大部分（95%）的Linux是用C语言写的。第二（2.8%）受欢迎的是汇编语言。毫无疑问，C语言比C++ 的更受欢迎，也表明了linus对C++的立场。下面是Linus编程语言的分类。
 
 ![](https://farm4.staticflickr.com/3845/15025332121_055cfe3a2c_z.jpg)
 
 3. Linux has been built by a total of [13,036 contributors][10] worldwide. The most prolific contributor is, of course, Linus Torvalds himself, who has committed code more than 20,000 times over the course of the lifetime of Linux. The following figures show the all-time top-10 contributors of Linux in terms of commit counts.
 
+3.在世界上，Linux已经被[13,036个贡献者][10]创建和修改。当然，贡献最多的还是Linus Torvalds自己。在他的一生中，他提交了20,000以上的代码。下图显示了所有提交次数最多的前十位Linux贡献者。
+
 ![](https://farm4.staticflickr.com/3837/14841786838_7a50625f9d_b.jpg)
 
 4. The total source lines of code (SLOC) of Linux is over 17 million. The estimated cost for the entire code base is 5,526 person-years, or over 300M USD according to [basic COCOMO model][11]. 
 
+4.Linux的代码行（SLOC）有超过1700万行。估计整个代码库的花费大概是5,526人年，或者是超过300M（1M=10*1000万亿）美元，[基于 模型的基本估算法][11]（basic COCOMO model）。
+
 5. Enterprises have not been simply consumers of Linux. Their employees have been [actively participated][12] in the development of Linux. The figure below shows the top-10 corporate sponsors of Linux kernel development, in terms of total commit counts from their employees, as of year 2013. They include commercial Linux distributors (Red Hat, SUSE), chip/embedded system makers (Intel, Texas Instruments, Wolfson), non-profits (Linaro), and other IT power houses (IBM, Samsung, Google).
+
+
 
 ![](https://farm6.staticflickr.com/5573/14841856427_a5a1828245_o.png)
 
