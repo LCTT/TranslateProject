@@ -1,3 +1,4 @@
+DoubleC is translating
 How to create a site-to-site IPsec VPN tunnel using Openswan in Linux
 ================================================================================
 A virtual private network (VPN) tunnel is used to securely interconnect two physically separate networks through a tunnel over the Internet. Tunneling is needed when the separate networks are private LAN subnets with globally non-routable private IP addresses, which are not reachable to each other via traditional routing over the Internet. For example, VPN tunnels are often deployed to connect different NATed branch office networks belonging to the same institution.
