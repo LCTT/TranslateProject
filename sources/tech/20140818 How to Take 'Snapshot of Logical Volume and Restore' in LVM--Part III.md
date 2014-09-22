@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 How to Take ‘Snapshot of Logical Volume and Restore’ in LVM – Part III
 ================================================================================
 **LVM Snapshots** are space efficient pointing time copies of lvm volumes. It works only with lvm and consume the space only when changes are made to the source logical volume to snapshot volume. If source volume has a huge changes made to sum of 1GB the same changes will be made to the snapshot volume. Its best to always have a small size of changes for space efficient. Incase the snapshot runs out of storage, we can use lvextend to grow. And if we need to shrink the snapshot we can use lvreduce.
