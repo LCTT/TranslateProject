@@ -59,7 +59,7 @@ Celebrating the 23rd birthday of Linux today, let me show you **some interesting
 
 10.Spacewatch, a research group of Lunar and Planetary Laboratory at the University of Arizona, named several asteroids ([9793 Torvalds][19], [9882 Stallman][20], [9885 Linux][21] and [9965 GNU][22]) after GNU/Linux and their creators, in recognition of the free operating system which was instrumental in their asteroid survey activities.
 
-
+10.太空监视
 
 11.In the modern history of Linux kernel development, there was a big jump in kernel version: from 2.6 to 3.0. The [renumbering to version 3][23] actually did not signify any major restructuring in kernel code, but was simply to celebrate the 20 year milestone of the Linux kernel.
 
