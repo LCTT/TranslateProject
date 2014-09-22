@@ -1,10 +1,10 @@
-世界上最小的发行版之一Tiny Core有了新的更新
+世界上最小的发行版之一Tiny Core有了更新
 ================================================================================
 ![Tiny Core desktop](http://i1-news.softpedia-static.com/images/news2/One-of-the-Smallest-Distros-in-the-World-Tiny-Core-Gets-a-Fresh-Update-458785-2.jpg)
 
 Tiny Core
 
-**Robert Shingledecker 宣布了最终版本的Tiny Core 5.4 Linux操作系统已经可以即刻下载,这也使它成为世界上最小的发行版之一**
+**Robert Shingledecker 宣布了最终版本的Tiny Core 5.4 Linux操作系统已经可以即刻下载,这也使它成为世界上最小的发行版之一。**
 
 发行版的名字说明了一切,但是开发者依然集成了一些有意思的包和一个轻量的桌面来与它相匹配。这次最新的迭代只有一个候选版本，而且它也是迄今为止最安静的版本之一。
 
@@ -20,7 +20,7 @@ Tiny Core
 - [Tiny Core Plus 5.4 (ISO)][3][iso] [72 MB]
 - [Core 5.4 (ISO)][4][iso] [8.90 MB]
 
-这些分发都有Live,你可以在安装之前试用。
+这些发行版都有Live,你可以在安装之前试用。
 
 --------------------------------------------------------------------------------
 
