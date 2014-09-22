@@ -29,7 +29,7 @@ UberWriter可以在[Ubuntu软件中心][4]中找到但是安装需要支付$5。
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/09/UberWriter_Ubuntu_1.jpeg)
 
-当想要导出到PDF的时候会提示先安装texlive。
+当想要导出到PDF的时候会提示先安装texlive。 
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/09/UberWriter_Ubuntu_PDF_Export.png)
 
