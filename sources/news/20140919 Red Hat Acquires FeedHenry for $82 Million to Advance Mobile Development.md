@@ -1,9 +1,8 @@
-Translating by ZTinoZ
-Red Hat Acquires FeedHenry for $82 Million to Advance Mobile Development
+Red Hat公司获得FeedHenry提供的8200万美元来推动手机开发
 ================================================================================
-> Red Hat jumps into the mobile development sector with a key acquisition.
+> 这是Red Hat公司进入手机开发领域的一次关键收获。
 
-Red Hat's JBoss developer tools division has always focused on enterprise development, but hasn't always been focused on mobile. Today that will start to change as Red Hat announced its intention to acquire mobile development vendor [FeedHenry][1] for $82 million in cash. The deal is set to close in the third quarter of Red Hat's fiscal 2015. Red Hat is set to disclose its second quarter fiscal 2015 earning at 4 ET today.
+Red Hat公司的JBoss开发者工具事业部一直注重于企业开发，而忽略了手机方面。而如今这一切将随着Red Hat公司宣布从手机开发供应商 [FeedHenry][1] 手中获得8200万美元现金开始发生改变。The deal is set to close in the third quarter of Red Hat's fiscal 2015. Red Hat is set to disclose its second quarter fiscal 2015 earning at 4 ET today.
 
 Mike Piech, general manager of Middleware at Red Hat, told Datamation that upon the deal's closing FeedHenry's employees will become Red Hat employees
 
