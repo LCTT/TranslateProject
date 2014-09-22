@@ -2,7 +2,7 @@ Red Hat公司获得FeedHenry提供的8200万美元来推动手机开发
 ================================================================================
 > 这是Red Hat公司进入手机开发领域的一次关键收获。
 
-Red Hat公司的JBoss开发者工具事业部一直注重于企业开发，而忽略了手机方面。而如今这一切将随着Red Hat公司宣布从手机开发供应商 [FeedHenry][1] 手中获得8200万美元现金开始发生改变。The deal is set to close in the third quarter of Red Hat's fiscal 2015. Red Hat is set to disclose its second quarter fiscal 2015 earning at 4 ET today.
+Red Hat公司的JBoss开发者工具事业部一直注重于企业开发，而忽略了手机方面。而如今这一切将随着Red Hat公司宣布从手机开发供应商 [FeedHenry][1] 手中获得8200万美元现金开始发生改变。这笔交易将在Red Hat公司2015财年的第三季度结束。Red Hat公司会在美国东部时间9月18号的4点公布它2015财年第二季度的收入。
 
 Mike Piech, general manager of Middleware at Red Hat, told Datamation that upon the deal's closing FeedHenry's employees will become Red Hat employees
 
