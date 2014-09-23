@@ -36,7 +36,7 @@ UberWriter可以在[Ubuntu软件中心][4]中找到但是安装需要支付5刀�
 
 虽然导出到HTML和ODT格式是好的。
 
-在Linux下还有一些其他的markdown编辑器。[Remarkable][5]是一款能够实时预览的编辑器，UberWriter却不能，不过总的来说它是一款很不错的应用。如果你在寻找文本编辑器的话，你以可以试试[Texmaker LaTeX editor][6]。
+在Linux下还有一些其他的markdown编辑器。[Remarkable][5]是一款能够实时预览的编辑器，UberWriter却不能，不过总的来说它是一款很不错的应用。如果你在寻找文本编辑器的话，你可以试试[Texmaker LaTeX editor][6]。
 
 系统这个教程能够帮你在Ubuntu14.04上成功安装UberWriter。我猜想UberWriter在Ubuntu12.04，Linux Mint 17，Elementary OS和其他在Ubuntu的基础上的Linux发行版上也能成功安装。
 
