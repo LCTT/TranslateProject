@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 How to Run Android Apps on Ubuntu using ARChon
 ================================================================================
 ![Android, Chrome, Ubuntu](http://www.omgubuntu.co.uk/wp-content/uploads/2014/09/android-ubuntu.jpg)
