@@ -8,12 +8,13 @@
 
 ### 添加窗口按钮 ###
 
-处于一些未知的原因，GNOME的开发者们决定对标准的窗口按钮（关闭，最小化，最大化）不屑一顾，而支持只有单个关闭按钮的窗口了。我缺少了最大化按钮（虽然你可以简单地拖动窗口到屏幕顶部来将它最大化），然而也可以通过在标题栏右击选择最小化或者最大化来进行最小化/最大化操作。这种变化仅仅增加了操作步骤，因此缺少最小化按钮实在搞得人云里雾里。所幸的是，有个简单的修复工具可以解决这个问题，下面说说怎样做吧：
+出于一些未知的原因，GNOME的开发者们决定对标准的窗口按钮（关闭，最小化，最大化）不屑一顾，而支持只有单个关闭按钮的窗口了。我缺少了最大化按钮（虽然你可以简单地拖动窗口到屏幕顶部来将它最大化），而且也可以通过在标题栏右击选择最小化或者最大化来进行最小化/最大化操作。这种变化仅仅增加了操作步骤，因此缺少最小化按钮实在搞得人云里雾里。所幸的是，有个简单的修复工具可以解决这个问题，下面说说怎样做吧：
 
-默认情况下，你应该安装了GNOME优化工具。通过该工具，你可以打开最大化或最小化按钮（图1）。
+默认情况下，你应该安装了GNOME优化工具（GNOME Tweak Tool）。通过该工具，你可以打开最大化或最小化按钮（图1）。
 
-![Figure 1: Adding the minimize button back to the GNOME 3 windows.](http://www.linux.com/images/stories/41373/gnome3-max-min-window.png)
-Figure 1: 添加回最小化按钮到GNOME 3窗口
+<center>![图 1: Adding the minimize button back to the GNOME 3 windows.](http://www.linux.com/images/stories/41373/gnome3-max-min-window.png)
+
+*图 1: 添加回最小化按钮到GNOME 3窗口*</center>
 
 添加完后，你就可以看到最小化按钮了，它在关闭按钮的左边，等着为你服务呢。你的窗口现在管理起来更方便了。
 
@@ -27,36 +28,39 @@ Figure 1: 添加回最小化按钮到GNOME 3窗口
 
 ### 添加扩展 ###
 
-GNOME 3的最佳特性之一，就是shell扩展，这些扩展为GNOME带来了全部种类的有用的特性。关于shell扩展，没必要从包管理器去安装。你可以访问[GNOME Shell扩展][2]站点，搜索你想要添加的扩展，点击扩展列表，点击打开按钮，然后扩展就安装完成了；或者你也可以从GNOME优化工具中添加它们（你在网站上会找到更多可用的扩展）。
+GNOME 3的最佳特性之一，就是shell扩展，这些扩展为GNOME带来了各种类别的有用特性。关于shell扩展，没必要从包管理器去安装。你可以访问[GNOME Shell扩展][2]站点，搜索你想要添加的扩展，点击扩展列表，点击打开按钮，然后扩展就安装完成了；或者你也可以从GNOME优化工具中添加它们（你在网站上会找到更多可用的扩展）。
 
 注：你可能需要在浏览器中允许扩展安装。如果出现这样的情况，你会在第一次访问GNOME Shell扩展站点时见到警告信息。当出现提示时，只要点击允许即可。
 
-令人印象更为深刻的（而又得心应手的扩展）之一，就是[Dash to Dock][3]。
+令人印象更为深刻的（而又得心应手的）扩展之一，就是[Dash to Dock][3]。
+
 该扩展将Dash移出应用程序概览，并将它转变为相当标准的停靠栏（图2）。
 
-![Figure 2: Dash to Dock adds a dock to GNOME 3.](http://www.linux.com/images/stories/41373/gnome3-dash.png)
-Figure 2: Dash to Dock添加一个停靠栏到GNOME 3.
+<center>![图 2: Dash to Dock adds a dock to GNOME 3.](http://www.linux.com/images/stories/41373/gnome3-dash.png)
+
+*图 2: Dash to Dock添加一个停靠栏到GNOME 3*</center>
 
 当你添加应用程序到Dash后，他们也将被添加到Dash to Dock。你也可以通过点击Dock底部的6点图标访问应用程序概览。
 
-还有大量其它扩展聚焦于讲GNOME 3打造成一个更为高效的桌面，在这些更好的扩展中，包括以下这些：
+还有大量其它扩展致力于将GNOME 3打造成一个更为高效的桌面，在这些不错的扩展中，包括以下这些：
 
 - [最近项目][4]: 添加一个最近使用项目的下拉菜单到面板。
-- [搜索Firefox书签提供者][5]: 从概览搜索（并启动）书签。
+- [Firefox书签搜索][5]: 从概览搜索（并启动）书签。
 - [跳转列表][6]: 添加一个跳转列表弹出菜单到Dash图标（该扩展可以让你快速打开和程序关联的新文档，甚至更多）
 - [待办列表][7]: 添加一个下拉列表到面板，它允许你添加项目到该列表。
-- [网页搜索对话框][8]: 允许你通过敲击Ctrl+空格来快速搜索网页并输入一个文本字符串（结果在新的浏览器标签页中显示）。
+- [网页搜索框][8]: 允许你通过敲击Ctrl+空格来快速搜索网页并输入一个文本字符串（结果在新的浏览器标签页中显示）。
 
 ### 添加一个完整停靠栏 ###
 
-如果Dash to dock对于而言功能还是太有限（你想要通知区域，甚至更多），那么向你推荐我最喜爱的停靠栏之一[Cairo Dock][9]（图3）。
+如果Dash to dock对于你而言功能还是太有限（你想要“通知区域”，甚至更多），那么向你推荐我最喜爱的停靠栏之一[Cairo Dock][9]（图3）。
 
-![Figure 3: Cairo Dock ready for action.](http://www.linux.com/images/stories/41373/gnome3-Cairo-dock.png)
-Figure 3: Cairo Dock待命
+<center>![图 3: Cairo Dock ready for action.](http://www.linux.com/images/stories/41373/gnome3-Cairo-dock.png)
 
-在Cairo Dock添加到GNOME 3后，你的体验将成倍地增长。从你的发行版的包管理器中安装这个优秀的停靠栏吧。
+*图 3: Cairo Dock待命*</center>
 
-不必将GNOME 3看作是一个效率不高的，用户不友好的桌面。只要稍作调整，GNOME 3可以成为和其它可用的桌面一样强大而用户友好的桌面。
+在将Cairo Dock添加到GNOME 3后，你的体验将成倍地增长。从你的发行版的包管理器中安装这个优秀的停靠栏吧。
+
+不要将GNOME 3看作是一个效率不高的，用户不友好的桌面。只要稍作调整，GNOME 3可以成为和其它可用的桌面一样强大而用户友好的桌面。
 
 --------------------------------------------------------------------------------
 
@@ -64,7 +68,7 @@ via: http://www.linux.com/learn/tutorials/781916-easy-steps-to-make-gnome-3-more
 
 作者：[Jack Wallen][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[ wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
