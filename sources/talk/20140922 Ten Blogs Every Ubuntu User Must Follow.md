@@ -1,12 +1,17 @@
 barney-ro  translating
 
 Ten Blogs Every Ubuntu User Must Follow
+每个ubutun用户一定要知道的10个博客
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/09/Best_Ubuntu_Blogs.jpg)
 
 **What are the websites that I should follow to learn more about Ubuntu?**
 
+**想要了解更多关于乌邦图（ubuntu）的资讯，我们应该追哪些网站呢？**
+
 This is a question beginner often ask. I am going to list here ten of my favorite blogs that help users solve their issues, keep them updated with news and help them in over all Ubuntu. No, I am not talking about Linux in general and shell scripting and stuff like that. I am talking about a smooth desktop Linux experience with Ubuntu which an ordinary user wants.
+
+这是菜鸟经常会问的一个问题，在这里，我会告诉你们10个我最喜欢的博客，这些博客可以帮助用户解决问题，能让他们及时了解所有版本的更新消息。不，我谈论的不是通常的Linux和shell脚本一类的东东。我是在说一个流畅的Linux桌面系统和一个普通的用户想要的乌邦图（Ubuntu）的经验。
 
 These blogs help you with ongoing issues, make you aware of various application and provide you the latest from Ubuntu world. Following these blogs should help you to indulge more in Ubuntu. So, here goes the list of ten of my favorite blogs that cover Ubuntu extensively.
 
