@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 How to use logrotate to manage log files in Linux
 ================================================================================
 Log files contain useful information about what is going on within the system. They are often inspected during troubleshooting processes or server performance analysis. For a busy server, log files may grow quickly into very large sizes. This becomes a problem as the server will soon run out of space. Besides, working with a single large log file can often be tricky.
