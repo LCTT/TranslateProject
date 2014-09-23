@@ -1,3 +1,6 @@
+Translating-------------geekpi
+
+
 Jelly Conky Adds Simple, Stylish Stats To Your Linux Desktop
 ================================================================================
 **I treat Conky setups a bit like wallpapers: I’ll find one I love, only to change it the next week because I’m bored of it and want a change.**
