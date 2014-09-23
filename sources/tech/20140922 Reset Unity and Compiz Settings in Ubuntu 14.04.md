@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Reset Unity and Compiz Settings in Ubuntu 14.04 [Quick Tip]
 ================================================================================
 If you keep experimenting with your Ubuntu system you might end up with a messed up Unity and Compiz settings. In this quick tip we shall see how to reset Unity and Compiz settings in Ubuntu 14.04. In fact it is all about running a couple of commands.
