@@ -1,5 +1,7 @@
-Email生日快乐
+他发明了 Email ？
 ================================================================================
+[编者按：本文所述的 Email 发明人的观点存在很大的争议，请读者留意，以我的观点来看，其更应该被称作为某个 Email 应用系统的发明人，其所发明的一些功能和特性，至今沿用。——wxy]
+
 **一个印度裔美国人用他天才的头脑发明了电子邮件，而从此以后我们没有哪一天可以离开电子邮件。**
 
 ![](http://1-ps.googleusercontent.com/h/www.efytimes.com/admin/useradmin/photo/150x150xDbOx104130AM8312014.jpg.pagespeed.ic.QJJxt_P8uE.jpg)
@@ -18,6 +20,6 @@ via: http://www.efytimes.com/e1/fullnews.asp?edid=147170
 
 作者：Sanchari Banerjee
 译者：[zpl1025](https://github.com/zpl1025)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

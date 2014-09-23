@@ -1,12 +1,12 @@
 QuiteRSS: Linux桌面的RSS阅读器
 ================================================================================
-[QuiteRSS][1]是一个自由[开源][2]的RSS/Atome阅读器。它可以在Windows、Linux和Mac上运行。它用C++/QT编写,所以它有许多的特点。
+[QuiteRSS][1]是一个免费的[开源][2]RSS/Atome阅读器。它可以在Windows、Linux和Mac上运行。它用C++/QT编写。它有许多的特色功能。
 
-QuiteRSS的界面让我想起Lotus Notes mail，会有很多RSS信息排列在大小合适的方块上，你可以通过标签分组。需要查找东西时，只需在下面板上打开RSS信息。
+QuiteRSS的界面让我想起Lotus Notes mail，会有很多RSS信息排列在右侧面板上，你可以通过标签分组。点击一个 RSS 条目时，会在下方的面板里面显示该信息。
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/09/QuiteRSS_Ubuntu.jpeg)
 
-除了上述功能，它还有一个广告屏蔽器，一个报纸输出视图，通过URL特性导入RSS等众多功能。你可以在[这里][3]查找到完整的功能列表。
+除了上述功能，它还有一个广告屏蔽器，一个报纸视图，通过URL导入RSS源等众多功能。你可以在[这里][3]查找到完整的功能列表。
 
 ### 在 Ubuntu 和 Linux Mint 上安装 QuiteRSS ###
 
@@ -20,19 +20,19 @@ QuiteRSS在Ubuntu 14.04 和 Linux Mint 17中可用。你可以通过以下命令
     sudo apt-get update
     sudo apt-get install quiterss
 
-上面的命令在所有基于Ubuntu的发行版都支持，比如Linux Mint, Elementary OS, Linux Lite, Pinguy OS等等。对于其他Linux发行版和平台上,你可以从 [下载页][5]获得源码来安装。
+上面的命令支持所有基于Ubuntu的发行版，比如Linux Mint, Elementary OS, Linux Lite, Pinguy OS等等。对于其他Linux发行版和平台上,你可以从 [下载页][5]获得源码来安装。
 
 ### 卸载 QuiteRSS ###
 
-用下方命令卸载 QuiteRSS：
+用下列命令卸载 QuiteRSS：
 
     sudo apt-get remove quiterss
 
-如果你使用了PPA,你还需要从源列表中把仓库删除：
+如果你使用了PPA,你还也应该从源列表中把仓库删除：
 
     sudo add-apt-repository --remove ppa:quiterss/quiterss
 
-QuiteRSS是一个不错的开源RSS阅读器，尽管我更喜欢[Feedly][6]。尽管现在 Feedly 还没有Linux桌面程序，但是你依然可以在网页浏览器中使用。希望你会觉得QuiteRSS值得在桌面Linux一试。
+QuiteRSS是一个不错的开源RSS阅读器，尽管我更喜欢[Feedly][6]。不过现在 Feedly 还没有Linux桌面程序，但是你依然可以在网页浏览器中使用。希望你会觉得QuiteRSS值得在桌面Linux一试。
 
 --------------------------------------------------------------------------------
 
