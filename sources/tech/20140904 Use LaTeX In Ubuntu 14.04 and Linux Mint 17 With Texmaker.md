@@ -1,40 +1,41 @@
-johnhoow translating...
-Use LaTeX In Ubuntu 14.04 and Linux Mint 17 With Texmaker
+在Ubuntu 14.04和拥有Texmaker的Linux Mint 17(基于ubuntu和debian的Linux发行版)中使用LaTeX
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/09/texmaker_Ubuntu.jpeg)
 
-[LaTeX][1] is a document markup language and document preparation system. It is widely used as a standard in universities and academics to write professional scientific papers, thesis and other such documents. In this quick post, we shall see **how to use LaTeX in Ubuntu 14.04**.
+[LaTeX][1]是一种文本标记语言，也可以说是一种文档制作系统。经常在很多大学或者机构中作为一种标准来书写专业的科学文献,毕业论文或其他类似的文档。在这篇文章中，我们会看到如何在Ubuntu 14.04中使用LaTeX。
 
-### Install Texmaker to use LaTeX in Ubuntu 14.04 & Linux Mint 17 ###
+### 在Ubuntu 14.04或Linux Mint 17中安装Texmaker
 
-[Texmaker][2] is a free and open source LaTeX editor which is available for all major desktop OS i.e. Windows, Linux and OS X. Followings are the salient features of the Texmaker:
+[Texmaker][2]是一款免费开源的LaTeX编辑器，它支持一些主流的桌面操作系统，比如Window，Linux和OS X。下面是Texmaker的主要特点：
 
-- Unicode editor
-- Spell checker
-- Code folding
-- Code completion
-- Fast navigation
-- Integrated Pdf viewer
-- Easy compilation
-- 370 Mathematical symbols
-- LaTeX documentation
-- Export to html and odt via TeX4ht
-- Regex support
+- 支持Unicode编码的编辑器
+- 拼写检查
+- 代码折叠
+- 自动补全
+- 快速导航
+- PDF查看器
+- 编译简单
+- 支持370个数学符号
+- LaTeX格式文本
+- 通过TeX4ht导出到html和odt文件
+- 支持正则表达式
 
-You can install Texmaker in Ubuntu 14.04 by downloading the binaries from the given link:
+在Ubuntu 14.04下，你可以通过下面的链接下载Texmaker的二进制包
 
-- [Download Texmaker LaTeX editor][3]
+- [下载Texmaker编辑器][3]
 
-Since it is .deb packaging, same installation files can be used n any other Debian based distribution such as Linux Mint, Elementary OS, Pinguy OS etc.
+你通过链接下载到的是一个.deb包，因此你在一些像Linux Mint，Elementary OS，Pinguy OS等等类Debain的发行版中可以使用相同的安装方式。
 
-If you want a Github type markdown editor, you should check [Remarkable editor][4]. I hope Texmaker helps you with **LaTeX in Ubuntu** and Linux Mint.
+如果你想使用像Github类型的markdown编辑器，你可以试试[Remarkable编辑器][4]。
+
+希望Texmaker能够在Ubuntu和Linux Mint中帮到你
 
 --------------------------------------------------------------------------------
 
 via: http://itsfoss.com/install-latex-ubuntu-1404/
 
 作者：[Abhishek][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[john](https://github.com/johnhoow)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
