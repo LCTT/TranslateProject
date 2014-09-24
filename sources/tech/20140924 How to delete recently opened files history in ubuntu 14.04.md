@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How to delete recently opened files history in ubuntu 14.04
 ================================================================================
 This simple tutorial explains How to delete recently opened files in ubuntu 14.04.This tutorial is for beginners.
