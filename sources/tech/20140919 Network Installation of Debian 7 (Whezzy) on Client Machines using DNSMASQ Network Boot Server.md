@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Network Installation of “Debian 7 (Whezzy) on Client Machines using DNSMASQ Network Boot Server
 ================================================================================
 This tutorial will guide you on how you can install **Debian 7 (Whezzy)** directly from a network location using **DNSMASQ** as a **PXE Server (Preboot eXecution Environment)**, in case your server doesn’t provide any method to boot from a CD/DVD/USB media drive or it just can operate with an attached monitor, keyboard and mouse.
