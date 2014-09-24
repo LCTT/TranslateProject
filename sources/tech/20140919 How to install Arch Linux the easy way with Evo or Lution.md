@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How to install Arch Linux the easy way with Evo/Lution
 ================================================================================
 The one who ventures into an install of Arch Linux and has only experienced installing Linux with Ubuntu or Mint is in for a steep learning curve. The number of people giving up halfway is probably higher than the ones that pull it through. Arch Linux is somewhat cult in the way that you may call yourself a weathered Linux user if you succeed in setting it up and configuring it in a useful way.
