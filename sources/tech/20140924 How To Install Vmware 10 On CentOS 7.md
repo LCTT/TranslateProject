@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How To Install Vmware 10 On CentOS 7
 ================================================================================
 I will give you my experience install of vmware 10.0.3 on centos 7. Normally it will not work with centos 7, because it’s running with lower kernel version 3.10.
