@@ -78,35 +78,59 @@ Want quick tips, go to Ubuntu Geek.
 
 Not updated as frequently as it used to be in the past, perhaps Manuel is busy with his job, but it still offers a lot. News, tutorials, application reviews are the main highlight of the blog.
 
+这个网站的更新好像没有以前那么勤快了，可能是Manuel在忙于他的工作，但是仍然给我们提供了很多的东西。新闻，教程，应用评论是这个博客的重点。
+
 Often included in [Ubuntu News Request mails][9], Tech Drive-in is definitely worth a drive.
+
+经常被收入到[Ubuntu的新闻邮件请求][9]，Tech Drive-in肯定是一个很值得你去追的网站。
 
 ### [UbuntuHandbook][10] ###
 
 Quick tips, news and tutorials are the USP of UbuntuHandbook. [Ji m][11] is also maintaining some PPAs lately. I seriously think that it could be a better looking blog, my personal opinion on the website appearance.
 
+快速小贴士，新闻和教程是UbuntuHandbook的USP。[Ji m][11]最近也在参与维护一些PPAS。我必须很认真的说，这个站其实可以做得更好看点，纯属个人观点。
+
 Handy tips at UbuntuHandbook.
+
+UbuntuHandbook真的很方便。
 
 ### [Unixmen][12] ###
 
 A multi-author blog which is not limited to Ubuntu and covers a range of other distributions as well. It has its own forum to help out people.
 
+这个网站是由很多人一起维护的，而且并不仅仅局限于Ubuntu，它也覆盖了很多的其他的Linux发行版。他有他自己的方式来帮助人们。
+
 Stay updated with Unixmen.
+
+保持与Unixmen的更新。
 
 ### [The Mukt][13] ###
 
 The Mukt is the new avatar of Muktware. Muktware was a Linux magazine that died gradually only to be reborn as The Mukt. While Muktware was a strictly Linux/Open Source blog, The Mukt covers a wide range of topics including technology news, geeky news and at times entertainment news (sounds like Mashable, no?). The Mukt still covers a lot of Ubuntu news which could be of your interest.
 
+The Mukt是Muktware新的代表。Muktware是一个逐渐消亡的Linux组织，并以Mukt重生。Muktware是一个很严谨的Linux开源的博客，The Mukt涉及很多广泛的主题，包括，科技新闻，古怪的新闻，有时还有娱乐新闻（听起来是否有一种混搭风的感觉？）The Mukt仍然包括很多Ubuntu的新闻，有些可能是你感兴趣的。
+
 The Mukt is not just a blog, it’s a culture.
+
+The Mukt 不仅仅是一个博客，它是一种文化。
 
 ### [LinuxG][14] ###
 
 LinuxG is a blog where you can find all kind of “how to install” articles. Almost all the articles start with “Hello Linux Geeksters, as you may know…” and the blog could do better with a different theme. I have often find the articles lacking depth and written in hurry but it still is a good place to know about latest release of an application.
 
+LinuxG是一个你可以找到所有关于“怎样安装”文章的站点。绝大多数的文章都开始于一句话“你好，Linux geeksters,正如你所知。。。”博客可以在不同的主题上做得更好。我经常发现有些是文章缺乏深度，并且是急急忙忙写出来的，但是它仍然是一个关注应用更新的好地方。
+
 Good for quick glance of new application and their latest releases.
+
+它很好的平衡了新的应用和他们最新的版本。
 
 ### What about yours? ###
 
+### 你还有什么号的站点吗？ ###
+
 This was my list of best Ubuntu blogs which I regularly follow. I know there are plenty more out there, perhaps better than some of those listed here. So why don’t you mention your favorite Ubuntu blog in the comment section below?
+
+这些就是我平时经常浏览的Ubuntu博客。我知道还有很多我不知道的站点，可能会比我列出来的这些还好。所以，欢迎把你最喜爱的乌邦图（Ubuntu）博客在下面评论的位置写出来。
 --------------------------------------------------------------------------------
 
 via: http://itsfoss.com/ten-blogs-every-ubuntu-user-must-follow/
