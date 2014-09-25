@@ -1,3 +1,7 @@
+
+Translating---------geekpi
+
+
 End of the Line for Red Hat Enterprise Linux 5
 ================================================================================
 In March of 2007, Red Hat first announced its [Red Hat Enterprise Linux 5][1]( RHEL) platform. Though it might seem quant today, RHEL 5 was particularly notable in that it was the first major release for Red Hat to emphasize virtualization, which is a feature all modern distros now take for granted.
