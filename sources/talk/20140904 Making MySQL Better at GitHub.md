@@ -1,3 +1,4 @@
+[bazz2 bazz2 bazz2]
 Making MySQL Better at GitHub
 ================================================================================
 > At GitHub we say, "it's not fully shipped until it's fast." We've talked before about some of the ways we keep our [frontend experience speedy][1], but that's only part of the story. Our MySQL database infrastructure dramatically affects the performance of GitHub.com. Here's a look at how our infrastructure team seamlessly conducted a major MySQL improvement last August and made GitHub even faster.
