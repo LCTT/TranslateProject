@@ -1,3 +1,5 @@
+barney-ro  translating 
+
 7 killer open source monitoring tools
 ================================================================================
 Looking for greater visibility into your network? Look no further than these excellent free tools
@@ -57,7 +59,7 @@ Ntop is a packet sniffing tool with a slick Web UI that displays live data on ne
 via: http://www.networkworld.com/article/2686794/asset-management/164219-7-killer-open-source-monitoring-tools.html
 
 作者：[Paul Venezia][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[barney-ro](https://github.com/barney-ro)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
