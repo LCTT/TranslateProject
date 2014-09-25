@@ -1,3 +1,5 @@
+wangjiezhe translating
+
 Unix: stat -- more than ls
 ================================================================================
 > Tired of ls and want to see more interesting information on your files? Try stat!
@@ -114,7 +116,7 @@ In the examples below, we look at permissions -- in each of the two available fo
 via: http://www.itworld.com/operating-systems/437351/unix-stat-more-ls
 
 作者：[Sandra Henry-Stocker][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wangjiezhe](https://github.com/wangjiezhe)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
