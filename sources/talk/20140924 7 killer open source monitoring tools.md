@@ -1,10 +1,15 @@
 barney-ro  translating 
 
 7 killer open source monitoring tools
+7个杀手级的开源监测工具
 ================================================================================
 Looking for greater visibility into your network? Look no further than these excellent free tools
 
+想要更清晰的了解你的网络吗？没有比这几个免费的工具更好用的了。
+
 Network and system monitoring is a broad category. There are solutions that monitor for the proper operation of servers, network gear, and applications, and there are solutions that track the performance of those systems and devices, providing trending and analysis. Some tools will sound alarms and notifications when problems are detected, while others will even trigger actions to run when alarms sound. Here is a collection of open source solutions that aim to provide some or all of these capabilities.
+
+网络和系统监控是一个很宽的范畴。有监控服务器正常工作，网络设备，应用的方案。也有跟踪这些系统和设备性能，提供趋势分析的解决方案。有些工具像个闹钟一样，当发现问题的时候就会报警，而另外的一些工具甚至可以在警报响起的时候触发一些动作。这里，收集了一些开源的工具，旨在解决上述的一些甚至大部分问题。
 
 ### Cacti ###
 
@@ -12,17 +17,23 @@ Network and system monitoring is a broad category. There are solutions that moni
 
 Cacti is a very extensive performance graphing and trending tool that can be used to track just about any monitored metric that can be plotted on a graph. From disk utilization to fan speeds in a power supply, if it can be monitored, Cacti can track it -- and make that data quickly available.
 
+Cacti是一个性能广泛的图表和趋势分析工具，可以用来跟踪，并且几乎可以绘制出任何监测指标。从硬盘的使用到风扇的转速，在一个电脑管理系统中，只要是可以被监测的数据，Cacti都可以监测，并快速的转换成可视化的数据。
+
 ### Nagios ###
 
 ![](http://images.techhive.com/images/idge/imported/imageapi/2014/09/22/12/slide_03-netmon-nagios-100448915-orig.jpg)
 
 Nagios is the old guard of system and network monitoring. It is fast, reliable, and extremely customizable. Nagios can be a challenge for newcomers, but the rather complex configuration is also its strength, as it can be adapted to just about any monitoring task. What it may lack in looks it makes up for in power and reliability.
 
+Nagios是一个经典的老牌系统和网络监测工具。运行速度快，可靠，并且极其人性化。Nagios对于初学者是一个挑战。但是它的极其复杂的配置正好也反应出它的强大，因为它几乎可以试用于任何监控任务。要说缺点的话就是不怎么耐看，但是其强劲的动力和可靠性弥补了这个缺点。
+
 ### Icinga ###
 
 ![](http://images.techhive.com/images/idge/imported/imageapi/2014/09/22/12/slide_04-netmon-icinga-100448916-orig.jpg)
 
 Icinga is an offshoot of Nagios that is currently being rebuilt anew. It offers a thorough monitoring and alerting framework that\u2019s designed to be as open and extensible as Nagios is, but with several different Web UI options. Icinga 1 is closely related to Nagios, while Icinga 2 is the rewrite. Both versions are currently supported, and Nagios users can migrate to Icinga 1 very easily.
+
+
 
 ### NeDi ###
 
