@@ -33,7 +33,7 @@ Nagios是一个经典的老牌系统和网络监测工具。运行速度快，�
 
 Icinga is an offshoot of Nagios that is currently being rebuilt anew. It offers a thorough monitoring and alerting framework that\u2019s designed to be as open and extensible as Nagios is, but with several different Web UI options. Icinga 1 is closely related to Nagios, while Icinga 2 is the rewrite. Both versions are currently supported, and Nagios users can migrate to Icinga 1 very easily.
 
-
+Icinga 是一个正在重建的Nagios的分支，它提供了一个全面的监控和提醒的框架，致力于设计一个像Nagios一样的开放的和可扩展性的平台。但是拥有不一样的UI选项。Icinga是Nagios非常的相近，而Icinga就重写了。两个版本都支持，而且，Nagios用户可以很轻松的转到Icinga 1平台。
 
 ### NeDi ###
 
@@ -41,13 +41,19 @@ Icinga is an offshoot of Nagios that is currently being rebuilt anew. It offers 
 
 NeDi may not be as well known as some of the others, but it\u2019s a great solution for tracking devices across a network. It continuously walks through a network infrastructure and catalogs devices, keeping track of everything it discovers. It can provide the current location of any device, as well as a history.
 
+NeDi可能不如其他的软件一样文明全世界，但它确是一个跟踪网络接入的一个强大的方案。它可以很流畅的运行于网络基础设施和设备目录，保持对任何动作的跟踪。它可以提供任意设备的当前位置，也包括历史位置。
+
 NeDi can be used to locate stolen or lost devices by alerting you if they reappear on the network. It can even display all known and discovered connections on a map, showing how every network interconnect is laid out, down to the physical port level.
+
+NeDi可以被用于定位被偷的，或者是丢失掉的设备，只要它出现在网络上。它甚至可以显示所有已经的和已发现的节点。告诉人们网络是怎么互联的到物理端口电平的。
 
 ### Observium ###
 
 ![](http://images.techhive.com/images/idge/imported/imageapi/2014/09/22/12/slide_06-netmon-observium-100448918-orig.jpg)
 
 Observium combines system and network monitoring with performance trending. It uses both static and auto discovery to identify servers and network devices, leverages a variety of monitoring methods, and can be configured to track just about any available metric. The Web UI is very clean, well thought out, and easy to navigate.
+
+Observium 综合系统网路监测性能趋势，它支持静态和动态发现来确认服务器和网络设备，
 
 As shown, Observium can also display the physical location of monitored devices on a geographical map. Note too the heads-up panels showing active alarms and device counts.
 
