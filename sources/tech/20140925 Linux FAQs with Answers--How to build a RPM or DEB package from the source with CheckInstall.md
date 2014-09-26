@@ -1,14 +1,15 @@
 Linux FAQs with Answers--How to build a RPM or DEB package from the source with CheckInstall
 ================================================================================
-> **Question**: I would like to install a software program by building it from the source. Is there a way to build and install a package from the source, instead of running "make install"? That way, I could uninstall the program easily later if I want to. 
+> **问题**:我想要从源码创建安装的软件程序。有没有一种方式来创建并且从源码安装包,而不是运行“make install”？那样，以后如果我想，我可以容易的卸载程序。
 
-If you have installed a Linux program from its source by running "make install", it becomes really tricky to remove it completely, unless the author of the program provides an uninstall target in the Makefile. You will have to compare the complete list of files in your system before and after installing the program from source, and manually remove all the files that were added during the installation.
+如果你已经从从它的源码运行“make install”安装了linux程序。想完整移除它将变得真的很麻烦，除非程序的创造者在Makefile里提供卸载的目标。你会有在你系统里文件的完整列表来和从源码安装之后比较，然后手工移除所有在制作安装过程中加入的文件
 
-That is when CheckInstall can come in handy. CheckInstall keeps track of all the files created or modified by an install command line (e.g., "make install" "make install_modules", etc.), and builds a standard binary package, giving you the ability to install or uninstall it with your distribution's standard package management system (e.g., yum for Red Hat or apt-get for Debian). It has been also known to work with Slackware, SuSe, Mandrake and Gentoo as well, as per the [official documentation][1].
 
-In this post, we will only focus on Red Hat and Debian based distributions, and show how to build a RPM or DEB package from the source using CheckInstall.
+这时候Checkinstall就可以派上使用。Checkinstall保留命令行创建或修改的所有文件的路径(例如：“make install”“make install_modules”等)并建立一个标准的二进制包，让你能用你发行版的标准包管理系统安装或卸载它，（例子：Red Hat的yum或者Debian的apt-get命令） It has been also known to work with Slackware, SuSe, Mandrake and Gentoo as well, as per the official documentation. [official documentation][1].
 
-### Installing CheckInstall on Linux ###
+在这篇文章中，我们只集中在红帽子和Debian为基础的发行版，并展示怎样从源码使用Checkinstall创建一个RPM和DEB软件包
+
+###  ###
 
 To install CheckInstall on Debian derivatives:
 
