@@ -1,17 +1,16 @@
-[bazz2 bazz2 bazz2]
-Making MySQL Better at GitHub
+优化 GitHub 服务器上的 MySQL 数据库性能
 ================================================================================
-> At GitHub we say, "it's not fully shipped until it's fast." We've talked before about some of the ways we keep our [frontend experience speedy][1], but that's only part of the story. Our MySQL database infrastructure dramatically affects the performance of GitHub.com. Here's a look at how our infrastructure team seamlessly conducted a major MySQL improvement last August and made GitHub even faster.
+> 在 GitHub 我们总是说“如果网站响应速度不够快，说明我们的工作没完成”。我们之前在[前端的体验速度][1]这篇文章中介绍了一些提高网站响应速率的方法，但这只是故事的一部分。真正影响到 GitHub.com 性能的因素是 MySQL 数据库架构。让我们来瞧瞧我们的基础架构团队是如何无缝升级了 MySQL 架构吧，这事儿发生在去年8月份，成果就是大大提高了 GitHub 网站的速度。
 
-### The mission ###
+### 任务 ###
 
-Last year we moved the bulk of GitHub.com's infrastructure into a new datacenter with world-class hardware and networking. Since MySQL forms the foundation of our backend systems, we expected database performance to benefit tremendously from an improved setup. But creating a brand-new cluster with brand-new hardware in a new datacenter is no small task, so we had to plan and test carefully to ensure a smooth transition. 
+去年我们把 GitHub 上的大部分数据移到了新的数据中心，这个中心有世界顶级的硬件资源和网络平台。自从使用了 MySQL 作为我们的后端基本存储系统，我们一直期望着一些改进来大大提高数据库性能，但是在数据中心使用全新的硬件来部署一套全新的集群环境并不是一件简单的工作，所以我们制定了一套计划和测试工作，以便数据能平滑过渡到新环境。
 
-### Preparation ###
+### 准备工作 ###
 
-A major infrastructure change like this requires measurement and metrics gathering every step of the way. After installing base operating systems on our new machines, it was time to test out our new setup with various configurations. To get a realistic test workload, we used tcpdump to extract SELECT queries from the old cluster that was serving production and replayed them onto the new cluster.
+像我们这种关于架构上的巨大改变，在执行的每一步都需要收集数据指标。新机器上安装好了基础操作系统，接下来就是测试新配置下的各种性能。为了模拟真实的工作负载环境，我们使用 tcpdump 工具从老集群那里复制正在发生的 SELECT 请求，并在新集群上重新响应一遍。
 
-MySQL tuning is very workload specific, and well-known configuration settings like innodb_buffer_pool_size often make the most difference in MySQL's performance. But on a major change like this, we wanted to make sure we covered everything, so we took a look at settings like innodb_thread_concurrency, innodb_io_capacity, and innodb_buffer_pool_instances, among others.
+MySQL 微调是个繁琐的细致活，像众所周知的 innodb_buffer_pool_size 这个参数往往能对 MySQL 性能产生巨大的影响。对于这类参数，我们必须考虑在内，所以我们列了一份参数清单，包括 innodb_thread_concurrency，innodb_io_capacity，and innodb_buffer_pool_instances，还有其它的。
 
 We were careful to only make one test configuration change at a time, and to run tests for at least 12 hours. We looked for query response time changes, stalls in queries per second, and signs of reduced concurrency. We observed the output of SHOW ENGINE INNODB STATUS, particularly the SEMAPHORES section, which provides information on work load contention.
 
