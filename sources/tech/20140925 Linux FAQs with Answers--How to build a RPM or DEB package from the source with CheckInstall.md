@@ -9,65 +9,66 @@ Linux FAQs with Answers--How to build a RPM or DEB package from the source with 
 
 在这篇文章中，我们只集中在红帽子和Debian为基础的发行版，并展示怎样从源码使用Checkinstall创建一个RPM和DEB软件包
 
-###  ###
+### 在linux上安装Checkinstall ###
 
-To install CheckInstall on Debian derivatives:
+在Debian衍生上安装Checkinstall：
 
     # aptitude install checkinstall 
 
-To install CheckInstall on Red Hat-based distributions, you will need to download a pre-built .rpm of CheckInstall (e.g., searchable from [http://rpm.pbone.net][2]), as it has been removed from the Repoforge repository. The .rpm package for CentOS 6 works in CentOS 7 as well.
+在红帽子的发行版上安装Checkinstall，你需要下载一个预先建立的Checkinstall rpm(例如：从 [http://rpm.pbone.net][2]),他已经从Repoforge库里删除。对于Cent OS6这个rpm包也可在Cent OS7里工作。
 
     # wget ftp://ftp.pbone.net/mirror/ftp5.gwdg.de/pub/opensuse/repositories/home:/ikoinoba/CentOS_CentOS-6/x86_64/checkinstall-1.6.2-3.el6.1.x86_64.rpm
     # yum install checkinstall-1.6.2-3.el6.1.x86_64.rpm 
 
-Once checkinstall is installed, you can use the following format to build a package for particular software.
+一旦checkinstall安装，你可以用下列格式创建一个特定的软件包
 
     # checkinstall <install-command> 
 
-Without <install-command> argument, the default install command "make install" will be used.
+如果没有参数，默认安装命令“make install”将被使用
 
-### Build a RPM or DEB Pacakge with CheckInstall ###
+### 用Checkinstall创建一个RPM或DEB包 ###
 
-In this example, we will build a package for [htop][3], an interactive text-mode process viewer for Linux (like top on steroids). 
+在这个例子里，我们将创建一个htop包，对于linux交互式文本模式进程查看器（就像上面的 steroids）
 
-First, let's download the source code from the official website of the project. As a best practice, we will store the tarball in /usr/local/src, and untar it.
+
+首先，让我们从项目的官方网站下载源代码，一个最佳的练习，我们存储源码到/usr/local/src,并解压它
 
     # cd /usr/local/src
     # wget http://hisham.hm/htop/releases/1.0.3/htop-1.0.3.tar.gz
     # tar xzf htop-1.0.3.tar.gz
     # cd htop-1.0.3 
 
-Let's find out the install command for htop, so that we can invoke checkinstall with the command. As shown below, htop is installed with 'make install' command.
+让我们找出htop安装命令，那样我们就能调用Checkinstall命令，下面展示了，htop用“make install”命令安装
 
     # ./configure
     # make install 
 
-Therefore, to build a htop package, we can invoke checkinstall without any argument, which will then use 'make install' command to build a package. Along the process, the checkinstall command will ask you a series of questions.
+因此，创建一个htop包，我们可以调用checkinstall不带任何参数安装，这将使用“make install”命令创建一个包。随着这个过程 checkinstall命令会问你一个连串的问题。
 
-In short, here are the commands to build a package for **htop**:
+总之，这个命令会创建一个htop包： **htop**:
 
     # ./configure
     # checkinstall 
 
-Answer 'y' to "Should I create a default set of package docs?":
+回答“Y”“我会创建一个默认设置的包文件？”
 
 ![](https://farm6.staticflickr.com/5577/15118597217_1fdd0e0346_z.jpg)
 
-You can enter a brief description of the package, then press Enter twice:
+你可以输入一个包的简短描述，然后按两次ENTER
 
 ![](https://farm4.staticflickr.com/3898/15118442190_604b71d9af.jpg)
 
-Enter a number to modify any of the following values or Enter to proceed:
+输入一个数值修改下面的任何值或ENTER前进
 
 ![](https://farm4.staticflickr.com/3898/15118442180_428de59d68_z.jpg)
 
-Then checkinstall will create a .rpm or a .deb package automatically, depending on what your Linux system is:
+然后checkinstall将自动地创建一个.rpm或者.deb包，根据你的linux系统是什么：
 
-On CentOS 7:
+在CentOS7：
 
 ![](https://farm4.staticflickr.com/3921/15282103066_5d688b2217_z.jpg)
 
-On Debian 7:
+在Debian 7:
 
 ![](https://farm4.staticflickr.com/3905/15118383009_4909a7c17b_z.jpg)
 
@@ -75,7 +76,7 @@ On Debian 7:
 
 via: http://ask.xmodulo.com/build-rpm-deb-package-source-checkinstall.html
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/译者luoyutiantang)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
