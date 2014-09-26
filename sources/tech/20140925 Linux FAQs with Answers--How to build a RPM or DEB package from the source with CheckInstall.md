@@ -1,4 +1,4 @@
-Linux FAQs with Answers--How to build a RPM or DEB package from the source with CheckInstall
+Linux 常见问题解答 --怎么用checkinstall从源码创建一个RPM或DEB包
 ================================================================================
 > **问题**:我想要从源码创建安装的软件程序。有没有一种方式来创建并且从源码安装包,而不是运行“make install”？那样，以后如果我想，我可以容易的卸载程序。
 
@@ -76,7 +76,7 @@ Linux FAQs with Answers--How to build a RPM or DEB package from the source with 
 
 via: http://ask.xmodulo.com/build-rpm-deb-package-source-checkinstall.html
 
-译者：[译者ID](https://github.com/译者luoyutiantang)
+译者：[luoyutiantang](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
