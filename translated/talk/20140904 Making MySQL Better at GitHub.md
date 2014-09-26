@@ -10,78 +10,78 @@
 
 像我们这种关于架构上的巨大改变，在执行的每一步都需要收集数据指标。新机器上安装好了基础操作系统，接下来就是测试新配置下的各种性能。为了模拟真实的工作负载环境，我们使用 tcpdump 工具从老集群那里复制正在发生的 SELECT 请求，并在新集群上重新响应一遍。
 
-MySQL 微调是个繁琐的细致活，像众所周知的 innodb_buffer_pool_size 这个参数往往能对 MySQL 性能产生巨大的影响。对于这类参数，我们必须考虑在内，所以我们列了一份参数清单，包括 innodb_thread_concurrency，innodb_io_capacity，and innodb_buffer_pool_instances，还有其它的。
+MySQL 微调是个繁琐的细致活，像众所周知的 innodb_buffer_pool_size 这个参数往往能对 MySQL 性能产生巨大的影响。对于这类参数，我们必须考虑在内，所以我们列了一份参数清单，包括 innodb_thread_concurrency，innodb_io_capacity，和 innodb_buffer_pool_instances，还有其它的。
 
-We were careful to only make one test configuration change at a time, and to run tests for at least 12 hours. We looked for query response time changes, stalls in queries per second, and signs of reduced concurrency. We observed the output of SHOW ENGINE INNODB STATUS, particularly the SEMAPHORES section, which provides information on work load contention.
+在每次测试中，我们都很小心地只改变一个参数，并且让一次测试至少运行12小时。我们会观察响应时间的变化曲线，每秒的响应次数，以及有可能会导致并发性降低的参数。我们使用 “SHOW ENGINE INNODB STATUS” 命令打印 InnoDB 性能信息，特别观察了 “SEMAPHORES” 一节的内容，它为我们提供了工作负载的状态信息。
 
-Once we were relatively comfortable with configuration settings, we started migrating one of our largest tables onto an isolated cluster. This served as an early test of the process, gave us more space in the buffer pools of our core cluster and provided greater flexibility for failover and storage. This initial migration introduced an interesting application challenge, as we had to make sure we could maintain multiple connections and direct queries to the correct cluster.
+当我们在设置参数后对运行结果感到满意，然后就开始将我们最大的一个数据表格迁移到一套独立的集群上，这个步骤作为整个迁移过程的早期测试，保证我们的核心集群空出更多的缓存池空间，并且为故障切换和存储功能提供更强的灵活性。这步初始迁移方案也引入了一个有趣的挑战：我们必须维持多条客户连接，并且要将这些连接重定向到正确的集群上。
 
-In addition to all our raw hardware improvements, we also made process and topology improvements: we added delayed replicas, faster and more frequent backups, and more read replica capacity. These were all built out and ready for go-live day.
+除了硬件性能的提升，还需要补充一点，我们同时也对处理进程和拓扑结构进行了改进：我们添加了延时拷贝技术，更快、更高频地备份数据，以及更多的读拷贝空间。这些功能已经准备上线。
 
-### Making a list; checking it twice ###
+### 列出任务清单，三思后行 ###
 
-With millions of people using GitHub.com on a daily basis, we did not want to take any chances with the actual switchover. We came up with a thorough [checklist][2] before the transition:
+每天有上百万用户的使用 GitHub.com，我们不可能有机会进行实际意义上的数据切换。我们有一个详细的[任务清单][2]来执行迁移：
 
 ![](https://cloud.githubusercontent.com/assets/1155781/4116929/13fc6f50-328b-11e4-837b-922aad3055a8.png)
 
-We also planned a maintenance window and [announced it on our blog][3] to give our users plenty of notice.
+我们还规划了一个维护期，并且[在我们的博客中通知了大家][3]，让用户注意到这件事情。
 
-### Migration day ###
+### 迁移时间到 ###
 
-At 5am Pacific Time on a Saturday, the migration team assembled online in chat and the process began:
+太平洋时间星期六上午5点，我们的迁移团队上线集合聊天，同时数据迁移正式开始：
 
 ![](https://cloud.githubusercontent.com/assets/1155781/4060850/39f52cd4-2df3-11e4-9aca-1f54a4870d24.png)
 
-We put the site in maintenance mode, made an announcement on Twitter, and set out to work through the list above:
+我们将 GitHub 网站设置为维护模式，并在 Twitter 上发表声明，然后开始按上述任务清单的步骤开始工作：
 
 ![](https://cloud.githubusercontent.com/assets/1155781/4060864/54ff6bac-2df3-11e4-95da-b059c0ec668f.png)
 
-**13 minutes** later, we were able to confirm operations of the new cluster:
+**13 分钟**后，我们确保新的集群能正常工作：
 
 ![](https://cloud.githubusercontent.com/assets/1155781/4060870/6a4c0060-2df3-11e4-8dab-654562fe628d.png)
 
-Then we flipped GitHub.com out of maintenance mode, and let the world know that we were in the clear.
+然后我们让 GitHub.com 脱离维护期，并且让全世界的用户都知道我们的最新状态：
 
 ![](https://cloud.githubusercontent.com/assets/1155781/4060878/79b9884c-2df3-11e4-98ed-d11818c8915a.png)
 
-Lots of up front testing and preparation meant that we kept the work we needed on go-live day to a minimum.
+大量前期的测试工作与准备工作，让我们将维护期缩到最短。
 
-### Measuring the final results ###
+### 检验最终的成果 ###
 
-In the weeks following the migration, we closely monitored performance and response times on GitHub.com. We found that our cluster migration cut the average GitHub.com page load time by half and the 99th percentile by *two-thirds*:
+在接下来的几周时间里，我们密切监视着 GitHub.com 的性能和响应时间。我们发现迁移后网站的平均加载时间减少一半，并且在99%的时间里，能减少*三分之二*：
 
 ![](https://cloud.githubusercontent.com/assets/1155781/4060886/9106e54e-2df3-11e4-8fda-a4c64c229ba1.png)
 
-### What we learned ###
+### 我们学到了什么 ###
 
-#### Functional partitioning ####
+#### 功能划分 ####
 
-During this process we decided that moving larger tables that mostly store historic data to separate cluster was a good way to free up disk and buffer pool space. This allowed us to leave more resources for our "hot" data, splitting some connection logic to enable the application to query multiple clusters. This proved to be a big win for us and we are working to reuse this pattern.
+在迁移过程中，我们采用了一个比较好的方法是：将大的数据表（主要记录了一些历史数据）先迁移过去，空出旧集群的磁盘空间和缓存池空间。这一步给我们留下了更过的资源用户维护“热”数据，将一些连接请求分离到多套集群里面。这步为我们之后的胜利奠定了基础，我们以后还会使用这种模式来进行迁移工作。
 
-#### Always be testing ####
+#### 测试测试测试 ####
 
-You can never do too much acceptance and regression testing for your application. Replicating data from the old cluster to the new cluster while running acceptance tests and replaying queries were invaluable for tracing out issues and preventing surprises during the migration.
+为你的应用做验收测试和回归测试，越多越好，多多益善，不要嫌多。从老集群复制数据到新集群的过程中，如果进行验收测试和响应状态测试，得到的数据是不准的，如果数据不理想，这是正常的，不要惊讶，不要试图拿这些数据去分析原因。
 
-#### The power of collaboration ####
+#### 合作的力量 ####
 
-Large changes to infrastructure like this mean a lot of people need to be involved, so pull requests functioned as our primary point of coordination as a team. We had people all over the world jumping in to help.
+对基础架构进行大的改变，通常需要涉及到很多人，我们要像一个团队一样为共同的目标而合作。我们的团队成员来自全球各地。
 
-Deploy day team map:
+团队成员地图：
 
-<iframe width="620" height="420" frameborder="0" src="https://render.githubusercontent.com/view/geojson?url=https://gist.githubusercontent.com/anonymous/5fa29a7ccbd0101630da/raw/map.geojson"></iframe>
+![](https://render.githubusercontent.com/view/geojson?url=https://gist.githubusercontent.com/anonymous/5fa29a7ccbd0101630da/raw/map.geojson)
 
-This created a workflow where we could open a pull request to try out changes, get real-time feedback, and see commits that fixed regressions or errors -- all without phone calls or face-to-face meetings. When everything has a URL that can provide context, it's easy to involve a diverse range of people and make it simple for them give feedback.
+本次合作新创了一种工作流程：我们提交更改（pull request），获取实时反馈，查看修改了错误的 commit —— 全程没有电话交流或面对面的会议。当所有东西都可以通过 URL 提供信息，不同区域的人群之间的交流和反馈会变得非常简单。
 
-### One year later.. ###
+### 一年后。。。 ###
 
-A full year later, we are happy to call this migration a success — MySQL performance and reliability continue to meet our expectations. And as an added bonus, the new cluster enabled us to make further improvements towards greater availability and query response times. I'll be writing more about those improvements here soon.
+整整一年时间过去了，我们很高兴地宣布这次数据迁移是很成功的 —— MySQL 性能和可靠性一直处于我们期望的状态。另外，新的集群还能让我们进一步去升级，提供更好的可靠性和响应时间。我将继续记录这些优化过程。
 
 --------------------------------------------------------------------------------
 
 via: https://github.com/blog/1880-making-mysql-better-at-github
 
 作者：[samlambert][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[bazz2](https://github.com/bazz2)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
