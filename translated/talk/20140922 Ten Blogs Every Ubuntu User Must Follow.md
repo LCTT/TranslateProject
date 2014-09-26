@@ -26,7 +26,7 @@ Web Upd8 是我最喜欢的博客。除了涵盖新闻，他有很多容易理�
 
 ### [Noobs Lab][5] ###
 
-和Web Upd8一样，Noobs Lab上也有很多教程，新闻，并且它可能是PPA里最大的主题和图标集。
+和Web Upd8一样，Noobs Lab上也有很多教程，新闻，并且它可能是PPA里最大的主题和图标集。 
 
 如果你是个小白，跟着Noobs Lab。
 
