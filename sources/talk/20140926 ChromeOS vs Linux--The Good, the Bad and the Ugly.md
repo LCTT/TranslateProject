@@ -1,3 +1,5 @@
+barney-ro translating
+
 ChromeOS vs Linux: The Good, the Bad and the Ugly
 ================================================================================
 > In the battle between ChromeOS and Linux, both desktop environments have strengths and weaknesses.
@@ -69,7 +71,7 @@ If local offline efforts like this don't happen, not to worry. Linux on the desk
 via: http://www.datamation.com/open-source/chromeos-vs-linux-the-good-the-bad-and-the-ugly-1.html
 
 作者：[Matt Hartley][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[barney-ro](https://github.com/barney-ro)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
