@@ -16,11 +16,11 @@ Red Hat公司的平台即服务(PaaS)技术OpenShift已经有了一个Node.js的
 
 "我们完成了收购，那么开源我们收购的技术就是公司的首要任务，并且我们没有理由去期待改变Feedhenry。"Piech说。
 
-Red Hat公司最后一次主要的公司收购's last major acquisition of a company with non open source technology was with [ManageIQ][2] for $104 million back in 2012. In May of this year, Red Hat launched the ManageIQ open-source project, opening up development and code of the formerly closed-source cloud management technology.
+Red Hat公司最后一次主要的非开源性公司的收购是在2012年用104万美元收购 [ManageIQ][2] 公司。在今年的5月份，Red Hat公司成立了ManageIQ公司的开源项目，开放之前闭源的云管理技术代码。
 
-From an integration standpoint, Red Hat is not yet providing full details of precisely where FeedHenry will fit it.
+从整合的角度来看，Red Hat公司还尚未精确地提供FeedHenry公司适应它的完整细节。
 
-"We've already identified a number of areas where FeedHenry and Red Hat's existing technology and products can be better aligned and integrated," Piech said. "We'll share more details as we develop the roadmap over the next 90 days."
+"我们已经认出了一些FeedHenry公司和我们已经存在的技术和产品能很好地相互融合和集成，" Piech说，"我们会在接下来的90天内分享更多我们发展蓝图的细节。"
 
 --------------------------------------------------------------------------------
 
