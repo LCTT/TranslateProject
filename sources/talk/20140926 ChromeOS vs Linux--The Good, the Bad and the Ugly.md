@@ -52,9 +52,15 @@ Yes, desktop Linux is absolutely fine for most casual computer users. However it
 
 I've found the Linux desktop is best suited for environments where on-site tech support can manage things on the down-low. Examples include: Homes where advanced users can drop by and handle updates, governments and schools with IT departments. These are environments where Linux on the desktop is set up to be used by users of any skill level or background.
 
+我发现Linux 桌面系统最适合在现场技术支持的环境中不对的事情。比如说：家里的高级用户可以操作和处理更新政府和学校的IT 部门。Linux 还可以应用于这样的环境，Linux桌面系统可以被配置给任何技能水平和背景的人使用。
+
 By contrast, ChromeOS is built to be completely maintenance free, thus not requiring any third part assistance short of turning it on and allowing updates to do the magic behind the scenes. This is partly made possible due to the ChromeOS being designed for specific hardware builds, in a similar spirit to how Apple develops their own computers. Because Google has a pulse on the hardware ChromeOS is bundled with, it allows for a generally error free experience. And for some individuals, this is fantastic!
 
+相比之下，ChromeOS 是建立在完全免维护的初衷之下的，因此，不需要第三者的帮忙，你只需允许更新，然后让他静默完成即可。这在一定程度上可能是由于ChromeOS 是为某些特定的硬件结构设计的，这与苹果开发自己的PC电脑有异曲同工之妙。因为Google 的ChromeOS 附带一个硬件脉冲，它允许一个普遍的错误体验。对于某些人来说，这是一个很奇妙的地方。
+
 Comically, the folks who exclaim that there's a problem here are not even remotely the target market for ChromeOS. In short, these are passionate Linux enthusiasts looking for something to gripe about. My advice? Stop inventing problems where none exist.
+
+滑稽的是，
 
 The point is: the market share for ChromeOS and Linux on the desktop are not even remotely the same. This could change in the future, but at this time, these two groups are largely separate.
 
