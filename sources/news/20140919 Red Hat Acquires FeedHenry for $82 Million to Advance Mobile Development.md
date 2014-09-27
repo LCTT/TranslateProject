@@ -1,3 +1,4 @@
+Translating by ZTinoZ
 Red Hat Acquires FeedHenry for $82 Million to Advance Mobile Development
 ================================================================================
 > Red Hat jumps into the mobile development sector with a key acquisition.
