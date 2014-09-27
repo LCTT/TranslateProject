@@ -1,3 +1,5 @@
+Translating-------geekpi
+
 Linux FAQs with Answers--How to catch and handle a signal in Perl
 ================================================================================
 > **Question**: I need to handle an interrupt signal by using a custom signal handler in Perl. In general, how can I catch and handle various signals (e.g., INT, TERM) in a Perl program? 
