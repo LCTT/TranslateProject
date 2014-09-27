@@ -1,3 +1,4 @@
+[Translating by SteveArcher]
 Drab Desktop? Try These 4 Beautiful Linux Icon Themes
 ================================================================================
 **Ubuntu’s default icon theme [hasn’t changed much][1] in almost 5 years, save for the [odd new icon here and there][2]. If you’re tired of how it looks we’re going to show you a handful of gorgeous alternatives that will easily freshen things up.**
