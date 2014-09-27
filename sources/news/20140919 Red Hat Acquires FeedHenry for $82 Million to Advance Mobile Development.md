@@ -10,13 +10,13 @@ FeedHenry公司的开发平台能让应用开发者快速地开发出Android、I
 
 "FeedHenry公司的这次收购显著地提高了我们对于Node.js的支持与衔接。" Piech说。
 
-Red Hat公司的平台即服务(PaaS)技术OpenShift已经有了一个Node.js的cartridge组件. Additionally Red Hat Enterprise Linux ships a tech preview of node.js as part of the Red Hat Software Collections.
+Red Hat公司的平台即服务(PaaS)技术OpenShift已经有了一个Node.js的cartridge组件。此外，Red Hat公司的企业版Linux把Node.js的技术预览来作为Red Hat公司软件包的一部分。
 
-While node.js itself is open source, not all of FeedHenry's technology is currently available under an open source license. As has been Red Hat's policy throughout its entire history, it is now committing to making FeedHenry open source as well.
+尽管Node.js本身就是开源的，但不是所有FeedHenry公司的技术能在近期符合开源许可证的要求。作为Red Hat纵观历史的政策, 现在也是致力于让FeedHenry开源的时候了。
 
-"As we've done with other acquisitions, open sourcing the technology we acquire is a priority for Red Hat, and we have no reason to expect that approach will change with FeedHenry," Piech said.
+"我们完成了收购，那么开源我们收购的技术就是公司的首要任务，并且我们没有理由去期待改变Feedhenry。"Piech说。
 
-Red Hat's last major acquisition of a company with non open source technology was with [ManageIQ][2] for $104 million back in 2012. In May of this year, Red Hat launched the ManageIQ open-source project, opening up development and code of the formerly closed-source cloud management technology.
+Red Hat公司最后一次主要的公司收购's last major acquisition of a company with non open source technology was with [ManageIQ][2] for $104 million back in 2012. In May of this year, Red Hat launched the ManageIQ open-source project, opening up development and code of the formerly closed-source cloud management technology.
 
 From an integration standpoint, Red Hat is not yet providing full details of precisely where FeedHenry will fit it.
 
