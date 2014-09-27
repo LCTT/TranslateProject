@@ -1,3 +1,5 @@
+Translating-----geekpi
+
 Linux FAQs with Answers--How to change a network interface name on CentOS 7
 ================================================================================
 > **Question**: On CentOS 7, I would like to change the assigned name of a network interface to something else. What is a proper way to rename a network interface on CentOS or RHEL 7? 
