@@ -1,3 +1,5 @@
+Trnalating-----geekpi
+
 Linux FAQs with Answers--How to detect a Linux distribution in Perl
 ================================================================================
 > **Question**: I need to write a Perl program which contains Linux distro-dependent code. For that, the Perl program needs to be able to automatically detect what Linux distribution (e.g., Ubuntu, CentOS, Debian, Fedora, etc) it is running on, and what version number it is. How can I identify Linux distribution in Perl? 
