@@ -1,30 +1,54 @@
 barney-ro translating
 
 ChromeOS vs Linux: The Good, the Bad and the Ugly
+ChromeOS 对战 Linux : 孰优孰劣 仁者见仁 智者见智
 ================================================================================
 > In the battle between ChromeOS and Linux, both desktop environments have strengths and weaknesses.
 
+> 在 ChromeOS 和 Linux 的斗争过程中，不管是哪一家的操作系统都是有优有劣。
+
 Anyone who believes Google isn't "making a play" for desktop users isn't paying attention. In recent years, I've seen [ChromeOS][1] making quite a splash on the [Google Chromebook][2]. Exploding with popularity on sites such as Amazon.com, it looks as if ChromeOS could be unstoppable.
+
+任何不关注Google的人都不会相信Google在桌面用户当中扮演这一个很重要的角色。在近几年，我们见到的[ChromeOS][1]制造的[Google Chromebook][2]相当的轰动。和同期的人气火爆的Amazon一样，似乎ChromeOS势不可挡。
 
 In this article, I'm going to look at ChromeOS as a concept to market, how it's affecting Linux adoption and whether or not it's a good/bad thing for the Linux community as a whole. Plus, I'll talk about the biggest issue of all and how no one is doing anything about it.
 
+在本文中，我们要了解的是ChromeOS概念的市场，ChromeOS怎么影响着Linux的使用，和整个 ChromeOS 对于一个社区来说，是好事还是坏事。另外，我将会谈到一些重大的事情，和为什么没人去为他做点什么事情。
+
 ### ChromeOS isn't really Linux ###
+
+### ChromeOS 并不是真正的Linux ###
 
 When folks ask me if ChromeOS is a Linux distribution, I usually reply that ChromeOS is to Linux what OS X is to BSD. In other words, I consider ChromeOS to be a forked operating system that uses the Linux kernel under the hood. Much of the operating system is made up of Google's own proprietary blend of code and software.
 
+每当有朋友问我说是否ChromeOS 是否是Linux 的一个分支时，我都会这样回答：ChromeOS 对于Linux 就好像是 OS X 对于BSD 。换句话说，我认为，ChromeOS 是一个派生的操作系统，运行于Linux 内核的引擎之下。很多操作系统就组成了Google 的专利代码和软件。
+
 So while the ChromeOS is using the Linux kernel under its hood, it's still very different from what we might find with today's modern Linux distributions.
+
+尽管ChromeOS 是利用了Linux 内核引擎，但是它仍然有很大的不同和现在流行的Linux分支版本。
 
 Where ChromeOS's difference becomes most apparent, however, is in the apps it offers the end user: Web applications. With everything being launched from a browser window, Linux users might find using ChromeOS to be a bit vanilla. But for non-Linux users, the experience is not all that different than what they may have used on their old PCs.
 
+ChromeOS和它们最大的不同就在于它给终端用户提供的app，包括Web 应用。因为ChromeOS 每一个操作都是开始于浏览器窗口，对于Linux 用户来说，可能会有很多不一样的感受，但是，对于没有Linux 经验的用户来说，这与他们使用的旧电脑并没有什么不同。
+
 For example: Anyone who is living a Google-centric lifestyle on Windows will feel right at home on ChromeOS. Odds are this individual is already relying on the Chrome browser, Google Drive and Gmail. By extension, moving over to ChromeOS feels fairly natural for these folks, as they're simply using the browser they're already used to.
+
+就是说，每一个以Google-centric为生活方式的人来说，当他们回到家时在ChromeOS上的感觉将会非常良好。这样的优势就是这个人已经接受了Chrome 浏览器，Google 驱动器和Gmail 。久而久之，他们的亲朋好友也都对ChromeOs有了好感，就好像是他们很容易接受Chrome 流浪器，因为他们早已经用过。
 
 Linux enthusiasts, however, tend to feel constrained almost immediately. Software choices feel limited and boxed in, plus games and VoIP are totally out of the question. Sorry, but [GooglePlus Hangouts][3] isn't a replacement for [VoIP][4] software. Not even by a long shot.
 
+然而，对于Linux 爱好者来说，这样就立即带来了不适应。软件的选择是受限制的，盒装的，在加上游戏和VoIP 是完全不可能的。对不起，因为[GooglePlus Hangouts][3]是代替不了VoIP 软件的。甚至在很长的一段时间里。
+
 ### ChromeOS or Linux on the desktop ###
 
+### ChromeOS 和Linux 的桌面化 ###
 Anyone making the claim that ChromeOS hurts Linux adoption on the desktop needs to come up for air and meet non-technical users sometime.
 
+有人断言，ChromeOS 要是想在桌面系统中对Linux 产生影响，只有在Linux 停下来浮出水面换气的时候或者是满足某个非技术用户的时候。
+
 Yes, desktop Linux is absolutely fine for most casual computer users. However it helps to have someone to install the OS and offer "maintenance" services like we see in the Windows and OS X camps. Sadly Linux lacks this here in the States, which is where I see ChromeOS coming into play.
+
+是的，桌面Linux 对于大多数休闲型的用户来说绝对是一个好东西。它有助于有专人安装操作系统，并且提供“维修”服务，从windows 和 OS X 的阵营来看。但是，令人失望的是，在美国Linux 正好在这个方面很缺乏。所以，我们看到，ChromeOS 慢慢的走入我们的视线。
 
 I've found the Linux desktop is best suited for environments where on-site tech support can manage things on the down-low. Examples include: Homes where advanced users can drop by and handle updates, governments and schools with IT departments. These are environments where Linux on the desktop is set up to be used by users of any skill level or background.
 
