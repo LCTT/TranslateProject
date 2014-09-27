@@ -1,3 +1,5 @@
+[su-kaiyao]翻译中
+
 How To Reset Root Password On CentOS 7
 ================================================================================
 The way to reset the root password on centos7 is totally different to Centos 6. Let me show you how to reset root password in CentOS 7.
