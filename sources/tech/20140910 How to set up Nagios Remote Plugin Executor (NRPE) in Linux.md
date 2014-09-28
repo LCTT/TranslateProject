@@ -1,3 +1,5 @@
+[felixonmars translating...]
+
 How to set up Nagios Remote Plugin Executor (NRPE) in Linux
 ================================================================================
 As far as network management is concerned, Nagios is one of the most powerful tools. Nagios can monitor the reachability of remote hosts, as well as the state of services running on them. However, what if we want to monitor something other than network services for a remote host? For example, we may want to monitor the disk utilization or [CPU processor load][1] of a remote host. Nagios Remote Plugin Executor (NRPE) is a tool that can help with doing that. NRPE allows one to execute Nagios plugins installed on remote hosts, and integrate them with an [existing Nagios server][2].
