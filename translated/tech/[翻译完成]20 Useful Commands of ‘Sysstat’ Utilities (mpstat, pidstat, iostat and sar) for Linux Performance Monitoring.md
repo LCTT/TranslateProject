@@ -1,20 +1,18 @@
-translating by cvsher
-20 Useful Commands of ‘Sysstat’ Utilities (mpstat, pidstat, iostat and sar) for Linux Performance Monitoring
-================================================================================
-In our last article, we have learned about installing and upgrading the **sysstat** package and understanding briefly about the utilities which comes with the package.
+‘Sysstat’工具包中20个实用的Linux性能监控工具（包括mpstat, pidstat, iostat 和sar）
+===============================================================
+在我们上一篇文章中，我们已经学习了如何去安装和更新**sysstat**，并且了解了包中的一些实用工具。
 
-注：此文一并附上，在同一个原文更新中
+注：此文一并附上，在同一个原文中更新
 - [Sysstat – Performance and Usage Activity Monitoring Tool For Linux][1]
 
 ![20 Sysstat Commands for Linux Monitoring](http://www.tecmint.com/wp-content/uploads/2014/09/sysstat-commands.png)
 
-20 Sysstat Commands for Linux Monitoring
+Linux系统监控的20个Sysstat命令
+今天，我们将会通过一些有趣的实例来学习**mpstat**, **pidstat**, **iostat**和**sar**等工具，这些工具可以帮组我们找出系统中的问题。这些工具都包含了不同的选项，这意味着你可以根据不同的工作使用不同的选项，或者根据你的需求来自定义脚本。我们都知道，系统管理员都会有点懒，他们经常去寻找一些更简单的方法来完成他们的工作。
 
-Today, we are going to work with some interesting practical examples of **mpstat, pidstat, iostat** and **sar** utilities, which can help us to identify the issues. We have different options to use these utilities, I mean you can fire the commands manually with different options for different kind of work or you can create your customized scripts according to your requirements. You know Sysadmins are always bit Lazy, and always tried to find out the easy way to do the things with minimum efforts.
+### mpstat - 处理器统计信息 ###
 
-### mpstat – Processors Statistics ###
-
-1.Using mpstat command without any option, will display the Global Average Activities by All CPUs.
+1.不带任何参数的使用mpstat命令将会输出所有CPU的平均统计信息
 
     tecmint@tecmint ~ $ mpstat
     
@@ -23,7 +21,7 @@ Today, we are going to work with some interesting practical examples of **mpstat
     12:23:57  IST  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
     12:23:57  IST  all   37.35    0.01    4.72    2.96    0.00    0.07    0.00    0.00    0.00   54.88
 
-2.Using mpstat with option ‘**-P**‘ (Indicate Processor Number) and ‘ALL’, will display statistics about all CPUs one by one starting from 0. 0 will the first one.
+2.使用‘**-p**’(处理器编码)和‘ALL’参数将会从0开始独立的输出每个CPU的统计信息，0表示第一个cpu。
 
     tecmint@tecmint ~ $ mpstat -P ALL
     
@@ -34,7 +32,7 @@ Today, we are going to work with some interesting practical examples of **mpstat
     12:29:26  IST    0   37.90    0.01    4.96    2.62    0.00    0.03    0.00    0.00    0.00   54.48
     12:29:26  IST    1   36.75    0.01    4.19    2.54    0.00    0.11    0.00    0.00    0.00   56.40
 
-3.To display the statistics for **N** number of iterations after n seconds interval with average of each cpu use the following command.
+3.要进行‘**N**’次，平均每次间隔n秒的输出CPU统计信息，如下所示。
 
     tecmint@tecmint ~ $ mpstat -P ALL 2 5
     
@@ -55,11 +53,13 @@ Today, we are going to work with some interesting practical examples of **mpstat
     12:36:27  IST    0   34.34    0.00    4.04    0.00    0.00    0.00    0.00    0.00    0.00   61.62
     12:36:27  IST    1   32.82    0.00    6.15    0.51    0.00    0.00    0.00    0.00    0.00   60.51
 
-4.The option ‘**I**‘ will print total number of interrupt statistics about per processor.
+(LCTT译注： 上面命令中‘2’ 表示每2秒执行一次‘mpstat -P ALL’命令， ‘5’表示共执行5次)
+
+4.使用‘**I**’参数将会输出每个处理器的中断统计信息
 
     tecmint@tecmint ~ $ mpstat -I
     
-    Linux 3.11.0-23-generic (tecmint.com) 	Thursday 04 September 2014 	_i686_	(2 CPU)
+    Linux 3.11.0-23-generic (tecmint.com)   Thursday 04 September 2014  _i686_  (2 CPU)
     
     12:39:56  IST  CPU    intr/s
     12:39:56  IST  all    651.04
@@ -72,11 +72,11 @@ Today, we are going to work with some interesting practical examples of **mpstat
     12:39:56  IST    0       0.00     116.49       0.05       0.27       7.33       0.00       1.22      10.44       0.13      37.47
     12:39:56  IST    1       0.00     111.65       0.05       0.41       7.07       0.00      56.36       9.97       0.13      41.38
 
-5.Get all the above information in one command i.e. equivalent to “**-u -I ALL -p ALL**“.
+5.使用‘**A**’参数将会输出上面提到的所有信息，等同于‘**-u -I All -p ALL**’。
 
     tecmint@tecmint ~ $ mpstat -A
     
-    Linux 3.11.0-23-generic (tecmint.com) 	Thursday 04 September 2014 	_i686_	(2 CPU)
+    Linux 3.11.0-23-generic (tecmint.com)   Thursday 04 September 2014  _i686_  (2 CPU)
 
     12:41:39  IST  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
     12:41:39  IST  all   38.70    0.01    4.47    2.01    0.00    0.06    0.00    0.00    0.00   54.76
@@ -96,19 +96,19 @@ Today, we are going to work with some interesting practical examples of **mpstat
     12:41:39  IST    0       0.00     116.96       0.05       0.26       7.12       0.00       1.24      10.42       0.12      36.99
     12:41:39  IST    1       0.00     112.25       0.05       0.40       6.88       0.00      55.05       9.93       0.13      41.20
 
-### pidstat – Process and Kernel Threads Statistics ###
+###pidstat - 进程和内核线程的统计信息###
 
-This is used for process monitoring and current threads, which are being managed by kernel. pidstat can also check the status about child processes and threads.
+该命令是用于监控进程和当前受内核管理的线程。pidstat还可以检查子进程和线程的状态。
 
-#### Syntax ####
+#### 语法 ####
 
     # pidstat <OPTIONS> [INTERVAL] [COUNT]
 
-6.Using pidstat command without any argument, will display all active tasks.
+6.不带任何参数使用pidstat将会输出所有活跃的任务。
 
-    tecmint@tecmint ~ $ pidstat
+ tecmint@tecmint ~ $ pidstat
     
-    Linux 3.11.0-23-generic (tecmint.com) 	Thursday 04 September 2014 	_i686_	(2 CPU)
+    Linux 3.11.0-23-generic (tecmint.com)   Thursday 04 September 2014  _i686_  (2 CPU)
     
     12:47:24  IST   UID       PID    %usr %system  %guest    %CPU   CPU  Command
     12:47:24  IST     0         1    0.01    0.12    0.00    0.13     1  init
@@ -126,11 +126,11 @@ This is used for process monitoring and current threads, which are being managed
     12:47:24  IST     0       365    0.01    0.00    0.00    0.01     0  systemd-udevd
     12:47:24  IST     0       476    0.00    0.00    0.00    0.00     0  kworker/u9:1
 
-7.To print all active and non-active tasks use the option ‘**-p**‘ (processes).
+7.使用‘**-p**’(进程)参数输出所有活跃和非活跃的任务。
 
     tecmint@tecmint ~ $ pidstat -p ALL
     
-    Linux 3.11.0-23-generic (tecmint.com) 	Thursday 04 September 2014 	_i686_	(2 CPU)
+    Linux 3.11.0-23-generic (tecmint.com)   Thursday 04 September 2014  _i686_  (2 CPU)
     
     12:51:55  IST   UID       PID    %usr %system  %guest    %CPU   CPU  Command
     12:51:55  IST     0         1    0.01    0.11    0.00    0.12     1  init
@@ -151,11 +151,11 @@ This is used for process monitoring and current threads, which are being managed
     12:51:55  IST     0        19    0.00    0.00    0.00    0.00     0  writeback
     12:51:55  IST     0        20    0.00    0.00    0.00    0.00     1  kintegrityd
 
-8.Using pidstat command with ‘**-d 2**‘ option, we can get I/O statistics and 2 is interval in seconds to get refreshed statistics. This option can be handy in situation, where your system is undergoing heavy I/O and you want to get clues about the processes consuming high resources.
+8.使用‘**-d 2**’参数，我们可以看到I/O统计信息，2表示以秒为单位对统计信息进行刷新。这个参数可以方便的知道当系统在进行繁重的I/O时，那些进行占用大量的资源。
 
     tecmint@tecmint ~ $ pidstat -d 2
     
-    Linux 3.11.0-23-generic (tecmint.com) 	Thursday 04 September 2014 	_i686_	(2 CPU)
+    Linux 3.11.0-23-generic (tecmint.com)   Thursday 04 September 2014  _i686_  (2 CPU)
     
     03:26:53  EDT       PID   kB_rd/s   kB_wr/s kB_ccwr/s  Command
     
@@ -169,11 +169,12 @@ This is used for process monitoring and current threads, which are being managed
     03:27:03  EDT     25100      0.00      6.00      0.00  sendmail
     03:27:03  EDT     30829      0.00      6.00      0.00  java
 
-9.To know the cpu statistics along with all threads about the process id **4164** at interval of **2** sec for **3** times use the following command with option ‘-t‘ (display statistics of selected process).
+9.想要每间隔**2**秒对进程**4164**的cpu统计信息输出**3**次，则使用如下带参数‘**-t**’（输出某个选定进程的统计信息）的命令。
+
 
     tecmint@tecmint ~ $ pidstat -t -p 4164 2 3
     
-    Linux 3.11.0-23-generic (tecmint.com) 	Thursday 04 September 2014 	_i686_	(2 CPU)
+    Linux 3.11.0-23-generic (tecmint.com)   Thursday 04 September 2014  _i686_  (2 CPU)
     
     01:09:06  IST   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
     01:09:08  IST  1000      4164         -   22.00    1.00    0.00   23.00     1  firefox
@@ -186,11 +187,11 @@ This is used for process monitoring and current threads, which are being managed
     01:09:08  IST  1000         -      4176    0.00    0.00    0.00    0.00     1  |__gdbus
     01:09:08  IST  1000         -      4177    0.00    0.00    0.00    0.00     1  |__gmain
 
-10.Use the ‘**-rh**‘ option, to know the about memory utilization of processes which are frequently varying their utilization in **2** second interval.
+10.使用‘**-rh**’参数，将会输出进程的内存使用情况。如下命令每隔2秒刷新经常的内存使用情况。
 
     tecmint@tecmint ~ $ pidstat -rh 2 3
     
-    Linux 3.11.0-23-generic (tecmint.com) 	Thursday 04 September 2014 	_i686_	(2 CPU)
+    Linux 3.11.0-23-generic (tecmint.com)   Thursday 04 September 2014  _i686_  (2 CPU)
     
     #      Time   UID       PID  minflt/s  majflt/s     VSZ    RSS   %MEM  Command
      1409816695  1000      3958   3378.22      0.00  707420 215972   5.32  cinnamon
@@ -209,21 +210,21 @@ This is used for process monitoring and current threads, which are being managed
      1409816699  1000      4164    599.00      0.00 1261944 476664  11.74  firefox
      1409816699  1000      6676    168.00      0.00    4436   1020   0.03  pidstat
 
-11.To print all the process of containing string “**VB**“, use ‘**-t**‘ option to see threads as well.
+11.要使用‘**-G**’参数可以输出包含某个特定字符串的进程信息。如下命令输出所有包含‘**VB**’字符串的进程的统计信息，使用‘**-t**’参数将线程的信息也进行输出。
 
     tecmint@tecmint ~ $ pidstat -G VB
     
-    Linux 3.11.0-23-generic (tecmint.com) 	Thursday 04 September 2014 	_i686_	(2 CPU)
+    Linux 3.11.0-23-generic (tecmint.com)   Thursday 04 September 2014  _i686_  (2 CPU)
     
-    01:09:06  IST   UID      PID      %usr 	%system  %guest    %CPU   CPU  	Command
-    01:09:08  IST  1000    1492     22.00     1.00    	 0.00   	 23.00     1  		VBoxService
-    01:09:08  IST  1000    1902     4164      20.00    	 0.50    	 0.00   	20.50     	VBoxClient
-    01:09:08  IST  1000    1922     4171      0.00    	 0.00    	 0.00    	0.00     	VBoxClient
+    01:09:06  IST   UID      PID      %usr  %system  %guest    %CPU   CPU   Command
+    01:09:08  IST  1000    1492     22.00     1.00       0.00        23.00     1        VBoxService
+    01:09:08  IST  1000    1902     4164      20.00      0.50        0.00       20.50       VBoxClient
+    01:09:08  IST  1000    1922     4171      0.00       0.00        0.00       0.00        VBoxClient
 
 ----------
 
     tecmint@tecmint ~ $ pidstat  -t -G VB
-    Linux 2.6.32-431.el6.i686 (tecmint) 09/04/2014 _i686_	(2 CPU)
+    Linux 2.6.32-431.el6.i686 (tecmint) 09/04/2014 _i686_   (2 CPU)
     
     03:19:52 PM   UID      TGID       TID    %usr %system  %guest    %CPU   CPU  Command
     03:19:52 PM     0      1479         -    0.01    0.12    0.00    0.13     1  VBoxService
@@ -238,32 +239,32 @@ This is used for process monitoring and current threads, which are being managed
     03:19:52 PM     0      1933         -    0.04    0.89    0.00    0.93     0  VBoxClient
     03:19:52 PM     0         -      1936    0.04    0.89    0.00    0.93     1  |__X11-NOTIFY
 
-12.To get realtime priority and scheduling information use option ‘**-R**‘ .
+12.使用‘**-R**’参数输出实时的进程优先级和调度信息。
 
     tecmint@tecmint ~ $ pidstat -R
     
-    Linux 3.11.0-23-generic (tecmint.com) 	Thursday 04 September 2014 	_i686_	(2 CPU)
+    Linux 3.11.0-23-generic (tecmint.com)   Thursday 04 September 2014  _i686_  (2 CPU)
     
-    01:09:06  IST   UID      PID	 prio      policy 	Command
-    01:09:08  IST  1000    3     	 99	       FIFO		migration/0
-    01:09:08  IST  1000    5     	 99          FIFO	migration/0
-    01:09:08  IST  1000    6    	 99          FIFO	watchdog/0
+    01:09:06  IST   UID      PID     prio      policy   Command
+    01:09:08  IST  1000    3         99        FIFO     migration/0
+    01:09:08  IST  1000    5         99          FIFO   migration/0
+    01:09:08  IST  1000    6         99          FIFO   watchdog/0
 
-Here, I am not going to cover about Iostat utility, as we are already covered it. Please have a look on “[Linux Performance Monitoring with Vmstat and Iostat][2]注：此文也一并附上在同一个原文更新中” to get all details about iostat.
+因为我们已经学习过Iostat命令了，因此在本文中不在对其进行赘述。若想查看Iostat命令的详细信息，请参看“[使用Iostat和Vmstat进行Linux性能监控][2]注：此文也一并附上在同一个原文更新中”
 
-### sar – System Activity Reporter ###
+###sar - 系统活动报告###
 
-Using “**sar**” command, we can get the reports about whole system’s performance. This can help us to locate the system bottleneck and provide the help to find out the solutions to these annoying performance issues.
+我们可以使用‘**sar**’命令来获得整个系统性能的报告。这有助于我们定位系统性能的瓶颈，并且有助于我们找出这些烦人的性能问题的解决方法。
 
-The Linux Kernel maintains some counter internally, which keeps track of all requests, their completion time and I/O block counts etc. From all these information, sar calculates rates and ratio of these request to find out about bottleneck areas.
+Linux内核维护者一些内部计数器，这些计数器包含了所有的请求及其完成时间和I/O块数等信息，sar命令从所有的这些信息中计算出请求的利用率和比例，以便找出瓶颈所在。
 
-The main thing about the sar is that, it reports all activities over a period if time. So, make sure that sar collect data on appropriate time (not on Lunch time or on weekend.:)
+sar命令主要的用途是生成某段时间内所有活动的报告，因此，必需确保sar命令在适当的时间进行数据采集（而不是在午餐时间或者周末。）
 
-13.Following is a basic command to invoke sar. It will create one file named “**sarfile**” in your current directory. The options ‘**-u**‘ is for CPU details and will collect **5** reports at an interval of **2** seconds.
+13.下面是执行sar命令的基本用法。它将会在当前目录下创建一个名为‘**sarfile**’的文件。‘**-u**’参数表示CPU详细信息，**5**表示生产5次报告，**2**表示每次报告的时间间隔为2秒。
 
     tecmint@tecmint ~ $ sar -u -o sarfile 2 5
     
-    Linux 3.11.0-23-generic (tecmint.com) 	Thursday 04 September 2014 	_i686_	(2 CPU)
+    Linux 3.11.0-23-generic (tecmint.com)   Thursday 04 September 2014  _i686_  (2 CPU)
     
     01:42:28  IST     CPU     %user     %nice   %system   %iowait    %steal     %idle
     01:42:30  IST     all     36.52      0.00      3.02      0.00      0.00     60.45
@@ -273,26 +274,26 @@ The main thing about the sar is that, it reports all activities over a period if
     01:42:38  IST     all     50.75      0.00      3.75      0.00      0.00     45.50
     Average:        all     46.30      0.00      3.93      0.00      0.00     49.77
 
-14.In the above example, we have invoked sar interactively. We also have an option to invoke it non-interactively via cron using scripts **/usr/local/lib/sa1** and **/usr/local/lib/sa2** (If you have used **/usr/local** as prefix during installation time).
+14.在上面的例子中，我们交互的执行sar命令。sar命令提供了使用cron进行非交互的执行sar命令的方法，使用**/usr/local/lib/sa1**和**/usr/local/lib/sa2**脚本（如果你在安装时使用了**/usr/local**作为前缀）
 
-- **/usr/local/lib/sa1** is a shell script that we can use for scheduling cron which will create daily binary log file.
-- **/usr/local/lib/sa2** is a shell script will change binary log file to human-readable form.
+- **/usr/local/lib/sa1**是一个可以使用cron进行调度生成二进制日志文件的shell脚本。
+- **/usr/local/lib/sa2**是一个可以将二进制日志文件转换为用户可读的编码方式。
 
-Use the following Cron entries for making this non-interactive:
+使用如下Cron项目来将sar命令非交互化。
 
-    # Run sa1 shell script every 10 minutes for collecting data
+    # 每10分钟运行sa1脚本来采集数据
     */2 * * * * /usr/local/lib/sa/sa1 2 10
     
-    # Generate a daily report in human readable format at 23:53
+    #在每天23:53时生成一个用户可读的日常报告
     53 23 * * * /usr/local/lib/sa/sa2 -A
 
-At the back-end sa1 script will call **sadc** (System Activity Data Collector) utility for fetching the data at a particular interval. **sa2** will call sar for changing binary log file to human readable form.
+在sa1脚本执行后期，sa1脚本会调用**sabc**(系统活动数据收集器，System Activity Data Collector)工具采集特定时间间隔内的数据。**sa2**脚本会调用sar来将二进制日志文件转换为用户可读的形式。
 
-15.Check run queue length, total number of processes and load average using ‘**-q**‘ option.
+15.使用‘**-q**’参数来检查运行队列的长度，所有进程的数量和平均负载
 
     tecmint@tecmint ~ $ sar -q 2 5
     
-    Linux 3.11.0-23-generic (tecmint.com) 	Thursday 04 September 2014 	_i686_	(2 CPU)
+    Linux 3.11.0-23-generic (tecmint.com)   Thursday 04 September 2014  _i686_  (2 CPU)
     
     02:00:44  IST   runq-sz  plist-sz   ldavg-1   ldavg-5  ldavg-15   blocked
     02:00:46  IST         1       431      1.67      1.22      0.97         0
@@ -302,11 +303,11 @@ At the back-end sa1 script will call **sadc** (System Activity Data Collector) u
     02:00:54  IST         0       431      1.64      1.23      0.97         0
     Average:            2       431      1.68      1.23      0.97         0
 
-16.Check statistics about the mounted file systems using ‘**-F**‘.
-
+16.使用‘**-F**’参数查看当前挂载的文件系统统计信息
+ 
     tecmint@tecmint ~ $ sar -F 2 4
     
-    Linux 3.11.0-23-generic (tecmint.com) 	Thursday 04 September 2014 	_i686_	(2 CPU)
+    Linux 3.11.0-23-generic (tecmint.com)   Thursday 04 September 2014  _i686_  (2 CPU)
     
     02:02:31  IST  MBfsfree  MBfsused   %fsused  %ufsused     Ifree     Iused    %Iused FILESYSTEM
     02:02:33  IST      1001       449     30.95    1213790475088.85  18919505    364463      1.89 /dev/sda1
@@ -323,11 +324,11 @@ At the back-end sa1 script will call **sadc** (System Activity Data Collector) u
     Summary      MBfsfree  MBfsused   %fsused  %ufsused     Ifree     Iused    %Iused FILESYSTEM
     Summary          1001       449     30.95    1213790475088.86  18919505    364463      1.89 /dev/sda1
 
-17.View network statistics using ‘**-n DEV**‘.
+17.使用‘**-n DEV**’参数查看网络统计信息
 
     tecmint@tecmint ~ $ sar -n DEV 1 3 | egrep -v lo
     
-    Linux 3.11.0-23-generic (tecmint.com) 	Thursday 04 September 2014 	_i686_	(2 CPU)
+    Linux 3.11.0-23-generic (tecmint.com)   Thursday 04 September 2014  _i686_  (2 CPU)
     
     02:11:59  IST     IFACE   rxpck/s   txpck/s    rxkB/s    txkB/s   rxcmp/s   txcmp/s  rxmcst/s
     02:12:00  IST     wlan0      8.00     10.00      1.23      0.92      0.00      0.00      0.00
@@ -335,11 +336,11 @@ At the back-end sa1 script will call **sadc** (System Activity Data Collector) u
     02:12:00  IST      eth0      0.00      0.00      0.00      0.00      0.00      0.00      0.00
     02:12:00  IST    vmnet1      0.00      0.00      0.00      0.00      0.00      0.00      0.00
 
-18.View block device statistics like iostat using ‘**-d**‘.
+18.使用‘**-d**’参数查看块设备统计信息（与iostat类似）。
 
     tecmint@tecmint ~ $ sar -d 1 3
     
-    Linux 3.11.0-23-generic (tecmint.com) 	Thursday 04 September 2014 	_i686_	(2 CPU)
+    Linux 3.11.0-23-generic (tecmint.com)   Thursday 04 September 2014  _i686_  (2 CPU)
     
     02:13:17  IST       DEV       tps  rd_sec/s  wr_sec/s  avgrq-sz  avgqu-sz     await     svctm     %util
     02:13:18  IST    dev8-0      0.00      0.00      0.00      0.00      0.00      0.00      0.00      0.00
@@ -350,11 +351,11 @@ At the back-end sa1 script will call **sadc** (System Activity Data Collector) u
     02:13:19  IST       DEV       tps  rd_sec/s  wr_sec/s  avgrq-sz  avgqu-sz     await     svctm     %util
     02:13:20  IST    dev8-0      7.00     32.00     80.00     16.00      0.11     15.43     15.43     10.80
 
-19.To print memory statistics use ‘**-r**‘ option.
+19.使用‘**-r**’参数输出内存统计信息。
 
     tecmint@tecmint ~ $ sar -r 1 3
     
-    Linux 3.11.0-23-generic (tecmint.com) 	Thursday 04 September 2014 	_i686_	(2 CPU)
+    Linux 3.11.0-23-generic (tecmint.com)   Thursday 04 September 2014  _i686_  (2 CPU)
     
     02:14:29  IST kbmemfree kbmemused  %memused kbbuffers  kbcached  kbcommit   %commit  kbactive   kbinact   kbdirty
     02:14:30  IST   1465660   2594840     63.90    133052   1549644   3710800     45.35   1133148   1359792       392
@@ -362,7 +363,7 @@ At the back-end sa1 script will call **sadc** (System Activity Data Collector) u
     02:14:32  IST   1469112   2591388     63.82    133060   1550036   3705288     45.28   1130252   1360168       804
     Average:      1469165   2591335     63.82    133057   1549824   3710531     45.34   1129739   1359987       677
 
-20.Using ‘**sadf -d**‘, we can extract data in format which can be processed using databases.
+20.使用‘**sadf -d**’参数可以将数据导出为数据库可以使用的格式。
 
     tecmint@tecmint ~ $ safd -d /var/log/sa/sa20140903 -- -n DEV | grep -v lo
     
@@ -382,20 +383,20 @@ At the back-end sa1 script will call **sadc** (System Activity Data Collector) u
     tecmint;2;2014-09-03 12:00:10 UTC;eth0;0.50;0.50;0.03;0.04;0.00;0.00;0.00;0.00
     tecmint;2;2014-09-03 12:00:12 UTC;eth0;1.00;0.50;0.12;0.04;0.00;0.00;0.00;0.00
 
-You can also save this to a csv and then can draw chart for presentation kind of stuff as below.
+你也可以将这些数据存储在一个csv文档中，然后绘制成图表展示方式，如下所示
 
 ![Network Graph](http://www.tecmint.com/wp-content/uploads/2014/09/sar-graph.png)
 
-Network Graph
+网络信息图表
 
-That’s it for now, you can refer man pages for more information about each option and don’t forget to tell about article with your valuable comments.
+现在，你可以参考man手册来后去每个参数的更多详细信息，并且请在文章下留下你宝贵的评论。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/sysstat-commands-to-monitor-linux/
 
 作者：[Kuldeep Sharma][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[cvsher](https://github.com/cvsher)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
