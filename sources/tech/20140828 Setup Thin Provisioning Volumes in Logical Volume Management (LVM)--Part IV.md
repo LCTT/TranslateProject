@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Setup Thin Provisioning Volumes in Logical Volume Management (LVM) – Part IV
 ================================================================================
 Logical Volume management has great features such as snapshots and Thin Provisioning. Previously in (Part – III) we have seen how to snapshot the logical volume. Here in this article, we will going to see how to setup thin Provisioning volumes in LVM.
