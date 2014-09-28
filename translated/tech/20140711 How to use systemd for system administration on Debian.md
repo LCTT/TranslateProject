@@ -2,101 +2,101 @@
 ================================================================================
 人类已经无法阻止 systemd 占领全世界的 Linux 系统了，唯一阻止它的方法是在你自己的机器上手动卸载它。到目前为止，systemd 已经创建了比任何软件都多的技术问题、感情问题和社会问题。这一点从[热议][1]（也称 Linux 初始化软件之战）上就能看出，这场争论在 Debian 开发者之间持续了好几个月。当 Debian 技术委员会最终决定将 systemd 放到 Debian 8（代号 Jessie）的发行版里面时，其反对者试图通过多种努力来[取代这项决议][2]，甚至有人扬言要威胁那些支持 systemd 的开发者的生命安全。
 
-This goes to show how deep systemd interferes with the way of handling Linux systems that has, in large parts, been passed down to us from the Unix days. Theorems like "one tool for the job" are overthrown by the new kid in town. Besides substituting sysvinit as init system, it digs deep into system administration. For right now a lot of the commands you are used to will keep on working due to the compatibility layer provided by the package systemd-sysv. That might change as soon as systemd 214 is uploaded to Debian, destined to be released in the stable branch with Debian 8 "Jessie". From thereon, users need to utilize the new commands that come with systemd for managing services, processes, switching run levels, and querying the logging system. A workaround is to set up aliases in .bashrc.
+这也说明了 systemd 对 Unix 传承下来的系统处理方式有很大的干扰。“一个软件只做一件事情”的哲学思想已经被这个新来者彻底颠覆。除了取代了 sysvinit 成为新的系统初始化工具外，systemd 还是一个系统管理工具。目前为止，由于 systemd-sysv 这个软件包提供的兼容性，那些我们使用惯了的工具还能继续工作。但是当 Debian 将 systemd 升级到214版本后，这种兼容性就不复存在了。升级措施预计会在 Debian 8 "Jessie" 的稳定分支上进行。从此以后用户必须使用新的命令来管理系统、执行任务、变换运行级别、查询系统日志等等。不过这里有一个应对方案，那就是在 .bashrc 文件里面添加一些别名。
 
-So let's have a look at how systemd will change your habits of administrating your computers and the pros and cons involved. Before making the switch to systemd, it is a good security measure to save the old sysvinit to be able to still boot, should systemd fail. This will only work as long as systemd-sysv is not yet installed, and can be easily obtained by running:
+现在就让我们来看看 systemd 是怎么改变你管理系统的习惯的。在使用 systemd 之前，你得先把 sysvinit 保存起来，以防 systemd 出错的时候还能用 sysvinit 启动系统。这种方法只有在没安装 systemd-sysv 的情况下才能生效，具体操作方法如下：
 
     # cp -av /sbin/init /sbin/init.sysvinit 
 
-Thusly prepared, in case of emergency, just append:
+在紧急情况下，可以把下面的文本：
 
     init=/sbin/init.sysvinit
 
-to the kernel boot-time parameters.
+添加到内核启动参数项那里。
 
-### Basic Usage of systemctl ###
+### systemctl 的基本用法 ###
 
-systemctl is the command that substitutes the old "/etc/init.d/foo start/stop", but also does a lot more, as you can learn from its man page.
+systemctl 的功能是替代“/etc/init.d/foo start/stop”这类命令，另外，其实它还能做其他的事情，这点你可以参考 man 文档。
 
-Some basic use-cases are:
+一些基本用法：
 
-- systemctl - list all loaded units and their state (where unit is the term for a job/service)
-- systemctl list-units - list all units
-- systemctl start [NAME...] - start (activate) one or more units
-- systemctl stop [NAME...] - stop (deactivate) one or more units
-- systemctl disable [NAME...] - disable one or more unit files
-- systemctl list-unit-files - show all installed unit files and their state
-- systemctl --failed - show which units failed during boot
-- systemctl --type=mount - filter for types; types could be: service, mount, device, socket, target
-- systemctl enable debug-shell.service - start a root shell on TTY 9 for debugging 
+- systemctl - 列出所有单元（UNIT）以及它们的状态（这里的 UNIT 指的就是系统上的 job 和 service）
+- systemctl list-units - 列出所有 UNIT
+- systemctl start [NAME...] - 启动一项或多项 UNIT
+- systemctl stop [NAME...] - 停止一项或多项 UNIT
+- systemctl disable [NAME...] - 将 UNIT 设置为开机不启动
+- systemctl list-unit-files - 列出所有已安装的 UNIT，以及它们的状态
+- systemctl --failed - 列出开机启动失败的 UNIT
+- systemctl --type=mount - 列出某种类型的 UNIT，类型包含：service, mount, device, socket, target
+- systemctl enable debug-shell.service - 将一个 shell 脚本设置为开机启动，用于调试
 
-For more convinience in handling units, there is the package systemd-ui, which is started as user with the command systemadm.
+为了更方便处理这些 UNIT，你可以使用 systemd-ui 软件包，你只要输入 systemadm 命令就可以使用这个软件。
 
-Switching runlevels, reboot and shutdown are also handled by systemctl:
+你同样可以使用 systemctl 实现转换运行级别、重启系统和关闭系统的功能：
 
-- systemctl isolate graphical.target - take you to what you know as init 5, where your X-server runs
-- systemctl isolate multi-user.target - take you to what you know as init 3, TTY, no X
-- systemctl reboot - shut down and reboot the system
-- systemctl poweroff - shut down the system
+- systemctl isolate graphical.target - 切换到运行级别5，就是有桌面的级别
+- systemctl isolate multi-user.target - 切换到运行级别3，没有桌面的级别
+- systemctl reboot - 重启系统
+- systemctl poweroff - 关机
 
-All these commands, other than the ones for switching runlevels, can be executed as normal user.
+所有命令，包括切换到其他运行级别的命令，都可以在普通用户的权限下执行。
 
-### Basic Usage of journalctl ###
+### journalctl 的基本用法 ###
 
-systemd does not only boot machines faster than the old init system, it also starts logging much earlier, including messages from the kernel initialization phase, the initial RAM disk, the early boot logic, and the main system runtime. So the days where you needed to use a camera to provide the output of a kernel panic or otherwise stalled system for debugging are mostly over.
+systemd 不仅提供了比 sysvinit 更快的启动速度，还让日志系统在更早的时候启动起来，可以记录内核初始化阶段、内存初始化阶段、前期启动步骤以及主要的系统执行过程的日志。所以以前那种需要通过对显示屏拍照或者暂停系统来调试程序的日子已经一去不复返啦。
 
-With systemd, logs are aggregated in the journal which resides in /var/log/. To be able to make full use of the journal, we first need to set it up, as Debian does not do that for you yet:
+systemd 的日志文件都被放在 /var/log 目录。如果你想使用它的日志功能，需要执行一些命令，因为 Debian 没有打开日志功能。命令如下：
 
     # addgroup --system systemd-journal
     # mkdir -p /var/log/journal
     # chown root:systemd-journal /var/log/journal
     # gpasswd -a $user systemd-journal 
 
-That will set up the journal in a way where you can query it as normal user. Querying the journal with journalctl offers some advantages over the way syslog works:
+通过上面的设置，你就可以以普通用户权限使用 journal 软件查看日志。使用 journalctl 查询日志可以获得一些比 syslog 软件更方便的玩法：
 
-- journalctl --all - show the full journal of the system and all its users
-- journalctl -f - show a live view of the journal (equivalent to "tail -f /var/log/messages")
-- journalctl -b - show the log since the last boot
-- journalctl -k -b -1 - show all kernel logs from the boot before last (-b -1)
-- journalctl -b -p err - shows the log of the last boot, limited to the priority "ERROR"
-- journalctl --since=yesterday - since Linux people normally do not often reboot, this limits the size more than -b would
-- journalctl -u cron.service --since='2014-07-06 07:00' --until='2014-07-06 08:23' - show the log for cron for a defined timeframe
-- journalctl -p 2 --since=today - show the log for priority 2, which covers emerg, alert and crit; resembles syslog priorities emerg (0), alert (1), crit (2), err (3), warning (4), notice (5), info (6), debug (7)
-- journalctl > yourlog.log - copy the binary journal as text into your current directory 
+- journalctl --all - 显示系统上所有日志，以及它的用户
+- journalctl -f - 监视系统日志的变化（类似 tail -f /var/log/messages 的效果）
+- journalctl -b - 显示系统启动以后的日志
+- journalctl -k -b -1 - 显示上一次（-b -1）系统启动前产生的内核日志
+- journalctl -b -p err - 显示系统启动后产生的“ERROR”日志
+- journalctl --since=yesterday - 当系统不会经常重启的时候，这条命令能提供比 -b 更短的日志记录
+- journalctl -u cron.service --since='2014-07-06 07:00' --until='2014-07-06 08:23' - 显示 cron 服务在某个时间段内打印出来的日志
+- journalctl -p 2 --since=today - 显示优先级别为2以内的日志，包含 emerg、alert、crit三个级别。所有日志级别有： emerg (0), alert (1), crit (2), err (3), warning (4), notice (5), info (6), debug (7)
+- journalctl > yourlog.log - 将二进制日志文件复制成文本文件并保存到当前目录
 
-Journal and syslog can work side-by-side. On the other hand, you can remove any syslog packages like rsyslog or syslog-ng once you are satisfied with the way the journal works.
+Journal 和 syslog 可以很好的共存。而另一方面，一旦你习惯了操作 journal，你也可以卸载掉所有 syslog 的软件，比如 rsyslog 或 syslog-ng。
 
-For very detailed output, append "systemd.log_level=debug" to the kernel boot-time parameter list, and then run:
+如果想要得到更详细的日志信息，你可以在内核启动参数上添加“systemd.log_level=debug”，然后运行下面的命令：
 
     # journalctl -alb 
 
-Log levels can also be edited in /etc/systemd/system.conf.
+你也可以编辑 /etc/systemd/system.conf 文件来修改日志级别。
 
-### Analyzing the Boot Process with systemd ###
+### 利用 systemd 分析系统启动过程 ###
 
-systemd allows you to effectively analyze and optimize your boot process:
+systemd 可以让你能更有效地分析和优化你的系统启动过程：
 
-- systemd-analyze - show how long the last boot took for kernel and userspace
-- systemd-analyze blame - show details of how long each service took to start
-- systemd-analyze critical-chain - print a tree of the time-critical chain of units
-- systemd-analyze dot | dot -Tsvg > systemd.svg - put a vector graphic of your boot process (requires graphviz package)
-- systemd-analyze plot > bootplot.svg - generate a graphical timechart of the boot process
+- systemd-analyze - 显示本次启动系统过程中用户态和内核态所花的时间
+- systemd-analyze blame - 显示每个启动项所花费的时间明细
+- systemd-analyze critical-chain - 按时间顺序打印 UNIT 树
+- systemd-analyze dot | dot -Tsvg > systemd.svg - 为开机启动过程生成向量图（需要安装 graphviz 软件包）
+- systemd-analyze plot > bootplot.svg - 产生开机启动过程的时间图表
 
 ![](https://farm6.staticflickr.com/5559/14607588994_38543638b3_z.jpg)
 
 ![](https://farm6.staticflickr.com/5565/14423020978_14b21402c8_z.jpg)
 
-systemd has pretty good documentation for such a young project under heavy developement. First of all, there is the [0pointer series by Lennart Poettering][3]. The series is highly technical and quite verbose, and holds a wealth of information. Another good source is the distro agnostic [Freedesktop info page][4] with the largest collection of links to systemd resources, distro specific pages, bugtrackers and documentation. A quick glance at:
+systemd 虽然是个年轻的项目，但存在大量文档。首先要介绍的是[Lennart Poettering 的 0pointer 系列][3]。这个系列非常详细，非常有技术含量。另外一个是[免费桌面信息文档][4]，它包含了最详细的关于 systemd 的链接：发行版特性文件、bug 跟踪系统和说明文档。你可以使用下面的命令来查询 systemd 都提供了哪些文档：
 
     # man systemd.index 
 
-will give you an overview of all systemd man pages. The command structure for systemd for various distributions is pretty much the same, differences are found mainly in the packaging.
+不同发行版之间的 systemd 提供的命令基本一样，最大的不同之处就是打包方式。
 
 --------------------------------------------------------------------------------
 
 via: http://xmodulo.com/2014/07/use-systemd-system-administration-debian.html
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[bazz2](https://github.com/bazz2) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
