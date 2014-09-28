@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Linux FAQs with Answers--How to configure a static IP address on CentOS 7
 ================================================================================
 > **Question**: On CentOS 7, I want to switch from DHCP to static IP address configuration with one of my network interfaces. What is a proper way to assign a static IP address to a network interface permanently on CentOS or RHEL 7? 
