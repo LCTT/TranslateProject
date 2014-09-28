@@ -1,7 +1,6 @@
-[bazz2 hehe]
-How to use systemd for system administration on Debian
+在 Debian 上使用 systemd 管理系统
 ================================================================================
-Soon enough, hardly any Linux user will be able to escape the ever growing grasp that systemd imposes on Linux, unless they manually opt out. systemd has created more technical, emotional, and social issues than any other piece of software as of late. This predominantly came to show in the [heated discussions][1] also dubbed as the 'Init Wars', that occupied parts of the Debian developer body for months. While the Debian Technical Comittee finally decided to include systemd in Debian 8 "Jessie", there were efforts to [supersede the decision][2] by a General Resolution, and even threats to the health of developers in favor of systemd.
+人类已经无法阻止 systemd 占领全世界的 Linux 系统了，唯一阻止它的方法是在你自己的机器上手动卸载它。到目前为止，systemd 已经创建了比任何软件都多的技术问题、感情问题和社会问题。这一点从[热议][1]（也称 Linux 初始化软件之战）上就能看出，这场争论在 Debian 开发者之间持续了好几个月。当 Debian 技术委员会最终决定将 systemd 放到 Debian 8（代号 Jessie）的发行版里面时，其反对者试图通过多种努力来[取代这项决议][2]，甚至有人扬言要威胁那些支持 systemd 的开发者的生命安全。
 
 This goes to show how deep systemd interferes with the way of handling Linux systems that has, in large parts, been passed down to us from the Unix days. Theorems like "one tool for the job" are overthrown by the new kid in town. Besides substituting sysvinit as init system, it digs deep into system administration. For right now a lot of the commands you are used to will keep on working due to the compatibility layer provided by the package systemd-sysv. That might change as soon as systemd 214 is uploaded to Debian, destined to be released in the stable branch with Debian 8 "Jessie". From thereon, users need to utilize the new commands that come with systemd for managing services, processes, switching run levels, and querying the logging system. A workaround is to set up aliases in .bashrc.
 
