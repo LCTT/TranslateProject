@@ -1,3 +1,4 @@
+zpl1025
 How to use xargs command in Linux
 ================================================================================
 Have you ever been in the situation where you are running the same command over and over again for multiple files? If so, you know how tedious and inefficient this can feel. The good news is that there is an easier way, made possible through the xargs command in Unix-based operating systems. With this command you can process multiple files efficiently, saving you time and energy. In this tutorial, you will learn how to execute a command or script for multiple files at once, avoiding the daunting task of processing numerous log files or data files individually.
