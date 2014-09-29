@@ -1,3 +1,5 @@
+wangjiezhe translating
+
 Using GIT to backup your website files on linux
 ================================================================================
 ![](http://techarena51.com/wp-content/uploads/2014/09/git_logo-1024x480-580x271.png)
