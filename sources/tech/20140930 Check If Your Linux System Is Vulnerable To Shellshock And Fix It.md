@@ -1,3 +1,6 @@
+Translating-----------geekpi
+
+
 Check If Your Linux System Is Vulnerable To Shellshock And Fix It
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/09/shellshock_Linux_check.jpeg)
