@@ -32,7 +32,7 @@ SNMPv3提供了重要的安全特征：
 
 获得守护进程的权限
 
-默认的安装仅提供本地的访问权限，如果想件 /etc/default/snmpd。
+默认的安装仅提供本地的访问权限，如果想要获得外部访问权限的话编辑文件 /etc/default/snmpd。
 
     sudo vi /etc/default/snmpd
 
