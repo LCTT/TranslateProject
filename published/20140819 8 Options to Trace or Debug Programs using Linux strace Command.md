@@ -1,14 +1,16 @@
-8 Options to Trace/Debug Programs using Linux strace Command
+使用 Linux 的 strace 命令跟踪/调试程序的常用选项
 ================================================================================
+
 在调试的时候，strace能帮助你追踪到一个程序所执行的系统调用。当你想知道程序和操作系统如何交互的时候，这是极其方便的，比如你想知道执行了哪些系统调用，并且以何种顺序执行。
 
 这个简单而又强大的工具几乎在所有的Linux操作系统上可用，并且可被用来调试大量的程序。
 
-### 1. 命令用法 ###
+### 命令用法 ###
 
 让我们看看strace命令如何追踪一个程序的执行情况。
 
 最简单的形式，strace后面可以跟任何命令。它将列出许许多多的系统调用。一开始，我们并不能理解所有的输出，但是如果你正在寻找一些特殊的东西，那么你应该能从输出中发现它。
+
 让我们来看看简单命令ls的系统调用跟踪情况。
 
     raghu@raghu-Linoxide ~ $ strace ls
@@ -20,21 +22,22 @@
 ![Strace write system call (ls)](http://linoxide.com/wp-content/uploads/2014/08/02.strace_ls_write.png)
 
 上面的输出部分展示了write系统调用，它把当前目录的列表输出到标准输出。    
+
 下面的图片展示了使用ls命令列出的目录内容（没有使用strace）。
 
     raghu@raghu-Linoxide ~ $ ls
 
 ![ls command output](http://linoxide.com/wp-content/uploads/2014/08/03.ls_.png)
 
-#### 1.1 寻找被程序读取的配置文件 ####
+#### 选项1 寻找被程序读取的配置文件 ####
 
-一个有用的跟踪（除了调试某些问题以外）是你能找到被一个程序读取的配置文件。例如，
+Strace 的用法之一（除了调试某些问题以外）是你能找到被一个程序读取的配置文件。例如，
 
     raghu@raghu-Linoxide ~ $ strace php 2>&1 | grep php.ini
 
 ![Strace config file read by program](http://linoxide.com/wp-content/uploads/2014/08/04.strace_php_configuration.png)
 
-#### 1.2 跟踪指定的系统调用 ####
+#### 选项2 跟踪指定的系统调用 ####
 
 strace命令的-e选项仅仅被用来展示特定的系统调用（例如，open，write等等）
 
@@ -44,7 +47,7 @@ strace命令的-e选项仅仅被用来展示特定的系统调用（例如，ope
 
 ![Stracing specific system call (open here)](http://linoxide.com/wp-content/uploads/2014/08/05.strace_open_systemcall.png)
 
-#### 1.3 用于进程 ####
+#### 选项3 跟踪进程 ####
 
 strace不但能用在命令上，而且通过使用-p选项能用在运行的进程上。
 
@@ -52,15 +55,15 @@ strace不但能用在命令上，而且通过使用-p选项能用在运行的进
 
 ![Strace a process](http://linoxide.com/wp-content/uploads/2014/08/06.strace_process.png)
 
-#### 1.4 strace的统计概要 ####
+#### 选项4 strace的统计概要 ####
 
-包括系统调用的概要，执行时间，错误等等。使用-c选项能够以一种整洁的方式展示：
+它包括系统调用的概要，执行时间，错误等等。使用-c选项能够以一种整洁的方式展示：
 
     raghu@raghu-Linoxide ~ $ strace -c ls
 
 ![Strace summary display](http://linoxide.com/wp-content/uploads/2014/08/07.strace_summary.png)
 
-#### 1.5 保存输出结果 ####
+#### 选项5 保存输出结果 ####
 
 通过使用-o选项可以把strace命令的输出结果保存到一个文件中。
 
@@ -70,7 +73,7 @@ strace不但能用在命令上，而且通过使用-p选项能用在运行的进
 
 之所以以sudo来运行上面的命令，是为了防止用户ID与所查看进程的所有者ID不匹配的情况。
 
-### 1.6 显示时间戳 ###
+### 选项6 显示时间戳 ###
 
 使用-t选项，可以在每行的输出之前添加时间戳。
 
@@ -78,7 +81,7 @@ strace不但能用在命令上，而且通过使用-p选项能用在运行的进
 
 ![Timestamp before each output line](http://linoxide.com/wp-content/uploads/2014/08/09.strace_timestamp.png)
 
-#### 1.7 更好的时间戳 ####
+#### 选项7 更精细的时间戳 ####
 
 -tt选项可以展示微秒级别的时间戳。
 
@@ -92,7 +95,7 @@ strace不但能用在命令上，而且通过使用-p选项能用在运行的进
 
 ![Seconds since epoch](http://linoxide.com/wp-content/uploads/2014/08/011.strace_epoch_seconds.png)
 
-#### 1.8 Relative Time ####
+#### 选项8 相对时间 ####
 
 -r选项展示系统调用之间的相对时间戳。
 
@@ -106,7 +109,7 @@ via: http://linoxide.com/linux-command/linux-strace-command-examples/
 
 作者：[Raghu][a]
 译者：[guodongxiaren](https://github.com/guodongxiaren)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
