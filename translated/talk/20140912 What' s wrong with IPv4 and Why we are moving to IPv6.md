@@ -62,24 +62,24 @@ IPv6 自动配置还不是一个完整地解决方案。想要有效地使用互
 
 #### 它有一个大坑 ####
 
-So if IPv6 is so much better than IPv4, why hasn’t adoption been more widespread (as of **May 2014**, Google estimates that its IPv6 traffic is about **4%** of its total traffic)? The basic problem is which comes first, the **chicken or the egg**? Somebody running a server wants the server to be as widely available as possible, which means it must have an **IPv4** address.
+如果 IPv6 真的比 IPv4 好那么多，为什么它还没有被广泛使用起来（Google 在**2014年5月份**估计 IPv6 的市场占有率为**4%**）？一个最基本的原因就是“先有鸡还是先有蛋”问题，用户需要让自己的服务器能为尽可能多的客户提供服务，这就意味着他们必须部署一个 **IPv4** 地址。
 
-It could also have an IPv6 address, but few people would use it and you do have to change your software a little to accommodate IPv6. Furthermore, a lot of home networking routers do not support IPv6. A lot of ISPs do not support IPv6. I asked my ISP about it, and I was told that they will provide it when customers ask for it. So I asked how many customers had asked for it. One, including me.
+当然，他们可以同时使用 IPv4 和 IPv6 两套地址，但很少有客户会用到 IPv6，并且你还需要对你的软件做一些小修改来适应 IPv6。另外比较头疼的一点是，很多家庭的路由器压根不支持 IPv6。还有就是 ISP 也不愿意支持 IPv6，我问过我的 ISP 这个问题，得到的回答是：只有客户明确指出要部署这个时，他们才会用 IPv6。然后我问了现在有多少人有这个需求，答案是：包括我在内，共有1个。
 
-By way of contrast, all of the major operating systems, Windows, OS X, and Linux support IPv6 “**out of the box**” and have for years. The operating systems even have software that will allow IPv6 packets to “**tunnel**” within IPv4 to a point where the IPv6 packets can be removed from the surrounding IPv4 packet and sent on their way.
+与这种现实状况呈明显对比的是，所有主流操作系统：Windows、OS X、Linux 都默认支持 IPv6 好多年了。这些操作系统甚至提供软件让 IPv6 的数据包披上 IPv4 的皮来骗过那些会丢弃 IPv6 数据包的主机，从而达到传输数据的目的（LCTT：呃，这是高科技偷渡？）。
 
-#### Conclusion ####
+#### 总结 ####
 
-IPv4 has served us well for a long time. IPv4 has some limitations which are going to present insurmountable problems in the near future. IPv6 will solve those problems by changing the strategy for allocating addresses, making improvements to ease the routing of packets, and making it easier to configure a machine when it first joins the network.
+IPv4 已经为我们服务了好长时间。但是它的缺陷会在不远的将来遭遇不可克服的困难。IPv6 通过改变地址分配规则、简化数据包路由过程、简化首次加入网络时的配置过程等策略，可以完美解决这个问题。
 
-However, acceptance and usage of IPv6 has been slow, because change is hard and expensive. The good news is that all operating systems support IPv6, so when you are ready to make the change, your computer will need little effort to convert to the new scheme.
+问题是，大众在接受和使用 IPv6 的过程中进展缓慢，因为改变代价太大了。好消息是所有操作系统都支持 IPv6，所以当你有一天想做出改变，你的电脑只需要改变一点点东西，就能转到全新的架构体系中去。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/ipv4-and-ipv6-comparison/
 
 作者：[Jeff Silverman][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[bazz2](https://github.com/bazz2)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
