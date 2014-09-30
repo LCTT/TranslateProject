@@ -1,21 +1,19 @@
-wangjiezhe translating
-
-Unix: stat -- more than ls
+Unix: stat -- 获取比 ls 更多的信息
 ================================================================================
-> Tired of ls and want to see more interesting information on your files? Try stat!
+> 厌倦了 ls 命令, 并且想查看更多有关你的文件的有趣的信息? 试一试 stat!
 
 ![](http://www.itworld.com/sites/default/files/imagecache/large_thumb_150x113/stats.jpg)
 
-The ls command is probably one of the first commands that anyone using Unix learns, but it only shows a small portion of the information that is available with the stat command.
+ls 命令可能是每一个 Unix 使用者第一个学习的命令之一, 但它仅仅显示了 stat 命令能给出的信息的一小部分.
 
-The stat command pulls information from the file's inode. As you might be aware, there are actually three sets of dates and times that are stored for every file on your system. These include the date the file was last modified (i.e., the date and time that you see when you use the ls -l command), the time the file was last changed (which includes renaming the file), and the time that file was last accessed.
+stat 命令从文件的索引节点获取信息. 正如你可能已经了解的那样, 每一个系统里的文件都存有三组日期和时间, 它们包括最近修改时间(即使用 ls -l 命令时显示的日期和时间), 最近状态改变时间(包括重命名文件)和最近访问时间.
 
-View a long listing for a file and you will see something like this:
+使用长列表模式查看文件信息, 你会看到类似下面的内容:
 
     $ ls -l trythis
     -rwx------ 1 shs unixdweebs 109 Nov 11  2013 trythis
 
-Use the stat command and you see all this:
+使用 stat 命令, 你会看到下面这些:
 
     $ stat trythis
       File: `trythis'
@@ -26,11 +24,11 @@ Use the stat command and you see all this:
     Modify: 2013-11-11 08:40:10.000000000 -0500
     Change: 2013-11-11 08:40:10.000000000 -0500
 
-The file's change and modify dates/times are the same in this case, while the access time is fairly recent. We can also see that the file is using 8 blocks and we see the permissions in each of the two formats -- the octal (0700) format and the rwx format. The inode number, shown in the third line of the output, is 12731681. There are no additional hard links (Links: 1). And the file is a regular file.
+在上面的情形中, 文件的状态改变和文件修改的日期/时间是相同的, 而访问时间则是相当近的时间. 我们还可以看到文件使用了 8 个块, 以及两种格式显示的文件权限 -- 八进制(0700)格式和 rwx 格式. 在第三行显示的索引节点是 12731681. 文件没有其它的硬链接(Links: 1). 而且, 这个文件是一个常规文件.
 
-Rename the file and you will see that the change time will be updated.
+重命名文件, 你会看到状态改变时间发生变化.
 
-This, the ctime information, was originally intended to hold the creation date and time for the file, but the field was turned into the change time field somewhere a while back.
+这里的 ctime 信息, 最早设计用来存储文件的创建日期和时间, 但之前的某个时间变为用来存储状态修改时间.
 
     $ mv trythis trythat
     $ stat trythat
@@ -42,9 +40,9 @@ This, the ctime information, was originally intended to hold the creation date a
     Modify: 2013-11-11 08:40:10.000000000 -0500
     Change: 2014-09-21 12:46:22.000000000 -0400
 
-Changing the file's permissions would also register in the ctime field.
+改变文件的权限也会改变 ctime 域.
 
-You can also use wilcards with the stat command and list your files' stats in a group:
+你也可以配合通配符来使用 stat 命令以列出一组文件的状态:
 
     $ stat myfile*
       File: `myfile'
@@ -69,18 +67,18 @@ You can also use wilcards with the stat command and list your files' stats in a 
     Modify: 2014-08-22 12:03:59.000000000 -0400
     Change: 2014-08-22 12:03:59.000000000 -0400
 
-We can get some of this information with other commands if we like.
+如果我们喜欢的话, 我们也可以通过其他命令来获取这些信息.
 
-Add the "u" option to a long listing and you'll see something like this. Notice this shows us the last access time while adding "c" shows us the change time (in this example, the time when we renamed the file).
+向 ls -l 命令添加 "u" 选项, 你会获得下面的结果. 注意这个选项会显示最后访问时间, 而添加 "c" 选项则会显示状态改变时间(在本例中, 是我们重命名文件的时间).
 
     $ ls -lu trythat
     -rwx------ 1 shs unixdweebs 109 Sep  9 19:27 trythat
     $ ls -lc trythat
     -rwx------ 1 shs unixdweebs 109 Sep 21 12:46 trythat
 
-The stat command can also work against directories.
+stat 命令也可应用与文件夹.
 
-In this case, we see that there are a number of links.
+在这个例子中, 我们可以看到有许多的链接.
 
     $ stat bin
       File: `bin'
@@ -91,7 +89,7 @@ In this case, we see that there are a number of links.
     Modify: 2014-09-15 17:54:41.000000000 -0400
     Change: 2014-09-15 17:54:41.000000000 -0400
 
-Here, we're looking at a file system.
+在这里, 我们查看一个文件系统.
 
     $ stat -f /dev/cciss/c0d0p2
       File: "/dev/cciss/c0d0p2"
@@ -100,16 +98,24 @@ Here, we're looking at a file system.
     Blocks: Total: 259366     Free: 259337     Available: 259337
     Inodes: Total: 223834     Free: 223531
 
-Notice the Namelen (name length) field. Good luck if you had your heart set on file names with greater than 255 characters!
+注意 Namelen (文件名长度)域, 如果文件名长于 255 个字符的话, 你会很幸运地在文件名处看到心形符号!
 
-The stat command can also display some of its information a field at a time for those times when that's all you want to see, In the example below, we just want to see the file type and then the number of hard links.
+stat 命令还可以一次显示所有我们想要的信息. 下面的例子中, 我们只想查看文件类型, 然后是硬连接数.
 
     $ stat --format=%F trythat
     regular file
     $ stat --format=%h trythat
     1
 
-In the examples below, we look at permissions -- in each of the two available formats -- and then the file's SELinux security context.
+在下面的例子中, 我们查看了文件权限 -- 分别以两种可用的格式 -- 然后是文件的 SELinux 安全环境.
+
+译者注: 原文到这里就结束了, 但很明显缺少结尾. 最后一段的例子可以分别用
+
+	$ stat --format=%a trythat
+	$ stat --format=%A trythat
+	$ stat --format=%C trythat
+
+来实现.
 
 --------------------------------------------------------------------------------
 
