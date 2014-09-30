@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How to monitor user login history on CentOS with utmpdump
 ================================================================================
 Keeping, maintaining and analyzing logs (i.e., accounts of events that have happened during a certain period of time or are currently happening) are among the most basic and essential tasks of a Linux system administrator. In case of user management, examining user logon and logout logs (both failed and successful) can alert us about any potential security breaches or unauthorized use of our system. For example, remote logins from unknown IP addresses or accounts being used outside working hours or during vacation leave should raise a red flag.
