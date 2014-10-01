@@ -1,3 +1,4 @@
+[Translating by SteveArcher]
 Photo Editing on Linux with Krita
 ================================================================================
 ![Figure 1: Annabelle the pygmy goat.](http://www.linux.com/images/stories/41373/fig-1-annabelle.jpg)
