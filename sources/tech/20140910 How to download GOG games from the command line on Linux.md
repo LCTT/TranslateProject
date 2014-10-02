@@ -1,3 +1,6 @@
+Translating-------geekpi
+
+
 How to download GOG games from the command line on Linux
 ================================================================================
 If you are a gamer and a Linux user, you probably were delighted when [GOG][1] announced a few months ago that it will start proposing games for your favorite OS. If you have never heard of GOG before, I encourage you to check out their catalog of “good old games”, reasonably priced, DRM-free, and packed with goodies. However, if the Windows client for GOG existed for quite some time now, an official Linux version is nowhere to be seen. So if waiting for the official version is uncomfortable for you, an unofficial open source program named LGOGDownloader gives you access to your library from the command line.
