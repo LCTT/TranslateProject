@@ -60,23 +60,39 @@ By contrast, ChromeOS is built to be completely maintenance free, thus not requi
 
 Comically, the folks who exclaim that there's a problem here are not even remotely the target market for ChromeOS. In short, these are passionate Linux enthusiasts looking for something to gripe about. My advice? Stop inventing problems where none exist.
 
-滑稽的是，
+滑稽的是，有些人宣称，ChomeOs 对于远期的市场份额来说存在很多问题。简言之，这只是一些Linux 激情的爱好者在找对于ChomeOS 的抱怨罢了。在我看来，停止造谣这些子虚乌有的问题才是关键。
 
 The point is: the market share for ChromeOS and Linux on the desktop are not even remotely the same. This could change in the future, but at this time, these two groups are largely separate.
 
+问题在于：ChromeOS 的市场份额和Linux 桌面系统在很长的一段时间内是不同的。这个存在可能会在将来被打破，然而在现在，仍然会是两军对峙的局面。
+
 ### ChromeOS use is growing ###
+
+### ChromeOS 的使用率正在增长 ###
 
 No matter what your view of ChromeOS happens to be, the fact remains that its adoption is growing. New computers built for ChromeOS are being released all the time. One of the most recent ChromeOS computer releases is from Dell. Appropriately named the [Dell Chromebox][5], this desktop ChromeOS appliance is yet another shot at traditional computing. It has zero software DVDs, no anti-malware software, and offfers completely seamless updates behind the scenes. For casual users, Chromeboxes and Chromebooks are becoming a viable option for those who do most of their work from within a web browser.
 
+不管你对ChromeOS 有怎么样的看法，事实是，ChromeOS 的使用率正在增长。专门针对ChromeOS 的电脑也一直有发布。最近，戴尔（Dell）也发布了一款针对ChromeOS 的电脑。命名为[Dell Chromebox][5],这款ChromeOS设备将会是另一些传统设备的终结者。它没有软件光驱，没有反病毒软件，offers 能够无缝的在屏幕后面更新。对于一般的用户，Chromebox 和Chromebook 正逐渐成为那些工作在web 浏览器上的人的一个选择。
+
 Despite this growth, ChromeOS appliances face one huge downside – storage. Bound by limited hard drive size and a heavy reliance on cloud storage, ChromeOS isn't going to cut it for anyone who uses their computers outside of basic web browser functionality.
+
+尽管增长速度很快，ChromeOS 设备仍然面临着一个很严峻的问题 - 存储。受限于有限的硬盘的大小和严重依赖于云存储，ChromeOS 不会为了任何使用它们电脑的人消减基本的web浏览器的功能。
 
 ### ChromeOS and Linux crossing streams ###
 
+### ChromeOS 和Linux 的共同点 ###
+
 Previously, I mentioned that ChromeOS and Linux on the desktop are in two completely separate markets. The reason why this is the case stems from the fact that the Linux community has done a horrid job at promoting Linux on the desktop offline.
+
+以前，我注意到ChromeOS 和Linux 桌面系统分别占有着两个完全不同的市场。出现这样的情况是源于，Linux 社区的致力于提升Linux 桌面系统的性能。
 
 Yes, there are occasional events where casual folks might discover this "Linux thing" for the first time. But there isn't a single entity to then follow up with these folks, making sure they’re getting their questions answered and that they're getting the most out of Linux.
 
+是的，偶然的，有些人可能会第一时间发现“Linux 的事件”。但是，并没有一个人接着跟进这些问题，确保得到问题的答案，确保他们得到了最新的Linux。
+
 In reality, the likely offline discovery breakdown goes something like this:
+
+事实上，脱机故障可能是这样发现的：
 
 - Casual user finds out Linux from their local Linux event.
 - They bring the DVD/USB device home and attempt to install the OS.
@@ -84,17 +100,36 @@ In reality, the likely offline discovery breakdown goes something like this:
 - Frustrated, these folks are then expected to "search" online forums for help. Difficult to do on a primary computer experiencing network or video issues.
 - Completely fed up, some of the above frustrated bring their computers back into a Windows shop for "repair." In addition to Windows being re-installed, they also receive an earful about how "Linux isn't for them" and should be avoided.
 
+
+- 有些用户偶然的在Linux 本地事件发现了Linux。      
+- 他们带回了DVD/USB 设备，并尝试安装这个操作系统。 
+- 当然，有些人很幸运的成功的安装成功了这个进程，但是，我也已经联系了一些有相反经验的人。 
+- 令人失望的是，这些人希望在网上论坛里搜索帮助。很难做一个主计算机，遇到网络和视频的问题。
+- 我真的是受够了，有很多失望的用户拿着他们的电脑到windows 商店来“维修”。除了重装一个windows 操作系统，他们很多时候都会听到一句话，“Linux 并不适合你们”，应该尽量避免。
+
 Some of you might charge that the above example is exaggerated. I would respond with this: It's happened to people I know personally and it happens often. Wake up Linux community, our adoption model is broken and tired.
+
+有些人肯定会说，上面的举例肯定夸大其词了。让我来告诉你：这是发生在我认识的人身上的，而且是经常发生。醒醒吧，Linux社区的人们，我们采用已经坏了，腻了。
 
 ### Great platforms, horrible marketing and closing thoughts ###
 
+### 伟大的平台，强大的营销和结论 ###
+
 If there is one thing that I feel ChromeOS and Linux on the desktop have in common...besides the Linux kernel, it's that they both happen to be great products with rotten marketing. The advantage however, goes to Google with this one, due to their ability to spend big money online and reserve shelf space at big box stores.
+
+如果非要说ChromeOS 和Linux 桌面系统相同的地方，除了它们都使用了Linux 内核，就是它们极其差劲的市场营销。而去了Google 的优点就是，他们投入大量的资金在网上大面积存储来构建大的应用商店。
 
 Google believes that because they have the "online advantage" that offline efforts aren't really that important. This is incredibly short-sighted and reflects one of Google's biggest missteps. The belief that if you're not exposed to their online efforts, you're not worth bothering with, is only countered by local shelf-space at select big box stores.
 
+Google 相信他们拥有“网上的优势”，而线下的影响不是很重要。这真是一个难以置信的目光短浅，这也成了Google 历史上最大的一个失误之一。相信，如果你没有接触到他们直线的努力，你不值得困扰，仅仅就像是在选择网上商店上做出反击。
+
 My suggestion is this – offer Linux on the desktop to the ChromeOS market through offline efforts. This means Linux User Groups need to start raising funds to be present at county fairs, mall kiosks during the holiday season and teaching free classes at community centers. This will immediately put Linux on the desktop in front of the same audience that might otherwise end up with a ChromeOS powered appliance.
 
+我的建议是：通过线下的影响，提供Linux桌面系统给ChromeOS 的市场。这就意味着Linux 社区的人需要筹集资金来出席县博览会、商场展览，在节日季节，和在社区中进行免费的教学课程。这会立即使Linux桌面系统走入人们的视线，否则，最终可能会有一个ChromeOS 设备出现在人们的面前。
+
 If local offline efforts like this don't happen, not to worry. Linux on the desktop will continue to grow as will the ChromeOS market. Sadly though, it will absolutely keep the two markets separate as they are now.
+
+如果说本地的线下市场并没有想我说的这样，别担心。Linux 桌面系统的市场仍然会像ChromeOS 一样增长。最坏也能保持现在这种两军对峙的市场局面。
 
 --------------------------------------------------------------------------------
 
