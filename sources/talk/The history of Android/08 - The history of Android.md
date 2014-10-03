@@ -1,3 +1,5 @@
+alim0x translating
+
 The history of Android
 ================================================================================
 ![Android 1.5’s on-screen keyboard showing the suggestion bar while typing, the capital letters keyboard, the number and symbols screen, and an additional key popup.](http://cdn.arstechnica.net/wp-content/uploads/2013/12/kb5.png)
@@ -88,15 +90,15 @@ The HTC Magic, the second Android device, and the first without a hardware keybo
 Photo by HTC
 
 > #### Google Maps is the first built-in app to hit the Android Market ####
-> 
+>
 > While this article is (mostly) organizing app updates by Android version for simplicity's sake, there are a few outliers that deserve special recognition. On June 14, 2009, Google Maps was the first packed-in Android app to be updated via the Android Market. While every other app required a full system release to be updated, Maps was broken out of the OS, free to receive out-of-cycle updates whenever a new feature was ready.
-> 
+>
 > Moving apps out of the core OS and onto the Android Market would be a big focus for Google going forward. In general, OTA updates were a big initiative—they required the cooperation of the OEM and the carrier, both of which could drag their feet. Updates also didn’t make it to every device. Today, the Android Market gives Google a direct line to every Android phone with no such interference from outside parties.
-> 
+>
 > These were problems for a later date, though. In 2009, Google had only two unskinned phones to support, and the early Android carriers were seemingly responsive to Google’s update needs. This early move would prove to be a very proactive decision on Google’s part. At first, the company went this route only with its most important properties—Maps and Gmail—but later it would port the majority of the packed-in apps to the Android Market. Later initiatives like Google Play Services even brought app APIs out of the OS and into Google’s store.
-> 
+>
 > As for the new Maps at the time, it gained a new directions interface, along with the ability to give mass transit and walking directions. For now, directions were given on a plain black list—turn-by-turn-style navigation would come later.
-> 
+>
 > June 2009 was also the time Apple launched the third iPhone—the 3GS—and the third version of iPhone OS. iPhone OS 3's headline features were mostly catch-up items like copy/paste and MMS support. Apple's hardware was still nicer, and the software was smoother, more cohesive, and better designed. Google's insane pace of development was putting it on a path to parity though. iPhone OS 2 launched just before the Milestone 5 build of Android 0.5, which makes five Android releases in the span of the yearly iOS release cycle.
 
 Android 1.5 gave the YouTube app the ability to upload videos to the site. Uploading was accomplished by sharing a video from the Gallery to the YouTube app, or by opening a video directly from the YouTube app. This would bring up an upload screen, where the user would set things like the video title, tags, and access rights. Photos could be uploaded to Picasa, Google's original photo site, in a similar fashion.
