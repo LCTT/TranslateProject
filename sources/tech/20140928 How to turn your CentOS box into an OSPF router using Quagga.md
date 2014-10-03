@@ -1,3 +1,5 @@
+Translating-------geekpi
+
 How to turn your CentOS box into an OSPF router using Quagga
 ================================================================================
 [Quagga][1] is an open source routing software suite that can be used to turn your Linux box into a fully-fledged router that supports major routing protocols like RIP, OSPF, BGP or ISIS router. It has full provisions for IPv4 and IPv6, and supports route/prefix filtering. Quagga can be a life saver in case your production router is down, and you don't have a spare one at your disposal, so are waiting for a replacement. With proper configurations, Quagga can even be provisioned as a production router.
