@@ -1,42 +1,40 @@
-[felixonmars translating...]
-
-How to create a cloud-based encrypted file system on Linux
+如何在 Linux 系统中创建一个云端的加密文件系统
 ================================================================================
-Commercial cloud storage services such as [Amazon S3][1] and [Google Cloud Storage][2] offer highly available, scalable, infinite-capacity object store at affordable costs. To accelerate wide adoption of their cloud offerings, these providers are fostering rich developer ecosystems around their products based on well-defined APIs and SDKs. Cloud-backed file systems are one popular by-product of such active developer communities, for which several open-source implementations exist.
+[Amazon S3][1] 和 [Google Cloud Storage][2] 之类的商业云存储服务以能承受的价格提供了高可用性、可扩展、无限容量的对象存储服务。为了加速这些云产品的广泛采用，这些提供商为他们的产品基于明确的 API 和 SDK 培养了一个良好的开发者生态系统。而基于云的文件系统便是这些活跃的开发者社区中的典型产品，已经有了好几个开源的实现。
 
-[S3QL][3] is one of the most popular open-source cloud-based file systems. It is a FUSE-based file system backed by several commercial or open-source cloud storages, such as Amazon S3, Google Cloud Storage, Rackspace CloudFiles, or OpenStack. As a full featured file system, S3QL boasts of a number of powerful capabilities, such as unlimited capacity, up to 2TB file sizes, compression, UNIX attributes, encryption, snapshots with copy-on-write, immutable trees, de-duplication, hardlink/symlink support, etc. Any bytes written to an S3QL file system are compressed/encrypted locally before being transmitted to cloud backend. When you attempt to read contents stored in an S3QL file system, the corresponding objects are downloaded from cloud (if not in the local cache), and decrypted/uncompressed on the fly.
+[S3QL][3] 便是最流行的开源云端文件系统之一。它是一个基于 FUSE 的文件系统，提供了好几个商业或开源的云存储后端，比如 Amazon S3、Google Cloud Storage、Rackspace CloudFiles，还有 OpenStack。作为一个功能完整的文件系统，S3QL 拥有不少强大的功能：最大 2T 的文件大小、压缩、UNIX 属性、加密、基于写入时复制的快照、不可变树、重复数据删除，以及软、硬链接支持等等。写入 S3QL 文件系统任何数据都将首先被本地压缩、加密，之后才会传输到云后端。当你试图从 S3QL 文件系统中取出内容的时候，如果它们不在本地缓存中，相应的对象会从云端下载回来，然后再即时地解密、解压缩。
 
-To be clear, S3QL does have limitations. For example, you cannot mount the same S3FS file system on several computers simultaneously, but only once at a time. Also, no ACL (access control list) support is available.
+需要明确的是，S3QL 的确也有它的限制。比如，你不能把同一个 S3FS 文件系统在几个不同的电脑上同时挂载，只能有一台电脑同时访问它。另外，ACL（访问控制列表）也并没有被支持。
 
-In this tutorial, I am going to describe **how to set up an encrypted file system on top of Amazon S3, using S3QL**. As an example use case, I will also demonstrate how to run rsync backup tool on top of a mounted S3QL file system.
+在这篇教程中，我将会描述“如何基于 Amazon S3 用 S3QL 配置一个加密文件系统”。作为一个使用范例，我还会说明如何在挂载的 S3QL 文件系统上运行 rsync 备份工具。
 
-### Preparation ###
+### 准备工作 ###
 
-To use this tutorial, you will need to create an [Amazon AWS account][4] (sign up is free, but requires a valid credit card).
+本教程首先需要你创建一个 [Amazon AWS 帐号][4]（注册是免费的，但是需要一张有效的信用卡）。
 
-If you haven't done so, first [create an AWS access key][4] (access key ID and secret access key) which is needed to authorize S3QL to access your AWS account.
+然后 [创建一个 AWS access key][4]（access key ID 和 secret access key），S3QL 使用这些信息来访问你的 AWS 帐号。
 
-Now, go to AWS S3 via AWS management console, and create a new empty bucket for S3QL.
+之后通过 AWS 管理面板访问 AWS S3，并为 S3QL 创建一个新的空 bucket。
 
 ![](https://farm4.staticflickr.com/3841/15170673701_7d0660e11f_c.jpg)
 
-For best performance, choose a region which is geographically closest to you.
+为最佳性能考虑，请选择一个地理上距离你最近的区域。
 
 ![](https://farm4.staticflickr.com/3902/15150663516_4928d757fc_b.jpg)
 
-### Install S3QL on Linux ###
+### 在 Linux 上安装 S3QL ###
 
-S3QL is available as a pre-built package on most Linux distros.
+在大多数 Linux 发行版中都有预先编译好的 S3QL 软件包。
 
-#### On Debian, Ubuntu or Linux Mint: ####
+#### 对于 Debian、Ubuntu 或 Linux Mint：####
 
-    $ sudo apt-get install s3ql 
+    $ sudo apt-get install s3ql
 
-#### On Fedora: ####
+#### 对于 Fedora：####
 
     $ sudo yum install s3ql 
 
-On Arch Linux, use [AUR][6].
+对于 Arch Linux，使用 [AUR][6]。
 
 ### Configure S3QL for the First Time ###
 
@@ -143,7 +141,7 @@ For more information about S3QL such as automatic mounting, snapshotting, immunt
 via: http://xmodulo.com/2014/09/create-cloud-based-encrypted-file-system-linux.html
 
 作者：[Dan Nanni][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[felixonmars](https://github.com/felixonmars)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
