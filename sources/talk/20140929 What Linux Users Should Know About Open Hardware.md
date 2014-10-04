@@ -1,3 +1,4 @@
+zpl1025
 What Linux Users Should Know About Open Hardware
 ================================================================================
 > What Linux users don't know about manufacturing open hardware can lead them to disappointment.
