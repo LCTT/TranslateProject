@@ -1,3 +1,6 @@
+Translating-----------geekpi
+
+
 How to install and configure ownCloud on Debian
 ================================================================================
 According to its official website, ownCloud gives you universal access to your files through a web interface or WebDAV. It also provides a platform to easily view, edit and sync your contacts, calendars and bookmarks across all your devices. Even though ownCloud is very similar to the widely-used Dropbox cloud storage, the primary difference is that ownCloud is free and open-source, making it possible to set up a Dropbox-like cloud storage service on your own server. With ownCloud, only you have complete access and control over your private data, with no limits on storage space (except for hard disk capacity) or the number of connected clients.
