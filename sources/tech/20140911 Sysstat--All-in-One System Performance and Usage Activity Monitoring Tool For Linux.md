@@ -1,3 +1,4 @@
+translating by cvsher
 Sysstat – All-in-One System Performance and Usage Activity Monitoring Tool For Linux
 ================================================================================
 **Sysstat** is really a handy tool which comes with number of utilities to monitor system resources, their performance and usage activities. Number of utilities that we all use in our daily bases comes with sysstat package. It also provide the tool which can be scheduled using cron to collect all performance and activity data.
