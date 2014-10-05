@@ -1,3 +1,4 @@
+johnhoow translating...
 # Practical Lessons in Peer Code Review #
 
 Millions of years ago, apes descended from the trees, evolved opposable thumbs and—eventually—turned into human beings.
