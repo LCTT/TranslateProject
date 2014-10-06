@@ -1,3 +1,5 @@
+Translating------------geekpi
+
 How to manage configurations in Linux with Puppet and Augeas
 ================================================================================
 Although [Puppet][1](注：此文原文原文中曾今做过，文件名：“20140808 How to install Puppet server and client on CentOS and RHEL.md”,如果翻译发布过，可修改此链接为发布地址) is a really unique and useful tool, there are situations where you could use a bit of a different approach. Situations like modification of configuration files which are already present on several of your servers and are unique on each one of them at the same time. Folks from Puppet labs realized this as well, and integrated a great tool called [Augeas][2] that is designed exactly for this usage.
