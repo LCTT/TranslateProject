@@ -1,3 +1,5 @@
+barney-ro  translating
+
 What is a good subtitle editor on Linux
 ================================================================================
 If you watch foreign movies regularly, chances are you prefer having subtitles rather than the dub. Grown up in France, I know that most Disney movies during my childhood sounded weird because of the French dub. If now I have the chance to be able to watch them in their original version, I know that for a lot of people subtitles are still required. And I surprise myself sometimes making subtitles for my family. Hopefully for me, Linux is not devoid of fancy and open source subtitle editors. In short, this is the non-exhaustive list of open source subtitle editors for Linux. Share your opinion on what you think of the best subtitle editor.
@@ -47,7 +49,7 @@ Which subtitle editor do you use and why? Or is there another one that you prefe
 via: http://xmodulo.com/good-subtitle-editor-linux.html
 
 作者：[Adrien Brochard][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[barney-ro](https://github.com/barney-ro)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
