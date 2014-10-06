@@ -2,7 +2,7 @@
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/09/shellshock_Linux_check.jpeg)
 
-快速地向你展示**如何检查你的系统是否受到Shellshock的影响**如果有，**怎样修复你的系统免于被Bash漏洞利用**。
+快速地向你展示**如何检查你的系统是否受到Shellshock的影响**，如果有，**怎样修复你的系统免于被Bash漏洞利用**。
 
 如果你正跟踪新闻，你可能已经听说过在[Bash][1]中发现了一个漏洞，这被称为**Bash Bug**或者** Shellshock**。 [红帽][2]是第一个发现这个漏洞的机构。Shellshock错误允许攻击者注入自己的代码，从而使系统开放各给种恶意软件和远程攻击。事实上，[黑客已经利用它来启动DDoS攻击][3]。
 
@@ -55,7 +55,7 @@ via: http://itsfoss.com/linux-shellshock-check-fix/
 
 作者：[Abhishek][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
