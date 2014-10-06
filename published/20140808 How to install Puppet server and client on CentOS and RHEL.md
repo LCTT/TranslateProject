@@ -4,7 +4,7 @@
 
 ### Puppet 是什么？ ###
 
-Puppet 是一款为 IT 系统管理员和顾问设计的自动化软件，你可以用它自动化地完成诸如安装应用程序和服务、补丁管理和部署等工作。所有资源的相关配置都以“manifests”的方式保存，单台机器或者多台机器都可以使用。如果你想了解更多内容，Puppet 实验室的网站上有关于 [Puppet 及其工作原理][1]的更详细的介绍。
+Puppet 是一款为 IT 系统管理员和顾问们设计的自动化软件，你可以用它自动化地完成诸如安装应用程序和服务、补丁管理和部署等工作。所有资源的相关配置都以“manifests”的方式保存，单台机器或者多台机器都可以使用。如果你想了解更多内容，Puppet 实验室的网站上有关于 [Puppet 及其工作原理][1]的更详细的介绍。
 
 ### 本教程要做些什么？ ###
 
@@ -58,7 +58,7 @@ Puppet 是一款为 IT 系统管理员和顾问设计的自动化软件，你可
 
     # chkconfig puppet on
 
-Puppet 客户端需要知道 Puppet master 服务器的地址。最佳方案是使用 DNS 服务器解析 Puppet master 服务器地址。如果你没有 DNS 服务器，在 `/etc/hosts` 里添加下面这几行也可以：
+Puppet 客户端需要知道 Puppet master 服务器的地址。最佳方案是使用 DNS 服务器解析 Puppet master 服务器地址。如果你没有 DNS 服务器，在 `/etc/hosts` 里添加类似下面这几行也可以：
 
 > 1.2.3.4 server.your.domain
 
@@ -125,7 +125,7 @@ master 服务器名也要在 `/etc/puppet/puppet.conf` 文件的“[agent]”小
 
 > runinterval = <yourtime>
 
-这个选项的值可以是秒（格式比如 30 或者 30s），分钟（30m），小时（6h），天（2d）以及年（5y）。值得注意的是，0 意味着“立即执行”而不是“从不执行”。
+这个选项的值可以是秒（格式比如 30 或者 30s），分钟（30m），小时（6h），天（2d）以及年（5y）。值得注意的是，**0 意味着“立即执行”而不是“从不执行”**。
 
 ### 提示和技巧 ###
 
@@ -139,7 +139,7 @@ master 服务器名也要在 `/etc/puppet/puppet.conf` 文件的“[agent]”小
 
     # puppet agent -t --debug
 
-Debug 选项会显示 Puppet 本次运行时的差不多每一个步骤，这在调试非常复杂的问题时很有用。另一个很有用的选项是：
+debug 选项会显示 Puppet 本次运行时的差不多每一个步骤，这在调试非常复杂的问题时很有用。另一个很有用的选项是：
 
     # puppet agent -t --noop
 
@@ -187,7 +187,7 @@ via: http://xmodulo.com/2014/08/install-puppet-server-client-centos-rhel.html
 
 作者：[Jaroslav Štěpánek][a]
 译者：[sailing](https://github.com/sailing)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
