@@ -1,11 +1,12 @@
-在Linux中使用逻辑卷管理器构建灵活的磁盘存储——第一部分
+在Linux中使用LVM构建灵活的磁盘存储（第一部分）
 ================================================================================
-**逻辑卷管理器（LVM）**让磁盘空间管理更为便捷。如果一个文件系统需要更多的空间，它可以在它的卷组中将空闲空间添加到它的逻辑卷中，而文件系统可以根据你的意愿调整大小。如果某个磁盘启动失败，替换磁盘可以使用卷组注册成一个物理卷，而逻辑卷扩展可以将数据迁移到新磁盘而不会丢失数据。
+**逻辑卷管理器（LVM）**让磁盘空间管理更为便捷。如果一个文件系统需要更多的空间，可以在它的卷组中将空闲空间添加到其逻辑卷中，而文件系统可以根据你的意愿调整大小。如果某个磁盘启动失败，用于替换的磁盘可以使用卷组注册成一个物理卷，而逻辑卷扩展可以将数据迁移到新磁盘而不会丢失数据。
 
-![Create LVM Storage in Linux](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage.jpg)
-在Linux中创建LVM存储
+<center>![Create LVM Storage in Linux](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage.jpg)</center>
 
-在现代世界中，每台服务器空间都会因为我们的需求增长而不断扩展。逻辑卷可以用于RAID，SAN。单个物理卷将会被加入组以创建卷组，在卷组中，我们需要切割空间以创建逻辑卷。在使用逻辑卷时，我们可以使用某些命令来跨磁盘、跨逻辑卷扩展，或者减少逻辑卷大小，而不用重新格式化和重新对当前磁盘分区。卷可以跨磁盘抽取数据，这会增加I/O数据量。
+<center>*在Linux中创建LVM存储*</center>
+
+在如今，每台服务器空间都会因为我们的需求增长而不断扩展。逻辑卷可以用于RAID，SAN。单个物理卷将会被加入组以创建卷组，在卷组中，我们需要切割空间以创建逻辑卷。在使用逻辑卷时，我们可以使用某些命令来跨磁盘、跨逻辑卷扩展，或者减少逻辑卷大小，而不用重新格式化和重新对当前磁盘分区。卷可以跨磁盘抽取数据，这会增加I/O数据量。
 
 ### LVM特性 ###
 
@@ -27,8 +28,8 @@
     # vgs
     # lvs
 
-![Check Physical Volumes](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-03.jpg)
-检查物理卷
+<center>![Check Physical Volumes](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-03.jpg)</center>
+<center>*检查物理卷*</center>
 
 下面是上面截图中各个参数的说明。
 
@@ -52,8 +53,8 @@
 
     # fdisk -l
 
-![Verify Added Disks](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-04.jpg)
-验证添加的磁盘
+<center>![Verify Added Disks](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-04.jpg)</center>
+<center>*验证添加的磁盘*</center>
 
 - 用于操作系统（CentOS 6.5）的默认磁盘。
 - 默认磁盘上定义的分区（vda1 = swap），（vda2 = /）。
@@ -61,8 +62,8 @@
 
 各个磁盘大小都是20GB，默认的卷组的PE大小为4MB，我们在该服务器上配置的卷组使用默认PE。
 
-![Volume Group Display](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-05.jpg)
-卷组显示
+<center>![Volume Group Display](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-05.jpg)</center>
+<center>*卷组显示*</center>
 
 - **VG Name** – 卷组名称。
 - **Format** – LVM架构使用LVM2。
@@ -82,8 +83,8 @@
 
     # df -TH
 
-![Check the Disk Space](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-06.jpg)
-检查磁盘空间
+<center>![Check the Disk Space](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-06.jpg)</center>
+<center>*检查磁盘空间*</center>
 
 上面的图片中显示了用于根的挂载点已使用了**18GB**，因此没有空闲空间可用了。
 
@@ -91,15 +92,15 @@
 
 我们可以扩展当前使用的卷组以获得更多空间。但在这里，我们将要做的是，创建新的卷组，然后在里面肆意妄为吧。过会儿，我们可以看到怎样来扩展使用中的卷组的文件系统。
 
-在使用新磁盘钱，我们需要使用fdisk来对磁盘分区。
+在使用新磁盘前，我们需要使用fdisk来对磁盘分区。
 
     # fdisk -cu /dev/sda
 
 - **c** – 关闭DOS兼容模式，推荐使用该选项。
 - **u** – 当列出分区表时，会以扇区而不是柱面显示。
 
-![Create New Physical Partitions](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-07.jpg)
-创建新的物理分区
+<center>![Create New Physical Partitions](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-07.jpg)</center>
+<center>*创建新的物理分区*</center>
 
 接下来，请遵循以下步骤来创建新分区。
 
@@ -118,8 +119,8 @@
 
     # fdisk -l
 
-![Verify Partition Table](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-08.jpg)
-验证分区表
+<center>![Verify Partition Table](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-08.jpg)</center>
+<center>*验证分区表*</center>
 
 ### 创建物理卷 ###
 
@@ -135,8 +136,8 @@
 
     # pvs
 
-![Create Physical Volumes](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-09.jpg)
-创建物理卷
+<center>![Create Physical Volumes](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-09.jpg)</center>
+<center>*创建物理卷*</center>
 
 ### 创建卷组 ###
 
@@ -152,11 +153,11 @@
 
     # vgs
 
-![Create Volume Groups](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-10.jpg)
-创建卷组
+<center>![Create Volume Groups](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-10.jpg)</center>
+<center>*创建卷组*</center>
 
-![Verify Volume Groups](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-11.jpg)
-验证卷组
+<center>![Verify Volume Groups](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-11.jpg)</center>
+<center>*验证卷组*</center>
 
 理解vgs命令输出：
 
@@ -173,15 +174,15 @@
 
     # vgs -v
 
-![Check Volume Group Information](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-12.jpg)
-检查卷组信息
+<center>![Check Volume Group Information](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-12.jpg)</center>
+<center>*检查卷组信息*</center>
 
 **8.** 要获取更多关于新创建的卷组信息，运行以下命令。
 
     # vgdisplay tecmint_add_vg
 
-![List New Volume Groups](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-13.jpg)
-列出新卷组
+<center>![List New Volume Groups](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-13.jpg)</center>
+<center>*列出新卷组*</center>
 
 - 卷组名称
 - 使用的LVM架构。
@@ -200,15 +201,15 @@
 
     # lvs
 
-![List Current Volume Groups](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-14.jpg)
-列出当前卷组
+<center>![List Current Volume Groups](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-14.jpg)</center>
+<center>*列出当前卷组*</center>
 
 **10.** 这些逻辑卷处于**vg_tecmint**卷组中使用**pvs**命令来列出并查看有多少空闲空间可以创建逻辑卷。
 
     # pvs
 
-![Check Free Space](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-15.jpg)
-检查空闲空间
+<center>![Check Free Space](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-15.jpg)</center>
+<center>*检查空闲空间*</center>
 
 **11.** 卷组大小为**54GB**，而且未被使用，所以我们可以在该组内创建LV。让我们将卷组平均划分大小来创建3个逻辑卷，就是说**54GB**/3 = **18GB**，创建出来的单个逻辑卷应该会是18GB。
 
@@ -218,8 +219,8 @@
 
     # vgdisplay tecmint_add_vg
 
-![Create New Logical Volume](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-16.jpg)
-创建新逻辑卷
+<center>![Create New Logical Volume](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-16.jpg)</center>
+<center>*创建新逻辑卷*</center>
 
 - 默认分配给该卷组的PE为32MB，这里单个的PE大小为32MB。
 - 总可用PE是1725。
@@ -233,8 +234,8 @@
     1725PE/3 = 575 PE. 
     575 PE x 32MB = 18400 --> 18GB
 
-![Calculate Disk Space](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-17.jpg)
-计算磁盘空间
+<center>![Calculate Disk Space](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-17.jpg)</center>
+<center>*计算磁盘空间*</center>
 
 按**CRTL+D**退出**bc**。现在让我们使用575个PE来创建3个逻辑卷。
 
@@ -253,8 +254,8 @@
 
     # lvs
 
-![List Created Logical Volumes](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-18.jpg)
-列出创建的逻辑卷
+<center>![List Created Logical Volumes](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-18.jpg)</center>
+<center>*列出创建的逻辑卷*</center>
 
 #### 方法2： 使用GB大小创建逻辑卷 ####
 
@@ -272,8 +273,8 @@
 
     # lvs
 
-![Verify Created Logical Volumes](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-19.jpg)
-验证创建的逻辑卷
+<center>![Verify Created Logical Volumes](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-19.jpg)</center>
+<center>*验证创建的逻辑卷*</center>
 
 这里，我们可以看到，当创建第三个LV的时候，我们不能收集到18GB空间。这是因为尺寸有小小的改变，但在使用或者尺寸来创建LV时，这个问题会被忽略。
 
@@ -287,8 +288,8 @@
 
     # mkfs.ext4 /dev/tecmint_add_vg/tecmint_manager
 
-![Create Ext4 File System](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-20.jpg)
-创建Ext4文件系统
+<center>![Create Ext4 File System](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-20.jpg)</center>
+<center>*创建Ext4文件系统*</center>
 
 **13.** 让我们在**/mnt**下创建目录，并将已创建好文件系统的逻辑卷挂载上去。
 
@@ -302,8 +303,8 @@
 
     # df -h
 
-![Mount Logical Volumes](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-22.jpg)
-挂载逻辑卷
+<center>![Mount Logical Volumes](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-22.jpg)</center>
+<center>*挂载逻辑卷*</center>
 
 #### 永久挂载 ####
 
@@ -321,32 +322,31 @@
     /dev/mapper/tecmint_add_vg-tecmint_public       /mnt/tecmint_public     ext4    defaults 0 0
     /dev/mapper/tecmint_add_vg-tecmint_manager      /mnt/tecmint_manager    ext4    defaults 0 0
 
-![Get mtab Mount Entry](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-23.jpg)
-获取mtab挂载条目
+<center>![Get mtab Mount Entry](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-23.jpg)*</center>
+<center>*获取mtab挂载条目*</center>
 
-![Open fstab File](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-24.jpg)
-打开fstab文件
+<center>![Open fstab File](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-24.jpg)</center>
+<center>*打开fstab文件*</center>
 
-![Add Auto Mount Entry](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-25.jpg)
-添加自动挂载条目
+<center>![Add Auto Mount Entry](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-25.jpg)</center>
+<center>*添加自动挂载条目*</center>
 
 重启前，执行mount -a命令来检查fstab条目。
 
     # mount -av
 
-![Verify fstab Entry](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-26.jpg)
-验证fstab条目
+<center>![Verify fstab Entry](http://www.tecmint.com/wp-content/uploads/2014/07/Create-Logical-Volume-Storage-26.jpg)</center>
+<center>*验证fstab条目*</center>
 
 这里，我们已经了解了怎样来使用逻辑卷构建灵活的存储，从使用物理磁盘到物理卷，物理卷到卷组，卷组再到逻辑卷。
 
-在我即将奉献的文章中，我将介绍如何扩展卷组、逻辑卷，减少逻辑卷，拍快照以及从快照中恢复。到那时，保持TecMint更新到这些精彩文章中的内容。
---------------------------------------------------------------------------------
+在我即将奉献的文章中，我将介绍如何扩展卷组、逻辑卷，减少逻辑卷，拍快照以及从快照中恢复。 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/create-lvm-storage-in-linux/
 
 作者：[Babin Lonston][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
