@@ -26,13 +26,13 @@ Mondo 和其他的软件不大一样，它并不将你的磁盘数据转换为�
 
 ### 4. [Partimage][4]：###
 
-This is an open-source software backup, which works under Linux system, by default. It's also available to install from the package manager for most Linux distributions and if you don’t have a Linux system then you can use “SystemRescueCd”. It is a Live CD which includes Partimage by default to do the cloning process that you want. Partimage is very fast in cloning hard drivers.
+这是一个开源的备份软件，默认情况下在 Linux 系统里工作。在大多数发行版中，你都可以从发行版自带的软件包管理工具中安装。如果你没有 Linux 系统，你也可以使用“SystemRescueCd”。它是一个默认包括 Partimage 的 Live CD，可以为你完成备份工作。Partimage 在克隆硬盘方面的性能非常出色。
 
 ![](http://1-ps.googleusercontent.com/h/www.efytimes.com/admin/useradmin/rte/my_documents/my_pictures/620x424xBZF_partimage-620x424.png.pagespeed.ic.ygzrogRJgE.png)
 
 ### 5. [FSArchiver][5]：###
 
-FSArchiver is a follow-up to Partimage, and it is again a good tool to clone hard disks. It supports cloning Ext4 partitions and NTFS partitions, basic file attributes like owner, permissions, extended attributes like those used by SELinux, basic file system attributes for all Linux file systems and so on.
+FSArchiver 是 Partimage 的后续产品，而且它也是一个很好的硬盘克隆工具。它支持克隆 Ext4 和 NTFS 分区、基本的文件属性如所有人、权限、SELinux 之类的扩展属性，以及所有 Linux 文件系统的文件系统属性等。
 
 ### 6. [Partclone][6]：###
 
