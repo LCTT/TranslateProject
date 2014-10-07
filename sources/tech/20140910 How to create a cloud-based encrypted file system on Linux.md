@@ -99,39 +99,39 @@
 
 ![](https://farm4.staticflickr.com/3863/15174861482_27a842da3e_z.jpg)
 
-### Unmount an S3QL File System ###
+### 卸载 S3QL 文件系统 ###
 
-To unmount an S3QL file system (with potentially uncommitted data) safely, use umount.s3ql command. It will wait until all data (including the one in local file system cache) has been successfully transferred and written to backend servers. Depending on the amount of write-pending data, this process can take some time.
+想要安全地卸载一个（可能含有未提交数据的）S3QL 文件系统，请使用 umount.s3ql 命令。它将会等待所有数据（包括本地文件系统缓存中的部分）成功传输到后端服务器。取决于等待写的数据的多少，这个过程可能需要一些时间。
 
     $ umount.s3ql ~/mnt_s3ql
 
-View S3QL File System Statistics and Repair an S3QL File System
+### 查看 S3QL 文件系统统计信息及修复 S3QL 文件系统 ###
 
-To view S3QL file system statistics, you can use s3qlstat command, which shows information such as total data/metadata size, de-duplication and compression ratio.
+若要查看 S3QL 文件系统统计信息，你可以使用 s3qlstat 命令，它将会显示诸如总的数据、元数据大小、重复文件删除率和压缩率等信息。
 
     $ s3qlstat ~/mnt_s3ql
 
 ![](https://farm6.staticflickr.com/5559/15184926905_4815e5827a_z.jpg)
 
-You can check and repair an S3QL file system with fsck.s3ql command. Similar to fsck command, the file system being checked needs to be unmounted first.
+你可以使用 fsck.s3ql 命令来检查和修复 S3QL 文件系统。与 fsck 命令类似，待检查的文件系统必须首先被卸载。
 
     $ fsck.s3ql s3://[bucket-name]
 
-### S3QL Use Case: Rsync Backup ###
+### S3QL 使用案例：Rsync 备份 ###
 
-Let me conclude this tutorial with one popular use case of S3QL: local file system backup. For this, I recommend using rsync incremental backup tool especially because S3QL comes with a rsync wrapper script (/usr/lib/s3ql/pcp.py). This script allows you to recursively copy a source tree to a S3QL destination using multiple rsync processes.
+让我用一个流行的使用案例来结束这篇教程：本地文件系统备份。为此，我推荐使用 rsync 增量备份工具，特别是因为 S3QL 提供了一个 rsync 的封装脚本（/usr/lib/s3ql/pcp.py）。这个脚本允许你使用多个 rsync 进程递归地复制目录树到 S3QL 目标。
 
     $ /usr/lib/s3ql/pcp.py -h
 
 ![](https://farm4.staticflickr.com/3873/14998096829_d3a64749d0_z.jpg)
 
-The following command will back up everything in ~/Documents to an S3QL file system via four concurrent rsync connections.
+下面这个命令将会使用 4 个并发的 rsync 连接来备份 ~/Documents 里的所有内容到一个 S3QL 文件系统。
 
      $ /usr/lib/s3ql/pcp.py -a --quiet --processes=4 ~/Documents ~/mnt_s3ql
 
-The files will first be copied to the local file cache, and then gradually flushed to the backend servers over time in the background.
+这些文件将首先被复制到本地文件缓存中，然后在后台再逐步地同步到后端服务器。
 
-For more information about S3QL such as automatic mounting, snapshotting, immuntable trees, I strongly recommend checking out the [official user's guide][7]. Let me know what you think of S3QL. Share your experience with any other tools.
+若想了解与 S3QL 有关的更多信息，如自动挂载、快照、不可变树，我强烈推荐阅读 [官方用户指南][7]。欢迎告诉我你对 S3QL 怎么看，以及你对任何其他工具的使用经验。
 
 
 
