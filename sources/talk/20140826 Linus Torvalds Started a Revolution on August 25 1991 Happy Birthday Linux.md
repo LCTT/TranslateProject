@@ -1,3 +1,5 @@
+shaohaolin Translating
+
 Linus Torvalds Started a Revolution on August 25, 1991. Happy Birthday, Linux!
 ================================================================================
 ![Linus Torvalds](http://i1-news.softpedia-static.com/images/news2/Linus-Torvalds-Started-a-Revolution-on-August-25-1991-Happy-Birthday-Linux-456212-2.jpg)
