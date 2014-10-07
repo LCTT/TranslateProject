@@ -1,3 +1,6 @@
+Translating-----------geekpi
+
+
 How to monitor server memory usage with Nagios Remote Plugin Executor (NRPE)
 ================================================================================
 In a [previous tutorial][1]注：此篇文章在同一个更新中，如果也翻译了，发布的时候可修改相应的链接, we have seen how we can set up Nagios Remote Plugin Executor (NRPE) in an existing Nagios setup. However, the scripts and plugins needed to monitor memory usage do not come with stock Nagios. In this tutorial, we will see how we can configure NRPE to monitor RAM usage of a remote server.
