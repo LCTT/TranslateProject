@@ -1,8 +1,8 @@
-Linux有问必答——如何使用tcpdump来捕获TCP SYN，ACK和FIN包
+Linux有问必答：如何使用tcpdump来捕获TCP SYN，ACK和FIN包
 ================================================================================
 > **问题**：我想要监控TCP连接活动（如，建立连接的三次握手，以及断开连接的四次握手）。要完成此事，我只需要捕获TCP控制包，如SYN，ACK或FIN标记相关的包。我怎样使用tcpdump来仅仅捕获TCP SYN，ACK和/或FYN包？
 
-作为事实上的捕获工具，tcpdump提供了强大而又灵活的包过滤功能。作为tcpdump基础的libpcap包捕获引擎支持标准的包过滤规则，如基于5重包头的过滤（如基于源/目的IP地址/端口和IP协议类型）。
+作为业界标准的捕获工具，tcpdump提供了强大而又灵活的包过滤功能。作为tcpdump基础的libpcap包捕获引擎支持标准的包过滤规则，如基于5重包头的过滤（如基于源/目的IP地址/端口和IP协议类型）。
 
 tcpdump/libpcap的包过滤规则也支持更多通用分组表达式，在这些表达式中，包中的任意字节范围都可以使用关系或二进制操作符进行检查。对于字节范围表达，你可以使用以下格式：
 
@@ -34,8 +34,8 @@ tcpdump/libpcap的包过滤规则也支持更多通用分组表达式，在这�
 
 via: http://ask.xmodulo.com/capture-tcp-syn-ack-fin-packets-tcpdump.html
 
-作者：[作者名][a]
+ 
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
