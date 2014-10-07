@@ -1,13 +1,13 @@
 shaohaolin translating
-Can Ubuntu Do This? — Answers to The 4 Questions New Users Ask Most
+Ubunto可以实现这功能吗？－回答4个新用户最常问的问题
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/08/Screen-Shot-2014-08-13-at-14.31.42.png)
 
-**Type ‘Can Ubuntu’ into Google and you’ll see a stream of auto suggested terms put before you, all based on the queries asked most often by curious searchers. **
+**在谷歌输入‘Can Ubunt[u]’，一系列的自动建议会展现在你面前。这些建议都是根据最近搜索用户最频繁检索而形成的。
 
-For long-time Linux users these queries all have rather obvious answers. But for new users or those feeling out whether a distribution like Ubuntu is for them the answers are not quite so obvious; they’re pertinent, real and essential asks.
+对于Linux老用户来说，他们都胸有成竹的回答这些问题。但是对于新用户或者那些还在探索类似Ubuntu是否是值得分配的人，他们不是十分清楚这些答案。这都是中肯，真实而且是基本的问题。 
 
-So, in this article, I’m going to answer the top four most searched for questions asking “*Can Ubuntu…?*” 
+所以，在这片文章，我将会去回答4个最常会被搜索到的"Can Ubuntu...?"问题。
 
 ### Can Ubuntu Replace Windows? ###
 
