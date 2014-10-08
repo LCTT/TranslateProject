@@ -20,29 +20,29 @@ Windows 并不是每个人都喜欢 － 或者说是必须的。
 
 例如，你在上大学，所需的软件都只是Windows而已。暂时而言，你是不需要完全更换你的系统。对于工作也是同样的道理。如果你工作所用到的软件只是微软Office,  Adobe Creative Suite 或者是一个AutoCAD应用程序，不是很建议你更换系统，坚持你现在所用的软件就足够了。 
 
-但是对于那些用Ubuntu完全取代微软的我们，Ubuntu 提供一个安全的桌面工作环境。这个桌面工作环境可以运行与支持很广的硬件环境。基本上，每个东西都软件的支持，从办公套件到网页浏览器，视频应用程序，音乐应用程序到游戏。 
+但是对于那些用Ubuntu完全取代微软的我们，Ubuntu 提供一个安全的桌面工作环境。这个桌面工作环境可以运行与支持很广的硬件环境。基本上，每个东西都有软件的支持，从办公套件到网页浏览器，视频应用程序，音乐应用程序到游戏。 
 
-### Can Ubuntu Run .exe Files? ###
+### Ubuntu 可以运行 .exe文件吗？###
 
-![You can run some Windows apps in Ubuntu](http://www.omgubuntu.co.uk/wp-content/uploads/2013/01/adobe-photoshop-cs2-free-linux.png)
-You can run some Windows apps in Ubuntu
+![你可以在Ubuntu运行一些Windows应用程序。](http://www.omgubuntu.co.uk/wp-content/uploads/2013/01/adobe-photoshop-cs2-free-linux.png)
+你可以在Ubuntu运行一些Windows应用程序
 
-Yes, though not out of the box, and not with guaranteed success. This is because software distributed in .exe are meant to run on Windows. These are not natively compatible with any other desktop operating system, including Mac OS X or Android.
+是可以的，尽管这些程序不是一步安装到位，或者不能保证安装成功。这是因为这些软件版本本来就是在Windows下运行的。 这些程序本来就于其他桌面操作系统不兼容，包括Mac OS X 或者 Android （安卓系统）。
 
-Software installers made for Ubuntu (and other Linux distributions) tend to come as ‘.deb’ files. These can be installed similarly to .exe — you just double-click and follow any on-screen prompts.
+那些专门为Ubuntu（和其他Linux发行版本）的软件安装包都是带有“.deb”的文件后缀名。它们的安装过程与安装 .exe 的程序是一样的 －双击安装包，然后根据屏幕提示完成安装。 
 
-But Linux is versatile. Using a compatibility layer called ‘Wine’ (which technically is not an emulator, but for simplicity’s sake can be referred to as one for shorthand) that can run many popular apps. They won’t work quite as well as they do on Windows, nor look as pretty. But, for many, it works well enough to use on a daily basis.
+但是Linux是很多样化的。But Linux is versatile. 使用一个名为"Wine"的兼容层，可以运行许多当下很流行的应用程序。 (Wine不是一个模拟器，但是简单来讲是一个速记本。）这些程序不会像在Windows下运行得那么顺畅，或者有着出色的用户界面。然而，它足以满足日常的工作要求。 
 
-Notable Windows software that can run on Ubuntu through Wine includes older versions of Photoshop and early versions of Microsoft Office . For a list of compatible software [refer to the Wine App Database][1].
+一些很出名的Windows软件是可以通过Wine来运行在Ubuntu操作系统上，这包括老版本的Photoshop和微软办公室软件。 有关兼容软件的列表 [参照Wine应用程序数据库][1].
 
-### Can Ubuntu Get Viruses? ###
+### Ubuntu会有病毒吗？###
 
-![It may have errors, but it doesn’t have viruses](http://www.omgubuntu.co.uk/wp-content/uploads/2014/04/errors.jpg)
-It may have errors, but it doesn’t have viruses
+![它可能有错误，但是它并没有病毒](http://www.omgubuntu.co.uk/wp-content/uploads/2014/04/errors.jpg)
+它可能有错误，但是它并有病毒
 
-Theoretically, yes. But in reality, no.
+理论上，它会有病毒。但是，实际上它没有。
 
-Linux distributions are built in a way that makes it incredibly hard for viruses, malware and root kits to be installed, much less run and do any significant damage.
+Linux发行版是建立在一个病毒，蠕虫，Linux distributions are built in a way that makes it incredibly hard for viruses, malware and root kits to be installed, much less run and do any significant damage.
 
 For example, most applications run as a ‘regular user’ with no special administrative privileges, required for a virus to access critical parts of the operating system. Most software is also installed from well maintained and centralised sources, like the Ubuntu Software Center, and not random websites. This makes the risk of installing something that is infected negligible.
 
