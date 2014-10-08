@@ -1,4 +1,4 @@
-shaohaolin translating
+
 Ubunto可以实现这功能吗？－回答4个新用户最常问的问题
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/08/Screen-Shot-2014-08-13-at-14.31.42.png)
@@ -31,7 +31,7 @@ Windows 并不是每个人都喜欢 － 或者说是必须的。
 
 那些专门为Ubuntu（和其他Linux发行版本）的软件安装包都是带有“.deb”的文件后缀名。它们的安装过程与安装 .exe 的程序是一样的 －双击安装包，然后根据屏幕提示完成安装。 
 
-但是Linux是很多样化的。But Linux is versatile. 使用一个名为"Wine"的兼容层，可以运行许多当下很流行的应用程序。 (Wine不是一个模拟器，但是简单来讲是一个速记本。）这些程序不会像在Windows下运行得那么顺畅，或者有着出色的用户界面。然而，它足以满足日常的工作要求。 
+但是Linux是很多样化的。 使用一个名为"Wine"的兼容层，可以运行许多当下很流行的应用程序。 (Wine不是一个模拟器，但是简单来讲是一个速记本。）这些程序不会像在Windows下运行得那么顺畅，或者有着出色的用户界面。然而，它足以满足日常的工作要求。 
 
 一些很出名的Windows软件是可以通过Wine来运行在Ubuntu操作系统上，这包括老版本的Photoshop和微软办公室软件。 有关兼容软件的列表 [参照Wine应用程序数据库][1].
 
@@ -42,33 +42,33 @@ Windows 并不是每个人都喜欢 － 或者说是必须的。
 
 理论上，它会有病毒。但是，实际上它没有。
 
-Linux发行版是建立在一个病毒，蠕虫，Linux distributions are built in a way that makes it incredibly hard for viruses, malware and root kits to be installed, much less run and do any significant damage.
+Linux发行版本是建立在一个病毒，蠕虫，隐匿程序都很难被安装，运行或者造成很大影响的环境之下的。
 
-For example, most applications run as a ‘regular user’ with no special administrative privileges, required for a virus to access critical parts of the operating system. Most software is also installed from well maintained and centralised sources, like the Ubuntu Software Center, and not random websites. This makes the risk of installing something that is infected negligible.
+例如，很多应用程序都是在没有特别管理权限要求，以普通用户权限运行的。病毒的访问系统关键部分的请求也是需要用户管理权限的。很多软件都是从那些维护良好的而且集中的资源库，例如Ubuntu软件中心，而不是一些无厘头的网站。 由于这样的管理使得安装一些受感染的软件的几率可以忽略不计。 
 
-Should you use anti-virus on Ubuntu? That’s up to you. For peace of mind, or if you’re regularly using Windows software through Wine or dual-booting, you can install a free and open-source virus scanner app like ClamAV, available from the Software Center.
+你应不应该在Ubuntu系统安装杀毒软件？这取决于你自己。为了自己的安心，或者如果你经常通过Wine来使用Windows软件，或者双系统，你可以安装ClamAV。它是一个免费的开源的病毒扫描应用程序。你可以在Ubuntu软件中心找到它。
 
-You can learn more about the potential for viruses on Linux/Ubuntu [on the Ubuntu Wiki][2]. 
+你可以在Ubuntu维基百科了解更多关于病毒在Linux或者Ubuntu的信息。 [Ubuntu 维基百科][2]. 
 
-### Can Ubuntu Play Games? ###
+### 在Ubuntu上可以玩游戏吗？###
 
-![Steam has hundreds of high-quality games for Linux](http://www.omgubuntu.co.uk/wp-content/uploads/2012/11/steambeta.jpg)
-Steam has hundreds of high-quality games for Linux
+![Steam有着上百个专门为Linux设计的高质量游戏。](http://www.omgubuntu.co.uk/wp-content/uploads/2012/11/steambeta.jpg)
+Steam有着上百个专门为Linux设计的高质量游戏。
 
-Oh yes it can. From the traditionally simple distractions of 2D chess, word games and minesweeper to modern AAA titles requiring powerful graphics cards, Ubuntu has a diverse range of games available for it.
+当然可以！Ubuntu有着多样化的游戏，从传统简单的2D象棋，拼字游戏和扫雷游戏，到很现代化的AAA级别的对显卡要求强的游戏。
 
-Your first port of call will be the **Ubuntu Software Center**. Here you’ll find a sizeable number of free, open-source and paid-for games, including acclaimed indie titles like World of Goo and Braid, as well as several sections filled with more traditional offerings, like PyChess, four-in-a-row and Scrabble clones.
+你首先去到 **Ubuntu 软件中心**。这里你会找到很多免费的，开源的和付钱的游戏，包括广受好评的独立制作游戏，像World of Goo 和Braid。当然也有其他传统游戏的提供，例如，Pychess(国际象棋)，four-in-a-row and Scrabble clones（猜字拼字）。
 
-For serious gaming you’ll want to grab **Steam for Linux**. This is where you’ll find some of the latest and greatest games available, spanning the full gamut of genres.
+对于游戏狂热爱好者，你可以点击**Steam for Linux**. 在这里你可以找到各种这样最新最好玩的游戏。
 
-Also keep an eye on the [Humble Bundle][3]. These ‘pay what you want’ packages are held for two weeks every month or so. The folks at Humble have been fantastic supporters of Linux as a gaming platform, single-handily ensuring the Linux debut of many touted titles.
+另外，记得留意这个网站 [Humble Bundle][3]。这些“只买你想要的”的套餐只会持续每个月里面的两周。作为游戏平台，它是Linux特别友好的支持者。因为每当一些新游戏出来的时候，它们都保证可以在Linux下搜索到。
 
 --------------------------------------------------------------------------------
 
 via: http://www.omgubuntu.co.uk/2014/08/ubuntu-can-play-games-replace-windows-questions
 
 作者：[Joey-Elijah Sneddon][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Shaohao Lin](https://github.com/shaohaolin)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
