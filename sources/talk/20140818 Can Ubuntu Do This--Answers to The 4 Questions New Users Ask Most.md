@@ -1,3 +1,4 @@
+disylee占个坑，好久没翻译了！
 Can Ubuntu Do This? — Answers to The 4 Questions New Users Ask Most
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/08/Screen-Shot-2014-08-13-at-14.31.42.png)
