@@ -22,7 +22,7 @@ Postfix的20个问答题
 
 ### 问题6：Mailserver 里 postmaster 的作用是什么？ ###
 
-答：邮件管理者一般就是 postmaster。一个 postmaster 的责任就是保证邮件系统正常工作、更新系统配置、添加/删除邮箱帐号，以及其他。每个域中必须存在一个 postmaster 的别名（LCTT：有环境的同学可以查看 /etc/aliases 这个文件，里面有关于 postmaster 的别名），用于将邮件发往正确的用户。
+答：邮件管理者一般就是 postmaster。一个 postmaster 的责任就是保证邮件系统正常工作、更新系统配置、添加/删除邮箱帐号，以及其他。每个域中必须存在一个 postmaster 的别名（LCTT：postmaster 别名的作用就是能让你的邮件系统以外的用户往邮件系统里面的用户发邮件，当然也能接收来自系统内部用户发送出来的邮件），用于将邮件发往正确的用户。
 
 ### Q:7 What are the important daemons in postfix ? ###
 ### 问题7： ###
