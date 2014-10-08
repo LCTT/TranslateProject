@@ -1,18 +1,17 @@
-Translating by ZTinoZ
-7 Improvements The Linux Desktop Needs
+7个Linux桌面需要改善之处
 ======================================
 
-In the last fifteen years, the Linux desktop has gone from a collection of marginally adequate solutions to an unparalleled source of innovation and choice. Many of its standard features are either unavailable in Windows, or else available only as a proprietary extension. As a result, using Linux is increasingly not only a matter of principle, but of preference as well.
+在过去的15年内，Linux桌面从一个还算凑合的边缘化解决方案集合发展到了一个空前的创新和选择源。它的标准特点中有许多是要么不适用于Windows系统，要么就只适合作为一个专有的扩展。因此，使用Linux愈发变得不仅是一个原则问题，也是一种偏好。
 
-Yet, despite this progress, gaps remain. Some are missing features, others missing features, and still others pie-in-the sky extras that could be easily implemented to extend the desktop metaphor without straining users' tolerance of change.
+然而，尽管Linux桌面不停在进步，但是仍然存在差距。一些正在丢失它们的特点，一些已经丢失了，还有一些如同天上掉的馅饼般的附加设备能轻易地实现在不考虑用户对于改变的容忍度的情况下来扩展桌面。
 
-For instance, here are 7 improvements that would benefit the Linux desktop:
+比如说，以下是7个有利于Linux桌面发展的改善建议：
 
-### 7. Easy Email Encryption
+### 7. 简单的Email加密技术
 
-These days, every email reader from Alpine to Thunderbird and Kmail include email encryption. However, documentation is often either non-existent or poor.
+如今，每个Email阅读器从Alpine到Thunderbird再到Kmail，都包括了Email加密技术。然而，文件通常是不存在或者非常劣质documentation is often either non-existent or poor.
 
-But, even if you understand the theory, the practice is difficult. Controls are generally scattered throughout the configuration menus and tabs, requiring a thorough search for all the settings that you require or want. Should you fail to set up encryption properly, usually you receive no feedback about why.
+但是，即使你理论上看懂了，但是实践起来还是很困难的。Controls are generally scattered throughout the configuration menus and tabs, requiring a thorough search for all the settings that you require or want. Should you fail to set up encryption properly, usually you receive no feedback about why.
 
 The closest to an easy process is [Enigmail][1], a Thunderbird extension that includes a setup wizard aimed at beginners. But you have to know about Enigmail to use it, and the menu it adds to the composition window buries the encryption option one level down and places it with other options guaranteed to mystify everyday users.
 
@@ -86,7 +85,7 @@ All of which raises the question: what other improvements do you think would ben
 
 via: http://www.datamation.com/open-source/7-improvements-the-linux-desktop-needs-1.html
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[ZTinoZ](https://github.com/ZTinoZ) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
