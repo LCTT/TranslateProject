@@ -1,3 +1,5 @@
+su-kaiyao translating
+
 How to speed up slow apt-get install on Debian or Ubuntu
 ================================================================================
 If you feel that package installation by **apt-get** or **aptitude** is often too slow on your Debian or Ubuntu system, there are several ways to improve the situation. Have you considered switching default mirror sites being used? Have you checked the upstream bandwidth of your Internet connection to see if that is the bottleneck?
