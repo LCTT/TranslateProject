@@ -9,18 +9,18 @@ Ubunto可以实现这功能吗？－回答4个新用户最常问的问题
 
 所以，在这片文章，我将会去回答4个最常会被搜索到的"Can Ubuntu...?"问题。
 
-### Can Ubuntu Replace Windows? ###
+### Ubuntu可以取代Windows吗？###
 
 ![Windows isn’t to everyones tastes — or needs](http://www.omgubuntu.co.uk/wp-content/uploads/2014/07/windows-9-desktop-rumour.png)
-Windows isn’t to everyones tastes — or needs
+Windows 并不是每个人都喜欢 － 或者说是必须的。
 
-Yes. Ubuntu (and most other Linux distributions) can be installed on just about any computer capable of running Microsoft Windows.
+是的。Ubutu（和其他Linux发行版）是可以安装到任何一台有能力运行微软系统的电脑。
 
-Whether you **should** replace it will, invariably, depend on your own needs.
+无论你觉得 **应不应该** 取代它，不变的是，这取决于你自己的需求。
 
-For example, if you’re attending a school or college that requires access to Windows-only software, you may want to hold off replacing it entirely. Same goes for businesses; if your work depends on Microsoft Office, Adobe Creative Suite or a specific AutoCAD application you may find it easier to stick with what you have.
+例如，你在上大学，所需的软件都只是Windows而已。暂时而言，你是不需要完全更换你的系统。对于工作也是同样的道理。如果你工作所用到的软件只是微软Office,  Adobe Creative Suite 或者是一个AutoCAD应用程序，不是很建议你更换系统，坚持你现在所用的软件就足够了。 
 
-But for most of us Ubuntu can replace Windows full-time. It offers a safe, dependable desktop experience that can run on and support a wide range of hardware. Software available covers everything from office suites to web browsers, video and music apps to games.
+但是对于那些用Ubuntu完全取代微软的我们，Ubuntu 提供一个安全的桌面工作环境。这个桌面工作环境可以运行与支持很广的硬件环境。基本上，每个东西都软件的支持，从办公套件到网页浏览器，视频应用程序，音乐应用程序到游戏。 
 
 ### Can Ubuntu Run .exe Files? ###
 
