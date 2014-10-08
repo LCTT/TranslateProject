@@ -1,4 +1,4 @@
-在RHEL / CentOS下停用按下Ctrl-Alt-Del 重启系统的功能
+在RHEL/CentOS 5/6下停用按下Ctrl-Alt-Del 重启系统的功能
 ================================================================================
 在Linux里，由于对安全的考虑，我们允许任何人按下**Ctrl-Alt-Del**来**重启**系统。但是在生产环境中，应该停用按下Ctrl-Alt-Del 重启系统的功能。
 
@@ -37,7 +37,7 @@ via: http://www.linuxtechi.com/disable-reboot-using-ctrl-alt-del-keys/
 
 作者：[Pradeep Kumar][a]
 译者：[2q1w2007](https://github.com/2q1w2007)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
