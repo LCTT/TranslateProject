@@ -1,3 +1,4 @@
+shaohaolin translating
 10 Open Source Cloning Software For Linux Users
 ================================================================================
 >  These cloning software take all disk data, convert them into a single .img file and you can copy it to another hard drive.
