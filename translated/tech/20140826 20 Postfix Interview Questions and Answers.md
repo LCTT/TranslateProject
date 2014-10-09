@@ -101,10 +101,9 @@ Postfix的20个问答题
 
 答：SPF 是 Sender Policy Framework 的缩写，用于帮助域的拥有者确认发送方是否来自他们的域，目的是其他邮件系统能够保证发送方在发送邮件时是否经过授权 —— 这种方法可以减小遇到邮件地址欺骗、网络钓鱼和垃圾邮件的风险。
 
-### Q:19 What is the use of Domain Keys(DKIM) in mail servers ? ###
 ### 问题19：邮件系统中 DKIM 有什么用处？ ###
 
-答：DKIM 是的缩写，域名密匙是一套电子邮件身份认证系统，用于验证邮件发送方的 DNS 域和邮件的完整性。域名密匙规范采用互联网电子邮件认证技术，建立了一套加强版协议：域名密匙识别邮件（就是 DKIM）。
+答：域名密匙是一套电子邮件身份认证系统，用于验证邮件发送方的 DNS 域和邮件的完整性。域名密匙规范采用互联网电子邮件认证技术，建立了一套加强版协议：域名密匙识别邮件（就是 DKIM）。
 
 ### 问题20：邮件系统中 ASSP 的规则是什么？ ###
 
@@ -115,7 +114,7 @@ Postfix的20个问答题
 via: http://www.linuxtechi.com/postfix-interview-questions-answers/
 
 作者：[Pradeep Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[bazz2](https://github.com/bazz2)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
