@@ -1,3 +1,4 @@
+诗诗来翻译！disylee
 How to configure a network printer and scanner on Ubuntu desktop
 ================================================================================
 In a [previous article][1](注：这篇文章在2014年8月12号的原文里做过，不知道翻译了没有，如果翻译发布了，发布此文章的时候可改成翻译后的链接), we discussed how to install several kinds of printers (and also a network scanner) in a Linux server. Today we will deal with the other end of the line: how to access the network printer/scanner devices from a desktop client.
