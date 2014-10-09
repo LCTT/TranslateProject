@@ -18,124 +18,97 @@ Postfix的20个问答题
 
 ### 问题5：什么是 MUA？ ###
 
-答：MUA 是 Mail User Agent 的缩写。MUA 是一个邮件客户端软件，可以用来写邮件、发送邮件、接收邮件。发送邮件时使用的时 MTA；接收邮件时可以从邮件存储区直接收取，也可以通过 POP/IMAP 服务器间接收取。Outlook、Thunkerbird、Evolution 都是 MUA。
+答：MUA 是 Mail User Agent 的缩写。MUA 是一个邮件客户端软件，可以用来写邮件、发送邮件、接收邮件。发送邮件时使用的是 MTA；接收邮件时可以从邮件存储区直接收取，也可以通过 POP/IMAP 服务器间接收取。Outlook、Thunkerbird、Evolution 都是 MUA。
 
 ### 问题6：Mailserver 里 postmaster 的作用是什么？ ###
 
 答：邮件管理者一般就是 postmaster。一个 postmaster 的责任就是保证邮件系统正常工作、更新系统配置、添加/删除邮箱帐号，以及其他。每个域中必须存在一个 postmaster 的别名（LCTT：postmaster 别名的作用就是能让你的邮件系统以外的用户往邮件系统里面的用户发邮件，当然也能接收来自系统内部用户发送出来的邮件），用于将邮件发往正确的用户。
 
-### Q:7 What are the important daemons in postfix ? ###
-### 问题7： ###
+### 问题7：Postfix 都有些什么重要的进程？ ###
 
-Ans : Below are the lists of impportant daemons in postfix mail server :
-答：
+答：以下是 Postfix 邮件系统里最重要的后台进程列表：
 
-- **master** :The master daemon is the brain of the Postfix mail system. It spawns all other daemons.
-- **smtpd**: The smtpd daemon (server) handles incoming connections.
-- **smtp** :The smtp client handles outgoing connections.
-- **qmgr** :The qmgr-Daemon is the heart of the Postfix mail system. It processes and controls all messages in the mail queues.
-- **local** : The local program is Postfix’ own local delivery agent. It stores messages in mailboxes.
+- **master**：这条进程是 Postfix 邮件系统的大脑，它产生所有其他进程。
+- **smtpd**：作为服务器端程序处理所有外部连进来的请求。
+- **smtp**：作为客户端程序处理所有对外发起连接的请求。
+- **qmgr**：它是 Postfix 邮件系统的心脏，处理和控制邮件列表里面的所有消息。
+- **local**：这是 Postfix 自有的本地传送代理，就是它负责把邮件保存到邮箱里。
 
-### Q:8 What are the configuration files of postfix server ? ###
-### 问题8： ###
+### 问题8：Postfix 服务器的配置什么是什么？ ###
 
-Ans: There are two main Configuration files of postfix :
-答：
+答：有两个主要配置文件：
 
-- **/etc/postfix/main.cf** : This file holds global configuration options. They will be applied to all instances of a daemon, unless they are overridden in master.cf
-- **/etc/postfix/master.cf**  : This file defines runtime environment for daemons attached to services. Runtime behavior defined in main.cf may be overridden by setting service specific options.
+- **/etc/postfix/main.cf**：这个文件保存全局配置信息，所有进程都会用到，除非这些配置在 master.cf 文件中被重新设置了。
+- **/etc/postfix/master.cf**：这个文件保存了额外的进程运行时环境参数，在 main.cf 文件中定义的配置可能会被本文件的配置覆盖掉。
 
-### Q:9 How to restart the postfix service & make it enable across reboot ? ###
-### 问题9： ###
+### 问题9：如何将 Postfix 重启以及设为开机启动？ ###
 
-Ans: Use this command to restart service “ Service postfix restart” and to make the service persist across the reboot, use the command “ chkconfig postfix on”
-答：
+答：使用这个命令重启：`service postfix restart`；使用这个命令设为开机启动：`chkconfig postfix on`
 
-### Q:10 How to check the mail's queue in postfix ? ###
-### 问题10： ###
+### 问题10：怎么查看 Postfix 的邮件列表？ ###
 
-Ans: Postfix maintains two queues, the pending mails queue, and the deferred mail queue,the deferred mail queue has the mail that has soft-fail and should be retried (Temporary failure), Postfix retries the deferred queue on set intervals (configurable, and by default 5 minutes)
-答：
+答：Postfix 维护两个列表：未决邮件队列（pending mails queue）和等待邮件队列（deferred mail queue）。等待队列包含了暂时发送失败、需要重新发送的邮件，Postfix 会定期重发（默认5分钟，可自定义设置）。（LCTT：其实 Postfix 维护5个队列：输入队列，邮件进入 Postfix 系统的第一站；活动队列，qmgr 将输入队列的邮件移到活动队列；等待队列，保存暂时不能发送出去的邮件；故障队列，保存受损或无法解读的邮件；保留队列，将邮件无限期留在 Postfix 队列系统中。）
 
-To display the list of queued mails :
+列出邮件队列里面所有邮件：
 
     # postqueue -p
 
-To Save the output of above command :
+保存邮件队列名单：
 
     # postqueue -p > /mnt/queue-backup.txt
 
-Tell Postfix to process the Queue now
+让 Postfix 马上处理队列：
 
     # postqueue -f
 
-### Q:11 How  to delete mails from the queue in postfix ? ###
-### 问题11： ###
+### 问题11：如何删除邮件队列里面的邮件？ ###
 
-Ans:  Use below command to delete all queued mails
-答：
+答：以下命令删除所有邮件：
 
     # postsuper -d ALL
 
-To delete only deferred mails from queue , use below command
+以下命令只删除等待队列中的邮件：
 
     # postsuper -d ALL deferred
 
-### Q:12 How to check postfix configuration from the command line ? ###
-### 问题12： ###
+### 问题12：如何通过命令来检查 Postfix 配置信息？ ###
 
-Ans: Using the command 'postconf -n'  we can see current configuration of postfix excluding the lines which are commented.
-答：
+答：使用`postconf -n`命令可以查看，它会过滤掉配置文件里面被注释掉的配置信息。
 
-### Q:13 Which command is used to see live mail logs in postfix ? ###
-### 问题13： ###
+### 问题13：实时查看邮件日志要用什么命令？ ###
 
-Ans: Use the command  'tail -f /var/log/maillog' or 'tailf /var/log/maillog'
-答：
+答：`tail -f /var/log/maillog` 或 `tailf /var/log/maillog`
 
-### Q:14 How to send a test mail from command line ? ###
-### 问题14： ###
+### 问题14：如何通过命令行发送测试邮件？ ###
 
-Ans: Use the below command to send a test mail from postfix itself :
-答：
+答：参考下面的命令：
 
-# echo "Test mail from postfix" | mail -s "Plz ignore" info@something.com
+    # echo "Test mail from postfix" | mail -s "Plz ignore" info@something.com
 
-### Q:15  What is an Open mail relay ? ###
-### 问题15： ###
+### 问题15：什么是“开放邮件转发”？ ###
 
-Ans: An open mail relay is an SMTP server configured in such a way that it allows anyone on the Internet to send e-mail through it, not just mail destined to or originating from known users.This used to be the default configuration in many mail servers; indeed, it was the way the Internet was initially set up, but open mail relays have become unpopular because of their exploitation by spammers and worms.
-答：
+答：开放邮件转发是 SMTP 服务器的一项设定，允许因特网上其他用户能通过该服务器转发邮件，而不是直接发送到某个帐号。过去，这项功能在许多邮件服务器中都是默认开启的，但是现在已经不再流行了，因为邮件转发会导致大量垃圾邮件和病毒邮件在网络上肆虐。
 
-### Q:16 What is relay host in postfix ? ###
-### 问题16： ###
+### 问题16：什么是 Postfix 上的邮件转发主机？ ###
 
-Ans: Relay host is the smtp address , if mentioned in postfix config file , then all the incoming mails be relayed through smtp server.
-答：
+答：转发主机是 SMTP 的地址，如果在配置文件中有配置，那么所有输入邮件都将被 SMTP 服务器转发。
 
-### Q:17 What is Greylisting ? ###
-### 问题17： ###
+### 问题17：什么是灰名单？ ###
 
-Ans: Greylisting is a method of defending e-mail users against spam. A mail transfer agent (MTA) using greylisting will "temporarily reject" any email from a sender it does not recognize. If the mail is legitimate the originating server will, after a delay, try again and, if sufficient time has elapsed, the email will be accepted.
-答：
+答：灰名单（LCTT：介于白名单和黑名单之间）用于拦截垃圾邮件。一个 MTA 使用灰名单时就会“暂时拒绝”未被识别的发送者发来的所有邮件。如果邮件是正当合理的，发起者会在一段时间后重新发送，然后这份邮件就能被接收。（LCTT：灰名单基于这样一个事实，就是大多数的垃圾邮件服务器和僵尸网络的邮件只发送一次，而会忽略要求它们在一定的时间间隔后再次发送的请求。）
 
-### Q:18  What is the importance of SPF records in  mail servers ? ###
-### 问题18： ###
+### 问题18：邮件系统中 SPF 记录有什么重要作用？ ###
 
-Ans: SPF (Sender Policy Framework) is a system to help domain owners specify the servers which are supposed to send mail from their domain. The aim is that other mail systems can then check to make sure the server sending email from that domain is authorized to do so – reducing the chance of email 'spoofing', phishing schemes and spam!
-答：
+答：SPF 是 Sender Policy Framework 的缩写，用于帮助域的拥有者确认发送方是否来自他们的域，目的是其他邮件系统能够保证发送方在发送邮件时是否经过授权 —— 这种方法可以减小遇到邮件地址欺骗、网络钓鱼和垃圾邮件的风险。
 
 ### Q:19 What is the use of Domain Keys(DKIM) in mail servers ? ###
-### 问题19： ###
+### 问题19：邮件系统中 DKIM 有什么用处？ ###
 
-Ans: DomainKeys is an e-mail authentication system designed to verify the DNS domain of an e-mail sender and the message integrity. The DomainKeys specification has adopted aspects of Identified Internet Mail to create an enhanced protocol called DomainKeys Identified Mail (DKIM).
-答：
+答：DKIM 是的缩写，域名密匙是一套电子邮件身份认证系统，用于验证邮件发送方的 DNS 域和邮件的完整性。域名密匙规范采用互联网电子邮件认证技术，建立了一套加强版协议：域名密匙识别邮件（就是 DKIM）。
 
-### Q:20 What is the role of  Anti-Spam SMTP Proxy (ASSP) in mail server ? ###
-### 问题20： ###
+### 问题20：邮件系统中 ASSP 的规则是什么？ ###
 
-Ans: ASSP is a gateway server which is install in front of your MTA and implements auto-whitelists, self learning Bayesian, Greylisting, DNSBL, DNSWL, URIBL, SPF, SRS, Backscatter, Virus scanning, attachment blocking, Senderbase and multiple other filter methods 
-答：
+答：ASSP(Anti-Spam SMTP Proxy，反垃圾代理) 是一个网关服务器，安装在你的 MTA 前面，通过自建白名单、自动学习贝叶斯算法、灰名单、DNS 黑名单（DNSBL）、DNS 白名单（DNSWL）、URI黑名单（URIBL）、SPF、SRS、Backscatter、病毒扫描功能、附件阻拦功能、基于发送方等多种方法来反垃圾邮件。
 
 --------------------------------------------------------------------------------
 
