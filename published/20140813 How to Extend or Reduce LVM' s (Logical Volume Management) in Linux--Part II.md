@@ -1,18 +1,17 @@
-在Linux中扩展/缩减LVM（逻辑卷管理）—— 第二部分
+在Linux中扩展/缩减LVM（第二部分）
 ================================================================================
 
 前面我们已经了解了怎样使用LVM创建弹性的磁盘存储。这里，我们将了解怎样来扩展卷组，扩展和缩减逻辑卷。在这里，我们可以缩减或者扩展逻辑卷管理（LVM）中的分区，LVM也可称之为弹性卷文件系统。
 
 ![Extend/Reduce LVMs in Linux](http://www.tecmint.com/wp-content/uploads/2014/08/LVM_extend.jpg)
 
-### 需求 ###
+### 前置需求 ###
 
 - [使用LVM创建弹性磁盘存储——第一部分][1]
-注：两篇都翻译完了的话，发布的时候将这个链接做成发布的中文的文章地址
 
 #### 什么时候我们需要缩减卷？ ####
 
-或许我们需要创建一个独立的分区用于其它用途，或者我们需要扩展任何空间低的分区。真是这样的话，我们可以很容易地缩减大尺寸的分区，并且扩展空间低的分区，只要按下面几个简易的步骤来即可。
+或许我们需要创建一个独立的分区用于其它用途，或者我们需要扩展任何空间低的分区。遇到这种情况时，使用 LVM我们可以很容易地缩减大尺寸的分区，以及扩展空间低的分区，只要按下面几个简易的步骤来即可。
 
 #### 我的服务器设置 —— 需求 ####
 
@@ -284,9 +283,9 @@ via: http://www.tecmint.com/extend-and-reduce-lvms-in-linux/
 
 作者：[Babin Lonston][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://www.tecmint.com/author/babinlonston/
-[1]:http://www.tecmint.com/create-lvm-storage-in-linux/
+[1]:http://linux.cn/article-3965-1.html

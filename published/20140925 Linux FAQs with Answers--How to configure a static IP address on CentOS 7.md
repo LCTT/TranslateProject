@@ -1,10 +1,10 @@
-Linux有问必答——如何为CentOS 7配置静态IP地址
+Linux有问必答：如何为CentOS 7配置静态IP地址
 ================================================================================
 > **问题**：在CentOS 7上，我想要将我其中一个网络接口从DHCP改为静态IP地址配置，如何才能永久为CentOS或RHEL 7上的网络接口分配静态IP地址？
 
 如果你想要为CentOS 7中的某个网络接口设置静态IP地址，有几种不同的方法，这取决于你是否想要使用网络管理器。
 
-网络管理器是一个动态的网络控制与配置系统，它用于在网络设备可用时保持设备和连接开启并激活。默认情况下，CentOS/RHEL 7安装有网络管理器，并处于启用状态。
+网络管理器（Network Manager）是一个动态网络的控制器与配置系统，它用于当网络设备可用时保持设备和连接开启并激活。默认情况下，CentOS/RHEL 7安装有网络管理器，并处于启用状态。
 
 使用下面的命令来验证网络管理器服务的状态：
 
@@ -30,7 +30,7 @@ Linux有问必答——如何为CentOS 7配置静态IP地址
 
 ![](https://farm4.staticflickr.com/3880/15112184199_f4cbf269a6.jpg)
 
-在上图中，“NM_CONTROLLED=no”表示该接口将通过该配置进行设置，而不是通过网络管理器进行管理。“ONBOOT=yes”告诉我们，系统将在启动时开启该接口。
+在上图中，“NM_CONTROLLED=no”表示该接口将通过该配置文件进行设置，而不是通过网络管理器进行管理。“ONBOOT=yes”告诉我们，系统将在启动时开启该接口。
 
 保存修改并使用以下命令来重启网络服务：
 
@@ -43,6 +43,7 @@ Linux有问必答——如何为CentOS 7配置静态IP地址
 ![](https://farm6.staticflickr.com/5593/15112397947_ac69a33fb4_z.jpg)
 
 ### 使用网络管理器配置静态IP地址 ###
+
 如果你想要使用网络管理器来管理该接口，你可以使用nmtui（网络管理器文本用户界面），它提供了在终端环境中配置配置网络管理器的方式。
 
 在使用nmtui之前，首先要在/etc/sysconfig/network-scripts/ifcfg-enp0s3中设置“NM_CONTROLLED=yes”。
@@ -65,13 +66,13 @@ Linux有问必答——如何为CentOS 7配置静态IP地址
 
     # systemctl restart network.service
 
-好了，现在一切就绪。
+好了，现在一切都搞定了。
 
 --------------------------------------------------------------------------------
 
 via: http://ask.xmodulo.com/configure-static-ip-address-centos7.html
 
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

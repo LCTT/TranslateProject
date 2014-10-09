@@ -1,4 +1,4 @@
-Linux有问必答——如何创建新的亚马逊AWS访问密钥
+Linux有问必答：如何创建新的亚马逊AWS访问密钥
 ================================================================================
 > **问题**：我在配置一个需要访问我的亚马逊AWS帐号的应用时被要求提供**AWS访问密钥ID**和**秘密访问密钥**，我怎样创建一个新的AWS访问密钥呢？
 
@@ -42,7 +42,7 @@ IAM是一个web服务，它允许一个公司管理多个用户及其与一个AW
 via: http://ask.xmodulo.com/create-amazon-aws-access-key.html
 
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
