@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Linux/UNIX wget command with practical examples
 ================================================================================
 wget is a Linux/UNIX command line **file downloader**.Wget is a free utility for non-interactive download of files from the Web. It supports **HTTP**, **HTTPS**, and **FTP** protocols, as well as retrieval through HTTP proxies.Wget is non-interactive, meaning that it can work in the background, while the user is not logged on.
