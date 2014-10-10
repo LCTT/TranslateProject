@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Linux Terminal: An lsof Primer
 ================================================================================
 ![](http://cdn.linuxaria.com/wp-content/uploads/2011/06/tux-terminal.jpg)
