@@ -1,4 +1,4 @@
-数据库常见问题答案--如何使用命令行创建一个MySQL数据库
+Linux有问必答：如何在命令行创建一个MySQL数据库
 ===
 
 > **问题**：在一个某处运行的MySQL服务器上，我该怎样通过命令行创建和安装一个MySQL数据库呢？
@@ -47,8 +47,8 @@
 为了达到演示的目的，我们将会创建一个叫做posts_tbl的表，表里会存储关于文章的如下信息：
 
 - 文章的标题
-- 作者的第一个名字
-- 作者的最后一个名字
+- 作者的名字
+- 作者的姓
 - 文章可用或者不可用
 - 文章创建的日期
 
@@ -104,7 +104,7 @@
 via: http://ask.xmodulo.com/create-mysql-database-command-line.html
 
 译者：[su-kaiyao](https://github.com/su-kaiyao)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linu
 x中国](http://linux.cn/) 荣誉推出
