@@ -1,3 +1,4 @@
+Translating by instdio
 How To Use Steam Music Player on Ubuntu Desktop
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/09/steam-music.jpg)
