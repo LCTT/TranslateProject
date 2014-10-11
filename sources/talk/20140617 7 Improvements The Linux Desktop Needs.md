@@ -9,19 +9,19 @@
 
 ### 7. 简单的Email加密技术
 
-如今，每个Email阅读器从Alpine到Thunderbird再到Kmail，都包括了Email加密技术。然而，文件通常是不存在或者非常劣质。
+如今，每个Email阅读器从Alpine到Thunderbird再到Kmail，都包括了Email加密技术。然而，文件编制通常是不存在或者非常劣质。
 
 但是，即使你理论上看懂了，但是实践起来还是很困难的。控件通常分散在整个配置菜单和选项卡中，需要为所有你需要和想要的设置进行一次彻底的搜索。如果你未能进行适当的加密，你就收不到反馈。
 
-最新的一个简易加密进程是 [Enigmail][1] ，一个包含面向初学者设置向导的Thunderbird扩展。但是你一定要知道怎么用Enigmail，并且and the menu it adds to the composition window buries the encryption option one level down and places it with other options guaranteed to mystify everyday users.
+最新的一个简易加密进程是 [Enigmail][1] ，一个包含面向初学者设置向导的Thunderbird扩展。但是你一定要知道怎么用Enigmail，而且菜单新增了合成窗口并把加密设置项添加了进去，如果把它弄到其它的设置里势必会使每个用户都难以理解。
 
-无论如何No matter what the desktop, the assumption is that, if you want encrypted email, you already understand it. Today, though, the constant media references to security and privacy have ensured that such an assumption no longer applies.
+无论桌面怎么样，假设如果你想接收加密过的Email，你就要先知道密码。可如今，不断有媒体涉及安全和隐私方面就已经确定了这样的假设不再适用。
 
 ### 6. 虚拟工作空间缩略图
 
-Virtual workspaces offer more desktop space without requiring additional monitors. Yet, despite their usefulness, management of virtual workspaces hasn't changed in over a decade. On most desktops, you control them through a pager in which each workspace is represented by an unadorned rectangle that gives few indications of what might be on it except for its name or number -- or, in the case of Ubuntu's Unity, which workspace is currently active.
+虚拟工作空间提供了更多不需要额外监听的桌面空间。然而，尽管它们很实用，但是虚拟工作空间的管理并没有在过去十年发生改变。在大多数桌面产品中，你控制On most desktops, you control them through a pager in which each workspace is represented by an unadorned rectangle that gives few indications of what might be on it except for its name or number -- or, in the case of Ubuntu's Unity, which workspace is currently active.
 
-True, GNOME and Cinnamon do offer better views, but the usefulness of these views is limited by the fact that they require a change of screens. Nor is KDE's written list of contents, which is jarring in the primarily graphic-oriented desktop.
+确实，GNOME和Cinnamon能提供出不错的视图，但是它们的实用性受限于它们需要显示屏大小的事实和会与主要的图形化桌面发生冲突的KDE的内容书面列表。
 
 A less distracting solution might be mouseover thumbnails large enough for those with normal vision to see exactly what is on each workspace.
 
