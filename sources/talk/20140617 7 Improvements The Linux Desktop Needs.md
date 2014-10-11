@@ -9,15 +9,15 @@
 
 ### 7. 简单的Email加密技术
 
-如今，每个Email阅读器从Alpine到Thunderbird再到Kmail，都包括了Email加密技术。然而，文件通常是不存在或者非常劣质documentation is often either non-existent or poor.
+如今，每个Email阅读器从Alpine到Thunderbird再到Kmail，都包括了Email加密技术。然而，文件通常是不存在或者非常劣质。
 
-但是，即使你理论上看懂了，但是实践起来还是很困难的。Controls are generally scattered throughout the configuration menus and tabs, requiring a thorough search for all the settings that you require or want. Should you fail to set up encryption properly, usually you receive no feedback about why.
+但是，即使你理论上看懂了，但是实践起来还是很困难的。控件通常分散在整个配置菜单和选项卡中，需要为所有你需要和想要的设置进行一次彻底的搜索。如果你未能进行适当的加密，你就收不到反馈。
 
-The closest to an easy process is [Enigmail][1], a Thunderbird extension that includes a setup wizard aimed at beginners. But you have to know about Enigmail to use it, and the menu it adds to the composition window buries the encryption option one level down and places it with other options guaranteed to mystify everyday users.
+最新的一个简易加密进程是 [Enigmail][1] ，一个包含面向初学者设置向导的Thunderbird扩展。但是你一定要知道怎么用Enigmail，并且and the menu it adds to the composition window buries the encryption option one level down and places it with other options guaranteed to mystify everyday users.
 
-No matter what the desktop, the assumption is that, if you want encrypted email, you already understand it. Today, though, the constant media references to security and privacy have ensured that such an assumption no longer applies.
+无论如何No matter what the desktop, the assumption is that, if you want encrypted email, you already understand it. Today, though, the constant media references to security and privacy have ensured that such an assumption no longer applies.
 
-### 6. Thumbnails for Virtual Workspaces
+### 6. 虚拟工作空间缩略图
 
 Virtual workspaces offer more desktop space without requiring additional monitors. Yet, despite their usefulness, management of virtual workspaces hasn't changed in over a decade. On most desktops, you control them through a pager in which each workspace is represented by an unadorned rectangle that gives few indications of what might be on it except for its name or number -- or, in the case of Ubuntu's Unity, which workspace is currently active.
 
@@ -71,7 +71,7 @@ For years, Stardock Systems has been selling a Windows extension called [Fences]
 
 In other words, fences automate the sort of arrangements that users make on their desktop all the time. Yet aside from one or two minor functions they share with KDE's Folder Views, fences remain completely unknown on Linux desktops. Perhaps the reason is that designers are focused on mobile devices as the source of ideas, and fences are decidedly a feature of the traditional workstation desktop.
 
-### Personalized Lists
+### 个性化列表
 
 As I made this list, what struck me was how few of the improvements were general. Several of these improvement would appeal largely to specific audiences, and only one even implies the porting of a proprietary application. At least one is cosmetic rather than functional.
 
