@@ -1,10 +1,10 @@
 在 Debian 上使用 systemd 管理系统
 ================================================================================
-人类已经无法阻止 systemd 占领全世界的 Linux 系统了，唯一阻止它的方法是在你自己的机器上手动卸载它。到目前为止，systemd 已经创建了比任何软件都多的技术问题、感情问题和社会问题。这一点从[热议][1]（也称 Linux 初始化软件之战）上就能看出，这场争论在 Debian 开发者之间持续了好几个月。当 Debian 技术委员会最终决定将 systemd 放到 Debian 8（代号 Jessie）的发行版里面时，其反对者试图通过多种努力来[取代这项决议][2]，甚至有人扬言要威胁那些支持 systemd 的开发者的生命安全。
+人类已经无法阻止 systemd 占领全世界的 Linux 系统了，唯一阻止它的方法是在你自己的机器上手动卸载它。到目前为止，systemd 已经创建了比任何软件都多的技术问题、感情问题和社会问题。这一点从[“Linux 初始化软件之战”][1]上就能看出，这场争论在 Debian 开发者之间持续了好几个月。当 Debian 技术委员会最终决定将 systemd 放到 Debian 8（代号 Jessie）的发行版里面时，其反对者试图通过多种努力来[取代这项决议][2]，甚至有人扬言要威胁那些支持 systemd 的开发者的生命安全。
 
 这也说明了 systemd 对 Unix 传承下来的系统处理方式有很大的干扰。“一个软件只做一件事情”的哲学思想已经被这个新来者彻底颠覆。除了取代了 sysvinit 成为新的系统初始化工具外，systemd 还是一个系统管理工具。目前为止，由于 systemd-sysv 这个软件包提供的兼容性，那些我们使用惯了的工具还能继续工作。但是当 Debian 将 systemd 升级到214版本后，这种兼容性就不复存在了。升级措施预计会在 Debian 8 "Jessie" 的稳定分支上进行。从此以后用户必须使用新的命令来管理系统、执行任务、变换运行级别、查询系统日志等等。不过这里有一个应对方案，那就是在 .bashrc 文件里面添加一些别名。
 
-现在就让我们来看看 systemd 是怎么改变你管理系统的习惯的。在使用 systemd 之前，你得先把 sysvinit 保存起来，以防 systemd 出错的时候还能用 sysvinit 启动系统。这种方法只有在没安装 systemd-sysv 的情况下才能生效，具体操作方法如下：
+现在就让我们来看看 systemd 是怎么改变你管理系统的习惯的。在使用 systemd 之前，你得先把 sysvinit 保存起来，以便在 systemd 出错的时候还能用 sysvinit 启动系统。这种方法**只有在没安装 systemd-sysv 的情况下才能生效**，具体操作方法如下：
 
     # cp -av /sbin/init /sbin/init.sysvinit 
 
@@ -34,8 +34,8 @@ systemctl 的功能是替代“/etc/init.d/foo start/stop”这类命令，另�
 
 你同样可以使用 systemctl 实现转换运行级别、重启系统和关闭系统的功能：
 
-- systemctl isolate graphical.target - 切换到运行级别5，就是有桌面的级别
-- systemctl isolate multi-user.target - 切换到运行级别3，没有桌面的级别
+- systemctl isolate graphical.target - 切换到运行级别5，就是有桌面的运行级别
+- systemctl isolate multi-user.target - 切换到运行级别3，没有桌面的运行级别
 - systemctl reboot - 重启系统
 - systemctl poweroff - 关机
 
@@ -43,7 +43,7 @@ systemctl 的功能是替代“/etc/init.d/foo start/stop”这类命令，另�
 
 ### journalctl 的基本用法 ###
 
-systemd 不仅提供了比 sysvinit 更快的启动速度，还让日志系统在更早的时候启动起来，可以记录内核初始化阶段、内存初始化阶段、前期启动步骤以及主要的系统执行过程的日志。所以以前那种需要通过对显示屏拍照或者暂停系统来调试程序的日子已经一去不复返啦。
+systemd 不仅提供了比 sysvinit 更快的启动速度，还让日志系统在更早的时候启动起来，可以记录内核初始化阶段、内存初始化阶段、前期启动步骤以及主要的系统执行过程的日志。所以，**以前那种需要通过对显示屏拍照或者暂停系统来调试程序的日子已经一去不复返啦**。
 
 systemd 的日志文件都被放在 /var/log 目录。如果你想使用它的日志功能，需要执行一些命令，因为 Debian 没有打开日志功能。命令如下：
 
@@ -86,7 +86,7 @@ systemd 可以让你能更有效地分析和优化你的系统启动过程：
 
 ![](https://farm6.staticflickr.com/5565/14423020978_14b21402c8_z.jpg)
 
-systemd 虽然是个年轻的项目，但存在大量文档。首先要介绍的是[Lennart Poettering 的 0pointer 系列][3]。这个系列非常详细，非常有技术含量。另外一个是[免费桌面信息文档][4]，它包含了最详细的关于 systemd 的链接：发行版特性文件、bug 跟踪系统和说明文档。你可以使用下面的命令来查询 systemd 都提供了哪些文档：
+systemd 虽然是个年轻的项目，但已有大量文档。首先要介绍给你的是[Lennart Poettering 的 0pointer 系列][3]。这个系列非常详细，非常有技术含量。另外一个是[免费桌面信息文档][4]，它包含了最详细的关于 systemd 的链接：发行版特性文件、bug 跟踪系统和说明文档。你可以使用下面的命令来查询 systemd 都提供了哪些文档：
 
     # man systemd.index 
 
@@ -96,7 +96,7 @@ systemd 虽然是个年轻的项目，但存在大量文档。首先要介绍的
 
 via: http://xmodulo.com/2014/07/use-systemd-system-administration-debian.html
 
-译者：[bazz2](https://github.com/bazz2) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[bazz2](https://github.com/bazz2) 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
