@@ -1,10 +1,10 @@
-在Ubuntu 14.04和拥有Texmaker的Linux Mint 17(基于ubuntu和debian的Linux发行版)中使用LaTeX
+在 Ubuntu 14.04 和 Linux Mint 17 中通过 Texmaker 来使用LaTeX
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/09/texmaker_Ubuntu.jpeg)
 
-[LaTeX][1]是一种文本标记语言，也可以说是一种文档制作系统。经常在很多大学或者机构中作为一种标准来书写专业的科学文献,毕业论文或其他类似的文档。在这篇文章中，我们会看到如何在Ubuntu 14.04中使用LaTeX。
+[LaTeX][1]是一种文本标记语言，也可以说是一种文件准备系统。在很多大学或者机构中普遍作为一种标准来书写专业的科学文献,毕业论文或其他类似的文档。在这篇文章中，我们会看到如何在Ubuntu 14.04中使用LaTeX。
 
-### 在Ubuntu 14.04或Linux Mint 17中安装Texmaker
+### 在 Ubuntu 14.04 或 Linux Mint 17 中安装 Texmaker 来使用LaTeX
 
 [Texmaker][2]是一款免费开源的LaTeX编辑器，它支持一些主流的桌面操作系统，比如Window，Linux和OS X。下面是Texmaker的主要特点：
 
@@ -36,7 +36,7 @@ via: http://itsfoss.com/install-latex-ubuntu-1404/
 
 作者：[Abhishek][a]
 译者：[john](https://github.com/johnhoow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
