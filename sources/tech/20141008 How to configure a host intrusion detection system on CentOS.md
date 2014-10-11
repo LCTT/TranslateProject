@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How to configure a host intrusion detection system on CentOS
 ================================================================================
 One of the first safety measures that any sysadmin may want to implement in their production servers is a mechanism to detect file tampering - not only the content of files, but also their attributes.
