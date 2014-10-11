@@ -1,10 +1,10 @@
-如何使用系统定时器
+如何使用 systemd 中的定时器
 ================================================================================
-我最近在写一些运行备份的脚本，我决定使用[systemd timers][1]而不是对我而已更熟悉的[cron jobs][2]来管理它们。
+我最近在写一些执行备份工作的脚本，我决定使用[systemd timers][1]而不是对我而已更熟悉的[cron jobs][2]来管理它们。
 
 在我使用时，出现了很多问题需要我去各个地方找资料，这个过程非常麻烦。因此，我想要把我目前所做的记录下来，方便自己的记忆，也方便读者不必像我这样，满世界的找资料了。
 
-在我下面提到的步骤中有其他的选择，但是这边是最简单的方法。在此之前，查看**systemd.service**, **systemd.timer**,和**systemd.target**的帮助页面(man)，学习你能用它们做些什么。
+在我下面提到的步骤中有其他的选择，但是这里是最简单的方法。在此之前，请查看**systemd.service**, **systemd.timer**,和**systemd.target**的帮助页面(man)，学习你能用它们做些什么。
 
 ### 运行一个简单的脚本 ###
 
@@ -35,9 +35,9 @@ myscript.timer
     Description=Runs myscript every hour
     
     [Timer]
-    # Time to wait after booting before we run first time
+    # 首次运行要在启动后10分钟后 
     OnBootSec=10min
-    # Time between running each consecutive time
+    # 每次运行间隔时间
     OnUnitActiveSec=1h
     Unit=myscript.service
     
@@ -48,14 +48,14 @@ myscript.timer
 
 授权并运行的是timer文件，而不是service文件。
 
-    # Start timer, as root
+    # 以 root 身份启动定时器
     systemctl start myscript.timer
-    # Enable timer to start at boot
+    # 在系统引导起来后就启用该定时器 
     systemctl enable myscript.timer
 
 ### 在同一个Timer上运行多个脚本 ###
 
-现在我们假设你在相同时间想要运行多个脚本。这种情况，你需要在上面的文件中做适当的修改。
+现在我们假设你在相同时间想要运行多个脚本。这种情况，**你需要在上面的文件中做适当的修改**。
 
 #### Service 文件 ####
 
@@ -64,9 +64,9 @@ myscript.timer
     [Install]
     WantedBy=mytimer.target
 
-如果在你的service 文件中有一些规则，确保你使用**Description**字段中的值具体化**After=something.service**和**Before=whatever.service**中的参数。
+如果在你的service 文件中有一些依赖顺序，确保你使用**Description**字段中的值具体指定**After=something.service**和**Before=whatever.service**中的参数。
 
-另外的一种选择是(或许更加简单)，创建一个包装者脚本来使用正确的规则运行合理的命令，并在你的service文件中使用这个脚本。
+另外的一种选择是(或许更加简单)，创建一个包装脚本来使用正确的顺序来运行命令，并在你的service文件中使用这个脚本。
 
 #### Timer 文件 ####
 
@@ -97,11 +97,11 @@ Good luck.
 
 --------------------------------------------------------------------------------
 
-via: http://jason.the-graham.com/2013/03/06/how-to-use-systemd-timers/#enable--start-1
+via: http://jason.the-graham.com/2013/03/06/how-to-use-systemd-timers/
 
 作者：Jason Graham 
-译者：[译者ID](https://github.com/johnhoow)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[johnhoow](https://github.com/johnhoow)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
