@@ -1,4 +1,4 @@
-如何在Crunchbang下回复Openbox的默认配置
+如何在Crunchbang下恢复Openbox的默认配置
 ================================================================================
 [CrunchBang][1]是一个很好地融合了速度、风格和内容的基于Debian GNU/Linux的发行版。使用了灵活的Openbox窗口管理器，高度定制化并且提供了一个现代、全功能的GNU/Linux系统而没有牺牲性能。
 
@@ -6,7 +6,7 @@ Crunchbang是高度自定义的，用户可以尽情地地把它调整成他们�
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/09/curnchbang_menu_xml.png)
 
-其中从菜单配置文件中去除了所有代码。由于我没有备份（最好备份配置文件）。我不得不搜索Crunchbang开箱即用的默认配置。这里就是我如何修复的过程，要感谢Crunchbang论坛。
+我的菜单配置文件中丢失了所有内容。由于我没有备份（最好备份配置文件）。我不得不搜索Crunchbang安装后的默认配置。这里就是我如何修复的过程，这里要感谢Crunchbang论坛。
 
 了解所有为你预备份的默认配置是很有趣的，你可以在这里找到：
 
@@ -30,7 +30,7 @@ via: http://www.unixmen.com/recover-default-openbox-config-files-crunchbang/
 
 作者：[Enock Seth Nyamador][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

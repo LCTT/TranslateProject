@@ -1,3 +1,4 @@
+SPccman Translating
 How to debug a C/C++ program with GDB command-line debugger
 ================================================================================
 What is the worst part of coding without a debugger? Compiling on your knees praying that nothing will crash? Running the executable with a blood offering? Or just having to write printf("test") at every line hoping to find where the problem is coming from? As you probably know, there are not many advantages to coding without a debugger. But the good side is that debugging on Linux is easy. While most people use the debugger included in their favorite IDE, Linux is famous for its powerful command line C/C++ debugger: GDB. However, like most command line utilities, GDB requires a bit of training to master fully. In this tutorial, I will give you a quick rundown of GDB debugger.

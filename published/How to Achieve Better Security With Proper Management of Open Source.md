@@ -1,8 +1,6 @@
 恰当地管理开源，让软件更加安全
 ================================================================================
-![作者 Bill Ledingham 是 Black Duck Software 公司的首席技术官（CTO）兼工程执行副总裁](http://www.linux.com/images/stories/41373/Bill-Ledingham.jpg)
-
-Bill Ledingham 是 Black Duck Software 公司的首席技术官（CTO）兼工程执行副总裁。
+<center>![作者 Bill Ledingham 是 Black Duck Software 公司的首席技术官（CTO）兼工程执行副总裁](http://www.linux.com/images/stories/41373/Bill-Ledingham.jpg)</center>
 
 越来越多的公司意识到，要想比对手率先开发出高质量具有创造性的软件，关键在于积极使用开源项目。软件版本更迭要求市场推广速度足够快，成本足够低，而仅仅使用商业源代码已经无法满足这些需求了。如果不能选择最合适的开源软件集成到自己的项目里，一些令人称道的点子怕是永无出头之日了。
 
@@ -38,12 +36,9 @@ Heartbleed bug 让开发人员和企业知道了软件安全性有多重要。�
 
 虽然每个公司、每个开发团队都面临各不相同的问题，但实践证明下面几条安全管理经验对使用开源软件的任何规模的组织都有意义：
 
-- **自动认证并分类** - 捕捉并追踪开源组件的相关属性，评估授权许可，自动扫描可能出现的安全漏洞，自动认证并归档。
-- 
-- **维护最新代码的版本** - 评估代码质量，确保你的产品使用的是最新版本的代码。
-- 
+- **自动批准和分类** - 捕捉并追踪开源组件的相关属性，评估许可证合规性，通过自动化扫描、批准和使用过程来审查可能出现的安全漏洞。
+- **维护最新代码的版本** - 评估代码质量，确保你的产品使用的是最新版本的代码。 
 - **评估代码** - 评估所有在使用的开源代码；审查代码安全性、授权许可、列出风险并予以解决。
-- 
 - **确保代码合法** - 创建并实现开源政策，建立自动化合规检查流程确保开源政策、法规、法律责任等符合开源组织的要求。
 
 ### 关键是，要让管理流程运作起来 ###
@@ -58,7 +53,7 @@ via: http://www.linux.com/news/software/applications/782953-how-to-achieve-bette
 
 作者：[Bill Ledingham][a]
 译者：[sailing](https://github.com/sailing)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
