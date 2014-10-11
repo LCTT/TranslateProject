@@ -44,4 +44,4 @@ via: http://itsfoss.com/install-latex-ubuntu-1404/
 [1]:http://www.latex-project.org/
 [2]:http://www.xm1math.net/texmaker/index.html
 [3]:http://www.xm1math.net/texmaker/download.html#linux
-[4]:http://itsfoss.com/remarkable-markdown-editor-linux/
+[4]:http://itsfoss.com/remarkable-markdown-editor-linux/ 
