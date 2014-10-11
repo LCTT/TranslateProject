@@ -1,3 +1,5 @@
+Transalting-----------geekpi
+
 Linux Calendar App California 0.2 Released
 ================================================================================
 **Following on from [last month’s update to Geary and Shotwell][1] the non-profit software outfit Yorba is back, this time with a new release of their [California][2] calendaring application.**
