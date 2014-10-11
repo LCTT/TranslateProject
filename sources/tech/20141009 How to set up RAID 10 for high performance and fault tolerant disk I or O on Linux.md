@@ -1,3 +1,4 @@
+﻿[translating by KayGuoWhu]
 How to set up RAID 10 for high performance and fault tolerant disk I/O on Linux
 ================================================================================
 A RAID 10 (aka RAID 1+0 or stripe of mirrors) array provides high performance and fault-tolerant disk I/O operations by combining features of RAID 0 (where read/write operations are performed in parallel across multiple drives) and RAID 1 (where data is written identically to two or more drives).
