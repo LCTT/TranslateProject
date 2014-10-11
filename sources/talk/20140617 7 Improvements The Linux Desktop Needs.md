@@ -1,3 +1,4 @@
+Translating by ZTinoZ
 7 Improvements The Linux Desktop Needs
 ======================================
 
