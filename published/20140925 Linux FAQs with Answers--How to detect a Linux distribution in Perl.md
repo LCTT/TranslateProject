@@ -1,8 +1,8 @@
-Linux有问必答-- 如何用Perl检测Linux的发行版本
+Linux有问必答：如何用Perl检测Linux的发行版本
 ================================================================================
 > **提问**:我需要写一个Perl程序，它会包含Linux发行版相关的代码。为此，Perl程序需要能够自动检测运行中的Linux的发行版（如Ubuntu、CentOS、Debian、Fedora等等），以及它是什么版本号。如何用Perl检测Linux的发行版本？
 
-如果要用Perl脚本检测Linux的发行版，你可以使用一个名为[Linux::Distribution][1]的Perl模块。该模块通过检查/etc/lsb-release以及其他特定的/etc下的发行版特定的目录来猜测底层Linux操作系统。它支持检测所有主要的Linux发行版，包括Fedora、CentOS、Arch Linux、Debian、Ubuntu、SUSE、Red Hat、Gentoo、Slackware、Knoppix和Mandrake。
+如果要用Perl脚本检测Linux的发行版，你可以使用一个名为[Linux::Distribution][1]的Perl模块。该模块通过检查/etc/lsb-release以及其他在/etc下的发行版特定的目录来猜测底层Linux操作系统。它支持检测所有主要的Linux发行版，包括Fedora、CentOS、Arch Linux、Debian、Ubuntu、SUSE、Red Hat、Gentoo、Slackware、Knoppix和Mandrake。
 
 要在Perl中使用这个模块，你首先需要安装它。
 
@@ -20,7 +20,7 @@ Linux有问必答-- 如何用Perl检测Linux的发行版本
 
     $ sudo yum -y install perl-CPAN 
 
-使用这条命令来构建并安装模块：
+然后，使用这条命令来构建并安装模块：
 
     $ sudo perl -MCPAN -e 'install Linux::Distribution' 
 
@@ -46,7 +46,7 @@ Linux::Distribution模块安装完成之后，你可以使用下面的代码片�
 via: http://ask.xmodulo.com/detect-linux-distribution-in-perl.html
 
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

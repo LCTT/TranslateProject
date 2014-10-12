@@ -1,27 +1,27 @@
-7 Improvements The Linux Desktop Needs
+7个Linux桌面需要改善之处
 ======================================
 
-In the last fifteen years, the Linux desktop has gone from a collection of marginally adequate solutions to an unparalleled source of innovation and choice. Many of its standard features are either unavailable in Windows, or else available only as a proprietary extension. As a result, using Linux is increasingly not only a matter of principle, but of preference as well.
+在过去的15年内，Linux桌面从一个还算凑合的边缘化解决方案集合发展到了一个空前的创新和选择源。它的标准特点中有许多是要么不适用于Windows系统，要么就只适合作为一个专有的扩展。因此，使用Linux愈发变得不仅是一个原则问题，也是一种偏好。
 
-Yet, despite this progress, gaps remain. Some are missing features, others missing features, and still others pie-in-the sky extras that could be easily implemented to extend the desktop metaphor without straining users' tolerance of change.
+然而，尽管Linux桌面不停在进步，但是仍然存在差距。一些正在丢失它们的特点，一些已经丢失了，还有一些如同天上掉的馅饼般的附加设备能轻易地实现在不考虑用户对于改变的容忍度的情况下来扩展桌面。
 
-For instance, here are 7 improvements that would benefit the Linux desktop:
+比如说，以下是7个有利于Linux桌面发展的改善建议：
 
-### 7. Easy Email Encryption
+### 7. 简单的Email加密技术
 
-These days, every email reader from Alpine to Thunderbird and Kmail include email encryption. However, documentation is often either non-existent or poor.
+如今，每个Email阅读器从Alpine到Thunderbird再到Kmail，都包括了Email加密技术。然而，文件编制通常是不存在或者非常劣质。
 
-But, even if you understand the theory, the practice is difficult. Controls are generally scattered throughout the configuration menus and tabs, requiring a thorough search for all the settings that you require or want. Should you fail to set up encryption properly, usually you receive no feedback about why.
+但是，即使你理论上看懂了，但是实践起来还是很困难的。控件通常分散在整个配置菜单和选项卡中，需要为所有你需要和想要的设置进行一次彻底的搜索。如果你未能进行适当的加密，你就收不到反馈。
 
-The closest to an easy process is [Enigmail][1], a Thunderbird extension that includes a setup wizard aimed at beginners. But you have to know about Enigmail to use it, and the menu it adds to the composition window buries the encryption option one level down and places it with other options guaranteed to mystify everyday users.
+最新的一个简易加密进程是 [Enigmail][1] ，一个包含面向初学者设置向导的Thunderbird扩展。但是你一定要知道怎么用Enigmail，而且菜单新增了合成窗口并把加密设置项添加了进去，如果把它弄到其它的设置里势必会使每个用户都难以理解。
 
-No matter what the desktop, the assumption is that, if you want encrypted email, you already understand it. Today, though, the constant media references to security and privacy have ensured that such an assumption no longer applies.
+无论桌面怎么样，假设如果你想接收加密过的Email，你就要先知道密码。可如今，不断有媒体涉及安全和隐私方面就已经确定了这样的假设不再适用。
 
-### 6. Thumbnails for Virtual Workspaces
+### 6. 虚拟工作空间缩略图
 
-Virtual workspaces offer more desktop space without requiring additional monitors. Yet, despite their usefulness, management of virtual workspaces hasn't changed in over a decade. On most desktops, you control them through a pager in which each workspace is represented by an unadorned rectangle that gives few indications of what might be on it except for its name or number -- or, in the case of Ubuntu's Unity, which workspace is currently active.
+虚拟工作空间提供了更多不需要额外监听的桌面空间。然而，尽管它们很实用，但是虚拟工作空间的管理并没有在过去十年发生改变。在大多数桌面产品中，你控制On most desktops, you control them through a pager in which each workspace is represented by an unadorned rectangle that gives few indications of what might be on it except for its name or number -- or, in the case of Ubuntu's Unity, which workspace is currently active.
 
-True, GNOME and Cinnamon do offer better views, but the usefulness of these views is limited by the fact that they require a change of screens. Nor is KDE's written list of contents, which is jarring in the primarily graphic-oriented desktop.
+确实，GNOME和Cinnamon能提供出不错的视图，但是它们的实用性受限于它们需要显示屏大小的事实和会与主要的图形化桌面发生冲突的KDE的内容书面列表。
 
 A less distracting solution might be mouseover thumbnails large enough for those with normal vision to see exactly what is on each workspace.
 
@@ -71,7 +71,7 @@ For years, Stardock Systems has been selling a Windows extension called [Fences]
 
 In other words, fences automate the sort of arrangements that users make on their desktop all the time. Yet aside from one or two minor functions they share with KDE's Folder Views, fences remain completely unknown on Linux desktops. Perhaps the reason is that designers are focused on mobile devices as the source of ideas, and fences are decidedly a feature of the traditional workstation desktop.
 
-### Personalized Lists
+### 个性化列表
 
 As I made this list, what struck me was how few of the improvements were general. Several of these improvement would appeal largely to specific audiences, and only one even implies the porting of a proprietary application. At least one is cosmetic rather than functional.
 
@@ -85,7 +85,7 @@ All of which raises the question: what other improvements do you think would ben
 
 via: http://www.datamation.com/open-source/7-improvements-the-linux-desktop-needs-1.html
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[ZTinoZ](https://github.com/ZTinoZ) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

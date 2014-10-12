@@ -1,3 +1,4 @@
+（翻译中 by runningwater）
 Camicri Cube: An Offline And Portable Package Management System
 ================================================================================
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/07/camicri-cube-206x205.jpg)
@@ -158,7 +159,7 @@ via: http://www.unixmen.com/camicri-cube-offline-portable-package-management-sys
 
 [SK][a](Senthilkumar, aka SK, is a Linux enthusiast, FOSS Supporter & Linux Consultant from Tamilnadu, India. A passionate and dynamic person, aims to deliver quality content to IT professionals and loves very much to write and explore new things about Linux, Open Source, Computers and Internet.)
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
