@@ -1,3 +1,5 @@
+Translating---------geekpi
+
 Linux Kernel 3.17 Is Out With Plenty of New Features
 ================================================================================
 Linus Torvalds has announced the latest stable release of the Linux kernel, version 3.17.
