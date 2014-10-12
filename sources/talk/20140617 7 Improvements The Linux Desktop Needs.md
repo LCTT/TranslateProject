@@ -19,11 +19,11 @@
 
 ### 6. 虚拟工作空间缩略图
 
-虚拟工作空间提供了更多不需要额外监听的桌面空间。然而，尽管它们很实用，但是虚拟工作空间的管理并没有在过去十年发生改变。在大多数桌面产品中，你控制On most desktops, you control them through a pager in which each workspace is represented by an unadorned rectangle that gives few indications of what might be on it except for its name or number -- or, in the case of Ubuntu's Unity, which workspace is currently active.
+虚拟工作空间提供了更多不需要额外监听的桌面空间。然而，尽管它们很实用，但是虚拟工作空间的管理并没有在过去十年发生改变。在大多数桌面上，你能通过每个工作空间上的pager程序（一个提供很少指示的，除了它的名字和数字的简单矩形框）来控制它们 -- 但是，在Ubuntu的统一实例中，工作空间目前来说还是很常用的。
 
-确实，GNOME和Cinnamon能提供出不错的视图，但是它们的实用性受限于它们需要显示屏大小的事实和会与主要的图形化桌面发生冲突的KDE的内容书面列表。
+确实，GNOME和Cinnamon能提供出不错的视图，但是它们的实用性受限于它们需要显示屏大小的事实和会与主要的图形化桌面发生冲突的KDE内容书面列表。
 
-A less distracting solution might be mouseover thumbnails large enough for those with normal vision to see exactly what is on each workspace.
+一个比较不错的解决方案应该是鼠标悬停在足够大的缩略图上来获取正常的视图，这样就精确地查看每个工作空间上的东西了。
 
 ### 5. A Workable Menu
 
