@@ -19,23 +19,23 @@
 
 ### 6. 虚拟工作空间缩略图
 
-虚拟工作空间提供了更多不需要额外监听的桌面空间。然而，尽管它们很实用，但是虚拟工作空间的管理并没有在过去十年发生改变。在大多数桌面上，你能通过每个工作空间上的pager程序（一个提供很少指示的，除了它的名字和数字的简单矩形框）来控制它们 -- 但是，在Ubuntu的统一实例中，工作空间目前来说还是很常用的。
+虚拟工作空间提供了更多不需要额外监听的桌面空间。然而，尽管它们很实用，但是虚拟工作空间的管理并没有在过去十年发生改变。在大多数桌面上，你能通过每个工作空间上的pager程序（一个提供很少指示除了它的名字和数字的简单矩形框）来控制它们 -- 但是，在Ubuntu的统一实例中，工作空间目前来说还是很常用的。
 
 确实，GNOME和Cinnamon能提供出不错的视图，但是它们的实用性受限于它们需要显示屏大小的事实和会与主要的图形化桌面发生冲突的KDE内容书面列表。
 
 一个比较不错的解决方案应该是鼠标悬停在足够大的缩略图上来获取正常的视图，这样就精确地查看每个工作空间上的东西了。
 
-### 5. A Workable Menu
+### 5. 一个可操作的菜单
 
-The modern desktop long ago outgrew the classic menu with its sub-menus cascading across the screen. Today, the average computer simply has too many applications to fit comfortably into such a format.
+现代桌面很久之前就已经舍弃搭配着子菜单的经典型菜单了。如今，一般的电脑都有太多的应用程序以至于不能适应这样的模式。
 
-The trouble is, neither of the major alternatives is as convenient as the classic menu. Confining the menu into a single window is less than ideal, because you either have to endure truncated sub-menus or else continually resize the window with the mouse.
+糟糕的是，没有什么主要的替代品能与经典型菜单一样方便。把菜单限制进一个单一的窗口，其效果是不理想的，因为你要么必须截掉子菜单要么就用鼠标不断地调整窗口。
 
-Yet the alternative of a full-screen menu is even worse. It means changing screens before you even begin to work, and relying on a search field that is only useful if you already know what applications are available -- in which case you are almost better off launching from the command line.
+但是全屏幕菜单的产品还要差，要在你工作之前改变屏幕It means changing screens before you even begin to work, and relying on a search field that is only useful if you already know what applications are available -- in which case you are almost better off launching from the command line.
 
-Frankly, I don't know what the solution might be. Maybe spinner racks, like those in OS X? All I can say for certain is that all alternatives for a modern menu make a carefully constructed set of icons on the desktop seem a more reasonable alternative.
+坦白地说，我不知道拿什么来解决这个问题，OS X下的spinner racks吗？All I can say for certain is that all alternatives for a modern menu make a carefully constructed set of icons on the desktop seem a more reasonable alternative.
 
-### 4. A Professional, Affordable Video Editor
+### 4. 一个专业的、实惠的视频编辑器
 
 Over the years, Linux has slowly filled the gaps in productivity software. However, one category in which it is still lacking is in reasonably priced software for editing videos.
 
@@ -45,7 +45,7 @@ At the opposite end of the spectrum are apps like Pitivi or Blender, whose funct
 
 Although I have heard of indie directors using native Linux video editors, the reason I have heard of their efforts is usually because of their complaints. Others prefer to minimize the struggle and edit on other operating systems instead.
 
-### 3. A Document Processor
+### 3. 一个文档处理器
 	
 At one extreme are users whose need for word processing is satisfied by Google Docs. At the other extreme are layout experts for whom Scribus is the only feasible app.
 
@@ -65,7 +65,7 @@ Browser extensions have taught me how useful color coded tabs can be for workspa
 
 The same system could be just as useful on the desktop. Better yet, the color coding might be preserved between sessions, allowing users to open all the apps needed for a specific task at the same time. So far, I know of no desktop with such a feature.
 
-### 1. Icon Fences
+### 1. 图标栏
 
 For years, Stardock Systems has been selling a Windows extension called [Fences][4], which lets icons be grouped. You can name each group and move the icons in it together. In addition, you can assign which fence different types of files are automatically added to, and hide and arrange fences as needed.
 
