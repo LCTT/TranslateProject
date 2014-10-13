@@ -37,11 +37,11 @@
 
 ### 4. 一个专业的、实惠的视频编辑器
 
-Over the years, Linux has slowly filled the gaps in productivity software. However, one category in which it is still lacking is in reasonably priced software for editing videos.
+多年来，Linux已经慢慢地填充了软件生产力上的空白。然而即便如此，它仍然缺少价格合理的视频编辑软件。
 
-The problem is not that such free software is non-existent. After all, [Maya][2] is one of the industry standards for animation. The problem is that the software costs several thousand dollars.
+问题不在于这些自由软件不存在，毕竟， [Maya][2] 是动画产业的标准之一。问题是在于软件的造价成本达数千美金。
 
-At the opposite end of the spectrum are apps like Pitivi or Blender, whose functionality -- despite brave efforts by their developers -- remain basic. Progress happens, but far more slowly than anyone hopes for.
+另一边，是那些像Pitivi或者是Blender那样的免费软件, 它们的功能性 -- 尽管它们的开发者足够的努力 -- 一些基本功能仍然被保持着。虽然取得了进步，但还是和用户们所期望的相去甚远。
 
 Although I have heard of indie directors using native Linux video editors, the reason I have heard of their efforts is usually because of their complaints. Others prefer to minimize the struggle and edit on other operating systems instead.
 
