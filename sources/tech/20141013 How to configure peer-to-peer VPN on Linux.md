@@ -1,3 +1,5 @@
+[felixonmars translating...]
+
 How to configure peer-to-peer VPN on Linux
 ================================================================================
 A traditional VPN (e.g., OpenVPN, PPTP) is composed of a VPN server and one or more VPN clients connected to the server. When any two VPN clients talk to each other, the VPN server needs to relay VPN traffic between them. The problem of such a hub-and-spoke type of VPN topology is that the VPN server can easily become a performance bottleneck as the number of connected clients increases. The centralized VPN server is also a single point of failure in a sense that if the VPN server goes down, the entire VPN is no longer accessible to any VPN client.
