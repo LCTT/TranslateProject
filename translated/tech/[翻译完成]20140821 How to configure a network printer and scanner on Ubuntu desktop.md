@@ -234,7 +234,7 @@
 via: http://xmodulo.com/2014/08/configure-network-printer-scanner-ubuntu-desktop.html
 
 作者：[Gabriel Cánepa][a]
-译者：[disylee](https://github.com/译者ID)
+译者：[disylee](https://github.com/disylee)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
