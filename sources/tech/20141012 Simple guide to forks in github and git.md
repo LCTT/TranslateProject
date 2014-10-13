@@ -1,3 +1,5 @@
+su-kaiyao translating
+
 Simple guide to forks in GitHub and Git
 ==========================================
 
