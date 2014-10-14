@@ -1,95 +1,93 @@
-  Vic020
-
-Want To Start An Open Source Project? Here's How
+白话做好的开源项目
 ================================================================================
-> Our step-by-step guide.
+> 循序渐进的侃
 
-**You have a problem. You've weighed the** [pros and cons of open sourcing your code][1], and you know [you need to start an open-source project][2] for your software. But you have no idea how to do this.
+**你有这个问题**：你已经权衡了[开源代码的优劣势][1]，你也已经知道[你的软件需要成为一个开源项目][2]，但是，你不知道怎么做好的开源项目。
 
-Oh, sure. You may know how to set up a GitHub account and get started, but such [mechanics][3] are actually the easy part of open source. The hard part is making anyone care enough to use or contribute to your project.
+当然，你也许已经知道[如何创建Github帐号并开始][3]，但是这些事实上是做开源比较简单的部分。而真真正正难的部分是如何让足够多的人，关注你的项目并给你的项目做贡献。
 
 ![](http://a4.files.readwrite.com/image/upload/c_fit,q_80,w_630/MTE5NDg0MDYxMTg2Mjk1MzEx.jpg)
 
-Here are some principles to guide you in building and releasing code that others will care about.
+接下来的原则是会指导你构建和发布其他人愿意关注的代码。
 
-### First, The Basics ###
+### 基本原则 ###
 
-You may choose to open source code for a variety of reasons. Perhaps you're looking to engage a community to help write your code. Perhaps, [like Known][4], you see "open source distribution ... as a multiplier for the small teams of developers writing the code in-house." 
+选择开源可能有许多原因。也许你希望吸引一个社区来帮助编写你的代码。也许，[总所周知][4]，你明白“开源--一个开发小团队内部编写代码的倍增器。”
 
-Or maybe you just think it's the right thing to do, [as the UK government believes][5]. 
+或者你只是认为这是必须做的事，[如同英国政府一样][5]。
 
-Regardless of the reason, this isn't about you. Not really. For open source to succeed, much of the planning has to be about those who will use the software. As [I wrote in 2005][6], if you "want lots of people to contribute (bug fixes, extensions, etc.," then you need to "write good documentation, use an accessible programming language ... [and] have a modular framework." 
+无论何种原因，为了开源能够成功，是必须要做很多的计划给将来使用这个软件的人。如同[我在2005写道][6]，如果你“需要大量的人做贡献（bug修复，扩展等等）”，所以你需要“写一个好的文档，使用易于接受的编程语言，和使用模型架构”。
 
-Oh, and you also need to be writing software that people care about. 
+对了，你也需要写人们在乎的软件。
 
-Think about the technology you depend on every day: operating systems, web application frameworks, databases, and so on. These are far more likely to generate outside interest and contributions than a niche technology for a particular industry like aviation. The broader the application of the technology, the more likely you are to find willing contributors and/or users.
+每天思考你依靠的技术：操作系统，web应用框架，数据库，等等。远离像航天这样，特殊行业的小生态技术，让开源拥有更多的可能性产生外部的（人的）兴趣和贡献。更广泛的应用技术，找到更多的贡献者和用户。
 
-In summary, any successful open-source project needs these things:
+总的来说，任何成功的开源项目有以下共同点：
 
-1. Optimal market timing (solving a real need in the market);
+1.最佳的时间时机（解决市场实际需求）
 
-2. A strong, inclusive team of developers and non-developers; 
+2.一个健壮，包括开发者和非开发者的团队
 
-3. An architecture of participation (more on that below);
+3.一个易于参与的结构（更多详见下文）
 
-4. Modular code to make it easier for new contributors to find a discrete chunk of the program to work on, rather than forcing them to scale an Everest of monolithic code;
+4.模块化编码，使新贡献者更容易找到一个项目损坏的部分去贡献，比强迫他们理解巨大的代码的每一部分要好
 
-5. Code that is broadly applicable (or a way to reach the narrower population more niche-y code appeals to);
+5.代码可以广泛应用（或者达到一个狭窄的流行都比一个“自生自灭的”小生态更吸引人）
 
-6. Great initial source code (if you put garbage into GitHub, you'll get garbage out);
+6.很好初始源码（如果你放垃圾在Github，你也只会得到垃圾回报）
 
-7. A permissive license—I [personally prefer Apache-style licensing][7] as it introduces the lowest barriers to developer adoption, but many successful projects (like Linux and MySQL) have used GPL licensing to great effect.
+7.一个自由的许可证-我[个人更爱Apache型的许可证][7]，因为它提出给开发者最低的障碍来采用，当然许多成功的项目（如Linux和MySQL）使用GPL许可证也有很棒的效果。
 
-Of the items above, it's sometimes hardest for projects to actively invite participation. That's usually because this is less about code and more about people.
+上述几项，是一个项目成功邀请参与最难的部分。这是因为他们不是关于代码而是关于人。
 
-### "Open" Is More Than A License ###
+### 开源不单是一个许可证 ###
 
-One of the best things I've read in years on this subject comes from Vitorio Miliano ([@vitor_io][8]), a user experience and interaction designer from Austin, Texas. [Miliano points out][9] that anyone who doesn't already work on your project is a "layperson," in the sense that no matter their level of technical competence, they know little about your code.
+今年，最棒的一件事是我读到是来自 Vitorio Miliano ([@vitor_io][8])的文章，他是用户体验交互设计师，来自德州的奥斯丁。[Miliano][9]指出，那些不在你的项目上工作的人才是“外行”，从本质上说无论他们技术能力的级别，他们仅仅懂一点代码（也没关系）。
 
-So your job, he argues, is to make it easy to get involved in contributing to your code base. While he focuses on how to involve non-programmers in open-source projects, he identifies a few things project leads need to do to effectively involve anyone—technical or non-technical—in open source:
+所以你的工作，他认为，是使加入贡献你的代码变得简单。当阐述如何涉及非程序员到开源项目中，他指出项目的一些事项，项目领导应需要有效地得加入一些任何技术或不懂技术的人到开源项目。
 
-> 1. a way to understand the value of your project 
+> 1. 一种方法去了解你的项目价值
 > 
-> 2. a way to understand the value they could provide to the project
+> 2. 一种方法去了解他们可以为项目提供的价值
 > 
-> 3. a way to understand the value they could receive from contributing to the project
+> 3. 一种方法去了解他们可以从贡献代码获得的价值
 > 
-> 4. a way to understand the contribution process, end-to-end
+> 4. 一种方法去了解贡献流程，端到端
 > 
-> 5. a contribution mechanism suitable for their existing workflows
+> 5. 贡献机制适用于现有的工作流
 
-Too often, project leads want to focus on the fifth step without providing an easy path to understand items 1 through 4. "How" to contribute doesn't matter very much if would-be contributors don't appreciate the "why."
+经常，项目领导者想要集中于上述的第五步，却不提供理解1到4的路径。如果潜在的贡献者不欣赏“为什么”，“如何”共享就变得不重要了。
 
-On that note, it's critical, Miliano writes, to establish the value of the project with a "jargon-free description" so as to "demonstrate your accessibility and inclusiveness by writing your descriptions to be useful to everyone at all times." This has the added benefit, he avers, of signaling that documentation and other code-related content will be similarly clear.
+注意，至关重要的，Miliano写道，建立拥有一个通俗易懂的简介的项目很有价值，如同任何时候通过简介给每一个人演示可访问性和包容性。他断言道，这增加了额外的好处，文档和其他的版本介绍的内容变得通俗易懂。
 
-On the second item, programmers and non-programmers alike need to be able to see exactly what you'd like from them, and then they need to be recognized for their contributions. Sometimes, as MongoDB solution architect [Henrik Ingo told me][10], "A smart person [may] come[] by with great code, but project members fail to understand it." That's not a terrible problem if the "in" group acknowledges the contribution and reaches out to understand. 
+关于第二点，程序员或非程序员同样地需要能够明白到底你需要什么，这样他们就可以认识到他们的贡献（方向）。有时就像MongoDB解决方案架构师[Henrik Ingo告诉我][10]那样，"一个聪明的人可以贡献很棒的代码，但是项目成员不能理解它（代码）"，如果在组织内承认这个贡献并且研究后理解，那么这就不是一个糟糕的问题。
 
-But that doesn't always happen.
+但是不会经常发生。
 
-### Do You Really Want To Lead An Open Source Project? ###
+### 你真的想领导一个开源项目吗？ ###
 
-Too many open-source project leads advertise inclusiveness but then are anything but inclusive. If you don't want people contributing code, don't pretend to be open source. 
+许多开源项目的领导提倡包容性，但是他们拥有任何事除了包容。如果你不想要人们做贡献，不要假装开源。
 
-Yes, this is sometimes a function of newbie fatigue. As [one developer wrote][11] recently on HackerNews, 
+是的，有时这是老生常谈的话题。就像HackerNews最近的报道[一个开发者开发][11]。
 
-> Small projects get lots of, well, basically useless people who need tons of handholding to get anything accomplished. I see the upside for them, but I don't see the upside for me: if I where[sic] to help them out, I'd spend my limited available time on handholding people who apparently managed to get ms degrees in cs without being able to code instead of doing what I enjoy. So I ignore them.
+> 小项目可以得到很多，基本不需要很多人合作来完成。我看到了他们的进步，但是我没有看到我自己的进步:如果我帮助了他们，显然，如果我花费了有限的时间在与那些计算机科学的硕士管理合作上，而没有参与编码，这不是我想要的。所以我忽略了他们。
 
-While that may be a good way to maintain sanity, the attitude doesn't bode well for a project if it's widely shared. 
+这是一个保持理智的的好方法，但这个态度并不能预示着这个项目会被广阔的分享。
 
-And if you really couldn't care less about non-programmers contributing design input, or documentation, or whatever, then make that clear. Again, if this is the case, you really shouldn't be an open-source project. 
+如果你确实很少关心非程序员设计的贡献、文档，或者无论其他什么，那么请首先了解那些。再次强调，如果这是实情，你的项目就不能成为一个开源项目。
 
-Of course, the perception of exclusion is not always reality. As ActiveState vice president Bernard Golden told me over IM, "many would-be developers are intimidated by the perception of an existing 'in-crowd' dev group, even though it may not really be true." 
+当然，排除感觉不总是可靠的。 就像ActiveState的副总裁Bernard Golden告诉过我，“一些将会成为开发人员将会对现有的“小集团”开发团体这种感觉感到恐惧，虽然这不一定正确。”
 
-Still, the more open source projects invest in making it easy to understand why developers should contribute, and make it inviting to do so, the how largely takes care of itself.
+现在，若使了解开发人员为什么要贡献并邀请做开发，意味着更多的开源项目投资，更长久地生存。
 
-Lead image courtesy of [Shutterstock][12]
+图片由[Shutterstock][12]提供
 
 --------------------------------------------------------------------------------
 
 via: http://readwrite.com/2014/08/20/open-source-project-how-to
 
 作者：[Matt Asay][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Vic___/VicYu](http://www.vicyu.net)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
