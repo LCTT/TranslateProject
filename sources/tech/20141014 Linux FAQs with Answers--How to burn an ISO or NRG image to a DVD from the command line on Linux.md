@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Linux FAQs with Answers--How to burn an ISO or NRG image to a DVD from the command line on Linux
 ================================================================================
 > **Question**: I need to burn an image file (.iso or .nrg) to a DVD using a DVD writer on my Linux box. Is there a quick and easy way, preferably using a command-line utility, to burn an .iso or .nrg image to a DVD? 
