@@ -27,29 +27,29 @@
 
 ### 5. 一个可操作的菜单
 
-现代桌面很久之前就已经舍弃搭配着子菜单的经典型菜单了。如今，一般的电脑都有太多的应用程序以至于不能适应这样的模式。
+现代型桌面很久之前就已经舍弃搭配着子菜单的经典型菜单了。如今，一般的电脑都有太多的应用程序以至于不能适应这样的模式。
 
 糟糕的是，没有什么主要的替代品能与经典型菜单一样方便。把菜单限制进一个单一的窗口，其效果是不理想的，因为你要么必须截掉子菜单要么就用鼠标不断地调整窗口。
 
-但是全屏幕菜单的产品还要差，要在你工作之前改变屏幕It means changing screens before you even begin to work, and relying on a search field that is only useful if you already know what applications are available -- in which case you are almost better off launching from the command line.
+但是全屏幕菜单的产品还要差，意思是你甚至要在开始工作之前就调整屏幕，并且依赖于仅仅可用的搜索框，当然如果你已经知道什么应用程序可用 -- 这种情况下你还不如直接用命令行。
 
-坦白地说，我不知道拿什么来解决这个问题，OS X下的spinner racks吗？All I can say for certain is that all alternatives for a modern menu make a carefully constructed set of icons on the desktop seem a more reasonable alternative.
+坦白地说，我不知道拿什么来解决这个问题，OS X下的spinner racks吗？我可以肯定地说，所有现代型菜单产品在桌面上呈现出一个个精心构造的图标似乎更是一个合理的选择。
 
 ### 4. 一个专业的、实惠的视频编辑器
 
 多年来，Linux已经慢慢地填充了软件生产力上的空白。然而即便如此，它仍然缺少价格合理的视频编辑软件。
 
-问题不在于这些自由软件不存在，毕竟， [Maya][2] 是动画产业的标准之一。问题是在于软件的造价成本达数千美金。
+问题不在于自由软件不存在。毕竟， [Maya][2] 是动画产业的标准之一，问题是在于这些软件的售价达数千美金。
 
 另一边，是那些像Pitivi或者是Blender那样的免费软件, 它们的功能性 -- 尽管它们的开发者足够的努力 -- 一些基本功能仍然被保持着。虽然取得了进步，但还是和用户们所期望的相去甚远。
 
-Although I have heard of indie directors using native Linux video editors, the reason I have heard of their efforts is usually because of their complaints. Others prefer to minimize the struggle and edit on other operating systems instead.
+尽管我听说独立的部门使用的是原生态Linux视频编辑器，原因通常是因为他们抱怨其它编辑器不好，但其余的人更愿意减少麻烦从而在其它操作系统上对视频进行编辑。
 
 ### 3. 一个文档处理器
 	
-At one extreme are users whose need for word processing is satisfied by Google Docs. At the other extreme are layout experts for whom Scribus is the only feasible app.
+有一个极端是，那些需要进行文字处理的用户是由Google Docs负责，而另一个极端是对于那些布局设计的专家来说，Scribus是唯一比较可信的应用。
 
-In-between are those like publishers and technical writers who produce long, text-oriented documents. This category of users is served by [Adobe FrameMaker][3] on Windows, and to some extent by LibreOffice Writer on Linux.
+这两种极端之间，比如那些生产长期的、面向文本的文件的出版商和作家。这类用户有些事由基于Windows的 [Adobe FrameMaker][3] 来服务, 有些则是基于Linux的LibreOffice Writer。
 
 Unfortunately, these users are apparently not a priority in LibreOffice, Calligra Words, AbiWord, or any other office suite. Features that would provide for these users include:
 
@@ -65,13 +65,13 @@ Browser extensions have taught me how useful color coded tabs can be for workspa
 
 The same system could be just as useful on the desktop. Better yet, the color coding might be preserved between sessions, allowing users to open all the apps needed for a specific task at the same time. So far, I know of no desktop with such a feature.
 
-### 1. 图标栏
+### 2. 图标栏
 
 For years, Stardock Systems has been selling a Windows extension called [Fences][4], which lets icons be grouped. You can name each group and move the icons in it together. In addition, you can assign which fence different types of files are automatically added to, and hide and arrange fences as needed.
 
 In other words, fences automate the sort of arrangements that users make on their desktop all the time. Yet aside from one or two minor functions they share with KDE's Folder Views, fences remain completely unknown on Linux desktops. Perhaps the reason is that designers are focused on mobile devices as the source of ideas, and fences are decidedly a feature of the traditional workstation desktop.
 
-### 个性化列表
+### 1. 个性化列表
 
 As I made this list, what struck me was how few of the improvements were general. Several of these improvement would appeal largely to specific audiences, and only one even implies the porting of a proprietary application. At least one is cosmetic rather than functional.
 
