@@ -1,4 +1,4 @@
-Linux FAQ -- 如何修复“X11 forwarding request failed on channel 0”错误
+Linux有问必答：如何修复“X11 forwarding request failed on channel 0”错误
 ================================================================================
 > **问题**: 当我尝试使用SSH的X11转发选项连接到远程主机时, 我在登录时遇到了一个 "X11 forwarding request failed on channel 0" （X11 转发请求在通道0上失败）的错误。 我为什么会遇到这个错误，并且该如何修复它
 
@@ -26,9 +26,9 @@ X11客户端不能正确处理X11转发，这会导致报告中的错误。要�
     $ sudo systemctl restart ssh.service (Debian 7, CentOS/RHEL 7, Fedora)
     $ sudo service sshd restart (CentOS/RHEL 6) 
 
-### 方案而 ###
+### 方案二 ###
 
-如果远程主机的SSH服务禁止了IPv6,那么X11转发失败的错误也有可能发生。要解决这个情况下的错误。打开/etc/ssh/sshd配置文件，打开"AddressFamily all" （如果有的话）的注释。接着加入下面这行。这会强制SSH服务只使用IPv4而不是IPv6。
+如果远程主机的SSH服务禁止了IPv6，那么X11转发失败的错误也有可能发生。要解决这个情况下的错误。打开/etc/ssh/sshd配置文件，取消对"AddressFamily all" （如果有这条的话）的注释。接着加入下面这行。这会强制SSH服务只使用IPv4而不是IPv6。（LCTT 译注：此处恐有误，AddressFamily 没有 all 这个参数，而 any 代表同时支持 IPv6和 IPv4，以此处的场景而言，应该是关闭IPv6支持，只支持 IPv4，所以此处应该是“注释掉 AddressFamily any”才对。）
 
     $ sudo vi /etc/ssh/sshd_config 
 
@@ -43,7 +43,7 @@ X11客户端不能正确处理X11转发，这会导致报告中的错误。要�
 via: http://ask.xmodulo.com/fix-broken-x11-forwarding-ssh.html
 
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
