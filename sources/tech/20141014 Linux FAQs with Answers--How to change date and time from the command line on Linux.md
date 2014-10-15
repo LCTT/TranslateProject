@@ -1,3 +1,5 @@
+wangjiezhe translating...
+
 Linux FAQs with Answers--How to change date and time from the command line on Linux
 ================================================================================
 > **Question**: In Linux, how can I change date and time from the command line? 
@@ -75,7 +77,7 @@ As opposed to one-time clock sync using ntpdate, you can also set up NTP daemon 
 via: http://ask.xmodulo.com/change-date-time-command-line-linux.html
 
 译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wangjiezhe](https://github.com/wangjiezhe)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
