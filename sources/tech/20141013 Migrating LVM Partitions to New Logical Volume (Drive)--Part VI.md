@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Migrating LVM Partitions to New Logical Volume (Drive) – Part VI
 ================================================================================
 This is the 6th part of our ongoing Logical Volume Management series, in this article we will show you how to migrate existing logical volumes to other new drive without any downtime. Before moving further, I would like to explain you about LVM Migration and its features.
