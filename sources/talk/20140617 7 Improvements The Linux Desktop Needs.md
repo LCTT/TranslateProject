@@ -51,7 +51,7 @@
 
 这两种极端之间还有一层，是那些比如那些生产长期的、面向文本的文件的出版商和作家。这类用户有些是由基于Windows的 [Adobe FrameMaker][3] 来服务, 有些则由基于Linux的LibreOffice Writer来服务。
 
-不幸的是，these users are apparently not a priority in LibreOffice, Calligra Words, AbiWord, or any other office suite. Features that would provide for these users include:
+不幸的是，这些用户显然不会优先考虑LibreOffice，Calligra Words， AbiWord或者是任何其它的办公套件。应该提供给用户的办公套件的特色功能包括：
 
 - separate bibliographic databases for each file
 - tables that are treated like styles in the same way that paragraphs and characters are
