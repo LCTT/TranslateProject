@@ -32,7 +32,7 @@ Linux有问必答——如何在Linux命令行中刻录ISO或NRG镜像到DVD
 
 ![](https://farm4.staticflickr.com/3945/15323823510_c933d7710f_z.jpg)
 
-### 刻录.ISO镜像文件到DVD ###
+### 刻录.ISO镜像文件到DVD ### 
 
 为了刻录.iso镜像文件到DVD，我们将使用**growisofs**这个工具：
 
