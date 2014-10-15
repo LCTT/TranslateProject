@@ -1,4 +1,4 @@
-Ubuntu 14.04历史文件清理
+如何清理 Ubuntu 14.04 的最近打开文件历史列表
 ================================================================================
 这个简明教程对Ubuntu 14.04历史文件清理进行了说明，它用于初学者。
 
@@ -21,6 +21,6 @@ Ubuntu 14.04历史文件清理
 via: http://www.ubuntugeek.com/how-to-delete-recently-opened-files-history-in-ubuntu-14-04.html
 
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
