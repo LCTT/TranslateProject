@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Manage Multiple Logical Volume Management Disks using Striping I/O
 ================================================================================
 In this article, we are going to see how the logical volumes writes the data to disk by striping I/O. Logical Volume management has one of the cool feature which can write data over multiple disk by striping the I/O.
