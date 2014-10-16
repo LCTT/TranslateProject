@@ -1,11 +1,12 @@
-使用Vmstat和Iostat命令进行Linux性能监控
+使用vmstat和iostat命令进行Linux性能监控
 ================================================================
-这是我们正在进行的**Linux**命令和性能监控系列的一部分。**Vmstat**和**Iostat**两个命令都适用于所有主要的类**unix**系统（**Linux/unix/FreeBSD/Solaris**）。
-如果**vmstat**和**iostat**命令在你的系统中不可用，请安装**sysstat**软件包。**vmstat**，**sar**和**iostat**命令都包含在**sysstat**（系统监控工具）软件包中。iostat命令生成**CPU**和所有设备的统计信息。你可以从连接[sysstat][1]中下载源代码包编译安装sysstat，但是我们建议通过**YUM**命令进行安装。
+这是我们正在进行的**Linux**命令和性能监控系列的一部分。**vmstat**和**iostat**两个命令都适用于所有主要的类**unix**系统（**Linux/unix/FreeBSD/Solaris**）。
+
+如果**vmstat**和**iostat**命令在你的系统中不可用，请安装**sysstat**软件包。**vmstat**，**sar**和**iostat**命令都包含在**sysstat**（系统监控工具）软件包中。iostat命令生成**CPU**和所有设备的统计信息。你可以从[这个连接][1]中下载源代码包编译安装sysstat，但是我们建议通过**YUM**命令进行安装。
 
 ![使用Vmstat和Iostat命令进行Linux性能监控](http://www.tecmint.com/wp-content/uploads/2012/09/Linux-VmStat-Iostat-Commands.png)
 
-使用Vmstat和Iostat命令进行Linux性能监控
+*使用Vmstat和Iostat命令进行Linux性能监控*
 
 ###在Linux系统中安装sysstat###
 
@@ -18,7 +19,7 @@
 
 ####1. 列出活动和非活动的内存####
 
-如下范例中输出6列。**vmstat**的man页面中解析的每一列的意义。最重要的是内存中的**free**属性和交换分区中是**si**和**so**属性。
+如下范例中输出6列。**vmstat**的man页面中解析的每一列的意义。最重要的是内存中的**free**属性和交换分区中的**si**和**so**属性。
 
 	[root@tecmint ~]# vmstat -a
 
@@ -33,6 +34,7 @@
 **注意**：如果你不带参数的执行**vmstat**命令，它会输出自系统启动以来的总结报告。
 
 ####2. 每X秒执行vmstat，共执行N次####
+
 下面命令将会每2秒中执行一次**vmstat**，执行6次后自动停止执行。
 
     [root@tecmint ~]# vmstat 2 6
@@ -64,7 +66,6 @@
 ####4. 统计各种计数器####
 
 **vmstat**命令的**-s**参数，将输出各种事件计数器和内存的统计信息。
-
 
     [tecmint@tecmint ~]$ vmstat -s
     
@@ -237,7 +238,7 @@ via: http://www.tecmint.com/linux-performance-monitoring-with-vmstat-and-iostat-
 
 作者：[Ravi Saive][a]
 译者：[cvsher](https://github.com/cvsher)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
