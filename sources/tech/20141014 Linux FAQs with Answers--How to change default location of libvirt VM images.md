@@ -1,3 +1,5 @@
+Translating----geekpi
+
 Linux FAQs with Answers--How to change default location of libvirt VM images
 ================================================================================
 > **Question**: I am using libvirt and virt-manager to create VMs on my Linux system. I noticed that the VM images are stored in /var/lib/libvirt/images directory. Is there a way to change the default location of VM image directory to something else? 
