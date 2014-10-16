@@ -53,9 +53,9 @@
 
 不幸的是，这些用户显然不会优先考虑LibreOffice，Calligra Words， AbiWord或者是任何其它的办公套件。应该提供给用户的办公套件的特色功能包括：
 
-- separate bibliographic databases for each file
-- tables that are treated like styles in the same way that paragraphs and characters are
-- page styles with persistent content other than headers or footers that would appear each time the style is used
+- 为每个文件建立书目数据库。
+- 表格在风格上表格和段落与字符保持一致。
+- 页面风格page styles with persistent content other than headers or footers that would appear each time the style is used
 - storable formats for cross-references, so that the structure doesn't need to be recreated manually each time that it is needed
 
 Whether LibreOffice or another application provides these features is irrelevant comparing to whether they are available. Without them, the Linux desktop is an imperfect place for a large class of potential users.
