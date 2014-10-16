@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How to monitor and troubleshoot a Linux server using sysdig
 ================================================================================
 What is the first thing that comes to mind when you need to track system calls made and received by a process? You'll probably think of strace, and you are right. What tool would you use to monitor raw network traffic from the command line? If you thought about tcpdump, you made an excellent choice again. And if you ever run into the need to having to keep track of open files (in the Unix sense of the word: everything is a file), chances are you'll use lsof.
