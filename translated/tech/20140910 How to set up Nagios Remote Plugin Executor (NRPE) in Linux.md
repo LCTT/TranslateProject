@@ -15,7 +15,7 @@
 
 你需要在你想要使用 NRPE 监控的每一台远程主机上安装 NRPE 服务。每一台远程主机上的 NRPE 服务守护进程将会与一台 Nagios 监控服务器进行通信。
 
-取决于所在的平台， NRPE 服务所需要的软件包可以很容易地用 apt-get 或者 yum 来安装。对于 CentOS 来说，由于 NRPE 并不在 CentOS 的仓库中，我们需要[添加 Repoforge 仓库][3]。
+NRPE 服务所需要的软件包可以很容易地用 apt-get 或者 yum 来安装，取决于所在的平台。对于 CentOS 来说，由于 NRPE 并不在 CentOS 的仓库中，我们需要[添加 Repoforge 仓库][3]。
 
 **对于 Debian、Ubuntu 或者 Linux Mint：**
 
@@ -88,7 +88,7 @@ NRPE 守护进程的状态信息可以在系统日志中找到。对于基于 De
 
 #### 第一步：安装 NRPE 插件 ####
 
-当 Nagios 服务器运行在基于 Debian 的系统（Debian、Ubuntu 或者 Linux Mint）上时，需要的软件宝可以通过 apt-get 安装。
+当 Nagios 服务器运行在基于 Debian 的系统（Debian、Ubuntu 或者 Linux Mint）上时，需要的软件包可以通过 apt-get 安装。
 
     # apt-get install nagios-nrpe-plugin
 
@@ -175,7 +175,7 @@ NRPE 守护进程的状态信息可以在系统日志中找到。对于基于 De
 
 ### 为 NRPE 配置自定义命令 ###
 
-#### 远程服务器上的配置 ####
+#### 远程服务器上安装 ####
 
 下面列出了一些可以用于 NRPE 的自定义命令。这些命令在远程服务器的 /etc/nagios/nrpe.cfg 文件中定义。
 
@@ -193,9 +193,9 @@ NRPE 守护进程的状态信息可以在系统日志中找到。对于基于 De
     ## 当 process_ABC 的实例数量跌到 1 以下时严重警告 ##
     command[check_process_XYZ]=/usr/lib/nagios/plugins/check_procs -w 1: -c 1: -C process_XYZ
 
-#### Nagios 监控服务器上的配置 ####
+#### Nagios 监控服务器上安装 ####
 
-我们通过修改 Nagios 监控服务器里的服务定义来应用上面定义的自定义命令。服务定义可以写在所有服务被定义的地方（比如 /etc/nagios/objects/nrpe.cfg 或 /etc/nagios3/conf.d/nrpe.cfg）
+我们通过如下命令来修改 Nagios 监控服务器里的服务定义来应用上面定义的自定义命令。服务定义可以写在所有服务被定义的地方（比如 /etc/nagios/objects/nrpe.cfg 或 /etc/nagios3/conf.d/nrpe.cfg）
 
     ## 示例 1：检查进程 XYZ ##
     define service {
@@ -215,7 +215,7 @@ NRPE 守护进程的状态信息可以在系统日志中找到。对于基于 De
             use                             generic-service
     }
 
-总而言之，NRPE 是 Nagios 的一个强大的扩展，它提供了高度可定制的远程服务器监控方案。使用 NRPE，我们可以监控系统的负载、运行的进程、已登录的用户、磁盘状态，以及其它的指标。
+总而言之，NRPE 是 Nagios 的一个强大的扩展，它提供了高度可定制的远程服务器监控方案。使用 NRPE，我们可以监控系统的负载、运行的进程、已登录的用户、磁盘状态，以及其它参数。
 
 希望这些可以帮到你。
 
@@ -225,7 +225,7 @@ via: http://xmodulo.com/2014/03/nagios-remote-plugin-executor-nrpe-linux.html
 
 作者：[Sarmed Rahman][a]
 译者：[felixonmars](https://github.com/felixonmars)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
