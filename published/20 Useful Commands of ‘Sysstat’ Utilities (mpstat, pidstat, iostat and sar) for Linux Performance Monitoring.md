@@ -1,13 +1,9 @@
-‘Sysstat’工具包中20个实用的Linux性能监控工具（包括mpstat, pidstat, iostat 和sar）
+Sysstat性能监控工具包中20个实用命令
 ===============================================================
-在我们上一篇文章中，我们已经学习了如何去安装和更新**sysstat**，并且了解了包中的一些实用工具。
-
-注：此文一并附上，在同一个原文中更新
-- [Sysstat – Performance and Usage Activity Monitoring Tool For Linux][1]
+在我们[上一篇文章][1]中，我们已经学习了如何去安装和更新**sysstat**，并且了解了包中的一些实用工具。
 
 ![20 Sysstat Commands for Linux Monitoring](http://www.tecmint.com/wp-content/uploads/2014/09/sysstat-commands.png)
 
-Linux系统监控的20个Sysstat命令
 今天，我们将会通过一些有趣的实例来学习**mpstat**, **pidstat**, **iostat**和**sar**等工具，这些工具可以帮组我们找出系统中的问题。这些工具都包含了不同的选项，这意味着你可以根据不同的工作使用不同的选项，或者根据你的需求来自定义脚本。我们都知道，系统管理员都会有点懒，他们经常去寻找一些更简单的方法来完成他们的工作。
 
 ### mpstat - 处理器统计信息 ###
@@ -21,7 +17,7 @@ Linux系统监控的20个Sysstat命令
     12:23:57  IST  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
     12:23:57  IST  all   37.35    0.01    4.72    2.96    0.00    0.07    0.00    0.00    0.00   54.88
 
-2.使用‘**-p**’(处理器编码)和‘ALL’参数将会从0开始独立的输出每个CPU的统计信息，0表示第一个cpu。
+2.使用‘**-p**’ (处理器编号)和‘ALL’参数将会从0开始独立的输出每个CPU的统计信息，0表示第一个cpu。
 
     tecmint@tecmint ~ $ mpstat -P ALL
     
@@ -151,7 +147,7 @@ Linux系统监控的20个Sysstat命令
     12:51:55  IST     0        19    0.00    0.00    0.00    0.00     0  writeback
     12:51:55  IST     0        20    0.00    0.00    0.00    0.00     1  kintegrityd
 
-8.使用‘**-d 2**’参数，我们可以看到I/O统计信息，2表示以秒为单位对统计信息进行刷新。这个参数可以方便的知道当系统在进行繁重的I/O时，那些进行占用大量的资源。
+8.使用‘**-d 2**’参数，我们可以看到I/O统计信息，2表示以秒为单位对统计信息进行刷新。这个参数可以方便的知道当系统在进行繁重的I/O时，那些进行占用大量的资源的进程。
 
     tecmint@tecmint ~ $ pidstat -d 2
     
@@ -170,7 +166,6 @@ Linux系统监控的20个Sysstat命令
     03:27:03  EDT     30829      0.00      6.00      0.00  java
 
 9.想要每间隔**2**秒对进程**4164**的cpu统计信息输出**3**次，则使用如下带参数‘**-t**’（输出某个选定进程的统计信息）的命令。
-
 
     tecmint@tecmint ~ $ pidstat -t -p 4164 2 3
     
@@ -250,13 +245,13 @@ Linux系统监控的20个Sysstat命令
     01:09:08  IST  1000    5         99          FIFO   migration/0
     01:09:08  IST  1000    6         99          FIFO   watchdog/0
 
-因为我们已经学习过Iostat命令了，因此在本文中不在对其进行赘述。若想查看Iostat命令的详细信息，请参看“[使用Iostat和Vmstat进行Linux性能监控][2]注：此文也一并附上在同一个原文更新中”
+因为我们已经学习过iostat命令了，因此在本文中不在对其进行赘述。若想查看iostat命令的详细信息，请参看“[使用Iostat和Vmstat进行Linux性能监控][2]”
 
 ###sar - 系统活动报告###
 
 我们可以使用‘**sar**’命令来获得整个系统性能的报告。这有助于我们定位系统性能的瓶颈，并且有助于我们找出这些烦人的性能问题的解决方法。
 
-Linux内核维护者一些内部计数器，这些计数器包含了所有的请求及其完成时间和I/O块数等信息，sar命令从所有的这些信息中计算出请求的利用率和比例，以便找出瓶颈所在。
+Linux内核维护着一些内部计数器，这些计数器包含了所有的请求及其完成时间和I/O块数等信息，sar命令从所有的这些信息中计算出请求的利用率和比例，以便找出瓶颈所在。
 
 sar命令主要的用途是生成某段时间内所有活动的报告，因此，必需确保sar命令在适当的时间进行数据采集（而不是在午餐时间或者周末。）
 
@@ -274,7 +269,7 @@ sar命令主要的用途是生成某段时间内所有活动的报告，因此�
     01:42:38  IST     all     50.75      0.00      3.75      0.00      0.00     45.50
     Average:        all     46.30      0.00      3.93      0.00      0.00     49.77
 
-14.在上面的例子中，我们交互的执行sar命令。sar命令提供了使用cron进行非交互的执行sar命令的方法，使用**/usr/local/lib/sa1**和**/usr/local/lib/sa2**脚本（如果你在安装时使用了**/usr/local**作为前缀）
+14.在上面的例子中，我们交互的执行sar命令。sar命令也提供了使用cron进行非交互的执行sar命令的方法，使用**/usr/local/lib/sa1**和**/usr/local/lib/sa2**脚本（如果你在安装时使用了**/usr/local**作为前缀的话）
 
 - **/usr/local/lib/sa1**是一个可以使用cron进行调度生成二进制日志文件的shell脚本。
 - **/usr/local/lib/sa2**是一个可以将二进制日志文件转换为用户可读的编码方式。
@@ -287,7 +282,7 @@ sar命令主要的用途是生成某段时间内所有活动的报告，因此�
     #在每天23:53时生成一个用户可读的日常报告
     53 23 * * * /usr/local/lib/sa/sa2 -A
 
-在sa1脚本执行后期，sa1脚本会调用**sabc**(系统活动数据收集器，System Activity Data Collector)工具采集特定时间间隔内的数据。**sa2**脚本会调用sar来将二进制日志文件转换为用户可读的形式。
+在sa1脚本的后端，sa1脚本会调用**sabc**(系统活动数据收集器，System Activity Data Collector)工具采集特定时间间隔内的数据。**sa2**脚本会调用sar来将二进制日志文件转换为用户可读的形式。
 
 15.使用‘**-q**’参数来检查运行队列的长度，所有进程的数量和平均负载
 
@@ -303,7 +298,7 @@ sar命令主要的用途是生成某段时间内所有活动的报告，因此�
     02:00:54  IST         0       431      1.64      1.23      0.97         0
     Average:            2       431      1.68      1.23      0.97         0
 
-16.使用‘**-F**’参数查看当前挂载的文件系统统计信息
+16.使用‘**-F**’参数查看当前挂载的文件系统的使用统计信息
  
     tecmint@tecmint ~ $ sar -F 2 4
     
@@ -387,7 +382,7 @@ sar命令主要的用途是生成某段时间内所有活动的报告，因此�
 
 ![Network Graph](http://www.tecmint.com/wp-content/uploads/2014/09/sar-graph.png)
 
-网络信息图表
+*网络信息图表*
 
 现在，你可以参考man手册来后去每个参数的更多详细信息，并且请在文章下留下你宝贵的评论。
 
@@ -397,10 +392,10 @@ via: http://www.tecmint.com/sysstat-commands-to-monitor-linux/
 
 作者：[Kuldeep Sharma][a]
 译者：[cvsher](https://github.com/cvsher)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://www.tecmint.com/author/kuldeepsharma47/
-[1]:http://www.tecmint.com/install-sysstat-in-linux/
-[2]:http://www.tecmint.com/linux-performance-monitoring-with-vmstat-and-iostat-commands/
+[1]:http://linux.cn/article-4025-1.html
+[2]:http://linux.cn/article-4024-1.html
