@@ -54,9 +54,9 @@
 不幸的是，这些用户显然不会优先考虑LibreOffice，Calligra Words， AbiWord或者是任何其它的办公套件。应该提供给用户的办公套件的特色功能包括：
 
 - 为每个文件建立书目数据库。
-- 表格在风格上表格和段落与字符保持一致。
-- 页面风格page styles with persistent content other than headers or footers that would appear each time the style is used
-- storable formats for cross-references, so that the structure doesn't need to be recreated manually each time that it is needed
+- 表格在样式上表格和段落与字符保持一致。
+- 带有持续性内容的页面样式，除了页眉和页脚，在每次样式要被使用的时候就会出现。
+- 交叉引用存储格式，以便不需要每次都手动创建。
 
 Whether LibreOffice or another application provides these features is irrelevant comparing to whether they are available. Without them, the Linux desktop is an imperfect place for a large class of potential users.
 2. Color-Coded Title Bars
