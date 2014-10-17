@@ -1,3 +1,4 @@
+johnhoow translating...
 pidstat - Monitor and Find Statistics for Linux Procesess
 ================================================================================
 The **pidstat** command is used for monitoring individual tasks currently being managed by the Linux kernel. It writes to standard output activities for every task managed by the Linux kernel. The pidstat command can also be used for monitoring the child processes of selected tasks. The interval parameter specifies the amount of time in seconds between each report. A value of 0 (or no parameters at all) indicates that tasks statistics are to be reported for the time since system startup (boot).
