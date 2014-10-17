@@ -55,7 +55,7 @@
 
 #### 第三步：初始化 NRPE 服务 ####
 
-对于基于 RedHat 的系统，NRPE 服务需要被添加为启动服务。
+对于基于 RedHat 的系统，NRPE 服务需要被添加为启动服务。 
 
 **对于 Debian、Ubuntu、Linux Mint：**
 
