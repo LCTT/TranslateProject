@@ -1,3 +1,5 @@
+barney-ro  translating
+
 What is good reference management software on Linux
 ================================================================================
 Have you ever written a paper so long that you thought you would never see the end of it? If so, you know that the worst part is not dedicating hours on it, but rather that once you are done, you still have to order and format your references into a structured convention-following bibliography. Hopefully for you, Linux has the solution: bibliography/reference management tools. Using the power of BibTex, these programs can help you import your citation sources, and spit out a structured bibliography. Here is a non-exhaustive list of open-source reference management software on Linux.
@@ -45,7 +47,7 @@ To conclude, thanks to these tools, you will not have to worry about long papers
 via: http://xmodulo.com/reference-management-software-linux.html
 
 作者：[Adrien Brochard][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[barney-ro](https://github.com/barney-ro)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
