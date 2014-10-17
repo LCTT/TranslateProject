@@ -22,7 +22,7 @@
 
 	# sudo apt-get install pv			[在基于 Debian 的系统上]
 
-'**pv**' 命令安装成功之后, 我们尝试输入下面的命令来在终端查看实时文字输出的效果.
+'**pv**' 命令安装成功之后, 我们尝试输入下面的命令来在终端查看实时文字输出的效果. 
 
     $ echo "Tecmint[dot]com is a community of Linux Nerds and Geeks" | pv -qL 10 
 
