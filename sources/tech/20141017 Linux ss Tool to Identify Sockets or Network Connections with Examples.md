@@ -1,3 +1,5 @@
+Translating-----geekpi
+
 Linux ss Tool to Identify Sockets / Network Connections with Examples
 ================================================================================
 ss is part of the iproute2 (utilities for controlling TCP/IP networking and traffic) package. iproute2 is intended to replace an entire suite of standard Unix networking tools (often called "net-tools") that were previously used for the tasks of configuring network interfaces, routing tables, and managing the ARP table. The ss utility is used to dump socket statistics, it allows showing information similar to netstat and its able display more TCP and state information. It should also be faster as it gets its information directly from kernel space. The options used with the ss commands are very similar to netstat making it an easy replacement.
