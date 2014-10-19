@@ -1,3 +1,5 @@
+Translating----geekpi
+
 How to verify the authenticity and integrity of a downloaded file on Linux
 ================================================================================
 When you download a file (e.g., an installer, an ISO image, or a compressed archive) from the web, the file can be corrupted under a variety of error conditions, e.g., due to transmission errors on the wire, interrupted download, faulty storage hardware, file system errors, etc. Such failure cases aside, a file can also be deliberately tampered with by determined attackers during or before download. For example, an attacker with a compromised certificate authority could mount a man-in-the-middle (MITM) attack, tricking you into downloading a malware-ridden file from a bogus HTTPS website.
