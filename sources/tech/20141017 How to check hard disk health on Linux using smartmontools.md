@@ -1,3 +1,4 @@
+[translating by KayGuoWhu]
 How to check hard disk health on Linux using smartmontools
 ================================================================================
 If there is something that you never want to happen on your Linux system, that is having hard drives die on you without any warning. [Backups][1] and storage technologies such as [RAID][2] can get you back on your feet in no time, but the cost associated with a sudden loss of a hardware device can take a considerable toll on your budget, especially if you haven't planned ahead of time what to do in such circumstances.
