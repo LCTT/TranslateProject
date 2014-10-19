@@ -58,8 +58,7 @@
 - 带有持续性内容的页面样式，除了页眉和页脚，在每次样式要被使用的时候就会出现。
 - 交叉引用存储格式，以便不需要每次都手动创建。
 
-Whether LibreOffice or another application provides these features is irrelevant comparing to whether they are available. Without them, the Linux desktop is an imperfect place for a large class of potential users.
-2. Color-Coded Title Bars
+无论是LibreOffice还是其它同类应用，提供这些特色功能与它们是否可用是不相干的。没有它们，Linux桌面对于一群潜在的用户来说就是个不完善的东西。
 
 Browser extensions have taught me how useful color coded tabs can be for workspaces. The titles of open tabs disappear when more than eight or nine or open, so the color is often the quickest visual guide to the relation between tabs.
 
