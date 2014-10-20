@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How to create a video DVD on Linux desktop
 ================================================================================
 > **Question**: I want to create a video DVD from MP4 movie files. Is there an open-source DVD authoring tool that I can use to create a video DVD in the Linux desktop environment? 
