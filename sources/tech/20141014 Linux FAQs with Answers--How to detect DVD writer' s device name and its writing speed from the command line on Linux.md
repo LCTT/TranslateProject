@@ -1,3 +1,5 @@
+Translating------geekpi
+
 Linux FAQs with Answers--How to detect DVD writer’s device name and its writing speed from the command line on Linux
 ================================================================================
 > **Question**: I want to know the device name assigned to my DVD writer, and also find out how fast I can burn a DVD using the DVD writer. What is a Linux command-line tool to detect the device name of a DVD writer and its writing speed? 
