@@ -1,7 +1,7 @@
 7个Linux桌面需要改善之处
 ======================================
 
-在过去的15年内，Linux桌面从一个还算凑合的边缘化解决方案集合发展到了一个空前的创新和选择源。它的标准特点中有许多是要么不适用于Windows系统，要么就只适合作为一个专有的扩展。因此，使用Linux愈发变得不仅是一个原则问题，也是一种偏好。
+在过去的15年内，Linux桌面从一个还算凑合的边缘化解决方案集合发展到了一个空前的创新和选择源。它的标准特点中有许多是要么不适用于Windows系统，要么就只适合作为一个专有的扩展软件。因此，使用Linux愈发变得不仅是一个原则问题，也是一种偏好。
 
 然而，尽管Linux桌面不停在进步，但是仍然存在差距。一些正在丢失它们的特点，一些已经丢失了，还有一些如同天上掉的馅饼般的附加设备能轻易地实现在不考虑用户对于改变的容忍度的情况下来扩展桌面。
 
@@ -60,15 +60,15 @@
 
 无论是LibreOffice还是其它同类应用，提供这些特色功能与它们是否可用是不相干的。没有它们，Linux桌面对于一群潜在的用户来说就是个不完善的东西。
 
-Browser extensions have taught me how useful color coded tabs can be for workspaces. The titles of open tabs disappear when more than eight or nine or open, so the color is often the quickest visual guide to the relation between tabs.
+浏览器的扩展软件向我们展示了彩色编码标签对于工作空间的作用。开放标签的标题在开放程度超过八九成或完全开放的时候会消失，所以颜色通常是最快区分标签关系的方法。
 
-The same system could be just as useful on the desktop. Better yet, the color coding might be preserved between sessions, allowing users to open all the apps needed for a specific task at the same time. So far, I know of no desktop with such a feature.
+系统也能和桌面一样实用。更好的是，彩色编码能保存在会话之间，在同一时间允许用户打开所有需要一个特点任务的应用。到目前为止，我知道没有任何一个桌面有这个特点。
 
 ### 2. 图标栏
 
-For years, Stardock Systems has been selling a Windows extension called [Fences][4], which lets icons be grouped. You can name each group and move the icons in it together. In addition, you can assign which fence different types of files are automatically added to, and hide and arrange fences as needed.
+多年以来，Stardock公司一直销售着一个名叫 [Fences][4] 的扩展软件,它用来分类和组织桌面上的图标，你能用它给每个组取名并且可以把每个图标都放在一起。另外，你可以指定不同的文件类型自动加入到一个组里，并且按个人需要来隐藏和整理。
 
-In other words, fences automate the sort of arrangements that users make on their desktop all the time. Yet aside from one or two minor functions they share with KDE's Folder Views, fences remain completely unknown on Linux desktops. Perhaps the reason is that designers are focused on mobile devices as the source of ideas, and fences are decidedly a feature of the traditional workstation desktop.
+换句话说，fences让用户整天在桌面上干的事情自动有序地分组排列。然而，除了一两个小功能，它们与KDE的文件夹视图差不多，fences在Linux桌面上仍然鲜有人使用。这也许是因为开发人员把专注于移动设备作为主要目标，使用fences无疑是传统工作站桌面的一大特征。
 
 ### 1. 个性化列表
 
