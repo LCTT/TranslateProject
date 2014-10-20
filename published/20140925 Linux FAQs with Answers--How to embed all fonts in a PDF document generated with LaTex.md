@@ -1,4 +1,4 @@
-Linux有问必答-- 如何在PDF中嵌入LaTex中的所有字体
+Linux有问必答：如何在PDF中嵌入LaTex中的所有字体
 ================================================================================
 > **提问**: 我通过编译LaTex源文件生成了一份PDF文档。然而，我注意到，并不是所有字体都嵌入到了PDF文档中。我怎样才能确保所有的字体嵌入在由LaTex生成的PDF文档中？
 
@@ -32,7 +32,7 @@ Linux有问必答-- 如何在PDF中嵌入LaTex中的所有字体
 via: http://ask.xmodulo.com/embed-all-fonts-pdf-document-latex.html
 
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
