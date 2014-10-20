@@ -20,7 +20,7 @@
 
     $ sudo yum install httpry 
     
-如果逆向通过源码来构httpry的话，你可以通过这几个步骤实现：
+如果逆向通过源码来构httpry的话，你可以通过这几个步骤实现： 
 
     $ sudo yum install gcc make git libpcap-devel
     $ git clone https://github.com/jbittel/httpry.git
