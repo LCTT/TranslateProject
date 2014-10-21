@@ -1,58 +1,56 @@
-  Vic020
-
-Linux FAQs with Answers--How to create and mount an XFS file system on Linux
+Linux有问必答-如何创建和挂载XFS文件系统
 ================================================================================
-> **Question**: I heard good things about XFS, and would like to create an XFS file system on my disk partition. What are the Linux commands to format and mount an XFS file system? 
+> **问题**: 我听说一个厉害的文件系统XFS，打算在我的磁盘上试试XFS。那格式化和挂载XFS文件系统的Linux命令是什么呢？
 
-[XFS][1] is a high-performance file system which was designed by SGI for their IRIX platform. Since XFS was ported to the Linux kernel in 2001, XFS has remained a preferred choice for many enterprise systems especially with massive amount of data, due to its [high performance][2], architectural scalability and robustness. For example, RHEL/CentOS 7 and Oracle Linux have adopted XFS as their default file system, and SUSE/openSUSE have long been an avid supporter of XFS.
+[XFS][1]是高性能文件系统，SGI为他们的IRIX平台设计。自从2001年移植到Linux内核上，由于它的[高性能][2]，XFS作为许多企业级系统的首选，特别是有大量数据，需要结构化伸缩性和稳定性的。例如，RHEL/CentOS 7 和Oracle Linux将XFS作为默认文件系统，SUSE/openSUSE已经为XFS做了长期支持。
 
-XFS has a number of unique features that make it stand out among the file system crowd, such as scalable/parallel I/O, journaling for metadata operations, online defragmentation, suspend/resume I/O, delayed allocation for performance, etc.
+XFS有许多独特的功能使他从众多文件系统中脱颖而出，像 伸缩/并行 IO，元数据日志，热整理，暂停/回复 IO，延迟分配等。
 
-If you want to create and mount an XFS file system on your Linux platform, here is how to do it.
+如果你想要创建和挂载XFS文件系统到你的Linux平台，下面是相关命令。
 
-### Install XFS System Utilities ###
+### 安装 XFS系统工具集 ###
 
-First, you need to install XFS system utilities, which allow you to perform various XFS related administration tasks (e.g., format, [expand][3], repair, setting up quota, change parameters, etc).
+首先，你需要安装XFS系统工具集，这样允许你执行许多XFS相关的管理任务。（例如,格式化，[扩展][3]，修复，设置配额，改变参数等）
 
-On Debian, Ubuntu or Linux Mint:
+Debian, Ubuntu , Linux Mint系统：
 
     $ sudo apt-get install xfsprogs 
 
-On Fedora, CentOS or RHEL:
+Fedora, CentOS, RHEL系统:
 
     $ sudo yum install xfsprogs 
 
-On Arch Linux:
+其他版本Linux:
 
     $ sudo pacman -S xfsprogs 
 
-### Create an XFS-Formatted Disk Partition ###
+### 创建 XFS格式分区 ###
 
-Now let's first prepare a disk partition to create XFS on. Assuming that your disk is located at /dev/sdb, create a partition by:
+先准备一个分区来创建XFS。假设你的分区在/dev/sdb,如下：
 
     $ sudo fdisk /dev/sdb 
 
 ![](https://farm6.staticflickr.com/5604/15474273555_1c0c4be527_b.jpg)
 
-Let's say the created partition is assigned /dev/sdb1 device name.
+假设此创建的分区叫/dev/sdb1。
 
-Next, format the partition as XFS using mkfs.xfs command. The "-f" option is needed if the partition has any other file system created on it, and you want to overwrite it.
+接下来，格式化分区为XFS,使用mkfs.xfs命令。如果已有其他文件系统创建在此分区，必须加上"-f"参数来覆盖它。
 
     $ sudo mkfs.xfs -f /dev/sdb1 
 
 ![](https://farm4.staticflickr.com/3930/15287704767_fe5ded8ea1_b.jpg)
 
-Now you are ready to mount the formatted partition. Let's assume that /storage is a local mount point for XFS. Go ahead and mount the partition by running:
+至此你已经准备好格式化后分区来挂载。假设/storage是XFS本地挂载点。使用下述命令挂载：
 
     $ sudo mount -t xfs /dev/sdb1 /storage 
 
-Verify that XFS mount is succesful by running:
+验证XFS挂载是否成功：
 
     $ df -Th /storage 
 
 ![](https://farm4.staticflickr.com/3938/15474273445_aeacdca6eb_o.png)
 
-If you want the XFS partition to be mounted at /storage automatically upon boot, add the following line to /etc/fstab.
+如果你想要启动时自动挂载XFS分区在/storage上，加入下行到/etc/fstab：
 
     /dev/sdb1  /storage xfs  defaults  0  0
 
@@ -60,7 +58,7 @@ If you want the XFS partition to be mounted at /storage automatically upon boot,
 
 via: http://ask.xmodulo.com/create-mount-xfs-file-system-linux.html
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[Vic___/VicYu](http://www.vicyul.net/)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
