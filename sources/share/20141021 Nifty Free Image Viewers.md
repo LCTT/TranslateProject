@@ -1,3 +1,5 @@
+*Translating by jabirus...*
+
 Nifty Free Image Viewers
 ================================================================================
 One of my favorite adages is "A picture is worth a thousand words". It refers to the notion that a still image can convey a complex idea. Images can portray a lot of information quickly and more efficiently than text. They capture memories, and never let you forget something you want to remember, and refresh it in your memory.
