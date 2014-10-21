@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How to set up a USB network printer and scanner server on Debian
 ================================================================================
 Suppose you want to set up a Linux print server in your home/office network, but you only have USB printers available (as they are much cheaper than printers that have a built-in Ethernet jack or wireless ones). In addition, what if one of those devices is an AIO (All In One), and you also want to share its incorporated scanner over the network? In this article, I'll show you how to install and share a USB AIO (Epson CX3900 inkjet printer and scanner), a USB laser printer (Samsung ML-1640), and a PDF printer as the "cherry on top" - all in a GNU/Linux Debian 7.2 [Wheezy] server.
