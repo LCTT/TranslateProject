@@ -72,13 +72,13 @@
 
 ### 1. 个性化列表
 
-As I made this list, what struck me was how few of the improvements were general. Several of these improvement would appeal largely to specific audiences, and only one even implies the porting of a proprietary application. At least one is cosmetic rather than functional.
+由于我做过这种列表，让我震惊的是鲜有提出的改进得到了推广普及。 这些改进大部分是由那些特殊人员Several of these improvement would appeal largely to specific audiences, 并且只有一个甚至就意味着专有应用程序的进入端口，至少它肯定是花拳绣腿。
 
-What this observation suggests is that, for the general user, Linux has very little left to add. As an all-purpose desktop, Linux arrive some years ago, and has been diversifying ever since, until today users can choose from over half a dozen major desktops.
+这一观察表明，对于普通用户来说，Linux能添加的功能已经所剩无几了。As an all-purpose desktop, Linux arrive some years ago, and has been diversifying ever since, until today users can choose from over half a dozen major desktops.
 
 None of that means, of course, that specialists wouldn't have other suggestions. In addition, changing needs can make improvements desirable that nobody once cared about. But it does mean that many items on a list of desirable improvements will be highly personal.
 
-All of which raises the question: what other improvements do you think would benefit the desktop?
+所有这些都是为了抛砖引玉：你认为还有什么其它的对桌面有益的建议吗？
 
 --------------------------------------------------------------------------------
 
