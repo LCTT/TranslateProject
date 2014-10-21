@@ -1,38 +1,37 @@
-*Translating by jabirus...*
-
-Nifty Free Image Viewers
+实用免费图片查看器
 ================================================================================
-One of my favorite adages is "A picture is worth a thousand words". It refers to the notion that a still image can convey a complex idea. Images can portray a lot of information quickly and more efficiently than text. They capture memories, and never let you forget something you want to remember, and refresh it in your memory.
 
-Images are part of every day internet usage, and are particularly important for social media engagement. A good image viewer is an essential part of any operating system.
+我最喜欢的谚语之一是“一图胜千言”。它指一张静态图片可以传递一个复杂的想法。图像相比文字而言可以迅速且更有效地描述大量信息。它们捕捉回忆，永不让你忘记你所想记住的东西，并且让它时常在你的记忆里刷新。
 
-Linux offers a vast collection of open source small utilities that perform functions ranging from the obvious to the bizarre. It is the quality and selection of these tools that help Linux stand out as a productive environment. This is particularly true when it comes to image viewers. There are so many image viewers that are available for Linux that it can make selection difficult.
+图片是互联网日常使用的一部分，并且对社交媒体互动尤其重要。一个好的图片查看器是任何操作系统必不可少的一个组成部分。
 
-An image viewer that is not included in this roundup but is worth a mention is Fragment Image Viewer. It is released under a proprietary license (yes, I know!), and would not install on Ubuntu. But it certainly looks interesting! One for the future, particularly if the developers release it under an open source license.
+Linux 系统提供了一个大量开源实用小程序的集合，其中这些程序提供了从显而易见到异乎寻常的各种功能。正是由于这些工具的高质量和可供选择帮助 Linux 在生产环境中而脱颖而出，尤其是当谈到图片查看器时。Linux 有如此多的图像查看器可供选择，以至于让挑选变得困难。
 
-Now, let's explore the 13 image viewers at hand. With one exception, each of them is released under an open source license. As there is a lot of information to detail, I have departed from a roundup on a single page, but instead have devoted a page for each image viewer, with a full description of the software, an in-depth analysis of its features, a screenshot of the software in action, together with links to relevant resources and reviews.
+一个不该包括在这个综述中但是值得一提的软件是 Fragment Image Viewer。它在专有许可证下发行（是的，我知道！），所以不会预先安装在 Ubuntu 上。 但它无疑看起来十分有趣！它是明日之星，尤其如果它的开发者们将它在开源许可证下发布的话。
 
-### Image Viewers ###
+现在，让我们亲眼探究一下这 13 款图像查看器。除了一个例外，它们中每个都是在开源协议下发行。由于有很多信息要阐述，我将这些详细内容从当前单一网页综述剥离，但作为替代，我为每一款图片查看器提供了一个单独页面，具有软件的完整描述，产品特点的详细分析，一张软件工作中的截图，以及相关资源和评论的链接。
 
-- [**Eye of Gnome**][1] -- Fast and functional image viewer
-- [**gThumb**][2] -- Advanced image viewer and browser
-- [**Shotwell**][3] -- Image organizer designed to provide personal photo management
-- [**Gwenview**][4] -- Simple image viewer for KDE 4
-- [**Imgv**][5] -- Powerful image viewer
-- [**feh**][6] -- Fast and light Imlib2-based image viewer
-- [**nomacs**][7] -- Handles most image formats including RAW images
-- [**Geeqie**][8] -- Lightweight Gtk+ based image viewer
-- [**qiv**][9] -- Very small and pretty fast open source gdk/imlib image viewer
-- [**PhotoQT**][10] -- Good looking, highly configurable, yet easy to use and fast
-- [**Viewnior**][11] -- Designed with usability in mind
-- [**Cornice**][12] -- Designed to be a free replacement of ACDSee
-- [**XnViewMP**][13] -- Graphic viewer, browser, converter (proprietary)
+### 图片查看器 ###
+
+- [**Eye of Gnome**][1] -- 快速且多功能的图片查看器器
+- [**gThumb**][2] -- 高级图像查看器和浏览器
+- [**Shotwell**][3] -- 被设计来提供个人照片管理的图像管理器
+- [**Gwenview**][4] -- 专为 KDE 4 桌面环境开发的简易图片查看器
+- [**Imgv**][5] -- 强大的图片查看器
+- [**feh**][6] -- 基于 Imlib2 的快速且轻量的图片查看器
+- [**nomacs**][7] -- 可处理包括 RAW 在内的大部分格式
+- [**Geeqie**][8] -- 基于 Gtk+ 的轻量级图片查看器
+- [**qiv**][9] -- 基于 gdk/imlib 的非常小且精致的开源图片查看器
+- [**PhotoQT**][10] -- 好看、高度可配置、易用且快速
+- [**Viewnior**][11] -- 设计时考虑到易用性
+- [**Cornice**][12] -- 设计用来作为 ACDSee 的免费替代品
+- [**XnViewMP**][13] -- 图像查看器、浏览器、转换器（专有软件）
 
 --------------------------------------------------------------------------------
 
 via: http://www.linuxlinks.com/article/20141018070111434/ImageViewers.html
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[jabirus](https://github.com/jabirus)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
