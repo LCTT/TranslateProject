@@ -74,8 +74,8 @@ Linux 有问必答 -- 在 Linux 上如何通过命令行来更改日期和时间
 
 via: http://ask.xmodulo.com/change-date-time-command-line-linux.html
 
-译者：[译者ID](https://github.com/译者ID)
-校对：[wangjiezhe](https://github.com/wangjiezhe)
+译者：[wangjiezhe](https://github.com/wangjiezhe)
+校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
