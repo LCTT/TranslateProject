@@ -1,3 +1,5 @@
+wangjiezhe translating...
+
 Linux FAQs with Answers--How to change character encoding of a text file on Linux
 ================================================================================
 > **Question**: I have an "iso-8859-1"-encoded subtitle file which shows broken characters on my Linux system, and I would like to change its text encoding to "utf-8" character set. In Linux, what is a good tool to convert character encoding in a text file? 
@@ -46,7 +48,7 @@ Knowing how to use these tools together as we have demonstrated, you can for exa
 
 via: http://ask.xmodulo.com/change-character-encoding-text-file-linux.html
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[wangjiezhe](https://github.com/wangjiezhe)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
