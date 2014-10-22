@@ -72,11 +72,11 @@
 
 ### 1. 个性化列表
 
-由于我做过这种列表，让我震惊的是鲜有提出的改进得到了推广普及。 这些改进大部分是由那些特殊人员Several of these improvement would appeal largely to specific audiences, 并且只有一个甚至就意味着专有应用程序的进入端口，至少它肯定是花拳绣腿。
+由于我做过这种列表，让我震惊的是鲜有提出的改进得到了推广普及。 这些改进能吸引大量特定的用户，并且甚至只有一个意味着专有应用程序的进入端口，至少它肯定是花拳绣腿。
 
-这一观察表明，对于普通用户来说，Linux能添加的功能已经所剩无几了。As an all-purpose desktop, Linux arrive some years ago, and has been diversifying ever since, until today users can choose from over half a dozen major desktops.
+这一观察表明，对于普通用户来说，Linux能添加的功能已经所剩无几了。作为一个通用的桌面，Linux从几年前到现在都很多元化，直到今天用户都能从超过半打的主流桌面中选择出一个来使用。
 
-None of that means, of course, that specialists wouldn't have other suggestions. In addition, changing needs can make improvements desirable that nobody once cared about. But it does mean that many items on a list of desirable improvements will be highly personal.
+当然这不意味着，一些专家就不会有其它意见。另外，没有人会关心不断变化的需求会不会使改进令人满意。但是它意味着这份充斥着改进建议的名单上的许多项目将会高度个人化。
 
 所有这些都是为了抛砖引玉：你认为还有什么其它的对桌面有益的建议吗？
 
