@@ -2,9 +2,15 @@
 
 The People Who Support Linux: Hacking on Linux Since Age 16 
 ================================================================================
+
+一个 Linux 支持者：从 16 岁开始在 Linux 上 hack
+================================================================================
+
 ![](http://www.linux.com/images/stories/41373/Yitao-Li.png)
 
-Pretty much all of the projects in software developer [Yitao Li's GitHub repository][1] were developed on his Linux machine. None of them are necessarily Linux-specific, he says, but he uses Linux for “everything.”
+>Pretty much all of the projects in software developer [Yitao Li's GitHub repository][1] were developed on his Linux machine. None of them are necessarily Linux-specific, he says, but he uses Linux for “everything.”
+
+在软件开发者[李逸韬的 GitHub 仓库][1]中，相当多的项目是在他的 Linux 机器上完成的。它们没有一个是必须特定需要 Linux 的，但李逸韬说他使用 Linux 来做”任何事情“。
 
 For example: “coding / scripting, web browsing, web hosting, anything cloud-related, sending / receiving PGP signed emails, tweaking IP table rules, flashing OpenWrt image into routers, running one version of Linux kernel while compiling another version, doing research, doing homework (e.g., typing math equations in Tex), and many others...” Li said via email.
 
