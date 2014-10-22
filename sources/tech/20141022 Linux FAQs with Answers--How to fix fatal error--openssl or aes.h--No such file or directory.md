@@ -1,3 +1,6 @@
+Translating---------geekpi
+
+
 Linux FAQs with Answers--How to fix “fatal error: openssl/aes.h: No such file or directory”
 ================================================================================
 > **Question**: I am trying to compile a program on Linux, but the compilation fails with an error saying: "fatal error: openssl/aes.h: No such file or directory". How can I install the requested header file and solve this problem on [insert your Linux distro]? 
