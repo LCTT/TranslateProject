@@ -1,3 +1,4 @@
+zpl1025
 Will Linux ever be able to give consumers what they want?
 ================================================================================
 > Jack Wallen offers up the novel idea that giving the consumers what they want might well be the key to boundless success. 

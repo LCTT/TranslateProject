@@ -1,5 +1,3 @@
-CNprober translating...
-
 Linux Administration: A Smart Career Choice
 ================================================================================
 ![](http://www.opensourceforu.com/wp-content/uploads/2014/04/linux.jpeg)
