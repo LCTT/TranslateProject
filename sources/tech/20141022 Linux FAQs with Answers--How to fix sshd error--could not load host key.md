@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Linux FAQs with Answers--How to fix “sshd error: could not load host key”
 ================================================================================
 > **Question**: When I try to SSH to a remote server, SSH client fails with "Connection closed by X.X.X.X". On the SSH server side, I see error messages: "sshd error: could not load host key." What is going on, and how can I fix this error? 
