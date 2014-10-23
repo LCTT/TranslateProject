@@ -1,18 +1,18 @@
 **Translating by jabirus...**
 
-The People Who Support Linux: Hacking on Linux Since Age 16 
-================================================================================
+# The People Who Support Linux: Hacking on Linux Since Age 16 
 
-一个 Linux 支持者：从 16 岁开始在 Linux 上 hack
-================================================================================
+# 一个 Linux 支持者：从 16 岁开始在 Linux 上 hacking
 
-![](http://www.linux.com/images/stories/41373/Yitao-Li.png)
+![][0]
 
->Pretty much all of the projects in software developer [Yitao Li's GitHub repository][1] were developed on his Linux machine. None of them are necessarily Linux-specific, he says, but he uses Linux for “everything.”
+> Pretty much all of the projects in software developer [> Yitao Li's GitHub repository][1]>  were developed on his Linux machine. None of them are necessarily Linux-specific, he says, but he uses Linux for “everything.”
 
-在软件开发者[李逸韬的 GitHub 仓库][1]中，相当多的项目是在他的 Linux 机器上完成的。它们没有一个是必须特定需要 Linux 的，但李逸韬说他使用 Linux 来做”任何事情“。
+在软件开发者[李逸韬的 GitHub 仓库][1]中，有相当多的项目是在他的 Linux 机器上开发完成的。它们没有一个是必须特定需要 Linux 的，但李逸韬说他使用 Linux 来做”任何事情“。
 
-For example: “coding / scripting, web browsing, web hosting, anything cloud-related, sending / receiving PGP signed emails, tweaking IP table rules, flashing OpenWrt image into routers, running one version of Linux kernel while compiling another version, doing research, doing homework (e.g., typing math equations in Tex), and many others...” Li said via email.
+>For example: “coding / scripting, web browsing, web hosting, anything cloud-related, sending / receiving PGP signed emails, tweaking IP table rules, flashing OpenWrt image into routers, running one version of Linux kernel while compiling another version, doing research, doing homework (e.g., typing math equations in Tex), and many others...” Li said via email.
+
+
 
 Of all the projects in his repository his favorite is a school project developed in C++ with libpthread and libfuse to understand and correctly implement PAXOS-based distributed locking, key-value service, and eventually a distributed filesystem. He tested it using a number of test scripts on both single-core and multi-core machines.
 
@@ -22,33 +22,34 @@ Li first started using Linux at age 16, or about 7.47 years ago, he says, using 
 
 “1. Linux is very hacker-friendly and I do not see any reason for not using it,” he writes. “2. The prefrontal cortex of the brain becoming well-developed at age 16 (?).”
 
-[![](http://www.linux.com/images/stories/41373/ldc_peop_linux.png)][3]
+[![</a>](https://www.linuxfoundation.org/about/join/individual)](http://www.linux.com/images/stories/41373/ldc_peop_linux.png)
 
-He now works for eBay, mostly coding in Java but working sometimes with Hadoop, Pig, Zookeeper, Cassandra, MongoDB, and other software that requires a POSIX-compliant platform. He supports the Linux community by contributing to Wikipedia pages and forums on Linux-related subjects. And by becoming an individual member of The Linux Foundation.
+[He now works for eBay, mostly coding in Java but working sometimes with Hadoop, Pig, Zookeeper, Cassandra, MongoDB, and other software that requires a POSIX-compliant platform. He supports the Linux community by contributing to Wikipedia pages and forums on Linux-related subjects. And by becoming an individual member of The Linux Foundation. He keeps up with the latest Linux developments and has recently been impressed by the new "-fstack-protector-strong" option for GCC 4.9 and later. “It's not directly related to any of my projects, but it was important for both security and performance reasons,” he said. “It's much more efficient than "-fstack-protector-all" with little impact on security, while providing better stack-overflow protection coverage compared to that of the "-fstack-protector" option.” Welcome to the Linux Foundation Yitao!][3]
 
-He keeps up with the latest Linux developments and has recently been impressed by the new "-fstack-protector-strong" option for GCC 4.9 and later.
+[Learn more about becoming an][3][individual member of The Linux Foundation][4]. The foundation will donate $25 to Code.org for every new individual member who joins during June.
 
-“It's not directly related to any of my projects, but it was important for both security and performance reasons,” he said. “It's much more efficient than "-fstack-protector-all" with little impact on security, while providing better stack-overflow protection coverage compared to that of the "-fstack-protector" option.”
+- - -
 
-Welcome to the Linux Foundation Yitao!
+![][5]
 
-Learn more about becoming an [individual member of The Linux Foundation][3]. The foundation will donate $25 to Code.org for every new individual member who joins during June.
+[Libby Clark][6]
 
-----------
-
-![](http://www.linux.com/community/forums/avatar/41373/catid/200-libby-clark/thumbnail/large/cache/1331753338)
-
-[Libby Clark][4]
-
---------------------------------------------------------------------------------
+- - -
 
 via: http://www.linux.com/news/featured-blogs/200-libby-clark/778559-the-people-who-support-linux-hacking-on-linux-since-age-16
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[译者ID][7] 校对：[校对者ID][8]
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
+本文由 [LCTT][9] 原创翻译，[Linux中国][10] 荣誉推出
 
-[1]:https://github.com/yl790
-[2]:http://linuxfromscratch.org/
-[3]:https://www.linuxfoundation.org/about/join/individual
-[4]:http://www.linux.com/community/forums/person/41373/catid/200-libby-clark
+[0]: http://www.linux.com/images/stories/41373/Yitao-Li.png
+[1]: https://github.com/yl790
+[2]: http://linuxfromscratch.org/
+[3]: http://www.linux.com/images/stories/41373/ldc_peop_linux.png
+[4]: https://www.linuxfoundation.org/about/join/individual
+[5]: http://www.linux.com/community/forums/avatar/41373/catid/200-libby-clark/thumbnail/large/cache/1331753338
+[6]: http://www.linux.com/community/forums/person/41373/catid/200-libby-clark
+[7]: https://github.com/译者ID
+[8]: https://github.com/校对者ID
+[9]: https://github.com/LCTT/TranslateProject
+[10]: http://linux.cn/
