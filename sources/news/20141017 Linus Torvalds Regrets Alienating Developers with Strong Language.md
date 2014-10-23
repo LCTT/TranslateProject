@@ -1,3 +1,4 @@
+Translating by ZTinoZ
 Linus Torvalds Regrets Alienating Developers with Strong Language
 ================================================================================
 > He didn't name anyone, but this sounds like an apology
