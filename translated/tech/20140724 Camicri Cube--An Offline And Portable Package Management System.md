@@ -50,7 +50,7 @@ Cube 会收集您的离线电脑的完整的详细信息，如操作系统的详
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/07/Camicri-Systems-%C2%A9-Cube-Portable-Package-Manager-1.0.9.2-sk_0033.png)
 
-就是这样。现在新的项目已经创建好了，它会保存在我们的主 cube 目录里面。进入 Cube 目录，您就会发现一个名叫 Projects 的目录。这个目录会保存有您的离线系统的必要完整详细信息。
+就是这样。现在新的项目已经创建好了，它会保存在我们的主 cube 目录里面。进入 Cube 目录，您就会发现一个名叫 Projects 的目录。这个目录会保存有您的离线系统的必要完整详细信息。 
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/07/Selection_004.png)
 
