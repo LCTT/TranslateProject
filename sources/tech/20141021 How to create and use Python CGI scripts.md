@@ -1,3 +1,5 @@
+su-kaiyao translating
+
 How to create and use Python CGI scripts
 ================================================================================
 Have you ever wanted to create a webpage or process user input from a web-based form using Python? These tasks can be accomplished through the use of Python CGI (Common Gateway Interface) scripts with an Apache web server. CGI scripts are called by a web server when a user requests a particular URL or interacts with the webpage (such as clicking a "Submit" button). After the CGI script is called and finishes executing, the output is used by the web server to create a webpage displayed to the user.
