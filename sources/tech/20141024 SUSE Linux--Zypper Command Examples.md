@@ -1,24 +1,38 @@
 >Translating by jabirus...
 
-SUSE Linux – Zypper Command Examples
-================================================================================
-
+<!-- SUSE Linux – Zypper Command Examples
+================================================================================ -->
 
 SUSE Linux Zypper 命令示例
 ================================================================================
 
 
-Zypper is command line interface in SuSE Linux which is used to  install, update, remove software, manage repositories, perform various queries, and lot more. In this article we will discuss different examples of zypper command .
+<!-- Zypper is command line interface in SuSE Linux which is used to  install, update, remove software, manage repositories, perform various queries, and lot more. In this article we will discuss different examples of zypper command . -->
 
-Syntax :
+Zypper 是 SuSE Linux 用来安装、升级、移除软件、管理软件包库、执行各种查询及其他更多任务的命令行接口。我们将在这篇文章里面讨论 zypper 命令的不同示例。
+
+
+<!-- Syntax :
+
+    # zypper [--global-opts] <command> [--command-opts] [command-arguments] -->
+
+语法 :
 
     # zypper [--global-opts] <command> [--command-opts] [command-arguments]
 
-The components mentioned in brackets are not required. The simplest way to execute zypper is to type its name followed by the command.
 
-### Example:1 List the available global options & commands. ###
+<!-- The components mentioned in brackets are not required. The simplest way to execute zypper is to type its name followed by the command. -->
 
-Open the Terminal , type the Zypper command and press enter , it will display all the global options and command that can be used within zypper.
+方括号中提到的部分不是必要的。最简单的方法就是在 zypper 指令后面紧接要执行的命令。
+
+
+<!-- ### Example:1 List the available global options & commands. ### -->
+
+### 例一： 列出所有可用的全局选项和命令 ###
+
+<!-- Open the Terminal , type the Zypper command and press enter , it will display all the global options and command that can be used within zypper. -->
+
+打开终端（Terminal），输入 zypper 指令然后按回车，系统会显示所有在 zypper 里面可以使用的全局选项和命令。
 
     linux-xa3t:~ # zypper
 
