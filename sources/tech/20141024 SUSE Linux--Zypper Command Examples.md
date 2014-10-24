@@ -1,5 +1,13 @@
+>Translating by jabirus...
+
 SUSE Linux – Zypper Command Examples
 ================================================================================
+
+
+SUSE Linux Zypper 命令示例
+================================================================================
+
+
 Zypper is command line interface in SuSE Linux which is used to  install, update, remove software, manage repositories, perform various queries, and lot more. In this article we will discuss different examples of zypper command .
 
 Syntax :
