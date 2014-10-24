@@ -1,14 +1,14 @@
-Linux 有问必答-- 如何使用Linux命令行检测DVD刻录机的名字和它的读写速度
+Linux有问必答：如何使用Linux命令行检测DVD刻录机的名字和读写速度
 ================================================================================
 > **提问**：我想要知道我的DVD刻录机的名字和在烧录时的速度。该使用什么Linux命令行工具来连测DVD刻录机的设备名和速度？
 
-如今大多数消费PC和笔记本电脑都配备了DVD刻录机。在Linux中，光盘驱动器，如CD/ DVD驱动器的名字是在引导时内核基于udev规则来命名的。有几种方法来检测刻录机的设备名称和它的写入速度。
-
+如今大多数消费PC和笔记本电脑都配备了DVD刻录机。在Linux中，光盘驱动器，如CD/DVD驱动器的名字是在引导时内核基于udev规则来命名的。有几种方法来检测刻录机的设备名称和它的写入速度。
 
 ### 方法一 ###
 
-找出与DVD刻录机相关的设备名称最简单的方法是使用dmesg命令行工具，它打印出内核的消息缓冲区。在dmesg的输出中，寻找一个潜在的DVD刻录机：
-$ dmesg | egrep -i --color 'dvd|cd/rw|writer' 
+找出与DVD刻录机相关的设备名称最简单的方法是使用dmesg命令行工具，它打印出内核的消息缓冲区。在dmesg的输出中，寻找一个安装好的DVD刻录机：
+
+	$ dmesg | egrep -i --color 'dvd|cd/rw|writer' 
 
 ![](https://farm6.staticflickr.com/5603/15505432622_0bfec51a8f_z.jpg)
 
@@ -98,13 +98,13 @@ $ dmesg | egrep -i --color 'dvd|cd/rw|writer'
 
 ![](https://farm6.staticflickr.com/5597/15324137650_91dbf458ef_z.jpg)
 
-** dvd+rw-mediainfo**工具探测插入的媒体（本例中是“DVD-R”），以找出对媒体的实际写入速度。
+**dvd+rw-mediainfo**工具会探测插入的媒体（本例中是“DVD-R”），以找出对媒体的实际写入速度。
 
 --------------------------------------------------------------------------------
 
 via: http://ask.xmodulo.com/detect-dvd-writer-device-name-writing-speed-command-line-linux.html
 
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
