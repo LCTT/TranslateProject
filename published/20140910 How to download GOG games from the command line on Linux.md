@@ -1,12 +1,12 @@
 如何在Linux命令行中下载GOG游戏
 ================================================================================
-如果你是一个玩家同时也是一个Linux用户，你可能很高兴在[GOG][1]在几个月前宣布它会在你最喜欢的操作系统上推出游戏。如果你之前从来没有听说过GOG，我鼓励你看看他们的产品目录中的“很棒的老游戏”，价格合理，无DRM限制，而且充满了很棒的东西。然而现在的Windows上的GOG存在了很长的时间按，正式的Linux版本却是无处可见。因此，你不想等待官方的正式版本，一个名为LGOGDownloader非官方的开放源码计划能让你在命令行中访问你的库。
+如果你是一个游戏玩家同时也是一个Linux用户，你可能很高兴在[GOG][1]在几个月前宣布它会在你最喜欢的操作系统上推出游戏。如果你之前从来没有听说过GOG，我鼓励你看看他们的产品目录中的“很棒的老游戏”，价格合理，无DRM限制，而且充满了很棒的东西。虽然Windows上的GOG客户端已经存在了很长的时间，但是官方的Linux版本客户端却是无处可见。因此，如果你不想等待官方的正式版本，一个名为LGOGDownloader非官方的开放源码计划能让你在命令行中访问你的库。
 
 ![](https://farm4.staticflickr.com/3843/15121593356_b13309c70f_z.jpg)
 
 ### 在Linux中安装 LGOGDownloader ###
 
-对于Ubuntu用户来说，[官方页面][2]建议您下载源代码并执行：
+对于Ubuntu用户来说，其[官方页面][2]建议您下载源代码并执行：
 
     $ sudo apt-get install build-essential libcurl4-openssl-dev liboauth-dev libjsoncpp-dev libhtmlcxx-dev libboost-system-dev libboost-filesystem-dev libboost-regex-dev libboost-program-options-dev libboost-date-time-dev libtinyxml-dev librhash-dev help2man
     $ tar -xvzf lgogdownloader-2.17.tar.gz
@@ -14,7 +14,7 @@
     $ make release
     $ sudo make install 
 
-如果你是ArchLinux用户。有一个[AUR 包][2]等着你
+如果你是ArchLinux用户。有一个[AUR 包][2]等着你：
 
 ### LGOGDownloader 的使用###
 
@@ -65,7 +65,7 @@ via: http://xmodulo.com/2014/09/download-gog-games-command-line-linux.html
 
 作者：[Adrien Brochard][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
