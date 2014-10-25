@@ -1,15 +1,14 @@
-Translating by ZTinoZ
-Linus Torvalds Regrets Alienating Developers with Strong Language
+Linus Torvalds对于骂那些开发者感到后悔
 ================================================================================
-> He didn't name anyone, but this sounds like an apology
+> 他没有提到任何人的名字，但是这像一次道歉
 
-**Linus Torvalds talked today at LinuxCon and CloudOpen Europe, a conference organized by the Linux Foundation that reunites all the big names in the open source world. He answered a lot of questions and he also talked about the effects of the strong language he uses in the mailing list.**
+**Linus Torvalds在前几天的欧洲LinuxCon和CloudOpen大会上做了讲话，这次大会由Linux基金会组织并且汇聚了开源世界的所有大佬。他回答了很多问题，也谈到了他在邮件发送清单里使用脏话的事情。**
 
-Linus Torvalds is recognized as the creator of the Linux kernel and the maintainer of the latest development version. He makes sure that we get a new RC almost every week and he is very involved in the discussions that take place in the mailing list. He doesn't really choose his words and has been blamed for using strong language with some of the developers.
+Linus Torvalds被认为是Linux内核的创造者和最新的Linux开发版的维护者。他确保我们几乎每个星期都会得到一个新的RC内核并且涉及发生在邮件发送清单中的对话里，他口不择言地用脏话大骂一些开发者们。
 
 The latest problem of this kind, which surfaced in the news as well, was when [he decided to block code from a particular developer][1], after making some very harsh remarks. He is known to be very abrasive, especially when kernel developers break user space to fix something in the kernel. The same happened in this case and he basically went mental on the guy.
 
-### This is the closest he's been to an apology ###
+### 这是他最接近道歉的一次谈话 ###
 
 Linus Torvalds never really talked about that particular discussion since and people moved on, but recently a systemd developer talked about the strong language in the open source community and he mentioned Linus Torvalds by name. He's not known to apologize, so this admission of guilt during LinuxCon is a big step forward. The moderator asked him what single decision in the last 23 years he would change.
 
@@ -26,7 +25,7 @@ It also looks like Linux kernel 3.18 RC1 will arrive later this week and we'll s
 via: http://news.softpedia.com/news/Linus-Torvalds-Regrets-Alienating-Developers-with-Strong-Language-462191.shtml
 
 作者：[Silviu Stahie][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ZTinoZ](https://github.com/ZTinoZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
