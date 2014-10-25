@@ -1,3 +1,4 @@
+JonathanKang is translating
 What is a good command-line calculator on Linux
 ================================================================================
 Every modern Linux desktop distribution comes with a default GUI-based calculator app. On the other hand, if your workspace is full of terminal windows, and you would rather crunch some numbers within one of those terminals quickly, you are probably looking for a **command-line calculator**. In this category, [GNU bc][1] (short for "basic calculator") is a hard to beat one. While there are many command-line calculators available on Linux, I think GNU bc is hands-down the most powerful and useful.
