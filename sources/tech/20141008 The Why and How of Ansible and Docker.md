@@ -1,3 +1,4 @@
+[bazz222222222222222222222]
 The Why and How of Ansible and Docker
 ================================================================================
 There is a lot of interest from the tech community in both [Docker][1] and [Ansible][2], I am hoping that after reading this article you will share our enthusiasm. You will also gain a practical insight into using Ansible and Docker for setting up a complete server environment for a Rails application.
