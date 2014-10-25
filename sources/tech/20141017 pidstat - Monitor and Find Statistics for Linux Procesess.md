@@ -1,78 +1,79 @@
-johnhoow translating...
-pidstat - Monitor and Find Statistics for Linux Procesess
+pidstat - 监控并统计Linux进程的数据
 ================================================================================
-The **pidstat** command is used for monitoring individual tasks currently being managed by the Linux kernel. It writes to standard output activities for every task managed by the Linux kernel. The pidstat command can also be used for monitoring the child processes of selected tasks. The interval parameter specifies the amount of time in seconds between each report. A value of 0 (or no parameters at all) indicates that tasks statistics are to be reported for the time since system startup (boot).
+**pidstat**命令用来监控被Linux内核管理的独立任务(进程)。它输出每个受内核管理的任务的相关信息。pidstat命令也可以用来监控特定进程的子进程。区间参数具体说明各个报告间的时间间隔。它的值为0(或者没有参数)说明进程的统计数据的时间是从系统启动开始计算的。
 
-### How to Install pidstat ###
+### 如何安装pidstat ###
 
-pidstat is part of the sysstat suite that contains various system performance tools for Linux, it's available on the repository of most Linux distributions.
+pidstat 是sysstat软件套件的一部分，sysstat包含很多监控linux系统行为的工具，它能够从大多数linux发行版的软件源中获得。
 
-To install it on Debian / Ubuntu Linux systems you can use the following command:
+在Debian/Ubuntu系统中可以使用下面的命令来安装
 
     # apt-get install sysstat
 
-If you are using CentOS / Fedora / RHEL Linux you can install the packages like this:
+CentOS/Fedora/RHEL版本的linux中则使用下面的命令：
 
     # yum install sysstat
 
-### Using pidstat ###
+### 使用pidstat ###
 
-Running pidstat without any argument is equivalent to specifying -p ALL but only active tasks (tasks with non-zero statistics values) will appear in the report.
+使用pidstat不加任何参数等价于加上-p但是只有正在活动的任务会被显示出来。
 
     # pidstat
 
 ![pidstat](http://blog.linoxide.com/wp-content/uploads/2014/09/pidstat.jpg)
 
-In the output you can see:
+在结果中你能看到如下内容：
 
-- **PID** - The identification number of the task being monitored.
-- **%usr** - Percentage of CPU used by the task while executing at the user level (application), with or without nice priority. Note that this field does NOT include time spent running a virtual processor.
-- **%system** - Percentage of CPU used by the task while executing at the system level.
-- **%guest** - Percentage of CPU spent by the task in virtual machine (running a virtual processor).
-- **%CPU** - Total percentage of CPU time used by the task. In an SMP environment, the task's CPU usage will be divided by the total number of CPU's if option -I has been entered on the command line.
-- **CPU** - Processor number to which the task is attached.
-- **Command** - The command name of the task.
+- **PID** - 被监控的进程的进程号
+- **%usr** - 当在用户层执行(应用程序)时这个进程的cpu使用率。注意这个字段计算的cpu时间不包括在虚拟处理器中使用花去的时间。
+- **%system** - 这个进程在系统级别使用时的cpu使用率。
+- **%guest** - 在虚拟机中的cpu使用率
+- **%CPU** - 进程总的cpu使用率。在SMP环境(多处理器)中，cpu使用率会根据cpu的数量进行划分当你在命令行中输入-I参数。
+- **CPU** - 这个进程能够使用的处理器数目
+- **Command** - 这个进程的命令名称。
 
-### I/O Statistics ###
+### I/O 统计数据 ###
 
-We can use pidstat to get I/O statistics about a process using the -d flag. For example:
+通过使用-d参数来得到I/O的统计数据。比如：
 
     # pidstat -d -p 8472
 
 ![pidstat io](http://blog.linoxide.com/wp-content/uploads/2014/09/pidstat-io.jpg)
 
-The IO output will display a few new columns:
+IO 输出会显示一些内的条目：
 
-- **kB_rd/s** - Number of kilobytes the task has caused to be read from disk per second.
-- **kB_wr/s** - Number of kilobytes the task has caused, or shall cause to be written to disk per second.
-- **kB_ccwr/s** - Number of kilobytes whose writing to disk has been cancelled by the task.
+- **kB_rd/s** - 进程从硬盘上的读取速度
+- **kB_wr/s** - 进程向硬盘中的写入速度
+- **kB_ccwr/s** - 进程写入磁盘被取消的速率
 
 ### Page faults and memory usage ###
+### Page faults和内存使用 ###
 
-Using the -r flag you can get information about memory usage and page faults.
+使用-r标记你能够得到内存使用情况的数据。
 
 ![pidstat pf mem](http://blog.linoxide.com/wp-content/uploads/2014/09/pidstat-pfmem.jpg)
 
-Important columns:
+重要的条目：
 
-- **minflt/s** - Total number of minor faults the task has made per second, those which have not required loading a memory page from disk.
-- **majflt/s** - Total number of major faults the task has made per second, those which have required loading a memory page from disk.
-- **VSZ** - Virtual Size: The virtual memory usage of entire task in kilobytes.
-- **RSS** - Resident Set Size: The non-swapped physical memory used by the task in kilobytes.
+- **minflt/s** - 从内存中加载数据时每秒钟出现的小的错误的数目
+- **majflt/s** - 从内存中加载数据时每秒出现的较大错误的数目
+- **VSZ** - 虚拟容量：整个进程的虚拟内存使用
+- **RSS** - 长期的内存使用：进程非交换物理内存的使用
 
-### Examples ###
+### 举例 ###
 
-**1.** You can use pidstat to find a memory leek using the following command:
+**1.** 你可以通过使用下面的命令来监测内存使用
 
     # pidstat -r 2 5
 
-This will give you 5 reports, one every 2 seconds, about the current page faults statistics, it should be easy to spot the problem process.
+这会给你5份关于page faults的统计数据结果，间隔2s。这将会更容易的定位出现问题的进程。
 
-**2.** To show all children of the mysql server you can use the following command
+**2.** 显示所有mysql server的子进程
 
     # pidstat -T CHILD -C mysql
 
 **3.** To combine all statistics in a single report you can use:
+**3.** 将所有的统计数据结合到一个简单的结果记录中：
 
     # pidstat -urd -h
 
@@ -81,7 +82,7 @@ This will give you 5 reports, one every 2 seconds, about the current page faults
 via: http://linoxide.com/linux-command/linux-pidstat-monitor-statistics-procesess/
 
 作者：[Adrian Dinu][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[John](https://github.com/johnhoow)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
