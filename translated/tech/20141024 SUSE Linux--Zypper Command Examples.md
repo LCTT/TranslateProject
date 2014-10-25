@@ -1,24 +1,22 @@
-Translating----geekpi
-
-SUSE Linux – Zypper Command Examples
+SUSE Linux – Zypper 命令示例
 ================================================================================
-Zypper is command line interface in SuSE Linux which is used to  install, update, remove software, manage repositories, perform various queries, and lot more. In this article we will discuss different examples of zypper command .
+Zypper是SUSE Linux中的命令行接口，可以用于安装，升级，卸载，管理仓库、执行不同的请求等等。本篇将会讨论zypper的几个不同命令的例子。
 
-Syntax :
+语法：
 
     # zypper [--global-opts] <command> [--command-opts] [command-arguments]
 
-The components mentioned in brackets are not required. The simplest way to execute zypper is to type its name followed by the command.
+中括号中的部分可以不需要。执行zypper最简单的方法是 <command>后输入他的名字。
 
-### Example:1 List the available global options & commands. ###
+### 例子：1 列出可用的全局选项和命令 ###
 
-Open the Terminal , type the Zypper command and press enter , it will display all the global options and command that can be used within zypper.
+打开终端，输入zypper并按回车，它会显示所有可用的全局选项和命令。
 
     linux-xa3t:~ # zypper
 
-### Examples:2 Getting help for Specific zypper Command. ###
+### 例子：2 获得zypper的某个帮助 ###
 
-Syntax : zypper help [command]
+语法： zypper help [command]
 
     linux-xa3t:~ # zypper help remove
     remove (rm) [options] <capability> ...
@@ -40,7 +38,7 @@ Syntax : zypper help [command]
     -U, --no-clean-deps No automatic removal of unneeded dependencies.
     -D, --dry-run Test the removal, do not actually remove.
 
-### Example:3 Open Zypper Shell or session ###
+### 例子：3 打开zypper shell或者会话 ###
 
     linux-xa3t:~ # zypper sh
     zypper>
@@ -50,7 +48,7 @@ Syntax : zypper help [command]
     linux-xa3t:~ # zypper shell
     zypper>
 
-### Example:4 Listing defined Repositories ###
+### 例子：4 列出已定义的仓库 ###
 
     linux-xa3t:~ # zypper repos
 
@@ -60,17 +58,17 @@ or
 
     linux-xa3t:~ # zypper lr
 
-#### 4.1) List Repos URI in Table. ####
+#### 4.1) 以表格的形式列出仓库的URI ####
 
 ![](http://www.linuxtechi.com/wp-content/uploads/2014/10/zypper-repos-uri.png)
 
-#### 4.2) List Repos by priority ####
+#### 4.2) 以优先级列出仓库 ####
 
     linux-xa3t:~ # zypper lr -p
 
 ![](http://www.linuxtechi.com/wp-content/uploads/2014/10/zypper-repos-priority.png)
 
-### Example:5 Refreshing Repositories. ###
+### 例子：5 刷新仓库 ###
 
     linux-xa3t:~ # zypper ref
     Repository 'openSUSE-13.1-Non-Oss' is up to date.
@@ -79,18 +77,18 @@ or
     Repository 'openSUSE-13.1-Update-Non-Oss' is up to date.
     All repositories have been refreshed.
 
-### Example:6 Modifying Zypper Repositories ###
+### 例子：6 修改zypper仓库 ###
 
-zypper repositories can be modified by alias, number, or URI, or by the ‘–all, –remote, –local, –medium-type’ aggregate options.
+zypper仓库可以通过别名、数字或者URI或者通过‘–all、 –remote、 –local、 –medium-type’这些选项修改。
 
-linux-xa3t:~ # zypper mr -d 6                 #disable repo #6
-linux-xa3t:~ # zypper mr -rk -p 70 upd #enable autorefresh and rpm files ‘caching’ for ‘upd’ repo and set its priority to 70
-linux-xa3t:~ # zypper mr -Ka               #disable rpm files caching for all repos
-linux-xa3t:~ # zypper mr -kt               #enable rpm files caching for remote repos
+linux-xa3t:~ # zypper mr -d 6                 #禁用6号仓库
+linux-xa3t:~ # zypper mr -rk -p 70 upd #启用自动书信并为‘upd’仓库设置rpm文件‘缓存’，且设置它的优先级为70
+linux-xa3t:~ # zypper mr -Ka               #为所有的仓库禁用rpm文件缓存
+linux-xa3t:~ # zypper mr -kt               #为远程仓库设置rpm文件缓存
 
-### Example:7 Adding Repository ###
+### 例子：7 添加仓库 ###
 
-Syntax : zypper addrepo OR zypper ar <repo url and alias >
+语法： zypper addrepo 或者 zypper ar <repo 的URL或者别名 >
 
     linux-xa3t:~ # zypper ar http://download.opensuse.org/update/13.1/ update
     Adding repository 'update' .............................................[done]
@@ -100,60 +98,60 @@ Syntax : zypper addrepo OR zypper ar <repo url and alias >
     GPG check: Yes
     URI: http://download.opensuse.org/update/13.1/
 
-### Example:8 Removing Repository ###
+### 例子：8 移除仓库 ###
 
-Syntax : zypper removerepo <Repo Name> <Alias>
+语法： zypper removerepo <仓库名> <别名>
 
-OR
+或者
 
-zypper rr <Repo Name> <Alias>
+zypper rr <仓库名> <别名>
 
     linux-xa3t:~ # zypper rr openSUSE-13.1-1.10 openSUSE-13.1-1.10
     Removing repository 'openSUSE-13.1-1.10' ............................[done]
     Repository 'openSUSE-13.1-1.10' has been removed.
 
-### Example:9 Installing Package ###
+### 例子：9 安装包 ###
 
-syntax : zypper install <Package-Name>  OR  zypper in <Package Name>
+语法： zypper install <包名>  或者  zypper in <包名>
 
     linux-xa3t:~ # zypper install vlc
 
-### Example:10 Removing a Package ###
+### 例子：10 卸载包 ###
 
-Syntax : zypper remove <Package-Name> OR zypper rm <Package-Name>
+语法： zypper remove <包名> OR zypper rm <包名>
 
     linux-xa3t:~ # zypper remove sqlite
 
-### Example:11 Exporting & importing Repository ###
+### 例子：11 导出和导入仓库 ###
 
-Syntax of Exporting Repos : zypper repos –export or zypper lr -e
+导出仓库语法 : zypper repos –export 或者 zypper lr -e
 
     linux-xa3t:~ # zypper lr --export repo-backup/back.repo
     Repositories have been successfully exported to repo-backup/back.repo.
 
-Syntax of Importing Repos :
+导入仓库语法 :
 
     linux-xa3t:~ # zypper ar repo-backup/back.repo
 
-### Example:12 Updating a package ###
+### 例子：12 Updating a package ###
 
-Syntax : zypper update <Package-Name> OR zypper up <Package-Name>
+语法： zypper update <包名> 或者 zypper up <包名>
 
     linux-xa3t:~ # zypper update bash
 
-### Example:13 Install source Package ###
+### 例子：13 安装源码包 ###
 
-Syntax : zypper source-install <source-package> OR zypper si <source-package>
+语法： zypper source-install <源码包> OR zypper si <源码包>
 
     linux-xa3t:~ # zypper source-install zypper
 
-### Example:14 Install only Build Dependency. ###
+### 例子：只安装以来 ###
 
-command in example:13 will install & build dependencies of the specified package. If you want to install source package then use, the option -D.
+例子13中的命令会安装和构建特定包的依赖。如果你想要安装源码包就用-D选项
 
     # zypper source-install -D package_name
 
-To install only the build dependencies use -d.
+只安装依赖就使用-d
 
     # zypper source-install -d package_name
 
@@ -162,7 +160,7 @@ To install only the build dependencies use -d.
 via: http://www.linuxtechi.com/suse-linux-zypper-command-examples/
 
 作者：[Pradeep Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
