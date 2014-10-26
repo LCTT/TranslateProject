@@ -6,9 +6,9 @@ Linus Torvalds对于骂那些开发者感到后悔
 
 Linus Torvalds被认为是Linux内核的创造者和最新的Linux开发版的维护者。他确保我们几乎每个星期都会得到一个新的RC内核并且涉及发生在邮件发送清单中的对话里，他口不择言地用脏话大骂一些开发者们。
 
-The latest problem of this kind, which surfaced in the news as well, was when [he decided to block code from a particular developer][1], after making some very harsh remarks. He is known to be very abrasive, especially when kernel developers break user space to fix something in the kernel. The same happened in this case and he basically went mental on the guy.
+最近出现了一个问题，就是他在做了一些苛刻的评论之后[决定从指定的开发者的手中阉割掉一些代码][1]，这种事件在新闻里也报道过。大家都知道Linus很招人厌烦，尤其是当内核开发者为了修复内核中的一些问题而破坏了用户空间。同样的事情就发生在这种情况下，他基本上已经把那个家伙给气疯了。
 
-### 这是他最接近道歉的一次谈话 ###
+### 这是他最接近道歉意味的一次谈话 ###
 
 Linus Torvalds never really talked about that particular discussion since and people moved on, but recently a systemd developer talked about the strong language in the open source community and he mentioned Linus Torvalds by name. He's not known to apologize, so this admission of guilt during LinuxCon is a big step forward. The moderator asked him what single decision in the last 23 years he would change.
 
