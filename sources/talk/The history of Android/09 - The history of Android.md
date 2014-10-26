@@ -1,3 +1,5 @@
+alim0x translating
+
 The history of Android
 ================================================================================
 ![The new Android Market—less black, more white and green.](http://cdn.arstechnica.net/wp-content/uploads/2013/12/marketab2.png)
