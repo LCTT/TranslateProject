@@ -1,46 +1,44 @@
-wangjiezhe translating...
-
-Linux FAQs with Answers--How to change character encoding of a text file on Linux
+Linux 有问必答 -- 在 Linux 如何更改文本文件的字符编码
 ================================================================================
-> **Question**: I have an "iso-8859-1"-encoded subtitle file which shows broken characters on my Linux system, and I would like to change its text encoding to "utf-8" character set. In Linux, what is a good tool to convert character encoding in a text file? 
+> **问题**：在我的 Linux 系统中有一个编码为 iso-8859-1 的字幕文件，其中部分字符无法正常显示，我想把文本改为 utf8 编码。在 Linux 张, 有没有一个好的工具来转换文本文件的字符编码？
 
-As you already know, computers can only handle binary numbers at the lowest level - not characters. When a text file is saved, each character in that file is mapped to bits, and it is those "bits" that are actually stored on disk. When an application later opens that text file, each of those binary numbers are read and mapped back to the original characters that are understood by us human. This "save and open" process is best performed when all applications that need access to a text file "understand" its encoding, meaning the way binary numbers are mapped to characters, and thus can ensure a "round trip" of understandable data.
+正如我们所知道的那样，电脑只能够处理低级的二进制数字，并不能直接处理字符。当一个文本文件被存储时，文件中的每一个字符都被映射成二进制数字，实际存储在硬盘中的正是这些“二进制数字”。之后当程序打开文本文件时，所有二进制数字都被读入并映射回原始的可读字符。只有当所有需要访问这个文件的程序都能够“理解”它的编码，即二进制数字到字符的映射时，这个“保存和打开”的过程才能很好地完成，这也确保了可理解数据的往返过程。
 
-If different applications do not use the same encoding while dealing with a text file, non-readable characters will be shown wherever special characters are found in the original file. By special characters we mean those that are not part of the English alphabet, such as accented characters (e.g., ñ, á, ü).
+如果不同的程序使用不同的编码来处理同一个文件，源文件中的特殊字符就无法正常显示。这里的特殊字符指的是非英文字母的字符，例如带重音的字符（比如 ñ，á，ü）。
 
-The questions then become: 1) how can I know which character encoding a certain text file is using?, and 2) how can I convert it to some other encoding of my choosing?
+然后问题就来了： 1）我们如何确定一个确定的文本文件使用的是什么字符编码？ 2）我们如何把文件转换成已选择的字符编码？
 
-### Step One ###
+### 步骤一 ###
 
-In order to find out the character encoding of a file, we will use a commad-line tool called file. Since the file command is a standard UNIX program, we can expect to find it in all modern Linux distros.
+为了确定文件的字符编码，我们使用一个名为 “file” 的命令行工具。因为 file 命令是一个标准的 UNIX 程序，所以我们可以在所有现代的 Linux 发行版中找到它。
 
-Run the following command:
+运行下面的命令：
 
     $ file --mime-encoding filename 
 
 ![](https://farm6.staticflickr.com/5602/15595534261_1a7b4d16a2.jpg)
 
-### Step Two ###
+### 步骤二 ###
 
-The next step is to check what kinds of text encodings are supported on your Linux system. For this, we will use a tool called iconv with the "-l" flag (lowercase L), which will list all the currently supported encodings.
+下一步是查看你的 Linux 系统所支持的文件编码种类。为此，我们使用名为 iconv 短工具及 “-l” 选项（L 的小写）来列出所有当前支持的编码。
 
     $ iconv -l 
 
-The iconv utility is part of the the GNU libc libraries, so it is available in all Linux distributions out-of-the-box.
+iconv 工具是 GNU libc 库组成部分，因此它在所有 Linux 发行版中都是开箱即用的。
 
-### Step Three ###
+### 步骤三 ###
 
-Once we have selected a target encoding among those supported on our Linux system, let's run the following command to perform the conversion:
+在我们在我们的 Linux 系统所支持的编码里面选定了目标编码之后，运行下面的命令来完成编码转换：
 
     $ iconv -f old_encoding -t new_encoding filename
 
-For example, to convert iso-8859-1 to utf-8:
+例如，把 iso-8859-1 编码转换为 utf-8 编码：
 
     $ iconv -f iso-8859-1 -t utf-8 input.txt 
 
 ![](https://farm4.staticflickr.com/3943/14978042143_a516e0b10b_o.png)
 
-Knowing how to use these tools together as we have demonstrated, you can for example fix a broken subtitle file:
+了解了我们演示的如何使用这些工具之后，你可以像下面这样修复一个受损的字幕文件：
 
 ![](https://farm6.staticflickr.com/5612/15412197967_0dfe5078f9_z.jpg)
 
