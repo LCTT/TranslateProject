@@ -1,3 +1,4 @@
+(translating by runningwater)
 How to monitor a log file on Linux with logwatch
 ================================================================================
 Linux operating system and many applications create special files commonly referred to as "logs" to record their operational events. These system logs or application-specific log files are an essential tool when it comes to understanding and troubleshooting the behavior of the operating system and third-party applications. However, log files are not precisely what you would call "light" or "easy" reading, and analyzing raw log files by hand is often time-consuming and tedious. For that reason, any utility that can convert raw log files into a more user-friendly log digest is a great boon for sysadmins.
@@ -122,7 +123,7 @@ Hope this helps. Feel free to comment to share your own tips and ideas with the 
 via: http://xmodulo.com/monitor-log-file-linux-logwatch.html
 
 作者：[Gabriel Cánepa][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
