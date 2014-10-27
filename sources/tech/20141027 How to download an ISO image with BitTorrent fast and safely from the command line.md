@@ -1,3 +1,5 @@
+wangjiezhe translating...
+
 How to download an ISO image with BitTorrent fast and safely from the command line
 ================================================================================
 If you are one of those guys who have urge to try out every new (or even beta) release of Linux distribution to satisfy your curiosity and stay up-to-date, you will need to deal with the hassle of downloading big ISO images every now and then. ISO providers typically put up .torrent file of their ISO images to ease up on the bandwidth consumption of their servers. The benefit of peer-to-peer download is obvious for users as well (in terms of speed), especially when a new release of a popular Linux distribution is up for grab, and everyone is downloading and seeding the release at the same time.
