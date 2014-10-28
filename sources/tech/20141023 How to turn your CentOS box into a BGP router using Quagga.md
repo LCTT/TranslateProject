@@ -1,3 +1,4 @@
+disylee占一个
 How to turn your CentOS box into a BGP router using Quagga
 ================================================================================
 In a [previous tutorial][1]（注：此文原文做过，文件名：“20140928 How to turn your CentOS box into an OSPF router using Quagga.md”，如果前面翻译发布了，可以修改此链接）, I described how we can easily turn a Linux box into a fully-fledged OPSF router using Quagga, an open source routing software suite. In this tutorial, I will focus on **converting a Linux box into a BGP router, again using Quagga**, and demonstrate how to set up BGP peering with other BGP routers.
