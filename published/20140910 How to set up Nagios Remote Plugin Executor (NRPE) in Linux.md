@@ -231,6 +231,6 @@ via: http://xmodulo.com/2014/03/nagios-remote-plugin-executor-nrpe-linux.html
 
 [a]:http://xmodulo.com/author/sarmed
 [1]:http://xmodulo.com/2012/08/how-to-measure-average-cpu-utilization.html
-[2]:http://xmodulo.com/2013/12/install-configure-nagios-linux.html
+[2]:http://linux.cn/article-2436-1.html
 [3]:http://xmodulo.com/2013/01/how-to-set-up-rpmforge-repoforge-repository-on-centos.html
 [4]:http://xmodulo.com/2013/01/how-to-set-up-rpmforge-repoforge-repository-on-centos.html
