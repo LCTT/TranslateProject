@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How to encrypt files and directories with eCryptFS on Linux
 ================================================================================
 You do not have to be a criminal or work for the CIA to use encryption. You simply don't want anybody to spy on your financial data, family pictures, unpublished manuscripts, or secret notes where you have jotted down startup ideas which you think can make you super rich.
