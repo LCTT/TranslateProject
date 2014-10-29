@@ -1,19 +1,18 @@
-Translating by ZTinoZ
-Linus Torvalds' Best Quotes from LinuxCon Europe 2014 
+2014年欧洲LinuxCon大会Linus Torvalds的最佳语录
 ================================================================================
 ![](http://www.linux.com/images/stories/41373/Linus-Dirk-2014.jpg)
 
-Linux creator Linus Torvalds answered questions from Dirk Hohndel, Intel's chief Linux and open source technologist, on Wednesday, Oct. 15, 2014 at LinuxCon and CloudOpen Europe.
+在今年的10月15日星期三，Linux的创造者Linus Torvalds出席了欧洲LinuxCon和CloudOpen大会并回答了英特尔的Linux及开源技术专家Dirk Hohndel提出的问题。
 
-Linus Torvalds doesn't regret any of the technical decisions he's made over the past 23 years since he first created Linux, he said Wednesday at [LinuxCon and CloudOpen Europe][1].
+Linus Torvalds在那天的 [欧洲LinuxCon和CloudOpen大会][1] 上说，从他首次创造出Linux操作系统到现在的23年里，他没后悔过任何他做过的技术决策。
 
-“Technical issues, even when they're completely wrong, and they have been, you can fix them later,” said Torvalds, a Linux Foundation fellow.
+“技术问题，甚至是完全错误的技术问题，你也可以之后再去修复它。” Torvalds说。
 
 ![](http://www.linux.com/images/stories/41373/Linus-Torvalds-2014.jpg)
 
-Despite these personal issues and disagreements the community has thrived, and created the best technology they possibly can, said Linus Torvalds at LinuxCon Europe 2014.
+他还说，尽管这些个人问题和异议在社区里“日益繁荣”，但是这些人或许能创造出最好的技术。
 
-He does, however, regret the times he has alienated developers and users with his use of strong language on the kernel mailing list, he said. Relationships can't be so easily fixed.
+他本人就是这样的，然而，他regret the times he has alienated developers and users with his use of strong language on the kernel mailing list, he said. Relationships can't be so easily fixed.
 
 Despite these personal issues and disagreements the community has thrived, and created the best technology they possibly can. This is, Torvalds said, the ultimate goal.
 
