@@ -12,11 +12,11 @@ Linus Torvalds在那天的 [欧洲LinuxCon和CloudOpen大会][1] 上说，从他
 
 他还说，尽管这些个人问题和异议在社区里“日益繁荣”，但是这些人或许能创造出最好的技术。
 
-他本人就是这样的，然而，他regret the times he has alienated developers and users with his use of strong language on the kernel mailing list, he said. Relationships can't be so easily fixed.
+他本人就是这样的，然而，他对他在内核邮件列表中用粗话对待开发者和用户的事情感到遗憾。但是彼此间的关系不可能那么轻易就缓和。
 
-Despite these personal issues and disagreements the community has thrived, and created the best technology they possibly can. This is, Torvalds said, the ultimate goal.
+社区里的那些人能创造出最好的技术同样也是Torvalds的终极目标和期望。
 
-In a Q&A on stage with Dirk Hohndel, Intel's chief Linux and open source technologist, Torvalds spoke about the state of the community, the kernel development process, what it takes to be a kernel developer, and the future of Linux. Here are some highlights of the discussion.
+在英特尔的Linux及开源技术专家Dirk Hohndel的问答环节里，Torvalds 谈了社区里的一些现状和内核开发进展，谈了怎么成为一名内核开发者以及Linux的未来。以下是对话中的一些闪光点。
 
 **1.** “The speed of development has not really slowed down the last few years. We have had around 10,000 patches every release from more than 1,000 people and the end result has been very good.”
 
