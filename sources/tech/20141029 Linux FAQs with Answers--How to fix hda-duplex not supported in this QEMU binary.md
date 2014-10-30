@@ -1,3 +1,5 @@
+Translating------geekpi
+
 Linux FAQs with Answers--How to fix “hda-duplex not supported in this QEMU binary”
 ================================================================================
 > **Question**: When I try to install Linux on a new VM in virt-manager, the VM fails to boot with the following error: "unsupported configuration: hda-duplex not supported in this QEMU binary." How can I fix this error?
