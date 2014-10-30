@@ -63,30 +63,30 @@ CMD 这个步骤是在新的 web 应用容器启动后执行的。在测试环�
 
 ### Docker 容器内运行 Rails 应用 ###
 
-For a medium-sized Rails application, with about 100 gems and just as many integration tests running under Rails, this takes 8 minutes and 16 seconds on a 2GB and 2 core instance, without any local Docker images. If I already had Ruby, MySQL & Redis Docker images on that host, this would take 4 minutes and 45 seconds. Furthermore, if I had a master application image to base a new Docker image build of the same application, this would take a mere 2 minutes and 23 seconds. To put this into perspective, it takes me just over 2 minutes to deploy a new version of my Rails application, including dependent services such as MySQL and Redis.
+没有本地 Docker 镜像，从零开始部署一个中级规模的 Rails 应用大概需要100个 gems，进行100次整体测试，在使用2个核心实例和2GB内存的情况下，这些操作需要花费8分16秒。装上 Ruby、MySQL 和 Redis Docker 镜像后，部署应用花费了4分45秒。另外，如果从一个已存在的主应用镜像编译出一个新的 Docker 应用镜像出来，只需花费2分23秒。综上所述，部署一套新的 Rails 应用，解决其所有依赖关系（包括 MySQL 和 Redis），只需花我2分钟多一点的时间就够了。
 
-I would like to point out that my application deploys also run a full test suite which alone takes about a minute end-to-end. Without intending, Docker became a simple Continuous Integration environment that leaves test-only containers behind for inspection when tests fail, or starts a new application container with the latest version of my application when the test suite passes. All of a sudden, I can validate new code with my customers in minutes, with the guarantee that different versions of my application are isolated from one another, all the way to the operating system. Unlike traditional VMs which take minutes to boot, a Docker container will take under a second. Furthermore, once a Docker image is built and tests pass for a specific version of my application, I can have this image pushed into a private Docker registry, waiting to be pulled by other Docker hosts and started as a new Docker container, all within seconds.
+需要指出的一点是，我的应用上运行着一套完全测试套件，跑完测试需要花费额外1分钟时间。尽管是无意的，Docker 可以变成一套简单的持续集成环境，当测试失败后，Docker 会把“test-only”这个容器保留下来，用于分析出错原因。我可以在1分钟之内和我的客户一起验证新代码，保证不同版本的应用之间是完全隔离的，同操作系统也是隔离的。传统虚拟机启动系统时需要花费好几分钟，Docker 容器只花几秒。另外，一旦一个 Dockedr 镜像编译出来，并且针对我的某个版本的应用的测试都被通过，我就可以把这个镜像提交到 Docker 私服 Registry 上，可以被其他 Docker 主机下载下来并启动一个新的 Docker 容器，而这不过需要几秒钟时间。
 
 ### 总结 ###
 
-Ansible made me re-discover the joy of managing infrastructures. Docker gives me confidence and stability when dealing with the most important step of application development, the delivery phase. In combination, they are unmatched.
+Ansible 让我重新看到管理基础设施的乐趣。Docker 让我有充分的信心能稳定处理应用部署过程中最重要的步骤——交付环节。双剑合璧，威力无穷。
 
-To go from no server to a fully deployed Rails application in just under 12 minutes is impressive by any standard. To get a very basic Continuous Integration system for free and be able to preview different versions of an application side-by-side, without affecting the “live” version which runs on the same hosts in any way, is incredibly powerful. This makes me very excited, and having reached the end of the article, I can only hope that you share my excitement.
+从无到有搭建一个完整的 Rails 应用可以在12分钟内完成，这种速度放在任何场合都是令人印象深刻的。能获得一个免费的持续集成环境，可以查看不同版本的应用之间的区别，不会影响到同主机上已经在运行的应用，这些功能强大到难以置信，让我感到很兴奋。在文章的最后，我只希望你能感受到我的兴奋。
 
-I gave a talk at the January 2014 London Docker meetup on this subject, [I have shared the slides on Speakerdeck][7].
+我在2014年1月伦敦 Docker 会议上讲过这个主题，[已经分享到 Speakerdeck][7]了。
 
-For more Ansible and Docker content, subscribe to [The Changelog Weekly][8] — it ships every Saturday and regularly includes the week’s best links for both topics.
+如果想获得更多的关于 Ansible 和 Docker 的内容，请订阅 [changlog 周报][8]，它会在每周六推送一周最有价值的关于这两个主题的新闻链接。
 
-[Use the Draft repo][9] if you’d like to write a post like this for The Changelog. They’ll work with you through the process too.
+如果你想为我们的 Changlog 写一篇文章，请[使用 Draft repo][9]，他们会帮到你的。
 
-Until next time, [Gerhard][a].
+下次见，[Gerhard][a]。
 
 --------------------------------------------------------------------------------
 
 via: http://thechangelog.com/ansible-docker/
 
 作者：[Gerhard Lazu][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[bazz2](https://github.com/bazz2)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
