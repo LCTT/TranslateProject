@@ -12,7 +12,7 @@ Clonezilla 是一个基于 Ubuntu 和 Debian 的 Live CD。它可以像 Windows 
 
 ![](http://1-ps.googleusercontent.com/h/www.efytimes.com/admin/useradmin/rte/my_documents/my_pictures/600x450xZ34_clonezilla-600x450.png.pagespeed.ic.8Jq7pL2dwo.png)
 
-### 2. [Redo Backup][2]：###
+### 2. [Redo Backup][2]：### 
 
 Redo Backup 是另一个用来方便地克隆磁盘的 Live CD。它是自由和开源的软件，使用 GPL 3 许可协议授权。它的主要功能和特点包括从 CD 引导的简单易用的 GUI、无需安装，可以恢复 Linux 和 Windows 等系统、无需登陆访问文件，以及已删除的文件等。
 
