@@ -18,17 +18,17 @@ Linus Torvalds在那天的 [欧洲LinuxCon和CloudOpen大会][1] 上说，从他
 
 在英特尔的Linux及开源技术专家Dirk Hohndel的问答环节里，Torvalds 谈了社区里的一些现状和内核开发进展，谈了怎么成为一名内核开发者以及Linux的未来。以下是对话中的一些闪光点。
 
-**1.** “The speed of development has not really slowed down the last few years. We have had around 10,000 patches every release from more than 1,000 people and the end result has been very good.”
+**1.** “在过去的几年里，我们开发的速度真的没有慢下来。每个版本我们都能从超过1000个人中得到大约100000个补丁，最终效果自然是非常好的。”
 
-**2.** Dirk Hohndel: “You said you wanted subsystem maintainers to consider following the x86 model and have more than one maintainer share the role. How about applying your own advice at the top?
+**2.** Dirk Hohndel: “你说你希望不只一个子系统的维护人员考虑对x86模型产生兴趣，你是怎么把自己的建议应用到实际中的？
 
-Torvalds: “I'll probably have to do that someday. Right now I'm not getting a lot of complaints for not being responsive. Being responsive is one of the most important things a kernel developer at any level can be... So far, partly thanks to Git, I've been able to keep up.”
+Torvalds: “某一天我可能不得不这么做。目前我还没有收到关于不主动的任何投诉。主动是一个内核开发者最重要的东西，不论水平档次...迄今为止，一定程度上要感谢Git，我才能一直保持着前进的动力。”
 
-**3.** “A lot of people want to have market share numbers, lots of users, because that's how they view their self worth. For me, one of the most important things for Linux is having a big community that is actively testing new kernels; it's the only way to support the absolute insane amount of different hardware we deal with.”
+**3.** “很多人都想要得到市场份额数，包括很多用户，因为那是体现自我价值的一种方式。就我来说，对Linux最重要的事情之一，就是拥有一个一直在不停测试新内核的大社区，这是支持我们处理大量硬件问题的唯一办法。”
 
-**4.** Hohndel: “If you could change a single decision you've made in the last 23 years, what would you do differently?”
+**4.** Hohndel: “如果你能改变在过去23年里尼做过的一个决策，你会怎么做？”
 
-Torvalds: “From a technical standpoint, no single decision has ever been that important... The problems tend to be around alienating users or developers and I'm pretty good at that. I use strong language. But again there's not a single instance I'd like to fix. There's a metric shitload of those.”
+Torvalds: “从技术角度看，no single decision has ever been that important... The problems tend to be around alienating users or developers and I'm pretty good at that. I use strong language. But again there's not a single instance I'd like to fix. There's a metric shitload of those.”
 
 **5.** “Most people even if though they don't always necessarily like each other, do tend to respect the code they generate. For Linux that's the important part. What really matters is people are very involved in generating the best technology we can.”
 
@@ -51,7 +51,7 @@ Torvalds: “The boldest prediction I can say is, I will probably release rc1 in
 via: http://www.linux.com/news/featured-blogs/200-libby-clark/791788-linus-torvalds-best-quotes-from-linuxcon-europe-2014
 
 作者：[Libby Clark][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ZTinoZ](https://github.com/ZTinoZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
