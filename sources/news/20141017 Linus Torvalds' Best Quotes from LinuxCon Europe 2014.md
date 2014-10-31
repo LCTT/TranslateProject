@@ -28,19 +28,19 @@ Torvalds: “某一天我可能不得不这么做。目前我还没有收到关�
 
 **4.** Hohndel: “如果你能改变在过去23年里尼做过的一个决策，你会怎么做？”
 
-Torvalds: “从技术角度看，no single decision has ever been that important... The problems tend to be around alienating users or developers and I'm pretty good at that. I use strong language. But again there's not a single instance I'd like to fix. There's a metric shitload of those.”
+Torvalds: “从技术角度来看，没有哪个决定重要到这个程度...有个问题是慢慢地疏远了用户和开发者，而我却恰恰很擅长这个。我说了粗话，但是这不是我想要改变的某一个决定，这些粗话应该有所限制。”
 
-**5.** “Most people even if though they don't always necessarily like each other, do tend to respect the code they generate. For Linux that's the important part. What really matters is people are very involved in generating the best technology we can.”
+**5.** “大多数人即使他们不一定彼此喜欢，但会尊重他们写出的代码。对于Linux来说这是很重要的一部分。真正重要的是大家都在尽自己所能产出最佳的代码。”
 
-**6.** “On the internet nobody can hear you being subtle.”
+**6.** “在互联网上没人能察觉到渺小的你。”
 
-**7.** “One of the reasons we have this culture of strong language, that admittedly many people find off-putting, is that when it comes to technical people with strong opinions and with a strong drive to do something technically superior, you end up having these opinions show up as sometimes pretty strong language.”
+**7.** “我们说粗话这个传统导致很多人倒胃口，其中有一个原因是当有强烈的意愿和推动力的技术人员要做一些技术上的进步时，你就需要用一些强烈的语言来表达你的意愿。”
 
-**8.** Hohndel: What will you tell a student who wants to become the next Linus?
+**8.** Hohndel: “你跟那个想成为下一个Linus的学生是怎么说的？”
 
-Torvalds: “Find something that you're passionate about and just do it.”
+Torvalds: “寻找能让你充满热情的事情并去完成它。”
 
-**9.** “Becoming a maintainer is easy; you just need an infinite amount of time and respond to email from random people.”
+**9.** “成为一个维护人员很容易，你只需要无限的时间并且回复人们的邮件就行。”
 
 **10.** Hohndel: “Make a bold prediction about the future of Linux.”
 
