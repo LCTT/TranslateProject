@@ -1,3 +1,4 @@
+[translating by KayGuoWhu]
 Linux FAQs with Answers--How to open a port in the firewall on CentOS or RHEL
 ================================================================================
 > **Question**: I am running a web/file server on my CentOS box, and to access the server remotely, I need to modify a firewall to allow access to a TCP port on the box. What is a proper way to open a TCP/UDP port in the firewall of CentOS/RHEL? 
