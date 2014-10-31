@@ -1,3 +1,5 @@
+barney-ro translating
+
 Handy Disk Image Tools
 ================================================================================
 Disk images are computer files of a disk volume or an entire data storage device, such as a hard drive, optical disk (e.g. DVD, CD, Blu-ray), tape drive, USB flash drive, or floppy disk. A disk image represents the content exactly as it is on the original storage device, including both data and structure information.
@@ -158,7 +160,7 @@ Features include:
 via: http://www.linuxlinks.com/article/20141025082352476/DiskImageTools.html
 
 作者：Frazer Kline
-译者：[译者ID](https://github.com/译者ID)
+译者：[barney-ro](https://github.com/barney-ro)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
