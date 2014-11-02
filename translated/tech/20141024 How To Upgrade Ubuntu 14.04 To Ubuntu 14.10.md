@@ -43,7 +43,7 @@ Ubuntu 14.04是长期支持（LTS）版本。这意味着更长的支持周期�
 via: http://itsfoss.com/upgrade-ubuntu-14-04-to-14-10/
 
 作者：[Abhishek][a]
-译者：[geekpi](https://github.com/geekpi)
+译者：[geekpi](https://github.com/geekpi) 
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
