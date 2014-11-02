@@ -1,31 +1,29 @@
-Translating----geekpi
-
-How to Install MariaDB in Ubuntu 14.04 LTS
+如何在Ubuntu 14.04 LTS上安装MariaDB
 ================================================================================
-MariaDB is an Open Source database Server & It is 100 % compatible  with MySQL, drop-in replacement to MySQL database server.
+MariaDB是一个开源数据库且100%与MySQL兼容，目标是替代MySQL数据库。
 
-### Background of MariaDB : ###
+### MariaDB的背景 : ###
 
-In 2008, MySQL was acquired by **Sun Microsystems**, which was in turn acquired by Oracle Corporation in 2010. While the initial acquisition by Sun was hailed by many in the MySQL community as exactly what the project needed, that sentiment did not last, and the subsequent acquisition by Oracle was unfortunately met with far lower expectations. Many of MySQL’s developers left Sun and Oracle to work on new projects . Among them was **Michael ‘Monty’ Widenius**, creator of MySQL and one of the project’s longtime technical lead. Monty and his team created a fork (offshoot) of the MySQL code base and named his new DBMS **MariaDB**
+2008年，MySQL被后来被Oracle在2010年收购的**Sun Microsystems**收购了。 最初被Sun公司的收购由于符合项目的需要受到MySQL社区的欢呼，但是这种情绪并没有持续他热爱就，接下来被Oracle的收购不幸期望远远低于预期。许多MySql的开发者离开了Sun和Oracle公司开始新的项目。在他们中间就有MySQL的创建者以及项目长期技术带头人之一的**Michael ‘Monty’ Widenius**。Monty和他的团队创建了MySQL的一个fork版本并且命名它为**MariaDB**。
 
-In this Post we will discuss how to install MariaDB in Ubuntu Linux. By default mariadb packages are not included in Ubuntu Repositories. So to install mariadb , we we have set MariaDB repository.
+本篇我们会讨论如何在Ubuntu上安装MariaDB。默认上MariaDB的包并没有在Ubuntu仓库中。要安装MariaDB，我们首先要设置MariaDB仓库。
 
-#### Setting Up MariaDB Repository ####
+#### 设置 MariaDB 仓库 ####
 
     $ sudo apt-get install software-properties-common
     $ sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
     $ sudo add-apt-repository 'deb http://sfo1.mirrors.digitalocean.com/mariadb/repo/10.0/ubuntu trusty main'
 
-#### Installation of MariaDB : ####
+#### 安装 MariaDB : ####
 
     $ sudo apt-get update
     $ sudo apt-get install mariadb-server
 
-While Installing MariaDB , you will be asked to set Maria DB root Password.
+在安装中，你会被要求设置MariaDB的root密码。
 
 ![](http://www.linuxtechi.com/wp-content/uploads/2014/10/mariadb-root-1024x442-1.jpg)
 
-#### Connect To MariaDB From the Command Line : ####
+#### 从命令行连接到MariaDB : ####
 
     linuxtechi@mail:~$ mysql -uroot -p
     Enter password: 
@@ -36,7 +34,7 @@ While Installing MariaDB , you will be asked to set Maria DB root Password.
     Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
     MariaDB [(none)]>
 
-#### Maria DB Service ####
+#### Maria DB 服务 ####
 
     $ sudo /etc/init.d/mysql stop
     $ sudo /etc/init.d/mysql start
@@ -46,7 +44,7 @@ While Installing MariaDB , you will be asked to set Maria DB root Password.
 via: http://www.linuxtechi.com/install-mariadb-in-ubuntu/
 
 作者：[Pradeep Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
