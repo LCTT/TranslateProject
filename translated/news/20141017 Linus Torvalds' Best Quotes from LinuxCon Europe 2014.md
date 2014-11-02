@@ -42,9 +42,9 @@ Torvalds: “寻找能让你充满热情的事情并去完成它。”
 
 **9.** “成为一个维护人员很容易，你只需要无限的时间并且回复人们的邮件就行。”
 
-**10.** Hohndel: “Make a bold prediction about the future of Linux.”
+**10.** Hohndel: “给Linux的未来做个大胆的预测吧。”
 
-Torvalds: “The boldest prediction I can say is, I will probably release rc1 in about a week.”
+Torvalds: “我能做的一个最大的猜测，就是我可能会一周更新一次RC1版本。”
 
 --------------------------------------------------------------------------------
 
