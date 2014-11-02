@@ -1,16 +1,16 @@
-客户机通过DNSMASQ网络启动服务器网络安装“Debian 7（Wheezy）”
+通过网络方式安装 Debian 7（Wheezy）
 ================================================================================
-本教程将指引你直接通过使用**DNSMASQ**作为**PXE服务器（预启动执行环境）**的网络位置安装**Debian 7（Wheezy）**，此种情况是假定你的服务器不提供任何CD/DVD/USB介质驱动器，或者它只能通过相连的监视器、键盘和鼠标操作。
+本教程将指引你直接通过使用**DNSMASQ**作为**PXE服务器（预启动执行环境）**，以网络方式安装**Debian 7（Wheezy）**，此种情况是假定你的服务器不提供任何CD/DVD/USB介质驱动器，或者它只能通过相连的监视器、键盘和鼠标操作。
 
 ![Debian 7 Network Installation on Client Machines](http://www.tecmint.com/wp-content/uploads/2014/09/Network-Debian-Instalaltion.png)
 
-客户机上的Debian 7网络安装
+*客户机上的Debian 7网络安装*
 
 **DNSMASQ**是一个轻量级网络基础架构服务器，它可以通过内建的DNS、DHCP和TFTP服务器提供如DNS、DHCP和网络启动等关键服务。
 
 一旦PXE服务器启动并运行，你可以指示你所有的客户机直接从网络启动，前提是你的客户机必须拥有一张支持网络启动的网卡，网络启动可以从BIOS的网络启动或启动服务选项中启用。
 
-### 需求 ###
+### 前置阅读 ###
 
 - [Debian 7 (Wheezy)安装指南][1]
 
@@ -22,7 +22,7 @@
 
 ![Install Dnsmasq Package](http://www.tecmint.com/wp-content/uploads/2014/09/Install-Dnsmasq-in-Debian.png)
 
-安装Dnsmasq包
+*安装Dnsmasq包*
 
 **2.** 安装好DNSMASQ包后，你可以开始编辑配置文件。首先创建一个主配置文件的备份，然后使用下面的命令对**dnsmasq.conf**文件进行编辑。
 
@@ -31,9 +31,9 @@
 
 ![Backup Dnsmasq Configuration](http://www.tecmint.com/wp-content/uploads/2014/09/Backup-dnsmasq-Configuration-file.png)
 
-备份Dnsmasq配置
+*备份Dnsmasq配置*
 
-**3.** 上面的备份过程适合重命名配置文件，所以新的文件应该是空，你可以使用以下下面描述的**DNSMASQ**配置文件节录。
+**3.** 上面的备份过程适合重命名配置文件，所以新的文件应该是空，你可以使用以下描述的**DNSMASQ**配置文件节录。
 
     interface=eth0
     domain=debian.lan
@@ -47,7 +47,7 @@
 
 ![Configuration of Dnsmasq](http://www.tecmint.com/wp-content/uploads/2014/09/Configure-dnsmasq.png)
 
-Dnsmasq配置
+*Dnsmasq配置*
 
 - **interface** – 服务器监听的网络接口。
 - **domain** – 用你自己的域名替换。
@@ -79,7 +79,7 @@ Dnsmasq配置
 
 ![Download Debian NetBoot Files](http://www.tecmint.com/wp-content/uploads/2014/09/Download-Debian-NetBoot-Files.png)
 
-下载Debian网络启动文件
+*下载Debian网络启动文件*
 
 使用以下变量用于**Debian网络安装**镜像和架构。
 
@@ -95,9 +95,10 @@ Dnsmasq配置
 
 ![Start Dnsmasq Service](http://www.tecmint.com/wp-content/uploads/2014/09/Start-Dnsmasq-Service.png)
 
-启动Dnsmasq服务
+*启动Dnsmasq服务*
 
 **6.** 基于Debian的发行版通常附带了**UFW防火墙**包。使用以下命令来打开需要的**DNSMASQ**端口号：**67**（Bootps），**69**（TFTP），**53**（DNS）**4011**（代理DHCP）udp和**53** tcp（DNS）。
+
     # ufw allow 69/udp
     # ufw allow 4011/udp   ## Only if you have a ProxyDHCP on the network
     # ufw allow 67/udp
@@ -106,9 +107,8 @@ Dnsmasq配置
 
 ![Open Dnsmasq Ports](http://www.tecmint.com/wp-content/uploads/2014/09/Open-Dnsmasq-Ports-620x303.png)
 
-开启Dnsmasq端口
+*开启Dnsmasq端口*
 
-Now, the PXE loader located on your client network interface will load **pxelinux** configuration files from **/srv/tftp/pxelinux.cfg** directory using this order.
 现在，位于你的客户机网络接口上的PXE加载器将使用按以下顺序从**/srv/tftp/pxelinux.cfg**目录加载**pxelinux**配置文件。
 
 - GUID文件
@@ -123,7 +123,7 @@ Now, the PXE loader located on your client network interface will load **pxelinu
 
 ![Select BIOS Settings](http://www.tecmint.com/wp-content/uploads/2014/09/Select-BIOS-Settings.png)
 
-选择BIOS设置
+*选择BIOS设置*
 
 **8。** 在编辑启动顺序后，通常按**F10**来保存BIOS设置。重启后，你的客户端计算机应该可以直接从网络启动了，应该会出第一个**PXE**提示，要求你按**F8**键进入菜单。
 
@@ -131,15 +131,15 @@ Now, the PXE loader located on your client network interface will load **pxelinu
 
 ![Boot Menu Selection](http://www.tecmint.com/wp-content/uploads/2014/09/Boot-Menu-Selection.png)
 
-启动菜单选择
+*启动菜单选择*
 
 ![Select Debian Installer Boot](http://www.tecmint.com/wp-content/uploads/2014/09/Select-Debian-Installer-Boot.png)
 
-选择Debian安装器启动
+*选择Debian安装器启动*
 
 ![Select Debian Install](http://www.tecmint.com/wp-content/uploads/2014/09/Select-Debian-Install.png)
 
-选择Debian安装
+*选择Debian安装*
 
 从这里开始，你可以使用Debian 7 Wheezy安装进程将Debian安装到你的机器上了（安装链接见上面）。然而，为了能够完成安装进程，你也需要确保你的机器上互联网连接已经激活。
 
@@ -151,7 +151,7 @@ Now, the PXE loader located on your client network interface will load **pxelinu
 
 ![Debug DNSMASQ Server](http://www.tecmint.com/wp-content/uploads/2014/09/Debbug-DNSMASQ-Server.png)
 
-DNSMASQ服务器排障
+*DNSMASQ服务器排障*
 
 **10.** 如果服务器测试中已一切就绪，你现在可以在**sysv-rc-conf**包的帮助下，启用**DNSMASQ**守护进程自启动，以使该进程在系统重启后自动启动。
 
@@ -160,11 +160,11 @@ DNSMASQ服务器排障
 
 ![Enable DNSMASQ Daemon](http://www.tecmint.com/wp-content/uploads/2014/09/Enable-DNSMASQ-Daemon.png)
 
-启用DNSMASQ守护进程
+*启用DNSMASQ守护进程*
 
 到此为止吧！现在你的**PXE**服务器已经整装待发，随时准备好分配IP地址了（**DHCP**），并为你所有网段中的客户端提供需要的启动信息，这些信息配置用来从网络启动并安装Debian Wheezy。
 
-使用PXE网络启动安装在服务器主机数量增长时很有优势，因为你可以在短时间内火同时设置整个网络基础架构，为版本升级提供了方便，也可以通过kickstart文件使整个安装的全自动化。
+使用PXE网络启动安装在服务器主机数量很多时很有优势，因为你可以在短时间内火同时设置整个网络基础架构，为版本升级提供了方便，也可以通过kickstart文件使整个安装的全自动化。
 
 --------------------------------------------------------------------------------
 
@@ -172,7 +172,7 @@ via: http://www.tecmint.com/network-installation-of-debian-7-on-client-machines/
 
 作者：[Matei Cezar][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
