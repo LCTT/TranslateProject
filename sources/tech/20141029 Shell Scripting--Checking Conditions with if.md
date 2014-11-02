@@ -1,3 +1,4 @@
+>>> Translating by ThomazL
 Shell Scripting – Checking Conditions with if
 ================================================================================
 In Bourne Shell if statement checks whether a condition is true or not. If so , the shell executes the block of code associated with the if statement. If the statement is not true , the shell jumps beyond the end of the if statement block & Continues on.
