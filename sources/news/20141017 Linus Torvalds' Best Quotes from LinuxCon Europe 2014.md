@@ -1,3 +1,4 @@
+Translating by ZTinoZ
 Linus Torvalds' Best Quotes from LinuxCon Europe 2014 
 ================================================================================
 ![](http://www.linux.com/images/stories/41373/Linus-Dirk-2014.jpg)
