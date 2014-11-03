@@ -1,3 +1,4 @@
+Translating by GOLinux!
 rsync Command to Exclude a List of Files and Directories in Linux
 ================================================================================
 **rsync** is a very useful and popular linux tool being used for backup and restoring files, but also for comparing and syncing them. We already shown you in the past [how to use rsync command in linux with examples][1] and today we will add a few more useful tricks you can use rsync at.
