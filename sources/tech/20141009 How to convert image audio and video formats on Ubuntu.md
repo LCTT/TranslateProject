@@ -1,4 +1,3 @@
-2q1w2007翻译中
 How to convert image, audio and video formats on Ubuntu
 ================================================================================
 If you need to work with a variety of image, audio and video files encoded in all sorts of different formats, you are probably using more than one tools to convert among all those heterogeneous media formats. If there is a versatile all-in-one media conversion tool that is capable of dealing with all different image/audio/video formats, that will be awesome.

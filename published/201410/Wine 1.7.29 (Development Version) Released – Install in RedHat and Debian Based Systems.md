@@ -1,10 +1,11 @@
-Wine 1.7.29（开发版本）已发布-在基于RedHat与Debian的系统上安装
+在基于RedHat与Debian的系统上安装Wine 最新的开发版本
 =========================
+
 **Wine**,一个在Linux平台上非常受欢迎并且强大的开源应用，有了它，我们可以在Linux平台上完美运行Windows应用与游戏。
 
 ![Install Wine (Development Version) in Linux](http://www.tecmint.com/wp-content/uploads/2014/05/Install-Wine-Development-Version.png)
 
-在Linux上安装Wine（开发版本）
+*在Linux上安装Wine（开发版本）*
 
 WineHQ团队，近期宣布了一个新的开发版本**Wine1.7.29**。这个版本带来了诸多重要的特性，并且修复了**44**个bug。
 
@@ -19,7 +20,7 @@ Wine团队几乎每周都会发布新的开发版本，并且加入许多新特�
 
 在官方的  [变更日志][1]  中可以找到关于这个版本更多更深入的细节。
 
-这篇文章指导你在基于**RedHat**与**Debian**的系统，如CentOS，Fedora，Ubuntu，Linux Mint以及其他的发型版中安装最新的开发版本**Wine 1.7.29**。
+这篇文章指导你在基于**RedHat**与**Debian**的系统，如CentOS，Fedora，Ubuntu，Linux Mint以及其他的发行版中安装最新的开发版本**Wine 1.7.29**。
 
 ##在Linux中安装 Wine 1.7.29 开发版本##
 
@@ -32,8 +33,8 @@ Wine团队几乎每周都会发布新的开发版本，并且加入许多新特�
 
 然后，使用如下命令下载Wine最新的开发版本（**1.7.29**）以及解压源码包。
 
-    $cd /tmp
-    $wget http://citylan.dl.sourceforge.net/project/wine/Source/wine-1.7.29.tar.bz2
+    $ cd /tmp
+    $ wget http://citylan.dl.sourceforge.net/project/wine/Source/wine-1.7.29.tar.bz2
     $ tar -xvf wine-1.7.29.tar.bz2 -C /tmp/
 
 接下来，使用下列命令编译及安装Wine。
@@ -85,7 +86,7 @@ via: http://www.tecmint.com/install-wine-in-linux/
 
 作者：[Ravi Saive][a]
 译者：[SPccman](https://github.com/SPccman)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
