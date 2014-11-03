@@ -1,8 +1,8 @@
 如何用Nagios远程执行插件（NRPE）来检测服务器内存使用率
 ================================================================================
-在[先前的教程中][1]注：此篇文章在同一个更新中，如果也翻译了，发布的时候可修改相应的链接，我们已经见到了如何在Nagios设置中设置Nagios远程执行插件（NRPE）。然而，监控内存使用率的脚本和插件并没有在原生的Nagios中。本篇中，我们会看到如何配置NRPE来监控远程服务器上的内存使用率。
+在[先前的教程中][1]，我们已经见到了如何在Nagios设置中设置Nagios远程执行插件（NRPE）。然而，监控内存使用率的脚本和插件并没有在原生的Nagios中。本篇中，我们会看到如何配置NRPE来监控远程服务器上的内存使用率。
 
-我们要用的监控内存的脚本在[Nagios 市场][2]上，也在创建者的[Github仓库][3]中。
+我们要用的监控内存的脚本在[Nagios 市场][2]上，在创建者的[Github仓库][3]中也可以找到。
 
 假设我们已经安装了NRPE，我们首先在我们想要监控的服务器上下载脚本。
 
@@ -133,8 +133,8 @@ Nagios应该开始在使用NRPE的远程服务器上检查内存使用率了。�
 
 
 - 确保NRPE的端口在远程主机上是总是允许的。默认NRPE的端口是TCP 5666。
-- 你可以尝试通过执行check_nrpe 命令： /usr/lib/nagios/plugins/check_nrpe -H remote-server 手工检查NRPE操作。
-- 你同样可以尝试运行check_mem 命令：/usr/lib/nagios/plugins/check_nrpe -H remote-server –c check_mem
+- 你可以尝试通过执行check\_nrpe 命令： /usr/lib/nagios/plugins/check\_nrpe -H remote-server 手工检查NRPE操作。
+- 你同样可以尝试运行check\_mem 命令：/usr/lib/nagios/plugins/check\_nrpe -H remote-server –c check\_mem
 - 在远程服务器上，在/etc/nagios/nrpe.cfg中设置debug=1。重启NRPE服务并检查这些日志文件，/var/log/messages (RHEL/CentOS)或者/var/log/syslog (Debain/Ubuntu)。如果有任何的配置或者权限错误，日志中应该包含了相关的信息。如果日志中没有反映出什么，很有可能是由于请求在某些端口上有过滤而没有到达远程服务器上。
 
 总结一下，这边教程描述了我们该如何调试NRPE来监控远程服务器的内存使用率。过程只需要下载脚本、定义命令和重启服务就行了。希望这对你们有帮助。
@@ -145,11 +145,11 @@ via: http://xmodulo.com/2014/09/monitor-server-memory-usage-nagios-remote-plugin
 
 作者：[Sarmed Rahman][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://xmodulo.com/author/sarmed
-[1]:http://xmodulo.com/2014/03/nagios-remote-plugin-executor-nrpe-linux.html
+[1]:http://linux.cn/article-4101-1.html
 [2]:http://exchange.nagios.org/directory/Plugins/Operating-Systems/Solaris/check_mem-2Epl/details
 [3]:https://github.com/justintime/nagios-plugins/blob/master/check_mem/check_mem.pl

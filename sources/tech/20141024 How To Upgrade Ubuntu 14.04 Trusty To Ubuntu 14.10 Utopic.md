@@ -1,3 +1,4 @@
+johnhoow translating...
 How To Upgrade Ubuntu 14.04 Trusty To Ubuntu 14.10 Utopic
 ================================================================================
 Hello all! Greetings! Today, we will discuss about how to upgrade from Ubuntu 14.04 to 14.10 final beta. As you may know, Ubuntu 14.10 final beta has already been released. According to the [Ubuntu release schedule][1], the final stable version will be available today in a couple of hours.

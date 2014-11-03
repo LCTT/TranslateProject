@@ -25,33 +25,35 @@
 然后，编辑原始文件（下面只显示了最为有关联的部分）：
 
 - **Listen**：监听指定的地址和端口，或者域套接口路径。
-- **Location /path**：为命名的位置指定访问控制。
+- **Location /path**：为该名字所代表的位置指定访问控制。
 - **Order**：指定HTTP访问控制顺序（allow,deny或deny,allow）。Order allow,deny是说允许规则先于（并且优先处理）拒绝规则。
 - **DefaultAuthType** (也可以用**AuthType**)： 指定默认使用的认证类型。Basic是指使用/etc/passwd文件来认证CUPS中的用户。
-- **DefaultEncryption**：指定认证请求说使用的加密类型。
+- **DefaultEncryption**：指定认证请求所使用的加密类型。
 - **WebInterface**：指定是否启用网页接口。
 
-    # Listen for connections from the local machine
-    Listen 192.168.0.15:631
+---
+
+    	# Listen for connections from the local machine
+    	Listen 192.168.0.15:631
     
-    # Restrict access to the server
-    <Location />
-      Order allow,deny
-      Allo 192.168.0.0/24
-    </Location>
+    	# Restrict access to the server
+    	<Location />
+      	  Order allow,deny
+      	  Allow 192.168.0.0/24
+    	</Location>
     
-    # Default authentication type, when authentication is required
-    DefaultAuthType Basic
-    DefaultEncryption IfRequested
+    	# Default authentication type, when authentication is required
+    	DefaultAuthType Basic
+   	 	DefaultEncryption IfRequested
     
-    # Web interface setting
-    WebInterface Yes
+    	# Web interface setting
+    	WebInterface Yes
     
-    # Restrict access to the admin pages
-    <Location /admin>
-      Order allow,deny
-      Allow 192.168.0.0/24
-    </Location>
+    	# Restrict access to the admin pages
+    	<Location /admin>
+      	  Order allow,deny
+      	  Allow 192.168.0.0/24
+    	</Location>
 
 现在，让我们重启CUPS来应用修改：
 
@@ -66,27 +68,27 @@
 
 ### 通过网页接口配置网络打印机 ###
 
-1. 启动网页浏览器，并打开CUPS接口http://<Server IP>:Port，这里在我们的例子中是http://192.168.0.15:631：
+1、 启动网页浏览器，并打开CUPS接口http://<Server IP>:Port，这里在我们的例子中是http://192.168.0.15:631：
 
 ![](https://farm4.staticflickr.com/3878/14889544591_284015bcb5_z.jpg)
 
-2. 转到**管理**标签，然后点击*添加打印机*：
+2、 转到**管理**标签，然后点击*添加打印机*：
 
 ![](https://farm4.staticflickr.com/3910/14705919940_fe0a08a8f7_o.png)
 
-3. 选择你的打印机；在本例中，**EPSON Stylus CX3900 @ debian (Inkjet Inkjet Printer)**，然后点击**继续**：
+3、 选择你的打印机；在本例中，**EPSON Stylus CX3900 @ debian (Inkjet Inkjet Printer)**，然后点击**继续**：
 
 ![](https://farm6.staticflickr.com/5567/14706059067_233fcf9791_z.jpg)
 
-4. 是时候为打印机取个名字，并指定我们是否想要从当前工作站共享它：
+4、 是时候为打印机取个名字，并指定我们是否想要从当前工作站共享它：
 
 ![](https://farm6.staticflickr.com/5570/14705957499_67ea16d941_z.jpg)
 
-5. 安装驱动——选择品牌并点击**继续**。
+5、 安装驱动——选择品牌并点击**继续**。
 
 ![](https://farm6.staticflickr.com/5579/14889544531_77f9f1258c_o.png)
 
-6. 如果打印机如果不被CUPS支持（没有在下一页中列出来），我们必须从生产厂家的网站上下载驱动（如[http://download.ebz.epson.net/dsc/search/01/search/?OSC=LX][2]），安装完后回到该页。
+6、 如果打印机如果不被CUPS支持（没有在下一页中列出来），我们必须从生产厂家的网站上下载驱动（如[http://download.ebz.epson.net/dsc/search/01/search/?OSC=LX][2]），安装完后回到该页。
 
 ![](https://farm4.staticflickr.com/3896/14706058997_e2a2214338_z.jpg)
 
@@ -94,11 +96,11 @@
 
 ![](https://farm4.staticflickr.com/3837/14706058977_e494433068_o.png)
 
-7. 注意，预编译的.deb文件必须从我们使用的机器上发送（例如，通过sftp或scp）到打印服务器（当然，如果我们有一个直接的下载链接就更加简单了，而不用下载按钮了）：
+7、 注意，预编译的.deb文件必须从我们使用的机器上发送（例如，通过sftp或scp）到打印服务器（当然，如果我们有一个直接的下载链接就更加简单了，而不用下载按钮了）：
 
 ![](https://farm6.staticflickr.com/5581/14706000878_f202497d0a_z.jpg)
 
-8. 在将.deb文件放到服务器上后，我们就可以安装了：
+8、 在将.deb文件放到服务器上后，我们就可以安装了：
 
      # dpkg -i epson-inkjet-printer-escpr_1.4.1-1lsb3.2_i386.deb 
 
@@ -111,7 +113,7 @@
     # aptitude install lsb
     # dpkg -i epson-inkjet-printer-escpr_1.4.1-1lsb3.2_i386.deb
 
-9. 现在，我们可以返回到第五步并安装打印机：
+9、 现在，我们可以返回到第五步并安装打印机：
 
 ![](https://farm6.staticflickr.com/5569/14705957349_3acdc26f91_z.jpg)
 
@@ -161,7 +163,7 @@ via: http://xmodulo.com/2014/08/usb-network-printer-and-scanner-server-debian.ht
 
 作者：[Gabriel Cánepa][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

@@ -2,8 +2,7 @@
 如何在ubuntu桌面配置一个网络打印机和扫描仪
 ================================================================================
 
-
-在[之前的文章中](注：这篇文章在2014年8月12号的原文里做过，不知道翻译了没有，如果翻译发布了，发布此文章的时候可改成翻译后的链接), 我们讨论过如何在Linux服务器安装各种各样的打印机（当然也包括网络扫描仪）。今天我们将来处理另一端：如何通过桌面客户端来访问网络打印机/扫描仪。
+在[之前的文章中][1], 我们讨论过如何在Linux服务器安装各种各样的打印机（当然也包括网络扫描仪）。今天我们将来处理另一端：如何通过桌面客户端来访问网络打印机/扫描仪。
 
 
 ### 网络环境 ###
@@ -31,15 +30,11 @@
 
 ![](https://farm4.staticflickr.com/3903/14777969919_7b7b25a4a4_z.jpg)
 
-
-
 ### 在Ubuntu桌面安装网络打印机 ###
-
 
 在我们的Ubuntu 12.04的客户端，我们将打开"Printing"菜单(Dash -> Printing).你会注意到在其它发行版中，这个名字也许会有一点差别（例如会叫做"Printers" 或者 "Print & Fax"）:
 
 ![](https://farm4.staticflickr.com/3837/14964314992_d8bd0c0d04_o.png)
-
 
 还没有打印机添加到我们的客户端：
 
@@ -47,31 +42,25 @@
 
 下面是在Ubuntu桌面客户端安装一台网络打印机的一些步骤。
 
-
-**1)** “Add”按钮将弹出New Printer" 菜单。我们将选择"Network printer" -> "Find Network Printer"并输入我们服务器的IP地址，接着点击"Find":
+**1)** “Add”按钮将弹出 "New Printer" 菜单。我们将选择"Network printer" -> "Find Network Printer"并输入我们服务器的IP地址，接着点击"Find":
 
 ![](https://farm6.staticflickr.com/5581/14777977730_74c29a99b2_z.jpg)
-
 
 **2)** 在最下面我们将会看到可使用的打印机的名称。我们来选择这台三星打印机并按"Forward":
 
 ![](https://farm6.staticflickr.com/5585/14941655566_c1539a3ea0.jpg)
 
-
 **3)** 我们将会被要求填写一些关于我们打印机的信息。当我们输入完成时，将点击 "Apply"按钮。
 
 ![](https://farm4.staticflickr.com/3908/14941655526_0982628fc9_z.jpg)
-
 
 **4)** 我们接下来将被询问是否打印一张测试页。让我们点击"Print test page"吧:
 
 ![](https://farm4.staticflickr.com/3853/14964651435_cc83bb35aa.jpg)
 
-
 这个打印任务将被创建为本地id 2：
 
 ![](https://farm6.staticflickr.com/5562/14777977760_b01c5338f2.jpg)
-
 
 
 5)适用我们服务器上的CUPS网络借口，我们可以观察到打印任务已经提交成功了（打印机 -> SamsungML1640系列 -> 显示完成任务):
@@ -90,7 +79,6 @@
     SamsungML1640Series gacanepa 29 [18/Aug/2014:11:45:57 -0300] 1 1 - 192.168.0.105 Test Page - -
 
 这个page_log日志显示每一页被打印过的信息，只包括哪些用户发送这些打印任务，打印日期&时间，以及客户端的IPv4地址。
-
 
 要安装Epson喷墨和PDF打印机，我们只需重复第1-5的步骤即可，并每一次选择左边的打印队列。例如，在下图中选择PDF打印机：
 
@@ -112,16 +100,11 @@
 
 #### 实例 #1 ####
 
-
-
 从Ubuntu12.04中打印，通常在本地用gacanepa（具有相同名字存在打印机服务器上）。
 
 ![](https://farm4.staticflickr.com/3845/14778046698_57b6e552f3_z.jpg)
 
-
 打印到PDF打印机之后，让我们来检查打印机服务器上的/home/gacanepa/PDF目录下的内容：
-
-
 
     root@debian:~# ls -l /home/gacanepa/PDF 
 
@@ -131,7 +114,6 @@
     -rw------- 1 gacanepa gacanepa 279176 Aug 18 13:49 Test_Page.pdf
     -rw------- 1 gacanepa gacanepa   7994 Aug 18 13:50 Untitled1.pdf
     -rw------- 1 gacanepa gacanepa  74911 Aug 18 14:36 Welcome_to_Conference_-_Thomas_S__Monson.pdf
-
 
 
 这个PDF文件被创建时的，权限已经设置为600(-rw-------)，这意味着只有打印任务的所有者(在这个例子中是gacanepa )可以访问它们。我们可以通过修改the /etc/cups/cups-pdf.conf文件**UserUMask**变量的值来改变这种行为。例如，0033的umask值将可以使PDF打印者以及其它所有者拥有创建文件的权限，但是只读权限也会赋予给其它所有者。
@@ -190,7 +172,8 @@
 
 
 **2)** 现在我们需要启用saned进程，用来预装Ubuntu桌面。要启用它，我们需要编辑/etc/default/saned文件，并设置RUN变量为yes：
-     $ sudo vim /etc/default/saned 
+
+    $ sudo vim /etc/default/saned 
 
 ----------
 
@@ -205,7 +188,8 @@
 
 
 **4)** 重启saned进程：
-     $ sudo service saned restart 
+
+    $ sudo service saned restart 
 
 
 
@@ -235,11 +219,11 @@ via: http://xmodulo.com/2014/08/configure-network-printer-scanner-ubuntu-desktop
 
 作者：[Gabriel Cánepa][a]
 译者：[disylee](https://github.com/disylee)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://xmodulo.com/author/gabriel
-[1]:http://xmodulo.com/2014/08/usb-network-printer-and-scanner-server-debian.html
+[1]:http://linux.cn/article-4139-1.html
 [2]:http://www.cups-pdf.de/documentation.shtml
 [3]:http://xmodulo.com/2014/08/usb-network-printer-and-scanner-server-debian.html#scanner

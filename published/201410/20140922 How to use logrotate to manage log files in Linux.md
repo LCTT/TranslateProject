@@ -1,8 +1,8 @@
 Linux日志文件总管——logrotate
 ================================================================================
-日志文件包含了关于系统中发生的事件的有用信息，在排障过程中或者系统性能分析时经常被用到。对于忙碌的服务器，日志文件大小会快速增长，服务器会很快消耗磁盘空间，这成了个问题。除此之外，处理一个单个的庞大日志文件也常常是件十分棘手的事。
+日志文件包含了关于系统中发生的事件的有用信息，在排障过程中或者系统性能分析时经常被用到。对于忙碌的服务器，日志文件大小会增长极快，服务器会很快消耗磁盘空间，这成了个问题。除此之外，处理一个单个的庞大日志文件也常常是件十分棘手的事。
 
-logrotate是个十分有用的工具，它可以自动对日志进行分解（或轮循）、压缩以及删除旧日志文件。例如，你可以设置logrotate，让/var/log/foo日志文件每30天轮循，并删除超过6个月的日志。配置完后，logrotate的运作完全自动化，不必进行任何进一步的认为干预。另外，旧日志也可以通过电子邮件发送，不过该选项超出了本教程的讨论范围。
+logrotate是个十分有用的工具，它可以自动对日志进行截断（或轮循）、压缩以及删除旧的日志文件。例如，你可以设置logrotate，让/var/log/foo日志文件每30天轮循，并删除超过6个月的日志。配置完后，logrotate的运作完全自动化，不必进行任何进一步的人为干预。另外，旧日志也可以通过电子邮件发送，不过该选项超出了本教程的讨论范围。
 
 主流Linux发行版上都默认安装有logrotate包，如果出于某种原因，logrotate没有出现在里头，你可以使用apt-get或yum命令来安装。
 
@@ -50,16 +50,16 @@ logrotate的配置文件是/etc/logrotate.conf，通常不需要对它进行修�
 - **rotate 5**: 一次将存储5个归档日志。对于第六个归档，时间最久的归档将被删除。
 - **compress**: 在轮循任务完成后，已轮循的归档将使用gzip进行压缩。
 - **delaycompress**: 总是与compress选项一起用，delaycompress选项指示logrotate不要将最近的归档压缩，压缩将在下一次轮循周期进行。这在你或任何软件仍然需要读取最新归档时很有用。
-- **missingok**: 在日志轮循其间，任何错误将被忽略，例如“文件无法找到”之类的错误。
+- **missingok**: 在日志轮循期间，任何错误将被忽略，例如“文件无法找到”之类的错误。
 - **notifempty**: 如果日志文件为空，轮循不会进行。
 - **create 644 root root**: 以指定的权限创建全新的日志文件，同时logrotate也会重命名原始日志文件。
-- **postrotate/endscript**: 在所有其它指令完成后，postrotate和endscript之间指定的命令将被执行。在这种情况下，rsyslogd 进程将立即再次读取其配置并继续运行。
+- **postrotate/endscript**: 在所有其它指令完成后，postrotate和endscript里面指定的命令将被执行。在这种情况下，rsyslogd 进程将立即再次读取其配置并继续运行。
 
 上面的模板是通用的，而配置参数则根据你的需求进行调整，不是所有的参数都是必要的。
 
 ### 样例二 ###
 
-在本例中，我们只想要轮循一个日志文件，然而日志文件大小会增长到50MB。
+在本例中，我们只想要轮循一个日志文件，然而日志文件大小可以增长到50MB。
 
     # vim /etc/logrotate.d/log-file 
 
@@ -92,7 +92,7 @@ logrotate的配置文件是/etc/logrotate.conf，通常不需要对它进行修�
         endscript
     }
 
-这将导致归档文件在它们的文件名中包含日期信息。
+这将让归档文件在它们的文件名中包含日期信息。
 
 ### 排障 ###
 
@@ -120,7 +120,7 @@ logrotate的配置文件是/etc/logrotate.conf，通常不需要对它进行修�
 
 正如我们从上面的输出结果可以看到的，logrotate判断该轮循是不必要的。如果文件的时间小于一天，这就会发生了。
 
-#### 3. 强制运行 ####
+#### 3. 强制轮循 ####
 
 即使轮循条件没有满足，我们也可以通过使用‘-f’选项来强制logrotate轮循日志文件，‘-v’参数提供了详细的输出。
 
@@ -153,7 +153,7 @@ logrotate的配置文件是/etc/logrotate.conf，通常不需要对它进行修�
     running postrotate script
     compressing log with: /bin/gzip
 
-#### 4. Logrotate记录日志 ####
+#### 4. Logrotate的记录日志 ####
 
 logrotate自身的日志通常存放于/var/lib/logrotate/status目录。如果处于排障目的，我们想要logrotate记录到任何指定的文件，我们可以指定像下面这样从命令行指定。
 
@@ -192,7 +192,7 @@ via: http://xmodulo.com/2014/09/logrotate-manage-log-files-linux.html
 
 作者：[Sarmed Rahman][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
