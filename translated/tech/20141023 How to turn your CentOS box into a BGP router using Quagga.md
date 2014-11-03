@@ -57,7 +57,7 @@ Quagga软件套件包含几个守护进程,这些进程可以一起工作.关于
 
 ### 配置日志记录 ###
 
-在Quagga被安装猴,下一步就是配置Zebra来管理BGP路由器的网络接口.我们通过创建一个Zebra配置文件和启用日志记录来开始第一步.
+在Quagga被安装后,下一步就是配置Zebra来管理BGP路由器的网络接口.我们通过创建一个Zebra配置文件和启用日志记录来开始第一步.
 
     # cp /usr/share/doc/quagga-XXXXX/zebra.conf.sample /etc/quagga/zebra.conf 
 
