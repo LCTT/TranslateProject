@@ -1,3 +1,4 @@
+zpl1025
 Ubuntu Could Give a Fatal Blow to Windows in China
 ================================================================================
 > Ubuntu Kylin might be able to replace Windows in China
