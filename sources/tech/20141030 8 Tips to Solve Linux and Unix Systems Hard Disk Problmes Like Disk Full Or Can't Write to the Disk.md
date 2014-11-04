@@ -1,26 +1,25 @@
-Translating by ZTinoZ
-8 Tips to Solve Linux & Unix Systems Hard Disk Problmes Like Disk Full Or Can’t Write to the Disk
+磁盘写满或磁盘不可写？解决Linux和UNIX系统这些硬盘问题的8个小贴士
 ================================================================================
-Can't write to the hard disk on a Linux or Unix-like systems? Want to diagnose corrupt disk issues on a server? Want to find out why you are getting "disk full" messages on screen? Want to learn how to solve full/corrupt and failed disk issues. Try these eight tips to diagnose a Linux and Unix server hard disk drive problems.
+不能在Linux或者类UNIX系统的硬盘上写入数据？想解决服务器上磁盘损坏的问题吗？想知道你为什么总是在屏幕上看到“磁盘已满”的字眼吗？想学习处理这些问题的办法吗？试试一下这8个解决Linux及UNIX服务器硬盘问题的小贴士吧。
 
 ![](http://s0.cyberciti.org/uploads/cms/2014/10/welcome-0-disk-problems.001.jpg)
 
-### #1 - Error: No space left on device ###
+### #1 - 错误: 设备上无剩余空间 ###
 
-When the Disk is full on Unix-like system you get an error message on screen. In this example, I'm running [fallocate command][1] and my system run out of disk space:
+当你的类UNIX系统磁盘写满了时你会在屏幕上看到这样的信息。在这种情况下，我运行[fallocate命令][1]然后我的系统就会提示磁盘空间已经耗尽：
 
     $ fallocate -l 1G test4.img
     fallocate: test4.img: fallocate failed: No space left on device
 
-The first step is to run the df command to find out information about total space and available space on a file system including partitions:
+第一步是运行df命令来查看一个有分区的文件系统的总磁盘空间和可用空间的信息：
 
     $ df
 
-OR try human readable output format:
+或者试试可读性比较强的输出格式：
 
     $ df -h
 
-Sample outputs:
+部分输出内容：
 
     Filesystem      Size  Used Avail Use% Mounted on
     /dev/sda6       117G   54G   57G  49% /
@@ -34,20 +33,20 @@ Sample outputs:
     /dev/sda8        94G  579M   89G   1% /ftpusers
     /dev/sda10      4.0G  4.0G     0 100% /ftpusers/tmp
 
-From the df command output it is clear that /dev/sda10 has 4.0Gb of total space of which 4.0Gb is used.
+使用df命令输出可以清楚地发现，在 /dev/sda10 分区下总共4.0Gb的空间被全部写满了。
 
-#### Fixing problem when the disk is full ####
+#### 修复磁盘写满的问题 ####
 
-1.[Compress uncompressed log and other files][2] using gzip or bzip2 or tar command:
+1.[用gzip，bzip2或tar命令压缩未压缩的日志和其它文件][2]：
 
     gzip /ftpusers/tmp/*.log
     bzip2 /ftpusers/tmp/large.file.name
 
-2.Delete [unwanted files using rm command][3] on a Unix-like system:
+2.在类UNIX系统中[用rm命令删除不想要的文件][3]：
 
     m -rf /ftpusers/tmp/*.bmp
 
-3.Move files to other [system or external hard disk using rsync command][4]:
+3.[用rsync命令移动文件至其它系统或外置硬盘][4]:
 
     rsync --remove-source-files -azv /ftpusers/tmp/*.mov /mnt/usbdisk/
     rsync --remove-source-files -azv /ftpusers/tmp/*.mov server2:/path/to/dest/dir/
@@ -252,7 +251,7 @@ I hope these tips will help you troubleshoot system disk issue on a Linux/Unix b
 via: http://www.cyberciti.biz/datacenter/linux-unix-bsd-osx-cannot-write-to-hard-disk/
 
 作者：[nixCraft][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ZTinoZ](https://github.com/ZTinoZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
