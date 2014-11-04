@@ -1,3 +1,4 @@
+[bazz222222222]
 How to create and manage LXC containers on Ubuntu
 ================================================================================
 While the concept of containers was introduced more than a decade ago to manage shared hosting environments securely (e.g., FreeBSD jails), Linux containers such as LXC or [Docker][1] have gone mainstream only recently with the rising need to deploy applications for the cloud. While [Docker][2] is getting all the media spotlight these days with strong backing from major cloud providers (e.g., Amazon AWS, Microsoft Azure) and distro providers (e.g., Red Hat, Ubuntu), LXC is in fact the original container technology developed for Linux platforms.
