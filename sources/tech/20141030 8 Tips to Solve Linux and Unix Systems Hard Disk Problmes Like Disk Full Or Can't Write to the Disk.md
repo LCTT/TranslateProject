@@ -44,42 +44,42 @@
 
 2.在类UNIX系统中[用rm命令删除不想要的文件][3]：
 
-    m -rf /ftpusers/tmp/*.bmp
+    rm -rf /ftpusers/tmp/*.bmp
 
 3.[用rsync命令移动文件至其它系统或外置硬盘][4]:
 
     rsync --remove-source-files -azv /ftpusers/tmp/*.mov /mnt/usbdisk/
     rsync --remove-source-files -azv /ftpusers/tmp/*.mov server2:/path/to/dest/dir/
 
-4.[Find out the largest directories or files eating disk space][5] on a Unix-like systesm:
+4.在类UNIX系统中[找出最占磁盘空间的目录或文件][5]：
 
     du -a /ftpusers/tmp | sort -n -r | head -n 10
     du -cks * | sort -rn | head
 
-5.[Truncate a particular file][6]. This is useful for log file:
+5.[清空指定文件][6]。这招对日志文件很有效：
 
     truncate -s 0 /ftpusers/ftp.upload.log
-    ### bash/sh etc ##
+    ### bash/sh等 ##
     >/ftpusers/ftp.upload.log
     ## perl ##
     perl -e'truncate "filename", LENGTH'
 
-6.Find and remove large files that are open but have been deleted on Linux or Unix:
+6.找出并删除打开着但是Find and remove large files that are open but have been deleted on Linux or Unix:
 
-    ## Works on Linux/Unix/OSX/BSD etc ##
+    ## 基于Linux/Unix/OSX/BSD等系统 ##
     lsof -nP | grep '(deleted)'
      
-    ## Only works on Linux ##
+    ## 只基于Linux ##
     find /proc/*/fd -ls | grep  '(deleted)'
 
-To truncate it:
+清空它：
 
-     ## works on Linux/Unix/BSD/OSX etc all ##
+     ## 基于Linux/Unix/OSX/BSD等所有系统 ##
     > "/path/to/the/deleted/file.name"
-    ## works on Linux only ##
+    ## 只基于Linux ##
     > "/proc/PID-HERE/fd/FD-HERE"
 
-### #2 - Is the file system is in read-only mode? ###
+### #2 - 文件系统是只读模式吗？ ###
 
 You may end up getting an error such as follows when you try to create a file or save a file:
 
