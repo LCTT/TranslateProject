@@ -1,3 +1,4 @@
+Translating by ZTinoZ
 8 Tips to Solve Linux & Unix Systems Hard Disk Problmes Like Disk Full Or Can’t Write to the Disk
 ================================================================================
 Can't write to the hard disk on a Linux or Unix-like systems? Want to diagnose corrupt disk issues on a server? Want to find out why you are getting "disk full" messages on screen? Want to learn how to solve full/corrupt and failed disk issues. Try these eight tips to diagnose a Linux and Unix server hard disk drive problems.

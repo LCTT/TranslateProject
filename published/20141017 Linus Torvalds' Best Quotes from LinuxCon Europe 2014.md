@@ -4,7 +4,7 @@
 
 在今年的10月15日星期三，Linux的创造者Linus Torvalds出席了欧洲LinuxCon和CloudOpen大会并回答了英特尔的Linux及开源技术专家Dirk Hohndel提出的问题。
 
-Linus Torvalds在那天的 [欧洲LinuxCon和CloudOpen大会][1] 上说，从他首次创造出Linux操作系统到现在的23年里，他没后悔过任何他做过的技术决策。
+Linus Torvalds在那天的[欧洲LinuxCon和CloudOpen大会][1]上说，从他首次创造出Linux操作系统到现在的23年里，他没后悔过任何他做过的技术决策。
 
 “技术问题，甚至是完全错误的技术问题，你也可以之后再去修复它。” Torvalds说。
 
@@ -22,7 +22,7 @@ Linus Torvalds在那天的 [欧洲LinuxCon和CloudOpen大会][1] 上说，从他
 
 **2.** Dirk Hohndel: “你说你希望不只一个子系统的维护人员考虑对x86模型产生兴趣，你是怎么把自己的建议应用到实际中的？
 
-Torvalds: “某一天我可能不得不这么做。目前我还没有收到关于不主动的任何投诉。主动是一个内核开发者最重要的东西，不论水平档次...迄今为止，一定程度上要感谢Git，我才能一直保持着前进的动力。”
+Torvalds: “某一天我可能不得不这么做。目前我还没有收到关于'不主动'的任何投诉。主动是一个内核开发者最重要的东西，不论水平档次...迄今为止，一定程度上要感谢Git，我才能一直保持着前进的动力。”
 
 **3.** “很多人都想要得到市场份额数，包括很多用户，因为那是体现自我价值的一种方式。就我来说，对Linux最重要的事情之一，就是拥有一个一直在不停测试新内核的大社区，这是支持我们处理大量硬件问题的唯一办法。”
 
@@ -52,7 +52,7 @@ via: http://www.linux.com/news/featured-blogs/200-libby-clark/791788-linus-torva
 
 作者：[Libby Clark][a]
 译者：[ZTinoZ](https://github.com/ZTinoZ)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

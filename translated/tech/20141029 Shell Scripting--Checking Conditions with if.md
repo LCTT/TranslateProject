@@ -1,11 +1,10 @@
->>> Translating by ThomazL
-Shell Scripting – Checking Conditions with if
+Shell 脚本 - 使用 if 语句进行条件检测
 ================================================================================
-In Bourne Shell if statement checks whether a condition is true or not. If so , the shell executes the block of code associated with the if statement. If the statement is not true , the shell jumps beyond the end of the if statement block & Continues on.
+[Bourne Shell](http://en.wikipedia.org/wiki/Bourne_shell) 的 if 语句和大部分编程语言一样 - 检测条件是否真实，如果条件为真，shell 会执行这个 if 语句指定的代码块，如果条件为假，shell 就会跳过 if 代码块，继续执行之后的代码。
 
-### Syntax of if Statement : ###
+### if 语句的语法： ###
 
-    if [ condition_command ]
+    if [ 判断条件 ]
     then
             command1
             command2
@@ -22,13 +21,13 @@ In Bourne Shell if statement checks whether a condition is true or not. If so , 
         echo "Number is 150"
     fi
 
-#### if-else Statement : ####
+#### if-else 语句: ####
 
-In addition to the normal if statement , we can extend the if statement with an else block. The basic idea is that if the statement is true , then execute the if block. If the statement is false , then execute the else block.
+除了标准的 if 语句之外，我们还可以加入 else 代码块来扩展 if 语句。这么做的主要目的是：如果 if 条件为真，执行 if 语句里的代码块，如果 if 条件为假，执行 else 语句里的代码块。
 
-#### Syntax : ####
+#### 语法: ####
 
-    if [ condition_command ]
+    if [ 判断条件 ]
     then
            command1
            command2
@@ -52,19 +51,19 @@ In addition to the normal if statement , we can extend the if statement with an 
         echo "Number is smaller"
     fi
 
-### If..elif..else..fi Statement (Short for else if) ###
+### If..elif..else..fi 语句 (Short for else if) ###
 
-The Bourne shell syntax for the if statement allows an else block that gets executed if the test is not true. We can nest if statement , allowing for multiple conditions. As an alternative, we can use the elif construct , shot for else if.
+Bourne Shell 的 if 语句语法中，else 语句里的代码块会在 if 条件为假时执行。我们还可以将 if 语句嵌套到一起，来实现多重条件的检测。我们可以使用 elif 语句（else if 的缩写）来构建多重条件的检测。
 
-#### Syntax : ####
+#### 语法 : ####
 
-    if [ condition_command ]
+    if [ 判断条件1 ]
     then
            command1
            command2
            ……..
            last_command
-    elif [ condition_command2 ]
+    elif [ 判断条件2 ]
     then
             command1
             command2
@@ -91,20 +90,20 @@ The Bourne shell syntax for the if statement allows an else block that gets exec
         echo "Number is equal to actual value"
     fi
 
-### Nested if statements : ###
+### 多重 if 语句 : ###
 
-If statement and else statement can be nested in a bash script. The keyword ‘fi’ shows the end of the inner if statement and all if statement should end with the keyword ‘fi’.
+If 和 else 语句可以在一个 bash 脚本里相互嵌套。关键词 “fi” 表示里层 if 语句的结束，所有 if 语句必须使用 关键词 “fi” 来结束。
 
-Basic **syntax of nested** if is shown below :
+基本 if 语句的 **嵌套语法**：
 
-    if [ condition_command ]
+    if [ 判断条件1 ]
     then
             command1
             command2
             ……..
             last_command
     else
-    if [ condition_command2 ]
+    if [ 判断条件2 ]
     then
             command1
             command2
@@ -139,7 +138,7 @@ Basic **syntax of nested** if is shown below :
 via: http://www.linuxtechi.com/shell-scripting-checking-conditions-with-if/
 
 作者：[Pradeep Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ThomazL](https://github.com/ThomazL)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
