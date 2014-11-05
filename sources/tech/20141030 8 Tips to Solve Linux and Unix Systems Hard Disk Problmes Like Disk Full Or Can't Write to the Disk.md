@@ -64,7 +64,7 @@
     ## perl ##
     perl -e'truncate "filename", LENGTH'
 
-6.找出并删除打开着但是Find and remove large files that are open but have been deleted on Linux or Unix:
+6.在Linux和UNIX中找出并删除显示着但已经被删除的大文件：
 
     ## 基于Linux/Unix/OSX/BSD等系统 ##
     lsof -nP | grep '(deleted)'
@@ -81,32 +81,32 @@
 
 ### #2 - 文件系统是只读模式吗？ ###
 
-You may end up getting an error such as follows when you try to create a file or save a file:
+当你尝试新建或保存一个文件时，你可能最终得到诸如以下的错误：
 
     $ cat > file
     -bash: file: Read-only file system
 
-Run mount command to find out if the file system is mounted in read-only mode:
+运行mount命令来查看被挂载的文件系统是否处于只读状态：
 
     $ mount
     $ mount | grep '/ftpusers'
 
-To fix this problem, simply remount the file system in read-write mode on a Linux based system:
+在基于Linux的系统中要修复这个问题，只需将这个处于只读状态的文件系统重新挂载即可：
 
     # mount -o remount,rw /ftpusers/tmp
 
-Another example, from my [FreeBSD 9.x server to remount / in rw mode][7]:
+另外，我是这样[用rw模式重新挂载FreeBSD 9.x服务器的根目录][7]的:
 
     # mount -o rw /dev/ad0s1a /
 
 ### #3 - Am I running out of inodes? ###
 
-Sometimes, df command reports that there is enough free space but system claims file-system is full. You need to check [for the inode][8] which identifies the file and its attributes on a file systems using the following command:
+有时候，df命令能显示出磁盘有空余的空间但是系统却声称文件系统已经写满了。此时你需要用以下命令来检查能在文件系统中识别文件及其属性的[索引节点][8]：
 
     $ df -i
     $ df -i /ftpusers/
 
-Sample outputs:
+部分输出内容：
 
     Filesystem      Inodes IUsed   IFree IUse% Mounted on
     /dev/sda8      6250496 11568 6238928    1% /ftpusers
@@ -116,7 +116,7 @@ So /ftpusers has 62,50,496 total inodes but only 11,568 are used. You are free t
 - Find unwanted files and delete or move to another server.
 - Find unwanted large files and delete or move to another server.
 
-### #4 - Is my hard drive is dying? ###
+### #4 - 我的硬盘驱动器宕了吗？ ###
 
 [I/O errors in log file (such as /var/log/messages) indicates][9] that something is wrong with the hard disk and it may be failing. You can check hard disk for errors using smartctl command, which is control and monitor utility for SMART disks under Linux and UNIX like operating systems. The syntax is:
 
@@ -132,7 +132,7 @@ Fig. 01: Gnome disk utility (Applications > System Tools > Disk Utility)
 
 > **Note**: Don't expect too much from SMART tool. It may not work in some cases. Make backup on a regular basis.
 
-### #5 - Is my hard drive and server is too hot? ###
+### #5 - 我的硬盘驱动器和服务器是不是太热了？ ###
 
 High temperatures can cause server to function poorly. So you need to maintain the proper temperature of the server and disk. High temperatures can result into server shutdown or damage to file system and disk. [Use hddtemp or smartctl utility to find out the temperature of your hard on a Linux or Unix based system][11] by reading data from S.M.A.R.T. on drives that support this feature. Only modern hard drives have a temperature sensor. hddtemp supports reading S.M.A.R.T. information from SCSI drives too. hddtemp can work as simple command line tool or as a daemon to get information from all servers:
 
