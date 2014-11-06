@@ -1,75 +1,72 @@
-johnhoow translating...
-How To Upgrade Ubuntu 14.04 Trusty To Ubuntu 14.10 Utopic
+如何将Ubuntu14.04安全的升级到14.10
 ================================================================================
-Hello all! Greetings! Today, we will discuss about how to upgrade from Ubuntu 14.04 to 14.10 final beta. As you may know, Ubuntu 14.10 final beta has already been released. According to the [Ubuntu release schedule][1], the final stable version will be available today in a couple of hours.
+本文将讨论如何将Ubuntu14.04升级到14.10的beta版。Ubuntu14.10的最终beta版已经发布了
 
-Do you want to upgrade to Ubuntu 14.10 from Ubuntu 14.04/13.10/13,04/12,10/12.04, or older version on your system? Just follow the simple steps given below. Please note that you can’t directly upgrade from 13.10 to 14.04. First, you should upgrade from 13.10 to 14.04, and then upgrade from 14.04 to 14.10. Clear? Good. Now, Let us start the upgrade process.
+如果想从Ubuntu14.04/13.10/13.04/12.10/12.04或者更老的版本升级到14.10，只要遵循下面给出的步骤。注意，你不能直接从13.10升级到14.10。你应该想将13.10升级到14.04在从14.04升级到14.10。下面是详细步骤。
 
-Though, the steps provided below are compatible for Ubuntu 14.10, It might work for other Ubuntu derivatives such as Lubuntu 14.10, Kubuntu 14.10, and Xubuntu 14.10 as well.
+下面的步骤不仅能用于14.10，也兼容于一些像Lubuntu14.10，Kubuntu14.10和Xubuntu14.10等的Ubuntu衍生版本
 
-**Important**: Before upgrading, don’t forget to backup your important data to any external device like USB hdd or CD/DVD.
+**重要**：在升级之前，保险起见，不要忘了将你的数据在U盘或外部硬盘上保存一下。
 
-### Desktop Upgrade ###
+### 桌面升级 ###
 
-Before going to upgrade, we need to update the system. Open up the Terminal and enter the following commands.
+在升级之前，我们要先更新系统。打开终端输入以下命令
 
     sudo apt-get update && sudo apt-get dist-upgrade
 
-The above command will download and install the available latest packages.
+上面的命令会下载安装最新的包。
 
-Reboot your system to finish installing updates.
+重启你的电脑以完成更新。
 
-Now, enter the following command to upgrade to new available version.
+然后输入下面的命令来升级到新的可获得的版本
 
     sudo update-manager -d
 
-Software Updater will show up and search for the new release.
+软件更新器会出现并且搜索新的发行版。
 
-After a few seconds, you will see a screen like below that saying: “**However, Ubuntu 14.10 is available now (you have 14.04)**”. Click on the button Upgrade to start upgrading to Ubuntu 14.10.
+几秒钟之后，你会在屏幕中看到如下字样：**ubuntu14.10现在可以获得(你现在是14.04系统)**。点击升级按钮开始升级。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/10/Software-Updater_001.png)
 
-The Software Updater will ask you to confirm still you want to upgrade. Click Start Upgrade to begin installing Ubuntu 14.10.
+软件更新器会提示你确定更新。点击开始更新开始安装14.10
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/10/Release-Notes_002.png)
 
-**Please Note**: This is a beta release. Do not install it on production systems. The final stable version will be released in a couple of hours.
-
-Now, the Software Updater will prepare to start setting up new software channels.
+**请注意**：这是beta版本。不要在生产用的机器上安装。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/10/Distribution-Upgrade_003.png)
 
-After a few minutes, the software updater will notify you the details the number of packages are going to be removed, and number of packages are going to be installed. Click **Start upgrade** to continue. Make sure you have good and stable Internet connection.
+几分钟之后，软件更新器会提醒你一些将被移除的和将被安装的软件包的详细信息。点击**开始升级**继续。确保你更新时在稳定的网络下。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/10/Untitled-window_004.png)
 
-Now, the updater will start to getting new packages. It will take a while depending upon your Internet connection speed.
+现在，更新程序会开始获取新的软件包。获取速度取决于你的网速。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/10/Distribution-Upgrade_005.png)
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/10/Distribution-Upgrade_001.png)
 
-After a while, you’ll be asked to remove unnecessary applications. Finally, click **Restart** to complete the upgrade.
+之后，你会被询问是否移除不必要的应用程序。最后，点击**重启**来完成整个升级过程。
 
-Congratulations! Now, you have successfully upgraded to Ubuntu 14.10.
+这时侯，恭喜你已经成功的升级到了ubuntu14.10
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/10/Details_002.png)
 
-That’s it.. Start using the new Ubuntu version.
+你可以开始使用新的ubuntu版本了。
 
-### Server Upgrade ###
+### 服务器升级 ###
 
-To upgrade from Ubuntu 14.04 server to Ubuntu 14.10 server, do the following steps.
+从ubuntu14.04的服务器升级到14.10的服务器，采用下面的步骤。
 
-Install the update-manager-core package if it is not already installed:
+安装update-manager-core 这个包如果之前没唷安装的话：
 
     sudo apt-get install update-manager-core
 
-Edit the file /etc/update-manager/release-upgrades,
+编辑 /etc/update-manager/release-upgrades这个文件。
 
     sudo nano /etc/update-manager/release-upgrades
 
-and set Prompt=normal or Prompt=lts as shown below.
+像下面那样设置Prompt=normal或者Prompt=lts
 
     # Default behavior for the release upgrader.
     
@@ -89,20 +86,18 @@ and set Prompt=normal or Prompt=lts as shown below.
     #           determine if a newer release is available.
     Prompt=normal
 
-Now, it is time to upgrade your server system to latest version using the following command:
+现在可以通过下面的命令来更新你的服务系统了。
 
     sudo do-release-upgrade -d
 
-Follow the on-screen instructions. You’re done!!.
-
-Cheers!!
+直到屏幕提示你已完成
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/upgrade-ubuntu-14-04-trusty-ubuntu-14-10-utopic/
 
 作者：SK
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/johnhoow)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
