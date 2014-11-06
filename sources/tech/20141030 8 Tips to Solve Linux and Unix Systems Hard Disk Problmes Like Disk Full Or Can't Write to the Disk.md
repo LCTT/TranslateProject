@@ -111,30 +111,30 @@
     Filesystem      Inodes IUsed   IFree IUse% Mounted on
     /dev/sda8      6250496 11568 6238928    1% /ftpusers
 
-So /ftpusers has 62,50,496 total inodes but only 11,568 are used. You are free to create another 62,38,928 files on /ftpusers partition. If 100% of your inodes are used, try the following options:
+所以 /ftpusers 下有总计62,50,496KB大小的索引节点但是只有11,568KB被使用。你可以在 /ftpusers 位置下另外创建62,38,928KB大小的文件。如果你的索引节点100%被使用了，试试看以下的选项：
 
-- Find unwanted files and delete or move to another server.
-- Find unwanted large files and delete or move to another server.
+- 找出不想要的文件并删除它，或者把它移动到其它服务器上。
+- 找出不想要的大文件并删除它，或者把它移动到其它服务器上。
 
 ### #4 - 我的硬盘驱动器宕了吗？ ###
 
-[I/O errors in log file (such as /var/log/messages) indicates][9] that something is wrong with the hard disk and it may be failing. You can check hard disk for errors using smartctl command, which is control and monitor utility for SMART disks under Linux and UNIX like operating systems. The syntax is:
+[日志文件中的输入/输出错误(例如 /var/log/messages)][9]说明硬盘出了一些问题并且可能已经失效，你可以用smartctl命令来查看硬盘的错误，这是一个在类UNIX系统下控制和监控硬盘状态的一个命令。语法如下：
 
     smartctl -a /dev/DEVICE
     # check for /dev/sda on a Linux server
     smartctl -a /dev/sda
 
-You can also use "Disk Utility" to get the same information
+你也可以用"Disk Utility"这个软件来获得同样的信息。
 
 [![](http://s0.cyberciti.org/uploads/l/tips/2007/07/500-GB-Hard-Disk-ATA-TOSHIBA-MK5061GSYF-dev-sda-%E2%80%94-Disk-Utility_014.png)][10]
 
-Fig. 01: Gnome disk utility (Applications > System Tools > Disk Utility)
+图01: Gnome磁盘工具(Applications > System Tools > Disk Utility)
 
-> **Note**: Don't expect too much from SMART tool. It may not work in some cases. Make backup on a regular basis.
+> **注意**: 不要对SMART工具期望太高，它在某些状况下无法工作，我们要定期做备份。
 
 ### #5 - 我的硬盘驱动器和服务器是不是太热了？ ###
 
-High temperatures can cause server to function poorly. So you need to maintain the proper temperature of the server and disk. High temperatures can result into server shutdown or damage to file system and disk. [Use hddtemp or smartctl utility to find out the temperature of your hard on a Linux or Unix based system][11] by reading data from S.M.A.R.T. on drives that support this feature. Only modern hard drives have a temperature sensor. hddtemp supports reading S.M.A.R.T. information from SCSI drives too. hddtemp can work as simple command line tool or as a daemon to get information from all servers:
+高温会引起服务器低效，所以你需要把服务器和磁盘维持在一个平稳适当的温度。High temperatures can result into server shutdown or damage to file system and disk. [Use hddtemp or smartctl utility to find out the temperature of your hard on a Linux or Unix based system][11] by reading data from S.M.A.R.T. on drives that support this feature. Only modern hard drives have a temperature sensor. hddtemp supports reading S.M.A.R.T. information from SCSI drives too. hddtemp can work as simple command line tool or as a daemon to get information from all servers:
 
     hddtemp /dev/DISK
     hddtemp /dev/sg0
@@ -149,7 +149,7 @@ You can use the smartctl command as follows too:
 
     smartctl -d ata -A /dev/sda | grep -i temperature
 
-#### How do I get the CPU temperature? ####
+#### 我怎么获取CPU的温度 ####
 
 You can use Linux hardware monitoring tool such as [lm_sensor to get the cpu temperature on a Linux based][13] system:
 
@@ -210,7 +210,7 @@ You need to replace a failed hard drive. You must u remove the correct failed dr
 
 See our [tips on increasing RAID sync speed on Linux][18] for more information.
 
-### #8 - Dealing with hardware RAID ###
+### #8 - 处理硬阵列 ###
 
 You can use the samrtctl command or vendor specific command to find out the status of RAID and disks in your controller:
 
@@ -236,7 +236,7 @@ See our previous tutorials:
 1. [Perl script to monitor disk space and send an email][23]
 1. [NAS backup server disk monitoring shell script][24]
 
-### Conclusion ###
+### 结论 ###
 
 I hope these tips will help you troubleshoot system disk issue on a Linux/Unix based server. I also recommend implementing a good backup plan in order to have the ability to recover from disk failure, accidental file deletion, file corruption, or complete server destruction:
 
