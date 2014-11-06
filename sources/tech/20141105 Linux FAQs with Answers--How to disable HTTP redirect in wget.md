@@ -1,3 +1,5 @@
+Translating-------geekpi
+
 Linux FAQs with Answers--How to disable HTTP redirect in wget
 ================================================================================
 > **Question**: When I run wget to fetch a URL X which is redirected to another URL Y, wget, by default, goes fetch URL Y automatically. However, I would like to force wget to only fetch the original URL X without following the redirection. How can I stop wget from following a redirected URL? 
