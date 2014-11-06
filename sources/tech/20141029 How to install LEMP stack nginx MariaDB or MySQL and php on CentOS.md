@@ -1,3 +1,4 @@
+﻿(translating by runningwater)
 How to install LEMP stack (nginx, MariaDB/MySQL and php) on CentOS
 ================================================================================
 The LEMP stack is an increasingly popular web service stack, powering mission-critical web services in many production environments. As the name implies, the LEMP stack is composed of Linux, nginx, MariaDB/MySQL and PHP. nginx is a high performance and lightweight replacement of slow and hard-to-scale Apache HTTP server used in the traditional LAMP stack. MariaDB is a community-driven fork of MySQL, with more features and better performance. PHP, a server-side language for generating dynamic content, is processed by PHP-FPM, an enhanced implementation of PHP FastCGI.
@@ -237,7 +238,7 @@ If you see the above page, you are all set with the LEMP stack!
 via: http://xmodulo.com/install-lemp-stack-centos.html
 
 作者：[Dan Nanni][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
