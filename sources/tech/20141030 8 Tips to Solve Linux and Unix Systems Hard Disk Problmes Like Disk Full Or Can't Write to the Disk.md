@@ -128,49 +128,48 @@
 
 [![](http://s0.cyberciti.org/uploads/l/tips/2007/07/500-GB-Hard-Disk-ATA-TOSHIBA-MK5061GSYF-dev-sda-%E2%80%94-Disk-Utility_014.png)][10]
 
-图01: Gnome磁盘工具(Applications > System Tools > Disk Utility)
+图 01: Gnome磁盘工具(Applications > System Tools > Disk Utility)
 
 > **注意**: 不要对SMART工具期望太高，它在某些状况下无法工作，我们要定期做备份。
 
 ### #5 - 我的硬盘驱动器和服务器是不是太热了？ ###
 
-高温会引起服务器低效，所以你需要把服务器和磁盘维持在一个平稳适当的温度。High temperatures can result into server shutdown or damage to file system and disk. [Use hddtemp or smartctl utility to find out the temperature of your hard on a Linux or Unix based system][11] by reading data from S.M.A.R.T. on drives that support this feature. Only modern hard drives have a temperature sensor. hddtemp supports reading S.M.A.R.T. information from SCSI drives too. hddtemp can work as simple command line tool or as a daemon to get information from all servers:
-
+高温会引起服务器低效，所以你需要把服务器和磁盘维持在一个平稳适当的温度，高温甚至能导致服务器宕机或损坏文件系统和磁盘。[用hddtemp或smartctl功能，通过从支持此特点的驱动上的SMART技术来读取数据的方式，从而查出你的Linux或基于UNIX系统上的硬件温度。][11]只有现代硬驱动器有温度传感器。hddtemp功能也支持从SCSI驱动器读取SMART信息。hddtemp能作为一个简单的命令行工具或守护程序来从所有服务器中获取信息：
     hddtemp /dev/DISK
     hddtemp /dev/sg0
 
-Sample outputs:
+部分输出内容：
 
 [![](http://s0.cyberciti.org/uploads/cms/2014/10/hddtemp-on-rhel-300x85.jpg)][12]
 
-Fig.02: hddtemp in action
+图 02: hddtemp正在运行
 
-You can use the smartctl command as follows too:
+你也可以像下面显示的那样使用smartctl命令：
 
     smartctl -d ata -A /dev/sda | grep -i temperature
 
 #### 我怎么获取CPU的温度 ####
 
-You can use Linux hardware monitoring tool such as [lm_sensor to get the cpu temperature on a Linux based][13] system:
+你可以使用Linux硬件监控工具例如像[用基于Linux系统的lm_sensor功能来获取CPU温度][13]：
 
     sensors
 
-Sample outputs from Debian Linux server:
+Debian服务器的部分输出内容：
 
 [![](http://s0.cyberciti.org/uploads/cms/2014/10/sensors-command-on-debian-server.jpg)][14]
 
-Fig.03: sensors command providing cpu core temperature and other info on a Linux
+图 03: sensors命令提供了一台Linux计算机的CPU核心温度和其它信息
 
-### #6 - Dealing with corrupted file systems ###
+### #6 - 处理损坏的文件系统 ###
 
-File system on server may be get corrupted due to a hard reboot or some other error such as bad blocks. You can [repair corrupted file systems with the following fsck command][15]:
+服务器上的文件系统可能会因为硬件重启或一些其它的错误比如坏区而损坏。你可以[用fsck命令来修复损坏的文件系统][15]：
 
     umount /ftpusers
     fsck -y /dev/sda8
 
-See [how to surviving a Linux filesystem failures][16] for more info.
+来看看[怎么应对Linux文件系统故障][16]的更多信息。
 
-### #7 - Dealing with software RAID on a Linux ###
+### #7 - 处理Linux中的软阵列 ###
 
 To find the current status of a Linux software raid type the following command:
 
@@ -185,7 +184,7 @@ Sample outputs:
 
 [![](http://s0.cyberciti.org/uploads/cms/2014/10/linux-mdstat-output.jpg)][17]
 
-Fig. 04: Find the status of a Linux software raid command
+图 04: Find the status of a Linux software raid command
 
 You need to replace a failed hard drive. You must u remove the correct failed drive. In this example, I'm going to replace /dev/sdb (2nd hard drive of RAID 6). It is not necessary to take the storage offline to repair the RAID on Linux. This only works if your server support hot-swappable hard disk:
 
