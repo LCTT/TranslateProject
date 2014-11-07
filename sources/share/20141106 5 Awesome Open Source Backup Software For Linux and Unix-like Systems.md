@@ -1,3 +1,5 @@
+barney-ro translating
+
 5 Awesome Open Source Backup Software For Linux and Unix-like Systems
 ================================================================================
 A good backup plan is essential in order to have the ability to recover from
@@ -136,7 +138,7 @@ I hope you will find this post useful to backup your important data. Do not forg
 via: http://www.cyberciti.biz/open-source/awesome-backup-software-for-linux-unix-osx-windows-systems/
 
 作者：[nixCraft][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[barney-ro](https://github.com/barney-ro)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
