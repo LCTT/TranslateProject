@@ -6,7 +6,7 @@
 
 ### #1 - 错误: 设备上无剩余空间 ###
 
-当你的类UNIX系统磁盘写满了时你会在屏幕上看到这样的信息。在这种情况下，我运行[fallocate命令][1]然后我的系统就会提示磁盘空间已经耗尽：
+当你的类UNIX系统磁盘写满了时你会在屏幕上看到这样的信息。本例中，我运行[fallocate命令][1]然后我的系统就会提示磁盘空间已经耗尽：
 
     $ fallocate -l 1G test4.img
     fallocate: test4.img: fallocate failed: No space left on device
@@ -171,7 +171,7 @@ Debian服务器的部分输出内容：
 
 ### #7 - 处理Linux中的软阵列 ###
 
-To find the current status of a Linux software raid type the following command:
+输入以下命令来查看Linux软阵列的最近状态：
 
      ## get detail on /dev/md0 raid ##
     mdadm --detail /dev/md0
@@ -180,13 +180,13 @@ To find the current status of a Linux software raid type the following command:
     cat /proc/mdstat
     watch cat /proc/mdstat
 
-Sample outputs:
+部分输出内容：
 
 [![](http://s0.cyberciti.org/uploads/cms/2014/10/linux-mdstat-output.jpg)][17]
 
-图 04: Find the status of a Linux software raid command
+图 04: 查看Linux软阵列状态命令
 
-You need to replace a failed hard drive. You must u remove the correct failed drive. In this example, I'm going to replace /dev/sdb (2nd hard drive of RAID 6). It is not necessary to take the storage offline to repair the RAID on Linux. This only works if your server support hot-swappable hard disk:
+你需要把有故障的硬件驱动器更换掉，别删错了。本例中，我更换了 /dev/sdb (RAID 6中的第二个硬件驱动器)。没必要依靠离线存储文件来修复Linux上的磁盘阵列，因为这只在你的服务器支持热插拔硬盘的情况下才能工作：
 
     ## remove disk from an array md0 ##
     mdadm --manage /dev/md0 --fail /dev/sdb1
@@ -237,7 +237,7 @@ See our previous tutorials:
 
 ### 结论 ###
 
-I hope these tips will help you troubleshoot system disk issue on a Linux/Unix based server. I also recommend implementing a good backup plan in order to have the ability to recover from disk failure, accidental file deletion, file corruption, or complete server destruction:
+我希望以上这些小贴士会帮助你改善在基于Linux/Unix服务器上的系统磁盘问题。I also recommend implementing a good backup plan in order to have the ability to recover from disk failure, accidental file deletion, file corruption, or complete server destruction:
 
 - [Debian / Ubuntu: Install Duplicity for encrypted backup in cloud][25]
 - [HowTo: Backup MySQL databases, web server files to a FTP server automatically][26]
