@@ -1,79 +1,72 @@
-luoyutiantang
-What are useful Bash aliases and functions
+ 什么是有用的bash别名和函数
 ================================================================================
-As a command line adventurer, you probably found yourself repeating the same lengthy commands over and over. If you always ssh into the same machine, if you always chain the same commands together, or if you constantly run a program with the same flags, you might want to save the precious seconds of your life that you spend repeating the same actions over and over.
-
-The solution to achieve that is to use an alias. As you may know, an alias is a way to tell your shell to remember a particular command and give it a new name: an alias. However, an alias is quickly limited as it is just a shortcut for a shell command, without the ability to pass or control the arguments. So to complement, bash also allows you create your own functions, which can be more lengthy and complex, and also accepts any number of arguments.
-
-Naturally, like with soup, when you have a good recipe you share it. So here is a list with some of the most useful bash aliases and functions. Note that "most useful" is loosely defined, and of course the usefulness of an alias is dependent on your everyday usage of the shell.
-
-Before you start experimenting with aliases, here is a handy tip: if you give an alias the same name as a regular command, you can choose to launch the original command and ignore the alias with the trick:
-
+作为一个命令行探索者,你或许发现你自己一遍又一遍. 如果你总是用ssh进入到同一台电脑, 同时你总是管道关联相同的命令，或者如果你时常用一些参数运行一个程序,你应该想要拯救你人生中的这个珍贵的助手。你一遍又一遍花费着重复相同的动作.
+解决方案是使用一个别名.正如你可能知道的,别名用一种方式告诉你的shell记住详细的命令并且给它一个新的名字：别名,的方式。不管怎么样，别名是即时有效的，同样地它只是shell命令的快捷方式,没有能力传递或者控制参数.所以补充时,bash也允许你创建你自己的函数,那样可能更漫长和复杂,并且也允许任意数量的参数.
+当然，当你有一个好的食谱-像汤，你要分享它.因此这里有一个列表，用一些最有用bash别名和函数的.注意"最有用的"是随意的定义,当然别名的有益依赖在于你每天shell的使用性
+在你用别名开始试验之前, 这里有一个便于使用的小技巧:如果你给予别名相同的名字作为常规命令,你可以选择开始原始的命令并且用技巧忽略别名
     \command 
-
-For example, the first alias below replaces the ls command. If you wish to use the regular ls command and not the alias, call it via:
-
+例如,第一个别名在下面替换ls命令。如果你想使用常规的ls命令而不是别名，通过调用它:
     \ls 
-
+    
 ### Productivity ###
 
-So these aliases are really simple and really short, but they are mostly based on the idea that if you save yourself a fraction of a second every time, it might end up accumulating years at the end. Or maybe not. 
+这些别名真的很简单并且真的很短,但他们大多数主要是以主题为依据，那样无论何时倘若你第二次保存一小部分,它允许在多年以后再结束.也许不会. 
 
     alias ls="ls --color=auto"
 
-Simple but vital. Make the ls command output in color.
+简单但非常重要.使ls命令带着彩色输出
 
     alias ll = "ls --color -al"
 
-Shortcut to display in color all the files from a directory in a list format.
+从一个目录采用列表格式快速显示全部文件.
 
     alias grep='grep --color=auto'
 
-Similarly, put some color in the grep output.
+相同地，把一些颜色在grep里输出
 
     mcd() { mkdir -p "$1"; cd "$1";} 
 
-One of my favorite. Make a directory and cd into it in one command: mcd [name].
+我的最爱之一. 制造一个目录采用一个命令mcd[名字]和cd命令进入到目录里面
 
     cls() { cd "$1"; ls;}
 
-Similar to the previous function, cd into a directory and list its content: cls [name].
+类似于前面的功能,cd命令进入一个目录别且列出它的的内容：cls[名字]
 
     backup() { cp "$1"{,.bak};}
 
-Simple way to make a backup of a file: backup [file] will create [file].bak in the same directory.
+简单的方法，使文件有一个备份: backup [文件]将会在相同的目录创建[文件].bak.
 
     md5check() { md5sum "$1" | grep "$2";}
 
-Because I hate comparing the md5sum of a file by hand, this function computes it and compares it using grep: md5check [file] [key].
+因为我讨厌通过手工比较文件的md5算法,这个函数计算它并且计算它使用grep：md5check[文件][钥匙]
 
 ![](https://farm6.staticflickr.com/5616/15412389280_8be57841ae_o.jpg)
 
     alias makescript="fc -rnl | head -1 >" 
 
-Easily make a script out of the last command you ran: makescript [script.sh]
+很容易地制造上个命令的脚本输出，你运行makescript[脚本名字.sh]
 
     alias genpasswd="strings /dev/urandom | grep -o '[[:alnum:]]' | head -n 30 | tr -d '\n'; echo" 
 
-Just to generate a strong password instantly.
+只是瞬间产生一个强壮的密码
 
 ![](https://farm4.staticflickr.com/3955/15574321206_dd365f0f0e.jpg)
 
     alias c="clear"
 
-Cannot do simpler to clean your terminal screen.
+不能较为简单的清除你终端的屏幕
 
     alias histg="history | grep"
 
-To quickly search through your command history: histg [keyword]
+通过你的命令历史：histg[关键字]快速地搜索
 
     alias ..='cd ..'
 
-No need to write cd to go up a directory.
+不需要写cd命令到上层目录
 
     alias ...='cd ../..'
 
-Similarly, go up two directories.
+类似地，去到上两个目录
 
     extract() { 
         if [ -f $1 ] ; then 
@@ -96,93 +89,98 @@ Similarly, go up two directories.
          fi 
     }
 
-Longest but also the most useful. Extract any kind of archive: extract [archive file]
+很长，但是也是最有用的。解压任何的文档类型：extract:[文档文件]
 
-### System Info ###
 
-Want to know everything about your system as quickly as possible?
+### 系统信息 ###
+
+想尽快地知道一切关于你的系统？
 
     alias cmount="mount | column -t"
 
-Format the output of mount into columns.
+mount到列队中的格式输出
 
 ![](https://farm6.staticflickr.com/5603/15598830622_587b77a363_z.jpg)
 
     alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'" 
 
-Display the directory structure recursively in a tree format.
+递归树格式显示目录结构.
 
     sbs() { du -b --max-depth 1 | sort -nr | perl -pe 's{([0-9]+)}{sprintf "%.1f%s", $1>=2**30? ($1/2**30, "G"): $1>=2**20? ($1/2**20, "M"): $1>=2**10? ($1/2**10, "K"): ($1, "")}e';} 
 
-"Sort by size" to display in list the files in the current directory, sorted by their size on disk.
+在当前目录里“按大小排序”显示列表的文件，排序按它们在磁盘上的大小
 
     alias intercept="sudo strace -ff -e trace=write -e write=1,2 -p" 
 
-Intercept the stdout and stderr of a process: intercept [some PID]. Note that you will need strace installed.
+intercept[一些PID]阻止进程的标准输入输出文件和标准错误文件。注意你需要看着安装完成
 
     alias meminfo='free -m -l -t'
 
-See how much memory you have left.
+查看你还有剩下多少内存
 
 ![](https://farm4.staticflickr.com/3955/15411891448_0b9d6450bd_z.jpg)
 
     alias ps? = "ps aux | grep"
 
-Easily find the PID of any process: ps? [name]
+ps？[名字]很容易地发现，这个任何进程的
 
     alias volume="amixer get Master | sed '1,4 d' | cut -d [ -f 2 | cut -d ] -f 1"
 
-Displays the current sound volume.
+显示现在声音的音量.
 
 ![](https://farm4.staticflickr.com/3939/15597995445_99ea7ffcd5_o.jpg)
 
-### Networking ###
+### 网络 ###
 
-For all the commands that involve the Internet or your local network, there are fancy aliases for them.
+对于所有涉及互联网和你本地网络的命令，也有奇特的别名给它们
+
 
     alias websiteget="wget --random-wait -r -p -e robots=off -U mozilla"
 
-Download entirely a website: websiteget [URL]
+websiteget[指定的位置]下载完整的网站地址
 
     alias listen="lsof -P -i -n" 
 
-Show which applications are connecting to the network.
+显示出哪个应用程序连接到网络
 
 ![](https://farm4.staticflickr.com/3943/15598830552_c7e5eaaa0d_z.jpg)
 
     alias port='netstat -tulanp'
 
-Show the active ports
+显示出活动的端口
 
     gmail() { curl -u "$1" --silent "https://mail.google.com/mail/feed/atom" | sed -e 's/<\/fullcount.*/\n/' | sed -e 's/.*fullcount>//'}
 
-Rough function to display the number of unread emails in your gmail: gmail [user name]
+gmail：[用户名]大概的显示你的谷歌邮件里未读邮件的数量
+
 
     alias ipinfo="curl ifconfig.me && curl ifconfig.me/host"
 
-Get your public IP address and host.
+获得你的公共IP地址和主机
 
     getlocation() { lynx -dump http://www.ip-adress.com/ip_tracer/?QRY=$1|grep address|egrep 'city|state|country'|awk '{print $3,$4,$5,$6,$7,$8}'|sed 's\ip address flag \\'|sed 's\My\\';} 
 
-Returns your current location based on your IP address.
+以你的IP地址为基础返回你现在的位置
 
-### Useless ###
+### 没用的 ###
 
-So what if some aliases are not all that productive? They can still be fun.
+所以呢，如果一些别名是不是全部具有使用价值？它们可能仍然有趣
+
 
     kernelgraph() { lsmod | perl -e 'print "digraph \"lsmod\" {";<>;while(<>){@_=split/\s+/; print "\"$_[0]\" -> \"$_\"\n" for split/,/,$_[3]}print "}"' | dot -Tpng | display -;}
 
-To draw the kernel module dependency graph. Requires image viewer.
+要绘制内核模块依赖曲线图。需要镜像阅读器
 
     alias busy="cat /dev/urandom | hexdump -C | grep "ca fe"" 
 
-Make you look all busy and fancy in the eyes of non-technical people.
+在非技术人员的眼里你看起来都在忙和构思
 
 ![](https://farm6.staticflickr.com/5599/15574321326_ab3fbc1ef9_z.jpg)
 
-To conclude, a good chunk of these aliases and functions come from my personal .bashrc, and the awesome websites [alias.sh][1] and [commandlinefu.com][2] which I already presented in my post on the [best online tools for Linux][3]. So definitely go check them out, make your own recipes, and if you are so inclined, share your wisdom in the comments. 
+最后，这些别名和函数的很大一部分来自于我个人的.bashrc.这些令人敬畏的网站 [alias.sh][1]和[commandlinefu.com][2]我早已经展示在我的[best online tools for Linux][3].当然去检测它们的输出，让你拥有特有的秘诀。如果你真的同意，在注释里分享你的智慧，
 
-As a bonus, here is the plain text version of all the aliases and functions I mentioned, ready to be copy pasted in your bashrc.
+
+做为奖励，这里有我提到的全部别名和函数的纯文本版本，随时可以复制粘贴到你的.bashrc.
 
     #Productivity
     alias ls="ls --color=auto"
@@ -245,7 +243,7 @@ As a bonus, here is the plain text version of all the aliases and functions I me
 via: http://xmodulo.com/useful-bash-aliases-functions.html
 
 作者：[Adrien Brochard][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者luoyutiantang](https://github.com/译者luoyutiantang)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
