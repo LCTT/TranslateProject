@@ -70,7 +70,7 @@
 
 <iframe width="640" height="380" frameborder="0" allowfullscreen="allowfullscreen" src="//www.youtube.com/embed/g1FEh4wByGE"></iframe>
 
-### 布奏 3: 开始桌面音频和视频录制 ###
+### 步奏 3: 开始桌面音频和视频录制 ###
 
 **5.** 如果想录制音频,先运行这个命令,列出所有的音频输入源:
 
@@ -94,7 +94,7 @@
 
 结束录制, 再来一次“**Ctrl + C**” 就可以.
 
-### 布奏 4:开始桌面音频的录制 ###
+### 步奏 4:开始桌面音频的录制 ###
 
 **6.**  如果只想录制音频的话,使用下面的命令.
 
