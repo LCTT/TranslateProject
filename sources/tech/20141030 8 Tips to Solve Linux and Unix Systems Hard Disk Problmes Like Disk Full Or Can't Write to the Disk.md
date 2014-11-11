@@ -121,7 +121,7 @@
 [日志文件中的输入/输出错误(例如 /var/log/messages)][9]说明硬盘出了一些问题并且可能已经失效，你可以用smartctl命令来查看硬盘的错误，这是一个在类UNIX系统下控制和监控硬盘状态的一个命令。语法如下：
 
     smartctl -a /dev/DEVICE
-    # check for /dev/sda on a Linux server
+    # 在Linux服务器下检查 /dev/sda 
     smartctl -a /dev/sda
 
 你也可以用"Disk Utility"这个软件来获得同样的信息。
@@ -173,10 +173,10 @@ Debian服务器的部分输出内容：
 
 输入以下命令来查看Linux软阵列的最近状态：
 
-     ## get detail on /dev/md0 raid ##
+     ## 获得 /dev/md0 上磁盘阵列的具体内容 ##
     mdadm --detail /dev/md0
      
-    ## Find status ##
+    ## 查看状态 ##
     cat /proc/mdstat
     watch cat /proc/mdstat
 
@@ -188,26 +188,26 @@ Debian服务器的部分输出内容：
 
 你需要把有故障的硬件驱动器更换掉，别删错了。本例中，我更换了 /dev/sdb (RAID 6中的第二个硬件驱动器)。没必要依靠离线存储文件来修复Linux上的磁盘阵列，因为这只在你的服务器支持热插拔硬盘的情况下才能工作：
 
-    ## remove disk from an array md0 ##
+    ## 从一个md0阵列中删除磁盘 ##
     mdadm --manage /dev/md0 --fail /dev/sdb1
     mdadm --manage /dev/md0 --remove /dev/sdb1
      
-    # Do the same steps again for rest of /dev/sdbX ##
-    # Power down if not hot-swappable hard disk: ##
+    # 对 /dev/sdbX 的剩余部分做相同操作 ##
+    # 如果不是热插拔硬盘就执行关机操作 ##
     shutdown -h now
      
-    ## copy partition table from /dev/sda to newly replaced /dev/sdb ##
+    ## 从 /dev/sda 复制分区表至新的 /dev/sdb 下 ##
     sfdisk -d /dev/sda | sfdisk /dev/sdb
     fdisk -l
      
-    ## Add it ##
+    ## 添加 ##
     mdadm --manage /dev/md0 --add /dev/sdb1
-    # do the same steps again for rest of /dev/sdbX ##
+    # 对 /dev/sdbX 的剩余部分做相同操作 ##
      
-    # Now md0 will sync again. See it on screen ## 
+    # 现在md0会再次同步，通过显示屏查看 ## 
     watch cat /proc/mdstat
 
-See our [tips on increasing RAID sync speed on Linux][18] for more information.
+来看看[加快Linux磁盘阵列同步速度的小贴士][18]来获取更多信息。
 
 ### #8 - 处理硬阵列 ###
 
