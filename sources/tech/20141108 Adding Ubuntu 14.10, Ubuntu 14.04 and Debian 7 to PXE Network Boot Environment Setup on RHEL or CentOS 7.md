@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Adding Ubuntu 14.10, Ubuntu 14.04 and Debian 7 to PXE Network Boot Environment Setup on RHEL/CentOS 7
 ================================================================================
 This tutorial will guide you on how to add **Ubuntu 14.10 Server, Ubuntu 14.04 Server** and **Debian 7 Wheezy** distributions to PXE Network Boot Environment Setup on **RHEL/CentOS 7**.
