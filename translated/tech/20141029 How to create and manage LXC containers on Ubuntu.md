@@ -98,7 +98,7 @@
 
 ![](https://farm8.staticflickr.com/7538/15470225050_d093cb1028_z.jpg)
 
-使用 <Crtl+a q> 退出控制台。
+使用“Crtl+a q”组合键退出控制台。
 
 停止、删除容器：
 
