@@ -211,22 +211,22 @@ Debian服务器的部分输出内容：
 
 ### #8 - 处理硬阵列 ###
 
-You can use the samrtctl command or vendor specific command to find out the status of RAID and disks in your controller:
+你可以用samrtctl命令或者供应商特定的命令来查看磁盘阵列和你所管理的磁盘的状态：
 
-    ## SCSI disk 
+    ## SCSI磁盘 
     smartctl -d scsi --all /dev/sgX
      
-    ## Adaptec RAID array
+    ## Adaptec磁盘阵列
     /usr/StorMan/arcconf getconfig 1
      
-    ## 3ware RAID Array
+    ## 3ware磁盘阵列
     tw_cli /c0 show
 
-See your vendor specific documentation to replace a failed disk.
+对照供应商特定文档来更换你的故障磁盘。
 
-### Monitoring disk health ###
+### 监控磁盘的健康状况 ###
 
-See our previous tutorials:
+来看看我们先前的教程：
 
 1. [Monitoring hard disk health with smartd under Linux or UNIX operating systems][19]
 1. [Shell script to watch the disk space][20]
@@ -237,7 +237,7 @@ See our previous tutorials:
 
 ### 结论 ###
 
-我希望以上这些小贴士会帮助你改善在基于Linux/Unix服务器上的系统磁盘问题。I also recommend implementing a good backup plan in order to have the ability to recover from disk failure, accidental file deletion, file corruption, or complete server destruction:
+我希望以上这些小贴士会帮助你改善在基于Linux/Unix服务器上的系统磁盘问题。我还建议执行一个好的备份计划从而有能力从磁盘故障、意外的文件删除操作、文件损坏和服务器完全被破坏等意外情况中恢复：
 
 - [Debian / Ubuntu: Install Duplicity for encrypted backup in cloud][25]
 - [HowTo: Backup MySQL databases, web server files to a FTP server automatically][26]
