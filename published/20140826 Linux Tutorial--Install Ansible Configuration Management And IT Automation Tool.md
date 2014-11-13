@@ -1,19 +1,19 @@
-Linux 教程：安装 Ansible 配置管理和 IT 自动化工具
+Ansible ：一个配置管理和IT自动化工具
 ================================================================================
 ![](http://s0.cyberciti.org/uploads/cms/2014/08/ansible_core_circle.png)
 
-今天我来谈谈 ansible，一个由 Python 编写的强大的配置管理解决方案。尽管市面上已经有很多可供选择的配置管理解决方案，但他们各有优劣，而 ansible 的特点就在于它的简洁。让 ansible 在主流的配置管理系统中与众不同的一点便是，它并不需要你在想要配置的每个节点上安装自己的组件。同时提供的一个优点在于，如果需要的话，你可以在不止一个地方控制你的整个基础结构。最后一点是它的正确性，或许这里有些争议，但是我认为在大多数时候这仍然可以作为它的一个优点。说得足够多了，让我们来着手在 RHEL/CentOS 和基于 Debian/Ubuntu 的系统中安装和配置 Ansible.
+今天我来谈谈 ansible，一个由 Python 编写的强大的配置管理解决方案。尽管市面上已经有很多可供选择的配置管理解决方案，但他们各有优劣，而 ansible 的特点就在于它的简洁。让 ansible 在主流的配置管理系统中与众不同的一点便是，它并不需要你在想要配置的每个节点上安装自己的组件。同时提供的一个优点在于，如果需要的话，你可以在不止一个地方控制你的整个基础架构。最后一点是它的正确性，或许这里有些争议，但是我认为在大多数时候这仍然可以作为它的一个优点。说得足够多了，让我们来着手在 RHEL/CentOS 和基于 Debian/Ubuntu 的系统中安装和配置 Ansible。
 
 ### 准备工作 ####
 
 1. 发行版：RHEL/CentOS/Debian/Ubuntu Linux
 1. Jinja2：Python 的一个对设计师友好的现代模板语言
 1. PyYAML：Python 的一个 YAML 编码/反编码函数库
-1. paramiko：纯 Python 编写的 SSHv2 协议函数库 （译者注：原文对函数库名有拼写错误，校对时请去掉此条注解）
+1. paramiko：纯 Python 编写的 SSHv2 协议函数库 （译者注：原文对函数库名有拼写错误）
 1. httplib2：一个功能全面的 HTTP 客户端函数库
 1. 本文中列出的绝大部分操作已经假设你将在 bash 或者其他任何现代的 shell 中以 root 用户执行。
 
-Ansible 如何工作
+### Ansible 如何工作 ###
 
 Ansible 工具并不使用守护进程，它也不需要任何额外的自定义安全架构，因此它的部署可以说是十分容易。你需要的全部东西便是 SSH 客户端和服务器了。
 
@@ -442,15 +442,13 @@ ansible 的 hosts 文件包括了一系列它能操作的主机。默认情况�
 - [多级环境与 Ansible][9].
 
 
-
-
 --------------------------------------------------------------------------------
 
 via: http://www.cyberciti.biz/python-tutorials/linux-tutorial-install-ansible-configuration-management-and-it-automation-tool/
 
 作者：[Nix Craft][a]
 译者：[felixonmars](https://github.com/felixonmars)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
