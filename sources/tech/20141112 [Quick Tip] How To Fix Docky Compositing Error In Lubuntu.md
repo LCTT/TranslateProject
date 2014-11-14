@@ -1,3 +1,5 @@
+    Vic020
+
 [Quick Tip] How To Fix Docky Compositing Error In Lubuntu
 ================================================================================
 As you may know, **Docky** a is light weight application launcher in Unix/Linux like systems. I am a big fan of Lubuntu and Docky, because it doesn’t swallow all my system resources, so that I can use more application simultaneously. I use Docky application launcher in my production Laptop, powered by Lubuntu 14.04.
