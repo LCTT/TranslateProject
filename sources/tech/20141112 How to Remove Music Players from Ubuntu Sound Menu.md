@@ -1,3 +1,4 @@
+disylee来翻译
 How to Remove Music Players from Ubuntu Sound Menu
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/11/music-players.jpg)
