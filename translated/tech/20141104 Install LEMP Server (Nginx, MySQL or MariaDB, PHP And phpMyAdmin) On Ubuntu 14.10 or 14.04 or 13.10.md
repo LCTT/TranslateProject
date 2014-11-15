@@ -20,7 +20,7 @@
     sudo apt-get install nginx
 
 用下面的命令启用Nginx服务：
-
+ 
     sudo service nginx start
 
 ### 测试nginx ###
