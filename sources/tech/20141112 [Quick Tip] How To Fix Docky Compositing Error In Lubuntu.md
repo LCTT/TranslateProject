@@ -1,32 +1,30 @@
-    Vic020
-
-[Quick Tip] How To Fix Docky Compositing Error In Lubuntu
+[Quick Tip]如何修复Lubuntu中的Docky混合错误
 ================================================================================
-As you may know, **Docky** a is light weight application launcher in Unix/Linux like systems. I am a big fan of Lubuntu and Docky, because it doesn’t swallow all my system resources, so that I can use more application simultaneously. I use Docky application launcher in my production Laptop, powered by Lubuntu 14.04.
+总所周知，**Docky**是Unix/Linux类系统中的轻量级应用启动器。我是 Lubuntu 和 Docky的忠实粉丝，因为他们不需要占用我的所有系统资源，这样就可以同时运行更多应用。我在笔记本上使用Docky应用启动器，系统为Lubuntu 14.04.
 
-If you’re using LXDE distros, you may definitely encounter with composting error while using Docky. See the following screenshot.
+但是，如果你使用LXDE发行版，你也许肯定遇到过使用Docky时报混合的错误。看下面的截图。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/11/Docky.png)
 
-If you didn’t enable compositing feature, you can’t use some of Docky’s features such as 3D background and Auto-hide. If you want to enable this features on Docky, you need to enable the Compositing feature in your LXDE systems.
+如果不开启混合功能，就不能使用Docky一些特别功能，如3D背景、自动隐藏。如果你想开启这些Docky的功能，那么你需要在你的LXDE系统中开启混合功能。
 
-To do that, first install the **xcompmgr** package.
+就像这样，首先安装 **xcompmgr**包：
 
     sudo apt-get install xcompmgr
 
-Then, go to **Menu -> Preferences -> Default applications for LXSession**. Navigate to the Autostart tab. Type “**@xcompmgr -n**” without quotes in the box that says **+Add**. Then, click Add button.
+然后，选择**菜单（Menu） -> 偏好（Preferences） -> LXSession默认程序（Default applications for LXSession）**。选择自动开始（Autostart）选项卡。 在**（+增加）+Add**框中输入“**@xcompmgr -n**”不带引号。最后点击增加按钮。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/11/LXSession-configuration_002.png)
 
-That’s it. Close the LXSession configuration window and log off or reboot your system. Now, you’ll see that Compositing feature has been enabled.
+这样就搞定了。关掉LXSession配置窗口，注销或重启系统。之后，你就可以看见混合功能已经打开。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/11/unknown_006.png)
 
-Also, you can use 3D background and hiding features such as Auto-hide, Intellihide or Window dodge etc.
+这时，你结可以使用3D背景和隐藏功能，如自动隐藏（Auto-hide），Intellihide和窗口闪烁（Window dodge）等。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/11/Docky-Settings_003.png)
 
-Cheers!
+搞定！干杯！
 
 --------------------------------------------------------------------------------
 
