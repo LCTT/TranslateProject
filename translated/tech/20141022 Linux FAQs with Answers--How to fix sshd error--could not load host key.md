@@ -1,4 +1,4 @@
-Linux有问必答——如何修复“sshd error: could not load host key”
+Linux有问必答：如何修复“sshd error: could not load host key”
 ================================================================================
 > **问题**：当我尝试SSH到一台远程服务器时，SSH客户端登陆失败并提示“Connection closed by X.X.X.X”。在SSH服务器那端，我看到这样的错误消息：“sshd error: could not load host key.”。这发生了什么问题，我怎样才能修复该错误？
 
@@ -23,7 +23,7 @@ Linux有问必答——如何修复“sshd error: could not load host key”
 
 ![](https://farm4.staticflickr.com/3931/15367231099_61b9087256_z.jpg)
 
-如果SSH主机密钥在那里找不到，或者它们的大小被切短成为0（就像上面那样），你需要从头开始重新生成主机密钥。
+如果SSH主机密钥在那里找不到，或者它们的大小被截断成为0（就像上面那样），你需要从头开始重新生成主机密钥。
 
 ### 重新生成SSH主机密钥 ###
 
@@ -58,6 +58,6 @@ Linux有问必答——如何修复“sshd error: could not load host key”
 via: http://ask.xmodulo.com/sshd-error-could-not-load-host-key.html
 
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
