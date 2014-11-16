@@ -1,3 +1,4 @@
+翻译中 by coloka
 How to Debug CPU Regressions Using Flame Graphs
 ================================================================================
 How quickly can you debug a CPU performance regression? If your environment is complex and changing quickly, this becomes challenging with existing tools. If it takes a week to root cause a regression, the code may have changed multiple times, and now you have new regressions to debug.
