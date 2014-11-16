@@ -1,8 +1,8 @@
-如何使用Quagga将CentOS放入OSPF路由器中
+ 想玩路由器吗？使用 Quagga 将你的 CentOS 变成 OSPF 路由器
 ================================================================================
-[Quagga][1]是一个可以将Linux放入支持如RIP、OSPF、BGP和IS-IS等主要路由协议的路由器的一个开源路由软件套件。它具有对IPv4和IPv6的完整规定，并支持路由/前缀过滤。Quagga可以是你生命中的救星，以防你的生产路由器一旦宕机，而你没有备用的设备而只能等待更换。通过适当的配置，Quagga甚至可以作为生产路由器。
+[Quagga][1]是一个开源路由软件套件，可以将Linux变成支持如RIP、OSPF、BGP和IS-IS等主要路由协议的路由器。它具有对IPv4和IPv6的完整支持，并支持路由/前缀过滤。Quagga可以是你生命中的救星，以防你的生产路由器一旦宕机，而你没有备用的设备而只能等待更换。通过适当的配置，Quagga甚至可以作为生产路由器。
 
-本教程中，我们将连接两个假设之间具有专线连接的分支机构网络（例如，192.168.1.0/24和172.17.1.0/24）。
+本教程中，我们将连接假设之间具有专线连接的两个分支机构网络（例如，192.168.1.0/24和172.17.1.0/24）。
 
 ![](https://farm4.staticflickr.com/3861/15172727969_13cb7f037f_b.jpg)
 
@@ -10,12 +10,12 @@
 
 - **Site-A**: 192.168.1.0/24
 - **Site-B**: 172.16.1.0/24
-- **Peering between 2 Linux boxes**: 10.10.10.0/30 
+- **两个 Linux 路由器之间的对等网络**: 10.10.10.0/30 
 
 Quagga包括了几个协同工作的守护进程。在本教程中，我们将重点建立以下守护进程。
 
 1. **Zebra**: 核心守护进程，负责内核接口和静态路由。
-1. **Ospfd**: IPv4 OSPF 守护进程. 
+1. **Ospfd**: IPv4 OSPF 守护进程。
 
 ### 在CentOS上安装Quagga ###
 
@@ -23,11 +23,11 @@ Quagga包括了几个协同工作的守护进程。在本教程中，我们将�
 
     # yum install quagga 
 
-在CentOS7，SELinux默认会阻止quagga将配置文件写到/usr/sbin/zebra。这个SELinux策略会干涉我们接下来要介绍的安装过程，所以我们要禁用此策略。对于这一点，无论是[关闭SELinux][2]（这里不推荐），还是如下启用“zebra_write_config'。如果你使用的是CentOS 6的请跳过此步骤。
+在CentOS7，SELinux默认会阻止quagga将配置文件写到/usr/sbin/zebra。这个SELinux策略会干扰我们接下来要介绍的安装过程，所以我们要禁用此策略。对于这一点，无论是[关闭SELinux][2]（这里不推荐），还是如下启用“zebra_write_config”都可以。如果你使用的是CentOS 6的请跳过此步骤。
 
     # setsebool -P zebra_write_config 1 
 
-如果没有这个改变，在我们尝试在Quagga命令行中保存配置的时候看到如下错误。
+如果没有做这个修改，在我们尝试在Quagga命令行中保存配置的时候看到如下错误。
 
     Can't open configuration file /etc/quagga/zebra.conf.OS1Uu5.
 
@@ -45,7 +45,7 @@ Quagga包括了几个协同工作的守护进程。在本教程中，我们将�
 
     # vtysh 
 
-首先，我们为Zebra被指日志文件。输入下面的命令进入vtysh的全局配置模式：
+首先，我们为Zebra配置日志文件。输入下面的命令进入vtysh的全局配置模式：
 
     site-A-RTR# configure terminal
 
@@ -117,7 +117,7 @@ Quagga包括了几个协同工作的守护进程。在本教程中，我们将�
 
 如果一切顺利，你应该可以在site-A的服务器上ping通site-B上的对等IP地址10.10.10.2了。
 
-注意一旦Zebra的守护进程启动了，在vtysh命令行中的任何改变都会立即生效。因此没有必要在更改配置后重启Zebra守护进程。
+注意：一旦Zebra的守护进程启动了，在vtysh命令行中的任何改变都会立即生效。因此没有必要在更改配置后重启Zebra守护进程。
 
 ### 步骤 2: 配置OSPF ###
 
@@ -157,7 +157,7 @@ Quagga包括了几个协同工作的守护进程。在本教程中，我们将�
 
 OSPF的邻居现在应该启动了。只要ospfd在运行，通过vtysh的任何OSPF相关配置的改变都会立即生效而不必重启ospfd。
 
-下一章节，我们会验证我们的Quagga设置。
+下一节，我们会验证我们的Quagga设置。
 
 ### 验证 ###
 
@@ -215,7 +215,7 @@ via: http://xmodulo.com/turn-centos-box-into-ospf-router-quagga.html
 
 作者：[Sarmed Rahman][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
