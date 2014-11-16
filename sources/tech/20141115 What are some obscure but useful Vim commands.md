@@ -1,3 +1,5 @@
+wangjiezhe translating...
+
 What are some obscure but useful Vim commands
 ================================================================================
 If my [latest post on the topic][1] did not tip you off, I am a Vim fan. So before some of you start stoning me, let me present you a list of "obscure Vim commands." What I mean by that is: a collection of commands that you might have not encountered before, but that might be useful to you. As a second disclaimer, I do not know which commands you might know and which one you find useful. So this list really is a collection of relatively less known Vim commands, but which can still probably be useful.
@@ -201,7 +203,7 @@ If you know any Vim command that you find useful and that you think most people 
 via: http://xmodulo.com/useful-vim-commands.html
 
 作者：[Adrien Brochard][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wangjiezhe](https://github.com/wangjiezhe)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
