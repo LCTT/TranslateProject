@@ -1,12 +1,15 @@
-在Ubuntu 14.10/14.04/13.10上安装LEMP服务（Nginx，MySQL或MariaDB，PHP和phpMyAdmin）
+在 Ubuntu 14.10/14.04/13.10 上安装 LEMP 服务（Nginx，MySQL 或 MariaDB，PHP 和 phpMyAdmin）
 ================================================================================
-**LEMP**是一个操作系统和几个开源软件包的合称。缩写LEMP来自**L**inux，Nginx（发音是**e**ngine-x）HTTP服务器，**M**ySQL数据库，和**P**HP/**P**erl/**P**ython的首字母。
 
-在这篇教程里，让我们看一下如何在Ubuntu 14.10上安装Nginx，MySQL或MariaDB，PHP和phpMyAdmin。
+![](http://180016988.r.cdn77.net/wp-content/uploads/2014/06/lemp.jpg)
+
+**LEMP**是一个操作系统和几个开源软件包的合称。缩写LEMP来自 **L** inux，Nginx（发音是 **e** ngine-x）HTTP服务器， **M** ySQL数据库，和 **P** HP/ **P** erl/ **P** ython的首字母。
+
+在这篇教程里，让我们看一下如何在 Ubuntu 14.10 上安装 Nginx，MySQL 或 MariaDB，PHP 和 phpMyAdmin。
 
 ### 安装Nginx ###
 
-**Nginx** (发音是engine-x)是一个免费的、开源的、高性能HTTP服务器和反向代理，也可以用作IMAP/POP3代理服务器，由Igor Sysoev开发。
+**Nginx** (发音是engine-x)是一个免费的、开源的、高性能HTTP服务器和反向代理，也可以用作IMAP/POP3代理服务器，它是由Igor Sysoev开发。
 
 要安装Nginx，在你的终端里输入下面的命令：
 
@@ -20,26 +23,26 @@
     sudo apt-get install nginx
 
 用下面的命令启用Nginx服务：
-
+ 
     sudo service nginx start
 
-### 测试nginx ###
+### 测试 nginx ###
 
 打开你的浏览器访问http://IP地址/或者http://localhost/。将可以看到类似下面的截图。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/10/Welcome-to-nginx-Mozilla-Firefox_005.png)
 
-### 配置Nginx ###
+### 配置 Nginx ###
 
 用任意文本编辑器打开文件**/etc/nginx/nginx.conf**
 
     sudo nano /etc/nginx/nginx.conf
 
-设置worker_processes（例如，你系统里CPU数目）。查看CPU数目，可以使用命令“lscpu”。在我这里是“1”。所以我把这个值设为1。
+设置 worker_processes（例如，你系统里CPU数目）。查看CPU数目，可以使用命令“lscpu”。在我这里是“1”。所以我把这个值设为1。
 
     worker_processes 1;
 
-重启Nginx服务：
+重启 Nginx 服务：
 
     sudo service nginx restart
 
@@ -65,7 +68,7 @@
 
 - **listen 80;** –> 监听ipv4端口
 - **listen [::]:80 default_server ipv6only=on;** –> 监听ipv6宽口
-- **root /usr/share/nginx/html;** –> 网站根目录
+- **root /usr/share/nginx/html;** –> 文件根目录
 - **server_name server.unixmen.local;** –> 服务器FQDN
 
 现在，向下滚动找到区域#location **~ \.php$**。去掉注释并按如下修改：
@@ -87,7 +90,7 @@
 
 保存文件并退出。
 
-### 测试nginx配置 ###
+### 测试 nginx 配置 ###
 
 使用下面的命令测试nginx配置是否存在语法错误：
 
@@ -102,9 +105,9 @@
 
     sudo service nginx restart
 
-### 安装MySQL ###
+### 安装 MySQL ###
 
-**MySQL**是一个关系型数据库管理系统（RDBMS），作为服务启动提供给多用户访问多种数据库，尽管可能大多集成布置的SQLite。
+**MySQL**是一个关系型数据库管理系统（RDBMS），作为服务启动提供给多用户访问多种数据库，尽管SQLite可能有更多的嵌入式部署。
 
     sudo apt-get install mysql-server mysql-client
 
@@ -118,7 +121,7 @@
 
 现在，MySQL服务器就安装好了。
 
-你可以用下面的命令检查MySQL服务器状态：
+你可以用下面的命令检查 MySQL 服务器状态：
 
     sudo service mysql status
 
@@ -128,11 +131,11 @@
 
 **注意**：如果你希望使用MariaDB而不是MySQL，可以参考下面的步骤。
 
-### 安装MariaDB ###
+### 安装 MariaDB ###
 
-**MariaDB**是MySQL的一个直接替代软件。它是一个稳定的、可扩展的和可靠的SQL服务器，包含许多增强功能。
+**MariaDB**是 MySQL 的一个直接替代软件。它是一个稳定、可扩展又可靠的SQL服务器，包含许多增强功能。
 
-首先，如果有的话你得先卸载掉MySQL。要完全卸载MySQL包括配置文件，输入如下命令：
+首先，如果有的话你得先卸载掉 MySQL。要完全卸载 MySQL 包括配置文件，输入如下命令：
 
     sudo apt-get purge mysql*
 
@@ -144,7 +147,7 @@
 
     sudo apt-get install mariadb-server mariadb-client
 
-另外，如果你希望体验最新版的MariaDB的话，可以从[MariaDB仓库][1]安装。运行下面的命令添加PPA。在写这篇文章的时候，MariaDB PPA还没有更新Ubuntu 14.10。不过，我们还是可以使用Ubuntu 14.04的仓库。
+另外，如果你希望体验最新版的MariaDB，可以从[MariaDB仓库][1]安装。运行下面的命令添加PPA。在写这篇文章的时候，MariaDB PPA还没有更新 Ubuntu 14.10。不过，我们还是可以使用 Ubuntu 14.04 的仓库来替代。
 
     sudo apt-get install software-properties-common
     sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
@@ -163,11 +166,11 @@
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/06/sk@server-_004.png)
 
-点击‘是’迁移到MariaDB。注意一下，如果在安装MariaDB之前没有装过MySQL的话，不会提示你这个问题。
+点击‘是’迁移到 MariaDB。注意一下，如果在安装MariaDB之前没有装过 MySQL 的话，不会提示你这个问题。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/06/sk@server-_005.png)
 
-你可以用如下命令检查MariaDB版本：
+你可以用如下命令检查 MariaDB 版本：
 
     sudo mysql -v -u root -p
 
@@ -199,9 +202,9 @@
     
     Threads: 1  Questions: 566  Slow queries: 0  Opens: 330  Flush tables: 4  Open tables: 22  Queries per second avg: 4.014
 
-### 安装PHP ###
+### 安装 PHP ###
 
-**PHP**（PHP: Hypertext Preprocessor的递归缩写）是一个应用广泛的开源通用脚本语言，特别适合于网页开发，可以直接嵌入到HTML中。
+**PHP**（PHP: Hypertext Preprocessor的递归缩写）是一个应用广泛的开源通用脚本语言，特别适合于网页开发，可以直接嵌入到 HTML 中。
 
 使用如下命令安装PHP：
 
@@ -221,7 +224,7 @@
 
     sudo service php5-fpm restart
 
-### 测试PHP ###
+### 测试 PHP ###
 
 在nginx文档根目录下创建一个测试文件“testphp.php”。
 
@@ -235,7 +238,7 @@
 
 保存文件并退出。
 
-访问地址**http://server-ip-address/testphp.php**。将打印出所有关于php的信息，比如版本、构建日期以及命令等等。
+访问地址**http://server-ip-address/testphp.php**。将显示出所有关于 php 的信息，比如版本、构建日期以及命令等等。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/10/phpinfo-Mozilla-Firefox_0012.png)
 
@@ -251,15 +254,15 @@ PHP-FPM会默认监听套接字**/var/run/php5-fpm.sock**。如果你希望PHP-F
 
     listen = 127.0.0.1:9000
 
-保存退出。重启php5-fpm服务。
+保存退出。重启 php5-fpm 服务。
 
     sudo service php5-fpm restart
 
-现在打开nginx配置文件：
+现在打开 nginx 配置文件：
 
     sudo nano /etc/nginx/sites-available/default
 
-找到这一行**fastcgi_pass unix:/var/run/php5-fpm.sock;**，参考下面把它改成fastcgi_pass 127.0.0.1:9000;。
+找到这一行**fastcgi_pass unix:/var/run/php5-fpm.sock;**，参考下面把它改成 fastcgi_pass 127.0.0.1:9000;。
 
     location ~ \.php$ {
             try_files $uri =404;
@@ -274,21 +277,21 @@ PHP-FPM会默认监听套接字**/var/run/php5-fpm.sock**。如果你希望PHP-F
             include fastcgi.conf;
        }
 
-保存退出。最后重启nginx服务。
+保存退出。最后重启 nginx 服务。
 
     sudo service nginx restart
 
-### 使用phpMyAdmin管理MySQL数据库（可选） ###
+### 使用 phpMyAdmin 管理 MySQL 数据库（可选） ###
 
-**phpMyAdmin**是一个免费的开源网页界面工具，用来管理你的MySQL数据库。
+**phpMyAdmin**是一个免费的开源网页界面工具，用来管理你的 MySQL 数据库。
 
-### 安装phpMyAdmin ###
+### 安装 phpMyAdmin ###
 
-在Debian官方仓库里就有。所以可以用下面的命令安装：
+在 Debian 官方仓库里就有。所以可以用下面的命令安装：
 
     sudo apt-get install phpmyadmin
 
-选择一个网页服务器。默认情况下，这里不会显示nginx。所以，选择apache或者lighttpd，然后我们再把phpMyAdmin和nginx连接起来工作。
+选择一个网页服务器。默认情况下，这里不会显示 nginx。所以，选择 apache 或者 lighttpd，然后我们再把 phpMyAdmin 和 nginx 连接起来工作。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/06/sk@server-_007.png)
 
@@ -300,7 +303,7 @@ PHP-FPM会默认监听套接字**/var/run/php5-fpm.sock**。如果你希望PHP-F
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/06/sk@server-_009.png)
 
-输入phpmyadmin帐号的MySQL密码：
+输入 phpmyadmin 帐号的 MySQL 密码：
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/06/sk@server-_010.png)
 
@@ -308,31 +311,31 @@ PHP-FPM会默认监听套接字**/var/run/php5-fpm.sock**。如果你希望PHP-F
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/06/sk@server-_011.png)
 
-phpMyAdmin的安装就完成了。
+phpMyAdmin 就安装完成了。
 
-创建一个phpMyAdmin的软连接到网站根目录。这里我们的网站跟文档目录是/usr/share/nginx/html/。
+创建一个 phpMyAdmin 的软连接到网站根目录。这里我们的网站根文档目录是/usr/share/nginx/html/。
 
     sudo ln -s /usr/share/phpmyadmin/ /usr/share/nginx/html
 
-重启nginx服务。
+重启 nginx 服务。
 
     sudo service nginx restart
 
-### 访问phpMyAdmin网页控制台 ###
+### 访问 phpMyAdmin 网页控制台 ###
 
-现在你可以在浏览器中通过地址**http://server-ip-address/phpmyadmin/**访问phpMyAdmin的控制台了。
+现在你可以在浏览器中通过地址**http://server-ip-address/phpmyadmin/**访问 phpMyAdmin 的控制台了。
 
-输入你在前面步骤里留下的MySQL用户名和密码。在我这里是“root”和“ubuntu”。
+输入你在前面步骤里留下的 MySQL 用户名和密码。在我这里是“root”和“ubuntu”。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/10/phpMyAdmin-Mozilla-Firefox_0021.png)
 
-就可以重定向到phpMyAdmin的网页管理首页。
+就可以重定向到 phpMyAdmin 的网页管理首页。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/10/192.168.1.100-localhost-phpMyAdmin-4.2.6deb1-Mozilla-Firefox_0031.png)
 
-现在你就可以在phpMyAdmin网页里管理你的MyQL数据库了。
+现在你就可以在 phpMyAdmin 网页里管理你的 MyQL 数据库了。
 
-就这样。你的LEMP服务器已经配置完毕可以投入使用了。
+就这样。你的 LEMP 服务器已经配置完毕，可以使用了。
 
 --------------------------------------------------------------------------------
 
@@ -340,7 +343,7 @@ via: http://www.unixmen.com/install-lemp-server-nginx-mysql-mariadb-php-phpmyadm
 
 作者：[SK][a]
 译者：[zpl1025](https://github.com/zpl1025)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
