@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How to perform system backup with backup-manager on Linux
 ================================================================================
 One thing that we all may have had the chance to learn in either easy or hard ways is that the importance of backups can never be underestimated. Considering that there are as many backup methods as the number of fish in the sea, you may wonder how you can effectively choose the right tool and strategy for your system.
