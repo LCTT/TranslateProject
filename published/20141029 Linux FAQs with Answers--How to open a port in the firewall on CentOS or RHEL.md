@@ -1,8 +1,8 @@
-Linux有问必答——在CentOS或RHEL防火墙上开启端口
+Linux有问必答：在CentOS或RHEL防火墙上开启端口
 ================================================================================
 > **问题**：我在CentOS系统上运行一台网页或文件服务器，打算远程访问服务器。因此，我需要更改防火墙规则以允许访问系统上的某个TCP端口。那么，有什么好方法在CentOS或RHEL系统的防火墙上开启TCP/UDP端口？
 
-Out of the box，诸如CentOS或RHEL的企业级Linux发行版包含内置的强大防火墙，它们默认的防火墙规则十分严格。因此，如果你安装了任何定制服务（比如web服务器、NFS和Samba），那么它们的流量很有可能被防火墙规则阻塞。所以需要在防火墙上开启必要的端口以允许流量通过。
+如果希望在服务器上提供服务，诸如CentOS或RHEL的企业级Linux发行版包含内置的强大防火墙，它们默认的防火墙规则十分严格。因此，如果你安装了任何定制的服务（比如web服务器、NFS和Samba），那么它们的流量很有可能被防火墙规则阻塞。所以需要在防火墙上开启必要的端口以允许流量通过。
 
 在CentOS/RHEL 6或更早的版本上，iptables服务允许用户与netfilter内核模块交互来在用户空间中配置防火墙规则。然而，从CentOS/RHEL 7开始，一个叫做firewalld新用户空间接口被引入以取代iptables服务。
 
@@ -16,9 +16,9 @@ Out of the box，诸如CentOS或RHEL的企业级Linux发行版包含内置的强
 
 ### 在CentOS/RHEL 7上开启端口 ###
 
-启动CentOS或RHEL 7后，防火墙规则设置由firewalld服务进程默认管理。一个叫做firewall-cm的命令行客户端支持和这个守护进程通信以永久修改防火墙规则。
+启动CentOS/RHEL 7后，防火墙规则设置由firewalld服务进程默认管理。一个叫做firewall-cmd的命令行客户端支持和这个守护进程通信以永久修改防火墙规则。
 
-使用这些命令来长久打开一个新端口（如TCP/80）。
+使用这些命令来永久打开一个新端口（如TCP/80）。
 
     $ sudo firewall-cmd --zone=public --add-port=80/tcp --permanent
     $ sudo firewall-cmd --reload 
@@ -42,7 +42,7 @@ Out of the box，诸如CentOS或RHEL的企业级Linux发行版包含内置的强
 
 ![](https://farm6.staticflickr.com/5602/15628237745_4409cff52f_z.jpg)
 
-如果想要为任何已知的服务（如web服务器）修改防火墙，只需使防火墙对该服务可用，然后关闭工具。如果想要开启任意一个TCP/UDP端口，选择“Forward”按钮，然后进入下一个界面。
+如果想要为任何已知的服务（如web服务器）修改防火墙，只需勾选该服务，然后关闭工具。如果想要开启任意一个TCP/UDP端口，选择“Forward”按钮，然后进入下一个界面。
 
 ![](https://farm4.staticflickr.com/3941/15604533696_12857827ea_z.jpg)
 
@@ -63,6 +63,6 @@ Out of the box，诸如CentOS或RHEL的企业级Linux发行版包含内置的强
 via: http://ask.xmodulo.com/open-port-firewall-centos-rhel.html
 
 译者：[KayGuoWhu](https://github.com/KayGuoWhu)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
