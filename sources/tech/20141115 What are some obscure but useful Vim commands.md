@@ -1,202 +1,202 @@
-wangjiezhe translating...
-
-What are some obscure but useful Vim commands
+一些不起眼但非常有用的 Vim 命令
 ================================================================================
-If my [latest post on the topic][1] did not tip you off, I am a Vim fan. So before some of you start stoning me, let me present you a list of "obscure Vim commands." What I mean by that is: a collection of commands that you might have not encountered before, but that might be useful to you. As a second disclaimer, I do not know which commands you might know and which one you find useful. So this list really is a collection of relatively less known Vim commands, but which can still probably be useful.
+如果我的[关于这个话题的最新帖子][1]没有提醒到你的话，那我明确地说，我是一个 Vim 的粉丝。所以在你们中的某些人向我扔石头之前，我先向你们展示一系列“鲜为人知的 Vim 命令”。我的意思是，一些你可能以前没有碰到过的命令，但可能对你来说很有用。作为第二免责声明，我不知道哪些命令是你可能知道的，以及哪些是对你来说有用的。因此这些命令实际上是一些相对少见，但很可能很有用的 Vim 命令。
 
-### Saving a file and exiting ###
+### 保存文件并退出 ###
 
-I am a bit ashamed of myself for that one, but I only recently learned that the command
+说起来有些惭愧，我也是最近才学到这个命令
 
     :x
 
-is equivalent to:
+和下面的命令是等价的：
 
     :wq
 
-which is saving and quitting the current file.
+都是保存当前文件并退出。
 
-### Basic calculator ###
+（译者注：这两个命令实际上并不完全等价，当文件被修改时两个命令时相同的。但如果未被修改，使用 `:x` 不会更改文件的修改时间，而使用 `:wq` 会改变文件的修改时间。）
 
-While in insert mode, you can press Ctrl+r then type '=' followed by a simple calculation. Press ENTER, and the result will be inserted in the document. For example, try:
+### 基本计算器 ###
+
+在插入模式下，你可以使用 Ctrl+r 键然后输入 `=`，再输入一个简单的算式。按 Enter 键，计算结果就会插入到文件中。例如，尝试输入：
 
     Ctrl+r '=2+2' ENTER
 
 ![](https://farm8.staticflickr.com/7486/15543918097_fbcf33ee6b.jpg)
 
-And 4 will be inserted in the document.
+然后 4 会被插入到文件中。
 
-### Finding duplicate consecutive words ###
+### 查找重复的连续的单词 ###
 
-When you type something quickly, it happens that you write a word twice in a row. Just like this this. This kind of error can fool anyone, even when re-reading yourself. Hopefully, there is a simple regular expression to prevent this. Use the search ('/' by default) and type:
+当你很快地打字时，很有可能会连续输入同一个单词两次，就像 this this。这种错误可能骗过任何一个人，即使是你自己重新阅读一边也不可避免。幸运的是，有一个简单的正则表达式可以用来预防这个错误。使用搜索命令（默认时 `/`）然后输入：
 
     \(\<\w\+\>\)\_s*\1
 
-This should display all the duplicate words. And for maximum effect, don't forget to place:
+这会显示所有重复的单词。要达到最好的效果，不要忘记把下面的命令：
 
     set hlsearch
 
-in your .vimrc file to highlight all search hits.
+放到你的 .vimrc 文件中高亮所有的匹配。
 
 ![](https://farm8.staticflickr.com/7531/15730650082_c2764857e2.jpg)
 
-### Abbreviations ###
+### 缩写 ###
 
-Probably one of the most impressive tricks, you can define abbreviations in Vim, which will replace what you type with somethig else in real time. The syntax is the following:
+一个很可能是最令人印象深刻的窍门是你可以在 Vim 中定义缩写，它可以实时地把你输入的东西替换为另外的东西。语法格式如下：
 
-    :ab [abbreviation] [what to replace it with]
+	:ab [缩写] [要替换的文字]
 
-The generic example is:
+一个通用的例子是：
 
     :ab asap as soon as possible
 
-Which will replace "asap" with "as soon as possible" as you write.
+会把你输入的 “asap” 替换为 “as soon as possible”。
 
-### Save a file that you forgot to open as root ###
+### 在你忘记用 root 方式打开文件时的文件保存 ###
 
-This is maybe an all time favorite in the forums. Whenever you open a file that you do not have permission to write to (say a system configuration file for example) and make some changes, Vim will not save them with the normal command: ':w'
+这可能是一个在论坛中一直受欢迎的命令。每当你打开一个你没有写入权限的文件（比如系统配置文件）并做了一些修改，Vim 无法通过普通的 “:w” 命令来保存。
 
-Instead of redoing the changes after opening it again as root, simply run:
+你不需要重新以 root 方式打开文件再进行修改，只需要运行：
 
     :w !sudo tee %
 
-Which will save it as root directly.
+这会直接以 root 方式保存。
 
-### Crypt your text on the go ###
+### 实时加密文本 ###
 
-If you do not want someone to be able to read whatever is on your screen, Vim has the built in option to [ROT13][2]-encode your text with the following command:
+如果你不想让别人看懂你的屏幕上的内容，你可以使用一个内置的选项，通过下面的命令使用 [ROT13][2] 来对文本进行编码：
 
     ggVGg?
 
 ![](https://farm8.staticflickr.com/7487/15727174681_7773a97ea2.jpg)
 
-'gg' for moving the cursor to the first line of the Vim buffer, 'V' for entering visual mode, and 'G' for moving the cursor to the last line of the buffer. So 'ggVG' will make the visual mode cover the entire buffer. Finally 'g?' applies ROT13 encoding to the selected region.
+`gg` 把光标移动到 Vim 缓冲区的第一行，`V` 进入可视模式，`G` 把光标移动到缓冲区的最后一行。因此，`ggVG` 使可视模式覆盖这个当前缓冲区。最后 `g?` 使用 ROT13 对整个区域进行编码。
 
-Notice that this should be mapped to a key for maximum efficiency. It also works best with alphabetical characters. And to undo it, the best is simply to use the undo command: 'u'
+注意它应该被映射到一个最长使用的键。它对字母符号也可以很好地工作。要对它进行撤销，最好的方法就是使用撤销命令：`u`。
 
-### Auto-completion ###
+###自动补全 ###
 
-Another one to be ashamed of, but I see a lot of people around me not knowing it. Vim has by default an auto-completion features. Yes it is very basic, and can be enhanced by plugins, but it can still help you. The process is simple. Vim can try to guess the end of your word based on the word you wrote earlier. If you are typing the word "compiler" for the second time in the same file for example, just start typing "com" and still in insertion mode, press Ctrl+n to see Vim finish your word for you. Simple but handy.
+这是另外一个令我感到惭愧的功能，但我发现周围很多人并不知道。Vim 默认有自动补全的功能。的确这个功能是很基本的，并且可以通过插件来增强，但它也很有帮助。方法很简单。Vim 尝试通过已经输入的单词来预测单词的结尾。比如当你在同一个文件中第二次输入 “compiler” 时，仅仅输入 “com” 然后保持在插入模式，按 Ctrl+n 键就可以看到 Vim 为你补全了单词。很简单，但也很有用。
 
-### Look at the diff between two files ###
+### 比较两个文件的不同 ###
 
-Probably a lot of you know about vimdiff command, which allows you to open Vim in split mode and compare two files with the syntax:
+你们中的大多数很可能都知道 vimdiff 命令，它可以使用分离模式打开 Vim 并比较两个文件的不同。语法如下：
 
-    $ vimdiff [file1] [file2] 
+	$ vimdiff [文件1] [文件2]
 
-But the same result is achievable with the Vim command:
-
-    :diffthis
-
-First open your initial file in Vim. Then open the second one in split mode with:
-
-    :vsp [file2]
-
-Finally launch:
+但同样的结果也可以通过下面的 Vim 命令来获得：
 
     :diffthis
 
-in the first buffer, switch buffer with Ctrl+w and type:
+首先在 Vim 中打开原始文件。然后使用分离模式带来第二个文件：
+
+	:vsp [文件2]
+
+最后在第一个缓冲区里输入：
 
     :diffthis
 
-again.
+通过 Ctrl+w 来切换缓冲区并再次输入：
 
-The two files will then be highlighted with focus on their differences.
+    :diffthis
 
-To turn the diff off, simply use:
+这样两个文件中不同的部分就会被高亮。
+
+（译者注：可以直接在一个缓冲区里使用命令 `:windo diffthis`，而不用输入 `:diffthis` 两次）
+
+要停止比较，使用：
 
     :diffoff
 
-### Revert the document in time ###
+### 按时间回退文件 ###
 
-Vim keeps track of the changes you make to a file, and can easily revert it to what it was earlier in time. The command is quite intuitive. For example:
+Vim 会记录文件的更改，你很容易可以回退到之前某个时间。该命令时相当直观的。比如：
 
     :earlier 1m
 
-will revert the document to what it was a minute ago.
+会把文件回退到 1 分钟以前的状态。
 
-Note that you can inverse this with the command:
+注意，你可以使用下面的命令进行相反的转换：
 
     :later
 
-### Delete inside markers ###
+### 删除标记内部的文字 ###
 
-Something that I always wanted to be comfortable doing when I started using Vim: easily delete text between brackets or parenthesis. Go to the first marker and simply use the syntax:
+当我开始使用 Vim 时一件我总是想很方便做的事情是如何轻松的删除方括号或圆括号里的内容。转到开始的标记，然后使用下面的语法：
 
-    di[marker]
+	di[标记]
 
-So for example, deleting between parenthesis would be:
+比如，把光标放在开始的圆括号上，使用下面的命令来删除圆括号内的文字：
 
     di(
 
-once your cursor is on the first parenthesis. For brackets or quotation marks, it would be:
+如果是方括号或者是引号，则使用：
 
     di{
 
-and:
+和：
 
     di"
 
-### Delete until a specific maker ###
+### 删除指定标记前的内容 ###
 
-A bit similar to deleting inside a marker but for different purpose, the command:
+和删除标记内部有些相似，但目的不同。命令如下：
 
-    dt[marker]
+	dt[标记]
 
-will delete everything in between your cursor and the marker (leaving it safe) if the marker is found on the same line. For example:
+会删除所有光标和标记之间的内容（保持标记不动），如果在同一行有这个标记的话。例如
 
     dt.
 
-will delete the end of your sentence, leaving the '.' intact.
+会删除至句子的末尾，但保持 ‘.’ 不动。
 
-### Turn Vim into a hex editor ###
+### 把 Vim 变为十六进制编辑器 ###
 
-This is not my favorite trick, but some might find it interesting. You can chain Vim and the xxd utility to convert the text into hexadecimal with the command:
+这不是我最喜欢的窍门，但有时会很有趣。你可以把 Vim 和 xxd 功能连起来来把文件转换为十六进制模式。命令如下：
 
     :%!xxd
 
 ![](https://farm6.staticflickr.com/5607/15109142674_e99466f2db_z.jpg)
 
-And similarly, you can revert this with:
+类似的，你可以通过下面的命令恢复原来的状态：
 
     :%!xxd -r
 
-### Place the text under your cursor in the middle of the screen ###
+### 把光标下的文字置于屏幕中央 ###
 
-Everything is in the title. If you want to force the screen to scroll and place whatever is under your cursor in the middle, use the command:
+所有要做的事情都包含在标题中。如果你想强制滚动屏幕来把光标下的文字置于屏幕的中央，在可视模式中使用命令（译者注：在普通模式中也可以）：
 
     zz
 
-in visual mode.
+### 跳到上一个／下一个 位置 ###
 
-### Jump to previous/next position ###
-
-When editing a very big file, it is frequent to make changes somewhere, and jump to another place right after. If you wish to jump back simply, use:
+当你编辑一个很大的文件时，经常要做的事是在某处进行修改，然后跳到另外一处。如果你想跳回之前修改的地方，使用命令：
 
     Ctrl+o
 
-to go back to where you were.
+来回到之前修改的地方
 
-And similarly:
+类似的：
 
     Ctrl+i
 
-will revert such jump back.
+会回退上面的跳动。
 
-### Render the current file as a web page ###
+### 把当前文件转化为网页 ###
 
-This will generate an HTML page displaying your text, and show the code in a split screen:
+这会生成一个 HTML 文件来显示文本，并在分开的窗口显示源代码：
 
-    :%Tohtml
+	:%TOhtml
+
+（译者注：原文是 `:%Tohtml`，但在我的电脑上是 `:%TOhtml`）
 
 ![](https://farm8.staticflickr.com/7550/15727174701_c405f85a84_z.jpg)
 
-Very basic but so fancy.
+很基本但很不错。
 
-To conclude, this list was assembled after reading some various forum threads and the [Vim Tips wiki][3], which I really recommend if you want to boost your knowledge about the editor.
+总的来说，这一系列命令是在我读了许多论坛主题和 [Vim Tips wiki][3]（如果你想学习更多关于编辑器的知识，我非常推荐这篇文章） 之后收集起来的。
 
-If you know any Vim command that you find useful and that you think most people do not know about, feel free to share it in the comments. As said in the introduction, an "obscure but useful" command is very subjective, but sharing is always good.
+如果你还知道哪些非常有用但你认为大多数人并不知道的命令，可以随意在评论中分享出来。就像引言中所说的，一个“鲜为人知但很有用的”命令是很主观的，但分享出来总是好的。
 
 --------------------------------------------------------------------------------
 
