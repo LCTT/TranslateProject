@@ -1,4 +1,4 @@
-Linux 有问必答 -- 如何改变libvirt VM镜像的默认位置
+Linux 有问必答：如何改变libvirt VM镜像的默认位置
 ================================================================================
 > **提问**： 我使用libvirt和virt-manager在我的Linux系统上创建虚拟机。我注意到虚拟机镜像位于/var/lib/libvirt/images目录。有没有办法改变虚拟机镜像的默认路径？
 
@@ -16,7 +16,7 @@ Linux 有问必答 -- 如何改变libvirt VM镜像的默认位置
 
 ![](https://farm4.staticflickr.com/3935/15433062592_0d89a8d132_o.png)
 
-你可以看到如下所是的默认存储池。在窗口的左下角，点击叉形按钮，将会停止默认的存储池。存储池一旦停止后，点击右边的垃圾桶，将会删除存储池。注意这个动作不会删除池中的镜像。
+你可以看到如下所是的默认存储池。在窗口的左下角，点击叉形按钮，将会停止默认的存储池。存储池一旦停止后，点击右边的垃圾桶，将会删除存储池。**注意这个动作不会删除池中的镜像。**
 
 现在点击左边的加号增加一个新的存储池。
 
@@ -85,6 +85,6 @@ Linux 有问必答 -- 如何改变libvirt VM镜像的默认位置
 via: http://ask.xmodulo.com/change-default-location-libvirt-vm-images.html
 
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
