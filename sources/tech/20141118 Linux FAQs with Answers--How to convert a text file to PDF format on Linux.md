@@ -1,3 +1,5 @@
+wangjiezhe translating ...
+
 Linux FAQs with Answers--How to convert a text file to PDF format on Linux
 ================================================================================
 > **Question**: I want to convert a plain text file into a PDF document. Is there an easy way to convert a text file to a PDF file from the command line on Linux? 
