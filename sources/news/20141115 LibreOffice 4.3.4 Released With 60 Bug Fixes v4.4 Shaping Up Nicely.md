@@ -1,3 +1,4 @@
+translating by ZTinoZ
 LibreOffice 4.3.4 Released With 60 Bug Fixes, v4.4 Shaping Up Nicely
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2010/12/libreoffice.png)

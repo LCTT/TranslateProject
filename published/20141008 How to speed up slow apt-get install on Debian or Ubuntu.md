@@ -1,9 +1,9 @@
-如何加速Debian或Ubuntu上缓慢的apt-get安装
-===
+极速蜗牛：apt-fast 
+================
 
 如果你在Debian或Ubuntu系统上经常感觉到**apt-get** 或 **aptitude**包安装速度过慢，那么这里就有几种改善这一情况的方法。你有没有考虑过改变正被使用的默认镜像站点？你有没有排除因特网连接的上游带宽成为瓶颈的可能？
 
-没有别的，你可以尝试第三个选择：使用[apt-fast][1]工具。apt-fast实际上是一个围绕apt-get和aptitude所写的shell脚本容器，它能过加速包的下载速度。apt-fast本质上采用[aria2][2]下载工具，这款工具能够以“块”的方式从多个镜像并行下载一个文件(就像BitTorrent下载)。
+如果不是这些原因，你可以尝试第三个选择：使用[apt-fast][1]工具。apt-fast实际上是一个围绕apt-get和aptitude所写的shell脚本容器，它能加速包的下载速度。apt-fast本质上采用[aria2][2]下载工具，这款工具能够以“块”的方式从多个镜像并行下载一个文件（就像BitTorrent下载）。
 
 ### 在Debian或Ubuntu上安装apt-fast
 
@@ -83,7 +83,7 @@ Ubuntu/Mint：
 
 ![](http://farm8.staticflickr.com/7309/10585846956_6c98c6dcc9_z.jpg)
 
-如前面所示，apt-fast的并行下载是通过aria2完成的。你可以从下面多个镜像验证并行下载。
+如前面所示，apt-fast的并行下载是通过aria2完成的。你可以看到如下图般从多个镜像并行下载。
 
     $ sudo netstat -nap | grep aria2c
 
@@ -97,7 +97,7 @@ Ubuntu/Mint：
 
 ![](http://farm4.staticflickr.com/3810/10585846986_504d07b4a7_z.jpg)
 
-正如你所见到的，**apt-fast**实质上比**apt-get**快(e.g. 快3--4秒)，特别是安装庞大软件包的时候。
+正如你所见到的，**apt-fast**确实比**apt-get**快(e.g. 快3--4秒)，特别是安装庞大软件包的时候。
 
 当然，安装性能的提高程度还依赖你上游因特网连通性。以我为例，我有富足的带宽来支持我的上游连接。这也是为什么我看到并行下载带来了成功的提高。
 
@@ -107,7 +107,7 @@ via: http://xmodulo.com/speed-slow-apt-get-install-debian-ubuntu.html
 
 作者：[Dan Nanni][a]
 译者：[su-kaiyao](https://github.com/su-kaiyao)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
