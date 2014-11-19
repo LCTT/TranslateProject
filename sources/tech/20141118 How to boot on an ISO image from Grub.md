@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How to boot on an ISO image from Grub
 ================================================================================
 If you need to use multiple Linux distributions, you do not have so many options. You can either install it, on your machine or in a virtual one, or you can boot on it from an ISO file in live mode. The second option, if less needy in hard drive space, is bothersome as you will need a USB stick or CD to hold the ISO file and boot from. However, there is a third alternative which is a bit of a compromise: have the ISO image on your hard drive, and boot into it in live mode at startup. Less needy in disk space than a full install, and fully functional, this seems to be a good alternative to a slow virtual machine. I will explain how to do this using the popular bootloader Grub.
