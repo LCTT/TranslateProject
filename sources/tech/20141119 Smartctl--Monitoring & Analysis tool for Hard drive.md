@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Smartctl – Monitoring & Analysis tool for Hard drive
 ================================================================================
 **Smartctl** (Self-Monitoring, Analysis and Reporting Technology) is a command line utility or a tool in UNIX like operating system that perform SMART tasks such as printing the SMART **self-test** and **error logs**, enabling and disabling SMART **automatic testing**, and initiating device self-tests.
