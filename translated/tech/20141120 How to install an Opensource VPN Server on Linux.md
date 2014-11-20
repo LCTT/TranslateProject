@@ -1,20 +1,18 @@
-Translating--------geekpi
-
-How to install an Opensource VPN Server on Linux
+如何在Linux上安装一个开源VPN服务器
 ================================================================================
 ![](http://techarena51.com/wp-content/uploads/2014/10/open-vpn.png)
 
-One of the most concerning factors to me while browsing, Is how can I ensure that my data remains private and secure ? While searching for answers, I came cross a number of ways in which you can remain anonymous like using a proxy website. But still using a third party service was not assuring enough. What I needed was a software which could be installed and run by me thus ensuring that I and only I would have access to the data.
+我上网时最担心的一件事情是，我该如何确保我的数据安全和隐私。在搜索答案的过程中，我找到了很多保持匿名的方法，比如使用代理网站。但是使用第三方的服务不能完全保证。我需要的是有一款软件可以我自己安装并运行，那样我就能确保只有我才能访问数据。
 
-So what is such a software called?
+这款软件叫什么呢？
 
-It’s called a VPN service or short for Virtual Private Network. It allows you to encrypt your data via SSL when you connect through it. Since the connection is encrypted even your ISP cannot see what your browsing.
+它叫VPN服务，就是虚拟隐私网络的简称。它允许访问时通过SSL加密你的数据。因为是加密的连接，所以你的ISP不能看到你的浏览信息。
 
-In this Linux Tutorial , I will be installing an OpenVPN Access Server on CentOS 7 . OpenVPN is easy to use, OpenSource and has community based support. It has clients for Windows, Android, and Mac.
+在本篇Linux教程中，我会在CentOS 7上安装一个OpenVPN服务。OpenVPN很容易使用，开源且拥有基于社区的支持。它的客户端有Windows、Android和Mac。
 
-### Step 1. Install OpenVPN Access Server on your Centos 7 Linux machine or [VPS][1]. ###
+### 第一步： 在你的Linux机器或者 [VPS][1]上安装OpenVPN服务 ###
 
-Download the package from https://openvpn.net/index.php/access-server/download-openvpn-as-sw.html, Ubuntu users can download appropriate packages and install OpenVPN Access Server on Ubuntu as well.
+从https://openvpn.net/index.php/access-server/download-openvpn-as-sw.html下载安装包，Ubuntu用户也可以找到合适的安装包并安装。
 
     [leo@vps ]$ cd /tmp
     [leo@vps tmp]$ wget http://swupdate.openvpn.org/as/openvpn-as-2.0.10-CentOS7.x86_64.rpm
@@ -33,36 +31,36 @@ Download the package from https://openvpn.net/index.php/access-server/download-o
     Admin  UI: https://yourhostIP:943/admin
     Client UI: https://yourhostIP:943/
 
-### Step 2: Setup a password for an OpenVPN client ###
+### 第二步： 为 OpenVPN 客户端设置密码 ###
 
     [leo_g@vps ]$passwd openvpn
 
-### Step 3: Log into the server via the admin Url https://yourhostIP:943/admin and start the server. ###
+### 第三步： 通过管理URL https://yourhostIP:943/admin 登录并启动服务 ###
 
 ![](http://techarena51.com/wp-content/uploads/2014/10/open-vpn.png)
 
-Type in the username “openvpn” and the password you set earlier
+输入用户名 “openvpn” 和你先前设置的密码
 
 ![](http://techarena51.com/wp-content/uploads/2014/10/open-vpn-1.png)
 
-### Step 4: Install the client from the Client Url. ( It will give you an option to download the Installer) ###
+### 第四步： 从客户端URL安装客户端 （它会给你一个选项下载安装程序） ###
 
 ![](http://techarena51.com/wp-content/uploads/2014/10/open-vpn-client-url.png)
 
-You can read instructions [here][3] on how to install it for your OS.
+你可以在[这里][3]看指导来了解如何在你的操作系统上安装。
 
-### Step 5: Connect to your server with your username and password that you created earlier. ###
+### 第五步： 用你先前创建的用户名和密码连接你的服务器 ###
 
 ![](http://openvpn.net/images/howto/connecting/OpenVPN_Client_Connect_2.png)
 
-That’s it, you can goto whatismyip.com and check your IP, should be that of your CentOS 7 OpenVPN Access Server. 
+就是这样，你可以访问whatismyip.com来查看你的IP，应该已经是你的CentOS 7上的OpenVPN的地址了。
 
 --------------------------------------------------------------------------------
 
 via: http://techarena51.com/index.php/how-to-install-an-opensource-vpn-server-on-linux/
 
 作者：[Leo G][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
