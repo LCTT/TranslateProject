@@ -1,31 +1,30 @@
-Translating by GOLinux!
-Smartctl – Monitoring & Analysis tool for Hard drive
+硬盘监控和分析神器——Smartctl
 ================================================================================
-**Smartctl** (Self-Monitoring, Analysis and Reporting Technology) is a command line utility or a tool in UNIX like operating system that perform SMART tasks such as printing the SMART **self-test** and **error logs**, enabling and disabling SMART **automatic testing**, and initiating device self-tests.
+**Smartctl**（自监控，分析和报告技术）是类Unix系统下实施SMART任务命令行套件或工具，它用于打印SMART**自检**和**错误日志**，启用并禁用SMRAT**自动检测**，以及初始化设备自检。
 
-Smartctl is useful on physical Linux servers where smart disks can be checked for errors and extract info regarding the disks that are used behind the **Hardware RAID**.
+Smartctl对于Linux物理服务器十分有用，在这些服务器上，可以对智能磁盘进行错误检查，并将与**硬件RAID**上相关的磁盘信息摘录下来。
 
-In this post we will discuss some practical examples of smartctl command, Use below steps to install smartctl , if it is not installed on your linux box.
+在本帖中，我们将讨论smartctl命令的一些实用样例。如果你的Linux上海没有安装smartctl，请按以下步骤来安装。
 
-### Installation of Smartcl in Ubuntu ###
+### Ubuntu中smartctl的安装 ###
 
     $ sudo apt-get install smartmontools
 
-### Installation of Smartcl in Redhat / CentOS ###
+### Redhat / CentOS中smartctl的安装 ###
 
     # yum install smartmontools
 
-**Start the Smartctl Service**
+**启动Smartctl服务**
 
-**For Ubuntu**
+**对于Ubuntu**
 
     $ sudo /etc/init.d/smartmontools start
 
-**For CentOS & RHEL**
+**对于CentOS & RHEL**
 
     # service smartd start ; chkconfig smartd on
 
-**Example:1 Check Whether Smart Capability is enabled or not for the disk**
+**样例：1 检查针对磁盘的Smart负载量**
 
     root@linuxtechi:~# smartctl -i /dev/sdb
     smartctl 6.2 2013-07-26 r3841 [x86_64-linux-3.13.0-32-generic] (local build)
@@ -47,9 +46,9 @@ In this post we will discuss some practical examples of smartctl command, Use be
     SMART support is: Available - device has SMART capability.
     SMART support is: Enabled
 
-Where ‘/dev/sdb’ is your hard disk. Last Two lines in above output shows that SMART  capability is enable for the device.
+这里‘/dev/sdb’是你的硬盘。上面输出中的最后两行显示了SMART负载量已启用。
 
-**Example:2 Enable Smart Capability for the disk**
+**样例：2 为磁盘启用Smart负载量**
 
     root@linuxtechi:~# smartctl -s on /dev/sdb
     smartctl 6.2 2013-07-26 r3841 [x86_64-linux-3.13.0-32-generic] (local build)
@@ -58,7 +57,7 @@ Where ‘/dev/sdb’ is your hard disk. Last Two lines in above output shows tha
     === START OF ENABLE/DISABLE COMMANDS SECTION ===
     SMART Enabled.
 
-**Example:3 Disable Smart Capability for the disk**
+**样例：3 为磁盘禁用Smart负载量**
 
     root@linuxtechi:~# smartctl -s off  /dev/sdb
     smartctl 6.2 2013-07-26 r3841 [x86_64-linux-3.13.0-32-generic] (local build)
@@ -67,12 +66,12 @@ Where ‘/dev/sdb’ is your hard disk. Last Two lines in above output shows tha
     === START OF ENABLE/DISABLE COMMANDS SECTION ===
     SMART Disabled. Use option -s with argument 'on' to enable it.
 
-**Example:4 Display Detailed Smart info for the disk**
+**样例：4 为磁盘显示详细Smart信息**
 
     root@linuxtechi:~# smartctl -a /dev/sdb              // For IDE drive
     root@linuxtechi:~# smartctl -a -d ata /dev/sdb       // For SATA drive
 
-**Example:5 Display Overall health of the Disk**
+**样例：5 显示磁盘总体健康状况**
 
     root@linuxtechi:~# smartctl -H  /dev/sdb
     smartctl 6.2 2013-07-26 r3841 [x86_64-linux-3.13.0-32-generic] (local build)
@@ -85,9 +84,9 @@ Where ‘/dev/sdb’ is your hard disk. Last Two lines in above output shows tha
     ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
     190 Airflow_Temperature_Cel 0x0022   067   045   045    Old_age   Always   In_the_past 33 (Min/Max 25/33)
 
-**Example:6 Test Hard drive using long & short option.**
+**样例：6 使用long和short选项测试硬盘**
 
-Long Test
+**Long测试**
 
     root@linuxtechi:~# smartctl --test=long /dev/sdb
     smartctl 6.2 2013-07-26 r3841 [x86_64-linux-3.13.0-32-generic] (local build)
@@ -102,11 +101,11 @@ Long Test
     
     Use smartctl -X to abort test.
 
-OR We can redirect test output to a log file , as shown below
+或者，我们可以重定向测试输出到日志文件，就像下面这样
 
     root@linuxtechi:~# smartctl --test=long /dev/sdb > /var/log/long.text
 
-**Short Test**
+**Short测试**
 
     root@linuxtechi:~# smartctl --test=short /dev/sdb
     smartctl 6.2 2013-07-26 r3841 [x86_64-linux-3.13.0-32-generic] (local build)
@@ -121,13 +120,13 @@ OR We can redirect test output to a log file , as shown below
     
     Use smartctl -X to abort test.
 
-OR
+或
 
     root@linuxtechi:~# smartctl --test=short /dev/sdb > /var/log/short.text
 
-**Note** : Short test will take maximum 2 minutes whereas in long test there is no time restriction because it read & verify every segment of the entire disk.
+**注意**：short测试将花费最多2分钟，而在long测试中没有时间限制，因为它会读取并验证磁盘的每个段。
 
-**Example:7 To View Drive’s Self Test result **
+**样例：7 查看驱动器的自检结果**
 
     root@linuxtechi:~# smartctl -l selftest /dev/sdb
     smartctl 6.2 2013-07-26 r3841 [x86_64-linux-3.13.0-32-generic] (local build)
@@ -139,7 +138,7 @@ OR
     # 1  Short offline       Completed: read failure       90%       492         210841222
     # 2  Extended offline    Completed: read failure       90%       492         210841222
 
-**Example:8 Calculate Estimate time to perform test**
+**样例：8 计算测试时间估值**
 
     root@linuxtechi:~# smartctl -c  /dev/sdb
     smartctl 6.2 2013-07-26 r3841 [x86_64-linux-3.13.0-32-generic] (local build)
@@ -179,7 +178,7 @@ OR
                         SCT Feature Control supported.
                         SCT Data Table supported.
 
-**Example:9 Display Error logs of the disk **
+**样例：9 显示磁盘错误日志**
 
     root@linuxtechi:~# smartctl -l error  /dev/sdb
     
@@ -219,7 +218,7 @@ OR
 via: http://www.linuxtechi.com/smartctl-monitoring-analysis-tool-hard-drive/
 
 作者：[Pradeep Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[GOLinux](https://github.com/GOLinux)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
