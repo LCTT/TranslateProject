@@ -1,4 +1,4 @@
-[小贴士] openSUSE设置服务服务通过防火墙
+小白技巧：openSUSE设置服务服务通过防火墙
 ================================================================================
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/11/openSUSE.png)
 
@@ -24,7 +24,7 @@ via: http://www.unixmen.com/quick-tip-allow-services-firewall-opensuse/
 
 作者：[SK][a]
 译者：[VicYu/Vic020](http://www.vicyu.net)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
