@@ -1,26 +1,25 @@
-Translating by GOLinux!
-How to configure and secure your Postfix email server
+Postfix邮件服务器的配置与安全加固
 ================================================================================
 ![](http://techarena51.com/wp-content/uploads/2014/08/postfix.png)
 
-Once you have your application server up and running, you are going to need a good email server to deliver your emails. I have been using postfix for all my servers and below is the configuration I generally use.
+当你启动并运行应用服务器后，你就需要一台好的邮件服务器来为你传递邮件。我为我所有的服务器开通了postfix邮件服务，下面就是我常用的配置。
 
-### Installation of Postfix on CentOS 6 ###
+### CentOS 6上安装Postfix ###
 
     yum install postfix
 
-Sendmail is installed by default, so it is better to stop and remove it
+默认安装了Sendmail，所以最好将它停掉并移除。
 
     service sendmail stop
     yum remove sendmail
 
-Postfix contains **two configuration files main.cf and master.cf**, you will need to modify main.cf for basic configuration. Also, postfix parameters can be defined like shell variables and can be used with a dollar sign preceding them. They do not need to be defined before they are used. Postfix will only look for a parameter when it is needed at rumtime.
+Postfix包含了**两个配置文件main.cf和master.cf**，对于基本的配置，你需要修改main.cf。同时，postfix可以像shell变量一样定义参数，并通过美元符号来调用。这些参数不需要再使用前定义，Postfix只在运行中需要时才会查询某个参数。
 
-### Configuring postfix ###
+### 配置postfix ###
 
     vim /etc/postfix/main.cf
 
-Uncomment the lines below
+去掉以下行的注释
 
     #Add the hostname of your machine
     myhostname = yourhostname.com
@@ -41,11 +40,11 @@ Uncomment the lines below
     #Only forward emails for the local machine and not machines on the network.
     mynetworks_style = host
 
-Start postfix
+启动postfix
 
     service postfix start
 
-This basic postfix configuration should enable your machine to send emails. You can verify the same by sending an email and checking “maillog” log file.
+这些基本的postfix配置可以让你的机器发送邮件，你可以通过发送邮件并检查“maillog”日志文件来验证。
 
     echo test mail | mail -s "test"  leo@techarena51.com && sudo tail -f /var/log/maillog
     
@@ -53,35 +52,34 @@ This basic postfix configuration should enable your machine to send emails. You 
     Aug 25 14:16:21 vps postfix/smtp[32622]: E6A372DC065D: to=, relay=smtp.mailserver.org[50.56.21.176], delay=0.8, delays=0.1/0/0.43/0.27, dsn=2.0.0, status=sent (250 Great success)
     Aug 25 14:16:21 vps postfix/qmgr[5355]: E6A372DC065D: removed
 
-But this configuration is not enough, as your emails will mostly end up in spam. You will need to add an SPF, PTR and DKIM record. You may still get emails delivered in spam due to your IP address being blacklisted, mostly due to a previous abuse of your vps.
+但是，上述配置并不够，因为邮件服务大多数时候都会被垃圾邮件挤满，你需要添加SPF、PTR和DKIM记录。你的邮件仍然可能被当作垃圾邮件来投递，因为你的IP地址被列入了黑名单，大多数时候是因为你的vps先前被入侵了。
 
-An alternative or a better way would be to use a third party provider like Gmail or even Mailgun.
-I use Mailgun as they give you 10,000 emails free every month as compared to Gmails 100 or so per day.
+另外一种选择，或者说是更好的方式是使用第三方邮件提供商提供的邮件服务，如Gmail，或者甚至是Mailgun。我使用Mailgun，因为它们提供了每个月10000封免费电子邮件，而Gmail则提供了每天100封左右的邮件。
 
-In “/etc/postfix/main.cf” you will need to add “smtp.mailgun.com” as your “relayhost”, enable “SASL” authentication so postfix can connect and authenticate to the remote Mailgun server.
+在“/etc/postfix/main.cf”中，你需要添加“smtp.mailgun.com”作为你的“转发主机”，并启用“SASL”验证，这样postfix就可以连接并验证到远程Mailgun服务器。
 
-Add or uncomment the following lines.
+添加或取消以下行的注释。
 
     relayhost = [smtp.mailgun.org]
     smtp_sasl_auth_enable = yes
     smtp_sasl_password_maps=static:your_username:your_password
     smtp_sasl_security_options=noanonymous
 
-Postfix does not implement “SASL” authentication by itself, hence you will need to install “cyrus-sasl-plain”.
+Postfix本身不会实施“SASL”验证，因此你需要安装“cyrus-sasl-plain”。
 
     sudo yum install cyrus-sasl-plain
 
-If you do not install this package on Centos 6 then you will get an error “SASL authentication failed; cannot authenticate to server smtp.mailgun.org[50.56.21.176]: no mechanism available)”
+如果你不安装此包，那么你就会收到这条错误信息“SASL authentication failed; cannot authenticate to server smtp.mailgun.org[50.56.21.176]: no mechanism available)”
 
-Restart postfix
+重启postfix
 
     sudo service postfix restart
 
-### Securing Postfix with TLS ###
+### 使用TLS加固Postfix安全 ###
 
-Postfix supports TLS a successor to SSL which allows you to encrypt data using key based authentication. I recommend reading http://www.postfix.org/TLS_README.html on how tls works with postfix.
+Postfix支持TLS，它是SSL的后继者，允许你使用基于密钥的验证来加密数据。我推荐你阅读http://www.postfix.org/TLS_README.html，以了解tls是怎么和postfix一起工作的。
 
-In order to use TLS you will need to generate a private key and a certificate which is signed by a Certificate Authority. In this example, I will be using a Self Signed Certificate.
+为了使用TLS，你需要生成一个私钥和一个由证书授权机构颁发的证书。在本例中，我将使用自颁发的证书。
 
     sudo yum install mod_ssl openssl
     # Generate private key 
@@ -98,7 +96,7 @@ In order to use TLS you will need to generate a private key and a certificate wh
     cp smtp.key /etc/pki/tls/private/smtp.key
     cp smtp.csr /etc/pki/tls/private/smtp.csr
 
-Open the postfix configuration files and add the following parameteres
+打开postfix配置文件，然后添加以下参数。
 
     sudo vim /etc/postfix/main.cf
     
@@ -111,28 +109,29 @@ Open the postfix configuration files and add the following parameteres
     smtp_tls_CAfile = /etc/ssl/certs/ca.crt
     smtp_tls_loglevel = 1
 
-Security level “may” means announce STARTTLS support to remote SMTP clients, but clients do no need to use encryption., I have used it here as per [mailgun docs][1], but you can use “encrypt” if you want to force TLS encryption.
+安全级别“may”意味着宣告对远程SMTP客户端上的STARTTLS的支持，但是客户端不需要使用加密。我在这里用它作为每个[mailgun文档][1]，但是如果你想要强制使用TLS加密，可以使用“encrypt”。
 
     service postfix restart
     #Send  a test email
     echo test mail | mail -s "test"  test@yourdomain.com && sudo tail -f /var/log/maillog
 
-You should see the below message 
+你应该会看到以下信息
 
     Aug 21 00:00:06 vps postfix/smtp[4997]: setting up TLS connection to smtp.mailgun.org[50.56.21.176]:587
     Aug 21 00:00:06 vps postfix/smtp[4997]: Trusted TLS connection established to smtp.mailgun.org[50.56.21.176]:587: TLSv1.2 with cipher AES256-GCM-SHA384 (256/256 bits)
 
-You can comment out the below parameter once everything is successful.
+如果一切正常，你可以注释掉以下参数。
+
 “smtp_tls_loglevel = 1”
 
-For Troubleshooting I recommend you read [Postfix tips and Troubleshooting Commands][2](注：此文在同一个原文更新中)
+对于故障排除，我推荐你阅读[Postfix小建议和排障命令][2]
 
 --------------------------------------------------------------------------------
 
 via: http://techarena51.com/index.php/configure-secure-postfix-email-server/
 
 作者：[Leo G][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[GOLinux](https://github.com/GOLinux)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
