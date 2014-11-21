@@ -1,3 +1,4 @@
+翻译中 by coloka
 How to visualize memory usage on Linux
 ================================================================================
 Lack of sufficient physical memory can significantly hamper the performance of Linux desktop and server environments. When your desktop is sluggish, one of the first things to do is to free up RAMs. Memory usage is even more critical in multi-user shared hosting or mission-critical server environments, where different users or application threads constantly compete for more memory.
