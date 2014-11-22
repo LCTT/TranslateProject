@@ -1,3 +1,5 @@
+Translating----------geekpi
+
 How To Make Raspberry Pi Boot In To GUI By Default
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/11/raspberry_pi_gui.jpg)
