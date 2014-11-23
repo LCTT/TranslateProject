@@ -1,6 +1,6 @@
 如何在Debian上安装配置ownCloud
 ================================================================================
-据其官方网站，ownCloud可以让你通过一个网络接口或者WebDAV访问你的文件。它还提供了一个平台，可以轻松地查看、编辑和同步您所有设备的通讯录、日历和书签。尽管ownCloud与广泛使用Dropbox非常相似，但主要区别在于ownCloud是免费的，开源的，从而可以自己的服务器上建立与Dropbox类似的云存储服务。使用ownCloud你可以完整地访问和控制您的私人数据而对存储空间没有限制（除了硬盘容量）或者连客户端的连接数量。
+据其官方网站，ownCloud可以让你通过一个Web界面或者WebDAV访问你的文件。它还提供了一个平台，可以轻松地查看、编辑和同步您所有设备的通讯录、日历和书签。尽管ownCloud与广泛使用Dropbox非常相似，但主要区别在于ownCloud是免费的，开源的，从而可以自己的服务器上建立与Dropbox类似的云存储服务。使用ownCloud你可以完整地访问和控制您的私人数据，而对存储空间（除了硬盘容量）或客户端的连接数量没有限制。
 
 ownCloud提供了社区版（免费）和企业版（面向企业的有偿支持）。预编译的ownCloud社区版可以提供了CentOS、Debian、Fedora、openSUSE、，SLE和Ubuntu版本。本教程将演示如何在Debian Wheezy上安装和在配置ownCloud社区版。
 
@@ -14,7 +14,7 @@ ownCloud提供了社区版（免费）和企业版（面向企业的有偿支持
 
 ![](https://farm6.staticflickr.com/5589/15071372505_298a796ff6_z.jpg)
 
-在下一屏职工点击继续：
+在下一屏中点击继续：
 
 ![](https://farm6.staticflickr.com/5589/14884818527_554d1483f9_z.jpg)
 
@@ -36,11 +36,11 @@ ownCloud提供了社区版（免费）和企业版（面向企业的有偿支持
     # aptitude update
     # aptitude install owncloud 
 
-打开你的浏览器并定位到你的ownCloud实例中，地址是http://<server-ip>/owncloud:
+打开你的浏览器并定位到你的ownCloud实例中，地址是 http://服务器 IP/owncloud:
 
 ![](https://farm4.staticflickr.com/3869/15071011092_f8f32ffe11_z.jpg)
 
-注意ownCloud可能会包一个Apache配置错误的警告。使用下面的步骤来解决这个错误来摆脱这些错误信息。
+注意ownCloud可能会包一个Apache配置错误的警告。使用下面的步骤来解决这个错误来解决这些错误信息。
 
 a) 编辑 the /etc/apache2/apache2.conf (设置 AllowOverride 为 All):
 
@@ -70,7 +70,7 @@ d) 刷新浏览器，确认安全警告已经消失
 
 ### 设置数据库 ###
 
-是时候为ownCloud设置数据库了。
+这时可以为ownCloud设置数据库了。
 
 首先登录本地的MySQL/MariaDB数据库：
 
@@ -83,7 +83,7 @@ d) 刷新浏览器，确认安全警告已经消失
     mysql> GRANT ALL PRIVILEGES ON owncloud_DB.* TO ‘owncloud-web’@'localhost';
     mysql> FLUSH PRIVILEGES; 
 
-通过http://<server-ip>/owncloud 进入ownCloud页面，并选择‘Storage & database’ 选项。输入所需的信息（MySQL/MariaDB用户名，密码，数据库和主机名），并点击完成按钮。
+通过http://服务器 IP/owncloud 进入ownCloud页面，并选择‘Storage & database’ 选项。输入所需的信息（MySQL/MariaDB用户名，密码，数据库和主机名），并点击完成按钮。
 
 ![](https://farm6.staticflickr.com/5584/15071010982_b76c23c384_z.jpg)
 
@@ -101,7 +101,7 @@ d) 刷新浏览器，确认安全警告已经消失
 
 ![](https://farm6.staticflickr.com/5587/15068784081_f281b54b72_z.jpg)
 
-编辑/etc/apache2/conf.d/owncloud.conf 启用HTTPS。对于余下的NC、R和L重写规则的意义，你可以参考[Apache 文档][2]:
+编辑/etc/apache2/conf.d/owncloud.conf 启用HTTPS。对于重写规则中的NC、R和L的意义，你可以参考[Apache 文档][2]:
 
     Alias /owncloud /var/www/owncloud
      
@@ -197,7 +197,7 @@ via: http://xmodulo.com/2014/08/install-configure-owncloud-debian.html
 
 作者：[Gabriel Cánepa][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
