@@ -5,7 +5,7 @@
 
 Git教程往往不会解决这个问题，因为它集中篇幅来教你Git命令和概念，并且不认为你会使用GitHub。[GitHub帮助教程](https://help.github.com/)一定程度上弥补了这一缺陷，但是它每篇文章的关注点都较为狭隘，而且没有提供关于"Git vs GitHub"问题的概念性概述。
 
-**如果你是习惯于先理解概念，再着手代码的学习者**，而且你也是Git和GitHub的初学者，我建议你先理解清楚什么是fork，为什么？
+**如果你是习惯于先理解概念，再着手代码的学习者**，而且你也是Git和GitHub的初学者，我建议你先理解清楚什么是fork。为什么呢 ？
 
 1. Fork是在GitHub起步最普遍的方式。
 2. Fork只需要很少的Git命令，但是起得作用却非常大。
@@ -53,15 +53,19 @@ Joe和其余贡献者已经对这个项目做了一些修改，而你将在他�
 
 ### 结论
 
-我希望这是一篇关于GitHub和Git [fork](https://help.github.com/articles/fork-a-repo)有用概述。现在，你已经理解了那些概念，你将会更容易地在实际中执行你的代码。GitHub关于fork和[同步](https://help.github.com/articles/syncing-a-fork)的文章将会给你大部分你需要的代码。
+我希望这是一篇关于GitHub和Git 的 [fork](https://help.github.com/articles/fork-a-repo)有用概述。现在，你已经理解了那些概念，你将会更容易地在实际中执行你的代码。GitHub关于fork和[同步](https://help.github.com/articles/syncing-a-fork)的文章将会给你大部分你需要的代码。
 
 如果你是Git的初学者，而且你很喜欢这种学习方式，那么我极力推荐书籍[Pro Git](http://git-scm.com/book)的前两个章节，网上是可以免费查阅的。
 
 如果你喜欢视频学习，我创建了一个[11部分的视频系列](http://www.dataschool.io/git-and-github-videos-for-beginners/)（总共36分钟），来向初学者介绍Git和GitHub。
 
 ---
+via: http://www.dataschool.io/simple-guide-to-forks-in-github-and-git/
 
+作者：[Kevin Markham][a]
 译者：[su-kaiyao](https://github.com/su-kaiyao)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
+
+[a]:https://disqus.com/home/user/justmarkham/
