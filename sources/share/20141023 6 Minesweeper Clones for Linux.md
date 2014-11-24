@@ -1,3 +1,4 @@
+Translating by GOLinux!
 6 Minesweeper Clones for Linux
 ================================================================================
 ### GNOME Mines ###
