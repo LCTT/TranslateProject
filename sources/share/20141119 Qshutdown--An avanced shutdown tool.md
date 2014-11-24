@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Qshutdown – An avanced shutdown tool
 ================================================================================
 qshutdown is a Qt program to shutdown/reboot/suspend/hibernate the computer at a given time or after a certain number of minutes. It shows the time until the corresponding request is send to either the Gnome- or KDE-session-manager, to HAL or to DeviceKit and if none of these works the command ‘sudo shutdown -P now' is used. This program may be useful for people who want to work with the computer only for a certain time.
