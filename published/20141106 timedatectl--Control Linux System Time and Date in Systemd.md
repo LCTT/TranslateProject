@@ -1,7 +1,7 @@
-timedatectl - 管理Linux系统的时间和日期
+如何在 systemd 下管理Linux系统的时间和日期
 ===
 
-**timedatectl**是用来查询和修改系统时间和配置的Linux应用程序。它是[系统服务管理][1]的一部分，并且允许你检查和修改系统时钟的配置。
+**timedatectl**是用来查询和修改系统时间和配置的Linux应用程序。它是[systemd 系统服务管理][1]的一部分，并且允许你检查和修改系统时钟的配置。
 
 在这篇文章中，我们将涉及该小巧但十分重要应用程序的所有方面
 
@@ -41,19 +41,19 @@ timedatectl - 管理Linux系统的时间和日期
 
 ### 设置本地时钟 ###
 
-**实时时钟（RTC）**，通常被称为硬件时钟，完全独立于操作系统当前状态，甚至可以在计算机关闭的时候工作。你可以配置系统使用国际时间或当地时间维持RTC。注意，使用当地时区维持RTC并不完美支持，而且还有可能因为时区变化和夏令时调整引起许多问题。如果有可能，在UTC模式下保持RTC。这一做法的唯一问题是，其他操作系统可能不完全支持它（如果你在同一台机器上允许2个操作系统）。
+**实时时钟（RTC）**，通常被称为硬件时钟，完全独立于操作系统当前状态，甚至可以在计算机关闭的时候工作。你可以配置系统使用国际时间（UTC）或当地时间来校正RTC。注意，使用当地时区校正RTC并没有完美支持，而且还有可能因为时区变化和夏令时调整引起许多问题。如果有可能，在UTC模式下校正RTC。这一做法的唯一问题是，其他操作系统可能不完全支持它（如果你在同一台机器上运行2个操作系统的话）。
 
-使用UTC模式维持RTC，使用下面的命令：
+使用UTC模式校正RTC，使用下面的命令：
 
 	# timedatectl set-local-rtc 0
 
-使用当地时间维护，使用：
+使用当地时间校正，使用：
 
 	# timedatectl set-local-rtc 1
 
 ### 设置NTP同步 ###
 
-**网络时间协议（NTP）**是在分组交换计算机系统间进行时钟同步的，可变数据延迟的网络协议。NTP被设计使用[几毫秒的协调通用时间][2]来同步所有参与的计算机。如果你希望设置NTP同步，你可以使用set-ntp选项设置。使用“no”关闭NTP同步，使用“yes”开启。
+**网络时间协议（NTP）**是在分组交换、可变数据延迟的计算机系统间进行时钟同步的网络协议。NTP被设计使用[几毫秒的协调通用时间（UTC）][2]来同步所有参与的计算机。如果你希望设置NTP同步，你可以使用set-ntp选项设置。使用“no”关闭NTP同步，使用“yes”开启。
 
 	# timedatectl set-ntp yes
 
@@ -63,7 +63,7 @@ via: http://linoxide.com/linux-command/timedatectl-change-time-date-systemd/
 
 作者：[Adrian Dinu][a]
 译者：[su-kaiyao](https://github.com/su-kaiyao)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

@@ -1,45 +1,43 @@
-    Vic020
-
-Postfix tips and Troubleshooting Commands
+Postfix提示和故障排除命令
 ================================================================================
-Here’s a list of stuff I user everyday and other email admins will also be using, Let me know if I missed anything
+这里是一些我每天用的命令，当然，其他的email管理员也会使用，因此我写下来，以防我忘记。
 
-List/Print current mail queue
+列出/打印当前邮件队列
 
     # postqueue –p
 
     # mailq
 
-If it’s a huge que, you can pipe it with tail
+如果队列太长，可以使用tail管道读取。
 
     # mailq | tail
 
-Flush the queue
+清理队列
 
     # postqueue -f
 
-Schedule immediate delivery of all mail that is queued for the named as domain.come.
+立即交付所有某domain.com域名的所有邮件
 
     # postqueue -s domain.com
 
-TO delete all queue
+删除所有队列
 
     # postsuper -d ALL
 
-To delete a particular message
+删除指定的消息
 
     # postsuper -d messageid
 
-Reque the mail or resend particular mail
+重新排队邮件或者重新发送指定邮件
 
     #postfix -r msgid
 
-To find mail version
+查找邮件版本
 
     #postconf -d mail_version
     mail_version = 2.6.6
 
-You can also follow the steps in the link below which is the most simple and well explained documentation available with regards to Configuring postfix.
+你也可以查看下面的连接，这个连接有很多例子和不错的可用的解释文档，可以用来配置postfix.
 
 [Postfix Configuration - ][1]
 
@@ -48,7 +46,7 @@ You can also follow the steps in the link below which is the most simple and wel
 via: http://techarena51.com/index.php/postfix-configuration-and-explanation-of-parameters/
 
 作者：[Leo G][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Vic020](http://www.vicyu.net)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

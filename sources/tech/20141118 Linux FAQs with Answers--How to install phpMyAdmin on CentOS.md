@@ -1,3 +1,4 @@
+Translating by ZTinoZ
 Linux FAQs with Answers--How to install phpMyAdmin on CentOS
 ================================================================================
 > **Question**: I am running a MySQL/MariaDB server on CentOS, and I would like to manage its databases via web-based interface using phpMyAdmin. What is a proper way to install phpMyAdmin on CentOS? 

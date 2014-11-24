@@ -1,3 +1,4 @@
+翻译中 by coloka
 Restricting process CPU usage using nice, cpulimit, and cgroups
 ================================================================================
 注：本文中的图片似乎都需要翻墙后才能看到，发布的时候注意
