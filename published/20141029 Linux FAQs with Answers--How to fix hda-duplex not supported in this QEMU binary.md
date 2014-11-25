@@ -1,6 +1,6 @@
-Linux 有问必答 -- 如何修复“hda-duplex not supported in this QEMU binary”（hda-duplex在此QEMU文件中不支持）
+Linux 有问必答：如何修复“hda-duplex not supported in this QEMU binary” 
 ================================================================================
-> **提问**： 当我尝试在虚拟机中安装一个新的Linux时，虚拟机不能启动且报了下面这个错误：“不支持的配置：hda-duplex在此QEMU文件中不支持。” 我该如何修复？
+> **提问**： 当我尝试在虚拟机中安装一个新的Linux时，虚拟机不能启动且报了下面这个错误："unsupported configuration: hda-duplex not supported in this QEMU binary."（“不支持的配置：hda-duplex在此QEMU文件中不支持。”） 我该如何修复？
 
 这个错误可能来自一个当默认声卡型号不能被识别时的一个qemu bug。
 
@@ -20,7 +20,7 @@ Linux 有问必答 -- 如何修复“hda-duplex not supported in this QEMU binar
 
 ### 方案二: Virsh ###
 
-如果你使用的是**virt-manager** 而不是**virt-manager**， 你可以编辑VM相应的配置文件。在<device>节点中查找**sound**节点，并按照下面的默认声卡型号改成**ac97**。
+如果你使用的是**virsh** 而不是**virt-manager**， 你可以编辑VM相应的配置文件。在<device>节点中查找**sound**节点，并按照下面的默认声卡型号改成**ac97**。
 
     <devices>
       . . .
@@ -35,6 +35,6 @@ Linux 有问必答 -- 如何修复“hda-duplex not supported in this QEMU binar
 via: http://ask.xmodulo.com/hda-duplex-not-supported-in-this-qemu-binary.html
 
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
