@@ -1,4 +1,4 @@
-[translating by KayGuoWhu]
+[Translating by Stevearzh]
 When hackers grow old
 ================================================================================
 Lately I’ve been wrestling with various members of an ancient and venerable open-source development group which I am not going to name, though people who regularly follow my adventures will probably guess which one it is by the time I’m done venting.
