@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Linux FAQs with Answers--How to fix “ImportError: No module named scapy.all”
 ================================================================================
 > **Question**: When I run a Python application, I am getting "ImportError: No module named scapy.all" message. How can I fix this import error? 
