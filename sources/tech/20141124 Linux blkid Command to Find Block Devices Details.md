@@ -1,3 +1,5 @@
+[felixonmars translating...]
+
 Linux blkid Command to Find Block Devices Details
 ================================================================================
 Today we will show you how to use **lsblk** and **blkid** utilities to find out information about block devices and we are using a CentOS 7.0 installed machine.
