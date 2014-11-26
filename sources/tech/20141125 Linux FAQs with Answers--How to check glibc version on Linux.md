@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Linux FAQs with Answers--How to check glibc version on Linux
 ================================================================================
 > **Question**: I need to find out the version of the GNU C library (glibc) that I have on my Linux system. How can I check glibc version on Linux? 
