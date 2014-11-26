@@ -1,3 +1,4 @@
+johnhoow translating...
 Important 10 Linux ps command Practical Examples
 ================================================================================
 As an Operating System which inspired from Unix, Linux has a built-in tool to capture current processes on the system. This tool is available in command line interface.
