@@ -1,4 +1,4 @@
-Linux 有问必答 -- 如何在wget中禁用HTTP转发
+Linux 有问必答：如何在wget中禁用HTTP转发
 ================================================================================
 > **提问**： 当我用wget获取一个重定向到URL Y的URL X的时候，wget默认会自动获取URL Y。然而我想要强制获取不带重定向的URL X。我该如何禁用wget重定向URL的功能。
 
@@ -28,6 +28,6 @@ Linux 有问必答 -- 如何在wget中禁用HTTP转发
 via: http://ask.xmodulo.com/disable-http-redirect-wget.html
 
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
