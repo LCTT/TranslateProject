@@ -2,9 +2,9 @@ Linux问答时间--如何在CentOS上安装phpMyAdmin
 ================================================================================
 > **问题**:我正在CentOS上运行一个MySQL/MariaDB服务，并且我想要通过网络接口来用phpMyAdmin来管理数据库。在CentOS上安装phpMyAdmin的最佳方法是什么？
 
-phpMyAdmin is an open-source PHP application designed as a web-based MySQL/MariaDB database administration tool. While there exist lightweight database management tools such as [Adminer][1], phpMyAdmin is more popularly used among webmasters to conduct various MySQL/MariaDB administration tasks. It supports pretty much all MySQL database/table related operations such as browse, create, copy, drop, rename, alter, as well as MySQL user/privilege management, and database import/export. Here is **how to install phpMyAdmin on CentOS 6 or 7**.
+phpMyAdmin是一款以PHP为基础，基于Web的MySQL/MariaDB数据库管理工具。虽然已经存在着一些诸如[Adminer][1]的轻量级数据库管理工具, 但是phpMyAdmin还是更加广泛应用于网站管理员之中来进行各种MySQL/MariaDB的管理任务。它支持几乎所有MySQL数据库／表的相关操作，比如浏览、创建、复制、删除、重命名、更改，还有MySQL用户/权限管理和数据库导入/导出。以下就是**如何在CentOS6或7上安装phpMyAdmin**。
 
-### Prerequisites ###
+### 前提 ###
 
 To install phpMyAdmin on CentOS, you first need to set up a web server (e.g., Apache or nginx), MySQL/MariaDB and PHP. Depending on your preference or requirement, you can choose to install either [LAMP stack][2] or [LEMP stack][3].
 
