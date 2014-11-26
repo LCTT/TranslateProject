@@ -1,6 +1,6 @@
 教你在 Ubuntu 上使用 LXC 容器
 ================================================================================
-使用“容器”来保证主机环境的安全性，这个概念早在十年前就已经存在（例如 FreeBSD 的 jail 虚拟化技术），但是直到最近，随着部署云架构需求越来越多，像 LXC 和 [Docker][1] 这种 Linux 下的容器才成为被关注的焦点。当然，由于主流厂商（云供应商如亚马逊主推 AWS，微软主推 Azure；发行版如红帽、Ubuntu等）组成的强大靠山，[Docker][2] 已经被放在媒体的聚光灯下面，其实，Docker 里面所谓的“容器”技术是由 LXC 提供的。
+使用“容器”来保证主机环境的安全性，这个概念早在十年前就已经存在（例如 FreeBSD 的 jail 虚拟化技术），但是直到最近，随着部署云架构需求越来越多，像 LXC 和 [Docker][1] 这种 Linux 下的容器才成为被关注的焦点。当然，由于主流厂商（云服务商如亚马逊主推 AWS，微软主推 Azure；发行版如红帽、Ubuntu等）组成的强大靠山，[Docker][2] 已经被放在媒体的聚光灯下面，其实，Docker 里面所谓的“容器”技术是由 LXC 提供的。
 
 你只是一个普通的 Linux 用户，那 Docker/LXC 能为你带来什么好处呢？容器可以将你的应用在不同的 Linux 发行版之间迁移。想像一下这个场景：你正在用的发行版是 Debian，你喜欢它的稳定性，同时你又想玩一款最新的 Ubuntu 游戏，你不需要在电脑上装双系统然后重启进入 Ubuntu，也不需要在 Debian 上跑一个耗资源的 Ubuntu 虚拟机，你只需要简单地生成一个 Ubuntu 容器就够了。
 
@@ -20,7 +20,7 @@
 
 ![](https://farm4.staticflickr.com/3955/15655792445_d462957ee9_z.jpg)
 
-安装完 LXC 工具后，就能看到 LXC 自动创建了一块桥接网卡（lxcbr0，在 /etc/lxc/default.conf 中设置）。
+安装完 LXC 工具后，就能看到 LXC 自动创建了一块桥接网卡（lxcbr0，可以在 /etc/lxc/default.conf 中设置）。
 
 ![](https://farm6.staticflickr.com/5598/15035046834_a53c092230_z.jpg)
 
@@ -66,11 +66,11 @@
     ------------------------------------
     test-lxc   STOPPED  -     -     NO         
 
-使用下面的命令启动容器。参数“-d”将容器作为后台进程打开。如果没有指定这个参数，你可以在控制台界面上直接把容器的运行程序关闭（LCTT：Ctrl+C组合键）。
+使用下面的命令启动容器。参数“-d”将容器作为后台进程打开。如果没有指定这个参数，你可以在控制台界面上直接把容器的运行程序关闭（LCTT译注：Ctrl+C组合键）。
 
     $ sudo lxc-start -n <container-name> -d 
 
-开容器后，看看状态：
+打开容器后，看看状态：
 
     $ sudo lxc-ls --fancy 
 
@@ -132,7 +132,7 @@ via: http://xmodulo.com/lxc-containers-ubuntu.html
 
 作者：[Dan Nanni][a]
 译者：[bazz2](https://github.com/bazz2)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
