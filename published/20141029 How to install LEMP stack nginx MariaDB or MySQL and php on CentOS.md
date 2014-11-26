@@ -1,12 +1,12 @@
-CentOS 下安装 LEMP 包(nginx、MariaDB/MySQL 和 php)
+CentOS 下安装 LEMP 服务(nginx、MariaDB/MySQL 和 php)
 ================================================================================
-LEMP 组合包是一款日益流行的网站服务组合软件包，在许多生产环境中的核心网站服务上起着强有力的作用。正如其名称所暗示的， LEMP 包是由 Linux、ngix、MariaDB/MySQL 和 PHP 组成的。在传统的 LAMP 包中使用的 Apache HTTP 协议服务器性能低下而且难于大规模集群，相比来说 ngix 的高性能及轻量级等特性，正是其的替代方案。 MariaDB 是一款社区支持驱动的 MySQL 数据库的分支，其功能更多性能更佳。PHP，服务端编程语言，具体是由 PHP FastCGI 的增强版 PHP-FPM 组件来处理，生成网页动态内容。
+LEMP 组合包是一款日益流行的网站服务组合软件包，在许多生产环境中的核心网站服务上起着强有力的作用。正如其名称所暗示的， LEMP 包是由 Linux、nginx、MariaDB/MySQL 和 PHP 组成的。在传统的 LAMP 包中使用的 Apache HTTP 协议服务器性能低下而且难于大规模集群，相比来说 nginx 的高性能及轻量级等特性，正是其的替代方案。 MariaDB 是一款社区支持驱动的 MySQL 数据库的分支，其功能更多性能更佳。PHP，服务端编程语言，具体是由 PHP FastCGI 的增强版 PHP-FPM 组件来处理，生成网页动态内容。
 
 这篇文章里，我们示范**如何在 CentOS 操作平台上安装 LEMP 包**。我们安装的目标是 CentOS 6 和 CentOS 7 两个操作平台，如有必要会指出它们的不同。
 
 ### 第一步: Nginx ###
 
-让我们在 CentOS 上安装 nginx 作为第一步，然后对它作些基本的配置，比如使其能自启动和[对防火墙做个性化设置][1]。
+让我们在 CentOS 上安装 nginx 作为第一步，然后对它作些基本的配置，比如使其能引导时启动和[对防火墙做个性化设置][1]。
 
 #### 安装 Nginx ####
 
@@ -48,7 +48,7 @@ LEMP 组合包是一款日益流行的网站服务组合软件包，在许多生
 
 #### 测试 Nginx ####
 
-nginx 的默认文档要目录是 /usr/share/nginx/html。默认的 index.html 文件一定已经在这目录下了。让我们检测下是否可以访问到这个测试 web 页，输入 http://<nginx-ip-address>/ 访问。
+nginx 的默认文档要目录是 /usr/share/nginx/html。默认的 index.html 文件一定已经在这目录下了。让我们检测下是否可以访问到这个测试 web 页，输入 http://nginx的ip地址/ 访问。
 
 ![](https://farm4.staticflickr.com/3940/15461279287_8573948074_b.jpg)
 
@@ -56,7 +56,7 @@ nginx 的默认文档要目录是 /usr/share/nginx/html。默认的 index.html �
 
 ### 第二步: MariaDB/MySQL ###
 
-下一步就是安装 LEMP 包的数据库组件。CentOS/RHEL 6 或早期的版本中提供的是 MySQL 的服务/客户端安装包，但 CentOS/RHEL 7 已使用了 MySQL 默认实现的版本 MariaDB。作为 MySQL 的简单替代品，MariaDB 保证了与 MySQL 的 API 和命令行用法方面最大的兼容性。下面是关于怎么在 CentOS 上安装和配置 MaraDB/MySQL 的操作示例。
+下一步就是安装 LEMP 包的数据库组件。CentOS/RHEL 6 或早期的版本中提供的是 MySQL 的服务器/客户端安装包，但 CentOS/RHEL 7 已使用了 MariaDB 替代了默认的 MySQL。作为 MySQL 的简单替代品，MariaDB 保证了与 MySQL 的 API 和命令行用法方面最大的兼容性。下面是关于怎么在 CentOS 上安装和配置 MaraDB/MySQL 的操作示例。
 
 在 CentOS 7 系统上:
 
@@ -76,7 +76,7 @@ nginx 的默认文档要目录是 /usr/share/nginx/html。默认的 index.html �
 
 在成功启动 MariaDB/MySQL 服务后，执行在 MariaDB/MySQL 服务包中的脚本。这一次的运行会为为数据库服务器进行一些安全强化措施，如设置（非空）的 root 密码、删除匿名用户、锁定远程访问。
 
-     $ sudo mysql_secure_installation 
+     $ sudo mysql_secure_installation
 
 ![](https://farm8.staticflickr.com/7545/15644566071_8c39875512_z.jpg)
 
@@ -84,7 +84,7 @@ nginx 的默认文档要目录是 /usr/share/nginx/html。默认的 index.html �
 
 ### 第三步: PHP ###
 
-PHP 是 LEMP 包中一个重要的组件，它负责把存储在 MariaDB/MySQL 服务器的数据取出生成动态内容。为了 LEMP 可用，您至少需要安装上 PHP-FPM 和 PHP-MySQL 两个模块。PHP-FPM（FastCGI 进程管理器）实现的是 nginx 服务器和生成动态内容的 PHP 应用程序的访问接口。PHP-MySQL 模块使 PHP 程序能访问 MariaDB/MySQL 数据库。
+PHP 是 LEMP 包中一个重要的组件，它负责把存储在 MariaDB/MySQL 服务器的数据取出生成动态内容。为了 LEMP 需要，您至少需要安装上 PHP-FPM 和 PHP-MySQL 两个模块。PHP-FPM（FastCGI 进程管理器）实现的是 nginx 服务器和生成动态内容的 PHP 应用程序的访问接口。PHP-MySQL 模块使 PHP 程序能访问 MariaDB/MySQL 数据库。
 
 #### 安装 PHP 模块 ####
 
@@ -116,14 +116,14 @@ PHP 是 LEMP 包中一个重要的组件，它负责把存储在 MariaDB/MySQL �
 - **php-dba**: PHP 的数据抽象层支持。
 - **php-pecl-apc**: PHP 加速器/缓存支持。 
 
-安装时，要查看可用的 PHP 模块的完整列表的话，可以运行:
+安装时，要查看可用的 PHP 模块的完整列表的话，可以运行：
 
     $ sudo yum search php- (CentOS 7)
     $ sudo yum --enablerepo=remi search php- (CentOS 6)
 
 #### 启动 PHP-FPM ####
 
-您需要启动 PHP-FPM ，然后把它加放自动启动服务列表。
+您需要启动 PHP-FPM ，然后把它放到自动启动服务列表。
 
 在 CentOS 7 系统上:
 
@@ -185,7 +185,7 @@ PHP 是 LEMP 包中一个重要的组件，它负责把存储在 MariaDB/MySQL �
         }
     }
 
-nginx 的默认工作线程（在 /etc/nginx/nginx.conf 文件中指定的）数是一个，让我们也来调整一下这个数字。通常来说我们创建的工作线程数应该和 CPU 核数相同。要确信您的 CPU 的核数，请运行下面这命令：
+nginx 的默认工作线程数（在 /etc/nginx/nginx.conf 文件中指定的）是 1，让我们也来调整一下这个数字。通常来说我们创建的工作线程数应该和 CPU 核数相同。要确信您的 CPU 的核数，请运行下面这命令：
 
     $ grep processor /proc/cpuinfo | wc -l
 
@@ -202,11 +202,11 @@ nginx 的默认工作线程（在 /etc/nginx/nginx.conf 文件中指定的）数
 接下来，让我们对 PHP 的配置文件 /etc/php.ini 做自定义设置。更具体的就是在 /etc/php.ini 文件中增加以下两行。 
 
     cgi.fix_pathinfo=0
-    date.timezone = "America/New York"
+    date.timezone = "PRC"
 
-为了安全起见，我们希望的是 PHP 解释器只是处理指定文件路径的文件任务，而不是预测搜索一些并不存在的文件任务。上面的第一行起的就是这个作用。
+为了安全起见，我们希望的是 PHP 解释器只是处理指定文件路径的文件任务，而不是预测搜索一些并不存在的文件任务。上面的第一行起的就是这个作用。（LCTT 译注：原文用的时区是“America/New York”，根据国内情况，应该用 PRC或 Asia 下的中国城市。）
 
-第二行定义的是 PHP 中 日期/时间相关函数使用相关的默认时区。使用[本指南] [3]，找出您所在的时区，并设置相应 **date.timezone 的值**。
+第二行定义的是 PHP 中日期/时间相关函数使用相关的默认时区。使用[本指南][3]，找出您所在的时区，并设置相应 **date.timezone 的值**。
 
 #### 测试 PHP ####
 
@@ -226,7 +226,7 @@ nginx 的默认工作线程（在 /etc/nginx/nginx.conf 文件中指定的）数
 
     <?php phpinfo(); ?>
 
-打开浏览器，输入 http://<nginx-ip-address>/test.php 。
+打开浏览器，输入 http://nginx的IP地址/test.php 。
 
 ![](https://farm6.staticflickr.com/5608/15647258715_9d7bcd8c73_z.jpg)
 
@@ -238,11 +238,11 @@ via: http://xmodulo.com/install-lemp-stack-centos.html
 
 作者：[Dan Nanni][a]
 译者：[runningwater](https://github.com/runningwater)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://xmodulo.com/author/nanni
-[1]:http://ask.xmodulo.com/open-port-firewall-centos-rhel.html
-[2]:http://ask.xmodulo.com/install-remi-repository-centos-rhel.html
+[1]:http://linux.cn/article-4243-1.html
+[2]:http://linux.cn/article-4192-1.html
 [3]:http://ask.xmodulo.com/set-default-timezone-php.html
