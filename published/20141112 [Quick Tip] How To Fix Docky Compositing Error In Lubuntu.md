@@ -1,6 +1,6 @@
-[Quick Tip]如何修复Lubuntu中的Docky混合错误
+小技巧：如何修复Lubuntu中的Docky混合错误
 ================================================================================
-总所周知，**Docky**是Unix/Linux类系统中的轻量级应用启动器。我是 Lubuntu 和 Docky的忠实粉丝，因为他们不需要占用我的所有系统资源，这样就可以同时运行更多应用。我在笔记本上使用Docky应用启动器，系统为Lubuntu 14.04.
+总所周知，**Docky**是Unix/Linux类系统中的轻量级应用启动器。我是 Lubuntu 和 Docky 的忠实粉丝，因为它们不需要占用我的所有系统资源，这样就可以同时运行更多应用。我在笔记本上使用Docky应用启动器，系统为Lubuntu 14.04.
 
 但是，如果你使用LXDE发行版，你也许肯定遇到过使用Docky时报混合的错误。看下面的截图。
 
@@ -20,7 +20,7 @@
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/11/unknown_006.png)
 
-这时，你结可以使用3D背景和隐藏功能，如自动隐藏（Auto-hide），Intellihide和窗口闪烁（Window dodge）等。
+这时，你就可以使用3D背景和隐藏功能，如自动隐藏（Auto-hide），Intellihide和窗口闪烁（Window dodge）等。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/11/Docky-Settings_003.png)
 
@@ -32,7 +32,7 @@ via: http://www.unixmen.com/quick-tip-fix-docky-compositing-error-lubuntu/
 
 作者：[SK][a]
 译者：[Vic020/VicYu](http://www.vicyu.net)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
