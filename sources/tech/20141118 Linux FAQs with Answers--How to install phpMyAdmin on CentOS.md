@@ -2,31 +2,31 @@ Linux问答时间--如何在CentOS上安装phpMyAdmin
 ================================================================================
 > **问题**:我正在CentOS上运行一个MySQL/MariaDB服务，并且我想要通过网络接口来用phpMyAdmin来管理数据库。在CentOS上安装phpMyAdmin的最佳方法是什么？
 
-phpMyAdmin是一款以PHP为基础，基于Web的MySQL/MariaDB数据库管理工具。虽然已经存在着一些诸如[Adminer][1]的轻量级数据库管理工具, 但是phpMyAdmin还是更加广泛应用于网站管理员之中来进行各种MySQL/MariaDB的管理任务。它支持几乎所有MySQL数据库／表的相关操作，比如浏览、创建、复制、删除、重命名、更改，还有MySQL用户/权限管理和数据库导入/导出。以下就是**如何在CentOS6或7上安装phpMyAdmin**。
+phpMyAdmin是一款以PHP为基础，基于Web的MySQL/MariaDB数据库管理工具。虽然已经存在着一些诸如[Adminer][1]的轻量级数据库管理工具, 但是phpMyAdmin还是更加广泛应用于网站管理员之中来进行各种MySQL/MariaDB的管理任务。它支持几乎所有MySQL数据库／表的相关操作，比如浏览、创建、复制、删除、重命名、更改，还有MySQL用户/权限管理和数据库导入/导出。以下就是**如何在CentOS 6或7上安装phpMyAdmin**。
 
 ### 前提 ###
 
-To install phpMyAdmin on CentOS, you first need to set up a web server (e.g., Apache or nginx), MySQL/MariaDB and PHP. Depending on your preference or requirement, you can choose to install either [LAMP stack][2] or [LEMP stack][3].
+在CentOS上安装phpMyAdmin，你第一步需要架设一台Web服务器(如Apache或nginx)，安装好MySQL/MariaDB数据库和PHP。根据你的偏好和需求，你可以从[LAMP][2]和[LEMP][3]中选择一种安装。
 
-Another requirement is to enable EPEL repository on your CentOS. Follow [this guide][4] to set up EPEL repository if you haven't done so.
+另一个要求是允许在你的CentOS上安装EPEL库。如果你还没设置过请[猛戳这里][4]。
 
-### Install phpMyAdmin on CentOS 6 or 7 ###
+### 在CentOS6或7上安装phpMyAdmin ###
 
-Once you set up EPEL repository, you can install phpMyAdmin easily with yum command as follows.
+一旦你设置了EPEL库，你就能轻松地用以下命令安装phpMyAdmin了。
 
-On CentOS 7:
+在CentOS 7上:
 
     $ sudo yum install phpmyadmin 
 
-On CentOS 6:
+在CentOS 7上:
 
     $ sudo yum install phpmyadmin php-mcrypt 
 
-### Configure phpMyAdmin on CentOS 7 ###
+### 在CentOS 7上配置phpMyAdmin ###
 
-By default, phpMyAdmin on CentOS 7 allows access only from loopback address (127.0.0.1). To enable remote access, you will need to update its configuration.
+默认情况下，CentOS 7上的phpMyAdmin只允许从回环地址(127.0.0.1)访问。为了能远程连接，你需要改动以下配置。
 
-Open phpMyAdmin's configuration (/etc/httpd/conf.d/phpMyAdmin.conf) with a text editor. Find and comment out every line that says "Require ip XXXX". There will be four such lines. Add "Require all granted" instead. The updated configuration file will look like the following.
+用编辑器打开phpMyAdmin的配置文件(路径：/etc/httpd/conf.d/phpMyAdmin.conf)。Find and comment out every line that says "Require ip XXXX". There will be four such lines. Add "Require all granted" instead. The updated configuration file will look like the following.
 
     $ sudo vi /etc/httpd/conf.d/phpMyAdmin.conf 
 
