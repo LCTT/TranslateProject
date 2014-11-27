@@ -47,7 +47,7 @@ If you want to add some bind mounts it is easy:
 
     systemd-nspawn -D . --bind /usr/portage
 
-Now your /usr/portage is bound to your host, so no need to sync/etc. If you want to bind to a different destination add a “:dest” after the source, relative to the root of the chroot (so –bind foo is the same as –bind foo:foo).
+Now your /usr/portage is bound to your host, so no need to sync/etc. If you want to bind to a different destination add a “:dest” after the source, relative to the root of the chroot (so --bind foo is the same as --bind foo:foo).
 
 If the container has a functional init that can handle being run inside, you can add a -b to boot it:
 
