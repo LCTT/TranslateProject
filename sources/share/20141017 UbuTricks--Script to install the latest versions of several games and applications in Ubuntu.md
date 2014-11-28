@@ -1,3 +1,5 @@
+Translating by doubleshit
+
 UbuTricks – Script to install the latest versions of several games and applications in Ubuntu
 ================================================================================
 UbuTricks is a program that helps you install the latest versions of several games and applications in Ubuntu.
