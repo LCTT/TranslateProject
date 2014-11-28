@@ -24,9 +24,9 @@ phpMyAdmin是一款以PHP为基础，基于Web的MySQL/MariaDB数据库管理工
 
 ### 在CentOS 7上配置phpMyAdmin ###
 
-默认情况下，CentOS 7上的phpMyAdmin只允许从回环地址(127.0.0.1)访问。为了能远程连接，你需要改动以下配置。
+默认情况下，CentOS 7上的phpMyAdmin只允许从回环地址(127.0.0.1)访问。为了能远程连接，你需要改动它的配置。
 
-用编辑器打开phpMyAdmin的配置文件(路径：/etc/httpd/conf.d/phpMyAdmin.conf)。Find and comment out every line that says "Require ip XXXX". There will be four such lines. Add "Require all granted" instead. The updated configuration file will look like the following.
+用文本编辑器打开phpMyAdmin的配置文件(路径：/etc/httpd/conf.d/phpMyAdmin.conf)，找出并注释掉带有"Require ip XXXX"字样的代码行。会有四处这样的代码行，用"Require all granted"取而代之。重新改动过的配置文件如下所示。
 
     $ sudo vi /etc/httpd/conf.d/phpMyAdmin.conf 
 
@@ -72,15 +72,15 @@ phpMyAdmin是一款以PHP为基础，基于Web的MySQL/MariaDB数据库管理工
     </Directory>
     . . . . .
 
-Finally, restart httpd to activate the change.
+最后，重启httpd使改动生效。
 
     $ sudo systemctl restart httpd 
 
-### Configure phpMyAdmin on CentOS 6 ###
+### 在CentOS 6上配置phpMyAdmin ###
 
-By default, phpMyAdmin on CentOS 6 blocks access from every IP address. To enable remote access, you will need to update its configuration.
+默认情况下，CentOS 6上的phpMyAdmin是禁止从每个IP地址访问的。为了能远程连接，你需要改动它的配置。
 
-Open phpMyAdmin's configuration (/etc/httpd/conf.d/phpmyadmin.conf) with a text editor. Find a line that says "Deny from all", and comment it out. Then change the line that says "Allow from 127.0.0.1" to "Allow from 0.0.0.0". The updated configuration will look like the following.
+用文本编辑器打开phpMyAdmin的配置文件(路径：/etc/httpd/conf.d/phpMyAdmin.conf)，找出并注释掉"Deny from all"字样的代码行。然后把"Allow from 127.0.0.1"字样的代码行改成"Allow from 0.0.0.0"。重新改动过的配置文件如下所示。
 
     $ sudo vi /etc/httpd/conf.d/phpmyadmin.conf 
 
@@ -92,9 +92,9 @@ Open phpMyAdmin's configuration (/etc/httpd/conf.d/phpmyadmin.conf) with a text 
       Allow from 0.0.0.0
     </Directory>
 
-The next step is to add a blowfish password to the phpMyAdmin's configuration. This step is needed to encrypt password in cookie as part of cookie-based authentication.
+下一步是将phpMyAdmin的配置文件用blowfish加密工具加密。这一步需要加密cookie里的密码来作为基于cookie的部分认证。
 
-Open the following file with a text editor, and set a random blowfish password as follows.
+用文本编辑器打开如下路径所示的文件并且用blowfish设置一个随机密码，如下所示。
 
     $ sudo vi /usr/share/phpmyadmin/config.inc.php 
 
@@ -102,21 +102,21 @@ Open the following file with a text editor, and set a random blowfish password a
 
     $cfg['blowfish_secret'] = 'kd5G}d33aXDc50!'; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
 
-Finally, restart httpd to activate the change.
+最后，重启httpd使改动生效。
 
     $ sudo service httpd restart 
 
-### Test phpMyAdmin ###
+### 测试phpMyAdmin ###
 
-To test if phpMyAdmin is successfully set up, go to http://<web-server-ip-addresss>/phpmyadmin
+测试phpMyAdmin是否设置成功，访问这个页面：http://<web-server-ip-addresss>/phpmyadmin
 
 ![](https://farm6.staticflickr.com/5606/15550758749_0f7ab66b5b_z.jpg)
 
-You should be able to log with any MySQL user (e.g., root), and manage MySQL/MariaDB databases/tables via a web-based interface.
+你应该能通过Web界面来记录下任何MySQL用户(比如root)和管理MySQL/MariaDB的数据库/表。
 
 ![](https://farm8.staticflickr.com/7505/15551187008_86ac7e7db1_z.jpg)
 
-### Troubleshooting ###
+### 疑难解答 ###
 
 Here are a few troubleshooting tips during phpMyAdmin installation on CentOS.
 
