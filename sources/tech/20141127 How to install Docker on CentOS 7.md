@@ -1,3 +1,4 @@
+[translating by KayGuoWhu]
 How to install Docker on CentOS 7
 ================================================================================
 Docker is an open-source tool that makes creating & managing **Linux containers(LXC)** easy. Containers are like lightweight VMs which can be started & stopped in milliseconds. Dockers help the system admin & coders to develop their application in a container and can further scale up to 1000 of nodes.
