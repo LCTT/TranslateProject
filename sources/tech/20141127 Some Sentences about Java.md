@@ -1,3 +1,4 @@
+[a598799539 translating...]
 Some Sentences about Java
 ================================================================================
 There is nothing new in this article. I just collected some trivial statements which may not be trivial for some of the junior programmers programmers. Boring old stuff.
