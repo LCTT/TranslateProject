@@ -1,3 +1,5 @@
+Translating----geekpi
+
 Linux FAQs with Answers--How to access a NAT guest from host with VirtualBox
 ================================================================================
 > **Question**: I have a guest VM running on VirtualBox, which uses NAT networking. So the guest VM is getting a private IP address (10.x.x.x) assigned by VirtualBox. If I want to SSH to the guest VM from the host machine, how can I do that? 
