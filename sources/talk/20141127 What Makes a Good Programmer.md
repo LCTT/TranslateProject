@@ -1,3 +1,4 @@
+[KayGuoWhu translating]
 What Makes a Good Programmer?
 ================================================================================
 What makes a good programmer? It’s an interesting question to ask yourself. It makes you reflect on the craft of software development. It is also a good question to ask your colleagues. It can trigger some interesting discussions on how you work together. Here are five skills I think are crucial to have in order to be a good programmer.
