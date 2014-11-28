@@ -1,29 +1,27 @@
-[felixonmars translating...]
-
-How to install Docker on CentOS 7
+如何在 CentOS 7 上安装 Docker
 ================================================================================
-Docker is an open-source tool that makes creating & managing **Linux containers(LXC)** easy. Containers are like lightweight VMs which can be started & stopped in milliseconds. Dockers help the system admin & coders to develop their application in a container and can further scale up to 1000 of nodes.
+Docker 是一个开源工具，它可以让创建和管理 **Linux 容器**变得简单。容器就像是轻量级的虚拟机，并且可以以毫秒级的速度来启动或停止。Docker 帮助系统管理员和程序员在容器中开发应用程序，并且可以扩展到成千上万的节点。
 
-The main difference between container and VM(Virtual machine) is that dockers provide **process based isolation** , whereas VM provides full isolation of resources. Virtual machine takes a minute to start where as container can be started in a second or less than a second. Container uses the Kernel of host OS , whereas VM uses the separate Kernel.
+容器和 VM（虚拟机）的主要区别是，容器提供了**基于进程的隔离**，而虚拟机提供了资源的完全隔离。虚拟机可能需要一分钟来启动，而容器只需要一秒钟或更短。容器使用宿主操作系统的内核，而虚拟机使用独立的内核。
 
-One of the limitation of Docker is that it can be used only on **64bit hosts** OS.
+Docker 的局限性之一是，它只能用在 **64 位**的操作系统上。
 
-In this post we will discuss how to install docker in CentOS 7.x
+在这篇文章中我们将讨论如何在 CentOS 7.x 中安装 docker。
 
-### Installation of Docker on CentOS 7 ###
+### CentOS 7 中 Docker 的安装 ###
 
-Docker package is included in the default CentOS-Extras repository. So to install docker , simply run below yum command :
+Docker 软件包已经包括在默认的 CentOS-Extras 软件源里。因此想要安装 docker，只需要运行下面的 yum 命令：
 
     [root@localhost ~]# yum install docker
 
-### Start the Docker Service ###
+### 启动 Docker 服务 ###
 
-Once the Installation is finished , start docker service and enable it at boot using below commands
+安装完成后，使用下面的命令来启动 docker 服务，并将其设置为开机启动：
 
     [root@localhost ~]# service docker start
     [root@localhost ~]# chkconfig docker on
 
-**Download the official Centos images Locally**
+**下载官方的 CentOS 镜像到本地**
 
     [root@localhost ~]# docker pull centos
     Pulling repository centos
@@ -33,7 +31,7 @@ Once the Installation is finished , start docker service and enable it at boot u
     511136ea3c5a: Download complete 
     5b12ef8fd570: Download complete
 
-**Verify CentOS images that have been fetched :**
+**确认 CentOS 镜像已经被获取：**
 
     [root@localhost ~]# docker images centos
     REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
@@ -42,12 +40,12 @@ Once the Installation is finished , start docker service and enable it at boot u
     centos              centos7             ae0c2d0bdc10        2 weeks ago         224 MB
     centos              latest              ae0c2d0bdc10        2 weeks ago         224 MB
 
-**Run a Docker Container :**
+**运行一个 Docker 容器：**
 
     [root@localhost ~]# docker run -i -t centos /bin/bash
     [root@dbf66395436d /]#
 
-As we can see centos container has been started and we got the bash shell. In docker command we have used options like ‘-i attaches stdin and stdout’ and ‘-t allocates a terminal or console’ . To disconnect from container type exit .
+我们可以看到，CentOS 容器已经被启动，并且我们得到了 bash 提示符。在 docker 命令中我们使用了 “-i attach 标准输入输出”和 “-t 分配一个终端或控制台”选项。若要断开与容器的连接，输入 exit。
 
     [root@cd05639b3f5c /]# cat /etc/redhat-release 
     CentOS Linux release 7.0.1406 (Core) 
@@ -55,12 +53,12 @@ As we can see centos container has been started and we got the bash shell. In do
     exit
     [root@localhost ~]#
 
-We can also search Containers based on fedora & ubuntu OS. 
+我们还可以搜索基于 Fedora 和 Ubuntu 操作系统的容器。
 
     [root@localhost ~]# docker search ubuntu
     [root@localhost ~]# docker search fedora
 
-**Display the list of running containers **
+**显示当前正在运行容器的列表**
 
 ![](http://www.linuxtechi.com/wp-content/uploads/2014/11/docker-ps.png)
 
