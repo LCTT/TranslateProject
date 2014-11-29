@@ -1,3 +1,6 @@
+Transalting-----geekpi
+
+
 15 ‘pwd’ (Print Working Directory) Command Examples in Linux
 ================================================================================
 For those working with Linux command Line, command ‘**pwd**‘ is very helpful, which tells where you are – in which directory, starting from the root (**/**). Specially for Linux newbies, who may get lost amidst of directories in command Line Interface while navigation, command ‘**pwd**‘ comes to rescue.
