@@ -1,3 +1,4 @@
+forsil translating ...
 How to use on-screen virtual keyboard on Linux
 ================================================================================
 On-screen virtual keyboard is an alternative input method that can replace a real hardware keyboard. Virtual keyboard may be a necessity in various cases. For example, your hardware keyboard is just broken; you do not have enough keyboards for extra machines; your hardware does not have an available port left to connect a keyboard; you are a disabled person with difficulty in typing on a real keyboard; or you are building a touchscreen-based web kiosk.
