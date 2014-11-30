@@ -118,17 +118,17 @@ phpMyAdmin是一款以PHP为基础，基于Web的MySQL/MariaDB数据库管理工
 
 ### 疑难解答 ###
 
-Here are a few troubleshooting tips during phpMyAdmin installation on CentOS.
+这里有一些在CentOS上安装phpMyAdmin的过程中遇到的一些问题解决方法。
 
-1. When you are trying to access phpMyAdmin page in web browser, you are getting "403 Forbidding" error with:
+1. 当你在浏览器里尝试连接phpMyAdmin页面的时候，你看到"403 Forbidding"错误：
 
     You don't have permission to access /phpMyAdmin on this server.
 
-This error is happening because the default setting of phpMyAdmin blocks access from a remote IP address. To fix this error, you need to edit its configuration to allow remote access. See the above for more detail.
+发生这种错误是因为phpMyAdmin默认阻止了IP地址远程连接。要修复这种错误，你需要编辑它的配置文件来允许远程连接。具体操作见上。
 
-2. When you access phpMyAdmin page, you are seeing "The configuration file now needs a secret passphrase (blowfish_secret)." message, and you cannot login.
+2. 当你连接phpMyAdmin页面时，你看见"The configuration file now needs a secret passphrase (blowfish_secret)."信息，并且你无法登录。
 
-To fix this error, you need to edit /usr/share/phpmyadmin/config.inc.php to add a random blowfish password as follows, and restart httpd.
+要修复这种错误，你需要编辑 /usr/share/phpmyadmin/config.inc.php 这个文件来添加一个随机的blowfish密码，然后重启httpd，如下所示。
 
     $cfg['blowfish_secret'] = 'kd5G}d33aXDc50!'; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
 
@@ -137,13 +137,13 @@ To fix this error, you need to edit /usr/share/phpmyadmin/config.inc.php to add 
     $ sudo service httpd restart (CentOS 6)
     $ sudo systemctl restart httpd (CentOS 7) 
 
-3. When you access phpMyAdmin page, you are getting "Cannot load mcrypt extension. Please check your PHP configuration" error message.
+3. 当你连接phpMyAdmin页面时，你看见"Cannot load mcrypt extension. Please check your PHP configuration"错误信息。
 
-To solve this error, install the following package:
+要修复这种错误，要安装下面这个包：
 
     $ sudo yum install php-mcrypt 
 
-and restart httpd:
+然后重启httpd：
 
     $ sudo service httpd restart (CentOS 6)
     $ sudo systemctl restart httpd (CentOS 7) 
