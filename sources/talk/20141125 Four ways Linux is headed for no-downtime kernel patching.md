@@ -1,3 +1,4 @@
+翻译中 by coloka
 Four ways Linux is headed for no-downtime kernel patching
 ================================================================================
 ![Credit: Shutterstock](http://images.techhive.com/images/article/2014/10/patch_f-100526950-primary.idge.jpeg)
