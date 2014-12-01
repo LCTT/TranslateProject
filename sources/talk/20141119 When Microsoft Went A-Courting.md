@@ -1,3 +1,4 @@
+Translating by GOLinux!
 When Microsoft Went A-Courting
 ================================================================================
 ![](http://www.linuxinsider.com/ai/769827/microsoft-linux-open-source.jpg)
