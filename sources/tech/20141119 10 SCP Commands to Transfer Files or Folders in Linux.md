@@ -1,6 +1,7 @@
-Linux中的十条SCP传输命令
+Linux的十条SCP传输命令
 ================================================================================
-Linux administrator should be familiar with **CLI** environment. Since **GUI** mode in Linux servers is not a common to be installed. **SSH** may the most popular protocol to enable Linux administrator to manage the servers via remote in secure way. Built-in with **SSH** command there is **SCP** command. **SCP** is used to copy file(s) between servers in secure way.
+Linux系统管理员应该很熟悉**CLI**环境，因为在Linux服务器中是不安装**GUI**的。**SSH**可能是Linux系统管理员通过远程方式安全管理服务器的最流行协议。Built-in with 在**SSH**命令中内置了一种叫
+**SCP**的命令，用来在服务器之间安全传输文件。
 
 ![](http://www.tecmint.com/wp-content/uploads/2013/10/SCP-Commands.png)
 
