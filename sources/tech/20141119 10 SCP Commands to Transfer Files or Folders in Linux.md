@@ -5,13 +5,13 @@ Linux系统管理员应该很熟悉**CLI**环境，因为在Linux服务器中是
 
 ![](http://www.tecmint.com/wp-content/uploads/2013/10/SCP-Commands.png)
 
-The below command will read as “**copy source_file_name**” into “**destination_folder**” at “**destination_host**” using “**username account**”.
+以下命令可以解读为：用“**username account**”“**复制 source file name**”到“**destination host**”上的“**destination folder**”里。
 
-#### Basic syntax of SCP ####
+#### SCP命令的基本语法 ####
 
     scp source_file_name username@destination_host:destination_folder
 
-There are much parameters in **SCP** command that you can use. Here are the parameters that may useful on daily basis usage.
+**SCP**命令有很多参数供你使用，这里指的是每次都会用到的参数。
 
 ### Provide the detail information of SCP process using -v parameter ###
 
