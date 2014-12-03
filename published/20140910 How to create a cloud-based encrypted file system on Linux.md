@@ -1,6 +1,6 @@
-如何在 Linux 系统中创建一个云端的加密文件系统
+如何在 Linux 系统中创建一个云端加密文件系统
 ================================================================================
-[Amazon S3][1] 和 [Google Cloud Storage][2] 之类的商业云存储服务以能承受的价格提供了高可用性、可扩展、无限容量的对象存储服务。为了加速这些云产品的广泛采用，这些提供商为他们的产品基于明确的 API 和 SDK 培养了一个良好的开发者生态系统。而基于云的文件系统便是这些活跃的开发者社区中的典型产品，已经有了好几个开源的实现。
+[Amazon S3][1] 和 [Google Cloud Storage][2] 之类的商业云存储服务以能承受的价格提供了高可用性、可扩展、无限容量的对象存储服务。为了加速这些云产品的广泛采用，这些提供商为他们的产品通过明确的 API 和 SDK 培养了一个良好的开发者生态系统。而基于云的文件系统便是这些活跃的开发者社区中的典型产品，已经有了好几个开源的实现。
 
 [S3QL][3] 便是最流行的开源云端文件系统之一。它是一个基于 FUSE 的文件系统，提供了好几个商业或开源的云存储后端，比如 Amazon S3、Google Cloud Storage、Rackspace CloudFiles，还有 OpenStack。作为一个功能完整的文件系统，S3QL 拥有不少强大的功能：最大 2T 的文件大小、压缩、UNIX 属性、加密、基于写入时复制的快照、不可变树、重复数据删除，以及软、硬链接支持等等。写入 S3QL 文件系统任何数据都将首先被本地压缩、加密，之后才会传输到云后端。当你试图从 S3QL 文件系统中取出内容的时候，如果它们不在本地缓存中，相应的对象会从云端下载回来，然后再即时地解密、解压缩。
 
@@ -142,7 +142,7 @@ via: http://xmodulo.com/2014/09/create-cloud-based-encrypted-file-system-linux.h
 
 作者：[Dan Nanni][a]
 译者：[felixonmars](https://github.com/felixonmars)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
