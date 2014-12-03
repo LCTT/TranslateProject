@@ -1,3 +1,4 @@
+Translating by JonathanKang
 How to Install and Setup ‘My Weather Indicator’ in Ubuntu 14.10
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/10/my-weather-indicator.jpg)
@@ -23,7 +24,7 @@ To ensure you’re always kept up-to-date with the latest release I recommend ad
 How? **Open a new Terminal** window (Unity Dash > Terminal, or press Ctrl+Alt+T) and **enter the following two commands carefully**, entering your system password when prompted:
 
     sudo add-apt-repository ppa:atareao/atareao
-    
+
     sudo apt-get update && sudo apt-get install my-weather-indicator
 
 #### Setting Up My Weather Indicator ####
@@ -36,7 +37,7 @@ The first time you open the app the following Preferences window will open. From
 
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/10/Screen-Shot-2014-10-27-at-17.39.07.jpeg)
 
-If you’re travelling (or in need of some small talk fodder) **you can monitor a second locale**, too. This is set up in the same way as the first but in the ‘Second Location’ tab. 
+If you’re travelling (or in need of some small talk fodder) **you can monitor a second locale**, too. This is set up in the same way as the first but in the ‘Second Location’ tab.
 
 Checking the ‘**Show Widget**’ box in the “**Widget Options**” section adds a small forecast desklet to your desktop. There are a number of different skins included, so be sure to play around to find the one you like the most (note: widget changes are applied on clicking ‘Ok’).
 
