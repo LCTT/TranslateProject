@@ -1,3 +1,4 @@
+[Translating by Stevearzh]
 Five Magnificent Linux Music Streaming Clients
 ================================================================================
 Digital streams almost totally command my music listening these days. Over the years I have amassed a large collection of CDs at considerable expense; most of them now sit neglected gathering dust. Almost all music streaming services fall short of the audio quality of CDs, but their popularity has more to do with sheer convenience than high-fidelity sound reproduction. Music streaming has not only been to the detriment of CD sales; digital downloads have also experienced a slowing down of sales. This is only set to continue. Audiophiles may be tempted to embrace music streaming given that there are now services such as Tidal which offers high fidelity music streaming, 25 million tracks encoded with the FLAC format streamed at 1,411kbps.
