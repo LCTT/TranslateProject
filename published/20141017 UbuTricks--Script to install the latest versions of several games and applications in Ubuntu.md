@@ -1,10 +1,10 @@
-UbuTricks - 在ubuntu上安装几个最新游戏和应用的脚本
+使用 UbuTricks 在ubuntu上安装最新游戏和应用
 ===
 UbuTricks是一个可以帮助你在ubuntu上安装几个最新版本的游戏和应用的程序。
 
 UbuTricks是一个有简单界面，基于Zenity的图形脚本。虽然早期开发中，它的目标是通过简单的界面操作来安装Ubuntu14.04 及以后发行版上应用程序的更新。
 
-应用程序会自动下载安装。一些更新可能会需要ppa。其它的将会通过编译源代码安装。编译过程可能会需要一些时间，当从ppa或者deb文件安装应该会快一点，取决于你的下载速度。
+应用程序会自动下载安装。一些更新可能会需要ppa，其它的将会通过编译源代码安装。编译过程可能会需要一些时间，当从ppa或者deb文件安装应该会快一点，取决于你的下载速度。
 
 ###一共有以下几种安装方式：
 
@@ -29,7 +29,7 @@ UbuTricks是一个有简单界面，基于Zenity的图形脚本。虽然早期�
 
 - PCManFM
 
-###互联网
+###互联网应用
 
 - Geary
 - HexChat
@@ -86,7 +86,7 @@ via: http://www.ubuntugeek.com/ubutricks-script-to-install-the-latest-versions-o
 
 作者：[ruchi][a]
 译者：[DoubleShit](https://github.com/DoubleShit)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
