@@ -1,3 +1,5 @@
+    Vic020
+
 How To Drop Database In Oracle 11 Without Using DBCA
 ================================================================================
 In this small tutorial, I want to show you how to drop the database without using the GUI tool DBCA
