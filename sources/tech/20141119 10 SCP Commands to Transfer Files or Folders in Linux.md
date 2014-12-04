@@ -1,7 +1,6 @@
 Linux的十条SCP传输命令
 ================================================================================
-Linux系统管理员应该很熟悉**CLI**环境，因为在Linux服务器中是不安装**GUI**的。**SSH**可能是Linux系统管理员通过远程方式安全管理服务器的最流行协议。Built-in with 在**SSH**命令中内置了一种叫
-**SCP**的命令，用来在服务器之间安全传输文件。
+Linux系统管理员应该很熟悉**CLI**环境，因为在Linux服务器中是不安装**GUI**的。**SSH**可能是Linux系统管理员通过远程方式安全管理服务器的最流行协议。在**SSH**命令中内置了一种叫**SCP**的命令，用来在服务器之间安全传输文件。
 
 ![](http://www.tecmint.com/wp-content/uploads/2013/10/SCP-Commands.png)
 
@@ -13,13 +12,13 @@ Linux系统管理员应该很熟悉**CLI**环境，因为在Linux服务器中是
 
 **SCP**命令有很多参数供你使用，这里指的是每次都会用到的参数。
 
-### Provide the detail information of SCP process using -v parameter ###
+### 用-v参数来提供SCP进程的详细信息 ###
 
-Basic **SCP** command without parameter will copy the files in background. User will see nothing unless the process is done or some error appears. You can use “**-v**” parameter to print debug information into the screen. It can help you debugging connection, authentication and configuration problems.
+不带参数的基本**SCP**命令会在后台复制文件，除非操作完成或者有错误出现，否则用户在界面上是看不到任何提示信息的。你可以用“**-v**”参数来在屏幕上打印出调试信息，这能帮助你调试连接、认证和配置的一些问题。
 
     pungki@mint ~/Documents $ scp -v Label.pdf mrarianto@202.x.x.x:.
 
-#### Sample Output ####
+#### 部分输出 ####
 
     Executing: program /usr/bin/ssh host 202.x.x.x, user mrarianto, command scp -v -t .
     OpenSSH_6.0p1 Debian-3, OpenSSL 1.0.1c 10 May 2012
@@ -47,7 +46,7 @@ The “**-p**” parameter will help you on this. An estimated time and the conn
 
     pungki@mint ~/Documents $ scp -p Label.pdf mrarianto@202.x.x.x:.
 
-#### Sample Output ####
+#### 部分输出 ####
 
     mrarianto@202.x.x.x's password:
     Label.pdf 100% 3672KB 126.6KB/s 00:29
@@ -60,7 +59,7 @@ Take a look of these commands. It is using a single file of **93 Mb**.
 
     pungki@mint ~/Documents $ scp -pv messages.log mrarianto@202.x.x.x:.
 
-#### Sample Output ####
+#### 部分输出 ####
 
     Executing: program /usr/bin/ssh host 202.x.x.x, user mrarianto, command scp -v -p -t .
     OpenSSH_6.0p1 Debian-3, OpenSSL 1.0.1c 10 May 2012
@@ -88,7 +87,7 @@ Copying file without “**-C**” parameter will result **1661.3** second. Yo ma
 
     pungki@mint ~/Documents $ scp -Cpv messages.log mrarianto@202.x.x.x:.
 
-#### Sample Output ####
+#### 部分输出 ####
 
     Executing: program /usr/bin/ssh host 202.x.x.x, user mrarianto, command scp -v -p -t .
     OpenSSH_6.0p1 Debian-3, OpenSSL 1.0.1c 10 May 2012
