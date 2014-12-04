@@ -1,3 +1,5 @@
+Translating---------geekpi
+
 How To Delete Oracle 11g Database Manually ? 
 ================================================================================
 The following steps shows how to manually delete a database within Oracle 11g, running in an Linux environment.
