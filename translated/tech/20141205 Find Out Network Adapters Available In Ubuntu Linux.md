@@ -1,12 +1,10 @@
-Translating----geekpi
-
-Find Out Network Adapters Available In Ubuntu Linux
+在Ubuntu上找出可用的网络适配器
 ================================================================================
-Wondering **which network adapters you are using in Ubuntu or any other Linux OS**? It is very easy to to find out the manufacturer of the network adapters in your computer in Linux. Open a terminal and use the following command:
+想知道**在Linux中你正在使用的网卡是什么吗？** 在Linux中很容易就找出网卡的生产商。打开一个终端并输入下面的额命令：
 
     sudo lshw -C network
 
-If the above command doesn’t work with sudo, remove the super user privileges. Weird but helps. The output of the command reads like this:
+如果上面的命令不能在sudo下使用，那就移除sudo。它的输出看上去有点奇怪但是很有用。
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/12/Network_Adapter_Linux.jpeg)
 
@@ -38,17 +36,17 @@ If the above command doesn’t work with sudo, remove the super user privileges.
 > 
 > resources: irq:18 memory:b0600000-b0607fff memory:b0400000-b05fffff
 
-As you can see, the wireless network adapter in my Macbook Air is BCM4360, a troublesome wireless adapter because of which often Ubuntu does not detect wireless networks.
+如你所见，我Macbook Air上的无线网卡是BCM4360，这是一款在Ubuntu下面经常无法检测无线网络的很容易出问题的网卡。
 
-[lshw][1] command actually used to list hardware and hence the command is named lshw. With the option network, it filters the result for networking hardware only.
+[lshw][1] 命令实际上死用来列出硬件的，因此命令的名字是lshw。带上网络的选项后，就会只过滤出网络硬件了。
 
-### Alternate method to know the network adapter ###
+### 了解网卡的其他方法 ###
 
-Alternatively, you can use lspci command that displays the information about PCI buses in the system. You should not need super user privileges to use this command. Just type the command in terminal:
+另外你还可以使用lspci命令来显示PCI总线上的信息。你不应该用特权模式来运行这个命令。只需要在命令行下输入：
 
     lspci
 
-The output of the command reads as:
+命令的输出看上去想这样：
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/12/Network_Adapter_Linux_1.jpeg)
 
@@ -84,16 +82,16 @@ The output of the command reads as:
 > 
 > 04:00.0 SATA controller: Marvell Technology Group Ltd. 88SS9183 PCIe SSD Controller (rev 14)
 
-These command gives you information about both wired and wireless network adapters. You might have noticed that there is no wired network adapter for my system in the output above. The reason is that I am using a Macbook Air and it does not have an Ethernet port.
+这些命令会同时列出有线和无线的网卡。你应该注意到上面的输出中显示我的系统中没有有线网卡。因为我使用的是Macbook Air，他没有以太网端口
 
-I hope this quick post helped you to find the network adapters in your Linux system. Any questions or suggestions are always welcomed.
+我希望这边文章可以帮助你找到你系统中的网卡。欢迎提出问题和建议。
 
 --------------------------------------------------------------------------------
 
 via: http://itsfoss.com/find-network-adapter-ubuntu-linux/
 
 作者：[Abhishek][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
