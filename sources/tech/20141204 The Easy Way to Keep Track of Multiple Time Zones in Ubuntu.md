@@ -1,3 +1,4 @@
+Translating by GOLinux!
 The Easy Way to Keep Track of Multiple Time Zones in Ubuntu
 ================================================================================
 ![date-time](http://www.omgubuntu.co.uk/wp-content/uploads/2014/11/date-time.jpg)
