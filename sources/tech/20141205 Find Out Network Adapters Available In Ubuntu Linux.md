@@ -1,3 +1,5 @@
+Translating----geekpi
+
 Find Out Network Adapters Available In Ubuntu Linux
 ================================================================================
 Wondering **which network adapters you are using in Ubuntu or any other Linux OS**? It is very easy to to find out the manufacturer of the network adapters in your computer in Linux. Open a terminal and use the following command:
