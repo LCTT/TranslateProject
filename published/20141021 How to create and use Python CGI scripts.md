@@ -46,7 +46,7 @@
     $ python -V
     $ python --version
 
-如果你的Python CGI脚本要用来处理用户输入的数据(从一个web输入表单)，然后你将需要导入Python cgi模块。这个模块可以处理用户通过web输入表单输入的数据。你可以在你的脚本中通过下面的语句导入该脚本：
+如果你的Python CGI脚本要用来处理用户输入的数据(从一个web输入表单)，那么你将需要导入Python cgi模块。这个模块可以处理用户通过web输入表单输入的数据。你可以在你的脚本中通过下面的语句导入该脚本：
 
     import cgi
 
@@ -110,7 +110,7 @@
     </form>
     </html>
 
-当"Submit"按钮点击，/var/www/cgi-bin/myscript-2.py脚本将被执行(通过action参数指定)。/var/www//html/page2.html显示在web浏览器中的图片如下所示(注意，三个输入域已经被填写了)：
+当"Submit"按钮点击，/var/www/cgi-bin/myscript-2.py脚本将被执行(通过action参数指定)。/var/www//html/page2.html显示在web浏览器中的图片如下所示(注意，三个输入域已经被填写好了)：
 
 ![](https://farm4.staticflickr.com/3935/14932853603_ffc3bd330e_z.jpg)
 
@@ -131,7 +131,7 @@
     print "</p>"
     print "</html>"
 
-正如前面提到，import cgi语句需要用来确保能够处理用户通过web输入表单输入的数据。web输入表单被封装在一个表单对象中，叫做cgi.FieldStorage对象。一旦开始，"Content-Type: text/html"是必需的，因为web服务器需要知道接受自CGI脚本的输出格式。用户输入的数据在包含form["firstName"].value，form["lastName"].value, and form["position"].value的语句中被接受。那些中括号中的名称和**/var/www/html/page2.html**文本输入域中定义的名称参数一致。
+正如前面提到，import cgi语句用来确保能够处理用户通过web输入表单输入的数据。web输入表单被封装在一个表单对象中，叫做cgi.FieldStorage对象。一旦开始输出，"Content-Type: text/html"是必需的，因为web服务器需要知道接受自CGI脚本的输出格式。用户输入的数据在包含form["firstName"].value，form["lastName"].value，和 form["position"].value的语句中可以得到。那些中括号中的名称和**/var/www/html/page2.html**文本输入域中定义的名称参数一致。
 
 当网页上的"Submit"按钮被点击，下面的网页将被返回。
 
@@ -149,7 +149,7 @@ via: http://xmodulo.com/create-use-python-cgi-scripts.html
 
 作者：[Joshua Reed][a]
 译者：[su-kaiyao](https://github.com/su-kaiyao)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
