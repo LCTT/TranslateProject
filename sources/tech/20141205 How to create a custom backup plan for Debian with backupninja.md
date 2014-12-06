@@ -1,3 +1,4 @@
+SPccman translating
 How to create a custom backup plan for Debian with backupninja
 ================================================================================
 Backupninja is a powerful and highly-configurable backup tool for Debian based distributions. In the [previous tutorial][1], we explored how to install backupninja and how to set up two backup actions for the program to perform. However, we should note that those examples were only "the tip of the iceberg," so to speak. In this post we will discuss how to leverage custom handlers and helpers that allow this program to be customized in order to accomplish almost any backup need that you can think of. 
