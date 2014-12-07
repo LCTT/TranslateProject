@@ -1,3 +1,4 @@
+2q1w2007翻译中
 Official Ubuntu 14.10 ‘Utopic Unicorn’ T-Shirts Now Available to Buy
 ================================================================================
 ![ubuntu-tshirt-runner](http://www.omgubuntu.co.uk/wp-content/uploads/2014/12/ubuntu-tshirt-runner.jpg)
