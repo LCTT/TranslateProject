@@ -1,3 +1,5 @@
+[su-kaiyao] translating
+
 How To Run Linux Programs From The Terminal In Background Mode
 ================================================================================
 ![Linux Terminal Window.](http://0.tqn.com/y/linux/1/W/r/G/1/terminal.JPG)
