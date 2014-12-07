@@ -1,69 +1,68 @@
-Translating by JonathanKang
-How to Install and Setup ‘My Weather Indicator’ in Ubuntu 14.10
+在Ubuntu 14.10中如何安装和配置‘My Weather Indicator’
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/10/my-weather-indicator.jpg)
 
-**There’s no drought of ways to be kept abreast of the weather on the Ubuntu desktop, with the Unity Dash and desktop apps like [Typhoon][1] all offering to help.**
+**在Ubuntu桌面中不缺乏若干应用同时提供天气信息的方法，你可以使用Unity Dash和桌面应用，比如[Typhoon][1]，来获得天气信息。**
 
-But panel applets that offer quick glance condition and temperature stats, with a ream of detailed meteorological data never more than a quick click away, are by far the most popular weather utilities on Linux.
+但是可以提供快速查询天气状况和温度数据，并且只需要一次鼠标点击而获得大量气象数据的面板插件，是到目前为止Linux平台下最受欢迎的天气应用。
 
-[My Weather Indicator][2] by Atareao is one of this breed, and arguably the best.
+Atareao开发的[My Weather Indicator][2]就是这类应用中的一个，也可以说是最好的一个。
 
-It displays current temperature and conditions on the Unity panel, and has a menu stuffed full of stats, including ‘feels like’, cloudiness and sunrise/set times. In addition, there’s a desktop widget, multiple location support, a choice of backend data providers, and plenty of configuration options.
+它在Unity面板上显示实时温度和天气状况，并且有一个包括体感温度、云量和日升日落时间等天气数据的菜单。除此之外，该应用还支持桌面小部件、多地区支持、天气数据提供方选择以及其他很多的配置选项。
 
-Sounds pretty comprehensive, right? Let’s walk through how to install and set it up on Ubuntu.
+听起来很不错，是吧？那我们下面就来看看如何在Ubuntu上安装和配置它吧。
 
-### Install My Weather Indicator in Ubuntu ###
+### 在Ubuntu上安装My Weather Indicator ###
 
-My Weather Indicator is not available to install from the Ubuntu Software Center directly, but both a .deb installer and an officially maintained PPA (providing packages for both Ubuntu 14.04 LTS and 14.10) are provided by the developers.
+My Weather Indicator无法从Ubuntu软件商店中直接获取。不过开发者为我们提供了.deb安装包和官方维护的PPA（为Ubuntu 14.04 LTS和14.10提供安装包）。
 
-- Download My Weather Indicator (.deb)
+- 下载My Weather Indicator (.deb安装包)
 
-To ensure you’re always kept up-to-date with the latest release I recommend adding the [Atareao PPA][3] to your Software Sources and installing from there.
+为了确保你的应用最是最新版本，我建议将[Atareao PPA][3]添加到你的软件镜像源然后通过PPA来安装。
 
-How? **Open a new Terminal** window (Unity Dash > Terminal, or press Ctrl+Alt+T) and **enter the following two commands carefully**, entering your system password when prompted:
+怎么做？**打开一个新的终端**窗口（Unity Dash > 终端，或者按Ctrl+Alt+T快捷键），然后**输入下面的两行命令**，期间你需要在提示处输入你的系统密码：
 
     sudo add-apt-repository ppa:atareao/atareao
 
     sudo apt-get update && sudo apt-get install my-weather-indicator
 
-#### Setting Up My Weather Indicator ####
+#### 配置My Weather Indicator ####
 
-Regardless of how you install the tool, once you have you can launch it from the Unity Dash by searching for “weather”.
+无论你是通过什么方法安装该应用，你都可以在Unity Dash中搜索“weather”并且点击该应用来打开它。
 
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/10/weather-icon.jpg)
 
-The first time you open the app the following Preferences window will open. From here you can search for a location manually or set it to auto-detect using geo-ip — the latter of which can sometimes be a little imprecise, but saves the need to faff.
+首次打开应用时会出现下面的配置窗口。在这里你可以手动设置地区或者使用geo-ip来自动获取。或者有时可能会不够精确，不过它可以省去手动设置过程。
 
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/10/Screen-Shot-2014-10-27-at-17.39.07.jpeg)
 
-If you’re travelling (or in need of some small talk fodder) **you can monitor a second locale**, too. This is set up in the same way as the first but in the ‘Second Location’ tab.
+如果你正在旅行（或者是出于聊天需要），**你可以添加一个第二地区**。这个设置和第一地区的设置相同，只不过是在“第二地区”的标签栏罢了。
 
-Checking the ‘**Show Widget**’ box in the “**Widget Options**” section adds a small forecast desklet to your desktop. There are a number of different skins included, so be sure to play around to find the one you like the most (note: widget changes are applied on clicking ‘Ok’).
+在“**小部件设置**”区域勾选“**显示桌面小部件**”选项就会在你的桌面上添加一个小的天气小部件。小部件提供许多不同的皮肤，所以你一定要精心挑选你最喜欢的一个（注释：点击“确定”后对小部件的更改才会保存）。
 
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/10/widgets.jpg)
 
-My Weather Indicator uses [Open Weather Map][4] as its forecast backend by default, but other options can be selected from the ‘**Weather Services**’ pane (*require an API key to function):
+My Weather Indicator使用[Open Weather Map][4]作为默认的天气数据提供方。不过你可以在‘**Weather Services**’面板中选择其他的数据提供方(有*标记的需要提供相关API key)：
 
 - Open Weather Map
 - Yahoo! Weather
 - Weather Underground*
 - World Weather Online*
 
-The ‘**Units**’ tab is where you can configure measurements for temperature, pressure, wind speed, etc. These are applied globally to all configured locations; you can’t have one location in Celsius and the other in Fahrenheit.
+在‘**Units**’标签页中，你可以设置温度、压力、风速等数据的单位。这些设置适用于所有添加的地区，也就是说你不能在一个地区使用摄氏度，另一个地区使用华氏度。
 
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/10/Screen-Shot-2014-10-27-at-17.38.54.jpeg)
 
-Finally, in the ‘General Options‘ section you can set the refresh interval, set autostart preference, and choose from one of two panel icons.
+最后，在‘General Options‘标签页，你可以设置数据更新间隔、设置开机自动运行选项以及从两个图标中选择一个作为面板图标。
 
-MWI not your thing? Why not try [the nerdy way to view weather forecasts on Linux][5]?
+如果你不喜欢该应用，你可以尝试[Linux下查看天气数据的方法][5]。
 
 --------------------------------------------------------------------------------
 
 via: http://www.omgubuntu.co.uk/2014/10/install-weather-indicator-ubuntu-14-10
 
 作者：[Joey-Elijah Sneddon][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[JonathanKang](https://github.com/JonathanKang)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
