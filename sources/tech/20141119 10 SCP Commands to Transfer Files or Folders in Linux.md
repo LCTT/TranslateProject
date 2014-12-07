@@ -1,4 +1,4 @@
-(translating by runningwater)
+Translating by ZTinoZ
 10 SCP Commands to Transfer Files/Folders in Linux
 ================================================================================
 Linux administrator should be familiar with **CLI** environment. Since **GUI** mode in Linux servers is not a common to be installed. **SSH** may the most popular protocol to enable Linux administrator to manage the servers via remote in secure way. Built-in with **SSH** command there is **SCP** command. **SCP** is used to copy file(s) between servers in secure way.
@@ -231,7 +231,7 @@ That’s all about **SCP**. You can see **man pages** of **SCP** for more detail
 via: http://www.tecmint.com/scp-commands-examples/
 
 作者：[Pungki Arianto][a]
-译者：[runningwater](https://github.com/runningwater)
+译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

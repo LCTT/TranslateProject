@@ -1,9 +1,8 @@
-Linux FAQs with Answers--How to convert a text file to PDF format on Linux
-Linux 有问必答 --如何在Linux上将文本文件转换成PDF格式
+Linux 有问必答：在Linux上如何将文本文件转换成PDF格式
 ================================================================================
-> **提问**： 我想要将一个纯文本文件转换成PDF文档。是否有一个简单的方法在Linux命令行下将文本文件转换成PDF文件？
+> **提问**： 我想要将一个纯文本文件转换成PDF文档。在Linux命令行下是否有一个简单的方法将文本文件转换成PDF文件？
 
-当你有一打文本文件要维护的时候，把它们转换成PDF文档有一些好处。比如，PDF对打印更友好因为PDF文档有预定义布局。除此之外，还可以减少文档被意外修改的风险。
+当你有一大堆文本文件要维护的时候，把它们转换成PDF文档会好一些。比如，PDF更适合打印，因为PDF文档有预定义布局。除此之外，还可以减少文档被意外修改的风险。
 
 要将文本文件转换成PDF格式，你要按照下面的两步。
 
@@ -27,7 +26,7 @@ Linux 有问必答 --如何在Linux上将文本文件转换成PDF格式
 
 准备工作完成之后，按照下面的两步从文本文件生成一个PDF文件
 
-首先，将文本文件使用enscript命令行工具转换成postscript格式。
+首先，使用enscript命令行工具将文本文件转换成postscript格式。
 
     $ enscript -p output.ps input.txt 
 
@@ -40,6 +39,6 @@ Linux 有问必答 --如何在Linux上将文本文件转换成PDF格式
 via: http://ask.xmodulo.com/convert-text-to-pdf-linux.html
 
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
