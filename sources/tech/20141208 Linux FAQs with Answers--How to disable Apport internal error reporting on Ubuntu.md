@@ -1,3 +1,5 @@
+    Vic020
+
 Linux FAQs with Answers--How to disable Apport internal error reporting on Ubuntu
 ================================================================================
 > **Question**: On Ubuntu desktop, I often encounter a popup window, alerting that Ubuntu has experienced an internal error, and asking me to send an error report. This is bothering me as it keeps popping up for every application crash. How can I turn off the error reporting feature? 
