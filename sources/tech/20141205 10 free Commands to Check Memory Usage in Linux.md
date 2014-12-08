@@ -1,3 +1,5 @@
+[su-kaiyao]translating
+
 10 ‘free’ Commands to Check Memory Usage in Linux
 ================================================================================
 **Linux** is one of the most popular open source operating system and comes with huge set of commands. The most important and single way of determining the total available space of the **physical memory** and **swap memory** is by using “**free**” command.
