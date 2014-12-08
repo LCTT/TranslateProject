@@ -4,7 +4,7 @@ Linux系统管理员应该很熟悉**CLI**环境，因为在Linux服务器中是
 
 ![](http://www.tecmint.com/wp-content/uploads/2013/10/SCP-Commands.png)
 
-以下命令可以解读为：用“**username account**”“**复制 source file name**”到“**destination host**”上的“**destination folder**”里。
+以下命令可以解读为：用“**username account**”“**拷贝 source file name**”到“**destination host**”上的“**destination folder**”里。
 
 #### SCP命令的基本语法 ####
 
@@ -14,7 +14,7 @@ Linux系统管理员应该很熟悉**CLI**环境，因为在Linux服务器中是
 
 ### 用-v参数来提供SCP进程的详细信息 ###
 
-不带参数的基本**SCP**命令会在后台复制文件，除非操作完成或者有错误出现，否则用户在界面上是看不到任何提示信息的。你可以用“**-v**”参数来在屏幕上打印出调试信息，这能帮助你调试连接、认证和配置的一些问题。
+不带参数的基本**SCP**命令会在后台拷贝文件，除非操作完成或者有错误出现，否则用户在界面上是看不到任何提示信息的。你可以用“**-v**”参数来在屏幕上打印出调试信息，这能帮助你调试连接、认证和配置的一些问题。
 
     pungki@mint ~/Documents $ scp -v Label.pdf mrarianto@202.x.x.x:.
 
@@ -40,9 +40,9 @@ Linux系统管理员应该很熟悉**CLI**环境，因为在Linux服务器中是
     Bytes per second: sent 57766.4, received 46.0
     debug1: Exit status 0
 
-### Provide modification times, access times, and modes from original files ###
+### 从源文件获取修改时间、访问时间和模式 ###
 
-The “**-p**” parameter will help you on this. An estimated time and the connection speed will appear on the screen.
+“**-p**”参数会帮到把预计的时间和连接速度会显示在屏幕上。
 
     pungki@mint ~/Documents $ scp -p Label.pdf mrarianto@202.x.x.x:.
 
@@ -51,11 +51,11 @@ The “**-p**” parameter will help you on this. An estimated time and the conn
     mrarianto@202.x.x.x's password:
     Label.pdf 100% 3672KB 126.6KB/s 00:29
 
-### Make file transfer faster using -C parameter ###
+### 用-C参数来让文件传输更快 ###
 
-One of parameter that can faster your file transfer is “**-C**” parameter. The “**-C**” parameter will compress your files on the go. The unique thing is the compression is only happen in the network. When the file is arrived to the destination server, it will returning into the original size as before the compression happen.
+有一个参数能让传输文件更快，就是“**-C**”参数，它的作用是不停压缩所传输的文件。它特别之处在于压缩是在网络中进行，当文件传到目标服务器时，它会变回压缩之前的原始大小。
 
-Take a look of these commands. It is using a single file of **93 Mb**.
+来看看这些命令，我们使用一个**93 Mb**的单一文件来做例子。
 
     pungki@mint ~/Documents $ scp -pv messages.log mrarianto@202.x.x.x:.
 
@@ -83,7 +83,7 @@ Take a look of these commands. It is using a single file of **93 Mb**.
     Bytes per second: sent 58758.4, received 15.6
     debug1: Exit status 0
 
-Copying file without “**-C**” parameter will result **1661.3** second. Yo may compare the result to the command below which using “**-C**” parameter.
+不用“**-C**”参数来拷贝文件，结果用了**1661.3**秒，你可以比较下用了“**-C**”参数之后的结果。
 
     pungki@mint ~/Documents $ scp -Cpv messages.log mrarianto@202.x.x.x:.
 
