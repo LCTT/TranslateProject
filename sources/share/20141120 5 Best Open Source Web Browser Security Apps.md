@@ -1,3 +1,7 @@
+[yupmoon translating]
+
+
+
 5 Best Open Source Web Browser Security Apps
 ================================================================================
 The Web browser acts as the gateway for myriad online services these days. Computer security problems are far from solved, and technology advances provide new ways for malware to infect our devices and enter our business networks. For example, smartphones and tablets offer fresh new fields for malware—and its malicious cousin, "[malvertising][1]"—to exploit.
