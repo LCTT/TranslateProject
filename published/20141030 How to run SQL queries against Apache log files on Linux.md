@@ -1,32 +1,32 @@
-如何在 Linux 上针对 Apache 日志文件运行 SQL 查询语句
+如何在 Linux 上用 SQL 语句来查询 Apache 日志
 ================================================
 
-Linux 有一个显著的特点，在正常情况下，你可以通过分析系统日志来了解你的系统中发生了什么，或正在发生什么。的确，系统日志是系统管理员在解决系统和应用问题时最需要的第一手资源。我们将在这篇文章中着重讲解 Apache HTTP web server 生成的 Apache access 日志。
+Linux 有一个显著的特点，在正常情况下，你可以通过日志分析系统日志来了解你的系统中发生了什么，或正在发生什么。的确，系统日志是系统管理员在解决系统和应用问题时最需要的第一手资源。我们将在这篇文章中着重讲解 Apache HTTP web server 生成的 Apache access 日志。
 
-我们会通过另类的途径分析 Apache access 日志，我们使用的工具是 [asql][1]。asql 是一个开源的工具，它能够允许使用者针对日志运行 SQL 查询，从而通过更加友好的格式展现相同的信息。
+这次，我们会通过另类的途径来分析 Apache access 日志，我们使用的工具是 [asql][1]。asql 是一个开源的工具，它能够允许使用者使用 SQL 语句来查询日志，从而通过更加友好的格式展现相同的信息。
 
 ### Apache 日志背景知识 ###
 
 Apache 有两种日志：
 
 - **Access log**：存放在路径 /var/log/apache2/access.log (Debian) 或者 /var/log/httpd/access_log (Red Hat)。Access Log 记录所有 Apache web server 执行的请求。
-- **Error log**：存放在路径 /var/log/apache2/error.log (Debian) 或者 /var/log/httpd/error_log (Red Hat)。Error log 记录所有 Apache web server 报告的错误以及错误的情况。Error 情况包括（不限于）403（Forbidden，通常在有效请求丢失访问许可时被报告），404（Not found，在请求资源不存在时被报告）。
+- **Error log**：存放在路径 /var/log/apache2/error.log (Debian) 或者 /var/log/httpd/error_log (Red Hat)。Error log 记录所有 Apache web server 报告的错误以及错误的情况。Error 情况包括（不限于）403（Forbidden，通常在请求被拒绝访问时被报告），404（Not found，在请求资源不存在时被报告）。
 
-虽然管理员可以通过配置 Apache 的配置文件来自定义 Apache access log 的罗嗦程度，在这篇文章中，我们会使用默认的配置，如下：
+虽然管理员可以通过配置 Apache 的配置文件来自定义 Apache access log 的详细程度，不过在这篇文章中，我们会使用默认的配置，如下：
 
-    Remote IP - Request date - Request type - Response code - Requested resource - Remote browser (may also include operating system)
+    远程 IP - 请求时间 - 请求类型 - 响应代码 - 请求的 URL - 远程的浏览器信息 (也许包含操作系统信息)
 
 因此一个典型的 Apache 日志条目就是下面这个样子：
 
     192.168.0.101 - - [22/Aug/2014:12:03:36 -0300] "GET /icons/unknown.gif HTTP/1.1" 200 519 "http://192.168.0.10/test/projects/read_json/" "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:30.0) Gecko/20100101 Firefox/30.0"
 
-但是 Apache error log 又是怎么样的呢？因为 error log 条目主要记录 access log 中特殊的请求（你可以自定义），你可以通过 access log 来获得关于错误情况的更多信息（example 5 有更多细节）。
+但是 Apache error log 又是怎么样的呢？因为 error log 条目主要记录 access log 中特殊的请求（你可以自定义），所以你可以通过 access log 来获得关于错误情况的更多信息（example 5 有更多细节）。
 
-话在前头， access log 是系统级别的日志文件。要分析 virtual hosts 的日志文件，你需要检查它们相应的配置文件（e.g. 在 /etc/apache2/sites-available/[virtual host name] 里（Debian））。
+此外要提前说明的， access log 是系统级别的日志文件。要分析虚拟主机的日志文件，你需要检查它们相应的配置文件（例如： 在 /etc/apache2/sites-available/[virtual host name] 里（Debian））。
 
 ### 在 Linux 上安装 asql ###
 
-asql 由 Perl 编写，而且需求以下两个 Perl module：SQLite 的 DBI 驱动以及 GNU readline.
+asql 由 Perl 编写，而且需求以下两个 Perl 模块：SQLite 的 DBI 驱动以及 GNU readline。
 
 ### 在 Debian, Ubuntu 以及其衍生发行版上安装 asql ###
 
@@ -46,7 +46,7 @@ asql 由 Perl 编写，而且需求以下两个 Perl module：SQLite 的 DBI 驱
 
 ### asql 是如何工作的？ ###
 
-从上面代码中的依赖中你就可以看出来，asql 转换未结构化的明文 Apache 日志成结构化的 SQLite 数据库信息。生成的 SQLite 数据库接受正常的 SQL 查询语句。数据库可以通过当前以及曾经的日志文件生成，其中包括压缩转换过的日志文件，类似 access.log.X.gz 或者 access_log.old。
+从上面代码中的依赖中你就可以看出来，asql 转换未结构化的明文 Apache 日志为结构化的 SQLite 数据库信息。生成的 SQLite 数据库可以接受正常的 SQL 查询语句。数据库可以通过当前以及之前的日志文件生成，其中也包括压缩转换过的日志文件，类似 access.log.X.gz 或者 access_log.old。
 
 首先，从命令行启动 asql：
 
@@ -62,7 +62,7 @@ asql 由 Perl 编写，而且需求以下两个 Perl module：SQLite 的 DBI 驱
 
 首先在 asql 中加载所有的 access 日志：
 
-   asql > load <path/to/apache-access-logs>
+    asql > load <apache-access-logs 的路径>
 
 比如在 Debian 下：
 
@@ -72,7 +72,7 @@ asql 由 Perl 编写，而且需求以下两个 Perl module：SQLite 的 DBI 驱
 
     asql > load /var/log/httpd/access_log*
 
-当 asql 完成对 access 日志的加载后，我们就可以开始数据库查询了。注意一下，加载后生成的数据库是 "temporary" 的，意思就是数据库会在你退出 asql 的时候被清除。如果你想要保留数据库，你必须先将其保存为一个文件。我们会在后面介绍如何这么做（参考 example 3 和 4）。
+当 asql 完成对 access 日志的加载后，我们就可以开始数据库查询了。注意一下，加载后生成的数据库是 "temporary" （临时）的，意思就是数据库会在你退出 asql 的时候被清除。如果你想要保留数据库，你必须先将其保存为一个文件。我们会在后面介绍如何这么做（参考 example 3 和 4）。
 
 ![](https://farm8.staticflickr.com/7489/15044293173_f21e38692b_o.png)
 
@@ -80,7 +80,7 @@ asql 由 Perl 编写，而且需求以下两个 Perl module：SQLite 的 DBI 驱
 
 ![](https://farm4.staticflickr.com/3955/15664433685_465e8f47bd_o.png)
 
-名为 .asql 的隐藏文件，保存于用户的 home 目录下，记录用户在 asql shell 中输入的命令历史。因此你可以使用方向键浏览历史命令，按下 ENTER 来重复执行之前的命令。
+一个名为 .asql 的隐藏文件，保存于用户的 home 目录下，记录用户在 asql shell 中输入的命令历史。因此你可以使用方向键浏览命令历史，按下 ENTER 来重复执行之前的命令。
 
 ### asql 上的示例 SQL 查询 ###
 
@@ -106,7 +106,7 @@ asql 由 Perl 编写，而且需求以下两个 Perl module：SQLite 的 DBI 驱
 
 这样做可以避免使用 load 命令对日志的语法分析所占用的处理时间。
 
-**Example 4**：在重新启动 asql 后载入数据库。
+**Example 4**：在重新进入 asql 后载入数据库。
 
     restore [filename]
 
@@ -135,7 +135,7 @@ via: http://xmodulo.com/sql-queries-apache-log-files-linux.html
 
 作者：[Gabriel Cánepa][a]
 译者：[ThomazL](https://github.com/ThomazL)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

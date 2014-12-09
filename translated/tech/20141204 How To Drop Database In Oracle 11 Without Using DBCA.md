@@ -1,17 +1,18 @@
-    Vic020
-
-How To Drop Database In Oracle 11 Without Using DBCA
+如何不使用DBCA在Oracle 11中删除数据库
 ================================================================================
-In this small tutorial, I want to show you how to drop the database without using the GUI tool DBCA
+本文简短的教程，将会向你展示如何不使用DBCA（数据库配置助手）在Oracle 11中删除数据
 
-#### 1- Export database SID if not yet Already defined ####
+#### 1- 导入数据库的SID，如果没有定义的话 ####
 
+    命令：
     export ORACLE_SID=database
 
-#### 2- Connect as sysdba  ####
+#### 2- 以操作系统认证连接数据库  ####
 
+    命令：
     [oracle@Oracle11 ~]$ sqlplus / as sysdba
 
+    提示：
 ----------
 
     SQL*Plus: Release 11.2.0.1.0 Production on Mon Dec 1 17:38:02 2014
@@ -24,9 +25,11 @@ In this small tutorial, I want to show you how to drop the database without usin
 
     Connected to an idle instance.
 
-#### 3- Start The database ####
+#### 3- 启动数据库实例 ####
 
+    命令：
     SQL> startup
+    提示：
     ORACLE instance started.
     Total System Global Area 3340451840 bytes
     Fixed Size 2217952 bytes
@@ -36,16 +39,20 @@ In this small tutorial, I want to show you how to drop the database without usin
     Database mounted.
     Database opened.
 
-#### 4- Shutdown the database  ####
+#### 4- 关闭数据库  ####
 
+    命令：
     SQL> shutdown immediate;
+    提示：
     Database closed.
     Database dismounted.
     ORACLE instance shut down.
 
-#### 5- Start in Exclusive mode  ####
+#### 5- 启动独占模式  ####
 
+    命令：
     SQL> startup mount exclusive restrict
+    提示：
     ORACLE instance started.
 
 ----------
@@ -57,10 +64,12 @@ In this small tutorial, I want to show you how to drop the database without usin
     Redo Buffers 16343040 bytes
     Database mounted.
 
-#### 6- Drop the database ####
+#### 6- 删除数据库 ####
 
+    命令：
     SQL> drop database;
 
+    提示：
 ----------
 
     Database dropped.
@@ -71,14 +80,14 @@ In this small tutorial, I want to show you how to drop the database without usin
     With the Partitioning, OLAP, Data Mining and Real Application Testing options
 SQL>
 
-Cheers!
+完成！
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/drop-database-oracle-11-without-using-dcba/
 
 作者：[M.el Khamlichi][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[VicYu/Vic020](http://vicyu.net/)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
