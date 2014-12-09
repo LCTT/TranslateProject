@@ -1,4 +1,4 @@
-Linux的十条SCP传输命令
+n Linux的十条SCP传输命令
 ================================================================================
 Linux系统管理员应该很熟悉**CLI**环境，因为在Linux服务器中是不安装**GUI**的。**SSH**可能是Linux系统管理员通过远程方式安全管理服务器的最流行协议。在**SSH**命令中内置了一种叫**SCP**的命令，用来在服务器之间安全传输文件。
 
@@ -119,22 +119,22 @@ Linux系统管理员应该很熟悉**CLI**环境，因为在Linux服务器中是
     debug1: compress outgoing: raw data 97571111, compressed 8806191, factor 0.09
     debug1: compress incoming: raw data 7885, compressed 3821, factor 0.48
 
-As you can see, when you are using compression, transfer process is done in **162.5** second. It is **10** times faster than not using “**-C**” parameter. If you are copying a lot files across the network, “**-C**” parameter would help you to decrease the total time you need.
+看到了吧，压缩了文件之后，传输过程在**162.5**秒内就完成了，速度是不用“**-C**”参数的10倍。如果你要通过网络拷贝很多份文件，那么“**-C**”参数能帮你节省掉很多时间。
 
-The thing that we should notice that compression method will not work on any files. When the source file is already compressed, you will not find any improvement there. Files such as **.zip**, **.rar**, **pictures**, and **.iso** files will not affected by “**-C**” parameter.
+有一点我们需要注意，这个压缩的方法不是适用于所有文件。当源文件已经被压缩过了，那就没办法再压缩了。诸如那些像**.zip**，**.rar**，**pictures**和**.iso**的文件，用“**-C**”参数就无效。
 
-### Select another cipher to encrypt files ###
+### 选择其它加密算法来加密文件 ###
 
-By default **SCP** using “**AES-128**” to encrypt files. If you want to change to another cipher to encrypt it, you can use “**-c**” parameter. Take a look of this command.
+**SCP**默认是用“**AES-128**”加密算法来加密文件的。如果你想要改用其它加密算法来加密文件，你可以用“**-c**”参数。我们来瞧瞧。
 
     pungki@mint ~/Documents $ scp -c 3des Label.pdf mrarianto@202.x.x.x:.
     
     mrarianto@202.x.x.x's password:
     Label.pdf 100% 3672KB 282.5KB/s 00:13
 
-Above command tell **SCP** to use **3des algorithm** to encrypt file. Please be careful that this parameter using “**-c**” not “**-C**“.
+上述命令是告诉**SCP**用**3des algorithm**来加密文件。要注意这个参数是“**-c**”而不是“**-C**“。
 
-### Limiting bandwidth usage ###
+### 限制带宽使用 ###
 
 Another parameter that may useful is “**-l**” parameter. The “**-l**” parameter will limit the bandwidth to use. It will be useful if you do an automation script to copy a lot of file, but you don’t want the bandwidth is drained by the **SCP** process.
 
