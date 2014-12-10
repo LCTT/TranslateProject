@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Linux FAQs with Answers--How to crop an image from the command line on Linux
 ================================================================================
 > **Question**: I would like to get rid of white margins of an image file. Is there an easy way to crop an image file from the command line on Linux? 
