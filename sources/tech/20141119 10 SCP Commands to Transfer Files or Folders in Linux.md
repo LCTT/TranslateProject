@@ -136,7 +136,7 @@ Linux系统管理员应该很熟悉**CLI**环境，因为在Linux服务器中是
 
 ### 限制带宽使用 ###
 
-Another parameter that may useful is “**-l**” parameter. The “**-l**” parameter will limit the bandwidth to use. It will be useful if you do an automation script to copy a lot of file, but you don’t want the bandwidth is drained by the **SCP** process.
+还有一个很有用的参数是“**-l**”参数，它能限制使用带宽。It will be useful if you do an automation script to copy a lot of file, but you don’t want the bandwidth is drained by the **SCP** process.
 
     pungki@mint ~/Documents $ scp -l 400 Label.pdf mrarianto@202.x.x.x:.
     
