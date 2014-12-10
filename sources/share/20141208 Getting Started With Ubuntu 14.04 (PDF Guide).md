@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Getting Started With Ubuntu 14.04 (PDF Guide)
 ================================================================================
 Become familiar with everyday tasks such as surfing the web, listening to music and scanning documents.
