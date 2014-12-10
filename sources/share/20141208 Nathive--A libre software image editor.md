@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Nathive – A libre software image editor
 ================================================================================
 Nathive is a libre software image editor, similar to Adobe Photoshop, Corel Photo-Paint or GIMP, but focused on usability, logic and providing a smooth learning curve for everyone. The project runs in the GNOME desktop environment and anyone is welcome to collaborate on it with code, translations or ideas.
