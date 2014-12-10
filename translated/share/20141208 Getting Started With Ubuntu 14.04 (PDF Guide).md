@@ -1,11 +1,10 @@
-Translating by GOLinux!
-Getting Started With Ubuntu 14.04 (PDF Guide)
+开始使用Ubuntu 14.04（PDF指南）
 ================================================================================
-Become familiar with everyday tasks such as surfing the web, listening to music and scanning documents.
+开始熟悉每天的任务，像上网冲浪，听听音乐，还有扫描文档之类。
 
-Enjoy this comprehensive beginners guide for the Ubuntu operating system. With easy-to-follow instructions, this guide is suitable for all levels of experience. Discover the potential of your Ubuntu system without getting bogged down with technical details.
+好好享受这份全面而综合的Ubuntu操作系统初学者指南吧。本教程适用于任何经验等级的人，跟着傻瓜式的指令一步一步操作吧。好好探索Ubuntu系统的潜力吧，你不会因为技术细节而陷入困境。
 
-- [**Getting Started With Ubuntu 14.04 (PDF Guide)**][1]
+- [**开始使用Ubuntu 14.04 (PDF指南)**][1]
 
 ![](http://img.tradepub.com/free/w_ubun06/images/w_ubun06c.gif)
 
@@ -14,7 +13,7 @@ Enjoy this comprehensive beginners guide for the Ubuntu operating system. With e
 via: http://www.ubuntugeek.com/getting-started-with-ubuntu-14-04-pdf-guide.html
 
 作者：[ruchi][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[GOLinux](https://github.com/GOLinux)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
