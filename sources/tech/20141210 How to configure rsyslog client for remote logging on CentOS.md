@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How to configure rsyslog client for remote logging on CentOS
 ================================================================================
 **rsyslog** is an open source utility widely used on Linux systems to forward or receive log messages via TCP/UDP protocols. rsyslog daemon can be configured in two scenarios. Configured as a log collector server, rsyslog daemon can gather log data from all other hosts in the network, which are configured to send their internal logs to the server. In another role, rsyslog daemon can be configured as a client which filters and sends internal log messages to either a local folder (e.g. /var/log) or a remote rsyslog server based on routing facility.
