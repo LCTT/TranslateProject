@@ -1,3 +1,4 @@
+spccman translating
 How to Setup Bind Chroot DNS Server on CentOS 7.0 VPS
 ================================================================================
 BIND (Berkeley Internet Name Daemon) also known as NAMED is the most widely used DNS server in the internet. This tutorial will descibes how we can run BIND in a chroot jail, the process is simply unable to see any part of the filesystem outside the jail. For example, in this post, i will setting up BIND to run chrooted to the directory /var/named/chroot/. Well, to BIND, the contents of this directory will appear to be /, the root directory. A “jail” is a software mechanism for limiting the ability of a process to access resources outside a very limited area, and it’s purposely to enhance the security. Bind Chroot DNS server was by default configured to /var/named/chroot. You may follow this complete steps to implement Bind Chroot DNS Server on CentOS 7.0 virtual private server (VPS).
