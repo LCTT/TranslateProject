@@ -1,3 +1,6 @@
+translating by yupmoon
+
+
 Readers' Choice Awards 2014--Linux Journal
 ================================================================================
 It's time for another Readers' Choice issue of Linux Journal! The format last year was well received, so we've followed suit making your voices heard loud again. I couldn't help but add some commentary in a few places, but for the most part, we just reported results. Please enjoy this year's Readers' Choice Awards!
