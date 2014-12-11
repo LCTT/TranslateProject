@@ -136,18 +136,18 @@ Linux系统管理员应该很熟悉**CLI**环境，因为在Linux服务器中是
 
 ### 限制带宽使用 ###
 
-还有一个很有用的参数是“**-l**”参数，它能限制使用带宽。It will be useful if you do an automation script to copy a lot of file, but you don’t want the bandwidth is drained by the **SCP** process.
+还有一个很有用的参数是“**-l**”参数，它能限制使用带宽。如果你为了拷贝很多文件而去执行了一份自动化脚本又不希望带宽被**SCP**进程耗尽，那这个参数会非常管用。
 
     pungki@mint ~/Documents $ scp -l 400 Label.pdf mrarianto@202.x.x.x:.
     
     mrarianto@202.x.x.x's password:
     Label.pdf 100% 3672KB 50.3KB/s 01:13
 
-The **400** value behind “**-l**” parameter is mean that we limit the bandwidth for **SCP** process only **50 KB/sec**. One thing to remember that bandwidth is specified in **Kilobits/sec** (**kbps**). It is mean that **8 bits** equal with **1 byte**.
+在“**-l**”参数后面的这个**400**值意思是我们给**SCP**进程限制了带宽为**50 KB/秒**。有一点要记住，带宽是以**千比特/秒** (**kbps**)表示的，**8 比特**等于**1 字节**。
 
 While **SCP** counts in **Kilobyte/sec** (**KB/s**). So if you want to limit your bandwidth for **SCP** maximum only **50 KB/s**, you need to set it into **50 x 8 = 400**.
 
-### Specify specific port to use with SCP ###
+### 指定端口 ###
 
 Usually **SCP** is using port **22** as a default port. But for security reason, you may change the port into another port. For example, we are using port **2249**. Then the command should be like this.
 
