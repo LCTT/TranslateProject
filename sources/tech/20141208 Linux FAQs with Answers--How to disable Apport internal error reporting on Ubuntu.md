@@ -1,36 +1,38 @@
-    Vic020
-
 Linux FAQs with Answers--How to disable Apport internal error reporting on Ubuntu
+有问必答--如何禁止Ubuntu的Apport内部错误报告程序
 ================================================================================
-> **Question**: On Ubuntu desktop, I often encounter a popup window, alerting that Ubuntu has experienced an internal error, and asking me to send an error report. This is bothering me as it keeps popping up for every application crash. How can I turn off the error reporting feature? 
+> **问题**：在桌面版Ubuntu中，我经常遇到一些弹窗窗口，警告我Ubuntu发生了内部错误，问我要不要发送错误报告。每次软件崩溃都要烦扰我，我如何才能关掉这个错误报告功能呢？
 
-Ubuntu desktop comes with Apport pre-installed, which is a system that catches applications crashes, unhandled exceptions or any non-crash application bugs, and automatically generates a crash report for debugging purposes. When an application crash or bug is detected, Apport alerts user of the event by showing a popup window and asking the user to submit a crash report. You will see messages like the following.
+Ubuntu桌面版预安装了Apport，它是一个错误收集系统，会收集软件崩溃、未处理异常和其他，包括程序bug，并为调试目的生成崩溃报告。当一个应用程序崩溃或者出现Bug时候，Apport就会通过弹窗警告用户并且询问用户是否提交崩溃报告。你也许也看到过下面的消息。
 
 - "Sorry, the application XXXX has closed unexpectedly."
+- "对不起，应用程序XXXX意外关闭了"
 - "Sorry, Ubuntu XX.XX has experienced an internal error."
+- "对不起，Ubuntu XX.XX 经历了一个内部错误"
 - "System program problem detected." 
+- "系统程序问题发现"
 
 ![](https://farm9.staticflickr.com/8635/15688551119_708b23b12a_z.jpg)
 
-If application crashes are recurring, frequent error reporting alerts can be disturbing. Or you may be worried that Apport can collect and upload any sensitive information of your Ubuntu system. Whatever the reason is, you may want to disable Apport's error reporting feature.
+也许因为应用一直崩溃，频繁的错误报告会使人心烦。也许你担心Apport会收集和上传你的Ubuntu系统的敏感信息。无论什么原因，你需要关掉Apport的错误报告功能。
 
-### Disable Apport Error Reporting Temporarily ###
+### 临时关闭Apport错误报告 ###
 
-If you want to disable Apport temporarily, use this command:
+如果你想要临时关闭Apport，使用下列命令
 
     $ sudo service apport stop 
 
-Note that Apport will be enabled back after you boot your Ubuntu system.
+注意重启Ubuntu系统Apport会继续开启
 
-### Disable Apport Error Reporting Permanently ###
+### 永久关闭Apport错误报告 ###
 
-To turn off Apport permanently, edit /etc/default/apport with a text editor, and change the content to the following.
+为了永久关闭Apport，编辑/etc/default/apport，修改下列参数
 
     enabled=0
 
-Now if you reboot your Ubuntu system, Apport will automatically be disabled.
+重启你的Ubuntu系统，Apport将会自动关闭
 
-If you think you will never use Apport, another method is to simply remove it altogether.
+如果你再也不会用Apport，有一种简单的方法完全移除它
 
     $ sudo apt-get purge apport 
 
@@ -38,7 +40,7 @@ If you think you will never use Apport, another method is to simply remove it al
 
 via: http://ask.xmodulo.com/disable-apport-internal-error-reporting-ubuntu.html
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[VicYu/Vic020](http://www.vicyu.net/)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
