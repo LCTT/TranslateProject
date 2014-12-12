@@ -1,3 +1,4 @@
+ideas4u Translating..
 How to use matplotlib for scientific plotting on Linux
 ================================================================================
 If you want an efficient, automatable solution for producing high-quality scientific plots in Linux, then consider using matplotlib. Matplotlib is a Python-based open-source scientific plotting package with a license based on the Python Software Foundation license. The extensive documentation and examples, integration with Python and the NumPy scientific computing package, and automation capability are just a few reasons why this package is a solid choice for scientific plotting in a Linux environment. This tutorial will provide several example plots created with matplotlib.
