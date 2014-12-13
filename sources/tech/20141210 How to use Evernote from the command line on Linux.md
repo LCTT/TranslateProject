@@ -1,3 +1,5 @@
+Translating--------geekpi
+
 How to use Evernote from the command line on Linux
 ================================================================================
 This week let's continue our journey into the depth of the Linux command line to manage and organize information. After managing [your personal expenses][1] from the command line, I propose you to manage your notes from the command line, in particular, when your notes are stored in Evernote. In case you have never heard about it, [Evernote][2] specializes in a user-friendly online service for note-taking with cloud synchronization across multiple devices. Besides offering fancy web-based APIs, Evernote has released Evernote clients for Windows, Mac, [Android][3] and iOS. However, there is, up to today, no official Linux client available. Hopefully, among the plethora of unofficial Linux programs, one emerges and attracts all the command line warriors that we are: [Geeknote][4]
