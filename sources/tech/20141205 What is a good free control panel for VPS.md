@@ -1,3 +1,6 @@
+Translating----geekpi
+
+
 What is a good free control panel for VPS
 ================================================================================
 Anyone with a reasonable level of Linux skills knows that no control panel can beat the plain-old command line interface for managing a [virtual private server][1] (VPS). One can still argue that there is a place for a good server control panel though, due to the streamlined interface for getting routine administration tasks done easily with a few mouse clicks.
