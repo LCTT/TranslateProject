@@ -1,3 +1,4 @@
+(translating by  runningwater)
 How To Create A Bootable Ubuntu USB Drive For Mac In OS X
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/11/Create_bootable_Ubuntu_USB_Mac_OS_X.jpg)
@@ -133,7 +134,7 @@ I hope this guide helped you to create a bootable USB disk of Ubuntu for Mac in 
 via: http://itsfoss.com/create-bootable-ubuntu-usb-drive-mac-os/
 
 作者：[Abhishek][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
