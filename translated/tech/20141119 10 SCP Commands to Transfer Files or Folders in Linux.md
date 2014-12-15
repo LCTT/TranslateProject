@@ -1,4 +1,4 @@
-n Linux的十条SCP传输命令
+Linux的十条SCP传输命令
 ================================================================================
 Linux系统管理员应该很熟悉**CLI**环境，因为在Linux服务器中是不安装**GUI**的。**SSH**可能是Linux系统管理员通过远程方式安全管理服务器的最流行协议。在**SSH**命令中内置了一种叫**SCP**的命令，用来在服务器之间安全传输文件。
 
@@ -145,22 +145,22 @@ Linux系统管理员应该很熟悉**CLI**环境，因为在Linux服务器中是
 
 在“**-l**”参数后面的这个**400**值意思是我们给**SCP**进程限制了带宽为**50 KB/秒**。有一点要记住，带宽是以**千比特/秒** (**kbps**)表示的，**8 比特**等于**1 字节**。
 
-While **SCP** counts in **Kilobyte/sec** (**KB/s**). So if you want to limit your bandwidth for **SCP** maximum only **50 KB/s**, you need to set it into **50 x 8 = 400**.
+因为**SCP**是用**千字节/秒** (**KB/s**)计算的，所以如果你想要限制**SCP**的最大带宽只有**50 KB/s**，你就需要设置成**50 x 8 = 400**。
 
 ### 指定端口 ###
 
-Usually **SCP** is using port **22** as a default port. But for security reason, you may change the port into another port. For example, we are using port **2249**. Then the command should be like this.
+通常**SCP**是把**22**作为默认端口。但是为了安全起见，你可以改成其它端口。比如说，我们想用**2249**端口，命令如下所示。
 
     pungki@mint ~/Documents $ scp -P 2249 Label.pdf mrarianto@202.x.x.x:.
     
     mrarianto@202.x.x.x's password:
     Label.pdf 100% 3672KB 262.3KB/s 00:14
 
-Make sure that it use capital “**P**” not “**p**“, since “**p**” is already used for preserved times and modes.
+确认一下写的是大写字母“**P**”而不是“**p**“，因为“**p**”已经被用来保留源文件的修改时间和模式。
 
-### Copy files inside directory recursively ###
+### 递归拷贝文件和文件夹 ###
 
-Sometimes we need to copy directory and all **files** / **directories** inside it. It will be better if we can do it in **1** command. **SCP** support that scenario using “**-r**” parameter.
+有时我们需要拷贝文件夹及其内部的所有**文件** / **文件夹**，我们如果能用一条命令解决问题那就更好了。**SCP**用“**-r**”参数就能做到。
 
     pungki@mint ~/Documents $ scp -r documents mrarianto@202.x.x.x:.
     
@@ -168,50 +168,50 @@ Sometimes we need to copy directory and all **files** / **directories** inside i
     Label.pdf 100% 3672KB 282.5KB/s 00:13
     scp.txt 100% 10KB 9.8KB/s 00:00
 
-When the copy process is done, at the destination server you will found a directory named “**documents**” with all it’s files. The folder “**documents**” is automatically created.
+拷贝完成后，你会在目标服务器中找到一个名为“**documents**”的文件夹，其中就是所拷贝的所有文件。“**documents**”是系统自动创建的文件夹。
 
-### Disable progress meter and warning / diagnostic message ###
+### 禁用进度条和警告/诊断信息 ###
 
-If you choose not to see progress meter and warning / diagnostic messages from SCP, you may disable it using “**-q**” parameter. Here’s the example.
+如果你不想从SCP中看到进度条和警告/诊断信息，你可以用“**-q**”参数来禁用它们，举例如下。
 
     pungki@mint ~/Documents $ scp -q Label.pdf mrarianto@202.x.x.x:.
     
     mrarianto@202.x.x.x's password:
     pungki@mint ~/Documents $
 
-As you can see, after the you enter the password, there is no any information about SCP process. After the process is complete, you will be see a prompt again.
+正如你所看到的，在你输入密码之后，没有任何关于SCP进度的消息反馈。进度完成后，你也看不到任何提示。
 
-### Copy files using SCP through Proxy ###
+### 用SCP通过代理来拷贝文件 ###
 
-Proxy server is usually used in office environment. Natively, SCP is not proxy configured. When your environment using proxy, you have to “tell” SCP to communicate with the proxy.
+代理服务器经常用于办公环境，SCP自然是没有经过代理方面的配置的。当你的环境正在使用代理，那么你就必须要“告诉”SCP与代理关联起来。
 
-Here’s the scenario. The proxy address is **10.0.96.6** and the proxy port is **8080**. The proxy also implemented user authentication. First, you need to create “**~/.ssh/config**” file. Second you put this command inside it.
+场景如下：代理的地址是**10.0.96.6**，端口是8080。该代理还实现了用户认证功能。首先，你需要创建一个“**~/.ssh/config**”文件，其次把以下命令输入进该文件。
 
     ProxyCommand /usr/bin/corkscrew 10.0.96.6 8080 %h %p ~/.ssh/proxyauth
 
-Then you need to create file “**~/.ssh/proxyauth**” which contain.
+接着你需要创建一个同样包括以下命令的“**~/.ssh/proxyauth**”文件。
 
     myusername:mypassword
 
-After that you can do SCP transparently as usual.
+然后你就可以像往常一样使用SCP了。
 
-Please notice that corkscrew is might not installed yet on your system. On my Linux Mint, I need to install it first, using standard Linux Mint installation procedure.
+请注意corkscrew可能还没有安装在你的系统中。在我的Linux Mint中，我需要首先先用标准Linux Mint安装程序来安装它。
 
     $ apt-get install corkscrew
 
-For other yum based systems, users can install corkscrew using the following yum command.
+对于其它的一些基于yum安装的系统，用户能用以下的命令来安装corkscrew。
 
     # yum install corkscrew
 
-Another thing that since “**~/.ssh/proxyauth**” file contain your “**username**” and “**password**” in clear-text format, please make sure that the file can be accessed by you only.
+还有一点就是因为“**~/.ssh/proxyauth**”文件中以明文的格式包含了你的“**用户名**”和“**密码**”，所以请确保该文件只能你来查看。
 
-### Select different ssh_config file ###
+### 选择不同的ssh_config文件 ###
 
-For mobile user who often switch between company network and public network, it will be suffer to always change settings in SCP. It is better if we can put a different **ssh_config** file to match our needs.
+对于经常在公司网络和公共网络之间切换的移动用户来说，一直改变SCP的设置显然是很痛苦的。如果我们能放一个不同的**ssh_config**文件来匹配我们的需求那就很好了。
 
-#### Here’s a sample scenario ####
+#### 以下是一个简单的场景 ####
 
-Proxy is used in company network but not in public network and you are regularly switch network.
+代理是被用来在公司网络但不是公共网络并且你会定期切换网络时候使用的。
 
     pungki@mint ~/Documents $ scp -F /home/pungki/proxy_ssh_config Label.pdf
     
@@ -219,18 +219,18 @@ Proxy is used in company network but not in public network and you are regularly
     mrarianto@202.x.x.x's password:
     Label.pdf 100% 3672KB 282.5KB/s 00:13
 
-By default “**ssh_config**” file per user will be placed in “**~/.ssh/config**“. Creating a specific “**ssh_config**” file with proxy compatible, will make you easier to switch between networks.
+默认情况下每个用户会把“**ssh_config**”文件放在“**~/.ssh/config**“路径下。用兼容的代理创建一个特定的“**ssh_config**”文件，能让你切换网络时更加方便容易。
 
-When you are on company network, you can use “**-F**” parameter. When you are on public network, you can skip “**-F**” parameter.
+当你处于公司网络时，你可以用“**-F**”参数，当你处于公共网络时，你可以忽略掉“**-F**”参数。
 
-That’s all about **SCP**. You can see **man pages** of **SCP** for more detail. Please feel free to leave comments and suggestions.
+以上就是关于**SCP**的全部内容了，你可以查看**SCP**的**man页面**来获取更多内容，请随意留下您的评论及建议。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/scp-commands-examples/
 
 作者：[Pungki Arianto][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ZTinoZ](https://github.com/ZTinoZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
