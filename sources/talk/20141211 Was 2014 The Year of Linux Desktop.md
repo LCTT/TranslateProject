@@ -1,3 +1,4 @@
+Translating by ZTinoZ
 Was 2014 "The Year of Linux Desktop"?
 ================================================================================
 > The Linux desktop is finally hitting all the right notes
