@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Install Jetty 9 (Java servlet engine and webserver) on Ubuntu 14.10 Server
 ================================================================================
 Jetty provides a Web server and javax.servlet container, plus support for SPDY, WebSocket, OSGi, JMX, JNDI, JAAS and many other integrations. These components are open source and available for commercial use and distribution.
