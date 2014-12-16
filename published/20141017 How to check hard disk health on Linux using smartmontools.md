@@ -1,4 +1,4 @@
-在Linux上使用smartmontools查看硬盘的健康状态
+使用 smartmontools 查看硬盘的健康状态
 ================================================================================
 要说Linux用户最不愿意看到的事情，莫过于在毫无警告的情况下发现硬盘崩溃了。诸如[RAID][2]的[备份][1]和存储技术可以在任何时候帮用户恢复数据，但为预防硬件突然崩溃造成数据丢失所花费的代价却是相当可观的，特别是在用户从来没有提前考虑过在这些情况下的应对措施时。
 
@@ -28,7 +28,7 @@
 
 ![](https://farm4.staticflickr.com/3953/15352881249_96c09f7ccc_o.png)
 
-其中sdx代表分配给机器上对应硬盘上的设备名。
+其中sdX代表分配给机器上对应硬盘上的设备名。
 
 如果想要显示出某个指定硬盘的信息（比如设备模式、S/N、固件版本、大小、ATA版本/修订号、SMART功能的可用性和状态）,在运行smartctl命令时添加"--info"选项，并按如下所示指定硬盘的设备名。
 
@@ -67,8 +67,8 @@
 - **THRESH**：在报告硬盘FAILED状态前，WORST可以允许的最小值。
 - **TYPE**：属性的类型（Pre-fail或Old_age）。Pre-fail类型的属性可被看成一个关键属性，表示参与磁盘的整体SMART健康评估（PASSED/FAILED）。如果任何Pre-fail类型的属性故障，那么可视为磁盘将要发生故障。另一方面，Old_age类型的属性可被看成一个非关键的属性（如正常的磁盘磨损），表示不会使磁盘本身发生故障。
 - **UPDATED**：表示属性的更新频率。Offline代表磁盘上执行离线测试的时间。
-- **WHEN_FAILED**：如果VALUE小于等于THRESH，会被设置成“FAILING_NOW”；如果WORST小于等于THRESH会被设置成“In_the_past”；如果都不是，会被设置成“-”。在“FAILING_NOW”情况下，需要备份重要文件ASAP，特别是属性是Pre-fail类型时。“In_the_past”代表属性已经故障了，但在运行测试的时候没问题。“-”代表这个属性从没故障过。
-- **RAW_VALUE**：制造商定义的原始值，从VALUE派生。
+- **WHEN\_FAILED**：如果VALUE小于等于THRESH，会被设置成“FAILING\_NOW”；如果WORST小于等于THRESH会被设置成“In\_the\_past”；如果都不是，会被设置成“-”。在“FAILING\_NOW”情况下，需要尽快备份重要文件，特别是属性是Pre-fail类型时。“In\_the\_past”代表属性已经故障了，但在运行测试的时候没问题。“-”代表这个属性从没故障过。
+- **RAW\_VALUE**：制造商定义的原始值，从VALUE派生。
 
 这时候你可能会想，“是的，smartctl看起来是个不错的工具，但我更想知道如何避免手动运行的麻烦。”如果能够以指定的间隔运行，同时又能通知我测试结果，那不是更好吗？”
 
@@ -134,7 +134,7 @@ via: http://xmodulo.com/check-hard-disk-health-linux-smartmontools.html
 
 作者：[Gabriel Cánepa][a]
 译者：[KayGuoWhu](https://github.com/KayGuoWhu)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
