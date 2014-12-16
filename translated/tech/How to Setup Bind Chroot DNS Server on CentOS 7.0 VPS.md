@@ -1,39 +1,46 @@
-spccman translating
-How to Setup Bind Chroot DNS Server on CentOS 7.0 VPS
-================================================================================
-BIND (Berkeley Internet Name Daemon) also known as NAMED is the most widely used DNS server in the internet. This tutorial will descibes how we can run BIND in a chroot jail, the process is simply unable to see any part of the filesystem outside the jail. For example, in this post, i will setting up BIND to run chrooted to the directory /var/named/chroot/. Well, to BIND, the contents of this directory will appear to be /, the root directory. A “jail” is a software mechanism for limiting the ability of a process to access resources outside a very limited area, and it’s purposely to enhance the security. Bind Chroot DNS server was by default configured to /var/named/chroot. You may follow this complete steps to implement Bind Chroot DNS Server on CentOS 7.0 virtual private server (VPS).
+在CentOS7.0 VPS上搭建 Bind Chroot DNS 服务器
+====================
 
-1. Install Bind Chroot DNS server :
+BIND（Berkeley internet Name Daemon)也叫做NAMED是现今互联网上使用最为广泛的DNS 服务器程序。这篇文章将要讲述如何在 chroot jail （chroot “监牢”，所谓“监牢”就是指通过chroot机制来更改某个进程所能看到的根目录，即将某进程限制在指定目录中，保证该进程只能对该目录及其子目录的文件有所动作，从而保证整个服务器的安全）中运行 BIND，这样它就无法访问文件系统中除“jail”以外的其它部分。例如，在这篇文章中，我会将BIND的运行根目录改为/var/named/chroot/。当然，对于BIND来说，这个目录就是/（根目录）。 “jail”（监牢，下同）是一个软件机制，其功能是使得某个程序无法访问规定区域之外的资源，同样也为了增强安全性。Bind Chroot DNS 服务器的默认“jail”为/var/named/chroot。你可以按照下列步骤，在CentOS 7.0 虚拟专用服务器（VPS）上部署 Bind Chroot DNS 服务器。
+
+ 1. 安装Bind Chroot DNS 服务器：
 
     [root@centos7 ~]# yum install bind-chroot bind -y
 
-2. Copy all bind related files to prepare bind chrooted environments :
+ 2. 拷贝bind相关文件,准备bind chroot 环境
 
     [root@centos7 ~]# cp -R /usr/share/doc/bind-*/sample/var/named/* /var/named/chroot/var/named/
 
-3. Create bind related files into chrooted directory :
+ 3. 在bind chroot 的目录中创建相关文件
 
     [root@centos7 ~]# touch /var/named/chroot/var/named/data/cache_dump.db
+
     [root@centos7 ~]# touch /var/named/chroot/var/named/data/named_stats.txt
+
     [root@centos7 ~]# touch /var/named/chroot/var/named/data/named_mem_stats.txt
+
     [root@centos7 ~]# touch /var/named/chroot/var/named/data/named.run
+
     [root@centos7 ~]# mkdir /var/named/chroot/var/named/dynamic
+
     [root@centos7 ~]# touch /var/named/chroot/var/named/dynamic/managed-keys.bind
 
-4. Bind lock file should be writeable, therefore set the permission to make it writable as below :
+
+ 4. 将 Bind 锁定文件设置为可写：
 
     [root@centos7 ~]# chmod -R 777 /var/named/chroot/var/named/data
     [root@centos7 ~]# chmod -R 777 /var/named/chroot/var/named/dynamic
 
-5. Copy /etc/named.conf chrooted bind config folder :
+ 5. 将 /etc/named.conf 拷贝到 bind chroot目录
 
     [root@centos7 ~]# cp -p /etc/named.conf /var/named/chroot/etc/named.conf
 
-6.Configure main bind configuration in /etc/named.conf. Append the example.local zone information to the file :
+ 6. 在/etc/named.conf中对 bind 进行配置。在文件尾添加 example.local 域信息：
 
     [root@centos7 ~]# vi /var/named/chroot/etc/named.conf
 
-Create forward and reverse zone into named.conf:
+在 named.conf 中创建转发域（Forward Zone）与反向域（Reverse Zone）：
+
 
     ..
     ..
@@ -49,13 +56,13 @@ Create forward and reverse zone into named.conf:
     ..
     ..
 
-Full named.conf configuration :
+named.conf 完全配置
 
     //
     // named.conf
     //
-    // Provided by Red Hat bind package to configure the ISC BIND named(8) DNS
-    // server as a caching only nameserver (as a localhost DNS resolver only).
+    // 由Red Hat提供，将 ISC BIND named(8) DNS服务器 
+    // 配置为暂存域名服务器 (用来做本地DNS解析).
     //
     // See /usr/share/doc/bind*/sample/ for example named configuration files.
     //
@@ -70,14 +77,11 @@ Full named.conf configuration :
             allow-query     { any; };
     
             /*
-             - If you are building an AUTHORITATIVE DNS server, do NOT enable recursion.
-             - If you are building a RECURSIVE (caching) DNS server, you need to enable
-               recursion.
-             - If your recursive DNS server has a public IP address, you MUST enable access
-               control to limit queries to your legitimate users. Failing to do so will
-               cause your server to become part of large scale DNS amplification
-               attacks. Implementing BCP38 within your network would greatly
-               reduce such attack surface
+             - 如果你要建立一个 授权域名服务器 服务器, 那么不要开启 recursion（递归） 功能。
+             - 如果你要建立一个 递归 DNS 服务器, 那么需要开启recursion 功能。
+             - 如果你的递归DNS服务器有公网IP地址, 你必须开启访问控制功能，
+               只有那些合法用户才可以发询问. 如果不这么做的话，那么你的服
+               服务就会受到DNS 放大攻击。实现BCP38将有效抵御这类攻击。
             */
             recursion yes;
     
@@ -119,13 +123,13 @@ Full named.conf configuration :
     include "/etc/named.rfc1912.zones";
     include "/etc/named.root.key";
 
-7. Create Forward and Reverse zone files for domain example.local.
+ 7. 为 example.local 域名创建转发域与反向域文件
 
-a) Create Forward Zone :
+a)创建转发域
 
     [root@centos7 ~]# vi /var/named/chroot/var/named/example.local.zone
 
-Add the following and save :
+添加如下内容并保存：
 
     ;
     ;       Addresses and other host information.
@@ -150,11 +154,11 @@ Add the following and save :
     ns1              IN      A       192.168.0.70
     ns2              IN      A       192.168.0.80
 
-b) Create Reverse Zone :
+b)创建反向域
 
     [root@centos7 ~]# vi /var/named/chroot/var/named/192.168.0.zone
 
-----------
+----
 
     ;
     ;       Addresses and other host information.
@@ -171,9 +175,7 @@ b) Create Reverse Zone :
     
     70.0.168.192.in-addr.arpa. IN PTR mx.example.local.
     70.0.168.192.in-addr.arpa. IN PTR ns1.example.local.
-    80.0.168.192.in-addr.arpa. IN PTR ns2.example.local.
-
-8. Stop and disable named service. Start and enable bind-chroot service at boot :
+    80.0.168.192.in-addr.arpa. IN PTR ns2.example.local.。开机自启动 bind-chroot 服务：
 
     [root@centos7 ~]# /usr/libexec/setup-named-chroot.sh /var/named/chroot on
     [root@centos7 ~]# systemctl stop named
@@ -182,17 +184,18 @@ b) Create Reverse Zone :
     [root@centos7 ~]# systemctl enable named-chroot
     ln -s '/usr/lib/systemd/system/named-chroot.service' '/etc/systemd/system/multi-user.target.wants/named-chroot.service'
 
-As always if you need any help you can reach us on twitter @ehowstuff or drop us a comment below. [Jumping through archives page to read more articles..][1]
+[跳转到档案页，阅读更多文章][1]
 
---------------------------------------------------------------------------------
+------------------
 
 via: http://www.ehowstuff.com/how-to-setup-bind-chroot-dns-server-on-centos-7-0-vps/
 
 作者：[skytech][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[SPccman](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://www.ehowstuff.com/author/mhstar/
 [1]:http://www.ehowstuff.com/archives/
+
