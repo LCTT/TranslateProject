@@ -1,3 +1,4 @@
+ideas4u Translating..
 How to use matplotlib for scientific plotting on Linux
 ================================================================================
 If you want an efficient, automatable solution for producing high-quality scientific plots in Linux, then consider using matplotlib. Matplotlib is a Python-based open-source scientific plotting package with a license based on the Python Software Foundation license. The extensive documentation and examples, integration with Python and the NumPy scientific computing package, and automation capability are just a few reasons why this package is a solid choice for scientific plotting in a Linux environment. This tutorial will provide several example plots created with matplotlib.
@@ -12,7 +13,7 @@ If you want an efficient, automatable solution for producing high-quality scient
 - Customizable text (font, size, position...)
 - TeX formatting (equations, symbols, Greek characters...)
 - Compatible with IPython (allows interactive plotting from a Python shell)
-- Automation use Python loops to iteratively create plots
+- Automation - use Python loops to iteratively create plots
 - Save plots to image files (png, pdf, ps, eps, and svg format)
 
 The Python-based syntax of matplotlib serves as the foundation for many of its features and enables an efficient workflow. There are many scientific plotting packages that can produce quality plots, but do they allow you to do it directly from within your Python code? On top of that, do they allow you to create automated routines for iterative creation of plots that can be saved as image files? Matplotlib allows you to accomplish all of these tasks. You can now look forward to saving time that would have otherwise been spent manually creating multiple plots.
@@ -44,7 +45,7 @@ In these examples we will use Python scripts to execute matplotlib commands. Not
 
 ### Example 1: Scatter and Line Plot ###
 
-The first script, **script1.py** completes the following tasks:
+The first script, script1.py completes the following tasks:
 
 - Creates three data sets (xData, yData1, and yData2)
 - Creates a new figure (assigned number 1) with a width and height of 8 inches and 6 inches, respectively
@@ -54,7 +55,7 @@ The first script, **script1.py** completes the following tasks:
 - Positions the legend in the upper left-hand corner of the plot
 - Saves the figure as a PNG file
 
-Contents of **script1.py**:
+Contents of script1.py:
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -77,7 +78,7 @@ The resulting plot is shown below:
 
 ### Example 2: Histogram Plot ###
 
-The second script, **script2.py** completes the following tasks:
+The second script, script2.py completes the following tasks:
 
 - Creates a data set containing 1000 random samples from a Normal distribution
 - Creates a new figure (assigned number 1) with a width and height of 8 inches and 6 inches, respectively
@@ -86,7 +87,7 @@ The second script, **script2.py** completes the following tasks:
 - Adds text to the plot and uses TeX formatting to display the Greek letters mu and sigma (font size of 16)
 - Saves the figure as a PNG file
 
-Contents of **script2.py**:
+Contents of script2.py:
 
     import numpy as np
     import matplotlib.pyplot as plt
@@ -108,7 +109,7 @@ The resulting plot is shown below:
 
 ### Example 3: Pie Chart ###
 
-The third script, **script3.py** completes the following tasks:
+The third script, script3.py completes the following tasks:
 
 - Creates data set containing five integers
 - Creates a new figure (assigned number 1) with a width and height of 6 inches and 6 inches, respectively
@@ -117,7 +118,7 @@ The third script, **script3.py** completes the following tasks:
 - Plots the data set, data, as a pie chart with labels included
 - Saves the figure as a PNG file
 
-Contents of **script3.py**:
+Contents of script3.py:
 
     import numpy as np
     import matplotlib.pyplot as plt
