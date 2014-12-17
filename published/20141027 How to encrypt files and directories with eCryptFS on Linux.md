@@ -27,7 +27,7 @@
 
 ### eCryptFS基础 ###
 
-eCrypFS是一个基于FUSE的用户空间加密文件系统，在Linux内核2.6.19及更高版本中可用（作为encryptfs模块）。eCryptFS加密的伪文件系统挂载到当前文件系统的顶部。它可以很好地工作在EXT文件系统家族和其它文件系统如JFS、XFS、ReiserFS、Btrfs，甚至是NFS/CIFS共享文件系统上。Ubuntu使用eCryptFS作为加密其家目录的默认方法，ChromeOS也是。在eCryptFS底层，默认使用的是AES算法，但是它也支持其它算法，如blowfish、des3、cast5、cast6。如果你是通过手工创建eCryptFS设置，你可以选择其中一种算法。
+eCrypFS是一个基于FUSE的用户空间加密文件系统，在Linux内核2.6.19及更高版本中可用（作为encryptfs模块）。eCryptFS加密的伪文件系统是挂载到当前文件系统顶部的。它可以很好地工作在EXT文件系统家族和其它文件系统如JFS、XFS、ReiserFS、Btrfs，甚至是NFS/CIFS共享文件系统上。Ubuntu使用eCryptFS作为加密其家目录的默认方法，ChromeOS也是。在eCryptFS底层，默认使用的是AES算法，但是它也支持其它算法，如blowfish、des3、cast5、cast6。如果你是通过手工创建eCryptFS设置，你可以选择其中一种算法。
 
 就像我所的，Ubuntu让我们在安装过程中选择是否加密/home目录。好吧，这是使用eCryptFS的最简单的一种方法。
 
@@ -63,13 +63,13 @@ Arch Linux：
 
 ![](https://farm6.staticflickr.com/5608/15453440890_3b4be6d5a7_z.jpg)
 
-它会要求你输入登录密码和挂载密码。登录密码和你常规登录的密码一样，而挂载密码用于派生一个文件加密主密钥。留空来生成一个，这样会更安全。登出然后重新登录。
+它会要求你输入登录密码和挂载密码。登录密码和你常规登录的密码一样，而挂载密码用于派生一个文件加密主密钥。这里留空可以生成一个（复杂的），这样会更安全。登出然后重新登录。
 
 你会注意到，eCryptFS默认在你的家目录中创建了两个目录：Private和.Private。~/.Private目录包含有加密的数据，而你可以在~/Private目录中访问到相应的解密后的数据。在你登录时，~/.Private目录会自动解密并映射到~/Private目录，因此你可以访问它。当你登出时，~/Private目录会自动卸载，而~/Private目录中的内容会加密回到~/.Private目录。
 
 eCryptFS怎么会知道你拥有~/.Private目录，并自动将其解密到~/Private目录而不需要我们输入密码呢？这就是eCryptFS的PAM模块捣的鬼，它为我们提供了这项便利服务。
 
-如果你不想要~/Private目录在登录时自动挂载，只需要在运行ecryptfs-setup-private工具时添加“--noautomount”选项。同样，如果你不想要~/Private目录在登出后自动卸载，也可以自动“--noautoumount”选项。但是，那样后，你需要自己手工挂载或卸载~/Private目录：
+如果你不想让~/Private目录在登录时自动挂载，只需要在运行ecryptfs-setup-private工具时添加“--noautomount”选项。同样，如果你不想要~/Private目录在登出后自动卸载，也可以自动“--noautoumount”选项。但是，那样后，你需要自己手工挂载或卸载~/Private目录：
 
     $ ecryptfs-mount-private ~/.Private ~/Private
     $ ecryptfs-umount-private ~/Private
@@ -94,7 +94,7 @@ via: http://xmodulo.com/encrypt-files-directories-ecryptfs-linux.html
 
 作者：[Christopher Valerio][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
