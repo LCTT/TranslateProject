@@ -6,7 +6,7 @@ Linux Journal杂志2014读者选择奖
 
 如欲了解完整获奖名单，请查阅本杂志2014年12月刊。 
 
-### 最佳Linux发行版 ### 
+### 最佳Linux发行版 ###
 
 ![](http://www.linuxjournal.com/files/linuxjournal.com/ufiles/imagecache/slideshow-400/11781f1.jpg)
 
@@ -23,7 +23,7 @@ Linux Journal杂志2014读者选择奖
 - Gentoo 2.9%
 - Slackware 2.7%
 - Xubuntu 2.5%
-- Other 2.3%
+- 其它 2.3%
 - Red Hat Enterprise Linux 1.6%
 - NixOS 1.4%
 - elementary OS 1.3%
@@ -43,12 +43,13 @@ Linux Journal杂志2014读者选择奖
  
 
 ### 最佳Linux移动系统 ###
+
 安卓在移动领域是如此的举足轻重，所以我们决定让安卓的各种版本独立参与投票。因此，尽管以下系统本质上属于安卓，但我们仍沿用其名而不改称安卓，因为这样更加一目了然。
 
 - Stock Android 37.1%
 - Sailfish OS 27.6%
 - CyanogenMod 20.2%
-- Other 3%
+- 其它 3%
 - Ubuntu Phone 3%
 - Amazon Fire OS 1.5%
 - Ubuntu for Android 1.4%
@@ -62,7 +63,7 @@ Linux Journal杂志2014读者选择奖
 - Samsung 29%
 - Jolla 26.7%
 - Nexus 16.5%
-- Other 7.1%*
+- 其它 7.1%*
 - HTC 7%
 - LG 5.3%
 - Sony 3.7%
@@ -71,8 +72,7 @@ Linux Journal杂志2014读者选择奖
 - GeeksPhone 1%
 - Amazon .6% 
 
-
-*在 "其它"当中，摩托罗拉获得最多提名，其次是一加。 
+*在"其它"当中，摩托罗拉获得最多提名，其次是一加。 
 
 ### 最佳Linux平板 ###
 
@@ -83,7 +83,7 @@ Linux Journal杂志2014读者选择奖
 - Samsung Galaxy Tab 14%
 - Samsung Galaxy Note 9.8%
 - ASUS Transformer Pad 8.4%
-- Other 6.4%
+- 其它 6.4%
 - Kindle Fire HD 4.7%
 - ASUS MeMO Pad 2%
 - Dell Venue 1.6%
@@ -93,13 +93,12 @@ Linux Journal杂志2014读者选择奖
  
 
 ### 最佳基于Linux的其它配件（不含智能手机或平板）###
-
  
 我们是一群树莓派粉，如假包换！不过说真的，这怎么能怪我们呢？树莓派又出了新款B+，让原本就美妙绝伦的树莓派愈发的标致可人。并非我有未卜先知之功，但我对明年的冠军早就心中有数了。 
 
 - Raspberry Pi 71.4%
 - BeagleBone Black 8.1%
-- Other 4.3%*
+- 其它 4.3%*
 - Lego Mindstorms Ev3 3.7%
 - Moto 360 3.4%
 - Cubieboard 1.7%
@@ -128,7 +127,7 @@ Linux Journal杂志2014读者选择奖
 - ASUS 19.3%
 - Dell 18.5%
 - System76 10.6%
-- Other 7.9%*
+- 其它 7.9%*
 - Acer 4.5%
 - ThinkPenguin 1.9%
 - LinuxCertified 1.8%
@@ -148,7 +147,7 @@ Linux Journal杂志2014读者选择奖
 - Drupal 25.3%
 - Joomla! 11.1%
 - MediaWiki 10.5%
-- Other 10%*
+- 其它 10%*
 - Alfresco 4.3%
 - WebGUI 1.3%
 - ikiwiki 1.1%
@@ -164,9 +163,9 @@ Linux Journal杂志2014读者选择奖
 
 ![](http://www.linuxjournal.com/files/linuxjournal.com/ufiles/imagecache/slideshow-400/question.jpg)
 
-提到虚拟主机，这年头要找到不对Linux友好的公司那是相当之难。事实上，要找到一家运行Windows的主机服务商才是一种挑战。这一类别的冠军（“其它”）就显而易见的说明了这一问题，或许设一个“最差虚拟主机”分类更加有用！ 
+提到虚拟主机，这年头要找到不对Linux友好的公司那是相当之难。事实上，要找到一家提供Windows的主机服务商才是一种挑战。这一类别的冠军（“其它”）就显而易见的说明了这一问题，或许设一个“最差虚拟主机”分类更加有用！ 
 
-- Other 22.8%*
+- 其它 22.8%*
 - Amazon 22.5%
 - Rackspace 13.1%
 - Linode 10.4%
@@ -198,7 +197,7 @@ Firefox显著优势拨得今年的头筹。即使以Chrome加Chromium计算，Fi
 - Chromium 8.1%
 - Iceweasel 4%
 - Opera 3%
-- Other 2%
+- 其它 2%
 - SeaMonkey .8%
 - rekonq .5%
 - dwb .4%
@@ -217,7 +216,7 @@ Firefox显著优势拨得今年的头筹。即使以Chrome加Chromium计算，Fi
 - Mutt 6.8%
 - Evolution 5.5%
 - KMail 5.3%
-- Other 3.2%
+- 其它 3.2%
 - Claws Mail 2.2%
 - Zimbra 2%
 - Alpine 1.8%
@@ -235,13 +234,11 @@ Firefox显著优势拨得今年的头筹。即使以Chrome加Chromium计算，Fi
 - FFmpeg 10.8%
 - VLC 9.7%
 - Ardour 4.9%
-- Other 1.9%
+- 其它 1.9%
 - SoX 1.3%
 - Mixxx 1.1%
 - LMMS .7%
 - Format Junkie .5% 
-
- 
 
 ### 最佳音频播放器 ###
 
@@ -257,7 +254,7 @@ VLC登上视频播放器分类的榜首（见下文）应该是毫无悬念的�
 - Spotify 5.9%
 - Audacious 5.5%
 - Banshee 4.6%
-- Other 4%*
+- 其它 4%*
 - XBMC 3.1%
 - foobar2000 3%
 - Xmms 2.4%
@@ -273,7 +270,7 @@ VLC登上视频播放器分类的榜首（见下文）应该是毫无悬念的�
 - Decibel Audio Player .2% 
  
 
-*在 "其它"当中，Quod Libet获得最多提名。 
+*在"其它"当中，Quod Libet获得最多提名。 
 
 ### 最佳视频播放器 ###
 
@@ -283,7 +280,7 @@ VLC登上视频播放器分类的榜首（见下文）应该是毫无悬念的�
 - MPlayer 14.5%
 - XBMC 6.4%
 - Totem 2.7%
-- Other 2.7%*
+- 其它 2.7%*
 - Plex 2%
 - Kaffeine 1.9%
 - mpv 1.6%
@@ -292,7 +289,6 @@ VLC登上视频播放器分类的榜首（见下文）应该是毫无悬念的�
 - Xmms .3%
 - Daum Potplayer .2%
 - Clementine .1% 
-
 
  
 *在“其它”当中，提名最多是SMPlayer。 
@@ -311,7 +307,7 @@ VLC登上视频播放器分类的榜首（见下文）应该是毫无悬念的�
 - Cinelerra 7.5%
 - PiTiVi 4.9%
 - LightWorks 4.8%
-- Other 4.7%
+- 其它 4.7%
 - LiVES 1.4%
 - Shotcut .6%
 - Jahshaka .4%
@@ -326,7 +322,7 @@ VLC登上视频播放器分类的榜首（见下文）应该是毫无悬念的�
 - ownCloud 23.6%
 - Google Drive 16%
 - rsync 8.3%
-- Other 7.5%*
+- 其它 7.5%*
 - Amazon S3 6.6%
 - SpiderOak 4.4%
 - Box 1.8%
@@ -335,8 +331,6 @@ VLC登上视频播放器分类的榜首（见下文）应该是毫无悬念的�
 
 
 Dropbox在这一领域曾经独步天下，几无对手，虽然这次仍为头魁，但优势已经不那么明显了。Dropbox的方便与稳定无可否认，但是将你的宝贵数据托管在ownCloud上，可管可控，也让ownCloud登上第二名的宝座。 
-
- 
 
 *在“其它”当中，提名最多是 Younited 与 MEGA。当然很多人可能会说“非万不得已时不会选择云存储/我的文件都是存在本地”。 
 
@@ -347,7 +341,7 @@ Dropbox在这一领域曾经独步天下，几无对手，虽然这次仍为头�
 我很少玩游戏，所以每年我都特期待这一类别排名，希望可以从中找到最受欢迎的游戏，以供闲暇之需。看到NetHack排名这么靠前，我倒觉得挺开心的，尤其是在联想到竞争对手后更是心满意足。徘徊在让我们这些老派的龙与地下城玩家痴迷的随机通道确实有点意思。 
 
 - Civilization 5 26.5%
-- Other 23.5%*
+- 其它 23.5%*
 - Team Fortress 2 8.7%
 - NetHack 8.4%
 - X-Plane 10 7.1%
@@ -360,8 +354,6 @@ Dropbox在这一领域曾经独步天下，几无对手，虽然这次仍为头�
 - Kpat 1.4%
 - FreeOrion 1.1%
 - Ryzom .9% 
-
- 
 
 *在“其它”当中，提名最多的（依次）是Minecraft, 0 A.D., Frozen Bubble, Battle for Wesnoth, Portal 以及 Counter Strike。 
 
@@ -377,7 +369,7 @@ Dropbox在这一领域曾经独步天下，几无对手，虽然这次仍为头�
 - XEN 5.7%
 - QEMU 5.3%
 - OpenStack 4.9%
-- Other 4.2%*
+- 其它 4.2%*
 - OpenVZ 1.7%
 - Linux-VServer 1.3%
 - Symantec Workspace Virtualization .1% 
@@ -393,7 +385,7 @@ Dropbox在这一领域曾经独步天下，几无对手，虽然这次仍为头�
 - Wireshark 20.7%
 - htop 12.3%
 - Zabbix 10.5%
-- Other 8.6%*
+- 其它 8.6%*
 - Zenoss 6.2%
 - Munin 3.4%
 - PC Monitor 2.8%
@@ -422,7 +414,7 @@ Git能拿到本类别第一名倒是蛮有趣的，虽然针对配置文件使�
 - Subversion 7.6%
 - Chef 5%
 - SaltStack 5.4%
-- Other 4.6%*
+- 其它 4.6%*
 - CFEngine 3% 
  
 
@@ -437,7 +429,7 @@ Git能拿到本类别第一名倒是蛮有趣的，虽然针对配置文件使�
 - C 16.7%
 - Perl 7.1%
 - Java 6.9%
-- Other 4.6%
+- 其它 4.6%
 - Ruby 4.3%
 - Go 2.4%
 - JavaScript 2.4%
@@ -464,13 +456,12 @@ Python强悍无比，无论在脚本及编程分类都有大量拥趸。对于�
 - PHP 8.4%
 - JavaScript 6.7%
 - Ruby 4.9%
-- Other 2.1%
+- 其它 2.1%
 - Lua 2% 
  
 ### 最佳Linux/开源新产品/新项目 ###
 
 ![](http://www.linuxjournal.com/files/linuxjournal.com/ufiles/imagecache/slideshow-400/11781f14.jpg)
-
 
 Docker无疑是大赢家，当之无愧--游戏规则改变者嘛。 Jolla/Sailfish也小受欢迎，真是令人欣慰。我们爱安卓，不过多个选择不正是我们作为开源鼓手所提倡的一个重要方面吗。 
 
@@ -498,12 +489,11 @@ Docker无疑是大赢家，当之无愧--游戏规则改变者嘛。 Jolla/Sailf
 
 ![](http://www.linuxjournal.com/files/linuxjournal.com/ufiles/imagecache/slideshow-400/tux_cruise.png)
 
-
 这是读者选择奖里我最钟爱的新分类。想象一下你参加某次Linux会议，期间询问人们他们用Linux做过的最酷的事情。这里所做的与之大同小异！这里我们仅列出部分我们比较喜欢的，如欲了解完整列表，请访问：[http://www.linuxjournal.com/rc2014/coolest][2]。 
 
 注：最常见的答案是：“使用它”；“挽救数据/照片/导致Windows 机器罢工的任何东西”；“说服朋友/家人/业务转向使用Linux”；“学习”；“讲授”；“获得工作”；“家庭自动化”；“构建家庭媒体服务器”。下表是我们选出的并非最常见的答案，而是一些比较具体与有个性的答案。 
 
---在上世纪90年代中期建立procmail垃圾邮件预过滤规则。
+- 在上世纪90年代中期建立procmail垃圾邮件预过滤规则。
 - 450-节点计算集群。
 - 7.1 通道前置放大器（集成Mopidy音乐播放器）。
 - Linux机器人 （参加Eurobot年度比赛）。
@@ -548,8 +538,8 @@ Docker无疑是大赢家，当之无愧--游戏规则改变者嘛。 Jolla/Sailf
 via: http://www.linuxjournal.com/rc2014
 
 作者：[Shawn Powers][a]
-译者：[译者yupmoon](https://github.com/yupmoon)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[yupmoon](https://github.com/yupmoon)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
