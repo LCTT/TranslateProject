@@ -1,7 +1,6 @@
-Translating by ZTinoZ
-Was 2014 "The Year of Linux Desktop"?
+2014年会是 "Linux桌面之年"吗？
 ================================================================================
-> The Linux desktop is finally hitting all the right notes
+> Linux桌面终于可以谈起来头头是道了
 
 ![](http://i1-news.softpedia-static.com/images/news2/Was-2014-The-Year-of-Linux-Desktop-467036-2.jpg)
 
@@ -13,9 +12,9 @@ Was 2014 "The Year of Linux Desktop"?
 
 ![](http://i1-news.softpedia-static.com/images/news2/Was-2014-The-Year-of-Linux-Desktop-467036-6.jpg)
 
-**Linux has seen a lot of changes during 2014 and many users are saying that this was finally the year that really showed some real progress, but has it been enough to call it "the year of Linux desktop"?**
+**看来Linux在2014年有很多改变，许多用户都表示今年Linux的确有进步，但是仅凭这个就能断定2014年就是"Linux桌面之年"吗？**
 
-This particular phrase, "the year of Linux desktop," has been recited like a mantra in the past couple of years and it's basically trying to mark all the progress registered until now in a way that makes sense. This kind of stuff hasn't happened so far and there is no precedent for the kind of growth we're witnessing, so it's easy to understand why Linux users might look at it from this perspective.
+"Linux桌面之年"这句话， has been recited like a mantra in the past couple of years and it's basically trying to mark all the progress registered until now in a way that makes sense. This kind of stuff hasn't happened so far and there is no precedent for the kind of growth we're witnessing, so it's easy to understand why Linux users might look at it from this perspective.
 
 Most software and hardware domains don't usually go through this kind of fast progress and things happen at a slower pace, but things have been wild even for people who have a better insight into the industry. It's hard, if not impossible, to pinpoint a certain moment or a certain event, but Linux development exploded and changed exponentially in the course of just a couple of years.
 
@@ -38,7 +37,7 @@ So, when someone asks you if 2014 was the year of the Linux desktop, you can say
 via: http://news.softpedia.com/news/Was-2014-The-Year-of-Linux-Desktop-467036.shtml
 
 作者：[Silviu Stahie ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ZTinoZ](https://github.com/ZTinoZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
