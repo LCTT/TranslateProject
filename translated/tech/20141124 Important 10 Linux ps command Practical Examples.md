@@ -142,8 +142,7 @@ While the **-u paramater** will select by effective user ID (EUID)
 
 ![show real and effective User ID](http://blog.linoxide.com/wp-content/uploads/2014/10/ps_root_real_effective_ID.png)
 
-### 10. Use PS in a realtime process viewer ###
-### 10. 
+### 10. 使用PS实时监控进程状态
 
 ps 命令会显示你系统当前的进程状态，但是这个结果是静态的。
 当有一种情况，我们需要想上面第四点中提到的通过CPU和内存的使用率来过滤进程。并且我们希望结果能够每秒更新一次。为此，我们可以**将ps命令和watch命令结合起来**。
@@ -166,7 +165,6 @@ ps 命令会显示你系统当前的进程状态，但是这个结果是静态�
 
 ![combine ps with watch](http://blog.linoxide.com/wp-content/uploads/2014/10/ps_watch_3.png)
 
-### Conclusion ###
 ### 结论 ###
 
 你可能会使用ps命令来监控你的Linux系统。但是事实上，你可以通过ps命令的参数来生成各种你需要的报表。
