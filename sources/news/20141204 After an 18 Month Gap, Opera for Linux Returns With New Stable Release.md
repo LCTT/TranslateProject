@@ -1,58 +1,60 @@
-After an 18 Month Gap, Opera for Linux Returns With New Stable Release
+18个月后，Opera发布了Linux下的新的稳定版
 ================================================================================
-**The first stable release of Opera for Linux in more than 18 months is now available for download.**
+**18个月后发布的Opera在Linux下的稳定版现在可以下载了**
 
 ![Hello again, Opera!](http://www.omgubuntu.co.uk/wp-content/uploads/2014/06/iopera.jpg)
 
-Hello again, Opera!
+你好，Opera！
 
-Opera for Computers for Linux 26 (no really, that’s its name) features a complete top-to-bottom overhaul, new features, and better performance thanks to its Aura and Blink underpinnings (yes, it’s no longer based on the proprietary Presto web engine).
+Linux桌面下的Opera 26（不完全是，这个它的名字）带来了全新的改革、新的特性和更好的性能，这要多亏了Aura和Blink的基础（是的，现在不再基于私有的Presto web引擎了）。
 
-#### Features ####
+#### 特性 ####
 
-The browser [wiggled its toes in tux-friendly waters back in June with the launch of a developer preview][1], but if you last tried Opera when it looked like this, you’ll want to grab some smelling salts: things have changed.
+浏览器[在六月份的带来了一个开发者预览版][1]，但是如果你一直在尝试使用Opera，你会希望抓住一些盐：事情发生了改变。
 
 注：youtube 视频，发布时可换成链接地址
 <iframe width="750" height="422" src="https://www.youtube.com/embed/-kS10C2BUOs?feature=oembed" frameborder="0" allowfullscreen></iframe>
 
 Alongside an impressive new look and blazing fast, standards-compliant rendering engine come many new and improved features.
+带来了新的外观和惊人的速度、符合标准的渲染引擎带来很多新的特性。
 
-- **Discover** — Shows articles from around the web in a range of categories
-- **Speed Dial** — Supports interactive widgets, folders, and themes
-- **Tab Peek** — Preview the content of an open tab without switching back to it
-- **Opera Turbo** — Data-saving mode ideal for patchy connections
-- **Rich bookmarking** — including new sharing functionality
-- **Add-ons** — compatible with Chrome extensions, too
-- **Support for HiDPI displays on Linux** 
 
-### Download Opera for Linux 26 ###
+- **发现** — 显示网络上同一类的网站
+- **快速拨号** — 支持交互widget、文件夹和主题
+- **Tab Peek** — 预览opera选项卡的内容而不必切换过去
+- **Opera Turbo** — 对于低速连接的省流量模式
+- **富书签** — 包含新的共享功能
+- **插件** — 也兼容Chrome插件
+- **在Linux上支持HiDPI显示器** 
 
-Opera say those running Opera 12.6 on a 64-bit version of Ubuntu still supported by Canonical will automatically receive this new update through the Ubuntu Software Center.
+### 下载Linux下的Opera 26 ###
 
-But in all honesty I’m not sure anyone is in that boat! So, helpfully, a Debian installer can be downloaded from the Opera website. This will also add the Opera repository to your Software Sources to enable you to receive future updates in a timely fashion.
+Opera声称那些在Ubuntu下使用64位版本Canonical仍然支持的Opera 12.6会自动通过软件中心收到更新。
 
-- [Download Opera for Computers for Linux 26][2]
+但是老实说我不确定所有人都在船上！因此，万幸的是，可以从Opera网站上下载Debian的安装装。也可以添加Opera仓库到你的软件源中来及时地收到更新。
 
-Feel free to kit your new browser out with our nifty Opera Add-On, too:
+- [下载桌面版Opera 26][2]
 
-- [Install OMG! Ubuntu! Opera Extension][3]
+也请随意在你的新浏览器上安装我们的Opera插件。
 
-#### Important Notice about Linux Support ####
+- [安装让人惊讶的Opera插件][3]
 
-**Opera for Linux is 64-bit only**. The company say this decision was made based on ‘what most Linux desktop users have installed’. While annoying it is part of a larger overall trend away from 32-bit software, with Opera for Mac also being 64-bit exclusive, too.
+#### Linux支持的重要提示 ####
 
-In another case of “spending limited resources wisely”, this release is only being officially supported on Ubuntu (and ‘buntu-based derivatives, including Linux Mint).
+**Linux下的Opera只支持64位的**。公司说这个决定是基于‘用户安装最多的Linux桌面来的’。32位软件使用趋势下降也是一个原因。Mac下的Opera也只有64位。
 
-Users on other distributions, from Arch to openSUSE, can still install Opera for Linux but will need to [use a (fairly simple) workaround][4] or hunt down an unofficial repository.
+另一个基于”明智地使用有限资源“，这个版本官方只支持Ubuntu（和Ubuntu的衍生版本，包括Linux Minit）。
 
-**If you give it a spin let us know what you make of it in the comments below.**
+其他发行版的用户，从Arch到openSUSE仍然可以安装Opera，但需要[使用简单的临时方案][4]或者搜索非官方仓库。
+
+**有任何新的看法，请在评论区留言。**
 
 --------------------------------------------------------------------------------
 
 via: http://www.omgubuntu.co.uk/2014/12/new-opera-for-linux-goes-stable-download-now
 
 作者：[Joey-Elijah Sneddon][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
