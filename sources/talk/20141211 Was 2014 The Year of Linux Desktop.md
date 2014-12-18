@@ -1,6 +1,6 @@
 2014年会是 "Linux桌面之年"吗？
 ================================================================================
-> Linux桌面终于可以谈起来头头是道了
+> 现在谈起Linux桌面终于能头头是道了
 
 ![](http://i1-news.softpedia-static.com/images/news2/Was-2014-The-Year-of-Linux-Desktop-467036-2.jpg)
 
@@ -14,11 +14,11 @@
 
 **看来Linux在2014年有很多改变，许多用户都表示今年Linux的确有进步，但是仅凭这个就能断定2014年就是"Linux桌面之年"吗？**
 
-"Linux桌面之年"这句话， has been recited like a mantra in the past couple of years and it's basically trying to mark all the progress registered until now in a way that makes sense. This kind of stuff hasn't happened so far and there is no precedent for the kind of growth we're witnessing, so it's easy to understand why Linux users might look at it from this perspective.
+"Linux桌面之年"这句话，在过去几年就被传诵得像句颂歌一样， and it's basically trying to mark all the progress registered until now in a way that makes sense. This kind of stuff hasn't happened so far and there is no precedent for the kind of growth we're witnessing, so it's easy to understand why Linux users might look at it from this perspective.
 
 Most software and hardware domains don't usually go through this kind of fast progress and things happen at a slower pace, but things have been wild even for people who have a better insight into the industry. It's hard, if not impossible, to pinpoint a certain moment or a certain event, but Linux development exploded and changed exponentially in the course of just a couple of years.
 
-### Year of the Linux desktop is an uncertain term ###
+### Linux桌面之年这句话不可轻言 ###
 
 There is no single authority which can decree that the year of the Linux desktop has arrived or that it has passed. We can only try to deduce it from what we've seen until now and it's actually up to the users. Some are more conservative and not too many things have changed for them, and others are more progressive and they just can't get enough. It really depends on what your outlook is.
 
@@ -30,7 +30,7 @@ Now, more companies have shown interest in the Linux platform in the past year t
 
 The drivers are better, game studios are porting games now on a regular basis, applications and middleware that we never thought we would see on Linux have started to show up, the Linux kernel development has an incredible pace, the installation process for most of the major distros is usually trivial, and all of these are just the tip of the iceberg.
 
-So, when someone asks you if 2014 was the year of the Linux desktop, you can say yes. The Linux desktop totally ruled in 2014. 
+所以，当有人问你2014年是不是Linux桌面之年时，你可以说“是的！”，因为Linux桌面完全统治了2014年。 
 
 --------------------------------------------------------------------------------
 
