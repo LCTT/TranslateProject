@@ -1,10 +1,11 @@
-迁移LVM分区到新的逻辑卷（驱动器）——第六部分
+迁移LVM分区到新的逻辑卷/驱动器（第六部分）
 ================================================================================
 
-这是我们正在开展的逻辑卷管理系列的第六部分。在本文中，我们将为大家展示怎样来在线将现存的逻辑卷迁移到其它新的驱动器。在开始之前，我想要先来介绍一下LVM迁移及其特性。
+这是我们正在进行的LVM系列的第六部分。在本文中，我们将为大家展示怎样在线将现存的逻辑卷迁移到其它新的驱动器。在开始之前，我想要先来介绍一下LVM迁移及其特性。
 
 ![LVM Storage Migration](http://www.tecmint.com/wp-content/uploads/2014/10/LVM-Migrations.png)
-LVM存储迁移
+
+*LVM存储迁移*
 
 
 ### 什么是LVM迁移？ ###
@@ -17,7 +18,7 @@ LVM存储迁移
 - 我们可以使用任何类型的磁盘，如SATA、SSD、SAS、SAN storage iSCSI或者FC。
 - 在线迁移磁盘，而且数据不会丢失。
 
-在LVM迁移中，我们将交换各个卷、文件系统以及位于现存存储中的数据。例如，如果我们有一个单一逻辑卷，它已经映射到了物理卷，而该物理卷是一个物理硬盘驱动器。
+在LVM迁移中，我们将交换各个卷、文件系统以及位于已有的存储中的数据。例如，如果我们有一个单一逻辑卷，它已经映射到了物理卷，而该物理卷是一个物理硬盘驱动器。
 
 现在，如果我们需要升级服务器存储为SSD硬盘驱动器，我们首先需要考虑什么？重新格式化磁盘？不！我们不必重新格式化服务器，LVM可以选择将这些旧的SATA驱动器上的数据迁移到新的SSD驱动器上。在线迁移将会支持任何类型的磁盘，不管是本地驱动器，还是SAN或者光纤通道都可以。
 
@@ -35,7 +36,8 @@ LVM存储迁移
     # lvs
 
 ![Check Logical Volume Disk](http://www.tecmint.com/wp-content/uploads/2014/10/Check-Logical-Volume-Disk.png)
-检查逻辑卷磁盘
+
+*检查逻辑卷磁盘*
 
 ### 步骤2： 检查新添加的驱动器 ###
 
@@ -44,7 +46,8 @@ LVM存储迁移
     # fdisk -l | grep dev
 
 ![Check New Added Drive](http://www.tecmint.com/wp-content/uploads/2014/10/Check-New-Added-Drive.png)
-检查新添加的驱动器
+
+*检查新添加的驱动器*
 
 **注意**：你看到上面屏幕中的内容了吗？新的驱动器已经被成功添加了，其名称为“**/dev/sda**”。
 
@@ -57,7 +60,8 @@ LVM存储迁移
     # cat tecmint.txt
 
 ![Check Logical Volume Data](http://www.tecmint.com/wp-content/uploads/2014/10/Check-Logical-Volume-Data.png)
-检查逻辑卷数据
+
+*检查逻辑卷数据*
 
 **注意**：出于演示的目的，我们已经在**/mnt/lvm**挂载点下创建了两个文件，我们将在线将这些数据迁移到新的驱动器中。
 
@@ -67,7 +71,8 @@ LVM存储迁移
     # vgs -o+devices | grep tecmint_vg
 
 ![Confirm Logical Volume Names](http://www.tecmint.com/wp-content/uploads/2014/10/Confirm-Logical-Volume-Names.png)
-确认逻辑卷名称
+
+*确认逻辑卷名称*
 
 **注意**：看到上面屏幕中的内容了吗？“**vdb**”容纳了卷组**tecmint_vg**。
 
@@ -79,7 +84,8 @@ LVM存储迁移
     # pvs
 
 ![Create Physical Volume](http://www.tecmint.com/wp-content/uploads/2014/10/Create-Physical-Volume.png)
-创建物理卷
+
+*创建物理卷*
 
 **6.**接下来，使用‘vgextend命令’来添加新创建的物理卷到现存卷组tecmint_vg。
 
@@ -87,14 +93,16 @@ LVM存储迁移
     # vgs
 
 ![Add Physical Volume](http://www.tecmint.com/wp-content/uploads/2014/10/Add-Physical-Volume.png)
-添加物理卷
+
+*添加物理卷*
 
 **7.**要获得卷组的完整信息列表，请使用‘vgdisplay’命令。
 
     # vgdisplay tecmint_vg -v
 
 ![List Volume Group Info](http://www.tecmint.com/wp-content/uploads/2014/10/List-Volume-Group-Info.png)
-列出卷组信息
+
+*列出卷组信息*
 
 **注意**：在上面屏幕中，我们可以看到在输出结果的结束处，我们的PV已经添加到了卷组中。
 
@@ -108,7 +116,8 @@ LVM存储迁移
     # ls -l /dev | grep vd
 
 ![List Device Information](http://www.tecmint.com/wp-content/uploads/2014/10/List-Device-Information.png)
-列出设备信息
+
+*列出设备信息*
 
 **注意**：在上面的命令中，我们可以看到主设备号是**252**，次设备号是**17**，它连接到了**vdb1**。希望你理解了上面命令的输出。
 
@@ -122,7 +131,8 @@ LVM存储迁移
 - **1** = 添加单个镜像
 
 ![Mirroring Method Migration](http://www.tecmint.com/wp-content/uploads/2014/10/Mirroring-Method-Migration.png)
-镜像法迁移
+
+*镜像法迁移*
 
 **注意**：上面的迁移过程根据卷的大小会花费一段时间。
 
@@ -131,14 +141,16 @@ LVM存储迁移
     # lvs -o+devices
 
 ![Verify Converted Mirror](http://www.tecmint.com/wp-content/uploads/2014/10/Verify-Converted-Mirror.png)
-验证转换的镜像
+
+*验证转换的镜像*
 
 **11.**当你确认转换的镜像没有任何问题后，你可以移除旧的虚拟磁盘**vdb1**。**-m**选项将移除镜像，先前我们使用**l**来添加镜像。
 
     # lvconvert -m 0 /dev/tecmint_vg/tecmint_lv /dev/vdb1
 
 ![Remove Virtual Disk](http://www.tecmint.com/wp-content/uploads/2014/10/Remove-Virtual-Disk.png)
-移除虚拟磁盘
+
+*移除虚拟磁盘*
 
 **12.**在旧虚拟磁盘移除后，你可以使用以下命令来再次检查逻辑卷设备。
 
@@ -147,7 +159,8 @@ LVM存储迁移
     # ls -l /dev | grep sd
 
 ![Check New Mirrored Device](http://www.tecmint.com/wp-content/uploads/2014/10/Check-New-Mirrored-Device.png)
-检查新镜像的设备
+
+*检查新镜像的设备*
 
 在上面的图片中，你看到了吗？我们的逻辑卷现在依赖于**8,1**，名称为**sda1**。这说明我们的迁移过程已经完成了。
 
@@ -157,7 +170,8 @@ LVM存储迁移
     # cat tecmin.txt 
 
 ![Check Mirrored Data](http://www.tecmint.com/wp-content/uploads/2014/10/Check-Mirrored-Data.png)
-检查镜像的数据
+
+*检查镜像的数据*
 
 
     # vgreduce /dev/tecmint_vg /dev/vdb1
@@ -170,7 +184,8 @@ LVM存储迁移
     # lvs
 
 ![Delete Virtual Disk](http://www.tecmint.com/wp-content/uploads/2014/10/Delete-Virtual-Disk.png)
-删除虚拟磁盘
+
+*删除虚拟磁盘*
 
 ### 步骤6： LVM pvmove镜像法 ###
 
@@ -190,7 +205,7 @@ via: http://www.tecmint.com/lvm-storage-migration/#comment-331336
 
 作者：[Babin Lonston][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
