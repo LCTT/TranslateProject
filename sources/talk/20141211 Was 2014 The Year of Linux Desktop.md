@@ -14,9 +14,9 @@
 
 **看来Linux在2014年有很多改变，许多用户都表示今年Linux的确有进步，但是仅凭这个就能断定2014年就是"Linux桌面之年"吗？**
 
-"Linux桌面之年"这句话，在过去几年就被传诵得像句颂歌一样， and it's basically trying to mark all the progress registered until now in a way that makes sense. This kind of stuff hasn't happened so far and there is no precedent for the kind of growth we're witnessing, so it's easy to understand why Linux users might look at it from this perspective.
+"Linux桌面之年"这句话，在过去几年就被传诵得像句颂歌一样，可以说是在试图用一种比较有意义的方式来标记它的发展进程。此类事情目前还没有发生过，在我们的见证下也从无先例，所以这就不难理解为什么Linux用户会用这个角度去看待这句话。
 
-Most software and hardware domains don't usually go through this kind of fast progress and things happen at a slower pace, but things have been wild even for people who have a better insight into the industry. It's hard, if not impossible, to pinpoint a certain moment or a certain event, but Linux development exploded and changed exponentially in the course of just a couple of years.
+大多数软件和硬件领域不太会通过这种快速Most software and hardware domains don't usually go through this kind of fast progress and things happen at a slower pace, but things have been wild even for people who have a better insight into the industry. It's hard, if not impossible, to pinpoint a certain moment or a certain event, but Linux development exploded and changed exponentially in the course of just a couple of years.
 
 ### Linux桌面之年这句话不可轻言 ###
 
