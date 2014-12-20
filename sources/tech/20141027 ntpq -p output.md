@@ -1,5 +1,3 @@
-[felixonmars translating...]
-
 “ntpq -p” output
 ================================================================================
 The [Gentoo][1] (and others?) [incomplete man pages for “ntpq -p”][2] merely give the description: “*Print a list of the peers known to the server as well as a summary of their state.*”
