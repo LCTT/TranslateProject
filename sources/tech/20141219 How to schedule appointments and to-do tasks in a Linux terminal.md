@@ -1,3 +1,5 @@
+Translating-----geekpi
+
 How to schedule appointments and to-do tasks in a Linux terminal
 ================================================================================
 If you are a Linux system administrator who enjoys spending your time in terminal-land, but also needs a way to stay on top of your everyday tasks, appointments and meetings, you will find [calcurse][1] to be a very useful tool. calcurse combines a calendar, a to-do list manager, a scheduler and a configurable notification system into one piece of software with a nice ncurses-based interface. At the same time, it does not confine you in a terminal, but also allows you to export your calendars and notes into other printer-friendly formats.
