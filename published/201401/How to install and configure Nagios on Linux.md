@@ -73,21 +73,21 @@ Nagios安装过程中可以设置邮件服务器，安装后也可以进行自�
     root@mrtg:/etc/nagios3/conf.d/# vim linux-server.cfg    
 -
 	define host{
-	name					linux-server	; 名称，需修改
+	name						linux-server	; 名称，需修改
 	notifications_enabled		1   
 	event_handler_enabled		1   
 	flap_detection_enabled		1   
 	failure_prediction_enabled	1   
-	process_perf_data		1   
+	process_perf_data			1   
 	retain_status_information	1   
 	retain_nonstatus_information	1 
-	check_command	example-host-check	; 检查所用脚本，需修改
-	check_interval  3 		; 连续检查的间隔，需修改
-	max_check_attempts  3   ; 产生邮件告警前的自检次数，需修改
-	notification_interval   0
+	check_command				example-host-check	; 检查所用脚本，需修改
+	check_interval  			3 		; 连续检查的间隔，需修改
+	max_check_attempts  		3       ; 产生邮件告警前的自检次数，需修改
+	notification_interval   	0
 	notification_period 24x7
 	notification_options		d,u,r
-	contact_groups			admins	; 邮件将要发送至的组，需修改
+	contact_groups				admins	; 邮件将要发送至的组，需修改
 	register0
  	}
 
@@ -100,22 +100,22 @@ Nagios安装过程中可以设置邮件服务器，安装后也可以进行自�
     root@mrtg:/etc/nagios3/conf.d/# vim cisco-device.cfg 
 -
 	define host{
-	name				cisco-device    ；名称，需修改
+	name						cisco-device    ；名称，需修改
 	notifications_enabled		1   
 	event_handler_enabled		1   
 	flap_detection_enabled		1   
 	failure_prediction_enabled	1   
-	process_perf_data		1   
+	process_perf_data			1   
 	retain_status_information	1   
 	retain_nonstatus_information	1 
-	check_command    	example-host-check	; 检查时使用的脚本，需修改
-	check_interval              	3 	; 连续检查间隔，需修改
-	max_check_attempts          	3 ; 产生邮件告警前的自检次数，需修改
-	notification_interval       	0
-	notification_period         	24x7            
+	check_command    			example-host-check	; 检查时使用的脚本，需修改
+	check_interval              3 	; 连续检查间隔，需修改
+	max_check_attempts          3   ; 产生邮件告警前的自检次数，需修改
+	notification_interval       0
+	notification_period         24x7            
 	notification_options		d,u,r
-	contact_groups			admins	; 邮件将要发至的组，需修改
-	register                        0       
+	contact_groups				admins	; 邮件将要发至的组，需修改
+	register                    0       
     }
 
 ### 添加主机 ###
@@ -148,13 +148,13 @@ Nagios安装过程中可以设置邮件服务器，安装后也可以进行自�
     root@mrtg:/etc/nagios3/conf.d/# vim hostgroups_nagios2.cfg 
 -
 	define hostgroup {
-	hostgroup_name		linux-server	   ; 主机组名
+	hostgroup_name	linux-server	; 主机组名
 	alias			Linux Servers
 	members			our-server      ; 组员列表
     }
 	 
   	define hostgroup {
-	hostgroup_name		cisco-device    ; 主机组名
+	hostgroup_name	cisco-device    ; 主机组名
 	alias			Cisco Devices
 	members			our-server      ; comma separated list of members
     }
@@ -176,18 +176,18 @@ Nagios安装过程中可以设置邮件服务器，安装后也可以进行自�
 -
 	define service {
 	hostgroup_name		      linux-server
-	service_description           Linux Servers
-	check_command                 example-host-check
-	use                           generic-service
-	notification_interval 0 ; 初始化设置为0
+	service_description       Linux Servers
+	check_command             example-host-check
+	use                       generic-service
+	notification_interval 	  0 ; 初始化设置为0
 	}
 	
 	define service {
 	hostgroup_name		      cisco-device
 	service_description	      Cisco Devices
-	check_command                 example-host-check
-	use                           generic-service
-	notification_interval 0 ; 初始化设置为0
+	check_command             example-host-check
+	use                       generic-service
+	notification_interval 	  0 ; 初始化设置为0
 	}
 
 ### 联系人定义 ###
@@ -205,12 +205,12 @@ Nagios安装过程中可以设置邮件服务器，安装后也可以进行自�
 	host_notification_options       d,r
 	service_notification_commands   notify-service-by-email
 	host_notification_commands      notify-host-by-email
-	email                    root@localhost, sentinel@example.tst
+	email                    		root@localhost, sentinel@example.tst
 	}
 
 最后，试运行初始化检测是否有配置错误。如果没有错误，Nagios开始安全运行。
 
-    root@mrtg:~#nagios –v /etc/nagios3/nagios.cfg
+    root@mrtg:~# nagios -v /etc/nagios3/nagios.cfg
     root@mrtg:~# service nagios3 restart 
 
 ## CentOS/RHEL上的Nagios配置 ##
@@ -229,33 +229,33 @@ Redhat系统中Nagios的配置文件地址如下所示。
     [root@mrtg objects]# vim templates.cfg 
 -
 	 define host{
-	 name				linux-server    
-     use				generic-host    
+	 name					linux-server    
+     use					generic-host    
      check_period			24x7      
-     check_interval		3
-     retry_interval		1
+     check_interval			3
+     retry_interval			1
      max_check_attempts		3
-     check_command		example-host-check
-     notification_period	        24x7
+     check_command			example-host-check
+     notification_period	24x7
      notification_interval	0
-     notification_options	        d,u,r
-     contact_groups		admins
-     register			0
+     notification_options	d,u,r
+     contact_groups			admins
+     register				0
      }
-  
-  define host{
-     name				cisco-router    
-     use				generic-host    
+
+   	 define host{
+     name					cisco-router    
+     use					generic-host    
      check_period			24x7      
-     check_interval		3
-     retry_interval		1
+     check_interval			3
+     retry_interval			1
      max_check_attempts		3
-     check_command		example-host-check
-     notification_period	        24x7
+     check_command			example-host-check
+     notification_period	24x7
      notification_interval	0
-     notification_options	        d,u,r
-     contact_groups		admins
-     register			0
+     notification_options	d,u,r
+     contact_groups			admins
+     register				0
      }
 
 ### 添加主机和主机组 ###
@@ -267,7 +267,7 @@ Redhat系统中Nagios的配置文件地址如下所示。
 -
     #Adding Linux server
     define host{
-	use		linux-server
+	use			linux-server
 	host_name	our-server
 	alias		our-server
 	address		172.17.1.23
@@ -275,7 +275,7 @@ Redhat系统中Nagios的配置文件地址如下所示。
 	
   	#Adding Cisco Router
   	define host{
-	use		cisco-router
+	use			cisco-router
 	host_name	our-router
 	alias		our-router
 	address		172.17.1.1
@@ -310,10 +310,10 @@ Redhat系统中Nagios的配置文件地址如下所示。
 告警要发送的邮件地址添加至Nagios中。
 
     [root@objects objects]# vim contacts.cfg 
--    
+-
 	define contact{
 	contact_name	nagiosadmin       
-	use			generic-contact
+	use				generic-contact
 	alias			Nagios Admin
 	email			nagios@localhost, sentinel@example.tst
     }
@@ -326,7 +326,7 @@ Redhat系统中Nagios的配置文件地址如下所示。
 
 ### 配置后访问Nagios ###
 
-现在一切就绪，可以开始Nagios之旅了。Ubuntu/Debian用户可以通过打开http://IP地址/nagios3网页访问Nagios，CentOS/RHEL用户可以打开http://IP地址/nagios，如http://172.17.1.23/nagios3来访问Nagios。“nagiosadmin”用户则需要认证来访问页面。
+现在一切就绪，可以开始Nagios之旅了。Ubuntu/Debian用户可以通过打开 http://IP地址/nagios3 网页访问Nagios，CentOS/RHEL用户可以打开 http://IP地址/nagios ，如 http://172.17.1.23/nagios3 来访问Nagios。“nagiosadmin”用户则需要认证来访问页面。
 
 [![](http://farm4.staticflickr.com/3834/11198394806_4f4a753778_z.jpg)][9]
 

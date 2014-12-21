@@ -1,5 +1,3 @@
-barney-ro translating
-
 5 Awesome Open Source Backup Software For Linux and Unix-like Systems
 ================================================================================
 A good backup plan is essential in order to have the ability to recover from

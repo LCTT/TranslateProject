@@ -70,7 +70,7 @@ Carla Schroder著有The Book of Audacity, Linux Cookbook, Linux Networking Cookb
 via: http://www.smallbusinesscomputing.com/biztools/5-best-open-source-web-browser-security-apps.html
 
 作者：[Carla Schroder][a]
-译者：[译者ID](https://github.com/yupmoon)
+译者：[yupmoon](https://github.com/yupmoon)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
