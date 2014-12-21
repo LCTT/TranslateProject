@@ -1,3 +1,5 @@
+Translating---------geekpi
+
 How to block unwanted IP addresses on Linux efficiently
 ================================================================================
 You may want to block IP addresses on your Linux box under various circumstances. For example, as an end user you may want to protect yourself from known spyware or tracker IP addresses. Or when you are running P2P software, you may want to filter out connections from networks associated with anti-P2P activity. If you are a sysadmin, you may want to ban access from spam IP addresses to your production mail server. Or you may wish to block web server access from certain countries for some reason. In many cases, however, your IP address block list can grow quickly to tens of thousands of IP addresses or IP address blocks. How can you deal with it?
