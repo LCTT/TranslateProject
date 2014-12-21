@@ -1,10 +1,10 @@
-5大最佳开源的浏览器安全应用
+5个最佳开源的浏览器安全应用
 ================================================================================
-浏览器是现在各种在线服务的入口。电脑安全问题迄今仍未得到解决，技术进步为恶意软件提供了新的途径，感染我们的设备，入侵商业网络。例如，智能手机与平板为恶意软件--及其同伙“[恶意广告][1]”--带来一片全新天地，它们在其中腾挪作乱。
+浏览器是现在各种在线服务的入口。电脑安全问题迄今仍未得到解决，技术进步为恶意软件提供了新的途径，感染我们的设备、入侵商业网络。例如，智能手机与平板为恶意软件--及其同伙“[恶意广告][1]”--带来一片全新天地，它们在其中腾挪作乱。
 
 恶意广告在合法广告与合法网络中注入恶意软件。当然你可能会认为“合法”广告与网络与非法广告与网络之间仅有一线之隔。但是请不要偏题哦。隐私与安全天生就是一对兄弟，保护隐私也就是保护你的安全。
 
-Firefox, Chrome, 以及 Opera当仁不让属最棒的浏览器：性能最佳、兼容性最好、以及安全性最优。以下五个开源安全应用安装于浏览器后会助你抵御种种威胁。
+Firefox, Chrome, 以及 Opera 当仁不让属最棒的浏览器：性能最佳、兼容性最好、以及安全性最优。以下五个开源安全应用安装于浏览器后会助你抵御种种威胁。
 
 ### 保护隐私： 开源浏览器安全应用 ###
 
@@ -12,11 +12,11 @@ Firefox, Chrome, 以及 Opera当仁不让属最棒的浏览器：性能最佳、
 
 广告网络为恶意软件提供了肥沃的土壤。一个广告网络可以覆盖数千站点，因此攻陷一个广告网络就相当于攻陷数千台机器。AdBlock及其衍生品—[AdBlock Plus][2], [AdBlock Pro][3], 与 [AdBlock Edge][4]--都是屏蔽广告的优秀工具，可以让那些充斥烦人广告的网站重新还你一片清静。
 
-当然，凡事都有两面性：上述做法损害了依靠广告收入的站点的利益。这些工具一键式白名单功能，对于那些你希望支持的网站，你可以通过白名单功能关闭这些网站的广告屏蔽。（真的，我亲爱的站长们，如果你不希望网站访问者屏蔽你的广告，那么就适可而止，不要让人反感。）
+当然，凡事都有两面性：上述做法损害了依靠广告收入的站点的利益。这些工具一键式白名单功能，对于那些你希望支持的网站，你可以通过白名单功能关闭这些网站的广告屏蔽。（真的，我亲爱的站长们，如果你不希望网站访问者屏蔽你的广告，那么就适可而止，不要让人反感。当然，作为粉丝，也请您支持您喜爱的站点，将它们放到白名单吧。）
 
 ![](http://www.smallbusinesscomputing.com/imagesvr_ce/5731/fig-1-easylist_1.jpg)
 
-图1:在Ad Blocker中添加其它过滤规则。
+*图1:在Ad Blocker中添加其它过滤规则。*
 
 Ad Blocker们不仅能屏蔽广告；它们还能屏蔽网站跟踪爬虫与恶意域名。要打开额外过滤规则，点击ad blocker图标 > 点击**首选项**，转至**过滤规则订阅**标签。点击按纽**添加订阅过滤规则**，然后加入**Easy Privacy + EasyList**规则。加入恶意域名过滤也是个不错的选择；它会屏蔽那些供恶意软件与间谍软件寄生的域名。Adblock可在Firefox, Chrome, Opera, Safari, IE, 以及Android平台下工作。
 
@@ -24,7 +24,7 @@ Ad Blocker们不仅能屏蔽广告；它们还能屏蔽网站跟踪爬虫与恶�
 
 浏览器扩展HTTPS Everywhere可确保在网站HTTPS可用的时候，总是以HTTPS方式连接到站点。HTTPS意味着你的连接是以SSL（安全套接层）方式加密的，SSL协议通常用于加密网站与电子邮件连接。HTTPS Everywhere可在Firefox, Chrome, 及Opera下使用。
 
-安装了HTTPS Everywhere之后，它会询问你是否希望启用SSL检测程序。点击是，因为SSL检测程序会提供额外保护，防止中间人攻击与虚假SSL证书攻击。HTTPS Everywhere可在Firefox, Chrome, Opera, Safari, IE, 以及Android平台下工作。
+安装了HTTPS Everywhere之后，它会询问你是否希望启用SSL检测程序。点击“是”，因为SSL检测程序会提供额外保护，防止中间人攻击与虚假SSL证书攻击。HTTPS Everywhere可在Firefox, Chrome, Opera, Safari, IE, 以及Android平台下工作。
 
 #### 3. [Social Fixer][6] ####
 
@@ -37,7 +37,9 @@ Social Fixer本身不是安全工具，但它具有两个重要的安全特性�
 
 ![](http://www.smallbusinesscomputing.com/imagesvr_ce/2858/fig-2-socialfixer_1.jpg)
 
-图2: 使用Social Fixer匿名化Facebook网面。
+*图2: 使用Social Fixer匿名化Facebook网面。*
+
+（LCTT 译注：好吧，这个应用和我等无关~~）
 
 #### 4. [Privacy Badger][7] ####
 
@@ -47,7 +49,7 @@ AdBlock也能拦截这些乌七八糟的东西，不过Privacy Badger在此方�
 
 ![](http://www.smallbusinesscomputing.com/imagesvr_ce/9256/fig-3-privacybadger_1.jpg)
 
-图3: Privacy Badger拦截跟踪站点。
+*图3: Privacy Badger拦截跟踪站点。*
 
 Privacy Badger装好后就能使用了。点击图标，看看它对你浏览的网页都拦截了哪些东西。你可以试试访问Huffingtonpost.com，这是一家不在每一个页面塞满第三方组件誓不罢休的网站（图3）。
 
@@ -63,7 +65,7 @@ Disconnect还有安全搜索功能，可以阻止搜索引擎爱挖数据的癖�
 
 想象一下，网页上所有东西都腾空而出，奔你而去。当然这一切都是抽象的且在幕后悄然发生，不象有人正在猛击窗户试图进入你家那么明显罢了。但是，威胁倒是实实在在的，而且数不胜数，所以你必须采取预防措施，来保护自己。
 
-Carla Schroder著有The Book of Audacity, Linux Cookbook, Linux Networking Cookbook等书，并撰写了上百篇Linux指南文章。她曾担任Linux Planet与Linux Today网站总编。
+本文作者 Carla Schroder 著有The Book of Audacity, Linux Cookbook, Linux Networking Cookbook等书，并撰写了上百篇Linux指南文章。她曾担任Linux Planet与Linux Today网站总编。
 
 --------------------------------------------------------------------------------
 
@@ -71,7 +73,7 @@ via: http://www.smallbusinesscomputing.com/biztools/5-best-open-source-web-brows
 
 作者：[Carla Schroder][a]
 译者：[yupmoon](https://github.com/yupmoon)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
