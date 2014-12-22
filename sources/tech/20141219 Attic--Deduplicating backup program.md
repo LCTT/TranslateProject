@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Attic – Deduplicating backup program
 ================================================================================
 Attic is a deduplicating backup program written in Python. The main goal of Attic is to provide an efficient and secure way to backup data. The data deduplication technique used makes Attic suitable for daily backups since only the changes are stored.
