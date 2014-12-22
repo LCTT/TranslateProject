@@ -1,17 +1,18 @@
-如何在Linux下使用Rsync
+如何在Linux下使用rsync
 ================================================================================
-对于组织和公司，数据对他们是最重要的，即使对于电子商务，数据也是同样重要的。Rsync是一款通过网络备份重要数据的工具或者软件。它同样是一个在类Unix和Window系统上通过网络在系统间同步文件夹和文件的网络协议。Rsync可以复制或者显示目录或者复制的文件。Rsync默认监听TCP 873端口，通过过远程shell如rsh和ssh复制文件。Rsync必须在远程和本地系统上都安装。
+对于各种组织和公司，数据对他们是最重要的，即使对于电子商务，数据也是同样重要的。Rsync是一款通过网络备份重要数据的工具/软件。它同样是一个在类Unix和Window系统上通过网络在系统间同步文件夹和文件的网络协议。Rsync可以复制或者显示目录并复制文件。Rsync默认监听TCP 873端口，通过远程shell如rsh和ssh复制文件。Rsync必须在远程和本地系统上都安装。
 
 rsync的主要好处是：
 
-**速度**：最初会咋本地和远程之间拷贝所有内容。下次，只会传输发生改变的块或者字节。
+**速度**：最初会在本地和远程之间拷贝所有内容。下次，只会传输发生改变的块或者字节。
 
-**安全**：传输通过ssh协议加密数据。
+**安全**：传输可以通过ssh协议加密数据。
 
-**低带宽**：rsync在两端压缩和解压数块。
+**低带宽**：rsync可以在两端压缩和解压数据块。
 
 语法:
-#rsysnc [options] source path destination path
+
+	#rsysnc [options] source path destination path
 
 ### 示例： 1 - 启用压缩 ###
 
@@ -25,7 +26,7 @@ rsync的主要好处是：
 
 上面的rsync命令使用了-z来启用压缩，-v是可视化，-r是递归。上面在本地的/home/aloft/和/backuphomedir之间同步。
 
-### 示例： 2 - 保留文件按/文件夹属性 ###
+### 示例： 2 - 保留文件和文件夹的属性 ###
 
     [root@localhost /]# rsync -azvr /home/aloft/ /backuphomedir
     building file list ... done
@@ -37,7 +38,7 @@ rsync的主要好处是：
     sent 514 bytes received 92 bytes 1212.00 bytes/sec
     total size is 324 speedup is 0.53
 
-上面我们使用了-a选项，它保留了所有人和所属组，时间戳、软链接、权限、递归模式。
+上面我们使用了-a选项，它保留了所有人和所属组、时间戳、软链接、权限，并以递归模式运行。
 
 ### 示例： 3 - 同步本地到远程主机 ###
 
@@ -86,7 +87,7 @@ rsync的主要好处是：
 
 ### 示例: 6 - 备份 ###
 
-rsync命令可以用来备份linux
+rsync命令可以用来备份linux。
 
 你可以在cron中使用rsync安排备份。
 
@@ -104,7 +105,7 @@ via: http://linoxide.com/how-tos/rsync-copy/
 
 作者：[Bobbin Zachariah][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
