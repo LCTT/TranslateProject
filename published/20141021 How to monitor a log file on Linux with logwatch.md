@@ -1,8 +1,8 @@
 Linux 系统中使用 logwatch 监控日志文件
 ================================================================================
-Linux 操作系统和许多应用程序会创建特殊的文件来记录它们的运行事件，这些文件通常被称作“日志”。当要了解操作系统或第三方应用程序的行为或进行故障排队的话，这些系统日志或特写的应用程序日志文件是必不可少的的工具。但是，日志文件并没有您们所谓的“清晰”或“容易”这种程度的可读性。手工分析原始的日志文件简直是浪费时间，并且单调乏味。出于这个原因，对于系统管理员来说，发现任何一款能把原始的日志文件转换成更人性化的记录摘要的工具，将会受益无穷。
+Linux 操作系统和许多应用程序会创建特殊的文件来记录它们的运行事件，这些文件通常被称作“日志”。当要了解操作系统或第三方应用程序的行为或进行故障排查时，这些系统日志或特定的应用程序日志文件是必不可少的的工具。但是，日志文件并没有您们所谓的“清晰”或“容易”这种程度的可读性。手工分析原始的日志文件简直是浪费时间，并且单调乏味。出于这个原因，对于系统管理员来说，发现任何一款能把原始的日志文件转换成更人性化的记录摘要的工具，将会受益无穷。
 
-[logwatch][1] 是一款用 Perl 语言编写的开源日志解析分析器。它能对原始的日志文件进行解析并转换成结构化格式的文档，也能根据您的使用情况和需求来定制报告。logwatch 的主要目的是生成更易于使用的日志摘要，并不是用来对日志进行实时的处理和监控的。正因为如此，logwatch 通常被设定好时间和频率的自动定时任务来调度运行或者是有需要日志处理的时候从命令行里手动运行。一旦日志报告生成，logwatch 会通过电子邮件把这报告发送给您，您可以把它保存成文件或者在屏幕上直接显示。
+[logwatch][1] 是一款用 Perl 语言编写的开源日志解析分析器。它能对原始的日志文件进行解析并转换成结构化格式的文档，也能根据您的使用情况和需求来定制报告。logwatch 的主要目的是生成更易于使用的日志摘要，并不是用来对日志进行实时的处理和监控的。正因为如此，logwatch 通常被设定好时间和频率的自动定时任务来调度运行或者是有需要日志处理的时候从命令行里手动运行。一旦日志报告生成，logwatch 可以通过电子邮件把这报告发送给您，您可以把它保存成文件或者直接显示在屏幕上。
 
 Logwatch 报告的详细程度和报告覆盖范围是完全可定制化的。Logwatch 的日志处理引擎也是可扩展的，从某种意义上来说，如果您想在一个新的应用程序中使用 logwatch 功能的话，只需要为这个应用程序的日志文件编写一个日志处理脚本（使用 Perl 语言），然后挂接到 logwatch 上就行。
 
@@ -20,13 +20,13 @@ logwatch 有一点不好的就是，在它生成的报告中没有详细的时�
 
 ### 配置 Logwatch ###
 
-安装时，主要的配置文件（logwatch.conf）被放到 **/etc/logwatch/conf** 目录中。此文件定义的设置选项会覆盖掉定义在 /usr/share/logwatch/default.conf/logwatch.conf 文件中的系统级设置。
+安装时，主要的配置文件（logwatch.conf）被放到 **/etc/logwatch/conf** 目录中。此文件（默认是空的）定义的设置选项会覆盖掉定义在 /usr/share/logwatch/default.conf/logwatch.conf 文件中的系统级设置。
 
-在命令行中，启动 logwatch, 如果不带参数的话，将会使用 /etc/logwatch/conf/logwatch.conf 文件中定义的自定义选项。但，只要一指定参数，它们就会覆盖 /etc/logwatch/conf/logwatch.conf 文件中的任意默认/自定义设置。
+在命令行中，启动 logwatch, 如果不带参数的话，将会使用 /etc/logwatch/conf/logwatch.conf 文件中定义的选项。但，只要一指定参数，它们就会覆盖 /etc/logwatch/conf/logwatch.conf 文件中的任意默认/自定义设置。
 
 这篇文章里，我们会编辑 /etc/logwatch/conf/logwatch.conf 文件来对一些默认的设置项做些个性化设置。
 
-    Detail = <Low, Med, High, or a number>
+    Detail = <Low, Med, High, 或数字>
 
 “Detail” 配置指令控制着 logwatch 报告的详细程度。它可以是个正整数，也可以是分别代表着10、5和0数字的 High、Med、Low 几个选项。
 
@@ -53,7 +53,7 @@ logwatch 有一点不好的就是，在它生成的报告中没有详细的时�
     Service = <service-name-2>
     . . .
 
-“Service” 选项指定想要监控的一个或多个服务。在 /usr/share/logwatch/scripts/services 目录下列出的服务都能被监控，它们已经涵盖了重要的系统服务（例如,pam,secure,iptables,syslogd 等），也涵盖了一些像 sudo、sshd、http、fail2ban、samba等主流的应用服务。如果您想添加新的服务到列表中，得编写一个相应的日志处理 Perl 脚本，并把它放在这个目录中。
+“Service” 选项指定想要监控的一个或多个服务。在 /usr/share/logwatch/scripts/services 目录下列出的服务都能被监控，它们已经涵盖了重要的系统服务（例如：pam,secure,iptables,syslogd 等），也涵盖了一些像 sudo、sshd、http、fail2ban、samba等主流的应用服务。如果您想添加新的服务到列表中，得编写一个相应的日志处理 Perl 脚本，并把它放在这个目录中。
 
 如果这个选项要用来选择特定的服务话，您需要把 /usr/share/logwatch/default.conf/logwatch.conf 文件中的 "Service = All " 这一行注释掉。
 
@@ -123,7 +123,7 @@ via: http://xmodulo.com/monitor-log-file-linux-logwatch.html
 
 作者：[Gabriel Cánepa][a]
 译者：[runningwater](https://github.com/runningwater)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

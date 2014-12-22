@@ -51,7 +51,7 @@ Shell 脚本 - 使用 if 语句进行条件检测
         echo "Number is smaller"
     fi
 
-### If..elif..else..fi 语句 (Short for else if) ###
+### If..elif..else..fi 语句 (简写的 else if) ###
 
 Bourne Shell 的 if 语句语法中，else 语句里的代码块会在 if 条件为假时执行。我们还可以将 if 语句嵌套到一起，来实现多重条件的检测。我们可以使用 elif 语句（else if 的缩写）来构建多重条件的检测。
 
@@ -94,7 +94,7 @@ Bourne Shell 的 if 语句语法中，else 语句里的代码块会在 if 条件
 
 If 和 else 语句可以在一个 bash 脚本里相互嵌套。关键词 “fi” 表示里层 if 语句的结束，所有 if 语句必须使用 关键词 “fi” 来结束。
 
-基本 if 语句的 **嵌套语法**：
+基本 if 语句的**嵌套语法**：
 
     if [ 判断条件1 ]
     then
@@ -139,7 +139,7 @@ via: http://www.linuxtechi.com/shell-scripting-checking-conditions-with-if/
 
 作者：[Pradeep Kumar][a]
 译者：[ThomazL](https://github.com/ThomazL)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
