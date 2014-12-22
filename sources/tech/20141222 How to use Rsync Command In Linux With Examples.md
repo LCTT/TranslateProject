@@ -1,3 +1,5 @@
+Translating----geekpi
+
 How to use Rsync Command In Linux With Examples
 ================================================================================
 For organization and companies, data is most important for them, even specially E-commerce business, data is very critical to them. Rsysnc is tool or software which helps taking backup of critical data over the network. It also network protocol for Unix-like and Windows systems that synchronizes files and directories from one system to another system over the network. Rsysnc can copy or display directory and copy files. Rsysncd listens the defaults TCP port 873, copying files via a remote shell such as rsh or ssh. Rysync package must be installed on both remote system as well as local machine.
