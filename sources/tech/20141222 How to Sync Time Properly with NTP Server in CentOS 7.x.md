@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How to Sync Time Properly with NTP Server in CentOS 7.x
 ================================================================================
 **Chrony** is an open source and free application that helps you keep the system clock in sync with a NTP server, thus allowing you to keep the exact time. It consists of two programs chronyd and chronyc. chronyd is the daemon that runs in the background and adjusts the system clock which is running in the kernel to the time on a NTP server. It determines the rate at which the computer gains or loses time, and compensates for this. chronyc provides a user interface for monitoring the performance and configuring various settings. It can do so while running on the same computer as the chronyd instance it is controlling or a different remote computer.
