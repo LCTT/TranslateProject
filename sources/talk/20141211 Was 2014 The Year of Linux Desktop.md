@@ -16,19 +16,19 @@
 
 "Linux桌面年"这句话，在过去几年就被传诵得像句颂歌一样，可以说是在试图用一种比较有意义的方式来标记它的发展进程。此类事情目前还没有发生过，在我们的见证下也从无先例，所以这就不难理解为什么Linux用户会用这个角度去看待这句话。
 
-大多数软件和硬件领域不太会通过这种快速Most software and hardware domains don't usually go through this kind of fast progress and things happen at a slower pace, but things have been wild even for people who have a better insight into the industry. It's hard, if not impossible, to pinpoint a certain moment or a certain event, but Linux development exploded and changed exponentially in the course of just a couple of years.
+大多数软件和硬件领域不太会有这种快速的进步，都以较慢的速度发展，但是对于那些在工业领域有更好眼光的人来说，事情就会变得疯狂。即使有可能，针对某一时刻或某一事件还是比较困难的，但是Linux在几年的过程中还是以指数方式迅速发展成长。
 
 ### Linux桌面年这句话不可轻言 ###
 
 没有一个比较权威的人和机构能判定Linux桌面年已经到来或者已经过去，所以我们只能尝试根据迄今为止我们所看到的和用户所反映的去推断。有一些人比较保守，改变对他们影响不大，还有一些人则比较激进，永远不知满足。这真的要取决于你的见解了。
 
-The spark that seems to have put everything in motion appears to be the launch of Steam for Linux, although we've seen some important movement of the Linux gaming scene before that became a reality. In any case, Valve is probably the catalyst of the resurgence of what we're seeing today.
+燃点似乎是每个正在运作的东西The spark that seems to have put everything in motion appears to be the launch of Steam for Linux, 尽管although we've seen some important movement of the Linux gaming scene before that became a reality. 在任何情况下，Valve都可能是我们今天所看到的一系列复苏事件的催化剂。
 
-The Linux desktop has been in a kind of slow evolution in the past decade and nothing really changed. There have been a lot of innovations for sure, but the market share has remained almost the same. No matter how cool the desktop became or how many features Linux had well before anyone else, things have remained largely the same, and that includes the participation of companies making proprietary software. They largely ignored Linux.
+在过去的十年里，Linux桌面以一种缓慢的速度在发展，并没有什么真正的改变。创新肯定是有的，但是市场份额几乎还是保持不变。无论桌面变得多么酷或Linux相比之前的任何一版多出了多少特点，很大程度上还是在原地踏步，包括那些制作专有软件的公司，他们的参与度一直很小，基本上就忽略掉了Linux。
 
-Now, more companies have shown interest in the Linux platform in the past year than they did in the last 10. Maybe it's a natural evolution and Valve had nothing to do with it, but Linux has finally reached a level where it can be used and understood by regular users, not just people fascinated by open source.
+现在，相比过去的十年里，更多的公司表现出了对Linux平台的浓厚兴趣。或许这是一种自然地演变，Valve并没有做什么，但是Linux最终还是达到了一个能被普通用户接受并理解的水平，并不只是因为令人着迷的开源技术。
 
-The drivers are better, game studios are porting games now on a regular basis, applications and middleware that we never thought we would see on Linux have started to show up, the Linux kernel development has an incredible pace, the installation process for most of the major distros is usually trivial, and all of these are just the tip of the iceberg.
+驱动程序能力强了，游戏工作室就会定期移植游戏，在Linux中我们前所未见的应用和中间件就会开始出现。Linux内核发展达到了难以置信的速度，大多数发行版的安装过程通常都不怎么难，所有这一切都只是冰山一角。
 
 所以，当有人问你2014年是不是Linux桌面年时，你可以说“是的！”，因为Linux桌面完全统治了2014年。 
 
