@@ -1,4 +1,5 @@
-A Great Tool To Show Linux Command Progress Like % , ETA
+Translating by GOLinux!
+A Great Tool To Show Linux Command Progress Like ETA
 ================================================================================
 Coreutils Viewer (**cv**) is a simple program that can be used to show the progress of any of coreutils commands. It uses information from file descriptors to determine the progress of a command for example the cp command. The beauty of **cv** is that it can be used with other linux commands like watch and I/O redirection commands as you shall see. This allows you to use it in a script, or however you like, your imagination will be the limit.
 
