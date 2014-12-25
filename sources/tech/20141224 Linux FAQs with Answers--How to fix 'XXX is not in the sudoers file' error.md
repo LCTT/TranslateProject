@@ -1,13 +1,12 @@
-Translating by ZTinoZ
-Linux FAQs with Answers--How to fix “XXX is not in the sudoers file” error
+Linux有问必答时间--怎样解决“XXX is not in the sudoers file”错误
 ================================================================================
-> **Question**: I am trying to use sudo to run some privileged command on my Linux. However, when I attempt to do so, I am getting "[my-user-id] is not in the sudoers file. This incident will be reported." error message. How can I resolve this sudo error? 
+> **问题**:我想在我的Linux系统上使用sudo来运行一些特权命令，然而当我试图这么做时，我却得到了"[我的用户ID] is not in the sudoers file. This incident will be reported."的错误信息。我该怎么处理这种sudo错误呢？ 
 
-sudo is a program which enables specific groups of users to run a command with the privilege of another user (typically root). sudo comes with detailed logging capability, and offers finer granular control over which user can type what commands via sudo.
+sudo是一个允许特定的用户组用另一个用户(典型的代表是root)的特权来运行一个命令。sudo有详细的日志功能并且提供了细粒度控制 comes with detailed logging capability, and offers finer granular control over which user can type what commands via sudo.
 
 ### Sudo vs. Su ###
 
-The su command also offers similar privilege escalation capability. Difference between sudo and su is their authentication process and the granularity of priviledge change. su allows you to switch your login session to another user's, where you can then run any arbitrary programs with the user's privilege as many times as you want. You will have to know the target user's password to switch to the user though. On the other hand, sudo works on a per-command basis, allowing you to run a single command with root privilege. To use sudo, you don't have to know the root password, but enter your own password at sudo password prompt.
+su命令也提供了同样的特权升级功能，两者不同的是它们认证过程和特权变化的粒度。su allows you to switch your login session to another user's, where you can then run any arbitrary programs with the user's privilege as many times as you want. You will have to know the target user's password to switch to the user though. On the other hand, sudo works on a per-command basis, allowing you to run a single command with root privilege. To use sudo, you don't have to know the root password, but enter your own password at sudo password prompt.
 
 ### Add a User to Sudoers List ###
 
@@ -55,7 +54,7 @@ This change will be effective immediately, and you will be able to use sudo righ
 
 via: http://ask.xmodulo.com/fix-is-not-in-the-sudoers-file.html
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[ZTinoZ](https://github.com/ZTinoZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
