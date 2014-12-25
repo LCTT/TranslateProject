@@ -1,3 +1,4 @@
+Translating by ZTinoZ
 Linux FAQs with Answers--How to fix “XXX is not in the sudoers file” error
 ================================================================================
 > **Question**: I am trying to use sudo to run some privileged command on my Linux. However, when I attempt to do so, I am getting "[my-user-id] is not in the sudoers file. This incident will be reported." error message. How can I resolve this sudo error? 
