@@ -22,7 +22,7 @@
 
 没有一个比较权威的人和机构能判定Linux桌面年已经到来或者已经过去，所以我们只能尝试根据迄今为止我们所看到的和用户所反映的去推断。有一些人比较保守，改变对他们影响不大，还有一些人则比较激进，永远不知满足。这真的要取决于你的见解了。
 
-燃点似乎是每个正在运作的东西The spark that seems to have put everything in motion appears to be the launch of Steam for Linux, 尽管although we've seen some important movement of the Linux gaming scene before that became a reality. 在任何情况下，Valve都可能是我们今天所看到的一系列复苏事件的催化剂。
+点燃这一切的火花似乎就是Linux上的Steam平台，尽管在这变成现实之前我们已经看到了一些Linux游戏已经开始有重要的动作了。在任何情况下，Valve都可能是我们今天所看到的一系列复苏事件的催化剂。
 
 在过去的十年里，Linux桌面以一种缓慢的速度在发展，并没有什么真正的改变。创新肯定是有的，但是市场份额几乎还是保持不变。无论桌面变得多么酷或Linux相比之前的任何一版多出了多少特点，很大程度上还是在原地踏步，包括那些制作专有软件的公司，他们的参与度一直很小，基本上就忽略掉了Linux。
 
