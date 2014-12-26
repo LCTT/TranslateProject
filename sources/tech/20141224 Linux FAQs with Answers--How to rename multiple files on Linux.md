@@ -1,3 +1,5 @@
+Translating-----geekpi
+
 Linux FAQs with Answers--How to rename multiple files on Linux
 ================================================================================
 > **Question**: I know I can rename a file using mv command. But what if I want to change the name of many files? It will be tedius to invoke mv command for every such file. Is there a more convenient way to rename multiple files at once? 
