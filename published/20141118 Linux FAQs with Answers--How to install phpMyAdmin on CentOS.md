@@ -1,4 +1,4 @@
-Linux问答时间--如何在CentOS上安装phpMyAdmin
+Linux有问必答：如何在CentOS上安装phpMyAdmin
 ================================================================================
 > **问题**:我正在CentOS上运行一个MySQL/MariaDB服务，并且我想要通过网络接口来用phpMyAdmin来管理数据库。在CentOS上安装phpMyAdmin的最佳方法是什么？
 
@@ -108,7 +108,7 @@ phpMyAdmin是一款以PHP为基础，基于Web的MySQL/MariaDB数据库管理工
 
 ### 测试phpMyAdmin ###
 
-测试phpMyAdmin是否设置成功，访问这个页面：http://<web-server-ip-addresss>/phpmyadmin
+测试phpMyAdmin是否设置成功，访问这个页面：http://\<web-server-ip-addresss>/phpmyadmin
 
 ![](https://farm6.staticflickr.com/5606/15550758749_0f7ab66b5b_z.jpg)
 
@@ -153,14 +153,14 @@ phpMyAdmin是一款以PHP为基础，基于Web的MySQL/MariaDB数据库管理工
 via: http://ask.xmodulo.com/install-phpmyadmin-centos.html
 
 译者：[ZTinoZ](https://github.com/ZTinoZ)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [1]:http://xmodulo.com/set-web-based-database-management-system-adminer.html
-[2]:http://xmodulo.com/install-lamp-stack-centos.html
-[3]:http://xmodulo.com/install-lemp-stack-centos.html
-[4]:http://xmodulo.com/how-to-set-up-epel-repository-on-centos.html
+[2]:http://linux.cn/article-1567-1.html
+[3]:http://linux.cn/article-4314-1.html
+[4]:http://linux.cn/article-2324-1.html
 [5]:
 [6]:
 [7]:
