@@ -1,3 +1,6 @@
+Translating------geekpi
+
+
 Linux FAQs with Answers--How to install kernel headers on Linux
 ================================================================================
 > **Question**: I need to install kernel headers to install a device driver for my kernel. What is a proper way to install matching kernel headers on [insert your Linux distro]? 
