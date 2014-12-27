@@ -1,3 +1,4 @@
+(translating by runningwater)
 Linux FAQs with Answers--How to install 7zip on Linux
 ================================================================================
 > **Question**: I need to extract files from an ISO image, and for that I want to use 7zip program. How can I install 7zip on [insert your Linux distro]? 
@@ -66,7 +67,7 @@ To test the integrity of an archive:
 
 via:http://ask.xmodulo.com/install-7zip-linux.html 
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
