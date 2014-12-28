@@ -10,19 +10,19 @@ su命令也提供了同样的特权升级功能，两者不同的是它们认证
 
 ### 在Sudoers列表里添加用户 ###
 
-As a new user, if you attempt to run sudo command, you will encounter the following error. This means that you are not in the sudoers list which contains a group of users who are authorized to use sudo.
+作为一个新用户的你如果试图运行sudo命令，你会碰到以下错误。意思是你不在这个包含经过认证可以使用sudo特权的这么一个用户组的sudoers列表里。
 
     [my-user-id] is not in the sudoers file.  This incident will be reported.
 
-There are two ways to add you to sudoers list.
+有两个方法可以把你加入到sudoers列表中去。
 
-### Metho One ###
+### 方法一 ###
 
 The first method is to add you to the Linux group named sudo. This special Linux group is pre-configured to be able to use sudo. Thus once you are in the group, you can run sudo command.
 
 The following command will add you to sudo Linux group. Make sure to run the command as the root.
 
-    # adduser <username> sudo
+    # adduser <用户名> sudo
 
 Now confirm that your group membership has been updated. Use groups command to see a list of groups you currently belong to. The list must include sudo group.
 
@@ -34,7 +34,7 @@ Now confirm that your group membership has been updated. Use groups command to s
 
 he group membership change (and sudo access) will be activated once you log out and log back in.
 
-### Metho Two ###
+### 方法二 ###
 
 The second method to enable you to use sudo is to add yourself to /etc/sudoers configuration file directly.
 
