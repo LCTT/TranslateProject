@@ -1,3 +1,5 @@
+Translating---------geekpi
+
 Linux FAQs with Answers--How to check SSH protocol version on Linux
 ================================================================================
 > **Question**: I am aware that there exist SSH protocol version 1 and 2 (SSH1 and SSH2). What is the difference between SSH1 and SSH2, and how can I check which SSH protocol version is supported on a Linux server? 
