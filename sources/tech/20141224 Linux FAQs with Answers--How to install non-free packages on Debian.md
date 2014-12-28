@@ -1,3 +1,4 @@
+Translating by mtunique
 Linux FAQs with Answers--How to install non-free packages on Debian
 ================================================================================
 > **Question**: I need to install some proprietary device driver on Debian, which is part of a non-free package. However, I cannot find and install the package in my Debian box. How can I install non-free packages on Debian? 
@@ -38,7 +39,7 @@ Now you are ready to search and install any non-free package on Debian.
 
 via: http://ask.xmodulo.com/install-nonfree-packages-debian.html
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[mtunique](https://github.com/mtunique)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
