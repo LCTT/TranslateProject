@@ -18,13 +18,13 @@ su命令也提供了同样的特权升级功能，两者不同的是它们认证
 
 ### 方法一 ###
 
-The first method is to add you to the Linux group named sudo. This special Linux group is pre-configured to be able to use sudo. Thus once you are in the group, you can run sudo command.
+第一个方法是把你添加到名为sudo的Linux用户组里。这个特殊的Linux用户组是预配置来使用sudo的。因此，一旦你在这个组里面，那你就可以运行sudo命令了。
 
-The following command will add you to sudo Linux group. Make sure to run the command as the root.
+以下命令会把你加入到Linux的sudo组里，来确保让你能作为root用户来运行命令。
 
     # adduser <用户名> sudo
 
-Now confirm that your group membership has been updated. Use groups command to see a list of groups you currently belong to. The list must include sudo group.
+现在来确认你的组员资格有没有更新，使用groups命令来看看你当前属于哪个组的列表里。这个列表必定是包含sudo组的。
 
     $ groups 
 
@@ -32,7 +32,7 @@ Now confirm that your group membership has been updated. Use groups command to s
 
     alice adm cdrom sudo dip plugdev fuse lpadmin netdev sambashare davfs2 libvirtd docker promiscuous
 
-he group membership change (and sudo access) will be activated once you log out and log back in.
+组员资格变动（和sudo访问）会在你登出登录后生效。
 
 ### 方法二 ###
 
