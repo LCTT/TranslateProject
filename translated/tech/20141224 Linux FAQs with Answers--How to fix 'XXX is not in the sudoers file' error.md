@@ -36,17 +36,17 @@ su命令也提供了同样的特权升级功能，两者不同的是它们认证
 
 ### 方法二 ###
 
-The second method to enable you to use sudo is to add yourself to /etc/sudoers configuration file directly.
+第二个能让你使用sudo的方法是直接把你自己添加到路径为 /etc/sudoers 这个配置文件中去。
 
-To change /etc/sudoers file, you can use a special sudo editor command called visudo. Simply invoke the following command as the root.
+要修改 /etc/sudoers 文件，你可以使用一个名为visudo的特殊sudo编辑器命令。用root身份简单调用以下命令。
 
     # visudo 
 
-This will open up /etc/sudoers file for editing. Append the following line to the end of the file, and press Ctrl+X. When prompted, save the change, and exit.
+这条命令能打开并编辑 /etc/sudoers 文件，将以下这行文字添加至文件末尾，并按Ctrl+X。提示出现时，保存修改退出。
 
     <username> ALL=(ALL) ALL
 
-This change will be effective immediately, and you will be able to use sudo right away.
+这个修改会立即生效，你就能马上使用sudo了。
 
 ![](https://farm8.staticflickr.com/7511/15866443418_e147329e1b_c.jpg)
 
