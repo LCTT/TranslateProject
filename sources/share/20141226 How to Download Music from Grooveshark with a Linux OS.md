@@ -1,3 +1,4 @@
+[Translating by Stevarzh]
 How to Download Music from Grooveshark with a Linux OS
 ================================================================================
 > The solution is actually much simpler than you think
