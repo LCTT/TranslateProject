@@ -1,22 +1,22 @@
-    Vic020
-
-Linux FAQs with Answers--How to install Kingsoft Office on Linux
+Linux有问必答 - linux如何安装WPS
 ================================================================================
-> **Question**: I heard good things about Kingsoft Office, so I would like to try it out on my Linux. How can I install Kingsoft Office on [insert your Linux distro]? 
+> **问题**: 我听说一个好东西Kingsoft Office（译注：就是WPS），所以我想在我的Linux上试试。我怎样才能安装Kingsoft Office呢？
 
-Kingsoft Office is an office suite available for muliple platforms including Windows, Linux, iOS and Android. It comes with three programs: Writer for word processing, Presentation for presentations, and Spreadsheets for spreadsheets. It is freemium model, where the basic version is free to use. Compared to other Linux office suites such as LibreOffice or OpenOffice, the best advantage of Kingsoft Office is its **excellent compatibility with Microsoft Office**. Thus for those of you who need to use an office suite on Linux and Windows platforms interchangeably, Kingsoft Office is a good choice for Linux platform.
+Kingsoft Office 一套办公套件，支持多个平台，包括Windows, Linux, iOS 和 Android。它包含三个组件：Writer（WPS文字）用来文字处理，Presentation（WPS演示）支持幻灯片，Spereadsheets（WPS表格）为电子表格。使用免费增值模式，其中基础版本是免费使用。比较其他的linux办公套件，如LibreOffice、 OpenOffice，最大优势在于，Kingsoft Office能最好的兼容微软的Office（译注：版权问题？了解下wps和Office的历史问题，可以得到一些结论）。因此如果你需要在windowns和linux平台间交互，Kingsoft office是一个很好的选择。
 
-### Install Kingsoft Office on CentOS, Fedora or RHEL ###
 
-Download a RPM file for the [official site][1]. The official RPM package is available as a 32-bit version only, but you can install it on both 32-bit and 64-bit systems.
+### CentOS, Fedora 或 RHEL中安装Kingsoft Office ###
 
-Use yum command with "localinstall" option to install the RPM file.
+
+在[官方页面][1]下载RPM文件.官方RPM包只支持32位版本linux，但是你可以在64位中安装。
+
+需要使用yum命令并用"localinstall"选项来本地安装这个RPM包
 
     $ sudo yum localinstall kingsoft-office-9.1.0.4244-0.1.a12p3.i686.rpm 
 
-Note that do NOT use rpm command to install it. Otherwise, you will get unmet dependency errors, which are not easy to solve manually:
+注意不要使用rpm命令安装。否者，你会得到依赖错误，而且很难解决：
 
-    error: Failed dependencies:
+    错误: 依赖失败:
             libICE.so.6 is needed by kingsoft-office-9.1.0.4244-0.1.a12p3.i686
             libSM.so.6 is needed by kingsoft-office-9.1.0.4244-0.1.a12p3.i686
             libX11.so.6 is needed by kingsoft-office-9.1.0.4244-0.1.a12p3.i686
@@ -24,44 +24,46 @@ Note that do NOT use rpm command to install it. Otherwise, you will get unmet de
             libXrender.so.1 is needed by kingsoft-office-9.1.0.4244-0.1.a12p3.i686
             libc.so.6 is needed by kingsoft-office-9.1.0.4244-0.1.a12p3.i686
 
-Red Hat based distributions have multilib support. If the RPM package you are trying to install is 32-bit and has 32-bit library dependencies, a better way is to use yum to install it as shown above. As long as the RPM is properily built with all dependency information, yum should be able to install it using yum repositories.
+基于Red Hat的发行版有多重库支持。如果你要想安装的RPM包是32位的并有32位库依赖（你的系统是64位的），一个很好的解决方法就是使用yum来安装。只要RPM在构建时候已经添加所有依赖关系，yum就可以自动使用yum库解决依赖关系。
 
 ![](https://farm9.staticflickr.com/8626/16040291445_ca62275064_c.jpg)
 
-### Install Kingsoft Office on Debian, Ubuntu or Linux Mint ###
+### Debian, Ubuntu 和 Linux Mint 中安装Kingsoft Office###
 
-Download a DEB package from the [official site][2]. The official DEB package is available as a 32-bit version only, but you can install it on both 32-bit and 64-bit systems.
+在[官方页面][1]下载DEB包。官方RPM包同样只支持32位版本linux，但是你可以在64位中安装。
 
-The DEB package has a set of dependencies to meet. Therefore use [gdebi][3] instead of dpkg command to automatically resolve dependencies.
+DEB包同样遇到一堆依赖。因此使用[gdebi][3]命令来代替dpkg来自动解决依赖。
 
     $ sudo apt-get install gdebi-core
     $ sudo gdebi kingsoft-office_9.1.0.4244~a12p3_i386.deb 
 
-### Launch Kingsoft Office ###
+### 启动 Kingsoft Office ###
 
-Once Kingsoft Office is installed, you can launch Witer, Presentation, and Spreadsheets from the desktop manager easily.
+安装完成后，你就可以在桌面管理器轻松启动Witer（WPS文字）, Presentation（WPS演示）, and Spreadsheets（WPS表格），如下图
 
-On Ubuntu Unity:
+Ubuntu Unity中:
 
 ![](https://farm9.staticflickr.com/8591/16039583702_632a49779f_z.jpg)
 
-On GNOME:
+GNOME桌面中:
 
 ![](https://farm9.staticflickr.com/8617/16039583622_4e7c1d8545_b.jpg)
 
-Alternatively, you can also launch Kingsoft Office from the command line.
+不但如此，你也可以在命令行中启动Kingsoft Office
 
-To launch Kingsoft Writer from the command line, use this command:
+启动Wirter（WPS文字），使用这个命令：
+
+    $ wps (译注：原文丢失此命令)
 
 ![](https://farm8.staticflickr.com/7525/16039583642_7202457899_c.jpg)
 
-To launch Kingsoft Presentation from the command line, use this command:
+启动Presentation（WPS演示），使用这个命令：
 
     $ wpp 
 
 ![](https://farm8.staticflickr.com/7570/15420632223_4243cc99d9_c.jpg)
 
-To launch Kingsoft Spreadsheets from the command line, use this command:
+启动Spreadsheets（WPS表格），使用这个命令：
 
     $ et 
 
@@ -71,7 +73,7 @@ To launch Kingsoft Spreadsheets from the command line, use this command:
 
 via: http://ask.xmodulo.com/install-kingsoft-office-linux.html
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[Vic020/VicYu](http://www.vicyu.net)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
