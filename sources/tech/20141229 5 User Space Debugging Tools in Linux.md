@@ -1,3 +1,4 @@
+translating by mtunique
 5 User Space Debugging Tools in Linux
 ================================================================================
 By definition, debugging tools are those programs which allow us to monitor ,control and correct errors in other programs while they execute. Why should we use debugging tools? To answer this, there are various situations where we get stuck while running some programs and will have the need to understand what exactly happened. For example, we might be running an application and it produces some error messages. To fix those errors, we should first figure out why and from where did the error messages come from. An application might suddenly hang and we will have to know what other processes were running at that time. We might also have to figure out what was process 'x' doing at the time of hang. In order to dissect such details, we will need the help of debugging tools. There are a few user space debugging tools and techniques in Linux which are quite useful in analysing user space problems. They are:
@@ -254,7 +255,7 @@ To examine runtime behaviour of applications, analysing application crashes – 
 via: http://linoxide.com/linux-how-to/user-space-debugging-tools-linux/
 
 作者：[B N Poornima][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[mtunique](https://github.com/mtunique)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
