@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Calife – A lightweight alternative to sudo
 ================================================================================
 Calife requests user's own password for becoming login (or root, if no login is provided), and switches to that user and group ID after verifying proper rights to do so. A shell is then executed. If calife is executed by root, no password is requested and a shell with the appropriate user ID is executed.
