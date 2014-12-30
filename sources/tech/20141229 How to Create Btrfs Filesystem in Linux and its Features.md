@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How to Create Btrfs Filesystem in Linux and its Features
 ================================================================================
 **Btrfs** (B-tree file system) is a new CoW (copy-on-write) file system for Linux. It's development began at [Oracle Corporation][1] in 2007 and it was marked as stable in August 2014. The purpose of Btrfs is to address the lack of pooling, snapshots, checksums, and integral multi-device spanning in Linux file systems and its goal was to let Linux scale for the storage that will be available. Scaling is not just about addressing the storage but also means being able to administer and to manage it with a clean interface that lets people see what's being used and makes it more reliable.
