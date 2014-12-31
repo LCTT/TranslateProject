@@ -1,3 +1,5 @@
+liaoishere is translating!!
+
 How to install Xen hypervisor on unused old hardware
 ================================================================================
 Xen is a bare metal hypervisor, meaning that you must prepare a bare machine to install and run Xen. KVM is a little different - you can add it to any machine already running Linux. This tutorial describes how to install and configure Xen hypervisor on unused hardware.
