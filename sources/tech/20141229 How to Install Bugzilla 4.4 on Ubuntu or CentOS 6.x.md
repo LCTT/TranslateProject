@@ -1,11 +1,10 @@
-Translating by ZTinoZ
-How to Install Bugzilla 4.4 on Ubuntu / CentOS 6.x
+如何在Ubuntu / CentOS 6.x上安装Bugzilla 4.4
 ================================================================================
-Here, we are gonna show you how we can install Bugzilla in an Ubuntu 14.04 or CentOS 6.5/7. Bugzilla is a Free and Open Source Software(FOSS) which is web based bug tracking tool used to log and track defect database, its Bug-tracking systems allow individual or groups of developers effectively to keep track of outstanding problems with their product. Despite being "free", Bugzilla has many features its expensive counterparts lack. Consequently, Bugzilla has quickly become a favorite of thousands of organizations across the globe.
+这里，我们将展示如何在一台Ubuntu 14.04或CentOS 6.5/7上安装Bugzilla。Bugzilla是一款基于web，用来记录跟踪缺陷数据库的bug跟踪软件，它同时是一款免费及开源软件(FOSS)，它的bug跟踪系统允许个人和开发团体有效地记录下他们产品的一些突出问题。尽管是"免费"的，Bugzilla依然有很多其它相同产品所缺乏的“珍贵”特性。因此，Bugzilla很快就变成了全球范围内数以千计的组织最喜欢的产品。
 
 Bugzilla is very adaptable to various situations. They are used now a days in different IT support queues, Systems Administration deployment management, chip design and development problem tracking (both pre-and-post fabrication), and software and hardware bug tracking for luminaries such as Redhat, NASA, Linux-Mandrake, and VA Systems.
 
-### 1. Installing dependencies ###
+### 1. 安装依赖程序Installing dependencies ###
 
 Setting up Bugzilla is fairly **easy**. This blog is specific to Ubuntu 14.04   and CentOS 6.5 ( though it might work with older versions too )
 
