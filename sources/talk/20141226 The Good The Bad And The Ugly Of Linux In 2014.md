@@ -1,3 +1,4 @@
+Translating by H-mudcup
 The Good, The Bad And The Ugly Of Linux In 2014
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/12/Buggest_Linux_Stories.jpeg)
