@@ -1,10 +1,10 @@
 如何在Ubuntu / CentOS 6.x上安装Bugzilla 4.4
 ================================================================================
-这里，我们将展示如何在一台Ubuntu 14.04或CentOS 6.5/7上安装Bugzilla。Bugzilla是一款基于web，用来记录跟踪缺陷数据库的bug跟踪软件，它同时是一款免费及开源软件(FOSS)，它的bug跟踪系统允许个人和开发团体有效地记录下他们产品的一些突出问题。尽管是"免费"的，Bugzilla依然有很多其它相同产品所缺乏的“珍贵”特性。因此，Bugzilla很快就变成了全球范围内数以千计的组织最喜欢的产品。
+这里，我们将展示如何在一台Ubuntu 14.04或CentOS 6.5/7上安装Bugzilla。Bugzilla是一款基于web，用来记录跟踪缺陷数据库的bug跟踪软件，它同时是一款免费及开源软件(FOSS)，它的bug跟踪系统允许个人和开发团体有效地记录下他们产品的一些突出问题。尽管是"免费"的，Bugzilla依然有很多其它同类产品所没有的“珍贵”特性。因此，Bugzilla很快就变成了全球范围内数以千计的组织最喜欢的bug管理工具。
 
-Bugzilla is very adaptable to various situations. They are used now a days in different IT support queues, Systems Administration deployment management, chip design and development problem tracking (both pre-and-post fabrication), and software and hardware bug tracking for luminaries such as Redhat, NASA, Linux-Mandrake, and VA Systems.
+Bugzilla对于不同状况的适应能力非常强。They are used now a days in different IT support queues, Systems Administration deployment management, chip design and development problem tracking (both pre-and-post fabrication), and software and hardware bug tracking for luminaries such as Redhat, NASA, Linux-Mandrake, and VA Systems.
 
-### 1. 安装依赖程序Installing dependencies ###
+### 1. 安装依赖程序 ###
 
 Setting up Bugzilla is fairly **easy**. This blog is specific to Ubuntu 14.04   and CentOS 6.5 ( though it might work with older versions too )
 
@@ -12,7 +12,7 @@ In order to get Bugzilla up and running in Ubuntu or CentOS, we are going to ins
 
 To install Bugzilla in your server, you'll need to have the following components installed:
 
-- Per l(5.8.1 or above)
+- Perl(5.8.1 或以上)
 - MySQL
 - Apache2
 - Bugzilla
@@ -193,7 +193,7 @@ Finally, our Bugzilla is ready to get bug reports now in our Ubuntu 14.04 LTS an
 via: http://linoxide.com/tools/install-bugzilla-ubuntu-centos/
 
 作者：[Arun Pyasi][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ZTinoZ](https://github.com/ZTinoZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
