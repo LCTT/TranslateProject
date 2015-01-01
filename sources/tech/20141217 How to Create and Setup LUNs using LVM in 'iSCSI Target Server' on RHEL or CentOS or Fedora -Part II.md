@@ -1,3 +1,5 @@
+Translating----geekpi
+
 How to Create and Setup LUNs using LVM in “iSCSI Target Server” on RHEL/CentOS/Fedora – Part II
 ================================================================================
 LUN is a Logical Unit Number, which shared from the iSCSI Storage Server. The Physical drive of iSCSI target server shares its drive to initiator over TCP/IP network. A Collection of drives called LUNs to form a large storage as SAN (Storage Area Network). In real environment LUNs are defined in LVM, if so it can be expandable as per space requirements.
