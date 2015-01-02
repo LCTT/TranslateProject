@@ -1,3 +1,5 @@
+Translating----geekpi
+
 Create Centralized Secure Storage using iSCSI Target on RHEL/CentOS/Fedora Part -I
 ================================================================================
 **iSCSI** is a block level Protocol for sharing **RAW Storage Devices** over TCP/IP Networks, Sharing and accessing Storage over iSCSI, can be used with existing IP and Ethernet networks such as NICs, Switched, Routers etc. iSCSI target is a remote hard disk presented from an remote iSCSI server (or) target.
