@@ -1,20 +1,19 @@
-为 Linux 用户准备的 10 个开源克隆软件
+给 Linux 用户的 10 个开源克隆软件
 ================================================================================
 >  这些克隆软件会读取整个磁盘的数据，将它们转换成一个 .img 文件，之后你可以将它复制到其他硬盘上。
 
-![](http://1-ps.googleusercontent.com/h/www.efytimes.com/admin/useradmin/photo/150x150x1Qn740810PM9112014.jpg.pagespeed.ic.Ch7q5vT9Yg.jpg)
 
-磁盘克隆意味着从一个硬盘复制数据到另一个硬盘上，而且你可以通过简单的复制粘贴来做到。但是你却不能复制隐藏文件和文件夹，以及正在使用中的文件。这便是一个克隆软件可以通过保存一份文件和文件夹的镜像来帮助你的地方。克隆软件会读取整个磁盘的数据，将它们转换成一个 .img 文件，之后你可以将它复制到其他硬盘上。现在我们将要向你介绍最优秀的 10 个开源的克隆软件：
+磁盘克隆的意思是说从一个硬盘复制数据到另一个硬盘上。虽然你可以通过简单的复制粘贴来做到这一点，但是你却不能复制隐藏文件和文件夹，以及正在使用中的文件。这便是一个克隆软件可以通过保存一份文件和文件夹的镜像来做到的。克隆软件会读取整个磁盘的数据，将它们转换成一个 .img 文件，之后你可以将它复制到其他硬盘上。现在我们将要向你介绍最优秀的 10 个开源的克隆软件：
 
 ### 1. [Clonezilla][1]：###
 
-Clonezilla 是一个基于 Ubuntu 和 Debian 的 Live CD。它可以像 Windows 里的诺顿 Ghost 一样克隆你的磁盘数据和做备份，不过它更有效率。Clonezilla 支持包括 ext2、ext3、ext4、btrfs 和 xfs 在内的很多文件系统。它还支持 BIOS、UEFI、MBR 和 GPT 分区。
+Clonezilla 是一个基于 Ubuntu 和 Debian 的 Live CD。它可以像 Windows 里的 Ghost 一样克隆你的磁盘数据和做备份，不过它更有效率。Clonezilla 支持包括 ext2、ext3、ext4、btrfs 和 xfs 在内的很多文件系统。它还支持 BIOS、UEFI、MBR 和 GPT 分区。
 
 ![](http://1-ps.googleusercontent.com/h/www.efytimes.com/admin/useradmin/rte/my_documents/my_pictures/600x450xZ34_clonezilla-600x450.png.pagespeed.ic.8Jq7pL2dwo.png)
 
-### 2. [Redo Backup][2]：### 
+### 2. [Redo Backup][2]：###
 
-Redo Backup 是另一个用来方便地克隆磁盘的 Live CD。它是自由和开源的软件，使用 GPL 3 许可协议授权。它的主要功能和特点包括从 CD 引导的简单易用的 GUI、无需安装，可以恢复 Linux 和 Windows 等系统、无需登陆访问文件，以及已删除的文件等。
+Redo Backup 是另一个用来方便地克隆磁盘的 Live CD。它是自由和开源的软件，使用 GPL 3 许可协议授权。它的主要功能和特点包括从 CD 引导的简单易用的 GUI、无需安装，可以恢复 Linux 和 Windows 等系统，无需登陆访问文件，以及已删除的文件等。
 
 ![](http://1-ps.googleusercontent.com/h/www.efytimes.com/admin/useradmin/rte/my_documents/my_pictures/600x450x7D5_Redo-Backup-600x450.jpeg.pagespeed.ic.3QMikN07F5.jpg)
 
@@ -26,7 +25,7 @@ Mondo 和其他的软件不大一样，它并不将你的磁盘数据转换为�
 
 ### 4. [Partimage][4]：###
 
-这是一个开源的备份软件，默认情况下在 Linux 系统里工作。在大多数发行版中，你都可以从发行版自带的软件包管理工具中安装。如果你没有 Linux 系统，你也可以使用“SystemRescueCd”。它是一个默认包括 Partimage 的 Live CD，可以为你完成备份工作。Partimage 在克隆硬盘方面的性能非常出色。
+这是一个开源的备份软件，默认工作在 Linux 系统下。在大多数发行版中，你都可以从发行版自带的软件包管理工具中安装。如果你没有 Linux 系统，你也可以使用“SystemRescueCd”。它是一个默认包含了 Partimage 的 Live CD，可以为你完成备份工作。Partimage 在克隆硬盘方面的性能非常出色。
 
 ![](http://1-ps.googleusercontent.com/h/www.efytimes.com/admin/useradmin/rte/my_documents/my_pictures/620x424xBZF_partimage-620x424.png.pagespeed.ic.ygzrogRJgE.png)
 
@@ -71,7 +70,7 @@ via: http://www.efytimes.com/e1/fullnews.asp?edid=148039
 
 作者：Sanchari Banerjee
 译者：[felixonmars](https://github.com/felixonmars)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
