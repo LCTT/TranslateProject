@@ -1,3 +1,5 @@
+Translating------geekpi
+
 Centralized Secure Storage (iSCSI) – “Initiator Client” Setup on RHEL/CentOS/Fedora – Part III
 ================================================================================
 **iSCSI** Initiator are the clients which use to authenticated with iSCSI target servers to access the LUNs shared from target server. We can deploy any kind of Operating systems in those locally mounted Disks, just a single package need to be install to get authenticate with target server.
