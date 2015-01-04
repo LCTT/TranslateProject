@@ -6,7 +6,7 @@ Bugzilla对于不同状况的适应能力非常强。They are used now a days in
 
 ### 1. 安装依赖程序 ###
 
-Setting up Bugzilla is fairly **easy**. This blog is specific to Ubuntu 14.04   and CentOS 6.5 ( though it might work with older versions too )
+安装Bugzilla相当**简单**。这篇文章特别针对Ubuntu 14.04和CentOS 6.5两个版本(不过也适用于更老的版本)。
 
 In order to get Bugzilla up and running in Ubuntu or CentOS, we are going to install Apache webserver ( SSL enabled ) , MySQL database server and also some tools that are required to  install and configure Bugzilla.
 
@@ -27,18 +27,18 @@ Here are the steps you need to follow to setup Bugzilla in your Ubuntu 14.04 LTS
 
 You need to install the essential packages by running the following command:
 
-**For Ubuntu:**
+**Ubuntu版本:**
 
     $ sudo apt-get install apache2 mysql-server libapache2-mod-perl2
     libapache2-mod-perl2-dev libapache2-mod-perl2-doc perl postfix make gcc g++
 
-**For CentOS:**
+**CentOS版本:**
 
     $ sudo yum install httpd mod_ssl mysql-server mysql php-mysql gcc perl* mod_perl-devel
 
 **Note: Please run all the commands in a shell or terminal and make sure you have root access (sudo) on the machine.**
  
-### 2. Running Apache server ###
+### 2. 启动Apache服务 ###
 
 As you have already installed the apache server from the above step, we need to now configure apache server and run it. We'll need to go for sudo or root mode to get all the commands working so, we'll gonna switch to root access.
 
@@ -49,9 +49,9 @@ Now, we need to open port 80 in the firewall and need to save the changes.
     # iptables -I INPUT -p tcp --dport 80 -j ACCEPT
     # service iptables save
 
-Now, we need to run the service:
+现在，我们需要启动服务:
 
-For CentOS:
+CentOS版本:
 
     # service httpd start
 
@@ -59,7 +59,7 @@ Lets make sure that Apache will restart every time you restart the machine:
 
     # /sbin/chkconfig httpd on
 
-For Ubuntu:
+Ubuntu版本:
 
     # service apache2 start
 
