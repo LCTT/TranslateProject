@@ -1,8 +1,8 @@
-Linux上使用备份管理器进行系统备份
+Linux 上使用 backup-manager 进行系统备份
 ================================================================================
 无论简单与否，我们都有机会去了解这么一件事，那就是备份的重要性从来都不可以被低估。考虑到备份的方法真的多如牛毛，你可能想要知道怎样来有效地为你的系统选择正确的工具和和合适的策略。
 
-在本文中，我将为你介绍[备份管理器][1]，一个简单易用的命令行备份工具，在大多数的Linux发行版的标准软件库中都能见到它的身影。
+在本文中，我将为你介绍[backup-manager][1]，一个简单易用的命令行备份工具，在大多数的Linux发行版的标准软件库中都能见到它的身影。
 
 是什么让备份管理器在众多的备份工具或备份策略中脱颖而出呢？让我来简单介绍一些它的与众不同的特性吧：
 
@@ -28,7 +28,7 @@ Linux上使用备份管理器进行系统备份
 
 在下一步中，会询问你要备份的所有目录（用空格分隔）。建议，但不是严格要求，列出同一父目录中的几个子目录，而不要仅仅输入父目录。
 
-你可以跳过该步骤并在以后对配置文件中BM_TARBALL_DIRECTORIESb变量进行设置。否则的话，就请尽可能多地添加你想要的目录，然后选择OK：
+你可以跳过该步骤并在以后对配置文件中BM\_TARBALL\_DIRECTORIESb变量进行设置。否则的话，就请尽可能多地添加你想要的目录，然后选择OK：
 
 ![](https://farm6.staticflickr.com/5610/15761238616_c9651fea1c_z.jpg)
 
@@ -115,11 +115,11 @@ Linux上使用备份管理器进行系统备份
 
     # backup-manager 
 
-BM_TARBALL_DIRECTORIES列出的目录将作为tarball备份到BM_REPOSITORY_ROOT目录，然后通过SSH传输到BM_UPLOAD_SSH_DESTINATION指定的主机dev1和dev3。
+BM\_TARBALL\_DIRECTORIES列出的目录将作为tarball备份到BM\_REPOSITORY\_ROOT目录，然后通过SSH传输到BM\_UPLOAD\_SSH_DESTINATION指定的主机dev1和dev3。
 
 ![](https://farm8.staticflickr.com/7497/15761238646_945620d8b7_z.jpg)
 
-正如你在上面图片中看到的那样，备份管理器在运行的时候创建了一个名为/root/.back-manager_my.cnf的文件，MySQL密码通过BM_MYSQL_ ADMINPASS指定。那样，mysqldump可以验证到MySQL服务器，而不必在命令行以明文格式接受密码，那样会有安全风险。
+正如你在上面图片中看到的那样，备份管理器在运行的时候创建了一个名为/root/.back-manager\_my.cnf的文件，MySQL密码通过BM\_MYSQL\_ADMINPASS指定。那样，mysqldump可以验证到MySQL服务器，而不必在命令行以明文格式接受密码，那样会有安全风险。
 
 ### 通过cron运行备份管理器 ###
 
@@ -145,7 +145,7 @@ via: http://xmodulo.com/linux-backup-manager.html
 
 作者：[Gabriel Cánepa][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

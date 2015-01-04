@@ -1,8 +1,7 @@
-Linux有问必答-- 如何在Linux上检查SSH的版本
+Linux有问必答：如何在Linux上检查SSH的版本
 ================================================================================
 > **Question**：我想到SSH存在1和2两个版本（SSH1和SSH2）。这两者之间有什么不同？还有我该怎么在Linux上检查SSH协议的版本？
 
-Secure Shell (SSH) is a network protocol that enables remote login or remote command execution between two hosts over a cryptographically secure communication channel. SSH was designed to replace insecure clear-text protocols such as telnet, rsh or rlogin. SSH provides a number of desirable features such as authentication, encryption, data integrity, authorization, and forwarding/tunneling.
 安全Shell（SSH）通过加密的安全通信通道来远程登录或者远程执行命令。SSH被设计来替代不安全的明文协议，如telnet、rsh和rlogin。SSH提供了大量需要的特性，如认证、加密、数据完整性、授权和转发/通道。
 
 ### SSH1 vs. SSH2 ###
@@ -11,8 +10,7 @@ SSH协议规范存在一些小版本的差异，但是有两个主要的大版�
 
 事实上，SSH1和SSH2是两个完全不同互不兼容的协议。SSH2明显地提升了SSH1中的很多方面。首先，SSH是宏设计，几个不同的功能（如：认证、传输、连接）被打包进一个单一的协议，SSH2带来了比SSH1更强大的安全特性，如基于MAC的完整性检查，灵活的会话密钥更新、充分协商的加密算法、公钥证书等等。
 
-SSH2 is standardized by IETF, and as such its implementation is widely deployed and accepted in the industry. Due to SSH2's popularity and cryptographic superiority over SSH1, many products are dropping support for SSH1. As of this writing, OpenSSH still [supports][1] both SSH1 and SSH2, while on all modern Linux distributions, OpenSSH server comes with SSH1 disabled by default.
-SSH2由IETF标准化，且它的实现在业界被广泛部署和接受。由于SSH2对于SSH1的流行和加密优势，许多产品对SSH1放弃了支持。在写这篇文章的时候，OpenSSH仍旧[支持][1]SSH1和SSH2,然而在所有的现代Linux发行版中，OpenSSH服务器默认禁用了SSH1。
+SSH2由IETF标准化，且它的实现在业界被广泛部署和接受。由于SSH2对于SSH1的流行和加密优势，许多产品对SSH1放弃了支持。在写这篇文章的时候，OpenSSH仍旧[支持][1]SSH1和SSH2，然而在所有的现代Linux发行版中，OpenSSH服务器默认禁用了SSH1。
 
 ### 检查支持的SSH协议版本 ###
 
@@ -69,7 +67,7 @@ SSH2由IETF标准化，且它的实现在业界被广泛部署和接受。由于
 via: http://ask.xmodulo.com/check-ssh-protocol-version-linux.html
 
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
