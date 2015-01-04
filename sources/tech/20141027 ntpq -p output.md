@@ -1,3 +1,4 @@
+liaosishere translating ..
 “ntpq -p” output
 ================================================================================
 The [Gentoo][1] (and others?) [incomplete man pages for “ntpq -p”][2] merely give the description: “*Print a list of the peers known to the server as well as a summary of their state.*”
@@ -131,7 +132,7 @@ Note that for UTC, a [leap second][62] can be inserted into the reported time up
 
 So… What actually is the value for the step threshold: 125ms or 128ms? And what are the PLL/FLL tc units (log2 s? ms?)? And what accuracy can be expected between peers on an uncongested Gigabit LAN?
 
- 
+
 
 Thanks for comments from Camilo M and Chris B. Corrections and further details welcomed.
 
