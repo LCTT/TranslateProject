@@ -1,3 +1,5 @@
+liaoishere is translating.
+
 How to configure HTTP load balancer with HAProxy on Linux
 ================================================================================
 Increased demand on web based applications and services are putting more and more weight on the shoulders of IT administrators. When faced with unexpected traffic spikes, organic traffic growth, or internal challenges such as hardware failures and urgent maintenance, your web application must remain available, no matter what. Even modern devops and continuous delivery practices can threaten the reliability and consistent performance of your web service.
