@@ -2,30 +2,30 @@
 ================================================================================
 这里，我们将展示如何在一台Ubuntu 14.04或CentOS 6.5/7上安装Bugzilla。Bugzilla是一款基于web，用来记录跟踪缺陷数据库的bug跟踪软件，它同时是一款免费及开源软件(FOSS)，它的bug跟踪系统允许个人和开发团体有效地记录下他们产品的一些突出问题。尽管是"免费"的，Bugzilla依然有很多其它同类产品所没有的“珍贵”特性。因此，Bugzilla很快就变成了全球范围内数以千计的组织最喜欢的bug管理工具。
 
-Bugzilla对于不同状况的适应能力非常强。They are used now a days in different IT support queues, Systems Administration deployment management, chip design and development problem tracking (both pre-and-post fabrication), and software and hardware bug tracking for luminaries such as Redhat, NASA, Linux-Mandrake, and VA Systems.
+Bugzilla对于不同状况的适应能力非常强。如今它们应用在各个不同的IT领域，系统管理员部署管理、芯片设计和部署问题跟踪(制作前后),还有为那些诸如Redhat，NASA，Linux-Mandrake和VA Systems这些名家提供软硬件bug跟踪。
 
 ### 1. 安装依赖程序 ###
 
 安装Bugzilla相当**简单**。这篇文章特别针对Ubuntu 14.04和CentOS 6.5两个版本(不过也适用于更老的版本)。
 
-In order to get Bugzilla up and running in Ubuntu or CentOS, we are going to install Apache webserver ( SSL enabled ) , MySQL database server and also some tools that are required to  install and configure Bugzilla.
+为了获取并能在Ubuntu或CentOS系统中运行Bugzilla，我们要安装Apache网络服务器(允许SSL)，MySQL数据库服务器和一些需要来安装并配置Bugzilla的工具。
 
-To install Bugzilla in your server, you'll need to have the following components installed:
+要在你的服务器上安装使用Bugzilla，你需要安装好以下程序：
 
 - Perl(5.8.1 或以上)
 - MySQL
 - Apache2
 - Bugzilla
-- Perl modules
-- Bugzilla using apache
+- Perl模块
+- 使用apache的Bugzilla
 
-As we have mentioned that this article explains installation of both Ubuntu 14.04 and CentOS 6.5/7, we will have 2 different sections for them.
+正如我们所提到的本文会阐述Ubuntu 14.04和CentOS 6.5/7两种发行版的安装过程，为此我们会分成两部分来表示。
 
-Here are the steps you need to follow to setup Bugzilla in your Ubuntu 14.04 LTS and CentOS 7:
+以下就是在你的Ubuntu 14.04 LTS和CentOS 7机器安装Bugzilla的步骤：
 
-**Preparing the required dependency packages:**
+**准备所需的依赖包：**
 
-You need to install the essential packages by running the following command:
+你需要运行以下命令来安装些必要的包：
 
 **Ubuntu版本:**
 
@@ -36,15 +36,15 @@ You need to install the essential packages by running the following command:
 
     $ sudo yum install httpd mod_ssl mysql-server mysql php-mysql gcc perl* mod_perl-devel
 
-**Note: Please run all the commands in a shell or terminal and make sure you have root access (sudo) on the machine.**
+**注意：请在shell或者终端下运行所有的命令并且确保你用root用户（sudo）连接机器。**
  
 ### 2. 启动Apache服务 ###
 
-As you have already installed the apache server from the above step, we need to now configure apache server and run it. We'll need to go for sudo or root mode to get all the commands working so, we'll gonna switch to root access.
+你已经按照以上步骤安装好了apache服务，那么我们现在需要配置apache服务并运行它。我们需要用sodo或root来敲命令去完成它，我们先切换到root连接。
 
     $ sudo -s
 
-Now, we need to open port 80 in the firewall and need to save the changes.
+我们需要在防火墙中打开80端口并保存改动。
 
     # iptables -I INPUT -p tcp --dport 80 -j ACCEPT
     # service iptables save
@@ -55,7 +55,7 @@ CentOS版本:
 
     # service httpd start
 
-Lets make sure that Apache will restart every time you restart the machine:
+我们来确保Apache会在每次你重启机器的时候一并启动起来：
 
     # /sbin/chkconfig httpd on
 
@@ -69,12 +69,12 @@ Now, as we have started our apache http server, we will be able to open apache s
 
 Now, we need to start our MySQL server:
 
-For CentOS:
+CentOS版本:
 
     # chkconfig mysqld on
     # service start mysqld
 
-For Ubuntu:
+Ubuntu版本:
 
     # service mysql-server start
 
@@ -94,7 +94,7 @@ For Both CentOS 6.5 and Ubuntu 14.04 Trusty
 
     #mysql > quit
 
-**Note: Please remember the DB name, passwords for mysql , we'll need it later.**
+**注意：Please remember the DB name, passwords for mysql , we'll need it later.**
 
 ### 4. Installing and configuring Bugzilla ###
 
