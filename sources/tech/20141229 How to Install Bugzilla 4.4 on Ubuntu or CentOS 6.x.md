@@ -63,11 +63,11 @@ Ubuntu版本:
 
     # service apache2 start
 
-Now, as we have started our apache http server, we will be able to open apache server at IP address of 127.0.0.1 by default.
+现在，由于我们已经启动了我们apache的http服务，我们就能在默认的127.0.0.1地址下打开apache服务了。
 
-### 3. Configuring MySQL Server ###
+### 3. 配置MySQL服务器 ###
 
-Now, we need to start our MySQL server:
+现在我们需要启动我们的MySQL服务：
 
 CentOS版本:
 
@@ -80,7 +80,7 @@ Ubuntu版本:
 
 ![mysql](http://blog.linoxide.com/wp-content/uploads/2014/12/mysql.png)
 
-Login with root access to MySQL and create a DB for Bugzilla. Change “mypassword” to anything you want for your mysql password. You will need it later when configuring Bugzilla too.
+用root用户登录连接MySQL并给Bugzilla创建一个数据库。Change “mypassword” to anything you want for your mysql password. You will need it later when configuring Bugzilla too.
 
 For Both CentOS 6.5 and Ubuntu 14.04 Trusty
 
