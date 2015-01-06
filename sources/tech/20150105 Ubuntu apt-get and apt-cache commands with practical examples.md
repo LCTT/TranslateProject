@@ -1,3 +1,5 @@
+Translating------geekpi
+
 Ubuntu apt-get & apt-cache commands with practical examples
 ================================================================================
 Apt-get & apt-cache are the command line **package management** utility in **Ubuntu Linux**. GUI version of apt-get command is the Synaptic Package Manager, in this post we are going to discuss 15 different examples of apt-get & apt-cache commands.
