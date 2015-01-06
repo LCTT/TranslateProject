@@ -1,3 +1,5 @@
+Translating by H-mudcup
+
 Tomahawk Music Player Returns With New Look, Features
 ================================================================================
 **After a quiet year Tomahawk, the Swiss Army knife of music players, is back with a brand new release to sing about. **
