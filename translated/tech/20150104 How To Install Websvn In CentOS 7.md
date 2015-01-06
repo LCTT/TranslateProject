@@ -1,25 +1,25 @@
-How To Install Websvn In CentOS 7
+CentOS 7中安装Websvn
 ================================================================================
-**WebSVN** offers a view onto your subversion repositories that’s been designed to reflect the Subversion methodology. You can view the log of any file or directory and see a list of all the files changed, added or deleted in any given revision. You can also view the differences between two versions of a file so as to see exactly what was changed in a particular revision.
+**WebSVN**为你的Subversion提供了一个试图，它设计用来反映Subversion的一整套方法。你可以检查任何文件或目录的日志，以及查看任何指定修改库中修改、添加或删除过的文件列表。你也可以检查同一文件两个版本的不同之处，以便确切地查看某个特性修订版中的修改。
 
-### Features ###
+### 特性 ###
 
-WebSVN offers the following features:
+WebSVN提供了以下这些特性：
 
-- Easy to use interface;
-- Customisable templating system;
-- Colourisation of file listings;
-- Blame view;
-- Log message searching;
-- RSS feed support.
+- 易于使用的界面；
+- 可自定义的模板系统；
+- 文件列表的着色；
+- 过错视图；
+- 日志信息搜索；
+- 支持RSS订阅；
 
-### Installation ###
+### 安装 ###
 
-I use the following link to install Subversion on CentOS 7.
+我使用以下链接来将Subversion安装到CentOS 7。
 
-- [How To install Subversion On CentOS 7][1]
+- [CentOS 7上如何安装Subversion][1]
 
-**1 – Download the websvn to /var/www/html.**
+**1 – 下载websvn到/var/www/html。**
 
     cd /var/www/html
 
@@ -27,7 +27,7 @@ I use the following link to install Subversion on CentOS 7.
 
     wget http://websvn.tigris.org/files/documents/1380/49057/websvn-2.3.3.zip
 
-**2 – Extract the zip package.**
+**2 – 解压zip包。**
 
     unzip websvn-2.3.3.zip
 
@@ -35,11 +35,11 @@ I use the following link to install Subversion on CentOS 7.
 
     mv websvn-2.3.3 websvn
 
-**3 – Installl php to your system.**
+**3 – 安装php到你的系统。**
 
     yum install php
 
-**4 – Edit web svn config.**
+**4 – 编辑web svn配置。**
 
     cd /var/www/html/websvn/include
 
@@ -82,20 +82,20 @@ I use the following link to install Subversion on CentOS 7.
     $extEnscript[".sh"] = "bash";
     ~
 
-save and exit.
+保存并退出。
 
-**6 – Reload apache and start websvn link http://ip/websvn.**
+**6 – 重新加载apache并启动websvn链接http://ip/websvn。**
 
 ![websvn](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/websvn.png)
 
-That’s it.
+一切搞定。
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/install-websvn-centos-7/
 
 作者：[M.el Khamlichi][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[GOLinux](https://github.com/GOLinux)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

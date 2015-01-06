@@ -1,3 +1,5 @@
+翻译中 by小眼儿
+
 Yes, This Trojan Infects Linux. No, It’s Not The Tuxpocalypse
 ================================================================================
 ![Is something watching you?](http://www.omgubuntu.co.uk/wp-content/uploads/2014/12/spyware.jpg)
