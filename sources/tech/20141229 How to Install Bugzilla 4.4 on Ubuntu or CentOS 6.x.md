@@ -80,9 +80,9 @@ Ubuntu版本:
 
 ![mysql](http://blog.linoxide.com/wp-content/uploads/2014/12/mysql.png)
 
-用root用户登录连接MySQL并给Bugzilla创建一个数据库。Change “mypassword” to anything you want for your mysql password. You will need it later when configuring Bugzilla too.
+用root用户登录连接MySQL并给Bugzilla创建一个数据库，把你的mysql密码更改成你想要的，稍后配置Bugzilla的时候会用到它。
 
-For Both CentOS 6.5 and Ubuntu 14.04 Trusty
+CentOS 6.5和Ubuntu 14.04 Trusty两个版本：
 
     # mysql -u root -p
 
@@ -94,21 +94,21 @@ For Both CentOS 6.5 and Ubuntu 14.04 Trusty
 
     #mysql > quit
 
-**注意：Please remember the DB name, passwords for mysql , we'll need it later.**
+**注意：请记住数据库名和mysql的密码，我们稍后会用到它们。**
 
-### 4. Installing and configuring Bugzilla ###
+### 4. 安装并配置Bugzilla ###
 
-Now, as we have all the required packages set and running, we'll want to configure our Bugzilla.
+现在，我们所有需要的包已经设置完毕并运行起来了，我们就要配置我们的Bugzilla。
 
-So, first we'll want to download the latest Bugzilla package, here I am downloading version 4.5.2 .
+那么，首先我们要下载最新版的Bugzilla包，这里我下载的是4.5.2版本。
 
-To download using wget in a shell or terminal:
+使用wget工具在shell或终端上下载：
 
     wget http://ftp.mozilla.org/pub/mozilla.org/webtools/bugzilla-4.5.2.tar.gz
 
-You can also download from their official site ie. [http://www.bugzilla.org/download/][1]
+你也可以从官方网站进行下载。[http://www.bugzilla.org/download/][1]
 
-**Extracting and renaming the downloaded bugzilla tarball:**
+**从下载下来的bugzilla压缩包中提取文件并重命名：**
 
     # tar zxvf bugzilla-4.5.2.tar.gz -C /var/www/html/
 
@@ -118,9 +118,9 @@ You can also download from their official site ie. [http://www.bugzilla.org/down
 
  
 
-**Note**: Here, **/var/www/html/bugzilla/** is the directory where we're gonna **host Bugzilla**.
+**注意**：这里,**/var/www/html/bugzilla/**就是**Bugzilla主目录**.
 
-Now, we'll configure buzilla:
+现在，我们来配置buzilla：
 
     # cd /var/www/html/bugzilla/
 
@@ -128,18 +128,18 @@ Now, we'll configure buzilla:
 
 ![bugzilla-check-module](http://blog.linoxide.com/wp-content/uploads/2014/12/bugzilla2-300x198.png)
 
-After the check is done, we will see some missing modules that needs to be installed And that can be installed by the command below:
+检查完成之后，我们会发现缺少了一些组件，我们需要安装它们，用以下命令即可实现：
 
     # cd /var/www/html/bugzilla
     # perl install-module.pl --all
 
-This will take a bit time to download and install all dependencies. Run the **checksetup.pl –check-modules** command again to verify there are nothing left to install.
+这一步会花掉一点时间去下载安装所有依赖程序，然后再次运行**checksetup.pl --check-modules**命令来验证有没有漏装什么。
 
-Now we'll need to run the below command which will automatically generate a file called “localconfig” in the /var/www/html/bugzilla directory.
+现在我们需要运行以下这条命令，它会在/var/www/html/bugzilla路径下自动生成一个名为localconfig的文件。
 
     # ./checksetup.pl
 
-Make sure you input the correct database name, user, and password we created earlier in the localconfig file
+确认一下你刚才在localconfig文件中所输入的数据库名、用户和密码是否正确。
 
     # nano ./localconfig
 
@@ -147,15 +147,15 @@ Make sure you input the correct database name, user, and password we created ear
 
 ![bugzilla-success](http://blog.linoxide.com/wp-content/uploads/2014/12/bugzilla-success.png)
 
-If all is well, checksetup.pl should now successfully configure Bugzilla.
+如果一切正常，checksetup.pl现在应该就成功地配置Bugzilla了。
 
 Now we need to add Bugzilla to our Apache config file. so, we'll need to open /etc/httpd/conf/httpd.conf (For CentOS) or etc/apache2/apache2.conf (For Ubuntu) with a text editor:
 
-For CentOS:
+CentOS版本:
 
     # nano /etc/httpd/conf/httpd.conf
 
-For Ubuntu:
+Ubuntu版本:
 
     # nano etc/apache2/apache2.conf
 
