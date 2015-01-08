@@ -149,7 +149,7 @@ CentOS 6.5和Ubuntu 14.04 Trusty两个版本：
 
 如果一切正常，checksetup.pl现在应该就成功地配置Bugzilla了。
 
-Now we need to add Bugzilla to our Apache config file. so, we'll need to open /etc/httpd/conf/httpd.conf (For CentOS) or etc/apache2/apache2.conf (For Ubuntu) with a text editor:
+现在我们需要添加Bugzilla至我们的Apache配置文件中。那么，我们需要用文本编辑器打开 /etc/httpd/conf/httpd.conf 文件(CentOS版本)或者 /etc/apache2/apache2.conf 文件(Ubuntu版本)：
 
 CentOS版本:
 
@@ -159,7 +159,7 @@ Ubuntu版本:
 
     # nano etc/apache2/apache2.conf
 
-Now, we'll need to configure Apache server we'll need to add the below configuration in the config file:
+现在，我们需要配置Apache服务器，我们要把以下配置添加到配置文件里：
 
     <VirtualHost *:80>
          DocumentRoot /var/www/html/bugzilla/
@@ -172,21 +172,21 @@ Now, we'll need to configure Apache server we'll need to add the below configura
          AllowOverride Limit FileInfo Indexes
     </Directory>
 
-Lastly, we need to edit .htaccess file and comment out “Options -Indexes” line at the top by adding “#”
+接着，我们需要编辑 .htaccess 文件并用“#”注释掉顶部“Options -Indexes”这一行。 
 
-Lets restart our apache server and test our installation.
+让我们重启我们的apache服务并测试下我们的安装情况。
 
-For CentOS:
+CentOS版本:
 
     # service httpd restart
 
-For Ubuntu:
+Ubuntu版本:
 
     # service apache2 restart
 
 ![bugzilla-install-success](http://blog.linoxide.com/wp-content/uploads/2014/12/bugzilla_apache.png)
 
-Finally, our Bugzilla is ready to get bug reports now in our Ubuntu 14.04 LTS and CentOS 6.5 and you can browse to bugzilla by going to the localhost page ie 127.0.0.1 or to your IP address in your web browser .
+这样，我们的Bugzilla就准备好在我们的Ubuntu 14.04 LTS和CentOS 6.5上获取bug报告了，你就可以通过本地回环地址或你网页浏览器上的IP地址来浏览bugzilla了。
 
 --------------------------------------------------------------------------------
 
