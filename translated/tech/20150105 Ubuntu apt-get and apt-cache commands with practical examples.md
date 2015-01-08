@@ -1,8 +1,8 @@
-Ubuntu apt-get & apt-cache commands with practical examples
+实例展示Ubuntu中apt-get和apt-cache命令的使用
 ================================================================================
-Apt-get & apt-cache are the command line **package management** utility in **Ubuntu Linux**. GUI version of apt-get command is the Synaptic Package Manager, in this post we are going to discuss 15 different examples of apt-get & apt-cache commands.
+apt-get和apt-cache是**Ubuntu Linux**中的命令行下的**包管理**工具。 apt-get的GUI版本是Synaptic包管理器，本篇中我们会讨论apt-get和apt-cache命令的不同。
 
-### Example:1 List of all the available packages ###
+### 示例：1 列出所有可用包 ###
 
     linuxtechi@localhost:~$ apt-cache pkgnames
     account-plugin-yahoojp
@@ -14,9 +14,9 @@ Apt-get & apt-cache are the command line **package management** utility in **Ubu
     gweled
     .......................................
 
-### Example:2 Search Packages using keywords ###
+### 示例：2 用关键字搜索包 ###
 
-This command is very helpful when you are not sure about package name , just enter the keyword and apt-get command will list packages related to the keyword.
+这个命令在你不确定包名时很有用，只要在apt-cache（这里原文是apt-get，应为笔误）后面输入与包相关的关键字即可/
 
     linuxtechi@localhost:~$ apt-cache search "web server"
     apache2 - Apache HTTP Server
@@ -28,7 +28,7 @@ This command is very helpful when you are not sure about package name , just ent
     apache2-utils - Apache HTTP Server (utility programs for web servers)
     ......................................................................
 
-**Note**: If you have installed “**apt-file**” package then we can also search the package using config files as shown below :
+**注意**： 如果你安装了“**apt-file**”包，我们就可以像下面那样用配置文件搜索包。
 
     linuxtechi@localhost:~$ apt-file search nagios.cfg
     ganglia-nagios-bridge: /usr/share/doc/ganglia-nagios-bridge/nagios.cfg
@@ -37,7 +37,7 @@ This command is very helpful when you are not sure about package name , just ent
     pnp4nagios-bin: /etc/pnp4nagios/nagios.cfg
     pnp4nagios-bin: /usr/share/doc/pnp4nagios/examples/nagios.cfg
 
-### Example:3 Display the basic information of Specific package. ###
+### 示例:3 显示特定包的基本信息 ###
 
     linuxtechi@localhost:~$ apt-cache show postfix
     Package: postfix
@@ -51,7 +51,7 @@ This command is very helpful when you are not sure about package name , just ent
     Provides: default-mta, mail-transport-agent
     .....................................................
 
-### Example:4 List the dependency of Package. ###
+### 示例：4 列出包的依赖 ###
 
     linuxtechi@localhost:~$ apt-cache depends postfix
     postfix
@@ -69,7 +69,7 @@ This command is very helpful when you are not sure about package name , just ent
      Depends: dpkg
     ............................................
 
-### Example:5 Display the Cache Statistics using apt-cache. ###
+### 示例：5 使用apt-cache显示缓存统计 ###
 
     linuxtechi@localhost:~$ apt-cache stats 
     Total package names: 60877 (1,218 k)
@@ -90,9 +90,9 @@ This command is very helpful when you are not sure about package name , just ent
     Total slack space: 37.3 k
     Total space accounted for: 29.5 M
 
-### Example:6 Update the package repository using “apt-get update” ###
+### 示例：6 使用 “apt-get update” 更新仓库 ###
 
-Using the command “apt-get update” , we can resynchronize the package index files from their sources repository. Package index are retrieved from the file located at “/etc/apt/sources.list”
+使用命令“apt-get update”, 我们可以重新从源仓库中同步文件索引。包的索引从“/etc/apt/sources.list”中检索
 
     linuxtechi@localhost:~$ sudo apt-get update
      Ign http://extras.ubuntu.com utopic InRelease
@@ -106,70 +106,70 @@ Using the command “apt-get update” , we can resynchronize the package index 
      Ign http://in.archive.ubuntu.com utopic-backports InRelease
      ................................................................
 
-### Example:7 Install a package using apt-get command. ###
+### 示例:7 使用apt-get安装包 ###
 
     linuxtechi@localhost:~$ sudo apt-get install icinga
 
-In the above example we are installing a package named “icinga”
+上面的命令会安装叫“icinga”的包。
 
-### Example:8 Upgrade all the Installed Packages ###
+### 示例：8 升级所有已安装的包 ###
 
     linuxtechi@localhost:~$ sudo apt-get upgrade
 
-### Example:9 Upgrade a Particular Package. ###
+### 示例：9 更新特定的包 ###
 
-“install” option along with “–only-upgrade” in apt-get command is used to upgrade a particular package , example is shown below :
+在apt-get命令中的“install”选项后面接上“-only-upgrade”用来更新一个特定的包，如下所示：
 
     linuxtechi@localhost:~$ sudo apt-get install filezilla --only-upgrade
 
-### Example:10 Removing a package using apt-get command. ###
+### 示例：10 使用apt-get卸载包 ###
 
     linuxtechi@localhost:~$ sudo apt-get remove skype
 
-Above command will remove or delete the skype package only , if you want to delete its config files then use the “purge” option in the apt-get command. Example is shown below :
+上面的命令只会删除skype包，如果你想要删除它的配置文件，在apt-get命令中使用“purge”选项。如下所示：
 
     linuxtechi@localhost:~$ sudo apt-get purge skype
 
-We can also use the combination of above commands :
+我们可以结合使用上面的两个命令：
 
     linuxtechi@localhost:~$ sudo apt-get remove --purge skype
 
-### Example:11 Download the package in the Current Working Directory ###
+### 示例：11 在当前的目录中下载包 ###
 
     linuxtechi@localhost:~$ sudo apt-get download icinga
     Get:1 http://in.archive.ubuntu.com/ubuntu/ utopic/universe icinga amd64 1.11.6-1build1 [1,474 B]
     Fetched 1,474 B in 1s (1,363 B/s)
 
-Above command will download icinga package in your current working directory.
+上面的目录会从你当前的目录下载icinga包。
 
-### Example:12 Clear disk Space used by retrieved package files. ###
+### 示例：12 清理本地包占用的磁盘空间 ###
 
     linuxtechi@localhost:~$ sudo apt-get clean
 
-Above Command will clear the disk space used by apt-get command while retrieving(download) packages.
+上面的命令会清零apt-get在下载包时占用的磁盘空间。
 
-We can also use “**autoclean**” option in place of “**clean**“, the main difference between them is that autoclean removes package files that can no longer be downloaded, and are largely useless.
+我们也可以使用“**autoclean**”选项来代替“**clean**“，两者之间主要的区别是autoclean清理不再使用且没用的下载。
 
     linuxtechi@localhost:~$ sudo apt-get autoclean
     Reading package lists... Done
     Building dependency tree
     Reading state information... Done
 
-### Example:13 Remove Packages using “autoremove” option. ###
+### 示例：13 使用“autoremove”删除包 ###
 
-When we use “autoremove” option with apt-get command , then it will remove the packages that were installed to satisfy the dependency of other packages and are now no longer needed or used.
+当在apt-get命令中使用“autoremove”时，它会删除为了满足依赖而安装且现在没用的包。
 
     linuxtechi@localhost:~$ sudo apt-get autoremove icinga
 
-### Example:14 Display Changelog of a Package. ###
+### 示例：14 显示包的更新日志 ###
 
     linuxtechi@localhost:~$ sudo apt-get changelog apache2
     Get:1 Changelog for apache2 (http://changelogs.ubuntu.com/changelogs/pool/main/a/apache2/apache2_2.4.10-1ubuntu1/changelog) [195 kB]
     Fetched 195 kB in 3s (60.9 kB/s)
 
-Above Command will download the changelog of apache2 package and will display through sensible-pager on your screen.
+上面的命令会下载apache2的更新日志，并在你屏幕上显示。
 
-### Example:15 List broken dependencies using “check” option ###
+### 示例15 使用 “check” 选项显示损坏的依赖 ###
 
     linuxtechi@localhost:~$ sudo apt-get check
     Reading package lists... Done
@@ -181,7 +181,7 @@ Above Command will download the changelog of apache2 package and will display th
 via: http://www.linuxtechi.com/ubuntu-apt-get-apt-cache-commands-examples/
 
 作者：[Pradeep Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
