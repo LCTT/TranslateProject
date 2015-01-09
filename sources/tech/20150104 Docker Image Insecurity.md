@@ -1,3 +1,5 @@
+翻译中 by小眼儿
+
 Docker Image Insecurity
 ================================================================================
 Recently while downloading an “official” container image with Docker I saw this line:
