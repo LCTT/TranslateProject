@@ -1,3 +1,5 @@
+Translating By H-mudcup
+
 Easy File Comparisons With These Great Free Diff Tools
 ================================================================================
 by Frazer Kline
