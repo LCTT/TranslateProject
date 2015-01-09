@@ -1,3 +1,5 @@
+Mr-Ping 翻译中
+
 How to Backup and Restore Your Apps and PPAs in Ubuntu Using Aptik
 ================================================================================
 ![00_lead_image_aptik](http://cdn5.howtogeek.com/wp-content/uploads/2014/12/650x300x00_lead_image_aptik.png.pagespeed.ic.n3TJwp8YK_.png)
