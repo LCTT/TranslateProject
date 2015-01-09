@@ -1,4 +1,4 @@
-伴随Apple Watch的揭幕，下一个智能手表会是Ubuntu吗？
+Apple Watch之后，下一个智能手表会是Ubuntu吗？
 ===
 
 **苹果借助‘Apple Watch’的发布，证实了其进军穿戴式电子设备市场的长期传言**
