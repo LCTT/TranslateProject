@@ -1,3 +1,5 @@
+Translating-----geekpi
+
 How to deduplicate files on Linux with dupeGuru
 ================================================================================
 Recently, I was given the task to clean up my father's files and folders. What made it difficult was the abnormal amount of duplicate files with incorrect names. By keeping a backup on an external drive, simultaneously editing multiple versions of the same file, or even changing the directory structure, the same file can get copied many times, change names, change locations, and just clog disk space. Hunting down every single one of them can become a problem of gigantic proportions. Hopefully, there exists nice little software that can save your precious hours by finding and removing duplicate files on your system: [dupeGuru][1]. Written in Python, this file deduplication software switched to a GPLv3 license a few hours ago. So time to apply your new year's resolutions and clean up your stuff!
