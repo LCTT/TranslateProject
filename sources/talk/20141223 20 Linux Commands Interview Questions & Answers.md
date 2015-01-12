@@ -1,3 +1,4 @@
+Translating by ZTinoZ
 20 Linux Commands Interview Questions & Answers
 ================================================================================
 **Q:1 How to check current run level of a linux server ?**
