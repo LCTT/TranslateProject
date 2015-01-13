@@ -1,7 +1,7 @@
 不重启不当机！四招搞定Linux内核热补丁！
 ================================================================================
 ![Credit: Shutterstock](http://images.techhive.com/images/article/2014/10/patch_f-100526950-primary.idge.jpeg)
-Credit: Shutterstock
+供图: Shutterstock
 
 多种技术在竞争成为实现Linux内核热补丁的最优方案。  
 没人喜欢重启机器，尤其是涉及到一个内核问题的最新补丁程序。  
