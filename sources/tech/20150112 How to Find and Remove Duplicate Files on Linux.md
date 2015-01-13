@@ -1,3 +1,5 @@
+Translating-----geekpi
+
 How to Find and Remove Duplicate Files on Linux
 ================================================================================
 Hi all, today we're gonna learn how to find and remove duplicate files on you Linux PC or Server. So, here's a tool that you may use anyone of them according to your needs and comfort.
