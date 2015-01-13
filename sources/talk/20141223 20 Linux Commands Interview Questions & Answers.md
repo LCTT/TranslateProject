@@ -1,16 +1,16 @@
 20条Linux命令面试问答
 ================================================================================
-**Q:1 How to check current run level of a linux server ?**
+**问:1 如何查看当前的Linux服务器的运行级别？**
 
-Ans: ‘who -r’ & ‘runlevel’ commands are used to check the current runlevel of a linux box.
+答: ‘who -r’ 和 ‘runlevel’ 命令可以用来查看当前的Linux服务器的运行级别。
 
-**Q:2 怎么检查Linux的默认网关？**
+**问:2 如何检查Linux的默认网关？**
 
-Ans: Using the commands “route -n” and “netstat -nr” , we can check default gateway. Apart from the default gateway info , these commands also display the current routing tables .
+答: Using the commands “route -n” and “netstat -nr” , we can check default gateway. Apart from the default gateway info , these commands also display the current routing tables .
 
-**Q:3 How to rebuild initrd image file on Linux ?**
+**问:3 How to rebuild initrd image file on Linux ?**
 
-Ans: In case of CentOS 5.X / RHEL 5.X , mkinitrd command is used to create initrd file , example is shown below :
+答: In case of CentOS 5.X / RHEL 5.X , mkinitrd command is used to create initrd file , example is shown below :
 
     # mkinitrd -f -v /boot/initrd-$(uname -r).img $(uname -r)
 
@@ -24,9 +24,9 @@ Above command will create the initrd file for the current version. To rebuild th
 
     # dracut -f initramfs-2.x.xx-xx.el6.x86_64.img 2.x.xx-xx.el6.x86_64
 
-**Q:4 What is cpio command ?**
+**问:4 What is cpio command ?**
 
-Ans: cpio stands for Copy in and copy out. Cpio copies files, lists and extract files to and from a archive ( or a single file).
+答: cpio stands for Copy in and copy out. Cpio copies files, lists and extract files to and from a archive ( or a single file).
 
 **Q:5 What is patch command and where to use it ?**
 
