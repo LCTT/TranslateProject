@@ -1,11 +1,10 @@
-Translating by ZTinoZ
-20 Linux Commands Interview Questions & Answers
+20条Linux命令面试问答
 ================================================================================
 **Q:1 How to check current run level of a linux server ?**
 
 Ans: ‘who -r’ & ‘runlevel’ commands are used to check the current runlevel of a linux box.
 
-**Q:2 How to check the default gatway in linux ?**
+**Q:2 怎么检查Linux的默认网关？**
 
 Ans: Using the commands “route -n” and “netstat -nr” , we can check default gateway. Apart from the default gateway info , these commands also display the current routing tables .
 
@@ -116,7 +115,7 @@ Ans: The lspci command displays information about PCI buses and the devices atta
 via: http://www.linuxtechi.com/20-linux-commands-interview-questions-answers/
 
 作者：[Pradeep Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ZTinoZ](https://github.com/ZTinoZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
