@@ -1,3 +1,4 @@
+(translating by runningwater)
 2015: Open Source Has Won, But It Isn't Finished
 ================================================================================
 > After the wins of 2014, what's next?
@@ -31,7 +32,7 @@ In other words, whatever amazing free software 2014 has already brought us, we c
 via: http://www.computerworlduk.com/blogs/open-enterprise/open-source-has-won-3592314/
 
 作者：[lyn Moody][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
