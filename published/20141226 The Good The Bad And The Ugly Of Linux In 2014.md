@@ -1,10 +1,8 @@
-Translated by H-mudcup
-
 2014年Linux界发生的好事，坏事和丑事
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/12/Buggest_Linux_Stories.jpeg)
 
-2014年已经接近尾声，现在正是盘点**2014年Linux大事件**的时候。整整一年，我们关注了有关Linux和开源的一些好事，坏事和丑事。让我们来快速回顾一下2014对于Linux是怎样的一年。
+2014年已经过去，现在正是盘点**2014年Linux大事件**的时候。整整一年，我们关注了有关Linux和开源的一些好事，坏事和丑事。让我们来快速回顾一下2014对于Linux是怎样的一年。
 
 ### 好事 ###
 
@@ -14,7 +12,7 @@ Translated by H-mudcup
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/12/netflix-linux.jpg)
 
-从使用Wine到[使用Chrome的测试功能][1]，为了能让Netflix能在Linux上工作，Linux用户曾尝试了各种方法。好消息是Netflix终于在2014年带来了Linux的本地支持。这让所有能使用Netflix的地区的Linux用户的脸上浮现出了微笑。想在[美国以外的地区使用Netflix][2]（或其他官方授权使用Netflix的国家之外）的人还是得靠其他的方法。
+从使用Wine到[使用Chrome的测试功能][1]，为了能让Netflix能在Linux上工作，Linux用户曾尝试了各种方法。好消息是Netflix终于在2014年带来了Linux的本地支持。这让所有能使用Netflix的地区的Linux用户的脸上浮现出了微笑。不过，想在[美国以外的地区使用Netflix][2]（或其他官方授权使用Netflix的国家之外）的人还是得靠其他的方法。
 
 #### 欧洲国家采用开源/Linux ####
 
@@ -30,19 +28,19 @@ Translated by H-mudcup
 
 ### 坏事 ###
 
-Linux在2014年并不是一帆风顺。某些事件的发生损坏了Linux/开源的形象。
+Linux在2014年并不是一帆风顺。某些事件的发生败坏了Linux/开源的形象。
 
-#### Heartbleed心血 ####
+#### Heartbleed 心血漏洞 ####
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/12/heartbleed-bug.jpg)
 
-在今年的四月份，检测到[OpenSSL][8]有一个缺陷。这个漏洞被命名为[Heartbleed心血][9]。他影响了包括Facebook和Google在内的50多万个“安全”网站。这项漏洞可以真正的允许任何人读取系统的内存，并能因此给予用于加密数据流的密匙的访问权限。[xkcd上的漫画以更简单的方式解释了心血][10]。不必说，这个漏洞在OpenSSL的更新中被修复了。
+在今年的四月份，检测到[OpenSSL][8]有一个缺陷。这个漏洞被命名为[Heartbleed心血漏洞][9]。他影响了包括Facebook和Google在内的50多万个“安全”网站。这项漏洞可以真正的允许任何人读取系统的内存，并能因此给予用于加密数据流的密匙的访问权限。[xkcd上的漫画以更简单的方式解释了心血漏洞][10]。自然，这个漏洞在OpenSSL的更新中被修复了。
 
-#### Shellshock ####
+#### Shellshock 破壳漏洞 ####
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/09/shellshock_Linux_check.jpeg)
 
-好像有个心血还不够似的，在Bash里的一个缺陷更严重的震撼了Linux世界。这个漏洞被命名为[Shellshock][11]。这个漏洞把Linux往远程攻击的危险深渊又推了一把。这项漏洞是通过黑客的DDoS攻击暴露出来的。升级一下Bash版本应该能修复这个问题。
+好像有个心血漏洞还不够似的，在Bash里的一个缺陷更严重的震撼了Linux世界。这个漏洞被命名为[Shellshock 破壳漏洞][11]。这个漏洞把Linux往远程攻击的危险深渊又推了一把。这项漏洞是通过黑客的DDoS攻击暴露出来的。升级一下Bash版本应该能修复这个问题。
 
 #### Ubuntu Phone和Steam控制台 ####
 
@@ -52,13 +50,13 @@ Linux在2014年并不是一帆风顺。某些事件的发生损坏了Linux/开�
 
 ### 丑事 ###
 
-systemd的归属战变得不知廉耻。
+是否采用 systemd 的争论变得让人羞耻。
 
 ### systemd大论战 ###
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/12/Systemd_everywhere.jpg)
 
-用init还是systemd的争吵已经进行了一段时间了。但是在2014年当systemd准备在包括Debian, Ubuntu, OpenSUSE, Arch Linux and Fedora几个主流Linux分布中替代init时，事情变得不知廉耻了起来。它是如此的一发不可收拾，以至于它已经不限于boycottsystemd.org这类网站了。Lennart Poettering（systemd的首席开发人员及作者）在一条Google Plus状态上声明，说那些反对systemd的人在“收集比特币来雇杀手杀他”。Lennart还声称开源社区“是个恶心得不能待的地方”。人们吵得越来越离谱以至于把Debian分裂成了一个新的操作系统，称为[Devuan][15]。
+用init还是systemd的争吵已经进行了一段时间了。但是在2014年当systemd准备在包括Debian, Ubuntu, OpenSUSE, Arch Linux 和 Fedora几个主流Linux分布中替代init时，事情变得不知廉耻了起来。它是如此的一发不可收拾，以至于它已经不限于boycottsystemd.org这类网站了。Lennart Poettering（systemd的首席开发人员及作者）在一条Google Plus状态上声明，说那些反对systemd的人在“收集比特币来雇杀手杀他”。Lennart还声称开源社区“是个恶心得不能待的地方”。人们吵得越来越离谱以至于把Debian分裂成了一个新的操作系统，称为[Devuan][15]。
 
 ### 还有诡异的事 ###
 
@@ -81,10 +79,10 @@ via: http://itsfoss.com/biggest-linux-stories-2014/
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://itsfoss.com/author/Abhishek/
-[1]:http://itsfoss.com/watch-netflix-in-ubuntu-14-04/
+[1]:http://linux.cn/article-3024-1.html
 [2]:http://itsfoss.com/easiest-watch-netflix-hulu-usa/
-[3]:http://itsfoss.com/french-city-toulouse-saved-1-million-euro-libreoffice/
-[4]:http://itsfoss.com/italian-city-turin-open-source/
+[3]:http://linux.cn/article-3575-1.html
+[4]:http://linux.cn/article-3602-1.html
 [5]:http://itsfoss.com/170-primary-public-schools-geneva-switch-ubuntu/
 [6]:http://itsfoss.com/german-town-gummersbach-completes-switch-open-source/
 [7]:http://itsfoss.com/windows-10-inspired-linux/
@@ -95,8 +93,8 @@ via: http://itsfoss.com/biggest-linux-stories-2014/
 [12]:http://itsfoss.com/ubuntu-phone-specification-release-date-pricing/
 [13]:http://www.tecmint.com/systemd-replaces-init-in-linux/
 [14]:https://plus.google.com/+LennartPoetteringTheOneAndOnly/posts/J2TZrTvu7vd
-[15]:http://debianfork.org/
-[16]:http://thenewstack.io/microsoft-professes-love-for-linux-adds-support-for-coreos-cloudera-and-host-of-new-features/
+[15]:http://linux.cn/article-4512-1.html
+[16]:http://linux.cn/article-4056-1.html
 [17]:http://www.theregister.co.uk/2001/06/02/ballmer_linux_is_a_cancer/
 [18]:http://azure.microsoft.com/en-us/
 [19]:http://www.zdnet.com/article/top-five-linux-contributor-microsoft/
