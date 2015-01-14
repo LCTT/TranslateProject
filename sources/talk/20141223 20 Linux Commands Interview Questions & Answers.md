@@ -4,33 +4,33 @@
 
 答: ‘who -r’ 和 ‘runlevel’ 命令可以用来查看当前的Linux服务器的运行级别。
 
-**问:2 如何检查Linux的默认网关？**
+**问:2 如何查看Linux的默认网关？**
 
-答: Using the commands “route -n” and “netstat -nr” , we can check default gateway. Apart from the default gateway info , these commands also display the current routing tables .
+答: 用 “route -n” 和 “netstat -nr” 命令，我们可以查看默认网关。除了默认的网关信息，这两个命令还可以显示当前的路由表。
 
-**问:3 How to rebuild initrd image file on Linux ?**
+**问:3 如何在Linux上重建初始化内存盘影响文件？**
 
-答: In case of CentOS 5.X / RHEL 5.X , mkinitrd command is used to create initrd file , example is shown below :
+答: 在CentOS 5.X / RHEL 5.X中，可以用mkinitrd命令来创建初始化内存盘文件，举例如下：
 
     # mkinitrd -f -v /boot/initrd-$(uname -r).img $(uname -r)
 
-If you want to create initrd for a specific kernel version , then replace ‘uname -r’ with desired kernel
+如果你想要给特定的内核版本创建初始化内存盘，你就用所需的内核名替换掉 ‘uname -r’ 。
 
-In Case of CentOS 6.X / RHEL 6.X , dracut command is used to create initrd file example is shown below :
+在CentOS 6.X / RHEL 6.X中，则用dracut命令来创建初始化内存盘文件，举例如下：
 
     # dracut -f
 
-Above command will create the initrd file for the current version. To rebuild the initrd file for a specific kernel , use below command :
+以上命令能给当前的系统版本创建初始化内存盘，给特定的内核版本重建初始化内存盘文件则使用以下命令：
 
     # dracut -f initramfs-2.x.xx-xx.el6.x86_64.img 2.x.xx-xx.el6.x86_64
 
-**问:4 What is cpio command ?**
+**问:4 cpio命令是什么？**
 
-答: cpio stands for Copy in and copy out. Cpio copies files, lists and extract files to and from a archive ( or a single file).
+答: cpio就是复制入和复制出的意思。cpio可以向一个归档文件（或单个文件）复制文件、列表，还可以从中提取文件。
 
-**Q:5 What is patch command and where to use it ?**
+**问:5 patch命令是什么？如何使用？**
 
-Ans: As the name suggest patch command is used to apply changes ( or patches) to the text file. Patch command generally accept output from the diff and convert older version of files into newer versions. For example Linux kernel source code consists of number of files with millions of lines , so whenever any contributor contribute the changes , then he/she will be send the only changes instead of sending the whole source code. Then the receiver will apply the changes with patch command to its original source code.
+答: As the name suggest patch command is used to apply changes ( or patches) to the text file. Patch command generally accept output from the diff and convert older version of files into newer versions. For example Linux kernel source code consists of number of files with millions of lines , so whenever any contributor contribute the changes , then he/she will be send the only changes instead of sending the whole source code. Then the receiver will apply the changes with patch command to its original source code.
 
 Create a diff file for use with patch,
 
@@ -42,73 +42,73 @@ Once the diff file has been created, we can apply it to patch the old file into 
 
     # patch < diff_file
 
-**Q:6 What is use of aspell ?**
+**问:6 What is use of aspell ?**
 
-Ans: As the name suggest aspell is an interactive spelling checker in linux operating system. The aspell command is the successor to an earlier program named ispell, and can be used, for the most part, as a drop-in replacement. While the aspell program is mostly used by other programs that require spell-checking capability, it can also be used very effectively as a stand-alone tool from the command line.
+答: As the name suggest aspell is an interactive spelling checker in linux operating system. The aspell command is the successor to an earlier program named ispell, and can be used, for the most part, as a drop-in replacement. While the aspell program is mostly used by other programs that require spell-checking capability, it can also be used very effectively as a stand-alone tool from the command line.
 
-**Q:7 How to check the SPF record of domain from command line ?**
+**问:7 How to check the SPF record of domain from command line ?**
 
-Ans: We can check SPF record of a domain using dig command. Example is shown below :
+答: We can check SPF record of a domain using dig command. Example is shown below :
 
     linuxtechi@localhost:~$ dig -t TXT google.com
 
-**Q:8 How to identify which package the specified file (/etc/fstab) is associated with in linux ?**
+**问:8 How to identify which package the specified file (/etc/fstab) is associated with in linux ?**
 
-Ans: # rpm -qf /etc/fstab
+答: # rpm -qf /etc/fstab
 
 Above command will list the package which provides file “/etc/fstab”
 
-**Q:9 Which command is used to check the status of bond0 ?**
+**问:9 Which command is used to check the status of bond0 ?**
 
-Ans: cat /proc/net/bonding/bond0
+答: cat /proc/net/bonding/bond0
 
-**Q:10 What is the use of /proc file system in linux ?**
+**问:10 What is the use of /proc file system in linux ?**
 
-Ans: The /proc file system is a RAM based file system which maintains information about the current state of the running kernel including details on CPU, memory, partitioning, interrupts, I/O addresses, DMA channels, and running processes. This file system is represented by various files which do not actually store the information, they point to the information in the memory. The /proc file system is maintained automatically by the system.
+答: The /proc file system is a RAM based file system which maintains information about the current state of the running kernel including details on CPU, memory, partitioning, interrupts, I/O addresses, DMA channels, and running processes. This file system is represented by various files which do not actually store the information, they point to the information in the memory. The /proc file system is maintained automatically by the system.
 
-**Q:11 How to find files larger than 10MB in size in /usr directory ?**
+**问:11 How to find files larger than 10MB in size in /usr directory ?**
 
-Ans: # find /usr -size +10M
+答: # find /usr -size +10M
 
-**Q:12 How to find files in the /home directory that were modified more than 120 days ago ?**
+**问:12 How to find files in the /home directory that were modified more than 120 days ago ?**
 
-Ans: # find /home -mtime +l20
+答: # find /home -mtime +l20
 
-**Q:13 How to find files in the /var directory that have not been accessed in the last 90 days ?**
+**问:13 How to find files in the /var directory that have not been accessed in the last 90 days ?**
 
-Ans: # find /var -atime -90
+答: # find /var -atime -90
 
-**Q:14 Search for core files in the entire directory tree and delete them as found without prompting for confirmation**
+**问:14 Search for core files in the entire directory tree and delete them as found without prompting for confirmation**
 
-Ans: # find / -name core -exec rm {} \;
+答: # find / -name core -exec rm {} \;
 
-**Q:15 What is the purpose of strings command ?**
+**问:15 What is the purpose of strings command ?**
 
-Ans: The strings command is used to extract and display the legible contents of a non-text file.
+答: The strings command is used to extract and display the legible contents of a non-text file.
 
-**Q:16 What is the use tee filter ?**
+**问:16 What is the use tee filter ?**
 
-Ans: The tee filter is used to send an output to more than one destination. It can send one copy of the output to a file and another to the screen (or some other program) if used with pipe.
+答: The tee filter is used to send an output to more than one destination. It can send one copy of the output to a file and another to the screen (or some other program) if used with pipe.
 
     linuxtechi@localhost:~$ ll /etc | nl | tee /tmp/ll.out
 
 In the above example, the output from ll is numbered and captured in /tmp/ll.out file. The output is also displayed on the screen.
 
-**Q:17 What would the command export PS1 = ”$LOGNAME@`hostname`:\$PWD: do ?**
+**问:17 What would the command export PS1 = ”$LOGNAME@`hostname`:\$PWD: do ?**
 
-Ans: The export command provided will change the login prompt to display username, hostname, and the current working directory.
+答: The export command provided will change the login prompt to display username, hostname, and the current working directory.
 
-**Q:18 What would the command ll | awk ‘{print $3,”owns”,$9}’ do ?**
+**问:18 What would the command ll | awk ‘{print $3,”owns”,$9}’ do ?**
 
-Ans: The ll command provided will display file names and their owners.
+答: The ll command provided will display file names and their owners.
 
-**Q:19 What is the use of at command in linux ?**
+**问:19 What is the use of at command in linux ?**
 
-Ans: The at command is used to schedule a one-time execution of a program in the future. All submitted jobs are spooled in the /var/spool/at directory and executed by the atd daemon when the scheduled time arrives.
+答: The at command is used to schedule a one-time execution of a program in the future. All submitted jobs are spooled in the /var/spool/at directory and executed by the atd daemon when the scheduled time arrives.
 
-**Q:20 What is the role of lspci command in linux ?**
+**问:20 What is the role of lspci command in linux ?**
 
-Ans: The lspci command displays information about PCI buses and the devices attached to your system. Specify -v, -vv, or -vvv for detailed output. With the -m option, the command produces more legible output.
+答: The lspci command displays information about PCI buses and the devices attached to your system. Specify -v, -vv, or -vvv for detailed output. With the -m option, the command produces more legible output.
 
 --------------------------------------------------------------------------------
 
