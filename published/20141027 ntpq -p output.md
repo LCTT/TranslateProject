@@ -1,11 +1,10 @@
-“ntpq -p”命令输出详解
+网络时间的那些事情及 ntpq 详解
 ================================================================================
-[Gentoo][1]（也许其他发行版也是？）中 ["ntp -q" 的 man page][2] 只有简短的描述：“*打印出服务器已知的节点列表和它们的状态概要信息。*”
+[Gentoo][1]（也许其他发行版也是？）中 ["ntpq -p" 的 man page][2] 只有简短的描述：“*打印出该服务器已知的节点列表和它们的状态概要信息。*”
 
-我还没见到关于这个命令的说明文档，因此这里对此作一个总结，可以补充进 "[man ntpq][3]" man page 中。更多的细节见这里 “[ntpq – standard NTP query program][4]”（原作者），和 [其他关于 man ntpq 的例子][5].
+我还没见到关于这个命令的说明文档，因此这里对此作一个总结，可以补充进 "[man ntpq][3]" man page 中。更多的细节见这里 “[ntpq – 标准 NTP 请求程序][4]”（原作者），和 [其他关于 man ntpq 的例子][5].
 
 [NTP][6] 是一个设计用于通过 [udp][9] 网络 ([WAN][7] 或者 [LAN][8]) 来同步计算机时钟的协议。引用 [Wikipedia – NTP][10]：
-[NTP][6] is a protocol designed to synchronize the clocks of computers over a ([WAN][7] or [LAN][8]) [udp][9] network. From [Wikipedia – NTP][10]:
 
 > 网络时间协议（英语：Network Time Protocol，NTP）一种协议和软件实现，用于通过使用有网络延迟的报文交换网络同步计算机系统间的时钟。最初由美国特拉华大学的 David L. Mills 设计，现在仍然由他和志愿者小组维护，它于 1985 年之前开始使用，是因特网中最老的协议之一。
 
@@ -28,10 +27,10 @@
 - **st** – 远程节点或服务器的 [Stratum][17]（级别，NTP 时间同步是分层的）
 - **t** – 类型 (u: [unicast（单播）][18] 或 [manycast（选播）][19] 客户端, b: [broadcast（广播）][20] 或 [multicast（多播）][21] 客户端, l: 本地时钟, s: 对称节点（用于备份）, A: 选播服务器, B: 广播服务器, M: 多播服务器, 参见“[Automatic Server Discovery][22]“)
 - **when** – 最后一次同步到现在的时间 (默认单位为秒, “h”表示小时，“d”表示天)
-- **poll** – 同步的频率：[rfc5905][23]建议在 NTPv4 中这个值的范围在 4 (16s) 至 17 (36h) 之间（2的指数次秒），然而观察发现这个值的实际大小在一个小的多的范围内 ：64 (2的6次方)秒 至 1024 (2的10次方)秒
+- **poll** – 同步的频率：[rfc5905][23]建议在 NTPv4 中这个值的范围在 4 (16秒) 至 17 (36小时) 之间（即2的指数次秒），然而观察发现这个值的实际大小在一个小的多的范围内 ：64 (2^6 )秒 至 1024 (2^10 )秒
 - **reach** – 一个8位的左移移位寄存器值，用来测试能否和服务器连接，每成功连接一次它的值就会增加，以 [8 进制][24]显示
 - **delay** – 从本地到远程节点或服务器通信的往返时间（毫秒）
-- **offset** – 主机与远程节点或服务器时间源的时间偏移量，offset 越接近于0，主机和 NTP 服务器的时间越接近([方均根][25]表示，单位为毫秒)
+- **offset** – 主机与远程节点或服务器时间源的时间偏移量，offset 越接近于0，主机和 NTP 服务器的时间越接近(以[方均根][25]表示，单位为毫秒)
 - **jitter** – 与远程节点同步的时间源的平均偏差（多个时间样本中的 offset 的偏差，单位是毫秒），这个数值的绝对值越小，主机的时间就越精确
 
 #### 字段的统计代码 ####
@@ -47,7 +46,7 @@
 - “**-**” – 已不再使用
 - “**#**” – 良好的远程节点或服务器但是未被使用 （不在按同步距离排序的前六个节点中，作为备用节点使用）
 - “**+**” – 良好的且优先使用的远程节点或服务器（包含在组合算法中）
-- “*****” – 当前作为优先主同步对象的远程节点或服务器
+- “*” – 当前作为优先主同步对象的远程节点或服务器
 - “**o**” – PPS 节点 (当优先节点是有效时)。实际的系统同步是源于秒脉冲信号（pulse-per-second，PPS），可能通过PPS 时钟驱动或者通过内核接口。
 
 参考 [Clock Select Algorithm][27].
@@ -74,9 +73,9 @@
 - **.WWV.** – [WWV][46] (HF, Ft. Collins, CO, America) 标准时间无线电接收器
 - **.WWVB.** – [WWVB][47] (LF, Ft. Collins, CO, America) 标准时间无线电接收器
 - **.WWVH.** – [WWVH][48] (HF, Kauai, HI, America) 标准时间无线电接收器
-- **.GOES.** – 美国 [静止环境观测卫星][49];
+- **.GOES.** – 美国[静止环境观测卫星][49];
 - **.GPS.** – 美国 [GPS][50];
-- **.GAL.** – [伽利略定位系统][51] 欧洲 [GNSS][52];
+- **.GAL.** – [伽利略定位系统][51]欧洲 [GNSS][52];
 - **.ACST.** – 选播服务器
 - **.AUTH.** – 认证错误
 - **.AUTO.** – Autokey （NTP 的一种认证机制）顺序错误
@@ -105,7 +104,7 @@ NTP 协议是高精度的，使用的精度小于纳秒（2的 -32 次方）。�
 
 #### “ntpq -c rl”输出参数 ####
 
-- **precision** 为四舍五入值，且为 2 的幂数。因此精度为 2 的 *precision* 此幂（秒）
+- **precision** 为四舍五入值，且为 2 的幂数。因此精度为 2^precision （秒）
 - **rootdelay** – 与同步网络中主同步服务器的总往返延时。注意这个值可以是正数或者负数，取决于时钟的精度。
 - **rootdisp** – 相对于同步网络中主同步服务器的偏差(秒)
 - **tc** – NTP 算法 [PLL][59] （phase locked loop，锁相环路） 或 [FLL][60] (frequency locked loop，锁频回路) 时间常量
@@ -122,20 +121,20 @@ Jitter (也叫 timing jitter) 表示短期变化大于10HZ 的频率， wander �
 
 NTP 软件维护一系列连续更新的频率变化的校正值。对于设置正确的稳定系统，在非拥塞的网络中，现代硬件的 NTP 时钟同步通常与 UTC 标准时间相差在毫秒内。（在千兆 LAN 网络中可以达到何种精度？）
 
-对于 UTC 时间，[闰秒][62] 可以每两年插入一次用于同步地球自传的变化。注意本地时间为[夏令时][63]时时间会有一小时的变化。在重同步之前客户端设备会使用独立的 UTC 时间，除非客户端使用了偏移校准。
+对于 UTC 时间，[闰秒 leap second ][62] 可以每两年插入一次用于同步地球自传的变化。注意本地时间为[夏令时][63]时时间会有一小时的变化。在重同步之前客户端设备会使用独立的 UTC 时间，除非客户端使用了偏移校准。
 
 #### [闰秒发生时会怎样][64] ####
 
 > 闰秒发生时，会对当天时间增加或减少一秒。闰秒的调整在 UTC 时间当天的最后一秒。如果增加一秒，UTC 时间会出现 23:59:60。即 23:59:59 到 0:00:00  之间实际上需要 2 秒钟。如果减少一秒，时间会从 23:59:58 跳至 0:00:00 。另见 [The Kernel Discipline][65].
 
-好了… 间隔阈值（step threshold）的真实值是多少: 125ms 还是 128ms？ PLL/FLL tc 的单位是什么 (log2 s? ms?)？在非拥塞的千兆 LAN 中时间节点间的精度能达到多少？
+那么… 间隔阈值（step threshold）的真实值是多少: 125ms 还是 128ms？ PLL/FLL tc 的单位是什么 (log2 s? ms?)？在非拥塞的千兆 LAN 中时间节点间的精度能达到多少？
 
 感谢 Camilo M 和 Chris B的评论。 欢迎校正错误和更多细节的探讨。
 
 谢谢
 Martin
 
-### 外传 ###
+### 附录 ###
 
 - [NTP 的纪元][66] 从 1900 开始而 UNIX 的从 1970开始.
 - [时间校正][67] 是逐渐进行的，因此时间的完全同步可能会画上几个小时。 
@@ -152,7 +151,7 @@ Martin
 
 - [ntpq – 标准 NTP 查询程序][77]
 - [The Network Time Protocol (NTP) 分布][78]
-- NTP 的简明 [历史][79] 
+- NTP 的简明[历史][79] 
 - 一个更多细节的简明历史 “Mills, D.L., A brief history of NTP time: confessions of an Internet timekeeper. Submitted for publication; please do not cite or redistribute” ([pdf][80])
 - [NTP RFC][81] 标准文档
 - Network Time Protocol (Version 3) RFC – [txt][82], or [pdf][83]. Appendix E, The NTP Timescale and its Chronometry, p70, 包含了对过去 5000 年我们的计时系统的变化和关系的有趣解释。
@@ -165,7 +164,7 @@ Martin
 
 ### 其他 ###
 
-SNTP （Simple Network Time Protocol, [RFC 4330][91]，简单未落协议）基本上也是NTP，但是缺少一些基于 [RFC 1305][92] 实现的 NTP 的一些不再需要的内部算法。
+SNTP （Simple Network Time Protocol, [RFC 4330][91]，简单网络协议）基本上也是NTP，但是少了一些基于 [RFC 1305][92] 实现的 NTP 的一些不再需要的内部算法。
 
 Win32 时间 [Windows Time Service][93]  是 SNTP 的非标准实现，没有精度的保证，并假设精度几乎有 1-2 秒的范围。（因为没有系统时间变化校正）
 
@@ -184,7 +183,7 @@ via: http://nlug.ml1.co.uk/2012/01/ntpq-p-output/831
 
 作者：Martin L
 译者：[Liao](https://github.com/liaosishere)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
