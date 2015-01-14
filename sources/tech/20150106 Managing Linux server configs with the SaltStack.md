@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Managing Linux server configs with the SaltStack
 ================================================================================
 ![](http://techarena51.com/wp-content/uploads/2015/01/SaltStack+logo+-+black+on+white.png)
