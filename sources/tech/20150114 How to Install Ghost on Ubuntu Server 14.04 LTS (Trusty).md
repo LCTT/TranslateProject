@@ -1,3 +1,5 @@
+Translating-----geekpi
+
 How to Install Ghost on Ubuntu Server 14.04 LTS (Trusty)
 ================================================================================
 Today, we will install Ghost, a blogging platform in an Ubuntu Server 14.04 LTS (Trusty).
