@@ -1,3 +1,5 @@
+translating by barney-ro 
+
 2015 will be the year Linux takes over the enterprise (and other predictions)
 ================================================================================
 > Jack Wallen removes his rose-colored glasses and peers into the crystal ball to predict what 2015 has in store for Linux. 
@@ -62,7 +64,7 @@ What are your predictions for Linux and open source in 2015? Share your thoughts
 via: http://www.techrepublic.com/article/2015-will-be-the-year-linux-takes-over-the-enterprise-and-other-predictions/
 
 作者：[Jack Wallen][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[barney-ro](https://github.com/barney-ro)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
