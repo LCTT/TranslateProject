@@ -1,3 +1,5 @@
+Translating-----geekpi
+
 Installing Telnet In CentOS/RHEL/Scientific Linux 6 & 7
 ================================================================================
 #### Disclaimer: ####
