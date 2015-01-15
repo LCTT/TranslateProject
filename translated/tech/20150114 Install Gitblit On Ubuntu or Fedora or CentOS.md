@@ -1,16 +1,14 @@
-Translating-----geekpi
-
-Install Gitblit On Ubuntu / Fedora / CentOS
+在Ubuntu/Fedora/CentOS中安装Gitblit
 ================================================================================
-**Git** is a distributed revision control system with an emphasis on speed, data integrity, and support for distributed, non-linear workflows. Git was initially designed and developed by Linus Torvalds for Linux kernel development in 2005, and has since become the most widely adopted version control system for software development.
+**Git**是一款注重速度、数据完整性、分布式支持和非线性工作流的分布式版本控制工具。Git最初由Linus Torvalds在2005年为Linux内核开发而设计，如今已经成为被广泛接受的版本控制系统。
 
-As with most other distributed revision control systems, and unlike most client–server systems, every Git working directory is a full-fledged repository with complete history and full version-tracking capabilities, independent of network access or a central server. Like the Linux kernel, Git is free software distributed under the terms of the GNU General Public License version 2.
+和其他大多数分布式版本控制系统比起来，不像大多数客户端-服务端的系统，每个Git工作目录是一个完整的仓库，带有完整的历史记录和完整的版本跟踪能力，不需要依赖网络或者中心服务器。像Linux内核一样，Git意识在GPLv2许可证下的免费软件。
 
-In this tutorial let me show you how to install gitblit server. The recent stable release of gitblit is 1.6.2. [Gitblit][1] is an open-source, pure Java stack for managing, viewing, and serving [Git][2] repositories. It’s designed primarily as a tool for small workgroups who want to host centralized repositories.
+本篇教程我会演示如何安装gitlit服务器。gitlit的最新稳定版是1.6.2。[Gitblit][1]是一款开源、纯Java开发的用于管理浏览和服务的[Git][2]仓库。它被设计成一款为希望托管中心仓库的小工作组服务的工具。
 
     mkdir -p /opt/gitblit; cd /opt/gitblit; wget http://dl.bintray.com/gitblit/releases/gitblit-1.6.2.tar.gz
 
-### List the directory: ###
+### 列出目录： ###
 
     root@vps124229 [/opt/gitblit]# ls
     ./                      docs/                 gitblit-stop.sh*            LICENSE              service-ubuntu.sh*
@@ -19,11 +17,11 @@ In this tutorial let me show you how to install gitblit server. The recent stabl
     authority.sh*           gitblit.jar           install-service-ubuntu.sh*  reindex-tickets.sh*
     data/                   gitblit.sh*           java-proxy-config.sh*       service-centos.sh*
     
-The default configurations in this file data/gitblit.properties you can change it to your need.
+默认配置文件在data/gitblit.properties，你可以根据需要自己修改。
     
-### Start gitblit server with: ###
+### 启动gitlit服务： ###
 
-### Via service: ###
+### 通过service命令： ###
 
     root@vps124229 [/opt/gitblit]# cp service-centos.sh /etc/init.d/gitblit
     root@vps124229 [/opt/gitblit]# chkconfig --add gitblit
@@ -31,7 +29,7 @@ The default configurations in this file data/gitblit.properties you can change i
     Starting gitblit server
     .
 
-### Start it manually: ###
+### 手动启动： ###
 
     root@vps124229 [/opt/gitblit]# java -jar gitblit.jar --baseFolder data
     2015-01-10 09:16:53 [INFO ] *****************************************************************
@@ -108,19 +106,19 @@ The default configurations in this file data/gitblit.properties you can change i
     2015-01-10 09:16:55 [INFO ] 
     2015-01-10 09:16:55 [INFO ] All managers started.
 
-Open your browser to **http://localhost:8080** or **https://localhost:8443** depending on your chosen configuration. Enter the default administrator credentials: **admin / admin** and click the **Login** button.
+打开浏览器，依据你的配置进入**http://localhost:8080** 或者 **https://localhost:8443**。 输入默认的管理员授权：**admin / admin** 并点击**Login** 按钮
 
 ![snapshot2](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/snapshot2.png)
 
-### Add user: ###
+### 添加用户： ###
 
 ![snapshot1](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/snapshot1.png)
 
-Add repo:
+添加仓库：
 
 ![snapshot3](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/snapshot3.png)
 
-### Create a new repository on the command-line: ###
+### 用命令行创建新的仓库： ###
 
     touch README.md
     git init
@@ -129,19 +127,19 @@ Add repo:
     git remote add origin ssh://admin@142.4.202.70:29418/Programming.git
     git push -u origin master
 
-### Push an existing repository from the command-line: ###
+### 从命令行推送已有的仓库： ###
 
     git remote add origin ssh://admin@142.4.202.70:29418/Programming.git
     git push -u origin master
 
-Done!
+完成！
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/install-gitblit-ubuntu-fedora-centos/
 
 作者：[M.el Khamlichi][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
