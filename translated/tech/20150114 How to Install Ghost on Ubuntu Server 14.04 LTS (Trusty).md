@@ -1,34 +1,32 @@
-Translating-----geekpi
-
-How to Install Ghost on Ubuntu Server 14.04 LTS (Trusty)
+如何在Ubuntu Server 14.04 LTS(Trusty) 上安装Ghost
 ================================================================================
-Today, we will install Ghost, a blogging platform in an Ubuntu Server 14.04 LTS (Trusty).
+今天我们将会在Ubuntu Server 14.04 LTS (Trusty)上安装一个博客平台Ghost。
 
-Ghost is the most amazing publishing platform which is beautifully designed, easy to use, and free for everyone. It is Free and Open Source Software (FOSS), its source code is available in github. The interface is intended to be simple, and an analytics dashboard is planned, as of January 2014. Editing is facilitated using a split screen display.
+Ghost是一款设计优美的发布平台，很容易使用且对任何人都免费。它是免费的开源软件（FOSS），它的源码在Github上。截至2014年1月，它的界面很简单还有分析面板。编辑使用的是分屏显示。
 
-So, here are the steps-wise tutorial below on how to setup Ghost on Ubuntu Server:
+因此有了这篇步骤明确的在Ubuntu Server上安装Ghost的教程：
 
-### 1. Updating Ubuntu ###
+### 1. 升级Ubuntu ###
 
-The first step will be to run through the Ubuntu software updates and install a couple of extra packages that will be needed.
+第一步是运行Ubuntu软件升级并安装一系列需要的额外包。
 
     sudo apt-get update
     sudo apt-get upgrade -y
     sudo aptitude install -y build-essential zip vim wget
 
-### 2. Download and Install the Node.js Source Code ###
+### 2. 下载并安装 Node.js 源码 ###
 
     wget http://nodejs.org/dist/node-latest.tar.gz
     tar -xzf node-latest.tar.gz
     cd node-v*
 
-Now, we'll install Node.js by the following commands:
+现在，我们使用下面的命令安装Node.js：
 
     ./configure
     make
     sudo make install
 
-### 3. Download and Install Ghost ###
+### 3. 下载并安装Ghost ###
 
     sudo mkdir -p /var/www/
     cd /var/www/
@@ -37,29 +35,29 @@ Now, we'll install Node.js by the following commands:
     cd ghost/
     sudo npm install --production
 
-### 4.Configuring Ghost ###
+### 4. 配置Ghost ###
 
     sudo nano config.example.js
 
-In the "Production" section, change the following:
+在“Production”字段，将：
 
     host: '127.0.0.1',
 
-to
+修改成
 
     host: '0.0.0.0',
 
-### Create Ghost User ###
+### 创建Ghost用户 ###
 
     sudo adduser --shell /bin/bash --gecos 'Ghost application' ghost
     sudo chown -R ghost:ghost /var/www/ghost/
 
-Now to start Ghost, you will need to log into your "ghost" user.
+现在启动Ghost，你需要以“ghsot”用户登录。
 
     su - ghost
     cd /var/www/ghost/
 
-Now that you are logged in with your "ghost" user you can start Ghost:
+现在，你已经以“ghsot”用户登录，并可启动Ghost：
 
     npm start --production
 
@@ -68,7 +66,7 @@ Now that you are logged in with your "ghost" user you can start Ghost:
 via: http://linoxide.com/ubuntu-how-to/install-ghost-ubuntu-server-14-04/
 
 作者：[Arun Pyasi][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
