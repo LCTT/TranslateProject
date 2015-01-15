@@ -2,13 +2,13 @@
 ================================================================================
 这里，我们将展示如何在一台Ubuntu 14.04或CentOS 6.5/7上安装Bugzilla。Bugzilla是一款基于web，用来记录跟踪缺陷数据库的bug跟踪软件，它同时是一款免费及开源软件(FOSS)，它的bug跟踪系统允许个人和开发团体有效地记录下他们产品的一些突出问题。尽管是"免费"的，Bugzilla依然有很多其它同类产品所没有的“珍贵”特性。因此，Bugzilla很快就变成了全球范围内数以千计的组织最喜欢的bug管理工具。
 
-Bugzilla对于不同状况的适应能力非常强。如今它们应用在各个不同的IT领域，系统管理员部署管理、芯片设计和部署问题跟踪(制作前后),还有为那些诸如Redhat，NASA，Linux-Mandrake和VA Systems这些名家提供软硬件bug跟踪。
+Bugzilla对于不同使用场景的适应能力非常强。如今它们应用在各个不同的IT领域，如系统管理中的部署管理、芯片设计及部署的问题跟踪(制造前期和后期)，还有为那些诸如Redhat，NASA，Linux-Mandrake和VA Systems这些著名公司提供软硬件bug跟踪。
 
 ### 1. 安装依赖程序 ###
 
 安装Bugzilla相当**简单**。这篇文章特别针对Ubuntu 14.04和CentOS 6.5两个版本(不过也适用于更老的版本)。
 
-为了获取并能在Ubuntu或CentOS系统中运行Bugzilla，我们要安装Apache网络服务器(允许SSL)，MySQL数据库服务器和一些需要来安装并配置Bugzilla的工具。
+为了获取并能在Ubuntu或CentOS系统中运行Bugzilla，我们要安装Apache网络服务器(启用SSL)，MySQL数据库服务器和一些需要来安装并配置Bugzilla的工具。
 
 要在你的服务器上安装使用Bugzilla，你需要安装好以下程序：
 
@@ -29,14 +29,13 @@ Bugzilla对于不同状况的适应能力非常强。如今它们应用在各个
 
 **Ubuntu版本:**
 
-    $ sudo apt-get install apache2 mysql-server libapache2-mod-perl2
-    libapache2-mod-perl2-dev libapache2-mod-perl2-doc perl postfix make gcc g++
+    $ sudo apt-get install apache2 mysql-server libapache2-mod-perl2 libapache2-mod-perl2-dev libapache2-mod-perl2-doc perl postfix make gcc g++
 
 **CentOS版本:**
 
     $ sudo yum install httpd mod_ssl mysql-server mysql php-mysql gcc perl* mod_perl-devel
 
-**注意：请在shell或者终端下运行所有的命令并且确保你用root用户（sudo）连接机器。**
+**注意：请在shell或者终端下运行所有的命令并且确保你用root用户（sudo）操作机器。**
  
 ### 2. 启动Apache服务 ###
 
@@ -115,7 +114,6 @@ CentOS 6.5和Ubuntu 14.04 Trusty两个版本：
     # cd /var/www/html/
 
     # mv -v bugzilla-4.5.2 bugzilla
-
  
 
 **注意**：这里,**/var/www/html/bugzilla/**就是**Bugzilla主目录**.
@@ -194,7 +192,7 @@ via: http://linoxide.com/tools/install-bugzilla-ubuntu-centos/
 
 作者：[Arun Pyasi][a]
 译者：[ZTinoZ](https://github.com/ZTinoZ)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
