@@ -1,3 +1,5 @@
+Translating----geekpi
+
 20 Unix Command Line Tricks – Part I
 ================================================================================
 Let us start new year with **these Unix command line tricks** to increase productivity at the Terminal. I have found them over the years and I'm now going to share with you.
