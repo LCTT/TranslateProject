@@ -30,19 +30,19 @@
 
 **问:5 patch命令是什么？如何使用？**
 
-答: As the name suggest patch command is used to apply changes ( or patches) to the text file. Patch command generally accept output from the diff and convert older version of files into newer versions. For example Linux kernel source code consists of number of files with millions of lines , so whenever any contributor contribute the changes , then he/she will be send the only changes instead of sending the whole source code. Then the receiver will apply the changes with patch command to its original source code.
+答: 顾名思义，patch命令就是用来将修改（或补丁）写进文本文件里。Patch命令通常是接收diff的输出并把文件的旧版本转换为新版本。举个例子，Linux内核源代码由百万行代码文件构成，所以无论何时，任何代码贡献者贡献出代码，只需发送改动的部分而不是整个源代码，然后接收者用patch命令将改动写进原始的源代码里。
 
-Create a diff file for use with patch,
+创建一个diff文件给patch使用，
 
     # diff -Naur old_file new_file > diff_file
 
-Where old_file and new_file are either single files or directories containing files. The r option supports recursion of a directory tree.
+旧文件和新文件要么都是单个的文件要么都是包含文件的目录，r选项支持目录树递归。
 
-Once the diff file has been created, we can apply it to patch the old file into the new file:
+一旦diff文件创建好，我们就能在旧的文件上打上补丁，把它变成新文件：
 
     # patch < diff_file
 
-**问:6 What is use of aspell ?**
+**问:6 aspell有什么用 ?**
 
 答: As the name suggest aspell is an interactive spelling checker in linux operating system. The aspell command is the successor to an earlier program named ispell, and can be used, for the most part, as a drop-in replacement. While the aspell program is mostly used by other programs that require spell-checking capability, it can also be used very effectively as a stand-alone tool from the command line.
 
