@@ -1,3 +1,4 @@
+SPccman.......translating
 How to Manage Network using nmcli Tool in RedHat / CentOS 7.x
 ================================================================================
 A new feature of [**Red Hat Enterprise Linux 7**][1] and **CentOS 7** is that the default networking service is provided by **NetworkManager**, a dynamic network control and configuration daemon that attempts to keep network devices and connections up and active when they are available while still supporting the traditional ifcfg type configuration files. NetworkManager can be used with the following types of connections: Ethernet, VLANs, Bridges, Bonds, Teams, Wi-Fi, mobile broadband (such as cellular 3G), and IP-over-InfiniBand. For these connection types, NetworkManager can configure network aliases, IP addresses, static routes, DNS information, and VPN connections, as well as many connection-specific parameters.
