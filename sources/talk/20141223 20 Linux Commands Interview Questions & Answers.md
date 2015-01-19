@@ -44,11 +44,11 @@
 
 **问:6 aspell有什么用 ?**
 
-答: 顾名思义，aspell就是Linux操作系统上的一款交互式拼写检查器。aspell命令继任了更早的一个名为ispell的程序，并且作为一款嵌入式替代品，最重要的是它非常好用。While the aspell program is mostly used by other programs that require spell-checking capability, it can also be used very effectively as a stand-alone tool from the command line.
+答: 顾名思义，aspell就是Linux操作系统上的一款交互式拼写检查器。aspell命令继任了更早的一个名为ispell的程序，并且作为一款嵌入式替代品 ，最重要的是它非常好用。当aspell程序主要被其它一些需要拼写检查能力的程序所使用的时候，在命令行中作为一个独立运行的工具的它也能十分有效。
 
-**问:7 How to check the SPF record of domain from command line ?**
+**问:7 如何从命令行查看域SPF记录？**
 
-答: We can check SPF record of a domain using dig command. Example is shown below :
+答: 我们可以用dig命令来查看域SPF记录。举例如下：
 
     linuxtechi@localhost:~$ dig -t TXT google.com
 
@@ -56,7 +56,7 @@
 
 答: # rpm -qf /etc/fstab
 
-Above command will list the package which provides file “/etc/fstab”
+以上命令能列出Above command will list the package which provides file “/etc/fstab”
 
 **问:9 Which command is used to check the status of bond0 ?**
 
