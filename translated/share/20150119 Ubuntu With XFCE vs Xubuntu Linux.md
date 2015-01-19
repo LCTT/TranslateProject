@@ -8,13 +8,13 @@ Ubuntu vs Xubuntu。Ubuntu拥有漂亮的桌面体验以及强大的应用程序
 
 首先，这篇文章不是用来说明Ubuntu比Xubuntu更好或者Xubuntu比Ubuntu更好之类的东西。
 
-同时，我也会在这篇文章中介绍Ubuntu用户如何获取基本的XFCE桌面，以及如何安装完整的Xubuntu桌面。
+并且，我同时也会在这篇文章中介绍Ubuntu用户如何获取基本的XFCE桌面，以及如何安装完整的Xubuntu桌面。
 
 [Ubuntu][1]以及[Xubuntu][2]是针对不同目的开发的操作系统，为什么我会强调这一点，是为了说明什么时候或者为什么你应该使用Ubuntu以及什么时候应该使用Xubuntu。
 
-比较这两个操作系统就像比较[劳斯莱斯][3]与[保时捷][4]。它们两个都是好车，但是如果把劳斯莱斯送给一个车迷，他们也许会卖掉它买个其他的车，同样的，如果把保时捷给舒格勋爵或者休·海夫纳这类人，is likely to put their backs out.
+比较这两个操作系统就像比较[劳斯莱斯][3]与[保时捷][4]。这两个都是很棒的车，但是如果把劳斯莱斯给一个车迷，他们也许会卖掉它买个其他的车，同样，如果把保时捷给舒格勋爵或者休·海夫纳这类人可能也不那么合适。
 
-Ubuntu拥有一个适用性很强的桌面环境，叫做Unity，并且默认会安装一些很棒的Linux应用程序，包括Rhythmbox以及[LibreOffic][5]。Ubuntu就像是劳斯莱斯。它为舒适而造，并且尽可能的提供从A到B的最时髦的方法。
+Ubuntu拥有一个适用性很强的桌面环境，叫做Unity，并且默认会安装一些很棒的Linux应用程序，包括Rhythmbox以及[LibreOffic][5]。Ubuntu就像是劳斯莱斯。它为舒适而生，并且尽可能的提供从A到B的最时髦的方法。
 
 作为一个Ubuntu用户，就像汽车里面的乘客。你在到达目的地的过程中就可以同时把事情搞定，并且所有的事看起来都很漂亮并且很简单。
 
@@ -22,13 +22,13 @@ Ubuntu拥有一个适用性很强的桌面环境，叫做Unity，并且默认会
 
 XFCE桌面环境可以高度定制化，你可以把你的桌面搞成任何你想要的形式。
 
-Xubuntu就像一个改装的跑车。你可以把它改装成任何你想要的样子。但不是做为一名乘客，而更像是驾驶员开着它快速漂移过弯，或者小心翼翼的通过狭小的弯角。
+Xubuntu就像一个改装过的跑车。你可以把它改装成任何你想要的样子。但不是做为一名乘客，而更像是驾驶员开着它快速漂移过弯，或者小心翼翼的通过狭小的弯角。
 
 如果你不关心如何美化或者定制桌面，并且你发现Ubuntu用起来很顺手，那么你没必要切换到Xubuntu。
 
 但是，如果你发现Unity没办法满足你的要求，并且感觉你的计算机在运行Ubuntu时或多或少有一些性能压力，那么当然就可以考虑考虑Xubuntu。
 
-上周我发了一篇文章介绍怎么创建Xubuntu启动优盘，并且也写了一篇[安装Xubuntu的教程][b]。
+上周我发了一篇文章介绍怎么创建Xubuntu启动优盘（译者注：翻译ing），并且也写了一篇[安装Xubuntu的教程][b]（译者注：已经完成翻译，链接为github地址）。
 
 不过，如果你已经安装了Ubuntu，就不用这么费事照着教程再来一遍了。你只需要继续读完这篇文章，就可以在Ubuntu里面安装一个更合适的解决方案。
 
@@ -88,7 +88,7 @@ Xubuntu就像一个改装的跑车。你可以把它改装成任何你想要的�
 
 ### 如何在Ubuntu安装XFCE桌面环境 ###
 
-!默认的XFCE桌面](http://f.tqn.com/y/linux/1/W/U/J/1/xfce1.png)
+![默认的XFCE桌面](http://f.tqn.com/y/linux/1/W/U/J/1/xfce1.png)
 
 接下来，我会使用命令行工具[apt-get][7]介绍在Ubuntu安装XFCE桌面的方法。
 
@@ -146,7 +146,7 @@ via : http://linux.about.com/od/dist/fl/Ubuntu-With-XFCE-vs-Xubuntu-Linux.htm
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://linux.about.com/bio/Gary-Newell-132058.htm
-[b]:https://github.com/ZhouJ-sh/TranslateProject/commit/0c4ad0bc8e79e28c1f7f8ccf805708829baa8ea9
+[b]:https://github.com/ZhouJ-sh/TranslateProject/blob/0c4ad0bc8e79e28c1f7f8ccf805708829baa8ea9/translated/share/20150116%20A%20Step%20By%20Step%20Guide%20To%20Installing%20Xubuntu%20Linux.md
 [1]:http://www.everydaylinuxuser.com/2014/11/an-everyday-linux-user-review-of-ubuntu.html
 [2]:http://www.everydaylinuxuser.com/2015/01/an-everyday-linux-user-review-of.html
 [3]:http://exoticcars.about.com/od/overviewsofmaker1/p/RollsHistory.htm
