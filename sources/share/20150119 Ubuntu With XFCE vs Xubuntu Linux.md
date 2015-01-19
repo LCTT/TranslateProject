@@ -1,3 +1,5 @@
+translating by zhouj-sh
+
 Ubuntu With XFCE vs Xubuntu Linux
 =========================================================
 
