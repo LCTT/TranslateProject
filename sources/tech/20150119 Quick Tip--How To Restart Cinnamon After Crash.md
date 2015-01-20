@@ -1,3 +1,5 @@
+Translating---geekpi
+
 [Quick Tip] How To Restart Cinnamon After Crash
 ================================================================================
 Cinnamon is a Linux desktop environment which provides advanced innovative features and a traditional user experience. The desktop layout is similar to Gnome 2. The underlying technology is similar from Gnome Shell. The emphasis is put on making users feel at home and providing them with an easy to use and comfortable desktop experience.
