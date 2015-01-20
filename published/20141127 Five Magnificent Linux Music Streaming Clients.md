@@ -2,17 +2,18 @@ Linux 下五款出色的流媒体客户端
 ================================================================================
 数字流媒体这几天几乎占据了我音乐收听的全部时间。近年来我为了收藏 CD 花费了数量可观的费用；但它们中的大部分现在正静静地躺在满是灰尘的角落里。基本上所有的音乐流媒体服务所提供的的音质都不如 CD 的，但它们受欢迎的原因很大程度上在于其便捷性，而非高度保真的音质再现。音乐流媒体不仅造成了 CD 销量的大幅减少；也使数字音乐的下载开始缓慢下滑。这种趋势还会继续下去。音乐发烧友现在或许也想要拥抱音乐流媒体服务了，某些音乐流媒体服务商如 Tidal 提供了无损的音乐流媒体服务，其中包含了 25 万首比特率为 1411kbps 的 FLAC 格式的音乐。
 
-尽管 CD 暂时不会消失，但音乐流媒体服务商却无法协调和那些不满从音乐托管服务中收取的租金的唱片公司及音乐家之间的问题。这一切仍然处于变化之中；我们看到了今年 Led Zeppelin, Pink Floyd, Metallica 签名支持流媒体服务，但仍然有部分知名的老牌乐队如 Beatles, Radiohead 以及 AC/DC 拒绝将自己的作品放到流媒体上供粉丝收听。即使当某个唱片公司或者音乐家已经授权给流媒体服务商访问自己的作品，但只要音乐家发表声明就可以在第一时间将其作品从流媒体服务下架。本月（2014 年 11 月），Taylor Swift 请求将她的所有音乐作品从 Spotify 的流媒体服务下架。有些人还是更偏向于“拥有”他们的音乐，但这看起来像是一种快要过时了的欣赏音乐的方式。
+尽管 CD 暂时不会消失，但音乐流媒体服务商却无法调和那些不满从音乐托管服务中收取的租金的唱片公司及音乐家之间的问题。这一切仍然处于变化之中；我们看到了今年 Led Zeppelin, Pink Floyd, Metallica 签名支持流媒体服务，但仍然有部分知名的老牌乐队如 Beatles, Radiohead 以及 AC/DC 拒绝将自己的作品放到流媒体上供粉丝收听。即使当某个唱片公司或者音乐家已经授权给流媒体服务商访问自己的作品，但只要音乐家发表声明就可以在第一时间将其作品从流媒体服务下架。本月（2014 年 11 月），Taylor Swift 请求将她的所有音乐作品从 Spotify 的流媒体服务下架。有些人还是更偏向于“拥有”他们的音乐，但这看起来像是一种快要过时了的欣赏音乐的方式。
 
 使用 Linux 平台来收听流媒体音乐服务的方法已经逐渐成熟。在 Linux 平台下，你可以找到许多客户端，通过它们你可以使用大部分的音乐流媒体服务；我希望 TIDAL 能在今后合适的时候发行 Linux 桌面客户端，而不是仅仅依赖 web 播放器。本文精选的这些应用都是非常出色的。另外 Amarok，pianobar 还有 Tomahawk 也表现得很不错。
 
-![Spotify](http://www.linuxlinks.com/portal/content2/png/Spotify.png)
+### Spotify
 
 ![Spotify 播放界面](http://www.linuxlinks.com/portal/content/reviews/Audio/Screenshot-Spotify-Streaming.png)
 
 Spotify 是一种专有的 P2P 音乐流媒体服务，允许用户收听点播曲目或专辑。Spotify 将自己描述为“音乐圣殿。快捷、简易、免费的服务”。Spotify 分别为普通的移动端和桌面端用户提供了 96kbps 和 160kbps 比特率的流媒体服务，并且为高级用户提供了 Ogg Vorbis 格式的 320kbps 比特率的流媒体服务。Spotify 为普通用户提供了免费但是有广告的服务，以及无广告的订阅账户服务。
 
 Spotify 是很奇妙的服务，向用户们提供了涵盖各种类型的数量众多的音乐，如：流行乐、另类摇滚、古典乐、铁克诺电音、摇滚乐等。这是发现新音乐的好方法。Spotify 得到了包括 Sony BMG，EMI，Universal 以及 Warner Music 在内的主流唱片公司，以及 Labrador Records，The Orchard，Alligator Records，Merlin，CD Baby，INgrooves 等独立唱片唱片公司和分销网络，甚至 Chandos，Naxos，EMI Classic，Warner Classics，Denon Essentials 这些古典唱片公司的支持，还有更多的公司在这里就不一一列举了。
+
 Spotify 的音乐涵盖范围还在继续以惊人的步伐扩张着。
 
 Spotify 现在并没有发行官方版的 Linux 客户端。不过，开发团队已经推出了针对 Linux 的客户端预览版，并且表现得还不错。因为仍然是预览版，所以没有得到官方的支持。
@@ -34,9 +35,8 @@ Spotify 流媒体服务现已支持以下地区/国家：安道尔，阿根廷�
 - 许可证：专有许可证
 - 当前版本：预览版
 
-----------
 
-![Pithos](http://www.linuxlinks.com/portal/content2/png/Pithos.png)
+### Pithos
 
 ![Pithos 播放界面](http://www.linuxlinks.com/portal/content/reviews/Audio/Screenshot-Pithos-streaming.png)
 
@@ -69,9 +69,8 @@ Pandora 音乐服务只能通过美国的 IP 地址使用。不过，非美国�
 - 许可证：GNU GPL v3
 - 当前版本：1.0.0
 
-----------
 
-![Clementine](http://www.linuxlinks.com/portal/content2/png/Clementine.png)
+### Clementine
 
 ![Clementine 播放界面](http://www.linuxlinks.com/portal/content/reviews/Audio/Screenshot-Clementine-Streaming.png)
 
@@ -80,6 +79,7 @@ Clementine 基于 Amarok 开发，是一款跨平台的轻量级现代化音乐�
 Clementine 在 Amarok 1.4 的基础上开发。
 
 **特色包括：**
+
 - 检索、播放本地音乐库
 - 从 Last.fm 和 SomaFM 收听互联网电台
 - 标签式播放列表，支持导入导出 M3U，XSPF，PLS 及 ASX 格式的播放列表
@@ -110,9 +110,8 @@ Clementine 在 Amarok 1.4 的基础上开发。
 - 许可证：GNU GPL v3
 - 当前版本：1.2
 
-----------
 
-![Nuvola Player](http://www.linuxlinks.com/portal/content2/png/NuvolaPlayer.png)
+### Nuvola Player
 
 ![Nuvola Player 播放界面](http://www.linuxlinks.com/portal/content/reviews/Utilities/Screenshot-NuvolaPlayer-Streaming.png)
 
@@ -151,9 +150,8 @@ Nuvola Player 是一个免费的开源项目，能够整合云端音乐到你的
 - 许可证：2-Clause BSD license
 - 当前版本：2.4.3
 
-----------
 
-![Atraci](http://www.linuxlinks.com/portal/content2/png/Atraci-2.png)
+### Atraci
 
 ![Atraci 播放界面](http://www.linuxlinks.com/portal/content/reviews/Utilities/Screenshot-Atraci.png)
 
@@ -185,7 +183,7 @@ via: http://www.linuxlinks.com/article/20141116052055674/MusicStreaming.html
 
 作者：Frazer Kline 
 译者：[Stevearzh](https://github.com/Stevearzh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

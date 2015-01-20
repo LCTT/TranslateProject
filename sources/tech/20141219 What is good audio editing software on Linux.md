@@ -1,6 +1,8 @@
-What is good audio editing software on Linux
+Translating by ly0
+
+Linux下一些蛮不错的音频编辑软件
 ================================================================================
-Whether you are an amateur musician or just a student recording his professor, you need to edit and work with audio recordings. If for a long time such task was exclusively attributed to Macintosh, this time is over, and Linux now has what it takes to do the job. In short, here is a non-exhaustive list of good audio editing software, fit for different tasks and needs.
+无论你是一个业余的音乐家或者仅仅是一个上课撸教授音的学，你总是需要和录音打交道。如果你有很长的时间仅仅用Mac干这种事情，那么可以和这个过程说拜拜了，现在Linux也可以干同样的事情。简而言之，这里有一个简单但是不错的音频编辑软件列表，来满足你对不同任务和需求。
 
 ### 1. Audacity ###
 

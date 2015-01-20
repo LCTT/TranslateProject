@@ -1,30 +1,34 @@
-硬盘监控和分析神器——Smartctl
+硬盘监控和分析工具——Smartctl
 ================================================================================
-**Smartctl**（自监控，分析和报告技术）是类Unix系统下实施SMART任务命令行套件或工具，它用于打印SMART**自检**和**错误日志**，启用并禁用SMRAT**自动检测**，以及初始化设备自检。
+**Smartctl**（S.M.A.R.T 自监控，分析和报告技术）是类Unix系统下实施SMART任务命令行套件或工具，它用于打印SMART**自检**和**错误日志**，启用并禁用SMRAT**自动检测**，以及初始化设备自检。
 
-Smartctl对于Linux物理服务器十分有用，在这些服务器上，可以对智能磁盘进行错误检查，并将与**硬件RAID**上相关的磁盘信息摘录下来。
+Smartctl对于Linux物理服务器十分有用，在这些服务器上，可以对智能磁盘进行错误检查，并将与**硬件RAID**相关的磁盘信息摘录下来。
 
 在本帖中，我们将讨论smartctl命令的一些实用样例。如果你的Linux上海没有安装smartctl，请按以下步骤来安装。
 
-### Ubuntu中smartctl的安装 ###
+### 安装 Smartctl ###
+
+**对于 Ubuntu**
 
     $ sudo apt-get install smartmontools
 
-### Redhat / CentOS中smartctl的安装 ###
+**对于 CentOS & RHEL**
 
     # yum install smartmontools
 
-**启动Smartctl服务**
+###启动Smartctl服务###
 
-**对于Ubuntu**
+**对于 Ubuntu**
 
     $ sudo /etc/init.d/smartmontools start
 
-**对于CentOS & RHEL**
+**对于 CentOS & RHEL**
 
     # service smartd start ; chkconfig smartd on
 
-**样例：1 检查针对磁盘的Smart负载量**
+### 样例 ###
+
+#### 样例：1 检查磁盘的 Smart 功能是否启用
 
     root@linuxtechi:~# smartctl -i /dev/sdb
     smartctl 6.2 2013-07-26 r3841 [x86_64-linux-3.13.0-32-generic] (local build)
@@ -46,9 +50,9 @@ Smartctl对于Linux物理服务器十分有用，在这些服务器上，可以�
     SMART support is: Available - device has SMART capability.
     SMART support is: Enabled
 
-这里‘/dev/sdb’是你的硬盘。上面输出中的最后两行显示了SMART负载量已启用。
+这里‘/dev/sdb’是你的硬盘。上面输出中的最后两行显示了SMART功能已启用。
 
-**样例：2 为磁盘启用Smart负载量**
+#### 样例：2 启用磁盘的 Smart 功能
 
     root@linuxtechi:~# smartctl -s on /dev/sdb
     smartctl 6.2 2013-07-26 r3841 [x86_64-linux-3.13.0-32-generic] (local build)
@@ -57,7 +61,7 @@ Smartctl对于Linux物理服务器十分有用，在这些服务器上，可以�
     === START OF ENABLE/DISABLE COMMANDS SECTION ===
     SMART Enabled.
 
-**样例：3 为磁盘禁用Smart负载量**
+#### 样例：3 禁用磁盘的 Smart 功能
 
     root@linuxtechi:~# smartctl -s off  /dev/sdb
     smartctl 6.2 2013-07-26 r3841 [x86_64-linux-3.13.0-32-generic] (local build)
@@ -66,12 +70,12 @@ Smartctl对于Linux物理服务器十分有用，在这些服务器上，可以�
     === START OF ENABLE/DISABLE COMMANDS SECTION ===
     SMART Disabled. Use option -s with argument 'on' to enable it.
 
-**样例：4 为磁盘显示详细Smart信息**
+#### 样例：4 显示磁盘的详细 Smart 信息
 
     root@linuxtechi:~# smartctl -a /dev/sdb              // For IDE drive
     root@linuxtechi:~# smartctl -a -d ata /dev/sdb       // For SATA drive
 
-**样例：5 显示磁盘总体健康状况**
+#### 样例：5 显示磁盘总体健康状况
 
     root@linuxtechi:~# smartctl -H  /dev/sdb
     smartctl 6.2 2013-07-26 r3841 [x86_64-linux-3.13.0-32-generic] (local build)
@@ -84,7 +88,7 @@ Smartctl对于Linux物理服务器十分有用，在这些服务器上，可以�
     ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
     190 Airflow_Temperature_Cel 0x0022   067   045   045    Old_age   Always   In_the_past 33 (Min/Max 25/33)
 
-**样例：6 使用long和short选项测试硬盘**
+#### 样例：6 使用long和short选项测试硬盘
 
 **Long测试**
 
@@ -126,7 +130,7 @@ Smartctl对于Linux物理服务器十分有用，在这些服务器上，可以�
 
 **注意**：short测试将花费最多2分钟，而在long测试中没有时间限制，因为它会读取并验证磁盘的每个段。
 
-**样例：7 查看驱动器的自检结果**
+#### 样例：7 查看驱动器的自检结果
 
     root@linuxtechi:~# smartctl -l selftest /dev/sdb
     smartctl 6.2 2013-07-26 r3841 [x86_64-linux-3.13.0-32-generic] (local build)
@@ -138,7 +142,7 @@ Smartctl对于Linux物理服务器十分有用，在这些服务器上，可以�
     # 1  Short offline       Completed: read failure       90%       492         210841222
     # 2  Extended offline    Completed: read failure       90%       492         210841222
 
-**样例：8 计算测试时间估值**
+#### 样例：8 计算测试时间估值
 
     root@linuxtechi:~# smartctl -c  /dev/sdb
     smartctl 6.2 2013-07-26 r3841 [x86_64-linux-3.13.0-32-generic] (local build)
@@ -178,7 +182,7 @@ Smartctl对于Linux物理服务器十分有用，在这些服务器上，可以�
                         SCT Feature Control supported.
                         SCT Data Table supported.
 
-**样例：9 显示磁盘错误日志**
+#### 样例：9 显示磁盘错误日志
 
     root@linuxtechi:~# smartctl -l error  /dev/sdb
     
@@ -219,7 +223,7 @@ via: http://www.linuxtechi.com/smartctl-monitoring-analysis-tool-hard-drive/
 
 作者：[Pradeep Kumar][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

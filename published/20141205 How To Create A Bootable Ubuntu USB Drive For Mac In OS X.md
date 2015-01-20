@@ -1,28 +1,29 @@
-在 Mac OS X 系统中创建可启动的 Ubuntu USB 驱动盘
+在 Mac OS X 系统中创建用于 Mac 的 Ubuntu USB 启动盘
 ================================================================================
+
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/11/Create_bootable_Ubuntu_USB_Mac_OS_X.jpg)
 
-上个月，在戴尔的服务中心丢失我的笔记本后，我买了一台 Macbook Air 笔记本。买回来后我首先做的一些事就是给机器装上双系统，使 Ubuntu Linux 和 Mac OS X 都可用。随后的文章我会介绍如何在 Macbook 上安装 Linux ,刚开始我们需要学习 **如何在 Mac 的 OS X 系统中创建可启动的 Ubuntu USB 驱动盘**。
+上个月，在戴尔的服务中心丢失我的笔记本后，我买了一台 Macbook Air 笔记本。买回来后我首先做的一些事就是给机器装上双系统，使 Ubuntu Linux 和 Mac OS X 都可用。随后的文章我会介绍如何在 Macbook 上安装 Linux ,刚开始我们需要学习 **如何在 Mac OS X 系统中创建用于 Mac 的 Ubuntu USB 启动盘**。
 
-在 Ubuntu 系统或 Windows 系统中创建可启动的 USB 是非常容易的，但在 Mac OS X 系统中就没这么简单了。这就是为什么 Ubuntu 的官方指南上，在 Mac 中安装 live Ubuntu 推荐使用磁盘安装而不是 USB 的原因。考虑到我的 Macbook Air 既没有 CD 驱动也没有 DVD 驱动，所以我更愿意在 Mac OS X 下创建一个 live USB.
+在 Ubuntu 系统或 Windows 系统中创建可启动的 USB 是非常容易的，但在 Mac OS X 系统中就没这么简单了。这就是为什么 Ubuntu 的官方指南上，在 Mac 中安装 live Ubuntu 推荐使用光盘安装而不是 USB 的原因。考虑到我的 Macbook Air 既没有 CD 驱动也没有 DVD 驱动，所以我更愿意在 Mac OS X 下创建一个 live USB。
 
 ### 在 Mac OS X 下创建可启动 USB 驱动盘###
 
-如前所述，在 Mac OS X 上创建对于像 Ubuntu 或任何其它可引导的操作系统这样的可启动 USB 盘是个极其麻烦的过程。但请别担心，按照下面的步骤一步一步操作就行。让我们就开始创建一个可启动的 USB 盘的操作吧：
+如前所述，在 Mac OS X 上创建对于像 Ubuntu 或任何其它可引导的操作系统这样的可启动 USB 盘是个比较麻烦的过程。但请别担心，按照下面的步骤一步一步操作就行。让我们就开始创建一个可启动的 USB 盘的操作吧：
 
 #### 步骤 1: 格式化 USB 驱动盘 ####
 
-苹果是以它自定义的标准而闻名的，所以 Mac OS X 系统有自己的文件系统类型就好不奇怪了，它的文件系统叫做 Mac OS 扩展或 [HFS 插件][1]。因此，您需要做的第一件事就是用 Mac OS 扩展文件系统来格式化您的 USB 驱动盘。
+苹果是以它自定义的标准而闻名的，所以 Mac OS X 系统有自己的文件系统类型就毫不奇怪了，它的文件系统叫做 Mac OS 扩展或 [HFS 插件][1]。因此，您需要做的第一件事就是用 Mac OS 扩展文件系统来格式化您的 USB 驱动盘。
 
-要格式化 USB 盘，插入 USB 钥匙链。从 Launchpad（在底部面板上的一个火箭形状的图标）上前往**磁盘工具**应用程序。
+要格式化 USB 盘，请先插入 USB 盘。从 Launchpad（在底部面板上的一个火箭形状的图标）上前往**磁盘工具**应用程序。
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/11/Disk_Utility_Mac.jpg)
 
-- 在磁盘工具中，从左手边的面板上选择 USB 驱动盘来格式化。
+- 在磁盘工具中，从左手边的面板上选择你的 USB 盘来格式化。
 - 点击右边面板的**分区**标签。
 - 从下拉菜单中，选择 **1 分区**。
 - 给这驱动盘起个您想要的名字。
-- 接下来，切换来**格式化成 Mac OS 扩展 (日志型)**
+- 接下来，切换分区格式为**格式化成 Mac OS 扩展 (日志型)**
 
 下面的截屏将会对您有所帮助。
 
@@ -32,7 +33,7 @@
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/11/Format_Usb_Mac_2.jpg)
 
-当所有的都已经设置完了后，仅仅只需点击**应用**按纽。它会弹出一个要格式化 USB 驱动盘的警告消息，当然是要点击分区按纽来格式化 USB 驱动盘拉。
+当所有都已经设置完了后，仅仅只需点击**应用**按纽。它会弹出一个要格式化 USB 驱动盘的警告消息，当然是要点击分区按纽来格式化 USB 驱动盘拉。
 
 #### 步骤 2: 下载 Ubuntu ####
 
@@ -50,15 +51,15 @@
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/11/ISO_to_IMG_Convert_Mac_OS_X.jpeg)
 
-您可能已经注意到我并没有新转换出的文件加上 IMG 后缀。这是没问题的，因为后缀只是个标志，它代表的是文件类型并不是文件的扩展名。转换出来的文件可能会被 Mac OS X 系统自动加上个 .dmg 后缀。别担心，这是正常的。
+您可能已经注意到我并没有新转换出的文件加上 IMG 后缀。这是没问题的，因为后缀只是个标志，重要的是文件类型并不是文件的扩展名。转换出来的文件可能会被 Mac OS X 系统自动加上个 .dmg 后缀。别担心，这是正常的。
 
-#### 步骤 4: 获得 USB 驱动盘的设备号 ####
+#### 步骤 4: 获得 USB 盘的设备号 ####
 
-接下来的事情就是获得 USB 驱动盘的设备号。在终端中运行如下命令：
+接下来的事情就是获得 USB 盘的设备号。在终端中运行如下命令：
 
     diskutil list
 
- 它会列出系统中当前可用的所有‘磁盘’信息。从它的大小上您应该能识别出此 USB 驱动盘。为了避免混淆，我建议您只插入一个 USB 盘。我的示例中，设置号是 2 （一个大小为 8G 的 USB）: /dev/disk2 
+ 它会列出系统中当前可用的所有‘磁盘’信息。从它的大小上您应该能识别出此 USB 盘。为了避免混淆，我建议您只插入一个 USB 盘。我的示例中，设置号是 2 （一个大小为 8G 的 USB）: /dev/disk2 
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/11/Create_bootable_USB_Mac_OSX.jpeg)
 
@@ -110,11 +111,11 @@ N 当然指的是我们前面使用过的设备号，在我的示例中是 2 ：
 
     diskutil eject /dev/disk2
 
-一旦弹出，点击前面出现那对话框上的**忽略**按纽。现在您的可启动 USB 磁盘已经创建好了，把它从系统中移除。
+一旦弹出，点击前面出现那对话框上的**忽略**按纽。现在您的可启动 USB 磁盘已经创建好了，把它拔下来吧。
 
 #### 步骤 7: 检查您新创建的可启动 USB 盘 ####
 
-一旦您在 Mac OS X 中完成了创建一个 live USB 这么重大的任务，是时候测试您的幸成果了。
+一旦您在 Mac OS X 中完成了创建一个 live USB 这么重大的任务，是时候测试您的新成果了。
 
 - 插入可启动 USB 盘，重启系统。
 - 在苹果启动的时候，一直按着 option （或 alt）键。
@@ -128,7 +129,7 @@ N 当然指的是我们前面使用过的设备号，在我的示例中是 2 ：
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/11/Ubuntu_boot_USB_Mac_OSX.jpeg)
 
-我希望这篇教程对您想要在 Mac OS X 下创建可启动的 Ubuntu 系统 USB 驱动盘。在接下来的一篇文章中您会学到怎么样安装 OS X 和 Ubuntu 双系统。请继续关注。
+我希望这篇教程对您想要在 Mac OS X 下创建可启动的 Ubuntu 系统 USB 驱动盘有所帮助。在接下来的一篇文章中您会学到怎么样安装 OS X 和 Ubuntu 双系统。请继续关注。
 
 --------------------------------------------------------------------------------
 
@@ -136,7 +137,7 @@ via: http://itsfoss.com/create-bootable-ubuntu-usb-drive-mac-os/
 
 作者：[Abhishek][a]
 译者：[runningwater](https://github.com/runningwater)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

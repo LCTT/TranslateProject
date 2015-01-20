@@ -1,8 +1,9 @@
-如何在Ubuntu上使用MultiSystem创建多启动USB
+如何在Ubuntu上使用MultiSystem创建多启动USB盘
 ================================================================================
+
 ### 介绍 ###
 
-一些人并不知道**MultiSystem**是一个小型的开源软件来在Linux系统中创建多启动usb盘。使用这个工具，我们可以在USB中创建任意多的可启动Linux发行版。你所要的只是网络链接（之在MultiSystem安装的时候需要），以及一个足够大的USB盘，这取决于你想在USB盘中放入发行版的数量。
+也许还有不少人不知道**MultiSystem**，它是一个用来在Linux系统中创建多启动usb盘的小型的开源软件。使用这个工具，我们可以在USB中创建任意多的可启动Linux发行版。你所需要的只是网络链接（只在MultiSystem安装的时候需要），以及一个足够大的USB盘，这取决于你想在USB盘中放入发行版的数量。
 
 ### 在 Ubuntu 14.10/14.04 安装MultiSystem ###
 
@@ -14,18 +15,18 @@
 
 #### 使用 PPA 安装: ####
 
-相应地，你可以用下面的命令来更简单地使用PPA来安装MultiSystem。
+当然，你也可以用下面的命令来更简单地使用PPA来安装MultiSystem。
 
     sudo apt-add-repository 'deb http://liveusb.info/multisystem/depot all main'
     wget -q -O - http://liveusb.info/multisystem/depot/multisystem.asc | sudo apt-key add -
     sudo apt-get update
     sudo apt-get install multisystem
 
-安装玩之后，它会自动打开。只要点击关闭按钮退出。
+安装完之后，它会自动打开MultiSystem。只要点击关闭按钮退出。
 
 ### 安装之后 ###
 
-安装完成后，插入你的USB，并通过Unity Dash或者菜单运行MultiSystem。
+MultiSystem 安装完成后，可以插入你的USB，并通过Unity Dash或者菜单运行MultiSystem。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/11/Menu_0012.png)
 
@@ -33,7 +34,7 @@
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/11/MultiSystem_002.png)
 
-选择USB设备，点击**确认**按钮。你可能会看到下面的错误窗口。不必担心，它说的是USB设备没有标签。点击OK让MultiSystem自动设置标签。
+选择USB设备，点击**确认**按钮。如果你看到下面的错误窗口，不必担心，它说的是USB设备没有标签。点击OK让MultiSystem自动设置标签。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/11/Error_003.png)
 
@@ -47,7 +48,7 @@
 
 ### 使用 ###
 
-MultiSystem非常容易使用。将ISO文件拖入MultiSystem窗口中。如果这不能用，点击底部的**cd 按钮**来选择ISO文件。
+MultiSystem非常容易使用。将ISO文件拖入MultiSystem窗口中。如果不行的话，点击底部的**cd 按钮**来选择ISO文件。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/11/MultiSystem_006.png)
 
@@ -65,24 +66,24 @@ MultiSystem非常容易使用。将ISO文件拖入MultiSystem窗口中。如果�
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/11/QEMU_009.png)
 
-额外地，MultiSystem含有一些额外的选项：
+此外，MultiSystem含有一些其它的选项：
 
-- Grub 设置;
-- Grub 和 Burg 的bootloader更新;
-- 下载 LiveCD;
-- VirtualBox 安装;
-- 格式化USB盘;
-- 还有更多选项。
+- Grub 设置
+- Grub 和 Burg 的bootloader更新
+- 下载 LiveCD
+- VirtualBox 安装
+- 格式化USB盘
+- 还有更多选项
 
-要浏览额外的选项列表，进入MultiSystem的**菜单**标签。 
+这些额外选项可以在MultiSystem的**菜单**标签里面看到。 
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/11/MultiSystem_010.png)
 
-同样，你可以在Ubuntu中使用QEMU或者Oracle VirtualBox测试多启动USB盘。
+同样，你也可以在Ubuntu中使用QEMU或者Oracle VirtualBox测试多启动USB盘。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/11/MultiSystem_011.png)
 
-MultiSystem工具是我测试到现在最棒和最有用的一款工具。这款工具对那些想要在他们的机器上安装多个系统的人是非常有用的。在你外出的时候，你不必再携带CD/DVD袋了。只要买一个16GB或者32GB的USB就行，并把所有你想要的系统都放在里面，就像老板一样安装系统。
+MultiSystem工具是我测试到现在最棒和最有用的一款工具。这款工具对那些想要在他们的机器上安装多个系统的人是非常有用的。在你外出的时候，你不必再携带CD/DVD袋了。只要买一个16GB或者32GB的USB就行，并下载所有你想要的系统，随心所欲的安装系统即可。
 
 并且，一个对于Windows系统用户的好消息是它也支持Windows系统。我在Windows 7上测试过，它可以工作！
 
@@ -94,7 +95,7 @@ via: http://www.unixmen.com/create-multiboot-usb-ubuntu-using-multisystem/
 
 作者：[SK][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
