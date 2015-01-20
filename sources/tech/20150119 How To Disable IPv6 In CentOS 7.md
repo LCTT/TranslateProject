@@ -1,3 +1,5 @@
+Translating----geekpi
+
 How To Disable IPv6 In CentOS 7
 ================================================================================
 Recently, one of my friend asked me how to disable IPv6. After searching a bit, I found the following solution. Here is the steps that I followed to disable IPv6 in my CentOS 7 minimal server.
