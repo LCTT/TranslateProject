@@ -1,3 +1,5 @@
+Medusar translating
+
 How To Recover Windows 7 And Delete Ubuntu In 3 Easy Steps
 ================================================================================
 ### Introduction ###
