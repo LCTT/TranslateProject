@@ -12,7 +12,7 @@ Ubuntu vs Xubuntu。Ubuntu拥有漂亮的桌面体验以及强大的应用程序
 
 [Ubuntu][1]以及[Xubuntu][2]是针对不同目的开发的操作系统，为什么我会强调这一点，是为了说明什么时候或者为什么你应该使用Ubuntu以及什么时候应该使用Xubuntu。
 
-比较这两个操作系统就像比较[劳斯莱斯][3]与[保时捷][4]。这两个都是很棒的车，但是如果把劳斯莱斯给一个车迷，他们也许会卖掉它买个其他的车，同样，如果把保时捷给舒格勋爵或者休·海夫纳这类人可能也不那么合适。
+比较这两个操作系统就像比较[劳斯莱斯][3]与[保时捷][4]。这两个都是很棒的车，但是如果把劳斯莱斯给一个赛车迷，他们也许会卖掉它买个其他的车，同样，如果把保时捷给舒格勋爵或者休·海夫纳这类人可能也不那么合适。
 
 Ubuntu拥有一个适用性很强的桌面环境，叫做Unity，并且默认会安装一些很棒的Linux应用程序，包括Rhythmbox以及[LibreOffic][5]。Ubuntu就像是劳斯莱斯。它为舒适而生，并且尽可能的提供从A到B的最时髦的方法。
 
@@ -28,7 +28,7 @@ Xubuntu就像一个改装过的跑车。你可以把它改装成任何你想要�
 
 但是，如果你发现Unity没办法满足你的要求，并且感觉你的计算机在运行Ubuntu时或多或少有一些性能压力，那么当然就可以考虑考虑Xubuntu。
 
-上周我发了一篇文章介绍怎么创建Xubuntu启动优盘（译者注：翻译ing），并且也写了一篇[安装Xubuntu的教程][b]（译者注：已经完成翻译，链接为github地址）。
+上周我发了一篇文章介绍怎么[创建Xubuntu启动优盘][c]，并且也写了一篇[安装Xubuntu的教程][b]（译者注：链接为github地址）。
 
 不过，如果你已经安装了Ubuntu，就不用这么费事照着教程再来一遍了。你只需要继续读完这篇文章，就可以在Ubuntu里面安装一个更合适的解决方案。
 
@@ -147,6 +147,7 @@ via : http://linux.about.com/od/dist/fl/Ubuntu-With-XFCE-vs-Xubuntu-Linux.htm
 
 [a]:http://linux.about.com/bio/Gary-Newell-132058.htm
 [b]:https://github.com/ZhouJ-sh/TranslateProject/blob/0c4ad0bc8e79e28c1f7f8ccf805708829baa8ea9/translated/share/20150116%20A%20Step%20By%20Step%20Guide%20To%20Installing%20Xubuntu%20Linux.md
+[c]:https://github.com/ZhouJ-sh/TranslateProject/blob/d91316c19c6668b82cfabf9f89e4ad07c7193202/translated/share/20150119%203%20Ways%20To%20Create%20A%20Lightweight%20And%20Persistent%20Xubuntu%20Linux%20USB%20Drive.md
 [1]:http://www.everydaylinuxuser.com/2014/11/an-everyday-linux-user-review-of-ubuntu.html
 [2]:http://www.everydaylinuxuser.com/2015/01/an-everyday-linux-user-review-of.html
 [3]:http://exoticcars.about.com/od/overviewsofmaker1/p/RollsHistory.htm
