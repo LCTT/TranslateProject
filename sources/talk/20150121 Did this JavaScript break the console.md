@@ -27,8 +27,7 @@ And not clearing the console. Now in my scripts console.log's do not register an
 
 Anyone know what I did wrong or better yet, how to fix the console?
 
-[A bug report for this issue has been filed here.](https://code.google.com/p/chromium/issues/detail?id=446975)
-
+[A bug report for this issue has been filed here.][1]
 Edit: Feeling pretty dumb, but I had Preserve log checked... That's why the console wasn't clearing.
 
 #A:
@@ -49,7 +48,7 @@ However, it's not just the presence of a percent sign that breaks the Chrome con
 http://ab%20cd
 ```
 
-Additionally, the strings `http://%`, and `http://%%` will also print properly, since Chrome will not auto-link a URL-link string unless the [`http://`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI) is followed by at least 3 characters.
+Additionally, the strings `http://%`, and `http://%%` will also print properly, since Chrome will not auto-link a URL-link string unless the [`http://`][2] is followed by at least 3 characters.
 
 From here I hypothesized that the issue must be in the process of linking a URL string in the console, likely in the process of decoding a malformed URL. I remembered that the JavaScript function `decodeURI` will throw an exception if given a malformed URL, and since Chrome's developer tools are largely written in JavaScript, could this be the issue that is evidently crashing the developer console?
 
@@ -79,4 +78,14 @@ Thankfully, the broken console issue does not persist once the tab is closed, an
 
 Apparently, the issue can persist across tabs and restarts if Preserve Log is checked. Uncheck this if you are having this issue.
 
-FROM:[stackoverflow](http://stackoverflow.com/questions/27828804/did-this-javascript-break-the-console/27830948#27830948)
+via:[stackoverflow](http://stackoverflow.com/questions/27828804/did-this-javascript-break-the-console/27830948#27830948)
+
+作者：[Alexander O'Mara][a]
+译者：[译者ID](https://github.com/译者ID)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
+
+[a:](http://stackoverflow.com/users/3155639/alexander-omara)
+[1:](https://code.google.com/p/chromium/issues/detail?id=446975)
+[2:](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI)
