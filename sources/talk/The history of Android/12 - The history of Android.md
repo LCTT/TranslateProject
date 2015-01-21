@@ -1,3 +1,5 @@
+translating by alim0x
+
 The history of Android
 ================================================================================
 ### Android 2.1—the discovery (and abuse) of animations ###
@@ -88,7 +90,7 @@ The oft-neglected Music app got a minor update. The four-button home screen was 
 
 --------------------------------------------------------------------------------
 
-via: 
+via:
 
 译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
 
