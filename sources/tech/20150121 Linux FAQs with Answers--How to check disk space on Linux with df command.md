@@ -1,7 +1,7 @@
 translating by mtunique
 Linux FAQs with Answers--How to check disk space on Linux with df command
 ================================================================================
-> **Question**: I know I can use df command to check a file system's disk space usage on Linux. Can you show me practical examples of the df command so that I can make the most out of it?
+> **问题**: 我知道在Linux上我可以用df命令来查看I know I can use df command to check a file system's disk space usage on Linux. Can you show me practical examples of the df command so that I can make the most out of it?
 
 As far as disk storage is concerned, there are many command-line or GUI-based tools that can tell you about current disk space usage. These tools report on detailed disk utilization in various human-readable formats, such as easy-to-understand summary, detailed statistics, or [intuitive visualization][1]. If you simply want to know how much free disk space is available for different file systems, then df command is probably all you need.
 
