@@ -6,7 +6,7 @@
 
 虽然对于本教程，我只会演示怎样来添加**64位**网络安装镜像，但对于Ubuntu或者Debian的**32位**系统，或者其它架构的镜像，操作步骤也基本相同。同时，就我而言，我会解释添加Ubuntu 32位源的方法，但不会演示配置。
 
-从PXE服务器安装 **Ubuntu**或者**Debian**要求你的客户机必须激活网络连接，最好是使用**DHCP**通过**NAT**来进行动态分配地址。以便安装器拉取需求包并完成安装进程。
+从PXE服务器安装 **Ubuntu**或者**Debian**要求你的客户机必须激活网络连接，最好是使用**DHCP**通过**NAT**来进行动态分配地址。以便安装器拉取所需的包并完成安装过程。
 
 #### 需求 ####
 
@@ -14,11 +14,11 @@
 
 ## 步骤 1： 添加Ubuntu 14.10和Ubuntu 14.04服务器到PXE菜单 ##
 
-**1.** 为**Ubuntu 14.10**何**Ubuntu 14.04**添加网络安装源到PXE菜单可以通过两种方式实现：其一是通过下载Ubuntu CD ISO镜像并挂载到PXE服务器机器上以便可以读取Ubuntu网络启动文件，其二是通过直接下载Ubuntu网络启动归档包并将其解压缩到系统中。下面，我将进一步讨论这两种方法：
+**1.** 为**Ubuntu 14.10**和**Ubuntu 14.04**添加网络安装源到PXE菜单可以通过两种方式实现：其一是通过下载Ubuntu CD ISO镜像并挂载到PXE服务器机器上以便可以读取Ubuntu网络启动文件，其二是通过直接下载Ubuntu网络启动归档包并将其解压缩到系统中。下面，我将进一步讨论这两种方法：
 
 ### 使用Ubuntu 14.10和Ubuntu 14.04 CD ISO镜像 ###
 
-为了能使用此方法，你的PXE服务器需要有一台可工作的CD/DVD驱动器。在一台专有计算机上，转到[Ubuntu 14.10下载][2]和[Ubuntu 14.04 下载][3]页，抓取64位**服务器安装镜像**，将它烧录到CD，并将CD镜像放到PXE服务器DVD/CD驱动器，然后使用以下命令挂载到系统。
+为了能使用此方法，你的PXE服务器需要有一台可工作的CD/DVD驱动器。在一台专有计算机上，转到[Ubuntu 14.10下载][2]和[Ubuntu 14.04 下载][3]页，获取64位**服务器安装镜像**，将它烧录到CD，并将CD镜像放到PXE服务器DVD/CD驱动器，然后使用以下命令挂载到系统。
  
     # mount /dev/cdrom  /mnt
 
@@ -26,28 +26,28 @@
 
 #### 在Ubuntu 14.10上 ####
 
-    ------------------ 32位上 ------------------
+    ------------------ 32位 ------------------
     
     # wget http://releases.ubuntu.com/14.10/ubuntu-14.10-server-i386.iso
     # mount -o loop /path/to/ubuntu-14.10-server-i386.iso /mnt
 
 ----------
 
-    ------------------ 64位上 ------------------
+    ------------------ 64位 ------------------
     
     # wget http://releases.ubuntu.com/14.10/ubuntu-14.10-server-amd64.iso
     # mount -o loop /path/to/ubuntu-14.10-server-amd64.iso /mnt
 
 #### 在Ubuntu 14.04上 ####
 
-    ------------------ 32位上 ------------------
+    ------------------ 32位 ------------------
     
     # wget http://releases.ubuntu.com/14.04/ubuntu-14.04.1-server-i386.iso
     # mount -o loop /path/to/ubuntu-14.04.1-server-i386.iso /mnt
 
 ----------
 
-    ------------------ 64位上 ------------------
+    ------------------ 64位 ------------------
     
     # wget http://releases.ubuntu.com/14.04/ubuntu-14.04.1-server-amd64.iso
     # mount -o loop /path/to/ubuntu-14.04.1-server-amd64.iso /mnt
@@ -58,33 +58,33 @@
 
 #### 在Ubuntu 14.04上 ####
 
-    ------------------ 32位上 ------------------
+    ------------------ 32位 ------------------
     
     # cd
     # wget http://archive.ubuntu.com/ubuntu/dists/utopic/main/installer-i386/current/images/netboot/netboot.tar.gz
 
 ----------
 
-    ------------------ 64位上 ------------------
+    ------------------ 64位 ------------------
     
     # cd
     # http://archive.ubuntu.com/ubuntu/dists/utopic/main/installer-amd64/current/images/netboot/netboot.tar.gz
 
 #### 在Ubuntu 14.04上 ####
 
-    ------------------ 32位上 ------------------
+    ------------------ 32位 ------------------
     
     # cd
     # wget http://archive.ubuntu.com/ubuntu/dists/trusty-updates/main/installer-i386/current/images/netboot/netboot.tar.gz
 
 ----------
 
-    ------------------ 64位上 ------------------
+    ------------------ 64位 ------------------
     
     # cd
     # wget http://archive.ubuntu.com/ubuntu/dists/trusty-updates/main/installer-amd64/current/images/netboot/netboot.tar.gz
 
-对于其它处理器架构，请访问下面的Ubuntu 14.10和Ubuntu 14.04网络启动官方页面，选择你的架构类型并下载需求文件。
+对于其它处理器架构，请访问下面的Ubuntu 14.10和Ubuntu 14.04网络启动官方页面，选择你的架构类型并下载所需文件。
 
 - [http://cdimage.ubuntu.com/netboot/14.10/][4]
 - [http://cdimage.ubuntu.com/netboot/14.04/][5]
@@ -101,7 +101,7 @@
     # tar xfz netboot.tar.gz
     # cp -rf ubuntu-installer/ /var/lib/tftpboot/
 
-如果你想要在PXE服务器上同时使用两种Ubuntu服务器架构，先请下载，然后根据不同的情况挂载并解压缩32位并拷贝**ubuntu-installer**目录到**/var/lib/tftpboot**，然后卸载CD或删除网络启动归档以及解压缩的文件和文件夹。对于64位架构，请重复上述步骤，以便让最终的**tftp**路径形成以下结构。
+如果你想要在PXE服务器上同时使用两种Ubuntu服务器架构，先请下载，然后根据不同的情况挂载或解压缩32位架构，然后拷贝**ubuntu-installer**目录到**/var/lib/tftpboot**，然后卸载CD或删除网络启动归档以及解压缩的文件和文件夹。对于64位架构，请重复上述步骤，以便让最终的**tftp**路径形成以下结构。
 
     /var/lib/tftpboot/ubuntu-installer/amd64
     /var/lib/tftpboot/ubuntu-installer/i386
@@ -238,7 +238,7 @@ via: http://www.tecmint.com/add-ubuntu-to-pxe-network-boot/
 
 作者：[Matei Cezar][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Mr小眼儿](https://github.com/tinyeyeser)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

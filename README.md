@@ -30,6 +30,26 @@ LCTT的组成
 
 请阅读[WIKI](https://github.com/LCTT/TranslateProject/wiki)。
 
+历史
+-------------------------------
+
+* 2013/09/10 倡议并得到了大家的积极响应，成立翻译组。
+* 2013/09/11 采用github进行翻译协作，并开始进行选题翻译。
+* 2013/09/16 公开发布了翻译组成立消息后，又有新的成员申请加入了。并从此建立见习成员制度。
+* 2013/09/24 鉴于大家使用Github的水平不一，容易导致主仓库的一些错误，因此换成了常规的fork+PR的模式来进行翻译流程。
+* 2013/10/11 根据对LCTT的贡献，划分了Core Translators组，最先的加入成员是vito-L和tinyeyeser。
+* 2013/10/12 取消对LINUX.CN注册用户的依赖，在QQ群内、文章内都采用github的注册ID。
+* 2013/10/18 正式启动man翻译计划。
+* 2013/11/10 举行第一次北京线下聚会。
+* 2014/01/02 增加了Core Translators 成员: geekpi。
+* 2014/05/04 更换了新的QQ群：198889102
+* 2014/05/16 增加了Core Translators 成员: will.qian、vizv。
+* 2014/06/18 由于GOLinux令人惊叹的翻译速度和不错的翻译质量，升级为Core Translators成员。
+* 2014/09/09 LCTT 一周年，做一年[总结](http://linux.cn/article-3784-1.html)。并将曾任 CORE 的成员分组为 Senior，以表彰他们的贡献。
+* 2014/10/08 提升bazz2为Core Translators成员。
+* 2014/11/04 提升zpl1025为Core Translators成员。
+* 2014/12/25 提升runningwater为Core Translators成员。
+
 活跃成员
 -------------------------------
 
@@ -119,21 +139,3 @@ LCTT的组成
 
 谢谢大家的支持！
 
-历史
--------------------------------
-
-* 2013/09/10 倡议并得到了大家的积极响应，成立翻译组。
-* 2013/09/11 采用github进行翻译协作，并开始进行选题翻译。
-* 2013/09/16 公开发布了翻译组成立消息后，又有新的成员申请加入了。并从此建立见习成员制度。
-* 2013/09/24 鉴于大家使用Github的水平不一，容易导致主仓库的一些错误，因此换成了常规的fork+PR的模式来进行翻译流程。
-* 2013/10/11 根据对LCTT的贡献，划分了Core Translators组，最先的加入成员是vito-L和tinyeyeser。
-* 2013/10/12 取消对LINUX.CN注册用户的依赖，在QQ群内、文章内都采用github的注册ID。
-* 2013/10/18 正式启动man翻译计划。
-* 2013/11/10 举行第一次北京线下聚会。
-* 2014/01/02 增加了Core Translators 成员: geekpi。
-* 2014/05/04 更换了新的QQ群：198889102
-* 2014/05/16 增加了Core Translators 成员: will.qian、vizv。
-* 2014/06/18 由于GOLinux令人惊叹的翻译速度和不错的翻译质量，升级为Core Translators成员。
-* 2014/09/09 LCTT 一周年，做一年[总结](http://linux.cn/article-3784-1.html)。并将曾任 CORE 的成员分组为 Senior，以表彰他们的贡献。
-* 2014/10/08 提升bazz2为Core Translators成员。
-* 2014/11/04 提升zpl1025为Core Translators成员。

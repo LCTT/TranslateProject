@@ -1,3 +1,5 @@
+translating by coloka...
+
 How to configure a syslog server with rsyslog on Linux
 ================================================================================
 A syslog server represents a central log monitoring point on a network, to which all kinds of devices including Linux or Windows servers, routers, switches or any other hosts can send their logs over network. By setting up a syslog server, you can filter and consolidate logs from different hosts and devices into a single location, so that you can view and archive important log messages more easily.

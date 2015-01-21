@@ -1,3 +1,4 @@
+(translating by runningwater)
 Compact Text Editors Great for Remote Editing and Much More
 ================================================================================
 A text editor is software used for editing plain text files. This type of software has many different uses including modifying configuration files, writing programming language source code, jotting down thoughts, or even making a grocery list. Given that editors can be used for such a diverse range of activities, it is worth spending the time finding an editor that best suites your preferences.
@@ -207,7 +208,7 @@ nano, like Pico, is keyboard-oriented, controlled with control keys.
 via: http://www.linuxlinks.com/article/20141011073917230/TextEditors.html
 
 作者：Frazer Kline
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
