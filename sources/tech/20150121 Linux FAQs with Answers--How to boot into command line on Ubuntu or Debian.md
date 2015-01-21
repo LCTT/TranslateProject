@@ -1,3 +1,5 @@
+Translating----geekpi
+
 Linux FAQs with Answers--How to boot into command line on Ubuntu or Debian
 ================================================================================
 > **Question**: I am running Ubuntu desktop, but I want to boot straight into text-mode console temporarily. What is a convenient way to disable desktop GUI and boot into a terminal? 
