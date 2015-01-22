@@ -1,55 +1,53 @@
-    Vic020
-
-Tips for Apache Migration From 2.2 to 2.4 on Ubuntu 14.04
+Ubuntu 14.04 Apache2.2迁移2.4问题解决
 ================================================================================
-If you do a distribution upgrade from **Ubuntu** 12.04 to 14.04, the upgrade will bring among other things an important update to **Apache**, from [version 2.2][1] to version 2.4. The update brings many improvements but it may cause some errors when used with the old configuration file from 2.2.
+如果你进行了一次**Ubuntu**从12.04到14.04的升级，那么这次升级还包括了一个重大的升级--**Apache**从2.2版本到2.4版本。**Apache**的这次升级带来了许多性能提升，但是如果继续使用2.2的配置会导致很多错误。
 
-### Access control in Apache 2.4 Virtual Hosts ###
+### 访问控制的改变 ###
 
-Starting with **Apache 2.4** authorization is applied in a way that is much more flexible then just a single check against a single data store like it was in 2.2. In the past it was tricky to figure how and in what order authorization is applied but with the introduction of authorization container directives such as and , the configuration also has control over when the authorization methods are called and what criteria determines when access is granted.
+从**Apache 2.4**起，授权（authorization）开始启用，比起2.2的一个检查一个数据存储，授权更加灵活。过去很难确定那些命令授权应用了，但是授权（authorization）的引入解决了这些问题，现在，配置可以控制什么时候授权方法被调用，什么条件决定何时授权访问。
 
-This is the point where most upgrades fail because of wrong configuration because in 2.2 access control based on IP address, hostname or other characteristic was done using the directives Order, Allow, Deny or Satisfy, but in 2.4 this is done with authorization checks using the new modules.
+这就是为什么大多数的升级失败是由于错误配置，2.2的访问控制基于IP地址，主机名和其他字符通过使用指令Order，来设置Allow, Deny或 Satisfy，但是2.4，这些一切被新模板授权（authorization）来替代检查。
 
-To be clear let's see some virtual host examples, this can be found in your /etc/apache2/sites-enabled/default or /etc/apache2/sites-enabled/YOUR_WEBSITE_NAME:
+为了弄清楚这些，可以来看一些虚拟主机的例子，这些可以在/etc/apache2/sites-enabled/default 或者 /etc/apache2/sites-enabled/网页名称 中找到:
 
-Old 2.2 virtual host configuration:
+老2.2虚拟主机配置：
 
     Order allow,deny
     Allow from all
 
-New 2.4 virtual host configuration:
+新2.4虚拟主机配置：
 
     Require all granted
 
 ![apache 2.4 config](http://blog.linoxide.com/wp-content/uploads/2014/12/apache-2.4-config.jpg)
 
-### .htaccess problems ###
+### .htaccess 问题 ###
 
-If after the upgrade some settings don't work or you get redirect errors, check if those settings are in a .htaccess file. If settings in the .htaccess file are not used by Apache it's because in 2.4 AllowOverride directive is set to None by default, thus ignoring the .htaccess files. All you have to do is to either change or add the AllowOverride All directive to your site configuration file.
+升级后如果一些设置不执行或者得到重定向错误，检查是否这些设置是在.htaccess文件中。如果是，2.4已经不再使用.htaccess文件，在2.4中默认使用AllowOverride指令来设置，因此忽略了.htaccess文件。你需要做的就是改变和增加AllowOverride All命令到你的页面配置文件中。
 
-You also see the AllowOverride All directive set in the screenshot above.
+上面截图中，可以看见AllowOverride All指令。
 
-### Missing config file or module ###
+### 丢失配置文件或者模块 ###
 
-From my experience another problem during upgrades is that your configuration file includes an old module or configuration file that is no longer needed or supported in 2.4, you will get a clear warning that Apache can't include the respective file and all you have to do is go to your configuration file and remove the line that causes problem. Afterwards you can search or install a similar module.
+根据我的经验，这次升级带了其他问题就是老模块和配置文件不再需要或者不被支持了。所以你必须十分清楚Apache不再支持的各种文件，并且在老配置中移除这些老模块来解决问题。之后你可以搜索和安装相似的模块来替代。
 
-### Other small changes you shound know about ###
+### 其他需要的知道的小改变 ###
 
-There are a few other changes that you should consider, although they generally result in an warning and not an error:
+这里还有一些其他改变的需要考虑，虽然这些通常只会发生警告，而不是错误。
 
-- MaxClients has been renamed to MaxRequestWorkers, which describes more accurately what it does. For async MPMs, like event, the maximum number of clients is not equivalent than the number of worker threads. The old name is still supported.
-- The DefaultType directive no longer has any effect, other than to emit a warning if it's used with any value other than none. You need to use other configuration settings to replace it in 2.4.
-- EnableSendfile now defaults to Off.
-- FileETag now defaults to "MTime Size" (without INode).
-- KeepAlive only accepts values of On or Off. Previously, any value other than "Off" or "0" was treated as "On".
-- Directives AcceptMutex, LockFile, RewriteLock, SSLMutex, SSLStaplingMutex, and WatchdogMutexPath have been replaced with a single Mutex directive. You will need to evaluate any use of these removed directives in your 2.2 configuration to determine if they can just be deleted or will need to be replaced using Mutex.
+- MaxClients重命名为MaxRequestWorkers，使之有更准确的描述。而异步MPM，如event，客服端最大连接数不量比与工作线程数。老名字依然支持。
+- DefaultType命令无效，使用它已经没有任何效果了。需要使用其他配置设定来替代它
+- EnableSendfile默认关闭
+- FileETag 默认"MTime Size"（没有INode）
+- KeepAlive 只接受On或Off值。之前的任何值不是Off或者0都认为是On
+- Mutex 替代 Directives AcceptMutex, LockFile, RewriteLock, SSLMutex, SSLStaplingMutex, 和 WatchdogMutexPath 。需要删除或者替代所有2.2老配置的设置。
 
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/linux-how-to/apache-migration-2-2-to-2-4-ubuntu-14-04/
 
 作者：[Adrian Dinu][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Vic020/VicYu](http://vicyu.net)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
