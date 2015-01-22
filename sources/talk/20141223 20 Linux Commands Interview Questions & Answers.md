@@ -52,13 +52,13 @@
 
     linuxtechi@localhost:~$ dig -t TXT google.com
 
-**问:8 How to identify which package the specified file (/etc/fstab) is associated with in linux ?**
+**问:8 如何识别Linux系统中指定文件(/etc/fstab)的关联包？**
 
 答: # rpm -qf /etc/fstab
 
-以上命令能列出Above command will list the package which provides file “/etc/fstab”
+以上命令能列出供应给“/etc/fstab”文件的包。
 
-**问:9 Which command is used to check the status of bond0 ?**
+**问:9 哪条命令用来查看bond0的状态？**
 
 答: cat /proc/net/bonding/bond0
 
