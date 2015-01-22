@@ -2,17 +2,17 @@
 ================================================================================
 ![](http://techarena51.com/wp-content/uploads/2014/10/open-vpn.png)
 
-我上网时最担心的一件事情是，我该如何确保我的数据安全和隐私。在搜索答案的过程中，我找到了很多保持匿名的方法，比如使用代理网站。但是使用第三方的服务不能完全保证。我需要的是有一款软件可以我自己安装并运行，那样我就能确保只有我才能访问数据。
+我上网时最担心的一件事情是，我该如何确保我的数据安全和隐私。在搜索答案的过程中，我找到了很多保持匿名的方法，比如使用代理网站。但是使用第三方的服务不能完全保证。我需要的是有一款软件可以让我自己安装并运行，那样我就能确保只有我才能访问数据。
 
 这款软件叫什么呢？
 
 它叫VPN服务，就是虚拟隐私网络的简称。它允许访问时通过SSL加密你的数据。因为是加密的连接，所以你的ISP不能看到你的浏览信息。
 
-在本篇Linux教程中，我会在CentOS 7上安装一个OpenVPN服务。OpenVPN很容易使用，开源且拥有基于社区的支持。它的客户端有Windows、Android和Mac。
+在本篇Linux教程中，我会在CentOS 7上安装一个OpenVPN服务。OpenVPN很容易使用，开源且拥有社区的支持。它的客户端支持Windows、[Android][1]和Mac。
 
-### 第一步： 在你的Linux机器或者 [VPS][1]上安装OpenVPN服务 ###
+### 第一步： 在你的Linux机器或者 VPS 上安装OpenVPN服务 ###
 
-从https://openvpn.net/index.php/access-server/download-openvpn-as-sw.html下载安装包，Ubuntu用户也可以找到合适的安装包并安装。
+从 https://openvpn.net/index.php/access-server/download-openvpn-as-sw.html 下载安装包，Ubuntu用户也可以找到合适的安装包并安装。
 
     [leo@vps ]$ cd /tmp
     [leo@vps tmp]$ wget http://swupdate.openvpn.org/as/openvpn-as-2.0.10-CentOS7.x86_64.rpm
@@ -61,11 +61,10 @@ via: http://techarena51.com/index.php/how-to-install-an-opensource-vpn-server-on
 
 作者：[Leo G][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://techarena51.com/
 [1]:https://play.google.com/store/apps/details?id=net.openvpn.openvpn&hl=en
-[2]:http://supportinc.net/vps-hosting.php
 [3]:https://openvpn.net/index.php/access-server/docs/admin-guides-sp-859543150/howto-connect-client-configuration.html
