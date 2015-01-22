@@ -1,3 +1,4 @@
+translating by mtunique
 Linux FAQs with Answers--How to check disk space on Linux with df command
 ================================================================================
 > **Question**: I know I can use df command to check a file system's disk space usage on Linux. Can you show me practical examples of the df command so that I can make the most out of it?
