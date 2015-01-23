@@ -62,23 +62,23 @@
 
 答: cat /proc/net/bonding/bond0
 
-**问:10 What is the use of /proc file system in linux ?**
+**问:10 Linux系统中的/proc文件系统有什么用？**
 
-答: The /proc file system is a RAM based file system which maintains information about the current state of the running kernel including details on CPU, memory, partitioning, interrupts, I/O addresses, DMA channels, and running processes. This file system is represented by various files which do not actually store the information, they point to the information in the memory. The /proc file system is maintained automatically by the system.
+答: /proc文件系统是一个基于维护关于当前正在运行的内核状态信息的文件系统的随机存取存储器（RAM），其中包括CPU、内存、分区划分、I/O地址、直接内存访问通道和正在运行的进程。这个文件系统所代表的是各种不实际存储信息的文件，它们指向的是内存里的信息。/proc文件系统是由系统自动维护的。
 
-**问:11 How to find files larger than 10MB in size in /usr directory ?**
+**问:11 如何在/usr目录下找出大小超过10MB的文件？**
 
 答: # find /usr -size +10M
 
-**问:12 How to find files in the /home directory that were modified more than 120 days ago ?**
+**问:12 如何在/home目录下找出120天之前被修改过的文件？**
 
-答: # find /home -mtime +l20
+答: # find /home -mtime +120
 
-**问:13 How to find files in the /var directory that have not been accessed in the last 90 days ?**
+**问:13 如何在/var目录下找出90天之内未被访问过的文件？**
 
-答: # find /var -atime -90
+答: # find /var \! -atime -90
 
-**问:14 Search for core files in the entire directory tree and delete them as found without prompting for confirmation**
+**问:14 在整个目录树下查找核心文件并Search for core files in the entire directory tree and delete them as found without prompting for confirmation**
 
 答: # find / -name core -exec rm {} \;
 
