@@ -3,7 +3,7 @@ Test drive Linux with nothing but a flash drive
 ![Penguins gathered together: Linux for the win](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/OSDC_Penguin_Image_520x292_12324207_0714_mm_v1a.png)
 Image by : Opensource.com
 
-Maybe you’ve heard about Linux and are intrigued by it. So intrigued that you want to give it a try. But you might not know where to begin.
+也许你曾经听说过Linux并且对它有着很强的好奇心. So intrigued that you want to give it a try. But you might not know where to begin.
 
 You’ve probably done a bit of research online and have run across terms like dual booting and virtualization. Those terms might mean nothing to you, and you’re definitely not ready to sacrifice the operating system that you’re currently using to give Linux a try. So what can you do?
 
