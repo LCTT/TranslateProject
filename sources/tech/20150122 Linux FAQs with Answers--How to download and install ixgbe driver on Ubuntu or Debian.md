@@ -1,3 +1,5 @@
+Translating----geekpi
+
 Linux FAQs with Answers--How to download and install ixgbe driver on Ubuntu or Debian
 ================================================================================
 > **Question**: I want to download and install the latest ixgbe driver for my Intel 10 Gigabit Ethernet card. How can I install ixgbe driver on Ubuntu (or Debian)?
