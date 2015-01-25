@@ -82,9 +82,9 @@
 
 答: # find / -name core -exec rm {} \;
 
-**问:15 What is the purpose of strings command ?**
+**问:15 strings命令有什么作用？**
 
-答: The strings command is used to extract and display the legible contents of a non-text file.
+答: strings命令用来extract and display the legible contents of a non-text file.
 
 **问:16 What is the use tee filter ?**
 
