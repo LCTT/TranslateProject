@@ -1,3 +1,4 @@
+KayGuoWhu translating
 If a 32-bit integer overflows, can we use a 40-bit structure instead of a 64-bit long one?
 ---------
 
