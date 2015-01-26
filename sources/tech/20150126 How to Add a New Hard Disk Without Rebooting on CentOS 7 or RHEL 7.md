@@ -1,3 +1,5 @@
+Translating---geekpi
+
 How to Add a New Hard Disk Without Rebooting on CentOS 7/ RHEL 7
 ================================================================================
 Normally when you have added new storage to a running Virtual machine, you probably won’t see the new storage automatically. This is because the SCSI bus to which the storage devices are connected needs to be rescanned to make the new hardware visible. The is one simple command to rescan the SCSI Bus and add SCSI Devices. The following steps has been tested on CentOS 7 and RHEL 7.
