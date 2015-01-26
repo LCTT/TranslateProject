@@ -1,24 +1,22 @@
-10个检测Linux内存使用情况的‘free’命令
+检测 Linux 内存使用情况的 free 命令的10个例子
 ===
 
-**Linux**是最有名的开源操作系统之一，它拥有着极其巨大的指令集。确定**物理内存**和**交换内存**所有可用空间的最重要，也是唯一的方法是使用“**free**”命令。
+**Linux**是最有名的开源操作系统之一，它拥有着极其巨大的命令集。确定**物理内存**和**交换内存**所有可用空间的最重要、也是唯一的方法是使用“**free**”命令。
 
-Linux “**free**”命令通过给出**Linux/Unix**操作系统中内核已使用的**buffers**情况，来提供**物理内存**和**交换内存**的总使用量和可用量。
+Linux “**free**”命令可以给出类**Linux/Unix**操作系统中**物理内存**和**交换内存**的总使用量、可用量及内核使用的**缓冲区**情况。
 
 ![10 Linux Free Command Examples](http://www.tecmint.com/wp-content/uploads/2012/09/Linux-Free-commands.png)
 
-这篇文章提供一些带有参数选项的“**free**”命令，这些命令对于你更好地利用你的内存会有帮助。
+这篇文章提供一些各种参数选项的“**free**”命令，这些命令对于你更好地利用你的内存会有帮助。
 
 ### 1. 显示你的系统内存 ###
 
-free命令用于检测**物理内存**和**交换内存**已使用量和可用量（单位为**KB**）。下面演示命令的使用情况。
+free命令用于检测**物理内存**和**交换内存**已使用量和可用量（默认单位为**KB**）。下面演示命令的使用情况。
 
     # free
 
-		total       used       free     shared    buffers     cach
-ed
-    Mem:       1021628     912548     109080          0     120368     6555
-48
+	             total       used       free     shared    buffers     cached
+    Mem:       1021628     912548     109080          0     120368     655548
     -/+ buffers/cache:     136632     884996
     Swap:      4194296          0    4194296
 
@@ -28,21 +26,18 @@ ed
 
     # free -b
 
-                 total       used       free     shared    buffers     cach
-ed
-    Mem:    1046147072  934420480  111726592          0  123256832  6712811
-52
+                 total       used       free     shared    buffers     cached
+    Mem:    1046147072  934420480  111726592          0  123256832  671281152
     -/+ buffers/cache:  139882496  906264576
     Swap:   4294959104          0 4294959104
 
 ### 3. 以千字节为单位显示内存 ###
 
-加上**-k**参数的free命令，以(KB)**千字节**为单位显示内存大小。
+加上**-k**参数的free命令（默认单位，所以可以不用使用它），以(KB)**千字节**为单位显示内存大小。
 
     # free -k
 
-                 total       used       free     shared    buffers     cach
-ed
+                 total       used       free     shared    buffers     cached
     Mem:       1021628     912520     109108          0     120368     655548
     -/+ buffers/cache:     136604     885024
     Swap:      4194296          0    4194296
@@ -53,10 +48,8 @@ ed
 
     # free -m
 
-                 total       used       free     shared    buffers     cach
-ed
-    Mem:           997        891        106          0        117        6
-40
+                 total       used       free     shared    buffers     cached
+    Mem:           997        891        106          0        117        640
     -/+ buffers/cache:        133        864
     Swap:         4095          0       4095
 
@@ -66,8 +59,7 @@ ed
 
     # free -g
                  total       used       free     shared    buffers     cached
-    Mem:             0          0          0          0          0         
- 0
+    Mem:             0          0          0          0          0          0
     -/+ buffers/cache:          0          0
     Swap:            3          0          3
 
@@ -77,10 +69,8 @@ ed
 
     # free -t
 
-                total       used       free     shared    buffers     cache
-d
-    Mem:       1021628     912520     109108          0     120368     6555
-48
+                 total       used       free     shared    buffers     cached
+    Mem:       1021628     912520     109108          0     120368     655548
     -/+ buffers/cache:     136604     885024
     Swap:      4194296          0    4194296
     Total: 5215924 912520 4303404
@@ -91,10 +81,8 @@ d
 
     # free -o                                                              
 
-                total       used       free     shared    buffers     cache
-d                                                                          
-    Mem:       1021628     912520     109108          0     120368     6555
-48                                                                         
+                 total       used       free     shared    buffers     cached                                                                          
+    Mem:       1021628     912520     109108          0     120368     655548                                                                         
     Swap:      4194296          0    4194296                               
 
 ### 8. 定期时间间隔更新内存状态 ###
@@ -103,10 +91,8 @@ d
 
     # free -s 5
 
-                 total       used       free     shared    buffers     cach
-ed
-    Mem:       1021628     912368     109260          0     120368     6555
-48
+                 total       used       free     shared    buffers     cached
+    Mem:       1021628     912368     109260          0     120368     655548
     -/+ buffers/cache:     136452     885176
     Swap:      4194296          0    4194296
 
@@ -116,10 +102,8 @@ ed
 
     # free -l
 
-                 total       used       free     shared    buffers     cach
-ed
-    Mem:       1021628     912368     109260          0     120368     6555
-48
+                 total       used       free     shared    buffers     cached
+    Mem:       1021628     912368     109260          0     120368     655548
     Low:        890036     789064     100972
     High:       131592     123304       8288
     -/+ buffers/cache:     136452     885176
@@ -139,7 +123,7 @@ via: http://www.tecmint.com/check-memory-usage-in-linux/
 
 作者：[Ravi Saive][a]
 译者：[su-kaiyao](https://github.com/su-kaiyao)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中>
 国](http://linux.cn/) 荣誉推出
