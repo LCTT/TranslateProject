@@ -1,3 +1,5 @@
+Ping Translating
+
 Linux FAQs with Answers--How to set a custom HTTP header in curl
 ================================================================================
 > **Question**: I am trying to fetch a URL with curl command, but want to set a few custom header fields in the outgoing HTTP request. How can I use a custom HTTP header with curl?

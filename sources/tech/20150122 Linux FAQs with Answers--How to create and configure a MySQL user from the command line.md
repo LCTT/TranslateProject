@@ -1,3 +1,5 @@
+Ping Translating
+
 Linux FAQs with Answers--How to create and configure a MySQL user from the command line
 ================================================================================
 > **Question**: I would like to create a new user account on MySQL server, and apply appropriate permissions and resource limits to the account. How can I create and configure a MySQL user from the command line?
