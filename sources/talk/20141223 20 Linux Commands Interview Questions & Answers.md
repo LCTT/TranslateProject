@@ -78,29 +78,29 @@
 
 答: # find /var \! -atime -90
 
-**问:14 在整个目录树下查找核心文件并Search for core files in the entire directory tree and delete them as found without prompting for confirmation**
+**问:14 在整个目录树下查找核心文件，如发现则删除它们且不提示确认信息。**
 
 答: # find / -name core -exec rm {} \;
 
 **问:15 strings命令有什么作用？**
 
-答: strings命令用来extract and display the legible contents of a non-text file.
+答: strings命令用来提取和显示非文本文件的清晰内容。
 
-**问:16 What is the use tee filter ?**
+**问:16 tee filter有什么作用 ?**
 
-答: The tee filter is used to send an output to more than one destination. It can send one copy of the output to a file and another to the screen (or some other program) if used with pipe.
+答: tee filter用来向多个目标发送输出内容。它可以向一个文件发送一份输出的拷贝并且如果使用管道的话可以在屏幕上（或一些其它程序）输出其它内容。
 
     linuxtechi@localhost:~$ ll /etc | nl | tee /tmp/ll.out
 
-In the above example, the output from ll is numbered and captured in /tmp/ll.out file. The output is also displayed on the screen.
+在以上例子中，从ll输出的是在 /tmp/ll.out 文件中被捕获的，输出同样在屏幕上显示了出来。
 
-**问:17 What would the command export PS1 = ”$LOGNAME@`hostname`:\$PWD: do ?**
+**问:17 export PS1 = ”$LOGNAME@`hostname`:\$PWD: 这条命令是在做什么？**
 
-答: The export command provided will change the login prompt to display username, hostname, and the current working directory.
+答: 这条export命令会更改登录提示符来显示用户名、本机名和当前工作目录。
 
-**问:18 What would the command ll | awk ‘{print $3,”owns”,$9}’ do ?**
+**问:18 ll | awk ‘{print $3,”owns”,$9}’ 这条命令是在做什么？**
 
-答: The ll command provided will display file names and their owners.
+答: 这条ll命令会显示这些文件的文件名和它们的拥有者。
 
 **问:19 What is the use of at command in linux ?**
 
