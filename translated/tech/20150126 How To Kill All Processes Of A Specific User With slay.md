@@ -1,41 +1,41 @@
-How To Kill All Processes Of A Specific User With ‘slay’
+如何用‘slay’杀掉指定用户的所有进程
 ================================================================================
-**slay** written by **Chris Ausbrooks** is a command line tool that can be used to kill all running processes of a specific user. slay will be useful to system administrators who finds out certain users are running process they shouldn’t have.
+**slay** 是**Chris Ausbrooks**写的一款用于杀掉指定用户所有运行进程的命令行工具。slay对系统管理员而言在找出那些不应该运行进程的用户是很有用的。
 
-slay is available in the official repositories of most distros.
+slay在大多数发行版中都有官方仓库。
 
-To install
+安装
 
-### Ubuntu and it’s derivatives ###
+### Ubuntu 和它的衍生版 ###
 
     sudo apt-get install slay
 
-### Arch Linux and Its derivatives ###
+### Arch Linux 和它的衍生版 ###
 
     sudo pacman -S slay
 
-### Fedora and its derivatives ###
+### Fedora 和它的衍生版 ###
 
     sudo yum install slay
 
-### Usage ###
+### 用法 ###
 
-You need administrative rights to use slay,
+你应该有管理员权限来使用slay，
 
-to kill all processes of a specific user all you need is:
+要杀掉指定用户的进程，你就要：
 
     sudo slay <usename>
 
-For example; if I want to kill all processes of a user named **amitooo**
+比如：我想杀掉用户**amitooo**的所有进程。
 
     ~ sudo slay amitooo
     slay: Done.
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/slay-amitoo-kpenee.png)
 
-You should see feedback for slay when done slaying.
+当slay运行完成后，你应该就可以看到反馈了。
 
-Enjoy.
+享受吧。
 
 --------------------------------------------------------------------------------
 
