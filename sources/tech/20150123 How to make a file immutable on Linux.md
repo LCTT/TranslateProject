@@ -1,4 +1,4 @@
-Translating by Medusar
+Translating by Medusar 
 
 How to make a file immutable on Linux
 ================================================================================
