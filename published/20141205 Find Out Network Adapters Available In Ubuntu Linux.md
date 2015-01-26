@@ -1,10 +1,10 @@
-在Ubuntu上找出可用的网络适配器
+如何在Ubuntu上找出可用的网络适配器
 ================================================================================
 想知道**在Linux中你正在使用的网卡是什么吗？** 在Linux中很容易就找出网卡的生产商。打开一个终端并输入下面的额命令：
 
     sudo lshw -C network
 
-如果上面的命令不能在sudo下使用，那就移除sudo。它的输出看上去有点奇怪但是很有用。
+如果上面的命令不能在sudo下使用，那就别用 sudo 的特权模式。它的输出看上去有点奇怪但是很有用。
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/12/Network_Adapter_Linux.jpeg)
 
@@ -36,7 +36,7 @@
 > 
 > resources: irq:18 memory:b0600000-b0607fff memory:b0400000-b05fffff
 
-如你所见，我Macbook Air上的无线网卡是BCM4360，这是一款在Ubuntu下面经常无法检测无线网络的很容易出问题的网卡。
+如你所见，我Macbook Air上的无线网卡是BCM4360，这是一款在Ubuntu下面很容易出现无法检测无线网络问题的网卡。
 
 [lshw][1] 命令实际上死用来列出硬件的，因此命令的名字是lshw。带上网络的选项后，就会只过滤出网络硬件了。
 
@@ -82,7 +82,7 @@
 > 
 > 04:00.0 SATA controller: Marvell Technology Group Ltd. 88SS9183 PCIe SSD Controller (rev 14)
 
-这些命令会同时列出有线和无线的网卡。你应该注意到上面的输出中显示我的系统中没有有线网卡。因为我使用的是Macbook Air，他没有以太网端口
+这些命令会同时列出有线和无线的网卡。你应该注意到上面的输出中显示我的系统中没有有线网卡。因为我使用的是Macbook Air，它没有以太网端口
 
 我希望这边文章可以帮助你找到你系统中的网卡。欢迎提出问题和建议。
 
@@ -92,7 +92,7 @@ via: http://itsfoss.com/find-network-adapter-ubuntu-linux/
 
 作者：[Abhishek][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

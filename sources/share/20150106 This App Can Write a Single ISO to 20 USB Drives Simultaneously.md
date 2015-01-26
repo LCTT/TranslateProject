@@ -1,3 +1,4 @@
+(translating by runningwater )
 This App Can Write a Single ISO to 20 USB Drives Simultaneously
 ================================================================================
 **If I were to ask you to burn a single Linux ISO to 17 USB thumb drives how would you go about doing it?**
@@ -49,7 +50,7 @@ Bugs and pull requests can be longed on the GitHub page for the project, which i
 via: http://www.omgubuntu.co.uk/2015/01/gnome-multiwriter-iso-usb-utility
 
 作者：[Joey-Elijah Sneddon][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

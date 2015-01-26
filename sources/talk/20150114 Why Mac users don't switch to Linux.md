@@ -1,3 +1,4 @@
+[Translating by Stevearzh]
 Why Mac users don’t switch to Linux
 ================================================================================
 Linux and Mac users share at least one common thing: they prefer not to use Windows. But after that the two groups part company and tend to go their separate ways. But why don’t more Mac users switch to Linux? Is there something that prevents Mac users from making the jump?
