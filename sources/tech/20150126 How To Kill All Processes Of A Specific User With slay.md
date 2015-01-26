@@ -1,3 +1,5 @@
+Translating---geekpi
+
 How To Kill All Processes Of A Specific User With ‘slay’
 ================================================================================
 **slay** written by **Chris Ausbrooks** is a command line tool that can be used to kill all running processes of a specific user. slay will be useful to system administrators who finds out certain users are running process they shouldn’t have.
