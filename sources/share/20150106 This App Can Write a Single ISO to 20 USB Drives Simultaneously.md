@@ -1,4 +1,4 @@
-(translating by runningwater)
+(translating by runningwater )
 This App Can Write a Single ISO to 20 USB Drives Simultaneously
 ================================================================================
 **If I were to ask you to burn a single Linux ISO to 17 USB thumb drives how would you go about doing it?**
