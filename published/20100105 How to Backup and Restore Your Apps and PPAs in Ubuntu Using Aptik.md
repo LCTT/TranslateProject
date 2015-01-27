@@ -2,9 +2,9 @@
 ================================================================================
 ![00_lead_image_aptik](http://cdn5.howtogeek.com/wp-content/uploads/2014/12/650x300x00_lead_image_aptik.png.pagespeed.ic.n3TJwp8YK_.png)
 
-当你想重装Ubuntu或者仅仅是想安装它的一个新版本的时候，寻到一个便捷的方法去重新安装之前的应用并且重置其设置是很有用的。此时 *Aptik* 粉墨登场，它可以帮助你轻松实现。
+当你想重装Ubuntu或者仅仅是想安装它的一个新版本的时候，如果有个便捷的方法来重新安装之前的应用并且重置其设置会很方便的。此时 *Aptik* 粉墨登场，它可以帮助你轻松实现。
 
-Aptik（自动包备份和回复）是一个可以用在Ubuntu，Linux Mint, 和其他基于Debian以及Ubuntu的Linux发行版上的应用，它允许你将已经安装过的包括软件库、下载包、安装的应用及其主题和设置在内的PPAs(个人软件包存档)备份到外部的U盘、网络存储或者类似于Dropbox的云服务上。
+Aptik（自动包备份和恢复）是一个可以用在Ubuntu，Linux Mint 和其他基于Debian以及Ubuntu的Linux发行版上的应用，它允许你将已经安装过的包括软件库、下载包、安装的应用和主题、用户设置在内的PPAs(个人软件包存档)备份到外部的U盘、网络存储或者类似于Dropbox的云服务上。
 
 注意：当我们在此文章中说到输入某些东西的时候，如果被输入的内容被引号包裹，请不要将引号一起输入进去，除非我们有特殊说明。
 
@@ -16,7 +16,7 @@ Aptik（自动包备份和回复）是一个可以用在Ubuntu，Linux Mint, 和
 
 ![01_command_to_add_repository](http://cdn5.howtogeek.com/wp-content/uploads/2014/12/650x99x01_command_to_add_repository.png.pagespeed.ic.UfVC9QLj54.png)
 
-输入下边的命令到提示符旁边，来确保资源库已经是最新版本。
+在命令行提示符输入下边的命令，来确保资源库已经是最新版本。
 
     sudo apt-get update
 
@@ -86,11 +86,11 @@ Aptik的主窗口显示出来了。从“Backup Directory”下拉列表中选�
 
 接下来，“Downloaded Packages (APT Cache)”的项目只对重装同样版本的Ubuntu有用处。它会备份下你系统缓存(/var/cache/apt/archives)中的包。如果你是升级系统的话，可以跳过这个条目，因为针对新系统的包会比现有系统缓存中的包更加新一些。
 
-备份和回复下载过的包，这可以在重装Ubuntu，并且重装包的时候节省时间和网络带宽。因为一旦你把这些包恢复到系统缓存中之后，他们可以重新被利用起来，这样下载过程就免了，包的安装会更加快捷。
+备份和恢复下载过的包，这可以在重装Ubuntu，并且重装包的时候节省时间和网络带宽。因为一旦你把这些包恢复到系统缓存中之后，他们可以重新被利用起来，这样下载过程就免了，包的安装会更加快捷。
 
 如果你是重装相同版本的Ubuntu系统的话，点击 “Downloaded Packages (APT Cache)” 右侧的 “Backup” 按钮来备份系统缓存中的包。
 
-注意：当你备份下载过的包的时候是没有二级对话框出现。你系统缓存 (/var/cache/apt/archives) 中的包会被拷贝到备份目录下一个名叫 “archives” 的文件夹中，当整个过程完成后会出现一个对话框来告诉你备份已经完成。
+注意：当你备份下载过的包的时候是没有二级对话框出现的。你系统缓存 (/var/cache/apt/archives) 中的包会被拷贝到备份目录下一个名叫 “archives” 的文件夹中，当整个过程完成后会出现一个对话框来告诉你备份已经完成。
 
 ![16_downloaded_packages_backed_up](http://cdn5.howtogeek.com/wp-content/uploads/2014/12/650x544x16_downloaded_packages_backed_up.png.pagespeed.ic.z8ysuwzQAK.png)
 
@@ -104,7 +104,7 @@ Aptik的主窗口显示出来了。从“Backup Directory”下拉列表中选�
 
 ![18_clicking_backup_for_software_selections](http://cdn5.howtogeek.com/wp-content/uploads/2014/12/650x530x18_clicking_backup_for_software_selections.png.pagespeed.ic.QI5D-IgnP_.png)
 
-名为 “packages.list” and “packages-installed.list” 的两个文件出现在了备份目录中，并且一个用来通知你备份完成的对话框出现。点击 ”OK“关闭它。
+备份目录中出现了两个名为 “packages.list” 和“packages-installed.list” 的文件，并且会弹出一个通知你备份完成的对话框。点击 ”OK“关闭它。
 
 注意：“packages-installed.list”文件包含了所有的包，而 “packages.list” 在包含了所有包的前提下还指出了那些包被选择上了。
 
@@ -120,27 +120,27 @@ Aptik的主窗口显示出来了。从“Backup Directory”下拉列表中选�
 
 ![21_zipping_settings_files](http://cdn5.howtogeek.com/wp-content/uploads/2014/12/650x530x21_zipping_settings_files.png.pagespeed.ic.dgoBj7egqv.png)
 
-当打包完成后，打包后的文件被拷贝到备份目录下，另外一个备份成功的对话框出现。点击”OK“，关掉。
+当打包完成后，打包后的文件被拷贝到备份目录下，另外一个备份成功的对话框出现。点击“OK”关掉。
 
 ![22_app_settings_backed_up](http://cdn5.howtogeek.com/wp-content/uploads/2014/12/650x530x22_app_settings_backed_up.png.pagespeed.ic.Mb6utyLJ3W.png)
 
-来自 “/usr/share/themes” 目录的主题和来自 “/usr/share/icons” 目录的图标也可以备份。点击 “Themes and Icons” 右侧的 “Backup” 来进行此操作。“Backup Themes” 对话框默认选择了所有的主题和图标。你可以安装需要取消到一些然后点击 “Backup” 进行备份。
+放在 “/usr/share/themes” 目录的主题和放在 “/usr/share/icons” 目录的图标也可以备份。点击 “Themes and Icons” 右侧的 “Backup” 来进行此操作。“Backup Themes” 对话框默认选择了所有的主题和图标。你可以安装需要的、取消一些不要的，然后点击 “Backup” 进行备份。
 
 ![22a_backing_up_themes_and_icons](http://cdn5.howtogeek.com/wp-content/uploads/2014/12/650x530x22a_backing_up_themes_and_icons.png.pagespeed.ic.KXa8W3YhyF.png)
 
-主题被打包拷贝到备份目录下的 “themes” 文件夹中，图标被打包拷贝到备份目录下的 “icons” 文件夹中。然后成功提示对话框出现，点击”OK“关闭它。
+主题被打包拷贝到备份目录下的 “themes” 文件夹中，图标被打包拷贝到备份目录下的 “icons” 文件夹中。然后成功提示对话框出现，点击“OK”关闭它。
 
 ![22b_themes_and_icons_backed_up](http://cdn5.howtogeek.com/wp-content/uploads/2014/12/650x530x22b_themes_and_icons_backed_up.png.pagespeed.ic.ejjRaymD39.png)
 
-一旦你完成了需要的备份，点击主界面左上角的”X“关闭 Aptik 。
+一旦你完成了需要的备份，点击主界面左上角的“X”关闭 Aptik 。
 
 ![23_closing_aptik](http://cdn5.howtogeek.com/wp-content/uploads/2014/12/650x542x23_closing_aptik.png.pagespeed.ic.pNk9Vt3--l.png)
 
-备份过的文件已存在于你选择的备份目录中，可以随时取阅。
+备份过的文件已存在于你选择的备份目录中，可以随时查看。
 
 ![24_backup_files_in_directory](http://cdn5.howtogeek.com/wp-content/uploads/2014/12/650x374x24_backup_files_in_directory.png.pagespeed.ic.vwblOfN915.png)
 
-当你重装Ubuntu或者安装新版本的Ubuntu后，在新的系统中安装 Aptik 并且将备份好的文件置于新系统中让其可被使用。运行 Aptik，并使用每个条目的 “Restore” 按钮来恢复你的软件源、应用、包、设置、主题以及图标。
+当你重装Ubuntu或者安装新版本的Ubuntu后，在新的系统中安装 Aptik 并且将备份好的文件置于新系统中使用。运行 Aptik，并使用每个条目的 “Restore” 按钮来恢复你的软件源、应用、包、设置、主题以及图标。
 
 --------------------------------------------------------------------------------
 
@@ -148,7 +148,7 @@ via: http://www.howtogeek.com/206454/how-to-backup-and-restore-your-apps-and-ppa
 
 作者：Lori Kaufman
 译者：[Ping](https://github.com/mr-ping)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

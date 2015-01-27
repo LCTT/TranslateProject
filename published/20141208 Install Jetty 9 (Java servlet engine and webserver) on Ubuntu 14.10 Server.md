@@ -11,9 +11,9 @@ Jetty被广泛用于多种项目和产品，都可以在开发环境和生产环
 - 灵活和可扩展
 - 小足迹
 - 可嵌入
-- 异步
+- 异步支持
 - 企业弹性扩展
-- Apache和Eclipse双重许可
+- Apache和Eclipse双重许可证
 
 ### ubuntu 14.10 server上安装Jetty 9 ###
 
@@ -71,10 +71,9 @@ Java将会安装到/usr/lib/jvm/java-8-openjdk-i386，同时在该目录下会�
 
 #### ** ERROR: JETTY_HOME not set, you need to set it or install in a standard location ####
 
-你需要确保在/etc/default/jetty文件中设置了正确的Jetty家目录路径，
-你可以使用以下URL来测试jetty
+你需要确保在/etc/default/jetty文件中设置了正确的Jetty家目录路径，你可以使用以下URL来测试jetty。
 
-Jetty现在应该运行在8085端口，打开浏览器并访问http://serverip:8085，你应该可以看到Jetty屏幕。
+Jetty现在应该运行在8085端口，打开浏览器并访问http://服务器IP:8085，你应该可以看到Jetty屏幕。
 
 #### Jetty服务检查 ####
 
@@ -96,7 +95,7 @@ via: http://www.ubuntugeek.com/install-jetty-9-java-servlet-engine-and-webserver
 
 作者：[ruchi][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
