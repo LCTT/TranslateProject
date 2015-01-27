@@ -1,3 +1,5 @@
+翻译中 by小眼儿
+
 Data of 20 Million Users Stolen from Dating Website
 ----------
 *Info includes Gmail, Hotmail and Yahoo emails*
