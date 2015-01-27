@@ -1,9 +1,11 @@
-How to Boot Linux ISO Images Directly From Your Hard Drive
+[translating by xieborui]How to Boot Linux ISO Images Directly From Your Hard Drive如何直接从你的硬盘引导
+linux镜像。
 ================================================================================
 Hi all, today we'll teach you an awesome interesting stuff related with the Operating System Disk Image and Booting. Now, try many OS you like without installing them in your Physical Hard Drive and without burning DVDs or USBs.
-
+大家好，今天要告诉大家一个很酷的方法来引导操作系统磁盘映像。现在，不用从物理驱动器来安装，也不用去烧录DVD盘或u盘
+就可以尝试你喜欢的操作系统啦！
 We can boot Linux ISO files directly from your hard drive with Linux’s GRUB2 boot loader.  We can boot any Linux Distribution's using this method without creating bootable USBs, Burn DVDs, etc but the changes made will be temporary.
-
+我们可以直接从带linux GRUB2引导程序的硬盘来引导linux镜像文件。
 ![boot iso files directly from hard drive in grub2](http://blog.linoxide.com/wp-content/uploads/2015/01/boot-iso-files-directly-from-hard-drive-in-grub2.png)
 
 ### 1. Get the ISO of the Linux Distributions: ###
@@ -67,7 +69,7 @@ Hurray, we have successfully added our brand new linux distribution's ISO to our
 via: http://linoxide.com/linux-how-to/boot-linux-iso-images-directly-hard-drive/
 
 作者：[Arun Pyasi][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/译者xieboru)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
