@@ -69,7 +69,7 @@ Hurray, we have successfully added our brand new linux distribution's ISO to our
 via: http://linoxide.com/linux-how-to/boot-linux-iso-images-directly-hard-drive/
 
 作者：[Arun Pyasi][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/译者xieboru)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
