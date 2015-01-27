@@ -1,3 +1,5 @@
+su-kaiyao translating
+
 4 Best Modern Open Source Code Editors For Linux
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/01/Best_Open_Source_Editors.jpeg)
