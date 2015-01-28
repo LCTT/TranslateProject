@@ -36,7 +36,7 @@
 
     # diff -Naur old_file new_file > diff_file
 
-旧文件和新文件要么都是单个的文件要么都是包含文件的目录，r选项支持目录树递归。
+旧文件和新文件要么都是单个的文件要么都是包含文件的目录，-r参数支持目录树递归。
 
 一旦diff文件创建好，我们就能在旧的文件上打上补丁，把它变成新文件：
 
@@ -76,7 +76,7 @@
 
 **问:13 如何在/var目录下找出90天之内未被访问过的文件？**
 
-答: # find /var \! -atime -90
+答: # find /var \\! -atime -90
 
 **问:14 在整个目录树下查找核心文件，如发现则删除它们且不提示确认信息。**
 
@@ -102,13 +102,13 @@
 
 答: 这条ll命令会显示这些文件的文件名和它们的拥有者。
 
-**问:19 What is the use of at command in linux ?**
+**问:19 :Linux中的at命令有什么用？**
 
-答: The at command is used to schedule a one-time execution of a program in the future. All submitted jobs are spooled in the /var/spool/at directory and executed by the atd daemon when the scheduled time arrives.
+答: at命令用来安排一个程序在未来的做一次一次性执行。所有提交的任务都被放在 /var/spool/at 目录下并且到了执行时间的时候通过atd守护进程来执行。
 
-**问:20 What is the role of lspci command in linux ?**
+**问:20 linux中lspci命令的作用是什么？**
 
-答: The lspci command displays information about PCI buses and the devices attached to your system. Specify -v, -vv, or -vvv for detailed output. With the -m option, the command produces more legible output.
+答: lspci命令用来显示你的系统上PCI总线和附加设备的信息。指定-v，-vv或-vvv来获取详细输出，加上-r参数的话，命令的输出则会更具有易读性。
 
 --------------------------------------------------------------------------------
 
