@@ -1,48 +1,46 @@
-Translating---geekpi
-
-Install Jetty Web Server On CentOS 7
+在CentOS 7中安装Jetty服务器
 ================================================================================
-[Jetty][1] is a pure Java-based HTTP **(Web) server** and Java Servlet container. Jetty is now often used for machine to machine communications, usually within larger software frameworks. But the other Web Servers are usually associated with serving documents to humans. Jetty is developed as a free and open source project as part of the Eclipse Foundation. The web server is used in products such as Apache ActiveMQ, Alfresco, Apache Geronimo, Apache Maven, Apache Spark, Google App Engine, Eclipse, FUSE, Twitter’s Streaming API and Zimbra.
+[Jetty][1] 是一款纯Java的HTTP **(Web) 服务器**和Java Servlet容器。 通常在更大的网络框架中，Jetty经常用于设备间的通信。但是其他Web服务器通常给人类传递文件。Jetty是一个Eclipse基金中免费开源项目。这个Web服务器用于如Apache ActiveMQ、 Alfresco、 Apache Geronimo、 Apache Maven、 Apache Spark、Google App Engine、 Eclipse、 FUSE、 Twitter的 Streaming API 和 Zimbra中。
 
-This article explains ‘How to install jetty web server in your CentOS server’.
+这篇文章会解释‘如何在CentOS服务器中安装Jetty服务器’。
 
-**First of all we have to install java JDK, By the following command:**
+**首先我们要用下面的命令安装JDK：**
 
     yum -y install java-1.7.0-openjdk wget
 
-**After the JDK installation, We will download the latest version of Jetty:**
+**JDK安装之后，我们就可以下载最新版本的Jetty了：**
 
     wget http://download.eclipse.org/jetty/stable-9/dist/jetty-distribution-9.2.5.v20141112.tar.gz
 
-**Extract and move the the downloaded package to /opt:**
+**解压并移动下载的包到/opt：**
 
     tar zxvf jetty-distribution-9.2.5.v20141112.tar.gz -C /opt/
 
-**Rename the file name to jetty:**
+**重命名文件夹名为jetty:**
 
     mv /opt/jetty-distribution-9.2.5.v20141112/ /opt/jetty
 
-**Create a user called jetty:**
+**创建一个jetty用户：**
 
     useradd -m jetty
 
-**Change the ownership of jetty:**
+**改变jetty文件夹的所属用户:**
 
     chown -R jetty:jetty /opt/jetty/
 
-**Make a Symlink jetty.sh to /etc/init.d directory to create a start up script file:**
+**为jetty.sh创建一个软链接到 /etc/init.d directory 来创建一个启动脚本文件：**
 
     ln -s /opt/jetty/bin/jetty.sh /etc/init.d/jetty
 
-**Add script:**
+**添加脚本：**
 
     chkconfig --add jetty
 
-**Make the jetty web server auto starts on system boot:**
+**是jetty在系统启动时启动：**
 
     chkconfig --level 345 jetty on
 
-**Open /etc/default/jetty in your favorite editor and replace port and listening address desired value:**
+**使用你最喜欢的文本编辑器打开 /etc/default/jetty 并修改端口和监听地址：**
 
     vi /etc/default/jetty
 
@@ -54,24 +52,24 @@ This article explains ‘How to install jetty web server in your CentOS server�
     JETTY_HOST=50.116.24.78
     JETTY_LOGS=/opt/jetty/logs/
 
-**We finished the installation, Now you have to start the jetty service.**
+**我们完成了安装，现在可以启动jetty服务了 **
 
     service jetty start
 
-All done!
+完成了！
 
-Now you can access jetty web sever in  **http://<youripaddress>:8080**
+现在你可以在  **http://<youripaddress>:8080** 中访问了
 
-That’s it!
+就是这样。
 
-Cheers!!
+干杯！！
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/install-jetty-web-server-centos-7/
 
 作者：[Jijo][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
