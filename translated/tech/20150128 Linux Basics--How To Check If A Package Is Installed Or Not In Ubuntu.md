@@ -1,18 +1,16 @@
-Translating-----geekpi
-
-Linux Basics: How To Check If A Package Is Installed Or Not In Ubuntu
+Linux 基础：如何在Ubuntu上检查是否已经安装了一个包
 ================================================================================
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/04/ubuntu-790x558.png)
 
-If you’re managing Debian or Ubuntu servers, probably, you may use **dpkg** or **apt-get** commands often. These two commands are used to install, remove, update packages.
+如果你正在管理Debian或者Ubuntu服务器，你也许会经常使用**dpkg** 或者 **apt-get**命令。这两个命令用来安装、卸载和更新包。
 
-In this brief tutorial, let us see how to check if a package is installed or not in DEB based systems.
+在本篇中，让我们看下如何在基于DEB的系统下检查是否安装了一个包。
 
-To check whether a particular package for example firefox, is installed or not using command:
+要检查特定的包，比如firefox是否安装了，使用这个命令：
 
     dpkg -s firefox
 
-Sample output:
+示例输出：
 
      Package: firefox
      Status: install ok installed
@@ -38,13 +36,13 @@ Sample output:
      and integrated search let you get the most out of the web.
      Xul-Appid: {ec8030f7-c20a-464f-9b0e-13a3a9e97384}
 
-As you see in the above output, the firefox is installed.
+如上所见，firefox已经安装了。
 
-Also, you can do the same using **dpkg-query** command. This command displays the decent output, and ofcourse, you can wild cards too.
+同样，你可以使用**dpkg-query** 命令。这个命令会有一个更好的输出，当然，你可以用通配符。
 
     dpkg-query -l firefox
 
-Sample output:
+示例输出：
 
     Desired=Unknown/Install/Remove/Purge/Hold
     | Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
@@ -53,11 +51,11 @@ Sample output:
     +++-====================================-=======================-=======================-=============================================================================
     ii  firefox                              35.0+build3-0ubuntu0.14 amd64                   Safe and easy web browser from Mozilla
 
-To list all installed package in your system, enter the following command
+要列出你系统中安装的包，输入下面的命令：
 
     dpkg --get-selections
 
-Sample output:
+示例输出：
 
     abiword                        install
     abiword-common                    install
@@ -81,13 +79,13 @@ Sample output:
     zlib1g:amd64                    install
     zlib1g:i386                    install
 
-The above might be very long depending upon the number of packages you have installed on your system.
+上面的输出可能会非常长，这依赖于你的系统已安装的包。
 
-You can also filter through **grep** to get results for the exact package you need. For example, I want to see which gcc packages are already installed on my system using **dpkg** command:
+你同样可以通过**grep**来过滤割到更精确的包。比如，我想要使用**dpkg**命令查看系统中安装的gcc包：
 
     dpkg --get-selections | grep gcc
 
-Sample output:
+示例输出：
 
     gcc                        install
     gcc-4.8                        install
@@ -99,11 +97,11 @@ Sample output:
     libgcc1:amd64                    install
     libgcc1:i386                    install
 
-Additionally, you can find location of the files within a package using the parameter “**-L**”.
+额外的，你可以使用“**-L**”参数来找出包中文件的位置。
 
     dpkg -L gcc-4.8
 
-Sample output:
+示例输出：
 
     /.
     /usr
@@ -122,16 +120,16 @@ Sample output:
     /usr/bin/x86_64-linux-gnu-gcc-ar-4.8
     /usr/bin/x86_64-linux-gnu-gcov-4.8
 
-That’s all for now. Hope this short tutorial will useful for you.
+就是这样了。希望这篇对你有用。
 
-Good day!
+美好的一天！
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/linux-basics-check-package-installed-not-ubuntu/
 
 作者：[SK][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
