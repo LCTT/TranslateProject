@@ -1,3 +1,5 @@
+Translating-----geekpi
+
 Linux Basics: How To Check If A Package Is Installed Or Not In Ubuntu
 ================================================================================
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2014/04/ubuntu-790x558.png)
