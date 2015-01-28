@@ -1,33 +1,32 @@
-[bazz2222222222]
-Linux Namespaces
+Linux 命名空间
 ================================================================================
-### Background ###
+### 背景 ###
 
-Starting from kernel 2.6.24, Linux supports 6 different types of namespaces. Namespaces are useful in creating processes that are more isolated from the rest of the system, without needing to use full low level virtualization technology. 
+从2.6.24版的内核开始，Linux 就支持6种不同类型的命名空间。它们的出现，使用户创建的进程能够与系统分离得更加彻底，从而不需要考虑太多底层的虚拟化技术。
 
-- **CLONE_NEWIPC**: IPC Namespaces: SystemV IPC and POSIX Message Queues can be isolated.
-- **CLONE_NEWPID**: PID Namespaces: PIDs are isolated, meaning that a virtual PID inside of the namespace can conflict with a PID outside of the namespace. PIDs inside the namespace will be mapped to other PIDs outside of the namespace. The first PID inside the namespace will be '1' which outside of the namespace is assigned to init
-- **CLONE_NEWNET**: Network Namespaces: Networking (/proc/net, IPs, interfaces and routes) are isolated. Services can be run on the same ports within namespaces, and "duplicate" virtual interfaces can be created.
-- **CLONE_NEWNS**: Mount Namespaces. We have the ability to isolate mount points as they appear to processes. Using mount namespaces, we can achieve similar functionality to chroot() however with improved security.
-- **CLONE_NEWUTS**: UTS Namespaces. This namespaces primary purpose is to isolate the hostname and NIS name.
-- **CLONE_NEWUSER**: User Namespaces. Here, user and group IDs are different inside and outside of namespaces and can be duplicated.
+- **CLONE_NEWIPC**: 进程间通信(IPC)的命名空间，可以将 SystemV 的 IPC 和 POSIX 的消息队列独立出来。
+- **CLONE_NEWPID**: 进程 ID 的命名空间，进程 ID 独立，意思就是命名空间内的进程 ID 可能会与命名空间外的进程 ID 冲突，于是命名空间内的进程 ID 映射到命名空间外时会使用另外一个进程 ID。比如说，命名空间内 ID 为1的进程，在命名空间外就是指 init 进程。
+- **CLONE_NEWNET**: 网络命名空间，用于隔离网络资源（/proc/net、IP 地址、网卡、路由等）。后台进程可以运行在不同命名空间内的相同端口上，用户还可以虚拟出一块网卡。
+- **CLONE_NEWNS**: 挂载命名空间，进程运行时可以将挂载点与系统分离，使用这个功能时，我们可以达到 chroot 的功能，而在安全性方面比 chroot 更高。
+- **CLONE_NEWUTS**: UTS 命名空间，主要目的是独立出主机名和网络信息服务（NIS）。
+- **CLONE_NEWUSER**: 用户命名空间，同进程 ID 一样，用户 ID 和组 ID 在命名空间内外是不一样的，并且在不同命名空间内可以存在相同的 ID。
 
-Let's look first at the structure of a C program, required to demonstrate process namespaces. The following has been tested on Debian 6 and 7. First, we need to allocate a page of memory on the stack, and set a pointer to the end of that memory page. We use **alloca** to allocate stack memory rather than malloc which would allocate memory on the heap. 
+本文用 C 语言介绍上述概念，因为演示进程命名空间的时候需要用到 C 语言。下面的测试过程在 Debian 6 和 Debian 7 上执行。首先，在栈内分配一页内存空间，并将指针指向内存页的末尾。这里我们使用 **alloca()** 函数来分配内存，不要用 malloc() 函数，它会把内存分配在堆上。
 
     void *mem = alloca(sysconf(_SC_PAGESIZE)) + sysconf(_SC_PAGESIZE);
 
-Next, we use **clone** to create a child process, passing the location of our child stack 'mem', as well as the required flags to specify a new namespace. We specify 'callee' as the function to execute within the child space:
+然后使用 **clone()** 函数创建子进程，传入栈空间的地址 "mem"，以及指定命名空间的标记。同时我们还指定“callee”作为子进程运行的函数。
 
     mypid = clone(callee, mem, SIGCHLD | CLONE_NEWIPC | CLONE_NEWPID | CLONE_NEWNS | CLONE_FILES, NULL);
 
-After calling **clone** we then wait for the child process to finish, before terminating the parent. If not, the parent execution flow will continue and terminate immediately after, clearing up the child with it:
+**clone** 之后我们要在父进程中等待子进程先退出，否则的话，父进程会继续运行下去，直到进程结束，留下子进程变成孤儿进程：
 
     while (waitpid(mypid, &r, 0) < 0 && errno == EINTR)
     {
     	continue;
     }
 
-Lastly, we'll return to the shell with the exit code of the child:
+最后当子进程退出后，我们会回到 shell 界面。
 
     if (WIFEXITED(r))
     {
@@ -35,7 +34,7 @@ Lastly, we'll return to the shell with the exit code of the child:
     }
     return EXIT_FAILURE;
 
-Now, let's look at the **callee** function:
+上文介绍的 **callee** 函数功能如下：
 
     static int callee()
     {
@@ -48,7 +47,7 @@ Now, let's look at the **callee** function:
     	return ret;
     }
 
-Here, we mount a **/proc** filesystem, and then set the uid (User ID) and gid (Group ID) to the value of 'u' before spawning the **/bin/bash** shell. [LXC][1] is an OS level virtualization tool utilizing cgroups and namespaces for resource isolation. Let's put it all together, setting 'u' to 65534 which is user "nobody" and group "nogroup" on Debian:
+程序挂载 **/proc** 文件系统，设置用户 ID 和组 ID，值都为“u”，然后运行 **/bin/bash** 程序，[LXC][1] 是操作系统级的虚拟化工具，使用 cgroups 和命名空间来完成资源的分离。现在我们把所有代码放在一起，变量“u”的值设为65534，在 Debian 系统中，这是“nobody”和“nogroup”：
 
     #define _GNU_SOURCE
     #include <unistd.h>
@@ -90,7 +89,7 @@ Here, we mount a **/proc** filesystem, and then set the uid (User ID) and gid (G
     	return ret;
     }
 
-To execute the code produces the following:
+执行以下命令来运行上面的代码：
 
     root@w:~/pen/tmp# gcc -O -o ns.c -Wall -Werror -ansi -c89 ns.c
     root@w:~/pen/tmp# ./ns
