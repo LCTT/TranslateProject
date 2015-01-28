@@ -101,18 +101,18 @@ Linux ÃüÃû¿Õ¼ä
     nobody       5  0.0  0.0   2784  1064 pts/1    R+   21:21   0:00 ps auxw
     nobody@w:~/pen/tmp$ 
 
-Notice that the UID and GID are set to that of nobody and nogroup. Specifically notice that the full ps output shows only two running processes and that their PIDs are 1 and 5 respectively. Now, let's move on to using ip netns to work with network namespaces. First, let's confirm that no namespaces exist currently: 
+×¢ÒâÉÏÃæµÄ½á¹û£¬UID ºÍ GID ±»ÉèÖÃ³É nobody ºÍ nogroup ÁË£¬ÌØ±ğÊÇ ps ¹¤¾ßÖ»Êä³öÁ½¸ö½ø³Ì£¬ËüÃÇµÄ ID ·Ö±ğÊÇ1ºÍ5£¨LCTT×¢£ºÕâ¾ÍÊÇÉÏÎÄ½éÉÜ CLONE_NEWPID Ê±Ìáµ½µÄ¹¦ÄÜ£¬ÔÚÏß³ÌËùÔÚµÄÃüÃû¿Õ¼äÄÚ£¬½ø³Ì ID ¿ÉÒÔÎª1£¬Ó³Éäµ½ÃüÃû¿Õ¼äÍâ¾ÍÊÇ65534£»¶øÃüÃû¿Õ¼äÍâµÄ ID Îª1µÄ½ø³ÌÒ»Ö±ÊÇ init£©¡£½ÓÏÂÀ´ÂÖµ½Ê¹ÓÃ ip netns À´ÉèÖÃÍøÂçµÄÃüÃû¿Õ¼ä¡£µÚÒ»²½ÏÈÈ·¶¨µ±Ç°ÏµÍ³Ã»ÓĞÃüÃû¿Õ¼ä£º
 
     root@w:~# ip netns list
     Object "netns" is unknown, try "ip help".
 
-In this case, either ip needs an upgrade, or the kernel does. Assuming you have a kernel newer than 2.6.24, it's most likely **ip**. After upgrading, **ip netns list** should by default return nothing. Let's add a new namespace called 'ns1': 
+ÕâÖÖÇé¿öÏÂ£¬ÄãĞèÒª¸üĞÂÄãµÄÏµÍ³ÄÚºË£¬ÒÔ¼° ip ¹¤¾ß¡£ÕâÀï¼ÙÉèÄãµÄÄÚºË°æ¸ßÓÚ2.6.24£¬ip ¹¤¾ß°æ±¾Ò²²î²»¶à£¬¸ßÓÚ2.6.24£¨LCTT×¢£ºip ¹¤¾ßÓÉ iproute °²×°°üÌá¹©£¬´Ë°²×°°ü°æ±¾ÓëÄÚºË°æ±¾Ïà½ü£©¡£¸üĞÂºÃºó£¬**ip netns list** ÔÚÃ»ÓĞÃüÃû¿Õ¼ä´æÔÚµÄÇé¿öÏÂ²»»áÊä³öÈÎÎñĞÅÏ¢¡£¼Ó¸öÃûÎª¡°ns1¡±µÄÃüÃû¿Õ¼ä¿´¿´£º
 
     root@w:~# ip netns add ns1
     root@w:~# ip netns list
     ns1
 
-First, let's list the current interfaces:
+ÁĞ³öÍø¿¨£º
 
     root@w:~# ip link list
     1: lo:  mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT 
@@ -120,7 +120,7 @@ First, let's list the current interfaces:
     2: eth0:  mtu 1500 qdisc pfifo_fast state UNKNOWN mode DEFAULT qlen 1000
         link/ether 00:0c:29:65:25:9e brd ff:ff:ff:ff:ff:ff
 
-Now to create a new virtual interface, and add it to our new namespace. Virtual interfaces are created in pairs, and are linked to each other - imagine a virtual crossover cable:
+´´½¨ĞÂµÄĞéÄâÍø¿¨£¬¼Óµ½ÃüÃû¿Õ¼ä¡£ĞéÄâÍø¿¨ĞèÒª³É¶Ô´´½¨£¬»¥Ïà¹ØÁª¡ª¡ªÏëÏë½»²æµçÀÂ°É£º
 
     root@w:~# ip link add veth0 type veth peer name veth1
     root@w:~# ip link list
@@ -133,9 +133,9 @@ Now to create a new virtual interface, and add it to our new namespace. Virtual 
     4: veth0:  mtu 1500 qdisc noop state DOWN mode DEFAULT qlen 1000
         link/ether f2:f7:5e:e2:22:ac brd ff:ff:ff:ff:ff:ff
 
-**ifconfig** -a will also now show the addition of both veth0 and veth1. 
+Õâ¸öÊ±ºò **ifconfig** -a ÃüÁîÒ²ÄÜÏÔÊ¾ĞÂÌí¼ÓµÄ veth0 ºÍ veth1 Á½¿éÍø¿¨¡£
 
-Great, now to assign our new interfaces to the namespace. Note that ip **netns exec** is used to execute commands within the namespace:
+ºÜºÃ£¬ÏÖÔÚ½«ÕâÁ½·İ¿éÍø¿¨¼Óµ½ÃüÃû¿Õ¼äÖĞÈ¥¡£×¢ÒâÒ»ÏÂ£¬ÏÂÃæµÄ ip **netns exec** ÃüÁîÓÃÓÚ½«ºóÃæµÄÃüÁîÔÚÃüÃû¿Õ¼äÖĞÖ´ĞĞ£¨LCTT×¢£ºÏÂÃæµÄ½á¹ûÏÔÊ¾ÁËÔÚ ns1 Õâ¸öÍøÂçÃüÃû¿Õ¼äÖĞ£¬Ö»´æÔÚ lo ºÍ veth1 Á½¿éÍø¿¨£©£º
 
     root@w:~# ip link set veth1 netns ns1
     root@w:~# ip netns exec ns1 ip link list
@@ -144,21 +144,21 @@ Great, now to assign our new interfaces to the namespace. Note that ip **netns e
     3: veth1:  mtu 1500 qdisc noop state DOWN mode DEFAULT qlen 1000
     link/ether d2:e9:52:18:19:ab brd ff:ff:ff:ff:ff:ff
 
-**ifconfig** -a will now only show veth0, as veth1 is in the ns1 namespace. 
+Õâ¸öÊ±ºò **ifconfig** -a ÃüÁîÖ»ÄÜÏÔÊ¾ veth0£¬²»ÄÜÏÔÊ¾ veth1£¬ÒòÎªºóÕßÏÖÔÚÔÚ ns1 ÃüÃû¿Õ¼äÖĞ¡£
 
-Should we want to delete veth0/veth1:
+Èç¹ûÏëÉ¾³ı veth1£¬¿ÉÒÔÖ´ĞĞÏÂÃæµÄÃüÁî£º
 
     ip netns exec ns1 ip link del veth1
 
-We can now assign IP address 192.168.5.5/24 to veth0 on our host:
+Îª veth0 ·ÖÅä IP µØÖ·£º
 
     ifconfig veth0 192.168.5.5/24
 
-And assign veth1 192.168.5.10/24 within ns1:
+ÔÚÃüÃû¿Õ¼äÄÚÎª veth1 ·ÖÅä IP µØÖ·£º
 
     ip netns exec ns1 ifconfig veth1 192.168.5.10/24 up
 
-To execute ip addr **list** on both our host and within our namespace:
+ÔÚÃüÃû¿Õ¼äÄÚÍâÖ´ĞĞ ip addr **list** ÃüÁî£º
 
     root@w:~# ip addr list
     1: lo:  mtu 65536 qdisc noqueue state UNKNOWN 
@@ -185,7 +185,7 @@ To execute ip addr **list** on both our host and within our namespace:
         inet6 fe80::10bd:b6ff:fe76:a6eb/64 scope link 
            valid_lft forever preferred_lft forever
 
-To view routing tables inside and outside of the namespace:
+ÔÚÃüÃû¿Õ¼äÄÚÍâ²é¿´Â·ÓÉ±í£º
 
     root@w:~# ip route list
     default via 192.168.3.1 dev eth0  proto static 
@@ -194,7 +194,7 @@ To view routing tables inside and outside of the namespace:
     root@w:~# ip netns exec ns1 ip route list
     192.168.5.0/24 dev veth1  proto kernel  scope link  src 192.168.5.10 
 
-Lastly, to connect our physical and virtual interfaces, we'll require a bridge. Let's bridge eth0 and veth0 on the host, and then use DHCP to gain an IP within the ns1 namespace:
+×îºó£¬½«ĞéÄâÍø¿¨Á¬µ½ÎïÀíÍø¿¨ÉÏ£¬ÎÒÃÇĞèÒªÓÃµ½ÇÅ½Ó¡£ÕâÀï×öµÄÊÇ½« veth0 ÇÅ½Óµ½ eth0£¬¶ø ns1 ÃüÃû¿Õ¼äÄÚÔòÊ¹ÓÃ DHCP ×Ô¶¯»ñÈ¡ IP µØÖ·£º
 
     root@w:~# brctl addbr br0
     root@w:~# brctl addif br0 eth0
@@ -209,7 +209,7 @@ Lastly, to connect our physical and virtual interfaces, we'll require a bridge. 
         inet6 fe80::20c:29ff:fe65:259e/64 scope link 
            valid_lft forever preferred_lft forever
 
-br0 has been assigned an IP of 192.168.3.122/24. Now for the namespace:
+ÎªÍøÇÅ br0 ·ÖÅäµÄ IP µØÖ·Îª192.168.3.122/24¡£½ÓÏÂÀ´ÎªÃüÃû¿Õ¼ä·ÖÅäµØÖ·£º
 
     root@w:~# ip netns exec ns1 dhclient veth1
     root@w:~# ip netns exec ns1 ip addr list
@@ -221,17 +221,17 @@ br0 has been assigned an IP of 192.168.3.122/24. Now for the namespace:
         inet6 fe80::10bd:b6ff:fe76:a6eb/64 scope link 
            valid_lft forever preferred_lft forever
 
-Excellent! veth1 has been assigned 192.168.3.248/24
+ÏÖÔÚ£¬ veth1 µÄ IP ±»ÉèÖÃ³É 192.168.3.248/24 ÁË¡£
 
 --------------------------------------------------------------------------------
 
 via: http://www.howtoforge.com/linux-namespaces
 
-ä½œè€…ï¼š[aziods][a]
-è¯‘è€…ï¼š[è¯‘è€…ID](https://github.com/è¯‘è€…ID)
-æ ¡å¯¹ï¼š[æ ¡å¯¹è€…ID](https://github.com/æ ¡å¯¹è€…ID)
+×÷Õß£º[aziods][a]
+ÒëÕß£º[bazz2](https://github.com/bazz2)
+Ğ£¶Ô£º[Ğ£¶ÔÕßID](https://github.com/Ğ£¶ÔÕßID)
 
-æœ¬æ–‡ç”± [LCTT](https://github.com/LCTT/TranslateProject) åŸåˆ›ç¿»è¯‘ï¼Œ[Linuxä¸­å›½](http://linux.cn/) è£èª‰æ¨å‡º
+±¾ÎÄÓÉ [LCTT](https://github.com/LCTT/TranslateProject) Ô­´´·­Òë£¬[LinuxÖĞ¹ú](http://linux.cn/) ÈÙÓşÍÆ³ö
 
 [a]:http://www.howtoforge.com/forums/private.php?do=newpm&u=138952
 [1]:http://en.wikipedia.org/wiki/LXC
