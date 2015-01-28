@@ -48,4 +48,4 @@ via:http://news.softpedia.com/news/Data-of-20-Million-Users-Stolen-from-Dating-W
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://news.softpedia.com/editors/browse/ionut-ilascu
-[1]:http://newblog.easysol.net/dating-site-breached/
+[1]:http://newblog.easysol.net/dating-site-breached/ 
