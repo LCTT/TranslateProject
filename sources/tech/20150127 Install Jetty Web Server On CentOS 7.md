@@ -1,3 +1,5 @@
+Translating---geekpi
+
 Install Jetty Web Server On CentOS 7
 ================================================================================
 [Jetty][1] is a pure Java-based HTTP **(Web) server** and Java Servlet container. Jetty is now often used for machine to machine communications, usually within larger software frameworks. But the other Web Servers are usually associated with serving documents to humans. Jetty is developed as a free and open source project as part of the Eclipse Foundation. The web server is used in products such as Apache ActiveMQ, Alfresco, Apache Geronimo, Apache Maven, Apache Spark, Google App Engine, Eclipse, FUSE, Twitter’s Streaming API and Zimbra.
