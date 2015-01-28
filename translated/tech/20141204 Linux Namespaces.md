@@ -1,32 +1,32 @@
-Linux ÃüÃû¿Õ¼ä
+Linux å‘½åç©ºé—´
 ================================================================================
-### ±³¾° ###
+### èƒŒæ™¯ ###
 
-´Ó2.6.24°æµÄÄÚºË¿ªÊ¼£¬Linux ¾ÍÖ§³Ö6ÖÖ²»Í¬ÀàÐÍµÄÃüÃû¿Õ¼ä¡£ËüÃÇµÄ³öÏÖ£¬Ê¹ÓÃ»§´´½¨µÄ½ø³ÌÄÜ¹»ÓëÏµÍ³·ÖÀëµÃ¸ü¼Ó³¹µ×£¬´Ó¶ø²»ÐèÒª¿¼ÂÇÌ«¶àµ×²ãµÄÐéÄâ»¯¼¼Êõ¡£
+ä»Ž2.6.24ç‰ˆçš„å†…æ ¸å¼€å§‹ï¼ŒLinux å°±æ”¯æŒ6ç§ä¸åŒç±»åž‹çš„å‘½åç©ºé—´ã€‚å®ƒä»¬çš„å‡ºçŽ°ï¼Œä½¿ç”¨æˆ·åˆ›å»ºçš„è¿›ç¨‹èƒ½å¤Ÿä¸Žç³»ç»Ÿåˆ†ç¦»å¾—æ›´åŠ å½»åº•ï¼Œä»Žè€Œä¸éœ€è¦è€ƒè™‘å¤ªå¤šåº•å±‚çš„è™šæ‹ŸåŒ–æŠ€æœ¯ã€‚
 
-- **CLONE_NEWIPC**: ½ø³Ì¼äÍ¨ÐÅ(IPC)µÄÃüÃû¿Õ¼ä£¬¿ÉÒÔ½« SystemV µÄ IPC ºÍ POSIX µÄÏûÏ¢¶ÓÁÐ¶ÀÁ¢³öÀ´¡£
-- **CLONE_NEWPID**: ½ø³Ì ID µÄÃüÃû¿Õ¼ä£¬½ø³Ì ID ¶ÀÁ¢£¬ÒâË¼¾ÍÊÇÃüÃû¿Õ¼äÄÚµÄ½ø³Ì ID ¿ÉÄÜ»áÓëÃüÃû¿Õ¼äÍâµÄ½ø³Ì ID ³åÍ»£¬ÓÚÊÇÃüÃû¿Õ¼äÄÚµÄ½ø³Ì ID Ó³Éäµ½ÃüÃû¿Õ¼äÍâÊ±»áÊ¹ÓÃÁíÍâÒ»¸ö½ø³Ì ID¡£±ÈÈçËµ£¬ÃüÃû¿Õ¼äÄÚ ID Îª1µÄ½ø³Ì£¬ÔÚÃüÃû¿Õ¼äÍâ¾ÍÊÇÖ¸ init ½ø³Ì¡£
-- **CLONE_NEWNET**: ÍøÂçÃüÃû¿Õ¼ä£¬ÓÃÓÚ¸ôÀëÍøÂç×ÊÔ´£¨/proc/net¡¢IP µØÖ·¡¢Íø¿¨¡¢Â·ÓÉµÈ£©¡£ºóÌ¨½ø³Ì¿ÉÒÔÔËÐÐÔÚ²»Í¬ÃüÃû¿Õ¼äÄÚµÄÏàÍ¬¶Ë¿ÚÉÏ£¬ÓÃ»§»¹¿ÉÒÔÐéÄâ³öÒ»¿éÍø¿¨¡£
-- **CLONE_NEWNS**: ¹ÒÔØÃüÃû¿Õ¼ä£¬½ø³ÌÔËÐÐÊ±¿ÉÒÔ½«¹ÒÔØµãÓëÏµÍ³·ÖÀë£¬Ê¹ÓÃÕâ¸ö¹¦ÄÜÊ±£¬ÎÒÃÇ¿ÉÒÔ´ïµ½ chroot µÄ¹¦ÄÜ£¬¶øÔÚ°²È«ÐÔ·½Ãæ±È chroot ¸ü¸ß¡£
-- **CLONE_NEWUTS**: UTS ÃüÃû¿Õ¼ä£¬Ö÷ÒªÄ¿µÄÊÇ¶ÀÁ¢³öÖ÷»úÃûºÍÍøÂçÐÅÏ¢·þÎñ£¨NIS£©¡£
-- **CLONE_NEWUSER**: ÓÃ»§ÃüÃû¿Õ¼ä£¬Í¬½ø³Ì ID Ò»Ñù£¬ÓÃ»§ ID ºÍ×é ID ÔÚÃüÃû¿Õ¼äÄÚÍâÊÇ²»Ò»ÑùµÄ£¬²¢ÇÒÔÚ²»Í¬ÃüÃû¿Õ¼äÄÚ¿ÉÒÔ´æÔÚÏàÍ¬µÄ ID¡£
+- **CLONE_NEWIPC**: è¿›ç¨‹é—´é€šä¿¡(IPC)çš„å‘½åç©ºé—´ï¼Œå¯ä»¥å°† SystemV çš„ IPC å’Œ POSIX çš„æ¶ˆæ¯é˜Ÿåˆ—ç‹¬ç«‹å‡ºæ¥ã€‚
+- **CLONE_NEWPID**: è¿›ç¨‹ ID çš„å‘½åç©ºé—´ï¼Œè¿›ç¨‹ ID ç‹¬ç«‹ï¼Œæ„æ€å°±æ˜¯å‘½åç©ºé—´å†…çš„è¿›ç¨‹ ID å¯èƒ½ä¼šä¸Žå‘½åç©ºé—´å¤–çš„è¿›ç¨‹ ID å†²çªï¼ŒäºŽæ˜¯å‘½åç©ºé—´å†…çš„è¿›ç¨‹ ID æ˜ å°„åˆ°å‘½åç©ºé—´å¤–æ—¶ä¼šä½¿ç”¨å¦å¤–ä¸€ä¸ªè¿›ç¨‹ IDã€‚æ¯”å¦‚è¯´ï¼Œå‘½åç©ºé—´å†… ID ä¸º1çš„è¿›ç¨‹ï¼Œåœ¨å‘½åç©ºé—´å¤–å°±æ˜¯æŒ‡ init è¿›ç¨‹ã€‚
+- **CLONE_NEWNET**: ç½‘ç»œå‘½åç©ºé—´ï¼Œç”¨äºŽéš”ç¦»ç½‘ç»œèµ„æºï¼ˆ/proc/netã€IP åœ°å€ã€ç½‘å¡ã€è·¯ç”±ç­‰ï¼‰ã€‚åŽå°è¿›ç¨‹å¯ä»¥è¿è¡Œåœ¨ä¸åŒå‘½åç©ºé—´å†…çš„ç›¸åŒç«¯å£ä¸Šï¼Œç”¨æˆ·è¿˜å¯ä»¥è™šæ‹Ÿå‡ºä¸€å—ç½‘å¡ã€‚
+- **CLONE_NEWNS**: æŒ‚è½½å‘½åç©ºé—´ï¼Œè¿›ç¨‹è¿è¡Œæ—¶å¯ä»¥å°†æŒ‚è½½ç‚¹ä¸Žç³»ç»Ÿåˆ†ç¦»ï¼Œä½¿ç”¨è¿™ä¸ªåŠŸèƒ½æ—¶ï¼Œæˆ‘ä»¬å¯ä»¥è¾¾åˆ° chroot çš„åŠŸèƒ½ï¼Œè€Œåœ¨å®‰å…¨æ€§æ–¹é¢æ¯” chroot æ›´é«˜ã€‚
+- **CLONE_NEWUTS**: UTS å‘½åç©ºé—´ï¼Œä¸»è¦ç›®çš„æ˜¯ç‹¬ç«‹å‡ºä¸»æœºåå’Œç½‘ç»œä¿¡æ¯æœåŠ¡ï¼ˆNISï¼‰ã€‚
+- **CLONE_NEWUSER**: ç”¨æˆ·å‘½åç©ºé—´ï¼ŒåŒè¿›ç¨‹ ID ä¸€æ ·ï¼Œç”¨æˆ· ID å’Œç»„ ID åœ¨å‘½åç©ºé—´å†…å¤–æ˜¯ä¸ä¸€æ ·çš„ï¼Œå¹¶ä¸”åœ¨ä¸åŒå‘½åç©ºé—´å†…å¯ä»¥å­˜åœ¨ç›¸åŒçš„ IDã€‚
 
-±¾ÎÄÓÃ C ÓïÑÔ½éÉÜÉÏÊö¸ÅÄî£¬ÒòÎªÑÝÊ¾½ø³ÌÃüÃû¿Õ¼äµÄÊ±ºòÐèÒªÓÃµ½ C ÓïÑÔ¡£ÏÂÃæµÄ²âÊÔ¹ý³ÌÔÚ Debian 6 ºÍ Debian 7 ÉÏÖ´ÐÐ¡£Ê×ÏÈ£¬ÔÚÕ»ÄÚ·ÖÅäÒ»Ò³ÄÚ´æ¿Õ¼ä£¬²¢½«Ö¸ÕëÖ¸ÏòÄÚ´æÒ³µÄÄ©Î²¡£ÕâÀïÎÒÃÇÊ¹ÓÃ **alloca()** º¯ÊýÀ´·ÖÅäÄÚ´æ£¬²»ÒªÓÃ malloc() º¯Êý£¬Ëü»á°ÑÄÚ´æ·ÖÅäÔÚ¶ÑÉÏ¡£
+æœ¬æ–‡ç”¨ C è¯­è¨€ä»‹ç»ä¸Šè¿°æ¦‚å¿µï¼Œå› ä¸ºæ¼”ç¤ºè¿›ç¨‹å‘½åç©ºé—´çš„æ—¶å€™éœ€è¦ç”¨åˆ° C è¯­è¨€ã€‚ä¸‹é¢çš„æµ‹è¯•è¿‡ç¨‹åœ¨ Debian 6 å’Œ Debian 7 ä¸Šæ‰§è¡Œã€‚é¦–å…ˆï¼Œåœ¨æ ˆå†…åˆ†é…ä¸€é¡µå†…å­˜ç©ºé—´ï¼Œå¹¶å°†æŒ‡é’ˆæŒ‡å‘å†…å­˜é¡µçš„æœ«å°¾ã€‚è¿™é‡Œæˆ‘ä»¬ä½¿ç”¨ **alloca()** å‡½æ•°æ¥åˆ†é…å†…å­˜ï¼Œä¸è¦ç”¨ malloc() å‡½æ•°ï¼Œå®ƒä¼šæŠŠå†…å­˜åˆ†é…åœ¨å †ä¸Šã€‚
 
     void *mem = alloca(sysconf(_SC_PAGESIZE)) + sysconf(_SC_PAGESIZE);
 
-È»ºóÊ¹ÓÃ **clone()** º¯Êý´´½¨×Ó½ø³Ì£¬´«ÈëÕ»¿Õ¼äµÄµØÖ· "mem"£¬ÒÔ¼°Ö¸¶¨ÃüÃû¿Õ¼äµÄ±ê¼Ç¡£Í¬Ê±ÎÒÃÇ»¹Ö¸¶¨¡°callee¡±×÷Îª×Ó½ø³ÌÔËÐÐµÄº¯Êý¡£
+ç„¶åŽä½¿ç”¨ **clone()** å‡½æ•°åˆ›å»ºå­è¿›ç¨‹ï¼Œä¼ å…¥æ ˆç©ºé—´çš„åœ°å€ "mem"ï¼Œä»¥åŠæŒ‡å®šå‘½åç©ºé—´çš„æ ‡è®°ã€‚åŒæ—¶æˆ‘ä»¬è¿˜æŒ‡å®šâ€œcalleeâ€ä½œä¸ºå­è¿›ç¨‹è¿è¡Œçš„å‡½æ•°ã€‚
 
     mypid = clone(callee, mem, SIGCHLD | CLONE_NEWIPC | CLONE_NEWPID | CLONE_NEWNS | CLONE_FILES, NULL);
 
-**clone** Ö®ºóÎÒÃÇÒªÔÚ¸¸½ø³ÌÖÐµÈ´ý×Ó½ø³ÌÏÈÍË³ö£¬·ñÔòµÄ»°£¬¸¸½ø³Ì»á¼ÌÐøÔËÐÐÏÂÈ¥£¬Ö±µ½½ø³Ì½áÊø£¬ÁôÏÂ×Ó½ø³Ì±ä³É¹Â¶ù½ø³Ì£º
+**clone** ä¹‹åŽæˆ‘ä»¬è¦åœ¨çˆ¶è¿›ç¨‹ä¸­ç­‰å¾…å­è¿›ç¨‹å…ˆé€€å‡ºï¼Œå¦åˆ™çš„è¯ï¼Œçˆ¶è¿›ç¨‹ä¼šç»§ç»­è¿è¡Œä¸‹åŽ»ï¼Œç›´åˆ°è¿›ç¨‹ç»“æŸï¼Œç•™ä¸‹å­è¿›ç¨‹å˜æˆå­¤å„¿è¿›ç¨‹ï¼š
 
     while (waitpid(mypid, &r, 0) < 0 && errno == EINTR)
     {
     	continue;
     }
 
-×îºóµ±×Ó½ø³ÌÍË³öºó£¬ÎÒÃÇ»á»Øµ½ shell ½çÃæ¡£
+æœ€åŽå½“å­è¿›ç¨‹é€€å‡ºåŽï¼Œæˆ‘ä»¬ä¼šå›žåˆ° shell ç•Œé¢ã€‚
 
     if (WIFEXITED(r))
     {
@@ -34,7 +34,7 @@ Linux ÃüÃû¿Õ¼ä
     }
     return EXIT_FAILURE;
 
-ÉÏÎÄ½éÉÜµÄ **callee** º¯Êý¹¦ÄÜÈçÏÂ£º
+ä¸Šæ–‡ä»‹ç»çš„ **callee** å‡½æ•°åŠŸèƒ½å¦‚ä¸‹ï¼š
 
     static int callee()
     {
@@ -47,7 +47,7 @@ Linux ÃüÃû¿Õ¼ä
     	return ret;
     }
 
-³ÌÐò¹ÒÔØ **/proc** ÎÄ¼þÏµÍ³£¬ÉèÖÃÓÃ»§ ID ºÍ×é ID£¬Öµ¶¼Îª¡°u¡±£¬È»ºóÔËÐÐ **/bin/bash** ³ÌÐò£¬[LXC][1] ÊÇ²Ù×÷ÏµÍ³¼¶µÄÐéÄâ»¯¹¤¾ß£¬Ê¹ÓÃ cgroups ºÍÃüÃû¿Õ¼äÀ´Íê³É×ÊÔ´µÄ·ÖÀë¡£ÏÖÔÚÎÒÃÇ°ÑËùÓÐ´úÂë·ÅÔÚÒ»Æð£¬±äÁ¿¡°u¡±µÄÖµÉèÎª65534£¬ÔÚ Debian ÏµÍ³ÖÐ£¬ÕâÊÇ¡°nobody¡±ºÍ¡°nogroup¡±£º
+ç¨‹åºæŒ‚è½½ **/proc** æ–‡ä»¶ç³»ç»Ÿï¼Œè®¾ç½®ç”¨æˆ· ID å’Œç»„ IDï¼Œå€¼éƒ½ä¸ºâ€œuâ€ï¼Œç„¶åŽè¿è¡Œ **/bin/bash** ç¨‹åºï¼Œ[LXC][1] æ˜¯æ“ä½œç³»ç»Ÿçº§çš„è™šæ‹ŸåŒ–å·¥å…·ï¼Œä½¿ç”¨ cgroups å’Œå‘½åç©ºé—´æ¥å®Œæˆèµ„æºçš„åˆ†ç¦»ã€‚çŽ°åœ¨æˆ‘ä»¬æŠŠæ‰€æœ‰ä»£ç æ”¾åœ¨ä¸€èµ·ï¼Œå˜é‡â€œuâ€çš„å€¼è®¾ä¸º65534ï¼Œåœ¨ Debian ç³»ç»Ÿä¸­ï¼Œè¿™æ˜¯â€œnobodyâ€å’Œâ€œnogroupâ€ï¼š
 
     #define _GNU_SOURCE
     #include <unistd.h>
@@ -89,7 +89,7 @@ Linux ÃüÃû¿Õ¼ä
     	return ret;
     }
 
-Ö´ÐÐÒÔÏÂÃüÁîÀ´ÔËÐÐÉÏÃæµÄ´úÂë£º
+æ‰§è¡Œä»¥ä¸‹å‘½ä»¤æ¥è¿è¡Œä¸Šé¢çš„ä»£ç ï¼š
 
     root@w:~/pen/tmp# gcc -O -o ns.c -Wall -Werror -ansi -c89 ns.c
     root@w:~/pen/tmp# ./ns
@@ -101,18 +101,18 @@ Linux ÃüÃû¿Õ¼ä
     nobody       5  0.0  0.0   2784  1064 pts/1    R+   21:21   0:00 ps auxw
     nobody@w:~/pen/tmp$ 
 
-×¢ÒâÉÏÃæµÄ½á¹û£¬UID ºÍ GID ±»ÉèÖÃ³É nobody ºÍ nogroup ÁË£¬ÌØ±ðÊÇ ps ¹¤¾ßÖ»Êä³öÁ½¸ö½ø³Ì£¬ËüÃÇµÄ ID ·Ö±ðÊÇ1ºÍ5£¨LCTT×¢£ºÕâ¾ÍÊÇÉÏÎÄ½éÉÜ CLONE_NEWPID Ê±Ìáµ½µÄ¹¦ÄÜ£¬ÔÚÏß³ÌËùÔÚµÄÃüÃû¿Õ¼äÄÚ£¬½ø³Ì ID ¿ÉÒÔÎª1£¬Ó³Éäµ½ÃüÃû¿Õ¼äÍâ¾ÍÊÇ65534£»¶øÃüÃû¿Õ¼äÍâµÄ ID Îª1µÄ½ø³ÌÒ»Ö±ÊÇ init£©¡£½ÓÏÂÀ´ÂÖµ½Ê¹ÓÃ ip netns À´ÉèÖÃÍøÂçµÄÃüÃû¿Õ¼ä¡£µÚÒ»²½ÏÈÈ·¶¨µ±Ç°ÏµÍ³Ã»ÓÐÃüÃû¿Õ¼ä£º
+æ³¨æ„ä¸Šé¢çš„ç»“æžœï¼ŒUID å’Œ GID è¢«è®¾ç½®æˆ nobody å’Œ nogroup äº†ï¼Œç‰¹åˆ«æ˜¯ ps å·¥å…·åªè¾“å‡ºä¸¤ä¸ªè¿›ç¨‹ï¼Œå®ƒä»¬çš„ ID åˆ†åˆ«æ˜¯1å’Œ5ï¼ˆLCTTæ³¨ï¼šè¿™å°±æ˜¯ä¸Šæ–‡ä»‹ç» CLONE_NEWPID æ—¶æåˆ°çš„åŠŸèƒ½ï¼Œåœ¨çº¿ç¨‹æ‰€åœ¨çš„å‘½åç©ºé—´å†…ï¼Œè¿›ç¨‹ ID å¯ä»¥ä¸º1ï¼Œæ˜ å°„åˆ°å‘½åç©ºé—´å¤–å°±æ˜¯65534ï¼›è€Œå‘½åç©ºé—´å¤–çš„ ID ä¸º1çš„è¿›ç¨‹ä¸€ç›´æ˜¯ initï¼‰ã€‚æŽ¥ä¸‹æ¥è½®åˆ°ä½¿ç”¨ ip netns æ¥è®¾ç½®ç½‘ç»œçš„å‘½åç©ºé—´ã€‚ç¬¬ä¸€æ­¥å…ˆç¡®å®šå½“å‰ç³»ç»Ÿæ²¡æœ‰å‘½åç©ºé—´ï¼š
 
     root@w:~# ip netns list
     Object "netns" is unknown, try "ip help".
 
-ÕâÖÖÇé¿öÏÂ£¬ÄãÐèÒª¸üÐÂÄãµÄÏµÍ³ÄÚºË£¬ÒÔ¼° ip ¹¤¾ß¡£ÕâÀï¼ÙÉèÄãµÄÄÚºË°æ¸ßÓÚ2.6.24£¬ip ¹¤¾ß°æ±¾Ò²²î²»¶à£¬¸ßÓÚ2.6.24£¨LCTT×¢£ºip ¹¤¾ßÓÉ iproute °²×°°üÌá¹©£¬´Ë°²×°°ü°æ±¾ÓëÄÚºË°æ±¾Ïà½ü£©¡£¸üÐÂºÃºó£¬**ip netns list** ÔÚÃ»ÓÐÃüÃû¿Õ¼ä´æÔÚµÄÇé¿öÏÂ²»»áÊä³öÈÎÎñÐÅÏ¢¡£¼Ó¸öÃûÎª¡°ns1¡±µÄÃüÃû¿Õ¼ä¿´¿´£º
+è¿™ç§æƒ…å†µä¸‹ï¼Œä½ éœ€è¦æ›´æ–°ä½ çš„ç³»ç»Ÿå†…æ ¸ï¼Œä»¥åŠ ip å·¥å…·ã€‚è¿™é‡Œå‡è®¾ä½ çš„å†…æ ¸ç‰ˆé«˜äºŽ2.6.24ï¼Œip å·¥å…·ç‰ˆæœ¬ä¹Ÿå·®ä¸å¤šï¼Œé«˜äºŽ2.6.24ï¼ˆLCTTæ³¨ï¼šip å·¥å…·ç”± iproute å®‰è£…åŒ…æä¾›ï¼Œæ­¤å®‰è£…åŒ…ç‰ˆæœ¬ä¸Žå†…æ ¸ç‰ˆæœ¬ç›¸è¿‘ï¼‰ã€‚æ›´æ–°å¥½åŽï¼Œ**ip netns list** åœ¨æ²¡æœ‰å‘½åç©ºé—´å­˜åœ¨çš„æƒ…å†µä¸‹ä¸ä¼šè¾“å‡ºä»»åŠ¡ä¿¡æ¯ã€‚åŠ ä¸ªåä¸ºâ€œns1â€çš„å‘½åç©ºé—´çœ‹çœ‹ï¼š
 
     root@w:~# ip netns add ns1
     root@w:~# ip netns list
     ns1
 
-ÁÐ³öÍø¿¨£º
+åˆ—å‡ºç½‘å¡ï¼š
 
     root@w:~# ip link list
     1: lo:  mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT 
@@ -120,7 +120,7 @@ Linux ÃüÃû¿Õ¼ä
     2: eth0:  mtu 1500 qdisc pfifo_fast state UNKNOWN mode DEFAULT qlen 1000
         link/ether 00:0c:29:65:25:9e brd ff:ff:ff:ff:ff:ff
 
-´´½¨ÐÂµÄÐéÄâÍø¿¨£¬¼Óµ½ÃüÃû¿Õ¼ä¡£ÐéÄâÍø¿¨ÐèÒª³É¶Ô´´½¨£¬»¥Ïà¹ØÁª¡ª¡ªÏëÏë½»²æµçÀÂ°É£º
+åˆ›å»ºæ–°çš„è™šæ‹Ÿç½‘å¡ï¼ŒåŠ åˆ°å‘½åç©ºé—´ã€‚è™šæ‹Ÿç½‘å¡éœ€è¦æˆå¯¹åˆ›å»ºï¼Œäº’ç›¸å…³è”â€”â€”æƒ³æƒ³äº¤å‰ç”µç¼†å§ï¼š
 
     root@w:~# ip link add veth0 type veth peer name veth1
     root@w:~# ip link list
@@ -133,9 +133,9 @@ Linux ÃüÃû¿Õ¼ä
     4: veth0:  mtu 1500 qdisc noop state DOWN mode DEFAULT qlen 1000
         link/ether f2:f7:5e:e2:22:ac brd ff:ff:ff:ff:ff:ff
 
-Õâ¸öÊ±ºò **ifconfig** -a ÃüÁîÒ²ÄÜÏÔÊ¾ÐÂÌí¼ÓµÄ veth0 ºÍ veth1 Á½¿éÍø¿¨¡£
+è¿™ä¸ªæ—¶å€™ **ifconfig** -a å‘½ä»¤ä¹Ÿèƒ½æ˜¾ç¤ºæ–°æ·»åŠ çš„ veth0 å’Œ veth1 ä¸¤å—ç½‘å¡ã€‚
 
-ºÜºÃ£¬ÏÖÔÚ½«ÕâÁ½·Ý¿éÍø¿¨¼Óµ½ÃüÃû¿Õ¼äÖÐÈ¥¡£×¢ÒâÒ»ÏÂ£¬ÏÂÃæµÄ ip **netns exec** ÃüÁîÓÃÓÚ½«ºóÃæµÄÃüÁîÔÚÃüÃû¿Õ¼äÖÐÖ´ÐÐ£¨LCTT×¢£ºÏÂÃæµÄ½á¹ûÏÔÊ¾ÁËÔÚ ns1 Õâ¸öÍøÂçÃüÃû¿Õ¼äÖÐ£¬Ö»´æÔÚ lo ºÍ veth1 Á½¿éÍø¿¨£©£º
+å¾ˆå¥½ï¼ŒçŽ°åœ¨å°†è¿™ä¸¤ä»½å—ç½‘å¡åŠ åˆ°å‘½åç©ºé—´ä¸­åŽ»ã€‚æ³¨æ„ä¸€ä¸‹ï¼Œä¸‹é¢çš„ ip **netns exec** å‘½ä»¤ç”¨äºŽå°†åŽé¢çš„å‘½ä»¤åœ¨å‘½åç©ºé—´ä¸­æ‰§è¡Œï¼ˆLCTTæ³¨ï¼šä¸‹é¢çš„ç»“æžœæ˜¾ç¤ºäº†åœ¨ ns1 è¿™ä¸ªç½‘ç»œå‘½åç©ºé—´ä¸­ï¼Œåªå­˜åœ¨ lo å’Œ veth1 ä¸¤å—ç½‘å¡ï¼‰ï¼š
 
     root@w:~# ip link set veth1 netns ns1
     root@w:~# ip netns exec ns1 ip link list
@@ -144,21 +144,21 @@ Linux ÃüÃû¿Õ¼ä
     3: veth1:  mtu 1500 qdisc noop state DOWN mode DEFAULT qlen 1000
     link/ether d2:e9:52:18:19:ab brd ff:ff:ff:ff:ff:ff
 
-Õâ¸öÊ±ºò **ifconfig** -a ÃüÁîÖ»ÄÜÏÔÊ¾ veth0£¬²»ÄÜÏÔÊ¾ veth1£¬ÒòÎªºóÕßÏÖÔÚÔÚ ns1 ÃüÃû¿Õ¼äÖÐ¡£
+è¿™ä¸ªæ—¶å€™ **ifconfig** -a å‘½ä»¤åªèƒ½æ˜¾ç¤º veth0ï¼Œä¸èƒ½æ˜¾ç¤º veth1ï¼Œå› ä¸ºåŽè€…çŽ°åœ¨åœ¨ ns1 å‘½åç©ºé—´ä¸­ã€‚
 
-Èç¹ûÏëÉ¾³ý veth1£¬¿ÉÒÔÖ´ÐÐÏÂÃæµÄÃüÁî£º
+å¦‚æžœæƒ³åˆ é™¤ veth1ï¼Œå¯ä»¥æ‰§è¡Œä¸‹é¢çš„å‘½ä»¤ï¼š
 
     ip netns exec ns1 ip link del veth1
 
-Îª veth0 ·ÖÅä IP µØÖ·£º
+ä¸º veth0 åˆ†é… IP åœ°å€ï¼š
 
     ifconfig veth0 192.168.5.5/24
 
-ÔÚÃüÃû¿Õ¼äÄÚÎª veth1 ·ÖÅä IP µØÖ·£º
+åœ¨å‘½åç©ºé—´å†…ä¸º veth1 åˆ†é… IP åœ°å€ï¼š
 
     ip netns exec ns1 ifconfig veth1 192.168.5.10/24 up
 
-ÔÚÃüÃû¿Õ¼äÄÚÍâÖ´ÐÐ ip addr **list** ÃüÁî£º
+åœ¨å‘½åç©ºé—´å†…å¤–æ‰§è¡Œ ip addr **list** å‘½ä»¤ï¼š
 
     root@w:~# ip addr list
     1: lo:  mtu 65536 qdisc noqueue state UNKNOWN 
@@ -185,7 +185,7 @@ Linux ÃüÃû¿Õ¼ä
         inet6 fe80::10bd:b6ff:fe76:a6eb/64 scope link 
            valid_lft forever preferred_lft forever
 
-ÔÚÃüÃû¿Õ¼äÄÚÍâ²é¿´Â·ÓÉ±í£º
+åœ¨å‘½åç©ºé—´å†…å¤–æŸ¥çœ‹è·¯ç”±è¡¨ï¼š
 
     root@w:~# ip route list
     default via 192.168.3.1 dev eth0  proto static 
@@ -194,7 +194,7 @@ Linux ÃüÃû¿Õ¼ä
     root@w:~# ip netns exec ns1 ip route list
     192.168.5.0/24 dev veth1  proto kernel  scope link  src 192.168.5.10 
 
-×îºó£¬½«ÐéÄâÍø¿¨Á¬µ½ÎïÀíÍø¿¨ÉÏ£¬ÎÒÃÇÐèÒªÓÃµ½ÇÅ½Ó¡£ÕâÀï×öµÄÊÇ½« veth0 ÇÅ½Óµ½ eth0£¬¶ø ns1 ÃüÃû¿Õ¼äÄÚÔòÊ¹ÓÃ DHCP ×Ô¶¯»ñÈ¡ IP µØÖ·£º
+æœ€åŽï¼Œå°†è™šæ‹Ÿç½‘å¡è¿žåˆ°ç‰©ç†ç½‘å¡ä¸Šï¼Œæˆ‘ä»¬éœ€è¦ç”¨åˆ°æ¡¥æŽ¥ã€‚è¿™é‡Œåšçš„æ˜¯å°† veth0 æ¡¥æŽ¥åˆ° eth0ï¼Œè€Œ ns1 å‘½åç©ºé—´å†…åˆ™ä½¿ç”¨ DHCP è‡ªåŠ¨èŽ·å– IP åœ°å€ï¼š
 
     root@w:~# brctl addbr br0
     root@w:~# brctl addif br0 eth0
@@ -209,7 +209,7 @@ Linux ÃüÃû¿Õ¼ä
         inet6 fe80::20c:29ff:fe65:259e/64 scope link 
            valid_lft forever preferred_lft forever
 
-ÎªÍøÇÅ br0 ·ÖÅäµÄ IP µØÖ·Îª192.168.3.122/24¡£½ÓÏÂÀ´ÎªÃüÃû¿Õ¼ä·ÖÅäµØÖ·£º
+ä¸ºç½‘æ¡¥ br0 åˆ†é…çš„ IP åœ°å€ä¸º192.168.3.122/24ã€‚æŽ¥ä¸‹æ¥ä¸ºå‘½åç©ºé—´åˆ†é…åœ°å€ï¼š
 
     root@w:~# ip netns exec ns1 dhclient veth1
     root@w:~# ip netns exec ns1 ip addr list
@@ -221,17 +221,19 @@ Linux ÃüÃû¿Õ¼ä
         inet6 fe80::10bd:b6ff:fe76:a6eb/64 scope link 
            valid_lft forever preferred_lft forever
 
-ÏÖÔÚ£¬ veth1 µÄ IP ±»ÉèÖÃ³É 192.168.3.248/24 ÁË¡£
+çŽ°åœ¨ï¼Œ veth1 çš„ IP è¢«è®¾ç½®æˆ 192.168.3.248/24 äº†ã€‚
 
 --------------------------------------------------------------------------------
 
 via: http://www.howtoforge.com/linux-namespaces
 
-×÷Õß£º[aziods][a]
-ÒëÕß£º[bazz2](https://github.com/bazz2)
-Ð£¶Ô£º[Ð£¶ÔÕßID](https://github.com/Ð£¶ÔÕßID)
+ä½œè€…ï¼š[aziods][a]
+è¯‘è€…ï¼š[bazz2](https://github.com/bazz2)
+æ ¡å¯¹ï¼š[æ ¡å¯¹è€…ID](https://github.com/æ ¡å¯¹è€…ID)
 
-±¾ÎÄÓÉ [LCTT](https://github.com/LCTT/TranslateProject) Ô­´´·­Òë£¬[LinuxÖÐ¹ú](http://linux.cn/) ÈÙÓþÍÆ³ö
+æœ¬æ–‡ç”± [LCTT](https://github.com/LCTT/TranslateProject) åŽŸåˆ›ç¿»è¯‘ï¼Œ[Linuxä¸­å›½](http://linux.cn/) è£èª‰æŽ¨å‡º
 
 [a]:http://www.howtoforge.com/forums/private.php?do=newpm&u=138952
 [1]:http://en.wikipedia.org/wiki/LXC
+
+
