@@ -1,4 +1,4 @@
-How to Boot Linux ISO Images Directly From Your Hard Drive
+[xieborui translating]How to Boot Linux ISO Images Directly From Your Hard Drive
 ================================================================================
 Hi all, today we'll teach you an awesome interesting stuff related with the Operating System Disk Image and Booting. Now, try many OS you like without installing them in your Physical Hard Drive and without burning DVDs or USBs.
 
