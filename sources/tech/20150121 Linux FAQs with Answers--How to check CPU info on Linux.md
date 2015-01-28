@@ -1,9 +1,8 @@
-Translating by ZTinoZ
-Linux FAQs with Answers--How to check CPU info on Linux
+Linux有问必答时间--如何查看Linux系统的CPU信息
 ================================================================================
-> **Question**: I would like to know detailed information about the CPU processor of my computer. What are the available methods to check CPU information on Linux? 
+> **问题**: 我想要了解我的电脑关于CPU处理器的详细信息，查看CPU信息比较有效地方法是什么？
 
-Depending on your need, there are various pieces of information you may need to know about the CPU processor(s) of your computer, such as CPU vendor name, model name, clock speed, number of sockets/cores, L1/L2/L3 cache configuration, available processor capabilities (e.g., hardware virtualization, AES, MMX, SSE), and so on. In Linux, there are many command line or GUI-based tools that are used to show detailed information about your CPU hardware.
+根据你的需要，there are various pieces of information you may need to know about the CPU processor(s) of your computer, such as CPU vendor name, model name, clock speed, number of sockets/cores, L1/L2/L3 cache configuration, available processor capabilities (e.g., hardware virtualization, AES, MMX, SSE), and so on. In Linux, there are many command line or GUI-based tools that are used to show detailed information about your CPU hardware.
 
 ### 1. /proc/cpuinfo ###
 
