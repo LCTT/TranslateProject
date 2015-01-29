@@ -48,7 +48,7 @@ via: http://linoxide.com/linux-how-to/apache-migration-2-2-to-2-4-ubuntu-14-04/
 
 作者：[Adrian Dinu][a]
 译者：[Vic020/VicYu](http://vicyu.net)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
