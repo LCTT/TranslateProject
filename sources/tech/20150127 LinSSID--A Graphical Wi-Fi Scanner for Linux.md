@@ -1,59 +1,58 @@
-Translating---geekpi
-
-LinSSID – A Graphical Wi-Fi Scanner for Linux
+LinSSID - 一款Linux下的图形化Wi-Fi扫描器
 ================================================================================
-### Introduction ###
+### 介绍 ###
 
-As you may know, **LinSSID** is a simple graphical software that can be used to find the wireless networks available.It is completely open source, written in C++ using Linux wireless tools, Qt5, and Qwt 6.1., and is similar to **Inssider** (MS Windows) in terms of look and functionality.
+如你所知，**LinSSID** 是一款可以用于寻找可用无线网络的图形化软件。它完全开源，用C++写成，使用了Linux无线工具、Qt5、Qwt6.1，它在外观和功能上与**Inssider** （MS Windows）相近。
 
-### Installation ###
+### 安装 ###
 
-You can install it either using source, or using a PPA if you use DEB based systems such as Ubuntu, and LinuxMint etc.
+你可以使用源码安装，如果你使用的是基于DEB的系统比如Ubuntu和LinuxMint等等，你也可以使用PPA安装。
 
-You can download and install LinSSID using source packages from [this link][1].
+你可用从[this link][1]这个链接下载并安装LinSSID。
 
-Here, we will install and test this software on Ubuntu 14.04 LTS using PPA.
+这里我门将使用PPA来安装并测试这个软件。
 
-Add the LinSSID PPA, and install it by typing.
+添加LinSSID的PPA并输入下面的命令安装。
 
     sudo add-apt-repository ppa:wseverin/ppa
     sudo apt-get update
     sudo apt-get install linssid
 
-### Usage ###
+### 用法 ###
 
-Once you installed, launch it either from menu or unity.
+安装完成之后，你可以从菜单或者unity中启动。
 
-You”ll be asked to enter the administrative user password of your system.
+你将被要求输入管理员密码。
 
 ![Password required for iwlist scan_001](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/Password-required-for-iwlist-scan_001.png)
 
-This is how LinSSID interface looks.
+这就是LinSSID的界面。
 
 ![LinSSID_002](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/LinSSID_002.png)
 
-Now, select the network interface you used to connect to the Wireless networks, for example wlan0 in my case. Click the Play button to search the list of available wi-fi networks.
+现在选择你想要连接无线网络的网卡，比如这里是wlan0.点击Play按钮来搜寻wi-fi网络列表。
 
-After a new seconds, LinSSID will display the wi-fi networks.
+几秒钟之后，LinSSID就会显示wi-fi网络了。
 
 ![LinSSID_003](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/LinSSID_003.png)
 
-As you see in the above screenshot, LinSSID displays the details of SSID names, MAC Id, Channel, Privacy, Cipher, Signal, and Protocol etc. Ofcourse, you can make LinSSID to display more options such as Security, bandwidth details etc. To do that, go to **View** menu, and select the desired option. Also, it displays the graphs of signal strength by channel and over time. Additionally, It works both on 2.4Ghz, and 5Ghz channels.
+如你在上面的截屏中所见，LinSSID显示SSID名、MAC ID、通道、隐私、加密方式、信号和协议等等信息。当然，你可以让LinSSID显示更多的选项，比如安全、带宽等等。要显示这些，进入**View**菜单并选择需要的选项。同样，它显示了不同通道中的信号随着时间信号强度的变化。最后，它可以工作在2.4Ghz和5Ghz通道上。
 
-That’s it. Hope this tool will useful for you.
 
-Cheers!!
+就是这样。希望这个工具对你有用。
 
-Reference Links:
+干杯！！
 
-- [LinSSID Homepage][2]
+参考链接：
+
+- [LinSSID 主页][2]
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/linssid-graphical-wi-fi-scanner-linux/
 
 作者：[SK][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
