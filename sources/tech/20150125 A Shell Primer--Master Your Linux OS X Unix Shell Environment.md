@@ -1,3 +1,4 @@
+zpl1025
 A Shell Primer: Master Your Linux, OS X, Unix Shell Environment
 ================================================================================
 On a Linux or Unix-like systems each user and process runs in a specific environment. An environment includes variables, settings, aliases, functions and more. Following is a very brief introduction to some useful shell environment commands, including examples of how to use each command and setup your own environment to increase productivity in the command prompt.
