@@ -1,3 +1,5 @@
+Translating---geekpi
+
 LinSSID – A Graphical Wi-Fi Scanner for Linux
 ================================================================================
 ### Introduction ###
