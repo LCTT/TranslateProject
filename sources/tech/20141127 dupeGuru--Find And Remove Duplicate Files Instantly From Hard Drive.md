@@ -1,3 +1,5 @@
+Translating by FSSlc
+
 dupeGuru – Find And Remove Duplicate Files Instantly From Hard Drive
 ================================================================================
 ### Introduction ###
