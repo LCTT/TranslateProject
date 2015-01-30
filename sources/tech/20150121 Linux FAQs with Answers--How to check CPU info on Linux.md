@@ -2,11 +2,11 @@ Linux有问必答时间--如何查看Linux系统的CPU信息
 ================================================================================
 > **问题**: 我想要了解我的电脑关于CPU处理器的详细信息，查看CPU信息比较有效地方法是什么？
 
-根据你的需要，there are various pieces of information you may need to know about the CPU processor(s) of your computer, such as CPU vendor name, model name, clock speed, number of sockets/cores, L1/L2/L3 cache configuration, available processor capabilities (e.g., hardware virtualization, AES, MMX, SSE), and so on. In Linux, there are many command line or GUI-based tools that are used to show detailed information about your CPU hardware.
+根据你的需要，有各种各样的关于你的CPU处理器信息你需要了解，比如CPU供应商名、模型名、时钟频率、套接字/内核的数量, L1/L2/L3缓存配置、可用的处理器能力(比如：硬件虚拟化、AES, MMX, SSE)等等。在Linux中，有许多命令行或基于GUI的工具就能来展示你的CPU硬件的相关具体信息。
 
 ### 1. /proc/cpuinfo ###
 
-The simpliest method is to check /proc/cpuinfo. This virtual file shows the configuration of available CPU hardware.
+最简单的方法就是查看 /proc/cpuinfo ，这个虚拟文件展示的是可用CPU硬件的配置。
 
     $ more /proc/cpuinfo 
 
