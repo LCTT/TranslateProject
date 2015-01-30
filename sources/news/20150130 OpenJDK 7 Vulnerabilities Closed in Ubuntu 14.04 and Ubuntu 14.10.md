@@ -18,7 +18,7 @@ The flaws can be fixed if you upgrade your system to the latest openjdk-7-relate
 
 --------------------------------------------------------------------------------
 
-via: http://linux.softpedia.com/blog/OpenJDK-7-Vulnerabilities-Closed-in-Ubuntu-14-04-and-Ubuntu-14-10-471605.shtml
+via:http://linux.softpedia.com/blog/OpenJDK-7-Vulnerabilities-Closed-in-Ubuntu-14-04-and-Ubuntu-14-10-471605.shtml
 
 本文发布时间:29 Jan 2015, 16:53 GMT
 

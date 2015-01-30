@@ -21,7 +21,7 @@ For now, the PPA doesn't have the latest version, but that should change soon. F
 
 --------------------------------------------------------------------------------
 
-via: http://news.softpedia.com/news/LibreOffice-4-4-Releases-As-the-Most-Beautiful-LibreOffice-Ever-471575.shtml
+via:http://news.softpedia.com/news/LibreOffice-4-4-Releases-As-the-Most-Beautiful-LibreOffice-Ever-471575.shtml
 
 本文发布时间:29 Jan 2015, 14:16 GMT
 
