@@ -1,45 +1,44 @@
-zpl1025
-A Shell Primer: Master Your Linux, OS X, Unix Shell Environment
+Shell入门：掌握Linux，OS X，Unix的Shell环境
 ================================================================================
-On a Linux or Unix-like systems each user and process runs in a specific environment. An environment includes variables, settings, aliases, functions and more. Following is a very brief introduction to some useful shell environment commands, including examples of how to use each command and setup your own environment to increase productivity in the command prompt.
+在Linux或类Unix系统中，每个用户和进程都运行在一个特定环境中。这个环境包含了变量，设置，别名，函数以及更多的。下面是对Shell环境下一些常用命令的简单介绍，包括每个命令如何使用的例子，以及在命令行下设定你自己的环境来提高效率。
 
 ![](http://s0.cyberciti.org/uploads/cms/2015/01/bash-shell-welcome-image.jpg)
 
-### Finding out your current shell ###
+### 找出你当前的shell ###
 
-Type any one of the following command at the Terminal app:
+在终端应用中输入下面命令中的任意一个：
 
     ps $$
     ps -p $$
 
-OR
+或者
 
     echo "$0"
 
-Sample outputs:
+输出范例：
 
-[![Fig.01: Finding out your shell name](http://s0.cyberciti.org/uploads/cms/2015/01/finding-your-shell-like-a-pro.jpg)][1]
-Fig.01: Finding out your shell name
+[![图1: Finding out your shell name](http://s0.cyberciti.org/uploads/cms/2015/01/finding-your-shell-like-a-pro.jpg)][1]
+图1：找出当前的shell
 
-### Finding out installed shells ###
+### 找出所有已安装的shell ###
 
-To find out the full path for installed shell type:
+找到已安装shell的完整路径：
 
     type -a zsh
     type -a ksh
     type -a sh
     type -a bash
 
-Sample outputs:
+输出范例：
 
 [![Fig.02: Finding out your shell path](http://s0.cyberciti.org/uploads/cms/2015/01/finding-and-verifying-shell-path.jpg)][2]
-Fig.02: Finding out your shell path
+图2：找出shell的路径
 
-The /etc/shells file contains a list of the shells on the system. For each shell a single line should be present, consisting of the shell's path, relative to root. Type the following [cat command][3] to see shell database:
+文件/etc/shells里包含了系统支持的shell列表。每一行代表一个shell，是相对根目录的完整路径。用这个[cat命令][3]来查看这些数据：
 
     cat /etc/shells
 
-Sample outputs:
+输出范例：
 
     # List of acceptable shells for chpass(1).
     # Ftpd will not allow users to connect who are not using
@@ -53,47 +52,47 @@ Sample outputs:
     /bin/zsh
     /usr/local/bin/fish
 
-### Changing your current shell temporarily ###
+### 临时改变当前shell ###
 
-Just type the shell name. In this example, I'm changing from bash to zsh:
+只需要输入shell的名字。在下面的例子里，我从bash切换到了zsh：
 
     zsh
 
-You just changed your shell temporarily to zsh. Also known as subshell. To exit from subshell/temporary shell, type the following command or hit CTRL-d:
+这只是临时改变了系统shell。也叫做子shell。要从子/临时shell退出，输入下面的命令或者按下CTRL-D：
 
     exit
 
-### Finding out subshell level/temporary shell nesting level ###
+### 找出子shell的层级或临时shell的嵌套层级 ###
 
-The $SHLVL incremented by one each time an instance of bash is started. Type the following command:
+每个bash实例启动后，变量$SHLVL的值都会加一。输入下面的命令：
 
     echo "$SHLVL"
 
-Sample outputs:
+示例输出：
 
 [![Fig. 03: Bash shell nesting level (subshell numbers)](http://s0.cyberciti.org/uploads/cms/2015/01/a-nested-shell-level-command.jpg)][4]
-Fig. 03: Bash shell nesting level (subshell numbers)
+图3：Bash shell嵌套层级（子shell数目）
 
-### Changing your current shell permanently with chsh command ###
+### 通过chsh命令永久变更系统shell ###
 
-Want to change your own shell from bash to zsh permanently? Try:
+想要把当前系统shell从bash永久换成zsh？试试这个：
 
     chsh -s /bin/zsh
 
-Want to change the other user's shell from bash to ksh permanently? Try:
+想把其他用户的shell从bash永久换成ksh？试试这个：
 
     sudo chsh -s /bin/ksh userNameHere
 
-### Finding out your current environment ###
+### 查看当前的环境 ###
 
-You need to use the
+你需要用到
 
     env
     env | more
     env | less
     env | grep 'NAME'
 
-Sample outputs:
+示例输出：
 
     TERM_PROGRAM=Apple_Terminal
     SHELL=/bin/bash
@@ -116,12 +115,12 @@ Sample outputs:
     _=/usr/bin/env
     OLDPWD=/Users/vivek
 
-Here is a table of commonly used bash shell variables:
+下面是bash shell里一些常见变量的列表：
 
 ![Fig.04: Common bash environment variables](http://s0.cyberciti.org/uploads/cms/2015/01/common-shell-vars.jpg)
-Fig.04: Common bash environment variables
+图4：常见bash环境变量
 
-> **Warning**: It is always a good idea not to change the following environment variables. Some can be changed and may results into unstable session for you:
+> **注意**：下面这些环境变量没事不要乱改。很可能会造成不稳定的shell会话：
 > 
 > SHELL
 > 
@@ -141,163 +140,162 @@ Fig.04: Common bash environment variables
 > 
 > LINENO
 
-### Displays the values of environment variables ###
+### 显示环境变量的值 ###
 
-Use any one of the following command to show the values of environment variable called HOME:
+使用下面任意一条命令显示环境变量HOME的值：
 
-    ## Use printenv ##
+    ## 使用printenv ##
     printenv HOME
      
-    ## or use echo ##
+    ## 或者用echo ##
     echo "$HOME"
      
-    # or use printf for portability ##
+    # 考虑到可移植性，也可以用printf ##
     printf "%s\n" "$HOME"
 
-Sample outputs:
+示例输出：
 
     /home/vivek
 
-### Adding or setting a new variables ###
+### 增加或设定一个新变量 ###
 
-The syntax is as follows in bash or zsh or sh or ksh shell:
+下面是bash，zsh，sh和ksh的语法：
 
-    ## The syntax is ##
+    ## 语法 ##
     VAR=value
     FOO=bar
      
-    ## Set the default editor to vim ##
+    ## 设定vim为默认文本编辑器 ##
     EDITOR=vim
     export $EDITOR
      
-    ## Set default shell timeout for security ##
+    ## 考虑安全性，设定默认shell连接超时时间 ##
     TMOUT=300
     export TMOUT
      
-    ## You can directly use export command to set the search path for commands ##
+    ## 你可以直接使用export命令设定命令的搜素路径 ##
     export PATH=$PATH:$HOME/bin:/usr/local/bin:/path/to/mycoolapps
 
-Again, use the printenv or echo or printf command to see the values of environment variables called PATH, EDITOR, and TMOUT:
+然后，使用printenv或者echo或printf命令查看环境变量PATH，EDITOR，和TMOUT的值：
 
     printenv PATH
     echo "$EDITOR"
     printf "%s\n" $TMOUT
 
-### How do I change an existing environment variables? ###
+### 怎么修改一个现有的环境变量？ ###
 
-The syntax is as follows:
+下面是语法：
 
     export VAR=value
-    ## OR ##
+    ## 或者 ##
     VAR=value
     export $VAR
      
-    ## Change the default editor from vim to emacs ##
-    echo "$EDITOR" ## <--- print vim
-    EDITOR=emacs   ## <--- change it 
-    export $EDITOR ## <--- export it for next session too 
-    echo "$EDITOR" ## <--- print emacs 
+    ## 把默认文本编辑器从vim改为emacs ##
+    echo "$EDITOR" ## <--- 屏幕输出vim
+    EDITOR=emacs   ## <--- 修改
+    export $EDITOR ## <--- 让修改在其他会话生效
+    echo "$EDITOR" ## <--- 屏幕输出emacs 
 
-The syntax is as follows for the **tcsh shell for adding or changing a variables**:
+**tcsh shell下增加和修改变量**的语法是下面这样的：
 
-    ## Syntax 
+    ## 语法
     setenv var value
     printenv var
      
-    ## Set foo variable with bar as a value ##
+    ## 设置变量foo的值为bar ##
     setenv foo bar
     echo "$foo"
     printenv foo
      
-    ## Set PATH variable ##
+    ## 设置变量PATH ##
     setenv PATH $PATH\:$HOME/bin
     echo "$PATH"
      
-    ## set PAGER variable ##
+    ## 设置变量PAGER ##
     setenv PAGER most
     printf "%s\n" $PAGER
 
-### Finding your bash shell configuration files ###
+### 找出bash shell的配置文件 ###
 
-Type the following command to list your bash shell files, enter:
+用下面的命令列出bash shell的文件：
 
     ls -l ~/.bash* ~/.profile /etc/bash* /etc/profile
 
-Sample output:
+示例输出：
 
 [![Fig.05: List all bash environment configuration files](http://s0.cyberciti.org/uploads/cms/2015/01/list-bash-enviroment-variables.jpg)][5]
-Fig.05: List all bash environment configuration files
+图5：列出bash的所有配置文件
 
-To look at all your bash config files, enter:
+要查看所有的bash配置文件，输入：
 
     less ~/.bash* ~/.profile /etc/bash* /etc/profile
 
-You can edit bash config files one by one using the text editor such as vim or emacs:
+可以使用文字编辑器比如vim或emacs来一个一个编辑bash配置文件：
 
     vim ~/.bashrc
 
-To edit files located in /etc/, type:
+编辑/etc/目录下的文件，输入：
 
-    ## first make a backup.. just in case 
+    ## 首先是备份，以防万一
     sudo cp -v /etc/bashrc /etc/bashrc.bak.22_jan_15
      
     ########################################################################
-    ## Alright, edit it to your hearts content and by all means, have fun ##
-    ## with your environment or just increase the productivity :)         ##
+    ## 然后，随心所欲随便改吧，好好玩玩shell环境或者提高一下效率:)        ##
     ########################################################################
     sudo vim /etc/bashrc
 
-### Confused by Bash shell Initialization files? ###
+### 被Bash shell初始化过程中应用的文件搞糊涂了吗？ ###
 
-The following "bash file initialization" graph will help you:
+下面的"bash初始化文件"流程图应该有些帮助：
 
 ![](http://s0.cyberciti.org/uploads/cms/2015/01/BashStartupfiles.jpg)
 
-Depending on which shell is set up as your default, your user profile or system profile can be one of the following:
+根据账户设定的默认shell，你的用户配置或系统配置可能是下面其中一种：
 
-### Finding your zsh shell configuration files ###
+### 找出zsh shell配置文件 ###
 
-The zsh [wiki][6] recommend the following command:
+zsh的[wiki][6]中建议用下面的命令：
 
     strings =zsh | grep zshrc
 
-Sample outputs:
+示例输出：
 
     /etc/zshrc
     .zshrc
 
-Type the following command to list your zsh shell files, enter:
+输入下面的命令列出你的zsh shell文件：
 
     ls -l /etc/zsh/* /etc/profile ~/.z*
 
-To look at all your zsh config files, enter:
+查看所有zsh配置文件：
 
     less /etc/zsh/* /etc/profile ~/.z*
 
-### Finding your ksh shell configuration files ###
+### 找出ksh shell配置文件 ###
 
-1. See ~/.profile or /etc/profile file.
+1. 查看~/.profile或者/etc/profile文件。
 
-### Finding your tcsh shell configuration files ###
+### 找出tcsh shell配置文件 ###
 
-1. See ~/.login, ~/.cshrc for the C shell.
-2. See ~/.tcshrc and ~/.cshrc for the TC shell.
+1. C shell查看~/.login，~/.cshrc文件。
+2. TC shell查看~/.tcshrc和~/.cshrc文件。
 
-### Can I have a script like this execute automatically every time I login? ###
+### 我可以写个类似这样每次登录时都自动执行的脚本吗？ ###
 
-Yes, add your commands or aliases or other settings to ~/.bashrc (bash shell) or ~/.profile (sh/ksh/bash) or ~/.login (csh/tcsh) file.
+是的，把你的命令或别名或其他设定添加到~/.bashrc（bash shell）或者~/.profile（sh/ksh/bash）或者~/.login（csh/tcsh）文件中。
 
-### Can I have a script like this execute automatically every time I logout? ###
+### 我可以写个类似这样每次登出都自动执行的脚本吗？ ###
 
-Yes, add your commands or aliases or other settings to ~/.bash_logout (bash) or ~/.logout (csh/tcsh) file.
+是的，把你的命令或别名或其他设定添加到~/.bash_logout（bash）或者~/.logout（csh/tcsh）文件。
 
-### History: Getting more info about your shell session ###
+### history：获取关于shell会话的更多信息 ###
 
-Just type the history command to see session history:
+输入history命令来查看本次会话的历史：
 
     history
 
-Sample outputs:
+示例输出：
 
         9  ls
        10  vi advanced-cache.php
@@ -321,56 +319,56 @@ Sample outputs:
        98  smartctl  -A /dev/sg1 | grep -i temperature
        99  sensors
 
-Type history 20 to see the last 20 commands from your history:
+输入history 20来查看命令历史的后20条：
 
     history 20
 
-Sample outputs:
+示例输出：
 
 [![Fig.06: View session history in the bash shell using history command](http://s0.cyberciti.org/uploads/cms/2015/01/history-outputs.jpg)][7]
-Fig.06: View session history in the bash shell using history command
+图6：在bash shell中使用history命令查看会话历史
 
-You can reuses commands. Simply hit [Up] and [Down] arrow keys to see previous commands. Press [CTRL-r] from the shell prompt to search backwards through history buffer or file for a command. To repeat last command just type !! at a shell prompt:
+你可以重复使用命令。简单地按下[上]或[下]方向键就可以查看之前的命令。在shell提示符下按下[CTRL-R]可以向后搜索历史缓存或文件来查找命令。重复最后一次命令，只需要在shell提示符下输入!!就好了：
 
     ls -l /foo/bar
     !!
 
-To see command #93 (hddtemp /dev/sda)from above history session, type:
+在以上的历史记录中查看命令#93 (hddtemp /dev/sda)，输入：
 
     !93
 
-### Changing your identity with sudo or su ###
+### 使用sudo或su改变用户 ###
 
-The syntax is as follows:
+下面是语法：
 
     su userName
      
-    ## To log in as a tom user ##
+    ## 登录为tom用户 ##
     su tom
      
-    ## To start a new login shell for tom user ##
+    ## 为用户tom打开一个新的shell会话 ##
     su tom
      
-    ## To login as root user ##
+    ## 登录为root用户 ##
     su -
      
-    ## The sudo command syntax (must be configured on your system) ##
+    ## sudo命令语法（必须在系统中配置有这个命令） ##
     sudo -s
     sudo tom
 
-See "[Linux Run Command As Another User][8]" post for more on sudo, su and runuser commands.
+看看帖子"[Linux下使用其他用户身份运行命令][8]"更多地了解sudo，su和runuser命令。
 
-### Shell aliases ###
+### shell别名 ###
 
-An alias is nothing but shortcut to commands.
+别名仅仅是命令的一个快捷方式。
 
-### Listing aliases ###
+### 列出所有的别名 ###
 
-Type the following command:
+输入下面的命令：
 
     alias
 
-Sample outputs:
+示例输出：
 
     alias ..='cd ..'
     alias ...='cd ../../../'
@@ -388,31 +386,31 @@ Sample outputs:
     alias egrep='egrep --color=auto'
     alias ethtool='ethtool eth1'
 
-### Create an alias ###
+### 设定一个别名 ###
 
-The bash/zsh syntax is:
+bash/zsh语法：
 
     alias c='clear'
     alias down='sudo /sbin/shutdown -h now'
 
-Type c alias for the system command clear, so we can type c instead of clear command to clear the screen:
+对于命令clear可以输入c别名，这样我们就可以输入c代替clear命令来清空屏幕：
 
     c
 
-Or type down to shutdown the Linux based server:
+或者输入down来关闭基于Linux的服务器：
 
     down
 
-You can create as many aliases you want. See "[30 Handy Bash Shell Aliases For Linux / Unix / Mac OS X][9]" for practical usage of aliases on Unix-like system.
+你可以设定任意多的别名。看下"[Linux/Unix/Mac OS X系统中的30个方便的bash shell别名][9]"了解在类Unix系统中别名的实际应用。
 
-### Shell functions ###
+### shell函数 ###
 
-Bash/ksh/zsh functions allows you further customization of your environment. In this example, I'm creating a simple bash function called memcpu() to display top 10 cpu and memory eating process:
+Bash/ksh/zsh函数允许你更进一步地配置shell环境。在这个例子中，我写了一个简单的名叫memcpu()的bash函数，用来显示前10个最占用CPU和内存的进程：
 
     memcpu() { echo "*** Top 10 cpu eating process ***"; ps auxf | sort -nr -k 3 | head -10;
     echo  "*** Top 10 memory eating process ***"; ps auxf | sort -nr -k 4 | head -10;  }
 
-Just type memcpu to see the info on screen:
+输入memcpu就可以在屏幕上看到下面的信息：
 
     memcpu
      
@@ -440,95 +438,95 @@ Just type memcpu to see the info on screen:
     squid     9995  0.0  0.5 175152 72396 ?        S     2014  27:00  \_ (squid) -f /etc/squid/squid.conf
     cybercit  3922  0.0  0.4 303380 56304 ?        S    Jan10   0:13  |   \_ /usr/bin/php-cgi
  
-See "[how to write and use shell functions][10]" for more information.
+看下"[如何编写和应用shell函数][10]"了解更多信息。
 
-### Putting it all together: Customizing your Linux or Unix bash shell working environment ###
+### 综合一下：定制你自己的Linux或Unix bash shell工作环境 ###
 
-Now, you are ready to configure your environment using bash shell. I'm only covering bash. But the theory remains same from zsh, ksh and other common shells. Let us see how to adopt shell to my need as a sysadmin. Edit your ~/.bashrc file and append settings. Here are some useful configuration options for you.
+现在，你将使用bash shell配置自己的环境。我只介绍bash。但是理论上zsh，ksh和其他常用shell都差不多。让我们看看如何调整shell来适合我作为系统管理员的需求。编辑你的~/.bashrc文件来附加设定。下面是一些常用的配置选项。
 
-#### #1: Setting up bash path and environment variables ####
+#### #1: 设定bash路径和环境变量 ####
 
-    # Set path ##
+    # 设定路径 ##
     export PATH=$PATH:/usr/local/bin:/home/vivek/bin:/opt/firefox/bin:/opt/oraapp/bin
      
-    # Also set path for cd command
+    # 为cd命令设定路径
     export CDPATH=.:$HOME:/var/www
  
-Use less or most command as a pager:
+使用less或more命令作为翻页器：
 
     export PAGER=less
 
-Set vim as default text editor for us:
+设定vim作为默认文本编辑器：
 
     export EDITOR=vim
     export VISUAL=vim
     export SVN_EDITOR="$VISUAL"
 
-Set Oracle database specific stuff:
+设定Oracle数据库特别要求的参数：
 
     export ORACLE_HOME=/usr/lib/oracle/xe/app/oracle/product/10.2.0/server
     export ORACLE_SID=XE
     export NLS_LANG=$($ORACLE_HOME/bin/nls_lang.sh)
 
-Set JAVA_HOME and other paths for java as per java version:
+设定JAVA_HOME和其他java路径，比如java版本：
 
     export JAVA_HOME=/usr/lib/jvm/java-6-sun/jre
      
-    # Add ORACLE, JAVA to PATH
+    # 把ORACLE和JAVA加入到PATH里
     export PATH=$PATH:$ORACLE_HOME/bin:$JAVA_HOME/bin
 
-Secure my remote [SSH login using keychain for password less login][11]:
+[使用密钥实现免密码登录][11]让ssh远程登录更安全：
 
-    # No need to input password again ever
+    # 再也不用输密码了
     /usr/bin/keychain $HOME/.ssh/id_rsa
     source $HOME/.keychain/$HOSTNAME-sh
 
-Finally, [turn on bash command completion][12]
+最后，[打开bash命令补齐][12]
 
     source /etc/bash_completio
 
-#### #2: Setting up bash command prompt ####
+#### #2: 设定bash命令提示符 ####
 
-Set [custom bash prompt (PS1)][13]:
+设定[定制的bash提示符(PS1)][13]:
 
     PS1='{\u@\h:\w }\$ '
 
-#### #3: Setting default file permissions ####
+#### #3: 设定默认文件权限 ####
 
-    ## Set default to 644 ##
+    ## 设定默认权限为644 ##
     umask 022
 
-#### #4: Control your shell history settings ####
+#### #4: 调整shell命令历史设定 ####
 
-    # Dont put duplicate lines in the history
+    # 不往命令历史里写入相同的行
     HISTCONTROL=ignoreboth
      
-    # Ignore these commands
+    # 忽略这些命令
     HISTIGNORE="reboot:shutdown *:ls:pwd:exit:mount:man *:history"
      
-    # Set history length via HISTSIZE and HISTFILESIZE
+    # 通过HISTSIZE和HISTFILESIZE设定命令历史的长度
     export HISTSIZE=10000
     export HISTFILESIZE=10000
      
-    # Add timestamp to history file.
+    # 为命令历史文件增加时间戳
     export HISTTIMEFORMAT="%F %T "
      
-    #Append to history, don't overwrite
+    # 附加到命令历史文件，俄不是覆盖
     shopt -s histappend
 
-#### #5: Set the time zone for your session ####
+#### #5: 设定shell会话的时区 ####
 
-    ## set to IST for my own session ##
+    ## 为我自己的shell会话设定IST（印度标准时间） ##
     TZ=Asia/Kolkata
 
-#### #6: Setting up shell line editing interface ####
+#### #6: 设定shell行编辑接口 ####
 
-    ## use a vi-style line editing interface for bash from default emacs mode ##
+    ## 使用vi风格的行编辑接口，替代bash默认的emacs模式 ##
     set -o vi
 
-#### #7: Setting up your favorite aliases ####
+#### #7: 设定自己喜好的别名 ####
 
-    ## add protection ##
+    ## 增加一些保护 ##
     alias rm='rm -i'
     alias cp='cp -i'
     alias mv='mv -i'
@@ -538,7 +536,7 @@ Set [custom bash prompt (PS1)][13]:
     alias mcdshow='/usr/bin/memcached-tool 10.10.29.68:11211 display'
     alias mcdflush='echo "flush_all" | nc 10.10.29.68 11211'
      
-    ## Default command options ##
+    ## 默认命令参数 ##
     alias vi='vim'
     alias grep='grep --color=auto'
     alias egrep='egrep --color=auto'
@@ -551,41 +549,41 @@ Set [custom bash prompt (PS1)][13]:
     alias rm='rm -I --preserve-root'
     alias ln='ln -i'
 
-Here are some additional OS X Unix bash shell aliases:
+下面是一些额外的OS X Unix bash shell别名：
 
-    # Open desktop apps from bash
+    # 从bash打开桌面应用
     alias preview="open -a '$PREVIEW'"
     alias safari="open -a safari"
     alias firefox="open -a firefox"
     alias chrome="open -a google\ chrome"
     alias f='open -a Finder '
      
-    # Get rid of those .DS_Store files 
+    # 清理那些.DS_Store文件
     alias dsclean='find . -type f -name .DS_Store -delete'
 
-#### #8: Colour my world ####
+#### #8: 让世界充满色彩 ####
 
-    # Get colored grep output 
+    # 彩色的grep输出 
     alias grep='grep --color=auto'
     export GREP_COLOR='1;33'
      
-    # colored ls too
+    # 彩色的ls
     export LSCOLORS='Gxfxcxdxdxegedabagacad'
-    # Gnu/linux ls
+    # Gnu/linux的ls
     ls='ls --color=auto'
      
-    # BSD/os x ls command
+    # BSD/os x的ls命令
     # alias ls='ls -G'
 
-#### #9: Setting up your favorite bash functions ####
+#### #9: 设定自己喜好的bash函数 ####
 
-    # Show top 10 history command on screen 
+    # 在屏幕上显示10个最近的历史命令
     function ht {
       history | awk '{a[$2]++}END{for(i in a){print a[i] " " i}}' | sort -rn | head
     }
      
-    # Wrapper for host and ping command
-    # Accept http:// or https:// or ftps:// names for domain and hostnames
+    # host和ping命令的替代
+    # 接受http:// 或 https:// 或 ftps:// 名称用作域或主机名
     _getdomainnameonly(){
     	local h="$1"
     	local f="${h,,}"
@@ -629,48 +627,48 @@ Here are some additional OS X Unix bash shell aliases:
       	$_host $args $c
     }
 
-#### #10: Configure bash shell behavior via shell shopt options command ####
+#### #10: 通过shell shopt命令设定bash shell行为 ####
 
-Finally, you can [make changes to your bash shell environment using set and shopt][14] commands:
+最后，你可以[使用set和shopt命令调整bash shell环境][14]：
 
-    # Correct dir spellings
+    # 目录拼写纠正
     shopt -q -s cdspell
      
-    # Make sure display get updated when terminal window get resized
+    # 保证每次终端窗口改变大小后会更新显示
     shopt -q -s checkwinsize
      
-    # Turn on the extended pattern matching features 
+    # 打开高级模式匹配功能
     shopt -q -s extglob
      
-    # Append rather than overwrite history on exit
+    # 退出时附加命令历史而不是覆盖
     shopt -s histappend
      
-    # Make multi-line commandsline in history
+    # 在命令历史使用多行
     shopt -q -s cmdhist
      
-    # Get immediate notification of background job termination
+    # 在后台任务结束时立刻通知
     set -o notify
      
-    # Disable [CTRL-D] which is used to exit the shell
+    # 禁用[CTRL-D]来结束shell
     set -o ignoreeof
 
-### Conclusion ###
+### 总结 ###
 
-This post is by no means comprehensive. It provided a short walkthrough of how to customize your enviorment. For a thorough look at bash/ksh/zsh/csh/tcsh capabilities, I suggest you read the man page by typing the following command:
+这个帖子不难理解。它简短地将如何定制用户环境从头介绍了一下。要深入了解bash/ksh/zsh/csh/tcsh/的能力，我建议你用下面的命令阅读man文档：
 
     man bash
     man zsh
     man tcsh
     man ksh
 
-> This article was contributed by Aadrika T. J.; Editing and additional content added by admin. You can too [contribute to nixCraft][15].
+> 这篇文章由Aadrika T. J.贡献；由admin编辑并增加了额外内容。你也可以[为nixCraft做出贡献][15]。
 
 --------------------------------------------------------------------------------
 
 via: http://www.cyberciti.biz/howto/shell-primer-configuring-your-linux-unix-osx-environment/
 
 作者：[nixCraft][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zpl1025](https://github.com/zpl1025)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
