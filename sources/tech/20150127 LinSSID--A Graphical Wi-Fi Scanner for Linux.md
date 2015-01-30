@@ -1,3 +1,6 @@
+Translating by xieborui
+
+
 LinSSID – A Graphical Wi-Fi Scanner for Linux
 ================================================================================
 ### Introduction ###
