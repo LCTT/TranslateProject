@@ -1,3 +1,4 @@
+Translating by ZTinoZ
 Linux FAQs with Answers--How to check CPU info on Linux
 ================================================================================
 > **Question**: I would like to know detailed information about the CPU processor of my computer. What are the available methods to check CPU information on Linux? 

@@ -1,33 +1,32 @@
-[bazz2222222222]
-Linux Namespaces
+Linux 命名空间
 ================================================================================
-### Background ###
+### 背景 ###
 
-Starting from kernel 2.6.24, Linux supports 6 different types of namespaces. Namespaces are useful in creating processes that are more isolated from the rest of the system, without needing to use full low level virtualization technology. 
+从2.6.24版的内核开始，Linux 就支持6种不同类型的命名空间。它们的出现，使用户创建的进程能够与系统分离得更加彻底，从而不需要考虑太多底层的虚拟化技术。
 
-- **CLONE_NEWIPC**: IPC Namespaces: SystemV IPC and POSIX Message Queues can be isolated.
-- **CLONE_NEWPID**: PID Namespaces: PIDs are isolated, meaning that a virtual PID inside of the namespace can conflict with a PID outside of the namespace. PIDs inside the namespace will be mapped to other PIDs outside of the namespace. The first PID inside the namespace will be '1' which outside of the namespace is assigned to init
-- **CLONE_NEWNET**: Network Namespaces: Networking (/proc/net, IPs, interfaces and routes) are isolated. Services can be run on the same ports within namespaces, and "duplicate" virtual interfaces can be created.
-- **CLONE_NEWNS**: Mount Namespaces. We have the ability to isolate mount points as they appear to processes. Using mount namespaces, we can achieve similar functionality to chroot() however with improved security.
-- **CLONE_NEWUTS**: UTS Namespaces. This namespaces primary purpose is to isolate the hostname and NIS name.
-- **CLONE_NEWUSER**: User Namespaces. Here, user and group IDs are different inside and outside of namespaces and can be duplicated.
+- **CLONE_NEWIPC**: 进程间通信(IPC)的命名空间，可以将 SystemV 的 IPC 和 POSIX 的消息队列独立出来。
+- **CLONE_NEWPID**: 进程 ID 的命名空间，进程 ID 独立，意思就是命名空间内的进程 ID 可能会与命名空间外的进程 ID 冲突，于是命名空间内的进程 ID 映射到命名空间外时会使用另外一个进程 ID。比如说，命名空间内 ID 为1的进程，在命名空间外就是指 init 进程。
+- **CLONE_NEWNET**: 网络命名空间，用于隔离网络资源（/proc/net、IP 地址、网卡、路由等）。后台进程可以运行在不同命名空间内的相同端口上，用户还可以虚拟出一块网卡。
+- **CLONE_NEWNS**: 挂载命名空间，进程运行时可以将挂载点与系统分离，使用这个功能时，我们可以达到 chroot 的功能，而在安全性方面比 chroot 更高。
+- **CLONE_NEWUTS**: UTS 命名空间，主要目的是独立出主机名和网络信息服务（NIS）。
+- **CLONE_NEWUSER**: 用户命名空间，同进程 ID 一样，用户 ID 和组 ID 在命名空间内外是不一样的，并且在不同命名空间内可以存在相同的 ID。
 
-Let's look first at the structure of a C program, required to demonstrate process namespaces. The following has been tested on Debian 6 and 7. First, we need to allocate a page of memory on the stack, and set a pointer to the end of that memory page. We use **alloca** to allocate stack memory rather than malloc which would allocate memory on the heap. 
+本文用 C 语言介绍上述概念，因为演示进程命名空间的时候需要用到 C 语言。下面的测试过程在 Debian 6 和 Debian 7 上执行。首先，在栈内分配一页内存空间，并将指针指向内存页的末尾。这里我们使用 **alloca()** 函数来分配内存，不要用 malloc() 函数，它会把内存分配在堆上。
 
     void *mem = alloca(sysconf(_SC_PAGESIZE)) + sysconf(_SC_PAGESIZE);
 
-Next, we use **clone** to create a child process, passing the location of our child stack 'mem', as well as the required flags to specify a new namespace. We specify 'callee' as the function to execute within the child space:
+然后使用 **clone()** 函数创建子进程，传入栈空间的地址 "mem"，以及指定命名空间的标记。同时我们还指定“callee”作为子进程运行的函数。
 
     mypid = clone(callee, mem, SIGCHLD | CLONE_NEWIPC | CLONE_NEWPID | CLONE_NEWNS | CLONE_FILES, NULL);
 
-After calling **clone** we then wait for the child process to finish, before terminating the parent. If not, the parent execution flow will continue and terminate immediately after, clearing up the child with it:
+**clone** 之后我们要在父进程中等待子进程先退出，否则的话，父进程会继续运行下去，直到进程结束，留下子进程变成孤儿进程：
 
     while (waitpid(mypid, &r, 0) < 0 && errno == EINTR)
     {
     	continue;
     }
 
-Lastly, we'll return to the shell with the exit code of the child:
+最后当子进程退出后，我们会回到 shell 界面。
 
     if (WIFEXITED(r))
     {
@@ -35,7 +34,7 @@ Lastly, we'll return to the shell with the exit code of the child:
     }
     return EXIT_FAILURE;
 
-Now, let's look at the **callee** function:
+上文介绍的 **callee** 函数功能如下：
 
     static int callee()
     {
@@ -48,7 +47,7 @@ Now, let's look at the **callee** function:
     	return ret;
     }
 
-Here, we mount a **/proc** filesystem, and then set the uid (User ID) and gid (Group ID) to the value of 'u' before spawning the **/bin/bash** shell. [LXC][1] is an OS level virtualization tool utilizing cgroups and namespaces for resource isolation. Let's put it all together, setting 'u' to 65534 which is user "nobody" and group "nogroup" on Debian:
+程序挂载 **/proc** 文件系统，设置用户 ID 和组 ID，值都为“u”，然后运行 **/bin/bash** 程序，[LXC][1] 是操作系统级的虚拟化工具，使用 cgroups 和命名空间来完成资源的分离。现在我们把所有代码放在一起，变量“u”的值设为65534，在 Debian 系统中，这是“nobody”和“nogroup”：
 
     #define _GNU_SOURCE
     #include <unistd.h>
@@ -90,7 +89,7 @@ Here, we mount a **/proc** filesystem, and then set the uid (User ID) and gid (G
     	return ret;
     }
 
-To execute the code produces the following:
+执行以下命令来运行上面的代码：
 
     root@w:~/pen/tmp# gcc -O -o ns.c -Wall -Werror -ansi -c89 ns.c
     root@w:~/pen/tmp# ./ns
@@ -102,18 +101,18 @@ To execute the code produces the following:
     nobody       5  0.0  0.0   2784  1064 pts/1    R+   21:21   0:00 ps auxw
     nobody@w:~/pen/tmp$ 
 
-Notice that the UID and GID are set to that of nobody and nogroup. Specifically notice that the full ps output shows only two running processes and that their PIDs are 1 and 5 respectively. Now, let's move on to using ip netns to work with network namespaces. First, let's confirm that no namespaces exist currently: 
+注意上面的结果，UID 和 GID 被设置成 nobody 和 nogroup 了，特别是 ps 工具只输出两个进程，它们的 ID 分别是1和5（LCTT注：这就是上文介绍 CLONE_NEWPID 时提到的功能，在线程所在的命名空间内，进程 ID 可以为1，映射到命名空间外就是65534；而命名空间外的 ID 为1的进程一直是 init）。接下来轮到使用 ip netns 来设置网络的命名空间。第一步先确定当前系统没有命名空间：
 
     root@w:~# ip netns list
     Object "netns" is unknown, try "ip help".
 
-In this case, either ip needs an upgrade, or the kernel does. Assuming you have a kernel newer than 2.6.24, it's most likely **ip**. After upgrading, **ip netns list** should by default return nothing. Let's add a new namespace called 'ns1': 
+这种情况下，你需要更新你的系统内核，以及 ip 工具。这里假设你的内核版高于2.6.24，ip 工具版本也差不多，高于2.6.24（LCTT注：ip 工具由 iproute 安装包提供，此安装包版本与内核版本相近）。更新好后，**ip netns list** 在没有命名空间存在的情况下不会输出任务信息。加个名为“ns1”的命名空间看看：
 
     root@w:~# ip netns add ns1
     root@w:~# ip netns list
     ns1
 
-First, let's list the current interfaces:
+列出网卡：
 
     root@w:~# ip link list
     1: lo:  mtu 65536 qdisc noqueue state UNKNOWN mode DEFAULT 
@@ -121,7 +120,7 @@ First, let's list the current interfaces:
     2: eth0:  mtu 1500 qdisc pfifo_fast state UNKNOWN mode DEFAULT qlen 1000
         link/ether 00:0c:29:65:25:9e brd ff:ff:ff:ff:ff:ff
 
-Now to create a new virtual interface, and add it to our new namespace. Virtual interfaces are created in pairs, and are linked to each other - imagine a virtual crossover cable:
+创建新的虚拟网卡，加到命名空间。虚拟网卡需要成对创建，互相关联——想想交叉电缆吧：
 
     root@w:~# ip link add veth0 type veth peer name veth1
     root@w:~# ip link list
@@ -134,9 +133,9 @@ Now to create a new virtual interface, and add it to our new namespace. Virtual 
     4: veth0:  mtu 1500 qdisc noop state DOWN mode DEFAULT qlen 1000
         link/ether f2:f7:5e:e2:22:ac brd ff:ff:ff:ff:ff:ff
 
-**ifconfig** -a will also now show the addition of both veth0 and veth1. 
+这个时候 **ifconfig** -a 命令也能显示新添加的 veth0 和 veth1 两块网卡。
 
-Great, now to assign our new interfaces to the namespace. Note that ip **netns exec** is used to execute commands within the namespace:
+很好，现在将这两份块网卡加到命名空间中去。注意一下，下面的 ip **netns exec** 命令用于将后面的命令在命名空间中执行（LCTT注：下面的结果显示了在 ns1 这个网络命名空间中，只存在 lo 和 veth1 两块网卡）：
 
     root@w:~# ip link set veth1 netns ns1
     root@w:~# ip netns exec ns1 ip link list
@@ -145,21 +144,21 @@ Great, now to assign our new interfaces to the namespace. Note that ip **netns e
     3: veth1:  mtu 1500 qdisc noop state DOWN mode DEFAULT qlen 1000
     link/ether d2:e9:52:18:19:ab brd ff:ff:ff:ff:ff:ff
 
-**ifconfig** -a will now only show veth0, as veth1 is in the ns1 namespace. 
+这个时候 **ifconfig** -a 命令只能显示 veth0，不能显示 veth1，因为后者现在在 ns1 命名空间中。
 
-Should we want to delete veth0/veth1:
+如果想删除 veth1，可以执行下面的命令：
 
     ip netns exec ns1 ip link del veth1
 
-We can now assign IP address 192.168.5.5/24 to veth0 on our host:
+为 veth0 分配 IP 地址：
 
     ifconfig veth0 192.168.5.5/24
 
-And assign veth1 192.168.5.10/24 within ns1:
+在命名空间内为 veth1 分配 IP 地址：
 
     ip netns exec ns1 ifconfig veth1 192.168.5.10/24 up
 
-To execute ip addr **list** on both our host and within our namespace:
+在命名空间内外执行 ip addr **list** 命令：
 
     root@w:~# ip addr list
     1: lo:  mtu 65536 qdisc noqueue state UNKNOWN 
@@ -186,7 +185,7 @@ To execute ip addr **list** on both our host and within our namespace:
         inet6 fe80::10bd:b6ff:fe76:a6eb/64 scope link 
            valid_lft forever preferred_lft forever
 
-To view routing tables inside and outside of the namespace:
+在命名空间内外查看路由表：
 
     root@w:~# ip route list
     default via 192.168.3.1 dev eth0  proto static 
@@ -195,7 +194,7 @@ To view routing tables inside and outside of the namespace:
     root@w:~# ip netns exec ns1 ip route list
     192.168.5.0/24 dev veth1  proto kernel  scope link  src 192.168.5.10 
 
-Lastly, to connect our physical and virtual interfaces, we'll require a bridge. Let's bridge eth0 and veth0 on the host, and then use DHCP to gain an IP within the ns1 namespace:
+最后，将虚拟网卡连到物理网卡上，我们需要用到桥接。这里做的是将 veth0 桥接到 eth0，而 ns1 命名空间内则使用 DHCP 自动获取 IP 地址：
 
     root@w:~# brctl addbr br0
     root@w:~# brctl addif br0 eth0
@@ -210,7 +209,7 @@ Lastly, to connect our physical and virtual interfaces, we'll require a bridge. 
         inet6 fe80::20c:29ff:fe65:259e/64 scope link 
            valid_lft forever preferred_lft forever
 
-br0 has been assigned an IP of 192.168.3.122/24. Now for the namespace:
+为网桥 br0 分配的 IP 地址为192.168.3.122/24。接下来为命名空间分配地址：
 
     root@w:~# ip netns exec ns1 dhclient veth1
     root@w:~# ip netns exec ns1 ip addr list
@@ -222,17 +221,19 @@ br0 has been assigned an IP of 192.168.3.122/24. Now for the namespace:
         inet6 fe80::10bd:b6ff:fe76:a6eb/64 scope link 
            valid_lft forever preferred_lft forever
 
-Excellent! veth1 has been assigned 192.168.3.248/24
+现在， veth1 的 IP 被设置成 192.168.3.248/24 了。
 
 --------------------------------------------------------------------------------
 
 via: http://www.howtoforge.com/linux-namespaces
 
 作者：[aziods][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[bazz2](https://github.com/bazz2)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://www.howtoforge.com/forums/private.php?do=newpm&u=138952
 [1]:http://en.wikipedia.org/wiki/LXC
+
+

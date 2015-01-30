@@ -1,3 +1,6 @@
+Translating by shipsw
+
+
 Auditd - Tool for Security Auditing on Linux Server
 ================================================================================
 First of all , we wish all our readers **Happy & Prosperous New YEAR 2015** from our Linoxide team. So lets start this new year explaining about Auditd tool.
