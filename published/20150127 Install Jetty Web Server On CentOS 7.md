@@ -1,8 +1,8 @@
 在CentOS 7中安装Jetty服务器
 ================================================================================
-[Jetty][1] 是一款纯Java的HTTP **(Web) 服务器**和Java Servlet容器。 通常在更大的网络框架中，Jetty经常用于设备间的通信。但是其他Web服务器通常给人类传递文件。Jetty是一个Eclipse基金中免费开源项目。这个Web服务器用于如Apache ActiveMQ、 Alfresco、 Apache Geronimo、 Apache Maven、 Apache Spark、Google App Engine、 Eclipse、 FUSE、 Twitter的 Streaming API 和 Zimbra中。
+[Jetty][1] 是一款纯Java的HTTP **(Web) 服务器**和Java Servlet容器。 通常在更大的网络框架中，Jetty经常用于设备间的通信，而其他Web服务器通常给“人类”传递文件 :D。Jetty是一个Eclipse基金会的免费开源项目。这个Web服务器用于如Apache ActiveMQ、 Alfresco、 Apache Geronimo、 Apache Maven、 Apache Spark、Google App Engine、 Eclipse、 FUSE、 Twitter的 Streaming API 和 Zimbra中。
 
-这篇文章会解释‘如何在CentOS服务器中安装Jetty服务器’。
+这篇文章会介绍‘如何在CentOS服务器中安装Jetty服务器’。
 
 **首先我们要用下面的命令安装JDK：**
 
@@ -58,7 +58,7 @@
 
 完成了！
 
-现在你可以在  **http://<youripaddress>:8080** 中访问了
+现在你可以在  **http://\<你的 IP 地址>:8080** 中访问了
 
 就是这样。
 
@@ -70,7 +70,7 @@ via: http://www.unixmen.com/install-jetty-web-server-centos-7/
 
 作者：[Jijo][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
