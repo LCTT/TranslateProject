@@ -1,12 +1,10 @@
-Linux有问必答 - linux如何安装WPS
+Linux有问必答 -  如何在linux上安装WPS
 ================================================================================
 > **问题**: 我听说一个好东西Kingsoft Office（译注：就是WPS），所以我想在我的Linux上试试。我怎样才能安装Kingsoft Office呢？
 
-Kingsoft Office 一套办公套件，支持多个平台，包括Windows, Linux, iOS 和 Android。它包含三个组件：Writer（WPS文字）用来文字处理，Presentation（WPS演示）支持幻灯片，Spereadsheets（WPS表格）为电子表格。使用免费增值模式，其中基础版本是免费使用。比较其他的linux办公套件，如LibreOffice、 OpenOffice，最大优势在于，Kingsoft Office能最好的兼容微软的Office（译注：版权问题？了解下wps和Office的历史问题，可以得到一些结论）。因此如果你需要在windowns和linux平台间交互，Kingsoft office是一个很好的选择。
-
+Kingsoft Office 是一套办公套件，支持多个平台，包括Windows, Linux, iOS 和 Android。它包含三个组件：Writer（WPS文字）用来文字处理，Presentation（WPS演示）支持幻灯片，Spereadsheets（WPS表格）是电子表格。其使用免费增值模式，其中基础版本是免费使用。比较其他的linux办公套件，如LibreOffice、 OpenOffice，其最大优势在于，Kingsoft Office能最好的兼容微软的Office（译注：版权问题？了解下wps和Office的历史问题，可以得到一些结论）。因此如果你需要在windows和linux平台间交互，Kingsoft office是一个很好的选择。
 
 ### CentOS, Fedora 或 RHEL中安装Kingsoft Office ###
-
 
 在[官方页面][1]下载RPM文件.官方RPM包只支持32位版本linux，但是你可以在64位中安装。
 
@@ -39,7 +37,7 @@ DEB包同样遇到一堆依赖。因此使用[gdebi][3]命令来代替dpkg来自
 
 ### 启动 Kingsoft Office ###
 
-安装完成后，你就可以在桌面管理器轻松启动Witer（WPS文字）, Presentation（WPS演示）, and Spreadsheets（WPS表格），如下图
+安装完成后，你就可以在桌面管理器轻松启动Witer（WPS文字）, Presentation（WPS演示）, and Spreadsheets（WPS表格），如下图。
 
 Ubuntu Unity中:
 
@@ -49,7 +47,7 @@ GNOME桌面中:
 
 ![](https://farm9.staticflickr.com/8617/16039583622_4e7c1d8545_b.jpg)
 
-不但如此，你也可以在命令行中启动Kingsoft Office
+不但如此，你也可以在命令行中启动Kingsoft Office。
 
 启动Wirter（WPS文字），使用这个命令：
 
@@ -74,7 +72,7 @@ GNOME桌面中:
 via: http://ask.xmodulo.com/install-kingsoft-office-linux.html
 
 译者：[Vic020/VicYu](http://www.vicyu.net)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
