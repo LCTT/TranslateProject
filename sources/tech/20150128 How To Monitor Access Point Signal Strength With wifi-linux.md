@@ -1,3 +1,5 @@
+Translating----geekpi
+
 How To Monitor Access Point Signal Strength With wifi-linux
 ================================================================================
 As a python geek I love exploring new python tools on github that target the linux users. Today I discovered a simple application written in python programming language that can be used to monitor access point signal strength.
