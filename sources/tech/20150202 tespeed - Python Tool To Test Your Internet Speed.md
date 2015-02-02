@@ -1,3 +1,5 @@
+Translating-----geekpi
+
 tespeed - Python Tool To Test Your Internet Speed
 ================================================================================
 Many computer nerds know how to test their internet speed by using the **speedtest.net** but the thing is that it does not give you full control of the operationg going on during the measurement of your speed. Linux users love to type commands on their terminal emualator and do stuff, at least me.
