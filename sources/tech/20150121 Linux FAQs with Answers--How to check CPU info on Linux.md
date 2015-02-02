@@ -12,11 +12,11 @@ Linux有问必答时间--如何查看Linux系统的CPU信息
 
 ![](https://farm8.staticflickr.com/7572/15934711577_4136a8e0b9_c.jpg)
 
-By inspecting this file, you can [identify][1] the number of physical processors, the number of cores per CPU, available CPU flags, and a number of other things.
+通过查看这个文件，你能[识别出][1]物理处理器数、每个CPU核心数、可用的CPU标志寄存器以及其它东西的数量。
 
 ### 2. cpufreq-info ###
 
-The cpufreq-info command (which is part of **cpufrequtils** package) collects and reports CPU frequency information from the kernel/hardware. The command shows the hardware frequency that the CPU currently runs at, as well as the minimum/maximum CPU frequency allowed, CPUfreq policy/statistics, and so on. To check up on CPU #0:
+cpufreq-info命令(**cpufrequtils**包的一部分)从内核/硬件中收集并报告CPU频率信息。这条命令展示了CPU当前运行的硬件频率，包括CPU所允许的最小/最大频率、CPUfreq策略/统计数据等等。来看下CPU #0上的信息：
 
     $ cpufreq-info -c 0 
 
