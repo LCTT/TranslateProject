@@ -1,3 +1,4 @@
+Translating by mtunique
 Moving to Docker
 ================================================================================
 ![](http://cocoahunter.com/content/images/2015/01/docker1.jpeg)
@@ -53,7 +54,7 @@ In the following articles we'll see how to setup a semi-automated Docker based d
 via: http://cocoahunter.com/2015/01/23/docker-1/
 
 作者：[Michelangelo Chasseur][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[mtunique](https://github.com/mtunique)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
