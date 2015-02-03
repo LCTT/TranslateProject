@@ -24,7 +24,7 @@ cpufreq-info命令(**cpufrequtils**包的一部分)从内核/硬件中收集并�
 
 ### 3. cpuid ###
 
-The cpuid command-line utility is a dedicated CPU information tool that displays verbose information about CPU hardware by using [CPUID functions][2]. Reported information includes processor type/family, CPU extensions, cache/TLB configuration, power management features, etc.
+cpuid命令的功能就相当于一个专用的CPU信息工具，它能通过使用[CPUID功能][2]来显示详细的关于CPU硬件的信息。信息报告包括处理器类型/家族、CPU扩展指令集、缓存/TLB（译者注：传输后备缓冲器）配置、电源管理功能等等。
 
     $ cpuid 
 
@@ -32,7 +32,7 @@ The cpuid command-line utility is a dedicated CPU information tool that displays
 
 ### 4. dmidecode ###
 
-The dmidecode command collects detailed information about system hardware directly from DMI data of the BIOS. Reported CPU information includes CPU vendor, version, CPU flags, maximum/current clock speed, (enabled) core count, L1/L2/L3 cache configuration, and so on. 
+dmidecode命令直接从BIOS的DMI（译者注：桌面管理接口）数据收集关于系统硬件的具体信息。CPU信息报告包括CPU供应商、版本、CPU flags, maximum/current clock speed, (enabled) core count, L1/L2/L3 cache configuration, and so on. 
 
     $ sudo dmidecode 
 
