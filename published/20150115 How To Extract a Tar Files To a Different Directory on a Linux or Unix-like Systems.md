@@ -1,6 +1,7 @@
-如何在Linux/类Unix系统中解压tar文件到不同的目录中
+如何解压 tar 文件到不同的目录中
 ================================================================================
-我想要解压一个tar文件到一个指定的目录叫/tmp/data。我该如何在Linux或者类Unix的系统中使用tar命令解压一个tar文件到不同的目录中？
+
+我想要解压一个tar文件到一个叫/tmp/data的指定目录。我该如何在Linux或者类Unix的系统中使用tar命令解压一个tar文件到不同的目录中？
 
 你不必使用cd命令切换到其他的目录并解压。可以使用下面的语法解压一个文件：
 
@@ -34,7 +35,7 @@ GNU/tar 语法：
 
 ![Gif 01: tar Command Extract Archive To Different Directory Command](http://s0.cyberciti.org/uploads/faq/2015/01/tar-extract-archive-to-dir.gif)
 
-Gif 01: tar命令解压文件到不同的目录
+*Gif 01: tar命令解压文件到不同的目录*
 
 你也可以指定解压的文件：
 
