@@ -1,3 +1,5 @@
+>    Vic
+
 Linux FAQs with Answers--How to fix “Your profile could not be opened correctly” on Google Chrome
 ================================================================================
 > **Question**: When I open Google Chrome web browser on my Linux box, I have several pop-up messages saying "Your profile could not be opened correctly." This error happens every time I open Google Chrome. How can I solve this error? 
