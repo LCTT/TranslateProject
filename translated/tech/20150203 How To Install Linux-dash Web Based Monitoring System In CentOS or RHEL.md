@@ -1,24 +1,22 @@
-Translating----geekpi
-
-How To Install Linux-dash Web Based Monitoring System In CentOS/RHEL
+如何在CentOS/RHEL中安装机遇Web监控的Linux-dash
 ================================================================================
-**Linux-dash** is a web-based lightweight monitoring dashboard for Linux machines. This application will display real-time, various system properties, such as CPU load, RAM usage, disk usage, Internet speed, network connections, RX/TX bandwidth, logged-in users, running processes etc. It will not store long term statistics, Thus it doesn’t have a backend database.
+**Linux-dash**是一款为Linux设计的基于web的轻量级监控面板。这个程序会显示实时时间、不同的系统属性，比如CPU负载、RAM使用率、磁盘使用率、网速、网络连接、RX/TX带宽、登录用户、运行的进程等等。它不会存储长期的统计。因为它没有后端数据库。
 
-In this article i will show you how to install and setup Linux dash, Here my web server is **Nginx**.
+本篇文章将会向你展示如何安装和设置Linux dash，这里的web服务器是**Nginx**.
 
-### Installation ###
+### 安装 ###
 
-First of all we should enable, [EPEL repository][1].
+首先我们要启用[EPEL 仓库][1]。
 
-**Next, we need to install nginx with the following command.**
+**接下来，我们需要用下面的命令安装nginx。**
 
     sudo yum install nginx
 
-**Install php-fpm component**
+**安装 php-fpm 组件**
 
     sudo yum install git php-common php-fpm
 
-Now, we have to configure nginx for Linux-dash. So create /etc/nginx/conf.d/linuxdash.conf as follows.
+现在我们要在nginx中配置Linux-dash。我们如下创建 /etc/nginx/conf.d/linuxdash.conf。
 
     sudo vim /etc/nginx/conf.d/linuxdash.conf
 
@@ -57,11 +55,11 @@ Now, we have to configure nginx for Linux-dash. So create /etc/nginx/conf.d/linu
      }
     }
 
-**Next job is to configure php-fpm. Open  /etc/php-fpm.d/www.conf in your Favorite editor.**
+**下一步是配置php-fpm。用编辑器打开/etc/php-fpm.d/www.conf。**
 
     sudo vim /etc/php-fpm.d/www.conf
 
-**Make sure to set “listen”, “user” and “group” fields as below. You can leave the rest of the configuration unchanged.**
+**确保设置了“listn”，“user”和“group”字段。你可以保留下面的配置不变。**
 
     . . .
     listen = /var/run/php-fpm.sock
@@ -69,42 +67,43 @@ Now, we have to configure nginx for Linux-dash. So create /etc/nginx/conf.d/linu
     group = nginx
     . . .
 
-**Now, We are going to Download and install linux-dash under /var/www**
+**现在，我们要在/var/www中下载并安装linux-dash。**
 
     git clone https://github.com/afaqurk/linux-dash.git
     sudo cp -r linux-dash/ /var/www/
     sudo chown -R nginx:nginx /var/www
 
-**Next, restart Nginx web server as well as** php-fpm
+**接下来，重启 Nginx和php-fpm**
 
     sudo service nginx restart
     sudo service php-fpm restart
 
-**Set nginx and php-fpm to auto-start upon boot**
+**设置nginx和php-fpm开机自动启动**
 
     sudo chkconfig nginx on
     sudo chkconfig php-fpm on
 
-In this example, we have configured linux-dash to use TCP port 8080. So make sure that the firewall is not blocking TCP port 8080.
+在本例中，我们使用TCP端口8080配置linux-dash。因此确保防火墙没有阻止8080 TCP端口。
 
-### Monitor a Linux server with linux-dash ###
+### 用linux-dash监控Linux服务器 ###
 
-You can access Linux-dash by pointing you browser to **http://<linux-IP-address>:8080/linux-dash/**
+你现在可以在浏览器中输入**http://<linux-IP-address>:8080/linux-dash/**来访问Linux-dash。
 
-The web dashboard consists of several widgets, each of which displays particular system properties. You can customize the look of the web dashboard by rearranging and/or closing some of the widgets.
+web面板包含了不同的组件，每个都显示独特的系统属性。你可以自定义web面板的外观也可以关闭一些组件。
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/Lin-dash.png)
 
-Good day!
+美好的一天！
 
-See you guys with next article.
+
+下篇文章中再见。
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/install-linux-dash-web-based-monitoring-system-centosrhel/
 
 作者：[Jijo][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
