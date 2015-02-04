@@ -1,3 +1,5 @@
+Translating----geekpi
+
 How To Install Linux-dash Web Based Monitoring System In CentOS/RHEL
 ================================================================================
 **Linux-dash** is a web-based lightweight monitoring dashboard for Linux machines. This application will display real-time, various system properties, such as CPU load, RAM usage, disk usage, Internet speed, network connections, RX/TX bandwidth, logged-in users, running processes etc. It will not store long term statistics, Thus it doesn’t have a backend database.
