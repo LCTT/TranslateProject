@@ -1,3 +1,5 @@
+alim0x translating
+
 The history of Android
 ================================================================================
 ### Voice Actions—a supercomputer in your pocket ###
