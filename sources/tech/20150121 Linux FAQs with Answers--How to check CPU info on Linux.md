@@ -32,7 +32,7 @@ cpuid命令的功能就相当于一个专用的CPU信息工具，它能通过使
 
 ### 4. dmidecode ###
 
-dmidecode命令直接从BIOS的DMI（译者注：桌面管理接口）数据收集关于系统硬件的具体信息。CPU信息报告包括CPU供应商、版本、CPU flags, maximum/current clock speed, (enabled) core count, L1/L2/L3 cache configuration, and so on. 
+dmidecode命令直接从BIOS的DMI（译者注：桌面管理接口）数据收集关于系统硬件的具体信息。CPU信息报告包括CPU供应商、版本、CPU标志寄存器、最大/最近的时钟速度、(所允许的)核心总数、L1/L2/L3缓存配置等等。
 
     $ sudo dmidecode 
 
@@ -40,7 +40,7 @@ dmidecode命令直接从BIOS的DMI（译者注：桌面管理接口）数据收�
 
 ### 5. hardinfo ###
 
-The hardinfo is a GUI-based system information tool which can give you an easy-to-understand summary of your CPU hardware, as well as other hardware components of your system.
+hardinfo是一个基于GUI的系统信息工具，它能展示给你一个易于理解的CPU硬件信息的概况，也包括你的系统其它的一些硬件组成部分。
 
     $ hardinfo 
 
@@ -48,7 +48,7 @@ The hardinfo is a GUI-based system information tool which can give you an easy-t
 
 ### 6. i7z ###
 
-i7z is a real-time CPU reporting tool dedicated to Intel Core i3, i5 and i7 CPUs. It can display various per-core information in real time, such as Turbo Boost states, CPU frequencies, CPU power states, temperature measurements, and so on. i7z runs in either ncurses-based console mode or QT based GUI.
+i7z是一个专供英特尔酷睿i3、i5和i7 CPU的实时CPU报告工具。它能实时显示每个核心的各类信息，比如睿频加速状态、CPU频率、CPU电源状态、温度检测等等。i7z运行在基于ncurses的控制台模式或基于QT的GUI的其中之一上。
 
     $ sudo i7z 
 
@@ -56,7 +56,7 @@ i7z is a real-time CPU reporting tool dedicated to Intel Core i3, i5 and i7 CPUs
 
 ### 8. likwid-topology ###
 
-[likwid][3] (Like I Knew What I'm Doing) is a collection of command-line tools to measure, configure and display hardware related properties. Among them is likwid-topology which shows CPU hardware (thread/cache/NUMA) topology information. It can also identify processor families (e.g., Intel Core 2, AMD Shanghai).
+[likwid][3] (Like I Knew What I'm Doing) 是一个用来测量、配置并显示硬件相关特性的命令行收集工具。其中的likwid拓扑结构能显示CPU硬件(线程/缓存/NUMA)的拓扑结构信息，还能识别处理器家族(比如：Intel Core 2, AMD Shanghai)。
 
 ![](https://farm8.staticflickr.com/7511/15934711707_5dc0793599_b.jpg)
 
