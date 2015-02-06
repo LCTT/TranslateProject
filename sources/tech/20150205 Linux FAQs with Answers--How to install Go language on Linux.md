@@ -1,3 +1,5 @@
+translating----geekpi
+
 Linux FAQs with Answers--How to install Go language on Linux
 ================================================================================
 Go (also called "golang") is an open-source programming language initially developed by Google. It was born with several design principles in mind: simplicity, safety, and speed. The Go language distribution comes with various tools for debugging, testing, profiling and code-vetting. Nowadays the Go language and its tool chain are available in the base repositories of most Linux distributions, making it easy to install them with a default package manager.
