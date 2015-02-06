@@ -21,7 +21,7 @@ Developed in part by two ex-Rackspace engineers, [CoreOS][8] is a lightweight Li
 CoreOS was quickly adopted by many cloud providers, including Microsoft Azure, Amazon Web Services, DigitalOcean and Google Compute Engine.
 
 Like CoreOS, Ubuntu Core offers an expedited process for updating components, reducing the amount of time that an administrator would need to manually manage them.
-
+如同Coreos一样，Ubuntu内核提供了一个快速引擎来更新组件
 --------------------------------------------------------------------------------
 
 via: http://www.infoworld.com/article/2860401/cloud-computing/google-cloud-offers-streamlined-ubuntu-for-docker-use.html
