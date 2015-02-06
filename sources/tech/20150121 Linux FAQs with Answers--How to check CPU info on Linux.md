@@ -62,7 +62,7 @@ i7z是一个专供英特尔酷睿i3、i5和i7 CPU的实时CPU报告工具。它�
 
 ### 9. lscpu ###
 
-The lscpu command summarizes /etc/cpuinfo content in a more user-friendly format, e.g., the number of (online/offline) CPUs, cores, sockets, NUMA nodes.
+lscpu命令用一个更加用户友好的格式统计了 /etc/cpuinfo 的内容，比如CPU、核心、套接字、NUMA节点的数量（线上/线下）。
 
     $ lscpu 
 
@@ -70,7 +70,7 @@ The lscpu command summarizes /etc/cpuinfo content in a more user-friendly format
 
 ### 10. lshw ###
 
-The **lshw** command is a comprehensive hardware query tool. Unlike other tools, lshw requires root privilege because it query DMI information in system BIOS. It can report the total number of cores and enabled cores, but miss out on information such as L1/L2/L3 cache configuration. The GTK version lshw-gtk is also available.
+**lshw**命令是一个综合性硬件查询工具。不同于其它工具，lshw需要root特权才能运行因为它是在BIOS系统里查询DMI（译者注：桌面管理接口）信息。它能报告总核心数和可用核心数，但是会遗漏掉一些信息比如L1/L2/L3缓存配置。GTK版本的lshw-gtk也是可用的。
 
     $ sudo lshw -class processor
 
@@ -78,7 +78,7 @@ The **lshw** command is a comprehensive hardware query tool. Unlike other tools,
 
 ### 11. lstopo ###
 
-The lstopo command (contained in [hwloc][4] package) visualizes the topology of the system which is composed of CPUs, cache, memory and I/O devices. This command is useful to identify the processor architecture and NUMA topology of the system.
+lstopo命令 (包括 [hwloc][4] 包) 使由CPU、缓存、内存和I/O设备组成的拓扑结构可见。这个命令用来识别处理器结构和系统的NUMA拓扑结构。
 
     $ lstopo 
 
@@ -86,7 +86,7 @@ The lstopo command (contained in [hwloc][4] package) visualizes the topology of 
 
 ### 12. numactl ###
 
-Originally developed to set the NUMA scheduling and memeory placement policy of Linux processes, the numactl command can also show information about NUMA topology of the CPU hardware from the command line.
+其被开发的起初是为了设置NUMA的时序安排和Linux处理器的内存布局策略，numactl命令也能通过命令行来展示关于CPU硬件的NUMA拓扑结构信息。
 
     $ numactl --hardware 
 
@@ -94,7 +94,7 @@ Originally developed to set the NUMA scheduling and memeory placement policy of 
 
 ### 13. x86info ###
 
-x86info is a command-line tool for showing x86-based CPU information. Reported information includes CPU model, number of threads/cores, clock speed, TLB cache configuration, supported feature flags, etc.
+x86info是一个为了展示基于x86架构的CPU信息的命令行工具。信息报告包括CPU型号、线程/核心数、时钟速度、TLB（译者注：传输后备缓冲器）缓存配置、支持的特征标志寄存器等等。
 
     $ x86info --all
 
@@ -104,7 +104,7 @@ x86info is a command-line tool for showing x86-based CPU information. Reported i
 
 via: http://ask.xmodulo.com/check-cpu-info-linux.html
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[ZTinoZ](https://github.com/ZTinoZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
