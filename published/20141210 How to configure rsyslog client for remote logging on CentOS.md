@@ -1,8 +1,8 @@
 CentOS上配置rsyslog客户端用以远程记录日志
 ================================================================================
-**rsyslog**是一个开源工具，被广泛用于Linux系统以通过TCP/UDP协议转发或接收日志消息。rsyslog守护进程可以被配置称两种环境，一种是配置成日志收集服务器，rsyslog进程可以从网络中收集所有其它主机上的日志数据，这些主机已经将日志配置为发送到服务器。rsyslog的另外一个角色，就是可以配置为客户端，用来过滤和发送内部日志消息到本地文件夹（如/var/log）或一台可以路由到的远程rsyslog服务器上。
+**rsyslog**是一个开源工具，被广泛用于Linux系统以通过TCP/UDP协议转发或接收日志消息。rsyslog守护进程可以被配置成两种环境，一种是配置成日志收集服务器，rsyslog进程可以从网络中收集其它主机上的日志数据，这些主机会将日志配置为发送到另外的远程服务器。rsyslog的另外一个用法，就是可以配置为客户端，用来过滤和发送内部日志消息到本地文件夹（如/var/log）或一台可以路由到的远程rsyslog服务器上。
 
-假定你的网络中已经有一台rsyslog服务器[已经起来并且处于运行中][1]，本指南将为你展示如何来设置CentOS系统将其内部日志消息路由到一台远程rsyslog服务器上。这将大大改善你的系统磁盘空间的使用，尤其是你还没有一个独立的用于/var目录的大分区。
+假定你的网络中已经有一台[已经配置好并启动的][1]rsyslog服务器，本指南将为你展示如何来设置CentOS系统将其内部日志消息路由到一台远程rsyslog服务器上。这将大大改善你的系统磁盘空间的使用，尤其是当你还没有一个用于/var目录的独立的大分区。
 
 ### 步骤一： 安装Rsyslog守护进程 ###
 
@@ -35,9 +35,9 @@ CentOS上配置rsyslog客户端用以远程记录日志
 
     *.*  @@192.168.1.25:514 
 
-注意，你也可以将rsyslog服务器的IP地址替换成它的DNS名称（FQDN）。
+注意，你也可以将rsyslog服务器的IP地址替换成它的主机名（FQDN）。
 
-如果你只想要转发指定设备的日志消息，比如说内核设备，那么你可以在rsyslog配置文件中使用以下声明。
+如果你只想要转发服务器上的指定设备的日志消息，比如说内核设备，那么你可以在rsyslog配置文件中使用以下声明。
 
     kern.* @192.168.1.25:514 
 
@@ -51,9 +51,11 @@ CentOS上配置rsyslog客户端用以远程记录日志
 
      # service rsyslog restart 
 
-在另外一种环境中，让我们假定你已经在机器上安装了一个名为“foobar”的应用程序，它会在/var/log下生成foobar.log日志文件。现在，你只想要将它的日志定向到rsyslog服务器，这可以通过像下面这样在rsyslog配置文件中加载imfile模块来实现。
+####非 syslog 日志的转发
 
-首先，加载imfile模块，这必须只做一次。
+在另外一种环境中，让我们假定你已经在机器上安装了一个名为“foobar”的应用程序，它会在/var/log下生成foobar.log日志文件。现在，你想要将它的日志定向到rsyslog服务器，这可以通过像下面这样在rsyslog配置文件中加载imfile模块来实现。
+
+首先，加载imfile模块，这只需做一次。
 
     module(load="imfile" PollingInterval="5") 
 
@@ -73,8 +75,7 @@ CentOS上配置rsyslog客户端用以远程记录日志
 
 ### 步骤三： 让Rsyslog进程自动启动 ###
 
-To automatically start rsyslog client after every system reboot, run the following command to enable it system-wide:
-要让rsyslog客户端在每次系统重启后自动启动，请运行以下命令来在系统范围启用：
+要让rsyslog客户端在每次系统重启后自动启动，请运行以下命令：
 
 **CentOS 7：**
 
@@ -86,7 +87,7 @@ To automatically start rsyslog client after every system reboot, run the followi
 
 ### 小结 ###
 
-在本教程中，我演示了如何将CentOS系统转变成rsyslog客户端以强制它发送日志消息到远程rsyslog服务器。这里我假定rsyslog客户端和服务器之间的连接是安全的（如，在有防火墙保护的公司网络中）。不管在任何情况下，都不要配置rsyslog客户端将日志消息通过不安全的网络转发，或者，特别是通过互联网转发，因为syslog协议是一个明文协议。要进行安全传输，可以考虑使用[TLS/SSL][2]来加密日志消息。
+在本教程中，我演示了如何将CentOS系统转变成rsyslog客户端以强制它发送日志消息到远程rsyslog服务器。这里我假定rsyslog客户端和服务器之间的连接是安全的（如，在有防火墙保护的公司网络中）。不管在任何情况下，都不要配置rsyslog客户端将日志消息通过不安全的网络转发，或者，特别是通过互联网转发，因为syslog协议是一个明文协议。要进行安全传输，可以考虑使用[TLS/SSL][2]来加密日志消息的传输。
 
 --------------------------------------------------------------------------------
 
@@ -94,7 +95,7 @@ via: http://xmodulo.com/configure-rsyslog-client-centos.html
 
 作者：[Caezsar M][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
