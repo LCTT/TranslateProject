@@ -1,52 +1,50 @@
->    Vic
-
-Linux FAQs with Answers--How to fix “Your profile could not be opened correctly” on Google Chrome
+Linux有问必答--如果修复Google Chrome 的 ‘Your profile could not be opened correctly’错误
 ================================================================================
-> **Question**: When I open Google Chrome web browser on my Linux box, I have several pop-up messages saying "Your profile could not be opened correctly." This error happens every time I open Google Chrome. How can I solve this error? 
+> **提问**：当我在linux打开Google Chrome 浏览器时，我已经几次收到弹出窗口，提示我的档案文件没有被正确打开（Your profile could not be opened correctly.）。每次我打开Chrome都要弹出来，我应该如何修复这个问题？
 
-When you see an error message saying "Your profile could not be opened correctly" on your Google Chrome web browser," that is because somehow your profile data on Google Chrome got corrupted. This can happen while you upgrade your Google Chrome browser manually on Linux.
+当你在你的Chrome上看见"Your profile could not be opened correctly"错误信息时，那是因为你的Chrome档案数据已经损坏。这个问题经常发生在手动升级Google Chrome时候。
 
 ![](https://farm8.staticflickr.com/7428/16238502737_27bdda6685_o.png)
 
-Depending on exactly which file got corrupted, you can try one of these methods.
+修复取决于到底哪个文件损坏，你可以试试下面的几个方法。
 
-### Method One ###
+### 方法一 ###
 
-Close all your Chrome browser windows/tabs.
+关掉所有Chrome窗口和子窗口。
 
-Go to ~/.config/google-chrome/Default, and remove/rename "Web Data" file as below.
+进入~/.config/google-chrome/Default，移除或者重命名"Web Data"文件。
 
     $ cd ~/.config/google-chrome/Default
     $ rm "Web Data" 
 
-Re-open Google Chrome browser.
+再次开打Google Chrome浏览器。
 
-### Method Two ###
+### 方法二 ###
 
-Close all your Chrome browser windows/tabs.
+关掉所有Chrome窗口和子窗口。
 
-Go to ~/.config/google-chrome/"Profile 1", and rename "History" file as below.
+进入~/.config/google-chrome/"Profile 1"， 并重命名"History"文件。
 
     $ cd ~/.config/google-chrome/"Profile 1"
     $ mv History History.bak 
 
-Re-open Google Chrome browser.
+再次开打Google Chrome浏览器。
 
-### Method Three ###
+### 方法三 ###
 
-If the problem still persists, you can remove the Default profile folder (~/.config/google-chrome/Default) altogether. Note that by doing so, you will lose all previously opened Google tabs, imported bookmarks, browsing history, sign-in data, etc.
+如果依然没有解决，你可以试试移除所有默认档案文件夹（~/.config/google-chrome/Default）。注意:如果这样做，你将会遗失所有之前打开的Google子窗口，导入的书签，浏览记录和登录数据等。
 
-Before removing it, first close all your Chrome browser windows/tabs.
+在移除之前，先关掉所有Chrome窗口和子窗口
 
     $ rm -rf ~/.config/google-chrome/Default
 
-After restarting Google Chrome, the folder ~/.config/google-chrome/Default will automatically be re-generated.
+之后重启Google Chrome，文件夹~/.config/google-chrome/Default会自动生成。
 
 --------------------------------------------------------------------------------
 
 via: http://ask.xmodulo.com/your-profile-could-not-be-opened-correctly-google-chrome.html
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[VicYu/Vic020](http://vicyu.net)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
