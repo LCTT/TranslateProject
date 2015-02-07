@@ -1,3 +1,5 @@
+Translating by FSSlc
+
 How To Use Emoji Anywhere With Twitter's Open Source Library
 ================================================================================
 > Embed them in webpages and other projects via GitHub.
