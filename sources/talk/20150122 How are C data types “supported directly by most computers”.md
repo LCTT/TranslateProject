@@ -1,3 +1,4 @@
+translating by KayGuoWhu
 How are C data types “supported directly by most computers”?
 ---------
 
