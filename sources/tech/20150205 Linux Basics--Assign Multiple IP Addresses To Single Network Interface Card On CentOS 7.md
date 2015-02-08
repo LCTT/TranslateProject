@@ -1,3 +1,5 @@
+Translating---geekpi
+
 Linux Basics: Assign Multiple IP Addresses To Single Network Interface Card On CentOS 7
 ================================================================================
 Some times you might want to use more than one IP address for your network interface card. What are you going to do? Buy an extra network card and assign new IP? No, It’s not necessary(atleast in the small networks). We can now assign multiple ip addresses to single network interface card in CentOS / RHEL 7 systems. Curious to know how? Well, Follow me, It is not that difficult.
