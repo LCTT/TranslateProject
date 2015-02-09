@@ -1,7 +1,6 @@
-Translating by ZTinoZ
-What is a good IDE for C/C++ on Linux
+Linux上有哪些比较好的C/C++ IDE？
 ================================================================================
-"A real coder doesn't use an IDE, a real coder uses [insert a text editor name here] with such and such plugins." We all heard that somewhere. Yet, as much as one can agree with that statement, an IDE remains quite useful. An IDE is easy to set up and use out of the box. Hence there is no better way to start coding a project from scratch. So for this post, let me present you with my list of good IDEs for C/C++ on Linux. Why is C/C++ specifically? Because C is my favorite language, and we need to start somewhere. Also note that there are in general a lot of ways to code in C, so in order to trim down the list, I only selected "real out-of-the-box IDE", not text editors like Gedit or Vim pumped with [plugins][1]. Not that this alternative is bad in any way, just that the list will go on forever if I include text editors.
+"一个真正的程序员是不用IDE的，他们是用uses insert a text editor name here with such and such plugins." We all heard that somewhere. Yet, as much as one can agree with that statement, an IDE remains quite useful. An IDE is easy to set up and use out of the box. Hence there is no better way to start coding a project from scratch. So for this post, let me present you with my list of good IDEs for C/C++ on Linux. Why is C/C++ specifically? Because C is my favorite language, and we need to start somewhere. Also note that there are in general a lot of ways to code in C, so in order to trim down the list, I only selected "real out-of-the-box IDE", not text editors like Gedit or Vim pumped with [plugins][1]. Not that this alternative is bad in any way, just that the list will go on forever if I include text editors.
 
 ### 1. Code::Blocks ###
 
@@ -57,14 +56,14 @@ For all KDE fans out there, [KDevelop][11] might be the answer to your prayers. 
 
 Finally, last for not least, [CodeLite][12] shows that you can take a traditional formula and still get something with its own feeling attached to it. If the interface really reminded me of Code::Blocks and Anjuta at first, I was just blown away by the extensive plugin library. Whether you want to diff a file, insert a copyright block, define an abbreviation, or push your work on Git, there is a plugin for you. If I had to nitpick, I would say that it lacks a few navigation shortcuts for my taste, but that's really it. 
 
-To conclude, I hope that this list had you discover new IDEs for coding in your favorite language. While Code::Blocks remains my favorite, it has some serious challengers. Also we are far from covering all the ways to code in C/C++ using an IDE on Linux. So if you have another one to propose, let us know in the comments. Also if you would like me to cover IDEs for a different language next, also let us know in the comment section.
+最后，我希望that this list had you discover new IDEs for coding in your favorite language. While Code::Blocks remains my favorite, it has some serious challengers. Also we are far from covering all the ways to code in C/C++ using an IDE on Linux. So if you have another one to propose, let us know in the comments. Also if you would like me to cover IDEs for a different language next, also let us know in the comment section.
 
 --------------------------------------------------------------------------------
 
 via: http://xmodulo.com/good-ide-for-c-cpp-linux.html
 
 作者：[Adrien Brochard][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ZTinoZ](https://github.com/ZTinoZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
