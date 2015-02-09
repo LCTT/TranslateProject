@@ -1,3 +1,4 @@
+zpl1025
 Get back your privacy and control over your data in just a few hours: build your own cloud for you and your friends
 ================================================================================
 40'000+ searches over 8 years! That's my Google Search history. How about yours? (you can find out for yourself [here][1]) With so many data points across such a long time, Google has a very precise idea of what you've been interested in, what's been on your mind, what you are worried about, and how that all changed over the years since you first got that Google account.

@@ -1,3 +1,5 @@
+Translating by H-mudcup
+
 Meet Vivaldi — A New Web Browser Built for Power Users
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2015/01/Screen-Shot-2015-01-27-at-17.36.jpg)
