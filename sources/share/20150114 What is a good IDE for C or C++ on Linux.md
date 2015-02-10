@@ -1,12 +1,12 @@
 Linux上有哪些比较好的C/C++ IDE？
 ================================================================================
-"一个真正的程序员是不用IDE的，他们是用uses insert a text editor name here with such and such plugins." We all heard that somewhere. Yet, as much as one can agree with that statement, an IDE remains quite useful. An IDE is easy to set up and use out of the box. Hence there is no better way to start coding a project from scratch. So for this post, let me present you with my list of good IDEs for C/C++ on Linux. Why is C/C++ specifically? Because C is my favorite language, and we need to start somewhere. Also note that there are in general a lot of ways to code in C, so in order to trim down the list, I only selected "real out-of-the-box IDE", not text editors like Gedit or Vim pumped with [plugins][1]. Not that this alternative is bad in any way, just that the list will go on forever if I include text editors.
+"一个真正的程序员是不用IDE（译者注：集成开发环境）的，他们都是用带着某某插件的文本编辑器来写代码。"我们总能在某些地方听到此类观点。然而，尽管越来越多的人同意这样的观点，但是一个IDE仍然非常有用，它设置简单，使用起来也很方便，因此没有更好办法能像这样来编写一个项目了。所以鉴于这点，在这里我想给大家列一份在linux平台上比较好的C/C++ IDE清单。为什么特地说C/C++呢？因为C语言是我最喜欢的编程语言而且我们总要找个切入点来开始。另外要注意的是，通常有很多种编写C代码的方法，所以为了消减清单的篇幅，我只选择了"真正好用的IDE"，而不是诸如Gedit或Vim这种注入[插件][1]的文本编辑器。并不是说这些编辑器在任何情况下都不好，只是如果我将文本编辑器包含进去那这份清单就将永无止境了。
 
 ### 1. Code::Blocks ###
 
 ![](https://farm8.staticflickr.com/7520/16089880989_10173db27b_c.jpg)
 
-Starting all out with my personal favorite, [Code::Blocks][2] is a simple and fast IDE for C/C++ exclusively. Like any respectable IDE, it integrates syntax highlighting, bookmarking, word completion, project management, and a debugger. Where it shines is via its simple plugin system which adds indispensable tools like Valgrind and CppCheck, and less indispensable like a Tetris mini-game. But my reason for liking it particularly is for its coherent set of handy shortcuts, and the large number of options that never feel too overwhelming.
+用我个人的最爱来开篇，[Code::Blocks][2]是一款简单快速的专有C/C++ IDE。就像任何一款强大的IDE一样, 它集成了语法高亮、书签功能、自动补全功能、项目管理和一个调试器。Where it shines is via its simple plugin system which adds indispensable tools like Valgrind and CppCheck, and less indispensable like a Tetris mini-game. But my reason for liking it particularly is for its coherent set of handy shortcuts, and the large number of options that never feel too overwhelming.
 
 ### 2. Eclipse ###
 
