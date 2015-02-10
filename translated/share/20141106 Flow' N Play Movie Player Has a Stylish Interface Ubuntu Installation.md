@@ -1,12 +1,10 @@
-Translated by H-mudcup
-
-Flow 'N Play视频播放器有着独具风格的界面【Ubuntu上的安装】
+Flow 'N Play视频播放器有着独具风格的界面[在Ubuntu上安装]
 ================================================================================
-**Flow ‘N Play**是个用Qt编写的新视频播放器。它有着漂亮又简洁的只提供基本播放功能的界面。
+**Flow ‘N Play**是个用Qt编写的新视频播放器。它有着漂亮又简洁的界面，只提供基本播放功能。
 
 ![](http://www.tuxarena.com/wp-content/uploads/2014/11/flow_n_play.jpg)
 
-[Flow ‘N Play][1]是个比较新的有着漂亮的界面和简单操作的视频播放器（今年三月份第一次发行）。其中一个功能就是能通过拖动鼠标滑动视频列表。播放器带有基本功能，一个搜索功能，支持彩色主题。
+[Flow ‘N Play][1]是个比较新的视频播放器，它有着漂亮的界面和简单的操作（今年三月份第一次发行）。其中一个功能就是能通过拖动鼠标滑动视频列表。播放器带有基本功能，一个搜索功能，支持彩色主题。
 
 打开一个新的视频——你还可以在同一个对话框下自定义一个封面：
 
@@ -18,7 +16,7 @@ Flow 'N Play视频播放器有着独具风格的界面【Ubuntu上的安装】
 
 Flow ‘N Play仍然处在早起开发中，因此相对于更高级的播放器它有一些瑕疵。可以设置的选项少，不支持加载字幕或视频和声音的过滤器。目前，在打开一个新的视频时偶尔会出错或是表现异常。
 
-我相信在它变得能替代其他播放器之前，会先添加几个功能。但从长远来看，Flow ‘N Play很有前途。
+我相信在它变成一款相当不错的播放器来替代其他播放器之前，还需要再添加几个功能。但从长远来看，Flow ‘N Play很有前途。
 
 ### 在Ubuntu 14.04上安装Flow ‘N Play 0.922 ###
 
@@ -28,11 +26,11 @@ Flow ‘N Play仍然处在早起开发中，因此相对于更高级的播放器
 
     sudo apt-get install libqt5multimediaquick-p5 qtdeclarative5-controls-plugin qtdeclarative5 qtmultimedia-plugin qtdeclarative5-qtquick2-plugin qtdeclarative5-quicklayouts-plugin
 
-Then download the DEB package and either double click it or change the working directory to the one where you saved it and type the following in a terminal (for 64-bit, replace the DEB file for 32-bit)然后下载DEB安装包，可以双击或在终端里把正操作的目录换到你保存安装包的目录下并输入以下命令（这个是64位的命令，对于32位的系统请将DEB文件换成32位的）:
+然后下载DEB安装包，可以双击或在终端里把正操作的目录换到你保存安装包的目录下并输入以下命令（这个是64位的命令，对于32位的系统请将DEB文件换成32位的）:
 
     sudo dpkg -i flow-n-play_v0.926_qt-5.3.2_x64.deb 
 
-然后在终端里输入**flow-n-play**来运行它。注意：为防止产生依赖项错误，当你试图安装DEB问件事你可以运行**sudo apt-get -f install**，这样可以自动获取丢失的依赖项并安装Flow ‘N Play。
+然后在终端里输入**flow-n-play**来运行它。注意：为防止产生依赖项错误，当你试图安装DEB文件时，你可以运行**sudo apt-get -f install**，这样可以自动获取丢失的依赖项并安装Flow ‘N Play。
 
 若用RUN脚本安装，先安装上边提到的依赖项，然后运行这个脚本:
 
@@ -49,7 +47,7 @@ via: http://www.tuxarena.com/2014/11/flow-n-play-movie-player-has-a-stylish-inte
 
 作者：Craciun Dan 
 译者：[H-mudcup](https://github.com/H-mudcup)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
