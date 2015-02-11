@@ -1,90 +1,91 @@
-Translating by martin.
-
-Install the Gnome Flashback classical desktop on Ubuntu 14.10/Linux Mint 17
+在Ubuntu14.10/Mint7上安装Gnome Flashback classical桌面
 ================================================================================
-The [Gnome Flashback][1] desktop environment is a simple and great way to get back the old style classical desktop if you do not like Unity desktop, like many.
+如果你不喜欢现在的Unity桌面，[Gnome Flashback][1] 桌面环境是一个简单的并且很棒的选择，让你能找回曾经经典的桌面。
 
-Gnome Flashback is based on GTK 3 and provides a desktop interface visually similar to the old gnome desktop.
+Gnome Flashback基于GTK3并提供与原先gnome桌面视觉上相似的界面。
 
-Another alternative to gnome flashback is the MATE desktop from linux mint and XFCE desktop, but both of them are based on gtk 2.
+gnome flashback的另一个改变是采用了源自mint和xface的MATE桌面，但无论mint还是xface都是基于gtk2的。
 
-### Install Gnome Flashback ###
+### 安装 Gnome Flashback ###
 
-Install the following package on your Ubuntu system and you are done.
+在你的ubuntu上安装以下包即可：
 
     $ sudo apt-get install gnome-session-flashback
 
-Now logout and at the login screen press the settings button on the box that asks for password. There would be 2 options, Gnome Flashback (Metacity) and Gnome Flashback (Compiz).
+然后注销到达登录界面，单击密码输入框右上角的徽标型按钮，即可选择桌面环境。可供选择的有Gnome Flashback (Metacity) 会话模式和Gnome Flashback (Compiz)会话模式。
 
-Metacity is lighter and faster, whereas Compiz gets you the more fancy desktop effects. Here is a screenshot of my gnome flashback desktop.
+Metacity更轻更快，而Compiz则能带给你更棒的桌面效果。下面是我使用gnome flashback桌面的截图。
 
-It uses a wallpaper from elementary OS and also Plank dock with no bottom panel. This tutorial explains every bit of it.
+桌面采用了elementary OS的壁纸和Plank dock并且移除了底部面板。这些都会在这篇教程中涉及到。
 
 ![ubuntu gnome flashback](http://www.binarytides.com/blog/wp-content/uploads/2015/02/ubuntu-gnome-flashback.png)
 
-After installing Gnome Flashback desktop you need to do a couple of more things to finetune it.
+在安装好gnome flashback桌面以后也许你对效果还不满意，这样你可能需要执行接下来的一系列操作来对它进行微调。
 
-### 1. Install Gnome Tweak Tool ###
+### 1. 安装 Gnome Tweak Tool ###
 
-The Gnome Tweak Tool allows you to customize things like fonts, themes etc, that are otherwise difficult or impossible with the "unity-control-center" tool of Unity desktop.
+Gnome Tweak Tool能够帮助你定制比如字体、主题等，那些在Unity桌面的控制中心十分困难或是不可能完成的任务。
 
     $ sudo apt-get install gnome-tweak-tool
 
-Find it in Applications > System Tools > Preferences > Tweak Tool
+启动按步骤 应用程序 > 系统工具 > 首选项 > Tweak Tool
 
-### 2. Add applets to panel ###
+### 2. 在面板上添加小应用 ###
 
-By default right clicking on the panels would not have any effect. Press the Alt+Super (windows) key on your keyboard while you right click on the panels and you would get the relevant options to customize the panel.
+默认的右键点击面板是没有效果的。你可以尝试在右键点击面板的同时按住键盘上的Alt+Super (win)键，这样定制面板的相关选项将会出现。
 
-You can modify the panel, remove it and also add applets to it. In this example we shall remove the bottom panel and replace it with Plank dock.
+你可以修改或删除面板并在上面添加些小应用。在这个例子中我们移除了底部面板，并用Plank dock来代替它的位置。
 
-Add a datetime applet on the top panel at the middle. Configure it to display the date time and weather conditions.
+在顶部面板的中间添加一个显示时间的小应用。通过配置使它显示时间和天气。
 
-Also add a workspace switcher applet to the top panel and create as many workspaces as you need.
+同样的添加一个工作空间切换器到顶部面板，并创建合适个数的工作空间。
 
-### 3. Take window title bar buttons to the right ###
+### 3. 将窗口标题栏的按钮右置 ###
 
-On Ubuntu the minimise, maximise and close buttons on the window title bar are on the left by default. It needs a small hack to get them to the right.
+在ubuntu中，最小化、最大化和关闭按钮默认实在标题栏的左侧的。需要稍作手脚才能让他们乖乖回到右边去。
 
-To take the window buttons to the right use the following command, which I found at askubuntu.
+想让窗口的按钮到右边可以使用下面的命令，这是我在askubuntu上找到的。
 
     $ gsettings set org.gnome.desktop.wm.preferences button-layout 'menu:minimize,maximize,close'
 
-### 4. Install Plank dock ###
+### 4.安装 Plank dock ###
 
-The plank dock sits at the bottom and holds launchers for applications and window launchers for running applications. It hides itself when not necessary and shows up again when needed. Its the same dock as used by elementary OS.
+plank dock位于屏幕底部用于启动应用和切换打开的窗口。会在必要的时间隐藏自己，并在需要的时候出现。elementary OS使用的dock就是plank dock。
 
-Run the following commands
+运行以下命令安装
 
     $ sudo add-apt-repository ppa:ricotz/docky -y 
     $ sudo apt-get update 
     $ sudo apt-get install plank -y
 
-Find it in Applications > Accessories > Plank. To configure it to start automatically with the system, go to System Tools > Preferences > Startup Applications and add the "plank" command to the list.
+现在启动 应用程序 > 附件 > Plank。若想让它开机自动启动，找到 应用程序 > 系统工具 > 首选项 > 启动应用程序 并将“plank”的命令加到列表中。
 
-### 5. Install Conky system monitor ###
+### 5. 安装 Conky 系统监视器 ###
 
-Conky is a nice way to decorate your desktop with system statistics like cpu and memory usage. It is lightweight and works most of the time without any hassles.
+Conky非常酷，它用系统的中如CPU和内存使用率的统计值来装饰桌面。它不太占资源并且运行的大部分时间都不惹麻烦。
 
-Run the following commands -
+运行如下命令安装
 
     $ sudo apt-add-repository -y ppa:teejee2008/ppa
     $ sudo apt-get update
     $ sudo apt-get install conky-manager
 
-Now launch Applications > Accessories > Conky Manager and select the widget you want to display on your desktop. Conky Manager also allows you to configure it to launch at system startup.
+现在启动 应用程序 > 附件 > Conky Manager 选择你想在桌面上显示的部件。Conky Manager同样可以配置到启动项中。
 
-### 6. Install CompizConfig Settings Manager ###
+### 6. 安装CCSM ###
 
-If you wish to use Gnome Flashback (Compiz) session then it would be useful to use the compiz settings manager to configure desktop effects. Install it with the following command
+如果你更愿意使用Gnome Flashback (Compiz)，那么CCSM将是你配置桌面特效的得力助手。
+
+运行以下命令安装
 
     $ sudo apt-get install compizconfig-settings-manager
 
-Now launch it from System Tools > Preferences > CompizConfig Settings Manager.
+启动按步骤 应用程序 > 系统工具 > 首选项 > CompizConfig Settings Manager.
 
-> It so happened inside Virtualbox that, in the compiz session window decorations went missing. To fix it, launch Compiz settings and enable the "Copy to texture" plugin and then logout and login back. It should be fixed.
 
-However the Compiz session is slower than the Metacity session.
+>在虚拟机中经常会发生compiz会话中装饰窗口消失。可以通过启动Compiz设置，在打开"Copy to texture"，注销后重新登录即可。
+
+不过值得一提的是Compiz 会话会比Metacity慢。
 
 --------------------------------------------------------------------------------
 
