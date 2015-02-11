@@ -6,13 +6,13 @@ Linux上有哪些比较好的C/C++ IDE？
 
 ![](https://farm8.staticflickr.com/7520/16089880989_10173db27b_c.jpg)
 
-用我个人的最爱来开篇，[Code::Blocks][2]是一款简单快速的专有C/C++ IDE。就像任何一款强大的IDE一样, 它集成了语法高亮、书签功能、自动补全功能、项目管理和一个调试器。Where it shines is via its simple plugin system which adds indispensable tools like Valgrind and CppCheck, and less indispensable like a Tetris mini-game. But my reason for liking it particularly is for its coherent set of handy shortcuts, and the large number of options that never feel too overwhelming.
+用我个人的最爱来开篇，[Code::Blocks][2]是一款简单快速的专有C/C++ IDE。就像任何一款强大的IDE一样, 它集成了语法高亮、书签功能、自动补全功能、项目管理和一个调试器。它闪耀的地方在于它简单的插件系统，里面添加了不可缺少的工具，像Valgrind和CppCheck，还有不太重要的比如像俄罗斯方块这样的小游戏。但是我特别喜欢它的理由是它连贯方便的快捷键设定和大量的却感受不到受压迫的选项设置。
 
 ### 2. Eclipse ###
 
 ![](https://farm8.staticflickr.com/7522/16276001255_66235a0a69_c.jpg)
 
-I know that I said only "real out-of-the-box IDE" and not a text editor pumped with plugins, but [Eclipse][3] is a "real out-of-the-box IDE." It's just that Eclipse needs a little [plugin][4] (or a variant) to code in C. So I technically did not contradict myself. And it would have been impossible to make an IDE list without mentioning the behemoth that is Eclipse. Like it or not, Eclipse remains a great tool to code in Java. And thanks to the [CDT Project][5], it is possible to program in C/C++ too. You will benefit from all the power of Eclipse and its traditional features like word completion, code outline, code generator, and advanced refactoring. What it lacks in my opinion is the lightness of Code::Blocks. It is still very heavy and takes time to load. But if your machine can take it, or if you are a hardcore Eclipse fan, it is a very safe option.
+我知道我只说"真正好用的IDE"而不是带着插件的文本编辑器，但是，[Eclipse][3]的确是一款"真正好用的IDE"，只是Eclipse需要一些[plugin][4]（或经过一些改装）来编写C程序，所以严格来说我无法反驳我自己。而且，做一份IDE清单不提到Eclipse这个“巨人”是不可能的事情。无论喜欢它与否，Eclipse仍然是一款强大的Java编程工具。And thanks to the [CDT Project][5], it is possible to program in C/C++ too. You will benefit from all the power of Eclipse and its traditional features like word completion, code outline, code generator, and advanced refactoring. What it lacks in my opinion is the lightness of Code::Blocks. It is still very heavy and takes time to load. But if your machine can take it, or if you are a hardcore Eclipse fan, it is a very safe option.
 
 ### 3. Geany ###
 
