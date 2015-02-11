@@ -1,3 +1,4 @@
+translating by soooogreen
 Improve system performance by moving your log files to RAM Using Ramlog
 ================================================================================
 Ramlog act as a system daemon. On startup it creates ramdisk, it copies files from /var/log into ramdisk and mounts ramdisk as /var/log. All logs after that will be updated on ramdisk. Logs on harddrive are kept in folder /var/log.hdd which is updated when ramlog is restarted or stopped. On shutdown it saves log files back to harddisk so logs are consistent. Ramlog 2.x is using tmpfs by default, ramfs and kernel ramdisk are suppored as well. Program rsync is used for log synchronization.
