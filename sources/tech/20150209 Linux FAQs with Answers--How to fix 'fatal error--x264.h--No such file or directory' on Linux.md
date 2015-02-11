@@ -1,3 +1,5 @@
+translating----geekpi
+
 Linux FAQs with Answers--How to fix “fatal error: x264.h: No such file or directory” on Linux
 ================================================================================
 > **Question**: I am trying to build a video encoding application from the source on Linux. However, during compilation, I am encountering the error: "fatal error: x264.h: No such file or directory" How can I fix this error?
