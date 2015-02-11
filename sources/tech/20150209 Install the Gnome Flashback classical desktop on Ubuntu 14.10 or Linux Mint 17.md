@@ -52,7 +52,7 @@ Gnome Tweak Tool能够帮助你定制比如字体、主题等，那些在Unity�
 
 plank dock位于屏幕底部用于启动应用和切换打开的窗口。会在必要的时间隐藏自己，并在需要的时候出现。elementary OS使用的dock就是plank dock。
 
-运行以下命令安装
+运行以下命令安装:
 
     $ sudo add-apt-repository ppa:ricotz/docky -y 
     $ sudo apt-get update 
@@ -64,7 +64,7 @@ plank dock位于屏幕底部用于启动应用和切换打开的窗口。会在�
 
 Conky非常酷，它用系统的中如CPU和内存使用率的统计值来装饰桌面。它不太占资源并且运行的大部分时间都不惹麻烦。
 
-运行如下命令安装
+运行如下命令安装:
 
     $ sudo apt-add-repository -y ppa:teejee2008/ppa
     $ sudo apt-get update
@@ -76,7 +76,7 @@ Conky非常酷，它用系统的中如CPU和内存使用率的统计值来装饰
 
 如果你更愿意使用Gnome Flashback (Compiz)，那么CCSM将是你配置桌面特效的得力助手。
 
-运行以下命令安装
+运行以下命令安装:
 
     $ sudo apt-get install compizconfig-settings-manager
 
