@@ -1,17 +1,17 @@
-[[jerryling315](https://github.com/jerryling315) 翻译中]
 LinuxQuestions Survey Results Surface Top Open Source Projects
 ================================================================================
 ![](http://farm5.static.flickr.com/4099/4777335328_3cc363c419_m.jpg)
 
-Many people in the Linux community look forward to the always highly detailed and reliable results of the annual surveys from LinuxQuestions.org. As [Susan covered in detail in this post][1], this year's [results][2], focused on what readers at the site deem to be the best open source projects, are now available. Most of the people at LinuxQuestions are expert-level users who are on the site to answer questions from newer Linux users.
+在Linux用户社区中, 很多人每年都会期待来自 LinuxQuestions.org 细致并可靠的年度问卷调查结果. 如同[Susan在她的报告][1]中指出的那样, 今年的[结果][2]着重于调查网站读者心中最棒的开源项目. 这份报告目前已经完成. 在LinuxQuestions的大多数人都是"专家级"的用户, 他们经常在网站上在线回答Linux新手们的提问.
 
+在Susan所作的报告的附加内容里, 你可以看到由"专家"们对开源世界的关注点分布.
 In addition to the summary results that Susan provided in her post, below you'll find a graphical snapshot of what the experts took note of on the open source front. 
 
-You can get a very nice graphical summary of the findings from the LinuxQuestions survey [here][3].  Here is a snapshot of the site's determination of the best Linux distributions, where Mint and Slackware fare quite well:
+你也可以在[这里][3]找到一份较为精美的调查问卷总结图.这里呈现了网站投票得出的最佳Linux发行版, 可以看到Mint和Slackwaer平分了半壁江山:
 
 ![](http://i1311.photobucket.com/albums/s669/webworkerdaily/lin_zps9ogvyrty.png)
 
-And below is a snapshot of the site's determination of the best cloud projects. Notably, the LinuxQuestions crowd gives very high praise to ownCloud. Definiitely check into the full results of the survey at the site, see [Susan's summary][4] of winners, and check out all the good graphics [here][5].
+而下图则是网站票选出的得出的最佳云项目. 值得注意的是, LinuxQuestions的用户群体给予了ownCloud项目极高的评价. 你一定得亲自去看看调查结果的详情, 也看看 [Susan关于各项目"赢家"][4]的总结 , 还有[一堆精美的图表][5].
 
 ![](http://i1311.photobucket.com/albums/s669/webworkerdaily/lin2_zps9nxf7yyi.png)
 
@@ -20,7 +20,7 @@ And below is a snapshot of the site's determination of the best cloud projects. 
 via: http://ostatic.com/blog/linuxquestions-survey-results-surface-top-open-source-projects
 
 作者：[Sam Dean][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[jerryling315](https://github.com/jerryling315)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
