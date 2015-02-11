@@ -1,3 +1,5 @@
+translating by martin.
+
 Install Mumble in Ubuntu an Opensource VoIP Apps
 ================================================================================
 Mumble is a free and open source voice over IP (VoIP) application, released under the new BSD license, primarily designed for use by gamers and it's similar to programs such as TeamSpeak and Ventrilo. It uses a server to witch people can connect with a client to talk to each other.
