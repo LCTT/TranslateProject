@@ -34,13 +34,13 @@ Mumble提供了如下的一些特性:
 
 ![mumble q2](http://blog.linoxide.com/wp-content/uploads/2015/01/mumble-q2.jpg)
 
-接着为你刚安装好的mumble服务端设置最高权限用户的密码，记住密码会在登录时用到。
+接着为你刚安装好的mumble服务端设置最高权限用户的密码，记住密码它会在登录时用到。
 
 ![mumble q3](http://blog.linoxide.com/wp-content/uploads/2015/01/mumble-q3.jpg)
 
 ### 安装 Mumble 客户端 ###
 
-客户端可以安装到许多的主流操作系统中，例如windows，mac和linux。我们将涉及在Ubuntu linux上的安装和配置，你可以使用软件中心或以下的命令安装客户端：
+客户端可以安装到许多的主流操作系统中，例如windows，mac和linux。我们将教你在Ubuntu linux上安装和配置，你可以使用软件中心也可以用命令安装客户端：
 
     $ sudo apt-get install mumble
 
@@ -49,11 +49,10 @@ Mumble提供了如下的一些特性:
 ![mumble client 1](http://blog.linoxide.com/wp-content/uploads/2015/01/mumble-client-1.jpg)
 
 然后它将帮你校准设备：
-Then it will help you calibrate the devices:
 
 ![mumble client 2](http://blog.linoxide.com/wp-content/uploads/2015/01/mumble-client-2.jpg)
 
-在mumble帮你加密通讯时会询问你是否创建证书：
+因为mumble帮你加密所有的通讯内容所以它会征询你创建证书：
 
 ![mumble client 3](http://blog.linoxide.com/wp-content/uploads/2015/01/mumble-client-3.jpg)
 
