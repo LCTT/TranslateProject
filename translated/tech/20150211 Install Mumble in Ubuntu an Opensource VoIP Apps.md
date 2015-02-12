@@ -24,7 +24,7 @@ Mumble提供了如下的一些特性:
 
 运行以下命令启动Mumble：
 
-$ sudo dpkg-reconfigure mumble-server
+    $ sudo dpkg-reconfigure mumble-server
 
 会弹出以下一些问题：
 
