@@ -1,3 +1,4 @@
+translating by KayGuoWhu
 Why does C++ promote an int to a float when a float cannot represent all int values?
 ---------
 

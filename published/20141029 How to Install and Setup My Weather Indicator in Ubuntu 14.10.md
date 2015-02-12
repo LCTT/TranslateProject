@@ -1,10 +1,10 @@
-在Ubuntu 14.10中如何安装和配置‘My Weather Indicator’
+在Ubuntu 14.10中如何安装和配置‘天气信息指示器’
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/10/my-weather-indicator.jpg)
 
-**在Ubuntu桌面中不缺乏若干应用同时提供天气信息的方法，你可以使用Unity Dash和桌面应用，比如[Typhoon][1]，来获得天气信息。**
+**在Ubuntu桌面中有各种提供天气信息的方法，你可以使用Unity Dash和桌面应用来获得天气信息，比如[Typhoon][1]。**
 
-但是可以提供快速查询天气状况和温度数据，并且只需要一次鼠标点击而获得大量气象数据的面板插件，是到目前为止Linux平台下最受欢迎的天气应用。
+但是可以提供快速查询天气状况和温度数据，并且只需要一次鼠标点击而获得大量气象数据的面板插件，才是到目前为止Linux平台下最受欢迎的天气应用。
 
 Atareao开发的[My Weather Indicator][2]就是这类应用中的一个，也可以说是最好的一个。
 
@@ -18,7 +18,7 @@ My Weather Indicator无法从Ubuntu软件商店中直接获取。不过开发者
 
 - 下载My Weather Indicator (.deb安装包)
 
-为了确保你的应用最是最新版本，我建议将[Atareao PPA][3]添加到你的软件镜像源然后通过PPA来安装。
+为了确保你的应用是最新版本，我建议将[Atareao PPA][3]添加到你的软件镜像源，然后通过PPA来安装。
 
 怎么做？**打开一个新的终端**窗口（Unity Dash > 终端，或者按Ctrl+Alt+T快捷键），然后**输入下面的两行命令**，期间你需要在提示处输入你的系统密码：
 
@@ -36,7 +36,7 @@ My Weather Indicator无法从Ubuntu软件商店中直接获取。不过开发者
 
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2014/10/Screen-Shot-2014-10-27-at-17.39.07.jpeg)
 
-如果你正在旅行（或者是出于聊天需要），**你可以添加一个第二地区**。这个设置和第一地区的设置相同，只不过是在“第二地区”的标签栏罢了。
+如果你正在旅行（或者是出于聊天的需要），**你可以添加一个第二地区**。这个设置和第一地区的设置相同，只不过是出现在“第二地区”的标签栏罢了。
 
 在“**小部件设置**”区域勾选“**显示桌面小部件**”选项就会在你的桌面上添加一个小的天气小部件。小部件提供许多不同的皮肤，所以你一定要精心挑选你最喜欢的一个（注释：点击“确定”后对小部件的更改才会保存）。
 
@@ -55,7 +55,7 @@ My Weather Indicator使用[Open Weather Map][4]作为默认的天气数据提供
 
 最后，在‘General Options‘标签页，你可以设置数据更新间隔、设置开机自动运行选项以及从两个图标中选择一个作为面板图标。
 
-如果你不喜欢该应用，你可以尝试[Linux下查看天气数据的方法][5]。
+如果你是命令行控，你也可以尝试[Linux下查看天气数据的方法][5]。
 
 --------------------------------------------------------------------------------
 
@@ -63,7 +63,7 @@ via: http://www.omgubuntu.co.uk/2014/10/install-weather-indicator-ubuntu-14-10
 
 作者：[Joey-Elijah Sneddon][a]
 译者：[JonathanKang](https://github.com/JonathanKang)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

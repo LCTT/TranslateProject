@@ -1,14 +1,14 @@
-Linux Basics: Assign Multiple IP Addresses To Single Network Interface Card On CentOS 7
+Linux 基础：在CentOS 7上给一个网卡分配多个IP地址
 ================================================================================
-Some times you might want to use more than one IP address for your network interface card. What are you going to do? Buy an extra network card and assign new IP? No, It’s not necessary(atleast in the small networks). We can now assign multiple ip addresses to single network interface card in CentOS / RHEL 7 systems. Curious to know how? Well, Follow me, It is not that difficult.
+有时你也许想要给一个网卡多个地址。你该怎么做呢？另外买一个网卡来分配地址？不用这么做（只要在小型网络中）。我们现在可以再CentOS/RHEL 7中给一个网卡分配多个ip地址。想知道怎么做么？好的，跟随我，这并不难。
 
-First, let us find the IP address of the network card. In my CentOS 7 server, I use only one network card.
+首先，让我们找到网卡的IP地址。在我的CentOS 7服务器中，我只使用了一个网卡。
 
-Run the following command with root user privileges:
+用root特权运行下面的命令：
 
     ip addr
 
-Sample output:
+示例输出：
 
     1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN 
         link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -21,15 +21,15 @@ Sample output:
         inet 192.168.1.150/24 brd 192.168.1.255 scope global enp0s3
            valid_lft forever preferred_lft forever
 
-As you see in the above output, my network card name is enp0s3, and its IP address is 192.168.1.150.
+如上所见，我的网卡名是enp0s3，ip地址是192.168.1.150。
 
-Well, as you may know, the the network card configuration files of your system is stored under **/etc/sysconfig/network-scripts/** directory. Each cards details will be stored in different names, for example **ifcfg-enp0s3**.
+如你所知，网卡的配置文件存储在 **/etc/sysconfig/network-scripts/** 目录下。每个网卡的详细内容将会以不同的名字存储，比如**ifcfg-enp0s3**。
 
-Let us see the details of **ifcfg-enp0s3**.
+让我们看下**ifcfg-enp0s3**的细节。
 
     cat /etc/sysconfig/network-scripts/ifcfg-enp0s3
 
-Sample output:
+示例输出：
 
     TYPE="Ethernet"
     BOOTPROTO="none"
@@ -50,13 +50,13 @@ Sample output:
     IPV6_PEERDNS="yes"
     IPV6_PEERROUTES="yes"
 
-Okay, now we will assign multiple addresses in the same subnet.
+好的，现在我们将在相同的子网中分配多个地址了。
 
-Edit file **/etc/sysconfig/network-scripts/ifcfg-enp0s3**:
+编辑文件 **/etc/sysconfig/network-scripts/ifcfg-enp0s3**：
 
     vi /etc/sysconfig/network-scripts/ifcfg-enp0s3
 
-Add extra IP addresses one by one as shown below.
+像下面那样加入额外的IP地址。
 
     TYPE="Ethernet"
     BOOTPROTO="none"
@@ -79,19 +79,20 @@ Add extra IP addresses one by one as shown below.
     IPV6_PEERDNS="yes"
     IPV6_PEERROUTES="yes"
 
-As you see above, I have added two more IP addresses: **IPADDR1=”192.168.1.151″ & IPADDR2=”192.168.1.152″**
+如你所见，我已经加了两个IP地址：**IPADDR1=”192.168.1.151″ & IPADDR2=”192.168.1.152″**
 
-Like wise, you can add as many a IP addresses you want.
+类似地，你可以加入更多的ip地址。
 
 Finally, save and close the file. Restart network service to take effect the changes.
+最后，保存并退出文件。重启网络服务来使更改生效。
 
     systemctl restart network
 
-Now, let us check the IP addresses have been added or not.
+现在，让我们检查是否已经加入了ip地址。
 
     ip addr
 
-Sample output:
+示例输出：
 
     : lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN 
         link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -110,13 +111,13 @@ Sample output:
         inet6 fe80::a00:27ff:fe3f:ab68/64 scope link 
            valid_lft forever preferred_lft forever
 
-As you see above, the single network interface card has three IP addresses.
+如你所见，单个网卡已经有3个ip地址了。
 
-Let us ping the newly added IP addresses:
+让我们ping一下新增的IP地址：
 
     ping -c 4 192.168.1.151
 
-Sample output:
+示例输出：
 
     PING 192.168.1.151 (192.168.1.151) 56(84) bytes of data.
     64 bytes from 192.168.1.151: icmp_seq=1 ttl=64 time=0.048 ms
@@ -132,7 +133,7 @@ Sample output:
 
     ping -c 4 192.168.1.152
 
-Sample output:
+示例输出：
 
     PING 192.168.1.152 (192.168.1.152) 56(84) bytes of data.
     64 bytes from 192.168.1.152: icmp_seq=1 ttl=64 time=0.034 ms
@@ -144,9 +145,9 @@ Sample output:
     4 packets transmitted, 4 received, 0% packet loss, time 2999ms
     rtt min/avg/max/mdev = 0.034/0.064/0.075/0.018 ms
 
-If you want to use **different subnet**, then you can change the **PREFIX0=24** line to different subnet, such as **PREFIX1=16**.
+如果你想要使用**不同的子网**，你要改变**PREFIX0=24**成不同的子网，比如 **PREFIX1=16**。
 
-For example, I am going to add Class A IP address(**ex.10.0.0.1**) to my network card.
+比如，我想要添加一个A类地址（**比如10.0.0.1*）到我的网卡中。
 
     TYPE="Ethernet"
     BOOTPROTO="none"
@@ -171,15 +172,15 @@ For example, I am going to add Class A IP address(**ex.10.0.0.1**) to my network
     IPV6_PEERDNS="yes"
     IPV6_PEERROUTES="yes"
 
-Do you notice that I have added a Class A type address(10.0.0.1) and prefix=16.
+你可以看到我已经添加一个A类地址(10.0.0.1)并且前缀是16
 
-Save and close the file. Restart network service,
+保存并退出文件。重启网络服务，
 
-Then, ping the new added IP:
+接着，ping新增的地址：
 
     ping -c 4 10.0.0.1
 
-Sample output:
+示例输出：
 
     PING 10.0.0.1 (10.0.0.1) 56(84) bytes of data.
     64 bytes from 10.0.0.1: icmp_seq=1 ttl=64 time=0.097 ms
@@ -191,16 +192,16 @@ Sample output:
     4 packets transmitted, 4 received, 0% packet loss, time 3000ms
     rtt min/avg/max/mdev = 0.073/0.079/0.097/0.014 ms
 
-Similarly, you can add different Gateways too.
+相似地，你可以添加不同的网关。
 
-That’s it.
+就是这样。
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/linux-basics-assign-multiple-ip-addresses-single-network-interface-card-centos-7/
 
 作者：[SK][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
