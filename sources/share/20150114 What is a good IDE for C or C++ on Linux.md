@@ -12,7 +12,7 @@ Linux上有哪些比较好的C/C++ IDE？
 
 ![](https://farm8.staticflickr.com/7522/16276001255_66235a0a69_c.jpg)
 
-我知道我只说"真正好用的IDE"而不是带着插件的文本编辑器，但是，[Eclipse][3]的确是一款"真正好用的IDE"，只是Eclipse需要一些[plugin][4]（或经过一些改装）来编写C程序，所以严格来说我无法反驳我自己。而且，做一份IDE清单不提到Eclipse这个“巨人”是不可能的事情。无论喜欢它与否，Eclipse仍然是一款强大的Java编程工具。And thanks to the [CDT Project][5], it is possible to program in C/C++ too. You will benefit from all the power of Eclipse and its traditional features like word completion, code outline, code generator, and advanced refactoring. What it lacks in my opinion is the lightness of Code::Blocks. It is still very heavy and takes time to load. But if your machine can take it, or if you are a hardcore Eclipse fan, it is a very safe option.
+我知道我只说"真正好用的IDE"而不是带着插件的文本编辑器，但是，[Eclipse][3]的确是一款"真正好用的IDE"，只是Eclipse需要一些[plugin][4]（或经过一些改装）来编写C程序，所以严格来说我无法反驳我自己。而且，做一份IDE清单不提到Eclipse这个“巨人”是不可能的事情。无论喜欢它与否，Eclipse仍然是一款强大的Java编程工具。这里要感谢[CDT 项目][5]，让Eclipse编写C程序变得可能。你同样可以体验到Eclipse的强大功能包括它的一些传统功能特点比如自动补全、代码大纲、代码生成器和先进的重构功能。照我话说，它的不足之处在于它不如Code::Blocks那么轻量级，它仍然很臃肿，要花费很多时间去载入。但是如果你的电脑可以驾驭它，或者你是个忠实的Eclipse粉，那么它一定是你的不二选择。
 
 ### 3. Geany ###
 
