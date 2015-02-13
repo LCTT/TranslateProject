@@ -1,3 +1,5 @@
+Translating by martin.
+
 Simple Steps Migration From MySQL To MariaDB On Linux
 ================================================================================
 Hi all, this tutorial is all gonna be about how to migrate from MySQL to MariaDB on Linux Server or PC. So, you may ask why should we really migrate from MySQL to MariaDB for our database management. Here, below are the reasons why you should really need to migrate your database management system from MySQL to MariaDB.
