@@ -1,3 +1,5 @@
+Translating---geekpi
+
 Linux FAQs with Answers--How to get the process ID (PID) of a shell script
 ================================================================================
 > **Question**: I want to know the process ID (PID) of the subshell under which my shell script is running. How can I find a PID in a bash shell script? 
