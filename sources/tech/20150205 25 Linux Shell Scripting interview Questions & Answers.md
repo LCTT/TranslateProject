@@ -1,68 +1,68 @@
-    Vic
-25 Linux Shell Scripting interview Questions & Answers
+Linux Shell脚本 入门25问
 ================================================================================
-### Q:1 What is Shell Script and why it is required ? ###
+### Q:1 Shell脚本是什么、为什么它是必需的吗? ###
 
-Ans: A Shell Script is a text file that contains one or more commands. As a system administrator we often need to issue number of commands to accomplish the task, we can add these all commands together in a text file (Shell Script) to complete daily routine task.
+答:一个Shell脚本是一个文本文件,包含一个或多个命令。作为系统管理员,我们经常需要发出多个命令来完成一项任务,我们可以添加这些所有命令在一个文本文件(Shell脚本)来完成日常工作任务。
 
-### Q:2 What is the default login shell and how to change default login shell for a specific user ? ###
+### Q:2 什么是默认登录shell，如何改变指定用户的登录shell ###
 
-Ans: In Linux like Operating system “/bin/bash” is the default login shell which is assigned while user creation. We can change default shell using the “chsh” command . Example is shown below :
+答:在Linux操作系统，“/ bin / bash”是默认登录shell,在用户创建时被分配的。使用chsh命令可以改变默认的shell。示例如下所示:
 
     # chsh <username> -s <new_default_shell>
     # chsh linuxtechi -s /bin/sh
 
-### Q:3 What are the different type of variables used in a shell Script ? ###
+### Q:3 有什么不同的类型在shell脚本中使用? ###
 
-Ans: In a shell script we can use two types of variables :
+答：在shell脚本，我们可以使用两个类型变量：
 
-- System defined variables
-- User defined variables
+- 系统定义变量
+- 用户定义变量
 
-System defined variables are defined or created by Operating System(Linux) itself. These variables are generally defined in Capital Letters and can be viewed by “**set**” command.
 
-User defined variables are created or defined by system users and the values of variables can be viewed by using the command “`echo $<Name_of_Variable>`”
+系统变量是由系统系统自己创建的。这些变量由大写字母组成，可以通过“**set**”命令查看。
 
-### Q:4 How to redirect both standard output and standard error to the same location ? ###
+用户变量由系统用户来生成，变量的值可以通过命令“`echo $<变量名>`”查看
 
-Ans: There two method to redirect std output and std error to the same location:
+### Q:4 如何同时重定向标准输出和错误输出到同一位置? ###
 
-Method:1 2>&1 (# ls /usr/share/doc > out.txt 2>&1 )
+答：这里有两个方法来实现：
 
-Method:2 &> (# ls /usr/share/doc &> out.txt )
+方法1：2>&1 (# ls /usr/share/doc > out.txt 2>&1 )
 
-### Q:5 What is the Syntax of “nested if statement” in shell scripting ? ###
+方法二：&> (# ls /usr/share/doc &> out.txt )
 
-Ans : Basic Syntax is shown below :
+### Q:5 shell脚本中“if”的语法 ? ###
 
-    if [ Condition ]
+答：基础语法：
+
+    if [ 条件 ]
     then
-    command1
-    command2
+    命令1
+    命令2
     …..
     else
-    if [ condition ]
+    if [ 条件 ]
     then
-    command1
-    command2
+    命令1
+    命令2
     ….
     else
-    command1
-    command2
+    命令1
+    命令2
     …..
     fi
     fi
 
-### Q:6 What is the use of “$?” sign in shell script ? ###
+### Q:6 shell脚本中“$?”标记的用途是什么？ ? ###
 
-Ans:While writing a shell script , if you want to check whether previous command is executed successfully or not , then we can use “$?” with if statement to check the exit status of previous command. Basic example is shown below :
+答：在写一个shell脚本时，如果你想要检查前一命令是否执行成功，在if条件中使用“$?”可以来检查前一命令的结束状态。简单的例子如下：
 
     root@localhost:~# ls /usr/bin/shar
     /usr/bin/shar
     root@localhost:~# echo $?
     0
 
-If exit status is 0 , then command is executed successfully
+如果结束状态是0，说明前一个命令执行成功。
 
     root@localhost:~# ls /usr/bin/share
 
@@ -70,11 +70,11 @@ If exit status is 0 , then command is executed successfully
     root@localhost:~# echo $?
     2
 
-If the exit status is other than 0, then we can say command is not executed successfully.
+如果结束状态不是0，说明命令执行失败。
 
-### Q:7 How to compare numbers in Linux shell Scripting ? ###
+### Q:7 在shell脚本中如何比较两个数 ? ###
 
-Ans: test command is used to compare numbers in if-then statement. Example is shown below :
+答：测试用例使用if-then来比较两个数，例子如下：
 
     #!/bin/bash
     x=10
@@ -87,77 +87,76 @@ Ans: test command is used to compare numbers in if-then statement. Example is sh
     echo “y is greater than x”
     fi
 
-### Q:8 What is the use of break command ? ###
+### Q:8 shell脚本中break命令的作用 ? ###
 
-Ans: The break command is a simple way to escape out of a loop in progress. We can use the break command to exit out from any loop, including while and until loops.
+答：break命令一个简单的用途是退出执行中的循环。我们可以在while 和until循环中使用break命令跳出循环。
 
-### Q:9 What is the use of continue command in shell scripting ? ###
+### Q:9 shell脚本中continue命令的作用 ? ###
 
-Ans The continue command is identical to break command except it causes the present iteration of the loop to exit, instead of the entire loop. Continue command is useful in some scenarios where error has occurred but we still want to execute the next commands of the loop.
+答：continue命令不同于break命令，它只跳出当前循环的迭代，而不是整个循环。continue命令很多时候是很有用的，例如错误发生，但我们依然希望循环继续的时候。
 
-### Q:10 Tell me the Syntax of “Case statement” in Linux shell scripting ? ###
+### Q:10 告诉我shell脚本中Case语句的语法 ? ###
 
-Ans: The basic syntax is shown below :
+答：基础语法如下：
 
-    case word in
-    value1)
-    command1
-    command2
+    case 变量 in
+    值1)
+    命令1
+    命令2
     …..
-    last_command
-    !!
-    value2)
-    command1
-    command2
+    最后命令
+    !! 
+    值2)
+    命令1
+    命令2
     ……
-    last_command
+    最后命令
     ;;
     esac
 
-### Q:11 What is the basic syntax of while loop in shell scripting ? ###
+### Q:11 shell脚本中while循环语法 ? ###
 
-Ans: Like the for loop, the while loop repeats its block of commands a number of times. Unlike the for loop, however, the while loop iterates until its while condition is no longer true. The basic syntax is :
+答：如同for循环，while循环重复自己所有命令只要条件成立，不同于for循环。基础语法：
 
-    while [ test_condition ]
+    while [ 条件 ]
     do
-    commands…
+    命令…
     done
 
-### Q:12 How to make a shell script executable ? ###
+### Q:12 如何使脚本成为可执行状态 ? ###
 
-Ans: Using the chmod command we can make a shell script executable. Example is shown below :
+答：使用chmod命令来使脚本可执行。例子如下：
 
     # chmod a+x myscript.sh
 
-### Q:13 What is the use of “#!/bin/bash” ? ###
+### Q:13 “#!/bin/bash”的作用 ? ###
 
-Ans: #!/bin/bash is the first of a shell script , known as shebang , where # symbol is called hash and ‘!’ is called as bang. It shows that command to be executed via /bin/bash.
+答：#!/bin/bash是shell脚本的第一行，总所周知，#符号调用hash而!调用bang。它的意思是命令使用 /bin/bash来执行命令
 
-### Q:14 What is the syntax of for loop in shell script ? ###
+### Q:14 shell脚本中for循环语法 ? ###
 
-Ans: Basic Syntax of for loop is given below :
+答：for循环基础语法：
 
-    for variables in list_of_items
+    for 变量 in 循环列表
     do
-    command1
-    command2
+    命令1
+    命令2
     ….
-    last_command
+    最后命令
     done
 
-### Q:15 How to debug a shell script ? ###
+### Q:15 如何调试shell脚本 ? ###
 
-Ans: A shell script can be debug if we execute the script with ‘-x’ option ( sh -x myscript.sh). Another way to debug a shell script is by using ‘-nv’ option ( sh -nv myscript.sh).
+答：使用'-x'参数（sh -x myscript.sh）可以调试shell脚本。另一个种方法是使用‘-nv’参数( sh -nv myscript.sh)
 
-### Q:16 How compare the strings in shell script ? ###
+### Q:16 shell脚本如何比较字符串? ###
 
-Ans: test command is used to compare the text strings. The test command compares text strings by comparing each character in each string.
+答：test命令可以用来比较字符串。Test命令比较字符串通过比较每一个字符来比较。
 
-### Q:17 What are the Special Variables set by Bourne shell for command line arguments ? ###
+### Q:17 Bourne shell(bash) 中有哪些特别变量 ? ###
 
-Ans: The following table lists the special variables set by the Bourne shell for command line arguments .
+答：下面的表列出了Bourne shell为命令行设置的特殊变量。
 
-注：表格部分
 <table width="659" cellspacing="0" cellpadding="4">
 <colgroup>
 <col width="173">
@@ -165,10 +164,10 @@ Ans: The following table lists the special variables set by the Bourne shell for
 <tbody>
 <tr>
 <td width="173" valign="top">
-<p align="left" class="western">Special Variables</p>
+<p align="left" class="western">内建变量</p>
 </td>
 <td width="453" valign="top">
-<p align="left" class="western">Holds</p>
+<p align="left" class="western">解释</p>
 </td>
 </tr>
 <tr>
@@ -176,7 +175,7 @@ Ans: The following table lists the special variables set by the Bourne shell for
 <p align="left" class="western">$0</p>
 </td>
 <td width="453" valign="top">
-<p align="left" class="western">Name of the Script from the command line</p>
+<p align="left" class="western">来自命令行脚本的名字</p>
 </td>
 </tr>
 <tr>
@@ -184,7 +183,7 @@ Ans: The following table lists the special variables set by the Bourne shell for
 <p align="left" class="western">$1</p>
 </td>
 <td width="453" valign="top">
-<p align="left" class="western">First Command-line argument</p>
+<p align="left" class="western">第一个命令行参数</p>
 </td>
 </tr>
 <tr>
@@ -192,7 +191,7 @@ Ans: The following table lists the special variables set by the Bourne shell for
 <p align="left" class="western">$2</p>
 </td>
 <td width="453" valign="top">
-<p align="left" class="western">Second Command-line argument</p>
+<p align="left" class="western">第二个命令行参数</p>
 </td>
 </tr>
 <tr>
@@ -208,7 +207,7 @@ Ans: The following table lists the special variables set by the Bourne shell for
 <p align="left" class="western">$9</p>
 </td>
 <td width="453" valign="top">
-<p align="left" class="western">Ninth Command line argument</p>
+<p align="left" class="western">第九个命令行参数</p>
 </td>
 </tr>
 <tr>
@@ -216,7 +215,7 @@ Ans: The following table lists the special variables set by the Bourne shell for
 <p align="left" class="western">$#</p>
 </td>
 <td width="453" valign="top">
-<p align="left" class="western">Number of Command line arguments</p>
+<p align="left" class="western">命令行参数的数量</p>
 </td>
 </tr>
 <tr>
@@ -224,17 +223,17 @@ Ans: The following table lists the special variables set by the Bourne shell for
 <p align="left" class="western">$*</p>
 </td>
 <td width="453" valign="top">
-<p align="left" class="western">All Command-line arguments, separated with spaces</p>
+<p align="left" class="western">所有命令行参数，以空格隔开</p>
 </td>
 </tr>
 </tbody>
 </table>
 
 ### Q:18 How to test files in a shell script ? ###
+### Q:18 在shell脚本中，如何测试文件 ? ###
 
-Ans: test command is used to perform different test on the files. Basic test are listed below :
+答：test命令可以用来测试文件。基础用法如下表格：
 
-注：表格部分
 <table width="644" cellspacing="0" cellpadding="4">
 <colgroup>
 <col width="173">
@@ -245,79 +244,79 @@ Ans: test command is used to perform different test on the files. Basic test are
 <p align="left" class="western">Test</p>
 </td>
 <td width="453">
-<p align="left" class="western">Usage</p>
+<p align="left" class="western">用法</p>
 </td>
 </tr>
 <tr valign="top">
 <td width="173">
-<p align="left" class="western">-d file_name</p>
+<p align="left" class="western">-d 文件名</p>
 </td>
 <td width="453">
-<p align="left" class="western">Returns true if the file exists and is a directory</p>
+<p align="left" class="western">返回true，如果文件存在并且是一个目录</p>
 </td>
 </tr>
 <tr valign="top">
 <td width="173">
-<p align="left" class="western">-e file_name</p>
+<p align="left" class="western">-e 文件名</p>
 </td>
 <td width="453">
-<p align="left" class="western">Returns true if the file exists</p>
+<p align="left" class="western">返回true，如果文件存在</p>
 </td>
 </tr>
 <tr valign="top">
 <td width="173">
-<p align="left" class="western">-f file_name</p>
+<p align="left" class="western">-f 文件名</p>
 </td>
 <td width="453">
-<p align="left" class="western">Returns true if the file exists and is a regular file</p>
+<p align="left" class="western">返回true，如果文件存在并且是普通文件</p>
 </td>
 </tr>
 <tr valign="top">
 <td width="173">
-<p align="left" class="western">-r file_name</p>
+<p align="left" class="western">-r 文件名</p>
 </td>
 <td width="453">
-<p align="left" class="western">Returns true if the file exists and have read permissions</p>
+<p align="left" class="western">返回true，如果文件存在并拥有读权限</p>
 </td>
 </tr>
 <tr valign="top">
 <td width="173">
-<p align="left" class="western">-s file_name</p>
+<p align="left" class="western">-s 文件名</p>
 </td>
 <td width="453">
-<p align="left" class="western">Returns true if the file exists and is not empty</p>
+<p align="left" class="western">返回true，如果文件存在并且不为空</p>
 </td>
 </tr>
 <tr valign="top">
 <td width="173">
-<p align="left" class="western">-w file_name</p>
+<p align="left" class="western">-w 文件名</p>
 </td>
 <td width="453">
-<p align="left" class="western">Returns true if the file exists and have write permissions</p>
+<p align="left" class="western">返回true，如果文件存在并拥有写权限</p>
 </td>
 </tr>
 <tr valign="top">
 <td width="173">
-<p align="left" class="western">-x file_name</p>
+<p align="left" class="western">-x 文件名</p>
 </td>
 <td width="453">
-<p align="left" class="western">Returns true if the file exists and have execute permissions</p>
+<p align="left" class="western">返回true，如果文件存在并拥有执行权限</p>
 </td>
 </tr>
 </tbody>
 </table>
 
-### Q:19 How to put comments in your shell script ? ###
+### Q:19 在shell脚本中，如何写入注释 ? ###
 
-Ans: Comments are the messages to yourself and for other users that describe what a script is supposed to do and how its works.To put comments in your script, start each comment line with a hash sign (#) . Example is shown below :
+答：注释可以用来描述一个脚本可以做什么和它是如何工作的。每一个注释以#开头。例子如下：
 
     #!/bin/bash
     # This is a command
     echo “I am logged in as $USER”
 
-### Q:20 How to get input from the terminal for shell script ? ###
+### Q:20 如何得到来自终端的命令输入到shell脚本? ###
 
-Ans: ‘read’ command reads in data from the terminal (using keyboard). The read command takes in whatever the user types and places the text into the variable you name. Example is shown below :
+答：read命令可以读取来自终端（使用键盘）的数据。read命令接入用户的输入并置于变量中。例子如下：
 
     # vi /tmp/test.sh
     
@@ -331,37 +330,48 @@ Ans: ‘read’ command reads in data from the terminal (using keyboard). The re
     LinuxTechi
     My Name is LinuxTechi
 
-### Q:21 How to unset or de-assign variables ? ###
+### Q:21 如何取消设置或取消变量 ? ###
 
-Ans: ‘unset’ command is used to de-assign or unset a variable. Syntax is shown below :
+答：“unset”命令用于去取消或取消设置一个变量。语法如下所示：
 
-    # unset <Name_of_Variable>
+    # unset <变量名>
 
-### Q:22 How to perform arithmetic operation ? ###
+### Q:22 如何执行算术运算 ? ###
 
-Ans: There are two ways to perform arithmetic operations :
+答：有两种方法来执行算术运算：
 
-1. Using `expr` command (# expr 5 + 2 )
-2. using a dollar sign and square brackets ( `$[ operation ]` ) Example : test=$[16 + 4] ; test=$[16 + 4]
+1.使用`expr`命令（# expr 5 + 2）
+2.用一个美元符号和方括号（`$[ 表达式 ]`）例如：test=$[16 + 4] ; test=$[16 + 4]
 
-### Q:23 Basic Syntax of do-while statement ? ###
+### Q:23 do-while语句的基本格式 ? ###
 
-Ans: The do-while statement is similar to the while statement but performs the statements before checking the condition statement. The following is the format for the do-while statement:
+答：do-while语句类似于while语句，但检查条件语句之前先执行命令。下面是用do-while语句的语法
 
     do
     {
-    statements
-    } while (condition)
+    命令
+    } while (条件)
 
-### Q:24 How to define functions in shell scripting ? ###
+### Q:24 在shell脚本如何定义函数呢 ? ###
 
-Ans: A function is simply a block of of code with a name. When we give a name to a block of code, we can then call that name in our script, and that block will be executed. Example is shown below :
+答：函数是拥有名字的代码块。当我们定义代码块，我们就可以在我们的脚本调用名字，该块就会被执行。示例如下所示：
 
     $ diskusage () { df -h ; }
 
-### Q:25 How to use bc (bash calculator) in a shell script ? ###
+    译注：下面是我给的shell函数语法，原文没有
 
-Ans: Use the below Syntax to use bc in shell script.
+    [ function ] 函数名 [()] 
+    { 
+
+      命令; 
+      [return int;] 
+
+    }
+
+
+### Q:25 如何在shell脚本中使用BC（bash计算器） ? ###
+
+答：使用下列格式，在shell脚本中使用bc
 
     variable=`echo “options; expression” | bc`
 
@@ -370,7 +380,7 @@ Ans: Use the below Syntax to use bc in shell script.
 via: http://www.linuxtechi.com/linux-shell-scripting-interview-questions-answers/
 
 作者：[Pradeep Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[VicYu/Vic020](http://vicyu.net)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
