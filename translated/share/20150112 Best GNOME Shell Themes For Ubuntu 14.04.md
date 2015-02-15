@@ -2,7 +2,7 @@ Ubuntu 14.04 上 最好的 GNOME Shell 主题
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/01/Best_Gnome_Shell_Themes.jpeg)
 
-自定义主题是自定义你的 Linux 桌面的最好方式。假如你在 [Ubuntu 14.04 中安装 GNOME][1] 或 在 Ubuntu 14.10 中安装了 GNOME，你或许想改变默认的主题以呈现出不同的外观。在这里，为帮助你完成该任务，我已经编制好了一个 **Ubuntu 或其他已经安装了 GNOME shell 的 Linux 操作系统中，最好的 GNOME Shell 主题** 的清单 。但在我们揭晓这份清单之前， 让我们先了解如何在 GNOME shell 中安装和应用新的主题。
+最好的方式来自定义你的 Linux 桌面就是使用自定义主题。假如你在 [Ubuntu 14.04 中安装 GNOME][1] 或 在 Ubuntu 14.10 中安装了 GNOME，你或许想改变默认的主题以呈现出不同的外观。在这里，为了帮助你完成该任务，我已经编制好了一个列表—— **Ubuntu 或其他已经安装了 GNOME shell 的 Linux 操作系统中，最好的 GNOME Shell 主题** 。但在我们揭晓这份列表之前， 让我们先了解如何在 GNOME shell 中安装和应用新的主题。
 
 ### 在 GNOME Shell 中安装主题 ###
 
@@ -12,7 +12,7 @@ Ubuntu 14.04 上 最好的 GNOME Shell 主题
 sudo apt-get install gnome-tweak-tool
 ```
 
-或者，你可以使用新主题通过把它们放置到 `~/.themes` 目录中。如果你需要，我已经写了一个关于 [如何安装和使用 GNOME shell][2]的具体教程。
+或者，你可以通过把主题放置到 `~/.themes` 目录中来使用。如果你需要，我已经写了一个关于 [如何安装和使用 GNOME shell][2]的具体教程。
 
 ### 最好的 GNOME Shell 主题 ###
 
@@ -22,7 +22,7 @@ sudo apt-get install gnome-tweak-tool
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/02/mockups_numix_5.jpeg)
 
-任何没有提到 [Numix 主题][3] 的清单都是不完整的。这个主题是如此地受欢迎以至于 [Numix 团队开发出一个新的 Linux 操作系统， Ozon][4]。考虑到他们的设计作品 Numix 主题，称在不久的将来发行的 `Ozon` 为 [最美丽的 Linux 操作系统][5] 也不为过。
+任何没有提到 [Numix 主题][3] 的列表都是不完整的。这个主题是如此地受欢迎以至于 [Numix 团队开发出一个新的 Linux 操作系统， Ozon][4]。考虑到他们的设计作品 Numix 主题，把不久将发行的 `Ozon` 称为 [最美丽的 Linux 操作系统][5] 也不为过。
 
 使用下面的命令，在基于 Ubuntu 的发行版本中安装 Numix 主题：
 
@@ -36,7 +36,7 @@ sudo apt-get install numix-icon-theme-circle
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/01/Elegance_Colors_Theme_GNOME_Shell.jpeg)
 
-另一个来自 Numix 团队的成员之一的 Satyajit Sahoo 的美丽主题 。[Elegance Colors][6] 拥有自己的 PPA (译者注： 即 Personal Package Archive 的缩写) 使得你可以轻易地安装它：
+另一个美丽主题来自 Numix 团队成员之一 Satyajit Sahoo。[Elegance Colors][6] 拥有自己的 PPA (译者注： 即 Personal Package Archive 的缩写) 使得你可以轻松安装它：
 
 ```
 sudo add-apt-repository ppa:satyajit-happy/themes
@@ -48,7 +48,7 @@ sudo apt-get install gnome-shell-theme-elegance-colors
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/01/Moka_GNOME_Shell.jpeg)
 
-[Moka][7] 是另一个迷人的主题，它总是位于美丽的主题的清单之中。它是由给我们带来 Unity Tweak Tool 的开发者所设计。 Moka 是你绝对要尝试的主题之一:
+[Moka][7] 是另一个迷人的主题，它总是位于美丽的主题列表之中。它是由 Unity Tweak Tool 的开发者所设计。 Moka 是你一定要尝试的主题:
 
 ```
 sudo add-apt-repository ppa:moka/stable
@@ -68,7 +68,7 @@ sudo apt-get install moka-gnome-shell-theme
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/01/Ciliora_Prima_Gnome_Shell.jpeg)
 
-以前它以 Zukitwo Dark 的名字为人们熟知， Ciliora-Prima 是一个拥有方块图标的主题，可得到的三种版本之间相互略有不同。你可以从下面的链接中下载它们：
+以前它以 Zukitwo Dark 的名字为人们熟知， Ciliora-Prima 是一个拥有方块图标的主题，可使用的三种版本之间彼此略有不同。你可以从下面的链接中下载它们：
 
 - [Download Ciliora-Prima GNOME Shell Theme][9]
 
@@ -76,7 +76,7 @@ sudo apt-get install moka-gnome-shell-theme
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/01/Faience_GNOME_Shell_Theme.jpeg)
 
-Faience 作为一个受欢迎的主题已经有一段时间了。你可以通过下面的 PPA 为 GNOME 3.10 及更高版本 安装 Faience：
+Faience 作为一个受欢迎的主题已经有一段时间了。你可以通过下面的 PPA 为 GNOME 3.10 及更高版本安装 Faience：
 
 ```
 sudo add-apt-repository ppa:tiheum/equinox
@@ -88,7 +88,7 @@ sudo apt-get install faience-theme
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/01/Paper_GTK_Theme.jpeg)
 
-自从 Google 提出 `Material Design`，人们一直为之疯狂。Paper GTK 主题受 Google Material design 启发， 作者为 Sam Hewitt( Moka 项目开发者之一)； 它正处于开发中，这意味着当前你将不能对 Paper 拥有最好的体验。假如你和我一样，具有一点实验精神，你绝对可以试一试。
+自从 Google 提出 `Material Design`，人们一直为之疯狂。Paper GTK 主题受 Google Material design 启发，作者为 Sam Hewitt( Moka 项目开发者之一)；它正处于开发中，这意味着当前你还不能拥有 Paper 的最好体验。假如你和我一样，具有一点实验精神，你绝对可以试一试。
 
 ```
 sudo add-apt-repository ppa:snwh/pulp
@@ -96,9 +96,9 @@ sudo apt-get update
 sudo apt-get install paper-gtk-theme
 ```
 
-以上就是我的清单。假如你正试着给你的 Ubuntu 换一个不同的模样，你也应该试试这个清单： [Ubuntu 14.04 中最好的图标主题][10]。
+以上就是我的列表。如果你正试着给你的 Ubuntu 换一个不同的模样，你也应该试试这个列表： [Ubuntu 14.04 中最好的图标主题][10]。
 
-你是怎样找到这份 **最好的 GNOME shell 主题** 清单的呢？在上面列举的主题中，哪个是你最中意的呢？ 如果它没有在这里列出，请一定让我们知道那个你心目中最好的 GNOME shell 主题 。
+你是怎样找到这份 **最好的 GNOME shell 主题** 列表的呢？在上面列举的主题中，哪个是你最中意的？ 如果它没有在这里列出，请一定在评论中告诉我们哪个是你心目中最好的 GNOME shell 主题 。
 
 --------------------------------------------------------------------------------
 
@@ -106,7 +106,7 @@ via: http://itsfoss.com/gnome-shell-themes-ubuntu-1404/
 
 作者：[Abhishek][a]
 译者：[FSSlc](https://github.com/FSSlc)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
