@@ -1,4 +1,6 @@
-CrunchBang Linux Is Dead!!!
+Translating----geekpi
+
+CrunchBang Linux 已死！！！
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/02/Crunchbang_Linux_Dead.jpeg)
 
