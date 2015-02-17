@@ -1,10 +1,10 @@
 Linux上从MySQL迁移到MariaDB的简单步骤
 ================================================================================
-大家好！这是一篇介绍如何在服务器或个人电脑上从MySQL迁移到MariaDB的教程。也许你会疑问为什么我们要将数据库管理从MySQL迁移到MariaDB。往下看我们告诉你这样做的原因。
+大家好！这是一篇介绍如何在服务器或个人电脑上从MySQL迁移到MariaDB的教程。也许你会问为什么我们要将数据库管理从MySQL迁移到MariaDB。往下看我们告诉你为什么这样做。
 
 ### 为什么要用MariaDB来代替MySQL ###
 
-MariaDB是MySQL社区开发的分支，也是一个增强型的替代品。它由MySQL前开发者们领衔组织的基金会开发，使用起来和MySQL完全一样。自从Oracle买下了MySQL，它就不再自由开源了，但是 **MariaDB仍然自由开源**。一些如谷歌、维基、LinkedIn、Mozilla等的顶级的网站已经迁移到MariaDB了。来看看它的优势有哪些：
+MariaDB是MySQL社区开发的分支，也是一个增强型的替代品。它由MySQL前开发者们带头组织的基金会开发，使用起来和MySQL完全一样。自从Oracle买下了MySQL，它就不再自由开源了，但是 **MariaDB仍然自由开源**。一些如谷歌、维基、LinkedIn、Mozilla等的顶级的网站已经迁移到MariaDB了。它的优势在哪里：
 
 - 向后兼容MySQL
 - 永远开源
@@ -87,15 +87,15 @@ dumping databases
 
 **注**：my.cnf文件将不会在你卸载MySQL包的时候被删除，我们这样做只是以防万一。在MariaDB安装时，它会询问我们是保持现存的my.cnf文件，还是使用包中自带的版本（即新my.cnf文件）。
 
-在shell或终端中输入如下命令来备份my.cnt文件。
+在shell或终端中输入如下命令来备份my.cnt文件：
 
     $ sudo cp /etc/mysql/my.cnf my.cnf.bak
 
-运行命令来终止mysql服务。
+运行命令来终止mysql服务：
 
     $ sudo /etc/init.d/mysql stop
 
-然后移除mysql包。
+然后移除mysql包：
 
     $ sudo apt-get remove mysql-server mysql-client
 
@@ -120,7 +120,7 @@ dumping databases
 
 ![my.conf configuration prompt](http://blog.linoxide.com/wp-content/uploads/2015/01/my.conf-configuration-prompt.png)
 
-我们应该还没忘记在MariaDB安装时，它会问你是使用现有的my.cnf文件，还是包中自带的版本。你可以使用以前的my.cnf也可以用包中自带的。即使你想直接使用新的my.cnf文件，你依然可以晚点将以前的备份内容还原进去（别忘了我们已经将它复制到安全的地方那个去了）。所以，我们直接选择了默认的选项“N”。如果需要安装其他版本，请参考[MariaDB官方仓库页面][2]。
+我们应该还没忘记在MariaDB安装时，它会问你是使用现有的my.cnf文件，还是包中自带的版本。你可以使用以前的my.cnf也可以用包中自带的。即使你想直接使用新的my.cnf文件，你依然可以晚点将以前的备份内容还原进去（别忘了我们已经将它复制到安全的地方那个去了）。所以，我们直接选择了默认的选项“N”。如果需要安装其他版本，请参考[MariaDB官方仓库][2]。
 
 ### 4. 恢复配置文件 ###
 
@@ -131,7 +131,6 @@ dumping databases
 ### 5. 导入数据库 ###
 
 最后，让我们把我们之前创建的数据库导入吧！运行一下命令即可完成导入。
-Finally, lets import the old databases that we created before. To do that, we'll need to run the following command.
 
     $ mysql -u root -p < backupdatabase.sql
 
