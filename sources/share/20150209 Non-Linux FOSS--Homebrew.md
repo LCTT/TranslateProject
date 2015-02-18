@@ -1,3 +1,5 @@
+Translating---geekpi
+
 Non-Linux FOSS: Homebrew
 ================================================================================
 I use OS X quite often during my day job. I'm able to tolerate it largely due to the terminal. If I couldn't do my work with green text on a black background, I think I'd go crazy (or crazier). Unfortunately, OS X doesn't come with all the command-line tools I need. That's where Homebrew comes in to save the day. 
