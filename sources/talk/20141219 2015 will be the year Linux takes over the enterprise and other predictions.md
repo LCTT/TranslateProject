@@ -1,5 +1,3 @@
-translating by barney-ro 
-
 2015 will be the year Linux takes over the enterprise (and other predictions)
 ================================================================================
 > Jack Wallen removes his rose-colored glasses and peers into the crystal ball to predict what 2015 has in store for Linux. 

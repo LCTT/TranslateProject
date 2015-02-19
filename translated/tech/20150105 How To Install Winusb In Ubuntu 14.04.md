@@ -1,16 +1,16 @@
-如何在Ubuntu 14.04 中安装Winusb
+如何在 Ubuntu 14.04 中安装 Winusb
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/01/WinUSB_Ubuntu_1404.jpeg)
 
-[WinUSB][1]是一款简单的且有用的工具，可以让你从Windows ISO镜像或者DVD中创建USB安装盘。它结合了GUI和命令行，你可以根据你的喜好决定使用哪种。
+[WinUSB][1]是一款即简单又有用的工具，可以让你从 Windows ISO 镜像或者 DVD 中创建 USB 安装盘。它结合了 GUI 和命令行，你可以根据你的喜好决定使用哪种。
 
-在本篇中我们会展示**如何在Ubuntu 14.04、14.10 和 Linux Mint 17 中安装WinUSB**。
+在本文中我们会展示**如何在 Ubuntu 14.04、14.10 和 Linux Mint 17 中安装 WinUSB**。
 
-### 在Ubuntu 14.04、14.10 和 Linux Mint 17 中安装WinUSB ###
+### 在 Ubuntu 14.04、14.10 和 Linux Mint 17 中安装 WinUSB ###
 
-直到Ubuntu 13.10, WinUSBu一直都在积极开发，且在官方PPA中可以找到。这个PPA还没有为Ubuntu 14.04 和14.10更新，但是二进制文件仍旧可在更新版本的Ubuntu和Linux Mint中运行。基于[基于你使用的系统是32位还是64位的][2]，使用下面的命令来下载二进制文件：
+在 Ubuntu 13.10 之前, WinUSBu 一直都在积极开发，且在官方 PPA 中可以找到。这个 PPA 还没有为 Ubuntu 14.04 和 14.10 更新，但是二进制文件仍旧可在更新版本的 Ubuntu 和 Linux Mint 中运行。基于[你使用的系统是32位还是64位][2]，使用下面的命令来下载二进制文件：
 
-打开终端，并在32位的系统下使用下面的命令：
+打开终端，32位的系统下使用下面的命令：
 
     wget https://launchpad.net/~colingille/+archive/freshlight/+files/winusb_1.0.11+saucy1_i386.deb
 
@@ -22,15 +22,15 @@
 
     sudo dpkg -i winusb*
 
-不要担心在你安装WinUSB时看见错误。使用这条命令修复依赖：
+不要担心在你安装WinUSB时看到错误。使用这条命令修复依赖错误：
 
     sudo apt-get -f install
 
-之后，你就可以在Unity Dash中查找WinUSB并且用它在Ubuntu 14.04 中创建Windows的live USB了。
+之后，你就可以在 Unity Dash 中查找 WinUSB 并且用它在 Ubuntu 14.04 中创建 Windows 的 live USB 了。
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/01/WinUSB_Ubuntu.png)
 
-我希望这篇文章能够帮到你**在Ubuntu 14.04、14.10 和 Linux Mint 17 中安装WinUSB**。
+我希望这篇文章能够帮到你**在 Ubuntu 14.04、14.10 和 Linux Mint 17 中安装 WinUSB**。
 
 --------------------------------------------------------------------------------
 
@@ -38,7 +38,7 @@ via: http://itsfoss.com/install-winusb-in-ubuntu-14-04/
 
 作者：[Abhishek][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

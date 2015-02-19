@@ -1,24 +1,26 @@
 添加Ubuntu 14.10，Ubuntu 14.04和Debian 7到RHEL/CentOS 7的PXE网络启动环境
 ================================================================================
 本教程将指引你添加**Ubuntu 14.10 Server, Ubuntu 14.04 Server**和**Debian 7 Wheezy**发行版到**RHEL/CentOS 7**的PXE网络启动环境中。
+
 ![Add Ubuntu and Debian to PXE Network](http://www.tecmint.com/wp-content/uploads/2014/11/Add-Ubuntu-and-Debian-to-PXE.png)
-添加Ubuntu和Debian到PXE网络
+
+*添加Ubuntu和Debian到PXE网络*
 
 虽然对于本教程，我只会演示怎样来添加**64位**网络安装镜像，但对于Ubuntu或者Debian的**32位**系统，或者其它架构的镜像，操作步骤也基本相同。同时，就我而言，我会解释添加Ubuntu 32位源的方法，但不会演示配置。
 
 从PXE服务器安装 **Ubuntu**或者**Debian**要求你的客户机必须激活网络连接，最好是使用**DHCP**通过**NAT**来进行动态分配地址。以便安装器拉取所需的包并完成安装过程。
 
-#### 需求 ####
+#### 前置阅读 ####
 
 - [在RHEL/CentOS 7中为多种Linux发行版安装PXE网络启动服务器][1]
 
 ## 步骤 1： 添加Ubuntu 14.10和Ubuntu 14.04服务器到PXE菜单 ##
 
-**1.** 为**Ubuntu 14.10**和**Ubuntu 14.04**添加网络安装源到PXE菜单可以通过两种方式实现：其一是通过下载Ubuntu CD ISO镜像并挂载到PXE服务器机器上以便可以读取Ubuntu网络启动文件，其二是通过直接下载Ubuntu网络启动归档包并将其解压缩到系统中。下面，我将进一步讨论这两种方法：
+**1.** 要将**Ubuntu 14.10**和**Ubuntu 14.04**添加网络安装源到PXE菜单可以通过两种方式实现：其一是通过下载Ubuntu CD ISO镜像并挂载到PXE服务器机器上，以便可以读取Ubuntu网络启动文件，其二是通过直接下载Ubuntu网络启动归档包并将其解压缩到系统中。下面，我将进一步讨论这两种方法：
 
 ### 使用Ubuntu 14.10和Ubuntu 14.04 CD ISO镜像 ###
 
-为了能使用此方法，你的PXE服务器需要有一台可工作的CD/DVD驱动器。在一台专有计算机上，转到[Ubuntu 14.10下载][2]和[Ubuntu 14.04 下载][3]页，获取64位**服务器安装镜像**，将它烧录到CD，并将CD镜像放到PXE服务器DVD/CD驱动器，然后使用以下命令挂载到系统。
+为了能使用此方法，你的PXE服务器需要有一台可工作的CD/DVD驱动器（LCTT 译注：也可以不用，参考下面内容）。在一台专用的计算机上，转到[Ubuntu 14.10下载][2]和[Ubuntu 14.04 下载][3]页，获取64位**服务器安装镜像**，将它烧录到CD，并将CD镜像放到PXE服务器DVD/CD驱动器，然后使用以下命令挂载到系统。
  
     # mount /dev/cdrom  /mnt
 
@@ -160,16 +162,20 @@
 下面是**Ubuntu 14.04**PXE客户端安装测试的截图。
 
 ![Select Ubuntu from PXE Menu](http://www.tecmint.com/wp-content/uploads/2014/11/Select-Ubuntu-from-PXE-Menu.jpg)
-从PXE菜单选择Ubuntu
+
+*从PXE菜单选择Ubuntu*
 
 ![Choose Ubuntu Installation Language](http://www.tecmint.com/wp-content/uploads/2014/11/Select-Ubuntu-Installation-Language.jpg)
-选择Ubuntu安装语言
+
+*选择Ubuntu安装语言*
 
 ![Choose Ubuntu Rescue Mode](http://www.tecmint.com/wp-content/uploads/2014/11/Select-Ubuntu-Rescue-Mode.jpg)
-选择Ubuntu救援模式
+
+*选择Ubuntu救援模式*
 
 ![Ubuntu Rescue Mode Shell](http://www.tecmint.com/wp-content/uploads/2014/11/Ubuntu-Rescue-Mode-Shell.jpg)
-Ubuntu救援模式Shell
+
+*Ubuntu救援模式Shell*
 
 ## 步骤 2： 添加Debian 7 Wheezy到PXE菜单 ##
 
@@ -184,7 +190,8 @@ Ubuntu救援模式Shell
     # wget  http://ftp.nl.debian.org/debian/dists/wheezy/main/installer-amd64/current/images/netboot/netboot.tar.gz
 
 ![Download Debain 7 Netboot](http://www.tecmint.com/wp-content/uploads/2014/11/Download-Debain-7-Netboot.jpg)
-下载Debian 7网络启动包
+
+*下载Debian 7网络启动包*
 
 **6.** 在**wget**下载完成**netboot.tar.gz**文件后，请将其解压缩并运行以下命令拷贝**debian-installer**目录到tftp服务器默认路径。
 
@@ -192,10 +199,12 @@ Ubuntu救援模式Shell
     # cp -rf debian-installer/ /var/lib/tftpboot/
 
 ![Extract Debain 7 Netboot](http://www.tecmint.com/wp-content/uploads/2014/11/Extract-Debain-7-Netboot.jpg)
-解压缩Debian 7网络启动包
+
+*解压缩Debian 7网络启动包*
 
 ![Copy Debain 7 Netboot to FTP](http://www.tecmint.com/wp-content/uploads/2014/11/Copy-Debain-7-Netboot-to-FTP.jpg)
-拷贝Debian 7网络启动文件到FTP
+
+*拷贝Debian 7网络启动文件到FTP*
 
 **7.** 要添加**Debian Wheezy**标签到**PXE菜单**，请用你最喜爱的文本编辑器打开PXE服务器默认配置文件并添加以下标签。
 
@@ -214,7 +223,8 @@ Debian Wheezy 64位的PXE标签菜单。
            append auto=true priority=critical vga=788 initrd=debian-installer/amd64/initrd.gz -- quiet
 
 ![Add Debian to PXE Boot](http://www.tecmint.com/wp-content/uploads/2014/11/Add-Debian-to-PXE-Boot.jpg)
-添加Debian到PXE启动
+
+*添加Debian到PXE启动*
 
 **注**：如果你想要添加其它Debian架构，请重复上述步骤，并相应替换PXE默认菜单配置文件中的标签号和**debian-installer/$architecture_name/**目录。
 
@@ -225,10 +235,12 @@ Debian Wheezy 64位的PXE标签菜单。
 **9.** 然后通过网络启动一台客户机，选择从PXE菜单安装Debian，并像正常安装一样进一步下去。
 
 ![Select Install Debian from PXE](http://www.tecmint.com/wp-content/uploads/2014/11/Select-Install-Debian-from-PXE.jpg)
-选择从PXE安装Debian
+
+*选择从PXE安装Debian*
 
 ![Select Debian Install Language](http://www.tecmint.com/wp-content/uploads/2014/11/Select-Debian-Install-Language.jpg)
-选择Debian安装语言
+
+*选择Debian安装语言*
 
 以上是要求添加并从RHEL/CentOS 7 PXE服务器安装**Ubuntu**或**Debian**到客户机上的全部步骤。在我的下一篇文章中，我将讨论一种更为复杂的方法，如何使用RHEL/CentOS 7 PXE网络启动服务器来安装**Windows 7**到客户机。
 
@@ -243,7 +255,7 @@ via: http://www.tecmint.com/add-ubuntu-to-pxe-network-boot/
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://www.tecmint.com/author/cezarmatei/
-[1]:http://www.tecmint.com/install-pxe-network-boot-server-in-centos-7/
+[1]:http://linux.cn/article-4902-1.html
 [2]:http://releases.ubuntu.com/14.10/
 [3]:http://releases.ubuntu.com/14.04/
 [4]:http://cdimage.ubuntu.com/netboot/14.10/
