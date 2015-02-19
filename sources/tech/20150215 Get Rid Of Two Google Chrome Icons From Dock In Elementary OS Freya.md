@@ -1,3 +1,5 @@
+Translating---geekpi
+
 Get Rid Of Two Google Chrome Icons From Dock In Elementary OS Freya [Quick Tip]
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/02/Two_Google_Chrome_ElementaryOS_Freya.jpeg)
