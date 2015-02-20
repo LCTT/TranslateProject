@@ -1,3 +1,5 @@
+Translating---geekpi
+
 Cutegram: A Better Telegram Client For GNU/Linux
 ================================================================================
 No need for a introduction to **Telegram**, right? Telegram is a popular free Instant messenger application that can be used to chat with your friends all over the world. Unlike Whatsapp, Telegram is free forever, no ads, no subscription fees. And, the Telegram client is open source too. Telegram is available for many different platforms, including Linux, Android, iOS, Windows Phone, Windows, and Mac OS X. The messages which are sending using telegram are highly encrypted and self-destructive. It is very secure, and there is no limit on the size of your media and chats.
