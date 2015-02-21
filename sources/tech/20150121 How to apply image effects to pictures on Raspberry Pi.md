@@ -1,3 +1,4 @@
+Translating by coloka
 How to apply image effects to pictures on Raspberry Pi
 ================================================================================
 Like a common pocket camera which has a built-in function to add various effects on captured photos, [Raspberry Pi camera board][1] ("raspi cam") can actually do the same. With the help of raspistill camera control options, we can add the image effects function like we have in a pocket camera.
