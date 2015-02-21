@@ -1,3 +1,5 @@
+translating by martin.
+
 How to share files between computers over network with btsync
 ================================================================================
 If you are the type of person who uses several devices to work online, I'm sure you must be using, or at least wishing to use, a method for syncing files and directories among those devices.
