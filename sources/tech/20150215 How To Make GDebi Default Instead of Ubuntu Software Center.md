@@ -1,3 +1,5 @@
+Translating by FSSlc
+
 How To Make GDebi Default Instead of Ubuntu Software Center
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/02/Make_GDebi_Default.jpeg)
