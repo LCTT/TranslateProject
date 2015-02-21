@@ -1,6 +1,6 @@
 Ubuntu上的一个开源VoIP应用——Mumble
 ================================================================================
-Mumble是一个免费开源的VoIP应用，遵守New BSD License，主要面向的用户群体是玩家。运行起来类似于TeamSpeak和Ventrilo，用户通过连接到同一个服务器来实现相互通讯。
+Mumble是一个自由开源的VoIP应用，遵守New BSD License，主要面向的用户群体是玩家。运行起来类似于TeamSpeak和Ventrilo，用户通过连接到同一个服务器来实现相互通讯。
 
 Mumble提供了如下的一些特性:
 
