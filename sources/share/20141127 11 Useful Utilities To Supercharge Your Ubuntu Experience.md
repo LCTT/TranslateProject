@@ -1,3 +1,5 @@
+Translating by FSSlc
+
 11 Useful Utilities To Supercharge Your Ubuntu Experience
 ================================================================================
 **Whether you’re a relative novice or a seasoned pro, we all want to get the most from our operating system. Ubuntu, like most modern OSes, has more to offer than what is presented at first blush.**
