@@ -1,3 +1,5 @@
+Translating----geekpi
+
 How to Hide PHP Version in Linux
 ================================================================================
 In general, most of the web server software has been installed with default settings that will lead to information leakage. One of them is a PHP software. PHP (Hypertest Preprocessor) is one of the most popular server-side HTML embedded scripting language for the websites today. In the current challenging times, there are lots of attacker will try to discover the weaknesses in your your server system. Hence, i will describe the simple way to hide the PHP information in Linux server.
