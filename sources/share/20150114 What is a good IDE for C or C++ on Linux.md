@@ -18,7 +18,7 @@ Linux上有哪些比较好的C/C++ IDE？
 
 ![](https://farm9.staticflickr.com/8573/16088461968_c6a6c9e49a_c.jpg)
 
-用With a lot less features but a lot more flexibility, [Geany][6] is at the opposite of Eclipse. But what it lacks (like a debugger for example), Geany makes it up with nice little features: a space for note taking, creation from template, code outline, customizable shortcuts, and plugins management. Geany is still closer to an extensive text editor than an IDE here. However I keep it in the list for its lightness and its well designed interface.
+牺牲了很多特色功能但是增加了很多灵活性，[Geany][6] is at the opposite of Eclipse. But what it lacks (like a debugger for example), Geany makes it up with nice little features: a space for note taking, creation from template, code outline, customizable shortcuts, and plugins management. Geany is still closer to an extensive text editor than an IDE here. However I keep it in the list for its lightness and its well designed interface.
 
 ### 4. MonoDevelop ###
 
