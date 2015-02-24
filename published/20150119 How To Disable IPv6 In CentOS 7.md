@@ -1,6 +1,6 @@
 如何在CentOS 7中禁止IPv6
 ================================================================================
-最近，我的一位朋友问我该如何禁止IPv6。在搜索了一番之后，我找到了下面的方案。下面就是我在CentOS 7迷你版中禁止IPv6的方法。
+最近，我的一位朋友问我该如何禁止IPv6。在搜索了一番之后，我找到了下面的方案。下面就是在我的CentOS 7 迷你服务器禁止IPv6的方法。
 
 你可以用两个方法做到这个。
 
@@ -41,7 +41,6 @@
 
 ### 我在禁止IPv6后遇到问题怎么办 ###
 
-You may get problems after disabling IPv6.
 你可能在禁止IPv6后遇到一些问题
 
 #### 问题1： ####
@@ -60,9 +59,7 @@ vi /etc/ssh/sshd_config
 
     AddressFamily inet
 
-或者，
-
-在这行的前面去掉注释**(#)**：
+或者，在这行的前面去掉注释**(#)**：
 
     #ListenAddress 0.0.0.0
 
@@ -89,7 +86,7 @@ via: http://www.unixmen.com/disable-ipv6-centos-7/
 
 作者：[SK][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
