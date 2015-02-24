@@ -4,7 +4,7 @@
 
 [在Ubuntu中安装Mate桌面][1]是一码事但是你或许想要知道如何**配置Mate桌面**？ 大多数桌面环境都有它们自己的调整工具。比如Unity有Unity Tweak，Gnome有Gnome Tweak，Elementary OS有 Elementary OS Teweak。好消息是Mate桌面也有它自己的调整工具，叫Mate Tweak][2]。
 
-Mate Tweak是[mintDesktop][3]的克隆分支，一款Linux Mint的配置工具。
+Mate Tweak是[mintDesktop][3]的克隆分支，那是一款Linux Mint的配置工具。
 
 ### 安装Mate Tweak来配置Mate桌面 ###
 
@@ -22,7 +22,7 @@ via: http://itsfoss.com/configure-mate-desktop-mate-tweak/
 
 作者：[Abhishek][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

@@ -2,7 +2,7 @@ Linux 有问必答： 如何在Linux中加入cron任务
 ================================================================================
 > **提问**： 我想在我的Linux中安排一个计划任务，该任务在固定时间周期性地运行。我该如何在Linux中添加一个cron任务？
 
-cron是Linux中默认的计划任务。使用cron，你可以安排一个计划（比如：命令或者shell脚本）周期性地运行或者在指定的小时、天、周、月等特定时间运行。cron在你安排不同的常规维护任务时是很有用的，比如周期性地备份、日志循环、检查文件系统、监测磁盘空间等等。
+cron是Linux中默认的计划任务。使用cron，你可以安排一个计划（比如：命令或者shell脚本）周期性地运行或者在指定的分钟、小时、天、周、月等特定时间运行。cron在你安排不同的常规维护任务时是很有用的，比如周期性地备份、日志循环、检查文件系统、监测磁盘空间等等。
 
 ### 从命令行中添加cron任务 ###
 
@@ -22,7 +22,7 @@ cron是Linux中默认的计划任务。使用cron，你可以安排一个计划�
 
 每个cron任务的格式如下。
 
-    <minute> <hour> <day-of-month> <month-of-year> <day-of-week> <command>
+    <分钟> <小时> <日> <月> <星期> <命令>
 
 前5个元素定义了任务的计划，最后一个元素是命令或者脚本的完整路径。
 
@@ -30,13 +30,13 @@ cron是Linux中默认的计划任务。使用cron，你可以安排一个计划�
 
 下面是一些cron任务示例。
 
-- *** * * * * /home/dan/bin/script.sh**: 每分钟运行。
+- **\* * * * * /home/dan/bin/script.sh**: 每分钟运行。
 - **0 * * * * /home/dan/bin/script.sh**: 每小时运行。
-- **0 0 * * * /home/dan/bin/script.sh**: 每12小时运行。
+- **0 0 * * * /home/dan/bin/script.sh**: 每天零点运行。
 - **0 9,18 * * * /home/dan/bin/script.sh**: 在每天的9AM和6PM运行。
 - **0 9-18 * * * /home/dan/bin/script.sh**: 在9AM到6PM的每个小时运行。
 - **0 9-18 * * 1-5 /home/dan/bin/script.sh**: 周一到周五的9AM到6PM每小时运行。
-- ***/10 * * * * /home/dan/bin/script.sh**: 每10分钟运行。
+- **\*/10 * * * * /home/dan/bin/script.sh**: 每10分钟运行。
 
 一旦完成上面的设置步骤后，按下Ctrl+X来保存并退出编辑器。此时，新增的计划任务应该已经激活了。
 
@@ -61,6 +61,6 @@ cron是Linux中默认的计划任务。使用cron，你可以安排一个计划�
 via: http://ask.xmodulo.com/add-cron-job-linux.html
 
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

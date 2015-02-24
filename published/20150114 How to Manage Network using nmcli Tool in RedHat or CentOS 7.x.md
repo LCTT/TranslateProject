@@ -10,7 +10,7 @@ nmcli的通常语法是：
 
     # nmcli [ OPTIONS ] OBJECT { COMMAND | help }
 
-一件很酷的事情是你可以使用tab键来补全操作，这样你在何时忘记了语法你都可以用tab来看到可用的选项了。
+一件很酷的事情是你可以使用tab键来补全操作，这样你在何时忘记了语法你都可以按下tab来看到可用的选项了。
 
 ![nmcli tab](http://blog.linoxide.com/wp-content/uploads/2014/12/nmcli-tab.jpg)
 
@@ -46,33 +46,33 @@ nmcli通常用法的一些例子：
 
     # nmcli device connect eno16777736
 
-### 使用静态IP添加一个以太网连接 ###
+### 添加一个使用静态IP的以太网连接 ###
 
 要用静态IP添加一个以太网连接可以使用下面的命令：
 
-    # nmcli connection add type ethernet con-name NAME_OF_CONNECTION ifname interface-name ip4 IP_ADDRESS gw4 GW_ADDRESS
+    # nmcli connection add type ethernet con-name NAME_OF_CONNECTION ifname INTERFACE-NAME ip4 IP_ADDRESS gw4 GW_ADDRESS
 
-将NAME_OF_CONNECTION替换成新的连接名，IP_ADDRESS替换成你要的IP地址，GW_ADDRESS替换成你使用的网关地址（如果你并不使用网关，你可以忽略这部分）。
+将NAME_OF_CONNECTION替换成新的连接名（LCTT 译注：这个名字以后可以用来对其操作，可以使用任何简单明了的名称），INTERFACE-NAME 替换成你的接口名，IP_ADDRESS替换成你要的IP地址，GW_ADDRESS替换成你使用的网关地址（如果你并不使用网关，你可以忽略这部分）。
 
-    # nmcli connection add type ethernet con-name NEW ifname eno16777736 ip4 192.168.1.141 gw4 192.168.1.1
+    # nmcli connection add type ethernet con-name NEW_STATIC ifname eno16777736 ip4 192.168.1.141 gw4 192.168.1.1
 
-=要设置这个连接的DNS服务器使用下面的命令：
+要设置这个连接所使用的DNS服务器使用下面的命令：
 
-    # nmcli connection modify NEW ipv4.dns "8.8.8.8 8.8.4.4"
+    # nmcli connection modify NEW_STATIC ipv4.dns "8.8.8.8 8.8.4.4"
 
 要启用新的以太网连接，使用下面的命令：
 
-    # nmcli connection up NEW ifname eno16777736
+    # nmcli connection up NEW_STATIC ifname eno16777736
 
 要查看新配置连接的详细信息，使用下面的命令：
 
-    # nmcli -p connection show NEW
+    # nmcli -p connection show NEW_STATIC
 
 ![nmcli add static](http://blog.linoxide.com/wp-content/uploads/2014/12/nmcli-add-static.jpg)
 
 ### 添加一个使用DHCP的连接 ###
 
-如果你想要添加一个使用DHCP来配置接口IP地址、网关地址和dns服务器地址的新的连接，你要做的就是忽略命令中的ip/gw部分，NetworkManager会自动使用DHCP来获取配置细节。
+如果你想要添加一个使用DHCP来配置接口IP地址、网关地址和dns服务器地址的新的连接，你要做的就是忽略上述命令中的ip/gw部分，NetworkManager会自动使用DHCP来获取配置细节。
 
 比如，要创建一个新的叫NEW_DHCP的DHCP连接，在设备eno16777736上你可以使用下面的命令：
 
@@ -84,7 +84,7 @@ via: http://linoxide.com/linux-command/nmcli-tool-red-hat-centos-7/
 
 作者：[Adrian Dinu][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
