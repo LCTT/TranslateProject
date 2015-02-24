@@ -65,7 +65,7 @@
 
     vi /etc/sysconfig/iptables
 
-加入红色显示的行：
+加入如下行“-A INPUT -p tcp -m state --state NEW --dport 23 -j ACCEPT”：
 
     # Firewall configuration written by system-config-firewall
     # Manual customization of this file is not recommended.
@@ -151,7 +151,7 @@ via: http://www.unixmen.com/installing-telnet-centosrhelscientific-linux-6-7/
 
 作者：[SK][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
