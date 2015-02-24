@@ -54,8 +54,6 @@ Btsync带有一个内置的网络服务器被用作其管理接口。想要使�
 
 ![](https://farm9.staticflickr.com/8599/15895277793_da63841433_b.jpg)
 
-![](Feel free to check the README file in /usr/local/bin/btsync directory if you want to tweak the configuration further, but this will do for now.)
-
 ### 第一次运行btsync ###
 
 作为一个系统的最高执行者我们需要依赖日志文件！所以在我们启动btsync之前，我们将先为btsync创建一个日志文件。
