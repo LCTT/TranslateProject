@@ -1,3 +1,5 @@
+Translating----geekpi
+
 Linux FAQs with Answers--How to fix “fatal error: lame/lame.h: No such file or directory” on Linux
 ================================================================================
 > **Question**: I am trying to compile video encoder software on Linux, but the compilation fails with a message saying "fatal error: lame/lame.h: No such file or directory." How can I fix this error? 
