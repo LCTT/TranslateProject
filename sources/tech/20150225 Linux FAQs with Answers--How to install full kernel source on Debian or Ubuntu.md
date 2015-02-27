@@ -1,3 +1,5 @@
+translating by martin.
+
 Linux FAQs with Answers--How to install full kernel source on Debian or Ubuntu
 ================================================================================
 > **Question**: I need to download and install a full kernel source tree to compile a custom kernel for my Debian or Ubuntu system. What is a proper way to download full kernel source on Debian or Ubuntu? 
