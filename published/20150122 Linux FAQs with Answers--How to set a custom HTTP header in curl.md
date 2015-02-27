@@ -6,7 +6,7 @@ curl是一个强大的命令行工具，它可以通过网络将信息传递给�
 
 ![](https://farm8.staticflickr.com/7568/16225032086_fb8f1c508a_b.jpg)
 
-在一些个例中，或许你想要在一个HTTP请求中覆盖掉默认的HTTP头或者添加一个新的自定义头部字段。例如，你或许想要重写“HOST”字段来测试一个[负载均衡][1]，或者通过重写"User-Agent"字符串来欺骗特定浏览器以解决其访问限制的问题。
+在一些个例中，或许你想要在一个HTTP请求中覆盖掉默认的HTTP头或者添加一个新的自定义头部字段。例如，你或许想要重写“HOST”字段来测试一个[负载均衡][1]，或者通过重写"User-Agent"字符串来假冒特定浏览器以解决一些访问限制的问题。
 
 为了解决所有这些问题，curl提供了一个简单的方法来完全控制传出HTTP请求的HTTP头。你需要的这个参数是“-H” 或者 “--header”。
 
@@ -36,7 +36,7 @@ wget是另外一个类似于curl，可以用来获取URL的命令行工具。并
 via: http://ask.xmodulo.com/custom-http-header-curl.html
 
 译者：[Ping](http://mr-ping.com)  
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
