@@ -18,13 +18,13 @@ Linux上有哪些比较好的C/C++ IDE？
 
 ![](https://farm9.staticflickr.com/8573/16088461968_c6a6c9e49a_c.jpg)
 
-牺牲了很多特色功能但是增加了很多灵活性，[Geany][6]就是这样一款与Eclipse对立的软件。但是对于它所缺乏的地方（比如说没有调试器）, Geany用一些漂亮小巧的特色功能弥补了它们:一个可以做笔记的区域、模板a space for note taking, creation from template, code outline, customizable shortcuts, and plugins management. Geany is still closer to an extensive text editor than an IDE here. However I keep it in the list for its lightness and its well designed interface.
+牺牲了很多特色功能但是增加了很多灵活性，[Geany][6]就是这样一款与Eclipse对立的软件。但是对于它所缺乏的地方（比如说没有调试器）, Geany用一些漂亮小巧的特色功能弥补了它们:一个可以做笔记的区域、基于模板创作、代码大纲、自定义快捷键和插件管理。相比于现在的IDE，Geany仍然是一款作用广泛的文本编辑器，然而，因为它的功能亮点和它的界面设计，所以我把它放在这份列表里。
 
 ### 4. MonoDevelop ###
 
 ![](https://farm8.staticflickr.com/7515/16275175052_61487480ce_c.jpg)
 
-Another monster to add to the list, [MonoDevelop][7] has a very unique feel derived from its look and interface. I personally love its project management and its integrated version control system. The plugin system is also pretty amazing. But for some reason, all the options and the support for all kind of programming languages make it feel a bit overwhelming to me. It remains a great tool that I used many times in the past, but just not my number one when dealing with "simplistic" C. 
+这又是这份列表里的一个“巨人级”工具，[MonoDevelop][7]那无与伦比的体验来源于它的外表和界面。我个人非常喜爱它的项目管理和它的一体化版本控制系统。The plugin system is also pretty amazing. But for some reason, all the options and the support for all kind of programming languages make it feel a bit overwhelming to me. It remains a great tool that I used many times in the past, but just not my number one when dealing with "simplistic" C. 
 
 ### 5. Anjuta ###
 
