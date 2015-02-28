@@ -1,3 +1,4 @@
+johnhoow translating...
 How to Install Lightweight Budgie ( v8) Desktop in Ubuntu 14.04
 ================================================================================
 Budgie is the flagship desktop of the Evolve OS Linux Distribution, and is an Evolve OS project. Designed with the modern user in mind, it focuses on simplicity and elegance. A huge advantage for the Budgie desktop is that it is not a fork of another project, but rather one written from scratch with integration in mind.

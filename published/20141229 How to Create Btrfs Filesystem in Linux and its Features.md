@@ -28,7 +28,7 @@ Btrfs文件系统在Linux中的创建及其特性
 
 ### 转换到Btrfs ###
 
-**警告：在尝试转换文件系统前，请务必备份数据。虽然此操作很稳定，也很安全，但它仍然可能导致数据丢失，而防止此情况发生的唯一途径就是进行数据备份。**
+**警告：在尝试转换文件系统前，请务必备份数据！虽然此操作很稳定，也很安全，但它仍然可能导致数据丢失，而防止此情况发生的唯一途径就是进行数据备份。**
 
 将现存的ext4文件系统转换到btrfs是相当简单而易懂的。你首先需要使用fsck来检查你现存分区上是否存在错误，然后使用btrfs-convert命令进行转换。如果你想要对/dev/sda3分区进行转换，你可以进行以下操作：
 
@@ -41,7 +41,7 @@ Btrfs文件系统在Linux中的创建及其特性
 
 ### 转换根分区 ###
 
-如果你想要对你系统上的根分区进行转换，你首先需要使用Live CD启动。对于Ubuntu，你可以使用Ubuntu安装CD来完成此操作，在启动后第一个屏幕选择“尝试Ubuntu”。对于其它系统，你同样可以使用Live CD镜像，操作类似。
+如果你想要对你系统上的根分区进行转换，你首先需要使用Live CD启动。对于Ubuntu，你可以使用Ubuntu安装盘来完成此操作，在启动后第一个屏幕选择“尝试Ubuntu”。对于其它系统，你同样可以使用Live CD镜像，操作类似。
 
 在启动后，打开终端，使用下面的命令来转换文件系统。
 
@@ -57,7 +57,7 @@ Btrfs文件系统在Linux中的创建及其特性
 
 ![btrfs-root-convert](http://blog.linoxide.com/wp-content/uploads/2014/11/btrfs-root-convert.jpg)
 
-现在来编辑fstab，并根据blkid输出的结果来修改当前/文件系统的UUID，并将它的文件系统类型修改为btrfs，修改后的行如下：
+现在来编辑fstab，并根据blkid输出的结果来修改当前“/”文件系统的UUID，并将它的文件系统类型修改为btrfs，修改后的行如下：
 
     UUID=8e7e80aa-337e-4179-966d-d60128bd3714 / btrfs defaults 0 1
 
@@ -74,7 +74,7 @@ via: http://linoxide.com/file-system/create-btrfs-features/
 
 作者：[Adrian Dinu][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
