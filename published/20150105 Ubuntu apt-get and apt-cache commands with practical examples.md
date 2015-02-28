@@ -1,6 +1,6 @@
-实例展示Ubuntu中apt-get和apt-cache命令的使用
+apt-get 和 apt-cache 命令实例展示
 ================================================================================
-apt-get和apt-cache是**Ubuntu Linux**中的命令行下的**包管理**工具。 apt-get的GUI版本是Synaptic包管理器，本篇中我们会讨论apt-get和apt-cache命令的不同。
+apt-get和apt-cache是**Ubuntu Linux**中的命令行下的**包管理**工具。 apt-get的GUI版本是Synaptic包管理器。本篇中我们会展示apt-get和apt-cache命令的15个不同例子。
 
 ### 示例：1 列出所有可用包 ###
 
@@ -16,7 +16,7 @@ apt-get和apt-cache是**Ubuntu Linux**中的命令行下的**包管理**工具�
 
 ### 示例：2 用关键字搜索包 ###
 
-这个命令在你不确定包名时很有用，只要在apt-cache（这里原文是apt-get，应为笔误）后面输入与包相关的关键字即可/
+这个命令在你不确定包名时很有用，只要在apt-cache（LCTT 译注：这里原文是apt-get，应为笔误）后面输入与包相关的关键字即可。
 
     linuxtechi@localhost:~$ apt-cache search "web server"
     apache2 - Apache HTTP Server
@@ -37,7 +37,7 @@ apt-get和apt-cache是**Ubuntu Linux**中的命令行下的**包管理**工具�
     pnp4nagios-bin: /etc/pnp4nagios/nagios.cfg
     pnp4nagios-bin: /usr/share/doc/pnp4nagios/examples/nagios.cfg
 
-### 示例:3 显示特定包的基本信息 ###
+### 示例：3 显示特定包的基本信息 ###
 
     linuxtechi@localhost:~$ apt-cache show postfix
     Package: postfix
@@ -92,7 +92,7 @@ apt-get和apt-cache是**Ubuntu Linux**中的命令行下的**包管理**工具�
 
 ### 示例：6 使用 “apt-get update” 更新仓库 ###
 
-使用命令“apt-get update”, 我们可以重新从源仓库中同步文件索引。包的索引从“/etc/apt/sources.list”中检索
+使用命令“apt-get update”, 我们可以重新从源仓库中同步文件索引。包的索引从“/etc/apt/sources.list”中检索。
 
     linuxtechi@localhost:~$ sudo apt-get update
      Ign http://extras.ubuntu.com utopic InRelease
@@ -106,7 +106,7 @@ apt-get和apt-cache是**Ubuntu Linux**中的命令行下的**包管理**工具�
      Ign http://in.archive.ubuntu.com utopic-backports InRelease
      ................................................................
 
-### 示例:7 使用apt-get安装包 ###
+### 示例：7 使用apt-get安装包 ###
 
     linuxtechi@localhost:~$ sudo apt-get install icinga
 
@@ -140,15 +140,15 @@ apt-get和apt-cache是**Ubuntu Linux**中的命令行下的**包管理**工具�
     Get:1 http://in.archive.ubuntu.com/ubuntu/ utopic/universe icinga amd64 1.11.6-1build1 [1,474 B]
     Fetched 1,474 B in 1s (1,363 B/s)
 
-上面的目录会从你当前的目录下载icinga包。
+上面的目录会把icinga包下载到你的当前工作目录。
 
 ### 示例：12 清理本地包占用的磁盘空间 ###
 
     linuxtechi@localhost:~$ sudo apt-get clean
 
-上面的命令会清零apt-get在下载包时占用的磁盘空间。
+上面的命令会清空apt-get所下载的包占用的磁盘空间。
 
-我们也可以使用“**autoclean**”选项来代替“**clean**“，两者之间主要的区别是autoclean清理不再使用且没用的下载。
+我们也可以使用“**autoclean**”选项来代替“**clean**”，两者之间主要的区别是autoclean清理不再使用且没用的下载。
 
     linuxtechi@localhost:~$ sudo apt-get autoclean
     Reading package lists... Done
@@ -167,9 +167,9 @@ apt-get和apt-cache是**Ubuntu Linux**中的命令行下的**包管理**工具�
     Get:1 Changelog for apache2 (http://changelogs.ubuntu.com/changelogs/pool/main/a/apache2/apache2_2.4.10-1ubuntu1/changelog) [195 kB]
     Fetched 195 kB in 3s (60.9 kB/s)
 
-上面的命令会下载apache2的更新日志，并在你屏幕上显示。
+上面的命令会下载apache2的更新日志，并在你屏幕上分页显示。
 
-### 示例15 使用 “check” 选项显示损坏的依赖 ###
+### 示例：15 使用 “check” 选项显示损坏的依赖关系 ###
 
     linuxtechi@localhost:~$ sudo apt-get check
     Reading package lists... Done
@@ -182,7 +182,7 @@ via: http://www.linuxtechi.com/ubuntu-apt-get-apt-cache-commands-examples/
 
 作者：[Pradeep Kumar][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
