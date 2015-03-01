@@ -1,3 +1,5 @@
+FSSlc translating
+
 How to back up a Debian system using backupninja
 ================================================================================
 Prudence or experience by disaster can teach every [sysadmin][1] the importance of taking frequent system backups. You can do so by writing good old shell scripts, or using one (or more) of the many backup tools available for the job. Thus the more tools you become acquainted with, the better informed decisions you will make when implementing a backup solution.
