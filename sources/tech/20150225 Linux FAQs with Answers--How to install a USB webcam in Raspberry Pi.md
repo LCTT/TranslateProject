@@ -1,3 +1,5 @@
+Translating----geekpi
+
 Linux FAQs with Answers--How to install a USB webcam in Raspberry Pi
 ================================================================================
 > **Question**: Can I use a standard USB-based webcam on Raspberry Pi? How can I check if my USB webcam is compatible with Raspberry Pi, and how can I install it on Raspberry Pi? 
