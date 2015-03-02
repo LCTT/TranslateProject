@@ -1,64 +1,62 @@
-FSSlc translating
-
-How to back up a Debian system using backupninja
+如何使用 backupninja 来备份一个 Debian 系统
 ================================================================================
-Prudence or experience by disaster can teach every [sysadmin][1] the importance of taking frequent system backups. You can do so by writing good old shell scripts, or using one (or more) of the many backup tools available for the job. Thus the more tools you become acquainted with, the better informed decisions you will make when implementing a backup solution.
+面临灾难时的小心谨慎或体验可以教会每一个系统管理采取频繁的系统备份的重要性。你可以通过编写存在已久的管用的 shell 脚本，或使用一个(或多个) 适合这项工作的备份工具来完成备份任务。因此，当你要实施一个备份解决方案时，你了解的备份工具越多，你做出的决策就会越明智。
 
-In this article we will present [backupninja][2], a lightweight and easy-to-configure system backup tool. With the help of programs like **rdiff-backup**, **duplicity**, **mysqlhotcopy** and **mysqldump**, Backupninja offers common backup features such as remote, secure and incremental file system backups, encrypted backup, and MySQL/MariaDB database backup. You can selectively enable status email reports, and can back up general hardware and system information as well. One key strength of backupninja is a built-in console-based wizard (called **ninjahelper**) that allows you to easily create configuration files for various backup scenarios.
+在这篇文章中，我们将为你介绍 [backupninja][2] ，一个轻量且易于配置的系统备份工具。在诸如 **rdiff-backup**, **duplicity**, **mysqlhotcopy** 和 **mysqldump** 等程序的帮助下， Backupninja 可以提供常用的备份功能，如执行远程的、安全的和增量式的文件系统备份，加密备份以及 MySQL/MariaDB 数据库备份。你可以选择性地开启使用 email 进行状态报告功能，也可以对一般的硬件和系统的信息进行备份。 backupninja 的一个关键功能是它拥有一个内建的基于控制台的向导程序(被称为 **ninjahelper**)，而后者允许你为不同的备份情景轻松地创建配置文件。
 
-The downside, so to speak, is that backupninja requires other "helper" programs to be installed in order to take full advantage of all its features. While backupninja's RPM package is available for Red Hat-based distributions, backupninja's dependencies are optimized for Debian and its derivatives. Thus it is not recommended to try backupninja for Red Hat based systems.
+如果非要说的话，backupninja 的缺点是：为了充分使用其所有的功能，它要求一些其他“助手”程序已经被安装在了计算机中。尽管 backupninja 有针对基于 Red Hat(红帽) 的发行版本的 RPM 安装包，但 backupninja 针对 Debian 和它的衍生发行版本的依赖进行了优化。所以不建议在基于 Red Hat 的系统上尝试 backupninja 。
 
-In this tutorial, we will cover the backupninja installation for Debian-based distributions.
+在这篇教程中，我们将介绍如何在基于 Debian 的发行版本上安装 backupninja 。
 
-### Installing Backupninja ###
-
-Run the following command as root: 
+### 安装 Backupninja ###
+ 
+以 root 账户来运行下面的命令：
 
     # aptitude install backupninja 
 
-During installation, several files and directories will be created:
+在安装的过程中，有几个文件和目录将被创建：
 
-- **/usr/sbin/backupninja** is the main bash shell script.
-- **/etc/cron.d/backupninja**, by default, instructs cron to run the main script once per hour.
-- **/etc/logrotate.d/backupninja** rotates the logs created by the program.
-- **/etc/backup.d/** is the directory where the configuration files for backup actions reside.
-- **/etc/backupninja.conf** is the main configuration file that includes general options. It is well commented and explains each option in detail.
-- **/usr/share/backupninja** is the directory where the scripts used by backupninja are located (aka "handlers"). These are the scripts which are in charge of doing the actual work. In this directory you will also find .helper files, which are used to configure and set up ninjahelper menus.
-- **/usr/share/doc/backupninja/examples** contains templates for action configuration files (the kind of files that are created through ninjahelper). 
+- **/usr/sbin/backupninja** 是 bash shell 主脚本；
+- **/etc/cron.d/backupninja**， 默认情况下,构建 cron 任务来每隔一个小时运行上面的主脚本；
+- **/etc/logrotate.d/backupninja** 处理由 backupninja 程序产生的日志；(注：我不知道这里的 rotate 该如何翻译)
+- **/etc/backup.d/** 是备份操作的配置文件驻留的目录；
+- **/etc/backupninja.conf** 是包含一般选项的主配置文件。这个文件带有良好的注释且详细解释了每个选项的含义；
+- **/usr/share/backupninja** 是那些被 backupninja 使用的脚本所处的目录。这些脚本文件负责执行实际的工作。在这个目录中，你还可以找到 `.helper` 文件，它们可以被用来配置和设定 ninjahelper 的菜单；
+- **/usr/share/doc/backupninja/examples** 含有操作配置文件(即通过 ninjahelper 产生的文件)的模板。
 
-### Running Ninjahelper for the First Time ###
+### 首次运行 Ninjahelper ###
 
-When we try to launch ninjahelper, we can see that an internal dependency may be required. If prompted, enter "yes" and press the ENTER key to install dialog (a tool that displays user-friendly dialog boxes from shell scripts).
+当我们尝试启动 ninjahelper 时，我们可以看到一个内部依赖可能会被需要。假如系统进行了提示，请输入 “yes” 并敲下回车键来安装 dialog(一个用于从 shell 脚本中显示友好对话框的工具)。
 
 ![](https://farm8.staticflickr.com/7537/15700597667_6618fbc142_z.jpg)
 
-When you press Enter after typing yes, backupninja will install dialog and present the following screen once it's done.
+当你在键入 yes 后再敲回车键时，backupninja 将会安装 dialog，一旦安装完成，将呈现出下面的截屏：
 
 ![](https://farm8.staticflickr.com/7469/15884374871_29f1c9acf1_z.jpg)
 
-#### Example 1: Back up Hardware and System Info ####
+#### 案例 1: 备份硬件和系统信息 ####
 
-After launching ninjahelper, we will create a new backup action:
+在启动了 ninjahelper 之后，我们将创建一个新的备份操作：
 
 ![](https://farm9.staticflickr.com/8637/15885715132_eb3156678e_z.jpg)
 
-If necessary helper programs are not installed, we will be presented with the following screens. Disregard this step if these packages have already been installed on your system.
+如果必要的助手程序没有被安装，下面的截屏将会呈现在我们眼前。假如这些软件包已经在你的系统上安装了，请跳过这一步。
 
 ![](https://farm8.staticflickr.com/7508/15700315139_4c6117ef32_z.jpg)
 
-The next step consists of selecting the items that you want to be a part of this backup. The first four are selected by default, but you can deselect them by pressing the spacebar.
+接下来的一步需要你选取相关条目来作为此次备份任务的一部分。前四个条目已经默认被选上了，但你可以通过按空格键来撤消选择。
 
 ![](https://farm8.staticflickr.com/7507/15699051870_65abaf52e5_z.jpg)
 
-Once you are done, press OK to continue. You will be able to choose whether you want to use the default configuration file for this backup action (/etc/backup.d/10.sys), or if you want to create a new one. In the latter case, a new file with the same contents as the default one will be created under the same directory but named 11.sys, and so on for future system backup actions. Note that you can edit the configuration file once it's created with your preferred text editor. 
+一旦你完成了上面的步骤，按 OK 选项来继续。接着你将能够选择 是愿意使用默认的配置文件(/etc/backup.d/10.sys)来完成这次备份操作，还是创建一个新的配置文件。若为后者，一个含有与默认配置文件内容相同的文件将会在相同的目录下被创建，但它被命名为 11.sys，后续的备份操作将会创建类似的文件(注：只不过命名的序号不同)。需要说明的是一旦这个新的配置文件被创建，你便可以使用你喜爱的文本编辑器来编辑该文件。
 
 ![](https://farm9.staticflickr.com/8654/15885715072_1e6126e929_o.png)
 
-#### Example 2: Incremental Rsync Pull Backup of a Remote Directory ####
+#### 案例 2: 一个远程目录的增量式 Rsync 拉取备份 ####
 
-As you most likely know, rsync is widely used to synchronize files and folders over a network. In the following example we will discuss an approach to take incremental pull backups of a remote directory with hardlinking to save historical data and store them in our local file server. This approach will help us save space and increase security on the server side.
+正如你最有可能知道的那样， rsync 被广泛地用于通过网络同步文件或文件夹。在接下来的例子中，我们将讨论一个使用硬链接来为一个远程目录做增量式拉取备份的方法，它被用来保存历史数据以及在我们本地的文件服务器中恢复这些历史数据。这个方法将帮助我们节省空间并增强位于服务器端的安全性。
 
-**Step 1**: Write a custom script in the /etc/backup.d directory with the following contents and chmod it to 600. Note that this directory may contain, besides plain configuration files, scripts that you want to run when backupninja is executed, with the advantage of using variables present in the main configuration file.
+**步骤 1**：编写一个位于 `/etc/backup.d`的带有如下内容的自定义脚本，并将它的权限设置为 600 。需要说明的是，除了一般的配置文件，这个目录可能还包含当 backupninja 被执行时你想运行的一些脚本文件，它们可以发挥出位于主配置文件中的变量的优势。
 
     # REMOTE USER
     user=root
@@ -74,36 +72,35 @@ As you most likely know, rsync is widely used to synchronize files and folders o
     # RSYNC
     rsync -av --delete --recursive --link-dest=$localdirold $user@$host:$remotedir $localdir
 
-In the above configuration, the '--link-dest' option of rsync is use to hardlink unchanged files (in all attributes) from $localdir-old to the destination directory ($localdir).
+在上面的配置中， rsync 的 ‘--link-dest’ 选项的作用是为位于 $localdir-old 目录中那些没有改变的文件(包含所有属性) 硬链接到目标目录 ($localdir)。
 
-**Step 2**: Before backupninja is run for the first time, the parent directory (/home/gacanepa in this case) is empty. The first time we execute:
+**步骤 2**：在 backupninja 第一次运行之前，上层目录(这个例子中指的是 /home/gacanepa) 是空的。第一次我们执行下面的命令：
 
     # backupninja -n 
 
-the backup.0 directory is created, and later in the process its name is changed to backup.1.
+backup.0 目录就被创建了，并在接下来的过程中，它的名称将会被更改为 backup.1。
 
-The second time we run backupninja, backup.0 is re-created and backup.1 is kept.
+当我们第二次运行 backupninja 时， backup.0 将会被重新创建，而 backup.1 被保留。
 
 ![](https://farm8.staticflickr.com/7581/15700597497_0e0cd89ab9.jpg)
 
-**Step 3**: Verify that the contents of backup.1 are hard links to the files in backup.0 by comparing the respective inode numbers and directory sizes.
+**步骤 3**： 确保 backup.1 里面的文件硬链接到 backup.0 里的文件，我们可以通过比较文件的 inode( i 节点) 数和目录的大小来达到此目的。
 
 ![](https://farm9.staticflickr.com/8636/15700315029_e922ce771b.jpg)
 
-### Conclusion ###
+### 总结 ###
 
-Backupninja is not only a classic backup tool, but also an easy-to-configure utility. You can write your own handlers to run backupninja as per the individual configuration files located in /etc/backup.d, and you can even write helpers for ninjahelper in order to include them in its main interface.
+Backupninja 不仅是一个经典的备份工具，它也是一个易于配置的实用程序。你可以通过编写你自己的 handler(注：我不知道该如何翻译 handler 这个单词) 来运行 backupninja 并将它们作为位于 `/etc.backup.d` 的个人配置文件。甚至你还可以为 ninjahelper 编写助手程序，以达到将它们包括在 ninjahelper 的主界面上。
 
-For example, if you create a handler named xmodulo in /usr/share/backupninja, it will run by default every file with the .xmodulo extension in /etc/backup.d. If you decide you want to add your xmodulo handler to ninjahelper, you can write the corresponding helper as xmodulo.helper. In addition, if you want backupninja to run an arbitrary script, just add it to /etc/backup.d and you are good to go.
+例如，假如你在 `/usr/share/backupninja`目录中创建了一个名为 modulo 的 handler，它将自动运行那些位于 `/etc/backup.d` 目录中以 .xmodulo 为后缀的每个文件。如果你决定添加你的 xmodulo handler 到 ninjahelper 中， 你可以编写相应的助手程序，即 xmodulo.helper 。另外，假如你想 让 backupninja 运行任意一个脚本，只需把它添加到 `/etc/backup.d` 目录中，这样你的目的便可以达到了。
 
-Feel free to leave your comments, questions, or suggestions, using the form below. we will be more than glad to hear from you.
-
+欢迎使用下面的评论框来留下你的评论、问题或建议。听到你的回应将会使我们很高兴。
 --------------------------------------------------------------------------------
 
 via: http://xmodulo.com/backup-debian-system-backupninja.html
 
 作者：[Gabriel Cánepa][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[FSSlc](https://github.com/FSSlc)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
