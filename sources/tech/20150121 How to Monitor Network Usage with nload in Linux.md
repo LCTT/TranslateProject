@@ -1,3 +1,4 @@
+theo-l translating
 How to Monitor Network Usage with nload in Linux
 ================================================================================
 nload is a free linux utility that can help the linux user or sysadmin to monitor network traffic and bandwidth usage in real time by providing two simple graphs: one per incoming traffic and one for outgoing traffic.
