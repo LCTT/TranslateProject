@@ -1,9 +1,14 @@
 theo-l translating
 How to Monitor Network Usage with nload in Linux
+在linux中如何通过nload来监控网络使用情况
 ================================================================================
 nload is a free linux utility that can help the linux user or sysadmin to monitor network traffic and bandwidth usage in real time by providing two simple graphs: one per incoming traffic and one for outgoing traffic.
+nload 是一个免费的linux工具,通过提供两个简单的图形化界面来帮助linux用户和系统管理员来实时监控网络流量以及宽带使用情况:一个作为进入流量,一个作为流出流量.
 
 I really like to use **nload** to display information on my screen about the current download speed, the total incoming traffic, and the average download speed. The graphs reported by nload tool are very easy to interpret and what is the most important thing they are very helpful.
+
+
+
 
 According to the manual pages it monitors all network devices by default, but you can easily specify the device you want to monitor and also switch between different network devices using the arrow keys. There are many options avaliable such as -t to determine refresh interval of the display in milliseconds (the default value of interval is 500), -m to show multiple devices at the same time(traffic graphs are not shown when this option is used), -u to set the type of unit used for the display of traffic numbers and many others that we are going to explore and practise in this tutorial.
 
