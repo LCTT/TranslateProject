@@ -1,3 +1,4 @@
+Translating By H-mudcup
 CD Audio Grabbers - Graphical Based
 ================================================================================
 CD audio grabbers are designed to extract ("rip") the raw digital audio (in a format commonly called CDDA) from a compact disc to a file or other output. This type of software enables a user to encode the digital audio into a variety of formats, and download and upload disc info from freedb, an internet compact disc database.
