@@ -1,62 +1,61 @@
-Translating----geekpi
-
-How To Fix “Not Enough Free Disk Space On /boot” In Ubuntu
+如何在Ubuntu上修复“Not Enough Free Disk Space On /boot”
 ================================================================================
-### Question: How To Fix “Not Enough Free Disk Space On /boot” In Ubuntu? ###
+### 提问:如何在Ubuntu上修复“Not Enough Free Disk Space On /boot”错误？###
 
-Today, I got the following error, but a simple one, when try to update my Lubuntu 14.04 desktop.
+今天，当我在升级Lubuntu 14.04的时候遇到了下面这个错误，但是很简单。
 
 > “Not Enough Free Disk Space On /boot”
 
 ![](https://www.unixmen.com/wp-content/uploads/2015/02/Software-Updater_002.png)
 
-This is because my /boot partition has caught up with unwanted old kernels, packages etc.
+这是因为我的启动分区超出了不再要的旧内核与包等。
 
-### Answer: ###
+### 回答: ###
 
-I heard about **Computer Janitor** feature which will remove unwanted old junk files in Ubuntu Tweak tool. Using the Computer Janitor, you can clean up your system like a freshly installed system. Janitor will remove;
+我听说**Computer Janitor**这个特性可以在Ubuntu Tweak中删除不想要的垃圾文件。使用Computer Janitor，你可以将你的系统清理成像新安装的那样。Janitor会删除:
 
-- Apps cache(Firefox/Chrome cache, Software center cache);
-- Thumbnail cache;
-- Apt cache;
-- Old kernels;
-- Package configs;
-- And unneeded packages.
+- 程序缓存(Firefox/Chrome 缓存、软件中心缓存);
+- 略缩图缓存;
+- apt缓存;
+- 旧内核;
+- 包的配置;
+- 不再需要的包。
 
 If you haven’t install this tool, look at the following link.
+如果你还没有安装这个工具，参考下面的链接
 
-- **[How To Install And Use Ubuntu Tweak On Ubuntu][1]** 
+- **[如何安装和使用Ubuntu Tweak][1]** 
 
-To remove unwanted junk files, open Ubuntu Tweak, and click on the **Janitor** option.
+要删除不需要的垃圾文件，打开Ubuntu Tweak，点击 **Janitor** 选项。
 
 ![](https://www.unixmen.com/wp-content/uploads/2015/02/Ubuntu-Tweak_006.png)
 
-Select the check the boxes to remove unwanted junk from your system, and click **Clean** button.
+选择你想要删除的文件的选框，并点击 **Clean** 按钮。
 
 ![](https://www.unixmen.com/wp-content/uploads/2015/02/Ubuntu-Tweak_007.png)
 
-Janitor will now start to clean up your system
+Janitor现在就开始清理你的系统了。
 
 ![](https://www.unixmen.com/wp-content/uploads/2015/02/Ubuntu-Tweak_003.png)
 
-Cool! The system is clean now.
+真酷！系统清理完成了。
 
 ![](https://www.unixmen.com/wp-content/uploads/2015/02/Ubuntu-Tweak_008.png)
 
-Again I re-launched the software updater. This time it went smoothly without any issues.
+我重启启动了软件更新。这个没再遇到问题了。
 
 ![](https://www.unixmen.com/wp-content/uploads/2015/02/Software-Updater_009.png)
 
-That’s all. Enjoy. There are others ways also available to clean up the system. But, this seems very easy to follow. We can do system clean up in few mouse clicks.
+就是这样。当然也有其他的方法可以清理系统。但是，这个方法很容易学。我们可以只点击几次鼠标就可以清理系统。
 
-Cheers!
+干杯！
 
 --------------------------------------------------------------------------------
 
 via: https://www.unixmen.com/how-to-fix-not-enough-free-disk-space-on-boot-in-ubuntu/
 
 作者：[SK][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
