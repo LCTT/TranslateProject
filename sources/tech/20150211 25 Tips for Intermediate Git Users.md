@@ -1,3 +1,4 @@
+zpl1025
 25 Tips for Intermediate Git Users
 ================================================================================
 I’ve been using git for about 18 months now and thought I knew it pretty well. Then we had [Scott Chacon][1] from GitHub over to do some training at [LVS, a supplier/developer of betting/gaming software][2] (where contracted until 2013) and I learnt a ton in the first day.
