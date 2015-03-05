@@ -30,13 +30,13 @@ Linux上有哪些比较好的C/C++ IDE？
 
 ![](https://farm8.staticflickr.com/7514/16088462018_7ee6e5b433_c.jpg)
 
-它身上有着强烈的“GNOME感”，[Anjuta][8]的外观很具争议。我倾向于把它看作是带着调试器的Geany升级版，但是它的界面实际上要复杂得多。我确实很享受能在项目、文件夹和代码大纲视图之间来回切换的标签系统，我本想用诸如更多的快捷键来移动文件，然而，这是一个很好的提供了显著编译功能和构建选项的工具，它能够支持哪些很有特点的需求。
+它身上有着强烈的“GNOME感”，[Anjuta][8]的外观很具争议。我倾向于把它看作是带着调试器的Geany升级版，但是它的界面实际上要复杂得多。我确实很享受能在项目、文件夹和代码大纲视图之间来回切换的标签系统，我本想用诸如更多的快捷方法来移动文件，然而，这是一个很好的提供了显著编译功能和构建选项的工具，它能够支持哪些很有特点的需求。
 
 ### 6. Komodo Edit ###
 
 ![](https://farm8.staticflickr.com/7502/16088462028_81d1114c84_c.jpg)
 
-I was not very familiar with [Komodo Edit][9], but after trying it a few days, it surprised me with many many good things. First, the tab-based navigation is always appreciable. Then the fancy looking code outline reminds me a lot of Sublime Text. Furthermore, the macro system and the file comparator make Komodo Edit very practical. Its plugin library makes it almost perfect. "Almost" because I do not find the shortcuts as nice as in other IDEs. Also, I would enjoy more specific C/C++ tools, and this is typically the flaw of general IDEs. Yet, very enjoyable software.
+我不是非常熟悉[Komodo Edit][9]，但是在试用了一段时间之后，我被它很多很多的优点给惊喜到了。首先，基于标签的导航功能很有很强的可预见性。其次它奇特的代码大纲让我想到了Sublime Text。此外，它的宏系统和文件比较器使得Komodo Edit非常实用。它的插件库让它几乎是完美的，说“几乎”是因为在其它IDE里我的确找不到能与之相媲美的快捷方法了。而且我们能享受到更多特别的C/C++工具，这往往是普通IDE的不足之处。然而，Komodo Edit就能做到。
 
 ### 7. NetBeans ###
 
@@ -56,7 +56,7 @@ For all KDE fans out there, [KDevelop][11] might be the answer to your prayers. 
 
 Finally, last for not least, [CodeLite][12] shows that you can take a traditional formula and still get something with its own feeling attached to it. If the interface really reminded me of Code::Blocks and Anjuta at first, I was just blown away by the extensive plugin library. Whether you want to diff a file, insert a copyright block, define an abbreviation, or push your work on Git, there is a plugin for you. If I had to nitpick, I would say that it lacks a few navigation shortcuts for my taste, but that's really it. 
 
-最后，我希望这份清单that this list had you discover new IDEs for coding in your favorite language. While Code::Blocks remains my favorite, it has some serious challengers. Also we are far from covering all the ways to code in C/C++ using an IDE on Linux. So if you have another one to propose, let us know in the comments. Also if you would like me to cover IDEs for a different language next, also let us know in the comment section.
+最后，我希望这份清单能让你给自己最喜欢的语言探索到更多新的IDE。虽然Code::Blocks仍然是我的最爱，不过它有一些很强大的对手。当然我们也可以远离Linux上的IDE用文本编辑器去编写C/C++代码。所以如果你有什么其它的建议想法，在评论中让我们获悉。或者如果你想要我再说说关于一些其它语言的IDE，也可以评论里提出。
 
 --------------------------------------------------------------------------------
 
