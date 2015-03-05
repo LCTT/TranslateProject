@@ -1,3 +1,5 @@
+translating by martin.
+
 How to Setup Passwordless SSH Logon to Ubuntu 14.04
 ================================================================================
 Hi all, today we'll gonna learn how we can setup Passwordless SSH Logon to Ubuntu 14.04 "Trusty". Only the workstations having the correct matching key pair (private and public) will be allowed to logon to the SSH server, without the key paring, access will not be allowed.
