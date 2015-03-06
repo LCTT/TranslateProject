@@ -1,3 +1,4 @@
+theo-l translating 
 Linux FAQs with Answers--How to use yum to download a RPM package without installing it
 ================================================================================
 > **Question**: I want to download a RPM package from Red Hat's standard repositories. Can I use yum command to download a RPM package without installing it?
