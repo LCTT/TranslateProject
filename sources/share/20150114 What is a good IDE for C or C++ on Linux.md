@@ -42,13 +42,13 @@ Linux上有哪些比较好的C/C++ IDE？
 
 ![](https://farm8.staticflickr.com/7569/16089881229_98beb0fce3_c.jpg)
 
-Just like Eclipse, impossible to avoid this beast. With navigation via tabs, project management, code outline, change history tracking, and a plethora of tools, [NetBeans][10] might be the most complete IDE out there. I could list for half a page all of its amazing features. But that will tip you off too easily about its main disadvantage, it might be too big. As great as it is, I prefer plugin based software because I doubt that anyone will need both Git and Mercurial integration for the same project. Call me crazy. But if you have the patience to master all of its options, you will be pretty much become the master of IDEs everywhere.
+就好像Eclipse一样，这又是一款不得不提的“巨人级”软件。拥有的功能包括通过标签进行导航、项目管理、代码大纲、更改历史追踪和大量工具，[NetBeans][10]可能是最完整的IDE了，我能用半页来列出它所有让人震惊的特色功能。但是这同时也很容易地向你透露了它的主要缺点，它太臃肿了。比起它的强大，我更喜欢基于插件的软件因为我觉得不太会有人为了一个同样的项目同时需要Git和Mercurial相结合来工作，我是不是很疯狂。但是如果你有耐心去掌握它所有的选项，那你差不多无论到哪里都是IDE大师了。
 
 ### 8. KDevelop ###
 
 ![](https://farm8.staticflickr.com/7519/15653583824_e412f2ab1f_c.jpg)
 
-For all KDE fans out there, [KDevelop][11] might be the answer to your prayers. With a lot of configuration options, KDevelop is yours if you manage to seize it. Call me superficial but I never really got past the interface. But it's too bad for me as the editor itself packs quite a punch with a lot of navigation options and customizable shortcuts. The debugger is also very advanced and will take a bit of practice to master. However, this patience will be rewarded with this very flexible IDE's full power. And it gets special credits for its amazing embedded documentation.
+说到这，肯定照顾到所有的KDE粉丝，[KDevelop][11]会是你希望的答案。它拥有许多配置选项，如果你设法去征服KDevelop，那它就是你的。你们说我肤浅，但是我真的从来没有深入过它界面以外的层次了。But it's too bad for me as the editor itself packs quite a punch with a lot of navigation options and customizable shortcuts. 它的调试器也是相当高级，要去练习掌握。然而，这样的耐心是有回报的，就是能领会到这款灵活的IDE的全部能力。And it gets special credits for its amazing embedded documentation.
 
 ### 9. CodeLite ###
 
