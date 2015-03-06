@@ -1,44 +1,42 @@
-Translating---geekpi
-
-Linux Basics: How To Fix “E: /var/cache/apt/archives/ subprocess new pre-removal script returned error exit status 1″ In Ubuntu
+Linux 基础：如何修复Ubuntu上“E: /var/cache/apt/archives/ subprocess new pre-removal script returned error exit status 1 ”的错误
 ================================================================================
 ![](https://1102047360.rsc.cdn77.org/wp-content/uploads/2014/04/ubuntu-790x558.png)
 
-Today, I got a problem while updating VirtualBox to the latest version.
+今天，我在更新VirtualBox新版本的时候遇到了一个问题。
 
 > E: /var/cache/apt/archives/ subprocess new pre-removal script returned error exit status 1
 
 ![](https://www.unixmen.com/wp-content/uploads/2015/03/Update-Manager_0011.png)
 
-### Solution: ###
+### 解决： ###
 
-I googled a bit and found the solution. Here is what I did to solve the problem.
+我google了以下并找到了方法。下面是我解决的方法。
 
     sudo apt-get clean
     sudo apt-get update && sudo apt-get upgrade
 
-This will almost fix the problem.
+这样几乎可以修复这个问题了。
 
-If you still end up with the same error, then try the following commands:
+如果你仍然有问题，那就试试下面的命令：
 
     sudo dpkg --configure -a
     sudo apt-get -f install
 
-Or, you can manually download the latest version from [Oracle VirtualBox][1] site and install it as shown below.
+或者你可以按照下面的方法从[Oracle VirtualBox][1]官网下载最新版本并安装。
 
     sudo apt-get update 
     sudo dpkg -i virtualbox-4.3_4.3.24-98716~Ubuntu~raring_amd64.deb 
     sudo apt-get -f install
     sudo apt-get autoclean && sudo apt-get autoremove
 
-Cheers!
+干杯！
 
 --------------------------------------------------------------------------------
 
 via: https://www.unixmen.com/linux-basics-how-to-fix-e-varcacheaptarchives-subprocess-new-pre-removal-script-returned-error-exit-status-1-in-ubuntu/
 
 作者：[SK][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
