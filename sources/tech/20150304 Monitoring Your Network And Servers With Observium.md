@@ -1,23 +1,32 @@
 theo-l Translating
 
 Monitoring Your Network And Servers With Observium
+使用Observium来监控你的网络和服务器
 ================================================================================
 ### Introduction ###
+### 简介###
 
 You have a problem while monitoring your servers, switches or physical machines. **Observium** fits your need. As a free monitoring system, it helps you to monitor your servers remotely. It is an auto-discovering SNMP based network monitoring platform written in PHP which includes support for a wide range of network hardware and operating systems including Cisco, Windows, Linux, HP, NetApp and many other. I will give you the steps to follow while setting up an **Observium** server on Ubuntu 12.04.
+在监控你的服务器,交换机或者物理机器时有过问题吗?, **Observium**可以满足你的需求.作为一个免费的监控系统,可以帮助你远程监控你的服务器.它是一个由PHP编写的基于自动发现SNMP的网络监控平台,支持非常广泛的网络硬件和操作系统,包括 Cisco,Windows,Linux,HP,NetApp等.在此我会通过在Ubuntu12.04上设置一个**Observium**服务器的同时提供相应的步骤.
 
 ![](https://www.unixmen.com/wp-content/uploads/2015/03/Capture1.png)
 
 Currently there are two different versions of **observium**. 
+目前存在两种不同的**observium**版本.
 
 - The observium Community is a free tool and licensed under the QPL Open Source license. This version is the best solution for small deployments. It gets security updates each 6 months.
+- Observium 社区版本是一个在QPL开源许可证下的免费工具,这个版本时对于较小部署的最好解决方案. 该版本每6个月得到一次安全性更新.
 - While the second version, the Observium Professional is distributed under SVN based release mechanism. And it gets daily security updates. This tool is the best for Service Provider and enterprises deployments.
+- 第2个版本是Observium Professional, 该版本在基于SVN的发布机制下的发行版. 会得到每日安全性更新. 该工具适用于服务提供商和企业级部署.
 
 For more information you can visit the offcial [website of Observium][1].
+更多信息可以通过其官网获得[website of Observium][1].
 
 ### System Requirements ###
+### 系统需求###
 
 In order to install **Observium** , it’s necessary to have a server with a fresh installation. The development of **Observium** takes place on Ubuntu LTS and Debian systems, so it’s recommended to install **Observium** on Ubuntu or Debian because may be issues with other platforms.
+为了安装 **Observium**, 
 
 This article will guide you on how to install **Observium** on Ubuntu 12.04. For a  small **Observium** installation is recommended to use 256MB for the memory and dual core for the process.
 
