@@ -1,3 +1,5 @@
+translating by martin.
+
 Nmap—Not Just for Evil!
 ================================================================================
 If SSH is the Swiss Army knife of the system administration world, Nmap is a box of dynamite. It's really easy to misuse dynamite and blow your foot off, but it's also a very powerful tool that can do jobs that are impossible without it. 
