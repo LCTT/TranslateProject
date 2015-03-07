@@ -1,3 +1,5 @@
+theo-l translating
+
 9 Best IDEs and Code Editors for JavaScript Users
 ================================================================================
 Web designing and developing is one of the trending sectors in the recent times, where more and more peoples started to search for their career opportunities. But, Getting the right opportunity as a web developer or graphic designer is not just a piece of cake for everyone, It certainly requires a strong mind presence as well as right skills to find the find the right job. There are a lot of websites available today which can help you to get the right job description according to your knowledge. But still if you want to achieve something in this sector you must have some excellent skills like working with different platforms, IDEs and various other tools too.
