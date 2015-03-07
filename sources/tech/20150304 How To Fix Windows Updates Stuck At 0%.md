@@ -1,3 +1,5 @@
+translating-----geekpi
+
 How To Fix Windows Updates Stuck At 0%
 ================================================================================
 How do you feel when you log in to Windows after a month, find there are updates to install, you select to install these updates and those **Windows updates stuck at zero percent**?
