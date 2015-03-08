@@ -1,4 +1,4 @@
-Translating-------geekpi
+Translating
 
 Linux Basics: How To Find Maximum Supported RAM By Your System
 ================================================================================

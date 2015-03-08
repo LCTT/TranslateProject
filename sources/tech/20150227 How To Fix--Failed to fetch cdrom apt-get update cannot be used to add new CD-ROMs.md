@@ -1,3 +1,5 @@
+Translating----geekpi
+
 How To Fix: Failed to fetch cdrom apt-get update cannot be used to add new CD-ROMs
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/12/elementary_OS_Freya.jpg)
