@@ -1,3 +1,5 @@
+Translating-------geekpi
+
 Linux Basics: How To Find Maximum Supported RAM By Your System
 ================================================================================
 ![](https://1102047360.rsc.cdn77.org/wp-content/uploads/2015/02/RAM-790x527.jpg)
