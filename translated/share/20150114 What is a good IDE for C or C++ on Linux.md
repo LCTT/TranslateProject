@@ -48,13 +48,13 @@ Linux上有哪些比较好的C/C++ IDE？
 
 ![](https://farm8.staticflickr.com/7519/15653583824_e412f2ab1f_c.jpg)
 
-说到这，肯定照顾到所有的KDE粉丝，[KDevelop][11]会是你希望的答案。它拥有许多配置选项，如果你设法去征服KDevelop，那它就是你的。你们说我肤浅，但是我真的从来没有深入过它界面以外的层次了。But it's too bad for me as the editor itself packs quite a punch with a lot of navigation options and customizable shortcuts. 它的调试器也是相当高级，要去练习掌握。然而，这样的耐心是有回报的，就是能领会到这款灵活的IDE的全部能力。And it gets special credits for its amazing embedded documentation.
+说到这，肯定照顾到所有的KDE粉丝，[KDevelop][11]会是你希望的答案。它拥有许多配置选项，如果你设法去征服KDevelop，那它就是你的。你们说我肤浅，但是我真的从来没有深入过除它界面以外的层次了，对于我来说编辑器本身就携带着大量的导航选项和可定制的快捷键简直是一个再糟糕不过的事了。它的调试器也是相当高级，要去练习掌握。然而，这样的耐心是有回报的，就是能领会到这款灵活的IDE的全部能力，并且由于它令人吃惊的嵌入式文件编制，你会给予它一种特殊的信任。
 
 ### 9. CodeLite ###
 
 ![](https://farm9.staticflickr.com/8594/16250066446_b5f654e63f_c.jpg)
 
-Finally, last for not least, [CodeLite][12] shows that you can take a traditional formula and still get something with its own feeling attached to it. If the interface really reminded me of Code::Blocks and Anjuta at first, I was just blown away by the extensive plugin library. Whether you want to diff a file, insert a copyright block, define an abbreviation, or push your work on Git, there is a plugin for you. If I had to nitpick, I would say that it lacks a few navigation shortcuts for my taste, but that's really it. 
+留在最后的不代表是最差的，[CodeLite][12]展现给你一种传统的编程规则却仍然能让你从它身上那特有的感觉上有所收获，即使它的界面一开始的确让我想到了Code::Blocks和Anjuta，只是不包括大量的插件库。无论你想要比较文件、插入一条版权块、定义缩略语或者用Git来工作，总有一款插件适合你。如果我不得不挑点毛病，我想说它缺乏一些符合我口味的导航快捷键，但这是真的。
 
 最后，我希望这份清单能让你给自己最喜欢的语言探索到更多新的IDE。虽然Code::Blocks仍然是我的最爱，不过它有一些很强大的对手。当然我们也可以远离Linux上的IDE用文本编辑器去编写C/C++代码。所以如果你有什么其它的建议想法，在评论中让我们获悉。或者如果你想要我再说说关于一些其它语言的IDE，也可以评论里提出。
 
