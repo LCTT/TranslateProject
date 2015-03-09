@@ -1,36 +1,34 @@
-Translating
-
-Linux Basics: How To Find Maximum Supported RAM By Your System
+Linux基础：如何找出你的系统所支持的最大内存
 ================================================================================
 ![](https://1102047360.rsc.cdn77.org/wp-content/uploads/2015/02/RAM-790x527.jpg)
 
-Mostly, you will find maximum supported RAM by your system from the BIOS, Product catalog, or manuals. Here is the simple, yet useful trick, to find out maximum supported RAM using Dmidecode without opening the system chassis or referring the BIOS, product catalogs.
+大多数情况下你可以从BIOS、产品目录或者干脆手动找出你的系统所持的最大内存。这里，我们介绍一种简单有用的技巧——使用Dmidecode来找出系统支持的最大内存，这样你就无需打开机箱或者参照BIOS和产品目录了。
 
-### What is Dmidecode? ###
+### 什么是 Dmidecode? ###
 
-As you may know, **Dmidecode** is a tool for dumping a computer’s DMI (some say SMBIOS) table contents in a human-readable format. This table contains a description of the system’s hardware components, as well as other useful pieces of information such as serial numbers and BIOS revision. Using Dmidecode, you can retrieve this information without having to probe for the actual hardware.
+就像你可能知道的一样， **Dmidecode**是一个将计算机DMI（又名SMBIOS）表的内容转换为可读格式的工具。这个表包含了系统硬件组件的介绍以及其他一些如序列号和IOS版本等有用的信息。使用Dmidecode你能够获取此项信息，而无需去探测真实的硬件。
 
-### Find out the maximum RAM supported by your system ###
+### 找出你的系统所支持的最大内存 ###
 
-Make sure you have installed dmidecode on your system. I think it will be automatically installed while installing your OS, but I am not sure though.
+请确定你已经在系统中安装了dmidecode，我觉得你的操作系统应该已经自动安装过了，不过并不非常确定。
 
-**On Deb based system:**
+**在基于Deb的系统中安装**
 
     sudo apt-get install dmidecode
 
-**On RPM based system:**
+**在基于RPM的系统中安装**
 
     sudo yum install dmidecode
 
-**On SUSE/openSUSE:**
+**在SUSE/openSUSE中安装**
 
     sudo zypper in dmidecode
 
-Well, we installed dmidecode. Let us find out the maximum RAM supported. To do that, enter the following command:
+好了，我们已经安装了dmidecode，接下来让我们找出支持的最大内存。输入以下命令：
 
     sudo dmidecode -t 16
 
-**Sample output:**
+**输出样本**
 
     # dmidecode 2.12
     SMBIOS 2.6 present.
@@ -44,13 +42,13 @@ Well, we installed dmidecode. Let us find out the maximum RAM supported. To do t
         Error Information Handle: Not Provided
         Number Of Devices: 2
 
-As you see in the above output, my system will support RAM upto 16GB, and it has two RAM slots. Pretty easy, isn’t it?
+就像你看到的，我的系统支持最大内存到16G，并且有两个内存插槽，简单吧？
 
-Well, let us find out the currently installed RAM details.
+接下来，让我们找出现在已经安装的内存的详细信息。
 
     sudo dmidecode -t 17
 
-**Sample output:**
+**输出样本**
 
     # dmidecode 2.12
     SMBIOS 2.6 present.
@@ -95,15 +93,15 @@ Well, let us find out the currently installed RAM details.
         Part Number: JM1066KSN-4G      
         Rank: Unknown
 
-As per the above output, I have installed one RAM in DIMM slot 1. The RAM size is **4GB**, and it’s type and speed is **DDR3** and **1067 MHz** respectively.
+就像上边输出的一样，我在插槽1里边安装了一个内存条。内存大小为**4G**，类型为**DDR3**，速度为**1067 MHz**。
 
-Also, we can have the complete RAM details using the following commands.
+同样的，我们可以通过下边命令得到完整的内存信息。
 
     sudo dmidecode -t memory
     sudo dmidecode -t memory | less
     sudo dmidecode -t memory | more
 
-**Sample output:**
+**输出样本**
 
     # dmidecode 2.12
     SMBIOS 2.6 present.
@@ -157,11 +155,11 @@ Also, we can have the complete RAM details using the following commands.
         Part Number: JM1066KSN-4G      
         Rank: Unknown
 
-Curious to know the complete system details such as Motherboard, Memory, Bios etc? Well, enter the following command to get all details.
+如果你好奇想要知道整个系统的详细信息，例如主板、内存、BIOS等，那么可以输入以下命令来获取。
 
     sudo dmidecode
 
-**Sample output:**
+**输出样本**
 
     # dmidecode 2.12
     SMBIOS 2.6 present.
@@ -683,16 +681,16 @@ Curious to know the complete system details such as Motherboard, Memory, Bios et
     Handle 0x0031, DMI type 127, 4 bytes
     End Of Table
 
-That’s it. Happy weekend. Stay happy!
+好了，就是这样。周末愉快！
 
 --------------------------------------------------------------------------------
 
 via: https://www.unixmen.com/linux-basics-how-to-find-maximum-supported-ram-by-your-system/
 
-作者：[SK][a]
-译者：[译者ID](https://github.com/译者ID)
+作者：[SK][0]
+译者：[mr-ping](https://github.com/mr-ping)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
-[a]:https://www.unixmen.com/author/sk/
+[0]:https://www.unixmen.com/author/sk/
