@@ -1,16 +1,16 @@
-Linux有问必答时间--怎样解决“XXX is not in the sudoers file”错误
+Linux有问必答时间：怎样解决“XXX is not in the sudoers file”错误
 ================================================================================
-> **问题**:我想在我的Linux系统上使用sudo来运行一些特权命令，然而当我试图这么做时，我却得到了"[我的用户ID] is not in the sudoers file. This incident will be reported."的错误信息。我该怎么处理这种sudo错误呢？ 
+> **问题**:我想在我的Linux系统上使用sudo来运行一些特权命令，然而当我试图这么做时，我却得到了"[我的用户名] is not in the sudoers file. This incident will be reported."的错误信息。我该怎么处理这种sudo错误呢？ 
 
-sudo是一个允许特定的用户组用另一个用户(典型的代表是root)的特权来运行一个命令。sudo有详细的日志功能并且提供了细粒度控制来覆盖用户通过sudo敲入的命令。
+sudo是一个允许特定的用户组用另一个用户(典型的是root)的特权来运行一个命令。sudo有详细的日志功能，并且提供了对用户可通过sudo来运行哪些命令的细粒度控制。
 
 ### Sudo vs. Su ###
 
-su命令也提供了同样的特权升级功能，两者不同的是它们认证过程和特权变化的粒度。su允许你从你的登录会话切换到另一个用户的会话，然后你可以随心所欲地用该用户的特权来运行任何程序，但是你需要知道目标用户的密码才能切换这个用户。另一方面，sudo能在每个命令的基础上工作，允许你用root的特权来运行单个命令。用sudo你不必一定要知道root的密码，但是在提示输入sudo密码的时候要输入你的密码。
+su命令也提供了同样的特权提升功能，两者不同的是它们认证过程和特权变化的粒度。su允许你从你的登录会话切换到另一个用户的会话，然后你可以随心所欲地用该用户的特权来运行任何程序，但是你需要知道目标用户的密码才能切换这个用户。而另一方面，sudo能在单个命令的基础上工作，允许你用root的特权来运行单个命令。用sudo你不必一定要知道root的密码，但是在提示输入sudo密码的时候要输入你的密码。
 
 ### 在Sudoers列表里添加用户 ###
 
-作为一个新用户的你如果试图运行sudo命令，你会碰到以下错误。意思是你不在这个包含经过认证可以使用sudo特权的这么一个用户组的sudoers列表里。
+作为一个新用户的你如果试图运行sudo命令，你会碰到以下错误。意思是你不在这个包含经过认证就可以使用sudo特权的这么一个用户组的sudoers列表里。
 
     [my-user-id] is not in the sudoers file.  This incident will be reported.
 
@@ -32,11 +32,11 @@ su命令也提供了同样的特权升级功能，两者不同的是它们认证
 
     alice adm cdrom sudo dip plugdev fuse lpadmin netdev sambashare davfs2 libvirtd docker promiscuous
 
-组员资格变动（和sudo访问）会在你登出登录后生效。
+组员资格变动（和sudo访问）会在你登出后重新登录后生效。
 
 ### 方法二 ###
 
-第二个能让你使用sudo的方法是直接把你自己添加到路径为 /etc/sudoers 这个配置文件中去。
+第二个能让你使用sudo的方法是直接把你自己添加到 /etc/sudoers 这个配置文件中去。
 
 要修改 /etc/sudoers 文件，你可以使用一个名为visudo的特殊sudo编辑器命令。用root身份简单调用以下命令。
 
@@ -55,6 +55,6 @@ su命令也提供了同样的特权升级功能，两者不同的是它们认证
 via: http://ask.xmodulo.com/fix-is-not-in-the-sudoers-file.html
 
 译者：[ZTinoZ](https://github.com/ZTinoZ)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
