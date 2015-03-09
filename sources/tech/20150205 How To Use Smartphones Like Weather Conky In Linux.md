@@ -1,3 +1,5 @@
+FSSlc translating
+
 How To Use Smartphones Like Weather Conky In Linux
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/02/Use_Weather_Conky_Linux.jpeg)
