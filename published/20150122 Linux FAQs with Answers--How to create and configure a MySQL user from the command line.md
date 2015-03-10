@@ -1,4 +1,4 @@
-Linux有问必答： 如何通过命令行创建和设置一个MySQL用户
+Linux有问必答：如何通过命令行创建和设置一个MySQL用户
 ================================================================================
 
 > **问题**：我想要在MySQL服务器上创建一个新的用户帐号，并且赋予他适当的权限和资源限制。如何通过命令行的方式来创建并且设置一个MySQL用户呢？
@@ -21,7 +21,7 @@ Linux有问必答： 如何通过命令行创建和设置一个MySQL用户
 
     mysql> CREATE USER 'myuser'@'localhost' IDENTIFIED BY 'mypassword';
 
-一旦用户被创建后，包括加密的密码、权限和资源限制在内的所有帐号细节都会被存储在一个名为**user**的表中，这个表则存在与**mysql**这个特殊的数据库里。
+一旦用户被创建后，包括加密的密码、权限和资源限制在内的所有帐号细节都会被存储在一个名为**user**的表中，这个表则存在于**mysql**这个特殊的数据库里。
 
 运行下列命令，验证帐号是否创建成功
 
@@ -33,14 +33,14 @@ Linux有问必答： 如何通过命令行创建和设置一个MySQL用户
 
 - **ALL**: 所有可用的权限
 - **CREATE**: 创建库、表和索引
-- **LOCK_TABLES**: 锁定表.
-- **ALTER**: 修改表.
-- **DELETE**: 删除表.
-- **INSERT**: 插入表或列.
-- **SELECT**: 选择表或列.
-- **CREATE_VIEW**: 创建视图.
-- **SHOW_DATABASES**: 展示数据库.
-- **DROP**: 删除库、表和视图. 
+- **LOCK_TABLES**: 锁定表
+- **ALTER**: 修改表
+- **DELETE**: 删除表
+- **INSERT**: 插入表或列
+- **SELECT**: 检索表或列的数据
+- **CREATE_VIEW**: 创建视图
+- **SHOW_DATABASES**: 列出数据库
+- **DROP**: 删除库、表和视图 
 
 运行以下命令赋予"myuser"用户特定权限。
 
@@ -70,10 +70,10 @@ Linux有问必答： 如何通过命令行创建和设置一个MySQL用户
 
 在MySQL中，你可以为单独的用户设置MySQL的资源使用限制。可用的资源限制如下：
 
-- **MAX_QUERIES_PER_HOUR**: 允许的每小时最大请求数量.
-- **MAX_UPDATES_PER_HOUR**: 允许的每小时最大更新数量.
-- **MAX_CONNECTIONS_PER_HOUR**: 允许的每小时最大连接（译者注：[其与 MySQL全局变量： max_user_connections 共同决定用户到数据库的同时连接数量](http://dev.mysql.com/doc/refman/5.0/en/user-resources.html)）数量.
-- **MAX_USER_CONNECTIONS**: 对服务器的同时连接量. 
+- **MAX\_QUERIES\_PER\_HOUR**: 允许的每小时最大请求数量
+- **MAX\_UPDATES\_PER\_HOUR**: 允许的每小时最大更新数量
+- **MAX\_CONNECTIONS\_PER\_HOUR**: 允许的每小时最大连接（译者注：[其与 MySQL全局变量： max\_user\_connections 共同决定用户到数据库的同时连接数量](http://dev.mysql.com/doc/refman/5.0/en/user-resources.html)）数量
+- **MAX\_USER\_CONNECTIONS**: 对服务器的同时连接量
 
 使用以下命令为"myuser"帐号增加一个资源限制：
 
@@ -102,6 +102,6 @@ Linux有问必答： 如何通过命令行创建和设置一个MySQL用户
 via: http://ask.xmodulo.com/create-configure-mysql-user-command-line.html
 
 译者：[Ping](http://weibo.com/370321376)  
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
