@@ -1,3 +1,4 @@
+Translating by 355968851
 Italian Region Emilia-Romagna Is Switching To OpenOffice
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/08/Turin_Open_Source.jpg)
