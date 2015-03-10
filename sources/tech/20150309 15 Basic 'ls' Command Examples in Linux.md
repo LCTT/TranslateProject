@@ -1,3 +1,4 @@
+Translating by ZTinoZ
 15 Basic ‘ls’ Command Examples in Linux
 ================================================================================
 ls command is one of the most frequently used command in Linux. I believe ls command is the first command you may use when you get into the command prompt of Linux Box. We use ls command daily basis and frequently even though we may not aware and never use all the option available. In this article, we’ll be discussing basic ls command where we have tried to cover as much parameters as possible.
