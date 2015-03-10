@@ -48,7 +48,7 @@ Linux有问必答：如何在Debian或Ubuntu上安装完整的内核源码
 via: http://ask.xmodulo.com/install-full-kernel-source-debian-ubuntu.html
 
 作者：[Dan Nanni][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[martin qi](https://github.com/martin2011qi)
 校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

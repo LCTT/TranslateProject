@@ -1,32 +1,36 @@
-Linux 命名空间
+介绍 Linux 的命名空间
 ================================================================================
 ### 背景 ###
 
-从2.6.24版的内核开始，Linux 就支持6种不同类型的命名空间。它们的出现，使用户创建的进程能够与系统分离得更加彻底，从而不需要考虑太多底层的虚拟化技术。
+从Linux 2.6.24版的内核开始，Linux 就支持6种不同类型的命名空间。它们的出现，使用户创建的进程能够与系统分离得更加彻底，从而不需要使用更多的底层虚拟化技术。
 
 - **CLONE_NEWIPC**: 进程间通信(IPC)的命名空间，可以将 SystemV 的 IPC 和 POSIX 的消息队列独立出来。
-- **CLONE_NEWPID**: 进程 ID 的命名空间，进程 ID 独立，意思就是命名空间内的进程 ID 可能会与命名空间外的进程 ID 冲突，于是命名空间内的进程 ID 映射到命名空间外时会使用另外一个进程 ID。比如说，命名空间内 ID 为1的进程，在命名空间外就是指 init 进程。
+- **CLONE_NEWPID**: PID 命名空间。空间内的PID 是独立分配的，意思就是命名空间内的虚拟 PID 可能会与命名空间外的 PID 相冲突，于是命名空间内的 PID 映射到命名空间外时会使用另外一个 PID。比如说，命名空间内第一个 PID 为1，而在命名空间外就是该 PID 已被 init 进程所使用。
 - **CLONE_NEWNET**: 网络命名空间，用于隔离网络资源（/proc/net、IP 地址、网卡、路由等）。后台进程可以运行在不同命名空间内的相同端口上，用户还可以虚拟出一块网卡。
 - **CLONE_NEWNS**: 挂载命名空间，进程运行时可以将挂载点与系统分离，使用这个功能时，我们可以达到 chroot 的功能，而在安全性方面比 chroot 更高。
 - **CLONE_NEWUTS**: UTS 命名空间，主要目的是独立出主机名和网络信息服务（NIS）。
 - **CLONE_NEWUSER**: 用户命名空间，同进程 ID 一样，用户 ID 和组 ID 在命名空间内外是不一样的，并且在不同命名空间内可以存在相同的 ID。
 
+下面我们介绍一下进程命名空间和网络命名空间。
+
+### 进程命名空间
+
 本文用 C 语言介绍上述概念，因为演示进程命名空间的时候需要用到 C 语言。下面的测试过程在 Debian 6 和 Debian 7 上执行。首先，在栈内分配一页内存空间，并将指针指向内存页的末尾。这里我们使用 **alloca()** 函数来分配内存，不要用 malloc() 函数，它会把内存分配在堆上。
 
     void *mem = alloca(sysconf(_SC_PAGESIZE)) + sysconf(_SC_PAGESIZE);
 
-然后使用 **clone()** 函数创建子进程，传入栈空间的地址 "mem"，以及指定命名空间的标记。同时我们还指定“callee”作为子进程运行的函数。
+然后使用 **clone()** 函数创建子进程，传入我们的子栈空间地址 "mem"，并指定命名空间的标记。同时我们还指定“callee”作为子进程运行的函数。
 
     mypid = clone(callee, mem, SIGCHLD | CLONE_NEWIPC | CLONE_NEWPID | CLONE_NEWNS | CLONE_FILES, NULL);
 
-**clone** 之后我们要在父进程中等待子进程先退出，否则的话，父进程会继续运行下去，直到进程结束，留下子进程变成孤儿进程：
+**clone** 之后我们要在父进程中等待子进程先退出，否则的话，父进程会继续运行下去，并马上进程结束，留下子进程变成孤儿进程：
 
     while (waitpid(mypid, &r, 0) < 0 && errno == EINTR)
     {
     	continue;
     }
 
-最后当子进程退出后，我们会回到 shell 界面。
+最后当子进程退出后，我们会回到 shell 界面，并返回子进程的退出码。
 
     if (WIFEXITED(r))
     {
@@ -47,7 +51,7 @@ Linux 命名空间
     	return ret;
     }
 
-程序挂载 **/proc** 文件系统，设置用户 ID 和组 ID，值都为“u”，然后运行 **/bin/bash** 程序，[LXC][1] 是操作系统级的虚拟化工具，使用 cgroups 和命名空间来完成资源的分离。现在我们把所有代码放在一起，变量“u”的值设为65534，在 Debian 系统中，这是“nobody”和“nogroup”：
+程序挂载了 **/proc** 文件系统，设置用户 ID 和组 ID，值都为“u”，然后运行 **/bin/bash** 程序，[LXC][1] 是一个操作系统级的虚拟化工具，使用 cgroups 和命名空间来完成资源的分离。现在我们把所有代码放在一起，变量“u”的值设为65534，在 Debian 系统中，这是“nobody”和“nogroup”：
 
     #define _GNU_SOURCE
     #include <unistd.h>
@@ -101,12 +105,16 @@ Linux 命名空间
     nobody       5  0.0  0.0   2784  1064 pts/1    R+   21:21   0:00 ps auxw
     nobody@w:~/pen/tmp$ 
 
-注意上面的结果，UID 和 GID 被设置成 nobody 和 nogroup 了，特别是 ps 工具只输出两个进程，它们的 ID 分别是1和5（LCTT注：这就是上文介绍 CLONE_NEWPID 时提到的功能，在线程所在的命名空间内，进程 ID 可以为1，映射到命名空间外就是65534；而命名空间外的 ID 为1的进程一直是 init）。接下来轮到使用 ip netns 来设置网络的命名空间。第一步先确定当前系统没有命名空间：
+注意上面的结果，UID 和 GID 被设置成 nobody 和 nogroup 了，特别是 ps 工具只输出两个进程，它们的 ID 分别是1和5（LCTT注：这就是上文介绍 CLONE_NEWPID 时提到的功能，在线程所在的命名空间内，进程 ID 可以为1，映射到命名空间外是另外一个 PID；而命名空间外的 ID 为1的进程一直是 init）。
+
+### 网络命名空间
+
+接下来轮到使用 ip netns 来设置网络的命名空间。第一步先确定当前系统没有命名空间：
 
     root@w:~# ip netns list
     Object "netns" is unknown, try "ip help".
 
-这种情况下，你需要更新你的系统内核，以及 ip 工具。这里假设你的内核版高于2.6.24，ip 工具版本也差不多，高于2.6.24（LCTT注：ip 工具由 iproute 安装包提供，此安装包版本与内核版本相近）。更新好后，**ip netns list** 在没有命名空间存在的情况下不会输出任务信息。加个名为“ns1”的命名空间看看：
+如果报了上述错误，你需要更新你的系统内核，以及 ip 工具程序。这里假设你的内核版高于2.6.24，ip 工具版本也差不多，高于2.6.24（LCTT注：ip 工具由 iproute 安装包提供，此安装包版本与内核版本相近）。更新好后，**ip netns list** 在没有命名空间存在的情况下不会输出任务信息。加个名为“ns1”的命名空间看看：
 
     root@w:~# ip netns add ns1
     root@w:~# ip netns list
@@ -120,7 +128,7 @@ Linux 命名空间
     2: eth0:  mtu 1500 qdisc pfifo_fast state UNKNOWN mode DEFAULT qlen 1000
         link/ether 00:0c:29:65:25:9e brd ff:ff:ff:ff:ff:ff
 
-创建新的虚拟网卡，加到命名空间。虚拟网卡需要成对创建，互相关联——想想交叉电缆吧：
+创建新的虚拟网卡，并加到命名空间。虚拟网卡需要成对创建，互相关联——就像交叉电缆一样：
 
     root@w:~# ip link add veth0 type veth peer name veth1
     root@w:~# ip link list
@@ -146,11 +154,11 @@ Linux 命名空间
 
 这个时候 **ifconfig** -a 命令只能显示 veth0，不能显示 veth1，因为后者现在在 ns1 命名空间中。
 
-如果想删除 veth1，可以执行下面的命令：
+如果想删除 veth0/veth1，可以执行下面的命令：
 
     ip netns exec ns1 ip link del veth1
 
-为 veth0 分配 IP 地址：
+我们可以为 veth0 分配 IP 地址：
 
     ifconfig veth0 192.168.5.5/24
 
@@ -229,7 +237,7 @@ via: http://www.howtoforge.com/linux-namespaces
 
 作者：[aziods][a]
 译者：[bazz2](https://github.com/bazz2)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

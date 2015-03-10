@@ -1,3 +1,5 @@
+FSSlc translating
+
 Intense Gameplay? Try these 13 Roguelike games
 ================================================================================
 Roguelike is a sub-genre of role-playing games. It literally means "a game like Rogue". Rogue is a dungeon crawling video game first released in 1980, standing out for being fiendishly addictive. Its goal was to retrieve the Amulet of Yendor, hidden deep in the 26th level, and ascend back to the top.

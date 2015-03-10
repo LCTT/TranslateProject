@@ -1,7 +1,11 @@
+theo-l translating
+
 How to protect SSH server from brute force attacks using fail2ban
+如何使用fail2ban来保护SSH服务器避免暴力破解攻击。
 ================
 
 One common attack on SSH service is brute force attacks where a remote attacker indefinitely attempts to log in with different passwords. Of course there are arguments against password authentication for SSH, and alternative authentication mechanisms such as [public key authentication][1] or [two-factor authentication][2] exist to obsolete such attacks. Putting aside pros and cons of different authentication methods, let's consider the situation where password authentication is required. How would you protect your SSH server against brute-force attacks?
+对于SSH服务的常见的攻击就是暴力破解攻击--远程攻击者通过不同的密码来进行无限地登录尝试。当然SSH存在参数来防备密码验证以及可用的验证机制，例如[公钥验证][1]或者[双重验证][2]，
 
 [fail2ban][3] is a well-known open-source intrusion prevention framework on Linux that monitors various system log files (e.g., /var/log/auth.log or /var/log/secure) and automatically triggers various defensive actions upon detecting any suspicious activities. In fact, fail2ban can be quite useful to defend against brute force password guessing attacks on an SSH server.
 
