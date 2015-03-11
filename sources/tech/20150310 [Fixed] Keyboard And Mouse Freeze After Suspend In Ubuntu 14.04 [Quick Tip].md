@@ -1,3 +1,5 @@
+translating by martin.
+
 [Fixed] Keyboard And Mouse Freeze After Suspend In Ubuntu 14.04 [Quick Tip]
 ================================================================================
 ### Problem: ###

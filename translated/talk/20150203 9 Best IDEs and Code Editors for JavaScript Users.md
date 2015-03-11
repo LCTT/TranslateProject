@@ -1,21 +1,21 @@
-9款最好的Javacript用户的IDE和代码编辑器。
+9款最好的 Javacript 用户的 IDE 和代码编辑器。
 ================================================================================
-网络应用设计和开发是最近一段时间的发展趋势，也有越来越多的人开始在此寻找他们的职业机会。但是，作为网络开发人员或图形设计人员来说，一个好的机会并不是每个人都能够轻易获得到的，它需要很好的思维展现，以及对于工作的熟练技巧。现在有许多可用的网站来根据你的知识帮助你找到正确的工作描述。但是如果你想要在这个领域有所成就，你仍然需要具有一些出色的手段，例如可以在不同的平台、IDE以及其他的工具上开展工作。
+网络应用设计和开发是最近一段时间的发展趋势，也有越来越多的人开始在此寻找他们的职业机会。但是，作为网络开发人员或图形设计人员来说，一个好的机会并不是每个人都能够轻易获得到的，它需要很好的思维展现，以及对于工作的熟练技巧。现在有许多可用的网站来根据你的知识帮助你找到正确的职位描述。但是如果你想要在这个领域有所成就，你仍然需要具有一些出色的技能，例如可以在不同的平台、IDE以及其他的工具上开展工作。
 
-说到根据不同目的所使用的大量语言用到的不同平台以及IDE，只靠学习一个IDE来容易地获取项目设计的最佳方案的惯例已经属于过去时了。今天我们活在一个竞争日益激烈的现代生活节奏中，对于IDE们也是相同的处境，IDE是一个用来创建和部署应用的强大的客户端应用。今天我们打算为网络设计者和开发人员分享一些最好的Javacript IDE。
+说到根据不同目的和不同语言所用到的不同平台以及IDE，只靠学习一个IDE来轻松获取项目设计最佳方案的惯例已经属于过去时了。今天我们活在一个竞争日益激烈的现代生活节奏中，对于IDE们也是相同的处境，IDE是一个用来创建和部署应用的强大的客户端应用。今天我们打算为网络设计者和开发人员分享一些最好的Javacript IDE。
 
-请访问作为javascript 用户最好的代码编辑器列表，并将你的想法与我们一起分享。
+请访问这个 javascript 用户最好的代码编辑器列表，并将你的想法与我们一起分享。
 
 ### 1) [Spket][1] ###
 
-**Spket IDE** 是JavaScript和XML开发的强大工具包。该编辑器可以用来进行开发 JavaScript，XUL/XBL 和Yahoo！小组件。 JavaScript编辑器提供了例如代码补全，语法高亮以及代码内容大纲等特性，可以帮助开发者提高创建高效JavaScript代码的生产率。
+**Spket IDE** 是 JavaScript 和 XML 开发的强大工具包。这个功能强大的编辑器可以用来进行开发 JavaScript，XUL/XBL 和 Yahoo！小组件。JavaScript 编辑器提供了例如代码补全、语法高亮以及代码内容大纲等特性，可以帮助开发者提高创建高效 JavaScript 代码的生产率。
 
 
 ![](http://i0.wp.com/devzum.com/wp-content/uploads/2015/01/spket-e1422674329554.png)
 
 ### 2) [Ixedit][2] ###
 
-IxEdit 基于Javascript交互的网络设计工具。通过IxEdit,设计者可以在不需要通过代码改变，添加，删除或变换页面元素的情况下，在网页上进行动态进行DOM脚本编写。
+IxEdit 是一个基于 Javascript 交互的网络设计工具。通过 IxEdit，设计者可以在不需要通过代码改变，添加，删除或变换页面元素的情况下，在网页上进行动态进行 DOM 脚本编写。
 
 ![](http://i0.wp.com/devzum.com/wp-content/uploads/2015/01/ixedit.png)
 
@@ -26,13 +26,13 @@ Komodo是一款免费而强大的编辑器，可以用来编辑JavaScript和其�
 
 ### 4) [EpicEditor][4] ###
 
-EpicEditor是一个可嵌入的 JavaScript Markdown编辑器，具有分割全屏进行编辑，实时预览，自动草稿保存，离线支持等特性。对于开发人员，它提供了健壮的API，可以容易地设置主题，并允许你以任何其他的事物来替换绑定的Markdown解析器。
+EpicEditor是一个可嵌入的 JavaScript Markdown 编辑器，具有分割全屏进行编辑，实时预览，自动草稿保存，离线支持等特性。对于开发人员，它提供了健壮的API，可以容易地设置主题，并允许你以任何其他的事物来替换绑定的 Markdown 解析器。
 
 ![](http://i1.wp.com/devzum.com/wp-content/uploads/2015/01/epiceditor-e1422674732281.png)
 
 ### 5) [codepress][5] ###
 
-CodePress是一个用JavaScript编写的基于网络的源代码编辑器，具有语法高亮,并且是在你将代码输入到浏览器后实时进行文本颜色渲染。
+CodePress是一个基于网络的源代码编辑器，它用 JavaScript 编写，具有语法高亮,并且是在你将代码输入到浏览器后实时进行文本颜色渲染。
 
 ![](http://i1.wp.com/devzum.com/wp-content/uploads/2015/01/codepres-e1422674893706.png)
 
@@ -66,7 +66,7 @@ via: http://devzum.com/2015/01/31/9-best-ides-and-code-editors-for-javascript-us
 
 作者：[vikas][a]
 译者：[theo-l](https://github.com/theo-l)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
