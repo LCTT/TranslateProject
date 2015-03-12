@@ -1,23 +1,22 @@
-Translating by ZTinoZ
-15 Basic ‘ls’ Command Examples in Linux
+Linux中的15个基本'ls'命令示例
 ================================================================================
-ls command is one of the most frequently used command in Linux. I believe ls command is the first command you may use when you get into the command prompt of Linux Box. We use ls command daily basis and frequently even though we may not aware and never use all the option available. In this article, we’ll be discussing basic ls command where we have tried to cover as much parameters as possible.
+ls命令是Linux系统中最被频繁使用的命令之一，我相信ls命令一定是你进入一台Linux系统的电脑打开命令提示符后第一个使用的命令。我们每天都在频繁地使用ls命令即使我们可能没有意识也从来用不到所以可用的选项。本文中，我们将讨论下一些基本的ls命令并且覆盖尽可能多的有关参数来讲解。	
 
 ![Linux ls Command](http://www.tecmint.com/wp-content/uploads/2012/08/Linux-ls-Commands.png)
-Linux ls Command
+Linux的ls命令
 
-### 1. List Files using ls with no option ###
+### 1. 不带任何选项列出文件列表 ###
 
-ls with no option list files and directories in bare format where we won’t be able to view details like file types, size, modified date and time, permission and links etc.
+不带选项的ls命令来光秃秃地列出文件和目录，我们是不能看到像文件类型、大小、修改日期和时间、权限以及链接这样具体的信息的。
 
     # ls
     
     0001.pcap        Desktop    Downloads         index.html   install.log.syslog  Pictures  Templates
     anaconda-ks.cfg  Documents  fbcmd_update.php  install.log  Music               Public    Videos
 
-### 2 List Files With option –l ###
+### 2 带–l选项列出文件列表 ###
 
-Here, ls -l (-l is character not one) shows file or directory, size, modified date and time, file or folder name and owner of file and it’s permission.
+你看，ls -l（-l是字母不是“1”）就能展示出是文件还是目录，它的大小、修改日期和时间、文件或目录的名字以及文件的属主和它的权限。
 
     # ls -l
     
@@ -255,7 +254,7 @@ In our next article we’ll cover up more or advanced ls command with their exam
 via: http://www.tecmint.com/15-basic-ls-command-examples-in-linux/
 
 作者：[Ravi Saive][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ZTinoZ](https://github.com/ZTinoZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
