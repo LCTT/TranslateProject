@@ -1,12 +1,12 @@
-Linux有问必答:如何在脚本中获取进程ID（PID）
+Linux有问必答：如何在脚本中获取进程ID（PID）
 ================================================================================
-> **提问**: 我想要知道运行中脚本subshell的进程id。我该如何在shell脚本中得到PID。
+> **提问**: 我想要知道运行中脚本子shell的进程id。我该如何在shell脚本中得到PID。
 
-当我在执行shell脚本时，它会启动一个叫subshell的进程。作为主shell的子进程，subshell将shell脚本中的命令作为批处理运行（因此称为“批处理进程”）。
+当我在执行shell脚本时，它会启动一个叫子shell的进程。作为主shell的子进程，子shell将shell脚本中的命令作为批处理运行（因此称为“批处理进程”）。
 
-在某些情况下，你也许想要知道运行中的subshell的PID。这个PID信息可以在不同的情况下使用。比如，你可以使用shell脚本的PID在/tmp下创建一个唯一的临时文件。有时侯脚本需要检测所有运行的进程，它可以从进程列表中排除自身的subshell。
+在某些情况下，你也许想要知道运行中的子shell的PID。这个PID信息可以在不同的情况下使用。比如，你可以使用shell脚本的PID在/tmp下创建一个唯一的临时文件。有时侯脚本需要检测所有运行的进程，它可以从进程列表中排除自身的子shell。
 
-在bash中，**subshell进程的PID**存储在一个特殊的变量‘$$’中。这个变量只读，你不可以在脚本中修改它。比如：
+在bash中，**子shell进程的PID**存储在一个特殊的变量‘$$’中。这个变量只读，你不可以在脚本中修改它。比如：
 
     #!/bin/bash
      
@@ -16,7 +16,7 @@ Linux有问必答:如何在脚本中获取进程ID（PID）
 
     PID of this script: 6583
 
-除了$$, bash shell还会导出其他的只读变量。比如，PPID存储subshell父进程的ID（也就是主shell）。UID存储了执行这个脚本的当前用户ID。比如：
+除了$$, bash shell还会导出其他的只读变量。比如，PPID存储子shell父进程的ID（也就是主shell）。UID存储了执行这个脚本的当前用户ID。比如：
 
     #!/bin/bash
      
@@ -43,6 +43,6 @@ Linux有问必答:如何在脚本中获取进程ID（PID）
 via: http://ask.xmodulo.com/process-id-pid-shell-script.html
 
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
