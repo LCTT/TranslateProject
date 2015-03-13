@@ -1,11 +1,11 @@
-Linux中的15个基本'ls'命令示例
+Linux中的15个基本‘.’命令示例
 ================================================================================
 ls命令是Linux系统中最被频繁使用的命令之一，我相信ls命令一定是你进入一台Linux系统的电脑打开命令提示符后第一个使用的命令。我们每天都在频繁地使用ls命令即使我们可能没有意识也从来用不到所以可用的选项。本文中，我们将讨论下一些基本的ls命令并且覆盖尽可能多的有关参数来讲解。	
 
 ![Linux ls Command](http://www.tecmint.com/wp-content/uploads/2012/08/Linux-ls-Commands.png)
 Linux的ls命令
 
-### 1. 不带任何选项列出文件列表 ###
+### 1. 不带任何选项列出文件 ###
 
 不带选项的ls命令来光秃秃地列出文件和目录，我们是不能看到像文件类型、大小、修改日期和时间、权限以及链接这样具体的信息的。
 
@@ -36,9 +36,9 @@ Linux的ls命令
     drwxr-xr-x. 2 root root  4096 Jul 31 02:48 Templates
     drwxr-xr-x. 2 root root  4096 Jul 31 02:48 Videos
 
-### 3. View Hidden Files ###
+### 3. 浏览隐藏文件 ###
 
-List all files including hidden file starting with ‘.‘.
+列出所有文件包括以‘.’开头的隐藏文件。
 
     # ls -a
     
@@ -50,9 +50,9 @@ List all files including hidden file starting with ‘.‘.
     .bash_logout     Desktop  fbcmd_update.php  .ICEauthority    .mozilla            Public        Videos
     .bash_profile    .digrc   .gconf            index.html       Music               .pulse        .wireshark
 
-### 4. List Files with Human Readable Format with option -lh ###
+### 4. 用-lh选项来以人类可读方式列出文件  ###
 
-With combination of -lh option, shows sizes in human readable format.
+用-lh组合选项，以人类可读方式来显示大小。
 
     # ls -lh
     
@@ -72,7 +72,7 @@ With combination of -lh option, shows sizes in human readable format.
     drwxr-xr-x. 2 root root 4.0K Jul 31 02:48 Templates
     drwxr-xr-x. 2 root root 4.0K Jul 31 02:48 Videos
 
-### 5. List Files and Directories with ‘/’ Character at the end ###
+### 5. 以尾部以‘/’字符结尾的方式列出文件和目录 ###
 
 Using -F option with ls command, will add the ‘/’ Character at the end each directory.
 
@@ -81,18 +81,18 @@ Using -F option with ls command, will add the ‘/’ Character at the end each 
     0001.pcap        Desktop/    Downloads/        index.html   install.log.syslog  Pictures/  Templates/
     anaconda-ks.cfg  Documents/  fbcmd_update.php  install.log  Music/              Public/    Videos/
 
-### 6. List Files in Reverse Order ###
+### 6. 倒序列出文件 ###
 
-The following command with ls -r option display files and directories in reverse order.
+ls -r选项能以倒序方式显示文件和目录。
 
     # ls -r
     
     Videos     Public    Music               install.log  fbcmd_update.php  Documents  anaconda-ks.cfg
     Templates  Pictures  install.log.syslog  index.html   Downloads         Desktop    0001.pcap
 
-### 7. Recursively list Sub-Directories ###
+### 7. 递归列出子目录 ###
 
-ls -R option will list very long listing directory trees. See an example of output of the command.
+ls -R选项能列出非常长的目录树，来看看示例输出：
 
     # ls -R
     
@@ -117,7 +117,7 @@ ls -R option will list very long listing directory trees. See an example of outp
 
 ### 8. Reverse Output Order ###
 
-With combination of -ltr will shows latest modification file or directory date as last.
+带-ltr组合选项能以文件或目录的最新修改时间来显示它们。
 
     # ls -ltr
     
@@ -137,9 +137,9 @@ With combination of -ltr will shows latest modification file or directory date a
     drwxr-xr-x. 4 root root  4096 Aug 16 02:55 Downloads
     -rw-r--r--. 1 root root   683 Aug 19 09:59 0001.pcap
 
-### 9. Sort Files by File Size ###
+### 9. 按文件大小排序 ###
 
-With combination of -lS displays file size in order, will display big in size first.
+带-lS组合选项能按文件从大到小的次序显示。
 
     # ls -lS
     
@@ -159,9 +159,9 @@ With combination of -lS displays file size in order, will display big in size fi
     -rw-------. 1 root root  1586 Jul 31 02:17 anaconda-ks.cfg
     -rw-r--r--. 1 root root   683 Aug 19 09:59 0001.pcap
 
-### 10. Display Inode number of File or Directory ###
+### 10. 显示文件或目录的索引节点数 ###
 
-We can see some number printed before file / directory name. With -i options list file / directory with inode number.
+我们有时候可以看到一些数字打印在文件或目录名之前，带-i选项就能列出文件或目录的索引节点数。
 
     # ls -i
     
