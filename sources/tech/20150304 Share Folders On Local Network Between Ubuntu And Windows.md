@@ -1,3 +1,4 @@
+[translating by KayGuoWhu]
 Share Folders On Local Network Between Ubuntu And Windows
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/03/Share_Folder_Ubuntu_windows.jpeg)
