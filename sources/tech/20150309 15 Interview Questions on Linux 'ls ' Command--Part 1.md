@@ -1,3 +1,5 @@
+theo-l translating
+
 15 Interview Questions on Linux “ls” Command – Part 1
 ================================================================================
 The listing command in UNIX and UNIX like operating System ‘ls‘ is one of the most basic and widely used utility in command-line. It is POSIX compliant utility available for GNU coreutils and BSD variants. The ‘ls’ command can be used with a variety of options to get desired results. This article aims at deep insight of file listing command in Linux with relevant examples.
