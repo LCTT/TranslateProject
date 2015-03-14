@@ -1,3 +1,4 @@
+translating by wi-cuckoo LLAP
 zpl1025
 Windows 10 versus Linux
 ================================================================================
