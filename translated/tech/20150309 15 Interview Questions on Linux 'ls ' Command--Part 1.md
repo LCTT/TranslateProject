@@ -18,6 +18,7 @@ Unix或类Unix系统中的“文件列表”命令“ls”是最基础并且使�
 列出文件
 
 同时，我们也可以使用“echo(打印)”命令与一个通配符(*)相关联的方式在目录中列出其中的所有文件。
+
     # echo *
 
 ![List All Files](http://www.tecmint.com/wp-content/uploads/2014/09/list-all-files.gif)
@@ -79,11 +80,13 @@ Unix或类Unix系统中的“文件列表”命令“ls”是最基础并且使�
 打印目录内容
 
 同时，如果我们不想列出“当前目录暗喻”和"父目录暗喻"，可以将“-A”和“-l”选项同“ls”命令一起使用。
+
     # ls -lA
 
 ### 7. 如何找到每个文件的创建者？###
 
 答： 我们需要结合 “--author”和 "-l"选项来打印出每个文件的创建者。
+
     # ls --author -l
 
 ![List Author Files](http://www.tecmint.com/wp-content/uploads/2014/09/List-Author-Files.gif)
