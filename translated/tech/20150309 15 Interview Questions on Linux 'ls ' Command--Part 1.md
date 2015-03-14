@@ -24,6 +24,7 @@ Unix或类Unix系统中的“文件列表”命令“ls”是最基础并且使�
 列出所有的文件。
 
 ### 2. 你会如何只通过使用echo命令来列出目录中的所有文件？###
+
     # echo */
 
 ![List All Directories](http://www.tecmint.com/wp-content/uploads/2014/09/list-all-directories.gif)
@@ -32,6 +33,7 @@ Unix或类Unix系统中的“文件列表”命令“ls”是最基础并且使�
 ### 3.  你会怎样列出一个目录中的所有文件， 包括隐藏的dot文件？###
 
 答：我们需要将“-a”选项与“ls”命令一起使用。
+
     # ls -a
 
 ![List All Hidden Files](http://www.tecmint.com/wp-content/uploads/2014/09/list-all-hidden-files.gif)
@@ -40,6 +42,7 @@ Unix或类Unix系统中的“文件列表”命令“ls”是最基础并且使�
 ### 4. 如何列出目录中除了 “当前目录暗喻(.)”和“父目录暗喻(..)”之外的所有文件，包括隐藏文件？###
 
 答： 我们需要将“-A”选项与“ls”命令一起使用
+
     # ls -A
 
 ![Do Not List Implied](http://www.tecmint.com/wp-content/uploads/2014/09/Do-not-list-Implied.gif)
@@ -48,6 +51,7 @@ Unix或类Unix系统中的“文件列表”命令“ls”是最基础并且使�
 ### 5. 如何将当前目录中的内容使用长格式打印列表？###
 
 答： 我们需要将“-l”选项与“ls”命令一起使用。
+
     # ls -l
 
 ![List Files Long](http://www.tecmint.com/wp-content/uploads/2014/09/list-files-long.gif)
