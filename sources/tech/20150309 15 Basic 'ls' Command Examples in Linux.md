@@ -11,7 +11,7 @@ Linux ls Command
 ls with no option list files and directories in bare format where we won’t be able to view details like file types, size, modified date and time, permission and links etc.
 
     # ls
-    
+
     0001.pcap        Desktop    Downloads         index.html   install.log.syslog  Pictures  Templates
     anaconda-ks.cfg  Documents  fbcmd_update.php  install.log  Music               Public    Videos
 
@@ -20,7 +20,7 @@ ls with no option list files and directories in bare format where we won’t be 
 Here, ls -l (-l is character not one) shows file or directory, size, modified date and time, file or folder name and owner of file and it’s permission.
 
     # ls -l
-    
+
     total 176
     -rw-r--r--. 1 root root   683 Aug 19 09:59 0001.pcap
     -rw-------. 1 root root  1586 Jul 31 02:17 anaconda-ks.cfg
@@ -42,7 +42,7 @@ Here, ls -l (-l is character not one) shows file or directory, size, modified da
 List all files including hidden file starting with ‘.‘.
 
     # ls -a
-    
+
     .                .bashrc  Documents         .gconfd          install.log         .nautilus     .pulse-cookie
     ..               .cache   Downloads         .gnome2          install.log.syslog  .netstat.swp  .recently-used.xbel
     0001.pcap        .config  .elinks           .gnome2_private  .kde                .opera        .spice-vdagent
@@ -56,7 +56,7 @@ List all files including hidden file starting with ‘.‘.
 With combination of -lh option, shows sizes in human readable format.
 
     # ls -lh
-    
+
     total 176K
     -rw-r--r--. 1 root root  683 Aug 19 09:59 0001.pcap
     -rw-------. 1 root root 1.6K Jul 31 02:17 anaconda-ks.cfg
@@ -78,7 +78,7 @@ With combination of -lh option, shows sizes in human readable format.
 Using -F option with ls command, will add the ‘/’ Character at the end each directory.
 
     # ls -F
-    
+
     0001.pcap        Desktop/    Downloads/        index.html   install.log.syslog  Pictures/  Templates/
     anaconda-ks.cfg  Documents/  fbcmd_update.php  install.log  Music/              Public/    Videos/
 
@@ -87,7 +87,7 @@ Using -F option with ls command, will add the ‘/’ Character at the end each 
 The following command with ls -r option display files and directories in reverse order.
 
     # ls -r
-    
+
     Videos     Public    Music               install.log  fbcmd_update.php  Documents  anaconda-ks.cfg
     Templates  Pictures  install.log.syslog  index.html   Downloads         Desktop    0001.pcap
 
@@ -96,21 +96,21 @@ The following command with ls -r option display files and directories in reverse
 ls -R option will list very long listing directory trees. See an example of output of the command.
 
     # ls -R
-    
+
     total 1384
     -rw-------. 1 root     root      33408 Aug  8 17:25 anaconda.log
     -rw-------. 1 root     root      30508 Aug  8 17:25 anaconda.program.log
-    
+
     ./httpd:
     total 132
     -rw-r--r--  1 root root     0 Aug 19 03:14 access_log
     -rw-r--r--. 1 root root 61916 Aug 10 17:55 access_log-20120812
-    
+
     ./lighttpd:
     total 68
     -rw-r--r--  1 lighttpd lighttpd  7858 Aug 21 15:26 access.log
     -rw-r--r--. 1 lighttpd lighttpd 37531 Aug 17 18:21 access.log-20120819
-    
+
     ./nginx:
     total 12
     -rw-r--r--. 1 root root    0 Aug 12 03:17 access.log
@@ -121,7 +121,7 @@ ls -R option will list very long listing directory trees. See an example of outp
 With combination of -ltr will shows latest modification file or directory date as last.
 
     # ls -ltr
-    
+
     total 176
     -rw-r--r--. 1 root root 11439 Jul 31 02:13 install.log.syslog
     -rw-r--r--. 1 root root 48867 Jul 31 02:17 install.log
@@ -143,7 +143,7 @@ With combination of -ltr will shows latest modification file or directory date a
 With combination of -lS displays file size in order, will display big in size first.
 
     # ls -lS
-    
+
     total 176
     -rw-r--r--. 1 root root 48867 Jul 31 02:17 install.log
     -rw-r--r--. 1 root root 46701 Jul 31 09:58 index.html
@@ -165,7 +165,7 @@ With combination of -lS displays file size in order, will display big in size fi
 We can see some number printed before file / directory name. With -i options list file / directory with inode number.
 
     # ls -i
-    
+
     20112 0001.pcap        23610 Documents         23793 index.html          23611 Music     23597 Templates
     23564 anaconda-ks.cfg  23595 Downloads            22 install.log         23612 Pictures  23613 Videos
     23594 Desktop          23585 fbcmd_update.php     35 install.log.syslog  23601 Public
@@ -175,7 +175,7 @@ We can see some number printed before file / directory name. With -i options lis
 Check version of ls command.
 
     # ls --version
-    
+
     ls (GNU coreutils) 8.4
     Copyright (C) 2010 Free Software Foundation, Inc.
     License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
@@ -188,7 +188,7 @@ Check version of ls command.
 List help page of ls command with their option.
 
     # ls --help
-    
+
     Usage: ls [OPTION]... [FILE]...
 
 ### 13. List Directory Information ###
@@ -210,7 +210,7 @@ With ls -l command list files under directory /tmp. Wherein with -ld parameters 
 ----------
 
     # ls -ld /tmp/
-    
+
     drwxrwxrwt. 13 root root 4096 Aug 21 12:48 /tmp/
 
 ### 14. Display UID and GID of Files ###
@@ -218,7 +218,7 @@ With ls -l command list files under directory /tmp. Wherein with -ld parameters 
 To display UID and GID of files and directories. use option -n with ls command.
 
     # ls -n
-    
+
     total 36
     drwxr-xr-x. 2 500 500 4096 Aug  2 01:52 Downloads
     drwxr-xr-x. 2 500 500 4096 Aug  2 01:52 Music
@@ -235,7 +235,7 @@ We have made alias for ls command, when we execute ls command it’ll take -l op
 Note: We can see number of alias available in your system with below alias command and same can be unalias as shown below example.
 
     # alias
-    
+
     alias cp='cp -i'
     alias l.='ls -d .* --color=auto'
     alias ll='ls -l --color=auto'

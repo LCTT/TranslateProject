@@ -1,3 +1,5 @@
+theo-l translating
+
 10 Useful ‘ls’ Command Interview Questions – Part 2
 ================================================================================
 Continuing the legacy of ls command here is the second interview article on Listing command. The first article of the series was highly appreciated by the Tecmint Community. If you’ve missed the first part of this series you may like to visit at:
@@ -158,7 +160,7 @@ That’s all for now. We will be coming up with the next part of this article se
 via: http://www.tecmint.com/ls-interview-questions/
 
 作者：[Ravi Saive][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[theo-l](https://github.com/theo-l)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
