@@ -1,4 +1,3 @@
-theo-l translating
 Translating by ZTinoZ
 15 Basic ‘ls’ Command Examples in Linux
 ================================================================================
@@ -256,7 +255,7 @@ In our next article we’ll cover up more or advanced ls command with their exam
 via: http://www.tecmint.com/15-basic-ls-command-examples-in-linux/
 
 作者：[Ravi Saive][a]
-译者：[theo-l](https://github.com/theo-l)
+译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
