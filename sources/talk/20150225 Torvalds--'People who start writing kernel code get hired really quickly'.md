@@ -1,3 +1,5 @@
+translating by haiming
+
 Torvalds: 'People who start writing kernel code get hired really quickly'
 ================================================================================
 Now more than ever, the development of the Linux kernel is a matter for the professionals, as unpaid volunteer contributions to the project reached their lowest recorded levels in the latest "Who Writes Linux" report, which was released today.
