@@ -1,4 +1,4 @@
-translating by haiming
+translating by haimingfg
 
 Torvalds: 'People who start writing kernel code get hired really quickly'
 ================================================================================
