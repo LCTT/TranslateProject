@@ -1,94 +1,92 @@
-translating wi-cuckoo LLAP
-A Look At What Linux Games We Will See In 2015 And Beyond
-================================================================================
-Linux Gaming is dead they said, Linux Gaming is pointless they said...ah whatever. Here’s a look at what’s to come for us in 2015 and beyond.
+预见我们将会在2015年及之后的Linux游戏
+================================================================================他们说Linux游戏开发已经死了，已经变得毫无意义．．．随他们说去吧．一起看看2015甚至以后会为我们带来什么游戏．
 
-It's pretty hard to keep up with everything that's going on for us, but here's a quick look at what we could see soon.
+真的很难跟上为我们出现的每一样事物，但是可以快速浏览一下我们将会看到的变化．
 
-### Confirmed Games ###
+### 已确认的游戏 ###
 
-#### Adventure Games ####
+#### 冒险游戏 ####
 
-- [Firewatch][1]
-- [Paradise Lost: First Contact][2]
-- [SteamWorld Heist][3]
+- [看火人][1]
+- [失落的天堂：初探][2]
+- [蒸汽世界:浩劫][3]
 
-#### Action Games ####
+#### 动作游戏　####
 
-- [Darksiders][4]
-- [Darksiders II][5]
-- [Ray's The Dead][6]
-- [Skullgirls][7]
+- [暗黑血统][4]
+- [暗黑血统２][5]
+- [尸人的世界][6]
+- [骷髅女孩][7]
 
-#### FPS Games ####
+#### 第一人称游戏 ####
 
-- [Bioshock Infinite][8]
-- Half Life 3 /troll
-- [Homefront: The Revolution][9]
-- [Killing Floor 2][10]
-- Serious Sam 4 (No official site for it yet)
-- [Storm United][11]
-- [SUPERHOT][12]
+- [生化奇兵：永恒][8]
+- 半条命 3 /troll  　　　　　#此处troll不知道如何翻译
+- [烽火家园:革命][9]
+- [杀戮空间 2][10]
+- 英雄萨姆 4(目前无官方站点）
+- [联合风暴][11]
+- [烈火击杀][12]
 
-#### Platformers ####
+#### 平台游戏　####
 
-- [Broforce][13]
-- [Chasm][14]
-- [Giana Sisters][15]
-- [Heart Forth, Alicia][16]
-- [Hot Tin Roof][17]
-- [Infinifactory][18]
-- [Mighty No. 9][19]
-- [Night in the Woods][20]
-- [Noct][21]
-- [Oddworld: New 'N' Tasty][22]
-- [Red Goddess][23]
+- [武装原型][13]
+- [峡谷][14]         #此处游戏名尚不确定
+- [吉安娜姐妹][15]
+- [心之所向：Alicia][16]
+- [   ][17]              #此处游戏名未知
+- [无限工厂][18]
+- [无敌９号][19]
+- [林中之夜][20]
+- [夜][21]
+- [奇异的世界：新鲜可口][22]
+- [真红女神][23]
 
-#### RPG Games ####
+#### 角色扮演游戏 ####
 
-- [Divinity: Original Sin][24]
-- [Pillars Of Eternity][25]
-- [Shadowrun: Hong Kong][26]
-- [The Banner Saga][27]
+- [神界:原罪][24]
+- [永恒之柱][25]
+- [暗影狂奔：香港][26]
+- [旗帜的传说][27]
 
-#### Strategy Games ####
+#### 策略游戏 ####
 
-- [Age of Wonders III][28]
-- [Banished][29]
-- [Cities: Skylines][30]
-- [Clockwork Empires][31]
-- [Parkitect][32]
-- [Scrolls][33]
-- [Space Pirates And Zombies 2][34]
+- [奇迹时代３][28]
+- [放逐之城][29]
+- [城：天际][30]
+- [发条帝国][31]
+- [][32]
+- [卷轴][33]
+- [太空海盗和僵尸 2][34]
 
-#### Sandbox Games ####
+#### 沙盒游戏 ####
 
-- [Terraria][35]
-- [X Rebirth][36]
+- [泰拉瑞亚][35]
+- [X 重生][36]
 
-#### Unconfirmed, but highly likely ####
+#### 不太确认，不过可能性高 ####
 
-- [Company of Heroes 2][37]
-- [Outlast][38]
-- [Shadow Warrior][39]
-- [Torchlight II][40]
+- [英雄连][37]
+- [逃生][38]
+- [影子武士][39]
+- [火炬之光 2][40]
 
-Then there’s the [two ports teased from Feral Interactive][41], we can’t let them be left out just because we don’t know what they are.
+然而有两个来自Feral Interactive的，由于不知道他们是什么，所以没有列举出来．
 
-We imagine Aspyr Media are also working on new bigger ports, but they have only just released their latest game, so it may be a few months until we see anything.
+我们猜测Aspyr也在准备新的大制作，但是他们仅仅发布了他们最新的游戏，所以可能要等上几个月我们才能看到些什么．
 
-**This isn't a complete list** of course, as we can easily forget with the sheer amount of games heading our way, and wow what a list!
+当然，** 这不是完整的列表 **，我们会轻易忘记巨量的游戏正在走向我们，哇，如此丰富的列表．
 
-We have GDC next month, and we are expecting a few announcements too. While we don't have anything solid, with Valve's big presence with Steam Machines we are expecting at least some more Linux games, otherwise it we fear it may be a little lacklustre for Valve to only show off older existing games for Linux.
+下个月就是游戏开发者大会，我们也期待一些改变发生．然而，我们没有什么确切的东西，对于Valve与Steam Machines的合作，我们期待至少会增加一些Linux游戏，否则，如我们担心，炫耀一些过时的游戏会让Valve脸上无光．
 
-What did we miss that you’re excited about for Linux? 
+你怀念Linux的哪些地方曾让你兴奋？
 
 --------------------------------------------------------------------------------
 
 via: http://www.gamingonlinux.com/articles/a-look-at-what-linux-games-we-will-see-in-2015-and-beyond.4963
 
 作者：[liamdawe][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wi-cuckoo](https://github.com/wi-cuckoo)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
@@ -135,3 +133,4 @@ via: http://www.gamingonlinux.com/articles/a-look-at-what-linux-games-we-will-se
 [39]:https://www.gamingonlinux.com/articles/shadow-warrior-looks-like-it-will-come-to-linux.4859
 [40]:https://www.gamingonlinux.com/articles/torchlight-ii-has-even-more-positive-signs-for-linux.4817
 [41]:http://www.gamingonlinux.com/articles/feralinteractive.com/en/upcoming/
+
