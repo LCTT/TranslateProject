@@ -1,3 +1,4 @@
+zpl1025
 How to Setup lftp - A Simple Command line FTP Program
 ================================================================================
 Hi everyone, this article is about Lftp and how we can install Lftp in our Linux Operating System. [Lftp][1] is a command line based File Transfer Software also known as FTP Client which was developed by Alexander Lukyanov and was distributed as GNU General Public License. Besides FTP, it also supports FTPS, HTTP, HTTPS, HFTP, FISH, and SFTP. The program also supports FXP, allowing for data transfers between two FTP servers bypassing the client machine.
