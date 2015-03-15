@@ -1,3 +1,4 @@
+translating wi-cuckoo LLAP
 A Look At What Linux Games We Will See In 2015 And Beyond
 ================================================================================
 Linux Gaming is dead they said, Linux Gaming is pointless they said...ah whatever. Here’s a look at what’s to come for us in 2015 and beyond.
