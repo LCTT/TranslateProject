@@ -1,7 +1,6 @@
-Translating by ZTinoZ
-How to Manage KVM Virtual Environment using Commandline Tools in Linux
+如何在Linux中用命令行工具管理KVM虚拟环境
 ================================================================================
-In this 4th part of our [KVM series][1], we are discussing KVM environment management using CLI. We use ‘virt-install’ CL tool to create and configure virtual machines, virsh CL tool to create and configure storage pools and qemu-img CL tool to create and manage disk images.
+在我们[KVM系列专题][1]的第四部分，我们将会一起讨论下命令行界面下来管理KVM环境。We use ‘virt-install’ CL tool to create and configure virtual machines, virsh CL tool to create and configure storage pools and qemu-img CL tool to create and manage disk images.
 
 ![KVM Management in Linux](http://www.tecmint.com/wp-content/uploads/2015/02/KVM-Management-in-Linux.jpg)
 KVM Management in Linux
@@ -130,7 +129,7 @@ Booting Virtual Machine
 ![Installation of Virtual Machine](http://www.tecmint.com/wp-content/uploads/2015/02/Installation-of-Virtual-Machine.jpeg)
 Installation of Virtual Machine
 
-### Conclusion ###
+### 结论 ###
 
 This is the latest part of our KVM tutorial, we haven’t covered everything of course. It a shot to scratch the KVM environment so its your turn to search and keep hands dirty using this nice resources.
 
@@ -142,7 +141,7 @@ This is the latest part of our KVM tutorial, we haven’t covered everything of 
 via: http://www.tecmint.com/kvm-management-tools-to-manage-virtual-machines/
 
 作者：[Mohammad Dosoukey][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ZTinoZ](https://github.com/ZTinoZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
