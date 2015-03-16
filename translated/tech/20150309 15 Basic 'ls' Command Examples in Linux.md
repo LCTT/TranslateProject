@@ -1,26 +1,25 @@
-Translating by ZTinoZ
-15 Basic ‘ls’ Command Examples in Linux
+Linux中的15个基本‘ls’命令示例
 ================================================================================
-ls command is one of the most frequently used command in Linux. I believe ls command is the first command you may use when you get into the command prompt of Linux Box. We use ls command daily basis and frequently even though we may not aware and never use all the option available. In this article, we’ll be discussing basic ls command where we have tried to cover as much parameters as possible.
+ls命令是Linux系统中最被频繁使用的命令之一，我相信ls命令一定是你进入一台Linux系统的电脑打开命令提示符后第一个使用的命令。我们每天都在频繁地使用ls命令即使我们可能没有意识也从来用不到所以可用的选项。本文中，我们将讨论下一些基本的ls命令并且覆盖尽可能多的有关参数来讲解。	
 
 ![Linux ls Command](http://www.tecmint.com/wp-content/uploads/2012/08/Linux-ls-Commands.png)
-Linux ls Command
+Linux的ls命令
 
-### 1. List Files using ls with no option ###
+### 1. 不带任何选项列出文件 ###
 
-ls with no option list files and directories in bare format where we won’t be able to view details like file types, size, modified date and time, permission and links etc.
+不带选项的ls命令来光秃秃地列出文件和目录，我们是不能看到像文件类型、大小、修改日期和时间、权限以及链接这样具体的信息的。
 
     # ls
-
+    
     0001.pcap        Desktop    Downloads         index.html   install.log.syslog  Pictures  Templates
     anaconda-ks.cfg  Documents  fbcmd_update.php  install.log  Music               Public    Videos
 
-### 2 List Files With option –l ###
+### 2 带–l选项列出文件列表 ###
 
-Here, ls -l (-l is character not one) shows file or directory, size, modified date and time, file or folder name and owner of file and it’s permission.
+你看，ls -l（-l是字母不是“1”）就能展示出是文件还是目录，它的大小、修改日期和时间、文件或目录的名字以及文件的属主和它的权限。
 
     # ls -l
-
+    
     total 176
     -rw-r--r--. 1 root root   683 Aug 19 09:59 0001.pcap
     -rw-------. 1 root root  1586 Jul 31 02:17 anaconda-ks.cfg
@@ -37,12 +36,12 @@ Here, ls -l (-l is character not one) shows file or directory, size, modified da
     drwxr-xr-x. 2 root root  4096 Jul 31 02:48 Templates
     drwxr-xr-x. 2 root root  4096 Jul 31 02:48 Videos
 
-### 3. View Hidden Files ###
+### 3. 浏览隐藏文件 ###
 
-List all files including hidden file starting with ‘.‘.
+列出所有文件包括以‘.’开头的隐藏文件。
 
     # ls -a
-
+    
     .                .bashrc  Documents         .gconfd          install.log         .nautilus     .pulse-cookie
     ..               .cache   Downloads         .gnome2          install.log.syslog  .netstat.swp  .recently-used.xbel
     0001.pcap        .config  .elinks           .gnome2_private  .kde                .opera        .spice-vdagent
@@ -51,12 +50,12 @@ List all files including hidden file starting with ‘.‘.
     .bash_logout     Desktop  fbcmd_update.php  .ICEauthority    .mozilla            Public        Videos
     .bash_profile    .digrc   .gconf            index.html       Music               .pulse        .wireshark
 
-### 4. List Files with Human Readable Format with option -lh ###
+### 4. 用-lh选项来以人类可读方式列出文件  ###
 
-With combination of -lh option, shows sizes in human readable format.
+用-lh组合选项，以人类可读方式来显示大小。
 
     # ls -lh
-
+    
     total 176K
     -rw-r--r--. 1 root root  683 Aug 19 09:59 0001.pcap
     -rw-------. 1 root root 1.6K Jul 31 02:17 anaconda-ks.cfg
@@ -73,55 +72,55 @@ With combination of -lh option, shows sizes in human readable format.
     drwxr-xr-x. 2 root root 4.0K Jul 31 02:48 Templates
     drwxr-xr-x. 2 root root 4.0K Jul 31 02:48 Videos
 
-### 5. List Files and Directories with ‘/’ Character at the end ###
+### 5. 以尾部以‘/’字符结尾的方式列出文件和目录 ###
 
 Using -F option with ls command, will add the ‘/’ Character at the end each directory.
 
     # ls -F
-
+    
     0001.pcap        Desktop/    Downloads/        index.html   install.log.syslog  Pictures/  Templates/
     anaconda-ks.cfg  Documents/  fbcmd_update.php  install.log  Music/              Public/    Videos/
 
-### 6. List Files in Reverse Order ###
+### 6. 倒序列出文件 ###
 
-The following command with ls -r option display files and directories in reverse order.
+ls -r选项能以倒序方式显示文件和目录。
 
     # ls -r
-
+    
     Videos     Public    Music               install.log  fbcmd_update.php  Documents  anaconda-ks.cfg
     Templates  Pictures  install.log.syslog  index.html   Downloads         Desktop    0001.pcap
 
-### 7. Recursively list Sub-Directories ###
+### 7. 递归列出子目录 ###
 
-ls -R option will list very long listing directory trees. See an example of output of the command.
+ls -R选项能列出非常长的目录树，来看看示例输出：
 
     # ls -R
-
+    
     total 1384
     -rw-------. 1 root     root      33408 Aug  8 17:25 anaconda.log
     -rw-------. 1 root     root      30508 Aug  8 17:25 anaconda.program.log
-
+    
     ./httpd:
     total 132
     -rw-r--r--  1 root root     0 Aug 19 03:14 access_log
     -rw-r--r--. 1 root root 61916 Aug 10 17:55 access_log-20120812
-
+    
     ./lighttpd:
     total 68
     -rw-r--r--  1 lighttpd lighttpd  7858 Aug 21 15:26 access.log
     -rw-r--r--. 1 lighttpd lighttpd 37531 Aug 17 18:21 access.log-20120819
-
+    
     ./nginx:
     total 12
     -rw-r--r--. 1 root root    0 Aug 12 03:17 access.log
     -rw-r--r--. 1 root root  390 Aug 12 03:17 access.log-20120812.gz
 
-### 8. Reverse Output Order ###
+### 8. 反向输出次序 ###
 
-With combination of -ltr will shows latest modification file or directory date as last.
+带-ltr组合选项能以文件或目录的最新修改时间的次序来显示它们。
 
     # ls -ltr
-
+    
     total 176
     -rw-r--r--. 1 root root 11439 Jul 31 02:13 install.log.syslog
     -rw-r--r--. 1 root root 48867 Jul 31 02:17 install.log
@@ -138,12 +137,12 @@ With combination of -ltr will shows latest modification file or directory date a
     drwxr-xr-x. 4 root root  4096 Aug 16 02:55 Downloads
     -rw-r--r--. 1 root root   683 Aug 19 09:59 0001.pcap
 
-### 9. Sort Files by File Size ###
+### 9. 按文件大小排序 ###
 
-With combination of -lS displays file size in order, will display big in size first.
+带-lS组合选项能按文件从大到小的次序显示。
 
     # ls -lS
-
+    
     total 176
     -rw-r--r--. 1 root root 48867 Jul 31 02:17 install.log
     -rw-r--r--. 1 root root 46701 Jul 31 09:58 index.html
@@ -160,22 +159,22 @@ With combination of -lS displays file size in order, will display big in size fi
     -rw-------. 1 root root  1586 Jul 31 02:17 anaconda-ks.cfg
     -rw-r--r--. 1 root root   683 Aug 19 09:59 0001.pcap
 
-### 10. Display Inode number of File or Directory ###
+### 10. 显示文件或目录的索引节点数 ###
 
-We can see some number printed before file / directory name. With -i options list file / directory with inode number.
+我们有时候可以看到一些数字打印在文件或目录名之前，带-i选项就能列出文件或目录的索引节点数。
 
     # ls -i
-
+    
     20112 0001.pcap        23610 Documents         23793 index.html          23611 Music     23597 Templates
     23564 anaconda-ks.cfg  23595 Downloads            22 install.log         23612 Pictures  23613 Videos
     23594 Desktop          23585 fbcmd_update.php     35 install.log.syslog  23601 Public
 
-### 11. Shows version of ls command ###
+### 11. 显示ls命令的版本 ###
 
-Check version of ls command.
+查看ls命令的版本。
 
     # ls --version
-
+    
     ls (GNU coreutils) 8.4
     Copyright (C) 2010 Free Software Foundation, Inc.
     License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>.
@@ -183,17 +182,17 @@ Check version of ls command.
     There is NO WARRANTY, to the extent permitted by law.
     Written by Richard M. Stallman and David MacKenzie.
 
-### 12. Show Help Page ###
+### 12. 显示帮助页面 ###
 
-List help page of ls command with their option.
+列出ls命令的选项帮助页面。
 
     # ls --help
-
+    
     Usage: ls [OPTION]... [FILE]...
 
-### 13. List Directory Information ###
+### 13. 列出目录信息 ###
 
-With ls -l command list files under directory /tmp. Wherein with -ld parameters displays information of /tmp directory.
+用ls -l命令列出/tmp目录下的文件，其中-ld参数可以显示/tmp目录的信息。
 
     # ls -l /tmp
     total 408
@@ -210,15 +209,15 @@ With ls -l command list files under directory /tmp. Wherein with -ld parameters 
 ----------
 
     # ls -ld /tmp/
-
+    
     drwxrwxrwt. 13 root root 4096 Aug 21 12:48 /tmp/
 
-### 14. Display UID and GID of Files ###
+### 14. 显示文件的UID和GID ###
 
-To display UID and GID of files and directories. use option -n with ls command.
+用ls -n命令来显示文件和目录的UID（译者注：userid，用户ID）和GID（译者注：groupid，组ID）。
 
     # ls -n
-
+    
     total 36
     drwxr-xr-x. 2 500 500 4096 Aug  2 01:52 Downloads
     drwxr-xr-x. 2 500 500 4096 Aug  2 01:52 Music
@@ -226,16 +225,16 @@ To display UID and GID of files and directories. use option -n with ls command.
     -rw-rw-r--. 1 500 500   12 Aug 21 13:06 tmp.txt
     drwxr-xr-x. 2 500 500 4096 Aug  2 01:52 Videos
 
-### 15. ls command and it’s Aliases ###
+### 15. ls命令和它的别名功能 ###
 
-We have made alias for ls command, when we execute ls command it’ll take -l option by default and display long listing as mentioned earlier.
+我们给ls命令设置过别名之后，当我们执行ls命令的时候它会默认执行-l选项并且像上文提到的那样显示长列表。
 
     # alias ls="ls -l"
 
-Note: We can see number of alias available in your system with below alias command and same can be unalias as shown below example.
+注意：我们可以通过不加任何参数的alias命令来看到目前系统中可用的所有alias设置，当然它们同时也可以unalias。
 
     # alias
-
+    
     alias cp='cp -i'
     alias l.='ls -d .* --color=auto'
     alias ll='ls -l --color=auto'
@@ -244,18 +243,18 @@ Note: We can see number of alias available in your system with below alias comma
     alias rm='rm -i'
     alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
 
-To remove an alias previously defined, just use the unalias command.
+删除一项之前定义的alias设置，只需用unalias命令即可。
 
     # unalias ls
 
-In our next article we’ll cover up more or advanced ls command with their examples. If we’ve missed anything in the list, please update us via comment section.
+下篇文章我们将讨论更多更高级的ls命令以及示例，如果我们在本文有遗漏了任何东西，请通过评论让我们获悉。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/15-basic-ls-command-examples-in-linux/
 
 作者：[Ravi Saive][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ZTinoZ](https://github.com/ZTinoZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
