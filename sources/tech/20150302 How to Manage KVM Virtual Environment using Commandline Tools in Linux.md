@@ -1,3 +1,4 @@
+Translating by ZTinoZ
 How to Manage KVM Virtual Environment using Commandline Tools in Linux
 ================================================================================
 In this 4th part of our [KVM series][1], we are discussing KVM environment management using CLI. We use ‘virt-install’ CL tool to create and configure virtual machines, virsh CL tool to create and configure storage pools and qemu-img CL tool to create and manage disk images.
