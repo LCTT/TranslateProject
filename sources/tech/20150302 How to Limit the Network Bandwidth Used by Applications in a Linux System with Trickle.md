@@ -1,3 +1,5 @@
+theo-l translating
+
 How to Limit the Network Bandwidth Used by Applications in a Linux System with Trickle
 ================================================================================
 Have you ever encountered situations where one application dominated you all network bandwidth? If you have ever been in a situation where one application ate all your traffic, then you will value the role of the trickle bandwidth shaper application. Either you are a system admin or just a Linux user, you need to learn how to control the upload and download speeds for applications to make sure that your network bandwidth is not burned by a single application.
@@ -109,17 +111,17 @@ We are using the freely-distributable Linux Fundamentals PDF file (available fro
 
 You can initially download this file to your current working directory with the following command:
 
-    # wget http://linux-training.be/files/books/LinuxFun.pdf 
+    # wget http://linux-training.be/files/books/LinuxFun.pdf
 
 The syntax to upload a file to our FTP server without trickle is as follows:
 
-    # ncftpput -u username -p password 192.168.0.15  /remote_directory local-filename 
+    # ncftpput -u username -p password 192.168.0.15  /remote_directory local-filename
 
 Where /remote_directory is the path of the upload directory relative to username’s home, and local-filename is a file in your current working directory.
 
 Specifically, without trickle we get a peak upload speed of 52.02 MB/s (please note that this is not the real average upload speed, but an instant starting peak), and the file gets uploaded almost instantly:
 
-    # ncftpput -u username -p password 192.168.0.15  /testdir LinuxFun.pdf 
+    # ncftpput -u username -p password 192.168.0.15  /testdir LinuxFun.pdf
 
 Output:
 
@@ -127,11 +129,11 @@ Output:
 
 With trickle, we will limit the upload transfer rate at 5 KB/s. Before uploading the file for the second time, we need to delete it from the destination directory; otherwise, ncftp will inform us that the file at the destination directory is the same that we are trying to upload, and will not perform the transfer:
 
-    # rm /absolute/path/to/destination/directory/LinuxFun.pdf 
+    # rm /absolute/path/to/destination/directory/LinuxFun.pdf
 
 Then:
 
-    # trickle -s -u 5 ncftpput -u username -p password 111.111.111.111 /testdir LinuxFun.pdf 
+    # trickle -s -u 5 ncftpput -u username -p password 111.111.111.111 /testdir LinuxFun.pdf
 
 Output:
 
@@ -143,13 +145,13 @@ In the example above, we can see that the average upload speed dropped to ~5 KB/
 
 First, remember to delete the PDF from the original source directory:
 
-    # rm /absolute/path/to/source/directory/LinuxFun.pdf 
+    # rm /absolute/path/to/source/directory/LinuxFun.pdf
 
 Please note that the following cases will download the remote file to the current directory in the client machine. This fact is indicated by the period (‘.‘) that appears after the IP address of the FTP server.
 
 Without trickle:
 
-    # ncftpget -u username -p  password 111.111.111.111 . /testdir/LinuxFun.pdf 
+    # ncftpget -u username -p  password 111.111.111.111 . /testdir/LinuxFun.pdf
 
 Output:
 
@@ -157,7 +159,7 @@ Output:
 
 With trickle, limiting the download speed at 20 KB/s:
 
-    # trickle -s -d 30 ncftpget -u username -p password 111.111.111.111 . /testdir/LinuxFun.pdf 
+    # trickle -s -d 30 ncftpget -u username -p password 111.111.111.111 . /testdir/LinuxFun.pdf
 
 Output:
 
@@ -189,7 +191,7 @@ In this example we will use the freely-distributable “He is the gift” video,
 
 We will initially download this file to your current working directory with the following command:
 
-    # wget http://media2.ldscdn.org/assets/missionary/our-people-2014/2014-00-1460-he-is-the-gift-360p-eng.mp4 
+    # wget http://media2.ldscdn.org/assets/missionary/our-people-2014/2014-00-1460-he-is-the-gift-360p-eng.mp4
 
 First off, we will start the trickled daemon with the command listed above:
 
@@ -197,7 +199,7 @@ First off, we will start the trickled daemon with the command listed above:
 
 Without trickle:
 
-    # ncftpput -u username -p password 192.168.0.15 /testdir 2014-00-1460-he-is-the-gift-360p-eng.mp4 
+    # ncftpput -u username -p password 192.168.0.15 /testdir 2014-00-1460-he-is-the-gift-360p-eng.mp4
 
 Output:
 
@@ -205,7 +207,7 @@ Output:
 
 With trickle:
 
-    # trickle ncftpput -u username -p password 192.168.0.15 /testdir 2014-00-1460-he-is-the-gift-360p-eng.mp4 
+    # trickle ncftpput -u username -p password 192.168.0.15 /testdir 2014-00-1460-he-is-the-gift-360p-eng.mp4
 
 Output:
 
@@ -219,7 +221,7 @@ As in Example 2, we will be downloading the file to the current working director
 
 Without trickle:
 
-    # ncftpget -u username -p password 192.168.0.15 . /testdir/2014-00-1460-he-is-the-gift-360p-eng.mp4 
+    # ncftpget -u username -p password 192.168.0.15 . /testdir/2014-00-1460-he-is-the-gift-360p-eng.mp4
 
 Output:
 
@@ -227,7 +229,7 @@ Output:
 
 With trickle:
 
-    # trickle ncftpget -u username -p password 111.111.111.111 . /testdir/2014-00-1460-he-is-the-gift-360p-eng.mp4 
+    # trickle ncftpget -u username -p password 111.111.111.111 . /testdir/2014-00-1460-he-is-the-gift-360p-eng.mp4
 
 Output:
 
@@ -259,7 +261,7 @@ The following is a trickled.conf sample file in the CentOS 7 client (192.168.0.1
     Priority = 1
     Time-Smoothing = 0.1
     Length-Smoothing = 2
-    
+
     [ftp]
     Priority = 2
     Time-Smoothing = 1
