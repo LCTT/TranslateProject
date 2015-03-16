@@ -1,4 +1,4 @@
-Linux中的15个基本‘.’命令示例
+Linux中的15个基本‘ls’命令示例
 ================================================================================
 ls命令是Linux系统中最被频繁使用的命令之一，我相信ls命令一定是你进入一台Linux系统的电脑打开命令提示符后第一个使用的命令。我们每天都在频繁地使用ls命令即使我们可能没有意识也从来用不到所以可用的选项。本文中，我们将讨论下一些基本的ls命令并且覆盖尽可能多的有关参数来讲解。	
 
@@ -115,9 +115,9 @@ ls -R选项能列出非常长的目录树，来看看示例输出：
     -rw-r--r--. 1 root root    0 Aug 12 03:17 access.log
     -rw-r--r--. 1 root root  390 Aug 12 03:17 access.log-20120812.gz
 
-### 8. Reverse Output Order ###
+### 8. 反向输出次序 ###
 
-带-ltr组合选项能以文件或目录的最新修改时间来显示它们。
+带-ltr组合选项能以文件或目录的最新修改时间的次序来显示它们。
 
     # ls -ltr
     
@@ -169,9 +169,9 @@ ls -R选项能列出非常长的目录树，来看看示例输出：
     23564 anaconda-ks.cfg  23595 Downloads            22 install.log         23612 Pictures  23613 Videos
     23594 Desktop          23585 fbcmd_update.php     35 install.log.syslog  23601 Public
 
-### 11. Shows version of ls command ###
+### 11. 显示ls命令的版本 ###
 
-Check version of ls command.
+查看ls命令的版本。
 
     # ls --version
     
@@ -182,17 +182,17 @@ Check version of ls command.
     There is NO WARRANTY, to the extent permitted by law.
     Written by Richard M. Stallman and David MacKenzie.
 
-### 12. Show Help Page ###
+### 12. 显示帮助页面 ###
 
-List help page of ls command with their option.
+列出ls命令的选项帮助页面。
 
     # ls --help
     
     Usage: ls [OPTION]... [FILE]...
 
-### 13. List Directory Information ###
+### 13. 列出目录信息 ###
 
-With ls -l command list files under directory /tmp. Wherein with -ld parameters displays information of /tmp directory.
+用ls -l命令列出/tmp目录下的文件，其中-ld参数可以显示/tmp目录的信息。
 
     # ls -l /tmp
     total 408
@@ -212,9 +212,9 @@ With ls -l command list files under directory /tmp. Wherein with -ld parameters 
     
     drwxrwxrwt. 13 root root 4096 Aug 21 12:48 /tmp/
 
-### 14. Display UID and GID of Files ###
+### 14. 显示文件的UID和GID ###
 
-To display UID and GID of files and directories. use option -n with ls command.
+用ls -n命令来显示文件和目录的UID（译者注：userid，用户ID）和GID（译者注：groupid，组ID）。
 
     # ls -n
     
@@ -225,13 +225,13 @@ To display UID and GID of files and directories. use option -n with ls command.
     -rw-rw-r--. 1 500 500   12 Aug 21 13:06 tmp.txt
     drwxr-xr-x. 2 500 500 4096 Aug  2 01:52 Videos
 
-### 15. ls command and it’s Aliases ###
+### 15. ls命令和它的别名功能 ###
 
-We have made alias for ls command, when we execute ls command it’ll take -l option by default and display long listing as mentioned earlier.
+我们给ls命令设置过别名之后，当我们执行ls命令的时候它会默认执行-l选项并且像上文提到的那样显示长列表。
 
     # alias ls="ls -l"
 
-Note: We can see number of alias available in your system with below alias command and same can be unalias as shown below example.
+注意：我们可以通过不加任何参数的alias命令来看到目前系统中可用的所有alias设置，当然它们同时也可以unalias。
 
     # alias
     
@@ -243,11 +243,11 @@ Note: We can see number of alias available in your system with below alias comma
     alias rm='rm -i'
     alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
 
-To remove an alias previously defined, just use the unalias command.
+删除一项之前定义的alias设置，只需用unalias命令即可。
 
     # unalias ls
 
-In our next article we’ll cover up more or advanced ls command with their examples. If we’ve missed anything in the list, please update us via comment section.
+下篇文章我们将讨论更多更高级的ls命令以及示例，如果我们在本文有遗漏了任何东西，请通过评论让我们获悉。
 
 --------------------------------------------------------------------------------
 
