@@ -1,15 +1,20 @@
 theo-l translating
 
 How to Limit the Network Bandwidth Used by Applications in a Linux System with Trickle
+如何在linux上使用Trickle来显示应用程序的网络宽带使用．
 ================================================================================
 Have you ever encountered situations where one application dominated you all network bandwidth? If you have ever been in a situation where one application ate all your traffic, then you will value the role of the trickle bandwidth shaper application. Either you are a system admin or just a Linux user, you need to learn how to control the upload and download speeds for applications to make sure that your network bandwidth is not burned by a single application.
+有没有遇到过系统中的某个应用程序独占了你所有的网络宽带的情形？如果你有过这样的遭遇，那么你就会感受到Trickle宽带调整应用角色的价值．不管你是一个系统管理员还是仅仅Linux用户,都需要学习如何控制应用程序的上下行速度，来确保你的网络宽带不会被某个程序
+霸占．
 
 ![Install Trickle Bandwidth Limit in Linux](http://www.tecmint.com/wp-content/uploads/2013/11/Bandwidth-limit-trickle.png)
 Install Trickle Bandwidth Limit in Linux
 
 ### What is Trickle? ###
+### 什么是　Trickle? ###
 
 Trickle is a network bandwidth shaper tool that allows us to manage the upload and download speeds of applications in order to prevent any single one of them to hog all (or most) of the available bandwidth. In few words, trickle lets you control the network traffic rate on a per-application basis, as opposed to per-user control, which is the classic example of bandwidth shaping in a client-server environment, and is probably the setup we are more familiar with.
+Trickle是一个网络宽带调整工具，可以让我们管理应用程序的网络上下行速度，使得可以避免其中的某个应用程序吃掉了全部或大部分可用的宽带．换句话说，Trickle可以让你基于单个应用程序来控制网络流量速率，而不是仅仅针对与单个用户--在客户端网络环境中经典的宽带调整样例，
 
 ### How Trickle Works? ###
 
