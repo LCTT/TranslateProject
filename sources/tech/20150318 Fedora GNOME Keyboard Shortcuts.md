@@ -135,24 +135,24 @@ If you press "CTRL", "ALT" and "DEL" on your keyboard within Fedora a message wi
 
 The editing keyboard shortcuts are pretty much universal across every operating system.
 
-- CTRL + A Select All
-- CTRL + X Cut
-- CTRL + C Copy
-- CTRL + V Paste
-- CTRL + Z Undo
+- CTRL + A - Select All
+- CTRL + X - Cut
+- CTRL + C - Copy
+- CTRL + V - Paste
+- CTRL + Z - Undo
 
 ### 13.  Screen Capturing ###
 
 As with the editing shortcuts, the screencapturing keys are fairly standard
 
-- PRTSC (Print Screen) Take screenshot
-- Alt + PRTSC Take screenshot of current window
-- Shift + PRTSC Take screenshot of an area of the screen
+- PRTSC (Print Screen) - Take screenshot
+- Alt + PRTSC - Take screenshot of current window
+- Shift + PRTSC - Take screenshot of an area of the screen
 
 Here is one that is fairly unique but great for people making tutorial videos.
 
-- CTRL + ALT + SHIFT + R Record Screencast
-- CTRL + ALT + SHIFT + R again Stop Screencast
+- CTRL + ALT + SHIFT + R - Record Screencast
+- CTRL + ALT + SHIFT + R again - Stop Screencast
 
 The [screencasts][4] will be stored in the videos folder under your home directory in the [webm][5] format.
 
