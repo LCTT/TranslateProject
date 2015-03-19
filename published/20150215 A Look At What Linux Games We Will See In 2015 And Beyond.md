@@ -1,85 +1,100 @@
-预见我们将会在2015年及之后的Linux游戏
-================================================================================他们说Linux游戏开发已经死了，已经变得毫无意义．．．随他们说去吧．一起看看2015甚至以后会为我们带来什么游戏．
+Linux 游戏之 2015 动向
+================================================================================
+他们说Linux游戏开发已经死了，已经变得毫无意义…… 随他们说去吧。一起看看2015甚至以后会为我们带来什么Linux游戏。
 
-真的很难跟上为我们出现的每一样事物，但是可以快速浏览一下我们将会看到的变化．
+真的很难跟得上扑面而来的各种形形色色的新事物，但是可以快速浏览一下我们将会看到的变化。
 
 ### 已确认的游戏 ###
 
 #### 冒险游戏 ####
 
-- [看火人][1]
-- [失落的天堂：初探][2]
-- [蒸汽世界:浩劫][3]
+- [看火人（Firewatch）][1]
+- [失落的天堂：初探（Paradise Lost: First Contact）][2]
+- [时空英豪 1.1（Outcast 1.1）][42]
+- [蒸汽世界:浩劫（SteamWorld Heist）][3]
 
 #### 动作游戏　####
 
-- [暗黑血统][4]
-- [暗黑血统２][5]
-- [尸人的世界][6]
-- [骷髅女孩][7]
+- [暗黑血统（Darksiders）][4]
+- [暗黑血统 2（Darksiders 2）][5]
+- [尸人的世界（Ray's The Dead）][6]
+- [骷髅女孩（Skullgirls）][7]
 
 #### 第一人称游戏 ####
 
-- [生化奇兵：永恒][8]
-- 半条命 3 /troll  　　　　　#此处troll不知道如何翻译
-- [烽火家园:革命][9]
-- [杀戮空间 2][10]
-- 英雄萨姆 4(目前无官方站点）
-- [联合风暴][11]
-- [烈火击杀][12]
+- [生化奇兵：永恒（Bioshock Infinite）][8]
+- 半条命 3 /troll （Half Life 3 /troll）　　　
+- [烽火家园:革命（Homefront: The Revolution）][9]
+- [叛变（Insurgency）][43]
+- [杀戮空间 2（Killing Floor 2）][10]
+- 英雄萨姆 4（Serious Sam 4）（目前无官方站点）
+- [联合风暴（Storm United）][11]
+- [烈火击杀（SUPERHOT）][12]
 
 #### 平台游戏　####
 
-- [武装原型][13]
-- [峡谷][14]         #此处游戏名尚不确定
-- [吉安娜姐妹][15]
-- [心之所向：Alicia][16]
-- [   ][17]              #此处游戏名未知
-- [无限工厂][18]
-- [无敌９号][19]
-- [林中之夜][20]
-- [夜][21]
-- [奇异的世界：新鲜可口][22]
-- [真红女神][23]
+- [武装原型（Broforce）][13]
+- [峡谷（Chasm）][14]         #此处游戏中文名尚不确定
+- [吉安娜姐妹（Giana Sisters）][15]
+- [心之所向：Alicia（Heart Forth, Alicia）][16]
+- [热铁皮屋顶（Hot Tin Roof）][17]              
+- [无限工厂（Infinifactory）][18]
+- [无敌９号（Mighty No. 9）][19]
+- [林中之夜（Night in the Woods）][20]
+- [夜（Noct）][21]
+- [奇异的世界：新鲜可口（Oddworld: New 'N' Tasty）][22]
+- [真红女神（Red Goddess）][23]
+
+#### 赛车游戏 ####
+
+- [赛车计划（Project Cars）][44]
+- [死亡赛车：再生（Carmageddon: Reincarnation）][45]
 
 #### 角色扮演游戏 ####
 
-- [神界:原罪][24]
-- [永恒之柱][25]
-- [暗影狂奔：香港][26]
-- [旗帜的传说][27]
+- [神界:原罪（Divinity: Original Sin）][24]
+- [永恒之柱（Pillars Of Eternity）][25]
+- [暗影狂奔：香港（Shadowrun: Hong Kong）][26]
+- [旗帜的传说（The Banner Saga）][27]
+- [镇魂曲:遗器之潮（Torment: Tides of Numenera）][46]
 
 #### 策略游戏 ####
 
-- [奇迹时代３][28]
-- [放逐之城][29]
-- [城：天际][30]
-- [发条帝国][31]
-- [][32]
-- [卷轴][33]
-- [太空海盗和僵尸 2][34]
+- [奇迹时代３（Age of Wonders III）][28]
+- [At The Gates][47]     # 尚无中文名
+- [放逐之城（Banished）][29]
+- [城：天际（Cities: Skylines）][30]
+- [发条帝国（Clockwork Empires）][31]
+- [Parkitect][32]			# 尚无中文名
+- [卷轴（Scrolls）][33]
+- [太空海盗和僵尸 2（Space Pirates And Zombies 2）][34]
 
 #### 沙盒游戏 ####
 
-- [泰拉瑞亚][35]
-- [X 重生][36]
+- [泰拉瑞亚（Terraria）][35]
+- [X 重生（X Rebirth）][36]
 
-#### 不太确认，不过可能性高 ####
+#### 体育游戏 ####
 
-- [英雄连][37]
-- [逃生][38]
-- [影子武士][39]
-- [火炬之光 2][40]
+- [惊爆美国棒球16（Out of the Park Baseball 16）][48]
 
-然而有两个来自Feral Interactive的，由于不知道他们是什么，所以没有列举出来．
+### 不太确认，不过可能性高 ###
 
-我们猜测Aspyr也在准备新的大制作，但是他们仅仅发布了他们最新的游戏，所以可能要等上几个月我们才能看到些什么．
+- [英雄连 2（Company of Heroes 2）][37]
+- [逃生（Outlast）][38]
+- [影子武士（Shadow Warrior）][39]
+- 无光之海 - 其开发商试验性地构建 Linux 版本，不过这要取决于他们的 Windows 版本的销售情况（据邮件沟通信息）
+- [火炬之光 2（Torchlight II）][40]
 
-当然，** 这不是完整的列表 **，我们会轻易忘记巨量的游戏正在走向我们，哇，如此丰富的列表．
+然而有[两个来自Feral Interactive的移植大作][49]，由于不知道他们是什么，所以没有列举出来。
 
-下个月就是游戏开发者大会，我们也期待一些改变发生．然而，我们没有什么确切的东西，对于Valve与Steam Machines的合作，我们期待至少会增加一些Linux游戏，否则，如我们担心，炫耀一些过时的游戏会让Valve脸上无光．
+我们猜测Aspyr也在准备新的大制作，但是他们仅仅发布了他们最新的游戏，所以可能要等上几个月我们才能看到些什么。
 
-你怀念Linux的哪些地方曾让你兴奋？
+当然，** 这不是完整的列表 **，我们会轻易忘记如此多的游戏正在走向我们，哇，如此丰富的列表。
+
+我们也期待 GDC 2015 上有一些改变，然而，我们没有什么确切的东西，对于Valve与Steam Machines的合作，我们期待至少会增加一些Linux游戏，否则，如我们担心，炫耀一些过时的游戏会让Valve脸上无光。
+
+希望我们没有错过那些 Linux 中让你感到兴奋的东西！
 
 --------------------------------------------------------------------------------
 
@@ -87,7 +102,7 @@ via: http://www.gamingonlinux.com/articles/a-look-at-what-linux-games-we-will-se
 
 作者：[liamdawe][a]
 译者：[wi-cuckoo](https://github.com/wi-cuckoo)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
@@ -132,5 +147,12 @@ via: http://www.gamingonlinux.com/articles/a-look-at-what-linux-games-we-will-se
 [38]:https://www.gamingonlinux.com/articles/outlast-that-really-scary-game-looks-like-its-still-heading-to-linux.4896
 [39]:https://www.gamingonlinux.com/articles/shadow-warrior-looks-like-it-will-come-to-linux.4859
 [40]:https://www.gamingonlinux.com/articles/torchlight-ii-has-even-more-positive-signs-for-linux.4817
-[41]:http://www.gamingonlinux.com/articles/feralinteractive.com/en/upcoming/
-
+[41]:https://www.gamingonlinux.com/articles/feralinteractive.com/en/upcoming/
+[42]:https://www.gamingonlinux.com/articles/outcast-a-real-classic-has-been-revamped-and-linux-is-planned.4736
+[43]:https://www.gamingonlinux.com/articles/insurgency-fps-is-waiting-on-valve-so-it-can-come-to-linux-updated.4564
+[44]:http://projectcarsgame.com/
+[45]:https://www.gamingonlinux.com/articles/carmageddon-reincarnations-jason-garber-answers-our-questions-on-their-linux-support.3380
+[46]:https://www.gamingonlinux.com/articles/torment-tides-of-numenera-new-video-looks-absolutely-stunning.4320
+[47]:http://www.atthegatesgame.com/info
+[48]:http://www.ootpdevelopments.com/newsletters/nl0154/
+[49]:http://feralinteractive.com/en/upcoming/
