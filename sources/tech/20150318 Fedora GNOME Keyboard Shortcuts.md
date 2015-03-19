@@ -1,3 +1,5 @@
+tanslating by martin.
+
 Fedora GNOME Keyboard Shortcuts
 ================================================================================
 To get the very best out of the [GNOME desktop environment][1], within Fedora, you need to learn and remember the keyboard shortcuts required to navigate the system.
