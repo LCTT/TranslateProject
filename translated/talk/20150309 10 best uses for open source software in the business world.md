@@ -22,4 +22,64 @@
 
 ### 4: 桌面 ###
 
+桌面是大多数宏机发生的地方。尽管如此，你必须考虑一个事实，那就是你每天的工作流程已经经历了一个主要的思维模式的转换。我们现在做的大部分事情都是通过网络浏览器。那么为什么不在桌面上部署Linux呢？不但可以能做如今要做的许多工作，而且不用遭受病毒，恶意软件和能破外系统的更新。它不完美 -- 但哪个平台敢说完美？但是它很强大，最后，还可以节省你的开支。这是一个双赢的结局。
 
+### 5: 工作流程 ###
+
+每一种工作都依赖于工作的流程。对于某些工作来说，一个流畅的工作流程又取决于所用的工具。开源已经登上这个舞台了。CRM（客户关系管理），HRM（人力资源管理），ERP（企业资源计划），BI（商业智能），BPM（业务流程管理） 。。。。。。只要你叫得出名字，开源就可以做到几乎你能想到的每一种可能的缩写 -- 并且干得不错。借助于[Pentaho][1], [Collabtive][2]和[SugarCRM][3], 开源可以在任何时候与最新的源工具保持同步。
+
+### 6: 协作 ###
+
+没有一起合作项目的能力，你的员工就不能干好工作。所以你选择的协作工具是十分重要的。你会在开源的世界里发现大量的优质协作工具。[Cyn.in community edition][4], [Zimbra Open Source Edition][5]和[Kolab][6]都是不错的协作工具，但仅仅是开源世界里的三个代表而已。
+
+### 7: 大数据 ###
+
+以前说道大数据的时候，往往不会想到开源。多亏了[SUSE][7]的努力，大数据和开源现在可以携手共进了。许多如内存数据和现场内核修复的创意，使得开源成为大数据一个理想的解决方案。 它可以完美地满足大数据在平台上所需的大量要求。而封闭的软件则达不到如此灵活的水平。
+
+### 8: 云 ###
+
+云的主要玩家都是开源的。[Red Hat][8], [Ubuntu][9], [SUSE][10], [Amazon][11], [Rackspace][12] -- 他们都提供云服务，而且知道开源是云配置的最好解决方案。但是，如果你不想用大公司的服务，仍然有很多后起之秀如[OwnCloud][13],你可以选择OwnCloud的特色云方案，或者建立自己的一套。
+
+### 9: 多媒体 ###
+
+如果你的公司为产品发布做播客或视频，开源可以为你提供服务。借助像[Audacity][14]和[OpenShot][15]这样的工具，你可以对音频和视频做你需要的任何处理 -- 而且十分的廉价。实际上，你会感觉到很难再去找到比Audacity更好的播客工具，或者比OpenShot更易用的视频编辑器。没有太大的学习壁垒，或者封闭软件工具要求的高额费用，开源的软件在帮助你创造专业水准的作品方面已经做得很好了。  #这里前一个意群不明白如何翻译
+
+### 10: 电子商务 ###
+
+如果你做在线销售，如果不尝试一下像[PrestaShop][16]之类的工具，你会觉得很没效率的。PrestaShop是最强大的电子商务解决方案之一，易于获取 -- 不需要许可证。 PrestaShop有你可能想要的所有功能（而且有些你可能都没有想过），这个开源平台已经在任何水平上超出了电子商务的范畴。
+
+### FOSS 之于商业 ###
+
+开源已经不再局限于商业交流的范围了。在许多情况下，FOSS已经主导这种交流。如果你已经在寻找将开源解决方案运用的领域，看上面的10条就行了。
+
+### 该你了 ###
+
+你已经将开源用到你的工作中了吗？如果是，属于哪一条方法呢？
+
+-------------------------------------------------------------------------------
+
+via: http://www.techrepublic.com/blog/10-things/10-best-uses-for-open-source-software-in-the-business-world/
+
+作者：[Jack Wallen][a]
+译者：[wi-cuckoo](https://github.com/wi-cuckoo)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
+
+[a]:http://www.techrepublic.com/search/?a=jack+wallen
+[1]:http://community.pentaho.com/
+[2]:http://collabtive.o-dyn.de/
+[3]:http://www.sugarcrm.com/
+[4]:http://cynapse.com/cyn-in/
+[5]:https://www.zimbra.com/open-source
+[6]:http://kolab.org/
+[7]:http://www.suse.org/
+[8]:http://www.redhat.com/
+[9]:http://www.ubuntu.com/
+[10]:http://www.suse.com/
+[11]:http://aws.amazon.com/ec2/
+[12]:http://www.rackspace.com/cloud
+[13]:https://owncloud.org/
+[14]:http://audacity.sourceforge.net/
+[15]:http://www.openshot.org/
+[16]:https://www.prestashop.com/
