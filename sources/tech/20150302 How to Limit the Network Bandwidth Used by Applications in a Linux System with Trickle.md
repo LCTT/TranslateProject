@@ -14,21 +14,33 @@ Install Trickle Bandwidth Limit in Linux
 ### 什么是　Trickle? ###
 
 Trickle is a network bandwidth shaper tool that allows us to manage the upload and download speeds of applications in order to prevent any single one of them to hog all (or most) of the available bandwidth. In few words, trickle lets you control the network traffic rate on a per-application basis, as opposed to per-user control, which is the classic example of bandwidth shaping in a client-server environment, and is probably the setup we are more familiar with.
-Trickle是一个网络宽带调整工具，可以让我们管理应用程序的网络上下行速度，使得可以避免其中的某个应用程序吃掉了全部或大部分可用的宽带．换句话说，Trickle可以让你基于单个应用程序来控制网络流量速率，而不是仅仅针对与单个用户--在客户端网络环境中经典的宽带调整样例，
+Trickle是一个网络宽带调整工具，可以让我们管理应用程序的网络上下行速度，使得可以避免其中的某个应用程序吃掉了全部或大部分可用的宽带．换句话说，Trickle可以让你基于单个应用程序来控制
+网络流量速率，而不是仅仅针对与单个用户--在客户端网络环境中经典的宽带调整样例，
 
 ### How Trickle Works? ###
+### Trickle是如何工作的？###
 
 In addition, trickle can help us to define priorities on a per-application basis, so that when overall limits have been set for the entire system, priority apps will still get more bandwidth automatically. To accomplish this task, trickle sets traffic limits to the way in which data is sent to, and received from, sockets using TCP connections. We must note that, other than the data transfer rates, trickle does not modify in any way the behavior of the process it is shaping at any given moment.
+另外，tricle可以帮助我们基于应用来定义优先级，所以当对整个系统进行了全局限制设定，高优先级的应用依然会自动地获取更多的宽带。为了实现这个目标，tricle设置通过TCP连接的套接字对数
+据发送、数据接收路径的流量限制。我们必须注意到，除了影响传输速率之外，tricle任何时候都不会以任何方式来改变其处理过程。
 
 ### What Can’t Trickle do? ###
+### Trickle不能做什么？ ###
 
 The only limitation, so to speak, is that trickle will not work with statically linked applications or binaries with the SUID or SGID bits set since it uses dynamic linking and loading to place itself between the shaped process and its associated network socket. Trickle then acts as a proxy between these two software components.
+这么说吧，唯一的限制就是，tricle静态连接的应用或者具有SUID或SGID位设置的二进制--因为他们使用动态链接并且将其自身加载到调整过程以及其关联的网络套接字之间。 Trickle此时会在这两种软件
+组件之间扮演代理的角色。
 
 Since trickle does not require superuser privileges in order to run, users can set their own traffic limits. Since this may not be desirable, we will explore how to set overall limits that system users cannot exceed. In other words, users will still be able to manage their traffic rates, but always within the boundaries set by the system administrator.
+由于trickle并不会需要超级用户的权限来运行，所以用户可以设置用户独立的流量限制,可能这并不是你想要的,我们会探索如何使用全局设定来限制系统中的所有用户的流量限制。也即是说，此时系统中的每个用户具有管理
+各自的流量速率，但是无论如何，都会受到系统管理员给他们设置的边界限制。
 
 In this article we will explain how to limit the network bandwidth used by applications in a Linux server with trickle. To generate the necessary traffic, we will use ncftpput and ncftpget (both tools are available by installing ncftp) on the client (CentOS 7 server – dev1: 192.168.0.17), and vsftpd on the server (Debian Wheezy 7.5 – dev2: 192.168.0.15) for demonstration purposes. The same instructions also works on RedHat, Fedora and Ubuntu based systems.
+在这边文章中，我们会描述如何通过trickle在linux平台上管理应用程序使用的网络宽带。为了生成必要流量，在此会在客户端(CentOS 7 server – dev1: 192.168.0.17)上使用 ncftpput 和
+ ncftpget, 在服务器(Debian Wheezy 7.5 – dev2: 192.168.0.15)上使用vsftpd 来进行演示。 相同的指令也可以在RedHat，Fedora和Ubuntu等系统使用。
 
 #### Prerequisites ####
+#### 前提条件 ####
 
 1. For RHEL/CentOS 7/6, [enable the EPEL repository][1]. Extra Packages for Enterprise Linux (EPEL) is a repository of high-quality free and open-source software maintained by the Fedora project and is 100% compatible with its spinoffs, such as Red Hat Enterprise Linux and CentOS. Both trickle and ncftp are made available from this repository.
 
@@ -289,7 +301,7 @@ Questions and comments are most welcome. Feel free to use the form below to send
 via: http://www.tecmint.com/manage-and-limit-downloadupload-bandwidth-with-trickle-in-linux/
 
 作者：[Gabriel Cánepa][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[theo-l](https://github.com/theo-l)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
