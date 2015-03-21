@@ -1,7 +1,8 @@
-Ubuntu With XFCE vs Xubuntu Linux
+Ubuntu & XFCE vs Xubuntu
 =========================================================
 
-Ubuntu vs Xubuntu。Ubuntu拥有漂亮的桌面体验以及强大的应用程序。Xubuntu轻量、快速并且可定制，哪个更适合你？
+Ubuntu拥有漂亮的桌面体验以及强大的应用程序。Xubuntu轻量、快速并且可定制，哪个更适合你？
+
 ---------------------------------------------------------
 
 ![](http://f.tqn.com/y/linux/1/W/T/J/1/ubuntudesktop.png)
@@ -10,11 +11,11 @@ Ubuntu vs Xubuntu。Ubuntu拥有漂亮的桌面体验以及强大的应用程序
 
 并且，我同时也会在这篇文章中介绍Ubuntu用户如何获取基本的XFCE桌面，以及如何安装完整的Xubuntu桌面。
 
-[Ubuntu][1]以及[Xubuntu][2]是针对不同目的开发的操作系统，为什么我会强调这一点，是为了说明什么时候或者为什么你应该使用Ubuntu以及什么时候应该使用Xubuntu。
+[Ubuntu][1]以及[Xubuntu][2]是针对不同目的开发的操作系统，为什么我会强调这一点，是为了说明什么时候或者为什么你应该使用Ubuntu或Xubuntu。
 
 比较这两个操作系统就像比较[劳斯莱斯][3]与[保时捷][4]。这两个都是很棒的车，但是如果把劳斯莱斯给一个赛车迷，他们也许会卖掉它买个其他的车，同样，如果把保时捷给舒格勋爵或者休·海夫纳这类人可能也不那么合适。
 
-Ubuntu拥有一个适用性很强的桌面环境，叫做Unity，并且默认会安装一些很棒的Linux应用程序，包括Rhythmbox以及[LibreOffic][5]。Ubuntu就像是劳斯莱斯。它为舒适而生，并且尽可能的提供从A到B的最时髦的方法。
+Ubuntu拥有一个适用性很强的桌面环境，叫做Unity，并且默认会安装一些很棒的Linux应用程序，包括Rhythmbox以及[LibreOffic][5]。Ubuntu就像是劳斯莱斯。它为舒适而生，并且尽可能的提供满足需要的漂亮的解决方案。
 
 作为一个Ubuntu用户，就像汽车里面的乘客。你在到达目的地的过程中就可以同时把事情搞定，并且所有的事看起来都很漂亮并且很简单。
 
@@ -92,7 +93,7 @@ Xubuntu就像一个改装过的跑车。你可以把它改装成任何你想要�
 
 接下来，我会使用命令行工具[apt-get][7]介绍在Ubuntu安装XFCE桌面的方法。
 
-打开一个终端窗口，在Unity环境，你可以在[Dash][8]中搜索“TERM”，或者使用组合键 CTRL+ALT+T。
+打开一个终端窗口，在Unity环境，你可以在[Dash][8]中搜索“TERM”，或者使用组合键 `CTRL+ALT+T`。
 
 安装XFCE桌面十分简单，输入下列命令就可以了：
 
@@ -105,7 +106,7 @@ Xubuntu就像一个改装过的跑车。你可以把它改装成任何你想要�
 
 系统会显示一个消息，提示你是否使用默认的面板布局或者使用单独的面板。
 
-[最新版本的Xubuntu][10]在顶部包含一个单独的面板，不过我更喜欢两个面板，顶部一个标准面板，底部一个常用程序的停靠面板。
+[最新版本的Xubuntu][10]在顶部包含一个单独的面板，不过我更喜欢双面板，顶部一个标准面板，底部一个常用程序的停靠面板。
 
 需要注意的是，XFCE桌面菜单系统和Xubuntu的菜单有些差异，除非你安装[一个更好的菜单系统][11]，设置两个面板或许是个更好的选择。
 
@@ -117,7 +118,7 @@ Xubuntu就像一个改装过的跑车。你可以把它改装成任何你想要�
 
 如果你想全都使用Xubuntu的东西，但是又不想按照那些介绍重新安装系统的话，看看下面的东西。
 
-通过搜索“TERM”，或者组合键CTRL+ALT+T，打开一个终端窗口。
+通过搜索“TERM”，或者组合键`CTRL+ALT+T`，打开一个终端窗口。
 
 在终端输入如下命令：
 
@@ -132,16 +133,17 @@ Xubuntu就像一个改装过的跑车。你可以把它改装成任何你想要�
 
 Xubuntu桌面就会显示出来啦。
 
-这里会有一些差异。菜单仍然是XFCE菜单，而不是Xubuntu菜单。某些图标也不会出现在顶部面板中。但是这些问题都不足以让我们花时间卸载Ubuntu然后重装Xubuntu。
+这里会有一些差异。菜单仍然是XFCE菜单，而不是Xubuntu菜单。某些图标也不会出现在顶部面板中。但是这些小问题都不足以让我们花时间卸载Ubuntu然后重装Xubuntu。
 
 下一篇文章中，我会介绍如何自定义Xubuntu以及XFCE桌面。
 
+-----
 
 via : http://linux.about.com/od/dist/fl/Ubuntu-With-XFCE-vs-Xubuntu-Linux.htm
 
 作者：[Gary Newell][a]
 译者：[zhouj-sh](https://github.com/Zhouj-sh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
