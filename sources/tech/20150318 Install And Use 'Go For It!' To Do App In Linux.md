@@ -1,3 +1,4 @@
+translating wi-cuckoo LLAP
 Install And Use ‘Go For It!’ To Do App In Linux
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/03/Go_For_It_TODO_Linux.jpeg)
