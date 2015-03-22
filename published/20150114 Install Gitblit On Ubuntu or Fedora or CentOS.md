@@ -2,13 +2,13 @@
 ================================================================================
 **Git**是一款注重速度、数据完整性、分布式支持和非线性工作流的分布式版本控制工具。Git最初由Linus Torvalds在2005年为Linux内核开发而设计，如今已经成为被广泛接受的版本控制系统。
 
-和其他大多数分布式版本控制系统比起来，不像大多数客户端-服务端的系统，每个Git工作目录是一个完整的仓库，带有完整的历史记录和完整的版本跟踪能力，不需要依赖网络或者中心服务器。像Linux内核一样，Git意识在GPLv2许可证下的免费软件。
+和其他大多数分布式版本控制系统比起来，不像大多数客户端-服务端的系统，每个Git工作目录是一个完整的仓库，带有完整的历史记录和完整的版本跟踪能力，不需要依赖网络或者中心服务器。像Linux内核一样，Git也是在GPLv2许可证下分发的自由软件。
 
-本篇教程我会演示如何安装gitlit服务器。gitlit的最新稳定版是1.6.2。[Gitblit][1]是一款开源、纯Java开发的用于管理浏览和服务的[Git][2]仓库。它被设计成一款为希望托管中心仓库的小工作组服务的工具。
+本篇教程我会演示如何安装 gitlit 服务器。gitlit的最新稳定版是1.6.2。[Gitblit][1]是一款开源、纯Java开发的用于管理、浏览和提供[Git][2]仓库服务的软件。它被设计成一款为希望托管中心仓库的小型工作组服务的工具。
 
     mkdir -p /opt/gitblit; cd /opt/gitblit; wget http://dl.bintray.com/gitblit/releases/gitblit-1.6.2.tar.gz
 
-### 列出目录： ###
+### 列出解压后目录内容： ###
 
     root@vps124229 [/opt/gitblit]# ls
     ./                      docs/                 gitblit-stop.sh*            LICENSE              service-ubuntu.sh*
@@ -21,7 +21,7 @@
     
 ### 启动gitlit服务： ###
 
-### 通过service命令： ###
+**通过service命令：**
 
     root@vps124229 [/opt/gitblit]# cp service-centos.sh /etc/init.d/gitblit
     root@vps124229 [/opt/gitblit]# chkconfig --add gitblit
@@ -29,7 +29,7 @@
     Starting gitblit server
     .
 
-### 手动启动： ###
+**手动启动：**
 
     root@vps124229 [/opt/gitblit]# java -jar gitblit.jar --baseFolder data
     2015-01-10 09:16:53 [INFO ] *****************************************************************
@@ -108,15 +108,15 @@
 
 打开浏览器，依据你的配置进入**http://localhost:8080** 或者 **https://localhost:8443**。 输入默认的管理员授权：**admin / admin** 并点击**Login** 按钮
 
-![snapshot2](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/snapshot2.png)
+![snapshot2](http://1102047360.rsc.cdn77.org/wp-content/uploads/2015/01/snapshot2.png)
 
 ### 添加用户： ###
 
-![snapshot1](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/snapshot1.png)
+![snapshot1](http://1102047360.rsc.cdn77.org/wp-content/uploads/2015/01/snapshot1.png)
 
-添加仓库：
+###添加仓库：###
 
-![snapshot3](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/snapshot3.png)
+![snapshot3](http://1102047360.rsc.cdn77.org/wp-content/uploads/2015/01/snapshot3.png)
 
 ### 用命令行创建新的仓库： ###
 
@@ -140,7 +140,7 @@ via: http://www.unixmen.com/install-gitblit-ubuntu-fedora-centos/
 
 作者：[M.el Khamlichi][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
