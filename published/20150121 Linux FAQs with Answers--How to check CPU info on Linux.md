@@ -1,8 +1,8 @@
-Linux有问必答时间--如何查看Linux系统的CPU信息
+Linux有问必答：如何查看Linux系统的CPU信息
 ================================================================================
 > **问题**: 我想要了解我的电脑关于CPU处理器的详细信息，查看CPU信息比较有效地方法是什么？
 
-根据你的需要，有各种各样的关于你的CPU处理器信息你需要了解，比如CPU供应商名、模型名、时钟频率、套接字/内核的数量, L1/L2/L3缓存配置、可用的处理器能力(比如：硬件虚拟化、AES, MMX, SSE)等等。在Linux中，有许多命令行或基于GUI的工具就能来展示你的CPU硬件的相关具体信息。
+根据你的需要，有各种各样的关于你的CPU处理器信息你需要了解，比如CPU供应商名、模型名、时钟频率、插槽/内核的数量, L1/L2/L3缓存配置、可用的处理器能力(比如：硬件虚拟化、AES, MMX, SSE)等等。在Linux中，有许多命令行或基于GUI的工具就能来展示你的CPU硬件的相关具体信息。
 
 ### 1. /proc/cpuinfo ###
 
@@ -12,7 +12,7 @@ Linux有问必答时间--如何查看Linux系统的CPU信息
 
 ![](https://farm8.staticflickr.com/7572/15934711577_4136a8e0b9_c.jpg)
 
-通过查看这个文件，你能[识别出][1]物理处理器数、每个CPU核心数、可用的CPU标志寄存器以及其它东西的数量。
+通过查看这个文件，你能[识别出][1]物理处理器数（插槽）、每个CPU核心数、可用的CPU标志寄存器以及其它东西的数量。
 
 ### 2. cpufreq-info ###
 
@@ -32,7 +32,7 @@ cpuid命令的功能就相当于一个专用的CPU信息工具，它能通过使
 
 ### 4. dmidecode ###
 
-dmidecode命令直接从BIOS的DMI（译者注：桌面管理接口）数据收集关于系统硬件的具体信息。CPU信息报告包括CPU供应商、版本、CPU标志寄存器、最大/最近的时钟速度、(所允许的)核心总数、L1/L2/L3缓存配置等等。
+dmidecode命令直接从BIOS的DMI（桌面管理接口）数据收集关于系统硬件的具体信息。CPU信息报告包括CPU供应商、版本、CPU标志寄存器、最大/当前的时钟速度、(启用的)核心总数、L1/L2/L3缓存配置等等。
 
     $ sudo dmidecode 
 
@@ -54,7 +54,7 @@ i7z是一个专供英特尔酷睿i3、i5和i7 CPU的实时CPU报告工具。它�
 
 ![](https://farm8.staticflickr.com/7546/15534687744_1968dc2b18_c.jpg)
 
-### 8. likwid-topology ###
+### 8. likwid拓扑 ###
 
 [likwid][3] (Like I Knew What I'm Doing) 是一个用来测量、配置并显示硬件相关特性的命令行收集工具。其中的likwid拓扑结构能显示CPU硬件(线程/缓存/NUMA)的拓扑结构信息，还能识别处理器家族(比如：Intel Core 2, AMD Shanghai)。
 
@@ -70,7 +70,7 @@ lscpu命令用一个更加用户友好的格式统计了 /etc/cpuinfo 的内容�
 
 ### 10. lshw ###
 
-**lshw**命令是一个综合性硬件查询工具。不同于其它工具，lshw需要root特权才能运行因为它是在BIOS系统里查询DMI（译者注：桌面管理接口）信息。它能报告总核心数和可用核心数，但是会遗漏掉一些信息比如L1/L2/L3缓存配置。GTK版本的lshw-gtk也是可用的。
+**lshw**命令是一个综合性硬件查询工具。不同于其它工具，lshw需要root特权才能运行，因为它是在BIOS系统里查询DMI（桌面管理接口）信息。它能报告总核心数和可用核心数，但是会遗漏掉一些信息比如L1/L2/L3缓存配置。GTK版本的lshw-gtk也是可用的。
 
     $ sudo lshw -class processor
 
@@ -78,7 +78,7 @@ lscpu命令用一个更加用户友好的格式统计了 /etc/cpuinfo 的内容�
 
 ### 11. lstopo ###
 
-lstopo命令 (包括 [hwloc][4] 包) 使由CPU、缓存、内存和I/O设备组成的拓扑结构可见。这个命令用来识别处理器结构和系统的NUMA拓扑结构。
+lstopo命令 (包括在 [hwloc][4] 包中) 以可视化的方式组成 CPU、缓存、内存和I/O设备的拓扑结构。这个命令用来识别处理器结构和系统的NUMA拓扑结构。
 
     $ lstopo 
 
@@ -86,7 +86,7 @@ lstopo命令 (包括 [hwloc][4] 包) 使由CPU、缓存、内存和I/O设备组�
 
 ### 12. numactl ###
 
-其被开发的起初是为了设置NUMA的时序安排和Linux处理器的内存布局策略，numactl命令也能通过命令行来展示关于CPU硬件的NUMA拓扑结构信息。
+最初其被开发的目的是为了设置NUMA的时序安排和Linux处理器的内存布局策略，numactl命令也能通过命令行来展示关于CPU硬件的NUMA拓扑结构信息。
 
     $ numactl --hardware 
 
@@ -94,7 +94,7 @@ lstopo命令 (包括 [hwloc][4] 包) 使由CPU、缓存、内存和I/O设备组�
 
 ### 13. x86info ###
 
-x86info是一个为了展示基于x86架构的CPU信息的命令行工具。信息报告包括CPU型号、线程/核心数、时钟速度、TLB（译者注：传输后备缓冲器）缓存配置、支持的特征标志寄存器等等。
+x86info是一个为了展示基于x86架构的CPU信息的命令行工具。信息报告包括CPU型号、线程/核心数、时钟速度、TLB（传输后备缓冲器）缓存配置、支持的特征标志寄存器等等。
 
     $ x86info --all
 
@@ -105,7 +105,7 @@ x86info是一个为了展示基于x86架构的CPU信息的命令行工具。信�
 via: http://ask.xmodulo.com/check-cpu-info-linux.html
 
 译者：[ZTinoZ](https://github.com/ZTinoZ)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
