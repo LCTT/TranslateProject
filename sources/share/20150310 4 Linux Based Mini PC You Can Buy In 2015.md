@@ -1,3 +1,5 @@
+Translating---geekpi
+
 4 Linux Based Mini PC You Can Buy In 2015
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/03/Linux_Based_Mini_PC.jpg)
