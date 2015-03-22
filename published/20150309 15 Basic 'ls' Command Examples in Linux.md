@@ -1,9 +1,10 @@
 Linux中的15个基本‘ls’命令示例
 ================================================================================
-ls命令是Linux系统中最被频繁使用的命令之一，我相信ls命令一定是你进入一台Linux系统的电脑打开命令提示符后第一个使用的命令。我们每天都在频繁地使用ls命令即使我们可能没有意识也从来用不到所以可用的选项。本文中，我们将讨论下一些基本的ls命令并且覆盖尽可能多的有关参数来讲解。	
+ls命令是Linux系统中最被频繁使用的命令之一，我相信ls命令一定是你进入一台Linux系统的电脑打开命令提示符后第一个使用的命令。我们每天都在频繁地使用ls命令,即使我们可能没有意识也从来用不到所有可用的选项。本文中，我们将讨论下一些基本的ls命令并且覆盖尽可能多的有关参数来讲解。
 
 ![Linux ls Command](http://www.tecmint.com/wp-content/uploads/2012/08/Linux-ls-Commands.png)
-Linux的ls命令
+
+*Linux的ls命令*
 
 ### 1. 不带任何选项列出文件 ###
 
@@ -14,7 +15,7 @@ Linux的ls命令
     0001.pcap        Desktop    Downloads         index.html   install.log.syslog  Pictures  Templates
     anaconda-ks.cfg  Documents  fbcmd_update.php  install.log  Music               Public    Videos
 
-### 2 带–l选项列出文件列表 ###
+### 2 带 –l 选项列出文件列表 ###
 
 你看，ls -l（-l是字母不是“1”）就能展示出是文件还是目录，它的大小、修改日期和时间、文件或目录的名字以及文件的属主和它的权限。
 
@@ -50,9 +51,9 @@ Linux的ls命令
     .bash_logout     Desktop  fbcmd_update.php  .ICEauthority    .mozilla            Public        Videos
     .bash_profile    .digrc   .gconf            index.html       Music               .pulse        .wireshark
 
-### 4. 用-lh选项来以人类可读方式列出文件  ###
+### 4. 用 -lh 选项来以易读方式列出文件  ###
 
-用-lh组合选项，以人类可读方式来显示大小。
+用-lh组合选项，以易读方式来显示大小。
 
     # ls -lh
     
@@ -74,7 +75,7 @@ Linux的ls命令
 
 ### 5. 以尾部以‘/’字符结尾的方式列出文件和目录 ###
 
-Using -F option with ls command, will add the ‘/’ Character at the end each directory.
+使用 ls 命令的 -F 选项，会在每个目录的末尾添加“/”字符显示。
 
     # ls -F
     
@@ -83,7 +84,7 @@ Using -F option with ls command, will add the ‘/’ Character at the end each 
 
 ### 6. 倒序列出文件 ###
 
-ls -r选项能以倒序方式显示文件和目录。
+ls -r 选项能以倒序方式显示文件和目录。
 
     # ls -r
     
@@ -92,7 +93,7 @@ ls -r选项能以倒序方式显示文件和目录。
 
 ### 7. 递归列出子目录 ###
 
-ls -R选项能列出非常长的目录树，来看看示例输出：
+ls -R 选项能列出非常长的目录树，来看看示例输出：
 
     # ls -R
     
@@ -115,7 +116,7 @@ ls -R选项能列出非常长的目录树，来看看示例输出：
     -rw-r--r--. 1 root root    0 Aug 12 03:17 access.log
     -rw-r--r--. 1 root root  390 Aug 12 03:17 access.log-20120812.gz
 
-### 8. 反向输出次序 ###
+### 8. 以修改时间倒序列出 ###
 
 带-ltr组合选项能以文件或目录的最新修改时间的次序来显示它们。
 
@@ -159,9 +160,9 @@ ls -R选项能列出非常长的目录树，来看看示例输出：
     -rw-------. 1 root root  1586 Jul 31 02:17 anaconda-ks.cfg
     -rw-r--r--. 1 root root   683 Aug 19 09:59 0001.pcap
 
-### 10. 显示文件或目录的索引节点数 ###
+### 10. 显示文件或目录的索引节点号 ###
 
-我们有时候可以看到一些数字打印在文件或目录名之前，带-i选项就能列出文件或目录的索引节点数。
+我们有时候可以看到一些数字打印在文件或目录名之前，带-i选项就能列出文件或目录的索引节点号。
 
     # ls -i
     
@@ -192,7 +193,7 @@ ls -R选项能列出非常长的目录树，来看看示例输出：
 
 ### 13. 列出目录信息 ###
 
-用ls -l命令列出/tmp目录下的文件，其中-ld参数可以显示/tmp目录的信息。
+用ls -l命令列出/tmp目录下的文件，其中-ld参数可以只显示/tmp目录的信息。
 
     # ls -l /tmp
     total 408
@@ -225,13 +226,13 @@ ls -R选项能列出非常长的目录树，来看看示例输出：
     -rw-rw-r--. 1 500 500   12 Aug 21 13:06 tmp.txt
     drwxr-xr-x. 2 500 500 4096 Aug  2 01:52 Videos
 
-### 15. ls命令和它的别名功能 ###
+### 15. ls命令和它的别名 ###
 
-我们给ls命令设置过别名之后，当我们执行ls命令的时候它会默认执行-l选项并且像上文提到的那样显示长列表。
+我们给ls命令设置如下别名之后，当我们执行ls命令的时候它会默认执行-l选项并且像上文提到的那样显示长列表。
 
     # alias ls="ls -l"
 
-注意：我们可以通过不加任何参数的alias命令来看到目前系统中可用的所有alias设置，当然它们同时也可以unalias。
+注意：我们可以通过不加任何参数的alias命令来看到目前系统中可用的所有alias设置，当然它们同时也可以unalias来取消。
 
     # alias
     
@@ -255,7 +256,7 @@ via: http://www.tecmint.com/15-basic-ls-command-examples-in-linux/
 
 作者：[Ravi Saive][a]
 译者：[ZTinoZ](https://github.com/ZTinoZ)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
