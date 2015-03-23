@@ -1,3 +1,4 @@
+translating wi-cuckoo LLAP
 Locate Stolen laptops and Smart phones Using Prey Tool in Ubuntu
 ================================================================================
 Prey is an open source, cross platform tool which helps recover your stolen laptops, desktops, tablet computers and smart phones. It has gained vast popularity and has claimed to help recover hundreds of missing laptops and smart phones. The working of this tool is pretty simple, install it on your Laptop or smart phone, and if your device goes missing, login the Prey website with your credentials and mark your device as “Missing” there.  As soon as the thief connects your device with internet, it will immediately send you the Geo location of your device. If your laptop is having webcam, it will also capture the screenshot of the thief.
