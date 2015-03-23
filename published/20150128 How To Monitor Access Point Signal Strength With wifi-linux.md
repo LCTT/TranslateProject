@@ -1,14 +1,14 @@
 如何用wifi-linux检测AP信号强度
 ================================================================================
-作为一名python极客，我喜欢在github上发现新的针对linux用户的python工具。今天我发现了一款用python写成的用于检测AP信号强度的工具。
+作为一名python极客，我喜欢在github上挖掘新的用于linux用户的python工具。今天我发现了一款用python写成的用于检测AP信号强度的工具：wifi-linux。
 
 我已经在**wifi-linux**上实验了大约两个小时，并且它工作的很好但是我希望在不久的将来在作者那里看到一些单元测试，因为命令**plot**无法在我的电脑上工作，并且会导致一些问题。
 
 ### 什么是wifi-linux ###
 
-根据github作者账号的官方的offical readme.md文件， wifi-linux是一个简单的收集你周围AP的RSSI信息的python脚本，它还会画出RSSI活动图形。
+根据github上作者账号的官方的 readme.md文件， wifi-linux是一个简单的收集你周围AP的RSSI信息的python脚本，它还会画出RSSI活动图形。
 
-，这同样可以用命令plot生成，但是不幸的是，这对我不可行。wifi-linux支持其他的命令，比如**bp** 来加入一个断点，**print**会打印一些统计和**启动开关**。
+作者说可以在该程序中可以使用plot命令绘制RSSI 活动图形，但是不幸的是，这对我不可行。wifi-linux也支持其他的命令，比如**bp** 来加入一个断点，**print**会打印一些统计和**启动开关**。
 
 wifi-linux程序有下面这些依赖：
 
@@ -19,15 +19,15 @@ wifi-linux程序有下面这些依赖：
 
 ### 安装wifi-linux需要的包 ###
 
-我怕尝试使用python包管理工具pip安装python-dbus但是失败了，因为pip会查找setup.py，但是python-dbus中没有。因此下面的命令不工作。
+我尝试使用python包管理工具pip安装python-dbus但是失败了，因为pip会查找setup.py，但是python-dbus中没有。因此下面的命令不工作。
 
     pip install dbus-python
 
-你可以试一下但是很有可能会在终端中下面的错误。
+你可以试一下但是很有可能会在终端中出现下面的错误。
 
     IOError: [Errno 2] No such file or directory: '/tmp/pip_build_oltjano/dbus-python/setup.py'
 
-我该怎么解决这个问题呢？很简单，用下面命令中的系统包管理工具安装Python DBUS。
+我该怎么解决这个问题呢？很简单，用下面命令中的系统包管理工具来安装Python DBUS。
 
     sudo apt-get install python-dbus
 
@@ -69,7 +69,7 @@ wifi-linux程序有下面这些依赖：
 
 ![the bp command in wifi-linux](http://blog.linoxide.com/wp-content/uploads/2015/01/wifi-linux2.png)
 
-命令**print**可以用于显示你机器的状态。下面就是一个例子。
+命令**print**可以用于在终端上显示你机器的状态。下面就是一个例子。
 
 ![the print command](http://blog.linoxide.com/wp-content/uploads/2015/01/wifi-linux3.png)
 
@@ -79,7 +79,7 @@ via: http://linoxide.com/linux-how-to/monitor-access-point-signal-strength-wifi-
 
 作者：[Oltjano Terpollari][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
