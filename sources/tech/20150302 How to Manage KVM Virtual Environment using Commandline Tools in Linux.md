@@ -1,15 +1,15 @@
 如何在Linux中用命令行工具管理KVM虚拟环境
 ================================================================================
-在我们[KVM系列专题][1]的第四部分，我们将会一起讨论下命令行界面下来管理KVM环境。We use ‘virt-install’ CL tool to create and configure virtual machines, virsh CL tool to create and configure storage pools and qemu-img CL tool to create and manage disk images.
+在我们[KVM系列专题][1]的第四部分，我们将会一起讨论下在命令行界面下来管理KVM环境。我们分别用‘virt-install’和virsh命令行工具来创建并配置虚拟机和存储池，用qemu-img命令行工具来创建并管理磁盘映像。
 
 ![KVM Management in Linux](http://www.tecmint.com/wp-content/uploads/2015/02/KVM-Management-in-Linux.jpg)
-KVM Management in Linux
+Linux系统的KVM管理
 
-There is nothing new concepts in this article, we just do the previous tasks using command line tools. There is no new prerequisite, just the same procedure, we have discussed in previous parts.
+在这篇文章里没有什么新的概念，我们只是用命令行工具重复之前所做过的事情，也没有什么前提条件，都是相同的过程，之前的文章我们都讨论过。
 
-### Step 1: Configure Storage Pool ###
+### 第一步: 配置存储池 ###
 
-Virsh CLI tool is a management user interface for managing virsh guest domains. The virsh program can be used either to run one command by giving the command and its arguments on the shell command line.
+Virsh命令行工具 CLI tool is a management user interface for managing virsh客户域 guest domains. The virsh program can be used either to run one command by giving the command and its arguments on the shell command line.
 
 In this section, we will use it to create storage pool for our KVM environment. For more information about the tool, use the following command.
 
