@@ -40,7 +40,7 @@ Virsh命令行工具是一款管理virsh客户域的用户界面。virsh程序�
 ![List All Storage Pools](http://www.tecmint.com/wp-content/uploads/2015/02/List-All-Storage-Pools.png)
 列出所有存储池
 
-**3. 现在是时候来构造存储池了，用以下命令来构造我们刚才定义的存储池。**
+**3. 现在我们来构造存储池了，用以下命令来构造我们刚才定义的存储池。**
 
     # virsh pool-build Spool1
 
@@ -81,46 +81,46 @@ Virsh命令行工具是一款管理virsh客户域的用户界面。virsh程序�
 
 ### 第二步: 配置存储卷/磁盘映像 ###
 
-现在轮到磁盘映像了，using qemu-img to create new disk image from Spool1. For more details about qemy-img, use the man page.
+现在轮到磁盘映像了，用qemu-img命令在Spool1中创建一个新磁盘映像。获取更多细节信息，可以查看man手册。
 
     # man qemu-img
 
-**8. We should specify the qemu-img command “create, check,….etc”, disk image format, the path of disk image you want to create and the size.**
+**8. 我们应该在qemu-img命令之后指定“create, check,…”等等操作、磁盘映像格式、你想要创建的磁盘映像的路径和大小。**
 
     # qemu-img create -f raw /mnt/personal-data/SPool1/SVol1.img 10G
 
 ![Create Storage Volume](http://www.tecmint.com/wp-content/uploads/2015/02/Create-Storage-Volumes.png)
-Create Storage Volume
+创建存储卷
 
-**9. By using qemu-img command info, you could get information about your new disk image.**
+**9. 通过使用带info的qemu-img命令，你可以获取到你的新磁盘映像的一些信息。**
 
 ![Check Storage Volume Information](http://www.tecmint.com/wp-content/uploads/2015/02/Check-Storage-Volume-Information.png)
-Check Storage Volume Information
+查看存储卷信息
 
-**Warning**: Never use qemu-img to modify images in use by a running virtual machine or any other process; this may destroy the image.
+**警告**: 不要用qemu-img命令来修改被运行中的虚拟机或任何其它进程所正在使用的映像，那样映像会被破坏。
 
-Now its time to create virtual machines in the next step.
+现在是时候来创建虚拟机了。
 
 ### 第三步: 创建虚拟机 ###
 
-**10. Now with the last and latest part, we will create virtual machines using virt-istall. The virt-install is a command line tool for creating new KVM virtual machines using the “libvirt” hypervisor management library. For more details about it, use:**
+**10. 现在到最后一个环节了，在最后一步中，我们将用virt-istall命令来创建虚拟机。virt-install是一个用来创建新的KVM虚拟机命令行工具，它使用“libvirt”管理程序库。想获取更多细节，同样可以查看man手册。**
 
     # man virt-install
 
-To create new KVM virtual machine, you need to use the following command with all the details like shown in the below.
+要创建新的KVM虚拟机，你需要用到带以下所有信息的命令。
 
-- Name: Virtual Machine’s name.
-- Disk Location: Location of disk image.
-- Graphics : How to connect to VM “Usually be SPICE”.
-- vcpu : Number of virtual CPU’s.
-- ram : Amount of allocated memory in megabytes.
-- Location : Specify the installation source path.
-- Network : Specify the virtual network “Usually be vibr00 bridge”.
+- Name: 虚拟机的名字。
+- Disk Location: 磁盘映像的位置。
+- Graphics : 怎样连接VM，通常是SPICE。
+- vcpu : 虚拟CPU的数量。
+- ram : 以兆字节计算的已分配内存大小。
+- Location : 指定安装源路径。
+- Network : 指定虚拟网络，通常是virbr0网桥。
 
     # virt-install --name=rhel7 --disk path=/mnt/personal-data/SPool1/SVol1.img --graphics spice --vcpu=1 --ram=1024 --location=/run/media/dos/9e6f605a-f502-4e98-826e-e6376caea288/rhel-server-7.0-x86_64-dvd.iso --network bridge=virbr0
 
 ![Create New Virtual Machine](http://www.tecmint.com/wp-content/uploads/2015/02/Create-New-Virtual-Machines.png)
-Create New Virtual Machine
+创建新的虚拟机
 
 **11. You will find also a pop-up virt-vierwer window appears to communicate with virtual machine through it.**
 
