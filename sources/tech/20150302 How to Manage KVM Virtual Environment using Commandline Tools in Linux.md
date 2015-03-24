@@ -3,6 +3,7 @@
 在我们[KVM系列专题][1]的第四部分，我们将会一起讨论下在命令行界面下来管理KVM环境。我们分别用‘virt-install’和virsh命令行工具来创建并配置虚拟机和存储池，用qemu-img命令行工具来创建并管理磁盘映像。
 
 ![KVM Management in Linux](http://www.tecmint.com/wp-content/uploads/2015/02/KVM-Management-in-Linux.jpg)
+
 Linux系统的KVM管理
 
 在这篇文章里没有什么新的概念，我们只是用命令行工具重复之前所做过的事情，也没有什么前提条件，都是相同的过程，之前的文章我们都讨论过。
