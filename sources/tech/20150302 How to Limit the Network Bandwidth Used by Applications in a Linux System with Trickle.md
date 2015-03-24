@@ -43,7 +43,7 @@ In this article we will explain how to limit the network bandwidth used by appli
 #### 前提条件 ####
 
 1. For RHEL/CentOS 7/6, [enable the EPEL repository][1]. Extra Packages for Enterprise Linux (EPEL) is a repository of high-quality free and open-source software maintained by the Fedora project and is 100% compatible with its spinoffs, such as Red Hat Enterprise Linux and CentOS. Both trickle and ncftp are made available from this repository.
-
+1. 对于 RHEL/CentOS 7/6, [开启EPEL仓库][1]
 2. Install ncftp as follows:
 
     # yum update && sudo yum install ncftp		[On RedHat based systems]
@@ -287,14 +287,19 @@ The following is a trickled.conf sample file in the CentOS 7 client (192.168.0.1
 Using this setup, trickled will prioritize SSH connections over FTP transfers. Note that an interactive process, such as SSH, uses smaller time-smoothing values, whereas a service that performs bulk data transfers (FTP) uses a greater value. The smoothing values are responsible for the download and upload speeds in our previous example not matching the exact value specified by the trickled daemon but moving in an interval close to it.
 
 ### Conclusion ###
-
+### 总结 ###
 In this article we have explored how to limit the bandwidth used by applications using trickle on Fedora-based distributions and Debian / derivatives. Other possible use cases include, but are not limited to:
+在该文章中,我们探索了任何使用trickle在基于Fedora发行版和Debian衍生版平台上来限制应用程序的宽带使用.也包含了其他的可能用法,但是不对以下情形进行限制:
 
 - Limiting the download speed via a system utility such as [wget][4], or a torrent client, for example.
+- 限制系统下载工具的下载速度,例如[wget][4],或 BT客户端.  
+
 - Limiting the speed at which your system can be updated via `[yum][5]` (or `[aptitude][6]`, if you’re in a Debian-based system), the package management system.
+- 
 - If your server happens to be behind a proxy or firewall (or is the proxy or firewall itself), you can use trickle to set limits on both the download and upload, or communication speed with the clients or the outside.
 
 Questions and comments are most welcome. Feel free to use the form below to send them our way.
+欢迎提问或留言.
 
 --------------------------------------------------------------------------------
 
