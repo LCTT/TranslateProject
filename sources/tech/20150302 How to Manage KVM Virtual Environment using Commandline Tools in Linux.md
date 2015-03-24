@@ -9,15 +9,15 @@ Linux系统的KVM管理
 
 ### 第一步: 配置存储池 ###
 
-Virsh命令行工具 CLI tool is a management user interface for managing virsh客户域 guest domains. The virsh program can be used either to run one command by giving the command and its arguments on the shell command line.
+Virsh命令行工具是一款管理virsh客户域的用户界面。virsh程序能在命令行中运行所给的命令以及它的参数。
 
-In this section, we will use it to create storage pool for our KVM environment. For more information about the tool, use the following command.
+本节中，我们要用它给我们的KVM环境创建存储池。想知道关于这个工具的更多信息，用以下这条命令。
 
     # man virsh
 
-**1. Using the command pool-define-as with virsh to define new storage pool, you need also to specify name, type and type’s arguments.**
+**1. 用virsh带pool-define-as的命令来定义新的存储池，你需要指定名字、类型和类型参数。**
 
-In our case, name will be Spool1, type will be dir. By default you could provide five arguments for the type:
+本例中，我们将名字取为Spool1，类型为目录。默认情况下你可以提供五个参数给该类型：
 
 - source-host
 - source-path
@@ -25,62 +25,62 @@ In our case, name will be Spool1, type will be dir. By default you could provide
 - source-name
 - target
 
-For (Dir) type, we need the last argumet “target” to specify the path of storage pool, for the other arguments we could use “-” to unspecific them.
+对于目录类型，我们需要用最后一个参数“target”来指定存储池的路径，其它参数项我们可以用“-”来填充。
 
     # virsh pool-define-as Spool1 dir - - - - "/mnt/personal-data/SPool1/"
 
 ![Create New Storage Pool](http://www.tecmint.com/wp-content/uploads/2015/02/Create-New-Storage-Pool.png)
-Create New Storage Pool
+创建新存储池
 
-**2. To check the all storage pools you have in the environment, use the following command.**
+**2. 查看环境中我们所有的存储池，用以下命令。**
 
     # virsh pool-list --all
 
 ![List All Storage Pools](http://www.tecmint.com/wp-content/uploads/2015/02/List-All-Storage-Pools.png)
-List All Storage Pools
+列出所有存储池
 
-**3. Now it’s time to build the storage pool, which we have defined above with the following command.**
+**3. 现在是时候来构造存储池了，用以下命令来构造我们刚才定义的存储池。**
 
     # virsh pool-build Spool1
 
 ![Build Storage Pool](http://www.tecmint.com/wp-content/uploads/2015/02/Build-Storage-Pool.png)
-Build Storage Pool
+构造存储池
 
-**4. Using the virsh command pool-start to active/enable the storage pool we have just created/built above.**
+**4. 用virsh带pool-start的命令来激活并启动我们刚才创建并构造完成的存储池。**
 
     # virsh pool-start Spool1
 
 ![Active Storage Pool](http://www.tecmint.com/wp-content/uploads/2015/02/Active-Storage-Pool.png)
-Active Storage Pool
+激活存储池
 
-**5. Check the status of environment storage pools using the following command.**
+**5. 查看环境中存储池的状态，用以下命令。**
 
     # virsh pool-list --all
 
 ![Check Storage Pool Status](http://www.tecmint.com/wp-content/uploads/2015/02/Check-Storage-Pool-Status.png)
-Check Storage Pool Status
+查看存储池状态
 
-You will notice that the status of Spool1 converted to active.
+你会发现Spool1的状态变成了已激活。
 
-**6. Configure Spool1 to start by libvirtd service every time automaticlly.**
+**6. 对Spool1进行配置，让它每次都能被libvirtd服务自启动。**
 
     # virsh pool-autostart Spool1
 
 ![Configure KVM Storage Pool](http://www.tecmint.com/wp-content/uploads/2015/02/Configure-Storage-Pool.png)
-Configure KVM Storage Pool
+配置KVM存储池
 
-**7. Finally lets display information about our new storage pool.**
+**7. 最后来看看我们新的存储池的信息吧。**
 
     # virsh pool-info Spool1
 
 ![Check KVM Storage Pool Information](http://www.tecmint.com/wp-content/uploads/2015/02/Check-Storage-Pool-Information.png)
-Check KVM Storage Pool Information
+查看KVM存储池信息
 
-Congratulations, Spool1 is ready to be used lets try to create storage volumes using it.
+恭喜你，Spool1已经准备好待命，接下来我们试着创建存储卷来使用它。
 
-### Step 2: Configure Storage Volumes/Disk Images ###
+### 第二步: 配置存储卷/磁盘映像 ###
 
-Now it is disk image’s turn, using qemu-img to create new disk image from Spool1. For more details about qemy-img, use the man page.
+现在轮到磁盘映像了，using qemu-img to create new disk image from Spool1. For more details about qemy-img, use the man page.
 
     # man qemu-img
 
@@ -100,9 +100,9 @@ Check Storage Volume Information
 
 Now its time to create virtual machines in the next step.
 
-### Step 3: Create Virtual Machines ###
+### 第三步: 创建虚拟机 ###
 
-10. Now with the last and latest part, we will create virtual machines using virt-istall. The virt-install is a command line tool for creating new KVM virtual machines using the “libvirt” hypervisor management library. For more details about it, use:
+**10. Now with the last and latest part, we will create virtual machines using virt-istall. The virt-install is a command line tool for creating new KVM virtual machines using the “libvirt” hypervisor management library. For more details about it, use:**
 
     # man virt-install
 
