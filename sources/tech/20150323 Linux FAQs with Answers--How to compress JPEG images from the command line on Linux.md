@@ -1,3 +1,5 @@
+    Vic020
+
 Linux FAQs with Answers--How to compress JPEG images from the command line on Linux
 ================================================================================
 > **Question**: I have several JPEG photo images I have taken using a digital camera. I would like to optimize and compress the JPEG pictures before uploading them to Dropbox. What is the easiest way to compress JPEG images without losing their quality on Linux? 
