@@ -103,7 +103,7 @@ Virsh命令行工具是一款管理virsh客户域的用户界面。virsh程序�
 
 ### 第三步: 创建虚拟机 ###
 
-**10. 现在到最后一个环节了，在最后一步中，我们将用virt-istall命令来创建虚拟机。virt-install是一个用来创建新的KVM虚拟机命令行工具，它使用“libvirt”管理程序库。想获取更多细节，同样可以查看man手册。**
+**10. 现在到最后一个环节了，在最后一步中，我们将用virt-install命令来创建虚拟机。virt-install是一个用来创建新的KVM虚拟机命令行工具，它使用“libvirt”管理程序库。想获取更多细节，同样可以查看man手册。**
 
     # man virt-install
 
@@ -122,17 +122,17 @@ Virsh命令行工具是一款管理virsh客户域的用户界面。virsh程序�
 ![Create New Virtual Machine](http://www.tecmint.com/wp-content/uploads/2015/02/Create-New-Virtual-Machines.png)
 创建新的虚拟机
 
-**11. You will find also a pop-up virt-vierwer window appears to communicate with virtual machine through it.**
+**11. 你会看到弹出一个virt-vierwer窗口，像是在通过它在与虚拟机通信。**
 
 ![Booting Virtual Machine](http://www.tecmint.com/wp-content/uploads/2015/02/Booting-Virtual-Machine.jpeg)
-Booting Virtual Machine
+虚拟机启动程式
 
 ![Installation of Virtual Machine](http://www.tecmint.com/wp-content/uploads/2015/02/Installation-of-Virtual-Machine.jpeg)
-Installation of Virtual Machine
+虚拟机安装过程
 
 ### 结论 ###
 
-This is the latest part of our KVM tutorial, we haven’t covered everything of course. It a shot to scratch the KVM environment so its your turn to search and keep hands dirty using this nice resources.
+以上就是我们KVM教程的最后一部分了，当然我们还没有完全覆盖到全部，我们只是打了个擦边球，所以现在该轮到你来好好地利用这些丰富的资源来做自己想做的事了。
 
 - [KVM Getting Started Guide][2]
 - [KVM Virtualization Deployment and Administration Guide][3]
