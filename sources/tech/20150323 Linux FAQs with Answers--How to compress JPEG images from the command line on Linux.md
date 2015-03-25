@@ -1,32 +1,30 @@
-    Vic020
-
-Linux FAQs with Answers--How to compress JPEG images from the command line on Linux
+Linux有问必答--如何使用命令行压缩JPEG图像
 ================================================================================
-> **Question**: I have several JPEG photo images I have taken using a digital camera. I would like to optimize and compress the JPEG pictures before uploading them to Dropbox. What is the easiest way to compress JPEG images without losing their quality on Linux? 
+> **问题**: 我有许多数码照相机拍出来的照片。我想在上传到Dropbox之前，优化和压缩下JPEG图片。有没有什么简单的方法压缩JPEG图片并不损耗他们的质量？
 
-Image resolution of today's picture taking gadgets (e.g., smartphones, digital cameras) keeps increasing. Even 36.3 Megapixel Nikon D800 recently hit the consumer market, and this trend will continue. While modern gadgets continue to produce increasingly high resolution images, we may often want to post-process and compress their sizes before uploading them to a storage-limited and bandwidth-restricted cloud.
+如今拍照设备（如智能手机、数码相机）拍出来的图片分辨率越来越大。甚至3630万像素的Nikon D800已经冲入市场，并且这个趋势根本停不下来。如今的拍照设备不断地提高着照片分辨率，使得我们不得不压缩后，再上传到有储存限制、带宽限制的云。
 
-In fact, there is a way to compress JPEG images easily on Linux. A command-line tool called jpegoptim allows you do "lossless" optimization on JPEG images, so you can compress JPEG pictures without sacrificing their quality. In case your storage or bandwidth budget is really low, jpegoptim allows you to do "lossy" compression as well by adjusting image quality.
+事实上，这里有一个非常简单的方法压缩JPEG图像。一个叫“jpegoptim”命令行工具可以帮助你“无损”美化JPEG图像，所以你可以压缩JPEG图片而不至于牺牲他们的质量。万一你的存储空间和带宽预算真的很少，jpegoptim也支持“有损耗”压缩来调整图像大小。
 
-For those interested in compressing PNG images, refer to [this guideline][1] instead.
+如果要压缩PNG图像，参考[this guideline][1]例子。
 
-### Install Jpegoptim on Linux ###
+### 安装jpegoptim ###
 
-To install jpegoptim on Ubuntu, Debian or Linux Mint:
+Ubuntu, Debian 或 Linux Mint:
 
     $ sudo apt-get install jpegoptim
 
-To install jpegoptim on Fedora:
+Fedora:
 
     $ sudo yum install jpegoptim
 
-To install jpegoptim on CentOS/RHEL, first enable [EPEL repo][2], and then run:
+CentOS/RHEL安装，先开启[EPEL库][2]，然后运行下列命令：
 
     $ sudo yum install jpegoptim 
 
-### Compress JPEG Images Losslessly ###
+### 无损压缩jpeg图像 ###
 
-To compress a JPG picture losslessly, simply run:
+为了无损地压缩一副JPG图片，使用：
 
     $ jpegoptim photo.jpg 
 
@@ -34,9 +32,9 @@ To compress a JPG picture losslessly, simply run:
 
     photo.jpg 2048x1536 24bit N ICC JFIF  [OK] 882178 --> 821064 bytes (6.93%), optimized.
 
-Note that the original input image will be overwritten with a compressed impage.
+注意，原始图像会被压缩后图像覆盖。
 
-If jpegoptim is not able to further optimize an image losselessly, it will skip overwriting it.
+如果jpegoptim不能无损美化图像，将不会覆盖
 
     $ jpegoptim -v photo.jpg 
 
@@ -44,27 +42,27 @@ If jpegoptim is not able to further optimize an image losselessly, it will skip 
 
     photo.jpg 2048x1536 24bit N ICC JFIF  [OK] 821064 --> 821064 bytes (0.00%), skipped.
 
-If you want to preserve an original image, use "-d" option to specify a target directory.
+如果你想保护原始图片，使用"-d"参数指明保存目录
 
     $ jpegoptim -d ./compressed photo.jpg 
 
-An compressed image will then be placed (with the same name as the input file) in ./compressed directory.
+这样，压缩的图片将会保存在./compressed目录（已同样的输入文件名）
 
-If you want to preserve file creation/modification time, use "-p" option as follows. Then a compressed image will be placed with the same date and time as the original image.
+如果你想要保护文件的创建修改时间，使用"-p"参数。这样压缩后的图片会得到与原始图片相同的日期时间。
 
     $ jpegoptim -d ./compressed -p photo.jpg 
 
-If you simply check out possible lossless compression ratio without actually compressing it, use "-n" option to "simulate" compression. Then it will simply print results without actually performing compression.
+如果你只是想获得无损压缩率，使用"-n"参数来模拟压缩，然后它会打印压缩率。
 
     $ jpegoptim -n photo.jpg 
 
-### Compress JPEG Images Lossily ###
+### 有损压缩JPG图像 ###
 
-In case you really want to save storage space, you can do lossy compression on large JPEG pictures.
+万一你真的需要要保存在云空间上，你可以使用有损压缩JPG图片。
 
-In this case, use "-m<maximum-quality>" option, where maximum quality is specified in the range of 0 and 100 (0 is the highest quality, and 100 is the lowest quality).
+这种情况下，使用"-m<质量>"选项，质量数范围0到100。（0是最好质量，100是最坏质量）
 
-For example, to compress an image with 50% quality:
+例如，用50%质量压缩图片:
 
     $ jpegoptim -m50 photo.jpg 
 
@@ -72,19 +70,19 @@ For example, to compress an image with 50% quality:
 
     photo.jpg 2048x1536 24bit N ICC JFIF  [OK] 882178 --> 301780 bytes (65.79%), optimized.
 
-You will get a smaller image at the cost of reduced quality.
+在牺牲质量的基础上，将会得到一个更小的图片。
 
 ![](https://farm9.staticflickr.com/8707/16260736234_6d6f1d2434_c.jpg)
 
-### Compress Multiple JPEG Images in a Batch ###
+### 一次压缩多张JPEG图像 ###
 
-Often times you need to compress many JPEG image files in a directory. In that case, you can use the following shell script.
+最常见的情况是需要压缩一个目录下的多张JPEG图像文件。为了应付这种情况，你可以使用接下里的脚本。
 
     #!/bin/sh
      
-    # compress all *.jpg files in the current directory
-    # and place them in ./compressed directory
-    # with the same modification date as original files.
+    # 压缩当前目录下所有*.jpg文件
+    # 保存在./compressed目录
+    # 并拥有与原始文件同样的修改日期
     for i in *.jpg; do jpegoptim -d ./compressed -p "$i"; done
 
 --------------------------------------------------------------------------------
@@ -92,7 +90,7 @@ Often times you need to compress many JPEG image files in a directory. In that c
 via: http://ask.xmodulo.com/compress-jpeg-images-command-line-linux.html
 
 作者：[Dan Nanni][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[VicYu/Vic020](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
