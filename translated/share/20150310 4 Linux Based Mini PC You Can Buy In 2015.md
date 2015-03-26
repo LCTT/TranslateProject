@@ -1,24 +1,23 @@
-2015你可以买的一款基于Linux的迷你PC
+2015年你可以买的四款基于Linux的迷你PC
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/03/Linux_Based_Mini_PC.jpg)
 
-在我看来迷你PC将在不久的将来会替代传统桌面电脑。传统桌面的有一个像送风机那样占据大量空间的风扇。迷你PC，在另一方面说很小巧和紧凑。通常是4″或者5″大小，可以轻易地放在桌子上。
+在我看来迷你PC将在不久的将来会替代传统桌面电脑。传统桌面的有一个像吹风机那样占据大量空间的风扇。迷你PC，在另一方面说很小巧和紧凑。通常是4″或者5″大小，可以轻易地放在桌子上。
 
-不仅如此，这些迷你PC的无风扇设计是一个好处。当然，你可以购买无风扇的常规电脑，但是空间占用仍然是一个问题。对我个人来说，我觉得迷你PC外观上看着很可爱。如果你不是一个游戏玩家也不想买新的桌面PC，我强烈建议你**购买一个基于Linux的迷你PC**。
+不仅如此，这些迷你PC的无风扇设计是一个优点。当然，你可以购买无风扇的常规电脑，但是空间占用仍然是一个问题。对我个人来说，我觉得迷你PC外观上看着很可爱。如果你不是一个游戏玩家也不想买新的桌面PC，我强烈建议你**购买一款基于Linux的迷你PC**。
 
-如果你考虑我的建议买一个，那么你或许想知道该买哪款。不要担心，这篇文章我们会介绍**四款你可以在2015购买的基于Linux的迷你PC**。
+如果你考虑我的建议，那么你或许想知道该买哪款。不要担心，这篇文章我们会介绍**2015年你可以购买的四款基于Linux的迷你PC**。
 
 ### 基于Linux的迷你PC ###
 
-请注意这些PC可能还不能下单。它们中有些还刚刚公布，在不久的将来才会面向公众出售。
+需要注意的是，这其中的一些PC可能还不能下单。它们中有些还刚刚公布，在不久的将来才会面向公众出售。
 
 
 #### 1. System76出品的Meerkat ####
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/03/system76-meerkat.jpg)
 
-[System76][1] is a computer manufacturer exclusively dealing with only Ubuntu based desktop, laptops and servers. [System76 announced an Ubuntu based mini PC Meerkat][2] last week. Let’s take a quick look at its specification:
-[System76][1] 是一家仅出品基于Ubuntu电脑、笔记本、服务器的电脑生产商。[System76在上周宣布了一款基于Ubuntu的迷你PC][2]。让我看一下它的规格：
+[System76][1] 是一家仅出品基于Ubuntu电脑、笔记本、服务器的电脑生产商。[System76在上周公布了一款基于Ubuntu的迷你PC][2]。让我看一下它的规格：
 
 **规格**
 
@@ -43,7 +42,7 @@
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/01/mintbox-mini.jpeg)
 
-[Compulab][3]将它的旗舰产品基于Linux Mint的桌面设备成了[Mintbox Mini][4]。紧凑的版本在4″大小。更多的细节如下：
+[Compulab][3]将它基于Linux Mint的期间PC设备压缩，从Mintbox变为[Mintbox Mini][4]。这个紧凑的版本大小在4″左右。更多的细节如下：
 
 **规格**
 
@@ -59,19 +58,17 @@
 
 **价格**
 
-$300起售
+$300左右起售
 
 **发售日期**
 
-2015第二季度
+2015年第二季度
 
 #### 3. Compulab出品的Utilite2 ####
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/03/Utilite2-ARM-PC.jpg)
 
-It’s not that Compulab has stuck with Linux Mint only. It announced an ARM desktop PC running Ubuntu in last December. With a size of 3.4″x2.3″, [Utilite2][5] has modest feature and modest price.
-Compulab并不是坚持用Linux Mint的。它在去年12月宣布了一款运行Ubuntu的ARM桌面PC。大小是3.4″x2.3″，[Utilite2][5]有最现代的特性和价格
-
+Compulab并不仅仅被Linux Mint所限制。它在去年12月公布了一款运行Ubuntu的ARM桌面PC。大小是3.4″x2.3″，[Utilite2][5]有最适合的性价比。
 
 **规格**
 
@@ -85,20 +82,19 @@ Compulab并不是坚持用Linux Mint的。它在去年12月宣布了一款运行
 
 **价格**
 
-常规版售价$192、带硬盘售价$229。邮费另付。
+常规版售价$192、带硬盘售价$229。运费另付。
 
 **发售日期**
 
 现在就可购买。运送将花费4周。
 
-#### Think Penguin出品的Penguin Pocket Wee  ####
+#### 4. Think Penguin出品的Penguin Pocket Wee  ####
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/03/Think_Penguin_Pocket_Wee.jpeg)
 
-[Think Penguin][6]是一家开源硬件生产商。在迷你PC领域，它提供了[Penguin Pocket Wee][7]。大小是4.6″x 4.4″x 1.4″ ，, Penguin Pocket Wee提供了大量的配置。你可以选择处理器、存储、网卡等。你可以选择购买预装你喜欢的Linux发行版，默认系统是Ubuntu。
+[Think Penguin][6]是一家开源硬件生产商。在迷你PC领域，它提供了[Penguin Pocket Wee][7]。大小是4.6″x 4.4″x 1.4″ ，, Penguin Pocket Wee为你提供了大量的配置。你可以选择处理器、存储、网卡等。你可以选择购买预装你喜欢的Linux发行版，默认系统是Ubuntu。
 
-The general configuration is as following:
-下面的默认的配置
+下面是默认的配置：
 
 - Intel Core i3 或者 i5处理器，最高支持1080p视频
 - 最高扩展至 16GB 的 DDR3内存
@@ -110,18 +106,17 @@ The general configuration is as following:
 
 **价格**
 
-Basic model starts at $499 and it can go up to $1000 based on the configuration you select.
-基础版本$499起售，根据你的配置最大是$1000。
+基础版本$499起售，根据你选择的配置最高价格是$1000。
 
 **发售日期**
 
-现在就可下订单。该公司在美国和英国也有办公司，所以应也可以运送到南美和欧洲。
+现在就可下订单。该公司在美国和英国也有办公地点，所以应也可以运送到南美和欧洲。
 
 ### 你会选哪种？ ###
 
 我故意没有介绍[Raspberry Pi 2][8]或者其他Linux微电脑如[Intel的电脑棒][9]。原因是我不认为这些微电脑属于迷你PC的范畴。
 
-你怎么看？你想用迷你PC代替你的桌面PC么？是不是还有我没有在**最好的基于Linux的迷你PC**列出的PC？分享你们的观点吧。
+你怎么看？你想用迷你PC代替你的桌面PC么？是不是还有我没有在**基于Linux的最好的迷你PC**列表里列出的PC？在评论区分享你们的观点吧。
 
 --------------------------------------------------------------------------------
 
@@ -129,7 +124,7 @@ via: http://itsfoss.com/4-linux-based-mini-pc-buy-2015/
 
 作者：[Abhishek][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
