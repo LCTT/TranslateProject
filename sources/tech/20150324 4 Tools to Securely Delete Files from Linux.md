@@ -1,3 +1,5 @@
+dbarobin translating
+
 4 Tools to Securely Delete Files from Linux
 ================================================================================
 Any computer user with normal level skill set knows that any data removed from computer system can be recovered later with little bit of efforts. This is a good thing in the scenario when you have accidentally deleted your critical data. But in most cases, you don't want your private data to be recovered easily. Whenever we remove anything, the operating system deletes just the index of the particular data. It means that data is still there somewhere on the disk, this method is insecure, as any smart computer hacker can use any good data recovery tool to easily recover your deleted data. Linux users utilizes the well know “**rm**” command to remove data from their operating system, but “rm” command works in the conventional fashion. Data removed using this command can be recovered by special file recovery tools.
