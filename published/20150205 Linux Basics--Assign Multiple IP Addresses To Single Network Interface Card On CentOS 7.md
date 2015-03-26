@@ -1,6 +1,6 @@
-Linux 基础：在CentOS 7上给一个网卡分配多个IP地址
+在CentOS 7上给一个网卡分配多个IP地址
 ================================================================================
-有时你也许想要给一个网卡多个地址。你该怎么做呢？另外买一个网卡来分配地址？不用这么做（只要在小型网络中）。我们现在可以再CentOS/RHEL 7中给一个网卡分配多个ip地址。想知道怎么做么？好的，跟随我，这并不难。
+有时你也许想要给一个网卡多个地址。你该怎么做呢？另外买一个网卡来分配地址？在小型网络中其实不用这么做。我们现在可以在CentOS/RHEL 7中给一个网卡分配多个ip地址。想知道怎么做么？好的，跟随我，这并不难。
 
 首先，让我们找到网卡的IP地址。在我的CentOS 7服务器中，我只使用了一个网卡。
 
@@ -83,7 +83,6 @@ Linux 基础：在CentOS 7上给一个网卡分配多个IP地址
 
 类似地，你可以加入更多的ip地址。
 
-Finally, save and close the file. Restart network service to take effect the changes.
 最后，保存并退出文件。重启网络服务来使更改生效。
 
     systemctl restart network
@@ -172,11 +171,9 @@ Finally, save and close the file. Restart network service to take effect the cha
     IPV6_PEERDNS="yes"
     IPV6_PEERROUTES="yes"
 
-你可以看到我已经添加一个A类地址(10.0.0.1)并且前缀是16
+你可以看到我已经添加一个A类地址(10.0.0.1)并且前缀是16。
 
-保存并退出文件。重启网络服务，
-
-接着，ping新增的地址：
+保存并退出文件。重启网络服务，接着，ping新增的地址：
 
     ping -c 4 10.0.0.1
 
@@ -202,7 +199,7 @@ via: http://www.unixmen.com/linux-basics-assign-multiple-ip-addresses-single-net
 
 作者：[SK][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
