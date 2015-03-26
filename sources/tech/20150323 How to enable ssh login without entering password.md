@@ -1,3 +1,4 @@
+[translating by KayGuoWhu]
 How to enable ssh login without entering password
 ================================================================================
 Assume that you are a user "aliceA" on hostA, and wish to ssh to hostB as user "aliceB", without entering her password on hostB. You can follow this guide to **enable ssh login without entering a password**.
