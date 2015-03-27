@@ -43,18 +43,27 @@ In this article we will explain how to limit the network bandwidth used by appli
 #### 前提条件 ####
 
 1. For RHEL/CentOS 7/6, [enable the EPEL repository][1]. Extra Packages for Enterprise Linux (EPEL) is a repository of high-quality free and open-source software maintained by the Fedora project and is 100% compatible with its spinoffs, such as Red Hat Enterprise Linux and CentOS. Both trickle and ncftp are made available from this repository.
+1. 对于 RHEL/CentOS 7/6， [开启EPEL仓库][1]。EPEL的Extra Packages是一个
+有Fedora项目维护的高质量、开源的软件仓库，而且百分之百与其衍生产品相兼容，如
+企业版本Linux和CentOS. 在这个仓库中trickle和ncftp两者都是可用的。
 
 2. Install ncftp as follows:
+2. 按照如下方式安装ncftp:
 
     # yum update && sudo yum install ncftp		[On RedHat based systems]
     # aptitude update && aptitude install ncftp	[On Debian based systems]
 
 3. Set up a FTP server in a separate server. Please note that although FTP is inherently insecure, it is still widely used in cases when security in uploading or downloading files is not needed. We are using it in this article to illustrate the bounties of trickle and because it shows the transfer rates in stdout on the client, and we will leave the discussion of whether it should or should not be used for another date and time :).
+3. 在单独的服务器上设置一个FTP服务器。需要注意的是，尽管FTP天生就不安全，但是
+仍然被广泛应用在安全性无关紧要的文件上传下载中。 在这篇文章中我们使用它来演示
+trickle的优点，同时它也会在客户端的标准输出流中显示传输速率，我们将是否在另外
+的日期时间中使用放在一边讨论。
 
     # yum update && yum install vsftpd 		[On RedHat based systems]
     # aptitude update && aptitude install vsftpd 	[On Debian based systems]
 
 Now, edit the /etc/vsftpd/vsftpd.conf file on the FTP server as follows:
+现在，在FTP服务器上按照以下方式编辑 /etc/vsftpd/vsftpd.conf 文件。
 
     anonymous_enable=NO
     local_enable=YES
@@ -62,6 +71,7 @@ Now, edit the /etc/vsftpd/vsftpd.conf file on the FTP server as follows:
     allow_writeable_chroot=YES
 
 After that, make sure to start vsftpd for your current session and to enable it for automatic start on future boots:
+在此之后，确保在你的当前会话中开启了vsftpd，并在之后的启动中让其自动启动。
 
     # systemctl start vsftpd 		[For systemd-based systems]
     # systemctl enable vsftpd
@@ -69,21 +79,30 @@ After that, make sure to start vsftpd for your current session and to enable it 
     # chkconfig vsftpd on
 
 4. If you chose to set up the FTP server in a CentOS/RHEL 7 droplet with SSH keys for remote access, you will need a password-protected user account with the appropriate directory and file permissions for uploading and downloading the desired content OUTSIDE root’s home directory.
+4. 如果你选在在一个CentOS/RHEL 7中为FTP服务器的远程访问配备SSH秘钥，你需要
+一个具有适合访问root目录之外的目录和文件内容上传下载权限并密码受保护的用户账户。
 
 You can then browse to your home directory by entering the following URL in your browser. A login window will pop up prompting you for a valid user account and password on the FTP server.
+你可以通过在你的浏览器中输入以下的URL来浏览你的Home目录。一个登陆窗口会弹出来
+提示你输入FTP服务器中的有效的用户名和密码。
 
     ftp://192.168.0.15
 
 If the authentication succeeds, you will see the contents of your home directory. Later in this tutorial you will be able to refresh that page to display the files that have been uploaded during previous steps.
+如果验证成功，你就会看到你的home目录中的内容。该教程的稍后部分中，你将可以刷新
+页面来显示在你之前上传过的文件。
 
 ![FTP Directory Tree](http://www.tecmint.com/wp-content/uploads/2013/11/FTP-Directory-Tree.png)
 FTP Directory Tree
 
 ### How to Install Trickle in Linux ###
+### 如何在Linux中安装 Tricle ###
 
 1. Install trickle via yum or aptitude.
+1. 通过yum或aptitude来安装tricle.
 
 To ensure a successful installation, it is considered good practice to make sure the currently installed packages are up-to-date (using yum update) before installing the tool itself.
+
 
     # yum -y update && yum install trickle 		        [On RedHat based systems]
     # aptitude -y update && aptitude install trickle 	[On Debian based systems]
