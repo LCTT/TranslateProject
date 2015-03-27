@@ -1,13 +1,12 @@
-Translating by ZTinoZ
-How to Host Open Source Code Repository in github
+怎样在Github上做开源代码库的主人
 ================================================================================
-Hi all, today we will be learning how to host Source Code of Open Source Software in the repository hosted by github.com . GitHub is a web-based Git repository hosting service, which offers all of the distributed revision control and source code management (SCM) functionality of Git as well as adding its own features. It provides a workplace to host powerful collaboration, code review, and code management for open source and private projects. Unlike Git, which is strictly a command-line tool, GitHub provides a web-based graphical interface and desktop as well as mobile integration. GitHub offers both paid plans for private repositories and free accounts, which are usually used to host open-source software projects.
+大家好，今天我们要学习一下怎样在github.com上的开源软件库中源代码的主人。GitHub is a web-based Git repository hosting service, which offers all of the distributed revision control and source code management (SCM) functionality of Git as well as adding its own features. It provides a workplace to host powerful collaboration, code review, and code management for open source and private projects. Unlike Git, which is strictly a command-line tool, GitHub provides a web-based graphical interface and desktop as well as mobile integration. GitHub offers both paid plans for private repositories and free accounts, which are usually used to host open-source software projects.
 
 ![github universe logo](http://blog.linoxide.com/wp-content/uploads/2015/03/github-universe.jpg)
 
 It is fast and more flexible web based hosting service which is easy to use and to manage distributed revision control. Anyone can host their software's source code in github's repository for the use, contribution, sharing, issue tracking and many more by millions of people across the globe. Here are some easy and quick steps to easily host software's source code.
 
-### 1. Creating a new Github Account ###
+### 1. 创建一个新的Github账号 ###
 
 First of all, open your favorite browser and go to Github's homepage url ie [github][1]. Then, the homepage will be opened as shown below.
 
@@ -19,7 +18,7 @@ After the you entered the valid information required for sign up, you'll be redi
 
 ![choosing plan](http://blog.linoxide.com/wp-content/uploads/2015/03/choosing-plan.png)
 
-### 2. Creating a New Repository ###
+### 2. 创建一个新的库 ###
 
 After we have successfully signed up a new account or logged in to Github, we'll now need to create a new Repository to get started.
 
@@ -37,7 +36,7 @@ After it is done, we'll get to see something similar like this image.
 
 ![repository github](http://blog.linoxide.com/wp-content/uploads/2015/03/repository-github.png)
 
-### 3. Uploading an existing Project ###
+### 3. 上传一个已有项目 ###
 
 If we want to share our existing project on Github, we'll surely need to push the codes to the repository we created. To do so, we'll first need to install git in our Linux machine. As I am running Ubuntu 14.04 LTS in my machine, I'll need to run **apt** manger to install it.
 
@@ -78,7 +77,7 @@ Now, to push the changes in our local repository to GitHub's repo we'll need to 
 
 ![pushing repo](http://blog.linoxide.com/wp-content/uploads/2015/03/pushing-repo.png)
 
-### Cloning a Repo ###
+### 克隆一个库 ###
 
 If we want to download a code repository from github straight to our local drives with a single command then, we can simply use git clone command which will clone the current directory to the remote repository.
 
@@ -88,7 +87,7 @@ If we want to download a code repository from github straight to our local drive
 
 Please change the above url to the repository you want to clone from.
 
-### Updating a Change ###
+### 更新改动 ###
 
 If we made changes to our code and want to push them to our remote repository then after changing the changes, we should run the following commands inside that directory.
 
@@ -96,7 +95,7 @@ If we made changes to our code and want to push them to our remote repository th
     $ git commit -m "Updating"
     $ git push
 
-### Conclusion ###
+### 结论 ###
 
 Hurray! We have successfully hosted our Project Source Code in Github repository. Github is fast and more flexible web based hosting service which is easy to use and to manage distributed revision control. Millions of awesome Open Source projects are hosted in github. So, if you have any questions, suggestions, feedback please write them in the comment box below. Thank you ! Enjoy Github :-)
 
@@ -105,7 +104,7 @@ Hurray! We have successfully hosted our Project Source Code in Github repository
 via: http://linoxide.com/usr-mgmt/host-open-source-code-repository-github/
 
 作者：[Arun Pyasi][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ZTinoZ](https://github.com/ZTinoZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
