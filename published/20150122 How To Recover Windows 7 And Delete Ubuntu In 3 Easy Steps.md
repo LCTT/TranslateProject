@@ -1,4 +1,4 @@
-如何通过简单的3步恢复Windows7同时删除Ubuntu
+如何通过简单的3步恢复Windows 7同时删除Ubuntu
 ================================================================================
 ### 说明 ###
 
@@ -8,11 +8,11 @@
 
 那么为什么我现在要写这篇文章呢？
 
-到目前为止我曾经在很多场合被问到如何从一个装有Windows7或Windows8的双系统中删除Unbuntu系统，因此写这篇文章就变得有意义了。
+到目前为止我曾经在很多场合被问到如何从一个装有Windows7或Windows8的双系统中删除Ubuntu系统，因此写这篇文章就变得有意义了。
 
 我在圣诞节期间浏览了人们在我文章中的留言，感觉是时候把缺失的文章写完同时更新一下那些比较老的又需要关注的文章了。
 
-我打算把一月份剩下的时间都用在这上面。这是第一步。如果你的电脑上安装了Windown7和Ubuntu双系统，同时你不想通过恢复出厂设置的方式恢复Windows7系统，那么请参考该教程。(注意：对于Windows8系统，有一个独立的教程)
+我打算把一月份剩下的时间都用在这上面。这是第一步。如果你的电脑上安装了Windows7和Ubuntu双系统，同时你不想通过恢复出厂设置的方式恢复Windows7系统，那么请参考该教程。(注意：对于Windows8系统，有一个独立的教程)
 
 ### 删除Ubuntu系统需要的步骤 ###
 
@@ -24,10 +24,9 @@
 
 在你开始之前，我建议为你的系统保留一个备份。
 
-我也建议不要放弃这样的机会也不要使用微软自带的工具。
+我建议你不要放弃备份的机会，但也不要使用微软自带的工具。
 
 [点击查看如何使用Macrinum Reflect备份你的驱动][1]
-
 
 如果Ubuntu中有你希望保存的数据，现在就登录进去然后将数据保存到外部硬盘驱动器，USB驱动器或者DVD中。
 
@@ -57,7 +56,7 @@
 
 点击“创建光盘”。
 
-将光盘留在电脑中重启电脑，当出现从CD中启动的消息的时候按下键盘上的“回车”键。
+将光盘留在电脑中并重启电脑，当出现从CD中启动的消息的时候按下键盘上的“回车”键。
 
 ![](http://2.bp.blogspot.com/-VPSD50bmk2E/VLWftBg7HxI/AAAAAAAAHnM/APVzvPg4rC0/s1600/recoveryoptionschooselanguage.jpg)
 
@@ -111,13 +110,13 @@
 
 对于Windows系统来说，我们真正需要的只有驱动器C，所以剩下的是可以删掉的。
 
-**注意: 注意一下.你的磁盘上可能有恢复分区。 不要删除恢复分区.。它们应该会被标记，将文件系统设置为NTFS或FAT32**
+**注意: 注意一下.你的磁盘上可能有恢复分区。 不要删除恢复分区。它们应该有专门的卷标，文件系统也许是NTFS或FAT32**
 
 ![](http://3.bp.blogspot.com/-8YUE2p5Fj8Q/VLWlHXst6JI/AAAAAAAAHoQ/BJC57d9Nilg/s1600/deletevolume.png)
 
 在你希望删除的分区上单击右键(例如：root,home和swap分区),然后从弹出的菜单中点击“删除卷”。
 
-**(不要删除任何NTFS或者FAT32文件系统的分区)**
+**(不要删除任何NTFS或者FAT32文件系统的分区！)**
 
 对于剩下的两个分区重复执行上面的操作。
 
@@ -134,11 +133,12 @@
 ![](http://4.bp.blogspot.com/-pLV5L3CvQ1Y/VLWmh-5SKTI/AAAAAAAAHoc/7sJzITyvduo/s1600/diskmanagement4.png)
 
 最后一步是扩展Windows以便于将它再变成一个大的分区。
+
 右键点击Windows分区(C盘)，然后选择“扩展卷”。
 
 ![](http://1.bp.blogspot.com/-vgmw_N2WZWw/VLWm7i5oSxI/AAAAAAAAHok/k0q_gnIik9A/s1600/extendvolume1.PNG)
 
-当出现左面的窗口的时候点击“下一步”,
+当出现左面的窗口的时候点击“下一步”。
 
 ![](http://3.bp.blogspot.com/-WLA86V-Au8g/VLWnTq5RpAI/AAAAAAAAHos/6vzjLNkrwRQ/s1600/extendvolume2.PNG)
 
@@ -165,13 +165,14 @@
 这就是全部内容。一个致力于Linux的网站刚刚向你展示了如何移除Linux然后用Windows7取而代之。
 
 有任何疑问可以在下面评论区留言。
+
 --------------------------------------------------------------------------------
 
 via: http://www.everydaylinuxuser.com/2015/01/how-to-recover-windows-7-and-delete.html
 
 作者：Gary Newell
 译者：[Medusar](https://github.com/Medusar)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

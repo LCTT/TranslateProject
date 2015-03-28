@@ -1,3 +1,4 @@
+Translating by ZTinoZ
 How to Host Open Source Code Repository in github
 ================================================================================
 Hi all, today we will be learning how to host Source Code of Open Source Software in the repository hosted by github.com . GitHub is a web-based Git repository hosting service, which offers all of the distributed revision control and source code management (SCM) functionality of Git as well as adding its own features. It provides a workplace to host powerful collaboration, code review, and code management for open source and private projects. Unlike Git, which is strictly a command-line tool, GitHub provides a web-based graphical interface and desktop as well as mobile integration. GitHub offers both paid plans for private repositories and free accounts, which are usually used to host open-source software projects.
