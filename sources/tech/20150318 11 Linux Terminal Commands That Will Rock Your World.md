@@ -1,3 +1,5 @@
+translating by martin.
+
 11 Linux Terminal Commands That Will Rock Your World
 ================================================================================
 I have been using Linux for about 10 years and what I am going to show you in this article is a list of Linux commands, tools and clever little tricks that I wish somebody had shown me from the outset instead of stumbling upon them as I went along. 
