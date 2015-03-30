@@ -1,14 +1,14 @@
 怎样在Github上做开源代码库的主人
 ================================================================================
-大家好，今天我们要学习一下怎样在github.com上的开源软件库中源代码的主人。GitHub is a web-based Git repository hosting service, which offers all of the distributed revision control and source code management (SCM) functionality of Git as well as adding its own features. It provides a workplace to host powerful collaboration, code review, and code management for open source and private projects. Unlike Git, which is strictly a command-line tool, GitHub provides a web-based graphical interface and desktop as well as mobile integration. GitHub offers both paid plans for private repositories and free accounts, which are usually used to host open-source software projects.
+大家好，今天我们要学习一下怎样管理github.com库中的开源软件源代码。GitHub是一个基于web的Git库托管服务，提供分布式修改控制和Git的源代码管理(SCM)功能并加入了自身的特点。它给开源和私有项目提供了一个互相协作的工作区、代码预览和代码管理功能。不像Git，一个完完全全的命令行工具，GitHub提供了一个基于web的图形化界面和桌面，也整合了手机。GitHub同时提供了私有库付费计划和免费账号，都是用来管理开源软件项目的。
 
 ![github universe logo](http://blog.linoxide.com/wp-content/uploads/2015/03/github-universe.jpg)
 
-It is fast and more flexible web based hosting service which is easy to use and to manage distributed revision control. Anyone can host their software's source code in github's repository for the use, contribution, sharing, issue tracking and many more by millions of people across the globe. Here are some easy and quick steps to easily host software's source code.
+这是一种快速灵活，基于web的托管服务，它使用方便，管理分布式修改控制系统也是相当容易，任何人都能为了将它们使用、贡献、共享、问题跟踪和更多的全球各地数以百万计的人在github的库里管理他们的软件源代码。这里有一些简单快速地管理软件源代码的方法。
 
 ### 1. 创建一个新的Github账号 ###
 
-First of all, open your favorite browser and go to Github's homepage url ie [github][1]. Then, the homepage will be opened as shown below.
+首先First of all, open your favorite browser and go to Github's homepage url ie [github][1]. Then, the homepage will be opened as shown below.
 
 ![Github Homepage](http://blog.linoxide.com/wp-content/uploads/2015/03/github-homepage.png)
 
