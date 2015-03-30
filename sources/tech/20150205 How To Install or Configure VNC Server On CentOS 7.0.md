@@ -1,3 +1,4 @@
+===>> boredivan翻译中 <<===
 How To Install / Configure VNC Server On CentOS 7.0
 ================================================================================
 Hi there, this tutorial is all about how to install or setup [VNC][1] Server on your very CentOS 7. This tutorial also works fine in RHEL 7.  In this tutorial, we'll learn what is VNC and how to install or setup [VNC Server][1] on CentOS 7
