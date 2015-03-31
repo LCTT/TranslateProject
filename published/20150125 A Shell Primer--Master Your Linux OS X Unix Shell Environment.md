@@ -1,6 +1,6 @@
 Shell入门：掌握Linux，OS X，Unix的Shell环境
 ================================================================================
-在Linux或类Unix系统中，每个用户和进程都运行在一个特定环境中。这个环境包含了变量，设置，别名，函数以及更多的。下面是对Shell环境下一些常用命令的简单介绍，包括每个命令如何使用的例子，以及在命令行下设定你自己的环境来提高效率。
+在Linux或类Unix系统中，每个用户和进程都运行在一个特定环境中。这个环境包含了变量、设置、别名、函数以及更多的东西。下面是对Shell环境下一些常用命令的简单介绍，包括每个命令如何使用的例子，以及在命令行下设定你自己的环境来提高效率。
 
 ![](http://s0.cyberciti.org/uploads/cms/2015/01/bash-shell-welcome-image.jpg)
 
@@ -18,7 +18,8 @@ Shell入门：掌握Linux，OS X，Unix的Shell环境
 输出范例：
 
 [![图1: Finding out your shell name](http://s0.cyberciti.org/uploads/cms/2015/01/finding-your-shell-like-a-pro.jpg)][1]
-图1：找出当前的shell
+
+*图1：找出当前的shell*
 
 ### 找出所有已安装的shell ###
 
@@ -32,9 +33,10 @@ Shell入门：掌握Linux，OS X，Unix的Shell环境
 输出范例：
 
 [![Fig.02: Finding out your shell path](http://s0.cyberciti.org/uploads/cms/2015/01/finding-and-verifying-shell-path.jpg)][2]
-图2：找出shell的路径
 
-文件/etc/shells里包含了系统支持的shell列表。每一行代表一个shell，是相对根目录的完整路径。用这个[cat命令][3]来查看这些数据：
+*图2：找出shell的路径*
+
+文件/etc/shells里包含了系统所支持的shell列表。每一行代表一个shell，是相对根目录的完整路径。用这个[cat命令][3]来查看这些数据：
 
     cat /etc/shells
 
@@ -71,7 +73,8 @@ Shell入门：掌握Linux，OS X，Unix的Shell环境
 示例输出：
 
 [![Fig. 03: Bash shell nesting level (subshell numbers)](http://s0.cyberciti.org/uploads/cms/2015/01/a-nested-shell-level-command.jpg)][4]
-图3：Bash shell嵌套层级（子shell数目）
+
+*图3：Bash shell嵌套层级（子shell数目）*
 
 ### 通过chsh命令永久变更系统shell ###
 
@@ -83,9 +86,9 @@ Shell入门：掌握Linux，OS X，Unix的Shell环境
 
     sudo chsh -s /bin/ksh userNameHere
 
-### 查看当前的环境 ###
+### 查看当前的环境变量 ###
 
-你需要用到
+你需要用到：
 
     env
     env | more
@@ -118,7 +121,8 @@ Shell入门：掌握Linux，OS X，Unix的Shell环境
 下面是bash shell里一些常见变量的列表：
 
 ![Fig.04: Common bash environment variables](http://s0.cyberciti.org/uploads/cms/2015/01/common-shell-vars.jpg)
-图4：常见bash环境变量
+
+*图4：常见bash环境变量*
 
 > **注意**：下面这些环境变量没事不要乱改。很可能会造成不稳定的shell会话：
 > 
@@ -157,7 +161,7 @@ Shell入门：掌握Linux，OS X，Unix的Shell环境
 
     /home/vivek
 
-### 增加或设定一个新变量 ###
+### 增加或设定一个新环境变量 ###
 
 下面是bash，zsh，sh和ksh的语法：
 
@@ -225,7 +229,8 @@ Shell入门：掌握Linux，OS X，Unix的Shell环境
 示例输出：
 
 [![Fig.05: List all bash environment configuration files](http://s0.cyberciti.org/uploads/cms/2015/01/list-bash-enviroment-variables.jpg)][5]
-图5：列出bash的所有配置文件
+
+*图5：列出bash的所有配置文件*
 
 要查看所有的bash配置文件，输入：
 
@@ -241,7 +246,7 @@ Shell入门：掌握Linux，OS X，Unix的Shell环境
     sudo cp -v /etc/bashrc /etc/bashrc.bak.22_jan_15
      
     ########################################################################
-    ## 然后，随心所欲随便改吧，好好玩玩shell环境或者提高一下效率:)        ##
+    ## 然后，随心所欲随便改吧，好好玩玩shell环境或者提高一下效率:)                 ##
     ########################################################################
     sudo vim /etc/bashrc
 
@@ -326,14 +331,15 @@ zsh的[wiki][6]中建议用下面的命令：
 示例输出：
 
 [![Fig.06: View session history in the bash shell using history command](http://s0.cyberciti.org/uploads/cms/2015/01/history-outputs.jpg)][7]
-图6：在bash shell中使用history命令查看会话历史
 
-你可以重复使用命令。简单地按下[上]或[下]方向键就可以查看之前的命令。在shell提示符下按下[CTRL-R]可以向后搜索历史缓存或文件来查找命令。重复最后一次命令，只需要在shell提示符下输入!!就好了：
+*图6：在bash shell中使用history命令查看会话历史*
+
+你可以重复使用之前的命令。简单地按下[上]或[下]方向键就可以查看之前的命令。在shell提示符下按下[CTRL-R]可以向后搜索历史缓存或文件来查找命令。重复最后一次命令，只需要在shell提示符下输入!!就好了：
 
     ls -l /foo/bar
     !!
 
-在以上的历史记录中查看命令#93 (hddtemp /dev/sda)，输入：
+在以上的历史记录中找到命令#93 (hddtemp /dev/sda)，输入：
 
     !93
 
@@ -483,7 +489,7 @@ Bash/ksh/zsh函数允许你更进一步地配置shell环境。在这个例子中
 
 最后，[打开bash命令补齐][12]
 
-    source /etc/bash_completio
+    source /etc/bash_completion
 
 #### #2: 设定bash命令提示符 ####
 
@@ -511,7 +517,7 @@ Bash/ksh/zsh函数允许你更进一步地配置shell环境。在这个例子中
     # 为命令历史文件增加时间戳
     export HISTTIMEFORMAT="%F %T "
      
-    # 附加到命令历史文件，俄不是覆盖
+    # 附加到命令历史文件，而不是覆盖
     shopt -s histappend
 
 #### #5: 设定shell会话的时区 ####
@@ -561,7 +567,7 @@ Bash/ksh/zsh函数允许你更进一步地配置shell环境。在这个例子中
     # 清理那些.DS_Store文件
     alias dsclean='find . -type f -name .DS_Store -delete'
 
-#### #8: 让世界充满色彩 ####
+#### #8: 寡人好色 ####
 
     # 彩色的grep输出 
     alias grep='grep --color=auto'
@@ -669,7 +675,7 @@ via: http://www.cyberciti.biz/howto/shell-primer-configuring-your-linux-unix-osx
 
 作者：[nixCraft][a]
 译者：[zpl1025](https://github.com/zpl1025)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
