@@ -8,13 +8,13 @@
 
 ### 1. 创建一个新的Github账号 ###
 
-首先First of all, open your favorite browser and go to Github's homepage url ie [github][1]. Then, the homepage will be opened as shown below.
+首先，打开你最喜欢的浏览器并访问[github][1]，首页页面如下所示。
 
 ![Github Homepage](http://blog.linoxide.com/wp-content/uploads/2015/03/github-homepage.png)
 
-Now, after the homepage has been opened, please fill form shown to sign up for a new github account.
+现在，首页打开之后，请填写一个新的github账号用于注册。
 
-After the you entered the valid information required for sign up, you'll be redirected to the plan choosing step. We have 5 plans listed in this page. One can choose the plan according to their requirement. Here, we'll go for a free plan. So, click on Choose to the Free plan and click on Finish Sign up. If we are planning to create an organization then, we need to tick on Help me setup an organization next.
+输入注册所需的有效信息之后，你会被转到计划选择的步骤。在这个页面上有5种计划，我们可以根据需要来选择，这里我们要选择免费计划。所以，我们点击选择Free计划并完成注册。如果我们接下去还打算创建一个组织，那我们需要勾选“Help me setup an organization next”。
 
 ![choosing plan](http://blog.linoxide.com/wp-content/uploads/2015/03/choosing-plan.png)
 
