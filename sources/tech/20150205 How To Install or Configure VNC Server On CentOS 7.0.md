@@ -1,28 +1,30 @@
-How To Install / Configure VNC Server On CentOS 7.0
+===>> boredivan翻译中 <<===
+怎样在CentOS 7.0上安装/配置VNC服务器
 ================================================================================
-Hi there, this tutorial is all about how to install or setup [VNC][1] Server on your very CentOS 7. This tutorial also works fine in RHEL 7.  In this tutorial, we'll learn what is VNC and how to install or setup [VNC Server][1] on CentOS 7
+这是一个关于怎样在你的 CentOS 7 上安装配置 [VNC][1] 服务的教程。当然这个教程也适合 RHEL 7 。在这个教程里，我们将学习什么是VNC以及怎样在 CentOS 7 上安装配置 [VNC 服务器][1]。
 
-As we know, most of the time as a system administrator we are managing our servers over the network. It is very rare that we will need to have a physical access to any of our managed servers. In most cases all we need is to SSH remotely to do our administration tasks. In this article we will configure a GUI alternative to a remote access to our CentOS 7 server, which is VNC. VNC allows us to open a remote GUI session to our server and thus providing us with a full graphical interface accessible from any remote location.
+我们都知道，作为一个系统管理员，大多数时间是通过网络管理服务器的。在管理服务器的过程中很少会用到图形界面，多数情况下我们只是用 SSH 来完成我们的管理任务。在这篇文章里，我们将配置 VNC 来提供一个连接我们 CentOS 7 服务器的方法。VNC 允许我们开启一个远程图形会话来连接我们的服务器，这样我们就可以通过网络远程访问服务器的图形界面了。
 
-VNC server is a Free and Open Source Software which is designed for allowing remote access to the Desktop Environment of the server to the VNC Client whereas  VNC viewer is used on remote computer to connect to the server .
+VNC 服务器是一个自由且开源的软件，它可以让用户可以远程访问服务器的桌面环境。另外连接 VNC 服务器需要使用 VNC viewer 这个客户端。
 
-**Some Benefits of VNC server are listed below:**
+** 一些 VNC 服务器的优点：**
 
-    Remote GUI administration makes work easy & convenient.
-    Clipboard sharing between host CentOS server & VNC-client machine.
-    GUI tools can be installed on the host CentOS server to make the administration more powerful
-    Host CentOS server can be administered through any OS having the VNC-client installed.
-    More reliable over ssh graphics and RDP connections.
+	远程的图形管理方式让工作变得简单方便。
+	剪贴板可以在 CentOS 服务器主机和 VNC 客户端机器之间共享。
+	CentOS 服务器上也可以安装图形工具，让管理能力变得更强大。
+	只要安装了 VNC 客户端，任何操作系统都可以管理 CentOS 服务器了。
+	比 ssh 图形和 RDP 连接更可靠。
 
-So, now lets start our journey towards the installation of VNC Server. We need to follow the steps below to setup and to get a working VNC.
+那么，让我们开始安装 VNC 服务器之旅吧。我们需要按照下面的步骤一步一步来搭建一个有效的 VNC。
 
-First of all we'll need a working Desktop Environment (X-Windows), if we don't have a working GUI Desktop Environment (X Windows) running, we'll need to install it first.
 
-**Note: The commands below must be running under root privilege. To switch to root please execute "sudo -s" under a shell or terminal without quotes("")**
+首先，我们需要一个有效的桌面环境（X-Window），如果没有的话要先安装一个。
 
-### 1. Installing X-Windows ###
+**注意：以下命令必须以 root 权限运行。要切换到 root ，请在终端下运行“sudo -s”，当然不包括双引号（“”）**
 
-First of all to install [X-Windows][2] we'll need to execute the below commands in a shell or terminal. It will take few minutes to install its packages.
+### 1. 安装 X-Window ###
+
+首先我们需要安装 [X-Window][2]，在终端中运行下面的命令，安装会花费一点时间。
 
     # yum check-update
     # yum groupinstall "X Window System"
@@ -40,107 +42,111 @@ First of all to install [X-Windows][2] we'll need to execute the below commands 
 
     # reboot
 
-After our machine restarts, we'll get a working CentOS 7 Desktop.
+在服务器重启之后，我们就有了一个工作着的 CentOS 7 桌面环境了。
 
-Now, we'll install VNC Server on our machine.
+现在，我们要在服务器上安装 VNC 服务器了。
 
-### 2. Installing VNC Server Package ###
+### 2. 安装 VNC 服务器 ###
 
-Now, we'll install VNC Server package in our CentOS 7 machine. To install VNC Server, we'll need to execute the following command.
+现在要在我们的 CentOS 7 上安装 VNC 服务器了。我们需要执行下面的命令。
 
     # yum install tigervnc-server -y
 
 ![vnc server](http://blog.linoxide.com/wp-content/uploads/2015/01/install-tigervnc.png)
 
-### 3. Configuring VNC ###
+### 3. 配置 VNC ###
 
-Then, we'll need to create a configuration file under **/etc/systemd/system/** directory. We can copy the **vncserver@:1.service** file from example file from **/lib/systemd/system/vncserver@.service** 
+然后，我们需要在 **/etc/systemd/system/** 目录里创建一个配置文件。我们可以从 **/lib/systemd/sytem/vncserver@.service** 拷贝一份配置文件范例过来。
 
     # cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service
 
 ![copying vnc server configuration](http://blog.linoxide.com/wp-content/uploads/2015/01/copying-configuration.png)
 
-Now we'll open **/etc/systemd/system/vncserver@:1.service** in our favorite text editor (here, we're gonna use **nano**). Then find the below lines of text in that file and replace <USER> with your username. Here, in my case its linoxide so I am replacing <USER> with linoxide and finally looks like below.
+接着我们用自己最喜欢的编辑器（这儿我们用的 **nano** ）打开 **/etc/systemd/system/vncserver@:1.service** ，找到下面这几行，用自己的用户名替换掉 <USER> 。举例来说，我的用户名是 linoxide 所以我用 linoxide 来替换掉 <USER> ：
 
     ExecStart=/sbin/runuser -l <USER> -c "/usr/bin/vncserver %i"
     PIDFile=/home/<USER>/.vnc/%H%i.pid
 
-TO
+替换成
 
     ExecStart=/sbin/runuser -l linoxide -c "/usr/bin/vncserver %i"
     PIDFile=/home/linoxide/.vnc/%H%i.pid
 
-If you are creating for root user then
+如果是 root 用户则
 
     ExecStart=/sbin/runuser -l root -c "/usr/bin/vncserver %i"
     PIDFile=/root/.vnc/%H%i.pid
 
 ![configuring user](http://blog.linoxide.com/wp-content/uploads/2015/01/configuring-user.png)
 
-Now, we'll need to reload our systemd.
+好了，下面重启 systemd 。
 
     # systemctl daemon-reload
 
 Finally, we'll create VNC password for the user . To do so, first you'll need to be sure that you have sudo access to the user, here I will login to user "linoxide" then, execute the following. To login to linoxide we'll run "**su linoxide" without quotes** .
+最后还要设置一下用户的 VNC 密码。要设置某个用户的密码，必须要获得该用户的权限，这里我用 linoxide 的权限，执行“**su linoxide**”就可以了。 
 
     # su linoxide
     $ sudo vncpasswd
 
 ![setting vnc password](http://blog.linoxide.com/wp-content/uploads/2015/01/vncpassword.png)
 
-**Make sure that you enter passwords more than 6 characters.**
+**确保你输入的密码多于6个字符**
 
-### 4. Enabling and Starting the service ###
+### 4. 开启服务 ###
 
-To enable service at startup ( Permanent ) execute the commands shown below.
+用下面的命令（永久地）开启服务：
 
     $ sudo systemctl enable vncserver@:1.service
 
-Then, start the service.
+启动服务。
 
     $ sudo systemctl start vncserver@:1.service
 
-### 5. Allowing Firewalls ###
+### 5. 防火墙设置 ###
 
-We'll need to allow VNC services in Firewall now.
+我们需要配置防火墙来让 VNC 服务正常工作。
 
     $ sudo firewall-cmd --permanent --add-service vnc-server
     $ sudo systemctl restart firewalld.service
 
 ![allowing firewalld](http://blog.linoxide.com/wp-content/uploads/2015/01/allowing-firewalld.png)
 
-Now you can able to connect VNC server using IP and Port ( Eg : ip-address:1 )
+现在就可以用 IP 和端口号（例如 192.168.1.1:1 ，这里的端口不是服务器的端口，而是视 VNC 连接数的多少从1开始排序——译注）来连接 VNC 服务器了。
 
-### 6. Connecting the machine with VNC Client ###
+### 6. 用 VNC 客户端连接服务器 ###
 
-Finally, we are done installing VNC Server. No, we'll wanna connect the server machine and remotely access it. For that we'll need a VNC Client installed in our computer which will only enable us to remote access the server machine.
+好了，现在已经完成了 VNC 服务器的安装了。要使用 VNC 连接服务器，我们还需要一个在本地计算机上安装的仅供连接远程计算机使用的 VNC 客户端。
 
 ![remote access vncserver from vncviewer](http://blog.linoxide.com/wp-content/uploads/2015/01/vncviewer.png)
 
-You can use VNC client like [Tightvnc viewer][3] and [Realvnc viewer][4] to connect Server.
-To connect with additional users create files with different ports, please go to step 3 to configure and add a new user and port, You'll need to create **vncserver@:2.service** and replace the username in config file and continue the steps by replacing service name for different ports. **Please make sure you logged in as that particular user for creating vnc password**.
+你可以用像 [Tightvnc viewer][3] 和 [Realvnc viewer][4] 的客户端来连接到服务器。
 
-VNC by itself runs on port 5900. Since each user will run their own VNC server, each user will have to connect via a separate port. The addition of a number in the file name tells VNC to run that service as a sub-port of 5900. So in our case, arun's VNC service will run on port 5901 (5900 + 1) and further will run on 5900 + x. Where, x denotes the port specified when creating config file **vncserver@:x.service for the further users**.
+要用其他用户和端口连接 VNC 服务器，请回到第3步，添加一个新的用户和端口。你需要创建 **vncserver@:2.service** 并替换配置文件里的用户名和之后步骤里响应的文件名、端口号。**请确保你登录 VNC 服务器用的是你之前配置 VNC 密码的时候使用的那个用户名**
 
-We'll need to know the IP Address and Port of the server to connect with the client. IP addresses are the unique identity number of the machine. Here, my IP address is 96.126.120.92 and port for this user is 1. We can get the public IP address by executing the below command in a shell or terminal of the machine where VNC Server is installed.
+
+
+VNC 服务本身使用的是5900端口。鉴于有不同的用户使用 VNC ，每个人的连接都会获得不同的端口。配置文件名里面的数字告诉 VNC 服务器把服务运行在5900的子端口上。在我们这个例子里，第一个 VNC 服务会运行在5901（5900 + 1）端口上，之后的依次增加，运行在5900 + x 号端口上。其中 x 是指之后用户的配置文件名 **vncserver@:x.service** 里面的 x 。
+
+在建立连接之前，我们需要知道服务器的 IP 地址和端口。IP 地址是一台计算机在网络中的独特的识别号码。我的服务器的 IP 地址是96.126.120.92，VNC 用户端口是1。执行下面的命令可以获得服务器的公网 IP 地址。
 
     # curl -s checkip.dyndns.org|sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
 
-### Conclusion ###
+### 总结 ###
 
-Finally, we installed and configured VNC Server in the machine running CentOS 7 / RHEL 7 (Red Hat Enterprises Linux) . VNC is the most easy FOSS tool for the remote access and also a good alternative to Teamviewer Remote Access. VNC allows a user with VNC client installed to control the machine with VNC Server installed. Here are some commands listed below that are highly useful in VNC . Enjoy !!
+好了，现在我们已经在运行 CentOS 7 / RHEL 7 (Red Hat Enterprises Linux)的服务器上安装配置好了 VNC 服务器。VNC 是自由及开源的软件中最简单的一种能实现远程控制服务器的一种工具，也是 Teamviewer Remote Access 的一款优秀的替代品。VNC 允许一个安装了 VNC 客户端的用户远程控制一台安装了 VNC 服务的服务器。下面还有一些经常使用的相关命令。好好玩！
 
-#### Additional Commands : ####
+#### 其他命令： ####
 
-- To stop VNC service .
+- 关闭 VNC 服务。
 
     # systemctl stop vncserver@:1.service
 
-- To disable VNC service from startup.
+- 禁止 VNC 服务开机启动。
 
     # systemctl disable vncserver@:1.service
 
-- To stop firewall.
+- 关闭防火墙。
 
     # systemctl stop firewalld.service
 
@@ -149,7 +155,7 @@ Finally, we installed and configured VNC Server in the machine running CentOS 7 
 via: http://linoxide.com/linux-how-to/install-configure-vnc-server-centos-7-0/
 
 作者：[Arun Pyasi][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[boredivan](https://github.com/boredivan)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
