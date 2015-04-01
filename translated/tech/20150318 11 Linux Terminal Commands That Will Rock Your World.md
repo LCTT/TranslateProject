@@ -2,7 +2,7 @@
 ================================================================================
 我已经用了十年的Linux了，通过今天这篇文章我将向大家展示一系列的，我希望一开始就有人教导而不是曾在我成长道路上绊住我的Linux命令、工具和花招。
 
-![Linux Keyboard Shortcuts.](http://f.tqn.com/y/linux/1/L/m/J/1/keyboardshortcuts.png）
+![Linux Keyboard Shortcuts.](http://f.tqn.com/y/linux/1/L/m/J/1/keyboardshortcuts.png)
 Linux的快捷键。
 
 ### 1.  命令行日常系快捷键 ###
