@@ -208,12 +208,11 @@ Linux取消关机。
 
 那如果整个系统挂掉了怎么办呢？
 
-按住键盘上的‘alt’和‘sysrq’稍待片刻输入如下所示：
-Hold down the 'alt' and 'sysrq' keys on your keyboard and whilst they are held down type the following slowly:
+按住键盘上的‘alt’和‘sysrq’同时输入：
 
 - [REISUB][12]
 
-这样不按关机键也能重启你的计算机。
+这样不按电源键你的计算机也能重启了。
 
 ![youtube-dl.](http://f.tqn.com/y/linux/1/L/v/J/1/youtubedl2.png)
 youtube-dl.
