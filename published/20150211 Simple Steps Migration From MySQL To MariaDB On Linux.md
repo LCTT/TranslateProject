@@ -15,13 +15,13 @@ MariaDB是MySQL社区开发的分支，也是一个增强型的替代品。它�
 
 现在，让我们迁移到MariaDB吧！
 
-**以测试为目的**让我们创建一个叫**linoxidedb**的示例数据库。
+让我们创建一个叫**linoxidedb**的**用于测试的**示例数据库。
 
 使用以下命令用root账户登陆MySQL：
 
     $ mysql -u root -p
 
-输入mysql root用户的密码后，你将进入**mysql的命令行**
+输入mysql 的 root 用户密码后，你将进入**mysql的命令行**
 
 **创建测试数据库:**
 
@@ -54,7 +54,8 @@ MariaDB是MySQL社区开发的分支，也是一个增强型的替代品。它�
     $ mysqldump: Error: Binlogging on server not active
 
 ![](http://blog.linoxide.com/wp-content/uploads/2015/01/mysqldump-error.png)
-mysqldump error
+
+*mysqldump error*
 
 为了修复这个错误，我们需要对**my.cnf**文件做一些小改动。
 
@@ -68,7 +69,7 @@ mysqldump error
 
 ![configuring my.cnf](http://blog.linoxide.com/wp-content/uploads/2015/01/configuring-my.cnf_.png)
 
-好了在保存并关闭文件后，我们需要重启一下mysql服务。运行以下命令重启：
+好了，在保存并关闭文件后，我们需要重启一下mysql服务。运行以下命令重启：
 
     $ sudo /etc/init.d/mysql restart
 
@@ -77,17 +78,18 @@ mysqldump error
     $ mysqldump --all-databases --user=root --password --master-data > backupdatabase.sql
 
 ![](http://blog.linoxide.com/wp-content/uploads/2015/01/crearing-bakup-file.png)
-dumping databases
+
+*dumping databases*
 
 上面的命令将会备份所有的数据库，把它们存储在当前目录下的**backupdatabase.sql**文件中。
 
 ### 2. 卸载MySQL ###
 
-首先，我们得把**my.cnt文件挪到安全的地方去**。
+首先，我们得把**my.cnf文件挪到安全的地方去**。
 
-**注**：my.cnf文件将不会在你卸载MySQL包的时候被删除，我们这样做只是以防万一。在MariaDB安装时，它会询问我们是保持现存的my.cnf文件，还是使用包中自带的版本（即新my.cnf文件）。
+**注**：在你卸载MySQL包的时候不会自动删除my.cnf文件，我们这样做只是以防万一。在MariaDB安装时，它会询问我们是保持现存的my.cnf文件，还是使用包中自带的版本（即新my.cnf文件）。
 
-在shell或终端中输入如下命令来备份my.cnt文件：
+在shell或终端中输入如下命令来备份my.cnf文件：
 
     $ sudo cp /etc/mysql/my.cnf my.cnf.bak
 
@@ -111,7 +113,7 @@ dumping databases
 
 ![adding mariadb repo](http://blog.linoxide.com/wp-content/uploads/2015/01/adding-repo-mariadb.png)
 
-键值导入并且添加完仓库后你就可以用以下命令安装MariaDB了：
+键值导入并且添加完仓库后，你就可以用以下命令安装MariaDB了：
 
     $ sudo apt-get update
     $ sudo apt-get install mariadb-server
@@ -120,7 +122,7 @@ dumping databases
 
 ![my.conf configuration prompt](http://blog.linoxide.com/wp-content/uploads/2015/01/my.conf-configuration-prompt.png)
 
-我们应该还没忘记在MariaDB安装时，它会问你是使用现有的my.cnf文件，还是包中自带的版本。你可以使用以前的my.cnf也可以用包中自带的。即使你想直接使用新的my.cnf文件，你依然可以晚点将以前的备份内容还原进去（别忘了我们已经将它复制到安全的地方那个去了）。所以，我们直接选择了默认的选项“N”。如果需要安装其他版本，请参考[MariaDB官方仓库][2]。
+我们应该还没忘记在MariaDB安装时，它会问你是使用现有的my.cnf文件，还是包中自带的版本。你可以使用以前的my.cnf也可以用包中自带的。即使你想直接使用新的my.cnf文件，你依然可以晚点时候将以前的备份内容还原进去（别忘了我们已经将它复制到安全的地方了）。所以，我们直接选择了默认的选项“N”。如果需要安装其他版本，请参考[MariaDB官方仓库][2]。
 
 ### 4. 恢复配置文件 ###
 
@@ -136,7 +138,7 @@ dumping databases
 
 就这样，我们已成功将之前的数据库导入了进来。
 
-来，让我们登陆一下mysql命令行，检查一下数据库是否真的已经导入了：
+来，让我们登录一下mysql命令行，检查一下数据库是否真的已经导入了：
 
     $ mysql -u root -p
 
@@ -152,15 +154,15 @@ dumping databases
 
 ### 总结 ###
 
-最后，我们已经成功地从MySQL迁移到了MariaDB数据库管理系统。MariaDB比MySQL好，虽然在性能方面MySQL还是比它更快，但是MariaDB的优点在于它额外的特性与支持的许可证。这能够确保它自由开源（FOSS），并永久自由开源，相比之下MySQL还有许多额外的插件，有些不能自由使用代码、有些没有公开的开发进程、有些在不久的将来会变的不再自由开源。如果你有任何的问题、评论、反馈给我们，不要犹豫直接在评论区留下你的看法。谢谢观看本教程，希望那你能喜欢MariaDB。
+最后，我们已经成功地从MySQL迁移到了MariaDB数据库管理系统。MariaDB比MySQL好，虽然在性能方面MySQL还是比它更快，但是MariaDB的优点在于它额外的特性与支持的许可证。这能够确保它自由开源（FOSS），并永久自由开源，相比之下MySQL还有许多额外的插件，有些不能自由使用代码、有些没有公开的开发进程、有些在不久的将来会变的不再自由开源。如果你有任何的问题、评论、反馈给我们，不要犹豫直接在评论区留下你的看法。谢谢观看本教程，希望你能喜欢MariaDB。
 
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/linux-how-to/migrate-mysql-mariadb-linux/
 
 作者：[Arun Pyasi][a]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[martin2011qi](https://github.com/martin2011qi)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
