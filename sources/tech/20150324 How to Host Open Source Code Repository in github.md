@@ -20,19 +20,19 @@
 
 ### 2. 创建一个新的库 ###
 
-After we have successfully signed up a new account or logged in to Github, we'll now need to create a new Repository to get started.
+成功注册新账号或登录上Github之后，我们需要创建一个新的库来开始我们的正题。
 
-Click on **(+)** button which is located at the top right near the account id. Then Click on New Repository .
+点击位于顶部靠右账号id旁边的**(+)**按钮，然后点击“New Repository”。
 
 ![Add new repository](http://blog.linoxide.com/wp-content/uploads/2015/03/create-new-repository.png)
 
-Now, after clicking on add a new repository, we'll now be directed to the page where we'll need to enter the required information.
+点击创建一个新的库之后，我们进入了填写所需信息的页面。
 
 ![adding repository information](http://blog.linoxide.com/wp-content/uploads/2015/03/adding-information-repository.png)
 
-Now, after entering the required information about the new repository, we'll need to click on green Create repository button.
+填写好信息之后，我们点击绿色的“Create repository”按钮。
 
-After it is done, we'll get to see something similar like this image.
+这些步骤都做完之后，我们将看到类似于下面这张图的页面。
 
 ![repository github](http://blog.linoxide.com/wp-content/uploads/2015/03/repository-github.png)
 
