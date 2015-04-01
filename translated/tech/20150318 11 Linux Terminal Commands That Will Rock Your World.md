@@ -24,7 +24,11 @@ Linux的快捷键。
 
     sudo apt-get intall programname
 
-如你所见，命令中存在拼写错误，为了正常执行需要把“intall”替换成“install”。想象现在光标正在行末，我们有很多的方法将她退回单词install并替换它。我可以按两次ALT+B这样光标就会在如下的位置（这里用^代替光标的位置）。
+如你所见，命令中存在拼写错误，为了正常执行需要把“intall”替换成“install”。
+
+想象现在光标正在行末，我们有很多的方法将她退回单词install并替换它。
+
+我可以按两次ALT+B这样光标就会在如下的位置（这里用^代替光标的位置）。
 
     sudo apt-get^intall programname
 
