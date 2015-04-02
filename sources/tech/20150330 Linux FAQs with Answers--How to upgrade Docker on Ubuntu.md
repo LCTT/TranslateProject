@@ -1,3 +1,5 @@
+Translating----geekpi
+
 Linux FAQs with Answers--How to upgrade Docker on Ubuntu
 ================================================================================
 > **Question**: I installed Docker on Ubuntu using its standard repositories. However, the default Docker installation does not meet the version requirement for my another application that relies on Docker. How can I upgrade Docker to the latest version on Ubuntu?
