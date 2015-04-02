@@ -1,3 +1,4 @@
+translating wi-cuckoo LLAP
 Its Now Worth Try Installing PHP 7.0 on CentOS 7.x / Fedora 21
 ================================================================================
 PHP is a well known general purpose, server side web scripting language. A vast majority of online websites are coded in this language. PHP is ever evolving, feature rich, easy to use and well organized scripting language.  Currently PHP development team is working on next major release of PHP, named PHP 7. The current production PHP version is PHP 5.6, as you might already know that PHP 6 was aborted in the past, the supporters of PHP 7 did not want the next important PHP version to be confused with that branch that was killed long time in the past. So it has been decided to name the next major release of PHP as PHP 7 instead of 6.  PHP 7.0 is supposed to be released in November this year.
