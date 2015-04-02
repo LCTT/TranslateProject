@@ -1,3 +1,4 @@
+KevinSJ Translating
 Papyrus: An Open Source Note Manager
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/03/Papyrus_Linux_4.jpeg)
