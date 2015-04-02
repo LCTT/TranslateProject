@@ -1,34 +1,36 @@
-Papyrus: An Open Source Note Manager
+Papyrus:开源笔记管理工具
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/03/Papyrus_Linux_4.jpeg)
 
-In last post, we saw an [open source to-do app Go For It!][1]. In a similar article, today we’ll see an **open source note taking application Papyrus**.
+在上一篇帖子中，我们介绍了[任务管理软件Go For It!][1].今天我们将介绍一款名为**Papyrus的开源笔记软件**
 
-[Papyrus][2] is a fork of [Kaqaz note manager][3] and is built on QT5. It brings a clean, polished user interface and is security focused (as it claims). Emphasizing on simplicity, I find Papyrus similar to OneNote. You organize your notes in ‘paper’ and add them a label for grouping those papers. Simple enough!
+[Papyrus][2] 是[Kaqaz笔记管理][3]的变体并使用了QT5.它不仅有简洁、易用的界面，还具备了较好的安全性。由于强调简洁，我觉得Papyrus与OneNote比较相像。你可以将你的笔记像"纸张"一样分类整理，还可以给他们添加标签进行分组。够简单的吧！
 
-### Papyrus features: ###
+### Papyrus的功能: ###
 
-Though Papyrus focuses on simplicity, it still has plenty of features up its sleeves. Some of the main features are:
+## Papyrus的功能: ###
 
-- Note management with labels and categories
-- Advanced search options
-- Touch mode available
-- Full screen option
-- Back up to Dropbox/hard drive/external
-- Password protection for selective papers
-- Sharing papers with other applications
-- Encrypted synchronization via Dropbox
-- Available for Android, Windows and OS X apart from Linux
+虽然Papyrus强调简洁，它依然有很多丰富的功能。他的一些主要功能如下：
+- 按类别和标签管理笔记
+- 高级搜索选项
+- 触屏模式
+- 全屏选项
+- 备份至Dropbox/硬盘
+- 某些页面允许加密
+- 可与其他软件共享笔记
+- 与Dropbox加密同步
+- 除Linux外,还可在Android，Windows和OS X使用
 
 ### Install Papyrus ###
 
-Papyrus has APK available for Android users. There are installer files for Windows and OS X. Linux users can get source code of the application. Ubuntu and other Ubuntu based distributions can use the .deb packages. Based on your OS and preference, you can get the respective files from the Papyrus download page:
+Papyrus为Android用户提供了APK安装包。Ｗindows和OS X也有安装文件。Linux用户还可以获取程序的源码。使用Ubuntu及其他基于Ubuntu的发行版可以使用.deb包进行安装。根据你的系统及习惯，你可以从Papyrus的下载页面中获取不同的文件:
 
-- [Download Papyrus][4]
+- [下载 Papyrus][4]
 
-### Screenshots ###
+### 软件截图 ###
 
-Here are some screenshots of the application:
+以下是此软件的一些截图:
+
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/03/Papyrus_Linux_3-700x450_c.jpeg)
 
@@ -38,14 +40,16 @@ Here are some screenshots of the application:
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/03/Papyrus_Linux-700x450_c.jpeg)
 
-Give Papyrus a try and see if you like it. Do share your experience with it with the rest of us here.
+试试Papyrus吧，你会喜欢上它的。
+
+（译者注；此软件暂无中文版）
 
 --------------------------------------------------------------------------------
 
 via: http://itsfoss.com/papyrus-open-source-note-manager/
 
 作者：[Abhishek][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[KevinSJ](https://github.com/KevinSJ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
