@@ -38,7 +38,7 @@
 
 ### 3. 上传一个已有项目 ###
 
-If we want to share our existing project on Github, we'll surely need to push the codes to the repository we created. To do so, we'll first need to install git in our Linux machine. As I am running Ubuntu 14.04 LTS in my machine, I'll need to run **apt** manger to install it.
+如果我们想在Github上分享我们的项目，我们自然要把代码推上我们创建的库中。想要这样的话，我们首先要在我们的Linux机器上安装git。如果As I am running Ubuntu 14.04 LTS in my machine, I'll need to run **apt** manger to install it.
 
     $ sudo apt-get install git
 
