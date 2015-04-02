@@ -1,3 +1,5 @@
+    Vic020
+
 A Peep into Process Management Commands in Linux
 ================================================================================
 A program in execution is called a process. While a program is an executable file present in storage and is passive, a process is a dynamic entity comprising of allocated system resources, memory, security attributes and has a state associated with it. There can be multiple processes associated with the same program and operating simultaneously without interfering with each other. The operating system efficiently manages and keeps track of all the processes running in the system.

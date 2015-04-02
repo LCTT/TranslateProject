@@ -1,10 +1,10 @@
-Linux 有问必答： 如何在Ubuntu或者Debian中下载和安装ixgbe驱动
+Linux 有问必答：如何在Ubuntu或者Debian中编译安装ixgbe驱动
 ================================================================================
-> **提问**： 我想为我的Intel 10G网卡下载安装最新的ixgbe。我该如何在Ubuntu（或者Debian）中安装ixgbe驱动？
+> **提问**： 我想为我的Intel 10G网卡下载安装最新的ixgbe驱动。我该如何在Ubuntu（或者Debian）中安装ixgbe驱动？
 
-Intel的10G网卡（比如，82598、 82599、 x540）由ixgbe驱动支持。现代的Linux发版已经将ixgbe作为一个可加载模块。然而，有些情况你不想要你机器上的已经编译和安装的ixgbe驱动。比如，你想要体验ixbge驱动的最新特性。同样，自带内核中的ixgbe中的一个默认问题是不允许你自定义旭东内核参数。如果你想要完全自动一ixgbe驱动（比如 RSS、多队列、中断阈值等等），你需要手动从源码编译ixgbe驱动。
+Intel的10G网卡（比如，82598、 82599、 x540）由ixgbe驱动支持。现代的Linux发行版已经带有了ixgbe驱动，通过可加载模块的方式使用。然而，有些情况你希望在你机器上的自己编译安装ixgbe驱动，比如，你想要体验ixbge驱动的最新特性时。同样，内核默认自带的ixgbe驱动中的一个问题是不允许你自定义驱动的参数。如果你想要一个完全定制的ixgbe驱动（比如 RSS、多队列、中断阈值等等），你需要手动从源码编译ixgbe驱动。
 
-这里是如何在Ubuntu、Debian或者它们的衍生版中下载安装ixgbe驱动。
+这里是如何在Ubuntu、Debian或者它们的衍生版中下载安装ixgbe驱动的教程。
 
 ### 第一步： 安装前提 ###
 
@@ -29,7 +29,7 @@ Intel的10G网卡（比如，82598、 82599、 x540）由ixgbe驱动支持。现
 
 编译之后，你会看到在ixgbe-3.23.2/src目录下创建了**ixgbe.ko**。这就是会加载到内核之中的ixgbe驱动。
 
-用modinfo命令检查内核模块的信息。注意你需要指定模块的绝对路径（比如 ./ixgbe.ko 或者 /home/xmodulo/ixgbe/ixgbe-3.23.2/src/ixgbe.ko）。输出中会显示ixgbe内核的版本。
+用modinfo命令检查内核模块的信息。注意你需要指定模块文件的绝对路径（比如 ./ixgbe.ko 或者 /home/xmodulo/ixgbe/ixgbe-3.23.2/src/ixgbe.ko）。输出中会显示ixgbe内核的版本。
 
     $ modinfo ./ixgbe.ko
 
@@ -120,24 +120,24 @@ Intel的10G网卡（比如，82598、 82599、 x540）由ixgbe驱动支持。现
 
 ### 第五步： 安装Ixgbe驱动 ###
 
-一旦你验证新的ixgbe驱动已经成功家在，最后一步是在你的系统中安装驱动。
+一旦你验证新的ixgbe驱动可以成功加载，最后一步是在你的系统中安装驱动。
 
     $ sudo make install
 
-**ixgbe.ko** 接着会安装在/lib/modules/<kernel-version>/kernel/drivers/net/ethernet/intel/ixgbe 下。
+**ixgbe.ko** 会安装在/lib/modules/<kernel-version>/kernel/drivers/net/ethernet/intel/ixgbe 下。
 
-这一步起，你可以用下面的modprobe命令加载ixgbe驱动了。注意你不必再指定绝对路径。
+从这一步起，你可以用下面的modprobe命令加载ixgbe驱动了。注意你不必再指定绝对路径。
 
     $ sudo modprobe ixgbe
 
-如果你希望在启动时家在ixgbe驱动，你可以在/etc/modules的最后加入“ixgbe”。
+如果你希望在启动时加载ixgbe驱动，你可以在/etc/modules的最后加入“ixgbe”。
 
 --------------------------------------------------------------------------------
 
 via: http://ask.xmodulo.com/download-install-ixgbe-driver-ubuntu-debian.html
 
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

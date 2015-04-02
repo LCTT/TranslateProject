@@ -1,6 +1,6 @@
-Linux 基础：如何在Ubuntu上检查是否已经安装了一个包
+Linux 基础：如何在Ubuntu上检查一个软件包是否安装
 ================================================================================
-![](http://180016988.r.cdn77.net/wp-content/uploads/2014/04/ubuntu-790x558.png)
+![](http://1102047360.rsc.cdn77.org/wp-content/uploads/2014/04/ubuntu-790x558.png)
 
 如果你正在管理Debian或者Ubuntu服务器，你也许会经常使用**dpkg** 或者 **apt-get**命令。这两个命令用来安装、卸载和更新包。
 
@@ -51,7 +51,7 @@ Linux 基础：如何在Ubuntu上检查是否已经安装了一个包
     +++-====================================-=======================-=======================-=============================================================================
     ii  firefox                              35.0+build3-0ubuntu0.14 amd64                   Safe and easy web browser from Mozilla
 
-要列出你系统中安装的包，输入下面的命令：
+要列出你系统中安装的所有包，输入下面的命令：
 
     dpkg --get-selections
 
@@ -97,7 +97,7 @@ Linux 基础：如何在Ubuntu上检查是否已经安装了一个包
     libgcc1:amd64                    install
     libgcc1:i386                    install
 
-额外的，你可以使用“**-L**”参数来找出包中文件的位置。
+此外，你可以使用“**-L**”参数来找出包中文件的位置。
 
     dpkg -L gcc-4.8
 
@@ -130,7 +130,7 @@ via: http://www.unixmen.com/linux-basics-check-package-installed-not-ubuntu/
 
 作者：[SK][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

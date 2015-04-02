@@ -681,15 +681,15 @@ Linux基础：如何找出你的系统所支持的最大内存
     Handle 0x0031, DMI type 127, 4 bytes
     End Of Table
 
-好了，就是这样。周末愉快！
+好了，就是这样。
 
 --------------------------------------------------------------------------------
 
-via: https://www.unixmen.com/linux-basics-how-to-find-maximum-supported-ram-by-your-system/
+via: http://www.unixmen.com/linux-basics-how-to-find-maximum-supported-ram-by-your-system/
 
 作者：[SK][0]
 译者：[mr-ping](https://github.com/mr-ping)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
