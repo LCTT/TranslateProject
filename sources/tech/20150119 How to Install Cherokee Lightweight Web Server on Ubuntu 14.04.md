@@ -1,3 +1,4 @@
+翻译中 ictlyh
 How to Install Cherokee Lightweight Web Server on Ubuntu 14.04
 ================================================================================
 **Cherokee** is an free and open source high performance, lightweight, full-featured web server and running on major platform (Linux, Mac OS X, Solaris, and BSD).  It is compatible with TLS/SSL,FastCGI, SCGI, PHP, uWSGI, SSI, CGI, LDAP, HTTP proxying, video streaming, content caching, traffic shaping, virtual hosts, Apache compatible log files, and load balancing.
