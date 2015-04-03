@@ -1,6 +1,4 @@
-////translating by yupmoon
-
-
+[raywang]
 Open source all over the world
 ================================================================================
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/BUS_OpenSourceExperience_520x292_cm.png)
