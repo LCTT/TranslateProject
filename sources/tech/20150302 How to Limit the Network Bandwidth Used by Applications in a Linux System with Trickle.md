@@ -206,80 +206,102 @@ Output:
     LinuxFun.pdf:                                        	2.79 MB   17.76 kB/s
 
 ### Running Trickle in Supervised [unmanaged] Mode ###
+### 在有监督的模式下运行Trickle [未管理的]###
 
 Trickle can also run in unmanaged mode, following a series of parameters defined in /etc/trickled.conf. This file defines how trickled (the daemon) behaves and manages trickle.
+Tricle也可以在未管理的模式下运行，通过跟随在/etc/tricled.conf文件中定义的一系列参数。 这个文件定义了守护线程 trickled的行为以及如何管理tricle。
 
 In addition, if we want to set global settings to be used, overall, by all applications, we will need to use the trickled command. This command runs the daemon and allows us to define download and upload limits that will be shared by all the applications run through trickle without us needing to specify limits each time.
+另外，如果你想要全局设置被所有的应用程序使用的话，我们就会需要使用tricle命令。 这个命令运行守护线程并允许我们通过trickle定义所有应用程序共享的上传下载限制，不需要我们每次来进行指定。
 
 For example, running:
+例如，运行：
 
     # trickled -d 50 -u 10
 
 Will cause that the download and upload speeds of any application run through trickle be limited to 30 KB/s and 10 KB/s, respectively.
+会导致任何通过tricle运行的应用程序的上传下载速率分别限制在30kb/s和10kb/s。
 
 Please note that you can check at any time whether trickled is running and with what arguments:
+请注意，你可以在任何时间都能确认守护线程tricled是否正在运行以及其运行参数：
 
     # ps -ef | grep trickled | grep -v grep
 
 Output:
+输出:
 
     root 	16475 	1  0 Dec24 ?    	00:00:04 trickled -d 50 -u 10
 
 **Example 3: Uploading a 19 MB mp4 file to our FTP server using with and without trickle.**
+**样例3：在是否使用tricle的情形下上传一个 19MB 的mp4文件到我们的FTP服务器。 **
 
 In this example we will use the freely-distributable “He is the gift” video, available for download from [this link][3].
+在这个样例中，我们会使用“He is the gift”的自由分布视频，可以通过这个[链接][3]下载。
 
 We will initially download this file to your current working directory with the following command:
+我们将会在开始通过以下的命令将这个文件下载到你的当前工作目录中:
 
     # wget http://media2.ldscdn.org/assets/missionary/our-people-2014/2014-00-1460-he-is-the-gift-360p-eng.mp4
 
 First off, we will start the trickled daemon with the command listed above:
+首先，我们会使用之前列出的命令来开启守护进程trickled:
 
     # trickled -d 30 -u 10
 
 Without trickle:
+在没有trickle时:
 
     # ncftpput -u username -p password 192.168.0.15 /testdir 2014-00-1460-he-is-the-gift-360p-eng.mp4
 
 Output:
+输出：
 
     2014-00-1460-he-is-the-gift-360p-eng.mp4:           	18.53 MB   36.31 MB/s
 
 With trickle:
+有trickle的时：
 
     # trickle ncftpput -u username -p password 192.168.0.15 /testdir 2014-00-1460-he-is-the-gift-360p-eng.mp4
 
 Output:
+输出:
 
     2014-00-1460-he-is-the-gift-360p-eng.mp4:           	18.53 MB	9.51 kB/s
 
 As we can see in the output above, the upload transfer rate dropped to ~10 KB/s.
+我们可以看到上面的输出，上传的速率下降到了约 10KB/s。
 
 **Example 4: Downloading the same video with and without trickle**
-
+** 样例4：在有无trickle的情形下下载这个相同的视频 **
 As in Example 2, we will be downloading the file to the current working directory.
-
+与样例2一样，我们会将该文件下载到当前工作目录中。
 Without trickle:
+在没有trickle时:
 
     # ncftpget -u username -p password 192.168.0.15 . /testdir/2014-00-1460-he-is-the-gift-360p-eng.mp4
 
 Output:
+输出:
 
     2014-00-1460-he-is-the-gift-360p-eng.mp4:           	18.53 MB  108.34 MB/s
 
 With trickle:
+有trickle的时：
 
     # trickle ncftpget -u username -p password 111.111.111.111 . /testdir/2014-00-1460-he-is-the-gift-360p-eng.mp4
 
 Output:
-
+输出:
     2014-00-1460-he-is-the-gift-360p-eng.mp4:           	18.53 MB   29.28 kB/s
 
 Which is in accordance with the download limit set earlier (30 KB/s).
+上面的结果与我们之前设置的下载限速相对应(30KB/s)。
 
 **Note:** That once the daemon has been started, there is no need to set individual limits for each application that uses trickle.
+**注意:** 一旦守护进程开启之后，没有必要使用trickle来为每个应用程序来单独设置限制。
 
 As we mentioned earlier, one can further customize trickle’s bandwidth shaping through trickled.conf. A typical section in this file consists of the following:
+如前所述，每个人都可以进一步地通过tricled.conf来客制化tricle的宽带速率调整,该文件的一个典型的分区有以下部分组成：
 
     [service]
     Priority = <value>
@@ -287,15 +309,26 @@ As we mentioned earlier, one can further customize trickle’s bandwidth shaping
     Length-Smoothing = <value>
 
 Where,
+其中,
 
 - [service] indicates the name of the application whose bandwidth usage we intend to shape.
+- [service] 用来指示我们想要对其进行宽带使用调整的应用程序名称
+
 - Priority allows us to specify a service to have a higher priority relative to another, thus not allowing a single application to hog all the bandwidth which the daemon is managing. The lower the number, the more bandwidth that is assigned to [service].
+- Priority 用来让我们为某个服务制定一个相对于其他服务高的优先级，这样就不允许守护进程管理中的一个单独的应用程序来占用所有的宽带。越小的数字代表更高的优先级。
+
 - Time-Smoothing [in seconds]: defines with what time intervals trickled will try to let the application transfer and / or receive data. Smaller values (something between the range of 0.1 – 1s) are ideal for interactive applications and will result in a more continuous (smooth) session while slightly larger values (1 – 10 s) are better for applications that need bulk transfer. If no value is specified, the default (5 s) is used.
+- Time-Smoothing [以秒计]: 定义了trickled让各个应用程序传输或接收数据的时间间隔。小的间隔值(0.1-1秒)对于交互式应用程序是理想的，因为这样会具有一个更加流畅的会话体验，而一个相对较大
+的时间间隔值(1-10秒)对于需要批量传输应用程序就会显得更好。如果没有指定该值，默认是5秒。
+
 - Length-Smoothing [in KB]: the idea is the same as in Time-Smoothing, but based on the length of an I/O operation. If no value is specified, the default (10 KB) is used.
+- Length-smoothing [KB 单位]: 该想法与Time-Smoothing如出一辙，但是是基于I/O操作而言。如果没有指定值，会使用默认的10KB。
 
 Changing the smoothing values will translate into the application specified by [service] using transfer rates within an interval instead of a fixed value. Unfortunately, there is no formula to calculate the lower and upper limits of this interval as it mainly depends of each specific case scenario.
+流畅值的改变会被翻译为将指定的服务的使用一个间隔值而不是一个固定值。不幸的是，没有一个特定的公式来计算间隔值的上下限，主要依赖于特定的应用场景。
 
 The following is a trickled.conf sample file in the CentOS 7 client (192.168.0.17):
+下面是一个在CentOS 7 客户端中的tricled.conf 样例文件（192.168.0.17）：
 
     [ssh]
     Priority = 1
@@ -308,6 +341,8 @@ The following is a trickled.conf sample file in the CentOS 7 client (192.168.0.1
     Length-Smoothing = 3
 
 Using this setup, trickled will prioritize SSH connections over FTP transfers. Note that an interactive process, such as SSH, uses smaller time-smoothing values, whereas a service that performs bulk data transfers (FTP) uses a greater value. The smoothing values are responsible for the download and upload speeds in our previous example not matching the exact value specified by the trickled daemon but moving in an interval close to it.
+使用该设置，tricled会为SSH赋予比FTP较高的传输优先级。值得注意的是，一个交互进程，例如SSH，使用了一个较小的时间间隔值，然而一个处理批量数据传输的服务如FTP使用一个较大的时间
+间隔来负责之前的样例中的上传下载速率，尽管不是百分百的有trickled指定的值，但是也已经非常接近了。
 
 ### Conclusion ###
 ### 总结 ###
@@ -318,8 +353,10 @@ In this article we have explored how to limit the bandwidth used by applications
 - 限制系统下载工具的下载速度,例如[wget][4],或 BT客户端.  
 
 - Limiting the speed at which your system can be updated via `[yum][5]` (or `[aptitude][6]`, if you’re in a Debian-based system), the package management system.
-- 
+- 限制你的系统的包管理工具`[yun][5]`更新的速度 (如果是基于Debian系统的话，其包管理工具为`[aptitude][6]`)。
+
 - If your server happens to be behind a proxy or firewall (or is the proxy or firewall itself), you can use trickle to set limits on both the download and upload, or communication speed with the clients or the outside.
+- 如果你的服务器是在一个代理或防火墙后面(或者其本身即是代理或防火墙的话)，你可以使用trickle来同时设定下载和上传速率，或者与客户端或外部交流速率。
 
 Questions and comments are most welcome. Feel free to use the form below to send them our way.
 欢迎提问或留言.
