@@ -1,3 +1,4 @@
+翻译中 ictlyh
 How to Bind Apache Tomcat to IPv4 in Centos / Redhat
 ================================================================================
 Hi all, today we'll learn how to bind tomcat to ipv4 in CentOS 7 Linux Distribution.
