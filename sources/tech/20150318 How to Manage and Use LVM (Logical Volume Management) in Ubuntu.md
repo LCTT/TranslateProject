@@ -1,3 +1,5 @@
+theo-l translating
+
 How to Manage and Use LVM (Logical Volume Management) in Ubuntu
 ================================================================================
 ![](http://cdn5.howtogeek.com/wp-content/uploads/2011/02/652x202xbanner-1.png.pagespeed.ic.VGSxDeVS9P.png)
