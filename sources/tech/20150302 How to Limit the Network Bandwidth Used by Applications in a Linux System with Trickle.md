@@ -1,63 +1,42 @@
-theo-l translating
-
-How to Limit the Network Bandwidth Used by Applications in a Linux System with Trickle
 如何在linux上使用Trickle来显示应用程序的网络宽带使用．
 ================================================================================
-Have you ever encountered situations where one application dominated you all network bandwidth? If you have ever been in a situation where one application ate all your traffic, then you will value the role of the trickle bandwidth shaper application. Either you are a system admin or just a Linux user, you need to learn how to control the upload and download speeds for applications to make sure that your network bandwidth is not burned by a single application.
 有没有遇到过系统中的某个应用程序独占了你所有的网络宽带的情形？如果你有过这样的遭遇，那么你就会感受到Trickle宽带调整应用角色的价值．不管你是一个系统管理员还是仅仅Linux用户,都需要学习如何控制应用程序的上下行速度，来确保你的网络宽带不会被某个程序
 霸占．
 
 ![Install Trickle Bandwidth Limit in Linux](http://www.tecmint.com/wp-content/uploads/2013/11/Bandwidth-limit-trickle.png)
 Install Trickle Bandwidth Limit in Linux
 
-### What is Trickle? ###
 ### 什么是　Trickle? ###
 
-Trickle is a network bandwidth shaper tool that allows us to manage the upload and download speeds of applications in order to prevent any single one of them to hog all (or most) of the available bandwidth. In few words, trickle lets you control the network traffic rate on a per-application basis, as opposed to per-user control, which is the classic example of bandwidth shaping in a client-server environment, and is probably the setup we are more familiar with.
 Trickle是一个网络宽带调整工具，可以让我们管理应用程序的网络上下行速度，使得可以避免其中的某个应用程序吃掉了全部或大部分可用的宽带．换句话说，Trickle可以让你基于单个应用程序来控制
 网络流量速率，而不是仅仅针对与单个用户--在客户端网络环境中经典的宽带调整样例，
 
-### How Trickle Works? ###
 ### Trickle是如何工作的？###
 
-In addition, trickle can help us to define priorities on a per-application basis, so that when overall limits have been set for the entire system, priority apps will still get more bandwidth automatically. To accomplish this task, trickle sets traffic limits to the way in which data is sent to, and received from, sockets using TCP connections. We must note that, other than the data transfer rates, trickle does not modify in any way the behavior of the process it is shaping at any given moment.
 另外，tricle可以帮助我们基于应用来定义优先级，所以当对整个系统进行了全局限制设定，高优先级的应用依然会自动地获取更多的宽带。为了实现这个目标，tricle设置通过TCP连接的套接字对数
 据发送、数据接收路径的流量限制。我们必须注意到，除了影响传输速率之外，tricle任何时候都不会以任何方式来改变其处理过程。
 
-### What Can’t Trickle do? ###
 ### Trickle不能做什么？ ###
 
-The only limitation, so to speak, is that trickle will not work with statically linked applications or binaries with the SUID or SGID bits set since it uses dynamic linking and loading to place itself between the shaped process and its associated network socket. Trickle then acts as a proxy between these two software components.
 这么说吧，唯一的限制就是，tricle静态连接的应用或者具有SUID或SGID位设置的二进制--因为他们使用动态链接并且将其自身加载到调整过程以及其关联的网络套接字之间。 Trickle此时会在这两种软件
 组件之间扮演代理的角色。
 
-Since trickle does not require superuser privileges in order to run, users can set their own traffic limits. Since this may not be desirable, we will explore how to set overall limits that system users cannot exceed. In other words, users will still be able to manage their traffic rates, but always within the boundaries set by the system administrator.
 由于trickle并不会需要超级用户的权限来运行，所以用户可以设置用户独立的流量限制,可能这并不是你想要的,我们会探索如何使用全局设定来限制系统中的所有用户的流量限制。也即是说，此时系统中的每个用户具有管理
 各自的流量速率，但是无论如何，都会受到系统管理员给他们设置的边界限制。
 
-In this article we will explain how to limit the network bandwidth used by applications in a Linux server with trickle. To generate the necessary traffic, we will use ncftpput and ncftpget (both tools are available by installing ncftp) on the client (CentOS 7 server – dev1: 192.168.0.17), and vsftpd on the server (Debian Wheezy 7.5 – dev2: 192.168.0.15) for demonstration purposes. The same instructions also works on RedHat, Fedora and Ubuntu based systems.
 在这边文章中，我们会描述如何通过trickle在linux平台上管理应用程序使用的网络宽带。为了生成必要流量，在此会在客户端(CentOS 7 server – dev1: 192.168.0.17)上使用 ncftpput 和
  ncftpget, 在服务器(Debian Wheezy 7.5 – dev2: 192.168.0.15)上使用vsftpd 来进行演示。 相同的指令也可以在RedHat，Fedora和Ubuntu等系统使用。
 
-#### Prerequisites ####
 #### 前提条件 ####
 
-1. For RHEL/CentOS 7/6, [enable the EPEL repository][1]. Extra Packages for Enterprise Linux (EPEL) is a repository of high-quality free and open-source software maintained by the Fedora project and is 100% compatible with its spinoffs, such as Red Hat Enterprise Linux and CentOS. Both trickle and ncftp are made available from this repository.
-<<<<<<< HEAD
-1. 对于 RHEL/CentOS 7/6， [开启EPEL仓库][1]。EPEL的Extra Packages是一个
-有Fedora项目维护的高质量、开源的软件仓库，而且百分之百与其衍生产品相兼容，如
+1. 对于 RHEL/CentOS 7/6， [开启EPEL仓库][1]。EPEL的Extra Packages是一个 有Fedora项目维护的高质量、开源的软件仓库，而且百分之百与其衍生产品相兼容，如
 企业版本Linux和CentOS. 在这个仓库中trickle和ncftp两者都是可用的。
 
-=======
-1. 对于 RHEL/CentOS 7/6, [开启EPEL仓库][1]
->>>>>>> 4c29f6179cf78a6a9b97c7e57e28245b2237b015
-2. Install ncftp as follows:
 2. 按照如下方式安装ncftp:
 
     # yum update && sudo yum install ncftp		[On RedHat based systems]
     # aptitude update && aptitude install ncftp	[On Debian based systems]
 
-3. Set up a FTP server in a separate server. Please note that although FTP is inherently insecure, it is still widely used in cases when security in uploading or downloading files is not needed. We are using it in this article to illustrate the bounties of trickle and because it shows the transfer rates in stdout on the client, and we will leave the discussion of whether it should or should not be used for another date and time :).
 3. 在单独的服务器上设置一个FTP服务器。需要注意的是，尽管FTP天生就不安全，但是
 仍然被广泛应用在安全性无关紧要的文件上传下载中。 在这篇文章中我们使用它来演示
 trickle的优点，同时它也会在客户端的标准输出流中显示传输速率，我们将是否在另外
@@ -66,7 +45,6 @@ trickle的优点，同时它也会在客户端的标准输出流中显示传输�
     # yum update && yum install vsftpd 		[On RedHat based systems]
     # aptitude update && aptitude install vsftpd 	[On Debian based systems]
 
-Now, edit the /etc/vsftpd/vsftpd.conf file on the FTP server as follows:
 现在，在FTP服务器上按照以下方式编辑 /etc/vsftpd/vsftpd.conf 文件。
 
     anonymous_enable=NO
@@ -74,7 +52,6 @@ Now, edit the /etc/vsftpd/vsftpd.conf file on the FTP server as follows:
     chroot_local_user=YES
     allow_writeable_chroot=YES
 
-After that, make sure to start vsftpd for your current session and to enable it for automatic start on future boots:
 在此之后，确保在你的当前会话中开启了vsftpd，并在之后的启动中让其自动启动。
 
     # systemctl start vsftpd 		[For systemd-based systems]
@@ -82,225 +59,200 @@ After that, make sure to start vsftpd for your current session and to enable it 
     # service vsftpd start 			[For init-based systems]
     # chkconfig vsftpd on
 
-4. If you chose to set up the FTP server in a CentOS/RHEL 7 droplet with SSH keys for remote access, you will need a password-protected user account with the appropriate directory and file permissions for uploading and downloading the desired content OUTSIDE root’s home directory.
 4. 如果你选在在一个CentOS/RHEL 7中为FTP服务器的远程访问配备SSH秘钥，你需要
 一个具有适合访问root目录之外的目录和文件内容上传下载权限并密码受保护的用户账户。
 
-You can then browse to your home directory by entering the following URL in your browser. A login window will pop up prompting you for a valid user account and password on the FTP server.
 你可以通过在你的浏览器中输入以下的URL来浏览你的Home目录。一个登陆窗口会弹出来
 提示你输入FTP服务器中的有效的用户名和密码。
 
     ftp://192.168.0.15
 
-If the authentication succeeds, you will see the contents of your home directory. Later in this tutorial you will be able to refresh that page to display the files that have been uploaded during previous steps.
 如果验证成功，你就会看到你的home目录中的内容。该教程的稍后部分中，你将可以刷新
 页面来显示在你之前上传过的文件。
 
 ![FTP Directory Tree](http://www.tecmint.com/wp-content/uploads/2013/11/FTP-Directory-Tree.png)
 FTP Directory Tree
 
-### How to Install Trickle in Linux ###
 ### 如何在Linux中安装 Tricle ###
 
-1. Install trickle via yum or aptitude.
 1. 通过yum或aptitude来安装tricle.
 
-To ensure a successful installation, it is considered good practice to make sure the currently installed packages are up-to-date (using yum update) before installing the tool itself.
+为了确保能够成功安装，最好在安装工具之前，保证当前的安装包是最新的版本。
 
 
     # yum -y update && yum install trickle 		        [On RedHat based systems]
     # aptitude -y update && aptitude install trickle 	[On Debian based systems]
 
-2. Verify whether trickle will work with the desired binary.
+2. 确认trickle是否对特定的二进制包有用。
 
-As we explained earlier, trickle will only work with binaries using dynamic, or shared, libraries. To verify whether we can use this tool with a certain application, we can use the well-known ldd utility, where ldd stands for list dynamic dependencies. Specifically, we will look for the presence of glibc (the GNU C library) in the list of dynamic dependencies of any given program because it is precisely that library which defines the system calls involved in communication through sockets.
+之前我们解释过，trickle只对使用动态或共享包的二进制包有用。为了确认我们是否可以对某个特定的应用使用trickle，我们可以使用著名的ldd（
+列出动态依赖）工具。 特别地，我们会查看任何给定程序的动态依赖中检查其当前使用的glibc，因为其准确地定义了使用套接字交流中使用的系统调用。
 
-Run the following command against a given binary to see if trickle can be used to shape its bandwidth:
+对一个给定的二进制包执行以下命令来查看是否能对其使用trickle进行宽带调整：
 
     # ldd $(which [binary]) | grep libc.so
 
-For example,
+例如，
 
     # ldd $(which ncftp) | grep libc.so
 
-whose output is:
+其输出是：
 
     # libc.so.6 => /lib64/libc.so.6 (0x00007efff2e6c000)
 
-The string between brackets in the output may change from system to system and even between subsequent runs of the same command, since it represents the load address of the library in physical memory.
+输出中的括号中的字符可能在不同的系统平台中发生改变，甚至相同的命令在不同的时候运行也会，因为其代表包加载到物理内存中的地址。
 
-If the above command does not return any results, it means that the binary it was run against does not use libc and thus trickle cannot be used as bandwidth shaper in that case.
+如果上面的命令没有返回任何的结果，就说明这个二进制包没有使用libc包，因此tricle对其不能起到宽带调整的作用。
 
-### Learn How to Use Trickle ###
+### 学习如何使用Trickle###
 
-The most basic usage of trickle is in standalone mode. Using this approach, trickle is used to explicitly define the download and upload speeds of a given application. As we explained earlier, for the sake of brevity, we will use the same application for download and upload tests.
+最基本的用法就是使用其单模式，通过这种方式，trickle用来显示地定义给定应用程序的上传下载速率。如前所述，为了简单性，我们会使用相同的应用
+来进行上传下载测试。
 
-#### Running Trickle in Standalone Mode ####
+#### 在单模式下运行trickle####
 
-We will compare the download and upload speeds with and without using trickle. The -d option indicates the download speed in KB/s, while the -u flag tells trickle to limit the upload speed by the same unit. In addition, we will use the -s flag, which specifies that trickle should run in standalone mode.
+我们会比较在有无trickle的情况下的上传下载速率， ‘-d’选项指示下载速率（KB/s单位），而'-u'选项指示相同单位的上传速率。另外我们会使用到‘-s’
+选项来指定trickle应该以单模式运行。
 
-The basic syntax to run trickle in standalone mode is as follows:
+以单模式运行trickle的基本语法如下：
 
     # trickle -s -d [download rate in KB/s] -u [upload rate in KB/s]
 
-In order to perform the following examples on your own, make sure to have trickle and ncftp installed on the client machine (192.168.0.17 in my case).
+为了能够让你自己运行以下样例，确保你在自己的客户端安装了trickle和ncftp（我的是192.168.0.17）。
 
-**Example 1: Uploading a 2.8 MB PDF file with and without trickle.**
+**样例1：在有无trickle的情况下上传一个2.8 MB的PDF文件。**
 
-We are using the freely-distributable Linux Fundamentals PDF file (available from [here][2]) for the following tests.
+我们使用一个自由发布的LInux基础知识PDF文件来进行下面的测试[文件链接][2]。
 
-You can initially download this file to your current working directory with the following command:
-
+你可以首先使用下面的命令将这个文件下载到你当前的工作目录中：
     # wget http://linux-training.be/files/books/LinuxFun.pdf
 
-The syntax to upload a file to our FTP server without trickle is as follows:
+下面是在没有trickle的情况下将一个文件上传到我们的FTP服务器的语法：
 
     # ncftpput -u username -p password 192.168.0.15  /remote_directory local-filename
 
-Where /remote_directory is the path of the upload directory relative to username’s home, and local-filename is a file in your current working directory.
+其中的 /remote_directory 是相对于用户名的Home目录的上传路径，而local-filename是一个你当前工作目录中的文件。
 
-Specifically, without trickle we get a peak upload speed of 52.02 MB/s (please note that this is not the real average upload speed, but an instant starting peak), and the file gets uploaded almost instantly:
+特别的是，在没有trickle的情形下，我们可以得到上传峰值速率52.02MB/s(请注意，这个不是真正的平均上传速率，而是峰值开始的瞬时值),而且这个文件几乎
+在瞬间就完成了上传。
 
     # ncftpput -u username -p password 192.168.0.15  /testdir LinuxFun.pdf
 
-Output:
+输出：
 
     LinuxFun.pdf:                                        	2.79 MB   52.02 MB/s
 
-With trickle, we will limit the upload transfer rate at 5 KB/s. Before uploading the file for the second time, we need to delete it from the destination directory; otherwise, ncftp will inform us that the file at the destination directory is the same that we are trying to upload, and will not perform the transfer:
-
+在使用trickle的情况下，我们会限制上传速率在5KB/s。在第二次上传文件之前，我们需要在目标目录中删除这个文件，否则ncftp就会通知我们在目标
+目录中已经存在了与上传文件相同的文件，从而不会执行文件的传输：
     # rm /absolute/path/to/destination/directory/LinuxFun.pdf
 
-Then:
+然后：
 
     # trickle -s -u 5 ncftpput -u username -p password 111.111.111.111 /testdir LinuxFun.pdf
 
-Output:
+输出：
 
     LinuxFun.pdf:                                        	2.79 MB	4.94 kB/s
 
-In the example above, we can see that the average upload speed dropped to ~5 KB/s.
+在上面的样例中，我们看到平均的上传速率下降到了5KB/s。
 
-**Example 2: Downloading the same 2.8 MB PDF file with and without trickle**
+**样例2：在有无trickle的情况下下载相同过得2.8MB的PDF文件**
 
-First, remember to delete the PDF from the original source directory:
+首先，记得从原来的源文目录中删除这个PDF：
 
     # rm /absolute/path/to/source/directory/LinuxFun.pdf
 
-Please note that the following cases will download the remote file to the current directory in the client machine. This fact is indicated by the period (‘.‘) that appears after the IP address of the FTP server.
+请注意，下面的样例中将远程的文件下载到客户端机器的当前目录下，这是由FTP服务器的IP地址后面的·.·决定的。
 
-Without trickle:
+没有trickle的情况下：
 
     # ncftpget -u username -p  password 111.111.111.111 . /testdir/LinuxFun.pdf
 
-Output:
+输出：
 
     LinuxFun.pdf:                                        	2.79 MB  260.53 MB/s
 
-With trickle, limiting the download speed at 20 KB/s:
+在有trickle的情况下，限制下载速率在20KB/s：
 
     # trickle -s -d 30 ncftpget -u username -p password 111.111.111.111 . /testdir/LinuxFun.pdf
 
-Output:
+输出：
 
     LinuxFun.pdf:                                        	2.79 MB   17.76 kB/s
 
-### Running Trickle in Supervised [unmanaged] Mode ###
 ### 在有监督的模式下运行Trickle [未管理的]###
 
-Trickle can also run in unmanaged mode, following a series of parameters defined in /etc/trickled.conf. This file defines how trickled (the daemon) behaves and manages trickle.
 Tricle也可以在未管理的模式下运行，通过跟随在/etc/tricled.conf文件中定义的一系列参数。 这个文件定义了守护线程 trickled的行为以及如何管理tricle。
 
-In addition, if we want to set global settings to be used, overall, by all applications, we will need to use the trickled command. This command runs the daemon and allows us to define download and upload limits that will be shared by all the applications run through trickle without us needing to specify limits each time.
 另外，如果你想要全局设置被所有的应用程序使用的话，我们就会需要使用tricle命令。 这个命令运行守护线程并允许我们通过trickle定义所有应用程序共享的上传下载限制，不需要我们每次来进行指定。
 
-For example, running:
 例如，运行：
 
     # trickled -d 50 -u 10
 
-Will cause that the download and upload speeds of any application run through trickle be limited to 30 KB/s and 10 KB/s, respectively.
 会导致任何通过tricle运行的应用程序的上传下载速率分别限制在30kb/s和10kb/s。
 
-Please note that you can check at any time whether trickled is running and with what arguments:
 请注意，你可以在任何时间都能确认守护线程tricled是否正在运行以及其运行参数：
 
     # ps -ef | grep trickled | grep -v grep
 
-Output:
 输出:
 
     root 	16475 	1  0 Dec24 ?    	00:00:04 trickled -d 50 -u 10
 
-**Example 3: Uploading a 19 MB mp4 file to our FTP server using with and without trickle.**
-**样例3：在是否使用tricle的情形下上传一个 19MB 的mp4文件到我们的FTP服务器。 **
+**样例3：在是否使用tricle的情形下上传一个 19MB 的mp4文件到我们的FTP服务器。**
 
-In this example we will use the freely-distributable “He is the gift” video, available for download from [this link][3].
 在这个样例中，我们会使用“He is the gift”的自由分布视频，可以通过这个[链接][3]下载。
 
-We will initially download this file to your current working directory with the following command:
 我们将会在开始通过以下的命令将这个文件下载到你的当前工作目录中:
 
     # wget http://media2.ldscdn.org/assets/missionary/our-people-2014/2014-00-1460-he-is-the-gift-360p-eng.mp4
 
-First off, we will start the trickled daemon with the command listed above:
 首先，我们会使用之前列出的命令来开启守护进程trickled:
 
     # trickled -d 30 -u 10
 
-Without trickle:
 在没有trickle时:
 
     # ncftpput -u username -p password 192.168.0.15 /testdir 2014-00-1460-he-is-the-gift-360p-eng.mp4
 
-Output:
 输出：
 
     2014-00-1460-he-is-the-gift-360p-eng.mp4:           	18.53 MB   36.31 MB/s
 
-With trickle:
 有trickle的时：
 
     # trickle ncftpput -u username -p password 192.168.0.15 /testdir 2014-00-1460-he-is-the-gift-360p-eng.mp4
 
-Output:
 输出:
 
     2014-00-1460-he-is-the-gift-360p-eng.mp4:           	18.53 MB	9.51 kB/s
 
-As we can see in the output above, the upload transfer rate dropped to ~10 KB/s.
 我们可以看到上面的输出，上传的速率下降到了约 10KB/s。
 
-**Example 4: Downloading the same video with and without trickle**
 ** 样例4：在有无trickle的情形下下载这个相同的视频 **
-As in Example 2, we will be downloading the file to the current working directory.
+
 与样例2一样，我们会将该文件下载到当前工作目录中。
-Without trickle:
+
 在没有trickle时:
 
     # ncftpget -u username -p password 192.168.0.15 . /testdir/2014-00-1460-he-is-the-gift-360p-eng.mp4
 
-Output:
 输出:
 
     2014-00-1460-he-is-the-gift-360p-eng.mp4:           	18.53 MB  108.34 MB/s
 
-With trickle:
 有trickle的时：
 
     # trickle ncftpget -u username -p password 111.111.111.111 . /testdir/2014-00-1460-he-is-the-gift-360p-eng.mp4
 
-Output:
 输出:
     2014-00-1460-he-is-the-gift-360p-eng.mp4:           	18.53 MB   29.28 kB/s
 
-Which is in accordance with the download limit set earlier (30 KB/s).
 上面的结果与我们之前设置的下载限速相对应(30KB/s)。
 
-**Note:** That once the daemon has been started, there is no need to set individual limits for each application that uses trickle.
 **注意:** 一旦守护进程开启之后，没有必要使用trickle来为每个应用程序来单独设置限制。
 
-As we mentioned earlier, one can further customize trickle’s bandwidth shaping through trickled.conf. A typical section in this file consists of the following:
 如前所述，每个人都可以进一步地通过tricled.conf来客制化tricle的宽带速率调整,该文件的一个典型的分区有以下部分组成：
 
     [service]
@@ -308,26 +260,16 @@ As we mentioned earlier, one can further customize trickle’s bandwidth shaping
     Time-Smoothing = <value>
     Length-Smoothing = <value>
 
-Where,
 其中,
 
-- [service] indicates the name of the application whose bandwidth usage we intend to shape.
 - [service] 用来指示我们想要对其进行宽带使用调整的应用程序名称
-
-- Priority allows us to specify a service to have a higher priority relative to another, thus not allowing a single application to hog all the bandwidth which the daemon is managing. The lower the number, the more bandwidth that is assigned to [service].
 - Priority 用来让我们为某个服务制定一个相对于其他服务高的优先级，这样就不允许守护进程管理中的一个单独的应用程序来占用所有的宽带。越小的数字代表更高的优先级。
-
-- Time-Smoothing [in seconds]: defines with what time intervals trickled will try to let the application transfer and / or receive data. Smaller values (something between the range of 0.1 – 1s) are ideal for interactive applications and will result in a more continuous (smooth) session while slightly larger values (1 – 10 s) are better for applications that need bulk transfer. If no value is specified, the default (5 s) is used.
-- Time-Smoothing [以秒计]: 定义了trickled让各个应用程序传输或接收数据的时间间隔。小的间隔值(0.1-1秒)对于交互式应用程序是理想的，因为这样会具有一个更加流畅的会话体验，而一个相对较大
+- Time-Smoothing [以秒计]: 定义了trickled让各个应用程序传输或接收数据的时间间隔。小的间隔值(0.1-1秒)对于交互式应用程序是理想的，因为这样会具有一个更加平滑的会话体验，而一个相对较大
 的时间间隔值(1-10秒)对于需要批量传输应用程序就会显得更好。如果没有指定该值，默认是5秒。
-
-- Length-Smoothing [in KB]: the idea is the same as in Time-Smoothing, but based on the length of an I/O operation. If no value is specified, the default (10 KB) is used.
 - Length-smoothing [KB 单位]: 该想法与Time-Smoothing如出一辙，但是是基于I/O操作而言。如果没有指定值，会使用默认的10KB。
 
-Changing the smoothing values will translate into the application specified by [service] using transfer rates within an interval instead of a fixed value. Unfortunately, there is no formula to calculate the lower and upper limits of this interval as it mainly depends of each specific case scenario.
-流畅值的改变会被翻译为将指定的服务的使用一个间隔值而不是一个固定值。不幸的是，没有一个特定的公式来计算间隔值的上下限，主要依赖于特定的应用场景。
+平滑值的改变会被翻译为将指定的服务的使用一个间隔值而不是一个固定值。不幸的是，没有一个特定的公式来计算间隔值的上下限，主要依赖于特定的应用场景。
 
-The following is a trickled.conf sample file in the CentOS 7 client (192.168.0.17):
 下面是一个在CentOS 7 客户端中的tricled.conf 样例文件（192.168.0.17）：
 
     [ssh]
@@ -340,27 +282,19 @@ The following is a trickled.conf sample file in the CentOS 7 client (192.168.0.1
     Time-Smoothing = 1
     Length-Smoothing = 3
 
-Using this setup, trickled will prioritize SSH connections over FTP transfers. Note that an interactive process, such as SSH, uses smaller time-smoothing values, whereas a service that performs bulk data transfers (FTP) uses a greater value. The smoothing values are responsible for the download and upload speeds in our previous example not matching the exact value specified by the trickled daemon but moving in an interval close to it.
 使用该设置，tricled会为SSH赋予比FTP较高的传输优先级。值得注意的是，一个交互进程，例如SSH，使用了一个较小的时间间隔值，然而一个处理批量数据传输的服务如FTP使用一个较大的时间
 间隔来负责之前的样例中的上传下载速率，尽管不是百分百的有trickled指定的值，但是也已经非常接近了。
 
-### Conclusion ###
 ### 总结 ###
-In this article we have explored how to limit the bandwidth used by applications using trickle on Fedora-based distributions and Debian / derivatives. Other possible use cases include, but are not limited to:
 在该文章中,我们探索了任何使用trickle在基于Fedora发行版和Debian衍生版平台上来限制应用程序的宽带使用.也包含了其他的可能用法,但是不对以下情形进行限制:
 
-- Limiting the download speed via a system utility such as [wget][4], or a torrent client, for example.
 - 限制系统下载工具的下载速度,例如[wget][4],或 BT客户端.  
 
-- Limiting the speed at which your system can be updated via `[yum][5]` (or `[aptitude][6]`, if you’re in a Debian-based system), the package management system.
 - 限制你的系统的包管理工具`[yun][5]`更新的速度 (如果是基于Debian系统的话，其包管理工具为`[aptitude][6]`)。
 
-- If your server happens to be behind a proxy or firewall (or is the proxy or firewall itself), you can use trickle to set limits on both the download and upload, or communication speed with the clients or the outside.
 - 如果你的服务器是在一个代理或防火墙后面(或者其本身即是代理或防火墙的话)，你可以使用trickle来同时设定下载和上传速率，或者与客户端或外部交流速率。
 
-Questions and comments are most welcome. Feel free to use the form below to send them our way.
 欢迎提问或留言.
-
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/manage-and-limit-downloadupload-bandwidth-with-trickle-in-linux/
