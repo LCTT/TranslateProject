@@ -1,3 +1,5 @@
+Translating---geekpi
+
 Linux FAQs with Answers--How to install and access CentOS remote desktop on VPS
 ================================================================================
 > **Question**: I want to install CentOS desktop on VPS, and be able to access the desktop GUI remotely from home. What is a recommended way to set up and access CentOS-based remote desktop on VPS? 
