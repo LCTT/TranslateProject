@@ -8,7 +8,7 @@ Linux 有问必答：如何在Linux 中修复“fatal error: x264.h: No such fil
 
 [x264][1]是GNU GPL授权的H.264/MPEG-4 AVC编码库。x264库被广泛用于视频编码/转码程序比如Avidemux、[FFmpeg][2]、 [HandBrake][3]、 OpenShot、 MEncode等等。
 
-要解决这个问题，你需要安装x264的开发库文件。你可以这么做。
+要解决这个问题，你需要安装x264的开发库文件。你可以如下做。
 
 ###在 Debian、 Ubuntu 或者 Linux Mint 中安装像x264库和开发文件 ###
 
@@ -24,7 +24,7 @@ RPM Fusion设置完成后，你可以使用下面的命令安装x264开发文件
 
      $ sudo yum --enablerepo=rpmfusion-free install x264-devel 
 
-注意RPM Fusion仓库在CentOS 7中还没有，因此上面的方法在CentOS 7中还不可行。万一是CentOS 7 ，你可以从源码编译并安装x264,下面会解释的。
+注意RPM Fusion仓库在CentOS 7中还没有，因此上面的方法在CentOS 7中还不可行。万一是CentOS 7 ，你可以从源码编译并安装x264，下面会解释的。
 
 ### 在Debian、 Ubuntu 或者 Linux Mint中源码编译x264库 ###
 
@@ -81,7 +81,7 @@ x264库将会安装在/usr/local/lib。要让其他程序可以使用这个库�
 via: http://ask.xmodulo.com/fatal-error-x264-h-no-such-file-or-directory.html
 
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

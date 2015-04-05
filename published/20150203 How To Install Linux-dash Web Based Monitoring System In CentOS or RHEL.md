@@ -1,13 +1,13 @@
-如何在CentOS/RHEL中安装机遇Web监控的Linux-dash
+如何在CentOS/RHEL中安装基于Web的监控系统 linux-dash
 ================================================================================
-**Linux-dash**是一款为Linux设计的基于web的轻量级监控面板。这个程序会显示实时时间、不同的系统属性，比如CPU负载、RAM使用率、磁盘使用率、网速、网络连接、RX/TX带宽、登录用户、运行的进程等等。它不会存储长期的统计。因为它没有后端数据库。
+**Linux-dash**是一款为Linux设计的基于web的轻量级监控面板。这个程序会实时显示各种不同的系统属性，比如CPU负载、RAM使用率、磁盘使用率、网速、网络连接、RX/TX带宽、登录用户、运行的进程等等。它不会存储长期的统计。因为它没有后端数据库。
 
-本篇文章将会向你展示如何安装和设置Linux dash，这里的web服务器是**Nginx**.
+本篇文章将会向你展示如何安装和设置Linux dash，这里所使用的web服务器是**Nginx**.
 
 ### 安装 ###
 
 首先我们要启用[EPEL 仓库][1]。
-
+	
 **接下来，我们需要用下面的命令安装nginx。**
 
     sudo yum install nginx
@@ -59,7 +59,7 @@
 
     sudo vim /etc/php-fpm.d/www.conf
 
-**确保设置了“listn”，“user”和“group”字段。你可以保留下面的配置不变。**
+**确保设置了如下的“listen”，“user”和“group”字段。你可以保留其它的配置不变。**
 
     . . .
     listen = /var/run/php-fpm.sock
@@ -73,25 +73,25 @@
     sudo cp -r linux-dash/ /var/www/
     sudo chown -R nginx:nginx /var/www
 
-**接下来，重启 Nginx和php-fpm**
+**接下来，重启 Nginx和php-fpm。**
 
     sudo service nginx restart
     sudo service php-fpm restart
 
-**设置nginx和php-fpm开机自动启动**
+**设置nginx和php-fpm开机自动启动。**
 
     sudo chkconfig nginx on
     sudo chkconfig php-fpm on
 
-在本例中，我们使用TCP端口8080配置linux-dash。因此确保防火墙没有阻止8080 TCP端口。
+在本例中，我们使用TCP端口8080配置linux-dash。因此需确保防火墙没有阻止8080 TCP端口。
 
 ### 用linux-dash监控Linux服务器 ###
 
-你现在可以在浏览器中输入**http://<linux-IP-address>:8080/linux-dash/**来访问Linux-dash。
+你现在可以在浏览器中输入**http://\<IP地址>:8080/linux-dash/**来访问Linux-dash。
 
 web面板包含了不同的组件，每个都显示独特的系统属性。你可以自定义web面板的外观也可以关闭一些组件。
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/Lin-dash.png)
+![](http://1102047360.rsc.cdn77.org/wp-content/uploads/2015/01/Lin-dash.png)
 
 美好的一天！
 
@@ -104,9 +104,9 @@ via: http://www.unixmen.com/install-linux-dash-web-based-monitoring-system-cento
 
 作者：[Jijo][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://www.unixmen.com/author/jijo/
-[1]:http://www.unixmen.com/install-epel-repository-centos-rhel-7/
+[1]:http://linux.cn/article-2324-1.html
