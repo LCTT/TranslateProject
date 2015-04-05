@@ -1,3 +1,5 @@
+Translating by FSSlc
+
 Chess in a Few Bytes
 ================================================================================
 I am showing my age by mentioning that my introduction to computing was a ZX81, a home computer produced by a UK developer (Sinclair Research) which had a whopping 1KB of RAM. The 1KB is not a typographical error, the home computer really shipped with a mere 1KB of onboard memory. But this memory limitation did not prevent enthusiasts producing a huge variety of software. In fact the machine sparked a generation of programming wizards who were forced to get to grips with its workings. The machine was upgradable with a 16KB RAM pack which offered so many more coding possibilities. But the unexpanded 1KB machine still inspired programmers to release remarkable software.
