@@ -1,22 +1,33 @@
 theo-l translating
 
 How to Manage and Use LVM (Logical Volume Management) in Ubuntu
+如何在Ubuntu上管理并使用LVM(逻辑卷轴管理)
 ================================================================================
 ![](http://cdn5.howtogeek.com/wp-content/uploads/2011/02/652x202xbanner-1.png.pagespeed.ic.VGSxDeVS9P.png)
 
 In our [previous article we told you what LVM is and what you may want to use it for][1], and today we are going to walk you through some of the key management tools of LVM so you will be confident when setting up or expanding your installation.
+在我们之前的[文章][1]中,介绍了什么是LVM以及你可能会用它来做什么，今天我们准备带您更进一步地认识LVM的一些关键管理工具，这样你就可以在设置或扩展你的安装的时候更加自信了。
 
 As stated before, LVM is a abstraction layer between your operating system and physical hard drives. What that means is your physical hard drives and partitions are no longer tied to the hard drives and partitions they reside on. Rather, the hard drives and partitions that your operating system sees can be any number of separate hard drives pooled together or in a software RAID.
+之前已经声明，LVM是一个在操作系统与物理硬件设备之间的抽象层。也就是说，你的物理设备与其中的分区不再绑定到了一起，你的操作系统看到的是任何合并在一起的分开的硬盘或者是一个软件RAID。
 
 To manage LVM there are GUI tools available but to really understand what is happening with your LVM configuration it is probably best to know what the command line tools are. This will be especially useful if you are managing LVM on a server or distribution that does not offer GUI tools.
+为了管理LVM可以使用GUI工具，但是为了真正地了解你的LVM配置酒精会产生什么样的效果，可能最好来了解什么是命令行。而且如果你是在一台服务器或没有提供GUI工具的发行版中来管理LVM的话会尤其的有用。
 
 Most of the commands in LVM are very similar to each other. Each valid command is preceded by one of the following:
+大部分的LVM命令彼此都十分相似，每个合法的命令都具有以下之一的前缀：
 
 - Physical Volume = pv
+- 物理卷 = pv
+
 - Volume Group = vg
+- 卷组 = vg
+
 - Logical Volume = lv
+- 逻辑卷 = lv
 
 The physical volume commands are for adding or removing hard drives in volume groups. Volume group commands are for changing what abstracted set of physical partitions are presented to your operating in logical volumes. Logical volume commands will present the volume groups as partitions so that your operating system can use the designated space.
+
 
 ### Downloadable LVM Cheat Sheet ###
 
