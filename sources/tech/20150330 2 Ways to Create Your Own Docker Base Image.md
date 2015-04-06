@@ -1,3 +1,4 @@
+Translating by ictlyh
 2 Ways to Create Your Own Docker Base Image
 ================================================================================
 Greetings to everyone, today we'll learn about docker base Images and how we can build our own. [Docker][1] is an Open Source project that provides an open platform to pack, ship and run any application as a lightweight container. It has no boundaries of Language support, Frameworks or packaging system and can be run anywhere, anytime from a small home computers to high-end servers. It makes them great building blocks for deploying and scaling web apps, databases, and back-end services without depending on a particular stack or provider.
