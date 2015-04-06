@@ -1,3 +1,4 @@
+Translating by H-mudcup
 Picty: Managing Photos Made Easy
 ================================================================================
 ![](http://1102047360.rsc.cdn77.org/wp-content/uploads/2015/03/picty_002-790x429.png)
