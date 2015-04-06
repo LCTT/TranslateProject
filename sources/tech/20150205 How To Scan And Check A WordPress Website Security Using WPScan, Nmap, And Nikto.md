@@ -1,3 +1,4 @@
+[boredivan翻译中]
 How To Scan And Check A WordPress Website Security Using WPScan, Nmap, And Nikto
 ================================================================================
 ### Introduction ###
