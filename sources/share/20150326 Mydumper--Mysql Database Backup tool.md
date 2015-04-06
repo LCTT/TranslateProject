@@ -1,3 +1,4 @@
+Translating by ictlyh
 Mydumper – Mysql Database Backup tool
 ================================================================================
 Mydumper is a tool used for backing up MySQL database servers much faster than the mysqldump tool distributed with MySQL. It also has the capability to retrieve the binary logs from the remote server at the same time as the dump itself.
