@@ -38,40 +38,40 @@
 
 ### 3. 上传一个已有项目 ###
 
-如果我们想在Github上分享我们的项目，我们自然要把代码推上我们创建的库中。想要这样的话，我们首先要在我们的Linux机器上安装git。如果As I am running Ubuntu 14.04 LTS in my machine, I'll need to run **apt** manger to install it.
+如果我们想在Github上分享我们的项目，我们自然要把代码推上我们创建的库中。想要这样的话，我们首先要在我们的Linux机器上安装git。如果我在机器上运行的是Ubuntu 14.04 LTS，我需要运行**apt**工具来安装它。
 
     $ sudo apt-get install git
 
 ![installing git](http://blog.linoxide.com/wp-content/uploads/2015/03/install-git.png)
 
-Now, as git is ready, we are now ready to upload the codes.
+现在git已经准备就绪，我们要上传代码了。
 
-**Note**: To avoid errors, do not initialize the new repository with **README**, license, or gitignore files. You can add these files after your project has been pushed to GitHub.
+**注意**：为了避免错误，不要用**README**文件、许可证或gitignore文件来初始化新库，你可以在项目推送到Github上之后再添加它们。
 
-In Terminal, we'll need to change the current working directory to your local project then initialize the local directory as a Git repository/
+在终端上，我们需要把当前工作目录更改为你的本地项目，然后将本地目录初始化为Git库。
 
     $ git init
 
-We'll then add the files in our new local repository. This stages them for the first commit.
+接着我们在我们的新的本地库里添加的文件来作为我们的首次提交内容。
 
     $ git add .
 
-Now, we'll need to commit the files that we've staged in our local repository.
+现在我们就提交我们在本地库所添加的文件。
 
     $ git commit -m 'First commit'
 
 ![git commit](http://blog.linoxide.com/wp-content/uploads/2015/03/git-commit.png)
 
-In Terminal, we'll add the URL for the remote repository where our local repostory will be pushed.
+在终端上，我们要给远程库添加URL地址，用于以后我们能提交我们本地的库。
 
     $ git remote add origin remote Repository url
     $ git remote -v
 
 ![adding remote url](http://blog.linoxide.com/wp-content/uploads/2015/03/adding-remote-url.png)
 
-Note: Please do replace remote Repository url to the url of the remote repo.
+注意：请确保将远程库的URL替换成了自己的远程库的URL。
 
-Now, to push the changes in our local repository to GitHub's repo we'll need to run as below and enter the required credential for the repository.
+现在，要将我们的本地库提交至GitHub版本库中，我们需要运行一下命令并且输入所需的用户名和密码。
 
     $ git push origin master
 
@@ -79,17 +79,17 @@ Now, to push the changes in our local repository to GitHub's repo we'll need to 
 
 ### 克隆一个库 ###
 
-If we want to download a code repository from github straight to our local drives with a single command then, we can simply use git clone command which will clone the current directory to the remote repository.
+如果我们想用一条简单地命令从github上下载代码库至本机上，我们可以用git clone命令，该命令将会从远程库中克隆最新的目录。
 
     $ git clone https://github.com/aruntechgeek/linspeed.git
 
 ![cloning repo](http://blog.linoxide.com/wp-content/uploads/2015/03/cloning-repo.png)
 
-Please change the above url to the repository you want to clone from.
+请把以上这条URL地址更改成你想要克隆的地址。
 
 ### 更新改动 ###
 
-If we made changes to our code and want to push them to our remote repository then after changing the changes, we should run the following commands inside that directory.
+如果我们对我们的代码做了更改并想把它们提交至我们的远程库中，我们应该在该目录下运行以下命令。
 
     $ git add .
     $ git commit -m "Updating"
@@ -97,7 +97,7 @@ If we made changes to our code and want to push them to our remote repository th
 
 ### 结论 ###
 
-Hurray! We have successfully hosted our Project Source Code in Github repository. Github is fast and more flexible web based hosting service which is easy to use and to manage distributed revision control. Millions of awesome Open Source projects are hosted in github. So, if you have any questions, suggestions, feedback please write them in the comment box below. Thank you ! Enjoy Github :-)
+啊哈！我们已经成功地管理我们在Github库中的项目源代码了。快速灵活的Github基于web的托管服务，分布式修改控制系统使用起来方便容易。数百万个非常棒的开源项目驻扎在github上。所以，如果你有任何问题、建议或反馈，请在评论中告诉我们。谢谢大家！好好享受吧 :-)
 
 --------------------------------------------------------------------------------
 
