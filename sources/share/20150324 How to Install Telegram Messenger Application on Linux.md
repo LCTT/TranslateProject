@@ -1,3 +1,4 @@
+Translating by ictlyh
 How to Install Telegram Messenger Application on Linux
 ================================================================================
 Telegram is an Instant Messaging (IM) application similar to whatsapp. It has a very large user base. It has a lot of features that differentiate it from other messaging application.
