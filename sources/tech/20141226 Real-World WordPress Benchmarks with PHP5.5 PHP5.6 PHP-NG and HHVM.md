@@ -1,3 +1,4 @@
+Translating by GOLinux ...
 Real-World WordPress Benchmarks with PHP5.5 PHP5.6 PHP-NG and HHVM
 ================================================================================
 **TL;DR In a local, Vagrant-based environment HHVM lost, probably due to a bug; it’s still investigated with the help of the HHVM guys! However on a DigitalOcean 4GB box it beat even the latest build of PHP-NG!**
