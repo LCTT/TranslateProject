@@ -1,3 +1,4 @@
+Translating by ictlyh
 Linux Email App Geary Updated — How To Install It In Ubuntu
 ================================================================================
 **Geary, the popular desktop email client for Linux, has been updated to version 0.10 — and it gains a glut of new features in the process.**
