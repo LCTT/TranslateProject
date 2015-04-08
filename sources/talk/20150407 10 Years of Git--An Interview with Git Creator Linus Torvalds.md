@@ -1,3 +1,4 @@
+Translating by ZTinoZ
 10 Years of Git: An Interview with Git Creator Linus Torvalds 
 ================================================================================
 > Linus Torvalds explains why he created Git
