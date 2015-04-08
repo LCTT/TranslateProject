@@ -1,3 +1,5 @@
+FSSlc translating
+
 How to Remember and Restore Running Applications on Next Logon
 ================================================================================
 You have made some apps running in your Ubuntu and don't want to stop the process, just managed your windows and opened your stuffs needed to work. Then, something else demands your attention or you have battery low in your machine and you have to shut down. No worries. You can have Ubuntu remember all your running applications and restore them the next time you log in.
