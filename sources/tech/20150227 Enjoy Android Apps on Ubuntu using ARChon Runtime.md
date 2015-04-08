@@ -1,3 +1,4 @@
+translating by KayGuoWhu
 Enjoy Android Apps on Ubuntu using ARChon Runtime
 ================================================================================
 Before, we gave try to many android app emulating tools like Genymotion, Virtualbox, Android SDK, etc to try to run android apps on it. But, with this new Chrome Android Runtime, we are able to run Android Apps on our Chrome Browser. So, here are the steps we'll need to follow to install Android Apps on Ubuntu using ARChon Runtime.
