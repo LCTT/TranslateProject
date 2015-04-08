@@ -1,25 +1,24 @@
-Translating by ZTinoZ
-10 Years of Git: An Interview with Git Creator Linus Torvalds 
+Git的十年：采访Git的创造者Linus Torvalds 
 ================================================================================
-> Linus Torvalds explains why he created Git
+> Linus Torvalds解释了他为什么会创造Git
 > 
 > ![](http://www.linuxveda.com/wp-content/uploads/2014/10/Linus_Torvalds.jpg)
 > 
-> Thanks to Linus' Git today GitHub is the world's biggest code hoster in the world with over 9 million users and over 21.1 million repositories.
+> 感谢Linus的Git，如今GitHub已经是全世界最大的代码托管网站，它拥有九百万用户和超过两千一百一十万个代码库。
 > 
-> By Swapnil Bhartiya -
+> 来自Swapnil Bhartiya -
 > 
-> Git will be celebrating it’s 10 anniversary this month. It’s yet another contribution of Linus Torvalds to the world in addition to Sub Surface and Linux. [Jennifer Cloer of The Linux Foundation interviewed the father of Linux][2] and presented us with a very comprehensive story behind Git.
+> Git将会在本月庆祝它的十周年庆。这是Linus Torvalds除了Sub Surface和Linux之外全世界范围内的另外一个庆祝会。 [Linux基金会的Jennifer Cloer采访了这位Linux之父][2] 并且给我们带来了Git背后的许多故事。
 > 
-> When Cloer asked Linus why he created Git, his answer was:
+> 当Cloer问及Linus为什么会创造Git时，他是这么回答的：
 > 
-> “I really never wanted to do source control management at all and felt that it was just about the least interesting thing in the computing world (with the possible exception of databases ;^), and I hated all SCM’s with a passion.”
+> “我其实根本没想过要做源代码控制管理系统，我感觉在计算机世界里那是一件很没劲的事情（数据库可能是例外 ;^），我要很讨厌富有激情的软件配置管理。”
 > 
-> He then played with BitKeeper which he initially liked as in his own words:
+> 接着他拿他一开始使用的BitKeeper调侃了起来：
 > 
-> “BK got most things right and having a local copy of the repository and distributed merging was a big deal.”
+> “BK有很多很棒的功能，它拥有代码库的本地拷贝，分布式合并也是一个好做法。”
 > 
-> But he was not satisfied:
+> 但是他并不满意：
 > 
 > “I had performance requirements that were not even remotely satisfied by what was available, and I also worried about integrity of the code and the whole workflow, so I ended up just deciding to write my own.”
 > 
