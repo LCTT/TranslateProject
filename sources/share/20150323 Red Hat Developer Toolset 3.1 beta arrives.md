@@ -1,3 +1,4 @@
+Translating by ictlyh
 Red Hat Developer Toolset 3.1 beta arrives
 ================================================================================
 > **Summary**:Want the newest developer tools for Red Hat Enterprise Linux 6 or 7? The beta's ready for you now.
