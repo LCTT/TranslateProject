@@ -1,6 +1,6 @@
 如何在Linux上安装Telegram Messenger应用
 ================================================================================
-Telegram是和whatsapp类似的及时通讯应用。它有一个非常庞大的用户群。它有很多能和其他通讯应用区分开来的特性。
+Telegram是和whatsapp类似的及时通讯应用。它有一个庞大的用户群，并且很多能和其他通讯应用区分开来的特性。
 
 ![在Linux上安装Telegram](http://www.tecmint.com/wp-content/uploads/2015/03/Install-Telegram-in-Linux.png)
 Telegram Messenger for Linux
@@ -13,19 +13,19 @@ Telegram Messenger for Linux
 - 有桌面版本
 - 第三方开发者可以访问Telegram的应用程序接口(API)。
 - 支持Android, iphone/ipad, Windows Phone, Web-Version, PC, Mac 和 Linux。
-- 以上应用支持重度加密和自销毁信息。
+- 以上应用支持高度加密和自销毁信息。
 - 可以让你从多种设备和平台查看你的信息。
 - 整体的处理和消息传送都非常快
 - 为了安全和效率，在全球有分布式服务器
 - 开放的API和自由协议
 - 没有广告，没有认购费用。-永久免费
-- 强大-没有媒体和聊天限制
+- 功能强大-没有媒体和聊天限制
 - 多种安全措施使其免受黑客侵害
 - 在群组中回复特定信息。使用@username提醒群组里的多个用户
 
 #### 为什么使用Telegram? ####
 
-当像WhatsApp的和其他的及时通讯应用都提供了几乎同样的功能的情况下，为什么要选择Telegram？
+在像WhatsApp以及其他及时通讯应用都提供了几乎同样的功能的情况下，为什么要选择Telegram？
 
 第三方开发者可以使用API这一点就足够了。更多PC的可用性意味着你不必再纠结在你的移动设备上打字，你可以使用你的PC，这样更具有可用性。
 
@@ -65,12 +65,12 @@ Telegram Messenger for Linux
 ![Telegram验证码](http://www.tecmint.com/wp-content/uploads/2015/03/Telegram-Verfication-Code.png)
 Telegram验证码
 
-4. 输入你的姓名，昵称并点击“SIGNUP”.
+4. 输入你的姓名，昵称并点击“SIGN UP”.
 
 ![输入账户详细信息](http://www.tecmint.com/wp-content/uploads/2015/03/Enter-Account-Details.jpeg)
 输入账户详细信息
 
-5. 新建账户之后，我看到这个界面。一切准备就绪，尽管我是Telegram的新用户。这个界面真的很简洁。
+5. 新建账户之后，我看到这个界面。一切准备就绪，尽管我对Telegram还不熟悉。这个界面真的很简洁。
 
 ![Telegram界面](http://www.tecmint.com/wp-content/uploads/2015/03/Telegram-Interface.jpeg)
 Telegram界面
@@ -87,7 +87,7 @@ Telegram联系人提示
 
 8. 当联系人加入Telegram的时候，你会收到信息(类似弹出提示)显示[YOUR_CONTACT]加入了Telegram。
 
-9. 在Linux系统上正式的聊天窗口。 很好的体验…
+9. 在Linux系统上正式的聊天窗口。很好的体验…
 
 ![联系人加入Telegram消息](http://www.tecmint.com/wp-content/uploads/2015/03/Telegram-Contact-Join-Message.jpeg)
 联系人加入Telegram消息
@@ -113,7 +113,7 @@ Telegram联系人提示
 - 一开始在2013年(8月14号)发布iPhone版
 - 惊人项目背后的人物:Pavel and Nikolai Durov..
 
-就是这些了。我还会有你喜欢阅读的其它有趣的文章。很高兴能代表Tecmint感谢我们尊贵的读者以及使得我们通过不断的自我进步走到这里的批评者。保持联系！继续评论。如果你关注我们就请和我们分享吧。 
+就是这些了。我还会为大家带来你们喜欢阅读的其它有趣文章。很高兴能代表Tecmint，感谢我们尊贵的读者以及使得我们通过不断的自我提升走到这里的批评者。保持联系！继续评论。如果你关注我们那就请分享吧。
 
 - [https://telegram.org/][2]
 
@@ -123,7 +123,7 @@ via: http://www.tecmint.com/install-telegram-in-linux/
 
 作者：[Avishek Kumar][a]
 译者：[ictlyh](https://github.com/ictlyh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
