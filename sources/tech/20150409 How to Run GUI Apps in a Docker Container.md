@@ -1,3 +1,5 @@
+Translating---geekpi
+
 How to Run GUI Apps in a Docker Container
 ================================================================================
 Hi everyone, today we'll learn how we can run GUI Applications inside a [Docker][1] Container. We can easily run most of the common GUI apps without getting into trouble inside a Docker Container. Docker is an Open Source project that provides an open platform to pack, ship and run any application as a lightweight container. It has no boundaries of Language support, Frameworks or packaging system and can be run anywhere, anytime from a small home computers to high-end servers. It makes them great building blocks for deploying and scaling web apps, databases, and back-end services without depending on a particular stack or provider.
