@@ -1,3 +1,4 @@
+wangjiezhe translating...
 What is a good alternative to wget or curl on Linux
 ================================================================================
 If you often need to access a web server non-interactively in a terminal environment (e.g., download a file from the web, or test REST-ful web service APIs), chances are that wget or curl is your go-to tool. With extensive command-line options, both of these tools can handle a variety of non-interactive web access use cases (examples [here][1], [here][2] and [here][3]). However, even powerful tools like these are only as good as your knowledge of how to use them. Unless you are well versed in the nitty and gritty details of their syntax, these tools are nothing more than simple web downloaders for you.
@@ -129,7 +130,7 @@ What's your thought?
 via: http://xmodulo.com/wget-curl-alternative-linux.html
 
 作者：[Dan Nanni][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wangjiezhe](https://github.com/wangjiezhe)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
