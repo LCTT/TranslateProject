@@ -1,3 +1,4 @@
+Translating by weychen
 10 Top Distributions in Demand to Get Your Dream Job
 ================================================================================
 We are coming up with a series of five articles which aims at making you aware of the top skills which will help you in getting yours dream job. In this competitive world you can not rely on one skill. You need to have balanced set of skills. There is no measure of a balanced skill set except a few conventions and statistics which changes from time-to-time.
@@ -140,7 +141,7 @@ That’s all for now. I’ll be coming up with the next article of this series v
 via: http://www.tecmint.com/top-distributions-in-demand-to-get-your-dream-job/
 
 作者：[Avishek Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[weychen](https://github.com/weychen)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
