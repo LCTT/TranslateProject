@@ -38,7 +38,7 @@ HTTPie 是用 Python 写的，所以你可以在几乎所有地方（Linux，Mac
 
 #### 例1：定制头部 ####
 
-你可以使用 <header:value> 的格式来定制头部。例如，我们发送一个 HTTP GET 请求到 www.test.com，使用定制用户代理（user-agent）和来源（referer），还有定制头部（比如 MyParam）。
+你可以使用 &lt;header:value&gt; 的格式来定制头部。例如，我们发送一个 HTTP GET 请求到 www.test.com ，使用定制用户代理（user-agent）和来源（referer），还有定制头部（比如 MyParam）。
 
 
     $ http www.test.com User-Agent:Xmodulo/1.0 Referer:http://xmodulo.com MyParam:Foo
