@@ -1,3 +1,4 @@
+translating wi-cuckoo
 10 Famous IT Skills in Demand That Will Get You Hired
 ================================================================================
 In continuation of our last article [[Top 10 Operating Systems in demand][1]] which was highly appreciated by the Tecmint community, we here in this article aims at throwing light on top IT skills that will help you land to your dream job.
