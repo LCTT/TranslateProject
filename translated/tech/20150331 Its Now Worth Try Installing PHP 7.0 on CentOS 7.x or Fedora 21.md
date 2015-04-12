@@ -1,42 +1,41 @@
-translating wi-cuckoo LLAP
-Its Now Worth Try Installing PHP 7.0 on CentOS 7.x / Fedora 21
-================================================================================
-PHP is a well known general purpose, server side web scripting language. A vast majority of online websites are coded in this language. PHP is ever evolving, feature rich, easy to use and well organized scripting language.  Currently PHP development team is working on next major release of PHP, named PHP 7. The current production PHP version is PHP 5.6, as you might already know that PHP 6 was aborted in the past, the supporters of PHP 7 did not want the next important PHP version to be confused with that branch that was killed long time in the past. So it has been decided to name the next major release of PHP as PHP 7 instead of 6.  PHP 7.0 is supposed to be released in November this year.
+现在值得去尝试一下在CentOS 7.x或Fedora 21上面安装PHP 7.0
+===============================================================================
+PHP是一种为我们熟知的通用的，服务器网页脚本语言。超大量的在线网站都是用PHP编写的。PHP过去一直在更新，丰富功能，易于使用，而且很好组织的脚本语言。目前PHP的开发团队正筹备下一个PHP版本的发行，名字是PHP 7。现在的PHP版本为PHP 5.6，可能你清楚PHP 6已经流产了，PHP 7的支持者们不希望下一个重要的版本被其他分支混淆，即过去已经停止很久的PHP 6。所以决定下一个PHP主要的发行版本叫PHP 7，而不是PHP 6。PHP 7.0预计在今年十一月份发行。
 
-Here are some of the prominent features in next major PHP release.
+在下一个主要的PHP发行版里有一些不错的功能。
 
-- In order to improve performance and memory footprints PHPNG feature has been added to this new release.
-- JIT engine has been included to dynamically compile Zend opcodes into native machine code in order to achieve faster processing. This feature will allow subsequent calls to the same code so that it may run much faster.
-- AST (Abstract Syntax Tree) is a newly added feature which will enhance support for php extensions and userland applications.
-- Asynchronous Programming feature will add support for parallel tasks within the same request.
-- New version will support for stand alone multi-threading web server so that it may handle many simultaneous requests using a single memory pool.
+- 为了提升执行效率与记忆痕迹，PHPNG功能被添加到新的发行版中。
+- JIT引擎被收入来动态编译Zend操作码为自然机器码，以此来达到更快的处理性能。这项功能允许随后的程序调用同一份代码，这样会运行快很多。
+- AST（抽象语法树）是最新添加的功能，它可以增强支持PHP的扩展性和用户应用。
+- 异步编程功能会添加支持并行任务，在同样的需求下。
+-新的版本会支持独立多线程网页服务，这样可以使用一个单独的存储块处理很多并发的请求。
 
-### Installing PHP 7 on Centos / Fedora ###
+### 在CcentOS/Fedora上安装PHP 7 ###
 
-Lets see how we can install PHP7 on Centos 7 and Fedora 21.  In order to install PHP7 we will need to first clone php-src repository. Once cloning process is complete, we will configure and compile it. Before we proceed, lets ensure that we do have followings installed on our Linux system otherwise PHP compile process will return errors and abort.
+让我们来看看怎样在CentOS 7和Fedora 21安装PHP7。为了安装PHP7，我们首先需要克隆php-src 仓库。当克隆工作完成，我们会配置和编译它。进行下一步之前，我们要确保已经在LInux系统下安装了如下的东西，否则PHP编译会返回错误，然后流产。
 
 - Git
 - autoconf
 - gcc
 - bison
 
-All of the above metioned prerequisits can be installed using Yum package manager. The following single command should take care of this:
+所有上面提到的要求可以使用Yum软件包管理器安装。用连续的一个命令应该这样：
+	
+	yum install git autoconf gcc bison
 
-    yum install git autoconf gcc bison
+准备好开始安装PHP7了吗？让我们先创建一个PHP7目录，作为你的工作目录。
+	
+	mkdir php7
 
-Ready to start PHP7 installation process ? Lets first create PHP7 directory and make it your working directory.
+	cd php7
 
-    mkdir php7
+现在克隆php-src仓库，在终端里运行下面的命令。
+	
+	git clone https://git.php.net/repository/php-src.git
 
-    cd php7
+工作应该会在几分钟后完成，这里是一个样例输出，你应该会在任务完成时看见。
 
-Now clone php-src repo, run following command on the terminal.
-
-    git clone https://git.php.net/repository/php-src.git
-
-The process should complete in few min, here is sample output which you should see at the completion of this task.
-
-    [root@localhost php7]# git clone https://git.php.net/repository/php-src.git
+	[root@localhost php7]# git clone https://git.php.net/repository/php-src.git
 
     Cloning into 'php-src'...
 
@@ -50,13 +49,13 @@ The process should complete in few min, here is sample output which you should s
 
     Resolving deltas: 100% (492063/492063), done.
 
-Lets configure and compile PHP7, run following commands on the terminal to start the configuration process:
+让我们来配置，编译PHP7，在终端运行下面的命令，开始配置工作：
 
-     cd php-src
+	cd php-src
 
-    ./buildconf
+	./buildconf
 
-Here is sample output for ./buildconf command.
+下面是./buildconf命令的样例输出。
 
     [root@localhost php-src]# ./buildconf
 
@@ -70,9 +69,9 @@ Here is sample output for ./buildconf command.
 
     rebuilding main/php_config.h.in
 
-Proceed further with the configuration process using following command:
+使用下面的命令，继续配置进程：
 
-    ./configure \
+	./configure \
 
     --prefix=$HOME/php7/usr \
 
@@ -144,7 +143,7 @@ Proceed further with the configuration process using following command:
 
     --with-mysqli=/usr/bin/mysql_config
 
-It will take a sweet amount to time, once completed, you should see output like this:
+这会花去不少的时间，一旦完成，你应该会看到如下面的输出：
 
     creating libtool
 
@@ -205,12 +204,11 @@ It will take a sweet amount to time, once completed, you should see output like 
     config.status: executing default commands
 
      
+运行下面的命令，完成编译过程。
 
-Run following command to complete the compilation process.
+	manke
 
-    make
-
-Sample output for “make” command is shown below:
+“make”命令过后的样例输出如下所示：
 
     Generating phar.php
 
@@ -236,11 +234,11 @@ Sample output for “make” command is shown below:
 
     Don't forget to run 'make test'.
 
-That’s all, its time to install PHP7 now, run following to install it.
-
+活儿干完了，该安装PHP7了，运行下面的命令安装它。
+	
     make install
 
-Sample output for successful install process should look like:
+成功安装的进程的样例输出应该像这样：
 
     [root@localhost php-src]# make install
 
@@ -292,11 +290,11 @@ Sample output for successful install process should look like:
 
     Installing PDO headers:          /root/php7/usr/include/php/ext/pdo/
 
-Conguratulaion, PHP 7 has been installed on your Linux system now. Once installation is complete, move to sapi/cli direcoty inside php7 installation folder.
+恭喜你，PHP7已经安装在你的Linux系统上了。安装完后，进入PHP7安装文件里的sapi/cli里面。
 
-    cd  sapi/cli
+    cd sapi/cli
 
-and verify PHP version from here.
+在这里验证PHP的版本。
 
     [root@localhost cli]# ./php -v
 
@@ -306,16 +304,16 @@ and verify PHP version from here.
 
     Zend Engine v3.0.0-dev, Copyright (c) 1998-2015 Zend Technologies
 
-### Conclusion ###
+### 总结 ###
 
-PHP 7 is also [added in remi repositories][1], this upcoming version is mainly focused on performance improvements, its new features are aimed to make PHP as a well fit for modern programming needs and trends. PHP 7.0 will have many new features and some deprecations to the old items. We hope to see details about new features and deprecations in the coming months. Enjoy!
+PHP 7也被[添加到了remi仓库][1]，即将到来的版本主要关注执行效率的提升，新的特性致力于使PHP较好满足现代编程的需求和趋势。PHP 7.0将会有许多新的特性，丢弃一些老版本的东西。在接下来的日子里，我们希望看到新特性和弃用功能的具体情况。尽情享受吧！
 
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/linux-how-to/install-php-7-centos-7-fedora-21/
 
 作者：[Aun Raza][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wi-cuckoo](https://github.com/wi-cuckoo)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

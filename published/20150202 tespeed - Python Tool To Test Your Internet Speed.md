@@ -1,12 +1,12 @@
 tespeed - 测试网速的Python工具
 ================================================================================
-许多电脑呆子知道可以用**speedtest.net**测试网速，但是这个不能在测试中给你足够的控制。Linux用户喜欢在终端中输入命令来完成任务，至少对我是这样的。
+许多电脑呆子知道可以用**speedtest.net**测试网速，但是这个不能在测试中给你足够的控制。Linux用户喜欢在终端中输入命令来完成任务，至少我就是这样的。
 
-tespeed是一款有很多特性的python工具，可以在终端在测试网速。根据文档，它利用了speedtest.net的服务器，但是用户可以手动指定。
+tespeed是一款有很多特性的python工具，可以在终端在测试网速。根据文档说明，它利用了speedtest.net的服务器，但是用户可以手动指定。
 
-最初作者用php语言写了tespeed工具，并且证明了ISP提供的网络远低于它广告中所说的那样。但是事情并不是一直如它们想的那样，因此作者移植他的php脚本到python中并且他的工具在github中已经有180个star了。
+最初作者用php语言写了tespeed工具，并且证明了ISP提供的网络远低于它广告中所说的那样。但是事情并不是一直如他们想的那样，因此作者移植他的php脚本到python中，并且他的工具在github中已经有180个star了。
 
-这意味着**alot**。
+It means **alot**。
 
 ### 如何在linux中测试tespeed ###
 
@@ -23,11 +23,11 @@ tespeed是一款有很多特性的python工具，可以在终端在测试网速�
 
     wget http://sourceforge.net/projects/socksipy/files/socksipy/SocksiPy%201.00/SocksiPy.zip/
 
-下载完成后 解压**SocksiPy.zip**病运行下面的命令来克隆tespeed仓库到你本地机器中。
+下载完成后 解压**SocksiPy.zip**并运行下面的命令来克隆tespeed仓库到你本地机器中。
 
     git clone https://github.com/Janhouse/tespeed.git
 
-接着把SocksiPy文件夹放到你克隆下来的tespeed项目中。现在我们要像截图那样在SocksPy中的**__init__.py**下面创建一个空文件。
+接着把SocksiPy文件夹放到你克隆下来的tespeed项目中。现在我们要像截图那样在SocksiPy中的创建一个叫**__init__.py**的空文件。
 
 ![simple trick to make tespeed work](http://blog.linoxide.com/wp-content/uploads/2015/01/tespeed1.png)
 
@@ -39,9 +39,9 @@ tespeed是一款有很多特性的python工具，可以在终端在测试网速�
 
 ![testing download and upload speed with tespeed python application](http://blog.linoxide.com/wp-content/uploads/2015/01/tespeed2.png)
 
-在tespeed中有很多选项，如**-ls**来现实服务器，**-p**来指定代理服务器， **-s**来阻止调试(STDERR)输出, 还有很多我们会在本教程中探索。
+在tespeed中有很多选项，如**-ls**来列出服务器，**-p**来指定代理服务器， **-s**来阻止调试(STDERR)输出, 还有很多我们会在本教程中探索。
 
-如果你想要结果现实成MB，你可以在**python tespeed.py** 后面接上选项 **-mib**。
+如果你想要结果显示成MB，你可以在**python tespeed.py** 后面接上选项 **-mib**。
 
     python tespeed.py -mib
 
@@ -61,7 +61,7 @@ tespeed是一款有很多特性的python工具，可以在终端在测试网速�
 
 ### 总结 ###
 
-=tespeed的确是一款帮助用户在终端中测试上传和下载速度的高性能python脚本。它支持很多的选项并且你可以指定列表中你想使用的服务器。继续使用tespeed并在留言区写下你们的体验吧。
+tespeed的确是一款帮助用户在终端中测试上传和下载速度的高性能python脚本。它支持很多的选项并且你可以指定列表中你想使用的服务器。继续使用tespeed并在留言区写下你们的体验吧。
 
 --------------------------------------------------------------------------------
 
@@ -69,7 +69,7 @@ via: http://linoxide.com/tools/tespeed-python-tool-test-internet-speed/
 
 作者：[Oltjano Terpollari][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
