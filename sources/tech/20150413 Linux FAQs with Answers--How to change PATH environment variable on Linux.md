@@ -1,3 +1,5 @@
+Translating----geekpi
+
 Linux FAQs with Answers--How to change PATH environment variable on Linux
 ================================================================================
 > **Question**: When I try to run an executable, it complains "command not found." The executable is actually located in /usr/local/bin. How can I add /usr/local/bin to my PATH variable, so that I can run the command without specify the path?
