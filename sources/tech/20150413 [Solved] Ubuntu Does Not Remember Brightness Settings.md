@@ -1,3 +1,4 @@
+Translating by ZTinoZ
 [Solved] Ubuntu Does Not Remember Brightness Settings
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/04/Fix_Ubuntu_Brightness_Issue.jpg)
