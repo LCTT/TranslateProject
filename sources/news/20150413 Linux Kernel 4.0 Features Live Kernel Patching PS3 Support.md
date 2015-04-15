@@ -1,3 +1,4 @@
+translating wi-cuckoo
 Linux Kernel 4.0 Features Live Kernel Patching, PS3 Support
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2011/10/tuxtuxtux.jpeg)
