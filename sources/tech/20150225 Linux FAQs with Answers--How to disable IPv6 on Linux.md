@@ -1,7 +1,6 @@
-Translating by ZTinoZ
-Linux FAQs with Answers--How to disable IPv6 on Linux
+Linux有问必答时间--如何在Linux下禁用IPv6
 ================================================================================
-> **Question**: I notice that one of my applications is trying to establish a connection over IPv6. But since our local network is not able to route IPv6 traffic, the IPv6 connection times out, and the application falls back to IPv4, which causes unnecessary delay. As I don't have any need for IPv6 at the moment, I would like to disable IPv6 on my Linux box. What is a proper way to turn off IPv6 on Linux? 
+> **问题**：我发现我的一个应用程序在尝试通过IPv6建立连接，但是由于我们本地网络不允许分配IPv6的流量，IPv6连接会超时，应用程序的连接会退回到IPv4，这样就会造成不必要的延迟。由于我目前对IPv6没有任何需求，所以我想在我的Linux主机上禁用IPv6。有什么比较合适的方法呢？ 
 
 IPv6 has been introduced as a replacement of IPv4, the traditional 32-bit address space used in the Internet, to solve the imminent exhaustion of available IPv4 address space. However, since IPv4 has been used by every host or device connected to the Internet, it is practically impossible to switch every one of them to IPv6 overnight. Numerous IPv4 to IPv6 transition mechanisms (e.g., dual IP stack, tunneling, proxying) have been proposed to facilitate the adoption of IPv6, and many applications are being rewritten, as we speak, to add support for IPv6. One thing for sure is that IPv4 and IPv6 will inevitably coexist for the forseeable future.
 
@@ -121,9 +120,9 @@ If you are using NetworkManager to manage your network settings, you can disable
 
 ![](https://farm8.staticflickr.com/7293/16394993017_21917f027b_o.png)
 
-#### SSH server ####
+#### SSH服务 ####
 
-By default, OpenSSH server (sshd) tries to bind on both IPv4 and IPv6 addresses.
+默认情况下，OpenSSH服务(sshd)会去尝试捆绑IPv4和IPv6的地址。
 
 To force sshd to bind only on IPv4 address, open /etc/ssh/sshd_config with a text editor, and add the following line. inet is for IPv4 only, and inet6 is for IPv6 only.
 
@@ -133,14 +132,14 @@ To force sshd to bind only on IPv4 address, open /etc/ssh/sshd_config with a tex
 
     AddressFamily inet
 
-and restart sshd server.
+然后重启sshd服务。
 
 --------------------------------------------------------------------------------
 
 via: http://ask.xmodulo.com/disable-ipv6-linux.html
 
 作者：[Dan Nanni][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ZTinoZ](https://github.com/ZTinoZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
