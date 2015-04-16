@@ -1,67 +1,66 @@
-[boredivan翻译中]
-How To Scan And Check A WordPress Website Security Using WPScan, Nmap, And Nikto
+怎样用 WPScan，Nmap 和 Nikto 扫描和检查一个 WordPress 站点的安全性
 ================================================================================
-### Introduction ###
+### 介绍 ###
 
-Millions of websites are powered by WordPress software and there’s a reason for that. WordPress is the most developer-friendly content management system out there, so you can essentially do anything you want with it. Unfortunately, every day some scary report about a major site being hacked or a sensitive database being compromised hits the web … and freaks everyone out.
+数百万个网站用着 WordPress ，这当然是有原因的。WordPress 是众多内容管理系统中对开发者最友好的，本质上说你可以用它做任何事情。不幸的是，每天都有些吓人的报告说某个主要的网站被黑了，或者某个重要的数据库被泄露了之类的，吓得人一愣一愣的。
 
-If you haven’t installed WordPress yet, check the following article.
-On Debian based systems:
+如果你还没有安装 WordPress ，可以看下下面的文章。
+在基于 Debian 的系统上：
 
 - [How to install WordPress On Ubuntu][1]
 
-On RPM based systems:
+在基于 RPM 的系统上：
 
 - [How to install wordpress On CentOS][2]
 
-Following on from my previous article [How To Secure WordPress Website][3]  show you **checklist** allows you to secure your WordPress site with as little effort as possible.
+我之前的文章 [How To Secure WordPress Website][3] 里面列出的**备忘录**为读者维护 WordPress 的安全提供了一点帮助。
 
-In this article, will describe to you  through the installation of **wpscan** and serve as a guide on how to use wpscan to locate any known vulnerable plugins and themes that may make your site vulnerable to attack. Also, how to install and use **nmap** the free Security Scanner For Network Exploration & Hacking . And at the end we will show you the steps to use **nikto**.
+在这篇文章里面，我将说明 **wpscan** 的安装过程，以及怎样使用 wpscan 来锁定任何已知的会让你的站点变得易受攻击的插件和主题。还有怎样安装和使用一款免费的网络探索和攻击的安全扫描软件 **nmap** 。最后展示的是使用 **nikto** 的步骤。
 
-### WPScan to Test for Vulnerable Plugins and Themes in WordPress ###
+### 用 WPScan 测试 WordPress 中易受攻击的插件和主题 ###
 
-**WPScan** is a black box WordPress Security Scanner written in Ruby which attempts to find known security weaknesses within WordPress installations. Its intended use it to be for security professionals or WordPress administrators to asses the security posture of their WordPress installations. The code base is Open Source and licensed under the GPLv3.
+**WPScan** 是一个 WordPress 黑盒安全扫描软件，用 Ruby 写成，它是专门用来寻找已知的 WordPress 的弱点的。它为安全专家和 WordPress 管理员提供了一条评估他们的 WordPress 站点的途径。它的基于开源代码，在 GPLv3 下发行。
 
-### Download and Install WPScan ###
+### 下载和安装 WPScan ###
 
-Before we get started with the installation, it is important to note that wpscan will not work on Windows systems, so you will need access to a Linux or OSX installation to proceed. If you only have access to a Windows system you can download Virtualbox and install any Linux distro you like as a Virtual Machine.
+在我们开始安装之前，很重要的一点是要注意 wpscan 不能在 Windows 下工作，所以你需要使用一台 Linux 或者 OS X 的机器来完成下面的事情。如果你只有 Windows 的系统，拿你可以下载一个 Virtualbox 然后在虚拟机里面安装任何你喜欢的 Linux 发行版本。
 
-WPScan is hosted on Github, so if it is not already installed we will need to install the git packages before we can continue.
+WPScan 的源代码被放在 Github 上，所以需要先安装 git。
 
     sudo apt-get install git
 
-Once git is installed, we need to install the dependencies for wpscan.
+git 装好了，我们就要安装 wpscan 的依赖包了。
 
     sudo apt-get install libcurl4-gnutls-dev libopenssl-ruby libxml2 libxml2-dev libxslt1-dev ruby-dev ruby1.9.3
 
-Now we need to clone the wpscan package from github.
+把 wpscan 从 github 上 clone 下来。
 
     git clone https://github.com/wpscanteam/wpscan.git
 
-Now we can move to the newly created wpscan directory and install the necessary ruby gems through bundler.
+现在我们可以进入这个新建立的 wpscan 目录，通过 bundler 安装必要的 ruby 包。
 
     cd wpscan
     sudo gem install bundler && bundle install --without test development
 
-Now that we have wpscan installed, we will walk through using the tool to search for potentially vulnerable files on our WordPress installation. Some of the most important aspects of wpscan are its ability to enumerate not only plugins and themes, but users and timthumb installations as well. WPScan can also perform bruteforce attacks against WordPress– but that is outside of the scope of this article.
+现在 wpscan 装好了，我们就可以用它来搜索我们 WordPress 站点潜在的易受攻击的文件。wpcan 最重要的方面是它能列出不仅是插件和主题，也能列出用户和缩略图的功能。WPScan 也可以用来暴力破解 WordPress —— 但这不是本文要讨论的内容。
 
-#### Update wpscan ####
+#### 跟新 WPScan ####
 
     ruby wpscan.rb --update
 
-#### Enumerate Plugins ####
+#### 列举插件 ####
 
-To enumerate plugins, all we need to do is launch wpscan with the `--enumerate p` arguments like so.
+要列出所有插件，只需要加上 “--enumerate p” 参数，就像这样：
 
     ruby wpscan.rb --url http(s)://www.yoursiteurl.com --enumerate p
 
-or to only display vulnerable plugins:
+或者仅仅列出易受攻击的插件：
 
     ruby wpscan.rb --url http(s)://www.yoursiteurl.com --enumerate vp
 
-Some example output is posted below:
+下面是一些例子：
 
-    | Name: akismet
+    | Name: ukiscet
     | Location: http://********.com/wp-content/plugins/akismet/
     
     | Name: audio-player
@@ -92,17 +91,18 @@ Some example output is posted below:
     | Name: contact
     | Location: http://********.com/wp-content/plugins/contact/
 
-#### Enumerate Themes ####
+#### 列举主题 ####
 
-Enumeration of themes works the same as enumeration of plugins, just with the `--enumerate t` argument.
+列举主题和列举插件差不多，只要用"--enumerate t"就可以了。
+
 
     ruby wpscan.rb --url http(s)://www.host-name.com --enumerate t
 
-Or to only display vulnerable themes:
+或者只列出易受攻击的主题：
 
     ruby wpscan.rb --url http(s)://www.host-name.com --enumerate vt
 
-Sample output:
+例子的输出：
 
     | Name: path
     | Location: http://********.com/wp-content/themes/path/
@@ -127,29 +127,30 @@ Sample output:
     | Style URL: http://********.com/wp-content/themes/twentyten/style.css
     | Description: 
 
-#### Enumerate Users ####
+#### 列举用户 ####
 
-WPScan can also be used to enumerate users with valid logins to the WordPress installation. This is usually performed by attackers in order to get a list of users in preparation for a bruteforce attack.
+WPscan 也可以用来列举某个 WordPress 站点的用户和有效的登录记录。攻击者常常这么做——为了获得一个用户清单，好进行暴力破解。
 
     ruby wpscan.rb --url http(s)://www.host-name.com --enumerate u
 
-#### Enumerate Timthumb Files ####
+#### 列举 Timthumb 文件 ####
 
-The last function of wpscan we’ll discuss in this article is the ability to enumerate timthumb installations. In recent years, timthumb has become a very common target of attackers due to the numerous vulnerabilities found and posted to online forums, message lists, and advisory boards. Using wpscan to find vulnerable timthumb files is done with the following command.
+关于 WPscan ，我要说的最后一个功能是列举 timthub 相关的文件。近年来，timthumb 已经成为攻击者眼里的一个普通的目标，因为无数的漏洞被找出来并发到论坛上、邮件列表等等地方。用下面的命令可以通过 wpscan 找出易受攻击的 timthub 文件：
 
     ruby wpscan.rb --url http(s)://www.host-name.com --enumerate tt
 
-### Nmap to Scan for Open Ports on your VPS ###
+### 用 Nmap 扫描你 VPS 的开放端口 ###
 
-**Nmap**  is an open source tool for network exploration and security auditing. It was designed to rapidly scan large networks, although it works fine against single hosts. Nmap uses raw IP packets in novel ways to determine what hosts are available on the network, what services (application name and version) those hosts are offering, what operating systems (and OS versions) they are running, what type of packet filters/firewalls are in use, and dozens of other characteristics
+**Nmap** 是一个开源的用于网络探索和安全审查方面的工具。它可以迅速扫描巨大的网络，也可一单机使用。Nmap 用原始 IP 数据包通过不同寻常的方法判断网络里那些主机是正在工作的，那些主机上都提供了什么服务（应用名称和版本），是什么操作系统（以及版本），用的什么类型的防火墙，以及很多其他特征。
 
-### Download and install nmap on Debian and Ubuntu ###
+### 在 Debian 和 Ubuntu 上下载和安装 nmap ###
 
-To install nmap for Debian and Ubuntu Linux based server systems type the following apt-get command:
+要在基于 Debian 和 Ubuntu 的操作系统上安装 nmap ，运行下面的命令：
+
 
     sudo apt-get install nmap
 
-**Sample outputs:**
+**输出样例**
 
     Reading package lists... Done
     Building dependency tree
@@ -167,27 +168,27 @@ To install nmap for Debian and Ubuntu Linux based server systems type the follow
     Processing triggers for man-db ...
     Setting up nmap (5.21-1.1ubuntu1) ...
 
-#### Examples ####
+#### 打个例子 ####
 
-To find the nmap version, enter:
+输出 nmap 的版本：
 
     nmap -V
 
-OR
+或者
 
     nmap --version
 
-**Sample outputs:**
+**输出样例**
 
     Nmap version 5.21 ( http://nmap.org )
 
-### Dowonlad and  install nmap on Centos ###
+### 在 Centos 上下载和安装 nmap ###
 
-To install nmap on RHEL based Linux distributions, type the following yum command:
+要在基于 RHEL 的 Linux 上面安装 nmap ，输入下面的命令：
 
     yum install nmap
 
-**Sample outputs:**
+**输出样例**
 
     Loaded plugins: protectbase, rhnplugin, security
     0 packages excluded due to repository protections
@@ -226,63 +227,63 @@ To install nmap on RHEL based Linux distributions, type the following yum comman
      
     Complete!
 
-#### Examples ####
+#### 举个比方 ####
 
-To find the nmap version, enter:
+输出 nmap 版本号：
 
     nmap --version
 
-**Sample outputs:**
+**输出样例**
 
     Nmap version 5.51 ( http://nmap.org )
 
-#### Scan Ports with Nmap ####
+#### 用 Nmap 扫描端口 ####
 
-You can got a lot of information about your server or host using nmap and it let you to think like someone has malicious intent.
+你可以用 nmap 来获得很多关于你的服务器的信息，它让你站在对你的网站不怀好意的人的角度看你自己的网站。
 
-For this reason, only test it on servers that you own or in situations where you’ve notified the owners.
+因此，请仅用它测试你自己的服务器或者在行动之前通知服务器的所有者。
 
-The nmap creators actually provide a test server located at:
+nmap 的作者提供了一个测试服务器：
 
     scanme.nmap.org
 
-Some commands may take a long while to complete:
+有些命令可能会耗时较长：
 
-To scan an IP address or a host name (FQDN), run:
+要扫描一个 IP 地址或者一个主机名（全称域名），运行：
 
     nmap 192.168.1.1
 
-Sample outputs:
+输出样例：
 
 ![Fig.01: nmap in action](http://s0.cyberciti.org/uploads/faq/2012/11/redhat-nmap-command-output.png)
 
-Scan for the host operating system:
+扫描以获得主机的操作系统：
 
     sudo nmap -O 192.168.1.1
 
-pecify a range with “-” or “/24″ to scan a number of hosts at once:
+加上“-”或者“/24”来一次性扫描某个范围里面的多个主机：
 
     sudo nmap -PN xxx.xxx.xxx.xxx-yyy
 
-Scan a network range for available services:
+扫描某个范围内可用的服务：
 
     sudo nmap -sP network_address_range
 
-Scan without preforming a reverse DNS lookup on the IP address specified. This should speed up your results in most cases:
+扫描 IP 地址时部进行反向 DNS 解析。多数情况下这会加快你获得结果的速度：
 
     sudo nmap -n remote_host
 
-Scan a specific port instead of all common ports:
+扫描一个特定端口而不是所有常用端口：
 
     sudo nmap -p port_number remote_host
 
-Scan a network and find out which servers and devices are up and running
+扫描一个网络，找出那些服务器在线，分别运行了什么服务
 
-This is known as host discovery or ping scan:
+这就是传说中的主机探索或者 ping 扫描：
 
     nmap -sP 192.168.1.0/24
 
-Sample outputs:
+输出样例：
 
     Host 192.168.1.1 is up (0.00035s latency).
     MAC Address: BC:AE:C5:C3:16:93 (Unknown)
@@ -293,25 +294,25 @@ Sample outputs:
     MAC Address: 00:11:32:11:15:FC (Synology Incorporated)
     Nmap done: 256 IP addresses (4 hosts up) scanned in 2.80 second
 
-Understanding port configuration and how to discover what the attack vectors are on your server is only one step to securing your information and your VPS.
+理解端口配置和如何发现你的服务器上的攻击的载体只是确保你的信息和你的 VPS 安全的第一步。
 
-### Nikto to Scan for vulnerabilities in your website ###
+### 用 Nikto 扫描你网站的缺陷 ###
 
-[Nikto][4] Web-scanner is a open source web-server scanner which can be used to scan the web-servers for malicious programs and files. Nikto can be used to scan the outdated versions of programs too. Nikto will provide us a quick and easy scan to find out the dangerous files and programs in server, At the end of scan result with a log file.
+[Nikto][4] 网络扫描器是一个开源的 web 服务器的扫描软件，它可以用来扫描 web 服务器上的恶意的程序和文件。Nikto 也可一用来检查软件版本是否过期。Nikto 能进行简单而快速地扫描以发现服务器上危险的文件和程序。扫描结束后会给出一个日志文件。`
 
-### Download and  install Nikto on Linux server ###
+### 在 Linux 服务器上下载和安装 Nikto ###
 
-Perl is pre-installed in linux so all you need to do is download nikto from the [project page][5], unpack it into a directory and start your testing.
+Perl 在 Linux 上是预先安装好的，所以你只需要从[项目页面][5]下载 nikto ，解压到一个目录里面，然后开始测试。
 
     wget https://cirt.net/nikto/nikto-2.1.4.tar.gz
 
-You can unpack it with an archive manager tool or use tar and gzip together with this command.
+你可以用某个归档管理工具或者用下面这个命令，同时使用 tar 和 gzip 。
 
     tar zxvf nikto-2.1.4.tar.gz
     cd nikto-2.1.4
     perl nikto.pl
 
-This should be your results from a working installation:
+安装正确的话会得到这样的结果：
 
      - ***** SSL support not available (see docs for SSL install) *****
     - Nikto v2.1.4
@@ -348,27 +349,27 @@ This should be your results from a working installation:
     
         Note: This is the short help output. Use -H for full help.
 
-The error is merely telling us we did not fill in the necessary parameters for a test to run. The SSL support can be enabled by installing the necessary perl ssl module (sudo apt-get install libnet-ssleay-perl).
+这个报错只是告诉我们没有给出必要的参数。SSL 支持可以通过安装相关的 perl ssl 模块得到（sudo apt-get install libnet-ssleay-perl）。
 
-#### Update the nikto Database ####
+#### 更新 nikto 数据库 ####
 
-Before performing any scan we need to update the nikto database packages using.
+在开始使用之前我们需要先更新 nikto 数据库：
 
     /usr/local/bin/nikto.pl -update
 
-To list the available Plugins for nikto we can use the below command.
+下面的命令可以列出可用的 nikto 插件。
 
     nikto.pl -list-plugins // To list the installed plugins //
 
-#### Scan for vulnerabilities ####
+#### 扫描以寻找缺陷 ####
 
-For a simple test for  we will use test a single url.
+我们用一个 url 来在做个简单的测试。
 
     perl nikto.pl -h http://www.host-name.com
 
-**Sample outputs:**
+**输出样例**
 
-This will produce fairly verbose output that may be somewhat confusing at first. Take the time to read through the output to understand what each advisory means. Many of the alerts in Nikto will refer to OSVDB numbers. These are Open Source Vulnerability Database ([http://osvdb.org/][6]) designations. You can search on OSVDB for further information about any vulnerabilities identified.
+会有十分冗长的输出，可能一开始会让人感到困惑。许多 Nikto 的警报会返回 OSVDB 序号。这是开源缺陷数据库（[http://osvdb.org/][6]）的意思。你可以在 OSVDB 上找出相关缺陷的深入说明。
 
     $ nikto -h http://www.host-name.com
     - Nikto v2.1.4
@@ -399,18 +400,18 @@ This will produce fairly verbose output that may be somewhat confusing at first.
     + 1 host(s) tested
     $
 
-**Nikto** is an extremely lightweight, and versatile tool. Because of the fact that Nikto is written in Perl it can be run on almost any host operating system.
+**Nikto** 是一个非常轻量级的通用工具。因为 Nikto 是用 Perl 写的，所以它可以在几乎任何服务器的操作系统上运行。
 
-Hope this will will bring you a good idea to scan vulnerbalites for your wordpress website. Following on from my previous article [How To Secure WordPress Website][7]  show you **checklist** allows you to secure your WordPress site with as little effort as possible.
+希望这篇文章能在你找你的 wordpress 站点的缺陷的时候给你一些提示。我之前的文章[怎样保护 WordPress 站点][7]记录了一个**清单**，可以让你保护你的 WordPress 站点的工作变得更简单。
 
-If you have any feedback or comments, feel free to post them in the comment section below.
+有想说的，留下你的评论。
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/scan-check-wordpress-website-security-using-wpscan-nmap-nikto/
 
 作者：[anismaj][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[boredivan](https://github.com/boredivan)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
