@@ -1,3 +1,4 @@
+Translating by ictlyh
 Linux Network Statistics Tools / Commands
 ================================================================================
 How do I find out the current network interface throughput statistics on Linux (CentOS or Debian based distro)? How do I see current kernel snmp counters and network interface statistics on Linux operating systems?
