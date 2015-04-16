@@ -1,3 +1,4 @@
+Translating by H-mudcup 
 Ambient Noise Player for Ubuntu Plays Relaxing Sounds to Keep You Creative
 ================================================================================
 ![Rain is a soothing sound for some](http://www.omgubuntu.co.uk/wp-content/uploads/2015/04/raining-1600x900-wallpaper_www.wallpapermay.com_84-1.jpg)
