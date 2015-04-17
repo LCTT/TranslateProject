@@ -1,3 +1,4 @@
+translating wi-cuckoo
 This tool can alert you about evil twin access points in the area
 ================================================================================
 **EvilAP_Defender can even attack rogue Wi-Fi access points for you, the developer says**
