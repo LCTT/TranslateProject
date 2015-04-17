@@ -1,3 +1,4 @@
+translating wi-cuckoo
 Elementary OS 0.3 Freya Screenshots - Download and Install Guide
 ================================================================================
 Elementary OS is a light weight Ubuntu based operating system which is getting wide spread popularity. It has three versions released to date whereas fourth version is decided to be developed based on upcoming Ubuntu 16.04.
