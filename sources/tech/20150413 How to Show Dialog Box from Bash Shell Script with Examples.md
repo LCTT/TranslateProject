@@ -1,3 +1,4 @@
+Translating by ictlyh
 How to Show Dialog Box from Bash Shell Script with Examples
 ================================================================================
 This tutorial will give couple of examples on how to use utilities like zenity and whiptail in your Bash shell script to provide message / dialog box . With these utilities your script will be able to inform user about the current state of execution, or give an ability to interact. Difference between these two utilities is the way they are displaying message box or dialog. Zenity uses GTK toolkit for creating graphical user interfaces, while whiptail creates message boxes inside terminal window.

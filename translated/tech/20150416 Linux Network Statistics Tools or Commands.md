@@ -1,18 +1,18 @@
-Linux Network Statistics Tools / Commands
+Linux网络统计工具/命令
 ================================================================================
-How do I find out the current network interface throughput statistics on Linux (CentOS or Debian based distro)? How do I see current kernel snmp counters and network interface statistics on Linux operating systems?
+我在Linux(基于CentOS 或者 Debian 的发行版)中该如何查看当前网络端口吞吐量的统计信息？在Linux操作系统中如何查看当前内核snmp计数器以及网络端口的统计信息？
 
 ![](http://s0.cyberciti.org/images/category/old/networking.png)
 
-You can use any one of the following commands:
+你可以使用以下任何一个命令：
 
-### nstat command : Network Statistics Tool ###
+### nstat 命令 : 网络统计工具 ###
 
-Type the following command:
+键入以下命令:
 
     # nstat
 
-Sample outputs:
+输出样例:
 
     #kernel
     IpInReceives                    133243             0.0
@@ -52,13 +52,13 @@ Sample outputs:
     IpExtInOctets                   180131682          0.0
     IpExtOutOctets                  7289106            0.0
 
-### ss command : Utility To Investigate Sockets ###
+### ss 命令 : 查询套接字工具 ###
 
-To see summary of stats, enter:
+要查看统计汇总, 输入:
 
     # ss -s
 
-Sample outputs:
+输出样例:
 
     Total: 786 (kernel 804)
     TCP:   65 (estab 40, closed 7, orphaned 0, synrecv 0, timewait 6/0), ports 56
@@ -70,15 +70,15 @@ Sample outputs:
     INET	  71        62        9
     FRAG	  0         0         0
 
-See [ss command tutorial][1] for more information.
+查看[ss 命令教程][1] 获取更多信息。
 
-### netstat command : The Old Good Utility To Show Sockets ###
+### netstat 命令 : 显示套接字信息的旧的好工具 ###
 
-To see a table of all network interfaces and its summary, enter:
+查看所有网络端口以及汇总信息表，输入：
 
     # netstat -i
 
-Sample outputs:
+输出样例:
 
     Kernel Interface table
     Iface   MTU Met   RX-OK RX-ERR RX-DRP RX-OVR    TX-OK TX-ERR TX-DRP TX-OVR Flg
@@ -86,11 +86,11 @@ Sample outputs:
     lo        16436 0      9304      0      0 0          9304      0      0      0 LRU
     ppp0       1496 0      3784      0      0 0          4177      0      0      0 MOPRU
 
-To see summary statistics for each protocol, enter:
+查看每个协议的汇总统计信息，输入：
 
     # netstat -s
 
-Sample outputs:
+输出样例:
 
     Ip:
         1092065 total packets received
@@ -185,19 +185,19 @@ Sample outputs:
         OutMcastOctets: 7519
         InBcastOctets: 328
 
-See [netstat command tutorial][2] for more information.
+查看 [netstat 命令教程][2] 获取更多信息。
 
-### ip / ifconfig command : Configure or Show a Network Interface Info ###
+### ip / ifconfig 命令 : 配置或者显示网络端口信息 ###
 
-Type the following command:
+键入以下命令:
 
     # ifconfig 
 
-OR
+或者
 
     # /sbin/ifconfig
 
-OR
+或者
 
     # ifconfig eth0
 
@@ -228,11 +228,11 @@ OR
               collisions:0 txqueuelen:3
               RX bytes:2400265 (2.2 MiB)  TX bytes:275983 (269.5 KiB)
 
-To display network interface statistics, enter:
+显示网络端口统计信息，输入：
 
     # ip -s link
 
-Sample outputs:
+输出样例:
 
     1: lo:  mtu 16436 qdisc noqueue state UNKNOWN
         link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -265,9 +265,9 @@ Sample outputs:
         TX: bytes  packets  errors  dropped carrier collsns
         284151     4287     0       0       0       0
 
-### sar command: Display Network Stats ###
+### sar 命令: 显示网络统计信息 ###
 
-Type the following command (you need to [install and enable sar via sysstat package][3]):
+输入以下命令 (你需要 [通过sysstat包安装并启用sar][3]):
 sar -n DEV
 
     Linux 2.6.32-220.2.1.el6.x86_64 (www.cyberciti.biz)    Tuesday 13 March 2012   _x86_64_        (2 CPU)
@@ -315,11 +315,11 @@ sar -n DEV
     Average:         eth0    211.21    196.20    156.18     31.20      0.00      0.00      0.01
     Average:         eth1    159.10    174.52     28.00    149.95      0.00      0.00      0.00
 
-Or type the following command:
+或者输入以下命令:
 
     # sar -n DEV 1 3
 
-Sample outputs:
+输出样例:
 
     Linux 2.6.32-220.2.1.el6.x86_64 (www.cyberciti.biz)    Tuesday 13 March 2012   _x86_64_        (2 CPU)
     01:44:03  CDT     IFACE   rxpck/s   txpck/s    rxkB/s    txkB/s   rxcmp/s   txcmp/s  rxmcst/s
@@ -344,7 +344,7 @@ Sample outputs:
 via: http://www.cyberciti.biz/faq/network-statistics-tools-rhel-centos-debian-linux/
 
 作者：[nixCraft][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ictlyh](https://github.com/ictlyh)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
