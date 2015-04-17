@@ -1,4 +1,4 @@
-The history of Android
+【translating】The history of Android
 ================================================================================
 ![](http://cdn.arstechnica.net/wp-content/uploads/2014/03/ready-fight.png)
 
