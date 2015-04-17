@@ -103,7 +103,7 @@ zenity --info --title "Information Box" --text "This should be information" --wi
 
 ![whiptail输入框截图](http://blog.linoxide.com/wp-content/uploads/2015/03/Screenshot-whiptail-entry.png)
 
-尝试使用输入值要注意的一点是whiptail用stdout显示对话框，用stderr输出值。那样的话，如果你用 var=$(...)，你不会看到对话框，也不能获得输入的值。解决方法是选择stdout和stderr。在whiptail命令后面添加 **3>&1 1>&2 2>&3** 就可以做到。你想获取输入值的任何whiptail命令也是如此。
+尝试使用输入值要注意的一点是whiptail用stdout显示对话框，用stderr输出值。那样的话，如果你用 var=$(...)，你不会看到对话框，也不能获得输入的值。解决方法是交换stdout和stderr。在whiptail命令后面添加 **3>&1 1>&2 2>&3** 就可以做到。你想获取输入值的任何whiptail命令也是如此。
 
 ### 创建菜单对话框 ###
 
@@ -149,7 +149,7 @@ zenity --info --title "Information Box" --text "This should be information" --wi
 
 输入框
 
-![例2-消息框](http://blog.linoxide.com/wp-content/uploads/2015/03/Example2-Information.png\)
+![例2-消息框](http://blog.linoxide.com/wp-content/uploads/2015/03/Example2-Information.png)
 
 消息框
 
