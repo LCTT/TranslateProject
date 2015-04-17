@@ -1,3 +1,4 @@
+demon 翻译中
 How to manage remote MySQL databases on Linux VPS using a GUI tool
 ================================================================================
 If you need to run a MySQL server on a remote [VPS instance][1], how will you manage databases hosted by the server remotely? Perhaps web-based database administration tools such as [phpMyAdmin][2] or [Adminer][3] will first come to mind. These web-based management tools require a backend web server and PHP engine up and running. However, if your VPS instance is used as a standalone database server (e.g., for a multi-tier app), provisioning a whole LAMP stack for occasional database management is a waste of VPS resource. Worse, the LAMP stack with an additional HTTP port can be a source of security vulnerabilities of your VPS.
