@@ -1,3 +1,5 @@
+translating by cvsher
+
 14 Useful Examples of Linux ‘sort’ Command – Part 1
 ================================================================================
 Sort is a Linux program used for printing lines of input text files and concatenation of all files in sorted order. Sort command takes blank space as field separator and entire Input file as sort key. It is important to notice that sort command don’t actually sort the files but only print the sorted output, until your redirect the output.
