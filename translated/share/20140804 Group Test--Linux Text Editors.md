@@ -232,19 +232,17 @@ jEdit拥有最令人映像深刻的插件设施。该应用有超过200个插件
 
 ### 纯文本编辑 ###
 
+尽管它们强大的额外功能甚至可能会取代几个流派完全成熟的应用程序，有时候可能只需要使用这些庞大的文本编辑器读写或者编辑简单的纯文本。虽然你可以使用它们中的任何一个输入文本，我们通过普通文本编辑的方便性平均它们。
 
+Gnome的默认文本编辑器Gedit，支持取消和重做机制以及搜索和替换。它可以对多种语言进行拼写检查，并能通过使用Gnome GVFS库访问和编辑远程文件。
 
-Despite all their powerful extra-curricular activities that might even displace full-blown apps across several genres, there will be times when you just need to use these text editing behemoths to read, write, or edit plain and simple text. While you can use all of them to enter text, we are evaluating them for access to common text-editing conveniences.
+你也可以使用Kate进行拼写检查，它也可以让你对任何高亮文本进行Google搜索。它还有一个能可视化告知用户文件中更改过但没有保存的行的行修改系统。另外，它通过允许用户在文件中使用书签简化长文档的导航。
 
-Gedit which is Gnome’s default text editor, supports an undo and redo mechanism as well as search and replace. It can spellcheck documents in multiple languages and can also access and edit remote files using Gnome GVFS libraries.
+Sublime有很多可选择的编辑命令，例如缩进文本和格式化段落。它的自动保存功能帮助防止用户丢失他们的更改。高级用户还会喜欢基于正则表达式的递归查找和替换功能，以及选择多个不连续的文本块并执行统一操作。
 
-You can spellcheck documents with Kate as well, which also lets you perform a Google search on any highlighted text. It’s also got a line modification system which visually alerts users of lines which have modified and unsaved changes in a file. In addition, it enables users to set bookmarks within a file to ease navigation of lengthy documents.
+UltraEdit也允许用户在查找和替换功能中使用正则表示，并能通过FTP编辑远程文件。JEdit一个独特的功能是它支持被称为寄存器的不限数目的剪切板。你可以复制文本片段到这些寄存器中，在编辑会话过程中都可用。
 
-Sublime has a wide selection of editing commands, such as indenting text and formatting paragraphs. Its auto-save feature helps prevent users from losing their work. Advanced users will appreciate the regex-based recursive find and replace feature, as well as the ability to select multiple non-contiguous spans of text and act on them collectively.
-
-UltraEdit also enables the use of regular expressions for its search and replace feature and can edit remote files via FTP. One unique feature of jEdit is its support for an unlimited number of clipboard which it calls registers. You can copy snippets of text to these registers which are available across editing sessions.
-
-**Verdict:**
+**评定:**
 
 - Gedit: 4/5
 - Kate: 5/5
@@ -252,69 +250,69 @@ UltraEdit also enables the use of regular expressions for its search and replace
 - UltraEdit: 4/5
 - jEdit: 4/5
 
-### Our verdict ###
+### 我们的评比 ###
 
-All the editors in this feature are good enough to replace your existing text editor for editing text files and tweaking configuration files. In fact, chances are they’ll even double up as your IDE. These apps are chock full of bells and whistles, and their developers aren’t thinking of stripping features, but adding more and more and more.
+在这里的所有编辑器都足以替换你已有的文本编辑器去用来编辑文本和调整配置文件。事实上，没准它们会组合起来作为你的集成开发环境。这些应用程序都有各种各样功能，它们的开发者不会考虑剥离功能，而是增加越来越多的功能。
 
-At the tail end of this test we have jEdit. Not only does it insist on using the proprietary Oracle Java Runtime Environment, it failed to install on our Fedora machine, and the developer doesn’t actively engage with its users.
+jEdit排在这次测试的最后面。因为它不仅坚持使用专有的Oracle Java运行环境，不能在你的Fedora机器上安装，而且开发者不积极的和用户交互。
 
-UltraEdit does little better. This commercial proprietary tool focuses on web developers, and doesn’t offer anything to non-developer power users that makes it worth recommending over free software alternatives.
+UltraEdit做的稍微好一点。这个商业专用工具专注于网络开发者，不为非开发者高级用户提供任何功能，使得它不值得推荐为免费软件的替代品。
 
-On the third podium position we have Gedit. There’s nothing inherently wrong with Gnome’s default editor, but despite all its positive aspects, it’s simply outclassed by Sublime and Kate. Out of the box, Kate is a more versatile editor than Gedit, and outscores Gnome’s default editor even after taking their respective plugin systems into consideration.
+排在第三的是Gedit。作为Gnome的默认编辑器，它没有任何内在的错误，但尽管有很多积极的方面，它还是略微被Sublime和Kate超越。开诚布公地说，Kate是比Gedit更通用的编辑器，甚至考虑到他们的插件系统，评分也优于Gnome的默认编辑器。
 
-Both Sublime and Kate are equally good. They performed equally well in most of our tests. Whatever ground it lost to Sublime for not supporting macros, it gained for its keyboard friendliness and its ease of use in defining custom keybindings.
+Sublime和Kate都相当好。他们在我们的大多数测试中表现同样出色。由于不支持宏而落后于Sublime，但键盘友好和能简单定义自定义键绑定又使Kate找回优势。
 
-Kate’s success can be drawn from the fact that it offers the maximum number of features with minimal learning curve. Just fire it up and use it as a simple text editor, or easily edit configuration file with syntax highlighting, or even use it to collaborate and work on a complex programming project thanks to its project management capabilities.
+Kate成功的原因可以归结为它通过最小化学习曲线提供了最大化数目的功能。尽量使用它吧，不仅作为简单文本编辑器使用，或者容易使用语法高亮编辑配置文件，甚至得益于项目管理能力能使用它协作一个复杂的编程项目。
 
-We aren’t pitching Kate to replace a full-blown integrated development environment such as [insert your favourite specialised tool here]. But it’s an ideal all-rounder and a perfect stepping stone to a specialised tool.
+我们不是选择Kate去替换一个类似[在这里插入你最喜欢的专业工具]的全面的集成开发环境。但是它是一个专业工具理想的全面的以及完美的垫脚石。
 
-Kate is designed for moments when you need something that’s quick to respond, doesn’t overwhelm you with its interface and is just as useful as something that might otherwise be overkill.
+Kate为能快速响应你的需要而设计，它的界面并不会使你茫然，并且和那些过于复杂的应用一样的有用。
 
 ### 1st Kate ###
 
 - Licence LGPL/GPL Version 3.11
 - www.kate-editor.org
-- The ultimate mild-mannered text editor with super powers.
-- Kate is one of the best apps to come out of the KDE project.
+- 拥有超能力，最终温和的文本编辑器。
+- Kate是KDE项目中最有用的应用程序之一。
 
 ### 2nd Sublime Text ###
 
 - Licence Proprietary Version 2.0.2
 - www.sublimetext.com
-- A professionally done text editor that’s worth every penny – easy to use, full of features and it looks great.
+- 值得你每分钱的专业文本编辑器 - 简单易用，功能全面而且看起来很棒。
 
 ### 3rd Gedit ###
 
 - Licence GPL Version 3.10
 - http://projects.gnome.org/gedit
-- Gets it done from Gnome. It’s a wonderful text editor and does an admirable job, but the competition here is too great.
+- 从Gnome中完成。这是一个奇妙的文本编辑器，确实令人钦佩的工作，但这里的竞争实在太大了。
 
 ### 4th UltraEdit ###
 
 - Licence Proprietary Version 4.1.0.4
 - www.ultraedit.com
-- Focuses on bundling conveniences for web developers without offering anything special for general users.
+- 关注于为网络开发者绑定便利，而不为普通用户提供任何特殊功能。
 
 ### 5th jEdit ###
 
 - Licence GPL Version 5.1.0
 - www.jedit.org
-- A lack of support, lack of working on Fedora and a lack of looking nice relegate jEdit to the bottom slot.
+- 缺乏支持，不支持Fedora，缺乏好看的界面，jEdit被贬低到最后。
 
-### You may also wish to try… ###
+### 你也许希望尝试… ###
 
-The default text editor that ships with your distro will also be able to assist you with some advanced tasks. There’s KDE’s KWrite and Raspbian’s Nano, for instance. KWrite inherits some of Kate’s features thanks to KDE’s katepart component, and Nano has sprung back into limelight thanks to its availability for Raspberry Pi.
+随你发行版发布的默认文本编辑器也能帮助你一些高级任务。例如KDE的KWrite和Raspbian的Nano。得益于KDE的katepart组件，KWrite继承了一些Kate的功能，得益于在树莓派上的可用性，Nano也开始重现风头。
 
-If you wish to follow the steps of Linux gurus, you could always try the revered text editors Emacs and Vim. First time users who want to get a taste for the power of Vim might want to consider gVim, which exposes Vim’s power via a graphical interface.
+如果你希望跟随Linux大师的脚本，你总是可以尝试崇高的文本编辑机Emacs和Vim。想尝试Vim强大的用户首先可以考虑gVim，它通过图形界面展现了Vim的强大。
 
-Besides jEdit and Kate, there are other editors that mimic the usability of veteran advanced editors like Emacs and Vim, such as the JED editor and Joe’s Own Editor, both of which have an emulation mode for Emacs. On the other hand, if you are looking for lightweight code editors check out Bluefish and Geany. They exist to fill the niche between text editors and full-fledged integrated development platforms. 
+除了jEdit和Kate，这里还有其他模仿例如Emacs和Vim之类的老派高级编辑器的编辑器，比如JED 编辑器和Joe's Own Editor，这两者都有Emacs的模拟模式。另一方面，如果你在寻找轻量级的代码编辑器，可以看看Bluefish和Geany。他们的存在是为了填补文本编辑器和全面集成的开发平台之间的空隙。
 
 --------------------------------------------------------------------------------
 
 via: http://www.linuxvoice.com/text-editors/
 
 作者：[Ben Everard][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ictlyh](https://github.com/ictlyh)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
