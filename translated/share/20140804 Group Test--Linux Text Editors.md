@@ -114,17 +114,17 @@ UltraEdit为它"一切都可自定义"的座右铭感到自豪，这也包括键
 
 ### 片段和宏 ###
 
-Macros help you cut down the time spent on editing and organising data by automating repetitive steps, while Snippets of code extend a similar functionality to programmers by creating reusable chunks of source code. Both have the ability to save you time.
+宏通过自动化重复的步骤帮助你降低花费在编辑和组织数据上的时间，而代码片段通过创建可重用的源代码块为程序员扩展类似的功能。这两者都能节省你的时间。
 
-The vanilla Gedit installation doesn’t have either of these functionalities, but you can enable them via separate plugins. While the Snippets plugin ships with Gedit, you’ll have to manually download and install the macro plugin (it’s called gedit-macropy and is hosted on GitHub) before you can enable it from within Gedit.
+标准的Gedit安装没有这两种功能中的任何一种，但是你可以通过独立的插件启用这些功能。片段插件随Gedit一起发布，但在Gedit内部启用宏插件之前你需要手动下载和安装(被称为gedit-macropy，托管在GitHub上)。
 
-Kate takes the same plugins route to enable the snippets feature. Once added, the plugin also adds a repository of snippets for PHP, Bash and Java. You can display the list of snippets in the sidebar for easier access. Right-click on a snippet to edit its contents as well as its shortcut key combination. However, very surprisingly, it doesn’t support macros – despite repeated hails from users since 2002!
+Kate也同样通过插件的形式启用片段功能。一旦加入，插件也增加了片段的PHP，Bash和Java库。你可以在侧边栏中显示片段列表以便于访问。可以通过右击片段或者快捷键组合方式编辑它的内容。然而，令人惊讶的是，它不支持宏-尽管用户从2002年开始重复要求！
 
-jEdit too has a plugin for enabling snippets. But it can record macros from user actions and you can also write them in the BeanShell scripting language (BeanShell supports scripted objects as simple method closures like those in Perl and JavaScript). jEdit also has a plugin that will download several macros from jEdit’s website.
+jEdit也有一个启用片段的插件。但是它可以从用户行为中记录宏或者你也可以在BeanShell 脚本语言(BeanShell支持像Perl和JavaScript那样将脚本对象封锁为简单的方法)中写宏。jEdit也有一个可以从jEdit的网站中下载多种宏的插件。
 
-Sublime ships with inbuilt ability to create both snippets and macros, and ships with several snippets of frequently used functions for most popular programming languages.
+Sublime有创建片段和宏的内建功能，也有为大多数编程语言经常使用的函数多种片段。
 
-Snippets in UltraEdit are called Smart Templates and just like with Sublime you can insert them based upon the kind of source file you’re editing. To complement the Macro recording function, UltraEdit also has an integrated javascript-based scripting language to automate tasks. You can also download user-submitted macros and scripts from the editor’s website.
+在UltraEdit中片段被称为智能模板，正如Sublime你可以根据正在编辑的源代码文件类型插入片段。要完成宏记录功能，UltraEdit还有一个基于JavaScript的集成脚本语言来完成自动任务。你也可以从编辑器的网站中下载用户提交的宏和脚本。
 
 **Verdict:**
 
@@ -134,67 +134,69 @@ Snippets in UltraEdit are called Smart Templates and just like with Sublime you 
 - UltraEdit:5/5
 - jEdit:5/5
 
-![UltraEdit’s UI is highly configurable — you can customise the layout of the toolbars and menus just as easily as you can change many other aspects.](http://www.linuxvoice.com/wp-content/uploads/2014/08/ultraedit-web.png)
+![UltraEdit的用户界面是高度可配置的 — 你可以正如改变其它许多方面那样简单的自定义工具栏和菜单的布局。](http://www.linuxvoice.com/wp-content/uploads/2014/08/ultraedit-web.png)
 
-UltraEdit’s UI is highly configurable — you can customise the layout of the toolbars and menus just as easily as you can change many other aspects.
+UltraEdit的用户界面是高度可配置的 — 你可以正如改变其它许多方面那样简单的自定义工具栏和菜单的布局。]
 
-### Ease of use ###
+### 易用性 ###
 
-Unlike a bare-bones text editor, the text editors in this feature are brimming with features to accommodate a wide range of users — from document writers to programmers. Instead of stripping features from the apps, their developers are looking for avenues to add more functionality.
+不像一个准系统文本编辑器，文本编辑器的这个功能洋溢着适应大范围用户的功能 - 从文档写作者到程序员。从应用程序剥离相反，他们的开发者在寻找添加更多功能的途径。
 
-Although at first glance most apps in this group test have a very similar layout, upon closer inspection, you’ll notice several usability differences. We have a weak spot for apps that expose their functionality and features by making judicious use of the user interface, instead of just overwhelming the user.
+尽管第一眼看上去这次组测试中的大部分应用有一个很相似的布局，经过仔细的检查，你会发现一些可用性差异。我们通过用户界面的合理使用来介绍它们的功能和特性，而不是铺天盖地地告诉读者。
 
 ### Gedit: 4/5 ###
 
-Gedit wears a very vanilla look. It has an easy interface with minimal menus and buttons. This is a two-edged sword though, as some users might fail to realise its true potential.
+Gedit有很普通的外观。通过最小化菜单和按钮有一个简单的界面。但这也是一种双刃剑，因为有些用户可能不会发现它真正的潜能。
 
-The app can open multiple files in tabs that can be rearranged and moved between windows. Users can optionally enable panels on the side and bottom for displaying a file browser and the output of a tool enabled by a plugin. The app will detect when an open file is modified by another application and offers to reload that file.
+应用程序可以通过在窗口中能重排和移动的选项卡打开多个文件。用户可以通过使用一个插件选择性地启用旁边或者底部用来显示文件浏览和工具输出的面板。这个应用程序会检测到被其它应用程序更改的文件并可以重新加载这个文件。
 
-The UI has been given a major overhaul in the latest version of the app yet to make its way into Gnome. However it isn’t yet stable, and while it maintains all features, several plugins that interact with the menu will need to be updated.
+为了适配Gnome，在应用程序的最后一个版本中考虑了大量的用户界面。然而它还并不稳定，尽管包括了所有的功能，和菜单交互的一些插件还需要升级。
 
 ### Kate: 5/5 ###
 
-Although a major part of its user interface resembles Gedit, Kate tucks in tabs at either side and its menus are much fuller. The app is approachable and invites users to explore other features.
+尽管用户界面的主要部分和Gedit的相似，Kate可以在两边显示选项卡并且它的菜单更加丰富。该应用程序平易近人，让用户可以挖掘其它功能。
 
-Kate can transparently open and save files over all protocols supported by KDE’s KIO including HTTP, FTP, SSH, SMB and WebDAV. You can use the app to work with multiple files at the same time. But unlike the traditional horizontal tab switching bar in most app, Kate has tabs on either side of the screen. The left sidebar will display an index of open files. Programmers who need to see different parts of the same file at the same time will also appreciate its ability to split the interface horizontally as well as vertically.
+Kate可以在KDE的KIO支持的所有协议上透明地打开和保存文件，包括HTTP, FTP, SSH, SMB 和 WebDAV。你可以用这个应用同时处理多个文件。但不同于大部分应用程序传统的水平选项卡选择栏，Kate在屏幕的两个方向都有选项卡。左侧的侧边栏显示打开文件的索引。需要同时查看一个文件不同部分的程序员也会感激它可以水平或者竖直分隔界面的能力。
 
 ### Sublime: 5/5 ###
 
-Sublime lets you view up to four files at the same time in various arrangements. There’s also a full-screen distraction free mode that just displays the file and the menu, for when you’re in the zone.
 
-The editor also has a minimap on the right, which is useful for navigating long files. The app ships with several snippets for popular functions in several programming languages, which makes it very usable for developers. Another neat editing feature, whether you are working with text documents or code, is the ability to swap and shuffle selections.
+Sublime支持你在不同方式同时查看多达四个文件。当你在zone下，这里也有一个只显示文件和菜单的全屏模式。
+
+这个编辑器还在右边有个小地图，这在长文件中导航非常有用。应用程序为多种编程语言提供多种流行功能的片段，这使得它对于开发者非常有用。另一个精巧的功能是，无论你使用都是文本文档或者代码，都可以交换和随机选择。
 
 ### UltraEdit: 3/5 ###
 
-UltraEdit’s interface is loaded with several toolbars at the top and bottom of the interface. Along with the tabs to switch between documents, panes on either side and the gutter area, these leave little room for the editor window.
 
-Web developers working with HTML files have lots of assistance at their fingertips. You can also access remote files via FTP and SFTP. Advanced features such as recording a macro and comparing files are also easily accessible.
+UltraEdit在界面的顶部和底部加载了多种工具栏。由于有在文档中跳转的选项卡，两边的面板，以及复杂区别，使得只剩下一点空间给编辑窗口。
 
-Using the app’s Preferences window you can tweak various aspects of the app, including the colour scheme and other features like syntax highlighting.
+使用HTML的网络开发者有很多唾手可得的帮助。你可以通过FTP和SFTP访问远程文件。高级功能，例如记录一个宏以及比较文件，也简单易用。
+
+使用应用程序的Preference窗口，你可以调整应用程序的多个方面，包括颜色主题和类似语法高亮的其它功能。
 
 ### jEdit: 3/5 ###
 
-In terms of usability, one of the first red-flags was jEdit’s inability to install on RPM-based distros. Navigating the editor takes some getting used to, since its menus aren’t in the same order as in other popular apps and some have names that won’t be familiar to the average desktop user. However, the app include detailed inbuilt help, which will help ease the learning curve.
+在可用性方面，首先一个不好就是jEdit不能在基于RPM的发行版上安装。导航编辑器需要一些时间来适应，因为它的菜单和其它流行的应用程序顺序不同，而且有些普通桌面用户不熟悉的名字。但是，该应用程序有详细的内部帮助，这有利于缓解学习曲线。
 
-jEdit highlights the current line you are on and enables you to split windows in multiple viewing modes. You can easily install and manage plugins from within the app, and in addition to full macros, jEdit also lets you record quick temporary ones.
+jEdit高亮你所在的当前行，并使你能一多种查看方式分隔窗口。你可以简单地从应用程序中安装和管理插件，除了全宏，jEdit也支持你记录快速临时的宏。
 
-![Thanks to its Java underpinnings, jEdit doesn’t really feel at home on any desktop environment](http://www.linuxvoice.com/wp-content/uploads/2014/08/jedit-web.png)
+![由于它的Java基础，jEdit在任何桌面环境中都不能给人宾至如归的感觉](http://www.linuxvoice.com/wp-content/uploads/2014/08/jedit-web.png)
 
-Thanks to its Java underpinnings, jEdit doesn’t really feel at home on any desktop environment
+由于它的Java基础，jEdit在任何桌面环境中都不能给人宾至如归的感觉
 
-### Availability and support ###
+### 可用性和支持 ###
 
-There are several similarities between Gedit and Kate. Both apps take advantage of their respective parent project, Gnome and KDE, and are bundled with several mainstream distros. Yet both projects are cross-platform and have Windows and Mac OS X ports as well as native Linux versions.
+在Gedit和Kate之间有很多相似性。两个应用程序都得益于他们各自的父项目，Gnome和KDE，并绑定在各种主流的发行版中。另外两个项目都是交叉平台的，有Windows和Mac OS X版本以及本来的Linux版本。
 
-Gedit is hosted on Gnome’s web infrastructure and has a brief user guide, information about the various plugins, and the usual channels of getting in touch including a mailing list and IRC channel. You’ll also find usage information on the websites of other Gnome-based distros such as Ubuntu. Similarly, Kate gets the benefit of KDE’s resources and hosts detailed user information as well as a mailing list and IRC channel. You can access their respective user guides offline from within the app as well.
+Gedit托管在Gnome的网络设施上并有一个简单的用户指南，关于多种插件的信息，以及包括邮件列表和IRC通道的常用保持联系方式。你也可以在其它基于Gnome的发行版，例如Ubuntu中找到使用信息。相似地，Kate得益于KDE的资源，并包括详细的用户信息以及邮件列表和IRC通道。你也可以从应用程序中获取相应的离线用户指南。
 
-UltraEdit is also available for Windows and Mac OS X besides Linux, and has detailed user guides on getting started, though there’s none included within the app. To assist users, UltraEdit hosts a database of frequently asked questions, a bunch of power tips that have detailed information about several specific features, and users can engage with one another other on forum boards. Additionally, paid users can also seek support from the developers via email.
+除了Linux，UltraEdit在Windows和Mac OS X中也可用，虽然在应用程序中并没有包括，但在启动时也有详细的用户指南。为了辅助用户，UltraEdit保存了一个常见问题的数据库，一系列关于多种特定功能的详细信息的有用提示，用户还可以在论坛版块彼此帮助。另外，付费用户也可以通过邮件从开发者中获取支持。
 
-Sublime supports the same number of platforms, however you don’t need to buy a separate licence for each platform. The developer keeps users abreast with ongoing development via a blog and also participates actively in the hosted forums. The highlight of the project’s support infrastructure is the freely available detailed tutorial and video course. Sublime is lovely.
+Sublime支持相同数目的平台，但是你需要单独为每种平台购买许可证。开发者通过博客使用户了解正在进行的开发，并积极参加了主持论坛。这个项目支持设施的亮点是提供免费的详细教程和视频课程。Sublime非常可爱。
 
-Because it’s written in Java, jEdit is available on several platforms. On its website you’ll find a detailed user guide and links to documentation of some plugins. However, there are no avenues for users to engage with other users or the developer.
+由于是用java编写的，jEdit在多种平台中都可用。在它的网站上你可以找到一个详细的用户指南以及一些插件帮助文档的链接。然而，这里没有能使用户和其他用户或者开发者交流的途径。
 
-**Verdict:**
+**判定:**
 
 - Gedit: 4/5
 - Kate: 4/5
@@ -202,25 +204,25 @@ Because it’s written in Java, jEdit is available on several platforms. On its 
 - UltraEdit: 3/5
 - jEdit: 2/5
 
-### Add-on and plugins ###
+### 附加和插件 ###
 
-Different users have different requirements, and a single lightweight app can only do as much. This is where plugins come into the picture. The apps rely on these small pluggable widgets to extend their feature set and be of use to even more number of users.
+不同的用户有不同的需求，一个简单的轻量级应用程序只能做到这么多。这就是为什么需要插件的原因。应用程序依赖于这些小部件来扩展它们的功能集并让更多的用户使用。
 
-The one exception is UltraEdit. The app has no third-party plugins, but its developers do point out that third-party tools such as HtmlTidy are already installed with UltraEdit.
+UltraEdit是一个另外。它没有第三方插件，但开发者确实支出了例如HtmlTidy的第三方工具已经安装到了UltraEdit。
 
-Gedit ships with a number of plugins installed, and you can download more with the gedit-plugins package. The project’s website also points to several third-party plugins based on their compatibility with the Gedit versions.
+Gedit附带了好多已安装的插件，你可以从gedit-插件包下载更多的插件。基于和Gedit版本的兼容性，项目网站也有到多个第三方插件的链接。
 
-Three useful plugins for programmers are Code Comment, Terminal Plugin, which adds a terminal in the bottom panel, and the Session Saver. The Session Saver is really useful when you’re working on a project with multiple files. You can open all the files in tabs, save your session and when you restore it with a single click it’ll open all the files in the same tab order as you saved them.
+三个对程序员非常有用的插件是Code Comment，在底部面板增加一个终端的Terminal Plugin以及Session Saver。当你用多个文件开发项目的时候Session Saver相当有用。你可以在选项卡中打开文件，保存会话，当你用一个单击回复的时候，可以按照你保存时的选项卡顺序打开所有的文件。
 
-Similarly, you can extend Kate by adding plugins using its built-in plugin manager. In addition to the impressive projects plugins, some others that will be of use to developers include an embedded terminal, ability to compile and debug code and execute SQL queries on databases.
+类似的，你可以通过用内部的插件管理器增加插件来扩展Kate。除了令人映像深刻的项目插件，一些开发者使用的插件包括嵌入式终端，能编译和调试代码，以及对数据库执行SQL查询。
 
-Plugins for Sublime are written in Python, and the text editor includes a tool called Package Control, which is a little bit like apt-get in that it enables the user to find, install, upgrade and remove plugin packages. With plugins, you can bring the Git version control to Sublime, as well as the JSLint tool to improve JavaScript. The Sublime Linter plugin is a must have for coders and will point out any errors in your code.
+Sublime的插件是用Python写的，文本编辑器包括了一个类似于apt-get，能使用户查找，安装，升级和移除插件包的名为Package Control的工具。通过插件，你可以在Sublime中使用Git版本控制，以及改进JavaScript的JSLint工具。Sublime Linter能指出你代码中的错误，是编码人员必备的插件。
 
-jEdit boasts the most impressive plugin infrastructure. The app has over 200 plugins, which can be browsed in the dedicated site of their own. The website lists plugins under various categories such as File Management, Version Control, Text, etc. You’ll find lots of plugins housed under each category.
+jEdit拥有最令人映像深刻的插件设施。该应用有超过200个插件，可以在它们自己的专用网站中浏览。网站通过不同的类型列举了插件，例如文件管理，版本控制，文本等。你可以在每个类型下找到很多的插件。
 
-Some of the best plugins are the Android plugin, which provides utilities to work on Android projects; the TomcatSwitch plugin, using which you can create and control an external Jakarta Tomcat server process; and the Vimulator plugin, for Vi-like capabilities. You can install these plugins using jEdit’s using its plugin manager.
+一些最好的插件是Android插件，它们提供了和Android项目协同工作的工具；你可以使用TomcatSwitch插件创建和控制外部Jakarta Tomcat服务器进程；以及类似于Vi功能的Vimulator插件。你可以通过使用jEdit的插件管理器安装这些插件。
 
-**Verdict**
+**评定**
 
 - Gedit: 3/5
 - Kate: 4/5
@@ -228,7 +230,9 @@ Some of the best plugins are the Android plugin, which provides utilities to wor
 - UltraEdit: 1/5
 - jEdit: 5/5
 
-### Plain ol’ text editing ###
+### 纯文本编辑 ###
+
+
 
 Despite all their powerful extra-curricular activities that might even displace full-blown apps across several genres, there will be times when you just need to use these text editing behemoths to read, write, or edit plain and simple text. While you can use all of them to enter text, we are evaluating them for access to common text-editing conveniences.
 
