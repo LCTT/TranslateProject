@@ -1,40 +1,41 @@
-sshuttle – A transparent proxy-based VPN using ssh
+sshuttle - 一个使用ssh的基于VPN的透明代理
 ================================================================================
-sshuttle allows you to create a VPN connection from your machine to any remote server that you can connect to via ssh, as long as that server has python 2.3 or higher.To work, you must have root access on the local machine, but you can have a normal account on the server.
+sshuttle允许你通过ssh创建一条从你电脑连接到任何远程服务器的VPN连接，只要你的服务器支持python2.3 或则更高的版本， 你必须有本机的root权限，但是你可以在服务端有普通账户即可。
 
-It's valid to run sshuttle more than once simultaneously on a single client machine, connecting to a different server every time, so you can be on more than one VPN at once.If run on a router, sshuttle can forward traffic for your entire subnet to the VPN.
+你可以在一台机器上同时运行多次sshuttle来连接到不同的服务器上，这样你就可以一次使用多个VPN， sshuttle可以转发你子网所有流量到VPN中。
 
-### Install sshuttle on ubuntu ###
 
-Open the terminal and run the following command
+### 在Ubuntu中安装sshuttle ###
+
+在终端中输入下面的命令
 
     sudo apt-get install sshuttle
 
-### Using sshuttle ###
+### 使用 sshuttle ###
 
-#### sshuttle Syntax ####
+#### sshuttle 语法 ####
 
     sshuttle [options...] [-r [username@]sshserver[:port]] [subnets]
 
-#### Option details ####
+#### Option 细节 ####
 
 -r, —remote=[username@]sshserver[:port]
 
-the remote hostname and optional username and ssh port number to use for connecting to the remote server. For example,example.com, testuser@example.com, testuser@example.com:2222, or example.com:2244.
+远程主机名和可选的用户名，用于连接远程服务器的ssh端口号。比如example.com、testuser@example.com、testuser@example.com:2222或者example.com:2244。
 
-#### sshuttle Examples ####
+#### sshuttle 例子 ####
 
-From the machine use the following command
+在机器中使用下面的命令：
 
     sudo sshuttle -r username@sshserver 0.0.0.0/0 -vv
 
-When it starts, sshuttle creates an ssh session to the server specified by the -r option. If -r is omitted, it will start both its client and server locally, which is sometimes useful for testing.
+当开始后，sshuttle会创建一个ssh会话到通过-r指定的服务器。如果-r被忽略了，它会在本地运行客户端和服务端，这个有时会在测试时有用。
 
-After connecting to the remote server, sshuttle uploads its (python) source code to the remote end and executes it there. Thus, you don't need to install sshuttle on the remote server, and there are never sshuttle version conflicts between client and server.
+连接到远程服务器后，sshuttle会上传它的（python）源码到远程服务器并执行。那么，你就不需要在远程服务器上安装sshuttle，并且客户端和服务器端间不会存在sshuttle版本冲突。
 
-#### More Examples From Man page ####
+#### 手册中的更多例子 ####
 
-Test locally by proxying all local connections, without using ssh:
+代理所有的本地连接用于本地测试，没有使用ssh：
 
     $ sudo sshuttle -v 0/0
     
@@ -57,8 +58,7 @@ Test locally by proxying all local connections, without using ssh:
     c : SW#8:192.168.42.121:47523: deleting
     c : SW#6:192.168.42.106:50035: deleting
 
-Test connection to a remote server, with automatic hostname and subnet
-guessing:
+测试到远程服务器上的连接，自动猜测主机名和子网：
 
     $ sudo sshuttle -vNHr example.org
     
@@ -85,7 +85,7 @@ guessing:
 via: http://www.ubuntugeek.com/sshuttle-a-transparent-proxy-based-vpn-using-ssh.html
 
 作者：[ruchi][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
