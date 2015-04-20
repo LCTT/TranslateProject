@@ -1,3 +1,4 @@
+Translating by ictlyh
 Managing file & directory attributes in linux using chattr & lsattr command
 ================================================================================
 There are certain control attributes that may be set on a file or directory in order to allow data to be appended, to prevent it from being changed or deleted, etc. For example, you can enable attributes on a critical system file or directory so that no users, including root, can delete or change it, disallow a backup utility such as the dump command to back up a specific file or directory, and so on. These attributes can only be set on files and directories located in an ext2, ext3, or an ext4 file system
