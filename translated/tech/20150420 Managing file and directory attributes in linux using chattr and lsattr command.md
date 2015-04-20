@@ -1,9 +1,8 @@
-Translating by ictlyh
-Managing file & directory attributes in linux using chattr & lsattr command
+在Linux中用chattr和lsattr命令管理文件和目录属性
 ================================================================================
-There are certain control attributes that may be set on a file or directory in order to allow data to be appended, to prevent it from being changed or deleted, etc. For example, you can enable attributes on a critical system file or directory so that no users, including root, can delete or change it, disallow a backup utility such as the dump command to back up a specific file or directory, and so on. These attributes can only be set on files and directories located in an ext2, ext3, or an ext4 file system
+为了允许添加数据，防止更改或者删除等，文件和文件夹中设定了一定的控制属性。例如，你可以在关键系统文件或者文件夹中启用属性，然后没有用户，包括root，可以删除或者修改它，不允许比如dump命令等备份工具去备份一个特定的文件或者文件夹，等等。这些属性只可以在ext2，ext3或者ext4文件系统中的文件和文件夹上设定。
 
-There are two commands **lsattr** and **chattr** that are used for attribute management. The following is the list of commonly used attributes
+有两个命令 **lsattr** 和 **chattr** 用来管理属性。下面是常用属性的列表。
 
 注：表格代码
 <table width="482" cellspacing="0" cellpadding="4" style="height: 651px">
@@ -13,10 +12,10 @@ There are two commands **lsattr** and **chattr** that are used for attribute man
 <tbody>
 <tr valign="top">
 <td width="112">
-<p align="justify" class="western"><b>Attributes</b></p>
+<p align="justify" class="western"><b>属性</b></p>
 </td>
 <td width="514">
-<p align="justify" class="western"><b>Description</b></p>
+<p align="justify" class="western"><b>描述</b></p>
 </td>
 </tr>
 <tr valign="top">
@@ -24,7 +23,7 @@ There are two commands **lsattr** and **chattr** that are used for attribute man
 <p align="justify" class="western">a (append)</p>
 </td>
 <td width="514">
-<p align="justify" class="western">Append operation is allowed on the file</p>
+<p align="justify" class="western">允许在文件中进行追加操作</p>
 </td>
 </tr>
 <tr valign="top">
@@ -32,7 +31,7 @@ There are two commands **lsattr** and **chattr** that are used for attribute man
 <p align="justify" class="western">A</p>
 </td>
 <td width="514">
-<p align="justify" class="western">This attribute will not allow to update access time of a file</p>
+<p align="justify" class="western">这个属性不允许更新文件的访问时间</p>
 </td>
 </tr>
 <tr valign="top">
@@ -40,7 +39,7 @@ There are two commands **lsattr** and **chattr** that are used for attribute man
 <p align="justify" class="western">c (compressed)</p>
 </td>
 <td width="514">
-<p align="justify" class="western">When this attribute is enable then file is compressed on the disk automatically</p>
+<p align="justify" class="western">启用这个属性时，文件在磁盘上会自动压缩</p>
 </td>
 </tr>
 <tr valign="top">
@@ -48,7 +47,7 @@ There are two commands **lsattr** and **chattr** that are used for attribute man
 <p align="justify" class="western">d (dump)</p>
 </td>
 <td width="514">
-<p align="justify" class="western">File cannot be backed up using the dump command.</p>
+<p align="justify" class="western">不能使用dump命令备份文件</p>
 </td>
 </tr>
 <tr valign="top">
@@ -56,7 +55,7 @@ There are two commands **lsattr** and **chattr** that are used for attribute man
 <p align="justify" class="western">D</p>
 </td>
 <td width="514">
-<p align="justify" class="western">When D attribute is set on directory then changes are stored synchronously on the disk</p>
+<p align="justify" class="western">设置了文件夹的D属性时，更改会在同步保存在磁盘上</p>
 </td>
 </tr>
 <tr valign="top">
@@ -64,7 +63,7 @@ There are two commands **lsattr** and **chattr** that are used for attribute man
 <p align="justify" class="western">e (extent format)</p>
 </td>
 <td width="514">
-<p align="justify" class="western">It shows that the file is using extents for mapping the blocks on disk</p>
+<p align="justify" class="western">它表明，该文件使用扩展到映射磁盘上的块</p>
 </td>
 </tr>
 <tr valign="top">
@@ -72,7 +71,7 @@ There are two commands **lsattr** and **chattr** that are used for attribute man
 <p align="justify" class="western">i (immutable)</p>
 </td>
 <td width="514">
-<p align="justify" class="western">When this attribute is enable on file then we cannot be altered, renamed and delete file.</p>
+<p align="justify" class="western">在文件上启用这个属性时，我们不能更改，重命名或者删除这个文件</p>
 </td>
 </tr>
 <tr valign="top">
@@ -80,7 +79,7 @@ There are two commands **lsattr** and **chattr** that are used for attribute man
 <p align="justify" class="western">j (journaling)</p>
 </td>
 <td width="514">
-<p align="justify" class="western">When this attribute is set then file’s data is stored in journal first then written to file.</p>
+<p align="justify" class="western">设置了这个属性时，文件的数据首先保存在日志中，然后再写入文件</p>
 </td>
 </tr>
 <tr valign="top">
@@ -88,37 +87,37 @@ There are two commands **lsattr** and **chattr** that are used for attribute man
 <p align="justify" class="western">S (synchronous)</p>
 </td>
 <td width="514">
-<p align="justify" class="western">When this attribute is set , then changes or modifications are stored synchronously on the disk</p>
+<p align="justify" class="western">设置了这个属性时，变更或更改同步保存到磁盘上</p>
 </td>
 </tr>
 </tbody>
 </table>
 
-Different Options that can be used in chattr Command :
+chattr属性中可以使用的不同选项 ：
 
-- **-R** change attributes of directory and its sub-directories recursively
-- **-V** Verbose output of chattr command along with version.
-- **-f** Suppress most error messages.
+- **-R** 递归地修改文件夹和子文件夹的属性
+- **-V** chattr命令的输出伴随版本信息
+- **-f** 压缩大部分错误信息
 
-**Operators** that are used in chattr command to set and unset attributes
+在chattr中用于设置或者取消属性的 **操作符**
 
-- The ‘+’ sign is used to set attribute on the files and directories,
-- The ‘-‘ sign is used to remove or unset the attribute
-- The ‘=’ sign causes them to be the only attributes that the files have.
+- ‘+’ 符号用来为文件和文件夹设置属性，
+- ‘-‘ 符号用来移除或者取消属性
+- ‘=’ 使它们成为文件有的唯一属性。
 
-Basic Syntax of **chattr** and **lsattr** command :
+**chattr** 和 **lsattr** 命令的基本语法 ：
 
     # chattr <options> <attributes> <file or Directory >
 
     # lsattr <File or Directory>
 
-### Example:1 Make a file immutable using ‘i’ attribute ###
+### 例:1 使用‘i’属性使文件不可更改 ###
 
     [root@linuxtechi ~]# chattr +i dummy_data
     [root@linuxtechi ~]# lsattr dummy_data
     ----i----------- dummy_data
 
-Now try to remove and edit the File
+现在试着删除或者修改文件
 
     [root@linuxtechi ~]# rm -f dummy_data
     rm: cannot remove ‘dummy_data’: Operation not permitted
@@ -126,26 +125,26 @@ Now try to remove and edit the File
     [root@linuxtechi ~]# echo "test" >> dummy_data
     -bash: dummy_data: Permission denied
 
-### Example:2 Remove the immutable attribute ###
+### 例:2 移除不可更改属性 ###
 
     [root@linuxtechi ~]# chattr -i dummy_data
     [root@linuxtechi ~]# lsattr dummy_data
     ---------------- dummy_data
 
-### Example:3 To allow only append operations on the file ###
+### 例:3 在文件中只允许追加操作 ###
 
     [root@linuxtechi ~]# chattr +a dummy_data
     [root@linuxtechi ~]# lsattr dummy_data
     -----a---------- dummy_data
 
-Now try to append the contents of fstab file in dummy_data file
+现在试着把fstab文件的内容追加到dummy_data文件
 
     [root@linuxtechi ~]# cat /etc/fstab >> dummy_data
     [root@linuxtechi ~]#
 
-### Example :4 Secure Directory and its sub-directories using -R option and ‘+i’ attribute. ###
+### 例 :4 使用 -R 选项和 ‘+i’ 属性使文件夹和它的子文件夹成为安全目录 ###
 
-Let’s create a directory sysadmin and its subdirectories
+让我们来新建一个sysadmin文件夹和它的子文件夹
 
     [root@linuxtechi ~]# mkdir sysadmin
     [root@linuxtechi ~]# mkdir sysadmin/admim_{1,2,3,4,5}
@@ -157,7 +156,7 @@ Let’s create a directory sysadmin and its subdirectories
     drwxr-xr-x. 2 root root 6 Apr 19 09:50 admim_4
     drwxr-xr-x. 2 root root 6 Apr 19 09:50 admim_5
 
-Set immutable attribute Recursively on the directory sysadmin
+在sysadmin文件夹递归设置不可更改属性
 
     [root@linuxtechi ~]# chattr -R +i sysadmin
     
@@ -174,7 +173,7 @@ Set immutable attribute Recursively on the directory sysadmin
     sysadmin/admim_5:
     [root@linuxtechi ~]#
 
-Now try to delete directories using rm command
+现在试着用rm命令删除文件夹
 
     [root@linuxtechi ~]# rm -rf sysadmin
     rm: cannot remove ‘sysadmin/admim_1’: Permission denied
@@ -184,7 +183,7 @@ Now try to delete directories using rm command
     rm: cannot remove ‘sysadmin/admim_5’: Permission denied
     [root@linuxtechi ~]#
 
-To unset the the attributes recursively use the below command
+使用以下命令递归取消属性
 
     [root@linuxtechi ~]# chattr -R -i sysadmin
 
@@ -193,7 +192,7 @@ To unset the the attributes recursively use the below command
 via: http://www.linuxtechi.com/file-directory-attributes-in-linux-using-chattr-lsattr-command/
 
 作者：[Pradeep Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ictlyh](https://github.com/ictlyh)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
