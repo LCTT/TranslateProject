@@ -2,9 +2,9 @@ Linux有问必答时间--如何在Linux下禁用IPv6
 ================================================================================
 > **问题**：我发现我的一个应用程序在尝试通过IPv6建立连接，但是由于我们本地网络不允许分配IPv6的流量，IPv6连接会超时，应用程序的连接会退回到IPv4，这样就会造成不必要的延迟。由于我目前对IPv6没有任何需求，所以我想在我的Linux主机上禁用IPv6。有什么比较合适的方法呢？ 
 
-IPv6被认为是IPv4——互联网上的传统32位地址空间的替代产品，它为了解决现有IPv4地址空间即将耗尽的问题。However, since IPv4 has been used by every host or device connected to the Internet, it is practically impossible to switch every one of them to IPv6 overnight. Numerous IPv4 to IPv6 transition mechanisms (e.g., dual IP stack, tunneling, proxying) have been proposed to facilitate the adoption of IPv6, and many applications are being rewritten, as we speak, to add support for IPv6. One thing for sure is that IPv4 and IPv6 will inevitably coexist for the forseeable future.
+IPv6被认为是IPv4——互联网上的传统32位地址空间的替代产品，它为了解决现有IPv4地址空间即将耗尽的问题。然而，由于IPv4已经被每台主机或设备连接到了互联网上，所以想在一夜之间将它们全部切换到IPv6几乎是不可能的。许多IPv4到IPv6的转换机制(例如：双协议栈、网络隧道、代理) 已经被提出来用来促进IPv6能被采用，并且很多应用也正在进行重写，就像我们所说的，来增加对IPv6的支持。有一件事情能确定，就是在可预见的未来里IPv4和IPv6势必将共存。
 
-Ideally the [ongoing IPv6 transition process][1] should not be visible to end users, but the mixed IPv4/IPv6 environment might sometimes cause you to encounter various hiccups originating from unintended interaction between IPv4 and IPv6. For example, you may experience timeouts from applications such as apt-get or ssh trying to unsuccessfully connecting via IPv6, DNS server accidentally dropping AAAA DNS records for IPv6, or your IPv6-capable device not compatible with your ISP's legacy IPv4 network, etc.
+理想情况下，[向IPv6过渡的进程][1]不应该被最终的用户所看见，但是IPv4/IPv6混合环境有时会让你碰到各种源于IPv4和IPv6之间不经意间的相互作用的问题。举个例子，你会碰到应用程序超时的问题比如apt-get或ssh尝试通过IPv6连接失败、DNS服务器意外清空了IPv6的AAAA记录、或者你支持IPv6的设备不兼容你的互联网服务提供商遗留下的IPv4网络等等等等。
 
 Of course this doesn't mean that you should blindly disable IPv6 on you Linux box. With all the benefits promised by IPv6, we as a society want to fully embrace it eventually, but as part of troubleshooting process for end-user experienced hiccups, you may try turning off IPv6 to see if indeed IPv6 is a culprit.
 
