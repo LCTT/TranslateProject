@@ -6,7 +6,7 @@ IPv6被认为是IPv4——互联网上的传统32位地址空间的替代产品�
 
 理想情况下，[向IPv6过渡的进程][1]不应该被最终的用户所看见，但是IPv4/IPv6混合环境有时会让你碰到各种源于IPv4和IPv6之间不经意间的相互作用的问题。举个例子，你会碰到应用程序超时的问题比如apt-get或ssh尝试通过IPv6连接失败、DNS服务器意外清空了IPv6的AAAA记录、或者你支持IPv6的设备不兼容你的互联网服务提供商遗留下的IPv4网络等等等等。
 
-Of course this doesn't mean that you should blindly disable IPv6 on you Linux box. With all the benefits promised by IPv6, we as a society want to fully embrace it eventually, but as part of troubleshooting process for end-user experienced hiccups, you may try turning off IPv6 to see if indeed IPv6 is a culprit.
+当然这不意味着你应该Of course this doesn't mean that you should blindly disable IPv6 on you Linux box. With all the benefits promised by IPv6, we as a society want to fully embrace it eventually, but as part of troubleshooting process for end-user experienced hiccups, you may try turning off IPv6 to see if indeed IPv6 is a culprit.
 
 Here are a few techniques allowing you to disable IPv6 partially (e.g., for a certain network interface) or completely on Linux. These tips should be applicable to all major Linux distributions including Ubuntu, Debian, Linux Mint, CentOS, Fedora, RHEL, and Arch Linux.
 
