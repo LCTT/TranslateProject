@@ -1,20 +1,20 @@
-如何从Elrepo/源 在Ubuntu/CentOS上安装Linux内核4.0
+如何在Ubuntu/CentOS上安装Linux内核4.0
 ================================================================================
-大家好，今天我们学习一下如何从Elrepo或者编译源码安装最新的Linux内核4.0。昵称为‘Hurr durr I’m a sheep’的Linux内核4.0是目前为止最新的主干内核。是稳定版3.19.4后发布的内核。Linux Torvalds声明了Linux内核4.0的发布以及可及时提供，4月12日被认为是所有开源运动爱好者的重大日子。由于包括了一些很棒的功能，例如无重启补丁(实时补丁)，新的升级驱动，最新的硬件支持以及很多有趣的功能都有新的版本，它被认为是一次重大发布。但是内核4.0并不认为是期望中的重大发布，Linus表示期望4.1是一个更大的发布。实时补丁功能已经集成到了SUSE企业版Linux操作系统上。你可以在[发布公告][1]上查看关于这次发布的更多详细内容。
+大家好，今天我们学习一下如何从Elrepo或者源代码来安装最新的Linux内核4.0。代号为‘Hurr durr I'm a sheep’的Linux内核4.0是目前为止最新的主干内核。它是稳定版3.19.4之后发布的内核。4月12日是所有的开源运动爱好者的大日子，Linux Torvalds宣布了Linux内核4.0的发布，它现在就已经可用了。由于包括了一些很棒的功能，例如无重启补丁(实时补丁)，新的升级驱动，最新的硬件支持以及很多有趣的功能都有新的版本，它原本被期望是一次重要版本。但是实际上内核4.0并不认为是期望中的重要版本，Linus 表示期望4.1会是一个更重要的版本。实时补丁功能已经集成到了SUSE企业版Linux操作系统上。你可以在[发布公告][1]上查看关于这次发布的更多详细内容。
 
 > **警告**： 安装新的内核可能会导致你的系统不可用或不稳定。如果你仍然使用以下命令继续安装，请确保备份所有重要数据到外部硬盘。
 
 ### 在Ubuntu 15.04上安装Linux内核4.0 ###
 
-如果你正在使用Linux的发行版Ubuntu 15.04，你可以直接通过Ubuntu内核网站安装。在你的Ubuntu15.04上安装最新的Linux内核4.0，你需要在shell或终端中在root访问权限下运行一下命令。
+如果你正在使用Linux的发行版Ubuntu 15.04，你可以直接通过Ubuntu内核网站安装。在你的Ubuntu15.04上安装最新的Linux内核4.0，你需要在shell或终端中在root访问权限下运行以下命令。
 
-#### 在 64-bit Ubuntu 15.04 ####
+#### 在 64位 Ubuntu 15.04 ####
 
     $ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.0-vivid/linux-headers-4.0.0-040000-generic_4.0.0-040000.201504121935_amd64.deb
 
     $ sudo dpkg -i linux-headers-4.0.0*.deb linux-image-4.0.0*.deb
 
-#### 在 32-bit Ubuntu 15.04 ####
+#### 在 32位 Ubuntu 15.04 ####
 
     $ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.0-vivid/linux-headers-4.0.0-040000-generic_4.0.0-040000.201504121935_i386.deb
 
@@ -27,7 +27,7 @@
 1. 从Elrepo软件仓库安装
 1. 从源代码编译安装
 
-由于是最简单的方式，我们首先用ElRepo安装。
+我们首先用ElRepo安装，这是最简单的方式：
 
 #### 使用 Elrepo 安装 ####
 
@@ -44,7 +44,7 @@
 
 **2. 升级Linux内核到4.0版本**
 
-现在，我们打算从ELRepo软件仓库安装最新的稳定版内核4.0。做这些，我们需要在CentOS 7的shell或者终端中输入以下命令。
+现在，我们准备从ELRepo软件仓库安装最新的稳定版内核4.0。安装它我们需要在CentOS 7的shell或者终端中输入以下命令。
 
     # yum --enablerepo=elrepo-kernel install kernel-ml
 
@@ -58,7 +58,7 @@
 
 **1. 安装依赖软件**
 
-首先我们需要为编译linux内核安装依赖的软件。做这些，我们需要在一个终端或者shell中运行以下命令。
+首先我们需要为编译linux内核安装依赖的软件。要完成这些，我们需要在一个终端或者shell中运行以下命令。
 
     # yum groupinstall "Development Tools"
 
@@ -72,7 +72,7 @@
 
 **2. 下载源代码**
 
-现在我们通过wget命令从Linux内核官方仓库中下载最新发布的linux内核4.0的源代码。你也可以使用你的浏览器直接从[kernel.org][3]网站下载内核。
+现在我们通过wget命令从Linux内核的官方仓库中下载最新发布的linux内核4.0的源代码。你也可以使用你的浏览器直接从[kernel.org][3]网站下载内核。
 
     #  cd /tmp/
     # wget https://www.kernel.org/pub/linux/kernel/v4.x/linux-4.0.tar.xz
@@ -90,7 +90,7 @@
 
 **4. 配置**
 
-我们要配置Linux内核的两个选项。我们可以创建一个新的自定义配置文件或者使用旧的配置文件来构建和安装Linux内核。这都取决于你自己的想法。
+配置Linux内核有两种选择的。我们可以创建一个新的自定义配置文件或者使用已有的配置文件来构建和安装Linux内核。这都取决于你自己的需要。
 
 **配置新的内核**
 
@@ -100,23 +100,25 @@
 
 ![配置新内核](http://blog.linoxide.com/wp-content/uploads/2015/04/configuring-new-kernel-config.png)
 
-**旧的配置**
+**已有的配置**
 
-如果你想用旧的配置文件配置你最新的内核，那就输入下面的命令。如果对你有任何提问，你可以选择Y或者N，或者仅仅是按Enter键继续。
+如果你想用已有的配置文件配置你最新的内核，那就输入下面的命令。如果你对配置有任何调整，你可以选择Y或者N，或者仅仅是按Enter键继续。
+
     # make oldconfig
 
 #### Step 5. 编译Linux内核 ####
 
 下一步，我们会执行make命令来编译内核4.0。取决于你的系统配置，编译至少需要20-30分钟。
 
-注：如果编译内核的时候出现bc command not found的错误，你可以用**yum install bc**命令安装bc修复这个错误。
+注：如果编译内核的时候出现`bc command not found`的错误，你可以用**yum install bc**命令安装bc修复这个错误。
 
     # make
+
 ![Make 内核](http://blog.linoxide.com/wp-content/uploads/2015/04/make-kernel.png)
 
 #### 6. 安装Linux内核4.0 ####
 
-编译完成后，我们终于要在你的Linux系统上安装**内核**了。下面的命令会在/boot目录下创建文件并且在Grub Menu中新建一个内核条目。
+编译完成后，我们终于要在你的Linux系统上安装**内核**了。下面的命令会在/boot目录下创建文件并且在Grub 菜单中新建一个内核条目。
 
     # make modules_install install
 
@@ -136,11 +138,11 @@ via: http://linoxide.com/how-tos/install-linux-kernel-4-0-elrepo-source/
 
 作者：[Arun Pyasi][a]
 译者：[ictlyh](https://github.com/ictlyh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://linoxide.com/author/arunp/
-[1]:http://lkml.iu.edu/hypermail/linux/kernel/1504.1/03198.html
+[1]:http://linux.cn/article-5259-1.html
 [2]:http://elrepo.org/tiki/SecureBootKey
 [3]:http://kernel.org/
