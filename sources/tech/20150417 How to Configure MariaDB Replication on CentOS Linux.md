@@ -1,3 +1,4 @@
+Translating by ictlyh
 How to Configure MariaDB Replication on CentOS Linux
 ================================================================================
 Its a process of creating duplicate versions of a the DB. Replication process is not only copies a database, but also synchronizes changes from master to one of the slaves. But this is does not means that slave databases are identical copy of the master, because replication can be configured that only a schema of tables or columns or rows will be replicated, i.e. a partial replication. The replication ensures that those specific configured objects are kept in sync between the different databases.
