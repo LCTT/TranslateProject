@@ -44,30 +44,30 @@ IPv6被认为是IPv4——互联网上的传统32位地址空间的替代产品�
 
     $ sudo sh -c 'echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' 
 
-### Disable IPv6 Permanently across Reboots ###
+### 永久禁用IPv6 ###
 
-The above method does not permanently disable IPv6 across reboots. IPv6 will be activated again once you reboot your system. If you want to turn off IPv6 for good, there are several ways you can do it.
+以上方法是不能永久禁用IPv6的，你一旦重启系统IPv6还是会被启用。如果你想要永久关闭它，有几个方法你可以试试。
 
-#### Method One ####
+#### 方法一 ####
 
-The first method is to apply the above /proc changes persistently in /etc/sysctl.conf file.
+第一种方法是请求以上提到的 /proc 对 /etc/sysctl.conf 文件进行修改。
 
-That is, open /etc/sysctl.conf with a text editor, and add the following lines.
+换句话说，就是用文本编辑器打开 /etc/sysctl.conf 然后添加以下内容：
 
-    # to disable IPv6 on all interfaces system wide
+    # 禁用整个系统所有接口的IPv6
     net.ipv6.conf.all.disable_ipv6 = 1
     
-    # to disable IPv6 on a specific interface (e.g., eth0, lo)
+    # 禁用某一个指定接口的IPv6(例如：eth0, lo)
     net.ipv6.conf.lo.disable_ipv6 = 1
     net.ipv6.conf.eth0.disable_ipv6 = 1
 
-To activate these changes in /etc/sysctl.conf, run:
+在 /etc/sysctl.conf 使这些更改生效，运行以下命令：
 
     $ sudo sysctl -p /etc/sysctl.conf 
 
-or simply reboot.
+或者直接重启。
 
-#### Method Two ####
+#### 方法二 ####
 
 An alternative way to disable IPv6 permanently is to pass a necessary kernel parameter via GRUB/GRUB2 during boot time.
 
