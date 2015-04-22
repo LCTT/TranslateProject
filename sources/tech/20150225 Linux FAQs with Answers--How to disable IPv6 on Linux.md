@@ -6,13 +6,13 @@ IPv6被认为是IPv4——互联网上的传统32位地址空间的替代产品�
 
 理想情况下，[向IPv6过渡的进程][1]不应该被最终的用户所看见，但是IPv4/IPv6混合环境有时会让你碰到各种源于IPv4和IPv6之间不经意间的相互作用的问题。举个例子，你会碰到应用程序超时的问题比如apt-get或ssh尝试通过IPv6连接失败、DNS服务器意外清空了IPv6的AAAA记录、或者你支持IPv6的设备不兼容你的互联网服务提供商遗留下的IPv4网络等等等等。
 
-当然这不意味着你应该Of course this doesn't mean that you should blindly disable IPv6 on you Linux box. With all the benefits promised by IPv6, we as a society want to fully embrace it eventually, but as part of troubleshooting process for end-user experienced hiccups, you may try turning off IPv6 to see if indeed IPv6 is a culprit.
+当然这不意味着你应该盲目地在你的Linux机器上禁用IPv6。鉴于IPv6许诺的种种好处，作为社会的一份子我们最终还是要充分拥抱它的，但是作为给最终用户进行故障排除过程的一部分，如果IPv6确实是罪魁祸首那你可以尝试去关闭它。
 
-Here are a few techniques allowing you to disable IPv6 partially (e.g., for a certain network interface) or completely on Linux. These tips should be applicable to all major Linux distributions including Ubuntu, Debian, Linux Mint, CentOS, Fedora, RHEL, and Arch Linux.
+这里有一些让你在Linux中部分或全部禁用IPv6的小技巧(例如：为一个已经确定的网络接口)。这些小贴士应该适用于所有主流的Linux发行版包括Ubuntu、Debian、Linux Mint、CentOS、Fedora、RHEL以及Arch Linux。
 
-### Check if IPv6 is Enabled on Linux ###
+### 查看IPv6在Linux中是否被启用 ###
 
-All modern Linux distributions have IPv6 automatically enabled by default. To see IPv6 is activated on your Linux, use ifconfig or ip commands. If you see "inet6" in the output of these commands, this means your Linux has IPv6 enabled.
+所有现代Linux发行版默认都自动启用IPv6。为了能看到IPv6在你的Linux中是否被激活，可以使用ifconfig或ip命令。如果你在输入这些命令之后看到"inet6"字样的输出，那就意味着你的Linux系统启用了IPv6。
 
     $ ifconfig 
 
@@ -22,7 +22,7 @@ All modern Linux distributions have IPv6 automatically enabled by default. To se
 
 ![](https://farm8.staticflickr.com/7290/16415082248_c4e075548b_c.jpg)
 
-### Disable IPv6 Temporarily ###
+### 临时禁用IPv6 ###
 
 If you want to turn off IPv6 temporarily on your Linux system, you can use /proc file system. By "temporarily", we mean that the change we make to disable IPv6 will not be preserved across reboots. IPv6 will be enabled back again after you reboot your Linux box.
 
