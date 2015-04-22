@@ -1,3 +1,4 @@
+Translating by ZTinoZ
 Linux FAQs with Answers--How to disable IPv6 on Linux
 ================================================================================
 > **Question**: I notice that one of my applications is trying to establish a connection over IPv6. But since our local network is not able to route IPv6 traffic, the IPv6 connection times out, and the application falls back to IPv4, which causes unnecessary delay. As I don't have any need for IPv6 at the moment, I would like to disable IPv6 on my Linux box. What is a proper way to turn off IPv6 on Linux? 

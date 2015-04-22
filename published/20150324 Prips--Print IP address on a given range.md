@@ -10,7 +10,7 @@ prips是一个可以打印出指定范围内所有ip地址的一个工具。它�
 
 ### 使用prips ###
 
-### prips语法 ###
+prips语法
 
     prips [-c] [-d delim] [-e exclude] [-f format] [-i incr] start end
     prips [-c] [-d delim] [-e exclude] [-f format] [-i incr] CIDR-block
@@ -20,10 +20,10 @@ prips是一个可以打印出指定范围内所有ip地址的一个工具。它�
 prips接受下面的命令行选项：
 
 - -c -- 以CIDR形式打印范围。
-- -d delim -- 用ASCII码作为分隔符，0 <= delim <= 255。
+- -d 分隔符 -- 用ASCII码作为分隔符，0 <= 分隔符 <= 255。
 - -e -- 排除输出的范围。
-- -f format -- 设置地址格式 (16进制, 10进制, 或者dot).
-- -i incr -- 设置增长上限
+- -f 格式 -- 设置地址格式 (hex：16进制, dec：10进制, 或者dot：以点分隔).
+- -i 增长 -- 设置增长上限
 
 ### Prips示例 ###
 
@@ -31,7 +31,7 @@ prips接受下面的命令行选项：
 
     prips 192.168.32.0 192.168.32.255
 
-同样使用CIDR标示:
+同上面一样，使用CIDR标示:
 
     prips 192.168.32/24
 
@@ -53,7 +53,7 @@ via: http://www.ubuntugeek.com/prips-print-ip-address-on-a-given-range.html
 
 作者：[ruchi][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
