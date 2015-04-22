@@ -24,23 +24,23 @@ IPv6被认为是IPv4——互联网上的传统32位地址空间的替代产品�
 
 ### 临时禁用IPv6 ###
 
-If you want to turn off IPv6 temporarily on your Linux system, you can use /proc file system. By "temporarily", we mean that the change we make to disable IPv6 will not be preserved across reboots. IPv6 will be enabled back again after you reboot your Linux box.
+如果你想要在你的Linux系统上临时关闭IPv6，你可以用 /proc 文件系统。"临时"，意思是我们所做的禁用IPv6的更改在系统重启后将不被保存。IPv6会在你的Linux机器重启后再次被启用。
 
-To disable IPv6 for a particular network interface, use the following command.
+要将一个特定的网络接口禁用IPv6，使用以下命令：
 
     $ sudo sh -c 'echo 1 > /proc/sys/net/ipv6/conf/<interface-name>/disable_ipv6' 
 
-For example, to disable IPv6 for eth0 interface:
+举个例子，将eth0接口禁用IPv6：
 
     $ sudo sh -c 'echo 1 > /proc/sys/net/ipv6/conf/eth0/disable_ipv6' 
 
 ![](https://farm8.staticflickr.com/7288/15982511863_0c1feafe7f_b.jpg)
 
-To enable IPv6 back on eth0 interface:
+重新启用eth0接口的IPv6：
 
     $ sudo sh -c 'echo 0 > /proc/sys/net/ipv6/conf/eth0/disable_ipv6' 
 
-If you want to disable IPv6 system-wide for all interfaces including loopback interface, use this command:
+如果你想要将整个系统所有接口包括回环接口禁用IPv6，使用以下命令：
 
     $ sudo sh -c 'echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' 
 
