@@ -1,3 +1,4 @@
+Translating by ictlyh
 A Walk Through Some Important Docker Commands
 ================================================================================
 Hi everyone today we'll learn some important Docker Commands that you'll need to learn before you go with Docker. Docker is an Open Source project that provides an open platform to pack, ship and run any application as a lightweight container. It has no boundaries of Language support, Frameworks or packaging system and can be run anywhere, anytime from a small home computers to high-end servers. It makes them great building blocks for deploying and scaling web apps, databases, and back-end services without depending on a particular stack or provider.
