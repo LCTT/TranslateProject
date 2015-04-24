@@ -1,64 +1,63 @@
-Translating by ictlyh
-How to Configure MariaDB Replication on CentOS Linux
+如何在 CentOS Linux 中配置 MariADB 复制
 ================================================================================
-Its a process of creating duplicate versions of a the DB. Replication process is not only copies a database, but also synchronizes changes from master to one of the slaves. But this is does not means that slave databases are identical copy of the master, because replication can be configured that only a schema of tables or columns or rows will be replicated, i.e. a partial replication. The replication ensures that those specific configured objects are kept in sync between the different databases.
+这是一个创建数据库重复版本的过程。复制过程不仅仅是复制一个数据库，同时也包括从主节点到一个从节点的更改同步。但这并不意味着从数据库就是和主数据库完全相同的副本，因为复制可以配置为只有表或者行或者列的一个模式将被复制，例如，局部复制。复制保证了特定的配置对象在不同的数据库之间保持同步。
 
-### Mariadb Replication Concepts ###
+### Mariadb 复制概念 ###
 
-**Backups** : Replication can be used for DB backups. For example, you have master -> slave replication. If master is lost (hdd fails, for example) you can restore your db from master.
+**备份** ：复制可以用来进行数据库备份。例如，你有主->从复制。如果主节点丢失(比如hdd损坏)，你可以从从节点中恢复你的数据库。
 
-**Scaling** : You can use master -> slave replication for scaling solution. For example, if you have a few big and have SQL query, using replcation you can separate this queries for each replcations nodes. Write SQL should be performed only on master, for read-only queries slave server can be used.
+**扩展** ：你可以使用主->从复制作为扩展的解决方案。例如，如果你有一些大的数据库以及SQL查询，使用复制你可以将这些查询单独分到每个复制节点。写SQL应该只在主节点进行，而只读查询可以在从节点上进行。
 
-**Spreading solution** : You can use replication for distribution. For example, you can distribute different sales data to different databases.
+**传播解决方案** ：你可以用复制来进行分发。例如，你可以将不同的销售数据分发到不同的数据库。
 
-**Failover solution** : For example you have, master -> slave(1) -> slave(2) -> slave(3) replication. You can write script for master monitoring , if master fails, script can quickly change slave(1) new for master master -> slave(1) -> slave(2) and your application will continue working whit out downtime
+**故障解决方案** : 假如你有主节点->从节点1->从节点2->从节点3的复制。你可以为主节点写脚本监控，如果主节点出故障了，脚本可以快速的将从节点1作为新的主节点，有主节点->从节点1->从节点2，你的应用可以继续工作而不会停机。
 
-### Simple diagrammatic demonstration of replication ###
+### 复制的简单图解示范 ###
 
-![mysql replication principle](http://blog.linoxide.com/wp-content/uploads/2015/04/mysql-replication-principle.png)
+![mysql 复制原理](http://blog.linoxide.com/wp-content/uploads/2015/04/mysql-replication-principle.png)
 
-Before you start good know what is **binary log** and Ibdata1. The binary log contains a record about all changes in the db, data and structure, as well as how long each statement took to execute. Bin log consists set log files and an index. Its means that main SQL statements such as CREATE, ALTER, INSERT, UPDATE and DELETE will be putted to this log, statements, such as SELECT will not be logged. These info can be logged to general query.log file. In simple **Ibdata1** is a file which contains all tables and all info about db.
+开始之前，你应该知道什么是**二进制日志文件**以及 Ibdata1。二进制日志文件中包括关于数据库，数据和结构的所有更改的记录，以及每条语句的执行时间。二进制日志文件包括设置日志文件和一个索引。这意味着主要的SQL语句，例如CREATE, ALTER, INSERT, UPDATE 和 DELETE 会放到这个日志文件中，而例如SELECT语句就不会被记录。这些信息可以被记录到普通的query.log文件。简单的说 **Ibdata1** 是一个包括所有表和所有数据库信息的文件。
 
-### Master server configuration ###
+### 主服务器配置 ###
 
-Good to have server updated
+首先升级服务器
 
     sudo yum install update -y && sudo yum install upgrade -y
 
-We are working on centos 7 server
+我们工作在centos7 服务器上
 
     sudo cat /etc/redhat-release
 
     CentOS Linux release 7.0.1406 (Core)
 
-Install MariaDB
+安装 MariaDB
 
     sudo yum install mariadb-server -y
 
-Start MariaDB and enable it to start on boot of the server
+启动 MariaDB 并启用随服务器启动
 
     sudo systemctl start mariadb.service
     sudo systemctl enable mariadb.service
 
-Output:
+输出:
 
     ln -s '/usr/lib/systemd/system/mariadb.service' '/etc/systemd/system/multi-user.target.wants/mariadb.service'
 
-Check MariaDB status
+检查 MariaDB 状态
 
     sudo service mariadb status
 
-or use
+或者使用
 
     sudo systemctl is-active mariadb.service
 
-Output:
+输出:
 
     Redirecting to /bin/systemctl status  mariadb.service
     mariadb.service - MariaDB database server
     Loaded: loaded (/usr/lib/systemd/system/mariadb.service; enabled)
 
-Set MariaDB password
+设置 MariaDB 密码
 
     mysql -u root
     mysql> use mysql;
@@ -66,35 +65,35 @@ Set MariaDB password
     mysql> flush privileges;
     mysql> exit
 
-SOME_ROOT_PASSWORD - your root password. I my case I'ill use "q" - password, then try to login:
+SOME_ROOT_PASSWORD - 你的 root 密码。 例如我用"q"作为密码，然后尝试登陆：
 
     sudo mysql -u root -pSOME_ROOT_PASSWORD
 
-Output:
+输出:
 
     Welcome to the MariaDB monitor.  Commands end with ; or \g.
     Your MariaDB connection id is 5
     Server version: 5.5.41-MariaDB MariaDB Server
     Copyright (c) 2000, 2014, Oracle, MariaDB Corporation Ab and others.
 
-Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+输入 'help;' 或 '\h' 查看帮助信息。 输入 '\c' 清空当前输入语句。
 
-Lets create database with table with some data
+让我们创建包括一些数据的表的数据库
 
-Create database/schema
+创建数据库/模式
 
     sudo mysql -u root -pSOME_ROOT_PASSWORD
     mysql> create database test_repl;
 
-Where:
+其中:
 
-    test_repl - Name of shcema which will be replicated
+    test_repl - 将要被复制的模式的名字
 
-Output:
+输出:
 
     Query OK, 1 row affected (0.00 sec)
 
-Create Persons table
+创建 Persons 表
 
     mysql> use test_repl;
 
@@ -106,7 +105,7 @@ Create Persons table
     City varchar(255)
     );
 
-Output:
+输出:
 
     mysql> MariaDB [test_repl]> CREATE TABLE Persons (
     -> PersonID int,
@@ -117,7 +116,7 @@ Output:
     -> );
     Query OK, 0 rows affected (0.01 sec)
 
-Insert some data
+插入一些数据
 
     mysql> INSERT INTO Persons VALUES (1, "LastName1", "FirstName1", "Address1", "City1");
     mysql> INSERT INTO Persons VALUES (2, "LastName2", "FirstName2", "Address2", "City2");
@@ -125,15 +124,15 @@ Insert some data
     mysql> INSERT INTO Persons VALUES (4, "LastName4", "FirstName4", "Address4", "City4");
     mysql> INSERT INTO Persons VALUES (5, "LastName5", "FirstName5", "Address5", "City5");
 
-Output:
+输出:
 
     Query OK, 5 row affected (0.00 sec)
 
-Check data
+检查数据
 
     mysql> select * from Persons;
 
-Output:
+输出:
 
     +----------+-----------+------------+----------+-------+
     | PersonID | LastName  | FirstName  | Address  | City  |
@@ -146,13 +145,13 @@ Output:
     |        5 | LastName5 | FirstName5 | Address5 | City5 |
     +----------+-----------+------------+----------+-------+
 
-### Configure MariaDB for replication ###
+### 配置 MariaDB 重复 ###
 
-You'll need to edit the my.cnf file on the Master server to enable binary logging and set the server's id. I will use vi text editor, but use can use any suitable for your such as nano, joe etc.
+你需要在主结点服务器上编辑 my.cnf文件来启用二进制日志以及设置服务器id。我会使用vi文本编辑器，但你可以使用任何你喜欢的，例如nano，joe。
 
     sudo vi /etc/my.cnf 
 
-and put to config in [mysqld] section such lines.
+将下面的一些行写到[mysqld]部分。
 
 
     log-basename=master
@@ -160,21 +159,21 @@ and put to config in [mysqld] section such lines.
     binlog-format=row
     server_id=1
 
-Output:
+输出:
 
-![mariadb config master](http://blog.linoxide.com/wp-content/uploads/2015/04/mariadb-config.png)
+![mariadb 配置主节点](http://blog.linoxide.com/wp-content/uploads/2015/04/mariadb-config.png)
 
-Then restart MariaDB:
+然后重启 MariaDB:
 
     sudo service mariadb restart
 
-Login to MariaDB and check binary logs:
+登录到 MariaDB 并查看二进制日志文件:
 
 sudo mysql -u root -pq test_repl
 
 mysql> SHOW MASTER STATUS;
 
-Output:
+输出:
 
     +--------------------+----------+--------------+------------------+
     | File               | Position | Binlog_Do_DB | Binlog_Ignore_DB |
@@ -182,23 +181,23 @@ Output:
     | mariadb-bin.000002 |     3913 |              |                  |
     +--------------------+----------+--------------+------------------+
 
-**Remember** : "File" and "Position" values.  YOU WILL NEED THIS VALUE AT SLAVE SERVER
+**记住** : "File" 和 "Position" 的值。在从节点中你需要使用这些值
 
-Create user for replication
+创建用来重复的用户
 
     mysql> GRANT REPLICATION SLAVE ON *.* TO replication_user IDENTIFIED BY 'bigs3cret' WITH GRANT OPTION;
     mysql> flush privileges;
 
-Output:
+输出:
 
     Query OK, 0 rows affected (0.00 sec)
     Query OK, 0 rows affected (0.00 sec)
 
-Check user in db
+在数据库中检查用户
 
     mysql> select * from mysql.user WHERE user="replication_user"\G;
 
-Output:
+输出:
 
     mysql> select * from mysql.user WHERE user="replication_user"\G;
     *************************** 1. row ***************************
@@ -208,38 +207,38 @@ Output:
     Select_priv: N
     .....
 
-Create DB dump (snapshot of all data which will be replicated) form master
+从主节点创建 DB dump (将要被复制的所有数据的快照)
 
     mysqldump -uroot -pSOME_ROOT_PASSWORD  test_repl > full-dump.sql
 
-Where:
+其中:
 
-    SOME_ROOT_PASSWORD - password for root user that you have setup
-    test_repl - name of the data base which will be replicated;
+    SOME_ROOT_PASSWORD - 你设置的root用户的密码
+    test_repl - 将要复制的数据库的名称;
 
-You need to recover mysql dump (full-dump.sql) at slave server. Its needed for replication.
+你需要在从节点中恢复 mysql dump (full-dump.sql)。重复需要这个。
 
-### Slave server configuration ###
+### 从节点配置 ###
 
-All this commands you need to perform at slave server
+所有这些命令需要在从节点中进行
 
-Lets assume that we have fresh/updated CentOS 7.x server with latest mariaDB server and you can login as root to maria DB server (this was descripbed in first part of the article)
+假设我们已经更新/升级了包括有最新的MariaDB服务器的 CentOS 7.x，而且你可以用root账号登陆到MariaDBs服务器(这在这篇文章的第一部分已经介绍过) 
 
-Login to Maria DB console and create DB
+登陆到Maria 数据库控制台并创建数据库
 
     mysql -u root -pSOME_ROOT_PASSWORD;
     mysql> create database test_repl;
     mysql> exit;
 
-Recover data from master at slave server
+在从节点恢复主节点的数据
 
     mysql -u root -pSOME_ROOT_PASSWORD test_repl < full-dump.sql
 
-Where:
+其中:
 
-full-dump.sql - its DB Dump that you have create at test server.
+full-dump.sql - 你在测试服务器中创建的DB Dump。
 
-Login to Maria DB and setup replication
+登录到Maria 数据库并启用复制
 
     mysql>     CHANGE MASTER TO
     MASTER_HOST='82.196.5.39',
@@ -250,30 +249,30 @@ Login to Maria DB and setup replication
     MASTER_LOG_POS=3913,
     MASTER_CONNECT_RETRY=10;
 
-![mariadb setup replication](http://blog.linoxide.com/wp-content/uploads/2015/04/setup-replication.png)
+![mariadb 启用复制](http://blog.linoxide.com/wp-content/uploads/2015/04/setup-replication.png)
 
-Where:
+其中:
 
-    MASTER_HOST - IP of the master server.
-    MASTER_USER - replication user at master server
-    MASTER_PASSWORD - replication user password
-    MASTER_PORT - mysql port at master
-    MASTER_LOG_FILE - bin-log file name form master
-    MASTER_LOG_POS - bin-log position file at master
+    MASTER_HOST - 主节点服务器的IP
+    MASTER_USER - 主节点服务器中的复制用户
+    MASTER_PASSWORD - 复制用户密码
+    MASTER_PORT - 主节点中的mysql端口
+    MASTER_LOG_FILE - 主节点中的二进制日志文件名称
+    MASTER_LOG_POS - 主节点中的二进制日志文件位置
 
-Start slave mode
+开启从节点模式
 
     mysql> slave start;
 
-Output:
+输出:
 
     Query OK, 0 rows affected (0.00 sec)
 
-Check slave status
+检查从节点状态
 
     mysql> show slave status\G;
 
-Output:
+输出:
 
     *************************** 1. row ***************************
     Slave_IO_State: Waiting for master to send event
@@ -318,11 +317,11 @@ Output:
     Master_Server_Id: 1
     1 row in set (0.00 sec)
 
-At this step all shoul be ok, and not erros should be here.
+到这里所有步骤都应该没问题，也不应该出现错误。
 
-### Test the replication ###
+### 测试复制 ###
 
-At MAIN/MASTER server add some entities to DB
+在主节点服务器中添加一些条目到数据库
 
     mysql -u root -pSOME_ROOT_PASSWORD test_repl
 
@@ -330,7 +329,7 @@ At MAIN/MASTER server add some entities to DB
     mysql> INSERT INTO Persons VALUES (7, "LastName7", "FirstName7", "Address7", "City7");
     mysql> INSERT INTO Persons VALUES (8, "LastName8", "FirstName8", "Address8", "City8");
 
-Then go to the SLAVE server and check replicated data
+到从节点服务器中查看复制数据
 
     mysql -u root -pSOME_ROOT_PASSWORD test_repl
 
@@ -345,14 +344,14 @@ Then go to the SLAVE server and check replicated data
     |        8 | LastName8 | FirstName8 | Address8 | City8 |
     +----------+-----------+------------+----------+-------+
 
-You can see the data is replicated to slave server. Its mean that replication is working. Hope you enjoyed the article. Let us know if you have any questions.
+你可以看到数据已经被复制到从节点。这意味着复制能正常工作。希望你能喜欢这篇文章。如果你有任何问题请告诉我们。
 
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/how-tos/configure-mariadb-replication-centos-linux/
 
 作者：[Bobbin Zachariah][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ictlyh](https://github.com/ictlyh)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

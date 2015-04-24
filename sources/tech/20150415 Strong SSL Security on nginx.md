@@ -1,3 +1,4 @@
+// translating by wxy
 Strong SSL Security on nginx
 ================================================================================
 [![](https://raymii.org/s/inc/img/ssl-labs-a.png)][1]

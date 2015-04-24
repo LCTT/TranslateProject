@@ -1,3 +1,4 @@
+translating wi-cuckoo
 How to Install Discourse in a Docker Container
 ================================================================================
 Hi all, today we'll learn how to install Discourse using Docker Platform. Discourse is the 100% open source discussion platform built for the next decade of the Internet featuring as a mailing list, a discussion forum and a long-form chat room. It is a smart way of attempt to reimagine what a modern, sustainable, fully open-source Internet discussion platform should be today, both from a technology standpoint and a sociology standpoint. Discourse is simple, clean, and straightforward way for discussion. It is really an awesome platform for any kinds of discussions on internet featuring such a cool services out of the box. Docker is an open source platform that provides an open platform to pack, ship and run any application as a lightweight container. Docker containers makes Discourse a lot handy and easy to setup app.
