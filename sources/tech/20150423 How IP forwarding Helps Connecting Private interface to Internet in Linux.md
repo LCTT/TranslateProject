@@ -1,3 +1,4 @@
+Translating by ictlyh
 How IP forwarding Helps Connecting Private interface to Internet in Linux
 ================================================================================
 Hi everyone, today we'll learn about IP forwarding or Packet forwarding from one network interface to another in Linux using iptables. IP forwarding is a concept to make Linux machine to send data from one network to another as a router. So, it can be used as a **router** or a proxy server that can share internet or network connection from one connection to multiple client machines.
