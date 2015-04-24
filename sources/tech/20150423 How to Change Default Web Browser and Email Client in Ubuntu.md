@@ -1,3 +1,4 @@
+Translating by ictlyh
 How to Change Default Web Browser and Email Client in Ubuntu
 ================================================================================
 web browserUbuntu ships with a slate of default apps handily pre-installed, including Mozilla’s hugely popular Firefox web browser and Thunderbird e-mail client.
