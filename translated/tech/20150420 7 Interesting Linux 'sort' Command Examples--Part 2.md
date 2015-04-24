@@ -116,13 +116,15 @@ Reports Disorder. Conflict..
 
 ![Sort Join Two Files](http://www.tecmint.com/wp-content/uploads/2015/04/Sort-Join-Two-Files.gif)
 
+
 我所要讲的全部内容就在这里了，希望与各位保持联系，也希望各位经常来Tecmint逛逛。有反馈就在下面评论吧。
+
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/linux-sort-command-examples/
 
 作者：[Avishek Kumar][a]
-译者：[译者ID](https://github.com/DongShuaike)
+译者：[DongShuaike](https://github.com/DongShuaike)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
