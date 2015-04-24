@@ -69,9 +69,9 @@ IPv6被认为是IPv4——互联网上的传统32位地址空间的替代产品�
 
 #### 方法二 ####
 
-An alternative way to disable IPv6 permanently is to pass a necessary kernel parameter via GRUB/GRUB2 during boot time.
+另一个永久禁用IPv6的方法是在开机的时候执行一个必要的内核参数。
 
-Open /etc/default/grub with a text editor, and add "ipv6.disable=1" to GRUB_CMDLINE_LINUX variable.
+用文本编辑器打开 /etc/default/grub 并给GRUB_CMDLINE_LINUX变量添加"ipv6.disable=1"。
 
     $ sudo vi /etc/default/grub
 
@@ -79,29 +79,29 @@ Open /etc/default/grub with a text editor, and add "ipv6.disable=1" to GRUB_CMDL
 
     GRUB_CMDLINE_LINUX="xxxxx ipv6.disable=1"
 
-In the above, "xxxxx" denotes any existing kernel parameter(s). Add "ipv6.disable=1" after them.
+上面的"xxxxx"代表任意存在着的内核参数，在它后面添加"ipv6.disable=1"。
 
 ![](https://farm8.staticflickr.com/7286/15982512103_ec5d940e58_b.jpg)
 
-Finally, don't forget to apply the modified GRUB/GRUB2 settings by running:
+最后，不要忘记用以下方法保存对GRUB/GRUB2的修改：
 
-On Debian, Ubuntu or Linux Mint:
+Debian、Ubuntu或Linux Mint系统：
 
     $ sudo update-grub 
 
-On Fedora, CentOS/RHEL:
+Fedora、CentOS/RHEL系统：
 
     $ sudo grub2-mkconfig -o /boot/grub2/grub.cfg 
 
-Now IPv6 will be completely disabled once you reboot your Linux system.
+现在只要你重启你的Linux系统，IPv6就会完全被禁用。
 
-### Other Optional Steps after Disabling IPv6 ###
+### 禁用IPv6之后的其它可选步骤 ###
 
-Here are a few optional steps you can consider after disabling IPv6. This is because while you disable IPv6 in the kernel, other programs may still try to use IPv6. In most cases, such application behaviors will not break things, but you want to disable IPv6 for them for efficiency or safety reason.
+这里有一些可选步骤在你禁用IPv6后需要考虑，这是因为当你在内核里禁用IPv6后，其它程序仍然会尝试使用IPv6。在大多数情况下，例如应用程序的运转状态不太会遭到破坏，但是出于效率或安全方面的原因，你要为他们禁用IPv6。
 
 #### /etc/hosts ####
 
-Depending on your setup, /etc/hosts may contain one or more IPv6 hosts and their addresses. Open /etc/hosts with a text editor, and comment out all lines which contain IPv6 hosts.
+根据你的设置， /etc/hosts 会包含一条或多条IPv6的hosts和它们的地址。用文本编辑器打开 /etc/hosts 并注释掉包含IPv6 hosts的脚本行。
 
     $ sudo vi /etc/hosts
 
@@ -116,7 +116,7 @@ Depending on your setup, /etc/hosts may contain one or more IPv6 hosts and their
 
 #### Network Manager ####
 
-If you are using NetworkManager to manage your network settings, you can disable IPv6 on NetworkManager as follows. Open the wired connection on NetworkManager, click on "IPv6 Settings" tab, and choose "Ignore" in "Method" field. Save the change and exit.
+如果你在用NetworkManager来管理你的网络设置，你可以在NetworkManager里禁用IPv6。在NetworkManager打开wired connection，点击"IPv6 Settings"选项并在"Method"一栏选择"Ignore"，保存退出。
 
 ![](https://farm8.staticflickr.com/7293/16394993017_21917f027b_o.png)
 
@@ -124,7 +124,7 @@ If you are using NetworkManager to manage your network settings, you can disable
 
 默认情况下，OpenSSH服务(sshd)会去尝试捆绑IPv4和IPv6的地址。
 
-To force sshd to bind only on IPv4 address, open /etc/ssh/sshd_config with a text editor, and add the following line. inet is for IPv4 only, and inet6 is for IPv6 only.
+要强制sshd只捆绑IPv4地址，用文本编辑器打开 /etc/ssh/sshd_config 并添加以下脚本行。inet只适用于IPv4，而inet6是适用于IPv6的。
 
     $ sudo vi /etc/ssh/sshd_config
 
