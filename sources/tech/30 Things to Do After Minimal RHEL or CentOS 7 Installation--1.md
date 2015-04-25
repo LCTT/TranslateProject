@@ -1,3 +1,4 @@
+Translating by ictlyh
 30 Things to Do After Minimal RHEL/CentOS 7 Installation--1
 ================================================================================
 CentOS is a Industry Standard Linux Distribution which is a derivative of RedHat Enterprise Linux. You may start using the OS as soon as you install it, but to make the most out of your system you need to perform a few updates, install a few packages, configure certain services and application.

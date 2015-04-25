@@ -1,3 +1,4 @@
+Translating by ictlyh
 30 Things to Do After Minimal RHEL/CentOS 7 Installation--2
 ================================================================================
 ### 7. Install PHP ###
