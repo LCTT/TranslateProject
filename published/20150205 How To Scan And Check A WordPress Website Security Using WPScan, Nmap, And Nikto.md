@@ -5,27 +5,28 @@
 数百万个网站用着 WordPress ，这当然是有原因的。WordPress 是众多内容管理系统中对开发者最友好的，本质上说你可以用它做任何事情。不幸的是，每天都有些吓人的报告说某个主要的网站被黑了，或者某个重要的数据库被泄露了之类的，吓得人一愣一愣的。
 
 如果你还没有安装 WordPress ，可以看下下面的文章。
+
 在基于 Debian 的系统上：
 
-- [How to install WordPress On Ubuntu][1]
+- [如何在 Ubuntu 上安装 WordPress][1]
 
 在基于 RPM 的系统上：
 
-- [How to install wordpress On CentOS][2]
+- [如何在 CentOS 上安装 WordPress][2]
 
-我之前的文章 [How To Secure WordPress Website][3] 里面列出的**备忘录**为读者维护 WordPress 的安全提供了一点帮助。
+我之前的文章 [ 如何安全加固 WordPress 站点][3] 里面列出的**备忘录**为读者维护 WordPress 的安全提供了一点帮助。
 
-在这篇文章里面，我将说明 **wpscan** 的安装过程，以及怎样使用 wpscan 来锁定任何已知的会让你的站点变得易受攻击的插件和主题。还有怎样安装和使用一款免费的网络探索和攻击的安全扫描软件 **nmap** 。最后展示的是使用 **nikto** 的步骤。
+在这篇文章里面，我将介绍 **wpscan** 的安装过程，以及怎样使用 wpscan 来定位那些已知的会让你的站点变得易受攻击的插件和主题。还有怎样安装和使用一款免费的网络探索和攻击的安全扫描软件 **nmap** 。最后展示的是使用 **nikto** 的步骤。
 
 ### 用 WPScan 测试 WordPress 中易受攻击的插件和主题 ###
 
 **WPScan** 是一个 WordPress 黑盒安全扫描软件，用 Ruby 写成，它是专门用来寻找已知的 WordPress 的弱点的。它为安全专家和 WordPress 管理员提供了一条评估他们的 WordPress 站点的途径。它的基于开源代码，在 GPLv3 下发行。
 
-### 下载和安装 WPScan ###
+#### 下载和安装 WPScan ####
 
 在我们开始安装之前，很重要的一点是要注意 wpscan 不能在 Windows 下工作，所以你需要使用一台 Linux 或者 OS X 的机器来完成下面的事情。如果你只有 Windows 的系统，拿你可以下载一个 Virtualbox 然后在虚拟机里面安装任何你喜欢的 Linux 发行版本。
 
-WPScan 的源代码被放在 Github 上，所以需要先安装 git。
+WPScan 的源代码放在 Github 上，所以需要先安装 git（LCTT 译注：其实你也可以直接从 Github 上下载打包的源代码，而不必非得装 git ）。
 
     sudo apt-get install git
 
@@ -44,7 +45,7 @@ git 装好了，我们就要安装 wpscan 的依赖包了。
 
 现在 wpscan 装好了，我们就可以用它来搜索我们 WordPress 站点潜在的易受攻击的文件。wpcan 最重要的方面是它能列出不仅是插件和主题，也能列出用户和缩略图的功能。WPScan 也可以用来暴力破解 WordPress —— 但这不是本文要讨论的内容。
 
-#### 跟新 WPScan ####
+#### 更新 WPScan ####
 
     ruby wpscan.rb --update
 
@@ -95,7 +96,6 @@ git 装好了，我们就要安装 wpscan 的依赖包了。
 
 列举主题和列举插件差不多，只要用"--enumerate t"就可以了。
 
-
     ruby wpscan.rb --url http(s)://www.host-name.com --enumerate t
 
 或者只列出易受攻击的主题：
@@ -135,7 +135,7 @@ WPscan 也可以用来列举某个 WordPress 站点的用户和有效的登录�
 
 #### 列举 Timthumb 文件 ####
 
-关于 WPscan ，我要说的最后一个功能是列举 timthub 相关的文件。近年来，timthumb 已经成为攻击者眼里的一个普通的目标，因为无数的漏洞被找出来并发到论坛上、邮件列表等等地方。用下面的命令可以通过 wpscan 找出易受攻击的 timthub 文件：
+关于 WPscan ，我要说的最后一个功能是列举 timthub （缩略图）相关的文件。近年来，timthumb 已经成为攻击者眼里的一个常见目标，因为无数的漏洞被找出来并发到论坛上、邮件列表等等地方。用下面的命令可以通过 wpscan 找出易受攻击的 timthub 文件：
 
     ruby wpscan.rb --url http(s)://www.host-name.com --enumerate tt
 
@@ -143,10 +143,9 @@ WPscan 也可以用来列举某个 WordPress 站点的用户和有效的登录�
 
 **Nmap** 是一个开源的用于网络探索和安全审查方面的工具。它可以迅速扫描巨大的网络，也可一单机使用。Nmap 用原始 IP 数据包通过不同寻常的方法判断网络里那些主机是正在工作的，那些主机上都提供了什么服务（应用名称和版本），是什么操作系统（以及版本），用的什么类型的防火墙，以及很多其他特征。
 
-### 在 Debian 和 Ubuntu 上下载和安装 nmap ###
+#### 在 Debian 和 Ubuntu 上下载和安装 nmap ####
 
 要在基于 Debian 和 Ubuntu 的操作系统上安装 nmap ，运行下面的命令：
-
 
     sudo apt-get install nmap
 
@@ -168,7 +167,7 @@ WPscan 也可以用来列举某个 WordPress 站点的用户和有效的登录�
     Processing triggers for man-db ...
     Setting up nmap (5.21-1.1ubuntu1) ...
 
-#### 打个例子 ####
+#### 举个例子 ####
 
 输出 nmap 的版本：
 
@@ -182,7 +181,7 @@ WPscan 也可以用来列举某个 WordPress 站点的用户和有效的登录�
 
     Nmap version 5.21 ( http://nmap.org )
 
-### 在 Centos 上下载和安装 nmap ###
+#### 在 Centos 上下载和安装 nmap ####
 
 要在基于 RHEL 的 Linux 上面安装 nmap ，输入下面的命令：
 
@@ -227,7 +226,7 @@ WPscan 也可以用来列举某个 WordPress 站点的用户和有效的登录�
      
     Complete!
 
-#### 举个比方 ####
+#### 举个例子 ####
 
 输出 nmap 版本号：
 
@@ -239,7 +238,7 @@ WPscan 也可以用来列举某个 WordPress 站点的用户和有效的登录�
 
 #### 用 Nmap 扫描端口 ####
 
-你可以用 nmap 来获得很多关于你的服务器的信息，它让你站在对你的网站不怀好意的人的角度看你自己的网站。
+你可以用 nmap 来获得很多关于你的服务器的信息，它可以让你站在对你的网站不怀好意的人的角度看你自己的网站。
 
 因此，请仅用它测试你自己的服务器或者在行动之前通知服务器的所有者。
 
@@ -277,7 +276,7 @@ nmap 的作者提供了一个测试服务器：
 
     sudo nmap -p port_number remote_host
 
-扫描一个网络，找出那些服务器在线，分别运行了什么服务
+扫描一个网络，找出哪些服务器在线，分别运行了什么服务。
 
 这就是传说中的主机探索或者 ping 扫描：
 
@@ -294,19 +293,19 @@ nmap 的作者提供了一个测试服务器：
     MAC Address: 00:11:32:11:15:FC (Synology Incorporated)
     Nmap done: 256 IP addresses (4 hosts up) scanned in 2.80 second
 
-理解端口配置和如何发现你的服务器上的攻击的载体只是确保你的信息和你的 VPS 安全的第一步。
+理解端口配置和如何发现你的服务器上的攻击目标只是确保你的信息和你的 VPS 安全的第一步。
 
 ### 用 Nikto 扫描你网站的缺陷 ###
 
-[Nikto][4] 网络扫描器是一个开源的 web 服务器的扫描软件，它可以用来扫描 web 服务器上的恶意的程序和文件。Nikto 也可一用来检查软件版本是否过期。Nikto 能进行简单而快速地扫描以发现服务器上危险的文件和程序。扫描结束后会给出一个日志文件。`
+[Nikto][4] 网络扫描器是一个开源的 web 服务器的扫描软件，它可以用来扫描 web 服务器上的恶意的程序和文件。Nikto 也可以用来检查软件版本是否过期。Nikto 能进行简单而快速地扫描以发现服务器上危险的文件和程序。扫描结束后会给出一个日志文件。`
 
-### 在 Linux 服务器上下载和安装 Nikto ###
+#### 在 Linux 服务器上下载和安装 Nikto ####
 
 Perl 在 Linux 上是预先安装好的，所以你只需要从[项目页面][5]下载 nikto ，解压到一个目录里面，然后开始测试。
 
     wget https://cirt.net/nikto/nikto-2.1.4.tar.gz
 
-你可以用某个归档管理工具或者用下面这个命令，同时使用 tar 和 gzip 。
+你可以用某个归档管理工具解包，或者如下同时使用 tar 和 gzip ：
 
     tar zxvf nikto-2.1.4.tar.gz
     cd nikto-2.1.4
@@ -369,7 +368,7 @@ Perl 在 Linux 上是预先安装好的，所以你只需要从[项目页面][5]
 
 **输出样例**
 
-会有十分冗长的输出，可能一开始会让人感到困惑。许多 Nikto 的警报会返回 OSVDB 序号。这是开源缺陷数据库（[http://osvdb.org/][6]）的意思。你可以在 OSVDB 上找出相关缺陷的深入说明。
+会有十分冗长的输出，可能一开始会让人感到困惑。许多 Nikto 的警报会返回 OSVDB 序号。这是由开源缺陷数据库（[http://osvdb.org/][6]）所指定。你可以在 OSVDB 上找出相关缺陷的深入说明。
 
     $ nikto -h http://www.host-name.com
     - Nikto v2.1.4
@@ -402,7 +401,7 @@ Perl 在 Linux 上是预先安装好的，所以你只需要从[项目页面][5]
 
 **Nikto** 是一个非常轻量级的通用工具。因为 Nikto 是用 Perl 写的，所以它可以在几乎任何服务器的操作系统上运行。
 
-希望这篇文章能在你找你的 wordpress 站点的缺陷的时候给你一些提示。我之前的文章[怎样保护 WordPress 站点][7]记录了一个**清单**，可以让你保护你的 WordPress 站点的工作变得更简单。
+希望这篇文章能在你检查 wordpress 站点的缺陷的时候给你一些提示。我之前的文章[如何安全加固 WordPress 站点][7]记录了一个**清单**，可以让你保护你的 WordPress 站点的工作变得更简单。
 
 有想说的，留下你的评论。
 
@@ -412,7 +411,7 @@ via: http://www.unixmen.com/scan-check-wordpress-website-security-using-wpscan-n
 
 作者：[anismaj][a]
 译者：[boredivan](https://github.com/boredivan)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
