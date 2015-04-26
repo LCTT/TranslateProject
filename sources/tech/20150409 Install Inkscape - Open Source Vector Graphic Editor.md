@@ -1,3 +1,4 @@
+Translating by ZTinoZ
 Install Inkscape - Open Source Vector Graphic Editor
 ================================================================================
 Inkscape is an open source vector graphic editing tool which uses Scalable Vector Graphics (SVG) and that makes it different from its competitors like Xara X, Corel Draw and Adobe Illustrator etc. SVG is a widely-deployed royalty-free graphics format developed and maintained by the W3C SVG Working Group. It is a cross platform tool which runs fine on Linux, Windows and Mac OS.
