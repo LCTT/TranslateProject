@@ -1,77 +1,109 @@
 Setting up a private Docker registry
+搭建一个私有的Docker registry
 ================================================================================
 ![](http://cocoahunter.com/content/images/2015/01/docker2.jpg)
 
 [TL;DR] This is the second post in a series of 3 on how my company moved its infrastructure from PaaS to Docker based deployment.
+这是系列的第二篇文章，这系列讲述了我的公司如何把基础服务从PaaS迁移到Docker上
 
 - [First part][1]: where I talk about the process we went thru before approaching Docker;
+- 第一篇文章里我谈到了接触Docker之前的经历；
 - [Third pard][2]: where I show how to automate the entire process of building images and deploying a Rails app with Docker.
+- 第三篇文章里我展示如何使创建images的过程自动化以及如何用Docker部署一个Rails应用。
 
 ----------
 
-Why would ouy want ot set up a provate registry? Well, for starters, Docker Hub only allows you to have one free private repo. Other companies are beginning to offer similar services, but they are all not very cheap. In addition, if you need to deploy production ready applications built with Docker, you might not want to publish those images on the public Docker Hub.
+Why would you want ot set up a provate registry? Well, for starters, Docker Hub only allows you to have one free private repo. Other companies are beginning to offer similar services, but they are all not very cheap. In addition, if you need to deploy production ready applications built with Docker, you might not want to publish those images on the public Docker Hub.
 
+你为什么想要搭建一个私有的registry呢？嗯，Docker Hub（一个Docker公共仓库）只允许你拥有一个免费的私有版本库（repo）。其他的公司提供类似服务，但是价格可不便宜。另外，如果你需要部署一个基于Docker的应用产品，恐怕你不希望这些images在开放的Docker Hub被公开吧！
 This is a very pragmatic approach to dealing with the intricacies of setting up a private Docker registry. For the tutorial we will be using a small 512MB instance on DigitalOcean (from now on DO). I also assume you already know the basics of Docker since I will be concentrating on some more complicated stuff.
 
+这篇文章提供了一个非常务实的方法来处理搭建私有Docke registry时出现的各种错综复杂的情况。我们将会使用一个运行于DigitalOcean（之后简称为DO）的非常小巧的512MB实例。并且我会假定你已经了解了Docker的基本概念，因为我必须集中精力在复杂的事情上！
 ### Local set up ###
 
+###本地搭建###
 First of all you need to install **boot2docker** and docker CLI. If you already have your basic Docker environment up and running, you can just skip to the next section.
 
+首先你需要安装**boot2docker**以及docker CLI。如果你已经搭建好了基本的Docker环境，你可以直接跳过这一步。
 From the terminal run the following command[1][3]:
 
+从终端运行以下命令[1][3]:
     brew install boot2docker docker  
 
 If everything is ok[2][4], you will now be able to start the VM inside which Docker will run with the following command:
 
+如果一切顺利[2][4]，你现在将能够启动VM，在VM当中输入下列命令：
     boot2docker up  
 
 Follow the instructions, copy and paste the export commands that boot2docker will print in the terminal. If you now run `docker ps` you should be greeted by the following line
+按照说明，复制粘贴book2docker打印在终端的export命令。现在运行`docker ps`命令，终端将有以下显示。
 
     CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES  
 
 Ok, Docker is ready to go. This will be enough for the moment. Let's go back to setting up the registry.
+好了，Docker已经准备就绪。我们回过头去搭建registry。
 
 ### Creating the server ###
-
+###创建服务器###
 Log into you DO account and create a new Droplet by selecting an image with Docker pre-installed[^n].
+登录进你的DO账号，选择一个提前安装好Docker的映像文件，创建一个新的Drople。
 
 ![](http://cocoahunter.com/content/images/2015/01/Screenshot-2015-01-20-18-26-14.png)
 
 You should receive your root credentials via email. Log into your instance and run `docker ps` to see if eveything is ok.
 
+你将会以邮件的方式收到一个根用户凭证。登录进去，然后运行`docker ps`命令来查看系统状态。
 ### Setting up AWS S3 ###
+### 搭建AWS S3 ###
 
-We are going to use Amazon Simple Storage Service (S3) as the storage layer for our registry / repository. We will need to create a bucket and user credentials to allow our docker container accessoing it.
-
+We are going to use Amazon Simple Storage Service (S3) as the storage layer for our registry / repository. We will need to create a bucket and user credentials to allow our docker container accessing it.
+我们现在将使用Amazo Simple Storage Service（S3）作为我们registry/repository的存储层。我们讲需要创建一个桶(bucket)以及用户凭证（user credentials）来允许我们的docker容器访问它。
 Login into your AWS account (if you don't have one you can set one up at [http://aws.amazon.com/][5]) and from the console select S3 (Simple Storage Service). 
+
+登录到我们的AWS账号（如果没有，就申请一个[http://aws.amazon.com/][5]），在控制台选择S3（Simpole Storage Service）
 
 ![](http://cocoahunter.com/content/images/2015/01/Screenshot-2015-01-20-19-29-21.png)
 
 Click on **Create Bucket**, enter a unique name for your bucket (and write it down, we're gonna need it later), then click on **Create**. 
 
+点击 **Create Bucket**，为你的桶输入一个名字（把它写下来，我们一会需要用到它），然后点击**Create**。
+
 ![](http://cocoahunter.com/content/images/2015/01/Screenshot-2015-01-20-19-22-50.png)
 
 That's it! We're done setting up the storage part.
 
+OK!我们已经搭建好存储部分了。
+
 ### Setup AWS access credentials ###
+### 安装AWS访问凭证###
 
 We are now going to create a new user. Go back to your AWS console and select IAM (Identity & Access Management). 
+
+我们现在将要创建一个新的用户。退回到AWS控制台然后选择IAM（Identity & Access Management)。
 
 ![](http://cocoahunter.com/content/images/2015/01/Screenshot-2015-01-20-19-29-08.png)
 
 In the dashboard, on the left side of the webpage, you should click on Users. Then select **Create New Users**.
 
+在dashboard的左边，点击Users。然后选择 **Create New Users**。
+
 You should be presented with the following screen: 
+
+如图所示：
 
 ![](http://cocoahunter.com/content/images/2015/01/Screenshot-2015-01-20-19-31-42.png)
 
 Enter a name for your user (e.g. docker-registry) and click on Create. Write down (or download the csv file with) your Access Key and Secret Access Key that we'll need when running the Docker container. Go back to your users list and select the one you just created.
 
+输入你的用户名（例如 docker-registry）然后点击Create。写下（或者下载csv文件）你的Access Key以及Secret Access Key。回到你的用户列表然后选择你刚刚创建的用户。
 Under the Permission section, click on Attach User Policy. In the next screen, you will be presented with multiple choices: select Custom Policy.
+
+在Permission section下面，点击Attach User Policy。之后，选择Custom Policy。
 
 ![](http://cocoahunter.com/content/images/2015/01/Screenshot-2015-01-20-19-41-21.png)
 
 Here's the content of the custom policy:
+custom policy的内容如下：
 
     {
       "Version": "2012-10-17",
