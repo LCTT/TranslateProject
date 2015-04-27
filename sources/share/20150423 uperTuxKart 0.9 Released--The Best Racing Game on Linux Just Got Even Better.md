@@ -1,3 +1,4 @@
+Translating by H-mudcup
 uperTuxKart 0.9 Released — The Best Racing Game on Linux Just Got Even Better
 ================================================================================
 **A brand new version of the hugely popular racing game SuperTuxKart has [zipped past the release line][1] to land on download servers. **
