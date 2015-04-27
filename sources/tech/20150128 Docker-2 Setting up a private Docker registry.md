@@ -1,3 +1,4 @@
+[Translating by DongShuaike]
 Setting up a private Docker registry
 ================================================================================
 ![](http://cocoahunter.com/content/images/2015/01/docker2.jpg)
