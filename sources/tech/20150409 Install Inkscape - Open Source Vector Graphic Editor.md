@@ -1,7 +1,6 @@
-Translating by ZTinoZ
-Install Inkscape - Open Source Vector Graphic Editor
+安装Inkscape - 开源适量图形编辑器
 ================================================================================
-Inkscape is an open source vector graphic editing tool which uses Scalable Vector Graphics (SVG) and that makes it different from its competitors like Xara X, Corel Draw and Adobe Illustrator etc. SVG is a widely-deployed royalty-free graphics format developed and maintained by the W3C SVG Working Group. It is a cross platform tool which runs fine on Linux, Windows and Mac OS.
+Inkscape是一款开源矢量图形编辑工具，它使用可缩放矢量图形(SVG)图形格式并不同于它的竞争对手如Xara X、Corel Draw和Adobe Illustrator等等。SVG是一个广泛部署、免版税使用的图形格式，由W3C SVG工作组开发和维护。这是一个跨平台工具，完美运行于Linux、Windows和Mac OS上。
 
 Inkscape development was started in 2003, Inkscape's bug tracking system was hosted on Sourceforge initially but it was migrated to Launchpad afterwards. Its current latest stable version is 0.91. It is under continuous development and bug fixes and we will be reviewing its prominent features and installing process in the article.
 
