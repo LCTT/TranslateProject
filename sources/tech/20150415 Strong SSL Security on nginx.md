@@ -1,34 +1,33 @@
-// translating by wxy
-Strong SSL Security on nginx
+增强 nginx 的 SSL 安全性
 ================================================================================
 [![](https://raymii.org/s/inc/img/ssl-labs-a.png)][1]
 
-This tutorial shows you how to set up strong SSL security on the nginx webserver. We do this by disabling SSL Compression to mitigate the CRIME attack, disable SSLv3 and below because of vulnerabilities in the protocol and we will set up a strong ciphersuite that enables Forward Secrecy when possible. We also enable HSTS and HPKP. This way we have a strong and future proof ssl configuration and we get an A on the Qually Labs SSL Test.
+本文向你介绍如何在 nginx 服务器上设置高安全性的 SSL。我们通过取消 SSL 压缩降低 CRIME 攻击威胁；禁用协议上存在安全缺陷的 SSLv3 及更低版本，并设置更健壮的加密套件来尽可能启用正向保密（Forward Secrecy）；我们也启用了 HSTS 和 HPKP。这样我们就拥有了一个健壮而可经受考验的 SSL 配置，并可以在 Qually Labs 的 SSL 测试中得到 A 级评分。
 
-TL;DR: [Copy-pastable strong cipherssuites for NGINX, Apache and Lighttpd: https://cipherli.st][2]
+不求甚解的话，可以从 [https://cipherli.st][2] 上找到 nginx 、Apache 和 Lighttpd 的安全设置，复制粘帖即可。
 
-This tutorial is tested on a Digital Ocean VPS. If you like this tutorial and want to support my website, use this link to order a Digital Ocean VPS: [https://www.digitalocean.com/?refcode=7435ae6b8212][2]
+本教程在 Digital Ocean 的 VPS 上测试通过。如果你喜欢这篇教程，想要支持作者的站点的话，购买 Digital Ocean 的 VPS 时请使用如下链接：[https://www.digitalocean.com/?refcode=7435ae6b8212][3] 。
 
-This tutorial works with the stricter requirements of the SSL Labs test [announced on the 21st of January 2014][4] (It already did before that, if you follow(ed) it you get an A+)
+本教程可以通过[发布于 2014/1/21 的][4] SSL 实验室测试的严格要求（之前就通过了测试，如果你按照本文进行的话，可以得到一个 A+ 评分）。
 
-- [This tutorial is also available for Apache][5]
-- [This tutorial is also available for Lighttpd][6]
-- [This tutorial is also available for FreeBSD, NetBSD and OpenBSD over at the BSD Now podcast][7]: [http://www.bsdnow.tv/tutorials/nginx][8]
+- [本教程也有对应 Apache 的][5]
+- [本教程也有对应 Lighttpd 的][6]
+- [本教程也有对应 FreeBSD, NetBSD 和 OpenBSD 上的 nginx 的，放在 BSD Now 播客][7]: [http://www.bsdnow.tv/tutorials/nginx][8]
 
-You can find more info on the topics by following the links below:
+你可以从下列链接中找到这方面的进一步内容：
 
-- [BEAST Attack][9]
-- [CRIME Attack][10]
-- [FREAK Attack][11]
-- [Heartbleed][12]
-- [Perfect Forward Secrecy][13]
-- [Dealing with RC4 and BEAST][14]
+- [BEAST 攻击][9]
+- [CRIME 攻击][10]
+- [FREAK 攻击][11]
+- [心血漏洞][12]
+- [完美正向保密][13]
+- [RC4 和 BEAST 的处理][14]
 
-We are going to edit the nginx settings in the file `/etc/nginx/sited-enabled/yoursite.com` (On Ubuntu/Debian) or in `/etc/nginx/conf.d/nginx.conf` (On RHEL/CentOS).
+我们需要编辑 nginx 的配置，在 Ubuntu/Debian 上是 `/etc/nginx/sited-enabled/yoursite.com`，在 RHEL/CentOS 上是 `/etc/nginx/conf.d/nginx.conf`
 
-For the entire tutorial, you need to edit the parts between the `server` block for the server config for port 443 (ssl config). At the end of the tutorial you can find the complete config example.
+本文中，我们需要编辑443端口（SSL）的 `server` 配置中的部分。在文末我们会给出完整的配置例子。
 
-*Make sure you back up the files before editing them!*
+*在编辑之前切记备份一下配置文件！*
 
 ### The BEAST attack and RC4 ###
 

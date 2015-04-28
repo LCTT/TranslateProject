@@ -6,7 +6,7 @@ Linux 有问必答：如何在Linux中修复“fatal error: lame/lame.h: No such
 
     fatal error: lame/lame.h: No such file or directory
 
-[LAME][1]（"LAME Ain't an MP3 Encoder"）是一个流行的LPGL授权的MP3编码器。许多视频编码工具使用或者支持LAME。这其中有[FFmpeg][2]、 VLC、 [Audacity][3]、 K3b、 RipperX等。
+[LAME][1]（"LAME Ain't an MP3 Encoder"）是一个流行的LPGL授权的MP3编码器。许多视频编码工具使用或者支持LAME，如 [FFmpeg][2]、 VLC、 [Audacity][3]、 K3b、 RipperX等。
 
 要修复这个编译错误，你需要安装LAME库和开发文件，按照下面的来。
 
@@ -20,7 +20,7 @@ Debian和它的衍生版在基础库中已经提供了LAME库，因此可以用a
 
 在基于RED HAT的版本中，LAME在RPM Fusion的免费仓库中就有，那么你需要先设置[RPM Fusion (免费)仓库][4]。
 
-RPM Fusion设置完成后，如下安装LAME开发文件。
+RPM Fusion设置完成后，如下安装LAME开发包。
 
     $ sudo yum --enablerepo=rpmfusion-free-updates install lame-devel 
 
@@ -42,7 +42,7 @@ RPM Fusion设置完成后，如下安装LAME开发文件。
 
     $ ./configure --help 
 
-共享/静态LAME默认安装在 /usr/local/lib。要让共享库可以被其他程序使用，完成最后一步：
+共享/静态的LAME库默认安装在 /usr/local/lib。要让共享库可以被其他程序使用，完成最后一步：
 
 用编辑器打开 /etc/ld.so.conf，加入下面这行。
 
@@ -55,7 +55,6 @@ RPM Fusion设置完成后，如下安装LAME开发文件。
 ### 在Fedora或者CentOS/RHEL中从源码编译LAME库 ###
 
 如果你的发行版（比如 CentOS 7）没有提供预编译的LAME库，或者你想要自定义LAME库，你需要从源码自己编译。下面是在基于Red Hat的系统中编译安装LAME库的方法。
-
 
     $ sudo yum install gcc git
     $ wget http://downloads.sourceforge.net/project/lame/lame/3.99/lame-3.99.5.tar.gz
@@ -87,7 +86,7 @@ via: http://ask.xmodulo.com/fatal-error-lame-no-such-file-or-directory.html
 
 作者：[Dan Nanni][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
