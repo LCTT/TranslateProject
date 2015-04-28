@@ -1,3 +1,4 @@
+Translating by ictlyh
 How to set up NTP server in CentOS
 ================================================================================
 Network Time Protocol (NTP) is used to synchronize system clocks of different hosts over network. All managed hosts can synchronize their time with a designated time server called an NTP server. An NTP server on the other hand synchronizes its own time with any public NTP server, or any server of your choice. The system clocks of all NTP-managed devices are synchronized to the millisecond precision.
