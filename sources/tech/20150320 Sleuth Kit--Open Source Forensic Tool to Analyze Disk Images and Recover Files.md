@@ -1,6 +1,3 @@
-
-tranlating by haimingfg
-
 Sleuth Kit - Open Source Forensic Tool to Analyze Disk Images and Recover Files
 ================================================================================
 SIFT is a Ubuntu based forensics distribution provided by SANS Inc. It consist of many forensics tools such as Sleuth kit / Autopsy etc . However, Sleuth kit/Autopsy tools can be installed on Ubuntu/Fedora distribution  instead of downloading complete distribution of SIFT.
