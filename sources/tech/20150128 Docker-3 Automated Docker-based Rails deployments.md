@@ -1,3 +1,4 @@
+[Translating by DongShuaike]
 Automated Docker-based Rails deployments
 ================================================================================
 ![](http://cocoahunter.com/content/images/2015/01/docker3.jpeg)
