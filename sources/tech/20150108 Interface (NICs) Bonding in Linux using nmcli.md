@@ -1,3 +1,4 @@
+Translating by ictlyh
 Interface (NICs) Bonding in Linux using nmcli
 ================================================================================
 Today, we'll learn how to perform Interface (NICs) bonding in our CentOS 7.x using nmcli (Network Manager Command Line Interface).
