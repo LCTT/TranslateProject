@@ -2,22 +2,22 @@
 ================================================================================
 Inkscape是一款开源矢量图形编辑工具，它使用可缩放矢量图形(SVG)图形格式并不同于它的竞争对手如Xara X、Corel Draw和Adobe Illustrator等等。SVG是一个广泛部署、免版税使用的图形格式，由W3C SVG工作组开发和维护。这是一个跨平台工具，完美运行于Linux、Windows和Mac OS上。
 
-Inkscape development was started in 2003, Inkscape's bug tracking system was hosted on Sourceforge initially but it was migrated to Launchpad afterwards. Its current latest stable version is 0.91. It is under continuous development and bug fixes and we will be reviewing its prominent features and installing process in the article.
+Inkscape始于2003年，起初它的bug跟踪系统托管于Sourceforge上但是 后来迁移到了Launchpad上。当前它最新的一个稳定版本是0.91，它不断地在发展和修改中。我们将在本文里了解一下它的突出特点和安装过程。
 
-### Salient Features ###
+### 显著特性 ###
 
-Lets review the outstanding features of this application categorically.
+让我们直接来了解这款应用程序的显著特性。
 
-#### Creating Objects ####
+#### 创建对象 ####
 
 - Drawing different colored sized and shaped freehand lines through pencil tool, straight lines and curves through Bezier (pen) tool, applying freehand calligraphic strokes through calligraphic tool etc
 - Creating, selecting, editing and formatting text through text tool. Manipulating text in plain text boxes, on paths or in shapes
 - Helps draw various shapes like rectangles, ellipses, circles, arcs, polygons, stars, spirals etc and then resize, rotate and modify (turn sharp edges round) them
 - Create and embed bitmaps with simple commands
 
-#### Object manipulation ####
+#### 项目控制 ####
 
-- Skewing, moving, scaling, rotating objects through interactive manipulations and pacifying the numeric values
+- 通过交互式操作来扭曲、移动、测量、旋转目标Skewing, moving, scaling, rotating objects through interactive manipulations and pacifying the numeric values
 - Performing raising and lowering Z-order operations
 - Grouping and ungrouping objects to create a virtual scope for editing or manipulation
 - Layers form a hierarchal tree and can be locked or rearranged for various manipulations
@@ -76,7 +76,7 @@ Congratulation, Inkscape has been installed now and all set for image editing an
 
 ![Inkscape Main](http://blog.linoxide.com/wp-content/uploads/2015/03/Inkscape-Main1.png)
 
-### Conclusion ###
+### 结论 ###
 
 Inkscape is a feature rich graphic editing tool which empowers its user with state of the art capabilities. It is an open source application which is freely available for installation and customizations and supports wide range of file formats including but not limited to JPEG, PNG, GIF and PDF. Visit its [official website][2] for more news and updates regarding this application.
 
@@ -85,7 +85,7 @@ Inkscape is a feature rich graphic editing tool which empowers its user with sta
 via: http://linoxide.com/tools/install-inkscape-open-source-vector-graphic-editor/
 
 作者：[Aun Raza][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ZTinoZ](https://github.com/ZTinoZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
