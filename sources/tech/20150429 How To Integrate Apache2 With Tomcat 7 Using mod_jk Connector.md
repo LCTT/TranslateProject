@@ -1,3 +1,5 @@
+translating---geekpi
+
 How To Integrate Apache2 With Tomcat 7 Using mod_jk Connector
 ================================================================================
 Apache is the most popular available web server. A web server is used basically to accept requests from clients and send responses to those requests. It gets an URL, translates it to a filename (for static requests), and sends that file back over the internet from the local disk, or it translates it to a program name, executes it, and then sends the output of that program back over the internet to the requesting party. If the web server was not able to process and complete the request, it instead returns an error message.
