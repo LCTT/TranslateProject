@@ -1,61 +1,62 @@
-    Vic020
+Linux 有问必答 -- 如何在红帽系linux中编译Ixgbe
 
-Linux FAQs with Answers--How to compile ixgbe driver on CentOS, RHEL or Fedora
 ================================================================================
-> **Question**: I want to build and install the latest ixgbe 10G NIC driver. How can I compile ixgbe driver on CentOS, Fedora or RHEL? 
+> **提问**：我想要安装最新版的ixgbe 10G网卡驱动。在CentOS, Fedora 或 RHEL中，我应该如何编译ixgbe驱动？
 
-To use Intel's PCI Express 10G NICs (e.g., 82598, 82599, x540) on your Linux system, you need to install ixgbe driver. While modern Linux distributions come with ixgbe driver pre-installed as a loadable module, the pre-built ixgbe driver is not fully customizable with limited parameters. If you want to enable and customize all available features of the 10G NICs (e.g., RSS, multi-queue, virtual functions, hardware offload), you will need to build the driver from the source.
 
-Here is how to compile ixgbe driver from the source on Red Hat based platforms (e.g., CentOS, RHEL or Fedora). For Debian based systems, refer to [this guideline][1] instead.
+想要在linux使用Intel的PCI Express 10G网卡（例如，82598，82599，x540），需要安装Ixgbe驱动。如今的Linux发行版都会欲安装ixgbe作为可加载模块，但是预安装的ixgbe驱动不是完整功能版。如果想要开启和定制所有10G网卡（如，RSS，多）的功能，需要源码编译安装。
 
-### Step One: Install Prerequisites ###
+本文基于红帽系平台（如，CentOS，RHEL或Fedora）。Debian系系统，请看[这篇文章][1]
 
-First, set up necessary developmen environment and install matching kernel headers.
+
+### 第一步: 安装依赖 ###
+
+首先，安装必要的开发环境和安装匹配的内核头
 
     $ sudo yum install gcc make
     $ sudo yum install kernel-devel
 
-### Step Two: Compile Ixgbe Driver ###
+### 第二步: 编译Ixgbe ###
 
-Download the latest ixgbe source code from the [official site][2].
+从[官方页面][2]下载最新Ixgbe源码
 
     $ wget http://downloads.sourceforge.net/project/e1000/ixgbe%20stable/3.23.2/ixgbe-3.23.2.tar.gz 
 
-Be sure to check supported kernel versions. For example, the ixgbe driver 3.23.2 supports Linux kernel versions 2.6.18 up to 3.18.1.
+确保检查支持内核版本。例如，Ixgbe3.23.2版本支持Linux内核版本2.6.18以上到3.18.1.
 
-Extract the tarball and compile it.
+提取压缩包并编译
 
     $ tar -xvf ixgbe-3.23.2.tar.gz
     $ cd ixgbe-3.23.2/src
     $ make 
 
-If successful, the compiled driver (ixgbe.ko) will be found in the current directory.
+如果成功，编译完成的驱动（ixgbe.ko）可以在当前目录找到。
 
-You can check the information of the compiled driver by running:
+可以运行这个命令来查看编译信息：
 
     $ modinfo ./ixgbe.ko 
 
-The output will show a list of available parameters of the ixgbe driver.
+将会输出一个Ixgbe驱动的可用参数列表
 
 ![](https://farm9.staticflickr.com/8789/16429483653_b9b6e6cd7f_c.jpg)
 
-### Step Three: Load Ixgbe Driver ###
+### 第三步: 加载 Ixgbe 驱动 ###
 
-Now you are ready to load the compiled ixgbe driver.
+这步准备加载已经编译好的驱动。
 
-If the stock ixgbe driver is already loaded on your system, you need to unload it first. Otherwise, you won't be able to load the new ixgbe driver.
+如果系统已经加载了Ixgbe驱动，首先需要卸载掉老版本。否者，新版本不能够加载。
 
     $ sudo rmmod ixgbe.ko
 
-Then insert the compiled driver in the kernel by running:
+然后插入编译完成的驱动到内核中：
 
     $ sudo insmod ./ixgbe.ko
 
-Optionally, you can supply any parameters while loading the driver.
+同时，你可以设置启动参数
 
     $ sudo insmod ./ixgbe.ko FdirPballoc=3 RSS=16
 
-To verify that the driver is loaded successfully, check the output of dmesg command.
+验证驱动是否加载成功，使用dmesg命令，查看其输出
 
     $ dmesg 
 
@@ -167,17 +168,17 @@ To verify that the driver is loaded successfully, check the output of dmesg comm
     eth3: no IPv6 routers present
     eth4: no IPv6 routers present
 
-### Step Four: Install Ixgbe Driver ###
+### 第四步: 安装Ixgbe驱动 ###
 
-Once you have checked that the driver is loaded successfully, go ahead and install the driver on your system.
+当确认驱动已经加载后，就可以安装驱动到系统中了
 
     $ sudo make install
 
-ixgbe.ko will be installed in the following location.
+ixgbe.ko将会安装在下列目录
 
     /lib/modules/<kernel-version>/kernel/drivers/net/ixgbe
 
-At this point, the compiled driver will be loaded automatically upon boot, or you can load it by running:
+此时，编译完蛋程序将在启动时自动加载，也可以通过运行命令加载它：
 
     $ sudo modprobe ixgbe 
 
@@ -188,7 +189,7 @@ At this point, the compiled driver will be loaded automatically upon boot, or yo
 via: http://ask.xmodulo.com/compile-ixgbe-driver-centos-rhel-fedora.html
 
 作者：[Dan Nanni][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Vic020](http://vicyu.net)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
