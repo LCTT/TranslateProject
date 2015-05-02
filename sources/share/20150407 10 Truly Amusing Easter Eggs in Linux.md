@@ -1,3 +1,4 @@
+KevinSJ translating
 10 Truly Amusing Easter Eggs in Linux
 ================================================================================
 ![](http://en.wikipedia.org/wiki/File:Adventure_Easteregg.PNG)
