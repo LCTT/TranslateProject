@@ -1,9 +1,8 @@
-Translated by H-mudcup 
-
-适用于Ubuntu的环境音播放器播放让人放松的声音保持你的创造力
+环境音播放器：让人放松的声音，保持你的创造力
 ================================================================================
 ![Rain is a soothing sound for some](http://www.omgubuntu.co.uk/wp-content/uploads/2015/04/raining-1600x900-wallpaper_www.wallpapermay.com_84-1.jpg)
-对于某些人来说雨声是个令人安心的声音
+
+*对于某些人来说雨声是个令人安心的声音*
 
 **如果我想变得非常有效率，我不能听‘正常’的音乐。它会使我分心，我会开始跟着唱或者让我想起另一首歌，结局就是我在自己的音乐库里到处戳并且……反正，你懂的。**
 
@@ -23,11 +22,11 @@ Translated by H-mudcup
 
 Google Play和苹果应用商店充满了环境音和白噪声的应用。现在，在Ubuntu里有同样的应用了。
 
-‘[Ambient Noise][1]‘ ‘[环境音][1]’——人如其名——是一个专门被设计成播放这种声音的音频播放器。他甚至可以同Ubuntu声音菜单整合到一起，给你‘选择，点击即放松’的体验。
+‘[Ambient Noise （环境音）][1] ’——人如其名，这是一个专门被设计成播放这种声音的音频播放器。他甚至可以同Ubuntu声音菜单整合到一起，给你‘选择，点击即放松’的体验。
 
-这个应用（又被称为‘ANoise播放器’，由Marcos Costales制作）带有**8个高品质声道**。
+这个应用（又被称为‘ANoise播放器’，由Marcos Costales制作）带有**8个高品质音频**。
 
-这8个预设声道涵盖了多种环境，从下雨时有节奏的声音，到夜晚大自然静谧的旋律，还有下午熙熙攘攘的咖啡店的嗡嗡声。
+这8个预设音频涵盖了多种环境，从下雨时有节奏的声音，到夜晚大自然静谧的旋律，还有下午熙熙攘攘的咖啡店的嗡嗡声。
 
 ### 在Ubuntu上安装ANoise播放器 ###
 
@@ -39,9 +38,9 @@ Google Play和苹果应用商店充满了环境音和白噪声的应用。现在
 
     sudo apt-get update && sudo apt-get install anoise
 
-安装好以后只需从Unity Dash（或DE里等价的地方）里打开它，通过声音菜单选择你喜欢的环境音然后……放松吧！这个应用甚至记得你上次用的环境音。
+安装好以后只需从Unity Dash（或桌面环境里类同的地方）里打开它，通过声音菜单选择你喜欢的环境音然后……放松吧！这个应用甚至记得你上次用的环境音。
 
-Even so, give it a try out and see if it suits your needs. I would say let me know what you think, but I will be too focused to hear — and so might you!即便如此，你还是要试一试看它是否能满足你的需要。我要说的是让我直到你是怎么想的，但是我将会专心致志到听不到你的声音——你可能也会这样！
+即便如此，你还是要试一试看它是否能满足你的需要。我要说的是让我知道你是怎么想的，但是我将会专心致志到听不到你的声音——你可能也会这样！
 
 --------------------------------------------------------------------------------
 
@@ -49,7 +48,7 @@ via: http://www.omgubuntu.co.uk/2015/04/ambient-noise-player-app-for-ubuntu-linu
 
 作者：[Joey-Elijah Sneddon][a]
 译者：[H-mudcup](https://github.com/H-mudcup)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
