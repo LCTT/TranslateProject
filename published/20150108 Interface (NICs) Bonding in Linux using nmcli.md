@@ -1,15 +1,15 @@
-在 Linux 中用 nmcli 命令绑定网卡(NICs)
+在 Linux 中用 nmcli 命令绑定多块网卡
 ================================================================================
-今天，我们来学习一下在 CentOS 7.x 中如何用 nmcli(Network Manager Command Line Interface：网络管理命令行接口) 进行网卡(NICs 译者注：Netword Interface Card，网卡或网络适配器)绑定(译者注：bond 是指把多个物理网卡绑定成一个逻辑上的网卡，这样多个网卡可以使用同一个 IP 从而可以避免单点故障)。
+今天，我们来学习一下在 CentOS 7.x 中如何用 nmcli（Network Manager Command Line Interface：网络管理命令行接口）进行网卡绑定。
 
-网卡绑定是将 **网卡** 逻辑地连接到一起从而允许故障转移或者提高吞吐率的方法。提高服务器网络可用性的一个方式是使用多个网卡。Linux 绑定驱动提供了一个将多个网卡聚合到一个逻辑绑定接口的方法。这是个并不影响 linux 内核中旧绑定驱动的新的实现；它提供了另一种实现方法。
+网卡（接口）绑定是将多块 **网卡** 逻辑地连接到一起从而允许故障转移或者提高吞吐率的方法。提高服务器网络可用性的一个方式是使用多个网卡。Linux 绑定驱动程序提供了一种将多个网卡聚合到一个逻辑的绑定接口的方法。这是个新的实现绑定的方法，并不影响 linux 内核中旧绑定驱动。
 
 **网卡绑定为我们提供了两个主要的好处:**
 
 1. **高带宽**
 1. **冗余/弹性**
 
-现在让我们在 CentOS 7 上配置网卡绑定吧。我们需要决定选取哪些接口配置成一个组接口。
+现在让我们在 CentOS 7 上配置网卡绑定吧。我们需要决定选取哪些接口配置成一个组接口（Team interface）。
 
 运行 **ip link** 命令查看系统中可用的接口。
 
@@ -45,7 +45,7 @@
 
 ### 2. 添加从设备 ###
 
-现在让我们天际从设备到主设备 team0。这是添加从设备的语法。
+现在让我们添加从设备到主设备 team0。这是添加从设备的语法：
 
     # nmcli con add type team-slave con-name CNAME ifname INAME master TEAM
 
@@ -89,7 +89,7 @@
 
 ![teamdctl 检查主动备份](http://blog.linoxide.com/wp-content/uploads/2015/01/teamdctl-activebackup-check.png)
 
-现在让我们和激活的端口断开连接并再次检查状态来确认主动备份配置是否像希望的那样工作。
+现在让我们把激活的端口断开连接并再次检查状态来确认主动备份配置是否像希望的那样工作。
 
     # nmcli dev dis eno33554960
 
@@ -129,7 +129,7 @@ via: http://linoxide.com/linux-command/interface-nics-bonding-linux/
 
 作者：[Arun Pyasi][a]
 译者：[ictlyh](https://github.com/ictlyh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
