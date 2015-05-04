@@ -15,25 +15,25 @@ Inkscape始于2003年，起初它的bug跟踪系统托管于Sourceforge上但是
 - Helps draw various shapes like rectangles, ellipses, circles, arcs, polygons, stars, spirals etc and then resize, rotate and modify (turn sharp edges round) them
 - Create and embed bitmaps with simple commands
 
-#### 项目控制 ####
+#### 对象处理 ####
 
-- 通过交互式操作来扭曲、移动、测量、旋转目标Skewing, moving, scaling, rotating objects through interactive manipulations and pacifying the numeric values
-- Performing raising and lowering Z-order operations
-- Grouping and ungrouping objects to create a virtual scope for editing or manipulation
-- Layers form a hierarchal tree and can be locked or rearranged for various manipulations
-- Distribution and alignment commands
+- 通过交互式操作和调整数值来扭曲、移动、测量、旋转目标
+- 执行力提升并减少了Z-order操作。
+- 对象组群化或取消组群化可以去创建一个虚拟层阶用来编辑或处理
+- 图层采用层次结构树的结构并且能锁定或以各式各样的处理方式来重新布置
+- 分布与对齐指令
 
-#### Fill and Stroke ####
+#### 填充与边框 ####
 
-- Copy/paste styles
-- Pick Color tool
+- 复制/粘贴风格
+- 取色器
 - Selecting colors on a continuous plot based on vectors of RGB, HSL, CMS, CMYK and color wheel
 - Gradient editor helps creating and managing multi-stop gradients
 - Define an image or selection and use it to pattern fill
 - Dashed Strokes can be used with few predefined dashed patterns
 - Beginning, middle and ending marks through path markers
 
-#### Operation on Paths ####
+#### 路径上的操作 ####
 
 - Node Editing: Moving nodes and Bezier handles, node alignment and distribution etc
 - Boolean operations like yes or no conditions
@@ -41,18 +41,18 @@ Inkscape始于2003年，起初它的bug跟踪系统托管于Sourceforge上但是
 - Path insetting and outsetting along with link and offset objects
 - Converting bitmap images into paths (color and monochrome paths) through path tracing
 
-#### Text manipulation ####
+#### 文本处理 ####
 
 - All installed outlined fonts can be used even for right to left align objects
 - Formatting text, letter spacing, line spacing or kerning
 - Text on path and on shapes where both text and path or shapes can be edited or modified
 
-#### Rendering ####
+#### 渲染 ####
 
 - Inkscape fully support anti-aliased display which is a technique that reduces or eliminates aliasing by shading the pixels along the border.
 - Support for alpha transparency display and PNG export
 
-### Install Inkscape on Ubuntu 14.04 and 14.10 ###
+### 在Ubuntu 14.04和14.10上安装Inkscape ###
 
 In order to install Inkscape on Ubuntu, we will need to first [add its stable Personal Package Archive][1] (PPA) to Advanced Package Tool (APT) repository. Launch the terminal and run following command to add its PPA.
 
