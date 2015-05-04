@@ -53,11 +53,11 @@ Budgie是为Linux发行版定制的旗舰桌面，也是一个定制工程。为
 
 ![安装 Budgie Desktop](http://blog.linoxide.com/wp-content/uploads/2015/02/install-budgie-desktop.png)
 
-**注意点**
+**注意**
 
-这是一个活跃的开发版本，一些主要的特点可能还不是特别的完善，如:网络管理器，为数不多的控制组件，无通知系统斌并且无法将app锁定到任务栏。
+这是一个活跃的开发版本，一些主要的功能可能还不是特别的完善，如：没有网络管理器，没有音量控制组件（可以使用键盘控制），无通知系统并且无法将app锁定到任务栏。
 
-作为工作区你能够禁用滚动栏，通过设置一个默认的主题并且通过下面的命令退出当前的会话
+有一个临时解决方案可以禁用叠加滚动栏：设置另外一个默认主题，然后从终端退出当前会话：
 
     $ gnome-session-quit
 
@@ -65,7 +65,7 @@ Budgie是为Linux发行版定制的旗舰桌面，也是一个定制工程。为
 
 ### 登录Budgie会话 ###
 
-安装完成之后，我们能在登录时选择机进入budgie桌面。
+安装完成之后，我们能在登录时选择进入budgie桌面。
 
 ![选择桌面会话](http://blog.linoxide.com/wp-content/uploads/2015/02/session-select.png)
 
@@ -79,8 +79,7 @@ Budgie是为Linux发行版定制的旗舰桌面，也是一个定制工程。为
 
 ### 结论 ###
 
-Hurray! We have successfully installed our Lightweight Budgie Desktop Environment in our Ubuntu 14.04 LTS "Trusty" box. As we know, Budgie Desktop is still underdevelopment which makes it a lot of stuffs missing. Though it’s based on Gnome’s GTK3, it’s not a fork. The desktop is written completely from scratch, and the design is elegant and well thought out. If you have any questions, comments, feedback please do write on the comment box below and let us know what stuffs needs to be added or improved. Thank You! Enjoy Budgie Desktop 0.8 :-)
-Budgie桌面当前正在开发过程中，因此有目前有很多功能的缺失。虽然它是基于Gnome，但不是完全的复制。Budgie是完全从零开始实现，它的设计是优雅的并且正在不断的完善。
+嗨，现在我们已经成功的在 Ubuntu 14.04 LTS 上安装了轻量级 Budgie 桌面环境。Budgie桌面当前正在开发过程中，因此有目前有很多功能的缺失。虽然它是基于Gnome 的 GTK3，但不是完全的复制。Budgie是完全从零开始实现，它的设计是优雅的并且正在不断的完善。如果你有任何问题、评论，请在下面的评论框发表。愿你喜欢 Budgie 桌面 0.8 。
 
 --------------------------------------------------------------------------------
 
@@ -88,7 +87,7 @@ via: http://linoxide.com/ubuntu-how-to/install-lightweight-budgie-v8-desktop-ubu
 
 作者：[Arun Pyasi][a]
 译者：[johnhoow](https://github.com/johnhoow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
