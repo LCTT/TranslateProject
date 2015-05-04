@@ -54,7 +54,7 @@ via: http://www.unixmen.com/install-mate-desktop-freebsd-10-1/
 
 作者：[M.el Khamlichi][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
