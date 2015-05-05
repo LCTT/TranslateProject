@@ -1,26 +1,29 @@
-How to set up remote desktop on Linux VPS using x2go
+如何在linux vps上使用x2go来建立远程桌面 
 ================================================================================
-As everything is moved to the cloud, virtualized remote desktop becomes increasingly popular in the industry as a way to enhance employee's productivity. Especially for those who need to roam constantly across multiple locations and devices, remote desktop allows them to stay connected seamlessly to their work environment. Remote desktop is attractive for employers as well, achieving increased agility and flexibility in work environments, lower IT cost due to hardware consolidation, desktop security hardening, and so on.
 
-In the world of Linux, of course there is no shortage of choices for settings up remote desktop environment, with many protocols (e.g., RDP, RFB, NX) and server/client implementations (e.g., [TigerVNC][1], RealVNC, FreeNX, x2go, X11vnc, TeamViewer) available.
+正如所有一切已经移到云端，在工业界作为一种提高雇员效率的方式，虚拟化的远程桌面变得越来越流行。尤其对需要经常漫游，横跨多个位置和设备的这些人，远程桌面允许他们无缝地保持连接到它们的工作环境。远程桌面对雇主来说也是有吸引力的，在工作环境中实现增加（灵敏度）敏捷性与灵活性，由于硬件的整合，桌面的安全强化等方面，实现了更低的IT花费。
 
-Standing out from the pack is [X2Go][2], an open-source (GPLv2) implementation of NX-based remote desktop server and client. In this tutorial, I am going to demonstrate **how to set up remote desktop environment for [Linux VPS][3] using X2Go**.
+在linux的世界中，当然不缺少启动远程桌面环境的选择，有很多协议(e.g., RDP, RFB, NX)和客服实现(e.g., TigerVNC, RealVNC, FreeNX, x2go, X11vnc, TeamViewer)可用。
 
-### What is X2Go? ###
+从这些包中脱颖而出的有X2Go--一个开源实现(GPLv2)，基于NX的远程桌面服务器与客户端。在本指南中，我将要展示如何使用X2Go为linux vps建立远程桌面环境。
 
-The history of X2Go goes back to NoMachine's NX technology. The NX remote desktop protocol was designed to deal with low bandwidth and high latency network connections by leveraging aggressive compression and caching. Later, NX was turned into closed-source while NX libraries were made GPL-ed. This has led to open-source implementation of several NX-based remote desktop solutions, and one of them is X2Go.
 
-What benefits does X2Go bring to the table, compared to other solutions such as VNC? X2Go inherits all the advanced features of NX technology, so naturally it works well over slow network connections. Besides, X2Go boasts of an excellent track record of ensuring security with its built-in SSH-based encryption. No longer need to set up an SSH tunnel [manually][4]. X2Go comes with audio support out of box, which means that music playback at the remote desktop is delivered (via PulseAudio) over network, and fed into local speakers. On usability front, an application that you run on remote desktop can be seamlessly rendered as a separate window on your local desktop, giving you an illusion that the application is actually running on the local desktop. As you can see, these are some of [its powerful features][5] lacking in VNC based solutions.
+### X2Go是什么? ###
 
-### X2GO's Desktop Environment Compatibility ###
+X2Go的历史可以追溯到NoMachine公司的NX技术。NX远程桌面协议设计用来处理低带宽和高延迟的网络连接。后来，当NX库许可证到期时，NX转向了闭源。这导致一些基于NX远程桌面方案的开源实现，其中之一就是X2Go。
 
-As with other remote desktop servers, there are [known compatibility issues][6] for X2Go server. Desktop environments like KDE3/4, Xfce, MATE and LXDE are the most friendly to X2Go server. However, your mileage may vary with other desktop managers. For example, the later versions of GNOME 3, KDE5, Unity are known to be not compatible with X2Go. If the desktop manager of your remote host is compatible with X2Go, you can follow the rest of the tutorial.
+和其它方案例如VNC相比，X2Go都有哪些可以摆到桌面上的收益呢？X2Go继承了所有NX技术的高级特性，因此很自然地在慢速网络连接之上工作的很好。除此之外，X2Go自夸是一个完美的记录跟踪，用它内置基于SSH的加密确保安全。不再需要手动建立一个SSH隧道。X2Go伴随着开箱即用的声音支持，它意味着在远程桌面的音乐回放通过网络被转发（经由脉冲音频），并注入本地扬声器。在可用性方面，你在远程桌面中运行的应用程序，能被无缝地在本地桌面上渲染为一个独立的窗口，给你一个应用程序就是运行在本地桌面的假象。正如你所看到的，这些是它强大特性中的一些，正是基于VNC方案所缺少的。
 
-### Install X2Go Server on Linux ###
 
-X2Go consists of remote desktop server and client components. Let's start with X2Go server installation. I assume that you already have an X2Go-compatible desktop manager up and running on a remote host, where we will be installing X2Go server.
+### X2Go的桌面环境兼容性 ###
 
-Note that X2Go server component does not have a separate service that needs to be started upon boot. You just need to make sure that SSH service is up and running.
+正如其它远程桌面服务器一样，X2Go server也有已知的兼容性问题。像KDE3/4,Xfce,MATE和LXDE这样的桌面环境对X2Go server都比较友好。然而，你的里程会受到其它桌面管理器的影响。例如，最新版本的GNOME 3, KDE5，Unity与X2Go不兼容。假如你远程主机的桌面管理器兼容X2Go，请接着阅读指南的其余部分。
+
+
+### 在linux上安装 X2Go 服务端 ###
+
+X2Go 由远程桌面服务器和客户端组件组成。让我们开始X2Go server安装。我假设你已经在远程主机上启动并运行了一个X2Go兼容的桌面管理器，我将在这个机器上安装X2Go服务器。注意X2Go server组件没有一个在系统引导时而启动的独立服务。你只需要确保ssh服务启动并运行。
+
 
 #### Ubuntu or Linux Mint: ####
 
@@ -48,9 +51,9 @@ Enable [EPEL respository][7] first, and then run:
 
     $ sudo yum install x2goserver x2goserver-xsession 
 
-### Install X2Go Client on Linux ###
+### 在linux上安装X2Go 客户端 ###
 
-On a local host where you will be connecting to remote desktop, install X2GO client as follows.
+在你将要连接到远程桌面的本地主机上，按如下步骤安装X2GO客户端。
 
 #### Ubuntu or Linux Mint: ####
 
@@ -78,44 +81,43 @@ Enable EPEL respository first, and then run:
 
     $ sudo yum install x2goclient 
 
-### Connect to Remote Desktop with X2Go Client ###
+### 通过X2GO客户端连接到远程桌面 ###
 
-Now it's time to connect to your remote desktop. On the local host, simply run the following command or use desktop launcher to start X2Go client.
+现在是时候连接到你的远程桌面了。在本地主机上，简单地运行如下命令或使用桌面启动器来启动X2GO 客户端。
 
     $ x2goclient
 
-Enter the remote host's IP address and SSH user name. Also, specify session type (i.e., desktop manager of a remote host).
+输入远程主机的ip地址和ssh用户名。还有，指定session 类型（例如，远程主机的桌面管理器）。
 
 ![](https://farm9.staticflickr.com/8730/16365755693_75f3d544e9_b.jpg)
 
-If you want, you can customize other things (by pressing other tabs), like connection speed, compression, screen resolution, and so on.
+如果你需要，还可以自定义其它事情（通过点击其它标签），像连接速度，是否压缩，屏幕分辨率等等。
 
 ![](https://farm9.staticflickr.com/8699/16984498482_665b975eca_b.jpg)
 
 ![](https://farm9.staticflickr.com/8694/16985838755_1b7df1eb78_b.jpg)
 
-When you initiate a remote desktop connection, you will be asked to log in. Type your SSH login and password.
+当你初始化一个远程桌面连接时，你将被要求登录。输入你的ssh登录名与密码。
 
 ![](https://farm9.staticflickr.com/8754/16984498432_1c8068b817_b.jpg)
 
-Upon successful login, you will see the remote desktop screen.
+成功登录后，你将看到远程桌面屏幕。
 
 ![](https://farm9.staticflickr.com/8752/16798126858_1ab083ba80_c.jpg)
 
-If you want to test X2Go's seamless window feature, choose "Single application" as session type, and specify the path to an executable on the remote host. In this example, I choose Dolphin file manager on a remote KDE host.
+如果你想测试X2GO的无缝窗口特性，选择“Single application”作为一个session类型，并指定远程主机上可执行程序的路径。在这个例子中，我选择在远程KDE主机上的Dolphin 文件管理器。
 
 ![](https://farm8.staticflickr.com/7584/16798393920_128c3af9c5_b.jpg)
 
-Once you are successfully connected, you will see a remote application window open on your local desktop, not the entire remote desktop screen.
+一旦你成功连接，你将看到一个远程应用程序窗口打开在你的本地桌面，而不是整个远程桌面屏幕。
 
 ![](https://farm9.staticflickr.com/8742/16365755713_7b90cf65f0_c.jpg)
 
-### Conclusion ###
+### 结论 ###
 
-In this tutorial, I demonstrated how to set up X2Go remote desktop on [Linux VPS][8] instance. As you can see, the whole setup process is pretty much painless (if you are using a right desktop environment). While there are some desktop-specific quirkiness, X2Go is a solid remote desktop solution which is secure, feature-rich, fast, and free.
+在本指南中，我展示了在linux vps实例上如何建立X2Go远程桌面。正如你看到的，整个设置过程是非常痛苦的（如果你使用一个合适的桌面环境）。与此同时有一些特定桌面的特质，X2Go是一个安全，特性丰富，快速，自由的可靠的远程桌面方案。
 
-What feature is the most appealing to you in X2Go? Please share your thought.
-
+X2Go还有什么特性是最吸引你?请分享你的观点。
 --------------------------------------------------------------------------------
 
 via: http://xmodulo.com/x2go-remote-desktop-linux.html
