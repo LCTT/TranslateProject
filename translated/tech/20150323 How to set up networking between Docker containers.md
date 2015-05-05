@@ -1,19 +1,18 @@
-[bazz222]
-How to set up networking between Docker containers
+如何在 Docker 容器之间设置网络
 ================================================================================
-As you may be aware, Docker container technology has emerged as a viable lightweight alternative to full-blown virtualization. There are a growing number of use cases of Docker that the industry adopted in different contexts, for example, enabling rapid build environment, simplifying configuration of your infrastructure, isolating applications in multi-tenant environment, and so on. While you can certainly deploy an application sandbox in a standalone Docker container, many real-world use cases of Docker in production environments may involve deploying a complex multi-tier application in an ensemble of multiple containers, where each container plays a specific role (e.g., load balancer, LAMP stack, database, UI).
+你也许已经知道了，Docker 容器技术是现有的成熟虚拟化技术的一个替代方案。它被企业应用在越来越多的领域中，比如快速部署环境、简化基础设施的配置流程、多客户环境间的互相隔离等等。当你开始在真实的生产环境使用 Docker 容器去部署应用沙箱时，你可能需要用到多个容器部署一套复杂的多层应用系统，其中每个容器负责一个特定的功能（例如负载均衡、LAMP 栈、数据库、UI 等）。
 
-There comes the problem of **Docker container networking**: How can we interconnect different Docker containers spawned potentially across different hosts when we do not know beforehand on which host each container will be created?
+那么问题来了：有多台宿主机，我们事先不知道会在哪台宿主机上创建容器，如果保证在这些宿主机上创建的容器们可以互相联网？
 
-One pretty neat open-source solution for this is [weave][1]. This tool makes interconnecting multiple Docker containers pretty much hassle-free. When I say this, I really mean it.
+联网技术哪家强？开源方案找 [weave][1]。这个工具可以为你省下不少烦恼。听我的准没错，谁用谁知道。
 
-In this tutorial, I am going to demonstrate **how to set up Docker networking across different hosts using weave**.
+于是本教程的主题就变成了“**如何使用 weave 在不同主机上的 Docker 容器之间设置网络**”。
 
-### How Weave Works ###
+### Weave 是如何工作的 ###
 
 ![](https://farm8.staticflickr.com/7288/16662287067_27888684a7_b.jpg)
 
-Let's first see how weave works. Weave creates a network of "peers", where each peer is a virtual router container called "weave router" residing on a distinct host. The weave routers on different hosts maintain TCP connections among themselves to exchange topology information. They also establish UDP connections among themselves to carry inter-container traffic. A weave router on each host is then connected via a bridge to all other Docker containers created on the host. When two containers on different hosts want to exchange traffic, a weave router on each host captures their traffic via a bridge, encapsulates the traffic with UDP, and forwards it to the other router over a UDP connection.
+让我们先来看看 weave 怎么工作：先创建一个由多个 peer 组成的对等网络，每个 peer 是一个虚拟路由器容器，叫做“weave 路由器”，它们分布在不同的宿主机上。这个对等网络的每个 peer 之间会维持一个 TCP 链接，用于互相交换拓扑信息，它们也会建立 UDP 链接用于容器间通信。一个 weave 路由器通过桥接技术连接到其他本宿主机上的其他容器。当处于不同宿主机上的两个容器想要通信，一台宿主机上的 weave 路由器用网桥截获数据包，使用 UDP 协议封装后发给另一台宿主机上的 weave 路由器。
 
 Each weave router maintains up-to-date weave router topology information, as well as container's MAC address information (similar to switch's MAC learning), so that it can make forwarding decision on container traffic. Weave is able to route traffic between containers created on hosts which are not directly reachable, as long as two hosts are interconnected via an intermediate weave router on weave topology. Optionally, weave routers can be set to encrypt both TCP control data and UDP data traffic based on public key cryptography.
 
