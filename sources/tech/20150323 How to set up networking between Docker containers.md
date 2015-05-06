@@ -1,3 +1,4 @@
+[bazz222]
 How to set up networking between Docker containers
 ================================================================================
 As you may be aware, Docker container technology has emerged as a viable lightweight alternative to full-blown virtualization. There are a growing number of use cases of Docker that the industry adopted in different contexts, for example, enabling rapid build environment, simplifying configuration of your infrastructure, isolating applications in multi-tenant environment, and so on. While you can certainly deploy an application sandbox in a standalone Docker container, many real-world use cases of Docker in production environments may involve deploying a complex multi-tier application in an ensemble of multiple containers, where each container plays a specific role (e.g., load balancer, LAMP stack, database, UI).
