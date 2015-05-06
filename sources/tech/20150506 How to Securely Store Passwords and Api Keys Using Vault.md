@@ -1,3 +1,6 @@
+Translating by wwy-hust
+
+
 How to Securely Store Passwords and Api Keys Using Vault
 ================================================================================
 Vault is a tool that is used to access secret information securely, it may be password, API key, certificate or anything else. Vault provides a unified interface to secret information through strong access control mechanism and extensive logging of events.
