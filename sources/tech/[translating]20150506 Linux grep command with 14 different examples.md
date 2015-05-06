@@ -1,3 +1,4 @@
+translating by cvsher
 Linux grep command with 14 different examples
 ================================================================================
 ### Overview : ###
