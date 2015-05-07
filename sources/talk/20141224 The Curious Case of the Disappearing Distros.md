@@ -1,12 +1,8 @@
-theol-l translating
-
 The Curious Case of the Disappearing Distros
-关于消失的发行版的古怪情形。
 ================================================================================
 ![](http://www.linuxinsider.com/ai/828896/linux-distros.jpg)
 
 "Linux is a big game now, with billions of dollars of profit, and it's the best thing since sliced bread, but corporations are taking control, and slowly but systematically, community distros are being killed," said Google+ blogger Alessandro Ebersol. "Linux is slowly becoming just like BSD, where companies use and abuse it and give very little in return."
-"Linux现在成为了一个大型的游戏，同时具有巨额的利润，这是有史以来最好的事情。但是公司企业进行了控制，于是缓慢而系统的社区发行版就逐渐被干掉了，",Google+的一个博主 Alessandro Ebersol说到。"Linux开始变得像BSD--一些公司使用和滥用但是没有任何回报--一样缓慢。"
 
 Well the holidays are pretty much upon us at last here in the Linux blogosphere, and there's nowhere left to hide. The next two weeks or so promise little more than a blur of forced social occasions and too-large meals, punctuated only -- for the luckier ones among us -- by occasional respite down at the Broken Windows Lounge.
 
