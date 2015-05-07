@@ -1,29 +1,28 @@
-Translating by GOLinux!
-How to Manage ‘Systemd’ Services and Units Using ‘Systemctl’ in Linux
+在Linux中使用‘Systemctl’管理‘Systemd’服务和单元
 ================================================================================
-Systemctl is a systemd utility which is responsible for Controlling the systemd system and service manager.
+Systemctl是一个systemd工具，主要负责控制systemd系统和服务管理器。
 
-Systemd is a collection of system management daemons, utilities and libraries which serves as a replacement of System V init daemon. Systemd functions as central management and configuration platform for UNIX like system.
+Systemd是一个系统管理守护进程、工具和库的集合，用于取代System V初始进程。Systemd的功能是用于集中管理和配置类UNIX系统。
 
-In the Linux Ecosystem Systemd has been implemented on most of the standard Linux Distribution with a few exception. Systemd is the parent Process of all other daemons oftenly but not always.
+在Linux生态系统中，Systemd被部署到了大多数的标准Linux发行版中，只有位数不多的几个尚未部署。Systemd通常是所有其它守护进程的父进程，但并非总是如此。
 
 ![Manage Linux Services Using Systemctl](http://www.tecmint.com/wp-content/uploads/2015/04/Manage-Linux-Services-Using-Systemctl.jpg)
-Manage Linux Services Using Systemctl
+使用Systemctl管理Linux服务
 
-This article aims at throwing light on “How to control System and Services” on a system running systemd.
+本文旨在阐明在运行systemd的系统上“如何控制系统和服务”。
 
-### Starting with Systemtd and Systemctl Basics ###
+### Systemd初体验和Systemctl基础 ###
 
-#### 1. First check if systemd is installed on your system or not and what is the version of currently installed Systemd? ####
+#### 1. 首先检查你的系统中是否安装有systemd并确定当前安装的版本 ####
 
     # systemd --version
     
     systemd 215
     +PAM +AUDIT +SELINUX +IMA +SYSVINIT +LIBCRYPTSETUP +GCRYPT +ACL +XZ -SECCOMP -APPARMOR
 
-It’s clear from the above example, that we have systemd 215 version Installed.
+上例中很清楚地表明，我们安装了215版本的systemd。
 
-#### 2. Check where the binaries and libraries of systemd and systemctl are installed. ####
+#### 2. 检查systemd和systemctl的二进制文件和库文件的安装位置 ####
 
     # whereis systemd 
     systemd: /usr/lib/systemd /etc/systemd /usr/share/systemd /usr/share/man/man1/systemd.1.gz
@@ -32,7 +31,7 @@ It’s clear from the above example, that we have systemd 215 version Installed.
     # whereis systemctl
     systemctl: /usr/bin/systemctl /usr/share/man/man1/systemctl.1.gz
 
-#### 3. Check whether systemd is running or not. ####
+#### 3. 检查systemd是否运行 ####
 
     # ps -eaf | grep [s]ystemd
     
@@ -42,18 +41,18 @@ It’s clear from the above example, that we have systemd 215 version Installed.
     root       555     1  0 16:27 ?        00:00:00 /usr/lib/systemd/systemd-logind
     dbus       556     1  0 16:27 ?        00:00:00 /bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
 
-**Notice**: systemd is running as parent daemon (PID=1). In the above command ps with (-e) select all Processes, (-
+**注意**：systemd是作为父进程（PID=1）运行的。在上面带（-e）参数的ps命令输出中，选择所有进程，（-
 
-a) select all processes except session leaders and (-f) for full format listing (i.e. -eaf).
+a）选择除会话前导外的所有进程，并使用（-f）参数输出完整格式列表（如 -eaf）。
 
-Also note the square brackets in the above example and rest of the examples to follow. Square Bracket expression is part of grep’s character class pattern matching.
+也请注意上例中后随的方括号和样例剩余部分。方括号表达式是grep的字符类表达式的一部分。
 
-#### 4. Analyze systemd boot process. ####
+#### 4. 分析systemd启动进程 ####
 
     # systemd-analyze
     Startup finished in 487ms (kernel) + 2.776s (initrd) + 20.229s (userspace) = 23.493s
 
-#### 5. Analyze time taken by each process at boot. ####
+#### 5. 分析启动时各个进程花费的时间 ####
 
     # systemd-analyze blame
     
@@ -69,7 +68,7 @@ Also note the square brackets in the above example and rest of the examples to f
     1.126s systemd-logind.service
     ....
 
-#### 6. Analyze critical chain at boot. ####
+#### 6. 分析启动时的关键链 ####
 
     # systemd-analyze critical-chain
     
@@ -95,9 +94,9 @@ Also note the square brackets in the above example and rest of the examples to f
                                   └─systemd-fsck@dev-disk-by\x2duuid-79f594ad\x2da332\x2d4730\x2dbb5f\x2d85d19608096
                                     └─dev-disk-by\x2duuid-79f594ad\x2da332\x2d4730\x2dbb5f\x2d85d196080964.device @4
 
-**Important**: Systemctl accepts services (.service), mount point (.mount), sockets (.socket) and devices (.device) as units.
+**重要**：Systemctl接受服务（.service），挂载点（.mount），套接口（.socket）和设备（.device）作为单元。
 
-#### 7. List all the available units. ####
+#### 7. 列出所有可用单元 ####
 
     # systemctl list-unit-files
     
@@ -113,7 +112,7 @@ Also note the square brackets in the above example and rest of the examples to f
     brandbot.path                               disabled
     .....
 
-#### 8. List all running units. ####
+#### 8. 列出所有运行中单元 ####
 
     # systemctl list-units
     
@@ -134,7 +133,7 @@ Also note the square brackets in the above example and rest of the examples to f
     sys-module-configfs.device                  loaded active plugged   /sys/module/configfs
     ...
 
-#### 9. List all failed units. ####
+#### 9. 列出所有失败单元 ####
 
     # systemctl --failed
     
@@ -148,13 +147,13 @@ Also note the square brackets in the above example and rest of the examples to f
     1 loaded units listed. Pass --all to see loaded but inactive units, too.
     To show all installed unit files use 'systemctl list-unit-files'.
 
-#### 10. Check if a Unit (cron.service) is enabled or not?. ####
+#### 10. 检查某个单元（cron.service）是否启用 ####
 
     # systemctl is-enabled crond.service
     
     enabled
 
-#### 11. Check whether a Unit or Service is running or not?. ####
+#### 11. 检查某个单元或服务是否运行 ####
 
     # systemctl status firewalld.service
     
@@ -168,9 +167,9 @@ Also note the square brackets in the above example and rest of the examples to f
     Apr 28 16:27:51 tecmint systemd[1]: Starting firewalld - dynamic firewall daemon...
     Apr 28 16:27:55 tecmint systemd[1]: Started firewalld - dynamic firewall daemon.
 
-### Control and Manage Services Using Systemctl ###
+### 使用Systemctl控制并管理服务 ###
 
-#### 12. List all services (including enabled and disabled). ####
+#### 12. 列出所有服务（包括启用的和禁用的） ####
 
     # systemctl list-unit-files --type=service
     
@@ -188,7 +187,7 @@ Also note the square brackets in the above example and rest of the examples to f
     dbus-org.fedoraproject.FirewallD1.service   enabled 
     ....
 
-#### 13. How do I start, restart, stop, reload and check the status of a service (httpd.service) in Linux. ####
+#### 13. Linux中如何启动、重启、停止、重载服务以及检查服务（httpd.service）状态 ####
 
     # systemctl start httpd.service
     # systemctl restart httpd.service
@@ -215,15 +214,15 @@ Also note the square brackets in the above example and rest of the examples to f
     Apr 28 17:21:30 tecmint systemd[1]: Started The Apache HTTP Server.
     Hint: Some lines were ellipsized, use -l to show in full.
 
-**Note**: When we use commands like start, restart, stop and reload with systemctl, we will not get any output on the terminal, only status command will print the output.
+**注意**：当我们使用systemctl的start，restart，stop和reload命令时，我们不会不会从终端获取到任何输出内容，只有status命令可以打印输出。
 
-#### 14. How to active a service and enable or disable a service at boot time (auto start service at system boot). ####
+#### 14. 如何激活服务并在启动时启用或禁用服务（系统启动时自动启动服务） ####
 
     # systemctl is-active httpd.service
     # systemctl enable httpd.service
     # systemctl disable httpd.service
 
-#### 15. How to mask (making it impossible to start) or unmask a service (httpd.service). ####
+#### 15. 如何屏蔽（让它不能启动）或显示服务（httpd.service） ####
 
     # systemctl mask httpd.service
     ln -s '/dev/null' '/etc/systemd/system/httpd.service'
@@ -231,7 +230,7 @@ Also note the square brackets in the above example and rest of the examples to f
     # systemctl unmask httpd.service
     rm '/etc/systemd/system/httpd.service'
 
-#### 16. How to a Kill a service using systemctl command. ####
+#### 16. 使用systemctl命令杀死服务 ####
 
     # systemctl kill httpd
     # systemctl status httpd
@@ -254,9 +253,9 @@ Also note the square brackets in the above example and rest of the examples to f
     Apr 28 18:01:42 tecmint systemd[1]: Unit httpd.service entered failed state.
     Hint: Some lines were ellipsized, use -l to show in full.
 
-### Control and Manage Mount Points using Systemctl ###
+### 使用Systemctl控制并管理挂载点 ###
 
-#### 17. List all system mount points. ####
+#### 17. 列出所有系统挂载点 ####
 
     # systemctl list-unit-files --type=mount
     
@@ -269,7 +268,7 @@ Also note the square brackets in the above example and rest of the examples to f
     sys-kernel-debug.mount        static  
     tmp.mount                     disabled
 
-#### 18. How do I mount, unmount, remount, reload system mount points and also check the status of mount points on the system. ####
+#### 18. 挂载、卸载、重新挂载、重载系统挂载点并检查系统中挂载点状态 ####
 
     # systemctl start tmp.mount
     # systemctl stop tmp.mount
@@ -292,13 +291,13 @@ Also note the square brackets in the above example and rest of the examples to f
     Apr 28 17:46:06 tecmint systemd[1]: tmp.mount: Directory /tmp to mount over is not empty, mounting anyway.
     Apr 28 17:46:06 tecmint systemd[1]: Mounted Temporary Directory.
 
-#### 19. How to active, enable or disable a mount point at boot time (auto mount at system boot). ####
+#### 19. 在启动时激活、启用或禁用挂载点（系统启动时自动挂载） ####
 
     # systemctl is-active tmp.mount
     # systemctl enable tmp.mount
     # systemctl disable  tmp.mount
 
-#### 20. How to mask (making it impossible to start) or unmask a mount points in Linux. ####
+#### 20. 在Linux中屏蔽（让它不能启动）或显示挂载点 ####
 
     # systemctl mask tmp.mount
     
@@ -308,9 +307,9 @@ Also note the square brackets in the above example and rest of the examples to f
     
     rm '/etc/systemd/system/tmp.mount'
     
-### Control and Manage Sockets using Systemctl ###
+### 使用Systemctl控制并管理套接口 ###
 
-#### 21. List all available system sockets. ####
+#### 21. 列出所有可用系统套接口 ####
 
     # systemctl list-unit-files --type=socket
     
@@ -329,7 +328,7 @@ Also note the square brackets in the above example and rest of the examples to f
     
     11 unit files listed.
 
-#### 22. How do I start, restart, stop, reload and check the status of a socket (example: cups.socket) in Linux. ####
+#### 22. 在Linux中启动、重启、停止、重载套接口并检查其状态####
 
     # systemctl start cups.socket
     # systemctl restart cups.socket
@@ -345,13 +344,13 @@ Also note the square brackets in the above example and rest of the examples to f
     Apr 28 18:10:59 tecmint systemd[1]: Starting CUPS Printing Service Sockets.
     Apr 28 18:10:59 tecmint systemd[1]: Listening on CUPS Printing Service Sockets.
 
-#### 23. How to active a socket and enable or disable at boot time (auto start socket at system boot). ####
+#### 23. 在启动时激活套接口，并启用或禁用它（系统启动时自启动） ####
 
     # systemctl is-active cups.socket
     # systemctl enable cups.socket
     # systemctl disable cups.socket
 
-#### 24. How to mask (making it impossible to start) or unmask a socket (cups.socket). ####
+#### 24. 屏蔽（使它不能启动）或显示套接口 ####
 
     # systemctl mask cups.socket
     ln -s '/dev/null' '/etc/systemd/system/cups.socket'
@@ -359,31 +358,31 @@ Also note the square brackets in the above example and rest of the examples to f
     # systemctl unmask cups.socket
     rm '/etc/systemd/system/cups.socket'
 
-### CPU Utilization (Shares) of a Service ###
+### 服务的CPU利用率（分配额） ###
 
-#### 25. Get the current CPU Shares of a Service (say httpd). ####
+#### 25. 获取当前某个服务的CPU分配额（如httpd） ####
 
     # systemctl show -p CPUShares httpd.service
     
     CPUShares=1024
 
-**Note**: The default each service has a CPUShare = 1024. You may increase/decrease CPU share of a process.
+**注意**：各个服务的默认CPU分配份额=1024，你可以增加/减少某个进程的CPU分配份额。
 
-#### 26. Limit the CPU Share of a service (httpd.service) to 2000 CPUShares/ ####
+#### 26. 将某个服务（httpd.service）的CPU分配份额限制为2000 CPUShares/ ####
 
     # systemctl set-property httpd.service CPUShares=2000
     # systemctl show -p CPUShares httpd.service
     
     CPUShares=2000
 
-**Note**: When you set CPUShare for a service, a directory with the name of service is created (httpd.service.d) which contains a file 90-CPUShares.conf which contains the CPUShare Limit information. You may view the file as:
+**注意**：当你为某个服务设置CPUShares，会自动创建一个以服务名命名的目录（httpd.service），里面包含了一个名为90-CPUShares.conf的文件，该文件含有CPUShare限制信息，你可以通过以下方式查看该文件：
 
     # vi /etc/systemd/system/httpd.service.d/90-CPUShares.conf 
     
     [Service]
     CPUShares=2000        
 
-#### 27. Check all the configuration details of a service. ####
+#### 27. 检查某个服务的所有配置细节 ####
 
     # systemctl show httpd
     
@@ -402,7 +401,7 @@ Also note the square brackets in the above example and rest of the examples to f
     FragmentPath=/usr/lib/systemd/system/httpd.service
     ....
 
-#### 28. Analyze critical chain for a services(httpd). ####
+#### 28. 分析某个服务（httpd）的关键链 ####
 
     # systemd-analyze critical-chain httpd.service
     
@@ -427,7 +426,7 @@ Also note the square brackets in the above example and rest of the examples to f
                                 └─systemd-fsck@dev-disk-by\x2duuid-79f594ad\x2da332\x2d4730\x2dbb5f\x2d85d196080964.service @4.092s +149ms
                                   └─dev-disk-by\x2duuid-79f594ad\x2da332\x2d4730\x2dbb5f\x2d85d196080964.device @4.092s
 
-#### 29. Get a list of dependencies for a services (httpd). ####
+#### 29. 获取某个服务（httpd）的依赖性列表 ####
 
     # systemctl list-dependencies httpd.service
     
@@ -449,7 +448,7 @@ Also note the square brackets in the above example and rest of the examples to f
       │ ├─dbus.socket
     ....
 
-#### 30. List control groups hierarchically. ####
+#### 30. 按等级列出控制组 ####
 
     # systemd-cgls
     
@@ -473,7 +472,7 @@ Also note the square brackets in the above example and rest of the examples to f
       │ └─721 /usr/lib/polkit-1/polkitd --no-debug
     ....
 
-#### 31. List control group according to CPU, memory, Input and Output. ####
+#### 31. 按CPU、内存、输入和输出列出控制组 ####
 
     # systemd-cgtop
     
@@ -502,9 +501,9 @@ Also note the square brackets in the above example and rest of the examples to f
     /system.slice/webmin.service                                          1      -        -        -        -
     /user.slice/user-0.slice/session-1.scope                              3      -        -        -        -
 
-### Control System Runlevels ###
+### 控制系统运行等级 ###
 
-#### 32. How to start system rescue mode. ####
+#### 32. 启动系统救援模式 ####
 
     # systemctl rescue
     
@@ -512,7 +511,7 @@ Also note the square brackets in the above example and rest of the examples to f
     
     The system is going down to rescue mode NOW!
 
-#### 33. How to enter into emergency mode. ####
+#### 33. 进入紧急模式 ####
 
     # systemctl emergency
     
@@ -520,31 +519,31 @@ Also note the square brackets in the above example and rest of the examples to f
     system logs, "systemctl reboot" to reboot, "systemctl default" to try again
     to boot into default mode.
 
-#### 34. List current run levels in use. ####
+#### 34. 列出当前使用的运行等级 ####
 
     # systemctl get-default
     
     multi-user.target
 
-#### 35. How to start Runlevel 5 aka graphical mode. ####
+#### 35. 启动运行等级5，即图形模式 ####
 
     # systemctl isolate runlevel5.target
     OR
     # systemctl isolate graphical.target
 
-#### 36. How to start Runlevel 3 aka multiuser mode (commandline). ####
+#### 36. 启动运行等级3，即多用户模式（命令行） ####
 
     # systemctl isolate runlevel3.target
     OR
     # systemctl isolate multiuser.target
 
-#### 36. How to set multiusermode or graphical mode as default runlevel. ####
+#### 36. 设置多用户模式或图形模式为默认运行等级 ####
 
     # systemctl set-default runlevel3.target
     
     # systemctl set-default runlevel5.target
 
-#### 37. How to reboot, halt, suspend, hibernate or put system in hybrid-sleep. ####
+#### 37. 重启、停止、挂起、休眠系统或使系统进入混合睡眠 ####
 
     # systemctl reboot
     
@@ -556,23 +555,23 @@ Also note the square brackets in the above example and rest of the examples to f
     
     # systemctl hybrid-sleep
 
-For those who may not be aware of runlevels and what it does.
+对于不知运行等级为何物的人，说明如下。
 
-- Runlevel 0 : Shut down and Power off the system.
-- Runlevel 1 : Rescue?Maintainance Mode.
-- Runlevel 3 : multiuser, no-graphic system.
-- Runlevel 4 : multiuser, no-graphic system.
-- Runlevel 5 : multiuser, graphical system.
-- Runlevel 6 : Shutdown and Reboot the machine.
+- Runlevel 0 : 关闭系统
+- Runlevel 1 : 救援？维护模式
+- Runlevel 3 : 多用户，无图形系统
+- Runlevel 4 : 多用户，无图形系统
+- Runlevel 5 : 多用户，图形化系统
+- Runlevel 6 : 关闭并重启机器
 
-That’s all for now. Keep connected! Keep commenting. Don’t forget to provide us with your valuable feedback in the comments below. Like and share us and help us get spread.
+到此为止吧。保持连线，进行评论。别忘了在下面的评论中为我们提供一些有价值的反馈哦。喜欢我们、与我们分享，求扩散。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/manage-services-using-systemd-and-systemctl-in-linux/
 
 作者：[Avishek Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[GOLinux](https://github.com/GOLinux)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
