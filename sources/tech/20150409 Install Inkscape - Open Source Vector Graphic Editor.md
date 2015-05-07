@@ -10,9 +10,9 @@ Inkscape始于2003年，起初它的bug跟踪系统托管于Sourceforge上但是
 
 #### 创建对象 ####
 
-- Drawing different colored sized and shaped freehand lines through pencil tool, straight lines and curves through Bezier (pen) tool, applying freehand calligraphic strokes through calligraphic tool etc
-- Creating, selecting, editing and formatting text through text tool. Manipulating text in plain text boxes, on paths or in shapes
-- Helps draw various shapes like rectangles, ellipses, circles, arcs, polygons, stars, spirals etc and then resize, rotate and modify (turn sharp edges round) them
+- 用铅笔工具来画出不同颜色、大小和形状的手绘线，用贝塞尔曲线（笔式）工具来画出直线和曲线，通过书法工具来应用到手写的书法笔画上等等
+- 用文本工具来创建、选择、编辑和格式化文本。Manipulating text in plain text boxes, on paths or in shapes
+- 有效绘制各种形状，像矩形、椭圆形、圆形、弧线、多边形、星形和螺旋形等等并调整其大小、旋转并修改它们 and then resize, rotate and modify (turn sharp edges round) them
 - Create and embed bitmaps with simple commands
 
 #### 对象处理 ####
