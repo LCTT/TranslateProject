@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Linux FAQs with Answers--How to disable entering password for default keyring to unlock on Ubuntu desktop
 ================================================================================
 > **Question**: When I boot up my Ubuntu desktop, a pop up dialog appears, asking me to enter a password to unlock default keyring. How can I disable this "unlock default keyring" pop up window, and automatically unlock my keyring? 
