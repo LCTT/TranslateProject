@@ -1,34 +1,33 @@
-Translating by GOLinux!
-Command Line Tool to Monitor Linux Containers Performance
+监控Linux容器性能的命令行神器
 ================================================================================
-ctop is a new command line based tool available to monitor the processes at the container level. Containers provide operating system level virtualization environment by making use of the cgroups resource management functionality. This tool collects data related to memory, cpu, block IO and metadata like owner, uptime etc from cgroups and presents it in a user readable format so that one can quickly asses the overall health of the system. Based on the data collected, it tries to guess the underlying container technology.  ctop is useful in detecting who is using large amounts of memory under low memory situations.
+ctop是一个新的基于命令行的工具，它可用于在容器层级监控进程。容器通过利用控制器组（cgroup）的资源管理功能，提供了操作系统层级的虚拟化环境。该工具收集来自cgroup的与内存、CPU、块输入输出和诸如拥有者、开机时间等相关的元数据，并以人性化的格式呈现给用户，这样就可以快速对系统健康状况进行评估。基于所获得的数据，它可以尝试推测潜在的容器技术。ctop也有助于在低内存环境中检测出谁在消耗大量的内存。
 
-### Capabilities ###
+### 功能 ###
 
-Some of the capabilities of ctop are:
+ctop的一些功能如下：
 
-- Collect metrics for cpu, memory and blkio
-- Gather information regarding owner, container technology, task count
-- Sort the information using any column
-- Display the information using tree view
-- Fold/unfold cgroup tree
-- Select and follow a cgroup/container
-- Select a timeframe for refreshing the displayed data
-- Pause the refreshing of data
-- Detect containers that are based on systemd, Docker and LXC
-- Advance features for Docker and LXC based containers
-    - open / attach a shell for further diagnosis
-    - stop / kill container types
+- 收集CPU、内存和块输入输出的度量值
+- 收集与拥有者、容器技术和任务统计相关的信息
+- 使用任何栏目对信息排序
+- 以树状视图显示信息
+- 折叠/展开cgroup树
+- 选择并跟踪cgroup/容器
+- 选择显示数据刷新时间框架
+- 暂停刷新数据
+- 检测基于systemd、Docker和LXC的容器
+- 基于Docker和LXC的容器的高级特性
+    - 打开/连接shell以进行深度诊断
+    - 停止/杀死容器类型
 
-### Installation ###
+### 安装 ###
 
-**ctop** is written using Python and there are no other external dependencies other than having to use Python version 2.6 or greater (with built-in cursor support).   Installation using Python's pip is the recommended method. Install pip if not already done and install ctop using pip.
+**ctop**是由Python写成的，因此，除了需要Python 2.6或其更高版本外（支持内建光标），别无其它外部依赖。推荐使用Python的pip进行安装，如果还没有安装pip，请先安装，然后使用pip安装ctop。
 
-*Note: The examples shown in this article are from an Ubuntu (14.10) system*
+*注意：本文样例来自Ubuntu（14.10）系统*
 
     $ sudo apt-get install python-pip
 
-Installing ctop using pip:
+使用pip安装ctop：
 
     poornima@poornima-Lenovo:~$ sudo pip install ctop
 
@@ -52,7 +51,7 @@ Installing ctop using pip:
 
     Cleaning up...
 
-If using pip is not an option, you can also install it directly from the github using wget:
+如果不选择使用pip安装，你也可以使用wget直接从github安装：
 
     poornima@poornima-Lenovo:~$ wget https://raw.githubusercontent.com/yadutaf/ctop/master/cgroup_top.py -O ctop
 
@@ -74,7 +73,7 @@ If using pip is not an option, you can also install it directly from the github 
 
     poornima@poornima-Lenovo:~$ chmod +x ctop
 
-You might get an error message while launching ctop if cgroup-bin package is not installed.  It can be resolved by installing the required package.
+如果cgroup-bin包没有安装，你可能会碰到一个错误消息，你可以通过安装需要的包来解决。
 
     poornima@poornima-Lenovo:~$ ./ctop
 
@@ -82,18 +81,18 @@ You might get an error message while launching ctop if cgroup-bin package is not
 
     poornima@poornima-Lenovo:~$ sudo apt-get install cgroup-bin
 
-Here is a sample output screen of ctop:
+下面是ctop的输出样例：
 
 ![ctop screen](http://blog.linoxide.com/wp-content/uploads/2015/05/ctop.png)
-ctop screen
+ctop屏幕
 
-### Usage options ###
+### 用法选项 ###
 
     ctop [--tree] [--refresh=] [--columns=] [--sort-col=] [--follow=] [--fold=, ...] ctop (-h | --help)
 
-Once you are inside the ctop screen, use the up (↑) and down(↓) arrow keys to navigate between containers. Clicking on any container will select that particular container. Pressing q or Ctrl+C quits the container.
+一旦你进入ctop屏幕，使用上（↑）和下（↓）箭头键在容器间导航。点击某个容器就选定了该容器，按q或Ctrl+C退出容器。
 
-Let us now take a look at how to use each of the options listed above.
+现在，让我们来看看上面列出的那一堆选项究竟是怎么用的吧。
 
     -h / --help  - Show the help screen
 
@@ -116,9 +115,9 @@ Let us now take a look at how to use each of the options listed above.
 
     --tree - Display tree view of the containers
 
-By default, list view is displayed
+默认情况下，会显示列表视图
 
-Once you are inside the ctop window, you can use the F5 button to toggle tree / list view.
+一旦你进入ctop窗口，你可以使用F5按钮在树状/列表视图间切换。
 
     --fold=<name> - Fold the <name> cgroup path in the tree view.
 
@@ -129,11 +128,11 @@ Once you are inside the ctop window, you can use the F5 button to toggle tree / 
     Eg:   ctop --tree --fold=/user.slice
 
 ![Output of 'ctop --fold'](http://blog.linoxide.com/wp-content/uploads/2015/05/ctop-fold.png)
-Output of 'ctop --fold'
+‘ctop --fold’的输出
 
-Inside the ctop window, use the + / - keys to toggle child cgroup folding.
+在ctop窗口中，使用+/-键来展开或折叠子cgroup。
 
-Note: At the time of writing this article, pip repository did not have the latest version of ctop which supports '--fold' option via command line.
+注意：在写本文时，pip仓库中还没有最新版的ctop，还不支持命令行的‘--fold’选项
 
     --follow= - Follow/Highlight the cgroup path.
 
@@ -141,16 +140,16 @@ Note: At the time of writing this article, pip repository did not have the lates
 
     Eg: ctop --follow=/user.slice/user-1000.slice
 
-As you can see in the screen below, the cgroup with the given path "/user.slice/user-1000.slice" gets highlighted and makes it easier for the user to follow it even when the display position gets changed.
+正如你在下面屏幕中所见到的那样，带有“/user.slice/user-1000.slice”路径的cgroup被高亮显示，这让用户易于跟踪，就算显示位置变了也一样。
 
 ![Output of 'ctop --follow'](http://blog.linoxide.com/wp-content/uploads/2015/05/ctop-follow.png)
-Output of 'ctop --follow'
+‘ctop --follow’的输出
 
-You can also use the 'f' button to allow the highlighted line to follow the selected container. By default, follow is off.
+你也可以使用‘f’按钮来让高亮的行跟踪选定的容器。默认情况下，跟踪是关闭的。
 
     --refresh= - Refresh the display at the given rate. Default 1 sec
 
-This is useful in changing the refresh rate of the display as per user requirement.  Use the 'p' button to pause the refresh and select the text.
+这对于按每用户需求来显示改变刷新率时很有用。使用‘p’按钮可以暂停刷新并选择文本。
 
     --columns=<columns> - Can limit the display to selected <columns>. 'name' should be the first entry followed by other columns. By default, the columns include owner, processes,memory, cpu-sys, cpu-user, blkio, cpu-time.
 
@@ -159,7 +158,7 @@ This is useful in changing the refresh rate of the display as per user requireme
     Eg: ctop --columns=name,owner,type,memory
 
 ![Output of 'ctop --column'](http://blog.linoxide.com/wp-content/uploads/2015/05/ctop-column.png)
-Output of 'ctop --column'
+‘ctop --column’的输出
 
     -sort-col=<sort-col> - column using which the displayed data should be sorted. By default it is sorted using cpu-user
 
@@ -167,7 +166,7 @@ Output of 'ctop --column'
 
     Eg: ctop --sort-col=blkio
 
-If there are additional containers supported like Docker and LXC, following options will also be available:
+如果有Docker和LXC支持的额外容器，跟踪选项也是可用的：
 
     press 'a' - attach to console output
 
@@ -177,14 +176,14 @@ If there are additional containers supported like Docker and LXC, following opti
 
     press 'k' - kill the container (SIGKILL)
 
-[ctop][1] is currently in active development by Jean-Tiare Le Bigot. Hopefully we would see more features in this tool like our native top command :-).
+[ctop][1]当前还处于Jean-Tiare Le Bigot的开发中，希望我们能在该工具中见到像本地top命令一样的特性 :-)
 
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/how-tos/monitor-linux-containers-performance/
 
 作者：[B N Poornima][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[GOLinux](https://github.com/GOLinux)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
