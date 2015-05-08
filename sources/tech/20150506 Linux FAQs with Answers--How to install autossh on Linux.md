@@ -1,44 +1,44 @@
-    Vic020
-
-Linux FAQs with Answers--How to install autossh on Linux
+Linux有问必答－－如何安装autossh
 ================================================================================
-> **Question**: I would like to install autossh on [insert your Linux distro]. How can I do that? 
+> **提问**: 我打算在linux上安装autossh，我应该怎么做呢? 
 
-[autossh][1] is an open-source tool that allows you to monitor an SSH session and restart it automatically should it gets disconnected or stops forwarding traffic. autossh assumes that [passwordless SSH login][2] for a destination host is already setup, so that it can restart a broken SSH session without user's involvement.
+[autossh][1] 是一款开源工具，可以帮助管理SSH会话，自动重连和停止转发流量。autossh会假定目标主机已经设定[无密码SSH登陆][2]，以便autossh可以重连断开的SSH会话而不用用户操作。
 
-autossh comes in handy when you want to set up [reverse SSH tunnels][3] or [mount remote folders over SSH][4]. Essentially in any situation where persistent SSH sessions are required, autossh can be useful.
+只要你建立[反向SSH隧道][3]或者[挂载基于SSH的远程文件夹][4]，autossh迟早会派上用场。基本上只要需要维持SSH会话，autossh肯定是有用的。
+
 
 ![](https://farm8.staticflickr.com/7786/17150854870_63966e78bc_c.jpg)
 
-Here is how to install autossh on various Linux distributions.
+下面有许多linux发行版autossh的安装方法。
 
-### Install Autossh on Debian or Ubuntu ###
+### Debian 或 Ubuntu 系统 ###
 
-autossh is available in base repositories of Debian based systems, so installation is easy.
+autossh已经加入基于Debian系统的基础库，所以可以很方便的安装。
 
     $ sudo apt-get install autossh 
 
-### Install Autossh on Fedora ###
+### Fedora 系统 ###
 
-Fedora repositories also carry autossh package. So simply use yum command.
-
-    $ sudo yum install autossh 
-
-### Install Autossh on CentOS or RHEL ###
-
-For CentOS/RHEL 6 or earlier, enable [Repoforge repository][5] first, and then use yum command.
+Fedora库同样包含autossh包，使用yum安装。
 
     $ sudo yum install autossh 
 
-For CentOS/RHEL 7, autossh is no longer available in Repoforge repository. You will need to build it from the source (explained below).
+### CentOS 或 RHEL 系统 ###
 
-### Install Autossh on Arch Linux ###
+CentOS/RHEL 6 或早期版本, 需要开启第三库[Repoforge库][5], 然后才能使用yum安装.
+
+    $ sudo yum install autossh 
+
+CentOS/RHEL 7以后,autossh 已经不在Repoforge库中. 你需要从源码编译安装（例子在下面）.
+
+
+### Arch Linux 系统 ###
 
     $ sudo pacman -S autossh 
 
-### Compile Autossh from the Source on Debian or Ubuntu ###
+### Debian 或 Ubuntu 系统中从源码编译安装###
 
-If you would like to try the latest version of autossh, you can build it from the source as follows.
+如果你想要使用最新版本的autossh，你可以自己编译源码安装
 
     $ sudo apt-get install gcc make
     $ wget http://www.harding.motd.ca/autossh/autossh-1.4e.tgz
@@ -48,9 +48,9 @@ If you would like to try the latest version of autossh, you can build it from th
     $ make
     $ sudo make install 
 
-### Compile Autossh from the Source on CentOS, Fedora or RHEL ###
+### CentOS, Fedora 或 RHEL 系统中从源码编译安装###
 
-On CentOS/RHEL 7, autossh is not available as a pre-built package. So you'll need to compile it from the source as follows.
+在CentOS/RHEL 7以后，autossh不在是预编译包。所以你不得不从源码编译安装。
 
     $ sudo yum install wget gcc make
     $ wget http://www.harding.motd.ca/autossh/autossh-1.4e.tgz
@@ -65,7 +65,7 @@ On CentOS/RHEL 7, autossh is not available as a pre-built package. So you'll nee
 via: http://ask.xmodulo.com/install-autossh-linux.html
 
 作者：[Dan Nanni][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Vic020/VicYu](http://vicyu.net)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
