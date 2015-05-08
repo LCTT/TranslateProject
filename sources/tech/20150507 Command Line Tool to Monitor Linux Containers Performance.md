@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Command Line Tool to Monitor Linux Containers Performance
 ================================================================================
 ctop is a new command line based tool available to monitor the processes at the container level. Containers provide operating system level virtualization environment by making use of the cgroups resource management functionality. This tool collects data related to memory, cpu, block IO and metadata like owner, uptime etc from cgroups and presents it in a user readable format so that one can quickly asses the overall health of the system. Based on the data collected, it tries to guess the underlying container technology.  ctop is useful in detecting who is using large amounts of memory under low memory situations.
