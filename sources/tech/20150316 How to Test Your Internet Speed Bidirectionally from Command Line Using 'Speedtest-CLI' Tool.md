@@ -1,3 +1,5 @@
+translating by createyuan
+
 How to Test Your Internet Speed Bidirectionally from Command Line Using ‘Speedtest-CLI’ Tool
 ================================================================================
 We always need to check the speed of the Internet connection at home and office. What we do for this? Go to websites like Speedtest.net and begin test. It loads JavaScript in the web browser and then select best server based upon ping and output the result. It also uses a Flash player to produce graphical results.

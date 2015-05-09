@@ -1,3 +1,4 @@
+translating wi-cuckoo
 Linux FAQs with Answers--How to configure a Linux bridge with Network Manager on Ubuntu
 ================================================================================
 > **Question**: I need to set up a Linux bridge on my Ubuntu box to share a NIC with several other virtual machines or containers created on the box. I am currently using Network Manager on my Ubuntu, so preferrably I would like to configure a bridge using Network Manager. How can I do that? 
