@@ -1,3 +1,5 @@
+translating---geekpi
+
 How to Setup OpenERP (Odoo) on CentOS 7.x
 ================================================================================
 Hi everyone, this tutorial is all about how we can setup Odoo (formerly known as OpenERP) on our CentOS 7 Server. Are you thinking to get an awesome ERP (Enterprise Resource Planning) app for your business ?. Then, OpenERP is the best app you are searching as it is a Free and Open Source Software which provides an outstanding features for your business or company.
