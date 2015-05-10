@@ -62,4 +62,74 @@
 
 ### 活动网络监视器 ###
 
+不同于前面提到的被动的监听工具，这个类别的工具们在监听时会主动的“注入”探测内容到网络中，并且会收集相应的反应。监听目标包括路由路径、可供使用的带宽、丢包率、延时、抖动、系统设置或者缺陷等。
 
+20. **[dnsyo][10]**：一个DNS检测工具，能够管理多达1500个不同网络的开放解析器集群的DNS查询。它在您检查DNS繁殖或者检查DNS设置的时候很有用。
+
+21. **[iperf][11]**：一个TCP/UDP带宽测量工具，能够测量两点间最大可用带宽。它通过在两个主机间单向或双向的输出TCP/UDP探测流量来测量可用的带宽。它在监测网络容量、调谐网络协议栈参数时很有用。一个变种叫做[netperf][12]拥有更多的功能及更好的统计数据。
+
+22. **[netcat][13]/socat**：通用的网络debug工具，可以对TCP/UDP套接字进行读、写或监听。它通常和其他的程序或脚本结合起来在后端对网络传输或端口进行监听。
+
+23. **nmap**：一个命令行端口扫描和网络发现工具。它依赖于一个基于TCP/UDP的扫描技术来查找开放的端口、活动的主机或者在本地网络存在的操作系统。它在你审查本地主机漏洞或者为了维护建立主机映射时很有用。[zmap][14]是一个类似的替代品，是一个用于互联网范围的扫描工具。
+
+24. ping：一个常用的网络测试工具。通过对ICMP的echo和reply报文进行增强来实现其功能。它在测量路由的RTT、丢包率以及检测远端系统防火墙规则时很有用。ping的变种有更漂亮的界面（例如，[noping][15]）、多协议支持（例如，[hping][16]）或者并行探测能力（例如，[fping][17]）。
+
+![](https://farm8.staticflickr.com/7466/15612665344_a4bb665a5b_c.jpg)
+
+25. **[sprobe][18]**：一个启发式推断本地主机和任意远端IP地址的网络带宽瓶颈的命令行工具。它使用TCP三次握手机制来评估带宽的瓶颈。它在检测大范围网络性能和路由相关的问题时很有用。
+
+26. **traceroute**：一个能发现从本地到远端主机的第三层路由/转发路径的网络发现工具。它通过发送有限TTL的探测报文，收集中间路由的ICMP反馈信息。它在排查低速网络连接或者路由相关的问题时很有用。traceroute的变种有更好的RTT统计功能（例如，[mtr][19]）。
+
+### 应用日志处理 ###
+
+在这个类别下，网络监测器把特定的服务器应用作为目标（例如，web服务器或者数据库服务器）。由服务器程序产生或消耗的网络流量通过它的日志被分析和监测。不向前面提到的网络层的监视器，这个类别的工具能够在用用层面分析和监控网络流量。
+
+27. **[GoAccess][20]**：一个面向Apache和Nginx服务器流量的交互式查看器。基于获取到的日志，它能展示包括日访问量、最多请求、客户端操作系统、客户端位置、客户端浏览器等在内的多个实时的统计信息，并以滚动方式显示。
+
+![](https://farm8.staticflickr.com/7518/16209185266_da6c5c56eb_c.jpg)
+
+28. **[mtop][21]**：一个面向MySQL/MariaDB服务器的命令行监视器，它可以将当前数据库服务器负载中代价最大的查询进行可视化。它在您优化MySQL服务器性能、调谐服务器参数时很有用。
+
+![](https://farm8.staticflickr.com/7472/16047570248_bc996795f2_c.jpg)
+
+29. **[ngxtop][22]**：一个面向Nginx和Apache的流量监测工具，能够以类似top指令的界面可视化Web服务器的流量。它通过分析web服务器的查询日志文件并且收集某个目的地或请求的流量统计信息。
+
+### Conclusion ###
+
+在这篇文章中，我展示了许多的命令行式监测工具，从最底层的包层面的监视器到最高层应用程序层面的网络监视器。知道那个工具做了什么是一回事，选择哪个工具来使用又是另外一回事。单一的一个工具不能作为您每天使用的通用的解决方案。一个好的系统管理员应该能够决定那个工具更适合当前的环境。希望这个列表对此有所帮助。
+
+欢迎您通过回复来改进这个列表的内容！
+
+--------------------------------------------------------------------------------
+
+via: http://xmodulo.com/useful-command-line-network-monitors-linux.html
+
+作者：[Dan Nanni][a]
+译者：[wwy-hust](https://github.com/wwy-hust)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
+
+[a]:http://xmodulo.com/author/nanni
+[1]:http://www.monkey.org/~dugsong/dsniff/
+[2]:http://xmodulo.com/monitor-http-traffic-command-line-linux.html
+[3]:https://github.com/zorkian/mysql-sniffer
+[4]:http://ngrep.sourceforge.net/
+[5]:http://lcamtuf.coredump.cx/p0f3/
+[6]:http://xmodulo.com/recommend/firewallbook
+[7]:http://xmodulo.com/how-to-install-iftop-on-linux.html
+[8]:https://excess.org/speedometer/
+[9]:http://xmodulo.com/monitor-troubleshoot-linux-server-sysdig.html
+[10]:http://xmodulo.com/check-dns-propagation-linux.html
+[11]:https://iperf.fr/
+[12]:http://www.netperf.org/netperf/
+[13]:http://xmodulo.com/useful-netcat-examples-linux.html
+[14]:https://zmap.io/
+[15]:http://noping.cc/
+[16]:http://www.hping.org/
+[17]:http://fping.org/
+[18]:http://sprobe.cs.washington.edu/
+[19]:http://xmodulo.com/better-alternatives-basic-command-line-utilities.html#mtr_link
+[20]:http://goaccess.io/
+[21]:http://mtop.sourceforge.net/
+[22]:http://xmodulo.com/monitor-nginx-web-server-command-line-real-time.html
