@@ -2,13 +2,14 @@
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/05/Install-Visual-Studio-Code-in-Ubuntu.jpeg)
 
-微软意外地[发布了Visual Studio Code][1]，并支持主要的桌面平台，当然包括linux。如果你是一名需要在ubuntu工作的web开发人员，你可以**非常轻松的安装Visual Studio Code**。
+微软令人意外地[发布了Visual Studio Code][1]，并支持主要的桌面平台，当然包括linux。如果你是一名需要在ubuntu工作的web开发人员，你可以**非常轻松的安装Visual Studio Code**。
 
 我将要使用[Ubuntu Make][2]来安装Visual Studio Code。Ubuntu Make，就是以前的Ubuntu开发者工具中心，是一个命令行工具，帮助用户快速安装各种开发工具、语言和IDE。也可以使用Ubuntu Make轻松[安装Android Studio][3] 和其他IDE，如Eclipse。本文将展示**如何在Ubuntu中使用Ubuntu Make安装Visual Studio Code**。（译注：也可以直接去微软官网下载安装包）
 
 ###  安装微软Visual Studio Code ###
 
 开始之前，首先需要安装Ubuntu Make。虽然Ubuntu Make存在Ubuntu15.04官方库中，**但是需要Ubuntu Make 0.7以上版本才能安装Visual Studio**。所以，需要通过官方PPA更新到最新的Ubuntu Make。此PPA支持Ubuntu 14.04, 14.10 和 15.04。
+
 注意，**仅支持64位版本**。
 
 打开终端，使用下列命令，通过官方PPA来安装Ubuntu Make：
@@ -25,7 +26,7 @@
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/05/Visual_Studio_Code_Ubuntu_1.jpeg)
 
-在抛出一堆状态和条件后，它会询问你是否确认安装Visual Studio Code。输入‘a’来确定：
+在抛出一堆要求和条件后，它会询问你是否确认安装Visual Studio Code。输入‘a’来确定：
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/05/Visual_Studio_Code_Ubuntu_2.jpeg)
 
@@ -51,12 +52,12 @@ via: http://itsfoss.com/install-visual-studio-code-ubuntu/
 
 作者：[Abhishek][a]
 译者：[Vic020/VicYu](http://vicyu.net)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://itsfoss.com/author/abhishek/
-[1]:http://www.geekwire.com/2015/microsofts-visual-studio-expands-to-mac-and-linux-with-new-code-development-tool/
+[1]:https://linux.cn/article-5376-1.html
 [2]:https://wiki.ubuntu.com/ubuntu-make
 [3]:http://itsfoss.com/install-android-studio-ubuntu-linux/
 [4]:https://code.visualstudio.com/Download
