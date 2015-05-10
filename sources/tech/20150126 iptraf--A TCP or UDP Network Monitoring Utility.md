@@ -1,3 +1,5 @@
+[Trnslating by DongShuaike]
+
 iptraf: A TCP/UDP Network Monitoring Utility
 ================================================================================
 [iptraf][1] is an ncurses-based IP LAN monitor that generates various network statistics including TCP info, UDP counts, ICMP and OSPF information, Ethernet load info, node stats, IP checksum errors, and others.

@@ -1,4 +1,4 @@
-Linux 基础：如何修复Ubuntu上“E: /var/cache/apt/archives/ subprocess new pre-removal script returned error exit status 1 ”的错误
+如何修复 Ubuntu 上“...script returned error exit status 1”的错误
 ================================================================================
 ![](https://1102047360.rsc.cdn77.org/wp-content/uploads/2014/04/ubuntu-790x558.png)
 
@@ -6,11 +6,11 @@ Linux 基础：如何修复Ubuntu上“E: /var/cache/apt/archives/ subprocess ne
 
 > E: /var/cache/apt/archives/ subprocess new pre-removal script returned error exit status 1
 
-![](https://www.unixmen.com/wp-content/uploads/2015/03/Update-Manager_0011.png)
+![](http://www.unixmen.com/wp-content/uploads/2015/03/Update-Manager_0011.png)
 
 ### 解决： ###
 
-我google了以下并找到了方法。下面是我解决的方法。
+我google了一下并找到了方法。下面是我解决的方法。
 
     sudo apt-get clean
     sudo apt-get update && sudo apt-get upgrade
@@ -33,11 +33,11 @@ Linux 基础：如何修复Ubuntu上“E: /var/cache/apt/archives/ subprocess ne
 
 --------------------------------------------------------------------------------
 
-via: https://www.unixmen.com/linux-basics-how-to-fix-e-varcacheaptarchives-subprocess-new-pre-removal-script-returned-error-exit-status-1-in-ubuntu/
+via: http://www.unixmen.com/linux-basics-how-to-fix-e-varcacheaptarchives-subprocess-new-pre-removal-script-returned-error-exit-status-1-in-ubuntu/
 
 作者：[SK][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

@@ -1,3 +1,5 @@
+FSSlc translating 
+
 Conky – The Ultimate X Based System Monitor Application
 ================================================================================
 Conky is a system monitor application written in ‘C’ Programming Language and released under GNU General Public License and BSD License. It is available for Linux and BSD Operating System. The application is X (GUI) based that was originally forked from [Torsmo][1].

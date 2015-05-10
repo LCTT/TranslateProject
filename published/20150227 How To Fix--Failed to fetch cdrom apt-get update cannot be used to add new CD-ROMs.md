@@ -1,4 +1,4 @@
-如何修复：apt-get update无法添加新的CD-ROM
+如何修复 apt-get update 无法添加新的 CD-ROM 的错误
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/12/elementary_OS_Freya.jpg)
 
@@ -63,8 +63,8 @@
 via: http://itsfoss.com/fix-failed-fetch-cdrom-aptget-update-add-cdroms/
 
 作者：[Abhishek][a]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
