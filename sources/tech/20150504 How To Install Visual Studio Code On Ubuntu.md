@@ -1,57 +1,56 @@
-    Vic020
-
-How To Install Visual Studio Code On Ubuntu
+在Ubuntu中安装Visual Studio Code
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/05/Install-Visual-Studio-Code-in-Ubuntu.jpeg)
 
-Microsoft has done the unexpected by [releasing Visual Studio Code][1] for all major desktop platforms that includes Linux as well. If you are a web developer who happens to be using Ubuntu, you can **easily install Visual Studio Code in Ubuntu**.
+微软意外地[发布了Visual Studio Code][1]，并支持主要的桌面平台，当然包括linux。如果你是一名需要在ubuntu工作的web开发人员，你可以**非常轻松的安装Visual Studio Code**。
 
-We will be using [Ubuntu Make][2] for installing Visual Studio Code in Ubuntu. Ubuntu Make, previously known as Ubuntu Developer Tools Center, is a command line utility that allows you to easily install various development tools, languages and IDEs. You can easily [install Android Studio][3] and other popular IDEs such as Eclipse with Ubuntu Make. In this tutorial we shall see **how to install Visual Studio Code in Ubuntu with Ubuntu Make**.
+我将要使用[Ubuntu Make][2]来安装Visual Studio Code。Ubuntu Make，就是以前的Ubuntu开发者工具中心，是一个命令行工具，帮助用户快速安装各种开发工具、语言和IDE。也可以使用Ubuntu Make轻松[安装Android Studio][3] 和其他IDE，如Eclipse。本文将展示**如何在Ubuntu中使用Ubuntu Make安装Visual Studio Code**。（译注：也可以直接去微软官网下载安装包）
 
-### Install Microsoft Visual Studio Code in Ubuntu ###
+###  安装微软Visual Studio Code ###
 
-Before installing Visual Studio Code, we need to install Ubuntu Make first. Though Ubuntu Make is available in Ubuntu 15.04 repository, **you’ll need Ubuntu Make 0.7 for Visual Studio**. You can get the latest Ubuntu Make by using the official PPA. The PPA is available for Ubuntu 14.04, 14.10 and 15.04. Also, it **is only available for 64 bit platform**.
+开始之前，首先需要安装Ubuntu Make。虽然Ubuntu Make存在Ubuntu15.04官方库中，**但是需要Ubuntu Make 0.7以上版本才能安装Visual Studio**。所以，需要通过官方PPA更新到最新的Ubuntu Make。此PPA支持Ubuntu 14.04, 14.10 和 15.04。
+注意，**仅支持64位版本**。
 
-Open a terminal and use the following commands to install Ubuntu Make via official PPA:
+打开终端，使用下列命令，通过官方PPA来安装Ubuntu Make：
 
     sudo add-apt-repository ppa:ubuntu-desktop/ubuntu-make
     sudo apt-get update
     sudo apt-get install ubuntu-make
 
-Once you have installed Ubuntu Make, use the command below to install Visual Studio Code:
+安装Ubuntu Make完后，接着使用下列命令安装Visual Studio Code：
 
     umake web visual-studio-code
 
-You’ll be asked to provide a path where it will be installed:
+安装过程中，将会询问安装路径，如下图：
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/05/Visual_Studio_Code_Ubuntu_1.jpeg)
 
-After throwing a whole lot of terms and conditions, it will ask for your permission to install Visual Studio Code. Press ‘a’ at this screen:
+在抛出一堆状态和条件后，它会询问你是否确认安装Visual Studio Code。输入‘a’来确定：
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/05/Visual_Studio_Code_Ubuntu_2.jpeg)
 
-Once you do that it will start downloading and installing it. Once it is installed, you can see that Visual Studio Code icon has already been locked to the Unity Launcher. Just click on it to run it. This is how Visual Studio Code looks like in Ubuntu 15.04 Unity:
+确定之后，安装程序会开始下载并安装。安装完成后，你可以发现Visual Studio Code 图标已经出现在了Unity启动器上。点击图标开始运行！下图是Ubuntu 15.04 Unity的截图：
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/05/Visual_Studio_Code_Ubuntu.jpeg)
 
-### Uninstall Visual Studio Code from Ubuntu ###
+### 卸载Visual Studio Code###
 
-To uninstall Visual Studio Code, we’ll use the same command line tool umake. Just use the following command in terminal:
+卸载Visual Studio Code，同样使用Ubuntu Make命令。如下：
 
     umake web visual-studio-code --remove
 
-If you do not want to use Ubuntu Make, you can install Visual Studio Code by downloading the files from Microsoft:
+如果你不打算使用Ubuntu Make，也可以通过微软官方下载安装文件。
 
-- [Download Visual Studio Code for Linux][4]
+- [下载Visual Studio Code Linux版][4]
 
-See, how easy it is to install Visual Studio Code in Ubuntu, all thanks to Ubuntu Make. I hope this tutorial helped you. Feel free to drop a comment if you have any questions or suggestions.
+怎样！是不是超级简单就可以安装Visual Studio Code，这都归功于Ubuntu Make。我希望这篇文章能帮助到你。如果您有任何问题或建议，欢迎给我留言。
 
 --------------------------------------------------------------------------------
 
 via: http://itsfoss.com/install-visual-studio-code-ubuntu/
 
 作者：[Abhishek][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Vic020/VicYu](http://vicyu.net)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
