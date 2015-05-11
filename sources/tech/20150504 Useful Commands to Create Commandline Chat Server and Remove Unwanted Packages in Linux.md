@@ -1,3 +1,4 @@
+translating wi-cuckoo
 Useful Commands to Create Commandline Chat Server and Remove Unwanted Packages in Linux
 ================================================================================
 Here we are with the next part of Linux Command Line Tips and Tricks. If you missed our previous post on Linux Tricks you may find it here.
