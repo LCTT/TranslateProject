@@ -1,3 +1,4 @@
+Translating by GOLinux!
 First Step Guide for Learning Shell Scripting
 ================================================================================
 ![](http://blog.linoxide.com/wp-content/uploads/2015/04/myfirstshellscript.jpg)
