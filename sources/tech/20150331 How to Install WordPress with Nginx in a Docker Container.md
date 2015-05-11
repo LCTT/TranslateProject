@@ -1,3 +1,4 @@
+Translating by ictlyh
 How to Install WordPress with Nginx in a Docker Container
 ================================================================================
 Hi all, today we'll learn how to install WordPress running Nginx Web Server in a Docker Container. WordPress is an awesome free and open source Content Management System running thousands of websites throughout the globe. [Docker][1] is an Open Source project that provides an open platform to pack, ship and run any application as a lightweight container. It has no boundaries of Language support, Frameworks or packaging system and can be run anywhere, anytime from a small home computers to high-end servers. It makes them great building blocks for deploying and scaling web apps, databases, and back-end services without depending on a particular stack or provider.
