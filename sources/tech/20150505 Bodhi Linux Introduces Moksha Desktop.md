@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Bodhi Linux Introduces Moksha Desktop
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/05/Bodhi_Linux.jpg)
