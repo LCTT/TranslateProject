@@ -1,16 +1,15 @@
-Translating by ZTinoZ
-15 Things to Do After Installing Ubuntu 15.04 Desktop
+安装完Ubuntu 15.04桌面后要做的15件事
 ================================================================================
-This tutorial is intended for beginners and covers some basic steps on what to do after you have installed Ubuntu 15.04 “Vivid Vervet” Desktop version on your computer in order to customize the system and install basic programs for daily usage.
+本教程适用于新手和在自己的电脑上安装好Ubuntu 15.04 “Vivid Vervet” 桌面之后为了自定义自己的系统并安装一些基本程序作为日常使用的已经做了一些准备的人。
 
 ![Things to Do After Installing Ubuntu 15.04](http://www.tecmint.com/wp-content/uploads/2015/04/things-to-do-after-installing-ubuntu-15.04.jpeg)
-15 Things to Do After Installing Ubuntu 15.04
+安装完Ubuntu 15.04桌面后要做的15件事
 
-### 1. Enable Ubuntu Extra Repositories and Update the System ###
+### 1. 启用Ubuntu额外软件库并更新系统 ###
 
-The first thing you should take care of after a fresh installation of Ubuntu is to enable Ubuntu Extra Repositories provided by official Canonical Partners and keep an up-to-date system with the last security patches and software updates.
+在刚装好Ubuntu之后你应该要关心的第一件事是启用官方合作伙伴提供的Ubuntu额外软件库并且通过最近一次的安全补丁和软件更新来保持系统是最新状态。
 
-In order to accomplish this step, open from the left Launcher System Settings -> Software and Updates utility and check all Ubuntu Software and Other Software (Canonical Partners) repositories. After you finish hit the Close button and wait for the utility to Reload the cache sources tree.
+要完成这一步，In order to accomplish this step, open from the left Launcher System Settings -> Software and Updates utility and check all Ubuntu Software and Other Software (Canonical Partners) repositories. After you finish hit the Close button and wait for the utility to Reload the cache sources tree.
 
 ![Software Updates](http://www.tecmint.com/wp-content/uploads/2015/04/Software-Updates.jpg)
 Software Updates
@@ -26,7 +25,7 @@ For a fast and smooth update process, open a Terminal and issue the following co
 ![Ubuntu Upgrade](http://www.tecmint.com/wp-content/uploads/2015/04/Ubuntu-Upgrade.jpg)
 Ubuntu Upgrade
 
-### 2. Install Additional Drivers ###
+### 2. 安装额外驱动 ###
 
 In order for the system to scan and install additional hardware proprietary drivers, open Software and Updates utility from System Settings, go to Additional Drivers tab and wait for the utility to scan for drivers.
 
