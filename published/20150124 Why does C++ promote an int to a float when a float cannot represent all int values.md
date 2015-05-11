@@ -1,7 +1,7 @@
 既然float不能表示所有的int，那为什么在类型转换时C++将int转换成float？
----------
+=============
 
-#问题：
+###问题：
 
 代码如下：
 
@@ -13,7 +13,7 @@ if (i == f) // 执行某段代码
 
 编译器会将i转换成float类型，然后比较这两个float的大小，但是float能够表示所有的int吗？为什么没有将int和float转换成double类型进行比较呢？
 
-#回答：
+###回答：
 
 在整型数的演变中，当`int`变成`unsigned`时，会丢掉负数部分（有趣的是，这样的话，`0u < -1`就是对的了）。
 
@@ -32,11 +32,11 @@ if((double) i < (double) f)
 顺便提一下，在这个问题中有趣的是，`unsigned`的优先级高于`int`，所以把`int`和`unsigned`进行比较时，最终进行的是unsigned类型的比较（开头提到的`0u < -1`就是这个道理）。我猜测这可能是在早些时候（计算机发展初期），当时的人们认为`unsigned`比`int`在所表示的数值范围上受到的限制更小：现在还不需要符号位，所以可以使用额外的位来表示更大的数值范围。如果你觉得`int`可能会溢出，那么就使用unsigned好了——在使用16位表示的ints时这个担心会更明显。
 
 ----
-via:[stackoverflow](http://stackoverflow.com/questions/28010565/why-does-c-promote-an-int-to-a-float-when-a-float-cannot-represent-all-int-val/28011249#28011249)
+via: [stackoverflow](http://stackoverflow.com/questions/28010565/why-does-c-promote-an-int-to-a-float-when-a-float-cannot-represent-all-int-val/28011249#28011249)
 
 作者：[wintermute][a]
 译者：[KayGuoWhu](https://github.com/KayGuoWhu)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
