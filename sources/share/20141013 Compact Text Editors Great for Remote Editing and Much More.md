@@ -1,4 +1,4 @@
-(translating by runningwater)
+wyangsun翻译中
 Compact Text Editors Great for Remote Editing and Much More
 ================================================================================
 A text editor is software used for editing plain text files. This type of software has many different uses including modifying configuration files, writing programming language source code, jotting down thoughts, or even making a grocery list. Given that editors can be used for such a diverse range of activities, it is worth spending the time finding an editor that best suites your preferences.

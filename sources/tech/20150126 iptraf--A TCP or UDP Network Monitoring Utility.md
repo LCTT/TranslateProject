@@ -1,4 +1,4 @@
-Ping -- Translating
+[Trnslating by DongShuaike]
 
 iptraf: A TCP/UDP Network Monitoring Utility
 ================================================================================

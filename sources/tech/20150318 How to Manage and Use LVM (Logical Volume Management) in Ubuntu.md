@@ -1,3 +1,4 @@
+translating by runningwater
 How to Manage and Use LVM (Logical Volume Management) in Ubuntu
 ================================================================================
 ![](http://cdn5.howtogeek.com/wp-content/uploads/2011/02/652x202xbanner-1.png.pagespeed.ic.VGSxDeVS9P.png)
@@ -258,7 +259,7 @@ That should cover most of what you need to know to use LVM. If you’ve got some
 
 via: http://www.howtogeek.com/howto/40702/how-to-manage-and-use-lvm-logical-volume-management-in-ubuntu/
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
