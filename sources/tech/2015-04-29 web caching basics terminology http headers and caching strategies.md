@@ -1,3 +1,5 @@
+translating by wwy-hust
+
 Web Caching Basics: Terminology, HTTP Headers, and Caching Strategies
 =====================================================================
 

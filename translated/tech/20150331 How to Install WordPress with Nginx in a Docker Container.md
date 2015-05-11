@@ -1,26 +1,26 @@
-How to Install WordPress with Nginx in a Docker Container
+如何在 Docker 容器里的 Nginx 中安装 WordPress
 ================================================================================
-Hi all, today we'll learn how to install WordPress running Nginx Web Server in a Docker Container. WordPress is an awesome free and open source Content Management System running thousands of websites throughout the globe. [Docker][1] is an Open Source project that provides an open platform to pack, ship and run any application as a lightweight container. It has no boundaries of Language support, Frameworks or packaging system and can be run anywhere, anytime from a small home computers to high-end servers. It makes them great building blocks for deploying and scaling web apps, databases, and back-end services without depending on a particular stack or provider.
+大家好，今天我们来学习一下如何在 Docker 容器上运行的 Nginx Web 服务器中安装 WordPress。WordPress 是一个很好的免费开源的内容管理系统，全球成千上万的网站都在使用它。[Docker][1] 是一个提供开放平台来打包，分发和运行任何应用的开源轻量级容器项目。它没有语言支持，框架或打包系统的限制，可以在从小的家用电脑到高端服务器的任何地方任何时间运行。这让它们成为可以用于部署和扩展网络应用，数据库和后端服务而不必依赖于特定的栈或者提供商的很好的构建块。
 
-Today, we'll deploy a docker container with the latest WordPress package with necessary prerequisites ie Nginx Web Server, PHP5, MariaDB Server, etc. Here are some short and sweet steps to successfully install a WordPress running Nginx in a Docker Container.
+今天，我们会在 docker 容器上部署最新的 WordPress 软件包，包括需要的前提条件，例如 Nginx Web 服务器、PHP5、MariaDB 服务器等。下面是在运行在 Docker 容器上成功安装 WordPress 的简单步骤。
 
-### 1. Installing Docker ###
+### 1. 安装 Docker ###
 
-Before we really start, we'll need to make sure that we have Docker installed in our Linux machine. Here, we are running CentOS 7 as host so, we'll be running yum manager to install docker using the below command.
+在我们真正开始之前，我们需要确保在我们的 Linux 机器上已经安装了 Docker。我们使用的主机是 CentOS 7，因此我们用下面的命令使用 yum 管理器安装 docker。
 
     # yum install docker
 
-![Installing Docker](http://blog.linoxide.com/wp-content/uploads/2015/03/installing-docker.png)
+![安装 Docker](http://blog.linoxide.com/wp-content/uploads/2015/03/installing-docker.png)
 
     # systemctl restart docker.service
 
-### 2. Creating WordPress Dockerfile ###
+### 2. 创建 WordPress Docker 文件 ###
 
-We'll need to create a Dockerfile which will automate the installation of the wordpress and its necessary pre-requisites. This Dockerfile will be used to build the image of WordPress installation we created. This WordPress Dockerfile fetches a CentOS 7 image from the Docker Registry Hub and updates the system with the latest available packages. It then installs the necessary softwares like Nginx Web Server, PHP, MariaDB, Open SSH Server and more which are essential for the Docker Container to work. It then executes a script which will initialize the installation of WordPress out of the box.
+我们需要创建用于自动安装 wordpress 以及前提条件的 docker 文件。这个 docker 文件将用于构建 WordPress 的安装镜像。这个 WordPress docker 文件会从 Docker 库中心获取 CentOS 7 镜像并用最新的可用更新升级系统。然后它会安装必要的软件，例如 Nginx Web 服务器、PHP、MariaDB、Open SSH 服务器以及其它保证 Docker 容器正常运行不可缺少的组件。最后它会执行一个初始化 WordPress 安装的脚本。
 
     # nano Dockerfile
 
-Then, we'll need to add the following lines of configuration inside that Dockerfile.
+然后，我们需要将下面的配置行添加到 Docker 文件中。
 
     FROM centos:centos7
     MAINTAINER The CentOS Project <cloud-ops@centos.org>
@@ -48,15 +48,15 @@ Then, we'll need to add the following lines of configuration inside that Dockerf
 
     CMD ["/bin/bash", "/start.sh"]
 
-![Wordpress Dockerfile](http://blog.linoxide.com/wp-content/uploads/2015/03/Dockerfile-wordpress.png)
+![Wordpress Docker 文件](http://blog.linoxide.com/wp-content/uploads/2015/03/Dockerfile-wordpress.png)
 
-### 3. Creating Start script ###
+### 3. 创建启动 script ###
 
-After we create our Dockerfile, we'll need to create a script named start.sh which will run and configure our WordPress installation. It will create and configure database, passwords for wordpress. To create it, we'll need to open start.sh with our favorite text editor.
+我们创建了 docker 文件之后，我们需要创建用于运行和配置 WordPress 安装的脚本，名称为 start.sh。它会为 WordPress 创建并配置数据库和密码。用我们喜欢的文本编辑器打开 start.sh。
 
     # nano start.sh
 
-After opening start.sh, we'll need to add the following lines of configuration into it.
+打开 start.sh 之后，我们要添加下面的配置行到文件中。
 
     #!/bin/bash
 
@@ -67,7 +67,7 @@ After opening start.sh, we'll need to add the following lines of configuration i
     }
 
     __create_user() {
-    # Create a user to SSH into as.
+    # 创建用于 SSH 登录的用户
     SSH_USERPASS=`pwgen -c -n -1 8`
     useradd -G wheel user
     echo user:$SSH_USERPASS | chpasswd
@@ -75,7 +75,7 @@ After opening start.sh, we'll need to add the following lines of configuration i
     }
 
     __mysql_config() {
-    # Hack to get MySQL up and running... I need to look into it more.
+    # 启用并运行 MySQL
     yum -y erase mariadb mariadb-server
     rm -rf /var/lib/mysql/ /etc/my.cnf
     yum -y install mariadb mariadb-server
@@ -86,18 +86,18 @@ After opening start.sh, we'll need to add the following lines of configuration i
     }
 
     __handle_passwords() {
-    # Here we generate random passwords (thank you pwgen!). The first two are for mysql users, the last batch for random keys in wp-config.php
+    # 在这里我们生成随机密码(感谢 pwgen)。前面两个用于 mysql 用户，最后一个用于 wp-config.php 的随机密钥。
     WORDPRESS_DB="wordpress"
     MYSQL_PASSWORD=`pwgen -c -n -1 12`
     WORDPRESS_PASSWORD=`pwgen -c -n -1 12`
-    # This is so the passwords show up in logs.
+    # 这是在日志中显示的密码。
     echo mysql root password: $MYSQL_PASSWORD
     echo wordpress password: $WORDPRESS_PASSWORD
     echo $MYSQL_PASSWORD > /mysql-root-pw.txt
     echo $WORDPRESS_PASSWORD > /wordpress-db-pw.txt
-    # There used to be a huge ugly line of sed and cat and pipe and stuff below,
-    # but thanks to @djfiander's thing at https://gist.github.com/djfiander/6141138
-    # there isn't now.
+    # 这里原来是一个包括 sed、cat、pipe 和 stuff 的很长的行，但多亏了
+    #  @djfiander 的 https://gist.github.com/djfiander/6141138
+    # 现在没有了
     sed -e "s/database_name_here/$WORDPRESS_DB/
     s/username_here/$WORDPRESS_DB/
     s/password_here/$WORDPRESS_PASSWORD/
@@ -116,7 +116,7 @@ After opening start.sh, we'll need to add the following lines of configuration i
     }
 
     __start_mysql() {
-    # systemctl start mysqld.service
+    # systemctl 启动 mysqld 服务
     mysqladmin -u root password $MYSQL_PASSWORD
     mysql -uroot -p$MYSQL_PASSWORD -e "CREATE DATABASE wordpress; GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpress'@'localhost' IDENTIFIED BY '$WORDPRESS_PASSWORD'; FLUSH PRIVILEGES;"
     killall mysqld
@@ -127,7 +127,7 @@ After opening start.sh, we'll need to add the following lines of configuration i
     supervisord -n
     }
 
-    # Call all functions
+    # 调用所有函数
     __check
     __create_user
     __mysql_config
@@ -136,17 +136,17 @@ After opening start.sh, we'll need to add the following lines of configuration i
     __start_mysql
     __run_supervisor
 
-![Start Script](http://blog.linoxide.com/wp-content/uploads/2015/03/start-script.png)
+![启动脚本](http://blog.linoxide.com/wp-content/uploads/2015/03/start-script.png)
 
-After adding the above configuration, we'll need to save it and then exit.
+增加完上面的配置之后，保存并关闭文件。
 
-### 4. Creating Configuration files ###
+### 4. 创建配置文件 ###
 
-Now, we'll need to create configuration file for Nginx Web Server named nginx-site.conf .
+现在，我们需要创建 Nginx Web 服务器的配置文件，命名为 nginx-site.conf。
 
     # nano nginx-site.conf
 
-Then, we'll add the following configuration to the config file.
+然后，增加下面的配置信息到配置文件。
 
     user nginx;
     worker_processes 1;
@@ -230,13 +230,13 @@ Then, we'll add the following configuration to the config file.
     }
     }
 
-![Nginx configuration](http://blog.linoxide.com/wp-content/uploads/2015/03/nginx-conf.png)
+![Nginx 配置](http://blog.linoxide.com/wp-content/uploads/2015/03/nginx-conf.png)
 
-Now, we'll create supervisord.conf file and add the following lines as shown below.
+现在，创建 supervisor.conf 文件并添加下面的行。
 
     # nano supervisord.conf
 
-Then, add the following lines.
+然后，添加以下行。
 
     [unix_http_server]
     file=/tmp/supervisor.sock ; (the path to the socket file)
@@ -286,60 +286,60 @@ Then, add the following lines.
     events = PROCESS_LOG
     result_handler = supervisor_stdout:event_handler
 
-![Supervisord Configuration](http://blog.linoxide.com/wp-content/uploads/2015/03/supervisord.png)
+![Supervisord 配置](http://blog.linoxide.com/wp-content/uploads/2015/03/supervisord.png)
 
-After adding, we'll save and exit the file.
+添加完后，保存并关闭文件。
 
-### 5. Building WordPress Container ###
+### 5. 构建 WordPress 容器 ###
 
-Now, after done with creating configurations and scripts, we'll now finally use the Dockerfile to build our desired container with the latest WordPress CMS installed and configured according to the configuration. To do so, we'll run the following command in that directory.
+现在，完成了创建配置文件和脚本之后，我们终于要使用 docker 文件来创建安装最新的 WordPress CMS(译者注：Content Management System,内容管理系统)所需要的容器，并根据配置文件进行配置。做到这点，我们需要在对应的目录中运行以下命令。
 
     # docker build --rm -t wordpress:centos7 .
 
-![Building WordPress Container](http://blog.linoxide.com/wp-content/uploads/2015/03/building-wordpress-container.png)
+![构建 WordPress 容器](http://blog.linoxide.com/wp-content/uploads/2015/03/building-wordpress-container.png)
 
-### 6. Running WordPress Container ###
+### 6. 运行 WordPress 容器 ###
 
-Now, to run our newly built container and open port 80 and 22 for Nginx Web Server and SSH access respectively, we'll run the following command.
+现在，执行以下命令运行新构建的容器，并为 Nginx Web 服务器和 SSH 访问打开88 和 22号相应端口 。
 
     # CID=$(docker run -d -p 80:80 wordpress:centos7)
 
-![Run WordPress Docker](http://blog.linoxide.com/wp-content/uploads/2015/03/run-wordpress-docker.png)
+![运行 WordPress Docker](http://blog.linoxide.com/wp-content/uploads/2015/03/run-wordpress-docker.png)
 
-To check the process and commands executed inside the container, we'll run the following command.
+运行以下命令检查进程以及容器内部执行的命令。
 
     #  echo "$(docker logs $CID )"
 
-TO check if the port mapping is correct or not, run the following command.
+运行以下命令检查端口映射是否正确。
 
     # docker ps
 
-![docker state](http://blog.linoxide.com/wp-content/uploads/2015/03/docker-state.png)
+![docker 状态](http://blog.linoxide.com/wp-content/uploads/2015/03/docker-state.png)
 
-### 7. Web Interface ###
+### 7. Web 界面 ###
 
-Finally if everything went accordingly, we'll be welcomed with WordPress when pointing the browser to http://ip-address/ or http://mywebsite.com/ .
+最后如果一切正常的话，当我们用浏览器打开 http://ip-address/ 或者 http://mywebsite.com/ 的时候会看到 WordPress 的欢迎界面。
 
-![Wordpress Start](http://blog.linoxide.com/wp-content/uploads/2015/03/wordpress-start.png)
+![启动Wordpress](http://blog.linoxide.com/wp-content/uploads/2015/03/wordpress-start.png)
 
-Now, we'll go step wise through the web interface and setup wordpress configuration, username and password for the WordPress Panel. 
+现在，我们将通过 Web 界面为 WordPress 面板设置 WordPress 的配置、用户名和密码。
 
-![Wordpress Welcome](http://blog.linoxide.com/wp-content/uploads/2015/03/wordpress-welcome.png)
+![Wordpress 欢迎界面](http://blog.linoxide.com/wp-content/uploads/2015/03/wordpress-welcome.png)
 
-Then, use the username and password entered above into the WordPress Login page.
+然后，用上面用户名和密码输入到 WordPress 登录界面。
 
-![wordpress login](http://blog.linoxide.com/wp-content/uploads/2015/03/wordpress-login.png)
+![wordpress 登录](http://blog.linoxide.com/wp-content/uploads/2015/03/wordpress-login.png)
 
-### Conclusion ###
+### 总结 ###
 
-We successfully built and run WordPress CMS under LEMP Stack running in CentOS 7 Operating System as the docker OS. Running WordPress inside a container makes a lot safe and secure to the host system from the security perspective. This article enables one to completely configure WordPress to run under Docker Container with Nginx Web Server. If you have any questions, suggestions, feedback please write them in the comment box below so that we can improve or update our contents. Thank you ! Enjoy :-) 
+我们已经成功地在以 CentOS 7 作为 docker OS 的 LEMP 栈上构建并运行了 WordPress CMS。从安全层面来说，在容器中运行 WordPress 对于宿主系统更加安全可靠。这篇文章介绍了在 Docker 容器中运行的 Nginx Web 服务器上使用 WordPress 的完整配置。如果你有任何问题、建议、反馈，请在下面的评论框中写下来，让我们可以改进和更新我们的内容。非常感谢！Enjoy :-) 
 
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/linux-how-to/install-wordpress-nginx-docker-container/
 
 作者：[Arun Pyasi][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ictlyh](https://github.com/ictlyh)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
