@@ -1,3 +1,4 @@
+Translating by H-mudcup
 Synfig Studio 1.0 — Open Source Animation Gets Serious
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2015/04/synfig-free-animations-750x467.jpg)
