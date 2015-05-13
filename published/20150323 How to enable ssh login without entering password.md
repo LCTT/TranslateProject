@@ -16,7 +16,7 @@
 
     $ cat .ssh/id_rsa.pub | ssh aliceB@hostB 'cat >> .ssh/authorized_keys'
 	
-自此以后，从aliceA@hostA上ssh到aliceB@hostB上再也不需要输入密码。
+自此以后，从aliceA@hostA上ssh到aliceB@hostB上再也不需要输入密码。（LCTT 译注：上述的创建目录并复制的操作也可以通过一个 ssh-copy-id 命令一步完成：`ssh-copy-id -i ~/.ssh/id_rsa.pub  aliceB@hostB`）
 
 ### 疑难解答 ###
 
@@ -34,7 +34,7 @@ via: http://xmodulo.com/how-to-enable-ssh-login-without.html
 
 作者：[Dan Nanni][a]
 译者：[KayGuoWhu](https://github.com/KayGuoWhu)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
