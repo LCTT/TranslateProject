@@ -1,3 +1,4 @@
+Translating by GOLinux!
 OpenSSL command line Root and Intermediate CA including OCSP, CRL and revocation
 ================================================================================
 These are quick and dirty notes on generating a certificate authority (CA), intermediate certificate authorities and end certificates using OpenSSL. It includes OCSP, CRL and CA Issuer information and specific issue and expiry dates.
