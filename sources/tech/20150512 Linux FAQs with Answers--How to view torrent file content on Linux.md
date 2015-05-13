@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Linux FAQs with Answers--How to view torrent file content on Linux
 ================================================================================
 > **Question**: I have a torrent file downloaded from the web. Is there a tool that allows me to view the content of a torrent on Linux? For example, I want to know what files are included inside a torrent. 
