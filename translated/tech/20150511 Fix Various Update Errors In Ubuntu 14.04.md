@@ -1,13 +1,12 @@
-Translating by GOLinux!
-Fix Various Update Errors In Ubuntu 14.04
+修复Ubuntu 14.04中各种更新错误
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/09/Fix_Ubuntu_Update_Error.jpeg)
 
-Who hasn’t come across an error while doing an update in Ubuntu? Update errors are common and plenty in Ubuntu and other Linux distributions based on Ubuntu. These errors occur for various reasons and can be fixed easily. In this article, we shall see various types of frequently occurring update errors in Ubuntu and how to fix them.
+在Ubuntu更新中，谁没有碰见个错误？在Ubuntu和其它基于Ubuntu的Linux发行版中，更新错误很常见，也为数不少。这些错误出现的原因多种多样，修复起来也很简单。在本文中，我们将见到Ubuntu中各种类型频繁发生的更新错误以及它们的修复方法。
 
-### Problem With MergeList ###
+### 合并列表问题 ###
 
-When you run update in terminal, you may encounter an error “[problem with MergeList][1]” like below:
+当你在终端中运行更新命令时，你可能会碰到这个错误“[合并列表错误][1]”，就像下面这样：
 
 > E:Encountered a section with no Package: header,
 > 
@@ -15,14 +14,14 @@ When you run update in terminal, you may encounter an error “[problem with Mer
 > 
 > E:The package lists or status file could not be parsed or opened.’
 
-To fix this error, use the following commands:
+可以使用以下命令来修复该错误：
 
     sudo rm -r /var/lib/apt/lists/*
     sudo apt-get clean && sudo apt-get update
 
-### Failed to download repository information -1 ###
+### 下载仓库信息失败 -1 ###
 
-There are actually two types of [failed to download repository information errors][2]. If your error read like this:
+实际上，有两种类型的[下载仓库信息失败错误][2]。如果你的错误是这样的：
 
 > W:Failed to fetch bzip2:/var/lib/apt/lists/partial/in.archive.ubuntu.com_ubuntu_dists_oneiric_restricted_binary-i386_Packages Hash Sum mismatch,
 > 
@@ -30,88 +29,88 @@ There are actually two types of [failed to download repository information error
 > 
 > E:Some index files failed to download. They have been ignored, or old ones used instead
 
-Then you can use the following commands to fix it:
+那么，你可以用以下命令修复：
 
     sudo rm -rf /var/lib/apt/lists/*
     sudo apt-get update
 
-### Failed to download repository information -2 ###
+### 下载仓库信息失败 -2 ###
 
-Th other type of failed to download repository information error is because of outdated PPA. Usually, when you run Update Manager and see an error like this:
+下载仓库信息失败的另外一种类型是由于PPA过时导致的。通常，当你运行更新管理器，并看到这样的错误时：
 
 ![](Th other type of failed to download repository information error is because of outdated PPA. Usually, when you run Update Manager and see an error like this:)
 
-You can run sudo apt-get update to see what PPAs are failing. And you can remove it from the sources list. You can follow this screenshot guide to [fix failed to download repository information error][3].
+你可以运行sudo apt-get update来查看哪个PPA更新失败，你可以把它从源列表中删除。你可以按照这个截图指南来[修复下载仓库信息失败错误][3]。
 
-### Failed to download package files error ###
+### 下载包文件失败错误 ###
 
-A similar error is [failed to download package files error][4] like this:
+一个类似的错误是[下载包文件失败错误][4]，像这样：
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/09/Ubuntu_Update_error.jpeg)
 
-This can be easily fixed by changing the software sources to Main server. Go to Software & Updates and in there changed the download server to Main server:
+该错误很容易修复，只需修改软件源为主服务器即可。转到软件和更新，在那里你可以修改下载服务器为主服务器：
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/09/Change_server_Ubuntu.jpeg)
 
-### Partial upgrade error ###
+### 部分更新错误 ###
 
-Running updates in terminal may throw this [partial upgrade error][5]:
+在终端中运行更新会出现[部分更新错误][5]：
 
 > Not all updates can be installed
 > 
 > Run a partial upgrade, to install as many updates as possible
 
-Run the following command in terminal to fix this error:
+在终端中运行以下命令来修复该错误：
 
     sudo apt-get install -f
 
-### error while loading shared libraries ###
+### 加载共享库时发生错误 ###
 
-This is more of an installation error than update error. If you try to install a program from source code, you may encounter this error:
+该错误更多是安装错误，而不是更新错误。如果尝试从源码安装程序，你可能会碰到这个错误：
 
 > error while loading shared libraries:
 > 
 > cannot open shared object file: No such file or directory
 
-This error can be fixed by running the following command in terminal:
+该错误可以通过在终端中运行以下命令来修复：
 
     sudo /sbin/ldconfig -v
 
-You can find more details on this [error while loading shared libraries][6].
+你可以在这里查找到更多详细内容[加载共享库时发生错误][6]。
 
-### Could not get lock /var/cache/apt/archives/lock ###
+### 无法获取锁/var/cache/apt/archives/lock ###
 
-This error happens when another program is using APT. Suppose you are installing some thing in Ubuntu Software Center and trying to run apt in terminal.
+在另一个程序在使用APT时，会发生该错误。假定你正在Ubuntu软件中心安装某个东西，然后你又试着在终端中运行apt。
 
 > E: Could not get lock /var/cache/apt/archives/lock – open (11: Resource temporarily unavailable)
 > 
 > E: Unable to lock directory /var/cache/apt/archives/
 
-Normally, this should be fine if you close all other programs using apt but if the problem persists, use the following command:
+通常，只要你把所有其它使用apt的程序关了，这个问题就会好的。但是，如果问题持续，可以使用以下命令：
 
     sudo rm /var/lib/apt/lists/lock
 
-If the above command doesn’t work, try this command:
+如果上面的命令不起作用，可以试试这个命令：
 
     sudo killall apt-get
 
-More details about this error can be found [here][7].
+关于该错误的更多信息，可以在[这里][7]找到。
 
-### GPG error: The following signatures couldn’t be verified ###
+### GPG错误： 下列签名无法验证 ###
 
-Adding a PPA may result in the following [GPG error: The following signatures couldn’t be verified][8] when you try to run an update in terminal:
+在添加一个PPA时，可能会导致以下错误[GPG错误： 下列签名无法验证][8]，这通常发生在终端中运行更新时：
 
 > W: GPG error: http://repo.mate-desktop.org saucy InRelease: The following signatures couldn’t be verified because the public key is not available: NO_PUBKEY 68980A0EA10B4DE8
 
-All we need to do is to fetch this public key in the system. Get the key number from the message. In the above message, the key is 68980A0EA10B4DE8. This key can be used in the following manner:
+我们所要做的，就是获取系统中的这个公钥，从信息中获取密钥号。在上述信息中，密钥号为68980A0EA10B4DE8。该密钥可通过以下方式使用：
 
     sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 68980A0EA10B4DE8
 
-Once the key has been added, run an update again and it will be fine.
+在添加密钥后，再次运行更新就没有问题了。
 
-### BADSIG error ###
+### BADSIG错误 ###
 
-Another signature related Ubuntu update error is [BADSIG error][9] which looks something like this:
+另外一个与签名相关的Ubuntu更新错误是[BADSIG错误][9]，它看起来像这样：
 
 > W: A error occurred during the signature verification. The repository is not updated and the previous index files will be used. GPG error: http://extras.ubuntu.com precise Release: The following signatures were invalid: BADSIG 16126D3A3E5C1192 Ubuntu Extras Archive Automatic Signing Key
 > 
@@ -119,7 +118,7 @@ Another signature related Ubuntu update error is [BADSIG error][9] which looks s
 > 
 > The following signatures were invalid: BADSIG 4C1CBC1B69B0E2F4 Launchpad PPA for Jonathan French W: Failed to fetch http://extras.ubuntu.com/ubuntu/dists/precise/Release
 
-To fix this BADSIG error, use the following commands in terminal:
+要修复该BADSIG错误，请在终端中使用以下命令：
 
     sudo apt-get clean
     cd /var/lib/apt
@@ -128,14 +127,14 @@ To fix this BADSIG error, use the following commands in terminal:
     sudo apt-get clean
     sudo apt-get update
 
-That compiles the list of frequent **Ubuntu update errors** you may encounter. I hope this helps you to get rid of these errors. Have you encountered any other update error in Ubuntu as well? Do mention it in comments and I’ll try to do a quick tutorial on it.
+本文汇集了你可能会碰到的**Ubuntu更新错误**，我希望这会对你处理这些错误有所帮助。你在Ubuntu中是否也碰到过其它更新错误呢？请在下面的评论中告诉我，我会试着写个快速指南。
 
 --------------------------------------------------------------------------------
 
 via: http://itsfoss.com/fix-update-errors-ubuntu-1404/
 
 作者：[Abhishek][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[GOLinux](https://github.com/GOLinux)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
