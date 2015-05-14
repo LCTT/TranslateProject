@@ -1,34 +1,35 @@
-OpenSSL command line Root and Intermediate CA including OCSP, CRL and revocation
+建立你自己的 CA 服务：OpenSSL 命令行 CA 操作快速指南
 ================================================================================
-These are quick and dirty notes on generating a certificate authority (CA), intermediate certificate authorities and end certificates using OpenSSL. It includes OCSP, CRL and CA Issuer information and specific issue and expiry dates.
 
-We'll set up our own root CA. We'll use the root CA to generate an example intermediate CA. We'll use the intermediate CA to sign end user certificates.
+这些是关于使用 OpenSSL 生成证书授权（CA）、中间证书授权和末端证书的速记随笔，内容包括 OCSP、CRL 和 CA 颁发者信息，以及指定颁发和有效期限等。
 
-### Root CA ###
+我们将建立我们自己的根 CA，我们将使用根 CA 来生成一个中间 CA 的例子，我们将使用中间 CA 来签署末端用户证书。
 
-Create and move in to a folder for the root ca:
+### 根 CA ###
+
+创建根 CA 授权目录并切换到该目录：
 
     mkdir ~/SSLCA/root/
     cd ~/SSLCA/root/
 
-Generate a 8192-bit long SHA-256 RSA key for our root CA:
+为我们的根 CA 生成一个8192位长的 SHA-256 RSA 密钥：
 
     openssl genrsa -aes256 -out rootca.key 8192
 
-Example output:
+样例输出：
 
     Generating RSA private key, 8192 bit long modulus
     .........++
     ....................................................................................................................++
     e is 65537 (0x10001)
 
-If you want to password-protect this key, add the option `-aes256`.
+如果你想要用密码保护该密钥，请添加 `-aes256` 选项。
 
-Create the self-signed root CA certificate `ca.crt`; you'll need to provide an identity for your root CA:
+创建自签名根 CA 证书 `ca.crt`；你需要为你的根 CA 提供一个身份：
 
     openssl req -sha256 -new -x509 -days 1826 -key rootca.key -out rootca.crt
 
-Example output:
+样例输出：
 
     You are about to be asked to enter information that will be incorporated
     into your certificate request.
@@ -45,13 +46,13 @@ Example output:
     Common Name (e.g. server FQDN or YOUR name) []:Sparkling Root CA
     Email Address []:
 
-Create a few files where the CA will store it's serials:
+创建一个存储 CA 序列的文件：
 
     touch certindex
     echo 1000 > certserial
     echo 1000 > crlnumber
 
-Place the CA config file. This file has stubs for CRL and OCSP endpoints.
+放置 CA 配置文件，该文件持有 CRL 和 OCSP 末端的存根。
 
     # vim ca.conf
     [ ca ]
@@ -120,23 +121,23 @@ Place the CA config file. This file has stubs for CRL and OCSP endpoints.
      OCSP;URI.0 = http://pki.sparklingca.com/ocsp/
      OCSP;URI.1 = http://pki.backup.com/ocsp/
 
-If you need to set a specific certificate start / expiry date, add the following to `[myca]`
+如果你需要设置某个特定的证书生效/过期日期，请添加以下内容到`[myca]`：
 
     # format: YYYYMMDDHHMMSS
     default_enddate = 20191222035911
     default_startdate = 20181222035911
 
-### Creating Intermediate 1 CA ###
+### 创建中间 CA###
 
-Generate the intermediate CA's private key:
+生成中间 CA （名为 intermediate1）的私钥：
 
     openssl genrsa -out intermediate1.key 4096
 
-Generate the intermediate1 CA's CSR:
+生成中间 CA 的 CSR：
 
     openssl req -new -sha256 -key intermediate1.key -out intermediate1.csr
 
-Example output:
+样例输出：
 
     You are about to be asked to enter information that will be incorporated
     into your certificate request.
@@ -158,13 +159,13 @@ Example output:
     A challenge password []:
     An optional company name []:
 
-Make sure the subject (CN) of the intermediate is different from the root.
+确保中间 CA 的主体（CN）和根 CA 不同。
 
-Sign the intermediate1 CSR with the Root CA:
+用根 CA 签署 中间 CA 的 CSR：
 
     openssl ca -batch -config ca.conf -notext -in intermediate1.csr -out intermediate1.crt
 
-Example Output:
+样例输出：
 
     Using configuration from ca.conf
     Check that the request matches the signature
@@ -181,37 +182,37 @@ Example Output:
     Write out database with 1 new entries
     Data Base Updated
 
-Generate the CRL (both in PEM and DER):
+生成 CRL（同时采用 PEM 和 DER 格式）：
 
     openssl ca -config ca.conf -gencrl -keyfile rootca.key -cert rootca.crt -out rootca.crl.pem
     
     openssl crl -inform PEM -in rootca.crl.pem -outform DER -out rootca.crl
 
-Generate the CRL after every certificate you sign with the CA.
+每次使用该 CA 签署证书后，请生成 CRL。
 
-If you ever need to revoke the this intermediate cert:
+如果你需要撤销该中间证书：
 
     openssl ca -config ca.conf -revoke intermediate1.crt -keyfile rootca.key -cert rootca.crt
 
-### Configuring the Intermediate CA 1 ###
+### 配置中间 CA ###
 
-Create a new folder for this intermediate and move in to it:
+为该中间 CA 创建一个新文件夹，然后进入该文件夹：
 
     mkdir ~/SSLCA/intermediate1/
     cd ~/SSLCA/intermediate1/
 
-Copy the Intermediate cert and key from the Root CA:
+从根 CA 拷贝中间证书和密钥：
 
     cp ~/SSLCA/root/intermediate1.key ./
     cp ~/SSLCA/root/intermediate1.crt ./
 
-Create the index files:
+创建索引文件：
 
     touch certindex
     echo 1000 > certserial
     echo 1000 > crlnumber
 
-Create a new `ca.conf` file:
+创建一个新的 `ca.conf` 文件：
 
     # vim ca.conf
     [ ca ]
@@ -269,35 +270,35 @@ Create a new `ca.conf` file:
      OCSP;URI.0 = http://pki.sparklingca.com/ocsp/
      OCSP;URI.1 = http://pki.backup.com/ocsp/
 
-Change the `[alt_names]` section to whatever you need as Subject Alternative names. Remove it including the `subjectAltName = @alt_names` line if you don't want a Subject Alternative Name.
+修改 `[alt_names]` 部分，添加你需要的主体备选名。如果你不需要主体备选名，请移除该部分包括`subjectAltName = @alt_names`的行。
 
-If you need to set a specific certificate start / expiry date, add the following to `[myca]`
+如果你需要设置一个指定的生效/到期日期，请添加以下内容到 `[myca]`：
 
     # format: YYYYMMDDHHMMSS
     default_enddate = 20191222035911
     default_startdate = 20181222035911
 
-Generate an empty CRL (both in PEM and DER):
+生成一个空白 CRL（同时以 PEM 和 DER 格式）：
 
     openssl ca -config ca.conf -gencrl -keyfile rootca.key -cert rootca.crt -out rootca.crl.pem
     
     openssl crl -inform PEM -in rootca.crl.pem -outform DER -out rootca.crl
 
-### Creating end user certificates ###
+### 生成末端用户证书 ###
 
-We use this new intermediate CA to generate an end user certificate. Repeat these steps for every end user certificate you want to sign with this CA.
+我们使用这个新的中间 CA 来生成一个末端用户证书，请重复以下操作来使用该 CA 为每个用户签署。
 
     mkdir enduser-certs
 
-Generate the end user's private key:
+生成末端用户的私钥：
 
     openssl genrsa -out enduser-certs/enduser-example.com.key 4096
 
-Generate the end user's CSR:
+生成末端用户的 CSR：
 
     openssl req -new -sha256 -key enduser-certs/enduser-example.com.key -out enduser-certs/enduser-example.com.csr
 
-Example output:
+样例输出：
 
     You are about to be asked to enter information that will be incorporated
     into your certificate request.
@@ -319,11 +320,11 @@ Example output:
     A challenge password []:
     An optional company name []:
 
-Sign the end user's CSR with the Intermediate 1 CA:
+使用中间 CA 签署末端用户的 CSR：
 
     openssl ca -batch -config ca.conf -notext -in enduser-certs/enduser-example.com.csr -out enduser-certs/enduser-example.com.crt
 
-Example output:
+样例输出：
 
     Using configuration from ca.conf
     Check that the request matches the signature
@@ -340,56 +341,56 @@ Example output:
     Write out database with 1 new entries
     Data Base Updated
 
-Generate the CRL (both in PEM and DER):
+生成 CRL（同时以 PEM 和 DER 格式）：
 
     openssl ca -config ca.conf -gencrl -keyfile intermediate1.key -cert intermediate1.crt -out intermediate1.crl.pem
     
     openssl crl -inform PEM -in intermediate1.crl.pem -outform DER -out intermediate1.crl
 
-Generate the CRL after every certificate you sign with the CA.
+每次你使用该 CA 签署证书后，都需要生成 CRL。
 
-If you ever need to revoke the this end users cert:
+如果你需要撤销该末端用户证书：
 
     openssl ca -config ca.conf -revoke enduser-certs/enduser-example.com.crt -keyfile intermediate1.key -cert intermediate1.crt
 
-Example output:
+样例输出：
 
     Using configuration from ca.conf
     Revoking Certificate 1000.
     Data Base Updated
 
-Create the certificate chain file by concatenating the Root and intermediate 1 certificates together.
+通过连接根证书和中间证书来创建证书链文件。
 
     cat ../root/rootca.crt intermediate1.crt > enduser-certs/enduser-example.com.chain
 
-Send the following files to the end user:
+发送以下文件给末端用户：
 
     enduser-example.com.crt
     enduser-example.com.key
     enduser-example.com.chain
 
-You can also let the end user supply their own CSR and just send them the .crt file. Do not delete that from the server, otherwise you cannot revoke it.
+你也可以让末端用户提供他们自己的 CSR，而只发送给他们这个 .crt 文件。不要把它从服务器删除，否则你就不能撤销了。
 
-### Validating the certificate ###
+### 校验证书 ###
 
-You can validate the end user certificate against the chain using the following command:
+你可以对证书链使用以下命令来验证末端用户证书：
 
     openssl verify -CAfile enduser-certs/enduser-example.com.chain enduser-certs/enduser-example.com.crt 
     enduser-certs/enduser-example.com.crt: OK
 
-You can also validate it against the CRL. Concatenate the PEM CRL and the chain together first:
+你也可以针对 CRL 来验证。首先，将 PEM 格式的 CRL 和证书链相连接：
 
     cat ../root/rootca.crt intermediate1.crt intermediate1.crl.pem > enduser-certs/enduser-example.com.crl.chain
 
-Verify the certificate:
+验证证书：
 
     openssl verify -crl_check -CAfile enduser-certs/enduser-example.com.crl.chain enduser-certs/enduser-example.com.crt
 
-Output when not revoked:
+没有撤销时的输出：
 
     enduser-certs/enduser-example.com.crt: OK
 
-Output when revoked:
+撤销后的输出如下：
 
     enduser-certs/enduser-example.com.crt: CN = example.com, ST = Noord Holland, C = NL, O = Example Inc, OU = IT Dept
     error 23 at 0 depth lookup:certificate revoked
@@ -399,7 +400,7 @@ Output when revoked:
 via: https://raymii.org/s/tutorials/OpenSSL_command_line_Root_and_Intermediate_CA_including_OCSP_CRL%20and_revocation.html
 
 作者：Remy van Elst
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[GOLinux](https://github.com/GOLinux)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出

@@ -4,7 +4,7 @@
 
 ![KVM Management in Linux](http://www.tecmint.com/wp-content/uploads/2015/02/KVM-Management-in-Linux.jpg)
 
-Linux系统的KVM管理
+*Linux系统的KVM管理*
 
 在这篇文章里没有什么新的概念，我们只是用命令行工具重复之前所做过的事情，也没有什么前提条件，都是相同的过程，之前的文章我们都讨论过。
 
@@ -31,35 +31,40 @@ Virsh命令行工具是一款管理virsh客户域的用户界面。virsh程序�
     # virsh pool-define-as Spool1 dir - - - - "/mnt/personal-data/SPool1/"
 
 ![Create New Storage Pool](http://www.tecmint.com/wp-content/uploads/2015/02/Create-New-Storage-Pool.png)
-创建新存储池
+
+*创建新存储池*
 
 **2. 查看环境中我们所有的存储池，用以下命令。**
 
     # virsh pool-list --all
 
 ![List All Storage Pools](http://www.tecmint.com/wp-content/uploads/2015/02/List-All-Storage-Pools.png)
-列出所有存储池
+
+*列出所有存储池*
 
 **3. 现在我们来构造存储池了，用以下命令来构造我们刚才定义的存储池。**
 
     # virsh pool-build Spool1
 
 ![Build Storage Pool](http://www.tecmint.com/wp-content/uploads/2015/02/Build-Storage-Pool.png)
-构造存储池
 
-**4. 用virsh带pool-start的命令来激活并启动我们刚才创建并构造完成的存储池。**
+*构造存储池*
+
+**4. 用带pool-start参数的virsh命令来激活并启动我们刚才创建并构造完成的存储池。**
 
     # virsh pool-start Spool1
 
 ![Active Storage Pool](http://www.tecmint.com/wp-content/uploads/2015/02/Active-Storage-Pool.png)
-激活存储池
+
+*激活存储池*
 
 **5. 查看环境中存储池的状态，用以下命令。**
 
     # virsh pool-list --all
 
 ![Check Storage Pool Status](http://www.tecmint.com/wp-content/uploads/2015/02/Check-Storage-Pool-Status.png)
-查看存储池状态
+
+*查看存储池状态*
 
 你会发现Spool1的状态变成了已激活。
 
@@ -68,14 +73,16 @@ Virsh命令行工具是一款管理virsh客户域的用户界面。virsh程序�
     # virsh pool-autostart Spool1
 
 ![Configure KVM Storage Pool](http://www.tecmint.com/wp-content/uploads/2015/02/Configure-Storage-Pool.png)
-配置KVM存储池
+
+*配置KVM存储池*
 
 **7. 最后来看看我们新的存储池的信息吧。**
 
     # virsh pool-info Spool1
 
 ![Check KVM Storage Pool Information](http://www.tecmint.com/wp-content/uploads/2015/02/Check-Storage-Pool-Information.png)
-查看KVM存储池信息
+
+*查看KVM存储池信息*
 
 恭喜你，Spool1已经准备好待命，接下来我们试着创建存储卷来使用它。
 
@@ -90,12 +97,14 @@ Virsh命令行工具是一款管理virsh客户域的用户界面。virsh程序�
     # qemu-img create -f raw /mnt/personal-data/SPool1/SVol1.img 10G
 
 ![Create Storage Volume](http://www.tecmint.com/wp-content/uploads/2015/02/Create-Storage-Volumes.png)
-创建存储卷
+
+*创建存储卷*
 
 **9. 通过使用带info的qemu-img命令，你可以获取到你的新磁盘映像的一些信息。**
 
 ![Check Storage Volume Information](http://www.tecmint.com/wp-content/uploads/2015/02/Check-Storage-Volume-Information.png)
-查看存储卷信息
+
+*查看存储卷信息*
 
 **警告**: 不要用qemu-img命令来修改被运行中的虚拟机或任何其它进程所正在使用的映像，那样映像会被破坏。
 
@@ -120,15 +129,18 @@ Virsh命令行工具是一款管理virsh客户域的用户界面。virsh程序�
     # virt-install --name=rhel7 --disk path=/mnt/personal-data/SPool1/SVol1.img --graphics spice --vcpu=1 --ram=1024 --location=/run/media/dos/9e6f605a-f502-4e98-826e-e6376caea288/rhel-server-7.0-x86_64-dvd.iso --network bridge=virbr0
 
 ![Create New Virtual Machine](http://www.tecmint.com/wp-content/uploads/2015/02/Create-New-Virtual-Machines.png)
-创建新的虚拟机
+
+*创建新的虚拟机*
 
 **11. 你会看到弹出一个virt-vierwer窗口，像是在通过它在与虚拟机通信。**
 
 ![Booting Virtual Machine](http://www.tecmint.com/wp-content/uploads/2015/02/Booting-Virtual-Machine.jpeg)
-虚拟机启动程式
+
+*虚拟机启动程式*
 
 ![Installation of Virtual Machine](http://www.tecmint.com/wp-content/uploads/2015/02/Installation-of-Virtual-Machine.jpeg)
-虚拟机安装过程
+
+*虚拟机安装过程*
 
 ### 结论 ###
 
@@ -143,7 +155,7 @@ via: http://www.tecmint.com/kvm-management-tools-to-manage-virtual-machines/
 
 作者：[Mohammad Dosoukey][a]
 译者：[ZTinoZ](https://github.com/ZTinoZ)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
