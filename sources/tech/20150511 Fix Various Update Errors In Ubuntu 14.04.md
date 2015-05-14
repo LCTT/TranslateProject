@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Fix Various Update Errors In Ubuntu 14.04
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/09/Fix_Ubuntu_Update_Error.jpeg)
