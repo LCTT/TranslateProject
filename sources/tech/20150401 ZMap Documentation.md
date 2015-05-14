@@ -1,5 +1,3 @@
-translating by martin.
-
 ZMap Documentation
 ================================================================================
 1. Getting Started with ZMap
