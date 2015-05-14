@@ -9,7 +9,7 @@
 
 在刚装好Ubuntu之后你应该要关心的第一件事是启用官方合作伙伴提供的Ubuntu额外软件库并且通过最近一次的安全补丁和软件更新来保持系统是最新状态。
 
-要完成这一步，In order to accomplish this step, open from the left Launcher System Settings -> Software and Updates utility and check all Ubuntu Software and Other Software (Canonical Partners) repositories. After you finish hit the Close button and wait for the utility to Reload the cache sources tree.
+要完成这一步，open from the left Launcher System Settings -> Software and Updates工具并检查所有Ubuntu软件和其他软件库（官方合作伙伴所提供）。After you finish hit the Close button and wait for the utility to Reload the cache sources tree.
 
 ![Software Updates](http://www.tecmint.com/wp-content/uploads/2015/04/Software-Updates.jpg)
 Software Updates
