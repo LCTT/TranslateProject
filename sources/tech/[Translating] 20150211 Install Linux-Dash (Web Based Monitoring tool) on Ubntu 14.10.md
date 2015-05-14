@@ -1,3 +1,5 @@
+translating by wwy-hust
+
 Install Linux-Dash (Web Based Monitoring tool) on Ubntu 14.10
 ================================================================================
 
