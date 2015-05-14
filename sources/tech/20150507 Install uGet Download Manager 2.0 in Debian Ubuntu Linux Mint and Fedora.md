@@ -1,3 +1,5 @@
+FSSlc translating
+
 Install uGet Download Manager 2.0 in Debian, Ubuntu, Linux Mint and Fedora
 ================================================================================
 After a long development period, which includes more than 11 developement releases, finally uGet project team pleased to announce the immediate availability of the latest stable version of uGet 2.0. The latest version includes numerous attractive features, such as a new setting dialog, improved BitTorrent and Metalink support added in the aria2 plugin, as well as better support for uGet RSS messages in the banner, other features include:
