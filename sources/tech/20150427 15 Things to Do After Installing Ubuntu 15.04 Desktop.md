@@ -9,7 +9,7 @@
 
 在刚装好Ubuntu之后你应该要关心的第一件事是启用官方合作伙伴提供的Ubuntu额外软件库并且通过最近一次的安全补丁和软件更新来保持系统是最新状态。
 
-要完成这一步，open from the left Launcher System Settings -> Software and Updates工具并检查所有Ubuntu软件和其他软件库（官方合作伙伴所提供）。After you finish hit the Close button and wait for the utility to Reload the cache sources tree.
+要完成这一步，依次从左边菜单中打开System Settings -> Software and Updates工具并检查所有Ubuntu软件和其他软件库（官方合作伙伴所提供），点击关闭按钮并等待重新加载缓存源树。
 
 ![Software Updates](http://www.tecmint.com/wp-content/uploads/2015/04/Software-Updates.jpg)
 Software Updates
@@ -17,7 +17,7 @@ Software Updates
 ![Other Software (Canonical Partners)](http://www.tecmint.com/wp-content/uploads/2015/04/Other-Software.jpg)
 Other Software (Canonical Partners)
 
-For a fast and smooth update process, open a Terminal and issue the following command in order to update the system using the new software repositories:
+经过一系列快速平滑的更新过程之后，打开终端并输入以下命令来让系统使用新软件库：
 
     $ sudo apt-get update
     $ sudo apt-get upgrade
@@ -34,7 +34,7 @@ If some drivers matching your hardware are found, check the drivers you want to 
 ![Install Drivers in Ubuntu](http://www.tecmint.com/wp-content/uploads/2015/04/install-drivers.jpg)
 Install Drivers
 
-### 3. Install Synaptic and Gdebi Package Tools ###
+### 3. 安装Synaptic和Gdebi工具 ###
 
 Besides Ubuntu Software Center, Synaptic is a Graphical utility for apt command line through which you can manage repositories or install, remove, search, upgrade and configure software packages. Similar way, Gdebi has the same functionality for local .deb packages. To install this two package managers on your system issue the following command on Terminal:
 
@@ -46,14 +46,14 @@ Install Synaptic and Gdebi
 ![Synaptic Package Manager](http://www.tecmint.com/wp-content/uploads/2015/04/synaptic-package-manager.jpg)
 Synaptic Package Manager
 
-### 4. Change System Appearance and Behavior ###
+### 4. 更改系统外观和运行状态 ###
 
 If you want to change Desktop Background or Launcher Icon Size, open System Settings –> Appearance –> Look and personalize the desktop. To move the menu to window title bar, enable workspaces and desktop icons or auto-hide the Launcher visit Behavior tab.
 
 ![System Appearances](http://www.tecmint.com/wp-content/uploads/2015/04/system-appearance.jpg)
 System Appearances
 
-### 5. Improve System Security and Privacy ###
+### 5. 提升系统安全性和隐私性 ###
 
 ![System Security Enhancement](http://www.tecmint.com/wp-content/uploads/2015/04/system-security-1.jpg)
 System Security Enhancement
@@ -61,7 +61,7 @@ System Security Enhancement
 ![System Security Options](http://www.tecmint.com/wp-content/uploads/2015/04/system-security-2.jpg)
 System Security Options
 
-### 5. Disable Unneeded Startup Applications ###
+### 5. 禁用不需要开机自启动的应用程序 ###
 
 To improve system login speed, reveal hidden Startup Applications by issuing the below command on Terminal, open Startup Applications utility by searching it in Dash and uncheck the unneeded applications during login process.
 
@@ -70,7 +70,7 @@ To improve system login speed, reveal hidden Startup Applications by issuing the
 ![Disable Unwanted Applications](http://www.tecmint.com/wp-content/uploads/2015/04/disable-unwanted-applications.jpg)
 Disable Unwanted Applications
 
-### 6. Add Extended Multimedia Support ###
+### 6. 添加扩展多媒体支持 ###
 
 By default, Ubuntu comes with a minimal support for media files. In order to play various media formats or manipulate video files, install the following multimedia applications:
 
@@ -108,7 +108,7 @@ To enable DVD Playback and other multimedia codecs issue the following command o
 ![Enable Video Codes](http://www.tecmint.com/wp-content/uploads/2015/04/enable-video-playbacks.jpg)
 Enable Video Codes
 
-### 7. Install Image Applications ###
+### 7. 安装图像处理应用程序 ###
 
 If you are a photography enthusiast and you want to handle and manipulate images on Ubuntu, probably you want to install the following imaging programs:
 
@@ -131,7 +131,7 @@ Install Image Applications
 ![Rawtherapee Tool](http://www.tecmint.com/wp-content/uploads/2015/04/rawtherapee.jpg)
 Rawtherapee Tool
 
-### 8. Install Media Burners ###
+### 8. 安装媒体烧录软件 ###
 
 To mount ISO images or burn a CDs or a DVD, you can choose and install from the following software:
 
@@ -148,7 +148,7 @@ To mount ISO images or burn a CDs or a DVD, you can choose and install from the 
 ![Install Media Burners](http://www.tecmint.com/wp-content/uploads/2015/04/install-media-burners.jpg)
 Install Media Burners
 
-### 9. Install Archive Applications ###
+### 9. 安装压缩应用程序 ###
 
 To handle most of archive formatted files (zip, tar.gz, zip, 7zip rar etc) install the following packages by issuing the below command:
 
@@ -157,7 +157,7 @@ To handle most of archive formatted files (zip, tar.gz, zip, 7zip rar etc) insta
 ![Install Archive Applications](http://www.tecmint.com/wp-content/uploads/2015/04/install-archive-apps.jpg)
 Install Archive Applications
 
-### 10. Install Chat Application ###
+### 10. 安装聊天应用程序 ###
 
 If you want to talk to people all over the world, here is a list of the most popular chat applications for Linux:
 
@@ -186,7 +186,7 @@ To install Viber application on Ubuntu visit [Viber official webpage][1], downlo
 ![Install Viber in Ubuntu](http://www.tecmint.com/wp-content/uploads/2015/04/install-viber.jpg)
 Install Viber
 
-### 11. Install Torrent Software ###
+### 11. 安装种子软件 ###
 
 The most popular torrent applications and peer-to-peer file sharing programs for Ubuntu are:
 
@@ -205,7 +205,7 @@ To install your favorite peer-to-peer file sharing application on Ubuntu issue t
 ![Install Torrent](http://www.tecmint.com/wp-content/uploads/2015/04/install-torrent.jpg)
 Install Torrent
 
-### 12. Install Windows Emulator -Wine and Gaming Support – Steam ###
+### 12. 安装Windows仿真器-Wine和游戏支持平台-Steam ###
 
 Wine emulator allows you to install and run Windows applications on Linux. On the other hand, Steam is a popular gaming platform for Linux based systems developed by Valve. To install both of them on your machine issue the following command on Terminal or use Ubuntu Software Center.
 
@@ -214,7 +214,7 @@ Wine emulator allows you to install and run Windows applications on Linux. On th
 ![Install Wine](http://www.tecmint.com/wp-content/uploads/2015/04/install-wine.jpg)
 Install Wine
 
-### 13. Install Cairo-Dock and Enable Desktop Visual Effects ###
+### 13. 安装Cairo-Dock并启用桌面视觉效果 ###
 
 Cairo-Dock is a beautiful and flexible launcher bar for Linux desktops similar to the Mac OS X dock. To install it on Ubuntu, run the following command on Terminal.
 
@@ -244,7 +244,7 @@ Compiz Settings Addons
 ![Desktop Window Rotating](http://www.tecmint.com/wp-content/uploads/2015/04/desktop-cube.jpg)
 Desktop Window Rotating
 
-### 14. Add Extra Browser Support ###
+### 14. 添加额外浏览器支持 ###
 
 Ubuntu 15.04 comes by default with Mozilla Firefox Web Browser. To install other browsers such as Google Chrome or Opera, visit their official web pages, download the provided .deb packages and install them on your system using the Gdebi Package Installer.
 
@@ -258,7 +258,7 @@ To install Chromium Open Source browser issue the following command on Terminal.
 
     $ sudo apt-get install chromium-browser
 
-### 15. Install Tweak Tools ###
+### 15. 安装Tweak工具 ###
 
 Want extra applications for customizing Ubuntu? Then install Unity Tweak Tool and Gnome Tweak Tool by issuing the following commands on Terminal.
 
