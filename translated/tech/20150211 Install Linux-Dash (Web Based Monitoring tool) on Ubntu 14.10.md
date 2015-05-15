@@ -1,21 +1,21 @@
 在Ubuntu 14.10上安装Linux-Dash(基于Web的监控工具)
 ================================================================================
 
-一个用于GNU/Linux机器的，低开销的监控仪表盘。简单的安装软件并开始吧！Linux Dash的界面提供了所有您服务器的关键信息的详细视图，可监测的信息包括RAM和磁盘使用率、网络、安装的软件、用户、运行的线程。所有的信息都被分类，您可以通过主页中的工具栏中的按钮跳到任何一类中。Linux Dash并不是最先进的监测工具，但它十分适合寻找灵活、轻量级、容易部署的应用的用户。
+Linux-Dash是一个用于GNU/Linux机器的，低开销的监控仪表盘。安装该软件并开始使用吧！Linux Dash的界面提供了您的服务器的所有关键信息的详细视图，可监测的信息包括RAM、磁盘使用率、网络、安装的软件、用户、运行的线程等。所有的信息都被分类，您可以通过主页工具栏中的按钮跳到任何一类中。Linux Dash并不是最先进的监测工具，但它十分适合寻找灵活、轻量级、容易部署的应用的用户。
 
 ### Linux-Dash的功能 ###
 
-一个基于Web的漂亮的仪表盘界面来监控服务器信息
+使用一个基于Web的漂亮的仪表盘界面来监控服务器信息
 
-实时，按需的监控RAM、负载、运行时间、磁盘配置、用户和许多其他系统状态。
+实时、按需的监控RAM、负载、运行时间、磁盘配置、用户和许多其他系统状态。
 
-插入式的为服务器安装该软件，基于Apache2/niginx + PHP。
+可插入式的为服务器安装该软件，基于Apache2/niginx + PHP。
 
-点击和拖动来重排列控件
+通过点击和拖动来重排列控件
 
 支持多种类型的linux服务器
 
-### 当前空间列表 ###
+### 当前控件列表 ###
 
 - 通用信息
 - 平均负载
@@ -34,12 +34,12 @@
 首先您需要确认您安装着[Ubuntu LAMP server 14.10][1]，接下来您需要安装下面的包：
 
     sudo apt-get install php5-json unzip
-   
+
 安装这个模块后，需要在apache2中使能该模块，所以您需要使用下面的命令重启apache2服务器：
 
     sudo service apache2 restart
     
-现在您需要下载linux-dash安装包并且安装：
+现在您需要下载linux-dash的安装包并安装它：
 
     wget https://github.com/afaqurk/linux-dash/archive/master.zip
 
@@ -47,11 +47,11 @@
 
     sudo mv linux-dash-master/ /var/www/html/linux-dash-master/
 
-现在您需要使用下面的命令来改变权限：
+接下来您需要使用下面的命令来改变权限：
 
     sudo chmod 755 /var/www/html/linux-dash-master/
 
-现在您可以访问http://serverip/linux-dash-master/。您应该会看到类似下面的输出：
+现在您便可以访问http://serverip/linux-dash-master/了。您应该会看到类似下面的输出：
 
 ![](http://www.ubuntugeek.com/wp-content/uploads/2015/02/1.png)
 
