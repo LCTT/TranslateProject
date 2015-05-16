@@ -1,3 +1,5 @@
+translating---geekpi
+
 Basic Networking Commands with Docker Containers
 ================================================================================
 Hi everybody, today we'll learn some basic networking with Docker Containers. Docker is an Open Source project that provides an open platform to pack, ship and run any application as a lightweight container. It has no boundaries of Language support, Frameworks or packaging system and can be run anywhere, anytime from a small home computers to high-end servers. It makes them great building blocks for deploying and scaling web apps, databases, and back-end services without depending on a particular stack or provider. Docker is meant for networking as it is gradually used in data-centers, ISPs and much more networked servers.
