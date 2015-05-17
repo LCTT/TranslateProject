@@ -1,3 +1,4 @@
+zhangboyue 翻译中
 45 Zypper Commands to Manage ‘Suse’ Linux Package Management
 ================================================================================
 SUSE (Software and System Entwicklung (Germany) meaning Software and System Development, in English) Linux lies on top of Linux Kernel brought by Novell. SUSE comes in two pack. One of them is called OpenSUSE, which is freely available (free as in speech as well as free as in wine). It is a community driven project packed with latest application support, the latest stable release of OpenSUSE Linux is 13.2.
