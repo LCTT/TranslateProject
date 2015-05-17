@@ -1,8 +1,8 @@
-如何设置lftp - 一个简易的命令行FTP程序
+LFTP : 一个功能强大的命令行FTP程序
 ================================================================================
-大家好，这篇文章是介绍Lftp以及如何在Linux操作系统下安装的。[Lftp][1]是一个基于命令行的文件传输软件也被称为FTP客户端，由Alexander Lukyanov开发并以GNU GPL协议许可发行。除了FTP，它还支持FTPS，HTTP，HTTPS，HFTP，FISH，以及SFTP。这个程序还支持FXP，允许数据绕过客户端直接在两个FTP服务器之间传输。
+大家好，这篇文章是介绍Lftp以及如何在Linux操作系统下安装的。[Lftp][1]是一个基于命令行的文件传输软件（也被称为FTP客户端），由Alexander Lukyanov开发并以GNU GPL协议许可发行。除了FTP协议外，它还支持FTPS，HTTP，HTTPS，HFTP，FISH，以及SFTP等协议。这个程序还支持FXP，允许数据绕过客户端直接在两个FTP服务器之间传输。
 
-他有很多很棒的高级功能，比如完整目录树递归镜像以及断点续传下载。传输任务可以安排在稍后的时间段执行，可以限制带宽，可以创建传输列表，还支持类似Unix shell的任务控制。客户端还可以在交互式或自动脚本里使用。
+它有很多很棒的高级功能，比如递归镜像整个目录树以及断点续传下载。传输任务可以安排在稍后的时间段计划执行，可以限制带宽，可以创建传输列表，还支持类似Unix shell的任务控制。客户端还可以在交互式或自动脚本里使用。
 
 ### 安装Lftp ###
 
@@ -44,7 +44,7 @@ OpenSuse系统里的包管理软件Zypper可以用来安装lftp。下面是在Op
 
 要登录到ftp服务器或sftp服务器，我们首先需要知道所要求的认证信息，比如用户名，密码，端口。
 
-之后，我们想通过lftp来登录。
+之后，我们可以通过lftp来登录。
 
     $ lftp ftp://linoxide@localhost
 
@@ -56,9 +56,9 @@ OpenSuse系统里的包管理软件Zypper可以用来安装lftp。下面是在Op
 
 ![ftp login with ports](http://blog.linoxide.com/wp-content/uploads/2015/03/lftp-login-port.png)
 
-### 浏览 ###
+### 导航 ###
 
-我们可以用**ls**命令来列出文件和目录，用**cd**命令打开目录。
+我们可以用**ls**命令来列出文件和目录，用**cd**命令进入到目录。
 
 ![ls and cd](http://blog.linoxide.com/wp-content/uploads/2015/03/ls-cd-lftp.png)
 
@@ -158,7 +158,7 @@ OpenSuse系统里的包管理软件Zypper可以用来安装lftp。下面是在Op
 
 ### 总结 ###
 
-哇！我们已经成功地安装了lftp并学会了使用它的一些基础的主要方式。lftp是一个非常棒的命令行ftp客户端，它支持许多额外的功能以及很酷的特性。它比其他普通ftp客户端多了很多东西。好吧，你要是有任何问题，建议，反馈，请在下面的评论区里留言。谢谢！享用lftp吧 :-)
+哇！我们已经成功地安装了lftp并学会了它的一些基础的主要使用方式。lftp是一个非常棒的命令行ftp客户端，它支持许多额外的功能以及很酷的特性。它比其他普通ftp客户端多了很多东西。好吧，你要是有任何问题，建议，反馈，请在下面的评论区里留言。谢谢！享用lftp吧 :-)
 
 --------------------------------------------------------------------------------
 
@@ -166,7 +166,7 @@ via: http://linoxide.com/linux-how-to/setup-lftp-command-line-ftp/
 
 作者：[Arun Pyasi][a]
 译者：[zpl1025](https://github.com/zpl1025)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
