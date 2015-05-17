@@ -1,6 +1,6 @@
-Linux有问必答-- 如何在VPS上安装和访问CentOS远程桌面
+Linux有问必答：如何在VPS上安装和访问CentOS 7远程桌面
 ================================================================================
-> **提问**: 我想在VPS中安装CentOS桌面，并可以直接从我家远程访问GUI桌面。有什么建议可以在VPS上设置和访问CentOS远程桌面？
+> **提问**: 我想在VPS中安装CentOS桌面，并可以直接从我家远程访问GUI桌面。在VPS上设置和访问CentOS远程桌面有什么建议吗？
 
 如何远程办公或者远程弹性化工作制在技术领域正变得越来越流行。这个趋势背后的一个技术就是远程桌面。你的桌面环境在云中，你可以在任何你去的地方，或者在家或者工作场所访问你的远程桌面。
 
@@ -10,7 +10,7 @@ Linux有问必答-- 如何在VPS上安装和访问CentOS远程桌面
 
 ### 第一步： 安装CentOS桌面 ###
 
-如果现在的CentOS版本是没有桌面的最小版本，你需要先在VPS上安装桌面（比如GNOME）。比如，DigitalOcean的镜像就是最小版本，它需要如下安装[桌面GUI][2]
+如果你现在安装的CentOS版本是没有桌面的最小版本，你需要先在VPS上安装桌面（比如GNOME）。比如，DigitalOcean的镜像就是最小版本，它需要如下安装[桌面GUI][2]
 
     # yum groupinstall "GNOME Desktop" 
 
@@ -36,15 +36,15 @@ CentOS依靠systemd来管理和配置系统服务。所以我们将使用systemd
     # systemctl status vncserver@:.service
     # systemctl is-enabled vncserver@.service 
 
-默认上，刚安装的VNC服务并没有激活(禁用)。
+默认的，刚安装的VNC服务并没有激活(禁用)。
 
 ![](https://farm8.staticflickr.com/7613/16877514732_8ccffe7b6b_b.jpg)
 
-现在服务一份通用的VNC服务文件来位用户xmodulo创建一个VNC服务配置。
+现在复制一份通用的VNC服务文件来为用户xmodulo创建一个VNC服务配置。
 
     # cp /lib/systemd/system/vncserver@.service /etc/systemd/system/vncserver@:1.service 
 
-用本文编辑器来打开配置文件，用实际的用户名（比如：xmodulo）来替换[Service]下面的<USER>。同样。在ExecStart后面追加 "-geometry <resolution>" 参数。最后，要修改下面两行加粗字体的两行。
+用本文编辑器来打开配置文件，用实际的用户名（比如：xmodulo）来替换[Service]下面的<USER>。同样。在ExecStart后面追加 "-geometry <resolution>" 参数。最后，要修改下面“ExecStart”和“PIDFile”两行。
 
     # vi /etc/systemd/system/vncserver@:1.service 
 
@@ -85,7 +85,7 @@ CentOS依靠systemd来管理和配置系统服务。所以我们将使用systemd
 
 ### 第三步：通过SSH连接到远程桌面 ###
 
-设计上，VNC使用的远程帧缓存（RFB）并不是一种安全的协议。那么在VNC客户端上直接连接到VNC服务器上并不是一个好主意。任何敏感信息比如密码都可以在VNC流量中被轻易地泄露。因此，我强烈建议使用SSH隧道来[加密你的VNC流量][3]。
+从设计上说，VNC使用的远程帧缓存（RFB）并不是一种安全的协议，那么在VNC客户端上直接连接到VNC服务器上并不是一个好主意。任何敏感信息比如密码都可以在VNC流量中被轻易地泄露。因此，我强烈建议使用SSH隧道来[加密你的VNC流量][3]。
 
 在你要运行VNC客户端的本机上，使用下面的命令来创建一个连接到远程VPS的SSH通道。当被要输入SSH密码时，输入用户的密码。
 
@@ -99,7 +99,7 @@ CentOS依靠systemd来管理和配置系统服务。所以我们将使用systemd
 
 ![](https://farm8.staticflickr.com/7639/16691289910_fae83510fb_o.png)
 
-你将被要求输入VNC密码。当你输入VNC密码时，你就可以安全地连接到CentOS的远程桌面了.
+你将被要求输入VNC密码。当你输入VNC密码时，你就可以安全地连接到CentOS的远程桌面了。
 
 ![](https://farm8.staticflickr.com/7614/16877678411_aa8349f6b1_c.jpg)
 
@@ -111,7 +111,7 @@ via: http://ask.xmodulo.com/centos-remote-desktop-vps.html
 
 作者：[Dan Nanni][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
