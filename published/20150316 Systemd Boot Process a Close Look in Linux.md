@@ -1,12 +1,13 @@
 走进Linux之systemd启动过程
 ================================================================================
-Linux系统的启动方式有点复杂，而且总是有需要优化的地方。传统的Linux系统启动过程主要由著名的init进程（也被称为SysV init启动系统）处理，而基于init的启动系统也被确认会有效率不足的问题，systemd是Linux系统机器的另一种启动方式，宣称弥补了以[传统Linux SysV init][2]为基础的系统的缺点。在这里我们将着重讨论systemd的特性和争议，但是为了更好地理解它，也会看一下通过传统的以SysV init为基础的系统的Linux启动过程是什么样的。友情提醒一下systemd仍然处在测试阶段，而未来发布的Linux操作系统也正准备用systemd启动管理程序替代当前的启动过程。
+
+Linux系统的启动方式有点复杂，而且总是有需要优化的地方。传统的Linux系统启动过程主要由著名的init进程（也被称为SysV init启动系统）处理，而基于init的启动系统被认为有效率不足的问题，systemd是Linux系统机器的另一种启动方式，宣称弥补了以[传统Linux SysV init][2]为基础的系统的缺点。在这里我们将着重讨论systemd的特性和争议，但是为了更好地理解它，也会看一下通过传统的以SysV init为基础的系统的Linux启动过程是什么样的。友情提醒一下，systemd仍然处在测试阶段，而未来发布的Linux操作系统也正准备用systemd启动管理程序替代当前的启动过程（LCTT 译注：截止到本文发表，主流的Linux发行版已经有很多采用了 systemd）。
 
 ### 理解Linux启动过程 ###
 
-在我们打开Linux电脑的电源后第一个启动的进程就是init。分配给init进程的PID是1。它是系统其他所有进程的父进程。当一台Linux电脑启动后，处理器会先在系统存储中查找BIOS，之后BIOS会测试系统资源然后找到第一个引导设备，通常设置为硬盘，然后会查找硬盘的主引导记录（MBR），然后加载到内存中并把控制权交给它，以后的启动过程就由MBR控制。
+在我们打开Linux电脑的电源后第一个启动的进程就是init。分配给init进程的PID是1。它是系统其他所有进程的父进程。当一台Linux电脑启动后，处理器会先在系统存储中查找BIOS，之后BIOS会检测系统资源然后找到第一个引导设备，通常为硬盘，然后会查找硬盘的主引导记录（MBR），然后加载到内存中并把控制权交给它，以后的启动过程就由MBR控制。
 
-主引导记录会初始化引导程序（Linux上有两个著名的引导程序，GRUB和LILO，80%的Linux系统在用GRUB引导程序），这个时候GRUB或LILO会加载内核模块。内核会马上查找/sbin下的init进程并执行它。从这里开始init成为了Linux系统的父进程。init读取的第一个文件是/etc/inittab，通过它init会确定我们Linux操作系统的运行级别。它会从文件/etc/fstab里查找分区表信息然后做相应的挂载。然后init会启动/etc/init.d里指定的默认启动级别的所有服务/脚本。所有服务在这里通过init一个一个被初始化。在这个过程里，init每次只启动一个服务，所有服务/守护进程都在后台执行并由init来管理。
+主引导记录会初始化引导程序（Linux上有两个著名的引导程序，GRUB和LILO，80%的Linux系统在用GRUB引导程序），这个时候GRUB或LILO会加载内核模块。内核会马上查找/sbin下的“init”程序并执行它。从这里开始init成为了Linux系统的父进程。init读取的第一个文件是/etc/inittab，通过它init会确定我们Linux操作系统的运行级别。它会从文件/etc/fstab里查找分区表信息然后做相应的挂载。然后init会启动/etc/init.d里指定的默认启动级别的所有服务/脚本。所有服务在这里通过init一个一个被初始化。在这个过程里，init每次只启动一个服务，所有服务/守护进程都在后台执行并由init来管理。
 
 关机过程差不多是相反的过程，首先init停止所有服务，最后阶段会卸载文件系统。
 
@@ -14,9 +15,9 @@ Linux系统的启动方式有点复杂，而且总是有需要优化的地方。
 
 ### 理解Systemd ###
 
-开发Systemd的主要目的就是减少系统引导时间和计算开销。Systemd（系统管理守护进程），最开始以GNU GPL协议授权开发，现在已转为使用GNU LGPL协议，它是如今讨论最热烈的引导和服务管理程序。如果你的Linux系统配置为使用Systemd引导程序，那么代替传统的SysV init，启动过程将交给systemd处理。Systemd的一个核心功能是它同时支持SysV init的后开机启动脚本。
+开发Systemd的主要目的就是减少系统引导时间和计算开销。Systemd（系统管理守护进程），最开始以GNU GPL协议授权开发，现在已转为使用GNU LGPL协议，它是如今讨论最热烈的引导和服务管理程序。如果你的Linux系统配置为使用Systemd引导程序，它取替传统的SysV init，启动过程将交给systemd处理。Systemd的一个核心功能是它同时支持SysV init的后开机启动脚本。
 
-Systemd引入了并行启动的概念，它会为每个需要启动的守护进程建立一个管道套接字，这些套接字对于使用它们的进程来说是抽象的，这样它们可以允许不同守护进程之间进行交互。Systemd会创建新进程并为每个进程分配一个控制组。处于不同控制组的进程之间可以通过内核来互相通信。[systemd处理开机启动进程][2]的方式非常漂亮，和传统基于init的系统比起来优化了太多。让我们看下Systemd的一些核心功能。
+Systemd引入了并行启动的概念，它会为每个需要启动的守护进程建立一个套接字，这些套接字对于使用它们的进程来说是抽象的，这样它们可以允许不同守护进程之间进行交互。Systemd会创建新进程并为每个进程分配一个控制组（cgroup）。处于不同控制组的进程之间可以通过内核来互相通信。[systemd处理开机启动进程][2]的方式非常漂亮，和传统基于init的系统比起来优化了太多。让我们看下Systemd的一些核心功能。
 
 - 和init比起来引导过程简化了很多
 - Systemd支持并发引导过程从而可以更快启动
@@ -81,7 +82,9 @@ Systemd提供了工具用于识别和定位引导相关的问题或性能影响�
     234ms httpd.service
     191ms vmms.service
 
-**systemd-analyze verify** 显示在所有系统单元中是否有语法错误。**systemd-analyze plot** 可以用来把整个引导过程写入一个SVG格式文件里。整个引导过程非常长不方便阅读，所以通过这个命令我们可以把输出写入一个文件，之后再查看和分析。下面这个命令就是做这个。
+**systemd-analyze verify** 显示在所有系统单元中是否有语法错误。
+
+**systemd-analyze plot** 可以用来把整个引导过程写入一个SVG格式文件里。整个引导过程非常长不方便阅读，所以通过这个命令我们可以把输出写入一个文件，之后再查看和分析。下面这个命令就是做这个。
 
     systemd-analyze plot > boot.svg
 
@@ -89,9 +92,9 @@ Systemd提供了工具用于识别和定位引导相关的问题或性能影响�
 
 Systemd并没有幸运地获得所有人的青睐，一些专家和管理员对于它的工作方式和开发有不同意见。根据对于Systemd的批评，它不是“类Unix”方式因为它试着替换一些系统服务。一些专家也不喜欢使用二进制配置文件的想法。据说编辑systemd配置非常困难而且没有一个可用的图形工具。
 
-### 在Ubuntu 14.04和12.04上测试Systemd ###
+###  如何在Ubuntu 14.04和12.04上测试Systemd ###
 
-本来，Ubuntu决定从Ubuntu 16.04 LTS开始使用Systemd来替换当前的引导过程。Ubuntu 16.04预计在2016年4月发布，但是考虑到Systemd的流行和需求，即将发布的**Ubuntu 15.04**将采用它作为默认引导程序。好消息是Ubuntu 14.04 Trusty Tahr和Ubuntu 12.04 Precise Pangolin的用户可以在他们的机器上测试Systemd。测试过程并不复杂，你所要做的只是把相关的PPA包含到系统中，更新仓库并升级系统。
+本来，Ubuntu决定从Ubuntu 16.04 LTS开始使用Systemd来替换当前的引导过程。Ubuntu 16.04预计在2016年4月发布，但是考虑到Systemd的流行和需求，刚刚发布的**Ubuntu 15.04**采用它作为默认引导程序。另外，Ubuntu 14.04 Trusty Tahr和Ubuntu 12.04 Precise Pangolin的用户可以在他们的机器上测试Systemd。测试过程并不复杂，你所要做的只是把相关的PPA包含到系统中，更新仓库并升级系统。
 
 **声明**：请注意它仍然处于Ubuntu的测试和开发阶段。升级测试包可能会带来一些未知错误，最坏的情况下有可能损坏你的系统配置。请确保在尝试升级前已经备份好重要数据。
 
@@ -127,7 +130,7 @@ Systemd并没有幸运地获得所有人的青睐，一些专家和管理员对�
 
 ![](http://blog.linoxide.com/wp-content/uploads/2015/03/Grub-Systemd.png)
 
-就这样，你的Ubuntu系统已经不在使用传统的引导程序了，改为使用Systemd管理器。重启你的机器然后查看systemd引导过程吧。
+就这样，你的Ubuntu系统已经不再使用传统的引导程序了，改为使用Systemd管理器。重启你的机器然后查看systemd引导过程吧。
 
 ![](http://blog.linoxide.com/wp-content/uploads/2015/03/Sytemd-Boot.png)
 
@@ -141,7 +144,7 @@ via: http://linoxide.com/linux-how-to/systemd-boot-process/
 
 作者：[Aun Raza][a]
 译者：[zpl1025](https://github.com/zpl1025)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
