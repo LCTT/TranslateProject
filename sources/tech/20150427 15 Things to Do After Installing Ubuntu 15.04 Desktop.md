@@ -1,3 +1,4 @@
+Translating by ZTinoZ
 15 Things to Do After Installing Ubuntu 15.04 Desktop
 ================================================================================
 This tutorial is intended for beginners and covers some basic steps on what to do after you have installed Ubuntu 15.04 “Vivid Vervet” Desktop version on your computer in order to customize the system and install basic programs for daily usage.
