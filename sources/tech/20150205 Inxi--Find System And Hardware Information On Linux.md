@@ -1,3 +1,5 @@
+Translating by goreliu ...
+
 Inxi: Find System And Hardware Information On Linux
 ================================================================================
 We already have shown different [applications][1] and ways to find the system and hardware information on Linux. In that series, today we will see how to find such details using **inxi**. It can be used for forum technical support, as a debugging tool, to quickly ascertain user system configuration and hardware.
