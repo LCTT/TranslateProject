@@ -27,9 +27,9 @@ Ubuntu Upgrade
 
 ### 2. 安装额外驱动 ###
 
-In order for the system to scan and install additional hardware proprietary drivers, open Software and Updates utility from System Settings, go to Additional Drivers tab and wait for the utility to scan for drivers.
+为了能让系统扫描并安装额外的硬件专有驱动，我们依然从System Settings打开Software and Updates工具，选择Additional Drivers标签并等待该工具扫描驱动。
 
-If some drivers matching your hardware are found, check the drivers you want to install and hit the Apply Changes button to install it. In case the proprietary drivers are not working as expected, uninstall them using the Revert button or check Do not use the device and Apply Changes.
+如果有驱动匹配到了你的硬件，查看你想要安装的驱动并点击Apply按钮来安装它，以防专有驱动没有如期工作，用Revert按钮就能卸载它们或勾选Do not use the device后点击Apply按钮。
 
 ![Install Drivers in Ubuntu](http://www.tecmint.com/wp-content/uploads/2015/04/install-drivers.jpg)
 Install Drivers
