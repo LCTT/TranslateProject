@@ -1,3 +1,5 @@
+Translating by goreliu ...
+
 5 Interesting Command Line Tips and Tricks in Linux – Part 1
 ================================================================================
 Are you making most out of the Linux? There are lots of helpful features which appears to be Tips and Tricks for many of Linux Users. Sometimes Tips and Tricks become the need. It helps you get productive with the same set of commands yet with enhanced functionality.
