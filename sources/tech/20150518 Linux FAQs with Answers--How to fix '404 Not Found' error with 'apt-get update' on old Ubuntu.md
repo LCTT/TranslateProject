@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Linux FAQs with Answers--How to fix “404 Not Found” error with “apt-get update” on old Ubuntu
 ================================================================================
 > **Question**: I have old Ubuntu 13.04 (Raring Ringtail) installation on my PC. When I run "sudo apt-get update" on it, it throws a bunch of "404 Not Found" errors, and I cannot install or update any package using apt-get or aptitude. Due to this error I cannot even upgrade it to a newer release. How can I fix this problem?
