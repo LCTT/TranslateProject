@@ -1,4 +1,3 @@
-translating by wi-cuckoo
 70 Expected Shell Scripting Interview Questions & Answers
 ================================================================================
 We have selected expected 70 shell scripting question and answers for your interview preparation. Its really vital for all system admin to know scripting or atleast the basics which in turn helps to automate many tasks in your work environment. In the past few years we have seen that all linux job specification requires scripting skills.
