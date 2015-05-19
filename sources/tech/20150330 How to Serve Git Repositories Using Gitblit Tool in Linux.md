@@ -1,3 +1,5 @@
+translating by wwy-hust
+
 How to Serve Git Repositories Using Gitblit Tool in Linux
 ================================================================================
 Hi friends, today we'll be learning how to install Gitblit in your Linux Server or PC. So, lets check out what is a Git, its features and steps to install Gitblit. [Git is a distributed revision control system][1] with an emphasis on speed, data integrity, and support for distributed, non-linear workflows. It was initially designed and developed by Linus Torvalds for Linux kernel under the terms of the GNU General Public License version 2 development in 2005, and has since become the most widely adopted version control system for software development.
