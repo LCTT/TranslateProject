@@ -1,3 +1,4 @@
+Translating by GOLinux！
 Linux FAQs with Answers--How to view threads of a process on Linux
 ================================================================================
 > **Question**: My program creates and executes multiple threads in it. How can I monitor individual threads of the program once they are created? I would like to see the details (e.g., CPU/memory usage) of individual threads with their names.
