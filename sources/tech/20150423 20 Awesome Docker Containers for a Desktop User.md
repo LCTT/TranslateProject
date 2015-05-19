@@ -1,3 +1,5 @@
+Translating by gaoliu ...
+
 20 Awesome Docker Containers for a Desktop User
 ================================================================================
 Greetings to everyone, today we'll list out some awesome Desktop Apps that we can run using Docker Containers in our very own Desktop running Docker. Docker is an Open Source project that provides an open platform to pack, ship and run any application as a lightweight container. It has no boundaries of Language support, Frameworks or packaging system and can be run anywhere, anytime from a small home computers to high-end servers. It makes them great building blocks for deploying and scaling web apps, databases, and back-end services without depending on a particular stack or provider. It is basically used by the developers, Ops and Engineers as it is easy, fast and handy tool for testing or deploying their products but we can also use Docker for our Desktop usage to run a desktop apps out of the box.
