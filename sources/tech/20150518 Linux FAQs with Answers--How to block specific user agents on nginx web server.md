@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Linux FAQs with Answers--How to block specific user agents on nginx web server
 ================================================================================
 > **Question**: I notice that some robots often visit my nginx-powered website and scan it aggressively, ending up wasting a lot of my web server resources. I am trying to block those robots based on their user-agent string. How can I block specific user agent(s) on nginx web server?
