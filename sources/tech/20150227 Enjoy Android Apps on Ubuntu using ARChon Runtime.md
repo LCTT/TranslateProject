@@ -1,48 +1,46 @@
-[translating by KayGuoWhu]
-Enjoy Android Apps on Ubuntu using ARChon Runtime
+使用ARChon环境在Ubuntu上运行Android应用
 ================================================================================
-Before, we gave try to many android app emulating tools like Genymotion, Virtualbox, Android SDK, etc to try to run android apps on it. But, with this new Chrome Android Runtime, we are able to run Android Apps on our Chrome Browser. So, here are the steps we'll need to follow to install Android Apps on Ubuntu using ARChon Runtime.
+在此之前，我们尝试过在多款安卓应用模拟器工具上运行安卓应用，比如Genymotion、VirtualBox和Android SDK等。但是，有了这套全新的Chrome安卓运行环境，就可以在Chrome浏览器中运行安卓应用了。所以，下面是一些步骤来指导如何使用ARChon运行环境在Ubuntu上安装安卓应用。
 
-Google had [announced the first set of Android apps is ready to run natively on Chrome OS][1], a feature made possible using a new ‘**Android Runtime**’ extension. Now, a developer named Vlad Filippov has figured out a way to bring Android Apps to Chrome on the desktop. His chromeos-apk script and ARChon Android Runtime extension work hand-in-hand to bring Android apps to Chrome browser on the Windows, Mac and Linux desktop.
+谷歌已经公布了[首批支持原生运行在Chrome OS的安卓应用][1]，而使用一个全新的“**安卓运行环境**”扩展程序使其成为可能。如今，一位名为Vlad Filippov的开发者已经找到了一种把安卓应用移植到桌面端Chrome浏览器的方法。他把chromeos-apk脚本和ARChon安卓运行环境扩展程序两者紧密结合在一起，使得安卓应用可以运行在Windows、Max和Linux系统的桌面端Chrome浏览器中。
 
-Performance of this apps through the runtime is not pretty good. Similarly, as its both an unofficial repackaging of the official runtime and running outside of Google's Chrome OS, system integration like webcam, speakers, etc. may be patchy or non-existent.
+应用借助这种运行环境时的性能并不是很好。同样，由于它是官方运行环境的非官方二次开发包，而且运行在Google的Chrome OS之外，因此一些如webcam和speaker等系统集成工具可能需要通过打补丁获得或者根本就没有。
 
-### Installing Chrome ###
+### 安装Chrome ###
 
-First of all, we'll need Chrome installed in our machine, Chrome version 37 or higher is required. We can download them from the [download page of Chrome Browser][2].
+首先，需要在机器上安装Chrome，版本要求是Chrome 37或者更高。可以从[Chrome浏览器的下载页面][2]下载。
 
-If you wanna install a Dev Channel version you'll need to follow below procedure.
+如果打算安装Dev Channel版本，按照如下操作。
 
-We'll need to add repository source list for Google Chrome which can be done my using the following command.
+首先，使用这个命令为Google Chrome添加软件源列表：
 
     $ wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
     $ sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
 
 ![Adding google source list](http://blog.linoxide.com/wp-content/uploads/2015/02/adding-google-source-list.png)
 
-After adding the repository source list, we'll need to update the local repository index by the command below.
+添加完软件源列表后，使用下列命令更新本地的软件库索引。
 
     $ sudo apt-get update
 
-Now, we'll gonna install google chrome unstable which is dev version.
-
+现在，就可以安装非稳定版的google chrome，即开发版。
     $ sudo apt-get install google-chrome-unstable
 
 ![Installing Google chrome unstable](http://blog.linoxide.com/wp-content/uploads/2015/02/installing-google-chrome-unstable.png)
 
-### Installing Archon Runtime ###
+### 安装Archon运行时环境 ###
 
-Next we'll need to download the custom-made ergo officially not endorsed by Google or Chromium Android Runtime created by Vlad Filippov. This differs from the official version in a number of ways, the chief being it can be used on desktop versions of the browser. Here below is the runtime we need to download, please select anyone of the following according to your bit of Ubuntu installed.
+接下来，需要下载定制版的运行环境安装包，因为官方版本不被Google或Vlad Filippov创建的Chromium安卓运行环境认可。它在很多方面有别于官方版本，主要区别是它可以用于Google浏览器的各个桌面端。下面是需要下载的运行环境安装包，请根据所安装的Ubuntu系统位数选择下列的一种。
 
-For **32-bit** Ubuntu Distributions:
+**32位** Ubntu发行版：
 
 - [Download Archron for 32-bit Ubuntu][3]
 
-For **64-bit** Ubuntu Distributions:
+**64位** Ubntu发行版：
 
 - [Download Archron for 64-bit Ubuntu][4]
 
-Once the runtime has fully downloaded you will need to extract the contents from the .zip files and move the resulting directory to Home. Here is the gist commands for this steps to download and extract the contents.
+下载好运行环境安装包后，从.zip文件中解压，并将解压得到的目录移动到Home目录。操作命令如下：
 
     $ wget https://github.com/vladikoff/chromeos-apk/releases/download/v3.0.0/ARChon-v1.1-x86_32.zip
 
@@ -50,58 +48,58 @@ Once the runtime has fully downloaded you will need to extract the contents from
 
     $ unzip ARChon-v1.1-x86_32.zip ~/
 
-Now to install the runtime, we'll gonna Open our latest Google Chrome and goto the url **chrome://extensions/** then, we'll need to check ‘**Enable developer mode**’. Finally, we'll gonna click on the ‘**load unpacked extension**’ button and select the folder which was placed into **~/Home**. 
+接下来是安装运行时环境，首先打开Google Chrome浏览器，在地址栏键入**chrome://extensions**。然后，选中“**开发者模式**”。最后，点击“**载入未打包扩展程序**”,选择刚才放置在**~/Home**下面的文件夹。
 
-### Installing ChromeOS-APK ###
+### 安装 ChromeOS-APK ###
 
-To convert APKs manually is something you really don’t need to do any more if you use one of the apps mentioned above — you will need to install the ‘[chromeos-apk][5]’ command line JavaScript utility. This is available to install through the Node Packaged Modules (npm) manager. To install nmp and chromeos-apk, we'll need to run the following command in a shell or terminal.
+如果要用到上面提到的应用，那么手动转换这些APKs无需复杂的操作——只需要安装“[chromeos-apk][5]”命令行JavaScript工具。可以在Node Package Modules（npm）管理器中安装它。为了安装npm和chromeos-apk，在shell或终端中运行下面命令：
 
     $ sudo apt-get install npm nodejs nodejs-legacy
 
-**If you are running 64 bit OS**, you should grab the following library, to do so run the below commands in a shell or terminal.
+如果**操作系统是64位**，需要安装下面这个库，命令如下：
 
     $ sudo apt-get install lib32stdc++6
 
-Now run the command to install the the latest chromeos-apk is:
+然后，运行这条命令来安装最新的chromeos-apk：
 
     $ npm install -g chromeos-apk@latest
 
 ![chromeos apk installation](http://blog.linoxide.com/wp-content/uploads/2015/02/chomeos-apk-installation.png)
 
-Depending on your system configuration you may need to need to run this latter command as sudo.
+取决于系统配置，可能需要以sudo权限运行后一条命令。
 
-Now, we'll gonna for Google to find an APK of an app to give it a try, bearing in mind **not all Android apps will work**, and those that do may be unstable or lack features. Most of the messenger out of the box are not working.
+现在，我们将找一个应用程序的APK来在Google浏览器上试一试，但务必牢记**并非所有的安卓应用都可以**，有一些可能不稳定或者缺少某些特性。大部分安装即用的通讯类应用都不适用这个环境。
 
-### Converting APK ###
+### 转换APK ###
 
-Place your **Android APK in ~/Home**, then return to **Terminal** to convert it using the following command:
+将**安卓APK放到~/Home**下，然后在**终端**执行下列命令进行转换：
 
     $ chromeos-apk myapp.apk --archon
 
-If you want the app in fullscreen mode then run the following instead:
+如果想以全屏模式运行应用，请替换成这条命令：
 
     $ chromeos-apk myapp.apk --archon --tablet
 
-Note: Please replace myapp.apk to the Android APK app filename you want to convert.
+注意：请将myapp.apk替换成待转换的安卓APK应用的文件名。
 
-For our ease, we can also use [Twerk][6] for the conversion process if we want to skip this step.
+为了方便，也可以使用[Twerk][6]来进行转换，这样可以跳过这一步。
 
-### Running Android Apk ###
+### 运行安卓Apk ###
 
-Finally, we'll need to open our chrome browser and then goto chrome://extensions page and enable developer mode then tap the ‘load unpacked extension’ button and select the folder the script above created.
+最后，打开chrome浏览器，然后进入chrome://extensions页面，勾选开发者模式。点击“载入未打包扩展程序”按钮，选择文件夹载入刚创建的脚本。
 
-Now, we can Open the Chrome App Launcher to run it.
+至此，就可以打开Chrome应用启动器运行安卓应用了。
 
-### Conclusion ###
+### 总结 ###
 
-Hurray! We have successfully installed Android Apk App in our favorite desktop browser ie Chrome Browser. This article is all about the popular Chrome Android Runtime called Archon created by Vlad Filippov. This runtime allows us to run converted Apk files in our Chrome browser. It has not yet supported messaging apps like Whatsapp, etc. So, if you have any questions, suggestions, feedback please write them in the comment box below. Thank you ! Enjoy Archon :-)
+万岁！我们已经成功在Chrome浏览器中安装好安卓Apk应用程序了。这篇文章是关于一款由Vlad Filippov开发的、名为Archon的、时下流行的Chrome安卓运行环境。这个运行环境使用户在Chrome浏览器中运行转换过的Apk文件。目前它还不支持通讯类应用，诸如Whatsapp。因此，如果你有任何问题、建议和反馈，请在下面的评论框中写出来。非常感谢！去拥抱Archon吧！:-)
 
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/ubuntu-how-to/android-apps-ubuntu-archon-runtime/
 
 作者：[Arun Pyasi][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[KayGuoWhu](https://github.com/KayGuoWhu)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
