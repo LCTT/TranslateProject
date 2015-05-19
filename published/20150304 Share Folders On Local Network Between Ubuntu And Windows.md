@@ -1,10 +1,10 @@
-局域网中实现Ubuntu和Windows共享文件夹
+如何在局域网中将Ubuntu文件夹共享给Windows
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/03/Share_Folder_Ubuntu_windows.jpeg)
 
 本文全面详细地向你描述了**在Ubuntu中如何实现局域网内的文件夹共享**。
 
-你的家中是不是有多台电脑？当你需要从一台Ubuntu电脑向另一台电脑传输数据时，是不是必须用到U盘或SD卡？你是否也觉得这个方法很烦人？我想肯定是。本文的目的就是使你在局域网内快速方便地传输文件、文档和其它较大的数据，来节省你的宝贵时间。只需一次设置，然后轻点鼠标，你就可以自由地**在Ubuntu和Windows之间共享文件**，当然这对其它Linux系统同样使用。不要担心这很容易操作，不会花费太多时间。
+你的家中是不是有多台电脑？当你需要从一台Ubuntu电脑向另一台电脑传输数据时，是不是必须用到U盘或SD卡？你是否也觉得这个方法很烦人？我想肯定是。本文的目的就是使你在局域网内快速方便地传输文件、文档和其它较大的数据，以节省你的宝贵时间。只需一次设置，然后轻点鼠标，你就可以自由地**在Ubuntu和Windows之间共享文件**，当然这对其它Linux系统同样使用。不要担心，这很容易操作，不会花费太多时间。
 
 除此之外，尽管本文是在Ubuntu上进行实践，但这个教程在其它Linux系统上同样有用。
 
@@ -21,11 +21,11 @@
 
 #### 步骤一：####
 
-为了在Ubuntu上实现局域网共享文件夹，右键点击打算共享的文件夹，并选择“Local Network Share”：
+为了在Ubuntu上实现局域网共享文件夹，右键点击打算共享的文件夹，并选择“Local Network Share（本地网络共享）”：
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/02/Share_Folder_Ubuntu.jpeg)
 
-**可能有用的故障方案**：如果在右键菜单中看不到“Local Network Share”的选项，那就新建一个终端，使用下面的命令去安装nautlius-share：
+**可能有用的故障解决方案**：如果在右键菜单中看不到“Local Network Share”的选项，那就新建一个终端，使用下面的命令去安装nautlius-share插件：
 
     sudo apt-get install nautilus-share
 
@@ -35,17 +35,17 @@
 
 #### 步骤二：####
 
-一旦点击“Local Network Share”，就会出现共享文件夹的选项。只需选中“Share this folder”这一项：
+一旦点击“Local Network Share”，就会出现共享文件夹的选项。只需选中“Share this folder（共享该文件夹）”这一项：
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/03/Share_Folder_Ubuntu_1.jpeg)
 
-可能的故障方案：如果提示共享服务还未安装，就像下图所示，那就点击安装服务，按照提示操作。
+**可能的故障解决方案**：如果提示共享服务还未安装，就像下图所示，那就点击安装服务，按照提示操作。
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/03/Share_Folder_Ubuntu_2.jpeg)
 
 #### 步骤三：####
 
-一旦选中“Share this folder”的选项，就会看到按钮“Create Share”变成可用了。你也可以允许其他用户在共享文件夹中编辑文件。选项“Guest access”也是如此。
+当选中“Share this folder”的选项，就会看到按钮“Create Share（创建共享）”变得可以点击了。你也可以“Allow others to create and delete fies in this folder（允许其他用户在共享文件夹中编辑文件）”。选项“Guest access（允许访客访问）”也是如此。
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/03/Share_folder_Ubuntu_3.png)
 
@@ -55,13 +55,13 @@
 
 ### 2. 在Ubuntu上使用密码保护实现局域网共享文件夹###
 
-为了达到目的，首先需要配置Samba服务器。事实上，在这篇教程的前一部分我们已经用到了Samba，只是我们没有刻意强调。在介绍如何在Ubuntu上搭建Samba服务器实现局域网共享的方法之前，先快速预览一下[Samba][1]到底是什么。
+为了达到这个目的，首先需要配置Samba服务器。事实上，在这篇教程的前一部分我们已经用到了Samba，只是我们没有刻意强调。在介绍如何在Ubuntu上搭建Samba服务器实现局域网共享的方法之前，先快速预览一下[Samba][1]到底是什么。
 
 #### Samba是什么？ ####
 
 Samba是一个允许用户通过网络共享文件、文档和打印机的软件包，无论是在Linux、Windows，还是Mac上。它适用于所有的主流平台，可以在所有支持系统上流畅运行。下面是维基百科的介绍：
 
-> Samba是一款重新实现SMB/CIFS网络协议的自由软件，最初由安德鲁·垂鸠开发。在第三版中，Smaba不仅支持通过不同的Windows客户端访问及分享SMB的文件夹及打印机，还可以集成到Windows Server域名，作为主要域名控制站（PDC）或者域名成员。它也可以作为Active Directory域名的一部分。
+> Samba是一款重新实现SMB/CIFS网络协议的自由软件，最初由安德鲁·垂鸠开发。在第三版中，Smaba不仅支持通过不同的Windows客户端访问及分享SMB的文件夹及打印机，还可以集成到Windows Server域，作为主域控制器（PDC）或者域成员。它也可以作为活动目录域的一部分。
 
 #### 在Ubuntu上安装Samba服务器 ####
 
@@ -77,7 +77,7 @@ Samba是一个允许用户通过网络共享文件、文档和打印机的软件
 
 #### 在Ubuntu上配置Samba服务器 ####
 
-从dash打开Samba配置工具：
+从dash中打开Samba配置工具：
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/02/Setup-Samba.png)
 
@@ -86,7 +86,7 @@ Samba是一个允许用户通过网络共享文件、文档和打印机的软件
 在Server Setting中可以看到两个选项卡，‘Basic’和‘Security’。在Basic选项卡下的选项含义如下：
 
 - 工作组 - 用户要连接的电脑所在工作组的名字。比如，如果你想连接到一台Windows电脑，你就要输入Windows电脑的工作组名字。在Windows的Samba服务器设置中，已经默认设置好统一的工作组名字。但如果你有不同的工作组名字，就在这个字段中输入自定义的工作组名字。（在Windows 7中获取工作组名字，右击计算机图标，进到属性，就能看到Windows工作组名字。）
-- 描述 - 其他用户看到的你的电脑名字。不要使用空格或计算机不支持（望更正！）的字符。
+- 描述 - 其他用户看到的你的电脑名字。不要使用空格或不适用于网络的字符。
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/02/samba-server-settings.png)
 
@@ -101,14 +101,14 @@ Samba是一个允许用户通过网络共享文件、文档和打印机的软件
 现在我们需要为网络共享文件创建一个系统用户。下面是非常简单的步骤：
 
 - 在Systems Settings下点击**User Accounts**。
-- 点击**unlock**使其可用，以及+（**plus**）图标。
-- 点击+（plus）图标，创建一个新的系统用户。
+- 点击**unlock**使其可用，以及+（**加号**）图标。
+- 点击+（加号）图标，创建一个新的系统用户。
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/02/create-system-user1.jpg)
 
 如上图所示，需要输入‘Full name’。当你输入‘Full name’时，Username会自动填充为Full name。因为创建这个用户是为了共享文件，所以还要指定Account Type为‘**Standard**’。
 
-完成上述步骤，点击添加，你就创建好一个系统用户。这个用户还没有被激活，所以需要为其设置密码来激活。确保Users accounts界面已经解锁。点击Account disabled。输入一个新密码，然后确认密码，点击Change。
+完成上述步骤，点击添加，你就创建好一个系统用户。这个用户还没有被激活，所以需要为其设置密码来激活。确保Users accounts界面已经解锁。点击尚不可用的账户，输入一个新密码，然后确认密码，点击Change。
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/02/activate-system-user.jpg)
 
@@ -132,7 +132,7 @@ Samba是一个允许用户通过网络共享文件、文档和打印机的软件
 
 #### 通过网络共享文件夹或文件 ####
 
-在图形用户界面下通过Samba共享文件是很简单的。点击Plus图标，会看到如图所示的对话框：
+在图形用户界面下通过Samba共享文件是很简单的。点击加号图标，会看到如图所示的对话框：
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/02/share-files-and-folders.jpg)
 
@@ -157,9 +157,8 @@ Samba是一个允许用户通过网络共享文件、文档和打印机的软件
 
 全部搞定！我们也可以使用终端进行网络文件共享，但这样没有本文介绍的方法这么容易。如果你确实想知道命令行操作，我会再写一篇关于在Linux上使用命令行实现网络文件共享的文章。
 
-所以，你是怎么找到这篇教程的呢？我希望看了这篇教程你可以**很容易地在Ubuntu和Windows之间共享文件**。如果你有任何问题或建议，请再评论里说出来。
+所以，你是怎么找到这篇教程的呢？我希望看了这篇教程你可以**很容易地在Ubuntu和Windows之间共享文件**。如果你有任何问题或建议，请在评论里说出来。
 
-这篇教程是在Kalc的请求下写出的。如果你也想，你可以[请求你自己的教程][2]。我们很乐意帮助你和面临同样问题的读者解决问题。
 
 --------------------------------------------------------------------------------
 
@@ -167,7 +166,7 @@ via: http://itsfoss.com/share-folders-local-network-ubuntu-windows/
 
 作者：[Mohd Sohail][a]
 译者：[KayGuoWhu](https://github.com/KayGuoWhu)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
