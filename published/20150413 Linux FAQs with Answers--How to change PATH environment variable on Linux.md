@@ -1,4 +1,4 @@
-Linux有问必答--如何在Linux中修改环境变量PATH
+Linux有问必答：如何在Linux中修改环境变量PATH
 ================================================================================
 > **提问**: 当我试着运行一个程序时，它提示“command not found”。 但这个程序就在/usr/local/bin下。我该如何添加/usr/local/bin到我的PATH变量下，这样我就可以不用指定路径来运行这个命令了。
 
@@ -38,7 +38,7 @@ Linux有问必答--如何在Linux中修改环境变量PATH
 
     /usr/lib64/qt-3.3/bin:/bin:/usr/bin:/usr/sbin:/sbin:/home/xmodulo/bin:/usr/local/bin
 
-更新的PATH会在当前的PATH一直有效。然而，更改将在新的会话中失效。
+更新后的PATH会在当前的会话一直有效。然而，更改将在新的会话中失效。
 
 如果你想要永久更改PATH变量，用编辑器打开~/.bashrc (或者 ~/.bash_profile)，接着在最后添加下面这行。
 
@@ -46,7 +46,7 @@ Linux有问必答--如何在Linux中修改环境变量PATH
 
 接着运行下面这行永久激活更改：
 
-    $ source ~/.bashrc (or source ~/.bash_profile)
+    $ source ~/.bashrc (或者 source ~/.bash_profile)
 
 ### 改变系统级的环境变量 ###
 
@@ -66,7 +66,7 @@ via: http://ask.xmodulo.com/change-path-environment-variable-linux.html
 
 作者：[Dan Nanni][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
