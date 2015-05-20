@@ -93,14 +93,14 @@ Install Media Players
 ![Media Player Playlist](http://www.tecmint.com/wp-content/uploads/2015/04/media-playllist.jpg)
 Media Player Playlist
 
-除了Besides this multimedia players also install ubuntu-restricted-extras and Java support packages in order to decode and support other restricted media formats.
+除了多媒体播放器，安装ubuntu-restricted-extras和Java支持包也可以解码并支持其它受约束的多媒体格式。
 
     $ sudo apt-get install ubuntu-restricted-extras openjdk-8-jdk
 
 ![Install Ubuntu Extras](http://www.tecmint.com/wp-content/uploads/2015/04/install-ubuntu-extras.jpg)
 Install Ubuntu Extras
 
-To enable DVD Playback and other multimedia codecs issue the following command on Terminal:
+在终端上输入以下命令来启用DVD Playback和其它多媒体解码器：
 
     $ sudo apt-get install ffmpeg gstreamer0.10-plugins-bad lame libavcodec-extra
     $ sudo /usr/share/doc/libdvdread4/install-css.sh
