@@ -1,12 +1,13 @@
-Linux 上 wget 或 curl 的更佳替代品
+用腻了 wget 或 curl，有什么更好的替代品吗？
 ================================================================================
-如果你经常需要通过终端以非交互模式访问网络服务器（例如，从网络上下载文件，或者是测试 RESTful 网络服务接口），可能你会选择的工具是 wget 或 curl。通过大量的命令行选项，这两种工具都可以处理很多非交互网络访问的情况（比如[这里][1]，[这里][2]，还有[这里][3]）。然而，即使像这些一样的强大的工具，也只是与你对如何使用它们的了解程度等同。除非你很精通那些又多又笨（原文是 nitty and gritty）的语法细节，这些工具对于你来说只不过是简单的网络下载器。
 
-就像宣传的那样，“为人类着想的类 curl 工具”，[HTTPie][4] 设计用来增强 wget 和 curl 的可用性。它的主要目标是使通过命令行与网络服务器进行交互的过程变得尽可能的人性化。为此，HTTPie 支持具有表现力，但又很简单很直观的语法。它以彩色模式显示响应，并且还有一些不错的优点，比如对 JSON 的良好支持，和持久性会话用以作业流程化。
+如果你经常需要通过终端以非交互模式访问网络服务器（例如，从网络上下载文件，或者是测试 RESTful 网络服务接口），可能你会选择的工具是 wget 或 curl。通过大量的命令行选项，这两种工具都可以处理很多非交互网络访问的情况（比如[这里][1]、[这里][2]，还有[这里][3]）。然而，即使像这些一样的强大的工具，你也只能发挥你所了解的那些选项的功能。除非你很精通那些繁冗的语法细节，这些工具对于你来说只不过是简单的网络下载器而已。
 
-我知道很多人对把像 wget 和 curl 这样的无处不在的可用的完美工具换成完全没听说过的软件心存怀疑。这种观点是好的，特别是如果你是一个系统管理员、要处理很多不同的硬件的话。然而，对于开发者和终端用户来说，重要的是效率。如果我发现了一个工具的用户友好替代，我没有看到任何问题如果你采用易于使用的版本来节省你宝贵的时间。没有必要对替换掉的工具保持信仰忠诚。毕竟，对于 Linux 来说，最好的事情是可以选择。
+就像其宣传的那样，“给人用 curl 类工具”，[HTTPie][4] 设计用来增强 wget 和 curl 的可用性。它的主要目标是使通过命令行与网络服务器进行交互的过程变得尽可能的人性化。为此，HTTPie 支持具有表现力、但又很简单很直观的语法。它以彩色模式显示响应，并且还有一些不错的优点，比如对 JSON 的良好支持，和持久性会话用以作业流程化。
 
-在这篇文章中，让我们来回顾并展示一下我所说的 HTTPie，一个用户友好的 wget 和 curl 的替代。
+我知道很多人对把像 wget 和 curl 这样的无处不在的、可用的、完美的工具换成完全没听说过的软件心存疑虑。这种观点是好的，特别是如果你是一个系统管理员、要处理很多不同的硬件的话。然而，对于开发者和终端用户来说，重要的是效率。如果我发现了一个工具的用户更佳替代品，那么我认为采用易于使用的版本来节省宝贵的时间是毫无疑问的。没有必要对替换掉的工具保持信仰忠诚。毕竟，对于 Linux 来说，最好的事情就是可以选择。
+
+在这篇文章中，让我们来了解并展示一下我所说的 HTTPie，一个用户友好的 wget 和 curl 的替代。
 
 ![](https://farm8.staticflickr.com/7633/16849137018_bcc7a616fc_b.jpg)
 
@@ -40,10 +41,9 @@ HTTPie 是用 Python 写的，所以你可以在几乎所有地方（Linux，Mac
 
 你可以使用 &lt;header:value&gt; 的格式来定制头部。例如，我们发送一个 HTTP GET 请求到 www.test.com ，使用定制用户代理（user-agent）和来源（referer），还有定制头部（比如 MyParam）。
 
-
     $ http www.test.com User-Agent:Xmodulo/1.0 Referer:http://xmodulo.com MyParam:Foo
 
-注意到当使用 HTTP GET 方法时，你无需指定任何 HTTP 方法。
+注意到当使用 HTTP GET 方法时，就无需明确指定 HTTP 方法。
 
 这个 HTTP 请求看起来如下：
 
@@ -121,7 +121,7 @@ HTTPie 的另外一个用户友好特性是输入重定向，你可以使用缓�
 
 ### 结束语 ###
 
-在这篇文章中，我介绍了 HTTPie，一个 wget 和 curl 的可能替代工具。除了这里展示的几个简单的例子，你可以在[官方网站][7]上找到 HTTPie 的很多有趣的应用。再次重复一遍，一款强大的工具也只相当于你对它的了解程度。从个人而言，我更热衷于 HTTPie，因为我在寻找一种更简洁的测试复杂网络接口的方法。
+在这篇文章中，我介绍了 HTTPie，一个 wget 和 curl 的可能替代工具。除了这里展示的几个简单的例子，你可以在其[官方网站][7]上找到 HTTPie 的很多有趣的应用。再次重复一遍，一款再强大的工具也取决于你对它的了解程度。从个人而言，我更倾向于 HTTPie，因为我在寻找一种更简洁的测试复杂网络接口的方法。
 
 你怎么看？
 
@@ -131,15 +131,15 @@ via: http://xmodulo.com/wget-curl-alternative-linux.html
 
 作者：[Dan Nanni][a]
 译者：[wangjiezhe](https://github.com/wangjiezhe)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://xmodulo.com/author/nanni
 [1]:http://xmodulo.com/how-to-download-multiple-files-with-wget.html
 [2]:http://xmodulo.com/how-to-use-custom-http-headers-with-wget.html
-[3]:http://ask.xmodulo.com/custom-http-header-curl.html
+[3]:https://linux.cn/article-4957-1.html
 [4]:https://github.com/jakubroztocil/httpie
-[5]:http://xmodulo.com/how-to-set-up-epel-repository-on-centos.html
+[5]:https://linux.cn/article-2324-1.html
 [6]:http://ask.xmodulo.com/install-pip-linux.html
 [7]:https://github.com/jakubroztocil/httpie
