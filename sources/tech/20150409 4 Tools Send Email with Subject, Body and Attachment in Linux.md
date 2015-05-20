@@ -1,3 +1,5 @@
+Translating by goreliu ...
+
 4 Tools Send Email with Subject, Body and Attachment in Linux
 ================================================================================
 In today's article we will cover a few ways you can use to send emails with attachments from the command line interface on Linux. It can have quite a few uses, for example to send an archive with an application from an application server to email or you can use the commands in scripts to automate some process. For our examples,we will use the file foo.tar.gz as our attachment.
