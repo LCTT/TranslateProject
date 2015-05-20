@@ -1,3 +1,5 @@
+Translating by goreliu ...
+
 How to set up server monitoring system with Monit
 ================================================================================
 Many Linux admins rely on a centralized remote monitoring system (e.g., [Nagios][1] or [Cacti][2]) to check the health of their network infrastructure. While centralized monitoring makes an admin's life easy when dealing with many hosts and devices, a dedicated monitoring box obviously becomes a single point of failure; if the monitoring box goes down or becomes unreachable for whatever reason (e.g., bad hardware or network outage), you will lose visibility on your entire infrastructure.
@@ -237,7 +239,7 @@ In this tutorial, I demonstrate how to set up Monit on a local server. What I sh
 via: http://xmodulo.com/server-monitoring-system-monit.html
 
 作者：[Iulian Murgulet][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[goreliu](https://github.com/goreliu)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
