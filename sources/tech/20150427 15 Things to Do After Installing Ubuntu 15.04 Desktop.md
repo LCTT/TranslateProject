@@ -72,7 +72,7 @@ Disable Unwanted Applications
 
 ### 7. 添加扩展多媒体支持 ###
 
-By default, Ubuntu comes with a minimal support for media files. In order to play various media formats or manipulate video files, install the following multimedia applications:
+默认情况下，Ubuntu对多媒体文件支持不是很好。为了能播放各种不同的多媒体格式或解析视频文件，可以安装以下多媒体应用程序：
 
 - VLC
 - Smplayer
@@ -83,7 +83,7 @@ By default, Ubuntu comes with a minimal support for media files. In order to pla
 - Handbrake
 - Openshot
 
-Use the following command line to install all with one shot:
+用以下命令来一次性安装所有的这些应用程序：
 
     $ sudo apt-get install vlc smplayer audacious qmmp mixxx xbmc handbrake openshot
 
@@ -93,7 +93,7 @@ Install Media Players
 ![Media Player Playlist](http://www.tecmint.com/wp-content/uploads/2015/04/media-playllist.jpg)
 Media Player Playlist
 
-Besides this multimedia players also install ubuntu-restricted-extras and Java support packages in order to decode and support other restricted media formats.
+除了Besides this multimedia players also install ubuntu-restricted-extras and Java support packages in order to decode and support other restricted media formats.
 
     $ sudo apt-get install ubuntu-restricted-extras openjdk-8-jdk
 
