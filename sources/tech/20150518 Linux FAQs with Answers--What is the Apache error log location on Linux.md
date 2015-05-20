@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Linux FAQs with Answers--What is the Apache error log location on Linux
 ================================================================================
 > **Question**: I am trying to troubleshoot Apache web server errors on my Linux system. Where is the Apache error log file located on [insert your Linux distro]?
