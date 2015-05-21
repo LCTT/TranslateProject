@@ -1,3 +1,5 @@
+translating----geekpi
+
 How to Use tmpfs on RHEL / CentOS 7.0
 ================================================================================
 Today we will talk about tmpfs CentOS 7 a file system that will keep all files and folders in the virtual memory of the operating system as opposed to actually writing them to the disk. This means that all the content in tmpfs is temporary in the sense that it’s not permanently written to the disk and in case the tmpfs is unmounted, the system is rebooted or the power is cut all content will be lost. From a technical point of view tmpfs puts everything in the kernel internal cache and then grows or shrinks to accommodate the files it contains ans is able to swap unneeded pages out of swap space.
