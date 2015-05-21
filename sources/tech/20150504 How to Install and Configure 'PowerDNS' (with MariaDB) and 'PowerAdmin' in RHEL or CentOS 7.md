@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How to Install and Configure ‘PowerDNS’ (with MariaDB) and ‘PowerAdmin’ in RHEL/CentOS 7
 ================================================================================
 PowerDNS is a DNS server running on many Linux/Unix derivatives. It can be configured with different backends including BIND style zone files, relational databases or load balancing/failover algorithms. It can also be setup as a DNS recursor running as a separate process on the server.
