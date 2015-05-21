@@ -1,4 +1,4 @@
-[已解决] Ubuntu下不能记住亮度设置问题
+如何解决 Ubuntu 下不能记住亮度设置的问题
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/04/Fix_Ubuntu_Brightness_Issue.jpg)
 
@@ -22,7 +22,7 @@ via: http://itsfoss.com/ubuntu-mint-brightness-settings/
 
 作者：[Abhishek][a]
 译者：[ZTinoZ](https://github.com/ZTinoZ)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
