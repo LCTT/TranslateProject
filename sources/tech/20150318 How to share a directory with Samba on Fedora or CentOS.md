@@ -1,3 +1,5 @@
+translating by wwy-hust
+
 How to share a directory with Samba on Fedora or CentOS
 ================================================================================
 Nowadays sharing data across different computers is not something new at home or many work places. Riding on this trend, modern operating systems make it easy to share and exchange data transparently across computers via network file systems. If your work environment involves a mix of Microsoft Windows and Linux computers, one way to share files and folders among them is via SMB/CIFS, a cross-platform network file sharing protocol. Windows Microsoft natively supports SMB/CIFS, while Linux offers free software implementation of SMB/CIFS network protocol in Samba.
