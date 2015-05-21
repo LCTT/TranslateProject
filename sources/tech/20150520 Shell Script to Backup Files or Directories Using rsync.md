@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Shell Script to Backup Files / Directories Using rsync
 ================================================================================
 This article we bring shell scripts to backup your files / directories from you local linux machine to a remote linux server using rsync command. This would be an interactive way to perform backup , where you need to provide remote backup server hostname / ip address and folder location. We keep a separate file where you need to provide files / directories that need backup. We have added two scripts where **first script** ask password after each file had been copied (if you have enabled ssh authentication keys , then password will be not be asked) and in second script password will be prompted only once.
