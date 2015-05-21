@@ -1,3 +1,4 @@
+Translating by ictlyh
 Linux FAQs with Answers--How to change system proxy settings from the command line on Ubuntu desktop
 ================================================================================
 > **Question**: I often need to change system proxy settings on Ubuntu desktop, but I do not want to go through a chain of GUI menus: "System Settings" -> "Network" -> "Network proxy", which is cumbersome. Is there a more convenient way to change desktop's proxy settings from the command line? 
