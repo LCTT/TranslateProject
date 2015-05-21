@@ -1,9 +1,8 @@
-Translating by GOLinux!
-Shell Script to Backup Files / Directories Using rsync
+Shell脚本：使用rsync备份文件/目录
 ================================================================================
-This article we bring shell scripts to backup your files / directories from you local linux machine to a remote linux server using rsync command. This would be an interactive way to perform backup , where you need to provide remote backup server hostname / ip address and folder location. We keep a separate file where you need to provide files / directories that need backup. We have added two scripts where **first script** ask password after each file had been copied (if you have enabled ssh authentication keys , then password will be not be asked) and in second script password will be prompted only once.
+本文，我们带来了shell脚本，用来使用rsync命令将你本地Linux机器上的文件/目录备份到远程Linux服务器上。使用该脚本实施备份会是一个交互的方式，你需要提供远程备份服务器的主机名/ip地址和文件夹位置。我们保留了一个独立文件，在这个文件中你需要提供需要备份的文件/目录。我们添加了两个脚本，**第一个脚本**在每次拷贝完一个文件后询问密码（如果你启用了ssh验证密钥，那么就不会询问密码），而第二个脚本中，则只会提示一次输入密码。
 
-We are going to backup bckup.txt, dataconfig.txt, docs and oracledb.
+我们打算备份bckup.txt，dataconfig.txt，docs和orcledb。
 
     [root@Fedora21 tmp]# ls -l
     total 12
@@ -13,7 +12,7 @@ We are going to backup bckup.txt, dataconfig.txt, docs and oracledb.
     drwxr-xr-x. 2 root root 4096 May 15 10:45 docs
     drwxr-xr-x. 2 root root 4096 May 15 10:44 oracledb
 
-This file contains backup files / dir details
+该文件包含了备份文件/目录的详情
 
     [root@Fedora21 tmp]# cat /tmp/bckup.txt
     /tmp/oracledb
@@ -21,7 +20,7 @@ This file contains backup files / dir details
     /tmp/docs
     [root@Fedora21 tmp]#
 
-### Script 1 : ###
+### 脚本 1： ###
 
     #!/bin/bash
 
@@ -67,7 +66,7 @@ This file contains backup files / dir details
     #end of reading backup file
     done
 
-#### Running the script with output ####
+#### 运行带有输出结果的脚本 ####
 
     [root@Fedora21 tmp]# ./bckrsync.sh
     Shell Script Backup Your Files / Directories Using rsync
@@ -88,7 +87,7 @@ This file contains backup files / dir details
     DONE
     [root@Fedora21 tmp]#
 
-### Script 2 : ###
+### 脚本 2： ###
 
     #!/bin/bash
 
@@ -152,18 +151,18 @@ This file contains backup files / dir details
     #end of reading backup file
     done
 
-#### Screenshot running the second script with output ####
+#### 运行第二个带有输出结果的脚本的屏幕截图 ####
 
 ![rsync script](http://blog.linoxide.com/wp-content/uploads/2015/05/bckuprsync-script.png)
 
-Hope these scripts help you to take backup !!
+希望这些脚本对你备份会有帮助！！
 
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/linux-shell-script/shell-script-backup-files-directories-rsync/
 
 作者：[Yevhen Duma][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[GOLinux](https://github.com/GOLinux)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
