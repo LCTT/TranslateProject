@@ -1,3 +1,5 @@
+Translating---geekpi
+
 Microsoft Open-Sources The Windows Communication Foundation
 ================================================================================
 Microsoft has today announced they've open-sourced the important WCF (Windows Communication Foundation) code that now targets .NET Core.
