@@ -1,46 +1,44 @@
-Translating by GOLinux!
-How to Install and Configure ‘PowerDNS’ (with MariaDB) and ‘PowerAdmin’ in RHEL/CentOS 7
+RHEL/CentOS 7中安装并配置‘PowerDNS’（与MariaDB搭配）和‘PowerAdmin’
 ================================================================================
-PowerDNS is a DNS server running on many Linux/Unix derivatives. It can be configured with different backends including BIND style zone files, relational databases or load balancing/failover algorithms. It can also be setup as a DNS recursor running as a separate process on the server.
+PowerDNS是一个运行在许多Linux/Unix衍生版上的DNS服务器，它可以使用不同的后端进行配置，包括BIND类型的区域文件、相关的数据库，或者负载均衡/失效转移算法。它也可以被配置成一台DNS递归器，作为服务器上的一个独立进程运行。
 
-The latest version of PowerDNS Authoritative server is 3.4.4, but the one available in the EPEL repository right now is 3.4.3. I would recommend installing the one for the EPEL repository due to the fact that this version is tested in CentOS and Fedora. That way you will also be able to easily update PowerDNS in future.
+PowerDNS授权服务器的最新版本是3.4.4，但是当前EPEL仓库中可以获得的版本是3.4.3。我推荐安装EPEL仓库中提供的那一个，因为该版本已经在CentOS和Fedora中测试过。那样，你也可以在今后很容易地更新PowerDNS。
 
-This article intends to show you how to install and setup master PowerDNS server with a MariaDB backend and the PowerAdmin – a friendly web interface managing tool for PowerDNS.
+本文倾向于向你演示如何安装并配置以MariaDB作为后端的PowerDNS和
+出于本文的写作目的，我将使用以下服务器：
 
-For the purpose of this article I will be using server with:
+    主机名： centos7.localhost 
+    IP地址： 192.168.0.102
 
-    Hostname: centos7.localhost 
-    IP Address 192.168.0.102
+### 步骤 1： 安装带有MariaDB后端的PowerDNS ###
 
-### Step 1: Installing PowerDNS with MariaDB Backend ###
-
-#### 1. First you need to enable the EPEL repository for your server simply use: ####
+#### 1. 首先，你需要为你的系统启用EPEL仓库，只需使用： ####
 
     # yum install epel-release.noarch 
 
 ![Enable Epel Repository](http://www.tecmint.com/wp-content/uploads/2015/04/Enable-Epel-Repository.png)
-Enable Epel Repository
+启用Epel仓库
 
-#### 2. The next step is to install the MariaDB server. This can be easily done by running the following command: ####
+#### 2. 下一步是安装MariaDB服务器。运行以下命令即可达成： ####
 
     # yum -y install mariadb-server mariadb
 
 ![Install MariaDB Server](http://www.tecmint.com/wp-content/uploads/2015/04/Install-MariaDB-Server.png)
-Install MariaDB Server
+安装MariaDB服务器
 
-#### 3. Next we will configure MySQL to enable and start upon system boot: ####
+#### 3. 接下来，我们将配置并启用MySQL，并设置开机启动： ####
 
     # systemctl enable mariadb.service
     # systemctl start mariadb.service
 
 ![Enable Start MariaDB System Boot](http://www.tecmint.com/wp-content/uploads/2015/04/Enable-Start-MariaDB-System-Boot.png)
-Enable Start MariaDB System Boot
+启用MariaDB开机启动
 
-#### 4. Now that the MySQL service is running, we will secure and setup a password for MariaDB by running: ####
+#### 4. 由于MySQL服务正在运行，我们将为MariaDB设置密码进行安全加固，运行以下命令： ####
 
     # mysql_secure_installation
 
-#### Follow Instructions ####
+#### 按照指示做 ####
 
     /bin/mysql_secure_installation: line 379: find_mysql_client: command not found
     
@@ -104,33 +102,33 @@ Enable Start MariaDB System Boot
     
     Thanks for using MariaDB!
 
-#### 5. Once MariaDB configuration done successfully, we can proceed further with the installation of PowerDNS. This is easily completed by running: ####
+#### 5. MariaDB配置成功后，我们可以继续去安装PowerDNS。运行以下命令即可轻易完成： ####
 
     # yum -y install pdns pdns-backend-mysql
 
 ![Install PowerDNS with MariaDB Backend](http://www.tecmint.com/wp-content/uploads/2015/04/Install-PowerDNS-with-MariaDB-Backend.png)
-Install PowerDNS with MariaDB Backend
+安装带有MariaDB后端的PowerDNS
 
-#### 6. The configuration file for PowerDNS is located in `/etc/pdns/pdns`, but before editing it, we will setup a MySQL database for PowerDNS service. First we will connect to the MySQL server and will create a database with name powerdns: ####
+#### 6. PowerDNS的配置文件位于`/etc/pdns/pdns`，在编辑之前，我们将为PowerDNS服务配置一个MySQL数据库。首先，我们将连接到MySQL服务器并创建一个名为powerdns的数据库： ####
 
     # mysql -u root -p
     MariaDB [(none)]> CREATE DATABASE powerdns;
 
 ![Create PowerDNS Database](http://www.tecmint.com/wp-content/uploads/2015/04/Create-PowerDNS-Database.png)
-Create PowerDNS Database
+创建PowerDNS数据库
 
-#### 7. Next, we will create a database user called powerdns: ####
+#### 7. 接下来，我们将创建一个名为powerdns的数据库用户： ####
 
     MariaDB [(none)]> GRANT ALL ON powerdns.* TO 'powerdns'@'localhost' IDENTIFIED BY ‘tecmint123’;
     MariaDB [(none)]> GRANT ALL ON powerdns.* TO 'powerdns'@'centos7.localdomain' IDENTIFIED BY 'tecmint123';
     MariaDB [(none)]> FLUSH PRIVILEGES;
 
 ![Create PowerDNS User](http://www.tecmint.com/wp-content/uploads/2015/04/Create-PowerDNS-User.png)
-Create PowerDNS User
+创建PowerDNS用户
 
-**Note**: Replace “tecmint123” with the actual password that you want to use for your setup.
+**注意**： 请将“tecmint123”替换为你想要设置的实际密码。
 
-#### 8. We proceed by creating the database tables used by PowerDNS. Execute those block by block: ####
+#### 8. 我们继续创建PowerDNS要使用的数据库表。像堆积木一样执行以下这些： ####
 
     MariaDB [(none)]> USE powerdns;
     MariaDB [(none)]> CREATE TABLE domains (
@@ -145,7 +143,7 @@ Create PowerDNS User
     );
 
 ![Create Table Domains for PowerDNS](http://www.tecmint.com/wp-content/uploads/2015/04/Create-Table-Domains-for-PowerDNS.png)
-Create Table Domains for PowerDNS
+创建用于PowerDNS的表域
 
     MariaDB [(none)]> CREATE UNIQUE INDEX name_index ON domains(name);
     MariaDB [(none)]> CREATE TABLE records (
@@ -161,14 +159,14 @@ Create Table Domains for PowerDNS
     );
 
 ![Create Index Domains for PowerDNS](http://www.tecmint.com/wp-content/uploads/2015/04/Create-Index-Domains-for-PowerDNS.png)
-Create Index Domains for PowerDNS
+创建用于PowerDNS的索引域
 
     MariaDB [(none)]> CREATE INDEX rec_name_index ON records(name);
     MariaDB [(none)]> CREATE INDEX nametype_index ON records(name,type);
     MariaDB [(none)]> CREATE INDEX domain_id ON records(domain_id);
 
 ![Create Index Records](http://www.tecmint.com/wp-content/uploads/2015/04/Create-Records.png)
-Create Index Records
+创建索引记录
 
     MariaDB [(none)]> CREATE TABLE supermasters (
     ip VARCHAR(25) NOT NULL,
@@ -177,24 +175,24 @@ Create Index Records
     );
 
 ![Create Table Supermaster](http://www.tecmint.com/wp-content/uploads/2015/04/Create-Table-Supermaster.png)
-Create Table Supermaster
+创建表的超主
 
-You can now exit the MySQL console by typing:
+你现在可以输入以下命令退出MySQL控制台：
 
     MariaDB [(none)]> quit;
 
-#### 9. Finally we can proceed with configuring our PowerDNS in a way that, it will use MySQL as backend. For that purpose open PowerDNS configuration file located at: ####
+#### 9. 最后，我们可以继续以MySQL作为后台的方式配置PowerDNS。请打开PowerDNS的配置文件： ####
 
     # vim /etc/pdns/pdns.conf 
 
-In that file look for the lines looking like this:
+在该文件中查找像下面这样的行：
 
     #################################
     # launch        Which backends to launch and order to query them in
     #
     # launch=
 
-Just after that put the following code:
+在这后面放置以下代码：
 
     launch=gmysql
     gmysql-host=localhost
@@ -202,101 +200,101 @@ Just after that put the following code:
     gmysql-password=user-pass
     gmysql-dbname=powerdns
 
-Change “user-pass” with the actual password that you set earlier. Here is how my configuration looks like:
+修改“user-pass”为你先前设置的实际密码，配置如下：
 
 ![Configure PowerDNS](http://www.tecmint.com/wp-content/uploads/2015/04/Configure-PowerDNS.png)
-Configure PowerDNS
+配置PowerDNS
 
-Save your change and exit from.
+保存修改并退出。
 
-#### 10. Now we will start and add PowerDNS to the list of services starting at system boot: ####
+#### 10. 现在，我们将启动并添加PowerDNS到系统开机启动列表： ####
 
     # systemctl enable pdns.service 
     # systemctl start pdns.service 
 
 ![Enable and Start PowerDNS](http://www.tecmint.com/wp-content/uploads/2015/04/Enable-and-Start-PowerDNS.png)
-Enable and Start PowerDNS
+启用并启动PowerDNS
 
-At this point your PowerDNS server is up and running. For more information about PowerDNS you can refer to the manual available at [http://downloads.powerdns.com/documentation/html/index.html][1]
+到这一步，你的PowerDNS服务器已经起来并运行了。要获取更多关于PowerDNS的信息，你可以参考手册[http://downloads.powerdns.com/documentation/html/index.html][1]
 
-### Step 2: Installing PowerAdmin to Manage PowerDNS ###
+### 步骤 2： 安装PowerAdmin来管理PowerDNS ###
 
-#### 11. Now we will install PowerAdmin – a friendly web interface designed to manager PowerDNS servers. Since it is written in PHP, we will need to install PHP and a web server (Apache): ####
+#### 11. 现在，我们将安装PowerAdmin——一个友好的网页接口PowerDNS服务器管理器。由于它是用PHP写的，我们将需要安装PHP和一台网络服务器（Apache）： ####
 
     # yum install httpd php php-devel php-gd php-imap php-ldap php-mysql php-odbc php-pear php-xml php-xmlrpc php-mbstring php-mcrypt php-mhash gettext
 
 ![Install Apache PHP](http://www.tecmint.com/wp-content/uploads/2015/04/Install-Apache-PHP.jpeg)
-Install Apache PHP
+安装Apache PHP
 
-PowerAdmin also requires two PEAR packages:
+PowerAdmin也需要两个PEAR包：
 
     # yum -y install php-pear-DB php-pear-MDB2-Driver-mysql 
 
 ![Install Pear](http://www.tecmint.com/wp-content/uploads/2015/04/Install-Pear.jpeg)
-Install Pear
+安装Pear
 
-You can also refer to the following article for complete instructions how to install LAMP stack in CentOS 7:
+你也可以参考一下文章了解CentOS 7中安装LAMP堆栈的完整指南：
 
-- [Install LAMP in CentOS 7][2]
+- [CentOS 7中安装LAMP][2]
 
-Once the install is complete, we will need to start and set Apache to start at system boot:
+安装完成后，我们将需要启动并设置Apache开机启动：
 
     # systemctl enable httpd.service
     # systemctl start httpd.service
 
 ![Enable Start Apache System Boot](http://www.tecmint.com/wp-content/uploads/2015/04/Enable-Start-Apache-System-Boot.png)
-Enable Start Apache System Boot
+启用Apache开机启动
 
-#### 12. Now that all system requirements for running PowerAdmn are met, we can proceed and download the package. Since the default web directory for Apache is /var/www/html/, we will download the package in there. ####
+#### 12. 由于已经满足PowerAdmin的所有系统要求，我们可以继续下载软件包。因为Apache默认的网页目录位于/var/www/html/，我们将下载软件包到这里。 ####
 
     # cd /var/www/html/
     # wget http://downloads.sourceforge.net/project/poweradmin/poweradmin-2.1.7.tgz 
     # tar xfv poweradmin-2.1.7.tgz
 
 ![Download PowerAdmin](http://www.tecmint.com/wp-content/uploads/2015/04/Download-PowerAdmin.jpeg)
-Download PowerAdmin
+下载PowerAdmin
 
-#### 13. Now, we can now start the web installer of PowerAdmin. Simply open: ####
+#### 13. 现在，我们可以启动PowerAdmin的网页安装器了，只需打开： ####
 
     http://192.168.0.102/poweradmin-2.1.7/install/
 
-This should bring the first step of the installation:
+这会进入安装过程的第一步：
 
 ![Select Installation Language](http://www.tecmint.com/wp-content/uploads/2015/04/Select-Installation-Language.png)
-Select Installation Language
+选择安装语言
 
-The above page will ask you to choose the language for your PowerAdmin. Select the one you wish to use and click the “Go to step 2” button.
+上面的页面会要求你为PowerAdmin选择语言，请选择你想要使用的那一个，然后点击“进入步骤 2”按钮。
 
-#### 14. The installer will expect you to have a PowerDNS database: ####
+#### 14. 安装器需要PowerDNS数据库： ####
 
 ![PowerDNS Database](http://www.tecmint.com/wp-content/uploads/2015/04/PowerDNS-Database.png)
-PowerDNS Database
+PowerDNS数据库
 
-#### 15. Since we already created one, we can proceed to the next step. You will be asked to enter the database details you setup earlier. You will also need to setup Poweradmin administrator password: ####
+#### 15. 因为我们已经创建了一个，所以我们可以继续进入下一步。你会被要求提供先前配置的数据库详情，你也需要为Poweradmin设置管理员密码： ####
 
 ![Enter PowerDNS Database Settings](http://www.tecmint.com/wp-content/uploads/2015/04/PowerDNS.png)
-Enter PowerDNS Database Settings
+输入PowerDNS数据库配置
 
-#### 16. Once you have input those, go to step 4. You will create a new user with a limited rights for Poweradmin. The fields that you need to enter here are: ####
+#### 16. 输入这些信息后，进入步骤 4。你将创建为Poweradmin创建一个受限用户。这里你需要输入的字段是： ####
 
-- Username - username for hte PowerAdmin.
-- Password – password for the above user.
-- Hostmaster - When creating SOA records and you have not specified hostmaster, this value will be used.
-- Secondary nameserver – the value will be used as primary name server when creating new DNS zones.
+- 用户名 - PowerAdmin用户名。
+- 密码 – 上述用户的密码。
+- 注册人 - 当创建SOA记录而你没有制定注册人时，该值会被使用。
+- 辅助域名服务器 – 该值在创建新的DNS区域时会被用于作为主域名服务器。
 
 ![PowerDNS Configuration Settings](http://www.tecmint.com/wp-content/uploads/2015/04/PowerDNS-Configuration-Settings.png)
-PowerDNS Configuration Settings
+PowerDNS配置设置
 
-#### 17. On the next step Poweradmin will ask you to create new database user with limited rights on the database tables. It will provide you with the code that you will need to put in a MySQL console: ####
+#### 17. 在下一步中，Poweradmin会要求你在数据库表中创建新的受限数据库用户，它会提供你需要在MySQL控制台输入的代码： ####
 
 ![Create New Database User](http://www.tecmint.com/wp-content/uploads/2015/04/Create-New-Database-User.png)
-Create New Database User
+创建新的数据库用户
 
-#### 18. Now open a terminal and run: ####
+#### 18. 现在打开终端并运行： ####
 
     # mysql -u root -p
 
-Provide your password and execute the code provided by Poweradmin:
+提供你的密码并执行由Poweradmin提供的代码：
 
     MariaDB [(none)]> GRANT SELECT, INSERT, UPDATE, DELETE
     ON powerdns.*
@@ -304,116 +302,116 @@ Provide your password and execute the code provided by Poweradmin:
     IDENTIFIED BY '123qweasd';
 
 ![Grant Mysql Permissions to User](http://www.tecmint.com/wp-content/uploads/2015/04/Grant-Mysql-Permissions-to-User.png)
-Grant Mysql Permissions to User
+为用户授予Mysql权限
 
-#### 19. Now go back to your browser and proceed to the next step. The installer will attempt to create its configuration file in /var/www/html/poweradmin-2.1.7/inc. ####
+#### 19. 现在，回到浏览器中并继续下一步。安装器将尝试创建配置文件到/var/www/html/poweradmin-2.1.7/inc。 ####
 
-The file name is config.inc.php. In case the script is not able to write that file you can create it manually by copying the text and putting it in above mentioned file:
+文件名是config.inc.php。为防止该脚本没有写权限，你可以手动复制这些内容到上述文件中：
 
 ![Configuration Settings of PowerDNS](http://www.tecmint.com/wp-content/uploads/2015/04/PowerDNS-Configuration.png)
-Configuration Settings of PowerDNS
+配置PowerDNS设置
 
-#### 20. Now go to the last page where you will be informed that the installation is complete and will receive information how to access your Poweradmin install: ####
+#### 20. 现在，进入最后页面，该页面会告知你安装已经完成以及如何访问安装好的Poweradmin： ####
 
 ![PowerDNS Installation Completed](http://www.tecmint.com/wp-content/uploads/2015/04/PowerDNS-Installation-Completed.png)
-PowerDNS Installation Completed
+PowerDNS安装完成
 
-You can enable URLs used by other dynamic DNS providers by running:
+你可以通过运行以下命令来启用其他动态DNS提供商的URL：
 
     # cp install/htaccess.dist .htaccess 
 
-For that purpose you will need to have mod_rewrite enabled in Apache’s configuration.
+出于该目的，你将需要在Apache的配置中启用mod_rewrite。
 
-#### 21. Now it is important to remove the “install” folder from Poweradmin’s root directory with the following command: ####
+#### 21. 现在，需要移除从Poweradmin的根目录中移除“install”文件夹，这一点很重要。使用以下命令： ####
 
     # rm -fr /var/www/html/poweradmin/install/
 
-After that you can access your poweradmin at:
+在此之后，你可以通过以下方式访问PowerAdmin：
 
     http://192.168.0.102/poweradmin-2.1.7/
 
 ![PowerDNS Login](http://www.tecmint.com/wp-content/uploads/2015/04/PowerDNS-Login.png)
-PowerDNS Login
+PowerDNS登录
 
-After logging you should see the Poweradmin main page:
+在登录后，你应该会看到Poweradmin的主页：
 
 ![PowerDNS Dashboard](http://www.tecmint.com/wp-content/uploads/2015/04/PowerDNS-Dashboard.png)
-PowerDNS Dashboard
+PowerDNS仪表盘
 
-At this point your installation is complete and you are now ready to start managing your DNS zones.
+到这里，安装已经完成了，你也可以开始管理你的DNS区域了。
 
-### Step 3: How to Add, Edit and Delete DNS Zones in PowerDNS ###
+### 步骤 3： PowerDNS中添加、编辑和删除DNS区域 ###
 
-#### 22. To add new master zone, simply click on the “Add master zone”: ####
+#### 22. 要添加新的主区域，只需点击“添加主区域”： ####
 
 ![Add Master Zone](http://www.tecmint.com/wp-content/uploads/2015/04/Add-Master-Zone.png)
-Add Master Zone
+添加主区域
 
-On the next page there are few things that you need to fill:
+在下一页中，你需要填写一些东西：
 
-- Domain – domain for which you will be adding the zone.
-- Owner – sets the owner of the DNS zone.
-- Template – DNS template – leave to none.
-- DNSSEC – Donany Name System Security Extensions (optional -check if you need it).
+- 域 – 你要添加区域的域。
+- 所有者 – 设置DNS区域的所有者。
+- 模板 – DNS模板 – 留空。
+- DNSSEC – Donany名称系统安全扩展（可选——检查你是否需要）。 
 
-Click the “Add zone” button to add the DNS zone.
+点击“添加区域”按钮来添加DNS区域。
 
 ![Master DNS Zone](http://www.tecmint.com/wp-content/uploads/2015/04/Master-DNS-Zone.png)
-Master DNS Zone
+主DNS区域
 
-Now you can go back to the index page of Poweradmin by clicking the “Index” link. To review all existing DNS zones simply go to “List zones”:
+现在，你可以点击“首页”链接回到Poweradmin的首页。要查看所有现存的DNS区域，只需转到“列出区域”：
 
 ![Check List of Zones](http://www.tecmint.com/wp-content/uploads/2015/04/Check-List-Zones.png)
-Check List of Zones
+检查区域列表
 
-You should now see a list of available DNS zones:
+你现在应该看到一个可用DNS区域列表：
 
 ![Check List of DNS Zones](http://www.tecmint.com/wp-content/uploads/2015/04/DNS-Zones.png)
-Check List of DNS Zones
+检查DNS区域列表
 
-#### 23. To edit an existing DNS zone or add new records click the edit icon: ####
+#### 23. 要编辑现存DNS区域或者添加新的记录，点击编辑图标： ####
 
 ![Edit DNS Zone](http://www.tecmint.com/wp-content/uploads/2015/04/Edit-DNS-Zone.png)
-Edit DNS Zone
+编辑DNS区域
 
-On the next page you will see the entries for the DNS zone you have chosen:
+在接下来的页面，你会看到你选择的DNS区域的条目：
 
 ![Domain DNS Zone Entries](http://www.tecmint.com/wp-content/uploads/2015/04/Domain-DNS.png)
-Domain DNS Zone Entries
+主DNS区域条目
 
-#### 24. In here to add new DNS zone you will need to set the following information: ####
+#### 24. 在此处添加新的DNS区域，你需要设置以下信息： ####
 
-- Name – name for the entry. Only add the first part of the domain/subdomain, the rest will be added by Poweradmin.
-- Type – choose the record type.
-- Priority – priority of the record.
-- TTL – Time To Live in seconds.
+- 名称 – 条目名称。只需添加域/子域的第一部分，Poweradmin会添加剩下的。
+- 类型 – 选择记录类型。
+- 优先级 – 记录优先级。
+- TTL – 存活时间，以秒计算。
 
-For the purpose of this article, I will add an A record for subdomain new.example.com that will resolve on IP address 192.168.0.102 with time to live 14400 seconds:
+出于本文目的，我将为子域new.example.com添加一个A记录用于解析IP地址192.168.0.102，设置存活时间为14400秒：
 
 ![Add New DNS Record](http://www.tecmint.com/wp-content/uploads/2015/04/Add-New-DNS-Record.png)
-Add New DNS Record
+添加新DNS记录
 
-Finally click the “Add record” button.
+最后，点击“添加记录”按钮。
 
-#### 25. If you wish to delete a DNS zone you can go back to the “List zone” page and click on the “Trash” icon next to the DNS zone which you wish to delete: ####
+#### 25. 如果你想要删除DNS区域，你可以回到“列出区域”页面，然后点击你想要删除的DNS区域旁边“垃圾桶”图标： ####
 
 ![Delete DNS Zone](http://www.tecmint.com/wp-content/uploads/2015/04/Delete-DNS-Zone.png)
-Delete DNS Zone
+删除DNS区域
 
-Poweradmin will ask you if you are sure you want to delete the DNS zone. Simply click “Yes” to finish the deletion.
+Poweradmin将问你是否确定想要删除DNS区域。只需点击“是”来完成删除。
 
-For more detailed instructions how to create, edit and delete zones you can refer to Poweradmin’s documentation at:
+如要获取更多关于怎样创建、编辑和删除区域的说明，你可以参与Poweradmin的文档：
 
 [https://github.com/poweradmin/poweradmin/wiki/Documentation][3]
 
-I hope you have find this article interesting and useful. As always if you have any questions or comments please do not hesitate to submit them in the comment section below.
+我希望你已经发现本文很有趣，也很有用。一如既往，如果你有问题或要发表评论，请别犹豫，在下面评论区提交你的评论吧。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/install-powerdns-poweradmin-mariadb-in-centos-rhel/
 
 作者：[Marin Todorov][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[GOLinux](https://github.com/GOLinux)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
