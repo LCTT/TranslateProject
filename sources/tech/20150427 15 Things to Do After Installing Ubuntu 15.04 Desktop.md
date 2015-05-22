@@ -1,4 +1,4 @@
-安装完Ubuntu 15.04桌面后要做的15件事
+安装完Ubuntu 15.04桌面后要做的16件事
 ================================================================================
 本教程适用于新手和在自己的电脑上安装好Ubuntu 15.04 “Vivid Vervet” 桌面之后为了自定义自己的系统并安装一些基本程序作为日常使用的已经做了一些准备的人。
 
@@ -110,7 +110,7 @@ Enable Video Codes
 
 ### 8. 安装图像处理应用程序 ###
 
-If you are a photography enthusiast and you want to handle and manipulate images on Ubuntu, probably you want to install the following imaging programs:
+如果你是一个摄影爱好者，想在Ubuntu上处理调整图像，或许需要安装一下图像处理程序：
 
 - GIMP (alternative for Adobe Photoshop)
 - Darktable
@@ -121,7 +121,7 @@ If you are a photography enthusiast and you want to handle and manipulate images
 - Digikam
 - Cheese
 
-This applications can be installed from Ubuntu Software Center or all at once by using the following command line on Terminal:
+这些应用程序能从Ubuntu Software Center中安装或者立刻在终端上使用以下命令：
 
     $ sudo apt-get install gimp gimp-plugin-registry gimp-data-extras darktable rawtherapee pinta shotwell inkscape
 
@@ -133,7 +133,7 @@ Rawtherapee Tool
 
 ### 9. 安装媒体烧录软件 ###
 
-To mount ISO images or burn a CDs or a DVD, you can choose and install from the following software:
+如果要挂载ISO镜像或烧录一张CD或DVD，你可以选择并安装以下软件中的一款：
 
 - Brasero Disk Burner
 - K3b
@@ -150,7 +150,7 @@ Install Media Burners
 
 ### 10. 安装压缩应用程序 ###
 
-To handle most of archive formatted files (zip, tar.gz, zip, 7zip rar etc) install the following packages by issuing the below command:
+如果要处理大多数归档格式的文件(zip, tar.gz, zip, 7zip rar等等)，输入以下命令来安装这些包：
 
     $ sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller
 
@@ -159,7 +159,7 @@ Install Archive Applications
 
 ### 11. 安装聊天应用程序 ###
 
-If you want to talk to people all over the world, here is a list of the most popular chat applications for Linux:
+如果你想要和世界各地的人们聊天，这里有一份最流行的Linux聊天应用程序列表：
 
 - Pidgin
 - Skype
@@ -168,7 +168,7 @@ If you want to talk to people all over the world, here is a list of the most pop
 - aMSN
 - Viber
 
-You can install most of them from Ubuntu Software Center or by using the command line:
+你可以从Ubuntu Software Center中安装它们或使用以下命令：
 
     $ sudo apt-get install pidgin
     $ sudo apt-get install skype
@@ -181,21 +181,21 @@ You can install most of them from Ubuntu Software Center or by using the command
 ![Install Chat Applications](http://www.tecmint.com/wp-content/uploads/2015/04/install-chat-apps.jpg)
 Install Chat Applications
 
-To install Viber application on Ubuntu visit [Viber official webpage][1], download the Debian package locally and install the viber.deb application using Gdebi package manager (left click – > Open with -> GDebi Package Installer).
+想要在Ubuntu上安装Viber可以访问[Viber官方网站][1]下载Debian安装包到本地并用Gdebi包管理工具来安装viber.deb应用程序(右击 –> 打开 -> GDebi Package Installer).
 
 ![Install Viber in Ubuntu](http://www.tecmint.com/wp-content/uploads/2015/04/install-viber.jpg)
 Install Viber
 
 ### 12. 安装种子软件 ###
 
-The most popular torrent applications and peer-to-peer file sharing programs for Ubuntu are:
+在Ubuntu最流行的种子应用程序和P2P文件共享程序是：
 
 - Deluge
 - Transmission
 - Qbittorrent
 - LinuxDC++
 
-To install your favorite peer-to-peer file sharing application on Ubuntu issue the following command on Terminal.
+想要在Ubuntu上安装你最喜欢的P2P文件共享应用程序，可以在终端上输入以下命令：
 
     $ sudo apt-get install deluge
     $ sudo apt-get install transmission
@@ -288,7 +288,7 @@ This are just a few tweaks and programs that an average user might install and u
 via: http://www.tecmint.com/things-to-do-after-installing-ubuntu-15-04-desktop/
 
 作者：[Matei Cezar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ZTinoZ](https://github.com/ZTinoZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
