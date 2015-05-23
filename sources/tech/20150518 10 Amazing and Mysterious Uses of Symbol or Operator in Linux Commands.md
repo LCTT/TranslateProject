@@ -1,3 +1,5 @@
+translating by wwy-hust
+
 10 Amazing and Mysterious Uses of (!) Symbol or Operator in Linux Commands
 ================================================================================
 The `'!'` symbol or operator in Linux can be used as Logical Negation operator as well as to fetch commands from history with tweaks or to run previously run command with modification. All the commands below have been checked explicitly in bash Shell. Though I have not checked but a major of these won’t run in other shell. Here we go into the amazing and mysterious uses of `'!'` symbol or operator in Linux commands.
