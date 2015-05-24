@@ -1,3 +1,4 @@
+[translating by KayGuoWhu]
 Open Source History: Why Did Linux Succeed?
 ================================================================================
 > Why did Linux, the Unix-like operating system kernel started by Linus Torvalds in 1991 that became central to the open source world, succeed where so many similar projects, including GNU HURD and the BSDs, fail?
