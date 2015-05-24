@@ -48,7 +48,7 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
                                 downgraded or changes vendor or architecture.
         --oldpackage            Allow to replace a newer item with an older one.
                                 Handy if you are doing a rollback. Unlike --force
-    j                            it will not enforce a reinstall.
+                                it will not enforce a reinstall.
         --replacefiles          Install the packages even if they replace files from other,
                                 already installed, packages. Default is to treat file conflicts
                                 as an error. --download-as-needed disables the fileconflict check.
