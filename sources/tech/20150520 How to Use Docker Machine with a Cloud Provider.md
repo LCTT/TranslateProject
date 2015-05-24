@@ -1,3 +1,5 @@
+Translating by goreliu ...
+
 How to Use Docker Machine with a Cloud Provider
 ================================================================================
 Hi everyone, today we'll learn how we can use Docker Machine to deploy Docker host in various Cloud Provider Platforms. Docker Machine is an application that helps to create Docker hosts on our computer, on cloud providers and inside our own data center. It provides easy solution for creating servers, installing Docker on them and then configuring the Docker client according the users configuration and requirements. The driver APIs works for provisioning Docker on a local machine, on a virtual machine in the data center, or on a public cloud instance. Docker Machine is supported on Windows, OSX, and Linux and is available for installation as one standalone binary. It enables us to take full advantage of ecosystem partners providing Docker-ready infrastructure, while still accessing everything through the same interface. It makes people able to deploy the docker containers in the respective cloud platform pretty fast and in pretty easy way with just a single command.
@@ -138,7 +140,7 @@ Docker Machine is really and awesome tool for deploying servers with Docker Cont
 via: http://linoxide.com/linux-how-to/use-docker-machine-cloud-provider/
 
 作者：[Arun Pyasi][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[goreliu](https://github.com/goreliu)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
