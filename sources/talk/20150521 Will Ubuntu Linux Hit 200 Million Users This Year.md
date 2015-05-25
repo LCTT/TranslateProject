@@ -1,3 +1,5 @@
+translating by wwy-hust
+
 Will Ubuntu Linux Hit 200 Million Users This Year?
 ================================================================================
 It's been four years and two weeks since Mark Shuttleworth expressed his goal of "200 million users of Ubuntu in 4 years." While Ubuntu's presence has continued to increase over the past four years, it doesn't look like that goal has been realized yet or will be by the end of the calendar year.
