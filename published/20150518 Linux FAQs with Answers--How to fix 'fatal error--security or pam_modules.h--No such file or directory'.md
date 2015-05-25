@@ -1,6 +1,6 @@
-Linux 有问必答--如何修复 “fatal error: security/pam_modules.h: No such file or directory”
+如何修复 “fatal error: security/pam_modules.h: No such file or directory”
 ================================================================================
-> **问题**: 我尝试在 [插入你的 Linux 发行版] 上编译程序，但是出现下面的编译错误：
+> **问题**: 我尝试在 [某某 Linux 发行版] 上编译程序，但是出现下面的编译错误：
 > 
 >     "pam_otpw.c:27:34: fatal error: security/pam_modules.h: No such file or directory"
 > 
@@ -26,7 +26,7 @@ via: http://ask.xmodulo.com/fatal-error-security-pam-modules.html
 
 作者：[Dan Nanni][a]
 译者：[ictlyh](https://github.com/ictlyh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
