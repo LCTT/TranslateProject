@@ -207,7 +207,7 @@ Install Torrent
 
 ### 13. 安装Windows仿真器-Wine和游戏支持平台-Steam ###
 
-Wine emulator allows you to install and run Windows applications on Linux. On the other hand, Steam is a popular gaming platform for Linux based systems developed by Valve. To install both of them on your machine issue the following command on Terminal or use Ubuntu Software Center.
+Wine仿真器允许你在Linux上安装并运行Window应用程序。在另一方面，Steam是一款Valve开发的流行于Linux系统的游戏平台。想要在你的机器上安装它们，可以输入以下命令或使用Ubuntu Software Center。
 
     $ sudo apt-get install steam wine winetricks
 
@@ -216,7 +216,7 @@ Install Wine
 
 ### 14. 安装Cairo-Dock并启用桌面视觉效果 ###
 
-Cairo-Dock is a beautiful and flexible launcher bar for Linux desktops similar to the Mac OS X dock. To install it on Ubuntu, run the following command on Terminal.
+Cairo-Dock是一款漂亮且灵巧的用于Linux桌面上的启动条，类似于Mac OS X dock。想要在Ubuntu上安装它，可以在终端上运行以下命令：
 
     $ sudo apt-get install cairo-dock cairo-dock-plug-ins 
 
@@ -226,11 +226,11 @@ Install Cairo Dock
 ![Add Cairo Dock at Startup](http://www.tecmint.com/wp-content/uploads/2015/04/add-cairo-dock-startup.jpg)
 Add Cairo Dock at Startup
 
-To enable a set of Desktop Effects, such as Cube effect, install Compiz package with the following command:
+想要启用某一套桌面效果，例如Cube效果，可以使用以下命令来安装Compiz包：
 
     $ sudo apt-get install compiz compizconfig-settings-manager compiz-plugins-extra
 
-To activate the Desktop Cube effect, search for ccsm on Dash, open CompizConfig Settings Manager, go to General Options – > Desktop Size and set Horizontal Virtual Size value to 4 and Vertical Virtual Size to 1. Then go back and check Desktop Cube (Disable Desktop Wall) and Rotate Cube boxes (Resolve Conflicts ->Disable Switch to Viewport 1) and press Ctrl+Alt+Left Mouse Click to view the cube effect.
+想要激活桌面Cube效果，search for ccsm on Dash, open CompizConfig Settings Manager, go to General Options – > Desktop Size and set Horizontal Virtual Size value to 4 and Vertical Virtual Size to 1. Then go back and check Desktop Cube (Disable Desktop Wall) and Rotate Cube boxes (Resolve Conflicts ->Disable Switch to Viewport 1) and press Ctrl+Alt+Left Mouse Click to view the cube effect.
 
 ![Enable Compiz](http://www.tecmint.com/wp-content/uploads/2015/04/enable-compiz.jpg)
 Enable Compiz
