@@ -1,7 +1,7 @@
-Inxi——获取Linux的系统和硬件信息
+Inxi：获取Linux的系统和硬件信息
 ================================================================================
 
-我们已经展示了一些不同的[应用程序][1]和方法来获取Linux的系统和硬件信息。在这一系列，我们将看到如何使用**inxi**来获取这些详情信息。在论坛技术支持中，它可以作为调试工具，迅速确定用户的系统配置和硬件信息。
+我们已经展示了一些不同的[应用程序][1]和方法来获取Linux的系统和硬件信息。在这一系列里，我们将看到如何使用**inxi**来获取这些详情信息。在论坛技术支持中，它可以作为调试工具，迅速确定用户的系统配置和硬件信息。
 
 **Inxi**是一个可以获取完整的系统和硬件详情信息的命令行工具，内容包括：
 
@@ -86,7 +86,7 @@ Inxi在多数现代GNU/Linux操作系统的默认软件仓库中。所以我们�
     Machine:   System: Dell (portable) product: Inspiron N5050
                Mobo: Dell model: 01HXXJ version: A05 Bios: Dell version: A05 date: 08/03/2012
 
-不只有硬性详情信息，它也可以显示我们系统中的**可用软件仓库列表**。
+不仅是硬性详情信息，它也可以显示我们系统中的**可用软件仓库列表**。
 
     inxi -r
 
@@ -110,7 +110,7 @@ Inxi还可以显示你所在位置的天气信息。感到意外吗？是的，�
 
     inxi -W Erode,Tamilnadu
 
-这里**Erode**是区，**Tamilnadu**是印度的一个邦。
+这里**Erode**是地区，**Tamilnadu**是印度的一个邦。
 
 示例输出：
 
@@ -118,7 +118,7 @@ Inxi还可以显示你所在位置的天气信息。感到意外吗？是的，�
 
 ### 查看完整的硬件详情信息 ###
 
-厌倦了获取每种硬件的信息？你可以使用如下命令将所有信息一次列出：
+厌倦了逐一获取每种硬件的信息？你可以使用如下命令将所有信息一次列出：
 
     inxi -F
 
@@ -164,9 +164,9 @@ via: http://www.unixmen.com/inxi-find-system-hardware-information-linux/
 
 作者：[SK][a]
 译者：[goreliu](https://github.com/goreliu)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://www.unixmen.com/author/sk/
-[1]:http://www.unixmen.com/screenfetch-bash-screenshot-information-tool/
+[1]:https://linux.cn/article-1947-1.html
