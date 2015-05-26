@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Linux ntopng - Network Monitoring Tool Installation (Screenshots)
 ================================================================================
 Nowdays computers are connected between each other. From the small area such as your home Local Area Network (LAN) until the the biggest one which we call - Internet. When you are managing a network computer, you are managing one of the most critical component. Since most of developed application is web based application, the network between critical.
