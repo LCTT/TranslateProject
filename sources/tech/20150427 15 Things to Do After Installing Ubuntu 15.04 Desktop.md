@@ -230,7 +230,7 @@ Add Cairo Dock at Startup
 
     $ sudo apt-get install compiz compizconfig-settings-manager compiz-plugins-extra
 
-想要激活桌面Cube效果，search for ccsm on Dash, open CompizConfig Settings Manager, go to General Options – > Desktop Size and set Horizontal Virtual Size value to 4 and Vertical Virtual Size to 1. Then go back and check Desktop Cube (Disable Desktop Wall) and Rotate Cube boxes (Resolve Conflicts ->Disable Switch to Viewport 1) and press Ctrl+Alt+Left Mouse Click to view the cube effect.
+想要激活桌面Cube效果，在Dash上查找ccsm，打开CompizConfig Settings Manager，找到General Options – > Desktop Size并设置Horizontal Virtual Size的值为4，Vertical Virtual Size的值为1。然后返回检查Desktop Cube框(禁用Desktop Wall)和Rotate Cube框(解决冲突 -> 禁止切换视图1)并Ctrl+Alt+鼠标左击来查看cube效果。
 
 ![Enable Compiz](http://www.tecmint.com/wp-content/uploads/2015/04/enable-compiz.jpg)
 Enable Compiz
@@ -246,7 +246,7 @@ Desktop Window Rotating
 
 ### 15. 添加额外浏览器支持 ###
 
-Ubuntu 15.04 comes by default with Mozilla Firefox Web Browser. To install other browsers such as Google Chrome or Opera, visit their official web pages, download the provided .deb packages and install them on your system using the Gdebi Package Installer.
+Ubuntu 15.04默认浏览器是Mozilla Firefox。想要安装其它浏览器比如Google Chrome或Opera，可以访问它们的官方网站，下载所提供的.deb包并用Gdebi Package Installer在你的系统上安装它们。
 
 ![Enable Browser Support](http://www.tecmint.com/wp-content/uploads/2015/04/enable-browser-support.jpg)
 Enable Browser Support
@@ -260,7 +260,7 @@ To install Chromium Open Source browser issue the following command on Terminal.
 
 ### 16. 安装Tweak工具 ###
 
-Want extra applications for customizing Ubuntu? Then install Unity Tweak Tool and Gnome Tweak Tool by issuing the following commands on Terminal.
+想要用额外的应用程序来自定义Ubuntu吗？在终端上输入以下命令来安装Unity Tweak工具和Gnome Tweak工具：
 
     $ sudo apt-get install unity-tweak-tool gnome-tweak-tool
 
@@ -270,7 +270,7 @@ Install Tweak Tool
 ![Tweak Tool Settings](http://www.tecmint.com/wp-content/uploads/2015/04/tweak-settings.jpg)
 Tweak Tool Settings
 
-Another interesting tweak tool is represented by the Ubuntu Tweak package which can be obtained and installed by visiting the webpage: [http://ubuntu-tweak.com/][2].
+另一个有趣的tweak工具主要是Ubuntu Tweak包，可以通过访问官方网站来获取并安装： [http://ubuntu-tweak.com/][2].
 
 ![Tweak Tool: System Information](http://www.tecmint.com/wp-content/uploads/2015/04/tweak-system-info.jpg)
 Tweak Tool: System Information
