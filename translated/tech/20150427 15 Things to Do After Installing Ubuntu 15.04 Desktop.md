@@ -1,4 +1,4 @@
-安装完Ubuntu 15.04桌面后要做的16件事
+安装完Ubuntu 15.04桌面后要做的15件事
 ================================================================================
 本教程适用于新手和在自己的电脑上安装好Ubuntu 15.04 “Vivid Vervet” 桌面之后为了自定义自己的系统并安装一些基本程序作为日常使用的已经做了一些准备的人。
 
@@ -254,7 +254,7 @@ Enable Browser Support
 ![Opera Browser Support](http://www.tecmint.com/wp-content/uploads/2015/04/opera.jpg)
 Opera Browser Support
 
-To install Chromium Open Source browser issue the following command on Terminal.
+想要安装Chromium开源浏览器请在终端上输入以下命令：
 
     $ sudo apt-get install chromium-browser
 
@@ -275,13 +275,13 @@ Tweak Tool Settings
 ![Tweak Tool: System Information](http://www.tecmint.com/wp-content/uploads/2015/04/tweak-system-info.jpg)
 Tweak Tool: System Information
 
-After you have installed all this bunch of software, you might want to clean your system in order to free some space on the hard drive, by issuing the following commands:
+在你安装好这一连串软件之后，你或许想要清理一下你的系统来释放一点硬盘上的空间，输入以下命令即可：
 
     $ sudo apt-get -y autoremove 
     $ sudo apt-get -y autoclean 
     $ sudo apt-get -y clean
 
-This are just a few tweaks and programs that an average user might install and use on Ubuntu 15.04 Desktop for daily basic utilization. For more advanced programs, features and utilities use Ubuntu Software Center or consult Ubuntu Wiki webpage.
+这只是tweaks工具中的其中一些和普通用户日常生活中可能会在Ubuntu 15.04桌面上安装使用的程序。想要了解更多高级的程序，特性和功能，请使用Ubuntu Software Center或查阅Ubuntu Wiki主页。
 
 --------------------------------------------------------------------------------
 
