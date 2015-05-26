@@ -1,3 +1,4 @@
+Translating by GOLinux!
 7 Quirky ‘ls’ Command Tricks Every Linux User Should Know
 ================================================================================
 We have covered most of the things on ‘ls‘ command in last two articles of our Interview series. This article is the last part of the ‘ls command‘ series. If you have not gone through last two articles of this series you may visit the links below.
