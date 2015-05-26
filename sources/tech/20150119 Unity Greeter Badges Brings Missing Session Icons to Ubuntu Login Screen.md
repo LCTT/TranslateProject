@@ -1,3 +1,4 @@
+Translating by GOLinux!
 ‘Unity Greeter Badges’ Brings Missing Session Icons to Ubuntu Login Screen
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2015/01/unity-greeter-badges-750x321.jpg)
