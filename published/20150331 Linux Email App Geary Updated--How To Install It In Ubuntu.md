@@ -1,20 +1,21 @@
-Linux Email应用 Geary 更新了 — 如何在Ubuntu上安装
+Linux Email应用 Geary 更新了
 ================================================================================
 **Geary，Linux上流行的桌面email客户端，更新到版本0.10了 — 并且有了很多新的功能。**
 
 ![elementary OS上运行的旧版本的Geary](http://www.omgubuntu.co.uk/wp-content/uploads/2015/01/geary.jpg)
-elementary OS上运行的旧版本的Geary
 
-Geary 0.10有一些可惜的用户界面改进以及额外的UI选项，包括：
+*elementary OS上运行的旧版本的Geary*
 
-- 新增: 可以对归档，删除以及移动做'Undo'操作
+Geary 0.10有一些不错的用户界面改进以及额外的UI功能，包括：
+
+- 新增: 可以撤销归档、删除以及移动等操作
 - 新增: 在2列或者2列布局之间切换
 - 新的 “split header bar” — 改进邮件列表，发件人布局
 - 新的快捷键 — 使用j/k切换到上/下一封邮件
 
-根据Yorba介绍，这次更新还提出了一个 **全新的全文检索算法** ，用来改进Geary的搜索体验。
+根据Yorba介绍，这次更新还引入了一个**全新的全文检索算法** ，用来改进Geary的搜索体验。
 
-这个更新应该能平息一下对应用搜索能力的抱怨，那些经常觉得Geary返回的搜索结果仅仅是包装软件自身"看起来和查询语句毫不相关"的观点。
+这个更新应该能平息一下对该应用的搜索能力的抱怨：Geary返回的搜索结果就如同软件自己所宣称的“看起来和查询语句毫不相关”。
 
 > ‘Yorba 建议所有这个软件客户端的用户升级到这个版本’
 
@@ -36,7 +37,7 @@ Yorba的最新版本可以从GNOME的Git账户下载可编译的源代码。但�
 
 Ubuntu用户想知道如何在 **14.04,14.10** 以及 **15.04**(那些更新爱好者) 上安装Geary 0.10。
 
-官方的Youba PPA包括了 **Geary最新版本** 以及Shotwell(照片管理器)和[California][2](日历应用)。请注意添加这个PPA会使你电脑上任何已经安装的这些应用更新到最近的版本。
+官方的Youba PPA包括了 **Geary 最新版本** 以及Shotwell(照片管理器)和[California][2](日历应用)。请注意添加这个PPA会使你电脑上任何已经安装的这些应用更新到最近的版本。
 
 Capiche? Coolio.
 
@@ -52,7 +53,7 @@ Capiche? Coolio.
 
 完成后，打开你的桌面环境应用启动面板并查找‘Geary’图标。点击它，添加你的账户并查看[通过信息高速公路下载了什么][3]，开始使用简单的图形界面吧。
 
-**别忘记：你可以通过电子邮件告诉我们你想看的新闻，应用建议，以及任何你想我们包括的东西，直接点击joey@oho.io**
+**别忘记：你可以通过电子邮件告诉我们你想看的新闻，应用建议，以及任何你想我们包括的东西。**
 
 --------------------------------------------------------------------------------
 
@@ -60,7 +61,7 @@ via: http://www.omgubuntu.co.uk/2015/03/install-geary-ubuntu-linux-email-update
 
 作者：[Joey-Elijah Sneddon][a]
 译者：[ictlyh](https://github.com/ictlyh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
