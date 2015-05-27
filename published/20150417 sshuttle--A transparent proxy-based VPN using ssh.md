@@ -1,9 +1,8 @@
-sshuttle - 一个使用ssh的基于VPN的透明代理
+sshuttle：一个使用ssh的基于VPN的透明代理
 ================================================================================
-sshuttle允许你通过ssh创建一条从你电脑连接到任何远程服务器的VPN连接，只要你的服务器支持python2.3 或则更高的版本， 你必须有本机的root权限，但是你可以在服务端有普通账户即可。
+sshuttle 允许你通过 ssh 创建一条从你电脑连接到任何远程服务器的 VPN 连接，只要你的服务器支持  python2.3 或则更高的版本。你必须有本机的 root 权限，但是你可以在服务端有普通账户即可。
 
-你可以在一台机器上同时运行多次sshuttle来连接到不同的服务器上，这样你就可以一次使用多个VPN， sshuttle可以转发你子网所有流量到VPN中。
-
+你可以在一台机器上同时运行多次 sshuttle 来连接到不同的服务器上，这样你就可以同时使用多个 VPN， sshuttle可以转发你子网中所有流量到VPN中。
 
 ### 在Ubuntu中安装sshuttle ###
 
@@ -17,7 +16,7 @@ sshuttle允许你通过ssh创建一条从你电脑连接到任何远程服务器
 
     sshuttle [options...] [-r [username@]sshserver[:port]] [subnets]
 
-#### Option 细节 ####
+#### 选项细节 ####
 
 -r, —remote=[username@]sshserver[:port]
 
@@ -29,9 +28,9 @@ sshuttle允许你通过ssh创建一条从你电脑连接到任何远程服务器
 
     sudo sshuttle -r username@sshserver 0.0.0.0/0 -vv
 
-当开始后，sshuttle会创建一个ssh会话到通过-r指定的服务器。如果-r被忽略了，它会在本地运行客户端和服务端，这个有时会在测试时有用。
+当开始后，sshuttle会创建一个ssh会话到由-r指定的服务器。如果-r被丢了，它会在本地运行客户端和服务端，这个有时会在测试时有用。
 
-连接到远程服务器后，sshuttle会上传它的（python）源码到远程服务器并执行。那么，你就不需要在远程服务器上安装sshuttle，并且客户端和服务器端间不会存在sshuttle版本冲突。
+连接到远程服务器后，sshuttle会上传它的（python）源码到远程服务器并执行。所以，你就不需要在远程服务器上安装sshuttle，并且客户端和服务器端间不会存在sshuttle版本冲突。
 
 #### 手册中的更多例子 ####
 
@@ -86,7 +85,7 @@ via: http://www.ubuntugeek.com/sshuttle-a-transparent-proxy-based-vpn-using-ssh.
 
 作者：[ruchi][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
