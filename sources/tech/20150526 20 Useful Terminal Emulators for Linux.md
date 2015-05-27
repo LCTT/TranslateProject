@@ -1,5 +1,5 @@
 Translating by ZTinoZ
-20 Useful Terminal Emulators for Linux
+20款优秀的Linux终端仿真器
 ================================================================================
 A Terminal emulator is a computer program that reproduces a video terminal within some other display structure. In other words the Terminal emulator has an ability to make a dumb machine appear like a client computer networked to the server. The terminal emulator allows an end user to access console as well as its applications such as text user interface and command line interface.
 
@@ -272,7 +272,7 @@ If you know any other capable Linux terminal emulators that I’ve not included 
 via: http://www.tecmint.com/linux-terminal-emulators/
 
 作者：[Ravi Saive][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ZTinoZ](https://github.com/ZTinoZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
