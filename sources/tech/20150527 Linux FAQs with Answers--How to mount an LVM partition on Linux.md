@@ -1,3 +1,5 @@
+Translating----geekpi
+
 Linux FAQs with Answers--How to mount an LVM partition on Linux
 ================================================================================
 > **Question**: I have an external USB drive which contains several LVM partitions on it. I want to access some of those LVM partitions on my Linux. How can I mount an LVM partition on Linux? 
