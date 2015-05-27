@@ -1,3 +1,4 @@
+sevenot Translating
 New to Linux? 5 Apps You Didn’t Know You Were Missing 
 ================================================================================
 ![](http://cdn.makeuseof.com/wp-content/uploads/2015/05/linux-apps-840x420.jpg?92a7a3)
