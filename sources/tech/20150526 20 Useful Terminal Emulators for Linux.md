@@ -1,7 +1,7 @@
 Translating by ZTinoZ
 20款优秀的Linux终端仿真器
 ================================================================================
-A Terminal emulator is a computer program that reproduces a video terminal within some other display structure. In other words the Terminal emulator has an ability to make a dumb machine appear like a client computer networked to the server. The terminal emulator allows an end user to access console as well as its applications such as text user interface and command line interface.
+终端仿真器是一款计算机程序A Terminal emulator is a computer program that reproduces a video terminal within some other display structure. In other words the Terminal emulator has an ability to make a dumb machine appear like a client computer networked to the server. The terminal emulator allows an end user to access console as well as its applications such as text user interface and command line interface.
 
 ![Linux Terminal Emulators](http://www.tecmint.com/wp-content/uploads/2014/01/Linux-Terminal-Emulators1.jpeg)
 
