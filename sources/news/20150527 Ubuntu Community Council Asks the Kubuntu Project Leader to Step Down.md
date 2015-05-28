@@ -1,3 +1,5 @@
+alim0x translating
+
 Ubuntu Community Council Asks the Kubuntu Project Leader to Step Down
 ================================================================================
 > Jonathan Riddell refuses to step down as Kubuntu leader
