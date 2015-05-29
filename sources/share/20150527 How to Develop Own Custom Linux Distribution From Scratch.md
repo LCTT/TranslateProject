@@ -1,3 +1,5 @@
+translating by wwy-hust
+
 How to Develop Own Custom Linux Distribution From Scratch
 ================================================================================
 Have you ever thought of making your own Linux Distribution? Every Linux user in their journey to Linux thought of making their own Linux distribution, at-least once. Even I was not an exception as a newbie to Linux land and have given my considerable time developing my own Linux Distribution. Developing a Linux Distribution from scratch is called Linux From Scratch (LFS)
