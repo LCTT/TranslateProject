@@ -1,3 +1,5 @@
+Translating by goreliu ...
+
 3 Useful Hacks Every Linux User Must Know
 ================================================================================
 The world of Linux is filled with so much fun and interesting stuffs, the more we go in, the more we find stuffs. In our efforts to bring those little hacks and tips for you that makes you different from others, here we have came up with three little tricks.
@@ -70,7 +72,7 @@ That’s all for now, if you know any such Linux hacks or tricks you may share w
 via: http://www.tecmint.com/useful-linux-hacks-commands/
 
 作者：[Avishek Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[goreliu](https://github.com/goreliu)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
