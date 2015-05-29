@@ -1,11 +1,11 @@
 Translating by ZTinoZ
 20款优秀的Linux终端仿真器
 ================================================================================
-终端仿真器是一款计算机程序A Terminal emulator is a computer program that reproduces a video terminal within some other display structure. In other words the Terminal emulator has an ability to make a dumb machine appear like a client computer networked to the server. The terminal emulator allows an end user to access console as well as its applications such as text user interface and command line interface.
+终端仿真器是一款用其它显示结构重现可视终端的计算机程序。换句话说就是终端仿真器能使哑终端看似像一台客户机连接上了服务器。终端仿真器允许最终用户像文本用户界面和命令行界面一样连接控制台和应用程序。
 
 ![Linux Terminal Emulators](http://www.tecmint.com/wp-content/uploads/2014/01/Linux-Terminal-Emulators1.jpeg)
 
-20 Linux Terminal Emulators
+20款Linux终端仿真器
 
 You may find huge number of terminal emulators to choose from this open source world. Some of them offers large range of features while others offers less features. To give a better understanding to the quality of software that are available, we have gathered a list of marvelous terminal emulator for Linux. Each title provides its description and feature along with screenshot of the software with relevant download link.
 
@@ -13,7 +13,7 @@ You may find huge number of terminal emulators to choose from this open source w
 
 Terminator is an advanced and powerful terminal emulator which supports multiple terminals windows. This emulator is fully customizable. You can change the size, colour, give different shapes to the terminal. Its very user friendly and fun to use.
 
-#### Features of Terminator ####
+#### Terminator的特性 ####
 
 - Customize your profiles and colour schemes, set the size to fit your needs.
 - Use plugins to get even more functionality.
@@ -31,7 +31,7 @@ Terminator Terminal
 
 Tilda is a stylish drop-down terminal based on GTK+. With the help of a single key press you can launch a new or hide Tilda window. However, you can add colors of your choice to change the look of the text and Terminal background.
 
-#### Features of Tilda ####
+#### Tilda的特性 ####
 
     Interface with Highly customization option.
     You can set the transparency level for Tilda window.
@@ -61,7 +61,7 @@ Yakuake (Yet Another Kuake) is a KDE based drop-down terminal emulator very much
 
 Yakuake is basically a KDE application, which can be easily installed on KDE desktop, but if you try to install Yakuake in GNOME desktop, it will prompt you to install huge number of dependency packages.
 
-#### Yakuake Features ####
+#### Yakuake的特性 ####
 
 - Fluently turn down from the top of your screen
 - Tabbed interface
@@ -164,7 +164,7 @@ TermKit Terminal
 
 - [TermKit Homepage][12]
 
-12. st
+### 12. st ###
 
 st is a simple terminal implementation for X Window.
 
