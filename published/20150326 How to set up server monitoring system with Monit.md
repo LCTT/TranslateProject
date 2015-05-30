@@ -6,7 +6,7 @@
 
 ### Monit是什么？ ###
 
-[Monit][3]是一个跨平台的用来监控Unix/linux系统（比如Linux、BSD、OSX、Solaris）的工具。Monit特别易于安装，而且非常轻量级（只有500KB大小），并且不依赖任何第三方程序、插件或者库。然而，Monit可以胜任全面监控、进程状态监控、文件系统变动监控、邮件通知和对核心服务的自定义回调等场景。易于安装、轻量级的实现以及强大的功能，让Monit成为一个理想的后备监控工具。
+[Monit][3]是一个跨平台的用来监控Unix/linux系统（比如Linux、BSD、OSX、Solaris）的工具。Monit特别易于安装，而且非常轻量级（只有500KB大小），并且不依赖任何第三方程序、插件或者库。然而，Monit可以胜任全面监控、进程状态监控、文件系统变动监控、邮件通知和对核心服务的自定义动作等场景。易于安装、轻量级的实现以及强大的功能，让Monit成为一个理想的后备监控工具。
 
 我已经在一些机器使用Monit几年了，而且我对它的可靠性非常满意。甚至作为全面的监控系统，对任何Linux系统管理员来说Monit也是非常有用和强大的。在这篇教程中，我会展示如何在一个本地服务器部署Monit（作为后备监控系统）来监控常见的服务。在部署过程中，我只会展示我们用到的部分。
 
@@ -24,16 +24,16 @@ Fedora或者CentOS/RHEL：
 
     # yum install monit
 
-Monit自带一个文档完善的配置文件，其中包含了很多例子。主配置文件在/etc/monit.conf（Fedora/CentOS/RHEL），或者/etc/monit/monitrc（Debian/Ubuntu/Mint）。Monit配置文件有两部分：“Global”（全局）和“Services”（服务）。
+Monit自带一个文档完善的配置文件，其中包含了很多例子。主配置文件在/etc/monit.conf（Fedora/CentOS/RHEL 中），或者/etc/monit/monitrc（Debian/Ubuntu/Mint 中）。Monit配置文件有两部分：“Global”（全局）和“Services”（服务）。
 
-### Global Configuration: Web Status Page （全局配置：Web状态页面。LCTT 译注：保留原文是因为和配置文件中的字段对应） ###
+### Global Configuration: Web Status Page （全局配置：Web状态页面） ###
 
-Monit可以使用邮件服务来发送通知，也可以使用HTTP/HTTPS页面来展示。我们先使用符合以下要求的web状态页面吧：
+Monit可以使用邮件服务来发送通知，也可以使用HTTP/HTTPS页面来展示。我们先使用如下配置的web状态页面吧：
 
 - Monit监听1966端口。
 - 对web状态页面的访问是通过SSL加密的。
 - 使用monituser/romania作为用户名/口令登录。
-- 只允许使用localhost、myhost.mydomain.ro和在局域网内部（192.168.0.0/16）访问。
+- 只允许通过localhost、myhost.mydomain.ro和在局域网内部（192.168.0.0/16）访问。
 - Monit使用pem格式的SSL证书。
 
 之后的步骤，我会使用一个基于Red Hat的系统。在基于Debian的系统中的步骤也是类似的。
@@ -99,10 +99,10 @@ Monit可以使用邮件服务来发送通知，也可以使用HTTP/HTTPS页面�
 我们必须定义“idfile”，Monit守护进程的一个独一无二的ID文件；以及“eventqueue”，当monit的邮件因为SMTP或者网络故障发不出去，邮件会暂存在这里；以及确保/var/monit路径是存在的。然后使用下边的配置就可以了。
 
     set idfile /var/monit/id
-     set eventqueue
+    set eventqueue
          basedir /var/monit
 
-### 测试Global Configuration（全局配置） ###
+### 测试全局配置 ###
 
 现在“Global”部分就完成了。Monit配置文件看起来像这样：
 
@@ -163,11 +163,11 @@ Monit可以使用邮件服务来发送通知，也可以使用HTTP/HTTPS页面�
 
 现在打开一个浏览器窗口，然后访问`https://<monit_host>:1966`。将`<monit_host>`替换成Monit所在机器的机器名或者IP地址。
 
-如果你使用的是自签名的SSL证书，你会在浏览器中看到一个警告信息。
+如果你使用的是自签名的SSL证书，你会在浏览器中看到一个警告信息。继续访问即可。
 
 ![](https://farm8.staticflickr.com/7596/16737206479_96b9f7dfdb_c.jpg)
 
-你完成登录后，一定要看这个页面。
+你完成登录后，就会看到这个页面。
 
 ![](https://farm8.staticflickr.com/7594/16303369973_6019482dea_c.jpg)
 
@@ -209,7 +209,7 @@ Monit可以使用邮件服务来发送通知，也可以使用HTTP/HTTPS页面�
        if failed port 22 protocol ssh then restart
        if 5 restarts within 5 cycles then timeout
 
-我们可以这样解释上述配置。我们检查是否存在名为sshd的进程，并且有一个保存pid的文件存在（/var/run/sshd.pid）。如果任何一个不存在，我们就使用启动脚本重启sshd。我们检查是否有进程在监听22端口，并且使用的是SSH协议。如果没有，我们还是重启sshd。如果在最近的5个监控周期（5x120秒）至少重启5次了，sshd就被认为是不能用的，我们就不再检查了。
+我们可以这样解释上述配置：我们检查是否存在名为sshd的进程，并且有一个保存其pid的文件存在（/var/run/sshd.pid）。如果任何一个不存在，我们就使用启动脚本重启sshd。我们检查是否有进程在监听22端口，并且使用的是SSH协议。如果没有，我们还是重启sshd。如果在最近的5个监控周期（5x120秒）至少重启5次了，sshd就被认为是不能用的，我们就不再检查了。
 
 ![](https://farm9.staticflickr.com/8685/16735725998_62c26a24bc_c.jpg)
 
@@ -236,7 +236,7 @@ via: http://xmodulo.com/server-monitoring-system-monit.html
 
 作者：[Iulian Murgulet][a]
 译者：[goreliu](https://github.com/goreliu)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
@@ -244,7 +244,7 @@ via: http://xmodulo.com/server-monitoring-system-monit.html
 [1]:http://xmodulo.com/monitor-common-services-nagios.html
 [2]:http://xmodulo.com/monitor-linux-servers-snmp-cacti.html
 [3]:http://mmonit.com/monit/
-[4]:http://xmodulo.com/how-to-set-up-epel-repository-on-centos.html
+[4]:https://linux.cn/article-2324-1.html
 [5]:http://xmodulo.com/how-to-set-up-rpmforge-repoforge-repository-on-centos.html
 [6]:http://xmodulo.com/mail-server-ubuntu-debian.html
 [7]:http://mmonit.com/wiki/Monit/ConfigurationExamples
