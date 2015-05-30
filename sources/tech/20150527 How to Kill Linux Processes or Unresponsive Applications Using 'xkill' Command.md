@@ -1,3 +1,5 @@
+translating---geekpi
+
 How to Kill Linux Processes/Unresponsive Applications Using ‘xkill’ Command
 ================================================================================
 How do we kill a resource/process in Linux? Obviously we find the PID of the resource and then pass the PID to the kill command.
