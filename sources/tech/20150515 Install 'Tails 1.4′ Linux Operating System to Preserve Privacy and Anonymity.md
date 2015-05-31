@@ -1,3 +1,5 @@
+FSSlc translating
+
 Install ‘Tails 1.4′ Linux Operating System to Preserve Privacy and Anonymity
 ================================================================================
 In this Internet world and the world of Internet we perform most of our task online be it Ticket booking, Money transfer, Studies, Business, Entertainment, Social Networking and what not. We spend a major part of our time online daily. It has been getting hard to remain anonymous with each passing day specially when backdoors are being planted by organizations like NSA (National Security Agency) who are putting their nose in between every thing that we come across online. We have least or no privacy online. All the searches are logged upon the basis of user Internet surfing activity and machine activity.
