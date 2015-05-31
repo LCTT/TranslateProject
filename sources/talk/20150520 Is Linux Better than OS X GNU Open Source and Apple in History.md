@@ -1,3 +1,4 @@
+translating wi-cuckoo
 Is Linux Better than OS X? GNU, Open Source and Apple in History
 ================================================================================
 > Tensions between the free software/open source community and Apple date back to the 1980s, Linux's founder called the core of Mac OS X "a piece of crap" and other anecdotes from software history.
