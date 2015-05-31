@@ -1,3 +1,5 @@
+Translating----geekpi
+
 How To Check Laptop CPU Temperature In Ubuntu
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/05/Monitor_temperature_Ubuntu.png)
