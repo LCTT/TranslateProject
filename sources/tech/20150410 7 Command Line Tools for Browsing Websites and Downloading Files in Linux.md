@@ -1,4 +1,3 @@
-wangjiezhe translating...
 7 Command Line Tools for Browsing Websites and Downloading Files in Linux
 ================================================================================
 In the last article, we have covered few useful tools like ‘rTorrent‘, ‘wget‘, ‘cURL‘, ‘w3m‘, and ‘Elinks‘. We got lots of response to cover few other tools of same genre, if you’ve missed the first part you can go through it..
