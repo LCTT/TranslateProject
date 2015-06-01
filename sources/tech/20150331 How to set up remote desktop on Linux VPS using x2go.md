@@ -1,5 +1,3 @@
-translating by createyuan
-
 How to set up remote desktop on Linux VPS using x2go
 ================================================================================
 As everything is moved to the cloud, virtualized remote desktop becomes increasingly popular in the industry as a way to enhance employee's productivity. Especially for those who need to roam constantly across multiple locations and devices, remote desktop allows them to stay connected seamlessly to their work environment. Remote desktop is attractive for employers as well, achieving increased agility and flexibility in work environments, lower IT cost due to hardware consolidation, desktop security hardening, and so on.
