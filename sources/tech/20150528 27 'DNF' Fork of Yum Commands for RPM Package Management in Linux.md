@@ -1,3 +1,5 @@
+translating by wwy-hust
+
 27 ‘DNF’ (Fork of Yum) Commands for RPM Package Management in Linux
 ================================================================================
 DNF aka Dandified YUM is a next generation Package Manager for RPM based Distribution. It was first introduced in Fedora 18 and it is replaced [YUM utility][1] in recent release of Fedora 22.
