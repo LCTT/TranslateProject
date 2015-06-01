@@ -1,3 +1,5 @@
+Translating by goreliu ...
+
 11 pointless but awesome Linux terminal tricks
 ================================================================================
 Here are some great Linux terminal tips and tricks, each one as pointless as it is awesome. 
@@ -95,7 +97,7 @@ Want your terminal to do that scrolling text, l33t, Matrix-y thing? "cmatrix" is
 via: http://www.networkworld.com/article/2926630/linux/11-pointless-but-awesome-linux-terminal-tricks.html
 
 作者：[Bryan Lunduke][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[goreliu](https://github.com/goreliu)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出

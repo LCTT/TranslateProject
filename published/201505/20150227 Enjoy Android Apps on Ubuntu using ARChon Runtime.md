@@ -1,18 +1,19 @@
-使用ARChon环境在Ubuntu上运行Android应用
+使用 ARChon 运行时环境在 Ubuntu 上运行 Android 应用
 ================================================================================
-在此之前，我们尝试过在多款安卓应用模拟器工具上运行安卓应用，比如Genymotion、VirtualBox和Android SDK等。但是，有了这套全新的Chrome安卓运行环境，就可以在Chrome浏览器中运行安卓应用了。所以，下面是一些步骤来指导如何使用ARChon运行环境在Ubuntu上安装安卓应用。
 
-谷歌已经公布了[首批支持原生运行在Chrome OS的安卓应用][1]，而使用一个全新的“**安卓运行环境**”扩展程序使其成为可能。如今，一位名为Vlad Filippov的开发者已经找到了一种把安卓应用移植到桌面端Chrome浏览器的方法。他把chromeos-apk脚本和ARChon安卓运行环境扩展程序两者紧密结合在一起，使得安卓应用可以运行在Windows、Max和Linux系统的桌面端Chrome浏览器中。
+在此之前，我们尝试过在多款安卓应用模拟器工具上运行安卓应用，比如Genymotion、VirtualBox和Android SDK等。但是，有了这套全新的Chrome安卓运行环境，就可以在Chrome浏览器中运行安卓应用了。所以，下面是一些步骤来指导你如何使用ARChon运行时环境在Ubuntu上安装安卓应用。
 
-应用借助这种运行环境时的性能并不是很好。同样，由于它是官方运行环境的非官方二次开发包，而且运行在Google的Chrome OS之外，因此一些如webcam和speaker等系统集成工具可能需要通过打补丁获得或者根本就没有。
+谷歌已经公布了[首批支持原生运行在Chrome OS的安卓应用][1]，而这个全新的“**安卓运行时环境**”扩展程序使其成为可能。如今，一位名为Vlad Filippov的开发者已经找到了一种把安卓应用移植到桌面端Chrome浏览器的方法。他把chromeos-apk脚本和ARChon安卓运行环境扩展程序两者紧密结合在一起，使得安卓应用可以运行在Windows、Max和Linux系统的桌面端Chrome浏览器中。
+
+应用借助这种运行环境时的性能并不是很好。同样，由于它是官方运行环境的非官方二次开发包，而且运行在Google的Chrome OS之外，因此一些如摄像头和喇叭等系统内置设备可能需要通过打补丁获得或者根本不支持。
 
 ### 安装Chrome ###
 
 首先，需要在机器上安装Chrome，版本要求是Chrome 37或者更高。可以从[Chrome浏览器的下载页面][2]下载。
 
-如果打算安装Dev Channel版本，按照如下操作。
+如果打算安装开发通道版本，按照如下操作。
 
-首先，使用这个命令为Google Chrome添加软件源列表：
+使用这个命令为Google Chrome添加软件源列表：
 
     $ wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
     $ sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
@@ -23,7 +24,8 @@
 
     $ sudo apt-get update
 
-现在，就可以安装非稳定版的google chrome，即开发版。
+现在，就可以安装非稳定版的google chrome，即开发版：
+
     $ sudo apt-get install google-chrome-unstable
 
 ![Installing Google chrome unstable](http://blog.linoxide.com/wp-content/uploads/2015/02/installing-google-chrome-unstable.png)
@@ -34,11 +36,11 @@
 
 **32位** Ubntu发行版：
 
-- [Download Archron for 32-bit Ubuntu][3]
+- [下载 32 位版 Ubuntu 上的 Archron][3]
 
 **64位** Ubntu发行版：
 
-- [Download Archron for 64-bit Ubuntu][4]
+- [下载 64 位版 Ubuntu 上的  Archron][4]
 
 下载好运行环境安装包后，从.zip文件中解压，并将解压得到的目录移动到Home目录。操作命令如下：
 
@@ -48,11 +50,11 @@
 
     $ unzip ARChon-v1.1-x86_32.zip ~/
 
-接下来是安装运行时环境，首先打开Google Chrome浏览器，在地址栏键入**chrome://extensions**。然后，选中“**开发者模式**”。最后，点击“**载入未打包扩展程序**”,选择刚才放置在**~/Home**下面的文件夹。
+接下来是安装运行时环境，首先打开Google Chrome浏览器，在地址栏键入**chrome://extensions**。然后，选中“**开发者模式**”。最后，点击“**载入未打包扩展程序**”，选择刚才放置在**~/Home**下面的文件夹。
 
 ### 安装 ChromeOS-APK ###
 
-如果要用到上面提到的应用，那么手动转换这些APKs无需复杂的操作——只需要安装“[chromeos-apk][5]”命令行JavaScript工具。可以在Node Package Modules（npm）管理器中安装它。为了安装npm和chromeos-apk，在shell或终端中运行下面命令：
+如果要用到上面提到的那些应用，那么手动转换这些APK无需复杂的操作——只需要安装“[chromeos-apk][5]”命令行JavaScript工具。可以在Node Package Modules（npm）管理器中安装它。为了安装npm和chromeos-apk，在shell或终端中运行下面命令：
 
     $ sudo apt-get install npm nodejs nodejs-legacy
 
@@ -86,7 +88,7 @@
 
 ### 运行安卓Apk ###
 
-最后，打开chrome浏览器，然后进入chrome://extensions页面，勾选开发者模式。点击“载入未打包扩展程序”按钮，选择文件夹载入刚创建的脚本。
+最后，打开chrome浏览器，然后进入chrome://extensions页面，勾选开发者模式。点击“载入未打包扩展程序”按钮，选择上面脚本刚创建的文件夹。
 
 至此，就可以打开Chrome应用启动器运行安卓应用了。
 
@@ -100,7 +102,7 @@ via: http://linoxide.com/ubuntu-how-to/android-apps-ubuntu-archon-runtime/
 
 作者：[Arun Pyasi][a]
 译者：[KayGuoWhu](https://github.com/KayGuoWhu)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
