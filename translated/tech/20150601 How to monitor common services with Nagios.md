@@ -1,22 +1,20 @@
-translating----geekpi
-
-How to monitor common services with Nagios
+如何用Nagios监控服务
 ================================================================================
-Nagios comes with a wide range of built-in scripts for monitoring services. This tutorial will cover the process of using some of these scripts for checking common services, such as MySQL, Apache web server, DNS, etc.
+Nagios内置了很多脚本来监控服务。本篇会使用其中一些来检查通用服务如MySql、Apache、DNS等等。
 
-To keep the article focused on service monitoring, we will not be configuring hostgroups or templates, as they have been covered in a [previous tutorial][1]. Nonetheless, they can be tuned to match the requirements.
+为了保证本篇集中在系统监控，我们不会配置hostgroup或者模板，它们已经在 [前面的教程][1]中覆盖了，它们可以满足这些条件了。
 
-### Running Nagios Check in CLI ###
+### 在命令行中运行Nagios ###
 
-It is generally recommended to run the Nagios service check scripts in CLI before adding them to Nagios. This will give an idea on whether the execution will be successful and what the output of the script will look like.
+通常建议在添加到Nagios前现在命令行中运行Nagios服务检测脚本。它会给出执行是否成功以及脚本的输出将会看上去的样子。
 
-All of the scripts are located at /etc/nagios-plugins/config/ with the executable files stored at /usr/lib/nagios/plugins/
+这些脚本存储在 /etc/nagios-plugins/config/ ，可执行文件在 /usr/lib/nagios/plugins/。
 
-Here is how it is done.
+下面就是该怎么做
 
     root@nagios:~# cd /etc/nagios-plugins/config/
 
-The provided scripts contain help on the syntax. The example contains partial output.
+提供的脚本包含了语法帮助。示例包含了部分输出。
 
     root@nagios:~# cat /etc/nagios-plugins/config/tcp_udp.cfg
 
@@ -27,7 +25,7 @@ The provided scripts contain help on the syntax. The example contains partial ou
             command_name    check_tcp
             command_line    /usr/lib/nagios/plugins/check_tcp -H '$HOSTADDRESS$' -p '$ARG1$'
 
-Now that the syntax is available, TCP port 80 can be checked as follows.
+了解了语法，TCP 80端口可以用下面的方法检查。
 
     root@nagios:~# /usr/lib/nagios/plugins/check_tcp -H 10.10.10.1 -p 80
 
@@ -35,15 +33,15 @@ Now that the syntax is available, TCP port 80 can be checked as follows.
 
     TCP OK - 0.000 second response time on port 80|time=0.000222s;;;0.000000;10.000000
 
-### Example Topology ###
+### 示例拓扑  ###
 
-In this tutorial, the following three servers are being used. Each server runs one or more common services. The Nagios server is running on Ubuntu.
+本片中使用下面三台服务器。每台服务器运行多个通用服务。Nagios服务器现在运行的是Ubuntu。
 
 - Server 1 (10.10.10.1) : MySQL, Apache2
 - Server 2 (10.10.10.2) : Postfix, Apache2
 - Server 3 (10.10.10.3): DNS 
 
-First, the servers are defined in Nagios.
+首先，服务器被定义在了Nagios中。
 
     root@nagios:~# vim /etc/nagios3/conf.d/example.cfg
 
@@ -70,54 +68,54 @@ First, the servers are defined in Nagios.
             address                 10.10.10.3
             }
 
-### Monitor MySQL Service ###
+### 监控MySQL服务 ###
 
-#### MySQL Monitoring Requirements ####
+#### MySQL 监控需要 ####
 
-- Monitor whether MySQL is running by checking port 3306.
-- Monitor the availability of certain database 'testDB'. 
+- 通过检查3306端口来检测MySQL是否运行中。
+- 检测特定的数据库'testDB'是否可用。
 
-#### MySQL Server Setting ####
+#### MySQL 服务器设置 ####
 
-When it comes to checking MySQL, it should be kept in mind that MySQL, by default, listens on only the loopback interface 127.0.0.1. This increases the security of the database. Manual tuning is needed to tell MySQL to listen on other interfaces as well. Here is how it can be done.
+开始检测MySQL时，需要记住MySQL默认只监听回环接口127.0.0.1。这增加了数据库的安全。手动调节需要告诉MySQL该监听什么其他接口。下面是该怎么做。
 
-This setting is done on all MySQL servers.
+这个设置在所有的MySQL服务器上已经做了。
 
     root@nagios:~# vim /etc/mysql/my.cnf
 
-The following line is commented out to make MySQL listens on all interfaces.
+下面这行被注释掉了来监听所有接口。
 
     #bind-address           = 127.0.0.1
 
-Also, MySQL would not let just any host to connect to it. A user 'nagios' is created for both localhost and for 'any' host. This user is then granted all permission to all databases and will be used for monitoring.
+同样，MySQL将不会运行任何主机来连接到它。在本机和任意主机都创建了用户‘nagios’。这个用户接着在所有的数据库中被授予所有的权限，这将在会用在监控中。
 
-The following settings are done for all MySQL servers.
+下面的设置对所有的MySQL服务器都已经设置。
 
     root@nagios:~# mysql -u root –p
     ## MySQL root password here ##
 
-A user 'nagios@localhost' is created in MySQL server.
+'nagios@localhost'用户在MySQL服务器中创建了。
 
     mysql> CREATE USER 'nagios'@'localhost' IDENTIFIED BY 'nagios-pass';
     mysql> GRANT ALL PRIVILEGES ON *.* TO 'nagios'@'localhost';
 
-A user 'nagios@any-host' is created.
+'nagios@any-host'用户创建了。
 
     mysql> CREATE USER 'nagios'@'%' IDENTIFIED BY 'nagios-pass';
     mysql> GRANT ALL PRIVILEGES ON *.* TO 'nagios'@'%';
      
     mysql> FLUSH PRIVILEGES;
 
-This should enable MySQL to listen on all interfaces, as well as accept incoming connections from user 'nagios' at any host.
+这使MySQL监听所有的接口，同样接受来自用户'nagios'的进入链接。
 
-Note that there are possible security implications of this change, so it's worth mentioning a few words:
+请注意，这种变化可能有安全隐患，所以需要说几句话：
 
-- This setting will expose MySQL to all available interfaces, including WAN. It is vital to make sure only legitimate networks have access to the database. Filters such as firewall and TCP wrappers should be used.
-- The MySQL 'nagios' user password should be very strong. If there are few Nagios servers, then MySQL user 'nagios@servername' should be created instead of 'nagios@%' i.e., any host. 
+- 这个设置将会暴露MySQL给所有的接口，包括WAN。确保只有合法的网络访问是非常重要的。应该使用防火墙和TCP封装器等过滤器。
+- MySQL用户‘nagios’的密码应该非常强。如果只有几台Nagios服务器,那么应该创建'nagios@servername'用户而不是任意用户的'nagios@%'。
 
-#### Nagios Configuration for MySQL ####
+#### 对MySQL的NAgios配置 ####
 
-The following tuning should do the trick.
+用下面的来做一些调整。
 
     root@nagios:~# vim /etc/nagios3/conf.d/services_nagios2.cfg
 
@@ -142,17 +140,17 @@ The following tuning should do the trick.
     ;check_mysql!userName!userPassword!databaseName
             }
 
-This way, Nagios can help monitor the accessibility of both MySQL servers and the database stored within the servers.
+这样,Nagios就可以同时监控MySQL服务器和数据库的可用性。
 
-### Monitor Apache Web Server ###
+### 监控Apache服务器 ###
 
-Nagios can be used to monitor Apache web server as well.
+Nagios同样也可以监控Apache服务。
 
-#### Apache Monitoring Requirements ####
+#### Apache监控需要 ####
 
-- Monitor whether the apache server is available. 
+- 监控apache是否可用
 
-This task is really easy as Nagios has a built-in command for this.
+这个任务非常简单因为Nagios有一个内置命令。
 
     root@nagios:~# vim /etc/nagios3/conf.d/services_nagios2.cfg
 
@@ -165,11 +163,11 @@ This task is really easy as Nagios has a built-in command for this.
     check_command		check_http
             }
 
-Now that was really simple.
+现在就非常简单了。
 
-### Monitor DNS Service ###
+### 监控DNS服务 ###
 
-Nagios can monitor DNS service by asking the DNS server to either resolve a specific fully qualified domain name (FQDN), or by asking the server to use the dig tool. The default FQDN used for testing is www.google.com, but it can be changed as needed. The following file can be modified to do the job.
+Nagios通过向DNS服务器查询一个完全合格域名（FQDN）,或者使用dig工具来查询。默认用于FQDN的是www.google.com，但是这个可以按需改变。按照下面的文件修改来完成这个任务。
 
     root@nagios:~# vim /etc/nagios-plugins/config/dns.cfg
 
@@ -181,7 +179,7 @@ Nagios can monitor DNS service by asking the DNS server to either resolve a spec
     command_line    /usr/lib/nagios/plugins/check_dns -H www.google.com -s '$HOSTADDRESS$'
     }
 
-Then edit the following file.
+编辑下面的行。
 
     root@nagios:~# vim /etc/nagios3/conf.d/services_nagios2.cfg
 
@@ -203,9 +201,10 @@ Then edit the following file.
     check_command           check_dig!www.google.com
             }
 
-### Monitor Mail Server ###
+### 监控邮件服务器 ###
 
-Nagios can monitor different mail server components like SMTP, POP, IMAP and mailq. As mentioned earlier, server-2 has postfix mail server set up on it. Nagios will be configured to monitor SMTP and mail queue of the server.
+Nagios可以监控不同的邮件服务组件如SMTP、POP、IMAP和mailq。之前提过，server-2设置了后缀邮件服务。Nagios将被配置来监控SMTP和邮件队列。
+
 
     root@nagios:~# vim /etc/nagios3/conf.d/services_nagios2.cfg
 
@@ -226,17 +225,17 @@ Nagios can monitor different mail server components like SMTP, POP, IMAP and mai
     					;warning at 50, critical at 100
             }
 
-The following screenshot shows a complete overview of all the service checks that have been configured so far.
+下面的截屏显示了目前配置监控服务的概览。
 
 ![](http://farm8.staticflickr.com/7333/11428095956_2868bbdfcc_z.jpg)
 
-### Port Based Monitoring for Custom Applications ###
+### 基于端口自定义监控程序 ###
 
-Let us assume that the following custom application is also running in the network, listening on a particular port.
+让我们假设下面的自定义程序同样运行在网络中，监听一个特定的端口。
 
-- Test Server 1: custom application (TCP Port 12345) 
+- 测试1号服务器：自定义程序（TCP端口 12345）
 
-With a little tweaking, Nagios can help monitor this application port as well.
+过一些小的调整，Nagios也可以帮助监控这个程序。
 
     root@nagios:~# vim /etc/nagios3/conf.d/services_nagios2.cfg
 
@@ -249,18 +248,19 @@ With a little tweaking, Nagios can help monitor this application port as well.
     check_command           check_tcp!12345
             }
 
-On a finishing note, Nagios can monitor many other sectors of a network. The scripts stored in /etc/nagios-plugins/config/ can shed some light on the awesome capabilities of Nagios.
+在完结之前，Nagios可以监控网络很多其他的方面。存储在/etc/nagios-plugins/config/中的脚本为Nagios很棒的能力。
 
-Some of the scripts provided with Nagios are restricted to the local server only. Examples include server load, number of concurrent processes, number of logged in users. These checks can provide useful insight on what is going on within the Nagios server.
 
-Hope this helps.
+一些Nagios提供的脚本被限制在本地服务器。例子包含服务负载、进程并发数量、登录用户数量。这些检查可以提供Nagios服务器内有用的信息。
+
+希望这篇有用。
 
 --------------------------------------------------------------------------------
 
 via: http://xmodulo.com/monitor-common-services-nagios.html
 
 作者：[Sarmed Rahman][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
