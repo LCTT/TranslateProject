@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Things To Do After Installing Fedora 22
 ================================================================================
 Fedora 22 the latest entrant in the community developed line of Red hat operating systems is released on the 26th of May 2015. A lot of speculation and anticipation has been associated with this release of the venerable fedora. Well there are some major changes that are being proposed for Fedora 22.
