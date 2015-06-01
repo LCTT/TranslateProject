@@ -1,3 +1,4 @@
+
 How to Use LVM on Ubuntu for Easy Partition Resizing and Snapshots
 ================================================================================
 ![](http://cdn5.howtogeek.com/wp-content/uploads/2015/03/ximg_55035707bbd74.png.pagespeed.ic.9_yebxUF1C.png)
