@@ -1,8 +1,8 @@
-Sleuth Kit -- 一个用来分析磁盘映像和恢复文件的开源取证工具
+Sleuth Kit：一个用来分析磁盘映像和恢复文件的开源取证工具
 ================================================================================
-SIFT 是一个由 SANS 公司提供的基于 Ubuntu 的取证发行版本。它包含许多取证工具，如 Sleuth kit/Autopsy 。但 Sleuth kit / Autopsy 可以直接在 Ubuntu 或 Fedora 发行版本上直接安装，而不必下载 SIFT 的整个发行版本。
+SIFT 是一个由 SANS 公司提供的基于 Ubuntu 的取证发行版。它包含许多取证工具，如 Sleuth kit/Autopsy 。但 Sleuth kit/Autopsy 可以直接在 Ubuntu 或 Fedora 发行版本上直接安装，而不必下载 SIFT 的整个发行版本。
 
-Sleuth Kit/Autopsy 是一个开源的电子取证调查工具，它被用于从磁盘映像中恢复丢失的文件，基于事件响应的磁盘映像的分析。 Autopsy 工具是 sleuth kit 的一个网页接口，支持 sleuth kit 的所有功能。这个工具在 Windows 和 Linux 平台下都可获取到。
+Sleuth Kit/Autopsy 是一个开源的电子取证调查工具，它可以用于从磁盘映像中恢复丢失的文件，以及为了特殊事件进行磁盘映像分析。 Autopsy 工具是 sleuth kit 的一个网页接口，支持 sleuth kit 的所有功能。这个工具在 Windows 和 Linux 平台下都可获取到。
 
 ### 安装 Sleuth kit ###
 
@@ -38,7 +38,7 @@ Sleuth Kit/Autopsy 是一个开源的电子取证调查工具，它被用于从�
 
 ### 安装 Autopsy 工具 ###
 
-Sleuth kit 已经安装完毕，现在我们将为它安装 autopsy 界面。从 [sleuthkit 的 autopsy 页面][2] 下载 Autopsy 软件。使用下面的命令在虚拟终端下使用 wget 命令来下载它，下图展示了这个过程。
+Sleuth kit 已经安装完毕，现在我们将为它安装 autopsy 界面。从 [sleuthkit 的 autopsy 页面][2]下载 Autopsy 软件。使用下面的命令在虚拟终端下使用 wget 命令来下载它，下图展示了这个过程。
 
     # wget http://kaz.dl.sourceforge.net/project/autopsy/autopsy/2.24/autopsy-2.24.tar.gz
 
@@ -70,7 +70,7 @@ autopsy 的配置脚本将询问 NSRL (National Software Reference Library) 和 
 
 ![Autopsy](http://blog.linoxide.com/wp-content/uploads/2015/03/autopsy-started.png)
 
-在浏览器中键入下面的地址来获取 autopsy 的界面：
+在浏览器中键入下面的地址来访问 autopsy 的界面：
 
     http://localhost:9999/autopsy
 
@@ -90,7 +90,7 @@ autopsy 的配置脚本将询问 NSRL (National Software Reference Library) 和 
 
 ![添加主机的详细信息](http://blog.linoxide.com/wp-content/uploads/2015/03/add-host-detial.png)
 
-点击 **增加映像** 按钮来为取证分析添加映像文件。
+添加主机后，点击 **增加映像** 按钮来为取证分析添加映像文件。
 
 ![添加映像](http://blog.linoxide.com/wp-content/uploads/2015/03/add-image.png)
 
@@ -98,11 +98,11 @@ autopsy 的配置脚本将询问 NSRL (National Software Reference Library) 和 
 
 ![添加映像文件](http://blog.linoxide.com/wp-content/uploads/2015/03/Add-image-file.png)
 
-正如下图中展示的那样，我们已经键入了 Linux 映像文件的路径。在我们这个例子中，映像文件是磁盘的分区。
+正如下图中展示的那样，我们已经键入了 Linux 映像文件的路径。在我们这个例子中，映像文件类型是磁盘分区。
 
 ![添加映像分区](http://blog.linoxide.com/wp-content/uploads/2015/03/add-image-parition.png)
 
-点击 下一步 按钮并在下一页中选择 **计算散列值** 的选项，这在下图中有展示。它也将检测所给映像的文件系统类型。
+点击“下一步”按钮并在下一页中选择 **计算散列值** 的选项，这在下图中有展示。它也将检测所给映像的文件系统类型。
  
 ![映像和文件系统详情](http://blog.linoxide.com/wp-content/uploads/2015/03/image-and-file-system-detail.png)
 
@@ -142,7 +142,7 @@ autopsy 的配置脚本将询问 NSRL (National Software Reference Library) 和 
 
 ### 结论 ###
 
-希望这篇文章能够给那些进入磁盘映像的静态分析领域的新手提供帮助。Autopsy 是 sleuth kit 的网页界面，提供了在 Windows 和 Linux 磁盘映像中进行诸如字符串提取，恢复被删文件，时间线分析，网络浏览历史，关键字搜索和邮件分析等功能。
+希望这篇文章能够给那些进入磁盘映像静态分析领域的新手提供帮助。Autopsy 是 sleuth kit 的网页界面，提供了在 Windows 和 Linux 磁盘映像中进行诸如字符串提取，恢复被删文件，时间线分析，网络浏览历史，关键字搜索和邮件分析等功能。
 
 --------------------------------------------------------------------------------
 
@@ -150,7 +150,7 @@ via: http://linoxide.com/ubuntu-how-to/autopsy-sleuth-kit-installation-ubuntu/
 
 作者：[nido][a]
 译者：[FSSlc](https://github.com/FSSlc)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
