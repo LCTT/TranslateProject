@@ -1,3 +1,5 @@
+translating----geekpi
+
 How to monitor common services with Nagios
 ================================================================================
 Nagios comes with a wide range of built-in scripts for monitoring services. This tutorial will cover the process of using some of these scripts for checking common services, such as MySQL, Apache web server, DNS, etc.
