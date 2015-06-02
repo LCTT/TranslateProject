@@ -1,3 +1,5 @@
+translating by wwy-hust
+
 Protect Apache Against Brute Force or DDoS Attacks Using Mod_Security and Mod_evasive Modules
 ================================================================================
 For those of you in the hosting business, or if you’re hosting your own servers and exposing them to the Internet, securing your systems against attackers must be a high priority.
