@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How to monitor Linux servers with SNMP and Cacti
 ================================================================================
 SNMP (or Simple Network Management Protocol) is used to gather data on what is going on within a device, such as load, hard disk states, bandwidth. These data are used by network monitoring tools such as Cacti to generate graphs for monitoring purposes.
