@@ -1,6 +1,7 @@
-如何在 Docker 容器里的 Nginx 中安装 WordPress
+如何在 Docker 容器中架设一个完整的 WordPress 站点
 ================================================================================
-大家好，今天我们来学习一下如何在 Docker 容器上运行的 Nginx Web 服务器中安装 WordPress。WordPress 是一个很好的免费开源的内容管理系统，全球成千上万的网站都在使用它。[Docker][1] 是一个提供开放平台来打包，分发和运行任何应用的开源轻量级容器项目。它没有语言支持，框架或打包系统的限制，可以在从小的家用电脑到高端服务器的任何地方任何时间运行。这让它们成为可以用于部署和扩展网络应用，数据库和后端服务而不必依赖于特定的栈或者提供商的很好的构建块。
+
+大家好，今天我们来学习一下如何在 Docker 容器里运行的 Nginx Web 服务器中安装 WordPress。WordPress 是一个很好的免费开源的内容管理系统，全球成千上万的网站都在使用它。[Docker][1] 是一个开源项目，提供了一个可以打包、装载和运行任何应用的轻量级容器的开放平台。它没有语言支持、框架和打包系统的限制，从小型的家用电脑到高端服务器，在何时何地都可以运行。这使它们可以不依赖于特定软件栈和供应商，像一块块积木一样部署和扩展网络应用、数据库和后端服务。
 
 今天，我们会在 docker 容器上部署最新的 WordPress 软件包，包括需要的前提条件，例如 Nginx Web 服务器、PHP5、MariaDB 服务器等。下面是在运行在 Docker 容器上成功安装 WordPress 的简单步骤。
 
@@ -14,13 +15,13 @@
 
     # systemctl restart docker.service
 
-### 2. 创建 WordPress Docker 文件 ###
+### 2. 创建 WordPress 的 Dockerfile ###
 
-我们需要创建用于自动安装 wordpress 以及前提条件的 docker 文件。这个 docker 文件将用于构建 WordPress 的安装镜像。这个 WordPress docker 文件会从 Docker 库中心获取 CentOS 7 镜像并用最新的可用更新升级系统。然后它会安装必要的软件，例如 Nginx Web 服务器、PHP、MariaDB、Open SSH 服务器以及其它保证 Docker 容器正常运行不可缺少的组件。最后它会执行一个初始化 WordPress 安装的脚本。
+我们需要创建用于自动安装 wordpress 以及其前置需求的 Dockerfile。这个 Dockerfile 将用于构建 WordPress 的安装镜像。这个 WordPress Dockerfile 会从 Docker Registry Hub 获取 CentOS 7 镜像并用最新的可用更新升级系统。然后它会安装必要的软件，例如 Nginx Web 服务器、PHP、MariaDB、Open SSH 服务器，以及其它保证 Docker 容器正常运行不可缺少的组件。最后它会执行一个初始化 WordPress 安装的脚本。
 
     # nano Dockerfile
 
-然后，我们需要将下面的配置行添加到 Docker 文件中。
+然后，我们需要将下面的配置行添加到 Dockerfile中。
 
     FROM centos:centos7
     MAINTAINER The CentOS Project <cloud-ops@centos.org>
@@ -50,9 +51,9 @@
 
 ![Wordpress Docker 文件](http://blog.linoxide.com/wp-content/uploads/2015/03/Dockerfile-wordpress.png)
 
-### 3. 创建启动 script ###
+### 3. 创建启动脚本 ###
 
-我们创建了 docker 文件之后，我们需要创建用于运行和配置 WordPress 安装的脚本，名称为 start.sh。它会为 WordPress 创建并配置数据库和密码。用我们喜欢的文本编辑器打开 start.sh。
+我们创建了 Dockerfile 之后，我们需要创建用于运行和配置 WordPress 安装的脚本，名称为 start.sh。它会为 WordPress 创建并配置数据库和密码。用我们喜欢的文本编辑器打开 start.sh。
 
     # nano start.sh
 
@@ -86,7 +87,7 @@
     }
 
     __handle_passwords() {
-    # 在这里我们生成随机密码(感谢 pwgen)。前面两个用于 mysql 用户，最后一个用于 wp-config.php 的随机密钥。
+    # 在这里我们生成随机密码(多亏了 pwgen)。前面两个用于 mysql 用户，最后一个用于 wp-config.php 的随机密钥。
     WORDPRESS_DB="wordpress"
     MYSQL_PASSWORD=`pwgen -c -n -1 12`
     WORDPRESS_PASSWORD=`pwgen -c -n -1 12`
@@ -292,7 +293,7 @@
 
 ### 5. 构建 WordPress 容器 ###
 
-现在，完成了创建配置文件和脚本之后，我们终于要使用 docker 文件来创建安装最新的 WordPress CMS(译者注：Content Management System,内容管理系统)所需要的容器，并根据配置文件进行配置。做到这点，我们需要在对应的目录中运行以下命令。
+现在，完成了创建配置文件和脚本之后，我们终于要使用 Dockerfile 来创建安装最新的 WordPress CMS（译者注：Content Management System，内容管理系统）所需要的容器，并根据配置文件进行配置。做到这点，我们需要在对应的目录中运行以下命令。
 
     # docker build --rm -t wordpress:centos7 .
 
@@ -340,7 +341,7 @@ via: http://linoxide.com/linux-how-to/install-wordpress-nginx-docker-container/
 
 作者：[Arun Pyasi][a]
 译者：[ictlyh](https://github.com/ictlyh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 

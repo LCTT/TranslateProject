@@ -1,17 +1,14 @@
-Linux 有问必答 -- 如何在红帽系linux中编译Ixgbe
-
+Linux 有问必答: 如何在红帽系linux中编译Ixgbe驱动
 ================================================================================
 > **提问**：我想要安装最新版的ixgbe 10G网卡驱动。在CentOS, Fedora 或 RHEL中，我应该如何编译ixgbe驱动？
 
+想要在linux使用Intel的PCI Express 10G网卡（例如，82598，82599，x540），需要安装Ixgbe驱动。如今的Linux发行版都会预安装ixgbe的可加载模块，但是预安装的ixgbe驱动不是完整功能版。如果想要开启和定制所有10G网卡的功能（如，RSS、多队列、虚拟化功能、硬件 offload 等），需要从源码编译安装。
 
-想要在linux使用Intel的PCI Express 10G网卡（例如，82598，82599，x540），需要安装Ixgbe驱动。如今的Linux发行版都会欲安装ixgbe作为可加载模块，但是预安装的ixgbe驱动不是完整功能版。如果想要开启和定制所有10G网卡（如，RSS，多）的功能，需要源码编译安装。
-
-本文基于红帽系平台（如，CentOS，RHEL或Fedora）。Debian系系统，请看[这篇文章][1]
-
+本文基于红帽系平台（如，CentOS，RHEL或Fedora）。Debian系平台，请看[这篇文章][1]
 
 ### 第一步: 安装依赖 ###
 
-首先，安装必要的开发环境和安装匹配的内核头
+首先，安装必要的开发环境和安装匹配的内核头文件
 
     $ sudo yum install gcc make
     $ sudo yum install kernel-devel
@@ -22,7 +19,7 @@ Linux 有问必答 -- 如何在红帽系linux中编译Ixgbe
 
     $ wget http://downloads.sourceforge.net/project/e1000/ixgbe%20stable/3.23.2/ixgbe-3.23.2.tar.gz 
 
-确保检查支持内核版本。例如，Ixgbe3.23.2版本支持Linux内核版本2.6.18以上到3.18.1.
+请检查支持的内核版本。例如，Ixgbe3.23.2版本支持Linux内核版本2.6.18到3.18.1。
 
 提取压缩包并编译
 
@@ -30,7 +27,7 @@ Linux 有问必答 -- 如何在红帽系linux中编译Ixgbe
     $ cd ixgbe-3.23.2/src
     $ make 
 
-如果成功，编译完成的驱动（ixgbe.ko）可以在当前目录找到。
+如果成功，可以在当前目录找到编译完成的驱动（ixgbe.ko）。
 
 可以运行这个命令来查看编译信息：
 
@@ -44,7 +41,7 @@ Linux 有问必答 -- 如何在红帽系linux中编译Ixgbe
 
 这步准备加载已经编译好的驱动。
 
-如果系统已经加载了Ixgbe驱动，首先需要卸载掉老版本。否者，新版本不能够加载。
+如果系统已经加载了Ixgbe驱动，首先需要卸载掉老版本。否则，新版本不能加载。
 
     $ sudo rmmod ixgbe.ko
 
@@ -178,7 +175,7 @@ ixgbe.ko将会安装在下列目录
 
     /lib/modules/<kernel-version>/kernel/drivers/net/ixgbe
 
-此时，编译完蛋程序将在启动时自动加载，也可以通过运行命令加载它：
+此时，编译好的驱动将在启动时自动加载，也可以通过运行命令加载它：
 
     $ sudo modprobe ixgbe 
 
@@ -190,10 +187,10 @@ via: http://ask.xmodulo.com/compile-ixgbe-driver-centos-rhel-fedora.html
 
 作者：[Dan Nanni][a]
 译者：[Vic020](http://vicyu.net)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://ask.xmodulo.com/author/nanni
-[1]:http://ask.xmodulo.com/download-install-ixgbe-driver-ubuntu-debian.html
+[1]:https://linux.cn/article-5149-1.html
 [2]:http://sourceforge.net/projects/e1000/files/ixgbe%20stable/
