@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Howto Configure OpenVPN Server-Client on Ubuntu 15.04
 ================================================================================
 Virtual private network (VPN) is a common name of several technologies which allows to establish a network connection over other network. It called virtual because nodes connected between each over through non physical lines. And it is private due to absence of public access to network without proper rights from of the network owner.
