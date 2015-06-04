@@ -1,4 +1,3 @@
-Translating by ZTinoZ
 20款优秀的Linux终端仿真器
 ================================================================================
 终端仿真器是一款用其它显示结构重现可视终端的计算机程序。换句话说就是终端仿真器能使哑终端看似像一台客户机连接上了服务器。终端仿真器允许最终用户像文本用户界面和命令行界面一样连接控制台和应用程序。
@@ -7,11 +6,11 @@ Translating by ZTinoZ
 
 20款Linux终端仿真器
 
-You may find huge number of terminal emulators to choose from this open source world. Some of them offers large range of features while others offers less features. To give a better understanding to the quality of software that are available, we have gathered a list of marvelous terminal emulator for Linux. Each title provides its description and feature along with screenshot of the software with relevant download link.
+你能从开源世界中找到大量的终端仿真器来使用，有些拥有大量的特性而有些则反之。为了能更好地理解它们所能提供的质量，我们收集了一份不可思议的Linux终端仿真器清单。每一款都列出了它们各自的描述和特性以及软件界面截图和下载链接。
 
 ### 1. Terminator ###
 
-Terminator is an advanced and powerful terminal emulator which supports multiple terminals windows. This emulator is fully customizable. You can change the size, colour, give different shapes to the terminal. Its very user friendly and fun to use.
+Terminator是一款先进且强大的终端仿真器，它支持多终端窗口。这款仿真器可以完全自定义。你可以更改它的界面尺寸、颜色，给它设置不同的形状。拥有高用户友好性且使用起来很有乐趣。
 
 #### Terminator的特性 ####
 
