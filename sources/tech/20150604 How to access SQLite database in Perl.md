@@ -1,3 +1,5 @@
+Translating---geekpi
+
 How to access SQLite database in Perl
 ================================================================================
 SQLite is a zero-configuration, server-less, file-based transactional database system. Due to its lightweight, self-contained, and compact design, SQLite is an extremely popular choice when you want to integrate a database into your application. In this post, I am going to show you how to create and access a SQLite database in Perl script. The Perl code snippet I present is fully functional, so you can easily modify and integrate it into your project.
