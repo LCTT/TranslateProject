@@ -14,10 +14,10 @@ Terminator是一款先进且强大的终端仿真器，它支持多终端窗口�
 
 #### Terminator的特性 ####
 
-- Customize your profiles and colour schemes, set the size to fit your needs.
-- Use plugins to get even more functionality.
-- Several key-shortcuts are available to speed up common activities.
-- Split the terminal window into several virtual terminals and re-size them as needed.
+- 自定义外形和色彩设计，根据你的需要设置尺寸。
+- 使用插件来获取更多功能。
+- 快捷键可以加快普通操作。
+- 可以把终端窗口分裂成几个虚拟终端并把它们重新设置成你需要的尺寸。
 
 ![Terminator Terminal](http://www.tecmint.com/wp-content/uploads/2014/01/Terminator-Emulator.jpeg)
 
@@ -28,13 +28,13 @@ Terminator Terminal
 
 ### 2. Tilda ###
 
-Tilda is a stylish drop-down terminal based on GTK+. With the help of a single key press you can launch a new or hide Tilda window. However, you can add colors of your choice to change the look of the text and Terminal background.
+Tilda是一款漂亮的基于GTK+的下拉式终端。敲击一个键你就可以打开一个新的或隐藏着的Tilda窗口。然而，你可以添加你所选择的颜色来更改文本颜色和终端背景颜色。
 
 #### Tilda的特性 ####
 
-    Interface with Highly customization option.
-    You can set the transparency level for Tilda window.
-    Excellent built-in colour schemes.
+- 高度定制的选项界面设置。
+- 你可以给Tilda设置透明度。
+- 优秀的嵌入式色彩设计。
 
 ![Tilda Terminal](http://www.tecmint.com/wp-content/uploads/2014/01/Tilda-Emulator.jpeg)
 
