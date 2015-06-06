@@ -1,3 +1,4 @@
+﻿sevenot translating
 Read about The Document Foundation achievements in 2014: download the Annual Report! 
 ================================================================================
 ![](https://documentfoundation.files.wordpress.com/2015/06/tdf-report.jpg)
