@@ -1,3 +1,6 @@
+translating----geekpi
+
+
 Installing Ruby on Rails using rbenv on Ubuntu 15.04
 ================================================================================
 This article we will learn about how to Install Ruby on Rails with rbenv on Ubuntu 15.04. We choose Ubuntu as operating system because Ubuntu is one of Linux distribution that easy to use with a lots of package support and complete documentations , so I think this is the right choice. If you don't install the latest version Ubuntu yet, you can [download the ISO file][1] to start off.
