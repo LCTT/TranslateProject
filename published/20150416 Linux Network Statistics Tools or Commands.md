@@ -72,7 +72,7 @@ Linux网络统计工具/命令
 
 查看[ss 命令教程][1] 获取更多信息。
 
-### netstat 命令 : 显示套接字信息的旧的好工具 ###
+### netstat 命令 : 不错的显示套接字信息的旧工具 ###
 
 查看所有网络端口以及汇总信息表，输入：
 
@@ -268,6 +268,7 @@ Linux网络统计工具/命令
 ### sar 命令: 显示网络统计信息 ###
 
 输入以下命令 (你需要 [通过sysstat包安装并启用sar][3]):
+
 sar -n DEV
 
     Linux 2.6.32-220.2.1.el6.x86_64 (www.cyberciti.biz)    Tuesday 13 March 2012   _x86_64_        (2 CPU)
@@ -345,11 +346,11 @@ via: http://www.cyberciti.biz/faq/network-statistics-tools-rhel-centos-debian-li
 
 作者：[nixCraft][a]
 译者：[ictlyh](https://github.com/ictlyh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://www.cyberciti.biz/tips/about-us
-[1]:http://www.cyberciti.biz/tips/linux-investigate-sockets-network-connections.html
-[2]:http://www.cyberciti.biz/tips/netstat-command-tutorial-examples.html
+[1]:https://linux.cn/article-4372-1.html
+[2]:https://linux.cn/article-2434-1.html
 [3]:http://www.cyberciti.biz/tips/identifying-linux-bottlenecks-sar-graphs-with-ksar.html
