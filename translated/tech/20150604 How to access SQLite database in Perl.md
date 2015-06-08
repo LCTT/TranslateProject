@@ -1,29 +1,29 @@
-How to access SQLite database in Perl
+如何用Perl访问SQLite数据库
 ================================================================================
-SQLite is a zero-configuration, server-less, file-based transactional database system. Due to its lightweight, self-contained, and compact design, SQLite is an extremely popular choice when you want to integrate a database into your application. In this post, I am going to show you how to create and access a SQLite database in Perl script. The Perl code snippet I present is fully functional, so you can easily modify and integrate it into your project.
+SQLite是一个零配置，无服务端，基于文件的事务文件系统。由于它的轻量级，自包含和紧凑的设计，所以当你想要集成数据库到你的程序中时，SQLite是一个非常流行的选择。在这篇文章中，我会展示如何用Perl脚本来创建和访问SQLite数据库。我演示的Perl代码片段是完整的，所以你可以很简单地修改并集成到你的项目中。
 
 ![](https://farm1.staticflickr.com/552/18444614631_9e7fce8243_c.jpg)
 
-### Preparation for SQLite Access ###
+### 访问SQLite的准备 ###
 
-I am going to use SQLite DBI Perl driver to connect to SQLite3. Thus you need to install it (along with SQLite3) on your Linux system.
+我会使用SQLite DBI Perl驱动来连接到SQLite3。因此你需要在Linux中安装它（和SQLite3一起）。
 
-**Debian, Ubuntu or Linux Mint**
+**Debian、 Ubuntu 或者 Linux Mint**
 
     $ sudo apt-get install sqlite3 libdbd-sqlite3-perl
 
-**CentOS, Fedora or RHEL**
+**CentOS、 Fedora 或者 RHEL**
 
     $ sudo yum install sqlite perl-DBD-SQLite
 
-After installation, you can check if the SQLite driver is indeed available by using the following script.
+安装后，你可以检查SQLite驱动可以通过下面的脚本访问到。
 
     #!/usr/bin/perl
     
     my @drv = DBI->available_drivers();
     print join("\n", @drv), "\n";
 
-If you run the script, you should see SQLite in the output.
+如果你运行脚本，你应该会看见下面的输出。
 
     DBM
     ExampleP
@@ -33,16 +33,16 @@ If you run the script, you should see SQLite in the output.
     SQLite
     Sponge
 
-### Perl SQLite Access Example ###
+### Perl SQLite 访问示例 ###
 
-Here is the full-blown Perl code example of SQLite access. This Perl script will demonstrate the following SQLite database management routines.
+下面就是Perl访问SQLite的示例。这个Perl脚本会演示下面这些SQLite数据库的常规管理。
 
-- Create and connect to a SQLite database.
-- Create a new table in a SQLite database.
-- Insert rows into a table.
-- Search and iterate rows in a table.
-- Update rows in a table.
-- Delete rows in a table. 
+- 创建和连接SQLite数据库
+- 在SQLite数据库中创建新表
+- 在表中插入行
+- 在表中搜索和迭代行
+- 在表中更新行
+- 在表中删除行
 
     use DBI;
     use strict;
@@ -128,7 +128,7 @@ Here is the full-blown Perl code example of SQLite access. This Perl script will
     $dbh->disconnect();
     print STDERR "Exit the database\n";
 
-A successful run of the above Perl script will create a SQLite database file named "xmodulo.db", and show the following output.
+上面的Perl脚本运行成功后会创建一个叫“xmodulo.db”的数据库文件，并会有下面的输出。
 
     Database opened successfully
     Table created successfully
@@ -151,9 +151,9 @@ A successful run of the above Perl script will create a SQLite database file nam
     A total of 1 rows deleted
     Exit the database
 
-### Troubleshooting ###
+### 错误定位 ###
 
-If you attempt to access SQLite in Perl without installing SQLite DBI driver, you will encounter the following error. You must install DBI driver as describe at the beginning to fix this error.
+如果你尝试没有安装SQLite DBI驱动的情况下使用Perl访问SQLite的话，你会遇到下面的错误。你必须按开始说的安装DBI驱动。
 
     Can't locate DBI.pm in @INC (@INC contains: /usr/local/lib64/perl5 /usr/local/share/perl5 /usr/lib64/perl5/vendor_perl /usr/share/perl5/vendor_perl /usr/lib64/perl5 /usr/share/perl5 .) at ./script.pl line 3.
     BEGIN failed--compilation aborted at ./script.pl line 3.
@@ -163,7 +163,7 @@ If you attempt to access SQLite in Perl without installing SQLite DBI driver, yo
 via: http://xmodulo.com/access-sqlite-database-perl.html
 
 作者：[Dan Nanni][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出

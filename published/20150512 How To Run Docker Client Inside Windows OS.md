@@ -1,6 +1,7 @@
 如何在 Windows 操作系统中运行 Docker 客户端
 ================================================================================
-大家好，今天我们来了解一下 Windows 操作系统中的 Docker 以及在其中安装 Docker Windows 客户端的知识。Docker 引擎使用 Linux 特定内核特性，因此不能通过 Windows 内核运行，Docker 引擎创建一个小的虚拟系统运行 Linux 并利用它的资源和内核。Windows Docker 客户端用虚拟化 Docker 引擎构建，运行以及管理 盒子以外的 Docker 容器。这里有个由 Boot2Docker 团队开发的名为 Boot2Docker 的应用程序，它创建运行在基于[Linux 微内核][1]的小型 Linux 系统上的虚拟机，是特意为在 Windows 上运行 [Docker][2] 容器开发的。它完全运行在 RAM 中，需要大约 27M 内存并能在 5s(YMMV,译者注：your mileage may vary，因人而异) 内启动。因此，在用于 Windows 的 Docker 引擎被开发出来之前，我们在 Windows 机器里只能运行 Linux 容器。
+
+大家好，今天我们来了解一下 Windows 操作系统中的 Docker 以及在其中安装 Docker Windows 客户端的知识。Docker 引擎使用 Linux 特有的内核特性，因此不能通过 Windows 内核运行，所以，（在 Windows 上）Docker 引擎创建了一个小的虚拟系统运行 Linux 并利用它的资源和内核。这样，Windows Docker 客户端就可以用这个虚拟的 Docker 引擎来构建、运行以及管理 Docker 容器。有个叫 Boot2Docker 的团队开发了一个同名的应用程序，它创建了一个虚拟机来运行基于[Tiny Core Linux][1]特制的小型 Linux，来在 Windows 上运行 [Docker][2] 容器。它完全运行在内存中，需要大约 27M 内存并能在 5秒 (因人而异) 内启动。因此，在用于 Windows 的 Docker 引擎被开发出来之前，我们在 Windows 机器里只能运行 Linux 容器。
 
 下面是安装 Docker 客户端并在上面运行容器的简单步骤。
 
@@ -12,7 +13,7 @@
 
 ### 2. 安装 Boot2Docker ###
 
-现在我们运行安装文件，它会安装 Window Docker 客户端、用于 Windows 的 Git(MSYS-git)、VirtualBox、Boot2Docker Linux ISO 以及 Boot2Docker 管理工具，这些对于在盒子之外运行 Docker 引擎都至关重要。
+现在我们运行安装文件，它会安装 Window Docker 客户端、用于 Windows 的 Git(MSYS-git)、VirtualBox、Boot2Docker Linux ISO 以及 Boot2Docker 管理工具，这些对于开箱即用地运行全功能的 Docker 引擎都至关重要。
 
 ![](http://blog.linoxide.com/wp-content/uploads/2015/05/boot2docker-installer.png)
 
@@ -20,7 +21,7 @@
 
 ![](http://blog.linoxide.com/wp-content/uploads/2015/05/boot2docker-start-icon-e1431322598697.png)
 
-安装完成必要的组件之后，我们从桌面 Boot2Docker 快捷方式启动 Boot2Docker。它会要求你输入以后用于验证的 SSH 密钥。然后会启动一个配置好的用于管理在虚拟机中运行的 Docker 的 unix shell。
+安装完成必要的组件之后，我们从桌面上的“Boot2Docker Start”快捷方式启动 Boot2Docker。它会要求你输入以后用于验证的 SSH 密钥。然后会启动一个配置好的用于管理在虚拟机中运行的 Docker 的 unix shell。
 
 ![](http://blog.linoxide.com/wp-content/uploads/2015/05/starting-boot2docker.png)
 
@@ -32,7 +33,7 @@
 
 ### 4. 运行 Docker ###
 
-由于 **Boot2Docker Start** 自动启动了一个已经正确设置好环境变量的 shell，我们可以马上开始使用 Docker。**请注意，如果我们将 Boot2Docker 作为一个远程 Docker 守护进程，那么不要在 docker 命令之前加 sudo。**
+由于 **Boot2Docker Start** 自动启动了一个已经正确设置好环境变量的 shell，我们可以马上开始使用 Docker。**请注意，如果我们要将 Boot2Docker 作为一个远程 Docker 守护进程，那么不要在 docker 命令之前加 sudo。**
 
 现在，让我们来试试 **hello-world** 例子镜像，它会下载 hello-world 镜像，运行并输出 "Hello from Docker" 信息。
 
@@ -56,7 +57,7 @@
 
 **注意**: 如果你看到 machine does no exist 的错误信息，就运行 **boot2docker init** 命令。
 
-然后复制控制台中的命令到 cmd.exe 中为控制台窗口设置环境变量，然后我们就可以像平常一样运行 docker 容器了。
+然后复制上图中控制台标出命令到 cmd.exe 中为控制台窗口设置环境变量，然后我们就可以像平常一样运行 docker 容器了。
 
 ### 6. 使用 PowerShell 运行 Docker ###
 
@@ -74,7 +75,7 @@
 
 ### 7.  用 PUTTY 登录 ###
 
-Boot2Docker 在%USERPROFILE%\.ssh 目录生成和使用用于登录的公共和私有密钥，我们也需要使用这个文件夹中的私有密钥。私有密钥需要转换为 PuTTY 的格式。我们可以通过 puttygen.exe 实现。
+Boot2Docker 会在%USERPROFILE%\.ssh 目录生成和使用用于登录的公共和私有密钥，我们也需要使用这个文件夹中的私有密钥。私有密钥需要转换为 PuTTY 的格式。我们可以通过 puttygen.exe 实现。
 
 我们需要打开 puttygen.exe 并从 %USERPROFILE%\.ssh\id_boot2docker 中导入("File"->"Load" 菜单)私钥，然后点击 "Save Private Key"。然后用保存的文件通过 PuTTY 用 docker@127.0.0.1:2022 登录。
 
@@ -88,7 +89,9 @@ Boot2Docker 管理工具提供了一些命令，如下所示。
 
 ### 总结 ###
 
-通过 Docker Windows 客户端使用 Docker 很有趣。Boot2Docker 管理工具是一个能使任何 Docker 容器能像在 Linux 主机上平稳运行的很棒的应用程序。如果你更仔细的话，你会发现 boot2docker 默认用户的用户名是 docker，密码是 tcuser。最新版本的 boot2docker 设置了一个 host-only 的网络适配器提供访问容器的端口。一般来说是 192.168.59.103，但可以通过 VirtualBox 的 DHCP 实现改变。如果你有任何问题、建议、反馈，请在下面的评论框中写下来然后我们可以改进或者更新我们的内容。非常感谢！Enjoy:-)
+通过 Docker Windows 客户端使用 Docker 很有趣。Boot2Docker 管理工具是一个能使任何 Docker 容器能像在 Linux 主机上平滑运行的很棒的应用程序。如果你更仔细的话，你会发现 boot2docker 默认用户的用户名是 docker，密码是 tcuser。最新版本的 boot2docker 设置了一个 host-only 的网络适配器提供访问容器的端口。一般来说是 192.168.59.103，但可以通过 VirtualBox 的 DHCP 实现改变。
+
+如果你有任何问题、建议、反馈，请在下面的评论框中写下来然后我们可以改进或者更新我们的内容。非常感谢！Enjoy:-)
 
 --------------------------------------------------------------------------------
 
@@ -96,7 +99,7 @@ via: http://linoxide.com/linux-how-to/run-docker-client-inside-windows-os/
 
 作者：[Arun Pyasi][a]
 译者：[ictlyh](https://github.com/ictlyh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 

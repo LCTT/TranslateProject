@@ -1,10 +1,10 @@
 Linux中安装Cisco Packet Tracer 
 ================================================================================
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/Main_picture.png)
+![](http://1102047360.rsc.cdn77.org/wp-content/uploads/2015/01/Main_picture.png)
 
 ### Cisco Packet tracer是什么？ ###
 
-**Cisco Packet Tracer**是一个强大的网络模拟工具，用于进行Cisco认证时的训练。它为我们提供了各个路由器和网络设备的良好的接口视图，这些模拟设备带有很多选项，跟使用物理机一样，我们可以在网络中使用无限的设备。我们能在单个工程中创建多个网络，以获得专业化的训练。Packet Tracer将提供给我们模拟的应用层协议，如**HTTP**，**DNS**，以及像**RIP**，**OSPF**，**EIGRP**等路由协议。
+**Cisco Packet Tracer**是一个强大的网络模拟工具，用于进行Cisco认证时的培训。它为我们提供了各个路由器和网络设备的良好的接口视图，这些模拟设备带有很多选项，跟使用物理机一样，我们可以在网络中使用无限的设备。我们能在单个工程中创建多个网络，以获得专业化的训练。Packet Tracer将提供给我们模拟的应用层协议，如**HTTP**，**DNS**，以及像**RIP**，**OSPF**，**EIGRP**等路由协议。
 
 现在，它发布了包含有**ASA 5505防火墙**命令行配置的版本。Packet Tracer通常用于Windows版本，但没有Linux版本。这里，我们可以下载并安装Cisco Packet Tracer。
 
@@ -26,7 +26,7 @@ Linux中安装Cisco Packet Tracer
 
     # lsb_release -a
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/pkt_001.png)
+![](http://1102047360.rsc.cdn77.org/wp-content/uploads/2015/01/pkt_001.png)
 
 ### 步骤 1： 首先，我们需要下载Cisco Packet Tracer。 ###
 
@@ -38,17 +38,17 @@ Linux中安装Cisco Packet Tracer
 
 [下载Cisco Packet Tracer 6.1.1][2]
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/pkt_002.png)
+![](http://1102047360.rsc.cdn77.org/wp-content/uploads/2015/01/pkt_002.png)
 
 ### 步骤 2： 安装Java： ###
 
-要安装Packet Tracer，我们需要安装java。要安装java，我们可以使用默认的仓库，或者添加PPA仓库，然后更新包缓存来安装java。
+要安装Packet Tracer，我们需要安装java。我们可以使用默认的仓库安装java；或者添加PPA仓库，然后更新包缓存来安装java。
 
 使用以下命令来安装默认的jre
 
         # sudo apt-get install default-jre
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/pkt_003.png)
+![](http://1102047360.rsc.cdn77.org/wp-content/uploads/2015/01/pkt_003.png)
 
 （或者）
 
@@ -57,18 +57,13 @@ Linux中安装Cisco Packet Tracer
 从官方站点下载Java：[下载Java][3]
 
     # tar -zxvf jre-8u31-linux-x64.tar.gz
-
     # sudo mkdir -p /usr/lib/jvm
-
     # sudo mv -v jre1.8.0_31 /usr/lib/jvm/
-
     # cd /usr/lib/jvm/
-
     # sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jre1.8.0_31/bin/java" 1
-
     # sudo update-alternatives --set "java" "/usr/lib/jvm/jre1.8.0_31/bin/java"
 
-通过编辑用户参数文件来设置Java环境，并添加位置参数。当我们添加进用户参数文件后，我们机器上的每个用户都可以用java了。
+通过编辑用户参数文件来设置Java环境，并添加路径相关的参数。当我们添加进用户参数文件后，我们机器上的每个用户都可以用java了。
 
     # sudo vi /etc/profile
 
@@ -84,27 +79,24 @@ Linux中安装Cisco Packet Tracer
 检查Java版本和环境：
 
     # echo $JAVA_HOME
-
     # java -version
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/pkt_004.png)
+![](http://1102047360.rsc.cdn77.org/wp-content/uploads/2015/01/pkt_004.png)
 
 ### 步骤 3： 启用32位架构支持： ###
 
-对于Packet Tracer，我们需要一系32位包。要安装32位包，我们需要使用以下命令来安装一些依赖。
+对于Packet Tracer，我们需要一些32位包。要安装32位包，我们需要使用以下命令来安装一些依赖。
 
     # sudo dpkg --add-architecture i386
     # sudo apt-get update
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/pkt_005.png)
+![](http://1102047360.rsc.cdn77.org/wp-content/uploads/2015/01/pkt_005.png)
 
     # sudo apt-get install libc6:i386
-
     # sudo apt-get install lib32z1 lib32ncurses5 lib32bz2-1.0
-
     # sudo apt-get install libnss3-1d:i386 libqt4-qt3support:i386 libssl1.0.0:i386 libqtwebkit4:i386 libqt4-scripttools:i386
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/pkt_006.png)
+![](http://1102047360.rsc.cdn77.org/wp-content/uploads/2015/01/pkt_006.png)
 
 ### 步骤 4： 解压并安装软件包： ###
 
@@ -114,7 +106,7 @@ Linux中安装Cisco Packet Tracer
 
     # tar -zxvf Cisco_Packet_tracer.tar.gz
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/pkt_007.png)
+![](http://1102047360.rsc.cdn77.org/wp-content/uploads/2015/01/pkt_007.png)
 
 导航到解压后的目录
 
@@ -124,27 +116,25 @@ Linux中安装Cisco Packet Tracer
 
     # sudo ./install
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/pkt_008.png)
+![](http://1102047360.rsc.cdn77.org/wp-content/uploads/2015/01/pkt_008.png)
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/pkt_009.png)
+![](http://1102047360.rsc.cdn77.org/wp-content/uploads/2015/01/pkt_009.png)
 
 要使用Packet Tracer工作，我们需要设置环境，Cisco已经提供了环境脚本，我们需要以root用户来运行该脚本以设置环境变量。
 
     # sudo ./set_ptenv.sh
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/pkt_010.png)
+![](http://1102047360.rsc.cdn77.org/wp-content/uploads/2015/01/pkt_010.png)
 
 安装到此结束。接下来，我们需要为Packet Tracer创建桌面图标。
 
 通过创建下面的桌面文件来创建桌面图标。
 
     # sudo su
-
     # cd /usr/share/applications
-
     # sudo vim packettracer.desktop
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/pkt_011.png)
+![](http://1102047360.rsc.cdn77.org/wp-content/uploads/2015/01/pkt_011.png)
 
 使用vim编辑器或你喜爱的那个编辑器来添加以下内容到文件。
 
@@ -158,9 +148,9 @@ Linux中安装Cisco Packet Tracer
      Terminal=false
      Type=Application
 
-使用wq!来保存并退出。
+使用wq!来保存并退出vim。
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/pkt_012.png)
+![](http://1102047360.rsc.cdn77.org/wp-content/uploads/2015/01/pkt_012.png)
 
 ### 步骤 5： 运行Packet Tracer ###
 
@@ -168,9 +158,9 @@ Linux中安装Cisco Packet Tracer
 
 好了，我们已经成功将Packet Tracer安装到Linux中。上述安装步骤适用于所有基于Debian的Linux发行版。
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/pkt_013.png)
+![](http://1102047360.rsc.cdn77.org/wp-content/uploads/2015/01/pkt_013.png)
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/pkt_014.png)
+![](http://1102047360.rsc.cdn77.org/wp-content/uploads/2015/01/pkt_014.png)
 
 ### 资源 ###
 
@@ -186,7 +176,7 @@ via: http://www.unixmen.com/installing-cisco-packet-tracer-linux/
 
 作者：[babin][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
