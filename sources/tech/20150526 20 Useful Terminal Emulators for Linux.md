@@ -28,7 +28,7 @@ Terminator Terminal
 
 ### 2. Tilda ###
 
-Tilda是一款漂亮的基于GTK+的下拉式终端。敲击一个键你就可以打开一个新的或隐藏着的Tilda窗口。然而，你可以添加你所选择的颜色来更改文本颜色和终端背景颜色。
+Tilda是一款漂亮的基于GTK+的下拉式终端，敲击一个键你就可以呼出一个新的或隐藏着的Tilda窗口。你也可以添加你所选择的颜色来更改文本颜色和终端背景颜色。
 
 #### Tilda的特性 ####
 
@@ -44,9 +44,9 @@ Tilda Terminal
 
 ### 3. Guake ###
 
-Guake is a python based drop-down terminal created for the GNOME Desktop Environment. It is invoked by pressing a single keystroke, and can make it hidden by pressing same keystroke again. Its design was determined from FPS (First Person Shooter) games such as Quake and one of its main target is be easy to reach.
+Guake是一款基于python的下拉式终端，诞生于GNOME桌面环境。按一个键就能调出，再按一下就能隐藏。它的设计构思来源于FPS (第一人称射击)  游戏例如Quake，其目标显而易见。
 
-Guake is very much similar to Yakuaka and Tilda, but it’s an experiment to mix the best of them into a single GTK-based program. Guake has been written in python from scratch using a little piece in C (global hotkeys stuff).
+Guake与Yakuaka和Tilda非常相似，不过它是一个集上述二者的优点于一体的基于GTK的程序。Guake完全是用Python和小片的C写成的(全局热键部分)。
 
 ![Guake Terminal](http://www.tecmint.com/wp-content/uploads/2014/01/Guake-Terminal.jpeg)
 
@@ -56,7 +56,7 @@ Guake Terminal
 
 ### 4. Yakuake ###
 
-Yakuake (Yet Another Kuake) is a KDE based drop-down terminal emulator very much similar to Guake terminal emulator in functionality. It’s design was inspired from fps consoles games such as Quake.
+Yakuake (Yet Another Kuake) 是一款基于KDE的下拉式终端仿真器，它与Guake再功能上非常相似。它的射击构思也是受FPS游戏的启发例如Quake。
 
 Yakuake is basically a KDE application, which can be easily installed on KDE desktop, but if you try to install Yakuake in GNOME desktop, it will prompt you to install huge number of dependency packages.
 
