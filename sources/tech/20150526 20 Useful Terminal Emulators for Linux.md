@@ -58,14 +58,14 @@ Guake Terminal
 
 Yakuake (Yet Another Kuake) 是一款基于KDE的下拉式终端仿真器，它与Guake再功能上非常相似。它的射击构思也是受FPS游戏的启发例如Quake。
 
-Yakuake is basically a KDE application, which can be easily installed on KDE desktop, but if you try to install Yakuake in GNOME desktop, it will prompt you to install huge number of dependency packages.
+Yakuake主要是一款KDE应用程序，它能非常轻松地安装在KDE桌面上，但是如果你试着将它安装在GNOME桌面上，你将会安装大量的依赖包。
 
 #### Yakuake的特性 ####
 
-- Fluently turn down from the top of your screen
-- Tabbed interface
-- Configurable dimensions and animation speed
-- Customizable
+- 从屏幕顶端弹回顺畅
+- 选项卡式界面
+- 可配置的尺寸和动画速度
+- 可定制
 
 ![Yakuake Terminal](http://www.tecmint.com/wp-content/uploads/2014/01/Yakuake-Terminal.jpeg)
 
@@ -75,9 +75,9 @@ Yakuake Terminal
 
 ### 5. ROXTerm ###
 
-ROXterm is yet another lightweight terminal emulator designed to provide similar features to gnome-terminal. It was originally constructed to have lesser footprints and faster start-up time by not using the Gnome libraries and by using a independent applet to bring the configuration interface (GUI), but over the time it’s role has shifted to bringing a higher range of features for power users.
+ROXterm又是一款轻量级终端仿真器，旨在提供与GNOME终端相似的特性。它原本创造出来是为了通过不使用Gnome库从而拥有更少的占用空间和更快的启动速度并使用独立的小程序来建立配置界面(GUI), 但是随着时间的流逝，它的角色就转变为给那些老牌用户带来更高一层的特性。
 
-However, it is more customizable than gnome-terminal and anticipated more at “power” users who make excessive use of terminals. It is easily integrated with GNOME desktop environment and provides features like drag & drop of items into terminal.
+然而，它比GNOME终端更加具有可制定性并且对于那些经常使用终端的老牌用户更令人期望。它能和GNOME桌面环境完美结合并在终端中提供像拖拽项目那样的特性。
 
 ![Roxterm Terminal](http://www.tecmint.com/wp-content/uploads/2014/01/Roxterm-Terminal.jpeg)
 
@@ -264,7 +264,7 @@ rxvt unicode
 
 - [rxvt-unicode][21]
 
-If you know any other capable Linux terminal emulators that I’ve not included in the above list, please do share with me using our comment section.
+如果你知道任何其它强大的Linux终端仿真器而上文未提及，欢迎在评论中与我们分享。
 
 --------------------------------------------------------------------------------
 
