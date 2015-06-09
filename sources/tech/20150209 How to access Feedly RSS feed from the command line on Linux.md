@@ -1,3 +1,4 @@
+translating by chenzhijun
 How to access Feedly RSS feed from the command line on Linux
 ================================================================================
 In case you didn't know, [Feedly][1] is one of the most popular online news aggregation services. It offers seamlessly unified news reading experience across desktops, Android and iOS devices via browser extensions and mobile apps. Feedly took on the demise of Google Reader in 2013, quickly gaining a lot of then Google Reader users. I was one of them, and Feedly has remained my default RSS reader since then.
