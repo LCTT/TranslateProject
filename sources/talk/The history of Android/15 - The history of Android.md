@@ -1,3 +1,5 @@
+alim0x translating
+
 The history of Android
 ================================================================================
 ![Gingerbread's new keyboard, text selection UI, overscroll effect, and new checkboxes.](http://cdn.arstechnica.net/wp-content/uploads/2014/02/3kb-high-over-check.png)
