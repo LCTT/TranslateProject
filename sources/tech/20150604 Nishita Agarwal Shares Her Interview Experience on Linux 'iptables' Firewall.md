@@ -1,3 +1,5 @@
+translating by wwy-hust
+
 Nishita Agarwal Shares Her Interview Experience on Linux ‘iptables’ Firewall
 ================================================================================
 Nishita Agarwal, a frequent Tecmint Visitor shared her experience (Question and Answer) with us regarding the job interview she had just given in a privately owned hosting company in Pune, India. She was asked a lot of questions on a variety of topics however she is an expert in iptables and she wanted to share those questions and their answer (she gave) related to iptables to others who may be going to give interview in near future.

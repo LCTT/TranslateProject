@@ -1,11 +1,11 @@
 在Linux中用chattr和lsattr命令管理文件和目录属性
 ================================================================================
-为了允许添加数据，防止更改或者删除等，文件和文件夹中设定了一定的控制属性。例如，你可以在关键系统文件或者文件夹中启用属性，然后没有用户，包括root，可以删除或者修改它，不允许比如dump命令等备份工具去备份一个特定的文件或者文件夹，等等。这些属性只可以在ext2，ext3或者ext4文件系统中的文件和文件夹上设定。
+为了允许添加数据，防止更改或者删除等，文件和文件夹可以设定了特定的控制属性。例如，你可以在关键的系统文件或者文件夹中启用属性，然后没有任何用户，包括root，可以删除或者修改它，比如不允许使用像dump这样的命令等备份工具去备份一个特定的文件或者文件夹，等等。这些属性只可以在ext2，ext3或者ext4文件系统中的文件和文件夹上设定。
 
 有两个命令 **lsattr** 和 **chattr** 用来管理属性。下面是常用属性的列表。
 
 注：表格代码
-<table width="482" cellspacing="0" cellpadding="4" style="height: 651px">
+<table width="482" cellspacing="0" cellpadding="4"  border="1">
 <colgroup>
 <col width="112">
 <col width="514"> </colgroup>
@@ -63,7 +63,7 @@
 <p align="justify" class="western">e (extent format)</p>
 </td>
 <td width="514">
-<p align="justify" class="western">它表明，该文件使用扩展到映射磁盘上的块</p>
+<p align="justify" class="western">它表明，该文件使用磁盘上的块的映射扩展</p>
 </td>
 </tr>
 <tr valign="top">
@@ -71,7 +71,7 @@
 <p align="justify" class="western">i (immutable)</p>
 </td>
 <td width="514">
-<p align="justify" class="western">在文件上启用这个属性时，我们不能更改，重命名或者删除这个文件</p>
+<p align="justify" class="western">在文件上启用这个属性时，我们不能更改、重命名或者删除这个文件</p>
 </td>
 </tr>
 <tr valign="top">
@@ -96,14 +96,14 @@
 chattr属性中可以使用的不同选项 ：
 
 - **-R** 递归地修改文件夹和子文件夹的属性
-- **-V** chattr命令的输出伴随版本信息
-- **-f** 压缩大部分错误信息
+- **-V** chattr命令会输出带有版本信息的冗余信息
+- **-f** 忽略大部分错误信息
 
 在chattr中用于设置或者取消属性的 **操作符**
 
-- ‘+’ 符号用来为文件和文件夹设置属性，
-- ‘-‘ 符号用来移除或者取消属性
-- ‘=’ 使它们成为文件有的唯一属性。
+- '+' 符号用来为文件和文件夹设置属性，
+- '-'  符号用来移除或者取消属性
+- '=' 使它们成为文件有的唯一属性。
 
 **chattr** 和 **lsattr** 命令的基本语法 ：
 
@@ -120,7 +120,7 @@ chattr属性中可以使用的不同选项 ：
 现在试着删除或者修改文件
 
     [root@linuxtechi ~]# rm -f dummy_data
-    rm: cannot remove ‘dummy_data’: Operation not permitted
+    rm: cannot remove 'dummy_data': Operation not permitted
     
     [root@linuxtechi ~]# echo "test" >> dummy_data
     -bash: dummy_data: Permission denied
@@ -193,7 +193,7 @@ via: http://www.linuxtechi.com/file-directory-attributes-in-linux-using-chattr-l
 
 作者：[Pradeep Kumar][a]
 译者：[ictlyh](https://github.com/ictlyh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
