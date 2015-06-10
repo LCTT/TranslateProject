@@ -1,4 +1,4 @@
-translating by xiqingongzi
+[translating by xiqingongzi]
 
 RHCSA Series: Reviewing Essential Commands & System Documentation – Part 1
 ================================================================================
