@@ -1,3 +1,5 @@
+translating by FatJoe123
+
 How to Install Percona Server on CentOS 7
 ================================================================================
 In this article we are going to learn about percona server, an opensource drop-in replacement for MySQL and also for MariaDB. The InnoDB database engine make it very attractive and a good alternative if you need performance, reliability and a cost efficient solution
