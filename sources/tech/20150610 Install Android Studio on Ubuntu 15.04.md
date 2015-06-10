@@ -1,3 +1,5 @@
+NearTan 翻译中
+
 Install Android Studio on Ubuntu 15.04
 ================================================================================
 Android Studio is the official IDE for Android application development, based on IntelliJ IDEA.
