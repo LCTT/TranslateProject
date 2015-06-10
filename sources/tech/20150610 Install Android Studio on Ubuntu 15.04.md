@@ -1,4 +1,4 @@
-NearTan 翻译中
+translating by NearTan
 
 Install Android Studio on Ubuntu 15.04
 ================================================================================
