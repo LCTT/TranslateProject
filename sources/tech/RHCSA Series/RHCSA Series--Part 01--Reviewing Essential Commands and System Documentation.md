@@ -1,3 +1,5 @@
+translating by xiqingongzi
+
 RHCSA Series: Reviewing Essential Commands & System Documentation – Part 1
 ================================================================================
 RHCSA (Red Hat Certified System Administrator) is a certification exam from Red Hat company, which provides an open source operating system and software to the enterprise community, It also provides support, training and consulting services for the organizations.
