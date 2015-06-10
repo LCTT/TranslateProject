@@ -93,19 +93,24 @@ Move / Rename the MariaDB files in **/var/lib/mysql**, it's a safer and faster t
 ### 4.使用二进制包安装Percona ###
 ### 4. Installing Percona binaries ###
 
-你可以在众多Percona安装方法中选择，在CentOS中使用Yum或者RPM包安装通常是更好的选择
+你可以在众多Percona安装方法中选择，在CentOS中使用Yum或者RPM包安装通常是更好的主意，所以这些是本文介绍的方式，下载源文件编译后安装在本文中并没有介绍。
+
 You can choose from a number of options on how to install Percona, in a CentOS system it's generally a better idea to use yum or RPM, so these are the way that are covered by this article, compiling and install from sources are not covered by this article.
 
+从Yum仓库中安装:
 Installing from Yum repository:
 
+首先，你需要用这个设置的Percona的Yum库:
 First you need to set the Percona's Yum repository with this:
 
     yum install http://www.percona.com/downloads/percona-release/redhat/0.1-3/percona-release-0.1-3.noarch.rpm
 
+接下来安装Percona:
 And then install Percona with:
 
     yum install Percona-Server-client-56 Percona-Server-server-56
 
+上面的命令安装Percona的服务器和客户端，共享库，可能需要Perl和Perl模块，如DBI::MySQL的，如果尚未安装，以及其他依赖的需要。
 The above command installs Percona server and clients, shared libraries, possibly Perl and perl modules such as DBI::MySQL, if that are not already installed, and also other dependencies as needed.
 
 Installing from RPM package:
