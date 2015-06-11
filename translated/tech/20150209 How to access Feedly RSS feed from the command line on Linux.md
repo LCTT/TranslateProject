@@ -1,7 +1,7 @@
-如何在Linux命令行下获取Feedly上的RSS新闻
+如何从Linux命令行获取基于RSS协议的Feedly新闻信息
 ================================================================================
 
-也许的先告诉你一声，Feedly 是世界上最流行的在线新闻聚合服务之一；它提供了无缝地统一的新闻阅读体验，你可以使用电脑的浏览器扩展，Android 和 iOS 设备上的移动应用程序等来体验Feedly。Feedly 在2013年Google Reader 停用后，迅速的获得了一大批Google Reader的用户。我就是他们之中的一位。从这以后，Feedly就一直是我的默认RSS（简易信息聚合）阅读器
+也许你并不知道，Feedly --世界上最流行的在线新闻聚合服务之一；它提供了无缝地统一的新闻阅读体验，你可以使用电脑的浏览器扩展，Android 和 iOS 设备上的移动应用程序等来体验Feedly。Feedly 在2013年Google Reader 停用后，迅速的获得了一大批Google Reader的用户。我就是他们之中的一位。从这以后，Feedly就一直是我的默认RSS（简易信息聚合）阅读器
 除了我非常喜欢的Feedly浏览器扩展和手机上的Feedly程序，这里还有一种途径来获取Feedly：Linux command-line (Linux命令行)
 对的。你可以用命令行来获取Feedly上的新闻概要。
 
@@ -112,7 +112,7 @@ Arch Linux
 via: http://xmodulo.com/feedly-rss-feed-command-line-linux.html
 
 作者：[Dan Nanni][a]
-译者：[译者ID](https://github.com/chenzhijun)
+译者：[chenzhijun](https://github.com/chenzhijun)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
