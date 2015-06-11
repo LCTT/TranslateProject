@@ -1,3 +1,4 @@
+translating wi-cuckoo
 3 Open Source Python Shells
 ================================================================================
 Python is a high-level, general-purpose, structured, powerful, open source programming language that is used for a wide variety of programming tasks. It features a fully dynamic type system and automatic memory management, similar to that of Scheme, Ruby, Perl, and Tcl, avoiding many of the complexities and overheads of compiled languages. The language was created by Guido van Rossum in 1991, and continues to grow in popularity.
