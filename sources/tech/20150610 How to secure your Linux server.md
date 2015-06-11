@@ -1,3 +1,4 @@
+[translating by KayGuoWhu]
 How to secure your Linux server
 ================================================================================
 > A server is made up of so many different components that makes it hard to offer one solution for everyone's needs. This articles tries to cover some useful tips and tricks to help you keep your server and users protected.
