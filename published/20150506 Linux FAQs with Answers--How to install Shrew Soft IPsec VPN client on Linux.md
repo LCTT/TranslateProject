@@ -1,9 +1,9 @@
-Linux有问必答——Linux上如何安装Shrew Soft IPsec VPN
+Linux有问必答：Linux上如何安装Shrew Soft IPsec VPN
 ================================================================================
-> **Question**: I need to connect to an IPSec VPN gateway. For that, I'm trying to use Shrew Soft VPN client, which is available for free. How can I install Shrew Soft VPN client on [insert your Linux distro]? 
-> **问题**：我需要连接到一个IPSec VPN网关，鉴于此，我尝试使用Shrew Soft VPN客户端，它是一个免费版本。我怎样才能安装Shrew Soft VPN客户端到[插入你的Linux发行版]?
 
-市面上有许多商业VPN网关，同时附带有他们自己的专有VPN客户端软件。虽然也有许多开源的VPN服务器/客户端备选方案，但它们通常缺乏复杂的IPsec支持，比如互联网密钥交换（IKE），这是一个标准的IPsec协议，用于加固VPN密钥交换和验证安全。Shrew Soft VPN是一个免费的IPsec VPN客户端，它支持多种验证方法、密钥交换、加密以及防火墙穿越选项。
+> **问题**：我需要连接到一个IPSec VPN网关，鉴于此，我尝试使用Shrew Soft VPN客户端，它是一个免费版本。我怎样才能安装Shrew Soft VPN客户端到[某个Linux发行版]?
+
+市面上有许多商业VPN网关，同时附带有他们自己的专有VPN客户端软件。虽然也有许多开源的VPN服务器/客户端备选方案，但它们通常缺乏复杂的IPsec支持，比如互联网密钥交换（IKE），这是一个标准的IPsec协议，用于加固VPN密钥交换和验证安全。Shrew Soft VPN是一个免费的IPsec VPN客户端，它支持多种验证方法、密钥交换、加密以及防火墙穿透选项。
 
 下面介绍如何安装Shrew Soft VPN客户端到Linux平台。
 
@@ -90,7 +90,7 @@ via: http://ask.xmodulo.com/install-shrew-soft-ipsec-vpn-client-linux.html
 
 作者：[Dan Nanni][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 

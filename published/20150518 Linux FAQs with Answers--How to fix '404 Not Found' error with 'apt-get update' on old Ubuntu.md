@@ -1,4 +1,4 @@
-Linux有问必答——在旧的Ubuntu上如何修复“apt-get update”的“404 Not Found”错误
+Linux有问必答：如何更新过期版本的Ubuntu
 ================================================================================
 > **问题**： 我的PC上安装了旧版的Ubuntu 13.04（急切的浣熊）。当我在上面运行“sudo apt-get update”时，它丢给了我一大堆“404 Not Found”错误，结果是我不能使用apt-get或aptitude来安装或更新任何软件包了。由于该错误的原因，我甚至不能将它升级到更新的版本。我怎样才能修复这个问题啊？
 > 
@@ -20,7 +20,7 @@ Linux有问必答——在旧的Ubuntu上如何修复“apt-get update”的“4
 
 这里，通过切换到旧版本仓库提供了一个快速修复“404 Not Found”错误的便捷方式。
 
-首先，使用旧版本仓库替换main/security仓库，就像下面这样。
+首先，使用old-releases仓库替换main/security仓库，就像下面这样。
 
     $ sudo sed -i -r 's/([a-z]{2}\.)?archive.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
     $ sudo sed -i -r 's/security.ubuntu.com/old-releases.ubuntu.com/g' /etc/apt/sources.list
@@ -38,7 +38,7 @@ via: http://ask.xmodulo.com/404-not-found-error-apt-get-update-ubuntu.html
 
 作者：[Dan Nanni][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 

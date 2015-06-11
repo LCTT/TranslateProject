@@ -1,3 +1,4 @@
+wyangsun翻译中
 How to Create Own Online Shopping Store Using “OpenCart” in Linux
 ================================================================================
 In the Internet world we are doing everything using a computer. Electronic Commerce aka e-commerce is one one of them. E-Commerce is nothing new and it started in the early days of ARPANET, where ARPANET used to arrange sale between students of Massachusetts Institute of Technology and Stanford Artificial Intelligence Laboratory.

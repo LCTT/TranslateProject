@@ -1,8 +1,8 @@
-修复Ubuntu 14.04中各种更新错误
+Ubuntu 更新错误修复大全
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/09/Fix_Ubuntu_Update_Error.jpeg)
 
-在Ubuntu更新中，谁没有碰见个错误？在Ubuntu和其它基于Ubuntu的Linux发行版中，更新错误很常见，也为数不少。这些错误出现的原因多种多样，修复起来也很简单。在本文中，我们将见到Ubuntu中各种类型频繁发生的更新错误以及它们的修复方法。
+在Ubuntu更新中，谁没有碰见个错误？在Ubuntu和其它基于Ubuntu的Linux发行版中，更新错误是一个共性的错误，也经常发生。这些错误出现的原因多种多样，修复起来也很简单。在本文中，我们将见到Ubuntu中各种类型频繁发生的更新错误以及它们的修复方法。
 
 ### 合并列表问题 ###
 
@@ -38,7 +38,7 @@
 
 下载仓库信息失败的另外一种类型是由于PPA过时导致的。通常，当你运行更新管理器，并看到这样的错误时：
 
-![](Th other type of failed to download repository information error is because of outdated PPA. Usually, when you run Update Manager and see an error like this:)
+![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2013/04/Failed-to-download-repository-information-Ubuntu-13.04.png)
 
 你可以运行sudo apt-get update来查看哪个PPA更新失败，你可以把它从源列表中删除。你可以按照这个截图指南来[修复下载仓库信息失败错误][3]。
 
@@ -48,7 +48,7 @@
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/09/Ubuntu_Update_error.jpeg)
 
-该错误很容易修复，只需修改软件源为主服务器即可。转到软件和更新，在那里你可以修改下载服务器为主服务器：
+该错误很容易修复，只需修改软件源为主服务器即可。转到“软件和更新”，在那里你可以修改下载服务器为主服务器：
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2014/09/Change_server_Ubuntu.jpeg)
 
@@ -78,7 +78,7 @@
 
 你可以在这里查找到更多详细内容[加载共享库时发生错误][6]。
 
-### 无法获取锁/var/cache/apt/archives/lock ###
+### 无法获取锁 /var/cache/apt/archives/lock ###
 
 在另一个程序在使用APT时，会发生该错误。假定你正在Ubuntu软件中心安装某个东西，然后你又试着在终端中运行apt。
 
@@ -135,7 +135,7 @@ via: http://itsfoss.com/fix-update-errors-ubuntu-1404/
 
 作者：[Abhishek][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
