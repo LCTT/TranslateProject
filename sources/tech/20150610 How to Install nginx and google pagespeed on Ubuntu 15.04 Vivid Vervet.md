@@ -1,3 +1,5 @@
+translating----geekpi
+
 How to Install nginx and google pagespeed on Ubuntu 15.04 (Vivid Vervet)
 ================================================================================
 Nginx (engine-x) is a open source and high performance HTTP server, reverse proxy and IMAP/POP3 proxy server. The outstanding features of Nginx are: stability, rich feature set, simple configuration and low resource consumption. Nginx is being used by some of the largest websites on the internet and is gaining more and more popularity in the webmaster community. This tutorials shows how to build a nginx .deb package for Ubuntu 15.04 from source that has Google pagespeed module compiled in.
