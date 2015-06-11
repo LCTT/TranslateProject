@@ -1,9 +1,26 @@
 translating by chenzhijun
 How to access Feedly RSS feed from the command line on Linux
 ================================================================================
-In case you didn't know, [Feedly][1] is one of the most popular online news aggregation services. It offers seamlessly unified news reading experience across desktops, Android and iOS devices via browser extensions and mobile apps. Feedly took on the demise of Google Reader in 2013, quickly gaining a lot of then Google Reader users. I was one of them, and Feedly has remained my default RSS reader since then.
+In case you didn't know, [Feedly][1] is one of the most popular online news aggregation services.
+也许的先告诉你一声，Feedly 是世界上最流行的在线新闻聚合服务之一；
 
-While I appreciate the sleek interface of Feedly's browser extensions and mobile apps, there is yet another way to access Feedly: Linux command-line. That's right. You can access Feedly's news feed from the command line. Sounds geeky? Well, at least for system admins who live on headless servers, this can be pretty useful.
+It offers seamlessly unified news reading experience across desktops, Android and iOS devices via browser extensions and mobile apps.
+它提供了无缝地统一的新闻阅读体验，你可以使用电脑的浏览器扩展，Android 和 iOS 设备上的移动应用程序等来体验Feedly。
+
+Feedly took on the demise of Google Reader in 2013, quickly gaining a lot of then Google Reader users. I was one of them, and Feedly has remained my default RSS reader since then.
+Feedly 在2013年Google Reader 停用后，迅速的获得了一大批Google Reader的用户。我就是他们之中的一位。从这以后，Feedly就一直是我的默认RSS（简易信息聚合）阅读器
+
+While I appreciate the sleek interface of Feedly's browser extensions and mobile apps, there is yet another way to access Feedly: Linux command-line.
+除了我非常喜欢的Feedly浏览器扩展和手机上的Feedly程序，这里还有一种途径来获取Feedly：Linux command-line (Linux命令行)
+
+That's right. 
+对的。
+
+You can access Feedly's news feed from the command line. 
+你可以用命令行来获取Feedly上的新闻概要
+
+Sounds geeky? Well, at least for system admins who live on headless servers, this can be pretty useful.
+
 
 Enter [Feednix][2]. This open-source software is a Feedly's unofficial command-line client written in C++. It allows you to browse Feedly's news feed in ncurses-based terminal interface. By default, Feednix is linked with a console-based browser called w3m to allow you to read articles within a terminal environment. You can choose to read from your favorite web browser though.
 
