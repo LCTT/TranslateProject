@@ -87,7 +87,7 @@ Roxterm Terminal
 
 ### 6. Eterm ###
 
-Eterm is a lightest color terminal emulator designed as a replacement for xterm. It is developed with a Freedom of Choice ideology, leaving as much power, flexibility, and freedom as workable in the hands of the user.
+Eterm是最轻量级的一款彩色终端仿真器，是作为xterm的替代品而被设计出来。它是以一种选择自由的思想、避免臃肿、灵活性和自由在用户手中是触手可及的理念而开发出来的。
 
 ![Eterm Terminal](http://www.tecmint.com/wp-content/uploads/2014/01/Eterm-Terminal.jpeg)
 
@@ -97,7 +97,7 @@ Eterm Terminal
 
 ### 7. Rxvt ###
 
-Rxvt stands for extended virtual terminal is a color terminal emulator application for Linux intended as an xterm replacement for power users who don’t need to have a feature such as Tektronix 4014 emulation and toolkit-style configurability.
+代表着扩展虚拟终端的Rxvt是一款彩色终端仿真器，为那些不需要一些特性例如Tektronix 4014仿真和toolkit-style可配置性的老牌用户而生的xterm的替代品。
 
 ![Rxvt Terminal](http://www.tecmint.com/wp-content/uploads/2014/01/Rxvt-Terminal.jpeg)
 
@@ -118,6 +118,7 @@ wterm Terminal
 ### 9. LXTerminal ###
 
 LXTerminal is a default VTE-based terminal emulator for LXDE (Lightweight X Desktop Environment) without any unnecessary dependency. The terminal has got some nice features such as.
+
 LXTerminal Features
 
 - Multiple tabs support
@@ -133,19 +134,20 @@ lxterminal Terminal
 
 ### 10. Konsole ###
 
-Konsole is yet another powerful KDE based free terminal emulator was originally created by Lars Doelle.
-Konsole Features
+Konsole是另一款强大的基于KDE的免费终端仿真器，最初由Lars Doelle创造。
 
-- Multiple Tabbed terminals.
-- Translucent backgrounds.
-- Support for Split-view mode.
-- Directory and SSH bookmarking.
-- Customizable color schemes.
-- Customizable key bindings.
-- Notification alerts about activity in a terminal.
-- Incremental search
-- Support for Dolphin file manager
-- Export of output in plain text or HTML format.
+Konsole的特性
+
+- 多标签式终端
+- 半透明背景
+- 支持拆分视图模式
+- 目录和SSH书签化
+- 可定制的颜色设计
+- 可定制的按键绑定
+- 终端中的活动通知警告
+- 增量搜索
+- 支持Dolphin文件管理器
+- 普通文本和HTML格式输出出口
 
 ![Konsole Terminal](http://www.tecmint.com/wp-content/uploads/2014/01/Konsole-Terminal.jpeg)
 
