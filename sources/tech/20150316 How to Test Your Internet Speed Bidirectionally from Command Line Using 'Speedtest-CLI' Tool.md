@@ -1,4 +1,4 @@
-translating by NearTan
+translating by NearTan 
 
 How to Test Your Internet Speed Bidirectionally from Command Line Using ‘Speedtest-CLI’ Tool
 ================================================================================
