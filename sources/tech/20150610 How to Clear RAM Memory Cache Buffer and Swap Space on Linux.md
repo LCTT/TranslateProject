@@ -1,3 +1,4 @@
+translation by strugglingyouth
 How to Clear RAM Memory Cache, Buffer and Swap Space on Linux
 ================================================================================
 Like any other operating system, GNU/Linux has implemented a memory management efficiently and even more than that. But if any process is eating away your memory and you want to clear it, Linux provides a way to flush or clear ram cache.
