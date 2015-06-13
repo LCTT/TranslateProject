@@ -1,3 +1,5 @@
+translating---geekpi
+
 watch - Repeat Linux / Unix Commands Regular Intervals
 ================================================================================
 A server administrator needs to maintain the system and keep it updated and safe. A number of intrusion attempts may happen every day. There are some other activities that maintain their log. These logs are updated regularly. In order to check these updates, the commands are executed repeatedly. For example, for simply reading a file, commands like head, tail, cat etc are used. These commands need to be executed repeatedly. The watch command can be used to repeat a command at regular intervals.
