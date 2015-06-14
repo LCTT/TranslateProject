@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How to make remote incremental backup of LUKS-encrypted disk/partition
 ================================================================================
 Some of us have our hard drives at home or on a [VPS][1] encrypted by [Linux Unified Key Setup (LUKS)][2] for security reasons, and these drives can quickly grow to tens or hundreds of GBs in size. So while we enjoy the security of our LUKS device, we may start to think about a possible remote backup solution. For secure off-site backup, we will need something that operates at the block level of the encrypted LUKS device, and not at the un-encrypted file system level. So in the end we find ourselves in a situation where we will need to transfer the entire LUKS device (let's say 200GB for example) each time we want to make a backup. Clearly not feasible. How can we deal with this problem?
