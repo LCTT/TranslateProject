@@ -1,14 +1,14 @@
-45 个用于 ‘Suse‘ Linux 包管理的 Zypper 命令
+用于 ‘Suse‘ Linux 包管理的 Zypper 命令大全
 ======================================================================
-SUSE（ Software and System Entwicklung，即软件和系统开发。其中‘entwicklung‘是德语，意为开发）Linux是 Novell 公司在 Linux 内核基础上发布的操作系统。SUSE Linux 有两个发行分支。其中之一名为 OpenSUSE，这是一款自由而且免费的操作系统。该系统由开源社区开发维护，支持一些最新版本的应用软件，其最新的稳定版本为 13.2。
+SUSE（ Software and System Entwicklung，即软件和系统开发。其中‘entwicklung‘是德语，意为开发）Linux 是由 Novell 公司在 Linux 内核基础上建立的操作系统。SUSE Linux 有两个发行分支。其中之一名为 openSUSE，这是一款自由而且免费的操作系统 （free as in speech as well as free as in wine）。该系统由开源社区开发维护，支持一些最新版本的应用软件，其最新的稳定版本为 13.2。
       
-另外一个分支是SUSE Linux 企业版。该分支是一个为企业及商业化产品设计的 Linux 发行版，包含了大量的企业应用以及适用于商业产品生产环境的特性。其最新的稳定版本为 12。
+另外一个分支是 SUSE Linux 企业版。该分支是一个为企业及商业化产品设计的 Linux 发行版，包含了大量的企业应用以及适用于商业产品生产环境的特性。其最新的稳定版本为 12。
        
 以下的链接包含了安装企业版 SUSE Linux 服务器的详细信息。
 
 - [如何安装企业版 SUSE Linux 12][1]
 
-Zypper 和 Yast 是 SUSE Linux 平台上的软件包管理工具，他们的底层使用了 RPM（译者注：RPM 最初指  Redhat Pacakge Manager ，现普遍解释为递归短语 RPM Package Manager 的缩写）。
+Zypper 和 Yast 是 SUSE Linux 平台上的软件包管理工具，他们的底层使用了 RPM（LCTT 译者注：RPM 最初指  Redhat Pacakge Manager ，现普遍解释为递归短语 RPM Package Manager 的缩写）。
 
 Yast（Yet another Setup Tool ）是 OpenSUSE 以及企业版 SUSE 上用于系统管理、设置和配置的工具。
 
@@ -16,21 +16,21 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
 本文将介绍实际应用中常见的一些Zypper命令。这些命令用来进行安装、更新、删除等任何软件包管理器所能够胜任的工作。
 
-**重要** : 切记所有的这些指令都将在系统全局范围内产生影响，所以必须以 root 身份执行，否则命令将失败。
+**重要** : 切记所有的这些命令都将在系统全局范围内产生影响，所以必须以 root 身份执行，否则命令将失败。
 
 ### 获取基本的 Zypper 帮助信息 ###
 
-1. 不带任何选项的执行 zypper, 将输出该命令的全局选项以及子命令列表（译者注：全局选项，global option，控制台命令的输入分为可选参数和位置参数两大类。按照习惯，一般可选参数称为选项'option'，而位置参数称为参数 'argument'）。
+1. 不带任何选项的执行 zypper, 将输出该命令的全局选项以及子命令列表（LCTT 译者注：全局选项，global option，控制台命令的输入分为可选参数和位置参数两大类。按照习惯，一般可选参数称为选项'option'，而位置参数称为参数 'argument'）。
 
-    <pre><code>%>  zypper
+    <pre><code>#  zypper
         Usage:
         zypper [--global-options]</code></pre>
 
 2. 获取一个具体的子命令的帮助信息，比如 'in' (install)，可以执行下面的命令
 
-    <pre><code>%> zypper help in</code></pre>
+    <pre><code># zypper help in</code></pre>
     或者
-    <pre><code>%> zypper help install
+    <pre><code># zypper help install
     install (in) [options] {capability | rpm_file_uri}
     
     Install packages with specified capabilities or RPM files with specified
@@ -96,7 +96,7 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
 4. 获取一个模式包的信息（以 lamp_server 为例）。
 
-    <pre><code>%> zypper info -t pattern lamp_server
+    <pre><code># zypper info -t pattern lamp_server
     
     Loading repository data...
     Reading installed packages...
@@ -136,9 +136,9 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
 5. 开启一个Zypper Shell 的会话。
 
-    <pre><code> %>zypper shell </code></pre>
+    <pre><code># zypper shell </code></pre>
     或者
-    <pre><code> %>zypper sh </code></pre>
+    <pre><code># zypper sh </code></pre>
     
     <pre><code>zypper> help
       Usage:
@@ -151,9 +151,9 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
 6. 使用 'zypper repos' 或者 'zypper lr' 来列举所有已定以的软件库。
 
-    <pre><code>%> zypper repos</code></pre>
+    <pre><code># zypper repos</code></pre>
     或者
-    <pre><code>%> zypper lr
+    <pre><code># zypper lr
       | Alias                     | Name                               | Enabled | Refresh
     --+---------------------------+------------------------------------+---------+--------
     1 | openSUSE-13.2-0           | openSUSE-13.2-0                    | Yes     | No
@@ -183,7 +183,7 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
 8. 根据优先级列举软件库。
 
-    <pre><code>%> zypper lr -P
+    <pre><code># zypper lr -P
       | Alias                     | Name                               | Enabled | Refresh | Priority
     --+---------------------------+------------------------------------+---------+---------+---------
     1 | openSUSE-13.2-0           | openSUSE-13.2-0                    | Yes     | No      |   99
@@ -200,9 +200,9 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
 9. 使用 'zypper refresh' or 'zypper ref' 来刷新 zypper 软件库。
 
-    <pre><code>%> zypper refresh </code></pre>
+    <pre><code># zypper refresh </code></pre>
     或者    
-    <pre><code>%> zypper ref
+    <pre><code># zypper ref
     Repository 'openSUSE-13.2-0' is up to date.
     Repository 'openSUSE-13.2-Debug' is up to date.
     Repository 'openSUSE-13.2-Non-Oss' is up to date.
@@ -213,13 +213,13 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
 10. 刷新一个指定的软件库（以 'repo-non-oss' 为例 ）。
 
-    <pre><code>%> zypper refresh repo-non-oss
+    <pre><code># zypper refresh repo-non-oss
     Repository 'openSUSE-13.2-Non-Oss' is up to date.
     Specified repositories have been refreshed. </code></pre>
 
 11. 强制更新一个软件库（以 'repo-non-oss' 为例 ）。
 
-    <pre><code>%> zypper ref -f repo-non-oss 
+    <pre><code># zypper ref -f repo-non-oss 
     Forcing raw metadata refresh
     Retrieving repository 'openSUSE-13.2-Non-Oss' metadata ............................................................[done]
     Forcing building of repository cache
@@ -230,9 +230,9 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
 本文中我们使用‘zypper modifyrepo‘ 或者 ‘zypper mr‘ 来关闭或者开启 zypper 软件库。
 
-12. 在关闭一个软件库之前，我们需要知道在 zypper中，每一个软件库有一个唯一的标示数字与之关联，该数字用于打开或者关闭与之相联系的软件库。假设我们需要关闭 'repo-oss' 软件库，那么我们可以通过以下的法来获得该软件库的标志数字。
+12. 在关闭一个软件库之前，我们需要知道在 zypper 中，每一个软件库有一个唯一的标示数字与之关联，该数字用于打开或者关闭与之相联系的软件库。假设我们需要关闭 'repo-oss' 软件库，那么我们可以通过以下的法来获得该软件库的标志数字。
 
-    <pre><code>%> zypper lr
+    <pre><code># zypper lr
       | Alias                     | Name                               | Enabled | Refresh
     --+---------------------------+------------------------------------+---------+--------
     1 | openSUSE-13.2-0           | openSUSE-13.2-0                    | Yes     | No
@@ -246,23 +246,23 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
     9 | repo-update-non-oss       | openSUSE-13.2-Update-Non-Oss       | Yes     | Yes</code></pre>    
 从以上输出的列表中我们可以看到 'repo-oss' 库的标示数字是 6，因此通过以下的命令来关闭该库。
 
-    <pre><code>%> zypper mr -d 6
+    <pre><code># zypper mr -d 6
     Repository 'repo-oss' has been successfully disabled.</code></pre>
 
 13. 如果需要再次开启软件库 ‘repo-oss‘, 接上例，与之相关联的标示数字为 6。
 
-    <pre><code>%> zypper mr -e 6
+    <pre><code># zypper mr -e 6
     Repository 'repo-oss' has been successfully enabled.</code></pre>
 
 14. 针对某一个软件库（以 'repo-non-oss' 为例 ）开启自动刷新( auto-refresh )和 rpm 缓存，并设置该软件库的优先级，比如85。
 
-    <pre><code>%> zypper mr -rk -p 85 repo-non-oss
+    <pre><code># zypper mr -rk -p 85 repo-non-oss
     Repository 'repo-non-oss' priority has been left unchanged (85)
     Nothing to change for repository 'repo-non-oss'.</code></pre>
 
 15. 对所有的软件库关闭 rpm 文件缓存。
 
-    <pre><code>%> zypper mr -Ka
+    <pre><code># zypper mr -Ka
     RPM files caching has been disabled for repository 'openSUSE-13.2-0'.
     RPM files caching has been disabled for repository 'repo-debug'.
     RPM files caching has been disabled for repository 'repo-debug-update'.
@@ -274,7 +274,7 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
     RPM files caching has been disabled for repository 'repo-update-non-oss'.</pre></code>
 
 16. 对所有的软件库开启 rpm 文件缓存。
-    <pre><code> zypper mr -ka
+    <pre><code># zypper mr -ka
     RPM files caching has been enabled for repository 'openSUSE-13.2-0'.
     RPM files caching has been enabled for repository 'repo-debug'.
     RPM files caching has been enabled for repository 'repo-debug-update'.
@@ -285,8 +285,8 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
     RPM files caching has been enabled for repository 'repo-update'.
     RPM files caching has been enabled for repository 'repo-update-non-oss'.</code></pre>
 
-17. 关闭远程库的rpm 文件缓存
-    <pre><code>%> zypper mr -Kt
+17. 关闭远程库的 rpm 文件缓存
+    <pre><code># zypper mr -Kt
     RPM files caching has been disabled for repository 'repo-debug'.
     RPM files caching has been disabled for repository 'repo-debug-update'.
     RPM files caching has been disabled for repository 'repo-debug-update-non-oss'.
@@ -297,7 +297,7 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
     RPM files caching has been disabled for repository 'repo-update-non-oss'.</code></pre>
 
 18. 开启远程软件库的 rpm 文件缓存。
-    <pre><code>%> zypper mr -kt
+    <pre><code># zypper mr -kt
     RPM files caching has been enabled for repository 'repo-debug'.
     RPM files caching has been enabled for repository 'repo-debug-update'.
     RPM files caching has been enabled for repository 'repo-debug-update-non-oss'.
@@ -313,7 +313,7 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
 19. 增加一个新的软件库（ 以 “http://download.opensuse.org/update/12.3/” 为例 ）。
 
-    <pre><code>%>  zypper ar http://download.opensuse.org/update/11.1/ update
+    <pre><code># zypper ar http://download.opensuse.org/update/11.1/ update
     Adding repository 'update' .............................................................................................................................................................[done]
     Repository 'update' successfully added
     Enabled     : Yes
@@ -323,14 +323,14 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
 20. 更改一个软件库的名字，这将仅仅改变软件库的别名。 命令 'zypper namerepo' 或者 'zypperr nr' 可以胜任此工作。例如更改标示数字为10的软件库的名字为 'upd8'，或者说将标示数字为10的软件库的别名改为 'upd8'，可以使用下面的命令。
 
-    <pre><code>%> zypper nr 10 upd8
+    <pre><code># zypper nr 10 upd8
     Repository 'update' renamed to 'upd8'.</code></pre>
 
 #### 删除软件库 ####
 
 21. 删除一个软件库。要从系统删除一个软件库可以使 'zypper removerepo' 或者 'zypper rr'。例如以下的命令可以删除软件库 'upd8'
 
-    <pre><code>%> zypper rr upd8
+    <pre><code># zypper rr upd8
     # Removing repository 'upd8' .........................................................................................[done]
     Repository 'upd8' has been removed.</code></pre>
 
@@ -339,7 +339,8 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 #### 用 zypper 安装一个软件包 ####
 
 22. 在 zypper 中，我们可以通过软件包的功能名称来安装一个软件包。以 Firefox 为例，以下的命令可以用来安装该软件包。
-    <pre><code>%> zypper in MozillaFirefox
+
+    <pre><code># zypper in MozillaFirefox
     Loading repository data...
     Reading installed packages...
     Resolving package dependencies...
@@ -371,7 +372,8 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
     Retrieving package sound-theme-freedesktop-0.8-7.1.2.noarch                                                                                            (3/128), 372.6 KiB (460.3 KiB unpacked) </code></pre>
 
 23. 安装指定版本号的软件包，(以 gcc 5.1 为例)。
-    <pre><code> %>zypper in 'gcc<5.1'
+
+    <pre><code># zypper in 'gcc<5.1'
     Loading repository data...
     Reading installed packages...
     Resolving package dependencies...
@@ -385,7 +387,7 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
 24. 为特定的CPU架构安装软件包（以兼容 i586 的 gcc 为例）。
 
-    <pre><code>%> zypper in gcc.i586
+    <pre><code># zypper in gcc.i586
     Loading repository data...
     Reading installed packages...
     Resolving package dependencies...
@@ -403,7 +405,7 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
  
 25. 为特定的CPU架构安装指定版本号的软件包（以兼容 i586 且版本低于5.1的 gcc 为例）
 
-    <pre><code>%> zypper in 'gcc.i586<5.1'
+    <pre><code># zypper in 'gcc.i586<5.1'
     Loading repository data...
     Reading installed packages...
     Resolving package dependencies...
@@ -419,7 +421,8 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
     In cache libgomp1-gcc49-4.9.0+r211729-2.1.7.x86_64.rpm                                             (3/13),  41.1 KiB ( 90.7 KiB unpacked) </code></pre>
 
 26. 从指定的软件库里面安装一个软件包，例如从 amarok 中安装 libxine。
-    <pre><code>%> zypper in amarok upd:libxine1
+
+    <pre><code># zypper in amarok upd:libxine1
     Loading repository data...
     Reading installed packages...
     Resolving package dependencies...
@@ -431,7 +434,7 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
 27. 通过指定软件包的名字安装软件包。
 
-    <pre><code>%> zypper in -n git
+    <pre><code># zypper in -n git
     Loading repository data...
     Reading installed packages...
     Resolving package dependencies...
@@ -452,7 +455,8 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
     Continue? [y/n/? shows all options] (y): y </code></pre>
 
 28. 通过通配符来安装软件包，例如，安装所有 php5 的软件包。
-    <pre><code>%> zypper in php5*
+
+    <pre><code># zypper in php5*
     Loading repository data...
     Reading installed packages...
     Resolving package dependencies...
@@ -484,9 +488,9 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
       do not install php5-pear-Horde_Pdf-2.0.1-6.1.3.noarch
     ....</code></pre>
 
-29. 使用模式名称（模式名称是一类软件包的名字）来批量安装软件包
+29. 使用模式名称（模式名称是一类软件包的名字）来批量安装软件包。
 
-    <pre><code>%> zypper in -t pattern lamp_server
+    <pre><code># zypper in -t pattern lamp_server
     ading repository data...
     Reading installed packages...
     Resolving package dependencies...
@@ -506,7 +510,7 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
     Overall download size: 7.2 MiB. Already cached: 1.2 MiB  After the operation, additional 34.7 MiB will be used.
     Continue? [y/n/? shows all options] (y): </code></pre>
 
-30. 使用一行命令安转一个软件包同时卸载另一个软件包，例如在安装 nano 的同时卸载 vi
+30. 使用一行命令安装一个软件包同时卸载另一个软件包，例如在安装 nano 的同时卸载 vi
 
     <pre><code># zypper in nano -vi
     Loading repository data...
@@ -530,7 +534,7 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
 31. 使用 zypper 安装 rpm 软件包。
 
-    <pre><code>%> zypper in teamviewer*.rpm
+    <pre><code># zypper in teamviewer*.rpm
     Loading repository data...
     Reading installed packages...
     Resolving package dependencies...
@@ -552,9 +556,9 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
 32. 命令 ‘zypper remove‘ 和 ‘zypper rm‘ 用于卸载软件包。例如卸载 apache2:
 
-    <pre><code>%> zypper remove apache2 </code></pre>
+    <pre><code># zypper remove apache2 </code></pre>
     或者
-    <pre><code>%> zypper rm apache2
+    <pre><code># zypper rm apache2
     Loading repository data...
     Reading installed packages...
     Resolving package dependencies...
@@ -572,9 +576,9 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
 33. 更新所有的软件包，可以使用 ‘zypper update‘ 或者 ‘zypper up‘。
 
-    <pre><code>%> zypper up </code></pre>
+    <pre><code># zypper up </code></pre>
     或者
-    <pre><code>%> zypper update
+    <pre><code># zypper update
 
     Loading repository data...
     Reading installed packages...
@@ -591,9 +595,9 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
     Nothing to do.</code></pre>
 
-35. 安装一个软件库，例如 ariadb，如果该库存在则更新之。
+35. 安装一个软件库，例如 mariadb，如果该库存在则更新之。
 
-    <pre><code>%> zypper in mariadb
+    <pre><code># zypper in mariadb
     Loading repository data...
     Reading installed packages...
     'mariadb' is already installed.
@@ -608,7 +612,7 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
 36. 安装某一个软件包的源文件及其依赖关系，例如 mariadb。
 
-    <pre><code>%> zypper si mariadb
+    <pre><code># zypper si mariadb
     Reading installed packages...
     Loading repository data...
     Resolving package dependencies...
@@ -626,7 +630,7 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
 37. 仅为某一个软件包安装源文件，例如 mariadb
 
-    <pre><code>%> zypper in -D mariadb
+    <pre><code># zypper in -D mariadb
     Loading repository data...
     Reading installed packages...
     'mariadb' is already installed.
@@ -637,7 +641,7 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
 38. 仅为某一个软件包安装依赖关系，例如 mariadb
 
-    <pre><code>%> zypper si -d mariadb
+    <pre><code># zypper si -d mariadb
     Reading installed packages...
     Loading repository data...
     Resolving package dependencies...
@@ -653,11 +657,11 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
     Overall download size: 33.7 MiB. Already cached: 129.5 KiB  After the operation, additional 144.3 MiB will be used.
     Continue? [y/n/? shows all options] (y): y</code></pre>
 
-#### Zypper in Scripts and Applications ####
+#### 在脚本和应用中调用 Zypper （非交互式） ####
 
 39. 安装一个软件包，并且在安装过程中跳过与用户的交互, 例如 mariadb。
 
-    <pre><code>%> zypper --non-interactive in mariadb
+    <pre><code># zypper --non-interactive in mariadb
     Loading repository data...
     Reading installed packages...
     'mariadb' is already installed.
@@ -668,7 +672,7 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
 40. 卸载一个软件包，并且在卸载过程中跳过与用户的交互，例如 mariadb
 
-    <pre><code>%> zypper --non-interactive rm mariadb
+    <pre><code># zypper --non-interactive rm mariadb
     Loading repository data...
     Reading installed packages...
     Resolving package dependencies...
@@ -681,18 +685,18 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
     Continue? [y/n/? shows all options] (y): y
     (1/1) Removing mariadb-10.0.13-2.6.1 .............................................................................[done] </code></pre>
 
-41. 将 zypper 输出用 XML 格式打印。
+41. 以 XML 格式显示 zypper 的输出。
 
-    <pre><code>%> zypper --xmlout
+    <pre><code># zypper --xmlout
       Usage:
     	zypper [--global-options] <command> [--command-options] [arguments]
 
       Global Options
     ....</code></pre>
 
-42. 禁止详细信息输出到屏幕。
+42. 在安装过程中禁止详细信息输出到屏幕。
 
-    <pre><code>%> zypper --quiet in mariadb
+    <pre><code># zypper --quiet in mariadb
     The following NEW package is going to be installed:
       mariadb
 
@@ -703,10 +707,11 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
 43. 在卸载过程中禁止详细信息输出到屏幕
 
-    <pre><code>%> zypper --quiet rm mariadb </code></pre>
+    <pre><code># zypper --quiet rm mariadb </code></pre>
 
 44. 自动地同意版权或者协议。
-    <pre><code>%> zypper patch --auto-agree-with-licenses
+
+    <pre><code># zypper patch --auto-agree-with-licenses
     Loading repository data...
     Reading installed packages...
     Resolving package dependencies...
@@ -717,15 +722,15 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
 45. 以下指令可以用来清理Zypper缓存。
 
-    <pre><code>%> zypper clean
+    <pre><code># zypper clean
     All repositories have been cleaned up.</code></pre>
 
-如果需要一次性地清理元数据以及软件包缓存，可以通过 -all/-a 选项来达到目的
+如果需要一次性地清理元数据以及软件包缓存，可以通过 -all 或 -a 选项来达到目的
 
-    <pre><code>%> zypper clean -a
+    <pre><code># zypper clean -a
     All repositories have been cleaned up.</code></pre>
 
-46. 查看 Zypper 的历史信息。籍由 Zypper 所有的软件包管理动作，包括安装、更新以及卸载都会在 /var/log/zypp/history中保留历史信息。可以通过 cat 来查看此文件，或者通过过滤器来筛选希望看到的信息。
+46. 查看 Zypper 的历史信息。任何通过 Zypper 进行的软件包管理动作，包括安装、更新以及卸载都会在 /var/log/zypp/history中保留历史信息。可以通过 cat 来查看此文件，或者通过过滤器来筛选希望看到的信息。
 
     <pre><code> cat /var/log/zypp/history
     2015-05-07 15:43:03|install|boost-license1_54_0|1.54.0-10.1.3|noarch||openSUSE-13.2-0|0523b909d2aae5239f9841316dafaf3a37b4f096|
@@ -742,7 +747,8 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
 #### 使用 Zypper 进行SUSE系统升级 ####
 
-47. 可以使用 Zypper 命令的 'dist-upgrade' 选项来将当前的SUSE Linux升级至最新版本。
+47. 可以使用 Zypper 命令的 'dist-upgrade' 选项来将当前的 SUSE Linux 升级至最新版本。
+
     <pre><code># zypper dist-upgrade
     You are about to do a distribution upgrade with all enabled repositories. Make sure these repositories are compatible before you continue. See 'man zypper' for more information about this command.
     Building repository 'openSUSE-13.2-0' cache .....................................................................[done]
@@ -755,11 +761,11 @@ Zypper 是软件包管理器ZYpp的命令行接口，可用于安装、删除SUS
 
 --------------------------------------------------------------------------------
 
-原文地址: http://www.tecmint.com/zypper-commands-to-manage-suse-linux-package-management/
+via: http://www.tecmint.com/zypper-commands-to-manage-suse-linux-package-management/
 
 作者：[Avishek Kumar][a]
 译者：[张博约](https://github.com/zhangboyue)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
