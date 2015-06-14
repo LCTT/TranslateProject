@@ -139,21 +139,21 @@ iptables使用的表有哪些？请简要的描述iptables使用的表以及它�
 
 > **答案** : 但愿ssh运行在22端口，那也是ssh的默认端口，我们可以在iptables中添加规则来ACCEPT ssh的tcp包（在22号端口上）。
 > 
->     # iptables -A INPUT -s -p tcp - -dport  -j ACCEPT 
+>     # iptables -A INPUT -s -p tcp --dport 22 -j ACCEPT 
 > 
 > REJECT ssh服务（22号端口）的tcp包。
 > 
->     # iptables -A INPUT -s -p tcp - -dport  -j REJECT
+>     # iptables -A INPUT -s -p tcp --dport 22 -j REJECT
 > 
 > DENY ssh服务（22号端口）的tcp包。
 > 
 >  
->     # iptables -A INPUT -s -p tcp - -dport  -j DENY
+>     # iptables -A INPUT -s -p tcp --dport 22 -j DENY
 > 
 > DROP ssh服务（22号端口）的tcp包。
 > 
 >  
->     # iptables -A INPUT -s -p tcp - -dport  -j DROP
+>     # iptables -A INPUT -s -p tcp --dport 22 -j DROP
 
 ### 13. 让我给你另一个场景，假如有一台电脑的本地IP地址是192.168.0.6。你需要封锁在21、22、23和80号端口上的连接，你会怎么做？ ###
 
