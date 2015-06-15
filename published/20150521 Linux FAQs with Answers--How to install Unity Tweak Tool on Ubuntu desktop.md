@@ -1,4 +1,4 @@
-Linux 有问必答--如何在桌面版 Ubuntu 中安装 Unity Tweak Tool
+Linux 有问必答：如何在桌面版 Ubuntu 中安装 Unity Tweak Tool
 ================================================================================
 > **问题**: 我试着给刚安装的桌面版 Ubuntu 自定制桌面。我想使用 Unity Tweak Tool。我怎样才能在 Ubuntu 上安装 Unity Tweak Tool 呢？
 
@@ -6,7 +6,7 @@ Linux 有问必答--如何在桌面版 Ubuntu 中安装 Unity Tweak Tool
 
 ![](https://farm6.staticflickr.com/5463/17684020389_25dc7f0db2_b.jpg)
 
-尽管 Unity Tweak Tool 是桌面版 Ubuntu 的重要工具，并没有在桌面版 Ubuntu 中预安装。为了能自定制 Unity 桌面，下面介绍一下如何在桌面版 Ubuntu 中安装 Unity Tweak Tool。
+尽管 Unity Tweak Tool 是桌面版 Ubuntu 的重要工具，但并没有在桌面版 Ubuntu 中预安装。为了能自定制 Unity 桌面，下面介绍一下如何在桌面版 Ubuntu 中安装 Unity Tweak Tool。
 
 ### 在 Ubuntu 13.04 或更高版本中安装 Unity Tweak Tool ###
 
@@ -34,7 +34,7 @@ via: http://ask.xmodulo.com/install-unity-tweak-tool-ubuntu-desktop.html
 
 作者：[Dan Nanni][a]
 译者：[ictlyh](https://github.com/ictlyh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 

@@ -1,4 +1,3 @@
-translating wi-cuckoo
 ​No reboot patching comes to Linux 4.0
 ================================================================================
 >  **Summary**:With the new Linux 4.0 kernel, you'll need to reboot Linux less often than ever.
