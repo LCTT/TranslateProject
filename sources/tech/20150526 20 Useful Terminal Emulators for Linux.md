@@ -157,7 +157,7 @@ Konsole Terminal
 
 ### 11. TermKit ###
 
-TermKit is a elegant terminal that aims to construct aspects of the GUI with the command line based application using WebKit rendering engine mostly used in web browsers like Google Chrome and Chromium. TermKit is originally designed for Mac and Windows, but due to TermKit fork by Floby which you can now able to install it under Linux based distributions and experience the power of TermKit.
+TermKit是一款漂亮简洁的终端，其目标是用在Google Chrome和Chromium中广泛被使用的WebKit渲染引擎在基于应用程序的命令行中构建出GUI视图。TermKit起初是为Mac和Windows设计的，但是由于TermKit被Floby给fork并做了修改，现在你可以将它安装在Linux发行版上并感受TermKit带来的魅力。
 
 ![TermKit Terminal](http://www.tecmint.com/wp-content/uploads/2014/01/TermKit-Terminal.jpeg)
 
@@ -167,7 +167,7 @@ TermKit Terminal
 
 ### 12. st ###
 
-st is a simple terminal implementation for X Window.
+st是一款简单的X Window终端实现接口。
 
 ![st terminal](http://www.tecmint.com/wp-content/uploads/2014/01/st-terminal.png)
 
@@ -177,9 +177,9 @@ st terminal
 
 ### 13. Gnome-Terminal ###
 
-GNOME terminal is a built-in terminal emulator for GNOME desktop environment developed by Havoc Pennington and others. It allow users to run commands using a real Linux shell while remaining on the on the GNOME environment. GNOME Terminal emulates the xterm terminal emulator and brings a few similar features.
+GNOME终端是一款在GNOME桌面环境下的嵌入式终端仿真器，由Havoc Pennington和其他一些人共同开发。它允许用户在GNOME环境下的同时使用一个真实的Linux shell来运行命令。GNOME终端是模拟的xterm终端仿真器并带来了一些相似的特性。
 
-The Gnome terminal supports multiple profiles, where users can able to create multiple profiles for his/her account and can customize configuration options such as fonts, colors, background image, behavior, etc. per account and define a name to each profile. It also supports mouse events, url detection, multiple tabs, etc.
+Gnome终端支持多用户，用户可以为他们的账户创建多个用户，每个用户能自定义配置选项，如字体、颜色、背景图片、行为习惯等等并能分别给它们取名。它也支持鼠标事件、url探测、多标签等。
 
 ![Gnome Terminal](http://www.tecmint.com/wp-content/uploads/2014/01/Gnome-terminal.jpg)
 
