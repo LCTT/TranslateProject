@@ -1,3 +1,4 @@
+Translating by strugglingyouth
 Extend Swap Space using Swap file in Linux
 ================================================================================
 There are some scenarios where our Linux box is running out of swap space so in that case we can extend the swap space using swap partition but due to unavailability of free partitions on the disk, we are unable to extend it.
