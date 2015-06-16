@@ -1,3 +1,4 @@
+zpl1025
 How to Manipulate Filenames Having Spaces and Special Characters in Linux
 ================================================================================
 We come across files and folders name very regularly. In most of the cases file/folder name are related to the content of the file/folder and starts with number and characters. Alpha-Numeric file name are pretty common and very widely used, but this is not the case when we have to deal with file/folder name that has special characters in them.
