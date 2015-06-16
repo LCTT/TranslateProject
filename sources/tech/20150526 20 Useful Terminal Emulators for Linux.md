@@ -189,7 +189,7 @@ Gnome Terminal
 
 ### 14. Final Term ###
 
-Final Term is a open source stylish terminal emulator that has some exciting capabilities and handy features into one single beautiful interface. It is still under development, but provides significant features such as Semantic text menus, Smart command completion, GUI terminal controls, Omnipotent keybindings, Color support and many more. The following animated screen grab demonstrates some of their features. Please click on image to view demo.
+Final Term是一款漂亮的开源终端仿真器，在这一个界面里蕴藏着一些令人激动的功能和特性。虽然它仍然有待改进，但是它提供了一些重要的特性比如Semantic文本菜单、智能的命令行实现、GUI终端控制、全能的快捷键、彩色支持等等。以下动图抓取并演示了它们的一些特性，点开来看看吧。
 
 ![FinalTerm Terminal](http://www.tecmint.com/wp-content/uploads/2014/01/FinalTerm.gif)
 
