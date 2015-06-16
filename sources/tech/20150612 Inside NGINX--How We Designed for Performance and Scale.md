@@ -1,3 +1,4 @@
+wyangsun 申领
 Inside NGINX: How We Designed for Performance & Scale
 ================================================================================
 NGINX leads the pack in web performance, and it’s all due to the way the software is designed. Whereas many web servers and application servers use a simple threaded or process-based architecture, NGINX stands out with a sophisticated event-driven architecture that enables it to scale to hundreds of thousands of concurrent connections on modern hardware.
