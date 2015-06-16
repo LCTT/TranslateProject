@@ -10,7 +10,7 @@
 
 ### 要求和安装指导 ###
 
-要构建Arc主题，你需要先安装一些包，比如autoconf、 automake、 pkg-config (对Fedora的pkgconfig)、基于Debian/Ubuntu-based发行版的libgtk-3-dev或者基于RPM的gtk3-devel、 git、 gtk2-engines-pixbuf和gtk-engine-murrine (对于Fedora则是gtk-murrine-engine)。
+要构建Arc主题，你需要先安装一些包，比如autoconf、 automake、 pkg-config (对于Fedora则是pkgconfig)、基于Debian/Ubuntu-based发行版的libgtk-3-dev或者基于RPM的gtk3-devel、 git、 gtk2-engines-pixbuf和gtk-engine-murrine (对于Fedora则是gtk-murrine-engine)。
 
 Arc主题还没有二进制包，因此你需要从git仓库中取下最新的源码并编译。这样，打开终端并运行下面的命令，一行行地，并在每行的末尾按下回车键并等待上一步完成来继续下一步。
 
