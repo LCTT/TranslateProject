@@ -199,11 +199,11 @@ FinalTerm Terminal
 
 ### 15. Terminology ###
 
-Terminology is yet another new modern terminal emulator created for the Enlightenment desktop, but also can be used in different desktop environments. It has some awesome unique features, which do not have in any other terminal emulator.
+Terminology是一款新的现代化终端仿真器，为Enlightenment桌面创造，但也能用于其它桌面环境。它有一些独一无二的棒极了的特性，这是其它终端仿真器所不具备的。
 
-Apart features, terminology offers even more things that you wouldn’t assume from a other terminal emulators, like preview thumbnails of images, videos and documents, it also allows you to see those files directly from Terminology.
+抛开这些特性，terminology甚至还提供了你无法从其它仿真器看到的东西，比如图像、视频和文档的缩略图预览，它允许你从Terminology直接就能看到那些文件。
 
-You can watch a following demonstrations video created by the Terminology developer (the video quality isn’t clear, but still it’s enough to get the idea about Terminology).
+你可以来看看Terminology的开发人员制作的小视频(视频画质不太清晰，但足以让你了解Terminology了)。
 
 <iframe width="630" height="480" frameborder="0" allowfullscreen="" src="//www.youtube.com/embed/ibPziLRGvkg"></iframe>
 
@@ -211,7 +211,7 @@ You can watch a following demonstrations video created by the Terminology develo
 
 ### 16. Xfce4 terminal ###
 
-Xfce terminal is a lightweight modern and easy to use terminal emulator specially designed for Xfce desktop environment. The latest release of xfce terminal has some new cool features such as search dialog, tab color changer, drop-down console like Guake or Yakuake and many more.
+Xfce终端是一款轻量级的现代化终端仿真器，它简单易用，为Xfce桌面环境设计。它最新的一个版本有许多新的炫酷特性比如搜索会话、标签颜色转换器、像Guake或Yakuake一样的下拉式控制台等等。
 
 ![Xfce Terminal](http://www.tecmint.com/wp-content/uploads/2014/01/xfce-terminal.jpg)
 
