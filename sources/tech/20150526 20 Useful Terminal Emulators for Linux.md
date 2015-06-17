@@ -221,7 +221,7 @@ Xfce Terminal
 
 ### 17. xterm ###
 
-The xterm application is a standard terminal emulator for the X Window System. It maintain DEC VT102 and Tektronix 4014 compatible terminals for applications that can’t use the window system directly.
+xterm应用程序是一款标准的在X Window系统上的终端仿真器。It maintain DEC VT102 and Tektronix 4014 compatible terminals for applications that can’t use the window system directly.
 
 ![xterm Terminal](http://www.tecmint.com/wp-content/uploads/2014/01/xterm.jpg)
 
