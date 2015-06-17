@@ -1,3 +1,4 @@
+sevenot translating
 The top 10 rookie open source projects
 ================================================================================
 Black Duck presents its Open Source Rookies of the Year -- the 10 most exciting, active new projects germinated by the global open source community 
