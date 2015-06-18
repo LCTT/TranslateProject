@@ -1,3 +1,4 @@
+Translating by GOLinux!
 The Art of Command Line
 ================================================================================
 - [Basics](#basics)
