@@ -1,9 +1,6 @@
-translated by strugglingyouth
 在linux上使用交换文件扩展交换空间
 ================================================================================
-想像一种情景，当我们的Linux系统用尽交换空间时，在这种情况下，
-我们想要使用swap分区扩展交换空间，但在某些情况下磁盘上的空闲分区是不可用的，
-致使我们不能把它扩大。
+想像一种情景，当我们的Linux系统用尽交换空间时，在这种情况下，我们想要使用swap分区扩展交换空间，但在某些情况下磁盘上已经没有可用的空闲分区了，致使我们不能把它扩大。
 
 因此，在这种情况下，我们可以使用交换文件增加swap空间。
 
@@ -16,7 +13,7 @@ free-output-with-swap
 
 我的交换分区大小是2 GB，我们将把交换空间扩展1GB。
 
-#### 第一步：使用下面的dd命令创建大小为1GB交换文件d ####
+#### 第一步：使用下面的dd命令创建大小为1GB交换文件 ####
 
     [root@linuxtechi ~]# dd if=/dev/zero of=/swap_file bs=1G count=1
     1+0 records in
@@ -26,7 +23,7 @@ free-output-with-swap
 
 根据你的需要替换 ‘**bs**‘ 和 ‘**count**‘ 的大小.
 
-####第二步：设置交换文件权限为644. ####
+#### 第二步：设置交换文件权限为600 ####
 
     [root@linuxtechi ~]# chmod 600 /swap_file
 
@@ -56,21 +53,20 @@ free-output-with-swap
 
 ![swap-space-after-extension](http://www.linuxtechi.com/wp-content/uploads/2015/06/swap-space-after-extension.jpg)
 
-**Note**: 为了避免出现意外的情况，如下所示使用swapoff命令关闭它，
-仅在需要使用时，使用步骤5所示的swapon命令，重新启用交换文件。.
+**Note**: 为了避免出现意外的情况，如下所示使用swapoff命令关闭它，仅在需要使用时，使用步骤5所示的swapon命令，重新启用交换文件。
 
     [root@linuxtechi ~]# swapoff /swap_file
     [root@linuxtechi ~]#
 
-请分享您的宝贵意见或者评论此文章.
+请分享您的宝贵意见或者评论此文章。
 
 --------------------------------------------------------------------------------
 
 via: http://www.linuxtechi.com/extend-swap-space-using-swap-file-in-linux/
 
 作者：[Pradeep Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[strugglingyouth](https://github.com/strugglingyouth)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 

@@ -1,16 +1,16 @@
-为LUKS——加密的磁盘/分区做增量备份
+为LUKS加密的磁盘/分区做增量备份
 ================================================================================
-我们中有些人出于安全原因，在家里或者[VPS][1]上通过[Linux统一密钥配置（LUKS）][2]为硬盘驱动器加密，而这些驱动器的容量很快会增长到数十或数百GB。因此，虽然我们享受着LUKS设备带来的安全感，但是我们也该开始考虑一个可能的远程备份方案了。对于安全的非现场备份，我们将需要在LUKS加密的设备上以块级别操作的东西。因此，最后我们发现这么个状况，我们每次都需要传输想要做备份的LUKS设备（比如说200GB）。很明显，这是不可行的。我们该怎么来处理这个问题呢？
+我们中有些人出于安全原因，在家里或者[VPS][1]上通过[Linux统一密钥配置（LUKS）][2]为硬盘驱动器加密，而这些驱动器的容量很快会增长到数十或数百GB。因此，虽然我们享受着LUKS设备带来的安全感，但是我们也该开始考虑一个可能的远程备份方案了。对于安全的非现场备份，我们将需要能在LUKS加密的设备上以块级别操作的东西。因此，最后我们发现这么个状况，我们每次都需要传输想要做备份的整个LUKS设备（比如说200GB大）。很明显，这是不可行的。我们该怎么来处理这个问题呢？
 
 ### 一个解决方案： Bdsync ###
 
-这时，一个卓越的开源工具来拯救我们了，它叫[Bdsync][3]（多亏了Rolf Fokkens）。顾名思义，Bdsync可以通过网络同步“块设备”。对于快速同步，Bdsync会生成并对比本地/远程块设备的块MD5校验和，只同步差异部分。rsync在文件系统级别可以做的，Bdsync可以在块设备级别完成。很自然，对于LUKS加密的设备它也能工作得很好。相当地灵巧！
+这时，一个卓越的开源工具来拯救我们了，它叫[Bdsync][3]（多亏了Rolf Fokkens）。顾名思义，Bdsync可以通过网络同步“块设备”。对于快速同步，Bdsync会生成并对比本地/远程块设备的块的MD5校验和，只同步差异部分。rsync在文件系统级别可以做的，Bdsync可以在块设备级别完成。很自然，对于LUKS加密的设备它也能工作得很好。相当地灵巧！
 
 使用Bdsync，首次备份将拷贝整个LUKS块设备到远程主机，因而会花费大量时间来完成。然而，在初始备份后，如果我们在LUKS设备新建一些文件，再次备份就会很快完成，因为我们只需拷贝修改过的块。经典的增量备份在起作用了！
 
 ### 安装Bdsync到Linux ###
 
-Bdsync并不包含在[Linux][4]发行版的标准仓库中，因而你需要从源代码来构建它。使用以下针对特定版本的指令来安装Bdsync及其手册页到你的系统中。
+Bdsync并不包含在Linux发行版的标准仓库中，因而你需要从源代码来构建它。使用以下针对特定版本的指令来安装Bdsync及其手册页到你的系统中。
 
 #### Debian，Ubuntu或Linux Mint ####
 
@@ -46,7 +46,7 @@ Bdsync并不包含在[Linux][4]发行版的标准仓库中，因而你需要从�
 
 你第一次运行上面的命令的时候，它会花费很长一段时间，这取决于你的互联网/局域网速度，以及/dev/LOCDEV的大小。记住，你必须有两个大小相同的块设备（/dev/LOCDEV和/dev/REMDEV）。
 
-下一步是要将补丁文件从本地主机拷贝到远程主机。一种可能是使用scp：
+下一步是要将补丁文件从本地主机拷贝到远程主机。一种方式是使用scp：
 
     # scp /some_local_path/DEV.bdsync.gz root@remote_host:/remote_path 
 
@@ -58,7 +58,7 @@ Bdsync并不包含在[Linux][4]发行版的标准仓库中，因而你需要从�
 
 ### 尾声 ###
 
-小结之，我们演示了如何使用Bdsync来为LUKS设备实施增量备份。和rsync一样，每次备份只有一小部分数据，而不是整个LUKS设备，需要被推送到非现场备份点，这样会节省带宽和备份时间。剩下来，需要保证所有数据传输通过SSH或SCP加固安全，事实上设备自身是由LUKS加密的。也可以通过使用可以运行bdsync的专用用户（而非root）来改善该配置。我们也可以将bdsync用于任何块设备，如LVM卷或RAID磁盘，也可以很轻易地设置Bdsync备份本地磁盘到USB驱动器上。如你所见，它有着无限可能性！
+小结之，我们演示了如何使用Bdsync来为LUKS设备实施增量备份。和rsync一样，每次备份只有一小部分数据，而不是整个LUKS设备，需要被推送到非现场备份点，这样会节省带宽和备份时间。剩下来，需要通过SSH或SCP来保证所有数据传输的安全，事实上设备自身是由LUKS加密的。也可以通过使用可以运行bdsync的专用用户（而非root）来改进该配置。我们也可以将bdsync用于任何块设备，如LVM卷或RAID磁盘，也可以很轻易地设置Bdsync备份本地磁盘到USB驱动器上。如你所见，它有着无限可能性！
 
 随时分享你的想法。
 
@@ -68,7 +68,7 @@ via: http://xmodulo.com/remote-incremental-backup-luks-encrypted-disk-partition.
 
 作者：[Iulian Murgulet][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
@@ -77,4 +77,4 @@ via: http://xmodulo.com/remote-incremental-backup-luks-encrypted-disk-partition.
 [2]:http://xmodulo.com/how-to-create-encrypted-disk-partition-on-linux.html
 [3]:http://bdsync.rolf-fokkens.nl/
 [4]:http://xmodulo.com/recommend/linuxbook
-[5]:http://xmodulo.com/how-to-enable-ssh-login-without.html
+[5]:https://linux.cn/article-5444-1.html

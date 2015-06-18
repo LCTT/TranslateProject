@@ -1,3 +1,5 @@
+translating by wwy-hust
+
 What is good audio editing software on Linux
 ================================================================================
 

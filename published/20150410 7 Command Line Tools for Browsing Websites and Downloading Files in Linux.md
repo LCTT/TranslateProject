@@ -1,8 +1,8 @@
-﻿Linux中7个用来浏览网页和下载文件的命令
+Linux中7个用来浏览网页和下载文件的命令
 ================================================================================
 上一篇文章中，我们提到了`rTorrent`、`wget`、`cURL`、`w3m`、`Elinks`等几个有用的工具，很多人回信说还有其它几个类似的工具也值得讨论，所以就有了这篇文章。如果错过了第一部分的讨论，可以通过下面的链接来回顾。
 
-- [5个下载文件和浏览网页的命令行工具][1]
+- [5 个基于Linux命令行的文件下载和网站浏览工具][1]
 
 这篇文章介绍了Linux下用于浏览网页和下载文件的其它几个命令行工具。
 
@@ -23,7 +23,7 @@ Links是用C语言写的一个开源web浏览器，支持包括Linux、Windows�
 
 ![](http://www.tecmint.com/wp-content/uploads/2015/04/links-browse-websites-terminal.gif)
 
-如何你想安装links的图形界面版本，可能需要从[http://links.twibright.com/download/][2]下载最新的版本tarball（version 2.9）的源代码。
+如何你想安装links的图形界面版本，可能需要从[http://links.twibright.com/download/][2]下载最新的版本（version 2.9）的源代码压缩包。
 
 同样，也可以像下面那样使用wget下载安装。
 
@@ -34,7 +34,7 @@ Links是用C语言写的一个开源web浏览器，支持包括Linux、Windows�
     # make
     # make install
 
-**注意**：links源代码的编译需要安装libpng, libjpeg, TIFF library, SVGAlib, XFree86, C Compiler and make这几个包。
+**注意**：links源代码的编译需要安装libpng, libjpeg, TIFF library, SVGAlib, XFree86, C Compiler 和 make这几个包。
 
 ### 2. links2 ###
 
@@ -49,7 +49,7 @@ Links是Twibright实验室编写的web浏览器，而Links2是基于它的一个
 
 lynx是一个基于文本的web浏览器，使用GNU GPLv2协议发布，用ISO C编写。lynx是一个可高度配置的web浏览器，是许多系统管理员的救世主，有最悠久的web浏览器之称，并且至今仍然处在积极开发中。
 
-通过下面的命令安装lyns。
+通过下面的命令安装lynx。
 
     # apt-get install lynx
     # yum install lynx
@@ -125,7 +125,7 @@ aria2安装完成后，可以像下图那样运行这个命令下载任意文件
 
 ![Aria2: Linux的命令行下载工具 ](http://www.tecmint.com/wp-content/uploads/2015/04/Download-Files-in-Terminal.gif)
 
-Aria2: Linux命令行下载工具
+*Aria2: Linux命令行下载工具*
 
 目前就这么多了。稍后咱们讨论另一个有意思的话题。请保持联系，常来Tecmint逛逛。别忘了在评论中给我们提供您的宝贵反馈，您的喜爱和分享帮助我们不断前行。
 
@@ -135,12 +135,12 @@ via: http://www.tecmint.com/command-line-web-browser-download-file-in-linux/
 
 作者：[Avishek Kumar][a]
 译者：[fyh](https://github.com/fyh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://www.tecmint.com/author/avishek/
-[1]:http://www.tecmint.com/linux-command-line-tools-for-downloading-files/
+[1]:https://linux.cn/article-5546-1.html
 [2]:http://links.twibright.com/download/
 [3]:http://www.tecmint.com/command-line-web-browsers/
 [4]:http://www.tecmint.com/install-youtube-dl-command-line-video-download-tool/
