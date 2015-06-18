@@ -1,3 +1,5 @@
+translating by NearTan
+
 How to Setup Node.JS on Ubuntu 15.04 with Different Methods
 ================================================================================
 This is such an important article to guide you about the installation and setup of Node.js on Ubuntu 15.04. Node.js is basically a server side java script programming to provide you bindings for enabling the input and output socket bios and streams. It has a high through put and non-blocking IO in a single threaded event loop. It’s also a platform layer that provides the functionality to interact with the Operating system to write file, read files and to do networking operations. So in this article we will perform different installation methods to setup Node.Js on Ubuntu 15.04 server.
