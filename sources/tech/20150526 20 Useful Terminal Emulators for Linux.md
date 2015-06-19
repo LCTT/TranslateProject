@@ -231,14 +231,14 @@ xterm Terminal
 
 ### 18. LilyTerm ###
 
-The LilyTerm is a another less known open source terminal emulator based off of libvte that desire to be fast and lightweight. LilyTerm also include some key features such as:
+LilyTerm是一款基于libvte的开源终端仿真器，这款不太出名的仿真器追求的是快速和轻量级。LilyTerm也包括一些关键特性：
 
-- Support for tabbing, coloring and reordering tabs
-- Ability to manage tabs through keybindings
-- Support for background transparency and saturation.
-- Support for user specific profile creation.
-- Several customization options for profiles.
-- Extensive UTF-8 support.
+- 支持标签移动、着色以及标签重新排序
+- 通过快捷键管理标签
+- 支持背景透明化和饱和度调整
+- 支持为特定用户创建配置文件
+- 若干个自定义选项
+- 广泛支持UTF-8
 
 ![Lilyterm Terminal](http://www.tecmint.com/wp-content/uploads/2014/01/Lilyterm.jpg)
 
@@ -248,7 +248,7 @@ Lilyterm Terminal
 
 ### 19. Sakura ###
 
-The sakura is a another less known Unix style terminal emulator developed for command line purpose as well as text-based terminal programs. Sakura is based on GTK and livte and provides not more advanced features but some customization options such as multiple tab support, custom text color, font and background images, speedy command processing and few more.
+Sakura是另一款不知名的Unix风格终端仿真器，按照命令行模式和基于文本的终端程序开发。Sakura基于GTK和livte，自身特性不多，不过还是有一些自定义选项比如多标签支持、自定义文本颜色、字体和背景图片、快速命令处理等等。
 
 ![Sakura Terminal](http://www.tecmint.com/wp-content/uploads/2014/01/sakura.jpg)
 
