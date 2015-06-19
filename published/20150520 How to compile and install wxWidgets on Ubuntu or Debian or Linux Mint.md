@@ -1,16 +1,13 @@
 如何在Ubuntu/Debian/Linux Mint中编译和安装wxWidgets
 ================================================================================
+
 ### wxWidgets ###
 
-wxWidgets是一个程序开发框架/库， 允许你在Windows、Mac、Linux中使用相同的代码跨平台开发。
-
-它主要用C++写成，但也可以与其他语言绑定比如Python、Perl、Ruby。
+wxWidgets是一个程序开发框架/库， 允许你在Windows、Mac、Linux中使用相同的代码跨平台开发。它主要用C++写成，但也可以与其他语言绑定比如Python、Perl、Ruby。
 
 本教程中我将向你展示如何在基于Debian的linux中如Ubuntu和Linux Mint中编译wxwidgets 3.0+。
 
-从源码编译wxWidgets并不困难，仅仅需要几分钟。
-
-库可以按不同的方式来编译，比如静态或者动态库。
+从源码编译wxWidgets并不困难，仅仅需要几分钟。库可以按不同的方式来编译，比如静态或者动态库。
 
 ### 1. 下载 wxWidgets ###
 
@@ -20,13 +17,13 @@ wxWidgets是一个程序开发框架/库， 允许你在Windows、Mac、Linux中
 
 ### 2. 设置编译环境 ###
 
-要编译wxwidgets，我们需要一些工具包括C++编译器, 在Linux上是g++。所有这些可以通过apt-get工具从仓库中安装。
+要编译wxwidgets，我们需要一些工具包括C++编译器，在Linux上是g++。所有这些可以通过apt-get工具从仓库中安装。
 
 我们还需要wxWidgets依赖的GTK开发库。
 
     $ sudo apt-get install libgtk-3-dev build-essential checkinstall
 
->checkinstall工具允许我们为wxwidgets创建一个安装包，这样之后就可以轻松的使用包管理器来卸载。
+> 这个叫做checkinstall的工具允许我们为wxwidgets创建一个安装包，这样之后就可以轻松的使用包管理器来卸载。
 
 ### 3. 编译 wxWidgets ###
 
@@ -42,7 +39,7 @@ wxWidgets是一个程序开发框架/库， 允许你在Windows、Mac、Linux中
 
 "--disable-shared"选项将会编译静态库而不是动态库。
 
-make命令完成后，编译也成功了。是时候安装wxWidgets到正确的目录。
+make命令完成后，编译就成功了。是时候安装wxWidgets到正确的目录。
 
 更多信息请参考install.txt和readme.txt，这可在wxwidgets中的/docs/gtk/目录下找到。
 
@@ -58,7 +55,7 @@ checkinstall会询问几个问题，请保证在提问后提供一个版本号�
 
 ### 5. 追踪安装的文件 ###
 
-如果你想要检查文件安装的位置，使用dpkg命令后面跟上checkinstall提供的报名。
+如果你想要检查文件安装的位置，使用dpkg命令后面跟上checkinstall提供的包名。
 
     $ dpkg -L package_name
     /.
@@ -85,17 +82,17 @@ checkinstall会询问几个问题，请保证在提问后提供一个版本号�
     $ cd samples/
     $ make
 
-make命令完成后，进入sampl子目录，这里就有一个可以马上运行的Demo程序了。
+make命令完成后，进入sample 子目录，这里就有一个可以马上运行的Demo程序了。
 
 ### 7. 编译你的第一个程序 ###
 
 你完成编译demo程序后，可以写你自己的程序来编译了。这个也很简单。
 
-假设你用的是C++这样你可以使用编辑器的高亮特性。比如gedit、kate、kwrite等等。或者用全功能的IDE像Geany、Codelite、Codeblocks等等。
+假设你用的是C++，这样的话你还可以使用编辑器的高亮特性。比如gedit、kate、kwrite等等。或者用全功能的IDE像Geany、Codelite、Codeblocks等等。
 
 然而你的第一个程序只需要用一个文本编辑器来快速完成。
 
-这里就是
+如下：
 
     #include <wx/wx.h>
     
@@ -155,7 +152,7 @@ via: http://www.binarytides.com/install-wxwidgets-ubuntu/
 
 作者：[Silver Moon][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
