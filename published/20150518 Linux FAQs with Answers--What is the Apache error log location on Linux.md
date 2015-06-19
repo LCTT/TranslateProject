@@ -1,8 +1,8 @@
-Linux有问必答——Linux上Apache错误日志的位置在哪里？
+Linux有问必答：Linux上Apache错误日志的位置在哪里？
 ================================================================================
-> **问题**： 我尝试着解决我 Linux 系统上的 Apache 网络服务器的错误，Apache的错误日志文件放在[你的 Linux 版本]的哪个位置呢？
+> **问题**： 我尝试着解决我 Linux 系统上的 Apache Web 服务器的错误，Apache的错误日志文件放在[XX  Linux 版本]的哪个位置呢？
 
-错误日志和访问日志文件为系统管理员提供了有用的信息，比如，为网络服务器排障，[保护][1]系统不受各种各样的恶意活动侵犯，或者只是进行[各种各样的][2][分析][3]以监控 HTTP 服务器。根据你网络服务器配置的不同，其错误/访问日志可能放在你系统中不同位置。
+错误日志和访问日志文件为系统管理员提供了有用的信息，比如，为 Web 服务器排障，[保护][1]系统不受各种各样的恶意活动侵犯，或者只是进行[各种各样的][2][分析][3]以监控 HTTP 服务器。根据你 Web 服务器配置的不同，其错误/访问日志可能放在你系统中不同位置。
 
 本文可以帮助你**找到Linux上的Apache错误日志**。
 
@@ -28,7 +28,7 @@ Linux有问必答——Linux上Apache错误日志的位置在哪里？
 
 #### 使用虚拟主机自定义的错误日志 ####
 
-如果在 Apache 网络服务器中使用了虚拟主机， ErrorLog 指令可能会在虚拟主机容器内指定，在这种情况下，上面所说的系统范围的错误日志位置将被忽略。
+如果在 Apache  Web 服务器中使用了虚拟主机， ErrorLog 指令可能会在虚拟主机容器内指定，在这种情况下，上面所说的系统范围的错误日志位置将被忽略。
 
 启用了虚拟主机后，各个虚拟主机可以定义其自身的自定义错误日志位置。要找出某个特定虚拟主机的错误日志位置，你可以打开 /etc/apache2/sites-enabled/<your-site>.conf，然后查找 ErrorLog 指令，该指令会显示站点指定的错误日志文件。
 
@@ -40,11 +40,11 @@ Linux有问必答——Linux上Apache错误日志的位置在哪里？
 
 #### 自定义的错误日志 ####
 
-要找出 Apache 错误日志的自定义位置，请用文本编辑器打开 /etc/httpd/conf/httpd.conf，然后查找 ServerRoot，该参数显示了 Apache 服务器目录树的顶层，日志文件和配置都位于该目录树中。例如：
+要找出 Apache 错误日志的自定义位置，请用文本编辑器打开 /etc/httpd/conf/httpd.conf，然后查找 ServerRoot，该参数显示了 Apache  Web 服务器目录树的顶层，日志文件和配置都位于该目录树中。例如：
 
     ServerRoot "/etc/httpd"
 
-现在，查找 ErrorLog 开头的行，该行指出了 Apache 网络服务器将错误日志写到了哪里去。注意，指定的位置是 ServerRoot 值的相对位置。例如：
+现在，查找 ErrorLog 开头的行，该行指出了 Apache Web 服务器将错误日志写到了哪里去。注意，指定的位置是 ServerRoot 值的相对位置。例如：
 
     ErrorLog "log/error_log"
 
@@ -71,11 +71,11 @@ via: http://ask.xmodulo.com/apache-error-log-location-linux.html
 
 作者：[Dan Nanni][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:http://ask.xmodulo.com/author/nanni
-[1]:http://xmodulo.com/configure-fail2ban-apache-http-server.html
-[2]:http://xmodulo.com/interactive-apache-web-server-log-analyzer-linux.html
-[3]:http://xmodulo.com/sql-queries-apache-log-files-linux.html
+[1]:https://linux.cn/article-5068-1.html
+[2]:https://linux.cn/article-5352-1.html
+[3]:https://linux.cn/article-4405-1.html
