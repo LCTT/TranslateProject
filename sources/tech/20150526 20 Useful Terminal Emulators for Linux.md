@@ -221,7 +221,7 @@ Xfce Terminal
 
 ### 17. xterm ###
 
-xterm应用程序是一款标准的在X Window系统上的终端仿真器。It maintain DEC VT102 and Tektronix 4014 compatible terminals for applications that can’t use the window system directly.
+xterm应用程序是一款标准的在X Window系统上的终端仿真器。它保持了DEC VT102和Tektronix 4014，让应用能直接使用X Window系统。
 
 ![xterm Terminal](http://www.tecmint.com/wp-content/uploads/2014/01/xterm.jpg)
 
@@ -258,7 +258,7 @@ Sakura Terminal
 
 ### 20. rxvt-unicode ###
 
-The rxvt-unicode (also known as urxvt) is a yet another highly customizable, lightweight and fast terminal emulator with xft and unicode support was developed by Marc Lehmann. It got some outstanding features such as support for international language via Unicode, the ability to display multiple font types and support for Perl extensions.
+rxvt-unicode (也称为urxvt) 是另一个高度可定制、轻量级和快速的终端仿真器，支持xft和unicode，由Marc Lehmann开发。它有许多显著特性比如支持Unicode上的国际语言，能显示多种字体类型并支持Perl扩展。
 
 ![rxvt unicode](http://www.tecmint.com/wp-content/uploads/2014/01/rxvt-unicode.png)
 
