@@ -1,3 +1,5 @@
+translating by wwy-hust
+
 Tor Browser: An Ultimate Web Browser for Anonymous Web Browsing in Linux
 ================================================================================
 Most of us give a considerable time of ours to Internet. The primary Application we require to perform our internet activity is a browser, a web browser to be more perfect. Over Internet most of our’s activity is logged to Server/Client machine which includes IP address, Geographical Location, search/activity trends and a whole lots of Information which can potentially be very harmful, if used intentionally the other way.
