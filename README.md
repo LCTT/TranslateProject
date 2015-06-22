@@ -50,6 +50,7 @@ LCTT的组成
 * 2014/11/04 提升zpl1025为Core Translators成员。
 * 2014/12/25 提升runningwater为Core Translators成员。
 * 2015/04/19 发起 LFS-BOOK-7.7-systemd 项目。
+* 2015/06/09 提升ictlyh和dongfengweixiao为Core Translators成员。
 
 活跃成员
 -------------------------------
@@ -63,6 +64,8 @@ LCTT的组成
 - CORE @reinoir,
 - CORE @bazz2,
 - CORE @zpl1025,
+- CORE @ictlyh,
+- CORE @dongfengweixiao
 - Senior @tinyeyeser,
 - Senior @vito-L,
 - Senior @jasminepeng,
@@ -76,7 +79,6 @@ LCTT的组成
 - @alim0x,
 - @2q1w2007,
 - @theo-l,
-- @ictlyh,
 - @FSSlc,
 - @su-kaiyao,
 - @blueabysm,
@@ -167,7 +169,7 @@ LFS 项目活跃成员有：
 - @KevinSJ
 - @Yuking-net
 
-（更新于2015/05/31，以Github contributors列表排名）
+（更新于2015/06/09，以Github contributors列表排名）
 
 谢谢大家的支持！
 
