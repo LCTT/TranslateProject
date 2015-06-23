@@ -1,3 +1,5 @@
+FSSlc translating
+
 LINUX 101: POWER UP YOUR SHELL
 ================================================================================
 > Get a more versatile,featureful and colourful command line interface with our guide to shell basics.

@@ -194,7 +194,7 @@ mod\_evasive被配置为使用/etc/httpd/conf.d/mod\_evasive.conf中的指令。
 
     DOSSystemCommand "sudo /usr/local/bin/scripts-tecmint/ban_ip.sh %s"
 
-上面一行的%s代表了由mod\_evasive检测到的攻击IP地址。
+上面一行的%s代表了由mod_evasive检测到的攻击IP地址。
 
 #####将apache用户添加到sudoers文件#####
 
@@ -233,7 +233,7 @@ mod\_evasive被配置为使用/etc/httpd/conf.d/mod\_evasive.conf中的指令。
 我们的测试环境由一个CentOS 7服务器[IP 192.168.0.17]和一个Windows组成，在Windows[IP 192.168.0.103]上我们发起攻击：
 
 ![](http://www.tecmint.com/wp-content/uploads/2012/06/Confirm-Host-IPAddress.png)
-
+I
 *确认主机IP地址*
 
 请播放下面的视频（YT 视频，请自备梯子： https://www.youtube.com/-U_mdet06Jk ），并跟从列出的步骤来模拟一个Dos攻击：
@@ -257,7 +257,7 @@ mod\_evasive被配置为使用/etc/httpd/conf.d/mod\_evasive.conf中的指令。
 
 --------------------------------------------------------------------------------
 
-via: http://www.tecmint.com/protect-apache-using-mod\_security-and-mod\_evasive-on-rhel-centos-fedora/
+via: http://www.tecmint.com/protect-apache-using-mod_security-and-mod_evasive-on-rhel-centos-fedora/
 
 作者：[Gabriel Cánepa][a]
 译者：[wwy-hust](https://github.com/wwy-hust)
