@@ -1,4 +1,4 @@
-Open source all over the world
+一个开源的世界
 ================================================================================
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/BUS_OpenSourceExperience_520x292_cm.png)
 
@@ -50,15 +50,13 @@ Open source all over the world
 
 我当时在他左边，时不时从转录空隙中抬头看一眼，然后从眼神中注意到微笑背后暗示的那个自2008年1月起开始领导公司的人，红帽的CEO[Jim Whitehurst][35]。
 
-“我有世界上最好的工作，”稍稍向后靠、叉腿抱头，Whitehurst开始了演讲。“我开始领导红帽，在世界各地旅行到处看看情况。在这里的七年中，FOSS和广泛的开源创新所发生的美好的事情是开源已经脱离了条条框框。我现在认为，IT正处在FOSS之前所在的位置。我们可以预见FOSS从一个替代走向创新驱动力。”
+“我有世界上最好的工作，”稍稍向后靠、叉腿抱头，Whitehurst开始了演讲。“我开始领导红帽，在世界各地旅行到处看看情况。在这里的七年中，FOSS和广泛的开源创新所发生的美好的事情是开源已经脱离了条条框框。我现在认为，IT正处在FOSS之前所在的位置。我们可以预见FOSS从一个替代走向创新驱动力。”用户也看到了这一点。他们用FOSS并不是因为它便宜，而是因为它能提供和创新的解决方案。这也十一个全球现象。比如，我刚才还在印度，然后发现那里的用户拥抱开源的两个理由：一个是创新，另一个是那里的市场有些特殊，需要完全的控制。
 
-"I have one of the greatest jobs on Earth," began Whitehurst, as he leaned back, crossed his legs, and put his arms behind his head. "I get to lead Red Hat, travel around the world and see what goes on. In my seven years here, the amazing thing about FOSS, and, broadly open innovation, is that it has left the fringe. And now, I would argue, IT is in the same place that FOSS was in its early days. We are seeing FOSS going from an alternative to driving innovation. Our customers are seeing it, too. They're using FOSS not because it is cheaper, but because it provides them with control and innovative solutions. It's a global phenomenon, too. For instance, I was just in India, and discovered that, for them, there were two reasons for embracing of open source: one, access to innovation, and two, the market is somewhat different and wanting full control.”
+“[孟买证券交易所][36]想得到源代码并加以控制，五年前这在证券交易领域闻所未闻。那时FOSS正在重复发明轮子。今天看来，FOSS正在做几乎所有的结合了大数据的事物。几乎所有的新框架，语言和方法论，包括流动（尽管不包括设备），都首先发生在开源世界。”
 
-"The [Bombay Stock Exchange][36] wants to own all the source and control it. That is not something you would have heard five years ago in a stock exchange, anywhere. Back then, the early knock on FOSS was that it was creating free copies of things that already existed.' If you look today, virtually everything in big data is happening in FOSS. Almost any new framework, language, and methodology, including mobile (though excluding devices), are all happening first in open source.”
+“这是因为用户数量已经达到了相当的规模。这不只是红帽遇到的情况，[Google][37]，[Amazon][38]，[Facebook][39]等也出现这样的情况。他们想解决自己的问题，用开源的方式。忘掉协议吧，开源绝不仅如此。我们建立了一个交通工具，一套规则，例如[Hadoop][40]，[Cassandra][41]和其他工具。事实上，开源驱动创新。例如，Hadoop在厂商们意识的规模带来的问题。他们实际上有足够的资和资源金来解决自己的问题。”开源是许多领域的默认技术方案。这在一个更加注重内容的世界中更是如此，例如[3D打印][42]和其他使用信息内容的物理产品。”
 
-"This is because users have reached size and scale. It's not just Red Hat—it's [Google][37], [Amazon][38], [Facebook][39], and others, they want to solve their own problems, and do it the open source way. And forget licensing—open source is much more than that. We've built a vehicle, and a set of norms. Things like [Hadoop][40], [Cassandra][41], and other tools. Fact is, open source drives innovation. For example, Hadoop was in production before any vendor realized there was a problem of that scale that needed to be solved. They actually have the wherewithal to solve their own problems, and the social tech and principles to do that. "Open source is now the default technology for many categories. This is especially true as the world moves more and more to content importance, such as [3D printing][42] and other physical products that take information content and apply it.”
-
-"We have this cool thing in one area, source code, but it is limited. But there are still many opportunities in different industries. We must ask ourselves, 'What can open source do for education, government, and legal? What are the parallels? And what can other areas learn with us?'"
+“源代码的开源确实很酷，但开源不应当仅限于此。在各行各业不同领域开源仍有可以用武之地。我们要问下自己：‘开源能够为教育，政府，法律带来什么？其它的呢？其它的领域如何能学习我们？’”
 
 "There's also the matter of content. Content is now free, and we can invest in more free content, sure. But we need free content that has a business model built around it. That is something that more people should care about. If you believe open innovation is better, then we need more models."
 
