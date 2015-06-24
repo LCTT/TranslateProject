@@ -27,7 +27,6 @@ Cacti 将每幅图片的数据保存在它自己的 RRD(round robin database,循
 ![](https://farm4.staticflickr.com/3674/18634036918_5c4118c4b9_c.jpg)
 
 从样例输出(基于 Debian 系统)中，我们可以确定两幅图片的 RRD 文件：
-From the example output (which is based on a Debian system), we can identify the RRD files for two graphs:
 
 - **旧图**： /var/lib/cacti/rra/old_graph_traffic_in_8.rrd
 - **新图**： /var/lib/cacti/rra/new_graph_traffic_in_10.rrd 
