@@ -1,3 +1,4 @@
+Translating by ictlyh
 How to combine two graphs on Cacti
 ================================================================================
 [Cacti][1] a fantastic open source network monitoring system that is widely used to graph network elements like bandwidth, storage, processor and memory utilization. Using its web based interface, you can create and organize graphs easily. However, some advanced features like merging graphs, creating aggregate graphs using multiple sources, migration of Cacti to another server are not provided by default. You might need some experience with Cacti to pull these off. In this tutorial, we will see how we can merge two Cacti graphs into one.
