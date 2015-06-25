@@ -1,7 +1,7 @@
-如何在云服务提供商的机器使用Docker Machine
+如何在云服务提供商的平台上使用Docker Machine
 ================================================================================
-大家好，今天我们来学习如何使用Docker Machine在各种云服务提供商的平台部署Docker。Docker Machine是一个可以帮助我们在自己的电脑、云服务提供商的机器以及我们数据中心的机器上创建Docker机器的应用程序。它为创建服务器、在服务器中安装Docker、根据用户需求配置Docker客户端提供了简单的解决方案。驱动API对本地机器、数据中心的虚拟机或者公用云机器都适用。Docker Machine支持Windows、OSX和Linux，并且提供一个独立的二进制文件，可以直接使用。它让我们可以充分利用支持Docker的基础设施的生态环境合作伙伴，并且使用相同的接口进行访问。它让人们可以使用一个命令来简单而迅速地在不同的云平台部署Docker容器。
 
+大家好，今天我们来了解如何使用Docker Machine在各种云服务提供商的平台上部署Docker。Docker Machine是一个可以帮助我们在自己的电脑、云服务提供商的平台以及我们数据中心的机器上创建Docker机器的应用程序。它为创建服务器、在服务器中安装Docker、根据用户需求配置Docker客户端提供了简单的解决方案。驱动API对本地机器、数据中心的虚拟机或者公用云机器都适用。Docker Machine支持Windows、OSX和Linux，并且提供一个独立的二进制文件，可以直接使用。它让我们可以充分利用支持Docker的基础设施的生态环境合作伙伴，并且使用相同的接口进行访问。它让人们可以使用一个命令来简单而迅速地在不同的云平台部署Docker容器。
 
 ### 1. 安装Docker Machine ###
 
@@ -25,14 +25,14 @@ Docker Machine可以很好地支持每一种Linux发行版。首先，我们需�
 
 ![Installing Docker Machine](http://blog.linoxide.com/wp-content/uploads/2015/05/installing-docker-machine.png)
 
-另外机器上需要有docker命令，可以使用如下命令安装：
+要在我们的机器上启用docker命令，需要使用如下命令安装Docker客户端：
 
         # curl -L https://get.docker.com/builds/linux/x86_64/docker-latest > /usr/local/bin/docker
         # chmod +x /usr/local/bin/docker
 
 ### 2. 创建机器 ###
 
-在自己的Linux机器上安装好了Docker Machine之后，我们想要将一个docker虚拟机部署到云服务器上。Docker Machine支持几个流行的云平台，如igital Ocean、Amazon Web Services（AWS）、Microsoft Azure、Google Cloud Computing等等，所以我们可以在不同的平台使用相同的接口来部署Docker。本文中我们会使用digitalocean驱动在Digital Ocean的服务器上部署Docker，--driver选项指定digitalocean驱动，--digitalocean-access-token选项指定[Digital Ocean Control Panel][1]提供的API Token，命令最后的是我们创建的Docker虚拟机的机器名。运行如下命令：
+在自己的Linux机器上安装好了Docker Machine之后，我们想要将一个docker虚拟机部署到云服务器上。Docker Machine支持几个流行的云平台，如igital Ocean、Amazon Web Services（AWS）、Microsoft Azure、Google Cloud Computing及其它等等，所以我们可以在不同的平台使用相同的接口来部署Docker。本文中我们会使用digitalocean驱动在Digital Ocean的服务器上部署Docker，--driver选项指定digitalocean驱动，--digitalocean-access-token选项指定[Digital Ocean Control Panel][1]提供的API Token，命令最后的是我们创建的Docker虚拟机的机器名。运行如下命令：
 
     # docker-machine create --driver digitalocean --digitalocean-access-token <API-Token> linux-dev
 
@@ -40,7 +40,7 @@ Docker Machine可以很好地支持每一种Linux发行版。首先，我们需�
 
 ![Docker Machine Digitalocean Cloud](http://blog.linoxide.com/wp-content/uploads/2015/05/docker-machine-digitalocean-cloud.png)
 
-**注意**: 这里linux-dev是我们将要创建的机器的名称。`<API-Token>`是一个安全key，可以在Digtal Ocean Control Panel生成。要找到这个key，我们只需要登录到我们的Digital Ocean Control Panel，然后点击API，再点击Generate New Token，填写一个名称，选上Read和Write。然后我们就会得到一串十六进制的key，那就是`<API-Token>`，简单地替换到上边的命令中即可。
+**注意**： 这里linux-dev是我们将要创建的机器的名称。`<API-Token>`是一个安全key，可以在Digtal Ocean Control Panel生成。要找到这个key，我们只需要登录到我们的Digital Ocean Control Panel，然后点击API，再点击 Generate New Token，填写一个名称，选上Read和Write。然后我们就会得到一串十六进制的key，那就是`<API-Token>`，简单地替换到上边的命令中即可。
 
 运行如上命令后，我们可以在Digital Ocean Droplet Panel中看到一个具有默认配置的droplet已经被创建出来了。
 
@@ -48,35 +48,35 @@ Docker Machine可以很好地支持每一种Linux发行版。首先，我们需�
 
 简便起见，docker-machine会使用默认配置来部署Droplet。我们可以通过增加选项来定制我们的Droplet。这里是一些digitalocean相关的选项，我们可以使用它们来覆盖Docker Machine所使用的默认配置。
 
-    --digitalocean-image "ubuntu-14-04-x64" 是选择Droplet的镜像
-    --digitalocean-ipv6 enable 是启用IPv6网络支持
-    --digitalocean-private-networking enable 是启用专用网络
-    --digitalocean-region "nyc3" 是选择部署Droplet的区域
-    --digitalocean-size "512mb" 是选择内存大小和部署的类型
+-    --digitalocean-image "ubuntu-14-04-x64" 用于选择Droplet的镜像
+-    --digitalocean-ipv6 enable 启用IPv6网络支持
+-    --digitalocean-private-networking enable 启用专用网络
+-    --digitalocean-region "nyc3" 选择部署Droplet的区域
+-    --digitalocean-size "512mb" 选择内存大小和部署的类型
 
 如果你想在其他云服务使用docker-machine，并且想覆盖默认的配置，可以运行如下命令来获取Docker Mackine默认支持的对每种平台适用的参数。
 
     # docker-machine create -h
 
-### 3. 选择活跃机器 ###
+### 3. 选择活跃主机 ###
 
-部署Droplet后，我们想马上运行一个Docker容器，但在那之前，我们需要检查下活跃机器是否是我们需要的机器。可以运行如下命令查看。
+部署Droplet后，我们想马上运行一个Docker容器，但在那之前，我们需要检查下活跃主机是否是我们需要的机器。可以运行如下命令查看。
 
     # docker-machine ls
 
 ![Docker Machine List](http://blog.linoxide.com/wp-content/uploads/2015/05/docker-machine-ls.png)
 
-ACTIVE一列有“*”标记的是活跃机器。
+ACTIVE一列有“*”标记的是活跃主机。
 
-现在，如果我们想将活跃机器切换到需要的机器，运行如下命令：
+现在，如果我们想将活跃主机切换到需要的主机，运行如下命令：
 
     # docker-machine active linux-dev
 
-**注意**：这里，linux-dev是机器名，我们打算激活这个机器，并且在其中运行Docker容器。
+**注意**：这里，linux-dev是机器名，我们打算激活这个机器，并且在其上运行Docker容器。
 
 ### 4. 运行一个Docker容器 ###
 
-现在，我们已经选择了活跃机器，就可以运行Docker容器了。可以测试一下，运行一个busybox容器来执行`echo hello word`命令，这样就可以得到输出：
+现在，我们已经选择了活跃主机，就可以运行Docker容器了。可以测试一下，运行一个busybox容器来执行`echo hello word`命令，这样就可以得到输出：
 
     # docker run busybox echo hello world
 
@@ -98,9 +98,9 @@ SSH到机器上之后，我们可以在上边运行任何Docker容器。这里�
 
     # exit
 
-### 5. 删除机器 ###
+### 5. 删除主机 ###
 
-删除在运行的机器以及它的所有镜像和容器，我们可以使用docker-machine rm命令：
+删除在运行的主机以及它的所有镜像和容器，我们可以使用docker-machine rm命令：
 
     # docker-machine rm linux-dev
 
@@ -112,15 +112,15 @@ SSH到机器上之后，我们可以在上边运行任何Docker容器。这里�
 
 ![Docker Machine Remove Check](http://blog.linoxide.com/wp-content/uploads/2015/05/docker-machine-remove-check.png)
 
-### 6. 在不使用驱动的情况新增一个机器 ###
+### 6. 在不使用驱动的情况新增一个主机 ###
 
-我们可以在不使用驱动的情况往Docker增加一台机器，只需要一个URL。它可以使用一个已有机器的别名，所以我们就不需要每次在运行docker命令时输入完整的URL了。
+我们可以在不使用驱动的情况往Docker增加一台主机，只需要一个URL。它可以使用一个已有机器的别名，所以我们就不需要每次在运行docker命令时输入完整的URL了。
 
     $ docker-machine create --url=tcp://104.131.50.36:2376 custombox
 
-### 7. 管理机器 ###
+### 7. 管理主机 ###
 
-如果你已经让Docker运行起来了，可以使用简单的**docker-machine stop**命令来停止所有正在运行的机器，如果需要再启动的话可以运行**docker-machine start**：
+如果你已经让Docker运行起来了，可以使用简单的**docker-machine stop**命令来停止所有正在运行的主机，如果需要再启动的话可以运行**docker-machine start**：
 
     # docker-machine stop
     # docker-machine start
@@ -140,7 +140,7 @@ via: http://linoxide.com/linux-how-to/use-docker-machine-cloud-provider/
 
 作者：[Arun Pyasi][a]
 译者：[goreliu](https://github.com/goreliu)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
