@@ -1,3 +1,4 @@
+translating wi-cuckoo
 What will be the future of Linux without Linus?
 ================================================================================
 ![](http://i2.wp.com/www.linuxveda.com/wp-content/uploads/2015/06/linus-torvalds-painting.jpg)
