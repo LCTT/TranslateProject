@@ -1,6 +1,6 @@
 Shell脚本：使用rsync备份文件/目录
 ================================================================================
-本文，我们带来了shell脚本，用来使用rsync命令将你本地Linux机器上的文件/目录备份到远程Linux服务器上。使用该脚本实施备份会是一个交互的方式，你需要提供远程备份服务器的主机名/ip地址和文件夹位置。我们保留了一个独立文件，在这个文件中你需要提供需要备份的文件/目录。我们添加了两个脚本，**第一个脚本**在每次拷贝完一个文件后询问密码（如果你启用了ssh验证密钥，那么就不会询问密码），而第二个脚本中，则只会提示一次输入密码。
+本文我们介绍一个shell脚本，用来使用rsync命令将你本地Linux机器上的文件/目录备份到远程Linux服务器上。使用该脚本会以交互的方式实施备份，你需要提供远程备份服务器的主机名/ip地址和文件夹位置。我们使用一个单独的列表文件，在这个文件中你需要列出要备份的文件/目录。我们添加了两个脚本，**第一个脚本**在每次拷贝完一个文件后询问密码（如果你启用了ssh密钥验证，那么就不会询问密码），而第二个脚本中，则只会提示一次输入密码。
 
 我们打算备份bckup.txt，dataconfig.txt，docs和orcledb。
 
@@ -12,7 +12,7 @@ Shell脚本：使用rsync备份文件/目录
     drwxr-xr-x. 2 root root 4096 May 15 10:45 docs
     drwxr-xr-x. 2 root root 4096 May 15 10:44 oracledb
 
-该文件包含了备份文件/目录的详情
+bckup.txt文件包含了需要备份的文件/目录的详情
 
     [root@Fedora21 tmp]# cat /tmp/bckup.txt
     /tmp/oracledb
@@ -24,46 +24,46 @@ Shell脚本：使用rsync备份文件/目录
 
     #!/bin/bash
 
-    #We will save path to backup file in variable
+    # 将备份列表文件的路径保存到变量中
     backupf='/tmp/bckup.txt'
 
-    #Next line just prints message
+    # 输入一个提示信息
     echo "Shell Script Backup Your Files / Directories Using rsync"
 
-    #next line check if entered value is not null, and if null it will reask user to enter Destination Server
+    # 检查是否输入了目标服务器，如果为空就再次提示用户输入
     while [ x$desthost = "x" ]; do
 
-    #next line prints what userd should enter, and stores entered value to variable with name desthost
+    # 提示用户输入目标服务器地址并保存到变量
     read -p "Destination backup Server : " desthost
 
-    #next line finishes while loop
+    # 结束循环
     done
 
-    #next line check if entered value is not null, and if null it will reask user to enter Destination Path
+    # 检查是否输入了目标文件夹，如果为空就再次提示用户输入
     while [ x$destpath = "x" ]; do
 
-    #next line prints what userd should enter, and stores entered value to variable with name destpath
+    # 提示用户输入目标文件夹并保存到变量
     read -p "Destination Folder : " destpath
 
-    #next line finishes while loop
+    # 结束循环
     done
 
-    #Next line will start reading backup file line by line
+    # 逐行读取备份列表文件
     for line in `cat $backupf`
 
-    #and on each line will execute next
+    # 对每一行都进行处理
     do
 
-    #print message that file/dir will be copied
+    # 显示要被复制的文件/文件夹名称
     echo "Copying $line ... "
-    #copy via rsync file/dir to destination
+    # 通过 rsync 复制文件/文件夹到目标位置
 
     rsync -ar "$line" "$desthost":"$destpath"
 
-    #this line just print done
+    # 显示完成
     echo "DONE"
 
-    #end of reading backup file
+    # 结束
     done
 
 #### 运行带有输出结果的脚本 ####
@@ -91,64 +91,65 @@ Shell脚本：使用rsync备份文件/目录
 
     #!/bin/bash
 
-    #We will save path to backup file in variable
+    # 将备份列表文件的路径保存到变量中
     backupf='/tmp/bckup.txt'
 
-    #Next line just prints message
+    # 输入一个提示信息
     echo "Shell Script Backup Your Files / Directories Using rsync"
 
-    #next line check if entered value is not null, and if null it will reask user to enter Destination Server
+    # 检查是否输入了目标服务器，如果为空就再次提示用户输入
     while [ x$desthost = "x" ]; do
 
-    #next line prints what userd should enter, and stores entered value to variable with name desthost
+    # 提示用户输入目标服务器地址并保存到变量
     read -p "Destination backup Server : " desthost
 
-    #next line finishes while loop
+    # 结束循环
     done
 
-    #next line check if entered value is not null, and if null it will reask user to enter Destination Path
+    # 检查是否输入了目标文件夹，如果为空就再次提示用户输入
     while [ x$destpath = "x" ]; do
 
-    #next line prints what userd should enter, and stores entered value to variable with name destpath
+    # 提示用户输入目标文件夹并保存到变量
     read -p "Destination Folder : " destpath
 
-    #next line finishes while loop
+    # 结束循环
     done
 
-    #next line check if entered value is not null, and if null it will reask user to enter password
+    # 检查是否输入了目标服务器密码，如果为空就再次提示用户输入
     while [ x$password = "x" ]; do
-    #next line prints what userd should enter, and stores entered value to variable with name password. #To hide password we are using -s key
+    # 提示用户输入密码并保存到变量
+    # 使用 -s 选项不回显输入的密码
     read -sp "Password : " password
-    #next line finishes while loop
+    # 结束循环
     done
 
-    #Next line will start reading backup file line by line
+    # 逐行读取备份列表文件
     for line in `cat $backupf`
 
-    #and on each line will execute next
+    # 对每一行都进行处理
     do
 
-    #print message that file/dir will be copied
+    # 显示要被复制的文件/文件夹名称
     echo "Copying $line ... "
-    #we will use expect tool to enter password inside script
+    # 使用 expect 来在脚本中输入密码
     /usr/bin/expect << EOD
-    #next line set timeout to -1, recommended to use
+    # 推荐设置超时为 -1 
     set timeout -1
-    #copy via rsync file/dir to destination, using part of expect — spawn command
+    # 通过 rsync 复制文件/文件夹到目标位置，使用 expect 的组成部分 spawn 命令
 
     spawn rsync -ar ${line} ${desthost}:${destpath}
-    #as result of previous command we expect “password” promtp
+    # 上一行命令会等待 “password” 提示
     expect "*?assword:*"
-    #next command enters password from script
+    # 在脚本中提供密码
     send "${password}\r"
-    #next command tells that we expect end of file (everything finished on remote server)
+    # 等待文件结束符（远程服务器处理完了所有事情）
     expect eof
-    #end of expect pard
+    # 结束 expect 脚本
     EOD
-    #this line just print done
+    # 显示结束
     echo "DONE"
 
-    #end of reading backup file
+    # 完成
     done
 
 #### 运行第二个带有输出结果的脚本的屏幕截图 ####
@@ -163,7 +164,7 @@ via: http://linoxide.com/linux-shell-script/shell-script-backup-files-directorie
 
 作者：[Yevhen Duma][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
