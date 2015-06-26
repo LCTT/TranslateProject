@@ -1,3 +1,5 @@
+translating by wwy-hust
+
 Linux Humor on the Command-line
 ================================================================================
 The desktop is full of eye candy. It enhances the visual experience and, in some cases, can also increase functionality of software. But it also makes software fun. Working on the command-line does not have to be always serious. If you want some fun on the command-line, there are lots of commands to raise a smile.

@@ -1,3 +1,4 @@
+ictlyh Translating
 25 Useful Apache ‘.htaccess’ Tricks to Secure and Customize Websites
 ================================================================================
 Websites are important parts of our lives. They serve the means to expand businesses, share knowledge and lots more. Earlier restricted to providing only static contents, with introduction of dynamic client and server side scripting languages and continued advancement of existing static language like html to html5, adding every bit of dynamicity is possible to the websites and what left is expected to follow soon in near future.
