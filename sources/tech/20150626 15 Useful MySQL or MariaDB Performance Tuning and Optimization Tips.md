@@ -1,3 +1,5 @@
+translation by strugglingyouth
+
 15 Useful MySQL/MariaDB Performance Tuning and Optimization Tips
 ================================================================================
 MySQL is a powerful open source Relational Database Management System or in short RDBMS. It was released back in 1995 (20 years old). It uses Structured Query Language which is probably the most popular choice for managing content within a database. The latest MySQL version is 5.6.25 and was released on 29 May 2015.
