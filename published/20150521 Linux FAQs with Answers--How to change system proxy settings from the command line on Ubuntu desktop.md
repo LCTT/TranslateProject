@@ -1,14 +1,14 @@
-Linux 有问必答--如何在桌面版 Ubuntu 中用命令行更改系统代理设置
+Linux 有问必答：如何在桌面版 Ubuntu 中用命令行更改系统代理设置
 ================================================================================
-> **问题**: 我经常需要在桌面版 Ubuntu 中更改系统代理设置，但我不想通过繁琐的 GUI 菜单链："系统设置" -> "网络" -> "网络代理"。在命令行中有更方便的方法更改桌面版的代理设置吗？
+> **问题**: 我经常需要在桌面版 Ubuntu 中更改系统代理设置，但我不想通过繁琐的 GUI 菜单点击："系统设置" -> "网络" -> "网络代理"。在命令行中有更方便的方法更改桌面版的代理设置吗？
 
-在桌面版 Ubuntu 中，它的桌面环境设置，包括系统代理设置，都存储在 DConf 数据库，这是简单的键值对存储。如果你想通过系统设置菜单修改桌面属性，更改会持久保存在后端的 DConf 数据库。在 Ubuntu 中更改 DConf 数据库有基于图像用户界面和非图形用户界面的两种方式。系统设置或者 dconf-editor 是访问 DConf 数据库的图形方法，而 gsettings 或 dconf 就是能更改数据库的命令行工具。
+在桌面版 Ubuntu 中，它的桌面环境设置，包括系统代理设置，都存储在 DConf 数据库，这是简单的键值对存储。如果你想通过系统设置菜单修改桌面属性，更改会持久保存在后端的 DConf 数据库。在 Ubuntu 中更改 DConf 数据库有基于图像用户界面和非图形用户界面的两种方式。系统设置或者 `dconf-editor` 是访问 DConf 数据库的图形方法，而 `gsettings` 或 `dconf` 就是能更改数据库的命令行工具。
 
-下面介绍如何用 gsettings 从命令行更改系统代理设置。
+下面介绍如何用 `gsettings` 从命令行更改系统代理设置。
 
 ![](https://farm6.staticflickr.com/5460/17872782271_68e5267a4a_c.jpg)
 
-gsetting 读写特定 Dconf 设置的基本用法如下：
+`gsettings` 读写特定 Dconf 设置的基本用法如下：
 
 更改 DConf 设置:
 
@@ -53,7 +53,7 @@ gsetting 读写特定 Dconf 设置的基本用法如下：
 
 ### 在命令行中清除系统代理设置 ###
 
-最后，清除所有 手动/自动 代理设置，还原为无代理设置：
+最后，清除所有“手动/自动”代理设置，还原为无代理设置：
 
     $ gsettings set org.gnome.system.proxy mode 'none' 
 
@@ -63,7 +63,7 @@ via: http://ask.xmodulo.com/change-system-proxy-settings-command-line-ubuntu-des
 
 作者：[Dan Nanni][a]
 译者：[ictlyh](https://github.com/ictlyh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
