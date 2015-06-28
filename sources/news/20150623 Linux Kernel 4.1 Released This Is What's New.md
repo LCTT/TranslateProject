@@ -1,3 +1,5 @@
+translating----geekpi
+
 Linux Kernel 4.1 Released, This Is What’s New
 ================================================================================
 **TuxlogoA brand new version of the Linux Kernel — the heartbeat of the modern world (if we you want us to be poetic about it) — has been released.**
