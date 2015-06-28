@@ -1,3 +1,4 @@
+ictlyh Translating
 How to edit your documents collaboratively on Linux
 ================================================================================
 > "Developed many years before by some high-strung, compulsive assistant, the Bulletin was simply a Word document that lived in a shared folder both Emily and I could access. Only one of us could open it at a time and add a new message, thought, or question to the itemized list. Then we'd print out the updated version and place it on the clipboard that sat on the shelf over my desk, removing the old ones as we went." ("The Devil Wears Prada" by Lauren Weisberger)
