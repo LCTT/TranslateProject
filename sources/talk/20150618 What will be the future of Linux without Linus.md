@@ -1,186 +1,116 @@
-translating wi-cuckoo
-What will be the future of Linux without Linus?
-================================================================================
-![](http://i2.wp.com/www.linuxveda.com/wp-content/uploads/2015/06/linus-torvalds-painting.jpg)
+没有Linus，Linux的未来是什么样子？
+==============================================================================
+![](http://i2.wp.com/www.linuxveda.com/wp—content/uploads/2015/06/linus—torvalds—painting.jpg)
 
-The interview was conducted back in 2007 for Linux For You magazine and we are publishing it here for archival purposes.
+这次采访是 Linux For You 杂志在2007年进行的，现在我们发表在这里是为了存档的目的。
 
-**Q: What are the future enhancements/paths/plans for the Linux kernel?**
+**Q：对于Linux内核，未来的计划/道路/强化是怎样的？**
 
-Linus: I’ve never been much of a visionary — instead of looking at huge plans for the future, I tend to have a rather short time frame of ‘issues in the next few months’. I’m a big believer in that the ‘details’ matter, and if you take care of the details, the big issues will end up sorting themselves out on their own.
+Linus：我从来没有太多的预见性 — 与其从宏大的计划上看未来，我倾向于从一个相对短的时间框架，比如“几个月之后的事情”。我是一个忠实的‘细节成败论’的信仰者，如果你抓住了细节，大的事情也会大事化小，小事化没。
 
-So I really don’t have any great vision for what the kernel will look like in five years — just a very general plan to make sure that we keep our eye on the ball. In fact, when it comes to me personally, one of the things I worry about the most isn’t even the technical issues, but making sure that the ‘process’ works, and that people can work well with each other.
+所以，对于五年后内核会是什么样，我真的没有任何大眼光 — 仅仅是一个非常普遍的计划，确保我们对其保持关注。实际上，对于我个人来说，我最担心的事情之一甚至不是技术问题，而是确保‘进程’工作，这样人们才可以相互协作好。
 
-**Q: How do you see the relationship of Linux and Solaris evolving in the future? How will it benefit the users? **
+**Q：你怎么看Linux和Solaris之间的关系在未来的发展？它会如何使用户受益？**
 
-Linus: I don’t actually see a whole lot of overlap, except that I think Solaris will start using more of the Linux user space tools (which I obviously don’t personally have a lot to do with — I really only do the kernel). The Linux desktop is just so much better than what traditional Solaris has, and I expect Solaris to move more and more towards a more Linux-like model there.
+Linus：我并不能看到整个重叠的地方，除了我认为Solaris会开始使用更过Linux用户磁盘工具（显然我自己来说没有太多关注这个 — 我真的只关心内核）。Linux的桌面比起传统Solaris拥有的好多了，而且我希望Solaris移植越来越多的Linux的东西，朝着一个更加类Linux的模型前进。
 
-On the pure kernel side, the licensing differences mean that there’s not much cooperation, but it will be very interesting to see if that will change. Sun has been making noises about licensing Solaris under the GPL (either v2 or v3), and if the licence differences go away, that could result in some interesting technology. But I’m taking a wait-and-see attitude to that.
+从纯内核方面讲，证书的差异意味着没有太多的合作，但是如果看到这种情况改变会很有趣。Sun已经声明在GPL（v2或v3）下授权Solaris，如果这种证书差异消失，那么会导致一些有趣的技术出现。但对此，我持待见态度。
 
-**Q: Now that the GPLv3 has been finalised and released, do you foresee any circumstance that would encourage you to begin moving the kernel to it? Or, from your perspective, is it so bad that you would never consider it?**
+**Q：现在GPL v3已经完成并发布了，你是否预见有任何情况会激起你开始移植内核到Solaris上去？或者，从你的角度看，它是否很糟糕以至于你从来没考虑过他？**
 
-Linus: I think it is much improved over the early drafts, and I don’t think it’s a horrible licence. I just don’t think it’s the same kind of ‘great’ licence that the GPLv2 is.
+Linus：我觉得相比于早先的草稿，v3有了很多提高，并且我也认为它不是一个糟糕的证书。我只是认为它没有GPLv2一般的‘伟大’。
 
-So in the absence of the GPLv2, I could see myself using the GPLv3. But since I have a better choice, why should I?
+所以，由于没有了GPLv2，我会看见自己将会使用GPLv3。但是，自从我有了一个更好的选择，我为什么不应该考虑一下呢？
 
-That said, I try to always be pragmatic, and the fact that I think the GPLv3 is not as good a licence as the GPLv2 is not a ‘black and white’ question. It’s a balancing act. And if there are other advantages to the GPLv3, maybe those other advantages would be big enough to tilt the balance in favour of the GPLv3.
+这就是说，我努力保持实用主义精神，并且我认为GPLv3比起GPLv2不是一个好证书这件事不是一个‘黑与白’的问题。这是一个平衡做法。如果GPLv3有其他的优点，可能那些优点会在很大程度上倾斜喜爱GPLv3的天平。
 
-Quite frankly, I don’t really see any, but if Solaris really is to be released under the GPLv3, maybe the advantage of avoiding unnecessary non-compatible licence issues could be enough of an advantage that it might be worth trying to re-license the Linux kernel under the GPLv3 too.
+恕我直言，我并没有看到任何优点，但是如果Solaris真的在GPLv3下发布，可能避免不必要的不兼容证书这条足够称为一个优点，可能也会值得去尝试重新许可Linux的内核放在GPLv3下。
 
-Don’t get me wrong — I think it’s unlikely. But I do want to make it clear that I’m not a licence bigot, per se. I think the GPLv2 is clearly the better licence, but licences aren’t everything.
+不要误解我 — 我认为这是不大可能的。但是我确实想澄清我本质上不是一个证书偏执者。我认为GPLv2是毫无疑问的好证书，但是证书不是一切。
 
-After all, I use a lot of programs that are under other licences. I might not put a project I start myself under the BSD (or the X11-MIT) licence, but I think it’s a great licence, and for other projects it may well be the right one.
+总的来说，我使用很多其他证书下的程序。我可能没有把我自己做的一个项目放在BSD（或X11—MIT）证书下，但是我认为它是一个伟大的证书，对于其他项目来说，它可能是最佳的选择。
 
-**Q: Currently are there any Indians who you’d like to highlight as key contributors to the Linux kernel?**
+**Q：目前有没有任何印度人，你想特别提出作为Linux内核的关键贡献者？**
 
-Linus: I have to admit that I don’t directly work with anybody that I actually realise as being from India. That said, I should clarify a bit: I’ve very consciously tried to set up the kernel development so that I don’t end up working personally with a huge number of people.
+Linus：我不得不承认，我并没有与实际认识的来自印度的任何人直接工作。那就是说，我应该稍微澄清下：我已经非常有意识地努力建立一个规模庞大的内核开发团队，这样我不用以独自地工作而告终。
 
-I have this strong conviction that most humans are basically wired up to know a few people really well (your close family and friends), and I’ve tried to make the development model reflect that: with a ‘network of developers’, where people interact with maybe a dozen other people they trust, and those other people in turn interact with ‘their’ set of people they trust.
+我非常相信大多数人基本上被束缚起来了，只对很少的人十分了解（你最亲近的家人和朋友），我也努力构造这样一个开发模型影响这种状况：通过一个‘开发者网络’，人们可以在此互动，可能是与一批你信任的人，而且那些人反过来与他们信任的一群人互动。
 
-So while I’m in occasional contact with hundreds of developers who send me a random patch or two, I’ve tried to set up an environment where the bulk of what I do happens through a much smaller set of people that I know, just because I think that’s how people work. It’s certainly how I like to work.
+所以，当我偶然与上百个开发者联系，他们发给我一两个随机的补丁，我已经努力去建立这样一个环境，在这里我做的一堆事，发生在我熟知的人组成的一个较小的集合间，仅仅因为我认为那就是人们工作的方式。当然也是我喜欢工作的方式。
 
-Also, in all honesty, I don’t even know where a lot of the people I work with live. Location ends up being pretty secondary. So while I’m pretty sure that none of the top 10-15 I work with most closely, are in India, maybe after this goes public, it might get pointed out that there is actually somebody from there!
+同时，坦白地说，我甚至不知道许多与我一起工作的人生活在哪里。位置成了十分次要的东西。所以我很确信与我工作最亲密的前10—15个人中，没有印度的，可能这话稍后传到公众耳里，然后被指出确实有一些人来自那里！
 
-**Q: Since the Linux Kernel Development depends so heavily on you, how do you plan to organise/reorganise it for it to continue progressing without you, in case you decide to dedicate more time to your own life and family?**
+**Q：自从Linux的内核开发对你依赖如此严重以来，你如何计划组织/重组，让它在没有你的情况下继续发展，假设你决定花更多的时间在你自己的生活和家庭上面？**
 
-Linus: I’ve long since come to the realisation that Linux is much bigger than me. Yes, I’m intimately involved in it still, and I have a fairly large day-to-day impact on it, and I end up being the person who, in some sense, acts as the central point for a lot of kernel activities; but no — I wouldn’t say that Linux ‘depends heavily’ on me.
+Linus：现在Linux比我大得多了，为了这个实现我已经工作了很长时间。是的，我仍然十分亲切地身在其中，而且我对其有着想当大的日常影响，我最终会是这样一个人，在某种程度上，扮演着许多内核开发活跃者的中心点的角色；但是 — 我不会说Linux“严重依赖”于我。
 
-So if I had a heart attack and died tomorrow (happily not likely: I’m apparently healthy as anything), people would certainly notice, but there are thousands of people involved in just the kernel, and there’re more than a few that could take over for me with little real confusion.
+所以，如果我得了心脏病并且明天就死了（很高兴没这种可能：我显然在任何方面都还健康），人们肯定会注意到，但是有成千上万的人为内核工作，并且不止一两个人能够接替我，还少有困惑。
 
-**Q: India is one of the major producers of software engineers, yet we don’t contribute much to the Linux domain. What do you think is keeping Indians from becoming proactive on that front? How do you feel we could encourage Indians to get involved and contribute heavily? You have a fan following in India; could your iconic image be used to inspire enthusiasts?**
+**Q：印度是软件工程师的主要产地之一，当然我们没有在Linux领域做太多贡献。你觉得什么是保持印度人在Linux领域变得具有前瞻性的？如果我们鼓励印度人参与并为Linux做很大的贡献，你觉得如何？假如你有一个在印度的粉丝；你会用你的形象来启迪那些爱好者吗？**
 
-Linus: This is actually a very hard question for me to answer. Getting into open source is such a complicated combination of both infrastructure (Internet access, education, you name it), flow of information and simply culture that I can’t even begin to guess what the biggest stumbling block could be.
+Linus：对我来说，这确实是一个不好回答的问题。进入开源是如此一个底层结构（网络接入，教育，你说的），信息流和简单的文化的复杂组合，我甚至不能去猜测最大的障碍会是什么。
 
-In many ways, at least those with an English-speaking culture in India should have a rather easy time getting involved with Linux and other open source projects, if only thanks to the lack of a language barrier. Certainly much easier than many parts of Asia or even some parts of Europe.
+在很多方面，至少那些在印度含英语文化的地方，应该有一个相对容易的方式参与Linux和其他开源项目，如果仅仅是由于语言门槛的话。当然比起亚洲的许多地方，甚至欧洲的一些地方要容易些。
 
-Of course, while that is a lot of people, it’s equally obviously not the majority in India, and I personally simply don’t know enough about the issues in India to be able to make an even half-way intelligent guess about what the best way forward is. I suspect that an enthusiastic local user community is always the best way, and I think you do have that.
+当然，有一些人，并不等同于印度的大部分群体，而且我自己关于印度的情况也知道不多，甚至没法做出一点半路聪明猜测最好的前路是什么。我猜一个热情的本地用户社区一直是最好的途径，我认为你们已经拥有这样的社区了。
 
-As to my ‘iconic image’, I tend to dislike that part personally. I’m not a great public speaker, and I’ve avoided travelling for the last several years because I’m not very comfortable being seen as this iconic ‘visionary’. I’m just an engineer, and I just happen to love doing what I do, and to work with other people in public.
+至于我的‘形象’，我自己不以为然。我不是一个伟大的公众演讲者，而且我最近些年已经避免出游，因为被看做符号‘形象’让我很不自在。我就是一个工程师而已，而且我仅仅是喜欢我做的事情，并与社会上其他人一起工作。
 
-**Q: What would be a good reason for you to consider visiting India?**
+**Q：什么样的理由会让你考虑去看看印度？**
 
-Linus: As mentioned in the first answer, I absolutely detest public speaking, so I tend to avoid conferences, etc. I’d love to go to India for a vacation some day, but if I do, I’d likely just do it incognito — not tell anybody beforehand and just go as a tourist to see the country!
+Linus：如第一个回答中提到，我完全地讨厌公开演讲，所以我才想避免开会等等这些事。我更愿意某天去印度度个假，但是如果我这样做，我可能悄悄地干 — 出行之前不告诉任何人，仅仅作为一个游客去游览印度！
 
-**Q: Recently, you seemed to slam Subversion and CVS, questioning their basic architecture. Now that you’ve got responses from the Subversion community, do you stand corrected, or are you still unconvinced?**
+**Q：最近，你好像在抨击Subversion与CVS，质问他们的基础架构。现在你已经从Subversion和CVS社区那里得到回应，你仍然在坚持自己正确，或者没有被说服吗？**
 
-Linus: I like making strong statements, because I find the discussion interesting. In other words, I actually tend to ‘like’ arguing. Not mindlessly, but I certainly tend to prefer the discussion a bit more heated, and not just entirely platonic.
+Linus：因为我发现这个争论很有趣，所以我想做一个强硬的声明。换句话说，我确实‘喜欢’争论。并不是不经思考的，但是我确实想要让争论更热烈些，而不仅仅是完全的柏拉图式的。
 
-And making strong arguments occasionally ends up resulting in a very valid rebuttal, and then I’ll happily say: “Oh, ok, you’re right.”
+做出强硬的争论有时会导致一个非常合理的反驳，然后我会很高兴地说：“噢，好吧，你是对的。”
 
-But no, that didn’t happen on SVN/CVS. I suspect a lot of people really don’t much like CVS, so I didn’t really even expect anybody to argue that CVS was really anything but a legacy system. And while I’ve gotten a few people who argued that I shouldn’t have been quite so impolite against SVN (and hey, that’s fair — I’m really not a very polite person!), I don’t think anybody actually argued that SVN was ‘good’.
+但是话说回来，对SVN/CVS并不会发生这种情况。我怀疑很多人真的不是很喜欢CVS，所以我真的不期望任何人去坚持CVS是一切，而不是一个老旧的系统。当我知道少数人确实这样争论了，我之前就不该那么不礼貌地反对SVN（嘿，这是公平的 — 我真的不是一个非常礼貌的家伙！），我认为不是任何人都可以争论SVN是‘好的’。
 
-SVN is, I think, a classic case of ‘good enough’. It’s what people are used to, and it’s ‘good enough’ to be used fairly widely, but it’s good enough in exactly the sense DOS and Windows were ‘good enough’. Not great technology, just very widely available, and it works well enough for people and looks familiar enough that people use it. But very few people are ‘proud’ of it, or excited about it.
+我认为，SVN就是一个‘好过头’的经典案例。人们过去经常使用SVN，并且它也‘很好’，用途广泛，但是它的好过头完全如DOS与Windows也‘好过头’一样。不是什么伟大的技术，只是普遍适用而已，同时它对人们来说运行良好，看着十分熟悉。但是很少有人以此为傲，或者对其有兴奋感。
 
-Git, on the other hand, has some of the ‘UNIX philosophy’ behind it. Not that it is about UNIX, per se, but like original UNIX, it had a fundamental idea behind it. For UNIX, the underlying philosophy was/is that, “Everything is a file.” For git, it’s, Everything is just an object in the content-addressable database.”
+Git，从另外方面讲，其身后有一些‘UNIX 哲学’。它不是关于UNIX，实质上，是像原始的UNIX，它身后有一个基础的想法。对UNIX来说，最底层的哲学就是，“所有东西只是一个文件”。对Git来说，“则是每个东西仅仅是内容寻址数据库中的一个对像”。
 
-**Q: Is having so many distros a good or bad idea? Choice is fine, but one does not need to be pampered with choices. Instead of so many man hours being spent in building hundreds of distros, wouldn’t it be easier to get into the enterprise and take on the MS challenge if people could come together and support fewer distros (1 for each use maybe)? What’s your view on that?**
+**Q：现在如此多的发行是好事还是坏事？选择是很有意思的，但是没有人需要被选择给撑着。相较于这么多的人每天花费数小时去构建成百上千的发行版，如果人们可以一起来支持少数的发行版（可能每一个有一个人），这样进入企业，接受微软的挑战是不是更容易些呢？对此你怎么看？**
 
-Linus: I think having multiple distros is an inevitable part of open source. And can it be confusing? Sure. Can it be inefficient? Yes. But I’d just like to compare it to politics: ‘democracy’ has all those confusing choices, and often none of the choices is necessarily what you ‘really’ want either, and sometimes you might feel like things would be smoother and more efficient if you didn’t have to worry about the whole confusion of voting, different parties, coalitions, etc.
+Linus：我认为多发行版是开源不可回避的部分。它会造成困惑吗？当然。它会变得低效率吗？是的。但是我喜欢拿它与政治比较：’民主‘也有那些令人困惑的选择，通常没有选择是必须的,或者你‘真正’想要的。而且有时候，如果你不需要担心选举，不同党派和联合等等方面的困惑的话，你可能喜欢事情更加容易一些，更有效率一些。
 
-But in the end, choice may be inefficient, but it’s also what keeps everybody involved at least ‘somewhat’ honest. We all probably wish our politicians were more honest than they are, and we all probably wish that the different distros sometimes made other choices than they do, but without that choice, we’d be worse off.
+但是最后我想说，选择可能会导致低效率，但是它也让每个人至少保留了‘所谓的’诚信。我们可能都希望我们的政治家比过去更诚信，我们也希望不同的发行版有一天做出其他的选择，但是没有那种选择的话，事情可能会更糟。
 
-**Q: Why do you think CFS is better than SD?**
+**Q：为什么你觉得CFS比SD更好？**
 
-Linus: Part of it is that I have worked with Ingo [Molnar] for a long time, which means that I know him, and know that he’ll be very responsive to any issues that come up. That kind of thing is very important.
+Linus：一部分原因是我与Ingo[Molnar]工作你很长一段时间，这就是说，我了解他，并且知道他会对发生的任何事情非常负责。那种品质是非常重要的。
 
-But part of it is simply about numbers. Most people out there actually say that CFS is better than SD. Including, very much, on 3D games (which people claimed was a strong point of SD).
+但是一部分原因就简单的与用户有关。其他地方的大多数人实际上表示CFS比SD好。包括许多3D游戏方面（这是人们声称SD最强的一点）。
 
-At the same time, though, I don’t think any piece of code is ever ”perfect”. The best thing to happen is that the people who want to be proponents of SD will try to improve that so much that the balance tips over the other way — and we’ll keep both camps trying interesting things because the internal competition motivates them.
+同时，尽管如此，我认为并不是代码的任何一段都十分‘完美’。最好的情况是想成为SD支持者的人会努力提高SD，使得平衡会倾覆其他方面 — 而我们会保持两个阵营都尝试有趣的事情，因为内部的竞争会刺激他们。
 
-**Q: In a talk you had at Google about git, someone asked you how you would take an extremely large code base that is currently handled with something centralised and transition to git without stopping business for six months. What was your response to that?**
+**Q：在Google一次关于Git的访谈中，有人问你如何会停止六个月的商业活动，为git编写了一个目前由一些中心化的东西和交易管理的，特别庞大的代码基础。你对此的回答是什么？**
 
-Linus: Ahh. That was the question where I couldn’t hear the questioner well (the questions were much more audible in the recordings), and I noticed afterwards, when I went back and listened to the recorded audio, that I didn’t answer the question he asked, but the question I thought he’d asked.
+Linus：啊哈。那个问题我在现场没有听清楚（在录制结果里，问题会听得更清楚些），当我回头去听录制的音频，注意到了我没有回答他的问题，但是我觉得这问题他问过。
 
-Anyway, we do have lots of import tools, so that you can actually just import a large project from just about any other previous SCM into git. But the problem, of course, often doesn’t end up being the act of importing itself, but just having to ‘get used to’ the new model!
+无论如何，我们确实有很多导入的工具，所以你实际上可以仅仅是从任何其他的早期SCM导入一个大工程到git里，但问题显然不是经常以导入动作本身结束，而是需要‘习惯’这种新模式！
 
-And quite frankly, I don’t think there is any other answer to that ‘get used to it’ but to just start out and try it. You obviously do not want to start out by importing the biggest and most central project you have; that would indeed just make everything come to a standstill, and make everybody very unhappy indeed.
+坦白来说，我认为关于‘习惯它’没有任何其他答案，而只是去开始使用和尝试它。显然，你不想以导入你现有的最大且最中心的项目为开端；那确实会使每件事出现停顿，然后使得每个人都很不高兴。
 
-So nobody sane would advocate moving everything over to git overnight, and forcing people to change their environment. No. You’d start with a smaller project inside a company, perhaps something that just one group mostly controls and maintains, and start off by converting that to git. That way you get people used to the model, and you start having a core group with the knowledge about how git works and how to use it within the company.
+所以没有理智健全的人会一夜之间拥护将一切移到git上去，并强迫人们改变他们的环境。是的，你需要以公司里的小项目开始，可能是一些一个组主要控制和维护的项目，然后开始转移其到git。这是你能让人们习惯这种模式的方式，你开始有一个核心的组，知道git如何工作，如何在公司里面使用它。
 
-And then you just extend on that. Not in one go. You’d import more and more of the projects — even if you have the ‘one big repository’ model at your company; you also almost certainly have that repository as a set of modules, because having everybody check out everything is just not a workable mode of operation (unless ‘everything’ is just not very large).
+接着，你就会铺展开来。并不一次就位。你会导入越来越多的项目 — 如果在你公司里你有‘一个大仓库’；你也会差不多确定将那个仓库作为许多模块的集合，因为让每个人去检查每件事不是一个可执行的工作模型（除非‘每件事’并不非常大）。
 
-So you’d basically migrate one module at a time, until you get to the point where you’re so comfortable with git that you can just migrate the rest (or the ‘rest’ is so legacy that nobody even cares).
+所以，你基本上有一次转移了一个模块，直到你发现你使用git如此舒服的那个点，你可以移植余下的所有（或者‘余下’太传统了，没人会关心）。
 
-And one of the nice features of git is that it actually plays along pretty well with a lot of other SCMs. That’s how a lot of git users use it: ‘they’ may use git, but sometimes the people they work with don’t even realise, because they see the results of it propagated into some legacy SCM.
+Git最赞的一个功能是，它实际上可以同很多其他SCM相处很好。这就是很多git用户使用它的时候：‘他们’可能只是使用git，但有时候与他们一起工作的人并没有发现，因为他们看到git的结果，联想到一些传统的SCM上去。
 
-**Q: Did they ever experiment with alternate instruction set implementations at Transmeta? [Transmeta Crusoe chip seemed like a very soft CPU — reminding one of Burroughs B1000 interpretive machine, which actually implemented multiple virtual machines. There was one for system software, another for Cobol, another for Fortran; If that is correct, then one could implement Burroughs 6/7000 or HP3000 like stack architecture on the chip or an instruction set suitable for JVM, etc]**
+**Q：在Transmeta，他们曾经经历过用另外的架构设置部署吗？[Transmeta Crusoe的芯片看起来像一个非常软的CPU — 提到一台Burroughs B1000的解释机器，这实际上部署了多台虚拟机。有一台是用于系统软件，一台是用于Cobol，一台用于Fortran；如果上述正确，那么一个人可以部署Burroughs 6/7000或者HP3000，如栈结构一样，在芯片上或者一个适合JVM的结构集合等等。]**
 
-Linus: We did indeed have some alternate instruction set, and while I still am not really supposed to talk about it, I can say that we did have a public demonstration of mixing instruction sets. We had a technology showcase where you could run x86 instructions side-by-side with Java byte code (actually, it was a slightly extended pico-java, iirc).
+Linus：我们确实有一些备选的结构集合，我仍然不打算谈论这个，我可以说我们已经做了一个混合结构集合的公开证明。我们有一个技术宝箱，在那里你同时可以跑x86结构和Java字节码（实际上，它是一个轻量的扩展pico—java，iirc）。
 
-I think the app we showed running was running DOOM on top of Linux, where the Linux parts were a totally standard x86 distribution, but the DOOM binary was a specially compiled version where part of the game was actually compiled pico-Java. And the CPU ended up running them both the same way — as a JIT down to the native VLIW instruction set.
+（选择DOOM的原因仅仅是其源代码可用，并且游戏的核心部分非常小，足以很容易拿它来做一个验证 — 而且它也显然看起来十分有趣。）
 
-(The reason for picking DOOM was just that source code was available, and the core parts of the game were small enough that it was easy to set it up as a demonstration — and it was obviously visually interesting.)
+有更多的事情是在内部运作，但是我不能谈论他们。而且实际上，就我个人而言，对Java不怎么感冒。
 
-There were more things going on internally, but I can’t really talk about them. And I wasn’t actually personally involved with the Java one either.
+**Q：386BSD衍生了NetBSD，FreeBSD和OpenBSD，在Linux出现之前已经发展不错了，但是Linux传播比386BSD及其衍生者更为广泛。这在多大程度上左右你对证书的选择，和你选择的发展过程？你不认为比起GPLv2来，是GPLv3保护了自由，孕育了Linux比BSD更好，直到现在？**
 
-**Q: 386BSD, from which NetBSD, FreeBSD and OpenBSD were derived, was there well before Linux, but Linux spread much more than 386BSD and its derivatives. How much of this do you attribute to the choice of the licence and how much to the development process you chose? Don’t you think that the GPLv3 protects the freedom that has bred Linux better than the BSDs till now, more than the GPLv2 can?**
+Linus：
 
-Linus: I think there’s both a licence issue, and a community and personality issue. The BSD licences always encouraged forking, but also meant that if somebody gets really successful and makes a commercial fork, you cannot necessarily join back. And so even if that doesn’t actually happen (and it did, in the BSD cases — with BSDi), people can’t really ‘trust’ each other as much.
-
-In contrast, the GPLv2 also encourages forking, but it not only encourages the branching off part, it also encourages (and ‘requires’) the ability to merge back again. So now you have a whole new level of trust: you ‘know’ that everybody involved will be bound by the licence, and won’t try to take advantage of you.
-
-So I see the GPLv2 as the licence that allows people the maximum possible freedom within the requirement that you can always join back together again from either side. Nobody can stop you from taking the improvements to the source code.
-
-So is the BSD licence even more ‘free’? Yes. Unquestionably. But I just wouldn’t want to use the BSD licence for any project I care about, because I not only want the freedom, I also want the trust so that I can always use the code that others write for my projects.
-
-So to me, the GPLv2 ends up being a wonderful balance of ‘as free as you can make it’, considering that I do want everybody to be able to trust so that they can always get the source code and use it.
-
-Which is why I think the GPLv3 ends up being a much less interesting licence. It’s no longer about that trust about “getting the source code back”; it has degenerated into a “I wrote the code, so I should be able to control how you use it.”
-
-In other words, I just think the GPLv3 is too petty and selfish. I think the GPLv2 has a great balance between ‘freedom’ and ‘trust’. It’s not as free as the BSD licences are, but it gives you peace of mind in return, and matches what I consider ‘tit-for-tat': I give source code, you give me source code in return.
-
-The GPLv3 tries to control the ‘use’ of that source code. Now it’s, “I give you my source code, so if you use it, you’d better make your devices hackable by me.” See? Petty and small-minded, in my opinion.
-
-**Q: Slowly but steadily, features of the -rt tree are getting integrated into the mainline. What are your current thoughts regarding a merger of the remaining -rt tree into the mainline (and I’m not talking about the CFS)?**
-
-Linus: I won’t guarantee that everything from -rt will ‘ever’ be merged into the standard kernel (there may be pieces that simply don’t end up making sense in the generic kernel), but yes, over the years we’ve actually integrated most of it, and the remaining parts could end up making it one of these days.
-
-I’m a big fan of low-latency work, but at the same time I’m pretty conservative, and I pushed back on some of the more aggressive merging, just because I want to make sure that it all makes sense for not just some extreme real time perspective, but also for ‘normal’ users who don’t need it. And that explains why the process has been a pretty slow but steady trickle of code that has gotten merged, as it was sufficiently stable and made sense.
-
-That, by the way, is not just an -rt thing; it’s how a lot of the development happens. -rt just happens to be one of the more ‘directed’ kernel projects, and one where the main developer is pretty directly involved with the normal kernel too. But quite often the migration of other features (security, virtual memory changes, virtualisation, etc) follows a similar path: they get written up in a very targeted environment, and then pieces of the features get slowly but surely merged into the standard kernel.
-
-**Q: I’m very curious about what the future holds for file systems in the kernel. What do you think about Reiser4, XFS4, ZFS and the new project founded by Oracle? ZFS has been receiving a lot of press these days. Reiser4 delivers very good benchmarks, and xfs4 is trying to keep up, whereas the one by Oracle has a lot of the same specs as Sun’s ZFS. Where are we heading? Which FS looks the most promising in your opinion?**
-
-Linus: Actually, just yesterday we had a git performance issue, where ZFS was orders of magnitude slower than UFS for one user (not under Linux, but git is gaining a lot of traction even outside of kernel development). So I think a lot of the ‘new file system’ mania is partly fed by knowing about the issues with old file systems, and then the (somewhat unrealistic) expectation that a ‘new and improved’ file system will make everything perfect.
-
-In the end, this is one area where you just let people fight it out. See who comes out the winner — and it doesn’t need to be (and likely will not) be a single winner. Almost always, the right choice of file system ends up depending on the load and circumstances.
-
-One thing that I’m personally more excited about than any of the file systems you mention is actually the fact that Flash-based hard disks are quickly becoming available even for ‘normal’ users. Sure, they’re still expensive (and fairly small), but Flash-based storage has such a different performance profile from rotating media, that I suspect that it will end up having a large impact on file system design. Right now, most file systems tend to be designed with the latencies of rotating media in mind.
-
-**Q: The operating system is becoming less and less important. You have said several times that the user is not supposed to ‘see’ the operating system at all. It is the applications that matter. Browser-based applications, like Google’s basic office applications, are making an impact. Where do you think operating systems are headed?**
-
-Linus: I don’t really believe in the ‘browser OS’, because I think that people will always want to do some things locally. It might be about security, or simply about privacy reasons. And while connectivity is widely available, it certainly isn’t ‘everywhere’.
-
-So I think the whole ‘Web OS’ certainly is part of the truth, but another part that people seem to dismiss is that operating systems have been around for decades, and it’s really a fairly stable and well-known area of endeavour. People really shouldn’t expect the OS to magically change: it’s not like people were ‘stupid’ back in the 60s either, or even that hardware was ‘that’ fundamentally different back then!
-
-So don’t expect a revolution. I think OSs will largely continue to do what they do, and while we’ll certainly evolve, I don’t think they’ll change radically. What may change radically are the interfaces and the things you do on top of the OS (and certainly the hardware beneath the OS will continue to evolve too), and that’s what people obviously care about.
-
-The OS? It’s just that hidden thing that makes it all possible. You really shouldn’t care about it, unless you find it very interesting to know what is really going on in the machine.
-
-**Q: The last I heard, you were using a PPC G4/5 for your main personal machine — what are you using now, and why?**
-
-Linus: I ended up giving up on the PowerPC, since nobody is doing any workstations any more, and especially since x86-64 has become such an undeniable powerhouse. So these days, I run a bog-standard PC, with a normal Core 2 Duo on it.
-
-It was a lot of fun to run another architecture (I ran with alpha as my main architecture way back then, for a few years, so it wasn’t the first time either), but commodity CPUs is where it is at. The only thing that I think can really ever displace the x86 architecture would come from below, i.e., if something makes us not use x86 as our main ISA in a decade, I think it would be ARM, thanks to the mobile device market.
-
-**Q: What does Linux mean to you — a hobby, philosophy, the meaning of life, a job, the best OS, something else…?**
-
-Linus: It’s some of all of that. It’s a hobby, but a deeply meaningful one. The best hobbies are the ones that you care ‘really’ deeply about. And these days it’s obviously also my work, and I’m very happy to be able to combine it all.
-
-I don’t know about a ‘philosophy’, and I don’t really do Linux for any really deeply held moral or philosophical reasons (I literally do it because it’s interesting and fun), but it’s certainly the case that I have come to appreciate the deeper reasons why I think open source works so well. So I may not have started to do Linux for any such deep reasons, and I cannot honestly say that that is what motivates me, but I do end up thinking about why it all works.
-
-**Q: Did Microsoft’s ‘Men in Black’ ever talk to you?**
-
-Linus: I’ve never really talked to MS, no. I’ve occasionally been at the same conferences with some MS people (I used to go to more conferences than I do these days), but I’ve never really had anything to do with them. I think there is a mutual wariness.
-
---------------------------------------------------------------------------------
-
-via: http://www.linuxveda.com/2015/06/17/what-happens-to-linux-after-linus/
-
-作者：[Swapnil Bhartiya][a]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
-
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
-
-[a]:http://www.linuxveda.com/author/arnieswap/
