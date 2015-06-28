@@ -1,3 +1,5 @@
+translating by wwy-hust
+
 Comparative Introduction To FreeBSD For Linux Users
 ================================================================================
 ![](https://1102047360.rsc.cdn77.org/wp-content/uploads/2015/03/FreeBSD-790x494.jpg)
