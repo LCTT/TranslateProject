@@ -1,3 +1,4 @@
+sevenot translating
 First Stable Version Of Atom Code Editor Has Been Released
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/06/Atom_stable.png)
