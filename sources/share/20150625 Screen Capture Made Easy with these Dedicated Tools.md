@@ -1,5 +1,4 @@
-translating by ZTinoZ
-Screen Capture Made Easy with these Dedicated Tools
+用这些专用工具让你截图更简单
 ================================================================================
 "A picture is worth a thousand words", a phrase which emerged in the USA in the early part of the 20th century, refers to the notion that a single still image can present as much information as a large amount of descriptive text. Essentially, pictures convey information more effectively and efficiently than words can.
 
@@ -142,7 +141,7 @@ Features include:
 
 via: http://www.linuxlinks.com/article/2015062316235249/ScreenCapture.html
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[ZTinoZ](https://github.com/ZTinoZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
