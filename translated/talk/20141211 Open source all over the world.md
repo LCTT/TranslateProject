@@ -58,36 +58,35 @@
 
 “源代码的开源确实很酷，但开源不应当仅限于此。在各行各业不同领域开源仍有可以用武之地。我们要问下自己：‘开源能够为教育，政府，法律带来什么？其它的呢？其它的领域如何能学习我们？’”
 
-"There's also the matter of content. Content is now free, and we can invest in more free content, sure. But we need free content that has a business model built around it. That is something that more people should care about. If you believe open innovation is better, then we need more models."
+“还有内容的问题。内容在现在是免费的，当然我们可以投资更多的免费内容，不过我们也需要商业模式围绕的内容。这是我们更应该关注的。如果你相信开放的创新能带来更好，那么我们需要更多的商业模式。”
 
-"Education worries me with its fixation on 'content' rather than 'communities.' For example, everywhere I go, I hear university presidents say, 'Wait, education is going to be free?!' The fact that FOSS is free for downstream is great, but the upstream is really powerful. Distributing free courses is great, but we need communities to iterate and make it better. That is something that a lot of different people are doing, and Opensource.com is a place to share what is going on in this space. The question is not so much 'How do we take content?' as it is 'How do you build and distribute it? How do you make sure it is a living thing that gets better, and can morph for different areas?'"
+“教育让我担心其相比与‘社区’它更关注‘内容’。例如，无论我走到哪里，大学校长们都会说，‘等等，难道教育将会免费？！’对于下游来说FOSS免费很棒，但别忘了上游很强大。免费课程很棒，但我们同样需要社区来不断迭代和完善。这是很多人都在做的事情，Opensource.com是一个提供交流的社区。问题不是‘我们如何控制内容’，也不是‘如何建立和分发内容’，而是要确保它处在不断的完善当中，而且能给其他领域提供有价值的参考。”
 
-"But the potential to change the world is limitless, and it's amazing how much progress we've already made. Six years ago we were obsessed about defining a mission statement. We started by saying, 'We are the leader,' but that was the wrong word, because it implied control. Active participant didn't quite get it either... [Máirín Duffy][43] came up with the word [catalyst][44]. And so, we became Red Hat, the company that creates environments to agitate action and catalyze direction.”
+“改变世界的潜力是无穷无尽的，我们已经取得了很棒的进步。”六年前我们痴迷于制定宣言，我们说‘我们是领导者’。我们用错词了，因为那潜在意味着控制。积极的参与者们同样也不能很好理解……[Máirín Duffy][43]提出了[催化剂][44]这个词。然后我们组成了红帽，不断地促进行动，指引方向。”
 
-"Opensource.com is a catalyst in other areas, and that is what Opensource.com is about. I hope you see yourselves this way, too. The quality of content then, when we started, versus now, is incredible. You can see it getting better every quarter. Thank you for investing your time. Thank you for being catalysts. This is a chance for us all to make the world a better place. And I'd love to hear from you."
+“Opensource.com也是其他领域的催化剂，而这正是它的本义所在，我希望你们也这样认为。当时的内容质量和现在比起来都令人难以置信。你可以看到每季度它都在进步。谢谢你们的时间！谢谢成为了催化剂！这是一个让世界变得更好的机会。我想听听你们的看法。”
 
-I stole a glimpse of everyone at the table: more than a few people had tears in their eyes.
+我瞥了一下桌子，发现几个人眼中带泪。
 
-Then, Whitehurst revisits the open education topic of conversation again. "Taking it to an extreme, let's say you have a course about the book [Ulysses][45]. Here, you can explore how to crowdsource a model and get people to work together within the course. Well, it's the same with a piece of code: people work together, and the code itself gets better over time."
+然后Whitehurst又回顾了大会的开放教育议题。“极端一点看，如果你有一门[Ulysses][45]的公开课。在这里你能和一群人一起合作体验课堂。这样就和代码块一样的：大家一起努力，代码随着时间不断改进。”
 
-At this point, I get to have my say. Words like fundamental and possibly irreconcilable came up when discussing the differences between FOSS and academic communities.
+在这一点上，我有发言权。当谈论其FOSS和学术团体之间的差异，向基础和可能的不调和这些词语都跳了出来。
 
-**Remy**: "Retraction is career death." Releasing data or code with your paper could be devastating if you make a mistake. School has always been about avoiding failure and divining 'right answers'. Copying is cheating. Wheels are recreated from scratch ritualistically. In FOSS, you work to fail fastest, but in academia, you invite invalidation."
+**Remy**: “倒退带来死亡。如果你在论文或者发布的代码中烦了一个错误，有可能带来十分严重的后果。学校一直都是避免失败寻求正确答案的地方。复制意味着抄袭。轮子在一遍遍地教条地被发明。FOSS你能快速失败，但在学术界，你只能带来无效的结果。”
 
-**Nicole**: "There are a lot of egos in academia. You need a release manager."
+**Nicole**: “学术界有太多自我的家伙，你们需要一个发布经理。”
 
-**Marcus**: "To collaborate, you have to show the bits you don't understand, and that happens behind closed doors. The reward model is all about what you can take credit for. We need to change the reward model. Publish as much as you can. We release eventually, but we want to release early."
+**Marcus**: “为了合作，你必须展示自己不懂的地方，这些发生在幕后。奖励模型是所有你信任的东西，我们需要改变它。尽可能多地发表，我们最后会发布，但希望能尽早地释放努力。”
 
-**Luis**: "Make teamwork and sharing a priority. And Red Hat can say that to them more."
+**Luis**: “团队和分享应该优先考虑，红帽可以多向它们强调这一点。”
 
-**Jim**: "Is there an active role that companies can play in that?"
+**Jim**: “还有公司在其中扮演积极角色吗？”
 
-[Phil Shapiro][46]: "I'm interested in tipping points in FOSS. It drives me nuts that the Fed hasn't switched to [LibreOffice][47]. We're not spending tax dollars on software, and certainly shouldn't be spending on word processing or Microsoft Office."
+[Phil Shapiro][46]: “我对FOSS的临界点感兴趣。联邦没有改用[LibreOffice][47]把我逼疯了。我们没有在软件上花税款，也不应当在字处理软件或者微软的Office上浪费税钱。”
 
-**Jim**: "We have advocated for that. A lot. Can we do more? That's a valid question. Primarily, we've made progress in the places we have products. We have a solid franchise in government. We are larger per IT spend there than the private sector. Banks and telcos are further along than the government. We've done better in Europe, and I think they have less lobbying dollars at work there, than here. This next generation of computing is almost like a 'do-over'. We are making great progress elsewhere, but it is concerning."
+**Jim**: “我们经常提倡这一点。我们能做更多吗？这是个问题。首先，我们在我们的产品涉足的地方取得了进步。我们在政府中有坚实的专营权。我们比私有公司平均话费更多。银行和电信业都和政府挨着。我们在欧洲做的更好，我认为在那工作又更低的税。下一代计算就像‘终结者’，我们到处取得了进步，但仍然需要忧患意识。”
 
-Suddenly, the door to the room opened. Jim turned and nodded towards his executive assistant standing in the doorway; it was time for his next meeting. He uncrossed his legs, leaned forward, and stood. He thanked everyone again for their work and dedication, smiled, and was out the door... leaving us all a bit more inspired.
-
+突然，门开了。Jim转身向门口站着的执行助理点头。他要去参加下一场会了。他并拢双腿，站着向前微倾。然后，他再次向每个人的工作和奉献表示感谢，微笑着除了门……留给我们更多的激励。
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/business/14/12/jim-whitehurst-inspiration-open-source
