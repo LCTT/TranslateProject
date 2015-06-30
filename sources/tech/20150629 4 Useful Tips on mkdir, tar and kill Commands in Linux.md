@@ -1,3 +1,4 @@
+ictlyh translating
 4 Useful Tips on mkdir, tar and kill Commands in Linux
 ================================================================================
 We keep on accomplishing a task conventionally until we come to know that it can be done in a much better way the other way. In continuation of our [Linux Tips and Trick Series][1], I am here with the below four tips that will going to help you in lots of ways. Here we go!
