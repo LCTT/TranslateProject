@@ -2,7 +2,7 @@
 ================================================================================
 "一图胜过千万句"，这句二十世纪早期在美国应运而生的名言，说的是一张单一的静止图片所蕴含的信息足以匹敌大量的描述性文字。本质上说，图片所传递的信息量比文字更有效更高效。
 
-截图(或抓帧)是一种捕捉自计算机所录制可视化设备输出的快照或图片，屏幕捕捉软件能让计算机获取到截图。This type of software has lots of uses. As an image can illustrate the operation of computer software well, screenshots play an important role in software development and documentation. Alternatively, if you have a technical problem with your computer, a screenshot allows a technical support department to understand the problems you are facing. Writing computer-related articles, documentation and tutorials is nigh on impossible without a good tool for creating screenshots. Screenshots are also useful to save snippets of anything you have on your screen, particularly when it can not be easily printed.
+截图(或抓帧)是一种捕捉自计算机所录制可视化设备输出的快照或图片，屏幕捕捉软件能让计算机获取到截图。此类软件有很多用处，因为一张图片能很好地说明计算机软件的操作，截图在软件开发过程和文档中扮演了一个很重要的角色。或者，如果你的电脑有了个技术性问题，一张截图能让技术支持理解你碰到的这个问题。要写好计算机相关的文章、文档和教程，没有一款好的截图工具是几乎不可能的。如果你想在保存屏幕上任意一些零星的信息，特别是不方便打字时，截图也很有用。
 
 Linux has a good selection of open source dedicated screenshot programs, both graphical and console based. For a feature-rich dedicated screenshot utility, look no further than Shutter. This tool is a superb example of a small open source tool. But there are some great alternatives too.
 
