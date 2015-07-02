@@ -1,12 +1,12 @@
 用这些专用工具让你截图更简单
 ================================================================================
-"一图胜过千万句"，这句二十世纪早期在美国应运而生的名言，说的是一张单一的静止图片所蕴含的信息足以匹敌大量的描述性文字。本质上说，图片所传递的信息量比文字更有效更高效。
+"一图胜过千万句"，这句二十世纪早期在美国应运而生的名言，说的是一张单一的静止图片所蕴含的信息足以匹敌大量的描述性文字。本质上说，图片所传递的信息量的确是比文字更有效更高效。
 
 截图(或抓帧)是一种捕捉自计算机所录制可视化设备输出的快照或图片，屏幕捕捉软件能让计算机获取到截图。此类软件有很多用处，因为一张图片能很好地说明计算机软件的操作，截图在软件开发过程和文档中扮演了一个很重要的角色。或者，如果你的电脑有了个技术性问题，一张截图能让技术支持理解你碰到的这个问题。要写好计算机相关的文章、文档和教程，没有一款好的截图工具是几乎不可能的。如果你想在保存屏幕上任意一些零星的信息，特别是不方便打字时，截图也很有用。
 
-Linux has a good selection of open source dedicated screenshot programs, both graphical and console based. For a feature-rich dedicated screenshot utility, look no further than Shutter. This tool is a superb example of a small open source tool. But there are some great alternatives too.
+在开源世界，Linux有许多专注于截图功能的工具供选择，基于图形的和控制台的都有。如果要说一个功能丰富的专用截图工具，那就来看看Shutter吧。这款工具是小型开源工具的杰出代表，当然也有其它的选择。
 
-Screen capture functionality is not only provided by dedicated applications. GIMP and ImageMagick, two programs which are primarily image manipulation tools, also offer competent screen capturing functionality.
+屏幕捕捉功能不仅仅只有专业的工具提供，GIMP和ImageMagick这两款主攻图像处理的工具，也能提供像样的屏幕捕捉功能。
 
 ----------
 
