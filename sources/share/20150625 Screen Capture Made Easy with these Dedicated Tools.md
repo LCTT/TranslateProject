@@ -14,36 +14,36 @@
 
 ![Shutter in action](http://www.linuxlinks.com/portal/content/reviews/Graphics/Screenshot-Shutter1.png)
 
-Shutter is a feature-rich screenshot application. You can take a screenshot of a specific area, window, your whole screen, or even of a website - apply different effects to it, draw on it to highlight points, and then upload to an image hosting site, all within one window.
+Shutter是一款功能丰富的截图软件。你能为你的特殊区域、窗口、整个屏幕甚至是网站截图 - 然后在其中应用不用的效果，比如用高亮的点在上面绘图，然后上传至一个图片托管网站，一切尽在这个小窗口内。
 
-Features include: 
+包含特性： 
 
 
-- Take a screenshot of:
-    - a specific area
-    - window
-    - the complete desktop
-    - web pages from a script
-- Apply different effects to the screenshot
-- Hotkeys
-- Print
-- Take screenshot directly or with a specified delay time
-- Save the screenshots to a specified directory and name them in a convenient way (using special wild-cards)
-- Fully integrated into the GNOME Desktop (TrayIcon etc)
-- Generate thumbnails directly when you are taking a screenshot and set a size level in %
-- Shutter session collection:
-    - Keep track of all screenshots during session
-    - Copy screeners to clipboard
-    - Print screenshots
-    - Delete screenshots
-    - Rename your file
-- Upload your files directly to Image-Hosters (e.g. http://ubuntu-pics.de), retrieve all the needed links and share them with others
-- Edit screenshots directly using the embedded drawing tool
+- 截图范围：
+    - 一块特殊区域
+    - 窗口
+    - 完整的桌面
+    - 脚本生成的网页
+- 在截图中应用不同效果
+- 热键
+- 打印
+- 直接截图或指定一个延迟时间
+- 将截图保存至一个指定目录并用一个简便方法重命名它(用特殊的通配符)
+- 完成集成在GNOME桌面中(TrayIcon等等)
+- 当你截了一张图并以%设置了尺寸时，直接生成缩略图
+- Shutter会话选项：
+    - 会话中保持所有截图的痕迹
+    - 复制截图至剪贴板
+    - 打印截图
+    - 删除截图
+    - 重命名文件
+- 直接上传你的文件至图像托管网站(比如http://ubuntu-pics.de)，取回所有需要的图像并将它们与其他人分享
+- 用内嵌的绘画工具直接编辑截图
 
-- Website: [shutter-project.org][1]
-- Developer: Mario Kemper and Shutter Team
-- License: GNU GPL v3
-- Version Number: 0.93.1
+- 主页： [shutter-project.org][1]
+- 开发者： Mario Kemper和Shutter团队
+- 许可证： GNU GPL v3
+- 版本号： 0.93.1
 
 ----------
 
