@@ -1,6 +1,6 @@
 如何用Perl访问SQLite数据库
 ================================================================================
-SQLite是一个零配置，无服务端，基于文件的事务文件系统。由于它的轻量级，自包含和紧凑的设计，所以当你想要集成数据库到你的程序中时，SQLite是一个非常流行的选择。在这篇文章中，我会展示如何用Perl脚本来创建和访问SQLite数据库。我演示的Perl代码片段是完整的，所以你可以很简单地修改并集成到你的项目中。
+SQLite是一个零配置、无服务端、基于文件的事务型数据库系统。由于它的轻量级，自包含和紧凑的设计，所以当你想要集成数据库到你的程序中时，SQLite是一个非常不错的选择。在这篇文章中，我会展示如何用Perl脚本来创建和访问SQLite数据库。我演示的Perl代码片段是完整的，所以你可以很简单地修改并集成到你的项目中。
 
 ![](https://farm1.staticflickr.com/552/18444614631_9e7fce8243_c.jpg)
 
@@ -44,25 +44,27 @@ SQLite是一个零配置，无服务端，基于文件的事务文件系统。�
 - 在表中更新行
 - 在表中删除行
 
+-
+
     use DBI;
     use strict;
      
-    # define database name and driver
+    # 定义数据库名称和驱动
     my $driver   = "SQLite";
     my $db_name = "xmodulo.db";
     my $dbd = "DBI:$driver:dbname=$db_name";
      
-    # sqlite does not have a notion of username/password
+    # sqlite 没有用户名密码的概念
     my $username = "";
     my $password = "";
      
-    # create and connect to a database.
-    # this will create a file named xmodulo.db
+    # 创建并连接到数据库
+    # 以下创建的文件名为 xmodulo.db
     my $dbh = DBI->connect($dbd, $username, $password, { RaiseError => 1 })
                           or die $DBI::errstr;
     print STDERR "Database opened successfully\n";
      
-    # create a table
+    # 创建表
     my $stmt = qq(CREATE TABLE IF NOT EXISTS NETWORK
                  (ID INTEGER PRIMARY KEY     AUTOINCREMENT,
                   HOSTNAME       TEXT    NOT NULL,
@@ -76,7 +78,7 @@ SQLite是一个零配置，无服务端，基于文件的事务文件系统。�
        print STDERR "Table created successfully\n";
     }
      
-    # insert three rows into the table
+    # 插入三行到表中
     $stmt = qq(INSERT INTO NETWORK (HOSTNAME,IPADDRESS,OS,CPULOAD)
                VALUES ('xmodulo', 16843009, 'Ubuntu 14.10', 0.0));
     $ret = $dbh->do($stmt) or die $DBI::errstr;
@@ -89,7 +91,7 @@ SQLite是一个零配置，无服务端，基于文件的事务文件系统。�
                VALUES ('puppy', 16843011, 'Ubuntu 14.10', 0.0));
     $ret = $dbh->do($stmt) or die $DBI::errstr;
      
-    # search and iterate row(s) in the table
+    # 在表中检索行
     $stmt = qq(SELECT id, hostname, os, cpuload from NETWORK;);
     my $obj = $dbh->prepare($stmt);
     $ret = $obj->execute() or die $DBI::errstr;
@@ -104,7 +106,7 @@ SQLite是一个零配置，无服务端，基于文件的事务文件系统。�
           print "CPULOAD: ". $row[3] ."\n\n";
     }
      
-    # update specific row(s) in the table
+    # 更新表中的某行
     $stmt = qq(UPDATE NETWORK set CPULOAD = 50 where OS='Ubuntu 14.10';);
     $ret = $dbh->do($stmt) or die $DBI::errstr;
      
@@ -114,7 +116,7 @@ SQLite是一个零配置，无服务端，基于文件的事务文件系统。�
        print STDERR "A total of $ret rows updated\n";
     }
      
-    # delete specific row(s) from the table
+    # 从表中删除某行
     $stmt = qq(DELETE from NETWORK where ID=2;);
     $ret = $dbh->do($stmt) or die $DBI::errstr;
      
@@ -124,7 +126,7 @@ SQLite是一个零配置，无服务端，基于文件的事务文件系统。�
        print STDERR "A total of $ret rows deleted\n";
     }
      
-    # quit the database
+    # 断开数据库连接
     $dbh->disconnect();
     print STDERR "Exit the database\n";
 
@@ -164,7 +166,7 @@ via: http://xmodulo.com/access-sqlite-database-perl.html
 
 作者：[Dan Nanni][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
