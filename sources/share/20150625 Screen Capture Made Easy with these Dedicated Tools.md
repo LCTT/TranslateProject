@@ -14,9 +14,9 @@
 
 ![Shutter in action](http://www.linuxlinks.com/portal/content/reviews/Graphics/Screenshot-Shutter1.png)
 
-Shutter是一款功能丰富的截图软件。你能为你的特殊区域、窗口、整个屏幕甚至是网站截图 - 然后在其中应用不用的效果，比如用高亮的点在上面绘图，然后上传至一个图片托管网站，一切尽在这个小窗口内。
+Shutter是一款功能丰富的截图软件。你可以给你的特殊区域、窗口、整个屏幕甚至是网站截图 - 在其中应用不用的效果，比如用高亮的点在上面绘图，然后上传至一个图片托管网站，一切尽在这个小窗口内。
 
-包含特性： 
+包含特性：
 
 
 - 截图范围：
@@ -38,7 +38,7 @@ Shutter是一款功能丰富的截图软件。你能为你的特殊区域、窗�
     - 删除截图
     - 重命名文件
 - 直接上传你的文件至图像托管网站(比如http://ubuntu-pics.de)，取回所有需要的图像并将它们与其他人分享
-- 用内嵌的绘画工具直接编辑截图
+- 用内置的绘画工具直接编辑截图
 
 - 主页： [shutter-project.org][1]
 - 开发者： Mario Kemper和Shutter团队
@@ -51,11 +51,11 @@ Shutter是一款功能丰富的截图软件。你能为你的特殊区域、窗�
 
 ![HotShots in action](http://www.linuxlinks.com/portal/content/reviews/Graphics/Screenshot-HotShots.png)
 
-HotShots is an application for capturing screens and saving them in a variety of image formats as well as adding annotations and graphical data (arrows, lines, texts, ...).
+HotShots是一款捕捉屏幕并能以各种图片格式保存的软件，同时也能添加注释和图形数据(箭头、行、文本, ...)。
 
-You can also upload your creations to the web (FTP/some web services). HotShots is written with Qt.
+你也可以把你的作品上传到网上(FTP/一些web服务)，HotShots是用Qt开发而成的。
 
-HotShots is not available in Ubuntu's Software Center. But it's easy to install by typing at the command line:
+HotShots无法从Ubuntu的Software Center中获取，不过用以下命令可以轻松地来安装它：
 
     sudo add-apt-repository ppa:ubuntuhandbook1/apps 
     
@@ -63,21 +63,21 @@ HotShots is not available in Ubuntu's Software Center. But it's easy to install 
     
     sudo apt-get install hotshots
 
-Features include:
+包含特性：
 
-- Simple to use
-- Full featured
-- Built-in editor
-- Hotkeys
-- Built-in magnification
-- Freehand and multi-screen capture
-- Supported Output Formats: Black & Whte (bw), Encapsulated PostScript (eps, epsf), Encapsulated PostScript Interchange (epsi), OpenEXR (exr), PC Paintbrush Exchange (pcx), Photoshop Document (psd), ras, rgb, rgba, Irix RGB (sgi), Truevision Targa (tga), eXperimental Computing Facility (xcf), Windows Bitmap (bmp), DirectDraw Surface (dds), Graphic Interchange Format (gif), Icon Image (ico), Joint Photographic Experts Group 2000 (jp2), Joint Photographic Experts Group (jpeg, jpg), Multiple-image Network Graphics (mng), Portable Pixmap (ppm), Scalable Vector Graphics (svg), svgz, Tagged Image File Format (tif, tiff), webp, X11 Bitmap (xbm), X11 Pixmap (xpm), and Khoros Visualization (xv)
-- Internationalization support: Basque, Chinese, Czech, French, Galician, German, Greek, Italian, Japanese, Lithuanian, Polish, Portuguese, Romanian, Russian, Serbian, Singhalese, Slovak, Spanish, Turkish, Ukrainian, and Vietnamese
+- 简单易用
+- 全功能使用
+- 嵌入式编辑器
+- 热键
+- 内置放大功能
+- 徒手和多屏捕捉
+- 支持输出格式：Black & Whte (bw), Encapsulated PostScript (eps, epsf), Encapsulated PostScript Interchange (epsi), OpenEXR (exr), PC Paintbrush Exchange (pcx), Photoshop Document (psd), ras, rgb, rgba, Irix RGB (sgi), Truevision Targa (tga), eXperimental Computing Facility (xcf), Windows Bitmap (bmp), DirectDraw Surface (dds), Graphic Interchange Format (gif), Icon Image (ico), Joint Photographic Experts Group 2000 (jp2), Joint Photographic Experts Group (jpeg, jpg), Multiple-image Network Graphics (mng), Portable Pixmap (ppm), Scalable Vector Graphics (svg), svgz, Tagged Image File Format (tif, tiff), webp, X11 Bitmap (xbm), X11 Pixmap (xpm), and Khoros Visualization (xv)
+- 国际化支持：巴斯克语、中文、捷克语、法语、加利西亚语、德语、希腊语、意大利语、日语、立陶宛语、波兰语、葡萄牙语、罗马尼亚语、俄罗斯语、塞尔维亚语、僧伽罗语、斯洛伐克语、西班牙语、土耳其语、乌克兰语和越南语
 
-- Website: [thehive.xbee.net][2]
-- Developer: xbee
-- License: GNU GPL v2
-- Version Number: 2.2.0
+- 主页： [thehive.xbee.net][2]
+- 开发者 xbee
+- 许可证： GNU GPL v2
+- 版本号： 2.2.0
 
 ----------
 
