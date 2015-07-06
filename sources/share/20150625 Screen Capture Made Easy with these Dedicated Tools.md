@@ -1,3 +1,4 @@
+translating by ZTinoZ
 Screen Capture Made Easy with these Dedicated Tools
 ================================================================================
 "A picture is worth a thousand words", a phrase which emerged in the USA in the early part of the 20th century, refers to the notion that a single still image can present as much information as a large amount of descriptive text. Essentially, pictures convey information more effectively and efficiently than words can.

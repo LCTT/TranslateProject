@@ -1,12 +1,12 @@
-使用SNMP和Cacti监控Linux服务器
+使用 SNMP 和 Cacti 监控 Linux 服务器
 ================================================================================
-SNMP（或者叫简单网络管理协议）用于收集设备内部发生的数据，如负载、磁盘状态、带宽之类。像Cacti这样的网络监控工具用这些数据来生成图标以达到监控的目的。
+SNMP（简单网络管理协议）用于收集设备内部发生的数据，如负载、磁盘状态、带宽之类。像Cacti这样的网络监控工具用这些数据来生成图标以达到监控的目的。
 
 在一个典型的Cacti和SNMP部署中，会有一台或多台启用了SNMP的设备，以及一台独立的用来从那些设备收集SNMP回馈的监控服务器。请记住，所有需要监控的设备必须启用SNMP。在本教程中，出于演示目的，我们将在同一台Linux服务器上配置Cacti和SNMP。
 
 ### 在Debian或Ubuntu上配置SNMP ###
 
-要安装SNMP代理（snmpd）到基于Debian的系统，请运行以下命令：
+要在基于Debian的系统上安装SNMP代理（snmpd），请运行以下命令：
 
     root@server:~# apt-get install snmpd
 
@@ -16,10 +16,10 @@ SNMP（或者叫简单网络管理协议）用于收集设备内部发生的数�
 
 ----------
 
-    # this will make snmpd listen on all interfaces
+    # 使snmpd 监听再所有接口上
     agentAddress  udp:161
     
-    # a read only community 'myCommunity' and the source network is defined
+    # 定义一个只读的 community 'myCommunity' 和源网络
     rocommunity myCommunity 172.17.1.0/24
     
     sysLocation    Earth
@@ -41,10 +41,10 @@ SNMP（或者叫简单网络管理协议）用于收集设备内部发生的数�
 
 ----------
 
-    # A user 'myUser' is being defined with the community string 'myCommunity' and source network 172.17.1.0/24
+    # 定义一个使用 community 'myCommunity' 和源网络 172.17.1.0/24 的用户 'myUser'
     com2sec myUser 172.17.1.0/24 myCommunity
     
-    # myUser is added into the group 'myGroup' and the permission of the group is defined
+    # 将 myUser 加到 'myGroup' 组，定义组权限
     group    myGroup    v1        myUser
     group    myGroup    v2c        myUser
     view all included .1
@@ -69,7 +69,7 @@ SNMP可以通过运行snmpwalk命令进行测试。如果SNMP已经配置成功�
     iso.3.6.1.2.1.1.2.0 = OID: iso.3.6.1.4.1.8072.3.2.10
     iso.3.6.1.2.1.1.3.0 = Timeticks: (2097) 0:00:20.97
     
-    ~~ OUTPUT TRUNCATED ~~
+    ~~ 输出截断 ~~
     
     iso.3.6.1.2.1.92.1.1.2.0 = Gauge32: 1440
     iso.3.6.1.2.1.92.1.2.1.0 = Counter32: 1
@@ -79,9 +79,9 @@ SNMP可以通过运行snmpwalk命令进行测试。如果SNMP已经配置成功�
 
 ### 配置带有SNMP的Cacti ###
 
-在本教程中，我们将在同一台Linux服务器上设置Cacti和SNMP。所以，去[安装Cacti][2]到刚刚配置SNMP的Linux服务器上吧。
+在本教程中，我们将在同一台Linux服务器上设置Cacti和SNMP。所以，到刚刚配置SNMP的Linux服务器上去[安装Cacti][2]吧。
 
-安装完后，Cacti网页接口可以通过“http://172.17.1.44/cacti”来访问，当然，在你的环境中，请将IP地址换成你的服务器的地址。
+安装完后，Cacti网页界面可以通过“http://172.17.1.44/cacti ”来访问，当然，在你的环境中，请将IP地址换成你的服务器的地址。
 
 ![](http://farm6.staticflickr.com/5512/10972747655_0298f6ce6c_z.jpg)
 
@@ -99,7 +99,7 @@ SNMP可以通过运行snmpwalk命令进行测试。如果SNMP已经配置成功�
 
 Cacti将根据先前配置的SNMP字符串注册设备。在本教程中，我们将只添加启用了SNMP的本地服务器。
 
-要添加设备，我们必须以管理员登录，然后转到Cacti管理员面板中的控制台。点击控制台 > 设备。
+要添加设备，我们必须以管理员登录，然后转到Cacti管理员面板中的控制台。点击 控制台 > 设备。
 
 ![](http://farm8.staticflickr.com/7411/10972747855_b464972e56_z.jpg)
 
@@ -111,7 +111,7 @@ Cacti将根据先前配置的SNMP字符串注册设备。在本教程中，我�
 
 ![](http://farm8.staticflickr.com/7400/10972747935_df03500de7_z.jpg)
 
-由于设备已经添加，我们来指定想要创建的图表模板。你可以在该页的最后章节中找到本节内容。
+现在设备已经添加，我们来指定想要创建的图表模板。你可以在该页面的最后部分中找到这块内容。
 
 ![](http://farm4.staticflickr.com/3773/10972747955_083101e6ab_z.jpg)
 
@@ -123,7 +123,7 @@ Cacti将根据先前配置的SNMP字符串注册设备。在本教程中，我�
 
 ![](http://farm8.staticflickr.com/7374/10972920484_ed6b33b8b8_z.jpg)
 
-### 接口图表和64位计数器 ###
+### 接口的图表和64位计数器 ###
 
 默认情况下，Cacti在SNMP查询中使用32位计数器。32位计数器对于大多数带宽图表而言已经足够了，但是对于超过100Mbps的带宽，它就无能为力了。如果已经知道带宽会超过100Mbps，建议你使用64位计数器。使用64位计数器一点也不麻烦。
 
@@ -173,9 +173,9 @@ via: http://xmodulo.com/monitor-linux-servers-snmp-cacti.html
 
 作者：[Sarmed Rahman][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:http://xmodulo.com/author/sarmed
-[1]:http://xmodulo.com/install-configure-cacti-linux.html
+[1]:https://linux.cn/article-4683-1.html
