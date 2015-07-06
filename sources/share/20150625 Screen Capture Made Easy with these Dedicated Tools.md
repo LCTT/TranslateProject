@@ -85,31 +85,31 @@ HotShots无法从Ubuntu的Software Center中获取，不过用以下命令可以
 
 ![ScreenCloud in action](http://www.linuxlinks.com/portal/content/reviews/Graphics/Screenshot-ScreenCloud.png)
 
-ScreenCloud is an easy to use open source screenshot tool.
+ScreenCloud是一款易于使用的开源截图工具。
 
-With this software, users can take a screenshot using one of the 3 hotkeys or simply click the ScreenCloud tray icon. Users can choose where you want to save the screenshot.
+在这款软件中，用户可以用三个热键中的其中一个或只需点击ScreenCloud托盘图标就能进行截图，用户也可以自行选择保存截图的地址。
 
-If you choose to upload your screenshot to the screencloud website, a link will automatically be copied to your clipboard. This can be shared with friends or colleagues via email or in an IM conversation. All they have to do is click the link and look at your screenshot.
+如果你选择上传你的截图到screencloud主页，链接会自动复制到你的剪贴板上，你能通过email或在一个聊天对话框里和你的朋友同事分享它，他们肯定会点击这个链接来看你的截图的。
 
-Features include:
+包含特性：
 
-- Capture full screen, window or selection
-- Fast and easy: Snap a photo, paste the link, done
-- Free hosting of your screenshots
-- Hotkeys
-- Set timer delay
-- Enable 'Capture window borders'
-- Enable/Disable Notifications
-- Set app to run on start up
-- Adjust account/upload/filename/shortcut settings
-- Cross platform tool
-- Plugin support, save to Dropbox, Imgur, and more
-- Supports uploading to FTP and SFTP servers
+- 捕捉整个屏幕，窗口和截选区域
+- 快速又简单：截取图片，粘贴链接，完成
+- 免费托管你的截图
+- 热键
+- 设置定时器延迟
+- 允许 '捕捉窗口边框'
+- 启用/禁用通知
+- 设置开机自启动
+- 调整账户/上传/文件名/快捷方式的设置
+- 跨平台工具
+- 插件支持：保存至Dropbox，Imgur等等
+- 支持上传至FTP和SFTP服务器
 
-- Website: [screencloud.net][3]
-- Developer: Olav S Thoresen
-- License: GNU GPL v2
-- Version Number: 1.2.1
+- 主页： [screencloud.net][3]
+- 开发者： Olav S Thoresen
+- 许可证： GNU GPL v2
+- 版本号： 1.2.1
 
 ----------
 
