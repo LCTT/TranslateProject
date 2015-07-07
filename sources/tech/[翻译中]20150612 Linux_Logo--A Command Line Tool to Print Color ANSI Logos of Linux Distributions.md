@@ -1,3 +1,4 @@
+[translating by KevinSJ]
 Linux_Logo – A Command Line Tool to Print Color ANSI Logos of Linux Distributions
 ================================================================================
 linuxlogo or linux_logo is a Linux command line utility that generates a color ANSI picture of Distribution logo with a few system information.
