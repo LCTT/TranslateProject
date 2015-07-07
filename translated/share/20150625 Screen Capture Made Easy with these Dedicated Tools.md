@@ -117,25 +117,25 @@ ScreenCloud是一款易于使用的开源截图工具。
 
 ![KSnapShot in action](http://www.linuxlinks.com/portal/content/reviews/Graphics/Screenshot-KSnapshot.png)
 
-KSnapshot is a simple utility for taking screenshots. It can capture images of the whole desktop, a single window, a section of a window or a selected region. Images can then be saved in a variety of different formats.
+KSnapshot也是一款易于使用的截图工具，它能给整个桌面、一个单一窗口、窗口的一部分或一块所选区域捕捉图像。，图像能以各种不用的格式保存。
 
-KSnapshot also allows users to use hotkeys to take a screenshot. Besides saving the screenshot, it can be copied to the clipboard or opened with any program that is associated with image files.
+KSnapshot也允许用户用热键来进行截图。除了保存截图之外，它也可以被复制到剪贴板或用任何与图像文件关联的程序打开。
 
-KSnapshot is part of the KDE 4 graphics module.
+KSnapshot是KDE 4图形模块的一部分。
 
-Features include:
+包含特性：
 
-- Save snapshot in multiple formats
-- Snapshot delay
-- Exclude window decorations
-- Copy the snapshot to the clipboard
-- Hotkeys
-- Can be scripted using its D-Bus interface
+- 以多种格式保存截图
+- 延迟截图
+- 剔除窗口装饰图案
+- 复制截图至剪贴板
+- 热键
+- 能用它的D-Bus界面进行脚本化
 
-- Website: [www.kde.org][4]
-- Developer: KDE, Richard J. Moore, Aaron J. Seigo, Matthias Ettrich
-- License: GNU GPL v2
-- Version Number: 0.8.2
+- 主页： [www.kde.org][4]
+- 开发者： KDE, Richard J. Moore, Aaron J. Seigo, Matthias Ettrich
+- 许可证： GNU GPL v2
+- 版本号： 0.8.2
 
 --------------------------------------------------------------------------------
 
