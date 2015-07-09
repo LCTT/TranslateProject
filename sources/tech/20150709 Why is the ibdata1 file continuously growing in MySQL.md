@@ -1,3 +1,4 @@
+wyangsun 翻译中
 Why is the ibdata1 file continuously growing in MySQL?
 ================================================================================
 ![ibdata1 file](https://www.percona.com/blog/wp-content/uploads/2013/08/ibdata1-file.jpg)
