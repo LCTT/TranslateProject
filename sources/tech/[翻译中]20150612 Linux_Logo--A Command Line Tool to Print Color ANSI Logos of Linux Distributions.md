@@ -1,181 +1,180 @@
-[translating by KevinSJ]
-Linux_Logo – A Command Line Tool to Print Color ANSI Logos of Linux Distributions
+Linux_Logo – 输出彩色 ANSI Linux 发行版徽标的命令行工具
 ================================================================================
-linuxlogo or linux_logo is a Linux command line utility that generates a color ANSI picture of Distribution logo with a few system information.
+linuxlogo 或 linux_logo 是一款在Linux命令行下生成附带系统信息的彩色 ANSI 发行版徽标的工具。
 
-![Linux_Logo - Prints Color ANSI Logs of Linux Distro](http://www.tecmint.com/wp-content/uploads/2015/06/Linux_Logo.png)
 
-Linux_Logo – Prints Color ANSI Logs of Linux Distro
+![Linux_Logo – 输出彩色 ANSI Linux 发行版徽标](http://www.tecmint.com/wp-content/uploads/2015/06/Linux_Logo.png)
 
-This utility obtains System Information from /proc Filesystem. linuxlogo is capable of showing color ANSI image of various logos other than the host distribution logo.
+Linux_Logo – 输出彩色 ANSI Linux 发行版徽标
 
-The System information associated with logo includes – Linux Kernel Version, Time when Kernel was last Compiled, Number/core of processor, Speed, Manufacturer and processor Generation. It also show information about total physical RAM.
+这个小工具可以从 /proc 文件系统中获取系统信息并可以显示包括主机发行版在内的其他很多发行版的徽标。
 
-It is worth mentioning here that screenfetch is another tool of similar kind, which shows distribution logo and a more detailed and formatted system inform http://www.tecmint.com/screenfetch-system-information-generator-for-linux/ation. We have already covered screenfetch long ago, which you may refer at:
+与徽标一同显示的系统信息包括 – Linux 内核版本，最近一次编译Linux内核的时间，处理器/核心数量，速度，制造商，以及哪一代处理器。它还能显示总共的物理内存大小。
 
-- [ScreenFetch – Generates Linux System Information][15]
+值得一提的是，screenfetch是一个拥有类似功能的工具，它也能显示发行版徽标，同时还提供更加详细美观的系统信息。我们之前已经介绍过这个工具，你可以参考一下链接：
+- [ScreenFetch – Generates Linux System Information][1]
 
-linux_logo and Screenfetch should not be compared to each other. While the output of screenfetch is more formatted and detailed, where linux_logo produce maximum number of color ANSI diagram, and option to format the output.
 
-linux_logo is written primarily in C programming Language, which displays linux logo in an X Window System and hence User Interface X11 aka X Window System should be installed. The software is released under GNU General Public License Version 2.0.
+linux_logo 和 Screenfetch 并不能相提并论。尽管 screenfetch 的输出较为整洁并提供更多细节， linux_logo 则提供了更多的彩色 ANSI 图标， 并且提供了格式化输出的选项。
 
-For the purpose of this article, we’re using following testing environment to test the linux_logo utility.
+linux_logo 主要使用C语言编写并将 linux 徽标呈现在 X 窗口系统中因此需要安装图形界面 X11 或 X 系统。这个软件使用GNU 2.0协议。
 
-    Operating System : Debian Jessie
-    Processor : i3 / x86_64
+本文中，我们将使用以下环境测试 linux_logo 工具。
 
-### Installing Linux Logo Utility in Linux ###
+    操作系统 : Debian Jessie
+    处理器 : i3 / x86_64
 
-**1. The linuxlogo package (stable version 5.11) is available to install from default package repository under all Linux distributions using apt, yum or dnf package manager as shown below.**
+### 在 Linux 中安装 Linux Logo工具 ###
 
-    # apt-get install linux_logo			[On APT based Systems]
-    # yum install linux_logo			[On Yum based Systems]
-    # dnf install linux_logo			[On DNF based Systems]
-    OR
-    # dnf install linux_logo.x86_64			[For 64-bit architecture]
+**1. linuxlogo软件包 ( 5.11 稳定版) 可通过如下方式使用 apt, yum,或 dnf 在所有发行版中使用默认的软件仓库进行安装**
 
-**2. Once linuxlogo package has been installed, you can run the command `linuxlogo` to get the default logo for the distribution you are using..**
+    # apt-get install linux_logo			[用于基于 Apt 的系统] （译者注：Ubuntu中，该软件包名为linuxlogo）
+    # yum install linux_logo			[用于基于 Yum 的系统]
+    # dnf install linux_logo			[用于基于 Dnf 的系统]
+    或
+    # dnf install linux_logo.x86_64			[用于 64 位系统]
+
+**2. 装好linuxlogo软件包之后，你可以使用命令 `linuxlogo` 来获取你当前使用的发行版的默认徽标..**
 
     # linux_logo
-    OR
+    或
     # linuxlogo
 
-![Get Default OS Logo](http://www.tecmint.com/wp-content/uploads/2015/06/Get-Default-OS-Logo.png)
+![获取默认系统徽标](http://www.tecmint.com/wp-content/uploads/2015/06/Get-Default-OS-Logo.png)
 
-Get Default OS Logo
+获取默认系统徽标
 
-**3. Use the option `[-a]`, not to print any fancy color. Useful if viewing linux_logo over black and white terminal.**
+**3. 使用 `[-a]` 选项可以输出没有颜色的徽标。当在黑白终端里使用 linux_logo 时，这个选项会很有用。**
 
     # linux_logo -a
 
-![Black and White Linux Logo](http://www.tecmint.com/wp-content/uploads/2015/06/Black-and-White-Linux-Logo.png)
+![黑白 Linux 徽标](http://www.tecmint.com/wp-content/uploads/2015/06/Black-and-White-Linux-Logo.png)
 
-Black and White Linux Logo
+黑白 Linux 徽标
 
-**4. Use option `[-l]` to print LOGO only and exclude all other System Information.**
+**4. 使用 `[-l]` 选项可以仅输出徽标而不包含系统信息。**
 
-# linux_logo -l
+    # linux_logo -l
 
-![Print Distribution Logo](http://www.tecmint.com/wp-content/uploads/2015/06/Print-Distribution-Logo.png)
+![输出发行版徽标](http://www.tecmint.com/wp-content/uploads/2015/06/Print-Distribution-Logo.png)
 
-Print Distribution Logo
+输出发行版徽标
 
-**5. The `[-u]` switch will display system uptime.**
+**5. `[-u]` 选项可以显示系统运行时间。**
 
     # linux_logo -u
 
-![Print System Uptime](http://www.tecmint.com/wp-content/uploads/2015/06/Print-System-Uptime.png)
+![输出系统运行时间](http://www.tecmint.com/wp-content/uploads/2015/06/Print-System-Uptime.png)
 
-Print System Uptime
+输出系统运行时间
 
-**6. If you are interested in Load Average, use option `[-y]`. You may use more than one option at a time.**
+**6. 如果你对系统平均负载感兴趣，可以使用 `[-y]` 选项。你可以同时使用多个选项。**
 
     # linux_logo -y
 
-![Print System Load Average](http://www.tecmint.com/wp-content/uploads/2015/06/Print-System-Load-Average.png)
+![输出系统平均负载](http://www.tecmint.com/wp-content/uploads/2015/06/Print-System-Load-Average.png)
 
-Print System Load Average
+输出系统平均负载
 
-For more options and help on them, you may like to run.
+如需查看更多选项并获取相关帮助，你可以使用如下命令。
 
     # linux_logo -h
 
-![Linuxlogo Options and Help](http://www.tecmint.com/wp-content/uploads/2015/06/linuxlogo-options.png)
+![Linuxlogo 选项及帮助](http://www.tecmint.com/wp-content/uploads/2015/06/linuxlogo-options.png)
 
-Linuxlogo Options and Help
+Linuxlogo选项及帮助
 
-**7. There are a lots of built-in Logos for various Linux distributions. You may see all those logos using option `-L list` switch.**
+**7. 此工具内置了很多不同发行版的徽标。你可以使用 `[-L list]` 选项查看在这些徽标的列表。**
 
     # linux_logo -L list
 
-![List of Linux Logos](http://www.tecmint.com/wp-content/uploads/2015/06/List-of-Linux-Logos.png)
+![Linux 徽标列表](http://www.tecmint.com/wp-content/uploads/2015/06/List-of-Linux-Logos.png)
 
-List of Linux Logos
+Linux 徽标列表
 
-Now you want to print any of the logo from the list, you may use `-L NUM` or `-L NAME` to display selected logo.
+如果你想输出这个列表中的任意徽标，可以使用 `-L NUM` 或 `-L NAME` 来显示想要选中的图标。
 
-- -L NUM – will print logo with number NUM (deprecated).
-- -L NAME – will print the logo with name NAME.
+- -L NUM – 会输出列表中序号为 NUM 的图标 (不推荐).
+- -L NAME – 会输出列表中名为 NAME 的图标。
 
-For example, to display AIX Logo, you may use command as:
+例如，如果想要显示 AIX 的徽标，你可以使用如下命令
 
     # linux_logo -L 1
-    OR
+    或
     # linux_logo -L aix
 
-![Print AIX Logo](http://www.tecmint.com/wp-content/uploads/2015/06/Print-AIX-Logo.png)
+![输出 AIX 图标](http://www.tecmint.com/wp-content/uploads/2015/06/Print-AIX-Logo.png)
 
-Print AIX Logo
+输出 AIX 图标
 
-**Notice**: The `-L 1` in the command where 1 is the number at which AIX logo appears in the list, where `-L aix` is the name at which AIX logo appears in the list.
+**注**: 命令中的使用 `-L 1` 是因为 AIX 徽标在列表中的编号是1，而使用 `-L aix` 则是因为 AIX 徽标在列表中的名称为 aix 
 
-Similarly, you may print any logo using these options, few examples to see..
+同样的，你还可以使用这些选项输出任何图标，以下是一些例子..
 
     # linux_logo -L 27
     # linux_logo -L 21
 
-![Various Linux Logos](http://www.tecmint.com/wp-content/uploads/2015/06/Various-Linux-Logos.png)
+![各种 Linux 徽标](http://www.tecmint.com/wp-content/uploads/2015/06/Various-Linux-Logos.png)
 
-Various Linux Logos
+各种 Linux 徽标
 
-This way, you can use any of the logos just by using the number or name, that is against it.
+你可以通过徽标对应的编号或名字使用任意徽标
 
-### Some Useful Tricks of Linux_logo ###
+### 一些使用 Linux_logo 的建议和提示###
 
-**8. You may like to print your Linux distribution logo at login. To print default logo at login you may add the below line at the end of `~/.bashrc` file.**
+**8. 你可以在登录界面输出你的 Linux 发行版徽标。要输出默认徽标，你可以在 ` ~/.bashrc`` 文件的最后添加以下内容。**
 
     if [ -f /usr/bin/linux_logo ]; then linux_logo; fi
 
-**Notice**: If there isn’t any` ~/.bashrc` file, you may need to create one under user home directory.
+**注**: 如没有` ~/.bashrc` 文件，你需要在当前用户的 home 目录下新建一个。
 
-**9. After adding above line, just logout and re-login again to see the default logo of your Linux distribution.**
+**9. 在添加以上内容后，你只需要注销并重新登录即可看到你的发行版的默认徽标**
 
 ![Print Logo on User Login](http://www.tecmint.com/wp-content/uploads/2015/06/Print-Logo-on-Login.png)
 
-Print Logo on User Login
+在用户登录时输出徽标
 
-Also note, that you may print any logo, after login, simply by adding the below line.
+其实你也可以在登录后输出任意图标，只需加入以下内容
 
     if [ -f /usr/bin/linux_logo ]; then linux_logo -L num; fi
 
-**Important**: Don’t forget to replace num with the number that is against the logo, you want to use.
+**重要**: 不要忘了将 num 替换成你想使用的图标。
 
 **10. You can also print your own logo by simply specifying the location of the logo as shown below.**
 
     # linux_logo -D /path/to/ASCII/logo
 
-**11. Print logo on Network Login.**
+**11. 在远程登录时输出图标。**
 
     # /usr/local/bin/linux_logo > /etc/issue.net
 
-You may like to use ASCII logo if there is no support for color filled ANSI Logo as:
+如果你想使用　ASCII　徽标而不是含有颜色的 ANSI 徽标，则使用如下命令
 
     # /usr/local/bin/linux_logo -a > /etc/issue.net
 
-**12. Create a Penguin port – A set of port to answer connection. To create Penguin port Add the below line to file /etc/services file.**
+**12. 创建一个 Penguin 端口 - 用于回应连接的端口。要创建 Penguin 端口， 则需在 /etc/services 文件中加入以下内容 **
 
     penguin	4444/tcp	penguin
 
-Here ‘4444‘ is the port number which is currently free and not used by any resource. You may use a different port.
-
-Also add the below line to file /etc/inetd.conf file.
+这里的 `4444` 是一个未被任何其他资源使用的空闲端口。你也可以使用其他端口。
+你还需要在 /etc/inetd.conf中加入以下内容
 
     penguin	stream	     tcp	nowait	root /usr/local/bin/linux_logo 
 
-Restart the service inetd as:
+并使用以下命令重启 inetd 服务
 
     # killall -HUP inetd
 
-Moreover linux_logo can be used in bootup script to fool the attacker as well as you can play a prank with your friend. This is a nice tool and I might use it in some of my scripts to get output as per distribution basis.
+linux_logo 还可以用做启动脚本来愚弄攻击者或对你朋友使用恶作剧。这是一个我经常在我的脚本中用来获取不同发行版输出的好工具。
 
-Try it once and you won’t regret. Let us know what you think of this utility and how it can be useful for you. Keep Connected! Keep Commenting. Like and share us and help us get spread.
+试过一次后，你就不会忘记的。让我们知道你对这个工具的想法及它对你的作用吧。 不要忘记给评论、点赞或分享！
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/linux_logo-tool-to-print-color-ansi-logos-of-linux/
 
 作者：[Avishek Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[KevSJ](https://github.com/KevSJ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
