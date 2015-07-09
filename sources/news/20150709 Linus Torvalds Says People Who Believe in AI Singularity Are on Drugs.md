@@ -1,22 +1,22 @@
-Linus Torvalds Says People Who Believe in AI Singularity Are on Drugs
+Linus Torvalds说那些对人工智能奇点深信不疑的人显然磕了药
 ================================================================================
-*As usual, his comments should not be taken literally*
+*像往常一样, 他的评论不能只看字面意思*
 
 ![](http://i1-news.softpedia-static.com/images/news2/linus-torvalds-says-people-who-believe-in-an-ai-singularity-are-on-drugs-486373-2.jpg)
 
-**AI is a very hot topic right now, and many high profile people, including Elon Musk, the head of Tesla, have said that we're going to get sentient AIs soon and that it's going to be a dangerous threshold. It seems that Linus Torvalds doesn't feel the same way, and he thinks that it's just bad Sci-Fi.**
+**人工智能是一个非常热门的话题，许多高端人士，包括特斯拉的的CEO埃隆·马斯克就曾表示有感情的人工智能技术即将到来，同时这一技术将发展到危险的门槛上。不过Linus Torvalds显然不这么认为，他认为那只是差劲的科幻小说。**
 
-The idea of AIs turning on their human creators is not something new, but recently the so-called AI singularity has been discussed, and people like Elon Musk and Stephen Hawking expressed concerns about the possibility of creating a monster. And it's not just them, forums and comments sections are full of alarmist people who don't know what to believe or who take for granted the opinions of much smarter people.
+人工智能激发了人们的创造力已经不是什么新鲜的想法了，不过近段时间关于所谓的人工智能奇点的讨论，引起了诸如埃隆·马斯克和斯蒂芬·霍金表示关心，认为可能会创造出一个怪兽。不只是他们，论坛和评论部分充斥着杞人忧天者，他们不知道该相信谁，或是那个提出建议的人更聪明。
 
-As it turns out, Linus Torvalds, the creator of the Linux project, has a completely different opinion on this matter. In fact, he says that nothing like this will happen, and we have a much better reason to believe him. AI means that someone wrote its code, and Linus knows the power and the obstacles of writing an AI code. He's much likely to guess what's involved and to understands why an AI won't be a threat.
+事实证明Linus Torvalds，Linux项目创始人在这件事上显然有完全不同的观点。他说事实上什么都不会发生，我们也更有理由相信他。人工智能意需要有人编写它的代码，Linus知道编写人工智能代码会遇到的阻力和障碍。他很有可能已经猜到了什么会被涉及到，并且明白为什么人工智能不会成为威胁。
 
-### Linus Torvalds and AIs ###
+### Linus Torvalds与人工智能 ###
 
-Linus Torvalds answered some questions from the community on [slashdot.org][1], and all his ideas were very interesting. He talked about the [future of gaming and Valve][2], but he also tackled stuff like AI. He's usually asked stuff about the kernel or open source, but he has opinions on other topics as well. As a matter a fact, the AI subject is something that he can actually talk about as a programmer.
+Linus Torvalds在[slashdot.org][1]上回答了一些社区中的问题，他的所有观点都十分有趣。他曾对[游戏的未来和Valve][2]发表看法，就像这次关于人工智能一样。虽然他经常是问一些关于内核和开源的问题，但是他在其他部分也有自己的见解。事实是作为一个问题，人工智能工程是一个他可以从程序员的角度讨论的问题。
 
-"So I'd expect just more of (and much fancier) rather targeted AI, rather than anything human-like at all. Language recognition, pattern recognition, things like that. I just don't see the situation where you suddenly have some existential crisis because your dishwasher is starting to discuss Sartre with you. The whole 'Singularity' kind of event? Yeah, it's science fiction, and not very good Sci-Fi at that, in my opinion. Unending exponential growth? What drugs are those people on? I mean, really" wrote Linus on Slashdot.
+“所以我期待更多有针对性的（和相当棒的）AI，而不是它有多像人。像语言识别、模式识别，这样的东西。我根本找不出在你洗碗的时候，洗碗机和你讨论Sartre（萨特，法国哲学家、小说家、剧作家）有什么危害。真的有‘奇点’这种事吗？是的，我认为那只是科幻小说，还不是好的那种。无休止的指数增长？我说，真的！这些人嗑了什么药了吧？”Linus在Slashdot写道。
 
-It's your choice whether to believe Elon Musk or Linus, but if betting were involved, I would put my money on Linus.
+选择相信埃隆·马斯克还是Linus是你的决定，但如果我卷入了这场赌局，我会把线投给Linus。
 
 --------------------------------------------------------------------------------
 
