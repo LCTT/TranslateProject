@@ -19,7 +19,8 @@ Linux常见问题解答--如何修复"tar：由于前一个错误导致于失败
     tar: Exiting with failure status due to previous errors
 
 你可以从上面的例子中看到，引起错误的原因的确是“读权限不允许”（denied read permission.)
-要解决这个问题，只要简单地更改出问题的文件的权限即可（或将其移除），然后重新执行tar命令。
+要解决这个问题，只要简单地更改(或移除)问题文件的权限，然后重新执行tar命令即可。
+
 --------------------------------------------------------------------------------
 
 via: http://ask.xmodulo.com/tar-exiting-with-failure-status-due-to-previous-errors.html
