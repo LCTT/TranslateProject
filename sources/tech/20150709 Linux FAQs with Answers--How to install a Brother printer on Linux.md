@@ -1,3 +1,5 @@
+translating----geekpi
+
 Linux FAQs with Answers--How to install a Brother printer on Linux
 ================================================================================
 > **Question**: I have a Brother HL-2270DW laser printer, and want to print documents from my Linux box using this printer. How can I install an appropriate Brother printer driver on my Linux computer, and use it? 
