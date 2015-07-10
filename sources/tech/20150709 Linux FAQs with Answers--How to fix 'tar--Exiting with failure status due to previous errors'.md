@@ -1,7 +1,6 @@
-Linux FAQs with Answers--How to fix “tar: Exiting with failure status due to previous errors”
+Linux常见问题解答--如何修复"tar：由于前一个错误导致于失败状态中退出"("Exiting with failure status due to previous errors")
 ================================================================================
-> **Question**: When I try to create an archive using tar command, it fails in the middle, and throws an error saying: "tar: Exiting with failure status due to previous errors." What causes this error, and how can I solve this error? 
-
+> **问题**: 当我想试着用tar命令来创建一个压缩文件时，总在执行过程中失败，并且抛出一个错误说明"tar：由于前一个错误导致于失败状态中退出"("Exiting with failure status due to previous errors"). 什么导致这个错误的发生，要如何解决？
 ![](https://farm9.staticflickr.com/8863/17631029953_1140fe2dd3_b.jpg)
 
 If you encounter the following error while running tar command, the most likely reason is that you do not have read permission on one of the files you are trying to archive with tar.
