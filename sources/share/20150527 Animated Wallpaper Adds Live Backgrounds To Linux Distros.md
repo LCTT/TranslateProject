@@ -1,3 +1,4 @@
+Translating by Love-xuan
 Animated Wallpaper Adds Live Backgrounds To Linux Distros
 ================================================================================
 **We know a lot of you love having a stylish Ubuntu desktop to show off.**
