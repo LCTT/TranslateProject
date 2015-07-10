@@ -1,3 +1,5 @@
+FSSlc Translating
+
 Autojump – An Advanced ‘cd’ Command to Quickly Navigate Linux Filesystem
 ================================================================================
 Those Linux users who mainly work with Linux command Line via console/terminal feels the real power of Linux. However it may sometimes be painful to navigate inside Linux Hierarchical file system, specially for the newbies.
