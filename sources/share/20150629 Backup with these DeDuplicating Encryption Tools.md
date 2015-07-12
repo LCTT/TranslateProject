@@ -1,3 +1,5 @@
+FSSlc Translating
+
 Backup with these DeDuplicating Encryption Tools
 ================================================================================
 Data is growing both in volume and value. It is becoming increasingly important to be able to back up and restore this information quickly and reliably. As society has adapted to technology and learned how to depend on computers and mobile devices, there are few that can deal with the reality of losing important data. Of firms that suffer the loss of data, 30% fold within a year, 70% cease trading within five years. This highlights the value of data.
