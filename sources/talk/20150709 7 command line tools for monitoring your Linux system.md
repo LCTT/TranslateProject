@@ -1,23 +1,22 @@
-Translating by ZTinoZ
-7 command line tools for monitoring your Linux system
+监控你的Linux系统的7个命令行工具
 ================================================================================
-**Here is a selection of basic command line tools that will make your exploration and optimization in Linux easier. **
+**这里有一些基本的命令行工具，让你能更简单地探索和操作Linux。**
 
 ![Image courtesy Meltys-stock](http://images.techhive.com/images/article/2015/06/command-line-tools-monitoring-linux-system-1-100591899-orig.png)
 
-### Dive on in ###
+### 深入 ###
 
-One of the great things about Linux is how deeply you can dive into the system to explore how it works and to look for opportunities to fine tune performance or diagnose problems. Here is a selection of basic command line tools that will make your exploration and optimization easier. Most of these commands are already built into your Linux system, but in case they aren’t, just Google “install”, the command name, and the name of your distro and you’ll find which package needs installing (note that some commands are bundled with other commands in a package that has a different name from the one you’re looking for). If you have any other tools you use, let me know for our next Linux Tools roundup.
+关于Linux最棒的一件事之一是你能深入操作系统多深，来探索它是如何工作的并寻找机会来微调性能或诊断问题。这里有一些基本的命令行工具，让你能更简单地探索和操作Linux。大多数的这些命令是在你的Linux系统中已经内建的，但假设它们不是，就用谷歌搜索命令名和你的发行版名吧，你会找到哪些包需要安装(注意，一些命令是和其它命令捆绑起来打成一个包的，你所找的包可能写的是其它的名字)。如果你知道一些你所使用的其它工具，欢迎评论。
 
 ![Image courtesy Mark Gibbs](http://images.techhive.com/images/article/2015/06/command-line-tools-monitoring-linux-system-2-100591901-orig.png)
 
 ### How we did it ###
 
-FYI: The screenshots in this collection were created on [Debian Linux 8.1][1] (“Jessie”) running in a virtual machine under [Oracle VirtualBox 4.3.28][2] under [OS X 10.10.3][3] (“Yosemite”). See my next slideshow “[How to install Debian Linux in a VirtualBox VM][4]” for a tutorial on how to build your own Debian VM.
+FYI: 本文中的截图取自[Debian Linux 8.1][1] (“Jessie”)，其运行在[OS X 10.10.3][3] (“Yosemite”)操作系统下[Oracle VirtualBox 4.3.28][2]中的一台虚拟机里。想要建立你的Debian虚拟机，可以看看我的这篇教程——“[How to install Debian Linux in a VirtualBox VM][4]”。
 
 ![Image courtesy Mark Gibbs](http://images.techhive.com/images/article/2015/06/command-line-tools-monitoring-linux-system-3-100591902-orig.png)
 
-### Top command ###
+### Top命令 ###
 
 One of the simpler Linux system monitoring tools, the **top command** comes with pretty much every flavor of Linux. This is the default display, but pressing the “z” key switches the display to color. Other hot keys and command line switches control things such as the display of summary and memory information (the second through fourth lines), sorting the list according to various criteria, killing tasks, and so on (you can find the complete list at [here][5]).
 
