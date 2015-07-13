@@ -1,3 +1,4 @@
+Translating by ZTinoZ
 7 command line tools for monitoring your Linux system
 ================================================================================
 **Here is a selection of basic command line tools that will make your exploration and optimization in Linux easier. **
