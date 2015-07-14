@@ -1,3 +1,4 @@
+XLCYun 翻译中
 How to manage Vim plugins
 ================================================================================
 Vim is a versatile, lightweight text editor on Linux. While its initial learning curve can be overwhelming for an average Linux user, its benefits are completely worthy. As far as the functionality goes, Vim is fully customizable by means of plugins. Due to its high level of configuration, though, you need to spend some time with its plugin system to be able to personalize Vim in an effective way. Luckily, we have several tools that make our life with Vim plugins easier. The one I use on a daily basis is Vundle.
