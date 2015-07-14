@@ -1,3 +1,4 @@
+struggling 翻译中
 Setting up RAID 1 (Mirroring) using ‘Two Disks’ in Linux – Part 3
 ================================================================================
 RAID Mirroring means an exact clone (or mirror) of the same data writing to two drives. A minimum two number of disks are more required in an array to create RAID1 and it’s useful only, when read performance or reliability is more precise than the data storage capacity.

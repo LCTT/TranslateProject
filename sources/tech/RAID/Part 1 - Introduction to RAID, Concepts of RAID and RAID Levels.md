@@ -1,3 +1,4 @@
+struggling 翻译中
 Introduction to RAID, Concepts of RAID and RAID Levels – Part 1
 ================================================================================
 RAID is a Redundant Array of Inexpensive disks, but nowadays it is called Redundant Array of Independent drives. Earlier it is used to be very costly to buy even a smaller size of disk, but nowadays we can buy a large size of disk with the same amount like before. Raid is just a collection of disks in a pool to become a logical volume.
