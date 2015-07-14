@@ -107,7 +107,7 @@
     
     ![](https://farm1.staticflickr.com/559/18998707843_438cd55463_c.jpg)
     
-    #### 清除没有用的插件 ####
+#### 清除没有用的插件 ####
     
     如果你有任何没有用到的插件,你可以通过PluginClean命令来删除它.	
         :PluginClean
