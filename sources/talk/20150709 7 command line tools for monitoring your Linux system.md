@@ -18,7 +18,7 @@ FYI: 本文中的截图取自[Debian Linux 8.1][1] (“Jessie”)，其运行在
 
 ### Top命令 ###
 
-One of the simpler Linux system monitoring tools, the **top command** comes with pretty much every flavor of Linux. This is the default display, but pressing the “z” key switches the display to color. Other hot keys and command line switches control things such as the display of summary and memory information (the second through fourth lines), sorting the list according to various criteria, killing tasks, and so on (you can find the complete list at [here][5]).
+作为Linux系统监控工具中比较易用的一个，**top命令**能带我们一览Linux中的几乎每一处。以下这张图是它的默认界面，但是按“z”键可以切换不同的显示颜色。其它热键和命令则有其它的功能，例如显示概要信息和内存信息(第四行第二个)，根据各种不一样的条件排序、终止进程任务等等(你可以在[这里][5]找到完整的列表)。
 
 ![Image courtesy Mark Gibbs](http://images.techhive.com/images/article/2015/06/command-line-tools-monitoring-linux-system-4-100591904-orig.png)
 
