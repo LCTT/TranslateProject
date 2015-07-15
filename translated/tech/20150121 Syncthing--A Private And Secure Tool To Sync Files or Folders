@@ -114,8 +114,7 @@ Syncthing已经被成功地初始化了，网页管理接口也可以通过浏�
 
 现在，在你的浏览器上打开**http://ip-address:8080/**。你会看到下面的界面：
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/Syncthing-server1-Mozilla-Firefox_001.png)
-
+![](http://www.unixmen.com/wp-content/uploads/2015/01/Syncthing-server1-Mozilla-Firefox_001.png)
 网页管理界面分为两个窗格，在左窗格中，你应该可以看到同步的文件夹列表。如前所述，文件夹**default**在你初始化Syncthing时被自动创建。如果你想同步更多文件夹，点击**Add Folder**按钮。
 
 在右窗格中，你可以看到已连接的设备数。现在这里只有一个，就是你现在正在操作的计算机。
@@ -124,23 +123,23 @@ Syncthing已经被成功地初始化了，网页管理接口也可以通过浏�
 
 为了提高安全性，让我们启用TLS，并且设置访问网页管理界面的管理员用户和密码。要做到这点，点击右上角的齿轮按钮，然后选择**Settings**
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/Menu_002.png)
+![](http://www.unixmen.com/wp-content/uploads/2015/01/Menu_002.png)
 
 输入管理员的帐户名/密码。我设置的是admin/Ubuntu。你可以使用一些更复杂的密码。
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/Syncthing-server1-Mozilla-Firefox_004.png)
+![](http://www.unixmen.com/wp-content/uploads/2015/01/Syncthing-server1-Mozilla-Firefox_004.png)
 
 点击Save按钮，现在，你会被要求重启Syncthing使更改生效。点击Restart。
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/Selection_005.png)
+![](http://www.unixmen.com/wp-content/uploads/2015/01/Selection_005.png)
 
 刷新你的网页浏览器。你可以看到一个像下面一样的SSL警告。点击显示**我了解风险(I understand the Risks)**的按钮。接着，点击“添加例外(Add Exception)“按钮把当前页面添加进浏览器的信任列表中。
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/Untrusted-Connection-Mozilla-Firefox_006.png)
+![](http://www.unixmen.com/wp-content/uploads/2015/01/Untrusted-Connection-Mozilla-Firefox_006.png)
 
 输入前面几步设置的管理员用户和密码。我设置的是**admin/ubuntu**。
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/Authentication-Required_007.png)
+![](http://www.unixmen.com/wp-content/uploads/2015/01/Authentication-Required_007.png)
 
 现在，我们提高了网页管理界面的安全性。别忘了两个系统都要执行上面同样的步骤。
 
@@ -150,25 +149,25 @@ Syncthing已经被成功地初始化了，网页管理接口也可以通过浏�
 
 例如，下面是我系统1的ID.
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/Syncthing-server1-Mozilla-Firefox_008.png)
+![](http://www.unixmen.com/wp-content/uploads/2015/01/Syncthing-server1-Mozilla-Firefox_008.png)
 
 复制这个ID，然后到另外一个系统（系统2）的网页管理界面，在右边窗格点击Add Device按钮。
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/Syncthing-server-Mozilla-Firefox_010.png)
+![](http://www.unixmen.com/wp-content/uploads/2015/01/Syncthing-server-Mozilla-Firefox_010.png)
 
 接着会出现下面的界面。在Device区域粘贴**系统1 ID **。输入设备名称（可选）。在地址区域，你可以输入其它系统（译者注：即粘贴的ID所属的系统，此应为系统1）的IP地址，或者使用默认值。默认值为**dynamic**。最后，选择要同步的文件夹。在我们的例子中，同步文件夹为**default**。
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/Syncthing-server-Mozilla-Firefox_009.png)
+![](http://www.unixmen.com/wp-content/uploads/2015/01/Syncthing-server-Mozilla-Firefox_009.png)
 
 一旦完成了，点击save按钮。你会被要求重启Syncthing。点击Restart按钮重启使更改生效。
 
 现在，我们到**系统１**的网页管理界面，你会看到来自系统２的连接和同步请求。点击**Add**按钮。现在，系统２会要求系统１分享和同步名为default的文件夹。
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/Selection_013.png)
+![](http://www.unixmen.com/wp-content/uploads/2015/01/Selection_013.png)
 
 接着重启系统１的Syncthing服务使更改生效。
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/Selection_014.png)
+![](http://www.unixmen.com/wp-content/uploads/2015/01/Selection_014.png)
 
 等待大概６０秒，接着你会看到两个系统之间已成功连接并同步。
 
@@ -176,11 +175,11 @@ Syncthing已经被成功地初始化了，网页管理接口也可以通过浏�
 
 添加系统２后，系统１网页管理界面中的控制窗口如下：
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/Syncthing-server-Mozilla-Firefox_016.png)
+![](http://www.unixmen.com/wp-content/uploads/2015/01/Syncthing-server-Mozilla-Firefox_016.png)
 
 添加系统１后，系统２网页管理界面中的控制窗口如下：
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/Syncthing-server-Mozilla-Firefox_018.png)
+![](http://www.unixmen.com/wp-content/uploads/2015/01/Syncthing-server-Mozilla-Firefox_018.png)
 
 ![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/Syncthing-server-Mozilla-Firefox_018.png)
 
