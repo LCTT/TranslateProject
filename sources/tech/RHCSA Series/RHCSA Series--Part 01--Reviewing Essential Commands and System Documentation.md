@@ -258,39 +258,41 @@ When using cut based on fields, the default field separator is a tab, but a diff
 
 ![Extract Text From a File in Linux](http://www.tecmint.com/wp-content/uploads/2015/02/Extract-Text-from-a-file.png)
 
-Extract Text From a File in Linux
+从文件中提取文本
 
-Note that the output of the two examples above was truncated for brevity.
 
-**Reformatting files with fmt command**
+注意，上方的两个输出的结果是十分简洁的。
 
-fmt is used to “clean up” files with a great amount of content or lines, or with varying degrees of indentation. The new paragraph formatting defaults to no more than 75 characters wide. You can change this with the -w (width) option, which set the line length to the specified number of characters.
+**使用fmt命令重新格式化文件**
 
-For example, let’s see what happens when we use fmt to display the /etc/passwd file setting the width of each line to 100 characters. Once again, output has been truncated for brevity.
+fmt 被用于去“清理”有大量内容或行的文件,或者有很多缩进的文件.新的锻炼格式每行不会超过75个字符款，你能改变这个设定通过 -w(width 宽度)参数，它可以设置行宽为一个特定的数值
+
+举个例子，让我们看看当我们用fmt显示定宽为100个字符的时候的文件/etc/passwd 时会发生什么.再来一次，输出值变得更加简洁.
 
     # fmt -w100 /etc/passwd
 
 ![File Reformatting in Linux](http://www.tecmint.com/wp-content/uploads/2015/02/File-Reformatting-in-Linux-with-fmt-command.png)
 
-File Reformatting in Linux
+Linux文件重新格式化
 
-**Formatting content for printing with pr command**
+**使用pr命令格式化打印内容**
 
-pr paginates and displays in columns one or more files for printing. In other words, pr formats a file to make it look better when printed. For example, the following command:
+pr 分页并且在列中展示一个或多个用于打印的文件. 换句话说，使用pr格式化一个文件使他打印出来时看起来更好.举个例子，下面这个命令
 
     # ls -a /etc | pr -n --columns=3 -h "Files in /etc"
 
-Shows a listing of all the files found in /etc in a printer-friendly format (3 columns) with a custom header (indicated by the -h option), and numbered lines (-n).
+以一个友好的排版方式(3列)输出/etc下的文件,自定义了页眉(通过 -h 选项实现),行号(-n)
 
 ![File Formatting in Linux](http://www.tecmint.com/wp-content/uploads/2015/02/File-Formatting-in-Linux-with-pr-command.png)
 
-File Formatting in Linux
+Linux的文件格式
 
-### Summary ###
+### 总结 ###
 
-In this article we have discussed how to enter and execute commands with the correct syntax in a shell prompt or terminal, and explained how to find, inspect, and use system documentation. As simple as it seems, it’s a large first step in your way to becoming a RHCSA.
+在这篇文章中，我们已经讨论了如何在Shell或终端以正确的语法输入和执行命令，并解释如何找到，检查和使用系统文档。正如你看到的一样简单，这就是你成为RHCSA的第一大步
 
-If you would like to add other commands that you use on a periodic basis and that have proven useful to fulfill your daily responsibilities, feel free to share them with the world by using the comment form below. Questions are also welcome. We look forward to hearing from you!
+如果你想添加一些其他的你经常使用的能够有效帮你完成你的日常工作的基础命令,并为分享他们而感到自豪,请在下方留言.也欢迎提出问题.我们期待您的回复.
+
 
 --------------------------------------------------------------------------------
 
