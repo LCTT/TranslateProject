@@ -1,5 +1,4 @@
-sevenot translated
-原子(Atom)代码编辑器的第一个稳定版本发布
+原子(Atom)代码编辑器的视频短片介绍
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/06/Atom_stable.png)
 
@@ -8,12 +7,15 @@ sevenot translated
 ### 这是个漫长的过程 ###
 
 滴水穿石，非一日之功，Atom同样经历一个漫长的过程。从2008年首次提出概念到这个月第一个稳定版本的发布，主创人员和全球各地的贡献者，这几年来不断地致力于Atom核心的开发。我们通过下面这张图来了解一下Atom的发展过程：
+
 ![Image credit: Atom](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/06/Atom_stable_timeline.jpeg)
-图片来源：Atom
+
+*图片来源：Atom*
 
 ### 回到未来 ###
 
-Atom 1.0 通过一个流行视屏发布，展示了这款编辑器的潜能。这个视屏就像70年代的科幻连续剧一样，今天你将会看到一个极其酷炫的视屏：
+Atom 1.0 通过流行的视频发布方式，展示了这款编辑器的潜能。这个视屏就像70年代的科幻连续剧一样，今天你将会看到一个极其酷炫的视屏：
+
 注：youtube视频，不行做个链接吧
 <iframe width="640" height="390" frameborder="0" allowfullscreen="true" src="http://www.youtube.com/embed/Y7aEiVwBAdk?version=3&amp;rel=1&amp;fs=1&amp;showsearch=0&amp;showinfo=1&amp;iv_load_policy=1&amp;wmode=transparent" type="text/html" class="youtube-player"></iframe>
 
@@ -52,7 +54,7 @@ via: http://itsfoss.com/atom-stable-released/
 
 作者：[Abhishek][a]
 译者：[sevenot](https://github.com/sevenot)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
