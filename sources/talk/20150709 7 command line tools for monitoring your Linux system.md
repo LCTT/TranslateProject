@@ -24,7 +24,7 @@ FYI: 本文中的截图取自[Debian Linux 8.1][1] (“Jessie”)，其运行在
 
 ### htop ###
 
-Htop is a more sophisticated alternative to top. Wikipedia: “Users often deploy htop in cases where Unix top does not provide enough information about the systems processes, for example when trying to find minor memory leaks in applications. Htop is also popularly used interactively as a system monitor. Compared to top, it provides a more convenient, cursor-controlled interface for sending signals to processes.” (For more detail go [here][6].)
+相比top，它的替代品Htop则更为精致。维基百科是这样描述的：“Users often deploy htop in cases where Unix top does not provide enough information about the systems processes, for example when trying to find minor memory leaks in applications. Htop is also popularly used interactively as a system monitor. Compared to top, it provides a more convenient, cursor-controlled interface for sending signals to processes.” (For more detail go [here][6].)
 
 ![Image courtesy Mark Gibbs](http://images.techhive.com/images/article/2015/06/command-line-tools-monitoring-linux-system-5-100591903-orig.png)
 
