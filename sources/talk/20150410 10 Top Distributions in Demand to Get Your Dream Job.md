@@ -1,4 +1,3 @@
-sevenot translating
 10 Top Distributions in Demand to Get Your Dream Job
 ================================================================================
 We are coming up with a series of five articles which aims at making you aware of the top skills which will help you in getting yours dream job. In this competitive world you can not rely on one skill. You need to have balanced set of skills. There is no measure of a balanced skill set except a few conventions and statistics which changes from time-to-time.
