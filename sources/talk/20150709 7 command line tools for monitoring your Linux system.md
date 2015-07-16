@@ -10,13 +10,13 @@
 
 ![Image courtesy Mark Gibbs](http://images.techhive.com/images/article/2015/06/command-line-tools-monitoring-linux-system-2-100591901-orig.png)
 
-### How we did it ###
+### 我们怎么做 ###
 
-FYI: 本文中的截图取自[Debian Linux 8.1][1] (“Jessie”)，其运行在[OS X 10.10.3][3] (“Yosemite”)操作系统下[Oracle VirtualBox 4.3.28][2]中的一台虚拟机里。想要建立你的Debian虚拟机，可以看看我的这篇教程——“[How to install Debian Linux in a VirtualBox VM][4]”。
+须知: 本文中的截图取自[Debian Linux 8.1][1] (“Jessie”)，其运行在[OS X 10.10.3][3] (“Yosemite”)操作系统下[Oracle VirtualBox 4.3.28][2]中的一台虚拟机里。想要建立你的Debian虚拟机，可以看看我的这篇教程——“[How to install Debian Linux in a VirtualBox VM][4]”。
 
 ![Image courtesy Mark Gibbs](http://images.techhive.com/images/article/2015/06/command-line-tools-monitoring-linux-system-3-100591902-orig.png)
 
-### Top命令 ###
+### Top ###
 
 作为Linux系统监控工具中比较易用的一个，**top命令**能带我们一览Linux中的几乎每一处。以下这张图是它的默认界面，但是按“z”键可以切换不同的显示颜色。其它热键和命令则有其它的功能，例如显示概要信息和内存信息(第四行第二个)，根据各种不一样的条件排序、终止进程任务等等(你可以在[这里][5]找到完整的列表)。
 
@@ -24,7 +24,7 @@ FYI: 本文中的截图取自[Debian Linux 8.1][1] (“Jessie”)，其运行在
 
 ### htop ###
 
-相比top，它的替代品Htop则更为精致。维基百科是这样描述的：“Users often deploy htop in cases where Unix top does not provide enough information about the systems processes, for example when trying to find minor memory leaks in applications. Htop is also popularly used interactively as a system monitor. Compared to top, it provides a more convenient, cursor-controlled interface for sending signals to processes.” (For more detail go [here][6].)
+相比top，它的替代品Htop则更为精致。维基百科是这样描述的：“用户经常会部署htop以防Unix top不能提供关于系统进程的足够信息，比如说当你在尝试发现应用程序里的一个小的内存泄露问题，Htop一般也能作为一个系统监听器来使用。相比top，它提供了一个更方便的光标控制界面来向进程发送信号。” (想了解更多细节猛戳[这里][6].)
 
 ![Image courtesy Mark Gibbs](http://images.techhive.com/images/article/2015/06/command-line-tools-monitoring-linux-system-5-100591903-orig.png)
 
