@@ -1,3 +1,4 @@
+struggling 翻译中
 Setup RAID Level 6 (Striping with Double Distributed Parity) in Linux – Part 5
 ================================================================================
 RAID 6 is upgraded version of RAID 5, where it has two distributed parity which provides fault tolerance even after two drives fails. Mission critical system still operational incase of two concurrent disks failures. It’s alike RAID 5, but provides more robust, because it uses one more disk for parity.

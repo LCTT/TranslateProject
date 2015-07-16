@@ -1,3 +1,4 @@
+struggling 翻译中
 Growing an Existing RAID Array and Removing Failed Disks in Raid – Part 7
 ================================================================================
 Every newbies will get confuse of the word array. Array is just a collection of disks. In other words, we can call array as a set or group. Just like a set of eggs containing 6 numbers. Likewise RAID Array contains number of disks, it may be 2, 4, 6, 8, 12, 16 etc. Hope now you know what Array is.

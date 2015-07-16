@@ -1,3 +1,4 @@
+struggling 翻译中
 Creating RAID 5 (Striping with Distributed Parity) in Linux – Part 4
 ================================================================================
 In RAID 5, data strips across multiple drives with distributed parity. The striping with distributed parity means it will split the parity information and stripe data over the multiple disks, which will have good data redundancy.

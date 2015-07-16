@@ -1,3 +1,4 @@
+struggling 翻译中
 Setting Up RAID 10 or 1+0 (Nested) in Linux – Part 6
 ================================================================================
 RAID 10 is a combine of RAID 0 and RAID 1 to form a RAID 10. To setup Raid 10, we need at least 4 number of disks. In our earlier articles, we’ve seen how to setup a RAID 0 and RAID 1 with minimum 2 number of disks.

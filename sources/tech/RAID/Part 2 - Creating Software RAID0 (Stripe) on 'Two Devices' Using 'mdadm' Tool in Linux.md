@@ -1,3 +1,4 @@
+struggling 翻译中
 Creating Software RAID0 (Stripe) on ‘Two Devices’ Using ‘mdadm’ Tool in Linux – Part 2
 ================================================================================
 RAID is Redundant Array of Inexpensive disks, used for high availability and reliability in large scale environments, where data need to be protected than normal use. Raid is just a collection of disks in a pool to become a logical volume and contains an array. A combine drivers makes an array or called as set of (group).
