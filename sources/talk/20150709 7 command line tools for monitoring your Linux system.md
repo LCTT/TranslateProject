@@ -30,7 +30,7 @@
 
 ### Vmstat ###
 
-Vmstat is a simpler tool for monitoring your Linux system performance statistics but that makes it highly suitable for use in shell scripts. Fire up your regex-fu and you can do some amazing things with vmstat and cron jobs. “The first report produced gives averages since the last reboot. Additional reports give information on a sampling period of length delay. The process and memory reports are instantaneous in either case” (go [here][7] for more info.).
+Vmstat是一款监控Linux系统性能数据的简易工具，这让它在shell脚本中使用更合适。打开你的regex-fu，用vmstat和cron作业来做一些激动人心的事情吧。“产出的第一份报告给出的是上一次系统重启之后的均值，另外其一份报告给出的则是从前一个报告起间隔周期中的信息。进程和内存报告在任何情况下都是不停更新的”(猛戳[这里][7]获取更多信息)。
 
 ![Image courtesy Mark Gibbs](http://images.techhive.com/images/article/2015/06/command-line-tools-monitoring-linux-system-6-100591905-orig.png)
 
