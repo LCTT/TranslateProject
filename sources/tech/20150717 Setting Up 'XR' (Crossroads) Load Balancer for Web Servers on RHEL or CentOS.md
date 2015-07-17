@@ -1,3 +1,4 @@
+translation by strugglingyouth
 Setting Up ‘XR’ (Crossroads) Load Balancer for Web Servers on RHEL/CentOS
 ================================================================================
 Crossroads is a service independent, open source load balance and fail-over utility for Linux and TCP based services. It can be used for HTTP, HTTPS, SSH, SMTP and DNS etc. It is also a multi-threaded utility which consumes only one memory space which leads to increase the performance when balancing load.
