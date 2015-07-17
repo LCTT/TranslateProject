@@ -183,3 +183,5 @@ via: http://linoxide.com/linux-how-to/configure-ftp-proftpd-fedora-22/
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:http://linoxide.com/author/arunp/
+[1]:http://www.proftpd.org/
+[2]:http://www.proftpd.org/features.html
