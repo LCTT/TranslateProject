@@ -1,8 +1,8 @@
-Linux 答疑--如何在 Ubuntu 15.04 的 GNOME 终端中开启多个标签
+Linux有问必答：如何在 Ubuntu 15.04 的 GNOME 终端中开启多个标签
 ================================================================================
 > **问**: 我以前可以在我的 Ubuntu 台式机中的 gnome-terminal 中开启多个标签。但升到 Ubuntu 15.04 后，我就无法再在 gnome-terminal 窗口中打开新标签了。要怎样做才能在 Ubuntu 15.04 的 gnome-terminal 中打开标签呢？
 
-在 Ubuntu 14.10 或之前的版本中，gnome-terminal 允许你在终端窗口中开启一个新标签或一个终端窗口。但从 Ubuntu 15.04开始，gnome-terminal 移除了“新标签”选项。这实际上并不是一个 bug，而是一个合并新标签和新窗口的举措。GNOME 3.12 引入了 [单独的“开启终端”选项][1]。开启新终端标签的功能从终端菜单移动到了首选项中。
+在 Ubuntu 14.10 或之前的版本中，gnome-terminal 允许你在终端窗口中开启一个新标签或一个终端窗口。但从 Ubuntu 15.04开始，gnome-terminal 移除了“新标签”选项。这实际上并不是一个 bug，而是一个合并新标签和新窗口的举措。GNOME 3.12 引入了[单独的“开启终端”选项][1]。开启新终端标签的功能从终端菜单移动到了首选项中。
 
 ![](https://farm1.staticflickr.com/562/19286510971_f0abe3e7fb_b.jpg)
 
@@ -29,8 +29,8 @@ Linux 答疑--如何在 Ubuntu 15.04 的 GNOME 终端中开启多个标签
 via: http://ask.xmodulo.com/open-multiple-tabs-gnome-terminal-ubuntu.html
 
 作者：[Dan Nanni][a]
-译者：[KevSJ](https://github.com/KevSJ)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[KevinSJ](https://github.com/KevinSJ)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
