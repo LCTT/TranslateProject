@@ -1,3 +1,4 @@
+Translating by XLCYun.
 A Week With GNOME As My Linux Desktop: What They Get Right & Wrong - Page 3 - GNOME Applications
 ================================================================================
 ### Applications ###
