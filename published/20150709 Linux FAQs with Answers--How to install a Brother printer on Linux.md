@@ -1,10 +1,12 @@
-Linux有问必答-- 如何为在Linux中安装兄弟打印机
+Linux有问必答：如何为在Linux中安装兄弟牌打印机
 ================================================================================
-> **提问**: 我有一台兄弟HL-2270DW激光打印机，我想从我的Linux机器上答应文档。我该如何在我的电脑上安装合适的驱动并使用它？
+> **提问**: 我有一台兄弟牌HL-2270DW激光打印机，我想从我的Linux机器上打印文档。我该如何在我的电脑上安装合适的驱动并使用它？
 
 兄弟牌以买得起的[紧凑型激光打印机][1]而闻名。你可以用低于200美元的价格得到高质量的WiFi/双工激光打印机，而且价格还在下降。最棒的是，它们还提供良好的Linux支持，因此你可以在Linux中下载并安装它们的打印机驱动。我在一年前买了台[HL-2270DW][2]，我对它的性能和可靠性都很满意。
 
-下面是如何在Linux中安装和配置兄弟打印机驱动。本篇教程中，我会演示安装HL-2270DW激光打印机的USB驱动。首先通过USB线连接你的打印机到Linux上。
+下面是如何在Linux中安装和配置兄弟打印机驱动。本篇教程中，我会演示安装HL-2270DW激光打印机的USB驱动。
+
+首先通过USB线连接你的打印机到Linux上。
 
 ### 准备 ###
 
@@ -16,13 +18,13 @@ Linux有问必答-- 如何为在Linux中安装兄弟打印机
 
 ![](https://farm1.staticflickr.com/380/18535558583_cb43240f8a_c.jpg)
 
-下一页，你会找到你打印机的LPR驱动和CUPS包装器驱动。前者是命令行驱动后者允许你通过网页管理和配置你的打印机。尤其是基于CUPS的GUI对（本地、远程）打印机维护非常有用。建议你安装这两个驱动。点击“Driver Install Tool”下载安装文件。
+下一页，你会找到你打印机的LPR驱动和CUPS包装器驱动。前者是命令行驱动，后者允许你通过网页管理和配置你的打印机。尤其是基于CUPS的图形界面对（本地、远程）打印机维护非常有用。建议你安装这两个驱动。点击“Driver Install Tool”下载安装文件。
 
 ![](https://farm1.staticflickr.com/329/19130013736_1850b0d61e_c.jpg)
 
 运行安装文件之前，你需要在64位的Linux系统上做另外一件事情。
 
-因为兄弟打印机驱动是为32位的Linux系统开发的,因此你需要按照下面的方法安装32位的库。
+因为兄弟打印机驱动是为32位的Linux系统开发的，因此你需要按照下面的方法安装32位的库。
 
 在早期的Debian(6.0或者更早期)或者Ubuntu（11.04或者更早期），安装下面的包。
 
@@ -54,7 +56,7 @@ Linux有问必答-- 如何为在Linux中安装兄弟打印机
 
 ![](https://farm1.staticflickr.com/292/18535599323_1a94f6dae5_b.jpg)
 
-同意GPL协议直呼，接受接下来的任何默认问题。
+同意GPL协议之后，接受接下来的任何默认问题。
 
 ![](https://farm1.staticflickr.com/526/19130014316_5835939501_b.jpg)
 
@@ -68,7 +70,7 @@ Linux有问必答-- 如何为在Linux中安装兄弟打印机
 
     $ sudo netstat -nap | grep 631
 
-打开一个浏览器输入http://localhost:631。你会下面的打印机管理界面。
+打开一个浏览器输入 http://localhost:631 。你会看到下面的打印机管理界面。
 
 ![](https://farm1.staticflickr.com/324/18968588688_202086fc72_c.jpg)
 
@@ -98,7 +100,7 @@ via: http://ask.xmodulo.com/install-brother-printer-linux.html
 
 作者：[Dan Nanni][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
