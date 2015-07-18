@@ -1,3 +1,4 @@
+Translating by XLCYun.
 A Week With GNOME As My Linux Desktop: What They Get Right & Wrong - Page 1 - Introduction
 ================================================================================
 *Author's Note: If by some miracle you managed to click this article without reading the title then I want to re-iterate something... This is an editorial. These are my opinions. They are not representative of Phoronix, or Michael, these are my own thoughts.*
