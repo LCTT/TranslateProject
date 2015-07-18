@@ -128,11 +128,11 @@ PHP 7.0 升级备注
 
 * 在对数组按引用迭代时，对数组的修改将继续会影响到迭代。不过，现在 PHP 在使用数字作为键时可以更好的维护数组内的位置。例如，在按引用迭代过程中添加数组元素：
 
-      $array = [0];
-      foreach ($array as &$val) {
-          var_dump($val);
-          $array[1] = 1;
-      }
+      	$array = [0];
+      	foreach ($array as &$val) {
+          	var_dump($val);
+          	$array[1] = 1;
+      	}
 
   现在迭代会正确的添加了元素。如上代码输出是 "int(0) int(1)"，而以前只是 "int(0)"。
 
@@ -309,36 +309,36 @@ PHP 7.0 升级备注
 
 * 不能使用下列类名、接口名和特殊名（大小写敏感）：
 
-      bool
-      int
-      float
-      string
-      null
-      false
-      true
+      	bool
+      	int
+      	float
+      	string
+      	null
+      	false
+      	true
 
   这用于 class/interface/trait 声明、 class_alias() 和 use 语句中。
 
   此外，下列类名、接口名和特殊名保留做将来使用，但是使用时尚不会抛出错误：
 
-      resource
-      object
-      mixed
-      numeric
+      	resource
+      	object
+      	mixed
+      	numeric
 
 * yield 语句结构当用在一个表达式上下文时，不再要求括号。它现在是一个优先级在 “print” 和 “=>” 之间的右结合操作符。在某些情况下这会导致不同的行为，例如：
 
-      echo yield -1;
-      // 以前被解释如下
-      echo (yield) - 1;
-      // 现在被解释如下
-      echo yield (-1);
+      	echo yield -1;
+      	// 以前被解释如下
+      	echo (yield) - 1;
+      	// 现在被解释如下
+      	echo yield (-1);
 
-      yield $foo or die;
-      // 以前被解释如下
-      yield ($foo or die);
-      // 现在被解释如下
-      (yield $foo) or die;
+      	yield $foo or die;
+      	// 以前被解释如下
+      	yield ($foo or die);
+      	// 现在被解释如下
+      	(yield $foo) or die;
 
   这种情况可以通过增加括号来解决。
 
@@ -348,11 +348,11 @@ PHP 7.0 升级备注
 	
 * 不支持以引用的方式对 new 的结果赋值。
 
-* 不支持对一个来自非兼容的 $this 上下文的非静态方法的域内调用。细节参见： https://wiki.php.net/rfc/incompat_ctx.
+* 不支持对一个来自非兼容的 $this 上下文的非静态方法的域内调用。细节参见： https://wiki.php.net/rfc/incompat_ctx 。
 
 * 不支持 ini 文件中的 # 风格的备注。使用 ; 风格的备注替代。
 
-* $HTTP_RAW_POST_DATA 不再可用，使用 php://input 流替代。
+* $HTTP\_RAW\_POST\_DATA 不再可用，使用 php://input 流替代。
 
 ###标准库的变化
 
@@ -371,10 +371,10 @@ PHP 7.0 升级备注
 ###其它
 
 - Curl:
-  - 去除对禁用 CURLOPT\_SAFE\_UPLOAD 选项的支持。所有的 curl 文件上载必须使用 curl_file / CURLFile API。
+  - 去除对禁用 CURLOPT\_SAFE\_UPLOAD 选项的支持。所有的 curl 文件上载必须使用 curl\_file / CURLFile API。
 
 - Date:
-  - 从 mktime() 和 gmmktime() 中移除 $is_dst 参数
+  - 从 mktime() 和 gmmktime() 中移除 $is\_dst 参数
 
 - DBA
   - 如果键也没有出现在 inifile 处理器中，dba\_delete() 现在会返回 false。
@@ -384,13 +384,13 @@ PHP 7.0 升级备注
   - gmp\_setbit() 和 gmp\_clrbit() 对于负指标返回 FALSE，和其它的 GMP 函数一致。
 
 - Intl:
-  - 移除废弃的别名 datefmt\_set\_timezone\_id() 和 IntlDateFormatter::setTimeZoneID()。替代使用 datefmt_set_timezone() 和 IntlDateFormatter::setTimeZone()。
+  - 移除废弃的别名 datefmt\_set\_timezone\_id() 和 IntlDateFormatter::setTimeZoneID()。替代使用 datefmt\_set\_timezone() 和 IntlDateFormatter::setTimeZone()。
 
 - libxml:
   - 增加 LIBXML\_BIGLINES 解析器选项。从 libxml 2.9.0 开始可用，并增加了在错误报告中行号大于 16 位的支持。
   
 - Mcrypt
-  - 移除等同于 mcrypt_generic_deinit() 的废弃别名  mcrypt\_generic\_end()。
+  - 移除等同于 mcrypt\_generic\_deinit() 的废弃别名  mcrypt\_generic\_end()。
   - 移除废弃的 mcrypt\_ecb()、 mcrypt\_cbc()、 mcrypt\_cfb() 和 mcrypt\_ofb() 函数，它们等同于使用 MCRYPT\_MODE\_* 标志的 mcrypt\_encrypt() 和 mcrypt\_decrypt() 。
   
 - Session
@@ -398,10 +398,10 @@ PHP 7.0 升级备注
   - 会话保存处理器接受使用 validate\_sid() 和 update\_timestamp() 来校验会话 ID 是否存在、更新会话时间戳。对旧式的用户定义的会话保存处理器继续兼容。
   - 增加了 SessionUpdateTimestampHandlerInterface 。 validateSid()、 updateTimestamp()
     定义在接口里面。
-  - session.lazy_write(默认是 On) 的 INI 设置支持仅在会话数据更新时写入。
+  - session.lazy\_write(默认是 On) 的 INI 设置支持仅在会话数据更新时写入。
 
 - Opcache
-  - 移除 opcache.load_comments 配置语句。现在文件内备注载入无成本，并且总是启用的。
+  - 移除 opcache.load\_comments 配置语句。现在文件内备注载入无成本，并且总是启用的。
 
 - OpenSSL:
   - 移除 "rsa\_key\_size" SSL 上下文选项，按给出的协商的加密算法自动设置适当的大小。
@@ -410,7 +410,7 @@ PHP 7.0 升级备注
 - PCRE:
   - 移除对 /e (PREG\_REPLACE\_EVAL) 修饰符的支持，使用 preg\_replace\_callback() 替代。
 
-- PDO_pgsql:
+- PDO\_pgsql:
   - 移除 PGSQL\_ATTR\_DISABLE\_NATIVE\_PREPARED\_STATEMENT 属性，等同于 ATTR\_EMULATE\_PREPARES。
 
 - Standard:
@@ -476,7 +476,7 @@ PHP 7.0 升级备注
   - 废弃了对非静态方法的静态调用。
 
 - OpenSSL
-  - 废弃了 "capture\_session\_meta" SSL 上下文选项。 在流资源上活动的加密相关的元数据可以通过 stream_get_meta_data() 的返回值访问。
+  - 废弃了 "capture\_session\_meta" SSL 上下文选项。 在流资源上活动的加密相关的元数据可以通过 stream\_get\_meta\_data() 的返回值访问。
 
 ##5. 函数的变化
 
@@ -489,20 +489,20 @@ PHP 7.0 升级备注
     (RFC: https://wiki.php.net/rfc/secure_unserialize) 来指定可接受的类： 
     unserialize($foo, ["allowed_classes" => ["MyClass", "MyClass2"]]);
     
-- proc_open():
-  - 可以被 proc_open() 使用的最大管道数以前被硬编码地限制为 16。现在去除了这个限制，只受限于 PHP 的可用内存大小。
-  - 新添加的仅用于 Windows 的配置选项 "blocking_pipes" 可以用于强制阻塞对子进程管道的读取。这可以用于几种命令行应用场景，但是它会导致死锁。此外，这与新的流的管道上下文选项相关。
+- proc\_open():
+  - 可以被 proc\_open() 使用的最大管道数以前被硬编码地限制为 16。现在去除了这个限制，只受限于 PHP 的可用内存大小。
+  - 新添加的仅用于 Windows 的配置选项 "blocking\_pipes" 可以用于强制阻塞对子进程管道的读取。这可以用于几种命令行应用场景，但是它会导致死锁。此外，这与新的流的管道上下文选项相关。
 
 - array_column():
   - 该函数现在支持把对象数组当做二维数组。只有公开属性会被处理，对象里面使用 \_\_get() 的动态属性必须也实现 \_\_isset()  才行。
 
-- stream_context_create()
-  - 现在可以接受一个仅 Windows 可用的配置 array("pipe" => array("blocking" => <boolean>)) 来强制阻塞管道读取。该选项应该小心使用，该平台有可能导致管道缓冲区的死锁。
+- stream\_context\_create()
+  - 现在可以接受一个仅 Windows 可用的配置 array("pipe" => array("blocking" => \<boolean>)) 来强制阻塞管道读取。该选项应该小心使用，该平台有可能导致管道缓冲区的死锁。
 
 ##6. 新函数
 
 - GMP
-  - 添加了 gmp_random_seed()。
+  - 添加了 gmp\_random\_seed()。
 
 - PCRE:
   - 添加了 preg\_replace\_callback\_array 函数。
@@ -510,10 +510,10 @@ PHP 7.0 升级备注
 
 - Standard
   . 添加了整数除法 intdiv() 函数。
-  . 添加了重置错误状态的 error_clear_last() 函数。
+  . 添加了重置错误状态的 error\_clear\_last() 函数。
 
 - Zlib:
-  . 添加了 deflate_init()、 deflate_add()、 inflate_init()、 inflate_add() 函数来运行递增和流的压缩/解压。
+  . 添加了 deflate\_init()、 deflate\_add()、 inflate\_init()、 inflate\_add() 函数来运行递增和流的压缩/解压。
 
 ##7. 新的类和接口
 
@@ -551,21 +551,21 @@ PHP 7.0 升级备注
 ##9. 扩展的其它变化
 
 - Mhash
-  - Mhash 今后不是一个扩展了，使用 function_exists("mhash") 来检查器是否可用。
+  - Mhash 今后不是一个扩展了，使用 function\_exists("mhash") 来检查器是否可用。
 
 ##10. 新的全局常量
 
 - Core
-  . 添加 PHP_INT_MIN 
+  . 添加 PHP\_INT\_MIN 
 
 - Zlib
   - 添加的这些常量用于控制新的增量deflate\_add() 和 inflate\_add() 函数的刷新行为：
-  - ZLIB_NO_FLUSH
-  - ZLIB_PARTIAL_FLUSH
-  - ZLIB_SYNC_FLUSH
-  - ZLIB_FULL_FLUSH
-  - ZLIB_BLOCK
-  - ZLIB_FINISH
+  - ZLIB\_NO\_FLUSH
+  - ZLIB\_PARTIAL\_FLUSH
+  - ZLIB\_SYNC\_FLUSH
+  - ZLIB\_FULL\_FLUSH
+  - ZLIB\_BLOCK
+  - ZLIB\_FINISH
 
 - GD
   - 移除了 T1Lib 支持，这样由于对 T1Lib 的可选依赖，如下将来不可用：
@@ -586,7 +586,7 @@ PHP 7.0 升级备注
 ##11. INI 文件处理的变化
 
 - Core
-  - 移除了 asp_tags ini 指令。如果启用它会导致致命错误。
+  - 移除了 asp\_tags ini 指令。如果启用它会导致致命错误。
   - 移除了 always\_populate\_raw\_post\_data ini 指令。
 
 ##12. Windows 支持
@@ -609,7 +609,7 @@ PHP 7.0 升级备注
 - Core
   - NaN 和 Infinity 转换为整数时总是 0，而不是未定义和平台相关的。
   - 对非对象调用方法会触发一个可捕获错误，而不是致命错误；参见： https://wiki.php.net/rfc/catchable-call-to-member-of-non-object
-  - zend_parse_parameters、类型提示和转换，现在总是用 "integer" 和 "float"，而不是 "long" 和 "double"。
+  - zend\_parse\_parameters、类型提示和转换，现在总是用 "integer" 和 "float"，而不是 "long" 和 "double"。
   - 如果 ignore\_user\_abort 设置为 true ，对应中断的连接，输出缓存会继续工作。
     
 
