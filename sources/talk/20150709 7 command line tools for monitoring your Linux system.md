@@ -36,7 +36,7 @@ Vmstat是一款监控Linux系统性能数据的简易工具，这让它在shell�
 
 ### ps ###
 
-The ps command shows a list of running processes. In this case, I’ve used the “-e”switch to show everything, that is, all processes running (I’ve scrolled back to the top of the output otherwise the column names wouldn’t be visible). This command has a lot of switches that allow you to format the output as needed. Add a little of the aforementioned regex-fu and you’ve got a powerful tool. Go [here][8] for the full details.
+ps命令展现的是正在运行中的进程列表。在这种情况下，我们用“-e”选项来显示每个进程，也就是所有正在运行的进程了(我把列表滚动到了头部否则列名就看不到了)。这个命令有很多选项允许你去按需格式化输出。只要使用上述一点点的regex-fu你就能得到一个强大的工具了。猛戳[这里][8]获取更多信息。
 
 ![Image courtesy Mark Gibbs](http://images.techhive.com/images/article/2015/06/command-line-tools-monitoring-linux-system-7-100591906-orig.png)
 
