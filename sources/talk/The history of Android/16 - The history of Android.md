@@ -1,3 +1,5 @@
+alim0x translating
+
 The history of Android
 ================================================================================
 ### Android 3.0 Honeycomb—tablets and a design renaissance ###
