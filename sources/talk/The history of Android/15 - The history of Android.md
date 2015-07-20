@@ -1,36 +1,34 @@
-alim0x translating
-
-The history of Android
+安卓编年史
 ================================================================================
-![Gingerbread's new keyboard, text selection UI, overscroll effect, and new checkboxes.](http://cdn.arstechnica.net/wp-content/uploads/2014/02/3kb-high-over-check.png)
-Gingerbread's new keyboard, text selection UI, overscroll effect, and new checkboxes.
-Photo by Ron Amadeo
+![姜饼的新键盘，文本选择，边界回弹效果以及新复选框。](http://cdn.arstechnica.net/wp-content/uploads/2014/02/3kb-high-over-check.png)
+姜饼的新键盘，文本选择，边界回弹效果以及新复选框。
+Ron Amadeo供图
 
-One of the most important additions to Android 2.3 was the system-wide text selection interface, which you can see in the Google search bar in the left screenshot. Long pressing a word would highlight it in orange and make draggable handles appear on either side of the highlight. You could then adjust the highlight using the handles and long press on the highlight to bring up options for cut, copy, and paste. Previous methods used tiny controls that relied on a trackball or D-Pad, but with this first finger-driven text selection method, the Nexus S didn’t need the extra hardware controls.
+安卓2.3最重要的新增功能就是系统全局文本选择界面，你可以在左侧截图的谷歌搜索栏看到它。长按一个词能使其变为橙色高亮，并且出现可拖拽的小标签，长按高亮部分会弹出剪切，复制和粘贴选项。之前的方法使用的是依赖于十字方向键的控制，但现在有了触摸文本选择，Nexus S不再需要额外的硬件控件。
 
-The right set of images shows the new checkbox design and overscroll effect. The Froyo checkbox worked like a light bulb—it would show a green check when on and a gray check when off. Gingerbread now displayed an empty box when an option is turned off—which made much more sense. Gingerbread was the first version to have an overscroll effect. An orange glow appeared when you hit the end of a list and grew larger as you pulled more against the dead end. Bounce scrolling would probably have made the most sense, but that was patented by Apple.
+左侧截图右半边展示的是新的复选框设计和边界回弹效果。冻酸奶（2.2）的复选框像个灯泡——选中时显示一个绿色的勾，未选中的时候显示灰色的勾。姜饼在选项关闭的时候显示一个空的选框——这显得更有意义。姜饼是第一个拥有滚动到底发光效果的版本。当到达列表底部的时候会有一道橙色的光晕，你越往上拉光晕越明显。列表上拉滚动反弹也许最直观，但那是苹果的专利。
 
-![The new dialer and dialog box design.](http://cdn.arstechnica.net/wp-content/uploads/2014/02/dialdialog.png)
-The new dialer and dialog box design.
-Photo by Ron Amadeo
+![新拨号界面和对话框设计。](http://cdn.arstechnica.net/wp-content/uploads/2014/02/dialdialog.png)
+新拨号界面和对话框设计。
+Ron Amadeo供图
 
-The dialer received a little more love in Gingerbread. It became darker, and Google finally addressed the combination of sharp corners, rounded corners, and complete circles that it had going on. Now every corner was a sharp right angle. All the dial pad buttons were replaced with a weird underline, like some faint leftovers of what used to be a button. You were never really sure if you were supposed to see a button or not—our brains wanted to imagine the rest of the square.
+姜饼里的拨号受到了稍微多点的照顾。它变得更暗了，并且谷歌终于解决了原本的直角，圆角以及圆形的结合问题。现在所有的边角都是直角了。所有的拨号按键被替换成了带有奇怪下划线的样式，像是用边角料拼凑的。你永远无法确定是否看到了一个按钮——我们的大脑得想象出按钮形状的剩余部分。
 
-The Wi-Fi network dialog is pictured to show off the rest of the system-wide changes. All the dialog box titles were changed from gray to black, every dialog box, dropdown, and button corner was sharpened up, and everything was a little bit darker. All these system-wide changes made all of Gingerbread look a lot less bubbly and more mature. The "all black everything" look wasn't necessarily the most welcoming color palette, but it certainly looked better than Android's previous gray-and-beige color scheme.
+图中的无线网络对话框可以看作是剩下的系统全局改动的样本。所有的对话框标题从灰色变为黑色，对话框，下拉框以及按钮边缘都变成了直角，各部分色调都变暗了一点。所有的这些全局变化使得姜饼看起来不像原来那样活泼，而是更加地成熟。“到处都是黑色”的外观必然不是最受欢迎的色调，但它无疑看起来比安卓之前的灰色和米色的配色方案好多了。
 
-![The new Market, which added a massive green header.](http://cdn.arstechnica.net/wp-content/uploads/2014/02/4market.png)
-The new Market, which added a massive green header.
-Photo by Ron Amadeo
+![新市场，添加了大块的绿色页面顶栏。](http://cdn.arstechnica.net/wp-content/uploads/2014/02/4market.png)
+新市场，添加了大块的绿色页面顶栏。
+Ron Amadeo供图
 
-While not exclusive to Gingerbread, with the launch of the new OS came "Android Market 2.0." Most of the list design was the same, but Google covered the top third of the screen with a massive green banner that was used for featured apps and navigation. The primary design inspiration here was probably the green Android mascot—the color is a perfect match. At a time when the OS was getting a darker design, the neon green banner and white list made the Market a lot brighter.
+新版系统带来了“安卓市场2.0”，虽然它不是姜饼独占的。主要的列表设计和原来一致，但谷歌将屏幕上部三分之一覆盖上了大块的绿色横幅，用来展示热门应用以及导航。这里主要的设计灵感也许是绿色的安卓吉祥物——它们的颜色完美匹配。在系统设计偏向暗色系的时候，霓虹灯般的绿色横幅和白色列表让市场明快得多。
 
-However, the same green background image was used across phones, which meant on lower resolution devices, the green banner was even bigger. Users complained so much about the wasted screen space that later updates would make the green banner scroll up with the content. At the time, horizontal mode was even worse—it would fill the left half of the screen with the static green banner.
+但是，相同的绿色背景图片被用在不同的手机上，这意味着在低分辨率设备上，绿色横幅看起来更加的大。不少用户抱怨这浪费了屏幕空间，于是随后的更新使得绿色横幅跟随内容向上滚动。在那时，横屏模式更加糟糕——绿色横幅会填满剩下的半个屏幕。
 
-![An app page from the Market showing the collapsible text section, the "My apps" section, and Google Books screenshots.](http://cdn.arstechnica.net/wp-content/uploads/2014/03/5rest-of-market-and-books.png)
-An app page from the Market showing the collapsible text section, the "My apps" section, and Google Books screenshots.
-Photo by Ron Amadeo
+![市场的一个带有可折叠描述的应用详情页面，“我的应用”界面，以及Google Books界面截图。](http://cdn.arstechnica.net/wp-content/uploads/2014/03/5rest-of-market-and-books.png)
+市场的一个带有可折叠描述的应用详情页面，“我的应用”界面，以及Google Books界面截图。
+Ron Amadeo供图
 
-App pages were redesigned with collapsible sections. Rather than having to scroll through a thousand-line description, text boxes were truncated to only the first few lines. After that, a "more" button needed to be tapped. This allowed users to easily scroll through the list and find things like pictures and "contact developer," which would usually be farther down the page.
+应用详情页面经过重新设计有了可折叠部分。文本描述只截取前几行展示，向下滑动页面不用再穿过数千行的描述。简短的描述后有一个“更多”按钮可供点击来显示完整的描述。这让用户可以轻松地滑动过列表找到像是截图和“联系开发者”，这些部分通常在页面偏下部分。
 
 The other parts of the Android homescreen wisely toned down the green monster. The rest of the app was mostly just the old Market with new green navigational elements. Any of the old tabbed interfaces were upgraded to swipeable tabs. In the right Gingerbread image, swiping right-to-left would switch from "Top Paid" to "Top Free," which made navigation a little easier.
 
@@ -38,9 +36,9 @@ Gingerbread came with the first of what would become the Google Play content sto
 
 Google Books and the “My Apps" page of the Market were both examples of early precursors to the Action Bar. Just like the current guidelines, a stickied top bar featured the app icon, the name of the screen within the app, and a few controls. The layout of these two apps was actually pretty modern looking.
 
-![The new Google Maps.](http://cdn.arstechnica.net/wp-content/uploads/2014/02/maps1.png)
-The new Google Maps.
-Photo by Ron Amadeo
+![新版谷歌地图](http://cdn.arstechnica.net/wp-content/uploads/2014/02/maps1.png)
+新版谷歌地图。
+Ron Amadeo供图
 
 Google Maps (which, again, at this point was on the Android Market and not exclusive to this version of Android) now featured another action bar precursor in the form of a top-aligned control bar. This version of an early action bar featured a lot of experimenting. The majority of the bar was taken up with a search box, but you could never type into the bar. Tapping on it would open the old search interface from Android 1.x, with a totally different bar design and bubbly buttons. This 2.3 bar wasn't anything more than a really big search button.
 
@@ -52,7 +50,7 @@ Along with Places' new top billing in the app drawer came a redesigned interface
 
 ![The new YouTube design, which, amazingly, sort of matches the old Maps business page design.](http://cdn.arstechnica.net/wp-content/uploads/2014/02/youtube22.png)
 The new YouTube design, which, amazingly, sort of matches the old Maps business page design.
-Photo by Ron Amadeo
+Ron Amadeo供图
 
 The YouTube app seemed completely separate from the rest of Android, as if whoever designed this had no idea what Gingerbread would end up looking like. Highlights were red and gray instead of green and orange, and rather than the flat black of Gingerbread, YouTube featured bubbly buttons, tabs, and bars with rounded corners and heavy gradients. The new app did get a few things right, though. All the tabs could be horizontally swiped through, and the app finally added a vertical viewing mode for videos. Android seemed like such an uncoordinated effort at this stage. It’s like someone told the YouTube team “make it black," and that was all the direction they were given. The only Android entity this seemed to match was the old Google Maps business page design.
 
@@ -60,7 +58,7 @@ Despite the weird design choices, the YouTube app had the best approximation yet
 
 ![The new Google Talk, which supported voice and video calls, and the new Voice Actions interface.](http://cdn.arstechnica.net/wp-content/uploads/2014/02/talkvoice.png)
 The new Google Talk, which supported voice and video calls, and the new Voice Actions interface.
-Photo by Ron Amadeo
+Ron Amadeo供图
 
 One last update for Gingerbread came with Android 2.3.4, which brought a new version of Google Talk. Unlike the Nexus One, the Nexus S had a front-facing camera—and the redesigned version of Google Talk had voice and video calling. The colored indicators on the right of the friends list were used to indicate not only presence, but voice and video availability. A dot was text only, a microphone was text or voice, and a camera was text, voice, or video. If available, tapping on a voice or video icon would immediately start a call with that person.
 
