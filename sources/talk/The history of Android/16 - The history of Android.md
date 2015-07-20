@@ -1,31 +1,29 @@
-alim0x translating
-
-The history of Android
+安卓编年史
 ================================================================================
-### Android 3.0 Honeycomb—tablets and a design renaissance ###
+### 安卓 3.0 蜂巢—平板和设计复兴 ###
 
-Despite all the changes made in Gingerbread, Android was still the ugly duckling of the mobile world. Compared to the iPhone, its level of polish and design just didn't hold up. On the other hand, one of the few operating systems that could stand up to iOS's aesthetic acumen was Palm's WebOS. WebOS was a cohesive, well-designed OS with several innovative features, and it was supposed to save the company from the relentless march of the iPhone.
+尽管姜饼中做了许多改变，安卓仍然是移动世界里的丑小鸭。相比于 iPhone，它的优雅程度和设计完全抬不起头。另一方面来说，为数不多的能与 iOS 的美学智慧相当的操作系统之一是 Palm 的 WebOS。WebOS 有着优秀的整体设计，创新的功能，而且被寄予期望能够从和 iPhone 的长期竞争中拯救公司。
 
-A year after launch though, Palm was running out of cash. The company never saw the iPhone coming, and by the time WebOS was ready, it was too late. In April 2010, Hewlett-Packard purchased Palm for $1 billion. While HP bought a product with a great user interface, the lead designer of that interface, a man by the name of Matias Duarte, did not join HP. In May 2010, just before HP took control of Palm, Duarte jumped ship to Google. HP bought the bread, but Google hired the baker.
+尽管如此，一年之后，Palm 资金链断裂。Palm 公司从未看到 iPhone 的到来，到 WebOS 就绪的时候已经太晚了。2010年4月，惠普花费10亿美元收购了 Palm。尽管惠普收购了一个拥有优秀用户界面的产品，界面的首席设计师，Matias Duarte，并没有加入惠普公司。2010年5月，就在惠普接手 Palm 之前，Duarte 加入了谷歌。惠普买下了面包，但谷歌雇佣了它的烘培师。
 
-![The first Honeycomb device, the Motorola Xoom 10-inch tablet.](http://cdn.arstechnica.net/wp-content/uploads/2014/03/Motorola-XOOM-MZ604.jpg)
-The first Honeycomb device, the Motorola Xoom 10-inch tablet.
+![第一部蜂巢设备，摩托罗拉 Xoom 10英寸平板。](http://cdn.arstechnica.net/wp-content/uploads/2014/03/Motorola-XOOM-MZ604.jpg)
+第一部蜂巢设备，摩托罗拉 Xoom 10英寸平板。
 
-At Google, Duarte was named the Director of Android User Experience. This was the first time someone was publicly in charge of the way Android looked. While Matias landed at Google during the launch of Android 2.2, the first version he truly impacted was Android 3.0, Honeycomb, released in February 2011.
+在谷歌，Duarte 被任命为安卓用户体验主管。这是第一次有人公开掌管安卓的外观。尽管 Matias 在安卓 2.2 发布时就来到了谷歌，第一个真正受他影响的安卓版本是 3.0 蜂巢，它在2011年2月发布。
 
-By Google's own admission, Honeycomb was rushed out the door. Ten months prior, Apple modernized the tablet with the launch of the iPad, and Google wanted to respond as quickly as possible. Honeycomb was that response, a version of Android that ran on 10-inch touchscreens. Sadly, getting this OS to market was such a priority that corners were cut to save time.
+按谷歌自己的说法，蜂巢是匆忙问世的。10个月前，苹果发布了 iPad，让平板变得更加现代，谷歌希望能够尽快做出回应。蜂巢就是那个回应，一个运行在10英寸触摸屏上的安卓版本。悲伤的是，将这个系统推向市场是如此优先的事项，以至于边边角角都被砍去了以节省时间。
 
-The new OS was for tablets only—phones would not be updated to Honeycomb, which spared Google the difficult problem of making the OS work on wildly different screen sizes. But with phone support off the table, a Honeycomb source drop never happened. Previous Android versions were open source, enabling the hacking community to port the latest version to all sorts of different devices. Google didn't want app developers to feel pressured to support half-broken Honeycomb phone ports, so Google kept the source to itself and strictly controlled what could and couldn't have Honeycomb. The rushed development led to problems with the software, too. At launch, Honeycomb wasn't particularly stable, SD cards didn't work, and Adobe Flash—one of Android's big differentiators—wasn't supported.
+新系统只用于平板——手机不能升级到蜂巢，这加大了谷歌让系统运行在差异巨大的不同尺寸屏幕上的难度。但是，仅支持平板而不支持手机使得蜂巢源码没有泄露。之前的安卓版本是开源的，这使得黑客社区能够将其最新版本移植到所有的不同设备之上。谷歌不希望应用开发者在支持不完美的蜂巢手机移植版本时感到压力，所以谷歌将源码留在自己手中，并且严格控制能够拥有蜂巢的设备。匆忙的开发还导致了软件问题。在发布时，蜂巢不是特别稳定，SD卡不能工作，Adobe Flash——安卓最大的特色之一——还不被支持。
 
-One of the few devices that could have Honeycomb was [the Motorola Xoom][1], the flagship product for the new OS. The Xoom was a 10-inch, 16:9 tablet with 1GB of RAM and a dual-core, 1GHz Nvidia Tegra 2 processor. Despite being the launch device of a new version of Android where Google controlled the updates directly, the device wasn't called a "Nexus." The most likely reason for this was that Google didn't feel confident enough in the product to call it a flagship.
+[摩托罗拉 Xoom][1]是为数不多的拥有蜂巢的设备之一，它是这个新系统的旗舰产品。Xoom 是一个10英寸，16:9 的平板，拥有 1GB 内存和 1GHz Tegra 2 双核处理器。尽管是由谷歌直接控制更新的新版安卓发布设备，它并没有被叫做“Nexus”。对此最可能的原因是谷歌对它没有足够的信心称其为旗舰。
 
-Nevertheless, Honeycomb was a major milestone for Android. With an experienced designer in charge, the entire Android user interface was rebuilt, and most of the erratic app designs were brought to heel. Android's default apps finally looked like pieces of a cohesive whole with similar layouts and theming across the board. Redesigning Android would be a multi-version project though—Honeycomb was just the start of getting Android whipped into shape. This first draft laid the groundwork for how future versions of Android would function, but it also used a heavy-handed sci-fi theme that Google would spend the next few versions toning down.
+尽管如此，蜂巢是安卓的一个里程碑。在一个体验设计师的主管之下，整个安卓用户界面被重构，绝大多数奇怪的应用设计都得到改进。安卓的默认应用终于看起来像整体的一部分，不同的界面有着相似的布局和主题。然而重新设计安卓会是一个跨版本的项目——蜂巢只是将安卓塑造成型的开始。这第一份草稿为安卓未来版本的样子做了基础设计，但它也用了过多的科幻主题，谷歌将花费接下来的数个版本来淡化它。
 
-![The home screens of Honeycomb and Gingerbread.](http://cdn.arstechnica.net/wp-content/uploads/2014/02/homeskreen.png)
-The home screens of Honeycomb and Gingerbread.
-Photo by Ron Amadeo
+![蜂巢和姜饼的主屏幕。](http://cdn.arstechnica.net/wp-content/uploads/2014/02/homeskreen.png)
+蜂巢和姜饼的主屏幕。
+Ron Amadeo供图
 
-While Gingerbread only experimented with a sci-fi look in its photon wallpaper, Honeycomb went full sci-fi with a Tron-inspired theme for the entire OS. Everything was made black, and if you needed a contrasting color, you could choose from a few different shades of blue. Everything that was made blue was also given a "glow" effect, making the entire OS look like it was powered by alien technology. The default background was a holographic grid of hexagons (a Honeycomb! get it?) that looked like it was the floor of a teleport pad on a spaceship.
+姜饼只是在它的量子壁纸上试验了科幻外观，蜂巢整个系统的以电子为灵感的主题让它充满科幻意味。所有东西都是黑色的，如果你需要对比色，你可以从一些不同色调的蓝色中挑选。所有蓝色的东西还有“光晕”效果，让整个系统看起来像是外星科技创造的。默认背景是个六边形的全息方阵（一个蜂巢！明白了吗？），看起来像是一艘飞船上的传送阵的地板。
 
 The most important change of Honeycomb was the addition of the system bar. The Motorola Xoom had no hardware buttons other than power and volume, so a large black bar was added along the bottom of the screen that housed the navigational buttons. This meant the default Android interface no longer needed specialized hardware buttons. Previously, Android couldn't function without hardware Back, Menu, and Home keys. Now, with the software supplying all the necessary buttons, anything with a touch screen was able to run Android.
 
