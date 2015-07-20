@@ -1,3 +1,5 @@
+translating...
+
 Fix Minimal BASH like line editing is supported GRUB Error In Linux
 ================================================================================
 The other day when I [installed Elementary OS in dual boot with Windows][1], I encountered a Grub error at the reboot time. I was presented with command line with error message:
