@@ -1,3 +1,5 @@
+Translating by DongShuaike
+
 How to Provision Swarm Clusters using Docker Machine
 ================================================================================
 Hi all, today we'll learn how we can deploy Swarm Clusters using Docker Machine.  It serves the standard Docker API, so any tool which can communicate with a Docker daemon can use Swarm to transparently scale to multiple hosts. Docker Machine is an application that helps to create Docker hosts on our computer, on cloud providers and inside our own data center. It provides easy solution for creating servers, installing Docker on them and then configuring the Docker client according the users configuration and requirements. We can provision swarm clusters with any driver we need and is highly secured with TLS Encryption.
