@@ -25,31 +25,31 @@ Ron Amadeo供图
 
 姜饼只是在它的量子壁纸上试验了科幻外观，蜂巢整个系统的以电子为灵感的主题让它充满科幻意味。所有东西都是黑色的，如果你需要对比色，你可以从一些不同色调的蓝色中挑选。所有蓝色的东西还有“光晕”效果，让整个系统看起来像是外星科技创造的。默认背景是个六边形的全息方阵（一个蜂巢！明白了吗？），看起来像是一艘飞船上的传送阵的地板。
 
-The most important change of Honeycomb was the addition of the system bar. The Motorola Xoom had no hardware buttons other than power and volume, so a large black bar was added along the bottom of the screen that housed the navigational buttons. This meant the default Android interface no longer needed specialized hardware buttons. Previously, Android couldn't function without hardware Back, Menu, and Home keys. Now, with the software supplying all the necessary buttons, anything with a touch screen was able to run Android.
+蜂巢最重要的变化是增加了系统栏。摩托罗拉 Xoom 除了电源和音量键之外没有配备实体按键，所以蜂巢添加了一个大黑色底栏到屏幕底部，用于放置导航按键。这意味着默认安卓界面不再需要特别的实体按键。在这之前，安卓没有实体的返回，菜单和 Home 键就不能正常工作。现在，软件提供了所有必需的按钮，任何带有触摸屏的设备都能够运行安卓。
 
-The biggest benefit of the new software buttons was flexibility. The new app guidelines stated that apps should no longer require a hardware menu button, but for those that do, Honeycomb detects this and adds a fourth button to the system bar that allows these apps to work. The other flexibility attribute of software buttons was that they could change orientation with the device. Other than the power and volume buttons, the Xoom's orientation really wasn't important. The system bar always sat on the "bottom" of the device from the user's perspective. The trade off was that a big bar along the bottom of the screen definitely sucked up some screen real estate. To save space on 10-inch tablets, the status bar was merged into the system bar. All the usual status duties lived on the right side—there was battery and connectivity status, the time, and notification icons.
+新软件按键带来的最大的好处是灵活性。新的应用指南表明应用应不再要求实体菜单按键，需要用到的时候，蜂巢会自动检测并添加四个按钮到系统栏让应用正常工作。另一个软件按键的灵活属性是它们可以改变设备的屏幕方向。除了电源和音量键之外，Xoom 的方向实际上不是那么重要。从用户的角度来看，系统栏始终处于设备的“底部”。代价是系统栏明显占据了一些屏幕空间。为了在10英寸平板上节省空间，状态栏被合并到了系统栏中。所有的常用状态指示放在了右侧——有电源，连接状态，时间还有通知图标。
 
-The whole layout of the home screen changed, placing UI pieces in each of the four corners of the device. The bottom left housed the previously discussed navigational buttons, the bottom right was for status and notifications, the top left displayed text search and voice search, and the top right had buttons for the app drawer and adding widgets.
+主屏幕的整个布局都改变了，用户界面部件放在了设备的四个角落。屏幕底部左侧放置着之前讨论过的导航按键，右侧用于状态指示和通知，顶部左侧显示的是文本搜索和语音搜索，右侧有应用抽屉和添加小部件的按钮。
 
-![The new lock screen and Recent Apps interface.](http://cdn.arstechnica.net/wp-content/uploads/2014/02/lockscreen-and-recent.png)
-The new lock screen and Recent Apps interface.
-Photo by Ron Amadeo
+![新锁屏界面和最近应用界面。](http://cdn.arstechnica.net/wp-content/uploads/2014/02/lockscreen-and-recent.png)
+新锁屏界面和最近应用界面。
+Ron Amadeo供图
 
-(Since the Xoom was a [heavy] 10-inch, 16:9 tablet, it was primarily meant to be used horizontally. Most apps also supported portrait mode, though, so for the sake of our formatting, we're using mostly portrait mode shots. Just keep in mind the Honeycomb shots come from a 10-inch tablet, and the Gingerbread shots come from a 3.7-inch phone. The densities of information are not directly comparable.)
+（因为 Xoom 是一部 [较重] 的10英寸，16:9平板设备，这意味着它主要是横屏使用。虽然大部分应用还支持竖屏模式，但是到目前为止，由于我们的版式限制，我们大部分使用的是竖屏模式的截图。请记住蜂巢的截图来自于10英寸的平板，而姜饼的截图来自3.7英寸的手机。二者所展现的信息密度是不能直接比较的。）
 
-The unlock screen—after switching from a menu button to a rotary dial to slide-to-unlock—removed any required accuracy from the unlock process by switching to a circle unlock. Swiping from the center outward in any direction would unlock the device. Like the rotary unlock, this was much nicer ergonomically than forcing your finger to follow a perfectly straight path.
+解锁界面——从菜单按钮到旋转式拨号盘再到滑动解锁——移除了解锁步骤的任何精度要求，它采用了一个环状解锁盘。从中间向任意方向向外滑动就能解锁设备。就像旋转式解锁，这种解锁方式更加符合人体工程学，而不用强迫你的手指完美地遵循一条笔直的解锁路径。
 
-The strip of thumbnails in the second picture was the interface brought up by the newly christened "Recent Apps" button, now living next to Back and Home. Rather than the group of icons brought up in Gingerbread by long-pressing on the home button, Honeycomb showed app icons and thumbnails on the screen, which made it a lot easier to switch between tasks. Recent Apps was clearly inspired by Duarte's "card" multitasking in WebOS, which used full-screen thumbnails to switch tasks. This design offered the same ease-of-recognition as WebOS's task switcher, but the smaller thumbnails allowed more apps to fit on screen at once.
+第二张图中略缩图条带是由新增的“最近应用”按钮打开的界面，现在处在返回和 Home 键旁边。不像姜饼中长按 Home 键显示一组最近应用的图标，蜂巢在屏幕上显示应用图标和略缩图，使得在任务间切换变得更加方便。最近应用的灵感明显来自于 Duarte 在 WebOS 中的“卡片式”多任务管理，其使用全屏略缩图来切换任务。这个设计提供和 WebOS 的任务切换一样的易识别体验，但更小的略缩图允许更多的应用一次性显示在屏幕上。
 
-While this implementation of Recent Apps may look like what you get on a current device, this version was very early. The list didn't scroll, meaning it showed seven apps in portrait mode and only five apps in horizontal mode. Anything beyond that was bumped off the list. You also couldn't swipe away thumbnails to close apps—this was just a static list.
+尽管最近应用的实现看起来和你现在的设备很像，这个版本实际上是非常早期的。这个列表不能滚动，这意味着竖屏下只能显示七个应用，横屏下只能显示五个。任何超出范围的应用会从列表中去除。而且你也不能通过滑动略缩图来关闭应用——这只是个静态的列表。
 
-Here we see the Tron influence in full effect: the thumbnails had blue outlines and an eerie glow around them. This screenshot also shows a benefit of software buttons—context. The back button closed the list of thumbnails, so instead of the normal arrow, this pointed down.
+这里我们看到电子灵感影响的完整主题效果：略缩图的周围有蓝色的轮廓以及神秘的光晕。这张截图还展示软件按键的好处——上下文。返回按钮可以关闭略缩图列表，所以这里的箭头指向下方，而不是通常的样子。
 
 ----------
 
 ![Ron Amadeo](http://cdn.arstechnica.net/wp-content//uploads/authors/ron-amadeo-sq.jpg)
 
-[Ron Amadeo][a] / Ron is the Reviews Editor at Ars Technica, where he specializes in Android OS and Google products. He is always on the hunt for a new gadget and loves to rip things apart to see how they work.
+[Ron Amadeo][a] / Ron是Ars Technica的评论编缉，专注于安卓系统和谷歌产品。他总是在追寻新鲜事物，还喜欢拆解事物看看它们到底是怎么运作的。
 
 [@RonAmadeo][t]
 
@@ -57,7 +57,7 @@ Here we see the Tron influence in full effect: the thumbnails had blue outlines 
 
 via: http://arstechnica.com/gadgets/2014/06/building-android-a-40000-word-history-of-googles-mobile-os/16/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[alim0x](https://github.com/alim0x) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
