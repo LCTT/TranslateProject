@@ -179,62 +179,60 @@ Linux expand Command
 
 The unexpand command performs the reverse operation (converts spaces into tabs).
 
-**Display the first lines of a file with head and the last lines with tail**
+**使用head输出文件首行及使用tail输出文件尾行**
 
-By default, the head command followed by a filename, will display the first 10 lines of the said file. This behavior can be changed using the -n option and specifying a certain number of lines.
+通常情况下，head命令后跟着文件名时，将会输出该文件的前十行，我们可以通过 -n 参数来自定义具体的行数。
 
     # head -n3 /etc/passwd
     # tail -n3 /etc/passwd
 
 ![Linux head and tail Command](http://www.tecmint.com/wp-content/uploads/2015/02/Linux-head-and-tail-Command.png)
 
-Linux head and tail Command
+Linux 的 head 和 tail 命令
 
-One of the most interesting features of tail is the possibility of displaying data (last lines) as the input file grows (tail -f my.log, where my.log is the file under observation). This is particularly useful when monitoring a log to which data is being continually added.
+tail 最有意思的一个特性就是能够展现信息(最后一行)就像我们输入文件(tail -f my.log，一行一行的，就像我们在观察它一样。)这在我们监控一个持续增加的日志文件时非常有用
 
-Read More: [Manage Files Effectively using head and tail Commands][10]
+更多: [Manage Files Effectively using head and tail Commands][10]
 
-**Merging Lines with paste**
-
-The paste command merges files line by line, separating the lines from each file with tabs (by default), or another delimiter that can be specified (in the following example the fields in the output are separated by an equal sign).
-
+**使用paste合并文本文件**
+paste命令一行一行的合并文件，默认会以tab来区分每一行,或者其他你自定义的分行方式.(下面的例子就是输出使用等号划分行的文件).
     # paste -d= file1 file2
 
 ![Merge Files in Linux](http://www.tecmint.com/wp-content/uploads/2015/02/Merge-Files-in-Linux-with-paste-command.png)
 
 Merge Files in Linux
 
-**Breaking a file into pieces using split command**
+**使用split命令将文件分块**
 
-The split command is used split a file into two (or more) separate files, which are named according to a prefix of our choosing. The splitting can be defined by size, chunks, or number of lines, and the resulting files can have a numeric or alphabetic suffixes. In the following example, we will split bash.pdf into files of size 50 KB (-b 50KB), using numeric suffixes (-d):
+split 命令常常用于把一个文件切割成两个或多个文由我们自定义的前缀命名的件文件.这些文件可以通过大小、区块、行数，生成的文件会有一个数字或字母的后缀.在下面的例子中，我们将切割bash.pdf ，每个文件50KB (-b 50KB) ,使用命名后缀 (-d):
 
     # split -b 50KB -d bash.pdf bash_
 
 ![Split Files in Linux](http://www.tecmint.com/wp-content/uploads/2015/02/Split-Files-in-Linux-with-split-command.png)
 
-Split Files in Linux
+在Linux下划分文件
 
-You can merge the files to recreate the original file with the following command:
+你可以使用如下命令来合并这些文件，生成源文件:
 
     # cat bash_00 bash_01 bash_02 bash_03 bash_04 bash_05 > bash.pdf
 
-**Translating characters with tr command**
+**使用tr命令改变字符**
 
-The tr command can be used to translate (change) characters on a one-by-one basis or using character ranges. In the following example we will use the same file2 as previously, and we will change:
+tr 命令多用于变化（改变）一个一个的字符活使用字符范围.和之前一样,下面的实例我们江使用同样的文件file2，我们将实习：
 
-- lowercase o’s to uppercase,
-- and all lowercase to uppercase
+- 小写字母 o 变成大写
+- 所有的小写字母都变成大写字母
 
     # cat file2 | tr o O
     # cat file2 | tr [a-z] [A-Z]
 
 ![Translate Characters in Linux](http://www.tecmint.com/wp-content/uploads/2015/02/Translate-characters-in-Linux-with-tr-command.png)
 
-Translate Characters in Linux
+在Linux中替换文字
 
-**Reporting or deleting duplicate lines with uniq and sort command**
+**使用uniq和sort检查或删除重复的文字**
 
-The uniq command allows us to report or remove duplicate lines in a file, writing to stdout by default. We must note that uniq does not detect repeated lines unless they are adjacent. Thus, uniq is commonly used along with a preceding sort (which is used to sort lines of text files).
+uniq命令可以帮我们查出或删除文件中的重复的行,默认会写出到stdout.我们应当注意， uniq 只能查出相邻的两个相同的单纯，所以， uniq 往往和sort 一起使用(sort一般用于对文本文件的内容进行排序)
 
 By default, sort takes the first field (separated by spaces) as key field. To specify a different key field, we need to use the -k option. Please note how the output returned by sort and uniq change as we change the key field in the following example:
 
@@ -243,20 +241,20 @@ By default, sort takes the first field (separated by spaces) as key field. To sp
     # sort -k2 file3 | uniq
     # sort -k3 file3 | uniq
 
-![Remove Duplicate Lines in Linux](http://www.tecmint.com/wp-content/uploads/2015/02/Remove-Duplicate-Lines-in-file.png)
+![删除文件中重复的行](http://www.tecmint.com/wp-content/uploads/2015/02/Remove-Duplicate-Lines-in-file.png)
 
-Remove Duplicate Lines in Linux
+删除文件中重复的行
 
-**Extracting text with cut command**
+**从文件中提取文本的命令**
 
-The cut command extracts portions of input lines (from stdin or files) and displays the result on standard output, based on number of bytes (-b), characters (-c), or fields (-f).
+Cut命令基于字节(-b),字符(-c),或者区块(-f)从stdin活文件中提取到的部分将会以标准的形式展现在屏幕上
 
-When using cut based on fields, the default field separator is a tab, but a different separator can be specified by using the -d option.
+当我们使用区块切割时，默认的分隔符是一个tab，不过你可以通过 -d 参数来自定义分隔符.
 
-    # cut -d: -f1,3 /etc/passwd # Extract specific fields: 1 and 3 in this case
-    # cut -d: -f2-4 /etc/passwd # Extract range of fields: 2 through 4 in this example
+    # cut -d: -f1,3 /etc/passwd # 这个例子提取了第一块和第三块的文本
+    # cut -d: -f2-4 /etc/passwd # 这个例子提取了第一块到第三块的文本
 
-![Extract Text From a File in Linux](http://www.tecmint.com/wp-content/uploads/2015/02/Extract-Text-from-a-file.png)
+![从文件中提取文本](http://www.tecmint.com/wp-content/uploads/2015/02/Extract-Text-from-a-file.png)
 
 从文件中提取文本
 
