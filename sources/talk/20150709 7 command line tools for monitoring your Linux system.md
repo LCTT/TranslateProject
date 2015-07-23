@@ -42,7 +42,7 @@ ps命令展现的是正在运行中的进程列表。在这种情况下，我们
 
 ### Pstree ###
 
-Pstree “shows running processes as a tree. The tree is rooted at either pid or init if pid is omitted. If a user name is specified, all process trees rooted at processes owned by that user are shown.”This is a really useful tool as the tree helps you sort out which process is dependent on which process (go [here][9]).
+Pstree“以树状图显示正在运行中的进程。如果pid被省略的话那树结构是以pid或init为父进程，如果用户名指定，那所有进程树都会以该用户所属的进程为父进程进行显示。”以树状图来帮你将进程之间的所属关系进行分类，这的确是个很有效的工具(戳[这里][9])。
 
 ![Image courtesy Mark Gibbs](http://images.techhive.com/images/article/2015/06/command-line-tools-monitoring-linux-system-8-100591907-orig.png)
 
