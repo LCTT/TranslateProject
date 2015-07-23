@@ -10,174 +10,178 @@ RHCSA 考试准备指南
 
 RHCSA 考试(考试编号 EX200)通过后可以获取由Red Hat 公司颁发的证书. RHCSA 考试是RHCT(红帽认证技师)的升级版,而且RHCSA必须在新的Red Hat Enterprise Linux(红帽企业版)下完成.RHCT和RHCSA的主要变化就是RHCT基于 RHEL5 , 而RHCSA基于RHEL6或者7, 这两个认证的等级也有所不同.
 
-This Red Hat Certified System Administrator (RHCSA) is essential to perform the following core system administration tasks needed in Red Hat Enterprise Linux environments:
+红帽认证管理员所会的最基础的是在红帽企业版的环境下执行如下系统管理任务：
 
-- Understand and use necessary tools for handling files, directories, command-environments line, and system-wide / packages documentation.
-- Operate running systems, even in different run levels, identify and control processes, start and stop virtual machines.
-- Set up local storage using partitions and logical volumes.
-- Create and configure local and network file systems and its attributes (permissions, encryption, and ACLs).
-- Setup, configure, and control systems, including installing, updating and removing software.
-- Manage system users and groups, along with use of a centralized LDAP directory for authentication.
-- Ensure system security, including basic firewall and SELinux configuration.
+- 理解并会使用命令管理文件、目录、命令行以及系统/软件包的文档
+- 使用不同的启动等级启动系统,认证和控制进程，启动或停止虚拟机
+- 使用分区和逻辑卷管理本地存储
+- 创建并且配置本地文件系统和网络文件系统，设置他们的属性(许可、加密、访问控制表)
+- 部署、配置、并且控制系统，包括安装、升级和卸载软件
+- 管理系统用户和组，独立使用集中制的LDAP目录权限控制
+- 确保系统安全，包括基础的防火墙规则和SELinux配置
 
-To view fees and register for an exam in your country, check the [RHCSA Certification page][1].
 
-To view fees and register for an exam in your country, check the RHCSA Certification page.
+关于你所在国家的考试注册费用参考 [RHCSA Certification page][1].
 
-In this 15-article RHCSA series, titled Preparation for the RHCSA (Red Hat Certified System Administrator) exam, we will going to cover the following topics on the latest releases of Red Hat Enterprise Linux 7.
+关于你所在国家的考试注册费用参考RHCSA 认证页面
 
-- Part 1: Reviewing Essential Commands & System Documentation
-- Part 2: How to Perform File and Directory Management in RHEL 7
-- Part 3: How to Manage Users and Groups in RHEL 7
-- Part 4: Editing Text Files with Nano and Vim / Analyzing text with grep and regexps
-- Part 5: Process Management in RHEL 7: boot, shutdown, and everything in between
-- Part 6: Using ‘Parted’ and ‘SSM’ to Configure and Encrypt System Storage
-- Part 7: Using ACLs (Access Control Lists) and Mounting Samba / NFS Shares
-- Part 8: Securing SSH, Setting Hostname and Enabling Network Services
-- Part 9: Installing, Configuring and Securing a Web and FTP Server
-- Part 10: Yum Package Management, Automating Tasks with Cron and Monitoring System Logs
-- Part 11: Firewall Essentials and Control Network Traffic Using FirewallD and Iptables
-- Part 12: Automate RHEL 7 Installations Using ‘Kickstart’
-- Part 13: RHEL 7: What is SELinux and how it works?
-- Part 14: Use LDAP-based authentication in RHEL 7
-- Part 15: Virtualization in RHEL 7: KVM and Virtual machine management
 
-In this Part 1 of the RHCSA series, we will explain how to enter and execute commands with the correct syntax in a shell prompt or terminal, and explained how to find, inspect, and use system documentation.
+在这个有15章的RHCSA(红帽认证管理员)备考系列,我们将覆盖以下的关于红帽企业Linux第七版的最新的信息
+
+- Part 1: 回顾必会的命令和系统文档
+- Part 2: 在RHEL7如何展示文件和管理目录
+- Part 3: 在RHEL7中如何管理用户和组
+- Part 4: 使用nano和vim管理命令/ 使用grep和正则表达式分析文本
+- Part 5: RHEL7的进程管理:启动，关机，以及其他介于二者之间的.
+- Part 6: 使用 'Parted'和'SSM'来管理和加密系统存储
+- Part 7:  使用ACLs(访问控制表)并挂载 Samba /NFS 文件分享
+- Part 8:  加固SSH，设置主机名并开启网络服务
+- Part 9:  安装、配置和加固一个Web，FTP服务器
+- Part 10:  Yum 包管理方式,使用Cron进行自动任务管理以及监控系统日志
+- Part 11:  使用FirewallD和Iptables设置防火墙，控制网络流量
+- Part 12: 使用Kickstart 自动安装RHEL 7
+- Part 13: RHEL7:什么是SeLinux?他的原理是什么?
+- Part 14:  在RHEL7 中使用基于LDAP的权限控制
+- Part 15: RHEL7的虚拟化:KVM 和虚拟机管理
+
+在第一章，我们讲解如何输入和运行正确的命令在终端或者Shell窗口，并且讲解如何找到、插入，以及使用系统文档
 
 ![RHCSA: Reviewing Essential Linux Commands – Part 1](http://www.tecmint.com/wp-content/uploads/2015/02/Reviewing-Essential-Linux-Commands.png)
 
-RHCSA: Reviewing Essential Linux Commands – Part 1
+RHCSA：回顾必会的Linux命令 - 第一部分
 
-#### Prerequisites: ####
+#### 前提: ####
 
-At least a slight degree of familiarity with basic Linux commands such as:
+至少你要熟悉如下命令
 
-- [cd command][2] (change directory)
-- [ls command][3] (list directory)
-- [cp command][4] (copy files)
-- [mv command][5] (move or rename files)
-- [touch command][6] (create empty files or update the timestamp of existing ones)
-- rm command (delete files)
-- mkdir command (make directory)
+- [cd command][2] (改变目录)
+- [ls command][3] (列举文件)
+- [cp command][4] (复制文件)
+- [mv command][5] (移动或重命名文件)
+- [touch command][6] (创建一个新的文件或更新已存在文件的时间表)
+- rm command (删除文件)
+- mkdir command (创建目录)
 
-The correct usage of some of them are anyway exemplified in this article, and you can find further information about each of them using the suggested methods in this article.
+在这篇文章中你将会找到更多的关于如何更好的使用他们的正确用法和特殊用法.
 
-Though not strictly required to start, as we will be discussing general commands and methods for information search in a Linux system, you should try to install RHEL 7 as explained in the following article. It will make things easier down the road.
+虽然没有严格的要求，但是作为讨论常用的Linux命令和方法,你应该安装RHEL7 来尝试使用文章中提到的命令.这将会使你学习起来更省力.
 
-- [Red Hat Enterprise Linux (RHEL) 7 Installation Guide][7]
+- [红帽企业版Linux(RHEL)7 安装指南][7]
 
-### Interacting with the Linux Shell ###
+### 使用Shell进行交互 ###
+如果我们使用文本模式登陆Linux，我们就无法使用鼠标在默认的shell。另一方面，如果我们使用图形化界面登陆,我们将会通过启动一个终端来开启shell，无论那种方式，我们都会看到用户提示,并且我们可以开始输入并且执行命令(当按下Enter时，命令就会被执行)
 
-If we log into a Linux box using a text-mode login screen, chances are we will be dropped directly into our default shell. On the other hand, if we login using a graphical user interface (GUI), we will have to open a shell manually by starting a terminal. Either way, we will be presented with the user prompt and we can start typing and executing commands (a command is executed by pressing the Enter key after we have typed it).
 
-Commands are composed of two parts:
+当我们使用文本模式登陆Linux时，
+命令是由两个部分组成的：
 
-- the name of the command itself, and
-- arguments
+- 命令本身
+- 参数
 
-Certain arguments, called options (usually preceded by a hyphen), alter the behavior of the command in a particular way while other arguments specify the objects upon which the command operates.
+某些参数，称为选项（通常使用一个连字符区分）,改变了由其他参数定义的命令操作.
 
-The type command can help us identify whether another certain command is built into the shell or if it is provided by a separate package. The need to make this distinction lies in the place where we will find more information about the command. For shell built-ins we need to look in the shell’s man page, whereas for other binaries we can refer to its own man page.
+命令的类型可以帮助我们识别某一个特定的命令是由shell内建的还是由一个单独的包提供。这样的区别在于我们能够找到更多关于该信息的命令,对shell内置的命令，我们需要看shell的ManPage，如果是其他提供的，我们需要看它自己的ManPage.
 
 ![Check Shell built in Commands](http://www.tecmint.com/wp-content/uploads/2015/02/Check-shell-built-in-Commands.png)
 
-Check Shell built in Commands
+检查Shell的内建命令
 
-In the examples above, cd and type are shell built-ins, while top and less are binaries external to the shell itself (in this case, the location of the command executable is returned by type).
+在上面的例子中， cd 和 type 是shell内建的命令，top和 less 是由其他的二进制文件提供的(在这种情况下，type将返回命令的位置)
+其他的内建命令
 
-Other well-known shell built-ins include:
-
-- [echo command][8]: Displays strings of text.
-- [pwd command][9]: Prints the current working directory.
+- [echo command][8]: 展示字符串
+- [pwd command][9]: 输出当前的工作目录
 
 ![More Built in Shell Commands](http://www.tecmint.com/wp-content/uploads/2015/02/More-Built-in-Shell-Commands.png)
 
-More Built in Shell Commands
+更多内建函数
 
-**exec command**
+**exec 命令**
 
-Runs an external program that we specify. Note that in most cases, this is better accomplished by just typing the name of the program we want to run, but the exec command has one special feature: rather than create a new process that runs alongside the shell, the new process replaces the shell, as can verified by subsequent.
+运行我们指定的外部程序。请注意，最好是只输入我们想要运行的程序的名字，不过exec命令有一个特殊的特性:使用旧的shell运行，而不是创建新的进程，可以作为子请求的验证.
 
-    # ps -ef | grep [original PID of the shell process]
+    # ps -ef | grep [shell 进程的PID]
 
-When the new process terminates, the shell terminates with it. Run exec top and then hit the q key to quit top. You will notice that the shell session ends when you do, as shown in the following screencast:
+当新的进程注销，Shell也随之注销,运行 exec top 然后按下 q键来退出top，你会注意到shell 会话会结束,如下面的屏幕录像展示的那样:
 
 注：youtube视频
 <iframe width="640" height="405" frameborder="0" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/f02w4WT73LE"></iframe>
 
-**export command**
+**export 命令**
 
-Exports variables to the environment of subsequently executed commands.
+输出之后执行的命令的环境的变量
 
-**history Command**
+**history 命令**
 
-Displays the command history list with line numbers. A command in the history list can be repeated by typing the command number preceded by an exclamation sign. If we need to edit a command in history list before executing it, we can press Ctrl + r and start typing the first letters associated with the command. When we see the command completed automatically, we can edit it as per our current need:
+展示数行之前的历史命令.在感叹号前输入命令编号可以再次执行这个命令.如果我们需要编辑历史列表中的命令,我们可以按下 Ctrl + r 并输入与命令相关的第一个字符.
+当我们看到的命令自动补全，我们可以根据我们目前的需要来编辑它：
 
 注：youtube视频
 <iframe width="640" height="405" frameborder="0" allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/69vafdSMfU4"></iframe>
 
-This list of commands is kept in our home directory in a file called .bash_history. The history facility is a useful resource for reducing the amount of typing, especially when combined with command line editing. By default, bash stores the last 500 commands you have entered, but this limit can be extended by using the HISTSIZE environment variable:
+命令列表会保存在一个叫 .bash_history的文件里.history命令是一个非常有用的用于减少输入次数的工具，特别是进行命令行编辑的时候.默认情况下，bash保留最后输入的500个命令，不过可以通过修改 HISTSIZE 环境变量来增加:
+
 
 ![Linux history Command](http://www.tecmint.com/wp-content/uploads/2015/02/Linux-history-Command.png)
 
-Linux history Command
+Linux history 命令
 
-But this change as performed above, will not be persistent on our next boot. In order to preserve the change in the HISTSIZE variable, we need to edit the .bashrc file by hand:
+但上述变化，在我们的下一次启动不会保留。为了保持HISTSIZE变量的变化，我们需要通过手工修改文件编辑：
 
-    # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+    # 设置history请看  HISTSIZE 和 HISTFILESIZE 在 bash(1)的文档
     HISTSIZE=1000
 
-**Important**: Keep in mind that these changes will not take effect until we restart our shell session.
+**重要**: 我们的更改不会生效，除非我们重启了系统
 
-**alias command**
+**alias 命令**
+没有参数或使用-p参数将会以 名称=值的标准形式输出alias 列表.当提供了参数时，一个alias 将被定义给给定的命令和值
 
-With no arguments or with the -p option prints the list of aliases in the form alias name=value on standard output. When arguments are provided, an alias is defined for each name whose value is given.
+使用alias ，我们可以创建我们自己的命令，或修改现有的命令，包括需要的参数.举个例子，假设我们想别名 ls 到 ls –color=auto ，这样就可以使用不同颜色输出文件、目录、链接
 
-With alias, we can make up our own commands or modify existing ones by including desired options. For example, suppose we want to alias ls to ls –color=auto so that the output will display regular files, directories, symlinks, and so on, in different colors:
 
     # alias ls='ls --color=auto'
 
 ![Linux alias Command](http://www.tecmint.com/wp-content/uploads/2015/02/Linux-alias-Command.png)
 
-Linux alias Command
+Linux 别名命令 
 
-**Note**: That you can assign any name to your “new command” and enclose as many commands as desired between single quotes, but in that case you need to separate them by semicolons, as follows:
+**Note**: 你可以给你的新命令起任何的名字，并且附上足够多的使用单引号分割的参数，但是这样的情况下你要用分号区分开他们.
 
     # alias myNewCommand='cd /usr/bin; ls; cd; clear'
 
-**exit command**
+**exit 命令**
 
-The exit and logout commands both terminate the shell. The exit command terminates any shell, but the logout command terminates only login shells—that is, those that are launched automatically when you initiate a text-mode login.
+Exit和logout命令都是退出shell.exit命令退出所有的shell，logout命令只注销登陆的shell，其他的自动以文本模式启动的shell不算.
 
-If we are ever in doubt as to what a program does, we can refer to its man page, which can be invoked using the man command. In addition, there are also man pages for important files (inittab, fstab, hosts, to name a few), library functions, shells, devices, and other features.
+如果我们对某个程序由疑问，我们可以看他的man Page，可以使用man命令调出它，额外的，还有一些重要的文件的手册页(inittab,fstab,hosts等等),库函数,shells,设备及其他功能
 
-#### Examples: ####
+#### 举例: ####
 
-- man uname (print system information, such as kernel name, processor, operating system type, architecture, and so on).
-- man inittab (init daemon configuration).
+- man uname (输出系统信息，如内核名称、处理器、操作系统类型、架构等).
+- man inittab (初始化守护设置).
 
-Another important source of information is provided by the info command, which is used to read info documents. These documents often provide more information than the man page. It is invoked by using the info keyword followed by a command name, such as:
+另外一个重要的信息的来源就是info命令提供的,info命令常常被用来读取信息文件.这些文件往往比manpage 提供更多信息.通过info 关键词调用某个命令的信息
 
     # info ls
     # info cut
 
-In addition, the /usr/share/doc directory contains several subdirectories where further documentation can be found. They either contain plain-text files or other friendly formats.
 
-Make sure you make it a habit to use these three methods to look up information for commands. Pay special and careful attention to the syntax of each of them, which is explained in detail in the documentation.
+另外，在/usr/share/doc 文件夹包含了大量的子目录，里面可以找到大量的文档.他们包含文本文件或其他友好的格式.
+确保你使用这三种方法去查找命令的信息。重点关注每个命令文档中介绍的详细的语法
 
-**Converting Tabs into Spaces with expand Command**
+**使用expand命令把tabs转换为空格**
 
-Sometimes text files contain tabs but programs that need to process the files don’t cope well with tabs. Or maybe we just want to convert tabs into spaces. That’s where the expand tool (provided by the GNU coreutils package) comes in handy.
+有时候文本文档包含了tabs但是程序无法很好的处理的tabs.或者我们只是简单的希望将tabs转换成空格.这就是为什么expand (GNU核心组件提供)工具出现,
 
-For example, given the file NumbersList.txt, let’s run expand against it, changing tabs to one space, and display on standard output.
+举个例子,给我们一个文件 NumberList.txt，让我们使用expand处理它，将tabs转换为一个空格.并且以标准形式输出.
 
     # expand --tabs=1 NumbersList.txt
 
 ![Linux expand Command](http://www.tecmint.com/wp-content/uploads/2015/02/Linux-expand-Command.png)
 
-Linux expand Command
+Linux expand 命令
 
-The unexpand command performs the reverse operation (converts spaces into tabs).
+unexpand命令可以实现相反的功能(将空格转为tab)
 
 **使用head输出文件首行及使用tail输出文件尾行**
 
@@ -234,7 +238,8 @@ tr 命令多用于变化（改变）一个一个的字符活使用字符范围.�
 
 uniq命令可以帮我们查出或删除文件中的重复的行,默认会写出到stdout.我们应当注意， uniq 只能查出相邻的两个相同的单纯，所以， uniq 往往和sort 一起使用(sort一般用于对文本文件的内容进行排序)
 
-By default, sort takes the first field (separated by spaces) as key field. To specify a different key field, we need to use the -k option. Please note how the output returned by sort and uniq change as we change the key field in the following example:
+
+默认的，sort 以第一个参数(使用空格区分)为关键字.想要定义特殊的关键字，我们需要使用 -k参数，请注意如何使用sort 和uniq输出我们想要的字段，具体可以看下面的例子
 
     # cat file3
     # sort file3 | uniq
