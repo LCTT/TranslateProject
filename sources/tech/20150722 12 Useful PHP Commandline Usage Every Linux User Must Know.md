@@ -1,3 +1,4 @@
+Translating by GOLinu!
 12 Useful PHP Commandline Usage Every Linux User Must Know
 ================================================================================
 In my last post “[How to Use and Execute PHP Codes in Linux Command – line][1]”, I emphasized on running PHP codes directly in Linux Command-line as well as executing PHP script file in Linux Terminal.
