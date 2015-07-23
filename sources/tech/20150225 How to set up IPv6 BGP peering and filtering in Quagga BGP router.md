@@ -1,3 +1,5 @@
+translating...
+
 How to set up IPv6 BGP peering and filtering in Quagga BGP router
 ================================================================================
 In the previous tutorials, we demonstrated how we can set up a [full-fledged BGP router][1] and configure [prefix filtering][2] with Quagga. In this tutorial, we are going to show you how we can set up IPv6 BGP peering and advertise IPv6 prefixes through BGP. We will also demonstrate how we can filter IPv6 prefixes advertised or received by using prefix-list and route-map features.
