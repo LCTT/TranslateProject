@@ -1,3 +1,4 @@
+Translatign by GOLinux!
 How to Use and Execute PHP Codes in Linux Command Line – Part 1
 ================================================================================
 PHP is an open source server side scripting Language which originally stood for ‘Personal Home Page‘ now stands for ‘PHP: Hypertext Preprocessor‘, which is a recursive acronym. It is a cross platform scripting language which is highly influenced by C, C++ and Java.
