@@ -1,3 +1,4 @@
+[translating by xiqingongzi]
 RHCSA Series: How to Perform File and Directory Management – Part 2
 ================================================================================
 In this article, RHCSA Part 2: File and directory management, we will review some essential skills that are required in the day-to-day tasks of a system administrator.
