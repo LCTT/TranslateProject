@@ -10,16 +10,16 @@ Ron Amadeo 供图
 
 第二张蜂巢截图展示的是新通知中心。姜饼中的灰色和黑色设计已经被抛弃了，现在是黑色面板带蓝色光晕。上面一块显示着日期时间，连接状态，电量和打开快速设置的按钮，下面是实际的通知。非持续性通知现在可以通过通知右侧的“X”来关闭。蜂巢是第一个支持通知内控制的版本。第一个（也是蜂巢发布时唯一一个）利用了此特性的应用是新的谷歌音乐，在它的通知上有上一曲，播放/暂停，下一曲按钮。这些控制可以在任何应用中访问到，这让控制音乐播放变成了一件轻而易举的事情。
 
-!["Add to home screen" was given a zoomed-out interface for easy organizing. The search interface split auto suggest and universal search into different panes.](http://cdn.arstechnica.net/wp-content/uploads/2014/02/widgetkeyboard.png)
-"Add to home screen" was given a zoomed-out interface for easy organizing. The search interface split auto suggest and universal search into different panes.
+![“添加到主屏幕”的缩小视图更易于组织布局。搜索界面将自动搜索建议和通用搜索分为两个面板显示。](http://cdn.arstechnica.net/wp-content/uploads/2014/02/widgetkeyboard.png)
+“添加到主屏幕”的缩小视图更易于组织布局。搜索界面将自动搜索建议和通用搜索分为两个面板显示。
 Ron Amadeo 供图
 
-Pressing the plus button in the top right corner of the home screen or long pressing on the background would open the new home screen configuration interface. Honeycomb showed a zoomed-out view of all the home screens along the top of the screen, and it filled the bottom half of the screen with a tabbed drawer containing widgets and shortcuts. Items could be dragged out of the bottom drawer and into any of the five home screens. Gingerbread would just show a list of text, but Honeycomb showed full thumbnail previews of the widgets. This gave you a much better idea of what a widget would look like instead of an app-name-only description like "calendar."
+点击主屏幕右上角的加号或长按背景空白处就会打开新的主屏幕设置界面。蜂巢会在屏幕上半部分显示所有主屏的缩小视图，下半部分分页显示的是小部件和快捷方式。小部件或快捷方式可以从下半部分的抽屉中拖动到五个主屏幕中的任意一个上。姜饼只会显示一个文本列表，而蜂巢会显示小部件完整的略缩图预览。这让你更清楚一个小部件是什么样子的，而不是像原来的“日历”一样只是一个只有应用名称的描述。
 
-The larger screen of the Motorola Xoom allowed the keyboard to take on a more PC-style layout, with keys like backspace, enter, shift, and tab put in the traditional locations. The keyboard took on a blueish tint and gained even more spacing between the keys. Google also added a dedicated smiley-face button. :-)
+摩托罗拉 Xoom 更大的屏幕让键盘的布局更加接近 PC 风格，退格，回车，shift 以及 tab 都在传统的位置上。键盘带有浅蓝色，并且键与键之间的空间更大了。谷歌还添加了一个专门的笑脸按钮。 :-)
 
-![Gmail on Honeycomb versus Gmail on Gingerbread with the menu open. Buttons were placed on the main screen for easier discovery.](http://cdn.arstechnica.net/wp-content/uploads/2014/02/thebasics.png)
-Gmail on Honeycomb versus Gmail on Gingerbread with the menu open. Buttons were placed on the main screen for easier discovery.
+![打开菜单的 Gmail 在蜂巢和姜饼上的效果。按钮布置在首屏更容易被发现。](http://cdn.arstechnica.net/wp-content/uploads/2014/02/thebasics.png)
+打开菜单的 Gmail 在蜂巢和姜饼上的效果。按钮布置在首屏更容易被发现。
 Ron Amadeo 供图
 
 Gmail demonstrated all the new UI concepts in Honeycomb. Android 3.0 did away with hiding all the controls behind a menu button. There was now a strip of icons along the top of the screen called the Action Bar, which lifted many useful controls to the main screen where users could see them. Gmail showed buttons for search, compose, and refresh, and it put less useful controls like settings, help, and feedback in a dropdown called the "overflow" button. Tapping checkboxes or selecting text would cause the entire action bar to change to icons relating to those actions—for instance, selecting text would bring up cut, copy, and select all buttons.
