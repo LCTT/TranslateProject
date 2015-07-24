@@ -54,7 +54,7 @@ Pstree“以树状图显示正在运行中的进程。如果pid被省略的话�
 
 ### iostat ###
 
-A crucial factor in your Linux system’s performance is processor and storage usage, which are what the iostat command reports on. As with the ps command, iostat has loads of switches that allow you to select the output format you need as well as sample performance over a time period and then repeat that sampling a number of times before reporting. See [here][10].
+Linux系统的一个至关重要的性能指标是处理器和存储的使用率，它也是iostat命令所报告的内容。如同ps命令一样，iostat有很多选项允许你选择你需要的输出格式，除此之外还有某一段时间范围内的简单性能输出并在报告之前重复抽样多次。详情戳[这里][10]。
 
 --------------------------------------------------------------------------------
 
