@@ -1,3 +1,5 @@
+Translating by dingdongnigetou
+
 Install Plex Media Server On Ubuntu / CentOS 7.1 / Fedora 22
 ================================================================================
 In this article we will show you how easily you can setup Plex Home Media Server on major Linux distributions with their latest releases.  After its successful installation of Plex you will be able to use your centralized home media playback system that streams its media to many Plex player Apps and the Plex Home will allows you to setup your environment by adding your devices and to setup a group of users that all can use Plex Together. So let’s start its installation first on Ubuntu 15.04.
