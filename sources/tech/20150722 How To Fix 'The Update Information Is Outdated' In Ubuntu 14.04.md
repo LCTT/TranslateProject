@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How To Fix “The Update Information Is Outdated” In Ubuntu 14.04
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/07/Fix_update_information_is_outdated.jpeg)
