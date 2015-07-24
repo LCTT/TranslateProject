@@ -22,55 +22,55 @@ Ron Amadeo 供图
 打开菜单的 Gmail 在蜂巢和姜饼上的效果。按钮布置在首屏更容易被发现。
 Ron Amadeo 供图
 
-Gmail demonstrated all the new UI concepts in Honeycomb. Android 3.0 did away with hiding all the controls behind a menu button. There was now a strip of icons along the top of the screen called the Action Bar, which lifted many useful controls to the main screen where users could see them. Gmail showed buttons for search, compose, and refresh, and it put less useful controls like settings, help, and feedback in a dropdown called the "overflow" button. Tapping checkboxes or selecting text would cause the entire action bar to change to icons relating to those actions—for instance, selecting text would bring up cut, copy, and select all buttons.
+Gmail 示范了蜂巢所有的用户界面概念。安卓 3.0不再把所有控制都隐藏在菜单按钮之后。屏幕的顶部现在有一条带有图标的条带，叫做 Action Bar（操作栏），它将许多常用的控制选项提升到了主屏幕上，用户直接就能看到它们。Gmail 的操作栏显示着搜索，新邮件，刷新按钮，不常用的选项比如设置，帮助，以及反馈放在了“更多”按钮中。点击复选框或选中文本的时候时整个操作栏的图标会变成和操作相关的——举个例子，选择文本会出现复制，粘贴和全选按钮。
 
-The app icon displayed in the top left corner doubled as a navigation button called "Up." While "Back" worked similarly to a browser back button, navigating to previously visited screens, "Up" would navigate up the app hierarchy. For instance, if you were in the Android Market, pressed the "Email developer" button, and Gmail opened, "Back" would take you back to the Android Market, but "Up" would take you to the Gmail inbox. "Back" might close the current app, but "Up" never would. Apps could control the "Back" button, and they usually reprogrammed it to replicate the "Up" functionality. In practice, there was rarely a difference between the two buttons.
+应用左上角显示的图标同时也作为称作“上一级”的导航按钮。“后退”的作用类似浏览器的后退按钮，导航到之前访问的页面，“上一级”则会导航至应用的上一层次。举例来说，如果你在安卓市场，点击“给开发者发邮件”，会打开 Gmail，“后退”会让你返回安卓市场，但是“上一级”会带你到 Gmail 的收件箱。“后退”可能会关闭当前应用，而“上一级”永远不会。应用可以控制“后退”按钮，它们往往重新定义它为“上一级”的功能。事实上，这两个按钮之间几乎没什么不同。
 
-Honeycomb also introduced the "Fragments" API, which allowed developers to use a single app for tablets and phones. A "Fragment" was a single pane of a user interface. In the Gmail picture above, the left folder list was one fragment and the inbox was another fragment. Phones would show one fragment per screen, and tablets could show two side-by-side. The developer defined the look of individual fragments, and Android would decide how they should be displayed based on the current device.
+蜂巢还引入了 “Fragments” API，允许开发者开发同时适用于平板和手机的应用。一个 “Fragments”（格子） 是一个用户界面的面板。在上图的 Gmail 中，左边的文件夹列表是一个格子，收件箱是另一个格子。手机每屏显示一个格子，而平板则可以并列显示两个。开发者可以自行定义单独每个格子的外观，安卓会根据当前的设备决定如何显示它们。
 
-![The calculator finally used regular Android buttons, but someone spilled blue ink on the calendar.](http://cdn.arstechnica.net/wp-content/uploads/2014/02/calculendar.png)
-The calculator finally used regular Android buttons, but someone spilled blue ink on the calendar.
+![计算器使用了常规的安卓按钮，但日历看起来像是被谁打翻了蓝墨水。](http://cdn.arstechnica.net/wp-content/uploads/2014/02/calculendar.png)
+计算器使用了常规的安卓按钮，但日历看起来像是被谁打翻了蓝墨水。
 Ron Amadeo 供图
 
-For the first time in Android's history, the calculator got a makeover with non-custom buttons, so it actually looked like part of the OS. The bigger screen made room for more buttons, enough that all the calculator functionality could fit on one screen. The calendar greatly benefited from the extra space, gaining much more room for appointment text and controls. The action bar at the top of the screen held buttons to switch views, along with showing the current time span and common controls. Appointment blocks switched to a white background with the calendar corner only showing in the top right corner. At the bottom (or side, in horizontal view) were boxes showing the month calendar and a list of displayed calendars.
+这是安卓历史上第一次计算器换上了没有特别定制的按钮，所以它看起来确实是系统的一部分。更大的屏幕有了更多空间容纳按钮，足够将计算器基本功能容纳在一个屏幕上。日历极大地受益于额外的显示空间，有了更多的空间显示事件文本和控制选项。顶部的操作栏有切换视图的按钮，显示当前时间跨度，以及常规按钮。事件块变成了白色背景，日历标识只在左上角显示。在底部（或横屏模式的侧边）显示的是月历和显示的日历列表。
 
-The scale of the calendar could be adjusted, too. By performing a pinch zoom gesture, portrait week and day views could show between five and 19 hours of appointments on a single screen. The background of the calendar was made up of an uneven blue splotch, which didn't look particularly great and was tossed on later versions.
+日历的比例同样可以调整。通过两指缩放手势，纵向的周和日视图能够在一屏内显示五到十九小时的事件。日历的背景由不均匀的蓝色斑点组成，看起来不是特别棒，在随后的版本里就被抛弃了。
 
-![The new camera interface, showing off the live "Negative" effect.](http://cdn.arstechnica.net/wp-content/uploads/2014/02/camera.png)
-The new camera interface, showing off the live "Negative" effect.
+![新相机界面，取景器显示的是“负片”效果。](http://cdn.arstechnica.net/wp-content/uploads/2014/02/camera.png)
+新相机界面，取景器显示的是“负片”效果。
 Ron Amadeo 供图
 
-The giant 10-inch Xoom tablet did have a camera, which meant that it also had a camera app. The Tron redesign finally got rid of the old faux-leather look that Google came up with in Android 1.6. The controls were laid out in a circle around the shutter button, bringing to mind the circular controls and dials on a real camera. The Cooliris-derived speech bubble popups were changed to glowing, semi-transparent black boxes. The Honeycomb screenshot shows the new "color effect" functionality, which applied a filter to the viewfinder in real time. Unlike the Gingerbread camera app, this didn't support a portrait orientation—it was limited to landscape only. Taking a portrait picture with a 10-inch tablet doesn't make much sense, but then neither does taking a landscape one.
+巨大的10英寸 Xoom 平板有个摄像头，这意味着它同样有个相机应用。电子风格的重新设计终于甩掉了谷歌从安卓 1.6 以来使用的仿皮革外观。控制选项以环形排布在快门键周围，让人想起真正的相机上的圆形控制转盘。Cooliris 衍生的弹出对话气泡变成了带光晕的半透明黑色选框。蜂巢的截图显示的是新的“颜色效果”功能，它能给取景器实时加上滤镜效果。不像姜饼的相机应用，它不支持竖屏模式——它被限制在横屏状态。用10英寸的平板拍摄纵向照片没多大意义，但拍摄横向照片也没多大意义。
 
-![The clock app didn't get quite as much love as other areas. Google just threw it into a tiny box and called it a day.](http://cdn.arstechnica.net/wp-content/uploads/2014/02/clocks.png)
-The clock app didn't get quite as much love as other areas. Google just threw it into a tiny box and called it a day.
+![时钟应用相比其它地方没受到多少关照。谷歌把它扔进一个小盒子里然后就收工了。](http://cdn.arstechnica.net/wp-content/uploads/2014/02/clocks.png)
+时钟应用相比其它地方没受到多少关照。谷歌把它扔进一个小盒子里然后就收工了。
 Ron Amadeo 供图
 
-Tons of functionality went out the door when it came time to remake the clock app. The entire "Deskclock" concept was kicked out the door, replaced with a simple large display of the time against a plain black background. The ability to launch other apps and view the weather was gone, as was the ability of the clock app to use your wallpaper. Google sometimes gave up when it came time to design a tablet-sized interface, like here, where it just threw the alarm interface into a tiny, centered dialog box.
+无数功能已经成形了，现在是时候来重制一下时钟了。整个“桌面时钟”概念被踢出门外，取而代之的是在纯黑背景上显示的简单又巨大的时间数字。打开其它应用查看天气的功能不见了，随之而去的还有显示你的壁纸的功能。当要设计平板尺寸的界面时，有时候谷歌就放弃了，就像这里，就只是把时钟界面扔到了一个小小的，居中的对话框里。
 
-![The Music app finally got the ground-up redesign it has needed forever.](http://cdn.arstechnica.net/wp-content/uploads/2014/02/muzack.png)
-The Music app finally got the ground-up redesign it has needed forever.
+![音乐应用终于得到了一直以来都需要的完全重新设计。](http://cdn.arstechnica.net/wp-content/uploads/2014/02/muzack.png)
+音乐应用终于得到了一直以来都需要的完全重新设计。
 Ron Amadeo 供图
 
-While music received a few minor additions during its life, this was really the first time since Android 0.9 that it received serious attention. The highlight of the redesign was a don't-call-it-coverflow scrolling 3D album art view, called "New and Recent." Instead of the tabs added in Android 2.1, navigation was handled by a Dropbox box in the Action Bar. While "New and Recent" had 3D scrolling album art, "Albums" used a flat grid of albums thumbnails. The other sections had totally different designs, too. "Songs" used a vertically scrolling list of text, and "Playlists," "Genres," and "Artists" used stacked album art.
+尽管音乐应用之前有得到一些小的加强，但这是自安卓 0.9 以来它第一次受到正视。重新设计的亮点是一个“别叫它封面流滚动 3D 专辑封面视图”，称作“最新和最近”。导航由操作栏的下拉框解决，取代了安卓 2.1 引入的标签页导航。尽管“最新和最近”有个 3D 滚动专辑封面，“专辑”使用的是专辑略缩图的平面方阵。另一个部分也有个完全不同的设计。“歌曲”使用了垂直滚动的文本列表，“播放列表”，“年代”和“艺术家”用的是堆砌专辑显示。
 
-In nearly every view, every single item had its own individual menu, usually little arrows in the bottom right corner of an item. For now, these would only show "Play" and "add to Playlist," but this version of Google Music was built for the future. Google was launching a Music service soon, and those individual menus would be needed for things like viewing other content from that artist in the Music Store and managing the cloud storage versus local storage options.
+在几乎每个视图中，每个单独的项目有它自己单独的菜单，通常在每项的右下角有个小箭头。眼下这里只会显示“播放”和“添加到播放列表”，但这个版本的谷歌音乐是为未来搭建的。谷歌不久后就要发布音乐服务，这些独立菜单在像是在音乐商店里浏览该艺术家的其它内容，或是管理云存储和本地存储时将会是不可或缺的。
 
-Just like the Cooliris Gallery in Android 2.1, Google Music would blow up one of your thumbnails and use it as a background. The bottom "Now Playing" bar now displayed the album art, playback controls, and a song progress bar.
+正如安卓 2.1 中的 Cooliris 风格的相册，谷歌音乐会将略缩图放大作为背景图片。底部的“正在播放”栏现在显示着专辑封面，播放控制，以及播放进度条。
 
-![Some of the new Google Maps was really nice, and some of it was from Android 1.5.](http://cdn.arstechnica.net/wp-content/uploads/2014/02/maps.png)
-Some of the new Google Maps was really nice, and some of it was from Android 1.5.
+![新谷歌地图的一些地方真的很棒，一些却是从安卓 1.5 来的。](http://cdn.arstechnica.net/wp-content/uploads/2014/02/maps.png)
+新谷歌地图的一些地方真的很棒，一些却是从安卓 1.5 来的。
 Ron Amadeo 供图
 
-Google Maps received another redesign for the big screen. This one would stick around for a while and used a semi-transparent black action bar for all the controls. Search was again the primary function, given the first spot in the action bar, but this time it was an actual search bar you could type in, instead of a search bar-shaped button that launched a completely different interface. Google finally gave up on dedicating screen space to actual zoom buttons, relying on only gestures to control the map view. While the feature has since been ported to all old versions of Maps, Honeycomb was the first version to feature 3D building outlines on the map. Dragging two fingers down on the map would "tilt" the map view and show the sides of the buildings. You could freely rotate and the buildings would adjust, too.
+谷歌地图也为大屏幕进行了重新设计。这个设计将会持续一段时间，它对所有的控制选项用了一个半透明的黑色操作栏。搜索再次成为主要功能，占据了操作栏显要位置，但这回可是真的搜索栏，你可以在里面输入关键字，不像以前那个搜索栏形状的按钮会打开完全不同的界面。谷歌最终还是放弃了给缩放控件留屏幕空间，仅仅依靠手势来控制地图显示。尽管 3D 建筑轮廓这个特性已经被移植到了旧版本的地图中，蜂巢依然是拥有这个特性的第一个版本。双指在地图上向下拖放会“倾斜”地图的视角，展示建筑的侧面。你可以随意旋转，建筑同样会跟着进行调整。
 
-Not every part of Maps was redesigned. Navigation was untouched from Gingerbread, and some core parts of the interface, like directions, were pulled straight from Android 1.6 and centered in a tiny box.
+并不是所有部分都进行了重新设计。导航自姜饼以来就没动过，还有些界面的核心部分，像是路线，直接从安卓 1.6 的设计拿出来，放到一个小盒子里居中放置，仅此而已。
 
 ----------
 
 ![Ron Amadeo](http://cdn.arstechnica.net/wp-content//uploads/authors/ron-amadeo-sq.jpg)
 
-[Ron Amadeo][a] / Ron is the Reviews Editor at Ars Technica, where he specializes in Android OS and Google products. He is always on the hunt for a new gadget and loves to rip things apart to see how they work.
+[Ron Amadeo][a] / Ron是Ars Technica的评论编缉，专注于安卓系统和谷歌产品。他总是在追寻新鲜事物，还喜欢拆解事物看看它们到底是怎么运作的。
 
 [@RonAmadeo][t]
 
@@ -78,7 +78,7 @@ Not every part of Maps was redesigned. Navigation was untouched from Gingerbread
 
 via: http://arstechnica.com/gadgets/2014/06/building-android-a-40000-word-history-of-googles-mobile-os/17/
 
-译者：[译者ID](https://github.com/译者ID) 校对：[校对者ID](https://github.com/校对者ID)
+译者：[alim0x](https://github.com/alim0x) 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
