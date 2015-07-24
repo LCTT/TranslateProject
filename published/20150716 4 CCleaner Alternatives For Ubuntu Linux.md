@@ -2,7 +2,7 @@ Ubuntu 下 CCleaner 的 4 个替代品
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/07/ccleaner-10-700x393.jpg)
 
-回首我使用 Windows 的那些日子，[CCleaner][1] 是我用来释放空间，删除垃圾文件和加速 Windows 的最喜爱的工具。我知道，当从 Windows 切换到 Linux 时，我并不是唯一期望 CCleaner 拥有 Linux 版本的人。假如你正在寻找 Linux 下 CCleaner 的替代品，我将在下面列举 4 个这样的应用，它们可以用来清理 Ubuntu 或基于 Ubuntu 的 Linux 发行版本。但在我们看这个清单之前，让我们考虑一下 Linux 是否需要系统清理工具这个问题。
+回首我使用 Windows 的那些日子，[CCleaner][1] 是我用来释放空间、删除垃圾文件和加速 Windows 的最喜爱的工具。我知道，当从 Windows 切换到 Linux 时，我并不是唯一期望 CCleaner 拥有 Linux 版本的人。假如你正在寻找 Linux 下 CCleaner 的替代品，我将在下面列举 4 个这样的应用，它们可以用来清理 Ubuntu 或基于 Ubuntu 的 Linux 发行版本。但在我们看这个清单之前，先让我们考虑一下 Linux 是否需要系统清理工具这个问题。
 
 ### Linux 需要像 CCleaner 那样的系统清理工具吗？ ###
 
@@ -12,18 +12,18 @@ Ubuntu 下 CCleaner 的 4 个替代品
 
 所以，概括起来，它在系统范围内清理在你的浏览器或媒体播放器中的临时文件。你或许知道 Windows 有在系统中保存垃圾文件的喜好，那 Linux 呢？它是如何处理临时文件的呢？
 
-与 Windows 不同， Linux 自动地清理所有的临时文件(在 `/tmp` 中存储)。在 Linux 中没有注册表，这进一步减轻了头痛。在最坏情况下，你可能会有一些损坏的软件包，不再需要软件包以及网络浏览历史记录， cookies ，缓存等。
+与 Windows 不同， Linux 自动地清理所有的临时文件(在 `/tmp` 中存储)。在 Linux 中没有注册表，这进一步减轻了头痛。在最坏情况下，你可能会有一些损坏的不再需要的软件包，以及丢失一些网络浏览历史记录， cookies ，缓存等。
 
 ### 这意味着 Linux 不必需要系统清理工具了吗？ ###
 
-- 假如你可以运行某些命令来清理偶尔使用的软件包，手动删除浏览历史记录等，那么答案是：No；
-- 假如你不想从一个地方跳到另一个地方来运行命令，并想用一个工具来删除所有可通过一次或多次点击所选择的东西，那么答案是：Yes。
+- 假如你可以运行某些命令来清理偶尔使用的软件包，手动删除浏览历史记录等，那么答案是：不需要；
+- 假如你不想不断地从一个地方跳到另一个地方来运行命令，并想用一个工具来删除所有可通过一次或多次点击所选择的东西，那么答案是：需要。
 
-假如你的答案是 Yes，就让我们继续看看一些类似于 CCleaner 的工具，用它们清理你的 Ubuntu 系统。
+假如你的答案是“需要”，就让我们继续看看一些类似于 CCleaner 的工具，用它们清理你的 Ubuntu 系统。
 
 ### Ubuntu 下 CCleaner 的替代品 ###
 
-请注意，我使用的系统是 Ubuntu，因为下面讨论的一些工具只存在于基于 Ubuntu 的 Linux 发行版本中，而剩下的在所有的 Linux 发行版本中都可使用。
+请注意，我使用的系统是 Ubuntu，因为下面讨论的一些工具只存在于基于 Ubuntu 的 Linux 发行版本中，而另外一些在所有的 Linux 发行版本中都可使用。
 
 #### 1. BleachBit ####
 
@@ -32,10 +32,10 @@ Ubuntu 下 CCleaner 的 4 个替代品
 [BleachBit][3] 是一个跨平台的应用程序，在 Windows 和 Linux 平台下都可使用。它有一个很长的支持清理的程序的列表，这样可以让你选择性的清理缓存，cookies 和日志文件。让我们快速浏览它的特点：
 
 - 简洁的图形界面确认框，你可以预览或删除
-- 多平台： Linux 和 Windows
+- 支持多平台： Linux 和 Windows
 - 免费且开源
 - 粉碎文件以隐藏它们的内容并防止数据恢复
-- 重写可用的磁盘空间来隐藏先前删除的文件
+- 重写空闲的磁盘空间来隐藏先前删除的文件内容
 - 也拥有命令行界面
 
 默认情况下，在 Ubuntu 14.04 and 15.04 中都可以获取到 BleachBit，你可以在终端中使用下面的命令来安装：
@@ -103,7 +103,7 @@ via: http://itsfoss.com/ccleaner-alternatives-ubuntu-linux/
 
 作者：[Abhishek][a]
 译者：[FSSlc](https://github.com/FSSlc)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 

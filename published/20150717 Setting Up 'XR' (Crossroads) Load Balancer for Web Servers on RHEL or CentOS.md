@@ -1,17 +1,17 @@
 
-在 RHEL/CentOS 上为Web服务器设置 “XR”（Crossroads） 负载均衡器
+在 RHEL/CentOS 上为Web服务器架设 “XR”（Crossroads） 负载均衡器
 ================================================================================
-Crossroads 是一个独立的服务，并且是一个开源的负载均衡和故障转移实用程序，基于Linux和TCP服务。它可用于HTTP，HTTPS，SSH，SMTP和DNS等，它也是一个多线程的工具，它只消耗一个存储空间以此来提高性能达到负载均衡的目的。
+Crossroads 是一个独立的服务，它是一个用于Linux和TCP服务的开源负载均衡和故障转移实用程序。它可用于HTTP，HTTPS，SSH，SMTP 和 DNS 等，它也是一个多线程的工具，在提供负载均衡服务时，它可以只使用一块内存空间以此来提高性能。
 
-首先来看看 XR 是如何工作的。我们可以找到 XR 分派的网络客户端和服务器之间到负载均衡服务器上的请求。 
+首先来看看 XR 是如何工作的。我们可以将 XR 放到网络客户端和服务器之间，它可以将客户端的请求分配到服务器上以平衡负载。 
 
-如果一台服务器宕机，XR 会转发客户端请求到另一个服务器，所以客户感觉不到停机时间。看看下面的图来了解什么样的情况下，我们要使用 XR 处理。
+如果一台服务器宕机，XR 会转发客户端请求到另一个服务器，所以客户感觉不到停顿。看看下面的图来了解什么样的情况下，我们要使用 XR 处理。
 
 ![Install XR Crossroads Load Balancer](http://www.tecmint.com/wp-content/uploads/2015/07/Install-XR-Crossroads-Load-Balancer.jpg)
 
-安装 XR Crossroads 负载均衡器
+*安装 XR Crossroads 负载均衡器*
 
-有两个 Web 服务器，一个网关服务器，我们安装和设置 XR 接收客户端请求，分发到服务器之间。
+这里有两个 Web 服务器，一个网关服务器，我们将在网关服务器上安装和设置 XR 以接收客户端请求，并分发到服务器。
 
     XR Crossroads 网关服务器：172.16.1.204 
 
@@ -25,9 +25,9 @@ Crossroads 是一个独立的服务，并且是一个开源的负载均衡和故
 
 ### 第1步：在网关服务器上安装 XR Crossroads 负载均衡器 ###
 
-**1. 不幸的是，没有为 crosscroads 提供可用的 RPM 包，我们只能从源码安装。**
+**1. 不幸的是，没有为 crossroads 提供可用的 RPM 包，我们只能从源码安装。**
 
-要编译 XR，你必须在系统上安装 C++ 编译器和 GNU make 组件，才能继续无差错的安装。
+要编译 XR，你必须在系统上安装 C++ 编译器和 GNU make 组件，才能避免安装错误。
 
     # yum install gcc gcc-c++ make
 
@@ -42,36 +42,35 @@ Crossroads 是一个独立的服务，并且是一个开源的负载均衡和故
 
 ![Install XR Crossroads Load Balancer](http://www.tecmint.com/wp-content/uploads/2015/07/Install-XR-Crossroads-Load-Balancer.png)
 
-安装 XR Crossroads 负载均衡器
+*安装 XR Crossroads 负载均衡器*
 
 安装完成后，二进制文件安装在 /usr/sbin 目录下，XR 的配置文件在 /etc 下名为 “xrctl.xml” 。
 
 **2. 最后一个条件，你需要两个web服务器。为了方便使用，我在一台服务器中创建两个 Python SimpleHTTPServer 实例。**
 
-要了解如何设置一个 python SimpleHTTPServer，请阅读我们此处的文章 [Create Two Web Servers Easily Using SimpleHTTPServer][2].
-
+要了解如何设置一个 python SimpleHTTPServer，请阅读我们此处的文章 [使用 SimpleHTTPServer 轻松创建两个 web 服务器][2].
 
 正如我所说的，我们要使用两个web服务器，webserver01 通过8888端口运行在172.16.1.222上，webserver02 通过5555端口运行在192.168.1.161上。
 
 ![XR WebServer 01](http://www.tecmint.com/wp-content/uploads/2015/07/XR-WebServer01.jpg)
 
-XR WebServer 01
+*XR WebServer 01*
 
 ![XR WebServer 02](http://www.tecmint.com/wp-content/uploads/2015/07/XR-WebServer02.jpg)
 
-XR WebServer 02
+*XR WebServer 02*
 
-### Step 2: 配置 XR Crossroads 负载均衡器 ###
+### 第2步: 配置 XR Crossroads 负载均衡器 ###
 
-**3. 这个位置是最关键的。现在我们要做的就是配置`xrctl.xml` 文件并通过 XR 服务器接受来自互联网的请求分发到 web 服务器之间。**
+**3. 所需都已经就绪。现在我们要做的就是配置`xrctl.xml` 文件并通过 XR 服务器接受来自互联网的请求分发到 web 服务器上。**
 
-现在打开`xrctl.xml`文件用 [vi/vim editor][3].
+现在用 [vi/vim 编辑器][3]打开`xrctl.xml`文件。
 
     # vim /etc/xrctl.xml
 
 并作如下修改。
 
-    <?xml version=<94>1.0<94> encoding=<94>UTF-8<94>?>
+    <?xml version="1.0" encoding="UTF-8"?>
     <configuration>
     <system>
     <uselogger>true</uselogger>
@@ -100,9 +99,9 @@ XR WebServer 02
 
 ![Configure XR Crossroads Load Balancer](http://www.tecmint.com/wp-content/uploads/2015/07/Configure-XR-Crossroads-Load-Balancer.jpg)
 
-配置 XR Crossroads 负载均衡器
+*配置 XR Crossroads 负载均衡器*
 
-在这里，你可以看到在 xrctl.xml 做了一个非常基本的 XR 配置。我已经定义了 XR 服务器是什么，XR 的后端服务和端口及网络接口端是什么。
+在这里，你可以看到在 xrctl.xml 中配置了一个非常基本的 XR 。我已经定义了 XR 服务器在哪里，XR 的后端服务和端口及 XR 的 web 管理界面是什么。
 
 **4. 现在，你需要通过以下命令来启动该 XR 守护进程。**
 
@@ -111,27 +110,27 @@ XR WebServer 02
 
 ![Start XR Crossroads](http://www.tecmint.com/wp-content/uploads/2015/07/Start-XR-Crossroads.jpg)
 
-启动 XR Crossroads
+*启动 XR Crossroads*
 
-**5. 好的。现在是时候来检查该配置是否可以工作正常了。打开两个网页浏览器，输入 XR 服务器端口的 IP 地址，并查看输出。**
+**5. 好的。现在是时候来检查该配置是否可以工作正常了。打开两个网页浏览器，输入 XR 服务器的 IP 地址和端口，并查看输出。**
 
 ![Verify Web Server Load Balancing](http://www.tecmint.com/wp-content/uploads/2015/07/Verify-Web-Server-Load-Balancing.jpg)
 
-验证 Web 服务器负载均衡
+*验证 Web 服务器负载均衡*
 
-太棒了。它工作正常。是时候玩玩 XR 了。
+太棒了。它工作正常。是时候玩玩 XR 了。（LCTT 译注：可以看到两个请求分别分配到了不同服务器。）
 
-**6. 现在可以登录到 XR Crossroads 仪表盘，看看我们已经配置的网络接口的端口。在网络接口输入你的 XR 服务器的 IP 地址和端口你将看到在  xrctl.xml 中的配置。**
+**6. 现在可以通过我们配置的网络管理界面的端口来登录到 XR Crossroads 仪表盘。在浏览器输入你的 XR 服务器的 IP 地址和你配置在  xrctl.xml 中的管理端口。**
 
     http://172.16.1.204:8010
 
 ![XR Crossroads Dashboard](http://www.tecmint.com/wp-content/uploads/2015/07/XR-Crossroads-Dashboard.jpg)
 
-XR Crossroads 仪表盘
+*XR Crossroads 仪表盘*
 
-看起来很像了。它容易理解，用户界面​​友好，易于使用。它在右上角显示每个服务器能容纳多少个连接连同关于接收该请求的附加细节。你也可以设置每个服务器承担的负载量，最大连接数和平均负载等。。
+看起来像上面一样。它容易理解，用户界面​​友好，易于使用。它在右上角显示每个服务器能容纳多少个连接，以及关于接收该请求的附加细节。你也可以设置每个服务器承担的负载量，最大连接数和平均负载等。
 
-最大的好处是，即使没有配置文件 xrctl.xml，你也可以做到这一点。你唯一要做的就是运行以下命令，它会做这项工作。
+最大的好处是，即使没有配置文件 xrctl.xml，你也可以做到这一点。你唯一要做的就是运行以下命令，它就会把这一切搞定。
 
     # xr --verbose --server tcp:172.16.1.204:8080 --backend 172.16.1.222:8888 --backend 192.168.1.161:5555
 
@@ -139,12 +138,12 @@ XR Crossroads 仪表盘
 
 - -verbose 将显示命令执行后的信息。
 - -server 定义你在安装包中的 XR 服务器。
-- -backend 定义你需要平衡到 Web 服务器的流量。
-- tcp 的定义，它使用 TCP 服务。
+- -backend 定义你需要平衡分配到 Web 服务器的流量。
+- tcp 说明我们使用 TCP 服务。
 
 欲了解更多详情，有关文件及 CROSSROADS 的配置，请访问他们的官方网站: [https://crossroads.e-tunity.com/][4].
 
-XR Corssroads 使用许多方法来提高服务器性能，避免宕机，让你的管理任务更轻松，更简便。希望你喜欢此文章，并随时在下面发表你的评论和建议，方便与 Tecmint 保持联系。
+XR Corssroads 使用许多方法来提高服务器性能，避免宕机，让你的管理任务更轻松，更简便。希望你喜欢此文章，并随时在下面发表你的评论和建议，方便与我们保持联系。
 
 --------------------------------------------------------------------------------
 
@@ -152,7 +151,7 @@ via: http://www.tecmint.com/setting-up-xr-crossroads-load-balancer-for-web-serve
 
 作者：[Thilina Uvindasiri][a]
 译者：[strugglingyouth](https://github.com/strugglingyouth)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 

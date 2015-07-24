@@ -1,3 +1,5 @@
+alim0x translating
+
 The history of Android
 ================================================================================
 ![The Honeycomb app lineup lost a ton of apps. This also shows the notification panel and the new quick settings.](http://cdn.arstechnica.net/wp-content/uploads/2014/02/apps-and-notifications2.png)
