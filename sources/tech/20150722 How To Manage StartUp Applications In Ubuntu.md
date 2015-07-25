@@ -1,3 +1,5 @@
+FSSlc translating
+
 How To Manage StartUp Applications In Ubuntu
 ================================================================================
 ![Manage startup applications in Ubuntu](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/07/Manage-Start-up-apps-in-Ubuntu.png)

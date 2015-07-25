@@ -1,10 +1,10 @@
-Syncthing:  一个跨计算机的私人的文件/文件夹安全同步工具
+Syncthing: 一个在计算机之间同步文件/文件夹的私密安全同步工具
 ================================================================================
 ### 简介 ###
 
-**Syncthing** 是一个免费开源的工具，它能在你的各个网络计算机间同步文件/文件夹。它不像其它的同步工具，如**BitTorrent Sync**和**Dropbox**那样，它的同步数据是直接从一个系统中直接传输到另一个系统的，并且它是完全开源的，安全且私有的。你所有的珍贵数据都会被存储在你的系统中，这样你就能对你的文件和文件夹拥有全面的控制权，没有任何的文件或文件夹会被存储在第三方系统中。此外，你有权决定这些数据该存于何处，是否要分享到第三方，或这些数据在互联网上的传输方式。
+**Syncthing**是一个免费开源的工具，它能在你的各个网络计算机间同步文件/文件夹。它不像其它的同步工具，如**BitTorrent Sync**和**Dropbox**那样，它的同步数据是直接从一个系统中直接传输到另一个系统的，并且它是完全开源的，安全且私密的。你所有的珍贵数据都会被存储在你的系统中，这样你就能对你的文件和文件夹拥有全面的控制权，没有任何的文件或文件夹会被存储在第三方系统中。此外，你有权决定这些数据该存于何处，是否要分享到第三方，或这些数据在互联网上的传输方式。
 
-所有的信息通讯都使用TLS进行加密，这样你的数据便能十分安全地逃离窥探。Syncthing有一个强大的响应式的网页管理界面(WebGUI，下同)，它能够帮助用户简便地添加，删除和管理那些通过网络进行同步的文件夹。通过使用Syncthing，你可以在多个系统上一次同步多个文件夹。在安装和使用上，Syncthing是一个可移植的，简单但强大的工具。即然文件或文件夹是从一部计算机中直接传输到另一计算机中的，那么你就无需考虑向云服务供应商支付金钱来获取额外的云空间。你所需要的仅仅是非常稳定的LAN/WAN连接和你的系统中足够的硬盘空间。它支持所有的现代操作系统，包括GNU/Linux, Windows, Mac OS X, 当然还有Android。
+所有的信息通讯都使用TLS进行加密，这样你的数据便能十分安全地逃离窥探。Syncthing有一个强大的响应式的网页管理界面(WebGUI，下同)，它能够帮助用户简便地添加、删除和管理那些通过网络进行同步的文件夹。通过使用Syncthing，你可以在多个系统上一次同步多个文件夹。在安装和使用上，Syncthing是一个可移植的、简单而强大的工具。即然文件或文件夹是从一部计算机中直接传输到另一计算机中的，那么你就无需考虑向云服务供应商支付金钱来获取额外的云空间。你所需要的仅仅是非常稳定的LAN/WAN连接以及在你的系统中有足够的硬盘空间。它支持所有的现代操作系统，包括GNU/Linux, Windows, Mac OS X, 当然还有Android。
 
 ### 安装 ###
 
@@ -13,7 +13,7 @@ Syncthing:  一个跨计算机的私人的文件/文件夹安全同步工具
 ### 系统1细节： ###
 
 - **操作系统**: Ubuntu 14.04 LTS server;
-- **主机名**: server1.unixmen.local;
+- **主机名**: **server1**.unixmen.local;
 - **IP地址**: 192.168.1.150.
 - **系统用户**: sk (你可以使用你自己的系统用户)
 - **同步文件夹**: /home/Sync/ (Syncthing会默认创建)
@@ -21,7 +21,7 @@ Syncthing:  一个跨计算机的私人的文件/文件夹安全同步工具
 ### 系统2细节 ###
 
 - **操作系统**: Ubuntu 14.10 server;
-- **主机名**: server.unixmen.local;
+- **主机名**: **server**.unixmen.local;
 - **IP地址**: 192.168.1.151.
 - **系统用户**: sk (你可以使用你自己的系统用户)
 - **同步文件夹**: /home/Sync/ (Syncthing会默认创建)
@@ -49,7 +49,7 @@ Syncthing:  一个跨计算机的私人的文件/文件夹安全同步工具
 
     cd syncthing-linux-amd64-v0.10.20/
 
-复制可执行文件"Syncthing"到**$PATH**：
+复制可执行文件"syncthing"到**$PATH**：
 
     sudo cp syncthing /usr/local/bin/
 
@@ -57,7 +57,7 @@ Syncthing:  一个跨计算机的私人的文件/文件夹安全同步工具
 
     syncthing
 
-当你执行上述命令后，syncthing会生成一个配置以及一些关键值（keys)，并且在你的浏览器上打开一个管理界面。，
+当你执行上述命令后，syncthing会生成一个配置以及一些配置键值，并且在你的浏览器上打开一个管理界面。
 
 输入示例:
 
@@ -78,11 +78,11 @@ Syncthing:  一个跨计算机的私人的文件/文件夹安全同步工具
      [BQXVO] 15:41:07 INFO: Device BQXVO3D-VEBIDRE-MVMMGJI-ECD2PC3-T5LT3JB-OK4Z45E-MPIDWHI-IRW3NAZ is "server1" at [dynamic]
      [BQXVO] 15:41:07 INFO: Completed initial scan (rw) of folder default
 
-Syncthing已经被成功地初始化了，网页管理接口也可以通过浏览器在URL: **http://localhost:8080**进行访问了。如上面输入所看到的，Syncthing在你的**home**目录中的Sync目录**下自动为你创建了一个名为**default**的文件夹。
+Syncthing已经被成功地初始化了，网页管理接口也可以通过浏览器访问URL: **http://localhost:8080**。如上面输入所看到的，Syncthing在你的**home**目录中的Sync目录**下自动为你创建了一个名为**default**的文件夹。
 
-默认情况下，Syncthing的网页管理界面（WebGUI)只能在本地端口(localhost)中进行访问，你需要在两个系统中进行以下操作：
+默认情况下，Syncthing的网页管理界面只能在本地端口(localhost)中进行访问，要从远程进行访问，你需要在两个系统中进行以下操作：
 
-首先，按下CTRL+C键来停止Syncthing初始化进程。现在你回到了终端界面。
+首先，按下CTRL+C键来终止Syncthing初始化进程。现在你回到了终端界面。
 
 编辑**config.xml**文件，
 
@@ -115,17 +115,18 @@ Syncthing已经被成功地初始化了，网页管理接口也可以通过浏�
 现在，在你的浏览器上打开**http://ip-address:8080/**。你会看到下面的界面：
 
 ![](http://www.unixmen.com/wp-content/uploads/2015/01/Syncthing-server1-Mozilla-Firefox_001.png)
+
 网页管理界面分为两个窗格，在左窗格中，你应该可以看到同步的文件夹列表。如前所述，文件夹**default**在你初始化Syncthing时被自动创建。如果你想同步更多文件夹，点击**Add Folder**按钮。
 
 在右窗格中，你可以看到已连接的设备数。现在这里只有一个，就是你现在正在操作的计算机。
 
-### 网页管理界面(WebGUI)上设置Syncthing ###
+### 网页管理界面上设置Syncthing ###
 
 为了提高安全性，让我们启用TLS，并且设置访问网页管理界面的管理员用户和密码。要做到这点，点击右上角的齿轮按钮，然后选择**Settings**
 
 ![](http://www.unixmen.com/wp-content/uploads/2015/01/Menu_002.png)
 
-输入管理员的帐户名/密码。我设置的是admin/Ubuntu。你可以使用一些更复杂的密码。
+输入管理员的帐户名/密码。我设置的是admin/Ubuntu。你应该使用一些更复杂的密码。
 
 ![](http://www.unixmen.com/wp-content/uploads/2015/01/Syncthing-server1-Mozilla-Firefox_004.png)
 
@@ -155,7 +156,7 @@ Syncthing已经被成功地初始化了，网页管理接口也可以通过浏�
 
 ![](http://www.unixmen.com/wp-content/uploads/2015/01/Syncthing-server-Mozilla-Firefox_010.png)
 
-接着会出现下面的界面。在Device区域粘贴**系统1 ID **。输入设备名称（可选）。在地址区域，你可以输入其它系统（译者注：即粘贴的ID所属的系统，此应为系统1）的IP地址，或者使用默认值。默认值为**dynamic**。最后，选择要同步的文件夹。在我们的例子中，同步文件夹为**default**。
+接着会出现下面的界面。在Device区域粘贴**系统1 ID **。输入设备名称（可选）。在地址区域，你可以输入其它系统（ LCTT 译注：即粘贴的ID所属的系统，此应为系统1）的IP地址，或者使用默认值。默认值为**dynamic**。最后，选择要同步的文件夹。在我们的例子中，同步文件夹为**default**。
 
 ![](http://www.unixmen.com/wp-content/uploads/2015/01/Syncthing-server-Mozilla-Firefox_009.png)
 
@@ -181,7 +182,7 @@ Syncthing已经被成功地初始化了，网页管理接口也可以通过浏�
 
 ![](http://www.unixmen.com/wp-content/uploads/2015/01/Syncthing-server-Mozilla-Firefox_018.png)
 
-![](http://180016988.r.cdn77.net/wp-content/uploads/2015/01/Syncthing-server-Mozilla-Firefox_018.png)
+![](http://www.unixmen.com/wp-content/uploads/2015/01/Syncthing-server-Mozilla-Firefox_018.png)
 
 现在，在任一个系统中的“**default**”文件夹中放进任意文件或文件夹。你应该可以看到这些文件/文件夹被自动同步到其它系统。
 
@@ -197,7 +198,7 @@ via: http://www.unixmen.com/syncthing-private-secure-tool-sync-filesfolders-comp
 
 作者：[SK][a]
 译者：[XLCYun](https://github.com/XLCYun)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
