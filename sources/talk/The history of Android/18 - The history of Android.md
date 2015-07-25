@@ -1,24 +1,22 @@
-alim0x translating
-
-The history of Android
+安卓编年史
 ================================================================================
-![Yet another Android Market redesign dips its toe into the "cards" interface that would become a Google staple.](http://cdn.arstechnica.net/wp-content/uploads/2014/02/play-store.png)
-Yet another Android Market redesign dips its toe into the "cards" interface that would become a Google staple.
-Photo by Ron Amadeo
+![安卓市场的新设计试水“卡片式”界面，这将成为谷歌的主要风格。](http://cdn.arstechnica.net/wp-content/uploads/2014/02/play-store.png)
+安卓市场的新设计试水“卡片式”界面，这将成为谷歌的主要风格。
+Ron Amadeo 供图
 
-The Android Market released its fourth new design in Android's two-and-a-half years on the market. This new design was hugely important as it came really close to Google's "cards" interface. By displaying Apps or other content in little blocks, Google could seamlessly transition its app design between screens of various sizes with minimal effort. Content could be displayed just like photos in a gallery app—feed the layout renderer a big list of content blocks, enable screen wrapping, and you were done. Bigger screens saw more blocks of content, and smaller screens only saw a few at a time. With the content display out of the way, Google added a "Categories" fragment to the right side and a big featured app carousel at the top.
+安卓推向市场已经有两年半时间了，安卓市场放出了它的第四版设计。这个新设计十分重要，因为它已经很接近谷歌的“卡片式”界面了。通过在小方块中显示应用或其他内容，谷歌可以使其设计在不同尺寸屏幕下无缝过渡而不受影响。内容可以像一个相册应用里的照片一样显示——给布局渲染填充一个内容块列表，加上屏幕包装，就完成了。更大的屏幕一次可以看到更多的内容块，小点的屏幕一次看到的内容就少。内容用了不一样的方式显示，谷歌还在右边新增了一个“分类”板块，顶部还有个巨大的热门应用滚动显示。
 
-While the design was ready for an easily configurable interface, the functionality was not. The original shipping version of the market was locked to a landscape orientation and was Honeycomb-exclusive.
+虽然设计上为更容易配置界面准备好准备好了，但功能上还没有。最初发布的市场版本锁定为横屏模式，而且还是蜂巢独占的。
 
-![The app page and "My Apps" interface.](http://cdn.arstechnica.net/wp-content/uploads/2014/02/device-2014-02-12-190002.png)
-The app page and "My Apps" interface.
-Photo by Ron Amadeo
+![应用详情页和“我的应用”界面。](http://cdn.arstechnica.net/wp-content/uploads/2014/02/device-2014-02-12-190002.png)
+应用详情页和“我的应用”界面。
+Ron Amadeo 供图
 
-This new market sold not only apps, but brought Books and Movies rentals into the fold as well. Google was selling books since 2010; it was only ever through a Website. The new market unified all of Google's content sales in a single location and brought it one step closer to taking on Apple's iTunes juggernaut, though selling all of these items under the "Android Market" was a bit of a branding snafu, as much of the content didn't require Android to use.
+新的市场不仅出售应用，还加入了书籍和电影租借。谷歌从2010年开始出售图书；之前只通过网站出售。新的市场将谷歌所有的内容销售聚合到了一处，进一步向苹果 iTunes 的主宰展开较量。虽然在“安卓市场”出售这些东西有点品牌混乱，因为大部分内容都不依赖于安卓才能使用。
 
-![The browser did its best to look like Chrome, and Contacts used a two-pane interface.](http://cdn.arstechnica.net/wp-content/uploads/2014/02/browsercontactst.png)
-The browser did its best to look like Chrome, and Contacts used a two-pane interface.
-Photo by Ron Amadeo
+![浏览器看起来非常像 Chrome，联系人使用了双面板界面。](http://cdn.arstechnica.net/wp-content/uploads/2014/02/browsercontactst.png)
+浏览器看起来非常像 Chrome，联系人使用了双面板界面。
+Ron Amadeo 供图
 
 The new Browser added an honest-to-goodness tabs strip at the top of the interface. While this browser wasn't Chrome, it aped a lot of Chrome's design and features. Besides the pioneering tabs-on-top interface, it added Incognito tabs, which kept no history or autocomplete records. There was also an option to have a Chrome-style new tab page consisting of thumbnails of your most-viewed webpages.
 
