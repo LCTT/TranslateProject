@@ -1,55 +1,54 @@
-zpl1025
-Howto Configure FTP Server with Proftpd on Fedora 22
+如何在 Fedora 22 上配置 Proftpd 服务器
 ================================================================================
-In this article, we'll learn about setting up an FTP server with Proftpd running Fedora 22 in our machine or server. [ProFTPD][1] is a free and open source FTP daemon software licensed under GPL. It is among most popular FTP server among machines running Linux. Its primary design aims to have an FTP server with many advanced features and provisioning users for more configuration options for easy customization. It includes a number of configuration options that are still not available with many other FTP daemons. It was initially developed by the developers as an alternative with better security and configuration to wu-ftpd server. An FTP server is a program that allows us to upload or download files and folders from a remote server where it is setup using an FTP client. Some of the features of ProFTPD daemon are as follows, you can check more features on [http://www.proftpd.org/features.html][2] .
+在本文中，我们将了解如何在运行 Fedora 22 的电脑或服务器上使用 Proftpd 架设 FTP 服务器。[ProFTPD][1] 是一款免费的基于 GPL 授权开源的 FTP 服务器软件，是 Linux 上的主流 FTP 服务器。它的主要设计目标是具备许多高级功能以及能为用户提供丰富的配置选项可以轻松实现定制。它的许多配置选项在其他一些 FTP 服务器软件里仍然没有集成。最初它是被开发作为 wu-ftpd 服务器的一个更安全更容易配置的替代。FTP 服务器是这样一个软件，用户可以通过 FTP 客户端从安装了它的远端服务器上传或下载文件和目录。下面是一些 ProFTPD 服务器的主要功能，更详细的资料可以访问 [http://www.proftpd.org/features.html][2]。
 
-- It includes a per directory ".ftpaccess" access configuration similar to Apache's ".htaccess"
-- It features multiple virtual FTP server with multiple users login and anonymous FTP services.
-- It can be run either as a stand-alone server or from inetd/xinetd.
-- Its ownership, file/folder attributes and file/folder permissions are UNIX-based.
-- It can be run as standalone mode in order to protect the system from damage that can be caused from root access.
-- The modular design of it makes it easily extensible with modules like LDAP servers, SSL/TLS encryption, RADIUS support, etc.
-- IPv6 support is also included in the ProFTPD server.
+- 每个目录都包含 ".ftpaccess" 文件用于访问控制，类似 Apache 的 ".htaccess"
+- 支持多个虚拟 FTP 服务器以及多用户登录和匿名 FTP 服务。
+- 可以作为独立进程启动服务或者通过 inetd/xinetd 启动
+- 它的文件/目录属性、属主和权限采用类 UNIX 方式。
+- 它可以独立运行，保护系统避免 root 访问可能带来的损坏。
+- 模块化的设计让它可以轻松扩展其他模块，比如 LDAP 服务器，SSL/TLS 加密，RADIUS 支持，等等。
+- ProFTPD 服务器还支持 IPv6.
 
-Here are some easy to perform steps on how we can setup an FTP Server with ProFTPD in Fedora 22 operating system.
+下面是如何在运行 Fedora 22 操作系统的计算机上使用 ProFTPD 架设 FTP 服务器的一些简单步骤。
 
-### 1. Installing ProFTPD ###
+### 1. 安装 ProFTPD ###
 
-First of all, we'll wanna install Proftpd server in our box running Fedora 22 as its operating system. As yum package manager has been depreciated, we'll use the latest and greatest built package manager called dnf. DNF is pretty easy to use and highly user friendly package manager available in Fedora 22. We'll simply use it to install proftpd daemon server. To do so, we'll need to run the following command in a terminal or a console in sudo mode.
+首先，我们将在运行 Fedora 22 的机器上安装 Proftpd 软件。因为 yum 包管理器已经被抛弃了，我们将使用最新最好的包管理器 dnf。DNF 很容易使用，是 Fedora 22 上采用的非常人性化的包管理器。我们将用它来安装 proftpd 软件。这需要在终端或控制台里用 sudo 模式运行下面的命令。
 
     $ sudo dnf -y install proftpd proftpd-utils
 
-### 2. Configuring ProFTPD ###
+### 2. 配置 ProFTPD ###
 
-Now, we'll make changes to some configurations in the daemon. To configure the daemon, we will need to edit /etc/proftpd.conf with a text editor. The main configuration file of the ProFTPD daemon is **/etc/proftpd.conf** so, any changes made to this file will affect the FTP server. Here, are some changes we make in this initial step.
+现在，我们将修改软件的一些配置。要配置它，我们需要用文本编辑器编辑 /etc/proftpd.conf 文件。**/etc/proftpd.conf** 文件是 ProFTPD 软件的主要配置文件，所以，这个文件的任何改动都会影响到 FTP 服务器。在这里，是我们在初始步骤里做出的改动。
 
     $ sudo vi /etc/proftpd.conf
 
-Next, after we open the file using a text editor, we'll wanna make changes to the ServerName and ServerAdmin as hostname and email address respectively.  Here's what we have made changes to those configs.
+之后，在用文本编辑器打开这个文件后，我们会想改下 ServerName 以及 ServerAdmin，分别填入自己的域名和 email 地址。下面是我们改的。
 
     ServerName       "ftp.linoxide.com"
     ServerAdmin      arun@linoxide.com
 
-After that, we'll wanna the following lines into the configuration file so that it logs access & auth into its specified log files.
+在这之后，我们将把下面的设定加到配置文件里，这样可以让服务器将访问和授权记录到相应的日志文件里。
 
     ExtendedLog /var/log/proftpd/access.log WRITE,READ default
     ExtendedLog /var/log/proftpd/auth.log AUTH auth
 
-![Configuring ProFTPD Config](http://blog.linoxide.com/wp-content/uploads/2015/06/configuring-proftpd-config.png)
+![调整 ProFTPD 设置](http://blog.linoxide.com/wp-content/uploads/2015/06/configuring-proftpd-config.png)
 
-### 3. Adding FTP users ###
+### 3. 添加 FTP 用户 ###
 
-After configure the basics of the configuration file, we'll surely wanna create an FTP user which is rooted at a specific directory we want. The current users that we use to login into our machine are automatically enabled with the FTP service, we can even use it to login into the FTP server. But, in this tutorial, we'll gonna create a new user with a specified home directory to the ftp server.
+在设定好了基本的配置文件后，我们很自然地希望为指定目录添加 FTP 用户。目前用来登录的用户是 FTP 服务自动生成的，可以用来登录到 FTP 服务器。但是，在这篇教程里，我们将创建一个以 ftp 服务器上指定目录为主目录的新用户。
 
-Here, we'll create a new group named ftpgroup.
+下面，我们将建立一个名字是 ftpgroup 的新用户组。
 
     $ sudo groupadd ftpgroup
 
-Then, we'll gonna add a new user arunftp into the group with home directory specified as /ftp-dir/
+然后，我们将以目录 /ftp-dir/ 作为主目录增加一个新用户 arunftp 并加入这个组中。
 
     $ sudo useradd -G ftpgroup arunftp -s /sbin/nologin -d /ftp-dir/
 
-After the user has been created and added to the group, we'll wanna set a password to the user arunftp.
+在创建好用户并加入用户组后，我们将为用户 arunftp 设置一个密码。
 
     $ sudo passwd arunftp
 
@@ -58,26 +57,26 @@ After the user has been created and added to the group, we'll wanna set a passwo
     Retype new password:
     passwd: all authentication tokens updated successfully.
 
-Now, we'll set read and write permission of the home directory by the ftp users by executing the following command.
+现在，我们将通过下面命令为这个 ftp 用户设定主目录的读写权限。
 
     $ sudo setsebool -P allow_ftpd_full_access=1
     $ sudo setsebool -P ftp_home_dir=1
 
-Then, we'll wanna make that directory and its contents unable to get removed or renamed by any other users.
+然后，我们会设定不允许其他用户移动或重命名这个目录以及里面的内容。
 
     $ sudo chmod -R 1777 /ftp-dir/
 
-### 4. Enabling TLS Support ###
+### 4. 打开 TLS 支持 ###
 
-FTP is considered less secure in comparison to the latest encryption methods used these days as anybody sniffing the network card can read the data pass through FTP. So, we'll enable TLS Encryption support in our FTP server. To do so, we'll need to a edit /etc/proftpd.conf configuration file. Before that, we'll wanna backup our existing configuration file to make sure we can revert our configuration if any unexpected happens.
+目前 FTP 所用的加密手段并不安全，任何人都可以通过监听网卡来读取 FTP 传输的数据。所以，我们将为自己的服务器打开 TLS 加密支持。这样的话，需要编辑 /etc/proftpd.conf 配置文件。在这之前，我们先备份一下当前的配置文件，可以保证在改出问题后还可以恢复。
 
     $ sudo cp /etc/proftpd.conf /etc/proftpd.conf.bak
 
-Then, we'll wanna edit the configuration file using our favorite text editor.
+然后，我们可以用自己喜欢的文本编辑器修改配置文件。
 
     $ sudo vi /etc/proftpd.conf
 
-Then, we'll wanna add the following lines just below line we configured in step 2 .
+然后，把下面几行附加到我们在第 2 步中所增加内容的后面。
 
     TLSEngine on
     TLSRequired on
@@ -86,19 +85,19 @@ Then, we'll wanna add the following lines just below line we configured in step 
     TLSRSACertificateFile /etc/pki/tls/certs/proftpd.pem
     TLSRSACertificateKeyFile /etc/pki/tls/certs/proftpd.pem
 
-![Enabling TLS Configuration](http://blog.linoxide.com/wp-content/uploads/2015/06/tls-configuration.png)
+![打开 TLS 配置](http://blog.linoxide.com/wp-content/uploads/2015/06/tls-configuration.png)
 
-After finishing up with the configuration, we'll wanna save and exit it.
+完成上面的设定后，保存退出。
 
-Next, we'll need to generate the SSL certificates inside **/etc/pki/tls/certs/** directory as proftpd.pem. To do so, first we'll need to install openssl in our Fedora 22 machine.
+然后，我们需要生成 SSL 凭证 proftpd.pem 并放到 **/etc/pki/tls/certs/** 目录里。这样的话，首先需要在 Fedora 22 上安装 openssl。
 
     $ sudo dnf install openssl
 
-Then, we'll gonna generate the SSL certificate by running the following command.
+然后，可以通过执行下面的命令生成 SSL 凭证。
 
     $ sudo openssl req -x509 -nodes -newkey rsa:2048 -keyout /etc/pki/tls/certs/proftpd.pem -out /etc/pki/tls/certs/proftpd.pem
 
-We'll be asked with some information that will be associated into the certificate. After completing the required information, it will generate a 2048 bit RSA private key.
+系统会询问一些将写入凭证里的基本信息。在填完资料后，就会生成一个 2048 位的 RSA 私钥。
 
     Generating a 2048 bit RSA private key
     ...................+++
@@ -120,65 +119,65 @@ We'll be asked with some information that will be associated into the certificat
     Common Name (eg, your name or your server's hostname) []:ftp.linoxide.com
     Email Address []:arun@linoxide.com
 
-After that, we'll gonna change the permission of the generated certificate file in order to secure it.
+在这之后，我们要改变所生成凭证文件的权限以增加安全性。
 
     $ sudo chmod 600 /etc/pki/tls/certs/proftpd.pem
 
-### 5. Allowing FTP through Firewall ###
+### 5. 允许 FTP 通过 Firewall ###
 
-Now, we'll need to allow the ftp ports that are usually blocked by the firewall by default. So, we'll allow ports and enable access to the ftp through firewall.
+现在，需要允许 ftp 端口，一般默认被防火墙阻止了。就是说，需要允许 ftp 端口能通过防火墙访问。
 
-If **TLS/SSL Encryption is enabled** run the following command.
+如果 **打开了 TLS/SSL 加密**，执行下面的命令。
 
     $sudo firewall-cmd --add-port=1024-65534/tcp
     $ sudo firewall-cmd --add-port=1024-65534/tcp --permanent
 
-If **TLS/SSL Encryption is disabled** run the following command.
+如果 **没有打开 TLS/SSL 加密**，执行下面的命令。
 
     $ sudo firewall-cmd --permanent --zone=public --add-service=ftp
 
     success
 
-Then, we'll need to reload the firewall configuration.
+然后，重新加载防火墙设定。
 
     $ sudo firewall-cmd --reload
 
     success
 
-### 6. Starting and Enabling ProFTPD ###
+### 6. 启动并激活 ProFTPD ###
 
-After everything is set, we'll finally start our ProFTPD and give it a try. To start the proftpd ftp daemon, we'll need to run the following command.
+全部设定好后，最后就是启动 ProFTPD 并试一下。可以运行下面的命令来启动 proftpd ftp 守护程序。
 
     $ sudo systemctl start proftpd.service
 
-Then, we'll wanna enable proftpd to start on every boot.
+然后，我们可以设定开机启动。
 
     $ sudo systemctl enable proftpd.service
 
     Created symlink from /etc/systemd/system/multi-user.target.wants/proftpd.service to /usr/lib/systemd/system/proftpd.service.
 
-### 7. Logging into the FTP server ###
+### 7. 登录到 FTP 服务器 ###
 
-Now, if everything was configured and done as expected, we must be able to connect to the ftp server and login with the details we set above. Here, we'll gonna configure our FTP client, filezilla with hostname as **server's ip or url**, Protocol as **FTP**, User as **arunftp** and password as the one we set in above step 3. If you followed step 4 for enabling TLS support, then we'll need to set the Encryption type as **Require explicit FTP over TLS** but if you didn't follow step 4 and don't wanna use TLS encryption then set the Encryption type as **Plain FTP**.
+现在，如果都是按照本教程设置好的，我们一定可以连接到 ftp 服务器并使用以上设置的信息登录上去。在这里，我们将配置一下 FTP 客户端 filezilla，使用 **服务器的 IP 或 URL **作为主机名，协议选择 **FTP**，用户名填入 **arunftp**，密码是在上面第 3 步中设定的密码。如果你按照第 4 步中的方式打开了 TLS 支持，还需要在加密类型中选择 **显式要求基于 TLS 的 FTP**，如果没有打开，也不想使用 TLS 加密，那么加密类型选择 **简单 FTP**。
 
-![FTP Login Details](http://blog.linoxide.com/wp-content/uploads/2015/06/ftp-login-details.png)
+![FTP 登录细节](http://blog.linoxide.com/wp-content/uploads/2015/06/ftp-login-details.png)
 
-To setup the above configuration, we'll need goto File which is under the Menu and then click on Site Manager in which we can click on new site then configure as illustrated above.
+要做上述设定，需要打开菜单里的文件，点击站点管理器，然后点击新建站点，再按上面的方式设置。
 
-![FTP SSL Certificate](http://blog.linoxide.com/wp-content/uploads/2015/06/ftp-ssl-certificate.png)
+![FTP SSL 凭证](http://blog.linoxide.com/wp-content/uploads/2015/06/ftp-ssl-certificate.png)
 
-Then, we're asked to accept the SSL certificate, that can be done by click OK. After that, we are able to upload and download required files and folders from our FTP server.
+随后系统会要求允许 SSL 凭证，点确定。之后，就可以从我们的 FTP 服务器上传下载文件和文件夹了。
 
-### Conclusion ###
+### 总结 ###
 
-Finally, we have successfully installed and configured our Fedora 22 box with Proftpd FTP server. Proftpd is an awesome powerful highly configurable and extensible FTP daemon. The above tutorial illustrates us how we can configure a secure FTP server with TLS encryption. It is highly recommended to configure FTP server with TLS encryption as it enables SSL certificate security to the data transfer and login. Here, we haven't configured anonymous access to the FTP cause they are usually not recommended in a protected FTP system. An FTP access makes pretty easy for people to upload and download at good efficient performance. We can even change the ports for the users for additional security. So, if you have any questions, suggestions, feedback please write them in the comment box below so that we can improve or update our contents. Thank you ! Enjoy :-)
+最后，我们成功地在 Fedora 22 机器上安装并配置好了 Proftpd FTP 服务器。Proftpd 是一个超级强大，能高度配置和扩展的 FTP 守护软件。上面的教程展示了如何配置一个采用 TLS 加密的安全 FTP 服务器。强烈建议设置 FTP 服务器支持 TLS 加密，因为它允许使用 SSL 凭证加密数据传输和登录。本文中，我们也没有配置 FTP 的匿名访问，因为一般受保护的 FTP 系统不建议这样做。 FTP 访问让人们的上传和下载变得非常简单也更高效。我们还可以改变用户端口增加安全性。好吧，如果你有任何疑问，建议，反馈，请在下面评论区留言，这样我们就能够改善并更新文章内容。谢谢！玩的开心 :-)
 
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/linux-how-to/configure-ftp-proftpd-fedora-22/
 
 作者：[Arun Pyasi][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zpl1025](https://github.com/zpl1025)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
