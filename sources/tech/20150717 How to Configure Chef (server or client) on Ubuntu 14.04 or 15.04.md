@@ -1,3 +1,6 @@
+Translating----geekpi
+
+
 How to Configure Chef (server/client) on Ubuntu 14.04 / 15.04
 ================================================================================
 Chef is a configuration management and automation tool for information technology professionals that configures and manages your infrastructure whether it is on-premises or in the cloud. It can be used to speed up application deployment and to coordinate the work of multiple system administrators and developers involving hundreds, or even thousands, of servers and applications to support a large customer base. The key to Chef’s power is that it turns infrastructure into code. Once you master Chef, you will be able to enable web IT with first class support for managing your cloud infrastructure with an easy automation of your internal deployments or end users systems.
