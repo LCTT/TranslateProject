@@ -1,3 +1,5 @@
+alim0x translating
+
 The history of Android
 ================================================================================
 ![Yet another Android Market redesign dips its toe into the "cards" interface that would become a Google staple.](http://cdn.arstechnica.net/wp-content/uploads/2014/02/play-store.png)
