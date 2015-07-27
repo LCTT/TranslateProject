@@ -1,3 +1,4 @@
+zpl1025
 Interviews: Linus Torvalds Answers Your Question
 ================================================================================
 Last Thursday you had a chance to [ask Linus Torvalds][1] about programming, hardware, and all things Linux. You can read his answers to those questions below. If you'd like to see what he had to say the last time we sat down with him, [you can do so here][2]. 
