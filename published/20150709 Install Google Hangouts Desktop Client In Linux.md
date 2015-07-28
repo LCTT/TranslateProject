@@ -1,24 +1,25 @@
 在 Linux 中安装 Google 环聊桌面客户端
 ================================================================================
+
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/07/google-hangouts-header-664x374.jpg)
 
 先前，我们已经介绍了如何[在 Linux 中安装 Facebook Messenger][1] 和[WhatsApp 桌面客户端][2]。这些应用都是非官方的应用。今天，我将为你推荐另一款非官方的应用，它就是 [Google 环聊][3]
 
-当然，你可以在 Web 浏览器中使用 Google 环聊，但相比于此，使用桌面客户端会更加有趣。好奇吗？那就跟着我看看如何 **在 Linux 中安装 Google 环聊** 以及如何使用它把。
+当然，你可以在 Web 浏览器中使用 Google 环聊，但相比于此，使用桌面客户端会更加有趣。好奇吗？那就跟着我看看如何 **在 Linux 中安装 Google 环聊** 以及如何使用它吧。
 
 ### 在 Linux 中安装 Google 环聊 ###
 
 我们将使用一个名为 [yakyak][4] 的开源项目，它是一个针对 Linux，Windows 和 OS X 平台的非官方 Google 环聊客户端。我将向你展示如何在 Ubuntu 中使用 yakyak，但我相信在其他的 Linux 发行版本中，你可以使用同样的方法来使用它。在了解如何使用它之前，让我们先看看 yakyak 的主要特点：
 
 - 发送和接受聊天信息
-- 创建和更改对话 (重命名, 添加人物)
+- 创建和更改对话 (重命名, 添加参与者)
 - 离开或删除对话
 - 桌面提醒通知
 - 打开或关闭通知
-- 针对图片上传，支持拖放，复制粘贴或使用上传按钮
-- Hangupsbot 房间同步(实际的用户图片) (注: 这里翻译不到位，希望改善一下)
+- 对于图片上传，支持拖放，复制粘贴或使用上传按钮
+- Hangupsbot 房间同步(使用用户实际的图片) 
 - 展示行内图片
-- 历史回放
+- 翻阅历史
 
 听起来不错吧，你可以从下面的链接下载到该软件的安装文件:
 
@@ -36,7 +37,7 @@
 
 ![Google_Hangout_Linux_4](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/07/Google_Hangout_Linux_4.jpeg)
 
-假如你想看看对话的配置图，你可以选择 `查看-> 展示对话缩略图`
+假如你想在联系人里面显示用户头像，你可以选择 `查看-> 展示对话缩略图`
 
 ![Google 环聊缩略图](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/07/Google_Hangout_Linux_5.jpeg)
 
@@ -54,7 +55,7 @@ via: http://itsfoss.com/install-google-hangouts-linux/
 
 作者：[Abhishek][a]
 译者：[FSSlc](https://github.com/FSSlc)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
