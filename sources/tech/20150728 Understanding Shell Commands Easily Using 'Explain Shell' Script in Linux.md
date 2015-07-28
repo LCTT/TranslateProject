@@ -1,3 +1,5 @@
+translation by strugglingyouth
+
 Understanding Shell Commands Easily Using “Explain Shell” Script in Linux
 ================================================================================
 While working on Linux platform all of us need help on shell commands, at some point of time. Although inbuilt help like man pages, whatis command is helpful, but man pages output are too lengthy and until and unless one has some experience with Linux, it is very difficult to get any help from massive man pages. The output of whatis command is rarely more than one line which is not sufficient for newbies.
