@@ -1,3 +1,4 @@
+translation by strugglingyouth
 Tips to Create ISO from CD, Watch User Activity and Check Memory Usages of Browser
 ================================================================================
 Here again, I have written another post on [Linux Tips and Tricks][1] series. Since beginning the objective of this post is to make you aware of those small tips and hacks that lets you manage your system/server efficiently.
