@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How To Fix: There is no command installed for 7-zip archive files
 ================================================================================
 ### Problem ###
