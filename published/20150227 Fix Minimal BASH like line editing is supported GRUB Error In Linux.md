@@ -1,8 +1,11 @@
-修复Linux中的提供最小化类BASH命令行编辑GRUB错误
+修复Linux中的“提供类似行编辑的袖珍BASH...”的GRUB错误
 ================================================================================
+
 这两天我[安装了Elementary OS和Windows双系统][1]，在启动的时候遇到了一个Grub错误。命令行中呈现如下信息：
 
-**提供最小化类BASH命令行编辑。对于第一个词，TAB键补全可以使用的命令。除此之外，TAB键补全可用的设备或文件。**
+**Minimal BASH like line editing is supported. For the first word, TAB lists possible command completions. anywhere else TAB lists possible device or file completions.**
+
+**提供类似行编辑的袖珍 BASH。TAB键补全第一个词，列出可以使用的命令。除此之外，TAB键补全可以列出可用的设备或文件。**
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/02/Boot_Repair_Ubuntu_Linux_1.jpeg)
 
@@ -10,7 +13,7 @@
 
 通过这篇文章里我们可以学到基于Linux系统**如何修复Ubuntu中出现的“minimal BASH like line editing is supported” Grub错误**。
 
-> 你可以参阅这篇教程来修复类似的高频问题，[错误：分区未找到Linux grub救援模式][3]。
+> 你可以参阅这篇教程来修复类似的常见问题，[错误：分区未找到Linux grub救援模式][3]。
 
 ### 先决条件 ###
 
@@ -19,11 +22,11 @@
 - 一个包含相同版本、相同OS的LiveUSB或磁盘
 - 当前会话的Internet连接正常工作
 
-在确认了你拥有先决条件了之后，让我们看看如何修复Linux的死亡黑屏（如果我可以这样的称呼它的话；））。
+在确认了你拥有先决条件了之后，让我们看看如何修复Linux的死亡黑屏（如果我可以这样的称呼它的话 ;) ）。
 
 ### 如何在基于Ubuntu的Linux中修复“minimal BASH like line editing is supported” Grub错误 ###
 
-我知道你一定疑问这种Grub错误并不局限于在基于Ubuntu的Linux发行版上发生，那为什么我要强调在基于Ubuntu的发行版上呢？原因是，在这里我们将采用一个简单的方法并叫作**Boot Repair**的工具来修复我们的问题。我并不确定在其他的诸如Fedora的发行版中是否有这个工具可用。不再浪费时间，我们来看如何修复minimal BASH like line editing is supported Grub错误。
+我知道你一定疑问这种Grub错误并不局限于在基于Ubuntu的Linux发行版上发生，那为什么我要强调在基于Ubuntu的发行版上呢？原因是，在这里我们将采用一个简单的方法，用个叫做**Boot Repair**的工具来修复我们的问题。我并不确定在其他的诸如Fedora的发行版中是否有这个工具可用。不再浪费时间，我们来看如何修复“minimal BASH like line editing is supported” Grub错误。
 
 ### 步骤 1: 引导进入lives会话 ###
 
@@ -75,7 +78,7 @@ via: http://itsfoss.com/fix-minimal-bash-line-editing-supported-grub-error-linux
 
 作者：[Abhishek][a]
 译者：[martin2011qi](https://github.com/martin2011qi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
