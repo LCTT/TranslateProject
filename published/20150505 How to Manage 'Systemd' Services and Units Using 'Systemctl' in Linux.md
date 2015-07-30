@@ -1,13 +1,14 @@
-在Linux中使用‘Systemctl’管理‘Systemd’服务和单元
+systemctl 完全指南
 ================================================================================
 Systemctl是一个systemd工具，主要负责控制systemd系统和服务管理器。
 
 Systemd是一个系统管理守护进程、工具和库的集合，用于取代System V初始进程。Systemd的功能是用于集中管理和配置类UNIX系统。
 
-在Linux生态系统中，Systemd被部署到了大多数的标准Linux发行版中，只有位数不多的几个尚未部署。Systemd通常是所有其它守护进程的父进程，但并非总是如此。
+在Linux生态系统中，Systemd被部署到了大多数的标准Linux发行版中，只有为数不多的几个发行版尚未部署。Systemd通常是所有其它守护进程的父进程，但并非总是如此。
 
 ![Manage Linux Services Using Systemctl](http://www.tecmint.com/wp-content/uploads/2015/04/Manage-Linux-Services-Using-Systemctl.jpg)
-使用Systemctl管理Linux服务
+
+*使用Systemctl管理Linux服务*
 
 本文旨在阐明在运行systemd的系统上“如何控制系统和服务”。
 
@@ -41,11 +42,9 @@ Systemd是一个系统管理守护进程、工具和库的集合，用于取代S
     root       555     1  0 16:27 ?        00:00:00 /usr/lib/systemd/systemd-logind
     dbus       556     1  0 16:27 ?        00:00:00 /bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
 
-**注意**：systemd是作为父进程（PID=1）运行的。在上面带（-e）参数的ps命令输出中，选择所有进程，（-
+**注意**：systemd是作为父进程（PID=1）运行的。在上面带（-e）参数的ps命令输出中，选择所有进程，（-a）选择除会话前导外的所有进程，并使用（-f）参数输出完整格式列表（即 -eaf）。
 
-a）选择除会话前导外的所有进程，并使用（-f）参数输出完整格式列表（如 -eaf）。
-
-也请注意上例中后随的方括号和样例剩余部分。方括号表达式是grep的字符类表达式的一部分。
+也请注意上例中后随的方括号和例子中剩余部分。方括号表达式是grep的字符类表达式的一部分。
 
 #### 4. 分析systemd启动进程 ####
 
@@ -147,7 +146,7 @@ a）选择除会话前导外的所有进程，并使用（-f）参数输出完�
     1 loaded units listed. Pass --all to see loaded but inactive units, too.
     To show all installed unit files use 'systemctl list-unit-files'.
 
-#### 10. 检查某个单元（cron.service）是否启用 ####
+#### 10. 检查某个单元（如 cron.service）是否启用 ####
 
     # systemctl is-enabled crond.service
     
@@ -187,7 +186,7 @@ a）选择除会话前导外的所有进程，并使用（-f）参数输出完�
     dbus-org.fedoraproject.FirewallD1.service   enabled 
     ....
 
-#### 13. Linux中如何启动、重启、停止、重载服务以及检查服务（httpd.service）状态 ####
+#### 13. Linux中如何启动、重启、停止、重载服务以及检查服务（如 httpd.service）状态 ####
 
     # systemctl start httpd.service
     # systemctl restart httpd.service
@@ -214,15 +213,15 @@ a）选择除会话前导外的所有进程，并使用（-f）参数输出完�
     Apr 28 17:21:30 tecmint systemd[1]: Started The Apache HTTP Server.
     Hint: Some lines were ellipsized, use -l to show in full.
 
-**注意**：当我们使用systemctl的start，restart，stop和reload命令时，我们不会不会从终端获取到任何输出内容，只有status命令可以打印输出。
+**注意**：当我们使用systemctl的start，restart，stop和reload命令时，我们不会从终端获取到任何输出内容，只有status命令可以打印输出。
 
-#### 14. 如何激活服务并在启动时启用或禁用服务（系统启动时自动启动服务） ####
+#### 14. 如何激活服务并在启动时启用或禁用服务（即系统启动时自动启动服务） ####
 
     # systemctl is-active httpd.service
     # systemctl enable httpd.service
     # systemctl disable httpd.service
 
-#### 15. 如何屏蔽（让它不能启动）或显示服务（httpd.service） ####
+#### 15. 如何屏蔽（让它不能启动）或显示服务（如 httpd.service） ####
 
     # systemctl mask httpd.service
     ln -s '/dev/null' '/etc/systemd/system/httpd.service'
@@ -297,7 +296,7 @@ a）选择除会话前导外的所有进程，并使用（-f）参数输出完�
     # systemctl enable tmp.mount
     # systemctl disable  tmp.mount
 
-#### 20. 在Linux中屏蔽（让它不能启动）或显示挂载点 ####
+#### 20. 在Linux中屏蔽（让它不能启用）或可见挂载点 ####
 
     # systemctl mask tmp.mount
     
@@ -375,7 +374,7 @@ a）选择除会话前导外的所有进程，并使用（-f）参数输出完�
     
     CPUShares=2000
 
-**注意**：当你为某个服务设置CPUShares，会自动创建一个以服务名命名的目录（httpd.service），里面包含了一个名为90-CPUShares.conf的文件，该文件含有CPUShare限制信息，你可以通过以下方式查看该文件：
+**注意**：当你为某个服务设置CPUShares，会自动创建一个以服务名命名的目录（如 httpd.service），里面包含了一个名为90-CPUShares.conf的文件，该文件含有CPUShare限制信息，你可以通过以下方式查看该文件：
 
     # vi /etc/systemd/system/httpd.service.d/90-CPUShares.conf 
     
@@ -528,13 +527,13 @@ a）选择除会话前导外的所有进程，并使用（-f）参数输出完�
 #### 35. 启动运行等级5，即图形模式 ####
 
     # systemctl isolate runlevel5.target
-    OR
+    或
     # systemctl isolate graphical.target
 
 #### 36. 启动运行等级3，即多用户模式（命令行） ####
 
     # systemctl isolate runlevel3.target
-    OR
+    或
     # systemctl isolate multiuser.target
 
 #### 36. 设置多用户模式或图形模式为默认运行等级 ####
@@ -572,7 +571,7 @@ via: http://www.tecmint.com/manage-services-using-systemd-and-systemctl-in-linux
 
 作者：[Avishek Kumar][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
