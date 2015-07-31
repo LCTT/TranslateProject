@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Compare PDF Files on Ubuntu
 ================================================================================
 If you want to compare PDF files you can use one of the following utility
