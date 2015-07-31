@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Must-Know Linux Commands For New Users
 ================================================================================
 ![Manage system updates via the command line with dnf on Fedora.](http://www.linux.com/images/stories/41373/fedora-cli.png)
