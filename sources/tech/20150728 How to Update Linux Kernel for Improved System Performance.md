@@ -1,3 +1,5 @@
+Translating---geekpi
+
 How to Update Linux Kernel for Improved System Performance
 ================================================================================
 ![](http://cdn.makeuseof.com/wp-content/uploads/2015/07/update-linux-kernel-644x373.jpg?2c3c1f)
