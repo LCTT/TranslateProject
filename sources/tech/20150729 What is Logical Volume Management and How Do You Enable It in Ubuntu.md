@@ -1,3 +1,5 @@
+translating----geekpi
+
 What is Logical Volume Management and How Do You Enable It in Ubuntu?
 ================================================================================
 > Logical Volume Management (LVM) is a disk management option that every major Linux distribution includes. Whether you need to set up storage pools or just need to dynamically create partitions, LVM is probably what you are looking for.
