@@ -6,17 +6,17 @@
 
 每当你开机进入一个操作系统，一系列的应用将会自动启动。这些应用被称为‘开机启动应用’ 或‘开机启动程序’。随着时间的推移，当你在系统中安装了足够多的应用时，你将发现有太多的‘开机启动应用’在开机时自动地启动了，它们吃掉了很多的系统资源，并将你的系统拖慢。这可能会让你感觉卡顿，我想这种情况并不是你想要的。
 
-让 Ubuntu 变得更快的方法之一是对这些开机启动应用进行控制。 Ubuntu 为你提供了一个 GUI 工具来让你发现这些开机启动应用，然后完全禁止或延迟它们的启动，这样就可以不让每个应用在开机时同时运行。
+让 Ubuntu 变得更快的方法之一是对这些开机启动应用进行控制。 Ubuntu 为你提供了一个 GUI 工具来让你找到这些开机启动应用，然后完全禁止或延迟它们的启动，这样就可以不让每个应用在开机时同时运行。
 
 在这篇文章中，我们将看到 **在 Ubuntu 中，如何控制开机启动应用，如何让一个应用在开机时启动以及如何发现隐藏的开机启动应用。**这里提供的指导对所有的 Ubuntu 版本均适用，例如 Ubuntu 12.04, Ubuntu 14.04 和 Ubuntu 15.04。
 
 ### 在 Ubuntu 中管理开机启动应用 ###
 
-默认情况下， Ubuntu 提供了一个`开机启动应用工具`来供你使用，你不必再进行安装。只需到 Unity 面板中就可以查找到该工具。
+默认情况下， Ubuntu 提供了一个`Startup Applications`工具来供你使用，你不必再进行安装。只需到 Unity 面板中就可以查找到该工具。
 
 ![ubuntu 中的开机启动应用工具](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/07/startup_applications_Ubuntu.jpeg)
 
-点击它来启动。下面是我的`开机启动应用`的样子：
+点击它来启动。下面是我的`Startup Applications`的样子：
 
 ![在 Ubuntu 中查看开机启动程序](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/07/Screenshot-from-2015-07-18-122550.png)
 
@@ -84,7 +84,7 @@
 
 就这样，你将在下一次开机时看到这个程序会自动运行。这就是在 Ubuntu 中你能做的关于开机启动应用的所有事情。
 
-到现在为止，我们已经讨论在开机时可见的应用，但仍有更多的服务，守护进程和程序并不在`开机启动应用工具`中可见。下一节中，我们将看到如何在 Ubuntu 中查看这些隐藏的开机启动程序。
+到现在为止，我们已经讨论在开机时可见到的应用，但仍有更多的服务，守护进程和程序并不在`开机启动应用工具`中可见。下一节中，我们将看到如何在 Ubuntu 中查看这些隐藏的开机启动程序。
 
 ### 在 Ubuntu 中查看隐藏的开机启动程序 ###
 
@@ -97,13 +97,14 @@
 ![在 Ubuntu 中查看隐藏的开机启动程序](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/07/Hidden_startup_program_Ubuntu.jpg)
 
  你可以像先前我们讨论的那样管理这些开机启动应用。我希望这篇教程可以帮助你在 Ubuntu 中控制开机启动程序。任何的问题或建议总是欢迎的。
+ 
 --------------------------------------------------------------------------------
 
 via: http://itsfoss.com/manage-startup-applications-ubuntu/
 
 作者：[Abhishek][a]
 译者：[FSSlc](https://github.com/FSSlc)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
