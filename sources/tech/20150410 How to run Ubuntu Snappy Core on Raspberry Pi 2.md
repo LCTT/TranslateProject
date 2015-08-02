@@ -1,83 +1,83 @@
-How to run Ubuntu Snappy Core on Raspberry Pi 2
+如何在树莓派2 代运行ubuntu Snappy Core
 ================================================================================
-The Internet of Things (IoT) is upon us. In a couple of years some of us might ask ourselves how we ever survived without it, just like we question our past without cellphones today. Canonical is a contender in this fast growing, but still wide open market. The company wants to claim their stakes in IoT just as they already did for the cloud. At the end of January, the company launched a small operating system that goes by the name of [Ubuntu Snappy Core][1] which is based on Ubuntu Core.
+物联网(Internet of Things, IoT) 时代即将来临。很快，过不了几年，我们就会问自己当初是怎么在没有物联网的情况下生存的，就像我们现在怀疑过去没有手机的年代。Canonical  就是一个物联网快速发展却还是开放市场下的竞争者。这家公司宣称自己把赌注压到了IoT 上，就像他们已经在“云”上做过的一样。。在今年一月底，Canonical  启动了一个基于Ubuntu Core 的小型操作系统，名字叫做 [Ubuntu Snappy Core][1] 。
 
-Snappy, the new component in the mix, represents a package format that is derived from DEB, is a frontend to update the system that lends its idea from atomic upgrades used in CoreOS, Red Hat's Atomic and elsewhere. As soon as the Raspberry Pi 2 was marketed, Canonical released Snappy Core for that plattform. The first edition of the Raspberry Pi was not able to run Ubuntu because Ubuntu's ARM images use the ARMv7 architecture, while the first Raspberry Pis were based on ARMv6. That has changed now, and Canonical, by releasing a RPI2-Image of Snappy Core, took the opportunity to make clear that Snappy was meant for the cloud and especially for IoT.
+Snappy 是一种用来替代deb 的新的打包格式，是一个用来更新系统的前端，从CoreOS、红帽子和其他地方借鉴了原子更新这个想法。很快树莓派2 代投入市场，Canonical 就发布了用于树莓派的Snappy Core 版本。第一代树莓派因为是基于ARMv6 ，而Ubuntu 的ARM 镜像是基于ARMv7 ，所以不能运行ubuntu 。不过这种状况现在改变了，Canonical 通过发布用于RPI2 的镜像，抓住机会澄清了Snappy 就是一个用于云计算，特别是IoT 的系统。
 
-Snappy also runs on other platforms like Amazon EC2, Microsofts Azure, and Google's Compute Engine, and can also be virtualized with KVM, Virtualbox, or Vagrant. Canonical has embraced big players like Microsoft, Google, Docker or OpenStack and, at the same time, also included small projects from the maker scene as partners. Besides startups like Ninja Sphere and Erle Robotics, there are board manufacturers like Odroid, Banana Pro, Udoo, PCDuino and Parallella as well as Allwinner. Snappy Core will also run in routers soon to help with the poor upgrade policy that vendors perform.
+Snappy 同样可以运行在其它像Amazon EC2, Microsofts Azure, Google's Compute Engine 这样的云端上，也可以虚拟化在KVM、Virtuabox 和vagrant 上。Canonical  已经拥抱了微软、谷歌、Docker、OpenStack 这些重量级选手，同时也与一些小项目达成合作关系。除了一些创业公司，像Ninja Sphere、Erle Robotics，还有一些开发板生产商比如Odroid、Banana Pro, Udoo, PCDuino  和Parallella 、全志。Snappy Core 也希望很快能运行在路由器上，来帮助改进路由器生产商目前很少更新固件的策略。
 
-In this post, let's see how we can test Ubuntu Snappy Core on Raspberry Pi 2.
+接下来，让我们看看怎么样在树莓派2 上运行Snappy。
 
-The image for Snappy Core for the RPI2 can be downloaded from the [Raspberry Pi website][2]. Unpacked from the archive, the resulting image should be [written to an SD card][3] of at least 8 GB. Even though the OS is small, atomic upgrades and the rollback function eat up quite a bit of space. After booting up your Raspberry Pi 2 with Snappy Core, you can log into the system with the default username and password being 'ubuntu'.
+用于树莓派2 的Snappy 镜像可以从 [Raspberry Pi 网站][2]  上下载。解压缩出来的镜像必须[写到一个至少8GB 大小的SD 卡][3]。尽管原始系统很小，但是院子升级和回滚功能会蚕食不小的空间。使用Snappy 启动树莓派2 后你就可以使用默认用户名和密码(都是ubuntu)登录系统。
 
 ![](https://farm8.staticflickr.com/7639/16428527263_f7bdd56a0d_c.jpg)
 
-sudo is already configured and ready for use. For security reasons you should change the username with:
+sudo 已经配置好了可以直接用，安全起见，你应该使用以下命令来修改你的用户名
 
     $ sudo usermod -l <new name> <old name> 
 
-Alternatively, you can add a new user with the command `adduser`.
+或者也可以使用`adduser` 为你添加一个新用户。
 
-Due to the lack of a hardware clock on the RPI, that the Snappy Core image does not take account of, the image has a small bug that will throw a lot of errors when processing commands. It is easy to fix.
+因为RPI缺少硬件始终，而Snappy 不知道这一点，所以系统会有一个小bug：处理命令时会报很多错。不过这个很容易解决：
 
-To find out if the bug affects you, use the command:
+使用这个命令来确认这个bug 是否影响：
 
     $ date 
 
-If the output is "Thu Jan  1 01:56:44 UTC 1970", you can fix it with:
+如果输出是 "Thu Jan  1 01:56:44 UTC 1970"， 你可以这样做来改正：
 
     $ sudo date --set="Sun Apr 04 17:43:26 UTC 2015" 
 
-adapted to your actual time.
+改成你的实际时间。
 
 ![](https://farm9.staticflickr.com/8735/16426231744_c54d9b8877_b.jpg)
 
-Now you might want to check if there are any updates available. Note that the usual commands:
+现在你可能打算检查一下，看看有没有可用的更新。注意通常使用的命令：
 
     $ sudo apt-get update && sudo apt-get distupgrade 
 
-will not get you very far though, as Snappy uses its own simplified package management system which is based on dpkg. This makes sense, as Snappy will run on a lot of embedded appliances, and you want things to be as simple as possible.
+现在将不会让你通过，因为Snappy 会使用它自己精简过的、基于dpkg 的包管理系统。这是做是应为Snappy 会运行很多嵌入式程序，而你也会想着所有事情尽可能的简化。
 
-Let's dive into the engine room for a minute to understand how things work with Snappy. The SD card you run Snappy on has three partitions besides the boot partition. Two of those house a duplicated file system. Both of those parallel file systems are permanently mounted as "read only", and only one is active at any given time. The third partition holds a partial writable file system and the users persistent data. With a fresh system, the partition labeled 'system-a' holds one complete file system, called a core, leaving the parallel partition still empty.
+让我们来看看最关键的部分，理解一下程序是如何与Snappy 工作的。运行Snappy 的SD 卡上除了boot 分区外还有3个分区。其中的两个构成了一个重复的文件系统。这两个平行文件系统被固定挂载为只读模式，并且任何时刻只有一个是激活的。第三个分区是一个部分可写的文件系统，用来让用户存储数据。通过更新系统，标记为'system-a' 的分区会保持一个完整的文件系统，被称作核心，而另一个平行文件系统仍然会是空的。
 
 ![](https://farm9.staticflickr.com/8758/16841251947_21f42609ce_b.jpg)
 
-If we run the following command now:
+如果我们运行以下命令：
 
     $ sudo snappy update
 
-the system will install the update as a complete core, similar to an image, on 'system-b'. You will be asked to reboot your device afterwards to activate the new core.
+系统将会在'system-b' 上作为一个整体进行更新，这有点像是更新一个镜像文件。接下来你将会被告知要重启系统来激活新核心。
 
-After the reboot, run the following command to check if your system is up to date and which core is active.
+重启之后，运行下面的命令可以检查你的系统是否已经更新到最新版本，以及当前被激活的是那个核心
 
     $ sudo snappy versions -a 
 
-After rolling out the update and rebooting, you should see that the core that is now active has changed. 
+经过更新-重启的操作，你应该可以看到被激活的核心已经被改变了。
 
-As we have not installed any apps yet, the following command:
+因为到目前为止我们还没有安装任何软件，下面的命令：
 
     $ sudo snappy update ubuntu-core
 
-would have been sufficient, and is the way if you want to upgrade just the underlying OS. Should something go wrong, you can rollback by:
+将会生效，而且如果你打算仅仅更新特定的OS，这也是一个办法。如果出了问题，你可以使用下面的命令回滚：
 
     $ sudo snappy rollback ubuntu-core
 
-which will take you back to the system's state before the update.
+这将会把系统状态回滚到更新之前。
 
 ![](https://farm8.staticflickr.com/7666/17022676786_5fe6804ed8_c.jpg)
 
-Speaking of apps, they are what makes Snappy useful. There are not that many at this point, but the IRC channel #snappy on Freenode is humming along nicely and with a lot of people involved, the Snappy App Store gets new apps added on a regular basis. You can visit the shop by pointing your browser to http://<ip-address>:4200, and you can install apps right from the shop and then launch them with http://webdm.local in your browser. Building apps yourself for Snappy is not all that hard, and [well documented][4]. You can also port DEB packages into the snappy format quite easily.
+再来说说那些让Snappy 有用的软件。这里不会讲的太多关于如何构建软件、向Snappy 应用商店添加软件的基础知识，但是你可以通过Freenode 上的IRC 频道#snappy 了解更多信息，那个上面有很多人参与。你可以通过浏览器访问http://<ip-address>:4200 来浏览应用商店，然后从商店安装软件，再在浏览器里访问http://webdm.local 来启动程序。如何构建用于Snappy 的软件并不难，而且也有了现成的[参考文档][4] 。你也可以很容易的把DEB 安装包使用Snappy 格式移植到Snappy 上。
 
 ![](https://farm8.staticflickr.com/7656/17022676836_968a2a7254_c.jpg)
 
-Ubuntu Snappy Core, due to the limited number of available apps, is not overly useful in a productive way at this point in time, although it invites us to dive into the new Snappy package format and play with atomic upgrades the Canonical way. Since it is easy to set up, this seems like a good opportunity to learn something new.
+尽管Ubuntu Snappy Core 吸引我们去研究新型的Snappy 安装包格式和Canonical 式的原子更新操作，但是因为有限的可用应用，它现在在生产环境里还不是很有用。但是既然搭建一个Snappy 环境如此简单，这看起来是一个学点新东西的好机会。
 
 --------------------------------------------------------------------------------
 
 via: http://xmodulo.com/ubuntu-snappy-core-raspberry-pi-2.html
 
 作者：[Ferdinand Thommes][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/oska874)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
