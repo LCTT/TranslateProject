@@ -1,3 +1,5 @@
++Translating by Ezio
+
 How to run Ubuntu Snappy Core on Raspberry Pi 2
 ================================================================================
 The Internet of Things (IoT) is upon us. In a couple of years some of us might ask ourselves how we ever survived without it, just like we question our past without cellphones today. Canonical is a contender in this fast growing, but still wide open market. The company wants to claim their stakes in IoT just as they already did for the cloud. At the end of January, the company launched a small operating system that goes by the name of [Ubuntu Snappy Core][1] which is based on Ubuntu Core.

@@ -1,18 +1,18 @@
-Ubuntu 15.04上配置OpenVPN服务器-客户端
+在 Ubuntu 15.04 上配置 OpenVPN 服务器和客户端
 ================================================================================
-虚拟专用网（VPN）是几种用于建立与其它网络连接的网络技术中常见的一个名称。它被称为虚拟网，因为各个节点的连接不是通过物理线路实现的。而由于没有网络所有者的正确授权是不能通过公共线路访问到网络，所以它是专用的。
+虚拟专用网（VPN）常指几种通过其它网络建立连接技术。它之所以被称为“虚拟”，是因为各个节点间的连接不是通过物理线路实现的，而“专用”是指如果没有网络所有者的正确授权是不能被公开访问到。
 
 ![](http://blog.linoxide.com/wp-content/uploads/2015/05/vpn_custom_illustration.jpg)
 
-[OpenVPN][1]软件通过TUN/TAP驱动的帮助，使用TCP和UDP协议来传输数据。UDP协议和TUN驱动允许NAT后的用户建立到OpenVPN服务器的连接。此外，OpenVPN允许指定自定义端口。它提额外提供了灵活的配置，可以帮助你避免防火墙限制。
+[OpenVPN][1]软件借助TUN/TAP驱动使用TCP和UDP协议来传输数据。UDP协议和TUN驱动允许NAT后的用户建立到OpenVPN服务器的连接。此外，OpenVPN允许指定自定义端口。它提供了更多的灵活配置，可以帮助你避免防火墙限制。
 
 OpenVPN中，由OpenSSL库和传输层安全协议（TLS）提供了安全和加密。TLS是SSL协议的一个改进版本。
 
-OpenSSL提供了两种加密方法：对称和非对称。下面，我们展示了如何配置OpenVPN的服务器端，以及如何预备使用带有公共密钥非对称加密和TLS协议基础结构（PKI）。
+OpenSSL提供了两种加密方法：对称和非对称。下面，我们展示了如何配置OpenVPN的服务器端，以及如何配置使用带有公共密钥基础结构（PKI）的非对称加密和TLS协议。
 
 ### 服务器端配置 ###
 
-首先，我们必须安装OpenVPN。在Ubuntu 15.04和其它带有‘apt’报管理器的Unix系统中，可以通过如下命令安装：
+首先，我们必须安装OpenVPN软件。在Ubuntu 15.04和其它带有‘apt’包管理器的Unix系统中，可以通过如下命令安装：
 
     sudo apt-get install openvpn
 
@@ -20,7 +20,7 @@ OpenSSL提供了两种加密方法：对称和非对称。下面，我们展示�
 
     sudo apt-get unstall easy-rsa
 
-**注意**： 所有接下来的命令要以超级用户权限执行，如在“sudo -i”命令后；此外，你可以使用“sudo -E”作为接下来所有命令的前缀。
+**注意**： 所有接下来的命令要以超级用户权限执行，如在使用`sudo -i`命令后执行，或者你可以使用`sudo -E`作为接下来所有命令的前缀。
 
 开始之前，我们需要拷贝“easy-rsa”到openvpn文件夹。
 
@@ -32,15 +32,15 @@ OpenSSL提供了两种加密方法：对称和非对称。下面，我们展示�
 
     cd /etc/openvpn/easy-rsa/2.0
 
-这里，我们开启了一个密钥生成进程。
+这里，我们开始密钥生成进程。
 
-首先，我们编辑一个“var”文件。为了简化生成过程，我们需要在里面指定数据。这里是“var”文件的一个样例：
+首先，我们编辑一个“vars”文件。为了简化生成过程，我们需要在里面指定数据。这里是“vars”文件的一个样例：
 
-    export KEY_COUNTRY="US"
-    export KEY_PROVINCE="CA"
-    export KEY_CITY="SanFrancisco"
-    export KEY_ORG="Fort-Funston"
-    export KEY_EMAIL="my@myhost.mydomain"
+    export KEY_COUNTRY="CN"
+    export KEY_PROVINCE="BJ"
+    export KEY_CITY="Beijing"
+    export KEY_ORG="Linux.CN"
+    export KEY_EMAIL="open@vpn.linux.cn"
     export KEY_OU=server
 
 希望这些字段名称对你而言已经很清楚，不需要进一步说明了。
@@ -61,7 +61,7 @@ OpenSSL提供了两种加密方法：对称和非对称。下面，我们展示�
 
     ./build-ca
 
-在对话中，我们可以看到默认的变量，这些变量是我们先前在“vars”中指定的。我们可以检查以下，如有必要进行编辑，然后按回车几次。对话如下
+在对话中，我们可以看到默认的变量，这些变量是我们先前在“vars”中指定的。我们可以检查一下，如有必要进行编辑，然后按回车几次。对话如下
 
     Generating a 2048 bit RSA private key
     .............................................+++
@@ -75,14 +75,14 @@ OpenSSL提供了两种加密方法：对称和非对称。下面，我们展示�
     For some fields there will be a default value,
     If you enter '.', the field will be left blank.
     -----
-    Country Name (2 letter code) [US]:
-    State or Province Name (full name) [CA]:
-    Locality Name (eg, city) [SanFrancisco]:
-    Organization Name (eg, company) [Fort-Funston]:
-    Organizational Unit Name (eg, section) [MyOrganizationalUnit]:
-    Common Name (eg, your name or your server's hostname) [Fort-Funston CA]:
+    Country Name (2 letter code) [CN]:
+    State or Province Name (full name) [BJ]:
+    Locality Name (eg, city) [Beijing]:
+    Organization Name (eg, company) [Linux.CN]:
+    Organizational Unit Name (eg, section) [Tech]:
+    Common Name (eg, your name or your server's hostname) [Linux.CN CA]:
     Name [EasyRSA]:
-    Email Address [me@myhost.mydomain]:
+    Email Address [open@vpn.linux.cn]:
 
 接下来，我们需要生成一个服务器密钥
 
@@ -102,14 +102,14 @@ OpenSSL提供了两种加密方法：对称和非对称。下面，我们展示�
     For some fields there will be a default value,
     If you enter '.', the field will be left blank.
     -----
-    Country Name (2 letter code) [US]:
-    State or Province Name (full name) [CA]:
-    Locality Name (eg, city) [SanFrancisco]:
-    Organization Name (eg, company) [Fort-Funston]:
-    Organizational Unit Name (eg, section) [MyOrganizationalUnit]:
-    Common Name (eg, your name or your server's hostname) [server]:
+    Country Name (2 letter code) [CN]:
+    State or Province Name (full name) [BJ]:
+    Locality Name (eg, city) [Beijing]:
+    Organization Name (eg, company) [Linux.CN]:
+    Organizational Unit Name (eg, section) [Tech]:
+    Common Name (eg, your name or your server's hostname) [Linux.CN server]:
     Name [EasyRSA]:
-    Email Address [me@myhost.mydomain]:
+    Email Address [open@vpn.linux.cn]:
 
     Please enter the following 'extra' attributes
     to be sent with your certificate request
@@ -119,14 +119,14 @@ OpenSSL提供了两种加密方法：对称和非对称。下面，我们展示�
     Check that the request matches the signature
     Signature ok
     The Subject's Distinguished Name is as follows
-    countryName :PRINTABLE:'US'
-    stateOrProvinceName :PRINTABLE:'CA'
-    localityName :PRINTABLE:'SanFrancisco'
-    organizationName :PRINTABLE:'Fort-Funston'
-    organizationalUnitName:PRINTABLE:'MyOrganizationalUnit'
-    commonName :PRINTABLE:'server'
+    countryName :PRINTABLE:'CN'
+    stateOrProvinceName :PRINTABLE:'BJ'
+    localityName :PRINTABLE:'Beijing'
+    organizationName :PRINTABLE:'Linux.CN'
+    organizationalUnitName:PRINTABLE:'Tech'
+    commonName :PRINTABLE:'Linux.CN server'
     name :PRINTABLE:'EasyRSA'
-    emailAddress :IA5STRING:'me@myhost.mydomain'
+    emailAddress :IA5STRING:'open@vpn.linux.cn'
     Certificate is to be certified until May 22 19:00:25 2025 GMT (3650 days)
     Sign the certificate? [y/n]:y
     1 out of 1 certificate requests certified, commit? [y/n]y
@@ -143,7 +143,7 @@ OpenSSL提供了两种加密方法：对称和非对称。下面，我们展示�
 
     Generating DH parameters, 2048 bit long safe prime, generator 2
     This is going to take a long time
-    ................................+................<and many many dots>
+    ................................+................<许多的点>
 
 在漫长的等待之后，我们可以继续生成最后的密钥了，该密钥用于TLS验证。命令如下：
 
@@ -176,7 +176,7 @@ OpenSSL提供了两种加密方法：对称和非对称。下面，我们展示�
 
 ### Unix的客户端配置 ###
 
-假定我们有一台装有类Unix操作系统的设备，比如Ubuntu 15.04，并安装有OpenVPN。我们想要从先前的部分连接到OpenVPN服务器。首先，我们需要为客户端生成密钥。为了生成该密钥，请转到服务器上的目录中：
+假定我们有一台装有类Unix操作系统的设备，比如Ubuntu 15.04，并安装有OpenVPN。我们想要连接到前面建立的OpenVPN服务器。首先，我们需要为客户端生成密钥。为了生成该密钥，请转到服务器上的对应目录中：
 
     cd /etc/openvpn/easy-rsa/2.0
 
@@ -211,7 +211,7 @@ OpenSSL提供了两种加密方法：对称和非对称。下面，我们展示�
     dev tun
     proto udp
 
-    # IP and Port of remote host with OpenVPN server
+    # 远程 OpenVPN 服务器的 IP 和 端口号
     remote 111.222.333.444 1194
 
     resolv-retry infinite
@@ -243,7 +243,7 @@ OpenSSL提供了两种加密方法：对称和非对称。下面，我们展示�
 
 安卓设备上的OpenVPN配置和Unix系统上的十分类似，我们需要一个含有配置文件、密钥和证书的包。文件列表如下：
 
-- configuration file (.ovpn),
+- 配置文件 (扩展名 .ovpn),
 - ca.crt,
 - dh2048.pem,
 - client.crt,
@@ -257,7 +257,7 @@ OpenSSL提供了两种加密方法：对称和非对称。下面，我们展示�
     dev tun
     proto udp
 
-    # IP and Port of remote host with OpenVPN server
+    # 远程 OpenVPN 服务器的 IP 和 端口号
     remote 111.222.333.444 1194
 
     resolv-retry infinite
@@ -274,21 +274,21 @@ OpenSSL提供了两种加密方法：对称和非对称。下面，我们展示�
 
 所有这些文件我们必须移动我们设备的SD卡上。
 
-然后，我们需要安装[OpenVPN连接][2]。
+然后，我们需要安装一个[OpenVPN Connect][2] 应用。
 
 接下来，配置过程很是简单：
 
-    open setting of OpenVPN and select Import options
-    select Import Profile from SD card option
-    in opened window go to folder with prepared files and select .ovpn file
-    application offered us to create a new profile
-    tap on the Connect button and wait a second
+- 打开 OpenVPN 并选择“Import”选项
+- 选择“Import Profile from SD card”
+- 在打开的窗口中导航到我们放置好文件的目录，并选择那个 .ovpn 文件
+- 应用会要求我们创建一个新的配置文件
+- 点击“Connect”按钮并稍等一下
 
 搞定。现在，我们的安卓设备已经通过安全的VPN连接连接到我们的专用网。
 
 ### 尾声 ###
 
-虽然OpenVPN初始配置花费不少时间，但是简易客户端配置为我们弥补了时间上的损失，也提供了从任何设备连接的能力。此外，OpenVPN提供了一个很高的安全等级，以及从不同地方连接的能力，包括位于NAT后面的客户端。因此，OpenVPN可以同时在家和在企业中使用。
+虽然OpenVPN初始配置花费不少时间，但是简易的客户端配置为我们弥补了时间上的损失，也提供了从任何设备连接的能力。此外，OpenVPN提供了一个很高的安全等级，以及从不同地方连接的能力，包括位于NAT后面的客户端。因此，OpenVPN可以同时在家和企业中使用。
 
 --------------------------------------------------------------------------------
 
@@ -296,7 +296,7 @@ via: http://linoxide.com/ubuntu-how-to/configure-openvpn-server-client-ubuntu-15
 
 作者：[Ivan Zabrovskiy][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
