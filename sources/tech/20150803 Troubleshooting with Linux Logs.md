@@ -1,3 +1,4 @@
+translation by strugglingyouth
 Troubleshooting with Linux Logs
 ================================================================================
 Troubleshooting is the main reason people create logs. Often you’ll want to diagnose why a problem happened with your Linux system or application. An error message or a sequence of events can give you clues to the root cause, indicate how to reproduce the issue, and point out ways to fix it. Here are a few use cases for things you might want to troubleshoot in your logs.
