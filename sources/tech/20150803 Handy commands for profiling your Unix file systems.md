@@ -1,3 +1,4 @@
+translation by strugglingyouth
 Handy commands for profiling your Unix file systems
 ================================================================================
 ![Credit: Sandra H-S](http://images.techhive.com/images/article/2015/07/file-profile-100597239-primary.idge.png)
