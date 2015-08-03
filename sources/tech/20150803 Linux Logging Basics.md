@@ -1,3 +1,5 @@
+FSSlc translating
+
 Linux Logging Basics
 ================================================================================
 First we’ll describe the basics of what Linux logs are, where to find them, and how they get created. If you already know this stuff, feel free to skip to the next section.
