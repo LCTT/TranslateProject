@@ -1,4 +1,4 @@
-KevinSJ Translating
+translation by strugglingyouth
 How to monitor NGINX - Part 1
 ================================================================================
 ![](http://www.datadoghq.com/wp-content/uploads/2015/07/NGINX_hero_1.png)
