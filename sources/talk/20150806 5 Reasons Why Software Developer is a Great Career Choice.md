@@ -1,3 +1,4 @@
+Translating by MousyCoder
 5 Reasons Why Software Developer is a Great Career Choice
 ================================================================================
 This week I will give a presentation at a local high school on what it is like to work as a programmer. I am volunteering (through the organization [Transfer][1]) to come to schools and talk about what I work with. This school will have a technology theme day this week, and would like to hear what working in the technology sector is like. Since I develop software, that’s what I will talk about. One section will be on why I think a career in software development is great. The main reasons are:
