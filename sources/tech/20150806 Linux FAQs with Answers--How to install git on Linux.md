@@ -1,3 +1,5 @@
+Translating by Ping
+
 Linux FAQs with Answers--How to install git on Linux
 ================================================================================
 > **Question:** I am trying to clone a project from a public Git repository, but I am getting "git: command not found" error. How can I install git on [insert your Linux distro]? 
