@@ -1,3 +1,4 @@
+wyangsun translating
 Managing Linux Logs
 ================================================================================
 A key best practice for logging is to centralize or aggregate your logs in one place, especially if you have multiple servers or tiers in your architecture. We’ll tell you why this is a good idea and give tips on how to do it easily.
