@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Linux FAQs with Answers--How to fix “ImportError: No module named wxversion” on Linux
 ================================================================================
 > **Question:** I was trying to run a Python application on [insert your Linux distro], but I got an error "ImportError: No module named wxversion." How can I solve this error in the Python program? 
