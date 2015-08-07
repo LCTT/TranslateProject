@@ -7,7 +7,7 @@ Image courtesy [Christopher Michel/Flickr][1]
 
 ### 野心勃勃的企鹅 ###
 
-Linux和开源世界一直在被那些热情洋溢的人们驱动着，他们开发出最好的软件并将代码向公众开放，所以每个人都能无条件地看到。(对了，有那么一个条件，那就是许可证。)
+Linux和开源世界一直在被那些热情洋溢的人们推动着，他们开发出最好的软件并将代码向公众开放，所以每个人都能无条件地看到。(对了，有那么一个条件，那就是许可证。)
 
 那么，这些人是谁？这些Linux世界里的大神们，谁在每天影响着我们？让我来给你一一揭晓。
 
@@ -16,9 +16,9 @@ Image courtesy Swapnil Bhartiya
 
 ### Klaus Knopper ###
 
-Klaus Knopper, an Austrian developer who lives in Germany, is the founder of Knoppix and Adriana Linux, which he developed for his blind wife.
+Klaus Knopper，一个生活在德国的奥地利开发者，他是Knoppix和Adriana Linux的创始人，为了他失明的妻子开发程序。
 
-Knoppix holds a very special place in heart of those Linux users who started using Linux before Ubuntu came along. What makes Knoppix so special is that it popularized the concept of Live CD. Unlike Windows or Mac OS X, you could run the entire operating system from the CD without installing anything on the system. It allowed new users to test Linux on their systems without formatting the hard drive. The live feature of Linux alone contributed heavily to its popularity.
+Knoppix在那些Linux用户心里有着特殊的地位，他们在使用Ubuntu之前都会尝试Knoppix，而Knoppix让人称道的就是它让Live CD的概念普及开来。不像Windows或Mac OS X，你可以通过CD运行整个操作系统而不用再系统上安装任何东西，它允许新用户在他们的机子上快速试用Linux而不用去格式化硬盘。Linux这种实时的特性为它的普及做出了巨大贡献。
 
 ![Image courtesy Fórum Internacional Software Live/Flickr](http://images.techhive.com/images/article/2015/07/lennart-100599356-orig.jpg)
 Image courtesy [Fórum Internacional Software Live/Flickr][2]
