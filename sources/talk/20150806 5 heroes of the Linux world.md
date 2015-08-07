@@ -1,16 +1,15 @@
-Translating by ZTinoZ
-5 heroes of the Linux world
+Linux世界的五个大神
 ================================================================================
-Who are these people, seen and unseen, whose work affects all of us every day? 
+这些人是谁？见或者没见过？谁在每天影响着我们？
 
 ![Image courtesy Christopher Michel/Flickr](http://core0.staticworld.net/images/article/2015/07/penguin-100599348-orig.jpg)
 Image courtesy [Christopher Michel/Flickr][1]
 
-### High-flying penguins ###
+### 野心勃勃的企鹅 ###
 
-Linux and open source is driven by passionate people who write best-of-breed software and then release the code to the public so anyone can use it, without any strings attached. (Well, there is one string attached and that’s licence.)
+Linux和开源世界一直在被那些热情洋溢的人们驱动着，他们开发出最好的软件并将代码向公众开放，所以每个人都能无条件地看到。(对了，有那么一个条件，那就是许可证。)
 
-Who are these people? These heroes of the Linux world, whose work affects all of us every day. Allow me to introduce you.
+那么，这些人是谁？这些Linux世界里的大神们，谁在每天影响着我们？让我来给你一一揭晓。
 
 ![Image courtesy Swapnil Bhartiya](http://images.techhive.com/images/article/2015/07/swap-klaus-100599357-orig.jpg)
 Image courtesy Swapnil Bhartiya
