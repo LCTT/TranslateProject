@@ -1,3 +1,4 @@
+Translating by ictlyh
 How To: Temporarily Clear Bash Environment Variables on a Linux and Unix-like System
 ================================================================================
 I'm a bash shell user. I would like to temporarily clear bash shell environment variables. I do not want to delete or unset an exported environment variable. How do I run a program in a temporary environment in bash or ksh shell?
