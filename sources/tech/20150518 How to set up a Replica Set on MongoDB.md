@@ -1,3 +1,4 @@
+Translating by Ping
 How to set up a Replica Set on MongoDB
 ================================================================================
 MongoDB has become the most famous NoSQL database on the market. MongoDB is document-oriented, and its scheme-free design makes it a really attractive solution for all kinds of web applications. One of the features that I like the most is Replica Set, where multiple copies of the same data set are maintained by a group of mongod nodes for redundancy and high availability.
