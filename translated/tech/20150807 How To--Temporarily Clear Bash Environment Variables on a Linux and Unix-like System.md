@@ -1,50 +1,49 @@
-Translating by ictlyh
-How To: Temporarily Clear Bash Environment Variables on a Linux and Unix-like System
+如何在 Linux 和类 Unix 系统上临时清空 Bash 环境变量
 ================================================================================
-I'm a bash shell user. I would like to temporarily clear bash shell environment variables. I do not want to delete or unset an exported environment variable. How do I run a program in a temporary environment in bash or ksh shell?
+我是个 bash shell 用户。我想临时清空 bash shell 环境变量。但我不想删除或者 unset 一个 export 环境变量。我怎样才能在 bash 或 ksh shell 的临时环境中运行程序呢？
 
-You can use the env command to set and print environment on a Linux or Unix-like systems. The env command executes utility after modifying the environment as specified on the command line.
+你可以在 Linux 或类 Unix 系统中使用 env 命令设置并打印环境。env 命令将环境修改为命令行指定的那样之后再执行程序。
 
-### How do I display my current environment? ###
+### 如何显示当前环境？ ###
 
-Open the terminal application and type any one of the following command:
+打开终端应用程序并输入下面的其中一个命令：
 
     printenv
 
-OR
+或
 
     env
 
-Sample outputs:
+输出样例：
 
-![Fig.01: Unix/Linux: List All Environment Variables Command](http://s0.cyberciti.org/uploads/faq/2015/08/env-unix-linux-command-output.jpg)
-Fig.01: Unix/Linux: List All Environment Variables Command
+![Fig.01： Unix/Linux： 列出所有环境变量](http://s0.cyberciti.org/uploads/faq/2015/08/env-unix-linux-command-output.jpg)
+Fig.01： Unix/Linux： 列出所有环境变量
 
-### Counting your environment variables ###
+### 统计环境变量数目 ###
 
-Type the following command:
+输入下面的命令：
 
     env | wc -l
     printenv | wc -l
 
-Sample outputs:
+输出样例：
 
     20
 
-### Run a program in a clean environment in bash/ksh/zsh ###
+### 在 bash/ksh/zsh 干净环境中运行程序 ###
 
-The syntax is as follows:
+语法如下所示：
 
     env -i your-program-name-here arg1 arg2 ...
 
-For example, run the wget program without using http_proxy and/or all other variables i.e. temporarily clear all bash/ksh/zsh environment variables and run the wget program:
+例如，不使用 http_proxy 和/或任何其它变量运行 wget 程序。临时清除所有 bash/ksh/zsh 环境变量并运行 wget 程序：
 
     env -i /usr/local/bin/wget www.cyberciti.biz
     env -i wget www.cyberciti.biz
 
-This is very useful when you want to run a command ignoring any environment variables you have set. I use this command many times everyday to ignore the http_proxy and other environment variable I have set.
+这当你想忽视任何已经设置的环境变量来运行命令时非常有用。我每天都会多次使用这个命令，以便忽视 http_proxy 和其它我设置的环境变量。
 
-#### Example: With the http_proxy ####
+#### 例子：使用 http_proxy ####
 
     $ wget www.cyberciti.biz
     --2015-08-03 23:20:23--  http://www.cyberciti.biz/
@@ -55,7 +54,7 @@ This is very useful when you want to run a command ignoring any environment vari
     index.html                 [  <=>                         ]  36.17K  87.0KB/s   in 0.4s
     2015-08-03 23:20:24 (87.0 KB/s) - 'index.html' saved [37041]
 
-#### Example: Ignore the http_proxy ####
+#### 例子：忽视 http_proxy ####
 
     $ env -i /usr/local/bin/wget www.cyberciti.biz
     --2015-08-03 23:25:17--  http://www.cyberciti.biz/
@@ -67,7 +66,7 @@ This is very useful when you want to run a command ignoring any environment vari
     index.html.1               [  <=>                         ]  36.17K   115KB/s   in 0.3s
     2015-08-03 23:25:18 (115 KB/s) - 'index.html.1' saved [37041]
 
-The option -i causes env command to completely ignore the environment it inherits. However, it does not prevent your command (such as wget or curl) setting new variables. Also, note down the side effect of running bash/ksh shell:
+-i 选项使 env 命令完全忽视它继承的环境。但是，它并不阻止你的命令（例如 wget 或 curl）设置新的变量。同时，也要注意运行 bash/ksh shell 的副作用：
 
     env -i env | wc -l ## empty ##
     # Now run bash ##
@@ -75,15 +74,15 @@ The option -i causes env command to completely ignore the environment it inherit
     ## New enviroment set by bash program ##
     env | wc -l
 
-#### Example: Set an environmental variable ####
+#### 例子：设置一个环境变量 ####
 
-The syntax is:
+语法如下：
 
     env var=value /path/to/command arg1 arg2 ...
     ## OR ## 
     var=value  /path/to/command arg1 arg2 ...
 
-For example set http_proxy:
+例如设置 http_proxy:
 
     env http_proxy="http://USER:PASSWORD@server1.cyberciti.biz:3128/" \
     /usr/local/bin/wget www.cyberciti.biz
@@ -93,7 +92,7 @@ For example set http_proxy:
 via: http://www.cyberciti.biz/faq/linux-unix-temporarily-clearing-environment-variables-command/
 
 作者：Vivek Gite
-译者：[译者ID](https://github.com/译者ID)
+译者：[ictlyh](https://github.com/ictlyh)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
