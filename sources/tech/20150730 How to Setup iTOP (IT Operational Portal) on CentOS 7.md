@@ -1,3 +1,5 @@
+tranlsating---geekpi
+
 How to Setup iTOP (IT Operational Portal) on CentOS 7
 ================================================================================
 iTOP is a simple, Open source web based IT Service Management tool. It has all of ITIL functionality that includes with Service desk, Configuration Management, Incident Management, Problem Management, Change Management and Service Management. iTop relays on Apache/IIS, MySQL and PHP, so it can run on any operating system supporting these applications. Since iTop is a web based application you don’t need to deploy any client software on each user’s PC. A simple web browser is enough to perform day to day operations of an IT environment with iTOP.
