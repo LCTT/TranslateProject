@@ -1,30 +1,28 @@
-tranlsating---geekpi
-
-How to Setup iTOP (IT Operational Portal) on CentOS 7
+如何在CentOS上安装iTOP(IT操作门户)
 ================================================================================
-iTOP is a simple, Open source web based IT Service Management tool. It has all of ITIL functionality that includes with Service desk, Configuration Management, Incident Management, Problem Management, Change Management and Service Management. iTop relays on Apache/IIS, MySQL and PHP, so it can run on any operating system supporting these applications. Since iTop is a web based application you don’t need to deploy any client software on each user’s PC. A simple web browser is enough to perform day to day operations of an IT environment with iTOP.
+iTOP简单来说是一个简单的基于网络的开源IT服务管理工具。它有所有的ITIL功能包括服务台、配置管理、事件管理、问题管理、更改管理和服务管理。iTOP依赖于Apache/IIS、MySQL和PHP，因此它可以运行在任何支持这些软件的操作系统中。因为iTOP是一个网络程序，因此你不必在用户的PC端任何客户端程序。一个简单的浏览器就足够每天的IT环境操作了。
 
-To install and configure iTOP we will be using CentOS 7 as base operating with basic LAMP Stack environment installed on it that will cover its almost all prerequisites.
+我们要在一台有满足基本需求的LAMP环境的CentOS 7上安装和配置iTOP。
 
-### Downloading iTOP ###
+### 下载 iTOP ###
 
-iTop download package is present on SourceForge, we can get its link from their official website [link][1].
+iTOP的下载包现在在SOurceForge上，我们可以从这获取它的官方[链接][1]。
 
 ![itop download](http://blog.linoxide.com/wp-content/uploads/2015/07/1-itop-download.png)
 
-We will the download link from here and get this zipped file on server with wget command as below.
+我们从这里的连接用wget命令获取压缩文件
 
     [root@centos-007 ~]# wget http://downloads.sourceforge.net/project/itop/itop/2.1.0/iTop-2.1.0-2127.zip
 
-### iTop Extensions and Web Setup ###
+### iTop扩展和网络安装 ###
 
-By using unzip command we will extract the downloaded packages in the document root directory of our apache web server in a new directory with name itop.
+使用unzip命令解压到apache根目录下的itop文件夹下。
 
     [root@centos-7 ~]# ls
     iTop-2.1.0-2127.zip
     [root@centos-7 ~]# unzip iTop-2.1.0-2127.zip -d /var/www/html/itop/
 
-List the folder to view installation packages in it.
+列出安装包中的内容。
 
     [root@centos-7 ~]# ls -lh /var/www/html/itop/
     total 68K
@@ -33,7 +31,7 @@ List the folder to view installation packages in it.
     -rw-r--r--. 1 root root 23K Dec 17 2014 README
     drwxr-xr-x. 19 root root 4.0K Jul 14 13:10 web
 
-Here is all the extensions that we can install.
+这些是我们可以安装的扩展。
 
     [root@centos-7 2.x]# ls
     authent-external itop-backup itop-config-mgmt itop-problem-mgmt itop-service-mgmt-provider itop-welcome-itil
@@ -42,132 +40,132 @@ Here is all the extensions that we can install.
     installation.xml itop-change-mgmt-itil itop-incident-mgmt-itil itop-request-mgmt-itil itop-tickets
     itop-attachments itop-config itop-knownerror-mgmt itop-service-mgmt itop-virtualization-mgmt
 
-Now from the extracted web directory, moving through different data models we will migrate the required extensions from the datamodels into the web extensions directory of web document root directory with copy command.
+在解压的目录下，通过不同的数据模型用复制命令迁移需要的扩展从datamodels复制到web扩展目录下。
 
     [root@centos-7 2.x]# pwd
     /var/www/html/itop/web/datamodels/2.x
     [root@centos-7 2.x]# cp -r itop-request-mgmt itop-service-mgmt itop-service-mgmt itop-config itop-change-mgmt /var/www/html/itop/web/extensions/
 
-### Installing iTop Web Interface ###
+### 安装 iTop web界面 ###
 
-Most of our server side settings and configurations are done.Finally we need to complete its web interface installation process to finalize the setup.
+大多数服务端设置和配置已经完成了。最后我们安装web界面来完成安装。
 
-Open your favorite web browser and access the WordPress web directory in your web browser using your server IP or FQDN like.
+打开浏览器使用ip地址或者FQDN来访问WordPress web目录。
 
     http://servers_ip_address/itop/web/
 
-You will be redirected towards the web installation process for iTop. Let’s configure it as per your requirements like we did here in this tutorial.
+你会被重定向到iTOP的web安装页面。让我们按照要求配置，就像在这篇教程中做的那样。
 
-#### Prerequisites Validation ####
+#### 先决要求验证 ####
 
-At the stage you will be prompted for welcome screen with prerequisites validation ok. If you get some warning then you have to make resolve it by installing its prerequisites.
+这一步你就会看到验证完成的欢迎界面。如果你看到了一些警告信息，你需要先安装这些软件来解决这些问题。
 
 ![mcrypt missing](http://blog.linoxide.com/wp-content/uploads/2015/07/2-itop-web-install.png)
 
-At this stage one optional package named php mcrypt will be missing. Download the following rpm package then try to install php mcrypt package.
+这一步一个叫php mcrypt的可选包丢失了。下载下面的rpm包接着尝试安装php mcrypt包。
 
     [root@centos-7 ~]#yum localinstall php-mcrypt-5.3.3-1.el6.x86_64.rpm libmcrypt-2.5.8-9.el6.x86_64.rpm.
 
-After successful installation of php-mcrypt library we need to restart apache web service, then reload the web page and this time its prerequisites validation should be OK.
+成功安装完php-mcrypt后，我们需要重启apache服务，接着刷新页面，这时验证应该已经OK。
 
-#### Install or Upgrade iTop ####
+#### 安装或者升级 iTop ####
 
-Here we will choose the fresh installation as we have not installed iTop previously on our server.
+现在我们要在没有安装iTOP的服务器上选择全新安装。
 
 ![Install New iTop](http://blog.linoxide.com/wp-content/uploads/2015/07/3.png)
 
-#### iTop License Agreement ####
+#### iTop 许可协议 ####
 
-Chose the option to accept the terms of the licenses of all the components of iTop and click "NEXT".
+勾选同意iTOP所有组件的许可协议并点击“NEXT”。
 
 ![License Agreement](http://blog.linoxide.com/wp-content/uploads/2015/07/4.png)
 
-#### Database Configuration ####
+#### 数据库配置 ####
 
-Here we the do Configuration of the database connection by giving our database servers credentials and then choose from the option to create new database as shown.
+现在我们输入数据库凭据来配置数据库连接，接着选择如下选择创建新数据库。
 
 ![DB Connection](http://blog.linoxide.com/wp-content/uploads/2015/07/5.png)
 
-#### Administrator Account ####
+#### 管理员账户 ####
 
-In this step we will configure an Admin account by filling out its login details as.
+这一步中我们会输入它的登录信息来配置管理员账户。
 
 ![Admin Account](http://blog.linoxide.com/wp-content/uploads/2015/07/6.png)
 
-#### Miscellaneous Parameters ####
+#### 杂项参数 ####
 
-Let's choose the additional parameters whether you want to install with demo contents or with fresh database and proceed forward.
+让我们选择额外的参数来选择你是否需要安装一个演示内容或者使用全新的数据库，接着下一步。
 
 ![Misc Parameters](http://blog.linoxide.com/wp-content/uploads/2015/07/7.png)
 
-### iTop Configurations Management ###
+### iTop 配置管理 ###
 
-The options below allow you to configure the type of elements that are to be managed inside iTop like all the base objects that are mandatory in the iTop CMDB, Manage Data Center devices, storage device and virtualization.
+下面的选项允许你配置在iTOP要管理的元素类型，像CMDB、数据中心设备、存储设备和虚拟化这些东西在iTOP中是必须的。
 
 ![Conf Management](http://blog.linoxide.com/wp-content/uploads/2015/07/8.png)
 
-#### Service Management ####
+#### 服务管理 ####
 
-Select from the choices that best describes the relationships between the services and the IT infrastructure in your IT environment. So we are choosing Service Management for Service Providers here.
+选择一个最能描述你的IT设备和环境之间的关系的选项。因此我们这里选择为服务提供商的服务管理。
 
 ![Service Management](http://blog.linoxide.com/wp-content/uploads/2015/07/9.png)
 
-#### iTop Tickets Management ####
+#### iTop Tickets 管理 ####
 
-From the different available options we will Select the ITIL Compliant Tickets Management option to have different types of ticket for managing user requests and incidents.
+从不同的可用选项我们选择符合ITIL Tickets管理选项来管理不同类型的用户请求和事件。
 
 ![Ticket Management](http://blog.linoxide.com/wp-content/uploads/2015/07/10.png)
 
-#### Change Management Options ####
+#### 改变管理选项 ####
 
-Select the type of tickets you want to use in order to manage changes to the IT infrastructure from the available options. We are going to choose ITIL change management option here.
+选择不同的ticket类型以便管理可用选项中的IT设备更改。我们选择ITTL更改管理选项。
 
 ![ITIL Change](http://blog.linoxide.com/wp-content/uploads/2015/07/11.png)
 
-#### iTop Extensions ####
+#### iTop 扩展 ####
 
-In this section we can select the additional extensions to install or we can unchecked the ones that you want to skip.
+这一节我们选择额外的扩展来安装或者不选直接跳过。
 
 ![iTop Extensions](http://blog.linoxide.com/wp-content/uploads/2015/07/13.png)
 
-### Ready to Start Web Installation ###
+### 准备开始web安装 ###
 
-Now we are ready to start installing the components that we choose in previous steps. We can also drop down these installation parameters to view our configuration from the drop down.
+现在我们开始准备安装先前先前选择的组件。我们也可以下拉这些安装参数来浏览我们的配置。
 
-Once you are confirmed with the installation parameters click on the install button.
+确认安装参数后点击安装按钮。
 
 ![Installation Parameters](http://blog.linoxide.com/wp-content/uploads/2015/07/16.png)
 
-Let's wait for the progress bar to complete the installation process. It might takes few minutes to complete its installation process.
+让我们等待进度条来完成安装步骤。它也许会花费几分钟来完成安装步骤。
 
 ![iTop Installation Process](http://blog.linoxide.com/wp-content/uploads/2015/07/17.png)
 
-### iTop Installation Done ###
+### iTop安装完成 ###
 
-Our iTop installation setup is complete, just need to do a simple manual operation as shown and then click to enter iTop.
+我们的iTOP安装已经完成了，只要如下一个简单的手动操作就可以进入到iTOP。
 
 ![iTop Done](http://blog.linoxide.com/wp-content/uploads/2015/07/18.png)
 
-### Welcome to iTop (IT Operational Portal) ###
+### 欢迎来到iTop (IT操作门户) ###
 
 ![itop welcome note](http://blog.linoxide.com/wp-content/uploads/2015/07/20.png)
 
-### iTop Dashboard ###
+### iTop 面板 ###
 
-You can manage configuration of everything from here Servers, computers, Contacts, Locations, Contracts, Network devices…. You can create your own. Just the fact, that the installed CMDB module is great which is an essential part of every bigger IT.
+你这里可以配置任何东西，服务、计算机、通讯录、位置、合同、网络设备等等。你可以创建你自己的。事实是刚安装的CMDB模块是每一个IT人员的必备模块。
 
 ![iTop Dashboard](http://blog.linoxide.com/wp-content/uploads/2015/07/19.png)
 
-### Conclusion ###
+### 总结 ###
 
-ITOP is one of the best Open Source Service Desk solutions. We have successfully installed and configured it on our CentOS 7 cloud host. So, the most powerful aspect of iTop is the ease with which it can be customized via its “extensions”. Feel free to comment if you face any trouble during its setup.
+ITOP是一个最棒的开源桌面服务解决方案。我们已经在CentOS 7上成功地安装和配置了。因此，iTOP最强大的一方面是它可以很简单地通过扩展来自定义。如果你在安装中遇到任何问题欢迎评论。
 
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/tools/setup-itop-centos-7/
 
 作者：[Kashif Siddique][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
