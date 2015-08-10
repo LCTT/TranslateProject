@@ -1,3 +1,4 @@
+Translating by ZTinoZ
 5 heroes of the Linux world
 ================================================================================
 Who are these people, seen and unseen, whose work affects all of us every day? 
