@@ -5,10 +5,12 @@
 我试着在Ubuntu中安装Emerald图标主题，而这个主题被打包成了.7z归档包。和以往一样，我试着通过在GUI中右击并选择“提取到这里”来将它解压缩。但是Ubuntu 15.04却并没有解压文件，取而代之的，却是丢给了我一个下面这样的错误信息：
 
 > Could not open this file 
+>
 > 无法打开该文件
 > 
 > There is no command installed for 7-zip archive files. Do you want to search for a command to open this file? 
-> 没有安装用于7-zip归档文件的命令。你是否想要搜索命令来打开该文件？
+>
+> 没有安装用于7-zip归档文件的命令。你是否想要搜索用于来打开该文件的命令？
 
 错误信息看上去是这样的：
 
@@ -42,7 +44,7 @@ via: http://itsfoss.com/fix-there-is-no-command-installed-for-7-zip-archive-file
 
 作者：[Abhishek][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
