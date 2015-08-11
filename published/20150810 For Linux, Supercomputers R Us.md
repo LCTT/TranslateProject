@@ -1,4 +1,4 @@
-Linux：我们最好用的超级计算机系统
+Linux：称霸超级计算机系统
 ================================================================================
 ![Credit: Michel Ngilen, CC BY 2.0, via Wikimedia Commons](http://images.techhive.com/images/article/2015/08/playstation_3-100602985-primary.idge.jpg)
 首图来源：By Michel Ngilen,[ CC BY 2.0 ], via Wikimedia Commons 
