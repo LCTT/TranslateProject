@@ -1,3 +1,4 @@
+translating wi-cuckoo
 Shilpa Nair Shares Her Interview Experience on RedHat Linux Package Management
 ================================================================================
 **Shilpa Nair has just graduated in the year 2015. She went to apply for Trainee position in a National News Television located in Noida, Delhi. When she was in the last year of graduation and searching for help on her assignments she came across Tecmint. Since then she has been visiting Tecmint regularly.**
