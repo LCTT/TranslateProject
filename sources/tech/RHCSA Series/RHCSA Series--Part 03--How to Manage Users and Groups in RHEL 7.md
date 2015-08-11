@@ -1,3 +1,4 @@
+[translated by xiqingongzi]
 RHCSA Series: How to Manage Users and Groups in RHEL 7 – Part 3
 ================================================================================
 Managing a RHEL 7 server, as it is the case with any other Linux server, will require that you know how to add, edit, suspend, or delete user accounts, and grant users the necessary permissions to files, directories, and other system resources to perform their assigned tasks.
