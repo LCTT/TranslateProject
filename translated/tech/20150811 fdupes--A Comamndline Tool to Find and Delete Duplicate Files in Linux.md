@@ -1,40 +1,38 @@
-Translating by GOLinux!
-fdupes – A Comamndline Tool to Find and Delete Duplicate Files in Linux
+fdupes——Linux中查找并删除重复文件的命令行工具
 ================================================================================
-It is a common requirement to find and replace duplicate files for most of the computer users. Finding and removing duplicate files is a tiresome job that demands time and patience. Finding duplicate files can be very easy if your machine is powered by GNU/Linux, thanks to ‘**fdupes**‘ utility.
+对于大多数计算机用户而言，查找并替换重复的文件是一个常见的需求。查找并移除重复文件真是一项领人不胜其烦的工作，它耗时又耗力。如果你的机器上跑着GNU/Linux，那么查找重复文件会变得十分简单，这多亏了`**fdupes**`工具。
 
 ![Find and Delete Duplicate Files in Linux](http://www.tecmint.com/wp-content/uploads/2015/08/find-and-delete-duplicate-files-in-linux.png)
 
-Fdupes – Find and Delete Duplicate Files in Linux
+Fdupes——在Linux中查找并删除重复文件
 
-### What is fdupes? ###
+### fdupes是啥东东？ ###
 
-**Fdupes** is a Linux utility written by **Adrian Lopez** in C programming Language released under MIT License. The application is able to find duplicate files in the given set of directories and sub-directories. Fdupes recognize duplicates by comparing MD5 signature of files followed by a byte-to-byte comparison. A lots of options can be passed with Fdupes to list, delete and replace the files with hardlinks to duplicates.
+**Fdupes**是Linux下的一个工具，它由**Adrian Lopez**用C编程语言编写并基于MIT许可证发行，该应用程序可以在指定的目录及子目录中查找重复的文件。Fdupes通过对比文件的MD5签名，以及逐字节比较文件来识别重复内容，可以为Fdupes指定大量的选项以实现对文件的列出、删除、替换到文件副本的硬链接等操作。
 
-The comparison starts in the order:
+对比以下列顺序开始：
 
-**size comparison > Partial MD5 Signature Comparison > Full MD5 Signature Comparison > Byte-to-Byte Comparison.**
+**大小对比 > 部分 MD5 签名对比 > 完整 MD5 签名对比 > 逐字节对比**
 
-### Install fdupes on a Linux ###
+### 安装 fdupes 到 Linux ###
 
-Installation of latest version of fdupes (fdupes version 1.51) as easy as running following command on **Debian** based systems such as **Ubuntu** and **Linux Mint**.
+在基于**Debian**的系统上，如**Ubuntu**和**Linux Mint**，安装最新版fdupes，用下面的命令手到擒来。
 
     $ sudo apt-get install fdupes
 
-On CentOS/RHEL and Fedora based systems, you need to turn on [epel repository][1] to install fdupes package.
+在基于CentOS/RHEL和Fedora的系统上，你需要开启[epel仓库][1]来安装fdupes包。
 
     # yum install fdupes
     # dnf install fdupes    [On Fedora 22 onwards]
 
-**Note**: The default package manager yum is replaced by dnf from Fedora 22 onwards…
+**注意**：自Fedora 22之后，默认的包管理器yum被dnf取代了。
 
-### How to use fdupes command? ###
-
-1. For demonstration purpose, let’s a create few duplicate files under a directory (say tecmint) simply as:
+### fdupes命令咋个搞？ ###
+1.作为演示的目的，让我们来在某个目录（比如 tecmint）下创建一些重复文件，命令如下：
 
     $ mkdir /home/"$USER"/Desktop/tecmint && cd /home/"$USER"/Desktop/tecmint && for i in {1..15}; do echo "I Love Tecmint. Tecmint is a very nice community of Linux Users." > tecmint${i}.txt ; done
 
-After running above command, let’s verify the duplicates files are created or not using ls [command][2].
+在执行以上命令后，让我们使用ls[命令][2]验证重复文件是否创建。
 
     $ ls -l
     
@@ -55,11 +53,11 @@ After running above command, let’s verify the duplicates files are created or 
     -rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint8.txt
     -rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint9.txt
 
-The above script create **15** files namely tecmint1.txt, tecmint2.txt…tecmint15.txt and every files contains the same data i.e.,
+上面的脚本创建了**15**个文件，名称分别为tecmint1.txt，tecmint2.txt……tecmint15.txt，并且每个文件的数据相同，如
 
     "I Love Tecmint. Tecmint is a very nice community of Linux Users."
 
-2. Now search for duplicate files within the folder **tecmint**.
+2.现在在**tecmint**文件夹内搜索重复的文件。
 
     $ fdupes /home/$USER/Desktop/tecmint 
     
@@ -79,15 +77,15 @@ The above script create **15** files namely tecmint1.txt, tecmint2.txt…tecmint
     /home/tecmint/Desktop/tecmint/tecmint15.txt
     /home/tecmint/Desktop/tecmint/tecmint12.txt
 
-3. Search for duplicates recursively under every directory including it’s sub-directories using the **-r** option.
+3.使用**-r**选项在每个目录包括其子目录中递归搜索重复文件。
 
-It search across all the files and folder recursively, depending upon the number of files and folders it will take some time to scan duplicates. In that mean time, you will be presented with the total progress in terminal, something like this.
+它会递归搜索所有文件和文件夹，花一点时间来扫描重复文件，时间的长短取决于文件和文件夹的数量。在此其间，终端中会显示全部过程，像下面这样。
 
     $ fdupes -r /home
     
     Progress [37780/54747] 69%
 
-4. See the size of duplicates found within a folder using the **-S** option.
+4.使用**-S**选项来查看某个文件夹内找到的重复文件的大小。
 
     $ fdupes -S /home/$USER/Desktop/tecmint
     
@@ -108,7 +106,7 @@ It search across all the files and folder recursively, depending upon the number
     /home/tecmint/Desktop/tecmint/tecmint15.txt
     /home/tecmint/Desktop/tecmint/tecmint12.txt
 
-5. You can see the size of duplicate files for every directory and subdirectories encountered within using the **-S** and **-r** options at the same time, as:
+5.你可以同时使用**-S**和**-r**选项来查看所有涉及到的目录和子目录中的重复文件的大小，如下：
 
     $ fdupes -Sr /home/avi/Desktop/
     
@@ -133,11 +131,11 @@ It search across all the files and folder recursively, depending upon the number
     /home/tecmint/Desktop/resume_files/r-csc.html
     /home/tecmint/Desktop/resume_files/fc.html
 
-6. Other than searching in one folder or all the folders recursively, you may choose to choose in two folders or three folders as required. Not to mention you can use option **-S** and/or **-r** if required.
+6.不同于在一个或所有文件夹内递归搜索，你可以选择按要求有选择性地在两个或三个文件夹内进行搜索。不必再提醒你了吧，如有需要，你可以使用**-S**和/或**-r**选项。
 
     $ fdupes /home/avi/Desktop/ /home/avi/Templates/
 
-7. To delete the duplicate files while preserving a copy you can use the option ‘**-d**’. Extra care should be taken while using this option else you might end up loosing necessary files/data and mind it the process is unrecoverable.
+7.要删除重复文件，同时保留一个副本，你可以使用`**-d**`选项。使用该选项，你必须额外小心，否则最终结果可能会是文件/数据的丢失。郑重提醒，此操作不可恢复。
 
     $ fdupes -d /home/$USER/Desktop/tecmint
     
@@ -159,7 +157,7 @@ It search across all the files and folder recursively, depending upon the number
     
     Set 1 of 1, preserve files [1 - 15, all]: 
 
-You may notice that all the duplicates are listed and you are prompted to delete, either one by one or certain range or all in one go. You may select a range something like below to delete files files of specific range.
+你可能注意到了，所有重复的文件被列了出来，并给出删除提示，一个一个来，或者指定范围，或者一次性全部删除。你可以选择一个范围，就像下面这样，来删除指定范围内的文件。
 
     Set 1 of 1, preserve files [1 - 15, all]: 2-15
     
@@ -179,15 +177,15 @@ You may notice that all the duplicates are listed and you are prompted to delete
        [-] /home/tecmint/Desktop/tecmint/tecmint15.txt
        [-] /home/tecmint/Desktop/tecmint/tecmint12.txt
 
-8. From safety point of view, you may like to print the output of ‘**fdupes**’ to file and then check text file to decide what file to delete. This decrease chances of getting your file deleted accidentally. You may do:
+8.从安全角度出发，你可能想要打印`**fdupes**`的输出结果到文件中，然后检查文本文件来决定要删除什么文件。这可以降低意外删除文件的风险。你可以这么做：
 
     $ fdupes -Sr /home > /home/fdupes.txt
 
-**Note**: You may replace ‘**/home**’ with the your desired folder. Also use option ‘**-r**’ and ‘**-S**’ if you want to search recursively and Print Size, respectively.
+**注意**：你可以替换`**/home**`为你想要的文件夹。同时，如果你想要递归搜索并打印大小，可以使用`**-r**`和`**-S**`选项。
 
-9. You may omit the first file from each set of matches by using option ‘**-f**’.
+9.你可以使用`**-f**`选项来忽略每个匹配集中的首个文件。
 
-First List files of the directory.
+首先列出该目录中的文件。
 
     $ ls -l /home/$USER/Desktop/tecmint
     
@@ -198,7 +196,7 @@ First List files of the directory.
     -rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint9 (copy).txt
     -rw-r--r-- 1 tecmint tecmint 65 Aug  8 11:22 tecmint9.txt
 
-and then omit the first file from each set of matches.
+然后，忽略掉每个匹配集中的首个文件。
 
     $ fdupes -f /home/$USER/Desktop/tecmint
     
@@ -207,13 +205,13 @@ and then omit the first file from each set of matches.
     /home/tecmint/Desktop/tecmint9 (another copy).txt
     /home/tecmint/Desktop/tecmint9 (4th copy).txt
 
-10. Check installed version of fdupes.
+10.检查已安装的fdupes版本。
 
     $ fdupes --version
     
     fdupes 1.51
 
-11. If you need any help on fdupes you may use switch ‘**-h**’.
+11.如果你需要关于fdupes的帮助，可以使用`**-h**`开关。
 
     $ fdupes -h
     
@@ -247,16 +245,15 @@ and then omit the first file from each set of matches.
      -v --version     	display fdupes version
      -h --help        	display this help message
 
-That’s for all now. Let me know how you were finding and deleting duplicates files till now in Linux? and also tell me your opinion about this utility. Put your valuable feedback in the comment section below and don’t forget to like/share us and help us get spread.
+到此为止了。让我知道你到现在为止你是怎么在Linux中查找并删除重复文件的？同时，也让我知道你关于这个工具的看法。在下面的评论部分中提供你有价值的反馈吧，别忘了为我们点赞并分享，帮助我们扩散哦。
 
-I am working on another utility called **fslint** to remove duplicate files, will soon post and you people will love to read.
+我正在使用另外一个移除重复文件的工具，它叫**fslint**。很快就会把使用心得分享给大家哦，你们一定会喜欢看的。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/fdupes-find-and-delete-duplicate-files-in-linux/
 
-作者：[Avishek Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
+作者：[GOLinux](https://github.com/GOLinux)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
