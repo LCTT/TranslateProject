@@ -1,3 +1,5 @@
+FSSlc translating
+
 How to download apk files from Google Play Store on Linux
 ================================================================================
 Suppose you want to install an Android app on your Android device. However, for whatever reason, you cannot access Google Play Store on the Android device. What can you do then? One way to install the app without Google Play Store access is to download its APK file using some other means, and then [install the APK][1] file on the Android device manually.
