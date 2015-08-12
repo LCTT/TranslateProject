@@ -1,3 +1,4 @@
+Translating by ictlyh
 Part 1 - RHCE Series: How to Setup and Test Static Network Routing 
 ================================================================================
 RHCE (Red Hat Certified Engineer) is a certification from Red Hat company, which gives an open source operating system and software to the enterprise community, It also gives training, support and consulting services for the companies.
