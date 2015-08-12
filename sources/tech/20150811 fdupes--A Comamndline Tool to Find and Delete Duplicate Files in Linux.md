@@ -1,3 +1,4 @@
+Translating by GOLinux!
 fdupes – A Comamndline Tool to Find and Delete Duplicate Files in Linux
 ================================================================================
 It is a common requirement to find and replace duplicate files for most of the computer users. Finding and removing duplicate files is a tiresome job that demands time and patience. Finding duplicate files can be very easy if your machine is powered by GNU/Linux, thanks to ‘**fdupes**‘ utility.
