@@ -1,3 +1,4 @@
+Translating by ictlyh
 Part 2 - How to Perform Packet Filtering, Network Address Translation and Set Kernel Runtime Parameters
 ================================================================================
 As promised in Part 1 (“[Setup Static Network Routing][1]”), in this article (Part 2 of RHCE series) we will begin by introducing the principles of packet filtering and network address translation (NAT) in Red Hat Enterprise Linux 7, before diving into setting runtime kernel parameters to modify the behavior of a running kernel if certain conditions change or needs arise.
