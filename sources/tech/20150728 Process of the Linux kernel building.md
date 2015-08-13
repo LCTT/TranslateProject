@@ -1,3 +1,5 @@
+Translating by Ezio
+
 Process of the Linux kernel building
 ================================================================================
 Introduction
