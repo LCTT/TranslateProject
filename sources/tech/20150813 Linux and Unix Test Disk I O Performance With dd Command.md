@@ -1,3 +1,5 @@
+DongShuaike is translating.
+
 Linux and Unix Test Disk I/O Performance With dd Command
 ================================================================================
 How can I use dd command on a Linux to test I/O performance of my hard disk drive? How do I check the performance of a hard drive including the read and write speed on a Linux operating systems?
