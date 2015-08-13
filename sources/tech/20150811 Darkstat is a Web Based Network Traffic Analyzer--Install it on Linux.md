@@ -1,62 +1,60 @@
-translating-----geekpi
-
-Darkstat is a Web Based Network Traffic Analyzer – Install it on Linux
+Darkstat一个基于网络的流量分析器 - 在Linux中安装
 ================================================================================
-Darkstat is a simple, web based network traffic analyzer application. It works on many popular operating systems like Linux, Solaris, Mac and AIX. It keeps running in the background as a daemon and continues collecting  and sniffing network data and presents it in easily understandable format within its web interface. It can generate traffic reports for hosts, identify which ports are open on some particular host and is IPV 6 complaint application.  Let’s see how we can install and configure it on Linux operating system.
+Darkstat是一个简易的，基于网络的流量分析程序。它可以在主流的操作系统如Linux、Solaris、MAC、AIX上工作。它以守护进程的形式持续工作在后台并不断地嗅探网络数据并以简单易懂的形式展现在网页上。它可以为主机生成流量报告，鉴别特定主机上哪些端口打开并且兼容IPv6。让我们看下如何在Linux中安装和配置它。
 
-### Installing Darkstat on Linux ###
+### 在Linux中安装配置Darkstat ###
 
-**Install Darkstat on Fedora/CentOS/RHEL:**
+** 在Fedora/CentOS/RHEL中安装Darkstat：**
 
-In order to install it on Fedora/RHEL and CentOS Linux distributions, run following command on the terminal.
+要在Fedora/RHEL和CentOS中安装，运行下面的命令。
 
     sudo yum install darkstat
 
-**Install Darkstat on Ubuntu/Debian:**
+**在Ubuntu/Debian中安装Darkstat：**
 
-Run following on the terminal to install it on Ubuntu and Debian.
+运行下面的命令在Ubuntu和Debian中安装。
 
     sudo apt-get install darkstat
 
-Congratulations, Darkstat has been installed on your Linux system now.
+恭喜你，Darkstat已经在你的Linux中安装了。
 
-### Configuring Darkstat ###
+### 配置 Darkstat ###
 
-In order to run this application properly, we need to perform some basic configurations. Edit /etc/darkstat/init.cfg file in Gedit text editor by running the following command on the terminal.
+为了正确运行这个程序，我恩需要执行一些基本的配置。运行下面的命令用gedit编辑器打开/etc/darkstat/init.cfg文件。
 
     sudo gedit /etc/darkstat/init.cfg
 
 ![](http://linuxpitstop.com/wp-content/uploads/2015/08/13.png)
-Edit Darkstat
+编辑 Darkstat
 
-Change START_DARKSTAT parameter to “yes” and provide your network interface in “INTERFACE”. Make sure to uncomment DIR, PORT, BINDIP, and LOCAL parameters here. If you wish to bind the web interface for Darkstat to some specific IP, provide it in BINDIP section.
+修改START_DARKSTAT这个参数为yes，并在“INTERFACE”中提供你的网络接口。确保取消了DIR、PORT、BINDIP和LOCAL这些参数的注释。如果你希望绑定Darkstat到特定的IP，在BINDIP中提供它
 
-### Starting Darkstat Daemon ###
+### 启动Darkstat守护进程 ###
 
-Once the installation and configuration for Darkstat is complete, run following command to start its daemon.
+安装并配置完Darkstat后，运行下面的命令启动它的守护进程。
 
     sudo /etc/init.d/darkstat start
 
 ![Restarting Darkstat](http://linuxpitstop.com/wp-content/uploads/2015/08/23.png)
 
-You can configure Darkstat to start on system boot by running the following command:
+你可以用下面的命令来在开机时启动Darkstat：
 
     chkconfig darkstat on
 
-Launch your browser and load **http://localhost:666** and it will display the web based graphical interface for Darkstat. Start using this tool to analyze your network traffic.
+打开浏览器并打开**http://localhost:666**，它会显示Darkstat的网页界面。使用这个工具来分析你的网络流量。
 
 ![Darkstat](http://linuxpitstop.com/wp-content/uploads/2015/08/32.png)
 
-### Conclusion ###
+### 总结 ###
 
-It is a lightweight tool with very low memory footprints. The key reason for the popularity of this tool is simplicity, ease of configuration and usage. It is a must-have application for System and Network Administrators.
+它是一个占用很少内存的轻量级工具。这个工具流行的原因是简易、易于配置和使用。这是一个对系统管理员而言必须拥有的程序
 
 --------------------------------------------------------------------------------
 
 via: http://linuxpitstop.com/install-darkstat-on-ubuntu-linux/
 
 作者：[Aun][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
