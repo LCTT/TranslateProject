@@ -1,3 +1,5 @@
+translating-----geekpi
+
 Darkstat is a Web Based Network Traffic Analyzer – Install it on Linux
 ================================================================================
 Darkstat is a simple, web based network traffic analyzer application. It works on many popular operating systems like Linux, Solaris, Mac and AIX. It keeps running in the background as a daemon and continues collecting  and sniffing network data and presents it in easily understandable format within its web interface. It can generate traffic reports for hosts, identify which ports are open on some particular host and is IPV 6 complaint application.  Let’s see how we can install and configure it on Linux operating system.
