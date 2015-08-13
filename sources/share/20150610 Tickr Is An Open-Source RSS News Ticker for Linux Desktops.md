@@ -1,3 +1,5 @@
+translating by xiaoyu33
+
 Tickr Is An Open-Source RSS News Ticker for Linux Desktops
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2015/05/rss-tickr.jpg)

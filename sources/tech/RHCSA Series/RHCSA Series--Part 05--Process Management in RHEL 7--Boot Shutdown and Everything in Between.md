@@ -1,3 +1,5 @@
+FSSlc translating
+
 RHCSA Series: Process Management in RHEL 7: Boot, Shutdown, and Everything in Between – Part 5
 ================================================================================
 We will start this article with an overall and brief revision of what happens since the moment you press the Power button to turn on your RHEL 7 server until you are presented with the login screen in a command line interface.
