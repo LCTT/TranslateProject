@@ -1,3 +1,4 @@
+(translating by runningwater)
 How to Install Logwatch on Ubuntu 15.04
 ================================================================================
 Hi, Today we are going to illustrate the setup of Logwatch on Ubuntu 15.04 Operating system where as it can be used for any Linux and UNIX like operating systems. Logwatch is a customizable system log analyzer and reporting log-monitoring system that go through your logs for a given period of time and make a report in the areas that you wish with the details you want. Its an easy tool to install, configure, review and to take actions that will improve security from data it provides. Logwatch scans the log files of major operating system components, like SSH, Web Server and forwards a summary that contains the valuable items in it that needs to be looked at.
@@ -129,7 +130,7 @@ At the end of this tutorial you learn about the complete setup of Logwatch on Ub
 via: http://linoxide.com/ubuntu-how-to/install-use-logwatch-ubuntu-15-04/
 
 作者：[Kashif Siddique][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
