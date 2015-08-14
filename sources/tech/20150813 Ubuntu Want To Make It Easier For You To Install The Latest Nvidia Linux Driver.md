@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Ubuntu Want To Make It Easier For You To Install The Latest Nvidia Linux Driver
 ================================================================================
 ![Ubuntu Gamers are on the rise -and so is demand for the latest drivers](http://www.omgubuntu.co.uk/wp-content/uploads/2014/03/ubuntugamer_logo_dark-500x250.jpg)
