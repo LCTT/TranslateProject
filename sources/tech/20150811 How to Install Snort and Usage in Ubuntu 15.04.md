@@ -1,3 +1,5 @@
+translating----geekpi
+
 How to Install Snort and Usage in Ubuntu 15.04
 ================================================================================
 Intrusion detection in a network is important for IT security. Intrusion Detection System used for the detection  of illegal and malicious attempts in the network. Snort is well-known  open source intrusion detection system. Web interface (Snorby) can be used  for better analysis of alerts.  Snort can be used as an intrusion prevention system with iptables/pf firewall.  In this article, we will install and configure an open source IDS system snort.
