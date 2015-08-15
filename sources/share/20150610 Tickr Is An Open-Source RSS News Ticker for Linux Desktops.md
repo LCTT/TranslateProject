@@ -1,94 +1,93 @@
-translating by xiaoyu33
-
-Tickr Is An Open-Source RSS News Ticker for Linux Desktops
+Trickr：一个开源的Linux桌面RSS新闻速递
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2015/05/rss-tickr.jpg)
 
-**Latest! Latest! Read all about it!**
+**最新的！最新的！阅读关于它的一切！**
 
-Alright, so the app we’re highlighting today isn’t quite the binary version of an old newspaper seller — but it is a great way to have the latest news brought to you, on your desktop.
+好了，所以我们今天要强调的应用程序不是相当于旧报纸的二进制版本—而是它会以一个伟大的方式，将最新的新闻推送到你的桌面上。
 
-Tick is a GTK-based news ticker for the Linux desktop that scrolls the latest headlines and article titles from your favourite RSS feeds in horizontal strip that you can place anywhere on your desktop.
+Tick是一个基于GTK的Linux桌面新闻速递，能够在水平带滚动显示最新头条新闻，以及你最爱的RSS资讯文章标题，当然你可以放置在你桌面的任何地方。
 
-Call me Joey Calamezzo; I put mine on the bottom TV news station style.
+请叫我Joey Calamezzo；我把我的放在底部，有电视新闻台的风格。
 
-“Over to you, sub-heading.”
+“到你了，子标题”
 
-### RSS — Remember That? ###
+### RSS -还记得吗？ ###
 
-“Thanks paragraph ending.”
+“谢谢段落结尾。”
 
-In an era of push notifications, social media, and clickbait, cajoling us into reading the latest mind-blowing, humanity saving listicle ASAP, RSS can seem a bit old hat.
+在一个推送通知，社交媒体，以及点击诱饵的时代，哄骗我们阅读最新的令人惊奇的，人人都爱读的清单，RSS看起来有一点过时了。
 
-For me? Well, RSS lives up to its name of Really Simple Syndication. It’s the easiest, most manageable way to have news  come to me. I can manage and read stuff when I want; there’s no urgency to view lest the tweet vanish into the stream or the push notification vanish.
+对我来说？恩，RSS是名副其实的真正简单的聚合。这是将消息通知给我的最简单，最易于管理的方式。我可以在我愿意的时候，管理和阅读一些东西；没必要匆忙的去看，以防这条微博消失在信息流中，或者推送通知消失。
 
-The beauty of Tickr is in its utility. You can have a constant stream of news trundling along the bottom of your screen, which you can passively glance at from time to time.
+tickr的美在于它的实用性。你可以不断地有新闻滚动在屏幕的底部，然后不时地瞥一眼。
 
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2015/05/tickr-close-up-750x58.jpg)
 
-There’s no pressure to ‘read’ or ‘mark all read’ or any of that. When you see something you want to read you just click it to open it in a web browser.
+你不会有“阅读”或“标记所有为已读”的压力。当你看到一些你想读的东西，你只需点击它，将它在Web浏览器中打开。
 
-### Setting it Up ###
+### 开始设置 ###
 
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2015/05/tickr-rss-settings.jpg)
 
-Although Tickr is available to install from the Ubuntu Software Centre it hasn’t been updated for a long time. Nowhere is this sense of abandonment more keenly felt than when opening the unwieldy and unintuitive configuration panel.
+尽管虽然tickr可以从Ubuntu软件中心安装，然而它已经很久没有更新了。当你打开笨拙的不直观的控制面板的时候，没有什么能够比这更让人感觉被遗弃的了。
 
-To open it:
+打开它：
 
-1. Right click on the Tickr bar
-1. Go to Edit > Preferences
-1. Adjust the various settings
+1. 右键单击tickr条
+1. 转至编辑>首选项
+1. 调整各种设置
 
-Row after row of options and settings, few of which seem to make sense at first. But poke and prod around and you’ll controls for pretty much everything, including:
+选项和设置行的后面，有些似乎是容易理解的。但是知己知彼你能够几乎掌控一切，包括：
 
-- Set scrolling speed
-- Choose behaviour when mousing over
-- Feed update frequency
-- Font, including font sizes and color
-- Separator character  (‘delineator’)
-- Position of Tickr on screen
-- Color and opacity of Tickr bar
-- Choose how many articles each feed displays
+- 设置滚动速度
+- 选择鼠标经过时的行为
+- 资讯更新频率
+- 字体，包括字体大小和颜色
+- 分隔符（“delineator”）
+- tickr在屏幕上的位置
+- tickr条的颜色和不透明度
+- 选择每种资讯显示多少文章
 
-One ‘quirk’ worth mentioning is that pressing the ‘Apply’ only updates the on-screen Tickr to preview changes. For changes to take effect when you exit the Preferences window you need to click ‘OK’.
+有个值得一提的“怪癖”是，当你点击“应用”按钮，只会更新tickr的屏幕预览。当您退出“首选项”窗口时，请单击“确定”。
 
-Getting the bar to sit flush on your display can also take a fair bit of tweaking, especially on Unity.
+想要滚动条在你的显示屏上水平显示，也需要公平一点的调整，特别是统一显示。
 
-Press the “full width button” to have the app auto-detect your screen width. By default when placed at the top or bottom it leaves a 25px gap (the app was created back in the days of GNOME 2.x desktops). After hitting the top or bottom buttons just add an extra 25 pixels to the input box compensate for this.
+按下“全宽按钮”，能够让应用程序自动检测你的屏幕宽度。默认情况下，当放置在顶部或底部时，会留下25像素的间距（应用程序被创建在过去的GNOME2.x桌面）。只需添加额外的25像素到输入框，来弥补这个问题。
 
-Other options available include: choose which browser articles open in; whether Tickr appears within a regular window frame; whether a clock is shown; and how often the app checks feed for articles.
+其他可供选择的选项包括：选择文章在哪个浏览器打开；tickr是否以一个常规的窗口出现；
+是否显示一个时钟；以及应用程序多久检查一次文章资讯。
 
-#### Adding Feeds ####
+#### 添加资讯 ####
 
-Tickr comes with a built-in list of over 30 different feeds, ranging from technology blogs to mainstream news services.
+tickr自带的有超过30种不同的资讯列表，从技术博客到主流新闻服务。
 
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2015/05/feed-picker-750x398.jpg)
 
-You can select as many of these as you like to show headlines in the on screen ticker. If you want to add your own feeds you can: –
+你可以选择很多你想在屏幕上显示的新闻提要。如果你想添加自己的资讯，你可以：—
 
-1. Right click on the Tickr bar
-1. Go to File > Open Feed
-1. Enter Feed URL
-1. Click ‘Add/Upd’ button
-1. Click ‘OK (select)’
+1. 右键单击tickr条
+1. 转至文件>打开资讯
+1. 输入资讯网址
+1. 点击“添加/更新”按钮
+1. 单击“确定”（选择）
 
-To set  how many items from each feed shows in the ticker change the “Read N items max per feed” in the other preferences window.
+如果想设置每个资讯在ticker中显示多少条文章，可以去另一个首选项窗口修改“每个资讯最大读取N条文章”
 
-### Install Tickr in Ubuntu 14.04 LTS and Up ###
+### 在Ubuntu 14.04 LTS或更高版本上安装Tickr ###
 
-So that’s Tickr. It’s not going to change the world but it will keep you abreast of what’s happening in it.
+在Ubuntu 14.04 LTS或更高版本上安装Tickr
 
-To install it in Ubuntu 14.04 LTS or later head to the Ubuntu Software Centre but clicking the button below.
+在Ubuntu 14.04 LTS或更高版本中安装，转到Ubuntu软件中心，但要点击下面的按钮。
 
-- [Click to install Tickr form the Ubuntu Software Center][1]
+- [点击此处进入Ubuntu软件中心安装tickr][1]
 
 --------------------------------------------------------------------------------
 
 via: http://www.omgubuntu.co.uk/2015/06/tickr-open-source-desktop-rss-news-ticker
 
 作者：[Joey-Elijah Sneddon][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[xiaoyu33](https://github.com/xiaoyu33)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
