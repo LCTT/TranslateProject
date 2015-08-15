@@ -1,6 +1,7 @@
-Darkstat一个基于网络的流量分析器 - 在Linux中安装
+在 Linux 中安装 Darkstat：基于网页的流量分析器
 ================================================================================
-Darkstat是一个简易的，基于网络的流量分析程序。它可以在主流的操作系统如Linux、Solaris、MAC、AIX上工作。它以守护进程的形式持续工作在后台并不断地嗅探网络数据并以简单易懂的形式展现在网页上。它可以为主机生成流量报告，鉴别特定主机上哪些端口打开并且兼容IPv6。让我们看下如何在Linux中安装和配置它。
+
+Darkstat是一个简易的，基于网页的流量分析程序。它可以在主流的操作系统如Linux、Solaris、MAC、AIX上工作。它以守护进程的形式持续工作在后台，不断地嗅探网络数据，以简单易懂的形式展现在它的网页上。它可以为主机生成流量报告，识别特定的主机上哪些端口是打开的，它兼容IPv6。让我们看下如何在Linux中安装和配置它。
 
 ### 在Linux中安装配置Darkstat ###
 
@@ -20,14 +21,15 @@ Darkstat是一个简易的，基于网络的流量分析程序。它可以在主
 
 ### 配置 Darkstat ###
 
-为了正确运行这个程序，我恩需要执行一些基本的配置。运行下面的命令用gedit编辑器打开/etc/darkstat/init.cfg文件。
+为了正确运行这个程序，我们需要执行一些基本的配置。运行下面的命令用gedit编辑器打开/etc/darkstat/init.cfg文件。
 
     sudo gedit /etc/darkstat/init.cfg
 
 ![](http://linuxpitstop.com/wp-content/uploads/2015/08/13.png)
-编辑 Darkstat
 
-修改START_DARKSTAT这个参数为yes，并在“INTERFACE”中提供你的网络接口。确保取消了DIR、PORT、BINDIP和LOCAL这些参数的注释。如果你希望绑定Darkstat到特定的IP，在BINDIP中提供它
+*编辑 Darkstat*
+
+修改START_DARKSTAT这个参数为yes，并在“INTERFACE”中提供你的网络接口。确保取消了DIR、PORT、BINDIP和LOCAL这些参数的注释。如果你希望绑定Darkstat到特定的IP，在BINDIP参数中提供它。
 
 ### 启动Darkstat守护进程 ###
 
@@ -47,7 +49,7 @@ Darkstat是一个简易的，基于网络的流量分析程序。它可以在主
 
 ### 总结 ###
 
-它是一个占用很少内存的轻量级工具。这个工具流行的原因是简易、易于配置和使用。这是一个对系统管理员而言必须拥有的程序
+它是一个占用很少内存的轻量级工具。这个工具流行的原因是简易、易于配置使用。这是一个对系统管理员而言必须拥有的程序。
 
 --------------------------------------------------------------------------------
 
@@ -55,7 +57,7 @@ via: http://linuxpitstop.com/install-darkstat-on-ubuntu-linux/
 
 作者：[Aun][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
