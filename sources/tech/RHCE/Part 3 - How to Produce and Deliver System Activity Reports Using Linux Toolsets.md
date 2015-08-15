@@ -1,3 +1,4 @@
+Translating by ictlyh
 Part 3 - How to Produce and Deliver System Activity Reports Using Linux Toolsets
 ================================================================================
 As a system engineer, you will often need to produce reports that show the utilization of your system’s resources in order to make sure that: 1) they are being utilized optimally, 2) prevent bottlenecks, and 3) ensure scalability, among other reasons.
