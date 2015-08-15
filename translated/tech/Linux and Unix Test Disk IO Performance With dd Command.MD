@@ -21,9 +21,9 @@
 在这个例子当中，我将使用搭载Ubuntu Linux 14.04 LTS系统的RAID-10(配有SAS SSD的Adaptec 5405Z)服务器阵列来运行。基本语法为：
 
     dd if=/dev/input.file  of=/path/to/output.file  bs=block-size  count=number-of-blocks  oflag=dsync
-    ## GNU dd syntax ##
+    ## GNU dd语法 ##
     dd if=/dev/zero of=/tmp/test1.img bs=1G count=1 oflag=dsync
-    ## OR alternate syntax for GNU/dd ##
+    ##另外一种GNU dd的语法 ##
     dd if=/dev/zero of=/tmp/testALT.img bs=1G count=1 conv=fdatasync
 
 输出样例：
