@@ -1,11 +1,14 @@
 Translating by Ezio
 
 Process of the Linux kernel building
+如何构建Linux 内核的
 ================================================================================
-Introduction
+介绍
 --------------------------------------------------------------------------------
 
 I will not tell you how to build and install custom Linux kernel on your machine, you can find many many [resources](https://encrypted.google.com/search?q=building+linux+kernel#q=building+linux+kernel+from+source+code) that will help you to do it. Instead, we will know what does occur when you are typed `make` in the directory with Linux kernel source code in this part. When I just started to learn source code of the Linux kernel, the [Makefile](https://github.com/torvalds/linux/blob/master/Makefile) file was a first file that I've opened. And it was scary :) This [makefile](https://en.wikipedia.org/wiki/Make_%28software%29) contains `1591` lines of code at the time when I wrote this part and it was [third](https://github.com/torvalds/linux/commit/52721d9d3334c1cb1f76219a161084094ec634dc) release candidate.
+
+我不会告诉你怎么在自己的电脑上去构建、安装一个定制化的Linux 内核，这样的[资料](https://encrypted.google.com/search?q=building+linux+kernel#q=building+linux+kernel+from+source+code) 太多了，它们会对你有帮助。本文会告诉你当你在内核源码路径里敲下`make` 时会发生什么。当我刚刚开始学习内核代码时，[Makefile](https://github.com/torvalds/linux/blob/master/Makefile) 是我打开的第一个文件，这个文件真令人害怕 :)。那时候这个[Makefile](https://en.wikipedia.org/wiki/Make_%28software%29) 包含了`1591` 行代码，当我开始写本文是，这个[Makefile](https://github.com/torvalds/linux/commit/52721d9d3334c1cb1f76219a161084094ec634dc) 已经是第三个候选版本了。
 
 This makefile is the the top makefile in the Linux kernel source code and kernel build starts here. Yes, it is big, but moreover, if you've read the source code of the Linux kernel you can noted that all directories with a source code has an own makefile. Of course it is not real to describe how each source files compiled and linked. So, we will see compilation only for the standard case. You will not find here building of the kernel's documentation, cleaning of the kernel source code, [tags](https://en.wikipedia.org/wiki/Ctags) generation, [cross-compilation](https://en.wikipedia.org/wiki/Cross_compiler) related stuff and etc. We will start from the `make` execution with the standard kernel configuration file and will finish with the building of the [bzImage](https://en.wikipedia.org/wiki/Vmlinux#bzImage).
 
@@ -13,13 +16,25 @@ It would be good if you're already familiar with the [make](https://en.wikipedia
 
 So let's start.
 
+这个makefile 是Linux 内核代码的顶端makefile ，内核构件就始于此处。是的，它的内容很多，但是如果你已经读过内核源代码，你就会发现每个包含代码的目录都有一个自己的makefile。当然了，我们不会去描述每个代码文件是怎么编译链接的。所以我们将只会挑选一些通用的例子来说明问题，而你不会在这里找到构建内核的文档，如何整洁内核代码， [tags](https://en.wikipedia.org/wiki/Ctags) 的生成，和[交叉编译](https://en.wikipedia.org/wiki/Cross_compiler)  相关的说明，等等。我们将从`make` 开始，使用标准的内核配置文件，到生成了内核镜像[bzImage](https://en.wikipedia.org/wiki/Vmlinux#bzImage) 结束。
+
+如果你已经很了解[make](https://en.wikipedia.org/wiki/Make_%28software%29) 工具那是最好，但是我也会描述本文出现的相关代码。
+
+让我们开始吧
+
+
 Preparation before the kernel compilation
+编译内核前的准备
 ---------------------------------------------------------------------------------
 
 There are many things to preparate before the kernel compilation will be started. The main point here is to find and configure 
 the type of compilation, to parse command line arguments that are passed to the `make` util and etc. So let's dive into the top `Makefile` of the Linux kernel.
 
+在开始便以前要进行很多准备工作。最主要的就是找到并配置好配置文件，`make` 命令要使用到的参数都需要从这些配置文件获取。
+
 The Linux kernel top `Makefile` is responsible for building two major products: [vmlinux](https://en.wikipedia.org/wiki/Vmlinux) (the resident kernel image) and the modules (any module files). The [Makefile](https://github.com/torvalds/linux/blob/master/Makefile) of the Linux kernel starts from the definition of the following variables:
+
+内核顶端的`Makefile` 负责构建两个主要的产品：[vmlinux](https://en.wikipedia.org/wiki/Vmlinux) （内核镜像可执行文件）和模块文件。内核的 [Makefile](https://github.com/torvalds/linux/blob/master/Makefile)  以次开始：
 
 ```Makefile
 VERSION = 4
@@ -31,11 +46,15 @@ NAME = Hurr durr I'ma sheep
 
 These variables determine the current version of the Linux kernel and are used in the different places, for example in the forming of the `KERNELVERSION` variable:
 
+这些变量决定了当前内核的版本，并且被使用在很多不同的地方，比如`KERNELVERSION` ：
+
 ```Makefile
 KERNELVERSION = $(VERSION)$(if $(PATCHLEVEL),.$(PATCHLEVEL)$(if $(SUBLEVEL),.$(SUBLEVEL)))$(EXTRAVERSION)
 ```
 
 After this we can see a couple of the `ifeq` condition that check some of the parameters passed to `make`. The Linux kernel `makefiles` provides a special `make help` target that prints all available targets and some of the command line arguments that can be passed to `make`. For example: `make V=1` - provides verbose builds. The first `ifeq` condition checks if the `V=n` option is passed to make:
+
+接下来我们会看到很多`ifeq` 条件判断语句，它们负责检查传给`make` 的参数。内核的`Makefile` 提供了一个特殊的编译选项`make help` ，这个选项可以生成所有的可用目标和一些能传给`make` 的有效的命令行参数。举个例子，`make V=1` 会在构建过程中输出详细的编译信息，第一个`ifeq` 就是检查传递给make的`V=n` 选项。
 
 ```Makefile
 ifeq ("$(origin V)", "command line")
@@ -57,6 +76,8 @@ export quiet Q KBUILD_VERBOSE
 ```
 
 If this option is passed to `make` we set the `KBUILD_VERBOSE` variable to the value of the `V` option. Otherwise we set the `KBUILD_VERBOSE` variable to zero. After this we check value of the `KBUILD_VERBOSE` variable and set values of the `quiet` and `Q` variables depends on the `KBUILD_VERBOSE` value. The `@` symbols suppress the output of the command and if it will be set before a command we will see something like this: `CC scripts/mod/empty.o` instead of the `Compiling .... scripts/mod/empty.o`. In the end we just export all of these variables. The next `ifeq` statement checks that `O=/dir` option was passed to the `make`. This option allows to locate all output files in the given `dir`:
+
+如果`V=n` 这个选项传给了`make` ，系统就会给变量`KBUILD_VERBOSE` 选项附上`V` 的值，否则的话`KBUILD_VERBOSE` 就会为0。然后系统会检查`KBUILD_VERBOSE` 的值，以此来决定`quiet`  和`Q` 的值。符号`@` 控制命令的输出，如果它被放在一个命令之前，这条命令的执行将会是`CC scripts/mod/empty.o`，而不是`Compiling .... scripts/mod/empty.o`（注：CC 在makefile 中一般都是编译命令）。最后系统仅仅导出所有的变量。下一个`ifeq` 语句检查的是传递给`make` 的选项`O=/dir`，这个选项允许在指定的目录`dir` 输出所有的结果文件：
 
 ```Makefile
 ifeq ($(KBUILD_SRC),)
