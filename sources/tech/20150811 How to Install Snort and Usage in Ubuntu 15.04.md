@@ -1,56 +1,54 @@
-translating----geekpi
-
-How to Install Snort and Usage in Ubuntu 15.04
+在Ubuntu 15.04中如何安装和使用Snort
 ================================================================================
-Intrusion detection in a network is important for IT security. Intrusion Detection System used for the detection  of illegal and malicious attempts in the network. Snort is well-known  open source intrusion detection system. Web interface (Snorby) can be used  for better analysis of alerts.  Snort can be used as an intrusion prevention system with iptables/pf firewall.  In this article, we will install and configure an open source IDS system snort.
+对于IT安全而言入侵检测是一件非常重要的事。入侵检测系统用于检测网络中非法与恶意的请求。Snort是一款知名的开源入侵检测系统。Web界面（Snorby）可以用于更好地分析警告。Snort使用iptables/pf防火墙来作为入侵检测系统。本篇中，我们会安装并配置一个开源的IDS系统snort。
 
-### Snort Installation ###
+### Snort 安装 ###
 
-#### Prerequisite ####
+#### 要求 ####
 
-Data Acquisition library (DAQ) is used by the snort for abstract calls to packet capture libraries.  It is available on snort website.  Downloading process is shown in the following screenshot.
+snort所使用的数据采集库（DAQ）用于抽象地调用采集库。这个在snort上就有。下载过程如下截图所示。
 
 ![downloading_daq](http://blog.linoxide.com/wp-content/uploads/2015/07/downloading_daq.png)
 
-Extract it and run ./configure, make and make install commands for DAQ installation.  However, DAQ required other tools therefore ./configure script will generate following errors .
+解压并运行./configure、make、make install来安装DAQ。然而，DAQ要求其他的工具，因此，./configure脚本会生成下面的错误。
 
-flex and bison error
+flex和bison错误
 
 ![flexandbison_error](http://blog.linoxide.com/wp-content/uploads/2015/07/flexandbison_error.png)
 
-libpcap error.
+libpcap错误
 
 ![libpcap error](http://blog.linoxide.com/wp-content/uploads/2015/07/libpcap-error.png)
 
-Therefore first install flex/bison and libcap before DAQ installation which is shown in the figure.
+因此在安装DAQ之前先安装flex/bison和libcap。
 
 ![install_flex](http://blog.linoxide.com/wp-content/uploads/2015/07/install_flex.png)
 
-Installation of libpcap development library is shown below
+如下所示安装libpcap开发库
 
 ![libpcap-dev installation](http://blog.linoxide.com/wp-content/uploads/2015/07/libpcap-dev-installation.png)
 
-After installation of necessary tools, again run ./configure script which will show following output.
+安装完必要的工具后，再次运行./configure脚本，将会显示下面的输出。
 
 ![without_error_configure](http://blog.linoxide.com/wp-content/uploads/2015/07/without_error_configure.png)
 
-make and make install commands result is shown in the following screens.
+make和make install 命令的结果如下所示。
 
 ![make install](http://blog.linoxide.com/wp-content/uploads/2015/07/make-install.png)
 
 ![make](http://blog.linoxide.com/wp-content/uploads/2015/07/make.png)
 
-After successful installation of DAQ, now we will install snort.   Downloading using wget is shown in the below figure.
+成功安装DAQ之后，我们现在安装snort。如下图使用wget下载它。
 
 ![downloading_snort](http://blog.linoxide.com/wp-content/uploads/2015/07/downloading_snort.png)
 
-Extract compressed package using  below given command.
+使用下面的命令解压安装包。
 
     #tar -xvzf  snort-2.9.7.3.tar.gz
 
 ![snort_extraction](http://blog.linoxide.com/wp-content/uploads/2015/07/snort_extraction.png)
 
-Create installation directory and set prefix parameter in the configure script. It is also recommended to enable sourcefire flag for Packet Performance Monitoring (PPM).
+创建安装目录并在脚本中设置prefix参数。同样也建议启用包性能监控（PPM）标志。
 
     #mkdir /usr/local/snort
 
@@ -58,21 +56,21 @@ Create installation directory and set prefix parameter in the configure script. 
 
 ![snort_installation](http://blog.linoxide.com/wp-content/uploads/2015/07/snort_installation.png)
 
-Configure script generates error due to missing libpcre-dev , libdumbnet-dev and zlib development libraries.
+配置脚本由于缺少libpcre-dev、libdumbnet-dev 和zlib开发库而报错。
 
-error due to missing libpcre library.
+配置脚本由于缺少libpcre库报错。
 
 ![pcre-error](http://blog.linoxide.com/wp-content/uploads/2015/07/pcre-error.png)
 
-error due to missing dnet (libdumbnet) library.
+配置脚本由于缺少dnet（libdumbnet）库而报错。
 
 ![libdnt error](http://blog.linoxide.com/wp-content/uploads/2015/07/libdnt-error.png)
 
-configure script generate error due to missing zlib library.
+配置脚本由于缺少zlib库而报错
 
 ![zlib error](http://blog.linoxide.com/wp-content/uploads/2015/07/zlib-error.png)
 
-Installation of all required development libraries is shown in the next screenshots.
+如下所示，安装所有需要的开发库。
 
     # aptitude install libpcre3-dev
 
@@ -86,9 +84,9 @@ Installation of all required development libraries is shown in the next screensh
 
 ![zlibg-dev installation](http://blog.linoxide.com/wp-content/uploads/2015/07/zlibg-dev-installation.png)
 
-After installation of above required libraries for snort, again run the configure scripts without any error.
+安装完snort需要的库之后，再次运行配置脚本就不会报错了。
 
-Run make & make install commands for the  compilation and installations of snort in /usr/local/snort directory.
+运行make和make install命令在/usr/local/snort目录下完成安装。
 
     #make
 
@@ -98,22 +96,22 @@ Run make & make install commands for the  compilation and installations of snort
 
 ![make install snort](http://blog.linoxide.com/wp-content/uploads/2015/07/make-install-snort.png)
 
-Finally snort running from /usr/local/snort/bin directory.  Currently it is in promisc mode (packet dump mode) of all traffic on eth0 interface.
+最终snort在/usr/local/snort/bin中运行。现在它对eth0的所有流量都处在promisc模式（包转储模式）。
 
 ![snort running](http://blog.linoxide.com/wp-content/uploads/2015/07/snort-running.png)
 
-Traffic  dump by the snort interface is shown  in following figure.
+如下图所示snort转储流量。
 
 ![traffic](http://blog.linoxide.com/wp-content/uploads/2015/07/traffic1.png)
 
-#### Rules and Configuration of Snort ####
+#### Snort的规则和配置 ####
 
-Snort installation from source code required rules and configuration setting therefore now we will copy rules and configuration under /etc/snort directory. We have created single bash scripts for rules and configuration setting. It is used for following snort setting.
+从源码安装的snort需要规则和安装配置，因此我们会从/etc/snort下面复制规则和配置。我们已经创建了单独的bash脚本来用于规则和配置。它会设置下面这些snort设置。
 
-- Creation of snort user for snort IDS service on linux.
-- Creation of directories and files under /etc directory for snort configuration.
-- Permission setting and copying data from etc directory of snort source code.
-- Remove # (comment sign) from rules path in snort.conf file.
+- 在linux中创建snort用户用于snort IDS服务。
+- 在/etc下面创建snort的配置文件和文件夹。
+- 权限设置并从etc中复制snortsnort源代码
+- 从snort文件中移除规则中的#(注释符号)。
 
     #!/bin/bash##PATH of source code of snort
     snort_src="/home/test/Downloads/snort-2.9.7.3"
@@ -143,15 +141,15 @@ Snort installation from source code required rules and configuration setting the
     sed -i 's/include \$RULE\_PATH/#include \$RULE\_PATH/' /etc/snort/snort.conf
     echo "---DONE---"
 
-Change the snort source directory in the script and run it.  Following output appear in case of success.
+改变脚本中的snort源目录并运行。下面是成功的输出。
 
 ![running script](http://blog.linoxide.com/wp-content/uploads/2015/08/running_script.png)
 
-Above script copied following files/directories from snort source into /etc/snort configuration file.
+上面的脚本从snort源中复制下面的文件/文件夹到/etc/snort配置文件中
 
 ![files copied](http://blog.linoxide.com/wp-content/uploads/2015/08/created.png)
 
-Snort configuration file is very complex however following necessary changes are required in snort.conf for IDS proper working.
+、snort的配置非常复杂，然而为了IDS能正常工作需要进行下面必要的修改。
 
     ipvar HOME_NET 192.168.1.0/24  # LAN side
 
@@ -171,32 +169,32 @@ Snort configuration file is very complex however following necessary changes are
 
     include $RULE_PATH/local.rules   # file for custom rules
 
-remove comment sign (#) from other rules such as ftp.rules,exploit.rules etc.
+移除ftp.rules、exploit.rules前面的注释符号(#)。
 
 ![path rules](http://blog.linoxide.com/wp-content/uploads/2015/08/path-rules.png)
 
-Now [Download community][1] rules  and extract under /etc/snort/rules directory. Enable community and emerging threats  rules  in snort.conf file.
+下载[下载社区][1]规则并解压到/etc/snort/rules。启用snort.conf中的社区及紧急威胁规则。
 
 ![wget_rules](http://blog.linoxide.com/wp-content/uploads/2015/08/wget_rules.png)
 
 ![community rules](http://blog.linoxide.com/wp-content/uploads/2015/08/community-rules1.png)
 
-Run following command to test the configuration file after above mentioned changes.
+进行了上面的更改后，运行下面的命令来检验配置文件。
 
     #snort -T -c /etc/snort/snort.conf
 
 ![snort running](http://blog.linoxide.com/wp-content/uploads/2015/08/snort-final.png)
 
-### Conclusion ###
+### 总结 ###
 
-In this article our focus was on the installation and configuration of an open source IDPS system snort on Ubuntu distribution. By default it is used for the monitoring of events however it can con configured inline mode for the protection of network. Snort rules can be tested and analysed in offline mode using pcap capture file.
+本篇中，我们致力于开源IDPS系统snort在Ubuntu上的安装和配置。默认它用于监控时间，然而它可以被配置成用于网络保护的内联模式。snort规则可以在离线模式中可以使用pcap文件测试和分析
 
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/security/install-snort-usage-ubuntu-15-04/
 
 作者：[nido][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
