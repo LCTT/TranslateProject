@@ -1,3 +1,5 @@
+DongShuaike is translating.
+
 Ubuntu NVIDIA Graphics Drivers PPA Is Ready For Action
 ================================================================================
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2015/08/Screen-Shot-2015-08-12-at-14.19.42.png)
