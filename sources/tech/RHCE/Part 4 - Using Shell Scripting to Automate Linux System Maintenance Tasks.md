@@ -1,3 +1,4 @@
+ictlyh Translating
 Part 4 - Using Shell Scripting to Automate Linux System Maintenance Tasks
 ================================================================================
 Some time ago I read that one of the distinguishing characteristics of an effective system administrator / engineer is laziness. It seemed a little contradictory at first but the author then proceeded to explain why: 
