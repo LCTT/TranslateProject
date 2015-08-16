@@ -1,3 +1,5 @@
+translating by xiaoyu33
+
 shellinabox – A Web based AJAX Terminal Emulator
 ================================================================================
 ### About shellinabox ###
