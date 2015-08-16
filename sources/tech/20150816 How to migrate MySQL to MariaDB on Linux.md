@@ -1,3 +1,4 @@
+translation by strugglingyouth
 How to migrate MySQL to MariaDB on Linux
 ================================================================================
 Since the Oracle's acquisition of MySQL, a lot of MySQL developers and users moved away from MySQL due to Oracle's more closed-door stance on MySQL development and maintenance. The community-driven outcome of such movement is a fork of MySQL, called MariaDB. Led by original MySQL developers, the development of MariaDB follows the open-source philosophy and makes sure of [its binary compatibility with MySQL][1]. The Linux distributions such as Red Hat families (Fedora, CentOS, RHEL), Ubuntu and Mint, openSUSE and Debian already started to use and support MariaDB as a drop-in replacement of MySQL.
