@@ -1,3 +1,4 @@
+KevinSJ Translating
 How to get Public IP from Linux Terminal?
 ================================================================================
 ![](http://www.blackmoreops.com/wp-content/uploads/2015/06/256x256xHow-to-get-Public-IP-from-Linux-Terminal-blackMORE-Ops.png.pagespeed.ic.GKEAEd4UNr.png)
