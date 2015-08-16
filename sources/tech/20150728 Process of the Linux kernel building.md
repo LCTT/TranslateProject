@@ -110,6 +110,14 @@ We check the `KBUILD_SRC` that represent top directory of the source code of the
 * If custom output directory created sucessfully, execute `make` again with the new directory (see `-C` option).
 
 The next `ifeq` statements checks that `C` or `M` options was passed to the make: 
+系统会检查变量`KBUILD_SRC`，如果他是空的（第一次执行makefile 时总是空的），并且变量`KBUILD_OUTPUT` 被设成了选项`O` 的值（如果这个选项被传进来了），那么这个值就会用来代表内核源码的顶层目录。下一步会检查变量`KBUILD_OUTPUT` ，如果之前设置过这个变量，那么接下来会做一下几件事：
+
+* 将变量`KBUILD_OUTPUT` 的值保存到临时变量`saved-output`；
+* 尝试创建输出目录；
+* 检查创建的输出目录，如果失败了就打印错误；
+* 如果成功创建了输出目录，那么就在新目录重新执行`make` 命令（参见选项`-C`）。
+
+下一个`ifeq` 语句会检查传递给make 的选项`C` 和`M`：
 
 ```Makefile
 ifeq ("$(origin C)", "command line")
@@ -126,6 +134,8 @@ endif
 
 The first `C` option tells to the `makefile` that need to check all `c` source code with a tool provided by the `$CHECK` environment variable, by default it is [sparse](https://en.wikipedia.org/wiki/Sparse). The second `M` option provides build for the external modules (will not see this case in this part). As we set this variables we make a check of the `KBUILD_SRC` variable and if it is not set we set `srctree` variable to `.`:
 
+第一个选项`C` 会告诉`makefile` 需要使用环境变量`$CHECK` 提供的工具来检查全部`c` 代码，默认情况下会使用[sparse](https://en.wikipedia.org/wiki/Sparse)。第二个选项`M` 会用来编译外部模块（本文不做讨论）。因为设置了这两个变量，系统还会检查变量`KBUILD_SRC`，如果`KBUILD_SRC` 没有被设置，系统会设置变量`srctree` 为`.`：
+
 ```Makefile
 ifeq ($(KBUILD_SRC),)
         srctree := .
@@ -138,7 +148,9 @@ obj		:= $(objtree)
 export srctree objtree VPATH
 ```
 
-That tells to `Makefile` that source tree of the Linux kernel will be in the current directory where `make` command was executed. After this we set `objtree` and other variables to this directory and export these variables. The next step is the getting value for the `SUBARCH` variable that will represent tewhat the underlying archicecture is:
+That tells to `Makefile` that source tree of the Linux kernel will be in the current directory where `make` command was executed. After this we set `objtree` and other variables to this directory and export these variables. The next step is the setting value for the `SUBARCH` variable that will represent what the underlying archicecture is:
+
+这将会告诉`Makefile` 内核的源码树就在执行make 命令的目录。然后要设置`objtree` 和其他变量为执行make 命令的目录，并且将这些变量导出。接着就是要获取`SUBARCH` 的值，这个变量代表了当前的系统架构（注：一般值CPU 架构）：
 
 ```Makefile
 SUBARCH := $(shell uname -m | sed -e s/i.86/x86/ -e s/x86_64/x86/ \
@@ -150,6 +162,8 @@ SUBARCH := $(shell uname -m | sed -e s/i.86/x86/ -e s/x86_64/x86/ \
 ```
 
 As you can see it executes [uname](https://en.wikipedia.org/wiki/Uname) utils that prints information about machine, operating system and architecture. As it will get output of the `uname` util, it will parse it and assign to the `SUBARCH` variable. As we got `SUBARCH`, we set the `SRCARCH` variable that provides directory of the certain architecture and `hfr-arch` that provides directory for the header files:
+
+如你所见，系统执行[uname](https://en.wikipedia.org/wiki/Uname) 得到机器、操作系统和架构的信息。因为我们得到的是`uname` 的输出，所以我们需要做一些处理在赋给变量`SUBARCH` 。获得`SUBARCH` 之后就要设置`SRCARCH` 和`hfr-arch`，`SRCARCH`提供了硬件架构相关代码的目录，`hfr-arch` 提供了相关头文件的目录：
 
 ```Makefile
 ifeq ($(ARCH),i386)
@@ -164,12 +178,16 @@ hdr-arch  := $(SRCARCH)
 
 Note that `ARCH` is the alias for the `SUBARCH`. In the next step we set the `KCONFIG_CONFIG` variable that represents path to the kernel configuration file and if it was not set before, it will be `.config` by default:
 
+注意：`ARCH` 是`SUBARCH` 的别名。如果没有设置过代表内核配置文件路径的变量`KCONFIG_CONFIG`，下一步系统会设置他，默认情况下就是`.config` ：
+
 ```Makefile
 KCONFIG_CONFIG	?= .config
 export KCONFIG_CONFIG
 ```
 
 and the [shell](https://en.wikipedia.org/wiki/Shell_%28computing%29) that will be used during kernel compilation:
+
+和编译内核过程中要用到的[shell](https://en.wikipedia.org/wiki/Shell_%28computing%29)
 
 ```Makefile
 CONFIG_SHELL := $(shell if [ -x "$$BASH" ]; then echo $$BASH; \
@@ -178,6 +196,9 @@ CONFIG_SHELL := $(shell if [ -x "$$BASH" ]; then echo $$BASH; \
 ```
 
 The next set of variables related to the compiler that will be used during Linux kernel compilation. We set the host compilers for the `c` and `c++` and flags for it:
+
+接下来就要设置一组和编译内核的编译器相关的变量。我们会设置host 的C 和C++ 的编译器及相关配置项：
+
 
 ```Makefile
 HOSTCC       = gcc
@@ -188,6 +209,7 @@ HOSTCXXFLAGS = -O2
 
 Next we will meet the `CC` variable that represent compiler too, so why do we need in the `HOST*` variables? The `CC` is the target compiler that will be used during kernel compilation, but `HOSTCC` will be used during compilation of the set of the `host` programs (we will see it soon). After this we can see definition of the `KBUILD_MODULES` and `KBUILD_BUILTIN` variables that are used for the determination of the what to compile (kernel, modules or both):
 
+然后会去适配代表编译器的变量`CC`,为什么还要`HOST*` 这些选项呢？`CC` 是编译内核过程中要使用的目标架构的编译器，但是`HOSTCC` 是要被用来编译一组`host` 程序的（下面我们就会看到）。然后我们就看看变量`KBUILD_MODULES` 和`KBUILD_BUILTIN` 的定义，这两个变量据欸的那个了我们要编译什么（内核、模块还是其他？）：
 ```Makefile
 KBUILD_MODULES :=
 KBUILD_BUILTIN := 1
