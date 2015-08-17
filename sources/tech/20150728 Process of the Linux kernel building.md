@@ -210,6 +210,7 @@ HOSTCXXFLAGS = -O2
 Next we will meet the `CC` variable that represent compiler too, so why do we need in the `HOST*` variables? The `CC` is the target compiler that will be used during kernel compilation, but `HOSTCC` will be used during compilation of the set of the `host` programs (we will see it soon). After this we can see definition of the `KBUILD_MODULES` and `KBUILD_BUILTIN` variables that are used for the determination of the what to compile (kernel, modules or both):
 
 然后会去适配代表编译器的变量`CC`,为什么还要`HOST*` 这些选项呢？`CC` 是编译内核过程中要使用的目标架构的编译器，但是`HOSTCC` 是要被用来编译一组`host` 程序的（下面我们就会看到）。然后我们就看看变量`KBUILD_MODULES` 和`KBUILD_BUILTIN` 的定义，这两个变量据欸的那个了我们要编译什么（内核、模块还是其他？）：
+
 ```Makefile
 KBUILD_MODULES :=
 KBUILD_BUILTIN := 1
@@ -221,11 +222,15 @@ endif
 
 Here we can see definition of these variables and the value of the `KBUILD_BUILTIN` will depens on the `CONFIG_MODVERSIONS` kernel configuration parameter if we pass only `modules` to the `make`. The next step is including of the:
 
+在这我们可以看到这些变量的定义，并且，如果们仅仅传递了`modules` 给`make`,变量`KBUILD_BUILTIN` 会依赖于内核配置选项`CONFIG_MODVERSIONS`。下一步操作是引入：
+
 ```Makefile
 include scripts/Kbuild.include
 ```
 
 `kbuild` file. The [Kbuild](https://github.com/torvalds/linux/blob/master/Documentation/kbuild/kbuild.txt) or `Kernel Build System` is the special infrastructure to manage building of the kernel and its modules. The `kbuild` files has the same syntax that makefiles. The [scripts/Kbuild.include](https://github.com/torvalds/linux/blob/master/scripts/Kbuild.include) file provides some generic definitions for the `kbuild` system. As we included this `kbuild` files we can see definition of the variables that are related to the different tools that will be used during kernel and modules compilation (like linker, compilers, utils from the [binutils](http://www.gnu.org/software/binutils/) and etc...):
+
+文件`kbuild` ,[Kbuild](https://github.com/torvalds/linux/blob/master/Documentation/kbuild/kbuild.txt) 或者又叫做 `Kernel Build System`是一个用来管理构建内核和模块的特殊框架。`kbuild` 文件的语法与makefile 一样。文件[scripts/Kbuild.include](https://github.com/torvalds/linux/blob/master/scripts/Kbuild.include) 为`kbuild` 系统同提供了一些原生的定义。因为我们包含了这个`kbuild` 文件，我们可以看到和不同工具关联的这些变量的定义，这些工具会在内核和模块编译过程中被使用（比如链接器、编译器、二进制工具包[binutils](http://www.gnu.org/software/binutils/)，等等）：
 
 ```Makefile
 AS		= $(CROSS_COMPILE)as
@@ -245,6 +250,8 @@ AWK		= awk
 
 After definition of these variables we define two variables: `USERINCLUDE` and `LINUXINCLUDE`. They will contain paths of the directories with headers (public for users in the first case and for kernel in the second case):
 
+在这些定义好的变量之后，我们又定义了两个变量：`USERINCLUDE` 和`LINUXINCLUDE`。他们为包含头文件的路径（第一个是给用户用的，第二个是给内核用的）：
+
 ```Makefile
 USERINCLUDE    := \
 		-I$(srctree)/arch/$(hdr-arch)/include/uapi \
@@ -259,7 +266,7 @@ LINUXINCLUDE    := \
 ```
 
 And the standard flags for the C compiler:
-
+以及标准的C 编译器标志：
 ```Makefile
 KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -fno-strict-aliasing -fno-common \
@@ -269,6 +276,7 @@ KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 ```
 
 It is the not last compiler flags, they can be updated by the other makefiles (for example kbuilds from `arch/`). After all of these, all variables will be exported to be available in the other makefiles. The following two the `RCS_FIND_IGNORE` and the `RCS_TAR_IGNORE` variables will contain files that will be ignored in the version control system:
+这并不是最终确定的编译器标志，他们还可以在其他makefile 里面更新（比如`arch/` 里面的kbuild）。经过所有这些，全部变量会被导出，这样其他makefile 就可以直接使用了。下面的两个变量`RCS_FIND_IGNORE` 和 `RCS_TAR_IGNORE` 包含了被版本控制系统忽略的文件：
 
 ```Makefile
 export RCS_FIND_IGNORE := \( -name SCCS -o -name BitKeeper -o -name .svn -o    \
@@ -280,10 +288,15 @@ export RCS_TAR_IGNORE := --exclude SCCS --exclude BitKeeper --exclude .svn \
 
 That's all. We have finished with the all preparations, next point is the building of `vmlinux`.
 
+这就是全部了，我们已经完成了所有的准备工作，下一个点就是如果构建`vmlinux`.
+
 Directly to the kernel build
+直面构建内核
 --------------------------------------------------------------------------------
 
 As we have finished all preparations, next step in the root makefile is related to the kernel build. Before this moment we will not see in the our terminal after the execution of the `make` command. But now first steps of the compilation are started. In this moment we need to go on the [598](https://github.com/torvalds/linux/blob/master/Makefile#L598) line of the Linux kernel top makefile and we will see `vmlinux` target there:
+
+现在我们已经完成了所有的准备工作，根makefile（注：内核根目录下的makefile）的下一步工作就是和编译内核相关的了。在我们执行`make` 命令之前，我们不会在终端看到任何东西。但是现在编译的第一步开始了，这里我们需要从内核根makefile的的[598](https://github.com/torvalds/linux/blob/master/Makefile#L598) 行开始，这里可以看到目标`vmlinux`：
 
 ```Makefile
 all: vmlinux
