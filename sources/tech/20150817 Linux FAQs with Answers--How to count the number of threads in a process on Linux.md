@@ -1,3 +1,4 @@
+translation by strugglingyouth
 Linux FAQs with Answers--How to count the number of threads in a process on Linux
 ================================================================================
 > **Question**: I have an application running, which forks a number of threads at run-time. I want to know how many threads are actively running in the program. What is the easiest way to check the thread count of a process on Linux? 
