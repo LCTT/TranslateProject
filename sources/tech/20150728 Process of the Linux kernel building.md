@@ -305,7 +305,11 @@ all: vmlinux
 
 Don't worry that we have missed many lines in Makefile that are placed after `export RCS_FIND_IGNORE.....` and before `all: vmlinux.....`. This part of the makefile is responsible for the `make *.config` targets and as I wrote in the beginning of this part we will see only building of the kernel in a general way.
 
+不要操心我们略过的从`export RCS_FIND_IGNORE.....` 到`all: vmlinux.....` 这一部分makefile 代码，他们只是负责根据各种配置文件生成不同目标内核的，因为之前我就说了这一部分我们只讨论构建内核的通用途径。
+
 The `all:` target is the default when no target is given on the command line. You can see here that we include architecture specific makefile there (in our case it will be [arch/x86/Makefile](https://github.com/torvalds/linux/blob/master/arch/x86/Makefile)). From this moment we will continue from this makefile. As we can see `all` target depends on the `vmlinux` target that defined a little lower in the top makefile:
+
+目标`all:` 是在命令行里不指定目标时默认生成的目标。你可以看到这里我们包含了架构相关的makefile（默认情况下会是[arch/x86/Makefile](https://github.com/torvalds/linux/blob/master/arch/x86/Makefile)）。从这一时刻起，我们会从这个makefile 继续进行下去。如我们所见，目标`all` 依赖于根makefile 后面一点的生命`vmlinux`： 
 
 ```Makefile
 vmlinux: scripts/link-vmlinux.sh $(vmlinux-deps) FORCE
