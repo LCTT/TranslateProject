@@ -1,102 +1,103 @@
-    Vic020
-
-Linux Tricks: Play Game in Chrome, Text-to-Speech, Schedule a Job and Watch Commands in Linux
+Linux小技巧：Chrome小游戏，文字说话，计划作业，重复执行命令
 ================================================================================
-Here again, I have compiled a list of four things under [Linux Tips and Tricks][1] series you may do to remain more productive and entertained with Linux Environment.
 
-![Linux Tips and Tricks Series](http://www.tecmint.com/wp-content/uploads/2015/08/Linux-Tips-and-Tricks.png)
+重要的事情说两遍，我完成了一个[Linux提示与彩蛋][1]系列，让你的Linux获得更多创造和娱乐。
 
-Linux Tips and Tricks Series
+![Linux提示与彩蛋系列](http://www.tecmint.com/wp-content/uploads/2015/08/Linux-Tips-and-Tricks.png)
 
-The topics I have covered includes Google-chrome inbuilt small game, Text-to-speech in Linux Terminal, Quick job scheduling using ‘at‘ command and watch a command at regular interval.
+Linux提示与彩蛋系列
 
-### 1. Play A Game in Google Chrome Browser ###
+本文，我将会讲解Google-chrome内建小游戏，在终端中如何让文字说话，使用‘at’命令设置作业和使用watch命令重复执行命令。
 
-Very often when there is a power shedding or no network due to some other reason, I don’t put my Linux box into maintenance mode. I keep myself engage in a little fun game by Google Chrome. I am not a gamer and hence I have not installed third-party creepy games. Security is another concern.
+### 1. Google Chrome 浏览器小游戏彩蛋 ###
 
-So when there is Internet related issue and my web page seems something like this:
+网线脱掉或者其他什么原因连不上网时，Google Chrome就会出现一个小游戏。声明，我并不是游戏玩家，因此我的电脑上并没有安装任何第三方的恶意游戏。安全是第一位。
 
-![Unable to Connect Internet](http://www.tecmint.com/wp-content/uploads/2015/08/Unable-to-Connect-Internet.png)
+所以当Internet发生出错，会出现一个这样的界面：
 
-Unable to Connect Internet
+![不能连接到互联网](http://www.tecmint.com/wp-content/uploads/2015/08/Unable-to-Connect-Internet.png)
 
-You may play the Google-chrome inbuilt game simply by hitting the space-bar. There is no limitation for the number of times you can play. The best thing is you need not break a sweat installing and using it.
+不能连接到互联网
 
-No third-party application/plugin required. It should work well on other platforms like Windows and Mac but our niche is Linux and I’ll talk about Linux only and mind it, it works well on Linux. It is a very simple game (a kind of time pass).
+按下空格键来激活Google-chrome彩蛋游戏。游戏没有时间限制。并且还不需要浪费时间安装使用。
 
-Use Space-Bar/Navigation-up-key to jump. A glimpse of the game in action.
+不需要第三方软件的支持。同样支持Windows和Mac平台，但是我的平台是Linux，我也只谈论Linux。当然在Linux，这个游戏运行很好。游戏简单，但也很花费时间。
 
-![Play Game in Google Chrome](http://www.tecmint.com/wp-content/uploads/2015/08/Play-Game-in-Google-Chrome.gif)
+使用空格/向上方向键来跳跃。请看下列截图：
 
-Play Game in Google Chrome
+![Google Chrome中玩游戏](http://www.tecmint.com/wp-content/uploads/2015/08/Play-Game-in-Google-Chrome.gif)
 
-### 2. Text to Speech in Linux Terminal ###
+Google Chrome中玩游戏
 
-For those who may not be aware of espeak utility, It is a Linux command-line text to speech converter. Write anything in a variety of languages and espeak utility will read it loud for you.
+### 2. Linux 终端中朗读文字 ###
 
-Espeak should be installed in your system by default, however it is not installed for your system, you may do:
+对于那些不能文字朗读的设备，有个小工具可以实现文字说话的转换器。
+espeak支持多种语言，可以及时朗读输入文字。
+
+系统应该默认安装了Espeak，如果你的系统没有安装，你可以使用下列命令来安装：
 
     # apt-get install espeak   (Debian)
     # yum install espeak       (CentOS)
     # dnf install espeak       (Fedora 22 onwards)
 
 You may ask espeak to accept Input Interactively from standard Input device and convert it to speech for you. You may do:
+你可以设置接受从标准输入的交互地输入并及时转换成语音朗读出来。这样设置：
 
-    $ espeak [Hit Return Key]
+    $ espeak [按回车键]
 
-For detailed output you may do:
+更详细的输出你可以这样做：
 
-    $ espeak --stdout | aplay [Hit Return Key][Double - Here]
+    $ espeak --stdout | aplay [按回车键][这里需要双击]
 
-espeak is flexible and you can ask espeak to accept input from a text file and speak it loud for you. All you need to do is:
+espeak设置灵活，也可以朗读文本文件。你可以这样设置：
 
     $ espeak --stdout /path/to/text/file/file_name.txt  | aplay [Hit Enter] 
 
-You may ask espeak to speak fast/slow for you. The default speed is 160 words per minute. Define your preference using switch ‘-s’.
+espeak可以设置朗读速度。默认速度是160词每分钟。使用-s参数来设置。
 
-To ask espeak to speak 30 words per minute, you may do:
+设置30词每分钟：
 
     $ espeak -s 30 -f /path/to/text/file/file_name.txt | aplay
 
-To ask espeak to speak 200 words per minute, you may do:
+设置200词每分钟：
 
     $ espeak -s 200 -f /path/to/text/file/file_name.txt | aplay
 
-To use another language say Hindi (my mother tongue), you may do:
+让其他语言说北印度语（作者母语），这样设置：
 
     $ espeak -v hindi --stdout 'टेकमिंट विश्व की एक बेहतरीन लाइंक्स आधारित वेबसाइट है|' | aplay 
 
-You may choose any language of your preference and ask to speak in your preferred language as suggested above. To get the list of all the languages supported by espeak, you need to run:
+espeak支持多种语言，支持自定义设置。使用下列命令来获得语言表：
 
     $ espeak --voices
 
-### 3. Quick Schedule a Job ###
+### 3. 快速计划作业 ###
 
-Most of us are already familiar with [cron][2] which is a daemon to execute scheduled commands.
+我们已经非常熟悉使用[cron][2]后台执行一个计划命令。
 
-Cron is an advanced command often used by Linux SYSAdmins to schedule a job such as Backup or practically anything at certain time/interval.
+Cron是一个Linux系统管理的高级命令，用于计划定时任务如备份或者指定时间或间隔的任何事情。
 
-Are you aware of ‘at’ command in Linux which lets you schedule a job/command to run at specific time? You can tell ‘at’ what to do and when to do and everything else will be taken care by command ‘at’.
+但是，你是否知道at命令可以让你计划一个作业或者命令在指定时间？at命令可以指定时间和指定内容执行作业。
 
-For an example, say you want to print the output of uptime command at 11:02 AM, All you need to do is:
+例如，你打算在早上11点2分执行uptime命令，你只需要这样做：
 
     $ at 11:02
     uptime >> /home/$USER/uptime.txt 
     Ctrl+D
 
-![Schedule Job in Linux](http://www.tecmint.com/wp-content/uploads/2015/08/Schedule-Job-in-Linux.png)
+![Linux中计划作业](http://www.tecmint.com/wp-content/uploads/2015/08/Schedule-Job-in-Linux.png)
 
-Schedule Job in Linux
+Linux中计划作业
 
-To check if the command/script/job has been set or not by ‘at’ command, you may do:
+检查at命令是否成功设置，使用：
 
     $ at -l
 
-![View Scheduled Jobs](http://www.tecmint.com/wp-content/uploads/2015/08/View-Scheduled-Jobs.png)
+![浏览计划作业](http://www.tecmint.com/wp-content/uploads/2015/08/View-Scheduled-Jobs.png)
 
-View Scheduled Jobs
+浏览计划作业
 
-You may schedule more than one command in one go using at, simply as:
+at支持计划多个命令，例如：
 
     $ at 12:30
     Command – 1
@@ -106,36 +107,37 @@ You may schedule more than one command in one go using at, simply as:
     …
     Ctrl + D
 
-### 4. Watch a Command at Specific Interval ###
+### 4. 特定时间重复执行命令 ###
 
-We need to run some command for specified amount of time at regular interval. Just for example say we need to print the current time and watch the output every 3 seconds.
+有时，我们可以需要在指定时间间隔执行特定命令。例如，每3秒，想打印一次时间。
 
-To see current time we need to run the below command in terminal.
+查看现在时间，使用下列命令。
 
     $ date +"%H:%M:%S
 
-![Check Date and Time in Linux](http://www.tecmint.com/wp-content/uploads/2015/08/Check-Date-in-Linux.png)
+![Linux中查看日期和时间](http://www.tecmint.com/wp-content/uploads/2015/08/Check-Date-in-Linux.png)
 
-Check Date and Time in Linux
+Linux中查看日期和时间
 
-and to check the output of this command every three seconds, we need to run the below command in Terminal.
+为了查看这个命令每三秒的输出，我需要运行下列命令：
 
     $ watch -n 3 'date +"%H:%M:%S"'
 
-![Watch Command in Linux](http://www.tecmint.com/wp-content/uploads/2015/08/Watch-Command-in-Linux.gif)
+![Linux中watch命令](http://www.tecmint.com/wp-content/uploads/2015/08/Watch-Command-in-Linux.gif)
 
-Watch Command in Linux
+Linux中watch命令
 
-The switch ‘-n’ in watch command is for Interval. In the above example we defined Interval to be 3 sec. You may define yours as required. Also you may pass any command/script with watch command to watch that command/script at the defined interval.
+watch命令的‘-n’开关设定时间间隔。在上诉命令中，我们定义了时间间隔为3秒。你可以按你的需求定义。同样watch
+也支持其他命令或者脚本。
 
-That’s all for now. Hope you are like this series that aims at making you more productive with Linux and that too with fun inside. All the suggestions are welcome in the comments below. Stay tuned for more such posts. Keep connected and Enjoy…
+至此。希望你喜欢这个系列的文章，让你的linux更有创造性，获得更多快乐。所有的建议欢迎评论。欢迎你也看看其他文章，谢谢。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/text-to-speech-in-terminal-schedule-a-job-and-watch-commands-in-linux/
 
 作者：[Avishek Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[VicYu/Vic020](http://vicyu.net)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
