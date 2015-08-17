@@ -1,3 +1,4 @@
+translation by strugglingyouth
 Linux FAQs with Answers--How to fix Wireshark GUI freeze on Linux desktop
 ================================================================================
 > **Question**: When I try to open a pre-recorded packet dump on Wireshark on Ubuntu, its UI suddenly freezes, and the following errors and warnings appear in the terminal where I launched Wireshark. How can I fix this problem?
