@@ -309,7 +309,7 @@ Don't worry that we have missed many lines in Makefile that are placed after `ex
 
 The `all:` target is the default when no target is given on the command line. You can see here that we include architecture specific makefile there (in our case it will be [arch/x86/Makefile](https://github.com/torvalds/linux/blob/master/arch/x86/Makefile)). From this moment we will continue from this makefile. As we can see `all` target depends on the `vmlinux` target that defined a little lower in the top makefile:
 
-目标`all:` 是在命令行里不指定目标时默认生成的目标。你可以看到这里我们包含了架构相关的makefile（默认情况下会是[arch/x86/Makefile](https://github.com/torvalds/linux/blob/master/arch/x86/Makefile)）。从这一时刻起，我们会从这个makefile 继续进行下去。如我们所见，目标`all` 依赖于根makefile 后面一点的生命`vmlinux`： 
+目标`all:` 是在命令行里不指定目标时默认生成的目标。你可以看到这里我们包含了架构相关的makefile（默认情况下会是[arch/x86/Makefile](https://github.com/torvalds/linux/blob/master/arch/x86/Makefile)）。从这一时刻起，我们会从这个makefile 继续进行下去。如我们所见，目标`all` 依赖于根makefile 后面声明的`vmlinux`： 
 
 ```Makefile
 vmlinux: scripts/link-vmlinux.sh $(vmlinux-deps) FORCE
@@ -317,11 +317,16 @@ vmlinux: scripts/link-vmlinux.sh $(vmlinux-deps) FORCE
 
 The `vmlinux` is is the Linux kernel in an statically linked executable file format. The [scripts/link-vmlinux.sh](https://github.com/torvalds/linux/blob/master/scripts/link-vmlinux.sh) script links combines different compiled subsystems into vmlinux. The second target is the `vmlinux-deps` that defined as:
 
+`vmlinux` 是linux 内核的静态链接可执行文件格式。脚本[scripts/link-vmlinux.sh](https://github.com/torvalds/linux/blob/master/scripts/link-vmlinux.sh) 把不同的编译好的子模块链接到一起形成了vmlinux。第二个目标是`vmlinux-deps`，它的定义如下：
+
+
 ```Makefile
 vmlinux-deps := $(KBUILD_LDS) $(KBUILD_VMLINUX_INIT) $(KBUILD_VMLINUX_MAIN)
 ```
 
 and consists from the set of the `built-in.o` from the each top directory of the Linux kernel. Later, when we will go through all directories in the Linux kernel, the `Kbuild` will compile all the `$(obj-y)` files.  It then calls `$(LD) -r` to merge these files into one `built-in.o` file. For this moment we have no `vmlinux-deps`, so the `vmlinux` target will not be executed now. For me `vmlinux-deps` contains following files:
+
+它是由内核代码下的每个顶级目录的`built-in.o` 组成的。之后我们还会检查内核所有的目录，`kbuild` 会编译各个目录下所有的对应`$obj-y` 的源文件。接着调用`$(LD) -r` 把这些文件合并到一个`build-in.o` 文件里。此时我们还没有`vmloinux-deps`, 所以目标`vmlinux` 现在还不会被构建。对我而言`vmlinux-deps` 包含下面的文件
 
 ```
 arch/x86/kernel/vmlinux.lds arch/x86/kernel/head_64.o
@@ -341,6 +346,8 @@ net/built-in.o
 
 The next target that can be executed is following:
 
+下一个可以被执行的目标如下：
+
 ```Makefile
 $(sort $(vmlinux-deps)): $(vmlinux-dirs) ;
 $(vmlinux-dirs): prepare scripts
@@ -348,6 +355,8 @@ $(vmlinux-dirs): prepare scripts
 ```
 
 As we can see the `vmlinux-dirs` depends on the two targets: `prepare` and `scripts`. The first `prepare` defined in the top `Makefile` of the Linux kernel and executes three stages of preparations:
+
+就像我们看到的，`vmlinux-dir` 依赖于两部分：`prepare` 和`scripts`。第一个`prepare` 定义在内核的根`makefile` ，准备工作分成三个阶段：
 
 ```Makefile
 prepare: prepare0
@@ -361,7 +370,9 @@ prepare1: prepare2 $(version_h) include/generated/utsrelease.h \
 prepare2: prepare3 outputmakefile asm-generic
 ```
 
-The first `prepare0` expands to the `archprepare` that exapnds to the `archheaders` and `archscripts` that defined in the `x86_64` specific [Makefile](https://github.com/torvalds/linux/blob/master/arch/x86/Makefile). Let's look on it. The `x86_64` specific makefile starts from the definition of the variables that are related to the archicteture-specific configs ([defconfig](https://github.com/torvalds/linux/tree/master/arch/x86/configs) and etc.). After this it defines flags for the compiling of the [16-bit](https://en.wikipedia.org/wiki/Real_mode) code, calculating of the `BITS` variable that can be `32` for `i386` or `64` for the `x86_64` flags for the assembly source code, flags for the linker and many many more (all definitions you can find in the [arch/x86/Makefile](https://github.com/torvalds/linux/blob/master/arch/x86/Makefile)). The first target is `archheaders` in the makefile generates syscall table:
+The first `prepare0` expands to the `archprepare` that exapnds to the `archheaders` and `archscripts` that defined in the `x86_64` specific [Makefile](https://github.com/torvalds/linux/blob/master/arch/x86/Makefile). Let's look on it. The `x86_64` specific makefile starts from the definition of the variables that are related to the archicteture-specific configs ([defconfig](https://github.com/torvalds/linux/tree/master/arch/x86/configs) and etc.). After this it defines flags for the compiling of the [16-bit](https://en.wikipedia.org/wiki/Real_mode) code,calculating of the `BITS` variable that can be `32` for `i386` or `64` for the `x86_64` flags for the assembly source code, flags for the linker and many many more (all definitions you can find in the [arch/x86/Makefile](https://github.com/torvalds/linux/blob/master/arch/x86/Makefile)). The first target is `archheaders` in the makefile generates syscall table:
+
+第一个`prepare0` 展开到`archprepare` ，后者又展开到`archheader` 和`archscripts`，这两个变量定义在`x86_64` 相关的[Makefile](https://github.com/torvalds/linux/blob/master/arch/x86/Makefile)。让我们看看这个文件。`x86_64` 特定的makefile从变量定义开始，这些变量都是和特定架构的配置文件 ([defconfig](https://github.com/torvalds/linux/tree/master/arch/x86/configs)，等等)有关联。变量定义之后，这个makefile 定义了编译[16-bit](https://en.wikipedia.org/wiki/Real_mode)代码的编译选项，根据变量`BITS` 的值，如果是`32` 汇编代码、链接器、以及其它很多东西（全部的定义都可以在[arch/x86/Makefile](https://github.com/torvalds/linux/blob/master/arch/x86/Makefile)找到）对应的参数就是`i386`,而`64`就对应的是`x86_84`。生成的系统调用列表（syscall table）的makefile 里第一个目标就是`archheaders` ：
 
 ```Makefile
 archheaders:
@@ -370,6 +381,8 @@ archheaders:
 
 And the second target is `archscripts` in this makefile is:
 
+这个makefile 里第二个目标就是`archscripts`：
+
 ```Makefile
 archscripts: scripts_basic
 	$(Q)$(MAKE) $(build)=arch/x86/tools relocs
@@ -377,12 +390,16 @@ archscripts: scripts_basic
 
 We can see that it depends on the `scripts_basic` target from the top [Makefile](https://github.com/torvalds/linux/blob/master/Makefile). At the first we can see the `scripts_basic` target that executes make for the [scripts/basic](https://github.com/torvalds/linux/blob/master/scripts/basic/Makefile) makefile:
  
+ 我们可以看到`archscripts` 是依赖于根[Makefile](https://github.com/torvalds/linux/blob/master/Makefile)里的`scripts_basic` 。首先我们可以看出`scripts_basic` 是根据[scripts/basic](https://github.com/torvalds/linux/blob/master/scripts/basic/Makefile) 的mekefile 执行的：
+ 
 ```Maklefile
 scripts_basic:
 	$(Q)$(MAKE) $(build)=scripts/basic
 ```
 
 The `scripts/basic/Makefile` contains targets for compilation of the two host programs: `fixdep` and `bin2`:
+
+`scripts/basic/Makefile`包含了编译两个主机程序`fixdep` 和`bin2` 的目标：
 
 ```Makefile
 hostprogs-y	:= fixdep
