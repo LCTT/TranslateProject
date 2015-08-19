@@ -1,3 +1,5 @@
+FSSlc translating
+
 RHCSA Series: Using ACLs (Access Control Lists) and Mounting Samba / NFS Shares – Part 7
 ================================================================================
 In the last article ([RHCSA series Part 6][1]) we started explaining how to set up and configure local system storage using parted and ssm.
