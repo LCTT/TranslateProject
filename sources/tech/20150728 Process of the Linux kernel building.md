@@ -482,11 +482,15 @@ $(Q)$(MAKE) -f $(srctree)/scripts/Makefile.build obj=.
 
 The [scripts/Makefile.build](https://github.com/torvalds/linux/blob/master/scripts/Makefile.build) tries to find the `Kbuild` file by the given directory via the `obj` parameter, include this `Kbuild` files:
 
+参数`obj` 会告诉脚本[scripts/Makefile.build](https://github.com/torvalds/linux/blob/master/scripts/Makefile.build) 那些目录包含`kbuild` 文件，脚本以此来寻找各个`kbuild` 文件：
+
 ```Makefile
 include $(kbuild-file)
 ```
 
 and build targets from it. In our case `.` contains the [Kbuild](https://github.com/torvalds/linux/blob/master/Kbuild) file that generates the `kernel/bounds.s` and the `arch/x86/kernel/asm-offsets.s`. After this the `prepare` target finished to work. The `vmlinux-dirs` also depends on the second target - `scripts` that compiles following programs: `file2alias`, `mk_elfconfig`, `modpost` and etc... After scripts/host-programs compilation our `vmlinux-dirs` target can be executed. First of all let's try to understand what does `vmlinux-dirs` contain. For my case it contains paths of the following kernel directories:
+
+然后根据这个构建目标。我们这里`.` 包含了[Kbuild](https://github.com/torvalds/linux/blob/master/Kbuild)，就用这个文件来生成`kernel/bounds.s` 和`arch/x86/kernel/asm-offsets.s`。这样目标`prepare` 就完成了它的工作。`vmlinux-dirs` 也依赖于第二个目标——`scripts` ，`scripts`会编译接下来的几个程序：`filealias`，`mk_elfconfig`,`modpost`等等。`scripts/host-programs` 编译完之后，我们的目标`vmlinux-dirs` 就可以开始编译了。第一步，我们先来理解一下`vmlinux-dirs` 都包含了那些东西。在我们的例子中它包含了接下来的内核目录的路径：
 
 ```
 init usr arch/x86 kernel mm fs ipc security crypto block
@@ -495,6 +499,8 @@ arch/x86/video net lib arch/x86/lib
 ```
 
 We can find definition of the `vmlinux-dirs` in the top [Makefile](https://github.com/torvalds/linux/blob/master/Makefile) of the Linux kernel:
+
+我们可以在内核的根[Makefile](https://github.com/torvalds/linux/blob/master/Makefile) 里找到`vmlinux-dirs` 的定义：
 
 ```Makefile
 vmlinux-dirs	:= $(patsubst %/,%,$(filter %/, $(init-y) $(init-m) \
@@ -512,12 +518,16 @@ libs-y		:= lib/
 
 Here we remove the `/` symbol from the each directory with the help of the `patsubst` and `filter` functions and put it to the `vmlinux-dirs`. So we have list of directories in the `vmlinux-dirs` and the following code:
 
+这里我们借助函数`patsubst` 和`filter`去掉了每个目录路径里的符号`/`，并且把结果放到`vmlinux-dirs` 里。所以我们就有了`vmlinux-dirs` 里的目录的列表，以及下面的代码：
+
 ```Makefile
 $(vmlinux-dirs): prepare scripts
 	$(Q)$(MAKE) $(build)=$@
 ```
 
 The `$@` represents `vmlinux-dirs` here that means that it will go recursively over all directories from the `vmlinux-dirs` and its internal directories (depens on configuration) and will execute `make` in there. We can see it in the output:
+
+符号`$@` 在这里代表了`vmlinux-dirs`，这就表明程序会递归遍历从`vmlinux-dirs` 以及它内部的全部目录（依赖于配置），并且在对应的目录下执行`make` 命令。我们可以在输出看到结果：
 
 ```
   CC      init/main.o
@@ -535,7 +545,7 @@ The `$@` represents `vmlinux-dirs` here that means that it will go recursively o
 ```
 
 Source code in each directory will be compiled and linked to the `built-in.o`:
-
+每个目录下的源代码将会被编译并且链接到`built-io.o` 里：
 ```
 $ find . -name built-in.o
 ./arch/x86/crypto/built-in.o
@@ -549,6 +559,8 @@ $ find . -name built-in.o
 
 Ok, all buint-in.o(s) built, now we can back to the `vmlinux` target. As you remember, the `vmlinux` target is in the top Makefile of the Linux kernel. Before the linking of the `vmlinux` it builds [samples](https://github.com/torvalds/linux/tree/master/samples), [Documentation](https://github.com/torvalds/linux/tree/master/Documentation) and etc., but I will not describe it in this part as I wrote in the beginning of this part.
 
+好了，所有的`built-in.o` 都构建完了，现在我们回到目标`vmlinux` 上。你应该还记得，目标`vmlinux` 是在内核的根makefile 里。在链接`vmlinux` 之前，系统会构建[samples](https://github.com/torvalds/linux/tree/master/samples), [Documentation](https://github.com/torvalds/linux/tree/master/Documentation)等等，但是如上文所述，我不会在本文描述这些。
+
 ```Makefile
 vmlinux: scripts/link-vmlinux.sh $(vmlinux-deps) FORCE
     ...
@@ -557,6 +569,8 @@ vmlinux: scripts/link-vmlinux.sh $(vmlinux-deps) FORCE
 ```
 
 As you can see main purpose of it is a call of the [scripts/link-vmlinux.sh](https://github.com/torvalds/linux/blob/master/scripts/link-vmlinux.sh) script is linking of the all `built-in.o`(s) to the one statically linked executable and creation of the [System.map](https://en.wikipedia.org/wiki/System.map). In the end we will see following output:
+
+你可以看到，`vmlinux` 的调用脚本[scripts/link-vmlinux.sh](https://github.com/torvalds/linux/blob/master/scripts/link-vmlinux.sh) 的主要目的是把所有的`built-in.o` 链接成一个静态可执行文件、生成[System.map](https://en.wikipedia.org/wiki/System.map)。 最后我们来看看下面的输出：
 
 ```
   LINK    vmlinux
@@ -575,7 +589,7 @@ As you can see main purpose of it is a call of the [scripts/link-vmlinux.sh](htt
 ```
 
 and `vmlinux` and `System.map` in the root of the Linux kernel source tree:
-
+还有内核源码树根目录下的`vmlinux` 和`System.map` 
 ```
 $ ls vmlinux System.map 
 System.map  vmlinux
@@ -583,7 +597,10 @@ System.map  vmlinux
 
 That's all, `vmlinux` is ready. The next step is creation of the [bzImage](https://en.wikipedia.org/wiki/Vmlinux#bzImage).
 
+这就是全部了，`vmlinux` 构建好了，下一步就是创建[bzImage](https://en.wikipedia.org/wiki/Vmlinux#bzImage).
+
 Building bzImage
+制作bzImage
 --------------------------------------------------------------------------------
 
 The `bzImage` is the compressed Linux kernel image. We can get it with the execution of the `make bzImage` after the `vmlinux` built. In other way we can just execute `make` without arguments and will get `bzImage` anyway because it is default image:
