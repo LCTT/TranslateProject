@@ -1,6 +1,3 @@
-
-Translating by dingdongnigetou
-
 Linux file system hierarchy v2.0
 ================================================================================
 What is a file in Linux? What is file system in Linux? Where are all the configuration files? Where do I keep my downloaded applications? Is there really a filesystem standard structure in Linux? Well, the above image explains Linux file system hierarchy in a very simple and non-complex way. It’s very useful when you’re looking for a configuration file or a binary file. I’ve added some explanation and examples below, but that’s TL;DR.
