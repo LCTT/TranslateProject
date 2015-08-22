@@ -1,3 +1,4 @@
+[bazz2 translating]
 Docker Working on Security Components, Live Container Migration
 ================================================================================
 ![Docker Container Talk](http://www.eweek.com/imagesvr_ce/1905/290x195DockerMarianna.jpg) 
