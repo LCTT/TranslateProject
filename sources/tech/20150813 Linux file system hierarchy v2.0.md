@@ -1,5 +1,4 @@
-
-Translating by dingdongnigetou
+translating by tnuoccalanosrep
 
 Linux file system hierarchy v2.0
 ================================================================================
