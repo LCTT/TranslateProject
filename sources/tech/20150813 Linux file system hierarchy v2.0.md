@@ -3,48 +3,51 @@ translating by tnuoccalanosrep
 Linux file system hierarchy v2.0
 ================================================================================
 What is a file in Linux? What is file system in Linux? Where are all the configuration files? Where do I keep my downloaded applications? Is there really a filesystem standard structure in Linux? Well, the above image explains Linux file system hierarchy in a very simple and non-complex way. It’s very useful when you’re looking for a configuration file or a binary file. I’ve added some explanation and examples below, but that’s TL;DR.
-
+Linux中的文件是什么？它的文件系统又是什么？那些配置文件又在哪里？我下载好的程序保存在哪里了？好了，上图简明地阐释了Linux的
+文件系统的层次关系。当你苦于寻找配置文件或者二进制文件的时候，这便显得十分有用了。我在下方添加了一些解释以及例子，但“篇幅过长，没有阅读”。
 Another issue is when you got configuration and binary files all over the system that creates inconsistency and if you’re a large organization or even an end user, it can compromise your system (binary talking with old lib files etc.) and when you do [security audit of your Linux system][1], you find it is vulnerable to different exploits. So keeping a clean operating system (no matter Windows or Linux) is important.
-
+另外一种情况便是当你在系统中获取配置以及二进制文件时，出现了不一致性问题，如果你是一个大型组织，或者只是一个终端用户，这也有可能会破坏你的系统（比如，二进制文件运行在就旧的库文件上了）。若然你对你的Linux系统做安全审计的话，你将会发现它很容易遭到不同的攻击。所以，清洁操作（无论是Windows还是Linux）都显得十分重要。
 ### What is a file in Linux? ###
-
+Linux的文件是什么？
 A simple description of the UNIX system, also applicable to Linux, is this:
-
+对于UNIX系统，同样适用于Linux，以下便是一个简单的描述：
 > On a UNIX system, everything is a file; if something is not a file, it is a process.
-
+> 在UNIX系统中，一切皆为文件；若非文件，则为进程
 This statement is true because there are special files that are more than just files (named pipes and sockets, for instance), but to keep things simple, saying that everything is a file is an acceptable generalization. A Linux system, just like UNIX, makes no difference between a file and a directory, since a directory is just a file containing names of other files. Programs, services, texts, images, and so forth, are all files. Input and output devices, and generally all devices, are considered to be files, according to the system.
-
+这个声明是对的，因为有些特殊的文件不仅仅是普通文件（比如命名管道和套接字）,不过为了让事情变的简单，“一切皆为文件”也是一个让人可以接受的概述。Linux系统也像UNXI系统一样，将文件和目录视如同物，因为目录只是一个包含了其他文件名的文件而已。
+程序，服务，文本，图片等等，都是文件。对于系统来说，输入和输出设备，基本上所有的设备，都被当做是文件。
 ![](http://www.blackmoreops.com/wp-content/uploads/2015/06/Linux-file-system-hierarchy-v2.0-2480px-blackMORE-Ops.png)
 
 - Version 2.0 – 17-06-2015
-    - – Improved: Added title and version history.
-    - – Improved: Added /srv, /media and /proc.
-    - – Improved: Updated descriptions to reflect modern Linux File Systems.
-    - – Fixed: Multiple typo’s.
-    - – Fixed: Appearance and colour.
+    - – Improved: Added title and version history.添加标题以及版本历史
+    - – Improved: Added /srv, /media and /proc.添加/srv,/meida和/proc
+    - – Improved: Updated descriptions to reflect modern Linux File Systems.更新了描述以反映当前的Linux文件系统
+    - – Fixed: Multiple typo’s.多处的打印错误
+    - – Fixed: Appearance and colour.外观和颜色
 - Version 1.0 – 14-02-2015
-    - – Created: Initial diagram.
-    - – Note: Discarded lowercase version.
+    - – Created: Initial diagram.基本的图
+    - – Note: Discarded lowercase version.摒弃更低的版本
 
 ### Download Links ###
 
 Following are two links for download. If you need this in any other format, let me know and I will try to create that and upload it somewhere.
-
+以下是结构图的下载地址。如果你需要其他结构，请跟原作者联系，他会尝试创建并且上传到某个地方以供下载
 - [Large (PNG) Format – 2480×1755 px – 184KB][2]
 - [Largest (PDF) Format – 9919x7019 px – 1686KB][3]
 
 **Note**: PDF Format is best for printing and very high in quality
-
+**注意**: PDF格式文件是打印的最好选择，它画质很高。
 ### Linux file system description ###
-
+### Linux 文件系统描述 ###
 In order to manage all those files in an orderly fashion, man likes to think of them in an ordered tree-like structure on the hard disk, as we know from `MS-DOS` (Disk Operating System) for instance. The large branches contain more branches, and the branches at the end contain the tree’s leaves or normal files. For now we will use this image of the tree, but we will find out later why this is not a fully accurate image.
-
+为了有序地管理那些文件，人们习惯把这些文件当做是一个硬盘上的有序的类树结构体，正如我们从'MS-DOS'(硬盘操作系统)所获知的一样。
+大的分枝包括更多的分枝，分枝的末梢是树的叶子或者普通的文件。现在我们将会引用这个树形图，但晚点我们会发现为什么这不是一个完全准确的一幅图。
 注：表格
 <table cellspacing="2" border="4" style="border-collapse: collapse; width: 731px; height: 2617px;">
   <thead>
     <tr>
-      <th scope="col">Directory</th>
-      <th scope="col">Description</th>
+      <th scope="col">Directory(目录)</th>
+      <th scope="col">Description(描述)</th>
     </tr>
   </thead>
   <tbody>
@@ -52,31 +55,32 @@ In order to manage all those files in an orderly fashion, man likes to think of 
       <td><dl>
           <dd><code>/</code></dd>
         </dl></td>
-      <td><i>Primary hierarchy</i> root and root directory of the entire file system hierarchy.</td>
+      <td><i>Primary hierarchy主层次</i> root and root directory of the entire file system hierarchy.的根，也是整个文件系统层次结构的根目录</td>
     </tr>
     <tr>
       <td><dl>
           <dd><code>/bin</code></dd>
         </dl></td>
-      <td>Essential command binaries that need to be available in single user mode; for all users, <i>e.g.</i>, cat, ls, cp.</td>
+      <td>Essential command binaries that need to be available in single user mode; for all users, <i>e.g.</i>, cat, ls, cp.在单用户模式可用的必要命令二进制文件，对于所有用户而言，则是像cat,ls,cp等等的文件</td>
     </tr>
     <tr>
       <td><dl>
           <dd><code>/boot</code></dd>
         </dl></td>
-      <td>Boot loader files, <i>e.g.</i>, kernels, initrd.</td>
+      <td>Boot loader files, <i>e.g.</i>, kernels, initrd.引导加载程序文件，例如kernels,initrd等</td>
     </tr>
     <tr>
       <td><dl>
           <dd><code>/dev</code></dd>
         </dl></td>
-      <td>Essential devices, <i>e.g.</i>, <code>/dev/null</code>.</td>
+      <td>Essential devices, <i>e.g.</i>, <code>/dev/null</code>.必要的设备文件</td>
     </tr>
     <tr>
       <td><dl>
           <dd><code>/etc</code></dd>
         </dl></td>
       <td>Host-specific system-wide configuration filesThere has been controversy over the meaning of the name itself. In early versions of the UNIX Implementation Document from Bell labs, /etc is referred to as the <i>etcetera directory</i>, as this directory historically held everything that did not belong elsewhere (however, the FHS restricts /etc to static configuration files and may not contain binaries). Since the publication of early documentation, the directory name has been re-designated in various ways. Recent interpretations include backronyms such as “Editable Text Configuration” or “Extended Tool Chest”.</td>
+      <td>主机特定的系统范围内的配置文件。其实这里有个关于它名字本身意义上的的争议。在贝尔实验室的早期UNIX实施文档版本中，/etc表示是“其他目录”，因为从历史上看，这个目录是存放各种不属于其他目录的文件（然而，FSH(文件系统目录标准)限定 /ect是用于存放静态配置文件，这里不该存有二进制文件）。早期文档出版后，这个目录名又重新定义成不同的形式。近期的解释中包含着诸如“可编辑文本配置”或者“额外的工具箱”这样的重定义</td>
     </tr>
     <tr>
       <td><dl>
@@ -87,6 +91,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>Configuration files for add-on packages that are stored in <code>/opt/</code>.</td>
+      <td>存储着新增包的配置文件 <code>/opt/</code>.</td>
     </tr>
     <tr>
       <td><dl>
@@ -97,6 +102,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>Configuration files, such as catalogs, for software that processes SGML.</td>
+      <td>配置文件，比如目录，还有那些处理SGML(译者注：标准通用标记语言)的软件的配置文件</td>
     </tr>
     <tr>
       <td><dl>
@@ -107,6 +113,8 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>Configuration files for the X Window System, version 11.</td>
+      <td>X窗口系统的配置文件,版本号为11</td>
+      <td></td>
     </tr>
     <tr>
       <td><dl>
@@ -117,78 +125,91 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>Configuration files, such as catalogs, for software that processes XML.</td>
+      <td>配置文件，比如目录，处理XML(译者注：可扩展标记语言)的软件的配置文件</td>
     </tr>
     <tr>
       <td><dl>
           <dd><code>/home</code></dd>
         </dl></td>
       <td>Users’ home directories, containing saved files, personal settings, etc.</td>
+      <td>用户的主目录,包括保存的文件, 个人配置, 等等.</td>
     </tr>
     <tr>
       <td><dl>
           <dd><code>/lib</code></dd>
         </dl></td>
       <td>Libraries essential for the binaries in <code>/bin/</code> and <code>/sbin/</code>.</td>
+      <td><code>/bin/</code> and <code>/sbin/</code>中的二进制文件必不可少的库文件</td>
     </tr>
     <tr>
       <td><dl>
           <dd><code>/lib&lt;qual&gt;</code></dd>
         </dl></td>
       <td>Alternate format essential libraries. Such directories are optional, but if they exist, they have some requirements.</td>
+      <td>备用格式的必要库文件. 这样的目录视可选的,但如果他们存在的话, 他们还有一些要求.</td>
     </tr>
     <tr>
       <td><dl>
           <dd><code>/media</code></dd>
         </dl></td>
       <td>Mount points for removable media such as CD-ROMs (appeared in FHS-2.3).</td>
+      <td>可移动的多媒体(如CD-ROMs)的挂载点.(出现于 FHS-2.3)</td>
     </tr>
     <tr>
       <td><dl>
           <dd><code>/mnt</code></dd>
         </dl></td>
       <td>Temporarily mounted filesystems.</td>
+      <td>临时挂载的文件系统</td>
     </tr>
     <tr>
       <td><dl>
           <dd><code>/opt</code></dd>
         </dl></td>
       <td>Optional application software packages.</td>
+      <td>自定义应用程序软件包</td>
     </tr>
     <tr>
       <td><dl>
           <dd><code>/proc</code></dd>
         </dl></td>
       <td>Virtual filesystem providing process and kernel information as files. In Linux, corresponds to a procfs mount.</td>
+      <td>提供进程以及内核信息的虚拟文件系统(以文件形式)，在Linux中，对应进程文件系统的挂载点</td>
     </tr>
     <tr>
       <td><dl>
           <dd><code>/root</code></dd>
         </dl></td>
       <td>Home directory for the root user.</td>
+      <td>根用户的主目录</td>
     </tr>
     <tr>
       <td><dl>
           <dd><code>/sbin</code></dd>
         </dl></td>
       <td>Essential system binaries, <i>e.g.</i>, init, ip, mount.</td>
+      <td>必要系统二进制文件, <i>比如</i>, init, ip, mount.</td>
     </tr>
     <tr>
       <td><dl>
           <dd><code>/srv</code></dd>
         </dl></td>
       <td>Site-specific data which are served by the system.</td>
+      <td>系统提供的站点特定数据</td>
     </tr>
     <tr>
       <td><dl>
           <dd><code>/tmp</code></dd>
         </dl></td>
       <td>Temporary files (see also <code>/var/tmp</code>). Often not preserved between system reboots.</td>
+      <td>临时文件 (另见 <code>/var/tmp</code>). 通常在系统重启后消失</td>
     </tr>
     <tr>
       <td><dl>
           <dd><code>/usr</code></dd>
         </dl></td>
       <td><i>Secondary hierarchy</i> for read-only user data; contains the majority of (multi-)user utilities and applications.</td>
+      <td><i>二级层级</i> 存储用户的只读数据; 包含(多)用户主要的公共文件以及应用程序</td>
     </tr>
     <tr>
       <td><dl>
