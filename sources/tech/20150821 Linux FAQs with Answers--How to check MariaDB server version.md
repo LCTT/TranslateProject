@@ -1,3 +1,5 @@
+translating---geekpi
+
 Linux FAQs with Answers--How to check MariaDB server version
 ================================================================================
 > **Question**: I am on a VPS server where MariaDB server is running. How can I find out which version of MariaDB server it is running?
