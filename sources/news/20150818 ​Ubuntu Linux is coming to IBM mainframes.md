@@ -1,4 +1,5 @@
-​Ubuntu Linux is coming to IBM mainframes
+ictlyh Translating​
+Ubuntu Linux is coming to IBM mainframes
 ================================================================================
 SEATTLE -- It's finally happened. At [LinuxCon][1], IBM and [Canonical][2] announced that [Ubuntu Linux][3] will soon be running on IBM mainframes.
 
