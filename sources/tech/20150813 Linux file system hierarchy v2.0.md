@@ -40,7 +40,7 @@ Following are two links for download. If you need this in any other format, let 
 ### Linux file system description ###
 ### Linux 文件系统描述 ###
 In order to manage all those files in an orderly fashion, man likes to think of them in an ordered tree-like structure on the hard disk, as we know from `MS-DOS` (Disk Operating System) for instance. The large branches contain more branches, and the branches at the end contain the tree’s leaves or normal files. For now we will use this image of the tree, but we will find out later why this is not a fully accurate image.
-为了有序地管理那些文件，人们习惯把这些文件当做是一个硬盘上的有序的类树结构体，正如我们从'MS-DOS'(硬盘操作系统)所获知的一样。
+为了有序地管理那些文件，人们习惯把这些文件当做是硬盘上的有序的类树结构体，正如我们从'MS-DOS'(硬盘操作系统)所获知的一样。
 大的分枝包括更多的分枝，分枝的末梢是树的叶子或者普通的文件。现在我们将会引用这个树形图，但晚点我们会发现为什么这不是一个完全准确的一幅图。
 注：表格
 <table cellspacing="2" border="4" style="border-collapse: collapse; width: 731px; height: 2617px;">
@@ -220,6 +220,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>Non-essential command binaries (not needed in single user mode); for all users.</td>
+      <td>非必要的命令二进制文件 (在单用户模式中不需要用到的); 用于所有用户.</td>
     </tr>
     <tr>
       <td><dl>
@@ -230,6 +231,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>Standard include files.</td>
+      <td>标准的包含文件</td>
     </tr>
     <tr>
       <td><dl>
@@ -240,6 +242,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>Libraries for the binaries in <code>/usr/bin/</code> and <code>/usr/sbin/</code>.</td>
+      <td>库文件，用于<code>/usr/bin/</code> 和 <code>/usr/sbin/</code>.中的二进制文件</td>
     </tr>
     <tr>
       <td><dl>
@@ -250,6 +253,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>Alternate format libraries (optional).</td>
+      <td>备用格式库(可选的).</td>
     </tr>
     <tr>
       <td><dl>
@@ -260,6 +264,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td><i>Tertiary hierarchy</i> for local data, specific to this host. Typically has further subdirectories, <i>e.g.</i>, <code>bin/</code>, <code>lib/</code>, <code>share/</code>.</td>
+      <td><i>三级层次</i> 用于本地数据, 具体到该主机上的.通常会有下一个子目录, <i>比如</i>, <code>bin/</code>, <code>lib/</code>, <code>share/</code>.</td>
     </tr>
     <tr>
       <td><dl>
