@@ -55,32 +55,36 @@ In order to manage all those files in an orderly fashion, man likes to think of 
       <td><dl>
           <dd><code>/</code></dd>
         </dl></td>
-      <td><i>Primary hierarchy主层次</i> root and root directory of the entire file system hierarchy.的根，也是整个文件系统层次结构的根目录</td>
+      <td><i>Primary hierarchy</i> root and root directory of the entire file system hierarchy.</td>
+      <td><i>主层次</i> 的根，也是整个文件系统层次结构的根目录</td>
     </tr>
     <tr>
       <td><dl>
           <dd><code>/bin</code></dd>
         </dl></td>
-      <td>Essential command binaries that need to be available in single user mode; for all users, <i>e.g.</i>, cat, ls, cp.在单用户模式可用的必要命令二进制文件，对于所有用户而言，则是像cat,ls,cp等等的文件</td>
+      <td>Essential command binaries that need to be available in single user mode; for all users, <i>e.g.</i>, cat, ls, cp.</td>
+      <td>存放在单用户模式可用的必要命令二进制文件，对于所有用户而言，则是像cat,ls,cp等等的文件</td>
     </tr>
     <tr>
       <td><dl>
           <dd><code>/boot</code></dd>
         </dl></td>
-      <td>Boot loader files, <i>e.g.</i>, kernels, initrd.引导加载程序文件，例如kernels,initrd等</td>
+      <td>Boot loader files, <i>e.g.</i>, kernels, initrd.</td>
+      <td>存放引导加载程序文件，例如kernels,initrd等</td>
     </tr>
     <tr>
       <td><dl>
           <dd><code>/dev</code></dd>
         </dl></td>
-      <td>Essential devices, <i>e.g.</i>, <code>/dev/null</code>.必要的设备文件</td>
+      <td>Essential devices, <i>e.g.</i>, <code>/dev/null</code>.</td>
+      <td>存放必要的设备文件</td>
     </tr>
     <tr>
       <td><dl>
           <dd><code>/etc</code></dd>
         </dl></td>
       <td>Host-specific system-wide configuration filesThere has been controversy over the meaning of the name itself. In early versions of the UNIX Implementation Document from Bell labs, /etc is referred to as the <i>etcetera directory</i>, as this directory historically held everything that did not belong elsewhere (however, the FHS restricts /etc to static configuration files and may not contain binaries). Since the publication of early documentation, the directory name has been re-designated in various ways. Recent interpretations include backronyms such as “Editable Text Configuration” or “Extended Tool Chest”.</td>
-      <td>主机特定的系统范围内的配置文件。其实这里有个关于它名字本身意义上的的争议。在贝尔实验室的早期UNIX实施文档版本中，/etc表示是“其他目录”，因为从历史上看，这个目录是存放各种不属于其他目录的文件（然而，FSH(文件系统目录标准)限定 /ect是用于存放静态配置文件，这里不该存有二进制文件）。早期文档出版后，这个目录名又重新定义成不同的形式。近期的解释中包含着诸如“可编辑文本配置”或者“额外的工具箱”这样的重定义</td>
+      <td>存放主机特定的系统范围内的配置文件。其实这里有个关于它名字本身意义上的的争议。在贝尔实验室的早期UNIX实施文档版本中，/etc表示是“其他目录”，因为从历史上看，这个目录是存放各种不属于其他目录的文件（然而，FSH(文件系统目录标准)限定 /ect是用于存放静态配置文件，这里不该存有二进制文件）。早期文档出版后，这个目录名又重新定义成不同的形式。近期的解释中包含着诸如“可编辑文本配置”或者“额外的工具箱”这样的重定义</td>
     </tr>
     <tr>
       <td><dl>
@@ -102,7 +106,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>Configuration files, such as catalogs, for software that processes SGML.</td>
-      <td>配置文件，比如目录，还有那些处理SGML(译者注：标准通用标记语言)的软件的配置文件</td>
+      <td>存放配置文件，比如目录，还有那些处理SGML(译者注：标准通用标记语言)的软件的配置文件</td>
     </tr>
     <tr>
       <td><dl>
@@ -113,7 +117,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>Configuration files for the X Window System, version 11.</td>
-      <td>X窗口系统的配置文件,版本号为11</td>
+      <td>X Window系统的配置文件,版本号为11</td>
       <td></td>
     </tr>
     <tr>
@@ -146,7 +150,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           <dd><code>/lib&lt;qual&gt;</code></dd>
         </dl></td>
       <td>Alternate format essential libraries. Such directories are optional, but if they exist, they have some requirements.</td>
-      <td>备用格式的必要库文件. 这样的目录视可选的,但如果他们存在的话, 他们还有一些要求.</td>
+      <td>备用格式的必要的库文件. 这样的目录视可选的,但如果他们存在的话, 他们还有一些要求.</td>
     </tr>
     <tr>
       <td><dl>
@@ -275,6 +279,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>Non-essential system binaries, <i>e.g.</i>, daemons for various network-services.</td>
+      <td>非必要系统的二进制文件, <i>比如</i>,用于不同网络服务的守护进程</td>
     </tr>
     <tr>
       <td><dl>
@@ -284,7 +289,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
             </dl>
           </dd>
         </dl></td>
-      <td>Architecture-independent (shared) data.</td>
+      <td>独立架构的 (共享) 数据.</td>
     </tr>
     <tr>
       <td><dl>
@@ -295,6 +300,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>Source code, <i>e.g.</i>, the kernel source code with its header files.</td>
+      <td>源代码, <i>比如</i>, 内核源文件以及与它相关的头文件</td>
     </tr>
     <tr>
       <td><dl>
@@ -305,12 +311,14 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>X Window System, Version 11, Release 6.</td>
+      <td>X 窗口系统，版本号:11，发行版本：6</td>
     </tr>
     <tr>
       <td><dl>
           <dd><code>/var</code></dd>
         </dl></td>
       <td>Variable files&mdash;files whose content is expected to continually change during normal operation of the system&mdash;such as logs, spool files, and temporary e-mail files.</td>
+      <td>各式各样的文件，一些随着系统常规操作而持续改变的文件就放在这里，比如日志文件，脱机文件，还有临时的电子邮件文件</td>
     </tr>
     <tr>
       <td><dl>
@@ -321,6 +329,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>Application cache data. Such data are locally generated as a result of time-consuming I/O or calculation. The application must be able to regenerate or restore the data. The cached files can be deleted without loss of data.</td>
+      <td>应用程序缓存数据. 这些数据是由I/O(输入/输出)的耗时结果或者是运算生成的.这些应用程序是可以重新生成或者恢复数据的.当没有数据丢失的时候，可以删除缓存文件.</td>
     </tr>
     <tr>
       <td><dl>
@@ -331,6 +340,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>State information. Persistent data modified by programs as they run, <i>e.g.</i>, databases, packaging system metadata, etc.</td>
+      <td>状态信息.这些信息随着程序的运行而不停地改变，比如，数据库，系统元数据的打包等等</td>
     </tr>
     <tr>
       <td><dl>
@@ -341,6 +351,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>Lock files. Files keeping track of resources currently in use.</td>
+      <td>锁文件。这些文件会持续监控正在使用的资源</td>
     </tr>
     <tr>
       <td><dl>
@@ -351,6 +362,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>Log files. Various logs.</td>
+      <td>日志文件. 包含各种日志.</td>
     </tr>
     <tr>
       <td><dl>
@@ -361,6 +373,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>Users’ mailboxes.</td>
+      <td>内含用户邮箱的相关文件</td>
     </tr>
     <tr>
       <td><dl>
@@ -371,6 +384,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>Variable data from add-on packages that are stored in <code>/opt/</code>.</td>
+      <td>来自附加包的各种数据都会存储在 <code>/opt/</code>.</td>
     </tr>
     <tr>
       <td><dl>
@@ -381,6 +395,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>Information about the running system since last boot, <i>e.g.</i>, currently logged-in users and running <a href="http://en.wikipedia.org/wiki/Daemon_%28computing%29">daemons</a>.</td>
+      <td>存放当前系统上次启动的相关信息, <i>例如</i>, 当前登入的用户以及当前运行的<a href="http://en.wikipedia.org/wiki/Daemon_%28computing%29">守护进程</a>.</td>
     </tr>
     <tr>
       <td><dl>
@@ -391,6 +406,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>Spool for tasks waiting to be processed, <i>e.g.</i>, print queues and outgoing mail queue.</td>
+      <td>该spool主要用于存放将要被处理的任务, <i>比如</i>, 打印队列以及邮件传出队列</td>
     </tr>
     <tr>
       <td><dl>
@@ -405,6 +421,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>Deprecated location for users’ mailboxes.</td>
+      <td>过时的位置，用于放置用户邮箱文件</td>
     </tr>
     <tr>
       <td><dl>
@@ -415,6 +432,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>Temporary files to be preserved between reboots.</td>
+      <td>存放重启之前的临时接口</td>
     </tr>
   </tbody>
 </table>
