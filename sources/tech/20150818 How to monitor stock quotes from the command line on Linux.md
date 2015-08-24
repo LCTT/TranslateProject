@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How to monitor stock quotes from the command line on Linux
 ================================================================================
 If you are one of those stock investors or traders, monitoring the stock market will be one of your daily routines. Most likely you will be using an online trading platform which comes with some fancy real-time charts and all sort of advanced stock analysis and tracking tools. While such sophisticated market research tools are a must for any serious stock investors to read the market, monitoring the latest stock quotes still goes a long way to build a profitable portfolio.
