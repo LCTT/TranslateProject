@@ -1,3 +1,5 @@
+FSSlc translating
+
 RHCSA Series: Securing SSH, Setting Hostname and Enabling Network Services – Part 8
 ================================================================================
 As a system administrator you will often have to log on to remote systems to perform a variety of administration tasks using a terminal emulator. You will rarely sit in front of a real (physical) terminal, so you need to set up a way to log on remotely to the machines that you will be asked to manage.
