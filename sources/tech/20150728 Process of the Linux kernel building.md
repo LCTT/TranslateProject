@@ -698,6 +698,8 @@ The `$(obj)/compressed/vmlinux` target depends on the `vmlinux-objs-y` that comp
 
 Where the `vmlinux.bin` is the `vmlinux` with striped debuging information and comments and the `vmlinux.bin.bz2` compressed `vmlinux.bin.all` + `u32` size of `vmlinux.bin.all`. The `vmlinux.bin.all` is `vmlinux.bin + vmlinux.relocs`, where `vmlinux.relocs` is the `vmlinux` that was handled by the `relocs` program (see above). As we got these files, the `piggy.S` assembly files will be generated with the `mkpiggy` program and compiled:
 
+`vmlinux.bin` 是去掉了调试信息和注释的`vmlinux` 二进制文件，加上了占用了`u32` （注：即4-Byte）的长度信息的`vmlinux.bin.all` 压缩后就是`vmlinux.bin.bz2`。其中`vmlinux.bin.all` 包含了`vmlinux.bin` 和`vmlinux.relocs`（注：vmlinux 的重定位信息），其中`vmlinux.relocs` 是`vmlinux` 经过程序`relocs` 处理之后的`vmlinux` 镜像（见上文所述）。我们现在已经获取到了这些文件，汇编文件`piggy.S` 将会被`mkpiggy` 生成、然后编译：
+
 ```Makefile
   MKPIGGY arch/x86/boot/compressed/piggy.S
   AS      arch/x86/boot/compressed/piggy.o
@@ -705,11 +707,15 @@ Where the `vmlinux.bin` is the `vmlinux` with striped debuging information and c
 
 This assembly files will contain computed offset from a compressed kernel. After this we can see that `zoffset` generated:
 
+这个汇编文件会包含经过计算得来的、压缩内核的偏移信息。处理完这个汇编文件，我们就可以看到`zoffset` 生成了：
+
 ```Makefile
   ZOFFSET arch/x86/boot/zoffset.h
 ```
 
 As the `zoffset.h` and the `voffset.h` are generated, compilation of the source code files from the [arch/x86/boot](https://github.com/torvalds/linux/tree/master/arch/x86/boot/) can be continued:
+
+现在`zoffset.h` 和`voffset.h` 已经生成了，[arch/x86/boot](https://github.com/torvalds/linux/tree/master/arch/x86/boot/) 里的源文件可以继续编译：
 
 ```Makefile
   AS      arch/x86/boot/header.o
@@ -731,11 +737,15 @@ As the `zoffset.h` and the `voffset.h` are generated, compilation of the source 
 
 As all source code files will be compiled, they will be linked to the `setup.elf`:
 
+所有的源代码会被编译，他们最终会被链接到`setup.elf` ：
+
 ```Makefile
   LD      arch/x86/boot/setup.elf
 ```
 
 or:
+
+或者：
 
 ```
 ld -m elf_x86_64   -T arch/x86/boot/setup.ld arch/x86/boot/a20.o arch/x86/boot/bioscall.o arch/x86/boot/cmdline.o arch/x86/boot/copy.o arch/x86/boot/cpu.o arch/x86/boot/cpuflags.o arch/x86/boot/cpucheck.o arch/x86/boot/early_serial_console.o arch/x86/boot/edd.o arch/x86/boot/header.o arch/x86/boot/main.o arch/x86/boot/mca.o arch/x86/boot/memory.o arch/x86/boot/pm.o arch/x86/boot/pmjump.o arch/x86/boot/printf.o arch/x86/boot/regs.o arch/x86/boot/string.o arch/x86/boot/tty.o arch/x86/boot/video.o arch/x86/boot/video-mode.o arch/x86/boot/version.o arch/x86/boot/video-vga.o arch/x86/boot/video-vesa.o arch/x86/boot/video-bios.o -o arch/x86/boot/setup.elf
@@ -743,11 +753,15 @@ ld -m elf_x86_64   -T arch/x86/boot/setup.ld arch/x86/boot/a20.o arch/x86/boot/b
 
 The last two things is the creation of the `setup.bin` that will contain compiled code from the `arch/x86/boot/*` directory:
 
+最后两件事是创建包含目录`arch/x86/boot/*` 下的编译过的代码的`setup.bin`：
+
 ```
 objcopy  -O binary arch/x86/boot/setup.elf arch/x86/boot/setup.bin
 ```
 
 and the creation of the `vmlinux.bin` from the `vmlinux`:
+
+以及从`vmlinux` 生成`vmlinux.bin` :
 
 ```
 objcopy  -O binary -R .note -R .comment -S arch/x86/boot/compressed/vmlinux arch/x86/boot/vmlinux.bin
@@ -755,11 +769,15 @@ objcopy  -O binary -R .note -R .comment -S arch/x86/boot/compressed/vmlinux arch
 
 In the end we compile host program: [arch/x86/boot/tools/build.c](https://github.com/torvalds/linux/blob/master/arch/x86/boot/tools/build.c) that will create our `bzImage` from the `setup.bin` and the `vmlinux.bin`:
 
+最后，我们编译主机程序[arch/x86/boot/tools/build.c](https://github.com/torvalds/linux/blob/master/arch/x86/boot/tools/build.c)，它将会用来把`setup.bin` 和`vmlinux.bin` 打包成`bzImage`:
+
 ```
 arch/x86/boot/tools/build arch/x86/boot/setup.bin arch/x86/boot/vmlinux.bin arch/x86/boot/zoffset.h arch/x86/boot/bzImage
 ```
 
 Actually the `bzImage` is the concatenated `setup.bin` and the `vmlinux.bin`. In the end we will see the output which familiar to all who once build the Linux kernel from source:
+
+实际上`bzImage` 就是把`setup.bin` 和`vmlinux.bin` 连接到一起。最终我们会看到输出结果，就和那些用源码编译过内核的同行的结果一样：
 
 ```
 Setup is 16268 bytes (padded to 16384 bytes).
@@ -770,12 +788,19 @@ Kernel: arch/x86/boot/bzImage is ready  (#5)
 
 That's all. 
 
+全部结束。
+
 Conclusion
+结论
 ================================================================================
 
 It is the end of this part and here we saw all steps from the execution of the `make` command to the generation of the `bzImage`. I know, the Linux kernel makefiles and process of the Linux kernel building may seem confusing at first glance, but it is not so hard. Hope this part will help you to understand process of the Linux kernel building.
 
+这就是本文的最后一节。本文我们了解了编译内核的全部步骤：从执行`make` 命令开始，到最后生成`bzImage`。我知道，linux 内核的makefiles 和构建linux 的过程第一眼看起来可能比较迷惑，但是这并不是很难。希望本文可以帮助你理解构建linux 内核的整个流程。
+
+
 Links
+链接
 ================================================================================
 
 * [GNU make util](https://en.wikipedia.org/wiki/Make_%28software%29)
@@ -797,7 +822,7 @@ Links
 
 via: https://github.com/0xAX/linux-insides/blob/master/Misc/how_kernel_compiled.md
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/oska874)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
