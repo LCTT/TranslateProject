@@ -1,3 +1,4 @@
+[bazz22222222222]
 A Look at What's Next for the Linux Kernel
 ================================================================================
 ![](http://www.eweek.com/imagesvr_ce/485/290x195cilinux1.jpg)
