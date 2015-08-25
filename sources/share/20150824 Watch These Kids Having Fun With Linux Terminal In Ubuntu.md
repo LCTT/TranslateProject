@@ -1,3 +1,5 @@
+translating---geekpi
+
 Watch These Kids Having Fun With Linux Terminal In Ubuntu
 ================================================================================
 I found this short video of children having fun with Linux terminals in their computer lab at school. I do not know where do they belong to, but I guess it is either in Indonesia or Malaysia.
