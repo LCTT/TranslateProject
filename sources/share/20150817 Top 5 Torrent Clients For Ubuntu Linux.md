@@ -1,3 +1,5 @@
+Translating by Xuanwo
+
 Top 5 Torrent Clients For Ubuntu Linux
 ================================================================================
 ![Best Torrent clients for Ubuntu Linux](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/08/5_Best_Torrent_Ubuntu.png)
