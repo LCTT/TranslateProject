@@ -1,3 +1,4 @@
+[bazz2222222]
 Linux about to gain a new file system – bcachefs
 ================================================================================
 A five year old file system built by Kent Overstreet, formerly of Google, is near feature complete with all critical components in place. Bcachefs boasts the performance and reliability of the widespread ext4 and xfs as well as the feature list similar to that of btrfs and zfs. Notable features include checksumming, compression, multiple devices, caching and eventually snapshots and other “nifty” features.
