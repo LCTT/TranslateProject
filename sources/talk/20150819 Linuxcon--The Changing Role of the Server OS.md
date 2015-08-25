@@ -1,3 +1,4 @@
+[bazz2222222]
 Linuxcon: The Changing Role of the Server OS
 ================================================================================
 SEATTLE - Containers might one day change the world, but it will take time and it will also change the role of the operating system. That's the message delivered during a Linuxcon keynote here today by Wim Coekaerts, SVP Linux and virtualization engineering at Oracle.
