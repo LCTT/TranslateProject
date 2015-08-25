@@ -1,4 +1,6 @@
- Basics Of NetworkManager Command Line Tool, Nmcli
+translating----geekpi
+
+Basics Of NetworkManager Command Line Tool, Nmcli
 ================================================================================
 ![](http://1102047360.rsc.cdn77.org/wp-content/uploads/2015/08/networking1.jpg)
 
