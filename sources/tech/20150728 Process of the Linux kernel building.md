@@ -1,40 +1,25 @@
 Translating by Ezio
 
-Process of the Linux kernel building
-如何构建Linux 内核的
+如何构建Linux 内核
 ================================================================================
 介绍
 --------------------------------------------------------------------------------
 
-I will not tell you how to build and install custom Linux kernel on your machine, you can find many many [resources](https://encrypted.google.com/search?q=building+linux+kernel#q=building+linux+kernel+from+source+code) that will help you to do it. Instead, we will know what does occur when you are typed `make` in the directory with Linux kernel source code in this part. When I just started to learn source code of the Linux kernel, the [Makefile](https://github.com/torvalds/linux/blob/master/Makefile) file was a first file that I've opened. And it was scary :) This [makefile](https://en.wikipedia.org/wiki/Make_%28software%29) contains `1591` lines of code at the time when I wrote this part and it was [third](https://github.com/torvalds/linux/commit/52721d9d3334c1cb1f76219a161084094ec634dc) release candidate.
+我不会告诉你怎么在自己的电脑上去构建、安装一个定制化的Linux 内核，这样的[资料](https://encrypted.google.com/search?q=building+linux+kernel#q=building+linux+kernel+from+source+code) 太多了，它们会对你有帮助。本文会告诉你当你在内核源码路径里敲下`make` 时会发生什么。当我刚刚开始学习内核代码时，[Makefile](https://github.com/torvalds/linux/blob/master/Makefile) 是我打开的第一个文件，这个文件看起来真令人害怕 :)。那时候这个[Makefile](https://en.wikipedia.org/wiki/Make_%28software%29) 还只包含了`1591` 行代码，当我开始写本文是，这个[Makefile](https://github.com/torvalds/linux/commit/52721d9d3334c1cb1f76219a161084094ec634dc) 已经是第三个候选版本了。
 
-我不会告诉你怎么在自己的电脑上去构建、安装一个定制化的Linux 内核，这样的[资料](https://encrypted.google.com/search?q=building+linux+kernel#q=building+linux+kernel+from+source+code) 太多了，它们会对你有帮助。本文会告诉你当你在内核源码路径里敲下`make` 时会发生什么。当我刚刚开始学习内核代码时，[Makefile](https://github.com/torvalds/linux/blob/master/Makefile) 是我打开的第一个文件，这个文件真令人害怕 :)。那时候这个[Makefile](https://en.wikipedia.org/wiki/Make_%28software%29) 包含了`1591` 行代码，当我开始写本文是，这个[Makefile](https://github.com/torvalds/linux/commit/52721d9d3334c1cb1f76219a161084094ec634dc) 已经是第三个候选版本了。
-
-This makefile is the the top makefile in the Linux kernel source code and kernel build starts here. Yes, it is big, but moreover, if you've read the source code of the Linux kernel you can noted that all directories with a source code has an own makefile. Of course it is not real to describe how each source files compiled and linked. So, we will see compilation only for the standard case. You will not find here building of the kernel's documentation, cleaning of the kernel source code, [tags](https://en.wikipedia.org/wiki/Ctags) generation, [cross-compilation](https://en.wikipedia.org/wiki/Cross_compiler) related stuff and etc. We will start from the `make` execution with the standard kernel configuration file and will finish with the building of the [bzImage](https://en.wikipedia.org/wiki/Vmlinux#bzImage).
-
-It would be good if you're already familiar with the [make](https://en.wikipedia.org/wiki/Make_%28software%29) util, but I will anyway try to describe all code that will be in this part.
-
-So let's start.
-
-这个makefile 是Linux 内核代码的顶端makefile ，内核构件就始于此处。是的，它的内容很多，但是如果你已经读过内核源代码，你就会发现每个包含代码的目录都有一个自己的makefile。当然了，我们不会去描述每个代码文件是怎么编译链接的。所以我们将只会挑选一些通用的例子来说明问题，而你不会在这里找到构建内核的文档，如何整洁内核代码， [tags](https://en.wikipedia.org/wiki/Ctags) 的生成，和[交叉编译](https://en.wikipedia.org/wiki/Cross_compiler)  相关的说明，等等。我们将从`make` 开始，使用标准的内核配置文件，到生成了内核镜像[bzImage](https://en.wikipedia.org/wiki/Vmlinux#bzImage) 结束。
+这个makefile 是Linux 内核代码的根makefile ，内核构建就始于此处。是的，它的内容很多，但是如果你已经读过内核源代码，你就会发现每个包含代码的目录都有一个自己的makefile。当然了，我们不会去描述每个代码文件是怎么编译链接的。所以我们将只会挑选一些通用的例子来说明问题，而你不会在这里找到构建内核的文档、如何整洁内核代码、[tags](https://en.wikipedia.org/wiki/Ctags) 的生成和[交叉编译](https://en.wikipedia.org/wiki/Cross_compiler)  相关的说明，等等。我们将从`make` 开始，使用标准的内核配置文件，到生成了内核镜像[bzImage](https://en.wikipedia.org/wiki/Vmlinux#bzImage) 结束。
 
 如果你已经很了解[make](https://en.wikipedia.org/wiki/Make_%28software%29) 工具那是最好，但是我也会描述本文出现的相关代码。
 
 让我们开始吧
 
 
-Preparation before the kernel compilation
 编译内核前的准备
 ---------------------------------------------------------------------------------
 
-There are many things to preparate before the kernel compilation will be started. The main point here is to find and configure 
-the type of compilation, to parse command line arguments that are passed to the `make` util and etc. So let's dive into the top `Makefile` of the Linux kernel.
+在开始编译前要进行很多准备工作。最主要的就是找到并配置好配置文件，`make` 命令要使用到的参数都需要从这些配置文件获取。现在就让我们深入内核的根`makefile` 吧
 
-在开始便以前要进行很多准备工作。最主要的就是找到并配置好配置文件，`make` 命令要使用到的参数都需要从这些配置文件获取。
-
-The Linux kernel top `Makefile` is responsible for building two major products: [vmlinux](https://en.wikipedia.org/wiki/Vmlinux) (the resident kernel image) and the modules (any module files). The [Makefile](https://github.com/torvalds/linux/blob/master/Makefile) of the Linux kernel starts from the definition of the following variables:
-
-内核顶端的`Makefile` 负责构建两个主要的产品：[vmlinux](https://en.wikipedia.org/wiki/Vmlinux) （内核镜像可执行文件）和模块文件。内核的 [Makefile](https://github.com/torvalds/linux/blob/master/Makefile)  以次开始：
+内核的根`Makefile` 负责构建两个主要的文件：[vmlinux](https://en.wikipedia.org/wiki/Vmlinux) （内核镜像可执行文件）和模块文件。内核的 [Makefile](https://github.com/torvalds/linux/blob/master/Makefile) 从此处开始：
 
 ```Makefile
 VERSION = 4
@@ -44,15 +29,11 @@ EXTRAVERSION = -rc3
 NAME = Hurr durr I'ma sheep
 ```
 
-These variables determine the current version of the Linux kernel and are used in the different places, for example in the forming of the `KERNELVERSION` variable:
-
 这些变量决定了当前内核的版本，并且被使用在很多不同的地方，比如`KERNELVERSION` ：
 
 ```Makefile
 KERNELVERSION = $(VERSION)$(if $(PATCHLEVEL),.$(PATCHLEVEL)$(if $(SUBLEVEL),.$(SUBLEVEL)))$(EXTRAVERSION)
 ```
-
-After this we can see a couple of the `ifeq` condition that check some of the parameters passed to `make`. The Linux kernel `makefiles` provides a special `make help` target that prints all available targets and some of the command line arguments that can be passed to `make`. For example: `make V=1` - provides verbose builds. The first `ifeq` condition checks if the `V=n` option is passed to make:
 
 接下来我们会看到很多`ifeq` 条件判断语句，它们负责检查传给`make` 的参数。内核的`Makefile` 提供了一个特殊的编译选项`make help` ，这个选项可以生成所有的可用目标和一些能传给`make` 的有效的命令行参数。举个例子，`make V=1` 会在构建过程中输出详细的编译信息，第一个`ifeq` 就是检查传递给make的`V=n` 选项。
 
@@ -75,9 +56,7 @@ endif
 export quiet Q KBUILD_VERBOSE
 ```
 
-If this option is passed to `make` we set the `KBUILD_VERBOSE` variable to the value of the `V` option. Otherwise we set the `KBUILD_VERBOSE` variable to zero. After this we check value of the `KBUILD_VERBOSE` variable and set values of the `quiet` and `Q` variables depends on the `KBUILD_VERBOSE` value. The `@` symbols suppress the output of the command and if it will be set before a command we will see something like this: `CC scripts/mod/empty.o` instead of the `Compiling .... scripts/mod/empty.o`. In the end we just export all of these variables. The next `ifeq` statement checks that `O=/dir` option was passed to the `make`. This option allows to locate all output files in the given `dir`:
-
-如果`V=n` 这个选项传给了`make` ，系统就会给变量`KBUILD_VERBOSE` 选项附上`V` 的值，否则的话`KBUILD_VERBOSE` 就会为0。然后系统会检查`KBUILD_VERBOSE` 的值，以此来决定`quiet`  和`Q` 的值。符号`@` 控制命令的输出，如果它被放在一个命令之前，这条命令的执行将会是`CC scripts/mod/empty.o`，而不是`Compiling .... scripts/mod/empty.o`（注：CC 在makefile 中一般都是编译命令）。最后系统仅仅导出所有的变量。下一个`ifeq` 语句检查的是传递给`make` 的选项`O=/dir`，这个选项允许在指定的目录`dir` 输出所有的结果文件：
+如果`V=n` 这个选项传给了`make` ，系统就会给变量`KBUILD_VERBOSE` 选项附上`V` 的值，否则的话`KBUILD_VERBOSE` 就会为`0`。然后系统会检查`KBUILD_VERBOSE` 的值，以此来决定`quiet`  和`Q` 的值。符号`@` 控制命令的输出，如果它被放在一个命令之前，这条命令的执行将会是`CC scripts/mod/empty.o`，而不是`Compiling .... scripts/mod/empty.o`（注：CC 在makefile 中一般都是编译命令）。最后系统仅仅导出所有的变量。下一个`ifeq` 语句检查的是传递给`make` 的选项`O=/dir`，这个选项允许在指定的目录`dir` 输出所有的结果文件：
 
 ```Makefile
 ifeq ($(KBUILD_SRC),)
@@ -102,15 +81,7 @@ endif # ifneq ($(KBUILD_OUTPUT),)
 endif # ifeq ($(KBUILD_SRC),)
 ```
 
-We check the `KBUILD_SRC` that represent top directory of the source code of the linux kernel and if it is empty (it is empty every time while makefile executes first time) and the set the `KBUILD_OUTPUT` variable to the value that passed with the `O` option (if this option was passed). In the next step we check this `KBUILD_OUTPUT` variable and if we set it, we do following things:
-
-* Store value of the `KBUILD_OUTPUT` in the temp `saved-output` variable;
-* Try to create given output directory;
-* Check that directory created, in other way print error;
-* If custom output directory created sucessfully, execute `make` again with the new directory (see `-C` option).
-
-The next `ifeq` statements checks that `C` or `M` options was passed to the make: 
-系统会检查变量`KBUILD_SRC`，如果他是空的（第一次执行makefile 时总是空的），并且变量`KBUILD_OUTPUT` 被设成了选项`O` 的值（如果这个选项被传进来了），那么这个值就会用来代表内核源码的顶层目录。下一步会检查变量`KBUILD_OUTPUT` ，如果之前设置过这个变量，那么接下来会做一下几件事：
+系统会检查变量`KBUILD_SRC`，如果他是空的（第一次执行makefile 时总是空的），并且变量`KBUILD_OUTPUT` 被设成了选项`O` 的值（如果这个选项被传进来了），那么这个值就会用来代表内核源码的顶层目录。下一步会检查变量`KBUILD_OUTPUT` ，如果之前设置过这个变量，那么接下来会做以下几件事：
 
 * 将变量`KBUILD_OUTPUT` 的值保存到临时变量`saved-output`；
 * 尝试创建输出目录；
@@ -132,8 +103,6 @@ ifeq ("$(origin M)", "command line")
 endif
 ```
 
-The first `C` option tells to the `makefile` that need to check all `c` source code with a tool provided by the `$CHECK` environment variable, by default it is [sparse](https://en.wikipedia.org/wiki/Sparse). The second `M` option provides build for the external modules (will not see this case in this part). As we set this variables we make a check of the `KBUILD_SRC` variable and if it is not set we set `srctree` variable to `.`:
-
 第一个选项`C` 会告诉`makefile` 需要使用环境变量`$CHECK` 提供的工具来检查全部`c` 代码，默认情况下会使用[sparse](https://en.wikipedia.org/wiki/Sparse)。第二个选项`M` 会用来编译外部模块（本文不做讨论）。因为设置了这两个变量，系统还会检查变量`KBUILD_SRC`，如果`KBUILD_SRC` 没有被设置，系统会设置变量`srctree` 为`.`：
 
 ```Makefile
@@ -148,9 +117,7 @@ obj		:= $(objtree)
 export srctree objtree VPATH
 ```
 
-That tells to `Makefile` that source tree of the Linux kernel will be in the current directory where `make` command was executed. After this we set `objtree` and other variables to this directory and export these variables. The next step is the setting value for the `SUBARCH` variable that will represent what the underlying archicecture is:
-
-这将会告诉`Makefile` 内核的源码树就在执行make 命令的目录。然后要设置`objtree` 和其他变量为执行make 命令的目录，并且将这些变量导出。接着就是要获取`SUBARCH` 的值，这个变量代表了当前的系统架构（注：一般值CPU 架构）：
+这将会告诉`Makefile` 内核的源码树就在执行make 命令的目录。然后要设置`objtree` 和其他变量为执行make 命令的目录，并且将这些变量导出。接着就是要获取`SUBARCH` 的值，这个变量代表了当前的系统架构（注：一般都指CPU 架构）：
 
 ```Makefile
 SUBARCH := $(shell uname -m | sed -e s/i.86/x86/ -e s/x86_64/x86/ \
@@ -160,8 +127,6 @@ SUBARCH := $(shell uname -m | sed -e s/i.86/x86/ -e s/x86_64/x86/ \
 				  -e s/ppc.*/powerpc/ -e s/mips.*/mips/ \
 				  -e s/sh[234].*/sh/ -e s/aarch64.*/arm64/ )
 ```
-
-As you can see it executes [uname](https://en.wikipedia.org/wiki/Uname) utils that prints information about machine, operating system and architecture. As it will get output of the `uname` util, it will parse it and assign to the `SUBARCH` variable. As we got `SUBARCH`, we set the `SRCARCH` variable that provides directory of the certain architecture and `hfr-arch` that provides directory for the header files:
 
 如你所见，系统执行[uname](https://en.wikipedia.org/wiki/Uname) 得到机器、操作系统和架构的信息。因为我们得到的是`uname` 的输出，所以我们需要做一些处理在赋给变量`SUBARCH` 。获得`SUBARCH` 之后就要设置`SRCARCH` 和`hfr-arch`，`SRCARCH`提供了硬件架构相关代码的目录，`hfr-arch` 提供了相关头文件的目录：
 
@@ -176,18 +141,13 @@ endif
 hdr-arch  := $(SRCARCH)
 ```
 
-Note that `ARCH` is the alias for the `SUBARCH`. In the next step we set the `KCONFIG_CONFIG` variable that represents path to the kernel configuration file and if it was not set before, it will be `.config` by default:
-
-注意：`ARCH` 是`SUBARCH` 的别名。如果没有设置过代表内核配置文件路径的变量`KCONFIG_CONFIG`，下一步系统会设置他，默认情况下就是`.config` ：
+注意：`ARCH` 是`SUBARCH` 的别名。如果没有设置过代表内核配置文件路径的变量`KCONFIG_CONFIG`，下一步系统会设置它，默认情况下就是`.config` ：
 
 ```Makefile
 KCONFIG_CONFIG	?= .config
 export KCONFIG_CONFIG
 ```
-
-and the [shell](https://en.wikipedia.org/wiki/Shell_%28computing%29) that will be used during kernel compilation:
-
-和编译内核过程中要用到的[shell](https://en.wikipedia.org/wiki/Shell_%28computing%29)
+以及编译内核过程中要用到的[shell](https://en.wikipedia.org/wiki/Shell_%28computing%29)
 
 ```Makefile
 CONFIG_SHELL := $(shell if [ -x "$$BASH" ]; then echo $$BASH; \
@@ -195,10 +155,7 @@ CONFIG_SHELL := $(shell if [ -x "$$BASH" ]; then echo $$BASH; \
 	  else echo sh; fi ; fi)
 ```
 
-The next set of variables related to the compiler that will be used during Linux kernel compilation. We set the host compilers for the `c` and `c++` and flags for it:
-
-接下来就要设置一组和编译内核的编译器相关的变量。我们会设置host 的C 和C++ 的编译器及相关配置项：
-
+接下来就要设置一组和编译内核的编译器相关的变量。我们会设置主机的`C` 和`C++` 的编译器及相关配置项：
 
 ```Makefile
 HOSTCC       = gcc
@@ -207,9 +164,7 @@ HOSTCFLAGS   = -Wall -Wmissing-prototypes -Wstrict-prototypes -O2 -fomit-frame-p
 HOSTCXXFLAGS = -O2
 ```
 
-Next we will meet the `CC` variable that represent compiler too, so why do we need in the `HOST*` variables? The `CC` is the target compiler that will be used during kernel compilation, but `HOSTCC` will be used during compilation of the set of the `host` programs (we will see it soon). After this we can see definition of the `KBUILD_MODULES` and `KBUILD_BUILTIN` variables that are used for the determination of the what to compile (kernel, modules or both):
-
-然后会去适配代表编译器的变量`CC`,为什么还要`HOST*` 这些选项呢？`CC` 是编译内核过程中要使用的目标架构的编译器，但是`HOSTCC` 是要被用来编译一组`host` 程序的（下面我们就会看到）。然后我们就看看变量`KBUILD_MODULES` 和`KBUILD_BUILTIN` 的定义，这两个变量据欸的那个了我们要编译什么（内核、模块还是其他？）：
+下一步会去适配代表编译器的变量`CC`,那为什么还要`HOST*` 这些选项呢？这是因为`CC` 是编译内核过程中要使用的目标架构的编译器，但是`HOSTCC` 是要被用来编译一组`host` 程序的（下面我们就会看到）。然后我们就看看变量`KBUILD_MODULES` 和`KBUILD_BUILTIN` 的定义，这两个变量决定了我们要编译什么东西（内核、模块还是其他）：
 
 ```Makefile
 KBUILD_MODULES :=
@@ -220,15 +175,11 @@ ifeq ($(MAKECMDGOALS),modules)
 endif
 ```
 
-Here we can see definition of these variables and the value of the `KBUILD_BUILTIN` will depens on the `CONFIG_MODVERSIONS` kernel configuration parameter if we pass only `modules` to the `make`. The next step is including of the:
-
-在这我们可以看到这些变量的定义，并且，如果们仅仅传递了`modules` 给`make`,变量`KBUILD_BUILTIN` 会依赖于内核配置选项`CONFIG_MODVERSIONS`。下一步操作是引入：
+在这我们可以看到这些变量的定义，并且，如果们仅仅传递了`modules` 给`make`,变量`KBUILD_BUILTIN` 会依赖于内核配置选项`CONFIG_MODVERSIONS`。下一步操作是引入下面的文件：
 
 ```Makefile
 include scripts/Kbuild.include
 ```
-
-`kbuild` file. The [Kbuild](https://github.com/torvalds/linux/blob/master/Documentation/kbuild/kbuild.txt) or `Kernel Build System` is the special infrastructure to manage building of the kernel and its modules. The `kbuild` files has the same syntax that makefiles. The [scripts/Kbuild.include](https://github.com/torvalds/linux/blob/master/scripts/Kbuild.include) file provides some generic definitions for the `kbuild` system. As we included this `kbuild` files we can see definition of the variables that are related to the different tools that will be used during kernel and modules compilation (like linker, compilers, utils from the [binutils](http://www.gnu.org/software/binutils/) and etc...):
 
 文件`kbuild` ,[Kbuild](https://github.com/torvalds/linux/blob/master/Documentation/kbuild/kbuild.txt) 或者又叫做 `Kernel Build System`是一个用来管理构建内核和模块的特殊框架。`kbuild` 文件的语法与makefile 一样。文件[scripts/Kbuild.include](https://github.com/torvalds/linux/blob/master/scripts/Kbuild.include) 为`kbuild` 系统同提供了一些原生的定义。因为我们包含了这个`kbuild` 文件，我们可以看到和不同工具关联的这些变量的定义，这些工具会在内核和模块编译过程中被使用（比如链接器、编译器、二进制工具包[binutils](http://www.gnu.org/software/binutils/)，等等）：
 
