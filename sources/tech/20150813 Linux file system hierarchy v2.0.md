@@ -311,7 +311,7 @@ In order to manage all those files in an orderly fashion, man likes to think of 
           </dd>
         </dl></td>
       <td>X Window System, Version 11, Release 6.</td>
-      <td>X 窗口系统，版本号:11，发行版本：6</td>
+      <td>X Window系统，版本号:11，发行版本：6</td>
     </tr>
     <tr>
       <td><dl>
@@ -438,43 +438,55 @@ In order to manage all those files in an orderly fashion, man likes to think of 
 </table>
 
 ### Types of files in Linux ###
-
+Linux的文件类型
 Most files are just files, called `regular` files; they contain normal data, for example text files, executable files or programs, input for or output from a program and so on.
-
+大多数文件也仅仅是文件，他们被称为`regular`文件;他们包含普通数据，比如，文本，可执行文件，或者程序，程序输入或输出文件等等
 While it is reasonably safe to suppose that everything you encounter on a Linux system is a file, there are some exceptions.
-
+虽然你可以认为“在Linux中，一切你看到的皆为文件”这个观点相当保险，但这里仍有着一些例外。
 - `Directories`: files that are lists of other files.
+- `目录`:由其他文件组成的文件
 - `Special files`: the mechanism used for input and output. Most special files are in `/dev`, we will discuss them later.
+- `特殊文件`:用于输入和输出的途径。大多数特殊文件都储存在`/dev`中,我们将会在后面讨论这个问题。
 - `Links`: a system to make a file or directory visible in multiple parts of the system’s file tree. We will talk about links in detail.
+- `链接文件`:让文件或者目录在系统文件树结构上可见的机制。我们将详细地讨论这个链接文件。
 - `(Domain) sockets`: a special file type, similar to TCP/IP sockets, providing inter-process networking protected by the file system’s access control.
+- `(域)套接字`:特殊的文件类型，和TCP/IP协议中的套接字有点像,提供进程网络，并受文件系统的访问控制机制保护。
 - `Named pipes`: act more or less like sockets and form a way for processes to communicate with each other, without using network socket semantics.
-
+-`命名管道` : 或多或少有点像sockets(套接字)，提供一个进程间的通信机制，而不用网络套接字协议。
 ### File system in reality ###
-
+现实中的文件系统
 For most users and for most common system administration tasks, it is enough to accept that files and directories are ordered in a tree-like structure. The computer, however, doesn’t understand a thing about trees or tree-structures.
-
+对于大多数用户和常规系统管理任务而言，"文件和目录是一个有序的类树结构"是可以接受的。然而，对于电脑而言，它是不会理解什么是树，或者什么是树结构。
 Every partition has its own file system. By imagining all those file systems together, we can form an idea of the tree-structure of the entire system, but it is not as simple as that. In a file system, a file is represented by an `inode`, a kind of serial number containing information about the actual data that makes up the file: to whom this file belongs, and where is it located on the hard disk.
-
+每个分区都有它自己的文件系统。想象一下，如果把那些文件系统想成一个整体，我们可以构思一个关于整个系统的树结构，不过这并没有这么简单。在文件系统中，一个文件代表着一个`inode`(索引节点),一种包含着构建文件的实际数据信息的序列号:这些数据表示文件是属于谁的，还有它在硬盘中的位置。
 Every partition has its own set of inodes; throughout a system with multiple partitions, files with the same inode number can exist.
-
+每个分区都有一套属于他们自己的inodes,在一个系统的不同分区中，可以存在有相同inodes的文件。
 Each inode describes a data structure on the hard disk, storing the properties of a file, including the physical location of the file data. When a hard disk is initialized to accept data storage, usually during the initial system installation process or when adding extra disks to an existing system, a fixed number of inodes per partition is created. This number will be the maximum amount of files, of all types (including directories, special files, links etc.) that can exist at the same time on the partition. We typically count on having 1 inode per 2 to 8 kilobytes of storage.At the time a new file is created, it gets a free inode. In that inode is the following information:
-
+每个inode都表示着一种在硬盘上的数据结构，保存着文件的属性，包括文件数据的物理地址。当硬盘被格式化并用来存储数据时(通常发生在初始系统安装过程，或者是在一个已经存在的系统中添加额外的硬盘)，每个分区都会创建关于inodes的固定值。这个值表示这个分区能够同时存储各类文件的最大数量。我们通常用一个inode去映射2-8k的数据块。当一个新的文件生成后，它就会获得一个空闲的indoe。在这个inode里面存储着以下信息：
 - Owner and group owner of the file.
+- 文件属主和组属主
 - File type (regular, directory, …)
+- 文件类型(常规文件，目录文件......)
 - Permissions on the file
+- 文件权限
 - Date and time of creation, last read and change.
+- 创建、最近一次读文件和修改文件的时间
 - Date and time this information has been changed in the inode.
+- inode里该信息被修改的时间
 - Number of links to this file (see later in this chapter).
+- 文件的链接数(详见下一章)
 - File size
+- 文件大小
 - An address defining the actual location of the file data.
+- 文件数据的实际地址
 
 The only information not included in an inode, is the file name and directory. These are stored in the special directory files. By comparing file names and inode numbers, the system can make up a tree-structure that the user understands. Users can display inode numbers using the -i option to ls. The inodes have their own separate space on the disk.
-
+唯一不在inode的信息是文件名和目录。它们存储在特殊的目录文件。通过比较文件名和inodes的数目，系统能够构造出一个便于用户理解的树结构。用户可以通过ls -i查看inode的数目。在硬盘上,inodes有他们独立的空间
 --------------------------------------------------------------------------------
 
 via: http://www.blackmoreops.com/2015/06/18/linux-file-system-hierarchy-v2-0/
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/tnuoccalanosrep)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
