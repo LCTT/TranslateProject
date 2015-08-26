@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How To Add Hindi And Devanagari Support In Antergos And Arch Linux
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/08/Indian-languages.jpg)
