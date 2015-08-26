@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Mhddfs – Combine Several Smaller Partition into One Large Virtual Storage
 ================================================================================
 Let’s assume that you have 30GB of movies and you have 3 drives each 20 GB in size. So how will you store?

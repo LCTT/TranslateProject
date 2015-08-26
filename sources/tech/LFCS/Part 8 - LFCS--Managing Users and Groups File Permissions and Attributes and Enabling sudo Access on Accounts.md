@@ -1,3 +1,5 @@
+Translating by Xuanwo
+
 Part 8 - LFCS: Managing Users & Groups, File Permissions & Attributes and Enabling sudo Access on Accounts
 ================================================================================
 Last August, the Linux Foundation started the LFCS certification (Linux Foundation Certified Sysadmin), a brand new program whose purpose is to allow individuals everywhere and anywhere take an exam in order to get certified in basic to intermediate operational support for Linux systems, which includes supporting running systems and services, along with overall monitoring and analysis, plus intelligent decision-making to be able to decide when it’s necessary to escalate issues to higher level support teams.
@@ -191,7 +193,7 @@ Thus, any user should have permission to run /bin/passwd, but only root will be 
 ![Change User Password in Linux](http://www.tecmint.com/wp-content/uploads/2014/10/change-user-password.png)
 
 Change User Password
- 
+
 **Understanding Setgid**
 
 When the setgid bit is set, the effective GID of the real user becomes that of the group owner. Thus, any user can access a file under the privileges granted to the group owner of such file. In addition, when the setgid bit is set on a directory, newly created files inherit the same group as the directory, and newly created subdirectories will also inherit the setgid bit of the parent directory. You will most likely use this approach whenever members of a certain group need access to all the files in a directory, regardless of the file owner’s primary group.
