@@ -1,3 +1,4 @@
+ictlyh Translating
 Part 5 - How to Manage System Logs (Configure, Rotate and Import Into Database) in RHEL 7
 ================================================================================
 In order to keep your RHEL 7 systems secure, you need to know how to monitor all of the activities that take place on such systems by examining log files. Thus, you will be able to detect any unusual or potentially malicious activity and perform system troubleshooting or take another appropriate action.
