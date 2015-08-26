@@ -1,3 +1,5 @@
+Translating by Xuanwo
+
 Part 7 - LFCS: Managing System Startup Process and Services (SysVinit, Systemd and Upstart)
 ================================================================================
 A couple of months ago, the Linux Foundation announced the LFCS (Linux Foundation Certified Sysadmin) certification, an exciting new program whose aim is allowing individuals from all ends of the world to get certified in performing basic to intermediate system administration tasks on Linux systems. This includes supporting already running systems and services, along with first-hand problem-finding and analysis, plus the ability to decide when to raise issues to engineering teams.
@@ -267,7 +269,7 @@ Starting Stoping Services
 
 Under systemd you can enable or disable a service when it boots.
 
-    # systemctl enable [service] 		# enable a service 
+    # systemctl enable [service] 		# enable a service
     # systemctl disable [service] 		# prevent a service from starting at boot
 
 The process of enabling or disabling a service to start automatically on boot consists in adding or removing symbolic links in the /etc/systemd/system/multi-user.target.wants directory.
@@ -315,7 +317,7 @@ For example,
 
     # My test service - Upstart script demo description "Here goes the description of 'My test service'" author "Dave Null <dave.null@example.com>"
     # Stanzas
-    
+
     #
     # Stanzas define when and how a process is started and stopped
     # See a list of stanzas here: http://upstart.ubuntu.com/wiki/Stanzas#respawn
