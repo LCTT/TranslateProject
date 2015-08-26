@@ -1,3 +1,5 @@
+Translating by Xuanwo
+
 Part 10 - LFCS: Understanding & Learning Basic Shell Scripting and Linux Filesystem Troubleshooting
 ================================================================================
 The Linux Foundation launched the LFCS certification (Linux Foundation Certified Sysadmin), a brand new initiative whose purpose is to allow individuals everywhere (and anywhere) to get certified in basic to intermediate operational support for Linux systems, which includes supporting running systems and services, along with overall monitoring and analysis, plus smart decision-making when it comes to raising issues to upper support teams.
@@ -99,10 +101,10 @@ Execute Script
 
 Whenever you need to specify different courses of action to be taken in a shell script, as result of the success or failure of a command, you will use the if construct to define such conditions. Its basic syntax is:
 
-    if CONDITION; then 
+    if CONDITION; then
     	COMMANDS;
     else
-    	OTHER-COMMANDS 
+    	OTHER-COMMANDS
     fi
 
 Where CONDITION can be one of the following (only the most frequent conditions are cited here) and evaluates to true when:
@@ -133,8 +135,8 @@ Where CONDITION can be one of the following (only the most frequent conditions a
 
 This loop allows to execute one or more commands for each value in a list of values. Its basic syntax is:
 
-    for item in SEQUENCE; do 
-    		COMMANDS; 
+    for item in SEQUENCE; do
+    		COMMANDS;
     done
 
 Where item is a generic variable that represents each value in SEQUENCE during each iteration.
@@ -143,8 +145,8 @@ Where item is a generic variable that represents each value in SEQUENCE during e
 
 This loop allows to execute a series of repetitive commands as long as the control command executes with an exit status equal to zero (successfully). Its basic syntax is:
 
-    while EVALUATION_COMMAND; do 
-    		EXECUTE_COMMANDS; 
+    while EVALUATION_COMMAND; do
+    		EXECUTE_COMMANDS;
     done
 
 Where EVALUATION_COMMAND can be any command(s) that can exit with a success (0) or failure (other than 0) status, and EXECUTE_COMMANDS can be any program, script or shell construct, including other nested loops.
@@ -158,7 +160,7 @@ We will demonstrate the use of the if construct and the for loop with the follow
 Let’s create a file with a list of services that we want to monitor at a glance.
 
     # cat myservices.txt
-    
+
     sshd
     mariadb
     httpd
@@ -172,10 +174,10 @@ Script to Monitor Linux Services
 Our shell script should look like.
 
     #!/bin/bash
-    
+
     # This script iterates over a list of services and
     # is used to determine whether they are running or not.
-    
+
     for service in $(cat myservices.txt); do
         	systemctl status $service | grep --quiet "running"
         	if [ $? -eq 0 ]; then
@@ -214,10 +216,10 @@ Services Monitoring Script
 We could go one step further and check for the existence of myservices.txt before even attempting to enter the for loop.
 
     #!/bin/bash
-    
+
     # This script iterates over a list of services and
     # is used to determine whether they are running or not.
-    
+
     if [ -f myservices.txt ]; then
         	for service in $(cat myservices.txt); do
                 	systemctl status $service | grep --quiet "running"
@@ -238,9 +240,9 @@ You may want to maintain a list of hosts in a text file and use a script to dete
 The read shell built-in command tells the while loop to read myhosts line by line and assigns the content of each line to variable host, which is then passed to the ping command.
 
     #!/bin/bash
-    
+
     # This script is used to demonstrate the use of a while loop
-    
+
     while read host; do
         	ping -c 2 $host
     done < myhosts

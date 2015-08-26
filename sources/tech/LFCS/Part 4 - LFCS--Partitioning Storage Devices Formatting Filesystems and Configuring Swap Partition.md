@@ -1,3 +1,5 @@
+Translating by Xuanwo
+
 Part 4 - LFCS: Partitioning Storage Devices, Formatting Filesystems and Configuring Swap Partition
 ================================================================================
 Last August, the Linux Foundation launched the LFCS certification (Linux Foundation Certified Sysadmin), a shiny chance for system administrators to show, through a performance-based exam, that they can perform overall operational support of Linux systems: system support, first-level diagnosing and monitoring, plus issue escalation – if needed – to other support teams.

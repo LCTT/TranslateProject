@@ -1,3 +1,5 @@
+Translating by Xuanwo
+
 Part 6 - LFCS: Assembling Partitions as RAID Devices – Creating & Managing System Backups
 ================================================================================
 Recently, the Linux Foundation launched the LFCS (Linux Foundation Certified Sysadmin) certification, a shiny chance for system administrators everywhere to demonstrate, through a performance-based exam, that they are capable of performing overall operational support on Linux systems: system support, first-level diagnosing and monitoring, plus issue escalation, when required, to other support teams.
@@ -24,7 +26,7 @@ However, the actual fault-tolerance and disk I/O performance lean on how the har
 Our tool of choice for creating, assembling, managing, and monitoring our software RAIDs is called mdadm (short for multiple disks admin).
 
     ---------------- Debian and Derivatives ----------------
-    # aptitude update && aptitude install mdadm 
+    # aptitude update && aptitude install mdadm
 
 ----------
 
@@ -34,7 +36,7 @@ Our tool of choice for creating, assembling, managing, and monitoring our softwa
 ----------
 
     ---------------- On openSUSE ----------------
-    # zypper refresh && zypper install mdadm # 
+    # zypper refresh && zypper install mdadm #
 
 #### Assembling Partitions as RAID Devices ####
 
@@ -55,7 +57,7 @@ Creating RAID Array
 After creating RAID array, you an check the status of the array using the following commands.
 
     # cat /proc/mdstat
-    or 
+    or
     # mdadm --detail /dev/md0	[More detailed summary]
 
 ![Check RAID Array Status](http://www.tecmint.com/wp-content/uploads/2014/10/Check-RAID-Array-Status.png)
@@ -203,16 +205,16 @@ The downside of this backup approach is that the image will have the same size a
 
     # dd if=/dev/sda of=/system_images/sda.img
     OR
-    --------------------- Alternatively, you can compress the image file --------------------- 
-    # dd if=/dev/sda | gzip -c > /system_images/sda.img.gz 
+    --------------------- Alternatively, you can compress the image file ---------------------
+    # dd if=/dev/sda | gzip -c > /system_images/sda.img.gz
 
 **Restoring the backup from the image file**
 
     # dd if=/system_images/sda.img of=/dev/sda
-    OR 
-    
-    --------------------- Depending on your choice while creating the image  --------------------- 
-    gzip -dc /system_images/sda.img.gz | dd of=/dev/sda 
+    OR
+
+    --------------------- Depending on your choice while creating the image  ---------------------
+    gzip -dc /system_images/sda.img.gz | dd of=/dev/sda
 
 Method 2: Backup certain files / directories with tar command – already covered in [Part 3][3] of this series. You may consider using this method if you need to keep copies of specific files and directories (configuration files, users’ home directories, and so on).
 
@@ -247,7 +249,7 @@ Synchronizing remote → local directories over ssh.
 
 In this case, switch the source and destination directories from the previous example.
 
-    # rsync -avzhe ssh root@remote_host:/remote_directory/ backups 
+    # rsync -avzhe ssh root@remote_host:/remote_directory/ backups
 
 Please note that these are only 3 examples (most frequent cases you’re likely to run into) of the use of rsync. For more examples and usages of rsync commands can be found at the following article.
 
