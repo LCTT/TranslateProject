@@ -1,33 +1,33 @@
 Translating by Xuanwo
 
 Part 1 - LFCS: How to use GNU ‘sed’ Command to Create, Edit, and Manipulate files in Linux
+LFCS系列第一讲：如何在Linux上使用GNU'sed'命令来创建、编辑和操作文件
 ================================================================================
-The Linux Foundation announced the LFCS (Linux Foundation Certified Sysadmin) certification, a new program that aims at helping individuals all over the world to get certified in basic to intermediate system administration tasks for Linux systems. This includes supporting running systems and services, along with first-hand troubleshooting and analysis, and smart decision-making to escalate issues to engineering teams.
+Linux基金会宣布了一个全新的LFCS（Linux Foundation Certified Sysadmin，Linux基金会认证系统管理员）认证计划。这一计划旨在帮助遍布全世界的人们获得其在处理Linux系统管理任务上能力的认证。这些能力包括支持运行的系统服务，以及第一手的故障诊断和分析和为工程师团队在升级时提供智能决策。
 
 ![Linux Foundation Certified Sysadmin](http://www.tecmint.com/wp-content/uploads/2014/10/lfcs-Part-1.png)
 
-Linux Foundation Certified Sysadmin – Part 1
+Linux基金会认证系统管理员——第一讲
 
-Please watch the following video that demonstrates about The Linux Foundation Certification Program.
+请观看下面关于Linux基金会认证计划的演示：
 
 注：youtube 视频
 <iframe width="720" height="405" frameborder="0" allowfullscreen="allowfullscreen" src="//www.youtube.com/embed/Y29qZ71Kicg"></iframe>
 
-The series will be titled Preparation for the LFCS (Linux Foundation Certified Sysadmin) Parts 1 through 10 and cover the following topics for Ubuntu, CentOS, and openSUSE:
+该系列将命名为《LFCS预备第一讲》至《LFCS预备第十讲》并覆盖关于Ubuntu，CentOS以及openSUSE的下列话题。
 
-- Part 1: How to use GNU ‘sed’ Command to Create, Edit, and Manipulate files in Linux
-- Part 2: How to Install and Use vi/m as a full Text Editor
-- Part 3: Archiving Files/Directories and Finding Files on the Filesystem
-- Part 4: Partitioning Storage Devices, Formatting Filesystems and Configuring Swap Partition
-- Part 5: Mount/Unmount Local and Network (Samba & NFS) Filesystems in Linux
-- Part 6: Assembling Partitions as RAID Devices – Creating & Managing System Backups
-- Part 7: Managing System Startup Process and Services (SysVinit, Systemd and Upstart
-- Part 8: Managing Users & Groups, File Permissions & Attributes and Enabling sudo Access on Accounts
-- Part 9: Linux Package Management with Yum, RPM, Apt, Dpkg, Aptitude and Zypper
-- Part 10: Learning Basic Shell Scripting and Filesystem Troubleshooting
+- 第一讲：如何在Linux上使用GNU'sed'命令来创建、编辑和操作文件
+- 第二讲：如何安装和使用vi/m全功能文字编辑器
+- 第三讲：归档文件/目录和在文件系统中寻找文件
+- 第四讲：为存储设备分区，格式化文件系统和配置交换分区
+- 第五讲：在Linux中挂载/卸载本地和网络（Samba & NFS）文件系统
+- 第六讲：组合分区作为RAID设备——创建&管理系统备份
+- 第七讲：管理系统启动进程和服务（使用SysVinit, Systemd 和 Upstart）
+- 第八讲：管理用户和组，文件权限和属性以及启用账户的sudo权限
+- 第九讲：Linux包管理与Yum，RPM，Apt，Dpkg，Aptitude，Zypper
+- 第十讲：学习简单的Shell脚本和文件系统故障排除
 
-
-This post is Part 1 of a 10-tutorial series, which will cover the necessary domains and competencies that are required for the LFCS certification exam. That being said, fire up your terminal, and let’s start.
+本文是覆盖这个参加LFCS认证考试的所必需的范围和能力的十个教程的第一讲。话虽如此，快打开你的终端，让我们开始吧！
 
 ### Processing Text Streams in Linux ###
 
