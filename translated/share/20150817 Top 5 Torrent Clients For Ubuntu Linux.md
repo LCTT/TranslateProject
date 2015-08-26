@@ -4,7 +4,7 @@ Translating by Xuanwo
 ================================================================================
 ![Best Torrent clients for Ubuntu Linux](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/08/5_Best_Torrent_Ubuntu.png)
 
-你在寻找**Ubuntu中最好的BT客户端**吗？事实上，桌面平台中有许多可用的BT客户端，但是它们中的哪些才是**最好的**呢？
+在寻找**Ubuntu中最好的BT客户端**吗？事实上，桌面平台中有许多可用的BT客户端，但是它们中的哪些才是**最好的**呢？
 
 我将会列出最好的五个BT客户端，它们都拥有着体积轻盈，功能强大的特点，而且还有令人印象深刻的用户界面。自然，易于安装和使用也是特性之一。
 
@@ -32,7 +32,7 @@ Deluge可在Ubuntu的仓库中获取，你能够在Ubuntu软件中心中安装�
 
 ![qBittorrent client for Linux](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/08/qbittorrent_icon.png)
 
-正如它的名字所暗示的，[qBittorrent][2] 是著名的 [Bittorrent][3] 应用的Qt版本。如果你曾经使用过它，你将会看到和Windows下的Bittorrent相似的界面。同样轻巧并且有着BT客户端的所有标准功能，qBittorrent也可以在Ubuntu的默认仓库中找到。
+正如它的名字所暗示的，[qBittorrent][2] 是著名的 [Bittorrent][3] 应用的Qt版本。如果曾经使用过它，你将会看到和Windows下的Bittorrent相似的界面。同样轻巧并且有着BT客户端的所有标准功能，qBittorrent也可以在Ubuntu的默认仓库中找到。
 
 它可以通过Ubuntu软件仓库安装，或者使用下面的命令：
 
@@ -56,7 +56,7 @@ Deluge可在Ubuntu的仓库中获取，你能够在Ubuntu软件中心中安装�
 
 ![Vuze Torrent Logo](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/08/vuze_icon_for_mac_os_x_by_hamzasaleem-d6yx1fp.png)
 
-[Vuze][6]是许多Linux以及Windows用户最喜欢的BT客户端。除了标准的功能，你可以直接在应用程序中搜索种子。你也可以订阅系列片源，这样你就无需再去寻找新的片源了，因为你可以在侧边栏中的订阅看到它们。
+[Vuze][6]是许多Linux以及Windows用户最喜欢的BT客户端。除了标准的功能，你可以直接在应用程序中搜索种子，也可以订阅系列片源，这样就无需再去寻找新的片源了，因为你可以在侧边栏中的订阅看到它们。
 
 它还配备了一个视频播放器，可以播放带有字幕的高清视频以及一切。但是我不认为你会用它来代替那些更好的视频播放器，比如VLC。
 
@@ -72,7 +72,7 @@ Vuze可以通过Ubuntu软件中心安装或者使用下列命令：
 
 [Frostwire][7]可能会是一个你想要去尝试的应用。它不仅仅是一个简单的BT客户端，它还可以应用于安卓，你可以用它通过Wifi来共享文件。
 
-你可以在应用中搜索种子并且播放他们。除了下载文件，它还可以浏览你本地的影音文件，并且将它们有条理的呈现在播放器中。这同样适用于安卓版本。
+你可以在应用中搜索种子并且播放他们。除了下载文件，它还可以浏览本地的影音文件，并且将它们有条理的呈现在播放器中。这同样适用于安卓版本。
 
 还有一个特点是：Frostwire提供了印度艺术家的合法音乐下载。你可以下载并且欣赏它们，免费而且合法。
 
@@ -84,15 +84,15 @@ Vuze可以通过Ubuntu软件中心安装或者使用下列命令：
 
 在Windows中，uTorrent（发音：mu torrent）是我最喜欢的BT应用。尽管uTorrent可以在Linux下运行，但是我还是特意忽略了它。因为在Linux下使用uTorrent不仅困难，而且无法获得完整的应用体验（运行在浏览器中）。
 
-你可以[在这里][9]阅读Ubuntu下uTorrent的安装教程。
+可以[在这里][9]阅读Ubuntu下uTorrent的安装教程。
 
 #### 快速提示: ####
 
-大多数情况下，BT应用不会默认自动自动启动。如果你想改变这一行为，阅读[如何管理Ubuntu下的自启程序][10]来学习。
+大多数情况下，BT应用不会默认自动自动启动。如果想改变这一行为，请阅读[如何管理Ubuntu下的自启程序][10]来学习。
 
 ### 你最喜欢的是什么？ ###
 
-这些是我对于Ubuntu下最好的BT客户端的一键。你最喜欢的是什么呢？请发表评论。你也可以查看与本主题相关的[Ubuntu最好的下载管理器][11]。如果你使用Popcorn Time，试试[Popcorn Time技巧][12]
+这些是我对于Ubuntu下最好的BT客户端的意见。你最喜欢的是什么呢？请发表评论。也可以查看与本主题相关的[Ubuntu最好的下载管理器][11]。如果使用Popcorn Time，试试[Popcorn Time技巧][12]
 
 --------------------------------------------------------------------------------
 
