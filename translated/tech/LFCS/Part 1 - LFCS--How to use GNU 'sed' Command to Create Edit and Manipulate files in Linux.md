@@ -29,34 +29,34 @@ Linux基金会认证系统管理员——第一讲
 
 本文是覆盖这个参加LFCS认证考试的所必需的范围和能力的十个教程的第一讲。话虽如此，快打开你的终端，让我们开始吧！
 
-### Processing Text Streams in Linux ###
+### 处理Linux中的文本流 ###
 
-Linux treats the input to and the output from programs as streams (or sequences) of characters. To begin understanding redirection and pipes, we must first understand the three most important types of I/O (Input and Output) streams, which are in fact special files (by convention in UNIX and Linux, data streams and peripherals, or device files, are also treated as ordinary files).
+Linux将程序中的输入和输出当成字符流或者字符序列。在开始理解重定向和管道之前，我们必须先了解三种最重要的I/O（Input and Output，输入和输出）流，事实上，它们都是特殊的文件（根据UNIX和Linux中的约定，数据流和外围设备或者设备文件也被视为普通文件）。
 
-The difference between > (redirection operator) and | (pipeline operator) is that while the first connects a command with a file, the latter connects the output of a command with another command.
+> (重定向操作符) 和 | (管道操作符)之间的区别是：前者将命令与文件相连接，而后者将命令的输出和另一个命令相连接。
 
     # command > file
     # command1 | command2
 
-Since the redirection operator creates or overwrites files silently, we must use it with extreme caution, and never mistake it with a pipeline. One advantage of pipes on Linux and UNIX systems is that there is no intermediate file involved with a pipe – the stdout of the first command is not written to a file and then read by the second command.
+由于重定向操作符静默创建或覆盖文件，我们必须特别小心谨慎地使用它，并且永远不要把它和管道混淆起来。在Linux和UNIX系统上管道的优势是：第一个命令的输出不会写入一个文件而是直接被第二个命令读取。
 
-For the following practice exercises we will use the poem “A happy child” (anonymous author).
+在下面的操作练习中，我们将会使用这首诗——《A happy child》（匿名作者)
 
 ![cat command](http://www.tecmint.com/wp-content/uploads/2014/10/cat-command.png)
 
 cat command example
 
-#### Using sed ####
+#### 使用 sed ####
 
-The name sed is short for stream editor. For those unfamiliar with the term, a stream editor is used to perform basic text transformations on an input stream (a file or input from a pipeline).
+sed是流编辑器（stream editor）的缩写。为那些不懂术语的人额外解释一下，流编辑器是用来在一个输入流（文件或者管道中的输入）执行基本的文本转换的工具。
 
-The most basic (and popular) usage of sed is the substitution of characters. We will begin by changing every occurrence of the lowercase y to UPPERCASE Y and redirecting the output to ahappychild2.txt. The g flag indicates that sed should perform the substitution for all instances of term on every line of file. If this flag is omitted, sed will replace only the first occurrence of term on each line.
+sed最基本的用法是字符替换。我们将通过把每个出现的小写y改写为大写Y并且将输出重定向到ahappychild2.txt开始。g标志表示sed应该替换文件每一行中所有应当替换的实例。如果这个标志省略了，sed将会只替换每一行中第一次出现的实例。
 
-**Basic syntax:**
+**基本语法：**
 
     # sed ‘s/term/replacement/flag’ file
 
-**Our example:**
+**我们的样例：**
 
     # sed ‘s/y/Y/g’ ahappychild.txt > ahappychild2.txt
 
@@ -64,9 +64,9 @@ The most basic (and popular) usage of sed is the substitution of characters. We 
 
 sed command example
 
-Should you want to search for or replace a special character (such as /, \, &) you need to escape it, in the term or replacement strings, with a backward slash.
+如果你要在替换文本中搜索或者替换特殊字符（如/，\，＆），你需要使用反斜杠对它进行转义。
 
-For example, we will substitute the word and for an ampersand. At the same time, we will replace the word I with You when the first one is found at the beginning of a line.
+例如，我们将会用一个符号来替换一个文字。与此同时，我们将把一行最开始出现的第一个I替换为You。
 
     # sed 's/and/\&/g;s/^I/You/g' ahappychild.txt
 
@@ -74,9 +74,9 @@ For example, we will substitute the word and for an ampersand. At the same time,
 
 sed replace string
 
-In the above command, a ^ (caret sign) is a well-known regular expression that is used to represent the beginning of a line.
+在上面的命令中，^（插入符号）是众所周知用来表示一行开头的正则表达式。
 
-As you can see, we can combine two or more substitution commands (and use regular expressions inside them) by separating them with a semicolon and enclosing the set inside single quotes.
+正如你所看到的，我们可以通过使用分号分隔以及用括号包裹来把两个或者更多的替换命令（并在他们中使用正则表达式）链接起来。
 
 Another use of sed is showing (or deleting) a chosen portion of a file. In the following example, we will display the first 5 lines of /var/log/messages from Jun 8.
 
