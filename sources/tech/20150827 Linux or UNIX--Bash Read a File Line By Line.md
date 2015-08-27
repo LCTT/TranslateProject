@@ -1,3 +1,4 @@
+translation by strugglingyouth
 Linux/UNIX: Bash Read a File Line By Line
 ================================================================================
 How do I read a file line by line under a Linux or UNIX-like system using KSH or BASH shell?
