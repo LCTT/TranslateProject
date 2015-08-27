@@ -1,3 +1,5 @@
+Translating by Xuanwo
+
 Part 9 - LFCS: Linux Package Management with Yum, RPM, Apt, Dpkg, Aptitude and Zypper
 ================================================================================
 Last August, the Linux Foundation announced the LFCS certification (Linux Foundation Certified Sysadmin), a shiny chance for system administrators everywhere to demonstrate, through a performance-based exam, that they are capable of succeeding at overall operational support for Linux systems. A Linux Foundation Certified Sysadmin has the expertise to ensure effective system support, first-level troubleshooting and monitoring, including finally issue escalation, when needed, to engineering support teams.
@@ -85,7 +87,7 @@ rpm is the package management system used by Linux Standard Base (LSB)-compliant
 yum adds the functionality of automatic updates and package management with dependency management to RPM-based systems. As a high-level tool, like apt-get or aptitude, yum works with repositories.
 
 - Read More: [20 yum Command Examples][4]
-- 
+-
 ### Common Usage of Low-Level Tools ###
 
 The most frequent tasks that you will do with low level tools are as follows:
@@ -155,7 +157,7 @@ The most frequent tasks that you will do with high level tools are as follows.
 
 aptitude update will update the list of available packages, and aptitude search will perform the actual search for package_name.
 
-    # aptitude update && aptitude search package_name 
+    # aptitude update && aptitude search package_name
 
 In the search all option, yum will search for package_name not only in package names, but also in package descriptions.
 
@@ -190,8 +192,8 @@ The option remove will uninstall the package but leaving configuration files int
 # yum erase package_name
 
     ---Notice the minus sign in front of the package that will be uninstalled, openSUSE ---
-    
-    # zypper remove -package_name 
+
+    # zypper remove -package_name
 
 Most (if not all) package managers will prompt you, by default, if you’re sure about proceeding with the uninstallation before actually performing it. So read the onscreen messages carefully to avoid running into unnecessary trouble!
 
@@ -199,7 +201,7 @@ Most (if not all) package managers will prompt you, by default, if you’re sure
 
 The following command will display information about the birthday package.
 
-    # aptitude show birthday 
+    # aptitude show birthday
     # yum info birthday
     # zypper info birthday
 
