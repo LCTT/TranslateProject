@@ -1,5 +1,3 @@
-Translating by H-mudcup
-
 Defending the Free Linux World
 ================================================================================
 ![](http://www.linuxinsider.com/ai/908455/open-invention-network.jpg)

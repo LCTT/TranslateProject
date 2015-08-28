@@ -1,3 +1,4 @@
+[jerryling315](https://github.com/jerryling315/) is translating.
 Debian GNU/Linux Birthday : A 22 Years of Journey and Still Counting…
 ================================================================================
 On 16th August 2015, the Debian project has celebrated its 22nd anniversary, making it one of the oldest popular distribution in open source world. Debian project was conceived and founded in the year 1993 by Ian Murdock. By that time Slackware had already made a remarkable presence as one of the earliest Linux Distribution.

@@ -1,5 +1,3 @@
-martin
-
 Interview: Larry Wall
 ================================================================================
 > Perl 6 has been 15 years in the making, and is now due to be released at the end of this year. We speak to its creator to find out what’s going on.
