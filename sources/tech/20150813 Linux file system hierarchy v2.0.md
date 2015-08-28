@@ -1,10 +1,10 @@
 translating by tnuoccalanosrep
 
 Linux file system hierarchy v2.0
+Linux文件系统结构 v2.0
 ================================================================================
 What is a file in Linux? What is file system in Linux? Where are all the configuration files? Where do I keep my downloaded applications? Is there really a filesystem standard structure in Linux? Well, the above image explains Linux file system hierarchy in a very simple and non-complex way. It’s very useful when you’re looking for a configuration file or a binary file. I’ve added some explanation and examples below, but that’s TL;DR.
-Linux中的文件是什么？它的文件系统又是什么？那些配置文件又在哪里？我下载好的程序保存在哪里了？好了，上图简明地阐释了Linux的
-文件系统的层次关系。当你苦于寻找配置文件或者二进制文件的时候，这便显得十分有用了。我在下方添加了一些解释以及例子，但“篇幅过长，没有阅读”。
+Linux中的文件是什么？它的文件系统又是什么？那些配置文件又在哪里？我下载好的程序保存在哪里了？好了，上图简明地阐释了Linux的文件系统的层次关系。当你苦于寻找配置文件或者二进制文件的时候，这便显得十分有用了。我在下方添加了一些解释以及例子，但“篇幅过长，没有阅读”。
 Another issue is when you got configuration and binary files all over the system that creates inconsistency and if you’re a large organization or even an end user, it can compromise your system (binary talking with old lib files etc.) and when you do [security audit of your Linux system][1], you find it is vulnerable to different exploits. So keeping a clean operating system (no matter Windows or Linux) is important.
 另外一种情况便是当你在系统中获取配置以及二进制文件时，出现了不一致性问题，如果你是一个大型组织，或者只是一个终端用户，这也有可能会破坏你的系统（比如，二进制文件运行在就旧的库文件上了）。若然你对你的Linux系统做安全审计的话，你将会发现它很容易遭到不同的攻击。所以，清洁操作（无论是Windows还是Linux）都显得十分重要。
 ### What is a file in Linux? ###
@@ -14,8 +14,7 @@ A simple description of the UNIX system, also applicable to Linux, is this:
 > On a UNIX system, everything is a file; if something is not a file, it is a process.
 > 在UNIX系统中，一切皆为文件；若非文件，则为进程
 This statement is true because there are special files that are more than just files (named pipes and sockets, for instance), but to keep things simple, saying that everything is a file is an acceptable generalization. A Linux system, just like UNIX, makes no difference between a file and a directory, since a directory is just a file containing names of other files. Programs, services, texts, images, and so forth, are all files. Input and output devices, and generally all devices, are considered to be files, according to the system.
-这个声明是对的，因为有些特殊的文件不仅仅是普通文件（比如命名管道和套接字）,不过为了让事情变的简单，“一切皆为文件”也是一个让人可以接受的概述。Linux系统也像UNXI系统一样，将文件和目录视如同物，因为目录只是一个包含了其他文件名的文件而已。
-程序，服务，文本，图片等等，都是文件。对于系统来说，输入和输出设备，基本上所有的设备，都被当做是文件。
+这种定义是比较正确的，因为有些特殊的文件不仅仅是普通文件（比如命名管道和套接字）,不过为了让事情变的简单，“一切皆为文件”也是一个可以让人接受的说法。Linux系统也像UNXI系统一样，将文件和目录视如同物，因为目录只是一个包含了其他文件名的文件而已。程序，服务，文本，图片等等，都是文件。对于系统来说，输入和输出设备，基本上所有的设备，都被当做是文件。
 ![](http://www.blackmoreops.com/wp-content/uploads/2015/06/Linux-file-system-hierarchy-v2.0-2480px-blackMORE-Ops.png)
 
 - Version 2.0 – 17-06-2015
@@ -31,17 +30,16 @@ This statement is true because there are special files that are more than just f
 ### Download Links ###
 
 Following are two links for download. If you need this in any other format, let me know and I will try to create that and upload it somewhere.
-以下是结构图的下载地址。如果你需要其他结构，请跟原作者联系，他会尝试创建并且上传到某个地方以供下载
+以下是结构图的下载地址。如果你需要其他结构，请跟原作者联系，他会尝试制作并且上传到某个地方以供下载
 - [Large (PNG) Format – 2480×1755 px – 184KB][2]
 - [Largest (PDF) Format – 9919x7019 px – 1686KB][3]
 
 **Note**: PDF Format is best for printing and very high in quality
-**注意**: PDF格式文件是打印的最好选择，它画质很高。
+**注意**: PDF格式文件是打印的最好选择，因为它画质很高。
 ### Linux file system description ###
 ### Linux 文件系统描述 ###
 In order to manage all those files in an orderly fashion, man likes to think of them in an ordered tree-like structure on the hard disk, as we know from `MS-DOS` (Disk Operating System) for instance. The large branches contain more branches, and the branches at the end contain the tree’s leaves or normal files. For now we will use this image of the tree, but we will find out later why this is not a fully accurate image.
-为了有序地管理那些文件，人们习惯把这些文件当做是硬盘上的有序的类树结构体，正如我们从'MS-DOS'(硬盘操作系统)所获知的一样。
-大的分枝包括更多的分枝，分枝的末梢是树的叶子或者普通的文件。现在我们将会引用这个树形图，但晚点我们会发现为什么这不是一个完全准确的一幅图。
+为了有序地管理那些文件，人们习惯把这些文件当做是硬盘上的有序的类树结构体，正如我们从'MS-DOS'(硬盘操作系统)所获知的一样。大的分枝包括更多的分枝，分枝的末梢是树的叶子或者普通的文件。现在我们将会引用这个树形图，但晚点我们会发现为什么这不是一个完全准确的一幅图。
 注：表格
 <table cellspacing="2" border="4" style="border-collapse: collapse; width: 731px; height: 2617px;">
   <thead>
