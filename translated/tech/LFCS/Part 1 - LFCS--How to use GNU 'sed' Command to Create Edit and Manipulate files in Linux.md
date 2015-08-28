@@ -1,7 +1,6 @@
 Translating by Xuanwo
 
-Part 1 - LFCS: How to use GNU ‘sed’ Command to Create, Edit, and Manipulate files in Linux
-LFCS系列第一讲：如何在Linux上使用GNU'sed'命令来创建、编辑和操作文件
+Part 1 - LFCS系列第一讲：如何在Linux上使用GNU'sed'命令来创建、编辑和操作文件
 ================================================================================
 Linux基金会宣布了一个全新的LFCS（Linux Foundation Certified Sysadmin，Linux基金会认证系统管理员）认证计划。这一计划旨在帮助遍布全世界的人们获得其在处理Linux系统管理任务上能力的认证。这些能力包括支持运行的系统服务，以及第一手的故障诊断和分析和为工程师团队在升级时提供智能决策。
 
@@ -11,8 +10,7 @@ Linux基金会认证系统管理员——第一讲
 
 请观看下面关于Linux基金会认证计划的演示：
 
-注：youtube 视频
-<iframe width="720" height="405" frameborder="0" allowfullscreen="allowfullscreen" src="//www.youtube.com/embed/Y29qZ71Kicg"></iframe>
+<embed src="http://static.video.qq.com/TPout.swf?vid=l0163eohhs9&auto=0" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
 
 该系列将命名为《LFCS预备第一讲》至《LFCS预备第十讲》并覆盖关于Ubuntu，CentOS以及openSUSE的下列话题。
 
@@ -78,13 +76,13 @@ sed replace string
 
 正如你所看到的，我们可以通过使用分号分隔以及用括号包裹来把两个或者更多的替换命令（并在他们中使用正则表达式）链接起来。
 
-Another use of sed is showing (or deleting) a chosen portion of a file. In the following example, we will display the first 5 lines of /var/log/messages from Jun 8.
+另一种sed的用法是显示或者删除文件中选中的一部分。在下面的样例中，将会显示/var/log/messages中从6月8日开始的头五行。
 
     # sed -n '/^Jun  8/ p' /var/log/messages | sed -n 1,5p
 
-Note that by default, sed prints every line. We can override this behaviour with the -n option and then tell sed to print (indicated by p) only the part of the file (or the pipe) that matches the pattern (Jun 8 at the beginning of line in the first case and lines 1 through 5 inclusive in the second case).
+请注意，在默认的情况下，sed会打印每一行。我们可以使用-n选项来覆盖这一行为并且告诉sed只需要打印（用p来表示）文件（或管道）中匹配的部分（第一种情况下行开头的第一个6月8日以及第二种情况下的一到五行*此处翻译欠妥，需要修正*）。
 
-Finally, it can be useful while inspecting scripts or configuration files to inspect the code itself and leave out comments. The following sed one-liner deletes (d) blank lines or those starting with # (the | character indicates a boolean OR between the two regular expressions).
+最后，可能有用的技巧是当检查脚本或者配置文件的时候可以保留文件本身并且删除注释。下面的单行sed命令删除（d）空行或者是开头为`#`的行（|字符返回两个正则表达式之间的布尔值）。
 
     # sed '/^#\|^$/d' apache2.conf
 
@@ -92,13 +90,13 @@ Finally, it can be useful while inspecting scripts or configuration files to ins
 
 sed match string
 
-#### uniq Command ####
+#### uniq C命令 ####
 
-The uniq command allows us to report or remove duplicate lines in a file, writing to stdout by default. We must note that uniq does not detect repeated lines unless they are adjacent. Thus, uniq is commonly used along with a preceding sort (which is used to sort lines of text files). By default, sort takes the first field (separated by spaces) as key field. To specify a different key field, we need to use the -k option.
+uniq命令允许我们返回或者删除文件中重复的行，默认写入标准输出。我们必须注意到，除非两个重复的行相邻，否则uniq命令不会删除他们。因此，uniq经常和前序排序（此处翻译欠妥）（一种用来对文本行进行排序的算法）搭配使用。默认情况下，排序使用第一个字段（用空格分隔）作为关键字段。要指定一个不同的关键字段，我们需要使用-k选项。
 
-**Examples**
+**样例**
 
-The du –sch /path/to/directory/* command returns the disk space usage per subdirectories and files within the specified directory in human-readable format (also shows a total per directory), and does not order the output by size, but by subdirectory and file name. We can use the following command to sort by size.
+du –sch /path/to/directory/* 命令将会以人类可读的格式返回在指定目录下每一个子文件夹和文件的磁盘空间使用情况（也会显示每个目录总体的情况），而且不是按照大小输出，而是按照子文件夹和文件的名称。我们可以使用下面的命令来让它通过大小排序。
 
     # du -sch /var/* | sort –h
 
@@ -106,7 +104,8 @@ The du –sch /path/to/directory/* command returns the disk space usage per subd
 
 sort command example
 
-You can count the number of events in a log by date by telling uniq to perform the comparison using the first 6 characters (-w 6) of each line (where the date is specified), and prefixing each output line by the number of occurrences (-c) with the following command.
+你可以通过使用下面的命令告诉uniq比较每一行的前6个字符（-w 6）（指定了不同的日期）来统计日志事件的个数，而且在每一行的开头输出出现的次数（-c）。
+
 
     # cat /var/log/mail.log | uniq -c -w 6
 
@@ -114,7 +113,7 @@ You can count the number of events in a log by date by telling uniq to perform t
 
 Count Numbers in File
 
-Finally, you can combine sort and uniq (as they usually are). Consider the following file with a list of donors, donation date, and amount. Suppose we want to know how many unique donors there are. We will use the following command to cut the first field (fields are delimited by a colon), sort by name, and remove duplicate lines.
+最后，你可以组合使用sort和uniq命令（通常如此）。考虑下面文件中捐助者，捐助日期和金额的列表。假设我们想知道有多少个捐助者。我们可以使用下面的命令来分隔第一字段（字段由冒号分隔），按名称排序并且删除重复的行。
 
     # cat sortuniq.txt | cut -d: -f1 | sort | uniq
 
@@ -122,15 +121,15 @@ Finally, you can combine sort and uniq (as they usually are). Consider the follo
 
 Find Unique Records in File
 
-- Read Also: [13 “cat” Command Examples][1]
+- 也可阅读: [13个“cat”命令样例][1]
 
-#### grep Command ####
+#### grep 命令 ####
 
-grep searches text files or (command output) for the occurrence of a specified regular expression and outputs any line containing a match to standard output.
+grep在文件（或命令输出）中搜索指定正则表达式并且在标准输出中输出匹配的行。
 
-**Examples**
+**样例**
 
-Display the information from /etc/passwd for user gacanepa, ignoring case.
+显示文件/etc/passwd中用户gacanepa的信息，忽略大小写。
 
     # grep -i gacanepa /etc/passwd
 
@@ -138,7 +137,7 @@ Display the information from /etc/passwd for user gacanepa, ignoring case.
 
 grep command example
 
-Show all the contents of /etc whose name begins with rc followed by any single number.
+显示/etc文件夹下所有rc开头并跟随任意数字的内容。
 
     # ls -l /etc | grep rc[0-9]
 
@@ -146,15 +145,15 @@ Show all the contents of /etc whose name begins with rc followed by any single n
 
 List Content Using grep
 
-- Read Also: [12 “grep” Command Examples][2]
+- 也可阅读: [12个“grep”命令样例][2]
 
 #### tr Command Usage ####
 
-The tr command can be used to translate (change) or delete characters from stdin, and write the result to stdout.
+tr命令可以用来从标准输入中翻译（改变）或者删除字符并将结果写入到标准输出中。
 
-**Examples**
+**样例**
 
-Change all lowercase to uppercase in sortuniq.txt file.
+把sortuniq.txt文件中所有的小写改为大写。
 
     # cat sortuniq.txt | tr [:lower:] [:upper:]
 
@@ -162,21 +161,20 @@ Change all lowercase to uppercase in sortuniq.txt file.
 
 Sort Strings in File
 
-Squeeze the delimiter in the output of ls –l to only one space.
-
+压缩`ls –l`输出中的定界符至一个空格。
     # ls -l | tr -s ' '
 
 ![Squeeze Delimiter](http://www.tecmint.com/wp-content/uploads/2014/10/squeeze-delimeter.jpg)
 
 Squeeze Delimiter
 
-#### cut Command Usage ####
+#### cut 命令使用方法 ####
 
-The cut command extracts portions of input lines (from stdin or files) and displays the result on standard output, based on number of bytes (-b option), characters (-c), or fields (-f). In this last case (based on fields), the default field separator is a tab, but a different delimiter can be specified by using the -d option.
+cut命令可以基于字节数（-b选项），字符（-c）或者字段（-f）提取部分输入（从标准输入或者文件中）并且将结果输出到标准输出。在最后一种情况下（基于字段），默认的字段分隔符是一个tab，但不同的分隔符可以由-d选项来指定。
 
-**Examples**
+**样例**
 
-Extract the user accounts and the default shells assigned to them from /etc/passwd (the –d option allows us to specify the field delimiter, and the –f switch indicates which field(s) will be extracted.
+从/etc/passwd中提取用户账户和他们被分配的默认shell（-d选项允许我们指定分界符，-f选项指定那些字段将被提取）。
 
     # cat /etc/passwd | cut -d: -f1,7
 
@@ -184,7 +182,7 @@ Extract the user accounts and the default shells assigned to them from /etc/pass
 
 Extract User Accounts
 
-Summing up, we will create a text stream consisting of the first and third non-blank files of the output of the last command. We will use grep as a first filter to check for sessions of user gacanepa, then squeeze delimiters to only one space (tr -s ‘ ‘). Next, we’ll extract the first and third fields with cut, and finally sort by the second field (IP addresses in this case) showing unique.
+总结一下，我们将使用最后一个命令的输出中第一和第三个非空文件创建一个文本流。我们将使用grep作为第一过滤器来检查用户gacanepa的会话，然后将分隔符压缩至一个空格（tr -s ' ')。下一步，我们将使用cut来提取第一和第三个字段，最后使用第二个字段（本样例中，指的是IP地址）来排序之后再用uniq去重。
 
     # last | grep gacanepa | tr -s ‘ ‘ | cut -d’ ‘ -f1,3 | sort -k2 | uniq
 
@@ -192,24 +190,24 @@ Summing up, we will create a text stream consisting of the first and third non-b
 
 last command example
 
-The above command shows how multiple commands and pipes can be combined so as to obtain filtered data according to our desires. Feel free to also run it by parts, to help you see the output that is pipelined from one command to the next (this can be a great learning experience, by the way!).
+上面的命令显示了如何将多个命令和管道结合起来以便根据我们的愿望得到过滤后的数据。你也可以逐步地使用它以帮助你理解输出是如何从一个命令传输到下一个命令的（顺便说一句，这是一个非常好的学习经验！）
 
-### Summary ###
+### 总结 ###
 
-Although this example (along with the rest of the examples in the current tutorial) may not seem very useful at first sight, they are a nice starting point to begin experimenting with commands that are used to create, edit, and manipulate files from the Linux command line. Feel free to leave your questions and comments below – they will be much appreciated!
+尽管这个例子（以及在当前教程中的其他实例）第一眼看上去可能不是非常有用，但是他们是体验在Linux命令行中创建，编辑和操作文件的一个非常好的开始。请随时留下你的问题和意见——不胜感激！
 
-#### Reference Links ####
+#### 参考链接 ####
 
-- [About the LFCS][3]
-- [Why get a Linux Foundation Certification?][4]
-- [Register for the LFCS exam][5]
+- [关于LFCS][3]
+- [为什么需要Linux基金会认证?][4]
+- [注册LFCS考试][5]
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/sed-command-to-create-edit-and-manipulate-files-in-linux/
 
 作者：[Gabriel Cánepa][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Xuanwo](https://github.com/Xuanwo)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
