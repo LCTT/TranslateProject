@@ -1,3 +1,4 @@
+Translating by Ping
 Xtreme Download Manager Updated With Fresh GUI
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/08/Xtreme-Download-Manager-Linux.jpg)
