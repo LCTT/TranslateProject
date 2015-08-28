@@ -1,3 +1,4 @@
+wyangsun translating
 How to set up a system status page of your infrastructure
 ================================================================================
 If you are a system administrator who is responsible for critical IT infrastructure or services of your organization, you will understand the importance of effective communication in your day-to-day tasks. Suppose your production storage server is on fire. You want your entire team on the same page in order to resolve the issue as fast as you can. While you are at it, you don't want half of all users contacting you asking why they cannot access their documents. When a scheduled maintenance is coming up, you want to notify interested parties of the event ahead of the schedule, so that unnecessary support tickets can be avoided.
