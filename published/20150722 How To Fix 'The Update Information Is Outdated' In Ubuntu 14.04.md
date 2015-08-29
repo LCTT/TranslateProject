@@ -2,7 +2,7 @@ Ubuntu 14.04中修复“update information is outdated”错误
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/07/Fix_update_information_is_outdated.jpeg)
 
-看到Ubuntu 14.04的顶部面板上那个显示下面这个错误的红色三角形了吗？
+看到过Ubuntu 14.04的顶部面板上那个显示下面这个错误的红色三角形了吗？
 
 > 更新信息过时。该错误可能是由网络问题，或者某个仓库不再可用而造成的。请通过从指示器菜单中选择‘显示更新’来手动更新，然后查看是否存在有失败的仓库。
 > 
@@ -25,7 +25,7 @@ Ubuntu 14.04中修复“update information is outdated”错误
 
 ### 修复‘update information is outdated’错误 ###
 
-这里讨论的‘解决方案’可能对Ubuntu的这些版本有用：Ubuntu 14.04,12.04或14.04。你所要做的仅仅是打开终端（Ctrl+Alt+T），然后使用下面的命令：
+这里讨论的‘解决方案’可能对Ubuntu的这些版本有用：Ubuntu 14.04,12.04。你所要做的仅仅是打开终端（Ctrl+Alt+T），然后使用下面的命令：
 
     sudo apt-get update
 
@@ -47,7 +47,7 @@ via: http://itsfoss.com/fix-update-information-outdated-ubuntu/
 
 作者：[Abhishek][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -56,4 +56,4 @@ via: http://itsfoss.com/fix-update-information-outdated-ubuntu/
 [2]:http://itsfoss.com/notification-terminal-command-completion-ubuntu/
 [3]:http://itsfoss.com/solve-gpg-error-signatures-verified-ubuntu/
 [4]:http://itsfoss.com/install-spotify-ubuntu-1504/
-[5]:http://itsfoss.com/fix-update-errors-ubuntu-1404/
+[5]:https://linux.cn/article-5603-1.html
