@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How to Convert From RPM to DEB and DEB to RPM Package Using Alien
 ================================================================================
 As I’m sure you already know, there are plenty of ways to install software in Linux: using the package management system provided by your distribution ([aptitude, yum, or zypper][1], to name a few examples), compiling from source (though somewhat rare these days, it was the only method available during the early days of Linux), or utilizing a low level tool such as dpkg or rpm with .deb and .rpm standalone, precompiled packages, respectively.
