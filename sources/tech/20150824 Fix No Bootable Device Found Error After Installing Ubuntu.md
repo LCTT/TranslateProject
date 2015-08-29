@@ -1,3 +1,4 @@
+ictlyh Translating
 Fix No Bootable Device Found Error After Installing Ubuntu
 ================================================================================
 Usually, I dual boot Ubuntu and Windows but this time I decided to go for a clean Ubuntu installation i.e. eliminating Windows completely. After the clean install of Ubuntu, I ended up with a screen saying **no bootable device found** instead of the Grub screen. Clearly, the installation messed up with the UEFI boot settings.
