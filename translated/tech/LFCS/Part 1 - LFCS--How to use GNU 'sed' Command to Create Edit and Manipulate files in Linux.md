@@ -12,7 +12,7 @@ Linux基金会认证系统管理员——第一讲
 
 <embed src="http://static.video.qq.com/TPout.swf?vid=l0163eohhs9&auto=0" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
 
-该系列将命名为《LFCS预备第一讲》至《LFCS预备第十讲》并覆盖关于Ubuntu，CentOS以及openSUSE的下列话题。
+该系列将命名为《LFCS系列第一讲》至《LFCS系列第十讲》并覆盖关于Ubuntu，CentOS以及openSUSE的下列话题。
 
 - 第一讲：如何在Linux上使用GNU'sed'命令来创建、编辑和操作文件
 - 第二讲：如何安装和使用vi/m全功能文字编辑器
