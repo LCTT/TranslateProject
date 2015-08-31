@@ -1,6 +1,7 @@
-Ubuntu 15.04 and系统中安装 Logwatch
+如何在 Ubuntu 15.04 系统中安装 Logwatch
 ================================================================================
-大家好，今天我们会讲述在 Ubuntu 15.04 操作系统上如何安装 Logwatch 软件，它也可以在任意的 Linux 系统和类 Unix 系统上安装。Logwatch 是一款可定制的日志分析和日志监控报告生成系统，它可以根据一段时间的日志文件生成您所希望关注的详细报告。它具有易安装、易配置、可审查等特性，同时对其提供的数据的安全性上也有一些保障措施。Logwatch 会扫描重要的操作系统组件像 SSH、网站服务等的日志文件，然后生成用户所关心的有价值的条目汇总报告。
+
+大家好，今天我们会讲述在 Ubuntu 15.04 操作系统上如何安装 Logwatch 软件，它也可以在各种 Linux 系统和类 Unix 系统上安装。Logwatch 是一款可定制的日志分析和日志监控报告生成系统，它可以根据一段时间的日志文件生成您所希望关注的详细报告。它具有易安装、易配置、可审查等特性，同时对其提供的数据的安全性上也有一些保障措施。Logwatch 会扫描重要的操作系统组件像 SSH、网站服务等的日志文件，然后生成用户所关心的有价值的条目汇总报告。
 
 ### 预安装设置 ###
 
@@ -16,13 +17,13 @@ Ubuntu 15.04 and系统中安装 Logwatch
 
     root@ubuntu-15:~# apt-get install logwatch
 
-在安装过程中，一旦您按提示按下“Y”健同意对系统修改的话，Logwatch 将会开始安装一些额外的必须软件包。
+在安装过程中，一旦您按提示按下“Y”键同意对系统修改的话，Logwatch 将会开始安装一些额外的必须软件包。
 
-在安装过程中会根据您机器上的邮件服务器设置情况弹出提示对 Postfix 设置的配置界面。在这篇教程中我们使用最容易的 “仅本地” 选项。根据您的基础设施情况也可以选择其它的可选项，然后点击“确定”继续。
+在安装过程中会根据您机器上的邮件服务器设置情况弹出提示对 Postfix 设置的配置界面。在这篇教程中我们使用最容易的 “仅本地（Local only）” 选项。根据您的基础设施情况也可以选择其它的可选项，然后点击“确定”继续。
 
 ![Potfix Configurations](http://blog.linoxide.com/wp-content/uploads/2015/08/21.png)
 
-随后您得选择邮件服务器名，这邮件服务器名也会被其它程序使用，所以它应该是一个完全合格域名/全称域名（FQDN），且只一个。
+随后您得选择邮件服务器名，这邮件服务器名也会被其它程序使用，所以它应该是一个完全合格域名/全称域名（FQDN）。
 
 ![Postfix Setup](http://blog.linoxide.com/wp-content/uploads/2015/08/31.png)
 
@@ -70,11 +71,11 @@ Ubuntu 15.04 and系统中安装 Logwatch
     # complete email address.
     MailFrom = Logwatch
 
-对这个配置文件保存修改，至于其它的参数就让它是默认的，无需改动。
+对这个配置文件保存修改，至于其它的参数就让它保持默认，无需改动。
 
 **调度任务配置**
 
-现在编辑在日常 crons 目录下的 “00logwatch” 文件来配置从 logwatch 生成的报告需要发送的邮件地址。
+现在编辑在 “daily crons” 目录下的 “00logwatch” 文件来配置从 logwatch 生成的报告需要发送的邮件地址。
 
     root@ubuntu-15:~# vim /etc/cron.daily/00logwatch
 
@@ -88,25 +89,25 @@ Ubuntu 15.04 and系统中安装 Logwatch
 
     root@ubuntu-15:~#logwatch
 
-生成的报告开始部分显示的是执行的时间和日期。它包含不同的部分，每个部分以开始标识开始而以结束标识结束，中间显示的标识部分提到的完整日志信息。
+生成的报告开始部分显示的是执行的时间和日期。它包含不同的部分，每个部分以开始标识开始而以结束标识结束，中间显示的是该部分的完整信息。
 
-这儿演示的是开始标识头的样子，要显示系统上所有安装包的信息，如下所示：
+这儿显示的是开始的样子，它以显示系统上所有安装的软件包的部分开始，如下所示：
 
 ![dpkg status](http://blog.linoxide.com/wp-content/uploads/2015/08/81.png)
 
-接下来的部分显示的日志信息是关于当前系统登陆会话、rsyslogs 和当前及最后可用的会话 SSH 连接信息。
+接下来的部分显示的日志信息是关于当前系统登录会话、rsyslogs 和当前及最近的 SSH 会话信息。
 
 ![logwatch report](http://blog.linoxide.com/wp-content/uploads/2015/08/9.png)
 
-Logwatch 报告最后显示的是安全 sudo 日志及root目录磁盘使用情况，如下示：
+Logwatch 报告最后显示的是安全方面的 sudo 日志及根目录磁盘使用情况，如下示：
 
 ![Logwatch end report](http://blog.linoxide.com/wp-content/uploads/2015/08/10.png)
 
-您也可以打开如下的文件来检查生成的 logwatch 报告电子邮件。
+您也可以打开如下的文件来查看生成的 logwatch 报告电子邮件。
 
     root@ubuntu-15:~# vim /var/mail/root
 
-您会看到所有已生成的邮件到其配置用户的信息传送状态。
+您会看到发送给你配置的用户的所有已生成的邮件及其邮件递交状态。
 
 ### 更多详情 ###
 
@@ -130,7 +131,7 @@ via: http://linoxide.com/ubuntu-how-to/install-use-logwatch-ubuntu-15-04/
 
 作者：[Kashif Siddique][a]
 译者：[runningwater](https://github.com/runningwater)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
