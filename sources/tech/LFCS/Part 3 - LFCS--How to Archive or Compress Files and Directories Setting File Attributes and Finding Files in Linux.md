@@ -1,3 +1,5 @@
+Translating by Xuanwo
+
 Part 3 - LFCS: How to Archive/Compress Files & Directories, Setting File Attributes and Finding Files in Linux
 ================================================================================
 Recently, the Linux Foundation started the LFCS (Linux Foundation Certified Sysadmin) certification, a brand new program whose purpose is allowing individuals from all corners of the globe to have access to an exam, which if approved, certifies that the person is knowledgeable in performing basic to intermediate system administration tasks on Linux systems. This includes supporting already running systems and services, along with first-level troubleshooting and analysis, plus the ability to decide when to escalate issues to engineering teams.
@@ -178,9 +180,9 @@ List Archive Content
 
 Run any of the following commands:
 
-    # gzip -d myfiles.tar.gz	[#1] 
-    # bzip2 -d myfiles.tar.bz2	[#2] 
-    # xz -d myfiles.tar.xz 		[#3] 
+    # gzip -d myfiles.tar.gz	[#1]
+    # bzip2 -d myfiles.tar.bz2	[#2]
+    # xz -d myfiles.tar.xz 		[#3]
 
 Then
 
