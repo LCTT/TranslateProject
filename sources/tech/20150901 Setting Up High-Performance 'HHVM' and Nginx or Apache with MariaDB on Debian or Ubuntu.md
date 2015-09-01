@@ -1,19 +1,21 @@
-translating by mike
 在 Debian 或者 Ubuntu 上配置高性能的 HHVM、Nginx/Apache 和 MariaDB
 ================================================================================
-HHVM stands for HipHop Virtual Machine, is an open source virtual machine created for running Hack (it’s a programming language for HHVM) and PHP written applications. HHVM uses a last minute compilation path to achieve remarkable performance while keeping the flexibility that PHP programmers are addicted to. Till date, HHVM has achieved over a 9x increase in http request throughput and more than 5x cut in memory utilization (when running on low system memory) for Facebook compared with the PHP engine + [APC (Alternative PHP Cache)][1].
-HHVM全称为 HipHop Virtual Machine, 它是一个由 running Hack(一种编程语言)和 PHP的相关应用组成的开源虚拟机。HHVM 
+HHVM全称为 HipHop Virtual Machine, 它是一个由 running Hack(一种编程语言)和 PHP的相关应用组成的开源虚拟机。HHVM 在保证了 PHP 程序员最关注的高灵活性的要求下，通过使用最新编译结果的方式来达到一个客观的性能。到目前为止，HHVM 为 FaceBook 在 HTTP 请求的吞吐量上提高了9倍的性能，在内存的占用上，减少了5倍左右的内存占用。
+
++ [APC (Alternative PHP Cache)][1].
+
 HHVM can also be used along with a FastCGI-based web-server like Nginx or Apache.
+同时，HHVM 也可以通过 FastCGI 接口，与像 Nginx 或者 Apache 进行集成。
 
 ![Install HHVM, Nginx and Apache with MariaDB](http://www.tecmint.com/wp-content/uploads/2015/08/Install-HHVM-Nginx-Apache-MariaDB.png)
 
-Install HHVM, Nginx and Apache with MariaDB
+安装 HHVM，Nginx和 Apache 还有 MariaDB
 
-In this tutorial we shall look at steps for setting up Nginx/Apache web server, MariaDB database server and HHVM. For this setup, we will use Ubuntu 15.04 (64-bit) as HHVM runs on 64-bit system only, although Debian and Linux Mint distributions are also supported.
+在本教程中，我们一起来进行 Nginx/Apache web 服务器、 数据库服务器 MariaDB 和 HHVM  的设置。设置中，我们将使用 Ubuntu 15.04 (64 位)，同时，该教程也适用于 Debian 和 Linux Mint。
 
-### Step 1: Installing Nginx and Apache Web Server ###
+### Step 1: 安装 Nginx 或者 Apache 服务器 ###
 
-1. First do a system upgrade to update repository list with the help of following commands.
+1. 首先，先进行一次系统的升级或者更新软件仓库列表.
 
     # apt-get update && apt-get upgrade
 
@@ -21,139 +23,138 @@ In this tutorial we shall look at steps for setting up Nginx/Apache web server, 
 
 System Upgrade
 
-2. As I said HHVM can be used with both Nginx and Apache web server. So, it’s your choice which web server you will going to use, but here we will show you both web servers installation and how to use them with HHVM.
+2. 正如我之前说的，HHVM 能和 Nginx 和 Apache 进行集成。所以，究竟使用哪个服务器，这是你的自由，不过，我们会教你如何安装这两个服务器。
 
-#### Installing Nginx ####
+#### 安装 Nginx ####
 
-In this step, we will install Nginx/Apache web server from the packages repository using following command.
+我们通过下面的命令安装 Nginx/Apache 服务器
 
     # apt-get install nginx
 
 ![Install Nginx Web Server](http://www.tecmint.com/wp-content/uploads/2015/08/Install-Nginx-Web-Server.png)
 
-Install Nginx Web Server
+安装 Nginx 服务器
 
-#### Installing Apache ####
+#### 安装 Apache ####
 
     # apt-get install apache2
 
 ![Install Apache Web Server](http://www.tecmint.com/wp-content/uploads/2015/08/Install-Apache-Web-Server.png)
 
-Install Apache Web Server
+安装 Apache 服务器
 
-At this point, you should be able to navigate to following URL and you will able to see Nginx or Apache default page.
+完成这一步，你能通过以下的链接看到 Nginx 或者 Apache 的默认页面
 
     http://localhost
     OR
     http://IP-Address
 
-#### Nginx Default Page ####
+#### Nginx 默认页面 ####
 
 ![Nginx Welcome Page](http://www.tecmint.com/wp-content/uploads/2015/08/Nginx-Welcome-Page.png)
 
-Nginx Welcome Page
+Nginx 默认页面
 
-#### Apache Default Page ####
+#### Apache 默认页面 ####
 
 ![Apache Default Page](http://www.tecmint.com/wp-content/uploads/2015/08/Apache-Default-Page.png)
 
-Apache Default Page
+Apache 默认页面
 
-### Step 2: Install and Configure MariaDB ###
+### Step 2: 安装和配置 MariaDB ###
 
-3. In this step, we will install MariaDB, as it providers better performance as compared to MySQL.
+3. 这一步，我们将通过如下命令安装 MariaDB,它是一个比 MySQL 更好的数据库
 
     # apt-get install mariadb-client mariadb-server
 
 ![Install MariaDB Database](http://www.tecmint.com/wp-content/uploads/2015/08/Install-MariaDB-Database.png)
 
-Install MariaDB Database
+安装 MariaDB
 
-4. After MariaDB successful installation, you can start MariaDB and set root password to secure the database:
+4. 在 MariaDB 成功安装之后，你可以启动它，并且设置 root 密码来保护数据库:
 
     # systemctl start mysql
     # mysql_secure_installation
 
-Answer the following questions by typing `y` or `n` and press enter. Make sure you read the instructions carefully before answering the questions.
+回答以下问题，只需要按下`y`或者 `n`并且回车。请确保你仔细的阅读过说明。
 
     Enter current password for root (enter for none) = press enter
     Set root password? [Y/n] = y
     Remove anonymous users[y/n] = y
     Disallow root login remotely[y/n] = y
     Remove test database and access to it [y/n] = y
-    Reload privileges tables now[y/n] = y 
+    Reload privileges tables now[y/n] = y
 
-5. After setting root password for MariaDB, you can connect to MariaDB prompt with the new root password.
+5. 在设置了密码之后，你就可以登陆 MariaDB 了。
 
     # mysql -u root -p
 
-### Step 3: Installation of HHVM ###
+### Step 3: 安装 HHVM ###
 
-6. At this stage we shall install and configure HHVM. You need to add the HHVM repository to your `sources.list` file and then you have to update your repository list using following series of commands.
+6. 我们需要添加 HHVM 的仓库到你的`sources.list`文件中，然后更新软件列表。
 
     # wget -O - http://dl.hhvm.com/conf/hhvm.gpg.key | apt-key add -
     # echo deb http://dl.hhvm.com/ubuntu DISTRIBUTION_VERSION main | sudo tee /etc/apt/sources.list.d/hhvm.list
     # apt-get update
 
-**Important**: Don’t forget to replace DISTRIBUTION_VERSION with your Ubuntu distribution version (i.e. lucid, precise, or trusty.) and also on Debian replace with jessie or wheezy. On Linux Mint installation instructions are same, but petra is the only currently supported distribution.
+**重要**：不要忘记用你的 Ubuntu 发行版型号替换上述的DISTRIBUTION_VERSION (比如：lucid, precise, trusty) 或者是 Debian 的 jessie 或者 wheezy。在 Linux Mint 中也是一样的，不过只支持 petra。
 
-After adding HHVM repository, you can easily install it as shown.
+添加了 HHVM 仓库之后，你就可以安装了。
 
     # apt-get install -y hhvm
 
-Installing HHVM will start it up now, but it not configured to auto start at next system boot. To set auto start at next boot use the following command.
+安装之后，即可启动它，但是它并没有做到开机启动。可以用如下命令做到开机启动。
 
     # update-rc.d hhvm defaults
 
-### Step 4: Configuring Nginx/Apache to Talk to HHVM ###
+### Step 4: 配置 Nginx/Apache 连接 HHVM ###
 
-7. Now, nginx/apache and HHVM are installed and running as independent, so we need to configure both web servers to talk to each other. The crucial part is that we have to tell nginx/apache to forward all PHP files to HHVM to execute.
+7. 现在，nginx/apache 和 HHVM 都已经安装完成了，并且都独立运行起来了，所以我们需要对他们进行设置，来让他们互相关联。这个关键的步骤，就是需要nginx/apache 将所有的 php 文件，都交给 HHVM 进行处理。
 
-If you are using Nginx, follow this instructions as explained..
+如果你用了 Nginx，请按照如下步骤：
 
-By default, the nginx configuration lives under /etc/nginx/sites-available/default and these config looks in /usr/share/nginx/html for files to execute, but it don’t know what to do with PHP.
+nginx 的配置文件在 /etc/nginx/sites-available/default， 并且这些配置文件会在 /usr/share/nginx/html 中寻找文件执行，不过，他不知道如何处理 PHP。
 
-To make Nginx to talk with HHVM, we need to run the following include script that will configure nginx correctly by placing a hhvm.conf at the beginning of the nginx config as mentioned above.
+为了确保 Nginx 可以连接 HHVM，我们需要执行如下的脚本。他可以帮助我们正确的配置 Nginx。
 
-This script makes the nginx to talk to any file that ends with .hh or .php and send it to HHVM via fastcgi.
+这个脚本可以确保 Nginx 可以对 .hh 和 .php 的做正确的处理，并且通过 fastcgi 与 HHVM 进行通信
 
     # /usr/share/hhvm/install_fastcgi.sh
 
 ![Configure Nginx for HHVM](http://www.tecmint.com/wp-content/uploads/2015/08/Configure-Nginx-for-HHVM.png)
 
-Configure Nginx for HHVM
+配置 Nginx、HHVM
 
-**Important**: If you are using Apache, there isn’t any configuration is needed now.
+**重要**: 如果你使用的是 Apache，这边就不需要进行配置了
 
-8. Next, you need to use /usr/bin/hhvm to provide /usr/bin/php (php) by running this command below.
+8. 接下来，你需要使用 hhvm 来提供 php 的运行环境。
 
     # /usr/bin/update-alternatives --install /usr/bin/php php /usr/bin/hhvm 60
 
-After all the above steps are done, you can now start HHVM and test it.
+以上步骤完成之后，你现在可以启动并且测试他了。
 
     # systemctl start hhvm
 
-### Step 5: Testing HHVM with Nginx/Apache ###
+### Step 5: 测试 HHVM 和 Nginx/Apache ###
 
-9. To verify that hhvm working, you need to create a hello.php file under nginx/apache document root directory.
+9. 为了确认 hhvm 是否工作，你需要在 nginx/apache 的根目录下建立 hello.php。
 
     # nano /usr/share/nginx/html/hello.php       [For Nginx]
     OR
     # nano /var/www/html/hello.php               [For Nginx and Apache]
 
-Add the following snippet to this file.
+在文件中添加如下代码:
 
     <?php
     if (defined('HHVM_VERSION')) {
-    echo 'HHVM is working';
-     phpinfo();
-    }
-    else {
-    echo 'HHVM is not working';
+        echo 'HHVM is working';
+        phpinfo();
+    } else {
+        echo 'HHVM is not working';
     }
     ?>
 
-and then navigate to the following URL and verify to see “hello world“.
+然后访问如下链接，确认自己能否看到 "hello world"
 
     http://localhost/info.php
     OR
@@ -163,18 +164,18 @@ and then navigate to the following URL and verify to see “hello world“.
 
 HHVM Page
 
-If “HHVM” page appears, then it means you’re all set!
+如果 “HHVM” 的页面出现了，那就说明你成功了
 
-### Conclusion ###
+### 结论 ###
 
-These steps are very easy to follow and hope your find this tutorial useful and if you get any error during installation of any packages, post a comment and we shall find solutions together. And any additional ideas are welcome.
+以上的步骤都是非常简单的，希望你能觉得这是一篇有用的教程，如果你在以上的步骤中遇到了问题，给我们留一个评论，我们将全力解决。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/install-hhvm-and-nginx-apache-with-mariadb-on-debian-ubuntu/
 
 作者：[Ravi Saive][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[MikeCoder](https://github.com/MikeCoder)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
