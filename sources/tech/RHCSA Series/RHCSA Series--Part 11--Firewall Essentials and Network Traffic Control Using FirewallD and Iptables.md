@@ -1,3 +1,5 @@
+FSSlc Translating
+
 RHCSA Series: Firewall Essentials and Network Traffic Control Using FirewallD and Iptables – Part 11
 ================================================================================
 In simple words, a firewall is a security system that controls the incoming and outgoing traffic in a network based on a set of predefined rules (such as the packet destination / source or type of traffic, for example).
