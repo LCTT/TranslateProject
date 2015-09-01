@@ -1,6 +1,6 @@
 Translating by Xuanwo
 
-Part 1 - LFCS系列第一讲：如何在Linux上使用GNU'sed'命令来创建、编辑和操作文件
+LFCS系列第一讲：如何在Linux上使用GNU'sed'命令来创建、编辑和操作文件
 ================================================================================
 Linux基金会宣布了一个全新的LFCS（Linux Foundation Certified Sysadmin，Linux基金会认证系统管理员）认证计划。这一计划旨在帮助遍布全世界的人们获得其在处理Linux系统管理任务上能力的认证。这些能力包括支持运行的系统服务，以及第一手的故障诊断和分析和为工程师团队在升级时提供智能决策。
 
@@ -12,7 +12,7 @@ Linux基金会认证系统管理员——第一讲
 
 <embed src="http://static.video.qq.com/TPout.swf?vid=l0163eohhs9&auto=0" allowFullScreen="true" quality="high" width="480" height="400" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
 
-该系列将命名为《LFCS预备第一讲》至《LFCS预备第十讲》并覆盖关于Ubuntu，CentOS以及openSUSE的下列话题。
+该系列将命名为《LFCS系列第一讲》至《LFCS系列第十讲》并覆盖关于Ubuntu，CentOS以及openSUSE的下列话题。
 
 - 第一讲：如何在Linux上使用GNU'sed'命令来创建、编辑和操作文件
 - 第二讲：如何安装和使用vi/m全功能文字编辑器
@@ -25,7 +25,7 @@ Linux基金会认证系统管理员——第一讲
 - 第九讲：Linux包管理与Yum，RPM，Apt，Dpkg，Aptitude，Zypper
 - 第十讲：学习简单的Shell脚本和文件系统故障排除
 
-本文是覆盖这个参加LFCS认证考试的所必需的范围和能力的十个教程的第一讲。话虽如此，快打开你的终端，让我们开始吧！
+本文是覆盖这个参加LFCS认证考试的所必需的范围和能力的十个教程的第一讲。话说了那么多，快打开你的终端，让我们开始吧！
 
 ### 处理Linux中的文本流 ###
 
@@ -42,7 +42,7 @@ Linux将程序中的输入和输出当成字符流或者字符序列。在开始
 
 ![cat command](http://www.tecmint.com/wp-content/uploads/2014/10/cat-command.png)
 
-cat command example
+cat 命令样例
 
 #### 使用 sed ####
 
@@ -60,7 +60,7 @@ sed最基本的用法是字符替换。我们将通过把每个出现的小写y�
 
 ![sed command](http://www.tecmint.com/wp-content/uploads/2014/10/sed-command.png)
 
-sed command example
+sed 命令样例
 
 如果你要在替换文本中搜索或者替换特殊字符（如/，\，＆），你需要使用反斜杠对它进行转义。
 
@@ -70,7 +70,7 @@ sed command example
 
 ![sed replace string](http://www.tecmint.com/wp-content/uploads/2014/10/sed-replace-string.png)
 
-sed replace string
+sed 替换字符串
 
 在上面的命令中，^（插入符号）是众所周知用来表示一行开头的正则表达式。
 
@@ -88,7 +88,7 @@ sed replace string
 
 ![sed match string](http://www.tecmint.com/wp-content/uploads/2014/10/sed-match-string.png)
 
-sed match string
+sed 匹配字符串
 
 #### uniq C命令 ####
 
@@ -102,7 +102,7 @@ du –sch /path/to/directory/* 命令将会以人类可读的格式返回在指�
 
 ![sort command](http://www.tecmint.com/wp-content/uploads/2014/10/sort-command.jpg)
 
-sort command example
+sort 命令样例
 
 你可以通过使用下面的命令告诉uniq比较每一行的前6个字符（-w 6）（指定了不同的日期）来统计日志事件的个数，而且在每一行的开头输出出现的次数（-c）。
 
@@ -111,7 +111,7 @@ sort command example
 
 ![Count Numbers in File](http://www.tecmint.com/wp-content/uploads/2014/10/count-numbers-in-file.jpg)
 
-Count Numbers in File
+统计文件中数字
 
 最后，你可以组合使用sort和uniq命令（通常如此）。考虑下面文件中捐助者，捐助日期和金额的列表。假设我们想知道有多少个捐助者。我们可以使用下面的命令来分隔第一字段（字段由冒号分隔），按名称排序并且删除重复的行。
 
@@ -119,7 +119,7 @@ Count Numbers in File
 
 ![Find Unique Records in File](http://www.tecmint.com/wp-content/uploads/2014/10/find-uniqu-records-in-file.jpg)
 
-Find Unique Records in File
+寻找文件中不重复的记录
 
 - 也可阅读: [13个“cat”命令样例][1]
 
@@ -135,7 +135,7 @@ grep在文件（或命令输出）中搜索指定正则表达式并且在标准�
 
 ![grep Command](http://www.tecmint.com/wp-content/uploads/2014/10/grep-command.jpg)
 
-grep command example
+grep 命令样例
 
 显示/etc文件夹下所有rc开头并跟随任意数字的内容。
 
@@ -143,11 +143,11 @@ grep command example
 
 ![List Content Using grep](http://www.tecmint.com/wp-content/uploads/2014/10/list-content-using-grep.jpg)
 
-List Content Using grep
+使用grep列出内容
 
 - 也可阅读: [12个“grep”命令样例][2]
 
-#### tr Command Usage ####
+#### tr 命令使用技巧 ####
 
 tr命令可以用来从标准输入中翻译（改变）或者删除字符并将结果写入到标准输出中。
 
@@ -159,14 +159,14 @@ tr命令可以用来从标准输入中翻译（改变）或者删除字符并将
 
 ![Sort Strings in File](http://www.tecmint.com/wp-content/uploads/2014/10/sort-strings.jpg)
 
-Sort Strings in File
+排序文件中的字符串
 
 压缩`ls –l`输出中的定界符至一个空格。
     # ls -l | tr -s ' '
 
 ![Squeeze Delimiter](http://www.tecmint.com/wp-content/uploads/2014/10/squeeze-delimeter.jpg)
 
-Squeeze Delimiter
+压缩分隔符
 
 #### cut 命令使用方法 ####
 
@@ -180,7 +180,7 @@ cut命令可以基于字节数（-b选项），字符（-c）或者字段（-f�
 
 ![Extract User Accounts](http://www.tecmint.com/wp-content/uploads/2014/10/extract-user-accounts.jpg)
 
-Extract User Accounts
+提取用户账户
 
 总结一下，我们将使用最后一个命令的输出中第一和第三个非空文件创建一个文本流。我们将使用grep作为第一过滤器来检查用户gacanepa的会话，然后将分隔符压缩至一个空格（tr -s ' ')。下一步，我们将使用cut来提取第一和第三个字段，最后使用第二个字段（本样例中，指的是IP地址）来排序之后再用uniq去重。
 
@@ -188,7 +188,7 @@ Extract User Accounts
 
 ![last command](http://www.tecmint.com/wp-content/uploads/2014/10/last-command.png)
 
-last command example
+last 命令样例
 
 上面的命令显示了如何将多个命令和管道结合起来以便根据我们的愿望得到过滤后的数据。你也可以逐步地使用它以帮助你理解输出是如何从一个命令传输到下一个命令的（顺便说一句，这是一个非常好的学习经验！）
 
