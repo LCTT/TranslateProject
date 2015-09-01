@@ -1,3 +1,4 @@
+translation by  strugglingyouth
 How to Install / Upgrade to Linux Kernel 4.2 in Ubuntu
 ================================================================================
 ![](http://ubuntuhandbook.org/wp-content/uploads/2014/12/linux-kernel-icon-tux.png)
