@@ -96,11 +96,11 @@ Apache 默认页面
 ### Step 3: 安装 HHVM ###
 
 6. 我们需要添加 HHVM 的仓库到你的`sources.list`文件中，然后更新软件列表。
-
+```
     # wget -O - http://dl.hhvm.com/conf/hhvm.gpg.key | apt-key add -
     # echo deb http://dl.hhvm.com/ubuntu DISTRIBUTION_VERSION main | sudo tee /etc/apt/sources.list.d/hhvm.list
     # apt-get update
-
+```
 **重要**：不要忘记用你的 Ubuntu 发行版型号替换上述的DISTRIBUTION_VERSION (比如：lucid, precise, trusty) 或者是 Debian 的 jessie 或者 wheezy。在 Linux Mint 中也是一样的，不过只支持 petra。
 
 添加了 HHVM 仓库之后，你就可以安装了。
@@ -132,9 +132,9 @@ nginx 的配置文件在 /etc/nginx/sites-available/default， 并且这些配�
 **重要**: 如果你使用的是 Apache，这边就不需要进行配置了
 
 8. 接下来，你需要使用 hhvm 来提供 php 的运行环境。
-
+```
     # /usr/bin/update-alternatives --install /usr/bin/php php /usr/bin/hhvm 60
-
+```
 以上步骤完成之后，你现在可以启动并且测试他了。
 
     # systemctl start hhvm
@@ -142,11 +142,11 @@ nginx 的配置文件在 /etc/nginx/sites-available/default， 并且这些配�
 ### Step 5: 测试 HHVM 和 Nginx/Apache ###
 
 9. 为了确认 hhvm 是否工作，你需要在 nginx/apache 的根目录下建立 hello.php。
-
+```
     # nano /usr/share/nginx/html/hello.php       [For Nginx]
     OR
     # nano /var/www/html/hello.php               [For Nginx and Apache]
-
+```
 在文件中添加如下代码:
 
     <?php
