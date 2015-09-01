@@ -1,51 +1,56 @@
-translation by  strugglingyouth
-How to Install / Upgrade to Linux Kernel 4.2 in Ubuntu
+
+在 Ubuntu 中如何安装/升级 Linux 内核到4.2
 ================================================================================
 ![](http://ubuntuhandbook.org/wp-content/uploads/2014/12/linux-kernel-icon-tux.png)
 
-Linux Kernel 4.2 was released yesterday, at noon. Linus Torvalds wrote on [lkml.org][1]:
+Linux 内核4.2在昨天中午被公布。Linus Torvalds 写了 [lkml.org][1]:
 
-> So judging by how little happened this week, it wouldn’t have been a mistake to release 4.2 last week after all, but hey, there’s certainly a few fixes here, and it’s not like delaying 4.2 for a week should have caused any problems either.
+> 通过这周的小的变动，4.2版本应该不会有问题，毕竟这是最后一周，但在这里有几个补丁，4.2延迟一个星期也会引发问题。
+
 > 
-> So here it is, and the merge window for 4.3 is now open. I already have a few pending early pull requests, but as usual I’ll start processing them tomorrow and give the release some time to actually sit.
-> 
-> The shortlog from rc8 is tiny, and appended. The patch is pretty tiny too…
 
-### What’s New in Kernel 4.2: ###
+> 所以在这里它是，并且4.3的合并窗口现已开放。我已经早期引入了几个悬而未决的请求，但像往常一样，我会从明天开始处理它们，并会发布完成的时间。
 
-- rewrites of Intel Assembly x86 code
-- support for new ARM boards and SoCs
-- F2FS per-file encryption
-- The AMDGPU kernel DRM driver
-- VCE1 video encode support for the Radeon DRM driver
-- Initial support for Intel Broxton Atom SoCs
-- Support for ARCv2 and HS38 CPU cores.
-- added queue spinlocks support
-- many other improvements and updated drivers.
+>
 
-### How to Install Kernel 4.2 in Ubuntu: ###
+> 从 rc8 中的 shortlog 非常小，并且是追加的。这个补丁也很完美...
 
-The binary packages of this kernel release are available for download at link below:
 
-- [Download Kernel 4.2 (.DEB)][1]
+### 新内核 4.2 有哪些改进？: ###
 
-First check out your OS type, 32-bit (i386) or 64-bit (amd64), then download and install the packages below in turn:
+- 英特尔的x86汇编代码重写
+- 支持新的 ARM 板和 SoCs
+- 对 F2FS 的 per-file 加密
+- 有 AMDGPU 内核 DRM 驱动程序
+- 使用Radeon DRM 来支持 VCE1 视频编码
+- 初步支持英特尔的 Broxton Atom SoCs
+- 支持ARCv2和HS38 CPU内核。
+- 增加了排队自旋锁的支持
+- 许多其他的改进和驱动更新。
+
+### 在 Ubuntu 中如何下载4.2内核 : ###
+
+此内核版本的二进制包可供下载链接如下：
+
+- [下载 4.2 内核(.DEB)][1]
+
+首先检查你的操作系统类型，32位（i386）的或64位(amd64)的，然后使用下面的方式依次下载并安装软件包：
 
 1. linux-headers-4.2.0-xxx_all.deb
 1. linux-headers-4.2.0-xxx-generic_xxx_i386/amd64.deb
 1. linux-image-4.2.0-xxx-generic_xxx_i386/amd64.deb
 
-After installing the kernel, you may run `sudo update-grub` command in terminal (Ctrl+Alt+T) to refresh grub boot-loader.
+安装内核后，在终端（(Ctrl+Alt+T)）运行`sudo update-grub`命令来更新 grub boot-loader。
 
-If you need a low latency system (e.g. for recording audio) then download & install below packages instead:
+如果你需要一个低延迟系统（例如用于录制音频），请下载并安装下面的包：
 
 1. linux-headers-4.2.0_xxx_all.deb
 1. linux-headers-4.2.0-xxx-lowlatency_xxx_i386/amd64.deb
 1. linux-image-4.2.0-xxx-lowlatency_xxx_i386/amd64.deb
 
-For Ubuntu Server without a graphical UI, you may run below commands one by one to grab packages via wget and install them via dpkg:
+对于没有图形用户界面的 Ubuntu 服务器，你可以运行下面的命令通过 wget 来逐一抓下载，并通过 dpkg 来安装：
 
-For 64-bit system run:
+对于64位的系统请运行:
 
     cd /tmp/
     
@@ -57,7 +62,7 @@ For 64-bit system run:
     
     sudo dpkg -i linux-headers-4.2.0-*.deb linux-image-4.2.0-*.deb
 
-For 32-bit system, run:
+对于32位的系统,请运行:
 
     cd /tmp/
     
@@ -69,16 +74,16 @@ For 32-bit system, run:
     
     sudo dpkg -i linux-headers-4.2.0-*.deb linux-image-4.2.0-*.deb
 
-Finally restart your computer to take effect.
+最后，重新启动计算机才能生效。
 
-To revert back, remove old kernels, see [install kernel simply via a script][3].
+要恢复或删除旧的内核，请参阅[通过脚本安装内核][3]。
 
 --------------------------------------------------------------------------------
 
 via: http://ubuntuhandbook.org/index.php/2015/08/upgrade-kernel-4-2-ubuntu/
 
 作者：[Ji m][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[strugglingyouth](https://github.com/strugglingyouth)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
