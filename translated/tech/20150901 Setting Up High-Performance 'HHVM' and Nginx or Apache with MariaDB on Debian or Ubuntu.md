@@ -16,9 +16,9 @@ HHVM can also be used along with a FastCGI-based web-server like Nginx or Apache
 ### Step 1: 安装 Nginx 或者 Apache 服务器 ###
 
 1. 首先，先进行一次系统的升级或者更新软件仓库列表.
-
+```
     # apt-get update && apt-get upgrade
-
+```
 ![System Upgrade](http://www.tecmint.com/wp-content/uploads/2015/08/System-Upgrade.png)
 
 System Upgrade
@@ -64,17 +64,19 @@ Apache 默认页面
 ### Step 2: 安装和配置 MariaDB ###
 
 3. 这一步，我们将通过如下命令安装 MariaDB,它是一个比 MySQL 更好的数据库
-
+```
     # apt-get install mariadb-client mariadb-server
-
+```
 ![Install MariaDB Database](http://www.tecmint.com/wp-content/uploads/2015/08/Install-MariaDB-Database.png)
 
 安装 MariaDB
 
 4. 在 MariaDB 成功安装之后，你可以启动它，并且设置 root 密码来保护数据库:
 
+```
     # systemctl start mysql
     # mysql_secure_installation
+```
 
 回答以下问题，只需要按下`y`或者 `n`并且回车。请确保你仔细的阅读过说明。
 
@@ -87,7 +89,9 @@ Apache 默认页面
 
 5. 在设置了密码之后，你就可以登陆 MariaDB 了。
 
+```
     # mysql -u root -p
+```
 
 ### Step 3: 安装 HHVM ###
 
