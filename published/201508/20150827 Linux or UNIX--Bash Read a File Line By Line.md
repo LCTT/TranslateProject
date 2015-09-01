@@ -1,17 +1,21 @@
-
-Linux/UNIX: Bash 下如何逐行读取一个文件
+Bash 下如何逐行读取一个文件
 ================================================================================
- 在 Linux 或类 UNIX 系统下如何使用 KSH 或 BASH shell 逐行读取一个文件？
 
-在 Linux, OSX, * BSD ,或者类 Unix 系统下你可以使用​​while..do..done bash 的循环来逐行读取一个文件。
+在 Linux 或类 UNIX 系统下如何使用 KSH 或 BASH shell 逐行读取一个文件？
 
-**在 Bash Unix 或者 Linux shell 中逐行读取一个文件的语法:**
+在 Linux、OSX、 *BSD 或者类 Unix 系统下你可以使用 ​​while..do..done 的 bash 循环来逐行读取一个文件。
 
-1.对于 bash, ksh, zsh,和其他的 shells 语法如下 - 
-1. while read -r line; do COMMAND; done < input.file
-1.通过 -r 选项传递给红色的命令阻止反斜杠被解释。
-1.在 read 命令之前添加 IFS= option，来防止 leading/trailing 尾随的空白字符被分割 - 
-1. while IFS= read -r line; do COMMAND_on $line; done < input.file
+###在 Bash Unix 或者 Linux shell 中逐行读取一个文件的语法
+
+对于 bash、ksh、 zsh 和其他的 shells 语法如下
+
+	while read -r line; do COMMAND; done < input.file
+
+通过 -r 选项传递给 read 命令以防止阻止解释其中的反斜杠转义符。
+
+在 read 命令之前添加 `IFS=` 选项，来防止首尾的空白字符被去掉。
+ 
+	while IFS= read -r line; do COMMAND_on $line; done < input.file
 
 这是更适合人类阅读的语法:
 
@@ -30,7 +34,7 @@ Linux/UNIX: Bash 下如何逐行读取一个文件
     file="/home/vivek/data.txt"
     while IFS= read line
     do
-            # display $line or do somthing with $line
+        # display $line or do somthing with $line
     	echo "$line"
     done <"$file"
 
@@ -40,7 +44,7 @@ Linux/UNIX: Bash 下如何逐行读取一个文件
     file="/home/vivek/data.txt"
     while IFS= read -r line
     do
-            # display $line or do somthing with $line
+        # display $line or do somthing with $line
     	printf '%s\n' "$line"
     done <"$file"
 
@@ -50,17 +54,17 @@ Linux/UNIX: Bash 下如何逐行读取一个文件
     file="/etc/passwd"
     while IFS=: read -r f1 f2 f3 f4 f5 f6 f7
     do
-            # display fields using f1, f2,..,f7
-            printf 'Username: %s, Shell: %s, Home Dir: %s\n' "$f1" "$f7" "$f6"
+        # display fields using f1, f2,..,f7
+        printf 'Username: %s, Shell: %s, Home Dir: %s\n' "$f1" "$f7" "$f6"
     done <"$file"
 
 示例输出:
 
 ![Fig.01: Bash shell scripting- read file line by line demo outputs](http://s0.cyberciti.org/uploads/faq/2011/01/Bash-Scripting-Read-File-line-by-line-demo.jpg)
 
-图01：Bash shell scripting- 读取文件并逐行输出文件
+*图01：Bash 脚本：读取文件并逐行输出文件*
 
-**Bash Scripting: 逐行读取文本文件并创建为 pdf 文件**
+###Bash 脚本：逐行读取文本文件并创建为 pdf 文件
 
 我的输入文件如下（faq.txt）:
 
@@ -75,7 +79,7 @@ Linux/UNIX: Bash 下如何逐行读取一个文件
     8292|http://www.cyberciti.biz/faq/mounting-harddisks-in-freebsd-with-mount-command/|FreeBSD: Mount Hard Drive / Disk Command
     8190|http://www.cyberciti.biz/faq/rebooting-solaris-unix-server/|Reboot a Solaris UNIX System
 
-我的 bash script:
+我的 bash 脚本:
 
     #!/bin/bash
     # Usage: Create pdf files from input (wrapper script)
@@ -106,11 +110,11 @@ Linux/UNIX: Bash 下如何逐行读取一个文件
         done <"$_db"
     fi
  
-**提示：从 bash 的变量开始读取**
+###技巧：从 bash 变量中读取
 
 让我们看看如何在 Debian 或者 Ubuntu Linux 下列出所有安装过的 php 包，请输入：
 
-    # 我将输出内容赋值到一个变量名为$list中 #
+    # 我将输出内容赋值到一个变量名为 $list中 #
 
     list=$(dpkg --list php\* | awk '/ii/{print $2}')
     printf '%s\n' "$list"
@@ -128,7 +132,7 @@ Linux/UNIX: Bash 下如何逐行读取一个文件
     php5-readline
     php5-suhosin-extension
 
-你现在可以从 $list 中看到安装的包：
+你现在可以从 $list 中看到它们，并安装这些包：
 
     #!/bin/bash
     # BASH can iterate over $list variable using a "here string" #
@@ -152,15 +156,14 @@ Linux/UNIX: Bash 下如何逐行读取一个文件
     Installing php package php5-readline...
     Installing php package php5-suhosin-extension...
 
-
-    *** 不要忘了运行php5enmod并重新启动服务（httpd 或 php5-fpm） ***
+    *** Do not forget to run php5enmod and restart the server (httpd or php5-fpm) ***
 
 --------------------------------------------------------------------------------
 
 via: http://www.cyberciti.biz/faq/unix-howto-read-line-by-line-from-file/
 
-作者：[作者名][a]
+作者： VIVEK GIT
 译者：[strugglingyouth](https://github.com/strugglingyouth)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
