@@ -1,13 +1,10 @@
-看这些孩子在Ubuntu的Linux终端下玩耍
+看这些孩子在 Ubuntu 的 Linux 终端下玩耍
 ================================================================================
-我发现了一个孩子们在他们的计算机教室里玩得很开心的视频。我不知道他们在哪里，但我猜测是在印度尼西亚或者马来西亚。
-
-注：youtube 视频
-<iframe width="640" height="390" frameborder="0" allowfullscreen="true" src="http://www.youtube.com/embed/z8taQPomp0Y?version=3&amp;rel=1&amp;fs=1&amp;showsearch=0&amp;showinfo=1&amp;iv_load_policy=1&amp;wmode=transparent" type="text/html" class="youtube-player"></iframe>
+我发现了一个孩子们在他们的计算机教室里玩得很开心的视频。我不知道他们在哪里，但我猜测是在印度尼西亚或者马来西亚。视频请自行搭梯子： http://www.youtube.com/z8taQPomp0Y
 
 ### 在Linux终端下面跑火车 ###
 
-这里没有魔术。只是一个叫做“sl”的命令行工具。我假定它是在把ls打错的情况下为了好玩而开发的。如果你曾经在Linux的命令行下工作，你会知道ls是一个最常使用的一个命令，也许也是一个最经常打错的命令。
+这里没有魔术。只是一个叫做“sl”的命令行工具。我想它是在把ls打错的情况下为了好玩而开发的。如果你曾经在Linux的命令行下工作，你会知道ls是一个最常使用的一个命令，也许也是一个最经常打错的命令。
 
 如果你想从这个终端下的火车获得一些乐趣，你可以使用下面的命令安装它。
 
@@ -30,7 +27,7 @@ via: http://itsfoss.com/ubuntu-terminal-train/
 
 作者：[Abhishek][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
