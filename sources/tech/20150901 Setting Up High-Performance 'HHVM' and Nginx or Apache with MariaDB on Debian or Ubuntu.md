@@ -1,7 +1,8 @@
-Setting Up High-Performance ‘HHVM’ and Nginx/Apache with MariaDB on Debian/Ubuntu
+translating by mike
+在 Debian 或者 Ubuntu 上配置高性能的 HHVM、Nginx/Apache 和 MariaDB
 ================================================================================
 HHVM stands for HipHop Virtual Machine, is an open source virtual machine created for running Hack (it’s a programming language for HHVM) and PHP written applications. HHVM uses a last minute compilation path to achieve remarkable performance while keeping the flexibility that PHP programmers are addicted to. Till date, HHVM has achieved over a 9x increase in http request throughput and more than 5x cut in memory utilization (when running on low system memory) for Facebook compared with the PHP engine + [APC (Alternative PHP Cache)][1].
-
+HHVM全称为 HipHop Virtual Machine, 它是一个由 running Hack(一种编程语言)和 PHP的相关应用组成的开源虚拟机。HHVM 
 HHVM can also be used along with a FastCGI-based web-server like Nginx or Apache.
 
 ![Install HHVM, Nginx and Apache with MariaDB](http://www.tecmint.com/wp-content/uploads/2015/08/Install-HHVM-Nginx-Apache-MariaDB.png)
