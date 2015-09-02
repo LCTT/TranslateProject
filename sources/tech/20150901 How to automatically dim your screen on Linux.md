@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How to automatically dim your screen on Linux
 ================================================================================
 When you start spending the majority of your time in front of a computer, natural questions start arising. Is this healthy? How can I diminish the strain on my eyes? Why is the sunlight burning me? Although active research is still going on to answer these questions, a lot of programmers have already adopted a few applications to make their daily habits a little healthier for their eyes. Among those applications, there are two which I found particularly interesting: Calise and Redshift.
