@@ -1,3 +1,5 @@
+Translating by Ping
+
 Install The Latest Linux Kernel in Ubuntu Easily via A Script
 ================================================================================
 ![](http://ubuntuhandbook.org/wp-content/uploads/2014/12/linux-kernel-icon-tux.png)
