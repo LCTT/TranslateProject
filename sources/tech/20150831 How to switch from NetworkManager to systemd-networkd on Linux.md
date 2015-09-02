@@ -1,3 +1,5 @@
+Translating by Ping
+
 How to switch from NetworkManager to systemd-networkd on Linux
 ================================================================================
 In the world of Linux, adoption of [systemd][1] has been a subject of heated controversy, and the debate between its proponents and critics is still going on. As of today, most major Linux distributions have adopted systemd as a default init system.
