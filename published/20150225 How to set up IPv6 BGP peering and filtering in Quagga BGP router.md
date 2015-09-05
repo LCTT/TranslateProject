@@ -1,5 +1,6 @@
-如何设置在Quagga BGP路由器中设置IPv6的BGP对等体和过滤
+如何设置在 Quagga BGP 路由器中设置 IPv6 的 BGP 对等体和过滤
 ================================================================================
+
 在之前的教程中，我们演示了如何使用Quagga建立一个[完备的BGP路由器][1]和配置[前缀过滤][2]。在本教程中，我们会向你演示如何创建IPv6 BGP对等体并通过BGP通告IPv6前缀。同时我们也将演示如何使用前缀列表和路由映射特性来过滤通告的或者获取到的IPv6前缀。
 
 ### 拓扑 ###
@@ -47,7 +48,7 @@ Quagga内部提供一个叫作vtysh的shell，其界面与那些主流路由厂�
 
     # vtysh
 
-提示将改为：
+提示符将改为：
 
     router-a#
 
@@ -65,7 +66,7 @@ Quagga内部提供一个叫作vtysh的shell，其界面与那些主流路由厂�
 
     router-a# configure terminal 
 
-提示将变更成：
+提示符将变更成：
 
     router-a(config)#
 
@@ -246,13 +247,13 @@ Quagga内部提供一个叫作vtysh的shell，其界面与那些主流路由厂�
 via: http://xmodulo.com/ipv6-bgp-peering-filtering-quagga-bgp-router.html
 
 作者：[Sarmed Rahman][a]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[martin2011qi](https://github.com/martin2011qi)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://xmodulo.com/author/sarmed
-[1]:http://xmodulo.com/centos-bgp-router-quagga.html
+[1]:https://linux.cn/article-4232-1.html
 [2]:http://xmodulo.com/filter-bgp-routes-quagga-bgp-router.html
 [3]:http://ask.xmodulo.com/open-port-firewall-centos-rhel.html
 [4]:http://xmodulo.com/filter-bgp-routes-quagga-bgp-router.html
