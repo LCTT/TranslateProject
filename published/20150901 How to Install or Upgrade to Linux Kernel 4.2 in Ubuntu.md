@@ -1,31 +1,23 @@
-
-在 Ubuntu 中如何安装/升级 Linux 内核到4.2
+在 Ubuntu 中如何安装或升级 Linux 内核到4.2
 ================================================================================
 ![](http://ubuntuhandbook.org/wp-content/uploads/2014/12/linux-kernel-icon-tux.png)
 
-Linux 内核4.2在昨天中午被公布。Linus Torvalds 写了 [lkml.org][1]:
+Linux 内核 4.2已经发布了。Linus Torvalds 在 [lkml.org][1] 上写到:
 
-> 通过这周的小的变动，4.2版本应该不会有问题，毕竟这是最后一周，但在这里有几个补丁，4.2延迟一个星期也会引发问题。
-
-> 
-
-> 所以在这里它是，并且4.3的合并窗口现已开放。我已经早期引入了几个悬而未决的请求，但像往常一样，我会从明天开始处理它们，并会发布完成的时间。
-
->
-
-> 从 rc8 中的 shortlog 非常小，并且是追加的。这个补丁也很完美...
-
+> 通过这周这么小的变动，看来在最后一周 发布 4.2 版本应该不会有问题，当然还有几个修正，但是看起来也并不需要延迟一周。 
+> 所以这就到了，而且 4.3 的合并窗口现已打开。我已经有了几个等待处理的合并请求，明天我开始处理它们，然后在适当的时候放出来。
+> 从 rc8 以来的简短日志很小，已经附加。这个补丁也很小...
 
 ### 新内核 4.2 有哪些改进？: ###
 
-- 英特尔的x86汇编代码重写
-- 支持新的 ARM 板和 SoCs
+- 重写英特尔的x86汇编代码
+- 支持新的 ARM 板和 SoC
 - 对 F2FS 的 per-file 加密
-- 有 AMDGPU 内核 DRM 驱动程序
-- 使用Radeon DRM 来支持 VCE1 视频编码
-- 初步支持英特尔的 Broxton Atom SoCs
-- 支持ARCv2和HS38 CPU内核。
-- 增加了排队自旋锁的支持
+- AMDGPU 的内核 DRM 驱动程序
+- 对 Radeon DRM 驱动的 VCE1 视频编码支持
+- 初步支持英特尔的 Broxton Atom SoC
+- 支持 ARCv2 和 HS38 CPU 内核
+- 增加了队列自旋锁的支持
 - 许多其他的改进和驱动更新。
 
 ### 在 Ubuntu 中如何下载4.2内核 : ###
@@ -84,7 +76,7 @@ via: http://ubuntuhandbook.org/index.php/2015/08/upgrade-kernel-4-2-ubuntu/
 
 作者：[Ji m][a]
 译者：[strugglingyouth](https://github.com/strugglingyouth)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
