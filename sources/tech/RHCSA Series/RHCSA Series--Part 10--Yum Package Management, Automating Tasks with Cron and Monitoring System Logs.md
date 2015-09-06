@@ -1,3 +1,4 @@
+[xiqingongzi translating]
 RHCSA Series: Yum Package Management, Automating Tasks with Cron and Monitoring System Logs – Part 10
 ================================================================================
 In this article we will review how to install, update, and remove packages in Red Hat Enterprise Linux 7. We will also cover how to automate tasks using cron, and will finish this guide explaining how to locate and interpret system logs files with the focus of teaching you why all of these are essential skills for every system administrator.
