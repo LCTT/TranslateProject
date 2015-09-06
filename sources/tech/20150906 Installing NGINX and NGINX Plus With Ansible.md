@@ -1,4 +1,5 @@
-Installing NGINX and NGINX Plus With Ansible
+translation by  strugglingyouth
+nstalling NGINX and NGINX Plus With Ansible
 ================================================================================
 Coming from a production operations background, I have learned to love all things related to automation. Why do something by hand if a computer can do it for you? But creating and implementing automation can be a difficult task given an ever-changing infrastructure and the various technologies surrounding your environments. This is why I love [Ansible][1]. Ansible is an open source tool for IT configuration management, deployment, and orchestration that is extremely easy to use.
 
