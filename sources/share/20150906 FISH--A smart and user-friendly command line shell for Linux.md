@@ -1,3 +1,5 @@
+translating by oska874
+
 FISH – A smart and user-friendly command line shell for Linux
 ================================================================================
 The friendly interactive shell (FISH). fish is a user friendly command line shell intended mostly for interactive use. A shell is a program used to execute other programs.
