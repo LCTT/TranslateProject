@@ -1,3 +1,5 @@
+FSSlc translating
+
 RHCSA Series: Automate RHEL 7 Installations Using ‘Kickstart’ – Part 12
 ================================================================================
 Linux servers are rarely standalone boxes. Whether it is in a datacenter or in a lab environment, chances are that you have had to install several machines that will interact one with another in some way. If you multiply the time that it takes to install Red Hat Enterprise Linux 7 manually on a single server by the number of boxes that you need to set up, this can lead to a rather lengthy effort that can be avoided through the use of an unattended installation tool known as kickstart.
