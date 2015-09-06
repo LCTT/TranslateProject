@@ -1,3 +1,4 @@
+translating by cvsher
 How To Set Up Your FTP Server In Linux
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/09/Setup-FTP-Server-in-Linux.jpg)
