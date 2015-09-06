@@ -1,12 +1,13 @@
-在Ubuntu 15.04中如何安装和使用Snort
+在 Ubuntu 15.04 中如何安装和使用 Snort
 ================================================================================
-对于IT安全而言入侵检测是一件非常重要的事。入侵检测系统用于检测网络中非法与恶意的请求。Snort是一款知名的开源入侵检测系统。Web界面（Snorby）可以用于更好地分析警告。Snort使用iptables/pf防火墙来作为入侵检测系统。本篇中，我们会安装并配置一个开源的IDS系统snort。
+
+对于网络安全而言入侵检测是一件非常重要的事。入侵检测系统（IDS）用于检测网络中非法与恶意的请求。Snort是一款知名的开源的入侵检测系统。其 Web界面（Snorby）可以用于更好地分析警告。Snort使用iptables/pf防火墙来作为入侵检测系统。本篇中，我们会安装并配置一个开源的入侵检测系统snort。
 
 ### Snort 安装 ###
 
 #### 要求 ####
 
-snort所使用的数据采集库（DAQ）用于抽象地调用采集库。这个在snort上就有。下载过程如下截图所示。
+snort所使用的数据采集库（DAQ）用于一个调用包捕获库的抽象层。这个在snort上就有。下载过程如下截图所示。
 
 ![downloading_daq](http://blog.linoxide.com/wp-content/uploads/2015/07/downloading_daq.png)
 
@@ -48,7 +49,7 @@ make和make install 命令的结果如下所示。
 
 ![snort_extraction](http://blog.linoxide.com/wp-content/uploads/2015/07/snort_extraction.png)
 
-创建安装目录并在脚本中设置prefix参数。同样也建议启用包性能监控（PPM）标志。
+创建安装目录并在脚本中设置prefix参数。同样也建议启用包性能监控（PPM）的sourcefire标志。
 
     #mkdir /usr/local/snort
 
@@ -56,7 +57,7 @@ make和make install 命令的结果如下所示。
 
 ![snort_installation](http://blog.linoxide.com/wp-content/uploads/2015/07/snort_installation.png)
 
-配置脚本由于缺少libpcre-dev、libdumbnet-dev 和zlib开发库而报错。
+配置脚本会由于缺少libpcre-dev、libdumbnet-dev 和zlib开发库而报错。
 
 配置脚本由于缺少libpcre库报错。
 
@@ -96,7 +97,7 @@ make和make install 命令的结果如下所示。
 
 ![make install snort](http://blog.linoxide.com/wp-content/uploads/2015/07/make-install-snort.png)
 
-最终snort在/usr/local/snort/bin中运行。现在它对eth0的所有流量都处在promisc模式（包转储模式）。
+最后，从/usr/local/snort/bin中运行snort。现在它对eth0的所有流量都处在promisc模式（包转储模式）。
 
 ![snort running](http://blog.linoxide.com/wp-content/uploads/2015/07/snort-running.png)
 
@@ -106,14 +107,17 @@ make和make install 命令的结果如下所示。
 
 #### Snort的规则和配置 ####
 
-从源码安装的snort需要规则和安装配置，因此我们会从/etc/snort下面复制规则和配置。我们已经创建了单独的bash脚本来用于规则和配置。它会设置下面这些snort设置。
+从源码安装的snort还需要设置规则和配置，因此我们需要复制规则和配置到/etc/snort下面。我们已经创建了单独的bash脚本来用于设置规则和配置。它会设置下面这些snort设置。
 
-- 在linux中创建snort用户用于snort IDS服务。
+- 在linux中创建用于snort IDS服务的snort用户。
 - 在/etc下面创建snort的配置文件和文件夹。
-- 权限设置并从etc中复制snortsnort源代码
+- 权限设置并从源代码的etc目录中复制数据。
 - 从snort文件中移除规则中的#(注释符号)。
 
-    #!/bin/bash##PATH of source code of snort
+-
+
+    #!/bin/bash#
+    # snort源代码的路径
     snort_src="/home/test/Downloads/snort-2.9.7.3"
     echo "adding group and user for snort..."
     groupadd snort &> /dev/null
@@ -141,15 +145,15 @@ make和make install 命令的结果如下所示。
     sed -i 's/include \$RULE\_PATH/#include \$RULE\_PATH/' /etc/snort/snort.conf
     echo "---DONE---"
 
-改变脚本中的snort源目录并运行。下面是成功的输出。
+改变脚本中的snort源目录路径并运行。下面是成功的输出。
 
 ![running script](http://blog.linoxide.com/wp-content/uploads/2015/08/running_script.png)
 
-上面的脚本从snort源中复制下面的文件/文件夹到/etc/snort配置文件中
+上面的脚本从snort源中复制下面的文件和文件夹到/etc/snort配置文件中
 
 ![files copied](http://blog.linoxide.com/wp-content/uploads/2015/08/created.png)
 
-、snort的配置非常复杂，然而为了IDS能正常工作需要进行下面必要的修改。
+snort的配置非常复杂，要让IDS能正常工作需要进行下面必要的修改。
 
     ipvar HOME_NET 192.168.1.0/24  # LAN side
 
@@ -173,7 +177,7 @@ make和make install 命令的结果如下所示。
 
 ![path rules](http://blog.linoxide.com/wp-content/uploads/2015/08/path-rules.png)
 
-下载[下载社区][1]规则并解压到/etc/snort/rules。启用snort.conf中的社区及紧急威胁规则。
+现在[下载社区规则][1]并解压到/etc/snort/rules。启用snort.conf中的社区及紧急威胁规则。
 
 ![wget_rules](http://blog.linoxide.com/wp-content/uploads/2015/08/wget_rules.png)
 
@@ -187,7 +191,7 @@ make和make install 命令的结果如下所示。
 
 ### 总结 ###
 
-本篇中，我们致力于开源IDPS系统snort在Ubuntu上的安装和配置。默认它用于监控时间，然而它可以被配置成用于网络保护的内联模式。snort规则可以在离线模式中可以使用pcap文件测试和分析
+本篇中，我们关注了开源IDPS系统snort在Ubuntu上的安装和配置。通常它用于监控事件，然而它可以被配置成用于网络保护的在线模式。snort规则可以在离线模式中可以使用pcap捕获文件进行测试和分析
 
 --------------------------------------------------------------------------------
 
@@ -195,7 +199,7 @@ via: http://linoxide.com/security/install-snort-usage-ubuntu-15-04/
 
 作者：[nido][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
