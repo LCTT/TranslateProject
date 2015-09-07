@@ -1,59 +1,56 @@
-translating by oska874
 
-FISH – A smart and user-friendly command line shell for Linux
+FISH - Linux 的一个智能、易用的SHELL
 ================================================================================
-The friendly interactive shell (FISH). fish is a user friendly command line shell intended mostly for interactive use. A shell is a program used to execute other programs.
 
-### FISH Features ###
+FISH：友好的交互式shell。 fish 是一个用户友好的命令行shell，主要是用来进行交互式使用。shell 就是一个用来执行其他程序的程序。
 
-#### Autosuggestions ####
+### FISH 特性 ###
 
-fish suggests commands as you type based on history and completions, just like a web browser. Watch out, Netscape Navigator 4.0!
+#### 自动建议 ####
 
-#### Glorious VGA Color ####
+fish 会根据你的历史输入和已经完成的命令来提供建议，方便输入，就像一个网络浏览器一样。注意了，就是Netscape Navigator 4.0!
 
-fish natively supports term256, the state of the art in terminal technology. You'll have an astonishing 256 colors available for use!
+#### 漂亮的VGA 色彩 ####
+fish 原生支持term256， 它就是一个终端技术的艺术国度。 你将可以拥有一个难以置信的、256 色的shell 来使用。
 
-#### Sane Scripting ####
+#### 理智的脚本 ####
 
-fish is fully scriptable, and its syntax is simple, clean, and consistent. You'll never write esac again.
+fish 是完全可以通过脚本控制的，而且它的语法又是那么的简单、干净，而且一致。你甚至不需要去重写。
 
-#### Web Based configuration ####
+#### 基于web 的配置 ####
 
-For those lucky few with a graphical computer, you can set your colors and view functions, variables, and history all from a web page.
+对于少数能使用图形计算机的幸运儿， 你们可以在网页上配置你们自己的色彩方案，以及查看函数、变量和历史记录。
 
-#### Man Page Completions ####
+#### 帮助手册补全 ####
 
-Other shells support programmable completions, but only fish generates them automatically by parsing your installed man pages.
+其它的shell 支持可配置的补全， 但是只有fish 可以通过自动转换你安装好的man 手册来实现补全功能。
 
-#### Works Out Of The Box ####
+#### 开箱即用 ####
 
-fish will delight you with features like tab completions and syntax highlighting that just work, with nothing new to learn or configure. 
+fish 将会通过tab 补全和语法高亮是你非常愉快的使用shell， 同时不需要太多的学习或者配置。
 
-### Install FISH On ubuntu 15.04 ###
+### 在ubuntu 15.04 上安装FISH
 
-Open the terminal and run the following commands
+打开终端，运行下列命令：
 
     sudo apt-add-repository ppa:fish-shell/release-2
     sudo apt-get update
     sudo apt-get install fish
 
-**Using FISH**
+**使用FISH**
 
-Open the terminal and run the following command to start FISH
-
+打开终端，运行下列命令来启动FISH：
     fish
 
-Welcome to fish, the friendly interactive shell Type help for instructions on how to use fish
+欢迎来到fish， 友好的交互式shell，输入指令help 来了解怎么使用fish。
 
-Check [FISH Documentation][1] How to use.
-
+阅读[FISH 文档][1] ，掌握使用方法。
 --------------------------------------------------------------------------------
 
 via: http://www.ubuntugeek.com/fish-a-smart-and-user-friendly-command-line-shell-for-linux.html
 
 作者：[ruchi][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/oska874)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
