@@ -1,3 +1,5 @@
+Translating----geekpi
+
 How to Install QGit Viewer in Ubuntu 14.04
 ================================================================================
 QGit is a free and Open Source GUI git viewer written on Qt and C++ by Marco Costalba. It is a better git viewer which provides us the ability to browse revisions history, view commits and patches applied to the files under a simple GUI environment. It utilizes git command line to process execute the commands and to display the output. It has some common features like to view revisions, diffs, files history, files annotation, archive tree. We can format and apply patch series with the selected commits, drag and drop commits between two instances and more with QGit Viewer. It allows us to create custom buttons with which we can add more buttons to execute a specific command when pressed using its builtin Action Builder.
