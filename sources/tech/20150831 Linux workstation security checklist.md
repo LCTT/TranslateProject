@@ -1,3 +1,4 @@
+wyangsun translating
 Linux workstation security checklist
 ================================================================================
 This is a set of recommendations used by the Linux Foundation for their systems
