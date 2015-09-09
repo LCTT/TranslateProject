@@ -1,3 +1,4 @@
+translating by tnuoccalanosrep
 List Of 10 Funny Linux Commands
 ================================================================================
 **Working from the Terminal is really fun. Today, we’ll list really funny Linux commands which will bring smile on your face.**
