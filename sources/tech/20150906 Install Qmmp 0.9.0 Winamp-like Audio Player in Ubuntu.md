@@ -1,3 +1,4 @@
+translation by strugglingyouth
 Install Qmmp 0.9.0 Winamp-like Audio Player in Ubuntu
 ================================================================================
 ![](http://ubuntuhandbook.org/wp-content/uploads/2015/01/qmmp-icon-simple.png)
