@@ -1,3 +1,4 @@
+translating wi-cuckoo
 How to Download, Install, and Configure Plank Dock in Ubuntu
 ================================================================================
 It’s a well-known fact that Linux is extremely customizable with users having a lot of options to choose from – be it the operating systems’ various distributions or desktop environments available for a single distro. Like users of any other OS, Linux users also have different tastes and preferences, especially when it comes to desktop.
