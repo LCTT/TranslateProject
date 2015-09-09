@@ -27,7 +27,7 @@ RHCSA: Yum包管理, 任务计划和系统监控 – 第十章
 
 有时，你想安装一个包，但不知道它的确切名称。搜索可以在当前启用的存储库中去搜索包名称或在它的描述中搜索，并分别进行。
 
-For example,
+比如,
 
     # yum search log
 
@@ -52,8 +52,7 @@ For example,
 上述命令将返回可以更新的所有安装包。在下图所示的例子中，只有rhel-7-server-rpms有可用更新：
 
 ![Check For Package Updates](http://www.tecmint.com/wp-content/uploads/2015/05/Check-For-Updates.png)
-
-Check For Package Updates
+检查包更新
 
 然后，您可以更新该包，
 
@@ -67,7 +66,7 @@ Check For Package Updates
 
 ![Find Package Belongs to Which Package](http://www.tecmint.com/wp-content/uploads/2015/05/Find-Package-Information.png)
 
-Find Package Belongs to Which Package
+查找文件属于哪个包
 
 现在，当删除包时，你可以使用 yum remove Package ，很简单吧？Yum 是一个完整的强大的包管理器。
 
@@ -75,7 +74,7 @@ Find Package Belongs to Which Package
 
 Read Also: [20 Yum Commands to Manage RHEL 7 Package Management][1]
 
-### Good Old Plain RPM ###
+### 文本式RPM工具  ###
 
 RPM（又名RPM包管理器，或原本RedHat软件包管理器）也可用于安装或更新软件包来当他们在独立`rpm`包装形式。
 
@@ -88,11 +87,11 @@ RPM（又名RPM包管理器，或原本RedHat软件包管理器）也可用于�
 
 ![Query All RPM Packages](http://www.tecmint.com/wp-content/uploads/2015/05/Query-All-RPM-Packages.png)
 
-Query All RPM Packages
+查询所有包
 
 Read Also: [20 RPM Commands to Install Packages in RHEL 7][2]
 
-### Scheduling Tasks using Cron ###
+### Cron任务计划 ###
 
 Linux和UNIX类操作系统包括其他的工具称为Cron允许你安排任务（即命令或shell脚本）运行在周期性的基础上。每分钟定时检查/var/spool/cron目录中有在/etc/passwd帐户文件中指定名称的文件。
 
@@ -102,7 +101,7 @@ crontab文件（这是通过键入crontab e和按Enter键创建）的格式如�
 
 ![Crontab Entries](http://www.tecmint.com/wp-content/uploads/2015/05/Crontab-Format.png)
 
-Crontab Entries
+crontab条目
 
 因此，如果我们想更新本地文件数据库（这是用于定位文件或图案）每个初二日上午2:15，我们需要添加以下crontab条目：
 
@@ -116,7 +115,7 @@ Crontab Entries
 
 ![Check All Cron Jobs](http://www.tecmint.com/wp-content/uploads/2015/05/Check-All-Cron-Jobs.png)
 
-Check All Cron Jobs
+检查所有cron工作
 
 在上图中，显示当前用户的crontab可以使用 cat /var/spool/cron 或
 
