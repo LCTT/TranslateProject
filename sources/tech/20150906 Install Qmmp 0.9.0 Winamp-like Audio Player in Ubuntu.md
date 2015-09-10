@@ -1,70 +1,69 @@
-translation by strugglingyouth
-Install Qmmp 0.9.0 Winamp-like Audio Player in Ubuntu
+在 Ubuntu 上安装 Qmmp 0.9.0 类似 Winamp 的音频播放器
 ================================================================================
 ![](http://ubuntuhandbook.org/wp-content/uploads/2015/01/qmmp-icon-simple.png)
 
-Qmmp, Qt-based audio player with winamp or xmms like user interface, now is at 0.9.0 release. PPA updated for Ubuntu 15.10, Ubuntu 15.04, Ubuntu 14.04, Ubuntu 12.04 and derivatives.
+Qmmp，基于 Qt 的音频播放器，与 Winamp 或 xmms 的用户界面类似，现在最新版本是0.9.0。PPA 已经在 Ubuntu 15.10，Ubuntu 15.04，Ubuntu 14.04，Ubuntu 12.04 和其衍生物中已经更新了。
 
-Qmmp 0.9.0 is a big release with many new features, improvements and some translation updates. It added:
+Qmmp 0.9.0 是一个较大的版本，有许多新的功能，有许多改进和新的转变。它添加了如下功能：
 
-- audio-channel sequence converter;
-- 9 channels support to equalizer;
-- album artist tag support;
-- asynchronous sorting;
-- sorting by file modification date;
-- sorting by album artist;
-- multiple column support;
-- feature to hide track length;
-- feature to disable plugins without qmmp.pri modification (qmake only)
-- feature to remember playlist scroll position;
-- feature to exclude cue data files;
-- feature to change user agent;
-- feature to change window title;
-- feature to reset fonts;
-- feature to restore default shortcuts;
-- default hotkey for the “Rename List” action;
-- feature to disable fadeout in the gme plugin;
-- Simple User Interface (QSUI) with the following changes:
-	- added multiple column support;
-	- added sorting by album artist;
-	- added sorting by file modification date;
-	- added feature to hide song length;
-	- added default hotkey for the “Rename List” action;
-	- added “Save List” action to the tab menu;
-	- added feature to reset fonts;
-	- added feature to reset shortcuts;
-	- improved status bar;
+- 音频-信道序列转换器;
+- 9通道支持均衡器;
+- 艺术家专辑标签支持;
+- 异步排序;
+- 通过文件的修改日期排​​序;
+- 按艺术家专辑排序;
+- 支持多专栏;
+- 有隐藏踪迹长度功能;
+- 不用修改 qmmp.pri 来禁用插件（仅在 qmake 中）功能
+- 记住播放列表滚动位置功能;
+- 排除提示数据文件功能;
+- 更改用户代理功能;
+- 改变窗口标题功能;
+- 复位字体功能;
+- 恢复默认快捷键功能;
+- 默认热键为“Rename List”功能;
+- 功能禁用弹出的 GME 插件;
+- 简单的用户界面（QSUI）有以下变化：
+	- 增加了多列表的支持;
+	- 增加了按艺术家专辑排序;
+	- 增加了按文件的修改日期进行排序;
+	- 增加了隐藏歌曲长度功能;
+	- 增加了默认热键为“Rename List”;
+	- 增加了“Save List”功能到标签菜单;
+	- 增加了复位字体功能;
+	- 增加了复位快捷键功能;
+	- 改进了状态栏;
 
-It also improved playlist changes notification, playlist container, sample rate converter, cmake build scripts, title formatter, ape tags support in the mpeg plugin, fileops plugin, reduced cpu usage, changed default skin (to Glare) and playlist separator.
+它还改进了播放列表的通知，播放列表容器，采样率转换器，cmake 构建脚本，标题格式，在 mpeg 插件中支持 ape 标签，fileops 插件，降低了 cpu 占用率，改变默认的皮肤（炫光）和分离播放列表。
 
 ![qmmp-090](http://ubuntuhandbook.org/wp-content/uploads/2015/09/qmmp-090.jpg)
 
-### Install Qmmp 0.9.0 in Ubuntu: ###
+### 在 Ubuntu 中安装 Qmmp 0.9.0 : ###
 
-New release has been made into PPA, available for all current Ubuntu releases and derivatives.
+新版本已经制做了 PPA，适用于目前所有 Ubuntu 发行版和衍生版。
 
-1. To add the [Qmmp PPA][1].
+1. 添加 [Qmmp PPA][1].
 
-Open terminal from the Dash, App Launcher, or via Ctrl+Alt+T shortcut keys. When it opens, run command:
+从 Dash 中打开终端并启动应用，通过按 Ctrl+Alt+T 快捷键。当它打开时，运行命令：
 
     sudo add-apt-repository ppa:forkotov02/ppa
 
 ![qmmp-ppa](http://ubuntuhandbook.org/wp-content/uploads/2015/09/qmmp-ppa.jpg)
 
-2. After adding the PPA, upgrade Qmmp player through Software Updater. Or refresh system cache and install the software via below commands:
+2. 在添加 PPA 后，通过更新软件来升级 Qmmp 播放器。刷新系统缓存，并通过以下命令安装软件：
 
     sudo apt-get update
     
     sudo apt-get install qmmp qmmp-plugin-pack
 
-That’s it. Enjoy!
+就是这样。尽情享受吧！
 
 --------------------------------------------------------------------------------
 
 via: http://ubuntuhandbook.org/index.php/2015/09/qmmp-0-9-0-in-ubuntu/
 
 作者：[Ji m][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[strugglingyouth](https://github.com/strugglingyouth)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
