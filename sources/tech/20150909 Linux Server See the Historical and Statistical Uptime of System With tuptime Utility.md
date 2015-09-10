@@ -1,3 +1,4 @@
+Translating by GOLinux!
 Linux Server See the Historical and Statistical Uptime of System With tuptime Utility
 ================================================================================
 You can use the following tools to see how long system has been running on a Linux or Unix-like system:
