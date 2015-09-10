@@ -2,9 +2,9 @@ translating by tnuoccalanosrep
 List Of 10 Funny Linux Commands
 ================================================================================
 **Working from the Terminal is really fun. Today, we’ll list really funny Linux commands which will bring smile on your face.**
-
+**在终端工作是一件很有趣的事情。今天，我们将会列举一些有趣得让你笑出来的Linux命令。
 ### 1. rev ###
-
+创建一个文件，在文件里面输入几个单词，rev命令会将你写的东西反转输出到控制台。
 Create a file, type some words in this file, rev command will dump all words written by you in reverse.
 
     # rev  <file name>
@@ -14,7 +14,7 @@ Create a file, type some words in this file, rev command will dump all words wri
 ![Selection_001](http://www.unixmen.com/wp-content/uploads/2015/09/Selection_0011.png)
 
 ### 2. fortune ###
-
+这个命令没有被默认安装，用apt-get命令安装它，fortune命令会随机显示一些句子
 This command is not install by default, install with apt-get and fortune will display some random sentence.
 
     crank@crank-System:~$ sudo apt-get install fortune
@@ -22,7 +22,7 @@ This command is not install by default, install with apt-get and fortune will di
 ![Selection_003](http://www.unixmen.com/wp-content/uploads/2015/09/Selection_0031.png)
 
 Use **-s** option with fortune, it will limit the out to one sentence.
-
+利用fortune命令的**_s** 选项，他会限制一个句子的输出长度。
     # fortune -s
 
 ![Selection_004](http://www.unixmen.com/wp-content/uploads/2015/09/Selection_0042.png)
