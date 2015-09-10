@@ -1,3 +1,5 @@
+FSSlc translating
+
 RHCSA Series: Mandatory Access Control Essentials with SELinux in RHEL 7 – Part 13
 ================================================================================
 During this series we have explored in detail at least two access control methods: standard ugo/rwx permissions ([Manage Users and Groups – Part 3][1]) and access control lists ([Configure ACL’s on File Systems – Part 7][2]).
