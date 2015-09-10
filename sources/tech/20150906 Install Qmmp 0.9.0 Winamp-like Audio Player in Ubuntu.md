@@ -63,7 +63,7 @@ Qmmp 0.9.0 是一个较大的版本，有许多新的功能，有许多改进和
 via: http://ubuntuhandbook.org/index.php/2015/09/qmmp-0-9-0-in-ubuntu/
 
 作者：[Ji m][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[strugglingyouth](https://github.com/strugglingyouth)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
