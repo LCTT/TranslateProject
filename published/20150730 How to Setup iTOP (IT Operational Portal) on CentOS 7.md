@@ -1,16 +1,17 @@
-如何在CentOS上安装iTOP(IT操作门户)
+如何在 CentOS 7 上安装开源 ITIL 门户 iTOP
 ================================================================================
-iTOP简单来说是一个简单的基于网络的开源IT服务管理工具。它有所有的ITIL功能包括服务台、配置管理、事件管理、问题管理、更改管理和服务管理。iTOP依赖于Apache/IIS、MySQL和PHP，因此它可以运行在任何支持这些软件的操作系统中。因为iTOP是一个网络程序，因此你不必在用户的PC端任何客户端程序。一个简单的浏览器就足够每天的IT环境操作了。
+
+iTOP是一个简单的基于Web的开源IT服务管理工具。它有所有的ITIL功能，包括服务台、配置管理、事件管理、问题管理、变更管理和服务管理。iTOP依赖于Apache/IIS、MySQL和PHP，因此它可以运行在任何支持这些软件的操作系统中。因为iTOP是一个Web程序，因此你不必在用户的PC端任何客户端程序。一个简单的浏览器就足够每天的IT环境操作了。
 
 我们要在一台有满足基本需求的LAMP环境的CentOS 7上安装和配置iTOP。
 
 ### 下载 iTOP ###
 
-iTOP的下载包现在在SOurceForge上，我们可以从这获取它的官方[链接][1]。
+iTOP的下载包现在在SourceForge上，我们可以从这获取它的官方[链接][1]。
 
 ![itop download](http://blog.linoxide.com/wp-content/uploads/2015/07/1-itop-download.png)
 
-我们从这里的连接用wget命令获取压缩文件
+我们从这里的连接用wget命令获取压缩文件。
 
     [root@centos-007 ~]# wget http://downloads.sourceforge.net/project/itop/itop/2.1.0/iTop-2.1.0-2127.zip
 
@@ -40,7 +41,7 @@ iTOP的下载包现在在SOurceForge上，我们可以从这获取它的官方[�
     installation.xml itop-change-mgmt-itil itop-incident-mgmt-itil itop-request-mgmt-itil itop-tickets
     itop-attachments itop-config itop-knownerror-mgmt itop-service-mgmt itop-virtualization-mgmt
 
-在解压的目录下，通过不同的数据模型用复制命令迁移需要的扩展从datamodels复制到web扩展目录下。
+在解压的目录下，使用如下的 cp 命令将不同的数据模型从web 下的 datamodels 目录下复制到 extensions 目录，来迁移需要的扩展。
 
     [root@centos-7 2.x]# pwd
     /var/www/html/itop/web/datamodels/2.x
@@ -50,19 +51,19 @@ iTOP的下载包现在在SOurceForge上，我们可以从这获取它的官方[�
 
 大多数服务端设置和配置已经完成了。最后我们安装web界面来完成安装。
 
-打开浏览器使用ip地址或者FQDN来访问WordPress web目录。
+打开浏览器使用ip地址或者完整域名来访问iTop 的 web目录。
 
     http://servers_ip_address/itop/web/
 
 你会被重定向到iTOP的web安装页面。让我们按照要求配置，就像在这篇教程中做的那样。
 
-#### 先决要求验证 ####
+#### 验证先决要求 ####
 
 这一步你就会看到验证完成的欢迎界面。如果你看到了一些警告信息，你需要先安装这些软件来解决这些问题。
 
 ![mcrypt missing](http://blog.linoxide.com/wp-content/uploads/2015/07/2-itop-web-install.png)
 
-这一步一个叫php mcrypt的可选包丢失了。下载下面的rpm包接着尝试安装php mcrypt包。
+这一步有一个叫php mcrypt的可选包丢失了。下载下面的rpm包接着尝试安装php mcrypt包。
 
     [root@centos-7 ~]#yum localinstall php-mcrypt-5.3.3-1.el6.x86_64.rpm libmcrypt-2.5.8-9.el6.x86_64.rpm.
 
@@ -76,7 +77,7 @@ iTOP的下载包现在在SOurceForge上，我们可以从这获取它的官方[�
 
 #### iTop 许可协议 ####
 
-勾选同意iTOP所有组件的许可协议并点击“NEXT”。
+勾选接受 iTOP所有组件的许可协议，并点击“NEXT”。
 
 ![License Agreement](http://blog.linoxide.com/wp-content/uploads/2015/07/4.png)
 
@@ -94,7 +95,7 @@ iTOP的下载包现在在SOurceForge上，我们可以从这获取它的官方[�
 
 #### 杂项参数 ####
 
-让我们选择额外的参数来选择你是否需要安装一个演示内容或者使用全新的数据库，接着下一步。
+让我们选择额外的参数来选择你是否需要安装一个带有演示内容的数据库或者使用全新的数据库，接着下一步。
 
 ![Misc Parameters](http://blog.linoxide.com/wp-content/uploads/2015/07/7.png)
 
@@ -118,7 +119,7 @@ iTOP的下载包现在在SOurceForge上，我们可以从这获取它的官方[�
 
 #### 改变管理选项 ####
 
-选择不同的ticket类型以便管理可用选项中的IT设备更改。我们选择ITTL更改管理选项。
+选择不同的ticket类型以便管理可用选项中的IT设备变更。我们选择ITTL变更管理选项。
 
 ![ITIL Change](http://blog.linoxide.com/wp-content/uploads/2015/07/11.png)
 
@@ -166,7 +167,7 @@ via: http://linoxide.com/tools/setup-itop-centos-7/
 
 作者：[Kashif Siddique][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
