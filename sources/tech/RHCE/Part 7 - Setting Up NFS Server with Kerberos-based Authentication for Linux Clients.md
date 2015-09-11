@@ -1,3 +1,4 @@
+ictlyh Translating
 Setting Up NFS Server with Kerberos-based Authentication for Linux Clients – Part 7
 ================================================================================
 In the last article of this series, we reviewed [how to set up a Samba share over a network][1] that may consist of multiple types of operating systems. Now, if you need to set up file sharing for a group of Unix-like clients you will automatically think of the Network File System, or NFS for short.
