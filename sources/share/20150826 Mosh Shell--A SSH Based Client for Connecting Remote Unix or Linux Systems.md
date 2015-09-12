@@ -1,3 +1,5 @@
+translating---geekpi
+
 Mosh Shell – A SSH Based Client for Connecting Remote Unix/Linux Systems
 ================================================================================
 Mosh, which stands for Mobile Shell is a command-line application which is used for connecting to the server from a client computer, over the Internet. It can be used as SSH and contains more feature than Secure Shell. It is an application similar to SSH, but with additional features. The application is written originally by Keith Winstein for Unix like operating system and released under GNU GPL v3.
