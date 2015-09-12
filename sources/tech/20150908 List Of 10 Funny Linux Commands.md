@@ -113,7 +113,7 @@ e.g.
 
 ### 8. cowsay ###
 
-一个很普遍的命令，它会用ascii显示你想说的话。
+一个很常见的命令，它会用ascii显示你想说的话。
 
     apt-get install cowsay
 
@@ -133,7 +133,6 @@ e.g.
 
 ![Selection_014](http://www.unixmen.com/wp-content/uploads/2015/09/Selection_0141.png)
 
-or
 或者
 
     # cowsay -f bud-frogs.cow Rajneesh
@@ -173,12 +172,13 @@ aafire能让你的终端燃起来。
 ![Selection_019](http://www.unixmen.com/wp-content/uploads/2015/09/Selection_0191.png)
 
 就这么多，祝你们在Linux终端玩得开心哈！！！
+
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/list-10-funny-linux-commands/
 
 作者：[Rajneesh Upadhyay][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[tnuoccalanosrep](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
