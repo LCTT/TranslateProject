@@ -1,6 +1,6 @@
 LinuxCon: 服务器操作系统的转型
 ================================================================================
-来自西雅图。容器迟早要改变世界，以及改变操作系统的角色。这是 Wim Coekaerts 带来的 LinuxCon 演讲主题，Coekaerts 是 Oracle 公司 Linux 与虚拟化工程的高级副总裁。
+西雅图报道。容器迟早要改变世界，以及改变操作系统的角色。这是 Wim Coekaerts 带来的 LinuxCon 演讲主题，Coekaerts 是 Oracle 公司 Linux 与虚拟化工程的高级副总裁。
 
 ![](http://www.serverwatch.com/imagesvr_ce/6421/wim-200x150.jpg)
 
@@ -8,7 +8,7 @@ Coekaerts 在开始演讲的时候拿出一张关于“桌面之年”的幻灯�
 
 “你需要操作系统做什么事情？”，Coekaerts 回答现场观众：“只需一件事：运行一个应用。操作系统负责管理硬件和资源，来让你的应用运行起来。”
 
-Coakaerts 说在 Docker 容器的帮助下，我们的注意力再次集中在应用上，而在 Oracle，我们将注意力放在如何让应用更好地运行在操作系统上。
+Coakaerts 补充说，在 Docker 容器的帮助下，我们的注意力再次集中在应用上，而在 Oracle，我们将注意力放在如何让应用更好地运行在操作系统上。
 
 “许多人过去常常需要繁琐地安装应用，而现在的年轻人只需要按一个按钮就能让应用在他们的移动设备上运行起来”。
 
@@ -20,7 +20,6 @@ Docker 的出现不代表虚拟机的淘汰，容器化过程需要经过很长�
 
 在这段时间内，容器会与虚拟机共存，并且我们需要一些工具，将应用在容器和虚拟机之间进行转换迁移。Coekaerts 举例说 Oracle 的 VirtualBox 就可以用来帮助用户运行 Docker，而它原来是被广泛用在桌面系统上的一项开源技术。现在 Docker 的 Kitematic 项目将在 Mac 上使用 VirtualBox 运行 Docker。
 
-### The Open Compute Initiative and Write Once, Deploy Anywhere for Containers ###
 ### 容器的开放计算计划和一次写随处部署 ###
 
 一个能让容器成功的关键是“一次写，随处部署”的概念。而在容器之间的互操作领域，Linux 基金会的开放计算计划（OCI）扮演一个非常关键的角色。
@@ -43,7 +42,7 @@ via: http://www.serverwatch.com/server-news/linuxcon-the-changing-role-of-the-se
 
 作者：[Sean Michael Kerner][a]
 译者：[bazz2](https://github.com/bazz2)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 

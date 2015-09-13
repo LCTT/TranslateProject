@@ -1,11 +1,11 @@
-translating by tnuoccalanosrep
-List Of 10 Funny Linux Commands
+10条真心有趣的Linux命令
 ================================================================================
-**Working from the Terminal is really fun. Today, we’ll list really funny Linux commands which will bring smile on your face.**
+
+**在终端工作是一件很有趣的事情。今天，我们将会列举一些有趣得为你带来欢笑的Linux命令。**
 
 ### 1. rev ###
 
-Create a file, type some words in this file, rev command will dump all words written by you in reverse.
+创建一个文件，在文件里面输入几个单词，rev命令会将你写的东西反转输出到控制台。
 
     # rev  <file name>
 
@@ -15,13 +15,13 @@ Create a file, type some words in this file, rev command will dump all words wri
 
 ### 2. fortune ###
 
-This command is not install by default, install with apt-get and fortune will display some random sentence.
+这个命令没有被默认安装，用apt-get命令安装它，fortune命令会随机显示一些句子
 
     crank@crank-System:~$ sudo apt-get install fortune
 
 ![Selection_003](http://www.unixmen.com/wp-content/uploads/2015/09/Selection_0031.png)
 
-Use **-s** option with fortune, it will limit the out to one sentence.
+利用fortune命令的**_s** 选项，他会限制一个句子的输出长度。
 
     # fortune -s
 
@@ -31,15 +31,14 @@ Use **-s** option with fortune, it will limit the out to one sentence.
 
     #yes <string>
 
-This command will keep displaying the string for infinite time until the process is killed by the user.
+这个命令会不停打印字符串，直到用户把这进程给结束掉。
 
     # yes unixmen
 
 ![Selection_005](http://www.unixmen.com/wp-content/uploads/2015/09/Selection_0054.png)
 
 ### 4. figlet ###
-
-This command can be installed with apt-get, comes with some ascii fonts which are located in **/usr/share/figlet**.
+这个命令可以用apt-get安装，安装之后，在**/usr/share/figlet**可以看到一些ascii字体文件。
 
     cd /usr/share/figlet
 
@@ -57,34 +56,33 @@ e.g.
 
 ![Selection_007](http://www.unixmen.com/wp-content/uploads/2015/09/Selection_0072.png)
 
-You can try another options also.
+当然，你也可以尝试使用其他的选项。
 
 ### 5. asciiquarium ###
-
-This command will transform your terminal in to a Sea Aquarium.
-Download term animator
+这个命令会将你的终端变成一个海洋馆。
+下载term animator
 
     # wget http://search.cpan.org/CPAN/authors/id/K/KB/KBAUCOM/Term-Animation-2.4.tar.gz
 
-Install and Configure above package.
+安装并且配置这个包
 
     # tar -zxvf Term-Animation-2.4.tar.gz
     # cd Term-Animation-2.4/
     # perl Makefile.PL && make && make test
     # sudo make install
 
-Install following package:
+接着安装下面这个包:
 
     # apt-get install libcurses-perl
 
-Download and install asciiquarium
+下载并且安装asciiquarium
 
     # wget http://www.robobunny.com/projects/asciiquarium/asciiquarium.tar.gz
     # tar -zxvf asciiquarium.tar.gz 
     # cd asciiquarium_1.0/
     # cp asciiquarium /usr/local/bin/
 
-Run,
+执行如下命令
 
     # /usr/local/bin/asciiquarium
 
@@ -95,13 +93,13 @@ Run,
     # apt-get install bb
     # bb
 
-See what comes out:
+看看会输出什么？
 
 ![Selection_009](http://www.unixmen.com/wp-content/uploads/2015/09/Selection_0092.png)
 
 ### 7. sl ###
 
-Sometimes you type **sl** instead of **ls** by mistake,actually  **sl** is a command and a locomotive engine will start moving if you type sl.
+有的时候你可能把 **ls** 误打成了 **sl**，其实 **sl** 也是一个命令，如果你打 sl的话，你会看到一个移动的火车头
 
     # apt-get install sl
 
@@ -113,7 +111,7 @@ Sometimes you type **sl** instead of **ls** by mistake,actually  **sl** is a com
 
 ### 8. cowsay ###
 
-Very common command, is will display in ascii form whatever you wants to say.
+一个很常见的命令，它会用ascii显示你想说的话。
 
     apt-get install cowsay
 
@@ -123,7 +121,7 @@ Very common command, is will display in ascii form whatever you wants to say.
 
 ![Selection_013](http://www.unixmen.com/wp-content/uploads/2015/09/Selection_0132.png)
 
-Or, you can use another character instead of com, such characters are stored in **/usr/share/cowsay/cows**
+或者，你可以用其他的角色来取代默认角色来说这句话，这些角色都存储在**/usr/share/cowsay/cows**目录下
 
     # cd /usr/share/cowsay/cows
 
@@ -133,7 +131,7 @@ Or, you can use another character instead of com, such characters are stored in 
 
 ![Selection_014](http://www.unixmen.com/wp-content/uploads/2015/09/Selection_0141.png)
 
-or
+或者
 
     # cowsay -f bud-frogs.cow Rajneesh
 
@@ -141,7 +139,7 @@ or
 
 ### 9. toilet ###
 
-Yes, this is a command, it dumps ascii strings in colored form to the terminal.
+你没看错，这是个命令来的，他会将字符串以彩色的ascii字符串形式输出到终端
 
     # apt-get install toilet
 
@@ -161,7 +159,7 @@ Yes, this is a command, it dumps ascii strings in colored form to the terminal.
 
 ### 10. aafire ###
 
-Put you terminal on fire with aafire.
+aafire能让你的终端燃起来。
 
     # apt-get install libaa-bin
 
@@ -171,14 +169,14 @@ Put you terminal on fire with aafire.
 
 ![Selection_019](http://www.unixmen.com/wp-content/uploads/2015/09/Selection_0191.png)
 
-That it, Have fun with Linux Terminal!!
+就这么多，祝你们在Linux终端玩得开心哈！！！
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/list-10-funny-linux-commands/
 
 作者：[Rajneesh Upadhyay][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[tnuoccalanosrep](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
