@@ -1,3 +1,5 @@
+translating----geekpi
+
 Linux FAQs with Answers--How to remove unused old kernel images on Ubuntu
 ================================================================================
 > **Question**: I have upgraded the kernel on my Ubuntu many times in the past. Now I would like to uninstall unused old kernel images to save some disk space. What is the easiest way to uninstall earlier versions of the Linux kernel on Ubuntu?
