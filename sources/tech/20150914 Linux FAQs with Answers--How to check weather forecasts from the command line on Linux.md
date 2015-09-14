@@ -1,3 +1,5 @@
+translating by ezio
+
 Linux FAQs with Answers--How to check weather forecasts from the command line on Linux
 ================================================================================
 > **Question**: I often check local weather forecasts on the Linux desktop. However, is there an easy way to access weather forecast information in the terminal environment, where I don't have access to desktop widgets or web browser?
