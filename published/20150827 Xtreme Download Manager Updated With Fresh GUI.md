@@ -1,4 +1,4 @@
-Xtreme下载管理器升级全新用户界面
+Xtreme 下载管理器升级带来全新用户界面
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/08/Xtreme-Download-Manager-Linux.jpg)
 
@@ -6,11 +6,11 @@ Xtreme下载管理器升级全新用户界面
 
 Xtreme 下载管理器，也被称作 XDM 或 XDMAN，它是一个跨平台的下载管理器，可以用于 Linux、Windows 和 Mac OS X  系统之上。同时它兼容于主流的浏览器，如 Chrome, Firefox, Safari 等，因此当你从浏览器下载东西的时候可以直接使用 XDM 下载。
 
-当你的网络连接超慢并且需要管理下载文件的时候，像 XDM 这种软件可以帮到你大忙。例如说你在一个慢的要死的网络速度下下载一个超大文件， XDM 可以帮助你暂停并且继续下载。
+当你的网络连接超慢并且需要管理下载文件的时候，像 XDM 这种软件可以帮到你大忙。例如说你在一个慢的要死的网络速度下下载一个超大文件，或者你想要暂停和恢复下载的话， XDM 可以帮助你。
 
 XDM 的主要功能：
 
-- 暂停和继续下载
+- 暂停和恢复下载
 - [从 YouTube 下载视频][3]，其他视频网站同样适用
 - 强制聚合
 - 下载加速
@@ -23,11 +23,11 @@ XDM 的主要功能：
 
 ![Old XDM](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/08/Xtreme-Download-Manager-700x400_c.jpg)
 
-老版本XDM
+*老版本XDM*
 
 ![New XDM](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/08/Xtreme_Download_Manager.png)
 
-新版本XDM
+*新版本XDM*
 
 ### 在基于 Ubuntu 的 Linux 发行版上安装 Xtreme下载管理器 ###
 
@@ -48,15 +48,15 @@ XDM 的主要功能：
 
 对于其他Linux发行版，可以通过以下连接下载：
 
-- [Download Xtreme Download Manager][4]
+- [下载 Xtreme 下载管理器][4]
 
 --------------------------------------------------------------------------------
 
 via: http://itsfoss.com/xtreme-download-manager-install/
 
 作者：[Abhishek][a]
-译者：[译者ID](https://github.com/mr-ping)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[mr-ping](https://github.com/mr-ping)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 

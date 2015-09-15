@@ -1,10 +1,9 @@
-
 在 Linux 中怎样将 MySQL 迁移到 MariaDB 上 
 ================================================================================
 
-自从甲骨文收购 MySQL 后，很多 MySQL 的开发者和用户放弃了 MySQL 由于甲骨文对 MySQL 的开发和维护更多倾向于闭门的立场。在社区驱动下，促使更多人移到 MySQL 的另一个分支中，叫 MariaDB。在原有 MySQL 开发人员的带领下，MariaDB 的开发遵循开源的理念，并确保 [它的二进制格式与 MySQL 兼容][1]。Linux 发行版如 Red Hat 家族（Fedora，CentOS，RHEL），Ubuntu 和Mint，openSUSE 和 Debian 已经开始使用，并支持 MariaDB 作为 MySQL 的简易替换品。
+自从甲骨文收购 MySQL 后，由于甲骨文对 MySQL 的开发和维护更多倾向于闭门的立场，很多 MySQL 的开发者和用户放弃了 MySQL。在社区驱动下，促使更多人移到 MySQL 的另一个叫 MariaDB 的分支。在原有 MySQL 开发人员的带领下，MariaDB 的开发遵循开源的理念，并确保[它的二进制格式与 MySQL 兼容][1]。Linux 发行版如 Red Hat 家族（Fedora，CentOS，RHEL），Ubuntu 和 Mint，openSUSE 和 Debian 已经开始使用，并支持 MariaDB 作为 MySQL 的直接替换品。
 
-如果想要将 MySQL 中的数据库迁移到 MariaDB 中，这篇文章就是你所期待的。幸运的是，由于他们的二进制兼容性，MySQL-to-MariaDB 迁移过程是非常简单的。如果你按照下面的步骤，将 MySQL 迁移到 MariaDB 会是无痛的。
+如果你想要将 MySQL 中的数据库迁移到 MariaDB 中，这篇文章就是你所期待的。幸运的是，由于他们的二进制兼容性，MySQL-to-MariaDB 迁移过程是非常简单的。如果你按照下面的步骤，将 MySQL 迁移到 MariaDB 会是无痛的。
 
 ### 准备 MySQL 数据库和表 ###
 
@@ -69,7 +68,7 @@
 
 ### 安装 MariaDB ###
 
-在 CentOS/RHEL 7和Ubuntu（14.04或更高版本）上，最新的 MariaDB 包含在其官方源。在 Fedora 上，自19版本后 MariaDB 已经替代了 MySQL。如果你使用的是旧版本或 LTS 类型如 Ubuntu 13.10 或更早的，你仍然可以通过添加其官方仓库来安装 MariaDB。
+在 CentOS/RHEL 7和Ubuntu（14.04或更高版本）上，最新的 MariaDB 已经包含在其官方源。在 Fedora 上，自19 版本后 MariaDB 已经替代了 MySQL。如果你使用的是旧版本或 LTS 类型如 Ubuntu 13.10 或更早的，你仍然可以通过添加其官方仓库来安装 MariaDB。
 
 [MariaDB 网站][2] 提供了一个在线工具帮助你依据你的 Linux 发行版中来添加 MariaDB 的官方仓库。此工具为 openSUSE, Arch Linux, Mageia, Fedora, CentOS, RedHat, Mint, Ubuntu, 和 Debian 提供了 MariaDB 的官方仓库.
 
@@ -103,7 +102,7 @@
 
     $ sudo yum install MariaDB-server MariaDB-client 
 
-安装了所有必要的软件包后，你可能会被要求为 root 用户创建一个新密码。设置 root 的密码后，别忘了恢复备份的 my.cnf 文件。
+安装了所有必要的软件包后，你可能会被要求为 MariaDB  的 root 用户创建一个新密码。设置 root 的密码后，别忘了恢复备份的 my.cnf 文件。
 
     $ sudo cp /opt/my.cnf /etc/mysql/
 
@@ -111,7 +110,7 @@
 
     $ sudo service mariadb start
 
-或者:
+或:
 
     $ sudo systemctl start mariadb
 
@@ -141,13 +140,13 @@
 
 ### 结论 ###
 
-如你在本教程中看到的，MySQL-to-MariaDB 的迁移并不难。MariaDB 相比 MySQL 有很多新的功能，你应该知道的。至于配置方面，在我的测试情况下，我只是将我旧的 MySQL 配置文件（my.cnf）作为 MariaDB 的配置文件，导入过程完全没有出现任何问题。对于配置文件，我建议你在迁移之前请仔细阅读MariaDB 配置选项的文件，特别是如果你正在使用 MySQL 的特殊配置。
+如你在本教程中看到的，MySQL-to-MariaDB 的迁移并不难。你应该知道，MariaDB 相比 MySQL 有很多新的功能。至于配置方面，在我的测试情况下，我只是将我旧的 MySQL 配置文件（my.cnf）作为 MariaDB 的配置文件，导入过程完全没有出现任何问题。对于配置文件，我建议你在迁移之前请仔细阅读 MariaDB 配置选项的文件，特别是如果你正在使用 MySQL 的特定配置。
 
-如果你正在运行更复杂的配置有海量的数据库和表，包括群集或主从复制，看一看 Mozilla IT 和 Operations 团队的 [更详细的指南][3] ，或者 [官方的 MariaDB 文档][4]。
+如果你正在运行有海量的表、包括群集或主从复制的数据库的复杂配置，看一看 Mozilla IT 和 Operations 团队的 [更详细的指南][3] ，或者 [官方的 MariaDB 文档][4]。
 
 ### 故障排除 ###
 
-1.在运行 mysqldump 命令备份数据库时出现以下错误。 
+1、 在运行 mysqldump 命令备份数据库时出现以下错误。 
 
     $ mysqldump --all-databases --user=root --password --master-data > backupdb.sql 
 
@@ -155,7 +154,7 @@
 
     mysqldump: Error: Binlogging on server not active
 
-通过使用 "--master-data"，你要在导出的输出中包含二进制日志信息，这对于数据库的复制和恢复是有用的。但是，二进制日志未在 MySQL 服务器启用。要解决这个错误，修改 my.cnf 文件，并在 [mysqld] 部分添加下面的选项。
+通过使用 "--master-data"，你可以在导出的输出中包含二进制日志信息，这对于数据库的复制和恢复是有用的。但是，二进制日志未在 MySQL 服务器启用。要解决这个错误，修改 my.cnf 文件，并在 [mysqld] 部分添加下面的选项。
 
     log-bin=mysql-bin
 
@@ -176,8 +175,8 @@
 via: http://xmodulo.com/migrate-mysql-to-mariadb-linux.html
 
 作者：[Kristophorus Hadiono][a]
-译者：[strugglingyouth](https://github.com/译者ID)
-校对：[strugglingyouth](https://github.com/校对者ID)
+译者：[strugglingyouth](https://github.com/strugglingyouth)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
