@@ -1,64 +1,56 @@
-translating by ezio
-
-Linux FAQs with Answers--How to check weather forecasts from the command line on Linux
+Linux 问与答：如何在Linux 命令行下浏览天气预报
 ================================================================================
-> **Question**: I often check local weather forecasts on the Linux desktop. However, is there an easy way to access weather forecast information in the terminal environment, where I don't have access to desktop widgets or web browser?
+> **Q**: 我经常在Linux 桌面查看天气预报。然而，是否有一种在终端环境下，不通过桌面小插件或者网络查询天气预报的方法？
 
-For Linux desktop users, there are many ways to access weather forecasts, e.g., using standalone weather apps, desktop widgets, or panel applets. If your work environment is terminal-based, there are also several ways to access weather forecasts from the command line.
+对于Linux 桌面用户来说，有很多办法获取天气预报，比如使用专门的天气应用，桌面小插件，或者面板小程序。但是如果你的工作环境实际与终端的，这里也有一些在命令行下获取天气的手段。
 
-Among them is [wego][1], **a cute little weather app for the terminal**. Using an ncurses-based fancy interface, this command-line app allows you to see current weather conditions and forecasts at a glance. It retrieves the weather forecasts for the next 5 days via a weather forecast API.
+其中有一个就是 [wego][1]，**一个终端下的小巧程序**。使用基于ncurses 的接口，这个命令行程序允许你查看当前的天气情况和之后的预报。它也会通过一个天气预报的API 收集接下来5 天的天气预报。
 
-### Install Wego on Linux ###
-
-Installation of wego is pretty simple. wego is written in Go language, thus the first step is to [install Go language][2]. After installing Go, proceed to install wego as follows.
+### 在Linux 下安装Wego ###
+安装wego 相当简单。wego 是用Go 编写的，引起第一个步骤就是安装[Go 语言][2]。然后再安装wego。
 
     $ go get github.com/schachmat/wego
 
-The wego tool will be installed under $GOPATH/bin. So add $GOPATH/bin to your $PATH variable.
+wego 会被安装到$GOPATH/bin，所以要将$GOPATH/bin 添加到$PATH 环境变量。
 
     $ echo 'export PATH="$PATH:$GOPATH/bin"' >> ~/.bashrc
     $ source ~/.bashrc
 
-Now go ahead and invoke wego from the command line.
+现在就可与直接从命令行启动wego 了。
 
     $ wego
 
-The first time you run wego, it will generate a config file (~/.wegorc), where you need to specify a weather API key.
-
-You can obtain a free API key from [worldweatheronline.com][3]. Free sign-up is quick and easy. You only need a valid email address.
+第一次运行weg 会生成一个配置文件(~/.wegorc)，你需要指定一个天气API key。
+你可以从[worldweatheronline.com][3] 获取一个免费的API key。免费注册和使用。你只需要提供一个有效的邮箱地址。
 
 ![](https://farm6.staticflickr.com/5781/21317466341_5a368b0d26_c.jpg)
 
-Your .wegorc will look like the following.
+你的 .wegorc 配置文件看起来会这样：
 
 ![](https://farm6.staticflickr.com/5620/21121418558_df0d27cd0a_b.jpg)
 
-Other than API key, you can specify in ~/.wegorc your preferred location, use of metric/imperial units, and language.
-
-Note that the weather API is rate-limited; 5 queries per second, and 250 queries per day.
-
-When you invoke wego command again, you will see the latest weather forecast (of your preferred location), shown as follows.
+除了API key，你还可以把你想要查询天气的地方、使用的城市/国家名称、语言配置在~/.wegorc 中。
+注意，这个天气API 的使用有限制：每秒最多5 次查询，每天最多250 次查询。
+当你重新执行wego 命令，你将会看到最新的天气预报（当然是你的指定地方），如下显示。
 
 ![](https://farm6.staticflickr.com/5776/21121218110_dd51e03ff4_c.jpg)
 
-The displayed weather information includes: (1) temperature, (2) wind direction and speed, (3) viewing distance, and (4) precipitation amount and probability.
-
-By default, it will show 3-day weather forecast. To change this behavior, you can supply the number of days (upto five) as an argument. For example, to see 5-day forecast:
+显示出来的天气信息包括：(1)温度，(2)风速和风向，(3)可视距离，(4)降水量和降水概率
+默认情况下会显示3 天的天气预报。如果要进行修改，可以通过参数改变天气范围（最多5天），比如要查看5 天的天气预报：
 
     $ wego 5
 
-If you want to check the weather of any other location, you can specify the city name.
+如果你想检查另一个地方的天气，只需要提供城市名即可：
 
     $ wego Seattle
 
-### Troubleshooting ###
-
-1. You encounter the following error while running wego.
+### 问题解决 ###
+1. 可能会遇到下面的错误：
 
     user: Current not implemented on linux/amd64
 
-This error can happen when you run wego on a platform which is not supported by the native Go compiler gc (e.g., Fedora). In that case, you can compile the program using gccgo, a compiler-frontend for Go language. This can be done as follows.
-
+    当你在一个不支持原生Go 编译器的环境下运行wego 时就会出现这个错误。在这种情况下你只需要使用gccgo ——一个Go 的编译器前端来编译程序即可。这一步可以通过下面的命令完成。
+    
     $ sudo yum install gcc-go
     $ go get -compiler=gccgo github.com/schachmat/wego
 
@@ -67,7 +59,7 @@ This error can happen when you run wego on a platform which is not supported by 
 via: http://ask.xmodulo.com/weather-forecasts-command-line-linux.html
 
 作者：[Dan Nanni][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/oska874)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
