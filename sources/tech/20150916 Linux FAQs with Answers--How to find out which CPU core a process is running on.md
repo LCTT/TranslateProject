@@ -1,3 +1,4 @@
+translation by  strugglingyouth
 Linux FAQs with Answers--How to find out which CPU core a process is running on
 ================================================================================
 > Question: I have a Linux process running on my multi-core processor system. How can I find out which CPU core the process is running on?
