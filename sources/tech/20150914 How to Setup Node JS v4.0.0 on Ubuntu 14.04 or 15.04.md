@@ -1,7 +1,5 @@
 
-translating by ezio
-
-How to Setup Node JS v4.0.0 on Ubuntu 14.04 / 15.04
+在ubunt 14.04/15.04 上配置Node JS v4.0.0 
 ================================================================================
 Hi everyone, Node.JS Version 4.0.0 has been out, the popular server-side JavaScript platform has combines the Node.js and io.js code bases. This release represents the combined efforts encapsulated in both the Node.js project and the io.js project that are now combined in a single codebase. The most important change is this Node.js is ships with version 4.5 of Google's V8 JavaScript engine, which is the same version that ships with the current Chrome browser. So, being able to more closely track V8’s releases means Node.js runs JavaScript faster, more securely, and with the ability to use many desirable ES6 language features.
 
@@ -96,7 +94,7 @@ That’s it. Hope this gives you a good idea of Node.js going with Node.js on Ub
 via: http://linoxide.com/ubuntu-how-to/setup-node-js-4-0-ubuntu-14-04-15-04/
 
 作者：[Kashif Siddique][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/osk874)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
