@@ -1,44 +1,45 @@
-修复安装完 Ubuntu 后无可引导设备错误
+修复安装完 Ubuntu 后无可引导设备的错误
 ================================================================================
-通常情况下，我启动 Ubuntu 和 Windows 双系统，但是这次我决定完全消除 Windows 纯净安装 Ubuntu。纯净安装 Ubuntu 完成后，结束时屏幕输出 **no bootable device found** 而不是进入 GRUB 界面。显然，安装搞砸了 UEFI 引导设置。
+
+通常情况下，我会安装启动 Ubuntu 和 Windows 的双系统，但是这次我决定完全消除 Windows 纯净安装 Ubuntu。纯净安装 Ubuntu 完成后，结束时屏幕输出 **无可引导设备(no bootable device found)** 而不是进入 GRUB 界面。显然，安装搞砸了 UEFI 引导设置。
 
 ![安装完 Ubuntu 后无可引导设备](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/08/No_Bootable_Device_Found_1.jpg)
 
-我会告诉你我是如何修复**在宏碁笔记本上安装 Ubuntu 后出现无可引导设备错误**。我声明了我使用的是宏碁灵越 R13，这很重要，因为我们需要更改固件设置，而这些设置可能因制造商和设备有所不同。
+我会告诉你我是如何修复**在宏碁笔记本上安装 Ubuntu 后出现无可引导设备错误**的。我声明了我使用的是宏碁灵越 R13，这很重要，因为我们需要更改固件设置，而这些设置可能因制造商和设备有所不同。
 
 因此在你开始这里介绍的步骤之前，先看一下发生这个错误时我计算机的状态：
 
-- 我的宏碁灵越 R13 预装了 Windows8.1 和 UEFI 引导管理器
-- 关闭了 Secure boot（我的笔记本刚维修过，维修人员又启用了它，直到出现了问题我才发现）。你可以阅读这篇博文了解[如何在宏碁笔记本中关闭 secure boot][1]
-- 我通过选择清除所有东西安装 Ubuntu，例如现有的 Windows 8.1，各种分区等。
+- 我的宏碁灵越 R13 预装了 Windows 8.1 和 UEFI 引导管理器
+- 安全引导（ Secure boot）没有关闭，（我的笔记本刚维修过，维修人员又启用了它，直到出现了问题我才发现）。你可以阅读这篇博文了解[如何在宏碁笔记本中关闭安全引导（secure boot）][1]
+- 我选择了清除所有东西安装 Ubuntu，例如现有的 Windows 8.1，各种分区等
 - 安装完 Ubuntu 之后，从硬盘启动时我看到无可引导设备错误。但能从 USB 设备正常启动
 
-在我看来，没有禁用 secure boot 可能是这个错误的原因。但是，我没有数据支撑我的观点。这仅仅是预感。有趣的是，双系统启动 Windows 和 Linux 经常会出现这两个 Grub  问题：
+在我看来，没有禁用安全引导（secure boot）可能是这个错误的原因。但是，我没有数据支撑我的观点。这仅仅是预感。有趣的是，双系统启动 Windows 和 Linux 经常会出现这两个 Grub  问题：
 
-- [error: no such partition grub rescue][2]
-- [Minimal BASH like line editing is supported][3]
+- [错误：没有 grub 救援分区][2]
+- [支持最小化 BASH 式的行编辑][3]
 
 如果你遇到类似的情况，你可以试试我的修复方法。
 
 ### 修复安装完 Ubuntu 后无可引导设备错误 ###
 
-请原谅我没有丰富的图片。我的一加相机不能很好地拍摄笔记本屏幕。
+请原谅我的图片质量很差。我的一加相机不能很好地拍摄笔记本屏幕。
 
 #### 第一步 ####
 
-关闭电源并进入 boot 设置。我需要在宏碁灵越 R13 上快速地按 Fn+F2。如果你使用固态硬盘的话要按的非常快，因为固态硬盘启动速度很快。取决于你的制造商，你可能要用 Del 或 F10 或者 F12。
+关闭电源并进入引导设置。我需要在宏碁灵越 R13 上快速地按下 Fn+F2。如果你使用固态硬盘的话要按的非常快，因为固态硬盘启动速度很快。这取决于你的制造商，你可能要用 Del 或 F10 或者 F12。
 
 #### 第二步 ####
 
-在 boot 设置中，确保启用了 Secure Boot。它在 Boot 标签里。
+在引导设置中，确保启用了 Secure Boot。它在 Boot 标签里。
 
 #### 第三步 ####
 
-进入到 Security 标签，查找 “Select an UEFI file as trusted for executing” 并敲击回车。
+进入到 Security 标签，找到 “选择一个用于执行的可信任 UEFI 文件（Select an UEFI file as trusted for executing）” 并敲击回车。
 
 ![修复无可引导设备错误](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/08/No_Bootable_Device_Found_2.jpg)
 
-特意说明，我们这一步是要在你的设备中添加 UEFI 设置文件（安装 Ubuntu 的时候生成）到可信 UEFI 启动。如果你记得的话，UEFI 启动的主要目的是提供安全性，由于（可能）没有禁用 Secure Boot，设备不会试图从新安装的操作系统中启动。添加它到类似白名单的可信列表，会使设备从 Ubuntu UEFI 文件启动。
+特意说明，我们这一步是要在你的设备中添加 UEFI 设置文件（安装 Ubuntu 的时候生成）到可信 UEFI 启动中。如果你记得的话，UEFI 启动的主要目的是提供安全性，由于（可能）没有禁用安全引导（Secure Boot），设备不会试图从新安装的操作系统中启动。添加它到类似白名单的可信列表，会使设备从 Ubuntu UEFI 文件启动。
 
 #### 第四步 ####
 
@@ -48,13 +49,13 @@
 
 #### 第五步 ####
 
-你应该可以看到 <EFI>，敲击回车。
+你应该可以看到 \<EFI> 了，敲击回车。
 
 ![在 UEFI 中修复设置](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/08/No_Bootable_Device_Found_4.jpg)
 
 #### 第六步 ####
 
-在下一个屏幕中你会看到 <Ubuntu>。耐心点，马上就好了。 
+在下一个屏幕中你会看到 \<Ubuntu>。耐心点，马上就好了。 
 
 ![安装完 Ubuntu 后修复启动错误](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/08/No_Bootable_Device_Found_5.jpg)
 
@@ -71,7 +72,7 @@
 
 #### 第八步 ####
 
-当我们添加它到可信 EFI 文件并执行时，按 F10 保存并退出。
+当我们添加它到可信 EFI 文件并执行后，按 F10 保存并退出。
 
 ![保存并退出固件设置](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/08/No_Bootable_Device_Found_8.jpg)
 
@@ -87,7 +88,7 @@ via: http://itsfoss.com/no-bootable-device-found-ubuntu/
 
 作者：[Abhishek][a]
 译者：[ictlyh](http://www.mutouxiaogui.cn/blog/)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
