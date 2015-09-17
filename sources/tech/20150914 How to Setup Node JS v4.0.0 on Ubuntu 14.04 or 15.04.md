@@ -9,85 +9,84 @@ Node.js 4.0 的目标是为io.js 当前用户提供一个简单的升级途径�
 
 ### 基础系统安装 ###
 
-Node works perfectly on Linux, Macintosh, and Solaris operating systems and among the Linux operating systems it has the best results using Ubuntu OS. That's why we are to setup it Ubuntu 15.04 while the same steps can be followed using Ubuntu 14.04.
-
-#### 1) System Resources ####
+Node 在Linux，Macintosh，Solaris 这几个系统上都可以完美的运行，同时linux 的发行版本当中Ubuntu 是最合适的。这也是我们为什么要尝试在ubuntu 15.04 上安装Node，当然了在14.04 上也可以使用相同的步骤安装。
+#### 1) 系统资源 ####
 
 The basic system resources for Node depend upon the size of your infrastructure requirements. So, here in this tutorial we will setup Node with 1 GB RAM, 1 GHz Processor and 10 GB of available disk space with minimal installation packages installed on the server that is no web or database server packages are installed.
 
-#### 2) System Update ####
+#### 2) 系统更新 ####
 
 It always been recommended to keep your system upto date with latest patches and updates, so before we move to the installation on Node, let's login to your server with super user privileges and run update command.
 
     # apt-get update
 
-#### 3) Installing Dependencies ####
+#### 3) 安装依赖 ####
 
 Node JS only requires some basic system and software utilities to be present on your server, for its successful installation like 'make' 'gcc' and 'wget'. Let's run the below command to get them installed if they are not already present.
 
     # apt-get install python gcc make g++ wget
 
-### Download Latest Node JS v4.0.0 ###
+### 下载最新版的Node JS v4.0.0 ###
 
-Let's download the latest Node JS version 4.0.0 by following this link of [Node JS Download Page][1].
+使用链接 [Node JS Download Page][1] 下载源代码.
 
 ![nodejs download](http://blog.linoxide.com/wp-content/uploads/2015/09/download.png)
 
-We will copy the link location of its latest package and download it using 'wget' command as shown.
+我们会复制最新源代码的链接，然后用`wget` 下载，命令如下：
 
     # wget https://nodejs.org/download/rc/v4.0.0-rc.1/node-v4.0.0-rc.1.tar.gz
 
-Once download completes, unpack using 'tar' command as shown.
+下载完成后使用命令`tar` 解压缩：
 
     # tar -zxvf node-v4.0.0-rc.1.tar.gz
 
 ![wget nodejs](http://blog.linoxide.com/wp-content/uploads/2015/09/wget.png)
 
-### Installing Node JS v4.0.0 ###
+### 安装 Node JS v4.0.0 ###
 
-Now we have to start the installation of Node JS from its downloaded source code. So, change your directory and configure the source code by running its configuration script before compiling it on your ubuntu server.
+现在可以开始使用下载好的源代码编译Nod JS。你需要在ubuntu serve 上开始编译前运行配置脚本来修改你要使用目录和配置参数。
 
     root@ubuntu-15:~/node-v4.0.0-rc.1# ./configure
 
 ![Installing NodeJS](http://blog.linoxide.com/wp-content/uploads/2015/09/configure.png)
 
-Now run the 'make install' command to compile the Node JS installation package as shown.
+现在运行命令'make install' 编译安装Node JS：
 
     root@ubuntu-15:~/node-v4.0.0-rc.1# make install
 
-The make command will take a couple of minutes while compiling its binaries so after executinf above command, wait for a while and keep calm.
+make 命令会花费几分钟完成编译，冷静的等待一会。
 
-### Testing Node JS Installation ###
+### 验证Node 安装 ###
 
-Once the compilation process is complete, we will test it if every thing went fine. Let's run the following command to confirm the installed version of Node JS.
+一旦编译任务完成，我们就可以开始验证安装工作是否OK。我们运行下列命令来确认Node JS 的版本。
 
     root@ubuntu-15:~# node -v
     v4.0.0-pre
 
-By executing 'node' without any arguments from the command-line you will be dropped into the REPL (Read-Eval-Print-Loop) that has simplistic emacs line-editing where you can interactively run JavaScript and see the results.
-
+在命令行下不带参数的运行`node` 就会进入REPL(Read-Eval-Print-Loop,读-执行-输出-循环)模式，它有一个简化版的emacs 行编辑器，通过它你可以交互式的运行JS和查看运行结果。
 ![node version](http://blog.linoxide.com/wp-content/uploads/2015/09/node.png)
 
-### Writing Test Program ###
+### 写测试程序 ###
 
-We can also try out a very simple console program to test the successful installation and proper working of Node JS. To do so we will create a file named "test.js" and write the following code into it and save the changes made in the file as shown.
+我们也可以写一个很简单的终端程序来测试安装是否成功，并且工作正常。要完成这一点，我们将会创建一个“tes.js” 文件，包含一下代码，操作如下：
 
     root@ubuntu-15:~# vim test.js
     var util = require("util");
     console.log("Hello! This is a Node Test Program");
     :wq!
 
-Now in order to run the above program, from the command prompt run the below command.
+现在为了运行上面的程序，在命令行运行下面的命令。
 
     root@ubuntu-15:~# node test.js
 
 ![Node Program](http://blog.linoxide.com/wp-content/uploads/2015/09/node-test.png)
 
-So, upon successful installation we will get the output as shown in the screen, where as in the above program it loads the "util" class into a variable "util" and then uses the "util" object to perform the console tasks. While the console.log is a command similar to the cout in C++.
+在一个成功安装了Node JS 的环境下运行上面的程序就会在屏幕上得到上图所示的输出，这个程序加载类 “util” 到变量“util” 中，接着用对象“util” 运行终端任务，console.log 这个命令作用类似C++ 里的cout
 
-### Conclusion ###
+### 结论 ###
 
 That’s it. Hope this gives you a good idea of Node.js going with Node.js on Ubuntu. If you are new to developing applications with Node.js. After all we can say that we can expect significant performance gains with Node JS Version 4.0.0.
+希望本文能够通过在ubuntu 上安装、运行Node.JS让你了解一下Node JS 的大概，如果你是刚刚开始使用Node.JS 开发应用程序。最后我们可以说我们能够通过Node JS v4.0.0 获取显著的性能。
 
 --------------------------------------------------------------------------------
 
