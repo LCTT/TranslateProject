@@ -1,3 +1,5 @@
+translating---geekpi
+
 Ubuntu Linux-Based Open Source OS Runs 42 Percent of Dell PCs in China
 ================================================================================
 > Dell says that 42 percent of the PCs it sells in the Chinese market run Kylin, an open source operating system based on Ubuntu Linux that Canonical helped to create.
