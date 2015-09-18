@@ -1,3 +1,4 @@
+(translating by runningwater)
 Best command line tools for linux performance monitoring
 ================================================================================
 Sometimes a system can be slow and many reasons can be the root cause. To identify the process that is consuming memory, disk I/O or processor capacity you need to use tools to see what is happening in an operation system.
@@ -67,7 +68,7 @@ The sar utility, which is part of the systat package, can be used to review hist
 via: http://lintut.com/best-command-line-tools-for-linux-performance-monitring/
 
 作者：[rasho][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
