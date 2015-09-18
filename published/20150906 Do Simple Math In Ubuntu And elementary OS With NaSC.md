@@ -18,9 +18,9 @@ Elementary OS 它自己本身借鉴了 OS X，也就不奇怪它的很多第三�
 
 ### 在 Ubuntu、Elementary OS 和 Mint 上安装 NaSC ###
 
-安装 NaSC 有一个可用的 PPA。PPA 中说 ‘每日’，意味着所有构建（包括不稳定），但作为我的快速测试，并没什么影响。
+安装 NaSC 有一个可用的 PPA。PPA 是 ‘每日’，意味着每日构建（意即，不稳定），但作为我的快速测试，并没什么影响。
 
-打卡一个终端并运行下面的命令：
+打开一个终端并运行下面的命令：
 
     sudo apt-add-repository ppa:nasc-team/daily
     sudo apt-get update
@@ -35,7 +35,7 @@ Elementary OS 它自己本身借鉴了 OS X，也就不奇怪它的很多第三�
     sudo apt-get remove nasc
     sudo apt-add-repository --remove ppa:nasc-team/daily
 
-如果你试用了这个软件，要分享你的经验哦。除此之外，你也可以在第三方 Elementary OS 应用中体验[Vocal podcast app for Linux][3]。
+如果你试用了这个软件，要分享你的经验哦。除此之外，你也可以在第三方 Elementary OS 应用中体验 [Vocal podcast app for Linux][3]。
 
 --------------------------------------------------------------------------------
 
@@ -43,7 +43,7 @@ via: http://itsfoss.com/math-ubuntu-nasc/
 
 作者：[Abhishek][a]
 译者：[ictlyh](http://www.mutouxiaogui.cn/blog/)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
