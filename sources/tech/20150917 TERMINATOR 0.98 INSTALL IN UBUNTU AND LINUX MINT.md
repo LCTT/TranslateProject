@@ -1,3 +1,4 @@
+ictlyh Translating
 TERMINATOR 0.98: INSTALL IN UBUNTU AND LINUX MINT
 ================================================================================
 [Terminator][1] multiple terminals in one window. The goal of this project is to produce a useful tool for arranging terminals. It is inspired by programs such as gnome-multi-term, quadkonsole, etc. in that the main focus is arranging terminals in grids. Terminator 0.98 bringing a more polished tabs functionality, better layout saving/restoring, improved preferences UI and numerous bug fixes.
