@@ -1,6 +1,6 @@
 在 Ubuntu 和 Linux Mint 上安装 Terminator 0.98
 ================================================================================
-[Terminator][1]，在一个窗口中有多个终端。该项目的目标之一是为管理终端提供一个有用的工具。它的灵感来自于类似 gnome-multi-term，quankonsole 等程序，这些程序关注于在窗格中管理终端。 Terminator 0.98 带来了更完美的标签功能，更好的布局保存/恢复，改进了偏好用户界面和多出 bug 修复。
+[Terminator][1]，在一个窗口中有多个终端。该项目的目标之一是为管理终端提供一个有用的工具。它的灵感来自于类似 gnome-multi-term，quankonsole 等程序，这些程序关注于在窗格中管理终端。 Terminator 0.98 带来了更完美的标签功能，更好的布局保存/恢复，改进了偏好用户界面并修复了一些 bug。
 
 ![](http://www.ewikitech.com/wp-content/uploads/2015/09/Screenshot-from-2015-09-17-094828.png)
 
