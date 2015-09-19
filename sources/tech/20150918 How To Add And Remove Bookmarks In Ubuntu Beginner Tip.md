@@ -1,47 +1,45 @@
-translating---geekpi
-
-How To Add And Remove Bookmarks In Ubuntu [Beginner Tip]
+如何在Ubuntu中添加和删除书签[新手技巧]
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/09/Add-Bookmark.jpg)
 
-In this quick tip for absolute beginners, I am going to show you how to add bookmarks in Ubuntu File manager, Files.
+这是一篇对完全是新手的一篇技巧，我将向你展示如何在Ubuntu文件管理器中添加书签。
 
-Now, if you wonder why would you do that, the answer is pretty simple. It gives you quick access, right in the left sidebar. For example, I [installed Copy in Ubuntu][1]. Now it has been created in /Home/Copy. Not a big deal to go in Home and then go in Copy directory, but I would like to access it rather quickly. So, I add a bookmark to it so that I would be able to access it from the sidebar.
+现在如果你想知道为什么要这么做，答案很简单。它可以让你可以快速地在左边栏中访问。比如。我[在Ubuntu中安装了Copy][1]。现在它创建了/Home/Copy。先进入Home目录再进入Copy目录并不是一件大事，但是我想要更快地访问它。因此我添加了一个书签这样我就可以直接从侧边栏访问了。
 
-### Add a bookmark in Ubuntu ###
+### 在Ubuntu中添加书签 ###
 
-Open Files. Go to the location which you want to save for quick access. You need to be inside the directory to bookmark it.
+打开Files。进入你想要保存快速访问的目录。你需要在标记书签的目录里面。
 
-Now, you have two ways to do it.
+现在，你有两种方法。
 
-#### Option 1: ####
+#### 方法1: ####
 
-When you are in Files (file explorer in Ubuntu), look at the top for the global menu. You would see Bookmarks. Click on it and you’ll see the option to add the current location as boomark.
+当你在Files中时（Ubuntu中的文件管理器），查看顶部菜单。你会看到书签按钮。点击它你会看到将当前路径保存为书签的选项。
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/09/Add-Bookmark-Ubuntu.jpeg)
 
-#### Option 2: ####
+#### 方法 2: ####
 
-You can simply press Ctrl+D and the current location will be added as a bookmark.
+你可以直接按下Ctrl+D就可以将当前位置保存位书签。
 
-As you can see, here is the newly added Copy directory in the left sidebar for quick access:
+如你所见，这里左边栏就有一个新添加的Copy目录：
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/09/Add-Bookmark-Ubuntu-1.jpeg)
 
-### Manage Bookmarks ###
+### 管理书签 ###
 
-If you think you have got too many bookmarks or if you added a bookmark by mistake, you can remove a bookmark easily. Press Ctrl+B to access all the bookmarks. Here, select the desired bookmark and click on – to delete it.
+如果你不想要太多的书签或者你错误地添加了一个书签，你可以很简单地删除它。按下Ctrl+B查看所有的书签。现在选择想要删除的书签并点击删除。
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/09/Remove-bookmark-ubuntu.png)
 
-That’s all you need to do to manage bookmarks in Ubuntu. I know it might be trivial with most of the users, but it might help people who are absolutely new to Ubuntu.
+这就是在Ubuntu中管理书签需要做的。我知道这对于大多数用户而言很贱，但是这也许多Ubuntu的新手而言或许还有用。
 
 --------------------------------------------------------------------------------
 
 via: http://itsfoss.com/add-remove-bookmarks-ubuntu/
 
 作者：[Abhishek][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
