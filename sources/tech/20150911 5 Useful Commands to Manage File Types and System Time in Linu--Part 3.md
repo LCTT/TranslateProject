@@ -1,3 +1,4 @@
+ictlyh Translating
 5 Useful Commands to Manage File Types and System Time in Linux – Part 3
 ================================================================================
 Adapting to using the command line or terminal can be very hard for beginners who want to learn Linux. Because the terminal gives more control over a Linux system than GUIs programs, one has to get a used to running commands on the terminal. Therefore to memorize different commands in Linux, you should use the terminal on a daily basis to understand how commands are used with different options and arguments.
