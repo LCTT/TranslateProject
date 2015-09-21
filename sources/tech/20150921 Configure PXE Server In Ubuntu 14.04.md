@@ -1,3 +1,4 @@
+translation by strugglingyouth
 Configure PXE Server In Ubuntu 14.04
 ================================================================================
 ![](https://www.maketecheasier.com/assets/uploads/2015/09/pxe-featured.jpg)
