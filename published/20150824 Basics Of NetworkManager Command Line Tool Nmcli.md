@@ -1,14 +1,15 @@
-网络管理命令行工具基础，Nmcli
+Nmcli 网络管理命令行工具基础
 ================================================================================
+
 ![](http://1102047360.rsc.cdn77.org/wp-content/uploads/2015/08/networking1.jpg)
 
 ### 介绍 ###
 
-在本教程中，我们会在CentOS / RHEL 7中讨论网络管理工具，也叫**nmcli**。那些使用**ifconfig**的用户应该在CentOS 7中避免使用这个命令。
+在本教程中，我们会在CentOS / RHEL 7中讨论网络管理工具（NetworkManager command line tool），也叫**nmcli**。那些使用**ifconfig**的用户应该在CentOS 7中避免使用**ifconfig** 了。
 
 让我们用nmcli工具配置一些网络设置。
 
-### 要得到系统中所有接口的地址信息 ###
+#### 要得到系统中所有接口的地址信息 ####
 
     [root@localhost ~]# ip addr show
 
@@ -27,13 +28,13 @@
      inet6 fe80::20c:29ff:fe67:2f4c/64 scope link 
      valid_lft forever preferred_lft forever
 
-#### 检索与连接的接口相关的数据包统计 ####
+#### 检索与已连接的接口相关的数据包统计 ####
 
     [root@localhost ~]# ip -s link show eno16777736
 
 **示例输出：**
 
-![unxmen_(011)](http://www.unixmen.com/wp-content/uploads/2015/08/unxmen_0111.png)
+![](http://www.unixmen.com/wp-content/uploads/2015/08/unxmen_0111.png)
 
 #### 得到路由配置 ####
 
@@ -50,11 +51,11 @@
 
 输出像traceroute，但是更加完整。
 
-![unxmen_0121](http://www.unixmen.com/wp-content/uploads/2015/08/unxmen_01211.png)
+![](http://www.unixmen.com/wp-content/uploads/2015/08/unxmen_01211.png)
 
 ### nmcli 工具 ###
 
-**Nmcli** 是一个非常丰富和灵活的命令行工具。nmcli使用的情况有：
+**nmcli** 是一个非常丰富和灵活的命令行工具。nmcli使用的情况有：
 
 - **设备** – 正在使用的网络接口
 - **连接** – 一组配置设置，对于一个单一的设备可以有多个连接，可以在连接之间切换。
@@ -63,7 +64,7 @@
 
     [root@localhost ~]# nmcli connection show
 
-![unxmen_(013)](http://www.unixmen.com/wp-content/uploads/2015/08/unxmen_013.png)
+![](http://www.unixmen.com/wp-content/uploads/2015/08/unxmen_013.png)
 
 #### 得到特定连接的详情 ####
 
@@ -71,7 +72,7 @@
 
 **示例输出：**
 
-![unxmen_(014)](http://www.unixmen.com/wp-content/uploads/2015/08/unxmen_0141.png)
+![](http://www.unixmen.com/wp-content/uploads/2015/08/unxmen_0141.png)
 
 #### 得到网络设备状态 ####
 
@@ -89,7 +90,7 @@
 
 这里，
 
-- **Connection add** – 添加新的连接
+- **connection add** – 添加新的连接
 - **con-name** – 连接名
 - **type** – 设备类型
 - **ifname** – 接口名
@@ -100,7 +101,7 @@
 
     Connection 'dhcp' (163a6822-cd50-4d23-bb42-8b774aeab9cb) successfully added.
 
-#### 不同过dhcp分配IP，使用“static”添加地址 ####
+#### 不通过dhcp分配IP，使用“static”添加地址 ####
 
     [root@localhost ~]# nmcli connection add con-name "static" ifname eno16777736 autoconnect no type ethernet ip4 192.168.1.240 gw4 192.168.1.1
 
@@ -112,25 +113,23 @@
 
     [root@localhost ~]# nmcli connection up eno1
 
-Again Check, whether ip address is changed or not.
 再检查一遍，ip地址是否已经改变
 
     [root@localhost ~]# ip addr show
 
-![unxmen_(015)](http://www.unixmen.com/wp-content/uploads/2015/08/unxmen_0151.png)
+![](http://www.unixmen.com/wp-content/uploads/2015/08/unxmen_0151.png)
 
 #### 添加DNS设置到静态连接中 ####
 
     [root@localhost ~]# nmcli connection modify "static" ipv4.dns 202.131.124.4
 
-#### 添加额外的DNS值 ####
+#### 添加更多的DNS ####
 
-[root@localhost ~]# nmcli connection modify "static" +ipv4.dns 8.8.8.8
+	[root@localhost ~]# nmcli connection modify "static" +ipv4.dns 8.8.8.8
 
 **注意**：要使用额外的**+**符号，并且要是**+ipv4.dns**，而不是**ip4.dns**。
 
-
-添加一个额外的ip地址:
+####添加一个额外的ip地址####
 
     [root@localhost ~]# nmcli connection modify "static" +ipv4.addresses 192.168.200.1/24
 
@@ -138,11 +137,11 @@ Again Check, whether ip address is changed or not.
 
     [root@localhost ~]# nmcli connection up eno1
 
-![unxmen_(016)](http://www.unixmen.com/wp-content/uploads/2015/08/unxmen_016.png)
+![](http://www.unixmen.com/wp-content/uploads/2015/08/unxmen_016.png)
 
 你会看见，设置生效了。
 
-完结
+完结。
 
 --------------------------------------------------------------------------------
 
@@ -150,6 +149,6 @@ via: http://www.unixmen.com/basics-networkmanager-command-line-tool-nmcli/
 
 作者：Rajneesh Upadhyay
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出

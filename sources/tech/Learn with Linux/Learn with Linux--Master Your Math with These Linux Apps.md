@@ -1,3 +1,5 @@
+Translating by KnightJoker
+
 Learn with Linux: Master Your Math with These Linux Apps
 ================================================================================
 ![](https://www.maketecheasier.com/assets/uploads/2015/07/learnmath-featured.png)
