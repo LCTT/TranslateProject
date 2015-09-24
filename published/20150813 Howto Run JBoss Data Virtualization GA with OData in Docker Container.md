@@ -1,7 +1,7 @@
 如何在 Docker 容器中运行支持 OData 的 JBoss 数据虚拟化 GA
-Howto Run JBoss Data Virtualization GA with OData in Docker Container
 ================================================================================
-大家好，我们今天来学习如何在一个 Docker 容器中运行支持 OData（译者注：Open Data Protocol，开放数据协议） 的 JBoss 数据虚拟化 6.0.0 GA（译者注：GA，General Availability，具体定义可以查看[WIKI][4]）。JBoss 数据虚拟化是数据提供和集成解决方案平台，有多种分散的数据源时，转换为一种数据源统一对待，在正确的时间将所需数据传递给任意的应用或者用户。JBoss 数据虚拟化可以帮助我们将数据快速组合和转换为可重用的商业友好的数据模型，通过开放标准接口简单可用。它提供全面的数据抽取、联合、集成、转换，以及传输功能，将来自一个或多个源的数据组合为可重复使用和共享的灵活数据。要了解更多关于 JBoss 数据虚拟化的信息，可以查看它的[官方文档][1]。Docker 是一个提供开放平台用于打包，装载和以轻量级容器运行任何应用的开源平台。使用 Docker 容器我们可以轻松处理和启用支持 OData 的 JBoss 数据虚拟化。
+
+大家好，我们今天来学习如何在一个 Docker 容器中运行支持 OData（译者注：Open Data Protocol，开放数据协议） 的 JBoss 数据虚拟化 6.0.0 GA（译者注：GA，General Availability，具体定义可以查看[WIKI][4]）。JBoss 数据虚拟化是数据提供和集成解决方案平台，将多种分散的数据源转换为一种数据源统一对待，在正确的时间将所需数据传递给任意的应用或者用户。JBoss 数据虚拟化可以帮助我们将数据快速组合和转换为可重用的商业友好的数据模型，通过开放标准接口简单可用。它提供全面的数据抽取、联合、集成、转换，以及传输功能，将来自一个或多个源的数据组合为可重复使用和共享的灵活数据。要了解更多关于 JBoss 数据虚拟化的信息，可以查看它的[官方文档][1]。Docker 是一个提供开放平台用于打包，装载和以轻量级容器运行任何应用的开源平台。使用 Docker 容器我们可以轻松处理和启用支持 OData 的 JBoss 数据虚拟化。
 
 下面是该指南中在 Docker 容器中运行支持 OData 的 JBoss 数据虚拟化的简单步骤。
 
@@ -78,7 +78,6 @@ Howto Run JBoss Data Virtualization GA with OData in Docker Container
     "LinkLocalIPv6PrefixLen": 0,
 
 ### 6. Web 界面 ###
-### 6. Web Interface ###
 
 现在，如果一切如期望的那样进行，当我们用浏览器打开 http://container-ip:8080/ 和 http://container-ip:9990 时会看到支持 oData 的 JBoss 数据虚拟化登录界面和 JBoss 管理界面。管理验证的用户名和密码分别是 admin 和 redhat1！数据虚拟化验证的用户名和密码都是 user。之后，我们可以通过 web 界面在内容间导航。
 
@@ -94,7 +93,7 @@ via: http://linoxide.com/linux-how-to/run-jboss-data-virtualization-ga-odata-doc
 
 作者：[Arun Pyasi][a]
 译者：[ictlyh](http://www.mutouxiaogui.cn/blog)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 

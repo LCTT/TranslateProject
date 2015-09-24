@@ -1,4 +1,4 @@
-在 Ubuntu 里，如何下载，安装和配置 Plank Dock
+在 Ubuntu 里如何下载、安装和配置 Plank Dock
 =============================================================================
 一个众所周知的事实就是，Linux 是一个用户可以高度自定义的系统，有很多选项可以选择 —— 作为操作系统，有各种各样的发行版，而对于单个发行版来说，又有很多桌面环境可以选择。与其他操作系统的用户一样，Linux 用户也有不同的口味和喜好，特别是对于桌面来说。
 
@@ -8,7 +8,7 @@
 
 ### Plank ###
 
-官方的文档描述 Plank 是“这个星球上最简洁的 dock”。该项目的目的就是提供一个 dock 仅需要的功能，尽管这是很基础的一个库，却可以被扩展，创造其他的含更多高级功能的 dock 程序。
+官方的文档描述 Plank 是“这个星球上最简洁的 dock”。该项目的目的就是仅提供一个 dock 需要的功能，尽管这是很基础的一个库，却可以被扩展，创造其他的含更多高级功能的 dock 程序。
 
 这里值得一提的就是，在 elementary OS 里，Plank 是预装的。并且 Plank 是 Docky 的基础，Docky 也是一个非常流行的 dock 应用，在功能上与 Mac OS X 的 Dock 非常相似。
 
@@ -30,11 +30,11 @@
 
 ![](https://www.maketecheasier.com/assets/uploads/2015/09/plank-enabled-new.jpg)
 
-正如上面图片显示的那样，dock 包含许多带橙色的应用图标，这表明这些应用正处于运行状态。无需说，你可以点击一个图标来打开那个应用。同时，右击一个应用图标会给出更多的选项，你可能会感兴趣。举个例子，该下面的屏幕快照：
+正如上面图片显示的那样，dock 包含许多带橙色标示的应用图标，这表明这些应用正处于运行状态。无需说，你可以点击一个图标来打开那个应用。同时，右击一个应用图标会给出更多的选项，你可能会感兴趣。举个例子，看下面的屏幕快照：
 
 ![](https://www.maketecheasier.com/assets/uploads/2015/09/plank-right-click-icons-new.jpg)
 
-为了获得配置的选项，你不得不右击一下 Plank 的图标（左数第一个），然后点击 Preferences 选项。这就会产生接下来的窗口。
+为了获得配置的选项，你需要右击一下 Plank 的图标（左数第一个），然后点击 Preferences 选项。这就会出现如下的窗口。
 
 ![](https://www.maketecheasier.com/assets/uploads/2015/09/plank-preferences.png)
 
@@ -58,7 +58,7 @@ via: https://www.maketecheasier.com/download-install-configure-plank-dock-ubuntu
 
 作者：[Himanshu Arora][a]
 译者：[wi-cuckoo](https://github.com/wi-cuckoo)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
