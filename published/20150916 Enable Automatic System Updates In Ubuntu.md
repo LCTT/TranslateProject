@@ -1,4 +1,4 @@
-开启Ubuntu系统自动升级
+开启 Ubuntu 系统自动升级
 ================================================================================
 在学习如何开启Ubuntu系统自动升级之前，先解释下为什么需要自动升级。
 
@@ -40,7 +40,7 @@ via: http://itsfoss.com/automatic-system-updates-ubuntu/
 
 作者：[Abhishek][a]
 译者：[Vic020/VicYu](http://vicyu.net)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
