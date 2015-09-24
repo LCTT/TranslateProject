@@ -1,3 +1,5 @@
+translating----geekpi
+
 How to Setup IonCube Loaders on Ubuntu 14.04 / 15.04
 ================================================================================
 IonCube Loaders is an encryption/decryption utility for PHP applications which assists in speeding up the pages that are served. It also protects your website's PHP code from being viewed and ran on unlicensed computers. Using ionCube encoded and secured PHP files requires a file called ionCube Loader to be installed on the web server and made available to PHP which is often required for a lot of PHP based applications. It handles the reading and execution of encoded files at run time. PHP can use the loader with one line added to a PHP configuration file that ‘php.ini’.
