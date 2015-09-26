@@ -1,4 +1,4 @@
-Translating by KnightJoker
+Translated by KnightJoker
 
 用Linux学习：使用这些Linux应用来征服你的数学
 ================================================================================
@@ -18,98 +18,96 @@ Linux提供了大量的教育软件和许多优秀的工具来帮助所有年龄
 数学是计算机的核心。如果有人用精益求精和纪律来预期一个伟大的操作系统，比如GNU/ Linux，那么这将是数学。如果你在寻求一些数学应用程序，那么你将不会感到失望。Linux提供了很多优秀的工具使得数学看起来和你曾经做过的一样令人畏惧，但实际上他们会简化你使用它的方式。
 ### Gnuplot ###
 
-Gnuplot is a command-line scriptable and versatile graphing utility for different platforms. Despite its name, it is not part of the GNU operating system. Although it is not freely licensed, it’s free-ware (meaning it’s copyrighted but free to use).
+Gnuplot 是一个适用于不同平台的命令行脚本化和多功能的图形工具。尽管它的名字，并不是GNU操作系统的一部分。也没有免费授权，但它是免费软件（这意味着它受版权保护，但免费使用）。
 
-To install `gnuplot` on an Ubuntu (or derivative) system, type
-
+要在Ubuntu系统（或者衍生系统）上安装 `gnuplot`，输入：
     sudo apt-get install gnuplot gnuplot-x11
 
-into a terminal window. To start the program, type
+进入一个终端窗口。启动该程序，输入：
 
     gnuplot
 
-You will be presented with a simple command line interface
+你会看到一个简单的命令行界面：
 
 ![learnmath-gnuplot](https://www.maketecheasier.com/assets/uploads/2015/07/learnmath-gnuplot.png)
 
-into which you can start typing functions directly. The plot command will draw a graph.
+在其中您可以直接开始输入函数。绘图命令将绘制一个曲线图。
 
-Typing, for instance,
+输入内容，例如，
 
     plot sin(x)/x
 
-into the `gnuplot` prompt, will open another window, wherein the graph is presented.
+随着`gnuplot的`提示，将会打开一个新的窗口，图像便会在里面呈现。
 
 ![learnmath-gnuplot-plot1](https://www.maketecheasier.com/assets/uploads/2015/07/learnmath-gnuplot-plot1.png)
 
-You can also set different attributes of the graphs in-line. For example, specifying “title” will give them just that.
+你也可以在线这个图设置不同的属性，比如像这样指定“title”
 
     plot sin(x) title 'Sine Function', tan(x) title 'Tangent'
 
 ![learnmath-gnuplot-plot2](https://www.maketecheasier.com/assets/uploads/2015/07/learnmath-gnuplot-plot2.png)
 
-You can give things a bit more depth and draw 3D graphs with the `splot` command.
+使用`splot`命令，你可以给的东西更深入一点并且绘制3D图形
 
     splot sin(x*y/20)
 
 ![learnmath-gnuplot-plot3](https://www.maketecheasier.com/assets/uploads/2015/07/learnmath-gnuplot-plot3.png)
 
-The plot window has a few basic configuration options,
+这个窗口有几个基本的配置选项,
 
 ![learnmath-gnuplot-options](https://www.maketecheasier.com/assets/uploads/2015/07/learnmath-gnuplot-options.png)
 
-but the true power of `gnuplot` lies within its command line and scripting capabilities. The extensive full documentation of `gnuplot` can be found [here][7] with a great tutorial for the previous version [on the Duke University’s website][8].
+但是`gnuplot`的真正力量在于在它的命令行和脚本功能，`gnuplot`广泛完整的文档可在这里找到，并在[Duke大学网站][8]上面看见这个了不起的教程[7]的原始版本。
 
 ### Maxima ###
 
-[Maxima][9] is a computer algebra system developed from the original sources of Macsyma. According to its SourceForge page,
+[Maxima][9]是从Macsyma原始资料开发的一个计算机代数系统，根据它的 SourceForge 页面，
 
-> “Maxima is a system for the manipulation of symbolic and numerical expressions, including differentiation, integration, Taylor series, Laplace transforms, ordinary differential equations, systems of linear equations, polynomials, sets, lists, vectors, matrices and tensors. Maxima yields high precision numerical results by using exact fractions, arbitrary-precision integers and variable-precision floating-point numbers. Maxima can plot functions and data in two and three dimensions.”
+> “Maxima是符号和数值的表达，包括微分，积分，泰勒级数，拉普拉斯变换，常微分方程，线性方程组，多项式，集合，列表，向量，矩阵和张量系统的操纵系统。Maxima通过精确的分数，任意精度的整数和可变精度浮点数产生高精度的计算结果。Maxima可以二维和三维中绘制函数和数据。“
 
-You will have binary packages for Maxima in most Ubuntu derivatives as well as the Maxima graphical interface. To install them all, type
+你将会获得二进制包用于大多数Ubuntu衍生系统的Maxima以及它的图形界面中，插入所有包，输入：
 
     sudo apt-get install maxima xmaxima wxmaxima
 
-into a terminal window. Maxima is a command line utility with not much of a UI, but if you start `wxmaxima`, you’ll get into a simple, yet powerful GUI.
+在终端窗口中，Maxima是一个没有太多UI的命令行工具，但如果你开始wxmaxima，你会进入一个简单但功能强大的图形用户界面。
 
 ![learnmath-maxima](https://www.maketecheasier.com/assets/uploads/2015/07/learnmath-maxima.png)
 
-You can start using this by simply starting to type. (Hint: Enter will add more lines; if you want to evaluate an expression, use “Shift + Enter.”)
+你可以开始输入这个来简单的一个开始。（提示：如果你想计算一个表达式，使用“Shift + Enter”回车后会增加更多的方法）
 
-Maxima can be used for very simple problems, as it also acts as a calculator,
+Maxima可以用于一些简单的问题，因此也可以作为一个计算器，
 
 ![learnmath-maxima-1and1](https://www.maketecheasier.com/assets/uploads/2015/07/learnmath-maxima-1and1.png)
 
-and much more complex ones as well.
+以及一些更复杂的问题,
 
 ![learnmath-maxima-functions](https://www.maketecheasier.com/assets/uploads/2015/07/learnmath-maxima-functions.png)
 
-It uses `gnuplot` to draw simple
+它使用`gnuplot`使得绘制简单,
 
 ![learnmath-maxima-plot](https://www.maketecheasier.com/assets/uploads/2015/07/learnmath-maxima-plot.png)
 
-and more elaborate graphs.
+或者绘制一些复杂的图形.
 
 ![learnmath-maxima-plot2](https://www.maketecheasier.com/assets/uploads/2015/07/learnmath-maxima-plot2.png)
 
-(It needs the `gnuplot-x11` package to display them.)
+（它需要gnuplot-X11的包，来显示它们。）
 
-Besides beautifying the expressions, Maxima makes it possible to export them in latex format, or do some operations on the highlighted functions with a right-click context menu,
+除了美化一些图形，Maxima也尽可能用latex格式导出它们，或者通过右键是捷菜单进行一些突出的操作.
 
 ![learnmath-maxima-menu](https://www.maketecheasier.com/assets/uploads/2015/07/learnmath-maxima-menu.png)
 
-while its main menus offer an overwhelming amount of functionality. Of course, Maxima is capable of much more than this. It has an extensive documentation [available online][10].
+然而其主菜单还是提供了大量压倒性的功能，当然Maxima的功能远不止如此，这里也有一个广泛使用的在线文档。
 
-### Conclusion ###
+### 总结 ###
 
-Mathematics is not an easy subject, and the excellent math software on Linux does not make it look easier, yet these applications make using Mathematics much more straightforward and productive. The above two applications are just an introduction to what Linux has to offer. If you are seriously engaged in math and need even more functionality with great documentation, you should check out the [Mathbuntu project][11].
-
+数学不是一个简单的学科，这些在Linux上的优秀软件也没有使得数学更加简单，但是这些应用使得使用数学变得更加的简单和工程化。以上两种应用都只是介绍一下Linux的所提供的。如果你是认真从事数学和需要更多的功能与丰富的文档，那你更应该看看这些Mathbuntu项目。
 --------------------------------------------------------------------------------
 
 via: https://www.maketecheasier.com/learn-linux-maths/
 
 作者：[Attila Orosz][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[KnightJoker](https://github.com/KnightJoker/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
