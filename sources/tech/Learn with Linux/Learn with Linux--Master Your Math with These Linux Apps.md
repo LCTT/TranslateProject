@@ -1,21 +1,21 @@
 Translating by KnightJoker
 
-Learn with Linux: Master Your Math with These Linux Apps
+用Linux学习：使用这些Linux应用来征服你的数学
 ================================================================================
 ![](https://www.maketecheasier.com/assets/uploads/2015/07/learnmath-featured.png)
 
-This article is part of the [Learn with Linux][1] series:
+这篇文章是[用Linux学习][1]系列的一部分:
 
-- [Learn with Linux: Learning to Type][2]
-- [Learn with Linux: Physics Simulation][3]
-- [Learn with Linux: Learning Music][4]
-- [Learn with Linux: Two Geography Apps][5]
-- [Learn with Linux: Master Your Math with These Linux Apps][6]
+- [用Linux学习: 学习类型][2]
+- [用Linux学习: 物理模拟][3]
+- [用Linux学习: 学习音乐][4]
+- [用Linux学习: 两个地理应用程序][5]
+- [用Linux学习: 用这些Linux应用来征服你的数学][6]
 
-Linux offers great educational software and many excellent tools to aid students of all grades and ages in learning and practicing a variety of topics, often interactively. The “Learn with Linux” series of articles offers an introduction to a variety of educational apps and software.
 
-Mathematics is the core of computing. If one would expect a great operating system, such as GNU/Linux, to excel in and discipline, it would be Math. If you seek mathematical applications, you will not be disappointed. Linux offers many excellent tools that will make Mathematics look as intimidating as it ever did, but at least they will simplify your way of using it.
+Linux提供了大量的教育软件和许多优秀的工具来帮助所有年龄段的学生学习和练习各种各样的话题,常常以交互的方式。与Linux一起学习这一系列的文章则为这些各种各样的教育软件和应用提供了一个介绍。
 
+数学是计算机的核心。如果有人用精益求精和纪律来预期一个伟大的操作系统，比如GNU/ Linux，那么这将是数学。如果你在寻求一些数学应用程序，那么你将不会感到失望。Linux提供了很多优秀的工具使得数学看起来和你曾经做过的一样令人畏惧，但实际上他们会简化你使用它的方式。
 ### Gnuplot ###
 
 Gnuplot is a command-line scriptable and versatile graphing utility for different platforms. Despite its name, it is not part of the GNU operating system. Although it is not freely licensed, it’s free-ware (meaning it’s copyrighted but free to use).
