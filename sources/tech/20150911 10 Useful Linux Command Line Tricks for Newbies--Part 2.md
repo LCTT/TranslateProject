@@ -1,3 +1,4 @@
+ictlyh Translating
 10 Useful Linux Command Line Tricks for Newbies – Part 2
 ================================================================================
 I remember when I first started using Linux and I was used to the graphical interface of Windows, I truly hated the Linux terminal. Back then I was finding the commands hard to remember and proper use of each one of them. With time I realised the beauty, flexibility and usability of the Linux terminal and to be honest a day doesn’t pass without using. Today, I would like to share some useful tricks and tips for Linux new comers to ease their transition to Linux or simply help them learn something new (hopefully).
