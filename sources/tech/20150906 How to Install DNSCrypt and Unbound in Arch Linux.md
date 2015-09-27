@@ -1,3 +1,6 @@
+translating---geekpi
+
+
 How to Install DNSCrypt and Unbound in Arch Linux
 ================================================================================
 **DNSCrypt** is a protocol that encrypt and authenticate communications between a DNS client and a DNS resolver. Prevent from DNS spoofing or man in the middle-attack. DNSCrypt are available for most operating system, including Linux, Windows, MacOSX android and iOS. And in this tutorial I'm using archlinux with kernel 4.1.
