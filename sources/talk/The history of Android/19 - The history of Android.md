@@ -1,3 +1,5 @@
+alim0x translating
+
 The history of Android
 ================================================================================
 ![Google Music Beta running on Gingerbread.](http://cdn.arstechnica.net/wp-content/uploads/2014/03/device-2014-03-31-110613.png)
