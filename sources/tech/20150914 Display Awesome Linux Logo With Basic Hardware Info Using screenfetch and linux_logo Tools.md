@@ -1,3 +1,4 @@
+翻译中：zky001正在翻译
 Display Awesome Linux Logo With Basic Hardware Info Using screenfetch and linux_logo Tools
 ================================================================================
 Do you want to display a super cool logo of your Linux distribution along with basic hardware information? Look no further try awesome screenfetch and linux_logo utilities.
@@ -215,7 +216,7 @@ Simply type the following command:
 via: http://www.cyberciti.biz/hardware/howto-display-linux-logo-in-bash-terminal-using-screenfetch-linux_logo/
 
 作者：Vivek Gite
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/zky001)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
