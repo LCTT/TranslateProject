@@ -1,3 +1,5 @@
+translating---geekpi
+
 Install and use Ansible (Automation Tool) in CentOS 7
 ================================================================================
 Ansible is a free & open source Configuration and automation tool for UNIX like operating system. It is written in python and similar to Chef or Puppet but there is one difference and advantage of Ansible is that we don’t need to install any agent on the nodes. It uses SSH for making communication to its nodes.
