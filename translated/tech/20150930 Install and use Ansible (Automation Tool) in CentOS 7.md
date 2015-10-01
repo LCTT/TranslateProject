@@ -1,44 +1,44 @@
-Install and use Ansible (Automation Tool) in CentOS 7
+在CentOS 7中安装并使用Ansible(自动化工具)
 ================================================================================
-Ansible is a free & open source Configuration and automation tool for UNIX like operating system. It is written in python and similar to Chef or Puppet but there is one difference and advantage of Ansible is that we don’t need to install any agent on the nodes. It uses SSH for making communication to its nodes.
+Ansible是一款为类Unix系统开发的免费开源配置和自动化工具。它用Python写成并且和Chef和Puppet相似，但是有一个不同和好处是我们不需要在节点中安装任何客户端。它使用SSH来和节点进行通信。
 
-In this article we will install and configure Ansible in CentOS 7 and will try to manage its two nodes.
+本篇中我们将在CentOS 7上安装并配置Ansible，并且尝试管理两个节点。
 
-**Ansible Server** – ansible.linuxtechi.com ( 192.168.1.15 )
+**Ansible 服务端** – ansible.linuxtechi.com ( 192.168.1.15 )
 
   **Nodes**                – 192.168.1.9 , 192.168.1.10
 
-### Step :1 Set EPEL repository ###
+### 第一步： 设置EPEL仓库 ###
 
-Ansible package is not available in the default yum repositories, so we will enable epel repository for CentOS 7 using below commands
+Ansible仓库默认不在yum仓库中，因此我们需要使用下面的命令启用epel仓库。
 
     [root@ansible ~]# rpm -iUvh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
 
-### Step:2 Install Anisble using yum command ###
+### 第二步： 使用yum安装Ansible ###
 
     [root@ansible ~]# yum install ansible
 
-Once the installation is completed, check the ansible version :
+安装完成后，检查ansible版本：
 
     [root@ansible ~]# ansible --version
 
 ![ansible-version](http://www.linuxtechi.com/wp-content/uploads/2015/09/ansible-version.jpg)
 
-### Step:3 Setup keys based SSH authentication with Nodes. ###
+### 第三步： 设置用于节点鉴权的SSH密钥 ###
 
-Generate keys on the Ansible server and copy public key to the nodes.
+在Ansible服务端生成密钥，并且复制公钥到节点中。
 
     root@ansible ~]# ssh-keygen
 
 ![ssh-keygen](http://www.linuxtechi.com/wp-content/uploads/2015/09/ssh-keygen.jpg)
 
-Use ssh-copy-id command to copy public key of Ansible server to its nodes.
+使用ssh-copy-id命令来复制Ansible公钥到节点中。
 
 ![ssh-copy-id-command](http://www.linuxtechi.com/wp-content/uploads/2015/09/ssh-copy-id-command.jpg)
 
-### Step:4 Define the nodes or inventory of servers for Ansible. ###
+### 第四步：为Ansible定义节点的清单 ###
 
-File ‘**/etc/ansible/hosts**‘ maintains the inventory of servers for Ansible.
+文件 ‘**/etc/ansible/hosts**‘ 维护了Ansible中服务器的清单。
 
     [root@ansible ~]# vi /etc/ansible/hosts
     [test-servers]
@@ -46,41 +46,42 @@ File ‘**/etc/ansible/hosts**‘ maintains the inventory of servers for Ansible
     192.168.1.10
 
 Save and exit the file.
+保存并退出文件
 
-Sample output of hosts file.
+主机文件示例。
 
 ![ansible-host](http://www.linuxtechi.com/wp-content/uploads/2015/09/ansible-host.jpg)
 
-### Step:5 Now try to run the Commands from Ansible Server. ###
+### 第五步：尝试在Ansible服务端运行命令 ###
 
-Check the connectivity of ‘test-servers’ or ansible nodes using ping
+使用ping检查‘test-servers’或者ansible节点的连通性。
 
     [root@ansible ~]# ansible -m ping 'test-servers'
 
 ![ansible-ping](http://www.linuxtechi.com/wp-content/uploads/2015/09/ansible-ping.jpg)
 
-#### Executing Shell commands : ####
+#### 执行shell命令 ####
 
-**Example :1 Check the uptime of Ansible nodes**
+**例子1：检查Ansible节点的运行时间 **
 
     [root@ansible ~]# ansible -m command -a "uptime" 'test-servers'
 
 ![ansible-uptime](http://www.linuxtechi.com/wp-content/uploads/2015/09/ansible-uptime.jpg)
 
-**Example:2 Check Kernel Version of nodes**
+**例子2：检查节点的内核版本 **
 
     [root@ansible ~]# ansible -m command -a "uname -r" 'test-servers'
 
 ![kernel-version-ansible](http://www.linuxtechi.com/wp-content/uploads/2015/09/kernel-version-ansible.jpg)
 
-**Example:3 Adding a user to the nodes**
+**例子3：给节点增加用户 **
 
     [root@ansible ~]# ansible -m command -a "useradd mark" 'test-servers'
     [root@ansible ~]# ansible -m command -a "grep mark /etc/passwd" 'test-servers'
-
+ 
 ![useradd-ansible](http://www.linuxtechi.com/wp-content/uploads/2015/09/useradd-ansible.jpg)
 
-**Example:4 Redirecting the output of command to a file**
+**例子4：重定向输出到文件中**
 
     [root@ansible ~]# ansible -m command -a "df -Th" 'test-servers' > /tmp/command-output.txt
 
@@ -91,7 +92,7 @@ Check the connectivity of ‘test-servers’ or ansible nodes using ping
 via: http://www.linuxtechi.com/install-and-use-ansible-in-centos-7/
 
 作者：[Pradeep Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
