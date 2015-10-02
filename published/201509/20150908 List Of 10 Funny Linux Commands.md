@@ -1,4 +1,4 @@
-10条真心有趣的Linux命令
+10 条真心有趣的 Linux 命令
 ================================================================================
 
 **在终端工作是一件很有趣的事情。今天，我们将会列举一些有趣得为你带来欢笑的Linux命令。**
@@ -29,7 +29,7 @@
 
 ### 3. yes ###
 
-    #yes <string>
+    # yes <string>
 
 这个命令会不停打印字符串，直到用户把这进程给结束掉。
 
@@ -38,6 +38,7 @@
 ![Selection_005](http://www.unixmen.com/wp-content/uploads/2015/09/Selection_0054.png)
 
 ### 4. figlet ###
+
 这个命令可以用apt-get安装，安装之后，在**/usr/share/figlet**可以看到一些ascii字体文件。
 
     cd /usr/share/figlet
@@ -45,26 +46,25 @@
 ----------
 
     #figlet -f <font>  <string>
-
-e.g.
-
     #figlet -f big.flf unixmen
 
 ![Selection_006](http://www.unixmen.com/wp-content/uploads/2015/09/Selection_0062.png)
 
-#figlet -f block.flf  unixmen
+	#figlet -f block.flf  unixmen
 
 ![Selection_007](http://www.unixmen.com/wp-content/uploads/2015/09/Selection_0072.png)
 
 当然，你也可以尝试使用其他的选项。
 
 ### 5. asciiquarium ###
+
 这个命令会将你的终端变成一个海洋馆。
-下载term animator
+
+下载term animator：
 
     # wget http://search.cpan.org/CPAN/authors/id/K/KB/KBAUCOM/Term-Animation-2.4.tar.gz
 
-安装并且配置这个包
+安装并且配置这个包：
 
     # tar -zxvf Term-Animation-2.4.tar.gz
     # cd Term-Animation-2.4/
@@ -75,14 +75,14 @@ e.g.
 
     # apt-get install libcurses-perl
 
-下载并且安装asciiquarium
+下载并且安装asciiquarium：
 
     # wget http://www.robobunny.com/projects/asciiquarium/asciiquarium.tar.gz
     # tar -zxvf asciiquarium.tar.gz 
     # cd asciiquarium_1.0/
     # cp asciiquarium /usr/local/bin/
 
-执行如下命令
+执行如下命令：
 
     # /usr/local/bin/asciiquarium
 
@@ -176,8 +176,8 @@ aafire能让你的终端燃起来。
 via: http://www.unixmen.com/list-10-funny-linux-commands/
 
 作者：[Rajneesh Upadhyay][a]
-译者：[tnuoccalanosrep](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[tnuoccalanosrep](https://github.com/tnuoccalanosrep)
+校对：[wxy](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
