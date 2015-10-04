@@ -1,3 +1,5 @@
+FSSlc translating
+
 RHCSA Series: Essentials of Virtualization and Guest Administration with KVM – Part 15
 ================================================================================
 If you look up the word virtualize in a dictionary, you will find that it means “to create a virtual (rather than actual) version of something”. In computing, the term virtualization refers to the possibility of running multiple operating systems simultaneously and isolated one from another, on top of the same physical (hardware) system, known in the virtualization schema as host.
