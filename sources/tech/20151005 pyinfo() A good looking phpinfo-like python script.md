@@ -20,8 +20,19 @@ def application(environ, start_response):
     start_response('200 OK', [('Content-type', 'text/html')])
     return [output]
 ```
-<script src="https://gist.github.com/branneman/951825.js"></script>
+---
 
+via：http://bran.name/articles/pyinfo-a-good-looking-phpinfo-like-python-script/
+
+作者：[Bran van der Meer][a]
+译者：[译者ID](https://github.com/译者ID)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，
+[Linux中国](https://linux.cn/) 荣誉推出
+
+
+[a]:http://bran.name/resume/
 [1]:https://gist.github.com/951825#file_pyinfo.py
 [2]:http://bran.name/dump/pyinfo.zip
 [3]:http://bran.name/dump/pyinfo/index.py
