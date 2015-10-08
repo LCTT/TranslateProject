@@ -1,3 +1,4 @@
+translation by strugglingyouth
 pyinfo() A good looking phpinfo-like python script
 ================================================================================
 Being a native php guy, I'm used to having phpinfo(), giving me easy access to php.ini settings and loaded modules etc. So ofcourse I wanted to call the not existing pyinfo() function, to no avail. My fingers quickly pressed CTRL-E to google for a implementation of it, someone must've ported it already?
