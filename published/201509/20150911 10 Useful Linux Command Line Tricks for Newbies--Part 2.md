@@ -1,20 +1,20 @@
-给新手的 10 个有用 Linux 命令行技巧 - 第二部分
+给新手的 10 个有用 Linux 命令行技巧
 ================================================================================
-我记得我第一次使用 Linux 的时候，我还习惯于 Windows 的图形界面，我真的很讨厌 Linux 终端。那时候我觉得命令难以记忆，不能正确使用它们。随着时间推移，我意识到了 Linux 终端的优美、灵活和可用性，说实话，我没有一天不使用它。今天，我很高兴和刚开始接触 Linux 的人一起来分享一些有用的技巧和提示，希望能帮助他们更好的向 Linux 过度，并帮助他们学到一些新的东西（希望如此）。
+
+我记得我第一次使用 Linux 的时候，我还习惯于 Windows 的图形界面，我真的很讨厌 Linux 终端。那时候我觉得命令难以记忆，不能正确使用它们。随着时间推移，我意识到了 Linux 终端的优美、灵活和可用性，说实话，我没有一天不使用它。今天，我很高兴和刚开始接触 Linux 的人一起来分享一些有用的技巧和提示，希望能帮助他们更好的向 Linux 过渡，并帮助他们学到一些新的东西（希望如此）。
 
 ![给新手的 10 个命令行技巧](http://www.tecmint.com/wp-content/uploads/2015/09/10-Linux-Commandline-Tricks.jpg)
 
-10 个 Linux 命令行技巧 - 第二部分
+*10 个 Linux 命令行技巧*
 
+- [5 个有趣的 Linux 命令行技巧][1]
+- [管理 Linux 文件类型的 5 个有用命令][2]
 
-- [Linux 中 5 个有趣的命令行提示和技巧 - 第一部分][1]
-- [管理 Linux 文件类型的 5 个有用命令 – 第三部分][2]
-
-这篇文章希望向你展示一些不需要很高的技术而可以像一个高手一样使用 Linux 终端的有用技巧。你只需要一个 Linux 终端和一些自由时间来体会这些命令。
+这篇文章希望向你展示一些不需要很高的技术就可以像一个高手一样使用 Linux 终端的有用技巧。你只需要一个 Linux 终端和一些自由时间来体会这些命令。
 
 ### 1. 找到正确的命令 ###
 
-执行正确的命令对你的系统来说非常重要。然而在 Linux 中有很多通常难以记忆的不同的命令行。那么怎样才能找到你需要的正确命令呢？答案是 apropos。你只需要运行：
+执行正确的命令对你的系统来说非常重要。然而在 Linux 中有如此多的、难以记忆的各种的命令行。那么怎样才能找到你需要的正确命令呢？答案是 apropos。你只需要运行：
 
     # apropos <description>
 
@@ -31,7 +31,7 @@
 
 ### 2. 执行之前的命令 ###
 
-很多时候你需要一遍又一遍执行相同的命令。尽管你可以重复按你键盘上的 Up 键，你也可以用 history 命令。这个命令会列出自从你上次启动终端以来所有输入过的命令：
+很多时候你需要一遍又一遍执行相同的命令。尽管你可以重复按你键盘上的向上光标键，但你也可以用 history 命令替代。这个命令会列出自从你上次启动终端以来所有输入过的命令：
 
     # history
     
@@ -73,12 +73,11 @@
 
 如果你不习惯使用类似 cd、cp、mv、rm 等命令，你可以使用 midnight 命令。它是一个简单的可视化 shell，你可以在上面使用鼠标：
 
-
 ![Midnight 命令](http://www.tecmint.com/wp-content/uploads/2015/09/mc-command.jpg)
 
-Midnight 命令
+*Midnight 命令*
 
-多亏了 F1 到 F12 键，你可以轻易地执行不同任务。只需要在底部选择对应的命令。要选择文件或者目录，点击 “Insert” 按钮。
+借助 F1 到 F12 键，你可以轻易地执行不同任务。只需要在底部选择对应的命令。要选择文件或者目录，按下 “Insert” 键。
 
 简而言之 midnight 就是所谓的 “mc”。要安装 mc，只需要运行：
 
@@ -96,21 +95,21 @@ Midnight 命令
 
 ![Midnight 命令移动文件](http://www.tecmint.com/wp-content/uploads/2015/09/Midnight-Commander-Move-Files.jpg)
 
-Midnight 命令移动文件
+*Midnight 命令移动文件*
 
 按 F6 按钮移动文件到新的目录。MC 会请求你确认：
 
 ![移动文件到新目录](http://www.tecmint.com/wp-content/uploads/2015/09/Move-Files-to-new-Directory.png)
 
-移动文件到新目录
+*移动文件到新目录*
 
 确认了之后，文件就会被移动到新的目标目录。
 
-扩展阅读：[如何在 Linux 中使用 Midnight 命令文件管理器][4]
+- 扩展阅读：[如何在 Linux 中使用 Midnight 命令文件管理器][4]
 
 ### 4. 在指定时间关闭计算机 ###
 
-有时候你需要在结束工作几个小时后再关闭计算机。你可以通过使用下面的命令在指定时间关闭你的计算机：
+有时候你需要在下班几个小时后再关闭计算机。你可以通过使用下面的命令在指定时间关闭你的计算机：
 
     $ sudo shutdown 21:00
 
@@ -151,13 +150,12 @@ Midnight 命令移动文件
     ...
 
 ### 6. 查找文件 ###
-### 6. Search for Files ###
 
 查找文件有时候并不像你想象的那么简单。一个搜索文件的好例子是：
 
     # find /home/user -type f
 
-这个命令会搜索 /home/user 目录下的所有文件。find 命令真的很强大，你可以传递更多选项给它使得你的搜索更加详细。如果你想搜索比特定大小大的文件，可以使用：
+这个命令会搜索 /home/user 目录下的所有文件。find 命令真的很强大，你可以传递更多选项给它使得你的搜索更加详细。如果你想搜索超过特定大小的文件，可以使用：
 
     # find . -type f -size 10M
 
@@ -221,7 +219,7 @@ Midnight 命令移动文件
     10.0.0.4
     10.0.0.5
 
-这里有一个简单的解决方法。收集服务器的 IP 地址到文件 list.txt 中，像上面那样一行一个。然后运行：
+这里有一个简单的解决方法。将服务器的 IP 地址写到文件 list.txt 中，像上面那样一行一个。然后运行：
 
     # for in $i(cat list.txt); do ssh user@$i 'bash command'; done
 
@@ -239,15 +237,15 @@ via: http://www.tecmint.com/10-useful-linux-command-line-tricks-for-newbies/
 
 作者：[Marin Todorov][a]
 译者：[ictlyh](http://mutouxiaogui.cn/blog/)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:http://www.tecmint.com/author/marintodorov89/
-[1]:http://www.tecmint.com/5-linux-command-line-tricks/
+[1]:https://linux.cn/article-5485-1.html
 [2]:http://www.tecmint.com/manage-file-types-and-set-system-time-in-linux/
 [3]:http://www.tecmint.com/history-command-examples/
 [4]:http://www.tecmint.com/midnight-commander-a-console-based-file-manager-for-linux/
 [5]:http://www.tecmint.com/35-practical-examples-of-linux-find-command/
 [6]:http://www.linuxsay.com/
-[7]:http://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/
+[7]:https://linux.cn/article-5202-1.html
