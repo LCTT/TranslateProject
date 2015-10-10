@@ -1,3 +1,5 @@
+alim0x translating
+
 Open Source Media Player MPlayer 1.2 Released
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/10/MPlayer-1.2.jpg)
@@ -30,19 +32,19 @@ I have used Ubuntu 15.04 for the installation of MPlayer 1.2. Installation instr
 Open a terminal and use the following commands:
 
     wget http://www.mplayerhq.hu/MPlayer/releases/MPlayer-1.2.tar.xz
-    
+
     tar xvf MPlayer-1.1.1.tar.xz
-    
+
     cd MPlayer-1.2
-    
+
     sudo apt-get install yasm
-    
+
     ./configure
 
 When you run make, it will throw a number of things on the terminal screen and takes some time to build it. Have patience.
 
     make
-    
+
     sudo make install
 
 If you feel uncomfortable using the source code, I advise you to either wait forMPlayer 1.2 to land in the repositories of your Linux distribution or use an alternate like MPV.
