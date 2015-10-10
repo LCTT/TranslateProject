@@ -2,7 +2,7 @@
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/10/MPlayer-1.2.jpg)
 
-在 [MPlaayer][1] 1.1 发布将近3年后，新版 MPlayer 终于在上周发布了。在新版本 MPlayer 1.2 中带来了对许多新编码的解码支持。
+在 [MPlayer][1] 1.1 发布将近3年后，新版 MPlayer 终于在上周发布了。在新版本 MPlayer 1.2 中带来了对许多新编码的解码支持。
 
 MPlayer 是一款跨平台的开源媒体播放器。它的名字是“Movie Player”的缩写。MPlayer 已经成为 Linux 上最老牌的媒体播放器之一，在过去的15年里，它还启发了许多其他媒体播放器。著名的基于 MPlayer 的媒体播放器有：
 
