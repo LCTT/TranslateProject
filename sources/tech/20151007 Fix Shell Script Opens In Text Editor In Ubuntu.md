@@ -1,3 +1,5 @@
+translating---geekpi
+
 Fix Shell Script Opens In Text Editor In Ubuntu
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/10/Run-Shell-Script-on-Double-Click.jpg)
