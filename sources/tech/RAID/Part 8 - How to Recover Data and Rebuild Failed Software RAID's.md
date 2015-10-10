@@ -1,3 +1,4 @@
+translation by strugglingyouth  
 How to Recover Data and Rebuild Failed Software RAID’s – Part 8
 ================================================================================
 In the previous articles of this [RAID series][1] you went from zero to RAID hero. We reviewed several software RAID configurations and explained the essentials of each one, along with the reasons why you would lean towards one or the other depending on your specific scenario.
