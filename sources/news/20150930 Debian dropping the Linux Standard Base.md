@@ -37,7 +37,7 @@ Perhaps, then, LSB compliance is still important to some business sectors, but i
 via：https://lwn.net/Articles/658809/
 
 作者：Nathan Willis
-译者：[译者ID](https://github.com/译者ID)
+译者：[Yuking](https://github.com/Yuking-net)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，
