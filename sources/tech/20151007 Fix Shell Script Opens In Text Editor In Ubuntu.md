@@ -1,39 +1,37 @@
-translating---geekpi
-
-Fix Shell Script Opens In Text Editor In Ubuntu
+修复Sheell脚本在Ubuntu中用文本编辑器打开的方式
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/10/Run-Shell-Script-on-Double-Click.jpg)
 
-When you double click on a shell script (.sh file) what do you expect? The normal expectation would be that it is executed. But this might not be the case in Ubuntu, or I should better say in case of Files (Nautilus). You may go crazy yelling “Run, File, Run”, but the file won’t run and instead it gets opened in Gedit.
+当你双击一个脚本(.sh文件)的时候，你想要做的是什么？通常的想法是执行它。但是在Ubuntu下面却不是这样，或者我应该更确切地说是在Files(Nautilus)中。你可能会疯狂地大叫“运行文件，运行文件”，但是文件没有运行而是用Gedit打开了。
 
-I know that you would say, does the file has execute permission?  And I say, yes. The shell script has execute permission but still if I double click on it, it is opened in a text editor. I don’t want it and if you are facing the same issue, I assume that even you don’t want it.
+我知道你也许会说文件有可执行权限么？我会说是的。脚本有可执行权限但是当我双击它的时候，它还是用文本编辑器打开了。我不希望这样如果你遇到了同样的问题，我想你也许也不需要这样。
 
-I know that you would have been advised to run it in the terminal and I know that it would work but that’s not an excuse for the GUI way to not work. Is it?
+我知道你或许已经被建议在终端下面运行，我知道这个可行但是这不是一个在GUI下不能运行的借口是么？
 
-In this quick tutorial, we shall see **how to make shell script run by double clicking on it**.
+这篇教程中，我们会看到**如何在双击后运行shell脚本。**
 
-#### Fix Shell script opens in text editor in Ubuntu ####
+#### 修复在Ubuntu中shell脚本用文本编辑器打开的方式 ####
 
-The reason why shell scripts are opening in text editor is the default behavior set in Files (file manager in Ubuntu). In earlier versions, it would ask you if you want to run the file or open for editing. The default behavior has been changed in later versions.
+shell脚本用文件编辑器打开的原因是Files（Ubuntu中的文件管理器）中的默认行为设置。在更早的版本中，它或许会询问你是否运行文件或者用编辑器打开。默认的行位在新的版本中被修改了。
 
-To fix it, go in file manager and from the top menu and click on **Preference**:
+要修复这个，进入文件管理器，并在菜单中点击**选项**：
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/10/execute-shell-program-ubuntu-1.png)
 
-Next in **Files preferences**, go to **Behavior** tab and you’ll see the option of “**Executables Text Files**“.
+接下来在**文件选项**中进入**行为**标签中，你会看到**文本文件执行**选项。
 
-By default, it would have been set to “View executable text files when they are opened”. I would advise you to change it to “Ask each time” so that you’ll have the choice whether to execute it or edit but of course you can set it by default for execution. Your choice here really.
+默认情况下，它被设置成“在打开是显示文本文件”。我建议你把它改成“每次询问”，这样你可以选择是执行还是编辑了，当然了你也可以选择默认执行。你可以自行选择。
 
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/10/execute-shell-program-ubuntu-2.png)
 
-I hope this quick tip helped you to fix this little ‘issue’. Questions and suggestions are always welcomed.
+我希望这个贴士可以帮你修复这个小“问题”。欢迎提出问题和建议。
 
 --------------------------------------------------------------------------------
 
 via: http://itsfoss.com/shell-script-opens-text-editor/
 
 作者：[Abhishek][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
