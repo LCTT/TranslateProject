@@ -1,5 +1,7 @@
 The Brief History Of Aix, HP-UX, Solaris, BSD, And LINUX
 ================================================================================
+![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/05/linux-712x445.png)
+
 Always remember that when doors close on you, other doors open. [Ken Thompson][1] and [Dennis Richie][2] are a great example for such saying. They were two of the best information technology specialists in the **20th** century as they created the **UNIX** system which is considered one the most influential and inspirational software that ever written.
 
 ### The UNIX systems beginning at Bell Labs ###
