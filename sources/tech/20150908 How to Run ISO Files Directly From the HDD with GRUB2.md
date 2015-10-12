@@ -1,36 +1,31 @@
-Translating by Locez
-How to Run ISO Files Directly From the HDD with GRUB2
+如何使用 GRUB 2 直接从硬盘运行 ISO 文件
 ================================================================================
 ![](https://www.maketecheasier.com/assets/uploads/2015/07/rundirectiso-featured.png)
-Most Linux distros offer a live environment, which you can boot up from a USB drive, for you to test the system without installing. You can either use it to evaluate the distro or as a disposable OS. While it is easy to copy these onto a USB disk, in certain cases one might want to run the same ISO image often or run different ones regularly. GRUB 2 can be configured so that you do not need to burn the ISOs to disk or use a USB drive, but need to run a live environment directly form the boot menu.
+大多数 Linux 发行版都会提供一个可以从 USB 启动的 live 环境，以便用户无需安装即可测试系统。我们可以用它来评测这个发行版或仅仅是当成一个一次性系统，并且很容易将这些文件复制到一个 U 盘上，在某些情况下，我们可能需要经常运行同一个或不同的 ISO 镜像。GRUB 2 可以配置成直接从启动菜单运行一个 live 环境，而不需要烧录这些 ISO 到硬盘或 USB 设备。
 
-### Obtaining and checking bootable ISO images ###
+### 获取和检查可启动的 ISO 镜像 ###
+为了获取 ISO 镜像，我们通常应该访问所需要的发行版的网站下载与我们架构兼容的镜像文件。如果这个镜像可以从 U 盘启动，那它也应该可以从 GRUB 菜单启动。
 
-To obtain an ISO image, you should usually visit the website of the desired distribution and download any image that is compatible with your setup. If the image can be started from a USB, it should be able to start from the GRUB menu as well.
-
-Once the image has finished downloading, you should check its integrity by running a simple md5 check on it. This will output a long combination of numbers and alphanumeric characters
+当镜像下载完后，我们应该通过 MD5 校验检查它的完整性。这会输出一大串数字与字母合成的序列。
 
 ![](https://www.maketecheasier.com/assets/uploads/2015/07/rundirectiso-md5.png)
 
-which you can compare against the MD5 checksum provided on the download page. The two should be identical.
+将这个序列与下载页提供的 MD5 校验码进行比较，两者应该完全相同。
 
-### Setting up GRUB 2 ###
+### 配置 GRUB 2 ###
+ISO 镜像文件包含了整个系统。我们要做的仅仅是告诉 GRUB 2 哪里可以找到 kernel 和 initramdisk 或 initram 文件系统（这取决于我们所使用的发行版）。
 
-ISO images contain full systems. All you need to do is direct GRUB2 to the appropriate file, and tell it where it can find the kernel and the initramdisk or initram filesystem (depending on which one your distribution uses).
+在下面的例子中，一个 Kubuntu 15.04 live 环境将被配置到 Ubuntu 14.04 盒子的 Grub 启动菜单项。这应该能在大多数新的以 Ubuntu 为基础的系统上运行。如果你是其他系统并且想实现一些其它的东西，你可以从[这些文件][1]获取灵感，但这会要求你拥有一点 GRUB 使用经验。
 
-In this example, a Kubuntu 15.04 live environment will be set up to run on an Ubuntu 14.04 box as a Grub menu item. It should work for most newer Ubuntu-based systems and derivatives. If you have a different system or want to achieve something else, you can get some ideas on how to do this from one of [these files][1], although it will require a little experience with GRUB.
+这个例子的文件 `kubuntu-15.04-desktop-amd64.iso`
 
-In this example the file `kubuntu-15.04-desktop-amd64.iso`
+放在位于 `/dev/sda1` 的 `/home/maketecheasier/TempISOs/` 上.
 
-lives in `/home/maketecheasier/TempISOs/` on `/dev/sda1`.
-
-To make GRUB2 look for it in the right place, you need to edit the
+为了使 GRUB 2 能正确找到它，我们应该编辑
 
     /etc/grub.d40-custom
 
 ![](https://www.maketecheasier.com/assets/uploads/2015/07/rundirectiso-40-custom-empty.png)
-
-To start Kubuntu from the above location, add the following code (after adjusting it to your needs) below the commented section, without modifying the original content.
 
     menuentry "Kubuntu 15.04 ISO" {
     set isofile="/home/maketecheasier/TempISOs/kubuntu-15.04-desktop-amd64.iso"
@@ -42,52 +37,52 @@ To start Kubuntu from the above location, add the following code (after adjustin
 
 ![](https://www.maketecheasier.com/assets/uploads/2015/07/rundirectiso-40-custom-new.png)
 
-### Breaking down the above code ###
+### 分析上述代码 ###
 
-First set up a variable named `$menuentry`. This is where the ISO file is located. If you want to change to a different ISO, you need to change the bit where it says set `isofile="/path/to/file/name-of-iso-file-.iso"`.
+首先设置了一个变量名 `$menuentry` ，这是 ISO 文件的所在位置 。如果你想改变一个 ISO ，你应该修改 `isofile="/path/to/file/name-of-iso-file-.iso"`.
 
-The next line is where you specify the loopback device; you also need to give it the right partition number. This is the bit where it says
+下一行是指定回环设备，且必须给出正确的分区号码。
 
     loopback loop (hd0,1)$isofile
 
-Note the hd0,1 bit; it is important. This means first HDD, first partition (`/dev/sda1`).
+注意 hd0,1 这里非常重要，它的意思是第一硬盘，第一分区 (`/dev/sda1`)。
 
-GRUB’s naming here is slightly confusing. For HDDs, it starts counting from “0”, making the first HDD #0, the second one #1, the third one #2, etc. However, for partitions, it will start counting from 1. First partition is #1, second is #2, etc. There might be a good reason for this but not necessarily a sane one (UX-wise it is a disaster, to be sure)..
+GRUB 的命名在这里稍微有点困惑，对于硬盘来说，它从 “0” 开始计数，第一块硬盘为 #0 ，第二块为 #1 ，第三块为 #2 ，依此类推。但是对于分区来说，它从 “1” 开始计数，第一个分区为 #1 ，第二个分区为 #2 ，依此类推。也许这里有一个很好的原因，但肯定不是明智的（明显用户体验很糟糕）..
 
-This makes fist disk, first partition, which in Linux would usually look something like `/dev/sda1` become `hd0,1` in GRUB2. The second disk, third partition would be `hd1,3`, and so on.
+在 Linux 中第一块硬盘，第一个分区是 `/dev/sda1` ，但在 GRUB2 中则是 `hd0,1` 。第二块硬盘，第三个分区则是 `hd1,3`, 依此类推.
 
-The next important line is
+下一个重要的行是
 
     linux (loop)/casper/vmlinuz.efi boot=casper iso-scan/filename=${isofile} quiet splash
 
-It will load the kernel image. On newer Ubuntu Live CDs, this would be in the `/casper` directory and called `vmlinuz.efi`. If you use a different system, your kernel might be missing the `.efi` extension or be located somewhere else entirely (You can easily check this by opening the ISO file with an archive manager and looking inside `/casper.`). The last options, `quiet splash`, would be your regular GRUB options, if you care to change them.
+这会载入内核镜像，在新的 Ubuntu Live CD 中，内核被存放在 `/casper` 目录，并且命名为 `vmlinuz.efi` 。如果你使用的是其它系统，可能会没有 `.efi` 扩展名或内核被存放在其它地方 (可以使用归档管理器打开 ISO 文件在 `/casper` 中查找确认)。最后一个选项， `quiet splash`, 是一个常规的 GRUB 选项无论你是否在意改动它们。
 
-Finally
+最后
 
     initrd (loop)/casper/initrd.lz
 
-will load `initrd`, which is responsible to load a RAMDisk into memory for bootup.
+这会载入 `initrd` ，它负责载入 RAMDisk 到内存用于启动。 
 
-### Booting into your live system ###
+### 启动 live 系统 ###
 
-To make it all work, you will only need to update GRUB2
+做完上面所有的步骤后，需要更新 GRUB2
 
     sudo update-grub
 
 ![](https://www.maketecheasier.com/assets/uploads/2015/07/rundirectiso-updare-grub.png)
 
-When you reboot your system, you should be presented with a new GRUB entry which will allow you to load into the ISO image you’ve just set up.
+当重启系统后，应该可以看见一个新的，并且允许我们启动刚刚配置的 ISO 镜像的 GRUB 条目
 
 ![](https://www.maketecheasier.com/assets/uploads/2015/07/rundirectiso-grub-menu.png)
 
-Selecting the new entry should boot you into the live environment, just like booting from a DVD or USB would.
+选择这个新条目就允许我们像从 DVD 或 U 盘中启动一个 live 环境一样。
 
 --------------------------------------------------------------------------------
 
 via: https://www.maketecheasier.com/run-iso-files-hdd-grub2/
 
 作者：[Attila Orosz][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/locez)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
