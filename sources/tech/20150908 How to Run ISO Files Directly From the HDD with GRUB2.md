@@ -82,7 +82,7 @@ GRUB 的命名在这里稍微有点困惑，对于硬盘来说，它从 “0” 
 via: https://www.maketecheasier.com/run-iso-files-hdd-grub2/
 
 作者：[Attila Orosz][a]
-译者：[译者ID](https://github.com/locez)
+译者：[Locez](https://github.com/locez)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
