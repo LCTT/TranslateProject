@@ -1,3 +1,4 @@
+translation by strugglingyouth
 10 Useful Utilities For Linux Users
 ================================================================================
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2014/09/linux-656x445.png)
