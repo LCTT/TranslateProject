@@ -1,3 +1,5 @@
+alim0x translating
+
 Display Awesome Linux Logo With Basic Hardware Info Using screenfetch and linux_logo Tools
 ================================================================================
 Do you want to display a super cool logo of your Linux distribution along with basic hardware information? Look no further try awesome screenfetch and linux_logo utilities.
@@ -80,7 +82,7 @@ To take a screenshot and to save a file, enter:
 
 You will see a screenshot file at ~/Desktop/screenFetch-*.jpg. To take a screenshot and upload to imgur directly, enter:
 
-    $ screenfetch -su imgur 
+    $ screenfetch -su imgur
 
 **Sample outputs:**
 
@@ -100,7 +102,7 @@ You will see a screenshot file at ~/Desktop/screenFetch-*.jpg. To take a screens
        `ossssssssssssssssssssss/    RAM: 6405MB / 8192MB
          :ooooooooooooooooooo+.
           `:+oo+/:-..-:/+o+/-      
-    
+
     Taking shot in 3.. 2.. 1.. 0.
     ==>  Uploading your screenshot now...your screenshot can be viewed at http://imgur.com/HKIUznn
 
@@ -130,7 +132,7 @@ Simply type the following command as per your Linux distro.
 
 Simply type the following command:
 
-    $ linux_logo 
+    $ linux_logo
 
 ![](http://s0.cyberciti.org/uploads/cms/2015/09/debian-linux_logo.jpg)
 
@@ -176,7 +178,7 @@ You can see a list of compiled in logos using:
     	28	Banner	Yes	sourcemage	Source Mage GNU/Linux large
     	29	Banner	Yes	suse		SUSE Logo
     	30	Banner	Yes	ubuntu		Ubuntu Logo
-    
+
     Do "linux_logo -L num" where num is from above to get the appropriate logo.
     Remember to also use -a to get ascii version.
 
