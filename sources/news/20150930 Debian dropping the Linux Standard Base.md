@@ -1,38 +1,35 @@
-Debian dropping the Linux Standard Base
-=======================================
+Debian拋弃Linux标准规范
+=======================
 
-The Linux Standard Base (LSB) is a [specification][1] that purports to define the services and application-level ABIs that a Linux distribution will provide for use by third-party programs.  But some in the Debian project are questioning the value of maintaining LSB compliance—it has become, they say, a considerable amount of
-work for little measurable benefit.
+Linux标准规范（LSB）是一个意图定义一个Linux发行版提供的第三方程序的服务和应用层ABI的[规范][1]。但Debian项目内的某些人正在质疑维持兼容LSB的价值，他们认为，该项工作的工作量巨大，但好处有限。
 
-The LSB was first released in 2001, and was modeled to a degree on the [POSIX][2] and [Single UNIX Specification][3] standards.  Today, the LSB is maintained by a [working group][4] at the Linux Foundation. The most recent release was [LSB 5.0][5] in June 2015.  It defines five LSB modules (Core, Desktop, Languages, Imaging, and Trial Use).
+LSB于2001年首次公布，建立在[POSIX][2]和[单一UNIX规范][3]的基础之上。目前，LSB由Linux基金会的一个[工作小组][4]维护。最新的版本是于2015年6月发布的[LSB 5.0][5]。它定义了五个LSB模块（核芯、桌面、语言、图形和试用）。
 
-The bulk of each module consists of a list of required libraries and the mandatory version for each, plus a description of the public functions and data definitions for each library.  Other contents of the modules include naming and organizational specifications, such as the filesystem layout in the [Filesystem Hierarchy Standard (FHS)][6] or directory specifications like the Freedesktop [XDG Base Directory][7] specification.
+每个模块都包含了一系列所需的库及其强制性版本，外加对每个库的公共函数和数据定义的描述。这些模块还包括命名和组织规范，如[文件系统层次标准（FHS）][6]中的文件系统布局或象Freedesktop的[XDG基础目录][7]规范这样的目录规范。
 
-In what appears to be sheer coincidence, during the same week that LSB 5.0 was released, a discussion arose within the Debian project as to whether or not maintaining LSB compliance was a worthwhile pursuit for Debian.  After LSB compliance was mentioned in passing in another thread, Didier Raboud took the opportunity to [propose][8] scaling back Debian's compliance efforts to the bare minimum.  As it stands today, he said, Debian's `lsb-*` meta-packages attempt to require the correct versions of the libraries mentioned in the standard, but no one is actually checking that all of the symbols and data definitions are met as aresult.
+似乎只是一个巧合，就在 LSB 5.0 发布的那一周，Debian 项目内部针对Debian是否值得追求维持兼容LSB进行了一次讨论。在另一个贴子中，在提及兼容LSB后，Didier Raboud顺势[提议][8]将Debian的兼容工作维持在最低水平。他说，目前的情况是，Debian的“lsb-*”元包要求有该标准中提及的库的正确版本，但事实上却没有人去检查所有的符号和数据定义是否满足要求。
 
-Furthermore, the LSB continues to grow; the 4.1 release (the most recent when Debian "jessie" was released) consisted of "*1493 components, 1672 libs, 38491 commands, 30176 classes and 716202 interfaces*," he said.  No one seems interested in checking those details in the Debian packages, he noted, adding that "*I've held an LSB BoF last year at DebConf, and discussed src:lsb with various people back then, and what I took back was 'roughly no one cares'.*"  Just as importantly, though, the lack of interest does not seem to be limited to Debian:
+另外，LSB还不断在膨胀；他说，4.1版（Debian “jessie”发布时的最新版本）包含“*1493个组件、1672个库、38491条命令、30176个类和716202个接口*”。似乎没有人有兴趣检查Debian包中的这些细节，他解释道，“*去年在DebConf上我举行过一次LSB BoF，后来又与很多人讨论过src:lsb，我收回自己的‘几乎没有人在意’的说法*”。但，重要的是，Debian似乎并不仅局限于兴趣的缺乏：
 
-	The crux of the issue is, I think, whether this whole game is worth the work: I am yet to hear about software distribution happening through LSB packages. There are only _8_ applications by 6 companies on the LSB certified applications list, of which only one is against LSB >= 4.
+	我认为，这个问题的关键在于是否值得去玩这整个游戏：我还没听说有哪个软件通过LSB包来发行。LSB认证的应用清单上只有6个公司的_8_个应用，其中仅有一个 LSB >= 4。
 
-Raboud proposed that Debian drop everything except for the [lsb-base][9] package (which currently includes a small set of shell functions for use by the init system) and the [lsb-release][10] package (which provides a simple tool that users can use to query the identity of the distribution and what level of LSB compliance it advertises).
+Raboud提议Debian摈弃除了[lsb-base][9]包（目前包括一个用于启动系统所需的小的shell函数集合）和[lsb-release][10]包（提供一个简单工具，用户可用它查询发行版的身份以及该发行版宣称的与哪个LSB级别兼容）之外的所有内容。
 
-In a follow-up [message][11],he noted that changing the LSB to be, essentially, "*whatever Debian as well as all other actors in the FLOSS world are _actually_ doing*" might make the standard—and the effort to support it in Debian—more valuable.  But here again, he questioned whether anyone was interested in pursuing that objective.
+[后来][11]，他又称，将LSB基本上改变为“*Debian和FLOSS世界中的所有其它演员所实际做的任何事*”可能会使得该标准（以及在Debian为支持它所做的工作）更有价值。但此时他再次质疑是否有人会对推动这个目标有兴趣。
 
-If his initial comments about lack of interest in LSB were not evidence enough, a full three months then went by with no one offering any support for maintaining the LSB-compliance packages and two terse votes in favor of dropping them.  Consequently, on September 17, Raboud [announced][12] that he had gutted the `src:lsb` package (leaving just `lsb-base` and `lsb-release` as described) and uploaded it to the "unstable" archive.  That minimalist set of tools will allow an interested user to start up the next Debian release and query whether or not it is LSB-compliant—and the answer will be "no."
+如果说他最初称LSB中缺乏兴趣没有足够的证据，随后整整三个月之内没有任何人对维持LSB兼容的包提供支持，并进行了两次拋弃它们的投票。最后，9月17日，Raboud[宣布][12]他已经抽掉`src:lsb`包（如前所述，保留了`lsb-base`和`lsb-release`），将将其上载到“unstable”档案中。感兴趣的用户可通过最小限度的工具集来启动下一个Debian版本，并查询它是否兼容LSB：结果将为“否”。
 
-Raboud added that Debian does still plan to maintain FHS compliance, even though it is dropping LSB compliance:
+Raboud补充说，即便摈弃了兼容LSB，Debian仍计划继续兼容FHS：
 
-	But Debian's not throwing all of the LSB overboard: we're still firmly standing behind the FHS (version 2.3 through Debian Policy; although 3.0 was released in August this year) and our SysV init scripts mostly conform to LSB VIII.22.{2-8}. But don't get me wrong, this src:lsb upload is an explicit move away from the LSB.
+	但Debian并没有放弃所有的LSB：我们仍将严格遵守FHS（Debian Policy中的版本2.3；虽然今年8月已经发布了3.0），而且我们的SysV启动脚本几乎全部遵循VIII.22.{2-8}。但请不要误解我们，此次src:lsb上载明确说明我们将离开LSB。
 
-After the announcement, Nikolaus Rath [replied][13] that some proprietary applications expect `ld-lsb.so*` symbolic links to be present in `/lib` and `/lib64`, and that those symbolic links had been provided by the `lsb-*` package set.  Raboud [suggested][14] that the links should be provided by the `libc6` package instead; package maintainer Aurelien Jarno [said][15] he would accept such a patch if it was provided.
+在该宣告之后，Nikolaus Rath[回应][13]称某些私有应用依赖`/lib`和`/lib64`中的符号链接`ld-lsb.so*`，而这些符号链接由`lsb-*`包提供。Raboud则[建议][14]应改由`libc6`包提供；包维护人员Aurelien Jarno[称][15]，如果提供这样一个补丁，他将会接受它。
 
-The only remaining wrinkle, it seems, is that there are some printer-driver packages that expect some measure of LSB compliance. Raboud had noted in his first message that [OpenPrinting][16] drivers were the only example of LSB-compliant packages he had seen actually distributed. Michael Biebl [noted][17] that there was one such driver package in the main archive; Raboud [replied][18] that he believed the package in question ought to be moved to the non-free repository anyway, since it contained a binary driver.
+似乎唯一的遗留问题只是某些打印机驱动包会依赖LSB兼容。Raboud称，在其首个贴子中已经说明，据他所知，实际发布的唯一一个依赖LSB兼容的包为[OpenPrinting][16]驱动程序。Michael Biebl[称][17]，主档案中有这样一个驱动包；Raboud则[回应][18]说，他相信有问题的包应该被移到非自由仓库，因其包括了一个二进制驱动。
 
-With that, the issue appears to be settled, at least for the current Debian development cycle.  What will be more interesting, naturally, will be to see what effect, if any, the decision has on broader LSB acceptance.  As Raboud alluded to, the number of distributions that are certified as LSB-compliant is [small][19]. It is hard not to notice that those distributions are largely of the "enterprise" variety.  
+于是，这个问题看上去已经尘埃落定，至于对于目前的Debian开发周期来说是如此的状况。很自然的是，未来让人更感觉兴趣的是，如果该决定存在一些影响的话，那么人们将会看到它对更广泛的LSB接受度有何影响。正如Raboud所说的那样，被认证为LSB兼容的发行版数量很[小][19]。人们很难不注意到这些发行版很大程度上是“企业”的变种。
 
-Perhaps, then, LSB compliance is still important to some business sectors, but it is hard to know how many customers of those enterprise distributions genuinely care about the LSB certification stamp.  If Debian's experience is anything to go by, however, general interest in such certification may be in steep decline.
-
----
+也许，对某些商业领域来说，LSB仍很重要，但很难知道有多少那些企业发行版的客户真正关心LSB认证标签。然而，如果Debian按此发展下去，对这种认证的一般兴趣可能会急剧下降。
 
 via：https://lwn.net/Articles/658809/
 
@@ -62,5 +59,5 @@ via：https://lwn.net/Articles/658809/
 [16]:http://www.linuxfoundation.org/collaborate/workgroups/openprinting/
 [17]:/Articles/658844/
 [18]:/Articles/658845/
-
+[19]:https://www.linuxbase.org/lsb-cert/productdir.php?by_lsb
 
