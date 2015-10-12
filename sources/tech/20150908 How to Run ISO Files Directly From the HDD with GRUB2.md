@@ -1,7 +1,7 @@
+Translating by Locez
 How to Run ISO Files Directly From the HDD with GRUB2
 ================================================================================
 ![](https://www.maketecheasier.com/assets/uploads/2015/07/rundirectiso-featured.png)
-
 Most Linux distros offer a live environment, which you can boot up from a USB drive, for you to test the system without installing. You can either use it to evaluate the distro or as a disposable OS. While it is easy to copy these onto a USB disk, in certain cases one might want to run the same ISO image often or run different ones regularly. GRUB 2 can be configured so that you do not need to burn the ISOs to disk or use a USB drive, but need to run a live environment directly form the boot menu.
 
 ### Obtaining and checking bootable ISO images ###
