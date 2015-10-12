@@ -1,3 +1,5 @@
+    Vic020
+
 Linux FAQs with Answers--How to change USB device permission permanently on Linux
 ================================================================================
 > **Question**: I am trying to run gpsd on my Linux with a USB GPS receiver. However, I am getting the following errors from gpsd.
