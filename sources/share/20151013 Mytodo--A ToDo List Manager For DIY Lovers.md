@@ -1,3 +1,5 @@
+alim0x translating
+
 Mytodo: A ToDo List Manager For DIY Lovers
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/10/Mytodo-Linux.jpg)
