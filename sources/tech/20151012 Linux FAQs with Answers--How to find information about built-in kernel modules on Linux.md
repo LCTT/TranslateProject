@@ -1,3 +1,5 @@
+translating----geekpi
+
 Linux FAQs with Answers--How to find information about built-in kernel modules on Linux
 ================================================================================
 > **Question**: I would like to know what modules are built into the kernel of my Linux system, and what parameters are available in each module. Is there a way to get a list of all built-in kernel modules and device drivers, and find detailed information about them? 

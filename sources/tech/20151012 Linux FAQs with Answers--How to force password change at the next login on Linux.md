@@ -1,3 +1,5 @@
+translating----geekpi
+
 Linux FAQs with Answers--How to force password change at the next login on Linux
 ================================================================================
 > **Question**: I manage a Linux server for multiple users to share. I have just created a new user account with some default password, and I want the user to change the default password immediately after the first login. Is there a way to force a user to change his/her password at the next login? 
