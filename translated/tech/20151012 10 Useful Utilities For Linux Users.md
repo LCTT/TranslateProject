@@ -1,33 +1,33 @@
-translation by strugglingyouth
-10 Useful Utilities For Linux Users
+对 Linux 用户10个有用的工具
 ================================================================================
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2014/09/linux-656x445.png)
 
-### Introduction ###
+### 引言 ###
 
-In this tutorial, I have collected 10 useful utility tools for Linux users which will include various network monitoring, system auditing or some another random commands which can help users to enhance their productivity. I hope you will enjoy them.
+在本教程中，我已经收集了对 Linux 用户10个有用的工具，其中包括各种网络监控，系统审计和一些其它实用的命令，它可以帮助用户提高工作效率。我希望你会喜欢他们。
 
 #### 1. w ####
 
-Display who is logged into the system and what process executed by them.
+显示谁登录了系统并执行了哪些程序。
 
     $w
 
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/10/Selection_023.png)
 
-for help
+显示帮助信息
 
     $w -h
 
-for current user
+（LCTT译注：-h为不显示头部信息）
+
+显示当前用户信息
 
     $w <username>
 
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/10/Selection_024.png)
 
 #### 2. nmon ####
-
-Nmon or nigel’s monitor is a tool which displays performance information of the system.
+Nmon（nigel’s monitor 的简写）是一个显示系统性能信息的工具。
 
     $ sudo apt-get install nmon
 
@@ -37,23 +37,23 @@ Nmon or nigel’s monitor is a tool which displays performance information of th
 
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/10/Selection_001.png)
 
-nmon can dump information related to netwrok, cpu, memory or disk uses.
+nmon 可以转储与 netwrok，cpu, memory 和磁盘使用情况的信息。
 
-**nmon cpu info (press c)**
+**nmon 显示 cpu 信息 (按 c)**
 
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/10/Selection_002.png)
 
-**nmon network info (press n)**
+**nmon 显示 network 信息 (按 n)**
 
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/10/Selection_003.png)
 
-**nman disk info (press d)**
+**nman 显示 disk 信息 (按 d)**
 
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/10/Selection_004.png)
 
 #### 3. ncdu ####
 
-A Command utility is a cursor based version of ‘du’,  this command is used to analyze disk space occupied by various directories.
+是一个基于‘du’的光标版本的命令行程序，这个命令是用来分析各种目录占用的磁盘空间。
 
     $apt-get install ncdu
 
@@ -63,19 +63,19 @@ A Command utility is a cursor based version of ‘du’,  this command is used t
 
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/10/Selection_006.png)
 
-Final output:
+最终的输出:
 
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/10/Selection_007.png)
 
-Press n to order by name or press s to order by file size(default).
+按 n 则通过文件名来排序，按 s 则按文件大小来排序（默认的）。
 
 #### 4. slurm ####
 
-A command line utility used for command based network interface bandwidth monitoring, it will display ascii based graphic.
+一个基于网络接口的带宽监控命令行程序，它会基于图形来显示 ascii 文件。
 
     $ apt-get install slurm
 
-Examples:
+例如:
 
     $ slurm -i <interface>
 
@@ -85,36 +85,36 @@ Examples:
 
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/10/Selection_0091.png)
 
-**options**
+**选项**
 
-- Press **l** to display lx/tx led.
-- press **c** to switch to classic mode.
-- press **r** to refresh screen.
-- press **q** to quit.
+- 按 **l** 显示 lx/tx 指示灯.
+- 按 **c** 切换到经典模式.
+- 按 **r** 刷新屏幕.
+- 按 **q** 退出.
 
 #### 5.findmnt ####
 
-Findmnt command is used to find mount file systems. It is used to list mount devices and can alos mount or unmount devices as and when required, it comes as a part of util-linux.
+Findmnt 命令用于查找挂载的文件系统。它是用来列出安装设备，当需要时也可以挂载或卸载设备，它也是 util-linux 的一部分。
 
-Examples:
+例子:
 
     $findmnt
 
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/10/Selection_0101.png)
 
-To get output in list format.
+以列表格式输出。
 
     $ findmnt -l
 
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/10/Selection_0111.png)
 
-List file systems mounted in fstab.
+列出在 fstab 中挂载的文件系统。
 
     $ findmnt -s
 
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/10/Selection_0122.png)
 
-List mounted  files systems by file type
+按文件类型列出已挂载的文件系统。
 
     $ findmnt -t ext4
 
@@ -122,13 +122,13 @@ List mounted  files systems by file type
 
 #### 6. dstat ####
 
-A combined and flexible tool  which can be used to monitor memory, process, network or disk space performance, it is a good replacement of ifstat, iostat, dmstat etc.
+一种组合和灵活的工具，它可用于监控内存，进程，网络和磁盘的性能，它可以用来取代 ifstat, iostat, dmstat 等。
 
     $apt-get install dstat
 
-Examples:
+例如:
 
-A detailed info about cpu, hard disk and network.
+查看有关 cpu，硬盘和网络的详细信息。
 
     $ dstat
 
@@ -140,13 +140,13 @@ A detailed info about cpu, hard disk and network.
 
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/10/Selection_0151.png)
 
-Some more detailed information about cpu
+显示 cpu 的详细信息。
 
     $ dstat -cdl -D sda1
 
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/10/Selection_017.png)
 
-- **-d** disk
+- **-d** 磁盘
 
     $ dstat -d
 
@@ -154,17 +154,17 @@ Some more detailed information about cpu
 
 #### 7. saidar ####
 
-Another  cli based system statistics monitoring tool, provide information about disk uses, network, memory, swap etc.
+另一种基于 CLI 的系统统计数据监控工具，提供了有关磁盘使用，网络，内存，交换等信息。
 
     $ sudo apt-get install saidar
 
-Examples:
+例如:
 
     $ saidar
 
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/10/Selection_0181.png)
 
-Enable colored output
+启用彩色输出
 
     $ saider -c
 
@@ -172,23 +172,23 @@ Enable colored output
 
 #### 8. ss ####
 
-ss or socket statistics is a good alternative to netstat it directory gather information from kernel space nad play fast in comparision to the netstat utility.
+ss（socket statistics）是一个很好的选择来替代 netstat，它从内核空间收集信息，比 netstat 的性能更好。
 
-Examples:
+例如:
 
-List all connections
+列出所有的连接
 
     $ ss |less
 
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/10/Selection_0201.png)
 
-Greb only tcp traffic
+列出 tcp 流量
 
     $ ss -A tcp
 
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/10/Selection_0211.png)
 
-Grab process name and pid
+列出进程名和 pid
 
     $ ss -ltp
 
@@ -196,23 +196,23 @@ Grab process name and pid
 
 #### 9. ccze ####
 
-A tool that decorate your logs :).
+一个自定义日志格式的工具 :).
 
     $ apt-get install ccze
 
-Examples:
+例如:
 
     $ tailf /var/log/syslog | ccze
 
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/10/Selection_0231.png)
 
-List ccze modules:
+列出 ccze 模块:
 
     $ ccze -l
 
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/10/Selection_0241.png)
 
-Save log as html.
+将日志保存为 html 文件。
 
     tailf /var/log/syslog | ccze -h > /home/tux/Desktop/rajneesh.html
 
@@ -220,42 +220,42 @@ Save log as html.
 
 #### 10. ranwhen.py ####
 
-A python based terminal utility that can be used to display system activities graphically. Details are presented in a very colorful histogram.
+一种基于 Python 的终端工具，它可以用来以图形方式显示系统活动状态。详细信息以一个丰富多彩的柱状图来展示。
 
-Install python:
+安装 python:
 
     $ sudo apt-add-repository ppa:fkrull/deadsnakes
 
-Update system:
+更新系统:
 
     $ sudo apt-get update
 
-Download python:
+下载 python:
 
     $ sudo apt-get install python3.2
 
-- [Download ranwhen.py][1]
+- [下载 ranwhen.py][1]
 
     $ unzip ranwhen-master.zip && cd ranwhen-master
 
-Run the tool.
+运行工具。
 
     $ python3.2 ranwhen.py
 
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/10/Selection_026.png)
 
-### Conclusion ###
+### 结论 ###
 
-These are the less popular, yet important Linux administration tools. They can help user in their day to day activities. In our upcoming articles, we will try to bring some more Admin/user tools.
+这都是些冷门但重要的 Linux 管理工具。他们可以在日常生活中帮助用户。在我们即将发表的文章中，我们会尽量多带来些管理员/用户工具。
 
-Have fun!
+玩得愉快！
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/10-useful-utilities-linux-users/
 
 作者：[Rajneesh Upadhyay][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[strugglingyouth](https://github.com/strugglingyouth)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
