@@ -1,3 +1,4 @@
+unicornx 翻译中... ...
 New Collaborative Group to Speed Real-Time Linux
 ================================================================================
 ![](http://www.linux.com/images/stories/66866/Tux-150.png)
@@ -55,7 +56,7 @@ Autonomous drones and robots are also ripe for real-time, and Xenomai is already
 via: http://www.linux.com/news/software/applications/858828-new-collaborative-group-to-speed-real-time-linux
 
 作者：[Eric Brown][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[unicornx](https://github.com/unicornx)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
