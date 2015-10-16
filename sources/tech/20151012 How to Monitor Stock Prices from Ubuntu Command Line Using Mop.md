@@ -1,3 +1,5 @@
+translating by Ezio
+
 How to Monitor Stock Prices from Ubuntu Command Line Using Mop
 ================================================================================
 Having a side income is always good, especially when you can easily manage the work along with your full time job. If your regular work involves working on an Internet-connected computer, trading stocks is a popular option to earn a few extra bucks.
