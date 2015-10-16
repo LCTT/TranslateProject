@@ -1,3 +1,4 @@
+ictlyh Translating
 How to Setup Red Hat Ceph Storage on CentOS 7.0
 ================================================================================
 Ceph is an open source software platform that stores data on a single distributed computer cluster. When you are planning to build a cloud, then on top of the requirements you have to decide on how to implement your storage. Open Source CEPH is one of RED HAT mature technology based on object-store system, called RADOS, with a set of gateway APIs that present the data in block, file, and object modes. As a result of its open source nature, this portable storage platform may be installed and used in public or private clouds. The topology of a Ceph cluster is designed around replication and information distribution, which are intrinsic and provide data integrity. It is designed to be fault-tolerant, and can run on commodity hardware, but can also be run on a number of more advanced systems with the right setup.
