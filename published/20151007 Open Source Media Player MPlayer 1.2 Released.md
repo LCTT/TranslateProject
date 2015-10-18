@@ -4,7 +4,7 @@
 
 在 [MPlayer][1] 1.1 发布将近3年后，新版 MPlayer 终于在上周发布了。在新版本 MPlayer 1.2 中带来了对许多新编码的解码支持。
 
-MPlayer 是一款跨平台的开源媒体播放器。它的名字是“Movie Player”的缩写。MPlayer 已经成为 Linux 上最老牌的媒体播放器之一，在过去的15年里，它还启发了许多其他媒体播放器。著名的基于 MPlayer 的媒体播放器有：
+MPlayer 是一款跨平台的开源媒体播放器。它的名字是“Movie Player”的缩写。MPlayer 是 Linux 上最老牌的媒体播放器之一，在过去的15年里，它还带动出现了许多其他媒体播放器。著名的基于 MPlayer 的媒体播放器有：
 
 - [MPV][2]
 - SMPlayer
@@ -30,19 +30,14 @@ MPlayer 是一款跨平台的开源媒体播放器。它的名字是“Movie Pla
 打开一个终端，运行下列命令：
 
     wget http://www.mplayerhq.hu/MPlayer/releases/MPlayer-1.2.tar.xz
-
     tar xvf MPlayer-1.1.1.tar.xz
-
     cd MPlayer-1.2
-
     sudo apt-get install yasm
-
     ./configure
 
 在你运行 make 的时候，在你的终端屏幕上会显示一些东西，并且你需要一些时间来编译它。保持耐心。
 
     make
-
     sudo make install
 
 如果你觉得从源码编译不大习惯的话，我建议你等待 MPlayer 1.2 提交到你的 Linux 发行版仓库中，或者用其它的播放器替代，比如 MPV。
@@ -53,7 +48,7 @@ via: http://itsfoss.com/mplayer-1-2-released/
 
 作者：[Abhishek][a]
 译者：[alim0x](https://github.com/alim0x)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
