@@ -1,3 +1,5 @@
+FSSlc translating
+
 What is a good IDE for R on Linux
 ================================================================================
 Some time ago, I covered some of the [best IDEs for C/C++][1] on Linux. Obviously C and C++ are not the only programming languages out there, and it is time to turn to something a bit more specific.
