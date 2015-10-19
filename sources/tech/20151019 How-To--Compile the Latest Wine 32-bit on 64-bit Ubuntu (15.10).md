@@ -1,3 +1,5 @@
+    Vic020
+
 How-To: Compile the Latest Wine 32-bit on 64-bit Ubuntu (15.10)
 ================================================================================
 Wine 1.7.53 was released a few hours ago, and, as with each new version, it comes with several improvements, including support for **XAudio**, **Direct3D** code cleanups, improved **OLE object embedding**, further implementation of **Web Services DLL**, and a bunch of bug fixes.
