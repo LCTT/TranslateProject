@@ -1,3 +1,4 @@
+translation by  strugglingyouth
 10 passwd command examples in Linux
 ================================================================================
 As the name suggest **passwd** command is used to change the password of system users. If the passwd command is executed by non-root user then it will ask for the current password and then set the new password of a user who invoked the command. When this command is executed by super user or root then it can reset the password for any user including root without knowing the current password.
