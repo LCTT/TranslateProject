@@ -1,3 +1,4 @@
+translation by strugglingyouth
 11 df command examples in Linux
 ================================================================================
 df (disk free) command is used to display disk usage of the file system. By default df command shows the file system usage in 1K blocks for all the current mounted file system, if you want to display the output of df command in human readable format , use -h option like “df -h”.
