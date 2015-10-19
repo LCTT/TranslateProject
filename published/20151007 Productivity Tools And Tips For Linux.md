@@ -1,4 +1,4 @@
-Linux产能工具及其使用技巧
+Linux 产能工具及其使用技巧
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/10/Productivity-Tips-Linux.jpg)
 
@@ -6,7 +6,7 @@ Linux产能工具及其使用技巧
 
 ### Linux产能工具及其使用技巧 ###
 
-再次说明，我在写下本文时正在使用的是Ubuntu。但是，我将要在这里展示给大家产能工具及其使用技巧却适用于外面的大多数Linux发行版。
+再次说明，我在写下本文时正在使用的是Ubuntu。但是，我将要在这里展示给大家产能工具及其使用技巧却适用于市面上的大多数Linux发行版。
 
 #### 外界的音乐 ####
 
@@ -36,14 +36,14 @@ Ctrl+ C和Ctrl+V是我们日常计算机生活中不可缺少的一部分，它�
 
 如果你正忙着处理其它事情，而此时一个桌面通知闪了出来又逐渐消失了，你会怎么做？你会想要看看通知都说了什么，不是吗？最近通知指示器就是用于处理此项工作，它会保留一个最近所有通知的历史记录。这样，你就永远不会错过桌面通知了。
 
-你可以阅读[最近通知指示器这里][13]。
+你可以在此阅读[最近通知指示器][13]。
 
 #### 终端技巧 ####
 
 不，我不打算给你们展示所有那些Linux命令技巧和快捷方法，那会写满整个博客了。我打算给你们展示一些终端黑技巧，你可以用它们来提高你的生产力。
 
 - **修改**sudo**密码超时**：默认情况下，sudo命令要求你在15分钟后再次输入密码，这真是让人讨厌。实际上，你可以修改默认的sudo密码超时。[此教程][14]会给你展示如何来实现。
-- **获取命令完成的桌面通知**：这是IT朋友们之间的一个常见的玩笑，开发者们花费大量时间来等待程序编译完成，而这不完全是正确的。但是，它确实影响到了生产力，因为在你等待程序编译完成时，你可以做其它事情，并忘了你在终端中运行的命令。一个更好的途径，就是在一个命令完成时，让它显示桌面通知。这样，你就不会长时间被打断，并且可以回到之前想要做的事情上。请阅读[如何获取命令完成的桌面通知][15]。
+- **获取命令完成的桌面通知**：这是IT朋友们之间的一个常见的玩笑——开发者们花费大量时间来等待程序编译完成——然而这不完全是正确的。但是，它确实影响到了生产力，因为在你等待程序编译完成时，你可以做其它事情，并忘了你在终端中运行的命令。一个更好的途径，就是在一个命令完成时，让它显示桌面通知。这样，你就不会长时间被打断，并且可以回到之前想要做的事情上。请阅读[如何获取命令完成的桌面通知][15]。
 
 我知道，这不是一篇全面涵盖了**提升生产力**的文章。但是，这些小应用和小技巧可以在实际生活中帮助你在你宝贵的时间中做得更多。
 
@@ -55,20 +55,20 @@ via: http://itsfoss.com/productivity-tips-ubuntu/
 
 作者：[Abhishek][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://itsfoss.com/author/abhishek/
 [1]:http://www.helpscout.net/blog/music-productivity/
-[2]:http://itsfoss.com/ambient-noise-music-player-ubuntu/
+[2]:https://linux.cn/article-5233-1.html
 [3]:http://www.noisli.com/
 [4]:https://en.wikipedia.org/wiki/Pomodoro_Technique
 [5]:http://manuel-kehl.de/projects/go-for-it/
 [6]:http://todotxt.com/
-[7]:http://itsfoss.com/go-for-it-to-do-app-in-linux/
+[7]:https://linux.cn/article-5337-1.html
 [8]:http://itsfoss.com/indicator-stickynotes-windows-like-sticky-note-app-for-ubuntu/
-[9]:http://itsfoss.com/install-google-keep-ubuntu-1310/
+[9]:https://linux.cn/article-2634-1.html
 [10]:https://evernote.com/
 [11]:http://itsfoss.com/5-evernote-alternatives-linux/
 [12]:https://esite.ch/tag/diodon/
