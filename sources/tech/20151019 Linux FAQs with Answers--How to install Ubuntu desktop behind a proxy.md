@@ -1,3 +1,5 @@
+translating---geekpi
+
 Linux FAQs with Answers--How to install Ubuntu desktop behind a proxy
 ================================================================================
 > **Question:** My computer is connected to a corporate network sitting behind an HTTP proxy. When I try to install Ubuntu desktop on the computer from a CD-ROM drive, the installation hangs and never finishes while trying to retrieve files, which is presumably due to the proxy. However, the problem is that Ubuntu installer never asks me to configure proxy during installation procedure. Then how can I install Ubuntu desktop behind a proxy? 
