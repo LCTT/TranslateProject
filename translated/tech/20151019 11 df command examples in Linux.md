@@ -1,19 +1,19 @@
-translation by strugglingyouth
-11 df command examples in Linux
+ Linux 中 df 命令的11个例子
 ================================================================================
-df (disk free) command is used to display disk usage of the file system. By default df command shows the file system usage in 1K blocks for all the current mounted file system, if you want to display the output of df command in human readable format , use -h option like “df -h”.
 
-In this post we will discuss 11 different examples of ‘**df**‘ command in Linux
+df（可用磁盘）命令用于显示文件系统的磁盘使用情况。默认情况下 df 命令将以 1KB 为单位进行显示所有当前已挂载的文件系统，如果你想以人类易读的格式显示 df 命令的输出，像这样“df -h”使用 -h 选项。
 
-Basic Format of df command in Linux
+在这篇文章中，我们将讨论 ‘**df**‘ 命令在 Linux 下11种不同的实例
+
+在 Linux 下 df 命令的基本格式为：
 
     # df {options} {mount_point_of_filesystem}
 
-Options used in df command :
+在 df 命令中可用的选项有：
 
 ![](http://www.linuxtechi.com/wp-content/uploads/2015/10/df-command-options.jpg)
 
-Sample Output of df :
+df 的原样输出 :
 
     [root@linux-world ~]# df
     Filesystem            1K-blocks   Used Available Use% Mounted on
@@ -28,9 +28,9 @@ Sample Output of df :
     /dev/mapper/vg00-sap   14987656  37636  14165636   1% /sap
     [root@linux-world ~]#
 
-### Example:1 List disk usage of all the file system using ‘-a’ ###
+### 例1：使用 ‘-a’ 选项列出所有文件系统的磁盘使用量 ###
 
-when we use ‘-a’ option in df command , it will display disk usage of all the file systems.
+当我们在 df 命令中使用 ‘-a’ 选项时，它会显示所有文件系统的磁盘使用情况。
 
     [root@linux-world ~]# df -a
     Filesystem            1K-blocks   Used Available Use% Mounted on
@@ -67,9 +67,9 @@ when we use ‘-a’ option in df command , it will display disk usage of all th
     /dev/mapper/vg00-sap   14987656  37636  14165636   1% /sap
     [root@linux-world ~]#
 
-### Example:2 Display the output of df command in human readable format. ###
+### 例2：以人类易读的格式显示 df 命令的输出 ###
 
-Using ‘-h’ option in df command , output can be displayed in human readable format ( e.g 5K , 500M & 5G )
+在 df 命令中使用‘-h’选项，输出以人易读的格式输出（例如，5K，500M ＆ 5G）
 
     [root@linux-world ~]# df -h
     Filesystem             Size  Used Avail Use% Mounted on
@@ -84,18 +84,18 @@ Using ‘-h’ option in df command , output can be displayed in human readable 
     /dev/mapper/vg00-sap    15G   37M   14G   1% /sap
     [root@linux-world ~]#
 
-### Example:3 Display Space usage of particular file system ###
+### 例3：显示特定文件系统已使用的空间 ###
 
-Suppose we want to print space usage of /sap file system,
+假如我们想显示 /sap 文件系统空间的使用情况。
 
     [root@linux-world ~]# df -h /sap/
     Filesystem            Size  Used Avail Use% Mounted on
     /dev/mapper/vg00-sap   15G   37M   14G   1% /sap
     [root@linux-world ~]#
 
-### Example:4 Print file system type of all mounted file systems ###
+### 例4：输出所有已挂载文件系统的类型 ###
 
-‘**-T**’ is used in df command to display the file system type in the output.
+‘**-T**’ 选项用在 df 命令中用来显示文件系统的类型。
 
     [root@linux-world ~]# df -T
     Filesystem            Type     1K-blocks   Used Available Use% Mounted on
@@ -110,7 +110,7 @@ Suppose we want to print space usage of /sap file system,
     /dev/mapper/vg00-sap  ext3      14987656  37636  14165636   1% /sap
     [root@linux-world ~]#
 
-### Example:5 Print disk usage of file systems in block-size. ###
+### 例5：输出文件系统磁盘使用的块大小 ###
 
     [root@linux-world ~]# df -k
     Filesystem            1K-blocks   Used Available Use% Mounted on
@@ -125,11 +125,11 @@ Suppose we want to print space usage of /sap file system,
     /dev/mapper/vg00-sap   14987656  37636  14165636   1% /sap
     [root@linux-world ~]#
 
-### Example:6 Display inodes information of file system. ###
+### 例6：输出文件系统的 inode 信息 ###
 
-‘**-i**’ option in df command is used to display inode information of the file system
+‘**-i**’ 选项用在 df 命令用于显示文件系统的 inode 信息。
 
-inodes info of all the file system :
+所有文件系统的 inode 信息：
 
     [root@linux-world ~]# df -i
     Filesystem             Inodes IUsed   IFree IUse% Mounted on
@@ -144,16 +144,16 @@ inodes info of all the file system :
     /dev/mapper/vg00-sap   960992    11  960981    1% /sap
     [root@linux-world ~]#
 
-inodes info of particular file system :
+特定文件系统的 inode 信息：
 
     [root@linux-world ~]# df -i /sap/
     Filesystem           Inodes IUsed  IFree IUse% Mounted on
     /dev/mapper/vg00-sap 960992    11 960981    1% /sap
     [root@linux-world ~]#
 
-### Example:7 Print grant total space usage of all file system. ###
+### 例7：输出所有文件系统总的使用情况 ###
 
-‘–total‘ option in df command is used to display the grant total of disk usage of all the file system.
+‘–total‘ 选项在 df 命令中用于显示所有文件系统的磁盘使用情况。
 
     [root@linux-world ~]# df -h --total
     Filesystem             Size  Used Avail Use% Mounted on
@@ -169,13 +169,13 @@ inodes info of particular file system :
     total                   58G  980M   54G   2% -
     [root@linux-world ~]#
 
-### Example:8 Print only Local file system space usage info. ###
+### 例8：只打印本地文件系统磁盘的使用情况 ###
 
-Suppose network file system also mounted on linux box and but we want to display local file system information only, this can be achieved by using ‘-l‘ option in df command.
+假设网络文件系统也挂载在 Linux 上，但我们只想显示本地文件系统的信息，这可以通过使用 df 命令的 ‘-l‘ 选项来实现。
 
 ![](http://www.linuxtechi.com/wp-content/uploads/2015/10/nfs4-fs-mount.jpg)
 
-Limiting to local file system :
+只打印本地文件系统：
 
     [root@linux-world ~]# df -Thl
     Filesystem            Type      Size  Used Avail Use% Mounted on
@@ -190,11 +190,11 @@ Limiting to local file system :
     /dev/mapper/vg00-sap  ext3       15G   37M   14G   1% /sap
     [root@linux-world ~]#
 
-### Example:9 Print Disk Space information of particular file system type. ###
+### 例9：打印特定文件系统类型的磁盘使用情况 ###
 
-‘**-t**’ option in df command is used to print information of particular file system type, after ‘-t’ specify the file system type, example is shown below :
+‘**-t**’ 选项在 df 命令中用来打印特定文件系统类型的信息，‘-t’ 指定文件系统的类型，如下所示：
 
-for ext4 :
+对于 ext4 :
 
     [root@linux-world ~]# df -t ext4
     Filesystem            1K-blocks   Used Available Use% Mounted on
@@ -202,18 +202,18 @@ for ext4 :
     /dev/mapper/vg00-home  14987616  41000  14162232   1% /home
     [root@linux-world ~]#
 
-for nfs4 :
+对于 nfs4 :
 
     [root@linux-world ~]# df -t nfs4
     Filesystem            1K-blocks      Used Available Use% Mounted on
     192.168.1.5:/opensuse 301545472 266833920  19371008  94% /data
     [root@linux-world ~]#
 
-### Example:10 Exclude Particular file system type using ‘-x’ option ###
+### 例10：使用 ‘-x’ 选项排除特定的文件系统类型 ###
 
-“**-x** or **–exclude-type**” is used to exclude the certain file system type in the output of df command.
+“**-x** 或 **–exclude-type**” 在 df 命令中用来在输出中排出某些文件系统类型。
 
-Let suppose we want to print all the file systems excluding ext3 file system.
+假设我们想打印排出 ext3 外所有的文件系统。
 
     [root@linux-world ~]# df -x ext3
     Filesystem            1K-blocks      Used Available Use% Mounted on
@@ -226,11 +226,11 @@ Let suppose we want to print all the file systems excluding ext3 file system.
     192.168.1.5:/opensuse 301545472 266834944  19369984  94% /data
     [root@linux-world ~]#
 
-### Example:11 Print only certain fields in output of df command. ###
+### 例11：在 df 命令的输出中只打印特定的字段 ###
 
-‘**–output={field_name1,field_name2….}**‘ option is used to display the certain fields in df command output.
+‘**–output={field_name1,field_name2….}**‘ 选项用于显示 df 命令某些字段的输出。
 
-Valid field names are: ‘source’, ‘fstype’, ‘itotal’, ‘iused’, ‘iavail’, ‘ipcent’, ‘size’, ‘used’, ‘avail’, ‘pcent’ and ‘target’
+可用的字段名有: ‘source’, ‘fstype’, ‘itotal’, ‘iused’, ‘iavail’, ‘ipcent’, ‘size’, ‘used’, ‘avail’, ‘pcent’ 和 ‘target’
 
     [root@linux-world ~]# df --output=fstype,size,iused
     Type     1K-blocks  IUsed
@@ -251,7 +251,7 @@ Valid field names are: ‘source’, ‘fstype’, ‘itotal’, ‘iused’, �
 via: http://www.linuxtechi.com/11-df-command-examples-in-linux/
 
 作者：[Pradeep Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[strugglingyouth](https://github.com/strugglingyouth)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
