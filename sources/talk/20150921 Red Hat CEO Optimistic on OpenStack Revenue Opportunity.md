@@ -1,3 +1,4 @@
+ictlyh Translating
 Red Hat CEO Optimistic on OpenStack Revenue Opportunity
 ================================================================================
 Red Hat continues to accelerate its growth thanks to an evolving mix of platform and infrastructure technology revolving around Linux and the cloud. Red Hat announced its second quarter fiscal 2016 financial results on September 21, once again exceeding expectations.
