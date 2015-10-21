@@ -1,17 +1,17 @@
-Linux 中管理文件类型和系统时间的 5 个有用命令 - 第三部分
+5 个在 Linux 中管理文件类型和系统时间的有用命令
 ================================================================================
 对于想学习 Linux 的初学者来说要适应使用命令行或者终端可能非常困难。由于终端比图形用户界面程序更能帮助用户控制 Linux 系统，我们必须习惯在终端中运行命令。因此为了有效记忆 Linux 不同的命令，你应该每天使用终端并明白怎样将命令和不同选项以及参数一同使用。
 
 ![在 Linux 中管理文件类型并设置时间](http://www.tecmint.com/wp-content/uploads/2015/09/Find-File-Types-in-Linux.jpg)
 
-在 Linux 中管理文件类型并设置时间 - 第三部分
+*在 Linux 中管理文件类型并设置时间*
 
-请先查看我们 [Linux 小技巧][1]系列之前的文章。
+请先查看我们 Linux 小技巧系列之前的文章：
 
-- [Linux 中 5 个有趣的命令行提示和技巧 - 第一部分][2]
-- [给新手的有用命令行技巧 - 第二部分][3]
+- [5 个有趣的 Linux 命令行技巧][2]
+- [给新手的 10 个有用 Linux 命令行技巧][3]
 
-在这篇文章中，我们打算看看终端中 10 个和文件以及时间相关的提示和技巧。
+在这篇文章中，我们打算看看终端中 5 个和文件以及时间相关的提示和技巧。
 
 ### Linux 中的文件类型 ###
 
@@ -22,10 +22,10 @@ Linux 系统中文件有不同的类型：
 - 普通文件：可能包含命令、文档、音频文件、视频、图像，归档文件等。
 - 设备文件：系统用于访问你硬件组件。
 
-这里有两种表示存储设备的设备文件块文件，例如硬盘，它们以快读取数据，字符文件，以逐个字符读取数据。
+这里有两种表示存储设备的设备文件：块文件，例如硬盘，它们以块读取数据；字符文件，以逐个字符读取数据。
 
 - 硬链接和软链接：用于在 Linux 文件系统的任意地方访问文件。
-- 命名管道和套接字：允许不同的进程彼此之间交互。
+- 命名管道和套接字：允许不同的进程之间进行交互。
 
 #### 1. 用 ‘file’ 命令确定文件类型 ####
 
@@ -219,7 +219,7 @@ which 命令用于定位文件系统中的命令。
     20 21 22 23 24 25 26  
     27 28 29 30      
 
-使用 hwclock 命令查看硬件始终时间。
+使用 hwclock 命令查看硬件时钟时间。
 
     tecmint@tecmint ~/Linux-Tricks $ sudo hwclock
     Wednesday 09 September 2015 06:02:58 PM IST  -0.200081 seconds
@@ -231,7 +231,7 @@ which 命令用于定位文件系统中的命令。
     tecmint@tecmint ~/Linux-Tricks $ sudo hwclock
     Wednesday 09 September 2015 12:33:11 PM IST  -0.891163 seconds
 
-系统时间是由硬件始终时间在启动时设置的，系统关闭时，硬件时间被重置为系统时间。
+系统时间是由硬件时钟时间在启动时设置的，系统关闭时，硬件时间被重置为系统时间。
 
 因此你查看系统时间和硬件时间时，它们是一样的，除非你更改了系统时间。当你的 CMOS 电量不足时，硬件时间可能不正确。
 
@@ -256,7 +256,7 @@ which 命令用于定位文件系统中的命令。
 
 ### 总结 ###
 
-对于初学者来说理解 Linux 中的文件类型是一个好的尝试，同时时间管理也非常重要，尤其是在需要可靠有效地管理服务的服务器上。希望这篇指南能对你有所帮助。如果你有任何反馈，别忘了给我们写评论。和 Tecmint 保持联系。
+对于初学者来说理解 Linux 中的文件类型是一个好的尝试，同时时间管理也非常重要，尤其是在需要可靠有效地管理服务的服务器上。希望这篇指南能对你有所帮助。如果你有任何反馈，别忘了给我们写评论。和我们保持联系。
 
 --------------------------------------------------------------------------------
 
@@ -264,16 +264,16 @@ via: http://www.tecmint.com/manage-file-types-and-set-system-time-in-linux/
 
 作者：[Aaron Kili][a]
 译者：[ictlyh](http://www.mutouxiaogui.cn/blog/)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:http://www.tecmint.com/author/aaronkili/
 [1]:http://www.tecmint.com/tag/linux-tricks/
-[2]:http://www.tecmint.com/free-online-linux-learning-guide-for-beginners/
-[3]:http://www.tecmint.com/10-useful-linux-command-line-tricks-for-newbies/
+[2]:https://linux.cn/article-5485-1.html
+[3]:https://linux.cn/article-6314-1.html
 [4]:http://www.tecmint.com/linux-dir-command-usage-with-examples/
-[5]:http://www.tecmint.com/12-practical-examples-of-linux-grep-command/
+[5]:https://linux.cn/article-2250-1.html
 [6]:http://www.tecmint.com/wc-command-examples/
 [7]:http://www.tecmint.com/setup-samba-file-sharing-for-linux-windows-clients/
 [8]:http://www.tecmint.com/35-practical-examples-of-linux-find-command/
