@@ -1,3 +1,4 @@
+ictlyh Translating
 Part 10: Setting Up “NTP (Network Time Protocol) Server” in RHEL/CentOS 7
 ================================================================================
 Network Time Protocol – NTP- is a protocol which runs over port 123 UDP at Transport Layer and allows computers to synchronize time over networks for an accurate time. While time is passing by, computers internal clocks tend to drift which can lead to inconsistent time issues, especially on servers and clients logs files or if you want to replicate servers resources or databases.
