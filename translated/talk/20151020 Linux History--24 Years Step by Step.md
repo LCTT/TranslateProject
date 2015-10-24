@@ -1,33 +1,34 @@
-ictlyh Translating
-Linux History: 24 Years Step by Step
+Linux 的历史：24 年，一步一个脚印
 ================================================================================
 注：youtube 视频
 
 <iframe width="660" height="371" src="https://www.youtube.com/embed/84cHeoEebJM?feature=oembed" frameborder="0" allowfullscreen></iframe>
 
-### Pre-history ###
+### 史前 ###
 
-Linux success would not be possible without [C programming language][1] and [GNU Project][2] – Environment of Linux.
+没有 [C 编程语言][1] and [GNU 项目][2] - Linux 环境，也就不可能有 Linux 的成功。
 
 ![](https://github.com/paulcarroty/Articles/raw/master/Linux_24/00-1.jpg)
 
-Ken Thompson and Dennis Ritchie
 
-[Ken Thompson][1] and [Dennis Ritchie][2] was created the Unix Operation System in 1969-1970. Later was released the new [C programming language][3] – high-level and portable PL. Linux kernel written in C with some assembly code.
+Ken Thompson 和 Dennis Ritchie
+
+[Ken Thompson][1] 和 [Dennis Ritchie][2] 在 1969-1970 创造了 Unix 操作系统。之后发布了新的 [C 编程语言][3] - 高级可移植编程语言。 Linux 内核用 C 和一些汇编代码写成。
+
 
 ![Richard Matthew Stallman](https://github.com/paulcarroty/Articles/raw/master/Linux_24/00-2.jpg)
 
 Richard Matthew Stallman
 
-[Richard Matthew Stallman][4] started in 1984 the [GNU Project][5]. One of biggest goals — free Unix-like operation system and totally
+[Richard Matthew Stallman][4] 在 1984 年启动了 [GNU 项目][5]。最大的一个目标 - 完全自由的类-Unix 操作系统。
 
-### 1991 – The Beginning ###
+### 1991 – 元年 ###
 
 ![](https://github.com/paulcarroty/Articles/raw/master/Linux_24/1991-1.jpg)
 
 Linus Torvalds, 1991
 
-[Linus Torvalds][5] begin Linux kernel development in Helsinki, Finland – witten programm for hes hardware – Intel 80386 CPU. Hi also use Minix and GNU C compiler. Here is historical message from Linus Torvalds to Minix newsgroup:
+[Linus Torvalds][5] 在芬兰赫尔辛基开始了 Linux 内核开发 - 为他的硬件 - Intel 30386 CPU 编写程序。他也使用 Minix 和 GNU C 编译器。下面是 Linus Torvalds 给 Minix 新闻组的历史消息：
 
 > From: torvalds@klaava.Helsinki.FI (Linus Benedict Torvalds)
 >   Newsgroups: comp.os.minix
@@ -54,41 +55,41 @@ Linus Torvalds, 1991
 > 
 >                 Linus (torvalds@kruuna.helsinki.fi)
 
-After this Linux has supported by worldwide volunteers and professional specialists. Name “Linux” was defined by Linus coworker Ari Lemmke – just named directory of project on University Server.
+从此之后，Linux 开始得到了世界范围志愿者和专业专家的支持。Linus 的合作者  Ari Lemmke 把它命名为 “Linux” - 大学服务器项目上的目录名称。
 
 ### 1992 ###
 
 ![](https://github.com/paulcarroty/Articles/raw/master/Linux_24/1992-1.jpg)
 
-Version 0.12 of Linux Kernel released under GPLv2.
+在 GPLv2 协议下发布了 0.12 版 Linux 内核。
 
 ### 1993 ###
 
 ![Slackware 1.0 ](https://github.com/paulcarroty/Articles/raw/master/Linux_24/1993-1.png)
 
-First release of Slackware – the oldest Linux Distro with the same leader – Patrick Volkerding. Linux kernel have ~100 Developers.
+第一次发布 Slackware（译者注：Slackware Linux 是一个高度技术性的，干净的发行版，只有少量非常有限的个人设置） – 相同主导者 Patrick Volkerding 最老的 Linux 发行版。Linux 内核有 100 多个开发者。
 
 ![](https://github.com/paulcarroty/Articles/raw/master/Linux_24/1993-2.png)
 
 Debian
 
-Debian – one of largest Linux-community also created in 1991.
+Debian – 1991 年创立了最大的 Linux 社区之一。
 
 ### 1994 ###
 
-Linux 1.0 released and first GUI is available – thanks to XFree86 project.
+Linux 1.0 发布了，多亏了 XFree 86 项目，第一次有了 GUI。
 
 ![](https://github.com/paulcarroty/Articles/raw/master/Linux_24/1994-1.png)
 
 Red Hat Linux
 
-Released Red Hat Linux 1.0
+发布 Red Hat Linux 1.0
 
 ![](https://github.com/paulcarroty/Articles/raw/master/Linux_24/1994-2.png)
 
 S.u.S.E Linux
 
-and [S.u.S.E. Linux][6] 1.0.
+和 [S.u.S.E. Linux][6] 1.0.
 
 ### 1995 ###
 
@@ -96,7 +97,7 @@ and [S.u.S.E. Linux][6] 1.0.
 
 Red Hat Inc.
 
-Bob Young and Marc Ewing merged their local business to [Red Hat Software][7]. Linux ported to many of hardware platforms.
+Bob Yound 和 Marc Ewing 合并他们的本地业务为 [Red Hat Software][7]。Linux 移植到了很多硬件平台。
 
 ### 1996 ###
 
@@ -104,7 +105,7 @@ Bob Young and Marc Ewing merged their local business to [Red Hat Software][7]. L
 
 ### Tux ###
 
-Tux Penguin – official mascot of Linux. Idea of Linus Torvalds – after visit to National Zoo & Aquarium in Canberra. Linux 2.0 released and support symmetric multiprocessing. Begin of KDE development.
+企鹅 Tux - Linux 官方吉祥物。Linus Torvalds 参观了堪培拉国家动物园和水族馆之后有了这个想法。发布了 Linux 2.0，支持对称多处理器。开始开发 KDE。
 
 ### 1997 ###
 
@@ -112,33 +113,33 @@ Tux Penguin – official mascot of Linux. Idea of Linus Torvalds – after visit
 
 Miguel de Icaza
 
-Miguel de Icaza and Federico Mena begin development of GNOME – free desktop environment with application. Linus Torvalds win in Linux’s Trademark conflict and Linux becomes the registered trademark of Linus.
+Miguel de Icaza 和 Federico Mena 开始开发 GNOME - 自由桌面环境和应用程序。Linus Torvalds 赢得了 Linux 商标冲突，Linux 成为了 Linus 的注册商标。
 
 ### 1998 ###
 
 ![](https://github.com/paulcarroty/Articles/raw/master/Linux_24/1998-1.jpg)
 
-The Cathedral and the Bazaar
+大教堂和集市
 
-[The Cathedral and the Bazaar][8] essay by Eric S. Raymond is published – highly recommend to read. Linux support from big companies: IBM, Oracle, Compaq.
+Eric S. Raymond 出版了文章 [The Cathedral and the Bazaar][8]（大教堂和集市） - 非常推荐阅读。Linux 得到了大公司的支持： IBM、Oracle、康柏。
 
 ![](https://github.com/paulcarroty/Articles/raw/master/Linux_24/1998-2.png)
 
 Mandrake Linux
 
-First release of Mandrake Linux – Red Hat Linux-based distro with K Desktop Environment.
+首次发布 Mandrake Linux - 基于红帽 Linux 带 K 桌面环境的发行版。
 
 ### 1999 ###
 
 ![](https://upload.wikimedia.org/wikipedia/commons/4/4f/KDE_1.1.jpg)
 
-First major KDE  release.
+第一个主要的 KDE 发行版。
 
 ### 2000 ###
 
 ![](https://github.com/paulcarroty/Articles/raw/master/Linux_24/2000-1.jpg)
 
-Dell support Linux – first big hardware vendor
+Dell 支持 Linux - 第一个大的硬件供应商。
 
 ### 2001 ###
 
@@ -146,7 +147,7 @@ Dell support Linux – first big hardware vendor
 
 Revolution OS
 
-Documentary film “Revolution OS” – 20 years of GNU, Linux, Open Source, Free Software history with iterview of best hackers of Linux and Open Source World.
+纪录片 “Revolution OS”（译者注：操作系统革命） - GNU、Linux、开源、自由软件的 20 年历史，以及 Linux 和开源界最好骇客的采访。
 
 ### 2002 ###
 
@@ -154,7 +155,7 @@ Documentary film “Revolution OS” – 20 years of GNU, Linux, Open Source, Fr
 
 BitKeeper
 
-Linux now use BitKeeper – proprietary software for distributed version control.
+Linux 开始使用 BitKeeper - 分布式版本控制专用软件。
 
 ### 2003 ###
 
@@ -162,25 +163,25 @@ Linux now use BitKeeper – proprietary software for distributed version control
 
 SUSE
 
-Novell buy SuSE Linux AG for $210M. Since 2003 also started epic battle SCO Group vs IBM and Linux community for the Unix copyrights.
+Novell 用 210 美元购买了 SUSE Linux AG。2003 年也开始了 SCO 集团，IBM、以及 Linux 社区关于 Unix 版权的史诗般战役。
 
 ![](https://github.com/paulcarroty/Articles/raw/master/Linux_24/2003-2.png)
 
 Fedora
 
-First Release of Fedora Linux from Red Hat and Linux Community.
+红帽和 Linux 社区第一次发布了 Fedora Linux。
 
 ### 2004 ###
 
 ![](https://github.com/paulcarroty/Articles/raw/master/Linux_24/2004-1.png)
 
-X.ORG Foundation
+X.ORG 基金会
 
-The XFree86 team is dropped and join to [X.Org Foundation][9], development of X be faster.
+XFree86 解散了并加入到 [X.Org 基金会][9]， X 的开发更快了。
 
 ![](https://github.com/paulcarroty/Articles/raw/master/Linux_24/2004-2.jpg)
 
-Ubuntu 4.10 – First Release
+Ubuntu 4.10 – 第一次发布
 
 ### 2005 ###
 
@@ -188,21 +189,21 @@ Ubuntu 4.10 – First Release
 
 openSUSE
 
-Beginning of [openSUSE][10] – free version of enterprise Novell’s OS. OpenOffice.org started support of OpenDocument standards.
+开始了 [openSUSE][10] - 企业版 Novell’s OS 的免费版本。OpenOffice.org 开始支持 OpenDocument 标准。
 
 ### 2006 ###
 
 ![](https://github.com/paulcarroty/Articles/raw/master/Linux_24/2006-1.png)
 
-New Linux distribution – Oracle Linux based on Red Hat Enterprise Linux. Microsoft and Novell begin cooperation in IT and both patents protection.
+新的 Linux 发行版 - 基于红帽企业版 Linux 的 Oracle Linux。微软和 Novell 开始在 IT 和专利保护方面进行合作。
 
 ### 2007 ###
 
 ![](https://github.com/paulcarroty/Articles/raw/master/Linux_24/2007-1.jpg)
 
-Dell Linux Laptop
+Dell Linux 笔记本
 
-First laptops with preinstalled Linux from Dell.
+Dell 发布了预安装 Linux 的笔记本。
 
 ### 2008 ###
 
@@ -210,7 +211,7 @@ First laptops with preinstalled Linux from Dell.
 
 KDE 4.0
 
-KDE 4 released in non-stable condition and many users migrate to GNOME.
+在不稳定的情况下发布了 KDE 4，很多用户开始迁移到 GNOME。
 
 ### 2009 ###
 
@@ -218,9 +219,9 @@ KDE 4 released in non-stable condition and many users migrate to GNOME.
 
 Red Hat
 
-Red Hat’s Linux-based success – $2.62 billion market capitalization.
+红帽 Linux 的成功 - 市值 2亿6千2百万美元。
 
-In 2009 Microsoft sumbitted first patch to Linux kernel under GPLv2 license.
+2009 年微软第一次在 GPLv2 协议下向 Linux 内核提交了补丁。
 
 ### 2010 ###
 
@@ -228,9 +229,9 @@ In 2009 Microsoft sumbitted first patch to Linux kernel under GPLv2 license.
 
 Novell -> Attachmate
 
-Novell was sold to The Attachmate Group, Inc. for $2.2 billion. SUSE and Novell – two independs products in new company.
+Novell 已 2亿2千万美元卖给了 Attachmate Group, Inc。在新公司 SUSE 和 Novell 成为了两款独立的产品。
 
-First release of [systemd][11] and begin of Linux system revolution.
+第一次发布了 [systemd][11]，开始了 Linux 系统的革命。
 
 ### 2011 ###
 
@@ -238,50 +239,50 @@ First release of [systemd][11] and begin of Linux system revolution.
 
 Unity Desktop in 2011
 
-Ubuntu Unity released – a lot of criticizm from users.
+发布了 Ubuntu Unity - 遭到很多用户的批评。
 
 ![](https://github.com/paulcarroty/Articles/raw/master/Linux_24/2011-2.png)
 
 GNOME 3.0, 2011
 
-GNOME 3.0 release – “unholy mess” by Linus Torvalds and also a lot of negative critics. Linux kernel 3.0 released.
+发布了 GNOME 3.0 - Linus Torvalds 评论为 “unholy mess” 以及很多负面评论。发布了 Linux 内核 3.0。
 
 ### 2012 ###
 
 ![](https://github.com/paulcarroty/Articles/raw/master/Linux_24/2012-1.png)
 
-15 million lines of code
+1500 万行代码
 
-Linux kernel have a 15 million lines of code. Microsoft is one of top Linux contributors.
+Linux 内核有 1500 万行代码。微软成为主要共享者之一。
 
 ### 2013 ###
 
 ![](https://github.com/paulcarroty/Articles/raw/master/Linux_24/2013-1.png)
 
-Kali Linux 1.0 released – Debian-based Linux distro for penetration testing and digital forensics. Also in 2014 Centos with code developers joined to Red Hat Inc.
+发布了 Kali Linux 1.0 - 用户渗透测试和数字取证的基于 Debian 的 Linux 发行版。2014 年 CentOS 代码开发者加入到了红帽公司。
 
 ### 2014 ###
 
 ![](https://github.com/paulcarroty/Articles/raw/master/Linux_24/2014-1.jpg)
 
-Lennart Poettering and Kay Sievers
+Lennart Poettering 和 Kay Sievers
 
-systemd – default in Ubuntu and all top Linux distribution. Ubuntu have 22 000 000 users. Big Android progress – 75% of all mobile devices.
+systemd - Ubuntu 和所有主流 Linux 发行版的默认初始化程序。Ubuntu 有 2200 万用户。安卓的大进步 - 占了所有移动设备的 75%。
 
 ### 2015 ###
 
 ![](https://github.com/paulcarroty/Articles/raw/master/Linux_24/2015-1.jpg)
 
-Linux kernel 4.0 released. Mandriva was liquidated, but have a lot of forks – Mageia is most popular.
+发布了 Linux 4.0。没有了 Mandriva（译者注：Mandriva 是目前全球最优秀的 Linux 发行版之一，稳居于 linux 排行榜第一梯队。2005年之前稳居 linux 排行榜 NO.1。它是目前最易用的 linux 发行版，也是众多国际级 linux 发行版中唯一一个默认即支持中文环境的 linux） - 但还有很多分支 - 其中最流行的一个是 Mageia。
 
-Written from Linux with love.
+写于对 Linux 的热爱。
 
 --------------------------------------------------------------------------------
 
 via: https://tlhp.cf/linux-history/
 
 作者：[Pavlo Rudyi][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ictlyh](http://mutouxiaogui.cn/blog)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
