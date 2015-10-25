@@ -1,9 +1,9 @@
  Linux 中 df 命令的11个例子
 ================================================================================
 
-df（可用磁盘）命令用于显示文件系统的磁盘使用情况。默认情况下 df 命令将以 1KB 为单位进行显示所有当前已挂载的文件系统，如果你想以人类易读的格式显示 df 命令的输出，像这样“df -h”使用 -h 选项。
+df 即“可用磁盘”（disk free），用于显示文件系统的磁盘使用情况。默认情况下 df 命令将以每块 1K 的单位进行显示所有当前已挂载的文件系统，如果你想以人类易读的格式显示 df 命令的输出，像这样“df -h”使用 -h 选项。
 
-在这篇文章中，我们将讨论 ‘**df**‘ 命令在 Linux 下11种不同的实例
+在这篇文章中，我们将讨论 `df` 命令在 Linux 下11种不同的实例。
 
 在 Linux 下 df 命令的基本格式为：
 
@@ -13,7 +13,7 @@ df（可用磁盘）命令用于显示文件系统的磁盘使用情况。默认
 
 ![](http://www.linuxtechi.com/wp-content/uploads/2015/10/df-command-options.jpg)
 
-df 的原样输出 :
+df 的样例输出 :
 
     [root@linux-world ~]# df
     Filesystem            1K-blocks   Used Available Use% Mounted on
@@ -28,9 +28,9 @@ df 的原样输出 :
     /dev/mapper/vg00-sap   14987656  37636  14165636   1% /sap
     [root@linux-world ~]#
 
-### 例1：使用 ‘-a’ 选项列出所有文件系统的磁盘使用量 ###
+### 例1：使用 -a 选项列出所有文件系统的磁盘使用量 ###
 
-当我们在 df 命令中使用 ‘-a’ 选项时，它会显示所有文件系统的磁盘使用情况。
+当我们在 df 命令中使用 `-a` 选项时，它会显示所有文件系统的磁盘使用情况。
 
     [root@linux-world ~]# df -a
     Filesystem            1K-blocks   Used Available Use% Mounted on
@@ -69,7 +69,7 @@ df 的原样输出 :
 
 ### 例2：以人类易读的格式显示 df 命令的输出 ###
 
-在 df 命令中使用‘-h’选项，输出以人易读的格式输出（例如，5K，500M ＆ 5G）
+在 df 命令中使用`-h`选项，以人类易读的格式输出（例如，5K，500M 及 5G）
 
     [root@linux-world ~]# df -h
     Filesystem             Size  Used Avail Use% Mounted on
@@ -95,7 +95,7 @@ df 的原样输出 :
 
 ### 例4：输出所有已挂载文件系统的类型 ###
 
-‘**-T**’ 选项用在 df 命令中用来显示文件系统的类型。
+`-T` 选项用在 df 命令中用来显示文件系统的类型。
 
     [root@linux-world ~]# df -T
     Filesystem            Type     1K-blocks   Used Available Use% Mounted on
@@ -110,7 +110,7 @@ df 的原样输出 :
     /dev/mapper/vg00-sap  ext3      14987656  37636  14165636   1% /sap
     [root@linux-world ~]#
 
-### 例5：输出文件系统磁盘使用的块大小 ###
+### 例5：按块大小输出文件系统磁盘使用情况 ###
 
     [root@linux-world ~]# df -k
     Filesystem            1K-blocks   Used Available Use% Mounted on
@@ -127,7 +127,7 @@ df 的原样输出 :
 
 ### 例6：输出文件系统的 inode 信息 ###
 
-‘**-i**’ 选项用在 df 命令用于显示文件系统的 inode 信息。
+`-i` 选项用在 df 命令用于显示文件系统的 inode 信息。
 
 所有文件系统的 inode 信息：
 
@@ -151,9 +151,9 @@ df 的原样输出 :
     /dev/mapper/vg00-sap 960992    11 960981    1% /sap
     [root@linux-world ~]#
 
-### 例7：输出所有文件系统总的使用情况 ###
+### 例7：输出所有文件系统使用情况汇总 ###
 
-‘–total‘ 选项在 df 命令中用于显示所有文件系统的磁盘使用情况。
+`-total` 选项在 df 命令中用于显示所有文件系统的磁盘使用情况汇总。
 
     [root@linux-world ~]# df -h --total
     Filesystem             Size  Used Avail Use% Mounted on
@@ -171,7 +171,7 @@ df 的原样输出 :
 
 ### 例8：只打印本地文件系统磁盘的使用情况 ###
 
-假设网络文件系统也挂载在 Linux 上，但我们只想显示本地文件系统的信息，这可以通过使用 df 命令的 ‘-l‘ 选项来实现。
+假设网络文件系统也挂载在 Linux 上，但我们只想显示本地文件系统的信息，这可以通过使用 df 命令的 `-l` 选项来实现。
 
 ![](http://www.linuxtechi.com/wp-content/uploads/2015/10/nfs4-fs-mount.jpg)
 
@@ -192,7 +192,7 @@ df 的原样输出 :
 
 ### 例9：打印特定文件系统类型的磁盘使用情况 ###
 
-‘**-t**’ 选项在 df 命令中用来打印特定文件系统类型的信息，‘-t’ 指定文件系统的类型，如下所示：
+`-t` 选项在 df 命令中用来打印特定文件系统类型的信息，用 `-t` 指定文件系统的类型，如下所示：
 
 对于 ext4 :
 
@@ -209,11 +209,11 @@ df 的原样输出 :
     192.168.1.5:/opensuse 301545472 266833920  19371008  94% /data
     [root@linux-world ~]#
 
-### 例10：使用 ‘-x’ 选项排除特定的文件系统类型 ###
+### 例10：使用 -x 选项排除特定的文件系统类型 ###
 
-“**-x** 或 **–exclude-type**” 在 df 命令中用来在输出中排出某些文件系统类型。
+`-x` 或 `–exclude-type` 在 df 命令中用来在输出中排出某些文件系统类型。
 
-假设我们想打印排出 ext3 外所有的文件系统。
+假设我们想打印除 ext3 外所有的文件系统。
 
     [root@linux-world ~]# df -x ext3
     Filesystem            1K-blocks      Used Available Use% Mounted on
@@ -228,9 +228,9 @@ df 的原样输出 :
 
 ### 例11：在 df 命令的输出中只打印特定的字段 ###
 
-‘**–output={field_name1,field_name2….}**‘ 选项用于显示 df 命令某些字段的输出。
+`-output={field_name1,field_name2...}` 选项用于显示 df 命令某些字段的输出。
 
-可用的字段名有: ‘source’, ‘fstype’, ‘itotal’, ‘iused’, ‘iavail’, ‘ipcent’, ‘size’, ‘used’, ‘avail’, ‘pcent’ 和 ‘target’
+可用的字段名有: `source`, `fstype`, `itotal`, `iused`, `iavail`, `ipcent`, `size`, `used`, `avail`, `pcent` 和 `target`
 
     [root@linux-world ~]# df --output=fstype,size,iused
     Type     1K-blocks  IUsed
@@ -252,7 +252,7 @@ via: http://www.linuxtechi.com/11-df-command-examples-in-linux/
 
 作者：[Pradeep Kumar][a]
 译者：[strugglingyouth](https://github.com/strugglingyouth)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

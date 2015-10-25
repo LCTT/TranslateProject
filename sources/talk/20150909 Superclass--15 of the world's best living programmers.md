@@ -1,3 +1,5 @@
+martin translating...
+
 Superclass: 15 of the world’s best living programmers
 ================================================================================
 When developers discuss who the world’s top programmer is, these names tend to come up a lot. 
