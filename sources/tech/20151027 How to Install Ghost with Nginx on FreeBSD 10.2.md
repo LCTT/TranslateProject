@@ -1,3 +1,4 @@
+ictlyh Translating
 How to Install Ghost with Nginx on FreeBSD 10.2
 ================================================================================
 Node.js is open source runtime environment for developing the server-side applications. Node.js application is written in javascript and can be run on the server that running Node.js runtime. It is cross-platform runtime, running on Linux, Windows, OSX, IBM AIX, including FreeBSD. Node.js was created by Ryan Dahl and other developer working at Joyent on 2009. It is designed to build scalable network applications.
