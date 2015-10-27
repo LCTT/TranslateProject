@@ -1,3 +1,5 @@
+translating-----geekpi
+
 How To Use iPhone In Antergos Linux
 ================================================================================
 ![](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/10/iPhone-Antergos-Arch-Linux.jpg)
