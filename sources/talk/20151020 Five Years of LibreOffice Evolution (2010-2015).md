@@ -1,3 +1,4 @@
+translation by strugglingyouth
 Five Years of LibreOffice Evolution (2010-2015)
 ================================================================================
 注：youtube 视频
