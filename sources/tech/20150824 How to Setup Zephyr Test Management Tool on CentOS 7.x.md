@@ -1,3 +1,4 @@
+ictlyh Translating
 How to Setup Zephyr Test Management Tool on CentOS 7.x
 ================================================================================
 Test Management encompasses anything and everything that you need to do as testers. Test management tools are used to store information on how testing is to be done, plan testing activities and report the status of quality assurance activities. So in this article we will illustrate you about the setup of Zephyr test management tool that includes everything needed to manage the test process can save testers hassle of installing separate applications that are necessary for the testing process. Once you have done with its setup you will be able to track bugs, defects and allows the project tasks for collaboration with your team as you can easily share and access the data across multiple project teams for communication and collaboration throughout the testing process.
