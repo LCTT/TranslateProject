@@ -4,11 +4,11 @@
 
 我知道你已经看过[如何下载 YouTube 视频][1]。但那些工具大部分都采用图形用户界面的方式。我会向你展示如何通过终端使用 youtube-dl 下载 YouTube 视频。
 
-### [youtube-dl][2] ###
+### youtube-dl ###
 
-youtube-dl 是基于 Python 的命令行小工具，允许你从 YouTube.com、Dailymotion、Google Video、Photobucket、Facebook、Yahoo、Metacafe、Depositfiles 以及其它一些类似网站中下载视频。它是用 pygtk 编写的，需要 Python 解析器来运行，对平台要求并不严格。它能够在 Unix、Windows 或者 Mac OS X 系统上运行。 
+[youtube-dl][2] 是基于 Python 的命令行小工具，允许你从 YouTube.com、Dailymotion、Google Video、Photobucket、Facebook、Yahoo、Metacafe、Depositfiles 以及其它一些类似网站中下载视频。它是用 pygtk 编写的，需要 Python 解析器来运行，对平台要求并不严格。它能够在 Unix、Windows 或者 Mac OS X 系统上运行。 
 
-youtube-dl 支持断点续传。如果在下载的过程中 youtube-dl 被杀死了（例如通过 Ctrl-C 或者丢失网络连接），你只需要使用相同的 YouTube 视频 URL 再次运行它。只要当前目录中有下载的部分文件，它就会自动恢复没有完成的下载，也就是说，你不需要[下载][3]管理器来恢复下载。
+youtube-dl 支持断点续传。如果在下载的过程中 youtube-dl 被杀死了（例如通过 Ctrl-C 或者丢失网络连接），你只需要使用相同的 YouTube 视频 URL 再次运行它。只要当前目录中有下载的部分文件，它就会自动恢复没有完成的下载，也就是说，你不需要[下载管理器][3]来恢复下载。
 
 #### 安装 youtube-dl ####
 
@@ -16,7 +16,7 @@ youtube-dl 支持断点续传。如果在下载的过程中 youtube-dl 被杀死
 
     sudo apt-get install youtube-dl
 
-对于任何 Linux 发行版，你都可以通过下面的命令行接口在你的系统上快速安装 youtube-dl：
+对于任何 Linux 发行版，你都可以通过下面的命令行在你的系统上快速安装 youtube-dl：
 
     sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O/usr/local/bin/youtube-dl
 
@@ -83,11 +83,11 @@ via: http://itsfoss.com/download-youtube-linux/
 
 作者：[alimiracle][a]
 译者：[ictlyh](http://mutouxiaogui.cn/blog/)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
 [a]:http://itsfoss.com/author/ali/
 [1]:http://itsfoss.com/download-youtube-videos-ubuntu/
 [2]:https://rg3.github.io/youtube-dl/
-[3]:http://itsfoss.com/xtreme-download-manager-install/
+[3]:https://linux.cn/article-6209-1.html
