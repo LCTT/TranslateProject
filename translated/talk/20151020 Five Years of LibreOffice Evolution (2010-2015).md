@@ -1,25 +1,26 @@
-translation by strugglingyouth
-Five Years of LibreOffice Evolution (2010-2015)
+
+LibreOffice(2010-2015) 五年的演变
 ================================================================================
 注：youtube 视频
 <iframe width="660" height="371" src="https://www.youtube.com/embed/plo8kP_ts-8?feature=oembed" frameborder="0" allowfullscreen></iframe>
 
-[LibreOffice][1] – amazing free and open source office suite from The Document Foundation. LO was forked from [OpenOffice.org][2] in September 28, 2010 and OOo is an open-source version of the earlier [StarOffice][3]. The LibreOffice support word processing, the creation and editing of spreadsheets, slideshows, diagrams and drawings, databases, mathematical formulae.
 
-### Core applications: ###
+[LibreOffice][1] – 文档基金会（The Document Foundation）一个免费和开源的办公套件。OOo 是[StarOffice][3] 早期的开源版本，LO 在2010年9月28日从 [OpenOffice.org][2] 中被独立出来。LibreOffice 支持文字处理，电子表格，幻灯片，图表和图形，数据库，数学公式的创建和编辑。
 
-- **Writer** – word processor
-- **Calc** – spreadsheet app, similar to Excel
-- **Impress** – application for presentations, support Microsoft PowerPoint’s format
-- **Draw** – vector graphics editor
-- **Math** – special application for writing and editing mathematical formulae
-- **Base** – database management
+### 核心应用: ###
+
+- **Writer** – 文字处理器
+- **Calc** – 电子表格应用程序，类似于 Excel
+- **Impress** – 应用演示，支持 Microsoft PowerPoint 的格式
+- **Draw** – 矢量图形编辑器
+- **Math** – 用于编写和​​编辑数学公式的特殊应用
+- **Base** – 数据库管理
 
 ![LibreOffice 3.3, 2011](https://github.com/paulcarroty/Articles/raw/master/LO_History/3.3/Help-License-Info.png)
 
 LibreOffice 3.3, 2011
 
-First version of LibreOffice – fork of OpenOffice.org
+LibreOffice 的第一个版本 - OpenOffice.org 的一个分支
 
 ![LibreOffice 3.4](https://github.com/paulcarroty/Articles/raw/master/LO_History/3.4/1cc80d1cada204a061402785b2048f7clibreoffice-3.4.3.png)
 
@@ -57,12 +58,12 @@ LibreOffice 4.4
 
 LibreOffice 5.0
 
-### History of Libre Office from Wikipedia ###
+### Libre Office 的发展，出自 Wikipedia ###
 
 ![StarOffice major derivatives](https://commons.wikimedia.org/wiki/File%3AStarOffice_major_derivatives.svg)
 
 
-### LibreOffice 5.0 Review ###
+### 回顾 LibreOffice 5.0 ###
 
 注：youtube 视频
 
@@ -73,7 +74,7 @@ LibreOffice 5.0
 via: https://tlhp.cf/libreoffice-5years-evolution/
 
 作者：[Pavlo Rudyi][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[strugglingyouth](https://github.com/strugglingyouth)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
