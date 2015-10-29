@@ -1,12 +1,8 @@
 如何将 Oracle 11g 升级到 Orcale 12c
 ================================================================================
-大家好。
+大家好。今天我们来学习一下如何将 Oracle 11g 升级到 Oracle 12c。开始吧。
 
-今天我们来学习一下如何将 Oracle 11g 升级到 Oracle 12c。开始吧。
-
-在此，我使用的是 CentOS 7 64 位 Linux 发行版。
-
-我假设你已经在你的系统上安装了 Oracle 11g。这里我会展示一下安装 Oracle 11g 时我的操作步骤。
+在此，我使用的是 CentOS 7 64 位 Linux 发行版。我假设你已经在你的系统上安装了 Oracle 11g。这里我会展示一下安装 Oracle 11g 时我的操作步骤。
 
 我在 Oracle 11g 上选择 “Create and configure a database”，如下图所示。
 
@@ -16,7 +12,7 @@
 
 ![](http://www.unixmen.com/wp-content/uploads/2015/09/11g212cimage2.png)
 
-然后你输入安装 Oracle 11g 的所有路径以及密码。下面是我自己的 Oracle 11g 安装配置。确保你正确输入了 Oracle 的密码。
+然后你输入安装 Oracle 11g 的各种路径以及密码。下面是我自己的 Oracle 11g 安装配置。确保你正确输入了 Oracle 的密码。
 
 ![](http://www.unixmen.com/wp-content/uploads/2015/09/11g212cimage3.png)
 
@@ -30,7 +26,7 @@
 
 你需要从该[链接][1]上下载两个 zip 文件。下载并解压两个文件到相同目录。文件名为 **linuxamd64_12c_database_1of2.zip** & **linuxamd64_12c_database_2of2.zip**。提取或解压完后，它会创建一个名为 database 的文件夹。
 
-注意：升级到 12c 之前，请确保在你的 CentOS 上已经安装了所有必须的软件包并且 path 环境变量也已经正确配置，还有其它前提条件也已经满足。
+注意：升级到 12c 之前，请确保在你的 CentOS 上已经安装了所有必须的软件包，并且所有的路径变量也已经正确配置，还有其它前提条件也已经满足。
 
 下面是必须使用正确版本安装的一些软件包
 
@@ -47,13 +43,11 @@
 
 在因特网上搜索正确的 rpm 版本。
 
-你也可以用一个查询处理多个软件包，然后在输出中查找正确版本。例如：
-
-在终端中输入下面的命令
+你也可以用一个查询处理多个软件包，然后在输出中查找正确版本。例如，在终端中输入下面的命令：
 
     rpm -q binutils compat-libstdc++ gcc glibc libaio libgcc libstdc++ make sysstat unixodbc
 
-你的系统中必须安装了以下软件包（版本可能较新会旧）
+你的系统中必须安装了以下软件包（版本可能或新或旧）
 
 - binutils-2.23.52.0.1-12.el7.x86_64
 - compat-libcap1-1.10-3.el7.x86_64
@@ -83,11 +77,7 @@
 
 你也需要 unixODBC-2.3.1 或更新版本的驱动。
 
-我希望你安装 Oracle 11g 的时候已经在你的 CentOS 7 上创建了名为 oracle 的用户。
-
-让我们以用户 oracle 登录 CentOS。
-
-以用户 oracle 登录到 CentOS 之后，在你的 CentOS上打开一个终端。
+我希望你安装 Oracle 11g 的时候已经在你的 CentOS 7 上创建了名为 oracle 的用户。让我们以用户 oracle 登录 CentOS。以用户 oracle 登录到 CentOS 之后，在你的 CentOS上打开一个终端。
 
 使用终端更改工作目录并导航到你解压两个 zip 文件的目录。在终端中输入以下命令开始安装 12c。
 
@@ -119,15 +109,15 @@
 
 ![](http://www.unixmen.com/wp-content/uploads/2015/09/11g212cimage11.png)
 
-第七步，像下面这样使用默认的选择继续下一步。
+对于第七步，像下面这样使用默认的选择继续下一步。
 
 ![](http://www.unixmen.com/wp-content/uploads/2015/09/11g212cimage12.png)
 
-在第九步，你会看到一个类似下面这样的总结报告。
+在第九步中，你会看到一个类似下面这样的总结报告。
 
 ![](http://www.unixmen.com/wp-content/uploads/2015/09/11g212cimage13.png)
 
-如果一切正常，你可以点击步骤九中的 install 开始安装，进入步骤十。
+如果一切正常，你可以点击第九步中的 install 开始安装，进入第十步。
 
 ![](http://www.unixmen.com/wp-content/uploads/2015/09/11g212cimage14.png)
 
@@ -135,7 +125,7 @@
 
 要有耐心，一步一步走下来最后它会告诉你成功了。否则，在谷歌上搜索做必要的操作解决问题。再一次说明，由于你可能会遇到的错误有很多，我无法在这里提供所有详细介绍。
 
-现在，只需要按照下面屏幕指令配置监听器
+现在，只需要按照下面屏幕指令配置监听器。
 
 配置完监听器之后，它会启动数据库升级助手（Database Upgrade Assistant）。选择 Upgrade Oracle Database。
 
@@ -157,7 +147,7 @@ via: http://www.unixmen.com/upgrade-from-oracle-11g-to-oracle-12c/
 
 作者：[Mohammad Forhad Iftekher][a]
 译者：[ictlyh](http://www.mutouxiaogui.cn/blog/)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

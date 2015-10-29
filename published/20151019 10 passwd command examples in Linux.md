@@ -1,10 +1,9 @@
-
-在 Linux 中 passwd 命令的10个示例
+10 个 Linux 中的 passwd 命令示例
 ================================================================================
 
-正如 **passwd** 命令的名称所示，其用于改变系统用户的密码。如果 passwd 命令由非 root 用户执行，那么它会询问当前用户的密码，然后设置调用命令用户的新密码。当此命令由超级用户 root 执行的话，就可以重新设置任何用户的密码，包括不知道当前密码的用户。
+正如 **passwd** 命令的名称所示，其用于改变系统用户的密码。如果 passwd 命令由非 root 用户执行，那么它会询问当前用户的密码，然后设置调用该命令的用户的新密码。当此命令由超级用户 root 执行的话，就可以重新设置任何用户的密码，包括不知道当前密码的用户。
 
-在这篇文章中，我们将讨论 passwd 命令实际的例子。
+在这篇文章中，我们将用实例来介绍 passwd 命令。
 
 #### 语法 : ####
 
@@ -16,7 +15,7 @@
 
 ### 例1：更改系统用户的密码 ###
 
-当你使用非 root 用户登录时，像我使用 ‘linuxtechi’ 登录的情况下，运行 passwd 命令它会重置当前登录用户的密码。
+当你使用非 root 用户登录时，比如我使用 ‘linuxtechi’ 登录的情况下，运行 passwd 命令它会重置当前登录用户的密码。
 
     [linuxtechi@linuxworld ~]$ passwd
     Changing password for user linuxtechi.
@@ -44,7 +43,7 @@
     linuxtechi PS 2015-09-20 0 99999 7 -1 (Password set, SHA512 crypt.)
     [root@linuxworld ~]#
 
-在上面的输出中，第一个字段显示的用户名，第二个字段显示密码状态（**PS = 密码设置，LK = 密码锁定，NP = 无密码**），第三个字段显示了当密码被改变，后面的字段分别显示了密码能更改的最小期限和最大期限，超过更改期能使用的最大期限，最后的为过期禁用天数。
+在上面的输出中，第一个字段显示的用户名，第二个字段显示密码状态（**PS = 密码设置，LK = 密码锁定，NP = 无密码**），第三个字段显示了上次修改密码的时间，后面四个字段分别显示了密码能更改的最小期限和最大期限，警告期限和没有使用该口令的时长。
 
 ### 例3：显示所有账号的密码状态信息 ###
 
@@ -54,11 +53,11 @@
 
 ![](http://www.linuxtechi.com/wp-content/uploads/2015/09/passwd-sa.jpg)
 
-（LCTT译注：CentOS6.6 没有测试成功，但 Ubuntu 可以。）
+（LCTT译注：不同发行版/passwd 的行为不同。CentOS6.6 没有测试成功，但 Ubuntu 可以。）
 
 ### 例4：使用 -d 选项删除用户的密码 ###
 
-就我而言，我删除 ‘**linuxtechi**‘ 用户的密码。
+用我做例子，删除 ‘**linuxtechi**‘ 用户的密码。
 
     [root@linuxworld ~]# passwd -d linuxtechi
     Removing password for user linuxtechi.
@@ -68,7 +67,7 @@
     linuxtechi NP 2015-09-20 0 99999 7 -1 (Empty password.)
     [root@linuxworld ~]#
 
-“**-d**” 选项将使用户的密码为空，并禁用用户登录。
+“**-d**” 选项将清空用户密码，并禁用用户登录。
 
 ### 例5：设置密码立即过期 ###
 
@@ -81,7 +80,7 @@
     linuxtechi PS 1970-01-01 0 99999 7 -1 (Password set, SHA512 crypt.)
     [root@linuxworld ~]#
 
-现在尝试用 linuxtechi 用户 SSH 到主机。
+现在尝试用 linuxtechi 用户 SSH 连接到主机。
 
 ![](http://www.linuxtechi.com/wp-content/uploads/2015/09/passwd-expiry.jpg)
 
@@ -143,7 +142,7 @@ via: http://www.linuxtechi.com/10-passwd-command-examples-in-linux/
 
 作者：[Pradeep Kumar][a]
 译者：[strugglingyouth](https://github.com/strugglingyouth)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
