@@ -1,12 +1,11 @@
-Linux有问必答--如何强制在下次登录Linux时更换密码
+Linux有问必答：如何强制在下次登录Linux时更换密码
 ================================================================================
 > **提问**：我管理着一台多人共享的Linux服务器。我刚使用默认密码创建了一个新用户，但是我想用户在第一次登录时更换密码。有没有什么方法可以让他/她在下次登录时修改密码呢？
 
-在多用户Linux环境中，标准实践是使用一个默认的随机密码创建一个用户账户。成功登录后，新用户自己改变默认密码。出于安全里有，经常建议“强制”用户在第一次登录时修改密码来确保这个一次性使用的密码不会再被使用。
+在多用户Linux环境中，标准实践是使用一个默认的随机密码创建一个用户账户。成功登录后，新用户自己改变默认密码。出于安全考虑，经常建议“强制”用户在第一次登录时修改密码来确保这个一次性使用的密码不会再被使用。
 
 下面是**如何强制用户在下次登录时修改他/她的密码**。
 
-changes, and when to expire the current password, etc.
 每个Linux用户都关联这不同的密码相关配置和信息。比如，记录着上次密码更改的日期、最小/最大的修改密码的天数、密码何时过期等等。
 
 一个叫chage的命令行工具可以访问并调整密码过期相关配置。你可以使用这个工具来强制用户在下次登录修改密码、
@@ -23,7 +22,7 @@ changes, and when to expire the current password, etc.
 
     $ sudo chage -d0 <user-name> 
 
-原本“-d <N>”参数是用来设置密码的“年龄”（也就是上次修改密码起到1970 1.1起的天数）。因此“-d0”的意思是上次密码修改的时间是1970 1.1，这就让当前的密码过期了，也就强制让他在下次登录的时候修改密码了。
+原本“-d <N>”参数是用来设置密码的“年龄”（也就是上次修改密码起到1970/1/1起的天数）。因此“-d0”的意思是上次密码修改的时间是1970/1/1，这就让当前的密码过期了，也就强制让他在下次登录的时候修改密码了。
 
 另外一个过期当前密码的方式是用passwd命令。
 
@@ -46,8 +45,8 @@ changes, and when to expire the current password, etc.
 via: http://ask.xmodulo.com/force-password-change-next-login-linux.html
 
 作者：[Dan Nanni][a]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
