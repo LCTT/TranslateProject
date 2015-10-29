@@ -1,3 +1,4 @@
+translating wi-cuckoo
 Display Linux Distribution Logo ASCII Art In Terminal
 ================================================================================
 ![Display Linux logo in ASCII art](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/10/ASCII-Arts-Linux-Logo.jpeg)
