@@ -1,61 +1,59 @@
-translating----geekpi
-
-How To Show Desktop In GNOME 3
+如何在GNOME 3 中显示桌面
 ================================================================================
 ![How to show desktop in GNOME 3](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/10/Show-Desktop-in-GNOME-3.jpg)
 
-How do you **show desktop in GNOME 3**? GNOME is a wonderful desktop environment but it focuses more on switching between the applications. What if you want to close all the running windows and display just the desktop?
+你**该如何在GNOME 3中显示桌面**？GNOME是一个很棒的桌面环境但是它专注于在程序间切换。如果你想关闭所有窗口并显示桌面呢？
 
-In Windows, you can do this by pressing Windows+D. In Ubuntu Unity, it is done with Ctrl+Super+D shortcut keys. But for some reason, GNOME has the shortcut key to show desktop disabled for some reasons.
+在Windows中，你可以按下Windows+D。在Ubuntu Unity中，可以用Ctrl+Super+D快捷键。但是由于一些原因，GNOME禁用了显示桌面的快捷键。
 
-When you press Super+D or Ctrl+Super+D, nothing happens. If you want to see the desktop, you’ll have to minimize all running windows one by one. It is not convenient specially if you have several application windows open.
+当你按下Super+D或者Ctrl+Super+D，不会发生什么。如果你想要看到桌面，你得一个个最小化窗口。如果你有好几个打开的窗口那么这会非常不方便。
 
-In this quick tutorial, I am going to show you how to add keyboard shortcut to show desktop in [GNOME 3][1].
+在本教程中，我们向你展示[GNOME 3][1]中添加显示桌面的快捷键。
 
-### Add shortcut key to show desktop in GNOME 3 ###
+### 在GNOME 3 中添加显示桌面的快捷键 ###
 
-I am using [Antergos Linux][2] with GNOME 3.18 in this tutorial, but the steps are applicable to any Linux distribution using any version of GNOME 3. Also, Antergos has [Numix theme][3] applied by default. So, you might not see your usual GNOME icons. But I believe the steps are straight forward and you can easily follow it.
+我在本教程的使用的是GNOME 3.18的[Antergos Linux][2]，但是步骤对于任何GNOME 3版本的Linux发行版都是有用的。同时也使用了[Numix主题][3]作为默认主题。因此你也许不会看到常规的GNOME图标。但是我相信步骤很直接你可以很方便地尝试。
 
-#### Step 1 ####
+#### 第一步 ####
 
-Go to System Settings. Click on the top right corner, from the drop down, click on the system settings icon.
+进入系统设置。点击右上角，在下拉列表中，点击系统设置图标。
 
 ![System Settings in GNOME Antergos Linux](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/10/Show-Desktop-GNOME-1.png)
 
-#### Step 2 ####
+#### 第二步 ####
 
-When you are in System Settings, look for Keyboard settings.
+当你在系统设置中时，寻找设置。
 
 ![Keyboard settings in GNOME 3](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/10/Show-Desktop-GNOME-2.png)
 
-#### Step 3 ####
+#### 第三步 ####
 
-In here, Go to **Shortcuts tab** and select **Navigation** from the left side pane. Scroll down a bit and look for **Hide all normal windows**. You’ll see that it has been disabled.
+在这里，选择**Shortcuts**标签并在左边拦选择**Navigation**。向下滚动一点查找**Hide all normal windows**。你会看见它已经被禁用了
 
 ![Shortcut keys in GNOME 3](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/10/Show-Desktop-GNOME-3.jpeg)
 
-#### Step 4 ####
+#### 第四步 ####
 
-Click once on the key you want to edit, in this case, Hide all normal windows. You’ll see that it has been changed to **New accelerator**… Now whichever keys you will press, it will be assigned for showing the desktop.
+在“Hide all normla windows”上面点击一下。你会看到它变成了**New accelerator**。现在无论你按下哪个键，他都会被分配成显示桌面。
 
-If you accidently press wrong key combination, just press backspace key and it will be disabled again. Click on it again and use the desired key combination.
+如果你意外按下了错误的键，只要按下退格它就会被禁用。再次点击并使用需要的组合键。
 
 ![Shortcut key edit in GNOME 3](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/10/Show-Desktop-GNOME-4.jpeg)
 
-#### Step 5 ####
+#### 第五步 ####
 
-Once you have used the desired key combination, just close the system settings. There is no option for saving the changes because changes are saved instantly. In my case, I used Ctrl+Super+D to align it with the behavior in Ubuntu Unity.
+一旦设置了组合键，只要关闭系统设置。没有设置保存因为更改是立即生效的。在本例中，我使用Ctrl+Super+D来校准到与Ubuntu Unity一致。
 
 ![Keyboard shortcut edit in GNOME](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/10/Show-Desktop-GNOME-5.jpeg)
 
-That’s it folks. Enjoy the shortcut to show desktop in GNOME 3. I hope you found this quick tutorial helpful. Any questions, suggestions or a word of thanks is always welcomed :)
+就是这样。享受GNOME 3中的显示桌面快捷键吧。我希望这篇教程对你们有用。有任何问题、建议或者留言都欢迎:)
 
 --------------------------------------------------------------------------------
 
 via: http://itsfoss.com/show-desktop-gnome-3/
 
 作者：[Abhishek][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
