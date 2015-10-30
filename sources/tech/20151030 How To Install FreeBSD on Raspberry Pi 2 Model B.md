@@ -1,3 +1,4 @@
+translation by strugglingyouth
 How To Install FreeBSD on Raspberry Pi 2 Model B
 ================================================================================
 How do I install FreeBSD 10 or FreeBSD 11 (current) on Raspberry Pi 2 Model B? How do I flash the SD Card using Linux, OS X, FreeBSD or Unix-like operating system?
