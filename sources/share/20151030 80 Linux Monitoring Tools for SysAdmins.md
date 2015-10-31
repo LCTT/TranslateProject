@@ -1,3 +1,5 @@
+
+translation by strugglingyouth
 80 Linux Monitoring Tools for SysAdmins
 ================================================================================
 ![](https://serverdensity-wpengine.netdna-ssl.com/wp-content/uploads/2015/02/linux-monitoring.jpg)
