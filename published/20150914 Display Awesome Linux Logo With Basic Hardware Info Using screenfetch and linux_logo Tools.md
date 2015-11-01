@@ -1,12 +1,12 @@
-用 screenfetch 和 linux_logo 工具显示带有酷炫 Linux 标志的基本硬件信息
+用 screenfetch 和 linux_logo 显示带有酷炫 Linux 标志的基本硬件信息
 ================================================================================
 想在屏幕上显示出你的 Linux 发行版的酷炫标志和基本硬件信息吗？不用找了，来试试超赞的 screenfetch 和 linux_logo 工具。
 
-### 来见见 screenfetch 吧 ###
+### 来看看 screenfetch 吧 ###
 
 screenFetch 是一个能够在截屏中显示系统/主题信息的命令行脚本。它可以在 Linux，OS X，FreeBSD 以及其它的许多类Unix系统上使用。来自 man 手册的说明：
 
-> 这个方便的 Bash 脚本可以用来生成那些漂亮的终端主题信息和 ASCII 发行版标志，就像如今你在别人的截屏里看到的那样。它会自动检测你的发行版并显示 ASCII 版的发行版标志，并且在右边显示一些有价值的信息。
+> 这个方便的 Bash 脚本可以用来生成那些漂亮的终端主题信息和用 ASCII 构成的发行版标志，就像如今你在别人的截屏里看到的那样。它会自动检测你的发行版并显示 ASCII 版的发行版标志，并且在右边显示一些有价值的信息。
 
 #### 在 Linux 上安装 screenfetch ####
 
@@ -16,7 +16,7 @@ screenFetch 是一个能够在截屏中显示系统/主题信息的命令行脚�
 
 ![](http://s0.cyberciti.org/uploads/cms/2015/09/ubuntu-debian-linux-apt-get-install-screenfetch.jpg)
 
-图一：用 apt-get 安装 screenfetch
+*图一：用 apt-get 安装 screenfetch*
 
 #### 在 Mac OS X 上安装 screenfetch ####
 
@@ -26,7 +26,7 @@ screenFetch 是一个能够在截屏中显示系统/主题信息的命令行脚�
 
 ![](http://s0.cyberciti.org/uploads/cms/2015/09/apple-mac-osx-install-screenfetch.jpg)
 
-图二：用 brew 命令安装 screenfetch
+*图二：用 brew 命令安装 screenfetch*
 
 #### 在 FreeBSD 上安装 screenfetch ####
 
@@ -36,7 +36,7 @@ screenFetch 是一个能够在截屏中显示系统/主题信息的命令行脚�
 
 ![](http://s0.cyberciti.org/uploads/cms/2015/09/freebsd-install-pkg-screenfetch.jpg)
 
-图三：在 FreeBSD 用 pkg 安装 screenfetch
+*图三：在 FreeBSD 用 pkg 安装 screenfetch*
 
 #### 在 Fedora 上安装 screenfetch ####
 
@@ -46,7 +46,7 @@ screenFetch 是一个能够在截屏中显示系统/主题信息的命令行脚�
 
 ![](http://s0.cyberciti.org/uploads/cms/2015/09/fedora-dnf-install-screenfetch.jpg)
 
-图四：在 Fedora 22 用 dnf 安装 screenfetch
+*图四：在 Fedora 22 用 dnf 安装 screenfetch*
 
 #### 我该怎么使用 screefetch 工具？ ####
 
@@ -56,21 +56,21 @@ screenFetch 是一个能够在截屏中显示系统/主题信息的命令行脚�
 
 这是不同系统的输出：
 
-![](http://s0.cyberciti.org/uploads/cms/2015/09/fedora-screenfetch-300x193.jpg)
+![](http://s0.cyberciti.org/uploads/cms/2015/09/fedora-screenfetch.jpg)
 
-Fedora 上的 Screenfetch
+*Fedora 上的 Screenfetch*
 
-![](http://s0.cyberciti.org/uploads/cms/2015/09/screenfetch-osx-300x213.jpg)
+![](http://s0.cyberciti.org/uploads/cms/2015/09/screenfetch-osx.jpg)
 
-OS X 上的 Screenfetch
+*OS X 上的 Screenfetch*
 
-![](http://s0.cyberciti.org/uploads/cms/2015/09/screenfetch-freebsd-300x143.jpg)
+![](http://s0.cyberciti.org/uploads/cms/2015/09/screenfetch-freebsd.jpg)
 
-FreeBSD 上的 Screenfetch
+*FreeBSD 上的 Screenfetch*
 
-![](http://s0.cyberciti.org/uploads/cms/2015/09/debian-ubutnu-screenfetch-outputs-300x279.jpg)
+![](http://s0.cyberciti.org/uploads/cms/2015/09/debian-ubutnu-screenfetch-outputs.jpg)
 
-Debian 上的 Screenfetch
+*Debian 上的 Screenfetch*
 
 #### 获取截屏 ####
 
@@ -134,7 +134,7 @@ linux_logo 程序生成一个彩色的 ANSI 版企鹅图片，还包含一些来
 
 ![](http://s0.cyberciti.org/uploads/cms/2015/09/debian-linux_logo.jpg)
 
-运行 linux_logo
+*运行 linux_logo*
 
 #### 等等，还有更多！ ####
 
@@ -196,7 +196,7 @@ linux_logo 程序生成一个彩色的 ANSI 版企鹅图片，还包含一些来
 
 ![](http://s0.cyberciti.org/uploads/cms/2015/09/linux-logo-fun.gif)
 
-动图1： linux_logo 和 bash 循环，既有趣又能发朋友圈耍酷
+*动图1： linux_logo 和 bash 循环，既有趣又能发朋友圈耍酷*
 
 ### 获取帮助 ###
 
@@ -216,7 +216,7 @@ via: http://www.cyberciti.biz/hardware/howto-display-linux-logo-in-bash-terminal
 
 作者：Vivek Gite
 译者：[alim0x](https://github.com/alim0x)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
