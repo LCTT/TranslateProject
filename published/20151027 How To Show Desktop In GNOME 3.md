@@ -12,7 +12,7 @@
 
 ### 在GNOME 3 中添加显示桌面的快捷键 ###
 
-我在本教程的使用的是GNOME 3.18的[Antergos Linux][2]但是这些步骤对于任何GNOME 3版本的Linux发行版都适用。同时也使用了[Numix主题][3]作为默认主题。因此你也许不会看到平常的GNOME图标。但是我相信步骤是一目了然的，很容易就能理解。
+我在本教程的使用的是带有GNOME 3.18的[Antergos Linux][2]，但是这些步骤对于任何GNOME 3版本的Linux发行版都适用。同时，Antergos也使用了[Numix主题][3]作为默认主题。因此你也许不会看到平常的GNOME图标。但是我相信步骤是一目了然的，很容易就能理解。
 
 #### 第一步 ####
 
@@ -34,7 +34,7 @@
 
 #### 第四步 ####
 
-在“Hide all normla windows”上面点击一下。你会看到它变成了**New accelerator**。现在无论你按下哪个键，他都会被指定为显示桌面。
+在“Hide all normla windows”上面点击一下。你会看到它变成了**New accelerator**。现在无论你按下哪个键，它都会被指定为显示桌面的快捷键。
 
 如果你不小心按下了错误的组合键，只要按下退格它就会被禁用。再次点击并使用需要的组合键。
 
@@ -42,7 +42,7 @@
 
 #### 第五步 ####
 
-一旦设置了组合键，只要关闭系统设置。没有保存设置因为更改是立即生效的。在本例中，我使用Ctrl+Super+D来与我在Ubuntu Unity中的使用习惯保持一致。
+一旦设置了组合键，只要关闭系统设置。不用保存设置因为更改是立即生效的。在本例中，我使用Ctrl+Super+D来与我在Ubuntu Unity中的使用习惯保持一致。
 
 ![Keyboard shortcut edit in GNOME](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/10/Show-Desktop-GNOME-5.jpeg)
 
@@ -61,4 +61,4 @@ via: http://itsfoss.com/show-desktop-gnome-3/
 [a]:http://itsfoss.com/author/abhishek/
 [1]:https://www.gnome.org/gnome-3/
 [2]:http://itsfoss.com/tag/antergos/
-[3]:http://itsfoss.com/install-numix-ubuntu/
+[3]:https://linux.cn/article-3281-1.html
