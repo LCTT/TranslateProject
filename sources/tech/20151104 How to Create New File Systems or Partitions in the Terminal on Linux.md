@@ -1,3 +1,4 @@
+translation by strugglingyouth
 How to Create New File Systems/Partitions in the Terminal on Linux
 ================================================================================
 ![](https://www.maketecheasier.com/assets/uploads/2015/03/cfdisk-feature-image.png)
