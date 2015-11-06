@@ -56,7 +56,7 @@ Since hard drive partitions are different, depending on a user’s needs, this p
 
 ### 使用 mkfs 创建文件系统 ###
 
-有时候，你并不需要一个完整的分区。有时候，你只需要做一个文件系统。这可以在终端直接使用 `mkfs` 命令来实现。
+有时候，你并不需要一个完整的分区，你只想要创建一个文件系统而已。你可以在终端直接使用 `mkfs` 命令来实现。
 
 ![cfdisk-mkfs-list-partitions-lsblk](https://www.maketecheasier.com/assets/uploads/2015/10/cfdisk-mkfs-list-partitions-lsblk.png)
 
