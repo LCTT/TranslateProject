@@ -1,3 +1,5 @@
+FSSlc translating
+
 How To Install Retro Terminal In Linux
 ================================================================================
 ![Retro Terminal in Linux](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/10/Retro-Terminal-Linux.jpeg)
