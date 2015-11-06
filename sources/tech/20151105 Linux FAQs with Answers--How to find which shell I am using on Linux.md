@@ -1,3 +1,5 @@
+
+translation by strugglingyouth
 Linux FAQs with Answers--How to find which shell I am using on Linux
 ================================================================================
 > **Question**: I often change between different shells at the command line. Is there a quick and easy way to find out which shell I am currently in? Also how can I find out the version of the shell?
