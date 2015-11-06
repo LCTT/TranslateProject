@@ -1,3 +1,4 @@
+zpl1025 translating
 The Brief History Of Aix, HP-UX, Solaris, BSD, And LINUX
 ================================================================================
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/05/linux-712x445.png)
