@@ -1,5 +1,3 @@
-Translating by Xuanwo
-
 Part 6 - LFCS: Assembling Partitions as RAID Devices – Creating & Managing System Backups
 ================================================================================
 Recently, the Linux Foundation launched the LFCS (Linux Foundation Certified Sysadmin) certification, a shiny chance for system administrators everywhere to demonstrate, through a performance-based exam, that they are capable of performing overall operational support on Linux systems: system support, first-level diagnosing and monitoring, plus issue escalation, when required, to other support teams.

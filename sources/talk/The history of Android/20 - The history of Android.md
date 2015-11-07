@@ -1,3 +1,5 @@
+alim0x translating
+
 The history of Android
 ================================================================================
 ![Another Market design that was nothing like the old one. This lineup shows the categories page, featured, a top apps list, and an app page.](http://cdn.arstechnica.net/wp-content/uploads/2014/03/market-pages.png)

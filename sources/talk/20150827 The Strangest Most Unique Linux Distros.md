@@ -1,3 +1,5 @@
+FSSlc Translating
+
 The Strangest, Most Unique Linux Distros
 ================================================================================
 From the most consumer focused distros like Ubuntu, Fedora, Mint or elementary OS to the more obscure, minimal and enterprise focused ones such as Slackware, Arch Linux or RHEL, I thought I've seen them all. Couldn't have been any further from the truth. Linux eco-system is very diverse. There's one for everyone. Let's discuss the weird and wacky world of niche Linux distros that represents the true diversity of open platforms.
