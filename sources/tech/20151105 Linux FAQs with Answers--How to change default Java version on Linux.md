@@ -1,3 +1,5 @@
+translating----geekpi
+
 Linux FAQs with Answers--How to change default Java version on Linux
 ================================================================================
 > **Question**: When I am trying to run a Java program on Linux, I am getting the following error. Looks like the Java program is compiled for a different Java version than the default Java program installed on my Linux. How can I switch the default Java version on Linux?
