@@ -1,4 +1,4 @@
-安装 Samba 并配置 Firewalld 和 SELinux 使得能在 Linux 和 Windows 之间共享文件 - 第六部分
+RHCE 系列（六）：安装 Samba 并配置 Firewalld 和 SELinux 让 Linux 和 Windows 共享文件
 ================================================================================
 由于计算机很少作为一个独立的系统工作，作为一个系统管理员或工程师，就应该知道如何在有多种类型的服务器之间搭设和维护网络。
 
@@ -6,9 +6,9 @@
 
 ![在 Linux 中配置 Samba 进行文件共享](http://www.tecmint.com/wp-content/uploads/2015/09/setup-samba-file-sharing-on-linux-windows-clients.png)
 
-RHCE 系列第六部分 - 设置 Samba 文件共享
+*RHCE 系列第六部分 - 设置 Samba 文件共享*
 
-如果有人叫你设置文件服务器用于协作或者配置很可能有多种不同类型操作系统和设备的企业环境，这篇文章就能派上用场。
+如果有人让你设置文件服务器用于协作或者配置很可能有多种不同类型操作系统和设备的企业环境，这篇文章就能派上用场。
 
 由于你可以在网上找到很多关于 Samba 和 NFS 背景和技术方面的介绍，在这篇文章以及后续文章中我们就省略了这些部分直接进入到我们的主题。
 
@@ -22,7 +22,7 @@ RHCE 系列第六部分 - 设置 Samba 文件共享
 
 ![测试安装 Samba](http://www.tecmint.com/wp-content/uploads/2015/09/Testing-Setup-for-Samba.png)
 
-测试安装 Samba
+*测试安装 Samba*
 
 在 box1 中安装以下软件包：
 
@@ -36,7 +36,7 @@ RHCE 系列第六部分 - 设置 Samba 文件共享
 
 ### 步骤二： 设置通过 Samba 进行文件共享 ###
 
-Samba 这么重要的原因之一是它为 SMB/CIFS 客户端（译者注：SMB 是微软和英特尔制定的一种通信协议，CIFS 是其中一个版本，更详细的介绍可以参考[Wiki][6]）提供了文件和打印设备，这使得客户端看起来服务器就是一个 Windows  系统（我必须承认写这篇文章的时候我有一点激动，因为这是我多年前作为一个新手 Linux 系统管理员的第一次设置）。
+Samba 这么重要的原因之一是它为 SMB/CIFS 客户端（LCTT 译注：SMB 是微软和英特尔制定的一种通信协议，CIFS 是其中一个版本，更详细的介绍可以参考 [Wiki][6]）提供了文件和打印设备，这使得服务器在客户端看起来就是一个 Windows  系统（我必须承认写这篇文章的时候我有一点激动，因为这是我多年前作为一个新手 Linux 系统管理员的第一次设置）。
 
 **添加系统用户并设置权限和属性**
 
@@ -91,9 +91,9 @@ Samba 这么重要的原因之一是它为 SMB/CIFS 客户端（译者注：SMB 
 
 ![测试 Samba 配置](http://www.tecmint.com/wp-content/uploads/2015/09/Test-Samba-Configuration.png)
 
-测试 Samba 配置
+*测试 Samba 配置*
 
-如果你要添加另一个公开的共享目录（意味着没有任何验证），在 /etc/samba/smb.conf 中创建另一章节，在共享目录名称下面复制上面的章节，只需要把 public=no 更改为 public=yes 并去掉有效用户和写列表命令。
+如果你要添加另一个公开的共享目录（意味着不需要任何验证），在 /etc/samba/smb.conf 中创建另一章节，在共享目录名称下面复制上面的章节，只需要把 public=no 更改为 public=yes 并去掉有效用户（valid users）和写列表（write list）命令。
 
 ### 步骤五： 添加 Samba 用户 ###
 
@@ -102,7 +102,7 @@ Samba 这么重要的原因之一是它为 SMB/CIFS 客户端（译者注：SMB 
     # smbpasswd -a user1
     # smbpasswd -a user2
 
-最后，重启 Samda，启用系统启动时自动启动服务，并确保共享目录对网络客户端可用：
+最后，重启 Samda，并让系统启动时自动启动该服务，确保共享目录对网络客户端可用：
 
     # systemctl start smb
     # systemctl enable smb
@@ -112,7 +112,7 @@ Samba 这么重要的原因之一是它为 SMB/CIFS 客户端（译者注：SMB 
 
 ![验证 Samba 共享](http://www.tecmint.com/wp-content/uploads/2015/09/Verify-Samba-Share.png)
 
-验证 Samba 共享
+*验证 Samba 共享*
 
 到这里，已经正确安装和配置了 Samba 文件服务器。现在让我们在 RHEL 7 和 Windows 8 客户端中测试该配置。
 
@@ -120,12 +120,11 @@ Samba 这么重要的原因之一是它为 SMB/CIFS 客户端（译者注：SMB 
 
 首先，确保客户端可以访问 Samba 共享：
 
-# smbclient –L 192.168.0.18 -U user2
-
+	# smbclient –L 192.168.0.18 -U user2
 
 ![在 Linux 上挂载 Samba 共享](http://www.tecmint.com/wp-content/uploads/2015/09/Mount-Samba-Share-on-Linux.png)
 
-在 Linux 上挂载 Samba 共享
+*在 Linux 上挂载 Samba 共享*
 
 （为 user1 重复上面的命令）
 
@@ -135,11 +134,11 @@ Samba 这么重要的原因之一是它为 SMB/CIFS 客户端（译者注：SMB 
 
 ![挂载 Samba 网络共享](http://www.tecmint.com/wp-content/uploads/2015/09/Mount-Samba-Network-Share.png)
 
-挂载 Samba 网络共享
+*挂载 Samba 网络共享*
 
 （其中 /media/samba 是一个已有的目录）
 
-或者在 /etc/fstab 文件中添加下面的条目自动挂载：
+或者在 /etc/fstab 文件中添加下面的条目以自动挂载：
 
 **fstab**
 
@@ -147,7 +146,7 @@ Samba 这么重要的原因之一是它为 SMB/CIFS 客户端（译者注：SMB 
 
     //192.168.0.18/finance /media/samba cifs credentials=/media/samba/.smbcredentials,defaults 0 0
 
-其中隐藏文件 /media/samba/.smbcredentials（它的权限被设置为 600 和 root：root）有两行，指示允许使用共享的账户的用户名和密码：
+其中隐藏文件 /media/samba/.smbcredentials（它的权限被设置为 600 和 root:root）有两行内容，指示允许使用共享的账户的用户名和密码：
 
 **.smbcredentials**
 
@@ -162,17 +161,17 @@ Samba 这么重要的原因之一是它为 SMB/CIFS 客户端（译者注：SMB 
 
 ![在 Samba 共享中创建文件](http://www.tecmint.com/wp-content/uploads/2015/09/Create-File-in-Samba-Share.png)
 
-在 Samba 共享中创建文件
+*在 Samba 共享中创建文件*
 
 正如你看到的，用权限 0770 和属主 user1:finance 创建了文件。
 
 ### 步骤七： 在 Windows 上挂载 Samba 共享 ###
 
-要在 Windows 上挂载 Samba 共享，进入 ‘我的计算机’ 并选择 ‘计算机’，‘网络驱动映射’。下一步，为要映射的驱动分配一个字母并用不同的认证检查连接（下面的截图使用我的母语西班牙语）：
+要在 Windows 上挂载 Samba 共享，进入 ‘我的计算机’ 并选择 ‘计算机’，‘网络驱动映射’。下一步，为要映射的驱动分配一个驱动器盘符并用不同的认证身份检查是否可以连接（下面的截图使用我的母语西班牙语）：
 
 ![在 Windows 中挂载 Samba 共享](http://www.tecmint.com/wp-content/uploads/2015/09/Mount-Samba-Share-in-Windows.png)
 
-在 Windows 中挂载 Samba 共享
+*在 Windows 中挂载 Samba 共享*
 
 最后，让我们新建一个文件并检查权限和属性：
 
@@ -188,7 +187,7 @@ Samba 这么重要的原因之一是它为 SMB/CIFS 客户端（译者注：SMB 
 
 在这篇文章中我们不仅介绍了如何使用不同操作系统设置 Samba 服务器和两个客户端，也介绍了[如何配置 Firewalld][3] 和 [服务器中的 SELinux][4] 以获取所需的组协作功能。
 
-最后，同样重要的是，我推荐阅读网上的 [smb.conf man 手册][5] 查看其它可能针对你的情况比本文中介绍的场景更加合适的配置命令。
+最后，同样重要的是，我推荐阅读网上的 [smb.conf man 手册][5] ，查看其它比本文中介绍的场景更加合适你的场景的配置命令。
 
 正如往常，欢迎在下面的评论框中留下你的评论或建议。
 
@@ -198,7 +197,7 @@ via: http://www.tecmint.com/setup-samba-file-sharing-for-linux-windows-clients/
 
 作者：[Gabriel Cánepa][a]
 译者：[ictlyh](http://www.mutouxiaogui.cn/blog/)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
