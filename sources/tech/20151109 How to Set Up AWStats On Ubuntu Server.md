@@ -1,3 +1,4 @@
+translation by strugglingyouth
 How to Set Up AWStats On Ubuntu Server
 ================================================================================
 ![](https://www.maketecheasier.com/assets/uploads/2015/10/Apache_awstats_featured.jpg)
