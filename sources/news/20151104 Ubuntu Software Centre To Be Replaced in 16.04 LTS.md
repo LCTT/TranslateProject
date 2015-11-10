@@ -1,3 +1,4 @@
+translation by strugglingyouth
 Ubuntu Software Centre To Be Replaced in 16.04 LTS
 ================================================================================
 ![The USC Will Be Replaced](http://www.omgubuntu.co.uk/wp-content/uploads/2011/09/usc1.jpg)
