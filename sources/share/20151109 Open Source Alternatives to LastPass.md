@@ -1,3 +1,5 @@
+Translating by StdioA
+
 Open Source Alternatives to LastPass
 ================================================================================
 LastPass is a cross-platform password management program. For Linux, it is available as a plugin for Firefox, Chrome, and Opera. LastPass Sesame is available for Ubuntu/Debian and Fedora. There is also a version of LastPass compatible with Firefox Portable for installing on a USB key. And with LastPass Pocket for Ubuntu/Debian, Fedora and openSUSE, there's good coverage. While LastPass is a highly rated service, it is proprietary software. And LastPass has recently been absorbed by LogMeIn. If you're looking for an open source alternative, this article is for you.
