@@ -1,3 +1,4 @@
+zpl1025
 Install Android On BQ Aquaris Ubuntu Phone In Linux
 ================================================================================
 ![How to install Android on Ubuntu Phone](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/11/Install-Android-on-Ubuntu-Phone.jpg)
