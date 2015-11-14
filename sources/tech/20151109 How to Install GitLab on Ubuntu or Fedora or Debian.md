@@ -50,6 +50,7 @@
     # systemctl enable sshd postfix
 
 创建/etc/systemd/system/multi-user.target.wants/sshd.service 的链接到/usr/lib/systemd/system/sshd.service
+
 创建/etc/systemd/system/multi-user.target.wants/postfix.service 的链接到/usr/lib/systemd/system/postfix.service
 
 ### 3. 下载 GitLab ###
@@ -102,26 +103,26 @@
 
 ### 5. 配置和启动GitLab ###
 
-Next, as GitLab CE has been successfully installed in our linux system. We'll now go ahead for configuring and starting it. To do so, we'll need to run the following command which is same in Ubuntu, Debian and Fedora distributions.
+接下来，gitlab CE 已经被成功的安装到我们的Linux 系统。我们现在要开始配置和启动它。要完成这些，需要运行下面的命令，这些命令在Ubuntu，Debian和Fedora 这些发行版本上都一样。
 
     # gitlab-ctl reconfigure
 
 ![Reconfiguring Gitlab](http://blog.linoxide.com/wp-content/uploads/2015/10/reconfiguring-gitlab.png)
 
-### 6. Allowing Firewall ###
+### 6. 添加防火墙允许项 ###
 
-If we have firewall program enabled for security in our linux box, we'll need to allow port 80 which is the default port of GitLab CE in order to make the web interface accessible across the network. Firewalld and iptables are most widely used firewall programs in linux distributions. In order to do so, we'll need to run the following commands.
-On Iptables
+如果我们为了自己系统的安全性考虑而打开了防火墙程序，我们需要允许gitlab 使用的默认端口80 能够通信，这样子我们才能通过网络在web 界面访问gitlab CE。firewalld 和ipdatles 是在linux 系统上使用最广泛的防火墙程序。为了配置好防火墙，我们需要运行下面的命令。
 
-Iptables are installed and used in Ubuntu 14.04 by default. So, we'll need to run the following iptables commands to open port 80 in it.
+#### Iptables ####
+iptables 在Ubuntu 14.04 上默认安装并使用。所以我们需要运行下面的iptables 命令来添加打开端口80 的语句：
 
     # iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
 
     # /etc/init.d/iptables save
 
-#### On Firewalld ####
+#### Firewalld ####
 
-As Fedora 22 and Debian 8.x has systemd installed by default, it contains firewalld running as firewall program. In order to open the port 80 (http service) on firewalld, we'll need to execute the below commands.
+Fedora 22 和Debian 8.x 默认安装了systemd，它已经包含了firewalld 作为默认的防火墙程序运行。为了添加打开端口80 的命令到firewalld，我们需要执行下面的命令。
 
     # firewall-cmd --permanent --add-service=http
 
@@ -131,40 +132,40 @@ As Fedora 22 and Debian 8.x has systemd installed by default, it contains firewa
 
     success
 
-### 7. Accessing GitLab Web Interface ###
+### 7. 访问gitlab 的web 页面###
 
-Finally, we'll now go for accessing the web interface of GitLab CE. To do so, we'll need to point our web browser to the GitLab server with http://ip-address/ or http://domain.com/ according to our configuration. After we have pointed successfully, we'll see the following screen.
+最后，我们现在可以通过web 界面访问Gitlab CE。做到这一点可以在web 浏览器里访问http://ip-address/ 或 http://domain.com/，这要根据我们的配置来定。在我们成功登录之后，屏幕会有如下显示。
 
 ![Gitlab Login Screen](http://blog.linoxide.com/wp-content/uploads/2015/10/gitlab-login-screen.png)
 
-Now, in order to login to the panel, we'll need to click on Login button which will ask us an username and a password. We'll now enter the default username and password ie **root** and **5iveL!fe** respectively. After logging into the dashboard, we'll be asked to compulsorily enter the new password for our GitLab root user.
+现在，为了登录我们需要点击Login 按钮，它要求用户名和密码。我们现在可以输入默认的用户名和密码：**root** 和 **5iveL!fe**。在登录到仪表盘以后，我们会被要求输入gitlab root 用户的新密码。
 
 ![Setting New Password Gitlab](http://blog.linoxide.com/wp-content/uploads/2015/10/setting-new-password-gitlab.png)
 
-### 8. Creating Repository ###
+### 8. 创建仓库###
 
-After we have successfully changed the password and logged in to our dashboard, we'll now create a new repository for our new project. To do so, we'll need to go under Projects and click on **NEW PROJECT** green button.
+在我们成功的修改密码并且登录到我们自己的仪表盘后，我们现在就来为我们的新工程创建一个新的仓库。过程如下，先跳转到Projects 页面点击**NEW PROJECT**的绿色按钮。
 
 ![Creating New Projects](http://blog.linoxide.com/wp-content/uploads/2015/10/creating-new-projects.png)
 
-Then, we'll be asked to enter the required information and settings for our repository as shown below. We can even import our project from many git repository providers and repositories.
+然后被要求输入我们的仓库的必要信息和配置，如下所示。我们也可以从其他git 仓库服务商导入已有的仓库。
 
 ![Creating New Project](http://blog.linoxide.com/wp-content/uploads/2015/10/configuring-git-project.png)
 
-After thats done, we'll be able to access our Git repository using any Git client including the basic git command line. We can see every activities done in the repository with other functions like creating a milestone, managing issues, merge requests, managing members, labels and Wiki for our projects.
+这些都完成之后就可以使用git 客户端包括git 命令行来访问我们自己的git 仓库。我们可以查看对工程做的任何操作，如创建里程碑，管理问题记录，合并请求，管理成员，标签以及工程的wiki 页面。
 
 ![Gitlab Menu](http://blog.linoxide.com/wp-content/uploads/2015/10/gitlab-menu.png)
 
-### Conclusion ###
+### 总结 ###
 
-GitLab is an awesome open source web application for managing our git repository. It has a beautiful, responsive interface with plenty of cool features. It is packed with many cool features like managing groups, deploying keys, Continuous Integration, viewing logs, broadcast messages, hooks, system OAuth applications, templates and more. It has the ability to integrate tons of tools such as Slack, Hipchat, LDAP, JIRA, Jenkins, many types of hooks and a complete API. It has the minimum requirement of 2 GB RAM and 2 Cores CPU to run smoothly up to 500 users but also can be scaled to multiple active servers. If you have any questions, suggestions, feedback please write them in the comment box below so that we can improve or update our contents. Thank you !
+gitlab 是一个很棒的开源web 应用程序，可以很好的管理我们的git 仓库。他又一个很漂亮，响应很好的界面，和很多非常酷的特性。它集成了很多酷酷的功能，如管理组，部署key，持续集成，日志记录，广播消息，钩子接口，OAuth 系统认证，模板和很多其他的功能。他有能力可以继承大量的工具，如Slack，Hipchat，LDAP，JIRA，Jenkins，很多种类的钩子和完整的API 。它需要最少2GB 内存和双核处理器才能流畅的支持500个以上的用户，但是也可以扩展为多个活跃的服务器。如果你有任何问题、建议、反馈，请写在下面的评论框，这样我们就可以改进和更新我们的内容，谢谢。
 
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/linux-how-to/install-gitlab-on-ubuntu-fedora-debian/
 
 作者：[Arun Pyasi][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[oska874](https://github.com/oska874)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
