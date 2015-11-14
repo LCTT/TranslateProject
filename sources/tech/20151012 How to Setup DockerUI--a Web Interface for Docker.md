@@ -2,65 +2,65 @@ translating by Ezio
 
 在浏览器上使用Docker
 ================================================================================
-Docker is getting more popularity day by day. The idea of running a complete Operating System inside a container rather than running inside a virtual machine is an awesome technology. Docker has made lives of millions of system administrators and developers pretty easy for getting their work done in no time. It is an open source technology that provides an open platform to pack, ship, share and run any application as a lightweight container without caring on which operating system we are running on the host. It has no boundaries of Language support, Frameworks or packaging system and can be run anywhere, anytime from a small home computers to high-end servers. Running docker containers and managing them may come a bit difficult and time consuming, so there is a web based application named DockerUI which is make managing and running container pretty simple. DockerUI is highly beneficial to people who are not much aware of linux command lines and want to run containerized applications. DockerUI is an open source web based application best known for its beautiful design and ease simple interface for running and managing docker containers.
+Docker 越来越流行了。在一个容器里面而不是虚拟机里运行一个完整的操作系统的这种是一个非常棒的技术和想法。docker 已经通过节省工作时间来拯救了千上万的系统管理员和开发人员。这是一个开源技术，提供一个平台来把应用程序当作容器来打包、分发、共享和运行，而不去关注主机上运行的操作系统是什么。它没有开发语言、框架或打包系统的限制，并且可以在任何时间、任何地点运行，从小型计算机到高端服务器都可以。运行docker容器和管理他们可能会花费一点点困难和时间，所以现在有一款基于web 的应用程序－DockerUI，可以让管理和运行容器变得很简单。DockerUI 是一个对那些不熟悉Linux 命令行担忧很想运行容器话程序的人很有帮助。DockerUI 是一个开源的基于web 的应用程序，它最著名的是它华丽的设计和简单的用来运行和管理docker 的简单的操作界面。
 
-Here are some easy steps on how we can setup Docker Engine with DockerUI in our linux machine.
+下面会介绍如何在Linux 上安装配置DockerUI。
 
 ### 1. 安装docker ###
 
-First of all, we'll gonna install docker engine in our linux machine. Thanks to its developers, docker is very easy to install in any major linux distribution. To install docker engine, we'll need to run the following command with respect to which distribution we are running.
+首先，我们需要安装docker。我们得感谢docker 的开发者，让我们可以简单的在主流linux 发行版上安装docker。为了安装docker，我们得在对应的发行版上使用下面的命令。
 
 #### Ubuntu/Fedora/CentOS/RHEL/Debian ####
 
-Docker maintainers have written an awesome script that can be used to install docker engine in Ubuntu 15.04/14.10/14.04, CentOS 6.x/7, Fedora 22, RHEL 7 and Debian 8.x distributions of linux. This script recognizes the distribution of linux installed in our machine, then adds the required repository to the filesystem, updates the local repository index and finally installs docker engine and required dependencies from it. To install docker engine using that script, we'll need to run the following command under root or sudo mode.
+docker 维护者已经写了一个非常棒的脚本，用它可以在Ubuntu 15.04/14.10/14.04, CentOS 6.x/7, Fedora 22, RHEL 7 和Debian 8.x 这几个linux 发行版上安装docker。这个脚本可以识别出我们的机器上运行的linux 的发行版本，然后将需要的源库添加到文件系统、更新本地的安装源目录，最后安装docker 和依赖库。要使用这个脚本安装docker，我们需要在root 用户或者sudo 权限下运行如下的命令，
 
     # curl -sSL https://get.docker.com/ | sh
 
 #### OpenSuse/SUSE Linux 企业版 ####
 
-To install docker engine in the machine running OpenSuse 13.1/13.2 or SUSE Linux Enterprise Server 12, we'll simply need to execute the zypper command. We'll gonna install docker using zypper command as the latest docker engine is available on the official repository. To do so, we'll run the following command under root/sudo mode.
+要在运行了OpenSuse 13.1/13.2 或者 SUSE Linux Enterprise Server 12 的机器上安装docker，我们只需要简单的执行zypper 命令。运行下面的命令就可以安装最新版本的docker： 
 
     # zypper in docker
 
 #### ArchLinux ####
 
-Docker is available in the official repository of Archlinux as well as in the AUR packages maintained by the community. So, we have two options to install docker in archlinux. To install docker using the official arch repository, we'll need to run the following pacman command.
+docker 存在于ArchLinux 的官方源和社区维护的AUR 库。所以在ArchLinux 上我们有两条路来安装docker。使用官方源安装，需要执行下面的pacman 命令：
 
     # pacman -S docker
 
-But if we want to install docker from the Archlinux User Repository ie AUR, then we'll need to execute the following command.
+如果要从社区源 AUR 安装docker，需要执行下面的命令：
 
     # yaourt -S docker-git
 
 ### 2. 启动 ###
 
-After docker is installed, we'll now gonna start our docker daemon so that we can run docker containers and manage them. We'll run the following command to make sure that docker daemon is installed and to start the docker daemon.
+安装好docker 之后，我们需要运行docker 监护程序，然后再能运行并管理docker 容器。我们需要使用下列命令来确定docker 监护程序已经安装并运行了。 
 
-#### On SysVinit ####
+#### 在 SysVinit 上####
 
     # service docker start
 
-#### On Systemd ####
+#### 在Systemd 上####
 
     # systemctl start docker
 
 ### 3. 安装DockerUI ###
 
-Installing DockerUI is pretty easy than installing docker engine. We just need to pull the dockerui from the Docker Registry Hub and run it inside a container. To do so, we'll simply need to run the following command.
+安装DockerUI 比安装docker 要简单很多。我们仅仅需要懂docker 注册表上拉取dockerui ，然后在容器里面运行。要完成这些，我们只需要简单的执行下面的命令：
 
     # docker run -d -p 9000:9000 --privileged -v /var/run/docker.sock:/var/run/docker.sock dockerui/dockerui
 
 ![Starting DockerUI Container](http://blog.linoxide.com/wp-content/uploads/2015/09/starting-dockerui-container.png)
 
-Here, in the above command, as the default port of the dockerui web application server 9000, we'll simply map the default port of it with -p flag. With -v flag, we specify the docker socket. The --privileged flag is required for hosts using SELinux.
+在上面的命令里，dockerui 使用的默认端口是9000，我们需要使用`-p` 命令映射默认端口。使用`-v` 标志我们可以指定docker socket。如果主机使用了SELinux那么就得使用`--privileged` 标志。
 
-After executing the above command, we'll now check if the dockerui container is running or not by running the following command.
+执行完上面的命令后，我们要检查dockerui 容器是否运行了，或者使用下面的命令检查：
 
     # docker ps
 
 ![Running Docker Containers](http://blog.linoxide.com/wp-content/uploads/2015/09/running-docker-containers.png)
 
-### 4. Pulling an Image ###
+### 4. 拉取docker镜像 ###
 
 Currently, we cannot pull an image directly from DockerUI so, we'll need to pull a docker image from the linux console/terminal. To do so, we'll need to run the following command.
 
