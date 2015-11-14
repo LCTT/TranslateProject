@@ -1,3 +1,5 @@
+translating by ezio
+
 How to Install SQLite 3.9.1 with JSON Support on Ubuntu 15.04
 ================================================================================
 Hello and welcome to our today's article on SQLite which is the most widely deployed SQL database engine in the world that comes with zero-configuration, that means no setup or administration needed. SQLite is public-domain software package that provides relational database management system, or RDBMS that is used to store user-defined records in large tables. In addition to data storage and management, database engine process complex query commands that combine data from multiple tables to generate reports and data summaries.
