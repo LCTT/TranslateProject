@@ -1,5 +1,3 @@
-translating by Ezio
-
 在浏览器上使用Docker
 ================================================================================
 Docker 越来越流行了。在一个容器里面而不是虚拟机里运行一个完整的操作系统的这种是一个非常棒的技术和想法。docker 已经通过节省工作时间来拯救了千上万的系统管理员和开发人员。这是一个开源技术，提供一个平台来把应用程序当作容器来打包、分发、共享和运行，而不去关注主机上运行的操作系统是什么。它没有开发语言、框架或打包系统的限制，并且可以在任何时间、任何地点运行，从小型计算机到高端服务器都可以。运行docker容器和管理他们可能会花费一点点困难和时间，所以现在有一款基于web 的应用程序－DockerUI，可以让管理和运行容器变得很简单。DockerUI 是一个对那些不熟悉Linux 命令行担忧很想运行容器话程序的人很有帮助。DockerUI 是一个开源的基于web 的应用程序，它最著名的是它华丽的设计和简单的用来运行和管理docker 的简单的操作界面。
@@ -62,41 +60,41 @@ docker 存在于ArchLinux 的官方源和社区维护的AUR 库。所以在ArchL
 
 ### 4. 拉取docker镜像 ###
 
-Currently, we cannot pull an image directly from DockerUI so, we'll need to pull a docker image from the linux console/terminal. To do so, we'll need to run the following command.
+现在我们还不能直接使用dockerui 拉取镜像，所以我们需要在命令行下拉取docker 镜像。要完成这些我们需要执行下面的命令。
 
     # docker pull ubuntu
 
 ![Docker Image Pull](http://blog.linoxide.com/wp-content/uploads/2015/10/docker-image-pull.png)
 
-The above command will pull an image tagged as ubuntu from the official [Docker Hub][1]. Similarly, we can pull more images that we require and are available in the hub.
+上面的命令将会从docker 官方源[Docker Hub][1]拉取一个标志为ubuntu 的镜像。类似的我们可以从Hub 拉取需要的其它镜像。
 
 ### 4. 管理 ###
 
-After we have started the dockerui container, we'll now have fun with it to start, pause, stop, remove and perform many possible activities featured by dockerui with docker containers and images. First of all, we'll need to open the web application using our web browser. To do so, we'll need to point our browser to http://ip-address:9000 or http://mydomain.com:9000 according to the configuration of our system. By default, there is no login authentication needed for the user access but we can configure our web server for adding authentication. To start a container, first we'll need to have images of the required application we want to run a container with.
+启动了dockerui 容器之后，我们快乐的用它来执行启动、暂停、终止、删除和其它dockerui 提供的其他用来操作docker 容器的命令。第一，我们需要在web 浏览器里面打开dockerui：在浏览器里面输入http://ip-address:9000 或者 http://mydomain.com:9000，具体要根据你的系统配置。默认情况下登录不需啊哟认证，但是可以配置我们的web 服务器来要求登录认证。要启动一个容器，我们得得到包含我们要运行的程序的景象。
 
 #### 创建 ####
 
-To create a container, we'll need to go to the section named Images then, we'll need to click on the image id which we want to create a container of. After clicking on the required image id, we'll need to click on Create button then we'll be asked to enter the required properties for our container. And after everything is set and done. We'll need to click on Create button to finally create a container.
+创建容器我们需要在Images 页面，点击我们想创建的容器的镜像id。然后点击`Create` 按钮，接下来我们就会被要求输入创建容器所需要的属性。这些都完成之后，我们需要点击按钮`Create` 完成最终的创建。
 
 ![Creating Docker Container](http://blog.linoxide.com/wp-content/uploads/2015/10/creating-docker-container.png)
 
 #### 中止 ####
 
-To stop a container, we'll need to move towards the Containers page and then select the required container we want to stop. Now, we'll want to click on Stop option which we can see under Actions drop-down menu.
+要停止一个容器，我们只需要跳转到`Containers` 页面，然后选取要停止的容器。然后再Action 的子菜单里面按下Stop 就行了。
 
 ![Managing Container](http://blog.linoxide.com/wp-content/uploads/2015/10/managing-container.png)
 
 #### 暂停与恢复 ####
 
-To pause a container, we simply select the required container we want to pause by keeping a check mark on the container and then click the Pause option under Actions . This is will pause the running container and then, we can simply resume the container by selecting Unpause option from the Actions drop down menu.
+要暂停一个容器，只需要简单的选取目标容器，然后点击Pause 就行了。恢复一个容器只需要在Actions 的子菜单里面点击Unpause 就行了。
 
 #### 删除 ####
 
-Like we had performed the above tasks, its pretty easy to kill and remove a container or an image. We just need to check/select the required container or image and then select the Kill or Remove button from the application according to our need.
+类似于我们上面完成的任务，杀掉或者删除一个容器或镜像也是很简单的。只需要检查、选择容器或镜像，然后点击Kill 或者Remove 就行了。
 
 ### 结论 ###
 
-DockerUI is a beautiful utilization of Docker Remote API to develop an awesome web interface for managing docker containers. The developers have designed and developed this application in pure HTML and JS language. It is currently incomplete and is under heavy development so we don't recommend it for the use in production currently. It makes users pretty easy to manage their containers and images with simple clicks without needing to execute lines of commands to do small jobs. If we want to contribute DockerUI, we can simply visit its [Github Repository][2]. If you have any questions, suggestions, feedback please write them in the comment box below so that we can improve or update our contents. Thank you !
+dockerui 使用了docker 远程API  完成了一个很棒的管理docker 容器的web 界面。它的开发者们已经使用纯HTML 和JS 设计、开发了这个应用。目前这个程序还处于开发中，并且还有大量的工作要完成，所以我们并不推荐将它应用在生产环境。它可以帮助用户简单的完成管理容器和镜像，而且只需要一点点工作。如果想参与、贡献dockerui，我们可以访问它们的[Github 仓库][2]。如果有问题、建议、反馈，请写在下面的评论框，这样我们就可以修改或者更新我们的内容。谢谢。
 
 --------------------------------------------------------------------------------
 
