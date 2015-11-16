@@ -1,5 +1,3 @@
-translating by Ezio
-
 Remember sed and awk? All Linux admins should
 ================================================================================
 ![](http://images.techhive.com/images/article/2015/03/linux-100573790-primary.idge.jpg)
