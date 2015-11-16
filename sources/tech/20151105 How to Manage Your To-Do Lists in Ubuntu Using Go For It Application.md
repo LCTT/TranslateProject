@@ -1,3 +1,5 @@
+Ricky-Gong 翻译中
+
 How to Manage Your To-Do Lists in Ubuntu Using Go For It Application
 ================================================================================
 ![](https://www.maketecheasier.com/assets/uploads/2015/10/gfi-featured1.jpg)
