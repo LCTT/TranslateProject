@@ -6,7 +6,7 @@ How bad a boss is Linus Torvalds?
 
 **It depends on context. In the world of software development, he’s what passes for normal. The question is whether that situation should be allowed to continue.**
 
-'ve known Linus Torvalds, Linux's inventor, for over 20 years. We're not chums, but we like each other.
+I've known Linus Torvalds, Linux's inventor, for over 20 years. We're not chums, but we like each other.
 
 Lately, Torvalds has been getting a lot of flack for his management style. Linus doesn't suffer fools gladly. He has one way of judging people in his business of developing the Linux kernel: How good is your code?
 
@@ -60,11 +60,9 @@ Looking ahead, I hope that companies and organizations, such as the Linux Founda
 
 We won't, unfortunately, find that kind of managerial finesse in our pure technical or business leaders. It's not in their DNA.
 
-This story, "How bad a boss is Linus Torvalds?" was originally published by Computerworld.
-
 --------------------------------------------------------------------------------
 
-via: http://www.infoworld.com/article/3004498/it-management/how-bad-a-boss-is-linus-torvalds.html
+via: http://www.computerworld.com/article/3004387/it-management/how-bad-a-boss-is-linus-torvalds.html
 
 作者：[Steven J. Vaughan-Nichols][a]
 译者：[译者ID](https://github.com/译者ID)
@@ -72,7 +70,7 @@ via: http://www.infoworld.com/article/3004498/it-management/how-bad-a-boss-is-li
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:http://www.infoworld.com/author/Steven-J.-Vaughan_Nichols/
+[a]:http://www.computerworld.com/author/Steven-J.-Vaughan_Nichols/
 [1]:http://www.computerworld.com/article/2874475/linus-torvalds-diversity-gaffe-brings-out-the-best-and-worst-of-the-open-source-world.html
 [2]:http://www.zdnet.com/article/linux-4-3-released-after-linus-torvalds-scraps-brain-damage-code/
 [3]:http://lkml.iu.edu/hypermail/linux/kernel/1510.3/02866.html
