@@ -1,3 +1,5 @@
+Ricky-Gong is translating.
+
 Linux FAQs with Answers--How to set JAVA_HOME environment variable automatically on Linux
 ================================================================================
 > **Question**: I need to compile a Java program on my Linux box. For that I already installed JDK (Java Development Kit), and now I'm trying to set JAVA_HOME environment variable to point to the installed JDK. What is the recommended way to set JAVA_HOME environment variable on Linux?
