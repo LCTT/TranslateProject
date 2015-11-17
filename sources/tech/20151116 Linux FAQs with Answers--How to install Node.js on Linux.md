@@ -1,3 +1,5 @@
+translation by strugglingyouth
+
 Linux FAQs with Answers--How to install Node.js on Linux
 ================================================================================
 > **Question**: How can I install Node.js on [insert your Linux distro]?
