@@ -1,3 +1,5 @@
+translating by ezio
+
 How to Install Redis Server on CentOS 7
 ================================================================================
 Hi everyone, today Redis is the subject of our article, we are going to install it  on CentOS 7. Build sources files, install the binaries, create and install files. After installing its components, we will set its configuration as well as some operating system parameters to make it more reliable and faster.
