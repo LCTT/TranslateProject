@@ -1,6 +1,4 @@
-translating by ezio
-
-
+如何在CentOS 7上安装Redis 服务
 ================================================================================
 
 大家好， 本文的主题是Redis，我们将要在CentOS 7 上安装它。编译源代码，安装二进制文件，创建、安装文件。然后安装组建，我们还会配置redis ，就像配置操作系统参数一样，目标就是让redis 运行的更加可靠和快速。
@@ -126,33 +124,33 @@ Redis.conf 是redis 的配置文件，然而你会看到这个文件的名字是
 
 #### Unix sockets ####
 
-In many cases, the client application resides on the same machine as the server, so there is no need to listen do network sockets. If this is the case you may want to use unix sockets instead, for this you need to set the **port** option to 0, and then enable unix sockets with the following options.
+在很多情况下，客户端程序和服务器端程序运行在同一个机器上，所以不需要监听网络上的socket。如果这和你的使用情况类似，你就可以使用unix socket 替代网络socket ，为此你需要配置**port** 为0，然后配置下面的选项来使能unix socket。
 
-Set the path to the socket file
+设置unix socket 的套接字文件。
 
      unixsocket /tmp/redis.sock
 
-Set restricted permission to the socket file
+限制socket 文件的权限。
 
     unixsocketperm 700
 
-Now, to have access with redis-cli you should use the -s flag pointing to the socket file
+现在为了获取redis-cli 的访问权限，应该使用-s 参数指向socket 文件。
 
     redis-cli -s /tmp/redis.sock
 
-#### requirepass ####
+#### 密码 ####
 
-You may need remote access, if so,  you should use a password, that will be required before any operation.
+你可能需要远程访问，如果是，那么你应该设置密码，这样子每次操作之前要求输入密码。
 
     requirepass "bTFBx1NYYWRMTUEyNHhsCg"
 
-#### rename-command ####
+#### 重命名命令 ####
 
-Imagine the output of the next command. Yes, it will dump the configuration of  the server, so you should deny access to this kind information whenever is possible.
+想象一下下面一条条指令的输出。使得，这回输出服务器的配置，所以你应该在任何可能的情况下拒绝这种信息。
 
     CONFIG GET *
 
-To restrict, or even disable this and other commands by using the **rename-command**. You must provide a command name and a replacement. To disable, set the replacement string to "" (blank), this is more secure as it will prevent someone from guessing the command name.
+为了限制甚至禁止这条或者其他指令可以使用**rename-command** 命令。你必须提供一个命令名和替代的名字。要禁止的话需要设置replacement 为空字符串，这样子禁止任何人猜测命令的名字会比较安全。
 
     rename-command FLUSHDB "FLUSHDB_MY_SALT_G0ES_HERE09u09u"
     rename-command FLUSHALL ""
@@ -160,39 +158,39 @@ To restrict, or even disable this and other commands by using the **rename-comma
 
 ![Access Redis through unix with password and command changes](http://blog.linoxide.com/wp-content/uploads/2015/10/redis-security-test.jpg)
 
-Access through unix sockets with password and command changes
+通过密码和修改命令来访问unix socket。
 
-#### Snapshots ####
+#### 快照 ####
 
-By default Redis will periodically dump its datasets to **dump.rdb** on the data directory we set. You can configure how often the rdb file will be updated  by the save command, the first parameter is a timeframe in seconds and the second is a number of changes performed on the data file.
+默认情况下，redis 会周期性的将数据集转储到我们设置的目录下的文件**dump.rdb**。你可以使用save 命令配置转储的频率，他的第一个参数是以秒为单位的时间帧（译注：按照下文的意思单位应该是分钟），第二个参数是在数据文件上进行修改的数量。
 
-Every 15 hours if there was at least 1 key change
-
+每隔15小时并且最少修改过一次键。
     save 900 1
 
-Every 5 hours if there was at least 10 key changes
+每隔5小时并且最少修改过10次键。
 
     save 300 10
 
-Every minute if there was at least 10000 key changes
+每隔1小时并且最少修改过10000次键。
 
     save 60 10000
 
-The **/var/lib/redis/6379/dump.rdb** file contains a dump of the dataset on memory since last save. Since it creates a temporary file and then replace the original file, there is no problem of corruption and you can always copy it directly without fear.
+文件**/var/lib/redis/6379/dump.rdb** 包含了内存里经过上次保存命令的转储数据。因为他创建了临时文件并且替换了源文件，这里没有被破坏的问题，而且你不用担心直接复制这个文件。
 
-### Starting at boot ###
+### 开机时启动 ###
 
 You may use systemd to add Redis to the system startup
+你可以使用systemd 将redis 添加到系统开机启动列表。
 
-Copy sample init_script to /etc/init.d, note also the number of the port on the script name
+复制init_script 示例文件到/etc/init.d，注意脚本名所代表的端口号。
 
     cp utils/redis_init_script /etc/init.d/redis_6379
 
-We are going to use systemd, so create a unit file named redis_6379.service under **/etc/systems/system**
+现在我们来使用systemd，所以在**/etc/systems/system** 下创建一个单位文件名字为redis_6379.service。
 
     vi /etc/systemd/system/redis_6379.service
 
-Put this content, try man systemd.service for details
+填写下面的内容，详情可见systemd.service。
 
     [Unit]
     Description=Redis on port 6379
@@ -205,20 +203,18 @@ Put this content, try man systemd.service for details
     [Install]
     WantedBy=multi-user.target
 
-Now add the memory overcommit and maximum backlog options we have set before to the **/etc/sysctl.conf** file.
+现在添加我之前在**/etc/sysctl.conf** 里面修改多的内存过分提交和backlog 最大值的选项。
 
     vm.overcommit_memory = 1
 
     net.core.somaxconn=512
 
-For the transparent huge pages support there is no sysctl directive, so you can put the command at the end of /etc/rc.local
-
+对于透明大页支持，并没有直接sysctl 命令可以控制，所以需要将下面的命令放到/etc/rc.local 的结尾。
     echo never > /sys/kernel/mm/transparent_hugepage/enabled
 
-### Conclusion ###
+### 总结 ###
 
-That's enough to start, with these settings you will be able to deploy Redis server for many simpler scenarios, however there is many options on redis.conf for more complex environments. On some cases, you may use [replication][4] and [Sentinel][5] to provide high availability, [split the data][6] across servers, create a cluster of servers. Thanks for reading!
-
+这些足够启动了，通过设置这些选项你将足够部署redis 服务到很多简单的场景，然而在redis.conf 还有很多为复杂环境准备的redis 的选项。在一些情况下，你可以使用[replication][4] 和 [Sentinel][5]  来提高可用性，或者[将数据分散][6]在多个服务器上，创建服务器集群 。谢谢阅读。
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/storage/install-redis-server-centos-7/
