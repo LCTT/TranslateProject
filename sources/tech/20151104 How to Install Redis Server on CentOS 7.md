@@ -2,12 +2,14 @@ translating by ezio
 
 How to Install Redis Server on CentOS 7
 ================================================================================
-Hi everyone, today Redis is the subject of our article, we are going to install it  on CentOS 7. Build sources files, install the binaries, create and install files. After installing its components, we will set its configuration as well as some operating system parameters to make it more reliable and faster.
+
+大家好，Redis 是本文的主题，我们将要在CentOS 7 上安装它。编译源代码，安装二进制文件，创建、安装文件。然后安装组建，我们还会配置redis ，就像配置操作系统参数一样，目标就是让redis 运行的更加可靠和快速。
 
 ![Runnins Redis](http://blog.linoxide.com/wp-content/uploads/2015/10/run-redis-standalone.jpg)
 
-Redis server
+Redis 服务器
 
+Redis 是一个开源的多平台数据存储软件，使用ANSI C 编写，直接在内存使用数据集，这使得它得以实现非常高的效率。Redis 支持多种编程语言，包括Lua, C, Java, Python, Perl, PHP 和其他很多语言。redis 的代码量很小，只有约3万行，它只做很少的事，但是做的很好。尽管你在内存里工作，但是数据持久化问题还是存在的，而且这也有一个很合理的理由来支撑：
 Redis is an open source multi-platform data store written in ANSI C, that uses datasets directly from memory achieving extremely high performance. It supports various programming languages, including Lua, C, Java, Python, Perl, PHP and many others. It is based on simplicity, about 30k lines of code that do "few" things, but do them well. Despite you work on memory, persistence may exist and it has a fairly reasonable support for high availability and clustering, which does good in keeping your data safe.
 
 ### Building Redis ###
