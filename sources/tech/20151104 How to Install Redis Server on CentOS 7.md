@@ -1,130 +1,128 @@
 translating by ezio
 
-How to Install Redis Server on CentOS 7
+
 ================================================================================
 
-大家好，Redis 是本文的主题，我们将要在CentOS 7 上安装它。编译源代码，安装二进制文件，创建、安装文件。然后安装组建，我们还会配置redis ，就像配置操作系统参数一样，目标就是让redis 运行的更加可靠和快速。
+大家好， 本文的主题是Redis，我们将要在CentOS 7 上安装它。编译源代码，安装二进制文件，创建、安装文件。然后安装组建，我们还会配置redis ，就像配置操作系统参数一样，目标就是让redis 运行的更加可靠和快速。
 
 ![Runnins Redis](http://blog.linoxide.com/wp-content/uploads/2015/10/run-redis-standalone.jpg)
 
 Redis 服务器
 
-Redis 是一个开源的多平台数据存储软件，使用ANSI C 编写，直接在内存使用数据集，这使得它得以实现非常高的效率。Redis 支持多种编程语言，包括Lua, C, Java, Python, Perl, PHP 和其他很多语言。redis 的代码量很小，只有约3万行，它只做很少的事，但是做的很好。尽管你在内存里工作，但是数据持久化问题还是存在的，而且这也有一个很合理的理由来支撑：
-Redis is an open source multi-platform data store written in ANSI C, that uses datasets directly from memory achieving extremely high performance. It supports various programming languages, including Lua, C, Java, Python, Perl, PHP and many others. It is based on simplicity, about 30k lines of code that do "few" things, but do them well. Despite you work on memory, persistence may exist and it has a fairly reasonable support for high availability and clustering, which does good in keeping your data safe.
+Redis 是一个开源的多平台数据存储软件，使用ANSI C 编写，直接在内存使用数据集，这使得它得以实现非常高的效率。Redis 支持多种编程语言，包括Lua, C, Java, Python, Perl, PHP 和其他很多语言。redis 的代码量很小，只有约3万行，它只做很少的事，但是做的很好。尽管你在内存里工作，但是对数据持久化的需求还是存在的，而redis 的可靠性就很高，同时也支持集群，这儿些可以很好的保证你的数据安全。
 
-### Building Redis ###
+### 构建 Redis ###
 
-There is no official RPM package available, we need to build it from sources, in order to do this you will need install Make and GCC.
+redis 目前没有官方RPM 安装包，我们需要从牙UN代码编译，而为了要编译就需要安装Make 和GCC。
 
-Install GNU Compiler Collection and Make with yum if it is not already installed
+如果没有安装过GCC 和Make，那么就使用yum 安装。
 
     yum install gcc make
 
-Download the tarball from [redis download page][1].
+从[官网][1]下载tar 压缩包。
 
     curl http://download.redis.io/releases/redis-3.0.4.tar.gz -o redis-3.0.4.tar.gz
 
-Extract the tarball contents
+解压缩。
 
     tar zxvf redis-3.0.4.tar.gz
 
-Enter Redis the directory we have extracted
+进入解压后的目录。
 
     cd redis-3.0.4
 
-Use Make to build the source files
+使用Make 编译源文件。
 
     make
 
-### Install ###
+### 安装 ###
 
-Enter on the src directory
+进入源文件的目录。
 
     cd src
 
-Copy Redis server and client to /usr/local/bin
+复制 Redis server 和 client 到 /usr/local/bin
 
     cp redis-server redis-cli /usr/local/bin
 
-Its good also to copy  sentinel, benchmark and check as well.
+最好也把sentinel，benchmark 和check 复制过去。
 
     cp redis-sentinel redis-benchmark redis-check-aof redis-check-dump /usr/local/bin
 
-Make Redis config directory
+创建redis 配置文件夹。
 
     mkdir /etc/redis
 
-Create a working and data directory under /var/lib/redis
+在`/var/lib/redis` 下创建有效的保存数据的目录
 
     mkdir -p /var/lib/redis/6379
 
-#### System parameters ####
+#### 系统参数 ####
 
-In order to Redis work correctly you need to set some kernel options
+为了让redis 正常工作需要配置一些内核参数。
 
-Set the vm.overcommit_memory to 1, which means always, this will avoid data to be truncated, take a look [here][2] for more.
+配置vm.overcommit_memory 为1，它的意思是一直避免数据被截断，详情[见此][2].
 
     sysctl -w vm.overcommit_memory=1
 
-Change the maximum of backlog connections some value higher than the value on tcp-backlog option of redis.conf, which defaults to 511. You can find more on sysctl  based ip networking "tunning" on [kernel.org][3]  website.
+修改backlog 连接数的最大值超过redis.conf 中的tcp-backlog 值，即默认值511。你可以在[kernel.org][3] 找到更多有关基于sysctl 的ip 网络隧道的信息。
 
     sysctl -w net.core.somaxconn=512.
 
-Disable transparent huge pages support, that is known to cause latency and memory access issues with Redis.
+禁止支持透明大页，，因为这会造成redis 使用过程产生延时和内存访问问题。
 
     echo never > /sys/kernel/mm/transparent_hugepage/enabled
 
 ### redis.conf ###
+Redis.conf 是redis 的配置文件，然而你会看到这个文件的名字是6379.conf ，而这个数字就是redis 监听的网络端口。这个名字是告诉你可以运行超过一个redis 实例。
 
-Redis.conf is the Redis configuration file, however you will see the file named as 6379.conf here, where the number is the same as the network port is listening to. This name is recommended if you are going to run more than one Redis instance.
-
-Copy sample redis.conf to **/etc/redis/6379.conf**.
+复制redis.conf 的示例到 **/etc/redis/6379.conf**.
 
     cp redis.conf /etc/redis/6379.conf
 
-Now edit the file and set at some of its parameters.
+现在编辑这个文件并且配置参数。
 
     vi /etc/redis/6379.conf
 
-#### daemonize ####
+#### 守护程序 ####
 
-Set daemonize to no, systemd need it to be in foreground, otherwise Redis will suddenly die.
+设置daemonize 为no，systemd 需要它运行在前台，否则redis 会突然挂掉。
 
     daemonize no
 
 #### pidfile ####
 
-Set the pidfile to redis_6379.pid under /var/run.
+设置pidfile 为/var/run/redis_6379.pid。
 
     pidfile /var/run/redis_6379.pid
 
 #### port ####
 
-Change the network port if you are not going to use the default
+如果不准备用默认端口，可以修改。
 
     port 6379
 
 #### loglevel ####
 
-Set your loglevel.
+设置日志级别。
 
     loglevel notice
 
 #### logfile ####
 
-Set the logfile to /var/log/redis_6379.log
+修改日志文件路径。
 
     logfile /var/log/redis_6379.log
 
 #### dir ####
 
-Set the directory to /var/lib/redis/6379
+设置目录为 /var/lib/redis/6379
 
     dir /var/lib/redis/6379
 
-### Security ###
+### 安全 ###
 
-Here are some actions that you can take to enforce the security.
+下面有几个操作可以提高安全性。
 
 #### Unix sockets ####
 
@@ -226,7 +224,7 @@ That's enough to start, with these settings you will be able to deploy Redis ser
 via: http://linoxide.com/storage/install-redis-server-centos-7/
 
 作者：[Carlos Alberto][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ezio](https://github.com/oska874)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
