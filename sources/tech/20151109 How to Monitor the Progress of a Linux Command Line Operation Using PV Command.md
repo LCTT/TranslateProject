@@ -1,16 +1,19 @@
-translating by ezio
-
 How to Monitor the Progress of a Linux Command Line Operation Using PV Command
+
+如何监控linux 命令行的命令执行进度
 ================================================================================
 ![](https://www.maketecheasier.com/assets/uploads/2015/11/pv-featured-1.jpg)
 
 If you’re a Linux system admin, there’s no doubt that you must be spending most of your work time on the command line – installing and removing packages; monitoring system stats; copying, moving, deleting stuff; debugging problems; and more. There are times when you fire a command, and it takes a while before the operation completes. However, there are also times when the command you executed just hangs, leaving you guessing as to what’s actually happening behind the scenes.
+如果你是一个linux 系统管理员，那么毫无疑问你必须花费大量的工作时间在命令行上：安装和卸载软件，监视系统状态，复制、移动、删除文件，查错，等等。很多时候都是你输入一个命令，然后等待很长时间直到执行完成。也有的时候你执行的命令挂起了，而你只能猜测命令执行的实际情况。
 
 Usually, Linux commands provide no information related to the progress of the ongoing operation, something that is very important especially when you have limited time. However, that doesn’t mean you’re helpless – there exists a command, dubbed pv, that displays useful progress information related to the ongoing command line operation. In this article we will discuss this command as well as its features through some easy-to-understand examples.
+通常linux命令不提供和进度相关的信息，而这些信息特别重要，尤其当你只有有限的时间时。然而这并不意味着你是无助的-现在有一个命令，pv，他会显示当前在命令行执行的命令的进度信息。在本文我们会讨论它并用几个简单的例子说明种特性。
 
-### PV Command ###
+### PV 命令 ###
 
 Developed by Andrew Wood, [PV][1] – which stands for Pipe Viewer – displays information related to the progress of data through a pipeline. The information includes time elapsed, percentage completed (with progress bar), current throughput rate, total data transferred, and ETA.
+
 
 > “To use it, insert it in a pipeline between two processes, with the appropriate options. Its standard input will be passed through to its standard output and progress will be shown on standard error,”
 
