@@ -1,80 +1,76 @@
-How to Monitor the Progress of a Linux Command Line Operation Using PV Command
-
 如何监控linux 命令行的命令执行进度
 ================================================================================
+
 ![](https://www.maketecheasier.com/assets/uploads/2015/11/pv-featured-1.jpg)
 
-If you’re a Linux system admin, there’s no doubt that you must be spending most of your work time on the command line – installing and removing packages; monitoring system stats; copying, moving, deleting stuff; debugging problems; and more. There are times when you fire a command, and it takes a while before the operation completes. However, there are also times when the command you executed just hangs, leaving you guessing as to what’s actually happening behind the scenes.
 如果你是一个linux 系统管理员，那么毫无疑问你必须花费大量的工作时间在命令行上：安装和卸载软件，监视系统状态，复制、移动、删除文件，查错，等等。很多时候都是你输入一个命令，然后等待很长时间直到执行完成。也有的时候你执行的命令挂起了，而你只能猜测命令执行的实际情况。
 
-Usually, Linux commands provide no information related to the progress of the ongoing operation, something that is very important especially when you have limited time. However, that doesn’t mean you’re helpless – there exists a command, dubbed pv, that displays useful progress information related to the ongoing command line operation. In this article we will discuss this command as well as its features through some easy-to-understand examples.
 通常linux命令不提供和进度相关的信息，而这些信息特别重要，尤其当你只有有限的时间时。然而这并不意味着你是无助的-现在有一个命令，pv，他会显示当前在命令行执行的命令的进度信息。在本文我们会讨论它并用几个简单的例子说明种特性。
 
 ### PV 命令 ###
 
-Developed by Andrew Wood, [PV][1] – which stands for Pipe Viewer – displays information related to the progress of data through a pipeline. The information includes time elapsed, percentage completed (with progress bar), current throughput rate, total data transferred, and ETA.
+[PV][1] 由Andrew Wood 开发，是Pipe Viewer 的简称，意思是通过管道显示数据处理进度的信息。这些信息包括已经耗费的时间，完成的百分比（通过进度条显示），当前的速度，要传输的全部数据，以及估计剩余的时间。
 
+>"要使用PV，需要配合合适的选项，把它放置在两个进程之间的管道。命令的标准输入将会通过标准输出传进来的，而进度会被输出到标准错误输出。”
 
-> “To use it, insert it in a pipeline between two processes, with the appropriate options. Its standard input will be passed through to its standard output and progress will be shown on standard error,”
+上面解释了命令的主页（？）
 
-The above explains the command’s man page.
+### 下载和安装 ###
 
-### Download and Installation ###
-
-Users of Debian-based systems like Ubuntu can easily install the utility by running the following command in terminal:
+Debian 系的操作系统，如Ubuntu，可以简单的使用下面的命令安装PV：
 
     sudo apt-get install pv
 
-If you’re using any other Linux distro, you can install the command using the package manager installed on your system. Once installed successfully you can use the command line utility in various scenarios (see the following section). It’s worth mentioning that pv version 1.2.0 has been used in all the examples mentioned in this article.
+如果你使用了其他发行版本，你可以使用各自的包管理软件在你的系统上安装PV。一旦PV 安装好了你就可以在各种场合使用它（详见下文）。需要注意的是下面所有例子都可以正常的鱼pv 1.2.0 工作。
 
-### Features and Usage ###
+### 特性和用法 ###
 
-A very common scenario that probably most of us (who work on the command line in Linux) would relate to is copying a movie file from a USB drive to your computer. If you try to complete the aforementioned operation using the cp command, you’ll have to blindly wait until the copying is complete or some error is thrown.
+我们（在linux 上使用命令行的用户）的大多数使用场景都会用到的命令是从一个USB 驱动器拷贝电影文件到你的电脑。如果你使用cp 来完成上面的任务，你会什么情况都不清楚知道整个复制过程结束或者出错。
 
-However, the pv command can be helpful in this case. Here is an example:
+然而pv 命令在这种情景下很有帮助。比如：
 
     pv /media/himanshu/1AC2-A8E3/fNf.mkv > ./Desktop/fnf.mkv
 
-And here’s the output:
+输出如下：
 
 ![pv-copy](https://www.maketecheasier.com/assets/uploads/2015/10/pv-copy.png)
 
-So, as you can see above, the command shows a lot of useful information related to the ongoing operation, including the amount of data that has been transferred, time elapsed, rate of transfer, progress bar, progress in percentage, and the amount of time left.
+所以，如你所见，这个命令显示了很多和操作有关的有用信息，包括已经传输了的数据量，花费的时间，传输速率，进度条，进度的百分比，已经剩余的时间。
 
-The `pv` command provides various display switches. For example, you can use `-p` for displaying percentage, `-t` for timer, `-r` for rate of transfer, `-e` for eta, and -b for byte counter. The good thing is that you won’t have to remember any of them, as all of them are enabled by default. However, should you exclusively require information related to only a particular display switch in the output, you can pass that switch in the pv command.
+`pv` 命令提供了多种显示选项开关。比如，你可以使用`-p` 来显示百分比，`-t` 来显示时间，`-r` 表示传输速率，`-e` 代表eta（译注：估计剩余的时间）。好事是你不必记住某一个选项，因为默认这几个选项都是使能的。但是，如果你只要其中某一个信息，那么可以通过控制这几个选项来完成任务。
 
-There’s also a `-n` display switch that allows the command to display an integer percentage, one per line on standard error, instead of the regular visual progress indicator. The following is an example of this switch in action:
+整理还有一个`-n` 选项来允许pv 命令显示整数百分比，在标准错误输出上每行显示一个数字，用来替代通常的视觉进度条。下面是一个例子：
 
     pv -n /media/himanshu/1AC2-A8E3/fNf.mkv > ./Desktop/fnf.mkv
 
 ![pv-numeric](https://www.maketecheasier.com/assets/uploads/2015/10/pv-numeric.png)
 
-This particular display switch is suitable in scenarios where you want to pipe the output into the [dialog][2] command.
+这个特殊的选项非常合适某些情境下的需求，如你想把用管道把输出传给[dialog][2] 命令。
 
-Moving on, there’s also a command line option, `-L`, that lets you modify the data transfer rate of the pv command. For example, I used -L to limit the data transfer rate to 2MB/s.
+接下来还有一个命令行选项，`-L` 可以让你修改pv 命令的传输速率。举个例子，使用-L 选项来限制传输速率为2MB/s。
 
     pv -L 2m /media/himanshu/1AC2-A8E3/fNf.mkv > ./Desktop/fnf.mkv
 
 ![pv-ratelimit](https://www.maketecheasier.com/assets/uploads/2015/10/pv-ratelimit.png)
 
-As can be seen in the screenshot above, the data transfer rate was capped according to my direction.
+如上图所见，数据传输速度按照我们的要求被限制了。
 
-Another scenario where `pv` can help is while compressing files. Here is an example of how you can use this command while compressing files using Gzip:
+另一个pv 可以帮上忙的情景是压缩文件。这里有一个例子可以向你解释如何与压缩软件Gzip 一起工作。
 
     pv /media/himanshu/1AC2-A8E3/fnf.mkv | gzip > ./Desktop/fnf.log.gz
 
 ![pv-gzip](https://www.maketecheasier.com/assets/uploads/2015/10/pv-gzip.png)
 
-### Conclusion ###
+### 结论 ###
 
-As you have observed, pv is a useful little utility that could help you save your precious time in case a command line operation isn’t behaving as expected. Plus, the information it displays can also be used in shell scripts. I’d strongly recommend this command; it’s worth giving a try.
+如上所述，pv 是一个非常有用的小工具，它可以在命令没有按照预期执行的情况下帮你节省你宝贵的时间。而且这些现实的信息还可以用在shell 脚本里。我强烈的推荐你使用这个命令，他值得你一试。
 
 --------------------------------------------------------------------------------
 
 via: https://www.maketecheasier.com/monitor-progress-linux-command-line-operation/
 
 作者：[Himanshu Arora][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ezio](https://github.com/oska874)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
