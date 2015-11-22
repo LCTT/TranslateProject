@@ -17,20 +17,33 @@ Wanting to improve performance is easy, but actually seeing results is difficult
 ### Tip #1: 通过反向代理来提高性能和增加安全性 ###
 
 If your web application runs on a single machine, the solution to performance problems might seem obvious: just get a faster machine, with more processor, more RAM, a fast disk array, and so on. Then the new machine can run your WordPress server, Node.js application, Java application, etc., faster than before. (If your application accesses a database server, the solution might still seem simple: get two faster machines, and a faster connection between them.)
+如果你的web 应用运行在单个机器上，那么这个办法会明显的提升性能：只需要添加一个更快的机器，更好的处理器，更多的内存，更快的磁盘阵列，等等。然后新机器就可以更快的运行你的WordPress 服务器, Node.js 程序, Java 程序，以及其它程序。（如果你的程序要访问数据库服务器，那么这个办法还是很简单：添加两个更快的机器，以及在两台电脑之间使用一个更快的链路。）
 
 Trouble is, machine speed might not be the problem. Web applications often run slowly because the computer is switching among different kinds of tasks: interacting with users on thousands of connections, accessing files from disk, and running application code, among others. The application server may be thrashing – running out of memory, swapping chunks of memory out to disk, and making many requests wait on a single task such as disk I/O.
+问题是，机器速度可能并不是问题。web 程序运行慢经常是因为计算机一直在不同的任务之间切换：和用户的成千上万的连接，从磁盘访问文件，运行代码，等等。应用服务器可能会抖动-内存不足，将内存数据写会磁盘，以及多个请求等待一个任务完成，如磁盘I/O。
 
 Instead of upgrading your hardware, you can take an entirely different approach: adding a reverse proxy server to offload some of these tasks. A [reverse proxy server][1] sits in front of the machine running the application and handles Internet traffic. Only the reverse proxy server is connected directly to the Internet; communication with the application servers is over a fast internal network.
+你可以采取一个完全不同的方案来替代升级硬件：添加一个反向代理服务器来分担部分任务。[反向代理服务器][1] 位于运行应用的机器的前端，是用来处理网络流量的。只有反向代理服务器是直接连接到互联网的；和程序的通讯都是通过一个快速的内部网络完成的。
 
 Using a reverse proxy server frees the application server from having to wait for users to interact with the web app and lets it concentrate on building pages for the reverse proxy server to send across the Internet. The application server, which no longer has to wait for client responses, can run at speeds close to those achieved in optimized benchmarks.
+使用反向代理服务器可以将应用服务器从等待用户与web 程序交互解放出来，这样应用服务器就可以专注于为反向代理服务器构建网页，让其能够传输到互联网上。而应用服务器就不需要在能带客户端的响应，可以运行与接近优化过的性能水平。
 
 Adding a reverse proxy server also adds flexibility to your web server setup. For instance, if a server of a given type is overloaded, another server of the same type can easily be added; if a server is down, it can easily be replaced.
+添加方向代理服务器还可以给你的web 服务器安装带来灵活性。比如，一个已知类型的服务器已经超载了，那么就可以轻松的添加另一个相同的服务器；如果某个机器宕机了，也可以很容易的被替代。
 
 Because of the flexibility it provides, a reverse proxy server is also a prerequisite for many other performance-boosting capabilities, such as:
+因为反向代理带来的灵活性，所以方向代理也是一些性能加速功能的必要前提，比如：
 
-- **Load balancing** (see [Tip #2][2]) – A load balancer runs on a reverse proxy server to share traffic evenly across a number of application servers. With a load balancer in place, you can add application servers without changing your application at all.
-- **Caching static files** (see [Tip #3][3]) – Files that are requested directly, such as image files or code files, can be stored on the reverse proxy server and sent directly to the client, which serves assets more quickly and offloads the application server, allowing the application to run faster.
-- **Securing your site** – The reverse proxy server can be configured for high security and monitored for fast recognition and response to attacks, keeping the application servers protected.
+- **Load balancing** (参见 [Tip #2][2]) – 负载均衡运行在方向代理服务器上，用来将流量均衡分配给一批应用。有了合适的负载均衡，你就可以在不改变程序的前提下添加应用服务器。
+
+- A load balancer runs on a reverse proxy server to share traffic evenly across a number of application servers. With a load balancer in place, you can add application servers without changing your application at all.
+
+- **Caching static files** (参见 [Tip #3][3]) – 直接读取的文件，比如图像或者代码，可以保存在方向代理服务器，然后直接发给客户端，这样就可以提高速度、分担应用服务器的负载，可以让应用运行的更快
+
+Files that are requested directly, such as image files or code files, can be stored on the reverse proxy server and sent directly to the client, which serves assets more quickly and offloads the application server, allowing the application to run faster.
+
+- **Securing your site** – 反响代理服务器可以被设置的提高安全性，
+The reverse proxy server can be configured for high security and monitored for fast recognition and response to attacks, keeping the application servers protected.
 
 NGINX software is specifically designed for use as a reverse proxy server, with the additional capabilities described above. NGINX uses an event-driven processing approach which is more efficient than traditional servers. NGINX Plus adds more advanced reverse proxy features, such as application [health checks][4], specialized request routing, advanced caching, and support.
 
