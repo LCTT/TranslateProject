@@ -34,18 +34,19 @@ Adding a reverse proxy server also adds flexibility to your web server setup. Fo
 Because of the flexibility it provides, a reverse proxy server is also a prerequisite for many other performance-boosting capabilities, such as:
 因为反向代理带来的灵活性，所以方向代理也是一些性能加速功能的必要前提，比如：
 
-- **Load balancing** (参见 [Tip #2][2]) – 负载均衡运行在方向代理服务器上，用来将流量均衡分配给一批应用。有了合适的负载均衡，你就可以在不改变程序的前提下添加应用服务器。
+- **负载均衡** (参见 [Tip #2][2]) – 负载均衡运行在方向代理服务器上，用来将流量均衡分配给一批应用。有了合适的负载均衡，你就可以在不改变程序的前提下添加应用服务器。
 
 - A load balancer runs on a reverse proxy server to share traffic evenly across a number of application servers. With a load balancer in place, you can add application servers without changing your application at all.
 
-- **Caching static files** (参见 [Tip #3][3]) – 直接读取的文件，比如图像或者代码，可以保存在方向代理服务器，然后直接发给客户端，这样就可以提高速度、分担应用服务器的负载，可以让应用运行的更快
+- **缓存静态文件** (参见 [Tip #3][3]) – 直接读取的文件，比如图像或者代码，可以保存在方向代理服务器，然后直接发给客户端，这样就可以提高速度、分担应用服务器的负载，可以让应用运行的更快
 
 Files that are requested directly, such as image files or code files, can be stored on the reverse proxy server and sent directly to the client, which serves assets more quickly and offloads the application server, allowing the application to run faster.
 
-- **Securing your site** – 反响代理服务器可以被设置的提高安全性，
+- **网站安全** – 反响代理服务器可以提高网站安全性，以及快速的发现和响应攻击，保证应用服务器处于被保护状态。
 The reverse proxy server can be configured for high security and monitored for fast recognition and response to attacks, keeping the application servers protected.
 
 NGINX software is specifically designed for use as a reverse proxy server, with the additional capabilities described above. NGINX uses an event-driven processing approach which is more efficient than traditional servers. NGINX Plus adds more advanced reverse proxy features, such as application [health checks][4], specialized request routing, advanced caching, and support.
+NGINX 软件是一个专门设计的反响代理服务器，也包含了上述的多种功能。NGINX 使用事件驱动的方式处理问题，着回避传统的服务器更加有效率。NGINX plus 天价了更多高级的反向代理特性，比如程序[健康度检查][4]，专门用来处理request 路由，高级缓冲和相关支持。
 
 ![NGINX Worker Process helps increase application performance](https://www.nginx.com/wp-content/uploads/2015/10/Graph-11.png)
 
