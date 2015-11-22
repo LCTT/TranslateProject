@@ -235,7 +235,7 @@ We hope you try out these techniques for yourself. We want to hear the kind of a
 via: https://www.nginx.com/blog/10-tips-for-10x-application-performance/?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io
 
 作者：[Floyd Smith][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Ezio]](https://github.com/oska874)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
