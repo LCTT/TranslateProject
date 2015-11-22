@@ -1,16 +1,20 @@
-translating by ezio
-
 10 Tips for 10x Application Performance
+
+将程序性能提高十倍的10条建议
 ================================================================================
 Improving web application performance is more critical than ever. The share of economic activity that’s online is growing; more than 5% of the developed world’s economy is now on the Internet (see Resources below for statistics). And our always-on, hyper-connected modern world means that user expectations are higher than ever. If your site does not respond instantly, or if your app does not work without delay, users quickly move on to your competitors.
+提高web 应用的性能从来没有比现在更关键过。网络经济的比重一直在增长；全球经济超过5% 的价值是在因特网上产生的（数据参见下面的资料）。我们的永远在线、超级连接的世界意味着用户的期望值也处于历史上的最高点。如果你的网站不能及时的响应，或者你的app 不能无延时的工作，用户会很快的投奔到你的竞争对手那里。
 
 For example, a study done by Amazon almost 10 years ago proved that, even then, a 100-millisecond decrease in page-loading time translated to a 1% increase in its revenue. Another recent study highlighted the fact that that more than half of site owners surveyed said they lost revenue or customers due to poor application performance.
+举一个例子，一份亚马逊十年前做过的研究可以证明，甚至在那个时候，网页加载时间每减少100毫秒，收入就会增加1%。另一个最近的研究特别强调一个事实，即超过一半的网站拥有着在调查中说他们会因为应用程序性能的问题流失用户。
 
 How fast does a website need to be? For each second a page takes to load, about 4% of users abandon it. Top e-commerce sites offer a time to first interaction ranging from one to three seconds, which offers the highest conversion rate. It’s clear that the stakes for web application performance are high and likely to grow.
+网站到底需要多块呢？对于页面加载，每增加1秒钟就有4%的用户放弃使用。顶级的电子商务站点的页面在第一次交互时可以做到1秒到3秒加载时间，而这是提供最高舒适度的速度。很明显这种利害关系对于web 应用来说很高，而且在不断的增加。
 
 Wanting to improve performance is easy, but actually seeing results is difficult. To help you on your journey, this blog post offers you ten tips to help you increase your website performance by as much as 10x. It’s the first in a series detailing how you can increase your application performance with the help of some well-tested optimization techniques, and with a little support from NGINX. This series also outlines potential improvements in security that you can gain along the way.
+想要提高效率很简单，但是看到实际结果很难。要在旅途上帮助你，这篇blog 会给你提供10条最高可以10倍的提升网站性能的建议。这是系列介绍提高应用程序性能的第一篇文章，包括测试充分的优化技术和一点NGIX 的帮助。这个系列给出了潜在的提高安全性的帮助。
 
-### Tip #1: Accelerate and Secure Applications with a Reverse Proxy Server ###
+### Tip #1: 通过反向代理来提高性能和增加安全性 ###
 
 If your web application runs on a single machine, the solution to performance problems might seem obvious: just get a faster machine, with more processor, more RAM, a fast disk array, and so on. Then the new machine can run your WordPress server, Node.js application, Java application, etc., faster than before. (If your application accesses a database server, the solution might still seem simple: get two faster machines, and a faster connection between them.)
 
@@ -32,7 +36,7 @@ NGINX software is specifically designed for use as a reverse proxy server, with 
 
 ![NGINX Worker Process helps increase application performance](https://www.nginx.com/wp-content/uploads/2015/10/Graph-11.png)
 
-### Tip #2: Add a Load Balancer ###
+### Tip #2: 添加负载平衡 ###
 
 Adding a [load balancer][5] is a relatively easy change which can create a dramatic improvement in the performance and security of your site. Instead of making a core web server bigger and more powerful, you use a load balancer to distribute traffic across a number of servers. Even if an application is poorly written, or has problems with scaling, a load balancer can improve the user experience without any other changes.
 
@@ -46,7 +50,7 @@ The same server or servers used for load balancing can also handle several other
 
 NGINX is often used for load balancing; to learn more, please see our [overview blog post][10], [configuration blog post][11], [ebook][12] and associated [webinar][13], and [documentation][14]. Our commercial version, [NGINX Plus][15], supports more specialized load balancing features such as load routing based on server response time and the ability to load balance on Microsoft’s NTLM protocol.
 
-### Tip #3: Cache Static and Dynamic Content ###
+### Tip #3: 缓存静态和动态的内容 ###
 
 Caching improves web application performance by delivering content to clients faster. Caching can involve several strategies: preprocessing content for fast delivery when needed, storing content on faster devices, storing content closer to the client, or a combination.
 
@@ -75,7 +79,7 @@ For more information on caching with NGINX, see the [reference documentation][20
 
 **Note**: Caching crosses organizational lines between people who develop applications, people who make capital investment decisions, and people who run networks in real time. Sophisticated caching strategies, like those alluded to here, are a good example of the value of a [DevOps perspective][22], in which application developer, architectural, and operations perspectives are merged to help meet goals for site functionality, response time, security, and business results, )such as completed transactions or sales.
 
-### Tip #4: Compress Data ###
+### Tip #4: 压缩数据 ###
 
 Compression is a huge potential performance accelerator. There are carefully engineered and highly effective compression standards for photos (JPEG and PNG), videos (MPEG-4), and music (MP3), among others. Each of these standards reduces file size by an order of magnitude or more.
 
@@ -87,7 +91,7 @@ If you use SSL, compression reduces the amount of data that has to be SSL-encode
 
 Methods for compressing text data vary. For example, see the [section on HTTP/2][23] for a novel text compression scheme, adapted specifically for header data. As another example of text compression you can [turn on][24] GZIP compression in NGINX. After you [pre-compress text data][25] on your services, you can serve the compressed .gz version directly using the gzip_static directive.
 
-### Tip #5: Optimize SSL/TLS ###
+### Tip #5: 优化 SSL/TLS ###
 
 The Secure Sockets Layer ([SSL][26]) protocol and its successor, the Transport Layer Security (TLS) protocol, are being used on more and more websites. SSL/TLS encrypts the data transported from origin servers to users to help improve site security. Part of what may be influencing this trend is that Google now uses the presence of SSL/TLS as a positive influence on search engine rankings.
 
@@ -108,7 +112,7 @@ In addition, see [this blog post][30] for details on ways to increase SSL/TLS pe
 
 NGINX and NGINX Plus can be used for SSL/TLS termination – handling encryption and decyption for client traffic, while communicating with other servers in clear text. Use [these steps][32] to set up NGINX or NGINX Plus to handle SSL/TLS termination. Also, here are [specific steps][33] for NGINX Plus when used with servers that accept TCP connections.
 
-### Tip #6: Implement HTTP/2 or SPDY ###
+### Tip #6: 使用 HTTP/2 或 SPDY ###
 
 For sites that already use SSL/TLS, HTTP/2 and SPDY are very likely to improve performance, because the single connection requires just one handshake. For sites that don’t yet use SSL/TLS, HTTP/2 and SPDY makes a move to SSL/TLS (which normally slows performance) a wash from a responsiveness point of view.
 
@@ -128,7 +132,7 @@ As an example of support for these protocols, NGINX has supported SPDY from earl
 
 Over time, we at NGINX expect most sites to fully enable SSL and to move to HTTP/2. This will lead to increased security and, as new optimizations are found and implemented, simpler code that performs better.
 
-### Tip #7: Update Software Versions ###
+### Tip #7: 升级软件版本 ###
 
 One simple way to boost application performance is to select components for your software stack based on their reputation for stability and performance. In addition, because developers of high-quality components are likely to pursue performance enhancements and fix bugs over time, it pays to use the latest stable version of software. New releases receive more attention from developers and the user community. Newer builds also take advantage of new compiler optimizations, including tuning for new hardware.
 
@@ -138,7 +142,7 @@ Staying with older software can also prevent you from taking advantage of new ca
 
 NGINX users can start by moving to the [[latest version of the NGINX open source software][38] or [NGINX Plus][39]; they include new capabilities such as socket sharding and thread pools (see below), and both are constantly being tuned for performance. Then look at the software deeper in your stack and move to the most recent version wherever you can.
 
-### Tip #8: Tune Linux for Performance ###
+### Tip #8: linux 系统性能调优 ###
 
 Linux is the underlying operating system for most web server implementations today, and as the foundation of your infrastructure, Linux represents a significant opportunity to improve performance. By default, many Linux systems are conservatively tuned to use few resources and to match a typical desktop workload. This means that web application use cases require at least some degree of tuning for maximum performance.
 
@@ -150,7 +154,7 @@ Linux optimizations are web server-specific. Using NGINX as an example, here are
 
 For NGINX, check out the [NGINX performance tuning guides][40] to learn how to optimize your Linux system so that it can cope with large volumes of network traffic without breaking a sweat!
 
-### Tip #9: Tune Your Web Server for Performance ###
+### Tip #9: web 服务器性能调优 ###
 
 Whatever web server you use, you need to tune it for web application performance. The following recommendations apply generally to any web server, but specific settings are given for NGINX. Key optimizations include:
 
@@ -169,7 +173,7 @@ Whatever web server you use, you need to tune it for web application performance
 
 See this [blog post][45] for more details on tuning NGINX.
 
-### Tip #10: Monitor Live Activity to Resolve Issues and Bottlenecks ###
+### Tip #10: 监视系统活动来解决问题和瓶颈 ###
 
 The key to a high-performance approach to application development and delivery is watching your application’s real-world performance closely and in real time. You must be able to monitor activity within specific devices and across your web infrastructure.
 
