@@ -53,16 +53,22 @@ NGINX 软件是一个专门设计的反响代理服务器，也包含了上述�
 ### Tip #2: 添加负载平衡 ###
 
 Adding a [load balancer][5] is a relatively easy change which can create a dramatic improvement in the performance and security of your site. Instead of making a core web server bigger and more powerful, you use a load balancer to distribute traffic across a number of servers. Even if an application is poorly written, or has problems with scaling, a load balancer can improve the user experience without any other changes.
+添加一个[负载均衡服务器][5] 是一个相当简单的用来提高性能和网站安全性的的方法。使用负载均衡讲流量分配到多个服务器，是用来替代只使用一个巨大且高性能web 服务器的方案。即使程序写的不好，或者在扩容方面有困难，只使用负载均衡服务器就可以很好的提高用户体验。
 
 A load balancer is, first, a reverse proxy server (see [Tip #1][6]) – it receives Internet traffic and forwards requests to another server. The trick is that the load balancer supports two or more application servers, using [a choice of algorithms][7] to split requests between servers. The simplest load balancing approach is round robin, with each new request sent to the next server on the list. Other methods include sending requests to the server with the fewest active connections. NGINX Plus has [capabilities][8] for continuing a given user session on the same server, which is called session persistence.
+负载均衡服务器首先是一个反响代理服务器（参见[Tip #1][6]）——它接收来自互联网的流量，然后转发请求给另一个服务器。小戏法是负载均衡服务器支持两个或多个应用服务器，使用[分配算法][7]将请求转发给不同服务器。最简单的负载均衡方法是轮转法，只需要将新的请求发给列表里的下一个服务器。其它的方法包括将请求发给负载最小的活动连接。NGINX plus 拥有将特定用户的会话分配给同一个服务器的[能力][8].
 
 Load balancers can lead to strong improvements in performance because they prevent one server from being overloaded while other servers wait for traffic. They also make it easy to expand your web server capacity, as you can add relatively low-cost servers and be sure they’ll be put to full use.
+负载均衡可以很好的提高性能是因为它可以避免某个服务器过载而另一些服务器却没有流量来处理。它也可以简单的扩展服务器规模，因为你可以添加多个价格相对便宜的服务器并且保证它们被充分利用了。
 
 Protocols that can be load balanced include HTTP, HTTPS, SPDY, HTTP/2, WebSocket, [FastCGI][9], SCGI, uwsgi, memcached, and several other application types, including TCP-based applications and other Layer 4 protocols. Analyze your web applications to determine which you use and where performance is lagging.
+可以进行负载均衡的协议包括HTTP, HTTPS, SPDY, HTTP/2, WebSocket，[FastCGI][9],SCGI,uwsgi, memcached，以及集中其它的应用类型，包括采用TCP 第4层协议的程序。分析你的web 应用来决定那些你要使用以及那些地方的性能不足。
 
 The same server or servers used for load balancing can also handle several other tasks, such as SSL termination, support for HTTP/1/x and HTTP/2 use by clients, and caching for static files.
+相同的服务器或服务器群可以被用来进行负载均衡，也可以用来处理其它的任务，如SSL 终止，提供对客户端使用的HTTP/1/x  和 HTTP/2 ，以及缓存静态文件。
 
 NGINX is often used for load balancing; to learn more, please see our [overview blog post][10], [configuration blog post][11], [ebook][12] and associated [webinar][13], and [documentation][14]. Our commercial version, [NGINX Plus][15], supports more specialized load balancing features such as load routing based on server response time and the ability to load balance on Microsoft’s NTLM protocol.
+NGINX 经常被用来进行负载均衡；要想了解更多的情况可以访问我们的[overview blog post][10], [configuration blog post][11], [ebook][12] 以及相关网站 [webinar][13], 和 [documentation][14]。我们的商业版本 [NGINX Plus][15] 支持更多优化了的负载均衡特性，如基于服务器响应时间的加载路由和Microsoft’s NTLM 协议上的负载均衡。
 
 ### Tip #3: 缓存静态和动态的内容 ###
 
@@ -295,3 +301,4 @@ via: https://www.nginx.com/blog/10-tips-for-10x-application-performance/?hmsr=to
 [51]:http://blog.loadimpact.com/blog/how-bad-performance-impacts-ecommerce-sales-part-i/
 [52]:https://blog.kissmetrics.com/loading-time/?wide=1
 [53]:https://econsultancy.com/blog/10936-site-speed-case-studies-tips-and-tools-for-improving-your-conversion-rate/
+
