@@ -1,3 +1,5 @@
+translating by ezio
+
 Going Beyond Hello World Containers is Hard Stuff
 ================================================================================
 In [my previous post][1], I provided the basic concepts behind Linux container technology. I wrote as much for you as I did for me. Containers are new to me. And I figured having the opportunity to blog about the subject would provide the motivation to really learn the stuff.
