@@ -2,165 +2,111 @@
 
 将程序性能提高十倍的10条建议
 ================================================================================
-Improving web application performance is more critical than ever. The share of economic activity that’s online is growing; more than 5% of the developed world’s economy is now on the Internet (see Resources below for statistics). And our always-on, hyper-connected modern world means that user expectations are higher than ever. If your site does not respond instantly, or if your app does not work without delay, users quickly move on to your competitors.
+
 提高web 应用的性能从来没有比现在更关键过。网络经济的比重一直在增长；全球经济超过5% 的价值是在因特网上产生的（数据参见下面的资料）。我们的永远在线、超级连接的世界意味着用户的期望值也处于历史上的最高点。如果你的网站不能及时的响应，或者你的app 不能无延时的工作，用户会很快的投奔到你的竞争对手那里。
 
-For example, a study done by Amazon almost 10 years ago proved that, even then, a 100-millisecond decrease in page-loading time translated to a 1% increase in its revenue. Another recent study highlighted the fact that that more than half of site owners surveyed said they lost revenue or customers due to poor application performance.
 举一个例子，一份亚马逊十年前做过的研究可以证明，甚至在那个时候，网页加载时间每减少100毫秒，收入就会增加1%。另一个最近的研究特别强调一个事实，即超过一半的网站拥有着在调查中说他们会因为应用程序性能的问题流失用户。
 
-How fast does a website need to be? For each second a page takes to load, about 4% of users abandon it. Top e-commerce sites offer a time to first interaction ranging from one to three seconds, which offers the highest conversion rate. It’s clear that the stakes for web application performance are high and likely to grow.
 网站到底需要多块呢？对于页面加载，每增加1秒钟就有4%的用户放弃使用。顶级的电子商务站点的页面在第一次交互时可以做到1秒到3秒加载时间，而这是提供最高舒适度的速度。很明显这种利害关系对于web 应用来说很高，而且在不断的增加。
 
-Wanting to improve performance is easy, but actually seeing results is difficult. To help you on your journey, this blog post offers you ten tips to help you increase your website performance by as much as 10x. It’s the first in a series detailing how you can increase your application performance with the help of some well-tested optimization techniques, and with a little support from NGINX. This series also outlines potential improvements in security that you can gain along the way.
 想要提高效率很简单，但是看到实际结果很难。要在旅途上帮助你，这篇blog 会给你提供10条最高可以10倍的提升网站性能的建议。这是系列介绍提高应用程序性能的第一篇文章，包括测试充分的优化技术和一点NGIX 的帮助。这个系列给出了潜在的提高安全性的帮助。
 
 ### Tip #1: 通过反向代理来提高性能和增加安全性 ###
 
-If your web application runs on a single machine, the solution to performance problems might seem obvious: just get a faster machine, with more processor, more RAM, a fast disk array, and so on. Then the new machine can run your WordPress server, Node.js application, Java application, etc., faster than before. (If your application accesses a database server, the solution might still seem simple: get two faster machines, and a faster connection between them.)
 如果你的web 应用运行在单个机器上，那么这个办法会明显的提升性能：只需要添加一个更快的机器，更好的处理器，更多的内存，更快的磁盘阵列，等等。然后新机器就可以更快的运行你的WordPress 服务器, Node.js 程序, Java 程序，以及其它程序。（如果你的程序要访问数据库服务器，那么这个办法还是很简单：添加两个更快的机器，以及在两台电脑之间使用一个更快的链路。）
 
-Trouble is, machine speed might not be the problem. Web applications often run slowly because the computer is switching among different kinds of tasks: interacting with users on thousands of connections, accessing files from disk, and running application code, among others. The application server may be thrashing – running out of memory, swapping chunks of memory out to disk, and making many requests wait on a single task such as disk I/O.
 问题是，机器速度可能并不是问题。web 程序运行慢经常是因为计算机一直在不同的任务之间切换：和用户的成千上万的连接，从磁盘访问文件，运行代码，等等。应用服务器可能会抖动-内存不足，将内存数据写会磁盘，以及多个请求等待一个任务完成，如磁盘I/O。
 
-Instead of upgrading your hardware, you can take an entirely different approach: adding a reverse proxy server to offload some of these tasks. A [reverse proxy server][1] sits in front of the machine running the application and handles Internet traffic. Only the reverse proxy server is connected directly to the Internet; communication with the application servers is over a fast internal network.
 你可以采取一个完全不同的方案来替代升级硬件：添加一个反向代理服务器来分担部分任务。[反向代理服务器][1] 位于运行应用的机器的前端，是用来处理网络流量的。只有反向代理服务器是直接连接到互联网的；和程序的通讯都是通过一个快速的内部网络完成的。
 
-Using a reverse proxy server frees the application server from having to wait for users to interact with the web app and lets it concentrate on building pages for the reverse proxy server to send across the Internet. The application server, which no longer has to wait for client responses, can run at speeds close to those achieved in optimized benchmarks.
 使用反向代理服务器可以将应用服务器从等待用户与web 程序交互解放出来，这样应用服务器就可以专注于为反向代理服务器构建网页，让其能够传输到互联网上。而应用服务器就不需要在能带客户端的响应，可以运行与接近优化过的性能水平。
 
-Adding a reverse proxy server also adds flexibility to your web server setup. For instance, if a server of a given type is overloaded, another server of the same type can easily be added; if a server is down, it can easily be replaced.
 添加方向代理服务器还可以给你的web 服务器安装带来灵活性。比如，一个已知类型的服务器已经超载了，那么就可以轻松的添加另一个相同的服务器；如果某个机器宕机了，也可以很容易的被替代。
 
-Because of the flexibility it provides, a reverse proxy server is also a prerequisite for many other performance-boosting capabilities, such as:
 因为反向代理带来的灵活性，所以方向代理也是一些性能加速功能的必要前提，比如：
 
 - **负载均衡** (参见 [Tip #2][2]) – 负载均衡运行在方向代理服务器上，用来将流量均衡分配给一批应用。有了合适的负载均衡，你就可以在不改变程序的前提下添加应用服务器。
-
-- A load balancer runs on a reverse proxy server to share traffic evenly across a number of application servers. With a load balancer in place, you can add application servers without changing your application at all.
-
 - **缓存静态文件** (参见 [Tip #3][3]) – 直接读取的文件，比如图像或者代码，可以保存在方向代理服务器，然后直接发给客户端，这样就可以提高速度、分担应用服务器的负载，可以让应用运行的更快
-
-Files that are requested directly, such as image files or code files, can be stored on the reverse proxy server and sent directly to the client, which serves assets more quickly and offloads the application server, allowing the application to run faster.
-
 - **网站安全** – 反响代理服务器可以提高网站安全性，以及快速的发现和响应攻击，保证应用服务器处于被保护状态。
-The reverse proxy server can be configured for high security and monitored for fast recognition and response to attacks, keeping the application servers protected.
 
-NGINX software is specifically designed for use as a reverse proxy server, with the additional capabilities described above. NGINX uses an event-driven processing approach which is more efficient than traditional servers. NGINX Plus adds more advanced reverse proxy features, such as application [health checks][4], specialized request routing, advanced caching, and support.
 NGINX 软件是一个专门设计的反响代理服务器，也包含了上述的多种功能。NGINX 使用事件驱动的方式处理问题，着回避传统的服务器更加有效率。NGINX plus 天价了更多高级的反向代理特性，比如程序[健康度检查][4]，专门用来处理request 路由，高级缓冲和相关支持。
 
 ![NGINX Worker Process helps increase application performance](https://www.nginx.com/wp-content/uploads/2015/10/Graph-11.png)
 
 ### Tip #2: 添加负载平衡 ###
 
-Adding a [load balancer][5] is a relatively easy change which can create a dramatic improvement in the performance and security of your site. Instead of making a core web server bigger and more powerful, you use a load balancer to distribute traffic across a number of servers. Even if an application is poorly written, or has problems with scaling, a load balancer can improve the user experience without any other changes.
 添加一个[负载均衡服务器][5] 是一个相当简单的用来提高性能和网站安全性的的方法。使用负载均衡讲流量分配到多个服务器，是用来替代只使用一个巨大且高性能web 服务器的方案。即使程序写的不好，或者在扩容方面有困难，只使用负载均衡服务器就可以很好的提高用户体验。
 
-A load balancer is, first, a reverse proxy server (see [Tip #1][6]) – it receives Internet traffic and forwards requests to another server. The trick is that the load balancer supports two or more application servers, using [a choice of algorithms][7] to split requests between servers. The simplest load balancing approach is round robin, with each new request sent to the next server on the list. Other methods include sending requests to the server with the fewest active connections. NGINX Plus has [capabilities][8] for continuing a given user session on the same server, which is called session persistence.
 负载均衡服务器首先是一个反响代理服务器（参见[Tip #1][6]）——它接收来自互联网的流量，然后转发请求给另一个服务器。小戏法是负载均衡服务器支持两个或多个应用服务器，使用[分配算法][7]将请求转发给不同服务器。最简单的负载均衡方法是轮转法，只需要将新的请求发给列表里的下一个服务器。其它的方法包括将请求发给负载最小的活动连接。NGINX plus 拥有将特定用户的会话分配给同一个服务器的[能力][8].
 
-Load balancers can lead to strong improvements in performance because they prevent one server from being overloaded while other servers wait for traffic. They also make it easy to expand your web server capacity, as you can add relatively low-cost servers and be sure they’ll be put to full use.
 负载均衡可以很好的提高性能是因为它可以避免某个服务器过载而另一些服务器却没有流量来处理。它也可以简单的扩展服务器规模，因为你可以添加多个价格相对便宜的服务器并且保证它们被充分利用了。
 
-Protocols that can be load balanced include HTTP, HTTPS, SPDY, HTTP/2, WebSocket, [FastCGI][9], SCGI, uwsgi, memcached, and several other application types, including TCP-based applications and other Layer 4 protocols. Analyze your web applications to determine which you use and where performance is lagging.
 可以进行负载均衡的协议包括HTTP, HTTPS, SPDY, HTTP/2, WebSocket，[FastCGI][9],SCGI,uwsgi, memcached，以及集中其它的应用类型，包括采用TCP 第4层协议的程序。分析你的web 应用来决定那些你要使用以及那些地方的性能不足。
 
-The same server or servers used for load balancing can also handle several other tasks, such as SSL termination, support for HTTP/1/x and HTTP/2 use by clients, and caching for static files.
 相同的服务器或服务器群可以被用来进行负载均衡，也可以用来处理其它的任务，如SSL 终止，提供对客户端使用的HTTP/1/x  和 HTTP/2 ，以及缓存静态文件。
 
-NGINX is often used for load balancing; to learn more, please see our [overview blog post][10], [configuration blog post][11], [ebook][12] and associated [webinar][13], and [documentation][14]. Our commercial version, [NGINX Plus][15], supports more specialized load balancing features such as load routing based on server response time and the ability to load balance on Microsoft’s NTLM protocol.
 NGINX 经常被用来进行负载均衡；要想了解更多的情况可以访问我们的[overview blog post][10], [configuration blog post][11], [ebook][12] 以及相关网站 [webinar][13], 和 [documentation][14]。我们的商业版本 [NGINX Plus][15] 支持更多优化了的负载均衡特性，如基于服务器响应时间的加载路由和Microsoft’s NTLM 协议上的负载均衡。
 
 ### Tip #3: 缓存静态和动态的内容 ###
 
-Caching improves web application performance by delivering content to clients faster. Caching can involve several strategies: preprocessing content for fast delivery when needed, storing content on faster devices, storing content closer to the client, or a combination.
 缓存通过加速内容的传输速度来提高web 应用的性能。它可以采用一下集中策略：当需要的时候预处理要传输的内容，保存数据到速度更快的设备，把数据存储在距离客户端更近的位置，或者结合起来使用。
 
-There are two different types of caching to consider:
 下面要考虑两种不同类型数据的缓冲：
 
-- **Caching of static content**. Infrequently changing files, such as image files (JPEG, PNG) and code files (CSS, JavaScript), can be stored on an edge server for fast retrieval from memory or disk.
 - **静态内容缓存**。不经常变化的文件，比如图像(JPEG,PNG) 和代码(CSS,JavaScript)，可以保存在边缘服务器，这样就可以快速的从内存和磁盘上提取。
-- **Caching of dynamic content**. Many Web applications generate fresh HTML for each page request. By briefly caching one copy of the generated HTML for a brief period of time, you can dramatically reduce the total number of pages that have to be generated while still delivering content that’s fresh enough to meet your requirements.
 - **动态内容缓存**。很多web 应用回针对每个网页请求生成不同的HTML 页面。在短时间内简单的缓存每个生成HTML 内容，就可以很好的减少要生成的内容的数量，这完全可以达到你的要求。
 
-If a page gets ten views per second, for instance, and you cache it for one second, 90% of requests for the page will come from the cache. If you separately cache static content, even the freshly generated versions of the page might be made up largely of cached content.
 举个例子，如果一个页面每秒会被浏览10次，你将它缓存1 秒，99%请求的页面都会直接从缓存提取。如果你将将数据分成静态内容，甚至新生成的页面可能都是由这些缓存构成的。
 
-There are three main techniques for caching content generated by web applications:
 下面由是web 应用发明的三种主要的缓存技术：
 
-- **Moving content closer to users**. Keeping a copy of content closer to the user reduces its transmission time.
 - **缩短数据与用户的距离**。把一份内容的拷贝放的离用户更近点来减少传输时间。
-- **Moving content to faster machines**. Content can be kept on a faster machine for faster retrieval.
 - **提高内容服务器的速度**。内容可以保存在一个更快的服务器上来减少提取文件的时间。
-- **Moving content off of overused machines**. Machines sometimes operate much slower than their benchmark performance on a particular task because they are busy with other tasks. Caching on a different machine improves performance for the cached resources and also for non-cached resources, because the host machine is less overloaded.
 - **从过载服务器拿走数据**。机器经常因为要完成某些其它的任务而造成某个任务的执行速度比测试结果要差。将数据缓存在不同的机器上可以提高缓存资源和非缓存资源的效率，而这知识因为主机没有被过度使用。
 
-Caching for web applications can be implemented from the inside – the web application server – out. First, caching is used for dynamic content, to reduce the load on application servers. Then, caching is used for static content (including temporary copies of what would otherwise be dynamic content), further off-loading application servers. And caching is then moved off of application servers and onto machines that are faster and/or closer to the user, unburdening the application servers, and reducing retrieval and transmission times.
 对web 应用的缓存机制可以web 应用服务器内部实现。第一，缓存动态内容是用来减少应用服务器加载动态内容的时间。然后，缓存静态内容（包括动态内容的临时拷贝）是为了更进一步的分担应用服务器的负载。而且缓存之后会从应用服务器转移到对用户而言更快、更近的机器，从而减少应用服务器的压力，减少提取数据和传输数据的时间。
 
-Improved caching can speed up applications tremendously. For many web pages, static data, such as large image files, makes up more than half the content. It might take several seconds to retrieve and transmit such data without caching, but only fractions of a second if the data is cached locally.
 改进过的缓存方案可以极大的提高应用的速度。对于大多数网页来说，静态数据，比如大图像文件，构成了超过一半的内容。如果没有缓存，那么这可能会花费几秒的时间来提取和传输这类数据，但是采用了缓存之后不到1秒就可以完成。
 
-As an example of how caching is used in practice, NGINX and NGINX Plus use two directives to [set up caching][16]: proxy_cache_path and proxy_cache. You specify the cache location and size, the maximum time files are kept in the cache, and other parameters. Using a third (and quite popular) directive, proxy_cache_use_stale, you can even direct the cache to supply stale content when the server that supplies fresh content is busy or down, giving the client something rather than nothing. From the user’s perspective, this may strongly improves your site or application’s uptime.
 举一个在实际中缓存是如何使用的例子， NGINX 和NGINX Plus使用了两条指令来[设置缓存机制][16]：proxy_cache_path 和 proxy_cache。你可以指定缓存的位置和大小，文件在缓存中保存的最长时间和其他一些参数。使用第三条（而且是相当受欢迎的一条）指令，proxy_cache_use_stale，如果服务器提供新鲜内容是忙或者挂掉之类的信息，你甚至可以让缓存提供旧的内容，这样客户端就不会一无所得。从用户的角度来看这可以很好的提高你的网站或者应用的上线时间。
 
-NGINX Plus has [advanced caching features][17], including support for [cache purging][18] and visualization of cache status on a [dashboard][19] for live activity monitoring.
 NGINX plus 拥有[高级缓存特性][17]，包括对[缓存清除][18]的支持和在[仪表盘][19]上显示缓存状态信息。
 
-For more information on caching with NGINX, see the [reference documentation][20] and [NGINX Content Caching][21] in the NGINX Plus Admin Guide.
 要想获得更多关于NGINX 的缓存机制的信息可以浏览NGINX Plus 管理员指南中的 [reference documentation][20] 和 [NGINX Content Caching][21] 。
 
-**Note**: Caching crosses  lines between people who develop applications, people who make capital investment decisions, and people who run networks in real time. Sophisticated caching strategies, like those alluded to here, are a good example of the value of a [DevOps perspective][22], in which application developer, architectural, and operations perspectives are merged to help meet goals for site functionality, response time, security, and business results, such as completed transactions or sales.
 **注意**：缓存机制分布于应用开发者、投资决策者以及实际的系统运维人员之间。本文提到的一些复杂的缓存机制从[DevOps 的角度][23]来看很具有价值，即对集应用开发者、架构师以及运维操作人员的功能为一体的工程师来说可以满足他们对站点功能性、响应时间、安全性和商业结果，如完成的交易数。
 
 ### Tip #4: 压缩数据 ###
 
-Compression is a huge potential performance accelerator. There are carefully engineered and highly effective compression standards for photos (JPEG and PNG), videos (MPEG-4), and music (MP3), among others. Each of these standards reduces file size by an order of magnitude or more.
 压缩是一个具有很大潜力的提高性能的加速方法。现在已经有一些针对照片（JPEG 和PNG）、视频（MPEG-4）和音乐（MP3）等各类文件精心设计和高压缩率的标准。每一个标准都或多或少的减少了文件的大小。
 
-Text data – including HTML (which includes plain text and HTML tags), CSS, and code such as JavaScript – is often transmitted uncompressed. Compressing this data can have a disproportionate impact on perceived web application performance, especially for clients with slow or constrained mobile connections.
 文本数据 —— 包括HTML（包含了纯文本和HTL 标签），CSS和代码，比如Javascript —— 经常是未经压缩就传输的。压缩这类数据会在对应用程序性能的感觉上，特别是处于慢速或受限的移动网络的客户端，产生不成比例的影响。
 
-That’s because text data is often sufficient for a user to interact with a page, where multimedia data may be more supportive or decorative. Smart content compression can reduce the bandwidth requirements of HTML, Javascript, CSS and other text-based content, typically by 30% or more, with a corresponding reduction in load time.
 这是因为文本数据经常是用户与网页交互的有效数据，而多媒体数据可能更多的是起提供支持或者装饰的作用。聪明的内容压缩可以减少HTML，Javascript，CSS和其他文本内容对贷款的要求，通常可以减少30% 甚至更多的带宽和相应的页面加载时间。
 
-If you use SSL, compression reduces the amount of data that has to be SSL-encoded, which offsets some of the CPU time it takes to compress the data.
 如果你是用SSL，压缩可以减少需要进行SSL 编码的的数据量，而这些编码操作会占用一些CPU时间而抵消了压缩数据减少的时间。
 
-Methods for compressing text data vary. For example, see the [section on HTTP/2][23] for a novel text compression scheme, adapted specifically for header data. As another example of text compression you can [turn on][24] GZIP compression in NGINX. After you [pre-compress text data][25] on your services, you can serve the compressed .gz version directly using the gzip_static directive.
 压缩文本数据的方法很多，举个例子，在定义小说文本压缩模式的[HTTP/2 部分]就专门为适应头数据。另一个例子是可以在NGINX 里打开使用GZIP 压缩文本。你在你的服务里[预压缩文本数据][25]之后，你就可以直接使用gzip_static 指令来处理压缩过的.gz 版本。
 
 ### Tip #5: 优化 SSL/TLS ###
 
-The Secure Sockets Layer ([SSL][26]) protocol and its successor, the Transport Layer Security (TLS) protocol, are being used on more and more websites. SSL/TLS encrypts the data transported from origin servers to users to help improve site security. Part of what may be influencing this trend is that Google now uses the presence of SSL/TLS as a positive influence on search engine rankings.
 安全套接字（[SSL][26]) 协议和它的继承者，传输层安全（TLS）协议正在被越来越多的网站采用。SSL/TLS 对从原始服务器发往用户的数据进行加密提高了网站的安全性。影响这个趋势的部分原因是Google 正在使用SSL/TLS，这在搜索引擎排名上是一个正面的影响因素。
 
-Despite rising popularity, the performance hit involved in SSL/TLS is a sticking point for many sites. SSL/TLS slows website performance for two reasons:
 尽管SSL/TLS 越来越流行，但是使用加密对速度的影响也让很多网站望而却步。SSL/TLS 之所以让网站变的更慢，原因有二：
 
-1. The initial handshake required to establish encryption keys whenever a new connection is opened. The way that browsers using HTTP/1.x establish multiple connections per server multiplies that hit.
 1. 任何一个连接第一次连接时的握手过程都需要传递密钥。而采用HTTP/1.x 协议的浏览器在建立多个连接时会对每个连接重复上述操作。
-1. Ongoing overhead from encrypting data on the server and decrypting it on the client.
 2. 数据在传输过程中需要不断的在服务器加密、在客户端解密。
 
-To encourage the use of SSL/TLS, the authors of HTTP/2 and SPDY (described in the [next section][27]) designed these protocols so that browsers need just one connection per browser session. This greatly reduces one of the two major sources of SSL overhead. However, even more can be done today to improve the performance of applications delivered over SSL/TLS.
 要鼓励使用SSL/TLS，HTTP/2 和SPDY（在[下一章][27]会描述）的作者设计新的协议来让浏览器只需要对一个浏览器会话使用一个连接。这会大大的减少上述两个原因中的一个浪费的时间。然而现在可以用来提高应用程序使用SSL/TLS 传输数据的性能的方法不止这些。
 
-The mechanism for optimizing SSL/TLS varies by web server. As an example, NGINX uses [OpenSSL][28], running on standard commodity hardware, to provide performance similar to dedicated hardware solutions. NGINX [SSL performance][29] is well-documented and minimizes the time and CPU penalty from performing SSL/TLS encryption and decryption.
 web 服务器有对应的机制优化SSL/TLS 传输。举个例子，NGINX 使用[OpenSSL][28]运行在普通的硬件上提供接近专用硬件的传输性能。NGINX [SSL 性能][29] 有详细的文档，而且把对SSL/TLS 数据进行加解密的时间和CPU 占用率降低了很多。
 
-In addition, see [this blog post][30] for details on ways to increase SSL/TLS performance. To summarize briefly, the techniques are:
 更进一步，在这篇[blog][30]有详细的说明如何提高SSL/TLS 性能，可以总结为一下几点：
 
-- **Session caching**. Uses the [ssl_session_cache][31] directive to cache the parameters used when securing each new connection with SSL/TLS.
 - **会话缓冲**。使用指令[ssl_session_cache][31]可以缓存每个新的SSL/TLS 连接使用的参数。
-- **Session tickets or IDs**. These store information about specific SSL/TLS sessions in a ticket or ID so a connection can be reused smoothly, without new handshaking.
 - **会话票据或者ID**。把SSL/TLS 的信息保存在一个票据或者ID 里可以流畅的复用而不需要重新握手。
-- **OCSP stapling**. Cuts handshaking time by caching SSL/TLS certificate information.
 - **OCSP 分割**。通过缓存SSL/TLS 证书信息来减少握手时间。
 
-NGINX and NGINX Plus can be used for SSL/TLS termination – handling encryption and decyption for client traffic, while communicating with other servers in clear text. Use [these steps][32] to set up NGINX or NGINX Plus to handle SSL/TLS termination. Also, here are [specific steps][33] for NGINX Plus when used with servers that accept TCP connections.
 NGINX 和NGINX Plus 可以被用作SSL/TLS 终结——处理客户端流量的加密和解密，而同时和其他服务器进行明文通信。使用[这几步][32] 来设置NGINX 和NGINX Plus 处理SSL/TLS 终止。同时，这里还有一些NGINX Plus 和接收TCP 连接的服务器一起使用时的[特有的步骤][33]
 
 ### Tip #6: 使用 HTTP/2 或 SPDY ###
