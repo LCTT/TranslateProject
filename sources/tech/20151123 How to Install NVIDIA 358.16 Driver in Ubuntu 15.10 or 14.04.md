@@ -1,3 +1,5 @@
+translation by  strugglingyouth
+
 How to Install NVIDIA 358.16 Driver in Ubuntu 15.10, 14.04
 ================================================================================
 ![nvidia-logo-1](http://ubuntuhandbook.org/wp-content/uploads/2015/06/nvidia-logo-1.png)
