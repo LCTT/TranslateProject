@@ -217,6 +217,7 @@ Voila! It’s working. That’s it.
 
 Want to know how to add additional IP addresses on CentOS/RHEL/Scientific Linux/Fedora systems, check the following link.
 
+注：此篇文章以前做过选题：20150205 Linux Basics--Assign Multiple IP Addresses To Single Network Interface Card On CentOS 7.md
 - [Assign Multiple IP Addresses To Single Network Interface Card On CentOS 7][1]
 
 Happy weekend!
