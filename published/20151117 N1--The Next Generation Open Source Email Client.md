@@ -2,22 +2,21 @@ N1：下一代开源邮件客户端
 ================================================================================
 ![N1 Open Source email client](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/11/N1-email-client.png)
 
-当我们谈论到Linux中的邮件客户端，通常上 Thunderbird、Geary 和 [Evolution][3] 会出现在我们的脑海。作为对这些大咖们的挑战，一款新的开源邮件客户端正在涌入市场。
-
+当我们谈论到Linux中的邮件客户端，通常 Thunderbird、Geary 和 [Evolution][3] 就会出现在我们的脑海。作为对这些大咖们的挑战，一款新的开源邮件客户端正在涌入市场。
 
 ### 设计和功能 ###
 
-[N1][4]是一个同时聚焦设计和功能的下一代开源邮件客户端。作为一个开源软件，N1目前支持 Linux 和 Mac OS X，Windows的版本还在开发中。
+[N1][4]是一个设计与功能并重的新一代开源邮件客户端。作为一个开源软件，N1目前支持 Linux 和 Mac OS X，Windows的版本还在开发中。
 
-N1宣传它自己为“可扩展的开源邮件客户端”，因为它包含了 Javascript 插件架构，任何人都可以为它创建强大的新功能。可扩展是一个非常流行的功能，它帮助[开源编辑器Atom][5]变得流行。N1同样把重点放在了可扩展上面。
+N1宣传它自己为“可扩展的开源邮件客户端”，因为它包含了 Javascript 插件框架，任何人都可以为它创建强大的新功能。可扩展是一个非常流行的功能，它帮助[开源编辑器Atom][5]变得流行。N1同样把重点放在了可扩展上面。
 
 除了可扩展性，N1同样着重设计了程序的外观。下面N1的截图就是个很好的例子：
 
 ![N1 Open Source email client on Mac OS X](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/11/N1-email-client-1.jpeg)
 
-Mac OS X上的N1客户端。图片来自：N1
+*Mac OS X上的N1客户端。图片来自：N1*
 
-除了这个功能，N1兼容上百的邮件提供商包括Gmail、Yahoo、iCloud、Microsoft Exchange等等，桌面应用提供离线功能。
+除了这个功能，N1兼容上百个邮件服务提供商，包括Gmail、Yahoo、iCloud、Microsoft Exchange等等，这个桌面应用提供了离线功能。
 
 ### 目前只能邀请使用 ###
 
