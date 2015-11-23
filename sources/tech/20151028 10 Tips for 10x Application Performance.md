@@ -112,22 +112,30 @@ NGINX 和NGINX Plus 可以被用作SSL/TLS 终结——处理客户端流量的�
 ### Tip #6: 使用 HTTP/2 或 SPDY ###
 
 For sites that already use SSL/TLS, HTTP/2 and SPDY are very likely to improve performance, because the single connection requires just one handshake. For sites that don’t yet use SSL/TLS, HTTP/2 and SPDY makes a move to SSL/TLS (which normally slows performance) a wash from a responsiveness point of view.
+对于已经使用了SSL/TLS 的站点，HTTP/2 和SPDY 可以很好的提高性能，因为每个连接只需要一次握手。而对于没有使用SSL/TLS 的站点来说，HTTP/2 和SPDY会在响应速度上有些影响（通常会将度效率）。
 
 Google introduced SPDY in 2012 as a way to achieve faster performance on top of HTTP/1.x. HTTP/2 is the recently approved IETF standard based on SPDY. SPDY is broadly supported, but is soon to be deprecated, replaced by HTTP/2.
+Google 在2012年开始把SPDY 作为一个比HTTP/1.x 更快速的协议来推荐。HTTP/2 是目前IETF 标准，他也基于SPDY。SPDY 已经被广泛的支持了，但是很快就会被HTTP/2 替代。
 
 The key feature of SPDY and HTTP/2 is the use of a single connection rather than multiple connections. The single connection is multiplexed, so it can carry pieces of multiple requests and responses at the same time.
+SPDY 和HTTP/2 的关键是用单连接来替代多路连接。单个连接是被复用的，所以它可以同时携带多个请求和响应的分片。
 
 By getting the most out of one connection, these protocols avoid the overhead of setting up and managing multiple connections, as required by the way browsers implement HTTP/1.x. The use of a single connection is especially helpful with SSL, because it minimizes the time-consuming handshaking that SSL/TLS needs to set up a secure connection.
+通过使用一个连接这些协议可以避免过多的设置和管理多个连接，就像浏览器实现了HTTP/1.x 一样。单连接在对SSL 特别有效，这是因为它可以最小化SSL/TLS 建立安全链接时的握手时间。
 
 The SPDY protocol required the use of SSL/TLS; HTTP/2 does not officially require it, but all browsers so far that support HTTP/2 use it only if SSL/TLS is enabled. That is, a browser that supports HTTP/2 uses it only if the website is using SSL and its server accepts HTTP/2 traffic. Otherwise, the browser communicates over HTTP/1.x.
+SPDY 协议需要使用SSL/TLS， 而HTTP/2 官方并不需要，但是目前所有支持HTTP/2的浏览器只有在使能了SSL/TLS 的情况下才会使用它。这就意味着支持HTTP/2 的浏览器只有在网站使用了SSL 并且服务器接收HTTP/2 流量的情况下才会启用HTTP/2。否则的话浏览器就会使用HTTP/1.x 协议。
 
 When you implement SPDY or HTTP/2, you no longer need typical HTTP performance optimizations such as domain sharding, resource merging, and image spriting. These changes make your code and deployments simpler and easier to manage. To learn more about the changes that HTTP/2 is bringing about, read our [white paper][34].
+当你实现SPDY 或者HTTP/2时，你不再需要通常的HTTP 性能优化方案，比如域分隔资源聚合，以及图像登记。这些改变可以让你的代码和部署变得更简单和更易于管理。要了解HTTP/2 带来的这些变化可以浏览我们的[白皮书][34]。
 
 ![NGINX Supports SPDY and HTTP/2 for increased web application performance](https://www.nginx.com/wp-content/uploads/2015/10/http2-27.png)
 
 As an example of support for these protocols, NGINX has supported SPDY from early on, and [most sites][35] that use SPDY today run on NGINX. NGINX is also [pioneering support][36] for HTTP/2, with [support][37] for HTTP/2 in NGINX open source and NGINX Plus as of September 2015.
+作为支持这些协议的一个样例，NGINX 已经从一开始就支持了SPDY，而且[大部分使用SPDY 协议的网站][35]都运行的是NGINX。NGINX 同时也[很早][36]对HTTP/2 的提供了支持,从2015 年9月开始开源NGINX 和NGINX Plus 就[支持][37]它了。
 
 Over time, we at NGINX expect most sites to fully enable SSL and to move to HTTP/2. This will lead to increased security and, as new optimizations are found and implemented, simpler code that performs better.
+经过一段时间，我们NGINX 希望更多的站点完全是能SSL 并且向HTTP/2 迁移。这将会提高安全性，同时新的优化手段也会被发现和实现，更简单的代码表现的更加优异。
 
 ### Tip #7: 升级软件版本 ###
 
