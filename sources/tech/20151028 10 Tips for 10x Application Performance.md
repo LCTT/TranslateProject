@@ -134,23 +134,34 @@ Methods for compressing text data vary. For example, see the [section on HTTP/2]
 ### Tip #5: 优化 SSL/TLS ###
 
 The Secure Sockets Layer ([SSL][26]) protocol and its successor, the Transport Layer Security (TLS) protocol, are being used on more and more websites. SSL/TLS encrypts the data transported from origin servers to users to help improve site security. Part of what may be influencing this trend is that Google now uses the presence of SSL/TLS as a positive influence on search engine rankings.
+安全套接字（[SSL][26]) 协议和它的继承者，传输层安全（TLS）协议正在被越来越多的网站采用。SSL/TLS 对从原始服务器发往用户的数据进行加密提高了网站的安全性。影响这个趋势的部分原因是Google 正在使用SSL/TLS，这在搜索引擎排名上是一个正面的影响因素。
 
 Despite rising popularity, the performance hit involved in SSL/TLS is a sticking point for many sites. SSL/TLS slows website performance for two reasons:
+尽管SSL/TLS 越来越流行，但是使用加密对速度的影响也让很多网站望而却步。SSL/TLS 之所以让网站变的更慢，原因有二：
 
 1. The initial handshake required to establish encryption keys whenever a new connection is opened. The way that browsers using HTTP/1.x establish multiple connections per server multiplies that hit.
+1. 任何一个连接第一次连接时的握手过程都需要传递密钥。而采用HTTP/1.x 协议的浏览器在建立多个连接时会对每个连接重复上述操作。
 1. Ongoing overhead from encrypting data on the server and decrypting it on the client.
+2. 数据在传输过程中需要不断的在服务器加密、在客户端解密。
 
 To encourage the use of SSL/TLS, the authors of HTTP/2 and SPDY (described in the [next section][27]) designed these protocols so that browsers need just one connection per browser session. This greatly reduces one of the two major sources of SSL overhead. However, even more can be done today to improve the performance of applications delivered over SSL/TLS.
+要鼓励使用SSL/TLS，HTTP/2 和SPDY（在[下一章][27]会描述）的作者设计新的协议来让浏览器只需要对一个浏览器会话使用一个连接。这会大大的减少上述两个原因中的一个浪费的时间。然而现在可以用来提高应用程序使用SSL/TLS 传输数据的性能的方法不止这些。
 
 The mechanism for optimizing SSL/TLS varies by web server. As an example, NGINX uses [OpenSSL][28], running on standard commodity hardware, to provide performance similar to dedicated hardware solutions. NGINX [SSL performance][29] is well-documented and minimizes the time and CPU penalty from performing SSL/TLS encryption and decryption.
+web 服务器有对应的机制优化SSL/TLS 传输。举个例子，NGINX 使用[OpenSSL][28]运行在普通的硬件上提供接近专用硬件的传输性能。NGINX [SSL 性能][29] 有详细的文档，而且把对SSL/TLS 数据进行加解密的时间和CPU 占用率降低了很多。
 
 In addition, see [this blog post][30] for details on ways to increase SSL/TLS performance. To summarize briefly, the techniques are:
+更进一步，在这篇[blog][30]有详细的说明如何提高SSL/TLS 性能，可以总结为一下几点：
 
 - **Session caching**. Uses the [ssl_session_cache][31] directive to cache the parameters used when securing each new connection with SSL/TLS.
+- **会话缓冲**。使用指令[ssl_session_cache][31]可以缓存每个新的SSL/TLS 连接使用的参数。
 - **Session tickets or IDs**. These store information about specific SSL/TLS sessions in a ticket or ID so a connection can be reused smoothly, without new handshaking.
+- **会话票据或者ID**。把SSL/TLS 的信息保存在一个票据或者ID 里可以流畅的复用而不需要重新握手。
 - **OCSP stapling**. Cuts handshaking time by caching SSL/TLS certificate information.
+- **OCSP 分割**。通过缓存SSL/TLS 证书信息来减少握手时间。
 
 NGINX and NGINX Plus can be used for SSL/TLS termination – handling encryption and decyption for client traffic, while communicating with other servers in clear text. Use [these steps][32] to set up NGINX or NGINX Plus to handle SSL/TLS termination. Also, here are [specific steps][33] for NGINX Plus when used with servers that accept TCP connections.
+NGINX 和NGINX Plus 可以被用作SSL/TLS 终结——处理客户端流量的加密和解密，而同时和其他服务器进行明文通信。使用[这几步][32] 来设置NGINX 和NGINX Plus 处理SSL/TLS 终止。同时，这里还有一些NGINX Plus 和接收TCP 连接的服务器一起使用时的[特有的步骤][33]
 
 ### Tip #6: 使用 HTTP/2 或 SPDY ###
 
