@@ -53,33 +53,48 @@ NGINX 软件是一个专门设计的反响代理服务器，也包含了上述�
 ### Tip #2: 添加负载平衡 ###
 
 Adding a [load balancer][5] is a relatively easy change which can create a dramatic improvement in the performance and security of your site. Instead of making a core web server bigger and more powerful, you use a load balancer to distribute traffic across a number of servers. Even if an application is poorly written, or has problems with scaling, a load balancer can improve the user experience without any other changes.
+添加一个[负载均衡服务器][5] 是一个相当简单的用来提高性能和网站安全性的的方法。使用负载均衡讲流量分配到多个服务器，是用来替代只使用一个巨大且高性能web 服务器的方案。即使程序写的不好，或者在扩容方面有困难，只使用负载均衡服务器就可以很好的提高用户体验。
 
 A load balancer is, first, a reverse proxy server (see [Tip #1][6]) – it receives Internet traffic and forwards requests to another server. The trick is that the load balancer supports two or more application servers, using [a choice of algorithms][7] to split requests between servers. The simplest load balancing approach is round robin, with each new request sent to the next server on the list. Other methods include sending requests to the server with the fewest active connections. NGINX Plus has [capabilities][8] for continuing a given user session on the same server, which is called session persistence.
+负载均衡服务器首先是一个反响代理服务器（参见[Tip #1][6]）——它接收来自互联网的流量，然后转发请求给另一个服务器。小戏法是负载均衡服务器支持两个或多个应用服务器，使用[分配算法][7]将请求转发给不同服务器。最简单的负载均衡方法是轮转法，只需要将新的请求发给列表里的下一个服务器。其它的方法包括将请求发给负载最小的活动连接。NGINX plus 拥有将特定用户的会话分配给同一个服务器的[能力][8].
 
 Load balancers can lead to strong improvements in performance because they prevent one server from being overloaded while other servers wait for traffic. They also make it easy to expand your web server capacity, as you can add relatively low-cost servers and be sure they’ll be put to full use.
+负载均衡可以很好的提高性能是因为它可以避免某个服务器过载而另一些服务器却没有流量来处理。它也可以简单的扩展服务器规模，因为你可以添加多个价格相对便宜的服务器并且保证它们被充分利用了。
 
 Protocols that can be load balanced include HTTP, HTTPS, SPDY, HTTP/2, WebSocket, [FastCGI][9], SCGI, uwsgi, memcached, and several other application types, including TCP-based applications and other Layer 4 protocols. Analyze your web applications to determine which you use and where performance is lagging.
+可以进行负载均衡的协议包括HTTP, HTTPS, SPDY, HTTP/2, WebSocket，[FastCGI][9],SCGI,uwsgi, memcached，以及集中其它的应用类型，包括采用TCP 第4层协议的程序。分析你的web 应用来决定那些你要使用以及那些地方的性能不足。
 
 The same server or servers used for load balancing can also handle several other tasks, such as SSL termination, support for HTTP/1/x and HTTP/2 use by clients, and caching for static files.
+相同的服务器或服务器群可以被用来进行负载均衡，也可以用来处理其它的任务，如SSL 终止，提供对客户端使用的HTTP/1/x  和 HTTP/2 ，以及缓存静态文件。
 
 NGINX is often used for load balancing; to learn more, please see our [overview blog post][10], [configuration blog post][11], [ebook][12] and associated [webinar][13], and [documentation][14]. Our commercial version, [NGINX Plus][15], supports more specialized load balancing features such as load routing based on server response time and the ability to load balance on Microsoft’s NTLM protocol.
+NGINX 经常被用来进行负载均衡；要想了解更多的情况可以访问我们的[overview blog post][10], [configuration blog post][11], [ebook][12] 以及相关网站 [webinar][13], 和 [documentation][14]。我们的商业版本 [NGINX Plus][15] 支持更多优化了的负载均衡特性，如基于服务器响应时间的加载路由和Microsoft’s NTLM 协议上的负载均衡。
 
 ### Tip #3: 缓存静态和动态的内容 ###
 
 Caching improves web application performance by delivering content to clients faster. Caching can involve several strategies: preprocessing content for fast delivery when needed, storing content on faster devices, storing content closer to the client, or a combination.
+缓存通过加速内容的传输速度来提高web 应用的性能。它可以采用一下集中策略：当需要的时候预处理要传输的内容，保存数据到速度更快的设备，把数据存储在距离客户端更近的位置，或者结合起来使用。
 
 There are two different types of caching to consider:
+下面要考虑两种不同类型数据的缓冲：
 
 - **Caching of static content**. Infrequently changing files, such as image files (JPEG, PNG) and code files (CSS, JavaScript), can be stored on an edge server for fast retrieval from memory or disk.
+- **静态内容缓存**。不经常变化的文件，比如图像(JPEG,PNG) 和代码(CSS,JavaScript)，可以保存在边缘服务器，这样就可以快速的从内存和磁盘上提取。
 - **Caching of dynamic content**. Many Web applications generate fresh HTML for each page request. By briefly caching one copy of the generated HTML for a brief period of time, you can dramatically reduce the total number of pages that have to be generated while still delivering content that’s fresh enough to meet your requirements.
+- **动态内容缓存**。很多web 应用回针对每个网页请求生成不同的HTML 页面。在短时间内简单的缓存每个生成HTML 内容，就可以很好的减少要生成的内容的数量，这完全可以达到你的要求。
 
 If a page gets ten views per second, for instance, and you cache it for one second, 90% of requests for the page will come from the cache. If you separately cache static content, even the freshly generated versions of the page might be made up largely of cached content.
+举个例子，如果一个页面每秒会被浏览10次，你将它缓存1 秒，99%请求的页面都会直接从缓存提取。如果你将将数据分成静态内容，甚至新生成的页面可能都是由这些缓存构成的。
 
 There are three main techniques for caching content generated by web applications:
+下面由是web 应用发明的三种主要的缓存技术：
 
 - **Moving content closer to users**. Keeping a copy of content closer to the user reduces its transmission time.
+- **缩短数据与用户的距离**。把一份内容的拷贝放的离用户更近点来减少传输时间。
 - **Moving content to faster machines**. Content can be kept on a faster machine for faster retrieval.
+- **提高内容服务器的速度**。内容可以保存在一个更快的服务器上来减少提取文件的时间。
 - **Moving content off of overused machines**. Machines sometimes operate much slower than their benchmark performance on a particular task because they are busy with other tasks. Caching on a different machine improves performance for the cached resources and also for non-cached resources, because the host machine is less overloaded.
+- **从过载服务器拿走数据**。机器经常因为要完成某些其它的任务而造成某个任务的执行速度比测试结果要差。将数据缓存在不同的机器上可以提高缓存资源和非缓存资源的效率，而这知识因为主机没有被过度使用。
 
 Caching for web applications can be implemented from the inside – the web application server – out. First, caching is used for dynamic content, to reduce the load on application servers. Then, caching is used for static content (including temporary copies of what would otherwise be dynamic content), further off-loading application servers. And caching is then moved off of application servers and onto machines that are faster and/or closer to the user, unburdening the application servers, and reducing retrieval and transmission times.
 
@@ -295,3 +310,4 @@ via: https://www.nginx.com/blog/10-tips-for-10x-application-performance/?hmsr=to
 [51]:http://blog.loadimpact.com/blog/how-bad-performance-impacts-ecommerce-sales-part-i/
 [52]:https://blog.kissmetrics.com/loading-time/?wide=1
 [53]:https://econsultancy.com/blog/10936-site-speed-case-studies-tips-and-tools-for-improving-your-conversion-rate/
+
