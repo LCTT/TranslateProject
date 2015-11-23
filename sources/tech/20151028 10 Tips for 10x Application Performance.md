@@ -154,14 +154,20 @@ NGINX 用户可以开始迁移到[NGINX 最新的开源软件][38] 或者[NGINX 
 ### Tip #8: linux 系统性能调优 ###
 
 Linux is the underlying operating system for most web server implementations today, and as the foundation of your infrastructure, Linux represents a significant opportunity to improve performance. By default, many Linux systems are conservatively tuned to use few resources and to match a typical desktop workload. This means that web application use cases require at least some degree of tuning for maximum performance.
+linux 是大多数web 服务器使用操作系统，而且作为你的架构的基础，Linux 表现出明显可以提高性能的机会。默认情况下，很多linux 系统都被设置为使用很少的资源，匹配典型的桌面应用负载。这就意味着web 应用需要最少一些等级的调优才能达到最大效能。
 
 Linux optimizations are web server-specific. Using NGINX as an example, here are a few highlights of changes you can consider to speed up Linux:
+Linux 优化是转变们针对web 服务器方面的。以NGINX 为例，这里有一些在加速linux 时需要强调的变化：
 
 - **Backlog queue**. If you have connections that appear to be stalling, consider increasing net.core.somaxconn, the maximum number of connections that can be queued awaiting attention from NGINX. You will see error messages if the existing connection limit is too small, and you can gradually increase this parameter until the error messages stop.
+- **缓冲队列**。如果你有挂起的连接，那么你应该考虑增加net.core.somaxconn 的值，它代表了可以缓存的连接的最大数量。如果连接线直太小，那么你将会看到错误信息，而你可以逐渐的增加这个参数知道错误信息停止出现。
 - **File descriptors**. NGINX uses up to two file descriptors for each connection. If your system is serving a lot of connections, you might need to increase sys.fs.file_max, the system-wide limit for file descriptors, and nofile, the user file descriptor limit, to support the increased load.
+- **文件描述符**。NGINX 对一个连接使用最多2个文件描述符。如果你的系统有很多连接，你可能就需要提高sys.fs.file_max ，增加系统对文件描述符数量整体的限制，这样子才能支持不断增加的负载需求。
 - **Ephemeral ports**. When used as a proxy, NGINX creates temporary (“ephemeral”) ports for each upstream server. You can increase the range of port values, set by net.ipv4.ip_local_port_range, to increase the number of ports available. You can also reduce the timeout before an inactive port gets reused with the net.ipv4.tcp_fin_timeout setting, allowing for faster turnover.
+- **短暂端口**。当使用代理时，NGINX 会为每个上游服务器创建临时端口。你可以设置net.ipv4.ip_local_port_range 来提高这些端口的范围，增加可用的端口。你也可以减少非活动的端口的超时判断来重复使用端口，这可以通过net.ipv4.tcp_fin_timeout 来设置，这可以快速的提高流量。
 
 For NGINX, check out the [NGINX performance tuning guides][40] to learn how to optimize your Linux system so that it can cope with large volumes of network traffic without breaking a sweat!
+对于NGINX 来说，可以查阅[NGINX 性能调优指南][40]来学习如果优化你的Linux 系统，这样子它就可以很好的适应大规模网络流量而不会超过工作极限。
 
 ### Tip #9: web 服务器性能调优 ###
 
