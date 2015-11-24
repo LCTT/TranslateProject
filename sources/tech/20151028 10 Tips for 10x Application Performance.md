@@ -111,144 +111,97 @@ NGINX 和NGINX Plus 可以被用作SSL/TLS 终结——处理客户端流量的�
 
 ### Tip #6: 使用 HTTP/2 或 SPDY ###
 
-For sites that already use SSL/TLS, HTTP/2 and SPDY are very likely to improve performance, because the single connection requires just one handshake. For sites that don’t yet use SSL/TLS, HTTP/2 and SPDY makes a move to SSL/TLS (which normally slows performance) a wash from a responsiveness point of view.
 对于已经使用了SSL/TLS 的站点，HTTP/2 和SPDY 可以很好的提高性能，因为每个连接只需要一次握手。而对于没有使用SSL/TLS 的站点来说，HTTP/2 和SPDY会在响应速度上有些影响（通常会将度效率）。
 
-Google introduced SPDY in 2012 as a way to achieve faster performance on top of HTTP/1.x. HTTP/2 is the recently approved IETF standard based on SPDY. SPDY is broadly supported, but is soon to be deprecated, replaced by HTTP/2.
 Google 在2012年开始把SPDY 作为一个比HTTP/1.x 更快速的协议来推荐。HTTP/2 是目前IETF 标准，他也基于SPDY。SPDY 已经被广泛的支持了，但是很快就会被HTTP/2 替代。
 
-The key feature of SPDY and HTTP/2 is the use of a single connection rather than multiple connections. The single connection is multiplexed, so it can carry pieces of multiple requests and responses at the same time.
 SPDY 和HTTP/2 的关键是用单连接来替代多路连接。单个连接是被复用的，所以它可以同时携带多个请求和响应的分片。
 
-By getting the most out of one connection, these protocols avoid the overhead of setting up and managing multiple connections, as required by the way browsers implement HTTP/1.x. The use of a single connection is especially helpful with SSL, because it minimizes the time-consuming handshaking that SSL/TLS needs to set up a secure connection.
 通过使用一个连接这些协议可以避免过多的设置和管理多个连接，就像浏览器实现了HTTP/1.x 一样。单连接在对SSL 特别有效，这是因为它可以最小化SSL/TLS 建立安全链接时的握手时间。
 
-The SPDY protocol required the use of SSL/TLS; HTTP/2 does not officially require it, but all browsers so far that support HTTP/2 use it only if SSL/TLS is enabled. That is, a browser that supports HTTP/2 uses it only if the website is using SSL and its server accepts HTTP/2 traffic. Otherwise, the browser communicates over HTTP/1.x.
 SPDY 协议需要使用SSL/TLS， 而HTTP/2 官方并不需要，但是目前所有支持HTTP/2的浏览器只有在使能了SSL/TLS 的情况下才会使用它。这就意味着支持HTTP/2 的浏览器只有在网站使用了SSL 并且服务器接收HTTP/2 流量的情况下才会启用HTTP/2。否则的话浏览器就会使用HTTP/1.x 协议。
 
-When you implement SPDY or HTTP/2, you no longer need typical HTTP performance optimizations such as domain sharding, resource merging, and image spriting. These changes make your code and deployments simpler and easier to manage. To learn more about the changes that HTTP/2 is bringing about, read our [white paper][34].
 当你实现SPDY 或者HTTP/2时，你不再需要通常的HTTP 性能优化方案，比如域分隔资源聚合，以及图像登记。这些改变可以让你的代码和部署变得更简单和更易于管理。要了解HTTP/2 带来的这些变化可以浏览我们的[白皮书][34]。
 
 ![NGINX Supports SPDY and HTTP/2 for increased web application performance](https://www.nginx.com/wp-content/uploads/2015/10/http2-27.png)
 
-As an example of support for these protocols, NGINX has supported SPDY from early on, and [most sites][35] that use SPDY today run on NGINX. NGINX is also [pioneering support][36] for HTTP/2, with [support][37] for HTTP/2 in NGINX open source and NGINX Plus as of September 2015.
 作为支持这些协议的一个样例，NGINX 已经从一开始就支持了SPDY，而且[大部分使用SPDY 协议的网站][35]都运行的是NGINX。NGINX 同时也[很早][36]对HTTP/2 的提供了支持,从2015 年9月开始开源NGINX 和NGINX Plus 就[支持][37]它了。
 
-Over time, we at NGINX expect most sites to fully enable SSL and to move to HTTP/2. This will lead to increased security and, as new optimizations are found and implemented, simpler code that performs better.
 经过一段时间，我们NGINX 希望更多的站点完全是能SSL 并且向HTTP/2 迁移。这将会提高安全性，同时新的优化手段也会被发现和实现，更简单的代码表现的更加优异。
 
 ### Tip #7: 升级软件版本 ###
 
-One simple way to boost application performance is to select components for your software stack based on their reputation for stability and performance. In addition, because developers of high-quality components are likely to pursue performance enhancements and fix bugs over time, it pays to use the latest stable version of software. New releases receive more attention from developers and the user community. Newer builds also take advantage of new compiler optimizations, including tuning for new hardware.
 一个提高应用性能的简单办法是根据软件的稳定性和性能的评价来选在你的软件栈。进一步说，因为高性能组件的开发者更愿意追求更高的性能和解决bug ，所以值得使用最新版本的软件。新版本往往更受开发者和用户社区的关注。更新的版本往往会利用到新的编译器优化，包括对新硬件的调优。
 
-Stable new releases are typically more compatible and higher-performing than older releases. It’s also easier to keep on top of tuning optimizations, bug fixes, and security alerts when you stay on top of software updates.
 稳定的新版本通常比旧版本具有更好的兼容性和更高的性能。一直进行软件更新，可以非常简单的保持软件保持最佳的优化，解决掉bug，以及安全性的提高。
 
-Staying with older software can also prevent you from taking advantage of new capabilities. For example, HTTP/2, described above, currently requires OpenSSL 1.0.1. Starting in mid-2016, HTTP/2 will require OpenSSL 1.0.2, which was released in January 2015.
 一直使用旧版软件也会组织你利用新的特性。比如上面说到的HTTP/2，目前要求OpenSSL 1.0.1.在2016 年中期开始将会要求1.0.2 ，而这是在2015年1月才发布的。
 
-NGINX users can start by moving to the [[latest version of the NGINX open source software][38] or [NGINX Plus][39]; they include new capabilities such as socket sharding and thread pools (see below), and both are constantly being tuned for performance. Then look at the software deeper in your stack and move to the most recent version wherever you can.
 NGINX 用户可以开始迁移到[NGINX 最新的开源软件][38] 或者[NGINX Plus][39];他们都包含了罪行的能力，如socket分区和线程池（见下文），这些都已经为性能优化过了。然后好好看看的你软件栈，把他们升级到你能能升级道德最新版本吧。
 
 ### Tip #8: linux 系统性能调优 ###
 
-Linux is the underlying operating system for most web server implementations today, and as the foundation of your infrastructure, Linux represents a significant opportunity to improve performance. By default, many Linux systems are conservatively tuned to use few resources and to match a typical desktop workload. This means that web application use cases require at least some degree of tuning for maximum performance.
 linux 是大多数web 服务器使用操作系统，而且作为你的架构的基础，Linux 表现出明显可以提高性能的机会。默认情况下，很多linux 系统都被设置为使用很少的资源，匹配典型的桌面应用负载。这就意味着web 应用需要最少一些等级的调优才能达到最大效能。
 
-Linux optimizations are web server-specific. Using NGINX as an example, here are a few highlights of changes you can consider to speed up Linux:
 Linux 优化是转变们针对web 服务器方面的。以NGINX 为例，这里有一些在加速linux 时需要强调的变化：
 
-- **Backlog queue**. If you have connections that appear to be stalling, consider increasing net.core.somaxconn, the maximum number of connections that can be queued awaiting attention from NGINX. You will see error messages if the existing connection limit is too small, and you can gradually increase this parameter until the error messages stop.
 - **缓冲队列**。如果你有挂起的连接，那么你应该考虑增加net.core.somaxconn 的值，它代表了可以缓存的连接的最大数量。如果连接线直太小，那么你将会看到错误信息，而你可以逐渐的增加这个参数知道错误信息停止出现。
-- **File descriptors**. NGINX uses up to two file descriptors for each connection. If your system is serving a lot of connections, you might need to increase sys.fs.file_max, the system-wide limit for file descriptors, and nofile, the user file descriptor limit, to support the increased load.
 - **文件描述符**。NGINX 对一个连接使用最多2个文件描述符。如果你的系统有很多连接，你可能就需要提高sys.fs.file_max ，增加系统对文件描述符数量整体的限制，这样子才能支持不断增加的负载需求。
-- **Ephemeral ports**. When used as a proxy, NGINX creates temporary (“ephemeral”) ports for each upstream server. You can increase the range of port values, set by net.ipv4.ip_local_port_range, to increase the number of ports available. You can also reduce the timeout before an inactive port gets reused with the net.ipv4.tcp_fin_timeout setting, allowing for faster turnover.
-- **短暂端口**。当使用代理时，NGINX 会为每个上游服务器创建临时端口。你可以设置net.ipv4.ip_local_port_range 来提高这些端口的范围，增加可用的端口。你也可以减少非活动的端口的超时判断来重复使用端口，这可以通过net.ipv4.tcp_fin_timeout 来设置，这可以快速的提高流量。
+- **临时端口**。当使用代理时，NGINX 会为每个上游服务器创建临时端口。你可以设置net.ipv4.ip_local_port_range 来提高这些端口的范围，增加可用的端口。你也可以减少非活动的端口的超时判断来重复使用端口，这可以通过net.ipv4.tcp_fin_timeout 来设置，这可以快速的提高流量。
 
-For NGINX, check out the [NGINX performance tuning guides][40] to learn how to optimize your Linux system so that it can cope with large volumes of network traffic without breaking a sweat!
 对于NGINX 来说，可以查阅[NGINX 性能调优指南][40]来学习如果优化你的Linux 系统，这样子它就可以很好的适应大规模网络流量而不会超过工作极限。
 
 ### Tip #9: web 服务器性能调优 ###
 
-Whatever web server you use, you need to tune it for web application performance. The following recommendations apply generally to any web server, but specific settings are given for NGINX. Key optimizations include:
 无论你是用哪种web 服务器，你都需要对它进行优化来提高性能。下面的推荐手段可以用于任何web 服务器，但是一些设置是针对NGINX的。关键的优化手段包括：
 
-- **Access logging**. Instead of writing a log entry for every request to disk immediately, you can buffer entries in memory and write them to disk as a group. For NGINX, add the *buffer=size* parameter to the *access_log* directive to write log entries to disk when the memory buffer fills up. If you add the **flush=time** parameter, the buffer contents are also be written to disk after the specified amount of time.
 - **f访问日志**。不要把每个请求的日志都直接写回磁盘，你可以在内存将日志缓存起来然后一批写回磁盘。对于NGINX 来说添加给指令*access_log* 添加参数 *buffer=size*  可以让系统在缓存满了的情况下才把日志写到此哦按。如果你添加了参数**flush=time** ，那么缓存内容会每隔一段时间再写回磁盘。
-- **Buffering**. Buffering holds part of a response in memory until the buffer fills, which can make communications with the client more efficient. Responses that don’t fit in memory are written to disk, which can slow performance. When NGINX buffering is [on][42], you use the *proxy_buffer_size* and *proxy_buffers* directives to manage it.
 - **缓存**。缓存掌握了内存中的部分资源知道满了位置，这可以让与客户端的通信更加高效。与内存中缓存不匹配的响应会写回磁盘，而这就会降低效能。当NGINX [启用][42]了缓存机制后，你可以使用指令*proxy_buffer_size* 和 *proxy_buffers* 来管理缓存。
-- **Client keepalives**. Keepalive connections reduce overhead, especially when SSL/TLS is in use. For NGINX, you can increase the maximum number of *keepalive_requests* a client can make over a given connection from the default of 100, and you can increase the *keepalive_timeout* to allow the keepalive connection to stay open longer, resulting in faster subsequent requests.
-- **客户端保活**。
-- **Upstream keepalives**. Upstream connections – connections to application servers, database servers, and so on – benefit from keepalive connections as well. For upstream connections, you can increase *keepalive*, the number of idle keepalive connections that remain open for each worker process. This allows for increased connection reuse, cutting down on the need to open brand new connections. For more information about keepalives, refer to this [blog post][41].
+- **客户端保活**。保活连接可以减少开销，特别是使用SSL/TLS时。对于NGINX 来说，你可以增加*keepalive_requests* 的值，从默认值100 开始修改，这样一个客户端就可以转交一个指定的连接，而且你也可以通过增加*keepalive_timeout* 的值来允许保活连接存活更长时间，结果就是让后来的请求处理的更快速。
 - **上游保活**。上游的连接——即连接到应用服务器、数据库服务器等机器的连接——同样也会收益于连接保活。对于上游连接老说，你可以增加*保活时间*，即每个工人进程的空闲保活连接个数。这就可以提高连接的复用次数，减少需要重新打开全新的连接次数。更多关于保活连接的信息可以参见[blog][41].
-- **Limits**. Limiting the resources that clients use can improve performance and security. For NGINX,the *limit_conn* and *limit_conn_zone* directives restrict the number of connections from a given source, while *limit_rate* constrains bandwidth. These settings can stop a legitimate user from “hogging” resources and also help prevent against attacks. The *limit_req* and *limit_req_zone* directives limit client requests. For connections to upstream servers, use the max_conns parameter to the server directive in an upstream configuration block. This limits connections to an upstream server, preventing overloading. The associated queue directive creates a queue that holds a specified number of requests for a specified length of time after the *max_conns* limit is reached.
 - **限制**。限制客户端使用的资源可以提高性能和安全性。对于NGINX 来说指令*limit_conn* 和 *limit_conn_zone*  限制了每个源的连接数量，而*limit_rate* 限制了带宽。这些限制都可以阻止合法用户*攫取* 资源，同时夜避免了攻击。指令*limit_req* 和 *limit_req_zone*  限制了客户端请求。对于上游服务器来说，可以在上游服务器的配置块里使用max_conns 可以限制连接到上游服务器的连接。 这样可以避免服务器过载。关联的队列指令会创建一个队列来在连接数抵达*max_conn* 限制时在指定的长度的时间内保存特定数量的请求。
-- **Worker processes**. Worker processes are responsible for the processing of requests. NGINX employs an event-based model and OS-dependent mechanisms to efficiently distribute requests among worker processes. The recommendation is to set the value of *worker_processes* to one per CPU. The maximum number of worker_connections (512 by default) can safely be raised on most systems if needed; experiment to find the value that works best for your system.
 - **工人进程**。工人进程负责处理请求。NGINX 采用事件驱动模型和依赖操作系统的机制来有效的讲请求分发给不同的工人进程。这条建议推荐设置每个CPU 的参数*worker_processes* 。如果需要的话，工人连接的最大数（默认512）可以安全在大部分系统增加，是指找到最适合你的系统的值。
-- **Socket sharding**. Typically, a single socket listener distributes new connections to all worker processes. Socket sharding creates a socket listener for each worker process, with the kernel assigning connections to socket listeners as they become available. This can reduce lock contention and improve performance on multicore systems. To enable [socket sharding][43], include the reuseport parameter on the listen directive.
 - **套接字分割**。通常一个套接字监听器会把新连接分配给所有工人进程。套接字分割会未每个工人进程创建一个套接字监听器，这样一来以内核分配连接给套接字就成为可能了。折可以减少锁竞争，并且提高多核系统的性能，要使能[套接字分隔][43]需要在监听指令里面加上复用端口参数。
-- **Thread pools**. Any computer process can be held up by a single, slow operation. For web server software, disk access can hold up many faster operations, such as calculating or copying information in memory. When a thread pool is used, the slow operation is assigned to a separate set of tasks, while the main processing loop keeps running faster operations. When the disk operation completes, the results go back into the main processing loop. In NGINX, two operations – the read() system call and sendfile() – are offloaded to [thread pools][44].
 - **线程池**。一个计算机进程可以处理一个缓慢的操作。对于web 服务器软件来说磁盘访问会影响很多更快的操作，比如计算或者在内存中拷贝。使用了线程池之后慢操作可以分配到不同的任务集，而主进程可以一直运行快速操作。当磁盘操作完成后结果会返回给主进程的循环。在NGINX理有两个操作——read()系统调用和sendfile() ——被分配到了[线程池][44]
 
 ![Thread pools help increase application performance by assigning a slow operation to a separate set of tasks](https://www.nginx.com/wp-content/uploads/2015/10/Graph-17.png)
 
-**Tip**. When changing settings for any operating system or supporting service, change a single setting at a time, then test performance. If the change causes problems, or if it doesn’t make your site run faster, change it back.
 **技巧**。当改变任务操作系统或支持服务的设置时，一次只改变一个参数然后测试性能。如果修改引起问题了，或者不能让你的系统更快那么就改回去。
 
-See this [blog post][45] for more details on tuning NGINX.
 在[blog][45]可以看到更详细的NGINX 调优方法。
 
 ### Tip #10: 监视系统活动来解决问题和瓶颈 ###
 
-The key to a high-performance approach to application development and delivery is watching your application’s real-world performance closely and in real time. You must be able to monitor activity within specific devices and across your web infrastructure.
 在应用开发中要使得系统变得非常高效的关键是监视你的系统在现实世界运行的性能。你必须能通过特定的设备和你的web 基础设施上监控程序活动。
 
-Monitoring site activity is mostly passive – it tells you what’s going on, and leaves it to you to spot problems and fix them.
 监视活动是最积极的——他会告诉你发生了什么，把问题留给你发现和最终解决掉。
 
-Monitoring can catch several different kinds of issues. They include:
 监视可以发现集中不同的问题。它们包括：
 
-- A server is down.
 - 服务器宕机。
-- A server is limping, dropping connections.
 - 服务器出问题一直在丢失连接。
-- A server is suffering from a high proportion of cache misses.
 - 服务器出现大量的缓存未命中。
-- A server is not sending correct content.
 - 服务器没有发送正确的内容。
 
-A global application performance monitoring tool like New Relic or Dynatrace helps you monitor page load time from remote locations, while NGINX helps you monitor the application delivery side. Application performance data tells you when your optimizations are making a real difference to your users, and when you need to consider adding capacity to your infrastructure to sustain the traffic.
 应用的总体性能监控工具，比如New Relic 和Dynatrace，可以帮助你监控到从远处加载网页的时间，二NGINX 可以帮助你监控到应用发送的时 间。当你需要考虑为基础设施添加容量以满足流量需求时，应用性能数据可以告诉你你的优化措施的确起作用了。
 
-To help identify and resolve issues quickly, NGINX Plus adds [application-aware health checks][46] – synthetic transactions that are repeated regularly and are used to alert you to problems. NGINX Plus also has [session draining][47], which stops new connections while existing tasks complete, and a slow start capability, allowing a recovered server to come up to speed within a load-balanced group. When used effectively, health checks allow you to identify issues before they significantly impact the user experience, while session draining and slow start allow you to replace servers and ensure the process does not negatively affect perceived performance or uptime. The figure shows the built-in NGINX Plus [live activity monitoring][48] dashboard for a web infrastructure with servers, TCP connections, and caching.
 为了帮助开发者快速的发现、解决问题，NGINX Plus 增加了[应用感知健康度检查][46] ——对重复出现的常规事件进行综合分析并在问题出现时向你发出警告。NGINX Plus 同时提供[会话过滤][47] 功能，折可以组织当前任务未完成之前不接受新的连接，另一个功能是慢启动，允许一个从错误恢复过来的服务器追赶上负载均衡服务器群的速度。当有使用得当时，健康度检查可以让你在问题变得严重到影响用户体验前就发现它，而会话过滤和慢启动可以让你替换服务器，并且这个过程不会对性能和正常运行时间产生负面影响。这个表格就展示了NGINX Plus 内建模块在web 基础设施[监视活活动][48]的仪表盘，包括了服务器群，TCP 连接和缓存等信息。
 
 ![Use real-time application performance monitoring tools to identify and resolve issues quickly](https://www.nginx.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-05-at-4.16.32-PM.png)
 
 ### 总结: 看看10倍性能提升的效果 ###
 
-The performance improvements that are available for any one web application vary tremendously, and actual gains depend on your budget, the time you can invest, and gaps in your existing implementation. So, how might you achieve 10x performance improvement for your own applications?
 这些性能提升方案对任何一个web 应用都可用并且效果都很好，而实际效果取决于你的预算，如你能花费的时间，目前实现方案的差距。所以你该如何对你自己的应用实现10倍性能提升？
 
-To help guide you on the potential impact of each optimization, here are pointers to the improvement that may be possible with each tip detailed above, though your mileage will almost certainly vary:
 为了指导你了解每种优化手段的潜在影响，这里是是上面详述的每个优化方法的关键点，虽然你的里程肯定大不相同：
 
-- **Reverse proxy server and load balancing**. No load balancing, or poor load balancing, can cause episodes of very poor performance. Adding a reverse proxy server, such as NGINX, can prevent web applications from thrashing between memory and disk. Load balancing can move processing from overburdened servers to available ones and make scaling easy. These changes can result in dramatic performance improvement, with a 10x improvement easily achieved compared to the worst moments for your current implementation, and lesser but substantial achievements available for overall performance.
 - **反向代理服务器和负载均衡**。没有负载均衡或者负载均衡很差都会造成间断的极低性能。增加一个反向代理，比如NGINX可以避免web应用程序在内存和磁盘之间抖动。负载均衡可以将过载服务器的任务转移到空闲的服务器，还可以轻松的进行扩容。这些改变都可以产生巨大的性能提升，很容易就可以比你现在的实现方案的最差性能提高10倍，对于总体性能来说可能提高的不多，但是也是有实质性的提升。
-- **Caching dynamic and static content**. If you have an overburdened web server that’s doubling as your application server, 10x improvements in peak-time performance can be achieved by caching dynamic content alone. Caching for static files can improve performance by single-digit multiples as well.
 - **缓存动态和静态数据**。如果你又一个web 服务器负担过重，那么毫无疑问肯定是你的应用服务器，只通过缓存动态数据就可以在峰值时间提高10倍的性能。缓存静态文件可以提高个位数倍的性能。
-- **Compressing data**. Using media file compression such as JPEG for photos, PNG for graphics, MPEG-4 for movies, and MP3 for music files can greatly improve performance. Once these are all in use, then compressing text data (code and HTML) can improve initial page load times by a factor of two.
 - **压缩数据**。使用媒体文件压缩格式，比如图像格式JPEG，图形格式PNG，视频格式MPEG-4，音乐文件格式MP3可以极大的提高性能。一旦这些都用上了，然后压缩文件数据可以提高初始页面加载速度提高两倍。
-- **Optimizing SSL/TLS**. Secure handshakes can have a big impact on performance, so optimizing them can lead to perhaps a 2x improvement in initial responsiveness, particularly for text-heavy sites. Optimizing media file transmission under SSL/TLS is likely to yield only small performance improvements.
 - **优化SSL/TLS**。安全握手会对性能产生巨大的影响，对他们的优化可能会对初始响应特别是重文本站点产生2倍的提升。优化SSL/TLS 下媒体文件只会产生很小的性能提升。
-- **Implementing HTTP/2 and SPDY**. When used with SSL/TLS, these protocols are likely to result in incremental improvements for overall site performance.
 - **使用HTTP/2 和SPDY*。当你使用了SSL/TLS，这些协议就可以提高整个站点的性能。
-- **Tuning Linux and web server software (such as NGINX)**. Fixes such as optimizing buffering, using keepalive connections, and offloading time-intensive tasks to a separate thread pool can significantly boost performance; thread pools, for instance, can speed disk-intensive tasks by [nearly an order of magnitude][49].
 - **对linux 和web 服务器软件进行调优**。比如优化缓存机制，使用保活连接，分配时间敏感型任务到不同的线程池可以明显的提高性能；举个例子，线程池可以加速对磁盘敏感的任务[近一个数量级][49].
 
-We hope you try out these techniques for yourself. We want to hear the kind of application performance improvements you’re able to achieve. Share your results in the comments below, or tweet your story with the hash tags #NGINX and #webperf!
 我们希望你亲自尝试这些技术。我们希望这些提高应用性能的手段可以被你实现。请在下面评论栏分享你的结果 或者在标签#NGINX 和#webperf 下tweet 你的故事。
 ### 网上资源 ###
 
