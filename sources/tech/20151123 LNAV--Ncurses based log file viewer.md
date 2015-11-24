@@ -75,7 +75,7 @@ If you want to view CUPS logs run the following command from your terminal
 via: http://www.ubuntugeek.com/lnav-ncurses-based-log-file-viewer.html
 
 作者：[ruchi][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zky001](https://github.com/zky001)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
