@@ -227,22 +227,30 @@ To help identify and resolve issues quickly, NGINX Plus adds [application-aware 
 
 ![Use real-time application performance monitoring tools to identify and resolve issues quickly](https://www.nginx.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-05-at-4.16.32-PM.png)
 
-### Conclusion: Seeing 10x Performance Improvement ###
+### 总结: 看看10倍性能提升的效果 ###
 
 The performance improvements that are available for any one web application vary tremendously, and actual gains depend on your budget, the time you can invest, and gaps in your existing implementation. So, how might you achieve 10x performance improvement for your own applications?
+这些性能提升方案对任何一个web 应用都可用并且效果都很好，而实际效果取决于你的预算，如你能花费的时间，目前实现方案的差距。所以你该如何对你自己的应用实现10倍性能提升？
 
 To help guide you on the potential impact of each optimization, here are pointers to the improvement that may be possible with each tip detailed above, though your mileage will almost certainly vary:
+为了指导你了解每种优化手段的潜在影响，这里是是上面详述的每个优化方法的关键点，虽然你的里程肯定大不相同：
 
 - **Reverse proxy server and load balancing**. No load balancing, or poor load balancing, can cause episodes of very poor performance. Adding a reverse proxy server, such as NGINX, can prevent web applications from thrashing between memory and disk. Load balancing can move processing from overburdened servers to available ones and make scaling easy. These changes can result in dramatic performance improvement, with a 10x improvement easily achieved compared to the worst moments for your current implementation, and lesser but substantial achievements available for overall performance.
+- **反向代理服务器和负载均衡**。没有负载均衡或者负载均衡很差都会造成间断的极低性能。增加一个反向代理，比如NGINX可以避免web应用程序在内存和磁盘之间抖动。负载均衡可以将过载服务器的任务转移到空闲的服务器，还可以轻松的进行扩容。这些改变都可以产生巨大的性能提升，很容易就可以比你现在的实现方案的最差性能提高10倍，对于总体性能来说可能提高的不多，但是也是有实质性的提升。
 - **Caching dynamic and static content**. If you have an overburdened web server that’s doubling as your application server, 10x improvements in peak-time performance can be achieved by caching dynamic content alone. Caching for static files can improve performance by single-digit multiples as well.
+- **缓存动态和静态数据**。如果你又一个web 服务器负担过重，那么毫无疑问肯定是你的应用服务器，只通过缓存动态数据就可以在峰值时间提高10倍的性能。缓存静态文件可以提高个位数倍的性能。
 - **Compressing data**. Using media file compression such as JPEG for photos, PNG for graphics, MPEG-4 for movies, and MP3 for music files can greatly improve performance. Once these are all in use, then compressing text data (code and HTML) can improve initial page load times by a factor of two.
+- **压缩数据**。使用媒体文件压缩格式，比如图像格式JPEG，图形格式PNG，视频格式MPEG-4，音乐文件格式MP3可以极大的提高性能。一旦这些都用上了，然后压缩文件数据可以提高初始页面加载速度提高两倍。
 - **Optimizing SSL/TLS**. Secure handshakes can have a big impact on performance, so optimizing them can lead to perhaps a 2x improvement in initial responsiveness, particularly for text-heavy sites. Optimizing media file transmission under SSL/TLS is likely to yield only small performance improvements.
+- **优化SSL/TLS**。安全握手会对性能产生巨大的影响，对他们的优化可能会对初始响应特别是重文本站点产生2倍的提升。优化SSL/TLS 下媒体文件只会产生很小的性能提升。
 - **Implementing HTTP/2 and SPDY**. When used with SSL/TLS, these protocols are likely to result in incremental improvements for overall site performance.
+- **使用HTTP/2 和SPDY*。当你使用了SSL/TLS，这些协议就可以提高整个站点的性能。
 - **Tuning Linux and web server software (such as NGINX)**. Fixes such as optimizing buffering, using keepalive connections, and offloading time-intensive tasks to a separate thread pool can significantly boost performance; thread pools, for instance, can speed disk-intensive tasks by [nearly an order of magnitude][49].
+- **对linux 和web 服务器软件进行调优**。比如优化缓存机制，使用保活连接，分配时间敏感型任务到不同的线程池可以明显的提高性能；举个例子，线程池可以加速对磁盘敏感的任务[近一个数量级][49].
 
 We hope you try out these techniques for yourself. We want to hear the kind of application performance improvements you’re able to achieve. Share your results in the comments below, or tweet your story with the hash tags #NGINX and #webperf!
-
-### Resources for Internet Statistics ###
+我们希望你亲自尝试这些技术。我们希望这些提高应用性能的手段可以被你实现。请在下面评论栏分享你的结果 或者在标签#NGINX 和#webperf 下tweet 你的故事。
+### 网上资源 ###
 
 [Statista.com – Share of the internet economy in the gross domestic product in G-20 countries in 2016][50]
 
