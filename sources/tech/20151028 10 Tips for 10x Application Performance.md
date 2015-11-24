@@ -202,19 +202,28 @@ See this [blog post][45] for more details on tuning NGINX.
 ### Tip #10: 监视系统活动来解决问题和瓶颈 ###
 
 The key to a high-performance approach to application development and delivery is watching your application’s real-world performance closely and in real time. You must be able to monitor activity within specific devices and across your web infrastructure.
+在应用开发中要使得系统变得非常高效的关键是监视你的系统在现实世界运行的性能。你必须能通过特定的设备和你的web 基础设施上监控程序活动。
 
 Monitoring site activity is mostly passive – it tells you what’s going on, and leaves it to you to spot problems and fix them.
+监视活动是最积极的——他会告诉你发生了什么，把问题留给你发现和最终解决掉。
 
 Monitoring can catch several different kinds of issues. They include:
+监视可以发现集中不同的问题。它们包括：
 
 - A server is down.
+- 服务器宕机。
 - A server is limping, dropping connections.
+- 服务器出问题一直在丢失连接。
 - A server is suffering from a high proportion of cache misses.
+- 服务器出现大量的缓存未命中。
 - A server is not sending correct content.
+- 服务器没有发送正确的内容。
 
 A global application performance monitoring tool like New Relic or Dynatrace helps you monitor page load time from remote locations, while NGINX helps you monitor the application delivery side. Application performance data tells you when your optimizations are making a real difference to your users, and when you need to consider adding capacity to your infrastructure to sustain the traffic.
+应用的总体性能监控工具，比如New Relic 和Dynatrace，可以帮助你监控到从远处加载网页的时间，二NGINX 可以帮助你监控到应用发送的时 间。当你需要考虑为基础设施添加容量以满足流量需求时，应用性能数据可以告诉你你的优化措施的确起作用了。
 
 To help identify and resolve issues quickly, NGINX Plus adds [application-aware health checks][46] – synthetic transactions that are repeated regularly and are used to alert you to problems. NGINX Plus also has [session draining][47], which stops new connections while existing tasks complete, and a slow start capability, allowing a recovered server to come up to speed within a load-balanced group. When used effectively, health checks allow you to identify issues before they significantly impact the user experience, while session draining and slow start allow you to replace servers and ensure the process does not negatively affect perceived performance or uptime. The figure shows the built-in NGINX Plus [live activity monitoring][48] dashboard for a web infrastructure with servers, TCP connections, and caching.
+为了帮助开发者快速的发现、解决问题，NGINX Plus 增加了[应用感知健康度检查][46] ——对重复出现的常规事件进行综合分析并在问题出现时向你发出警告。NGINX Plus 同时提供[会话过滤][47] 功能，折可以组织当前任务未完成之前不接受新的连接，另一个功能是慢启动，允许一个从错误恢复过来的服务器追赶上负载均衡服务器群的速度。当有使用得当时，健康度检查可以让你在问题变得严重到影响用户体验前就发现它，而会话过滤和慢启动可以让你替换服务器，并且这个过程不会对性能和正常运行时间产生负面影响。这个表格就展示了NGINX Plus 内建模块在web 基础设施[监视活活动][48]的仪表盘，包括了服务器群，TCP 连接和缓存等信息。
 
 ![Use real-time application performance monitoring tools to identify and resolve issues quickly](https://www.nginx.com/wp-content/uploads/2015/10/Screen-Shot-2015-10-05-at-4.16.32-PM.png)
 
