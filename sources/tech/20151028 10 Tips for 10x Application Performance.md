@@ -181,22 +181,23 @@ Whatever web server you use, you need to tune it for web application performance
 - **Client keepalives**. Keepalive connections reduce overhead, especially when SSL/TLS is in use. For NGINX, you can increase the maximum number of *keepalive_requests* a client can make over a given connection from the default of 100, and you can increase the *keepalive_timeout* to allow the keepalive connection to stay open longer, resulting in faster subsequent requests.
 - **客户端保活**。
 - **Upstream keepalives**. Upstream connections – connections to application servers, database servers, and so on – benefit from keepalive connections as well. For upstream connections, you can increase *keepalive*, the number of idle keepalive connections that remain open for each worker process. This allows for increased connection reuse, cutting down on the need to open brand new connections. For more information about keepalives, refer to this [blog post][41].
-- **上游保活**。
+- **上游保活**。上游的连接——即连接到应用服务器、数据库服务器等机器的连接——同样也会收益于连接保活。对于上游连接老说，你可以增加*保活时间*，即每个工人进程的空闲保活连接个数。这就可以提高连接的复用次数，减少需要重新打开全新的连接次数。更多关于保活连接的信息可以参见[blog][41].
 - **Limits**. Limiting the resources that clients use can improve performance and security. For NGINX,the *limit_conn* and *limit_conn_zone* directives restrict the number of connections from a given source, while *limit_rate* constrains bandwidth. These settings can stop a legitimate user from “hogging” resources and also help prevent against attacks. The *limit_req* and *limit_req_zone* directives limit client requests. For connections to upstream servers, use the max_conns parameter to the server directive in an upstream configuration block. This limits connections to an upstream server, preventing overloading. The associated queue directive creates a queue that holds a specified number of requests for a specified length of time after the *max_conns* limit is reached.
-- **限制**。
+- **限制**。限制客户端使用的资源可以提高性能和安全性。对于NGINX 来说指令*limit_conn* 和 *limit_conn_zone*  限制了每个源的连接数量，而*limit_rate* 限制了带宽。这些限制都可以阻止合法用户*攫取* 资源，同时夜避免了攻击。指令*limit_req* 和 *limit_req_zone*  限制了客户端请求。对于上游服务器来说，可以在上游服务器的配置块里使用max_conns 可以限制连接到上游服务器的连接。 这样可以避免服务器过载。关联的队列指令会创建一个队列来在连接数抵达*max_conn* 限制时在指定的长度的时间内保存特定数量的请求。
 - **Worker processes**. Worker processes are responsible for the processing of requests. NGINX employs an event-based model and OS-dependent mechanisms to efficiently distribute requests among worker processes. The recommendation is to set the value of *worker_processes* to one per CPU. The maximum number of worker_connections (512 by default) can safely be raised on most systems if needed; experiment to find the value that works best for your system.
-- **工人进程**。
+- **工人进程**。工人进程负责处理请求。NGINX 采用事件驱动模型和依赖操作系统的机制来有效的讲请求分发给不同的工人进程。这条建议推荐设置每个CPU 的参数*worker_processes* 。如果需要的话，工人连接的最大数（默认512）可以安全在大部分系统增加，是指找到最适合你的系统的值。
 - **Socket sharding**. Typically, a single socket listener distributes new connections to all worker processes. Socket sharding creates a socket listener for each worker process, with the kernel assigning connections to socket listeners as they become available. This can reduce lock contention and improve performance on multicore systems. To enable [socket sharding][43], include the reuseport parameter on the listen directive.
-- **套接字分割**。
+- **套接字分割**。通常一个套接字监听器会把新连接分配给所有工人进程。套接字分割会未每个工人进程创建一个套接字监听器，这样一来以内核分配连接给套接字就成为可能了。折可以减少锁竞争，并且提高多核系统的性能，要使能[套接字分隔][43]需要在监听指令里面加上复用端口参数。
 - **Thread pools**. Any computer process can be held up by a single, slow operation. For web server software, disk access can hold up many faster operations, such as calculating or copying information in memory. When a thread pool is used, the slow operation is assigned to a separate set of tasks, while the main processing loop keeps running faster operations. When the disk operation completes, the results go back into the main processing loop. In NGINX, two operations – the read() system call and sendfile() – are offloaded to [thread pools][44].
-- **线程池**。
+- **线程池**。一个计算机进程可以处理一个缓慢的操作。对于web 服务器软件来说磁盘访问会影响很多更快的操作，比如计算或者在内存中拷贝。使用了线程池之后慢操作可以分配到不同的任务集，而主进程可以一直运行快速操作。当磁盘操作完成后结果会返回给主进程的循环。在NGINX理有两个操作——read()系统调用和sendfile() ——被分配到了[线程池][44]
 
 ![Thread pools help increase application performance by assigning a slow operation to a separate set of tasks](https://www.nginx.com/wp-content/uploads/2015/10/Graph-17.png)
 
 **Tip**. When changing settings for any operating system or supporting service, change a single setting at a time, then test performance. If the change causes problems, or if it doesn’t make your site run faster, change it back.
-**技巧**。
+**技巧**。当改变任务操作系统或支持服务的设置时，一次只改变一个参数然后测试性能。如果修改引起问题了，或者不能让你的系统更快那么就改回去。
 
 See this [blog post][45] for more details on tuning NGINX.
+在[blog][45]可以看到更详细的NGINX 调优方法。
 
 ### Tip #10: 监视系统活动来解决问题和瓶颈 ###
 
