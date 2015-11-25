@@ -1,8 +1,7 @@
 Running a mainline kernel on a cellphone
+================================================================================
 
-By Jonathan Corbet
-
-2015 Kernel Summit One of the biggest freedoms associated with free software is the ability to replace a program with an updated or modified version. Even so, of the many millions of people using Linux-powered phones, few are able to run a mainline kernel on those phones, even if they have the technical skills to do the replacement. The sad fact is that no mainstream phone available runs mainline kernels. A session at the 2015 Kernel Summit, led by Rob Herring, explored this problem and what might be done to address it.
+One of the biggest freedoms associated with free software is the ability to replace a program with an updated or modified version. Even so, of the many millions of people using Linux-powered phones, few are able to run a mainline kernel on those phones, even if they have the technical skills to do the replacement. The sad fact is that no mainstream phone available runs mainline kernels. A session at the 2015 Kernel Summit, led by Rob Herring, explored this problem and what might be done to address it.
 
 When asked, most of the developers in the room indicated that they would prefer to be able to run mainline kernels on their phones — though a handful did say that they would rather not do so. Rob has been working on this problem for the last year and a half in support of Project Ara (mentioned in this article). But the news is not good.
 
@@ -27,3 +26,15 @@ Tim said that there is currently a big disconnect with the vendor world; vendors
 Rob put up a list of problem areas, but there was not much time for discussion of the particulars. WiFi drivers continue to be an issue, especially with the new features being added in the Android world. Johannes Berg agreed that the new features are an issue; the Android developers do not even talk about them until they ship with the hardware. Support for most of those features does eventually land in the mainline kernel, though.
 
 As things wound down, Ben Herrenschmidt reiterated that the key was to get vendors to realize that working with the mainline kernel is in their own best interest; it saves work in the long run. Mark Brown said that, in past years when the kernel version shipped with Android moved forward more reliably, the benefits of working upstream were more apparent to vendors. Now that things seem to be stuck on 3.10, that pressure is not there in the same way. The session ended with developers determined to improve the situation, but without any clear plan for getting there.
+
+--------------------------------------------------------------------------------
+
+via: https://lwn.net/Articles/662147/
+
+作者：[Jonathan Corbet][a]
+译者：[译者ID](https://github.com/译者ID)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
+
+[a]:https://lwn.net/Articles/KernelSummit2015/
