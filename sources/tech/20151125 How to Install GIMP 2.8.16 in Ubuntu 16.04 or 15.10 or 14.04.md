@@ -1,3 +1,4 @@
+translation by strugglingyouth
 How to Install GIMP 2.8.16 in Ubuntu 16.04, 15.10, 14.04
 ================================================================================
 ![GIMP 2.8.16](http://ubuntuhandbook.org/wp-content/uploads/2015/11/gimp-icon.png)
