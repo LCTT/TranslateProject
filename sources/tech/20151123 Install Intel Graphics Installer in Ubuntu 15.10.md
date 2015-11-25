@@ -1,3 +1,4 @@
+Translating by XLCYun
 Install Intel Graphics Installer in Ubuntu 15.10
 ================================================================================
 ![Intel graphics installer](http://ubuntuhandbook.org/wp-content/uploads/2015/11/intel_logo.jpg)
