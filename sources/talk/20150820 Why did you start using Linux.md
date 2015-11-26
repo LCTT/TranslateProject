@@ -1,4 +1,3 @@
-KevinSJ translating
 Why did you start using Linux? 
 ================================================================================
 > In today's open source roundup: What got you started with Linux? Plus: IBM's Linux only Mainframe. And why you should skip Windows 10 and go with Linux
