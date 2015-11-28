@@ -1,3 +1,4 @@
+﻿Translating by KnightJoker
 How to Install Nginx as Reverse Proxy for Apache on FreeBSD 10.2
 ================================================================================
 Nginx is free and open source HTTP server and reverse proxy, as well as an mail proxy server for IMAP/POP3. Nginx is high performance web server with rich of features, simple configuration and low memory usage. Originally written by Igor Sysoev on 2002, and until now has been used by a big technology company including Netflix, Github, Cloudflare, WordPress.com etc.
