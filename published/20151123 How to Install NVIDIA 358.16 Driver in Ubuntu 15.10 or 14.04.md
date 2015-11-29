@@ -1,17 +1,16 @@
-
 如何在 Ubuntu 15.10，14.04 中安装 NVIDIA 358.16 驱动程序
 ================================================================================
 ![nvidia-logo-1](http://ubuntuhandbook.org/wp-content/uploads/2015/06/nvidia-logo-1.png)
 
-[NVIDIA 358.16][1], NVIDIA 358 系列的第一个稳定版本已经发布并在 358.09 中（测试版）做了一些修正，以及一些小的改进。
+[NVIDIA 358.16][1] —— NVIDIA 358 系列的第一个稳定版本已经发布，并对 358.09 中（测试版）做了一些修正，以及一些小的改进。
 
-NVIDIA 358 增加了一个新的 **nvidia-modeset.ko** 内核模块并配合 nvidia.ko 内核模块工作来显示 GPU 引擎。在以后发布版本中，**nvidia-modeset.ko** 内核驱动程序将被用于基本的模式接口，由内核直接传递管理（DRM）。
+NVIDIA 358 增加了一个新的 **nvidia-modeset.ko** 内核模块，可以配合 nvidia.ko 内核模块工作来调用 GPU 显示引擎。在以后发布版本中，**nvidia-modeset.ko** 内核驱动程序将被用于模式设置接口的基础，该接口由内核的直接渲染管理器（DRM）所提供。
 
-在 OpenGL 驱动中，新的驱动程序也有了新的 GLX 扩展协议，对于分配大量内存也有了一种新的系统内存分配机制。新的 GPU **GeForce 805A** 和  **GeForce GTX 960A** 也被支持了。NVIDIA 358.16 也支持 X.Org 1.18 服务器和 OpenGL 4.3。
+新的驱动程序也有新的 GLX 协议扩展，以及在 OpenGL 驱动中分配大量内存的系统内存分配新机制。新的 GPU **GeForce 805A** 和  **GeForce GTX 960A** 都支持。NVIDIA 358.16 也支持 X.Org 1.18 服务器和 OpenGL 4.3。
 
 ### 如何在 Ubuntu 中安装 NVIDIA 358.16 : ###
 
-> 请不要在生产设备上安装，除非你知道自己在做什么以及如何才能恢复。
+> **请不要在生产设备上安装，除非你知道自己在做什么以及如何才能恢复。**
 
 对于官方的二进制文件，请到 [nvidia.com/object/unix.html][1] 查看。
 
@@ -19,7 +18,7 @@ NVIDIA 358 增加了一个新的 **nvidia-modeset.ko** 内核模块并配合 nvi
 
 **1. 添加 PPA.**
 
-通过按 Ctrl+Alt+T 快捷键来从 Unity 桌面打开终端。当打启动应用后，粘贴下面的命令并按回车键：
+通过按 `Ctrl+Alt+T` 快捷键来从 Unity 桌面打开终端。当打启动应用后，粘贴下面的命令并按回车键：
 
     sudo add-apt-repository ppa:graphics-drivers/ppa
 
@@ -35,7 +34,7 @@ NVIDIA 358 增加了一个新的 **nvidia-modeset.ko** 内核模块并配合 nvi
     
     sudo apt-get install nvidia-358 nvidia-settings
 
-### (可选) 卸载: ###
+### (如果需要的话，) 卸载: ###
 
 开机从 GRUB 菜单进入恢复模式，进入根控制台。然后逐一运行下面的命令：
 
@@ -59,7 +58,7 @@ via: http://ubuntuhandbook.org/index.php/2015/11/install-nvidia-358-16-driver-ub
 
 作者：[Ji m][a]
 译者：[strugglingyouth](https://github.com/strugglingyouth)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
