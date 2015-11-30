@@ -1,4 +1,3 @@
-Translating by ZTinoZ
 How To Install Microsoft Visual Studio Code on Linux
 ================================================================================
 Visual Studio code (VScode) is the cross-platform Chromium-based code editor is being open sourced today by Microsoft. How do I install Microsoft Visual Studio Code on a Debian or Ubuntu or Fedora Linux desktop?
