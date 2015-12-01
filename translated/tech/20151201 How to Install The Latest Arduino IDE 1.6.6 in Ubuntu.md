@@ -1,68 +1,67 @@
-Translating
-
-How to Install The Latest Arduino IDE 1.6.6 in Ubuntu
+如何再Ubuntu中安装最新的Arduino IDE 1.6.6
 ================================================================================
 ![Install latest Arduino in Ubuntu](http://ubuntuhandbook.org/wp-content/uploads/2015/11/arduino-icon.png)
 
-> Quick tutorial shows you how to the latest Arduino IDE, so far its version 1.6.6, in all current Ubuntu releases.
+> 本篇教程会教你如何在现在的Ubuntu发布版中安装最新的 Arduino IDE，目前的版本为1.6.6。
 
-The open-source Arduino IDE has reached the 1.6.6 release recently with lots of changes. The new release has switched to Java 8, which is now both bundled and needed for compiling the IDE. See the [RELEASE NOTE][1] for details.
+开源的Arduino IDE发布了1.6.6，并带来了很多的改变。新的发布已经切换到Java 8，它与IDE绑定并且再编译时需要它。具体见[RELEASE NOTE][1]。
 
 ![Arduino 1.6.6 in Ubuntu 15.10](http://ubuntuhandbook.org/wp-content/uploads/2015/11/arduino-ubuntu.jpg)
 
-For those who don’t want to use the old 1.0.5 version available in Software Center, you can always follow below steps to install Arduino in all Ubuntu releases:
+对于那些不想使用软件中心的1.0.5旧版本的人而言，你可以使用下面的步骤再所有的Ubuntu发行版中安装Ardunino。
 
 注：下面这个说明下面的代码颜色，这个发布的时候要对照一下原文，写点说明，因为颜色在md里标识不出来
-> **Replace the words in red for future releases**
+> **用红字替换将来的版本**
 
 **1.** Download the latest packages, **Linux 32-bit or Linux 64-bit**, from the official link below:
+**1.** 从下面的官方链接下载最新的包 **Linux 32-bit 或者 Linux 64-bit**。
 
 - [www.arduino.cc/en/Main/Software][2]
 
-Don’t know your OS type? Go and check out System Settings -> Details -> Overview.
+不知道你系统的类型？进入系统设置->详细->概览。
 
-**2.** Open **terminal** from Unity Dash, App Launcher, or via Ctrl+Alt+T keys. When it opens, run below commands one by one:
+**2.** 从Unity Dash、App Launcher或者Ctrl+Alt+T打开终端。打开后，一个个运行下面的命令：
 
-Navigate to your downloads folder:
+进入下载文件夹：
 
     cd ~/Downloads
 
 ![navigate-downloads](http://ubuntuhandbook.org/wp-content/uploads/2015/11/navigate-downloads.jpg)
 
-Decompress the downloaded archive with tar command:
+使用tar命令解压
 
 注：arduino-1.6.6-*.tar.xz 为红色部分
     tar -xvf arduino-1.6.6-*.tar.xz
 
 ![extract-archive](http://ubuntuhandbook.org/wp-content/uploads/2015/11/extract-archive.jpg)
 
-Move the result folder to **/opt/** directory for global use:
+将解压后的文件移动到**/opt/**下：
 
 注：arduino-1.6.6 为红色部分
     sudo mv arduino-1.6.6 /opt
 
 ![move-opt](http://ubuntuhandbook.org/wp-content/uploads/2015/11/move-opt.jpg)
 
-**3.** Now the IDE is ready for use with bundled Java. But it would be good to create desktop icon/launcher for the application:
+**3.** 现在IDE已经与最新的Java绑定使用了。但是最好位程序设置一个桌面图标/启动方式：
 
-Navigate to install folder:
+进入安装目录
 
 注：arduino-1.6.6 为红色部分
     cd /opt/arduino-1.6.6/
 
-Give executable permission to install.sh script in that folder:
+在这个目录给install.sh可执行权限
 
     chmod +x install.sh
 
-Finally run the script to install both desktop shortcut and launcher icon:
+最后运行脚本同事安装桌面快捷方式和启动图标：
 
     ./install.sh
 
-In below picture I’ve combined 3 commands into one via “&&”:
+下图中我用“&&”同事运行这三个命令：
 
 ![install-desktop-icon](http://ubuntuhandbook.org/wp-content/uploads/2015/11/install-desktop-icon.jpg)
 
-Finally, launch Arduino IDE from Unity Dash, Application Launcher, or via Desktop shorcut.
+最后从Unity Dash、程序启动器或者桌面快捷方式运行Arduino IDE。
 
 --------------------------------------------------------------------------------
 
