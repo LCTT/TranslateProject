@@ -1,3 +1,4 @@
+(translating by runningwater)
 Regular Expressions In grep
 ================================================================================
 How do I use the Grep command with regular expressions on a Linux and Unix-like operating systems?
@@ -283,7 +284,7 @@ References:
 via: http://www.cyberciti.biz/faq/grep-regular-expressions/
 
 作者：Vivek Gite
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
