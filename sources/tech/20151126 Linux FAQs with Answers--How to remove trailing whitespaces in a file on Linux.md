@@ -1,3 +1,4 @@
+translation by  strugglingyouth
 Linux FAQs with Answers--How to remove trailing whitespaces in a file on Linux
 ================================================================================
 > Question: I have a text file in which I need to remove all trailing whitespsaces (e.g., spaces and tabs) in each line for formatting purpose. Is there a quick and easy Linux command line tool I can use for this? 
