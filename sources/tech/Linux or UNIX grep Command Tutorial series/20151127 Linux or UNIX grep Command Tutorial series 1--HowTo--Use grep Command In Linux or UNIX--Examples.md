@@ -1,3 +1,4 @@
+(翻译中 by runningwater)
 HowTo: Use grep Command In Linux / UNIX – Examples
 ================================================================================
 How do I use grep command on Linux, Apple OS X, and Unix-like operating systems? Can you give me a simple examples of the grep command?
@@ -142,7 +143,7 @@ Grep command in action
 via: http://www.cyberciti.biz/faq/howto-use-grep-command-in-linux-unix/
 
 作者：Vivek Gite 
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
