@@ -10,7 +10,7 @@ Wi-Fi — 既然方便又危险的东西！这里给大家介绍一下通过Wi-F
 
 ### 利用免费热点 ###
 
-They seem to be everywhere, and their numbers are expected to [quadruple over the next four years][1]. But many of them are untrustworthy, created just so your login credentials, to email or even more sensitive accounts, can be picked up by hackers using “sniffers” — software that captures any information you submit over the connection. The best defense against sniffing hackers is to use a VPN (virtual private network). A VPN keeps your private data protected because it encrypts what you input.
+它们似乎无处不在，而且它们的数量会在[下一个四年里增加四倍][1]。但是它们当中很多都是不值得信任的But many of them are untrustworthy, created just so your login credentials, to email or even more sensitive accounts, 都能被黑客用一款名叫“sniffers”的软件截获 — 这款软件能截获到任何你通过该连接提交的信息。The best defense against sniffing hackers is to use a VPN (virtual private network). A VPN keeps your private data protected because it encrypts what you input.
 
 ![Image courtesy Thinkstock](http://core0.staticworld.net/images/article/2015/11/2_online-banking-100626675-orig.jpg)
 
