@@ -1,51 +1,50 @@
-Translating by ZTinoZ 
-7 ways hackers can use Wi-Fi against you
+黑客利用Wi-Fi侵犯你隐私的七种方法
 ================================================================================
 ![Image courtesy Thinkstock](http://core0.staticworld.net/images/article/2015/11/intro_title-100626673-orig.jpg)
 
-### 7 ways hackers can use Wi-Fi against you ###
+### 黑客利用Wi-Fi侵犯你隐私的七种方法 ###
 
-Wi-Fi — oh so convenient, yet oh so dangerous. Here are seven ways you could be giving away your identity through a Wi-Fi connection and what to do instead.
+Wi-Fi — 既然方便又危险的东西！这里给大家介绍一下通过Wi-Fi连接泄露身份信息的七种方法和预防措施。
 
 ![Image courtesy Thinkstock](http://core0.staticworld.net/images/article/2015/11/1_free-hotspots-100626674-orig.jpg)
 
-### Using free hotspots ###
+### 利用免费热点 ###
 
 They seem to be everywhere, and their numbers are expected to [quadruple over the next four years][1]. But many of them are untrustworthy, created just so your login credentials, to email or even more sensitive accounts, can be picked up by hackers using “sniffers” — software that captures any information you submit over the connection. The best defense against sniffing hackers is to use a VPN (virtual private network). A VPN keeps your private data protected because it encrypts what you input.
 
 ![Image courtesy Thinkstock](http://core0.staticworld.net/images/article/2015/11/2_online-banking-100626675-orig.jpg)
 
-### Banking online ###
+### 网上银行 ###
 
 You might think that no one needs to be warned against banking online using free Wi-Fi, but cybersecurity firm Kaspersky Lab says that [more than 100 banks worldwide have lost $900 million][2] from cyberhacking, so it would seem that a lot of people are doing it. If you want to use the free Wi-Fi in a coffee shop because you’re confident it will be legitimate, confirm the exact network name with the barista. It’s pretty easy for [someone else in the shop with a router to set up an open connection][3] with a name that seems like it would be the name of the shop’s Wi-Fi.
 
 ![Image courtesy Thinkstock](http://core0.staticworld.net/images/article/2015/11/3_keeping-wifi-on-100626676-orig.jpg)
 
-### Keeping Wi-Fi on all the time ###
+### 始终开着Wi-Fi开关 ###
 
-When your phone’s Wi-Fi is automatically enabled, you can be connected to an unsecure network without even realizing it. Use your phone’s [location-based Wi-Fi feature][4], if it’s available. It will turn off your Wi-Fi when you’re away from your saved networks and will turn back on when you’re within range.
+如果你手机的Wi-Fi开关一直开着的，你会自动被连接到一个不安全的网络中去，你甚至都没有意识到。你可以利用你手机的[基于位置的Wi-Fi功能][4]，如果它是可用的，那它会在你离开你所保存的网络范围后自动关闭你的Wi-Fi开关并在你回去之后再次开启。
 
 ![Image courtesy Thinkstock](http://core0.staticworld.net/images/article/2015/11/4_not-using-firewall-100626677-orig.jpg)
 
-### Not using a firewall ###
+### 不使用防火墙 ###
 
 A firewall is your first line of defense against malicious intruders. It’s meant to let good traffic through your computer on a network and keep hackers and malware out. You should turn it off only when your antivirus software has its own firewall.
 
 ![Image courtesy Thinkstock](http://core0.staticworld.net/images/article/2015/11/5_browsing-unencrypted-sites-100626678-orig.jpg)
 
-### Browsing unencrypted websites ###
+### 浏览非加密网页 ###
 
 Sad to say, [55% of the Web’s top 1 million sites don’t offer encryption][5]. An unencrypted website allows all data transmissions to be viewed by the prying eyes of hackers. Your browser will indicate when a site is secure (you’ll see a gray padlock with Mozilla Firefox, for example, and a green lock icon with Chrome). But even a secure website can’t protect you from sidejackers, who can steal the cookies from a website you visited, whether it’s a valid site or not, through a public network.
 
 ![Image courtesy Thinkstock](http://core0.staticworld.net/images/article/2015/11/6_updating-security-software-100626679-orig.jpg)
 
-### Not updating your security software ###
+### 不更新你的安全防护软件 ###
 
 If you want to ensure that your own network is well protected, upgrade the firmware of your router. All you have to do is go to your router’s administration page to check. Normally, you can download the newest firmware right from the manufacturer’s site.
 
 ![Image courtesy Thinkstock](http://core0.staticworld.net/images/article/2015/11/7_securing-home-wifi-100626680-orig.jpg)
 
-### Not securing your home Wi-Fi ###
+### 不保护你的家用Wi-Fi ###
 
 Needless to say, it is important to set up a password that is not too easy to guess, and change your connection’s default name. You can also filter your MAC address so your router will recognize only certain devices.
 
@@ -56,7 +55,7 @@ Needless to say, it is important to set up a password that is not too easy to gu
 via: http://www.networkworld.com/article/3003170/mobile-security/7-ways-hackers-can-use-wi-fi-against-you.html
 
 作者：[Josh Althuser][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ZTinoZ](https://github.com/ZTinoZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
