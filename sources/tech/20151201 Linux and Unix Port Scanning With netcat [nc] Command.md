@@ -1,3 +1,4 @@
+translation by strugglingyouth
 Linux and Unix Port Scanning With netcat [nc] Command
 ================================================================================
 How do I find out which ports are opened on my own server? How do I run port scanning using the nc command instead of [the nmap command on a Linux or Unix-like][1] systems?
