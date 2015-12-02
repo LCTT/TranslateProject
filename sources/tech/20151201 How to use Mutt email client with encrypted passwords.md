@@ -1,3 +1,4 @@
+wyangsun translating
 How to use Mutt email client with encrypted passwords
 ================================================================================
 Mutt is an open-source email client written for Linux/UNIX terminal environment. Together with [Alpine][1], Mutt has the most devoted followers among Linux command-line enthusiasts, and for good reasons. Think of anything you expect from an email client, and Mutt has it: multi-protocol support (e.g., POP3, IMAP and SMTP), S/MIME and PGP/GPG integration, threaded conversation, color coding, customizable macros/keybindings, and so on. Besides, terminal-based Mutt is a lightweight alternative for accessing emails compared to bulky web browser-based (e.g., Gmail, Ymail) or GUI-based email clients (e.g., Thunderbird, MS Outlook).
