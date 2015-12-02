@@ -1,16 +1,14 @@
-
 如何在 Ubuntu 服务器中配置 AWStats
 ================================================================================
 ![](https://www.maketecheasier.com/assets/uploads/2015/10/Apache_awstats_featured.jpg)
 
-
-AWStats 是一个开源的网站分析报告工具，自带网络,流媒体，FTP 或邮件服务器统计图。此日志分析器以 CGI 或命令行方式进行工作，并在网页中以图表的形式尽可能的显示你日志中所有的信息。它采用的是部分信息文件，以便能够频繁并快速处理大量的日志文件。它支持绝大多数 Web 服务器日志文件格式，包括 Apache，IIS 等。
+AWStats 是一个开源的网站分析报告工具，可以生成强大的网站、流媒体、FTP 或邮件服务器的访问统计图。此日志分析器以 CGI 或命令行方式进行工作，并在网页中以图表的形式尽可能的显示你日志中所有的信息。它可以“部分”读取信息文件，以便能够频繁并快速处理大量的日志文件。它支持绝大多数 Web 服务器日志文件格式，包括 Apache，IIS 等。
 
 本文将帮助你在 Ubuntu 上安装配置 AWStats。
 
 ### 安装 AWStats 包 ###
 
-默认情况下，AWStats 的包在 Ubuntu 仓库中。
+默认情况下，AWStats 的包可以在 Ubuntu 仓库中找到。
 
 可以通过运行下面的命令来安装：
 
@@ -18,7 +16,7 @@ AWStats 是一个开源的网站分析报告工具，自带网络,流媒体，FT
 
 接下来，你需要启用 Apache 的 CGI 模块。
 
-运行以下命令来启动：
+运行以下命令来启动 CGI：
 
     sudo a2enmod cgi
 
@@ -38,7 +36,7 @@ AWStats 是一个开源的网站分析报告工具，自带网络,流媒体，FT
 
     sudo nano /etc/awstats/awstats.test.com.conf
 
-像下面这样修改下:
+像下面这样修改一下:
 
     # Change to Apache log file, by default it's /var/log/apache2/access.log
     LogFile="/var/log/apache2/access.log"
@@ -73,6 +71,7 @@ AWStats 是一个开源的网站分析报告工具，自带网络,流媒体，FT
 ### 测试 AWStats ###
 
 现在，您可以通过访问 url “http://your-server-ip/cgi-bin/awstats.pl?config=test.com.” 来查看 AWStats 的页面。
+
 它的页面像下面这样：
 
 ![awstats_page](https://www.maketecheasier.com/assets/uploads/2015/10/awstats_page.jpg)
@@ -101,7 +100,7 @@ via: https://www.maketecheasier.com/set-up-awstats-ubuntu/
 
 作者：[Hitesh Jethva][a]
 译者：[strugglingyouth](https://github.com/strugglingyouth)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
