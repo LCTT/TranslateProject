@@ -32,6 +32,8 @@ puppet代理节点所使用系统时间必须要准确，这样可以避免代�
 ### 3. 安装服务器软件 ###
 
 安装开源版本的puppet有很多的方法。在本教程中我们在puppet实验室官网下载一个名为puppetlabs-release的软件包，安装后它将为我们在软件源里面添加puppetmaster-passenger。puppetmaster-passenger依赖于apache的puppet服务端。我们开始下载这个软件包
+
+
     # cd /tmp/
     # wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
 
