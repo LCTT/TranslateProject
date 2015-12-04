@@ -391,7 +391,7 @@ Puppet客户端默认是不启动的。这里我们需要使用文本编辑器�
 via: http://linoxide.com/linux-how-to/install-puppet-ubuntu-15-04/
 
 作者：[Arun Pyasi][a]
-译者：[译者ID](https://github.com/ivo-wang)
+译者：[ivo-wang](https://github.com/ivo-wang)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
