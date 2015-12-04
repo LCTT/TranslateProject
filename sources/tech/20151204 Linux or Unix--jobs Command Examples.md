@@ -1,3 +1,4 @@
+translation by strugglingyouth
 Linux / Unix: jobs Command Examples
 ================================================================================
 I am new Linux and Unix user. How do I show the active jobs on Linux or Unix-like systems using BASH/KSH/TCSH or POSIX based shell? How can I display status of jobs in the current session on Unix/Linux?
