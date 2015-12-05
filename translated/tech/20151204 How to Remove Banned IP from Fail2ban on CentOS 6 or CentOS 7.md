@@ -1,12 +1,12 @@
-How to Remove Banned IP from Fail2ban on CentOS 6 / CentOS 7
+如何在CentOS 6/7 上移除被Fail2ban禁止的IP
 ================================================================================
 ![](http://www.ehowstuff.com/wp-content/uploads/2015/12/security-265130_1280.jpg)
 
-[Fail2ban][1] is an intrusion prevention software framework that able to protect your server from brute-force attacks. Fail2ban written in the Python programming language and is widely used by most of the VPS servers. Fail2ban will scan log files and IP blacklists that shows signs of malicious, too many password failures, web server exploitation, WordPress plugin attacks and other vulnerabilities. If you already installed and used fail2ban to protect your web server, you may be wondering how to find the IP banned or blocked by Fail2ban, or you may want to remove banned ip from fail2ban jail on CentOS 6, CentOS 7, RHEL 6, RHEL 7 and Oracle Linux 6/7.
+[Fail2ban][1]是一款用于保护你的服务器免于暴力攻击的入侵保护软件。Fail2ban用python写成，并被广泛用户大多数服务器上。Fail2ban将扫描日志文件和IP黑名单来显示恶意软件、过多的密码失败、web服务器利用、Wordpress插件攻击和其他漏洞。如果你已经安装并使用了fail2ban来保护你的web服务器，你也许会想知道如何在CentOS 6、CentOS 7、RHEL 6、RHEL 7 和 Oracle Linux 6/7中找到被Fail2ban阻止的IP，或者你想将ip从fail2ban监狱中移除。
 
-### How to List of Banned IP address ###
+### 如何列出被禁止的IP ###
 
-To see all the blocked ip addresses, run the following command :
+要查看所有被禁止的ip地址，运行下面的命令：
 
     # iptables -L
     Chain INPUT (policy ACCEPT)
@@ -40,11 +40,11 @@ To see all the blocked ip addresses, run the following command :
     REJECT     all  --  104.194.26.205       anywhere            reject-with icmp-port-unreachable
     RETURN     all  --  anywhere             anywhere
 
-### How to Remove Banned IP from Fail2ban jail ###
+### 如何从Fail2ban中移除IP ###
 
     # iptables -D f2b-NoAuthFailures -s banned_ip -j REJECT
 
-I hope this article gives you some ideas and quick guide on remove banned IP from Fail2ban jail on on CentOS 6, CentOS 7, RHEL 6, RHEL 7 and Oracle Linux 6/7.
+我希望这篇教程可以给你在CentOS 6、CentOS 7、RHEL 6、RHEL 7 和 Oracle Linux 6/7中移除被禁止的ip一些指导。
 
 --------------------------------------------------------------------------------
 

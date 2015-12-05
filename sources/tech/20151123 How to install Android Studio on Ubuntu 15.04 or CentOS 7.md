@@ -1,3 +1,4 @@
+ictlyh Translating
 How to install Android Studio on Ubuntu 15.04 / CentOS 7
 ================================================================================
 With the advancement of smart phones in the recent years, Android has become one of the biggest phone platforms and all the tools required to build Android applications are also freely available. Android Studio is an Integrated Development Environment (IDE) for developing Android applications based on [IntelliJ IDEA][1].  It is a free and open source software by Google released in 2014 and succeeds Eclipse as the main IDE.
