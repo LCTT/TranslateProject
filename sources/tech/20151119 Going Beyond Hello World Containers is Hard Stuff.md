@@ -1,48 +1,67 @@
 translating by ezio
 
 Going Beyond Hello World Containers is Hard Stuff
+
 ================================================================================
 In [my previous post][1], I provided the basic concepts behind Linux container technology. I wrote as much for you as I did for me. Containers are new to me. And I figured having the opportunity to blog about the subject would provide the motivation to really learn the stuff.
+在[我的上一篇文章里][1]， 我介绍了Linux 容器背后的技术的概念。我写了我知道的一切。容器对我来说也是比较新的概念。我写这篇文章的目的就是鼓励我真正的来学习这些东西。
 
 I intend to learn by doing. First get the concepts down, then get hands-on and write about it as I go. I assumed there must be a lot of Hello World type stuff out there to give me up to speed with the basics. Then, I could take things a bit further and build a microservice container or something.
+我打算在使用中学习。首先实践，然后上手并记录下我是怎么走过来的。我假设这里肯定有很多想"Hello World" 这种类型的知识帮助我快速的掌握基础。然后我能够更进一步，构建一个微服务容器或者其它东西。
 
 I mean, it can’t be that hard, right?
+我的意思是还会比着更难吗，对吧？
 
 Wrong.
+错了。
 
 Maybe it’s easy for someone who spends significant amount of their life immersed in operations work. But for me, getting started with this stuff turned out to be hard to the point of posting my frustrations to Facebook...
+可能对某些人来说这很简单，因为他们会耗费大量的时间专注在操作工作上。但是对我来说实际上是很困难的，可以从我在Facebook 上的状态展示出来的挫折感就可以看出了。
 
 But, there is good news: I got it to work! And it’s always nice being able to make lemonade from lemons. So I am going to share the story of how I made my first microservice container with you. Maybe my pain will save you some time.
+但是还有一个好消息：我最终让它工作了。而且他工作的还不错。所以我准备分享向你分享我如何制作我的第一个微服务容器。我的痛苦可能会节省你不少时间呢。
 
 If you've ever found yourself in a situation like this, fear not: folks like me are here to deal with the problems so you don't have to!
 
 Let’s begin.
+如果你曾经发现或者从来都没有发现自己处在这种境地：像我这样的人在这里解决一些你不需要解决的问题。
 
-### A Thumbnail Micro Service ###
+让我们开始吧。
+
+
+### 一个缩略图微服务 ###
 
 The microservice I designed was simple in concept. Post a digital image in JPG or PNG format to an HTTP endpoint and get back a a 100px wide thumbnail.
+我设计的微服务在理论上很简单。以JPG 或者PNG 格式在HTTP 终端发布一张数字照片，然后获得一个100像素宽的缩略图。
 
 Here’s what that looks like:
+下面是它实际的效果：
 
 ![container-diagram-0](https://deis.com/images/blog-images/containers-hard-0.png)
 
 I decide to use a NodeJS for my code and version of [ImageMagick][2] to do the thumbnail transformation.
+我决定使用NodeJS 作为我的开发语言，使用[ImageMagick][2] 来转换缩略图。
 
 I did my first version of the service, using the logic shown here:
+我的服务的第一版的逻辑如下所示：
 
 ![container-diagram-1](https://deis.com/images/blog-images/containers-hard-1.png)
 
 I download the [Docker Toolbox][3] which installs an the Docker Quickstart Terminal. Docker Quickstart Terminal makes creating containers easier. The terminal fires up a Linux virtual machine that has Docker installed, allowing you to run Docker commands from within a terminal.
+我下载了[Docker Toolbox][3]，用它安装了Docker 的快速启动终端。Docker 快速启动终端使得创建容器更简单了。终端会启动一个装好了Docker 的Linux 虚拟机，它允许你在一个终端里运行Docker 命令。
 
 In my case, I am running on OS X. But there’s a Windows version too.
+虽然在我的例子里，我的操作系统是Mac OS X。但是Windows 下也有相同的工具。
 
 I am going to use Docker Quickstart Terminal to build a container image for my microservice and run a container from that image.
+我准备使用Docker 快速启动终端里为我的微服务创建一个容器镜像，然后从这个镜像运行容器。
 
 The Docker Quickstart Terminal runs in your regular terminal, like so:
+Docker 快速启动终端就运行在你使用的普通终端里，就像这样：
 
 ![container-diagram-2](https://deis.com/images/blog-images/containers-hard-2.png)
 
-### The First Little Problem and the First Big Problem ###
+###  第一个小问题和第一个大问题###
 
 So I fiddled around with NodeJS and ImageMagick and I got the service to work on my local machine.
 
@@ -315,7 +334,7 @@ And don't miss part two...
 via: https://deis.com/blog/2015/beyond-hello-world-containers-hard-stuff
 
 作者：[Bob Reselman][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Ezio](https://github.com/oska874)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
