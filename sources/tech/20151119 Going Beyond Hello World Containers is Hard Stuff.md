@@ -64,56 +64,75 @@ Docker 快速启动终端就运行在你使用的普通终端里，就像这样�
 ###  第一个小问题和第一个大问题###
 
 So I fiddled around with NodeJS and ImageMagick and I got the service to work on my local machine.
+所以我用NodeJS 和ImageMagick 瞎搞了一通然后让我的服务在本地运行起来了。
 
 Then, I created the Dockerfile, which is the configuration script Docker uses to build your container. (I’ll go more into builds and Dockerfile more later on.)
+然后我创建了Dockerfile，这是Docker 用来构建容器的配置脚本。（我会在后面深入介绍构建和Dockerfile）
 
 Here’s the build command I ran on the Docker Quickstart Terminal:
+这是我运行Docker 快速启动终端的命令：
 
     $ docker build -t thumbnailer:0.1
 
 I got this response:
+获得如下回应：
 
     docker: "build" requires 1 argument.
 
 Huh.
+呃。
 
 After 15 minutes I realized: I forgot to put a period . as the last argument!
-
+我估摸着过了15分钟：我忘记了在末尾参数输入一个点`.`。
 It needs to be:
+正确的指令应该是这样的：
 
     $ docker build -t thumbnailer:0.1 .
 
 But this wasn’t the end of my problems.
+但是这不是我最后一个问题。
 
 I got the image to build and then I typed [the the `run` command][4] on the Docker Quickstart Terminal to fire up a container based on the image, called `thumbnailer:0.1`:
+我让这个镜像构建好了，然后我Docker 快速启动终端输入了[`run` 命令][4]来启动容器，名字叫`thumbnailer:0.1`:
 
     $ docker run -d -p 3001:3000 thumbnailer:0.1
 
 The `-p 3001:3000` argument makes it so the NodeJS microservice running on port 3000 within the container binds to port 3001 on the host virtual machine.
+参数`-p 3001:3000` 让NodeJS 微服务在Docker 内运行在端口3000，而在主机上则是3001。
 
 Looks so good so far, right?
+到目前卡起来都很好，对吧？
 
 Wrong. Things are about to get pretty bad.
+错了。事情要马上变糟了。
 
 I determined the IP address of the virtual machine created by Docker Quickstart Terminal by running the `docker-machine` command:
+我指定了在Docker 快速启动中端里用命令`docker-machine` 运行的Docker 虚拟机的ip地址：
 
     $ docker-machine ip default
 
 This returns the IP address of the default virtual machine, the one that is run under the Docker Quickstart Terminal. For me, this IP address was 192.168.99.100.
+这句话返回了默认虚拟机的IP地址，即运行docker 的虚拟机。对于我来说，这个ip 地址是192.168.99.100。
 
 I browsed to http://192.168.99.100:3001/ and got the file upload page I built:
+我浏览网页http://192.168.99.100:3001/ ，然后找到了我创建的上传图片的网页：
 
 ![container-diagram-3](https://deis.com/images/blog-images/containers-hard-3.png)
 
 I selected a file and clicked the Upload Image button.
+我选择了一个文件，然后点击上传图片的按钮。
 
 But it didn’t work.
+但是它并没有工作。
 
 The terminal is telling me it can’t find the `/upload` directory my microservice requires.
+终端告诉我他无法找到我的微服务需要的`/upload` 目录。
 
 Now, keep in mind, I had been at this for about a day—between the fiddling and research. I’m feeling a little frustrated by this point.
+现在开始记住，我已经在此耗费了将近一天的时间－从浪费时间到研究问题。我此时感到了一些挫折感。
 
 Then, a brain spark flew. Somewhere along the line remembered reading a microservice should not do any data persistence on its own! Saving data should be the job of another service.
+然后灵光一闪。某人记起来微服务不应该自己做任何数据持久化的工作！保存数据应该是另一个服务的工作。
 
 So what if the container can’t find the `/upload` directory? The real issue is: my microservice has a fundamentally flawed design.
 
