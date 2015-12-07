@@ -46,9 +46,9 @@ If you want to ensure that your own network is well protected, upgrade the firmw
 
 ### 不保护你的家用Wi-Fi ###
 
-Needless to say, it is important to set up a password that is not too easy to guess, and change your connection’s default name. You can also filter your MAC address so your router will recognize only certain devices.
+不用说，设置一个复杂的密码和更改无线连接的默认名都是非常重要的。你还可以过滤你的MAC地址来让你的路由器只承认那些确认过的设备。
 
-**Josh Althuser** is an open software advocate, Web architect and tech entrepreneur. Over the past 12 years, he has spent most of his time advocating for open-source software and managing teams and projects, as well as providing enterprise-level consultancy for Web applications and helping bring their products to the market. You may connect with him on [Twitter][6].
+**Josh Althuser**是一个开源支持者、网络架构师和科技企业家。在过去12年里，他花了很多时间去倡导使用开源软件来管理团队和项目，同时为网络应用程序提供企业级咨询并帮助它们走向市场。你可以联系[他的推特][6].
 
 --------------------------------------------------------------------------------
 
