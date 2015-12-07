@@ -1,24 +1,28 @@
-translation by strugglingyouth
-Linux and Unix Port Scanning With netcat [nc] Command
+
+使用 netcat [nc] 命令对 Linux 和 Unix 进行端口扫描 
 ================================================================================
-How do I find out which ports are opened on my own server? How do I run port scanning using the nc command instead of [the nmap command on a Linux or Unix-like][1] systems?
 
-The nmap (“Network Mapper”) is an open source tool for network exploration and security auditing. If nmap is not installed and you do not wish to use all of nmap options you can use netcat/nc command for scanning ports. This may useful to know which ports are open and running services on a target machine. You can use [nmap command for port scanning][2] too.
+我如何在自己的服务器上找出哪些端口是开放的？如何使用 nc 命令进行端口扫描来替换 [Linux 或 类 Unix 中的 nmap 命令][1]？ 
 
-### How do I use nc to scan Linux, UNIX and Windows server port scanning? ###
+nmap (“Network Mapper”)是一个开源工具用于网络探测和安全审核。如果 nmap 没有安装或者你不希望使用 nmap，那你可以用 netcat/nc 命令进行端口扫描。它对于查看目标计算机上哪些端口是开放的或者运行着服务是非常有用的。你也可以使用 [nmap 命令进行端口扫描][2] 。
+
+### 如何使用 nc 来扫描 Linux，UNIX 和 Windows 服务器的端口呢？ ###
 
 If nmap is not installed try nc / netcat command as follow. The -z flag can be used to tell nc to report open ports, rather than initiate a connection. Run nc command with -z flag. You need to specify host name / ip along with the port range to limit and speedup operation:
 
-    ## syntax ##
+
+如果未安装 nmap，如下所示，试试 nc/netcat 命令。-z 参数用来告诉 nc 报告开放的端口，而不是启动连接。在 nc 命令中使用 -z 参数时，你需要在主机名/ip 后面指定端口的范围来限制和加速其运行： 
+
+    ## 语法 ##
     nc -z -v {host-name-here} {port-range-here}
     nc -z -v host-name-here ssh
     nc -z -v host-name-here 22
     nc -w 1 -z -v server-name-here port-Number-her
      
-    ## scan 1 to 1023 ports ##
+    ## 扫描 1 to 1023 端口 ##
     nc -zv vip-1.vsnl.nixcraft.in 1-1023
 
-Sample outputs:
+输出示例:
 
     Connection to localhost 25 port [tcp/smtp] succeeded!
     Connection to vip-1.vsnl.nixcraft.in 25 port [tcp/smtp] succeeded!
@@ -29,7 +33,7 @@ Sample outputs:
     Connection to vip-1.vsnl.nixcraft.in 904 port [tcp/vmware-authd] succeeded!
     Connection to vip-1.vsnl.nixcraft.in 993 port [tcp/imaps] succeeded!
 
-You can scan individual port too:
+你也可以扫描单个端口:
 
     nc -zv v.txvip1 443
     nc -zv v.txvip1 80
@@ -41,20 +45,18 @@ You can scan individual port too:
     ## really fast scanner with 1 timeout value ##
     netcat -v -z -n -w 1 v.txvip1 1-1023
  
-Sample outputs:
+输出示例:
 
 ![Fig.01: Linux/Unix: Use Netcat to Establish and Test TCP and UDP Connections on a Server](http://s0.cyberciti.org/uploads/faq/2007/07/scan-with-nc.jpg)
 
-Fig.01: Linux/Unix: Use Netcat to Establish and Test TCP and UDP Connections on a Server
+图01：Linux/Unix：使用 Netcat 来测试 TCP 和 UDP 与服务器建立连接， 
 
-Where,
+1. -z : 端口扫描模式即 I/O 模式。
+1. -v : 显示详细信息 [使用 -vv 来输出更详细的信息]。
+1. -n : 使用纯数字 IP 地址，即不用 DNS 来解析 IP 地址。 
+1. -w 1 : 设置超时值设置为1。
 
-1. -z : Port scanning mode i.e. zero I/O mode.
-1. -v : Be verbose [use twice -vv to be more verbose].
-1. -n : Use numeric-only IP addresses i.e. do not use DNS to resolve ip addresses.
-1. -w 1 : Set time out value to 1.
-
-More examples:
+更多例子:
 
     $ netcat -z -vv www.cyberciti.biz http
     www.cyberciti.biz [75.126.153.206] 80 (http) open
@@ -75,17 +77,17 @@ More examples:
     (UNKNOWN) [192.168.1.254] 443 (https) open
     (UNKNOWN) [192.168.1.254] 53 (domain) open
 
-See also
+也可以看看 ：
 
-- [Scanning network for open ports with the nmap command][3] for more info.
-- Man pages - [nc(1)][4], [nmap(1)][5]
+- [使用 nmap 命令扫描网络中开放的端口][3]。 
+- 手册页 - [nc(1)][4], [nmap(1)][5]
 
 --------------------------------------------------------------------------------
 
 via: http://www.cyberciti.biz/faq/linux-port-scanning/
 
 作者：Vivek Gite
-译者：[译者ID](https://github.com/译者ID)
+译者：[strugglingyouth](https://github.com/strugglingyouth)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

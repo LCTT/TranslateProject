@@ -1,3 +1,5 @@
+Vic020
+
 How to use the Linux ftp command to up- and download files on the shell
 ================================================================================
 In this tutorial, I will explain how to use the Linux ftp command on the shell. I will show you how to connect to an FTP server, up- and download files and create directories. While there are many nice desktops FTP clients available, the FTP command is still useful when you work remotely on a server over an SSH session and e.g. want to fetch a backup file from your FTP storage.
