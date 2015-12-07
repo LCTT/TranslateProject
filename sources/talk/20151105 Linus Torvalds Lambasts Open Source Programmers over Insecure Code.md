@@ -1,3 +1,4 @@
+[bazz2222222]
 Linus Torvalds Lambasts Open Source Programmers over Insecure Code
 ================================================================================
 ![](http://thevarguy.com/site-files/thevarguy.com/files/imagecache/medium_img/uploads/2015/11/linus-torvalds.jpg)
