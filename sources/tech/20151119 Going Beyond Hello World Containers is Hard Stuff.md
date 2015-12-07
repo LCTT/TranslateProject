@@ -1,4 +1,3 @@
-Going Beyond Hello World Containers is Hard Stuff
 要超越Hello World 容器是件困难的事情
 ================================================================================
 
