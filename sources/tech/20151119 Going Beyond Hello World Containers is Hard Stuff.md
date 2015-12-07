@@ -1,8 +1,7 @@
-translating by ezio
-
 Going Beyond Hello World Containers is Hard Stuff
-
+要超越Hello World 容器是件困难的事情
 ================================================================================
+
 In [my previous post][1], I provided the basic concepts behind Linux container technology. I wrote as much for you as I did for me. Containers are new to me. And I figured having the opportunity to blog about the subject would provide the motivation to really learn the stuff.
 在[我的上一篇文章里][1]， 我介绍了Linux 容器背后的技术的概念。我写了我知道的一切。容器对我来说也是比较新的概念。我写这篇文章的目的就是鼓励我真正的来学习这些东西。
 
@@ -135,18 +134,23 @@ Then, a brain spark flew. Somewhere along the line remembered reading a microser
 然后灵光一闪。某人记起来微服务不应该自己做任何数据持久化的工作！保存数据应该是另一个服务的工作。
 
 So what if the container can’t find the `/upload` directory? The real issue is: my microservice has a fundamentally flawed design.
+所以容器找不到目录`/upload` 的原因到底是什么？这个问题的根本就是我的微服务在基础设计上就有问题。
 
 Let’s take another look:
+让我们看看另一幅图：
 
 ![container-diagram-4](https://deis.com/images/blog-images/containers-hard-4.png)
 
 Why am I saving a file to disk? Microservices are supposed to be fast. Why not do all my work in memory? Using memory buffers will make the "I can’t find no stickin’ directory" error go away and will increase the performance of my app dramatically.
+我为什么要把文件保存到磁盘？微服务按理来说是很快的。为什么不能让我的全部工作都在内存里完成？使用内存缓冲可以解决“找不到目录”这个问题，而且可以提高我的应用的性能。
 
 So that’s what I did. And here’s what the plan was:
+这就是我现在所做的。下面是我的计划：
 
 ![container-diagram-5](https://deis.com/images/blog-images/containers-hard-5.png)
 
 Here’s the NodeJS I wrote to do all the in-memory work for creating a thumbnail:
+这是我用NodeJS 写的在内存工作、生成缩略图的代码：
 
     // Bind to the packages
     var express = require('express');
@@ -209,20 +213,26 @@ Here’s the NodeJS I wrote to do all the in-memory work for creating a thumbnai
     module.exports = router;
 
 Okay, so we’re back on track and everything is hunky dory on my local machine. I go to sleep.
+好了，回到正轨，已经可以在我的本地机器正常工作了。我该去休息了。
 
 But, before I do I test the microservice code running as standard Node app on localhost...
+但是，在我测试把这个微服务当作一个普通的Node 应用运行在本地时...
 
 ![Containers Hard](https://deis.com/images/blog-images/containers-hard-6.png)
 
 It works fine. Now all I needed to do was get it working in a container.
+它工作的很好。现在我要做的就是让他在容器里面工作。
 
 The next day I woke up, grabbed some coffee, and built an image—not forgetting to put in the period!
+第二天我起床后喝点咖啡，然后创建一个镜像——这次没有忘记那个"."!
 
     $ docker build -t thumbnailer:01 .
 
 I am building from the root directory of my thumbnailer project. The build command uses the Dockerfile that is in the root directory. That’s how it goes: put the Dockerfile in the same place you want to run build and the Dockerfile will be used by default.
+我从缩略图工程的根目录开始构建。构建命令使用了根目录下的Dockerfile。它是这样工作的：把Dockerfile 放到你想构建镜像的地方，然后系统就默认使用这个Dockerfile。
 
 Here is the text of the Dockerfile I was using:
+下面是我使用的Dockerfile 的内容：
 
     FROM ubuntu:latest
     MAINTAINER bob@CogArtTech.com
@@ -243,54 +253,70 @@ Here is the text of the Dockerfile I was using:
     CMD npm start
 
 What could go wrong?
+这怎么可能出错呢？
 
-### The Second Big Problem ###
+### 第二个大问题 ###
 
 I ran the `build` command and I got this error:
+我运行了`build` 命令，然后出了这个错：
 
     Do you want to continue? [Y/n] Abort.
     
     The command '/bin/sh -c apt-get install imagemagick libmagickcore-dev libmagickwand-dev' returned a non-zero code: 1
 
 I figured something was wrong with the microservice. I went back to my machine, fired up the service on localhost, and uploaded a file.
+我猜测微服务出错了。我回到本地机器，从本机启动微服务，然后试着上传文件。
 
 Then I got this error from NodeJS:
+然后我从NodeJS 获得了这个错误：
 
     Error: spawn convert ENOENT
 
 What’s going on? This worked the other night!
+怎么回事？之前还是好好的啊！
 
 I searched and searched, for every permutation of the error I could think of. After about four hours of replacing different node modules here and there, I figured: why not restart the machine?
+我搜索了我能想到的所有的错误原因。差不多4个小时后，我想：为什么不重启一下机器呢？
 
 I did. And guess what? The error went away!
+重启了，你猜猜结果？错误消失了！（译注：万能的重启）
 
 Go figure.
+继续。
 
-### Putting the Genie Back in the Bottle ###
+### 将精灵关进瓶子 ###
 
 So, back to the original quest: I needed to get this build working.
+跳回正题：我需要完成构建工作。
 
 I removed all of the containers running on the VM, using [the `rm` command][5]:
+我使用[`rm` 命令][5]删除了虚拟机里所有的容器。
 
     $ docker rm -f $(docker ps -a -q)
 
 The `-f` flag here force removes running images.
+`-f` 在这里的用处是强制删除运行中的镜像。
 
 Then I removed all of my Docker images, using [the `rmi` command][6]:
+然后删除了全部Docker 镜像，用的是[命令`rmi`][6]:
 
     $ docker rmi if $(docker images | tail -n +2 | awk '{print $3}')
 
 I go through the whole process of rebuilding the image, installing the container and try to get the microservice running. Then after about an hour of self-doubt and accompanying frustration, I thought to myself: maybe this isn’t a problem with the microservice.
+我重新执行了命令构建镜像，安装容器，运行微服务。然后过了一个充满自我怀疑和沮丧的一个小时，我告诉我自己：这个错误可能不是微服务的原因。
 
 So, I looked that the the error again:
+所以我重新看到了这个错误：
 
     Do you want to continue? [Y/n] Abort.
     
     The command '/bin/sh -c apt-get install imagemagick libmagickcore-dev libmagickwand-dev' returned a non-zero code: 1
 
 Then it hit me: the build is looking for a Y input from the keyboard! But, this is a non-interactive Dockerfile script. There is no keyboard.
+这太打击我了：构建脚本好像需要有人从键盘输入Y！ 但是，这是一个非交互的Dockerfile 脚本啊。这里并没有键盘。
 
 I went back to the Dockerfile, and there it was:
+回到Dockerfile，脚本元来时这样的：
 
     RUN apt-get update
     RUN apt-get install -y nodejs nodejs-legacy npm
@@ -298,8 +324,10 @@ I went back to the Dockerfile, and there it was:
     RUN apt-get clean
 
 The second `apt-get` command is missing the `-y` flag which causes "yes" to be given automatically where usually it would be prompted for.
+第二个`apt-get` 忘记了`-y` 标志，这才是错误的根本原因。
 
 I added the missing `-y` to the command:
+我在这条命令后面添加了`-y` ：
 
     RUN apt-get update
     RUN apt-get install -y nodejs nodejs-legacy npm
@@ -307,43 +335,56 @@ I added the missing `-y` to the command:
     RUN apt-get clean
 
 And guess what: after two days of trial and tribulation, it worked! Two whole days!
+猜一猜结果：经过将近两天的尝试和痛苦，容器终于正常工作了！整整两天啊！
 
 So, I did my build:
+我完成了构建工作：
 
     $ docker build -t thumbnailer:0.1 .
 
 I fired up the container:
+启动了容器：
 
     $ docker run -d -p 3001:3000 thumbnailer:0.1
 
 Got the IP address of the Virtual Machine:
+获取了虚拟机的IP 地址：
 
     $ docker-machine ip default
 
 Went to my browser and entered http://192.168.99.100:3001/ into the address bar.
+在我的浏览器里面输入 http://192.168.99.100:3001/ ：
 
 The upload page loaded.
+上传页面打开了。
 
 I selected an image, and this is what I got:
+我选择了一个图片，然后得到了这个：
 
 ![container-diagram-7](https://deis.com/images/blog-images/containers-hard-7.png)
 
 It worked!
+工作了！
 
 Inside a container, for the first time!
+在容器里面工作了，我的第一次啊！
 
-### So What Does It All Mean? ###
+### 这意味着什么? ###
 
 A long time ago, I accepted the fact when it comes to tech, sometimes even the easy stuff is hard. Along with that, I abandoned the desire to be the smartest guy in the room. Still, the last few days trying get basic competency with containers has been, at times, a journey of self doubt.
+很久以前，我接受了这样一个道理：当你刚开始尝试某项技术时，即使是最简单的事情也会变得很困难。因此，我压抑了要成为房间里最聪明的人的欲望。然而最近几天尝试容器的过程就是一个充满自我怀疑的旅程。
 
 But, you wanna know something? It’s 2 AM on an early morning as I write this, and every nerve wracking hour has been worth it. Why? Because you gotta put in the time. This stuff is hard and it does not come easy for anyone. And don’t forget: you’re learning tech and tech runs the world!
+但是你想知道一些其它的事情吗？这篇文章是我在凌晨2点完成的，而每一个折磨的小时都值得了。为什么？因为这段时间你将自己全身心投入了喜欢的工作里。这件事很难，对于所有人来说都不是很容易就获得结果的。但是不要忘记：你在学习技术，运行世界的技术。
 
 P.S. Check out this two part video of Hello World containers, check out [Raziel Tabib’s][7] excellent work in this video...
+P.S. 了解一下Hello World 容器的两段视频，这里会有 [Raziel Tabib’s][7] 的精彩工作内容。
 
 注：youtube视频
 <iframe width="560" height="315" src="https://www.youtube.com/embed/PJ95WY2DqXo" frameborder="0" allowfullscreen></iframe>
 
 And don't miss part two...
+千万被忘记第二部分...
 
 注：youtube视频
 <iframe width="560" height="315" src="https://www.youtube.com/embed/lss2rZ3Ppuk" frameborder="0" allowfullscreen></iframe>
