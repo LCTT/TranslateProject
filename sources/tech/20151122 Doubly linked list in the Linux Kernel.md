@@ -3,12 +3,14 @@ translating by Ezio
 Data Structures in the Linux Kernel
 ================================================================================
 
-Doubly linked list
+双向链表
 --------------------------------------------------------------------------------
 
 Linux kernel provides its own implementation of doubly linked list, which you can find in the [include/linux/list.h](https://github.com/torvalds/linux/blob/master/include/linux/list.h). We will start `Data Structures in the Linux kernel` from the doubly linked list data structure. Why? Because it is very popular in the kernel, just try to [search](http://lxr.free-electrons.com/ident?i=list_head)
+Linux 内核自己实现了双向链表，可以在[include/linux/list.h](https://github.com/torvalds/linux/blob/master/include/linux/list.h)找到定义。我们将会从双向链表数据结构开始`内核的数据结构`。为什么？因为它在内核里使用的很广泛，你只需要在[free-electrons.com](http://lxr.free-electrons.com/ident?i=list_head) 检索一下就知道了。
 
 First of all, let's look on the main structure in the [include/linux/types.h](https://github.com/torvalds/linux/blob/master/include/linux/types.h):
+首先让我们看一下在[include/linux/types.h](https://github.com/torvalds/linux/blob/master/include/linux/types.h) 里的主结构体：
 
 ```C
 struct list_head {
@@ -17,6 +19,7 @@ struct list_head {
 ```
 
 You can note that it is different from many implementations of doubly linked list which you have seen. For example, this doubly linked list structure from the [glib](http://www.gnu.org/software/libc/) library looks like :
+你可能注意到这和你以前见过的双向链表的实现方法是不同的。举个例子来说，在[glib](http://www.gnu.org/software/libc/)  库里是这样实现的：
 
 ```C
 struct GList {
@@ -27,8 +30,10 @@ struct GList {
 ```
 
 Usually a linked list structure contains a pointer to the item. The implementation of linked list in Linux kernel does not. So the main question is - `where does the list store the data?`. The actual implementation of linked list in the kernel is - `Intrusive list`. An intrusive linked list does not contain data in its nodes - A node just contains pointers to the next and previous node and list nodes part of the data that are added to the list. This makes the data structure generic, so it does not care about entry data type anymore.
+通常来说一个链表会包含一个指向某个项目的指针。但是内核的实现并没有这样做。所以问题来了：`链表在哪里保存数据呢？`。实际上内核里实现的链表实际上是`侵入式链表`。侵入式链表并不在节点内保存数据-节点仅仅包含指向前后节点的指针，然后把数据是附加到链表的。这就使得这个数据结构是通用的，使用起来就不需要考虑节点数据的类型了。
 
 For example:
+比如：
 
 ```C
 struct nmi_desc {
