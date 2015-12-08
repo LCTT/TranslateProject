@@ -1,14 +1,13 @@
-Vic020
-
-How to use the Linux ftp command to up- and download files on the shell
+如何在命令行中使用ftp命令上传和下载文件
 ================================================================================
-In this tutorial, I will explain how to use the Linux ftp command on the shell. I will show you how to connect to an FTP server, up- and download files and create directories. While there are many nice desktops FTP clients available, the FTP command is still useful when you work remotely on a server over an SSH session and e.g. want to fetch a backup file from your FTP storage.
+本文中，介绍在Linux shell中如何使用ftp命令。包括如何连接FTP服务器，上传或下载文件以及创建文件夹。尽管现在有许多不错的FTP桌面应用，但是在服务器、ssh、远程回话中命令行ftp命令还是有很多应用的。比如。需要服务器从ftp仓库拉取备份。
 
-### Step 1: Establishing an FTP connection ###
+### 步骤 1: 建立FTP连接 ###
 
-To connect to the FTP server, we have to type in the terminal window '**ftp**' and then the domain name 'domain.com' or IP address of the FTP server.
 
-#### Examples: ####
+想要连接FTP服务器，在命令上中先输入'**ftp**'然后空格跟上FTP服务器的域名'domain.com'或者IP地址
+
+#### 例如: ####
 
     ftp domain.com
     
@@ -16,42 +15,43 @@ To connect to the FTP server, we have to type in the terminal window '**ftp**' a
     
     ftp user@ftpdomain.com
 
-**Note: for this example we used an anonymous server.**
+**注意: 本次例子使用匿名服务器.**
 
-Replace the IP and domain in the above examples with the IP address or domain of your FTP server.
+替换下面例子中IP或域名为你的服务器地址。
 
-![The FTP login.](https://www.howtoforge.com/images/how-to-use-ftp-in-the-linux-shell/big/ftpanonymous.png)
+![FTP登录](https://www.howtoforge.com/images/how-to-use-ftp-in-the-linux-shell/big/ftpanonymous.png)
 
-### Step 2: Login with User and Password ###
+### 步骤 2: 使用用户名密码登录 ###
 
-Most FTP servers logins are password protected, so the server will ask us for a '**username**' and a '**password**'.
+绝大多数的FTP服务器是使用密码保护的，因此这些FTP服务器会询问'**用户名**'和'**密码**'.
 
-If you connect to a so-called anonymous FTP server, then try to use "anonymous" as user name and a nempty password:
+如果你连接到被动匿名FTP服务器，可以尝试"anonymous"作为用户名以及空密码：
 
     Name: anonymous
     
     Password:
 
-The terminal will return a message like this:
+之后，终端会返回如下的信息：
 
     230 Login successful.
     Remote system type is UNIX.
     Using binary mode to transfer files.
     ftp>
 
-When you are logged in successfully. 
+登录成功。
 
-![Successful FTP login.](https://www.howtoforge.com/images/how-to-use-ftp-in-the-linux-shell/big/login.png)
+![FTP登录成功](https://www.howtoforge.com/images/how-to-use-ftp-in-the-linux-shell/big/login.png)
 
-### Step 3: Working with Directories ###
+### 步骤 3: 目录操作 ###
 
-The commands to list, move and create folders on an FTP server are almost the same as we would use locally on our computer, ls for list, cd to change directories, mkdir to create directories...
+FTP命令可以列出、移动和创建文件夹，如同我们在本地使用我们的电脑一样。ls可以打印目录列表，cd可以改变目录，mkdir可以创建文件夹。
 
-#### Listing directories with security settings: ####
+#### 使用安全设置列出目录 ####
+
 
     ftp> ls
 
-The server will return:
+服务器将返回：
 
     200 PORT command successful. Consider using PASV.
     150 Here comes the directory listing.
@@ -60,35 +60,35 @@ The server will return:
     ....
     226 Directory send OK.
 
-![List directories](https://www.howtoforge.com/images/how-to-use-ftp-in-the-linux-shell/big/listing.png)
+![打印目录](https://www.howtoforge.com/images/how-to-use-ftp-in-the-linux-shell/big/listing.png)
 
-#### Changing Directories: ####
+#### 改变目录: ####
 
-To change the directory we can type:
+改变目录可以输入：
 
     ftp> cd directory
 
-The server will return:
+服务器将会返回：
 
     250 Directory succesfully changed.
 
-![Change a directory in FTP.](https://www.howtoforge.com/images/how-to-use-ftp-in-the-linux-shell/big/directory.png)
+![FTP中改变目录](https://www.howtoforge.com/images/how-to-use-ftp-in-the-linux-shell/big/directory.png)
 
-### Step 4: Downloading files with FTP ###
+### 步骤 4: 使用FTP下载文件 ###
 
-Before downloading a file, we should set the local ftp file download directory by using 'lcd' command:
+在下载一个文件之前，我们首先需要使用lcd命令设定本地接受目录位置。
 
     lcd /home/user/yourdirectoryname
 
-If you dont specify the download directory, the file will be downloaded to the current directory where you were at the time you started the FTP session.
+如果你不指定下载目录，文件将会下载到你登录FTP时候的工作目录。
 
-Now, we can use the command 'get' command to download a file, the usage is:
+现在，我们可以使用命令get来下载文件，比如：
 
     get file
 
-The file will be downloaded to the directory previously set with the 'lcd' command.
+文件会保存在使用lcd命令设置的目录位置。
 
-The server will return the next message:
+服务器返回消息：
 
     local: file remote: file
     200 PORT command successful. Consider using PASV.
@@ -96,31 +96,31 @@ The server will return the next message:
     226 File send OK.
     XXX bytes received in x.xx secs (x.xxx MB/s).
 
-![Download a file with FTP.](https://www.howtoforge.com/images/how-to-use-ftp-in-the-linux-shell/big/gettingfile.png)
+![使用FTP下载文件](https://www.howtoforge.com/images/how-to-use-ftp-in-the-linux-shell/big/gettingfile.png)
 
-To download several files we can use wildcards. In this example I will download all files with the .xls file extension.
+下载多个文件可以使用通配符。例如，下面这个例子我打算下载所有以.xls结尾的文件。
 
     mget *.xls
 
-### Step 5: Uploading Files with FTP ###
+### 步骤 5: 使用FTP上传文件 ###
 
-We can upload files that are in the local directory where we made the FTP connection.
+完成FTP连接后，FTP同样可以上传文件
 
-To upload a file, we can use 'put' command.
+使用put命令上传文件：
 
     put file
 
-When the file that you want to upload is not in the local directory, you can use the absolute path starting with "/" as well:
+当文件不再当前本地目录下的时候，可以使用绝对路径：
 
     put /path/file
 
-To upload several files we can use the mput command similar to the mget example from above:
+同样，可以上传多个文件：
 
     mput *.xls
 
-### Step 6: Closing the FTP connection ###
+### 步骤 6: 关闭FTP连接 ###
 
-Once we have done the FTP work, we should close the connection for security reasons. There are three commands that we can use to close the connection:
+完成FTP工作后，为了安全起见需要关闭连接。有三个命令可以关闭连接：
 
     bye
     
@@ -128,13 +128,13 @@ Once we have done the FTP work, we should close the connection for security reas
     
     quit
 
-Any of them will disconnect our PC from the FTP server and will return:
+任意一个命令可以断开FTP服务器连接并返回：
 
     221 Goodbye
 
 ![](https://www.howtoforge.com/images/how-to-use-ftp-in-the-linux-shell/big/goodbye.png)
 
-If you need some additional help, once you are connected to the FTP server, type 'help' and this will show you all the available FTP commands.
+需要更多帮助，在使用ftp命令连接到服务器后，可以使用“help”获得更多帮助。
 
 ![](https://www.howtoforge.com/images/how-to-use-ftp-in-the-linux-shell/big/helpwindow.png)
 
@@ -142,7 +142,7 @@ If you need some additional help, once you are connected to the FTP server, type
 
 via: https://www.howtoforge.com/tutorial/how-to-use-ftp-on-the-linux-shell/
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[VicYu](http://vicyu.net)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
