@@ -1,3 +1,5 @@
+translating by Ezio
+
 Data Structures in the Linux Kernel
 ================================================================================
 
