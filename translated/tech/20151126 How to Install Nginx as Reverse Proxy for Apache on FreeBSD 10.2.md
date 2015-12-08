@@ -1,4 +1,4 @@
-﻿Translated by KnightJoker
+﻿
 如何在FreeBSD 10.2上安装Nginx作为Apache的反向代理
 ================================================================================
 Nginx是一款免费的，开源的HTTP和反向代理服务器, 以及一个代理POP3/IMAP的邮件服务器. Nginx是一款高性能的web服务器，其特点是丰富的功能，简单的结构以及低内存的占用. 第一个版本由 Igor    Sysoev在2002年发布,然而到现在为止很多大的科技公司都在使用，包括 Netflix, Github, Cloudflare, WordPress.com等等
@@ -319,7 +319,7 @@ Nginx 是最广泛的 HTTP 和反向代理的服务器. 拥有丰富的高性能
 via: http://linoxide.com/linux-how-to/install-nginx-reverse-proxy-apache-freebsd-10-2/
 
 作者：[Arul][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[KnightJoker](https://github.com/KnightJoker)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
