@@ -1,3 +1,4 @@
+translation by strugglingyouth
 Install Wetty on Centos/RHEL 6.X
 ================================================================================
 ![](http://www.unixmen.com/wp-content/uploads/2015/11/Terminal.png)
