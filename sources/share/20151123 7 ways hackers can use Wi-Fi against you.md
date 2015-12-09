@@ -28,7 +28,7 @@ You might think that no one needs to be warned against banking online using free
 
 ### 不使用防火墙 ###
 
-A firewall is your first line of defense against malicious intruders. It’s meant to let good traffic through your computer on a network and keep hackers and malware out. You should turn it off only when your antivirus software has its own firewall.
+防火墙是你的第一道抵御恶意入侵的防线，它能有效地让你的电脑网络通畅并阻挡黑客和恶意软件。你应该时刻开启它除非你的杀毒软件有它自己的防火墙。
 
 ![Image courtesy Thinkstock](http://core0.staticworld.net/images/article/2015/11/5_browsing-unencrypted-sites-100626678-orig.jpg)
 
