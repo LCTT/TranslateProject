@@ -1,3 +1,4 @@
+sg translating
 eSpeak: Text To Speech Tool For Linux
 ================================================================================
 ![Text to speech tool in Linux](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/11/Text-to-speech-Linux.jpg)
