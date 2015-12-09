@@ -1,3 +1,4 @@
+ictlyh Translating
 Assign Multiple IP Addresses To One Interface On Ubuntu 15.10
 ================================================================================
 Some times you might want to use more than one IP address for your network interface card. What will you do in such cases? Buy an extra network card and assign new IP? No, It’s not necessary(at least in the small networks). We can now assign multiple IP addresses to one interface on Ubuntu systems. Curious to know how? Well, Follow me, It is not that difficult.
