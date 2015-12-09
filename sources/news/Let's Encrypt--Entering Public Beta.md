@@ -1,3 +1,4 @@
+translating wi-cuckoo
 Let's Encrypt:Entering Public Beta
 ================================================================================
 We’re happy to announce that Let’s Encrypt has entered Public Beta. Invitations are no longer needed in order to get free
