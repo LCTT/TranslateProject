@@ -1,4 +1,4 @@
-Search Multiple Words / String Pattern Using grep Command
+(翻译中 by runningwater)Search Multiple Words / String Pattern Using grep Command
 ================================================================================
 How do I search multiple strings or words using the grep command? For example I'd like to search word1, word2, word3 and so on within /path/to/file. How do I force grep to search multiple words?
 
@@ -33,7 +33,7 @@ Fig.01: Linux / Unix egrep Command Search Multiple Words Demo Output
 via: http://www.cyberciti.biz/faq/searching-multiple-words-string-using-grep/
 
 作者：Vivek Gite
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
