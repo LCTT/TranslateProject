@@ -10,13 +10,13 @@ Wi-Fi — 既然方便又危险的东西！这里给大家介绍一下通过Wi-F
 
 ### 利用免费热点 ###
 
-它们似乎无处不在，而且它们的数量会在[下一个四年里增加四倍][1]。但是它们当中很多都是不值得信任的But many of them are untrustworthy, created just so your login credentials, to email or even more sensitive accounts, 都能被黑客用一款名叫“sniffers”的软件截获 — 这款软件能截获到任何你通过该连接提交的信息。The best defense against sniffing hackers is to use a VPN (virtual private network). A VPN keeps your private data protected because it encrypts what you input.
+它们似乎无处不在，而且它们的数量会在[下一个四年里增加四倍][1]。但是它们当中很多都是不值得信任的，从你的登录凭证、email甚至更加敏感的账户，都能被黑客用一款名叫“sniffers”的软件截获 — 这款软件能截获到任何你通过该连接提交的信息。防止被黑客盯上的最好办法就是使用VPN(virtual private network)，它能保护你的数据隐私它会加密你所输入的信息。
 
 ![Image courtesy Thinkstock](http://core0.staticworld.net/images/article/2015/11/2_online-banking-100626675-orig.jpg)
 
 ### 网上银行 ###
 
-You might think that no one needs to be warned against banking online using free Wi-Fi, but cybersecurity firm Kaspersky Lab says that [more than 100 banks worldwide have lost $900 million][2] from cyberhacking, so it would seem that a lot of people are doing it. If you want to use the free Wi-Fi in a coffee shop because you’re confident it will be legitimate, confirm the exact network name with the barista. It’s pretty easy for [someone else in the shop with a router to set up an open connection][3] with a name that seems like it would be the name of the shop’s Wi-Fi.
+你可能认为没有人需要自己被提醒不要使用免费Wi-Fi来操作网上银行, 但网络安全厂商卡巴斯基实验室表示[全球超过100家银行因为网络黑客而损失9亿美元][2]，由此可见还是有很多人因此受害。If you want to use the free Wi-Fi in a coffee shop because you’re confident it will be legitimate, confirm the exact network name with the barista. It’s pretty easy for [someone else in the shop with a router to set up an open connection][3] with a name that seems like it would be the name of the shop’s Wi-Fi.
 
 ![Image courtesy Thinkstock](http://core0.staticworld.net/images/article/2015/11/3_keeping-wifi-on-100626676-orig.jpg)
 
