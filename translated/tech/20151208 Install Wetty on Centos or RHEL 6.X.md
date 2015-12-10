@@ -1,60 +1,60 @@
-translation by strugglingyouth
-Install Wetty on Centos/RHEL 6.X
+
+在 Centos/RHEL 6.X 上安装 Wetty
 ================================================================================
 ![](http://www.unixmen.com/wp-content/uploads/2015/11/Terminal.png)
 
-What is Wetty?
+Wetty 是什么?
 
-As a system administrator, you probably connect to remote servers using a program such as GNOME Terminal (or the like) if you’re on a Linux desktop, or a SSH client such as Putty if you have a Windows machine, while you perform other tasks like browsing the web or checking your email.
+作为系统管理员，如果你是在 Linux 桌面下，你可能会使用一个软件来连接远程服务器，像 GNOME 终端（或类似的），如果你是在 Windows 下，你可能会使用像 Putty 这样的 SSH 客户端来连接，并同时可以在浏览器中查收邮件等做其他事情。
 
-### Step 1: Install epel repo ###
+### 第1步: 安装 epel 源 ###
 
     # wget http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
     # rpm -ivh epel-release-6-8.noarch.rpm
 
-### Step 2: Install dependencies ###
+### 第2步：安装依赖 ###
 
     # yum install epel-release git nodejs npm -y
 
-### Step 3: After installing these dependencies, clone the GitHub repository ###
+### 第3步：在安装完依赖后，克隆 GitHub 仓库 ###
 
     # git clone https://github.com/krishnasrinivas/wetty
 
-### Step 4: Run Wetty ###
+### 第4步：运行 Wetty ###
 
     # cd wetty
     # npm install
 
-### Step 5: Starting Wetty and Access Linux Terminal from Web Browser ###
+### 第5步：从 Web 浏览器启动 Wetty 并访问 Linux 终端 ###
 
     # node app.js -p 8080
 
-### Step 6: Wetty through HTTPS ###
+### 第6步：为 Wetty 安装 HTTPS 证书 ###
 
     # openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 365 -nodes (complete this)
 
-### Step 7: launch Wetty via HTTPS ###
+### Step 7: 通过 HTTPS 来使用 Wetty ###
 
     # nohup node app.js --sslkey key.pem --sslcert cert.pem -p 8080 &
 
-### Step 8: Add an user for wetty ###
+### Step 8: 为 wetty 添加一个用户 ###
 
     # useradd <username>
     # Passwd <username>
 
-### Step 9: Access wetty ###
+### 第9步：访问 wetty ###
 
     http://Your_IP-Address:8080
     give the credential have created before for wetty and access
 
-Enjoy
+到此结束！
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/install-wetty-centosrhel-6-x/
 
 作者：[Debojyoti Das][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[strugglingyouth](https://github.com/strugglingyouth)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
