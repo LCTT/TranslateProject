@@ -1,8 +1,9 @@
-Learn with Linux: Physics Simulation
+[bazz222222]
+Linux 学习系列之物理模拟
 ================================================================================
 ![](https://www.maketecheasier.com/assets/uploads/2015/07/physics-fetured.jpg)
 
-This article is part of the [Learn with Linux][1] series:
+[Linux 学习系列][1]的所有文章：
 
 - [Learn with Linux: Learning to Type][2]
 - [Learn with Linux: Physics Simulation][3]
