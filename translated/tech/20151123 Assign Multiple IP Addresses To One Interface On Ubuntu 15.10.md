@@ -1,19 +1,18 @@
-ictlyh Translating
-Assign Multiple IP Addresses To One Interface On Ubuntu 15.10
+在 Ubuntu 15.10 上为单个网卡设置多个 IP 地址
 ================================================================================
-Some times you might want to use more than one IP address for your network interface card. What will you do in such cases? Buy an extra network card and assign new IP? No, It’s not necessary(at least in the small networks). We can now assign multiple IP addresses to one interface on Ubuntu systems. Curious to know how? Well, Follow me, It is not that difficult.
+有时候你可能想在你的网卡上使用多个 IP 地址。遇到这种情况你会怎么办呢？买一个新的网卡并分配一个新的 IP？不，这没有必要（至少在小网络中）。现在我们可以在 Ubuntu 系统中为一个网卡分配多个 IP 地址。想知道怎么做到的？跟着我往下看，其实并不难。
 
-This method will work on Debian and it’s derivatives too.
+这个方法也适用于 Debian 以及它的衍生版本。
 
-### Add additional IP addresses temporarily ###
+### 临时添加 IP 地址 ###
 
-First, let us find the IP address of the network card. In my Ubuntu 15.10 server, I use only one network card.
+首先，让我们找到网卡的 IP 地址。在我的 Ubuntu 15.10 服务器版中，我只使用了一个网卡。
 
-Run the following command to find out the IP address:
+运行下面的命令找到 IP 地址：
 
     sudo ip addr
 
-**Sample output:**
+**事例输出：**
 
     1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default 
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -28,11 +27,11 @@ Run the following command to find out the IP address:
     inet6 fe80::a00:27ff:fe2a:34e/64 scope link 
     valid_lft forever preferred_lft forever
 
-Or
+或
 
     sudo ifconfig
 
-**Sample output:**
+**事例输出：**
 
     enp0s3 Link encap:Ethernet HWaddr 08:00:27:2a:03:4b 
     inet addr:192.168.1.103 Bcast:192.168.1.255 Mask:255.255.255.0
@@ -51,19 +50,19 @@ Or
     collisions:0 txqueuelen:0 
     RX bytes:38793 (38.7 KB) TX bytes:38793 (38.7 KB)
 
-As you see in the above output, my network card name is **enp0s3**, and its IP address is **192.168.1.103**.
+正如你在上面看到的，我的网卡名称是 **enp0s3**，它的 IP 地址是 **192.168.1.103**。
 
-Now let us add an additional IP address, for example **192.168.1.104**, to the Interface card.
+现在让我们来为网卡添加一个新的 IP 地址，例如说 **192.168.1.104**。
 
-Open your Terminal and run the following command to add additional IP.
+打开你的终端并运行下面的命令添加额外的 IP。
 
     sudo ip addr add 192.168.1.104/24 dev enp0s3
 
-Now, let us check if the IP is added using command:
+用命令检查是否启用了新的 IP：
 
     sudo ip address show enp0s3
 
-**Sample output:**
+**样例输出：**
 
     2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
     link/ether 08:00:27:2a:03:4e brd ff:ff:ff:ff:ff:ff
@@ -74,13 +73,13 @@ Now, let us check if the IP is added using command:
     inet6 fe80::a00:27ff:fe2a:34e/64 scope link 
     valid_lft forever preferred_lft forever
 
-Similarly, you can add as many IP addresses as you want.
+类似地，你可以添加想要的任意多的 IP 地址。
 
-Let us ping the IP address to verify it.
+让我们 ping 一下这个 IP 地址验证一下。
 
     sudo ping 192.168.1.104
 
-**Sample output:**
+**样例输出**
 
     PING 192.168.1.104 (192.168.1.104) 56(84) bytes of data.
     64 bytes from 192.168.1.104: icmp_seq=1 ttl=64 time=0.901 ms
@@ -88,17 +87,17 @@ Let us ping the IP address to verify it.
     64 bytes from 192.168.1.104: icmp_seq=3 ttl=64 time=0.521 ms
     64 bytes from 192.168.1.104: icmp_seq=4 ttl=64 time=0.524 ms
 
-Yeah, It’s working!!
+好极了，它能工作！
 
-To remove the IP, just run:
+要删除 IP，只需要运行：
 
     sudo ip addr del 192.168.1.104/24 dev enp0s3
 
-Let us check if it is removed.
+再检查一下是否删除了 IP。
 
     sudo ip address show enp0s3
 
-**Sample output:**
+**样例输出：**
 
     2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
     link/ether 08:00:27:2a:03:4e brd ff:ff:ff:ff:ff:ff
@@ -107,19 +106,19 @@ Let us check if it is removed.
     inet6 fe80::a00:27ff:fe2a:34e/64 scope link 
     valid_lft forever preferred_lft forever
 
-See, It’s gone!!
+可以看到已经没有了！！
 
-Well, as you may know, the changes will lost after you reboot your system. How do I make it permanent? That’s easy too.
+也许你已经知道，你重启系统后会丢失这些设置。那么怎么设置才能永久有效呢？这也很简单。
 
-### Add additional IP addresses permanently ###
+### 添加永久 IP 地址 ###
 
-The network card configuration file of your Ubuntu system is **/etc/network/interfaces**.
+Ubuntu 系统的网卡配置文件是 **/etc/network/interfaces**。
 
-Let us check the details of the above file.
+让我们来看看上面文件的具体内容。
 
     sudo cat /etc/network/interfaces
 
-**Sample output:**
+**输出样例：**
 
     # This file describes the network interfaces available on your system
     # and how to activate them. For more information, see interfaces(5).
@@ -131,15 +130,15 @@ Let us check the details of the above file.
     auto enp0s3
     iface enp0s3 inet dhcp
 
-As you see in the above output, the Interface is DHCP enabled.
+正如你在上面输出中看到的，网卡启用了 DHCP。
 
-Okay, now we will assign an additional address, for example **192.168.1.104/24**.
+现在，让我们来分配一个额外的地址，例如 **192.168.1.104/24**。
 
-Edit file **/etc/network/interfaces**:
+编辑 **/etc/network/interfaces**：
 
     sudo nano /etc/network/interfaces
 
-Add additional IP address as shown in the black letters.
+按照黑色字体标注的添加额外的 IP 地址。
 
     # This file describes the network interfaces available on your system
     # and how to activate them. For more information, see interfaces(5).
@@ -153,13 +152,13 @@ Add additional IP address as shown in the black letters.
     iface enp0s3 inet static
      address 192.168.1.104/24
 
-Save and close the file.
+保存并关闭文件。
 
-Run the following file to take effect the changes without rebooting.
+无需重启运行下面的命令使更改生效。
 
     sudo ifdown enp0s3 && sudo ifup enp0s3
 
-**Sample output:**
+**样例输出：**
 
     Killed old client process
     Internet Systems Consortium DHCP Client 4.3.1
@@ -183,13 +182,13 @@ Run the following file to take effect the changes without rebooting.
     DHCPACK of 192.168.1.103 from 192.168.1.1
     bound to 192.168.1.103 -- renewal in 35146 seconds.
 
-**Note**: It is **very important** to run the above two commands into **one** line if you are remoting into the server because the first one will drop your connection. Given in this way the ssh-session will survive.
+**注意**：如果你从远程连接到服务器，把上面的两个命令放到**一行**中**非常重要**，因为第一个命令会断掉你的连接。而采用这种方式可以存活你的 ssh 会话。
 
-Now, let us check if IP is added using command:
+现在，让我们用下面的命令来检查一下是否添加了新的 IP：
 
     sudo ip address show enp0s3
 
-**Sample output:**
+**输出样例：**
 
     2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
     link/ether 08:00:27:2a:03:4e brd ff:ff:ff:ff:ff:ff
@@ -200,13 +199,13 @@ Now, let us check if IP is added using command:
     inet6 fe80::a00:27ff:fe2a:34e/64 scope link 
     valid_lft forever preferred_lft forever
 
-Cool! Additional IP has been added.
+很好！我们已经添加了额外的 IP。
 
-Well then let us ping the IP address to verify.
+再次 ping IP 地址进行验证。
 
     sudo ping 192.168.1.104
 
-**Sample output:**
+**样例输出：**
 
     PING 192.168.1.104 (192.168.1.104) 56(84) bytes of data.
     64 bytes from 192.168.1.104: icmp_seq=1 ttl=64 time=0.137 ms
@@ -214,21 +213,21 @@ Well then let us ping the IP address to verify.
     64 bytes from 192.168.1.104: icmp_seq=3 ttl=64 time=0.054 ms
     64 bytes from 192.168.1.104: icmp_seq=4 ttl=64 time=0.067 ms
 
-Voila! It’s working. That’s it.
+好极了！它能正常工作。就是这样。
 
-Want to know how to add additional IP addresses on CentOS/RHEL/Scientific Linux/Fedora systems, check the following link.
+想知道怎么给 CentOS/RHEL/Scientific Linux/Fedora 系统添加额外的 IP 地址，可以点击下面的链接。
 
 注：此篇文章以前做过选题：20150205 Linux Basics--Assign Multiple IP Addresses To Single Network Interface Card On CentOS 7.md
 - [Assign Multiple IP Addresses To Single Network Interface Card On CentOS 7][1]
 
-Happy weekend!
+周末愉快！
 
 --------------------------------------------------------------------------------
 
 via: http://www.unixmen.com/assign-multiple-ip-addresses-to-one-interface-on-ubuntu-15-10/
 
 作者：[SK][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ictlyh](http://mutouxiaogui.cn/blog/)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
