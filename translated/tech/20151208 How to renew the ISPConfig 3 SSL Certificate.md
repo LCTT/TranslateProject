@@ -1,20 +1,20 @@
-How to renew the ISPConfig 3 SSL Certificate
+如何更新ISPConfig 3 SSL证书
 ================================================================================
-This tutorial describes the steps to renew the SSL Certificate of the ISPConfig 3 control panel. There are two alternative ways to achieve that:
+本教程描述了如何再ISPConfig 3控制面板中更新SSL证书。有两个可选的方法：
 
-- Create a new OpenSSL Certificate and CSR on the command line with OpenSSL.
-- Renew the SSL Certificate with the ISPConfig updater
+- 用OpenSSL创建一个新的OpenSSL证书和CSR。
+- 用ISPConfig updater更新SSL证书
 
-I'll start with the manual way to renew the ssl cert.
+我将会用手工的方法更新ssl证书。
 
-### 1) Create a new ISPConfig 3 SSL Certificate with OpenSSL ###
+### 1）用OpenSSL创建一个新的ISPConfig 3 SSL 证书 ###
 
-Login to your server on the shell as root user. Before we create a new SSL Cert, backup the current ones. SSL Certs are security sensitive so I'll store the backup in the /root/ folder.
+用root用户登录你的服务器。在创建一个新的SSL证书之前，备份现有的。SSL证书是安全敏感的，因此我将它存储在/root/目录下。
 
     tar pcfz /root/ispconfig_ssl_backup.tar.gz /usr/local/ispconfig/interface/ssl
     chmod 600 /root/ispconfig_ssl_backup.tar.gz
 
-> Now create a new SSL Certificate key, Certificate Request (csr) and a self signed Certificate.
+> 现在创建一个新的SSL证书密钥，证书请求（csr）和自签发证书。
 
     cd /usr/local/ispconfig/interface/ssl
     openssl genrsa -des3 -out ispserver.key 4096
@@ -25,14 +25,13 @@ Login to your server on the shell as root user. Before we create a new SSL Cert,
     mv ispserver.key ispserver.key.secure
     mv ispserver.key.insecure ispserver.key
 
-Restart Apache to load the new SSL Certificate.
+重启apache来加载新的SSL证书
 
     service apache2 restart
 
-### 2) Renew the SSL Certificate with the ISPConfig installer ###
+### 2）用ISPConfig安装器来更新SSL证书 ###
 
-The alternative way to get a new SSL Certificate is to use the ISPConfig update script.
-Download ISPConfig to the /tmp folder, unpack the archive and start the update script.
+另一个获取新的SSL证书的替代方案是使用ISPConfig更新脚本。下载ISPConfig到/tmp目录下，解压包并运行脚本。
 
     cd /tmp
     wget http://www.ispconfig.org/downloads/ISPConfig-3-stable.tar.gz
@@ -40,18 +39,18 @@ Download ISPConfig to the /tmp folder, unpack the archive and start the update s
     cd ispconfig3_install/install
     php -q update.php
 
-The update script will ask the following question during update:
+更新脚本会在更新时询问下面的额问题：
 
     Create new ISPConfig SSL certificate (yes,no) [no]:
 
-Answer "yes" here and the SSL Certificate creation dialog will start.
+这里回答“yes”，SSL证书创建对话框就会启动。
 
 --------------------------------------------------------------------------------
 
 via: http://www.faqforge.com/linux/how-to-renew-the-ispconfig-3-ssl-certificate/
 
 作者：[Till][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
