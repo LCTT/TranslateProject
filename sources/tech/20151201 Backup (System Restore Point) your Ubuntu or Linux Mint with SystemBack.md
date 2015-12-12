@@ -1,3 +1,5 @@
+Translating by DongShuaike
+
 Backup (System Restore Point) your Ubuntu/Linux Mint with SystemBack
 ================================================================================
 System Restore is must have feature for any OS that allows the user to revert their computer's state (including system files, installed applications, and system settings) to that of a previous point in time, which can be used to recover from system malfunctions or other problems.
