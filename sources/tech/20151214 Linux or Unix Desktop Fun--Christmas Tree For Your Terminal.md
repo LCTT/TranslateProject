@@ -1,3 +1,4 @@
+sg translating
 Linux / Unix Desktop Fun: Christmas Tree For Your Terminal
 ================================================================================
 Let us create Linux or Unix console Christmas tree just for fun and profit. First, you need to install a Perl module called Acme::POE::Tree. It is an animated Christmas tree module. I've tested this on Linux, OS X and Unix-like system.
