@@ -1,6 +1,7 @@
 如何在 CentOS 7.x 上安装 Zephyr 测试管理工具 
 ================================================================================
-测试管理工具包括作为测试人员需要的任何东西。测试管理工具用来记录测试执行的结果、计划测试活动以及报告质量保证活动的情况。在这篇文章中我们会向你介绍如何配置 Zephyr 测试管理工具，它包括了管理测试活动需要的所有东西，不需要单独安装测试活动所需要的应用程序从而降低测试人员不必要的麻烦。一旦你安装完它，你就看可以用它跟踪 bug、缺陷，和你的团队成员协作项目任务，因为你可以轻松地共享和访问测试过程中多个项目团队的数据。
+
+测试管理（Test Management）指测试人员所需要的任何的所有东西。测试管理工具用来记录测试执行的结果、计划测试活动以及汇报质量控制活动的情况。在这篇文章中我们会向你介绍如何配置 Zephyr 测试管理工具，它包括了管理测试活动需要的所有东西，不需要单独安装测试活动所需要的应用程序从而降低测试人员不必要的麻烦。一旦你安装完它，你就看可以用它跟踪 bug 和缺陷，和你的团队成员协作项目任务，因为你可以轻松地共享和访问测试过程中多个项目团队的数据。
 
 ### Zephyr 要求 ###
 
@@ -19,21 +20,21 @@
 </tr>
 <tr>
 <td width="140"><strong>Packages</strong></td>
-<td width="312">JDK 7 or above ,&nbsp; Oracle JDK 6 update</td>
-<td width="209">No Prior Tomcat, MySQL installed</td>
+<td width="312">JDK 7 或更高 ,&nbsp; Oracle JDK 6 update</td>
+<td width="209">没有事先安装的  Tomcat 和 MySQL</td>
 </tr>
 <tr>
 <td width="140"><strong>RAM</strong></td>
 <td width="312">4 GB</td>
-<td width="209">Preferred 8 GB</td>
+<td width="209">推荐 8 GB</td>
 </tr>
 <tr>
 <td width="140"><strong>CPU</strong></td>
-<td width="521" colspan="2">2.0 GHZ or Higher</td>
+<td width="521" colspan="2">2.0 GHZ 或更高</td>
 </tr>
 <tr>
 <td width="140"><strong>Hard Disk</strong></td>
-<td width="521" colspan="2">30 GB , Atleast 5GB must be free</td>
+<td width="521" colspan="2">30 GB , 至少 5GB </td>
 </tr>
 </tbody>
 </table>
@@ -48,8 +49,6 @@
 
     [root@centos-007 ~]# yum install java-1.7.0-openjdk-1.7.0.79-2.5.5.2.el7_1
 
-----------
-
     [root@centos-007 ~]# yum install java-1.7.0-openjdk-devel-1.7.0.85-2.6.1.2.el7_1.x86_64
 
 安装完 java 和它的所有依赖后，运行下面的命令设置 JAVA_HOME 环境变量。
@@ -61,8 +60,6 @@
 
     [root@centos-007 ~]# java –version
 
-----------
-
     java version "1.7.0_79"
     OpenJDK Runtime Environment (rhel-2.5.5.2.el7_1-x86_64 u79-b14)
     OpenJDK 64-Bit Server VM (build 24.79-b02, mixed mode)
@@ -71,7 +68,7 @@
 
 ### 安装 MySQL 5.6.x ###
 
-如果的机器上有其它的 MySQL，建议你先卸载它们并安装这个版本，或者升级它们的模式到指定的版本。因为 Zephyr 前提要求这个指定的主要/最小 MySQL （5.6.x）版本要有 root 用户名。
+如果的机器上有其它的 MySQL，建议你先卸载它们并安装这个版本，或者升级它们的模式（schemas）到指定的版本。因为 Zephyr 前提要求这个指定的 5.6.x 版本的 MySQL ，要有 root 用户名。
 
 可以按照下面的步骤在 CentOS-7.1 上安装 MySQL 5.6 ：
 
@@ -93,10 +90,7 @@
     [root@centos-007 ~]# service mysqld start
     [root@centos-007 ~]# service mysqld status
 
-对于全新安装的 MySQL 服务器，MySQL root 用户的密码为空。
-为了安全起见，我们应该重置 MySQL root 用户的密码。
-
-用自动生成的空密码连接到 MySQL 并更改 root 用户密码。
+对于全新安装的 MySQL 服务器，MySQL root 用户的密码为空。为了安全起见，我们应该重置 MySQL root 用户的密码。用自动生成的空密码连接到 MySQL 并更改 root 用户密码。
 
     [root@centos-007 ~]# mysql
     mysql> SET PASSWORD FOR 'root'@'localhost' = PASSWORD('your_password');
@@ -224,7 +218,7 @@ via: http://linoxide.com/linux-how-to/setup-zephyr-tool-centos-7-x/
 
 作者：[Kashif Siddique][a]
 译者：[ictlyh](http://mutouxiaogui.cn/blog/)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
