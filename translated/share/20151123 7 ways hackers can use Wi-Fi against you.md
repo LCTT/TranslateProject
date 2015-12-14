@@ -16,7 +16,7 @@ Wi-Fi — 既然方便又危险的东西！这里给大家介绍一下通过Wi-F
 
 ### 网上银行 ###
 
-你可能认为没有人需要自己被提醒不要使用免费Wi-Fi来操作网上银行, 但网络安全厂商卡巴斯基实验室表示[全球超过100家银行因为网络黑客而损失9亿美元][2]，由此可见还是有很多人因此受害。If you want to use the free Wi-Fi in a coffee shop because you’re confident it will be legitimate, confirm the exact network name with the barista. It’s pretty easy for [someone else in the shop with a router to set up an open connection][3] with a name that seems like it would be the name of the shop’s Wi-Fi.
+你可能认为没有人需要自己被提醒不要使用免费Wi-Fi来操作网上银行, 但网络安全厂商卡巴斯基实验室表示[全球超过100家银行因为网络黑客而损失9亿美元][2]，由此可见还是有很多人因此受害。如果你真的想要在一家咖吧里使用免费真实的Wi-Fi，那么你应该向服务员确认网络名称。[在店里用路由器设置一个开放的无线连接][3]并将它的网络名称设置成店名是一件相当简单的事。
 
 ![Image courtesy Thinkstock](http://core0.staticworld.net/images/article/2015/11/3_keeping-wifi-on-100626676-orig.jpg)
 
@@ -34,13 +34,13 @@ Wi-Fi — 既然方便又危险的东西！这里给大家介绍一下通过Wi-F
 
 ### 浏览非加密网页 ###
 
-Sad to say, [55% of the Web’s top 1 million sites don’t offer encryption][5]. An unencrypted website allows all data transmissions to be viewed by the prying eyes of hackers. Your browser will indicate when a site is secure (you’ll see a gray padlock with Mozilla Firefox, for example, and a green lock icon with Chrome). But even a secure website can’t protect you from sidejackers, who can steal the cookies from a website you visited, whether it’s a valid site or not, through a public network.
+说起来很难过，[世界上排名前100万个网站中55%是不加密的][5]，一个未加密的网站则会让传输的数据暴露在黑客的眼下。如果一个网页是安全的，你的浏览器则会有标明(比如说火狐浏览器是一把绿色的挂锁、Chrome蓝旗则是个绿色的图标)。但是一个安全的网站不能让你免于被劫持的风险，它能通过公共网络从你访问过的网站上窃取cookies，无论是不是正当网站与否。 
 
 ![Image courtesy Thinkstock](http://core0.staticworld.net/images/article/2015/11/6_updating-security-software-100626679-orig.jpg)
 
 ### 不更新你的安全防护软件 ###
 
-If you want to ensure that your own network is well protected, upgrade the firmware of your router. All you have to do is go to your router’s administration page to check. Normally, you can download the newest firmware right from the manufacturer’s site.
+如果你想要确保你自己的网络是受保护的，就更新的路由器固件。你要做的就是进入你的路由器管理页面去检查，通常你能在厂商的官方网页上下载到最新的固件版本。
 
 ![Image courtesy Thinkstock](http://core0.staticworld.net/images/article/2015/11/7_securing-home-wifi-100626680-orig.jpg)
 
