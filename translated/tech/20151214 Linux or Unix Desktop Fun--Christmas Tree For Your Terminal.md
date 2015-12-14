@@ -1,15 +1,16 @@
-Linux / Unix Desktop Fun: Christmas Tree For Your Terminal
+Linux / Unix桌面之趣：终端上的圣诞树
 ================================================================================
-Let us create Linux or Unix console Christmas tree just for fun and profit. First, you need to install a Perl module called Acme::POE::Tree. It is an animated Christmas tree module. I've tested this on Linux, OS X and Unix-like system.
+给你的Linux或Unix控制台创造一棵圣诞树玩玩吧。在此之前，需要先安装一个Perl模块，命名为Acme::POE::Tree。这是一棵很喜庆的圣诞树，我已经在Linux、OSX和类Unix系统上验证过了。
 
-### Install Acme::POE::Tree ###
 
-The easiest way to install any perl module is to use the cpan (Comprehensive Perl Archive Network). Open the terminal application and type the following command to install Acme::POE::Tree:
+### 安装 Acme::POE::Tree ###
 
-    ## run as root ##
+安装perl模块最简单的办法就是使用cpan（Perl综合典藏网）。打开终端，把下面的指令敲进去便可安装Acme::POE::Tree。
+
+    ## 以root身份运行 ##
     perl -MCPAN -e 'install Acme::POE::Tree'
  
-**Sample outputs:**
+**案例输出：**
 
     Installing /home/vivek/perl5/man/man3/POE::NFA.3pm
     Installing /home/vivek/perl5/man/man3/POE::Kernel.3pm
@@ -42,21 +43,21 @@ The easiest way to install any perl module is to use the cpan (Comprehensive Per
       RCAPUTO/Acme-POE-Tree-1.022.tar.gz
       [dependencies] -- NA
 
-### Show Christmas tree in the shell ###
+### 在Shell中显示圣诞树 ###
 
-Simply type the following command:
+只需要在终端上运行以下命令：
  
     perl -MAcme::POE::Tree -e 'Acme::POE::Tree->new()->run()'
  
-**Sample outputs:**
+**案例输出**
 
 ![Gif 01: An animated christmas tree in Perl](http://s0.cyberciti.org/uploads/cms/2015/12/perl-tree.gif)
 
-Gif 01: An animated christmas tree in Perl
+Gif 01: 一棵用Perl写的喜庆圣诞树
 
-### Tree customization ###
+### 树的定制 ###
 
-Here is my tree.pl:
+以下是我的脚本文件tree.pl的内容：
 
     #!/usr/bin/perl
      
@@ -70,14 +71,14 @@ Here is my tree.pl:
     );
     $tree->run();
 
-Now can play with your tree modifying star_delay, run_for, and light_delay. And ,there you have it a a Christmas tree in your shell for fun.
+这样就可以通过修改star_delay、run_for和light_delay参数的值来自定义你的树了。一棵提供消遣的终端圣诞树就此诞生。
 
 --------------------------------------------------------------------------------
 
 via: http://www.cyberciti.biz/open-source/command-line-hacks/linux-unix-desktop-fun-christmas-tree-for-your-terminal/
 
 作者：Vivek Gite
-译者：[译者ID](https://github.com/译者ID)
+译者：[soooogreen](https://github.com/soooogreen)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
