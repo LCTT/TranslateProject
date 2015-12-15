@@ -1,3 +1,5 @@
+su-kaiyao translating
+
 Getting started with Docker by Dockerizing this Blog
 ======================
 >This article covers the basic concepts of Docker and how to Dockerize an application by creating a custom Dockerfile
