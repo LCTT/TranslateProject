@@ -1,16 +1,15 @@
-Translating by ZTinoZ
-How to Install Bugzilla with Apache and SSL on FreeBSD 10.2
+如何在FreeBSD 10.2上配置Apache和SSL并安装Bugzilla
 ================================================================================
 Bugzilla is open source web base application for bug tracker and testing tool, develop by mozilla project, and licensed under Mozilla Public License. It is used by high tech company like mozilla, redhat and gnome. Bugzilla was originally created by Terry Weissman in 1998. It written in perl, use MySQL as the database back-end. It is a server software designed to help you manage software development. Bugzilla has a lot of features, optimized database, excellent security, advanced search tool, integrated with email capabilities etc.
 
-In this tutorial we will install bugzilla 5.0 with apache for the web server, and enable SSL for it. Then install mysql51 as the database system on freebsd 10.2.
+在本教程中，我们将给web服务器安装bugzilla 5.0的apache并为它启用SSL，然后在freebsd 10.2上安装mysql51来作为数据库系统。
 
-#### Prerequisite ####
+#### 准备 ####
 
     FreeBSD 10.2 - 64bit.
     Root privileges.
 
-### Step 1 - Update System ###
+### 第一步 - 更新系统 ###
 
 Log in to the freebsd server with ssl login, and update the repository database :
 
@@ -18,7 +17,7 @@ Log in to the freebsd server with ssl login, and update the repository database 
     freebsd-update fetch
     freebsd-update install
 
-### Step 2 - Install and Configure Apache ###
+### 第二步 - 安装并配置Apache ###
 
 In this step we will install apache from the freebsd repositories with pkg command. Then configure apache by editing file "httpd.conf" on apache24 directory, configure apache to use SSL, and CGI support.
 
@@ -76,7 +75,7 @@ And before start apache, add it to start at boot time with sysrc command :
     sysrc apache24_enable=yes
     service apache24 start
 
-### Step 3 - Install and Configure MySQL Database ###
+### 第三步 - 安装并配置MySQL数据库 ###
 
 We will use mysql51 for the database back-end, and it is support for perl module for mysql. Install mysql51 with pkg command below :
 
@@ -129,7 +128,7 @@ Next, generate the certificate file with openssl command, then change the permis
     sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /usr/local/etc/apache24/ssl/bugzilla.key -out /usr/local/etc/apache24/ssl/bugzilla.crt
     chmod 600 *
 
-### Step 5 - Configure Virtualhost ###
+### 第五步 - 配置虚拟主机 ###
 
 We will install bugzilla on directory "/usr/local/www/bugzilla", so we must create new virtualhost configuration for it.
 
@@ -193,7 +192,7 @@ Now test the apache configuration with "apachectl" command and restart it :
     apachectl configtest
     service apache24 restart
 
-### Step 6 - Install Bugzilla ###
+### 第六步 - 安装Bugzilla ###
 
 We can install bugzilla manually by downloading the source, or install it from freebsd repository. In this step we will install bugzilla from freebsd repository with pkg command :
 
@@ -251,7 +250,7 @@ Bugzilla admin panel.
 
 ![Bugzilla Admin Page](http://blog.linoxide.com/wp-content/uploads/2015/12/Bugzilla-Admin-Page.png)
 
-### Conclusion ###
+### 结论 ###
 
 Bugzilla is web based application help you to manage the software development. It is written in perl and use MySQL as the database system. Bugzilla used by mozilla, redhat, gnome etc for help their software development. Bugzilla has a lot of features and easy to configure and install.
 
@@ -260,7 +259,7 @@ Bugzilla is web based application help you to manage the software development. I
 via: http://linoxide.com/tools/install-bugzilla-apache-ssl-freebsd-10-2/
 
 作者：[Arul][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ZTinoZ](https://github.com/ZTinoZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
