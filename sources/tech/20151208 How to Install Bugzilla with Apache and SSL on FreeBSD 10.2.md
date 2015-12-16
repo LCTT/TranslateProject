@@ -1,13 +1,13 @@
 如何在FreeBSD 10.2上配置Apache和SSL并安装Bugzilla
 ================================================================================
-Bugzilla is open source web base application for bug tracker and testing tool, develop by mozilla project, and licensed under Mozilla Public License. It is used by high tech company like mozilla, redhat and gnome. Bugzilla was originally created by Terry Weissman in 1998. It written in perl, use MySQL as the database back-end. It is a server software designed to help you manage software development. Bugzilla has a lot of features, optimized database, excellent security, advanced search tool, integrated with email capabilities etc.
+Bugzilla是一款bug跟踪系统和测试工具，它基于web且开源，由mozilla计划开发并由Mozilla公共许可证授权。它经常被一些高科技公司如mozilla、红帽公司和gnome使用。Bugzilla起初由Terry Weissman在1998年创立，它用perl语言编写，用MySQL作为后端数据库。它是一款旨在帮助管理软件开发的服务器软件，它功能丰富、高优化度的数据库、卓越的安全性、高级的搜索工具、整合邮件功能等等。
 
 在本教程中，我们将给web服务器安装bugzilla 5.0的apache并为它启用SSL，然后在freebsd 10.2上安装mysql51来作为数据库系统。
 
 #### 准备 ####
 
-    FreeBSD 10.2 - 64bit.
-    Root privileges.
+    FreeBSD 10.2 - 64位
+    Root权限
 
 ### 第一步 - 更新系统 ###
 
