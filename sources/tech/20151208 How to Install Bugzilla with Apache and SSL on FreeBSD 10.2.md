@@ -2,7 +2,7 @@
 ================================================================================
 Bugzilla是一款bug跟踪系统和测试工具，它基于web且开源，由mozilla计划开发并由Mozilla公共许可证授权。它经常被一些高科技公司如mozilla、红帽公司和gnome使用。Bugzilla起初由Terry Weissman在1998年创立，它用perl语言编写，用MySQL作为后端数据库。它是一款旨在帮助管理软件开发的服务器软件，它功能丰富、高优化度的数据库、卓越的安全性、高级的搜索工具、整合邮件功能等等。
 
-在本教程中，我们将给web服务器安装bugzilla 5.0的apache并为它启用SSL，然后在freebsd 10.2上安装mysql51来作为数据库系统。
+在本教程中，我们将给web服务器安装bugzilla 5.0的apache并为它启用SSL，然后在freebsd 10.2上安装mysql 5.1来作为数据库系统。
 
 #### 准备 ####
 
@@ -11,7 +11,7 @@ Bugzilla是一款bug跟踪系统和测试工具，它基于web且开源，由moz
 
 ### 第一步 - 更新系统 ###
 
-Log in to the freebsd server with ssl login, and update the repository database :
+用ssl登录freebsd服务器，并更新库：
 
     sudo su
     freebsd-update fetch
@@ -19,58 +19,58 @@ Log in to the freebsd server with ssl login, and update the repository database 
 
 ### 第二步 - 安装并配置Apache ###
 
-In this step we will install apache from the freebsd repositories with pkg command. Then configure apache by editing file "httpd.conf" on apache24 directory, configure apache to use SSL, and CGI support.
+在这一步我们将从freebsd库中用pkg命令安装apache，然后在apache24目录下编辑"httpd.conf"文件，启用SSL和CGI支持。
 
-Install apache with pkg command :
+用pkg命令安装apache：
 
     pkg install apache24
 
-Go to the apache directory and edit the file "httpd.conf" with nanao editor :
+进入apache目录并用nano编辑器编辑"httpd.conf"文件：
 
     cd /usr/local/etc/apache24
     nano -c httpd.conf
 
-Uncomment the list line below :
+反注释掉下面列出的行：
 
-    #Line 70
+    #第70行
     LoadModule authn_socache_module libexec/apache24/mod_authn_socache.so
 
-    #Line 89
+    #第89行
     LoadModule socache_shmcb_module libexec/apache24/mod_socache_shmcb.so
 
-    # Line 117
+    #第117行
     LoadModule expires_module libexec/apache24/mod_expires.so
 
-    #Line 141 to enabling SSL
+    #第141行，启用SSL
     LoadModule ssl_module libexec/apache24/mod_ssl.so
 
-    # Line 162 for cgi support
+    #第162行，支持cgi
     LoadModule cgi_module libexec/apache24/mod_cgi.so
 
-    # Line 174 to enable mod_rewrite
+    #第174行，启用mod_rewrite
     LoadModule rewrite_module libexec/apache24/mod_rewrite.so
 
-    # Line 219 for the servername configuration
+    #第219行，服务器名配置
     ServerName 127.0.0.1:80
 
-Save and exit.
+保存并退出。
 
-Next, we need to install mod perl from freebsd repository, and then enable it :
+接着，我们需要从freebsd库中安装mod perl，并启用它：
 
     pkg install ap24-mod_perl2
 
-To enable mod_perl, edit httpd.conf and add to the "Loadmodule" line below :
+启用mod_perl，编辑"httpd.conf"文件并添加"Loadmodule"行：
 
     nano -c httpd.conf
 
-Add line below :
+添加该行：
 
-    # Line 175
+    #第175行
     LoadModule perl_module libexec/apache24/mod_perl.so
 
-Save and exit.
+保存并退出。
 
-And before start apache, add it to start at boot time with sysrc command :
+在启用apache之前，用sysrc命令添加以下行来在引导的时候启动：
 
     sysrc apache24_enable=yes
     service apache24 start
