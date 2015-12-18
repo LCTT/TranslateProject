@@ -2,53 +2,51 @@ Learn with Linux: Learning to Type
 ================================================================================
 ![](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-featured.png)
 
-This article is part of the [Learn with Linux][1] series:
+[Linux 学习系列][1]的所有文章：
 
-- [Learn with Linux: Learning to Type][2]
-- [Learn with Linux: Physics Simulation][3]
-- [Learn with Linux: Learning Music][4]
-- [Learn with Linux: Two Geography Apps][5]
-- [Learn with Linux: Master Your Math with These Linux Apps][6]
+- [Linux 教学之教你练打字][2]
+- [Linux 教学之物理模拟][3]
+- [Linux 教学之教你玩音乐][4]
+- [Linux 教学之两款地理软件][5]
+- [Linux 教学之掌握数学][6]
 
-Linux offers great educational software and many excellent tools to aid students of all grades and ages in learning and practicing a variety of topics, often interactively. The “Learn with Linux” series of articles offers an introduction to a variety of educational apps and software.
+引言：Linux 提供大量的教学软件和工具，面向各个年级段以及年龄段，提供大量学科的练习实践，其中大多数是可以与用户进行交互的。本“Linux 教学”系列就来介绍一些教学软件。
 
-Typing is taken for granted by many people; today being keyboard savvy often comes as second nature. Yet how many of us still type with two fingers, even if ever so fast? Once typing was taught in schools, but slowly the art of ten-finger typing is giving way to two thumbs.
+很多人都要打字，操作键盘已经成为他们的第二天性。 但是这些人中有多少是依然使用两个手指头来快速地按键盘的？即使学校有教我们使用键盘的方法（LCTT 译注：呃。。。），我们也会慢慢地抛弃正确的打字姿势，养成只用两个大拇指玩键盘的习惯。
 
-The following two applications can help you master the keyboard so that your next thought does not get lost while your fingers catch up. They were chosen for their simplicity and ease of use. While there are some more flashy or better looking typing apps out there, the following two will get the basics covered and offer the easiest way to start out.
+下面要介绍的两款软件可以帮你掌控你的键盘，然后你就可以让你的手指跟上你的思维，然后你的思维就不会被打断了。当然，还有很多更炫更酷的软件可供选择，但本文所选的这两款是最简单、最容易上手的。
 
-### TuxType (or TuxTyping) ###
+### TuxType （或者叫 TuxTyping） ###
 
-TuxType is for children. Young students can learn how to type with ten fingers with simple lessons and practice their newly-acquired skills in fun games.
+TuxType 是给小孩子玩的。在一些有趣的游戏中，小学生们可以通过完成一些简单的练习来 get “10个手指打字”的新技能。
 
-Debian and derivatives (therefore all Ubuntu derivatives) should have TuxType in their standard repositories. To install simply type
+Debian 及其衍生版本（包含所有 Ubuntu 衍生版本）的标准软件仓库都有 TuxType，使用下面的命令安装：
 
     sudo apt-get install tuxtype
 
-The application starts with a simple menu screen featuring Tux and some really bad midi music (Fortunately the sound can be turned off easily with the icon in the lower left corner.).
+软件开始时有一个简单的 Tux 界面和一段难听的 midi 音乐，幸运的是你可以通过右下角的喇叭按钮把声音调低了。(LCTT译注：Tux 就是那只 Linux 吉祥物，Linus 说它的表情被设计成刚喝完啤酒后的满足感，见《Just For Fun》。)
 
 ![learntotype-tuxtyping-main](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-tuxtyping-main.jpg)
 
-The top two choices, “Fish Cascade” and “Comet Zap,” represent typing games, but to start learning you need to head over to the lessons.
+最开始处的两个选项“Fish Cascade”和“Comet Zap”是打字游戏，当你开始游戏时，你需要很投入到这个课程。
 
-There are forty simple built-in lessons to choose from. Each one of these will take a letter from the keyboard and make the student practice while giving visual hints, such as which finger to use.
+第3个选项为“Lession”,提供40多个简单的课程，每个课程会增加一个字母让你来练习，练习过程中会给出一些提示，比如应该用哪个手指按键盘上的字母。
 
 ![learntotype-tuxtyping-exd1](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-tuxtyping-exd1.jpg)
 
 ![learntotype-tuxtyping-exd2](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-tuxtyping-exd2.jpg)
 
-For more advanced practice, phrase typing is also available, although for some reason this is hidden under the options menu.
+更高级点的，你可以练习输入句子。不知道为什么，句子练习被放在“Options”选项里。（LCTT 译注：句子练习第一句是“The quick brown fox jumps over the lazy dog”，包含了26个英文字母的英文句子，可用于检测键盘是否坏键，也是练习英文打字的必备良药啊。）
 
 ![learntotype-tuxtyping-phrase](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-tuxtyping-phrase.jpg)
 
-The games are good for speed and accuracy as the player helps Tux catch falling fish
+这个游戏让玩家打出单词来帮助 Tux 吃到小鱼或者打击掉下来的流星，可以训练速度和精确度。
 
 ![learntotype-tuxtyping-fish](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-tuxtyping-fish.jpg)
 
-or zap incoming asteroids by typing the words written over them.
-
 ![learntotype-tuxtyping-zap](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-tuxtyping-zap.jpg)
 
-Besides being a fun way to practice, these games teach spelling, speed, and eye-to-hand coordination, as you must type while also watching the screen, building a foundation for touch typing, if taken seriously.
+除了练习有趣外，这些游戏还可以训练玩家的拼写、速度、手眼配合能力，因为你如果认真玩的话，必须盯着屏幕，不看键盘打字。
 
 ### GNU typist (gtype) ###
 
