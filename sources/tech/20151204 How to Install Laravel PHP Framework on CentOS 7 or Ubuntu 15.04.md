@@ -1,3 +1,4 @@
+translating by NearTan
 How to Install Laravel PHP Framework on CentOS 7 / Ubuntu 15.04
 ================================================================================
 Hi All, In this article we are going to setup Laravel on CentOS 7 and Ubuntu 15.04. If you are a PHP web developer then you don't need to worry about of all modern PHP frameworks, Laravel is the easiest to get up and running that saves your time and effort and makes web development a joy. Laravel embraces a general development philosophy that sets a high priority on creating maintainable code by following some simple guidelines, you should be able to keep a rapid pace of development and be free to change your code with little fear of breaking existing functionality.
