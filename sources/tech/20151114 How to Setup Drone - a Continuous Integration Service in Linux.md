@@ -1,3 +1,5 @@
+translating by Ezio
+
 How to Setup Drone - a Continuous Integration Service in Linux
 ==============================================================
 
