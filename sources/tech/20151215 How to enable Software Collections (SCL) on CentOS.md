@@ -1,3 +1,5 @@
+Translating by bianjp
+
 How to enable Software Collections (SCL) on CentOS
 ================================================================================
 Red Hat Enterprise Linux (RHEL) and its community fork, CentOS, offer 10-year life cycle, meaning that each version of RHEL/CentOS is updated with security patches for up to 10 years. While such long life cycle guarantees much needed system compatibility and reliability for enterprise users, a downside is that core applications and run-time environments grow antiquated as the underlying RHEL/CentOS version becomes close to end-of-life (EOF). For example, CentOS 6.5, whose EOL is dated to November 30th 2020, comes with python 2.6.6 and MySQL 5.1.73, which are already pretty old by today's standard.
@@ -14,7 +16,7 @@ The latest SCL offers:
 - Ruby 1.9.3
 - Perl 5.16.3
 - MariaDB and MySQL 5.5
-- Apache httpd 2.4.6 
+- Apache httpd 2.4.6
 
 In the rest of the tutorial, let me show you how to set up the SCL repository and how to install and enable the packages from the SCL.
 
