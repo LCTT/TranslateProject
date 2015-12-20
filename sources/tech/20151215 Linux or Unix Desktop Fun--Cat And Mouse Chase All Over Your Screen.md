@@ -1,3 +1,5 @@
+translating---geekpi
+
 Linux / Unix Desktop Fun: Cat And Mouse Chase All Over Your Screen
 ================================================================================
 Oneko is a little fun app. It will change your cursor into mouse and creates a little cute cat and the cat start chasing around your mouse cursor. The word "neko" means "cat" in Japanese and it was originally written by a Japanese author as a Macintosh desktop accessory.
