@@ -1,16 +1,14 @@
-translating---geekpi
-
-Linux / Unix Desktop Fun: Cat And Mouse Chase All Over Your Screen
+Linux/Unix桌面趣事：猫和老鼠在屏幕中追逐
 ================================================================================
-Oneko is a little fun app. It will change your cursor into mouse and creates a little cute cat and the cat start chasing around your mouse cursor. The word "neko" means "cat" in Japanese and it was originally written by a Japanese author as a Macintosh desktop accessory.
+Oneko是一个有趣的app。它会把你的光标变成一直老鼠,并在后面创建一个可爱的小猫，并且始终在老鼠光标后面追着。单词“neko”再日语中的意思是老鼠。它最初是作为Macintosh桌面附件由一位日本人开发的。
 
-### Install oneko ###
+### 安装 oneko ###
 
-Type the following command:
+试下下面的命令：
 
     $ sudo apt-get install oneko
 
-Sample outputs:
+示例输出：
 
     [sudo] password for vivek:
     Reading package lists... Done
@@ -31,61 +29,63 @@ Sample outputs:
     Setting up oneko (1.2.sakura.6-7) ...
     Processing triggers for menu ...
 
-FreeBSD unix user type the following command to install oneko:
+FreeBSD用户输入下面的命令安装oneko：
 
     # cd /usr/ports/games/oneko
     # make install clean
 
-### How do I use oneko? ###
+### 我该如何使用oneko？ ###
 
 Simply type the following command:
+输入下面的命令：
 
     $ oneko
 
-You can make cat into "tora-neko", a cat wite tiger-like stripe:
+你可以把猫变成“tora-neko”，一只像白老虎条纹的猫：
 
     $ oneko -tora
 
-### Not a cat person? ###
+### 不喜欢猫? ###
 
-You can run a dog instead of a cat:
+你可以用狗代替猫：
 
     $ oneko -dog
 
-The followin will runs Sakura Kinomoto instead of a cat:
+下面可以用樱花代替猫：
 
     $ oneko -sakura
 
-Runs Tomoyo Daidouji instead of a cat:
+用大道寺代替猫：
 
     $ oneko -tomoyo
 
-### Check out related media ###
+### 查看相关媒体 ###
 
-This tutorial also available in video format:
+这个教程同样也有视频格式：
 
 注：youtube 视频
 <iframe width="596" height="335" frameborder="0" allowfullscreen="" src="http://www.youtube.com/embed/Nm3SkXThL0s"></iframe>
 
-(Video.01: Demo - Install and use oneko under Linux)
+(Video.01: 示例 - 在Linux下安装和使用oneko)
 
-### Other options ###
+### 其他选项 ###
 
 You can pass the following options:
+你可以传入下面的选项
 
-1. **-tofocus** : Makes cat run to and on top of focus window. When focus window is not in sight, cat chases mouse as usually.
-1. **-position geometry** : Specify X and Y offsets in pixels to adjust position of cat relative to mouse pointer./li>
-1. **-rv** : Reverse background color and foreground color.
-1. **-fg color** : Foreground color (e.g., oneko -dog -fg red).
-1. **-bg color** : Background color (e.g., oneko -dog -bg green).
-1. See oneko man page for more information.
+1.**-tofocus**：让猫再聚焦的窗口顶部奔跑。当聚焦的窗口不在视野中时，猫像平常那样追逐老鼠。
+2. **-position 坐标** ：指定X和Y来调整猫相对老鼠的位置
+3. **-rv**：将前景色和背景色对调
+4. **-fg 颜色** : 前景色 (比如 oneko -dog -fg red)。
+5. **-bg 颜色** : 背景色 (比如 oneko -dog -bg green)。
+6. 查看oneko的手册获取更多信息。
 
 --------------------------------------------------------------------------------
 
 via: http://www.cyberciti.biz/open-source/oneko-app-creates-cute-cat-chasing-around-your-mouse/
 
 作者：Vivek Gite 
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
