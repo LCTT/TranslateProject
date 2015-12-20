@@ -1,3 +1,4 @@
+translate by zky001
 * * *
 
 # GCC-Inline-Assembly-HOWTO
@@ -625,6 +626,6 @@ If you have found any glaring typos, or outdated info in this document, please l
 * * *
 via: http://www.ibiblio.org/gferg/ldp/GCC-Inline-Assembly-HOWTO.html
 
-  作者：[Sandeep.S](mailto:busybox@sancharnet.in) 译者：[](https://github.com/) 校对：[]()
+  作者：[Sandeep.S](mailto:busybox@sancharnet.in) 译者：[zky001](https://github.com/zky001) 校对：[]()
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
