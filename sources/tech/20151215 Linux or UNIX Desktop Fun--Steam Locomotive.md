@@ -1,3 +1,5 @@
+translating---geekpi
+
 Linux / UNIX Desktop Fun: Steam Locomotive
 ================================================================================
 One of the most [common mistake][1] is typing sl instead of ls command. I actually set [an alias][2] i.e. alias sl=ls; but then you may miss out the steam train with whistle.
