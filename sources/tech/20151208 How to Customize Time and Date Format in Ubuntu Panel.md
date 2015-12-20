@@ -1,3 +1,5 @@
+alim0x translating
+
 How to Customize Time & Date Format in Ubuntu Panel
 ================================================================================
 ![Time & Date format](http://ubuntuhandbook.org/wp-content/uploads/2015/08/ubuntu_tips1.png)
