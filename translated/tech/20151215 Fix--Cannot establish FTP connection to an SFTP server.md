@@ -1,4 +1,3 @@
-Fix: Cannot establish FTP connection to an SFTP server
 修复：无法与SFTP服务器建立FTP连接
 ================================================================================
 ### 问题 ###
