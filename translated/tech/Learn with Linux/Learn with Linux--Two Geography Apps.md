@@ -16,7 +16,6 @@ Linux 教学之两款地理软件
 
 ### Kgeography ###
 
-There are only two geography-related applications readily available in most Linux repositories, and both of these are KDE applications, in fact part of the KDE Educatonal project. Kgeography uses simple color-coded maps of any selected country.
 在多数 Linux 发行版的软件库中，只有两个与地理有关的软件，两个都属于 KDE 阵营，或者说都属于 KDE 教育项目。Kgeopraphy 使用简单的彩色编码图来绘制被选中的国家。
 
 Ubuntu 及衍生版在终端执行下面命令安装软件：
