@@ -1,3 +1,4 @@
+(translating by runningwater)
 Grep From Files and Display the File Name
 ================================================================================
 How do I grep from a number of files and display the file name only?
@@ -61,7 +62,7 @@ Sample outputs:
 via: http://www.cyberciti.biz/faq/grep-from-files-and-display-the-file-name/
 
 作者：Vivek Gite
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
