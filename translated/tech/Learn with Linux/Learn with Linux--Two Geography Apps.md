@@ -1,5 +1,4 @@
-bazz2222
-Learn with Linux: Two Geography Apps
+Linux 教学之两款地理软件
 ================================================================================
 ![](https://www.maketecheasier.com/assets/uploads/2015/07/learn-geography-featured.png)
 
@@ -13,86 +12,81 @@ Learn with Linux: Two Geography Apps
 
 引言：Linux 提供大量的教学软件和工具，面向各个年级段以及年龄段，提供大量学科的练习实践，其中大多数是可以与用户进行交互的。本“Linux 教学”系列就来介绍一些教学软件。
 
-Linux offers great educational software and many excellent tools to aid students of all grades and ages in learning and practicing a variety of topics, often interactively. The “Learn with Linux” series of articles offers an introduction to a variety of educational apps and software.
-
-Geography is an interesting subject, used by many of us day to day, often without realizing. But when you fire up GPS, SatNav, or just Google maps, you are using the geographical data provided by this software with the maps drawn by cartographists. When you hear about a certain country in the news or hear financial data being recited, these all fall under the umbrella of geography. And you have some great Linux software to study and practice these, whether it is for school or your own improvement.
+地理是一门有趣的学科，我们每天都能接触到，虽然可能没有意识到，但当你打开 GPS、SatNav 或谷歌地图时，你就已经在使用这些软件提供的地理数据了；当你在新闻中看到一个国家的消息或听到一些金融数据时，这些信息都可以归于地理学范畴。Linux 提供了很多学习地理学的软件，可用于教学，也可用于自学。
 
 ### Kgeography ###
 
 There are only two geography-related applications readily available in most Linux repositories, and both of these are KDE applications, in fact part of the KDE Educatonal project. Kgeography uses simple color-coded maps of any selected country.
+在多数 Linux 发行版的软件库中，只有两个与地理有关的软件，两个都属于 KDE 阵营，或者说都属于 KDE 教育项目。Kgeopraphy 使用简单的彩色编码图来绘制被选中的国家。
 
-To install kegeography just type
+Ubuntu 及衍生版在终端执行下面命令安装软件：
 
     sudo apt-get install kgeography
 
-into a terminal window of any Ubuntu-based distribution.
-
-The interface is very basic. You are first presented with a picker menu that lets you choose an area map.
+界面很简单，给你一个选择界面，你可以选择不同的国家。
 
 ![learn-geography-kgeo-pick](https://www.maketecheasier.com/assets/uploads/2015/07/learn-geography-kgeo-pick.png)
 
-On the map you can display the name and capital of any given territory by clicking on it,
+点击地图上的某个区域，界面就会显示这个区域所在的国家和首都。
 
 ![learn-geography-kgeo-brit](https://www.maketecheasier.com/assets/uploads/2015/07/learn-geography-kgeo-brit.png)
 
-and test your knowledge in different quizzes.
+以及给出不同的测试题来检测你的知识水平。
 
 ![learn-geography-kgeo-test](https://www.maketecheasier.com/assets/uploads/2015/07/learn-geography-kgeo-test.png)
 
-It is an interactive way to test your basic geographical knowledge and could be an excellent tool to help you prepare for exams.
+这款软件以交互的方式测试你的地理知识，并且可以帮你为考试做好充足的准备。
 
 ### Marble ###
 
-Marble is a somewhat more advanced software, offering a global view of the world without the need of 3D acceleration.
+Marble 是一个稍微高级一点的软件，无需 3D 加速就能提供全球视角。
 
 ![learn-geography-marble-main](https://www.maketecheasier.com/assets/uploads/2015/07/learn-geography-marble-main.png)
 
-To get Marble, type
+在 Ubuntu 及衍生版的终端输入下面的命令来安装 Marble：
 
     sudo apt-get install marble
 
-into a terminal window of any Ubuntu-based distribution.
-
-Marble focuses on cartography, its main view being that of an atlas.
+Marble 专注于地图绘制，它的主界面就是一张地图。
 
 ![learn-geography-marble-atlas](https://www.maketecheasier.com/assets/uploads/2015/07/learn-geography-marble-atlas.jpg)
 
-You can have different projections, like Globe or Mercator displayed as defaults, with flat and other exotic views available from a drop-down menu. The surfaces include the basic Atlas view, a full-fledged offline map powered by OpenStreetMap,
+你可以选择不同的投影方法，比如球状投影和麦卡托投影（LCTT 译注：把地球表面绘制在平面上的方法），在下拉菜单里你可以选择平面视角或外部视角，包括 Atlas 视角，OpenStreetMap 提供的成熟的离线地图，
 
 ![learn-geography-marble-map](https://www.maketecheasier.com/assets/uploads/2015/07/learn-geography-marble-map.jpg)
 
-satellite view (by NASA),
+以及卫星视角（由 NASA 提供），
 
 ![learn-geography-marble-satellite](https://www.maketecheasier.com/assets/uploads/2015/07/learn-geography-marble-satellite.jpg)
 
-and political and even historical maps of the world, among others.
+以及政治上甚至是历史上的世界地图。
 
 ![learn-geography-marble-history](https://www.maketecheasier.com/assets/uploads/2015/07/learn-geography-marble-history.jpg)
 
-Besides providing great offline maps with different skins and varying amount of data, Marble offers other types of information as well. You can switch on and off various offline info-boxes
+除了有包含不同界面和大量数据的离线地图，Marble 还提供其他信息。你可以在菜单中打开或关闭不同的离线 info-boxes
 
 ![learn-geography-marble-offline](https://www.maketecheasier.com/assets/uploads/2015/07/learn-geography-marble-offline.png)
 
-and online services from the menu.
+和在线的 online services。
 
 ![learn-geography-marble-online](https://www.maketecheasier.com/assets/uploads/2015/07/learn-geography-marble-online.png)
 
-An interesting online service is Wikipedia integration. Clicking on the little Wiki logos will bring up a pop-up featuring detailed information about the selected places.
+一个有趣的在线服务是维基百科，点击下 Wiki 图标，会弹出一个界面来展示你选中区域的详细信息。
 
 ![learn-geography-marble-wiki](https://www.maketecheasier.com/assets/uploads/2015/07/learn-geography-marble-wiki.png)
 
-The software also includes options for location tracking, route planning, and searching for locations, among other great and useful features. If you enjoy cartography, Marble offers hours of fun exploring and learning.
+这款软件还提供定位追踪、路由规划、位置搜索和其他有用的功能。如果你喜欢地图学，Marble 可以让你长时间享受探索和学习的乐趣。
 
-### Conclusion ###
+### 总结 ###
 
-Linux offers many great educational applications, and the subject of geography is no exception. With the above two programs you can learn a lot about our globe and test your knowledge in a fun and interactive manner.
+Linux 提供大量优秀的教育软件，当然也包括地理学科。本文介绍的两款软件可以帮你学到很多地理知识，并且你可以以一种好玩的人机交互方式来测试你的知识量。
 
 --------------------------------------------------------------------------------
 
 via: https://www.maketecheasier.com/linux-geography-apps/
 
 作者：[Attila Orosz][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[bazz2](https://github.com/bazz2)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
