@@ -1,14 +1,17 @@
+bazz2222
 Learn with Linux: Two Geography Apps
 ================================================================================
 ![](https://www.maketecheasier.com/assets/uploads/2015/07/learn-geography-featured.png)
 
-This article is part of the [Learn with Linux][1] series:
+[Linux 学习系列][1]的所有文章：
 
-- [Learn with Linux: Learning to Type][2]
-- [Learn with Linux: Physics Simulation][3]
-- [Learn with Linux: Learning Music][4]
-- [Learn with Linux: Two Geography Apps][5]
-- [Learn with Linux: Master Your Math with These Linux Apps][6]
+- [Linux 教学之教你练打字][2]
+- [Linux 教学之物理模拟][3]
+- [Linux 教学之教你玩音乐][4]
+- [Linux 教学之两款地理软件][5]
+- [Linux 教学之掌握数学][6]
+
+引言：Linux 提供大量的教学软件和工具，面向各个年级段以及年龄段，提供大量学科的练习实践，其中大多数是可以与用户进行交互的。本“Linux 教学”系列就来介绍一些教学软件。
 
 Linux offers great educational software and many excellent tools to aid students of all grades and ages in learning and practicing a variety of topics, often interactively. The “Learn with Linux” series of articles offers an introduction to a variety of educational apps and software.
 
