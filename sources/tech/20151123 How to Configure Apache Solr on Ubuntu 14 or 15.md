@@ -1,3 +1,5 @@
+taichirain 翻译中
+
 How to Configure Apache Solr on Ubuntu 14 / 15
 ================================================================================
 Hello and welcome to our today's article on Apache Solr. The brief description about Apache Solr is that it is an Open Source most famous search platform with Apache Lucene at the back end for Web sites that enables you to easily create search engines which searches websites, databases and files. It can index and search multiple sites and return recommendations for related contents based on the searched text.
