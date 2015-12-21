@@ -98,7 +98,6 @@ GNU Typist 也在大多数 Debian 衍生版本的软件库中，运行下面的�
 
 ### 总结 ###
 
-If you care to hone your typing skills, Linux has great software to offer. The two basic, yet feature-rich, applications discussed above will cater to most aspiring typists’ needs. If you use or know of another great typing application, please don’t hesitate to let us know below in the comments.
 如果你想练练自己的打字水平，Linux 上有很多软件给你用。本文介绍的两款软件界面简单但内容丰富，能满足绝大多数打字爱好者的需求。如果你正在使用、或者听说过其他的优秀打字练习软件，请在评论栏贴出来，让我们长长姿势。
 
 --------------------------------------------------------------------------------
