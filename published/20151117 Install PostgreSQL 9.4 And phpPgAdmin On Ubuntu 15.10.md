@@ -1,14 +1,14 @@
-在 Ubuntu 15.10 上安装 PostgreSQL 9.4 和 phpPgAdmin
+在 Ubuntu 上安装世界上最先进的开源数据库 PostgreSQL 9.4 和 phpPgAdmin
 ================================================================================
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2014/05/postgresql.png)
 
 ### 简介 ###
 
-[PostgreSQL][1] 是一款强大的，开源对象关系型数据库系统。它支持所有的主流操作系统，包括 Linux、Unix（AIX、BSD、HP-UX，SGI IRIX、Mac OS、Solaris、Tru64） 以及 Windows 操作系统。
+[PostgreSQL][1] 是一款强大的，开源的，对象关系型数据库系统。它支持所有的主流操作系统，包括 Linux、Unix（AIX、BSD、HP-UX，SGI IRIX、Mac OS、Solaris、Tru64） 以及 Windows 操作系统。
 
 下面是 **Ubuntu** 发起者 **Mark Shuttleworth** 对 PostgreSQL 的一段评价。
 
-> PostgreSQL 真的是一款很好的数据库系统。刚开始我们使用它的时候，并不确定它能否胜任工作。但我错的太离谱了。它很强壮、快速，在各个方面都很专业。
+> PostgreSQL 是一款极赞的数据库系统。刚开始我们在 Launchpad 上使用它的时候，并不确定它能否胜任工作。但我是错了。它很强壮、快速，在各个方面都很专业。
 >
 > — Mark Shuttleworth.
 
@@ -22,7 +22,7 @@
 
 如果你需要其它的版本，按照下面那样先添加 PostgreSQL 仓库然后再安装。
 
-**PostgreSQL apt 仓库** 支持 amd64 和 i386 架构的 Ubuntu 长期支持版（10.04、12.04 和 14.04），以及非长期支持版（14.04）。对于其它非长期支持版，该软件包虽然不能完全支持，但使用和 LTS 版本近似的也能正常工作。
+**PostgreSQL apt 仓库** 支持 amd64 和 i386 架构的 Ubuntu 长期支持版（10.04、12.04 和 14.04），以及非长期支持版（14.04）。对于其它非长期支持版，该软件包虽然没有完全支持，但使用和 LTS 版本近似的也能正常工作。
 
 #### Ubuntu 14.10 系统： ####
 
@@ -36,19 +36,17 @@
 
 **注意**： 上面的库只能用于 Ubuntu 14.10。还没有升级到 Ubuntu 15.04 和 15.10。
 
-**Ubuntu 14.04**，添加下面一行：
+对于 **Ubuntu 14.04**，添加下面一行：
 
     deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main
 
-**Ubuntu 12.04**，添加下面一行：
+对于 **Ubuntu 12.04**，添加下面一行：
 
     deb http://apt.postgresql.org/pub/repos/apt/ precise-pgdg main
 
 导入库签名密钥：
 
     wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc
-
-----------
 
     sudo apt-key add -
 
@@ -66,7 +64,7 @@
 
     sudo -u postgres psql postgres
 
-#### 事例输出： ####
+#### 示例输出： ####
 
     psql (9.4.5)
     Type "help" for help.
@@ -87,7 +85,7 @@
     Enter it again: 
     postgres=# \q
 
-要安装 PostgreSQL Adminpack，在 postgresql 窗口输入下面的命令：
+要安装 PostgreSQL Adminpack 扩展，在 postgresql 窗口输入下面的命令：
 
     sudo -u postgres psql postgres
 
@@ -165,7 +163,7 @@
     #port = 5432
     [...]
 
-取消改行的注释，然后设置你 postgresql 服务器的 IP 地址，或者设置为 ‘*’ 监听所有用户。你应该谨慎设置所有远程用户都可以访问 PostgreSQL。
+取消该行的注释，然后设置你 postgresql 服务器的 IP 地址，或者设置为 ‘*’ 监听所有用户。你应该谨慎设置所有远程用户都可以访问 PostgreSQL。
 
     [...]
     listen_addresses = '*'
@@ -272,8 +270,6 @@
 
     sudo systemctl restart postgresql
 
-----------
-
     sudo systemctl restart apache2
 
 或者，
@@ -284,19 +280,19 @@
 
 现在打开你的浏览器并导航到 **http://ip-address/phppgadmin**。你会看到以下截图。
 
-![phpPgAdmin – Google Chrome_001](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/11/phpPgAdmin-Google-Chrome_001.jpg)
+![phpPgAdmin ](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/11/phpPgAdmin-Google-Chrome_001.jpg)
 
 用你之前创建的用户登录。我之前已经创建了一个名为 “**senthil**” 的用户，密码是 “**ubuntu**”，因此我以 “senthil” 用户登录。
 
-![phpPgAdmin – Google Chrome_002](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/11/phpPgAdmin-Google-Chrome_002.jpg)
+![phpPgAdmin  ](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/11/phpPgAdmin-Google-Chrome_002.jpg)
 
 然后你就可以访问 phppgadmin 面板了。
 
-![phpPgAdmin – Google Chrome_003](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/11/phpPgAdmin-Google-Chrome_003.jpg)
+![phpPgAdmin ](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/11/phpPgAdmin-Google-Chrome_003.jpg)
 
 用 postgres 用户登录：
 
-![phpPgAdmin – Google Chrome_004](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/11/phpPgAdmin-Google-Chrome_004.jpg)
+![phpPgAdmin ](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/11/phpPgAdmin-Google-Chrome_004.jpg)
 
 就是这样。现在你可以用 phppgadmin 可视化创建、删除或者更改数据库了。
 
@@ -308,7 +304,7 @@ via: http://www.unixmen.com/install-postgresql-9-4-and-phppgadmin-on-ubuntu-15-1
 
 作者：[SK][a]
 译者：[ictlyh](http://mutouxiaogui.cn/blog/)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
