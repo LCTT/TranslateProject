@@ -50,25 +50,26 @@ Debian 及其衍生版本（包含所有 Ubuntu 衍生版本）的标准软件�
 
 ### GNU typist (gtype) ###
 
-For adults and more experienced typists, there is GNU Typist, a console-based application developed by the GNU project.
+对于成年人或有打字经验的人来说，GNU Typist 可能更合适，它是一个 GNU 项目、基于控制台操作的游戏。
 
-GNU Typist will also be carried by most Debian derivatives’ main repos. Installing it is as easy as typing
+GNU Typist 也在大多数 Debian 衍生版本的软件库中，运行下面的命令来安装：
 
     sudo apt-get install gtype
 
-You will probably not find it in the Applications menu; insteaad you should start it from a terminal window.
+你估计不能在应用菜单里找到它，只能在终端界面上执行下面的命令来启动：
 
     gtype
 
-The main menu is simple, no-nonsense and frill-free, yet it is evident how much the software has to offer. Typing lessons of all levels are immediately accessible.
+界面简单，没有废话，直接提供课程内容，玩家选择就是了。
 
 ![learntotype-gtype-main](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-gtype-main.png)
 
-The lessons are straightforward and detailed.
+课程直截了当，内容详细。
 
 ![learntotype-gtype-lesson](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-gtype-lesson.png)
 
 The interactive practice sessions offer little more than highlighting your mistakes. Instead of flashy visuals you have to chance to focus on practising. At the end of each lesson you get some simple statistics of how you’ve been doing. If you make too many mistakes, you cannot proceed until you can pass the level.
+在交互练习的过程中，如果你输入错误，会将错误点高亮显示。不会像其他漂亮界面分散你的注意力。
 
 ![learntotype-gtype-mistake](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-gtype-mistake.png)
 
