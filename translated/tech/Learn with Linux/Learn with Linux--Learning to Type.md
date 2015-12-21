@@ -1,4 +1,4 @@
-Learn with Linux: Learning to Type
+Linux 教学之教你练打字
 ================================================================================
 ![](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-featured.png)
 
@@ -36,21 +36,21 @@ Debian 及其衍生版本（包含所有 Ubuntu 衍生版本）的标准软件�
 
 ![learntotype-tuxtyping-exd2](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-tuxtyping-exd2.jpg)
 
-更高级点的，你可以练习输入句子。不知道为什么，句子练习被放在“Options”选项里。（LCTT 译注：句子练习第一句是“The quick brown fox jumps over the lazy dog”，包含了26个英文字母的英文句子，可用于检测键盘是否坏键，也是练习英文打字的必备良药啊。）
+更高级点的，你可以练习输入句子。不知道为什么，句子练习被放在“Options”选项里。（LCTT 译注：句子练习第一句是“The quick brown fox jumps over the lazy dog”，包含了26个英文字母，可用于检测键盘是否坏键，也是练习英文打字的必备良药啊。）
 
 ![learntotype-tuxtyping-phrase](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-tuxtyping-phrase.jpg)
 
-这个游戏让玩家打出单词来帮助 Tux 吃到小鱼或者打击掉下来的流星，可以训练速度和精确度。
+这个游戏让玩家打出单词来帮助 Tux 吃到小鱼或者干掉掉下来的流星，训练速度和精确度。
 
 ![learntotype-tuxtyping-fish](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-tuxtyping-fish.jpg)
 
 ![learntotype-tuxtyping-zap](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-tuxtyping-zap.jpg)
 
-除了练习有趣外，这些游戏还可以训练玩家的拼写、速度、手眼配合能力，因为你如果认真玩的话，必须盯着屏幕，不看键盘打字。
+除了练习有趣外，这些游戏还可以训练玩家的拼写、速度、手眼配合能力，因为你如果认真在玩的话，必须盯着屏幕，不看键盘打字。
 
 ### GNU typist (gtype) ###
 
-对于成年人或有打字经验的人来说，GNU Typist 可能更合适，它是一个 GNU 项目、基于控制台操作的游戏。
+对于成年人或有打字经验的人来说，GNU Typist 可能更合适，它是一个 GNU 项目，基于控制台操作。
 
 GNU Typist 也在大多数 Debian 衍生版本的软件库中，运行下面的命令来安装：
 
@@ -68,45 +68,45 @@ GNU Typist 也在大多数 Debian 衍生版本的软件库中，运行下面的�
 
 ![learntotype-gtype-lesson](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-gtype-lesson.png)
 
-The interactive practice sessions offer little more than highlighting your mistakes. Instead of flashy visuals you have to chance to focus on practising. At the end of each lesson you get some simple statistics of how you’ve been doing. If you make too many mistakes, you cannot proceed until you can pass the level.
-在交互练习的过程中，如果你输入错误，会将错误点高亮显示。不会像其他漂亮界面分散你的注意力。
+在交互练习的过程中，如果你输入错误，会将错误点高亮显示。不会像其他漂亮界面分散你的注意力，你可以专注于练习。每个课程的右下角都有一组统计数据来展示你的表现，如果你犯了很多错误，就可能无法通过关卡了。
 
 ![learntotype-gtype-mistake](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-gtype-mistake.png)
 
-While the basic lessons only require you to repeat some characters, more advanced drills will have the practitioner type either whole sentences,
+简单练习只需要你重复输入一些字符，而高阶练习需要你输入整个句子。
 
 ![learntotype-gtype-warmup](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-gtype-warmup.png)
 
-where of course the three percent error margin means you are allowed even fewer mistakes,
+下图的错误已经超过 3%，错误率太高了，你得降低些。
 
 ![learntotype-gtype-warmupfail](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-gtype-warmupfail.png)
 
-or some drills aiming to achieve certain goals, as in the “Balanced keyboard drill.”
+一些训练用于完成特殊目标，比如“平衡键盘训练（LCTT 译注：感觉是用来练习手感的）”。
 
 ![learntotype-gtype-balanceddrill](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-gtype-balanceddrill.png)
 
-Simple speed drills have you type quotes,
+下图是速度练习。
 
 ![learntotype-gtype-speed-simple](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-gtype-speed-simple.png)
 
-while more advanced ones will make you write longer texts taken from classics.
+下图是要你输入一段经典文章。
 
 ![learntotype-gtype-speed-advanced](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-gtype-speed-advanced.png)
 
-If you’d prefer a different language, more lessons can also be loaded as command line arguments.
+如果你想练习其他语种，操作一下命令行参数就行。
 
 ![learntotype-gtype-more-lessons](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-gtype-more-lessons.png)
 
-### Conclusion ###
+### 总结 ###
 
 If you care to hone your typing skills, Linux has great software to offer. The two basic, yet feature-rich, applications discussed above will cater to most aspiring typists’ needs. If you use or know of another great typing application, please don’t hesitate to let us know below in the comments.
+如果你想练练自己的打字水平，Linux 上有很多软件给你用。本文介绍的两款软件界面简单但内容丰富，能满足绝大多数打字爱好者的需求。如果你正在使用、或者听说过其他的优秀打字练习软件，请在评论栏贴出来，让我们长长姿势。
 
 --------------------------------------------------------------------------------
 
 via: https://www.maketecheasier.com/learn-to-type-in-linux/
 
 作者：[Attila Orosz][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[bazz2](https://github.com/bazz2)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
