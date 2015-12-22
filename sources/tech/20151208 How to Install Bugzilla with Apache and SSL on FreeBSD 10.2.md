@@ -77,21 +77,21 @@ Bugzilla是一款bug跟踪系统和测试工具，它基于web且开源，由moz
 
 ### 第三步 - 安装并配置MySQL数据库 ###
 
-We will use mysql51 for the database back-end, and it is support for perl module for mysql. Install mysql51 with pkg command below :
+我们要用mysql 5.1来作为后端数据库并且支持perl模块。用pkg命令安装mysql 5.1：
 
     pkg install p5-DBD-mysql51 mysql51-server mysql51-client
 
-Now we must add mysql to the boot time, and then start and configure the root password for mysql.
+现在我们要在启动时添加mysql服务并启动，然后为mysql配置root密码。
 
-Run command below to do it all :
+运行以下命令来完成所有操作：
 
     sysrc mysql_enable=yes
     service mysql-server start
     mysqladmin -u root password aqwe123
 
-Note :
+注意：
 
-mysql password : aqwe123
+这里mysql密码为：aqwe123
 
 ![Configure MySQL Password](http://blog.linoxide.com/wp-content/uploads/2015/12/Configure-MySQL-Password.png)
 
