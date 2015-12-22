@@ -1,3 +1,4 @@
+translating by sonofelice 
 Linux / UNIX View Only Configuration File Directives ( Uncommented Lines of a Config File )
 ================================================================================
 Most Linux and UNIX-like system configuration files are documented using comments, but some time I just need to see line of configuration text in a config file. How can I view just the uncommented configuration file directives from squid.conf or httpd.conf file? How can I strip out comments and blank lines on a Linux or Unix-like systems?
