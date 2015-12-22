@@ -1,3 +1,4 @@
+translation by bestony
 DFileManager: Cover Flow File Manager
 ================================================================================
 A real gem of a file manager absent from the standard Ubuntu repositories but sporting a unique feature. That’s DFileManager in a twitterish statement.
