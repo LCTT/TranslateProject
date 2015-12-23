@@ -1,11 +1,10 @@
-如何在命令行中使用ftp命令上传和下载文件
+如何在命令行中使用 ftp 命令上传和下载文件
 ================================================================================
-本文中，介绍在Linux shell中如何使用ftp命令。包括如何连接FTP服务器，上传或下载文件以及创建文件夹。尽管现在有许多不错的FTP桌面应用，但是在服务器、ssh、远程回话中命令行ftp命令还是有很多应用的。比如。需要服务器从ftp仓库拉取备份。
+本文中，介绍在 Linux shell 中如何使用 ftp 命令。包括如何连接 FTP 服务器，上传或下载文件以及创建文件夹。尽管现在有许多不错的 FTP 桌面应用，但是在服务器、SSH、远程会话中命令行 ftp 命令还是有很多应用的。比如。需要服务器从 ftp 仓库拉取备份。
 
-### 步骤 1: 建立FTP连接 ###
+### 步骤 1: 建立 FTP 连接 ###
 
-
-想要连接FTP服务器，在命令上中先输入'**ftp**'然后空格跟上FTP服务器的域名'domain.com'或者IP地址
+想要连接 FTP 服务器，在命令上中先输入`ftp`然后空格跟上 FTP 服务器的域名 'domain.com' 或者 IP 地址
 
 #### 例如: ####
 
@@ -15,17 +14,17 @@
     
     ftp user@ftpdomain.com
 
-**注意: 本次例子使用匿名服务器.**
+**注意: 本例中使用匿名服务器。**
 
-替换下面例子中IP或域名为你的服务器地址。
+替换下面例子中 IP 或域名为你的服务器地址。
 
-![FTP登录](https://www.howtoforge.com/images/how-to-use-ftp-in-the-linux-shell/big/ftpanonymous.png)
+![FTP 登录](https://www.howtoforge.com/images/how-to-use-ftp-in-the-linux-shell/big/ftpanonymous.png)
 
 ### 步骤 2: 使用用户名密码登录 ###
 
-绝大多数的FTP服务器是使用密码保护的，因此这些FTP服务器会询问'**用户名**'和'**密码**'.
+绝大多数的 FTP 服务器是使用密码保护的，因此这些 FTP 服务器会询问'**username**'和'**password**'.
 
-如果你连接到被动匿名FTP服务器，可以尝试"anonymous"作为用户名以及空密码：
+如果你连接到被称作匿名 FTP 服务器（LCTT 译注：即，并不需要你有真实的用户信息即可使用的 FTP 服务器称之为匿名 FTP 服务器），可以尝试`anonymous`作为用户名以及使用空密码：
 
     Name: anonymous
     
@@ -40,14 +39,13 @@
 
 登录成功。
 
-![FTP登录成功](https://www.howtoforge.com/images/how-to-use-ftp-in-the-linux-shell/big/login.png)
+![FTP 登录成功](https://www.howtoforge.com/images/how-to-use-ftp-in-the-linux-shell/big/login.png)
 
 ### 步骤 3: 目录操作 ###
 
-FTP命令可以列出、移动和创建文件夹，如同我们在本地使用我们的电脑一样。ls可以打印目录列表，cd可以改变目录，mkdir可以创建文件夹。
+FTP 命令可以列出、移动和创建文件夹，如同我们在本地使用我们的电脑一样。`ls`可以打印目录列表，`cd`可以改变目录，`mkdir`可以创建文件夹。
 
 #### 使用安全设置列出目录 ####
-
 
     ftp> ls
 
@@ -74,15 +72,15 @@ FTP命令可以列出、移动和创建文件夹，如同我们在本地使用�
 
 ![FTP中改变目录](https://www.howtoforge.com/images/how-to-use-ftp-in-the-linux-shell/big/directory.png)
 
-### 步骤 4: 使用FTP下载文件 ###
+### 步骤 4: 使用 FTP 下载文件 ###
 
-在下载一个文件之前，我们首先需要使用lcd命令设定本地接受目录位置。
+在下载一个文件之前，我们首先需要使用`lcd`命令设定本地接受目录位置。
 
     lcd /home/user/yourdirectoryname
 
-如果你不指定下载目录，文件将会下载到你登录FTP时候的工作目录。
+如果你不指定下载目录，文件将会下载到你登录 FTP 时候的工作目录。
 
-现在，我们可以使用命令get来下载文件，比如：
+现在，我们可以使用命令 get 来下载文件，比如：
 
     get file
 
@@ -98,15 +96,15 @@ FTP命令可以列出、移动和创建文件夹，如同我们在本地使用�
 
 ![使用FTP下载文件](https://www.howtoforge.com/images/how-to-use-ftp-in-the-linux-shell/big/gettingfile.png)
 
-下载多个文件可以使用通配符。例如，下面这个例子我打算下载所有以.xls结尾的文件。
+下载多个文件可以使用通配符及 `mget` 命令。例如，下面这个例子我打算下载所有以 .xls 结尾的文件。
 
     mget *.xls
 
-### 步骤 5: 使用FTP上传文件 ###
+### 步骤 5: 使用 FTP 上传文件 ###
 
-完成FTP连接后，FTP同样可以上传文件
+完成 FTP 连接后，FTP 同样可以上传文件
 
-使用put命令上传文件：
+使用 `put`命令上传文件：
 
     put file
 
@@ -118,7 +116,7 @@ FTP命令可以列出、移动和创建文件夹，如同我们在本地使用�
 
     mput *.xls
 
-### 步骤 6: 关闭FTP连接 ###
+### 步骤 6: 关闭 FTP 连接 ###
 
 完成FTP工作后，为了安全起见需要关闭连接。有三个命令可以关闭连接：
 
@@ -134,7 +132,7 @@ FTP命令可以列出、移动和创建文件夹，如同我们在本地使用�
 
 ![](https://www.howtoforge.com/images/how-to-use-ftp-in-the-linux-shell/big/goodbye.png)
 
-需要更多帮助，在使用ftp命令连接到服务器后，可以使用“help”获得更多帮助。
+需要更多帮助，在使用 ftp 命令连接到服务器后，可以使用`help`获得更多帮助。
 
 ![](https://www.howtoforge.com/images/how-to-use-ftp-in-the-linux-shell/big/helpwindow.png)
 
@@ -143,6 +141,6 @@ FTP命令可以列出、移动和创建文件夹，如同我们在本地使用�
 via: https://www.howtoforge.com/tutorial/how-to-use-ftp-on-the-linux-shell/
 
 译者：[VicYu](http://vicyu.net)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
