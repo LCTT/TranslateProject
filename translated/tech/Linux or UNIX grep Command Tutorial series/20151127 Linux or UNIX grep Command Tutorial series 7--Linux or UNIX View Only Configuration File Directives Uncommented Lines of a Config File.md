@@ -1,18 +1,19 @@
-translating by sonofelice 
-Linux / UNIX View Only Configuration File Directives ( Uncommented Lines of a Config File )
-================================================================================
-Most Linux and UNIX-like system configuration files are documented using comments, but some time I just need to see line of configuration text in a config file. How can I view just the uncommented configuration file directives from squid.conf or httpd.conf file? How can I strip out comments and blank lines on a Linux or Unix-like systems?
+Linux / UNIX 下只查看配置文件的有效配置行（配置文件中未被注释的命令行）
+=========================================================
 
-To view just the uncommented lines of text in a config file use the grep, sed, awk, perl or any other text processing utility provided by UNIX / BSD / OS X / Linux operating systems.
+大多数的Linux和类Unix系统的配置文件中都有许多的注释行，但是有时候我只想看其中的有效配置行。那我怎么才能只看到quid.conf或httpd.conf这样的配置文件中的非注释命令行呢？怎么去掉这些注释或者空行呢？
 
-### grep command example to strip out command ###
+我们可以使用UNIX / BSD / OS X / Linux 这些操作系统自身提供的grep，sed，awk，perl或者其他文本处理工具来查看配置文件中的有效配置命令行。
 
-You can use the gerp command as follows:
+
+### grep 命令示例——去掉注释 ###
+
+可以按照如下示例使用grep命令:
 
     $ grep -v "^#" /path/to/config/file
     $ grep -v "^#" /etc/apache2/apache2.conf
 
-Sample outputs:
+示例输出:
 
     ServerRoot "/etc/apache2"
      
@@ -99,7 +100,7 @@ Sample outputs:
      
     Include /etc/apache2/sites-enabled/
 
-To suppress blank lines use [egrep command][1], run:
+想要跳过空行，可以使用 [egrep 命令][1], 示例:
 
     egrep -v "^#|^$" /etc/apache2/apache2.conf
     ## or pass it to the page such as more or less ##
@@ -114,35 +115,34 @@ To suppress blank lines use [egrep command][1], run:
        [ -f "$1" ] && command egrep -v "^#|^$" "$f" || echo "Error $1 file not found."
     }
 
-Sample output:
+示例输出:
 
 ![Fig.01: Unix/Linux Egrep Strip Out Comments Blank Lines](http://s0.cyberciti.org/uploads/faq/2008/05/grep-strip-out-comments-blank-lines.jpg)
 
-Fig.01: Unix/Linux Egrep Strip Out Comments Blank Lines
+Fig.01: Unix/Linux Egrep 除去注释行和空行
 
-### Understanding grep/egrep command line options ###
+###  理解 grep/egrep 命令行选项 ###
 
-The -v option invert the sense of matching, to select non-matching lines. This option should work under all posix based systems. The regex ^$ matches and removes all blank lines and ^# matches and removes all comments that starts with a "#".
+-v 选项，选择出不匹配的命令行。该选项适用于所有基于posix的系统。正则表达式 ^$ 匹配出所有的非空行， ^#匹配出所有的不以“#”开头的非注释行。
 
-### sed Command example ###
+### sed 命令示例 ###
 
-GNU / sed command can be used as follows:
+可以按照如下示例使用 GNU / sed 命令:
 
     $ sed '/ *#/d; /^ *$/d' /path/to/file
     $ sed '/ *#/d; /^ *$/d' /etc/apache2/apache2.conf
-
-GNU or BSD sed can update your config file too. The syntax is as follows to edit files in-place, saving backups with the specified extension such as .bak:
+GNU or BSD sed 也可以修改配置文件。下面的语法是编辑文件，修改扩展名（比如 .bak）进行文件备份：
 
     sed -i'.bak.2015.12.27' '/ *#/d; /^ *$/d' /etc/apache2/apache2.conf
 
-For more info see man pages - [grep(1)][2], [sed(1)][3]
+更多信息见参考手册 - [grep(1)][2], [sed(1)][3]
 
 --------------------------------------------------------------------------------
 
 via: http://www.cyberciti.biz/faq/shell-display-uncommented-lines-only/
 
 作者：Vivek Gite
-译者：[译者ID](https://github.com/译者ID)
+译者：[sonofelice](https://github.com/sonofelice)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
