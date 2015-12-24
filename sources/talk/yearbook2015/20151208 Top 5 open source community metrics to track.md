@@ -1,3 +1,4 @@
+Sonofelice Translating
 Top 5 open source community metrics to track
 ================================================================================
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/yearbook2015-osdc-lead-1.png)
