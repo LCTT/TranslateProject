@@ -1,3 +1,5 @@
+GHLandy Translating
+
 Part 2 - LFCS: How to Install and Use vi/vim as a Full Text Editor
 ================================================================================
 A couple of months ago, the Linux Foundation launched the LFCS (Linux Foundation Certified Sysadmin) certification in order to help individuals from all over the world to verify they are capable of doing basic to intermediate system administration tasks on Linux systems: system support, first-hand troubleshooting and maintenance, plus intelligent decision-making to know when it’s time to raise issues to upper support teams.

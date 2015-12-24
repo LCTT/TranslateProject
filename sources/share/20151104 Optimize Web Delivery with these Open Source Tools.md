@@ -1,3 +1,4 @@
+translating by fw8899
 Optimize Web Delivery with these Open Source Tools
 ================================================================================
 Web proxy software forwards HTTP requests without modifying traffic in any way. They can be configured as a transparent proxy with no client-side configuration required. They can also be used as a reverse proxy front-end to websites; here the cache serves an unlimited number of clients for one or some web servers.
