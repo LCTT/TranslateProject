@@ -4,15 +4,9 @@
 
 你决定使用指标来追踪那些免费开源的软件社区。那么问题来了：我应该去追踪哪些指标呢？
 
-So you decided to use metrics to track your free, open source software (FOSS) community. Now comes the big question: Which metrics should I be tracking?
-
 要回答这个问题，你首先要知道你需要什么信息。比如，你可能想要知道一个项目社区的可持续性。这个社区对问题的应对速度怎么样。一个社区如何吸引、维持或者失去贡献者。一旦你知道需要哪类信息，你就可以找出哪些社区活动可以提供你想要知道的内容。幸运的是，免费开源社区（FOSS）一些遵从开放式开发模型的项目在其软件开发仓库里留下了大量的公共数据，我们可以对这些数据进行分析，并从中收集到一些有用的数据。 
 
-To answer this question, you must have an idea of what information you need. For example, you may want to know about the sustainability of the project community. How quickly does the community react to problems? How is the community attracting, retaining, or losing contributors? Once you decide which information you need, you can figure out which traces of community activity are available to provide it. Fortunately, FOSS projects following an open development model tend to leave loads of public data in their software development repositories, which can be analyzed to gather useful data.
-
 在这篇文章中，我会介绍一些指标，从而为这些项目社区提供一个多方位的视角分析。
-
-In this article, I'll introduce metrics that help provide a multi-faceted view of your project community.
 
 ### 1. 社区活动 ###
 
@@ -20,9 +14,12 @@ In this article, I'll introduce metrics that help provide a multi-faceted view o
 
 ![Activity metrics chart](https://opensource.com/sites/default/files/images/business-uploads/activity-metrics.png)
 
-Number of commits and number of merged changes after code review in the OpenStack project, as found in the [OpenStack Activity Dashboard][1]. Evolution over time (weekly data).
+[OpenStack活动看板][1]上面显示的项目代码提交次数和代码评审之后代码合并次数随时间变化的趋势图（周数据）
+
 
 ### 2. 社区规模 ###
+
+社区的规模指的是参与到这个社区的人数，但是，基于不同形式的参与人数也有很大的差别。好消息是，通常你只对积极活跃的贡献者比较感兴趣。活跃的贡献者
 
 The size of the community is the number of people participating in it, but, depending on the kind of participation, size numbers may vary. Usually you're interested in active contributors, which is good news. Active people may leave traces in the repositories of the project, which means you can count contributors who are active in producing code by looking at the **Author** field in git repositories, or count people participating in the resolution of tickets by looking at who is contributing to them.
 
