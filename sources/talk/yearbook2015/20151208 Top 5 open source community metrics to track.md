@@ -1,23 +1,28 @@
-Sonofelice Translating
-Top 5 open source community metrics to track
+五大开源社区指标追踪
 ================================================================================
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/yearbook2015-osdc-lead-1.png)
 
+你决定使用指标来追踪那些免费开源的软件社区。那么问题来了：我应该去追踪哪些指标呢？
+
 So you decided to use metrics to track your free, open source software (FOSS) community. Now comes the big question: Which metrics should I be tracking?
+
+要回答这个问题，你首先要知道你需要什么信息。比如，你可能想要知道一个项目社区的可持续性。这个社区对问题的应对速度怎么样。一个社区如何吸引、维持或者失去贡献者。一旦你知道需要哪类信息，你就可以找出哪些社区活动可以提供你想要知道的内容。幸运的是，免费开源社区（FOSS）一些遵从开放式开发模型的项目在其软件开发仓库里留下了大量的公共数据，我们可以对这些数据进行分析，并从中收集到一些有用的数据。 
 
 To answer this question, you must have an idea of what information you need. For example, you may want to know about the sustainability of the project community. How quickly does the community react to problems? How is the community attracting, retaining, or losing contributors? Once you decide which information you need, you can figure out which traces of community activity are available to provide it. Fortunately, FOSS projects following an open development model tend to leave loads of public data in their software development repositories, which can be analyzed to gather useful data.
 
+在这篇文章中，我会介绍一些指标，从而为这些项目社区提供一个多方位的视角分析。
+
 In this article, I'll introduce metrics that help provide a multi-faceted view of your project community.
 
-### 1. Activity ###
+### 1. 社区活动 ###
 
-The overall activity of the community and how it evolves over time is a useful metric for all open source communities. Activity provides a first view of how much the community is doing, and can be used to track different kinds of activity. For example, the number of commits gives a first idea about the volume of the development effort. The number of tickets opened provides insight into how many bugs are reported or new features are proposed. The number of messages in mailing lists or posts in forums gives an idea of how much discussion is being held in public.
+一个社区的总体活动和这个社区怎样随着时间演变，是度量一个社区好坏的非常有用的指标。社区活动是评价一个社区工作量的第一印象，也可以用来追踪不同种类的活动。比如，提交次数，给人的第一印象就是跟开发工作量挂钩。通过投票的数量我们可以大概知道提交了多少bug或者又提出了多少新特性。邮件列表的数量或者论坛帖子的数量可以让我了解到有过多少次公开的讨论。
 
 ![Activity metrics chart](https://opensource.com/sites/default/files/images/business-uploads/activity-metrics.png)
 
 Number of commits and number of merged changes after code review in the OpenStack project, as found in the [OpenStack Activity Dashboard][1]. Evolution over time (weekly data).
 
-### 2. Size ###
+### 2. 社区规模 ###
 
 The size of the community is the number of people participating in it, but, depending on the kind of participation, size numbers may vary. Usually you're interested in active contributors, which is good news. Active people may leave traces in the repositories of the project, which means you can count contributors who are active in producing code by looking at the **Author** field in git repositories, or count people participating in the resolution of tickets by looking at who is contributing to them.
 
