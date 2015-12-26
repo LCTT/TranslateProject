@@ -165,23 +165,31 @@ After the installation is completed, we'll gonna configure drone to make it work
 
 In order to run Drone we must setup at least one integration points between GitHub, GitHub Enterprise, Gitlab, Gogs, Bitbucket. In this tutorial, we'll only integrate github but if we wanna integrate other we can do that from the configuration file. In order to integrate github, we'll need to create a new application in our [github settings][4].
 
-
+为了运行Drone 我们必须设置最少一个和GitHub、GitHub 企业版，Gitlab，Gogs，Bitbucket 关联的集成点。在本文里我们只集成了github，但是如果哦我们要集成其他的我们可以在配置文件做修改。为了集成github 我们需要在[github setting] 创建一个新的应用。
 
 ![Registering App Github](http://blog.linoxide.com/wp-content/uploads/2015/11/registering-app-github.png)
 
 To create, we'll need to click on Register a New Application then fill out the form as shown in the following image.
 
+要创建一个应用，我们需要在`New Application` 页面点击`Register`，然后如下所示填表。
+
 ![Registering OAuth app github](http://blog.linoxide.com/wp-content/uploads/2015/11/registering-OAuth-app-github.png)
 
 We should make sure that **Authorization callback URL** looks like http://drone.linoxide.com/api/auth/github.com under the configuration of the application. Then, we'll click on Register application. After done, we'll note the Client ID and Client Secret key as we'll need to configure it in our drone configuration.
+
+我们应该保证在应用的配置项里设置了**授权了的回调链接**，链接看起来像`http://drone.linoxide.com/api/auth/github.com`。然后我们点击注册应用。所有都做好之后我们会看到我们需要在我们的Drone 配置文件里配置的客户端ID 和客户端密钥。
 
 ![Client ID and Secret Token](http://blog.linoxide.com/wp-content/uploads/2015/11/client-id-secret-token.png)
 
 After thats done, we'll need to edit our drone configuration using a text editor by running the following command.
 
+在这些都完成之后我们需要使用文本编辑器编辑drone 配置文件，比如使用下面的命令。
+
     # nano /etc/drone/drone.toml
 
 Then, we'll find the [github] section and append the section with the above noted configuration as shown below.
+
+然后我们会在drone 的配置文件里面找到[github] 部分，紧接着的是下面所示的配置内容
 
     [github]
     client="3dd44b969709c518603c"
@@ -191,23 +199,31 @@ Then, we'll find the [github] section and append the section with the above note
 
 ![Configuring Github Drone](http://blog.linoxide.com/wp-content/uploads/2015/11/configuring-github-drone-e1446835124465.png)
 
-### 6. Configuring SMTP server ###
+### 6. 配置 SMTP 服务器 ###
 
 If we wanna enable drone to send notifications via emails, then we'll need to specify the SMTP configuration of our SMTP server. If we already have an SMTP server, we can use its configuration but as we don't have an SMTP server, we'll need to install an MTA ie Postfix and then specify the SMTP configuration in the drone configuration.
 
-#### On Ubuntu ####
+如果我们想让drone 使用email 发送通知，那么我们需要在SMTP 配置里面设置我们的SMTP 服务器。如果我们已经有了一个SMTP 服务，那就只需要简单的使用它的配置文件就行了，但是因为我们没有一个SMTP 服务器，我们需要安装一个MTA 比如Postfix，然后在drone 配置文件里配置好SMTP。
+
+#### Ubuntu ####
 
 We can install postfix in ubuntu by running the following apt command.
 
+在ubuntu 里使用下面的apt 命令安装postfix。
+
     # apt-get install postfix
 
-#### On CentOS ####
+#### CentOS ####
 
 We can install postfix in CentOS by running the following yum command.
+
+在CentOS 里使用下面的yum 命令安装postfix。
 
     # yum install postfix
 
 After installing, we'll need to edit the configuration of our postfix configuration using a text editor.
+
+安装好之后，我们需要编辑我们的postfix 配置文件。
 
     # nano /etc/postfix/main.cf
 
@@ -345,7 +361,7 @@ In this article, we learned to completely setup a workable Continuous Intergrati
 via: http://linoxide.com/linux-how-to/setup-drone-continuous-integration-linux/
 
 作者：[Arun Pyasi][a]
-译者：[ezio](https://github.com/oska874)
+译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
