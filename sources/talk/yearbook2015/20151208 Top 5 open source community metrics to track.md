@@ -2,15 +2,15 @@
 ================================================================================
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/yearbook2015-osdc-lead-1.png)
 
-你决定使用指标来追踪那些免费开源的软件社区。那么问题来了：我应该去追踪哪些指标呢？
+如果你决定使用指标来追踪那些免费开源的软件社区。那么问题来了：我应该去追踪哪些指标呢？
 
-要回答这个问题，你首先要知道你需要什么信息。比如，你可能想要知道一个项目社区的可持续性。这个社区对问题的应对速度怎么样。一个社区如何吸引、维持或者失去贡献者。一旦你知道需要哪类信息，你就可以找出哪些社区活动可以提供你想要知道的内容。幸运的是，免费开源社区（FOSS）一些遵从开放式开发模型的项目在其软件开发仓库里留下了大量的公共数据，我们可以对这些数据进行分析，并从中收集到一些有用的数据。 
+要回答这个问题，你首先要知道你需要什么信息。比如，你可能想要知道一个项目社区的可持续性。这个社区对问题的应对速度怎么样。一个社区怎么吸引、维护或者流失贡献者。一旦你知道需要哪类信息，你就可以找出哪些社区活动可以提供你想要知道的内容。幸运的是，免费开源社区（FOSS）一些遵从开放式开发模型的项目在其软件开发仓库里留下了大量的公共数据，我们可以对这些数据进行分析，并从中收集到一些有用的数据。 
 
 在这篇文章中，我会介绍一些指标，从而为这些项目社区提供一个多方位的视角分析。
 
 ### 1. 社区活动 ###
 
-一个社区的总体活动和这个社区怎样随着时间演变，是度量一个社区好坏的非常有用的指标。社区活动是评价一个社区工作量的第一印象，也可以用来追踪不同种类的活动。比如，提交次数，给人的第一印象就是跟开发工作量挂钩。通过投票的数量我们可以大概知道提交了多少bug或者又提出了多少新特性。邮件列表的数量或者论坛帖子的数量可以让我了解到有过多少次公开的讨论。
+一个社区的总体活动和这个社区怎样随着时间演变，是度量一个社区好坏的非常有用的指标。社区活动是评价一个社区工作量的第一印象，也可以用来追踪不同种类的活动。比如，提交次数，给人的第一印象就是跟开发工作量挂钩。通过投票的数量我们可以大概知道提交了多少bug或者又提出了多少新特性。邮件列表的数量或者论坛帖子的数量可以让我们了解到有过多少次公开的讨论。
 
 ![Activity metrics chart](https://opensource.com/sites/default/files/images/business-uploads/activity-metrics.png)
 
@@ -19,47 +19,46 @@
 
 ### 2. 社区规模 ###
 
-社区的规模指的是参与到这个社区的人数，但是，基于不同形式的参与人数也有很大的差别。好消息是，通常你只对积极活跃的贡献者比较感兴趣。活跃的贡献者
+社区的规模指的是参与到这个社区的人数，但是，基于不同形式的参与人数也有很大的差别。好消息是，通常你只对积极活跃的贡献者比较感兴趣。活跃的贡献者会在项目的仓库留下一些线索。这意味着你可以通过查看git仓库存放的代码中**author**字段来统计积极贡献代码的人数，或者通过看积极参与问题解决的人的得票数来统计活跃人数。
 
-The size of the community is the number of people participating in it, but, depending on the kind of participation, size numbers may vary. Usually you're interested in active contributors, which is good news. Active people may leave traces in the repositories of the project, which means you can count contributors who are active in producing code by looking at the **Author** field in git repositories, or count people participating in the resolution of tickets by looking at who is contributing to them.
-
-This basic idea of activity" (somebody did something) can be extended in many ways. One common way to track activity is to look at how many people did a sizable chunk of the activity. Generally most of a project's code contributions, for example, are from a small fraction of the people in the project's community. Knowing about that fraction helps provide an idea of the core group (i.e., the people who help lead the community).
+所谓活跃（某些人做了某些事）可以扩展到很多方面。一种常见的跟踪活动的方式是看有多少人做了工作量相当可观的任务。比如，通常一个项目代码的贡献者是来自这个项目社区的一小部分人。了解了这一小部分人，就对核心的工作组（比如，领导这个社区的人）有一个基本的认识了。
 
 ![Size metrics chart](https://opensource.com/sites/default/files/images/business-uploads/size-metrics.png)
 
-Number of authors and number of posters in mailing lists in the Xen project, as found in the [Xen Project Development Dashboard][2]. Evolution over time (monthly data).
+[Xen项目开发看板][2]上展示的该项目邮件列表上作者人数和提交人数随时间的变化趋势（每月数据）
 
-### 3. Performance ###
+### 3. 社区表现 ###
 
-So far, I have focused on measuring quantities of activities and contributors. You also can analyze how processes and people are performing. For example, you can measure how long processes take to finish. Time to resolve or close tickets shows how the project is reacting to new information that requires action, such as fixing a reported bug or implementing a requested new feature. Time spent in code review—from the moment when a change to the code is proposed to the moment it is accepted—shows how long upgrading a proposed change to the quality standards expected by the community takes.
 
-Other metrics deal with how well the project is coping with pending work, such as the ratio of new to closed tickets, or the backlog of still non-completed code reviews. Those parameters tell us, for example, whether or not the resources put into solving issues is enough.
+到目前为止，关注点主要集中在活动数量和贡献者数量的统计上了。你也可以分析流程还有用户的表现如何。比如，你可以测量某流程需要多久才能执行完成。解决或者关闭投票的时间可以表明一个需要及时响应的项目对新信息的应对如何，比如修复一个已经提出的bug或者实现一个新需求。代码评审花费的时间，即从代码修改提交到被通过的时间，可以看出更新一个提出的改变要达到社区期望的标准需要多久。
+
+其他的一些指标主要与项目处理挂起的工作如何有关，比如新的要被关闭投票的比例，或者仍然没有关闭的代码评审的后台日志。这些参数能告诉我们像投入到解决这些问题的资源是否充足这样的一些信息。
 
 ![Efficiency metrics chart](https://opensource.com/sites/default/files/images/business-uploads/efficiency-metrics.png)
 
-Ratio of tickets closed by tickets opened, and ratio of change proposals accepted or abandoned by new change proposals per quarter. OpenStack project, as shown in the [OpenStack Development Report, 2015-Q3][3] (PDF).
+在[2015第三季度OpenStack开发报告][3]上显示的，每季度关闭与打开状态的投票数之比，接受与放弃的改变提案与最新的改变提案之比。
 
-### 4. Demographics ###
+### 4. 社区人口统计 ###
 
-Communities change as contributors move in and out. Depending on how people enter and leave a community over time, the age (time since members joined the community) of the community varies. The [community aging chart][4] nicely illustrates these exchanges over time. The chart is structured as a set of horizontal bars, two per "generation" of people joining the community. For each generation, the attracted bar shows how many new people joined the community during the corresponding period of time. The retained bar shows how many people are still active in the community.
+随着贡献者的参与或者退出，社区也在不断改变。社区的年龄（从社区成员加入时算起）取决于随着时间变化，人们怎么加入和退出社区。[社区年龄统计图表][4]能够很好的展现这些改变随时间的变化。 图标是由一系列的水平条组成，每条水平条代表加入到社区的两代人。对于每一代，Attracted栏显示在相应的时间里有多少人加入到了社区。Retained栏显示有多少人目前仍然活跃在社区。
 
-The relationship between the two bars for each generation is the retention rate: the fraction of people of that generation who are still in the project. The complete set of attracted bars show how attractive the project was in the past. And the complete set of the retention bars shows the current age structure of the community.
+代表一代人的两个水平条的关系就是滞留比例：依然在这个项目中的那一代人的一部分。Attracted水平条的完整集合表示这个项目在过去有多么受欢迎。Retained水平条的完整集合则表示社区目前的年龄结构。
 
 ![Demographics metrics chart](https://opensource.com/sites/default/files/images/business-uploads/demography-metrics.png)
 
-Community aging chart for the Eclipse community, as shown in the [Eclipse Development Dashboard][5]. Generations are defined every six months.
+[Eclipse开发看板][5]上显示的Eclipse社区的社区年龄表。每六个月为一代。
 
-### 5. Diversity ###
+### 5. 社区多样性 ###
 
-Diversity is an important factor in the resiliency of communities. In general, the more diverse communities are—in terms of people or organizations participating—the more resilient they are. For example, when a company decides to leave a FOSS community, the potential problems the departure may cause are much smaller if its employees were contributing 5% of the work rather than 85%.
+多样性是一个社区保持弹性的很关键的因素。通常来说，一个社区越具有多样性（人或者组织参与的多元化），那么这个社区的弹性也就越大。比如，如果一个公司要决定离开一个免费开源社区，那么这个公司的员工贡献5%要远比85%所可能引起的潜在问题要小很多。
 
-The [Pony Factor][6], a term defined by [Daniel Gruno][7] for the minimum number of developers performing 50% of the commits. Based on the Pony Factor, the Elephant Factor is the minimum number of companies whose employees perform 50% of the commits. Both numbers provide an indication of how many people or companies the community depends on.
+[小马因素][6],是[Daniel Gruno][7] 为“最少的开发者数贡献了50%的代码提交量”这一现象定义的术语。基于这一小马因素，大象因素则是指最少量的公司员工贡献了50%的代码提交量。这两个数据提供了一种指示，即这个社区依赖多少人或者公司。
 
 ![Diversity metrics chart](https://opensource.com/sites/default/files/images/business-uploads/diversity-metrics.png)
 
-Pony and Elephant Factor for several FOSS projects in the area of cloud computing, as presented in [The quantitative state of the open cloud 2015][8] (slides).
+[2015开发云数量状态统计][8]显示的在云计算领域的几个免费开源社区项目的小马和大象因素。
 
-There are many other metrics to help measure a community. When determing which metrics to collect, think about the goals of your community, and which metrics will help you reach them.
+还有许多其他的指标来衡量一个社区。在决定收集哪些指标时，想想你社区的目标，哪些指标能帮你了解这些社区。
 
 --------------------------------------------------------------------------------
 
