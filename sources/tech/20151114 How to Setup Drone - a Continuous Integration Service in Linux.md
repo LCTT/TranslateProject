@@ -5,22 +5,32 @@ How to Setup Drone - a Continuous Integration Service in Linux
 
 Are you tired of cloning, building, testing, and deploying codes time and again? If yes, switch to continuous integration. Continuous Integration aka CI is practice in software engineering of making frequent commits to the code base, building, testing and deploying as we go. CI helps to quickly integrate new codes into the existing code base. If this process is made automated, then this will speed up the development process as it reduces the time taken for the developer to build and test things manually. [Drone][1] is a free and open source project which provides an awesome environment of continuous integration service and is released under Apache License Version 2.0. It integrates with many repository providers like Github, Bitbucket and Google Code and has the ability to pull codes from the repositories enabling us to build the source code written in number of languages including PHP, Node, Ruby, Go, Dart, Python, C/C++, JAVA and more. It is made such a powerful platform cause it uses containers and docker technology for every build making users a complete control over their build environment with guaranteed isolation.
 
-### 1. Installing Docker ###
+如果你对一次又一次的克隆、构建、测试和部署代码感到厌倦了，可以考虑一下持续集成。持续集成也就是CI，是软件工程的像我们一样的频繁提交的代码库，构建、测试和部署的实践。CI 帮助我们快速的集成新代码到已有的代码基线。如果这个过程是自动化进行的，那么就会提高开发的速度，因为这可以减少开发人员手工构建和测试的时间。[Drone][1] 是一个免费的开源项目，用来提供一个非常棒的持续集成服务的环境，采用了Apache 2.0 协议。它已经集成近很多代码库提供商，比如Github、Bitbucket 以及Google COde，并且它可以从代码库提取代码，使我们可以编译多种语言，包括PHP, Node, Ruby, Go, Dart, Python, C/C++, JAVA 等等。它是如此一个强大的平台是因为它每次构建都使用了容器和docker 技术，这让用户可以在保证隔离的条件下完全控制他们自己的构建环境。
+
+### 1. 安装 Docker ###
 
 First of all, we'll gonna install Docker as its the most vital element for the complete workflow of Drone. Drone does a proper utilization of docker for the purpose of building and testing application. This container technology speeds up the development of the applications. To install docker, we'll need to run the following commands with respective the distribution of linux. In this tutorial, we'll cover the steps with Ubuntu 14.04 and CentOS 7 linux distributions.
 
-#### On Ubuntu ####
+首先，我们要安装docker，因为这是Drone 的工作流的最关键的元素。Drone 合理的利用了docker 来构建和测试应用。容器技术提高了应用部署的效率。要安装docker ，我们需要在不同的linux 发行版本运行下面对应的命令，我们这里会说明Ubuntu 14.04 和CentOS 7 两个版本。
+
+#### Ubuntu ####
 
 To install Docker in Ubuntu, we can simply run the following commands in a terminal or console.
+
+要在Ubuntu 上安装Docker ，我们只需要运行下面的命令。
 
     # apt-get update
     # apt-get install docker.io
 
 After the installation is done, we'll restart our docker engine using service command.
 
+安装之后我们需要使用`service` 命令重启docker 引擎。
+
     # service docker restart
 
 Then, we'll make docker start automatically in every system boot.
+
+然后我们让docker 在系统启动时自动启动。
 
     # update-rc.d docker defaults
 
@@ -33,49 +43,67 @@ Then, we'll make docker start automatically in every system boot.
     /etc/rc4.d/S20docker -> ../init.d/docker
     /etc/rc5.d/S20docker -> ../init.d/docker
 
-#### On CentOS ####
+#### CentOS ####
 
 First, we'll gonna update every packages installed in our centos machine. We can do that by running the following command.
+
+第一，我们要更新机器上已经安装的软件包。我们可以使用下面的命令。
 
     #  sudo yum update
 
 To install docker in centos, we can simply run the following commands.
 
+要在centos 上安装docker，我们可以简单的运行下面的命令。
+
     #  curl -sSL https://get.docker.com/ | sh
 
 After our docker engine is installed in our centos machine, we'll simply start it by running the following systemd command as systemd is the default init system in centos 7.
+
+安装好docker 引擎之后我么只需要简单实用下面的`systemd` 命令启动docker，因为centos 7 的默认init 系统是systemd。
 
     # systemctl start docker
 
 Then, we'll enable docker to start automatically in every system startup.
 
+然后我们要让docker 在系统启动时自动启动。
+
     # systemctl enable docker
 
     ln -s '/usr/lib/systemd/system/docker.service' '/etc/systemd/system/multi-user.target.wants/docker.service'
 
-### 2. Installing SQlite Driver ###
+### 2. 安装 SQlite 驱动 ###
 
 It uses SQlite3 database server for storing its data and information by default. It will automatically create a database file named drone.sqlite under /var/lib/drone/ which will handle database schema setup and migration. To setup SQlite3 drivers, we'll need to follow the below steps.
 
-#### On Ubuntu 14.04 ####
+Drone 默认使用SQLite3 数据库服务器来保存数据和信息。它会在/var/lib/drone/ 自动创建名为drone.sqlite 的数据库来处理数据库模式的创建和迁移。要安装SQLite3 我们要完成以下几步。
+
+#### Ubuntu 14.04 ####
 
 As SQlite3 is available on the default respository of Ubuntu 14.04, we'll simply install it by running the following apt command.
 
+因为SQLite3 存在于Ubuntu 14.04 的默认软件库，我们只需要简单的使用apt 命令安装它。
+
     # apt-get install libsqlite3-dev
 
-#### On CentOS 7 ####
+#### CentOS 7 ####
 
 To install it on CentOS 7 machine, we'll need to run the following yum command.
 
+要在Centos 7 上安装选哟使用下面的yum 命令。
+
     # yum install sqlite-devel
 
-### 3. Installing Drone ###
+### 3. 安装 Drone ###
 
 Finally, after we have installed those dependencies successfully, we'll now go further towards the installation of drone in our machine. In this step, we'll simply download the binary package of it from the official download link of the respective binary formats and then install them using the default package manager.
 
-#### On Ubuntu ####
+最后，我们安装好依赖的软件，我们现在更进一步的接近安装Drone。在这一步里我们值简单的从官方链接下载对应的二进制软件包，然后使用默认软件包管理器安装Drone。
+
+#### Ubuntu ####
 
 We'll use wget to download the debian package of drone for ubuntu from the [official Debian file download link][2]. Here is the command to download the required debian package of drone.
+
+我们将使用wget 从官方的[Debian 文件下载链接][2]下载drone 的debian 软件包。下面就是下载命令。
 
     # wget downloads.drone.io/master/drone.deb
 
@@ -89,6 +117,8 @@ We'll use wget to download the debian package of drone for ubuntu from the [offi
 
 After its downloaded, we'll gonna install it with dpkg package manager.
 
+下载好之后，我们将使用dpkg 软件包管理器安装它。
+
     # dpkg -i drone.deb
 
     Selecting previously unselected package drone.
@@ -99,9 +129,11 @@ After its downloaded, we'll gonna install it with dpkg package manager.
     Your system ubuntu 14: using upstart to control Drone
     drone start/running, process 9512
 
-#### On CentOS ####
+#### CentOS ####
 
 In the machine running CentOS, we'll download the RPM package from the [official download link for RPM][3] using wget command as shown below.
+
+在CentOS 机器上我们要使用wget 命令从[下载链接][3]下载RPM 包。
 
     # wget downloads.drone.io/master/drone.rpm
 
@@ -116,18 +148,24 @@ In the machine running CentOS, we'll download the RPM package from the [official
 
 Then, we'll install the download rpm package using yum package manager.
 
+然后我们使用yum 安装rpm 包。
+
     # yum localinstall drone.rpm
 
-### 4. Configuring Port ###
+### 4. 配置端口 ###
 
 After the installation is completed, we'll gonna configure drone to make it workable. The configuration of drone is inside **/etc/drone/drone.toml** file. By default, drone web interface is exposed under port 80 which is the default port of http, if we wanna change it, we can change it by replacing the value under server block as shown below.
+
+安装完成之后，我们要使它工作要先进行配置。drone 的配置文件在**/etc/drone/drone.toml** 。默认情况下drone 的web 接口使用的是80，而这也是http 默认的端口，如果我们要下面所示的修改配置文件里server 块对应的值。
 
     [server]
     port=":80"
 
-### 5. Integrating Github ###
+### 5. 集成 Github ###
 
 In order to run Drone we must setup at least one integration points between GitHub, GitHub Enterprise, Gitlab, Gogs, Bitbucket. In this tutorial, we'll only integrate github but if we wanna integrate other we can do that from the configuration file. In order to integrate github, we'll need to create a new application in our [github settings][4].
+
+
 
 ![Registering App Github](http://blog.linoxide.com/wp-content/uploads/2015/11/registering-app-github.png)
 
@@ -307,7 +345,7 @@ In this article, we learned to completely setup a workable Continuous Intergrati
 via: http://linoxide.com/linux-how-to/setup-drone-continuous-integration-linux/
 
 作者：[Arun Pyasi][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ezio](https://github.com/oska874)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
