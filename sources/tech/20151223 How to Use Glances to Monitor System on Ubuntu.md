@@ -1,3 +1,5 @@
+translating by bianjp
+
 How to Use Glances to Monitor System on Ubuntu
 ================================================================================
 ![](https://www.maketecheasier.com/assets/uploads/2015/12/glances_featured.jpg)
