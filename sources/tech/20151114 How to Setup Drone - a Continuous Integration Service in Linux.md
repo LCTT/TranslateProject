@@ -1,6 +1,7 @@
 translating by Ezio
 
 How to Setup Drone - a Continuous Integration Service in Linux
+如何在linux 上配置持续集成服务 - Drone
 ==============================================================
 
 Are you tired of cloning, building, testing, and deploying codes time and again? If yes, switch to continuous integration. Continuous Integration aka CI is practice in software engineering of making frequent commits to the code base, building, testing and deploying as we go. CI helps to quickly integrate new codes into the existing code base. If this process is made automated, then this will speed up the development process as it reduces the time taken for the developer to build and test things manually. [Drone][1] is a free and open source project which provides an awesome environment of continuous integration service and is released under Apache License Version 2.0. It integrates with many repository providers like Github, Bitbucket and Google Code and has the ability to pull codes from the repositories enabling us to build the source code written in number of languages including PHP, Node, Ruby, Go, Dart, Python, C/C++, JAVA and more. It is made such a powerful platform cause it uses containers and docker technology for every build making users a complete control over their build environment with guaranteed isolation.
@@ -189,7 +190,7 @@ After thats done, we'll need to edit our drone configuration using a text editor
 
 Then, we'll find the [github] section and append the section with the above noted configuration as shown below.
 
-然后我们会在drone 的配置文件里面找到[github] 部分，紧接着的是下面所示的配置内容
+然后我们会在drone 的配置文件里面找到`[github]` 部分，紧接着的是下面所示的配置内容
 
     [github]
     client="3dd44b969709c518603c"
@@ -229,13 +230,19 @@ After installing, we'll need to edit the configuration of our postfix configurat
 
 Then, we'll need to replace the value of myhostname parameter to our FQDN ie drone.linoxide.com .
 
+然后我们要把myhostname 的值替换为我们自己的FQDN，比如drone.linoxide.com。
+
     myhostname = drone.linoxide.com
 
 Now, we'll gonna finally configure the SMTP section of our drone configuration file.
 
+现在开始配置drone 配置文件里的SMTP 部分。
+
     # nano /etc/drone/drone.toml
 
 Then, we'll find the [stmp] section and then we'll need to append the setting as follows.
+
+找到`[smtp]` 部分补充上下面的内容。
 
     [smtp]
     host = "drone.linoxide.com"
@@ -248,13 +255,19 @@ Then, we'll find the [stmp] section and then we'll need to append the setting as
 
 Note: Here, **user** and **pass** parameters are strongly recommended to be changed according to one's user configuration.
 
-### 7. Configuring Worker ###
+注意：这里的**user** 和 **pass** 参数强烈推荐一定要改成一个用户的配置。
+
+### 7. 配置 Worker ###
 
 As we know that drone utilizes docker for its building and testing task, we'll need to configure docker as the worker for our drone. To do so, we'll need to edit the [worker] section in the drone configuration file.
+
+如我们所知的drone 利用了docker 完成构建、测试任务，我们需要把docker 配置为drone 的worker。要完成这些需要修改drone 配置文件里的`[worker]` 部分。
 
     # nano /etc/drone/drone.toml
 
 Then, we'll uncomment the following lines and append as shown below.
+
+然后取消底下几行的注释并且补充上下面的内容。
 
     [worker]
     nodes=[
@@ -263,6 +276,8 @@ Then, we'll uncomment the following lines and append as shown below.
     ]
 
 Here, we have set only 2 node which means the above configuration is capable of executing only 2 build at a time. In order to increase concurrency, we can increase the number of nodes.
+
+这里我们只设置了两个节点，这意味着上面的配置文件只能同时执行2 个构建操作。要提高并发性可以增大节点的值。
 
     [worker]
     nodes=[
@@ -274,44 +289,62 @@ Here, we have set only 2 node which means the above configuration is capable of 
 
 Here, in the above configuration, drone is configured to process four builds at a time, using the local docker daemon.
 
-### 8. Restarting Drone ###
+使用上面的配置文件drone 被配置为使用本地的docker 守护程序可以同时构建4个任务。
+
+### 8. 重启 Drone ###
 
 Finally, after everything is done regarding the installation and configuration, we'll now start our drone server in our linux machine.
 
-#### On Ubuntu ####
+最后，当所有的安装和配置都准备好之后，我们现在要在本地的linux 机器上启动drone 服务器。
+
+####  Ubuntu ####
 
 To start drone in our Ubuntu 14.04 machine, we'll simply run service command as the default init system of Ubuntu 14.04 is SysVinit.
+
+因为ubuntu 14.04 使用了sysvinit 作为默认的init 系统，所以只需要简单执行下面的service 命令就可以启动drone 了。
 
     # service drone restart
 
 To make drone start automatically in every boot of the system, we'll run the following command.
 
+要让drone 在系统启动时也自动运行，需要运行下面的命令。
+
     # update-rc.d drone defaults
 
-#### On CentOS ####
+#### CentOS ####
 
 To start drone in CentOS machine, we'll simply run systemd command as CentOS 7 is shipped with systemd as init system.
+
+因为CentOS 7使用systemd 作为init 系统，所以只需要运行下面的systemd 命令就可以重启drone。
 
     # systemctl restart drone
 
 Then, we'll enable drone to start automatically in every system boot.
 
+要让drone 自动运行只需要运行下面的命令。
+
     # systemctl enable drone
 
-### 9. Allowing Firewalls ###
+### 9. 添加防火墙例外 ###
 
 As we know drone utilizes port 80 by default and we haven't changed the port, we'll gonna configure our firewall programs to allow port 80 (http) and be accessible from other machines in the network.
 
-#### On Ubuntu 14.04 ####
+众所周知drone 默认使用了80 端口而我们又没有修改他，所以我们需要配置防火墙程序允许80 端口（http）开发并允许其他机器可以通过网络连接。
+
+#### Ubuntu 14.04 ####
 
 Iptables is a popular firewall program which is installed in the ubuntu distributions by default. We'll make iptables to expose port 80 so that we can make our Drone web interface accessible in the network.
+
+iptables 是最流行的防火墙程序，并且ubuntu 默认安装了它。我们需要修改iptable 暴露端口80，这样我们才能让drone 的web 界面在网络上被大家访问。
 
     # iptables -A INPUT -p tcp -m tcp --dport 80 -j ACCEPT
     # /etc/init.d/iptables save
 
-#### On CentOS 7 ####
+#### CentOS 7 ####
 
 As CentOS 7 has systemd installed by default, it contains firewalld running as firewall problem. In order to open the port 80 (http service) on firewalld, we'll need to execute the following commands.
+
+因为CentOS 7 默认安装了systemd，它使用firewalld 作为防火墙程序。为了在firewalld 上打开80端口（http 服务），我们需要执行下面的命令。
 
     # firewall-cmd --permanent --add-service=http
 
@@ -321,23 +354,33 @@ As CentOS 7 has systemd installed by default, it contains firewalld running as f
 
     success
 
-### 10. Accessing Web Interface ###
+### 10. 访问web 界面 ###
 
 Now, we'll gonna open the web interface of drone using our favourite web browser. To do so, we'll need to point our web browser to our machine running drone in it. As the default port of drone is 80 and we have also set 80 in this tutorial, we'll simply point our browser to http://ip-address/ or http://drone.linoxide.com according to our configuration. After we have done that correctly, we'll see the first page of it having options to login into our dashboard.
+
+现在我们将在我们最喜欢的浏览器上通过web 界面打开drone。要完成这些我们要把浏览器指向运行drone 的服务器。因为drone 默认使用80 端口而我们有没有修改过，所以我们只需要在浏览器里根据我们的配置输入`http://ip-address/` 或 `http://drone.linoxide.com` 就行了。在我们正确的完成了上述操作后，我们就可以看到登陆界面了。
 
 ![Login Github Drone](http://blog.linoxide.com/wp-content/uploads/2015/11/login-github-drone-e1446834688394.png)
 
 As we have configured Github in the above step, we'll simply select github and we'll go through the app authentication process and after its done, we'll be forwarded to our Dashboard.
 
+因为在上面的步骤里配置了Github，我们现在只需要简单的选择github然后进入应用授权步骤，这些完成后我们就可以进入工作台了。
+
 ![Drone Dashboard](http://blog.linoxide.com/wp-content/uploads/2015/11/drone-dashboard.png)
 
 Here, it will synchronize all our github repository and will ask us to activate the repo which we want to build with drone.
+
+这里它会同步我们在github 上的代码库，然后询问我们要在drone 上构建那个代码库。
 
 ![Activate Repository](http://blog.linoxide.com/wp-content/uploads/2015/11/activate-repository-e1446835574595.png)
 
 After its activated, it will ask us to add a new file named .drone.yml in our repository and define the build process and configuration in that file like which image to fetch and which command/script to run while compiling, etc.
 
+这一步完成后，它会询问我们在代码库里添加`.drone.yml` 文件的新名称，并且在这个文件里定义构建的过程和配置项，比如使用那个docker 镜像，执行那些命令和脚本来编译，等等。
+
 We'll need to configure our .drone.yml as shown below.
+
+我们按照下面的内容来配置我们的`.drone.yml`。
 
     image: python
     script:
@@ -346,15 +389,21 @@ We'll need to configure our .drone.yml as shown below.
 
 After its done, we'll be able to build our application using the configuration YAML file .drone.yml in our drone appliation. All the commits made into the repository is synced in realtime. It automatically syncs the commit and changes made to the repository. Once the commit is made in the repository, build is automatically started in our drone application.
 
+这一步完成后我们就可以使用drone 应用里的YAML 格式的配置文件来构建我们的应用了。所有对代码库的提交和改变此时都会同步到这个仓库。一旦提交完成了，drone 就会自动开始构建。
+
 ![Building Application Drone](http://blog.linoxide.com/wp-content/uploads/2015/11/building-application-drone.png)
 
 After the build is completed, we'll be able to see the output of the build with the output console.
 
+所有操作都完成后，我们就能在终端看到构建的结果了。
+
 ![Build Success Drone](http://blog.linoxide.com/wp-content/uploads/2015/11/build-success-drone.png)
 
-### Conclusion ###
+### 总结 ###
 
 In this article, we learned to completely setup a workable Continuous Intergration platform with Drone. If we want, we can even get started with the services provided by the official Drone.io project. We can start with free service or paid service according to our requirements. It has changed the world of Continuous integration with its beautiful web interface and powerful bunches of features. It has the ability to integrate with many third party applications and deployment platforms. If you have any questions, suggestions, feedback please write them in the comment box below so that we can improve or update our contents. Thank you !
+
+在本文中我们学习了如何安装一个可以工作的使用drone 的持续集成平台。如果我们愿意我们甚至可以从drone.io 官方提供的服务开始工作。我们可以根据自己的需求从免费的服务或者收费服务开始。它通过漂亮的web界面和强大的功能改变了持续集成的世界。它可以集成很多第三方应用和部署平台。如果你有任何问题、建议可以直接反馈给我们，谢谢。
 
 --------------------------------------------------------------------------------
 
