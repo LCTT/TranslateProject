@@ -1,9 +1,9 @@
-﻿
+
 如何在FreeBSD 10.2上安装Nginx作为Apache的反向代理
 ================================================================================
-Nginx是一款免费的，开源的HTTP和反向代理服务器, 以及一个代理POP3/IMAP的邮件服务器. Nginx是一款高性能的web服务器，其特点是丰富的功能，简单的结构以及低内存的占用. 第一个版本由 Igor    Sysoev在2002年发布,然而到现在为止很多大的科技公司都在使用，包括 Netflix, Github, Cloudflare, WordPress.com等等
+Nginx是一款免费的开源HTTP和反向代理服务器, 以及一个POP3/IMAP的邮件代理服务器。Nginx是一款高性能的web服务器，其特点是丰富的功能，简单的结构以及低内存的占用. 第一个版本由 Igor    Sysoev在2002年发布,迄今为止很多大的科技公司依然在使用，包括 Netflix, Github, Cloudflare, WordPress.com等等。
 
-在这篇教程里我们会 "**在freebsd 10.2系统上，安装和配置Nginx网络服务器作为Apache的反向代理**". Apache 会用PHP在8080端口上运行,并且我们需要在80端口配置Nginx的运行，用来接收用户/访问者的请求.如果网页的用户请求来自于浏览器的80端口, 那么Nginx会用Apache网络服务器和PHP来通过这个请求，并运行在8080端口.
+在这篇教程里我们会 "**在freebsd 10.2系统上，安装和配置Nginx网络服务器作为Apache的反向代理**". Apache 会用PHP在8080端口上运行,并且我们需要在80端口配置Nginx的运行，用来接收用户/访问者的请求.如果网页的用户请求来自于浏览器的80端口, 那么Nginx会用Apache网络服务器和PHP来通过这个请求，并运行在8080端口。
 
 #### 前提条件 #### 
 
@@ -19,7 +19,7 @@ Nginx是一款免费的，开源的HTTP和反向代理服务器, 以及一个代
 
 ### 步骤 2 - 安装 Apache ###
 
-Apache是现在使用范围最广的网络服务器以及开源的HTTP服务器.在FreeBSD里Apache是未被默认安装的, 但是我们可以直接从端口下载，或者解压包在"/usr/ports/www/apache24" 目录下，再或者直接从PKG命令的FreeBSD系统信息库安装。在本教程中，我们将使用PKG命令从FreeBSD的库中安装：
+Apache是现在使用范围最广的web服务器以及开源的HTTP服务器.在FreeBSD里Apache是未被默认安装的, 但是我们可以直接通过端口或者在"/usr/ports/www/apache24" 目录下的解压包安装，再或者直接从PKG命令的FreeBSD系统信息库安装。在本教程中，我们将使用PKG命令从FreeBSD的库中安装：
 
     pkg install apache24
 
@@ -31,7 +31,7 @@ Apache是现在使用范围最广的网络服务器以及开源的HTTP服务器.
 
 ### 步骤 4 - 配置 Apache 和 PHP ###
 
-一旦所有都安装好了, 我们将会配置Apache在8080端口上运行, 并让PHP与Apache一同工作. 为了配置Apache,我们可以编辑 "httpd.conf"这个配置文件, 然而PHP我们只需要复制PHP的配置文件 php.ini 在 "/usr/local/etc/"目录下.
+一旦所有都安装好了, 我们将会配置Apache在8080端口上运行, 并让PHP与Apache一同工作. 要想配置Apache,我们可以编辑 "httpd.conf"这个配置文件, 然而PHP我们只需要复制"/usr/local/etc/"目录下的PHP配置文件 php.ini 。
 
 进入到 "/usr/local/etc/" 目录 并且复制 php.ini-production 文件到 php.ini :
 
@@ -64,7 +64,7 @@ Apache是现在使用范围最广的网络服务器以及开源的HTTP服务器.
     SetHandler application/x-httpd-php-source
     </FilesMatch>
 
-保存然后退出.
+保存并退出。
 
 现在用sysrc命令，来添加Apache作为开机启动项目 :
 
@@ -78,7 +78,7 @@ Apache是现在使用范围最广的网络服务器以及开源的HTTP服务器.
 
     service apache24 start
 
-如果全部完毕, 在"/usr/local/www/apache24/data" 目录下，创建一个phpinfo文件是验证PHP在Apache下完美运行的好方法 :
+如果全部完毕, 在"/usr/local/www/apache24/data" 目录下创建一个phpinfo文件来验证PHP在Apache下完美运行:
 
     cd /usr/local/www/apache24/data
     echo "<?php phpinfo(); ?>" > info.php
@@ -87,17 +87,17 @@ Apache是现在使用范围最广的网络服务器以及开源的HTTP服务器.
 
 ![Apache and PHP on Port 8080](http://blog.linoxide.com/wp-content/uploads/2015/11/Apache-and-PHP-on-Port-8080.png)
 
-Apache 是使用 PHP 在 8080端口下运行的.
+Apache 是使用 PHP 在 8080 端口下运行的。
 
 ### 步骤 5 - 安装 Nginx ###
 
-Nginx 以低内存的占用作为一款高性能的web服务器以及反向代理服务器.在这个步骤里，我们将会使用Nginx作为Apache的反向代理, 因此让我们用pkg命令来安装它吧 :
+Nginx 以低内存的占用作为一款高性能的web服务器以及反向代理服务器。在这个步骤里，我们将会使用Nginx作为Apache的反向代理, 因此让我们用pkg命令来安装它吧 :
 
     pkg install nginx
 
 ### 步骤 6 - 配置 Nginx ###
 
-一旦 Nginx 安装完毕, 在 "**nginx.conf**" 文件里，我们需要做一个新的配置文件来替换掉原来的nginx文件. 更改到 "/usr/local/etc/nginx/"目录下 并且默认备份到 nginx.conf 文件:
+一旦 Nginx 安装完毕, 在 "**nginx.conf**" 文件里，我们需要做一个新的配置文件来替换掉原来的nginx文件。更改到 "/usr/local/etc/nginx/"目录下，并且备份默认 nginx.conf 文件:
 
     cd /usr/local/etc/nginx/
     mv nginx.conf nginx.conf.oroginal
@@ -164,7 +164,7 @@ Nginx 以低内存的占用作为一款高性能的web服务器以及反向代�
 
     }
 
-保存退出.
+保存并退出。
 
 下一步, 在nginx目录下面，创建一个 **proxy.conf** 文件，使其作为反向代理 :
 
@@ -186,7 +186,7 @@ Nginx 以低内存的占用作为一款高性能的web服务器以及反向代�
     proxy_buffers           100 8k;
     add_header              X-Cache $upstream_cache_status;
 
-保存退出.
+保存并退出.
 
 最后一步, 为 nginx 的高速缓存创建一个 "/var/nginx/cache"的新目录 :
 
@@ -194,14 +194,14 @@ Nginx 以低内存的占用作为一款高性能的web服务器以及反向代�
 
 ### 步骤 7 - 配置 Nginx 的虚拟主机 ###
 
-在这个步骤里面，我们需要创建一个新的虚拟主机域 "saitama.me", 以跟文件 "/usr/local/www/saitama.me" 和日志文件一同放在 "/var/log/nginx" 目录下.
+在这个步骤里面，我们需要创建一个新的虚拟主机域 "saitama.me", 以跟文件 "/usr/local/www/saitama.me" 和日志文件一同放在 "/var/log/nginx" 目录下。
 
 我们必须做的第一件事情就是创建新的目录来存放虚拟主机文件, 在这里我们将用到一个"**vhost**"的新文件. 并创建它 :
 
     cd /usr/local/etc/nginx/
     mkdir vhost
 
-创建好vhost 目录, 那么我们就进入这个目录并创建一个新的虚拟主机文件. 这里我取名为 "**saitama.conf**" :
+创建好vhost 目录, 那么我们就进入这个目录并创建一个新的虚拟主机文件。这里我取名为 "**saitama.conf**" :
 
     cd vhost/
     nano -c saitama.conf
@@ -252,7 +252,7 @@ Nginx 以低内存的占用作为一款高性能的web服务器以及反向代�
 
     }
 
-保存退出.
+保存并退出。
 
 下一步, 为nginx和虚拟主机创建一个新的日志目录 "/var/log/" :
 
@@ -265,7 +265,7 @@ Nginx 以低内存的占用作为一款高性能的web服务器以及反向代�
 
 ### 步骤 8 - 测试 ###
 
-在这个步骤里面，我们只是测试我们的nginx和虚拟主机的配置.
+在这个步骤里面，我们只是测试我们的nginx和虚拟主机的配置。
 
 用如下命令测试nginx的配置 :
 
@@ -282,37 +282,37 @@ Nginx 以低内存的占用作为一款高性能的web服务器以及反向代�
     cd /usr/local/www/saitama.me
     echo "<?php phpinfo(); ?>" > info.php
 
-然后便访问这个文档 : **www.saitama.me/info.php**.
+然后访问这个域名 : **www.saitama.me/info.php**.
 
 ![Virtualhost Configured saitamame](http://blog.linoxide.com/wp-content/uploads/2015/11/Virtualhost-Configured-saitamame.png)
 
-Nginx 作为Apache的反向代理正在运行了，PHP也同样在进行工作了.
+Nginx 作为Apache的反向代理正在运行了，PHP也同样在进行工作了。
 
 这是另一种结果 :
 
-Test .html 文件无缓存.
+无缓存的 Test .html 文件。
 
     curl -I www.saitama.me
 
 ![html with no-cache](http://blog.linoxide.com/wp-content/uploads/2015/11/html-with-no-cache.png)
 
-Test .css 文件只有三十天的缓存.
+有三十天缓存的 Test .css 文件。
 
     curl -I www.saitama.me/test.css
 
 ![css file 30day cache](http://blog.linoxide.com/wp-content/uploads/2015/11/css-file-30day-cache.png)
 
-Test .php 文件正常缓存 :
+正常缓存的 Test .php 文件:
 
     curl -I www.saitama.me/info.php
 
 ![PHP file cached](http://blog.linoxide.com/wp-content/uploads/2015/11/PHP-file-cached.png)
 
-全部完成.
+全部完成。
 
 ### 总结 ###
 
-Nginx 是最广泛的 HTTP 和反向代理的服务器. 拥有丰富的高性能和低内存/RAM的使用功能. Nginx使用了太多的缓存, 我们可以在网络上缓存静态文件使得网页加速, 并且在用户需要的时候再缓存php文件. 这样Nginx 的轻松配置和使用,可以让它用作HTTP服务器 或者 apache的反向代理.
+Nginx 是最受欢迎的 HTTP 和反向代理服务器，拥有丰富的高性能和低内存/RAM的使用功能。Nginx使用了太多的缓存， 我们可以在网络上缓存静态文件使得网页加速，并且在用户需要的时候再缓存php文件。这样 Nginx 的轻松配置和使用可以让它用作HTTP服务器或者 apache的反向代理。
 
 --------------------------------------------------------------------------------
 
@@ -320,7 +320,7 @@ via: http://linoxide.com/linux-how-to/install-nginx-reverse-proxy-apache-freebsd
 
 作者：[Arul][a]
 译者：[KnightJoker](https://github.com/KnightJoker)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Caroline(https://github.com/carolinewuyan）
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
