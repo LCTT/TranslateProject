@@ -4,7 +4,7 @@ LFCS系列第二讲：如何安装和使用纯文本编辑器vi/vim
 
 ================================================================================
 
-几个月前， Linux 基金会发起了 LFCS （Linux 基金会认证系统管理员）认证，以帮助世界各地的人来验证他们能够在 Linux 系统上做基本的中间系统管理任务：如系统支持，第一手的故障诊断和维修，以及何时向上游支持团队提出问题的智能决策。
+几个月前， Linux 基金会发起了 LFCS （Linux Foundation Certified System administrator，Linux 基金会认证系统管理员）认证，以帮助世界各地的人来验证他们能够在 Linux 系统上做基本的中间系统管理任务：如系统支持，第一手的故障诊断和处理，以及何时向上游支持团队提出问题的智能决策。
 
 ![Learning VI Editor in Linux](http://www.tecmint.com/wp-content/uploads/2014/10/LFCS-Part-2.png)
 
@@ -16,15 +16,15 @@ LFCS系列第二讲：如何安装和使用纯文本编辑器vi/vim
 
 <iframe width="720" height="405" frameborder="0" allowfullscreen="allowfullscreen" src="//www.youtube.com/embed/Y29qZ71Kicg"></iframe>
 
-这篇文章是十个tutorial系列的第二部分，在这个部分，我们会介绍 vi/vim 基本的文件编辑操作和理解编辑器中的（三个）模式，这是LFCS认证考试中必须掌握的。
+这篇文章是《十个教程》系列的第二部分，在这个部分，我们会介绍 vi/vim 基本的文件编辑操作，帮助读者理解编辑器中的三个模式，这是LFCS认证考试中必须掌握的。
 
 ### 使用 vi/vim 执行基本的文件编辑操作 ###
 
-vi 是为了 Unix 而被编写的第一个全屏文本编辑器。由于它被设计得小巧而简单，对于只使用图形界面编辑器，举几个例子，如 NotePad++ 或者 gedit 的那些人来说，使用起来可能存在一些困难。
+vi 是为 Unix 而生的第一个全屏文本编辑器。它的设计小巧简单，对于仅仅使用过诸如 NotePad++ 或 gedit 等图形界面的文本编辑器的用户来说，使用起来可能存在一些困难。
 
-为了使用 vi，我们必须首先理解这个强大的程序操作中的3种模式，方便我们后边学习这个强大文本处理软件的相关操作。
+为了使用 vi，我们必须首先理解这个强大的程序操作中的三种模式，方便我们后边学习这个强大的文本处理软件的相关操作。
 
-请注意，大多数的现代 Linux 发行版都集成了 vi 的变种——— vim（vi升级版），相比于 vi，它有更多新功能。由于这个原因，我们会在本教程中交替使用 vi 和 vim。
+请注意，大多数的现代 Linux 发行版都集成了 vi 的变种——— vim（Vi IMproved，VI 的改进），相比于 vi，它有更多新功能。所以，我们会在本教程中交替使用 vi 和 vim。
 
 如果你的发行版还没有安装 vim，你可以通过以下方法来安装：
 
@@ -34,13 +34,13 @@ vi 是为了 Unix 而被编写的第一个全屏文本编辑器。由于它被�
 
 ### 我为什么要学习 vi ###
 
-至少有以下两点好理由：
+至少有以下两个理由：
 
-1.（不管你使用什么发行版）vi 总是可用的，因为它是 POSIX 所要求的。
+1.因为它是 POSIX 标准的一部分，所以不管你使用什么发行版 vi 总是可用的。
 
 2.vi 基本不消耗多少系统资源，并且允许我们仅仅通过键盘来完成任何可能的任务。
 
-此外，vi 有的非常广泛的内置 manual 帮助，程序打开后就可以通过 :help 命令来查看。这个内置 manual 帮助比 vi/vim 的 man 页面包含了更多信息。
+此外，vi 有的非常丰富的内置帮助手册，程序打开后就可以通过 :help 命令来查看。这个内置帮助手册比 vi/vim 的 man 页面包含了更多信息。
 
 ![vi Man Pages](http://www.tecmint.com/wp-content/uploads/2014/10/vi-man-pages.png)
 
@@ -298,7 +298,7 @@ b) 在整个文件内查找。使用 / 命令，紧接着需要查找的单词�
 
 在vi中查找字符
 
-c) vi 通过使用命令来完成多行或者整个文件的替换操作（类似于 sed）。我们可以使用一下命令，使得整个文件中的单词 “old” 替换为 “young”。
+c) vi 通过使用命令来完成多行或者整个文件的替换操作（类似于 sed）。我们可以使用以下命令，使得整个文件中的单词 “old” 替换为 “young”。
 
     :%s/old/young/g
 
@@ -382,7 +382,7 @@ via: http://www.tecmint.com/vi-editor-usage/
 
 作者：[Gabriel Cánepa][a]
 译者：[GHLandy](https://github.com/GHLandy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[东风唯笑](https://github.com/dongfengweixiao)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
