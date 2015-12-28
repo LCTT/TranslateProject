@@ -1,12 +1,12 @@
 如何在 Ubuntu 15.04 / CentOS 7 上安装 Android Studio
 ================================================================================
-随着最近几年智能手机的进步，安卓成为了最大的手机平台之一，也有很多免费的用于开发安卓应用的工具。Android Studio 是基于 [IntelliJ IDEA][1] 用于开发安卓应用的集成开发环境。它是 Google 2014 年发布的免费开源软件，继 Eclipse 之后成为主要的 IDE。
+随着最近几年智能手机的进步，安卓成为了最大的手机平台之一，所有用于开发安卓应用的工具都是免费提供。Android Studio 是基于 [IntelliJ IDEA][1] 用于开发安卓应用的集成开发环境（IDE）。它是 Google 2014 年发布的免费开源软件，继 Eclipse 之后成为主要的 IDE。
 
 在这篇文章，我们一起来学习如何在 Ubuntu 15.04 和 CentOS 7 上安装 Android Studio。
 
 ### 在 Ubuntu 15.04 上安装 ###
 
-我们可以用两种方式安装 Android Studio。第一种是配置必须的库然后再安装它；另一种是从 Android 官方网站下载然后再本地编译安装。在下面的例子中，我们会使用命令行设置库并安装它。在继续下一步之前，我们需要确保我们已经安装了 JDK 1.6 或者更新版本。
+我们可以用两种方式安装 Android Studio。第一种是配置必须的库然后再安装它；另一种是从 Android 官方网站下载然后在本地编译安装。在下面的例子中，我们会使用命令行设置库并安装它。在继续下一步之前，我们需要确保我们已经安装了 JDK 1.6 或者更新版本。
 
 这里，我打算安装 JDK 1.8。
 
@@ -32,7 +32,7 @@
 
 上面的安装命令会在 /opt 目录下面安装 Android Studio。
 
-现在，运行下面的命令启动安装窗口：
+现在，运行下面的命令启动安装向导：
 
     $ /opt/android-studio/bin/studio.sh
 
@@ -121,7 +121,7 @@
 
 ### 总结 ###
 
-虽然发布不到一年，但是 Android Studio 已经替代 Eclipse 成为了安装开发最主要的 IDE。它是唯一一个能支持之后 Google 提供的 Android SDKs 和其它 Android 特性的官方 IDE 工具。那么，你还在等什么呢？赶快安装 Android Studio 然后体验开发安装应用的乐趣吧。
+虽然发布不到一年，但是 Android Studio 已经替代 Eclipse 成为了Android开发最主要的 IDE。它是唯一能支持 Google 之后将要提供的 Android SDKs 和其它 Android 特性的官方 IDE 工具。那么，你还在等什么呢？赶快安装 Android Studio 来体验开发 Android 应用的乐趣吧。
 
 --------------------------------------------------------------------------------
 
@@ -129,7 +129,7 @@ via: http://linoxide.com/tools/install-android-studio-ubuntu-15-04-centos-7/
 
 作者：[B N Poornima][a]
 译者：[ictlyh](http://mutouxiaogui.cn/blog/)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
