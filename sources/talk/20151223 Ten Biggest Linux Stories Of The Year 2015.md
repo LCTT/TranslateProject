@@ -1,3 +1,5 @@
+StdioA translating
+
 Ten Biggest Linux Stories Of The Year 2015
 ================================================================================
 ![Biggest Linux Stories of 2015](http://itsfoss.com/wp-content/uploads/2015/12/Biggest-Linux-Stories-2015.jpg)
