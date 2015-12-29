@@ -1,6 +1,6 @@
 在 Ubuntu 15.10 上为单个网卡设置多个 IP 地址
 ================================================================================
-有时候你可能想在你的网卡上使用多个 IP 地址。遇到这种情况你会怎么办呢？买一个新的网卡并分配一个新的 IP？不，这没有必要（至少在小网络中）。现在我们可以在 Ubuntu 系统中为一个网卡分配多个 IP 地址。想知道怎么做到的？跟着我往下看，其实并不难。
+有时候你可能想在你的网卡上使用多个 IP 地址。遇到这种情况你会怎么办呢？买一个新的网卡并分配一个新的 IP？不，没有这个必要（至少在小型网络中）。现在我们可以在 Ubuntu 系统中为一个网卡分配多个 IP 地址。想知道怎么做到的？跟着我往下看，其实并不难。
 
 这个方法也适用于 Debian 以及它的衍生版本。
 
@@ -12,7 +12,7 @@
 
     sudo ip addr
 
-**事例输出：**
+**样例输出：**
 
     1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default 
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -31,7 +31,7 @@
 
     sudo ifconfig
 
-**事例输出：**
+**样例输出：**
 
     enp0s3 Link encap:Ethernet HWaddr 08:00:27:2a:03:4b 
     inet addr:192.168.1.103 Bcast:192.168.1.255 Mask:255.255.255.0
@@ -50,7 +50,7 @@
     collisions:0 txqueuelen:0 
     RX bytes:38793 (38.7 KB) TX bytes:38793 (38.7 KB)
 
-正如你在上面看到的，我的网卡名称是 **enp0s3**，它的 IP 地址是 **192.168.1.103**。
+正如你在上面输出中看到的，我的网卡名称是 **enp0s3**，它的 IP 地址是 **192.168.1.103**。
 
 现在让我们来为网卡添加一个新的 IP 地址，例如说 **192.168.1.104**。
 
@@ -73,7 +73,7 @@
     inet6 fe80::a00:27ff:fe2a:34e/64 scope link 
     valid_lft forever preferred_lft forever
 
-类似地，你可以添加想要的任意多的 IP 地址。
+类似地，你可以添加任意数量的 IP 地址，只要你想要。
 
 让我们 ping 一下这个 IP 地址验证一下。
 
@@ -108,7 +108,7 @@
 
 可以看到已经没有了！！
 
-也许你已经知道，你重启系统后会丢失这些设置。那么怎么设置才能永久有效呢？这也很简单。
+正如你所知，重启系统后这些设置会失效。那么怎么设置才能永久有效呢？这也很简单。
 
 ### 添加永久 IP 地址 ###
 
@@ -154,7 +154,7 @@ Ubuntu 系统的网卡配置文件是 **/etc/network/interfaces**。
 
 保存并关闭文件。
 
-无需重启运行下面的命令使更改生效。
+运行下面的命令使更改无需重启即生效。
 
     sudo ifdown enp0s3 && sudo ifup enp0s3
 
@@ -182,7 +182,7 @@ Ubuntu 系统的网卡配置文件是 **/etc/network/interfaces**。
     DHCPACK of 192.168.1.103 from 192.168.1.1
     bound to 192.168.1.103 -- renewal in 35146 seconds.
 
-**注意**：如果你从远程连接到服务器，把上面的两个命令放到**一行**中**非常重要**，因为第一个命令会断掉你的连接。而采用这种方式可以存活你的 ssh 会话。
+**注意**：如果你从远程连接到服务器，把上面的两个命令放到**一行**中**非常重要**，因为第一个命令会断掉你的连接。而采用这种方式可以保留你的 ssh 会话。
 
 现在，让我们用下面的命令来检查一下是否添加了新的 IP：
 
@@ -228,7 +228,7 @@ via: http://www.unixmen.com/assign-multiple-ip-addresses-to-one-interface-on-ubu
 
 作者：[SK][a]
 译者：[ictlyh](http://mutouxiaogui.cn/blog/)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

@@ -1,8 +1,8 @@
-Linux 中如何从命令行访问 Dropbox
+Linux 中如何通过命令行访问 Dropbox
 ================================================================================
-在当今这个多设备的环境下，云存储无处不在。无论身处何方，人们都想通过多种设备来从云存储中获取所需的内容。由于优雅的 UI 和完美的跨平台兼容性，Dropbox 已成为最为广泛使用的云存储服务。 Dropbox 的流行已引发了一系列官方或非官方 Dropbox 客户端的出现，它们支持不同的操作系统平台。
+在当今这个多设备的环境下，云存储无处不在。无论身处何方，人们都想通过多种设备来从云存储中获取所需的内容。由于拥有漂亮的 UI 和完美的跨平台兼容性，Dropbox 已成为最为广泛使用的云存储服务。 Dropbox 的流行已引发了一系列官方或非官方 Dropbox 客户端的出现，它们支持不同的操作系统平台。
 
-当然 Linux 平台下也有着自己的 Dropbox 客户端： 既有命令行的，也有图形界面。[Dropbox Uploader][1] 是一个简单易用的 Dropbox 命令行客户端，它是用 BASH 脚本语言所编写的。在这篇教程中，我将描述 **在 Linux 中如何使用 Dropbox Uploader 通过命令行来访问 Dropbox**。
+当然 Linux 平台下也有着自己的 Dropbox 客户端： 既有命令行的，也有图形界面客户端。[Dropbox Uploader][1] 是一个简单易用的 Dropbox 命令行客户端，它是用 Bash 脚本语言所编写的（LCTT 译注：对，你没看错， 就是 Bash）。在这篇教程中，我将描述 **在 Linux 中如何使用 Dropbox Uploader 通过命令行来访问 Dropbox**。
 
 ### Linux 中安装和配置 Dropbox Uploader ###
 
@@ -13,7 +13,7 @@ Linux 中如何从命令行访问 Dropbox
 
 请确保你已经在系统中安装了 `curl`，因为 Dropbox Uploader 通过 curl 来运行 Dropbox 的 API。
 
-要配置 Dropbox Uploader，只需运行 dropbox_uploader.sh 即可。当你第一次运行这个脚本时，它将询问你，以使得它可以访问你的 Dropbox 账户。
+要配置 Dropbox Uploader，只需运行 dropbox_uploader.sh 即可。当你第一次运行这个脚本时，它将请求得到授权以使得脚本可以访问你的 Dropbox 账户。
 
     $ ./dropbox_uploader.sh
 
@@ -88,7 +88,7 @@ via: http://xmodulo.com/access-dropbox-command-line-linux.html
 
 作者：[Dan Nanni][a]
 译者：[FSSlc](https://github.com/FSSlc)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
