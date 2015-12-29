@@ -2,7 +2,7 @@ Linux 中如何通过命令行访问 Dropbox
 ================================================================================
 在当今这个多设备的环境下，云存储无处不在。无论身处何方，人们都想通过多种设备来从云存储中获取所需的内容。由于拥有漂亮的 UI 和完美的跨平台兼容性，Dropbox 已成为最为广泛使用的云存储服务。 Dropbox 的流行已引发了一系列官方或非官方 Dropbox 客户端的出现，它们支持不同的操作系统平台。
 
-当然 Linux 平台下也有着自己的 Dropbox 客户端： 既有命令行的，也有图形界面客户端。[Dropbox Uploader][1] 是一个简单易用的 Dropbox 命令行客户端，它是用 BASH 脚本语言所编写的。在这篇教程中，我将描述 **在 Linux 中如何使用 Dropbox Uploader 通过命令行来访问 Dropbox**。
+当然 Linux 平台下也有着自己的 Dropbox 客户端： 既有命令行的，也有图形界面客户端。[Dropbox Uploader][1] 是一个简单易用的 Dropbox 命令行客户端，它是用 Bash 脚本语言所编写的（LCTT 译注：对，你没看错， 就是 Bash）。在这篇教程中，我将描述 **在 Linux 中如何使用 Dropbox Uploader 通过命令行来访问 Dropbox**。
 
 ### Linux 中安装和配置 Dropbox Uploader ###
 
