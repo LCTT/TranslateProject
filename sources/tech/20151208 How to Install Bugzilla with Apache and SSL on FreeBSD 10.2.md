@@ -95,14 +95,14 @@ Bugzilla是一款bug跟踪系统和测试工具，它基于web且开源，由moz
 
 ![Configure MySQL Password](http://blog.linoxide.com/wp-content/uploads/2015/12/Configure-MySQL-Password.png)
 
-Next, we will log in to the mysql shell with user root and password that we've configured above, then we will create new database and user for bugzilla installation.
+以上步骤都完成之后，我们用root登录mysql shell，然后为bugzilla创建一个新的数据库和用户。
 
-Log in to the mysql shell with command below :
+用以下命令登录mysql shell：
 
     mysql -u root -p
     password: aqwe123
 
-Add the database :
+添加数据库：
 
     create database bugzilladb;
     create user bugzillauser@localhost identified by 'bugzillauser@';
@@ -112,18 +112,18 @@ Add the database :
 
 ![Creating Database for Bugzilla](http://blog.linoxide.com/wp-content/uploads/2015/12/Creating-Database-for-Bugzilla.png)
 
-Database for bugzilla is created, database "bugzilladb" with user "bugzillauser" and password "bugzillauser@".
+bugzilla的数据库创建好了，名字为"bugzilladb"，用户名和密码分别为"bugzillauser"和"bugzillauser@"。
 
-### Step 4 - Generate New SSL Certificate ###
+### 第四步 - 生成新的SSL证书 ###
 
-Generate new self signed ssl certificate on directory "ssl" for bugzilla site.
+在bugzilla站点的"ssl"目录里生成新的自签名SSL证书。
 
-Go to the apache24 directory and create new directory "ssl" on it :
+前往apache24目录并在此创建新目录"ssl"：
 
     cd /usr/local/etc/apache24/
     mkdir ssl; cd ssl
 
-Next, generate the certificate file with openssl command, then change the permission of the certificate file :
+接着，用openssl命令生成证书文件，然后更改其权限：
 
     sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /usr/local/etc/apache24/ssl/bugzilla.key -out /usr/local/etc/apache24/ssl/bugzilla.crt
     chmod 600 *
@@ -171,7 +171,7 @@ Paste configuration below :
     </Directory>
     </VirtualHost>
 
-Save and exit.
+保存并退出。
 
 If all is done, create new directory for bugzilla installation and then enable the bugzilla virtualhost by adding the virtualhost configuration to httpd.conf file.
 
