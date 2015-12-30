@@ -1,3 +1,4 @@
+sonofelice translating
 Monitor Linux System Performance Using Nmon
 ================================================================================
 Nmon (also known as Nigel’s Monitor) is a computer performance system monitor tool for the AIX and Linux operating systems developed by IBM employee Nigel Griffiths. The tool displays onscreen or saves to a data file the operating system statistics to aid in the understanding of computer resource use, tuning options and bottlenecks. This system benchmark tool gives you a huge amount of important performance information in one go with a single command. You can easily monitor your system’s CPU, memory, network, disks, file systems, NFS, top processes, resources and power micro-partition information using Nmon.
