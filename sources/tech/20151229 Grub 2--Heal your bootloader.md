@@ -1,3 +1,4 @@
+翻译中。。。。。
 Grub 2: Heal your bootloader
 ================================================================================
 **There are few things as irritating as a broken bootloader. Get the best out of Grub 2 and keep it shipshape.**
