@@ -1,3 +1,4 @@
+zky001翻译中
 What are the best plugins to increase productivity on Emacs
 ================================================================================
 Over a year ago now, I went looking for the best plugins to [turn Vim into a full-fledged IDE][1]. Interestingly, a lot of the comments on that post were about how Emacs already has most of these plugins built in, and was already a great IDE. Although I can only agree about Emacs' incredible versatility, it is still not the ultimate editor when it comes out of the box. Thankfully, its vast plugin library is here to fix that. But among the plethora of options available to you, it is sometimes hard to know where to start. So for now, let me try to assemble a short list of the indispensable plugins to increase your productivity while using Emacs. Although I am heavily geared towards programming related productivity, most of these plugins would be useful to anyone for any usage.
@@ -67,7 +68,7 @@ To conclude, Emacs is a fantastic tool. Probably not a shocker. Try these plugin
 via: http://xmodulo.com/best-plugins-to-increase-productivity-on-emacs.html
 
 作者：[Adrien Brochard][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zky001](https://github.com/zky001)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

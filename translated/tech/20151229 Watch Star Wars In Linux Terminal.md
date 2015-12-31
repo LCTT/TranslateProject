@@ -1,25 +1,23 @@
-zky001正在翻译
-Watch Star Wars In Linux Terminal
+在Linux终端看星球大战
 ================================================================================
 ![](http://itsfoss.com/wp-content/uploads/2015/12/Star-Wars-Linux-Terminal-2.png)
+星球大战席卷世界。最新一期的 [《星球大战》系列, 《星球大战7:原力觉醒》，打破了有史以来的记录][1].
 
-Star Wars fever has gripped the world. The latest installment in the [Star Wars series, Star Wars: The Force Awakens, has broken the opening records][1].
+虽然我不能帮你得到一张最新的《星球大战》电影的票,但我可以提供给你一种方式，看[星球大战第四集片段][2],它是非常早期的《星球大战》电影。
 
-While I cannot help you to get a ticket of the latest Star Wars movie, I can certainly provide you a way to watch [Star Wars episode IV][2], the original and very first Star Wars movie.
+不,它不会是高清,也不是蓝光版。相反,它将是ASCII版的《星球大战》第四集片段,你可以在Linux终端看它,这才是真正的极客的方式 :)
 
-No, it won’t be HD, Blue Ray edition. Instead, it will be the ASCII version of Star Wars episode IV and you can watch it in Linux Terminal, in true geek way :)
+### 在Linux终端看星球大战 ###
 
-### Watch Star Wars in Linux Terminal ###
+打开一个终端,使用以下命令:
+    
+	telnet towel.blinkenlights.nl
 
-Open a terminal and use the following command:
-
-    telnet towel.blinkenlights.nl
-
-Wait for a few seconds and you can see animated ASCII art in the terminal like this:
+等待几秒钟,你可以在终端看到类似于以下这样的动画ASCII艺术:
 
 ![](http://itsfoss.com/wp-content/uploads/2015/12/Star-Wars-Linux-Terminal.png)
 
-And it will keep on going:
+同时它将继续
 
 ![](http://itsfoss.com/wp-content/uploads/2015/12/Star-Wars-Linux-Terminal-1.png)
 
@@ -29,14 +27,12 @@ And it will keep on going:
 
 ![](http://itsfoss.com/wp-content/uploads/2015/12/Star-Wars-Linux-Terminal-5.png)
 
-To stop the animation, press ctrl+]. After that type quit to come out of telnet command.
+要停止动画,按 ctrl +]，在这之后输入quit来退出tenlnet程序
 
-### More terminal fun ###
+### 更多有趣的终端 ###
+事实上,看《星球大战》并不是你在Linux终端下唯一能做有趣的事情。您可以运行[终端里的列车][3]或[通过ASCII艺术得到Linux标志][4]。
 
-In fact, watching Star Wars is not the only fun thing you can do in Linux terminal. You can run a [train in terminal][3] or [get Linux logo in ASCII art][4].
-
-I let you enjoy Star Wars in Linux :)
-
+我希望你可以在Linux下享受星球争霸
 --------------------------------------------------------------------------------
 
 via: http://itsfoss.com/star-wars-linux/
@@ -47,7 +43,6 @@ via: http://itsfoss.com/star-wars-linux/
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:http://itsfoss.com/author/abhishek/
 [1]:http://www.gamespot.com/articles/star-wars-7-breaks-thursday-night-movie-opening-re/1100-6433246/
 [2]:http://www.imdb.com/title/tt0076759/
 [3]:http://itsfoss.com/ubuntu-terminal-train/
