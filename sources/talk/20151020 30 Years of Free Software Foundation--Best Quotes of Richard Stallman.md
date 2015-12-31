@@ -1,3 +1,5 @@
+For my dear RMS
+
 30 Years of Free Software Foundation: Best Quotes of Richard Stallman
 ================================================================================
 注：youtube 视频
