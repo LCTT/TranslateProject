@@ -95,7 +95,7 @@ Bugzilla是一款bug跟踪系统和测试工具，它基于web且开源，由moz
 
 ![Configure MySQL Password](http://blog.linoxide.com/wp-content/uploads/2015/12/Configure-MySQL-Password.png)
 
-以上步骤都完成之后，我们用root登录mysql shell，然后为bugzilla创建一个新的数据库和用户。
+以上步骤都完成之后，我们用root登录mysql shell，然后为bugzilla安装创建一个新的数据库和用户。
 
 用以下命令登录mysql shell：
 
@@ -130,18 +130,18 @@ bugzilla的数据库创建好了，名字为"bugzilladb"，用户名和密码分
 
 ### 第五步 - 配置虚拟主机 ###
 
-We will install bugzilla on directory "/usr/local/www/bugzilla", so we must create new virtualhost configuration for it.
+我们将在"/usr/local/www/bugzilla"目录里安装bugzilla，所以我们必须为它创建新的虚拟主机配置。
 
-Go to the apache directory and create new directory called "vhost" for virtualhost file :
+前往apache目录并为虚拟主机文件创建名为"vhost"的新目录：
 
     cd /usr/local/etc/apache24/
     mkdir vhost; cd vhost
 
-Now create new file "bugzilla.conf" for the virtualhost file :
+现在为虚拟主机文件创建新文件"bugzilla.conf"：
 
     nano -c bugzilla.conf
 
-Paste configuration below :
+将以下配置粘贴进去：
 
     <VirtualHost *:80>
     ServerName mybugzilla.me
@@ -173,28 +173,28 @@ Paste configuration below :
 
 保存并退出。
 
-If all is done, create new directory for bugzilla installation and then enable the bugzilla virtualhost by adding the virtualhost configuration to httpd.conf file.
+上述都完成之后，为bugzilla安装创建新目录并通过添加虚拟主机配置至httpd.conf文件来启用bugzilla虚拟主机。
 
-Run command below on "apache24" directory :
+在"apache24"目录下运行以下命令：
 
     mkdir -p /usr/local/www/bugzilla
     cd /usr/local/etc/apache24/
     nano -c httpd.conf
 
-In the end of the line, add configuration below :
+文末，添加以下配置：
 
     Include etc/apache24/vhost/*.conf
 
-Save and exit.
+保存并退出。
 
-Now test the apache configuration with "apachectl" command and restart it :
+现在用"apachectl"命令测试一下apache的配置并重启它：
 
     apachectl configtest
     service apache24 restart
 
 ### 第六步 - 安装Bugzilla ###
 
-We can install bugzilla manually by downloading the source, or install it from freebsd repository. In this step we will install bugzilla from freebsd repository with pkg command :
+我们可以通过下载源来手动安装bugzilla了，或从freebsd库中安装也可以。在这一步中我们将用pkg命令从freebsd库中安装bugzilla：
 
     pkg install bugzilla50
 
