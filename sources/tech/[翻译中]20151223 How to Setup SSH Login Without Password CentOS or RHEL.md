@@ -1,3 +1,4 @@
+translating by fw8899
 How to Setup SSH Login Without Password CentOS / RHEL
 ================================================================================
 ![](http://www.ehowstuff.com/wp-content/uploads/2015/12/notebook-1071774_1280.jpg)
