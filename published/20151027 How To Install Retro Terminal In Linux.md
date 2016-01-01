@@ -2,9 +2,9 @@ Linux 下如何安装 Retro Terminal
 ================================================================================
 ![Retro Terminal in Linux](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/10/Retro-Terminal-Linux.jpeg)
 
-你有怀旧情节？那就试试 **安装 retro terminal 应用** [cool-retro-term][1] 来一瞥过去的时光吧。顾名思义，`cool-retro-term` 是一个兼具酷炫和怀旧的终端。
+你有怀旧情节？那就试试 **安装复古终端应用** [cool-retro-term][1] 来一瞥过去的时光吧。顾名思义，`cool-retro-term` 是一个兼具酷炫和怀旧的终端。
 
-你还记得那段遍地都是 CRT 显示器、终端屏幕闪烁不停的时光吗？现在你并不需要穿越到过去来见证那段时光。假如你观看背景设置在上世纪 90 年代的电影，你就可以看到大量带有绿色或黑底白字的显像管显示器。再加上它们通常带有极客光环，这使得它们看起来更酷。
+你还记得那段遍地都是 CRT 显示器、终端屏幕闪烁不停的时光吗？现在你并不需要穿越到过去来见证那段时光。假如你观看背景设置在上世纪 90 年代的电影，你就可以看到大量带有绿色或黑底白字的显像管显示器。这种极客光环让它们看起来非常酷！
 
 若你已经厌倦了你机器中终端的外表，正寻找某些炫酷且‘新奇’的东西，则 `cool-retro-term` 将会带给你一个复古的终端外表，使你可以重温过去。你也可以改变它的颜色、动画类型并添加一些额外的特效。
 
@@ -48,7 +48,7 @@ Linux 下如何安装 Retro Terminal
 
     ./cool-retro-term
 
-假如你想使得这个应用可在程序菜单中被快速获取到，以便你不用再每次手动地用命令来启动它，则你可以使用下面的命令：
+假如你想把这个应用放在程序菜单中以便快速找到，这样你就不用再每次手动地用命令来启动它，则你可以使用下面的命令：
 
     sudo cp cool-retro-term.desktop /usr/share/applications
 
@@ -60,13 +60,13 @@ Linux 下如何安装 Retro Terminal
 
 via: http://itsfoss.com/cool-retro-term/
 
-作者：[Hossein Heydari][a]
+作者：[Abhishek Prakash][a]
 译者：[FSSlc](https://github.com/FSSlc)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:http://itsfoss.com/author/hossein/
+[a]:http://itsfoss.com/author/abhishek/
 [1]:https://github.com/Swordfish90/cool-retro-term
 [2]:http://itsfoss.com/tag/antergos/
 [3]:https://manjaro.github.io/

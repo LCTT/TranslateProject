@@ -1,3 +1,5 @@
+translating by ezio
+
 How to Monitor the Progress of a Linux Command Line Operation Using PV Command
 ================================================================================
 ![](https://www.maketecheasier.com/assets/uploads/2015/11/pv-featured-1.jpg)
