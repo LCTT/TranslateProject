@@ -1,3 +1,5 @@
+GHLandy Translating
+
 14 tips for teaching open source development
 ================================================================================
 Academia is an excellent platform for training and preparing the open source developers of tomorrow. In research, we occasionally open source software we write. We do this for two reasons. One, to promote the use of the tools we produce. And two, to learn more about the impact and issues other people face when using them. With this background of writing research software, I was tasked with redesigning the undergraduate software engineering course for second-year students at the University of Bradford.
