@@ -1,3 +1,4 @@
+sonofelice translating
 How to Check Hardware Information on Linux Using Command Line
 ================================================================================
 ![](https://maketecheasier-holisticmedia.netdna-ssl.com/assets/uploads/2015/12/hdd_info_featured-1.png)
