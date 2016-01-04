@@ -1,3 +1,5 @@
+GHLandy Translating
+
 20 Years of GIMP Evolution: Step by Step
 ================================================================================
 注：youtube 视频
