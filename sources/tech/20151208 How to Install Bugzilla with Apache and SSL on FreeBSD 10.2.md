@@ -198,55 +198,55 @@ bugzilla的数据库创建好了，名字为"bugzilladb"，用户名和密码分
 
     pkg install bugzilla50
 
-If it's done, go to the bugzilla installation directory and install all perl module that needed by bugzilla.
+以上步骤都完成之后，前往bugzilla安装目录并安装所有bugzilla需要的perl模块。
 
     cd /usr/local/www/bugzilla
     ./install-module --all
 
-Wait it until all is finished, it is take the time.
+要等到所有都完成，这需要点时间。
 
-Next, generate the configuration file "localconfig" by executing "checksetup.pl" file on bugzilla installation directory.
+下一步，在bugzilla的安装目录中执行"checksetup.pl"文件来生成配置文件"localconfig"。
 
     ./checksetup.pl
 
-You will see the error message about the database configuration, so edit the file "localconfig" with nano editor :
+你会看到一条关于数据库配置错误，你得用nano编辑器编辑一下"localconfig"文件：
 
     nano -c localconfig
 
-Now add the database that was created on step 3.
+现在添加第三步创建的数据库。
 
-    #Line 57
+    #第五十七行
     $db_name = 'bugzilladb';
 
-    #Line 60
+    #第六十行
     $db_user = 'bugzillauser';
 
-    #Line 67
+    #第六十七行
     $db_pass = 'bugzillauser@';
 
-Save and exit.
+保存并退出。
 
-Then run "checksetup.pl" again :
+然后再次运行"checksetup.pl"：
 
     ./checksetup.pl
 
-You will be prompt about mail and administrator account, fill all of it with your email, user and password.
+你会收到输入邮箱名和管理员账号的提示，你只要输入你得邮箱、用户名和密码就行了。
 
 ![Admin Setup](http://blog.linoxide.com/wp-content/uploads/2015/12/Admin-Setup.png)
 
-In the last, we need to change the owner of the installation directory to user "www", then restart apache with service command :
+最后，我们需要把安装目录的属主改成"www"，然后用服务命令重启apache：
 
     cd /usr/local/www/
     chown -R www:www bugzilla
     service apache24 restart
 
-Now Bugzilla is installed, you can see it by visiting mybugzilla.me and you will be redirect to the https connection.
+现在Bugzilla已经安装好了，你可以通过访问mybugzilla.me来查看，并且将会重定向到https连接。
 
-Bugzilla home page.
+Bugzilla首页：
 
 ![Bugzilla Home](http://blog.linoxide.com/wp-content/uploads/2015/12/Bugzilla-Home.png)
 
-Bugzilla admin panel.
+Bugzilla admin面板：
 
 ![Bugzilla Admin Page](http://blog.linoxide.com/wp-content/uploads/2015/12/Bugzilla-Admin-Page.png)
 
