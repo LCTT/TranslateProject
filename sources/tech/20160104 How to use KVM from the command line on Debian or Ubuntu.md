@@ -1,3 +1,4 @@
+kylepeng93翻译中...
 How to use KVM from the command line on Debian or Ubuntu
 ================================================================================
 There are different ways to manage virtual machines (VMs) running on KVM hypervisor. For example, virt-manager is a popular GUI-based front-end for VM management. However, if you would like to use KVM on a headless server, GUI-based solutions will not be ideal. In fact, you can create and manage KVM VMs purely from the command line using kvm command-line wrapper script. Alternatively, you can use virsh which is an easier-to-use command-line user interface for managing guest VMs. Underneath virsh, it communicates wtih libvirtd service which can control several different hypervisors including KVM, Xen, QEMU, LXC and OpenVZ.
