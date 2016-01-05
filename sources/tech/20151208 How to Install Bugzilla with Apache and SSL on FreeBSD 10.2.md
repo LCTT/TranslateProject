@@ -252,7 +252,7 @@ Bugzilla admin面板：
 
 ### 结论 ###
 
-Bugzilla is web based application help you to manage the software development. It is written in perl and use MySQL as the database system. Bugzilla used by mozilla, redhat, gnome etc for help their software development. Bugzilla has a lot of features and easy to configure and install.
+Bugzilla是一个基于web并能帮助你管理软件开发的应用，它用perl开发并使用MySQL作为数据库系统。Bugzilla被mozilla,redhat,gnome等等公司用来帮助它们的软件开发工作。Bugzilla有很多功能并易于配置和安装。
 
 --------------------------------------------------------------------------------
 
