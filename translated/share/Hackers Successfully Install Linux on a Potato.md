@@ -2,7 +2,7 @@
 
 ================================================================================
 
-来自荷兰阿姆斯特丹的消息称，来自`LinuxOnAnything.nl网站的黑客在马铃薯上成功安装了Linux。这是操作系统第一次在根用蔬菜上安装成功。
+来自荷兰阿姆斯特丹的消息称，LinuxOnAnything.nl网站的黑客在马铃薯上成功安装了Linux。这是操作系统第一次在根用蔬菜上安装成功。
 
 ![Linux Potato](http://www.bbspot.com/Images/News_Features/2008/12/linux-potato.jpg)
 
@@ -26,6 +26,7 @@ LOA是第一个将Linux安装到一匹设得兰矮种马上的小组，但最近
 via: http://www.bbspot.com/news/2008/12/linux-on-a-potato.html
 
 译者：[StdioA](https://github.com/StdioA)
+协同翻译：[hittlle](https://github.com/hittlle)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
