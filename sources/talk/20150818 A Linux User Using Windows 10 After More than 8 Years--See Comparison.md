@@ -1,4 +1,3 @@
-sevenot translating
 A Linux User Using ‘Windows 10′ After More than 8 Years – See Comparison
 ================================================================================
 Windows 10 is the newest member of windows NT family of which general availability was made on July 29, 2015. It is the successor of Windows 8.1. Windows 10 is supported on Intel Architecture 32 bit, AMD64 and ARMv7 processors.
