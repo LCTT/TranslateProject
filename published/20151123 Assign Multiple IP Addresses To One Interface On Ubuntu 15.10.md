@@ -1,5 +1,6 @@
 在 Ubuntu 15.10 上为单个网卡设置多个 IP 地址
 ================================================================================
+
 有时候你可能想在你的网卡上使用多个 IP 地址。遇到这种情况你会怎么办呢？买一个新的网卡并分配一个新的 IP？不，没有这个必要（至少在小型网络中）。现在我们可以在 Ubuntu 系统中为一个网卡分配多个 IP 地址。想知道怎么做到的？跟着我往下看，其实并不难。
 
 这个方法也适用于 Debian 以及它的衍生版本。
@@ -138,7 +139,7 @@ Ubuntu 系统的网卡配置文件是 **/etc/network/interfaces**。
 
     sudo nano /etc/network/interfaces
 
-按照黑色字体标注的添加额外的 IP 地址。
+如下添加额外的 IP 地址。
 
     # This file describes the network interfaces available on your system
     # and how to activate them. For more information, see interfaces(5).
@@ -217,10 +218,9 @@ Ubuntu 系统的网卡配置文件是 **/etc/network/interfaces**。
 
 想知道怎么给 CentOS/RHEL/Scientific Linux/Fedora 系统添加额外的 IP 地址，可以点击下面的链接。
 
-注：此篇文章以前做过选题：20150205 Linux Basics--Assign Multiple IP Addresses To Single Network Interface Card On CentOS 7.md
-- [Assign Multiple IP Addresses To Single Network Interface Card On CentOS 7][1]
+- [在CentOS 7上给一个网卡分配多个IP地址][1]
 
-周末愉快！
+工作愉快！
 
 --------------------------------------------------------------------------------
 
@@ -233,4 +233,4 @@ via: http://www.unixmen.com/assign-multiple-ip-addresses-to-one-interface-on-ubu
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:http://www.unixmen.com/author/sk/
-[1]:http://www.unixmen.com/linux-basics-assign-multiple-ip-addresses-single-network-interface-card-centos-7/
+[1]:https://linux.cn/article-5127-1.html
