@@ -1,4 +1,3 @@
-翻译中
  如何在 Ubuntu 14.04, 15.10 中安装Light Table 0.8
 ================================================================================
 ![](http://ubuntuhandbook.org/wp-content/uploads/2014/11/LightTable-IDE-logo-icon.png)
