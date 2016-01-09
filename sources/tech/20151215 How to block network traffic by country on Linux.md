@@ -1,3 +1,5 @@
+FSSlc translating
+
 How to block network traffic by country on Linux
 ================================================================================
 As a system admin who maintains production Linux servers, there are circumstances where you need to **selectively block or allow network traffic based on geographic locations**. For example, you are experiencing denial-of-service attacks mostly originating from IP addresses registered with a particular country. You want to block SSH logins from unknown foreign countries for security reasons. Your company has a distribution right to online videos, which requires it to legally stream to particular countries only. You need to prevent any local host from uploading documents to any non-US remote cloud storage due to geo-restriction company policies.

@@ -1,3 +1,4 @@
+translating by kylepeng93
 KDE vs GNOME vs XFCE Desktop
 ================================================================================
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2013/07/300px-Xfce_logo.svg_.png)

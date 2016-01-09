@@ -1,8 +1,10 @@
+alim0x translating
+
 The history of Android
 ================================================================================
 ### Android 4.2, Jelly Bean—new Nexus devices, new tablet interface ###
 
-The Android Platform was rapidly maturing, and with Google hosting more and more apps in the Play Store, there was less and less that needed to go out in the OS update. Still, the relentless march of updates must continue, and in November 2012 Android 4.2 was released. 4.2 was still called "Jelly Bean," a nod to the relatively small amount of changes that were present in this release. 
+The Android Platform was rapidly maturing, and with Google hosting more and more apps in the Play Store, there was less and less that needed to go out in the OS update. Still, the relentless march of updates must continue, and in November 2012 Android 4.2 was released. 4.2 was still called "Jelly Bean," a nod to the relatively small amount of changes that were present in this release.
 
 ![The LG-made Nexus 4 and Samsung-made Nexus 10.](http://cdn.arstechnica.net/wp-content/uploads/2014/03/unnamed.jpg)
 The LG-made Nexus 4 and Samsung-made Nexus 10.
