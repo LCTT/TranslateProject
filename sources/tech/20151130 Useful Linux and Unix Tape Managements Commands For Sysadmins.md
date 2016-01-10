@@ -1,67 +1,65 @@
-alim0x translating
-
-15 Useful Linux and Unix Tape Managements Commands For Sysadmins
+15条给系统管理员的实用 Linux/Unix 磁带管理命令
 ================================================================================
-Tape devices should be used on a regular basis only for archiving files or for transferring data from one server to another. Usually, tape devices are all hooked up to Unix boxes, and controlled with mt or mtx. You must backup all data to both disks (may be in cloud) and tape device. In this tutorial you will learn about:
+磁带设备应只用于定期的文件归档或将数据从一台服务器传送至另一台。通常磁带设备与 Unix 机器连接，用 mt 或 mtx 控制。你可以将所有的数据备份到磁盘（也许是云中）和磁带设备。在这个教程中你将会了解到：
 
-- Tape device names
-- Basic commands to manage tape drive
-- Basic backup and restore commands
+- 磁带设备名
+- 管理磁带驱动器的基本命令
+- 基本的备份和恢复命令
 
-### Why backup? ###
+### 为什么备份？ ###
 
-A backup plant is important:
+一个备份设备是很重要的：
 
-- Ability to recover from disk failure
-- Accidental file deletion
-- File or file system corruption
-- Complete server destruction, including destruction of on-site backups due to fire or other problems.
+- 从磁盘故障中恢复的能力
+- 意外的文件删除
+- 文件或文件系统损坏
+- 服务器完全毁坏，包括由于火灾或其他问题导致的同盘备份毁坏
 
-You can use tape based archives to backup the whole server and move tapes off-site.
+你可以使用磁带归档备份整个服务器并将其离线存储。
 
-### Understanding tape file marks and block size ###
+### 理解磁带文件标记和块大小 ###
 
 ![Fig.01: Tape file marks](http://s0.cyberciti.org/uploads/cms/2015/10/tape-format.jpg)
 
-Fig.01: Tape file marks
+图01：磁带文件标记
 
-Each tape device can store multiple tape backup files. Tape backup files are created using cpio, tar, dd, and so on. However, tape device can be opened, written data to, and closed by various program. You can store several backups (tapes) on physical tape. Between each tape file is a "tape file mark". This is used to indicate where one tape file ends and another begins on physical tape. You need to use mt command to positions the tape (winds forward and rewinds and marks).
+每个磁带设备能存储多个备份文件。磁带备份文件通过 cpio，tar，dd 等命令创建。但是，磁带设备可以由各种程序打开，写入数据，并关闭。你可以存储若干备份（磁带文件）到一个物理磁带上。在每个磁带文件之间有个“磁带文件标记”。这个是用来指示一个物理磁带上磁带文件的结尾以及另一个文件的开始。你需要使用 mt 命令来定位磁带（快进，倒带和标记）。
 
-#### How data is stored on a tape ####
+#### 磁带上的数据是如何存储的 ####
 
 ![Fig.02: How data is stored on a tape](http://s0.cyberciti.org/uploads/cms/2015/10/how-data-is-stored-on-a-tape.jpg)
 
-Fig.02: How data is stored on a tape
+图02：磁带上的数据是如何存储的
 
-All data is stored subsequently in sequential tape archive format using tar. The first tape archive will start on the physical beginning of the tape (tar #0). The next will be tar #1 and so on.
+所有的数据使用 tar 以连续磁带存储格式连续地存储。第一个磁带归档会从磁带的物理开始端开始存储（tar #0）。接下来的就是 tar #1，以此类推。
 
-### Tape device names on Unix ###
+### Unix 上的磁带设备名 ###
 
-1. /dev/rmt/0 or /dev/rmt/1 or /dev/rmt/[0-127] : Regular tape device name on Unix. The tape is rewound.
-1. /dev/rmt/0n : This is know as no rewind i.e. after using tape, leaves the tape in current status for next command.
-1. /dev/rmt/0b : Use magtape interface i.e. BSD behavior. More-readable by a variety of OS's such as AIX, Windows, Linux, FreeBSD, and more.
-1. /dev/rmt/0l : Set density to low.
-1. /dev/rmt/0m : Set density to medium.
-1. /dev/rmt/0u : Set density to high.
-1. /dev/rmt/0c : Set density to compressed.
-1. /dev/st[0-9] : Linux specific SCSI tape device name.
-1. /dev/sa[0-9] : FreeBSD specific SCSI tape device name.
-1. /dev/esa0 : FreeBSD specific SCSI tape device name that eject on close (if capable).
+1. /dev/rmt/0 或 /dev/rmt/1 或 /dev/rmt/[0-127] ：Unix 上的常规磁带设备名。磁带自动倒回。
+1. /dev/rmt/0n ：以无倒回为特征，换言之，磁带使用之后，停留在当前状态等待下个命令。
+1. /dev/rmt/0b ：使用磁带接口，也就是 BSD 的行为。各种类型的操作系统比如 AIX，Windows，Linux，FreeBSD 等的行为更有可读性。
+1. /dev/rmt/0l ：设置密度为低。
+1. /dev/rmt/0m ：设置密度为中。
+1. /dev/rmt/0u ：设置密度为高。
+1. /dev/rmt/0c ：设置密度为压缩。
+1. /dev/st[0-9] ：Linux 特定 SCSI 磁带设备名。
+1. /dev/sa[0-9] ：FreeBSD 特定 SCSI 磁带设备名。
+1. /dev/esa0 ：FreeBSD 特定 SCSI 磁带设备名，在关闭时弹出（如果可以的话）。
 
-#### Tape device name examples ####
+#### 磁带设备名示例 ####
 
-- The /dev/rmt/1cn indicate that I'm using unity 1, compressed density and no rewind.
-- The /dev/rmt/0hb indicate that I'm using unity 0, high density and BSD behavior.
-- The auto rewind SCSI tape device name on Linux : /dev/st0
-- The non-rewind SCSI tape device name on Linux : /dev/nst0
-- The auto rewind SCSI tape device name on FreeBSD: /dev/sa0
-- The non-rewind SCSI tape device name on FreeBSD: /dev/nsa0
+- /dev/rmt/1cn 指明正在使用 unity 1，压缩密度，无倒回。
+- /dev/rmt/0hb 指明正在使用 unity 0，高密度，BSD 行为。
+- Linux 上的自动倒回 SCSI 磁带设备名：/dev/st0
+- Linux 上的无倒回 SCSI 磁带设备名：/dev/nst0
+- FreeBSD 上的自动倒回 SCSI 磁带设备名：/dev/sa0
+- FreeBSD 上的无倒回 SCSI 磁带设备名：/dev/nsa0
 
-#### How do I list installed scsi tape devices? ####
+#### 如何列出已安装的 scsi 磁带设备？ ####
 
-Type the following commands:
+输入下列命令：
 
-    ## Linux (read man pages for more info) ##
+    ## Linux（更多信息参阅 man） ##
     lsscsi
     lsscsi -g
 
@@ -83,51 +81,51 @@ Type the following commands:
     ioscan -kfC tape
 
 
-Sample outputs from my Linux server:
+来自我的 Linux 服务器的输出示例：
 
 ![Fig.03: Installed tape devices on Linux server](http://s0.cyberciti.org/uploads/cms/2015/10/linux-find-tape-devices-command.jpg)
 
-Fig.03: Installed tape devices on Linux server
+图03：Linux 服务器上已安装的磁带设备
 
-### mt command examples ###
+### mt 命令实例 ###
 
-In Linux and Unix-like system, mt command is used to control operations of the tape drive, such as finding status or seeking through files on a tape or writing tape control marks to the tape. You must most of the following command as root user. The syntax is:
+在 Linux 和类Unix系统上，mt 命令用来控制磁带驱动器的操作，比如查看状态或查找磁带上的文件或写入磁带控制标记。下列大多数命令需要作为 root 用户执行。语法如下：
 
     mt -f /tape/device/name operation
 
-#### Setting up environment ####
+#### 设置环境 ####
 
-You can set TAPE shell variable. This is the pathname of the tape drive. The default (if the variable is unset, but not if it is null) is /dev/nsa0 on FreeBSD. It may be overridden with the -f option passed to the mt command as explained below.
+你可以设置 TAPE shell 变量。这是磁带驱动器的路径名。在 FreeBSD 上默认的（如果变量没有设置，而不是 null）是 /dev/nsa0。可以通过 mt 命令的 -f 参数传递变量覆盖它，就像下面解释的那样。
 
-     ## Add to your shell startup file ##
+     ## 添加到你的 shell 配置文件 ##
      TAPE=/dev/st1 #Linux
      TAPE=/dev/rmt/2 #Unix
      TAPE=/dev/nsa3 #FreeBSD
      export TAPE
 
-### 1: Display status of the tape/drive ###
+### 1：显示磁带/驱动器状态 ###
 
     mt status  #Use default
     mt -f /dev/rmt/0  status #Unix
     mt -f /dev/st0 status #Linux
     mt -f /dev/nsa0 status #FreeBSD
-    mt -f /dev/rmt/1 status #Unix unity 1 i.e. tape device no. 1
+    mt -f /dev/rmt/1 status #Unix unity 1 也就是 tape device no. 1
 
-You can use shell loop as follows to poll a system and locate all of its tape drives:
+你可以像下面一样使用 shell 循环调查系统并定位所有的磁带驱动器：
 
     for d in 0 1 2 3 4 5
     do
      mt -f "/dev/rmt/${d}" status
     done
 
-### 2: Rewinds the tape ###
+### 2：倒带 ###
 
     mt rew
     mt rewind
     mt -f /dev/mt/0 rewind
     mt -f /dev/st0 rewind
 
-### 3: Eject the tape ###
+### 3：弹出磁带 ###
 
     mt off
     mt offline
@@ -135,162 +133,162 @@ You can use shell loop as follows to poll a system and locate all of its tape dr
     mt -f /dev/mt/0 off
     mt -f /dev/st0 eject
 
-### 4: Erase the tape (rewind the tape and, if applicable, unload the tape) ###
+### 4：擦除磁带（倒带，在可以的情况下卸载磁带） ###
 
     mt erase
     mt -f /dev/st0 erase  #Linux
     mt -f /dev/rmt/0 erase #Unix
 
-### 5: Retensioning a magnetic tape cartridge ###
+### 5：张紧磁带盒 ###
 
-If errors occur when a tape is being read, you can retension the tape, clean the tape drive, and then try again as follows:
+如果磁带在读取时发生错误，你重新张紧磁带，清洁磁带驱动器，像下面这样再试一次：
 
     mt retension
     mt -f /dev/rmt/1 retension #Unix
     mt -f /dev/st0 retension #Linux
 
-### 6: Writes n EOF marks in the current position of tape ###
+### 6：在磁带当前位置写入 EOF 标记 ###
 
     mt eof
     mt weof
     mt -f /dev/st0 eof
 
-### 7: Forward space count files i.e. jumps n EOF marks ###
+### 7：将磁带前进指定的文件标记数目，即跳过指定个 EOF 标记 ###
 
-The tape is positioned on the first block of the next file i.e. tape will position on first block of the field (see fig.01):
+磁带定位在下一个文件的第一个块，即磁带会定位在下一区域的第一个块（见图01）：
 
     mt fsf
     mt -f /dev/rmt/0 fsf
     mt -f /dev/rmt/1 fsf 1 #go 1 forward file/tape (see fig.01)
 
-### 8: Backward space count files i.e. rewinds n EOF marks ###
+### 8：将磁带后退指定的文件标记数目，即倒带指定个 EOF 标记 ###
 
-The tape is positioned on the first block of the next file i.e. tape positions after EOF mark (see fig.01):
+磁带定位在下一个文件的第一个块，即磁带会定位在 EOF 标记之后（见图01）：
 
     mt bsf
     mt -f /dev/rmt/1 bsf
     mt -f /dev/rmt/1 bsf 1 #go 1 backward file/tape (see fig.01)
 
-Here is a list of the tape position commands:
+这里是磁带定位命令列表：
 
-       fsf    Forward space count files.  The tape is positioned on the first block of the next file.
+       fsf    前进指定的文件标记数目。磁带定位在下一个文件的第一块。
 
-       fsfm   Forward space count files.  The tape is positioned on the last block of the previous file.
+       fsfm   前进指定的文件标记数目。磁带定位在前一文件的最后一块。
 
-       bsf    Backward space count files.  The tape is positioned on the last block of the previous file.
+       bsf    后退指定的文件标记数目。磁带定位在前一文件的最后一块。
 
-       bsfm   Backward space count files.  The tape is positioned on the first block of the next file.
+       bsfm   后退指定的文件标记数目。磁带定位在下一个文件的第一块。
 
-       asf    The tape is positioned at the beginning of the count file. Positioning is done by first rewinding the tape and then spacing forward over count filemarks.
+       asf    The tape is positioned at the beginning of the count file. Positioning is done by first rewinding the tape and then spacing forward over count filemarks.磁带定位在
 
-       fsr    Forward space count records.
+       fsr    前进指定的记录数。
 
-       bsr    Backward space count records.
+       bsr    后退指定的记录数。
 
-       fss    (SCSI tapes) Forward space count setmarks.
+       fss    （SCSI tapes）前进指定的 setmarks。
 
-       bss    (SCSI tapes) Backward space count setmarks.
+       bss    （SCSI tapes）后退指定的 setmarks。
 
-### Basic backup commands ###
+### 基本备份命令 ###
 
-Let us see commands to backup and restore files
+让我们来看看备份和恢复命令。
 
-### 9: To backup directory (tar format) ###
+### 9：备份目录（tar 格式） ###
 
     tar cvf /dev/rmt/0n /etc
     tar cvf /dev/st0 /etc
 
-### 10: To restore directory (tar format) ###
+### 10：恢复目录（tar 格式） ###
 
     tar xvf /dev/rmt/0n -C /path/to/restore
     tar xvf /dev/st0 -C /tmp
 
-### 11: List or check tape contents (tar format) ###
+### 11：列出或检查磁带内容（tar 格式） ###
 
     mt -f /dev/st0 rewind; dd if=/dev/st0 of=-
 
-    ## tar format ##
+    ## tar 格式 ##
     tar tvf {DEVICE} {Directory-FileName}
     tar tvf /dev/st0
     tar tvf /dev/st0 desktop
     tar tvf /dev/rmt/0 foo > list.txt
 
-### 12: Backup partition with dump or ufsdump ###
+### 12：使用 dump 或 ufsdump 备份分区 ###
 
-    ## Unix backup c0t0d0s2 partition ##
+    ## Unix 备份 c0t0d0s2 分区 ##
     ufsdump 0uf /dev/rmt/0  /dev/rdsk/c0t0d0s2
 
-    ## Linux backup /home partition ##
+    ## Linux 备份 /home 分区 ##
     dump 0uf /dev/nst0 /dev/sda5
     dump 0uf /dev/nst0 /home
 
-    ## FreeBSD backup /usr partition ##
+    ## FreeBSD 备份 /usr 分区 ##
     dump -0aL -b64 -f /dev/nsa0 /usr
 
-### 12: Restore partition with ufsrestore or restore ###
+### 12：使用 ufsrestore 或 restore 恢复分区 ###
 
     ## Unix ##
     ufsrestore xf /dev/rmt/0
-    ## Unix interactive restore ##
+    ## Unix 交互式恢复 ##
     ufsrestore if /dev/rmt/0
 
     ## Linux ##
     restore rf /dev/nst0
-    ## Restore interactive from the 6th backup on the tape media ##
+    ## 从磁带媒介上的第6个备份交互式恢复 ##
     restore isf 6 /dev/nst0
 
-    ## FreeBSD restore ufsdump format ##
+    ## FreeBSD 恢复 ufsdump 格式 ##
     restore -i -f /dev/nsa0
 
-### 13: Start writing at the beginning of the tape (see fig.02) ###
+### 13：从磁带开头开始写入（见图02） ###
 
-    ## This will overwrite all data on tape ##
+    ## 这会覆盖磁带上的所有数据 ##
     mt -f /dev/st1 rewind
 
-    ### Backup home ##
+    ### 备份 home ##
     tar cvf /dev/st1 /home
 
-    ## Offline and unload tape ##
+    ## 离线并卸载磁带 ##
     mt -f /dev/st0 offline
 
-To restore from the beginning of the tape:
+从磁带开头开始恢复：
 
     mt -f /dev/st0 rewind
     tar xvf /dev/st0
     mt -f /dev/st0 offline
 
-### 14: Start writing after the last tar (see fig.02) ###
+### 14：从最后一个 tar 后开始写入（见图02） ###
 
-    ## This will kee all data written so far ##
+    ## 这会保留之前写入的数据 ##
     mt -f /dev/st1 eom
 
-    ### Backup home ##
+    ### 备份 home ##
     tar cvf /dev/st1 /home
 
-    ## Unload ##
+    ## 卸载 ##
     mt -f /dev/st0 offline
 
-### 15: Start writing after tar number 2 (see fig.02) ###
+### 15：从 tar number 2 后开始写入（见图02） ###
 
-    ## To wrtite after tar number 2 (should be 2+1)
+    ## 在 tar number 2 之后写入（应该是 2+1）
     mt -f /dev/st0 asf 3
     tar cvf /dev/st0 /usr
 
-    ## asf equivalent command done using fsf ##
+    ## asf 等效于 fsf ##
     mt -f /dev/sf0 rewind
     mt -f /dev/st0 fsf 2
 
-To restore tar from tar number 2:
+从 tar number 2 恢复 tar：
 
     mt -f /dev/st0 asf 3
     tar xvf /dev/st0
     mt -f /dev/st0 offline
 
-### How do I verify backup tapes created using tar? ###
+### 如何验证使用 tar 创建的备份磁带？ ###
 
-It is important that you do regular full system restorations and service testing, it's the only way to know for sure that the entire system is working correctly. See our [tutorial on verifying tar command tape backups][1] for more information.
+定期做全系统修复和服务测试是很重要的，这是唯一确定整个系统正确工作的途径。参见我们的[验证 tar 命令磁带备份的教程][1]以获取更多信息。
 
-### Sample shell script ###
+### 示例 shell 脚本 ###
 
     #!/bin/bash
     # A UNIX / Linux shell script to backup dirs to tape device like /dev/st0 (linux)
@@ -395,9 +393,9 @@ It is important that you do regular full system restorations and service testing
     	*) ;;
     esac > $LOGFIILE 2>&1
 
-### A note about third party backup utilities ###
+### 关于第三方备份工具 ###
 
-Both Linux and Unix-like system provides many third-party utilities which you can use to schedule the creation of backups including tape backups such as:
+Linux 和类Unix系统都提供了许多第三方工具，可以用来安排备份，包括磁带备份在内，如：
 
 - Amanda
 - Bacula
@@ -405,7 +403,7 @@ Both Linux and Unix-like system provides many third-party utilities which you ca
 - duplicity
 - rsnapshot
 
-See also
+另行参阅
 
 - Man pages - [mt(1)][2], [mtx(1)][3], [tar(1)][4], [dump(8)][5], [restore(8)][6]
 
@@ -414,7 +412,7 @@ See also
 via: http://www.cyberciti.biz/hardware/unix-linux-basic-tape-management-commands/
 
 作者：Vivek Gite
-译者：[译者ID](https://github.com/译者ID)
+译者：[alim0x](https://github.com/alim0x)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
