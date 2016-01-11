@@ -1,3 +1,5 @@
+HaohongWANG Translating
+
 18 Years of GNOME Design and Software Evolution: Step by Step
 ================================================================================
 注：youtube 视频
