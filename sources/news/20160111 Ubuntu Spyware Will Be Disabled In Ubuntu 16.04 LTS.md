@@ -1,3 +1,5 @@
+#translating by name1e5s
+
 Ubuntu ‘Spyware’ Will Be Disabled In Ubuntu 16.04 LTS
 ================================================================================
 Controversial feature scaled back to help boost Ubuntu's privacy credentials
