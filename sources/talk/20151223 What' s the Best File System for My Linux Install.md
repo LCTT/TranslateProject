@@ -1,3 +1,5 @@
+Translating by icecoobe.
+
 What’s the Best File System for My Linux Install?
 ================================================================================
 ![](https://www.maketecheasier.com/assets/uploads/2015/05/file-systems-feature-image.jpg)
