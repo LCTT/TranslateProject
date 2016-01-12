@@ -109,7 +109,7 @@ iptraf 收集的各种指标，如 TCP 连接数据包和字节数，端口统�
 
 ![](https://serverdensity-wpengine.netdna-ssl.com/wp-content/uploads/2015/02/ngrep.jpg)
 
-ngrep 就是 grep 但是相对于网络层的。pcap 意识到后允许其指定扩展规则或十六进制表达式来匹配数据包。
+如果不是网络层的话，ngrep 就是 grep。pcap 意识到后允许其指定扩展规则或十六进制表达式来匹配数据包。
 
 #### 18. [MRTG][17] ####
 
@@ -127,7 +127,7 @@ Bmon 能监控并帮助你调试网络。它能捕获网络相关的统计数据
 
 ![](https://serverdensity-wpengine.netdna-ssl.com/wp-content/uploads/2015/02/traceroute.jpg)
 
-Traceroute 一个内置工具，能测试路由和数据包在网络中的延迟。
+Traceroute 是一个内置工具，能显示路由和测试数据包在网络中的延迟。
 
 #### 21. [IPTState][19] ####
 
@@ -137,7 +137,7 @@ IPTState 可以让你跨越 iptables 来监控流量，并通过你指定的条�
 
 ![](https://serverdensity-wpengine.netdna-ssl.com/wp-content/uploads/2015/02/darkstat.jpg)
 
-Darkstat 能捕获网络流量并计算统计的数据。该报告需要在浏览器中进行查看，它为你提供了一个非常棒的图形用户界面。
+Darkstat 能捕获网络流量并计算使用情况的统计数据。该报告保存在一个简单的HTTP服务器中，它为你提供了一个非常棒的图形用户界面。
 
 #### 23. [vnStat][21] ####
 
@@ -153,7 +153,7 @@ netstat 是一个内置的工具，它能显示 TCP 网络连接，路由表和�
 
 #### 25. ss ####
 
-并非 netstat，最好使用 ss。ss 命令能够显示的信息比 netstat 更多，也更快。如果你想查看统计结果的总信息，你可以使用命令 `ss -s`。
+比起 netstat，使用 ss 更好。ss 命令能够显示的信息比 netstat 更多，也更快。如果你想查看统计结果的总信息，你可以使用命令 `ss -s`。
 
 #### 26. [nmap][22] ####
 
@@ -211,7 +211,7 @@ Saidar 是一个非常小的工具，为你提供有关系统资源的基础信�
 
 RRDtool 是用来处理 RRD 数据库的工具。RRDtool 旨在处理时间序列数据，如 CPU 负载，温度等。该工具提供了一种方法来提取 RRD 数据并以图形界面显示。
 
-#### 35. [monit][31] ####
+#### 35. [monit][31] #### 
 
 ![](https://serverdensity-wpengine.netdna-ssl.com/wp-content/uploads/2015/02/monit.jpg)
 
