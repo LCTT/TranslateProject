@@ -66,6 +66,7 @@ LCTT的组成
 - CORE @strugglingyouth,
 - CORE @FSSlc
 - CORE @zpl1025,
+- CORE @runningwater,
 - CORE @bazz2,
 - CORE @Vic020,
 - CORE @dongfengweixiao,
@@ -76,7 +77,6 @@ LCTT的组成
 - Senior @jasminepeng,
 - Senior @willqian,
 - Senior @vizv,
-- runningwater,
 - ZTinoZ,
 - theo-l,
 - luoxcat,
