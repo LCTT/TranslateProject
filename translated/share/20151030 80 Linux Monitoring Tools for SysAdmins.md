@@ -1,12 +1,12 @@
 
-为 Linux 系统管理员准备的80个监控工具
+Linux 系统管理员必备的80个监控工具
 ================================================================================
 ![](https://serverdensity-wpengine.netdna-ssl.com/wp-content/uploads/2015/02/linux-monitoring.jpg)
 
-随着行业的不断发展，有许多比你想象中更棒的工具。这里列着网上最全的（工具）。拥有超过80种方式来管理你的机器。在本文中，我们主要讲述以下方面：
+随着行业的不断发展，各种工具多得不可胜数。这里列出网上最全的（工具）。拥有超过80种方式来管理你的机器。在本文中，我们主要讲述以下方面：
 
 - 命令行工具
-- 与网络相关的
+- 网络相关内容
 - 系统相关的监控工具
 - 日志监控工具
 - 基础设施监控工具
@@ -19,7 +19,7 @@
 
 ![](https://serverdensity-wpengine.netdna-ssl.com/wp-content/uploads/2015/02/top.jpg)
 
-这是一个被预安装在许多 UNIX 系统中的小工具。当你想要查看在系统中运行的进程或线程时：top 是一个很好的工具。你可以对这些进程以不同的标准进行排序，默认是以 CPU 进行排序的。
+这是一个被预装在许多 UNIX 系统中的小工具。当你想要查看在系统中运行的进程或线程时：top 是一个很好的工具。你可以对这些进程以不同的标准进行排序，默认是以 CPU 进行排序的。
 
 #### 2. [htop][1] ####
 
@@ -33,7 +33,7 @@ Atop 和 top，htop 非常相似，它也能监控所有进程，但不同于 to
 
 #### 4. [apachetop][3] ####
 
-Apachetop 会监视 apache 网络服务器的整体性能。它主要是基于 mytop。它会显示当前 reads, writes 的数量以及 requests 进程的总数。
+Apachetop 会监控 apache 网络服务器的整体性能。它主要是基于 mytop。它会显示当前 reads, writes 的数量以及 requests 进程的总数。
 
 #### 5. [ftptop][4] ####
 
@@ -43,7 +43,7 @@ ftptop 给你提供了当前所有连接到 ftp 服务器的基本信息，如�
 
 ![](https://serverdensity-wpengine.netdna-ssl.com/wp-content/uploads/2015/02/mytop.jpg)
 
-mytop 是一个很方便的工具，用于监控线程和 mysql 的性能。它给了你一个实时的数据库查询处理结果。
+mytop 是一个很简洁的工具，用于监控线程和 mysql 的性能。它给了你一个实时的数据库来查询处理结果。
 
 #### 7. [powertop][6] ####
 
@@ -69,19 +69,19 @@ ntopng 是 ntop 的升级版，它提供了一个能使用浏览器进行网络�
 
 ![](https://serverdensity-wpengine.netdna-ssl.com/wp-content/uploads/2015/02/iftop.jpg)
 
-iftop 类似于 top，但它主要不是检查 cpu 的使用率而是监听网卡的流量，并以表格的形式显示当前的使用量。像“为什么我的网速这么慢呢？！”这样的问题它可以直接回答。
+iftop 类似于 top，但它主要不是检查 cpu 的使用率而是监听所选择网络接口的流量，并以表格的形式显示当前的使用量。像“为什么我的网速这么慢呢？！”这样的问题它可以直接回答。
 
 #### 11. [jnettop][10] ####
 
 ![](https://serverdensity-wpengine.netdna-ssl.com/wp-content/uploads/2015/02/jnettop.jpg)
 
-jnettop 以相同的方式来监测网络流量但比 iftop 更形象。它还支持自定义的文本输出并能以友好的交互方式来快速分析日志。
+jnettop 以相同的方式来监测网络流量但比 iftop 更形象。它还支持自定义的文本输出并能以友好的交互方式来深度分析日志。
 
 #### 12. [bandwidthd][11] ####
 
 ![](https://serverdensity-wpengine.netdna-ssl.com/wp-content/uploads/2015/02/bandwidthd.jpg)
 
-bandwidthd 可以跟踪 TCP/IP 网络子网的使用情况并能在浏览器中通过 png 图片形象化的构建一个 HTML 页面。它有一个数据库驱动系统，支持搜索，过滤，多传感器和自定义报表。
+bandwidthd 可以跟踪 TCP/IP 网络子网的使用情况并能在浏览器中通过 png 图片形象化地构建一个 HTML 页面。它有一个数据库驱动系统，支持搜索、过滤，多传感器和自定义报表。
 
 #### 13. [EtherApe][12] ####
 
@@ -103,13 +103,13 @@ NetHogs 打破了网络流量按协议或子网进行统计的原理。它以进
 
 ![](https://serverdensity-wpengine.netdna-ssl.com/wp-content/uploads/2015/02/iptraf.jpg)
 
-iptraf 收集的各种指标，如 TCP 连接数据包和字节数，接口界面和活动指标，TCP/UDP 通信故障，站内数据包和字节数。
+iptraf 收集的各种指标，如 TCP 连接数据包和字节数，端口统计和活动指标，TCP/UDP 通信故障，站内数据包和字节数。
 
 #### 17. [ngrep][16] ####
 
 ![](https://serverdensity-wpengine.netdna-ssl.com/wp-content/uploads/2015/02/ngrep.jpg)
 
-ngrep 就是 grep 但是相对于网络层的。pcap 意识到后允许其指定扩展规则或十六进制表达式来匹配数据包。
+如果不是网络层的话，ngrep 就是 grep。pcap 意识到后允许其指定扩展规则或十六进制表达式来匹配数据包。
 
 #### 18. [MRTG][17] ####
 
@@ -127,7 +127,7 @@ Bmon 能监控并帮助你调试网络。它能捕获网络相关的统计数据
 
 ![](https://serverdensity-wpengine.netdna-ssl.com/wp-content/uploads/2015/02/traceroute.jpg)
 
-Traceroute 一个内置工具，能测试路由和数据包在网络中的延迟。
+Traceroute 是一个内置工具，能显示路由和测试数据包在网络中的延迟。
 
 #### 21. [IPTState][19] ####
 
@@ -137,7 +137,7 @@ IPTState 可以让你跨越 iptables 来监控流量，并通过你指定的条�
 
 ![](https://serverdensity-wpengine.netdna-ssl.com/wp-content/uploads/2015/02/darkstat.jpg)
 
-Darkstat 能捕获网络流量并计算统计的数据。该报告需要在浏览器中进行查看，它为你提供了一个非常棒的图形用户界面。
+Darkstat 能捕获网络流量并计算使用情况的统计数据。该报告保存在一个简单的HTTP服务器中，它为你提供了一个非常棒的图形用户界面。
 
 #### 23. [vnStat][21] ####
 
@@ -153,7 +153,7 @@ netstat 是一个内置的工具，它能显示 TCP 网络连接，路由表和�
 
 #### 25. ss ####
 
-并非 netstat，最好使用 ss。ss 命令能够显示的信息比 netstat 更多，也更快。如果你想查看统计结果的总信息，你可以使用命令 `ss -s`。
+比起 netstat，使用 ss 更好。ss 命令能够显示的信息比 netstat 更多，也更快。如果你想查看统计结果的总信息，你可以使用命令 `ss -s`。
 
 #### 26. [nmap][22] ####
 
@@ -211,7 +211,7 @@ Saidar 是一个非常小的工具，为你提供有关系统资源的基础信�
 
 RRDtool 是用来处理 RRD 数据库的工具。RRDtool 旨在处理时间序列数据，如 CPU 负载，温度等。该工具提供了一种方法来提取 RRD 数据并以图形界面显示。
 
-#### 35. [monit][31] ####
+#### 35. [monit][31] #### 
 
 ![](https://serverdensity-wpengine.netdna-ssl.com/wp-content/uploads/2015/02/monit.jpg)
 
