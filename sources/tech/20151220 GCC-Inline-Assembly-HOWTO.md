@@ -1,3 +1,4 @@
+[Translating by cposture 16-01-14]
 * * *
 
 # GCC-Inline-Assembly-HOWTO
