@@ -3,7 +3,7 @@
 
 ![](https://www.maketecheasier.com/assets/uploads/2015/12/glances_featured.jpg)
 
-Glances 是一个跨平台、基于命令行、文本模式的系统监控工具。它是用 Python 编写的，使用 `psutil` 库从系统获取信息。你可以用它来监控 CPU、平均负载、内存、网络接口、磁盘 I/O，文件系统空间利用率、挂载的设备、所有活动进程以及消耗资源最多的进程。Glances 有很多有趣的选项。它的主要特性之一是可以在配置文件中设置阀值（careful[小心]、warning[警告]、critical[致命]），然后它会用不同颜色显示信息以表明系统的瓶颈。
+Glances 是一个用于监控系统的跨平台、基于文本模式的命令行工具。它是用 Python 编写的，使用 `psutil` 库从系统获取信息。你可以用它来监控 CPU、平均负载、内存、网络接口、磁盘 I/O，文件系统空间利用率、挂载的设备、所有活动进程以及消耗资源最多的进程。Glances 有很多有趣的选项。它的主要特性之一是可以在配置文件中设置阀值（careful[小心]、warning[警告]、critical[致命]），然后它会用不同颜色显示信息以表明系统的瓶颈。
 
 ### Glances 的功能
 
@@ -18,11 +18,11 @@ Glances 是一个跨平台、基于命令行、文本模式的系统监控工具
 
 ### 安装 Glances
 
-Glances 在 Ubuntu 的软件源中，所以安装很简单。执行下面的命令安装 Glances：
+Glances 在 Ubuntu 的软件仓库中，所以安装很简单。执行下面的命令安装 Glances：
 
     sudo apt-get install glances
 
-（LCTT 译注：若安装后无法正常使用，可考虑使用 pip 安装/升级glances：`sudo pip install --upgrade glances`）
+（LCTT 译注：若安装后无法正常使用，可考虑使用 pip 安装/升级 glances：`sudo pip install --upgrade glances`）
 
 ### Glances 使用方法
 
@@ -34,7 +34,7 @@ Glances 在 Ubuntu 的软件源中，所以安装很简单。执行下面的命�
 
 ![glances monitor system output](https://www.maketecheasier.com/assets/uploads/2015/12/glances_output1.png)
 
-要退出 Glances 终端，按 ESC 键或 “Ctrl + C”。
+要退出 Glances 终端，按 ESC 键或 `Ctrl + C`。
 
 默认情况下，时间间隔（LCTT 译注：显示数据刷新的时间间隔）是 1s，不过你可以在从终端启动 Glances 时自定义时间间隔。
 
@@ -46,10 +46,10 @@ Glances 在 Ubuntu 的软件源中，所以安装很简单。执行下面的命�
 
 Glances 中不同颜色的含义：
 
-- `绿色`：正常
-- `蓝色`：需要注意
-- `紫色`：警告
-- `红色`：严重
+- `绿色`：正常（OK）
+- `蓝色`：小心（careful）
+- `紫色`：警告（warning）
+- `红色`：致命（critical）
 
 默认设置下，Glances 的阀值设置是：careful=50，warning=70，critical=90。你可以通过 “/etc/glances/” 目录下的默认配置文件 glances.conf 来自定义这些阀值。
 
@@ -101,7 +101,7 @@ via: https://www.maketecheasier.com/glances-monitor-system-ubuntu/
 
 作者：[Hitesh Jethva][a]
 译者：[bianjp](https://github.com/bianjp)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
