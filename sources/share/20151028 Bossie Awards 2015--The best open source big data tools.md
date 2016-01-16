@@ -1,4 +1,3 @@
-ictlyh Translating
 Bossie Awards 2015: The best open source big data tools
 ================================================================================
 InfoWorld's top picks in distributed data processing, streaming analytics, machine learning, and other corners of large-scale data analytics 
