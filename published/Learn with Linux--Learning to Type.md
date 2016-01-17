@@ -1,36 +1,36 @@
-Linux 教学之教你练打字
+与 Linux 一起学习：学习打字
 ================================================================================
 ![](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-featured.png)
 
-[Linux 学习系列][1]的所有文章：
+[与 Linux 一起学习][1]的所有文章：
 
-- [Linux 教学之教你练打字][2]
-- [Linux 教学之物理模拟][3]
-- [Linux 教学之教你玩音乐][4]
-- [Linux 教学之两款地理软件][5]
-- [Linux 教学之掌握数学][6]
+- [与 Linux 一起学习：学习打字][2]
+- [与 Linux 一起学习：物理模拟][3]
+- [与 Linux 一起学习：玩音乐][4]
+- [与 Linux 一起学习：两款地理软件][5]
+- [与 Linux 一起学习: 使用这些 Linux 应用来征服你的数学学习][6]
 
-引言：Linux 提供大量的教学软件和工具，面向各个年级段以及年龄段，提供大量学科的练习实践，其中大多数是可以与用户进行交互的。本“Linux 教学”系列就来介绍一些教学软件。
+Linux 提供大量的教学软件和工具，面向各个年级以及不同年龄段，提供大量学科的练习实践，其中大多数是可以与用户进行交互的。本“与 Linux 一起学习”系列就来介绍一些教学软件。
 
-很多人都要打字，操作键盘已经成为他们的第二天性。 但是这些人中有多少是依然使用两个手指头来快速地按键盘的？即使学校有教我们使用键盘的方法（LCTT 译注：呃。。。），我们也会慢慢地抛弃正确的打字姿势，养成只用两个大拇指玩键盘的习惯。
+很多人都要打字，操作键盘已经成为他们的第二天性。但是这些人中有多少是依然使用两个手指头来快速地按键盘的？即使学校有教我们使用键盘的方法，我们也会慢慢地抛弃正确的打字姿势，养成只用两个大拇指玩键盘的习惯。（LCTT 译注：呃，你确认是拇指而不是食指？）
 
-下面要介绍的两款软件可以帮你掌控你的键盘，然后你就可以让你的手指跟上你的思维，然后你的思维就不会被打断了。当然，还有很多更炫更酷的软件可供选择，但本文所选的这两款是最简单、最容易上手的。
+下面要介绍的两款软件可以帮你掌控你的键盘，然后你就可以让你的手指跟上你的思维，这样你的思维就不会被打断了。当然，还有很多更炫更酷的软件可供选择，但本文所选的这两款是最简单、最容易上手的。
 
 ### TuxType （或者叫 TuxTyping） ###
 
-TuxType 是给小孩子玩的。在一些有趣的游戏中，小学生们可以通过完成一些简单的练习来 get “10个手指打字”的新技能。
+TuxType 是给小孩子玩的。在一些有趣的游戏中，小学生们可以通过完成一些简单的练习来 Get “双手打字以示清白”的新技能。
 
 Debian 及其衍生版本（包含所有 Ubuntu 衍生版本）的标准软件仓库都有 TuxType，使用下面的命令安装：
 
     sudo apt-get install tuxtype
 
-软件开始时有一个简单的 Tux 界面和一段难听的 midi 音乐，幸运的是你可以通过右下角的喇叭按钮把声音调低了。(LCTT译注：Tux 就是那只 Linux 吉祥物，Linus 说它的表情被设计成刚喝完啤酒后的满足感，见《Just For Fun》。)
+软件开始时有一个简单的 Tux 界面和一段难听的 midi 音乐，幸运的是你可以通过右下角的喇叭按钮把声音调低了。(LCTT 译注：Tux 就是那只 Linux 吉祥物，Linus 说它的表情被设计成刚喝完啤酒后的满足感，见《Just For Fun》。)
 
 ![learntotype-tuxtyping-main](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-tuxtyping-main.jpg)
 
-最开始处的两个选项“Fish Cascade”和“Comet Zap”是打字游戏，当你开始游戏时，你需要很投入到这个课程。
+最开始处的两个选项“Fish Cascade”和“Comet Zap”是打字游戏，当你开始游戏时，你就投入到了这个课程。
 
-第3个选项为“Lession”,提供40多个简单的课程，每个课程会增加一个字母让你来练习，练习过程中会给出一些提示，比如应该用哪个手指按键盘上的字母。
+第3个选项为“Lessions”,提供40多个简单的课程，每个课程会增加一个字母让你来练习，练习过程中会给出一些提示，比如应该用哪个手指按键盘上的字母。
 
 ![learntotype-tuxtyping-exd1](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-tuxtyping-exd1.jpg)
 
@@ -68,7 +68,7 @@ GNU Typist 也在大多数 Debian 衍生版本的软件库中，运行下面的�
 
 ![learntotype-gtype-lesson](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-gtype-lesson.png)
 
-在交互练习的过程中，如果你输入错误，会将错误点高亮显示。不会像其他漂亮界面分散你的注意力，你可以专注于练习。每个课程的右下角都有一组统计数据来展示你的表现，如果你犯了很多错误，就可能无法通过关卡了。
+在交互练习的过程中，如果你输入错误，会将错误位置高亮显示。不会像其他漂亮界面分散你的注意力，你可以专注于练习。每个课程的右下角都有一组统计数据来展示你的表现，如果你犯了很多错误，就可能无法通过关卡了。
 
 ![learntotype-gtype-mistake](https://www.maketecheasier.com/assets/uploads/2015/07/learntotype-gtype-mistake.png)
 
@@ -106,7 +106,7 @@ via: https://www.maketecheasier.com/learn-to-type-in-linux/
 
 作者：[Attila Orosz][a]
 译者：[bazz2](https://github.com/bazz2)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -116,4 +116,4 @@ via: https://www.maketecheasier.com/learn-to-type-in-linux/
 [3]:https://www.maketecheasier.com/linux-physics-simulation/
 [4]:https://www.maketecheasier.com/linux-learning-music/
 [5]:https://www.maketecheasier.com/linux-geography-apps/
-[6]:https://www.maketecheasier.com/learn-linux-maths/
+[6]:https://linux.cn/article-6546-1.html
