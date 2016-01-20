@@ -1,4 +1,5 @@
-translated by ivo-wang
+translating by Ping
+
 How to install Suricata intrusion detection system on Linux
 ================================================================================
 With incessant security threats, intrusion detection system (IDS) has become one of the most critical requirements in today's data center environments. However, as more and more servers upgrade their NICs to 10GB/40GB Ethernet, it is increasingly difficult to implement compute-intensive intrusion detection on commodity hardware at line rates. One approach to scaling IDS performance is **multi-threaded IDS**, where CPU-intensive deep packet inspection workload is parallelized into multiple concurrent tasks. Such parallelized inspection can exploit multi-core hardware to scale up IDS throughput easily. Two well-known open-source efforts in this area are [Suricata][1] and [Bro][2].
