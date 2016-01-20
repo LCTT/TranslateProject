@@ -1,16 +1,16 @@
-Linux 教学之两款地理软件
+与 Linux 一起学习：学习地理
 ================================================================================
 ![](https://www.maketecheasier.com/assets/uploads/2015/07/learn-geography-featured.png)
 
-[Linux 学习系列][1]的所有文章：
+[与 Linux 一起学习][1]的所有文章：
 
-- [Linux 教学之教你练打字][2]
-- [Linux 教学之物理模拟][3]
-- [Linux 教学之教你玩音乐][4]
-- [Linux 教学之两款地理软件][5]
-- [Linux 教学之掌握数学][6]
+- [与 Linux 一起学习：学习打字][2]
+- [与 Linux 一起学习：物理模拟][3]
+- [与 Linux 一起学习：玩音乐][4]
+- [与 Linux 一起学习：学习地理][5]
+- [与 Linux 一起学习：掌握数学][6]
 
-引言：Linux 提供大量的教学软件和工具，面向各个年级段以及年龄段，提供大量学科的练习实践，其中大多数是可以与用户进行交互的。本“Linux 教学”系列就来介绍一些教学软件。
+引言：Linux 提供大量的教学软件和工具，面向各个年级段以及各个年龄段，提供大量学科的练习实践，其中大多数是可以与用户进行交互的。本“与 Linux 一起学习”系列就来介绍一些教学软件。
 
 地理是一门有趣的学科，我们每天都能接触到，虽然可能没有意识到，但当你打开 GPS、SatNav 或谷歌地图时，你就已经在使用这些软件提供的地理数据了；当你在新闻中看到一个国家的消息或听到一些金融数据时，这些信息都可以归于地理学范畴。Linux 提供了很多学习地理学的软件，可用于教学，也可用于自学。
 
@@ -62,11 +62,11 @@ Marble 专注于地图绘制，它的主界面就是一张地图。
 
 ![learn-geography-marble-history](https://www.maketecheasier.com/assets/uploads/2015/07/learn-geography-marble-history.jpg)
 
-除了有包含不同界面和大量数据的离线地图，Marble 还提供其他信息。你可以在菜单中打开或关闭不同的离线 info-boxes
+除了有包含不同界面和大量数据的离线地图，Marble 还提供其他信息。你可以在菜单中打开或关闭不同的离线信息框
 
 ![learn-geography-marble-offline](https://www.maketecheasier.com/assets/uploads/2015/07/learn-geography-marble-offline.png)
 
-和在线的 online services。
+和在线服务。
 
 ![learn-geography-marble-online](https://www.maketecheasier.com/assets/uploads/2015/07/learn-geography-marble-online.png)
 
@@ -86,7 +86,7 @@ via: https://www.maketecheasier.com/linux-geography-apps/
 
 作者：[Attila Orosz][a]
 译者：[bazz2](https://github.com/bazz2)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
