@@ -186,7 +186,7 @@ Suricata检测日志存储在 /var/log/suricata 目录下。
 via: http://xmodulo.com/install-suricata-intrusion-detection-system-linux.html
 
 作者：[Dan Nanni][a]
-译者：[译者ID](https://github.com/mr-ping)
+译者：[mr-ping](https://github.com/mr-ping)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
