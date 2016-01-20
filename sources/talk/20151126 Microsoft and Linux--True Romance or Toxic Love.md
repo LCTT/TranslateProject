@@ -1,3 +1,4 @@
+sonofelice translating
 Microsoft and Linux: True Romance or Toxic Love?
 ================================================================================
 Every now and then, you come across a news story that makes you choke on your coffee or splutter hot latte all over your monitor. Microsoft's recent proclamations of love for Linux is an outstanding example of such a story.
