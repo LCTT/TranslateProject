@@ -1,12 +1,19 @@
 sonofelice translating
 Microsoft and Linux: True Romance or Toxic Love?
+微软和 Linux :真正的浪漫还是有毒的爱情？（微软和Linux的爱恨情仇）
 ================================================================================
+时不时的我们会读到一个能让你喝咖啡呛到或者把热拿铁喷到你显示器上的新闻故事。微软最近宣布的对Linux的钟爱就是这样一个鲜明的例子。
 Every now and then, you come across a news story that makes you choke on your coffee or splutter hot latte all over your monitor. Microsoft's recent proclamations of love for Linux is an outstanding example of such a story.
+
+从常识来讲，微软和自由开源软件（FOSS）运动就是恒久的敌人。在很多人眼里，微软体现了过分的贪婪，而这正为自由开源软件运动（FOSS）所拒绝。另外，之前微软就已经给自由开源软件社区贴上了"一伙强盗"的标签。
 
 Common sense says that Microsoft and the FOSS movement should be perpetual enemies. In the eyes of many, Microsoft embodies most of the greedy excesses that the Free Software movement rejects. In addition, Microsoft previously has labeled Linux as a cancer and the FOSS community as a "pack of thieves".
 
+我们能够理解为什么微软一直以来都害怕免费的操作系统。免费操作系统结合挑战微软核心产品线的开源应用时，就威胁到了微软在台式机和笔记本电脑的控制地位。
+
 We can understand why Microsoft has been afraid of a free operating system. When combined with open-source applications that challenge Microsoft's core line, it threatens Microsoft's grip on the desktop/laptop market.
 
+尽管微软有对在台式机主导地位的担忧，在网络服务器市场 Linux 却有着最高的影响力。今天，大多数的服务器都是Linux系统。包括世界上最繁忙的站点服务器。
 In spite of Microsoft's fears over its desktop dominance, the Web server marketplace is one arena where Linux has had the greatest impact. Today, the majority of Web servers are Linux boxes. This includes most of the world's busiest sites. The sight of so much unclaimed licensing revenue must be painful indeed for Microsoft.
 
 Handheld devices are another realm where Microsoft has lost ground to free software. At one point, its Windows CE and Pocket PC operating systems were at the forefront of mobile computing. Windows-powered PDA devices were the shiniest and flashiest gadgets around. But, that all ended when Apple released its iPhone. Since then, Android has stepped into the limelight, with Windows Mobile largely ignored and forgotten. The Android platform is built on free and open-source components.
