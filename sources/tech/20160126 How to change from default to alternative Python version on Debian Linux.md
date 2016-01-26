@@ -1,3 +1,5 @@
+Translating by Ping
+
 How to change from default to alternative Python version on Debian Linux
 ====================================================
 
