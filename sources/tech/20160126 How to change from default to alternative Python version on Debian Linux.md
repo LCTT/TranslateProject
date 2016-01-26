@@ -91,3 +91,13 @@ In case we no longer have the alternative python version installed on our system
 update-alternatives: removing manually selected alternative - switching python to auto mode
 update-alternatives: using /usr/bin/python3.4 to provide /usr/bin/python (python) in auto mode
 ```
+
+--------------------------------------------------------------------------------
+
+via: http://linuxconfig.org/how-to-change-from-default-to-alternative-python-version-on-debian-linux
+
+作者：[作者][]
+译者：[译者ID](https://github.com/译者ID)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
