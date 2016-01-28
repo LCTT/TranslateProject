@@ -16,6 +16,7 @@ Python 2.7.8
 ```
 
 1、基于用户修改 Python 版本：
+
 想要为某个特定用户修改 Python 版本，只需要在其 home 目录下创建一个 `alias(别名)` 即可。打开　`~/.bashrc` 文件，添加新的别名信息来修改默认使用的 Python 版本。
 
 ```
@@ -36,6 +37,7 @@ Python 3.4.2
 ```
 
 2、 基于系统级别修改 Python 版本
+
 我们可以使用 `update-alternatives` 来为整个系统更改 Python 版本。以 root 身份登录，首先罗列出所有可用的 python 替代版本信息：
 
 ```
