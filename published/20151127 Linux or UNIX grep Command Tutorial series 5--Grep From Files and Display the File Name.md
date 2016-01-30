@@ -1,14 +1,14 @@
-(translating by runningwater)
-Grep From Files and Display the File Name
+grep 命令系列：从文件中搜索并显示文件名
 ================================================================================
-How do I grep from a number of files and display the file name only?
 
-When there is more than one file to search it will display file name by default:
+我怎样从几个文件中搜索（grep），并只显示匹配到的文件的文件名？
 
-    grep "word" filename
+当你从不止一个的文件中搜索时，默认它将显示文件名：
+
+    grep "word" 文件名
     grep root /etc/*
 
-Sample outputs:
+示例输出：
 
     /etc/bash.bashrc:       See "man sudo_root" for details.
     /etc/crontab:17 *       * * *   root    cd / && run-parts --report /etc/cron.hourly
@@ -20,12 +20,12 @@ Sample outputs:
     /etc/logrotate.conf:    create 0664 root utmp
     /etc/logrotate.conf:    create 0660 root utmp
 
-The first name is file name (e.g., /etc/crontab, /etc/group). The -l option will only print filename if th
+每行开始的第一个部分是文件名（如：/etc/crontab、/etc/group）。使用 -l 选项可以只显示文件名：
 
     grep -l "string" filename
     grep -l root /etc/*
 
-Sample outputs:
+示例输出：
 
     /etc/aliases
     /etc/arpwatch.conf
@@ -36,12 +36,12 @@ Sample outputs:
     /etc/crontab
     /etc/group
 
-You can suppress normal output; instead print the name of each input file from **which no output would normally have been** printed:
+你也可以逆转输出；使用 -L 选项来输出**那些不匹配的文件的文件名**：
 
     grep -L "word" filename
     grep -L root /etc/*
 
-Sample outputs:
+示例输出：
 
     /etc/apm
     /etc/apparmor
@@ -62,7 +62,7 @@ Sample outputs:
 via: http://www.cyberciti.biz/faq/grep-from-files-and-display-the-file-name/
 
 作者：Vivek Gite
-译者：[runningwater](https://github.com/runningwater)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[wxy](https://github.com/wxy)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
