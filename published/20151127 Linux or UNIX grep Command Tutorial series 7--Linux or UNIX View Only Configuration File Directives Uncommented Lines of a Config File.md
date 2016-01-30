@@ -1,10 +1,9 @@
-Linux / UNIX 下只查看配置文件的有效配置行（配置文件中未被注释的命令行）
+grep 命令系列：如何只查看配置文件中未被注释的有效配置行
 =========================================================
 
 大多数的Linux和类Unix系统的配置文件中都有许多的注释行，但是有时候我只想看其中的有效配置行。那我怎么才能只看到quid.conf或httpd.conf这样的配置文件中的非注释命令行呢？怎么去掉这些注释或者空行呢？
 
-我们可以使用UNIX / BSD / OS X / Linux 这些操作系统自身提供的grep，sed，awk，perl或者其他文本处理工具来查看配置文件中的有效配置命令行。
-
+我们可以使用 UNIX/BSD/OS X/Linux 这些操作系统自身提供的 grep，sed，awk，perl或者其他文本处理工具来查看配置文件中的有效配置命令行。
 
 ### grep 命令示例——去掉注释 ###
 
@@ -100,7 +99,7 @@ Linux / UNIX 下只查看配置文件的有效配置行（配置文件中未被�
      
     Include /etc/apache2/sites-enabled/
 
-想要跳过空行，可以使用 [egrep 命令][1], 示例:
+想要跳过其中的空行，可以使用 [egrep 命令][1], 示例:
 
     egrep -v "^#|^$" /etc/apache2/apache2.conf
     ## or pass it to the page such as more or less ##
@@ -119,23 +118,24 @@ Linux / UNIX 下只查看配置文件的有效配置行（配置文件中未被�
 
 ![Fig.01: Unix/Linux Egrep Strip Out Comments Blank Lines](http://s0.cyberciti.org/uploads/faq/2008/05/grep-strip-out-comments-blank-lines.jpg)
 
-Fig.01: Unix/Linux Egrep 除去注释行和空行
+*图 01: Unix/Linux Egrep 除去注释行和空行*
 
 ###  理解 grep/egrep 命令行选项 ###
 
--v 选项，选择出不匹配的命令行。该选项适用于所有基于posix的系统。正则表达式 ^$ 匹配出所有的非空行， ^#匹配出所有的不以“#”开头的非注释行。
+-v 选项，选择出不匹配的命令行。该选项适用于所有基于posix的系统。正则表达式 `^$` 匹配出所有的非空行， `^#` 匹配出所有的不以“#”开头的非注释行。
 
 ### sed 命令示例 ###
 
-可以按照如下示例使用 GNU / sed 命令:
+可以按照如下示例使用 GNU 上的 sed 命令:
 
     $ sed '/ *#/d; /^ *$/d' /path/to/file
     $ sed '/ *#/d; /^ *$/d' /etc/apache2/apache2.conf
-GNU or BSD sed 也可以修改配置文件。下面的语法是编辑文件，修改扩展名（比如 .bak）进行文件备份：
+    
+GNU 或 BSD 上的 sed 也可以修改配置文件。下面的命令的作用是原地编辑文件，并以特定（比如 .bak）备份文件：
 
     sed -i'.bak.2015.12.27' '/ *#/d; /^ *$/d' /etc/apache2/apache2.conf
 
-更多信息见参考手册 - [grep(1)][2], [sed(1)][3]
+更多信息见参考手册 - [grep(1)][2], [sed(1)][3]。
 
 --------------------------------------------------------------------------------
 
@@ -143,7 +143,7 @@ via: http://www.cyberciti.biz/faq/shell-display-uncommented-lines-only/
 
 作者：Vivek Gite
 译者：[sonofelice](https://github.com/sonofelice)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
