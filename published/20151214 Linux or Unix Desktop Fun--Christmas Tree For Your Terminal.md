@@ -1,16 +1,16 @@
-Linux / Unix桌面之趣：终端上的圣诞树
+Linux/Unix 桌面趣事：终端上的圣诞树
 ================================================================================
-给你的Linux或Unix控制台创造一棵圣诞树玩玩吧。在此之前，需要先安装一个Perl模块，命名为Acme::POE::Tree。这是一棵很喜庆的圣诞树，我已经在Linux、OSX和类Unix系统上验证过了。
 
+给你的Linux或Unix控制台创造一棵圣诞树玩玩吧。在此之前，需要先安装一个Perl模块，命名为Acme::POE::Tree。这是一棵很喜庆的圣诞树，我已经在Linux、OSX和类Unix系统上验证过了。
 
 ### 安装 Acme::POE::Tree ###
 
-安装perl模块最简单的办法就是使用cpan（Perl综合典藏网）。打开终端，把下面的指令敲进去便可安装Acme::POE::Tree。
+安装perl模块最简单的办法就是使用CPAN（Perl综合典藏网（Comprehensive Perl Archive Network））。打开终端，把下面的指令敲进去便可安装Acme::POE::Tree。
 
     ## 以root身份运行 ##
     perl -MCPAN -e 'install Acme::POE::Tree'
  
-**案例输出：**
+**示例输出：**
 
     Installing /home/vivek/perl5/man/man3/POE::NFA.3pm
     Installing /home/vivek/perl5/man/man3/POE::Kernel.3pm
@@ -49,7 +49,7 @@ Linux / Unix桌面之趣：终端上的圣诞树
  
     perl -MAcme::POE::Tree -e 'Acme::POE::Tree->new()->run()'
  
-**案例输出**
+**示例输出**
 
 ![Gif 01: An animated christmas tree in Perl](http://s0.cyberciti.org/uploads/cms/2015/12/perl-tree.gif)
 
@@ -71,7 +71,7 @@ Gif 01: 一棵用Perl写的喜庆圣诞树
     );
     $tree->run();
 
-这样就可以通过修改star_delay、run_for和light_delay参数的值来自定义你的树了。一棵提供消遣的终端圣诞树就此诞生。
+这样就可以通过修改star_delay、run_for和light_delay参数的值来自定义你的树了。一棵好玩的终端圣诞树就此诞生。
 
 --------------------------------------------------------------------------------
 
@@ -79,6 +79,6 @@ via: http://www.cyberciti.biz/open-source/command-line-hacks/linux-unix-desktop-
 
 作者：Vivek Gite
 译者：[soooogreen](https://github.com/soooogreen)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
