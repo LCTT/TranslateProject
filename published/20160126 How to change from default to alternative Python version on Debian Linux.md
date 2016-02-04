@@ -1,4 +1,4 @@
-如何将 Debian Linux 系统中默认的 Python 替代为其他版本
+如何将 Debian Linux 中的默认的 Python 版本切换为替代版本
 ====================================================
 
 当你安装 Debian Linux 时，安装过程有可能同时为你提供多个可用的 Python 版本，因此系统中会存在多个 Python 的可执行二进制文件。你可以按照以下方法使用 `ls` 命令来查看你的系统中都有那些 Python 的二进制文件可供使用。
@@ -15,9 +15,9 @@ $ python --version
 Python 2.7.8
 ```
 
-1、基于用户修改 Python 版本：
+###1、基于用户修改 Python 版本：
 
-想要为某个特定用户修改 Python 版本，只需要在其 home 目录下创建一个 `alias(别名)` 即可。打开　`~/.bashrc` 文件，添加新的别名信息来修改默认使用的 Python 版本。
+想要为某个特定用户修改 Python 版本，只需要在其 home 目录下创建一个 `alias`(别名) 即可。打开该用户的 `~/.bashrc` 文件，添加新的别名信息来修改默认使用的 Python 版本。
 
 ```
 alias python='/usr/bin/python3.4'
@@ -36,7 +36,7 @@ $ python --version
 Python 3.4.2
 ```
 
-2、 基于系统级别修改 Python 版本
+###2、 在系统级修改 Python 版本
 
 我们可以使用 `update-alternatives` 来为整个系统更改 Python 版本。以 root 身份登录，首先罗列出所有可用的 python 替代版本信息：
 
@@ -45,7 +45,7 @@ Python 3.4.2
 update-alternatives: error: no alternatives for python
 ```
 
-如果出现以上所示的错误信息，则表示 Python 的替代版本尚未被 `update-alternatives` 命令识别。想解决这个问题，我们需要更新一下替代表，将 `python2.7` 和 `python3.4` 放入其中。
+如果出现以上所示的错误信息，则表示 Python 的替代版本尚未被 `update-alternatives` 命令识别。想解决这个问题，我们需要更新一下替代列表，将 `python2.7` 和 `python3.4` 放入其中。
 
 ```
 # update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
@@ -61,7 +61,7 @@ update-alternatives: using /usr/bin/python3.4 to provide /usr/bin/python (python
 Python 3.4.2
 ```
 
-接下来，我们继续列出可用的 Python 替代版本。
+接下来，我们再次列出可用的 Python 替代版本。
 
 ```
 # update-alternatives --list python
@@ -82,7 +82,7 @@ Python 3.4.2
 Python 2.7.8
 ```
 
-3、附录
+###3、移除替代版本
 
 一旦我们的系统中不再存在某个 Python 的替代版本时，我们可以将其从 `update-alternatives` 列表中删除掉。例如，我们可以将列表中的 python2.7 版本移除掉。
 
@@ -96,9 +96,8 @@ update-alternatives: using /usr/bin/python3.4 to provide /usr/bin/python (python
 
 via: http://linuxconfig.org/how-to-change-from-default-to-alternative-python-version-on-debian-linux
 
-作者：[作者][]
 译者：[mr-ping](https://github.com/mr-ping)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
