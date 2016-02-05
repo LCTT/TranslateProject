@@ -1,3 +1,4 @@
+chisper 翻译中
 How to Install Revive Adserver on Ubuntu 15.04 / CentOS 7
 ================================================================================
 Revive AdserverHow to Install Revive Adserver on Ubuntu 15.04 / CentOS 7 is a free and open source advertisement management system that enables publishers, ad networks and advertisers to serve ads on websites, apps, videos and manage campaigns for multiple advertiser with many features. Revive Adserver is licensed under GNU Public License which is also known as OpenX Source. It features an integrated banner management interface, URL targeting, geo-targeting and tracking system for gathering statistics. This application enables website owners to manage banners from both in-house advertisement campaigns as well as from paid or third-party sources, such as Google's AdSense. Here, in this tutorial, we'll gonna install Revive Adserver in our machine running Ubuntu 15.04 or CentOS 7.
