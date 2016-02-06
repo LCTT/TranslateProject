@@ -2,6 +2,8 @@
 
 Automatic bug-repair system fixes 10 times as many errors as its predecessors.
 ------
+DongShuaike is translating.
+
 MIT researchers have developed a machine-learning system that can comb through repairs to open-source computer programs and learn their general properties, in order to produce new repairs for a different set of programs.
 
 The researchers tested their system on a set of programming errors, culled from real open-source applications, that had been compiled to evaluate automatic bug-repair systems. Where those earlier systems were able to repair one or two of the bugs, the MIT system repaired between 15 and 18, depending on whether it settled on the first solution it found or was allowed to run longer.
