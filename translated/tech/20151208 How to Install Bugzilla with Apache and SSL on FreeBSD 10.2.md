@@ -1,8 +1,8 @@
-如何在FreeBSD 10.2上配置Apache和SSL并安装Bugzilla
+在FreeBSD 10.2上如何通过配置Apache和SSL安装Bugzilla
 ================================================================================
-Bugzilla是一款bug跟踪系统和测试工具，它基于web且开源，由mozilla计划开发并由Mozilla公共许可证授权。它经常被一些高科技公司如mozilla、红帽公司和gnome使用。Bugzilla起初由Terry Weissman在1998年创立，它用perl语言编写，用MySQL作为后端数据库。它是一款旨在帮助管理软件开发的服务器软件，它功能丰富、高优化度的数据库、卓越的安全性、高级的搜索工具、整合邮件功能等等。
+Bugzilla是一款bug跟踪系统和测试工具，它基于web且开源，由mozilla计划开发并由Mozilla公共许可证授权。它经常被一些高科技公司如mozilla、红帽公司和gnome使用。Bugzilla起初由Terry Weissman在1998年创立，它用perl语言编写，用MySQL作为后端数据库。它是一款旨在帮助管理软件开发的服务器软件，它有丰富的功能、高优化度的数据库、卓越的安全性、高级的搜索工具、整合的邮件功能等等。
 
-在本教程中，我们将给web服务器安装bugzilla 5.0的apache并为它启用SSL，然后在freebsd 10.2上安装mysql 5.1来作为数据库系统。
+在本教程中，我们将给web服务器安装 bugzilla 5.0 的apache，并为它启用SSL，然后安装 mysql 5.1 来作为 freebsd 10.2 的数据库系统。
 
 #### 准备 ####
 
@@ -19,7 +19,7 @@ Bugzilla是一款bug跟踪系统和测试工具，它基于web且开源，由moz
 
 ### 第二步 - 安装并配置Apache ###
 
-在这一步我们将从freebsd库中用pkg命令安装apache，然后在apache24目录下编辑"httpd.conf"文件，启用SSL和CGI支持。
+在这一步我们将使用pkg命令从freebsd库中安装apache，然后在apache24目录下编辑"httpd.conf"文件，启用SSL和CGI支持来配置apache。
 
 用pkg命令安装apache：
 
@@ -70,7 +70,7 @@ Bugzilla是一款bug跟踪系统和测试工具，它基于web且开源，由moz
 
 保存并退出。
 
-在启用apache之前，用sysrc命令添加以下行来在引导的时候启动：
+在启用apache之前，用sysrc命令添加以下行作为开机启动项：
 
     sysrc apache24_enable=yes
     service apache24 start
@@ -81,7 +81,7 @@ Bugzilla是一款bug跟踪系统和测试工具，它基于web且开源，由moz
 
     pkg install p5-DBD-mysql51 mysql51-server mysql51-client
 
-现在我们要在启动时添加mysql服务并启动，然后为mysql配置root密码。
+现在我们要添加mysql服务到开机启动，然后为mysql配置root密码。
 
 运行以下命令来完成所有操作：
 
@@ -209,19 +209,19 @@ bugzilla的数据库创建好了，名字为"bugzilladb"，用户名和密码分
 
     ./checksetup.pl
 
-你会看到一条关于数据库配置错误，你得用nano编辑器编辑一下"localconfig"文件：
+你会看到一条关于数据库配置错误的消息，你得用nano编辑器编辑一下"localconfig"文件：
 
     nano -c localconfig
 
 现在添加第三步创建的数据库。
 
-    #第五十七行
+    #第57行
     $db_name = 'bugzilladb';
 
-    #第六十行
+    #第60行
     $db_user = 'bugzillauser';
 
-    #第六十七行
+    #第67行
     $db_pass = 'bugzillauser@';
 
 保存并退出。
@@ -230,7 +230,7 @@ bugzilla的数据库创建好了，名字为"bugzilladb"，用户名和密码分
 
     ./checksetup.pl
 
-你会收到输入邮箱名和管理员账号的提示，你只要输入你得邮箱、用户名和密码就行了。
+你会收到输入邮箱名和管理员账号的提示，你只要输入你的邮箱、用户名和密码就行了。
 
 ![Admin Setup](http://blog.linoxide.com/wp-content/uploads/2015/12/Admin-Setup.png)
 
@@ -252,7 +252,7 @@ Bugzilla admin面板：
 
 ### 结论 ###
 
-Bugzilla是一个基于web并能帮助你管理软件开发的应用，它用perl开发并使用MySQL作为数据库系统。Bugzilla被mozilla,redhat,gnome等等公司用来帮助它们的软件开发工作。Bugzilla有很多功能并易于配置和安装。
+Bugzilla是一个基于web并能帮助你管理软件开发的应用，它用perl开发并使用MySQL作为数据库系统。Bugzilla帮助mozilla、redhat,gnome等公司完成软件开发工作。Bugzilla有很多功能并易于配置和安装。
 
 --------------------------------------------------------------------------------
 
@@ -260,7 +260,7 @@ via: http://linoxide.com/tools/install-bugzilla-apache-ssl-freebsd-10-2/
 
 作者：[Arul][a]
 译者：[ZTinoZ](https://github.com/ZTinoZ)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Caroline](https://github.com/carolinewuyan)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
