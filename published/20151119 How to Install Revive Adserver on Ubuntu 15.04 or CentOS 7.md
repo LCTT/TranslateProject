@@ -1,10 +1,10 @@
-在Ubuntu 15.04 / CentOS 7上安装Revive Adserver
+在 Ubuntu 15.04 / CentOS 7 上安装广告服务器 Revive Adserver
 ================================================================================
-Revive Adserver是一个免费且开源的广告管理系统，能使出版商，广告平台和广告商把广告投放在网页，应用，视频上并且管理的系统。Revive Adserver又名OpenX，遵循GNU通用公共授权协议。它集广告管理、网站定位、地理定位和跟踪系统于一体
-，用于数据收集。能使网站站长管理内部，付费以及第三方来源的广告，如谷歌的AdSense。本教程中，将会教会你在Ubuntu 15.04或CentOS 7安装并运行Revive Adserver。
+Revive Adserver是一个自由开源的广告管理系统，能使出版商，广告平台和广告商在网页、应用、视频上投放并管理广告的系统。Revive Adserver以前叫做OpenX Source，遵循GNU通用公共授权协议。它集广告管理、网站定位、地理定位和一个用于数据收集的跟踪系统于一体。能使网站站长管理内部的、付费的以及第三方来源的广告，如谷歌的AdSense。本教程中，将会教会你在Ubuntu 15.04或CentOS 7安装并运行Revive Adserver。
+
 ### 1. 安装LAMP###
 
-首先，Revive Adserver需要完整的LAMP环境才能运行，所以我们先安装LAMP。LAMP是Apache网页服务器，MySQL/MariaDB数据库和PHP模块的集合。要使Revive正常运行，需要安装PHP的众多模块，如apc,zlib,xml,pcre,mysql和mbstring。在不同的Linux发行版中，我们可以用下列命令进行LAMP的配置:
+首先，Revive Adserver需要完整的LAMP环境才能运行，所以我们先安装LAMP。LAMP是Apache网页服务器，MySQL/MariaDB数据库和PHP模块的集合。要使Revive正常运行，需要安装PHP的众多模块，如apc, zlib, xml, pcre, mysql和mbstring。在不同的Linux发行版中，我们可以用下列命令进行LAMP的配置:
 
 #### 在Ubuntu 15.04下####
 
@@ -78,7 +78,8 @@ CentOS 7同样是以Systemd作为默认初始系统，可以用下列命令启�
 ![Configuring MariaDB](http://blog.linoxide.com/wp-content/uploads/2015/11/configuring-mariadb.png)
 
 ### 4. 创建新的数据库 ###
-为MariaDB的root用户设置了密码之后，就可以创建用来储存Revive Adserver应用数据的数据库。首先通过以下命令登陆MariaDB控制台：
+
+为MariaDB的root用户设置了密码之后，就可以创建用来储存Revive Adserver应用数据的数据库。首先通过以下命令登录MariaDB控制台：
 
 	# mysql -u root -p
 
@@ -142,6 +143,7 @@ CentOS 7同样是以Systemd作为默认初始系统，可以用下列命令启�
     </VirtualHost>
 
 ![Configuring Apache2 Ubuntu](http://blog.linoxide.com/wp-content/uploads/2015/11/configuring-apache2-ubuntu.png)
+
 保存并退出，重启Apache Web服务：
 
 	# systemctl restart apache2
@@ -174,8 +176,8 @@ CentOS 7同样是以Systemd作为默认初始系统，可以用下列命令启�
 	# systemctl restart httpd
 	
 ### 7. 修复权限和所有权
-	
-现在我们修改安装路径下文件的权限和所有权。把安装目录的所有权改成Apache进程所有以便Apache Web服务有文件和目录的编辑，创建和删除的完全权限。
+
+现在我们修改安装路径下文件的权限和所有权。把安装目录的所有权改成Apache进程所有，以便Apache Web服务有文件和目录的编辑、创建和删除的完全权限。
 	
 #### 在Ubuntu 15.04下####
 	
@@ -202,7 +204,7 @@ Ubuntu15.04/CentOS 7都使用Systemd作为默认初始系统，使用firewalld�
     success	
 	
 ### 9. 网站的安装
-	
+
 顺利的话我们能够使用浏览器进行交互，并可以将浏览器指向正在运行的网络服务器。只要在浏览器输入http://ip-address/ 或者 http://domain.com 。这里我们要访问	http://reviveads.linoxide.com/ 
 	
 打开后可以看到Revive Adserver的欢迎页面，上面还有作为它发行许可证的GNU通用公共许可证V2。点击 I agree 继续下一步安装。
@@ -216,11 +218,9 @@ Ubuntu15.04/CentOS 7都使用Systemd作为默认初始系统，使用firewalld�
 接着，转到Adverstiser页面，添加新的广告管理。在控制界面添加新用户到adserver，为广告库户添加标题，网页，视频
 广告。
 
-
 ### 总结 ###
-本文中，我们学习了如何在Ubuntu 15.04和CentOS 7上安装并配置Revive Adserver。尽管Revive Adserver的原始代码是从OpenX那买的，但现在它们已经完全分开了。可以从[http://www.adserverplugins.com/][2] 获得更多插件来扩展新特性。讲真，这个软件确实让网页，应用，视频上的广告管理变得容易了许多。
 
-
+本文中，我们学习了如何在Ubuntu 15.04和CentOS 7上安装并配置Revive Adserver。尽管Revive Adserver的原始代码是从OpenX那买的，但现在OpenX Enterprise和Revive Adserver已经完全分开了。可以从[http://www.adserverplugins.com/][2] 获得更多插件来扩展新特性。讲真，这个软件确实让网页，应用，视频上的广告管理变得容易了许多。
 
 --------------------------------------------------------------------------------
 
@@ -228,7 +228,7 @@ via: http://linoxide.com/linux-how-to/install-revive-adserver-ubuntu-15-04-cento
 
 作者：[Arun Pyasi][a]
 译者：[chisper](https://github.com/chisper)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
