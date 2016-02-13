@@ -1,5 +1,3 @@
-Translating by Flowsnow
-
 Part 7 - LFCS: Managing System Startup Process and Services (SysVinit, Systemd and Upstart)
 ================================================================================
 A couple of months ago, the Linux Foundation announced the LFCS (Linux Foundation Certified Sysadmin) certification, an exciting new program whose aim is allowing individuals from all ends of the world to get certified in performing basic to intermediate system administration tasks on Linux systems. This includes supporting already running systems and services, along with first-hand problem-finding and analysis, plus the ability to decide when to raise issues to engineering teams.

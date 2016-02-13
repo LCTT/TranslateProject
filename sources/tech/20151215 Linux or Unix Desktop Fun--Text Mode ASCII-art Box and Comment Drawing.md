@@ -1,4 +1,3 @@
-翻译中
 Linux / Unix Desktop Fun: Text Mode ASCII-art Box and Comment Drawing
 ================================================================================
 Boxes command is a text filter and a little known tool that can draw any kind of ASCII art box around its input text or code for fun and profit. You can quickly create email signatures, or create regional comments in any programming language. This command was intended to be used with the vim text editor, but can be tied to any text editor which supports filters, as well as from the command line as a standalone tool.
@@ -191,7 +190,7 @@ See also
 via: http://www.cyberciti.biz/tips/unix-linux-draw-any-kind-of-boxes-around-text-editor.html
 
 作者：Vivek Gite 
-译者：[zky001](https://github.com/zky001)
+译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
