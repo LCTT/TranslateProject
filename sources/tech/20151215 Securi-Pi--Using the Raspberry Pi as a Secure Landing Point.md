@@ -1,7 +1,3 @@
-translating by ezio
-
-
-
 Securi-Pi: Using the Raspberry Pi as a Secure Landing Point
 ================================================================================
 
