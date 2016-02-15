@@ -1,3 +1,4 @@
+translation by strugglingyouth
 How to Install MariaDB 10 on CentOS 7 CPanel Server
 ================================================================================
 
