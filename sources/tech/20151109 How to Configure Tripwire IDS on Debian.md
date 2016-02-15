@@ -1,3 +1,5 @@
+Translating---geekpi
+
 How to Configure Tripwire IDS on Debian
 ================================================================================
 This article is about Tripwire installation and configuration on Debian OS. It is a host based Intrusion detection system (IDS)  for Linux environment. Prime function of tripwire IDS is to detect and report any unauthorized change (files and directories ) on linux system. After tripwire installation, baseline database created first, tripwire monitors and detects changes such as  new file addition/creation, file modification and user who changed it etc. If the changes are legitimate, you can accept the changes to update tripwire database.
@@ -377,3 +379,5 @@ via: http://linoxide.com/security/configure-tripwire-ids-debian/
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:http://linoxide.com/author/naveeda/
+
+
