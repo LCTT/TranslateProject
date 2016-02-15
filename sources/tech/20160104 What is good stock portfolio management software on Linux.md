@@ -1,4 +1,3 @@
-translating by fw8899
 What is good stock portfolio management software on Linux
 ================================================================================
 If you are investing in the stock market, you probably understand the importance of a sound portfolio management plan. The goal of portfolio management is to come up with the best investment plan tailored for you, considering your risk tolerance, time horizon and financial goals. Given its importance, no wonder there are no shortage of commercial portfolio management apps and stock market monitoring software, each touting various sophisticated portfolio performance tracking and reporting capabilities.

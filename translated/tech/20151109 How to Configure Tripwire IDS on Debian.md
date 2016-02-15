@@ -1,49 +1,49 @@
-正在翻译：zky001
-How to Configure Tripwire IDS on Debian
+如何在Debian中配置Tripewire IDS
 ================================================================================
-This article is about Tripwire installation and configuration on Debian OS. It is a host based Intrusion detection system (IDS)  for Linux environment. Prime function of tripwire IDS is to detect and report any unauthorized change (files and directories ) on linux system. After tripwire installation, baseline database created first, tripwire monitors and detects changes such as  new file addition/creation, file modification and user who changed it etc. If the changes are legitimate, you can accept the changes to update tripwire database.
+本文是一篇关于Debian中安装和配置Tripewire的文章。它是Linux环境下基于主机的入侵检测系统（IDS）。tripwire的高级功能有检测并报告任何Linux中未授权的更改（文件和目录）。tripewire安装之后，会先创建一个基本的数据库，tripewire监控并检测新文件的创建修改和谁修改了它等等。如果修改过是合法的，你可以接受修改并更新tripwire的数据库。
 
-### Installation and Configuration ###
+### 安装和配置 ###
 
-Tripwire installation on Debian VM is shown below.
+tripwire在Debian VM中的安装如下。
 
     # apt-get install tripwire
 
 ![installation](http://blog.linoxide.com/wp-content/uploads/2015/11/installation.png)
 
-During installation, tripwire prompt for following configuration.
+安装中，tripwire会有下面的配置提示。
 
-#### Site key Creation ####
+#### 站点密钥创建 ####
 
-Tripwire required a site passphrase  to secure the tw.cfg tripwire configuration file and tw.pol tripwire policy file. Tripewire encrypte both files using given passphrase.  Site passphrase is must even for a single instance tripwire.
+tripwire需要一个站点口令来加密tripwire的配置文件tw.cfg和策略文件tw.pol。tripewire使用指定的密码加密两个文件。一个tripewire实例必须指定站点口令。
+
 
 ![site key1](http://blog.linoxide.com/wp-content/uploads/2015/11/site-key1.png)
 
-#### Local Key passphrase ####
+#### 本地密钥口令 ####
 
-Local passphrase is needed for the  protection of  tripwire database and report files . Local key used by the tripwire  to avoid unauthorized modification of tripwire baseline database.
+本地口令用来保护tripwire数据库和报告文件。本地密钥用于阻止非授权的tripewire数据库修改。
 
 ![local key1](http://blog.linoxide.com/wp-content/uploads/2015/11/local-key1.png)
 
-#### Tripwire configuration path ####
+#### Tripwire配置路径 ####
 
-Tripwire configuration saved in the /etc/tripwire/twcfg.txt file. It is used to generate encrypted configuration file tw.cfg.
+tripewire配置存储在/etc/tripwire/twcfg.txt。它用于生成加密的配置文件tw.cfg。
 
 ![configuration file](http://blog.linoxide.com/wp-content/uploads/2015/11/configuration-file.png)
 
-**Tripwire Policy  path**
+**Tripwire策略路径**
 
-Tripwire saves policies in /etc/tripwire/twpol.txt  file . It is used for the generation of encrypted policy file tw.pol used by the tripwire.
+tripwire在/etc/tripwire/twpol.txt中保存策略文件。它用于生成加密的策略文件tw.pol。
 
 ![tripwire policy](http://blog.linoxide.com/wp-content/uploads/2015/11/tripwire-policy.png)
 
-Final installation of  tripwire is shown in the following snapshot.
+安装完成后如下图所示。
 
 ![installed tripewire1](http://blog.linoxide.com/wp-content/uploads/2015/11/installed-tripewire1.png)
 
-#### Tripwire Configuration file (twcfg.txt) ####
+#### Tripwire配置文件 (twcfg.txt) ####
 
-Tripwire configuration file (twcfg.txt) details is given below. Paths of encrypted policy file (tw.pol), site key (site.key) and local key (hostname-local.key) etc are given below.
+tripewire配置文件（twcfg.txt）细节如下图所示。加密策略文件（tw.pol）,站点密钥（site.key）和本地密钥（hostname-local.key）如下所示。
 
     ROOT         =/usr/sbin
     
@@ -79,9 +79,9 @@ Tripwire configuration file (twcfg.txt) details is given below. Paths of encrypt
     
     TEMPDIRECTORY =/tmp
 
-#### Tripwire Policy Configuration ####
+#### Tripwire策略配置 ####
 
-Configure tripwire configuration before generation of baseline database. It is necessary to disable few policies such as /dev , /proc ,/root/mail etc. Detailed policy file twpol.txt is given below.
+在生成基础数据库之前先配置tripwire配置。有必要经用一些策略如/dev、 /proc 、/root/mail等。详细的twpol.txt策略文件如下所示。
 
     @@section GLOBAL
     TWBIN = /usr/sbin;
@@ -237,13 +237,13 @@ Configure tripwire configuration before generation of baseline database. It is n
     #/proc        -> $(Device) ;
     }
 
-#### Tripwire Report ####
+#### Tripwire 报告 ####
 
-**tripwire –check** command checks the twpol.txt file and based on this file generates tripwire report which is shown below. If this is any error in the twpol.txt file, tripwire does not generate report.
+**tripwire –check** 命令检查twpol.txt文件并基于此文件生成tripwire报告如下。如果twpol.txt中有任何错误，tripwire不会生成报告。
 
 ![tripwire report](http://blog.linoxide.com/wp-content/uploads/2015/11/tripwire-report.png)
 
-**Report in text form**
+**文本形式报告**
 
     root@VMdebian:/home/labadmin# tripwire --check
     
@@ -363,18 +363,20 @@ Configure tripwire configuration before generation of baseline database. It is n
     
     Integrity check complete.
 
-### Conclusion ###
+### 总结 ###
 
-In this article, we learned installation and basic configuration of open source IDS tool Tripwire.  First it generates baseline database and detects any change (file/folder) by comparing it with already generated baseline. However, tripwire is not live monitoring IDS.
+本篇中，我们学习安装配置开源入侵检测软件tripwire。首先生成基础数据库并通过比较检测出任何改动（文件/文件夹）。然而，tripwire并不是实时监测的IDS。
 
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/security/configure-tripwire-ids-debian/
 
 作者：[nido][a]
-译者：[译者zky001](https://github.com/zky001)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:http://linoxide.com/author/naveeda/
+
+
