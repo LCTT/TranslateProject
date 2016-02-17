@@ -1,3 +1,5 @@
+Translating----geekpi
+
 Linux / Unix Desktop Fun: Text Mode ASCII-art Box and Comment Drawing
 ================================================================================
 Boxes command is a text filter and a little known tool that can draw any kind of ASCII art box around its input text or code for fun and profit. You can quickly create email signatures, or create regional comments in any programming language. This command was intended to be used with the vim text editor, but can be tied to any text editor which supports filters, as well as from the command line as a standalone tool.
@@ -199,3 +201,5 @@ via: http://www.cyberciti.biz/tips/unix-linux-draw-any-kind-of-boxes-around-text
 [2]:http://www.cyberciti.biz/faq/rhel-centos-fedora-linux-yum-command-howto/
 [3]:http://www.cyberciti.biz/faq/fedora-sl-centos-redhat6-enable-epel-repo/
 [4]:http://www.cyberciti.biz/faq/vim-inserting-current-date-time-under-linux-unix-osx/
+
+
