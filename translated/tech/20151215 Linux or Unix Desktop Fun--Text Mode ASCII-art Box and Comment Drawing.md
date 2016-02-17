@@ -1,16 +1,15 @@
-Translating----geekpi
-
-Linux / Unix Desktop Fun: Text Mode ASCII-art Box and Comment Drawing
+Linux/Unix桌面趣事：文本模式艺术框及注释图
 ================================================================================
 Boxes command is a text filter and a little known tool that can draw any kind of ASCII art box around its input text or code for fun and profit. You can quickly create email signatures, or create regional comments in any programming language. This command was intended to be used with the vim text editor, but can be tied to any text editor which supports filters, as well as from the command line as a standalone tool.
+boxes是一个文本过滤器并且是一个鲜为人知的可以在文字或者代码周围绘出任何形式的ASCII艺术框的工具。你可以快速地创建一个email签名或者在任何语言中创建一个注释。这个命令可以和vim一起使用，但是可以和任何支持过滤和可以在命令行中使用独立工具的文本编辑器绑定在一起。。
 
-### Task: Install boxes ###
+### 任务： 安装 boxes ###
 
-Use the [apt-get command][1] to install boxes under Debian / Ubuntu Linux:
+在Debian/Ubuntu中使用[apt-get命令][1]来安装boxes:
 
     $ sudo apt-get install boxes
 
-Sample outputs:
+示例输出:
 
     Reading package lists... Done
     Building dependency tree
@@ -26,11 +25,11 @@ Sample outputs:
     Processing triggers for man-db ...
     Setting up boxes (1.0.1a-2.3) ...
 
-RHEL / CentOS / Fedora Linux users, use the [yum command to install boxes][2] (first [enable EPEL repo as described here][3]):
+对于RHEL / CentOS / Fedora用户，使用[yum命令来安装boxes][2](首先[启用EPEL仓库][3])
 
     # yum install boxes
 
-Sample outputs:
+示例输出:
 
     Loaded plugins: rhnplugin
     Setting up Install Process
@@ -63,50 +62,51 @@ Sample outputs:
     Complete!
 
 FreeBSD user can use the port as follows:
+FreeBSD用户可以使用port：
 
     cd /usr/ports/misc/boxes/ && make install clean
 
-Or, add the package using the pkg_add command:
+或者使用pkg_add命令添加包：
 
     # pkg_add -r boxes
 
-### Draw any kind of box around some given text ###
+### 用给定的文字画出任何形式的框 ###
 
-Type the following command:
+输入下面的额命令：
 
     echo "This is a test" | boxes
 
-Or specify the name of the design to use:
+或者指定设计：
 
     echo -e "\n\tVivek Gite\n\tvivek@nixcraft.com\n\twww.cyberciti.biz" | boxes -d dog
 
-Sample outputs:
+示例输出：
 
 ![Unix / Linux: Boxes Command To Draw Various Designs](http://s0.cyberciti.org/uploads/l/tips/2012/06/unix-linux-boxes-draw-dog-design.png)
 
-Fig.01: Unix / Linux: Boxes Command To Draw Various Designs
+图01:Unix / Linux：Box命令来画出不同的设计
 
-#### How do I list all designs? ####
+#### 我如何列出所有的设计？ ####
 
-The syntax is:
+语法是：
 
     boxes option
     pipe | boxes options
     echo "text" | boxes -d foo
     boxes -l
  
-The -d design option sets the name of the design to use. The syntax is:
+-d选项设置使用的设计。语法是：
 
     echo "Text" | boxes -d design
     pipe | boxes -d desig
 
-The -l option list designs. It produces a listing of all available box designs in the config file, along with a sample box and information about it's creator:
+-l选项列出设计列表。它会列出配置文件中所有的设计，以及它的设计者的一些信息：
 
     boxes -l
     boxes -l | more
     boxes -l | less
 
-Sample outputs:
+示例输出：
 
     43 Available Styles in "/etc/boxes/boxes-config":
     -------------------------------------------------
@@ -142,32 +142,32 @@ Sample outputs:
     output truncated
     ..
 
-### How do I filter text via boxes while using vi/vim text editor? ###
+### 我如何在vi/vim中使用boxes过滤文本？ ###
 
-You can use any external command with vi or vim. In this example, [insert current date and time][4], enter:
+你可以在vi或者vim中使用任何外部命令。比如，[插入日期和时间][4]，输入：
 
     !!date
 
-OR
+或者
 
     :r !date
 
-You need to type above command in Vim to read the output from the date command. This will insert the date and time after the current line:
+你需要在vim中输入上面的命令来读取date命令的输出。这可以在当前行中插入时间和日期：
 
     Tue Jun 12 00:05:38 IST 2012
 
-You can do the same with boxes command. Create a sample shell script or a c program as follows:
+你可以用boxes命令做同样的事情。如下创建一个示例脚本或者程序:
 
     #!/bin/bash
     Purpose: Backup mysql database to remote server.
     Author: Vivek Gite
     Last updated on: Tue Jun, 12 2012
 
-Now type the following (move cursor to the second line i.e. line which starts with "Purpose: ...")
+现在输入下面的命令（移动光标到第二行，也就是说以Purpose开头的那行）
 
     3!!boxes
 
-And voila you will get the output as follows:
+你就会得到下面的示例输出：
 
     #!/bin/bash
     /****************************************************/
@@ -177,22 +177,22 @@ And voila you will get the output as follows:
     /****************************************************/
 
 This video will give you an introduction to boxes command:
+这个视频是boxes命令的一个介绍
 
 注：youtube 视频
 <iframe width="595" height="446" frameborder="0" src="http://www.youtube.com/embed/glzXjNvrYOc?rel=0"></iframe>
 
-(Video:01: boxes command in action. BTW, this is my first video so go easy on me and let me know what you think.)
+（视频01：boxes命令实践。顺便说一下，这是我的第一个视频，所以对我不要太认真并让我知道你们所想）
+同样可见
 
-See also
-
-- boxes man page
+- boxes man页
 
 --------------------------------------------------------------------------------
 
 via: http://www.cyberciti.biz/tips/unix-linux-draw-any-kind-of-boxes-around-text-editor.html
 
 作者：Vivek Gite 
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
