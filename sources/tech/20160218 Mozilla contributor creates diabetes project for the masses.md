@@ -1,3 +1,4 @@
+translating by ynmlml
 Mozilla contributor creates diabetes project for the masses
 ================================================================
 
