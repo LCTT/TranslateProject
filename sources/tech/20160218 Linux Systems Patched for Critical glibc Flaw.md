@@ -1,3 +1,5 @@
+Ricky Gong 翻译中
+
 Linux Systems Patched for Critical glibc Flaw
 =================================================
 
