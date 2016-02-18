@@ -1,3 +1,5 @@
+translatin by Ezio
+
 Meizu PRO 5 Ubuntu Edition Announced and It's a Beast
 ========================================================
 
