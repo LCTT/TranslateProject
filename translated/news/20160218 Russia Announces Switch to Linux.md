@@ -1,4 +1,4 @@
-本周 Linux 新闻: 俄罗斯宣布迁移到 Linux 
+本周 Linux 新闻: 俄罗斯宣布政府电脑系统迁移到 Linux 
 =========================================================================
 
 本周 Linux 新闻， 俄罗斯宣布可能会将系统迁移到 Linux 上， Jack Wallen 思考2016 年对 Linux 桌面系统的重要性， 等等。下面就让我们看看本周 Linux 界都有那些重要新闻。
@@ -19,9 +19,9 @@
   
   [Docker 将会抛弃 Ubuntu 吗？](http://www.infoworld.com/article/3031847/open-source-tools/is-docker-ditching-ubuntu-linux-confusion-reigns.html) - InfoWorld
 
-5.Node.js 基金会， 作为Linux 基金会的合作项目， 将会产生流行的第三方快捷(Express)软件包
+5.Node.js 基金会， 作为Linux 基金会的合作项目， 计划将 Express 引入基金会
   
-  [Node.js 基金会计划孵化社区中最流行的一个软件包](http://www.linux.com/news/software/applications/885174-this-week-in-linux-news-russia-announces-switch-to-linux-outdated-fight-for-the-linux-desktop-a-more#gref)- The Next Web
+  [Node.js 基金会计划将社区里最流行的框架软件 Expres 引入基金会进行孵化](http://thenextweb.com/dd/2016/02/10/the-node-js-foundation-plans-to-incubate-one-of-the-communitys-most-popular-packages/)- The Next Web
 
 
 ------------------------------------------------------------------------------
