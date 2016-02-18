@@ -1,3 +1,5 @@
+translating by Ezio
+
 This Week in Linux News:Russia Announces Switch to Linux, Outdated Fight for the Linux Desktop
 =========================================================================
 This week in Linux news, Russia announces a possible switch to Linux, Jack Wallen ponders the importance of the Linux Desktop in 2016, and more! Get up-to-date on the Latest Linux news with our weekly digest.
