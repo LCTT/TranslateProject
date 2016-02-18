@@ -19,8 +19,8 @@ Before going to the installation procedures, let us take a look on the pre-requi
 
 ### Pre-requisites ###
 
- # Enable Mod_proxy_fcgi module
- # Enable MPM_Event
+ 1. Enable Mod_proxy_fcgi module
+ 2. Enable MPM_Event
 
 Since, we are installing PHP-FPM on a EA3 server, we need to run EasyApache to compile Apache to enable these modules.
 
