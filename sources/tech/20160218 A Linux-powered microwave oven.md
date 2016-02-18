@@ -41,7 +41,6 @@ A quick survey of the audience suggested that few people would hastily commit to
 
 ------------------------------------------------------------------------------
 
-
 via: https://lwn.net/Articles/674877/
 
 作者：Neil Brown
