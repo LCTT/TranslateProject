@@ -1,3 +1,4 @@
+chisper 翻译中
 How to Install Pure-FTPd with TLS on FreeBSD 10.2
 ================================================================================
 FTP or File Transfer Protocol is application layer standard network protocol used to transfer file from the client to the server, after user logged in to the FTP server over the TCP-Network, such as internet. FTP has been round long time ago, much longer then P2P Program, or World Wide Web, and until this day it was a primary method for sharing file with other over the internet and it it remain very popular even today. FTP provide an secure transmission, that protect username, password and encrypt the content with SSL/TLS.
