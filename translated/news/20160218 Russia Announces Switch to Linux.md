@@ -29,7 +29,7 @@
 via: http://www.linux.com/news/software/applications/885174-this-week-in-linux-news-russia-announces-switch-to-linux-outdated-fight-for-the-linux-desktop-a-more
 
 作者：[linux.com][linux.com]
-译者：[译者ID](https://github.com/oska874)
-校对：[校对者ID](https://github.com/Yuking-net)
+译者：[oska874](https://github.com/oska874)
+校对：[Yuking_net](https://github.com/Yuking-net)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
