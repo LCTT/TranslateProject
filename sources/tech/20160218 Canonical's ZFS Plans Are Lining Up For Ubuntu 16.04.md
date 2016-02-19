@@ -1,3 +1,5 @@
+Translating----geekpi
+
 Canonical's ZFS Plans Are Lining Up For Ubuntu 16.04
 =======================================================
 
@@ -20,3 +22,5 @@ via: https://www.phoronix.com/scan.php?page=news_item&px=Ubuntu-ZFS-Continues-16
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:http://www.michaellarabel.com/
+
+
