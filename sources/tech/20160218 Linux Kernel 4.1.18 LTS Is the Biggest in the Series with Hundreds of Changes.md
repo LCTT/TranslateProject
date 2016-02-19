@@ -1,3 +1,4 @@
+Translating by GOLinux
 Linux Kernel 4.1.18 LTS Is the Biggest in the Series with Hundreds of Changes
 =================================================================================
 
