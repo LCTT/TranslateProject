@@ -1,4 +1,3 @@
-translation by strugglingyouth
 Linux Desktop Fun: Summon Swarms Of Penguins To Waddle About The Desktop
 ================================================================================
 XPenguins is a program for animating cute cartoons animals in your root window. By default it will be penguins they drop in from the top of the screen, walk along the tops of your windows, up the side of your windows, levitate, skateboard, and do other similarly exciting things. Now you can send an army of cute little penguins to invade the screen of someone else on your network.

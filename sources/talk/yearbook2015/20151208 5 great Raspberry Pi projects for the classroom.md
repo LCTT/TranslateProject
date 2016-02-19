@@ -1,12 +1,8 @@
-taichirain 翻译中
-
 5 great Raspberry Pi projects for the classroom
-5 伟大的树莓派项目教室
 ================================================================================
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/osdc-open-source-yearbook-lead3.png)
 
 Image by : opensource.com
-图片来源 : opensource.com
 
 ### 1. Minecraft Pi ###
 
