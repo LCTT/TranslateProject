@@ -1,6 +1,3 @@
-translatin by Ezio
-
-Meizu PRO 5 Ubuntu Edition Announced and It's a Beast
 魅族 Pr 5 Ubuntu 版即将发布
 ========================================================
 
