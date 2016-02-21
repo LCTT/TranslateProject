@@ -9,17 +9,17 @@
 
 SUSE 是 openSUSE 发行版背后的公司，同时也是起步最早的 Linux 公司；[它在 Linus Torvalds 发布 Linux 的第二年就成立了](http://www.linux.com/news/software/applications/866964-exclusive-interview-with-suse-president-nils-brauckmann)。该公司的成立实际上早于现在的 Linux 公司之王 —— Red Hat。同时 SUSE 也是 [openSUSE](https://www.opensuse.org/) 社区发行版的发起者和赞助商。
 
-2015 年，openSUSE 的开发团队决定向 SUSE Linux 企业版 (SLE) 靠拢，以便让用户可以获得企业服务器特性的发行版 —— 类似于 CentOS 和 Ubuntu 那样。因此，openSUSE 变成了 [openSUSE Leap](https://en.opensuse.org/Portal:Leap)，一个直接基于 SLE SP1 的发行版。
+2015 年，openSUSE 的开发团队决定向 SUSE Linux 企业版 (SLE) 靠拢，以便让用户可以获得企业服务器特性的发行版——类似于 CentOS 和 Ubuntu 那样。因此，openSUSE 变成了 [openSUSE Leap](https://en.opensuse.org/Portal:Leap)，一个直接基于 SLE SP1 的发行版。
 
-两个发行版共用相同的基础代码，相互受益 —— SUSE 会选用 openSUSE 中好的代码，反之亦然。如此，openSUSE 也放弃了原本常规的发布周期，新版本与 SLE 同步发行。这意味着每个版本将会有更长的生命周期。
+两个发行版共用相同的基础代码，相互受益—— SUSE 会选用 openSUSE 中好的代码，反之亦然。如此，openSUSE 也放弃了原本常规的发布周期，新版本与 SLE 同步发行。这意味着每个版本将会有更长的生命周期。
 
-这样做的结果是，openSUSE 就成了一个非常重要的发行版，因为潜在的 SLE 用户现在可以使用 openSUSE Leap 了。但也并非完全如此，openSUSE 同样也有发行版 [Tumbleweed](http://www.cio.com/article/3008856/open-source-tools/is-opensuse-tumbleweed-good-enough-for-a-seasoned-arch-user.html) —— 一个纯净的滚动式版本。所以，用户们可以选择使用超稳定的 openSUSE Leap 或者经常更新的 openSUSE Tumbleweed。
+这样做的结果是，openSUSE 就成了一个非常重要的发行版，因为潜在的 SLE 用户现在可以使用 openSUSE Leap 了。但也并非完全如此，openSUSE 同样也有发行版 [Tumbleweed](http://www.cio.com/article/3008856/open-source-tools/is-opensuse-tumbleweed-good-enough-for-a-seasoned-arch-user.html) ——一个纯净的滚动式版本。所以，用户们可以选择使用超稳定的 openSUSE Leap 或者经常更新的 openSUSE Tumbleweed。
 
 在我的记忆中，还没有其他的发行版做了这样一个令人印象深刻的回归。
 
 ## 最高可定制性的发行版：Arch Linux
 
-Arch Linux 是目前最好的滚动式更新的发行版。好吧，我可能有些偏见，因为我是一名 Arch Linux 用户 (GHLandy 译注：本人也是 Arch Linux 用户，它的定制性真的很好)。然而，我认为它好的真正原因是 Arch 在很多其他领域也都表现的非常优越，并且这才是我为什么用它作为主系统的原因。
+Arch Linux 是目前最好的滚动式更新的发行版。好吧，我可能有些偏见，因为我是一名 Arch Linux 用户 ( LCTT 译注：译者也是 Arch Linux 用户，它的定制性真的很好)。然而，我认为它好的真正原因是 Arch 在很多其他领域也都表现的非常优越，并且这才是我为什么用它作为主系统的原因。
 
 - 对于那些想要学习 Linux 方方面面的用户来说，[Arch Linux](https://www.archlinux.org/) 无疑是一个绝佳的选择。因为你需要手动安装所有自己需要的东西，这样你会慢慢学到 Linux 系统的所有细节。
 
@@ -33,9 +33,9 @@ Arch Linux 是目前最好的滚动式更新的发行版。好吧，我可能有
 
 ## 最美观的发行版：elementary OS
 
-不同的发行版会有不同的关注点 —— 多数情况下表现为不同的技术。在大多数的 Linux 发行版中，外观和用户感觉并非他们优先考虑的事情 —— 这通常是桌面环境需要考虑的事情。
+不同的发行版会有不同的关注点——多数情况下表现为不同的技术。在大多数的 Linux 发行版中，外观和用户感觉并非他们优先考虑的事情 —— 这通常是桌面环境需要考虑的事情。
 
-[elementary OS](https://elementary.io/) 正在尝试改变这一事实。在这个发行版中，设计是占据重要位置，并且原因明显 —— 为该发行版取这个名字的开发者要在 Linux 世界里创建一些漂亮的图标。
+[elementary OS](https://elementary.io/) 正在尝试改变这一事实。在这个发行版中，设计是占据重要位置，并且原因明显——为该发行版取这个名字的开发者要在 Linux 世界里创建一些漂亮的图标。
 
 elementary OS 相当注重整体外观和用户感觉。开发者创建了他们自己的组件，包括桌面环境。此外，他们只会选择那些符合设计规范的应用来加入到软件仓库。你可以发现 elementary OS 有很浓重的 Mac OS X 气息。
 
@@ -43,7 +43,7 @@ elementary OS 相当注重整体外观和用户感觉。开发者创建了他们
 
 ![](http://www.linux.com/images/stories/66866/distro-solus.JPG)
 
-[Solus](https://solus-project.com/) 最近获得非常大的关注程度。它是一个外观还可以、从零开始构建的操作系统，而并非 Debian 或者 Ubuntu 的衍生版本。它使用的 Budgie 桌面环境同样是从零开始构建的，但它的目标是兼容 Gnome。Solus 和 Google 的 Chrome OS 一样 —— 一切从简。
+[Solus](https://solus-project.com/) 最近获得非常大的关注程度。它是一个外观还可以、从零开始构建的操作系统，而并非 Debian 或者 Ubuntu 的衍生版本。它使用的 Budgie 桌面环境同样是从零开始构建的，但它的目标是兼容 Gnome。Solus 和 Google 的 Chrome OS 一样——一切从简。
 
 我个人没怎么玩过 Solus，但它看起来很有前途。Solus 实际上并不是一个 “新” 系统。它曾以不同的形式和名称存在了很长时间，但直到 2015 年整个项目才以现在这个新名称重归大众视野。
 
@@ -63,7 +63,7 @@ elementary OS 相当注重整体外观和用户感觉。开发者创建了他们
 
 ![](http://www.linux.com/images/stories/66866/distro-ubuntu-studio.JPG)
 
-Snappy Ubuntu Core 为物联网 (IoT) 及此类设备而生的 Linux 操作系统。该系统拥有巨大潜力，它可以将我们身边绝大多数的东西 —— 如路由器、咖啡机和玩具飞机等 —— 变成智能设备。让它更有趣的是，软件管理更新的方式以及添加安全性能的模块。
+Snappy Ubuntu Core 为物联网 (IoT) 及此类设备而生的 Linux 操作系统。该系统拥有巨大潜力，它可以将我们身边绝大多数的东西 —— 如路由器、咖啡机和玩具飞机等——变成智能设备。让它更有趣的是，软件管理更新的方式以及添加安全性能的模块。
 
 ## 为桌面系统而生的发行版：Linux Mint Cinnamon
 
@@ -71,7 +71,7 @@ Snappy Ubuntu Core 为物联网 (IoT) 及此类设备而生的 Linux 操作系�
 
 ## 为游戏而生的发行版：Steam OS
 
-对于桌面版 Linux 来说，玩游戏同样是短板。很多用户为了能够玩游戏，安装了 Linux 和 Windows 双系统。而 Valve 则尝试改变这个局面。Valve 是一个游戏发行商，它提供一个可以跨平台运行游戏的客户端。并且，Valve 也同样创建了它自己的开源操作系统 —— [Steam OS](http://store.steampowered.com/steamos/) —— 为了创建一个基于 Linux 的游戏平台。截至 2015 年底，它的合作伙伴开始把搭载了 Steam OS 的机器推向市场。
+对于桌面版 Linux 来说，玩游戏同样是短板。很多用户为了能够玩游戏，安装了 Linux 和 Windows 双系统。而 Valve 则尝试改变这个局面。Valve 是一个游戏发行商，它提供一个可以跨平台运行游戏的客户端。并且，Valve 也同样创建了它自己的开源操作系统——[Steam OS](http://store.steampowered.com/steamos/)——为了创建一个基于 Linux 的游戏平台。截至 2015 年底，它的合作伙伴开始把搭载了 Steam OS 的机器推向市场。
 
 ## 为隐私而生的发行版：Tails
 
@@ -81,7 +81,7 @@ Snappy Ubuntu Core 为物联网 (IoT) 及此类设备而生的 Linux 操作系�
 
 ## 为多媒体制作而生的发行版：Ubuntu Studio
 
-基于 Linux 的操作系统有一个明显的弱点，那就是对多媒体制作的支持并不友好。所有专业级应用基本只能运行在  Windows 或者 Mac OS X 上。Linux 系统从来都不缺乏像样的音频/视频制作软件，但这样还是远远不够的。应该要有一款轻量级的桌面环境，使得那些宝贵的系统资源 —— 如 CPU 和 RAM —— 尽量少占用，以便用于多媒体制作。目前，[Ubuntu Studio](https://ubuntustudio.org/tour/) 对多媒体制作的支持最好。它使用了 Xfce 桌面环境，并且有各种各样的音频、视频以及图像编辑应用。
+基于 Linux 的操作系统有一个明显的弱点，那就是对多媒体制作的支持并不友好。所有专业级应用基本只能运行在  Windows 或者 Mac OS X 上。Linux 系统从来都不缺乏像样的音频/视频制作软件，但这样还是远远不够的。应该要有一款轻量级的桌面环境，使得那些宝贵的系统资源——如 CPU 和 RAM——尽量少占用，以便用于多媒体制作。目前，[Ubuntu Studio](https://ubuntustudio.org/tour/) 对多媒体制作的支持最好。它使用了 Xfce 桌面环境，并且有各种各样的音频、视频以及图像编辑应用。
 
 ## 最好的企业发行版：SLE/RHEL
 
@@ -93,13 +93,13 @@ Snappy Ubuntu Core 为物联网 (IoT) 及此类设备而生的 Linux 操作系�
 
 ## 最好的移动操作系统：Plasma Mobile
 
-尽管，基于 Linux 的 Android 系统称雄于移动操作系统市场，但是大多数的开源社区 —— 也包括我在内 —— 也仍然强烈希望能有一个发行版能够为移动设备提供传统 Linux 的桌面应用。同时，这样的一个发行版由开源社区来维护会比由商业公司来维护好的多，只有这样用户群才能成为这个发行版的焦点，而不应该由公司的商业目标来决定这个发行版的发展趋势。而 KDE 的 [Plasma Mobile](https://community.kde.org/Plasma/Mobile) 刚好实现了我们的愿望。
+尽管，基于 Linux 的 Android 系统称雄于移动操作系统市场，但是大多数的开源社区——也包括我在内——也仍然强烈希望能有一个发行版能够为移动设备提供传统 Linux 的桌面应用。同时，这样的一个发行版由开源社区来维护会比由商业公司来维护好的多，只有这样用户群才能成为这个发行版的焦点，而不应该由公司的商业目标来决定这个发行版的发展趋势。而 KDE 的 [Plasma Mobile](https://community.kde.org/Plasma/Mobile) 刚好实现了我们的愿望。
 
 这个基于 Kubuntu 的发行版始于 2015 年。因为 KDE 社区以坚守标准和为公众开发应用而闻名，我非常期待 Plasma Mobile 能够一直坚持下去。
 
 ## 为 ARM 设备而生的发行版：Arch Linux ARM
 
-随着 Android 系统的成功，我们的生活也围绕者越来越多的 ARM 设备 —— 从树莓派 (Raspberry Pi) 到 Chromebook 以及 Nvidia Shield。为 Intel/AMD 架构的 CPU 而编写的传统发行版并不能够在这些 ARM 架构的设备上运行。而一些为 ARM 而编写的发行版却仅仅只能在特定的硬件上运行，比如只能运行在树莓派 (Raspberry Pi) 上的 Raspbian 系统。这就是 [Arch Linux ARM](http://archlinuxarm.org/) (ALARM) 的闪光点所在。它是一个基于 Arch Linux 的纯社区支持的发行版，可以在树梅派 (Raspberry Pi)、Chromebook、Android 设备以及 Nvidia Shield 等设备上运行。同时，也由于 AUR，该发行版变得更加有趣，你可以安装很多在其他发行版可能无法获取的软件。
+随着 Android 系统的成功，我们的生活也围绕者越来越多的 ARM 设备——从树莓派 (Raspberry Pi) 到 Chromebook 以及 Nvidia Shield。为 Intel/AMD 架构的 CPU 而编写的传统发行版并不能够在这些 ARM 架构的设备上运行。而一些为 ARM 而编写的发行版却仅仅只能在特定的硬件上运行，比如只能运行在树莓派 (Raspberry Pi) 上的 Raspbian 系统。这就是 [Arch Linux ARM](http://archlinuxarm.org/) (ALARM) 的闪光点所在。它是一个基于 Arch Linux 的纯社区支持的发行版，可以在树梅派 (Raspberry Pi)、Chromebook、Android 设备以及 Nvidia Shield 等设备上运行。同时，也由于 AUR，该发行版变得更加有趣，你可以安装很多在其他发行版可能无法获取的软件。
 
 ## 结论
 
