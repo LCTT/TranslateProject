@@ -1,62 +1,60 @@
-mudongliang
-
-Linux Mint 18 Will Get Its Own Set Of Apps
+Linux Mint 18 将会得到自己的应用集
 =============================================
 
 ![](http://itsfoss.com/wp-content/uploads/2016/01/Linux-Mint-apps.jpg)
 
-It’s common for distro developers to create and release a series of apps that are designed specifically for their distros. A big example of this is [elementary OS](https://elementary.io/). Nine years in, Linux Mint is finally taking the plunge and doing the same.
+对于发行版开发者来说，创建和发布一系列专为他们发行版设计的应用是再平常不过的事情。一个很大的例子就是 [elementary OS](https://elementary.io/) 。九年的投入，Linux Mint 终于孤注一掷做了相同的事情。
 
->#LinuxMint to finally get its own apps in Mint 18.
+>#LinuxMint 终将在 Mint 18 中得到自己的应用。
 
-[Linux Mint](http://www.linuxmint.com/) is one of the best known Linux distros available. Based on Ubuntu and Debian, Linux Mint strives to create a “modern, elegant and comfortable operating system which is both powerful and easy to use”. The team behind Linux Mint is also very involved with the [MATE](http://itsfoss.com/install-mate-desktop-ubuntu-14-04/) and [Cinnamon](http://itsfoss.com/install-cinnamon-ubuntu-14-04/) desktop environments.
+[Linux Mint](http://www.linuxmint.com/) 是目前可用的最著名的 Linux 发行版之一。基于 Ubuntu 和 Debian，Linux Mint 努力去创建一个现代的，优雅的，舒适的操作系统，同时强大而易于使用。（LCTT 注：Linux Mint 基于 Ubuntu，而 Linux Mint Debian Edition 基于 Debian。）Linux Mint 背后的团队同时也积极参与 [MATE](http://itsfoss.com/install-mate-desktop-ubuntu-14-04/) 和 [Cinnamon](http://itsfoss.com/install-cinnamon-ubuntu-14-04/) 桌面环境开发。
 
-## First X-Men, now X-Apps
+## 原来的 X-Men，现在的 X-Apps
 
-Thursday, Linux Mint project lead Clement Lefebvre [announced](http://blog.linuxmint.com/?p=2985) the creation of the X-Apps. The X-Apps are designed to be desktop-agnostic so that developers can update them without having to tweak them for each desktop environment. Lefebvre stated that these X-Apps would be used as default applications for Cinnamon, MATE and Xfce.
+周四 Linux Mint 项目领导者 Clement Lefebvre [宣布](http://blog.linuxmint.com/?p=2985) X-Apps 的创建。X-Apps 被设计为桌面无关以便开发者可以直接更新它们而不必针对每一种桌面环境做调整。Lefebvre 声明这些 X-Apps 将会被作为 Cinnamon，MATE 和 Xfce 桌面环境的默认应用。
 
-## Does Linux Need Even More Apps?
+## Linux是否需要更多的应用？
 
-According to Lefebvre, the creation of the X-Apps was necessitated by the release of GNOME 3.18. He said that with the release of GNOME 3.18:
+据 Lefebvre 所述，X-Apps 的创建被 GNOME 3.18 发布所需。对于 GNOME 3.18 的发布，他这样说：
 
-> “GTK itself and many of the GNOME applications now integrate better with GNOME Shell and look more native in that environment. The bad news, is that they now look completely out of place everywhere else. To make matters worse, Unity, the flagship product of Ubuntu, relies heavily on GTK, GNOME applications and the GNOME environment itself, so we’re not dealing with the upstream version of 3.18 here, but with a collection of patches which bring their own issues (one example is that Ubuntu reintroduces menubars and titlebars in applications but without rewriting their headerbar.. so you sometimes see all three of them).”
+> “GTK 本身和一些 GNOME 应用都在 GNOME SHELL 上集成地很好，而且看起来很有本地风格。坏消息就是它们在任何别的地方看起来很不相称。使事情变得更糟的是，Unity，Ubuntu的旗舰产品，重度依赖 GTK，GNOME 应用，GNOME 环境本身，所以我们这里才不处理上游的 3.18 版本，但是这一系列的补丁带来它们自己的问题（举一个例子，Ubuntu 在应用中重新引入菜单条和标题栏，但是不重写它们的头部栏..所以你有时会看到它们三者一起出现）。”
 
-In the past, the Linux Mint team dealt with the problem by “downgrading apps (Linux Mint 17 uses gedit 2.30 for instance), patching GNOME (GTK and various GNOME apps) and using alternatives (mostly in MATE and Xfce)”.
+在过去，Linux Mint 团队通过“应用降级（例如 Linux Mint 17 使用 gedit 2.30），给 GNOME 打补丁以及使用替代品（大部分在 MATE 和 Xfce）”来处理这个问题。
 
-Lefebvre also said that it didn’t make sense to build specific applications for Cinnamon and MATE this is why they opted to work on apps which would be generic, perfectly suited to run in Cinnamon, MATE and Xfce (and possibly other desktop environments).
+Lefebvre也说为 Cinnamon 和 MATE 构建特定应用没有意义。这就是为什么他们选择开发那些一般的，完美适应地运行在 Cinnamon，MATE 和 Xfce（以及其他可能的桌面环境）。
 
-He further added:
+他进一步添加到：
 
->"X-Apps will be a collection of generic GTK3 applications using traditional interfaces which can be used as default desktop components in Cinnamon, MATE and Xfce. In Mint 18, the “X apps” will allow us to maintain a native look and a good level of integration because they will be used in replacement of GNOME applications which now look foreign (using headerbars and a distinctive layout). Long-term, the X-App project will allow us to innovate and to develop new features and improvements in the applications themselves (this is something we couldn’t do via patches, temporary forks or DE-specific forks like the MATE apps because it was too costly)."
+>“X-Apps 将会是一个通用的，使用传统的接口 GTK3 应用的集合。它将会被作为 Cinnamon，MATE 和 Xfce 默认的桌面组件。在 Mint 18 中，“X apps” 将允许我们去维护一个本地样子和好的集成标准。因为它们将会被用于替代看起来很外地的 GNOME 桌面应用。长期来讲，X-App 项目将会允许我们去创新和开发更多的，应用本身的特色和提高（这是一些我们无法通过打补丁，临时的复制或者特定桌面的复制，比如说 MATE 桌面应用做到的事情，因为它代价太高）。”
 
-## What Kind of Apps Will Be Available?
+## 什么类型的应用将会可用？
 
 ![](http://itsfoss.com/wp-content/uploads/2016/01/xedit.png)
 
-Lefebvre only revealed one of the upcoming X-Apps: a text editor named xedit. Here are some of the feature that it will provide:
+Lefebvre 只透露其中一个即将来临的 X-Apps：一个名为 xedit 的文本编辑器。下面是这个软件提供的一些特性：
 
-- Based on Pluma to lower learning curve
-- Makes use of GTK3
-- Doesn’t depend on GNOME or MATE
+- 基于 Pluma 去降低学习曲线
+- 使用 GTK3
+- 不依赖 GNOME 或 MATE
 
-## When
+## 何时
 
-The X-Apps will be coming together with [Linux Mint 18 release](http://itsfoss.com/linux-mint-18-codenamed-sarah/), which will follow the release of Ubuntu 16.04 LTS by several months. [Ubuntu 16.04 is scheduled to release in April](http://itsfoss.com/ubuntu-1604-release-schedule/).
+X-Apps 将会和 [Linux Mint 18](http://itsfoss.com/linux-mint-18-codenamed-sarah/) 一同到来。而 Linux Mint 18 将会在 Ubuntu 16.04 LTS 发布之后数月后发布。[Ubuntu 16.04 LTS 计划于四月发布。](http://itsfoss.com/ubuntu-1604-release-schedule/)
 
-## Final Thoughts
+## 最终想法
 
-Personally, whenever I hear about someone releasing new distro specific apps, I cringe. The Linux universe is already incredibly fragmented. Do we really need more duplicate projects to take time and energy to create? Don’t get me wrong, I like the idea of desktop-agnostic apps. It would fix a lot of problems with how apps look from distro to distro.
+就我而言，无论何时当我听见某人发布一个新发行版特定的应用，我都会局促不安。Linux 世界本身已经难以想象的碎片化了。我们真的需要花费时间和精力去创建更多的副本工程吗？不要误解我，我喜欢桌面无关软件的想法。它将修复大量的关于一个桌面一个应用样子的问题。
 
-The problem that worries me is “Will they be able to pull it off?” As I stated before, the Linux Mint guys also work on two desktop environments. Now add application development to the mix. I’ve never written a piece of software myself (other than one that said “Hello, World”), but I do know that when you try and complicate a project bad things happen. Many projects have fallen to the dragon of feature creep I hope that doesn’t happen here.
+使我发愁的问题是“它们是否会成功？”。正如我之前所说，Linux Mint 团队成员也在两种桌面环境工作。目前去添加应用开发来混合。我自己没有写过一个软件（除了 Hello World），但是我知道当你尝试且使一个项目复杂化，不好的事情将会发生。许多项目已经变成了不断膨胀的巨龙。我希望这样的事不要发生在这里。
 
-Do you have a different take? Let me know in the comments below.
+你有不同的想法吗？在下方评论以便让我知道。
 
 ------------------------------------------------------------------------------
 
 via: http://itsfoss.com/linux-mint-own-apps/
 
 作者：[JOHN PAUL][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[mudongliang](https://github.com/mudongliang)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
