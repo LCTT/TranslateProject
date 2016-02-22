@@ -1,3 +1,5 @@
+JonathanKang is translating
+
 [Free Download] Vi Cheat Sheet For Beginners
 ================================================
 
