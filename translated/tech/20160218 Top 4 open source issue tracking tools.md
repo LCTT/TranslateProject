@@ -11,7 +11,7 @@
 
 ## Redmine
 
-[Redmine](http://www.redmine.org/) 是一个流行的问题追踪工具建立在Ruby on Rails和可以追溯到2006年。很多类似于Trac，另一方面我们最爱的是，Redmine可以管理多个项目然后整合了多种版本控制系统。除了基本问题追踪，Redmine也提供论坛，wiki，时间跟踪工具，和生成甘特图和日历的能力来跟踪项目的进展。
+[Redmine](http://www.redmine.org/) 是一个流行的漏洞追踪工具建立在Ruby on Rails和可以追溯到2006年。很多类似于Trac，另一方面我们最爱的是，Redmine可以管理多个项目然后整合了多种版本控制系统。除了基本问题追踪，Redmine也提供论坛，wiki，时间跟踪工具，和生成甘特图和日历的能力来跟踪项目的进展。
 
 Redmine的设置相当灵活，支持多种数据库后端和几十种语言，还是可定制的，可以添加自定义字段到问题，用户，工程和更多。通过社区创建的插件和主题它可以进一步定制。
 
@@ -21,17 +21,17 @@ Redmine的设置相当灵活，支持多种数据库后端和几十种语言，�
 
 ## Bugzilla
 
-[Bugzilla](https://www.bugzilla.org/)是另一个流行的有问题追踪功能的开发工具。从名字您可能已经猜到了，Bugzilla最初是[Mozilla基金会](https://www.mozilla.org/en-US/)创建，用来跟踪当时称为网景通信套件开发漏洞的。为了更好的通过性从原来的Tcl移植到Perl路径，Bugzilla是一个比较老的和更广泛采用的问题跟踪系统，因为它用在许多著名的开源项目如GNOME，KDE，Linux内核本身。
+[Bugzilla](https://www.bugzilla.org/)是另一个流行的有漏洞追踪功能的开发工具。从名字您可能已经猜到了，Bugzilla最初是[Mozilla基金会](https://www.mozilla.org/en-US/)创建，用来跟踪当时称为网景通信套件开发漏洞的。为了更好的通过性从原来的Tcl移植到Perl路径，Bugzilla是一个比较老的和更广泛采用的问题跟踪系统，因为它用在许多著名的开源项目如GNOME，KDE，Linux内核本身。
 
 拥有一些先进的工具，从通知到共享搜索重复的漏洞检测，Bugzilla是一个功能更丰富的选项。Bugzilla有高级搜索系统与全面的报表工具，生成图表和自动化计划报告的能力。像Redmine，Bugzilla是可扩展和可定制的，两者在字段本身像能创建自定义漏洞工作流一样。它也支持多种后端数据库，和自带的多语言支持。
 
-Bugzilla在[Mozilla公共许可证](https://en.wikipedia.org/wiki/Mozilla_Public_License)下许可，你可以读取他们[未来路线图](https://www.bugzilla.org/status/roadmap.html)还有在官网测试一个[示例服务](https://landfill.bugzilla.org/)
+Bugzilla在[Mozilla公共许可证](https://en.wikipedia.org/wiki/Mozilla_Public_License)下许可，你可以读取他们[未来路线图](https://www.bugzilla.org/status/roadmap.html)还有在官网尝试一个[示例服务](https://landfill.bugzilla.org/)
 
 ![](https://opensource.com/sites/default/files/images/business-uploads/issues-bugzilla.png)
 
 ## Trac
 
-[Trac](http://trac.edgewall.org/browser)自称是使用基于web简单的方法的软件工程管理软件，但不要混淆极简主义与缺乏功能。
+[Trac](http://trac.edgewall.org/browser)自称是使用简单的方法基于web的软件工程管理软件，但不要混淆极简主义与缺乏功能。
 
 python编写，Trac紧密结合它的漏洞跟踪与它的wiki系统和你选择的版本控制系统。项目管理能力突出，如生成的里程碑和路线图，一个可定制的报表系统，大事记，支持多资源库，内置的垃圾邮件过滤，还可以使用很多一般的语言。如其他漏洞追踪软件我们已经看到，有很多插件可进一步扩展其基本特性。
 
