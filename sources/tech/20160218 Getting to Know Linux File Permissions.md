@@ -1,3 +1,4 @@
+ynmlml translating 
 Getting to Know Linux File Permissions
 ==========================================
 
