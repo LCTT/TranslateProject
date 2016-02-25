@@ -1,3 +1,4 @@
+[Translating] Haohong Wang
 How to Setup Lighttpd Web server on Ubuntu 15.04 / CentOS 7
 =================================================================================
 
