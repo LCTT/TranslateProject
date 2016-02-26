@@ -1,3 +1,4 @@
+【Translating by cposture 2016-02-25】
 How to add open source experience to your resume
 ==================================================
 
