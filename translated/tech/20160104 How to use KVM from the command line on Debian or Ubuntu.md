@@ -343,26 +343,26 @@
 
 2. 当我试着访问我的虚拟机的登陆控制台的时候遇到了错误：
 
-```
+  ```
      $ virsh console alice
      error: internal error: cannot find character device <null>
-```
+  ```
 
   这个错误发生的原因是你没有在你的虚拟机配置文件中定义控制台设备。在 xml 文件中加上下面的内部设备部分即可。
 
-```	
+  ```	
     <console type='pty'>
       <target port='0'/>
     </console>
-```
+  ```
 
 --------------------------------------------------------------------------------
 
 via: http://xmodulo.com/use-kvm-command-line-debian-ubuntu.html
 
 作者：[Dan Nanni][a]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[kylepeng93 ](https://github.com/kylepeng93 )
+校对：[Ezio](https://github.com/oska874)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
