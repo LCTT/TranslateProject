@@ -1,3 +1,5 @@
+ezio translting
+
 Development Release: Xubuntu 16.04 Beta 1
 ============================================
 
