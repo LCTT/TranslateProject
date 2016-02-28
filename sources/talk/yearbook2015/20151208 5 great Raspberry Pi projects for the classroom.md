@@ -1,3 +1,5 @@
+FSSlc translating
+
 5 great Raspberry Pi projects for the classroom
 ================================================================================
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/osdc-open-source-yearbook-lead3.png)
