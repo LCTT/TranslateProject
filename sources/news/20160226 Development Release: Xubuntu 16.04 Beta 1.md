@@ -1,18 +1,23 @@
-ezio translting
+ezio translted
 
 Development Release: Xubuntu 16.04 Beta 1
+Xubuntu 16.04 Beta 1 开发发布
 ============================================
 
-he Ubuntu Release Team has announced the availability of new beta test images for select community editions. The new development release, which carries the designation 16.04 Beta 1, is recommended for testers only and is not considered suitable for daily use.
+The Ubuntu Release Team has announced the availability of new beta test images for select community editions. The new development release, which carries the designation 16.04 Beta 1, is recommended for testers only and is not considered suitable for daily use.
+
+Ubuntu 发布组已经宣布为了选定的社区版本准备的最新的 beta 测试镜像已经可以使用了。新的开发发布版名称是 16.04 beta 1，这个版本只推荐给测试人员，并不适合日常使用。
 
 "This beta features images for [Lubuntu][1], Ubuntu Cloud, [Ubuntu GNOME][2], [Ubuntu MATE][3], [Ubuntu Kylin][4], [Ubuntu Studio][5] and [Xubuntu][6]. Pre-releases of Xenial Xerus are not encouraged for anyone needing a stable system or anyone who is not comfortable running into occasional, even frequent breakage. They are, however, recommended for Ubuntu flavour developers and those who want to help in testing, reporting and fixing bugs as we work towards getting this release ready." Additional information can be found in the [release announcement][7]. 
+
+“这个 beta 特性的镜像是为 [Lubuntu][1], Ubuntu Cloud, [Ubuntu GNOME][2], [Ubuntu MATE][3], [Ubuntu Kylin][4], [Ubuntu Studio][5] 和 [Xubuntu][6] 这几个发布版准备的。Xenial Xerus 的预发布版本并不推荐那些需要稳定版本的，或者那些不希望在系统运行中偶尔或频繁的出现 bug 的人。这个版本还是推荐给喜欢 ubuntu 的开发人员，以及那些想帮助着测试、报告和修改 bug，和我们一起工作让这个发布版本早日准备好。” 更多的信息可以从 [发布日志][7] 获取。
 
 --------------------------------------------------------------------------------
 
 via: https://www.linux.com/news/software/applications/888731-development-release-xubuntu-1604-beta-1
 
 作者：[DistroWatch][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Ezio](https://github.com/oska874)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
