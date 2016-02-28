@@ -1,12 +1,11 @@
-
-怎样在 ubuntu 和 debian 中用命令行使用 KVM
+怎样在 ubuntu 和 debian 中通过命令行管理 KVM
 ================================================================================
 
-有很多不同的方式去管理运行在 KVM 管理程序上的虚拟机。例如，virt-manager 就是一个流行的基于图形界面的前端虚拟机管理工具。然而，如果你想要在没有图形窗口的服务器环境下使用 KVM ，那么基于图形界面的解决方案显然是行不通的。事实上，你可以纯粹的使用包装了 kvm 命令行脚本的命令行来管理 KVM 虚拟机。作为替代方案，你可以使用 virsh 这个容易使用的命令行程序来管理客户虚拟机。在 virsh 中，它通过和 libvirtd 服务通信来达到控制虚拟机的目的，而 libvirtd 可以控制多个不同的虚拟机管理器，包括 KVM，Xen，QEMU，LXC 和 OpenVZ。
+有很多不同的方式去管理运行在 KVM 管理程序上的虚拟机。例如，virt-manager 就是一个流行的基于图形界面的前端虚拟机管理工具。然而，如果你想要在没有图形窗口的服务器环境下使用 KVM ，那么基于图形界面的解决方案显然是行不通的。事实上，你可以单纯使用包装了 kvm 命令行脚本的命令行来管理 KVM 虚拟机。作为替代方案，你可以使用 virsh 这个容易使用的命令行程序来管理客户虚拟机。在 virsh 中，它通过和 libvirtd 服务通信来达到控制虚拟机的目的，而 libvirtd 可以控制多个不同的虚拟机管理器，包括 KVM，Xen，QEMU，LXC 和 OpenVZ。
 
 当你想要对虚拟机的前期准备和后期管理实现自动化操作时，像 virsh 这样的命令行管理工具是非常有用的。同样，virsh 支持多个管理器也就意味着你可以通过相同的 virsh 接口去管理不同的虚拟机管理器。
 
-在这篇文章中，我会示范**怎样在ubuntu和debian上通过使用virsh命令行去运行KVM**。
+在这篇文章中，我会示范**怎样在 ubuntu 和 debian 上通过使用 virsh 命令行去运行 KVM**。
 
 ### 第一步：确认你的硬件平台支持虚拟化 ###
 
@@ -24,7 +23,7 @@
 
 ### 第二步：安装KVM ###
 
-使用 `apt-ge` 安装 KVM 和相关的用户空间工具。
+使用 `apt-get` 安装 KVM 和相关的用户空间工具。
 
 ```
     $ sudo apt-get install qemu-kvm libvirt-bin
@@ -71,7 +70,7 @@
 
 为了使 KVM 虚拟机能够访问外部网络，一种方法是通过在 KVM 宿主机上创建 Linux 桥来实现。创建之后的桥能够将虚拟机的虚拟网卡和宿主机的物理网卡连接起来，因此，虚拟机能够发送和接收由物理网卡传输的数据包。这种方式叫做网络桥接。
 
-下面将告诉你如何创建并且配置网桥，我们创建一个网桥称它为 br0.
+下面将告诉你如何创建并且配置网桥，我们创建一个网桥称它为 br0。
 
 首先，安装一个必需的包，然后用命令行创建一个网桥。
 
@@ -168,11 +167,11 @@
 
 - 1GB内存，一个虚拟cpu和一个硬件驱动
 
-- Disk image：`/home/dev/images/alice.img`
+- 磁盘镜像：`/home/dev/images/alice.img`
 
-- Boot from CD-ROM（`/home/dev/iso/CentOS-6.5-x86_64-minomal.iso`）
+- 从 CD-ROM 引导（`/home/dev/iso/CentOS-6.5-x86_64-minomal.iso`）
 
-- Networking:一个桥接到 br0 的虚拟网卡
+- 网络：一个桥接到 br0 的虚拟网卡
 
 - 通过 VNC 远程访问
 
@@ -183,7 +182,7 @@
     $ uuid
 ```
 
-生成一个主机xml配置文件的方式就是通过一个已经存在的虚拟机来导出它的xml配置文件。如下所示。
+生成一个主机 xml 配置文件的方式就是通过一个已经存在的虚拟机来导出它的 xml 配置文件。如下所示。
 
 ```
     $ virsh dumpxml alice > bob.xml
@@ -233,6 +232,7 @@
 ### 远程连接虚拟机 ###
 
 为了远程访问一个正在运行的虚拟机的控制台，你可以使用VNC客户端。
+
 首先，你需要使用如下命令找出用于虚拟机的VNC端口号。
 
 ```
@@ -241,57 +241,57 @@
 
 ![](https://c2.staticflickr.com/6/5633/23448144274_49045bc868_c.jpg)
 
-在这个例子中，用于 alice 虚拟机的 VNC 端口号是 5900
- 然后启动一个VNC客户端，连接到一个端口号为5900的VNC服务器。在我们的例子中，虚拟机支持由CentOS光盘文件启动。
+在这个例子中，用于 alice 虚拟机的 VNC 端口号是 5900。 然后启动一个VNC客户端，连接到一个端口号为5900的VNC服务器。在我们的例子中，虚拟机支持由CentOS光盘文件启动。
 
 ![](https://c2.staticflickr.com/2/1533/24076369675_99408972a4_c.jpg)
 
 ### 使用 virsh 管理虚拟机 ###
 
-下面列出了 virsh 命令的常规用法
+下面列出了 virsh 命令的常规用法：
+
 创建客户机并且启动虚拟机：
 
 ```
     $ virsh create alice.xml
 ```
 
-停止虚拟机并且删除客户机
+停止虚拟机并且删除客户机：
 
 ```
     $ virsh destroy alice
 ```
 
-关闭虚拟机（不用删除它）
+关闭虚拟机（不用删除它）：
 
 ```
     $ virsh shutdown alice
 ```
 
-暂停虚拟机
+暂停虚拟机：
 
 ```
     $ virsh suspend alice
 ```
 
-恢复虚拟机
+恢复虚拟机：
 
 ```
     $ virsh resume alice
 ```
 
-访问正在运行的虚拟机的控制台
+访问正在运行的虚拟机的控制台：
 
 ```
     $ virsh console alice
 ```
 
-设置虚拟机开机启动:
+设置虚拟机开机启动：
 
 ```
     $ virsh autostart alice
 ```
 
-查看虚拟机的详细信息
+查看虚拟机的详细信息：
 
 ```
     $ virsh dominfo alice
@@ -304,6 +304,7 @@
 ```
 
 上面的这个命令将会使用一个默认的编辑器来调用主机配置文件。该配置文件中的任何改变都将自动被libvirt验证其正确性。
+
 你也可以在一个virsh会话中管理虚拟机。下面的命令会创建并进入到一个virsh会话中：
 
 ```
@@ -361,7 +362,7 @@
 via: http://xmodulo.com/use-kvm-command-line-debian-ubuntu.html
 
 作者：[Dan Nanni][a]
-译者：[kylepeng93 ](https://github.com/kylepeng93 )
+译者：[kylepeng93](https://github.com/kylepeng93 )
 校对：[Ezio](https://github.com/oska874)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
