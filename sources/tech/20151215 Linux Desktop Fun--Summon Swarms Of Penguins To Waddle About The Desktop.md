@@ -1,3 +1,5 @@
+translating---geekpi
+
 Linux Desktop Fun: Summon Swarms Of Penguins To Waddle About The Desktop
 ================================================================================
 XPenguins is a program for animating cute cartoons animals in your root window. By default it will be penguins they drop in from the top of the screen, walk along the tops of your windows, up the side of your windows, levitate, skateboard, and do other similarly exciting things. Now you can send an army of cute little penguins to invade the screen of someone else on your network.
@@ -98,3 +100,5 @@ via: http://www.cyberciti.biz/tips/linux-cute-little-xpenguins-walk-along-tops-o
 [1]:http://xpenguins.seul.org/
 [2]:http://www.cyberciti.biz/tips/displays-animations-when-accidentally-you-type-sl-instead-of-ls.html
 [3]:http://www.cyberciti.biz/tips/linux-unix-apple-osx-terminal-ascii-aquarium.html
+
+
