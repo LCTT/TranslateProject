@@ -1,3 +1,5 @@
+translating---geekpi
+
 Intel shows budget Android phone powering big-screen Linux
 ==============================================================
 
