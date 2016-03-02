@@ -1,43 +1,43 @@
-Linux Desktop Fun: Summon Swarms Of Penguins To Waddle About The Desktop
+Linux桌面趣闻：召唤一群企鹅在桌面上行走
 ================================================================================
-XPenguins is a program for animating cute cartoons animals in your root window. By default it will be penguins they drop in from the top of the screen, walk along the tops of your windows, up the side of your windows, levitate, skateboard, and do other similarly exciting things. Now you can send an army of cute little penguins to invade the screen of someone else on your network.
+XPenguins是一个在窗口播放可爱动物动画的程序。默认情况下，将会从屏幕上方掉落企鹅，沿着你的窗口顶部行走，在窗口变漂浮，滑板，和做其他类似的令人兴奋的事情。现在，你可以把这些可爱的小企鹅大军入侵别人的桌面了。
 
-### Install XPenguins ###
+### 安装XPenguins ###
 
-Open a command-line terminal (select Applications > Accessories > Terminal), and then type the following commands to install XPenguins program. First, type the command apt-get update to tell apt to refresh its package information by querying the configured repositories and then install the required program:
+打开终端（选择程序->附件->终端），接着输入下面的命令来安装XPenguins。首先，输入apt-get update通过请求配置的仓库刷新包的信息，接着安装需要的程序：
 
     $ sudo apt-get update
     $ sudo apt-get install xpenguins
 
-### How do I Start XPenguins Locally? ###
+### 我本地如何启动XPenguins？ ###
 
-Type the following command:
+输入下面的命令：
 
     $ xpenguins
 
-Sample outputs:
+示例输出：
 
 ![An army of cute little penguins invading the screen](http://files.cyberciti.biz/uploads/tips/2011/07/Workspace-1_002_12_07_2011.png)
 
-An army of cute little penguins invading the screen
+一支可爱企鹅军队正在入侵屏幕。
 
 ![Linux: Cute little penguins walking along the tops of your windows](http://files.cyberciti.biz/uploads/tips/2011/07/Workspace-1_001_12_07_2011.png)
 
-Linux: Cute little penguins walking along the tops of your windows
+Linux:可爱的小企鹅沿着窗口的顶部行走。
 
 ![Xpenguins Screenshot](http://files.cyberciti.biz/uploads/tips/2011/07/xpenguins-screenshot.jpg)
 
-Xpenguins Screenshot
+Xpenguins截图
 
-Be careful when you move windows as the little guys squash easily. If you send the program an interupt signal (Ctrl-C) they will burst.
+移动窗口时小心点，小家伙们很容易被压坏。如果你发送中断程序（Ctrl-C），它们会爆炸。
 
-### Themes ###
+### 主题 ###
 
-To list themes, enter:
+要列出主题，输入：
 
     $ xpenguins -l
 
-Sample outputs:
+示例输出：
 
     Big Penguins
     Bill
@@ -45,11 +45,11 @@ Sample outputs:
     Penguins
     Turtles
 
-You can use alternative themes as follows:
+你可以用下面的命令使用其他的主题：
 
     $ xpenguins --theme "Big Penguins" --theme "Turtles"
 
-You can install additional themes as follows:
+你可以用下面的命令安装额外的主题：
 
     $ cd /tmp
     $ wget http://xpenguins.seul.org/xpenguins_themes-1.0.tar.gz
@@ -58,7 +58,7 @@ You can install additional themes as follows:
     $ mv -v themes ~/.xpenguins/
     $ xpenguins -l
 
-Sample outputs:
+示例输出：
 
     Lemmings
     Sonic the Hedgehog
@@ -71,26 +71,26 @@ Sample outputs:
     Penguins
     Turtles
 
-To start with a random theme, enter:
+已一个随机主题开始，输入：
 
     $ xpenguins --random-theme
 
-To load all available themes and run them simultaneously, enter:
+要加载所有的主题并且同时运行，输入：
 
     $ xpenguins --all
 
-More links and information:
+更多链接何信息：
 
-- [XPenguins][1] home page.
+- [XPenguins][1] 主页。
 - man penguins
-- More Linux / UNIX desktop fun with [Steam Locomotive][2] and [Terminal ASCII Aquarium][3].
+- 更多Linux/Unix桌面乐趣在[蒸汽火车][2]和[终端ASCII水族馆][3]。
 
 --------------------------------------------------------------------------------
 
 via: http://www.cyberciti.biz/tips/linux-cute-little-xpenguins-walk-along-tops-ofyour-windows.html
 
 作者：Vivek Gite
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -98,3 +98,5 @@ via: http://www.cyberciti.biz/tips/linux-cute-little-xpenguins-walk-along-tops-o
 [1]:http://xpenguins.seul.org/
 [2]:http://www.cyberciti.biz/tips/displays-animations-when-accidentally-you-type-sl-instead-of-ls.html
 [3]:http://www.cyberciti.biz/tips/linux-unix-apple-osx-terminal-ascii-aquarium.html
+
+
