@@ -1,119 +1,105 @@
-(翻译中 by runningwater)
-The Tao of project management
+项目管理之道
 =================================
 
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/BUSINESS_orgchart1.png?itok=DGsp6jB5)
 
-The [Tao Te Ching][1], [believed to have been written][2] by the sage [Lao Tzu][3] in the 6th century BCE, is among the most widely translated texts in existence. It has inspired everything from [religions][4] to [funny movies about dating][5], and authors have used it as a metaphor to explain all kinds of things (even [programming][6]).
+[道德经][1]，[据确认][2]为公元前六世纪的圣人[老子][3]所编写,是现存被翻译的语言版本最多的经文。从[宗教][4]到[关于约会的有趣电影][5]等一切的一切，它都影响至深，作者们借用它来隐喻，以解释各种各样的事情（甚至是[编程][6]）。
 
-This text is what immediately comes to my mind when thinking about project management in open organizations.
+当考虑开放性组织的项目管理时上面这段文字会立马浮现在我脑海。
 
-That might sound strange. But to understand where I'm coming from, you should start by reading *The Open Organization: Igniting Passion and Performance*, Red Hat president and CEO Jim Whitehurst's manifesto on corporate culture and the new leadership paradigm. In this book, Jim (with a little help from other Red Hatters) explains the difference between conventional organizations (a "top-down" approach, with decisions coming down from central command to employees motivated by promotion and pay) and open organizations (a bottom-up approach, with leaders focused on inspiring purpose and passion so employees are empowered to be and do their best).
+这听起来会很奇怪。要理解我为什么会有这种想法，应该是从读了*《开放性组织：点燃激情提升执行力》*这书开始的，它是红帽公司总裁、CEO Jim Whitehurst  所著作的关于企业文化和新领导榜样的宣言。在这本书里，Jim(给予其它红帽子人的一点帮助而) 解释了传统组织机构（“自上而下”的方式，做决定的是高层，命令下达到员工，而员工是通过薪酬和晋升来激励的）和开放组织机构（自下而上，领导专注于激励和鼓励，员工被充分授权使其发挥主观能动性而做得最好）的差异。
 
-This concept—that employees in open organizations are motivated by passion, purpose, and engagement—plays directly into where I think project managers should focus.
+在开放性组织中的员工意味有激情、有目的性和有参与感，这些我认为是项目管理者应该关注的。
 
-And to explain, I'll return to the *Tao Te Ching*.
+要解释这一切，让我们回到*道德经*上来。
 
-### Don't let your job title define you
+### 不要让工作职衔框住自身
 
->The tao that can be told
->is not the eternal Tao
->The name that can be named
->is not the eternal Name.
+>道，可道，
+>非常道；
+>名，可名，
+>非常名。
 
->The unnameable is the eternally real.
->Naming is the origin
->of all particular things. 
+>无，名天地之始；
+>有，名万物之母。
 [[1]][7]
 
-What exactly is project management? And what does a project manager do?
+项目管理到底是什么？做为一个项目管理者应该做些什么呢？
 
-As you might expect, part of being a project manager is managing projects: gathering requirements, managing stakeholder communication, setting priority, scheduling tasks, helping the team resolve blockers. Many institutions can teach you how to manage projects very well, and these are good skills to have.
+如您所想，项目管理者的一部分工作就是管理项目：收集需求、项目相关人员的沟通、设置项目优先级、安排任务、帮助团队解决困扰。许多教育培训机构都可以教授如何做好项目管理，这些技能值得去学习。
 
-However, literally managing projects is only part of what project managers in open organizations do. These organizations require something more: Courage. If you're good at managing projects (or if you're good at any job, really), then you can start to feel safe in your routine. That's when you know you need to find the courage to take a risk.
+然而，在开放性组织中，字面上的项目管理技能仅仅只是项目管理者需要做到一小部分，这些组织需要更多的：勇气。如果您擅长于管理项目（或者是真的擅长于任何工作），那么您就进入了舒适区。这时候就是需要鼓起勇气开始尝试冒险之时。
 
-Do you have the courage to step outside of your comfort zone? The courage to ask important people challenging questions that might raise eyebrows, but that might also uncover a better way forward? The courage to identify the next thing that needs to be done—then the courage to go and do it? The courage to call out communication gaps and take initiative to fix them? The courage to try things? The courage to fail?
+您有勇气跨出舒适区吗？向权威人士提出提出挑战性问题，可能会引发对方的不快，也可能会发现一个好的方法，您有勇气这样做吗？有确定需要做的下一件事，然后真正去完成它的勇气吗？有主动去解决因为沟通空白而留下的问题的勇气吗？有去尝试各种事情的勇气吗？有失败的勇气吗？
 
-The opening passage of the Tao Te Ching (which I cited above) suggests that words, labels, and names are limiting. That includes job titles. In open organizations, project managers don't just perform the rote tasks required to manage projects. They help teams accomplish the organization's mission, however defined.
+道德经的开篇（上面引用的）就表明词语、标签、名字这些是有限制的，也包括工作职衔。在开放性组织中，项目经理不仅仅是执行管理项目所需的机械任务，而且要帮助团队完成组织的使命，尽管只是定义。
 
-### Connect the right people
+### 结交正确的人
 
->We join spokes together in a wheel,
->but it is the center hole
->that makes the wagon move. 
+>三十辐共一毂，
+>当其无，
+>有车之用。
 [[11]][8]
 
-One of the most difficult lessons I had to learn as I transitioned into project management was that not having all the answers was perfectly acceptable, even expected. That was new for me. I like having all the answers. But as a project manager, my role is more about connecting people—so the ones who do have the answers can collaborate efficiently.
+当我开始学习要过渡到项目管理时，遇到最困难的一课就是并不是所有解决方案都是可接受的，甚至有的连预期都达不到。那对我来说是全新的，我喜欢所有的解决方案。但作为项目管理者，我的角色更多的是与人沟通--因此与那些有解决方案的人合作更有效率。
 
-This does not mean dodging responsibility or ownership. This means being comfortable saying, "I don't know, but I will find out for you," and closing that loop as quickly as possible.
+这决不是逃避责任和不负责的意思。这意味着可以很舒适的说，“我不知道，但我会给您找出答案”，然后就可迅速的关闭此循环。
 
-Picture a wagon wheel. Without the stability and direction provided by the center hole, the spokes would fall and the wheel collapse in on itself. Project managers in an open organization can help a team maintain forward momentum by bringing the right people together and cultivating the right discussions.
+想像马车的车轮。无中心孔的稳定性和方向，辐条车轮会自行崩溃。在一个开放性的组织中，项目管理者可以帮助一个团队，把正确的人凝聚在一起，主持积极讨论，以保持团队一直前进。
 
-### Trust your team
+### 信任您的团队
 
->When the Master governs, the people
->are hardly aware that he exists.
->Next best is a leader who is loved.
->Next, one who is feared.
->The worst is one who is despised.
+>太上， 不知有之；
+>其次，亲而誉之；
+>其次，畏之；
+>其次，侮之。
 >
->If you don't trust the people,
->you make them untrustworthy.
+>信不足焉，有不信焉。
 >
->The Master doesn't talk, he acts.
->When his work is done,
->the people say, "Amazing:
->we did it, all by ourselves!" 
+>悠兮，其贵言。功成事遂，百姓皆谓“我自然”。
 [[17]][9]
 
-[Rebecca Fernandez][10] once told me that what differentiates leaders in open organizations is not the trust people have in them, but the trust they have in other people.
+[Rebecca Fernandez][10]曾经告诉我开放性组织的领导与其它最大的不同点，不是取得别人的信任，而是信任别人。
 
-Open organizations do a great job hiring smart people who are passionate about what their companies are doing. In order for them to do their best work, we have to give them what they need and then get out of their way.
+开放性组织会雇佣那些非常聪明的，且对公司正在做的事情充满激情的人来做工作。为了能使他们能更好的工作，我们会提供其所需，并尊重他们的工作方式。
 
-Here, I think the above passage from the Tao Te Ching speaks for itself.
+至于原因，我认为从道德经中摘出的上面一段就说的很清楚。
 
-### Be effortless
+### 顺其自然
 
->The Master does nothing
->yet he leaves nothing undone.
->The ordinary man is always doing things,
->yet many more are left to be done. 
+>上德无为而无以为；下德为之而有以为。
 [[38]][11]
 
-Do you know the type of person who is always extremely busy? The one who seems frazzled and stressed with too many things to do?
+你认识总是忙忙碌碌的这种类型的人吗？认识因为有太多事情要做而看起来疲倦和压抑的人吗？
 
-Don't be that person.
+不要成为那样的人。
 
-I know that's easier said than done. The thing that most helps me keep from being that person is remembering that we are all extremely busy. I don't have a single co-worker who is bored.
+我知道说比做容易。要远离那种人最有帮助的事就是请记住大家都很忙。我没有那样讨厌的同事。
 
-But someone needs to be the calm in the middle of the storm. Someone needs to be the person who reassures the team that everything is going to be okay, that we'll find a way to get things done within the parameters dictated by reality and the number of business hours in a day (because that's the truth, and we have to).
+但需要有人在狂风暴雨中保持镇定；需要这样的人，能根据实际和一天工作时间的数量找到平衡参数的方式来做工作，并安慰团队让一切都好（因为这是我们正在做的事实）。
 
-Be that person.
+要成为那样的人。
 
-What this passage of the Tao Te Ching says to me is that the person who's always talking about what she or he is doing has no time to actually do those things. If you can make your job seem effortless to those around you, then you're doing your job right.
+道德经所说的，在我理解来就是总是夸夸其谈的人其实并没有干实事。如里您能把工作做的得心应手的话，那就说明您的工作做对了。
 
-### Be a culture coach
+### 作为一个文化传教士
 
->When a superior man hears of the Tao,
->he immediately begins to embody it.
->When an average man hears of the Tao,
->he half believes it, half doubts it.
->When a foolish man hears of the Tao,
->he laughs out loud.
->If he didn't laugh,
->it wouldn't be the Tao. 
+>上士闻道，勤而行之；
+>中士闻道，若存若亡；
+>下士闻道，大笑之。
+>不笑不足以为道。
 [[41]][12]
 
-Last fall, I enrolled an MBA business ethics class with a bunch of federal employees. When I started describing my company's culture, values, and ethics framework, I got the direct impression that both my classmates and my professor thought I was a naive young lady with [a lot of lovely daydreams][13] about how companies should run. They told me things couldn't possibly be as they seemed. They said I should investigate further.
+去年秋天，我跟着一群联邦雇员注册了一个工商管理硕士课程。当我开始介绍我公司的文化、价值和伦理框架以及公司如何运行时，我的同学和教授都认为我就像一个天真可爱的小姑娘在做着[许多甜美的白日梦][13]，这就是我得到的直接印象。他们告诉我事情并不是如此的。他们告诉我应该进一步考察。
 
-So I did.
+所有我照做了。
 
-And here's what I found: Things are exactly as they seem.
+到现在我发现：正是如此。
 
-In open organizations, culture matters. Maintaining that culture as an organization grows makes it possible to wake up and look forward to going to work in the morning. I (and other members of open organizations) don't want to "work to live," as my classmates described it. I need to feel a passion and purpose, to understand how the work I do on a daily basis directly contributes to something I believe in.
+开放性组织的企业文化。应该跟随着企业的成长而时时维护那些文化，以使它随时精神焕发，充满斗志。我（和其它开源组织的成员）并不想过如我同学所描述的“为生活而工作”。我需要有激情和有目的性；我需要明白自己的日常工作如何对那些有价值的东西服务。
 
-As a project manager, you might think that your job has nothing to do with cultivating your company's culture on your team. However, it's your job to embody it.
+作为一个项目管理者，虽然你的工作与培养你的团队的文化无关，但是工作本身就是文化。
 
 ### Kaizen
 
@@ -168,6 +154,7 @@ via: https://opensource.com/open-organization/16/2/tao-project-management
 [6]: http://www.mit.edu/~xela/tao.html
 [7]: http://acc6.its.brooklyn.cuny.edu/~phalsall/texts/taote-v3.html#1
 [8]: http://acc6.its.brooklyn.cuny.edu/~phalsall/texts/taote-v3.html#11
+[9]:http://acc6.its.brooklyn.cuny.edu/~phalsall/texts/taote-v3.html#17
 [10]: https://opensource.com/users/rebecca
 [11]: http://acc6.its.brooklyn.cuny.edu/~phalsall/texts/taote-v3.html#38
 [12]: http://acc6.its.brooklyn.cuny.edu/~phalsall/texts/taote-v3.html#41
