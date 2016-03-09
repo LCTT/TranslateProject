@@ -1,41 +1,43 @@
 【Translating by cposture 2016-03-01】
 * * *
 
-# GCC-Inline-Assembly-HOWTO
+# GCC内联汇编HOWTO
+
 v0.1, 01 March 2003.
 * * *
 
-_This HOWTO explains the use and usage of the inline assembly feature provided by GCC. There are only two prerequisites for reading this article, and that’s obviously a basic knowledge of x86 assembly language and C._
+_本HOWTO文档将讲解GCC提供的内联汇编特性的用途和用法。对于阅读这篇文章，这里只有两个前提要求，很明显，就是x86汇编语言和C语言的基本认识。_
 
 * * *
 
-## 1. Introduction.
+## 1. 简介
 
-## 1.1 Copyright and License.
+## 1.1 版权许可
 
 Copyright (C)2003 Sandeep S.
 
-This document is free; you can redistribute and/or modify this under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+本文档自由共享；你可以重新发布它，并且/或者在遵循自由软件基金会发布的GNU通用公共许可证下修改它；或者该许可证的版本2，或者（按照你的需求）更晚的版本。
 
-This document is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+发布这篇文档是希望它能够帮助别人，但是没有任何保证；甚至不包括可售性和适用于任何特定目的的保证。关于更详细的信息，可以查看GNU通用许可证。
 
-## 1.2 Feedback and Corrections.
+## 1.2 反馈校正
 
-Kindly forward feedback and criticism to [Sandeep.S](mailto:busybox@sancharnet.in). I will be indebted to anybody who points out errors and inaccuracies in this document; I shall rectify them as soon as I am informed.
+请将反馈和批评一起提交给[Sandeep.S](mailto:busybox@sancharnet.in)。我将感谢任何一个指出本文档中错误和不准确之处的人；一被告知，我会马上改正它们。
 
-## 1.3 Acknowledgments.
+## 1.3 致谢
 
-I express my sincere appreciation to GNU people for providing such a great feature. Thanks to Mr.Pramode C E for all the helps he did. Thanks to friends at the Govt Engineering College, Trichur for their moral-support and cooperation, especially to Nisha Kurur and Sakeeb S. Thanks to my dear teachers at Govt Engineering College, Trichur for their cooperation.
+我对提供如此棒的特性的GNU人们表示真诚的感谢。感谢Mr.Pramode C E所做的所有帮助。感谢在Govt Engineering College和Trichur朋友们的精神支持和合作，尤其是Nisha Kurur和Sakeeb S。 感谢在Gvot Engineering College和Trichur老师们的合作。
 
-Additionally, thanks to Phillip, Brennan Underwood and colin@nyx.net; Many things here are shamelessly stolen from their works.
+另外，感谢Phillip, Brennan Underwood and colin@nyx.net；这里的许多东西都厚颜地直接取自他们的工作成果。
 
 * * *
 
-## 2. Overview of the whole thing.
+## 2. 概览
 
-We are here to learn about GCC inline assembly. What this inline stands for?
+在这里，我们将学习GCC内联汇编。这内联表示的是什么呢？
 
-We can instruct the compiler to insert the code of a function into the code of its callers, to the point where actually the call is to be made. Such functions are inline functions. Sounds similar to a Macro? Indeed there are similarities.
+我们可以要求编译器将一个函数的代码插入到调用者代码中函数被实际调用的地方。这样的函数就是内联函数。这听起来和宏差不多？这两者确实有相似之处。
+
 
 What is the benefit of inline functions?
 
