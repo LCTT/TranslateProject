@@ -44,47 +44,47 @@ Copyright (C)2003 Sandeep S.
 
 现在我们正处于一个猜测内联汇编到底是什么的点上。它只不过是一些写为内联函数的汇编程序。在系统编程上，它们方便、快速并且极其有用。我们主要集中学习（GCC）内联汇编函数的基本格式和用法。为了声明内联汇编函数，我们使用 `asm` 关键词。
 
-内联汇编之所以重要，主要是因为它能在 C 变量上操作和使其输出可见的能力。正是因为此能力， "asm" 起到了汇编指令和 包含它的"C"程序之间的接口作用。
+内联汇编之所以重要，主要是因为它可以操作并且使其输出通过 C 变量显示出来。正是因为此能力， "asm" 可以用作汇编指令和包含它的 C 程序之间的接口。 
 
 * * *
 
-## 3. GCC Assembler Syntax.
+## 3. GCC 汇编语法
 
-GCC, the GNU C Compiler for Linux, uses **AT&T**/**UNIX** assembly syntax. Here we’ll be using AT&T syntax for assembly coding. Don’t worry if you are not familiar with AT&T syntax, I will teach you. This is quite different from Intel syntax. I shall give the major differences.
+GCC , Linux上的 GNU C 编译器，使用 **AT&T** / **UNIX** 汇编语法。在这里，我们将使用 AT&T 语法 进行汇编编码。如果你对 AT&T 语法不熟悉的话，请不要紧张，我会教你的。AT&T 语法和 Intel 语法的差别很大。我会给出主要的区别。
 
-1.  Source-Destination Ordering.
+1.  源操作数和目的操作数顺序 
 
-    The direction of the operands in AT&T syntax is opposite to that of Intel. In Intel syntax the first operand is the destination, and the second operand is the source whereas in AT&T syntax the first operand is the source and the second operand is the destination. ie,
+	AT&T 语法的操作数方向和 Intel 语法的刚好相反。在Intel 语法中，第一操作数为目的操作数，第二操作数为源操作数，然而在 AT&T 语法中，第一操作数为源操作数，第二操作数为目的操作数。也就是说，
 
-    "Op-code dst src" in Intel syntax changes to
+	Intel 语法中的 "Op-code dst src" 变为 
+	
+	AT&T 语法中的 "Op-code src dst"。
 
-    "Op-code src dst" in AT&T syntax.
+2.  寄存器命名 
 
-2.  Register Naming.
+	寄存器名称有 % 前缀，即如果必须使用 eax，它应该用作 %eax。
 
-    Register names are prefixed by % ie, if eax is to be used, write %eax.
+3.  立即数
 
-3.  Immediate Operand.
+    AT&T 立即数以 ’$’ 为前缀。静态 "C" 变量 也使用 ’$’ 前缀。在 Intel 语法中，十六进制常量以 ’h’ 为后缀，然而AT&T不使用这种语法，这里我们给常量添加前缀 ’0x’。所以，对于十六进制，我们首先看到一个 ’$’，然后是 ’0x’，最后才是常量。
 
-    AT&T immediate operands are preceded by ’$’. For static "C" variables also prefix a ’$’. In Intel syntax, for hexadecimal constants an ’h’ is suffixed, instead of that, here we prefix ’0x’ to the constant. So, for hexadecimals, we first see a ’$’, then ’0x’ and finally the constants.
+4.  操作数大小
 
-4.  Operand Size.
+	在 AT&T 语法中，存储器操作数的大小取决于操作码名字的最后一个字符。操作码后缀 ’b’ 、’w’、’l’分别指明了字节（byte）（8位）、字（word）（16位）、长型（long）（32位）存储器引用。Intel 语法通过给存储器操作数添加’byte ptr’、 ’word ptr’ 和 ’dword ptr’前缀来实现这一功能。
 
-    In AT&T syntax the size of memory operands is determined from the last character of the op-code name. Op-code suffixes of ’b’, ’w’, and ’l’ specify byte(8-bit), word(16-bit), and long(32-bit) memory references. Intel syntax accomplishes this by prefixing memory operands (not the op-codes) with ’byte ptr’, ’word ptr’, and ’dword ptr’.
+	因此，Intel的 "mov al, byte ptr foo" 在 AT&T 语法中为 "movb foo, %al"。
 
-    Thus, Intel "mov al, byte ptr foo" is "movb foo, %al" in AT&T syntax.
+5.	存储器操作数
+	
+	在 Intel 语法中，基址寄存器包含在 ’[’ 和 ’]’ 中，然而在 AT&T 中，它们变为 ’(’ 和 ’)’。另外，在 Intel 语法中， 间接内存引用为
 
-5.  Memory Operands.
+    section:[base + index*scale + disp], 在 AT&T中变为 
 
-    In Intel syntax the base register is enclosed in ’[’ and ’]’ where as in AT&T they change to ’(’ and ’)’. Additionally, in Intel syntax an indirect memory reference is like
+    section:disp(base, index, scale)。
 
-    section:[base + index*scale + disp], which changes to
+	需要牢记的一点是，当一个常量用于 disp 或 scale，不能添加’$’前缀。
 
-    section:disp(base, index, scale) in AT&T.
-
-    One point to bear in mind is that, when a constant is used for disp/scale, ’$’ shouldn’t be prefixed.
-
-Now we saw some of the major differences between Intel syntax and AT&T syntax. I’ve wrote only a few of them. For a complete information, refer to GNU Assembler documentations. Now we’ll look at some examples for better understanding.
+现在我们看到了 Intel 语法和 AT&T 语法之间的一些主要差别。我仅仅写了它们差别的一部分而已。关于更完整的信息，请参考 GNU 汇编文档。现在为了更好地理解，我们可以看一些示例。
 
 > `
 > 
