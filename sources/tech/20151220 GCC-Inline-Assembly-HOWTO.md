@@ -1,12 +1,12 @@
 【Translating by cposture 2016-03-01】
 * * *
 
-# GCC内联汇编HOWTO
+#  GCC 内联汇编 HOWTO
 
 v0.1, 01 March 2003.
 * * *
 
-_本HOWTO文档将讲解GCC提供的内联汇编特性的用途和用法。对于阅读这篇文章，这里只有两个前提要求，很明显，就是x86汇编语言和C语言的基本认识。_
+_本 HOWTO 文档将讲解 GCC 提供的内联汇编特性的用途和用法。对于阅读这篇文章，这里只有两个前提要求，很明显，就是 x86 汇编语言和 C 语言的基本认识。_
 
 * * *
 
@@ -16,36 +16,35 @@ _本HOWTO文档将讲解GCC提供的内联汇编特性的用途和用法。对�
 
 Copyright (C)2003 Sandeep S.
 
-本文档自由共享；你可以重新发布它，并且/或者在遵循自由软件基金会发布的GNU通用公共许可证下修改它；或者该许可证的版本2，或者（按照你的需求）更晚的版本。
+本文档自由共享；你可以重新发布它，并且/或者在遵循自由软件基金会发布的 GNU 通用公共许可证下修改它；或者该许可证的版本 2 ，或者（按照你的需求）更晚的版本。
 
-发布这篇文档是希望它能够帮助别人，但是没有任何保证；甚至不包括可售性和适用于任何特定目的的保证。关于更详细的信息，可以查看GNU通用许可证。
+发布这篇文档是希望它能够帮助别人，但是没有任何保证；甚至不包括可售性和适用于任何特定目的的保证。关于更详细的信息，可以查看 GNU 通用许可证。
 
 ## 1.2 反馈校正
 
-请将反馈和批评一起提交给[Sandeep.S](mailto:busybox@sancharnet.in)。我将感谢任何一个指出本文档中错误和不准确之处的人；一被告知，我会马上改正它们。
+请将反馈和批评一起提交给 [Sandeep.S](mailto:busybox@sancharnet.in) 。我将感谢任何一个指出本文档中错误和不准确之处的人；一被告知，我会马上改正它们。
 
 ## 1.3 致谢
 
-我对提供如此棒的特性的GNU人们表示真诚的感谢。感谢Mr.Pramode C E所做的所有帮助。感谢在Govt Engineering College和Trichur朋友们的精神支持和合作，尤其是Nisha Kurur和Sakeeb S。 感谢在Gvot Engineering College和Trichur老师们的合作。
+我对提供如此棒的特性的 GNU 人们表示真诚的感谢。感谢 Mr.Pramode C E 所做的所有帮助。感谢在 Govt Engineering College 和 Trichur 的朋友们的精神支持和合作，尤其是 Nisha Kurur 和 Sakeeb S 。 感谢在 Gvot Engineering College 和 Trichur 的老师们的合作。
 
-另外，感谢Phillip, Brennan Underwood and colin@nyx.net；这里的许多东西都厚颜地直接取自他们的工作成果。
+另外，感谢 Phillip ,  Brennan Underwood 和 colin@nyx.net ；这里的许多东西都厚颜地直接取自他们的工作成果。
 
 * * *
 
 ## 2. 概览
 
-在这里，我们将学习GCC内联汇编。这内联表示的是什么呢？
+在这里，我们将学习 GCC 内联汇编。这内联表示的是什么呢？
 
 我们可以要求编译器将一个函数的代码插入到调用者代码中函数被实际调用的地方。这样的函数就是内联函数。这听起来和宏差不多？这两者确实有相似之处。
 
+内联函数的优点是什么呢？
 
-What is the benefit of inline functions?
+这种内联方法可以减少函数调用开销。同时如果所有实参的值为常量，它们的已知值可以在编译期允许简化，因此并非所有的内联函数代码都需要被包含。代码大小的影响是不可预测的，这取决于特定的情况。为了声明一个内联函数，我们必须在函数声明中使用 `inline` 关键字。
 
-This method of inlining reduces the function-call overhead. And if any of the actual argument values are constant, their known values may permit simplifications at compile time so that not all of the inline function’s code needs to be included. The effect on code size is less predictable, it depends on the particular case. To declare an inline function, we’ve to use the keyword `inline` in its declaration.
+现在我们正处于一个猜测内联汇编到底是什么的点上。它只不过是一些写为内联函数的汇编程序。在系统编程上，它们方便、快速并且极其有用。我们主要集中学习（GCC）内联汇编函数的基本格式和用法。为了声明内联汇编函数，我们使用 `asm` 关键词。
 
-Now we are in a position to guess what is inline assembly. Its just some assembly routines written as inline functions. They are handy, speedy and very much useful in system programming. Our main focus is to study the basic format and usage of (GCC) inline assembly functions. To declare inline assembly functions, we use the keyword `asm`.
-
-Inline assembly is important primarily because of its ability to operate and make its output visible on C variables. Because of this capability, "asm" works as an interface between the assembly instructions and the "C" program that contains it.
+内联汇编之所以重要，主要是因为它能在 C 变量上操作和使其输出可见的能力。正是因为此能力， "asm" 起到了汇编指令和 包含它的"C"程序之间的接口作用。
 
 * * *
 
