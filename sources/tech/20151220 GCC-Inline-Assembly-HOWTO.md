@@ -108,29 +108,29 @@ GCC , Linux上的 GNU C 编译器，使用 **AT&T** / **UNIX** 汇编语法。�
 
 * * *
 
-## 4. Basic Inline.
+## 4. 基本内联
 
-The format of basic inline assembly is very much straight forward. Its basic form is
+基本内联汇编的格式非常直接了当。它的基本格式为
 
-`asm("assembly code");`
+`asm("汇编代码");`
 
-Example.
+示例
 
 > `
 > 
 > * * *
 > 
-> <pre>asm("movl %ecx %eax"); /* moves the contents of ecx to eax */
-> __asm__("movb %bh (%eax)"); /*moves the byte from bh to the memory pointed by eax */
+> <pre>asm("movl %ecx %eax"); /* 将 ecx 寄存器的内容移至 eax  */
+> __asm__("movb %bh (%eax)"); /* 将 bh 的一个字节数据 移至 eax 寄存器指向的内存 */
 > </pre>
 > 
 > * * *
 > 
 > `
 
-You might have noticed that here I’ve used `asm` and `__asm__`. Both are valid. We can use `__asm__` if the keyword `asm` conflicts with something in our program. If we have more than one instructions, we write one per line in double quotes, and also suffix a ’\n’ and ’\t’ to the instruction. This is because gcc sends each instruction as a string to **as**(GAS) and by using the newline/tab we send correctly formatted lines to the assembler.
+你可能注意到了这里我使用了 `asm ` 和 `__asm__`。这两者都是有效的。如果关键词 `asm` 和我们程序的一些标识符冲突了，我们可以使用 `__asm__`。如果我们的指令多余一条，我们可以写成一行，并用括号括起，也可以为每条指令添加 ’\n’ 和 ’\t’ 后缀。这是因为gcc将每一条当作字符串发送给 **as**（GAS）（ GAS 即 GNU 汇编器 ——译者注），并且通过使用换行符/制表符发送正确地格式化行给汇编器。
 
-Example.
+示例
 
 > `
 > 
@@ -146,22 +146,22 @@ Example.
 > 
 > `
 
-If in our code we touch (ie, change the contents) some registers and return from asm without fixing those changes, something bad is going to happen. This is because GCC have no idea about the changes in the register contents and this leads us to trouble, especially when compiler makes some optimizations. It will suppose that some register contains the value of some variable that we might have changed without informing GCC, and it continues like nothing happened. What we can do is either use those instructions having no side effects or fix things when we quit or wait for something to crash. This is where we want some extended functionality. Extended asm provides us with that functionality.
+如果在代码中，我们涉及到一些寄存器（即改变其内容），但在没有固定这些变化的情况下从汇编中返回，这将会导致一些不好的事情。这是因为 GCC 并不知道寄存器内容的变化，这会导致问题，特别是当编译器做了某些优化。在没有告知 GCC 的情况下，它将会假设一些寄存器存储了我们可能已经改变的变量的值，它会像什么事都没发生一样继续运行（什么事都没发生一样是指GCC不会假设寄存器装入的值是有效的，当退出改变了寄存器值的内联汇编后，寄存器的值不会保存到相应的变量或内存空间 ——译者注）。我们所可以做的是使用这些没有副作用的指令，或者当我们退出时固定这些寄存器，或者等待程序崩溃。这是为什么我们需要一些扩展功能。扩展汇编正好给我们提供了那样的功能。
 
 * * *
 
-## 5. Extended Asm.
+## 5. 扩展汇编
 
-In basic inline assembly, we had only instructions. In extended assembly, we can also specify the operands. It allows us to specify the input registers, output registers and a list of clobbered registers. It is not mandatory to specify the registers to use, we can leave that head ache to GCC and that probably fit into GCC’s optimization scheme better. Anyway the basic format is:
+在基本内联汇编中，我们只有指令。然而在扩展汇编中，我们可以同时指定操作数。它允许我们指定输入寄存器、输出寄存器以及修饰寄存器列表。GCC 不强制用户必须指定使用的寄存器。我们可以把头疼的事留给 GCC ，这可能可以更好地适应 GCC 的优化。不管怎樣，基本格式为：
 
 > `
 > 
 > * * *
 > 
-> <pre>       asm ( assembler template 
->            : output operands                  /* optional */
->            : input operands                   /* optional */
->            : list of clobbered registers      /* optional */
+> <pre>       asm ( 汇编程序模板 
+>            : 输出操作数					/* 可选的 */
+>            : 输入操作数                   /* 可选的 */
+>            : 修饰寄存器列表			    /* 可选的 */
 >            );
 > </pre>
 > 
@@ -169,11 +169,11 @@ In basic inline assembly, we had only instructions. In extended assembly, we can
 > 
 > `
 
-The assembler template consists of assembly instructions. Each operand is described by an operand-constraint string followed by the C expression in parentheses. A colon separates the assembler template from the first output operand and another separates the last output operand from the first input, if any. Commas separate the operands within each group. The total number of operands is limited to ten or to the maximum number of operands in any instruction pattern in the machine description, whichever is greater.
+汇编程序模板由汇编指令组成.每一个操作数由一个操作数约束字符串所描述，其后紧接一个括弧括起的 C 表达式。冒号用于将汇编程序模板和第一个输出操作数分开，另一个（冒号）用于将最后一个输出操作数和第一个输入操作数分开，如果存在的话。逗号用于分离每一个组内的操作数。总操作数的数目限制在10个，或者机器描述中的任何指令格式中的最大操作数数目，以较大者为准。
 
-If there are no output operands but there are input operands, you must place two consecutive colons surrounding the place where the output operands would go.
+如果没有输出操作数但存在输入操作数，你必须将两个连续的冒号放置于输出操作数原本会放置的地方周围。
 
-Example:
+示例：
 
 > `
 > 
@@ -182,7 +182,7 @@ Example:
 > <pre>        asm ("cld\n\t"
 >              "rep\n\t"
 >              "stosl"
->              : /* no output registers */
+>              : /* 无输出寄存器 */
 >              : "c" (count), "a" (fill_value), "D" (dest)
 >              : "%ecx", "%edi" 
 >              );
@@ -192,7 +192,7 @@ Example:
 > 
 > `
 
-Now, what does this code do? The above inline fills the `fill_value` `count` times to the location pointed to by the register `edi`. It also says to gcc that, the contents of registers `eax` and `edi` are no longer valid. Let us see one more example to make things more clearer.
+现在，这段代码是干什么的？以上的内联汇编是将 `fill_value` 值 连续 `count` 次 拷贝到 寄存器 `edi` 所指位置（每执行stosl一次，寄存器 edi 的值会递增或递减，这取决于是否设置了 direction 标志，因此以上代码实则初始化一个内存块 ——译者注）。 它也告诉 gcc 寄存器 `ecx` 和 `edi` 一直无效（原文为 eax ，但代码修饰寄存器列表中为 ecx，因此这可能为作者的纰漏 ——译者注）。为了使扩展汇编更加清晰，让我们再看一个示例。
 
 > `
 > 
@@ -202,15 +202,16 @@ Now, what does this code do? The above inline fills the `fill_value` `count` 
 >         int a=10, b;
 >         asm ("movl %1, %%eax; 
 >               movl %%eax, %0;"
->              :"=r"(b)        /* output */
->              :"r"(a)         /* input */
->              :"%eax"         /* clobbered register */
+>              :"=r"(b)        /* 输出 */
+>              :"r"(a)         /* 输入 */
+>              :"%eax"         /* 修饰寄存器 */
 >              );       
 > </pre>
 > 
 > * * *
 > 
 > `
+
 
 Here what we did is we made the value of ’b’ equal to that of ’a’ using assembly instructions. Some points of interest are:
 
@@ -564,7 +565,6 @@ Now we have covered the basic theory about GCC inline assembly, now we shall con
     > 
     > * * *
     > 
-    > <pre>#define _syscall3(type,name,type1,arg1,type2,arg2,type3,arg3) \
     > type name(type1 arg1,type2 arg2,type3 arg3) \
     > { \
     > long __res; \
