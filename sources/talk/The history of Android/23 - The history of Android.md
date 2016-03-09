@@ -1,3 +1,5 @@
+alim0x translating
+
 The history of Android
 ================================================================================
 ![Another Play Store redesign! This one is very close to the current design and uses cards that make layout changes a piece of cake.](http://cdn.arstechnica.net/wp-content/uploads/2014/03/get-em-Kirill.jpg)
