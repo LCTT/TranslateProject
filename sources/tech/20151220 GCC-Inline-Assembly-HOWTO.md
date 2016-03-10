@@ -1,89 +1,90 @@
 【Translating by cposture 2016-03-01】
 * * *
 
-# GCC-Inline-Assembly-HOWTO
+#  GCC 内联汇编 HOWTO
+
 v0.1, 01 March 2003.
 * * *
 
-_This HOWTO explains the use and usage of the inline assembly feature provided by GCC. There are only two prerequisites for reading this article, and that’s obviously a basic knowledge of x86 assembly language and C._
+_本 HOWTO 文档将讲解 GCC 提供的内联汇编特性的用途和用法。对于阅读这篇文章，这里只有两个前提要求，很明显，就是 x86 汇编语言和 C 语言的基本认识。_
 
 * * *
 
-## 1. Introduction.
+## 1. 简介
 
-## 1.1 Copyright and License.
+## 1.1 版权许可
 
 Copyright (C)2003 Sandeep S.
 
-This document is free; you can redistribute and/or modify this under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+本文档自由共享；你可以重新发布它，并且/或者在遵循自由软件基金会发布的 GNU 通用公共许可证下修改它；或者该许可证的版本 2 ，或者（按照你的需求）更晚的版本。
 
-This document is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+发布这篇文档是希望它能够帮助别人，但是没有任何保证；甚至不包括可售性和适用于任何特定目的的保证。关于更详细的信息，可以查看 GNU 通用许可证。
 
-## 1.2 Feedback and Corrections.
+## 1.2 反馈校正
 
-Kindly forward feedback and criticism to [Sandeep.S](mailto:busybox@sancharnet.in). I will be indebted to anybody who points out errors and inaccuracies in this document; I shall rectify them as soon as I am informed.
+请将反馈和批评一起提交给 [Sandeep.S](mailto:busybox@sancharnet.in) 。我将感谢任何一个指出本文档中错误和不准确之处的人；一被告知，我会马上改正它们。
 
-## 1.3 Acknowledgments.
+## 1.3 致谢
 
-I express my sincere appreciation to GNU people for providing such a great feature. Thanks to Mr.Pramode C E for all the helps he did. Thanks to friends at the Govt Engineering College, Trichur for their moral-support and cooperation, especially to Nisha Kurur and Sakeeb S. Thanks to my dear teachers at Govt Engineering College, Trichur for their cooperation.
+我对提供如此棒的特性的 GNU 人们表示真诚的感谢。感谢 Mr.Pramode C E 所做的所有帮助。感谢在 Govt Engineering College 和 Trichur 的朋友们的精神支持和合作，尤其是 Nisha Kurur 和 Sakeeb S 。 感谢在 Gvot Engineering College 和 Trichur 的老师们的合作。
 
-Additionally, thanks to Phillip, Brennan Underwood and colin@nyx.net; Many things here are shamelessly stolen from their works.
-
-* * *
-
-## 2. Overview of the whole thing.
-
-We are here to learn about GCC inline assembly. What this inline stands for?
-
-We can instruct the compiler to insert the code of a function into the code of its callers, to the point where actually the call is to be made. Such functions are inline functions. Sounds similar to a Macro? Indeed there are similarities.
-
-What is the benefit of inline functions?
-
-This method of inlining reduces the function-call overhead. And if any of the actual argument values are constant, their known values may permit simplifications at compile time so that not all of the inline function’s code needs to be included. The effect on code size is less predictable, it depends on the particular case. To declare an inline function, we’ve to use the keyword `inline` in its declaration.
-
-Now we are in a position to guess what is inline assembly. Its just some assembly routines written as inline functions. They are handy, speedy and very much useful in system programming. Our main focus is to study the basic format and usage of (GCC) inline assembly functions. To declare inline assembly functions, we use the keyword `asm`.
-
-Inline assembly is important primarily because of its ability to operate and make its output visible on C variables. Because of this capability, "asm" works as an interface between the assembly instructions and the "C" program that contains it.
+另外，感谢 Phillip ,  Brennan Underwood 和 colin@nyx.net ；这里的许多东西都厚颜地直接取自他们的工作成果。
 
 * * *
 
-## 3. GCC Assembler Syntax.
+## 2. 概览
 
-GCC, the GNU C Compiler for Linux, uses **AT&T**/**UNIX** assembly syntax. Here we’ll be using AT&T syntax for assembly coding. Don’t worry if you are not familiar with AT&T syntax, I will teach you. This is quite different from Intel syntax. I shall give the major differences.
+在这里，我们将学习 GCC 内联汇编。这内联表示的是什么呢？
 
-1.  Source-Destination Ordering.
+我们可以要求编译器将一个函数的代码插入到调用者代码中函数被实际调用的地方。这样的函数就是内联函数。这听起来和宏差不多？这两者确实有相似之处。
 
-    The direction of the operands in AT&T syntax is opposite to that of Intel. In Intel syntax the first operand is the destination, and the second operand is the source whereas in AT&T syntax the first operand is the source and the second operand is the destination. ie,
+内联函数的优点是什么呢？
 
-    "Op-code dst src" in Intel syntax changes to
+这种内联方法可以减少函数调用开销。同时如果所有实参的值为常量，它们的已知值可以在编译期允许简化，因此并非所有的内联函数代码都需要被包含。代码大小的影响是不可预测的，这取决于特定的情况。为了声明一个内联函数，我们必须在函数声明中使用 `inline` 关键字。
 
-    "Op-code src dst" in AT&T syntax.
+现在我们正处于一个猜测内联汇编到底是什么的点上。它只不过是一些写为内联函数的汇编程序。在系统编程上，它们方便、快速并且极其有用。我们主要集中学习（GCC）内联汇编函数的基本格式和用法。为了声明内联汇编函数，我们使用 `asm` 关键词。
 
-2.  Register Naming.
+内联汇编之所以重要，主要是因为它可以操作并且使其输出通过 C 变量显示出来。正是因为此能力， "asm" 可以用作汇编指令和包含它的 C 程序之间的接口。 
 
-    Register names are prefixed by % ie, if eax is to be used, write %eax.
+* * *
 
-3.  Immediate Operand.
+## 3. GCC 汇编语法
 
-    AT&T immediate operands are preceded by ’$’. For static "C" variables also prefix a ’$’. In Intel syntax, for hexadecimal constants an ’h’ is suffixed, instead of that, here we prefix ’0x’ to the constant. So, for hexadecimals, we first see a ’$’, then ’0x’ and finally the constants.
+GCC , Linux上的 GNU C 编译器，使用 **AT&T** / **UNIX** 汇编语法。在这里，我们将使用 AT&T 语法 进行汇编编码。如果你对 AT&T 语法不熟悉的话，请不要紧张，我会教你的。AT&T 语法和 Intel 语法的差别很大。我会给出主要的区别。
 
-4.  Operand Size.
+1.  源操作数和目的操作数顺序 
 
-    In AT&T syntax the size of memory operands is determined from the last character of the op-code name. Op-code suffixes of ’b’, ’w’, and ’l’ specify byte(8-bit), word(16-bit), and long(32-bit) memory references. Intel syntax accomplishes this by prefixing memory operands (not the op-codes) with ’byte ptr’, ’word ptr’, and ’dword ptr’.
+	AT&T 语法的操作数方向和 Intel 语法的刚好相反。在Intel 语法中，第一操作数为目的操作数，第二操作数为源操作数，然而在 AT&T 语法中，第一操作数为源操作数，第二操作数为目的操作数。也就是说，
 
-    Thus, Intel "mov al, byte ptr foo" is "movb foo, %al" in AT&T syntax.
+	Intel 语法中的 "Op-code dst src" 变为 
+	
+	AT&T 语法中的 "Op-code src dst"。
 
-5.  Memory Operands.
+2.  寄存器命名 
 
-    In Intel syntax the base register is enclosed in ’[’ and ’]’ where as in AT&T they change to ’(’ and ’)’. Additionally, in Intel syntax an indirect memory reference is like
+	寄存器名称有 % 前缀，即如果必须使用 eax，它应该用作 %eax。
 
-    section:[base + index*scale + disp], which changes to
+3.  立即数
 
-    section:disp(base, index, scale) in AT&T.
+    AT&T 立即数以 ’$’ 为前缀。静态 "C" 变量 也使用 ’$’ 前缀。在 Intel 语法中，十六进制常量以 ’h’ 为后缀，然而AT&T不使用这种语法，这里我们给常量添加前缀 ’0x’。所以，对于十六进制，我们首先看到一个 ’$’，然后是 ’0x’，最后才是常量。
 
-    One point to bear in mind is that, when a constant is used for disp/scale, ’$’ shouldn’t be prefixed.
+4.  操作数大小
 
-Now we saw some of the major differences between Intel syntax and AT&T syntax. I’ve wrote only a few of them. For a complete information, refer to GNU Assembler documentations. Now we’ll look at some examples for better understanding.
+	在 AT&T 语法中，存储器操作数的大小取决于操作码名字的最后一个字符。操作码后缀 ’b’ 、’w’、’l’分别指明了字节（byte）（8位）、字（word）（16位）、长型（long）（32位）存储器引用。Intel 语法通过给存储器操作数添加’byte ptr’、 ’word ptr’ 和 ’dword ptr’前缀来实现这一功能。
+
+	因此，Intel的 "mov al, byte ptr foo" 在 AT&T 语法中为 "movb foo, %al"。
+
+5.	存储器操作数
+	
+	在 Intel 语法中，基址寄存器包含在 ’[’ 和 ’]’ 中，然而在 AT&T 中，它们变为 ’(’ 和 ’)’。另外，在 Intel 语法中， 间接内存引用为
+
+    section:[base + index*scale + disp], 在 AT&T中变为 
+
+    section:disp(base, index, scale)。
+
+	需要牢记的一点是，当一个常量用于 disp 或 scale，不能添加’$’前缀。
+
+现在我们看到了 Intel 语法和 AT&T 语法之间的一些主要差别。我仅仅写了它们差别的一部分而已。关于更完整的信息，请参考 GNU 汇编文档。现在为了更好地理解，我们可以看一些示例。
 
 > `
 > 
@@ -107,29 +108,29 @@ Now we saw some of the major differences between Intel syntax and AT&T syntax. I
 
 * * *
 
-## 4. Basic Inline.
+## 4. 基本内联
 
-The format of basic inline assembly is very much straight forward. Its basic form is
+基本内联汇编的格式非常直接了当。它的基本格式为
 
-`asm("assembly code");`
+`asm("汇编代码");`
 
-Example.
+示例
 
 > `
 > 
 > * * *
 > 
-> <pre>asm("movl %ecx %eax"); /* moves the contents of ecx to eax */
-> __asm__("movb %bh (%eax)"); /*moves the byte from bh to the memory pointed by eax */
+> <pre>asm("movl %ecx %eax"); /* 将 ecx 寄存器的内容移至 eax  */
+> __asm__("movb %bh (%eax)"); /* 将 bh 的一个字节数据 移至 eax 寄存器指向的内存 */
 > </pre>
 > 
 > * * *
 > 
 > `
 
-You might have noticed that here I’ve used `asm` and `__asm__`. Both are valid. We can use `__asm__` if the keyword `asm` conflicts with something in our program. If we have more than one instructions, we write one per line in double quotes, and also suffix a ’\n’ and ’\t’ to the instruction. This is because gcc sends each instruction as a string to **as**(GAS) and by using the newline/tab we send correctly formatted lines to the assembler.
+你可能注意到了这里我使用了 `asm ` 和 `__asm__`。这两者都是有效的。如果关键词 `asm` 和我们程序的一些标识符冲突了，我们可以使用 `__asm__`。如果我们的指令多余一条，我们可以写成一行，并用括号括起，也可以为每条指令添加 ’\n’ 和 ’\t’ 后缀。这是因为gcc将每一条当作字符串发送给 **as**（GAS）（ GAS 即 GNU 汇编器 ——译者注），并且通过使用换行符/制表符发送正确地格式化行给汇编器。
 
-Example.
+示例
 
 > `
 > 
@@ -145,22 +146,22 @@ Example.
 > 
 > `
 
-If in our code we touch (ie, change the contents) some registers and return from asm without fixing those changes, something bad is going to happen. This is because GCC have no idea about the changes in the register contents and this leads us to trouble, especially when compiler makes some optimizations. It will suppose that some register contains the value of some variable that we might have changed without informing GCC, and it continues like nothing happened. What we can do is either use those instructions having no side effects or fix things when we quit or wait for something to crash. This is where we want some extended functionality. Extended asm provides us with that functionality.
+如果在代码中，我们涉及到一些寄存器（即改变其内容），但在没有固定这些变化的情况下从汇编中返回，这将会导致一些不好的事情。这是因为 GCC 并不知道寄存器内容的变化，这会导致问题，特别是当编译器做了某些优化。在没有告知 GCC 的情况下，它将会假设一些寄存器存储了我们可能已经改变的变量的值，它会像什么事都没发生一样继续运行（什么事都没发生一样是指GCC不会假设寄存器装入的值是有效的，当退出改变了寄存器值的内联汇编后，寄存器的值不会保存到相应的变量或内存空间 ——译者注）。我们所可以做的是使用这些没有副作用的指令，或者当我们退出时固定这些寄存器，或者等待程序崩溃。这是为什么我们需要一些扩展功能。扩展汇编正好给我们提供了那样的功能。
 
 * * *
 
-## 5. Extended Asm.
+## 5. 扩展汇编
 
-In basic inline assembly, we had only instructions. In extended assembly, we can also specify the operands. It allows us to specify the input registers, output registers and a list of clobbered registers. It is not mandatory to specify the registers to use, we can leave that head ache to GCC and that probably fit into GCC’s optimization scheme better. Anyway the basic format is:
+在基本内联汇编中，我们只有指令。然而在扩展汇编中，我们可以同时指定操作数。它允许我们指定输入寄存器、输出寄存器以及修饰寄存器列表。GCC 不强制用户必须指定使用的寄存器。我们可以把头疼的事留给 GCC ，这可能可以更好地适应 GCC 的优化。不管怎樣，基本格式为：
 
 > `
 > 
 > * * *
 > 
-> <pre>       asm ( assembler template 
->            : output operands                  /* optional */
->            : input operands                   /* optional */
->            : list of clobbered registers      /* optional */
+> <pre>       asm ( 汇编程序模板 
+>            : 输出操作数					/* 可选的 */
+>            : 输入操作数                   /* 可选的 */
+>            : 修饰寄存器列表			    /* 可选的 */
 >            );
 > </pre>
 > 
@@ -168,11 +169,11 @@ In basic inline assembly, we had only instructions. In extended assembly, we can
 > 
 > `
 
-The assembler template consists of assembly instructions. Each operand is described by an operand-constraint string followed by the C expression in parentheses. A colon separates the assembler template from the first output operand and another separates the last output operand from the first input, if any. Commas separate the operands within each group. The total number of operands is limited to ten or to the maximum number of operands in any instruction pattern in the machine description, whichever is greater.
+汇编程序模板由汇编指令组成.每一个操作数由一个操作数约束字符串所描述，其后紧接一个括弧括起的 C 表达式。冒号用于将汇编程序模板和第一个输出操作数分开，另一个（冒号）用于将最后一个输出操作数和第一个输入操作数分开，如果存在的话。逗号用于分离每一个组内的操作数。总操作数的数目限制在10个，或者机器描述中的任何指令格式中的最大操作数数目，以较大者为准。
 
-If there are no output operands but there are input operands, you must place two consecutive colons surrounding the place where the output operands would go.
+如果没有输出操作数但存在输入操作数，你必须将两个连续的冒号放置于输出操作数原本会放置的地方周围。
 
-Example:
+示例：
 
 > `
 > 
@@ -181,7 +182,7 @@ Example:
 > <pre>        asm ("cld\n\t"
 >              "rep\n\t"
 >              "stosl"
->              : /* no output registers */
+>              : /* 无输出寄存器 */
 >              : "c" (count), "a" (fill_value), "D" (dest)
 >              : "%ecx", "%edi" 
 >              );
@@ -191,7 +192,7 @@ Example:
 > 
 > `
 
-Now, what does this code do? The above inline fills the `fill_value` `count` times to the location pointed to by the register `edi`. It also says to gcc that, the contents of registers `eax` and `edi` are no longer valid. Let us see one more example to make things more clearer.
+现在，这段代码是干什么的？以上的内联汇编是将 `fill_value` 值 连续 `count` 次 拷贝到 寄存器 `edi` 所指位置（每执行stosl一次，寄存器 edi 的值会递增或递减，这取决于是否设置了 direction 标志，因此以上代码实则初始化一个内存块 ——译者注）。 它也告诉 gcc 寄存器 `ecx` 和 `edi` 一直无效（原文为 eax ，但代码修饰寄存器列表中为 ecx，因此这可能为作者的纰漏 ——译者注）。为了使扩展汇编更加清晰，让我们再看一个示例。
 
 > `
 > 
@@ -201,15 +202,16 @@ Now, what does this code do? The above inline fills the `fill_value` `count` 
 >         int a=10, b;
 >         asm ("movl %1, %%eax; 
 >               movl %%eax, %0;"
->              :"=r"(b)        /* output */
->              :"r"(a)         /* input */
->              :"%eax"         /* clobbered register */
+>              :"=r"(b)        /* 输出 */
+>              :"r"(a)         /* 输入 */
+>              :"%eax"         /* 修饰寄存器 */
 >              );       
 > </pre>
 > 
 > * * *
 > 
 > `
+
 
 Here what we did is we made the value of ’b’ equal to that of ’a’ using assembly instructions. Some points of interest are:
 
@@ -563,7 +565,6 @@ Now we have covered the basic theory about GCC inline assembly, now we shall con
     > 
     > * * *
     > 
-    > <pre>#define _syscall3(type,name,type1,arg1,type2,arg2,type3,arg3) \
     > type name(type1 arg1,type2 arg2,type3 arg3) \
     > { \
     > long __res; \
