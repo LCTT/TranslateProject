@@ -1,4 +1,4 @@
-翻译中；by ![zky001](https://github.com/LCTT/TranslateProject/edit/master/sources/tech/20160303%20Top%205%20open%20source%20command%20shells%20for%20Linux.md)
+翻译中；by ![zky001]
 Top 5 open source command shells for Linux
 ===============================================
 
