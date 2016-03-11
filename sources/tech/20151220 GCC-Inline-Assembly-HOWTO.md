@@ -212,37 +212,36 @@ GCC , Linux上的 GNU C 编译器，使用 **AT&T** / **UNIX** 汇编语法。�
 > 
 > `
 
+这里我们所做的是使用汇编指令使 ’b’ 变量的值等于 ’a’ 变量的值。一些有意思的地方是：
 
-Here what we did is we made the value of ’b’ equal to that of ’a’ using assembly instructions. Some points of interest are:
+*	"b" 为输出操作数，用 %0 引用，并且 "a" 为输入操作数，用 %1 引用。
+*	"r" 为操作数约束。之后我们会更详细地了解约束（字符串）。目前，"r" 告诉 GCC 可以使用任一寄存器存储操作数。输出操作数约束应该有一个约束修饰符 "=" 。这修饰符表明它是一个只读的输出操作数。
+*	寄存器名字以两个%为前缀。这有利于 GCC 区分操作数和寄存器。操作数以一个 % 为前缀。
+*	第三个冒号之后的修饰寄存器 %eax 告诉 GCC %eax的值将会在 "asm" 内部被修改，所以 GCC 将不会使用此寄存器存储任何其他值。
 
-*   "b" is the output operand, referred to by %0 and "a" is the input operand, referred to by %1.
-*   "r" is a constraint on the operands. We’ll see constraints in detail later. For the time being, "r" says to GCC to use any register for storing the operands. output operand constraint should have a constraint modifier "=". And this modifier says that it is the output operand and is write-only.
-*   There are two %’s prefixed to the register name. This helps GCC to distinguish between the operands and registers. operands have a single % as prefix.
-*   The clobbered register %eax after the third colon tells GCC that the value of %eax is to be modified inside "asm", so GCC won’t use this register to store any other value.
+当 "asm" 执行完毕， "b" 变量会映射到更新的值，因为它被指定为输出操作数。换句话说， "asm" 内 "b" 变量的修改 应该会被映射到 "asm" 外部。
 
-When the execution of "asm" is complete, "b" will reflect the updated value, as it is specified as an output operand. In other words, the change made to "b" inside "asm" is supposed to be reflected outside the "asm".
+现在，我们可以更详细地看看每一个域。
 
-Now we may look each field in detail.
+## 5.1 汇编程序模板
 
-## 5.1 Assembler Template.
+汇编程序模板包含了被插入到 C 程序的汇编指令集。其格式为：每条指令用双引号圈起，或者整个指令组用双引号圈起。同时每条指令应以分界符结尾。有效的分界符有换行符（\n）和逗号（;）。’\n’ 可以紧随一个制表符（\t）。我们应该都明白使用换行符或制表符的原因了吧？和 C 表达式对应的操作数使用 %0、%1 ... 等等表示。
 
-The assembler template contains the set of assembly instructions that gets inserted inside the C program. The format is like: either each instruction should be enclosed within double quotes, or the entire group of instructions should be within double quotes. Each instruction should also end with a delimiter. The valid delimiters are newline(\n) and semicolon(;). ’\n’ may be followed by a tab(\t). We know the reason of newline/tab, right?. Operands corresponding to the C expressions are represented by %0, %1 ... etc.
+## 5.2 操作数
 
-## 5.2 Operands.
+C 表达式用作 "asm" 内的汇编指令操作数。作为第一双引号内的操作数约束，写下每一操作数。对于输出操作数，在引号内还有一个约束修饰符，其后紧随一个用于表示操作数的 C 表达式。即，
 
-C expressions serve as operands for the assembly instructions inside "asm". Each operand is written as first an operand constraint in double quotes. For output operands, there’ll be a constraint modifier also within the quotes and then follows the C expression which stands for the operand. ie,
+"约束字符串"(C 表达式)，它是一个通用格式。对于输出操作数，还有一个额外的修饰符。约束字符串主要用于决定操作数的寻找方式，同时也用于指定使用的寄存器。
 
-"constraint" (C expression) is the general form. For output operands an additional modifier will be there. Constraints are primarily used to decide the addressing modes for operands. They are also used in specifying the registers to be used.
+如果我们使用的操作数多于一个，那么每一个操作数用逗号隔开。
 
-If we use more than one operand, they are separated by comma.
+在汇编程序模板，每个操作数用数字引用。编号方式如下。如果总共有 n 个操作数（包括输入和输出操作数），那么第一个输出操作数编号为 0 ，逐项递增，并且最后一个输入操作数编号为 n - 1 。操作数的最大数目为前一节我们所看到的那样。
 
-In the assembler template, each operand is referenced by numbers. Numbering is done as follows. If there are a total of n operands (both input and output inclusive), then the first output operand is numbered 0, continuing in increasing order, and the last input operand is numbered n-1\. The maximum number of operands is as we saw in the previous section.
+输出操作数表达式必须为左值。输入操作数的要求不像这样严格。它们可以为表达式。扩展汇编特性常常用于编译器自己不知道其存在的机器指令 ;-)。如果输出表达式无法直接寻址（例如，它是一个位域），我们的约束字符串必须给定一个寄存器。在这种情况下，GCC 将会使用该寄存器作为汇编的输出，然后存储该寄存器的内容到输出。
 
-Output operand expressions must be lvalues. The input operands are not restricted like this. They may be expressions. The extended asm feature is most often used for machine instructions the compiler itself does not know as existing ;-). If the output expression cannot be directly addressed (for example, it is a bit-field), our constraint must allow a register. In that case, GCC will use the register as the output of the asm, and then store that register contents into the output.
+正如前面所陈述的一样，普通的输出操作数必须为只写的； GCC 将会假设指令前的操作数值是死的，并且不需要被（提前）生成。扩展汇编也支持输入-输出或者读-写操作数。
 
-As stated above, ordinary output operands must be write-only; GCC will assume that the values in these operands before the instruction are dead and need not be generated. Extended asm also supports input-output or read-write operands.
-
-So now we concentrate on some examples. We want to multiply a number by 5\. For that we use the instruction `lea`.
+所以现在我们来关注一些示例。我们想要求一个数的5次方结果。为了计算该值，我们使用 `lea` 指令。
 
 > `
 > 
@@ -258,7 +257,7 @@ So now we concentrate on some examples. We want to multiply a number by 5\. For 
 > 
 > `
 
-Here our input is in ’x’. We didn’t specify the register to be used. GCC will choose some register for input, one for output and does what we desired. If we want the input and output to reside in the same register, we can instruct GCC to do so. Here we use those types of read-write operands. By specifying proper constraints, here we do it.
+这里我们的输入为x。我们不指定使用的寄存器。 GCC 将会选择一些输入寄存器，一个输出寄存器，并且做我们期望的事。如果我们想要输入和输出存在于同一个寄存器里，我们可以要求 GCC 这样做。这里我们使用那些读-写操作数类型。这里我们通过指定合适的约束来实现它。
 
 > `
 > 
@@ -274,7 +273,7 @@ Here our input is in ’x’. We didn’t specify the register to be used. GCC w
 > 
 > `
 
-Now the input and output operands are in the same register. But we don’t know which register. Now if we want to specify that also, there is a way.
+现在输出和输出操作数位于同一个寄存器。但是我们无法得知是哪一个寄存器。现在假如我们也想要指定操作数所在的寄存器，这里有一种方法。
 
 > `
 > 
@@ -290,17 +289,17 @@ Now the input and output operands are in the same register. But we don’t know 
 > 
 > `
 
-In all the three examples above, we didn’t put any register to the clobber list. why? In the first two examples, GCC decides the registers and it knows what changes happen. In the last one, we don’t have to put `ecx` on the c lobberlist, gcc knows it goes into x. Therefore, since it can know the value of `ecx`, it isn’t considered clobbered.
+在以上三个示例中，我们并没有添加任何寄存器到修饰寄存器里，为什么？在头两个示例， GCC 决定了寄存器并且它知道发生了什么改变。在最后一个示例，我们不必将 'ecx' 添加到修饰寄存器列表（原文修饰寄存器列表拼写有错，这里已修正 ——译者注）， gcc 知道它表示x。因此，因为它可以知道 `ecx` 的值，它就不被当作修饰的（寄存器）了。
 
-## 5.3 Clobber List.
+## 5.3 修饰寄存器列表
 
-Some instructions clobber some hardware registers. We have to list those registers in the clobber-list, ie the field after the third ’**:**’ in the asm function. This is to inform gcc that we will use and modify them ourselves. So gcc will not assume that the values it loads into these registers will be valid. We shoudn’t list the input and output registers in this list. Because, gcc knows that "asm" uses them (because they are specified explicitly as constraints). If the instructions use any other registers, implicitly or explicitly (and the registers are not present either in input or in the output constraint list), then those registers have to be specified in the clobbered list.
+一些指令会破坏一些硬件寄存器。我们不得不在修饰寄存器中列出这些寄存器，即汇编函数内第三个 ’**:**’ 之后的域。这可以通知 gcc 我们将会自己使用和修改这些寄存器。所以 gcc 将不会假设存入这些寄存器的值是有效的。我们不用在这个列表里列出输入输出寄存器。因为 gcc 知道 "asm" 使用了它们（因为它们被显式地指定为约束了）。如果指令隐式或显式地使用了任何其他寄存器，（并且寄存器不能出现在输出或者输出约束列表里），那么不得不在修饰寄存器列表中指定这些寄存器。
 
-If our instruction can alter the condition code register, we have to add "cc" to the list of clobbered registers.
+如果我们的指令可以修改状态寄存器，我们必须将 "cc" 添加进修饰寄存器列表。
 
-If our instruction modifies memory in an unpredictable fashion, add "memory" to the list of clobbered registers. This will cause GCC to not keep memory values cached in registers across the assembler instruction. We also have to add the **volatile** keyword if the memory affected is not listed in the inputs or outputs of the asm.
+如果我们的指令以不可预测的方式修改了内存，那么需要将 "memory" 添加进修饰寄存器列表。这可以使 GCC 不会在汇编指令间保持缓存于寄存器的内存值。如果被影响的内存不在汇编的输入或输出列表中，我们也必须添加 **volatile** 关键词。
 
-We can read and write the clobbered registers as many times as we like. Consider the example of multiple instructions in a template; it assumes the subroutine _foo accepts arguments in registers `eax` and `ecx`.
+我们可以按我们的需求多次读写修饰寄存器。考虑一个模板内的多指令示例；它假设子例程 _foo 接受寄存器 `eax` 和 `ecx` 里的参数。
 
 > `
 > 
@@ -321,35 +320,36 @@ We can read and write the clobbered registers as many times as we like. Consider
 
 ## 5.4 Volatile ...?
 
-If you are familiar with kernel sources or some beautiful code like that, you must have seen many functions declared as `volatile` or `__volatile__` which follows an `asm` or `__asm__`. I mentioned earlier about the keywords `asm` and `__asm__`. So what is this `volatile`?
+如果你熟悉内核源码或者其他像内核源码一样漂亮的代码，你一定见过许多声明为 `volatile` 或者 `__volatile__`的函数，其跟着一个 `asm` 或者 `__asm__`。我之前提过关键词 `asm` 和 `__asm__`。那么什么是 `volatile`呢？
 
-If our assembly statement must execute where we put it, (i.e. must not be moved out of a loop as an optimization), put the keyword `volatile` after asm and before the ()’s. So to keep it from moving, deleting and all, we declare it as
+如果我们的汇编语句必须在我们放置它的地方执行（即，不能作为一种优化被移出循环语句），将关键词 `volatile` 放置在 asm 后面，()的前面。因为为了防止它被移动、删除或者其他操作，我们将其声明为
 
 `asm volatile ( ... : ... : ... : ...);`
 
-Use `__volatile__` when we have to be verymuch careful.
+当我们必须非常谨慎时，请使用 `__volatile__`。
 
-If our assembly is just for doing some calculations and doesn’t have any side effects, it’s better not to use the keyword `volatile`. Avoiding it helps gcc in optimizing the code and making it more beautiful.
+如果我们的汇编只是用于一些计算并且没有任何副作用，不使用 `volatile` 关键词会更好。不使用 `volatile` 可以帮助 gcc 优化代码并使代码更漂亮。
 
-In the section `Some Useful Recipes`, I have provided many examples for inline asm functions. There we can see the clobber-list in detail.
+
+在 `Some Useful Recipes` 一节中，我提供了多个内联汇编函数的例子。这儿我们详细查看修饰寄存器列表。
 
 * * *
 
-## 6. More about constraints.
+## 6. 更多关于约束
 
-By this time, you might have understood that constraints have got a lot to do with inline assembly. But we’ve said little about constraints. Constraints can say whether an operand may be in a register, and which kinds of register; whether the operand can be a memory reference, and which kinds of address; whether the operand may be an immediate constant, and which possible values (ie range of values) it may have.... etc.
+到这个时候，你可能已经了解到约束和内联汇编有很大的关联。但我们很少说到约束。约束用于表明一个操作数是否可以位于寄存器和位于哪个寄存器；是否操作数可以为一个内存引用和哪种地址；是否操作数可以为一个立即数和为哪一个可能的值（即值的范围）。它可以有...等等。
 
-## 6.1 Commonly used constraints.
+## 6.1 常用约束
 
-There are a number of constraints of which only a few are used frequently. We’ll have a look at those constraints.
+在许多约束中，只有小部分是常用的。我们将看看这些约束。
 
-1.  **Register operand constraint(r)**
+1.  **寄存器操作数约束（r）**
 
-    When operands are specified using this constraint, they get stored in General Purpose Registers(GPR). Take the following example:
+	当使用这种约束指定操作数时，它们存储在通用寄存器（GPR）中。请看下面示例：
 
     `asm ("movl %%eax, %0\n" :"=r"(myval));`
 
-    Here the variable myval is kept in a register, the value in register `eax` is copied onto that register, and the value of `myval` is updated into the memory from this register. When the "r" constraint is specified, gcc may keep the variable in any of the available GPRs. To specify the register, you must directly specify the register names by using specific register constraints. They are:
+	这里，变量 myval 保存在寄存器中，寄存器 eax 的值被复制到该寄存器中，并且myval的值从寄存器更新到了内存。当指定 "r" 约束时， gcc 可以将变量保存在任何可用的 GPR 中。为了指定寄存器，你必须使用特定寄存器约束直接地指定寄存器的名字。它们为：
 
     > `
     > 
@@ -367,57 +367,58 @@ There are a number of constraints of which only a few are used frequently. We’
     > 
     > `
 
-2.  **Memory operand constraint(m)**
+2.	**内存操作数约束（m）**
 
-    When the operands are in the memory, any operations performed on them will occur directly in the memory location, as opposed to register constraints, which first store the value in a register to be modified and then write it back to the memory location. But register constraints are usually used only when they are absolutely necessary for an instruction or they significantly speed up the process. Memory constraints can be used most efficiently in cases where a C variable needs to be updated inside "asm" and you really don’t want to use a register to hold its value. For example, the value of idtr is stored in the memory location loc:
+	当操作数位于内存时，任何对它们的操作将直接发生在内存位置，这与寄存器约束相反，后者首先将值存储在要修改的寄存器中，然后将它写回到内存位置。但寄存器约束通常用于一个指令必须使用它们或者它们可以大大提高进程速度的地方。当需要在 "asm" 内更新一个 C 变量，而又不想使用寄存器去保存它的只，使用内存最为有效。例如， idtr 的值存储于内存位置：
 
     `asm("sidt %0\n" : :"m"(loc));`
 
-3.  **Matching(Digit) constraints**
+3.	**匹配（数字）约束**
 
-    In some cases, a single variable may serve as both the input and the output operand. Such cases may be specified in "asm" by using matching constraints.
+	在某些情况下，一个变量可能既充当输入操作数，也充当输出操作数。可以通过使用匹配约束在 "asm" 中指定这种情况。
 
     `asm ("incl %0" :"=a"(var):"0"(var));`
 
-    We saw similar examples in operands subsection also. In this example for matching constraints, the register %eax is used as both the input and the output variable. var input is read to %eax and updated %eax is stored in var again after increment. "0" here specifies the same constraint as the 0th output variable. That is, it specifies that the output instance of var should be stored in %eax only. This constraint can be used:
+	在操作数子节中，我们也看到了一些类似的示例。在这个匹配约束的示例中，寄存器 "%eax" 既用作输入变量，也用作输出变量。 var 输入被读进 %eax ，并且更新的 %eax 再次被存储进 var。这里的 "0" 用于指定与第0个输出变量相同的约束。也就是，它指定 var 输出实例应只被存储在 "%eax" 中。该约束可用于：
 
-    *   In cases where input is read from a variable or the variable is modified and modification is written back to the same variable.
-    *   In cases where separate instances of input and output operands are not necessary.
+	*	在输入从变量读取或变量修改后，修改被写回同一变量的情况
+	*	在不需要将输入操作数实例和输出操作数实例分开的情况
 
-    The most important effect of using matching restraints is that they lead to the efficient use of available registers.
+	使用匹配约束最重要的意义在于它们可以导致有效地使用可用寄存器。
 
-Some other constraints used are:
+其他一些约束：
 
-1.  "m" : A memory operand is allowed, with any kind of address that the machine supports in general.
-2.  "o" : A memory operand is allowed, but only if the address is offsettable. ie, adding a small offset to the address gives a valid address.
+1.	"m" : 允许一个内存操作数使用机器普遍支持的任一种地址。
+2.	"o" : 允许一个内存操作数，但只有当地址是可偏移的。即，该地址加上一个小的偏移量可以得到一个地址。
 3.  "V" : A memory operand that is not offsettable. In other words, anything that would fit the `m’ constraint but not the `o’constraint.
-4.  "i" : An immediate integer operand (one with constant value) is allowed. This includes symbolic constants whose values will be known only at assembly time.
-5.  "n" : An immediate integer operand with a known numeric value is allowed. Many systems cannot support assembly-time constants for operands less than a word wide. Constraints for these operands should use ’n’ rather than ’i’.
-6.  "g" : Any register, memory or immediate integer operand is allowed, except for registers that are not general registers.
+4.	"i" : 允许一个（带有常量）的立即整形操作数。这包括其值仅在汇编时期知道的符号常量。
+5.	"n" : 允许一个带有已知数字的立即整形操作数。许多系统不支持汇编时期的常量，因为操作数少于一个字宽。对于此种操作数，约束应该使用 'n' 而不是'i'。 
+6.	"g" : 允许任一寄存器、内存或者立即整形操作数，不包括通用寄存器之外的寄存器。
 
-Following constraints are x86 specific.
 
-1.  "r" : Register operand constraint, look table given above.
-2.  "q" : Registers a, b, c or d.
-3.  "I" : Constant in range 0 to 31 (for 32-bit shifts).
-4.  "J" : Constant in range 0 to 63 (for 64-bit shifts).
-5.  "K" : 0xff.
-6.  "L" : 0xffff.
-7.  "M" : 0, 1, 2, or 3 (shifts for lea instruction).
-8.  "N" : Constant in range 0 to 255 (for out instruction).
-9.  "f" : Floating point register
-10.  "t" : First (top of stack) floating point register
-11.  "u" : Second floating point register
-12.  "A" : Specifies the `a’ or `d’ registers. This is primarily useful for 64-bit integer values intended to be returned with the `d’ register holding the most significant bits and the `a’ register holding the least significant bits.
+以下约束为x86特有。
 
-## 6.2 Constraint Modifiers.
+1.	"r" : 寄存器操作数约束，查看上面给定的表格。
+2.	"q" : 寄存器 a、b、c 或者 d。
+3.	"I" : 范围从 0 到 31 的常量（对于 32 位移位）。
+4.  "J" : 范围从 0 到 63 的常量（对于 64 位移位）。
+5.	"K" : 0xff。
+6.  "L" : 0xffff。
+7.  "M" : 0, 1, 2, or 3 （lea 指令的移位）。
+8.  "N" : 范围从 0 到 255 的常量（对于 out 指令）。
+9.  "f" : 浮点寄存器
+10.  "t" : 第一个（栈顶）浮点寄存器
+11.  "u" : 第二个浮点寄存器
+12.  "A" : 指定 `a` 或 `d` 寄存器。这主要用于想要返回 64 位整形数，使用 `d` 寄存器保存最高有效位和 `a` 寄存器保存最低有效位。
 
-While using constraints, for more precise control over the effects of constraints, GCC provides us with constraint modifiers. Mostly used constraint modifiers are
+## 6.2 约束修饰符
 
-1.  "=" : Means that this operand is write-only for this instruction; the previous value is discarded and replaced by output data.
-2.  "&" : Means that this operand is an earlyclobber operand, which is modified before the instruction is finished using the input operands. Therefore, this operand may not lie in a register that is used as an input operand or as part of any memory address. An input operand can be tied to an earlyclobber operand if its only use as an input occurs before the early result is written.
+当使用约束时，对于更精确的控制超越了约束作用的需求，GCC 给我们提供了约束修饰符。最常用的约束修饰符为：
 
-    The list and explanation of constraints is by no means complete. Examples can give a better understanding of the use and usage of inline asm. In the next section we’ll see some examples, there we’ll find more about clobber-lists and constraints.
+1.  "=" : 意味着对于这条指令，操作数为只写的；旧值会被忽略并被输出数据所替换。
+2.  "&" : 意味着这个操作数为一个早期的改动操作数，其在该指令完成前通过使用输入操作数被修改了。因此，这个操作数不可以位于一个被用作输出操作数或任何内存地址部分的寄存器。如果在旧值被写入之前它仅用作输入而已，一个输入操作数可以为一个早期改动操作数。
+
+	约束的列表和解释是决不完整的。示例可以给我们一个关于内联汇编的用途和用法的更好的理解。在下一节，我们会看到一些示例，在那里我们会发现更多关于修饰寄存器列表的东西。
 
 * * *
 
