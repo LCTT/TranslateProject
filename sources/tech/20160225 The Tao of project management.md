@@ -101,24 +101,21 @@
 
 作为一个项目管理者，虽然你的工作与培养你的团队的文化无关，但是工作本身就是文化。
 
-### Kaizen
+### 持续改善
 
->In pursuit of knowledge,
->every day something is added.
->In the practice of the Tao,
->every day something is dropped.
->Less and less do you need to force things,
->until finally you arrive at non-action. When nothing is done,
->nothing is left undone. 
+>为学日益，
+>为道日损，
+>损之又损，以至于无为。无为而无不为，取天下常以无事
 [[48]][14]
 
-The general field of project management is too focused on the latest and greatest tools. But the answer to the question of which tool you should use is always the same: "the simplest."
+虽然项目管理的一般领域都太过于专注最新最强大的的工具，但是您应该使用哪种工具这问题的答案总是一致的：“最简单的”。
 
-For example, I keep my running to-do list in a text file on my desktop because it serves its purpose without unnecessary distractions. Whatever tools, processes, and procedures you introduce to a team should increase efficiency and remove obstacles, not introduce additional complexity. So instead of focusing on the tools, focus on the problem(s) you're using those tools to solve.
+例如，我将任务列表放在桌面的一个文本文件中，因为它很单纯，没有不必要的干扰。您想介绍给团队的，无论是何种工具、流程和程序都应该是能提高效率，排除障碍的，而不是引入额外的复杂性。所以不应该专注于工具本身，而应该专注于使用这些工具来解决的问题。
 
-My favorite part of being a project manager in an Agile world is having the freedom to throw out what doesn't work. This is related to the concept of kaizen, or "continuous improvement." Don't be afraid to try and fail. Failing is the label we've put on the process of learning what works and what doesn't. But it's the only way to improve.
+我最喜欢的一个项目经理在一个灵活的世界是有自由扔什么不工作。在  Agile world 中我喜欢项目管理者能自由的做决定，抛出不能做的工作。这就是改善的概念，或叫“持续改进”。不要害怕尝试和失败。失败是我们在学习的过程中所用的标签，不能代表什么，但这是提高的唯一方式。
 
-The best processes arise organically. As a project manager, you can help your team by supporting them and not trying to force them into anything.
+
+最好的过程都不是一蹴而就的。作为项目管理者，您应该帮助您的团队，支持团队让其自己提升，而不是强迫团队。
 
 ### Practice
 
