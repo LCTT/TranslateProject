@@ -117,19 +117,14 @@
 
 最好的过程都不是一蹴而就的。作为项目管理者，您应该帮助您的团队，支持团队让其自己提升，而不是强迫团队。
 
-### Practice
+### 实践
 
->Some say that my teaching is nonsense.
->Others call it lofty but impractical.
->But to those who have looked inside themselves,
->this nonsense makes perfect sense.
->And to those who put it into practice,
->this loftiness has roots that go deep. 
+>天下皆谓我"道"大，似不肖。夫唯大，故似不肖。若肖，久矣其细也夫！
 [[67]][15]
 
-I believe in what open organizations are doing. What open organizations are doing for the field of management is almost as important as the actual products and services they offer. We have an opportunity to lead by example, to inspire passion and purpose in others, to create working environments that inspire and empower.
+我相信开放性组织正在做的。开放性组织在管理领域的工作几乎和他们所提供的产品和服务一样重要。我们有机会以身作则，激发他人的激情和目的，创造激励和充分授权的工作环境。
 
-I encourage you to find ways to incorporate some of these ideas into your own projects and teams to see what happens. Learn about your organization's mission and how your projects contribute to it. Have courage, expect to try some things that won't work, and don't forget to share the lessons you learn with our community so we can continue to improve.
+我鼓励您们找到办法把这些想法融入到自己的项目和团队中，看看会发生什么。了解组织的使命和您的项目怎么样帮助它们。鼓起勇气，尝试一些不好的事情，同时不要忘记和我们的社区分享你所学到的经验，这样我们就可以继续改进。
 
 
 --------------------------------------------------------------------------------
