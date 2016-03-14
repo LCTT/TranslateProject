@@ -1,24 +1,22 @@
-translation by strugglingyouth
-How to Install MariaDB 10 on CentOS 7 CPanel Server
+
+在 CentOS 7 CPanel 服务器上安装 MariaDB 10
 ================================================================================
 
-MariaDB is a enhanced open source and drop-in replacement for MySQL. It is developed by MariaDB community and available under the terms of the GPL v2 license. Software Security is the main focus for the MariaDB developers. They maintain its own set of security patches for each MariaDB releases. When any critical security issues are discovered, the developers introduces a new release of MariaDB to get the fix out as soon as possible.
+MariaDB 是一个增强版的，开源的并且可以直接替代 MySQL。它主要由 MariaDB 社区在维护，采用 GPL v2 授权许可。软件的安全性是 MariaDB 开发者的主要焦点。他们保持为 MariaDB 的每个版本发布安全补丁。当有任何安全问题被发现时，开发者会尽快修复并推出 MariaDB 的新版本。
 
-MariaDB is always up-to-date with the latest MySQL releases. It is highly compatible and works exactly like the MySQL. Almost all commands, data, table definition files, Client APIs, protocols, interfaces, structures, filenames, binaries, ports, database storage locations etc are same as the MySQL. It isn't even needed to convert databases to switch to MariaDB.
+### MariaDB 的优势 ###
 
-### Advantages of MariaDB ###
+- 完全开源
+- 快速且透明的安全版本
+- 与 MySQL 高度兼容
+- 性能更好
+- 比 MySQL 的存储引擎多
 
-- Truly Open source
-- More quicker and transparent security releases
-- Highly Compatible with MySQL
-- Improved Performance
-- More storage engines compared to MySQL
+在这篇文章中，我将谈论关于如何升级 MySQL5.5 到最新的 MariaDB 在CentOS7 CPanel 服务器上。在安装前先完成以下步骤。
 
-In this article, I provides guidelines on how to upgrade MySQL 5.5 to the latest MariaDB on a CentOS 7 CPanel server. Let's walk through the Pre-installation steps.
+### 先决条件: ###
 
-### Pre-requisites: ###
-
-#### 1. Stop current MySQL Service ####
+#### 1. 停止当前 MySQL 服务 ####
 
     root@server1 [/var/# mysql
     Welcome to the MySQL monitor. Commands end with ; or \g.
@@ -47,9 +45,9 @@ In this article, I provides guidelines on how to upgrade MySQL 5.5 to the latest
     Jan 31 10:00:02 server1.centos7-test.com systemd[1]: Unit mysql.service entered failed state.
     Jan 31 10:00:02 server1.centos7-test.com systemd[1]: mysql.service failed.
 
-#### 2. Move all configuration files and databases prior to the upgrade ####
+#### 2. 在升级之前将所有配置文件和数据库转移 ####
 
-Move the DB storage path and MySQL configuration files
+转移数据库的存储路径和 MySQL 的配置文件
 
     root@server1 [~]# cp -Rf /var/lib/mysql /var/lib/mysql-old
 
@@ -62,18 +60,19 @@ Move the DB storage path and MySQL configuration files
 
     root@server1 [~]#mv /etc/my.cnf /etc/my.cnf-old
 
-#### 3. Remove and uninstall all MySQL rpms from the server ####
+#### 3. 从服务器上删除和卸载 MySQL 所有的 RPM 包 ####
 
-Run the following commands to disable the MySQL RPM targets. By running this commands, cPanel will no longer handle MySQL updates, and mark these rpm.versions as uninstalled on the system.
+运行以下命令来禁用 MySQL 的 RPM 的目标。通过运行此命令，cPanel 将不再处理 MySQL 的更新，并在系统上将卸载的标记为 rpm.versions。
 
     /scripts/update_local_rpm_versions --edit target_settings.MySQL50 uninstalled
     /scripts/update_local_rpm_versions --edit target_settings.MySQL51 uninstalled
     /scripts/update_local_rpm_versions --edit target_settings.MySQL55 uninstalled
     /scripts/update_local_rpm_versions --edit target_settings.MySQL56 uninstalled
 
-Now run the this command:
+现在运行以下命令：
 
-/scripts/check_cpanel_rpms --fix --targets=MySQL50,MySQL51,MySQL55,MySQL56 to remove all existing MySQL rpms on the server and leave a clean environment for MariaDB installation. Please see its output below:
+/scripts/check_cpanel_rpms --fix --targets=MySQL50,MySQL51,MySQL55,MySQL56 
+移除服务器上所有已存在的 MySQL rpms 来为 MariaDB 的安装清理环境。请看下面的输出：
 
     root@server1 [/var/lib/mysql]# /scripts/check_cpanel_rpms --fix --targets=MySQL50,MySQL51,MySQL55,MySQL56
     [2016-01-31 09:53:59 +0000]
@@ -98,13 +97,13 @@ Now run the this command:
     [2016-01-31 09:54:04 +0000] Removed symlink /etc/systemd/system/multi-user.target.wants/mysql.service.
     [2016-01-31 09:54:04 +0000] Restoring service monitoring.
 
-With these steps, we've uninstalled existing MySQL RPMs, marked targets to prevent further MySQL updates and made the server ready and clean for the MariaDB installation.
+通过这些步骤，我们已经卸载了现有的 MySQL RPMs，并做了标记来防止 MySQL的更新，服务器的环境已经清理然后准备安装 MariaDB。
 
-To startup with the installation, we need to create a yum repository for MariaDB depending on the MariaDB & CentOS versions. This is how I did it!
+开始安装吧，我们需要在 CentOS 为 MariaDB 创建一个 yum 软件库。下面是我的做法！
 
-### Installation procedures: ###
+### 安装步骤： ###
 
-#### Step 1: Creating a YUM repository. ####
+#### 第1步：创建 YUM 软件库。####
 
     root@server1 [~]# vim /etc/yum.repos.d/MariaDB.repo
     [mariadb]
@@ -119,7 +118,7 @@ To startup with the installation, we need to create a yum repository for MariaDB
     gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
     gpgcheck=1
 
-#### Step 2: Open the /etc/yum.conf and modify the exclude line as below: ####
+#### 第2步：打开 /etc/yum.conf 并修改如下行： ####
 
 **Remove this line** exclude=courier* dovecot* exim* filesystem httpd* mod_ssl* mydns* mysql* nsd* php* proftpd* pure-ftpd* spamassassin* squirrelmail*
 
@@ -127,9 +126,9 @@ To startup with the installation, we need to create a yum repository for MariaDB
 
 **\*\*\* IMPORTANT \*\*\***
 
-We need to make sure, we've removed the MySQL and PHP from the exclude list.
+需要确保我们已经从 exclude 列表中移除了 MySQL 和 PHP。
 
-#### Step 3: Run the following command to install MariaDB and related packages. ####
+#### 第3步：运行以下命令来安装 MariaDB 和相关的包。 ####
 
 **yum install MariaDB-server MariaDB-client MariaDB-devel php-mysql**
 
@@ -156,7 +155,7 @@ We need to make sure, we've removed the MySQL and PHP from the exclude list.
     ===============================================================================================================================================
     Install 4 Packages (+5 Dependent package)
 
-#### Step 4: Restart and make sure the MySQL service is up. ####
+#### 第4步：重新启动，并确保 MySQL 服务已启动。####
 
     root@server1 [~]# systemctl start mysql
     root@server1 [~]#
@@ -173,9 +172,10 @@ We need to make sure, we've removed the MySQL and PHP from the exclude list.
     Jan 31 10:01:46 server1.centos7-test.com mysql[23717]: Starting MySQL SUCCESS!
     Jan 31 10:01:46 server1.centos7-test.com systemd[1]: Started LSB: start and stop MySQL.
 
-#### Step 5: Run mysql_upgrade command ####
+#### 第5步：运行 mysql_upgrade 命令。 ####
 
-It will examine all tables in all databases for incompatibilities with the current installed version and upgrades the system tables if necessary to take advantage of new privileges or capabilities that might have added with the current version.
+它将检查所有数据库中的所有表与当前安装的版本是否兼容并在必要时会更新系统表采取新的特权或功能，可能会增加当前版本的性能。
+
 
     root@server1 [~]# mysql_upgrade
     MySQL upgrade detected
@@ -254,7 +254,7 @@ It will examine all tables in all databases for incompatibilities with the curre
     Phase 6/6: Running 'FLUSH PRIVILEGES'
     OK
 
-#### Step 6 : Restart the MySQL service once again to ensure everything works perfect. ####
+#### 第6步：再次重新启动MySQL的服务，以确保一切都运行完好。 ####
 
     root@server1 [~]# systemctl restart mysql
     root@server1 [~]#
@@ -274,7 +274,7 @@ It will examine all tables in all databases for incompatibilities with the curre
     Jan 31 10:04:11 server1.centos7-test.com mysql[23854]: Starting MySQL. SUCCESS!
     Jan 31 10:04:11 server1.centos7-test.com systemd[1]: Started LSB: start and stop MySQL.
 
-#### Step 7: Run EasyApache to rebuild Apache/PHP with MariaDB and ensure all PHP modules remains intact. ####
+#### 第7步：运行 EasyApache 用 MariaDB 重建 Apache/PHP，并确保所有 PHP 的模块保持不变。####
 
     root@server1 [~]#/scripts/easyapache --build
 
@@ -284,7 +284,7 @@ It will examine all tables in all databases for incompatibilities with the curre
     root@server1 [/etc/my.cnf.d]# php -v
     php: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
 
-#### Step 8: Now verify the installation and databases. ####
+#### 第8步：现在验证安装的数据库。 ####
 
     root@server1 [/var/lib/mysql]# mysql
     Welcome to the MariaDB monitor. Commands end with ; or \g.
@@ -312,14 +312,13 @@ It will examine all tables in all databases for incompatibilities with the curre
     +--------------------+---------+----------------------------------------------------------------------------+--------------+------+------------+
     10 rows in set (0.00 sec)
 
-That's all :). Now we're all set to go with MariaDB with its improved and efficient features. Hope you enjoyed reading this documentation. I would recommend your valuable suggestions and feedback on this!
-
+就这样 ：）。现在，我们该去欣赏 MariaDB 完善和高效的特点了。希望你喜欢阅读本文。希望留下您宝贵的建议和反馈！
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/how-tos/install-mariadb-10-centos-7-cpanel/
 
 作者：[Saheetha Shameer][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[strugglingyouth](https://github.com/strugglingyouth)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
