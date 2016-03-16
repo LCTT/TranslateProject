@@ -1,5 +1,4 @@
-
-Linux 有问必答 - 如何通过代理服务器安装 Ubuntu 桌面
+Linux 有问必答 - 如何通过代理服务器安装 Ubuntu 桌面版
 ================================================================================
 > **问题**: 我的电脑通过 HTTP 代理连接到公司网络。当我尝试从 CD-ROM 在计算机上安装 Ubuntu 桌面时，在检索文件时安装程序会被挂起，检索则不会完成，这可能是由于代理造成的。然而问题是，Ubuntu 的安装程序从不要求我在安装过程中配置代理。那我该怎么使用代理来安装 Ubuntu 桌面？
 
@@ -56,7 +55,7 @@ via: http://ask.xmodulo.com/install-ubuntu-desktop-behind-proxy.html
 
 作者：[Dan Nanni][a]
 译者：[strugglingyouth](https://github.com/strugglingyouth)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
