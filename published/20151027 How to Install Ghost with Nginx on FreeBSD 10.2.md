@@ -1,6 +1,6 @@
 如何在 FreeBSD 10.2 上安装使用 Nginx 的 Ghost
 ================================================================================
-Node.js 是用于开发服务器端应用程序的开源运行时环境。Node.js 应用使用 JavaScript 编写，能在任何有 Node.js 运行时的服务器上运行。它跨平台支持 Linux、Windows、OSX、IBM AIX，也包括 FreeBSD。Node.js 是 Ryan Dahl 以及在 Joyent 工作的其他开发者于 2009 年创建的。它的设计目标就是构建可扩展的网络应用程序。
+Node.js 是用于开发服务器端应用程序的开源的运行时环境。Node.js 应用使用 JavaScript 编写，能在任何有 Node.js 运行时的服务器上运行。它跨平台支持 Linux、Windows、OSX、IBM AIX，也包括 FreeBSD。Node.js 是 Ryan Dahl 以及在 Joyent 工作的其他开发者于 2009 年创建的。它的设计目标就是构建可扩展的网络应用程序。
 
 Ghost 是使用 Node.js 编写的博客平台。它不仅开源，而且有很漂亮的界面设计、对用户友好并且免费。它允许你快速地在网络上发布内容，或者创建你的混合网站。
 
@@ -97,7 +97,7 @@ Ghost 是使用 Node.js 编写的博客平台。它不仅开源，而且有很�
 
     npm start --production
 
-通过访问服务器 ip 和 2368 号端口验证。
+通过访问服务器 ip 和 2368 号端口验证一下。
 
 ![Ghost 安装完成](http://blog.linoxide.com/wp-content/uploads/2015/10/Ghost-Installed.png)
 
@@ -189,7 +189,7 @@ Ghost 是使用 Node.js 编写的博客平台。它不仅开源，而且有很�
 
 ### 第五步 - 为 Ghost 安装和配置 Nginx ###
 
-默认情况下，ghost 会以单机模式运行，你可以不用 Nginx、apache 或 IIS web 服务器直接运行它。但在这篇指南中我们会安装和配置 nginx 和 ghost 一起使用。
+默认情况下，ghost 会以独立模式运行，你可以不用 Nginx、apache 或 IIS web 服务器直接运行它。但在这篇指南中我们会安装和配置 nginx 和 ghost 一起使用。
 
 用 pkg 命令从 freebsd 库中安装 nginx：
 
@@ -289,7 +289,7 @@ via: http://linoxide.com/linux-how-to/install-ghost-nginx-freebsd-10-2/
 
 作者：[Arul][a]
 译者：[ictlyh](http://mutouxiaogui.cn/blog/)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
