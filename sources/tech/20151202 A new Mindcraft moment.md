@@ -1,33 +1,33 @@
-A new Mindcraft moment?
+又一次 Mindcraft 事件？
 =======================
 
-Credit:Jonathan Corbet
+感谢：Jonathan Corbet
 
-It is not often that Linux kernel development attracts the attention of a mainstream newspaper like The Washington Post; lengthy features on the kernel community's approach to security are even more uncommon. So when just such a feature hit the net, it attracted a lot of attention. This article has gotten mixed reactions, with many seeing it as a direct attack on Linux. The motivations behind the article are hard to know, but history suggests that we may look back on it as having given us a much-needed push in a direction we should have been going for some time.
+Linux 内核开发很少吸引像华盛顿邮报这样主流媒体的关注，内核社区在安全方面进展的冗长功能列表就更少人看了。所以当这样一个功能发布到网上，就吸引了很多人的注意。关于这篇文章有不同的反应，很多人认为这是对 Linux 直接的攻击。文章背后的动机很难知道，但是从历史经验来看，它也可以看作对我们早就该前进的方向的一次非常必要的推动。
 
-Think back, a moment, to the dim and distant past — April 1999, to be specific. An analyst company named Mindcraft issued a report showing that Windows NT greatly outperformed Red Hat Linux 5.2 and Apache for web-server workloads. The outcry from the Linux community, including from a very young LWN, was swift and strong. The report was a piece of Microsoft-funded FUD trying to cut off an emerging threat to its world-domination plans. The Linux system had been deliberately configured for poor performance. The hardware chosen was not well supported by Linux at the time. And so on.
+回顾一次在昏暗遥远过去的事件 - 确切地说是 1999 年 4 月。一家叫 Mindcraft 的分析公司发布了一份报告显示 Windows NT 在服务器开销方面完胜 Red Hat Linux 5.2 加 Apache。Linux 社区，包括当时还很年轻的 LWN，的反应很迅速而且强烈。这份报告是微软资助的 FUD 的一部分，用来消除那些全球垄断计划的新兴威胁。报告指出，Linux 系统有意配置成低性能，Linux 不支持当时的很多硬件，等等。
 
-Once people calmed down a bit, though, one other fact came clear: the Mindcraft folks, whatever their motivations, had a point. Linux did, indeed, have performance problems that were reasonably well understood even at the time. The community then did what it does best: we sat down and fixed the problems. The scheduler got exclusive wakeups, for example, to put an end to thethundering-herd problem in the acceptance of connection requests. Numerous other little problems were fixed. Within a year or so, the kernel's performance on this kind of workload had improved considerably.
+在大家稍微冷静一点后，尽管如此，事实很明显：Mindcraft 的人，不管什么动机，说的也有道理。当时 Linux 确实在性能方面存在一些已经被充分认识到的问题。然后社区做了最正确的事情：我们坐下来解决问题。比如，单独唤醒的调度器可以终结接受连接请求时的惊群问题。其他很多小问题也都解决了。在差不多一年里，内核在这类开销方面的性能已经有了非常大的改善。
 
-The Mindcraft report, in other words, was a much-needed kick in the rear that got the community to deal with issues that had been neglected until then.
+这份 Mindcraft 的报告，某种意义上来说，往 Linux 背后踢了很有必要的一脚，推动整个社区去处理一些当时被忽略的事情。
 
-The Washington Post article seems clearly slanted toward a negative view of the Linux kernel and its contributors. It freely mixes kernel problems with other issues (the AshleyMadison.com breakin, for example) that were not kernel vulnerabilities at all. The fact that vendors seem to have little interest in getting security fixes to their customers is danced around like a huge elephant in the room. There are rumors of dark forces that drove the article in the hopes of taking Linux down a notch. All of this could well be true, but it should not be allowed to overshadow the simple fact that the article has a valid point.
+华盛顿邮报的文章明显在鄙视 Linux 内核以及它的贡献者。它随意地混淆了内核问题和其他根本不是内核脆弱性引起的问题（比如，AshleyMadison.com 被黑）。不过供应商没什么兴趣为他们的客户提供安全补丁的事实，就像一头巨象在房间里跳舞一样明显。还有谣言说这篇文章后面的黑暗势力希望打击一下 Linux 的势头。这些也许都是真的，但是也不能掩盖一个简单的事实，就是文章说的确实是真的。
 
-We do a reasonable job of finding and fixing bugs. Problems, whether they are security-related or not, are patched quickly, and the stable-update mechanism makes those patches available to kernel users. Compared to a lot of programs out there (free and proprietary alike), the kernel is quite well supported. But pointing at our ability to fix bugs is missing a crucial point: fixing security bugs is, in the end, a game of whack-a-mole. There will always be more moles, some of which we will not know about (and will thus be unable to whack) for a long time after they are discovered and exploited by attackers. These bugs leave our users vulnerable, even if the commercial side of Linux did a perfect job of getting fixes to users — which it decidedly does not.
+我们会合理地测试并解决问题。而问题，不管是不是安全相关，能很快得到修复，然后再通过稳定更新的机制将这些补丁发布给内核用户。比起外面很多应用程序（免费的和付费的），内核的支持非常好。但是指责我们解决问题的能力时却遗漏了关键的一点：解决安全问题最终是一个打鼹鼠游戏。总是会出来更多的鼹鼠，其中有一些在攻击者发现并利用后很长时间我们都还不知道（所以没法使劲打下去）。尽管商业 Linux 已经非常努力地在将补丁传递给用户，这种问题还是会让我们的用户很受伤 - 只是这并不是故意的。
 
-The point that developers concerned about security have been trying to make for a while is that fixing bugs is not enough. We must instead realize that we will never fix them all and focus on making bugs harder to exploit. That means restricting access to information about the kernel, making it impossible for the kernel to execute code in user-space memory, instrumenting the kernel to detect integer overflows, and all the other things laid out in Kees Cook's Kernel Summit talk at the end of October. Many of these techniques are well understood and have been adopted by other operating systems; others will require innovation on our part. But, if we want to adequately defend our users from attackers, these changes need to be made.
+关键是只是解决问题并不够，一些关心安全性的开发者也已经开始尝试。我们必须认识到，问题永远都解不完，所以要让问题更难被发现和利用。意思就是限制访问内核信息，绝对不允许内核执行用户空间内存的指令，指示内核侦测整数溢出，以及 Kee Cook 在十月底内核峰会的讲话中所提出的其他所有事情。其中许多技术被其他操作系统深刻理解并采用了；它们的创新也有我们的功劳。但是，如果我们想充分保护我们的用户免受攻击，这些改变是必须要做的。
 
-Why hasn't the kernel adopted these technologies already? The Washington Post article puts the blame firmly on the development community, and on Linus Torvalds in particular. The culture of the kernel community prioritizes performance and functionality over security and is unwilling to make compromises if they are needed to improve the security of the kernel. There is some truth to this claim; the good news is that attitudes appear to be shifting as the scope of the problem becomes clear. Kees's talk was well received, and it clearly got developers thinking and talking about the issues.
+为什么内核还没有引入这些技术？华盛顿邮报的文章坚定地指责开发社区，特别是 Linus Torvalds。内核社区的传统就是相对安全性更侧重于性能和功能，在需要牺牲性能来改善内核安全性时并不愿意折中处理。这些指责一定程度上是对的；好的一面是，因为问题的范围变得清晰，态度看上去有点改善。Kee 的演讲都听进去了，而且很明显让开发者开始思考和讨论这些问题。
 
-The point that has been missed is that we do not just have a case of Linus fending off useful security patches. There simply are not many such patches circulating in the kernel community. In particular, the few developers who are working in this area have never made a serious attempt to get that work integrated upstream. Getting any large, intrusive patch set merged requires working with the kernel community, making the case for the changes, splitting the changes into reviewable pieces, dealing with review comments, and so on. It can be tiresome and frustrating, but it's how the kernel works, and it clearly results in a more generally useful, more maintainable kernel in the long run.
+而被忽略的一点是，并不仅仅是 Linus 在拒绝有用的安全补丁。而是就没有多少这种补丁在内核社区里流传。特别是，在这个领域工作的开发者就那么些人，而且从没有认真地尝试把自己的工作合并到上游。要合并任何大的侵入性补丁，需要和内核社区一起工作，为改动编写用例，将改动分割成方便审核的碎片，处理审核意见，等等。整个过程可能会有点无聊而且让人沮丧，但这却是内核维护的运作方式，而且很明显只有这样才能在长时间的开发中形成更有用更可维护的内核。 
 
-Almost nobody is doing that work to get new security technologies into the kernel. One might cite a "chilling effect" from the hostile reaction such patches can receive, but that is an inadequate answer: developers have managed to merge many changes over the years despite a difficult initial reaction. Few security developers are even trying.
+几乎没有人会走这个流程来将最新的安全技术引入内核。对于这类补丁可能收到的不利反应，有人觉得也许会导致“寒蝉效应”，但是这个说法并不充分：不管最初的反应有多麻烦，多年以来开发者已经合并了大量的改动。而少数安全开发者连试都没试过。
 
-Why aren't they trying? One fairly obvious answer is that almost nobody is being paid to try. Almost all of the work going into the kernel is done by paid developers and has been for many years. The areas that companies see fit to support get a lot of work and are well advanced in the kernel. The areas that companies think are not their problem are rather less so. The difficulties in getting support for realtime development are a clear case in point. Other areas, such as documentation, tend to languish as well. Security is clearly one of those areas. There are a lot of reasons why Linux lags behind in defensive security technologies, but one of the key ones is that the companies making money on Linux have not prioritized the development and integration of those technologies.
+他们为什么不愿意尝试？一个比较明显的答案是，几乎没有人会因此拿到报酬。几乎所有引入内核的工作都由付费开发者完成，而且已经持续多年。公司能看到利润的领域在内核里都有大量的工作以及很好的进展。而公司觉得和它们没关系的领域就不会这样了。为实时开发找到赞助支持的困难就是很明显的例子。其他领域，比如文档，也在慢慢萧条。安全性很明显也属于这类领域。可能有很多原因导致 Linux 落后于防御式安全技术，但是其中最关键的一条是，靠 Linux 赚钱的公司没有重视这些技术的开发和应用。
 
-There are signs that things might be changing a bit. More developers are showing interest in security-related issues, though commercial support for their work is still less than it should be. The reaction against security-related changes might be less knee-jerk negative than it used to be. Efforts like the Kernel Self Protection Project are starting to work on integrating existing security technologies into the kernel.
+有迹象显示局面已有所转变。越来越多的开发人员开始关注安全相关问题，尽管对他们工作的商业支持还仍然不够。对于安全相关的改变已经没有之前那样的下意识反应了。像内核自我保护项目这样，已经开始把现存的安全技术集成进入内核了。
 
-We have a long way to go, but, with some support and the right mindset, a lot of progress can be made in a short time. The kernel community can do amazing things when it sets its mind to it. With luck, the Washington Post article will help to provide the needed impetus for that sort of setting of mind. History suggests that we will eventually see this moment as a turning point, when we were finally embarrassed into doing work that has clearly needed doing for a while. Linux should not have a substandard security story for much longer.
+我们还有很长的路要走，但是，如果能有一些支持以及正确的思想，短期内能有很大的进展。内核社区在确定了自己的想法后可以做到很让人惊叹的事情。幸运的是，华盛顿邮报的文章将有助于提供形成这种想法的必要动力。在历史的角度上，我们很可能会把这次事件看作一个转折点，我们最终被倒逼着去完成之前很明确需要做的事情。Linux 不应该再继续讲述这个安全不合格的故事了。
 
 ---------------------------
 
@@ -35,7 +35,7 @@ via: https://lwn.net/Articles/663474/
 
 作者：Jonathan Corbet
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[zpl1025](https://github.com/zpl1025)
 
 校对：[校对者ID](https://github.com/校对者ID)
 
