@@ -1,3 +1,5 @@
+----translating----
+
 ownCloud Pi Device to Run on Snappy Ubuntu Core 16.04 LTS and Raspberry Pi 3
 ===============================================================================
 
