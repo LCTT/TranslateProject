@@ -1,28 +1,39 @@
 ynmlml translating 
 Getting to Know Linux File Permissions
 ==========================================
-
+初识Linux文件系统
+==========================================
 ![](http://www.linux.com/images/stories/66866/files_a.png)
 
 One of the most basic tasks in Linux is setting file permissions. Understanding how this is done should be considered a must-know, first step in your travels through the Linux ecosystem. As you might expect, such a fundamental issue within the operating environment hasn’t changed much over the years. In fact, the Linux file permission system is taken directly from the UNIX file permission (and even uses many of the same tools).
+在Linux中最基本的任务就是设置文件权限。理解如何实现是你进入LInux世界的第一步。如您所料，这一基本操作在类UNIX操作系统中大同小异。实际上，Linux文件权限系统就直接来取自UNIX文件权限（甚至使用许多相同的工具）。
 
 But, don’t think for a second that understanding file permissions is something you’ll wind up having to spend days and days studying...it’s actually quite simple. Let’s walk through what you need to know and how to put it all together.
+但不要以为在学习第二种文件权限的时候你需要再次一点一点的学起。事实上会很简单，让我们一起来看看你需要了解哪些内容以及如何使用它们。
 
 ## The Bits and Pieces
+##预备小知识
 
 The first thing you need to understand is what file permissions apply to. Effectively what you do is apply a permission to a group. When you break it down, the concept really is that simple. But what are the permissions and what are the groups?
+首先你要知道文件权限有什么用，有效的设置一个组的权限。当你将其分解，那这个概念就真的很简单了。那到底什么是权限什么是组呢。
 
 There are three types of permissions you can apply:
+你可以设置的3种权限：
 
 - read — gives the group permission to read the file (indicated with `r`)
+- 读 — 允许该组读文件（用`r`表示）
 
 - write — gives the group permission to edit the file (indicated with `w`)
+- 写 — 允许该组写文件（用`w`表示）
 
 - execute — gives the group permission to execute (run) the file (indicated with `x`)
+- 执行 — 允许该组执行(运行)文件（用`x`表示）
 
 To better explain how this is applied to a group, you could, for example, give a group permission to read and write to a file, but not execute the file. Or, you could give a group permission to read and execute a file, but not write to a file. You can even give a group full permission to read, write, and execute a file or strip a group of any access to a file by removing all permissions.
+为了更好的解释为何是应用于一个组，你可是尝试允许一个组读和写一个文件，但不能执行。或者你可以允许一个组读和执行一个文件，但不能写。甚至你可以允许一组有读、写、执行全部的权限，也可以删除全部权限。
 
 Now, what are the groups? There are four:
+那什么是分组呢，有以下4个：
 
 - user — the actual owner of the file
 
@@ -31,8 +42,12 @@ Now, what are the groups? There are four:
 - others — other users not in the file’s group
 
 - all — all users
-
+- user — 文件实际的拥有者
+- group — 用户所在的组
+- others — 用户组内的其他用户
+- all — 所有用户
 For the most part, you will only really ever bother with the first three groups. The all group is really only used as a shortcut (I’ll explain later).
+大多数情况，你只会对前3组进行操作，all这一组只是作为快捷方式（稍后我会解释）。
 
 So far so simple, right? Let’s layer on a bit of complexity.
 
