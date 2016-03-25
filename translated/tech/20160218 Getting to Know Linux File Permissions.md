@@ -152,7 +152,7 @@ Linux文件权限从早期到现在没有太大变化，而且很可能以后也
 via: http://www.linux.com/learn/tutorials/885268-getting-to-know-linux-file-permissions
 
 作者：[Jack Wallen][a]
-译者：[译者ID](https://github.com/ynmlml)
+译者：[ynmlml](https://github.com/ynmlml)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
