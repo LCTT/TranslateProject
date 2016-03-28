@@ -4,7 +4,7 @@
 
 如果你正好拥有全球第一支运行 Ubuntu 的手机并且希望将 **BQ Aquaris E4.5 自带的 Ubuntu 系统换成 Android **，那这篇文章能帮你点小忙。
 
-有一万种理由来解释为什么要将 Ubuntu 换成主流 Android OS。其中最主要的一个，就是这个系统本身仍然处于非常早期的阶段，针对的目标用户仍然是开发者和爱好者。不管你的理由是什么，要谢谢 bq 提供的工具，让我们能非常轻松地在 BQ Aquaris 上安装 Android OS。
+有一万种理由来解释为什么要将 Ubuntu 换成主流 Android OS。其中最主要的一个，就是这个系统本身仍然处于非常早期的阶段，针对的目标用户仍然是开发者和爱好者。不管你的理由是什么，要谢谢 BQ 提供的工具，让我们能非常轻松地在 BQ Aquaris 上安装 Android OS。
 
 下面让我们一起看下在 BQ Aquaris 上安装 Android 需要做哪些事情。
 
@@ -20,7 +20,7 @@
 
 #### 第一步：下载 Android 固件 ####
 
-首先是下载可以在 BQ Aquaris E4.5 上运行的 Android 固件。幸运的是我们可以在 bq 的技术支持网站找到。可以从下面的链接直接下载，差不多 650 MB：
+首先是下载可以在 BQ Aquaris E4.5 上运行的 Android 固件。幸运的是我们可以在 BQ 的技术支持网站找到。可以从下面的链接直接下载，差不多 650 MB：
 
 - [下载为 BQ Aquaris E4.5 制作的 Android][1]
 
@@ -28,21 +28,21 @@
 
 我建议去[ bq 的技术支持网站][2]下载最新的固件。
 
-下载完成后解压。在解压后的目录里，找到一个名字是 **MT6582_Android_scatter.txt** 的文件。后面将要用到它。
+下载完成后解压。在解压后的目录里，找到一个名字是 **MT6582\_Android\_scatter.txt** 的文件。后面将要用到它。
 
 #### 第二步：下载刷机工具 ####
 
-bq 已经提供了自己的刷机工具，Herramienta MTK Flash Tool，可以轻松地给设备安装 Andriod 或者 Ubuntu 系统。你可以从下面的链接下载工具：
+BQ 已经提供了自己的刷机工具，Herramienta MTK Flash Tool，可以轻松地给设备安装 Andriod 或者 Ubuntu 系统。你可以从下面的链接下载工具：
 
 - [下载 MTK Flash Tool][3]
 
-考虑到刷机工具在以后可能会升级，你总是可以从[bq 技术支持网站][4]上找到最新的版本。
+考虑到刷机工具在以后可能会升级，你总是可以从 [BQ 技术支持网站][4]上找到最新的版本。
 
 下载完后解压。之后应该可以在目录里找到一个叫 **flash_tool** 的可执行文件。我们稍后会用到。
 
 #### 第三步：移除冲突的软件包（可选） ####
 
-如果你正在用最新版本的 Ubuntu 或 基于 Ubuntu 的 Linux 发行版，稍后可能会碰到 “BROM ERROR : S_UNDEFINED_ERROR (1001)” 错误。
+如果你正在用最新版本的 Ubuntu 或 基于 Ubuntu 的 Linux 发行版，稍后可能会碰到 “BROM ERROR : S\_UNDEFINED\_ERROR (1001)” 错误。
 
 要避免这个错误，你需要卸载有冲突的软件包。可以使用下面的命令：
 
@@ -52,7 +52,7 @@ bq 已经提供了自己的刷机工具，Herramienta MTK Flash Tool，可以轻
 
     sudo service udev restart
 
-检查一下内核模块 cdc_acm　可能存在的边际效应，运行下面的命令：
+检查一下内核模块 cdc_acm 可能存在的副作用，运行下面的命令：
 
     lsmod | grep cdc_acm
 
@@ -76,7 +76,7 @@ bq 已经提供了自己的刷机工具，Herramienta MTK Flash Tool，可以轻
 
 ![Replace Ubuntu with Android](http://itsfoss.itsfoss.netdna-cdn.com/wp-content/uploads/2015/11/Install-Android-bq-aquaris-Ubuntu-1.jpeg)
 
-还记得之前第一步里提到的 **MT6582_Android_scatter.txt** 文件吗？这个文本文件就在你第一步中下载的 Android 固件解压后的目录里。点击 Scatter-loading（上图中）然后选中 MT6582_Android_scatter.txt 文件。
+还记得之前第一步里提到的 **MT6582\_Android\_scatter.txt** 文件吗？这个文本文件就在你第一步中下载的 Android 固件解压后的目录里。点击 Scatter-loading（上图中）然后选中 MT6582\_Android\_scatter.txt 文件。
 
 之后，你将看到类似下面图片里的一些绿色线条：
 
@@ -104,7 +104,7 @@ bq 已经提供了自己的刷机工具，Herramienta MTK Flash Tool，可以轻
 
 ### 总结 ###
 
-要感谢厂商提供的工具，让我们可以轻松地 **在 bq Ubuntu 手机上刷 Android**。当然，你可以使用相同的步骤将 Android 替换回 Ubuntu。只是下载的时候选 Ubuntu 固件而不是 Android。
+要感谢厂商提供的工具，让我们可以轻松地 **在  BQ Ubuntu 手机上刷 Android**。当然，你可以使用相同的步骤将 Android 替换回 Ubuntu。只是下载的时候选 Ubuntu 固件而不是 Android。
 
 希望这篇文章可以帮你将你的 bq 手机上的 Ubuntu 刷成 Android。如果有什么问题或建议，可以在下面留言区里讨论。
 
@@ -114,7 +114,7 @@ via: http://itsfoss.com/install-android-ubuntu-phone/
 
 作者：[Abhishek][a]
 译者：[zpl1025](https://github.com/zpl1025)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
