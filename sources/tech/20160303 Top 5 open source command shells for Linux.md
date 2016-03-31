@@ -1,3 +1,4 @@
+翻译中；by ![zky001]
 Top 5 open source command shells for Linux
 ===============================================
 
