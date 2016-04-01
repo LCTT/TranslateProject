@@ -1,3 +1,5 @@
+Translating---geekpi
+
 NXP unveils a tiny 64-bit ARM processor for the Internet of Things
 =========================================================================
 
@@ -35,3 +37,5 @@ via: http://venturebeat.com/2016/02/21/nxp-unveils-a-small-and-tiny-64-bit-arm-p
 [3]:http://venturebeat.com/tag/nxp/
 [4]:http://venturebeat.com/tag/nxp-semiconductors/
 [5]:http://www.nxp.com/
+
+
