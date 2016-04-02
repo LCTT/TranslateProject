@@ -1,36 +1,34 @@
-alim0x traslating
-
-The history of Android
+安卓编年史
 ================================================================================
-![The slick new Google Play Music app, which changed from Tron to a perfect match for the Play Store.](http://cdn.arstechnica.net/wp-content/uploads/2014/03/Goooogleplaymusic.jpg)
-The slick new Google Play Music app, which changed from Tron to a perfect match for the Play Store.
-Photo by Ron Amadeo
+![漂亮的新 Google Play Music 应用，从电子风格转向完美契合 Play 商店的风格。](http://cdn.arstechnica.net/wp-content/uploads/2014/03/Goooogleplaymusic.jpg)
+漂亮的新 Google Play Music 应用，从电子风格转向完美契合 Play 商店的风格。
+Ron Amadeo 供图
 
-Another app update pushed out at I/O was a new Google Music app. The app was completely redesigned, finally doing away with the blue-on-blue design introduced in Honeycomb. Play Music's design was unified with the new Play Store released a few months earlier, with a responsive white card layout. Music was also one of the first major apps to take advantage of the new navigation drawer style. Along with the new app, Google launched Google Play Music All Access, an all-you-can-eat subscription service for $10 a month. Google Music now had a subscription plan, à la carte purchasing, and a cloud music locker. This version also introduced "Instant Mix," a mode where Google would cloud-compute a playlist of similar songs.
+在 I/O 大会推出的另一个应用更新是 Google Music 应用。音乐应用经过了完全的重新设计，最终摆脱了蜂巢中引入的蓝底蓝色调的设计。Play Music 的设计和几个月前发布的 Play 商店一致，有着响应式的白色卡片布局。Music 同时还是最早采用新抽屉导航样式的主要应用之一。谷歌还随新应用发布了 Google Play Music All Access，每月 10 美元的包月音乐订阅服务。Google Music 现在拥有订阅计划，音乐购买，以及云端音乐存储空间。这个版本还引入了“Instant Mix”，谷歌会在云端给相似的歌曲计算出一份歌单。
 
-![A game showing support for Google Play Games. This lineup shows the Play Store game feature descriptions, the permissions box triggered by signing into the game, a Play Games notification, and the achievements screen.](http://cdn.arstechnica.net/wp-content/uploads/2014/03/gooooogleplaygames.jpg)
-A game showing support for Google Play Games. This lineup shows the Play Store game feature descriptions, the permissions box triggered by signing into the game, a Play Games notification, and the achievements screen.
-Photo by Ron Amadeo
+![一个展示对 Google Play Games 支持的游戏。上面是 Play 商店游戏特性描述，登陆游戏触发的权限对话框，Play Games 通知，以及成就界面。](http://cdn.arstechnica.net/wp-content/uploads/2014/03/gooooogleplaygames.jpg)
+一个展示对 Google Play Games 支持的游戏。上面是 Play 商店游戏特性描述，登陆游戏触发的权限对话框，Play Games 通知，以及成就界面。
+Ron Amadeo 供图
 
-Google also introduced "Google Play Games," a back-end service that developers could plug into their games. The service was basically an Android version of Xbox Live or Apple's Game Center. Developers could build Play Games support into their game, which would easily let them integrate achievements, leaderboards, multiplayer, matchmaking, user accounts, and cloud saves by using Google's back-end services.
+谷歌还引入了“Google Play Games”，一个后端服务，开发者可以将其附加到游戏中。这项服务简单说就是安卓版的 Xbox Live 或苹果的 Game Center。开发者可以给游戏添加 Play Games 支持，这样就能通过使用谷歌的后端服务，更简单地集成成就，多人游戏，游戏匹配，用户账户以及云端存档到游戏中。
 
-Play Games was the start of Google's big push into gaming. Just like standalone GPS units, flip phones, and MP3 players, smartphone makers were hoping standalone gaming devices would be turned into nothing more than a smartphone feature bullet point. Why buy a Nintendo DS or PS Vita when you had a smartphone with you? An easy-to-use multiplayer service would be a big part of this, and we've still yet to see the final consequence of this move. Today, Google and Apple are both rumored to be planning living room gaming devices.
+Play Games 是谷歌在游戏方面推进的开始。就像单独的 GPS 设备，翻盖手机，以及 MP3 播放器，智能手机的生产者希望游戏设备能够变成智能手机的一个功能点。当你有部智能手机的时候你为什么还有买个任天堂 DS 或 PS Vita 呢？一个易于使用的多人游戏服务是这项计划的重要部分，我们仍能看到这个决定最后的成果。在今天，坊间都在传言谷歌和苹果有关于客厅游戏设备的计划。
 
-![Google Keep, Google's first note taking service since Google Notebook.](http://cdn.arstechnica.net/wp-content/uploads/2014/03/goooglekeep.jpg)
-Google Keep, Google's first note taking service since Google Notebook.
-Photo by Ron Amadeo
+![Google Keep，谷歌自 Google Notebook 以来第一个笔记服务。](http://cdn.arstechnica.net/wp-content/uploads/2014/03/goooglekeep.jpg)
+Google Keep，谷歌自 Google Notebook 以来第一个笔记服务。
+Ron Amadeo 供图
 
-It was clear some products were developed in time for presentation at Google I/O, [but the three-and-a-half hour keynote][1] was already so massive, some things were cut from being announced. Once the smoke cleared three days after Google I/O, Google introduced Google Keep, a note taking app for Android and the Web. Keep was a fairly straightforward affair, applying the responsive Google Now-style design to a note taking app. Users could change the size of the cards from a multi-column layout to a single column view. Notes could consist of plain text, checklists, voice note with automatic transcription, or pictures. Note cards could be dragged around and rearranged on the main screen, and you could even assign a color to a note.
+毫无疑问一些产品为了赶上 Google I/O 大会的发布准时开发完成了，[但是三个半小时内的主题][1]已经够多了，一些产品在大会的发布上忽略了。Google I/O 大会的三天后一切都清楚了，谷歌带来了 Google Keep，一个用于安卓和在线的笔记应用。Keep 看起来很简单，就是一个用上了响应式 Google-Now 风格设计的笔记应用。用户可以改变卡片的尺寸，从多栏布局改为单列视图。笔记可以由文本，清单，自动转文本的语音或者图片组成。笔记卡片可以拖动并在主界面重新组织，你甚至可以给笔记换个颜色。
 
-![Gmail 4.5, which switched to the new navigation drawer design and merged the action bars, thanks to some clever button elimination.](http://cdn.arstechnica.net/wp-content/uploads/2014/05/gmail.png)
-Gmail 4.5, which switched to the new navigation drawer design and merged the action bars, thanks to some clever button elimination.
-Photo by Ron Amadeo
+![Gmail 4.5，换上了新的导航抽屉设计，去掉了几个按钮并将操作栏合并到了抽屉里。](http://cdn.arstechnica.net/wp-content/uploads/2014/05/gmail.png)
+Gmail 4.5，换上了新的导航抽屉设计，去掉了几个按钮并将操作栏合并到了抽屉里。
+Ron Amadeo 供图
 
-After I/O, not much was safe from Google's out-of-cycle updating. In June 2013, Google released a redesigned version of Gmail. The headline feature of the new design was the new navigation drawer interface that was introduced a month earlier at Google I/O. The most eye catching change was the addition of Google+ profile pictures instead of checkboxes. While the checkboxes were visibly removed, they were still there, just tap on a picture.
+在 I/O 大会之后，没有哪些应用不在谷歌的周期外更新里。2013 年 6 月，谷歌发布了新版设计的 Gmail。最显眼的变化就是一个月前 Google I/O 大会引入的新导航抽屉界面。最吸引眼球的变化是用上了 Google+ 资料图片来取代复选框。虽然复选框看起来被去掉了，它们其实还在那，点击邮件左边的图片就是了。
 
-![The new Google Maps, which switched to an all-white Google Now-style theme.](http://cdn.arstechnica.net/wp-content/uploads/2014/03/newmaps11.png.)
-The new Google Maps, which switched to an all-white Google Now-style theme.
-Photo by Ron Amadeo
+![新谷歌地图，换上了全白的 Google-Now 风格主题。](http://cdn.arstechnica.net/wp-content/uploads/2014/03/newmaps11.png)
+新谷歌地图，换上了全白的 Google-Now 风格主题。
+Ron Amadeo 供图
 
 One month later, Google released a completely overhauled version of Google Maps to the Play Store. It was the first ground-up redesign of Google Maps since Ice Cream Sandwich. The new version fully adopted the Google Now white card aesthetic, and it greatly reduced the amount of stuff on the screen. The new Google Maps seemed to have a design mandate to always show a map on the screen somewhere, as you’ll be hard pressed to find something other than the settings that fully covers the map.
 
@@ -38,7 +36,7 @@ This version of Google Maps seemed to live in its own little design world. The w
 
 ![The new Google Maps cut a lot of fat and displayed more information on a single screen.](http://cdn.arstechnica.net/wp-content/uploads/2014/03/newmaps21.png)
 The new Google Maps cut a lot of fat and displayed more information on a single screen.
-Photo by Ron Amadeo
+Ron Amadeo 供图
 
 The left picture shows what popped up when you tapped on the search bar (along with the keyboard, which had been closed). In the past, Google would show an empty page below a blank search bar, but in Maps, Google used that space to link to the new “Local" page. The “blank" search results displayed links to common, browsable results like restaurant listings, gas stations, and attractions. At the bottom of the results page was a list of nearby results from your search history and an option to manually cache parts of the map.
 
@@ -52,7 +50,7 @@ Android 4.3 would have been an incredible update if Google had done the traditio
 
 ![Android Wear plugging into Android 4.3's Notification access screen.](http://cdn.arstechnica.net/wp-content/uploads/2014/03/2014-03-28-12.231.jpg)
 Android Wear plugging into Android 4.3's Notification access screen.
-Photo by Ron Amadeo
+Ron Amadeo 供图
 
 Google made no qualms about the low importance of 4.3, calling the newest release "Jelly Bean" (the third one in a row). Android 4.3's feature list read like a laundry list of things Google couldn't update from the Play Store or through Google Play Services, mostly consisting of low-level framework changes for developers.
 
