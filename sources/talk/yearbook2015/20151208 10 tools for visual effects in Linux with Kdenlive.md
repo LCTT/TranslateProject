@@ -1,5 +1,3 @@
-translating by xiaoyu33
-
 10 tools for visual effects in Linux with Kdenlive
 ================================================================================
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life-uploads/kdenlivetoolssummary.png)
