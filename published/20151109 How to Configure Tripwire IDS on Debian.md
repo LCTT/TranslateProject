@@ -1,39 +1,38 @@
-如何在Debian中配置Tripewire IDS
+如何在 Debian 中配置 Tripewire IDS
 ================================================================================
-本文是一篇关于Debian中安装和配置Tripewire的文章。它是Linux环境下基于主机的入侵检测系统（IDS）。tripwire的高级功能有检测并报告任何Linux中未授权的更改（文件和目录）。tripewire安装之后，会先创建一个基本的数据库，tripewire监控并检测新文件的创建修改和谁修改了它等等。如果修改过是合法的，你可以接受修改并更新tripwire的数据库。
+本文是一篇关于 Debian 中安装和配置 Tripewire 的文章。它是 Linux 环境下基于主机的入侵检测系统（IDS）。tripwire 的高级功能有检测并报告任何 Linux 中未授权的（文件和目录）的更改。tripewire 安装之后，会先创建一个基本的数据库，tripewire 监控并检测新文件的创建修改和谁修改了它等等。如果修改是合法的，你可以接受修改并更新 tripwire 的数据库。
 
 ### 安装和配置 ###
 
-tripwire在Debian VM中的安装如下。
+tripwire 在 Debian VM 中的安装如下。
 
     # apt-get install tripwire
 
 ![installation](http://blog.linoxide.com/wp-content/uploads/2015/11/installation.png)
 
-安装中，tripwire会有下面的配置提示。
+安装中，tripwire 会有下面的配置提示。
 
 #### 站点密钥创建 ####
 
-tripwire需要一个站点口令来加密tripwire的配置文件tw.cfg和策略文件tw.pol。tripewire使用指定的密码加密两个文件。一个tripewire实例必须指定站点口令。
-
+tripwire 需要一个站点口令（site passphrase）来加密 tripwire 的配置文件 tw.cfg 和策略文件 tw.pol。tripewire 使用指定的密码加密两个文件。一个 tripewire 实例必须指定站点口令。
 
 ![site key1](http://blog.linoxide.com/wp-content/uploads/2015/11/site-key1.png)
 
 #### 本地密钥口令 ####
 
-本地口令用来保护tripwire数据库和报告文件。本地密钥用于阻止非授权的tripewire数据库修改。
+本地口令用来保护 tripwire 数据库和报告文件。本地密钥用于阻止非授权的 tripewire 数据库修改。
 
 ![local key1](http://blog.linoxide.com/wp-content/uploads/2015/11/local-key1.png)
 
-#### Tripwire配置路径 ####
+#### tripwire 配置路径 ####
 
-tripewire配置存储在/etc/tripwire/twcfg.txt。它用于生成加密的配置文件tw.cfg。
+tripewire 配置存储在 /etc/tripwire/twcfg.txt。它用于生成加密的配置文件 tw.cfg。
 
 ![configuration file](http://blog.linoxide.com/wp-content/uploads/2015/11/configuration-file.png)
 
-**Tripwire策略路径**
+**tripwire 策略路径**
 
-tripwire在/etc/tripwire/twpol.txt中保存策略文件。它用于生成加密的策略文件tw.pol。
+tripwire 在 /etc/tripwire/twpol.txt 中保存策略文件。它用于生成加密的策略文件 tw.pol。
 
 ![tripwire policy](http://blog.linoxide.com/wp-content/uploads/2015/11/tripwire-policy.png)
 
@@ -41,9 +40,9 @@ tripwire在/etc/tripwire/twpol.txt中保存策略文件。它用于生成加密�
 
 ![installed tripewire1](http://blog.linoxide.com/wp-content/uploads/2015/11/installed-tripewire1.png)
 
-#### Tripwire配置文件 (twcfg.txt) ####
+#### tripwire 配置文件 (twcfg.txt) ####
 
-tripewire配置文件（twcfg.txt）细节如下图所示。加密策略文件（tw.pol）,站点密钥（site.key）和本地密钥（hostname-local.key）如下所示。
+tripewire 配置文件（twcfg.txt）细节如下图所示。加密策略文件（tw.pol）、站点密钥（site.key）和本地密钥（hostname-local.key）在后面展示。
 
     ROOT         =/usr/sbin
     
@@ -79,9 +78,9 @@ tripewire配置文件（twcfg.txt）细节如下图所示。加密策略文件�
     
     TEMPDIRECTORY =/tmp
 
-#### Tripwire策略配置 ####
+#### tripwire 策略配置 ####
 
-在生成基础数据库之前先配置tripwire配置。有必要经用一些策略如/dev、 /proc 、/root/mail等。详细的twpol.txt策略文件如下所示。
+在生成基础数据库之前先配置 tripwire 配置。有必要经用一些策略如 /dev、 /proc 、/root/mail 等。详细的 twpol.txt 策略文件如下所示。
 
     @@section GLOBAL
     TWBIN = /usr/sbin;
@@ -121,10 +120,10 @@ tripewire配置文件（twcfg.txt）细节如下图所示。加密策略文件�
     # vulnerability
     
     #
-    # Tripwire Binaries
+    # tripwire Binaries
     #
     (
-    rulename = "Tripwire Binaries",
+    rulename = "tripwire Binaries",
     severity = $(SIG_HI)
     )
     {
@@ -237,9 +236,9 @@ tripewire配置文件（twcfg.txt）细节如下图所示。加密策略文件�
     #/proc        -> $(Device) ;
     }
 
-#### Tripwire 报告 ####
+#### tripwire 报告 ####
 
-**tripwire –check** 命令检查twpol.txt文件并基于此文件生成tripwire报告如下。如果twpol.txt中有任何错误，tripwire不会生成报告。
+**tripwire-check** 命令检查 twpol.txt 文件并基于此文件生成 tripwire 报告如下。如果 twpol.txt 中有任何错误，tripwire 不会生成报告。
 
 ![tripwire report](http://blog.linoxide.com/wp-content/uploads/2015/11/tripwire-report.png)
 
@@ -255,7 +254,7 @@ tripewire配置文件（twcfg.txt）细节如下图所示。加密策略文件�
     
     Wrote report file: /var/lib/tripwire/report/VMdebian-20151024-122322.twr
     
-    Open Source Tripwire(R) 2.4.2.2 Integrity Check Report
+    Open Source tripwire(R) 2.4.2.2 Integrity Check Report
     
     Report generated by:         root
     
@@ -299,13 +298,13 @@ tripewire配置文件（twcfg.txt）细节如下图所示。加密策略文件�
     
     Other binaries                 66               0       0       0      
     
-    Tripwire Binaries               100               0       0       0      
+    tripwire Binaries               100               0       0       0      
     
     Other libraries                 66               0       0       0      
     
     Root file-system executables   100               0       0       0      
     
-    Tripwire Data Files             100               0       0       0      
+    tripwire Data Files             100               0       0       0      
     
     System boot changes             100               0       0       0      
     
@@ -351,9 +350,9 @@ tripewire配置文件（twcfg.txt）细节如下图所示。加密策略文件�
     
     *** End of report ***
     
-    Open Source Tripwire 2.4 Portions copyright 2000 Tripwire, Inc. Tripwire is a registered
+    Open Source tripwire 2.4 Portions copyright 2000 tripwire, Inc. tripwire is a registered
     
-    trademark of Tripwire, Inc. This software comes with ABSOLUTELY NO WARRANTY;
+    trademark of tripwire, Inc. This software comes with ABSOLUTELY NO WARRANTY;
     
     for details use --version. This is free software which may be redistributed
     
@@ -365,7 +364,7 @@ tripewire配置文件（twcfg.txt）细节如下图所示。加密策略文件�
 
 ### 总结 ###
 
-本篇中，我们学习安装配置开源入侵检测软件tripwire。首先生成基础数据库并通过比较检测出任何改动（文件/文件夹）。然而，tripwire并不是实时监测的IDS。
+本篇中，我们学习安装配置开源入侵检测软件 tripwire。首先生成基础数据库并通过比较检测出任何改动（文件/文件夹）。然而，tripwire 并不是实时监测的 IDS。
 
 --------------------------------------------------------------------------------
 
@@ -373,7 +372,7 @@ via: http://linoxide.com/security/configure-tripwire-ids-debian/
 
 作者：[nido][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
