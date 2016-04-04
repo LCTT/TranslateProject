@@ -1,3 +1,5 @@
+alim0x translating
+
 The history of Android
 ================================================================================
 ![The LG-made Nexus 5, the launch device for KitKat.](http://cdn.arstechnica.net/wp-content/uploads/2014/03/nexus56.jpg)
