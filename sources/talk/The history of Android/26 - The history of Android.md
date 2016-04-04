@@ -1,3 +1,5 @@
+alim0x translating
+
 The history of Android
 ================================================================================
 ![The new "add to home screen" interface was definitely inspired by Honeycomb.](http://cdn.arstechnica.net/wp-content/uploads/2014/03/homesetupthrowback.png)
