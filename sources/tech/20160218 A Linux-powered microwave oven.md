@@ -1,3 +1,4 @@
+translating by yuba0604
 A Linux-powered microwave oven
 ================================================================================
 
