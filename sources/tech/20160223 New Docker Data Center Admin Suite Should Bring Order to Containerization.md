@@ -1,3 +1,5 @@
+translating---geekpi
+
 New Docker Data Center Admin Suite Should Bring Order to Containerization
 ===============================================================================
 
@@ -47,3 +49,5 @@ via: http://linoxide.com/linux-how-to/calico-virtual-private-networking-docker/
 [a]:http://techcrunch.com/author/ron-miller/
 [1]: https://www.docker.com/
 [2]: http://techcrunch.com/2014/08/04/docker-sells-dotcloud-to-cloudcontrol-to-focus-on-core-container-business/
+
+
