@@ -1,4 +1,3 @@
-bioIkke 翻译中
 7 Steps to Start Your Linux SysAdmin Career
 ===============================================
 
