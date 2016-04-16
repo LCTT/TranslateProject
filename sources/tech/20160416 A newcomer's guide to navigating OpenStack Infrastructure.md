@@ -56,6 +56,17 @@ New contributors to OpenStack are welcome, but having a road map for navigating 
 *Paul, Elizabeth*, and Christopher will be [speaking at OpenStack Summit][18] in Austin on Monday, April 25, starting at 11:15am.
 
 
+------------------------------------------------------------------------------
+
+via: https://opensource.com/business/16/4/interview-openstack-infrastructure-beginners
+
+作者：[linux.com][a]
+译者：[译者ID](https://github.com/译者ID)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
+
+[a]: http://rikkiendsley.com/
 [1]: https://twitter.com/pabelanger
 [2]: https://twitter.com/pleia2
 [3]: https://twitter.com/docaedo
