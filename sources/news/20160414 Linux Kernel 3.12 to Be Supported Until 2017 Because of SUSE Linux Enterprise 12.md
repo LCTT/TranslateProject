@@ -1,3 +1,5 @@
+alim0x translating
+
 Linux Kernel 3.12 to Be Supported Until 2017 Because of SUSE Linux Enterprise 12
 ==================================================================================
 
