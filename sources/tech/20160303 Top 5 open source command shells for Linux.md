@@ -1,4 +1,4 @@
-翻译中；by ![zky001]
+翻译中；by ping
 Top 5 open source command shells for Linux
 ===============================================
 
