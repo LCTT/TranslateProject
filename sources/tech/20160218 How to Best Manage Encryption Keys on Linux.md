@@ -1,4 +1,3 @@
-[Translating by cposture]
 How to Best Manage Encryption Keys on Linux
 =============================================
 
