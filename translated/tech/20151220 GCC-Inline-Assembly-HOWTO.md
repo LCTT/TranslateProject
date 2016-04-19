@@ -1,4 +1,3 @@
-【Translating by cposture 2016-03-01】
 * * *
 
 #  GCC 内联汇编 HOWTO
@@ -422,11 +421,11 @@ C 表达式用作 "asm" 内的汇编指令操作数。作为第一双引号内�
 
 * * *
 
-## 7. Some Useful Recipes.
+## 7. 一些实用的诀窍
 
-Now we have covered the basic theory about GCC inline assembly, now we shall concentrate on some simple examples. It is always handy to write inline asm functions as MACRO’s. We can see many asm functions in the kernel code. (/usr/src/linux/include/asm/*.h).
+现在我们已经介绍了关于 GCC 内联汇编的基础理论，现在我们将专注于一些简单的例子。将内联汇编函数写成宏的形式总是非常方便的。我们可以在内核代码里看到许多汇编函数。（usr/src/linux/include/asm/*.h）。
 
-1.  First we start with a simple example. We’ll write a program to add two numbers.
+1. 首先我们从一个简单的例子入手。我们将写一个两个数相加的程序。
 
     > `
     > 
@@ -448,7 +447,7 @@ Now we have covered the basic theory about GCC inline assembly, now we shall con
     > 
     > `
 
-    Here we insist GCC to store foo in %eax, bar in %ebx and we also want the result in %eax. The ’=’ sign shows that it is an output register. Now we can add an integer to a variable in some other way.
+    这里我们要求 GCC 将 foo 存放于 %eax，将 bar 存放于 %ebx，同时我们也想要在 %eax 中存放结果。'=' 符号表示它是一个输出寄存器。现在我们可以以其他方式将一个整数加到一个变量。
 
     > `
     > 
@@ -459,7 +458,7 @@ Now we have covered the basic theory about GCC inline assembly, now we shall con
     >                       "   addl %1,%0 ;\n"
     >                       : "=m"  (my_var)
     >                       : "ir"  (my_int), "m" (my_var)
-    >                       :                                 /* no clobber-list */
+    >                       :                                 /* 无修饰寄存器列表 */
     >                       );
     > </pre>
     > 
@@ -467,9 +466,9 @@ Now we have covered the basic theory about GCC inline assembly, now we shall con
     > 
     > `
 
-    This is an atomic addition. We can remove the instruction ’lock’ to remove the atomicity. In the output field, "=m" says that my_var is an output and it is in memory. Similarly, "ir" says that, my_int is an integer and should reside in some register (recall the table we saw above). No registers are in the clobber list.
+    这是一个原子加法。为了移除原子性，我们可以移除指令 'lock'。在输出域中，"=m" 表明 my_var 是一个输出且位于内存。类似地，"ir" 表明 my_int 是一个整型，并应该存在于其他寄存器（回想我们上面看到的表格）。没有寄存器位于修饰寄存器列表中。
 
-2.  Now we’ll perform some action on some registers/variables and compare the value.
+2.  现在我们将在一些寄存器/变量上展示一些操作，并比较值。
 
     > `
     > 
@@ -486,13 +485,13 @@ Now we have covered the basic theory about GCC inline assembly, now we shall con
     > 
     > `
 
-    Here, the value of my_var is decremented by one and if the resulting value is `0` then, the variable cond is set. We can add atomicity by adding an instruction "lock;\n\t" as the first instruction in assembler template.
+    这里，my_var 的值减 1 ，并且如果结果的值为 0，则变量 cond 置 1。我们可以通过添加指令 "lock;\n\t" 作为汇编模板的第一条指令来添加原子性。
 
-    In a similar way we can use "incl %0" instead of "decl %0", so as to increment my_var.
+    以类似的方式，为了增加 my_var，我们可以使用 "incl %0" 而不是 "decl %0"。
 
-    Points to note here are that (i) my_var is a variable residing in memory. (ii) cond is in any of the registers eax, ebx, ecx and edx. The constraint "=q" guarantees it. (iii) And we can see that memory is there in the clobber list. ie, the code is changing the contents of memory.
+    这里需要注意的点为（i）my_var 是一个存储于内存的变量。（ii）cond 位于任何一个寄存器 eax、ebx、ecx、edx。约束 "=q" 保证这一点。（iii）同时我们可以看到 memory 位于修饰寄存器列表中。也就是说，代码将改变内存中的内容。
 
-3.  How to set/clear a bit in a register? As next recipe, we are going to see it.
+3.  如何置1或清0寄存器中的一个比特位。作为下一个诀窍，我们将会看到它。
 
     > `
     > 
@@ -509,9 +508,9 @@ Now we have covered the basic theory about GCC inline assembly, now we shall con
     > 
     > `
 
-    Here, the bit at the position ’pos’ of variable at ADDR ( a memory variable ) is set to `1` We can use ’btrl’ for ’btsl’ to clear the bit. The constraint "Ir" of pos says that, pos is in a register, and it’s value ranges from 0-31 (x86 dependant constraint). ie, we can set/clear any bit from 0th to 31st of the variable at ADDR. As the condition codes will be changed, we are adding "cc" to clobberlist.
+    这里，ADDR 变量（一个内存变量）的 'pos' 位置上的比特被设置为 1。我们可以使用 'btrl' 来清楚由 'btsl' 设置的比特位。pos 的约束 "Ir" 表明 pos 位于寄存器并且它的值为 0-31（x86 相关约束）。也就是说，我们可以设置/清除 ADDR 变量上第 0 到 31 位的任一比特位。因为条件码会被改变，所以我们将 "cc" 添加进修饰寄存器列表。
 
-4.  Now we look at some more complicated but useful function. String copy.
+4.  现在我们看看一些更为复杂而有用的函数。字符串拷贝。
 
     > `
     > 
@@ -535,9 +534,9 @@ Now we have covered the basic theory about GCC inline assembly, now we shall con
     > 
     > `
 
-    The source address is stored in esi, destination in edi, and then starts the copy, when we reach at **0**, copying is complete. Constraints "&S", "&D", "&a" say that the registers esi, edi and eax are early clobber registers, ie, their contents will change before the completion of the function. Here also it’s clear that why memory is in clobberlist.
+    源地址存放于 esi，目标地址存放于 edi，同时开始拷贝，当我们到达 **0** 时，拷贝完成。约束 "&S"、"&D"、"&a" 表明寄存器 esi、edi和 eax 早期的修饰寄存器，也就是说，它们的内容在函数完成前会被改变。这里很明显可以知道为什么 "memory" 会放在修饰寄存器列表。
 
-    We can see a similar function which moves a block of double words. Notice that the function is declared as a macro.
+    我们可以看到一个类似的函数，它能移动双字块数据。注意函数被声明为一个宏。
 
     > `
     > 
@@ -558,9 +557,9 @@ Now we have covered the basic theory about GCC inline assembly, now we shall con
     > 
     > `
 
-    Here we have no outputs, so the changes that happen to the contents of the registers ecx, esi and edi are side effects of the block movement. So we have to add them to the clobber list.
+    这里我们没有输出，所以寄存器 ecx、esi和 edi 的内容发生改变，这是块移动的副作用。因此我们必须将它们添加进修饰寄存器列表。
 
-5.  In Linux, system calls are implemented using GCC inline assembly. Let us look how a system call is implemented. All the system calls are written as macros (linux/unistd.h). For example, a system call with three arguments is defined as a macro as shown below.
+5.  在 Linux 中，系统调用使用 GCC 内联汇编实现。让我们看看如何实现一个系统调用。所有的系统调用被写成宏（linux/unistd.h）。例如，带有三个参数的系统调用被定义为如下所示的宏。
 
     > `
     > 
@@ -581,10 +580,10 @@ Now we have covered the basic theory about GCC inline assembly, now we shall con
     > 
     > `
 
-    Whenever a system call with three arguments is made, the macro shown above is used to make the call. The syscall number is placed in eax, then each parameters in ebx, ecx, edx. And finally "int 0x80" is the instruction which makes the system call work. The return value can be collected from eax.
+    无论何时调用带有三个参数的系统调用，以上展示的宏用于执行调用。系统调用号位于 eax 中，每个参数位于 ebx、ecx、edx 中。最后 "int 0x80" 是一条用于执行系统调用的指令。返回值被存储于 eax 中。
 
-    Every system calls are implemented in a similar way. Exit is a single parameter syscall and let’s see how it’s code will look like. It is as shown below.
-
+    每个系统调用都以类似的方式实现。Exit 是一个单一参数的系统调用，让我们看看它的代码看起来会是怎样。它如下所示。
+    
     > `
     > 
     > * * *
@@ -601,23 +600,23 @@ Now we have covered the basic theory about GCC inline assembly, now we shall con
     > 
     > `
 
-    The number of exit is "1" and here, it’s parameter is 0\. So we arrange eax to contain 1 and ebx to contain 0 and by `int $0x80`, the `exit(0)` is executed. This is how exit works.
+    Exit 的系统调用号是 1 同时它的参数是 0。因此我们分配 eax 包含 1，ebx 包含 0，同时通过 `int $0x80` 执行 `exit(0)`。这就是 exit 的工作原理。
 
 * * *
 
-## 8. Concluding Remarks.
+## 8. 结束语
 
-This document has gone through the basics of GCC Inline Assembly. Once you have understood the basic concept it is not difficult to take steps by your own. We saw some examples which are helpful in understanding the frequently used features of GCC Inline Assembly.
+这篇文档已经将 GCC 内联汇编过了一遍。一旦你理解了基本概念，你便不难采取自己的行动。我们看了许多例子，它们有助于理解 GCC 内联汇编的常用特性。
 
-GCC Inlining is a vast subject and this article is by no means complete. More details about the syntax’s we discussed about is available in the official documentation for GNU Assembler. Similarly, for a complete list of the constraints refer to the official documentation of GCC.
+GCC 内联是一个极大的主题，这篇文章是不完整的。更多关于我们讨论过的语法细节可以在 GNU 汇编器的官方文档上获取。类似地，对于一个完整的约束列表，可以参考 GCC 的官方文档。
 
-And of-course, the Linux kernel use GCC Inline in a large scale. So we can find many examples of various kinds in the kernel sources. They can help us a lot.
+当然，Linux 内核 大规模地使用 GCC 内联。因此我们可以在内核源码中发现许多各种各样的例子。它们可以帮助我们很多。
 
-If you have found any glaring typos, or outdated info in this document, please let us know.
+如果你发现任何的错别字，或者本文中的信息已经过时，请告诉我们。
 
 * * *
 
-## 9. References.
+## 9. 参考
 
 1.  [Brennan’s Guide to Inline Assembly](http://www.delorie.com/djgpp/doc/brennan/brennan_att_inline_djgpp.html)
 2.  [Using Assembly Language in Linux](http://linuxassembly.org/articles/linasm.html)
@@ -628,6 +627,6 @@ If you have found any glaring typos, or outdated info in this document, please l
 * * *
 via: http://www.ibiblio.org/gferg/ldp/GCC-Inline-Assembly-HOWTO.html
 
-  作者：[Sandeep.S](mailto:busybox@sancharnet.in) 译者：[](https://github.com/) 校对：[]()
+  作者：[Sandeep.S](mailto:busybox@sancharnet.in) 译者：[cposture](https://github.com/cposture) 校对：[]()
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
