@@ -1,6 +1,12 @@
+Transate by Senepy
 Getting Started to Calico Virtual Private Networking on Docker
+在Docker上开始使用Calico虚拟专用网络
 ================================================================================
-Calico is a free and open source software for virtual networking in data centers. It is a pure Layer 3 approach to highly scalable datacenter for cloud virtual networking. It seamlessly integrates with cloud orchestration system such as openstack, docker clusters in order to enable secure IP communication between virtual machines and containers. It implements a highly productive vRouter in each node that takes advantage of the existing Linux kernel forwarding engine. Calico works in such an awesome technology that it has the ability to peer directly with the data center’s physical fabric whether L2 or L3, without the NAT, tunnels on/off ramps, or overlays. Calico makes full utilization of docker to run its containers in the nodes which makes it multi-platform and very easy to ship, pack and deploy. Calico has the following salient features out of the box.
+Calico is a free and open source software for virtual networking in data centers.
+Calico 是一款在数据中心应用的免费开源软件的虚拟专用网络软件。
+It is a pure Layer 3 approach to highlyscalable datacenter for cloud virtual networking.
+它是一个应用在三层的数据中心云虚拟网络
+It seamlessly integrates with cloud orchestration system such as openstack, docker clusters in order to enable secure IP communication between virtual machines and containers. It implements a highly productive vRouter in each node that takes advantage of the existing Linux kernel forwarding engine. Calico works in such an awesome technology that it has the ability to peer directly with the data center’s physical fabric whether L2 or L3, without the NAT, tunnels on/off ramps, or overlays. Calico makes full utilization of docker to run its containers in the nodes which makes it multi-platform and very easy to ship, pack and deploy. Calico has the following salient features out of the box.
 
 - It can scale tens of thousands of servers and millions of workloads.
 - Calico is easy to deploy, operate and diagnose.
