@@ -1,9 +1,11 @@
+alim0x translating
+
 7 Steps to Start Your Linux SysAdmin Career
 ===============================================
 
 Linux is hot right now. Everybody is looking for Linux talent. Recruiters are knocking down the doors of anybody with Linux experience, and there are tens of thousands of jobs waiting to be filled. But what if you want to take advantage of this trend and you’re new to Linux? How do you get started?
 
-1. Install Linux  
+1. Install Linux
 
   It should almost go without saying, but the first key to learning Linux is to install Linux. Both the LFS101x and the LFS201 courses include detailed sections on installing and configuring Linux for the first time.
 
@@ -43,7 +45,7 @@ Linux is hot right now. Everybody is looking for Linux talent. Recruiters are kn
 
   - [https://forums.opensuse.org/forum.php](https://forums.opensuse.org/forum.php)
 
-  - [http://wiki.centos.org/Documentation](http://wiki.centos.org/Documentation) 
+  - [http://wiki.centos.org/Documentation](http://wiki.centos.org/Documentation)
 
 7. Learn To Love The Documentation
 
@@ -64,5 +66,3 @@ via: http://www.linux.com/news/featured-blogs/191-linux-training/834644-7-steps-
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:linux.com
-
-
