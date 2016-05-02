@@ -143,7 +143,7 @@ And if you can’t wait until the next few posts to try LXD, you can [take our g
 
 --------------------------------------------------------------------------------
 
-via: https://www.stgraber.org/2016/03/19/lxd-2-0-your-first-lxd-container-312/
+via: https://www.stgraber.org/2016/03/11/lxd-2-0-introduction-to-lxd-112/
 
 作者：[Stéphane Graber][a]
 译者：[译者ID](https://github.com/译者ID)
