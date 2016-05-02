@@ -1,3 +1,5 @@
+alim0x translating
+
 An Introduction to SELinux
 ===============================
 
@@ -37,7 +39,7 @@ Sounds relatively simple, right? There’s actually more to it than that, but fo
 
 ### The Modes
 
-SELinux has three modes (which can be set by the user). These modes will dictate how SELinux acts upon subject request. The modes are: 
+SELinux has three modes (which can be set by the user). These modes will dictate how SELinux acts upon subject request. The modes are:
 
 - Enforcing — SELinux policy is enforced and subjects will be denied or granted access to objects based on the SELinux policy rules
 
@@ -57,7 +59,7 @@ You can change the SELinux mode from the command line or in the /etc/selinux/con
 
 3. Issue the command setenforce 1
 
-4. Issue the command getenforce to ensure the mode has been set (Figure 2) 
+4. Issue the command getenforce to ensure the mode has been set (Figure 2)
 
 ![](https://www.linux.com/images/stories/66866/jack-selinux_b.png)
 
