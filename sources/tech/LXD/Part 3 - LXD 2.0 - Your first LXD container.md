@@ -1,7 +1,7 @@
 Part 3 - LXD 2.0: Your first LXD container
 ==========================================
 
-This is the third blog post in this series about LXD 2.0.
+This is the third blog post [in this series about LXD 2.0][0].
 
 As there are a lot of commands involved with managing LXD containers, this post is rather long. If you’d instead prefer a quick step-by-step tour of those same commands, you can [try our online demo instead][1]!
 
@@ -554,6 +554,7 @@ via: https://www.stgraber.org/2016/03/19/lxd-2-0-your-first-lxd-container-312/
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:https://www.stgraber.org/author/stgraber/
+[a]: https://www.stgraber.org/author/stgraber/
+[0]: https://www.stgraber.org/2016/03/11/lxd-2-0-blog-post-series-012/
 [1]: https://linuxcontainers.org/lxd/try-it
 [2]: https://github.com/lxc/lxd/blob/master/doc/configuration.md
