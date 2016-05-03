@@ -1,3 +1,5 @@
+translating by ezio
+
 Part 2 - LXD 2.0: Installing and configuring LXD 
 =================================================
 
