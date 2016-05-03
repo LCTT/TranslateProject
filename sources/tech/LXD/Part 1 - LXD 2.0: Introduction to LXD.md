@@ -1,3 +1,5 @@
+translating by ezio
+
 Part 1 - LXD 2.0: Introduction to LXD
 ======================================
 
