@@ -1,46 +1,52 @@
 translating by ezio
 
-Part 1 - LXD 2.0: Introduction to LXD
+Part 1 - LXD 2.0: LXD 入门
 ======================================
 
-This is the first blog post [in this series about LXD 2.0][1].
+这是 [LXD 2.0 系列介绍文章][1]的第一篇。
 
 ![](https://linuxcontainers.org/static/img/containers.png)
 
-### A few common questions about LXD
 
-#### What’s LXD?
+### 关于 LXD 几个常见问题
+
+#### 什么是 LXD ?
 
 At its simplest, LXD is a daemon which provides a REST API to drive LXC containers.
 
 Its main goal is to provide a user experience that’s similar to that of virtual machines but using Linux containers rather than hardware virtualization.
 
+简单来说 LXD 就是一个提供了 REST API 的 LXC 容器管理器。
 
-#### How does LXD relate to Docker/Rkt?
+LXD 最主要的目标就是使用 Linux 容器而不是硬件虚拟化向用户提供一种接近虚拟机的使用体验。
 
-This is by far the question we get the most, so lets address it immediately!
+#### LXD 和 Docker/Rkt 又有什么关系呢 ?
 
-LXD focuses on system containers, also called infrastructure containers. That is, a LXD container runs a full Linux system, exactly as it would be when run on metal or in a VM.
+这是一个最常被问起的问题，现在就让我们直接指出其中的不同吧。
 
-Those containers will typically be long running and based on a clean distribution image. Traditional configuration management tools and deployment tools can be used with LXD containers exactly as you would use them for a VM, cloud instance or physical machine.
+LXD 聚焦于系统容器，通常也被称为架构容器。这就是说 LXD 容器实际上运行了一个完整的 Linux 操作系统，就像在裸机或虚拟机上运行的一样。
 
-In contrast, Docker focuses on ephemeral, stateless, minimal containers that won’t typically get upgraded or re-configured but instead just be replaced entirely. That makes Docker and similar projects much closer to a software distribution mechanism than a machine management tool.
+这些容器一般都是基于一个干净的发布镜像，会长时间运行。传统的配置管理工具和发布工具可以和 LXD 一起使用，就像你在虚拟机、云或者物理机器上使用一样。
 
-The two models aren’t mutually exclusive either. You can absolutely use LXD to provide full Linux systems to your users who can then install Docker inside their LXD container to run the software they want.
+相对的， Docker 关注于短视的、无状态的最小容器，这些容器通常并不会升级或者重新配置，它们一般都是作为一个整体被替换掉。这就使得 Docker 和类似的项目更像是一种软件发布机制，而不是一个机器管理工具。
 
-#### Why LXD?
+这两种模型并不是完全互斥的。你完全可以使用 LXD 为你的用户提供一个完整的 Linux 系统，而他们可以在 LXD 上面安装 Docker 来运行他们想要的软件。
 
-We’ve been working on LXC for a number of years now. LXC is great at what it does, that is, it provides a very good set of low-level tools and a library to create and manage containers.
 
-However that kind of low-level tools aren’t necessarily very user friendly. They require a lot of initial knowledge to understand what they do and how they work. Keeping backward compatibility with older containers and deployment methods has also prevented LXC from using some security features by default, leading to more manual configuration for users.
+#### 为什么要用 LXD?
 
-We see LXD as the opportunity to address those shortcomings. On top of being a long running daemon which lets us address a lot of the LXC limitations like dynamic resource restrictions, container migration and efficient live migration, it also gave us the opportunity to come up with a new default experience, that’s safe by default and much more user focused.
+我们已经在 LXC 上工作了好几个年头了。 LXC 成功的实现了它的目标，它提供了一系列很棒的底层工具和库来创建、管理容器。
 
-### The main LXD components
+然而这些底层工具的使用界面对用户并不是很友好。他们需要用户有很多的基础知识来理解他们要干什么和怎么去干。同时向后兼容旧的容器和部署策略已经阻止 LXC 默认使用一些安全特性，这导致用户需要进行更多人工操作来实现本可以自动完成的工作。
+
+我们把 LXD 作为解决这些缺陷的一个很好的机会。作为一个长时间运行的守护进程可以让我们定位到很多 LXC 的限制，比如动态资源限制，容器迁移和有效的进行在线迁移，它同时也给了我们机会来提供一个新的默认体验：默认开启安全特性，对用户更加友好。
+
+
+### LXD 的主要组件
 
 There are a number of main components that make LXD, those are typically visible in the LXD directory structure, in its command line client and in the API structure itself.
 
-#### Containers
+#### 容器
 
 Containers in LXD are made of:
 
@@ -51,13 +57,13 @@ Containers in LXD are made of:
 - Some properties (container architecture, ephemeral or persistent and the name)
 - Some runtime state (when using CRIU for checkpoint/restore)
 
-#### Snapshots
+#### 快照
 
 Container snapshots are identical to containers except for the fact that they are immutable, they can be renamed, destroyed or restored but cannot be modified in any way.
 
 It is worth noting that because we allow storing the container runtime state, this effectively gives us the concept of “stateful” snapshots. That is, the ability to rollback the container including its cpu and memory state at the time of the snapshot.
 
-#### Images
+#### 镜像
 
 LXD is image based, all LXD containers come from an image. Images are typically clean Linux distribution images similar to what you would use for a virtual machine or cloud instance.
 
@@ -74,7 +80,7 @@ Remote images are automatically cached by the LXD daemon and kept for a number o
 
 Additionally LXD also automatically updates remote images (unless told otherwise) so that the freshest version of the image is always available locally.
 
-#### Profiles
+#### 配置
 
 Profiles are a way to define container configuration and container devices in one place and then have it apply to any number of containers.
 
@@ -85,7 +91,7 @@ LXD ships with two pre-configured profiles:
 - “default” is automatically applied to all containers unless an alternative list of profiles is provided by the user. This profile currently does just one thing, define a “eth0” network device for the container.
 - “docker” is a profile you can apply to a container which you want to allow to run Docker containers. It requests LXD load some required kernel modules, turns on container nesting and sets up a few device entries.
 
-#### Remotes
+#### 远程
 
 As I mentioned earlier, LXD is a networked daemon. The command line client that comes with it can therefore talk to multiple remote LXD servers as well as image servers.
 
@@ -101,7 +107,7 @@ You can also add any number of remote LXD hosts that were configured to listen t
 
 It’s that remote mechanism that makes it possible to interact with remote image servers as well as copy or move containers between hosts.
 
-### Security
+### 安全性
 
 One aspect that was core to our design of LXD was to make it as safe as possible while allowing modern Linux distributions to run inside it unmodified.
 
@@ -116,7 +122,7 @@ Rather than exposing those features directly to the user as LXC would, we’ve b
 
 Communications with LXD itself are secured using TLS 1.2 with a very limited set of allowed ciphers. When dealing with hosts outside of the system certificate authority, LXD will prompt the user to validate the remote fingerprint (SSH style), then cache the certificate for future use.
 
-### The REST API
+### REST 接口
 
 Everything that LXD does is done over its REST API. There is no other communication channel between the client and the daemon.
 
@@ -128,13 +134,13 @@ When a more complex communication mechanism is required, LXD will negotiate webs
 
 With LXD 2.0, comes the /1.0 stable API. We will not break backward compatibility within the /1.0 API endpoint however we may add extra features to it, which we’ll signal by declaring additional API extensions that the client can look for.
 
-### Containers at scale
+### 容器规模化
 
 While LXD provides a good command line client, that client isn’t meant to manage thousands of containers on multiple hosts. For that kind of use cases, we have nova-lxd which is an OpenStack plugin that makes OpenStack treat LXD containers in the exact same way it would treat VMs.
 
 This allows for very large deployments of LXDs on a large number of hosts, using the OpenStack APIs to manage network, storage and load-balancing.
 
-### Extra information
+### 额外信息
 
 The main LXD website is at: <https://linuxcontainers.org/lxd>
 Development happens on Github at: <https://github.com/lxc/lxd>
