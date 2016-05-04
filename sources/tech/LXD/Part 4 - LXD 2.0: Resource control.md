@@ -390,7 +390,7 @@ And if you don’t want or can’t install LXD on your own machine, you can alwa
 
 --------------------------------------------------------------------------------
 
-via: https://www.stgraber.org/2016/03/19/lxd-2-0-your-first-lxd-container-312/
+via: https://www.stgraber.org/2016/03/26/lxd-2-0-resource-control-412/
 
 作者：[Stéphane Graber][a]
 译者：[译者ID](https://github.com/译者ID)
