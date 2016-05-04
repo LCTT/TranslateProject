@@ -141,8 +141,11 @@ LXD 2.0 附带了 1.0 版的 API。我们虽然在 1.0 版 API 添加了额外�
 ### 额外信息
 
 LXD 的主站在: <https://linuxcontainers.org/lxd>
+
 LXD 的 GitHub 仓库: <https://github.com/lxc/lxd>
+
 LXD 的邮件列表: <https://lists.linuxcontainers.org>
+
 LXD 的 IRC 频道: #lxcontainers on irc.freenode.net
 
 如果你不想或者不能在你的机器上安装 LXD ，你可以在 web 上[试试在线版的 LXD][2] 。
@@ -152,7 +155,7 @@ LXD 的 IRC 频道: #lxcontainers on irc.freenode.net
 via: https://www.stgraber.org/2016/03/11/lxd-2-0-introduction-to-lxd-112/
 
 作者：[Stéphane Graber][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ezio](https://github.com/oska874)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
