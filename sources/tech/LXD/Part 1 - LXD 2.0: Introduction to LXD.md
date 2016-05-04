@@ -107,18 +107,20 @@ LXD 自带两种预配置的配置文件：
 
 ### 安全性
 
-One aspect that was core to our design of LXD was to make it as safe as possible while allowing modern Linux distributions to run inside it unmodified.
+我们设计 LXD 时的一个核心要求就当现代 Linux 发布版运行在容器里的时候要尽可能的安全。
 
-The main security features used by LXD through its use of the LXC library are:
+LXD 使用的主要安全特是通过使用 LXC 库实现的：
 
-- Kernel namespaces. Especially the user namespace as a way to keep everything the container does separate from the rest of the system. LXD uses the user namespace by default (contrary to LXC) and allows for the user to turn it off on a per-container basis (marking the container “privileged”) when absolutely needed.
-- Seccomp. To filter some potentially dangerous system calls.
-- AppArmor: To provide additional restrictions on mounts, socket, ptrace and file access. Specifically restricting cross-container communication.
-- Capabilities. To prevent the container from loading kernel modules, altering the host system time, …
-- CGroups. To restrict resource usage and prevent DoS attacks against the host.
-Rather than exposing those features directly to the user as LXC would, we’ve built a new configuration language which abstracts most of those into something that’s more user friendly. For example, one can tell LXD to pass any host device into the container without having to also lookup its major/minor numbers to manually update the cgroup policy.
+- 内核名字空间。特别是用户名字空间是一种让容器和系统剩余部分完全分割的方法。LXD 默认使用用户名字空间（和 LXC 相反），允许用户在需要的时候以容器为单位进行打开、关闭。
+- Seccomp 系统调用。用来隔离潜在危险的系统调用。
+- AppArmor：对 mount、socket、ptrace 和文件访问提供额外的限制。特别是限制跨容器通信。
+- Capabilities。组织容器加载内核模块，修改主机系统时间，等等。
+- CGroups。限制资源使用，防止对主机的 DoS 攻击。
 
-Communications with LXD itself are secured using TLS 1.2 with a very limited set of allowed ciphers. When dealing with hosts outside of the system certificate authority, LXD will prompt the user to validate the remote fingerprint (SSH style), then cache the certificate for future use.
+
+和 LXC 直接将这些特性暴露出来不同， 为了对用户友好 ，LXD 构建了一个新的配置语言把大部分的这些特性都抽象封装起来。举了例子，一个用户可以告诉 LXD 把主机设备放进容器而不需要手动检查他们的主/次设备号来更新 CGroup 策略。
+
+和 LXD 本身通信是基于使用 TLS 1.2 的链路，这些链路只允许使用有限的几个被允许的密钥。当和那些经过系统证书认证之外的主机通信时， LXD 会提示用户验证主机的远程足迹（SSH 方式），然后把足迹缓存起来以供以后使用。
 
 ### REST 接口
 
