@@ -124,15 +124,15 @@ LXD 使用的主要安全特是通过使用 LXC 库实现的：
 
 ### REST 接口
 
-Everything that LXD does is done over its REST API. There is no other communication channel between the client and the daemon.
+LXD 的工作都是通过 REST 接口实现的。在客户端和守护进程之间并没有其他的通讯手段。
 
-The REST API can be access over a local unix socket, only requiring group membership for authentication or over a HTTPs socket using a client certificate for authentication.
+REST 接口可以通过本地的 unix socket 访问，这只需要经过组认证，或者经过 HTTP 套接字使用客户端认证进行通信。
 
-The structure of the REST API matches the different components described above and is meant to be very simple and intuitive to use.
+REST 接口的结构能够和上文所说的不同的组件匹配，是一种简单、直观的使用方法。
 
-When a more complex communication mechanism is required, LXD will negotiate websockets and use those for the rest of the communication. This is used for interactive console session, container migration and for event notification.
+当需要一种复杂的通信机制时， LXD 将会进行websocket 协商完成剩余的通信工作。主要用于交互式终端会话，容器迁移和事件通知。
 
-With LXD 2.0, comes the /1.0 stable API. We will not break backward compatibility within the /1.0 API endpoint however we may add extra features to it, which we’ll signal by declaring additional API extensions that the client can look for.
+LXD 2.0 附带了 1.0 版的 API。我们虽然在 1.0 版 API 添加了额外的特性，但是这不会在 1.0 版 API 的端点里破坏向后兼容性，我们会声明额外的 API 扩展使得客户端可以找到新的接口。
 
 ### 容器规模化
 
