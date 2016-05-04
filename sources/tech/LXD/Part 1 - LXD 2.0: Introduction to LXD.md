@@ -1,5 +1,3 @@
-translating by ezio
-
 Part 1 - LXD 2.0: LXD 入门
 ======================================
 
@@ -136,18 +134,18 @@ LXD 2.0 附带了 1.0 版的 API。我们虽然在 1.0 版 API 添加了额外�
 
 ### 容器规模化
 
-While LXD provides a good command line client, that client isn’t meant to manage thousands of containers on multiple hosts. For that kind of use cases, we have nova-lxd which is an OpenStack plugin that makes OpenStack treat LXD containers in the exact same way it would treat VMs.
+虽然 LXD 提供了一个很好的命令行客户端，但是这个客户端并不能管理多个主机的大量的容器。在这种使用情况下，我们可以使用 OpenStack 的插件 nova-lxd ，它可以使得 OpenStack 像使用虚拟机一样使用 LXD 容器。
 
-This allows for very large deployments of LXDs on a large number of hosts, using the OpenStack APIs to manage network, storage and load-balancing.
+这就允许在大量的主机上部署大量的 LXD 容器，然后使用 OpenStack 的 API 来管理网络、存储以及负载均衡。
 
 ### 额外信息
 
-The main LXD website is at: <https://linuxcontainers.org/lxd>
-Development happens on Github at: <https://github.com/lxc/lxd>
-Mailing-list support happens on: <https://lists.linuxcontainers.org>
-IRC support happens in: #lxcontainers on irc.freenode.net
+LXD 的主站在: <https://linuxcontainers.org/lxd>
+LXD 的 GitHub 仓库: <https://github.com/lxc/lxd>
+LXD 的邮件列表: <https://lists.linuxcontainers.org>
+LXD 的 IRC 频道: #lxcontainers on irc.freenode.net
 
-And if you can’t wait until the next few posts to try LXD, you can [take our guided tour online][2] and try it for free right from your web browser!
+如果你不想或者不能在你的机器上安装 LXD ，你可以在 web 上[试试在线版的 LXD][2] 。
 
 --------------------------------------------------------------------------------
 
