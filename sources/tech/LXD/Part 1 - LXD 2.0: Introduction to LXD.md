@@ -12,10 +12,6 @@ Part 1 - LXD 2.0: LXD 入门
 
 #### 什么是 LXD ?
 
-At its simplest, LXD is a daemon which provides a REST API to drive LXC containers.
-
-Its main goal is to provide a user experience that’s similar to that of virtual machines but using Linux containers rather than hardware virtualization.
-
 简单来说 LXD 就是一个提供了 REST API 的 LXC 容器管理器。
 
 LXD 最主要的目标就是使用 Linux 容器而不是硬件虚拟化向用户提供一种接近虚拟机的使用体验。
@@ -44,68 +40,70 @@ LXD 聚焦于系统容器，通常也被称为架构容器。这就是说 LXD �
 
 ### LXD 的主要组件
 
-There are a number of main components that make LXD, those are typically visible in the LXD directory structure, in its command line client and in the API structure itself.
+LXD 是由几个主要组件构成的，在它的命令行客户端和 API结构体里，这些组件都是 LXD 目录结构下可见的。
 
 #### 容器
 
-Containers in LXD are made of:
+LXD 中的容器包括以下及部分：
 
-- A filesystem (rootfs)
-- A list of configuration options, including resource limits, environment, security options and more
-- A bunch of devices like disks, character/block unix devices and network interfaces
-- A set of profiles the container inherits configuration from (see below)
-- Some properties (container architecture, ephemeral or persistent and the name)
-- Some runtime state (when using CRIU for checkpoint/restore)
+- 根文件系统
+- 设备：包括磁盘、unix 字符/块设备、网络接口
+- 一组继承而来的容器配置文件
+- 属性（容器架构，暂时的或持久的，容器名）
+- 运行时状态（当时为了记录检查点、恢复时用到了 CRIU时）
 
 #### 快照
 
-Container snapshots are identical to containers except for the fact that they are immutable, they can be renamed, destroyed or restored but cannot be modified in any way.
+容器快照和容器是一回事，只不过快照是不可修改的，只能被重命名，销毁或者用来恢复系统，但是无论如何都不能被修改。
 
-It is worth noting that because we allow storing the container runtime state, this effectively gives us the concept of “stateful” snapshots. That is, the ability to rollback the container including its cpu and memory state at the time of the snapshot.
+值得注意的是，因为我们允许用户保存容器的运行时状态，这就有效的为我们提供了“有状态”的快照的功能。这就是说我们可以使用快照回滚容器的 cpu 和内存。
 
 #### 镜像
 
-LXD is image based, all LXD containers come from an image. Images are typically clean Linux distribution images similar to what you would use for a virtual machine or cloud instance.
+LXD 是基于镜像实现的，所有的 LXD 容器都是来自于镜像。容器镜像经常是一些干净的 Linux 发布版的镜像，类似于你们在虚拟机和云实例上使用的镜像。
 
-It is possible to “publish” a container, making an image from it which can then be used by the local or remote LXD hosts.
+所以就可以“发布”容器：使用容器制作一个镜像，然后可以在本地或者远程 LXD 主机上使用。
 
-Images are uniquely identified by their sha256 hash and can be referenced by using their full or partial hash. Because typing long hashes isn’t particularly user friendly, images can also have any number of properties applied to them, allowing for an easy search through the image store. Aliases can also be set as a one to one mapping between a unique user friendly string and an image hash.
+镜像通常使用 sha256 来区分，同时也可以使用它的全部或部分哈希码。因为输入长长的哈希码对用户来说不好，所以镜像可以使用几个自身的属性来区分，这就允许让用户在镜像商店里方便搜索镜像。别名也可以用来把对用户友好的字符串 1 比 1 的映射成镜像的哈希码。
 
-LXD comes pre-configured with three remote image servers (see remotes below):
+LXD 安装时已经配置好了三个远程镜像服务器（参见下面的远程一节）：
 
-- “ubuntu:” provides stable Ubuntu images
-- “ubunt-daily:” provides daily builds of Ubuntu
-- “images:” is a community run image server providing images for a number of other Linux distributions using the upstream LXC templates
-Remote images are automatically cached by the LXD daemon and kept for a number of days (10 by default) since they were last used before getting expired.
+- “ubuntu：” 提供稳定版的 Ubuntu 镜像
+- “ubuntu-daily：” 提供每天构建出来的 Ubuntu
+- “images：” 社区维护的镜像服务器，提供一系列的 Linux 发布版，使用的是上游 LXC 的模板
 
-Additionally LXD also automatically updates remote images (unless told otherwise) so that the freshest version of the image is always available locally.
+LXD 守护进程会从镜像上次被使用开始自动缓存远程镜像一段时间（默认是 10 天），然后这些镜像才会失效。
+
+此外 LXD 还会自动更新远程镜像（除非指明不更新），所以本地的镜像会一直是最新版的。
+
 
 #### 配置
 
-Profiles are a way to define container configuration and container devices in one place and then have it apply to any number of containers.
+配置文件是一种在一处定义容器配置和容器设备，然后应用到一系列容器的方法。
 
-A container can have multiple profiles applied to it. When building the final container configuration (known as expanded configuration), the profiles will be applied in the order they were defined in, overriding each other when the same configuration key or device is found. Then the local container configuration is applied on top of that, overriding anything that came from a profile.
+一个容器可以被应用多个配置文件。当构建最终容器配置时（即通常的扩展配置），这些配置文件都会按照他们定义顺序被应用到容器上，当有重名的配置，新的会覆盖掉旧的。然后本地容器配置会应用在这些之上，覆盖所有来自配置文件的选项。
 
-LXD ships with two pre-configured profiles:
+LXD 自带两种预配置的配置文件：
 
-- “default” is automatically applied to all containers unless an alternative list of profiles is provided by the user. This profile currently does just one thing, define a “eth0” network device for the container.
-- “docker” is a profile you can apply to a container which you want to allow to run Docker containers. It requests LXD load some required kernel modules, turns on container nesting and sets up a few device entries.
+- “default” 配置是自动应用在所有容器之上，除非用户提供了一系列替代的配置文件。目前这个配置文件只做一件事，为容器定义 “eth0” 网络设备。
+- “docker” 配置是一个允许你在容器里运行 Docker 容器的配置文件。它会要求 LXD 加载一些需要的内核模块，这样就能允许容器嵌套，并且创建一些设备入口。
 
 #### 远程
 
-As I mentioned earlier, LXD is a networked daemon. The command line client that comes with it can therefore talk to multiple remote LXD servers as well as image servers.
+如我之前提到的， LXD 是一个基于网络的守护进程。附带的命令行客户端可以与多个远程 LXD 服务器、镜像服务器通信。
 
-By default, our command line client comes with the following remotes defined
+默认情况下我们的命令行客户端会与下面几个预定义的远程服务器通信：
 
-local: (default remote, talks to the local LXD daemon over a unix socket)
-ubuntu: (Ubuntu image server providing stable builds)
-ubuntu-daily: (Ubuntu image server providing daily builds)
-images: (images.linuxcontainers.org image server)
-Any combination of those remotes can be used with the command line client.
+- local：（默认的远程服务器，使用 UNIX socket 和本地的 LXD 守护进程通信）
+- ubuntu：（buntu 镜像服务器，提供稳定版的 Ubuntu 镜像）
+- ubuntu-daily：（Ubuntu 镜像服务器，提供每天构建出来的 Ubuntu）
+- images：（images.linuxcontainers.org 镜像服务器）
 
-You can also add any number of remote LXD hosts that were configured to listen to the network. Either anonymously if they are a public image server or after going through authentication when managing remote containers.
+所有这些远程服务器的组合都可以在命令行客户端里使用。
 
-It’s that remote mechanism that makes it possible to interact with remote image servers as well as copy or move containers between hosts.
+你也可以添加任意数量的远程 LXD 主机来监听网络。匿名服务器如果是开放镜像服务器，或者通过认证可以管理远程容器的镜像服务器，都可以添加进来。
+
+正是这种远程机制使得和远程镜像服务器交互就像在主机间复制、移动容器成为可能。
 
 ### 安全性
 
