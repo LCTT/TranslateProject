@@ -1,4 +1,4 @@
-Part 7 - LXD 2.0: LXD in LXD
+Part 8 - LXD 2.0: LXD in LXD
 ==============================
 
 <原文待补充>
