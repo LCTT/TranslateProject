@@ -1,3 +1,5 @@
+vim-kakali translating
+
 Which Open Source Linux Distributions Would Presidential Hopefuls Run?
 ================================================================================
 ![Republican presidential candidate Donald Trump
