@@ -188,9 +188,9 @@ With those, all transfers initiated by LXD will use the squid01.internal HTTP pr
 
 #### 镜像管理
 
-LXD does dynamic image caching. When instructed to create a container from a remote image, it will download that image into its image store, mark it as cached and record its origin. After a number of days without seeing any use (10 by default), the image is automatically removed. Every few hours (6 by default), LXD also goes looking for a newer version of the image and updates its local copy.
+LXD 使用动态镜像缓存。当从远程镜像创建容器的时候，它会自动把镜像下载到本地镜像商店，同时标志为已缓存并记录来源。几天后（默认10天）如果没有再被使用，那么这个镜像就会自动被删除。每个几小时（默认是6小时） LXD 还会检查一下这个镜像是否有新版本，然后更新镜像的本地拷贝。
 
-All of that can be configured through the following configuration options:
+所有这些都可以通过下面的配置选项进行配置：
 
 ```
 lxc config set images.remote_cache_expiry 5
@@ -198,11 +198,12 @@ lxc config set images.auto_update_interval 24
 lxc config set images.auto_update_cached false
 ```
 
-Here we are instructing LXD to override all of those defaults and instead cache images for up to 5 days since they were last used, look for image updates every 24 hours and only update images which were directly marked as such (–auto-update flag in lxc image copy) but not the images which were automatically cached by LXD.
+这些命令让 LXD 修改了它的默认属性，缓存期替换为 5 天，更新间隔为 24 小时，而且只更新那些标志为自动更新的镜像（lxc 镜像拷贝有标志 `–auto-update`）而不是 LXD 自动缓存的镜像。
+
 
 ### 总结
 
-At this point you should have a working version of the latest LXD release, you can now start playing with it on your own or wait for the next blog post where we’ll create our first container and play with the LXD command line tool.
+到这里为止，你就应该有了一个可以工作的、最新版的 LXD ，现在你可以开始用 LXD 了，或者等待我们的下一条博文，那时我们会介绍如何创建第一个容器以及使用 LXD 命令行工具操作容器。
 
 ### 额外信息
 
@@ -218,7 +219,7 @@ LXD 的 IRC 频道: #lxcontainers on irc.freenode.net
 
 --------------------------------------------------------------------------------
 
-via: https://www.stgraber.org/2016/03/19/lxd-2-0-your-first-lxd-container-312/
+via: https://www.stgraber.org/2016/03/15/lxd-2-0-installing-and-configuring-lxd-212/
 
 作者：[Stéphane Graber][a]
 译者：[ezio](https://github.com/oska874)
