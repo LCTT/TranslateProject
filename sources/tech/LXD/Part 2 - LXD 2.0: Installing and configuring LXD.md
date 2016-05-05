@@ -9,11 +9,11 @@ Part 2 - LXD 2.0: 安装与配置
 
 ### 安装篇
 
-There are many ways to get the latest and greatest LXD. We recommend you use LXD with the latest LXC and Linux kernel to benefit from all its features but we try to degrade gracefully where possible to support older Linux distributions.
+获得 LXD 有很多种办法。我们推荐你是用配合最新版的 LXC 和 Linux 内核使用 LXD，这样就可以享受到它的全部特性，但是注意，我们现在也在慢慢的降低对旧版本 Linux 发布版的支持。
 
 #### Ubuntu 标准版
 
-All new releases of LXD get uploaded to the Ubuntu development release within a few minutes of the upstream release. That package is then used to seed all the other source of packages for Ubuntu users.
+所有新发布的 LXD 都会在发布几分钟后上传到 Ubuntu 开发版的安装源里。这个安装包然后就会当作种子给全部其他的安装包源，供 Ubuntu 用户使用。
 
 如果使用 Ubuntu 16.04 则可以直接安装：
 
@@ -56,21 +56,21 @@ sudo emerge --ask lxd
 
 #### 源代码
 
-Building LXD from source isn’t very difficult if you are used to building Go projects. Note however that you will need the LXC development headers. In order to run LXD, your distribution also needs a recent Linux kernel (3.13 at least), recent LXC (1.1.5 or higher), LXCFS and a version of shadow that supports user sub-uid/gid allocations.
+如果你曾经编译过 Go 工程，那么从源代码编译 LXD 并不是十分困难。然而要住你的是你需要 LXC 的开发头文件。为了运行 LXD ， 你的 发布版铜须也需要使用比较新的内核（最起码是 3.13），比较新的 LXC （1.1.4 或更高版本） ，LXCFS 以及支持用户子 uid/gid 分配的 shadow 。
 
-The latest instructions on building LXD from source can be found in the [upstream README][2].
+从源代码编译 LXD 的最新指令可以在[上游 README][2]里找到。
 
 ### ubuntu 上的网络配置
 
-The Ubuntu packages provide you with a “lxdbr0” bridge as a convenience. This bridge comes unconfigured by default, offering only IPv6 link-local connectivity through an HTTP proxy.
+Ubuntu 的安装包会很方便的给你提供一个 "lxdbr0" 网桥。这个网桥默认是没有配置过的，只提供通过 HTTP 代理的 IPV6 的本地连接。
 
-To reconfigure the bridge and add some IPv4 or IPv6 subnet to it, you can run:
+要配置这个网桥和添加 IPV4 、 IPV6 子网，你可以运行下面的命令：
 
 ```
 sudo dpkg-reconfigure -p medium lxd
 ```
 
-Or go through the whole LXD step by step setup (see below) with:
+或者直接通过 LXD 初始化命令一步一步的配置：
 
 ```
 sudo lxd init
@@ -78,14 +78,13 @@ sudo lxd init
 
 ### 存储系统
 
-LXD supports a number of storage backends. It’s best to know what backend you want to use prior to starting to use LXD as we do not support moving existing containers or images between backends.
+LXD 提供了集中存储后端。在开始使用 LXD 之前，你最好直到自己想要的后端，因为我们不支持在后端之间迁移已经生成的容器。
 
-A feature comparison table of the different backends can be found [here][3].
+各个[后端特性的比较表格][3]可以在这里找到。
 
 #### ZFS
 
-Our recommendation is ZFS as it supports all the features LXD needs to offer the fastest and most reliable container experience. This includes per-container disk quotas, immediate snapshot/restore, optimized migration (send/receive) and instant container creation from an image. It is also considered more mature than btrfs.
-
+我们的推荐是 ZFS ， 因为他能支持 LXD 的全部特性，同时提供最快和最可靠的容器体验。它包括了以容器为单位的磁盘配额，直接快照和恢复，优化了的迁移（发送/接收），以及快速从镜像创建容器。它同时也被认为要比 btrfs 更成熟。
 
 要和 LXD 一起使用 ZFS ，你需要首先在你的系统上安装 ZFS。
 
@@ -115,26 +114,28 @@ sudo apt install ubuntu-zfs
 sudo lxd init
 ```
 
-This will ask you a few questions about what kind of zfs configuration you’d like for your LXD and then configure it for you.
+这条命令接下来会想你提问一下你想要的 ZFS 的配置，然后为你配置好 ZFS 。
 
 #### btrfs
 
-If ZFS isn’t available, then btrfs offers the same level of integration with the exception that it doesn’t properly report disk usage inside the container (quotas do apply though).
-btrfs also has the nice property that it can nest properly which ZFS doesn’t yet. That is, if you plan on using LXD inside LXD, btrfs is worth considering.
+如果 ZFS 不可用，那么 btrfs 可以提供相同级别的集成，除了不会合理的报告容器内的磁盘使用情况（虽然配额还是可以用的）。
 
-LXD doesn’t need any configuration to use btrfs, you just need to make sure that /var/lib/lxd is stored on a btrfs filesystem and LXD will automatically make use of it for you.
+btrfs 同时拥有很好的嵌套属性，而这时 ZFS 所不具有的。也就是说如果你计划在 LXD 中再使用 LXD ，那么 btrfs 就很值得你考虑一下。
+
+使用 btrfs 的话，LXD 不需要进行任何的配置，你只需要保证 `/var/lib/lxd` 是保存在 btrfs 文件系统中，然后 LXD 就会自动为你使用 btrfs 了。
 
 #### LVM
 
-If ZFS and btrfs aren’t an option for you, you can still get some of their benefits by using LVM instead. LXD uses LVM with thin provisioning, creating an LV for each image and container and using LVM snapshots as needed.
+如果 ZFS 和 btrfs 都不是你想要的，你仍然可以考虑使用 LVM。 LXD 会以自动精简配置的方式使用 LVM，为每个镜像和容器创建 LV，如果需要的话也会使用 LVM 的快照功能。
 
-To configure LXD to use LVM, create a LVM VG and run:
+要配置 LXD 使用 LVM，需要创建一个 LVM 的 VG ，然后运行：
+
 
 ```
 lxc config set storage.lvm_vg_name "THE-NAME-OF-YOUR-VG"
 ```
 
-By default LXD uses ext4 as the filesystem for all the LVs. You can change that to XFS if you’d like:
+默认情况下 LXD 使用 ext4 作为全部 LV 的文件系统。如果你喜欢的话可以改成 XFS：
 
 ```
 lxc config set storage.lvm_fstype xfs
@@ -142,21 +143,19 @@ lxc config set storage.lvm_fstype xfs
 
 #### 简单目录
 
-If none of the above are an option for you, LXD will still work but without any of those advanced features. It will simply create a directory for each container, unpack the image tarballs for each container creation and do a full filesystem copy on container copy or snapshot.
+如果上面全部方案你都不打算使用， LXD 还可以工作，但是不会使用任何高级特性。它只会为每个容器创建一个目录，然后在创建每个容器时解压缩镜像的压缩包，在容器拷贝和快照时会进行一次完整的文件系统拷贝。
 
-All features are supported except for disk quotas, but this is very wasteful of disk space and also very slow. If you have no other choice, it will work, but you should really consider one of the alternatives above.
-
- 
+除了磁盘配额以外的特性都是支持的，但是很浪费磁盘空间，并且非常慢。如果你没有其他选择，这还是可以工作的，但是你还是需要认真的考虑一下上面的几个方案。
 
 ### 配置篇
 
-The complete list of configuration options for the LXD daemon can be found [here][4].
+LXD 守护进程的完整配置项列表可以在[这里找到][4]。
 
 #### 网络配置
 
-By default LXD doesn’t listen to the network. The only way to talk to it is over a local unix socket at /var/lib/lxd/unix.socket.
+默认情况下 LXD 不会监听网络。和它通信的唯一办法是使用本地 unix socket 通过 `/var/lib/lxd/unix.socket` 进行通信。
 
-To have it listen to the network, there are two useful keys to set:
+要让 LXD 监听网络，下面有两个有用的命令：
 
 ```
 lxc config set core.https_address [::]
@@ -208,8 +207,11 @@ At this point you should have a working version of the latest LXD release, you c
 ### 额外信息
 
 LXD 的主站在: <https://linuxcontainers.org/lxd>
+
 LXD 的 GitHub 仓库: <https://github.com/lxc/lxd>
+
 LXD 的邮件列表: <https://lists.linuxcontainers.org>
+
 LXD 的 IRC 频道: #lxcontainers on irc.freenode.net
 
 如果你不想或者不能在你的机器上安装 LXD ，你可以[试试在线版的 LXD][1] 。
@@ -219,7 +221,7 @@ LXD 的 IRC 频道: #lxcontainers on irc.freenode.net
 via: https://www.stgraber.org/2016/03/19/lxd-2-0-your-first-lxd-container-312/
 
 作者：[Stéphane Graber][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ezio](https://github.com/oska874)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
