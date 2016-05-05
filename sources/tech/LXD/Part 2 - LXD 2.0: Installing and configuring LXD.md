@@ -162,11 +162,11 @@ lxc config set core.https_address [::]
 lxc config set core.trust_password some-secret-string
 ```
 
-The first instructs LXD to bind the “::” IPv6 address, namely, all addresses on the machine. You can obviously replace this by a specific IPv4 or IPv6 address and can append the TCP port you’d like it to bind (defaults to 8443).
+第一条命令将 LXD 绑定到 IPV6 地址 “::”，也就是监听机器的所有 IPV6 地址。你可以显式的使用一个特定的 IPV4 或者 IPV6 地址替代默认地址，如果你想绑定 TCP 端口（默认是 8443）的话可以在地址后面添加端口号即可。
 
-The second sets a password which is used for remote clients to add themselves to the LXD certificate trust store. When adding the LXD host, they will be prompted for the password, if the password matches, the LXD daemon will store their client certificate and they’ll be trusted, never needing the password again (it can be changed or unset entirely at that point).
+第二条命令设置了密码，可以让远程客户端用来把自己添加到 LXD 可信证书中心。如果已经给主机设置了密码，当添加 LXD 主机时会提示输入密码，  LXD 守护进程会保存他们的客户端的证书以确保客户端是可信的，这样就不需要再次输入密码（可以随时设置和取消）
 
-You can also choose not to set a password and instead manually trust each new client by having them give you their “client.crt” file (from ~/.config/lxc) and add it to the trust store yourself with:
+你也可以选择不设置密码，然后通过给每个客户端发送 "client.crt" （来自于 `~/.config/lxc`）文件，然后把它添加到你自己的可信中信来实现人工验证每个新客户端是否可信，可以使用下面的命令：
 
 ```
 lxc config trust add client.crt
