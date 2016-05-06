@@ -6,7 +6,7 @@
 ### 1. 我的世界: Pi
 
 ![](https://opensource.com/sites/default/files/lava.png)
->Courtesy of the Raspberry Pi Foundation. [CC BY-SA 4.0][1].
+>源于 Raspberry Pi 基金会. [CC BY-SA 4.0][1].
 
 我的世界是世界上几乎每一个青少年都特别喜欢的一款游戏，而且它成功抓住了年轻人眼球，成为目前最能激发年轻人创造力的游戏之一。这个树莓派版本自带的我的世界不仅仅是一个具有创造性的建筑游戏，还是一个具有编程接口，可以通过 Python 与之交互的版本。
 
