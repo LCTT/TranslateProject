@@ -1,3 +1,4 @@
+sonofelice translating
 9 Key Trends in Hybrid Cloud Computing
 ========================================
 
