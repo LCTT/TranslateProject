@@ -35,7 +35,7 @@ I would also like to thank [Sameer][27] and [Anna][28] (both previous members of
 
 ------------------------------------------------------------------------------
 
-via: https://opensource.com/life/16/4/my-open-source-story-gloria-bwandungi
+via: https://opensource.com/life/16/4/my-open-source-story-sailesh-patnaik
 
 作者：[Sailesh Patnaik][a]
 译者：[译者ID](https://github.com/译者ID)
