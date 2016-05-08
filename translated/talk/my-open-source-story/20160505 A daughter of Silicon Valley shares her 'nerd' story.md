@@ -1,4 +1,4 @@
-A daughter of Silicon Valley shares her 'nerd' story
+”硅谷的女儿“的天才故事
 =======================================================
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/myopensourcestory.png?itok=6TXlAkFi)
