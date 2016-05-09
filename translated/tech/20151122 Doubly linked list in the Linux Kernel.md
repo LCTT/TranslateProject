@@ -253,6 +253,6 @@ int main() {
 via: https://github.com/0xAX/linux-insides/edit/master/DataStructures/dlist.md
 
 译者：[Ezio](https://github.com/oska874)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Mr小眼儿](https://github.com/tinyeyeser)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
