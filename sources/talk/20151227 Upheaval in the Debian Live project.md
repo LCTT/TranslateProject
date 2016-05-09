@@ -1,3 +1,5 @@
+hkurj translating
+-----------------------------------
 While the event had a certain amount of drama surrounding it, the [announcement][1] of the end for the [Debian Live project][2] seems likely to have less of an impact than it first appeared. The loss of the lead developer will certainly be felt—and the treatment he and the project received seems rather baffling—but the project looks like it will continue in some form. So Debian will still have tools to create live CDs and other media going forward, but what appears to be a long-simmering dispute between project founder and leader Daniel Baumann and the Debian CD and installer teams has been "resolved", albeit in an unfortunate fashion.
 
 The November 9 announcement from Baumann was titled "An abrupt End to Debian Live". In that message, he pointed to a number of different events over the nearly ten years since the [project was founded][3] that indicated to him that his efforts on Debian Live were not being valued, at least by some. The final straw, it seems, was an "intent to package" (ITP) bug [filed][4] by Iain R. Learmonth that impinged on the namespace used by Debian Live.
