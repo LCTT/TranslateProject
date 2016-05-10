@@ -1,11 +1,11 @@
-如何在CentOS 7 中添加新磁盘而不用重启系统
+如何在 CentOS 7 中添加新磁盘而不用重启系统
 ================================================================================
 
-对大多数系统管理员来说扩充 Linux 服务器的磁盘空间是日常的工作之一。因此这篇文章会在通过使用 Linux 命令，在 CentOS 7 系统上演示一些简单的操作步骤来扩充您的磁盘空间而不需要重启您的生产服务器。关于扩充和增加新的磁盘到 Linux 系统，我们会提及多种方法和多种可行性，所以可按您所需选择最适用的一种。 
+对大多数系统管理员来说扩充 Linux 服务器的磁盘空间是日常的工作之一。因此这篇文章会通过使用 Linux 命令，在 CentOS 7 系统上演示一些简单的操作步骤来扩充您的磁盘空间而不需要重启您的生产服务器。关于扩充和增加新的磁盘到 Linux 系统，我们会提及多种方法和多种可行性，可按您所需选择最适用的一种。 
 
-### 1. 为虚拟机客户端扩充磁盘空间: ###
+### 1. 在虚拟机客户端扩充磁盘空间: ###
 
-在为 Linux 系统增加磁盘卷之前，您需要添加一块新的物理磁盘或是从正使用的 VMware vShere、工作站或着其它的基础虚拟环境软件中进行设置，从而扩充一块系统正使用的虚拟磁盘空间。
+在为 Linux 系统增加磁盘卷之前，您首先需要添加一块新的物理磁盘，或在 VMware vShere、VMware 工作站以及你使用的其它虚拟环境软件中进行设置来增加一块虚拟磁盘的容量。
 
 ![Increase disk](http://blog.linoxide.com/wp-content/uploads/2016/02/1.png)
 
@@ -22,7 +22,7 @@
 
 ### 3. 扩展空间而无需重启虚拟机 ###
 
-现在运行如下命令就可以来扩展操作系统的物理卷磁盘空间，而且不需要重启虚拟机，系统会重新扫描 SCSI （注：Small Computer System Interface 小型计算机系统接口）总线并添加 SCSI 设备。
+现在运行如下命令，通过重新扫描 SCSI （注：Small Computer System Interface 小型计算机系统接口）总线并添加 SCSI 设备，系统就可以扩展操作系统的物理卷磁盘空间，而且不需要重启虚拟机。
 
     # ls /sys/class/scsi_host/
     # echo "- - -" > /sys/class/scsi_host/host0/scan
@@ -35,7 +35,7 @@
     # echo 1 > /sys/class/scsi_device/0\:0\:0\:0/device/rescan
     # echo 1 > /sys/class/scsi_device/2\:0\:0\:0/device/rescan
 
-如下图所示，会重新扫描 SCSI 总线，随后我们从虚拟机客户端设置的磁盘大小会正常显示。
+如下图所示，会重新扫描 SCSI 总线，随后我们在虚拟机客户端设置的磁盘大小会正常显示。
 
 ![Rescan disk device](http://blog.linoxide.com/wp-content/uploads/2016/02/3.png)
 
@@ -85,7 +85,7 @@
 
 ### 5. 创建物理卷: ###
 
-根据提示运行 'partprob' 或 'kpartx' 命令以使分区表被真正使用，然后使用如下的命令来创建新的物理卷。
+根据上述提示，运行 'partprob' 或 'kpartx' 命令以使分区表生效，然后使用如下的命令来创建新的物理卷。
 
     # partprobe
     # pvresize /dev/sda3
@@ -107,7 +107,7 @@
 
     # xfs_growfs /dev/mapper/centos-root
 
-'/' 分区的大小已经成功的增加了，可以使用 'df' 命令来检查您磁盘驱动的大小。如图示。
+'/' 分区的大小已经成功的增加了，可以使用 'df' 命令来检查您磁盘驱动器的大小。如图示。
 
 ![Increase disk space](http://blog.linoxide.com/wp-content/uploads/2016/02/3C.png)
 
@@ -129,7 +129,7 @@
     # echo "- - -" > /sys/class/scsi_host/host1/scan
     # echo "- - -" > /sys/class/scsi_host/host2/scan
 
-列出您的 SCSI 设备的名称
+列出您的 SCSI 设备的名称：
 
     # ls /sys/class/scsi_device/
     # echo 1 > /sys/class/scsi_device/1\:0\:0\:0/device/rescan
@@ -139,7 +139,7 @@
 
 ![Scanning new disk](http://blog.linoxide.com/wp-content/uploads/2016/02/3F.png)
 
-一旦新增的磁盘可见就可以运行下面的命令来创建新的物理卷，然后增加到卷组，如下示。
+一旦新增的磁盘可见，就可以运行下面的命令来创建新的物理卷，然后增加到卷组，如下示。
 
     # pvcreate /dev/sdb
     # vgextend centos /dev/sdb
@@ -157,16 +157,15 @@
 
 ### 结论: ###
 
-在 Linux CentOS 7 系统上，使用这篇文章所述的操作步骤来扩充您的任意逻辑卷的磁盘空间，此管理磁盘分区的操作过程是非常简单的。您不需要重启生产线上的服务器，只是简单的重扫描下 SCSI 设备，和扩展您想要的 LVM（逻辑卷管理）。我们希望这文章对您有用。可自由的发表有用的评论和建议。
+在 Linux CentOS 7 系统上管理磁盘分区的操作过程是非常简单的，可以使用这篇文章所述的操作步骤来扩充您的任意逻辑卷的磁盘空间。您不需要重启生产线上的服务器，只是简单的重扫描下 SCSI 设备，和扩展您想要的 LVM（逻辑卷管理）。我们希望这文章对您有用。请随意的发表有用的评论和建议。
 
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/linux-how-to/add-new-disk-centos-7-without-rebooting/
 
 作者：[Kashif S][a]
-译者：[runningwater](https://github.com/runningwater
-)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[runningwater](https://github.com/runningwater)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
