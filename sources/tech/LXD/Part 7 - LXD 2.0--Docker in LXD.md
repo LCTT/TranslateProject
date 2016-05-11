@@ -1,7 +1,7 @@
 Part 7 - LXD 2.0: Docker in LXD
 ==================================
 
-This is the third blog post [in this series about LXD 2.0][0].
+This is the seventh blog post [in this series about LXD 2.0][0].
 
 ![](https://linuxcontainers.org/static/img/containers.png)
 
