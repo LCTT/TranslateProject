@@ -1,4 +1,4 @@
-MMaster OpenStack with 5 new tutorials
+Master OpenStack with 5 new tutorials
 5篇文章快速掌握OpenStack
 =======================================
 
