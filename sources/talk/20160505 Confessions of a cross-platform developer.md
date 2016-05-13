@@ -1,3 +1,7 @@
+vim-kakali translating
+
+
+
 Confessions of a cross-platform developer
 =============================================
 
