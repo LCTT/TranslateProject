@@ -1,6 +1,5 @@
 Achieving Enterprise-Ready Container Tools With Wercker’s Open Source CLI
 ===========================================
-#CoderBOBO translating
 
 For enterprises, containers offer more efficient build environments, cloud-native applications and migration from legacy systems to the cloud. But enterprise adoption of the technology -- Docker specifically -- has been hampered by, among other issues, [a lack of mature developer tools][1].
 
