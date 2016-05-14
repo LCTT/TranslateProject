@@ -1,3 +1,5 @@
+translating by martin2011qi
+
 Why and how I became a software engineer
 ==========================================
 
