@@ -13,7 +13,7 @@
 - 意外的文件删除
 - 文件或文件系统损坏
 - 服务器完全毁坏，包括由于火灾或其他问题导致的同盘备份毁坏
-- 硬盘或SSD崩溃
+- 硬盘或 SSD 崩溃
 - 病毒或勒索软件破坏或删除文件
 
 你可以使用磁带归档备份整个服务器并将其离线存储。
@@ -22,7 +22,7 @@
 
 ![Fig.01: Tape file marks](http://s0.cyberciti.org/uploads/cms/2015/10/tape-format.jpg)
 
-图01：磁带文件标记
+*图01：磁带文件标记*
 
 每个磁带设备能存储多个备份文件。磁带备份文件通过 cpio，tar，dd 等命令创建。同时，磁带设备可以由多种程序打开、写入数据、及关闭。你可以存储若干备份（磁带文件）到一个物理磁带上。在每个磁带文件之间有个“磁带文件标记”。这用来指示一个物理磁带上磁带文件的结尾以及另一个文件的开始。你需要使用 mt 命令来定位磁带（快进，倒带和标记）。
 
@@ -30,7 +30,7 @@
 
 ![Fig.02: How data is stored on a tape](http://s0.cyberciti.org/uploads/cms/2015/10/how-data-is-stored-on-a-tape.jpg)
 
-图02：磁带上的数据是如何存储的
+*图02：磁带上的数据是如何存储的*
 
 所有的数据使用 tar 以连续磁带存储格式连续地存储。第一个磁带归档会从磁带的物理开始端开始存储（tar #0）。接下来的就是 tar #1，以此类推。
 
@@ -60,22 +60,22 @@
 
 输入下列命令：
 
-    ## Linux（更多信息参阅 man） ##
+    ### Linux（更多信息参阅 man） ###
     lsscsi
     lsscsi -g
 
-    ## IBM AIX ##
+    ### IBM AIX ###
     lsdev -Cc tape
     lsdev -Cc adsm
     lscfg -vl rmt*
 
-    ## Solaris Unix ##
+    ### Solaris Unix ###
     cfgadm –a
     cfgadm -al
     luxadm probe
     iostat -En
 
-    ## HP-UX Unix ##
+    ### HP-UX Unix ###
     ioscan Cf
     ioscan -funC tape
     ioscan -fnC tape
@@ -86,11 +86,11 @@
 
 ![Fig.03: Installed tape devices on Linux server](http://s0.cyberciti.org/uploads/cms/2015/10/linux-find-tape-devices-command.jpg)
 
-图03：Linux 服务器上已安装的磁带设备
+*图03：Linux 服务器上已安装的磁带设备*
 
 ### mt 命令示例 ###
 
-在 Linux 和类Unix系统上，mt 命令用来控制磁带驱动器的操作，比如查看状态或查找磁带上的文件或写入磁带控制标记。下列大多数命令需要作为 root 用户执行。语法如下：
+在 Linux 和类 Unix 系统上，mt 命令用来控制磁带驱动器的操作，比如查看状态或查找磁带上的文件或写入磁带控制标记。下列大多数命令需要作为 root 用户执行。语法如下：
 
     mt -f /tape/device/name operation
 
@@ -98,7 +98,7 @@
 
 你可以设置 TAPE shell 变量。这是磁带驱动器的路径名。在 FreeBSD 上默认的（如果变量没有设置，而不是 null）是 /dev/nsa0。可以通过 mt 命令的 -f 参数传递变量覆盖它，就像下面解释的那样。
 
-     ## 添加到你的 shell 配置文件 ##
+     ### 添加到你的 shell 配置文件 ###
      TAPE=/dev/st1 #Linux
      TAPE=/dev/rmt/2 #Unix
      TAPE=/dev/nsa3 #FreeBSD
@@ -106,11 +106,11 @@
 
 ### 1：显示磁带/驱动器状态 ###
 
-    mt status  #Use default
-    mt -f /dev/rmt/0  status #Unix
-    mt -f /dev/st0 status #Linux
-    mt -f /dev/nsa0 status #FreeBSD
-    mt -f /dev/rmt/1 status #Unix unity 1 也就是 tape device no. 1
+    mt status  ### Use default
+    mt -f /dev/rmt/0  status ### Unix
+    mt -f /dev/st0 status ### Linux
+    mt -f /dev/nsa0 status ### FreeBSD
+    mt -f /dev/rmt/1 status ### Unix unity 1 也就是 tape device no. 1
 
 你可以像下面一样使用 shell 循环语句遍历一个系统并定位其所有的磁带驱动器：
 
@@ -208,7 +208,7 @@
 
     mt -f /dev/st0 rewind; dd if=/dev/st0 of=-
 
-    ## tar 格式 ##
+    ### tar 格式 ###
     tar tvf {DEVICE} {Directory-FileName}
     tar tvf /dev/st0
     tar tvf /dev/st0 desktop
@@ -216,40 +216,40 @@
 
 ### 12：使用 dump 或 ufsdump 备份分区 ###
 
-    ## Unix 备份 c0t0d0s2 分区 ##
+    ### Unix 备份 c0t0d0s2 分区 ###
     ufsdump 0uf /dev/rmt/0  /dev/rdsk/c0t0d0s2
 
-    ## Linux 备份 /home 分区 ##
+    ### Linux 备份 /home 分区 ###
     dump 0uf /dev/nst0 /dev/sda5
     dump 0uf /dev/nst0 /home
 
-    ## FreeBSD 备份 /usr 分区 ##
+    ### FreeBSD 备份 /usr 分区 ###
     dump -0aL -b64 -f /dev/nsa0 /usr
 
 ### 12：使用 ufsrestore 或 restore 恢复分区 ###
 
-    ## Unix ##
+    ### Unix ###
     ufsrestore xf /dev/rmt/0
-    ## Unix 交互式恢复 ##
+    ### Unix 交互式恢复 ###
     ufsrestore if /dev/rmt/0
 
-    ## Linux ##
+    ### Linux ###
     restore rf /dev/nst0
-    ## 从磁带媒介上的第6个备份交互式恢复 ##
+    ### 从磁带媒介上的第6个备份交互式恢复 ###
     restore isf 6 /dev/nst0
 
-    ## FreeBSD 恢复 ufsdump 格式 ##
+    ### FreeBSD 恢复 ufsdump 格式 ###
     restore -i -f /dev/nsa0
 
 ### 13：从磁带开头开始写入（见图02） ###
 
-    ## 这会覆盖磁带上的所有数据 ##
+    ### 这会覆盖磁带上的所有数据 ###
     mt -f /dev/st1 rewind
 
-    ### 备份 home ##
+    ### 备份 home ###
     tar cvf /dev/st1 /home
 
-    ## 离线并卸载磁带 ##
+    ### 离线并卸载磁带 ###
     mt -f /dev/st0 offline
 
 从磁带开头开始恢复：
@@ -260,22 +260,22 @@
 
 ### 14：从最后一个 tar 后开始写入（见图02） ###
 
-    ## 这会保留之前写入的数据 ##
+    ### 这会保留之前写入的数据 ###
     mt -f /dev/st1 eom
 
-    ### 备份 home ##
+    ### 备份 home ###
     tar cvf /dev/st1 /home
 
-    ## 卸载 ##
+    ### 卸载 ###
     mt -f /dev/st0 offline
 
 ### 15：从 tar number 2 后开始写入（见图02） ###
 
-    ## 在 tar number 2 之后写入（应该是 2+1）
+    ### 在 tar number 2 之后写入（应该是 2+1）###
     mt -f /dev/st0 asf 3
     tar cvf /dev/st0 /usr
 
-    ## asf 等效于 fsf ##
+    ### asf 等效于 fsf ###
     mt -f /dev/sf0 rewind
     mt -f /dev/st0 fsf 2
 

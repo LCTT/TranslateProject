@@ -4,10 +4,9 @@ Linux 内核里的数据结构——双向链表
 双向链表
 --------------------------------------------------------------------------------
 
+Linux 内核中自己实现了双向链表，可以在 [include/linux/list.h](https://github.com/torvalds/linux/blob/master/include/linux/list.h) 找到定义。我们将会首先从双向链表数据结构开始介绍**内核里的数据结构**。为什么？因为它在内核里使用的很广泛，你只需要在 [free-electrons.com](http://lxr.free-electrons.com/ident?i=list_head) 检索一下就知道了。
 
-Linux 内核自己实现了双向链表，可以在[include/linux/list.h](https://github.com/torvalds/linux/blob/master/include/linux/list.h)找到定义。我们将会从双向链表数据结构开始介绍`内核里的数据结构`。为什么？因为它在内核里使用的很广泛，你只需要在[free-electrons.com](http://lxr.free-electrons.com/ident?i=list_head) 检索一下就知道了。
-
-首先让我们看一下在[include/linux/types.h](https://github.com/torvalds/linux/blob/master/include/linux/types.h) 里的主结构体：
+首先让我们看一下在 [include/linux/types.h](https://github.com/torvalds/linux/blob/master/include/linux/types.h) 里的主结构体：
 
 ```C
 struct list_head {
@@ -15,7 +14,7 @@ struct list_head {
 };
 ```
 
-你可能注意到这和你以前见过的双向链表的实现方法是不同的。举个例子来说，在[glib](http://www.gnu.org/software/libc/)  库里是这样实现的：
+你可能注意到这和你以前见过的双向链表的实现方法是不同的。举个例子来说，在 [glib](http://www.gnu.org/software/libc/)  库里是这样实现的：
 
 ```C
 struct GList {
@@ -25,7 +24,7 @@ struct GList {
 };
 ```
 
-通常来说一个链表结构会包含一个指向某个项目的指针。但是Linux内核中的链表实现并没有这样做。所以问题来了：`链表在哪里保存数据呢？`。实际上，内核里实现的链表是`侵入式链表`。侵入式链表并不在节点内保存数据-它的节点仅仅包含指向前后节点的指针，以及指向链表节点数据部分的指针——数据就是这样附加在链表上的。这就使得这个数据结构是通用的，使用起来就不需要考虑节点数据的类型了。
+通常来说一个链表结构会包含一个指向某个项目的指针。但是 Linux 内核中的链表实现并没有这样做。所以问题来了：**链表在哪里保存数据呢？**。实际上，内核里实现的链表是**侵入式链表（Intrusive list）**。侵入式链表并不在节点内保存数据-它的节点仅仅包含指向前后节点的指针，以及指向链表节点数据部分的指针——数据就是这样附加在链表上的。这就使得这个数据结构是通用的，使用起来就不需要考虑节点数据的类型了。
 
 比如：
 
@@ -36,7 +35,7 @@ struct nmi_desc {
 };
 ```
 
-让我们看几个例子来理解一下在内核里是如何使用`list_head` 的。如上所述，在内核里有很多很多不同的地方都用到了链表。我们来看一个在杂项字符驱动里面的使用的例子。在 [drivers/char/misc.c](https://github.com/torvalds/linux/blob/master/drivers/char/misc.c) 的杂项字符驱动API 被用来编写处理小型硬件或虚拟设备的小驱动。这些驱动共享相同的主设备号：
+让我们看几个例子来理解一下在内核里是如何使用 `list_head` 的。如上所述，在内核里有很多很多不同的地方都用到了链表。我们来看一个在杂项字符驱动里面的使用的例子。在 [drivers/char/misc.c](https://github.com/torvalds/linux/blob/master/drivers/char/misc.c) 的杂项字符驱动 API 被用来编写处理小型硬件或虚拟设备的小驱动。这些驱动共享相同的主设备号：
 
 ```C
 #define MISC_MAJOR              10
@@ -68,7 +67,7 @@ crw-------   1 root root     10,  63 Mar 21 12:01 vga_arbiter
 crw-------   1 root root     10, 137 Mar 21 12:01 vhci
 ```
 
-现在让我们看看它是如何使用链表的。首先看一下结构体`miscdevice`：
+现在让我们看看它是如何使用链表的。首先看一下结构体 `miscdevice`：
 
 ```C
 struct miscdevice
@@ -97,13 +96,13 @@ static LIST_HEAD(misc_list);
 	struct list_head name = LIST_HEAD_INIT(name)
 ```
 
-然后使用宏`LIST_HEAD_INIT` 进行初始化，这会使用变量`name` 的地址来填充`prev`和`next` 结构体的两个变量。
+然后使用宏 `LIST_HEAD_INIT` 进行初始化，这会使用变量`name` 的地址来填充`prev`和`next` 结构体的两个变量。
 
 ```C
 #define LIST_HEAD_INIT(name) { &(name), &(name) }
 ```
 
-现在来看看注册杂项设备的函数`misc_register`。它在开始就用函数 `INIT_LIST_HEAD` 初始化了`miscdevice->list`。
+现在来看看注册杂项设备的函数`misc_register`。它在一开始就用函数 `INIT_LIST_HEAD` 初始化了`miscdevice->list`。
 
 ```C
 INIT_LIST_HEAD(&misc->list);
@@ -125,7 +124,7 @@ static inline void INIT_LIST_HEAD(struct list_head *list)
 list_add(&misc->list, &misc_list);
 ```
 
-内核文件`list.h` 提供了向链表添加新项的API 接口。我们来看看它的实现：
+内核文件`list.h` 提供了向链表添加新项的 API 接口。我们来看看它的实现：
 
 
 ```C
@@ -205,9 +204,9 @@ int main() {
 }
 ```
 
-最终会打印`2`
+最终会打印出`2`
 
-下一点就是`typeof`,它也很简单。就如你从名字所理解的，它仅仅返回了给定变量的类型。当我第一次看到宏`container_of`的实现时，让我觉得最奇怪的就是表达式`((type *)0)`中的0.实际上这个指针巧妙的计算了从结构体特定变量的偏移，这里的`0`刚好就是位宽里的零偏移。让我们看一个简单的例子：
+下一点就是`typeof`,它也很简单。就如你从名字所理解的，它仅仅返回了给定变量的类型。当我第一次看到宏`container_of`的实现时，让我觉得最奇怪的就是表达式`((type *)0)`中的0。实际上这个指针巧妙的计算了从结构体特定变量的偏移，这里的`0`刚好就是位宽里的零偏移。让我们看一个简单的例子：
 
 ```C
 #include <stdio.h>
@@ -236,21 +235,23 @@ int main() {
 
 当然了`list_add` 和 `list_entry`不是`<linux/list.h>`提供的唯一功能。双向链表的实现还提供了如下API：
 
-* list_add
-* list_add_tail
-* list_del
-* list_replace
-* list_move
-* list_is_last
-* list_empty
-* list_cut_position
-* list_splice
-* list_for_each
-* list_for_each_entry
+* list\_add
+* list\_add\_tail
+* list\_del
+* list\_replace
+* list\_move
+* list\_is\_last
+* list\_empty
+* list\_cut\_position
+* list\_splice
+* list\_for\_each
+* list\_for\_each\_entry
 
 等等很多其它API。
 
-via: https://github.com/0xAX/linux-insides/edit/master/DataStructures/dlist.md
+----
+
+via: https://github.com/0xAX/linux-insides/blob/master/DataStructures/dlist.md
 
 译者：[Ezio](https://github.com/oska874)
 校对：[Mr小眼儿](https://github.com/tinyeyeser)
