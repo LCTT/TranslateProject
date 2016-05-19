@@ -1,5 +1,3 @@
-GHLandy Translating
-
 How to Best Manage Encryption Keys on Linux
 =============================================
 
