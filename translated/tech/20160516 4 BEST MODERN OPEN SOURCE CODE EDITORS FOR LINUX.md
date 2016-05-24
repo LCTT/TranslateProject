@@ -7,13 +7,13 @@ Linux 上四个最佳的现代开源代码编辑器
 
 ### Linux 上最佳的现代开源代码编辑器
 
-我使用 Ubuntu 作为我的主力系统，因此提供的安装说明适用于基于 Ubuntu 的发行版。但这并不会让这个列表变成 **Ubuntu 上的最佳文本编辑器**，因为这些编辑器对所有 Linux 发行版都适用。多说一句，这个清单没有任何优先顺序。
+我使用 Ubuntu 作为我的主力系统，因此提供的安装说明适用于基于 Ubuntu 的发行版。但这并不会让这个列表变成 **Ubuntu 上的最佳文本编辑器**，因为这些编辑器对所有 Linux 发行版都适用。多说一句，这个清单没有任何先后顺序。
 
 ### BRACKETS
 
 ![](http://itsfoss.com/wp-content/uploads/2015/01/brackets_UI.jpeg)
 
-[Brackets][1] 是 [Adobe][2] 的一个开源代码编辑器。Brackets 专注与 web 设计师的需求，内置 HTML，CSS 和 JavaScript 支持。它很轻量，也很强大。它提供了行内编辑和实时预览。还有无数可用的插件，进一步加强你在 Brackets 上的体验。
+[Brackets][1] 是 [Adobe][2] 的一个开源代码编辑器。Brackets 专注于 web 设计师的需求，内置 HTML，CSS 和 JavaScript 支持。它很轻量，也很强大。它提供了行内编辑和实时预览。还有无数可用的插件，进一步加强你在 Brackets 上的体验。
 
 在 Ubuntu 以及基于 Ubuntu 的发行版（比如 Linux Mint）上[安装 Brackets][3] 的话，你可以用这个非官方的 PPA：
 
@@ -31,9 +31,9 @@ sudo apt-get install brackets
 
 ![](http://itsfoss.com/wp-content/uploads/2014/08/Atom_Editor.jpeg)
 
-[Atom][4] 是另一个给程序员开源代码编辑器，现代而且美观。Atom 是由 Github 开发的，宣称是“21世纪的可定制文本编辑器”。Atom 的外观看起来类似 Sublime Text，一个在程序员中很流行但是闭源的文本编辑器。
+[Atom][4] 是另一个给程序员的开源代码编辑器，现代而且美观。Atom 是由 Github 开发的，宣称是“21世纪的可定制文本编辑器”。Atom 的外观看起来类似 Sublime Text，一个在程序员中很流行但是闭源的文本编辑器。
 
-Atom 最近发布了 .deb 和 .rpm 包，所以你可以轻而易举地在基于 Debian 和 Fedora 的 Linux 发行版上安装它。当然，它的源代码也是提供了的。
+Atom 最近发布了 .deb 和 .rpm 包，所以你可以轻而易举地在基于 Debian 和 Fedora 的 Linux 发行版上安装它。当然，它也提供了源代码。
 
 
 [下载 Atom .deb](https://atom.io/download/deb)
@@ -56,13 +56,13 @@ Atom 最近发布了 .deb 和 .rpm 包，所以你可以轻而易举地在基于
 
 ![](http://itsfoss.com/wp-content/uploads/2015/01/Light_Table.jpeg)
 
-标榜“下一代代码编辑器”，[Light Table][7] 是另一个外观现代，功能丰富的开源代码编辑器，它更像一个 IDE 而不仅仅是个文本编辑器。它还有无数扩展用以加强它的功能。也许你会喜欢它的行内求值。你得用用它才会相信 Light Table 有多好用。
+[Light Table][7] 是另一个外观现代，功能丰富的开源代码编辑器，标榜“下一代代码编辑器”，它更像一个 IDE 而不仅仅是个文本编辑器。它还有无数扩展用以加强它的功能。也许你会喜欢它的行内求值。你得用用它才会相信 Light Table 有多好用。
 
 [在 Ubuntu 上安装 Light Table](http://itsfoss.com/install-lighttable-ubuntu/)
 
 ### 你的选择是？
 
-不，我们的选择没有限制在这四个 Linux 代码编辑器之中。这个清单只是关于程序员的现代编辑器。当然，你还有很多选择，比如 [Notepad++ 的替代选择 Notepadqq][8] 或 [SciTE][9] 以及更多。那么，在上面四个中，对 Linux 而言哪个是你最喜欢的代码编辑器？
+不，我们的选择没有限制在这四个 Linux 代码编辑器之中。这个清单只是关于程序员的现代编辑器。当然，你还有很多选择，比如 [Notepad++ 的替代选择 Notepadqq][8] 或 [SciTE][9] 以及更多。那么，上面四个中，在 Linux 上而言你最喜欢哪个代码编辑器？
 
 
 ----------
