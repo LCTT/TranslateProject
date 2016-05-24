@@ -1,3 +1,5 @@
+alim0x translating
+
 4 BEST MODERN OPEN SOURCE CODE EDITORS FOR LINUX
 ==================================================
 
