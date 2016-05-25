@@ -1,4 +1,4 @@
-Translating by Xuanwo
+GHLandy Translating
 
 Part 10 - LFCS: Understanding & Learning Basic Shell Scripting and Linux Filesystem Troubleshooting
 ================================================================================
