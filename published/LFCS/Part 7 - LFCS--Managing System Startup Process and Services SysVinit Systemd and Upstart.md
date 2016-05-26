@@ -1,35 +1,35 @@
-LFCS 系列第七讲： 通过 SysVinit、Systemd 和 Upstart 管理系统自启动进程和服务
+LFCS 系列第七讲：通过 SysVinit、Systemd 和 Upstart 管理系统自启动进程和服务
 ================================================================================
-几个月前， Linux 基金会宣布 LFCS(Linux 基金会认证系统管理员) 认证诞生了，这个令人兴奋的新计划定位于让来自全球各地的初级到中级的 Linux 系统管理员得到认证。这其中包括维护已经在运行的系统和服务能力、第一手的问题查找和分析能力、以及决定何时向开发团队提交问题的能力。
+几个月前， Linux 基金会宣布 LFCS (Linux 基金会认证系统管理员) 认证诞生了，这个令人兴奋的新计划定位于让来自全球各地的初级到中级的 Linux 系统管理员得到认证。这其中包括维护已经在运行的系统和服务的能力、第一手的问题查找和分析能力、以及决定何时向开发团队提交问题的能力。
 
 ![Linux Foundation Certified Sysadmin – Part 7](http://www.tecmint.com/wp-content/uploads/2014/10/lfcs-Part-7.png)
 
-第七讲： Linux 基金会认证系统管理员
+*第七讲： Linux 基金会认证系统管理员*
 
 下面的视频简要介绍了 Linux 基金会认证计划。
 
 注：youtube 视频
 <iframe width="720" height="405" frameborder="0" allowfullscreen="allowfullscreen" src="//www.youtube.com/embed/Y29qZ71Kicg"></iframe>
 
-这篇博文是 10 指南系列中的第七篇，在这篇文章中，我们会介绍如何管理 Linux 系统自启动进程和服务，这是 LFCS 认证考试要求的一部分。
+本讲是系列教程中的第七讲，在这篇文章中，我们会介绍如何管理 Linux 系统自启动进程和服务，这是 LFCS 认证考试要求的一部分。
 
 ### 管理 Linux 自启动进程 ###
 
-Linux 系统的启动程序包括多个阶段，每个阶段由一个不同的组件表示。下面的图示简要总结了启动过程以及所有包括的主要组件。
+Linux 系统的启动程序包括多个阶段，每个阶段由一个不同的图示块表示。下面的图示简要总结了启动过程以及所有包括的主要组件。
 
 ![Linux Boot Process](http://www.tecmint.com/wp-content/uploads/2014/10/Linux-Boot-Process.png)
 
-Linux 启动过程
+*Linux 启动过程*
 
-当你按下你机器上的电源键时， 存储在主板 EEPROM 芯片中的固件初始化 POST(通电自检) 检查系统硬件资源的状态。POST 结束后，固件会搜索并加载位于第一块可用磁盘上的 MBR 或 EFI 分区的第一阶段引导程序，并把控制权交给引导程序。
+当你按下你机器上的电源键时，存储在主板 EEPROM 芯片中的固件初始化 POST(通电自检) 检查系统硬件资源的状态。POST 结束后，固件会搜索并加载位于第一块可用磁盘上的 MBR 或 EFI 分区的第一阶段引导程序，并把控制权交给引导程序。
 
 #### MBR 方式 ####
 
-MBR 是位于 BISO 设置中标记为可启动磁盘上的第一个扇区，大小是 512 个字节。
+MBR 是位于 BIOS 设置中标记为可启动磁盘上的第一个扇区，大小是 512 个字节。
 
 - 前面 446 个字节：包括可执行代码和错误信息文本的引导程序
 - 接下来的 64 个字节：四个分区（主分区或扩展分区）中每个分区一条记录的分区表。其中，每条记录标示了每个一个分区的状态（是否活跃）、大小以及开始和结束扇区。
-- 最后 2 个字节： MBR 有效性检查的魔数。
+- 最后 2 个字节： MBR 有效性检查的魔法数。
 
 下面的命令对 MBR 进行备份（在本例中，/dev/sda 是第一块硬盘）。结果文件 mbr.bkp 在分区表被破坏、例如系统不可引导时能排上用场。
 
@@ -41,7 +41,7 @@ MBR 是位于 BISO 设置中标记为可启动磁盘上的第一个扇区，大�
 
 ![Backup MBR in Linux](http://www.tecmint.com/wp-content/uploads/2014/10/Backup-MBR-in-Linux.png)
 
-在 Linux 中备份 MBR
+*在 Linux 中备份 MBR*
 
 **恢复 MBR**
 
@@ -49,7 +49,7 @@ MBR 是位于 BISO 设置中标记为可启动磁盘上的第一个扇区，大�
 
 ![Restore MBR in Linux](http://www.tecmint.com/wp-content/uploads/2014/10/Restore-MBR-in-Linux.png)
 
-在 Linux 中恢复 MBR
+*在 Linux 中恢复 MBR*
 
 #### EFI/UEFI 方式 ####
 
@@ -74,11 +74,11 @@ init 和 systemd 都是管理其它守护进程的守护进程（后台进程）
 
 ![Systemd and Init](http://www.tecmint.com/wp-content/uploads/2014/10/systemd-and-init.png)
 
-Systemd 和 Init
+*Systemd 和 Init*
 
 ### 自启动服务(SysVinit) ###
 
-Linux 中运行等级的概念表示通过控制运行哪些服务来以不同方式使用系统。换句话说，运行等级控制着当前执行状态下可以完成什么任务（以及什么不能完成）。
+Linux 中运行等级通过控制运行哪些服务来以不同方式使用系统。换句话说，运行等级控制着当前执行状态下可以完成什么任务（以及什么不能完成）。
 
 传统上，这个启动过程是基于起源于 System V Unix 的形式，通过执行脚本启动或者停止服务从而使机器进入指定的运行等级(换句话说，是一个不同的系统运行模式)。
 
@@ -88,47 +88,17 @@ Linux 中运行等级的概念表示通过控制运行哪些服务来以不同�
 
 除了启动系统进程，init 还会查看 /etc/inittab 来决定进入哪个运行等级。
 
-注：表格
-<table cellspacing="0" border="0">
-  <colgroup width="85">
-  </colgroup>
-  <colgroup width="1514">
-  </colgroup>
-  <tbody>
-    <tr>
-      <td align="CENTER" height="18" style="border: 1px solid #000001;"><b>Runlevel</b></td>
-      <td align="LEFT" style="border: 1px solid #000001;"><b> Description</b></td>
-    </tr>
-    <tr class="alt">
-      <td align="CENTER" height="18" style="border: 1px solid #000001;">0</td>
-      <td align="LEFT" style="border: 1px solid #000001;">&nbsp;停止系统。运行等级 0 是一个用于快速关闭系统的特殊过渡状态。</td>
-    </tr>
-    <tr>
-      <td align="CENTER" height="20" style="border: 1px solid #000001;">1</td>
-      <td align="LEFT" style="border: 1px solid #000001;">&nbsp;别名为 s 或 S，这个运行等级有时候也称为维护模式。在这个运行等级启动的服务由于发行版不同而不同。通常用于正常系统操作损坏时低级别的系统维护。</td>
-    </tr>
-    <tr class="alt">
-      <td align="CENTER" height="18" style="border: 1px solid #000001;">2</td>
-      <td align="LEFT" style="border: 1px solid #000001;">&nbsp;多用户。在 Debian 系统及其衍生版中，这是默认的运行等级，还包括了一个图形化登录（如果有的话）。在基于红帽的系统中，这是没有网络的多用户模式。</td>
-    </tr>
-    <tr>
-      <td align="CENTER" height="18" style="border: 1px solid #000001;">3</td>
-      <td align="LEFT" style="border: 1px solid #000001;">&nbsp;在基于红帽的系统中，这是默认的多用户模式，运行除了图形化环境以外的所有东西。基于 Debian 的系统中通常不会使用这个运行等级以及等级 4 和 5。</td>
-    </tr>
-    <tr class="alt">
-      <td align="CENTER" height="18" style="border: 1px solid #000001;">4</td>
-      <td align="LEFT" style="border: 1px solid #000001;">&nbsp;通常默认情况下不使用，可用于自定制。</td>
-    </tr>
-    <tr>
-      <td align="CENTER" height="18" style="border: 1px solid #000001;">5</td>
-      <td align="LEFT" style="border: 1px solid #000001;">&nbsp;基于红帽的系统中，支持 GUI 登录的完全多用户模式。这个运行等级和等级 3 类似，但是有可用的 GUI 登录。</td>
-    </tr>
-    <tr class="alt">
-      <td align="CENTER" height="18" style="border: 1px solid #000001;">6</td>
-      <td align="LEFT" style="border: 1px solid #000001;">&nbsp;重启系统。</td>
-    </tr>
-  </tbody>
-</table>
+
+|Runlevel| Description|
+|--------|------------|      
+|0|停止系统。运行等级 0 是一个用于快速关闭系统的特殊过渡状态。|
+|1|别名为 s 或 S，这个运行等级有时候也称为维护模式。在这个运行等级启动的服务由于发行版不同而不同。通常用于正常系统操作损坏时低级别的系统维护。|
+|2|多用户。在 Debian 系统及其衍生版中，这是默认的运行等级，还包括了一个图形化登录（如果有的话）。在基于红帽的系统中，这是没有网络的多用户模式。|
+|3|在基于红帽的系统中，这是默认的多用户模式，运行除了图形化环境以外的所有东西。基于 Debian 的系统中通常不会使用这个运行等级以及等级 4 和 5。|
+|4|通常默认情况下不使用，可用于自定制。|
+|5|基于红帽的系统中，支持 GUI 登录的完全多用户模式。这个运行等级和等级 3 类似，但是有可用的 GUI 登录。|
+|6|重启系统。|
+
 
 要在运行等级之间切换，我们只需要使用 init 命令更改运行等级：init N（其中 N 是上面列出的一个运行等级）。
 请注意这并不是运行中的系统切换运行等级的推荐方式，因为它不会给已经登录的用户发送警告（因而导致他们丢失工作以及进程异常终结）。
@@ -139,7 +109,7 @@ Linux 中运行等级的概念表示通过控制运行哪些服务来以不同�
 
     id:2:initdefault:
 
-并用你喜欢的文本编辑器，例如 vim（本系列的[第二讲 ： 如何在 Linux 中使用 vi/vim 编辑器][2]），更改数字 2 为想要的运行等级。
+并用你喜欢的文本编辑器，例如 vim（本系列的 [LFCS 系列第二讲：如何安装和使用纯文本编辑器 vi/vim][2]），更改数字 2 为想要的运行等级。
 
 然后，以 root 用户执行
 
@@ -149,7 +119,7 @@ Linux 中运行等级的概念表示通过控制运行哪些服务来以不同�
 
 ![Change Runlevels in Linux](http://www.tecmint.com/wp-content/uploads/2014/10/Change-Runlevels-in-Linux.jpeg)
 
-在 Linux 中更改运行等级
+*在 Linux 中更改运行等级*
 
 #### 使用 chkconfig 管理服务 ####
 
@@ -165,7 +135,7 @@ Linux 中运行等级的概念表示通过控制运行哪些服务来以不同�
 
 ![Listing Runlevel Configuration](http://www.tecmint.com/wp-content/uploads/2014/10/Listing-Runlevel-Configuration.png)
 
-列出运行等级配置
+*列出运行等级配置*
 
 从上图中我们可以看出，当系统进入运行等级 2 到 5 的时候就会启动 postfix，而默认情况下运行等级 2 到 4 时会运行 mysqld。现在假设我们并不希望如此。
 
@@ -183,7 +153,7 @@ Linux 中运行等级的概念表示通过控制运行哪些服务来以不同�
 
 ![在 Linux 中启用/停用服务Enable Disable Services in Linux](http://www.tecmint.com/wp-content/uploads/2014/10/Enable-Disable-Services.png)
 
-启用/停用服务
+*启用/停用服务*
 
 我们在基于 Debian 的系统中使用 sysv-rc-conf 完成类似任务。
 
@@ -193,32 +163,32 @@ Linux 中运行等级的概念表示通过控制运行哪些服务来以不同�
 
 1. 我们可以用下面的命令查看启动 mdadm 时的运行等级。
 
-    # ls -l /etc/rc[0-6].d | grep -E 'rc[0-6]|mdadm'
+    	# ls -l /etc/rc[0-6].d | grep -E 'rc[0-6]|mdadm'
 
 
-![查看运行中服务的运行等级Check Runlevel of Service Running](http://www.tecmint.com/wp-content/uploads/2014/10/Check-Service-Runlevel.png)
+	![查看运行中服务的运行等级Check Runlevel of Service Running](http://www.tecmint.com/wp-content/uploads/2014/10/Check-Service-Runlevel.png)
 
-查看运行中服务的运行等级
+	*查看运行中服务的运行等级*
 
 2. 我们使用 sysv-rc-conf 设置防止 mdadm 在运行等级2 之外的其它等级启动。只需根据需要（你可以使用上下左右按键）选中或取消选中（通过空格键）。
 
-    # sysv-rc-conf
+    	# sysv-rc-conf
 
-![Sysv 运行等级配置SysV Runlevel Config](http://www.tecmint.com/wp-content/uploads/2014/10/SysV-Runlevel-Config.png)
+	![Sysv 运行等级配置SysV Runlevel Config](http://www.tecmint.com/wp-content/uploads/2014/10/SysV-Runlevel-Config.png)
 
-Sysv 运行等级配置
+	*Sysv 运行等级配置*
 
-然后输入 q 退出。
+	然后输入 q 退出。
 
 3. 重启系统并从步骤 1 开始再操作一遍。
 
-    # ls -l /etc/rc[0-6].d | grep -E 'rc[0-6]|mdadm'
+    	# ls -l /etc/rc[0-6].d | grep -E 'rc[0-6]|mdadm'
 
-![验证服务运行等级Verify Service Runlevel](http://www.tecmint.com/wp-content/uploads/2014/10/Verify-Service-Runlevel.png)
+	![验证服务运行等级Verify Service Runlevel](http://www.tecmint.com/wp-content/uploads/2014/10/Verify-Service-Runlevel.png)
 
-验证服务运行等级
+	*验证服务运行等级*
 
-从上图中我们可以看出 mdadm 配置为只在运行等级 2 上启动。
+	从上图中我们可以看出 mdadm 配置为只在运行等级 2 上启动。
 
 ### 那关于 systemd 呢？ ###
 
@@ -232,11 +202,11 @@ systemd 是另外一个被多种主流 Linux 发行版采用的服务和系统�
 
 ![在 Linux 中查看运行中的进程Check All Running Processes in Linux](http://www.tecmint.com/wp-content/uploads/2014/10/Check-All-Running-Processes.png)
 
-查看运行中的进程
+*查看运行中的进程*
 
 LOAD 一列显示了单元（UNIT 列，显示服务或者由 systemd 维护的其它进程）是否正确加载，ACTIVE 和 SUB 列则显示了该单元当前的状态。
 
-显示服务当前状态的信息
+**显示服务当前状态的信息**
 
 当 ACTIVE 列显示某个单元状态并非活跃时，我们可以使用以下命令查看具体原因。
 
@@ -248,7 +218,7 @@ LOAD 一列显示了单元（UNIT 列，显示服务或者由 systemd 维护的�
 
 ![查看 Linux 服务状态Check Linux Service Status](http://www.tecmint.com/wp-content/uploads/2014/10/Check-Service-Status.png)
 
-查看服务状态
+*查看服务状态*
 
 我们可以看到 media-samba.mount 失败的原因是 host dev1 上的挂载进程无法找到 //192.168.0.10/gacanepa 上的共享网络。
 
@@ -262,9 +232,9 @@ LOAD 一列显示了单元（UNIT 列，显示服务或者由 systemd 维护的�
     # systemctl restart media-samba.mount
     # systemctl status media-samba.mount
 
-![启动停止服务Starting Stoping Services](http://www.tecmint.com/wp-content/uploads/2014/10/Starting-Stoping-Service.jpeg)
+![启动停止服务](http://www.tecmint.com/wp-content/uploads/2014/10/Starting-Stoping-Service.jpeg)
 
-启动停止服务
+*启动停止服务*
 
 **启用或停用某服务随系统启动**
 
@@ -278,7 +248,7 @@ LOAD 一列显示了单元（UNIT 列，显示服务或者由 systemd 维护的�
 
 ![启用或停用服务](http://www.tecmint.com/wp-content/uploads/2014/10/Enabling-Disabling-Services.jpeg)
 
-启用或停用服务
+*启用或停用服务*
 
 你也可以用下面的命令查看某个服务的当前状态（启用或者停用）。
 
@@ -358,13 +328,13 @@ via: http://www.tecmint.com/linux-boot-process-and-manage-services/
 
 作者：[Gabriel Cánepa][a]
 译者：[ictlyh](http://mutouxiaogui.cn/blog/)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:http://www.tecmint.com/author/gacanepa/
 [1]:http://www.tecmint.com/systemd-replaces-init-in-linux/
-[2]:http://www.tecmint.com/vi-editor-usage/
+[2]:https://linux.cn/article-7165-1.html
 [3]:http://www.tecmint.com/chkconfig-command-examples/
 [4]:http://www.tecmint.com/remove-unwanted-services-from-linux/
 [5]:http://www.tecmint.com/chkconfig-command-examples/

@@ -1,3 +1,4 @@
+Translating KevinSJ
 An introduction to data processing with Cassandra and Spark
 ==============================================================
 
