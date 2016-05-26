@@ -14,7 +14,7 @@ Snap 封装受容器的启发。这种新的封装格式允许开发人员发布
 
 ### 然而……
 
-据 [Matthew Garrett][5] 的说法，Snap 封装不能完全兑现最后的承诺。Garret 最为 Linux
+据 [Matthew Garrett][5] 的说法，Snap 封装不能完全兑现最后的承诺。Garret 作为 Linux
 内核的开发人员和 CoreOS 的安全性相关工作的开发者，我想他一定知道自己在说些什么。
 
 [According to Garret][6], “仅需要克服一点点困难，安装的任何 Snap 格式的软件包就能够将你的私有数据复制到任何地方”。
