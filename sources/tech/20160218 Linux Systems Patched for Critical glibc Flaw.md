@@ -1,4 +1,4 @@
-Ricky Gong 翻译中
+robot527 translating
 
 Linux Systems Patched for Critical glibc Flaw
 =================================================
