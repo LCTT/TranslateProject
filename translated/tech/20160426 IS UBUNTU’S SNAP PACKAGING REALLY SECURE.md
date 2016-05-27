@@ -40,6 +40,7 @@ Garrett 实际上仅仅是想要表达，当 Canonical 歌颂 Snap 和它的安�
 牢记 Ubuntu 16.04 当前还在使用 X11 而不是 Mir 的事实，从未知的源下载和安全 Snap 格式的软件包具有风险，然而其它不也是如此嘛？！
 
 相关链接： [如何在 Ubuntu 16.04 中使用 Snap 格式软件包][8]。期待您分享关于 Snap 格式及其安全性的观点。
+
 ----------
 via: http://itsfoss.com/snap-package-securrity-issue/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+ItsFoss+%28Its+FOSS%21+An+Open+Source+Blog%29
 
