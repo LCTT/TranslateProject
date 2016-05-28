@@ -1,3 +1,5 @@
+StdioA translating
+
 Getting Started with Python Programming and Scripting in Linux – Part 1
 ===============================================================================
 
