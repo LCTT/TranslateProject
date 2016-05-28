@@ -1,3 +1,5 @@
+translating----geekpi
+
 NODEOS : LINUX DISTRIBUTION FOR NODE LOVERS
 ================================================
 
