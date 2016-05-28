@@ -1,3 +1,5 @@
+translating by sarishinohara
+
 BEST LINUX PHOTO MANAGEMENT SOFTWARE IN 2016
 =============================================
 
