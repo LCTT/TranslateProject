@@ -3,10 +3,10 @@
 
 [Proofreading by Liam0205]
 
->这篇文章将包含Docker的基本概念，以及如何通过创建一个定制的Dockerfile来Dockerize一个应用
->作者：Benjamin Cane，2015-12-01 10:00:00
+> 本文讲述了 Docker 的基本概念，并介绍了如何通过创建 Dockerfile 来 Docker 化 (Dockerize) 应用。
+> 作者：Benjamin Cane，2015-12-01 10:00:00
 
-Docker是2年前从某个idea中孕育而生的有趣技术，世界各地的公司组织都积极使用它来部署应用。在今天的文章中，我将教你如何通过"Dockerize"一个现有的应用，来开始我们的Docker运用。问题中的应用指的就是这篇博客！
+在两年前，Docker 这一有趣的技术还只是个点子。如今，它已成为世界范围内广泛使用的应用程序部署技术。本文将带你入门，并介绍如何 Docker 化一个既有应用程序。这里的应用程序，正是这篇博客！
 
 ## 什么是Docker？
 
@@ -455,7 +455,7 @@ d264c7ef92bd        blog:latest         nginx -g 'daemon off   3 seconds ago    
 通过这篇文章，我们涉及了如何运行一个预构建的容器，以及如何构建，然后部署定制容器。虽然关于Docker你还有许多需要继续学习的地方，但我想这篇文章给了你如何继续开始的好建议。当然，如果你认为还有一些需要继续补充的内容，在下面评论即可。
 
 --------------------------------------
-via:http://bencane.com/2015/12/01/getting-started-with-docker-by-dockerizing-this-blog/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+bencane%2FSAUo+%28Benjamin+Cane%29
+via: <http://bencane.com/2015/12/01/getting-started-with-docker-by-dockerizing-this-blog/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+bencane%2FSAUo+%28Benjamin+Cane%29>
 
 作者：Benjamin Cane
 
