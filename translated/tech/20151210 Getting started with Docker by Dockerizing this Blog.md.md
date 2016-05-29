@@ -1,4 +1,4 @@
-通过Dockerize这篇博客来开启我们的Docker之旅
+Docker 之旅——Docker 化 (Dockerize) 这篇博客
 ===
 
 [Proofreading by Liam0205]
