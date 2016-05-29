@@ -178,25 +178,34 @@ cd720b803060: Download complete
 和Github一样，在Docker Hub创建公共仓库是免费的，私人仓库就需要缴纳费用了。当然，部署你自己的Docker仓库也是可以实现的，事实上只需要简单地运行`docker run registry`命令就行了。但在这篇文章中，我们的重点将不是讲解如何部署一个定制的注册服务。
 -->
 
-### 关闭并移除容器
+### 停止并移除容器
 
+在我们创建自己的 Docker 容器之前，让我们先清理一下 Docker 环境。首先，我们要停止运行着的容器，然后移除它。
+<!--
 在我们继续构建定制容器之前，我们先清理Docker环境，我们将关闭先前的容器，并移除它。
+-->
 
+与 `docker run` 对应，`docker kill <container-name>` 会停止正在运行的容器。
+<!--
 我们利用`docker`命令和`run`选项运行一个容器，所以，为了停止该相同的容器，我们简单地在执行`docker`命令时，使用`kill`选项，并指定容器名。
+-->
 
 ```
 # docker kill desperate_lalande
 desperate_lalande
 ```
 
-当我们再次执行`docker ps`，就不再有容器运行了
+再次执行 `docker ps` 可以发现，容器已经不再运行了。
 
 ```
 # docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 ```
 
+`docker kill` 关闭了容器；虽然它不再运行，但仍然存在于 Docker 系统中。`docker ps` 默认只显示正在运行的容器，`docker ps -a` 则会显示所有容器（包括未运行的）。
+<!--
 但是，此时，我们这是停止了容器；虽然它不再运行，但仍然存在。默认情况下，`docker ps`只会显示正在运行的容器，如果我们附加`-a` (all) 标识，它会显示所有运行和未运行的容器。
+-->
 
 ```
 # docker ps -a
@@ -204,16 +213,19 @@ CONTAINER ID        IMAGE               COMMAND                CREATED          
 f6d31ab01fc9        5c82215b03d1        nginx -g 'daemon off   4 weeks ago         Exited (-1) About a minute ago                       desperate_lalande
 ```
 
-为了能完整地移除容器，我们在用`docker`命令时，附加`rm`选项。
+我们可以用 `docker rm` 来完全地移除容器。
 
 ```
 # docker rm desperate_lalande
 desperate_lalande
 ```
 
+不过，虽然容器被移走了，但是 Docker 系统中仍有缓存的 **nginx** 镜像。因此，若然此时执行 `docker run -d nginx`，Docker 会直接调用本地的镜像启动容器，而无需联网下载。
+<!--
 虽然容器被移除了；但是我们仍拥有可用的**nginx**镜像（译者注：镜像缓存）。如果我们重新运行`docker run -d nginx`，Docker就无需再次拉取nginx镜像，即可启动容器。这是因为我们本地系统中已经保存了一个副本。
+-->
 
-为了列出系统中所有的本地镜像，我们运行`docker`命令，附加`images`选项。
+`docker image` 会列出所有本地可用的镜像。
 
 ```
 # docker images
