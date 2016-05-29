@@ -90,9 +90,9 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 `docker`命令中的`ps`功能类似于Linux的`ps`命令。它将显示可找到的Docker容器以及各自的状态。由于我们并没有开启任何Docker容器，所以命令没有显示任何正在运行的容器。
 -->
 
-## 部署一个预构建好的nginx Docker容器
+## 部署打包好的 nginx Docker 容器
 
-我比较喜欢的Docker特性之一就是Docker部署预先构建好的容器的方式，就像`yum`和`apt-get`部署包一样。为了更好地解释，我们来部署一个运行着nginx web服务器的预构建容器。我们可以继续使用`docker`命令，这次选择`run`选项。
+Docker 可以像 `yum` 以及 `apt-get` 那样部署软件包，这一特性十分讨喜。这次，我们用 `docker run` 命令，实际部署 **nginx** 服务器看看。
 
 ```
 # docker run -d nginx
@@ -112,9 +112,12 @@ cd720b803060: Download complete
 7cc81e9a118a: Download complete
 ```
 
+接受 `docker run` 命令后，Docker 会寻找置顶的 Docker 镜像并运行。默认情况下，Docker 容器会在前台执行。也就是说，你的 shell 会与 Docker 控制台及容器中正在运行的进程绑定。加上 `-d` (**detach**) 选项，Docker 容器就会在后台执行了。
+<!--
 `docker`命令的`run`选项，用来通知Docker去寻找一个指定的Docker镜像，然后开启运行着该镜像的容器。默认情况下，Docker容器在前台运行，这意味着当你运行`docker run`命令的时候，你的shell会被绑定到容器的控制台以及运行在容器中的进程。为了能在后台运行该Docker容器，我们可以使用`-d` (**detach**)标志。
+-->
 
-再次运行`docker ps`命令，可以看到nginx容器正在运行。
+再次执行 `docker ps`命令，我们就能看到 nginx 容器正在了。
 
 ```
 # docker ps
@@ -122,7 +125,10 @@ CONTAINER ID        IMAGE               COMMAND                CREATED          
 f6d31ab01fc9        nginx:latest        nginx -g 'daemon off   4 seconds ago       Up 3 seconds        443/tcp, 80/tcp     desperate_lalande
 ```
 
+不难看出，容器 `desperate_lalande` 正在运行，它由 `nginx:latest` 镜像构建而来。
+<!--
 从上面的打印信息中，我们可以看到正在运行的名为`desperate_lalande`的容器，它是由`nginx:latest image`（译者注：nginx最新版本的镜像）构建而来得。
+-->
 
 ### Docker镜像
 
