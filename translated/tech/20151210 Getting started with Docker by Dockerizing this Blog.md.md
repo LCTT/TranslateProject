@@ -1,5 +1,8 @@
 通过Dockerize这篇博客来开启我们的Docker之旅
 ===
+
+[Proofreading by Liam0205]
+
 >这篇文章将包含Docker的基本概念，以及如何通过创建一个定制的Dockerfile来Dockerize一个应用
 >作者：Benjamin Cane，2015-12-01 10:00:00
 
@@ -32,7 +35,7 @@ Docker不是一个容器运行环境，事实上，只是一个容器技术，�
 ```
 # apt-get install docker.io
 Reading package lists... Done
-Building dependency tree       
+Building dependency tree
 Reading state information... Done
 The following extra packages will be installed:
   aufs-tools cgroup-lite git git-man liberror-perl
@@ -65,18 +68,18 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 # docker run -d nginx
 Unable to find image 'nginx' locally
 Pulling repository nginx
-5c82215b03d1: Download complete 
-e2a4fb18da48: Download complete 
-58016a5acc80: Download complete 
-657abfa43d82: Download complete 
-dcb2fe003d16: Download complete 
-c79a417d7c6f: Download complete 
-abb90243122c: Download complete 
-d6137c9e2964: Download complete 
-85e566ddc7ef: Download complete 
-69f100eb42b5: Download complete 
-cd720b803060: Download complete 
-7cc81e9a118a: Download complete 
+5c82215b03d1: Download complete
+e2a4fb18da48: Download complete
+58016a5acc80: Download complete
+657abfa43d82: Download complete
+dcb2fe003d16: Download complete
+c79a417d7c6f: Download complete
+abb90243122c: Download complete
+d6137c9e2964: Download complete
+85e566ddc7ef: Download complete
+69f100eb42b5: Download complete
+cd720b803060: Download complete
+7cc81e9a118a: Download complete
 ```
 
 `docker`命令的`run`选项，用来通知Docker去寻找一个指定的Docker镜像，然后开启运行着该镜像的容器。默认情况下，Docker容器在前台运行，这意味着当你运行`docker run`命令的时候，你的shell会被绑定到容器的控制台以及运行在容器中的进程。为了能在后台运行该Docker容器，我们可以使用`-d` (**detach**)标志。
@@ -86,7 +89,7 @@ cd720b803060: Download complete
 ```
 # docker ps
 CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS               NAMES
-f6d31ab01fc9        nginx:latest        nginx -g 'daemon off   4 seconds ago       Up 3 seconds        443/tcp, 80/tcp     desperate_lalande 
+f6d31ab01fc9        nginx:latest        nginx -g 'daemon off   4 seconds ago       Up 3 seconds        443/tcp, 80/tcp     desperate_lalande
 ```
 
 从上面的打印信息中，我们可以看到正在运行的名为`desperate_lalande`的容器，它是由`nginx:latest image`（译者注：nginx最新版本的镜像）构建而来得。
@@ -106,18 +109,18 @@ Unable to find image 'nginx' locally
 
 ```
 Pulling repository nginx
-5c82215b03d1: Download complete 
-e2a4fb18da48: Download complete 
-58016a5acc80: Download complete 
-657abfa43d82: Download complete 
-dcb2fe003d16: Download complete 
-c79a417d7c6f: Download complete 
-abb90243122c: Download complete 
-d6137c9e2964: Download complete 
-85e566ddc7ef: Download complete 
-69f100eb42b5: Download complete 
-cd720b803060: Download complete 
-7cc81e9a118a: Download complete 
+5c82215b03d1: Download complete
+e2a4fb18da48: Download complete
+58016a5acc80: Download complete
+657abfa43d82: Download complete
+dcb2fe003d16: Download complete
+c79a417d7c6f: Download complete
+abb90243122c: Download complete
+d6137c9e2964: Download complete
+85e566ddc7ef: Download complete
+69f100eb42b5: Download complete
+cd720b803060: Download complete
+7cc81e9a118a: Download complete
 ```
 
 这就是第二部分打印信息显示给我们的内容。默认，Docker会使用[Docker Hub](https://hub.docker.com/)仓库，该仓库由Docker公司维护。
@@ -147,7 +150,7 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 ```
 # docker ps -a
 CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                           PORTS               NAMES
-f6d31ab01fc9        5c82215b03d1        nginx -g 'daemon off   4 weeks ago         Exited (-1) About a minute ago                       desperate_lalande  
+f6d31ab01fc9        5c82215b03d1        nginx -g 'daemon off   4 weeks ago         Exited (-1) About a minute ago                       desperate_lalande
 ```
 
 为了能完整地移除容器，我们在用`docker`命令时，附加`rm`选项。
@@ -215,9 +218,9 @@ Docker支持使用`#`作为注释，我将经常使用该语法，来解释Docke
 想要从Dockerfile构建镜像，我们只需要在运行`docker`命令的时候，加上**build**选项。
 
 ```
-# docker build -t blog /root/blog 
+# docker build -t blog /root/blog
 Sending build context to Docker daemon  23.6 MB
-Sending build context to Docker daemon 
+Sending build context to Docker daemon
 Step 0 : FROM nginx:latest
  ---> 9fab4090484a
 Step 1 : MAINTAINER Benjamin Cane <ben@bencane.com>
@@ -289,7 +292,7 @@ RUN pip install -r /build/requirements.txt
 ```
 # docker build -t blog /root/blog
 Sending build context to Docker daemon 19.52 MB
-Sending build context to Docker daemon 
+Sending build context to Docker daemon
 Step 0 : FROM nginx:latest
  ---> 9fab4090484a
 Step 1 : MAINTAINER Benjamin Cane <ben@bencane.com>
@@ -374,7 +377,7 @@ RUN /build/hamerkop -c /build/config.yml
 ```
 # docker build -t blog /root/blog/
 Sending build context to Docker daemon 19.52 MB
-Sending build context to Docker daemon 
+Sending build context to Docker daemon
 Step 0 : FROM nginx:latest
  ---> 9fab4090484a
 Step 1 : MAINTAINER Benjamin Cane <ben@bencane.com>
@@ -440,7 +443,7 @@ Successfully built 3b25263113e1
 ```
 # docker ps
 CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS              PORTS                         NAMES
-d264c7ef92bd        blog:latest         nginx -g 'daemon off   3 seconds ago       Up 3 seconds        443/tcp, 0.0.0.0:80->80/tcp   blog  
+d264c7ef92bd        blog:latest         nginx -g 'daemon off   3 seconds ago       Up 3 seconds        443/tcp, 0.0.0.0:80->80/tcp   blog
 ```
 
 ## 总结
@@ -456,9 +459,9 @@ via:http://bencane.com/2015/12/01/getting-started-with-docker-by-dockerizing-thi
 
 作者：Benjamin Cane
 
-译者：[su-kaiyao](https://github.com/su-kaiyao) 
+译者：[su-kaiyao](https://github.com/su-kaiyao)
 
-校对：[校对者ID](https://github.com/校对者ID) 
+校对：[Liam0205](https://github.com/Liam0205)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出 
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出
 
