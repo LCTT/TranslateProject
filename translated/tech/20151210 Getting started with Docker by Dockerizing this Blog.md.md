@@ -130,18 +130,27 @@ f6d31ab01fc9        nginx:latest        nginx -g 'daemon off   4 seconds ago    
 从上面的打印信息中，我们可以看到正在运行的名为`desperate_lalande`的容器，它是由`nginx:latest image`（译者注：nginx最新版本的镜像）构建而来得。
 -->
 
-### Docker镜像
+### Docker 镜像
 
+镜像是 Docker 的核心特征之一。与虚拟机镜像类似，Docker 的镜像是一个打包存档的容器。与此同时，Docker 并未就此止步——Docker 还能通过 Docker 仓库发布这些镜像。Docker 仓库扮演的角色，类似于软件包仓库，因此，Docker 可以像 `yum` 那样工作。让我们回顾一下 `docker run` 的输出。
+<!--
 镜像是Docker的核心特征之一，类似于虚拟机镜像。和虚拟机镜像一样，Docker镜像是一个被保存并打包的容器。当然，Docker不只是创建镜像，它还可以通过Docker仓库发布这些镜像，Docker仓库和包仓库的概念差不多，它让Docker能够模仿`yum`部署包的方式来部署镜像。为了更好地理解这是怎么工作的，我们来回顾`docker run`执行后的输出。
+-->
 
 ```
 # docker run -d nginx
 Unable to find image 'nginx' locally
 ```
 
+首先，Docker 表示在本地没有找到 **nginx** 镜像。这是因为，执行 `docker run` 时，我们希望 Docker 启动名为 **nginx** 的容器；而启动容器，需要找到对应的镜像。Docker 首先会在本地寻找相应名称的镜像；若是找不到，则会联网在远程 Docker 仓库寻找。
+<!--
 我们可以看到第一条信息是，Docker不能在本地找到名叫nginx的镜像。这是因为当我们执行`docker run`命令时，告诉Docker运行一个基于nginx镜像的容器。既然Docker要启动一个基于特定镜像的容器，那么Docker首先需要知道那个指定镜像。在检查远程仓库之前，Docker首先检查本地是否存在指定名称的本地镜像。
+-->
 
+由于 Docker 是刚安装的，自然不存在名为 **nginx** 的镜像。于是，Docker 将会连接远程仓库下载它。
+<!--
 因为系统是崭新的，不存在nginx镜像，Docker将选择从Docker仓库下载之。
+-->
 
 ```
 Pulling repository nginx
@@ -159,9 +168,15 @@ cd720b803060: Download complete
 7cc81e9a118a: Download complete
 ```
 
+接下来，Docker 打印了这些信息。默认情况下，Docker 会连接 Docker 公司维护的 [Docker Hub](https://hub.docker.com/)仓库。
+<!--
 这就是第二部分打印信息显示给我们的内容。默认，Docker会使用[Docker Hub](https://hub.docker.com/)仓库，该仓库由Docker公司维护。
+-->
 
+与 GitHub 相同，在 Docker Hub 上创建公开仓库是免费的，创建私有仓库则是收费的。你也可以部署你自己的 Docker 仓库——只需要运行 `docker run registry` 就好了。不过，本文不会讨论这一块内容。
+<!--
 和Github一样，在Docker Hub创建公共仓库是免费的，私人仓库就需要缴纳费用了。当然，部署你自己的Docker仓库也是可以实现的，事实上只需要简单地运行`docker run registry`命令就行了。但在这篇文章中，我们的重点将不是讲解如何部署一个定制的注册服务。
+-->
 
 ### 关闭并移除容器
 
