@@ -51,7 +51,10 @@ Docker不是一个容器运行环境，事实上，只是一个容器技术，�
 
 ## 从安装开始
 
+默认情况下，Docker 并不会自动安装。因此，我们首要做的事情，就是安装 Docker 软件包。因为用作示例的系统是 **Ubuntu 10.0.4**，所以，我们可以用 **Apt** 包管理器来安装。
+<!--
 默认情况下，Docker并不会自动被安装在您的计算机中，所以，第一步就是安装Docker包；我们的教学机器系统是Ubuntu 14.0.4，所以，我们将使用Apt包管理器，来执行安装操作。
+-->
 
 ```
 # apt-get install docker.io
@@ -72,14 +75,20 @@ After this operation, 46.6 MB of additional disk space will be used.
 Do you want to continue? [Y/n] y
 ```
 
+我们可以用附带 `ps` 选项的 `docker` 命令来查看当前运行的容器。
+<!--
 为了检查当前是否有容器运行，我们可以执行`docker`命令，加上`ps`选项
+-->
 
 ```
 # docker ps
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 ```
 
+`docker` 命令中的 `ps` 功能，类似于 Linux 系统中的 `ps` 命令。`docker ps` 会打印所有可用的 Docker 容器以及它们当前的状态。因为我们什么也没做，所以命令显示当前没有运行着的容器。
+<!--
 `docker`命令中的`ps`功能类似于Linux的`ps`命令。它将显示可找到的Docker容器以及各自的状态。由于我们并没有开启任何Docker容器，所以命令没有显示任何正在运行的容器。
+-->
 
 ## 部署一个预构建好的nginx Docker容器
 
