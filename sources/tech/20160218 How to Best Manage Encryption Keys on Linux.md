@@ -1,110 +1,108 @@
-mudongliang translating
-How to Best Manage Encryption Keys on Linux
+Linux 如何最好地管理加密密钥
 =============================================
 
 ![](http://www.linux.com/images/stories/41373/key-management-diagram.png)
 
-Storing SSH encryption **keys** and memorizing passwords can be a headache. But unfortunately in today's world of malicious hackers and exploits, basic security precautions are an essential practice. For a lot of general users, this amounts to simply memorizing passwords and perhaps finding a good program to store the passwords, as we remind such users not to use the same password for every site. But for those of us in various IT fields, we need to take this up a level. We have to deal with encryption keys such as SSH keys, not just passwords.
+存储 SSH 的加密秘钥以及记住密码一直是一个让人头疼的问题。但是不幸的是，在当前充满了恶意黑客和攻击的世界中，基本的安全预警是必不可少的。对于大量的普通用户，它相当于简单地记住密码，也可能寻找一个好程序去存储密码，正如我们提醒这些用户不要在每个网站都有相同的密码。但是对于在各个 IT 领域的我们，我们需要将这个提高一个层次。我们不得不处理加密秘钥，比如 SSH 密钥，而不只是密码。
 
-Here's a scenario: I have a server running on a cloud that I use for my main git repository. I have multiple computers I work from. All of those computers need to log into that central server to push to and pull from. I have git set up to use SSH. When git uses SSH, git essentially logs into the server in the same way you would if you were to launch a command line into the server with the SSH command. In order to configure everything, I created a config file in my .ssh directory that contains a Host entry providing a name for the server, the host name, the user to log in as, and the path to a key file. I can then test this configuration out by simply typing the command
+设想一个场景：我有一个运行在云上的服务器，用于我的主 git 库。我有很多台工作电脑。所有电脑都需要登陆中央服务器去 push 与 pull。我设置 git 使用 SSH。当 git 使用 SSH, git 实际上以相同的方式登陆服务器，就好像你通过 SSH 命令打开一个服务器的命令行。为了配置所有内容，我在我的 .ssh 目录下创建一个配置文件，其中包含一个有服务器名字，主机名，登陆用户，密钥文件的路径的主机项。之后我可以通过输入命令来测试这个配置。
 
 >ssh gitserver
 
-And soon I'm presented with the server's bash shell. Now I can configure git to use this same entry to log in with the stored key. Easy enough, except for one problem: For each computer I use to log into that server, I need to have a key file. That means more than one key file floating around. I have several such keys on this computer, and several such keys on my other computers. In the same way everyday users have a gazillion passwords, it's easy for us IT folks to end up with a gazillion key files. What to do?
+很快我得到了服务器的 bash shell。现在我可以配置 git 使用相同项与存储的密钥来登陆服务器。很简单，除了一个问题，对于每一个我用于登陆服务器的电脑，我需要有一个密钥文件。那意味着需要不止一个密钥文件。当前这台电脑和我的其他电脑都存储有这些密钥文件。同样的，用户每天有特大量的密码，对于我们 IT人员，很容易结束这特大量的密钥文件。怎么办呢？
 
-## Cleaning Up
+## 清理
 
-Before starting out with a program to help you manage your keys, you have to lay some groundwork on how your keys should be handled, and whether the questions we're asking even make sense. And that requires first and foremost that you understand where your public keys go and where your private keys go. I'm going to assume you know:
+在开始使用程序去帮助你管理你的密钥之前，你不得不在你的密码应该怎么处理和我们问的问题是否有意义这两个方面打下一些基础。同时，这需要第一，也是最重要的，你明白你的公钥和私钥的使用位置。我将设想你知道：
 
-1. The difference between a public key and private key
+1. 公钥和私钥之间的差异；
 
-2. Why you can't generate a private key from a public key but you can do the reverse
+2. 为什么你不可以从公钥生成私钥，但是你可以逆向生成？
 
-3. The purpose of the authorized_keys file and what goes in it
+3. `authorized_keys` 文件的目的以及它的内容；
 
-4. How you use private keys to log into a server that has the corresponding public key in its authorized_keys file.
+4. 你如何使用私钥去登陆服务器，其中服务器上的 `authorized_keys` 文件中存有相应的公钥；
 
-Here's an example. When you create a cloud server on Amazon Web Services, you have to provide an SSH key that you'll use for connecting to your server. Each key has a public part and a private part. Because you want your server to stay secure, at first glance it might seem you put the private key onto that server, and that you take the public key with you. After all, you don't want that server to be publicly accessible, right? But that's actually backwards.
+这里有一个例子。当你在亚马逊的网络服务上创建一个云服务器，你必须提供一个 SSH 密码，用于连接你的服务器。每一个密钥有一个公开的部分，和私密的部分。因为你想保持你的服务器安全，乍看之下你可能要将你的私钥放到服务器上，同时你自己带着公钥。毕竟，你不想你的服务器被公开访问，对吗？但是实际上这是逆向的。
 
-You put the public key on the AWS server, and you hold onto your private key for logging into the server. You guard that private key and keep it by your side, not on some remote server, as shown in the figure above.
+你把自己的公钥放到 AWS 服务器，同时你持有你自己的私钥用于登陆服务器。你保护私钥，同时保持私钥在自己一方，而不是在一些远程服务器上，正如上图中所示。
 
-Here's why: If the public key were to become known to others, they wouldn't be able to log into the server since they don't have the private key. Further, if somebody did manage to break into your server, all they would find is a public key. You can't generate a private key from a public key. And so if you're using that same key on other servers, they wouldn't be able to use it to log into those other computers.
+原因如下：如果公钥公之于众，他们不可以登陆服务器，因为他们没有私钥。进一步说，如果有人成功攻入你的服务器，他们所能找到的只是公钥。你不可以从公钥生成私钥。同时如果你在其他的服务器上使用相同的密钥，他们不可以使用它去登陆别的电脑。
 
-And that's why you put your public key on your servers for logging into them through SSH. The private keys stay with you. You don't let those private keys out of your hands.
+这就是为什么你把你自己的公钥放到你的服务器上以便通过 SSH 登陆这些服务器。你持有这些私钥，不要让这些私钥脱离你的控制。
 
-But there's still trouble. Consider the case of my git server. I had some decisions to make. Sometimes I'm logged into a development server that's hosted elsewhere. While on that dev box, I need to connect to my git server. How can the dev box connect to the git server? By using the private key. And therein lies trouble. This scenario requires I put a private key on a server that is hosted elsewhere, which is potentially dangerous.
+但是还有麻烦。试想一下我 git 服务器的例子。我要做一些决定。有时我登陆架设在别的地方的开发服务器。在开发服务器上，我需要连接我的 git 服务器。如何使我的开发服务器连接 git 服务器？通过使用私钥。同时这里面还有麻烦。这个场景需要我把私钥放置到一个架设在别的地方的服务器上。这相当危险。
 
-Now a further scenario: What if I were to use a single key to log into multiple servers? If an intruder got hold of this one private key, he or she would have that private key and gain access to the full virtual network of servers, ready to do some serious damage. Not good at all.
+一个进一步的场景：如果我要使用一个密钥去登陆许多的服务器，怎么办？如果一个入侵者得到这个私钥，他或她将拥有私钥，并且得到服务器的全部虚拟网络的权限，同时准备做一些严重的破坏。这一点也不好。
 
-And that, of course, brings up the other question: Should I really use the same key for those other servers? That's could be dangerous because of what I just described.
+同时那当然会带来一个别的问题，我真的应该在这些其他服务器上使用相同的密钥？因为我刚才描述的，那会非常危险的。
 
-In the end, this sounds messy, but there are some simple solutions. Let's get organized.
+最后，这听起来有些混乱，但是有一些简单的解决方案。让我们有条理地组织一下：
 
-(Note that there are many places you need to use keys besides just logging into servers, but I'm presenting this as one scenario to show you what you're faced with when dealing with keys.)
+（注意你有很多地方需要密钥登陆服务器，但是我提出这个作为一个场景去向你展示当你处理密钥的时候你面对的问题）
 
-## Regarding Passphrases
+## 关于口令句
 
-When you create your keys, you have the option to include a passphrase that is required when using the private key. With this passphrase, the private key file itself is encrypted using the passphrase. For example, if you have a public key stored on a server and you use the private key to log into that server, you'll be prompted to enter a passphrase. Without the passphrase, the key cannot be used. Alternatively, you can configure your key without a passphrase to begin with. Then all you need is the key file to log into the server.
+当你创建你的密钥时，你可以选择是否包含一个口令字，这个口令字会在使用私钥的时候是必不可少的。有了这个口令字，私钥文件本身会被口令字加密。例如，如果你有一个公钥存储在服务器上，同时你使用私钥去登陆服务器的时候，你会被提示，输入口令字。没有口令字，这个密钥是无法使用的。或者，你可以配置你的密钥不需要口令字。然后所有你需要的只是用于登陆服务器的密钥文件。
 
-Generally going without a passphrase is easier on the users, but one reason I strongly recommend using the passphrase in many situations is this: If the private key file gets stolen, the person who steals it still can't use it until he or she is able to find out the passphrase. In theory, this will save you time as you remove the public key from the server before the attacker can discover the passphrase, thus protecting your system. There are other reasons to use a passphrase, but this one alone makes it worth it to me in many situations. (As an example, I have VNC software on an Android tablet. The tablet holds my private key. If my tablet gets stolen, I'll immediately revoke the public key from the server it logs into, rendering its private key useless, with or without the passphrase.) But in some cases I don't use it, because the server I'm logging into might not have much valuable data on it. It depends on the situation.
+普遍上，不使用口令字对于用户来说是更容易的，但是我强烈建议在很多情况下使用口令字，原因是，如果私钥文件被偷了，偷密钥的人仍然不可以使用它，除非他或者她可以找到口令字。在理论上，这个将节省你很多时间，因为你可以在攻击者发现口令字之前，从服务器上删除公钥文件，从而保护你的系统。还有一些别的原因去使用口令字，但是这个原因对我来说在很多场合更有价值。（举一个例子，我的 Android 平板上有 VNC 软件。平板上有我的密钥。如果我的平板被偷了之后，我会马上从服务器上删除公钥，使得它的私钥没有作用，无论有没有口令字。）但是在一些情况下我不使用口令字，是因为我正在登陆的服务器上没有什么有价值的数据。它取决于情境。
 
-## Server Infrastructure
+## 服务器基础设施
 
-How you design your infrastructure of servers will impact how you manage your keys. For example, if you have multiple users logging in, you'll need to decide whether each user gets a separate key. (Generally speaking, they should; you don't want users sharing private keys. That way if one user leaves the organization or loses trust, you can revoke that user's key without having to generate new keys for everyone else. And similarly, by sharing keys they could log in as each other, which is also bad.) But another issue is how you're allocating your servers. Do you allocate a lot of servers using tools such as Puppet, for example? And do you create multiple servers based on your own images? When you replicate your servers, do you need to have the same key for each? Different cloud server software allows you to configure this how you choose; you can have the servers get the same key, or have a new one generated for each.
+你如何设置自己服务器的基础设置将会影响到你如何管理你的密钥。例如，如果你有很多用户登陆，你将需要决定每个用户是否需要一个单独的密钥。（普遍来说，他们应该；你不会想要用户之间共享私钥。那样当一个用户离开组织或者失去信任时，你可以删除那个用户的公钥，而不需要必须给其他人生成新的密钥。相似地，通过共享密钥，他们能以其他人的身份登录，这就更坏了。）但是另外一个问题，你如何配置你的服务器。你是否使用工具，比如 Puppet，配置大量的服务器？同时你是否基于你自己的镜像创建大量的服务器？当你复制你的服务器，你是否需要为每个人设置相同的密钥？不同的云服务器软件允许你配置这个；你可以让这些服务器使用相同的密钥，或者给每一个生成一个新的密钥。
 
-If you're dealing with replicated servers, it can get confusing if the users need to use different keys to log into two different servers that are otherwise similar. But on the other hand, there could be security risks by having the servers share the same keys. Or, on the third hand, if your keys are needed for something other than logging in (such as mounting an encrypted drive), then you would need the same key in multiple places. As you can see, whether you need to use the same keys across different servers is not a decision I can make for you; there are trade offs, and you need to decide for yourself what's best.
+如果你在处理复制的服务器，它可能导致混淆如果用户需要使用不同的密钥登陆两个不同的系统。但是另一方面，服务器共享相同的密钥会有安全风险。或者，第三，如果你的密钥有除了登陆之外的需要（比如挂载加密的驱动），之后你会在很多地方需要相同的密钥。正如你所看到的，你是否需要在不同的服务器上使用相同的密钥不是我为你做的决定；这其中有权衡，而且你需要去决定什么是最好的。
 
-In the end, you're likely to have:
+最终，你可能会有：
 
-- Multiple servers that need to be logged into
+- 需要登录的多个服务器
 
-- Multiple users logging into different servers, each with their own key
+- 多个用户登陆不同的服务器，每个都有自己的密钥
 
-- Multiple keys for each user as they log into different servers.
+- 每个用户多个密钥当他们登陆不同的服务器的时候
 
-(If you're using keys in other situations, as you likely are, the same general concepts will apply regarding how keys are used, how many keys are needed, whether they're shared, and how you handle private and public parts of keys.)
+（如果你正在别的情况下使用密钥，相同的普遍概念会应用于如何使用密钥，需要多少密钥，他们是否共享，你如何处理密钥的私密部分和公开部分。）
 
-## Method of safety
+## 安全方法
 
-Knowing your infrastructure and unique situation, you need to put together a key management plan that will help guide you on how you distribute and store your keys. For example, earlier I mentioned that if my tablet gets stolen, I will revoke the public key from my server, hopefully before the tablet can be used to access the server. As such, I can allow for the following in my overall plan:
+知道你的基础设施和独一无二的情况，你需要组合一个密钥管理方案，它会引导你去分发和存储你的密钥。比如，正如我之前提到的，如果我的平板被偷了，我会从我服务器上删除公钥，期望在平板在用于访问服务器。同样的，我会在我的整体计划中考虑以下内容：
 
-1. Private keys are okay on mobile devices, but they must include a passphrase
+1. 移动设备上的私钥没有问题，但是必须包含口令字；
 
-2. There must exist a way to quickly revoke public keys from a server.
+2. 必须有一个方法可以快速地从服务器上删除公钥。
 
-In your situation, you might decide you just don't want to use passphrases for a system you log into regularly; for example, the system might be a test machine that the developers log into many times a day. That's fine, but then you'll need to adjust your rules a bit. You might include a rule that that machine is not to be logged into from mobile devices. In other words, you need to build your protocols based on your own situation, and not assume one size fits all.
+在你的情况中，你可能决定，你不想在自己经常登录的系统上使用口令字；比如，这个系统可能是一个开发者一天登录多次的测试机器。这没有问题，但是你需要调整你的规则。你可能添加一条规则，不可以通过移动设备登录机器。换句话说，你需要根据自己的状况构建你的协议，不要假设某个方案放之四海而皆准。
 
-## Software
+## 软件
 
-On to software. Surprisingly, there aren't a lot of good, solid software solutions for storing and managing your private keys. But should there be? Consider this: If you have a program storing all your keys for all your servers, and that program is locked down by a quick password, are your keys really secure? Or, similarly, if your private keys are sitting on your hard drive for quick access by the SSH program, is a key management software really providing any protection?
+至于软件，毫不意外，现实世界中并没有很多好的，可用的软件解决方案去存储和管理你的私钥。但是应该有吗？考虑到这个，如果你有一个程序存储你所有服务器的全部密钥，并且这个程序被一个核心密钥锁住，那么你的密钥就真的安全了吗？或者，同样的，如果你的密钥被放置在你的硬盘上，用于 SSH 程序快速访问，那样一个密钥管理软件是否真正提供了任何保护吗？
 
-But for overall infrastructure and creating and managing public keys, there are some solutions. I already mentioned Puppet. In the Puppet world, you create modules to manage your servers in different ways. The idea is that servers are dynamic and not necessarily exact duplicates of each other. [Here's one clever approach](http://manuel.kiessling.net/2014/03/26/building-manageable-server-infrastructures-with-puppet-part-4/) that uses the same keys on different servers, but uses a different Puppet module for each user. This solution may or may not apply to you. 
+但是对于整体基础设施和创建，管理公钥，有许多的解决方案。我已经提到了 Puppet。在 Puppet 的世界中，你创建模块来以不同的方式管理你的服务器。这个想法是服务器是动态的，而且不必要准确地复制其他机器。[这里有一个聪明的途径](http://manuel.kiessling.net/2014/03/26/building-manageable-server-infrastructures-with-puppet-part-4/),它在不同的服务器上使用相同的密钥，但是对于每一个用户使用不同的 Puppet 模块。这个方案可能适合你，也可能不适合你。
 
-Or, another option is to shift gears altogether. In the world of Docker, you can take a different approach, as described in [this blog regarding SSH and Docker](http://blog.docker.com/2014/06/why-you-dont-need-to-run-sshd-in-docker/).
+或者，另一个选项就是完全换挡。在 Docker 的世界中，你可以采取一个不同的方式，正如[关于 SSH 和 Docker 博客](http://blog.docker.com/2014/06/why-you-dont-need-to-run-sshd-in-docker/)所描述的。
 
-But what about managing the private keys? If you search, you're not going to find many software options, for the reasons I mentioned earlier; the private keys are sitting on your hard drive, and a management program might not provide much additional security. But I do manage my keys using this method:
+但是怎么样管理私钥？如果你搜索，你无法找到很多的软件选择，原因我之前提到过；密钥存放在你的硬盘上，一个管理软件可能无法提到很多额外的安全。但是我确实使用这种方法来管理我的密钥：
 
-First, I have multiple Host entries in my .ssh/config file. I have an entry for hosts that I log into, but sometimes I have more than one entry for a single host. That happens if I have multiple logins. I have two different logins for the server hosting my git repository; one is strictly for git, and the other is for general-purpose bash access. The one for git has greatly restricted rights on that machine. Remember what I said earlier about my git keys living on remote development machines? There we go. Although those keys can log into one of my servers, the accounts used are severely limited.
+首先，我的 `.ssh/config` 文件中有很多的主机项。我有一个我登陆的主机项，但是有时我对于一个单独的主机有不止一项。如果我有很多登陆，那种情况就会发生。对于架设我的 git 库的服务器，我有两个不同的登陆项；一个限制于 git，另一个为普遍目的的 bash 访问。这个为 git 设置的登陆选项在机器上有极大的限制。还记得我之前说的关于我存在于远程开发机器上的 git 密钥吗？好了。虽然这些密钥可以登陆到我其中一个服务器，但是使用的账号是被严格限制的。
 
- Second, most of these private keys include a passphrase. (For dealing with having to type the passphrase multiple times, considering using [ssh-agent](http://blog.docker.com/2014/06/why-you-dont-need-to-run-sshd-in-docker/).)
+其次，大部分的私钥都包含口令字。（对于处理不得不多次输入口令字的情况，考虑使用 [ssh-agent](http://blog.docker.com/2014/06/why-you-dont-need-to-run-sshd-in-docker/)。）
 
-Third, I do have some servers that I want to guard a bit more carefully, and I don't have an entry into my Host file. This is more a social engineering aspect, because the key files are still present, but it might take an intruder a bit longer to locate the key file and figure out which machine they go with. In those cases, I just type out the long ssh command manually. (It's really not that bad.) 
+再次，我确实有许多服务器，我想要更加小心地防御，并且在我 host 文件中并没有这样的项。这更加接近于社交工程方面，因为密钥文件还存在于那里，但是可能需要攻击者花费更长的时间去定位这个密钥文件，分析出来他们攻击的机器。在这些例子中，我只是手动打出来长的 SSH 命令。（这真不怎么坏。）
 
-And you can see that I'm not using any special software to manage these private keys.
+同时你可以看出来我没有使用任何特别的软件去管理这些私钥。
 
-## One Size Doesn't Fit All
+## 无放之四海而皆准的方案
 
-We occasionally get questions at linux.com for advice on good software for managing keys. But let's take a step back. The question actually needs to be re-framed, because there isn't a one-size-fits-all solution. The questions you ask should be based on your own situation. Are you simply trying to find a place to store your key files? Are you looking for a way to manage multiple users each with their own public key that needs to be inserted into the authorized_keys file?
+我们偶然间收到 linux.com 的问题，关于管理密钥的好软件的建议。但是让我们后退一步。这个问题事实上需要重新定制，因为没有一个普适的解决方案。你问的问题基于你自己的状况。你是否简单地尝试找到一个位置去存储你的密钥文件？你是否寻找一个方法去管理多用户问题，其中每个人都需要将他们自己的公钥插入到 `authorized_keys` 文件中？
 
-Throughout this article, I've covered the basics of how all this fits together, and hopefully at this point you'll see that how you manage your keys, and whatever software you look for (if you even need additional software at all), should happen only after you ask the right questions.
-
+通过这篇文章，我已经囊括了基础知识，希望到此你明白如何管理你的密钥，并且，只有当你问了正确的问题，无论你寻找任何软件（甚至你需要另外的软件），它都会出现。
 
 ------------------------------------------------------------------------------
 
 via: http://www.linux.com/learn/tutorials/838235-how-to-best-manage-encryption-keys-on-linux
 
 作者：[Jeff Cogswell][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[mudongliang](https://github.com/mudongliang)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
