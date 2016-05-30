@@ -1,3 +1,4 @@
+Translating by Bestony
 Scaling Collaboration in DevOps
 =================================
 
