@@ -1,52 +1,54 @@
-GHLandy Translating
+LFCS 第十讲：学习简单的 Shell 脚本编程和文件系统故障排除
 
-Part 10 - LFCS: Understanding & Learning Basic Shell Scripting and Linux Filesystem Troubleshooting
 ================================================================================
-The Linux Foundation launched the LFCS certification (Linux Foundation Certified Sysadmin), a brand new initiative whose purpose is to allow individuals everywhere (and anywhere) to get certified in basic to intermediate operational support for Linux systems, which includes supporting running systems and services, along with overall monitoring and analysis, plus smart decision-making when it comes to raising issues to upper support teams.
+Linux 基金会发起了 LFCS 认证 (Linux Foundation Certified Sysadmin, Linux 基金会认证系统管理员)，这是一个全新的认证体系，主要目标是让全世界任何人都有机会考取认证。认证内容为 Linux 中间系统的管理，主要包括：系统运行和服务的维护、全面监控和分析的能力以及问题来临时何时想上游团队请求帮助的决策能力
 
 ![Basic Shell Scripting and Filesystem Troubleshooting](http://www.tecmint.com/wp-content/uploads/2014/11/lfcs-Part-10.png)
 
-Linux Foundation Certified Sysadmin – Part 10
+LFCS 系列第十讲
 
-Check out the following video that guides you an introduction to the Linux Foundation Certification Program.
+请看以下视频，这里边介绍了 Linux 基金会认证程序。
 
 注：youtube 视频
 
-<iframe width="720" height="405" frameborder="0" allowfullscreen="allowfullscreen" src="//www.youtube.com/embed/Y29qZ71Kicg"></iframe>
+<video src="https://dn-linuxcn.qbox.me/static%2Fvideo%2FIntroducing%20The%20Linux%20Foundation%20Certification%20Program-Y29qZ71Kicg.mp4" controls="controls" width="100%">
+</video>
 
-This is the last article (Part 10) of the present 10-tutorial long series. In this article we will focus on basic shell scripting and troubleshooting Linux file systems. Both topics are required for the LFCS certification exam.
+本讲是系列教程中的第十讲，主要集中讲解简单的 Shell 脚本编程和文件系统故障排除。这两块内容都是 LFCS 认证中的必备考点。
 
-### Understanding Terminals and Shells ###
+### 理解终端 (Terminals) 和 Shell ###
 
-Let’s clarify a few concepts first.
+首先要声明一些概念。
 
-- A shell is a program that takes commands and gives them to the operating system to be executed.
-- A terminal is a program that allows us as end users to interact with the shell. One example of a terminal is GNOME terminal, as shown in the below image.
+- Shell 是一个程序，它将命令传递给操作系统来执行。
+- Terminal 也是一个程序，作为最终用户，我们需要使用它与 Shell 来交互。比如，下边的图片是 GNOME Terminal。
 
 ![Gnome Terminal](http://www.tecmint.com/wp-content/uploads/2014/11/Gnome-Terminal.png)
 
 Gnome Terminal
 
-When we first start a shell, it presents a command prompt (also known as the command line), which tells us that the shell is ready to start accepting commands from its standard input device, which is usually the keyboard.
+启动 Shell 之后，会呈现一个命令提示符 (也称为命令行) 提示我们 Shell 已经做好了准备，接受标准输入设备输入的命令，这个标准输入设备通常是键盘。
 
-You may want to refer to another article in this series ([Use Command to Create, Edit, and Manipulate files – Part 1][1]) to review some useful commands.
+你可以参考该系列文章的 [第一讲 使用命令创建、编辑和操作文件][1] 来温习一些常用的命令。
 
-Linux provides a range of options for shells, the following being the most common:
+Linux 为提供了许多可以选用的 Shell，下面列出一些常用的：
 
 **bash Shell**
 
-Bash stands for Bourne Again SHell and is the GNU Project’s default shell. It incorporates useful features from the Korn shell (ksh) and C shell (csh), offering several improvements at the same time. This is the default shell used by the distributions covered in the LFCS certification, and it is the shell that we will use in this tutorial.
+Bash 代表 Bourne Again Shell，它是 GNU 项目默认的 Shell。它借鉴了 Korn shell (ksh) 和 C shell (csh) 中有用的特性，并同时对性能进行了提升。它同时也是 LFCS 认证中所涵盖的风发行版中默认 Shell，也是本系列教程将使用的 Shell。
 
 **sh Shell**
 
-The Bourne SHell is the oldest shell and therefore has been the default shell of many UNIX-like operating systems for many years.
-ksh Shell
+Bash Shell 是一个比较古老的 shell，一次多年来都是多数类 Unix 系统的默认 shell。
 
-The Korn SHell is a Unix shell which was developed by David Korn at Bell Labs in the early 1980s. It is backward-compatible with the Bourne shell and includes many features of the C shell.
+**ksh Shell**
 
-A shell script is nothing more and nothing less than a text file turned into an executable program that combines commands that are executed by the shell one after another.
+Korn SHell (ksh shell) 也是一个 Unix shell，是贝尔实验室 (Bell Labs) 的 David Korn 在 19 世纪 80 年代初的时候开发的。它兼容 Bourne shell ，并同时包含了 C shell 中的多数特性。
 
-### Basic Shell Scripting ###
+
+一个 shell 脚本仅仅只是一个可执行的文本文件，里边包含一条条可执行命令。
+
+### 简单的 Shell 脚本编程 ###
 
 As mentioned earlier, a shell script is born as a plain text file. Thus, can be created and edited using our preferred text editor. You may want to consider using vi/m (refer to [Usage of vi Editor – Part 2][2] of this series), which features syntax highlighting for your convenience.
 
@@ -292,7 +294,7 @@ If we’re only interested in finding out what’s wrong (without trying to fix 
 
 Depending on the error messages in the output of fsck, we will know whether we can try to solve the issue ourselves or escalate it to engineering teams to perform further checks on the hardware.
 
-### Summary ###
+### 总结 ###
 
 We have arrived at the end of this 10-article series where have tried to cover the basic domain competencies required to pass the LFCS exam.
 
@@ -305,7 +307,7 @@ If you have any questions or comments, they are always welcome – so don’t he
 via: http://www.tecmint.com/linux-basic-shell-scripting-and-linux-filesystem-troubleshooting/
 
 作者：[Gabriel Cánepa][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[GHLandy](https://github.com/GHLandy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
