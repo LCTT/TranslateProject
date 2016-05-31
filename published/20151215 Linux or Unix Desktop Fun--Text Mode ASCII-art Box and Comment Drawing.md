@@ -1,18 +1,14 @@
-
-Linux / Unix 桌面娱乐 :
-文字模式的带有ASCII艺术的Box与评论绘制
-
+Linux/Unix 桌面趣事：文字模式下的 ASCII 艺术与注释绘画
 ================================================================================
-Boxes 命令不仅是一个文本过滤器，同时是一个很少人知道的可以为了乐趣或者需要在它的输入文本或者代码周围画各种ASCII艺术画的工具。你可以迅速创建邮件签名，或者使用各种编程语言创建局部评论。这个命令计划被vim文本编辑器使用，但是也可以被支持过滤的文本编辑器使用，同时从命令行作为一个单独的工具使用。
-
+boxes 命令不仅是一个文本过滤器，同时是一个很少人知道的有趣工具，它可以在输入的文本或者代码周围框上各种ASCII 艺术画。你可以用它快速创建邮件签名，或者在各种编程语言中留下评论块。这个命令可以在 vim 文本编辑器中使用，但是也可以在各种支持过滤器的文本编辑器中使用，同时也可以在命令行中单独使用。
 
 ### 任务: 安装 boxes ###
 
-使用 [apt-get command][1] 在 Debian / Ubuntu Linux中安装 boxes  :
+使用 [apt-get 命令][1] 在 Debian / Ubuntu Linux 中安装 boxes：
 
     $ sudo apt-get install boxes
 
-输出示例 :
+输出示例：
 
     Reading package lists... Done
     Building dependency tree
@@ -28,11 +24,11 @@ Boxes 命令不仅是一个文本过滤器，同时是一个很少人知道的�
     Processing triggers for man-db ...
     Setting up boxes (1.0.1a-2.3) ...
 
-RHEL / CentOS / Fedora Linux 用户, 使用 [yum command to install boxes][2] (首先 [enable EPEL repo as described here][3]):
+RHEL / CentOS / Fedora Linux 用户, 使用 [yum 命令来安装][2] boxes，(请先[启用 EPEL 软件仓库][3])：
 
     # yum install boxes
 
-输出示例 :
+输出示例：
 
     Loaded plugins: rhnplugin
     Setting up Install Process
@@ -64,21 +60,21 @@ RHEL / CentOS / Fedora Linux 用户, 使用 [yum command to install boxes][2] (�
       boxes.x86_64 0:1.1-8.el6
     Complete!
 
-FreeBSD 用户可以按如下来使用 :
+FreeBSD 用户可以按如下使用：
 
     cd /usr/ports/misc/boxes/ && make install clean
 
-或者，使用  pkg_add 命令来增加包:
+或者，使用 pkg_add 命令来增加包：
 
     # pkg_add -r boxes
 
-### 在一些给定文本周围画出任何种类的box ###
+### 在一些给定文本周围画出任何种类的包围框 ###
 
-输入下列命令 :
+输入下列命令：
 
     echo "This is a test" | boxes
 
-或者，通过设置要使用的设计的名字来使用 :
+或者，指定要使用的图案的名字：
 
     echo -e "\n\tVivek Gite\n\tvivek@nixcraft.com\n\twww.cyberciti.biz" | boxes -d dog
 
@@ -86,31 +82,29 @@ FreeBSD 用户可以按如下来使用 :
 
 ![Unix / Linux: Boxes Command To Draw Various Designs](http://s0.cyberciti.org/uploads/l/tips/2012/06/unix-linux-boxes-draw-dog-design.png)
 
-Fig.01: Unix / Linux: Boxes 命令来画出各式各样的设计 
+*图01: Unix / Linux: Boxes 命令来画出各式各样的图案 *
 
-#### 怎么样输出所有的设计 ####
+#### 怎么样输出所有的图案 ####
 
-语法如下:
+语法如下：
 
     boxes option
     pipe | boxes options
     echo "text" | boxes -d foo
     boxes -l
  
-设计 -d 选项设置要使用的设计的名字 . 语法如下:
-
+-d 选项用来设置要使用的图案的名字。语法如下：
 
     echo "Text" | boxes -d design
     pipe | boxes -d desig
 
--l 选项列出所有设计 . 它显示在配置文件中的所有的box设计图，同时也显示关于其创作者的信息。
+-l 选项列出所有图案。它显示了在配置文件中的所有的框线设计图，同时也显示关于其创作者的信息。
  
-
     boxes -l
     boxes -l | more
     boxes -l | less
 
-输出示例:		
+输出示例：
 
     43 Available Styles in "/etc/boxes/boxes-config":
     -------------------------------------------------
@@ -146,20 +140,21 @@ Fig.01: Unix / Linux: Boxes 命令来画出各式各样的设计
     output truncated
     ..
 
-### 在使用vi/vim文本编辑器时如何通过boxes过滤文本? ###
+### 在使用 vi/vim 文本编辑器时如何通过 boxes 过滤文本? ###
 
-你可以使用vi或vim支持的任何附加命令，在这个例子中, [insert current date and time][4], 输入:
+你可以在 vi 或 vim 中使用任何外部命令，比如在这个例子中，[插入当前日期和时间][4]，输入：
 
     !!date
 
 或者
 
     :r !date
-你需要在vim中输入以上命令来读取数据命令的输出，这将在当前行后面加入日期和时分秒:
+    
+你需要在 vim 中输入以上命令来读取 date 命令的输出，这将在当前行后面加入日期和时分秒：
 
     Tue Jun 12 00:05:38 IST 2012
 
-你可以用boxes命令做到同样的. 创建一个作为样本的shell脚本或者如下的一个c程序:
+你可以用 boxes 命令做到同样的功能。如下创建一个作为示例的 shell 脚本或者c程序：
 
 
     #!/bin/bash
@@ -167,7 +162,7 @@ Fig.01: Unix / Linux: Boxes 命令来画出各式各样的设计
     Author: Vivek Gite
     Last updated on: Tue Jun, 12 2012
 
-现在输入如下 (将光标移到第二行，也就是以"Purpose: ..."开头的行)
+现在输入如下（将光标移到第二行，也就是以“Purpose: ...”开头的行）
 
     3!!boxes
 
@@ -184,11 +179,10 @@ Fig.01: Unix / Linux: Boxes 命令来画出各式各样的设计
 注：youtube 视频
 <iframe width="595" height="446" frameborder="0" src="http://www.youtube.com/embed/glzXjNvrYOc?rel=0"></iframe>
 
-(Video:01: boxes command in action. BTW, this is my first video so go easy on me and let me know what you think.)
 
-另见
+参见
 
-- boxes man 手册
+- boxes 帮助手册
 
 --------------------------------------------------------------------------------
 
@@ -196,7 +190,7 @@ via: http://www.cyberciti.biz/tips/unix-linux-draw-any-kind-of-boxes-around-text
 
 作者：Vivek Gite 
 译者：[zky001](https://github.com/zky001)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
