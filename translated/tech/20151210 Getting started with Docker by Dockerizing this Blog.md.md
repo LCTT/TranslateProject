@@ -297,9 +297,15 @@ Docker 支持使用 `#` 作为注释，我将经常使用该语法，来解释Do
 
 ### 运行一次测试构建
 
+因为继承了 **nginx** 镜像，所以我们的 Dockerfile 也继承了[用于构建 **nginx** 镜像的 Dockerfile](https://github.com/nginxinc/docker-nginx/blob/08eeb0e3f0a5ee40cbc2bc01f0004c2aa5b78c15/Dockerfile) 的全部指令。因此，此刻我们已经可以从这个 Dockerfile 构建一个 Docker 镜像，而后运行该镜像的容器了；当然，这个镜像和 **nginx** 镜像完全一样。我们将从这个 Dockerfile 出发，不断迭代构建镜像并运行容器，以便解释清楚 Docker 的构建流程。
+<!--
 因为我们继承了**nginx** Docker镜像，我们现在的Dockerfile也就包括了用来构建**nginx**镜像的[Dockerfile](https://github.com/nginxinc/docker-nginx/blob/08eeb0e3f0a5ee40cbc2bc01f0004c2aa5b78c15/Dockerfile)中所有指令。这意味着，此时我们可以从该Dockerfile中构建出一个Docker镜像，然后从该镜像中运行一个容器。虽然，最终的镜像和**nginx**镜像本质上是一样的，但是我们这次是通过构建Dockerfile的形式，然后我们将讲解Docker构建镜像的过程。
+-->
 
+从 Dockerfile 开始构建镜像，只需执行 `docker build` 即可。
+<!--
 想要从Dockerfile构建镜像，我们只需要在运行`docker`命令的时候，加上**build**选项。
+-->
 
 ```
 # docker build -t blog /root/blog
@@ -314,11 +320,21 @@ Removing intermediate container c97f36450343
 Successfully built 60a44f78d194
 ```
 
+此处，`-t` (**tag**) 选项给即将生成的镜像打上了「blog」标签。这样相当于给镜像起了个名字——如果不这样的话，今后就只能通过 Docker 自动分配的 **Image ID** 来调用它了。从 Docker 返回的消息中，我们知道本例中生成镜像的 **Image ID** 是 `60a44f78d194`。
+
+<!--
 上面的例子，我们使用了`-t` (**tag**)标识给镜像添加"blog"的标签。本质上我们只是在给镜像命名，如果我们不指定标签，就只能通过Docker分配的**Image ID**来访问镜像了。本例中，从Docker构建成功的信息可以看出，**Image ID**值为`60a44f78d194`。
+-->
 
+除了 `-t` 之外，我还指定了 `/root/blog` 作为「构建目录」。该目录用于保存 Dockerfile 以及其他构建容器所需的文件。
+<!--
 除了`-t`标识外，我还指定了目录`/root/blog`。该目录被称作"构建目录"，它将包含Dockerfile，以及其他需要构建该容器的文件。
+-->
 
+至此，我们已经构建成功；接下来我们看看如何定制镜像。
+<!--
 现在我们构建成功，下面我们开始定制该镜像。
+-->
 
 ### 使用RUN来执行apt-get
 
