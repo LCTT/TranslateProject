@@ -274,9 +274,12 @@ Checking connectivity... done.
 # vi Dockerfile
 ```
 
-### FROM - 继承一个Docker镜像
+### FROM——继承 Docker 镜像
 
+第一条 Dockerfile 指令是 `FORM`。该指令指定一个既有镜像作为我们自己镜像的基础，也就是说，它允许我们从其他 Docker 镜像继承。这里，我们继承刚才的 **nginx** 镜像；如果需要从零开始新建镜像，则可以用 `FROM ubuntu:latest` 从 **Ubuntu** 继承。
+<!--
 第一条Dockerfile指令是`FROM`指令。这将指定一个现存的镜像作为我们的基础镜像。这也从根本上给我们提供了继承其他Docker镜像的途径。在本例中，我们还是从刚刚我们使用的**nginx**开始，如果我们想重新开始，我们可以通过指定`ubuntu:latest`来使用**Ubuntu** Docker镜像。
+-->
 
 ```
 ## Dockerfile that generates an instance of http://bencane.com
@@ -285,9 +288,12 @@ FROM nginx:latest
 MAINTAINER Benjamin Cane <ben@bencane.com>
 ```
 
+在 `FROM` 指令之后，我使用了 `MAINTAINER` 指令来记录该镜像的作者。
+<!--
 除了`FROM`指令，我还使用了`MAINTAINER`，它用来显示Dockerfile的作者。
+-->
 
-Docker支持使用`#`作为注释，我将经常使用该语法，来解释Dockerfile的部分内容。
+Docker 支持使用 `#` 作为注释，我将经常使用该语法，来解释Dockerfile的部分内容。
 
 ### 运行一次测试构建
 
