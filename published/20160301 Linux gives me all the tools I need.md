@@ -3,7 +3,7 @@ Linux 给了我所有所需的工具
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/OPENHERE_blue.png?itok=3eqp-7gT)
 
-[Linux][0] 就在我们身边。它以 Android 的形式[存在我们的手机中][1]，它[在国际空间站中被使用][2]，它[还是互联网的主要支柱][3]，可是迄今为止很多人从未留意过它。对 Linux 的探索是一种很有成就感的尝试。很多人都在 Opensource.com [分享过他们与 Linux 的故事][4]。现在，轮到我了。
+[Linux][0] 就在我们身边。它以 Android 的形式[存在我们的手机中][1]，它[用在国际空间站中][2]，它[还是互联网的主要支柱][3]，可是迄今为止很多人从未留意过它。对 Linux 的探索是一种很有成就感的尝试。很多人都在 Opensource.com [分享过他们与 Linux 的故事][4]。现在，轮到我了。
 
 我依然记得我在 2008 年第一次探索 Linux 的时刻。协助我探索 Linux 的人是我的父亲，Socrates Ballais。他是菲律宾塔克洛班的一名经济学专家，也是一个技术狂热者。他教会了我许多计算机技术方面的知识，但只提倡我将 Linux 作为 Windows 崩溃后的备用操作系统。
 
@@ -36,7 +36,7 @@ via: https://opensource.com/life/16/3/my-linux-story-sean-ballais
 
 作者：[Sean Francis N. Ballais][a]
 译者：[StdioA](https://github.com/StdioA)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 [a]: https://opensource.com/users/seanballais
 [0]: https://opensource.com/resources/what-is-linux
