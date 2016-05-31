@@ -245,13 +245,22 @@ nginx               latest              9fab4090484a        5 days ago          
 在大多数虚拟机环境中，如果你想创建一个机器镜像，首先，你需要建立一个新的虚拟机，安装操作系统，安装应用，最后将其转换为一个模板或者镜像。但在Docker中，所有这些步骤都可以通过Dockerfile实现全自动。Dockerfile是向Docker提供构建指令去构建定制镜像的方式。在这一章节，我们将编写能用来部署这篇博客的定制Dockerfile。
 -->
 
-### 理解应用
+### 理解应用程序
 
+在构建 Dockerfile 之前，我们首先需要弄明白部署本博客需要哪些东西。
+<!--
 我们开始构建Dockerfile之前，第一步要搞明白，我们需要哪些东西来部署这篇博客。
+-->
 
+博客本质上是由一个自制的静态站点生成器生成的一堆静态 HTML 页面的集合；生成器是我自己写的 **hamerkop**。生成器本身很简单，仅仅是生成这些 HTML 页面而已。博客用到的所有代码和源文件都在 GitHub 的[公共仓库](https://github.com/madflojo/blog)当中。因此，部署本博客我们只需从 **GitHub** 上将仓库拖下来；而后安装 **Python** 以及部分 **Python** 模块；最后运行 `hamerkop` 应用即可。博客运行在 **nginx** 服务器上；因此，我们还需要安装 **nginx**。
+<!--
 博客本质上是由静态站点生成器生成的静态HTML页面，这个静态站点是我编写的，名为**hamerkop**。这个生成器很简单，它所做的就是生成该博客站点。所有的博客源码都被我放在了一个公共的[Github仓库](https://github.com/madflojo/blog)。为了部署这篇博客，我们要先从Github仓库把博客内容拉取下来，然后安装**Python**和一些**Python**模块，最后执行`hamerkop`应用。我们还需要安装**nginx**，来运行生成后的内容。
+-->
 
+至此，我们可以构建一个简单的 Dockerfile 了，我们可以从中看出一些 [Dockerfile 的语法规则](https://docs.docker.com/v1.8/reference/builder/)。首先，我们可以克隆 **GitHub** 仓库，而后用喜欢的编辑器创建 Dockerfile——比如用 `vi`。
+<!--
 截止目前，这些还是一个简单的Dockerfile，但它却给我们展示了相当多的[Dockerfile语法]((https://docs.docker.com/v1.8/reference/builder/))。我们需要克隆Github仓库，然后使用你最喜欢的编辑器编写Dockerfile；我选择`vi`
+-->
 
 ```
 # git clone https://github.com/madflojo/blog.git
