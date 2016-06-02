@@ -364,13 +364,22 @@ RUN apt-get install -y python-dev python-pip
 还有一点比较重要的是，Docker构建过程中不接受用户输入。这说明任何被`RUN`指令执行的命令必须在没有用户输入的时候完成。由于很多应用在安装的过程中需要用户的输入信息，所以这增加了一点难度。我们例子，`RUN`命令执行的命令都不需要用户输入。
 -->
 
-### 安装Python模块
+### 安装 Python 模块
 
+安装好 **Python** 之后，我们就可以安装所需的 **Python** 模块了。不考虑 Docker 时，我们通常会使用 `pip` 命令读取 `requirements.txt` 文件来安装所需模块。`requirements.txt` 保存在 **Git** 仓库中，而先前我们已经从 **GitHub** 上将其克隆到 `/root/blog` 目录；而这正是 `Dockerfile` 存放的目录。因此，整个 **Git** 仓库的内容，对 Docker 来说在构建过程中都是可以访问的。
+<!--
 **Python**安装完毕后，我们现在需要安装Python模块。如果在Docker外做这些事，我们通常使用`pip`命令，然后参考博客Git仓库中名叫`requirements.txt`的文件。在之前的步骤中，我们已经使用`git`命令成功地将Github仓库"克隆"到了`/root/blog`目录；这个目录碰巧也是我们创建`Dockerfile`的目录。这很重要，因为这意味着Dokcer在构建过程中可以访问Git仓库中的内容。
+-->
 
+在构建过程中，Docker 将会设置「构建目录」以配置构建所需的环境。这意味着，该目录中的所有内容在构建过程中是可用的；与之相反，该目录之外的内容，在构建过程中是不可访问的。
+<!--
 当我们执行构建后，Docker将构建的上下文环境设置为指定的"构建目录"。这意味着目录中的所有文件都可以在构建过程中被使用，目录之外的文件（构建环境之外）是不能访问的。
+-->
 
+为此，我们需要将 `requirements.txt` 复制到容器中去。`Dockerfile` 中的 `COPY` 指令可以完成这个任务。
+<!--
 为了能安装需要的Python模块，我们需要将`requirements.txt`从构建目录拷贝到容器中。我们可以在`Dockerfile`中使用`COPY`指令完成这一需求。
+-->
 
 ```
 ## Dockerfile that generates an instance of http://bencane.com
@@ -390,9 +399,15 @@ COPY requirements.txt /build/
 RUN pip install -r /build/requirements.txt
 ```
 
+此处，我们在 `Dockerfile` 中新增了 3 条指令。首先，我们用 `RUN` 在容器内建立了 `/build/` 目录。该目录用来保存所有生成静态 HTML 页面所需的应用程序文件。而后，我们用 `COPY` 指令从「构建目录」(`/root/blog`) 将 `requirements.txt` 复制到容器内的 `/build` 目录。最后，我们用 `RUN` 指令执行 `pip` 命令；它将安装所有在 `requirements.txt` 中罗列的 **Python** 模块。
+<!--
 在`Dockerfile`中，我们增加了3条指令。第一条指令使用`RUN`在容器中创建了`/build/`目录。该目录用来拷贝生成静态HTML页面需要的一切应用文件。第二条指令是`COPY`指令，它将`requirements.txt`从"构建目录"(`/root/blog`)拷贝到容器中的`/build/`目录。第三条使用`RUN`指令来执行`pip`命令；安装`requirements.txt`文件中指定的所有模块。
+-->
 
+`COPY` 是构建定制镜像的重要指令。如果不在 `Dockerfile` 中将 `requirements.txt` 拷贝到 Docker 镜像里面，那么 Docker 镜像里就没有这个文件。因为 Docker 容器隔离了内外环境，因此，如果不在 `Dockerfile` 中显式地将文件拷贝到镜像里，Docker 容器就无法确保正确的依赖关系。
+<!--
 当构建定制镜像时，`COPY`是条重要的指令。如果在Dockerfile中不指定拷贝文件，Docker镜像将不会包含requirements.txt文件。在Docker容器中，所有东西都是隔离的，除非在Dockerfile中指定执行，否则容器中不会包括需要的依赖。
+-->
 
 ### 重新运行构建
 
