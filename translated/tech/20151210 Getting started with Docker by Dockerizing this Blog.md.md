@@ -336,9 +336,12 @@ Successfully built 60a44f78d194
 现在我们构建成功，下面我们开始定制该镜像。
 -->
 
-### 使用RUN来执行apt-get
+### 使用 `RUN` 来执行 `apt-get`
 
+生成 HTML 页面的静态站点生成器是用 **Python** 写的，因此，我们首先要在 `Dockerfile` 里面安装 **Python**。为此，我们需要调用软件包管理器 **Apt**。因此，我们要在 `Dockerfile` 里用 `RUN` 来执行 `apt-get update` 和 `apt-get install python-dev`。
+<!--
 用来生成HTML页面的静态站点生成器是用**Python**语言编写的，所以，在Dockerfile中需要做的第一件定制任务是安装Python。我们将使用Apt包管理器来安装Python包，这意味着在Dockerfile中我们要指定运行`apt-get update`和`apt-get install python-dev`；为了完成这一点，我们可以使用`RUN`指令。
+-->
 
 ```
 ## Dockerfile that generates an instance of http://bencane.com
@@ -351,9 +354,15 @@ RUN apt-get update
 RUN apt-get install -y python-dev python-pip
 ```
 
+此处，我们用 `RUN` 指令告诉 Docker 在构建镜像时需要执行指定的 `apt-get` 命令。值得注意的是，这些命令只会在该容器中执行；也就是说，`python-dev` 和 `python-pip` 会安装在容器里，而不会影响宿主机。简而言之，`pip` 将在容器内执行，而在容器外，`pip` 命令可能根本不存在。
+<!--
 如上所示，我们只是简单地告知Docker构建镜像的时候，要去执行指定的`apt-get`命令。比较有趣的是，这些命令只会在该容器的上下文中执行。这意味着，即使容器中安装了`python-dev`和`python-pip`，但主机本身并没有安装这些。说的更简单点，`pip`命令将只在容器中执行，出了容器，`pip`命令不存在。
+-->
 
+需要着重提醒的是，Docker 在构建过程中不接受任何用户输入。也就是说，使用 `RUN` 指令执行的命令不得有用户输入。考虑到很多应用功能程序在安装过程中需要用户输入，这种设计可能带来一些不便。不过，在我们的例子中，`RUN` 指令执行的命令，都不需要用户输入。
+<!--
 还有一点比较重要的是，Docker构建过程中不接受用户输入。这说明任何被`RUN`指令执行的命令必须在没有用户输入的时候完成。由于很多应用在安装的过程中需要用户的输入信息，所以这增加了一点难度。我们例子，`RUN`命令执行的命令都不需要用户输入。
+-->
 
 ### 安装Python模块
 
