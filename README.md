@@ -1,9 +1,9 @@
 简介
 -------------------------------
 
-LCTT是“Linux中国”（[http://linux.cn/](http://linux.cn/)）的翻译组，负责从国外优秀媒体翻译Linux相关的技术、资讯、杂文等内容。
+LCTT是“Linux中国”（[https://linux.cn/](https://linux.cn/)）的翻译组，负责从国外优秀媒体翻译Linux相关的技术、资讯、杂文等内容。
 
-LCTT已经拥有近百余名活跃成员，并欢迎更多的Linux志愿者加入我们的团队。
+LCTT已经拥有几百名活跃成员，并欢迎更多的Linux志愿者加入我们的团队。
 
 ![logo](http://img.linux.net.cn/static/image/common/lctt_logo.png)
 
@@ -52,13 +52,15 @@ LCTT的组成
 * 2015/04/19 发起 LFS-BOOK-7.7-systemd 项目。
 * 2015/06/09 提升ictlyh和dongfengweixiao为Core Translators成员。
 * 2015/11/10 提升strugglingyouth、FSSlc、Vic020、alim0x为Core Translators成员。
+* 2016/05/09 提升PurlingNayuki为校对。
 
 活跃成员
 -------------------------------
 
 目前 TP 活跃成员有：
-- CORE @wxy,
-- CORE @DeadFire,
+- Leader @wxy,
+- Source @oska874,
+- Proofreader @PurlingNayuki,
 - CORE @geekpi,
 - CORE @GOLinux,
 - CORE @ictlyh,
@@ -71,6 +73,7 @@ LCTT的组成
 - CORE @Vic020,
 - CORE @dongfengweixiao,
 - CORE @alim0x,
+- Senior @DeadFire,
 - Senior @reinoir,
 - Senior @tinyeyeser,
 - Senior @vito-L,
@@ -80,41 +83,42 @@ LCTT的组成
 - ZTinoZ,
 - theo-l,
 - luoxcat,
-- disylee,
+- martin2011qi,
 - wi-cuckoo,
+- disylee,
 - haimingfg,
 - KayGuoWhu,
 - wwy-hust,
-- martin2011qi,
-- cvsher,
+- felixonmars,
 - su-kaiyao,
+- ivo-wang,
+- GHLandy,
+- cvsher,
+- wyangsun,
+- DongShuaike,
 - flsf,
 - SPccman,
 - Stevearzh
+- mr-ping,
 - Linchenguang,
-- oska874
 - Linux-pdz,
 - 2q1w2007,
-- felixonmars,
-- wyangsun,
-- MikeCoder,
-- mr-ping,
-- xiqingongzi
 - H-mudcup,
-- zhangboyue,
+- cposture,
+- xiqingongzi,
 - goreliu,
-- DongShuaike,
+- NearTan,
 - TxmszLou,
 - ZhouJ-sh,
 - wangjiezhe,
-- NearTan,
 - icybreaker,
 - shipsw,
 - johnhoow,
+- soooogreen,
 - linuhap,
-- boredivan,
 - blueabysm,
-- liaoishere,
+- boredivan,
+- name1e5s,
 - yechunxiao19,
 - l3b2w1,
 - XLCYun,
@@ -122,43 +126,54 @@ LCTT的组成
 - tenght,
 - coloka,
 - luoyutiantang,
-- yupmoon,
+- sonofelice,
 - jiajia9linuxer,
 - scusjs,
 - tnuoccalanosrep,
 - woodboow,
 - 1w2b3l,
+- JonathanKang,
 - crowner,
 - mtunique,
 - dingdongnigetou,
 - CNprober,
-- JonathanKang,
-- Medusar,
 - hyaocuk,
 - szrlee,
+- KnightJoker,
 - Xuanwo,
 - nd0104,
+- jerryling315,
 - xiaoyu33,
 - guodongxiaren,
-- zzlyzq,
-- yujianxuechuan,
-- ailurus1991,
+- ynmlml,
+- kylepeng93,
 - ggaaooppeenngg,
 - Ricky-Gong,
+- zky001,
+- Flowsnow,
 - lfzark,
 - 213edu,
 - Tanete,
 - liuaiping,
-- jerryling315,
+- bestony,
+- Timeszoro,
+- rogetfan,
+- itsang,
+- JeffDing,
+- Yuking-net,
+- MikeCoder,
+- zhangboyue,
+- liaoishere,
+- yupmoon,
+- Medusar,
+- zzlyzq,
+- yujianxuechuan,
+- ailurus1991,
 - tomatoKiller,
 - stduolc,
 - shaohaolin,
-- Timeszoro,
-- rogetfan,
 - FineFan,
 - kingname,
-- jasminepeng,
-- JeffDing,
 - CHINAANSHE,
 
 （按提交行数排名前百）
@@ -173,7 +188,7 @@ LFS 项目活跃成员有：
 - @KevinSJ
 - @Yuking-net
 
-（更新于2015/11/29）
+（更新于2016/05/09）
 
 谢谢大家的支持！
 
