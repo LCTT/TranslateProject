@@ -1,3 +1,5 @@
+translating---geekpi
+
 Test Fedora 24 Beta in an OpenStack cloud
 ===========================================
 
