@@ -1,3 +1,5 @@
+alim0x translating
+
 Will Google Replace Passwords With A New Trust-Based Authentication Method?
 ===========================================================================
 
