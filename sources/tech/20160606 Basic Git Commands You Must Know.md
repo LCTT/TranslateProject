@@ -1,3 +1,5 @@
+alim0x translating
+
 Basic Git Commands You Must Know
 =====================================
 
@@ -216,4 +218,3 @@ via: http://itsfoss.com/basic-git-commands-cheat-sheet/?utm_source=feedburner&ut
 [2]: https://git-scm.com/
 [3]: https://en.wikipedia.org/wiki/Linus_Torvalds
 [4]: https://drive.google.com/open?id=0By49_3Av9sT1bXpINjhvU29VNUU
-
