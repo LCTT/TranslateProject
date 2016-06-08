@@ -1,3 +1,5 @@
+alim0x translating
+
 Android’s Next Revolution: Use Apps Even Without Installing Them!
 ===================================================================
 
