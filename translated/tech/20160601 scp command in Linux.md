@@ -163,7 +163,7 @@ scp默认使用 AES-128的加密方式，如果我们想要改变这个加密方
 via: https://www.unixmen.com/scp-command-linuxunix/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+unixmenhowtos+%28Unixmen+Howtos+%26+Tutorials%29
 
 作者：[Naga Ramesh][a]
-译者：[译者ID](https://github.com/lujianbo)
+译者：[lujianbo](https://github.com/lujianbo)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
