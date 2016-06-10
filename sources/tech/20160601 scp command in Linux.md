@@ -1,14 +1,12 @@
-lujianbo
-
-scp command in Linux
+Linux中的scp命令
 =======================
 
 ![](https://www.unixmen.com/wp-content/uploads/2016/05/SCP-LOGO-1.jpg)
 
 
-scp means Secure Copy Protocol, already every  Linux/Unix  user known about cp command well. scp also works like cp command, cp command copies files or folders  from one location i.e source to other location i.e target in local system, but scp copies the files from one host to another host in network.
+scp 意味着安全拷贝协议 （Secure Copy Protocol）, 和众多Linux/Unix使用者所了解的拷贝(cp)命令一样. scp 的使用方式跟 cp命令是很相似的, cp命令将一个文件或文件夹从本地操作系统的一个位置拷贝到目标位置上，而scp用来将一个文件或者文件夹通过网络传输从一个主机拷贝到另一个主机当中去。
 
-The usage of the scp command is as follows, here i copy a file named importantfile from local system(10.10.16.147) to Remote system(10.0.0.6)  here instead of ip address you can also use System name.
+scp命令的使用方法如下所示，在这个例子中，我将一个叫 “imporimposetantfile”的文件从本机(10.10.16.147)拷贝到远程主机(10.0.0.6）中。在这个命令里，你也可以使用主机名字来替代IP地址。
 
 ```
 [root@localhost ~]# scp importantfile admin@10.0.0.6:/home/admin/
@@ -22,7 +20,7 @@ importantfile                                 100%    0     0.0KB/s   00:00
 [root@localhost ~]#
 ```
 
-Similarly if you want to get a file from remote system you can use scp command as follows
+同样的，如果你想从一个远程主机中获取文件，你可以利用如下的scp命令。
 
 ```
 [root@localhost ~]# scp root@10.10.16.137:/root/importantfile /home/admin/
@@ -35,55 +33,50 @@ importantfile 100% 0 0.0KB/s 00:00
 [root@localhost ~]#
 ```
 
-You can also use various options along with scp command like cp command,The man page of the scp command clearly explain about the usage of various options  and advantages of that.
+你同样可以像cp命令一样，在scp命令中使用不同的选项，scp的man文件详细地阐述了不同选项的用法和优点。
 
-**Sample Output.**
+**简单输出.**
 
 ![](https://www.unixmen.com/wp-content/uploads/2016/05/scp.jpg)
 
 ```
-The options are as follows:
+scp可选参数如下所示:
 
-     -B      Selects batch mode (prevents asking for passwords or passphrases).
+     -B      采取批量模式 (prevents asking for passwords or passphrases).
 
-     -C      Compression enable.  Passes the -C  to enable compression.
+     -C      允许压缩.  通过指明-C来开启压缩模式.
 
-     -c cipher
-             Selects the cipher to use for encrypting the data transfer.  This
-             option is directly passed to ssh(1).
+     -c 加密方式
+             选择在传输过程中用来加密的加密方式 
+             这个选项会被直接传递到ssh(1).
 
-     -F ssh_config
-             Specifies an alternative per-user configuration file for ssh.
-             This option is directly passed to ssh(1).
+     -F ssh配置
+             为ssh指定一个用来替代默认配置的文件.
+             这个选项会被直接传递到ssh(1).
 
-     -l limit
-             Limits the used bandwidth, specified in Kbit/s.
+     -l 限速
+             限制命令使用的带宽, 默认单位是 Kbit/s.
 
-     -P port
-             Specifies the port to connect to on the remote host.  Note that
-             this option is written with a capital ‘P’, because -p is already
-             reserved for preserving the times and modes of the file.
+     -P 端口
+             指定需要的连接的远程主机的端口.  
+             注意，这个选项使用的是一个大写的"P", 因为小写的 -p 已经用来保留目标文件的时间和模式相关信息。
 
-     -p      Preserves modification times, access times, and modes from the
-             original file.
+     -p      保留目标文件的修改时间，访问时间以及权限模式.
 
-     -q      Quiet mode: disables the progress meter as well as warning and
-             diagnostic messages from ssh(1).
+     -q      静默模式: 不显示来自ssh(1)命令的进度信息，警告和诊断信息.
 
-     -r      Recursively copy entire directories.  Note that scp follows sym‐
-             bolic links encountered in the tree traversal.
+     -r      递归拷贝整个目录.
+             注意，scp命令在树形遍历的时候同样会对符号连接进行相同的处理。
 
-     -v      Verbose mode.  Causes scp and ssh(1) to print debugging messages
-             about their progress.  This is helpful in debugging connection,
-             authentication, and configuration problems.
+     -v      详细模式.scp和ssh(1)将会打印出处理过程中的调试信息.当你要调试连接，认证和配置问题的时候这将会帮助到你。
 
 ```
 
-The scp command along with -v option you can get detailed information about authentication, debugging information etc.
+利用scp命令的-v选项，你可以获得认证，调试相关的处理信息.
 
 ![](http://www.unixmen.com/wp-content/uploads/2016/05/scp-v.jpg)
 
-Sample output is like when we pass the option `-v`
+当我们使用-v选项的时候，一个简单的输出如下所示
 
 ```
 [root@localhost ~]# scp -v abc.txt admin@10.0.0.6:/home/admin
@@ -118,59 +111,59 @@ debug1: Exit status 0
 [root@localhost ~]#
 ```
 
-If we need to copy the Directories or folders we can use the option –r. It Recursively copy entire directories
+当我们需要拷贝一个目录或者文件夹的时候，我们可以使用-r选项，它会递归拷贝整个目录。
 
 ![](http://www.unixmen.com/wp-content/uploads/2016/05/scp-with-r.jpg)
 
-Quiet mode:
+静默模式:
 
-If you want  disables the progress meter as well as warning and diagnostic messages pass the argument -q along with scp command.
+如果你想要关闭进度信息以及警告和诊断信息，你可以通过使用scp命令中的-q选项.
 
 ![](http://www.unixmen.com/wp-content/uploads/2016/05/scp-with-q.jpg)
 
-last time we pass the argument -r only then it shows the information file by file, but when we pass the argument -q it disables the progress meter this time.
+上一次我们仅仅使用-r参数，它显示了逐个文件的信息，但这一次当我们使用了-q参数，它就不显示进度信息.
 
-Preserves modification times, access times, and modes from the original file by passing the option -p along with scp.
+利用scp的-p选项来保留目标文件的更新时间，访问时间和权限模式.
 
 ![](http://www.unixmen.com/wp-content/uploads/2016/05/scp-with-p.jpg)
 
-Specifies the port to connect to on the remote host by using the option -P.
-scp uses the ssh to transfer the files between hosts, ssh uses the port number 22 so the scp also uses the same port number 22.
+通过 -P 选项来指定远程主机的连接端口。 
+scp使用ssh命令来在两个主机之间传输文件，因为ssh使用的是22端口号，所以scp也使用相同的22端口号.
 
-If we want to change the port number we can pass the particular port number along with -P(capital P because small p uses for preserving access time etc.)
+如果我们希望改变这个端口号，我们可以使用-P(大写的P，因为小写的p用来保存文件的访问时间等) 选项来指定所需的端口号
 
-for example if we want to use port number 2222 then the command is as follows
+举个例子，如果我们想要使用2222端口号，我们可以使用如下的命令
 
 ```
 [root@localhost ~]# scp -P 2222  abcd1 root@10.10.16.137:/root/
 ```
 
-**Limits the used bandwidth, specified in Kbit/s**
+**限制命令使用的带宽, 指定的单位是 Kbit/s**
 
-we can limit the bandwidth by using the argument -l option as follows. here i used the limit is 512kbit/s
+如下所示，我们可以使用-l参数来指定scp命令所使用的带宽，在此我们将速度限制为512kbit/s
 
 ![](http://www.unixmen.com/wp-content/uploads/2016/05/scp-with-l.jpg)
 
-**Compression enable**
+**开启压缩**
 
-we can enable the compression mode when we transfer the data through scp command to save tha bandwidth and time as follows
+如下所示，我们可以通过开启scp命令的压缩模式来节省传输过程中的带宽和时间
 
 ![](https://www.unixmen.com/wp-content/uploads/2016/05/scp-with-C.jpg)
 
-**Selects the cipher to use for encrypting the data**
+**选择加密数据的加密方式**
 
-By default scp uses AES-128, if we want to change the encryption then we can pass the argument -c(small c) along with scp.
+scp默认使用 AES-128的加密方式，如果我们想要改变这个加密方式，可以通过-c(小写的c) 参数来指定其他的加密方式
 
 ![](http://www.unixmen.com/wp-content/uploads/2016/05/scp-with-cipher.jpg)
 
-Now you can transfer the files between different nodes in your network securely by using scp(Secure copy).
+现在你可以利用scp(Secure copy)命令在你所属网络中的两个结点之间安全地拷贝文件了.
 
 --------------------------------------------------------------------------------
 
 via: https://www.unixmen.com/scp-command-linuxunix/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+unixmenhowtos+%28Unixmen+Howtos+%26+Tutorials%29
 
 作者：[Naga Ramesh][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/lujianbo)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
