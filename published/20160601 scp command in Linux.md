@@ -1,12 +1,11 @@
-Linux中的scp命令
+在 Linux 下使用 scp 命令
 =======================
 
 ![](https://www.unixmen.com/wp-content/uploads/2016/05/SCP-LOGO-1.jpg)
 
+scp 是安全拷贝协议 （Secure Copy Protocol）的缩写，和众多 Linux/Unix 使用者所熟知的拷贝（cp）命令一样。scp 的使用方式类似于 cp 命令，cp 命令将一个文件或文件夹从本地操作系统的一个位置（源）拷贝到目标位置（目的），而 scp 用来将文件或文件夹从网络上的一个主机拷贝到另一个主机当中去。
 
-scp 意味着安全拷贝协议 （Secure Copy Protocol）, 和众多Linux/Unix使用者所了解的拷贝(cp)命令一样. scp 的使用方式跟 cp命令是很相似的, cp命令将一个文件或文件夹从本地操作系统的一个位置拷贝到目标位置上，而scp用来将一个文件或者文件夹通过网络传输从一个主机拷贝到另一个主机当中去。
-
-scp命令的使用方法如下所示，在这个例子中，我将一个叫 “imporimposetantfile”的文件从本机(10.10.16.147)拷贝到远程主机(10.0.0.6）中。在这个命令里，你也可以使用主机名字来替代IP地址。
+scp 命令的使用方法如下所示，在这个例子中，我将一个叫 “importantfile” 的文件从本机（10.10.16.147）拷贝到远程主机（10.0.0.6）中。在这个命令里，你也可以使用主机名字来替代IP地址。
 
 ```
 [root@localhost ~]# scp importantfile admin@10.0.0.6:/home/admin/
@@ -20,7 +19,7 @@ importantfile                                 100%    0     0.0KB/s   00:00
 [root@localhost ~]#
 ```
 
-同样的，如果你想从一个远程主机中获取文件，你可以利用如下的scp命令。
+类似的，如果你想从一个远程主机中取得文件，你可以利用如下的 scp 命令。
 
 ```
 [root@localhost ~]# scp root@10.10.16.137:/root/importantfile /home/admin/
@@ -33,50 +32,39 @@ importantfile 100% 0 0.0KB/s 00:00
 [root@localhost ~]#
 ```
 
-你同样可以像cp命令一样，在scp命令中使用不同的选项，scp的man文件详细地阐述了不同选项的用法和优点。
+你也可以像 cp 命令一样，在 scp 命令中使用不同的选项，scp 的 man 帮助详细地阐述了不同选项的用法和用处。
 
-**简单输出.**
+**示例输出**
 
 ![](https://www.unixmen.com/wp-content/uploads/2016/05/scp.jpg)
 
-```
-scp可选参数如下所示:
 
-     -B      采取批量模式 (prevents asking for passwords or passphrases).
+scp 可选参数如下所示:
 
-     -C      允许压缩.  通过指明-C来开启压缩模式.
-
+     -B      采取批量模式（避免询问密码或口令）
+     -C      启用压缩。通过指明 -C 参数来开启压缩模式。
      -c 加密方式
-             选择在传输过程中用来加密的加密方式 
-             这个选项会被直接传递到ssh(1).
-
-     -F ssh配置
-             为ssh指定一个用来替代默认配置的文件.
-             这个选项会被直接传递到ssh(1).
-
+             选择在传输过程中用来加密的加密方式 这个选项会被直接传递到 ssh(1)。
+     -F ssh 配置
+             给 ssh 指定一个用来替代默认配置的配置文件。这个选项会被直接传递到 ssh(1)。
      -l 限速
-             限制命令使用的带宽, 默认单位是 Kbit/s.
-
+             限制命令使用的带宽，默认单位是 Kbit/s。
      -P 端口
-             指定需要的连接的远程主机的端口.  
-             注意，这个选项使用的是一个大写的"P", 因为小写的 -p 已经用来保留目标文件的时间和模式相关信息。
+             指定需要的连接的远程主机的端口。  
+             注意，这个选项使用的是一个大写的“P”，因为小写的“-p”已经用来保留目标文件的时间和模式相关信息。（LCTT 译注：ssh 命令中使用小写的“-p”来指定目标端口。）
+     -p      保留文件原来的修改时间，访问时间以及权限模式。
+     -q      静默模式：不显示来自 ssh(1) 命令的进度信息，警告和诊断信息。
+     -r      递归拷贝整个目录。
+             注意，scp 命令在树形遍历的时候同样会跟随符号连接，复制所连接的文件。
+     -v      详细模式。scp 和 ssh(1) 将会打印出处理过程中的调试信息。这可以帮助你调试连接、认证和配置方面的问题。
 
-     -p      保留目标文件的修改时间，访问时间以及权限模式.
+**详细模式**
 
-     -q      静默模式: 不显示来自ssh(1)命令的进度信息，警告和诊断信息.
-
-     -r      递归拷贝整个目录.
-             注意，scp命令在树形遍历的时候同样会对符号连接进行相同的处理。
-
-     -v      详细模式.scp和ssh(1)将会打印出处理过程中的调试信息.当你要调试连接，认证和配置问题的时候这将会帮助到你。
-
-```
-
-利用scp命令的-v选项，你可以获得认证，调试相关的处理信息.
+利用 scp 命令的 -v 选项，你可以得到认证、调试等的相关细节信息。
 
 ![](http://www.unixmen.com/wp-content/uploads/2016/05/scp-v.jpg)
 
-当我们使用-v选项的时候，一个简单的输出如下所示
+当我们使用 -v 选项的时候，一个简单的输出如下所示：
 
 ```
 [root@localhost ~]# scp -v abc.txt admin@10.0.0.6:/home/admin
@@ -111,26 +99,27 @@ debug1: Exit status 0
 [root@localhost ~]#
 ```
 
-当我们需要拷贝一个目录或者文件夹的时候，我们可以使用-r选项，它会递归拷贝整个目录。
+当我们需要拷贝一个目录或者文件夹的时候，我们可以使用 -r 选项，它会递归拷贝整个目录。
 
 ![](http://www.unixmen.com/wp-content/uploads/2016/05/scp-with-r.jpg)
 
-静默模式:
+**静默模式**
 
 如果你想要关闭进度信息以及警告和诊断信息，你可以通过使用scp命令中的-q选项.
 
 ![](http://www.unixmen.com/wp-content/uploads/2016/05/scp-with-q.jpg)
 
-上一次我们仅仅使用-r参数，它显示了逐个文件的信息，但这一次当我们使用了-q参数，它就不显示进度信息.
+上一次我们仅仅使用 -r 参数，它显示了逐个文件的信息，但这一次当我们使用了 -q 参数，它就不显示进度信息。
 
-利用scp的-p选项来保留目标文件的更新时间，访问时间和权限模式.
+利用 scp 的 -p 选项来保留目标文件的更新时间，访问时间和权限模式。
 
 ![](http://www.unixmen.com/wp-content/uploads/2016/05/scp-with-p.jpg)
 
-通过 -P 选项来指定远程主机的连接端口。 
-scp使用ssh命令来在两个主机之间传输文件，因为ssh使用的是22端口号，所以scp也使用相同的22端口号.
+**通过 -P 选项来指定远程主机的连接端口**
 
-如果我们希望改变这个端口号，我们可以使用-P(大写的P，因为小写的p用来保存文件的访问时间等) 选项来指定所需的端口号
+scp 使用 ssh 命令来在两个主机之间传输文件，因为 ssh 默认使用的是22端口号，所以 scp 也使用相同的22端口号。
+
+如果我们希望改变这个端口号，我们可以使用 -P（大写的 P，因为小写的 p 用来保持文件的访问时间等）选项来指定所需的端口号。
 
 举个例子，如果我们想要使用2222端口号，我们可以使用如下的命令
 
@@ -138,33 +127,33 @@ scp使用ssh命令来在两个主机之间传输文件，因为ssh使用的是22
 [root@localhost ~]# scp -P 2222  abcd1 root@10.10.16.137:/root/
 ```
 
-**限制命令使用的带宽, 指定的单位是 Kbit/s**
+**限制命令使用的带宽，指定的单位是 Kbit/s**
 
-如下所示，我们可以使用-l参数来指定scp命令所使用的带宽，在此我们将速度限制为512kbit/s
+如下所示，我们可以使用 -l 参数来指定 scp 命令所使用的带宽，在此我们将速度限制为512kbit/s。
 
 ![](http://www.unixmen.com/wp-content/uploads/2016/05/scp-with-l.jpg)
 
 **开启压缩**
 
-如下所示，我们可以通过开启scp命令的压缩模式来节省传输过程中的带宽和时间
+如下所示，我们可以通过开启 scp 命令的压缩模式来节省传输过程中的带宽和时间。
 
 ![](https://www.unixmen.com/wp-content/uploads/2016/05/scp-with-C.jpg)
 
 **选择加密数据的加密方式**
 
-scp默认使用 AES-128的加密方式，如果我们想要改变这个加密方式，可以通过-c(小写的c) 参数来指定其他的加密方式
+scp 默认使用 AES-128 的加密方式，如果我们想要改变这个加密方式，可以通过 -c(小写的 c) 参数来指定其他的加密方式。
 
 ![](http://www.unixmen.com/wp-content/uploads/2016/05/scp-with-cipher.jpg)
 
-现在你可以利用scp(Secure copy)命令在你所属网络中的两个结点之间安全地拷贝文件了.
+现在你可以利用 scp（Secure copy）命令在你所属网络中的两个节点之间安全地拷贝文件了。
 
 --------------------------------------------------------------------------------
 
-via: https://www.unixmen.com/scp-command-linuxunix/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+unixmenhowtos+%28Unixmen+Howtos+%26+Tutorials%29
+via: https://www.unixmen.com/scp-command-linuxunix/
 
 作者：[Naga Ramesh][a]
 译者：[lujianbo](https://github.com/lujianbo)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
