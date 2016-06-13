@@ -68,7 +68,7 @@
 via: https://opensource.com/business/16/2/add-open-source-to-your-resume
 
 作者：[edunham][a]
-译者：[pengkai](https://github.com/pengkai)
+译者：[kylepeng93](https://github.com/kylepeng93)
 校对：[mudongliang](https://github.com/mudongliang)，[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
