@@ -1,3 +1,5 @@
+vim-kakali translating
+
 The Anatomy of a Linux User
 ================================
 
