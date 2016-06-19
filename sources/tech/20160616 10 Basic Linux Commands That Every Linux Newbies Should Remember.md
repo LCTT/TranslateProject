@@ -1,3 +1,5 @@
+Translating by Ping
+
 10 Basic Linux Commands That Every Linux Newbies Should Remember
 =====================================================================
 
