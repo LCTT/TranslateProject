@@ -1,3 +1,5 @@
+[jerryling315](https://github.com/jerryling315)-translating
+
 Securi-Pi: Using the Raspberry Pi as a Secure Landing Point
 ================================================================================
 
@@ -29,10 +31,10 @@ Suggested packages:
   bind9-doc resolvconf ufw
 The following NEW packages will be installed:
   bind9 bind9utils
-0 upgraded, 2 newly installed, 0 to remove and 
+0 upgraded, 2 newly installed, 0 to remove and
  ↪0 not upgraded.
 Need to get 490 kB of archives.
-After this operation, 1,128 kB of additional disk 
+After this operation, 1,128 kB of additional disk
  ↪space will be used.
 Do you want to continue [Y/n]? y
 ```
@@ -55,7 +57,7 @@ That line above allows this DNS server to be queried from the network it's on (i
 
 ```
 root@test:~# /etc/init.d/bind9 restart
-[....] Stopping domain name service...: bind9waiting 
+[....] Stopping domain name service...: bind9waiting
  ↪for pid 13209 to die
 . ok
 [ ok ] Starting domain name service...: bind9.
@@ -71,7 +73,7 @@ Address: 127.0.0.1#53
 > www.google.com
 Server:		localhost
 Address:	127.0.0.1#53
-	
+
 Non-authoritative answer:
 Name:	www.google.com
 Address: 173.194.33.176
@@ -102,10 +104,10 @@ Suggested packages:
   resolvconf
 The following NEW packages will be installed:
   liblzo2-2 libpkcs11-helper1 openvpn
-0 upgraded, 3 newly installed, 0 to remove and 
+0 upgraded, 3 newly installed, 0 to remove and
  ↪0 not upgraded.
 Need to get 621 kB of archives.
-After this operation, 1,489 kB of additional disk 
+After this operation, 1,489 kB of additional disk
  ↪space will be used.
 Do you want to continue [Y/n]? y
 ```
@@ -114,11 +116,11 @@ Now that OpenVPN is installed, you're going to configure it. OpenVPN is SSL-base
 
 ```
 root@test:~# mkdir /etc/openvpn/easy-rsa
-root@test:~# cp -rpv 
- ↪/usr/share/doc/openvpn/examples/easy-rsa/2.0/* 
+root@test:~# cp -rpv
+ ↪/usr/share/doc/openvpn/examples/easy-rsa/2.0/*
  ↪/etc/openvpn/easy-rsa/
  ```
- 
+
 Next, copy the vars file to a backup copy:
 
 ```
@@ -140,10 +142,10 @@ The next step is to source the vars file, so that the environment variables in t
 
 ```
 root@test:/etc/openvpn/easy-rsa# source ./vars
-NOTE: If you run ./clean-all, I will be doing a 
+NOTE: If you run ./clean-all, I will be doing a
  ↪rm -rf on /etc/openvpn/easy-rsa/keys
  ```
- 
+
 ### Building the Certificate Authority
 
 You're now going to run clean-all to ensure a clean working environment, and then you're going to build the CA. Note that I'm changing changeme prompts to something that's appropriate for this installation:
@@ -156,11 +158,11 @@ Generating a 4096 bit RSA private key
 ...................................................++
 writing new private key to 'ca.key'
 -----
-You are about to be asked to enter information that 
+You are about to be asked to enter information that
 will be incorporated into your certificate request.
-What you are about to enter is what is called a 
+What you are about to enter is what is called a
 Distinguished Name or a DN.
-There are quite a few fields but you can leave some 
+There are quite a few fields but you can leave some
 blank. For some fields there will be a default value,
 If you enter '.', the field will be left blank.
 -----
@@ -168,9 +170,9 @@ Country Name (2 letter code) [US]:
 State or Province Name (full name) [CA]:
 Locality Name (eg, city) [Silicon Valley]:
 Organization Name (eg, company) [Linux Journal]:
-Organizational Unit Name (eg, section) 
+Organizational Unit Name (eg, section)
  ↪[changeme]:SecTeam
-Common Name (eg, your name or your server's hostname) 
+Common Name (eg, your name or your server's hostname)
  ↪[changeme]:test.linuxjournal.com
 Name [changeme]:test.linuxjournal.com
 Email Address [bill.childers@linuxjournal.com]:
@@ -180,17 +182,17 @@ Email Address [bill.childers@linuxjournal.com]:
 
 Once the CA is created, you need to build the OpenVPN server certificate:
 
-```root@test:/etc/openvpn/easy-rsa# 
+```root@test:/etc/openvpn/easy-rsa#
  ↪./build-key-server test.linuxjournal.com
 Generating a 4096 bit RSA private key
 ...................................................++
 writing new private key to 'test.linuxjournal.com.key'
 -----
-You are about to be asked to enter information that 
+You are about to be asked to enter information that
 will be incorporated into your certificate request.
-What you are about to enter is what is called a 
+What you are about to enter is what is called a
 Distinguished Name or a DN.
-There are quite a few fields but you can leave some 
+There are quite a few fields but you can leave some
 blank. For some fields there will be a default value,
 If you enter '.', the field will be left blank.
 -----
@@ -198,18 +200,18 @@ Country Name (2 letter code) [US]:
 State or Province Name (full name) [CA]:
 Locality Name (eg, city) [Silicon Valley]:
 Organization Name (eg, company) [Linux Journal]:
-Organizational Unit Name (eg, section) 
+Organizational Unit Name (eg, section)
  ↪[changeme]:SecTeam
-Common Name (eg, your name or your server's hostname) 
+Common Name (eg, your name or your server's hostname)
  ↪[test.linuxjournal.com]:
 Name [changeme]:test.linuxjournal.com
 Email Address [bill.childers@linuxjournal.com]:
-	
+
 Please enter the following 'extra' attributes
 to be sent with your certificate request
 A challenge password []:
 An optional company name []:
-Using configuration from 
+Using configuration from
  ↪/etc/openvpn/easy-rsa/openssl-1.0.0.cnf
 Check that the request matches the signature
 Signature ok
@@ -223,10 +225,10 @@ commonName            :PRINTABLE:'test.linuxjournal.com'
 name                  :PRINTABLE:'test.linuxjournal.com'
 emailAddress          
  ↪:IA5STRING:'bill.childers@linuxjournal.com'
-Certificate is to be certified until Sep  1 
+Certificate is to be certified until Sep  1
  ↪06:23:59 2025 GMT (3650 days)
 Sign the certificate? [y/n]:y
-	
+
 1 out of 1 certificate requests certified, commit? [y/n]y
 Write out database with 1 new entries
 Data Base Updated
@@ -236,7 +238,7 @@ The next step may take a while—building the Diffie-Hellman key for the OpenVPN
 
 ```
 root@test:/etc/openvpn/easy-rsa# ./build-dh
-Generating DH parameters, 4096 bit long safe prime, 
+Generating DH parameters, 4096 bit long safe prime,
  ↪generator 2
 This is going to take a long time
 ....................................................+
@@ -248,17 +250,17 @@ This is going to take a long time
 Now you're going to generate a client key for your client to use when logging in to the OpenVPN server. OpenVPN is typically configured for certificate-based auth, where the client presents a certificate that was issued by an approved Certificate Authority:
 
 ```
-root@test:/etc/openvpn/easy-rsa# ./build-key 
+root@test:/etc/openvpn/easy-rsa# ./build-key
  ↪bills-computer
 Generating a 4096 bit RSA private key
 ...................................................++
 ...................................................++
 writing new private key to 'bills-computer.key'
 -----
-You are about to be asked to enter information that 
+You are about to be asked to enter information that
 will be incorporated into your certificate request.
-What you are about to enter is what is called a 
-Distinguished Name or a DN. There are quite a few 
+What you are about to enter is what is called a
+Distinguished Name or a DN. There are quite a few
 fields but you can leave some blank.
 For some fields there will be a default value,
 If you enter '.', the field will be left blank.
@@ -267,9 +269,9 @@ Country Name (2 letter code) [US]:
 State or Province Name (full name) [CA]:
 Locality Name (eg, city) [Silicon Valley]:
 Organization Name (eg, company) [Linux Journal]:
-Organizational Unit Name (eg, section) 
+Organizational Unit Name (eg, section)
  ↪[changeme]:SecTeam
-Common Name (eg, your name or your server's hostname) 
+Common Name (eg, your name or your server's hostname)
  ↪[bills-computer]:
 Name [changeme]:bills-computer
 Email Address [bill.childers@linuxjournal.com]:
@@ -278,7 +280,7 @@ Please enter the following 'extra' attributes
 to be sent with your certificate request
 A challenge password []:
 An optional company name []:
-Using configuration from 
+Using configuration from
  ↪/etc/openvpn/easy-rsa/openssl-1.0.0.cnf
 Check that the request matches the signature
 Signature ok
@@ -292,11 +294,11 @@ commonName            :PRINTABLE:'bills-computer'
 name                  :PRINTABLE:'bills-computer'
 emailAddress          
  ↪:IA5STRING:'bill.childers@linuxjournal.com'
-Certificate is to be certified until 
+Certificate is to be certified until
  ↪Sep  1 07:35:07 2025 GMT (3650 days)
 Sign the certificate? [y/n]:y
-	
-1 out of 1 certificate requests certified, 
+
+1 out of 1 certificate requests certified,
  ↪commit? [y/n]y
 Write out database with 1 new entries
 Data Base Updated
@@ -306,7 +308,7 @@ root@test:/etc/openvpn/easy-rsa#
 Now you're going to generate an HMAC code as a shared key to increase the security of the system further:
 
 ```
-root@test:~# openvpn --genkey --secret 
+root@test:~# openvpn --genkey --secret
  ↪/etc/openvpn/easy-rsa/keys/ta.key
 ```
 
@@ -319,22 +321,22 @@ port 1194
 proto tcp
 dev tun
 ca easy-rsa/keys/ca.crt
-cert easy-rsa/keys/test.linuxjournal.com.crt ## or whatever 
+cert easy-rsa/keys/test.linuxjournal.com.crt ## or whatever
  ↪your hostname was
-key easy-rsa/keys/test.linuxjournal.com.key  ## Hostname key 
+key easy-rsa/keys/test.linuxjournal.com.key  ## Hostname key
  ↪- This file should be kept secret
 management localhost 7505
 dh easy-rsa/keys/dh4096.pem
 tls-auth /etc/openvpn/certs/ta.key 0
-server 10.8.0.0 255.255.255.0 # The server will use this 
+server 10.8.0.0 255.255.255.0 # The server will use this
  ↪subnet for clients connecting to it
 ifconfig-pool-persist ipp.txt
-push "redirect-gateway def1 bypass-dhcp" # Forces clients 
+push "redirect-gateway def1 bypass-dhcp" # Forces clients
  ↪to redirect all traffic through the VPN
-push "dhcp-option DNS 192.168.1.1" # Tells the client to 
- ↪use the DNS server at 192.168.1.1 for DNS - 
- ↪replace with the IP address of the OpenVPN 
- ↪machine and clients will use the BIND 
+push "dhcp-option DNS 192.168.1.1" # Tells the client to
+ ↪use the DNS server at 192.168.1.1 for DNS -
+ ↪replace with the IP address of the OpenVPN
+ ↪machine and clients will use the BIND
  ↪server setup earlier
 keepalive 30 240
 comp-lzo # Enable compression
@@ -347,9 +349,9 @@ verb 3
 And last, you're going to enable IP forwarding on the server, configure OpenVPN to start on boot and start the OpenVPN service:
 
 ```
-root@test:/etc/openvpn/easy-rsa/keys# echo 
+root@test:/etc/openvpn/easy-rsa/keys# echo
  ↪"net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
-root@test:/etc/openvpn/easy-rsa/keys# sysctl -p 
+root@test:/etc/openvpn/easy-rsa/keys# sysctl -p
  ↪/etc/sysctl.conf
 net.core.wmem_max = 12582912
 net.core.rmem_max = 12582912
@@ -365,12 +367,12 @@ net.ipv4.tcp_rmem = 10240 87380 12582912
 net.ipv4.tcp_wmem = 10240 87380 12582912
 net.ipv4.ip_forward = 0
 net.ipv4.ip_forward = 1
-	
-root@test:/etc/openvpn/easy-rsa/keys# update-rc.d 
+
+root@test:/etc/openvpn/easy-rsa/keys# update-rc.d
  ↪openvpn defaults
 update-rc.d: using dependency based boot sequencing
-	
-root@test:/etc/openvpn/easy-rsa/keys# 
+
+root@test:/etc/openvpn/easy-rsa/keys#
  ↪/etc/init.d/openvpn start
 [ ok ] Starting virtual private network daemon:.
 ```
@@ -386,28 +388,28 @@ The really interesting piece of this solution is SSLH. SSLH is a protocol multip
 To start, `apt-get` install SSLH:
 
 ```
-root@test:/etc/openvpn/easy-rsa/keys# apt-get 
+root@test:/etc/openvpn/easy-rsa/keys# apt-get
  ↪install sslh
 Reading package lists... Done
 Building dependency tree
 Reading state information... Done
 The following extra packages will be installed:
-  apache2 apache2-mpm-worker apache2-utils 
+  apache2 apache2-mpm-worker apache2-utils
    ↪apache2.2-bin apache2.2-common
-  libapr1 libaprutil1 libaprutil1-dbd-sqlite3 
+  libapr1 libaprutil1 libaprutil1-dbd-sqlite3
    ↪libaprutil1-ldap libconfig9
 Suggested packages:
-  apache2-doc apache2-suexec apache2-suexec-custom 
+  apache2-doc apache2-suexec apache2-suexec-custom
    ↪openbsd-inetd inet-superserver
 The following NEW packages will be installed:
-  apache2 apache2-mpm-worker apache2-utils 
+  apache2 apache2-mpm-worker apache2-utils
    ↪apache2.2-bin apache2.2-common
-  libapr1 libaprutil1 libaprutil1-dbd-sqlite3 
+  libapr1 libaprutil1 libaprutil1-dbd-sqlite3
    ↪libaprutil1-ldap libconfig9 sslh
-0 upgraded, 11 newly installed, 0 to remove 
+0 upgraded, 11 newly installed, 0 to remove
  ↪and 0 not upgraded.
 Need to get 1,568 kB of archives.
-After this operation, 5,822 kB of additional 
+After this operation, 5,822 kB of additional
  ↪disk space will be used.
 Do you want to continue [Y/n]? y
 ```
@@ -415,9 +417,9 @@ Do you want to continue [Y/n]? y
 After SSLH is installed, the package installer will ask you if you want to run it in inetd or standalone mode. Select standalone mode, because you want SSLH to run as its own process. If you don't have Apache installed, the Debian/Raspbian package of SSLH will pull it in automatically, although it's not strictly required. If you already have Apache running and configured, you'll want to make sure it only listens on localhost's interface and not all interfaces (otherwise, SSLH can't start because it can't bind to port 443). After installation, you'll receive an error that looks like this:
 
 ```
-[....] Starting ssl/ssh multiplexer: sslhsslh disabled, 
+[....] Starting ssl/ssh multiplexer: sslhsslh disabled,
  ↪please adjust the configuration to your needs
-[FAIL] and then set RUN to 'yes' in /etc/default/sslh 
+[FAIL] and then set RUN to 'yes' in /etc/default/sslh
  ↪to enable it. ... failed!
 failed!
 ```
@@ -427,7 +429,7 @@ This isn't an error, exactly—it's just SSLH telling you that it's not configur
 ```
 # Default options for sslh initscript
 # sourced by /etc/init.d/sslh
-	
+
 # Disabled by default, to force yourself
 # to read the configuration:
 # - /usr/share/doc/sslh/README.Debian (quick start)
@@ -435,22 +437,22 @@ This isn't an error, exactly—it's just SSLH telling you that it's not configur
 # - sslh(8) via "man sslh" for more configuration details.
 # Once configuration ready, you *must* set RUN to yes here
 # and try to start sslh (standalone mode only)
-	
+
 RUN=yes
 
-# binary to use: forked (sslh) or single-thread 
+# binary to use: forked (sslh) or single-thread
  ↪(sslh-select) version
 DAEMON=/usr/sbin/sslh
-	
-DAEMON_OPTS="--user sslh --listen 0.0.0.0:443 --ssh 
- ↪127.0.0.1:22 --ssl 127.0.0.1:443 --openvpn 
+
+DAEMON_OPTS="--user sslh --listen 0.0.0.0:443 --ssh
+ ↪127.0.0.1:22 --ssl 127.0.0.1:443 --openvpn
  ↪127.0.0.1:1194 --pidfile /var/run/sslh/sslh.pid"
  ```
- 
+
  Save the file and start SSLH:
- 
+
 ```
- root@test:/etc/openvpn/easy-rsa/keys# 
+ root@test:/etc/openvpn/easy-rsa/keys#
  ↪/etc/init.d/sslh start
 [ ok ] Starting ssl/ssh multiplexer: sslh.
 ```
@@ -484,7 +486,7 @@ SSLH—Protocol Multiplexer: [http://www.rutschle.net/tech/sslh.shtml](http://ww
 
 
 ----------
-via: http://www.linuxjournal.com/content/securi-pi-using-raspberry-pi-secure-landing-point?page=0,0 
+via: http://www.linuxjournal.com/content/securi-pi-using-raspberry-pi-secure-landing-point?page=0,0
 
 作者：[Bill Childers][a]
 译者：[译者ID](https://github.com/译者ID)
@@ -493,5 +495,3 @@ via: http://www.linuxjournal.com/content/securi-pi-using-raspberry-pi-secure-lan
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:http://www.linuxjournal.com/users/bill-childers
-
-
