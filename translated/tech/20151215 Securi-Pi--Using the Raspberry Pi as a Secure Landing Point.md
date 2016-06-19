@@ -1,24 +1,27 @@
 [jerryling315](https://github.com/jerryling315)-translating
 
-Securi-Pi: Using the Raspberry Pi as a Secure Landing Point
+Securi-Pi: 使用树莓派作为安全跳板
 ================================================================================
 
-Like many LJ readers these days, I've been leading a bit of a techno-nomadic lifestyle as of the past few years—jumping from network to network, access point to access point, as I bounce around the real world while maintaining my connection to the Internet and other networks I use on a daily basis. As of late, I've found that more and more networks are starting to block outbound ports like SMTP (port 25), SSH (port 22) and others. It becomes really frustrating when you drop into a local coffee house expecting to be able to fire up your SSH client and get a few things done, and you can't, because the network's blocking you.
+像很多 LinuxJournal 的读者一样，我也过上了当今非常普遍的“科技游牧”生活，在网络到网络间，从一个接入点到另一个接入点，我们身处现实世界的不同地方却始终保持统一的互联网接入端。近来我发现越来越多的网络环境开始屏蔽对外的常用端口比如 SMTP（端口25），SSH（端口22）之类的。当你走进一家咖啡馆然后想 SSH 到你的一台服务器上做点事情的时候发现端口22被屏蔽了是一件很烦的事情。
 
-However, I have yet to run across a network that blocks HTTPS outbound (port 443). After a bit of fiddling with a Raspberry Pi 2 I have at home, I was able to get a nice clean solution that lets me hit various services on the Raspberry Pi via port 443—allowing me to walk around blocked ports and hobbled networks so I can do the things I need to do. In a nutshell, I have set up this Raspberry Pi to act as an OpenVPN endpoint, SSH endpoint and Apache server—with all these services listening on port 443 so networks with restrictive policies aren't an issue.
+不过，我到目前为止还没发现有什么网络环境会把 HTTPS 给墙了（端口443）。在稍微配置了一下家中的树莓派 2之后，我成功地让自己能通过接入树莓派的443接口充当跳板从而让我在各种网络环境下连上想要的目标端口。简而言之，我把家中的树莓派设置成了一个 OpenVPN 的端点，SSH 端点同时也是一个 Apache 服务器——用于监听443端口上的我的接入活动并执行我预先设置好的网络策略。
 
-### Notes
-This solution will work on most networks, but firewalls that do deep packet inspection on outbound traffic still can block traffic that's tunneled using this method. However, I haven't been on a network that does that...yet. Also, while I use a lot of cryptography-based solutions here (OpenVPN, HTTPS, SSH), I haven't done a strict security audit of this setup. DNS may leak information, for example, and there may be other things I haven't thought of. I'm not recommending this as a way to hide all your traffic—I just use this so that I can connect to the Internet in an unfettered way when I'm out and about.
 
-### Getting Started
-Let's start off with what you need to put this solution together. I'm using this on a Raspberry Pi 2 at home, running the latest Raspbian, but this should work just fine on a Raspberry Pi Model B, as well. It fits within the 512MB of RAM footprint quite easily, although performance may be a bit slower, because the Raspberry Pi Model B has a single-core CPU as opposed to the Pi 2's quad-core. My Raspberry Pi 2 is behind my home's router/firewall, so I get the added benefit of being able to access my machines at home. This also means that any traffic I send to the Internet appears to come from my home router's IP address, so this isn't a solution designed to protect anonymity. If you don't have a Raspberry Pi, or don't want this running out of your home, it's entirely possible to run this out of a small cloud server too. Just make sure that the server's running Debian or Ubuntu, as these instructions are targeted at Debian-based distributions.
+### 笔记
+此解决方案能搞定大多数有限制的网络环境，但有些防火墙会对外部流量调用深度包检查（Deep packet inspection），它们时常能屏蔽掉用本篇文章里的方式传输的信息。不过我到目前为止还没在这样的防火墙后测试过。同时，尽管我使用了很多基于密码学的工具（OpenVPN，HTTPS，SSH），我并没有非常严格地审计过这套配置方案（译者注：作者的意思是指这套方案能帮你绕过端口限制，但不代表你就是完全安全地连接上了树莓派）。有时候甚至 DNS 服务都会泄露你的信息，很可能在我没有考虑周到的角落里会有遗漏。我强烈不推荐把此跳板配置方案当作是万无一失的隐藏网络流量的办法，此配置只是希望能绕过一些端口限制连上网络，而不是做一些危险的事情。
+
+### 起步
+
+让我们先从你需要什么说起，我用的是树莓派 2，装载了最新版本的 Raspbian，不过这个配置也应该能在树莓派 Model B 上运行；512MB 的内存对我们来说绰绰有余了，虽然性能可能没有树莓派 2这么好，毕竟Model B只有一颗单核心 CPU 相比于四核心的树莓派 2。我的树莓派在家里的防火墙和路由器之后，所以我还能用这个树莓派作为跳板访问家里的其他电子设备。同时这也意味着我的流量在互联网上看起来仿佛来自我家的ip地址，所以这也算某种意义上保护了我的匿名性。如果你没有树莓派，或者不想从家里运行这个服务，那你完全可以把这个配置放在一台小型云服务器上（译者：比如 IPS ）。你只要确保服务器运行着基于 Debian 的 Linux 发行版即可，这份指南依然可用。
 
 ![](http://www.linuxjournal.com/files/linuxjournal.com/ufiles/imagecache/large-550px-centered/u1002061/11913f1.jpg)
 
-Figure 1. The Raspberry Pi, about to become an encrypted network endpoint.
+图 1 树莓派，即将成为我们的加密网络端点
 
-### Installing and Configuring BIND
-Once you have your platform up and running—whether it's a Raspberry Pi or otherwise—next you're going to install BIND, the nameserver that powers a lot of the Internet. You're going to install BIND as a caching nameserver only, and not have it service incoming requests from the Internet. Installing BIND will give you a DNS server to point your OpenVPN clients at, once you get to the OpenVPN step. Installing BIND is easy; it's just a simple `apt-get `command to install it:
+
+### 安装并配置 BIND
+无论你是用树莓派还是一台服务器，当你成功启动之后你就可以安装 BIND 了，驱动了互联网相当一部分的域名服务软件。你将会把 BIND 仅仅作为缓存域名服务使用，而不用把它配置为用来处理来自互联网的域名请求。安装 BIND 会让你拥有一个可以被 OpenVPN 使用的 DNS 服务器。安装 BIND 十分简单，`apt-get` 就可以直接搞定:
 
 ```
 root@test:~# apt-get install bind9
@@ -39,7 +42,8 @@ After this operation, 1,128 kB of additional disk
 Do you want to continue [Y/n]? y
 ```
 
-There are a couple minor configuration changes that need to be made to one of the config files of BIND before it can operate as a caching nameserver. Both changes are in `/etc/bind/named.conf.options`. First, you're going to uncomment the "forwarders" section of this file, and you're going to add a nameserver on the Internet to which to forward requests. In this case, I'm going to add Google's DNS (8.8.8.8). The "forwarders" section of the file should look like this:
+在我们能把 BIND 当做缓存域名服务器之前，还有一些小细节需要配置。两个修改都在`/etc/bind/named.conf.options`里完成。首先你要反注释掉 forwarders 这一节内容，同时你还要增加一个可以转发域名请求的目标服务器。作为例子我会用 Google 的 DNS 服务器（8.8.8.8）（译者：国内的话需要找一个替代品）；文件的 forwarders 节看上去大致是这样的：
+
 
 ```
 forwarders {
@@ -47,13 +51,14 @@ forwarders {
 };
 ```
 
-The second change you're going to make allows queries from your internal network and localhost. Simply add this line to the bottom of the configuration file, right before the `}`; that ends the file:
+第二点你需要做的更改是允许来自互联网和本地局域网的 query，直接把这一行加入配置文件的低端，最后一个`}`之前就可以了：
+
 
 ```
 allow-query { 192.168.1.0/24; 127.0.0.0/16; };
 ```
 
-That line above allows this DNS server to be queried from the network it's on (in this case, my network behind my firewall) and localhost. Next, you just need to restart BIND:
+上面那行配置会允许此 DNS 服务器接收来自网络和局域网的请求。下一步，你需要重启一下 BIND 的服务：
 
 ```
 root@test:~# /etc/init.d/bind9 restart
@@ -63,7 +68,8 @@ root@test:~# /etc/init.d/bind9 restart
 [ ok ] Starting domain name service...: bind9.
 ```
 
-Now you can test `nslookup` to make sure your server works:
+现在你可以测试一下 `nslookup` 来确保你的服务正常运行了：
+
 
 ```
 root@test:~# nslookup
@@ -87,11 +93,13 @@ Name:	www.google.com
 Address: 173.194.33.180
 ```
 
-That's it! You've got a working nameserver on this machine. Next, let's move on to OpenVPN.
+完美！现在你的系统里已经有一个正常的域名服务在允许了，下一步我们来配置一下OpenVPN。
 
-### Installing and Configuring OpenVPN
 
-OpenVPN is an open-source VPN solution that relies on SSL/TLS for its key exchange. It's also easy to install and get working under Linux. Configuration of OpenVPN can be a bit daunting, but you're not going to deviate from the default configuration by much. To start, you're going to run an apt-get command and install OpenVPN:
+### 安装并配置 OpenVPN
+
+OpenVPN 是一个运用 SSL/TLS 作为密钥交换的开源 VPN 解决方案。同时它也非常便于在 Linux 环境下部署。配置 OpenVPN 可能有一点艰巨，不过在此其实你也不需要在默认的配置文件里做太多修改。首先你会需要运行一下 `apt-get` 来安装 OpenVPN：
+
 
 ```
 root@test:~# apt-get install openvpn
@@ -112,7 +120,8 @@ After this operation, 1,489 kB of additional disk
 Do you want to continue [Y/n]? y
 ```
 
-Now that OpenVPN is installed, you're going to configure it. OpenVPN is SSL-based, and it relies on both server and client certificates to work. To generate these certificates, you need to configure a Certificate Authority (CA) on the machine. Luckily, OpenVPN ships with some wrapper scripts known as "easy-rsa" that help to bootstrap this process. You'll start by making a directory on the filesystem for the easy-rsa scripts to reside in and by copying the scripts from the template directory there:
+现在 OpenVPN 已经安装好了，你需要去配置它了。OpenVPN 是基于 SSL 的，并且它同时依赖于服务端和客户端两方的证书来工作。为了生成这些证书，你需要配置机器上的证书签发（CA）。幸运地，OpenVPN 在安装中自带了一些用于生成证书的脚本比如 “easy-rsa” 来帮助你加快这个过程。你将要创建一个文件目录用于放置 easy-rsa 脚本的模板：
+
 
 ```
 root@test:~# mkdir /etc/openvpn/easy-rsa
@@ -121,13 +130,15 @@ root@test:~# cp -rpv
  ↪/etc/openvpn/easy-rsa/
  ```
 
-Next, copy the vars file to a backup copy:
+下一步，把 vars 文件复制一个备份：
+
 
 ```
 root@test:/etc/openvpn/easy-rsa# cp vars vars.bak
 ```
 
-Now, edit vars so it's got information pertinent to your installation. I'm going specify only the lines that need to be edited, with sample data, below:
+接下来，编辑一下 vars 以让其中的信息符合你的状态。我将以我需要编辑的信息作为例子：
+
 
 ```
 KEY_SIZE=4096
@@ -138,7 +149,8 @@ KEY_ORG="Linux Journal"
 KEY_EMAIL="bill.childers@linuxjournal.com"
 ```
 
-The next step is to source the vars file, so that the environment variables in the file are in your current environment:
+下一步是 source 一下 vars ，这样系统就能把其中的信息当作环境变量处理了：
+
 
 ```
 root@test:/etc/openvpn/easy-rsa# source ./vars
@@ -146,9 +158,11 @@ NOTE: If you run ./clean-all, I will be doing a
  ↪rm -rf on /etc/openvpn/easy-rsa/keys
  ```
 
-### Building the Certificate Authority
+### 搭建CA（证书签发）
 
-You're now going to run clean-all to ensure a clean working environment, and then you're going to build the CA. Note that I'm changing changeme prompts to something that's appropriate for this installation:
+
+接下来你要允许一下 `clean-all` 来确保有一个清理干净的系统工作环境，紧接着你也就要做证书签发了。注意一下我修改了一些 changeme 的跳出的交互提示内容以符合我需要的安装情况：
+
 
 ```
 root@test:/etc/openvpn/easy-rsa# ./clean-all
@@ -178,11 +192,14 @@ Name [changeme]:test.linuxjournal.com
 Email Address [bill.childers@linuxjournal.com]:
 ```
 
-### Building the Server Certificate
 
-Once the CA is created, you need to build the OpenVPN server certificate:
+### 生成服务端证书
 
-```root@test:/etc/openvpn/easy-rsa#
+一旦CA创建好了，你接着就可以生成客户端的　OpenVPN 证书了：
+
+
+```
+root@test:/etc/openvpn/easy-rsa#
  ↪./build-key-server test.linuxjournal.com
 Generating a 4096 bit RSA private key
 ...................................................++
@@ -234,7 +251,8 @@ Write out database with 1 new entries
 Data Base Updated
 ```
 
-The next step may take a while—building the Diffie-Hellman key for the OpenVPN server. This takes several minutes on a conventional desktop-grade CPU, but on the ARM processor of the Raspberry Pi, it can take much, much longer. Have patience, as long as the dots in the terminal are proceeding, the system is building its Diffie-Hellman key (note that many dots are snipped in these examples):
+下一步需要用掉一些时间来生成 OpenVPN 服务器需要的 Diffie-Hellman 密钥。这个步骤在一般的桌面级 CPU 上会需要几分钟的时间，但在 ARM 构架的树莓派上，会用掉超级超级长的时间。耐心点，只要终端上的点还在跳，那么一切就在按部就班运行：
+
 
 ```
 root@test:/etc/openvpn/easy-rsa# ./build-dh
@@ -245,9 +263,9 @@ This is going to take a long time
 <snipped out many more dots>
 ```
 
-### Building the Client Certificate
+### 生成客户端证书
 
-Now you're going to generate a client key for your client to use when logging in to the OpenVPN server. OpenVPN is typically configured for certificate-based auth, where the client presents a certificate that was issued by an approved Certificate Authority:
+现在你要生成一下客户端用于登陆 OpenVPN 的密钥。通常来说 OpenVPN 都会被配置成使用证书验证的加密方式，在这个配置下客户端需要持有由服务端签发的一份证书：
 
 ```
 root@test:/etc/openvpn/easy-rsa# ./build-key
@@ -305,16 +323,18 @@ Data Base Updated
 root@test:/etc/openvpn/easy-rsa#
 ```
 
-Now you're going to generate an HMAC code as a shared key to increase the security of the system further:
+现在你需要再生成一个 HMAC 代码作为共享密钥来进一步增加整个加密提供的安全性：
+
 
 ```
 root@test:~# openvpn --genkey --secret
  ↪/etc/openvpn/easy-rsa/keys/ta.key
 ```
 
-### Configuration of the Server
+### 配置服务器
 
-Finally, you're going to get to the meat of configuring the OpenVPN server. You're going to create a new file, /etc/openvpn/server.conf, and you're going to stick to a default configuration for the most part. The main change you're going to do is to set up OpenVPN to use TCP rather than UDP. This is needed for the next major step to work—without OpenVPN using TCP for its network communication, you can't get things working on port 443. So, create a new file called /etc/openvpn/server.conf, and put the following configuration in it: Garrick, shrink below.
+最后，你来到了需要配置 OpenVPN 服务的时候了。你需要创建一个 `/etc/openvpn/server.conf` 文件；这个配置文件的大多数地方都可以套用模板解决。设置 OpenVPN 服务的主要修改在于让它只用 TCP 而不是 UDP 链接。这是下一步所必需的---如果不是 TCP 链接那么你的服务将不能通过 端口443 运作。创建 `/etc/openvpn/server.conf` 然后把下述配置丢进去：
+
 
 ```
 port 1194
@@ -346,7 +366,8 @@ status openvpn-status.log
 verb 3
 ```
 
-And last, you're going to enable IP forwarding on the server, configure OpenVPN to start on boot and start the OpenVPN service:
+最后，你将需要在服务器上启用 IP 转发，配置 OpenVPN 为开机启动并立刻启动 OpenVPN 服务：
+
 
 ```
 root@test:/etc/openvpn/easy-rsa/keys# echo
@@ -377,15 +398,17 @@ root@test:/etc/openvpn/easy-rsa/keys#
 [ ok ] Starting virtual private network daemon:.
 ```
 
-### Setting Up OpenVPN Clients
+### 配置 OpenVPN 客户端
 
-Your client installation depends on the host OS of your client, but you'll need to copy your client certs and keys created above to your client, and you'll need to import those certificates and create a configuration for that client. Each client and client OS does it slightly differently and documenting each one is beyond the scope of this article, so you'll need to refer to the documentation for that client to get it running. Refer to the Resources section for OpenVPN clients for each major OS.
 
-### Installing SSLH—the "Magic" Protocol Multiplexer
+客户端的安装取决于客户端的操作系统，但你总会需要之前生成的证书和密钥，并导入你的 OpenVPN 客户端并新建一个配置文件。每种操作系统下的 OpenVPN 客户端在操作上会有些稍许不同，这也不在这篇文章的覆盖范围内，所以你最好去看看特定操作系统下的 OpenVPN 文档来获取更多信息。参考文档里的 Resources 章节。
 
-The really interesting piece of this solution is SSLH. SSLH is a protocol multiplexer—it listens on port 443 for traffic, and then it can analyze whether the incoming packet is an SSH packet, HTTPS or OpenVPN, and it can forward that packet onto the proper service. This is what enables this solution to bypass most port blocks—you use the HTTPS port for all of this traffic, since HTTPS is rarely blocked.
+### 安装 SSLH —— "魔法"多协议工具
 
-To start, `apt-get` install SSLH:
+本文章介绍的解决方案最有趣的部分就是运用 SSLH 了。SSLH 是一个多重协议工具——它可以监听443端口的流量，然后分析他们是以SSH，HTTPS 还是 OpenVPN 的通讯包，并把他们分别转发给正确的系统服务。这就是为何本解决方案可以让你绕过大多数端口封杀——你可以一直使用HTTPS通讯，介于它几乎从来不会被封杀。
+
+同样，直接 `apt-get` 安装：
+
 
 ```
 root@test:/etc/openvpn/easy-rsa/keys# apt-get
@@ -414,7 +437,7 @@ After this operation, 5,822 kB of additional
 Do you want to continue [Y/n]? y
 ```
 
-After SSLH is installed, the package installer will ask you if you want to run it in inetd or standalone mode. Select standalone mode, because you want SSLH to run as its own process. If you don't have Apache installed, the Debian/Raspbian package of SSLH will pull it in automatically, although it's not strictly required. If you already have Apache running and configured, you'll want to make sure it only listens on localhost's interface and not all interfaces (otherwise, SSLH can't start because it can't bind to port 443). After installation, you'll receive an error that looks like this:
+在 SSLH 被安装之后，包管理器会询问要在 inetd 还是 standalone 模式下允许。选择 standalone 模式，因为你希望 SSLH 在它自己的进程里运行。如果你没有安装 Apache，apt包管理器会自动帮你下载并安装的，尽管它也不是完全不可或缺。如果你已经有 Apache 了，那你需要确保它只监听 localhost 端口而不是所有的端口（不然的话 SSLH 会无法运行因为 443 端口已经被 Apache 监听占用）。安装后，你会看到一个如下所示的错误信息：
 
 ```
 [....] Starting ssl/ssh multiplexer: sslhsslh disabled,
@@ -424,7 +447,7 @@ After SSLH is installed, the package installer will ask you if you want to run i
 failed!
 ```
 
-This isn't an error, exactly—it's just SSLH telling you that it's not configured and can't start. Configuring SSLH is pretty simple. Its configuration is stored in `/etc/default/sslh`, and you just need to configure the `RUN` and `DAEMON_OPTS` variables. My SSLH configuration looks like this:
+这其实并不是错误信息，只是 SSLH 在提醒你它还未被配置所以无法启动，这很正常。配置 SSLH 相对来说比较简单。它的配置文件放置在 `/etc/default/sslh`，你只需要修改 `RUN` 和 `DAEMON_OPTS` 变量就可以了。我的 SSLH 配置文件如下所示：
 
 ```
 # Default options for sslh initscript
@@ -449,7 +472,7 @@ DAEMON_OPTS="--user sslh --listen 0.0.0.0:443 --ssh
  ↪127.0.0.1:1194 --pidfile /var/run/sslh/sslh.pid"
  ```
 
- Save the file and start SSLH:
+保存编辑并启动 SSLH：
 
 ```
  root@test:/etc/openvpn/easy-rsa/keys#
@@ -457,24 +480,25 @@ DAEMON_OPTS="--user sslh --listen 0.0.0.0:443 --ssh
 [ ok ] Starting ssl/ssh multiplexer: sslh.
 ```
 
-Now, you should be able to ssh to port 443 on your Raspberry Pi, and have it forward via SSLH:
+现在你应该可以从 443 端口 ssh 到你的树莓派了，它会正确地使用 SSLH 转发：
 
 ```
 $ ssh -p 443 root@test.linuxjournal.com
 root@test:~#
 ```
 
-SSLH is now listening on port 443 and can direct traffic to SSH, Apache or OpenVPN based on the type of packet that hits it. You should be ready to go!
+SSLH 现在开始监听端口443 并且可以转发流量信息到 SSH，Apache 或者 OpenVPN 取决于抵达流量包的类型。这套系统现已整装待发了！
 
-### Conclusion
+### 结论
 
-Now you can fire up OpenVPN and set your OpenVPN client configuration to port 443, and SSLH will route it to the OpenVPN server on port 1194. But because you're talking to your server on port 443, your VPN traffic won't get blocked. Now you can land at a strange coffee shop, in a strange town, and know that your Internet will just work when you fire up your OpenVPN and point it at your Raspberry Pi. You'll also gain some encryption on your link, which will improve the privacy of your connection. Enjoy surfing the Net via your new landing point!
+现在你可以启动 OpenVPN 并且配置你的客户端连接到服务器的 443 端口了，然后 SSLH 会从那里把流量转发到服务器的 1194 端口。但介于你正在和服务器的 443 端口通信，你的 VPN 流量不会被封锁。现在你可以舒服地坐在陌生小镇的咖啡店里，畅通无阻地通过树莓派上的 OpenVPN 浏览互联网。你顺便还给你的链接增加了一些安全性，这个额外作用也会让你的链接更安全和私密一些。享受通过安全跳板浏览互联网把！
 
-Resources
 
-Installing and Configuring OpenVPN: [https://wiki.debian.org/OpenVPN](https://wiki.debian.org/OpenVPN) and [http://cryptotap.com/articles/openvpn](http://cryptotap.com/articles/openvpn)
+资源：
 
-OpenVPN client downloads: [https://openvpn.net/index.php/open-source/downloads.html](https://openvpn.net/index.php/open-source/downloads.html)
+安装与配置 OpenVPN: [https://wiki.debian.org/OpenVPN](https://wiki.debian.org/OpenVPN) and [http://cryptotap.com/articles/openvpn](http://cryptotap.com/articles/openvpn)
+
+OpenVPN 客户端下载: [https://openvpn.net/index.php/open-source/downloads.html](https://openvpn.net/index.php/open-source/downloads.html)
 
 OpenVPN Client for iOS: [https://itunes.apple.com/us/app/openvpn-connect/id590379981?mt=8](https://itunes.apple.com/us/app/openvpn-connect/id590379981?mt=8)
 
@@ -482,14 +506,14 @@ OpenVPN Client for Android: [https://play.google.com/store/apps/details?id=net.o
 
 Tunnelblick for Mac OS X (OpenVPN client): [https://tunnelblick.net](https://tunnelblick.net)
 
-SSLH—Protocol Multiplexer: [http://www.rutschle.net/tech/sslh.shtml](http://www.rutschle.net/tech/sslh.shtml) and [https://github.com/yrutschle/sslh](https://github.com/yrutschle/sslh)
+SSLH 介绍: [http://www.rutschle.net/tech/sslh.shtml](http://www.rutschle.net/tech/sslh.shtml) 和 [https://github.com/yrutschle/sslh](https://github.com/yrutschle/sslh)
 
 
 ----------
 via: http://www.linuxjournal.com/content/securi-pi-using-raspberry-pi-secure-landing-point?page=0,0
 
 作者：[Bill Childers][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[jerryling315](https://blog.moelf.xyz)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
