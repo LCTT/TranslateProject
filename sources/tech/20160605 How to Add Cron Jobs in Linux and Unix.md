@@ -1,4 +1,4 @@
- Vic020
+Translating by Ping 
 
 How to Add Cron Jobs in Linux and Unix
 ======================================
