@@ -1,5 +1,6 @@
 65% of companies are contributing to open source projects
 ==========================================================
+[Cathon is translating...]
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/BUSINESS_openseries.png?itok=s7lXChId)
 
