@@ -1,4 +1,3 @@
-[HaohongWANG Translating]
 6 Amazing Linux Distributions For Kids
 ======================================
 
