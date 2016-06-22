@@ -1,3 +1,5 @@
+Translating by [jerryling315](https://github.com/jerryling315)
+
 Mark Shuttleworth – The Man Behind Ubuntu Operating System
 ================================================================================
 ![](http://1426826955.rsc.cdn77.org/wp-content/uploads/2015/10/Mark-Shuttleworth-652x445.jpg)
@@ -9,7 +11,7 @@ Mark also founded **Thawte** in 1996, the Internet commerce security company, wh
 In 2000, Mark founded the HBD, as an investment company, and also he created the Shuttleworth Foundation in order to fund the innovative leaders in the society with combination of fellowships and some investments.
 
 > “The mobile world is crucial to the future of the PC. This month, for example, it became clear that the traditional PC is shrinking in favor of tablets. So if we want to be relevant on the PC, we have to figure out how to be relevant in the mobile world first. Mobile is also interesting because there’s no pirated Windows market. So if you win a device to your OS, it stays on your OS. In the PC world, we are constantly competing with “free Windows”, which presents somewhat unique challenges. So our focus now is to establish a great story around Ubuntu and mobile form factors – the tablet and the phone – on which we can build deeper relationships with everyday consumers.”
-> 
+>
 > — Mark Shuttleworth
 
 In 2002, he flew to International Space Station as member of their crew of Soyuz mission TM-34, after 1 year of training in the Star City, Russia. And after running campaign to promote the science, code, and mathematics to the aspiring astronauts and the other ambitious types at schools in SA, Mark founded the **Canonical Ltd**. and in 2013, he provided leadership for Ubuntu operating system for software development purposes.
@@ -17,7 +19,7 @@ In 2002, he flew to International Space Station as member of their crew of Soyuz
 Today, Shuttleworth holds dual citizenship of United Kingdom and South Africa currently lives on lovely Mallards botanical garden in Isle of Man, with 18 precocious ducks, equally his lovely girlfriend Claire, 2 black bitches and occasional itinerant sheep.
 
 > “Computer is not a device anymore. It is an extension of your mind and your gateway to other people.”
-> 
+>
 > — Mark Shuttleworth
 
 ### Mark Shuttleworth’s Early life ###
@@ -27,7 +29,7 @@ As we mentioned above, Mark was born in Welkom, South Africa’s Orange Free Sta
 Mark obtained the Bachelor of Business Science degree in the Finance and Information Systems at University of Cape Town, where he lived there in Smuts Hall. He became, as a student, involved in installations of the 1st residential Internet connections at his university.
 
 > “There are many examples of companies and countries that have improved their competitiveness and efficiency by adopting open source strategies. The creation of skills through all levels is of fundamental importance to both companies and countries.”
-> 
+>
 > — Mark Shuttleworth
 
 ### Mark Shuttleworth’s Career ###
@@ -37,7 +39,7 @@ Mark founded Thawte in 1995, which was specialized in the digital certificates a
 In 2000, Mark formed the HBD Venture Capital (Here be Dragons), the business incubator and venture capital provider. In 2004, he formed the Canonical Ltd., for promotion and commercial support of the free software development projects, especially Ubuntu operating system. In 2009, Mark stepped down as CEO of Canonical, Ltd.
 
 > “In the early days of the DCC I preferred to let the proponents do their thing and then see how it all worked out in the end. Now we are pretty close to the end.”
-> 
+>
 > — Mark Shuttleworth
 
 ### Linux and FOSS with Mark Shuttleworth ###
@@ -51,7 +53,7 @@ In 2004, Mark returned to free software world by funding software development of
 In 2005, Mark founded Ubuntu Foundation and made initial investment of 10 million dollars. In Ubuntu project, Mark is often referred to with tongue-in-cheek title “**SABDFL (Self-Appointed Benevolent Dictator for Life)**”. To come up with list of names of people in order to hire for the entire project, Mark took about six months of Debian mailing list archives with him during his travelling to Antarctica aboard icebreaker Kapitan Khlebnikov in 2004. In 2005, Mark purchased 65% stake of Impi Linux.
 
 > “I urge telecommunications regulators to develop a commercial strategy for delivering effective access to the continent.”
-> 
+>
 > — Mark Shuttleworth
 
 In 2006, it was announced that Shuttleworth became **first patron of KDE**, which was highest level of sponsorship available at the time. This patronship ended in 2012, with financial support together for Kubuntu, which was Ubuntu variant with KDE as a main desktop.
@@ -67,7 +69,7 @@ In 2012, Mark and Kenneth Rogoff took part together in debate opposite Peter Thi
 In 2013, Mark and Ubuntu were awarded **Austrian anti-privacy Big Brother Award** for sending the local Ubuntu Unity Dash searches to the Canonical servers by default. One year earlier in 2012, Mark had defended the anonymization method that was used.
 
 > “All the major PC companies now ship PC’s with Ubuntu pre-installed. So we have a very solid set of working engagements in the industry. But those PC companies are nervous to promote something new to PC buyers. If we can get PC buyers familiar with Ubuntu as a phone and tablet experience, then they may be more willing buy it on the PC too. Because no OS ever succeeded by emulating another OS. Android is great, but if we want to succeed we need to bring something new and better to market. We are all at risk of stagnating if we don’t pursue the future, vigorously. But if you pursue the future, you have to accept that not everybody will agree with your vision.”
-> 
+>
 > — Mark Shuttleworth
 
 ### Mark Shuttleworth’s Spaceflight ###
@@ -81,7 +83,7 @@ While in space, Mark had radio conversation with Nelson Mandela and another 14 y
 Upon returning, Mark traveled widely and also spoke about that spaceflight to schoolchildren around the world.
 
 > “The raw numbers suggest that Ubuntu continues to grow in terms of actual users. And our partnerships – Dell, HP, Lenovo on the hardware front, and gaming companies like EA, Valve joining up on the software front – make me feel like we continue to lead where it matters.”
-> 
+>
 > — Mark Shuttleworth
 
 ### Mark Shuttleworth’s Transport ###
@@ -93,7 +95,7 @@ Mark has his private jet, Bombardier Global Express that is often referred to as
 Upon the moving R2.5 billion in the capital from South Africa to Isle of Man, South African Reserve Bank imposed R250 million levy to release Mark’s assets. Mark appealed, and then after lengthy legal battle, Reserve Bank was ordered to repay Mark his R250 million, plus the interest. Mark announced that he would be donating that entire amount to trust that will be established in order to help others take cases to Constitutional Court.
 
 > “The exit charge was not inconsistent with the Constitution. The dominant purpose of the exit charge was not to raise revenue but rather to regulate conduct by discouraging the export of capital to protect the domestic economy.”
-> 
+>
 > — Judge Dikgang Moseneke
 
 In 2015, Constitutional Court of South Africa reversed and set-aside findings of lower courts, ruling that dominant purpose of the exit charge was in order to regulate conduct rather than for raising the revenue.
