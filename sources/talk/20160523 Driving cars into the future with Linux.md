@@ -1,83 +1,85 @@
-erlinux translating...........
 
-Driving cars into the future with Linux
+驾车通往未来Linux
 ===========================================
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/open-snow-car-osdc-lead.png?itok=IgYZ6mNY)
 
-I don't think much about it while I'm driving, but I sure do love that my car is equipped with a system that lets me use a few buttons and my voice to call my wife, mom, and children. That same system allows me to choose whether I listen to music streaming from the cloud, satellite radio, or the more traditional AM/FM radio. I also get weather updates and can direct my in-vehicle GPS to find the fastest route to my next destination. [In-vehicle infotainment][1], or IVI as it's known in the industry, has become ubiquitous in today's newest automobiles.
 
-A while ago, I had to travel hundreds of miles by plane and then rent a car. Happily, I discovered that my rental vehicle was equipped with IVI technology similar to my own car. In no time, I was connected via Bluetooth, had uploaded my contacts into the system, and was calling home to let my family know I arrived safely and my hosts to let them know I was en route to their home.
+当我开车的时候不认为和 Linux 有多大联系，但是我肯定我是喜欢一个配备有系统的车子，让我按几个按钮语音就可以传给我的妻子母亲以及孩子。同样，这样的系统可以让我选择是否从云端流媒体收听音乐，卫星广播，以及传统的 AM/FM 收音机。我也会得到天气更新以及可以给我的车载信息娱乐 GPS 找到最快的下一个目的地[In-vehicle infotainment][1]，以及 IVI 作为行业知名产业，已经普及到最新的汽车生产商。
 
-In a recent [news roundup][2], Scott Nesbitt cited an article that said Ford Motor Company is getting substantial backing from a rival automaker for its open source [Smart Device Link][3] (SDL) middleware framework, which supports mobile phones. SDL is a project of the [GENIVI Alliance][4], a nonprofit committed to building middleware to support open source in-vehicle infotainment systems. According to [Steven Crumb][5], executive director of GENIVI, their [membership][6] is broad and includes Daimler Group, Hyundai, Volvo, Nissan, Honda, and 170 others.
+前段时间，我不得坐飞机飞跃数百英里，租一辆车。令人愉快的是，我发现我的租凭车配置了 IVI 技术。任何时候，我只要通过蓝牙连接，上传联系人到系统中，打电话回家给我的家人，让他们知道我已经安全到家了。然后“主人“会知道我再途中还是已经到他们家了。
 
-In order to remain competitive in the industry, automotive companies need a middleware system that can support the various human machine interface technologies available to consumers today. Whether you own an Android, iOS, or other device, automotive OEMs want their units to be able to support these systems. Furthermore, these IVI systems must be adaptable enough to support the ever decreasing half-life of mobile technology. OEMs want to provide value and add services in their IVI stacks that will support a variety of options for their customers. Enter Linux and open source software.
+在最近的 [news roundup][2]，Scott Nesbitt 引用一篇文章，说福特汽车公司是由它的开源 [Smart Device Link][3]（SDL）中间设备框架，对手汽车制造商，支持那个移动手机获得大量的支持。 SDL 是 [GENIVI Alliance][4] 的项目，一个非营利性的致力于建设中间件支持开源的车载信息娱乐系统。根据文献 [[Steven Crumb][5]，GENIVI 执行董事，他们 [membership][6] 很广，包括 Daimler 集团，现代，沃尔沃，日产，本田等等 170 个。
 
-In addition to GENIVI's efforts, the [Linux Foundation][7] sponsors the [Automotive Grade Linux][8] (AGL) workgroup, a software foundation dedicated to finding open source solutions for automotive applications. Although AGL will initially focus on IVI systems, they envision branching out to include [telematics][9], heads up displays, and other control systems. AGL has over 50 members at this time, including Jaguar, Toyota, and Nissan, and in a [recent press release][10] announced that Ford, Mazda, Mitsubishi, and Subaru have joined.
+为了在同行业中保持竞争力，汽车企业需要一个中间设备系统，可以支持当今消费者提供的各种人机界面技术。无论您拥有 Android，iOS 或其他设备，汽车 OEM 厂商希望自己的系统单位能够支持这些。此外，这些的 IVI 系统必须有足够适应能力以支持移动技术的不断下降，半衰期。 OEM 厂商要提供价值服务，并在他们的 IVI 堆栈支持各种为他们的客户添加选择。进入 Linux 和开源软件。
 
-To find out more, we interviewed two leaders in this emerging field. Specifically, we wanted to know how Linux and open source software are being used and if they are in fact changing the face of the automotive industry. First, we talk to [Alison Chaiken][11], a software engineer at Peloton Technology and an expert on automotive Linux, cybersecurity, and transparency. She previously worked for Mentor Graphics, Nokia, and the Stanford Linear Accelerator. Then, we chat with [Steven Crumb][12], executive director of GENIVI, who got started in open source in high-performance computing environments (supercomputers and early cloud computing). He says that though he's not a coder anymore, he loves to help organizations solve real business problems with open source software.
+除了 GENIVI 的努力下，[Linux Foundation][7] 赞助 [Automotive Grade Linux][8]（AGL）工作组，一个软件基金会，致力于寻找针对汽车应用的开源解决方案。虽然 AGL 初期将侧重于 IVI 系统，他们展望不同的分歧，包括  [telematics][9]，小心显示器和其他控制系统。 AGL 有超过 50 名成员在这个时候，包括捷豹，丰田，日产，并在 [recent press release][10] 宣布福特、马自达、三菱、和斯巴鲁加入。
 
-### Interview with Alison Chaiken (by [Deb Nicholson][13])
 
-#### How did you get interested in the automotive software space?
+为了了解更多信息，我们在这一新鲜兴领域采访了两位领导人。明确地来说，我们想知道是如何被使用的 Linux 和开源软件，如果它们实际上是改变汽车行业的面貌。首先，我们谈谈  [Alison Chaiken][11]，在大集团技术的软件工程师和汽车 Linux 专家，网络安全和透明度。她曾任职于 [Alison Chaiken][11] 公司，诺基亚和斯坦福直线性加速器。然后我们用 [Steven Crumb][12]，GENIVI 执行董事，谁得到了在开源环境高性能计算（超级计算机和早期的云计算）开始聊天。他说，虽然他再不是一个程序员了，但是他喜欢帮助企业解决开源软件的实际业务问题。
 
-I was working on [MeeGo][14] in phones at Nokia in 2009 when the project was cancelled. I thought, what's next? A colleague was working on [MeeGo-IVI][15], an early automotive Linux distribution. "Linux is going to be big in cars," I thought, so I headed in that direction.
+### 采访 Alison Chaiken (by [Deb Nicholson][13])
 
-#### Can you tell us what aspects you're working on these days?
+#### 你是如何开始对汽车软件空间感兴趣的？
 
-I'm currently working for a startup on an advanced cruise control system that uses real-time Linux to increase the safety and fuel economy of big-rig trucks. I love working in this area, as no one would disagree that trucking can be improved.
+我是在诺基亚手机产品时， 2009 年该项目被取消。我想，下一步是什么？一位同事正在对 [MeeGo-IVI][15]，早期的汽车 Linux 发行版。 “Linux 在汽车是大了，” 我想，所以我在朝着这个方向努力。
 
-#### There have been a few stories about hacked cars in recent years. Can open source solutions help address this issue?
+#### 你能告诉我们你这些日子工作在哪些方面？
+
+我目前正在启动为使用 Linux 系统增加大货车钻机的安全性和燃油经济性的先进巡航控制。我喜欢在这方面的工作，因为没有人会反对卡车得以提升。
+
+#### 目前关于汽车已在近年来砍死几个人故事。开源代码方案可以帮助解决这个问题吗？
 
 I presented a talk on precisely this topic, on how Linux can (and cannot) contribute to security solutions in automotive at Southern California Linux Expo 2016 ([Slides][16]). Notably, GENIVI and Automotive Grade Linux have published their code and both projects take patches via Git. Please send your fixes upstream! Many eyes make all bugs shallow.
+我提出的谈话正是这一主题，就如何 Linux 可以（或不可以）在南加州 2016 年世博会作出贡献的安全解决方案的 Linux汽车([Slides][16])。值得注意的是，GENIVI 和汽车级 Linux 已经公布了他们的代码，这两个项目的 Git 通过采取补丁。请上游发送您的修复！许多眼睛都盯着肤浅的bugs。
 
-#### Law enforcement agencies and insurance companies could find plenty of uses for data about drivers. How easy will it be for them to obtain this information?
+#### 执法机构和保险公司可以找到很多有关数据用途的驱动程序。它将如何容易成为他们获取这些信息？
 
-Good question. The Dedicated Short Range Communication Standard (IEEE-1609) takes great pains to keep drivers participating in Wi-Fi safety messaging anonymous. Still, if you're posting to Twitter from your car, someone will be able to track you.
+好问题。该专用短程通信标准（IEEE-1609），以保持匿名的 Wi-Fi 安全消息驱动程序。不过，如果你从你的车张贴到 Twitter，有人能够跟踪你。
 
-#### What can developers and private citizens do to make sure civil liberties are protected as automotive technology evolves?
+#### 有什么可以开发人员和公民个人一起完成，以确保公民自由受到保护作为汽车技术发展的？
 
-The Electronic Frontier Foundation (EFF) has done an excellent job of keeping on top of automotive issues, having commented through official channels on what data may be stored in automotive "black boxes" and on how DMCA's Provision 1201 applies to cars.
+电子前沿基金会（EFF）一样对汽车保持的问题上，通过什么样的数据可以存储在汽车 “黑盒子”，并在 DMCA 的规定 1201 如何应用于汽车官方渠道评论已经出色的工作了。
 
-#### What are some of the exciting things you see coming for drivers in the next few years?
+#### 在未来几年令人兴奋的事情上，那些是你看到的驱动因素？
 
-Adaptive cruise control and collision avoidance systems are enough of an advance to save lives. As they roll out through vehicle fleets, I truly believe that fatalities will decline. If that's not exciting, I don't know what is. Furthermore, capabilities like automated parking assist will make cars easier to drive and reduce fender-benders.
+自适应巡航控制和防撞系统有足够的预付款来挽救生命。当他们通过运输车队的推出，我真的相信死亡人数会下降。如果这还不是令人兴奋的，我不知道是什么。此外，像自动化停车辅助功能，将会使汽车更容易驾驶，减少汽车相撞事故。
 
-#### What needs to be built and how can people get involved?
+#### 有什么是需要人参与以及如何建造？
 
-Automotive Grade Linux is developed in the open and runs on cheap hardware (e.g. Raspberry Pi 2 and moderately priced Renesas Porter board) that anyone can buy. GENIVI automotive Linux middleware consortium has lots of software publicly available via Git. Furthermore, there is the ultra cool [OSVehicle open hardware][17] automotive platform.
+汽车 Linux 级开发是开放源代码的，运行在廉价硬件（如树莓派 Pi 2 和中等价位的 Renesas Porter board），任何人都可以购买。 GENIVI 汽车 Linux 的中间设备联盟有很多软件通过 Git 的公开。此外，还有很酷的 [OSVehicle open hardware][17] 汽车平台。
 
-#### There are many ways for Linux software and open hardware folks with moderate budgets to get involved. Join us at #automotive on Freenode IRC if you have questions.
+#### 这里是 Linux 软件和开放硬件，许多方面具有中等人数预算的参与。如果您有任何疑问，加入我们在 Freenode 上 IRC#automotive。
 
-### Interview with Steven Crumb (by Don Watkins)
+### 采访 Steven Crumb (by Don Watkins)
 
-#### What's so huge about GENIVI's approach to IVI?
+#### 关于GENIVI's 对 IVI 为什么那么大 ?
 
-GENIVI filled a huge gap in the automotive industry by pioneering the use of free and open source software, including Linux, for non-safety-critical automotive software like in-vehicle infotainment (IVI) systems. As consumers came to expect the same functionality in their vehicles as on their smartphones, the amount of software required to support IVI functions grew exponentially. The increased amount of software has also increased the costs of building the IVI systems and thus slowed time to market.
+GENIVI 率先通过使用自由和开源软件，包括 Linux，像车载信息娱乐（IVI）系统的非安全关键汽车软件填补了汽车行业的巨大差距。作为消费者来到期望在他们的车辆相同的功能在智能手机上的软件，以支持 IVI 功能所需的量成倍增长。软件增加量也增加了建设 IVI 系统的成本，从而延缓了上市时间。
 
-GENIVI's use of open source software and a community development model has saved automakers and their software suppliers significant amounts of money while significantly reducing the time to market. I'm excited about GENIVI because we've been fortunate to lead a revolution of sorts in the automotive industry by slowly evolving organizations from a highly structured and proprietary methodology to a community-based approach. We're not done yet, but it's been a privilege to take part in a transformation that is yielding real benefits.
+GENIVI 的使用开源软件和社区发展模式节省了汽车制造商和他们的软件提供商显著大量的资金，而显著减少了产品上市时间。我很兴奋，因为 GENIVI 我们很幸运慢慢从高度结构化和专有的方法来社区为基础的方法不断发展的组织​​领导排序在汽车行业的一场革命。我们还没有完成，但它一直是一个荣幸参加正在产生实实在在的好处的转换。
 
-#### How do your major members drive the direction of GENIVI?
+#### 你的庞大会员怎么才可以驱动 GENIVI 方向？
 
-GENIVI has a lot of members and non-members contributing to our work. As with many open source projects, any company can influence the technical output by simply contributing code, patches, and time to test. With that said, BMW, Mercedes-Benz, Hyundai Motor, Jaguar Land Rover, PSA, Renault/Nissan, and Volvo are all active adopters of and contributors to GENIVI—and many other OEMs have IVI solutions in their cars that extensively use GENIVI's software.
+GENIVI 有很多会员和非会员促进我们的工作。与许多开源项目，任何公司都可以通过简单地贡献代码，修补程序和时间来检验影响的技术输出。随着中说，宝马，奔驰，现代汽车，捷豹路虎，标致雪铁龙，雷诺 / 日产和沃尔沃是所有积极采用者和贡献者 GENIVI 和其他许多 OEM 厂商已经在他们的汽车 IVI 解决方案，广泛使用 GENIVI 的软件。
 
-#### What licenses cover the contributed code?
+#### 贡献的代码使用了什么许可证？
 
-GENIVI employs a number of licenses ranging from (L)GPLv2 to MPLv2 to Apache 2.0. Some of our tools use the Eclipse license. We have a [public licensing policy][18] that details our licensing preferences.
+GENIVI 采用数量的许可证从（L）GPLv2 许可，以 MPLv2 到 Apache2.0。我们的一些工具使用 Eclipse 许可证。我们有一个[public licensing policy][18]，详细说明我们的许可偏好。
 
-#### How does a person or group get involved? How important are community contributions to the ongoing success of the project?
+#### 一个人或一群人如何参与其中？重要的是如何对项目的持续成功的社区贡献？
 
-GENIVI does its development completely in the open ([projects.genivi.org][19]) and thus, anyone interested in using open software in automotive is welcome to participate. That said, the alliance can fund its continued development in the open through companies [joining GENIVI][20] as members. GENIVI members enjoy a wide variety of benefits, not the least of which is participation in the global community of 140 companies that has been developed over the last six years.
+GENIVI 完全做它开放发展的在([projects.genivi.org][19])，因此，有兴趣的人在汽车使用开源软件，欢迎参加。这就是说，该联盟能够通过公司 [joining GENIVI][20] 作为成员不断发展的开放基金。 GENIVI 会员享受各种各样的福利，而不是其中最重要的是在已经发展了近六年来 140 家公司全球社区参与。
 
-Community is hugely important to GENIVI, and we could not have produced and maintained the valuable software we developed over the years without an active community of contributors. We've worked hard to make contributing to GENIVI as simple as joining an [email list][21] and connecting to the people in the various software projects. We use standard practices employed by many open source projects and provide high-quality tools and infrastructure to help developers feel at home and be productive.
+社区是 GENIVI 非常重要的，我们不可能生产和维护我们发展了很多年没有贡献者一个活跃的社区有价值的软件。我们努力做出贡献 GENIVI 简单，只要加入一个 [邮件列表] [21] 并连接到人们在不同的软件项目。我们使用许多开源项目采用的标准做法，并提供高质量的工具和基础设施，以帮助开发人员有宾至如归的感觉，并富有成效。
 
-Regardless of someone's familiarity with the automotive software, they are welcome to join our community. People have modified cars for years, so for many people there is a natural draw to anything automotive. Software is the new domain for cars, and GENIVI wants to be the open door for anyone interested in working with automotive, open source software.
+无论在汽车软件某人的熟悉，欢迎他们加入我们的社区。人们已经改装车多年，所以对于许多人来说，是一种天然的抽奖，任何汽车。软件是汽车的新域，GENIVI 希望成为敞开的门有兴趣的人与汽车，开源软件的工作。
 
 -------------------------------
 via: https://opensource.com/business/16/5/interview-alison-chaiken-steven-crumb
 
 作者：[Don Watkins][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[erlinux](https://github.com/erlinux)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
