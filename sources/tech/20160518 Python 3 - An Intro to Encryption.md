@@ -1,4 +1,3 @@
-[Translating by cposture]
 Python 3: An Intro to Encryption
 ===================================
 
