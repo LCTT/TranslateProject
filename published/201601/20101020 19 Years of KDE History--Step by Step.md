@@ -101,7 +101,7 @@ K Desktop Environment 3.0 加入了更好的限制使用功能，这个功能在
 
 **KDE 4.1** 引入了一个在 PIM 和 Kopete 中共享使用的表情主题系统；引入了可以让用户便利地从互联网上一键下载数据的 DXS。同时引入了 GStreamer、QuickTime 和 DirectShow 9 Phonon 后端。加入了新应用如：
 
-- Dragon Player 
+- Dragon Player
 - Kontact
 - Skanlite — 扫描仪软件
 - Step —— 物理模拟软件
@@ -221,8 +221,8 @@ KDE Plasma 5 – 第五代 KDE。大幅改进了设计和系统，新的默认�
 
 via: [https://tlhp.cf/kde-history/](https://tlhp.cf/kde-history/)
 
-作者：[Pavlo Rudyi][a] 
-译者：[jerryling315](https://github.com/jerryling315) 
+作者：[Pavlo Rudyi][a]
+译者：[Moelf](https://github.com/Moelf) 
 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

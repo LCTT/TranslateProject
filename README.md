@@ -143,7 +143,7 @@ LCTT 的组成
 - KnightJoker,
 - Xuanwo,
 - nd0104,
-- jerryling315,
+- Moelf,
 - xiaoyu33,
 - guodongxiaren,
 - ynmlml,
@@ -177,4 +177,3 @@ LFS 项目活跃成员有：
 （更新于2016/06/20）
 
 谢谢大家的支持！
-
