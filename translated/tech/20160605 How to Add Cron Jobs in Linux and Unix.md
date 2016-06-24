@@ -24,8 +24,6 @@
 
 - **用户的 crontabs**: 用户可以使用`corntab`命令来安装属于他们自己的定时任务。 第六个字段为需要运行的命令行, 所有的命令行都会以创建 crontab 的用户的身份运行。
 
-**Note**: This faq features cron implementations written by Paul Vixie and included in many [Linux][2] distributions and Unix like systems such as in the popular 4th BSD edition. The syntax is [compatible][3] with various implementations of crond.
-
 **注意**: 这种问答形式的`Cron`实现是由 Paul Vixie 所写的，并且被许多 [Linux][2] 发行版和类Unix系统（如广受欢迎的第四版BSD）包含其中。它的语法被各种计划任务的实现所[兼容][3]。
 
 该如何安装、创建或编辑我们自己的定时任务呢？
@@ -100,6 +98,45 @@ $ crontab -e
 
 - **分隔符 (/)** : 此操作符指定了一个步进值，例如： `0-23/` 可以用于小时字段来指定命令行每小时执行一次。步进值也可以跟在星号操作符后边，如果你希望命令行每2小时执行一次，可以这样写 `*/2`。
 
+
+### 如何将邮件显示出来?
+
+默认情况下，命令行或者脚本的输出内容（如果有的话）会发送到你的本地邮箱账户中。若想停止收到`crontab`发送的邮件，需要添加 `>/dev/null 2>&1` 这段内容，例如：
+
+```
+0 3 * * * /root/backup.sh >/dev/null 2>&1
+```
+
+如果想要将输出内容发送到指定的邮件账户中，你得定义一个MAILTO变量，假设我们要发送至 vivek@nixcraft.in ，代码如下所示：
+
+```
+MAILTO="vivek@nixcraft.in"
+0 3 * * * /root/backup.sh >/dev/null 2>&1
+```
+
+访问 “[使用Crontab命令显示邮件提示](http://www.cyberciti.biz/faq/disable-the-mail-alert-by-crontab-command/)” 查看更多信息。
+
+
+### 任务：列出你所有的定时任务
+
+键入以下命令：
+
+```
+# crontab -l
+# crontab -u username -l
+```
+
+使用如下命令删除所有的定时任务：
+
+```
+# 删除当前定时任务 #
+crontab -r
+```
+
+```
+## 删除某用户名下的定时任务，此命令需以root用户身份执行 ##
+crontab -r -u username
+```
 
 ### 使用特殊字符保存时间
 
