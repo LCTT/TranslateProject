@@ -1,98 +1,99 @@
-[HaohongWANG Translating]
-6 Amazing Linux Distributions For Kids
+[Translated by HaohongWANG]
+//校对爸爸辛苦了！>_<
+惊艳！6款面向儿童的 Linux 发行版
 ======================================
 
-Linux and open source is the future and there is no doubt about that, and to see this come to a reality, a strong foundation has to be lied, by starting from the lowest level possible and that is exposing kids to Linux and teaching them how to use Linux operating systems.
+毫无疑问未来是属于 Linux 和开源的。为了实现这样的未来、使Linux占据一席之地，人们已经着手从尽可能低的水平开始开发面向儿童的Linux发行版，并尝试教授他们如何使用Linux操作系统。
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/05/Linux-Distros-For-Kids.png)
->Linux Distros For Kids
+>面向儿童的 Linux 发行版
 
-Linux is a very powerful operating system and that is one of the reasons why it powers a lot of servers on the Internet. Though there have been concerns about its user friendliness which has brought about debate of how it will over take Mac OSX and Windows on desktop computers, I think users need to accept Linux as it is to realize its real power.
+Linux 是一款非常强大的操作系统，原因之一便是它驱动了互联网上绝大多数的服务器。但出于对其用户友好性的担忧，坊间时常展开有关于 Linux 应如何取代 Mac OS X 或 Windows 的辩论。而我认为用户应该接受 Linux 来见识它真正的威力。
 
-Today, Linux powers a lot of machines out there, from mobile phones, to tablets, laptops, workstations, servers, supercomputers, cars, air traffic control systems, refrigerators and many more. With all this and more yet to come in the near future, as I had already stated at the beginning, Linux is the operating system for future computing.
+如今，Linux 运行在绝大多数设备上，从智能手机到平板电脑，笔记本电脑，工作站，服务器，超级计算机，再到汽车，航空管制系统，甚至电冰箱，都有 Linux 的身影。正如我在开篇所说，有了这一切， Linux 是未来的操作系统。
 
->Read Also: [30 Big Companies and Devices Running on Linux][1]
+>参考阅读:  [30 Big Companies and Devices Running on Linux][1]
 
-Because the future belongs to the kids of today, then introducing them to technologies that will change the future is the way to go. Therefore they have to be introduced at an early stage to start learning computer technologies and Linux as a special case.
+未来是属于孩子们的，教育要从娃娃抓起。所以，要让小孩子尽早地学习计算机、了解 Linux 、接触科学技术。这是改变未来图景的最好方法。
 
-One thing common to children is curiosity and early learning can help instill the a character of exploration in them when the learning environment is designed to suit them.
+一个常见的现象是，当儿童在一个适合他的环境中学习时，好奇心和早期学习的能力会使他自己养成喜好探索的性格。
 
-Having looked some quick reasons why kids should learn Linux, let us now go through a list of exciting Linux distributions that you can introduce your kids to, so that they can start using and learning Linux.
+说了这么多儿童应该学习 Linux 的原因，接下来我就列出这些令人激动的发行版。你可以把它们推荐给小孩子来帮助他们开始学习使用 Linux 。
 
 ### Sugar on a Stick
 
-It is a project by Sugar Labs that aims at designing free tools to support learning among children by making them gain skills in exploring, discovering, creating and also reflecting on ideas. It is a non-profit organization led by volunteers.
+Sugar on a Stick (译注：“糖在棒上”)是 Sugar Labs 旗下的工程，Sugar Labs 是一个由志愿者领导的非盈利组织。这一发行版旨在设计大量的免费工具来使儿童在探索、发现、创造中认知自己的思想。
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/05/Sugar-Neighborhood-View.png)
->Sugar Neighborhood View
+>Sugar Neighborhood 界面
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/05/Sugar-Activity-Library.png)
->Sugar Activity Library
+>Sugar 应用程序
 
-You can think of sugar as both a desktop and a collection of learning activities that help encourage active involvement from children who are learning.
+你既可以将 Sugar 看作是普通的桌面环境，也可以把它当做是帮助鼓励孩子学习、提高参与活动的积极性的一款应用合集。
 
-Visit Homepage: <https://www.sugarlabs.org/>
+访问主页: <https://www.sugarlabs.org/>
 
 ### Edubuntu
 
-This is a grassroots project that is based on the most popular Linux distribution today, Ubuntu. It is intended get schools, homes and communities to easily install and use free Ubuntu software.
+Edubuntu 是基于当下最流行的发行版 Ubuntu 而开发的一款草根发行版。主要致力于降低学校、家庭和社区安装、使用 Ubuntu 自由软件的难度。
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/05/Edubuntu-Apps.jpg)
->Edubuntu Desktop Apps
+>Edubuntu 桌面应用
 
-It is supported by different groups of students, teachers, parents, stake holders and also hackers who believe in free learning and sharing of knowledge for self improvement and also community based development.
+它的桌面应用由来自不同组织的学生、教师、家长、一些利益相关者甚至黑客来提供。他们都笃信社区的发展和知识的共享是自由学习和自由分享的基石。
 
-The main aim of the project is to assemble a system that can offer free software to enhance learning and education by making it easy for users to install and also maintain software.
+该项目的主要目标是组建一款安装、管理软件难度低的操作系统以增长使用 Linux 学习和教育的用户数量。
 
-Visit Homepage: <http://www.edubuntu.org/>
+访问主页: <http://www.edubuntu.org/>
 
 ### Doudou Linux
 
-It is designed specifically for children to experience ease in using a computer while building creative thinking in them. It provides simple yet educative applications that allows kids to learn and discover new ideas while using it.
+Doudou Linux 是专为方便儿童使用而设计的发行版，能在构建中激发儿童的创造性思维。它提供了简单但是颇具教育意义的应用来使儿童在应用过程中学习发现新的知识。
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/05/Doudou-Linux.png)
 >Doudou Linux
 
-One important thing about Doudou Linux is its content filtering feature, which prevents children from visiting restricted content on the web. For more kids protection, it also includes user privacy on the Internet, automatically removes adds from web pages and many more.
+其最引人注目的一点便是内容过滤功能，顾名思义，它能够阻止孩童访问网络上的禁止内容。如果想要更进一步的儿童保护功能，Doudou Linux 还提供了互联网用户隐私功能，能够去除网页中的特定加载内容。
 
-Visit Homepage: <http://www.doudoulinux.org/>
+访问主页: <http://www.doudoulinux.org/>
 
 ### LinuxKidX
 
-It is a LiveCD based on Slackware Linux with a long list of educational software for kids to learn form. It uses KDE as the default Desktop Environment and includes software such as Ktouch a typing tutor, Kstars as virtual planetaruim, Kalzium a periodic table, KwordQuiz among others.
+这是一款整合了许多专为儿童的教育类软件的 Slackware Linux 的 LiveCD。它使用 KDE 作为默认桌面环境并配置了诸如 Ktouch 打字指导，Kstars 虚拟天文台，Kalzium 元素周期表和 KwordQuiz 单词测试等应用。
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/05/LinuxKidX.jpg)
 >LinuxKidX
 
-Visit Homepage: <http://linuxkidx.blogspot.in/>
+访问主页: <http://linuxkidx.blogspot.in/>
 
 ### Ubermix
 
-It is a free software that is built from the ground based on Ubuntu Linux and is intended for educational purposes. It comes with over 60 free software reinstalled and helps to make learning and teaching easy for students and teachers respectively.
+Ubermix 基于 Ubuntu 构建，同样以教学为目的。默认配备了超过60款应用，帮助学生更好地学习，同时给教师教学提供便利。
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/05/ubermix.png)
 >Ubermix Linux
 
-Some of its features include 5 minutes installation and also few seconds quick recovery mechanism. It should work well well for teenage children.
+Ubermix 还具有5分钟快速安装和快速恢复等功能，可以给小孩子更好的帮助。
 
-Visit Homepage: <http://www.ubermix.org/>
+访问主页: <http://www.ubermix.org/>
 
 ### Qimo
 
-I have added this to list because many readers are expected to ask about Qimo, but as of this writing, the Qimo for kids development team has retired from the project, therefore no more development it expected.
+因为很多读者曾向我询问过 Qimo 发行版的情况，所以我把它写进这篇文章。但是截止发稿时，Qimo 儿童版的开发已经终止，不再提供更新。
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/05/Qimo-Linux.png)
 >Qimo Linux
 
-But you can still find most of the games for kids in Ubuntu and other Linux distributions. As they have mentioned, they are not done working on an educational software for kids and are developing an android application for children to improve their literacy skills.
+你仍然可以在 Ubuntu 或者其他的 Linux 发行版中找到大多数儿童游戏。正如这些开发商所说，他们不仅在为儿童制作教育软件，同时也在开发增长儿童文化水平的安卓应用。
 
-You can read more from their official website and expect more from them in the future.
+如果你想进一步了解，可以移步他们的官方网站。
 
-Visit Homepage: <http://www.qimo4kids.com/>
+访问主页: <http://www.qimo4kids.com/>
 
-That is it for now, in case there are more Linux operating systems intended for kids or children out there, which I have not included in this list, you can let us know by leaving a comment.
+以上这些便是我所知道的面向儿童的Linux发行版，或有缺漏，欢迎评论补充。
 
-You can also let us know of what you think of introducing kids to Linux and the future of Linux especially on Desktop computers.
+如果你想探讨桌面 Linux 的发展前景或是如何引导儿童接触 Linux ，欢迎与我联系。
 
 --------------------------------------------------------------------------------
 
@@ -100,7 +101,7 @@ via: http://www.tecmint.com/best-linux-distributions-for-kids/?utm_source=feedbu
 
 
 作者：[Aaron Kili][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[HaohongWANG](https://github.com/HaohongWANG)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
