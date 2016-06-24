@@ -1,3 +1,4 @@
+translating（东风唯笑）这个是大坑啊
 PowerPC gains an Android 4.4 port with Big Endian support
 ===========================================================
 
