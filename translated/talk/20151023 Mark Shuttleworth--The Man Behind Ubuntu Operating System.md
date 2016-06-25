@@ -118,7 +118,7 @@ Admin, salary negotiations, legalese, and public speaking.
 via: http://www.unixmen.com/mark-shuttleworth-man-behind-ubuntu-operating-system/
 
 作者：[M.el Khamlichi][a]
-译者：[jerryling315](https://blog.moelf.xyz)
+译者：[Moelf](https://github.com/Moelf)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

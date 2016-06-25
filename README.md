@@ -143,7 +143,7 @@ LCTT 的组成
 - KnightJoker,
 - Xuanwo,
 - nd0104,
-- jerryling315,
+- Moelf,
 - xiaoyu33,
 - guodongxiaren,
 - ynmlml,
