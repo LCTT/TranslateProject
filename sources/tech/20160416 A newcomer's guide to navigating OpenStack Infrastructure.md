@@ -1,3 +1,4 @@
+translating by kylepeng93
 A newcomer's guide to navigating OpenStack Infrastructure
 ===========================================================
 
