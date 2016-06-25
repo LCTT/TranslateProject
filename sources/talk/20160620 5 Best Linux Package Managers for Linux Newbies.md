@@ -1,3 +1,4 @@
+transalting by ynmlml
 5 Best Linux Package Managers for Linux Newbies
 =====================================================
 
