@@ -1,4 +1,5 @@
-[Translating by cposture]
+[Cathon is Translating...]
+
 Python 3: An Intro to Encryption
 ===================================
 

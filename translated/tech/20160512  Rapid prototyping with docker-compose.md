@@ -1,36 +1,36 @@
-
-Rapid prototyping with docker-compose
+使用docker快速组成样品机
 ========================================
 
-In this write-up we'll look at a Node.js prototype for **finding stock of the Raspberry PI Zero** from three major outlets in the UK. 
+在写前，我们将看看 Node.js 样机 ** 找寻树莓派 PI Zero ** 的供应在英国三个主要销售.
 
-I wrote the code and deployed it to an Ubuntu VM in Azure within a single evening of hacking. Docker and the docker-compose tool made the deployment and update process extremely quick.
+我写的代码，黑客部署到 Azure Ubuntu 虚拟机一个晚上就可以到位。Docker 和 docker-compose 工具做出调配和更新过程非常快。
 
-### Remember linking?
+### 建立链接？
 
-If you've already been through the [Hands-On Docker tutorial][1] then you will have experience linking Docker containers on the command line. Linking a Node hit counter to a Redis server on the command line may look like this:
+
+如果您已经通过 [动手 Docker 教程指南] [1] 那么你已有在命令行建立 Docker 容器的经验。链接一个Redis 服务器计数器节点在命令行上可能是这样：
 
 ```
 $ docker run -d -P --name redis1
 $ docker run -d hit_counter -p 3000:3000 --link redis1:redis
 ```
 
-Now imagine your application has three tiers
+现在，假设应用程序中有三个等级
 
-- Web front-end
-- Batch tier for processing long running tasks
-- Redis or mongo database
+- Web 前端
+- 批次层处理长时间运行的任务
+- Redis 或 MongoDB 数据库
 
-Explicit linking through `--link` is just about manageable with a couple of containers, but can get out of hand as we add more tiers or containers to the application.
+通过 `--link` 管理几个容器，但可能失效，可以添加多层级或容器到应用程序。
 
-### Enter docker-compose
+### 键入 docker 撰写
 
 ![](http://blog.alexellis.io/content/images/2016/05/docker-compose-logo-01.png)
->Docker Compose logo
+>Docker 撰写图标
 
-The docker-compose tool is part of the standard Docker Toolbox and can also be downloaded separately. It provides a rich set of features to configure all of an application's parts through a plain-text YAML file.
+docker-compose 工具是标准的 docker工具箱的一部分，也可以单独下载。它提供了丰富功能，通过一个纯文本YAML文件配置所有应用程序组件。
 
-The above example would look like this:
+上述提供了一个例子：
 
 ```
 version: "2.0"  
@@ -43,18 +43,18 @@ services:
      - 3000:3000
 ```
 
-From Docker 1.10 onwards we can take advantage of network overlays to help us scale out across multiple hosts. Prior to this linking only worked across a single host. The `docker-compose scale` command can be used to bring on more computing power as the need arises.
+从Docker 1.10起，我们可以充分利用网络来帮助我们在多个主机进行扩展覆盖。在此之前，仅通过单个主机工作。“docker-compose scale” 命令可用于更多计算能力有需要时。
 
->View the [docker-compose][2] reference on docker.com
+>参考docker.com上关于"docker-compose"
 
-### Real-world example: Raspberry PI Stock Alert
+### 真实例子：树莓派 PI 到货通知
 
 ![](http://blog.alexellis.io/content/images/2016/05/Raspberry_Pi_Zero_ver_1-3_1_of_3_large.JPG)
->The new Raspberry PI Zero v1.3 image courtesy of Pimoroni
+>新版树莓派 PI Zero V1.3 图片提供来自Pimoroni
 
-There is a huge buzz around the Raspberry PI Zero - a tiny microcomputer with a 1GHz CPU and 512MB RAM capable of running full Linux, Docker, Node.js, Ruby and many other popular open-source tools. One of the best things about the PI Zero is that costs only 5 USD. That also means that stock gets snapped up really quickly.
+树莓派 PI Zero - 巨大的轰动一个微型计算机具有一个1GHz 处理器 和 512MB 内存能够运行完整 Linux，Docker，Node.js，Ruby 和许多流行的开源工具。一个关于 PI Zero 的好消息是，成本只有5美元。这也意味着，存量迅速抢购一空。
 
-*If you want to try Docker or Swarm on the PI check out the tutorial below.*
+*如果您想尝试Docker 或集群在PI看看下面的教程。*
 
 >[Docker Swarm on the PI Zero][3]
 
@@ -127,7 +127,7 @@ Preview as of 16th of May 2016
 via: http://blog.alexellis.io/rapid-prototype-docker-compose/
 
 作者：[Alex Ellis][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[erlinux](https://github.com/erlinux)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -139,4 +139,3 @@ via: http://blog.alexellis.io/rapid-prototype-docker-compose/
 [4]: https://github.com/alexellis/pi_zero_stock
 [5]: https://github.com/alexellis/pi_zero_stock
 [6]: http://stockalert.alexellis.io/
-

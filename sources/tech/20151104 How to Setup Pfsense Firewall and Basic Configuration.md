@@ -1,3 +1,5 @@
+lujianbo
+
 How to Setup Pfsense Firewall and Basic Configuration
 ================================================================================
 In this article our focus is Pfsense setup, basic configuration and overview of features available in the security distribution of FreeBSD. In this tutorial we will run network wizard for basic setting of firewall and detailed overview of services. After the [installation process][1] following snapshot shows the IP addresses of WAN/LAN and different options for the management of Pfsense firewall.

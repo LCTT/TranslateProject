@@ -1,8 +1,7 @@
-
 在 CentOS 7 CPanel 服务器上安装 MariaDB 10
 ================================================================================
 
-MariaDB 是一个增强版的，开源的并且可以直接替代 MySQL。它主要由 MariaDB 社区在维护，采用 GPL v2 授权许可。软件的安全性是 MariaDB 开发者的主要焦点。他们保持为 MariaDB 的每个版本发布安全补丁。当有任何安全问题被发现时，开发者会尽快修复并推出 MariaDB 的新版本。
+MariaDB 是一个增强版的、开源的 MySQL 替代品。它主要由 MariaDB 社区在维护，采用 GPL v2 授权许可。软件的安全性是 MariaDB 开发者的主要焦点。他们保持为 MariaDB 的每个版本发布安全补丁。当有任何安全问题被发现时，开发者会尽快修复并推出 MariaDB 的新版本。
 
 ### MariaDB 的优势 ###
 
@@ -12,7 +11,7 @@ MariaDB 是一个增强版的，开源的并且可以直接替代 MySQL。它主
 - 性能更好
 - 比 MySQL 的存储引擎多
 
-在这篇文章中，我将谈论关于如何升级 MySQL5.5 到最新的 MariaDB 在CentOS7 CPanel 服务器上。在安装前先完成以下步骤。
+在这篇文章中，我将谈论关于如何在 CentOS7 CPanel 服务器上升级 MySQL5.5 到最新的 MariaDB 。在安装前先完成以下步骤。
 
 ### 先决条件: ###
 
@@ -62,7 +61,7 @@ MariaDB 是一个增强版的，开源的并且可以直接替代 MySQL。它主
 
 #### 3. 从服务器上删除和卸载 MySQL 所有的 RPM 包 ####
 
-运行以下命令来禁用 MySQL 的 RPM 的目标。通过运行此命令，cPanel 将不再处理 MySQL 的更新，并在系统上将卸载的标记为 rpm.versions。
+运行以下命令来禁用 MySQL RPM 的目标（target）。通过运行此命令，cPanel 将不再处理 MySQL 的更新，并在系统上将这些 RPM 版本标记为已卸载。
 
     /scripts/update_local_rpm_versions --edit target_settings.MySQL50 uninstalled
     /scripts/update_local_rpm_versions --edit target_settings.MySQL51 uninstalled
@@ -72,7 +71,8 @@ MariaDB 是一个增强版的，开源的并且可以直接替代 MySQL。它主
 现在运行以下命令：
 
 /scripts/check_cpanel_rpms --fix --targets=MySQL50,MySQL51,MySQL55,MySQL56 
-移除服务器上所有已存在的 MySQL rpms 来为 MariaDB 的安装清理环境。请看下面的输出：
+
+移除服务器上所有已有的 MySQL RPM 来为 MariaDB 的安装清理环境。请看下面的输出：
 
     root@server1 [/var/lib/mysql]# /scripts/check_cpanel_rpms --fix --targets=MySQL50,MySQL51,MySQL55,MySQL56
     [2016-01-31 09:53:59 +0000]
@@ -97,9 +97,9 @@ MariaDB 是一个增强版的，开源的并且可以直接替代 MySQL。它主
     [2016-01-31 09:54:04 +0000] Removed symlink /etc/systemd/system/multi-user.target.wants/mysql.service.
     [2016-01-31 09:54:04 +0000] Restoring service monitoring.
 
-通过这些步骤，我们已经卸载了现有的 MySQL RPMs，并做了标记来防止 MySQL的更新，服务器的环境已经清理然后准备安装 MariaDB。
+通过这些步骤，我们已经卸载了现有的 MySQL RPM，并做了标记来防止 MySQL的更新，服务器的环境已经清理，然后准备安装 MariaDB。
 
-开始安装吧，我们需要在 CentOS 为 MariaDB 创建一个 yum 软件库。下面是我的做法！
+开始安装吧，我们需要根据 CentOS 和 MariaDB 的版本为 MariaDB 创建一个 yum 软件库。下面是我的做法！
 
 ### 安装步骤： ###
 
@@ -120,17 +120,19 @@ MariaDB 是一个增强版的，开源的并且可以直接替代 MySQL。它主
 
 #### 第2步：打开 /etc/yum.conf 并修改如下行： ####
 
-**Remove this line** exclude=courier* dovecot* exim* filesystem httpd* mod_ssl* mydns* mysql* nsd* php* proftpd* pure-ftpd* spamassassin* squirrelmail*
+**删除这一行：**
 
-**And replace with this line** exclude=courier* dovecot* exim* filesystem httpd* mod_ssl* mydns* nsd* proftpd* pure-ftpd* spamassassin* squirrelmail*
+	exclude=courier* dovecot* exim* filesystem httpd* mod_ssl* mydns* mysql* nsd* php* proftpd* pure-ftpd* spamassassin* squirrelmail*
 
-**\*\*\* IMPORTANT \*\*\***
+**替换为：** 
+
+	exclude=courier* dovecot* exim* filesystem httpd* mod_ssl* mydns* nsd* proftpd* pure-ftpd* spamassassin* squirrelmail*
+
+**重要**
 
 需要确保我们已经从 exclude 列表中移除了 MySQL 和 PHP。
 
 #### 第3步：运行以下命令来安装 MariaDB 和相关的包。 ####
-
-**yum install MariaDB-server MariaDB-client MariaDB-devel php-mysql**
 
     root@server1 [~]#yum install MariaDB-server MariaDB-client MariaDB-devel php-mysql
 
@@ -174,7 +176,7 @@ MariaDB 是一个增强版的，开源的并且可以直接替代 MySQL。它主
 
 #### 第5步：运行 mysql_upgrade 命令。 ####
 
-它将检查所有数据库中的所有表与当前安装的版本是否兼容并在必要时会更新系统表采取新的特权或功能，可能会增加当前版本的性能。
+它将检查所有数据库中的所有表与当前安装的版本是否兼容，并在必要时会更新系统表，以赋予当前版本新增加的权限或能力。
 
 
     root@server1 [~]# mysql_upgrade
@@ -254,7 +256,7 @@ MariaDB 是一个增强版的，开源的并且可以直接替代 MySQL。它主
     Phase 6/6: Running 'FLUSH PRIVILEGES'
     OK
 
-#### 第6步：再次重新启动MySQL的服务，以确保一切都运行完好。 ####
+#### 第6步：再次重新启动 MySQL 的服务，以确保一切都运行完好。 ####
 
     root@server1 [~]# systemctl restart mysql
     root@server1 [~]#
@@ -274,17 +276,18 @@ MariaDB 是一个增强版的，开源的并且可以直接替代 MySQL。它主
     Jan 31 10:04:11 server1.centos7-test.com mysql[23854]: Starting MySQL. SUCCESS!
     Jan 31 10:04:11 server1.centos7-test.com systemd[1]: Started LSB: start and stop MySQL.
 
-#### 第7步：运行 EasyApache 用 MariaDB 重建 Apache/PHP，并确保所有 PHP 的模块保持不变。####
+#### 第7步：运行 EasyApache，重建 Apache/PHP 以支持 MariaDB，并确保所有 PHP 的模块保持不变。####
 
     root@server1 [~]#/scripts/easyapache --build
 
-    ****IMPORTANT *****
-    If you forget to rebuild Apache/PHP after the MariaDB installation, it will report the library error as below:
+**重要**
+
+如果你在安装 MariaDB 之后忘记重建 Apache/PHP，将会报如下库错误：
 
     root@server1 [/etc/my.cnf.d]# php -v
     php: error while loading shared libraries: libmysqlclient.so.18: cannot open shared object file: No such file or directory
 
-#### 第8步：现在验证安装的数据库。 ####
+#### 第8步：现在验证安装的程序和数据库。 ####
 
     root@server1 [/var/lib/mysql]# mysql
     Welcome to the MariaDB monitor. Commands end with ; or \g.
@@ -313,13 +316,14 @@ MariaDB 是一个增强版的，开源的并且可以直接替代 MySQL。它主
     10 rows in set (0.00 sec)
 
 就这样 ：）。现在，我们该去欣赏 MariaDB 完善和高效的特点了。希望你喜欢阅读本文。希望留下您宝贵的建议和反馈！
+
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/how-tos/install-mariadb-10-centos-7-cpanel/
 
 作者：[Saheetha Shameer][a]
 译者：[strugglingyouth](https://github.com/strugglingyouth)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
