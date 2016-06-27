@@ -1,5 +1,3 @@
-@4357 翻译中
-
 What do Linux developers think of Git and GitHub?
 =====================================================
 

@@ -19,7 +19,7 @@ LinuxQuestions 问卷调查揭晓最佳开源项目
 via: http://ostatic.com/blog/linuxquestions-survey-results-surface-top-open-source-projects
 
 作者：[Sam Dean][a]
-译者：[jerryling315](https://github.com/jerryling315)
+译者：[Moelf](https://github.com/Moelf)
 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出

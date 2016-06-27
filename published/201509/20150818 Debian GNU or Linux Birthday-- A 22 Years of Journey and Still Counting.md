@@ -98,7 +98,7 @@ Debian 在 Linux 生态环境中的贡献是难以用语言描述的。 如果 D
 via: http://www.tecmint.com/happy-birthday-to-debian-gnu-linux/
 
 作者：[Avishek Kumar][a]
-译者：[jerryling315](http://moelf.xyz)
+译者：[Moelf](https://github.com/Moelf)
 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出

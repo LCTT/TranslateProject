@@ -1,4 +1,3 @@
-zpl1025
 15 podcasts for FOSS fans
 =============================
 
