@@ -1,6 +1,8 @@
 How to Use Awk and Regular Expressions to Filter Text or String in Files
 =============================================================================
 
+![](http://www.tecmint.com/wp-content/uploads/2016/04/Linux-Awk-Command-Examples.png)
+
 When we run certain commands in Unix/Linux to read or edit text from a string or file, we most times try to filter output to a given section of interest. This is where using regular expressions comes in handy.
 
 ### What are Regular Expressions?
