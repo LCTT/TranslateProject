@@ -511,7 +511,7 @@ SSLH 介绍: [http://www.rutschle.net/tech/sslh.shtml](http://www.rutschle.net/t
 via: http://www.linuxjournal.com/content/securi-pi-using-raspberry-pi-secure-landing-point?page=0,0
 
 作者：[Bill Childers][a]
-译者：[jerryling315](https://blog.moelf.xyz)
+译者：[Moelf](https://github.com/Moelf)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出

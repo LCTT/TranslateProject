@@ -1,3 +1,4 @@
+translating by hkurj
 Basic Linux Networking Commands You Should Know
 ==================================================
 
