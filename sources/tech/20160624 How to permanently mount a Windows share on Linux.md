@@ -1,3 +1,5 @@
+alim0x translating
+
 How to permanently mount a Windows share on Linux
 ==================================================
 
