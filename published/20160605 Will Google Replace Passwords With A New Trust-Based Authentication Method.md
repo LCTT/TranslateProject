@@ -14,7 +14,8 @@
 基于这个信任分，一个需要登录认证的应用可以验证你确实可以授权登录，从而不会提示需要密码。
 
 ![](http://www.iwillfolo.com/wordpress/wp-content/uploads/2016/05/Abacus-to-Trust-API.jpg)
->Abacus 到 Trust API
+
+*Abacus 到 Trust API*
 
 ### 需要思考的地方
 
@@ -31,7 +32,7 @@ via: http://www.iwillfolo.com/will-google-replace-passwords-with-a-new-trust-bas
 
 作者：[iWillFolo][a]
 译者：[alim0x](https://github.com/alim0x)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
