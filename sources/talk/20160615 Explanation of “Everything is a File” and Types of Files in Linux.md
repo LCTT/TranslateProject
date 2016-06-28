@@ -1,3 +1,4 @@
+(翻译中 by runningwater)
 Explanation of “Everything is a File” and Types of Files in Linux
 ====================================================================
 
@@ -265,7 +266,7 @@ You can add more to this by reading more about the individual file types and the
 via: http://www.tecmint.com/explanation-of-everything-is-a-file-and-types-of-files-in-linux/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+tecmint+%28Tecmint%3A+Linux+Howto%27s+Guide%29
 
 作者：[Aaron Kili][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
