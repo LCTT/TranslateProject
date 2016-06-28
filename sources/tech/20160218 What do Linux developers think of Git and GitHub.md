@@ -1,3 +1,5 @@
+translated by mudongliang
+
 What do Linux developers think of Git and GitHub?
 =====================================================
 
