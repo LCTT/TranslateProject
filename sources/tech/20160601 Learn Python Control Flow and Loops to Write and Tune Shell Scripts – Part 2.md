@@ -1,3 +1,4 @@
+translating by wi-cuckoo
 Learn Python Control Flow and Loops to Write and Tune Shell Scripts – Part 2
 ===============================================================================
 
