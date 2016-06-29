@@ -1,3 +1,5 @@
+chunyang-wen translating
+
 How to Use Comparison Operators with Awk in Linux
 ===================================================
 
