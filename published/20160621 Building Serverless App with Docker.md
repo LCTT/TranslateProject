@@ -1,9 +1,9 @@
-用 docker 创建 serverless 应用
+用 Docker 创建 serverless 应用
 ======================================
 
-当今世界会时不时地出现一波科技浪潮，将以前的技术拍死在海滩上。针对 serverless 应用的概念我们已经谈了很多，它是指将你的应用程序按功能来部署，这些功能在被用到时才会启动。你不用费心去管理服务器和程序规模，因为它们会在需要的时候在一个集群中启动并运行。
+当今世界会时不时地出现一波波科技浪潮，将以前的技术拍死在海滩上。针对 serverless 应用的概念我们已经谈了很多，它是指将你的应用程序按功能来部署，这些功能在被用到时才会启动。你不用费心去管理服务器和程序规模，因为它们会在需要的时候在一个集群中启动并运行。
 
-但是 serverless 并不意味着没有 Docker 什么事儿，事实上 Docker 就是 serverless 的。你可以使用 Docker 来容器化这些功能，然后在 Swarm 中按需求来运行它们。Serverless 是一项构建分布式应用的技术，而 Docker 是它们完美的构建平台。
+但是 serverless 并不意味着没有 Docker 什么事儿，事实上 Docker 就是 serverless 的。你可以使用 Docker 来容器化这些功能，然后在 Swarm 中按需求来运行它们。serverless 是一项构建分布式应用的技术，而 Docker 是它们完美的构建平台。
 
 ### 从 servers 到 serverless
 
@@ -28,13 +28,13 @@ client.run("bfirsh/serverless-record-vote-task", [voter_id, vote], detach=True)
 
 这个投票处理进程和消息队列可以用运行在 Swarm 上的 Docker 容器来代替，并实现按需自动部署。
 
-我们也可以用容器替换 web 前端，使用一个轻量级 HTTP 服务器来触发容器响应一个 HTTP 请求。Docker 容器代替长期运行的 HTTP 服务器来挑起响应请求的重担，这些容器可以自动扩容来支撑大访问量。
+我们也可以用容器替换 web 前端，使用一个轻量级 HTTP 服务器来触发容器响应一个 HTTP 请求。Docker 容器代替长期运行的 HTTP 服务器来挑起响应请求的重担，这些容器可以自动扩容来支撑更大访问量。
 
 新的架构就像这样：
 
 ![](https://blog.docker.com/wp-content/uploads/Picture2.png)
 
-红色框内是持续运行的服务，绿色框内是按需启动的容器。这个架构提供更少的长期运行服务让你管理，并且可以自动扩容（最大容量由你的 Swarm 决定）。
+红色框内是持续运行的服务，绿色框内是按需启动的容器。这个架构里需要你来管理的长期运行服务更少，并且可以自动扩容（最大容量由你的 Swarm 决定）。
 
 ### 我们可以做点什么？
 
@@ -51,11 +51,11 @@ client.run("bfirsh/serverless-record-vote-task", [voter_id, vote], detach=True)
 
 ### 下一步怎么做
 
-我们提供了这些前卫的工具和概念来构建应用，并没有深入发掘它们的功能。我们的架构里还是存在长期运行的服务，将来我们需要使用 Swarm 来把所有服务都用按需扩容的方式实现
+我们提供了这些前卫的工具和概念来构建应用，并没有深入发掘它们的功能。我们的架构里还是存在长期运行的服务，将来我们需要使用 Swarm 来把所有服务都用按需扩容的方式实现。
 
 希望本文能在你搭建架构时给你一些启发，但我们还是需要你的帮助。我们提供了所有的基本工具，但它们还不是很完善，我们需要更多更好的工具、库、应用案例、文档以及其他资料。
 
-[我们在这里发布了工具、库和文档][3]。如果想了解更多，请移步到那里，另外请贡献一些链接给我们，这样我们就能一直工作了。
+[我们在这里发布了工具、库和文档][3]。如果想了解更多，请贡献给我们一些你知道的资源，以便我们能够完善这篇文章。
 
 玩得愉快。
 
@@ -77,7 +77,7 @@ via: https://blog.docker.com/2016/06/building-serverless-apps-with-docker/
 
 作者：[Ben Firshman][a]
 译者：[bazz2](https://github.com/bazz2)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
