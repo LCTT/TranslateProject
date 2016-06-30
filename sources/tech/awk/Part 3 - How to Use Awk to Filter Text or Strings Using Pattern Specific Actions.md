@@ -1,15 +1,13 @@
-FSSlc translating
-
-How to Use Awk to Filter Text or Strings Using Pattern Specific Actions
+如何使用 Awk 来筛选文本或字符串
 =========================================================================
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/04/Use-Awk-to-Filter-Text-or-Strings-Using-Pattern.png)
 
-In the third part of the Awk command series, we shall take a look at filtering text or strings based on specific patterns that a user can define.
+作为 Awk 命令系列的第三部分，这次我们将看一看如何基于用户定义的特定模式来筛选文本或字符串。
 
-Sometimes, when filtering text, you want to indicate certain lines from an input file or lines of strings based on a given condition or using a specific pattern that can be matched. Doing this with Awk is very easy, it is one of the great features of Awk that you will find helpful.
+在筛选文本时，有时你可能想根据某个给定的条件或使用一个特定的可被匹配的模式，去标记某个文件或数行字符串中的某几行。使用 Awk 来完成这个任务是非常容易的，这也正是 Awk 中可能对你有所帮助的几个特色之一。
 
-Let us take a look at an example below, say you have a shopping list for food items that you want to buy, called food_prices.list. It has the following list of food items and their prices.
+让我们看一看下面这个例子，比方说你有一个写有你想要购买的食物的购物清单，其名称为 food_prices.list，它所含有的食物名称及相应的价格如下所示：
 
 ```
 $ cat food_prices.list 
@@ -20,66 +18,65 @@ No	Item_Name		Quantity	Price
 4	Pineapples		   10		$3.46
 5	Oranges			   10		$0.78
 6	Tomatoes		   5		$0.55
-7	Onions			   5            $0.45
+7	Onions			   5        $0.45
 ```
 
-And then, you want to indicate a `(*)` sign on food items whose price is greater than $2, this can be done by running the following command:
+然后，你想使用一个 `(*)` 符号去标记那些单价大于 $2 的食物，那么你可以通过运行下面的命令来达到此目的：
 
 ```
 $ awk '/ *\$[2-9]\.[0-9][0-9] */ { print $1, $2, $3, $4, "*" ; } / *\$[0-1]\.[0-9][0-9] */ { print ; }' food_prices.list
 ```
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/04/Filter-and-Print-Text-Using-Awk.gif)
->Print Items Whose Price is Greater Than $2
+>打印出单价大于 $2 的项目
 
-From the output above, you can see that the there is a `(*)` sign at the end of the lines having food items, mangoes and pineapples. If you check their prices, they are above $2.
+从上面的输出你可以看到在含有 芒果(mangoes) 和 菠萝(pineapples) 的那行末尾都已经有了一个 `(*)` 标记。假如你检查它们的单价，你可以看到它们的单价的确超过了 $2 。
 
-In this example, we have used used two patterns:
+在这个例子中，我们已经使用了两个模式：
 
-- the first: `/ *\$[2-9]\.[0-9][0-9] */` gets the lines that have food item price greater than $2 and
-- the second: `/*\$[0-1]\.[0-9][0-9] */` looks for lines with food item price less than $2.
+- 第一个模式: `/ *\$[2-9]\.[0-9][0-9] */` 将会得到那些含有食物单价大于 $2 的行，
+- 第二个模式: `/*\$[0-1]\.[0-9][0-9] */` 将查找那些食物单价小于 $2 的那些行。
 
-This is what happens, there are four fields in the file, when pattern one encounters a line with food item price greater than $2, it prints all the four fields and a `(*)` sign at the end of the line as a flag.
+上面的命令具体做了什么呢？这个文件有四个字段，当模式一匹配到含有食物单价大于 $2 的行时，它便会输出所有的四个字段并在该行末尾加上一个 `(*)` 符号来作为标记。
 
-The second pattern simply prints the other lines with food price less than $2 as they appear in the input file, food_prices.list.
+第二个模式只是简单地输出其他含有食物单价小于 $2 的行，因为它们出现在输入文件 food_prices.list 中。
 
-This way you can use pattern specific actions to filter out food items that are priced above $2, though there is a problem with the output, the lines that have the `(*)` sign are not formatted out like the rest of the lines making the output not clear enough.
+这样你就可以使用模式来筛选出那些价格超过 $2 的食物项目，尽管上面的输出还有些问题，带有 `(*)` 符号的那些行并没有像其他行那样被格式化输出，这使得输出显得不够清晰。
 
-We saw the same problem in Part 2 of the awk series, but we can solve it in two ways:
+我们在 Awk 系列的第二部分中也看到了同样的问题，但我们可以使用下面的两种方式来解决：
 
-1. Using printf command which is a long and boring way using the command below:
+1. 可以像下面这样使用 printf 命令，但这样使用又长又无聊：
 
 ```
 $ awk '/ *\$[2-9]\.[0-9][0-9] */ { printf "%-10s %-10s %-10s %-10s\n", $1, $2, $3, $4 "*" ; } / *\$[0-1]\.[0-9][0-9] */ { printf "%-10s %-10s %-10s %-10s\n", $1, $2, $3, $4; }' food_prices.list 
 ```
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/04/Filter-and-Print-Items-Using-Awk-and-Printf.gif)
->Filter and Print Items Using Awk and Printf
+>使用 Awk 和 Printf 来筛选和输出项目
 
-2. Using $0 field. Awk uses the variable 0 to store the whole input line. This is handy for solving the problem above and it is simple and fast as follows:
+2. 使用 `$0` 字段。Awk 使用变量 **0** 来存储整个输入行。对于上面的问题，这种方式非常方便，并且它还简单、快速：
 
 ```
 $ awk '/ *\$[2-9]\.[0-9][0-9] */ { print $0 "*" ; } / *\$[0-1]\.[0-9][0-9] */ { print ; }' food_prices.list 
 ```
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/04/Filter-and-Print-Items-Using-Awk-and-Variable.gif)
->Filter and Print Items Using Awk and Variable
+>使用 Awk 和变量来筛选和输出项目
 
-Conclusion
-That’s it for now and these are simple ways of filtering text using pattern specific action that can help in flagging lines of text or strings in a file using Awk command.
+### 结论
 
-Hope you find this article helpful and remember to read the next part of the series which will focus on using comparison operators using awk tool.
+这就是全部内容了，使用 Awk 命令你便可以通过几种简单的方法去利用模式匹配来筛选文本，帮助你在一个文件中对文本或字符串的某些行做标记。
 
+希望这篇文章对你有所帮助。记得阅读这个系列的下一部分，我们将关注在 awk 工具中使用比较运算符。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/awk-filter-text-or-string-using-patterns/
 
 作者：[Aaron Kili][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[FSSlc](https://github.com/FSSlc)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: http://www.tecmint.com/author/aaronkili/
-
