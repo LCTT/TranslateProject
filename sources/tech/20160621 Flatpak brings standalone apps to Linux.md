@@ -1,3 +1,4 @@
+翻译中：by zky001
 Flatpak brings standalone apps to Linux
 ===
 
@@ -19,7 +20,7 @@ If you are an application developer, the Flatpak website also contains some grea
 via: https://fedoramagazine.org/introducing-flatpak/
 
 作者：[Ryan Lerch][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zky001](https://github.com/zky001)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
