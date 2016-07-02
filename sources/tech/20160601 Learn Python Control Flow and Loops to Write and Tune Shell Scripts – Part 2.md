@@ -1,42 +1,41 @@
-translating by wi-cuckoo
-Learn Python Control Flow and Loops to Write and Tune Shell Scripts – Part 2
-===============================================================================
+学习使用 python 控制流和循环来编写和执行 Shell 脚本 —— Part 2
+======================================================================================
 
-In the previous article of this [Python series][1] we shared a brief introduction to Python, its command-line shell, and the IDLE. We also demonstrated how to perform arithmetic calculations, how to store values in variables, and how to print back those values to the screen. Finally, we explained the concepts of methods and properties in the context of Object Oriented Programming through a practical example.
+在[Python series][1]之前的文章里，我们分享了 Python的一个简介，它的命令行 shell 和 IDLE（译者注：python 自带的一个IDE）。我们也演示了如何进行数值运算，如何用变量存储值，还有如何打印那些值到屏幕上。最后，我们通过一个练习示例讲解了面向对象编程中方法和属性概念。
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/06/Write-Shell-Scripts-in-Python-Programming.png)
->Write Linux Shell Scripts in Python Programming
+>在 Python 编程中写 Linux Shell 脚本
 
-In this guide we will discuss control flow (to choose different courses of action depending on information entered by a user, the result of a calculation, or the current value of a variable) and loops (to automate repetitive tasks) and then apply what we have learned so far to write a simple shell script that will display the operating system type, the hostname, the kernel release, version, and the machine hardware name.
+本篇中，我嫩会讨论控制流（根据用户输入的信息，计算的结果，或者一个变量的当前值选择不同的动作行为）和循环（自动重复执行任务），接着应用到我们目前所学东西中，编写一个简单的 shell 脚本，这个脚本会显示操作系统类型，主机名，内核发行版，版本号和机器硬件名字。
 
-This example, although basic, will help us illustrate how we can leverage Python OOP’s capabilities to write shell scripts easier than using regular bash tools.
+这个例子尽管很基础，但是会帮助我们证明，比起使用一些 bash 工具写 shell 脚本，我们可以使得用 Python OOP 的兼容特性来编写 shell 脚本会更简单些。
 
-In other words, we want to go from
+换句话说，我们想从这里出发
 
 ```
 # uname -snrvm
 ```
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/05/Check-Hostname-of-Linux.png)
->Check Hostname of Linux
+> 检查 Linux 的主机号
 
-to
+到
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/05/Check-Linux-Hostname-Using-Python-Script.png)
->Check Linux Hostname Using Python Script
+> 用 Python 脚本来检查 Linux 的主机号
 
-or
+或者
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/05/Script-to-Check-Linux-System-Information.png)
->Script to Check Linux System Information
+> 用脚本检查 Linux 系统信息
 
-Looks pretty, doesn’t it? Let’s roll up our sleeves and make it happen.
+看着不错，不是吗？那我们就挽起袖子，开干吧。
 
-### Control flow in Python
+### Python 中的控制流
 
-As we said earlier, control flow allows us to choose different outcomes depending on a given condition. Its most simple implementation in Python is an if / else clause.
+如我们刚说那样，控制流允许我们根据一个给定的条件，选择不同的输出结果。在 Python 中最简单的实现就是一个 if/else 语句。
 
-The basic syntax is:
+基本语法是这样的：
 
 ```
 if condition:
@@ -45,36 +44,36 @@ else:
     # action 2
 ```
 
-When condition evaluates to true, the code block below will be executed (represented by `# action 1`. Otherwise, the code under else will be run.
-A condition can be any statement that can evaluate to either true or false.
+当 condition 求值为真（true），下面的代码块就会被执行（`# action 1`代表的部分）。否则，else 下面的代码就会运行。
+condition 可以是任何表达式，只要可以求得值为真或者假。
 
-For example:
+举个例子：
 
-1. 1 < 3 # true
+1. 1 < 3 # 真
 
-2. firstName == “Gabriel” # true for me, false for anyone not named Gabriel
+2. firstName == "Gabriel" # 对 firstName 为 Gabriel 的人是真，对其他不叫 Gabriel 的人为假
 
-  - In the first example we compared two values to determine if one is greater than the other.
-  - In the second example we compared firstName (a variable) to determine if, at the current execution point, its value is identical to “Gabriel”
-  - The condition and the else statement must be followed by a colon (:)
-  - Indentation is important in Python. Lines with identical indentation are considered to be in the same code block.
+ - 在第一个例子中，我们比较了两个值，判断 1 是否小于 3。
+ - 在第二个例子中，我们比较了 firstName（一个变量）与字符串 “Gabriel”，看在当前执行的位置，firstName 的值是否等于该字符串。
+ - 条件和 else 表达式都必须带着一个冒号（：）。
+ - 缩进在 Python 非常重要。同样缩进下的行被认为是相同的代码块。
 
-Please note that the if / else statement is only one of the many control flow tools available in Python. We reviewed it here since we will use it in our script later. You can learn more about the rest of the tools in the [official docs][2].
+请注意，if/else 表达式只是 Python 中许多控制流工具的一个而已。我们先在这里了解以下，后面会用在我们的脚本中。你可以在[官方文档][2]中学到更多工具。
 
-### Loops in Python
+### Python 中的循环
 
-Simply put, a loop is a sequence of instructions or statements that are executed in order as long as a condition is true, or once per item in a list.
+简单来说，一个循环就是一组指令或者表达式序列，可以按顺序一直执行，只要一个条件为真，或者在一个列表里一次执行一个条目。
 
-The most simple loop in Python is represented by the for loop iterates over the items of a given list or string beginning with the first item and ending with the last.
+Python 中最简单的循环，就是 for 循环迭代一个给定列表的元素，或者一个字符串从第一个字符开始到最后一个字符结束。
 
-Basic syntax:
+基本语句：
 
 ```
 for x in example:
 	# do this
 ```
 
-Here example can be either a list or a string. If the former, the variable named x represents each item in the list; if the latter, x represents each character in the string:
+这里的 example 可以是一个列表或者一个字符串。如果是列表，变量 x 就代表列表中每个元素；如果是字符串，x 就代表字符串中每个字符。
 
 ```
 >>> rockBands = []
@@ -89,43 +88,43 @@ or
     	print(x)
 ```
 
-The output of the above examples is shown in the following image:
+上面例子的输出如下图所示：
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/05/Learn-Loops-in-Python.png)
->Learn Loops in Python
+>学习 Python 中的循环
 
-### Python Modules
+### Python 模块
 
-For obvious reasons, there must be a way to save a sequence of Python instructions and statements in a file that can be invoked when it is needed.
+很明显，必须有个途径可以保存一系列的 Python 指令和表达式到文件里，然后需要的时候再取出来。
 
-That is precisely what a module is. Particularly, the os module provides an interface to the underlying operating system and allows us to perform many of the operations we usually do in a command-line prompt.
+准确来说模块就是这样的。特别地，os 模块提供了一个接口到操作系统的底层，允许我们做许多通常在命令行下的操作。
 
-As such, it incorporates several methods and properties that can be called as we explained in the previous article. However, we need to import (or include) it in our environment using the import keyword:
+没错，os 模块包含了许多方法和属性，可以用来调用，就如我们之前文章里讲解的那样。尽管如此，我们需要使用 import 关键词导入（或者叫包含）模块到开发环境里来：
 
 ```
 >>> import os
 ```
 
-Let’s print the current working directory:
+我们来打印出当前的工作目录：
 
 ```
 >>> os.getcwd()
 ```
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/05/Learn-Python-Modules.png)
->Learn Python Modules
+>学习 Python 模块
 
-Let’s now put all of this together (along with the concepts discussed in the previous article) to write the desired script.
+现在，让我们把所有结合在一起（包括之前文章里讨论的概念），编写需要的脚本。
 
-### Python Script
+### Python 脚本
 
-It is considered good practice to start a script with a statement that indicates the purpose of the script, the license terms under which it is released, and a revision history listing the changes that have been made. Although this is more of a personal preference, it adds a professional touch to our work.
+以一个声明开始一个脚本是个不错的想法，表明脚本的目的，发行所依据的证书，和一个修订历史列出所做的修改。尽管这主要是个人喜好，但这会让我们的工作看起来比较专业。
 
-Here’s the script that produces the output we shown at the top of this article. It is heavily commented so that you can understand what’s happening.
+这里有个脚本，可以输出这篇文章最前面展示的那样。脚本做了大量的注释，为了让大家可以理解发生了什么。
 
-Take a few minutes to go through it before proceeding. Note how we use an if / else structure to determine whether the length of each field caption is greater than the value of the field itself.
+在进行下一步之前，花点时间来理解它。注意，我们是如何使用一个 if/else 结构，判断每个字段标题的长度是否比字段本身的值还大。
 
-Based on the result, we use empty characters to fill in the space between a field caption and the next. Also, we use the right number of dashes as separator between the field caption and its value below.
+基于这个结果，我们用空字符去填充一个字段标题和下一个之间的空格。同时，我们使用一定数量的短线作为字段标题与其值之间的分割符。
 
 ```
 #!/usr/bin/python3
@@ -214,65 +213,65 @@ print(values)
 # ./uname.py
 ```
 
-Once you have saved the above script to a file, give it execute permissions and run it as indicated at the bottom of the code:
+如果你已经保存上面的脚本到一个文件里，给文件执行权限，并且运行它，像代码底部描述的那样：
 
 ```
 # chmod +x uname.py
 # ./uname.py
 ```
 
-If you get the following error while attempting to execute the script:
+如果试图运行脚本时，你得到了如下的错误：
 
 ```
 -bash: ./uname.py: /usr/bin/python3: bad interpreter: No such file or directory
 ```
 
-It means you don’t have Python 3 installed. If that is the case, you can either install the package or replace the interpreter line (pay special attention and be very careful if you followed the steps to update the symbolic links to the Python binaries as outlined in the previous article):
+这意味着你没有安装 Python3。如果那样的话，你要么安装 Python3 的包，要么替换解释器那行（如果你跟着下面的步骤去更新 Python 执行文件的软连接，如之前文章里概述的那样，要特别注意并且非常小心）：
 
 ```
 #!/usr/bin/python3
 ```
 
-with
+为
 
 ```
 #!/usr/bin/python
 ```
 
-which will cause the installed version of Python 2 to execute the script instead.
+这样会导致使用安装好的 Python 2 版本去执行该脚本。
 
-**Note**: This script has been tested successfully both in Python 2.x and 3.x.
+**注意**: 该脚本在 Python 2.x 与 Pyton 3.x 上都测试成功过了。
 
-Although somewhat rudimentary, you can think of this script as a Python module. This means that you can open it in the IDLE (File → Open… → Select file):
+尽管比较粗糙，你可以认为该脚本就是一个 Python 模块。这意味着你可以在 IDLE 中打开它（File → Open… → Select file):
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/05/Open-Python-in-IDLE.png)
->Open Python in IDLE
+>在 IDLE 中打开 Python
 
-A new window will open with the contents of the file. Then go to Run → Run module (or just press F5). The output of the script will be shown in the original shell:
+一个包含有文件内容的新窗口就会打开。然后执行 Run → Run module（或者按 F5）。脚本的输出就会在原 Shell 里显示出来： 
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/05/Run-Python-Script.png)
->Run Python Script
+>执行 Python 脚本
 
-If you want to obtain the same results with a script written purely in Bash, you would need to use a combination of [awk][3], [sed][4], and resort to complex methods to store and retrieve items in a list (not to mention the use of tr to convert lowercase letters to uppercase).
+如果你想纯粹用 bash 写一个脚本，也获得同样的结果，你可能需要结合使用 [awk][3]，[sed][4]，并且借助复杂的方法来存储与获得列表中的元素（忘了提醒使用 tr 命令将小写字母转为大写）
 
-In addition, Python provides portability in that all Linux systems ship with at least one Python version (either 2.x or 3.x, sometimes both). Should you need to rely on a shell to accomplish the same goal, you would need to write different versions of the script based on the shell.
+另外，Python 在所有的 Linux 系统版本中集成了至少一个 Python 版本（2.x 或者 3.x，或者两者都有）。你还需要依赖 shell 去完成同样的目标吗，那样你可能会为不同的 shell 编写不同的版本。
 
-This goes to show that Object Oriented Programming features can become strong allies of system administrators.
+这里演示了面向对象编程的特性，会成为一个系统管理员得力的助手。
 
-**Note**: You can find [this python script][5] (and others) in one of my GitHub repositories.
+**注意**：你可以在我的 Github 仓库里获得 [这个 python 脚本][5]（或者其他的）。
 
-### Summary
+### 总结
 
-In this article we have reviewed the concepts of control flow, loops / iteration, and modules in Python. We have shown how to leverage OOP methods and properties in Python to simplify otherwise complex shell scripts.
+这篇文章里，我们讲解了 Python 中控制流，循环/迭代，和模块的概念。我们也演示了如何利用 Python 中 OOP 的方法和属性，来简化复杂的 shell 脚本。
 
-Do you have any other ideas you would like to test? Go ahead and write your own Python scripts and let us know if you have any questions. Don’t hesitate to drop us a line using the comment form below, and we will get back to you as soon as we can.
+你有任何其他希望去验证的想法吗？开始吧，写出自己的 Python 脚本，如果有任何问题可以咨询我们。不必犹豫，在分割线下面留下评论，我们会尽快回复你。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/learn-python-programming-to-write-linux-shell-scripts/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+tecmint+%28Tecmint%3A+Linux+Howto%27s+Guide%29
 
 作者：[Gabriel Cánepa][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[wi-cuckoo](https://github.com/wi-cuckoo)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -283,3 +282,4 @@ via: http://www.tecmint.com/learn-python-programming-to-write-linux-shell-script
 [3]: http://www.tecmint.com/use-linux-awk-command-to-filter-text-string-in-files/
 [4]: http://www.tecmint.com/sed-command-to-create-edit-and-manipulate-files-in-linux/
 [5]: https://github.com/gacanepa/scripts/blob/master/python/uname.py
+
