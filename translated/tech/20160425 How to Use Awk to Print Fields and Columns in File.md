@@ -1,21 +1,20 @@
-ictlyh Translating
-How to Use Awk to Print Fields and Columns in File
+如何使用 Awk 打印文件中的字段和列
 ===================================================
 
-In this part of our [Linux Awk command series][1], we shall have a look at one of the most important features of Awk, which is field editing.
+在 [Linux Awk 命令系列介绍][1] 的这部分，我们来看一下 awk 最重要的功能之一，字段编辑。
 
-It is good to know that Awk automatically divides input lines provided to it into fields, and a field can be defined as a set of characters that are separated from other fields by an internal field separator.
+首先我们要知道 Awk 会自动把输入的行切分为字段，字段可以定义为是一些字符集，这些字符集和其它字段被内部字段分隔符分离。
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/04/Awk-Print-Fields-and-Columns.png)
->Awk Print Fields and Columns
+>Awk 输出字段和列
 
-If you are familiar with the Unix/Linux or do [bash shell programming][2], then you should know what internal field separator (IFS) variable is. The default IFS in Awk are tab and space.
+如果你熟悉 Unix/Linux 或者懂得 [bash shell 编程][2]，那么你也应该知道内部字段分隔符（IFS）变量。Awk 默认的 IFS 是 tab 和空格。
 
-This is how the idea of field separation works in Awk: when it encounters an input line, according to the IFS defined, the first set of characters is field one, which is accessed using $1, the second set of characters is field two, which is accessed using $2, the third set of characters is field three, which is accessed using $3 and so forth till the last set of character(s).
+Awk 字段切分的工作原理如下：当获得一行输入时，根据定义的 IFS，第一个字符集是字段一，用 $1 表示，第二个字符集是字段二，用 $2 表示，第三个字符集是字段三，用 $3 表示，以此类推直到最后一个字符集。
 
-To understand this Awk field editing better, let us take a look at the examples below:
+为了更好的理解 Awk 的字段编辑，让我们来看看下面的例子：
 
-**Example 1**: I have created a text file called tecmintinfo.txt.
+**事例 1:**： 我创建了一个名为 tecmintinfo.txt 的文件。
 
 ```
 # vi tecmintinfo.txt
@@ -23,24 +22,23 @@ To understand this Awk field editing better, let us take a look at the examples 
 ```
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/04/Create-File-in-Linux.png)
->Create File in Linux
+>在 Linux 中创建文件
 
-Then from the command line, I try to print the first, second and third fields from the file tecmintinfo.txt using the command below:
+然后在命令行中使用以下命令打印 tecmintinfo.txt 文件中的第一、第二和第三个字段。
 
 ```
 $ awk '//{print $1 $2 $3 }' tecmintinfo.txt
 TecMint.comisthe
 ```
+从上面的输出中你可以看到，三个字段中的第一个是按照定义的 IFS，也就是空格，打印的。
 
-From the output above, you can see that the characters from the first three fields are printed based on the IFS defined which is space:
+- 字段一 “TecMint.com” 使用 $1 访问。
+- 字段二 “is” 通过 $2 访问。
+- 字段三 “the” 通过 $3 访问。
 
-- Field one which is “TecMint.com” is accessed using $1.
-- Field two which is “is” is accessed using $2.
-- Field three which is “the” is accessed using $3.
+如果你注意打印的输出，可以看到字段值之间并没有分隔开，这是 print 默认的方式。
 
-If you have noticed in the printed output, the field values are not separated and this is how print behaves by default.
-
-To view the output clearly with space between the field values, you need to add (,) operator as follows:
+为了在字段值之间加入空格，你需要像下面这样添加（,）分隔符：
 
 ```
 $ awk '//{print $1, $2, $3; }' tecmintinfo.txt
@@ -48,11 +46,11 @@ $ awk '//{print $1, $2, $3; }' tecmintinfo.txt
 TecMint.com is the
 ```
 
-One important thing to note and always remember is that the use of ($) in Awk is different from its use in shell scripting.
+很重要而且必须牢记的一点是，Awk 中 （$） 的使用和在 shell 脚本中不一样。
 
-Under shell scripting ($) is used to access the value of variables while in Awk ($) it is used only when accessing the contents of a field but not for accessing the value of variables.
+在 shell 脚本中 （$） 用于获取变量的值，而在 Awk 中 （$） 只用于获取一个字段的内容，而不能用于获取变量的值。 
 
-**Example 2**: Let us take a look at one other example using a file which contains multiple lines called my_shoping.list.
+**事例2**： 让我们再看一个使用多行文件 my_shoping.list 的例子。
 
 ```
 No	Item_Name		Unit_Price	Quantity	Price
@@ -62,7 +60,7 @@ No	Item_Name		Unit_Price	Quantity	Price
 4	Ethernet_Cables	        #30,000		   4		#120,000	
 ```
 
-Say you wanted to only print Unit_Price of each item on the shopping list, you will need to run the command below:
+假设你只想打印购物清单中每个物品的 Unit_Price，你需要允许下面的命令：
 
 ```
 $ awk '//{print $2, $3 }' my_shopping.txt 
@@ -74,9 +72,9 @@ RAM_Chips #150,000
 Ethernet_Cables #30,000
 ```
 
-Awk also has a printf command that helps you to format your output is a nice way as you can see the above output is not clear enough.
+Awk 也有一个 printf 命令，它能帮助你用更好的方式格式化输出，正如你可以看到上面的输出并不清晰。
 
-Using printf to format output of the Item_Name and Unit_Price:
+使用 printf 格式化输出 Item_Name 和 Unit_Price：
 
 ```
 $ awk '//{printf "%-10s %s\n",$2, $3 }' my_shopping.txt 
@@ -88,18 +86,18 @@ RAM_Chips  #150,000
 Ethernet_Cables #30,000
 ```
 
-### Summary
+### 总结
 
-Field editing is very important when using Awk to filter text or strings, it helps you get particular data in columns in a list. And always remember that the use of ($) operator in Awk is different from that in shell scripting.
+使用 Awk 进行文本和字符串过滤时字段编辑功能非常重要，它能帮助你从列表中获取列的特定数据。同时需要记住 Awk 中 （$） 操作符和 shell 脚本中不一样。
 
-I hope the article was helpful to you and for any additional information required or questions, you can post a comment in the comment section.
+我希望这篇文章能对你有所帮助，如果你需要获取其它信息或者有任何疑问，都可以在下面的评论框中告诉我们。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/awk-print-fields-columns-with-space-separator/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+tecmint+%28Tecmint%3A+Linux+Howto%27s+Guide%29
 
 作者：[Aaron Kili][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ictlyh](https://github.com/ictlyh)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
