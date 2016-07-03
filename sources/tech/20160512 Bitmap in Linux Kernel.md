@@ -1,4 +1,4 @@
-[Translating By cposture 20160520]
+[Translating by cposture 2016.06.29]
 Data Structures in the Linux Kernel
 ================================================================================
 

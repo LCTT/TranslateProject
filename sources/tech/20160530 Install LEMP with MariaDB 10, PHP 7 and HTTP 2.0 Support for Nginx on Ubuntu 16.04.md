@@ -1,4 +1,4 @@
-Translating by strugglingyouth
+Translating by GitFuture
 
 Install LEMP with MariaDB 10, PHP 7 and HTTP 2.0 Support for Nginx on Ubuntu 16.04
 =====================================================================================

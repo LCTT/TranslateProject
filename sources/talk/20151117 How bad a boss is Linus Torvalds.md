@@ -1,4 +1,3 @@
-sonofelice translating
 How bad a boss is Linus Torvalds?
 ================================================================================
 ![linus torvalds](http://images.techhive.com/images/article/2015/08/linus_torvalds-100600260-primary.idge.jpg)

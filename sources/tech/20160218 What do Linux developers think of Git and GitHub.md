@@ -1,4 +1,4 @@
-@4357 翻译中
+translated by mudongliang
 
 What do Linux developers think of Git and GitHub?
 =====================================================
