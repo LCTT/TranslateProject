@@ -1,5 +1,6 @@
+translated by pspkforever
 DOCKER DATACENTER IN AWS AND AZURE IN A FEW CLICKS
-====================================================
+===================================================
 
 Introducing Docker Datacenter AWS Quickstart and Azure Marketplace Templates production-ready, high availability deployments in just a few clicks.
 
