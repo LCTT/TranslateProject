@@ -18,7 +18,7 @@ Awk 中的比较运算符用于比较字符串和或者数值，包括以下类�
 - `==` – 等于
 - `!=` – 不等于
 - `some_value ~ / pattern/` – 如果some_value匹配模式pattern，则返回true
-- `some_value !~ / pattern/` –如果some_value不匹配模式pattern，则返回true
+- `some_value !~ / pattern/` – 如果some_value不匹配模式pattern，则返回true
 
 现在我们通过例子来熟悉 Awk 中各种不同的比较运算符。
 
@@ -57,7 +57,7 @@ No	Item_Name`		Quantity	Price
 
 在刚才的例子中，发生如下两件重要的事情：
 
-- 第一表达式 `{ action ; }` 组合， `$3 <= 30 { printf “%s\t%s\n”, $0,”**” ; }` 打印出数量小于等于30的行，并且在后面增加`(**)`。物品的数量是通过 `$3`这个域变量获得的。
+- 第一个表达式 `{ action ; }` 组合， `$3 <= 30 { printf “%s\t%s\n”, $0,”**” ; }` 打印出数量小于等于30的行，并且在后面增加`(**)`。物品的数量是通过 `$3`这个域变量获得的。
 - 第二个表达式 `{ action ; }` 组合, `$3 > 30 { print $0 ;}` 原样输出数量小于等于 `30` 的行。
 
 再举一个例子：
