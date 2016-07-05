@@ -1,9 +1,7 @@
 ReactOS 新手指南
 ====================================
 
-
-ReactOS 是一个比较年轻的开源操作系统，它提供了一个和 Windows NT 类似的图形界面，并且它的目标也是提供一个与 NT 功能和应用程序兼容性差不多的系统。这个项目在没有使用任何 Unix 的情况下实现了一个类似 Wine 的用户模式。它的开发者们从头实现了 NT 的架构以及对于 FAT32 的兼容，因此它也不需要负任何法律责任。这也就是说，它不是又双叒叕一个 Linux 发行版，而是一个独特的类 Windows 系统，并且是开源世界的一部分。这份快速指南是给那些想要一个易于使用的 Windows 的开源替代品的人准备的。
-
+ReactOS 是一个比较年轻的开源操作系统，它提供了一个和 Windows NT 类似的图形界面，并且它的目标也是提供一个与 NT 功能和应用程序兼容性差不多的系统。这个项目在没有使用任何 Unix 架构的情况下实现了一个类似 Wine 的用户模式。它的开发者们从头实现了 NT 的架构以及对于 FAT32 的兼容，因此它也不需要负任何法律责任。这也就是说，它不是又双叒叕一个 Linux 发行版，而是一个独特的类 Windows 系统，并且是开源世界的一部分。这份快速指南是给那些想要一个易于使用的 Windows 的开源替代品的人准备的。
 
 ### 安装系统
 
@@ -30,7 +28,6 @@ ReactOS 是一个比较年轻的开源操作系统，它提供了一个和 Windo
 ![](https://www.howtoforge.com/images/getting-started-with-eeactos/pic_5.png)
 
 下一步是选择分区的格式，不过现在我们只能选择 FAT32。
-
 
 ![](https://www.howtoforge.com/images/getting-started-with-eeactos/pic_6.png)
 
@@ -96,7 +93,7 @@ ReactOS 是一个比较年轻的开源操作系统，它提供了一个和 Windo
 
 ![](https://www.howtoforge.com/images/getting-started-with-eeactos/pic_20.png)
 
-ReactOS 还有一个好啊，就是我们可以通过“我的电脑”来操作注册表。
+ReactOS 还有一个好的地方，就是我们可以通过“我的电脑”来操作注册表。
 
 ![](https://www.howtoforge.com/images/getting-started-with-eeactos/pic_21.png)
 
