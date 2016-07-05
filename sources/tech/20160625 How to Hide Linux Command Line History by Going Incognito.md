@@ -1,3 +1,4 @@
+chunyang-wen translating
 How to Hide Linux Command Line History by Going Incognito
 ================================================================
 
