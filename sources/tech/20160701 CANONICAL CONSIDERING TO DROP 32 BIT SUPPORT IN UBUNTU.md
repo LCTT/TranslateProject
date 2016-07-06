@@ -1,3 +1,4 @@
+(翻译中 by runningwater)
 CANONICAL CONSIDERING TO DROP 32 BIT SUPPORT IN UBUNTU
 ========================================================
 
@@ -29,7 +30,7 @@ I understand why they need to make this move from a security standpoint, but it�
 via: https://itsfoss.com/ubuntu-32-bit-support-drop/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+ItsFoss+%28Its+FOSS%21+An+Open+Source+Blog%29
 
 作者：[John Paul][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
