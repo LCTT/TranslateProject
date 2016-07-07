@@ -1,3 +1,5 @@
+MikeCoder Translating...
+
 How to record your terminal session on Linux
 =================================================
 
