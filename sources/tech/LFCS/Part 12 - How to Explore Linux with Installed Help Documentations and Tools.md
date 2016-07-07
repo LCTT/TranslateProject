@@ -1,4 +1,4 @@
-翻译申请 tresspassing2
+[translating by kokialoves]
 Part 12 - LFCS: How to Explore Linux with Installed Help Documentations and Tools
 ==================================================================================
 
