@@ -1,3 +1,5 @@
+Translating by Ping
+
 Microservices with Python RabbitMQ and Nameko
 ==============================================
 
