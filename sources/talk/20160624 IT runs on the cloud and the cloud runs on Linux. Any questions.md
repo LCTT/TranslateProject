@@ -1,3 +1,4 @@
+chenxinlong translating
 IT runs on the cloud, and the cloud runs on Linux. Any questions?
 ===================================================================
 
@@ -37,7 +38,7 @@ So, just as the vast majority of Android phone and Chromebook users have no clue
 via: http://www.zdnet.com/article/it-runs-on-the-cloud-and-the-cloud-runs-on-linux-any-questions/#ftag=RSSbaffb68
 
 作者：[Steven J. Vaughan-Nichols][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[chenxinlong](https://github.com/chenxinlong)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
