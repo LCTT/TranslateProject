@@ -1,3 +1,5 @@
+MikeCoder Translating...
+
 Detecting cats in images with OpenCV
 =======================================
 
@@ -209,7 +211,7 @@ Before you go, be sure to signup for the PyImageSearch Newsletter using the form
 via: http://www.pyimagesearch.com/2016/06/20/detecting-cats-in-images-with-opencv/
 
 作者：[Adrian Rosebrock][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/MikeCoder)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
