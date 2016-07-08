@@ -1,54 +1,53 @@
-(翻译中 by runningwater)
-Explanation of “Everything is a File” and Types of Files in Linux
+诠释 Linux 中“一切都是文件”概念和相应的文件类型
 ====================================================================
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/05/Everything-is-a-File-in-Linux.png)
->Everything is a File and Types of Files in Linux
+>Linux 系统中一切都是文件并有相应的文件类型
 
-That is in fact true although it is just a generalization concept, in Unix and its derivatives such as Linux, everything is considered as a file. If something is not a file, then it must be running as a process on the system.
+在 Unix 和它衍生的比如 Linux 系统中，一切都可以看做文件。虽然它仅仅只是一个泛泛的概念，但这是事实。如果有不是文件的，那它一定是正运行的进程。
 
-To understand this, take for example the amount of space on your root (/) directory is always consumed by different types of Linux files. When you create a file or transfer a file to your system, it occupies some space on the physical disk and it is considered to be in a specific format (file type).
+要理解这点，可以举个例子，您的根目录(/) 的空间是由不同类型的 Linux 文件所占据的。当您创建一个文件或向系统传一个文件时，它在物理磁盘上占据的一些空间，可以认为是一个特定的格式（文件类型）。        
 
-And also the Linux system does not differentiate between files and directories, but directories do one important job, that is store other files in groups in a hierarchy for easy location. All your hardware components are represented as files and the system communicates with them using these files.
+虽然 Linux 系统中文件和目录没有什么不同，但目录还有一个重要的功能，那就是有结构性的分组存储其它文件，以方便查找访问。所有的硬件部件都表示为文件，系统使用这些文件来与硬件通信。
 
-The idea is an important description of a great property of Linux, where input/output resources such as your documents, directories (folders in Mac OS X and Windows), keyboard, monitor, hard-drives, removable media, printers, modems, virtual terminals and also inter-process and network communication are streams of bytes defined by file system space.
+这些思想是对伟大的 Linux 财产的重要阐述，因此像文档、目录（Mac OS X 和 Windows 系统下是文件夹）、键盘、监视器、硬盘、可移动媒体设备、打印机、调制解调器、虚拟终端，还有进程间通信（IPC）和网络通信等输入/输出资源都在定义在文件系统空间下的字节流。
 
-A notable advantage of everything being a file is that the same set of Linux tools, utilities and APIs can be used on the above input/output resources.
+一切都可看作是文件，其最显著的好处是对于上面所列出的输入/输出资源，只需要相同的一套 Linux 工具、实用程序和 API。
 
-Although everything in Linux is a file, there are certain special files that are more than just a file for example [sockets and named pipes][1].
+虽然在 Linux 中一切都可看作是文件，但也有一些特殊的文件，比如[套接字和命令管道][1]。
 
-### What are the different types of files in Linux?
+### Linux 文件类型的不同之处？
 
-In Linux there are basically three types of files:
+Linux 系统中有三种基本的文件类型：
 
-- Ordinary/Regular files
-- Special files
-- Directories
+- 普通/常规文件
+- 特殊文件
+- 目录文件
 
-#### Ordinary/Regular Files
+#### 普通/常规文件
 
-These are files data contain text, data or program instructions and they are the most common type of files you can expect to find on a Linux system and they include:
+它们是包含文本、数据、程序指令等数据的文件，其在 Linux 系统中是最常见的一种。包括如下：
 
-- Readable files
-- Binary files
-- Image files
-- Compressed files and so on.
+- 只读文件
+- 二进制文件
+- 图像文件
+- 压缩文件等等
 
-#### Special Files
+#### 特殊文件
 
-Special files include the following:
+特殊文件包括以下几种：
 
-Block files : These are device files that provide buffered access to system hardware components. They provide a method of communication with device drivers through the file system.
+块文件：设备文件，对访问系统硬件部件提供了缓存接口。他们提供了一种使用文件系统与设备驱动通信的方法。
 
-One important aspect about block files is that they can transfer a large block of data and information at a given time.
+有关于块文件一个重要的性能就是它们能在指定时间内传输大块的数据和信息。
 
-Listing block files sockets in a directory:
+列出某目录下的块文件：
 
 ```
 # ls -l /dev | grep "^b"
 ```
 
-Sample Output
+输出例子
 
 ```
 brw-rw----  1 root disk        7,   0 May 18 10:26 loop0
@@ -74,15 +73,15 @@ brw-rw----  1 root disk        1,   5 May 18 10:26 ram5
 ...
 ```
 
-Character files : These are also device files that provide unbuffered serial access to system hardware components. They work by providing a way of communication with devices by transferring data one character at a time.
+字符文件： 也是设备文件，对访问系统硬件组件提供了非缓冲串行接口。它们与设备的通信工作方式是一次只传输一个字符的数据。
 
-Listing character files sockets in a directory:
+列出某目录下的字符文件：
 
 ```
 # ls -l /dev | grep "^c"
 ```
 
-Sample Output
+输出例子
 
 ```
 crw-------  1 root root       10, 235 May 18 15:54 autofs
@@ -114,15 +113,15 @@ crw-rw-rw-  1 root tty         5,   2 May 18 17:40 ptmx
 crw-rw-rw-  1 root root        1,   8 May 18 10:26 random
 ```
 
-Symbolic link files : A symbolic link is a reference to another file on the system. Therefore, symbolic link files are files that point to other files, and they can either be directories or regular files.
+符号链接文件 ： 符号链接是指向系统上其他文件的引用。因此，符号链接文件是指向其它文件的文件，也可以是目录或常规文件。
 
-Listing symbolic link sockets in a directory:
+列出某目录下的符号链接文件：
 
 ```
 # ls -l /dev/ | grep "^l"
 ```
 
-Sample Output
+输出例子
 
 ```
 lrwxrwxrwx  1 root root             3 May 18 10:26 cdrom -> sr0
@@ -135,27 +134,27 @@ lrwxrwxrwx  1 root root            15 May 18 15:54 stdin -> /proc/self/fd/0
 lrwxrwxrwx  1 root root            15 May 18 15:54 stdout -> /proc/self/fd/1
 ```
 
-You can make symbolic links using the `ln` utility in Linux as in the example below.
+Linux 中使用 `ln` 工具就可以创建一个符号链接文件，如下所示：
 
 ```
 # touch file1.txt
-# ln -s file1.txt /home/tecmint/file1.txt  [create symbolic link]
-# ls -l /home/tecmint/ | grep "^l"         [List symbolic links]
+# ln -s file1.txt /home/tecmint/file1.txt  [创建符号链接文件]
+# ls -l /home/tecmint/ | grep "^l"         [列出符号链接文件]
 ```
 
-In the above example, I created a file called `file1.txt` in `/tmp` directory, then created the symbolic link, `/home/tecmint/file1.txt` to point to `/tmp/file1.txt`.
+在上面的例子中，首先我们在 `/tmp`  目录创建了一个名叫  `file1.txt` 的文件，然后创建符号链接文件，所以 `/home/tecmint/file1.txt` 指向 `/tmp/file1.txt` 文件。
 
-Pipes or Named pipes : These are files that allow inter-process communication by connecting the output of one process to the input of another.
+套接字和命令管道 : 连接一个进行的输出和另一个进程的输入，允许进程间通信的文件。
 
-A named pipe is actually a file that is used by two process to communicate with each and it acts as a Linux pipe.
+命名管道实际上是一个文件，用来使两个进程彼此通信，就像一个 Linux pipe(管道) 命令一样。
 
-Listing pipes sockets in a directory:
+列出某目录下的管道文件：
 
 ```
 # ls -l | grep "^p"
 ```
 
-Sample Output
+输出例子
 
 ```
 prw-rw-r-- 1 tecmint tecmint    0 May 18 17:47 pipe1
@@ -165,62 +164,64 @@ prw-rw-r-- 1 tecmint tecmint    0 May 18 17:47 pipe4
 prw-rw-r-- 1 tecmint tecmint    0 May 18 17:47 pipe5
 ```
 
-You can use the mkfifo utility to create a named pipe in Linux as follows.
+在 Linux 中可以使用  `mkfifo`  工具来创建一个命名管道，如下所示：
 
 ```
 # mkfifo pipe1
 # echo "This is named pipe1" > pipe1
 ```
 
-In the above example, I created a named pipe called pipe1, then I passed some data to it using the [echo command][2], after that the shell became un-interactive while processing the input.
+在上的例子中，我们创建了一个名叫 `pipe1` 的命名管道，然后使用 [echo 命令][2] 加入一些数据，在这操作后，要使用这些输入数据就要用非交互的 shell 了。
 
-Then I opened another shell and run the another command to print out what was passed to pipe.
+
+
+然后，我们打开另外的 shell 终端，运行另外的命令来打印出刚加入管道的数据。
 
 ```
 # while read line ;do echo "This was passed-'$line' "; done<pipe1
 ```
 
-Socket files : These are files that provide a means of inter-process communication, but they can transfer data and information between process running on different environments.
+套接字文件 ： 提供进程间通信方法的文件，它们能为运行在不同环境中的进程之间的数据和信息提供传输的能力。
 
-This means that sockets provide data and information transfer between process running on different machines on a network.
+这就是说，套接字 (sockets) 可以对运行网络上不同机器中的进行之间的数据和信息进行传输。
 
-An example to show the work of sockets would be a web browser making a connection to a web server.
+一个 socket 运行的例子就是网页浏览器连接到网站服务器的过程。
 
 ```
 # ls -l /dev/ | grep "^s"
 ```
 
-Sample Output
+输出例子
 
 ```
 srw-rw-rw-  1 root root             0 May 18 10:26 log
 ```
 
-This is an example of a socket create in C by using the `socket()` system call.
+下面是使用 C 语言编写的调用  `socket()` 函数的例子。
 
 ```
 int socket_desc= socket(AF_INET, SOCK_STREAM, 0 );
 ```
 
-In the above:
+上例中：
 
-- `AF_INET` is the address family(IPv4)
-- `SOCK_STREAM` is the type (connection is TCP protocol oriented)
-- `0` is the protocol(IP Protocol)
+- `AF_INET` 指的是地址域(IPv4)
+- `SOCK_STREAM` 指的是类型 (默认使用 TCP 协议连接)
+- `0` 指协议(IP 协议)
 
-To refer to the socket file, use the `socket_desc`, which is the same as the file descriptor, and use `read()` and `write()` system calls to read and write from the socket respectively.
+使用 `socket_desc` 来引用管道文件，它跟文件描述符是一样的，然后再使用系统函数  `read()`  和 `write()`  来分别从这个管道文件读写数据。
 
-### Directories
+### 目录文件
 
-These are special files that store both ordinary and other special files and they are organized on the Linux file system in a hierarchy starting from the root (/) directory.
+是一些特殊的文件，既可以包含普通文件又可包含特殊文件，它们在 Linux 文件系统中是以根(/)目录为起点分层组织存在的。
 
-Listing sockets in a directory:
+列出某目录下的目录文件：
 
 ```
 # ls -l / | grep "^d" 
 ```
 
-Sample Output
+输出例子
 
 ```
 drwxr-xr-x   2 root root  4096 May  5 15:49 bin
@@ -246,7 +247,7 @@ drwxr-xr-x  11 root root  4096 Mar 31 16:00 usr
 drwxr-xr-x  12 root root  4096 Nov 12  2015 var
 ```
 
-You can make a directory using the mkdir command.
+您可以使用 mkdir 命令来创建一个目录。
 
 ```
 # mkdir -m 1666 tecmint.com
@@ -254,11 +255,11 @@ You can make a directory using the mkdir command.
 # mkdir -m 1775 linuxsay.com
 ```
 
-### Summary
+### 结论
 
-You should now be having a clear understanding of why everything in Linux is a file and the different types of files that can exit on your Linux system.
+现在应该有一个清楚的认识为什么 Linux 系统中一切都是文件以及 Linux 系统中可以存在哪些类型的文件了。
 
-You can add more to this by reading more about the individual file types and they are created. I hope this find this guide helpful and for any questions and additional information that you would love to share, please leave a comment and we shall discuss more.
+您可以通过阅读更多有关各个文件类型的文章和对应的创建过程等来增加更多知识。我希望这篇教程对您有所帮助。有任何疑问或有补充的知识，请留下评论，一起来讨论。
 
 
 --------------------------------------------------------------------------------

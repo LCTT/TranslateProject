@@ -1,3 +1,5 @@
+Translating by GitFuture
+
 Monitor Linux With Netdata
 ===
 
