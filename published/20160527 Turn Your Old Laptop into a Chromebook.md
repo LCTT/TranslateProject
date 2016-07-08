@@ -2,7 +2,8 @@
 ========================================
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/cloud-ready-main.jpg?itok=gtzJVSq0)
->学习如何用 CloudReady 在你的旧电脑上安装 Chrome OS
+
+*学习如何用 CloudReady 在你的旧电脑上安装 Chrome OS*
 
 Linux 之年就在眼前。根据[报道][1]，Google 在 2016 年第一季度卖出了比苹果卖出的 Macbook 更多的 Chromebook。并且，Chromebook 即将变得更加激动人心。在 Google I/O 大会上，Google 宣布安卓 Google Play 商店将在 6 月中旬来到 Chromebook，这让用户能够在他们的 Chrome OS 设备上运行安卓应用。
 
@@ -16,33 +17,35 @@ Linux 之年就在眼前。根据[报道][1]，Google 在 2016 年第一季度�
 
 在你开始在笔记本上安装 CloudReady 之前，你需要一些准备：
 
-- 一个容量大于等于 4GB 的 USB 存储设备
-
+- 一个容量不小于 4GB 的 USB 存储设备
 - 打开 Chrome 浏览器，到 Google Chrome Store 去安装 [Chromebook Recovery Utility（Chrome 恢复工具）][3]
-
 - 更改目标机器的 BIOS 设置以便能从 USB 启动
 
 ### 开始
 
 Neverware 提供两个版本的 CloudReady 镜像：32 位和 64 位。从下载页面[下载][4]合适你硬件的系统版本。
 
-解压下载的 zip 文件，你会得到一个 chromiumos_image.bin 文件。现在插入 U 盘并打开 Chromebook recovery utility。点击工具右上角的齿轮，选择 erase recovery media（擦除恢复媒介，如图 1）。
+解压下载的 zip 文件，你会得到一个 chromiumos_image.bin 文件。现在插入 U 盘并打开 Chromebook Recovery Utility。点击工具右上角的齿轮，选择 erase recovery media（擦除恢复媒介，如图 1）。
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/cloudready-erase.png?itok=1si1QrCL)
->图 1：选择 erase recovery media。[image:cloudready-erase]
+
+*图 1：选择 erase recovery media。[image:cloudready-erase]*
 
 接下来，选择目标 USB 驱动器并把它格式化。格式化完成后，再次打开右上齿轮，这次选择 use local image（使用本地镜像）。浏览解压的 bin 文件并选中，选好 USB 驱动器，点击继续，然后点击创建按钮（图 2）。它会开始将镜像写入驱动器。
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/cloudready-create.png?itok=S1FGzRp-)
->图 2：创建 CloudReady 镜像。[Image:cloudready-create]
+
+*图 2：创建 CloudReady 镜像。[Image:cloudready-create]*
 
 驱动器写好可启动的 CloudReady 之后，插到目标 PC 上并启动。系统启动进 Chromium OS 需要一小段时间。启动之后，你会看到图 3 中的界面。
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/cloud-ready-install-1.jpg?itok=D6SjlIQ4)
->图 3：准备好安装 CloudReady。
+
+*图 3：准备好安装 CloudReady。*
 
 ![](https://www.linux.com/sites/lcom/files/styles/floated_images/public/cloud-ready-install-single_crop.jpg?itok=My2rUjYC)
->图 4：单系统选项。
+
+*图 4：单系统选项。*
 
 到任务栏选择 Install CloudReady（安装 CloudReady）。
 
@@ -53,7 +56,8 @@ Neverware 提供两个版本的 CloudReady 镜像：32 位和 64 位。从下载
 按照下一步按钮说明选择安装。
 
 ![](https://www.linux.com/sites/lcom/files/styles/floated_images/public/cloud-ready-install-dual_crop.jpg?itok=Daywck_s)
->图 5：双系统选项。
+
+*图 5：双系统选项。*
 
 整个过程最多 20 分钟左右，这取决于存储媒介和处理能力。安装完成后，电脑会关闭并重启。
 
@@ -62,17 +66,20 @@ Neverware 提供两个版本的 CloudReady 镜像：32 位和 64 位。从下载
 你连上无线网络之后，系统会自动查找更新并提供 Adobe Flash 安装。安装完成后，你会看到 Chromium OS 登录界面。现在你只需登录你的 Gmail 账户，开始使用你的“Chromebook”即可。
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/cloud-ready-post-install-network.jpg?itok=gSX2fQZS)
->图 6：网络设置。
+
+*图 6：网络设置。*
 
 ### 让 Netflix 正常工作
 
 如果你想要播放 Netflix 或其它 DRM 保护流媒体站点，你需要做一些额外的工作。转到设置并点击安装 Widevine 插件（图 7）。
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/install_widevine.png?itok=bUJaRmyx0)
->图 7：安装 Widevine。
+
+*图 7：安装 Widevine。*
 
 ![](https://www.linux.com/sites/lcom/files/styles/floated_images/public/user-agent-changer.jpg?itok=5QDCLrZk)
->图 8：安装 User Agent Switcher.
+
+*图 8：安装 User Agent Switcher。*
 
 现在你需要使用 user agent switcher 这个伎俩（图 8）。
 
@@ -96,12 +103,12 @@ Indicator Flag: "IE"
 点击“添加（Add）”。
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/spoof-netflix.png?itok=8DEZK4Pl)
->图 9：为 CloudReady 创建条目。
+
+*图 9：为 CloudReady 创建条目。*
 
 然后，到“permanent spoof list（永久欺骗列表）”选项中将 CloudReady Widevine 添加为 [www.netflix.com](http://www.netflix.com) 的永久 UA 串。
 
 现在，重启机器，你就可以观看 Netflix 和其它一些服务了。
-
 
 --------------------------------------------------------------------------------
 
@@ -109,7 +116,7 @@ via: https://www.linux.com/learn/turn-your-old-laptop-chromebook
 
 作者：[SWAPNIL BHARTIYA][a]
 译者：[alim0x](https://github.com/alim0x)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
