@@ -1,37 +1,35 @@
 MikeCoder Translating...
 
-Detecting cats in images with OpenCV
+使用 OpenCV 识别图片中的猫
 =======================================
 
 ![](http://www.pyimagesearch.com/wp-content/uploads/2016/05/cat_face_detector_result_04.jpg)
 
-Did you know that OpenCV can detect cat faces in images…right out-of-the-box with no extras?
+你知道 OpenCV 可以识别在图片中识别猫脸吗？还是在开箱即用的情况下，无需多余的附件。
 
-I didn’t either.
+我也不知道。
 
-But after [Kendrick Tan broke the story][1], I had to check it out for myself…and do a little investigative work to see how this cat detector seemed to sneak its way into the OpenCV repository without me noticing (much like a cat sliding into an empty cereal box, just waiting to be discovered).
+但是在看完'[Kendrick Tan broke the story][1]'这个故事之后, 我需要亲自体验一下...去看看到OpenCV 是如何在我没有察觉到的情况下，将这一个功能添加进了他的软件库。
 
-In the remainder of this blog post, I’ll demonstrate how to use OpenCV’s cat detector to detect cat faces in images. This same technique can be applied to video streams as well.
+作为这个博客的大纲，我将会展示如何使用 OpenCV 的猫检测器在图片中识别猫脸。同样的，你也可以在视频流中使用该技术。
 
->Looking for the source code to this post? [Jump right to the downloads section][2].
+> 想找这篇博客的源码？[请点这][2]。
 
 
-### Detecting cats in images with OpenCV
+### 使用 OpenCV 在图片中检测猫
 
-If you take a look at the [OpenCV repository][3], specifically within the [haarcascades directory][4] (where OpenCV stores all its pre-trained Haar classifiers to detect various objects, body parts, etc.), you’ll notice two files:
+如果你看一眼[OpenCV 的代码库][3]，尤其是在[haarcascades 目录][4](OpenCV 用来保存处理他对多种目标检测的Cascade预先训练的级联图像分类)， 你将会注意到这两个文件:
 
 - haarcascade_frontalcatface.xml
 - haarcascade_frontalcatface_extended.xml
 
-Both of these Haar cascades can be used detecting “cat faces” in images. In fact, I used these very same cascades to generate the example image at the top of this blog post.
+这两个 Haar Cascade 文件都将被用来在图片中检测猫脸。实际上，我使用了相同的方式来生成这篇博客顶端的图片。
 
-Doing a little investigative work, I found that the cascades were trained and contributed to the OpenCV repository by the legendary [Joseph Howse][5] who’s authored a good many tutorials, books, and talks on computer vision.
+在做了一些调查工作之后，我发现训练这些记过并且将其提供给 OpenCV 仓库的是鼎鼎大名的 [Joseph Howse][5]，他在计算机视觉领域有着很高的声望。
 
-In the remainder of this blog post, I’ll show you how to utilize Howse’s Haar cascades to detect cats in images.
+在博客的剩余部分，我将会展示给你如何使用 Howse 的 Haar cascades 来检测猫。
 
-Cat detection code
-
-Let’s get started detecting cats in images with OpenCV. Open up a new file, name it cat_detector.py , and insert the following code:
+让我们开工。新建一个叫 cat_detector.py 的文件，并且输入如下的代码:
 
 ### Detecting cats in images with OpenCVPython
 
