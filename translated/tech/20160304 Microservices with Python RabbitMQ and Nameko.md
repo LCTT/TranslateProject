@@ -281,7 +281,7 @@ Nameko 框架还为我们提供了很多高级特性，你可以从 <https://nam
 via: http://brunorocha.org/python/microservices-with-python-rabbitmq-and-nameko.html
 
 作者: [Bruno Rocha][a]
-译者: [译者ID](http://www.mr-ping.com)
+译者: [mr-ping](http://www.mr-ping.com)
 校对: [校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
