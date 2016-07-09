@@ -31,7 +31,7 @@ MikeCoder Translating...
 
 让我们开工。新建一个叫 cat_detector.py 的文件，并且输入如下的代码:
 
-### Detecting cats in images with OpenCVPython
+### 使用 OpenCVPython 来检测猫
 
 ```
 # import the necessary packages
@@ -48,13 +48,13 @@ ap.add_argument("-c", "--cascade",
 args = vars(ap.parse_args())
 ```
 
-Lines 2 and 3 import our necessary Python packages while Lines 6-12 parse our command line arguments. We only require a single argument here, the input `--image`  that we want to detect cat faces in using OpenCV.
+第2和第3行主要是导入了必要的 python 包。6-12行主要是我们的命令行参数。我们在这只需要使用单独的参数'--image'。
 
-We can also (optionally) supply a path our Haar cascade via the `--cascade`  switch. We’ll default this path to `haarcascade_frontalcatface.xml`  and assume you have the `haarcascade_frontalcatface.xml`  file in the same directory as your cat_detector.py  script.
+我们可以指定一个 Haar cascade 的路径通过 `--cascade` 参数。默认使用 `haarcascades_frontalcatface.xml`，同时需要保证这个文件和你的 `cat_detector.py` 在同一目录下。
 
-Note: I’ve conveniently included the code, cat detector Haar cascade, and example images used in this tutorial in the “Downloads” section of this blog post. If you’re new to working with Python + OpenCV (or Haar cascades), I would suggest downloading the provided .zip file to make it easier to follow along.
+注意:我已经打包了猫的检测代码，还有在这个教程里的样本图片。你可以在博客的'Downloads' 部分下载到。如果你是刚刚接触 Python+OpenCV(或者 Haar cascades), 我会建议你下载 zip 压缩包，这个会方便你进行操作。
 
-Next, let’s detect the cats in our input image:
+接下来，就是检测猫的时刻了:
 
 ```
 # load the input image and convert it to grayscale
@@ -68,20 +68,21 @@ rects = detector.detectMultiScale(gray, scaleFactor=1.3,
 	minNeighbors=10, minSize=(75, 75))
 ```
 
-On Lines 15 and 16 we load our input image from disk and convert it to grayscale (a normal pre-processing step before passing the image to a Haar cascade classifier, although not strictly required).
+在15，16行，我们从硬盘上读取了图片，并且进行灰度化(一个常用的图片预处理，方便 Haar cascade 进行分类，尽管不是必须)
 
-Line 20 loads our Haar cascade from disk (in this case, the cat detector) and instantiates the cv2.CascadeClassifier  object.
+20行，我们加载了Haar casacade，即猫检测器，并且初始化了 cv2.CascadeClassifier 对象。
 
 Detecting cat faces in images with OpenCV is accomplished on Lines 21 and 22 by calling the detectMultiScale  method of the detector  object. We pass four parameters to the detectMultiScale  method, including:
+使用 OpenCV 检测猫脸的步骤是21，22行，通过调用 detectMultiScale 方法。我们使用四个参数来调用。包括：
 
-1. Our image, gray , that we want to detect cat faces in.
-2.A scaleFactor  of our [image pyramid][6] used when detecting cat faces. A larger scale factor will increase the speed of the detector, but could harm our true-positive detection accuracy. Conversely, a smaller scale will slow down the detection process, but increase true-positive detections. However, this smaller scale can also increase the false-positive detection rate as well. See the “A note on Haar cascades” section of this blog post for more information.
-3. The minNeighbors  parameter controls the minimum number of detected bounding boxes in a given area for the region to be considered a “cat face”. This parameter is very helpful in pruning false-positive detections.
-4. Finally, the minSize  parameter is pretty self-explanatory. This value ensures that each detected bounding box is at least width x height pixels (in this case, 75 x 75).
+1. 灰度化的图片，即样本图片。
+2. scaleFactor 参数，[图片金字塔][6]使用的检测猫脸时的检测粒度。一个更大的粒度将会加快检测的速度，但是会对准确性产生影响。相反的，一个更小的粒度将会影响检测的时间，但是会增加正确性。但是，细粒度也会增加错误的检测数量。你可以看博客的 'Haar cascades 笔记' 部分来获得更多的信息。
+3. minNeighbors 参数控制了检测的最小数量,即在给定区域最小的检测猫脸的次数。这个参数很好的可以排除错误的检测结果。
+4. 最后，minSize 参数很好的自我说明了用途。即最后图片的最小大小，这个例子中就是 75\*75
 
-The detectMultiScale  function returns rects , a list of 4-tuples. These tuples contain the (x, y)-coordinates and width and height of each detected cat face.
+detectMultiScale 函数 return rects，这是一个4维数组链表。这些item 中包含了猫脸的(x,y)坐标值，还有宽度，高度。
 
-Finally, let’s draw a rectangle surround each cat face in the image:
+最后，让我们在图片上画下这些矩形来标识猫脸：
 
 ```
 # loop over the cat faces and draw a rectangle surrounding each
@@ -95,36 +96,36 @@ cv2.imshow("Cat Faces", image)
 cv2.waitKey(0)
 ```
 
-Given our bounding boxes (i.e., rects ), we loop over each of them individually on Line 25.
+给相关的区域(举个例子，rects)，我们在25行依次历遍它。
 
-We then draw a rectangle surrounding each cat face on Line 26, while Lines 27 and 28 displays an integer, counting the number of cats in the image.
+在26行，我们在每张猫脸的周围画上一个矩形。27，28行展示了一个整数，即图片中猫的数量。
 
-Finally, Lines 31 and 32 display the output image to our screen.
+最后，31，32行在屏幕上展示了输出的图片。
 
-### Cat detection results
+### 猫检测结果
 
-To test our OpenCV cat detector, be sure to download the source code to this tutorial using the “Downloads” section at the bottom of this post.
+为了测试我们的 OpenCV 毛检测器，可以在文章的最后，下载教程的源码。
 
-Then, after you have unzipped the archive, you should have the following three files/directories:
+然后，在你解压缩之后，你将会得到如下的三个文件/目录:
 
-1. cat_detector.py : Our Python + OpenCV script used to detect cats in images.
-2. haarcascade_frontalcatface.xml : The cat detector Haar cascade.
-3. images : A directory of testing images that we’re going to apply the cat detector cascade to.
+1. cat_detector.py:我们的主程序
+2. haarcascade_frontalcatface.xml: Haar cascade 猫检测资源
+3. images:我们将会使用的检测图片目录。
 
-From there, execute the following command:
+到这一步，执行以下的命令:
 
-Detecting cats in images with OpenCVShell
+使用 OpenCVShell 检测猫。
 
 ```
 $ python cat_detector.py --image images/cat_01.jpg
 ```
 
 ![](http://www.pyimagesearch.com/wp-content/uploads/2016/05/cat_face_detector_result_01.jpg)
->Figure 1: Detecting a cat face in an image, even with parts of the cat occluded 
+>第一步，在图片中检测猫脸，甚至是猫的一部分。
 
-Notice that we have been able to detect the cat face in the image, even though the rest of its body is obscured.
+注意，我们已经可以检测猫脸了，即使他的其余部分是被隐藏的。
 
-Let’s try another image:
+试下另外的一张图片:
 
 ```
 python cat_detector.py --image images/cat_02.jpg
