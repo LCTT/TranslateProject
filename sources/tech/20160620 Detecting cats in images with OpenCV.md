@@ -70,7 +70,6 @@ rects = detector.detectMultiScale(gray, scaleFactor=1.3,
 
 20行，我们加载了Haar casacade，即猫检测器，并且初始化了 cv2.CascadeClassifier 对象。
 
-Detecting cat faces in images with OpenCV is accomplished on Lines 21 and 22 by calling the detectMultiScale  method of the detector  object. We pass four parameters to the detectMultiScale  method, including:
 使用 OpenCV 检测猫脸的步骤是21，22行，通过调用 detectMultiScale 方法。我们使用四个参数来调用。包括：
 
 1. 灰度化的图片，即样本图片。
@@ -170,8 +169,6 @@ xml 文件中的注释，非常重要，Joseph Hower 提到了猫 脸检测器�
 在他们的论文中，Viola 和 Jones 关注在训练人脸检测器；但是，这个框架也能用来检测各类事物，如汽车，香蕉，路标等等。
 
 #### 有问题？
-
-The biggest problem with Haar cascades is getting the detectMultiScale  parameters right, specifically scaleFactor  and minNeighbors . You can easily run into situations where you need to tune both of these parameters on an image-by-image basis, which is far from ideal when utilizing an object detector.
 
 Haar cascades 最大的问题就是如何确定 detectMultiScale 方法的参数正确。特别是 scaleFactor 和 minNeighbors 参数。你很容易陷入，一张一张图片调参数的坑，这个就是该模型很难被实用化的原因。
 
