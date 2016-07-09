@@ -1,3 +1,5 @@
+chenxinlong translating
+
 Growing a career alongside Linux
 ==================================
 
@@ -38,7 +40,7 @@ The constant evolution and fun of using Linux has been a driving force for me fo
 via: https://opensource.com/life/16/3/my-linux-story-michael-perry
 
 作者：[Michael Perry][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/chenxinlong)
 校对：[校对者ID](https://github.com/校对者ID)
 
 [a]: https://opensource.com/users/mpmilestogo
