@@ -1,3 +1,4 @@
+Translating by cposture 2016.07.09
 Create Your Own Shell in Python : Part I
 
 I’m curious to know how a shell (like bash, csh, etc.) works internally. So, I implemented one called yosh (Your Own SHell) in Python to answer my own curiosity. The concept I explain in this article can be applied to other languages as well.
