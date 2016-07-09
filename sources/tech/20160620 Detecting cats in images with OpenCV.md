@@ -1,5 +1,3 @@
-MikeCoder Translating...
-
 使用 OpenCV 识别图片中的猫
 =======================================
 
@@ -121,7 +119,7 @@ $ python cat_detector.py --image images/cat_01.jpg
 ```
 
 ![](http://www.pyimagesearch.com/wp-content/uploads/2016/05/cat_face_detector_result_01.jpg)
->第一步，在图片中检测猫脸，甚至是猫的一部分。
+>1. 在图片中检测猫脸，甚至是猫的一部分。
 
 注意，我们已经可以检测猫脸了，即使他的其余部分是被隐藏的。
 
@@ -132,20 +130,20 @@ python cat_detector.py --image images/cat_02.jpg
 ```
 
 ![](http://www.pyimagesearch.com/wp-content/uploads/2016/05/cat_face_detector_result_02.jpg)
->Figure 2: A second example of detecting a cat in an image with OpenCV, this time the cat face is slightly different 
+>2. 第二个例子就是在略微不同的猫脸中检测。
 
-This cat’s face is clearly different from the other one, as it’s in the middle of a “meow”. In either case, the cat detector cascade is able to correctly find the cat face in the image.
+这次的猫脸和第一次的明显不同，因为它在'Meow'的中央。这种情况下，我们依旧能检测到正确的猫脸。
 
-The same is true for this image as well:
+这张图片的结果也是正确的:
 
 ```
 $ python cat_detector.py --image images/cat_03.jpg
 ```
 
 ![](http://www.pyimagesearch.com/wp-content/uploads/2016/05/cat_face_detector_result_03.jpg)
->Figure 3: Cat detection with OpenCV and Python
+>3. 使用 OpenCV 和 python 检测猫脸
 
-Our final example demonstrates detecting multiple cats in an image using OpenCV and Python:
+我们最后的一个样例就是在一张图中检测多张猫脸:
 
 ```
 $ python cat_detector.py --image images/cat_04.jpg
@@ -153,57 +151,58 @@ $ python cat_detector.py --image images/cat_04.jpg
 
 ![](http://www.pyimagesearch.com/wp-content/uploads/2016/05/cat_face_detector_result_04.jpg)
 >Figure 4: Detecting multiple cats in the same image with OpenCV
+>4. 在同一张图片中使用 OpenCV 检测多只猫
 
-Note that the Haar cascade can return bounding boxes in an order that you may not like. In this case, the middle cat is actually labeled as the third cat. You can resolve this “issue” by sorting the bounding boxes according to their (x, y)-coordinates for a consistent ordering.
+注意，Haar cascade 的返回值并不是有序的。这种情况下，中间的那只猫会被标记成第三只。你可以通过判断他们的(x, y)坐标来自己排序。
 
-#### A quick note on accuracy
+#### 精度的 Tips
 
-It’s important to note that in the comments section of the .xml  files, Joseph Howe details that the cat detector Haar cascades can report cat faces where there are actually human faces.
+xml 文件中的注释，非常重要，Joseph Hower 提到了猫 脸检测器有可能会将人脸识别成猫脸。
 
-In this case, he recommends performing both face detection and cat detection, then discarding any cat bounding boxes that overlap with the face bounding boxes.
+这种情况下，他推荐使用两种检测器(人脸&猫脸)，然后将出现在人脸识别结果中的结果剔除掉。
 
-#### A note on Haar cascades
+#### Haar cascades 注意事项
 
-First published in 2001 by Paul Viola and Michael Jones, [Rapid Object Detection using a Boosted Cascade of Simple Features][7], this original work has become one of the most cited papers in computer vision.
+这个方法首先出现在 Paul Viola 和 Michael Jones 2001 年发布的 [Rapid Object Detection using a Boosted Cascade of Simple Features] 论文中。现在它已经成为了计算机识别领域引用最多的成果之一。
 
-This algorithm is capable of detecting objects in images, regardless of their location and scale. And perhaps most intriguing, the detector can run in real-time on modern hardware.
+这个算法能够识别图片中的对象，无论地点，规模。并且，他也能在现有的硬件条件下实现实时计算。
 
-In their paper, Viola and Jones focused on training a face detector; however, the framework can also be used to train detectors for arbitrary “objects”, such as cars, bananas, road signs, etc.
+在他们的论文中，Viola 和 Jones 关注在训练人脸检测器；但是，这个框架也能用来检测各类事物，如汽车，香蕉，路标等等。
 
-#### The problem?
+#### 有问题？
 
 The biggest problem with Haar cascades is getting the detectMultiScale  parameters right, specifically scaleFactor  and minNeighbors . You can easily run into situations where you need to tune both of these parameters on an image-by-image basis, which is far from ideal when utilizing an object detector.
 
-The scaleFactor  variable controls your [image pyramid][8] used to detect objects at various scales of an image. If your scaleFactor  is too large, then you’ll only evaluate a few layers of the image pyramid, potentially leading to you missing objects at scales that fall in between the pyramid layers.
+Haar cascades 最大的问题就是如何确定 detectMultiScale 方法的参数正确。特别是 scaleFactor 和 minNeighbors 参数。你很容易陷入，一张一张图片调参数的坑，这个就是该模型很难被实用化的原因。
 
-On the other hand, if you set scaleFactor  too low, then you evaluate many pyramid layers. This will help you detect more objects in your image, but it (1) makes the detection process slower and (2) substantially increases the false-positive detection rate, something that Haar cascades are known for.
+这个 scaleFactor 变量控制了用来检测图片各种对象的[图像棱锥图][8]。如何参数过大，你就会得到更少的特征值，这会导致你无法在图层中识别一些目标。
 
-To remember this, we often apply [Histogram of Oriented Gradients + Linear SVM detection][9] instead.
+换句话说，如果参数过低，你会检测出过多的图层。这虽然可以能帮助你检测更多的对象。但是他会造成计算速度的降低还会提高错误率。
 
-The HOG + Linear SVM framework parameters are normally much easier to tune — and best of all, HOG + Linear SVM enjoys a much smaller false-positive detection rate. The only downside is that it’s harder to get HOG + Linear SVM to run in real-time.
+为了避免这个，我们通常使用[Histogram of Oriented Gradients + Linear SVM detection][9]。
 
-### Interested in learning more about object detection?
+HOG + 线性 SVM 框架，它的参数更加容易的进行调优。而且也有更低的错误识别率，但是最大的缺点及时无法实时运算。
+
+### 对对象识别感兴趣？并且希望了解更多？
 
 ![](http://www.pyimagesearch.com/wp-content/uploads/2016/05/custom_object_detector_example.jpg)
->Figure 5: Learn how to build custom object detectors inside the PyImageSearch Gurus course.
+>5. 在 PyImageSearch Gurus 课程中学习如何构建自定义的对象识别器。
 
-If you’re interested in learning how to train your own custom object detectors, be sure to take a look at the PyImageSearch Gurus course.
+如果你对学习如何训练自己的自定义对象识别器，请务必要去学习 PyImageSearch Gurus 的课程。
 
-Inside the course, I have 15 lessons covering 168 pages of tutorials dedicated to teaching you how to build custom object detectors from scratch.  You’ll discover how to detect road signs, faces, cars (and nearly any other object) in images by applying the HOG + Linear SVM framework for object detection.
+在这个课程中，我提供了15节课还有超过168页的教程，来教你如何从0开始构建自定义的对象识别器。你会掌握如何应用 HOG+线性 SVM 计算框架来构建自己的对象识别器。
 
-To learn more about the PyImageSearch Gurus course (and grab 10 FREE sample lessons), just click the button below:
+### 总结
 
-### Summary
+在这篇博客里，我们学习了如何使用默认的 Haar cascades 来识别图片中的猫脸。这些 Haar casacades 是通过[Joseph Howse][9] 贡献给 OpenCV 项目的。我是在[这篇文章][10]中开始注意到这个。
 
-In this blog post, we learned how to detect cats in images using the default Haar cascades shipped with OpenCV. These Haar cascades were trained and contributed to the OpenCV project by [Joseph Howse][9], and were originally brought to my attention [in this post][10] by Kendrick Tan.
+尽管 Haar cascades 相当有用，但是我们也经常用 HOG 和 线性 SVM 替代。因为后者相对而言更容易使用，并且可以有效地降低错误的识别概率。
 
-While Haar cascades are quite useful, we often use HOG + Linear SVM instead, as it’s a bit easier to tune the detector parameters, and more importantly, we can enjoy a much lower false-positive detection rate.
+我也会在[在 PyImageSearch Gurus 的课程中][11]详细的讲述如何使用 HOG 和线性 SVM 对象识别器，来识别包括汽车，路标在内的各种事物。
 
-I detail how to build custom HOG + Linear SVM object detectors to recognize various objects in images, including cars, road signs, and much more [inside the PyImageSearch Gurus course][11].
+不管怎样，我希望你享受这篇博客。
 
-Anyway, I hope you enjoyed this blog post!
-
-Before you go, be sure to signup for the PyImageSearch Newsletter using the form below to be notified when new blog posts are published.
+在你离开之前，确保你会使用这下面的表单注册 PyImageSearch Newsletter。这样你能收到最新的消息。
 
 --------------------------------------------------------------------------------
 
