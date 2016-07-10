@@ -1,3 +1,5 @@
+MikeCoder 2016.07.10 Translating
+
 Tutorial: Getting started with Docker Swarm and deploying a replicated Python 3 Application
 ==============
 
