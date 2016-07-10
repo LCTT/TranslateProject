@@ -1,3 +1,4 @@
+Translating by cposture 2016.07.09
 Create Your Own Shell in Python - Part II
 ===========================================
 
