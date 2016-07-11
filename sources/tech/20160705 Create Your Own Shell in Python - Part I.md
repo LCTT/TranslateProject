@@ -1,15 +1,15 @@
-Translating by cposture 2016.07.09
-Create Your Own Shell in Python : Part I
+使用 Python 创建你自己的 Shell：Part I
+==========================================
 
-I’m curious to know how a shell (like bash, csh, etc.) works internally. So, I implemented one called yosh (Your Own SHell) in Python to answer my own curiosity. The concept I explain in this article can be applied to other languages as well.
+我很好奇一个 shell （像 bash，csh 等）内部是如何工作的。为了满足自己的好奇心，我使用 Python 实现了一个名为 yosh （Your Own Shell）的 Shell。本文章所介绍的概念也可以应用于其他编程语言。
 
-(Note: You can find source code used in this blog post here. I distribute it with MIT license.)
+（提示：你可以发布于此的博文中找到使用的源代码，代码以 MIT 许可发布）
 
-Let’s start.
+让我们开始吧。
 
-### Step 0: Project Structure
+### 步骤 0：项目结构
 
-For this project, I use the following project structure.
+对于此项目，我使用了以下的项目结构。
 
 ```
 yosh_project
@@ -18,17 +18,17 @@ yosh_project
    |-- shell.py
 ```
 
-`yosh_project` is the root project folder (you can also name it just `yosh`).
+`yosh_project` 为项目根目录（你也可以把它简单地命名为 `yosh`）。
 
-`yosh` is the package folder and `__init__.py` will make it a package named the same as the package folder name. (If you don’t write Python, just ignore it.)
+`yosh` 为包目录，并且 `__init__.py` 将会使一个包名等同于包目录名字（如果你不写 Python，可以忽略它）
 
-`shell.py` is our main shell file.
+`shell.py` 是我们的主脚本文件。
 
-### Step 1: Shell Loop
+### 步骤 1：Shell 循环
 
-When you start a shell, it will show a command prompt and wait for your command input. After it receives the command and executes it (the detail will be explained later), your shell will be back to the wait loop for your next command.
+当你启动一个 shell，它会显示一个命令提示符同时等待用户输入命令。在接收了输入的命令并执行它之后（稍后文章会进行详细解释），你的 shell 会回到循环，等待下一条指令。
 
-In `shell.py`, we start by a simple main function calling the shell_loop() function as follows:
+在 `shell.py`，我们会以一个简单的 mian 函数开始，该函数调用了 shell_loop() 函数，如下：
 
 ```
 def shell_loop():
@@ -43,7 +43,7 @@ if __name__ == "__main__":
     main()
 ```    
 
-Then, in our `shell_loop()`, we use a status flag to indicate whether the loop should continue or stop. In the beginning of the loop, our shell will show a command prompt and wait to read command input.
+接着，在 `shell_loop()`，为了指示循环是否继续或停止，我们使用了一个状态标志。在循环的开始，我们的 shell 将显示一个命令提示符，并等待读取命令输入。
 
 ```
 import sys
@@ -64,9 +64,9 @@ def shell_loop():
         cmd = sys.stdin.readline()
 ```
 
-After that, we tokenize the command input and execute it (we’ll implement the tokenize and execute functions soon).
+之后，我们切分命令输入并进行执行（我们将马上解释命令切分和执行函数）。
 
-Therefore, our shell_loop() will be the following.
+因此，我们的 shell_loop() 会是如下这样：
 
 ```
 import sys
@@ -93,14 +93,15 @@ def shell_loop():
         status = execute(cmd_tokens)
 ```
 
-That’s all of our shell loop. If we start our shell with python shell.py, it will show the command prompt. However, it will throw an error if we type a command and hit enter because we don’t define tokenize function yet.
+这就是我们整个 shell 循环。如果我们使用 python shell.py 命令启动 shell，它会显示命令提示符。然而如果我们输入命令并按回车，它将会抛出错误，因为我们还没定义命令切分函数。
 
-To exit the shell, try ctrl-c. I will tell how to exit gracefully later.
+为了退出 shell，可以尝试输入 ctrl-c。稍后我将解释如何以优雅的形式退出 shell。
 
-### Step 2: Tokenization
+### 步骤 2：命令切分
 
-When a user types a command in our shell and hits enter. The command input will be a long string containing both a command name and its arguments. Therefore, we have to tokenize it (split a string into several tokens).
+当一个用户在我们的 shell 中输入命令并按下回车键，该命令将会是一个包含命令名称及其参数的很长的字符串。因此，我们必须切分该字符串（分割一个字符串为多个标记）。
 
+咋一看它似乎很简单。我们或许可以使用 cmd.split()，用空格分割输入。
 It seems simple at first glance. We might use cmd.split() to separate the input by spaces. It works well for a command like `ls -a my_folder` because it splits the command into a list `['ls', '-a', 'my_folder']` which we can use them easily.
 
 However, there are some cases that some arguments are quoted with single or double quotes like `echo "Hello World"` or `echo 'Hello World'`. If we use cmd.split(), we will get a list of 3 tokens `['echo', '"Hello', 'World"']` instead of 2 tokens `['echo', 'Hello World']`.
