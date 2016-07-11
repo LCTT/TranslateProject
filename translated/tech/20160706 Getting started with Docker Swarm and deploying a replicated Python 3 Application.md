@@ -1,5 +1,3 @@
-MikeCoder 2016.07.10 Translating
-
 教程:开始学习如何使用 Docker Swarm 部署可扩展的 Python3 应用
 ==============
 
