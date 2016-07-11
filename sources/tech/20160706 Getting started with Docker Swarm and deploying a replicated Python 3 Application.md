@@ -1,20 +1,19 @@
 MikeCoder 2016.07.10 Translating
 
-Tutorial: Getting started with Docker Swarm and deploying a replicated Python 3 Application
+教程:开始学习如何使用 Docker Swarm 部署可扩展的 Python3 应用
 ==============
 
-At [Dockercon][1] recently [Ben Firshman][2] did a very cool presentation on building serverless apps with Docker, you can [read about it here][3] (along with watching the video). A little while back [I wrote an article][4] on building a microservice with [AWS Lambda][5].
+[Ben Firshman][2]最近在[Dockercon][1]做了一个关于使用 Docker 构建无服务应用的演讲，你可以在[这查看详情][3](可以和视频一起)。之后，我写了[一篇文章][4]关于如何使用[AWS Lambda][5]构建微服务系统。
 
-Today, I want to show you how to use [Docker Swarm][6] and then deploy a simple Python Falcon REST app. Although I won’t be using [dockerrun][7] or the serverless capabilities I think you might be surprised how easy it is to deploy (replicated) Python applications (actually any sort of application: Java, Go, etc.) with Docker Swarm.
+今天，我想展示给你的就是如何使用[Docker Swarm][6]然后部署一个简单的 Python Falcon REST 应用。尽管，我不会使用[dockerrun][7]或者是其他无服务特性。你可能会惊讶，使用 Docker Swarm 部署(替换)一个 Python(Java, Go 都一样) 应用是如此的简单。
 
+注意：这展示的部分步骤是截取自[Swarm Tutorial][8]。我已经修改了部分章节，并且[在 Vagrant 的帮助文档][9]中添加了构建本地测试环境的文档。请确保，你使用的是1.12或以上版本的 Docker 引擎。我写这篇文章的时候，使用的是1.12RC2版本的 Docker。注意的是，这只是一个测试版本，只会可能还会有修改。
 
-Note: Some of the steps I’ll show you are taken from the [Swarm Tutorial][8]. I’ve modified some things and [added a Vagrant helper repo][9] to spin up a local testing environment for Docker Swarm to utilize. Keep in mind you must be using Docker Engine 1.12 or later. At the time of this article I am using RC2 of 1.12. Keep in mind this is all build on beta software at this time, things can change.
+你要做的第一件事，就是你要保证你正确的安装了[Vagrant][10]，如果你想本地运行的话。你也可以按如下步骤使用你最喜欢的云服务提供商部署 Docker Swarm 虚拟机系统。
 
-The first thing you will want to do is to ensure you have [Vagrant][10] properly installed and working if you want to run this locally. You can also follow the steps for the most part and spin up the Docker Swarm VMs on your preferred cloud provider.
+我们将会使用这三台 VM:一个简单的 Docker Swarm 管理平台和两台 worker。
 
-We are going to spin up three VMs: A single docker swarm manager and two workers.
-
-Security Note: The Vagrantfile uses a shell script located on Docker’s test server. This is a potential security issue to run scripts you don’t have control over so make sure to [review the script][11] prior to running.
+安全注意事项:Vagrantfile 代码中包含了部分位于 Docker 测试服务器上的 shell 脚本。这是一个隐藏的安全问题。如果你没有权限的话。请确保你会在运行代码之前[审查这部分的脚本][11]。
 
 ```
 $ git clone https://github.com/chadlung/vagrant-docker-swarm
@@ -23,67 +22,68 @@ $ vagrant plugin install vagrant-vbguest
 $ vagrant up
 ```
 
-The vagrant up command will take some time to complete.
+Vagrant up 命令可能会花很长的时间来执行。
 
-SSH into the manager1 VM:
+SSH 登陆进入 manager1 虚拟机:
 
 ```
 $ vagrant ssh manager1
 ```
 
-Run the following command in the manager1 ssh terminal session:
+在 manager1 的终端中执行如下命令:
 
 ```
 $ sudo docker swarm init --listen-addr 192.168.99.100:2377
 ```
 
-There will be no workers registered yet:
+现在还没有 worker 注册上来:
 
 ```
 $ sudo docker node ls
 ```
 
 Let’s register the two workers. Use two new terminal sessions (leave the manager1 session running):
+通过两个新的终端会话(退出 manager1 的登陆后)，我们注册两个 worker。
 
 ```
 $ vagrant ssh worker1
 ```
 
-Run the following command in the worker1 ssh terminal session:
+在 worker1 上执行如下命令:
 
 ```
 $ sudo docker swarm join 192.168.99.100:2377
 ```
 
-Repeat those commands used for worker1 but substitute worker2.
+在 worker2 上重复这些命令。
 
-From the manager1 terminal run:
+在 manager1 上执行这个命令:
 
 ```
 $ docker node ls
 ```
 
-You should see:
+你将会看到：
 
 ![](http://www.giantflyingsaucer.com/blog/wp-content/uploads/2016/06/Screen-Shot-2016-06-28-at-3.15.25-PM.png)
 
-On the manager1 terminal let’s deploy a simple service.
+开始在 manager1 的终端里，部署一个简单的服务。
 
 ```
 sudo docker service create --replicas 1 --name pinger alpine ping google.com
 ```
 
-That will deploy a service that will ping google.com to one of the workers (or manager, the manager can also run services but this [can also be disabled][12] if you only want workers to run containers). To see which node got the service run this:
+这个命令将会部署一个服务，他会从 worker 机器中的一台 ping google.com。(manager 也可以运行服务，不过[这也可以被禁止][12])如果你只是想 worker 运行容器的话)。可以使用如下命令，查看哪些节点正在执行服务:
 
 ```
 $ sudo docker service tasks pinger
 ```
 
-Result will be similar to this:
+结果回合这个比较类似:
 
 ![](http://www.giantflyingsaucer.com/blog/wp-content/uploads/2016/06/Screen-Shot-2016-06-28-at-5.23.05-PM.png)
 
-So we know its on worker1. Let’s go to the terminal session for worker1 and attach to the running container:
+所以，我们知道了服务正跑在 worker1 上。我们可以回到 worker1 的会话里，然后进入正在运行的容器:
 
 ```
 $ sudo docker ps
@@ -91,9 +91,9 @@ $ sudo docker ps
 
 ![](http://www.giantflyingsaucer.com/blog/wp-content/uploads/2016/06/Screen-Shot-2016-06-28-at-5.25.02-PM.png)
 
-You can see the container id is: ae56769b9d4d
+你可以看到容器的 id 是: ae56769b9d4d
 
-In my case I run:
+在我的例子中，我运行的是如下的代码:
 
 ```
 $ sudo docker attach ae56769b9d4d
@@ -101,19 +101,19 @@ $ sudo docker attach ae56769b9d4d
 
 ![](http://www.giantflyingsaucer.com/blog/wp-content/uploads/2016/06/Screen-Shot-2016-06-28-at-5.26.49-PM.png)
 
-You can just CTRL-C to stop the pinging.
+你可以仅仅只用 CTRL-C 来停止服务。
 
-Go back to the manager1 terminal session and remove the pinger service:
+回到 manager1，并且移除 pinger 服务。
 
 ```
 $ sudo docker service rm pinger
 ```
 
-Now we will move onto deploying a replicated Python app part of this article. Please keep in mind in order to keep this article simple and easy to follow this will be a bare bones trivial service.
+现在，我们将会部署可复制的 Python 应用。请记住，为了保持文章的简洁，而且容易复制，所以部署的是一个简单的应用。
 
-The first thing you will need to do is to either add your own image to [Docker Hub][13] or use [the one I already have][14]. Its a simple Python 3 Falcon REST app that has one endpoint: /hello with a param of value=SOME_STRING
+你需要做的第一件事就是将镜像放到[Docker Hub][13]上，或者使用我[已经上传的一个][14]。这是一个简单的 Python 3 Falcon REST 应用。他有一个简单的入口: /hello 带一个 value 参数。
 
-The Python code for the [chadlung/hello-app][15] image looks like this:
+[chadlung/hello-app][15]的 Python 代码看起来像这样:
 
 ```
 import json
@@ -143,7 +143,7 @@ if __name__ == '__main__':
     httpd.serve_forever()
 ```
 
-The Dockerfile is as simple as:
+Dockerfile 很简单:
 
 ```
 FROM python:3.4.4
@@ -159,22 +159,22 @@ WORKDIR /hello-app
 CMD ["python", "app.py"]
 ```
 
-Again, this is meant to be very trivial. You can hit the endpoint by running the image locally if you want: <http://127.0.0.1:8080/hello?value=Fred>
+再一次说明，这是非常详细的奖惩，如果你想，你也可以在本地访问这个入口: <http://127.0.0.1:8080/hello?value=Fred>
 
-This gives you back:
+这将返回如下结果:
 
 ```
 {"message": "Fred"}
 ```
 
-Build and deploy the hellp-app to Docker Hub (modify below to use your own Docker Hub repo or [use this one][15]):
+在 Docker Hub 上构建和部署这个 hello-app（修改成你自己的 Docker Hub 仓库或者[这个][15]）:
 
 ```
 $ sudo docker build . -t chadlung/hello-app:2
 $ sudo docker push chadlung/hello-app:2
 ```
 
-Now we want to deploy this to the Docker Swarm we set up earlier. Go into the manager1 terminal session and run:
+现在，我们可以将应用部署到之前的 Docker Swarm 了。登陆 manager1 终端，并且执行:
 
 ```
 $ sudo docker service create -p 8080:8080 --replicas 2 --name hello-app chadlung/hello-app:2
@@ -182,9 +182,9 @@ $ sudo docker service inspect --pretty hello-app
 $ sudo docker service tasks hello-app
 ```
 
-Now we are ready to test it out. Using any of the node’s IPs in the swarm hit the /hello endpoint. In my case I will just cURL from the manager1 terminal:
+现在，我们已经可以测试了。使用任何一个节点 Swarm 的 IP，来访问/hello 的入口，在本例中，我在 Manager1 的终端里使用 curl 命令:
 
-Remember, all IPs in the swarm will work even if the service is only running on one or more nodes.
+注意,在 Swarm 中的所有 IP 都可以工作，即使这个服务只运行在一台或者更多的节点上。
 
 ```
 $ curl -v -X GET "http://192.168.99.100:8080/hello?value=Chad"
@@ -192,7 +192,7 @@ $ curl -v -X GET "http://192.168.99.101:8080/hello?value=Test"
 $ curl -v -X GET "http://192.168.99.102:8080/hello?value=Docker"
 ```
 
-Results:
+结果就是:
 
 ```
 * Hostname was NOT found in DNS cache
@@ -213,53 +213,54 @@ Results:
 {"message": "Chad"}
 ```
 
-Calling the other node from my web browser:
+从浏览器中访问其他节点:
 
 ![](http://www.giantflyingsaucer.com/blog/wp-content/uploads/2016/06/Screen-Shot-2016-06-28-at-6.54.31-PM.png)
 
-If you want to see all the services running try this from the manager1 node:
+如果你想看运行的所有服务，你可以在 manager1 节点上运行如下代码:
 
 ```
 $ sudo docker service ls
 ```
-If you want to add some visualization to all this you can install [Docker Swarm Visualizer][16] (this is very handy for presentations, etc.). From the manager1 terminal session run the following:
+
+如果你想添加可视化控制平台，你可以安装[Docker Swarm Visualizer][16](这非常简单上手)。在 manager1 的终端中执行如下代码:
 
 ![]($ sudo docker run -it -d -p 5000:5000 -e HOST=192.168.99.100 -e PORT=5000 -v /var/run/docker.sock:/var/run/docker.sock manomarks/visualizer)
 
-Simply open a browser now and point it at: <http://192.168.99.100:5000/>
+打开你的浏览器，并且访问: <http://192.168.99.100:5000/>
 
-Results (assuming running two Docker Swarm services):
+结果(假设已经运行了两个 Docker Swarm 服务):
 
 ![](http://www.giantflyingsaucer.com/blog/wp-content/uploads/2016/06/Screen-Shot-2016-06-30-at-2.37.28-PM.png)
 
-To stop the hello-app (which was replicated to two nodes) run this from the manager1 terminal session:
+停止运行 hello-app(已经在两个节点上运行了)，可以在 manager1 上执行这个代码:
 
 ```
 $ sudo docker service rm hello-app
 ```
 
-To stop the Visualizer run this from the manager1 terminal session:
+如果想停止， 那么在 manager1 的终端中执行：
 
 ```
 $ sudo docker ps
 ```
 
-Get the container id, in my case it was: f71fec0d3ce1
+获得容器的 ID,这里是: f71fec0d3ce1
 
-Run this from the manager1 terminal session::
+从 manager1 的终端会话中执行这个代码:
 
 ```
 $ sudo docker stop f71fec0d3ce1
 ```
 
-Good luck with Docker Swarm and keep in kind this article was based on the release candidate of version 1.12.
+祝你使用 Docker Swarm。这篇文章主要是以1.12版本来进行描述的。
 
 --------------------------------------------------------------------------------
 
 via: http://www.giantflyingsaucer.com/blog/?p=5923
 
 作者：[Chad Lung][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/MikeCoder)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
