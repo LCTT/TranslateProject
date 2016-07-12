@@ -1,3 +1,5 @@
+Johnny-Liao translating...
+
 Advanced Image Processing with Python
 ======================================
 
