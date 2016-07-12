@@ -110,7 +110,7 @@ history -d [num]
 via: https://www.maketecheasier.com/linux-command-line-history-incognito/?utm_medium=feed&utm_source=feedpress.me&utm_campaign=Feed%3A+maketecheasier
 
 作者：[Himanshu Arora][a]
-译者：[译者ID](https://github.com/chunyang-wen)
+译者：[chunyang-wen](https://github.com/chunyang-wen)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
