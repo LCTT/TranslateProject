@@ -1,39 +1,37 @@
-chenxinlong translating
-
-Growing a career alongside Linux
+培养一个 Linux 职业生涯
 ==================================
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/OPENHERE_blue.png?itok=3eqp-7gT)
 
-My Linux story started in 1998 and continues today. Back then, I worked for The Gap managing thousands of desktops running [OS/2][1] (and a few years later, [Warp 3.0][2]). As an OS/2 guy, I was really happy then. The desktops hummed along and it was quite easy to support thousands of users with the tools the GAP had built. Changes were coming, though.
+我与 Linux 的故事开始于 1998 年，一直延续到今天。 当时我在 Gap 公司工作，管理着成千台运行着 [OS/2][1] 系统的台式机 ( 并且在随后的几年里是 [Warp 3.0][2])。 作为一个 OS/2 的使用者，那时我非常高兴。 随着这些台式机的嗡鸣，我们使用 Gap 开发的工具轻而易举地就能支撑起对成千的用户的服务支持。 然而，一切都将改变了。
 
-In November of 1998, I received an invitation to join a brand new startup which would focus on Linux in the enterprise. This startup became quite famous as [Linuxcare][2].
+在 1998 年的 11 月， 我收到邀请加入一个新成立的公司，这家公司将专注于 Linux 上。 这就是后来非常出名的 [Linuxcare][2].
 
-### My time at Linuxcare
+### 我在 Linuxcare 的时光
 
-I had played with Linux a bit, but had never considered delivering it to enterprise customers. Mere months later (which is a turn of the corner in startup time and space), I was managing a line of business that let enterprises get their hardware, software, and even books certified on a few flavors of Linux that were popular back then.
+我曾经有接触过一些 Linux ， 但我从未想过要把它提供给企业客户。仅仅几个月后 ( 从这里开始成为了空间和时间上的转折点 )， 我就在管理一整条线的业务，让企业获得他们的软件，硬件，甚至是证书认证等不同风格且在当时非常盛行的的 Linux 服务。
 
-I supported customers like IBM, Dell, and HP in ensuring their hardware ran Linux successfully. You hear a lot now about preloading Linux on hardware today, but way back then I was invited to Dell to discuss getting a laptop certified to run Linux for an upcoming trade show. Very exciting times! We also supported IBM and HP on a number of certification efforts that spanned a few years.
+我向我的客户提供像 IBM ，Dell ，HP 等产品以确保他们的硬件能够成功的运行 Linux 。 今天你们应该都听过许多关于在硬件上预载 Linux 的事， 但当时我被邀请到 Dell 去讨论有关于为即将到来的贸易展在笔记本电脑上运行 Linux 的相关事宜。  这是多么激动人心的时刻 ！同时我们也在有效期的几年内支持 IBM 和 HP 等多项认证工作。
 
-Linux was changing fast, much like it always has. It gained hardware support for more key devices like sound, network, graphics. At around that time, I shifted from RPM-based systems to [Debian][3] for my personal use.
+Linux 变化得非常快，并且它总是这样。 它也获得了更多的关键设备的支持，比如声音，网络和图形。在这段时间， 我把个人使用的系统从基于 RPM 的系统换成了 [Debian][3] 。
 
-### Using Linux through the years
+### 使用 Linux 的这些年
 
-Fast forward some years and I worked at a number of companies that did Linux as hardened appliances, Linux as custom software, and Linux in the data center. By the mid 2000s, I was busy doing consulting for that rather large software company in Redmond around some analysis and verification of Linux compared to their own solutions. My personal use had not changed though—I would still run Debian testing systems on anything I could.
+几年前我在一些以 Linux 为硬设备，客户软件以及数据中心的公司工作。而在二十世纪中期的时候，那时我正在忙着做咨询，而那些在 Redmond 的大型软件公司正围绕着 Linux 做一些分析和验证以和自己的解决方案做对比。 我个人使用的系统一直改变,我仍会在任何能做到的时候运行 Debian 测试系统。
 
-I really appreciated the flexibility of a distribution that floated and was forever updated. Debian is one of the most fun and well supported distributions and has the best community I've ever been a part of.
+我真的非常欣赏其发行版本的灵活性和永久更新状态。 Debian 是我所使用过的最有趣且拥有良好支持的发行版本且拥有最好的社区的版本之一。
 
-When I look back at my own adoption of Linux, I remember with fondness the numerous Linux Expo trade shows in San Jose, San Francisco, Boston, and New York in the early and mid 2000's. At Linuxcare we always did fun and funky booths, and walking the show floor always resulted in getting re-acquainted with old friends. Rumors of work were always traded, and the entire thing underscored the fun of using Linux in real endeavors.
+当我回首我使用 Linux 的这几年，我仍记得大约在二十世纪前期和中期的时候在圣何塞，旧金山，波士顿和纽约的那些 Linux 的展览会。在 Linuxcare 时我们总是会做一些有趣而且时髦的展览位，在那边逛的时候总会碰到一些老朋友。这一切工作都是需要付出代价的，所有的这一切都是在努力地强调使用 Linux 的乐趣。
 
-The rise of virtualization and cloud has really made the use of Linux even more interesting. When I was with Linuxcare, we partnered with a small 30-person company in Palo Alto. We would drive to their offices and get things ready for a trade show that they would attend with us. Who would have ever known that little startup would become VMware?
+同时，虚拟化和云的崛起也让 Linux 变得更加有趣。 当我在 Linuxcare 的时候， 我们常和 Palo Alto 的一个约 30 人左右的小公司在一块。我们会开车到他们的办公处然后准备一个展览并且他们也会参与进来。 谁会想得到这个小小的开端会成就后来的 VMware ？
 
-I have so many stories, and there were so many people I was so fortunate to meet and work with. Linux has evolved in so many ways and has become so important. And even with its increasing importance, Linux is still fun to use. I think its openness and the ability to modify it has contributed to a legion of new users, which always astounds me.
+我还有许多的故事，能认识这些人并和他们一起工作我感到很幸运。 Linux 在各方面都不断发展且变得尤为重要。 并且甚至随着它重要性的提升，它使用起来仍然非常有趣。 我认为它的开放性和可定制能力给它带来了大量的新用户，这也是让我感到非常震惊的一点。
 
-### Today
+### 现在
 
-I've moved away from doing mainstream Linux things over the past five years. I manage large scale infrastructure projects that include a variety of OSs (both proprietary and open), but my heart has always been with Linux.
+在过去的五年里我逐渐离开 Linux 的主流事物。 我所管理的大规模基础设施项目中包含着许多不同的操作系统 ( 包括非开源的和开源的 ), 但我的心一直以来都是和 Linux 在一起的。
 
-The constant evolution and fun of using Linux has been a driving force for me for over the past 18 years. I started with the 2.0 Linux kernel and have watched it become what it is now. It's a remarkable thing. An organic thing. A cool thing.
+在使用 Linux 过程中的乐趣和不断进步是在过去的 18 年里一直驱动我的动力。我从 Linux 2.0 内核开始看着它变成现在的这样。 Linux 是一个卓越，有机且非常酷的东西。
 
 --------------------------------------------------------------------------------
 
