@@ -1,4 +1,8 @@
-zky001开始翻译
+
+
+【flankershen翻译中】
+
+
 
 How to Set Nginx as Reverse Proxy on Centos7 CPanel
 ================================================================================
@@ -24,9 +28,9 @@ First of all, we need to install the EPEL repo to start-up with the process.
     --> Running transaction check
     ---> Package epel-release.noarch 0:7-5 will be installed
     --> Finished Dependency Resolution
-
+    
     Dependencies Resolved
-
+    
     ===============================================================================================================================================
     Package Arch Version Repository Size
     ===============================================================================================================================================
@@ -44,9 +48,9 @@ First of all, we need to install the EPEL repo to start-up with the process.
     --> Running transaction check
     ---> Package nDeploy-release-centos.noarch 0:1.0-1 will be installed
     --> Finished Dependency Resolution
-
+    
     Dependencies Resolved
-
+    
     ===============================================================================================================================================
     Package Arch Version Repository Size
     ===============================================================================================================================================
@@ -63,9 +67,9 @@ First of all, we need to install the EPEL repo to start-up with the process.
     (1/4): ndeploy/7/x86_64/primary_db | 14 kB 00:00:00
     (2/4): epel/x86_64/group_gz | 169 kB 00:00:00
     (3/4): epel/x86_64/primary_db | 3.7 MB 00:00:02
-
+    
     Dependencies Resolved
-
+    
     ===============================================================================================================================================
     Package Arch Version Repository Size
     ===============================================================================================================================================
@@ -78,7 +82,7 @@ First of all, we need to install the EPEL repo to start-up with the process.
     memcached x86_64 1.4.15-9.el7 base 84 k
     python-inotify noarch 0.9.4-4.el7 base 49 k
     python-lxml x86_64 3.2.1-4.el7 base 758 k
-
+    
     Transaction Summary
     ===============================================================================================================================================
     Install 2 Packages (+5 Dependent packages)
@@ -89,7 +93,7 @@ With these steps, we've completed with the installation of Nginx plugin in our s
 
     root@server1 [/usr]# /opt/nDeploy/scripts/cpanel-nDeploy-setup.sh enable
     Modifying apache http and https port in cpanel
-
+    
     httpd restarted successfully.
     Created symlink from /etc/systemd/system/multi-user.target.wants/nginx.service to /usr/lib/systemd/system/nginx.service.
     Created symlink from /etc/systemd/system/multi-user.target.wants/ndeploy_watcher.service to /usr/lib/systemd/system/ndeploy_watcher.service.
@@ -109,7 +113,7 @@ As you can see these script will modify the Apache port from 80 to another port 
     Main PID: 24760 (httpd)
     CGroup: /system.slice/httpd.service
     ‣ 24760 /usr/local/apache/bin/httpd -k start
-
+    
     Jan 18 06:34:23 server1.centos7-test.com systemd[1]: Starting Apache Web Server...
     Jan 18 06:34:23 server1.centos7-test.com apachectl[25606]: httpd (pid 24760) already running
     Jan 18 06:34:23 server1.centos7-test.com systemd[1]: Started Apache Web Server.
@@ -127,7 +131,7 @@ As you can see these script will modify the Apache port from 80 to another port 
     ├─25473 nginx: worker process
     ├─25474 nginx: worker process
     └─25475 nginx: cache manager process
-
+    
     Jan 17 17:18:29 server1.centos7-test.com systemd[1]: Starting nginx-nDeploy - high performance web server...
     Jan 17 17:18:29 server1.centos7-test.com nginx[3804]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
     Jan 17 17:18:29 server1.centos7-test.com nginx[3804]: nginx: configuration file /etc/nginx/nginx.conf test is successful
@@ -159,14 +163,14 @@ The virtualhost entries created for the existing users as located in the folder 
 
     listen 45.79.183.73:80;
     #CPIPVSIX:80;
-
+    
     # ServerNames
     server_name saheetha.com www.saheetha.com;
     access_log /usr/local/apache/domlogs/saheetha.com main;
     access_log /usr/local/apache/domlogs/saheetha.com-bytes_log bytes_log;
-
+    
     include /etc/nginx/sites-enabled/saheetha.com.include;
-
+    
     }
 
 We can confirm the working of the web server status by calling a website in the browser. Please see the web server information on my server after the installation.
@@ -200,4 +204,4 @@ via: http://linoxide.com/linux-how-to/set-nginx-reverse-proxy-centos-7-cpanel/
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:http://linoxide.com/author/saheethas/
+[a]: http://linoxide.com/author/saheethas/

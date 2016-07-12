@@ -1,16 +1,16 @@
 简介
 -------------------------------
 
-LCTT是“Linux中国”（[http://linux.cn/](http://linux.cn/)）的翻译组，负责从国外优秀媒体翻译Linux相关的技术、资讯、杂文等内容。
+LCTT 是“Linux中国”（[https://linux.cn/](https://linux.cn/)）的翻译组，负责从国外优秀媒体翻译 Linux 相关的技术、资讯、杂文等内容。
 
-LCTT已经拥有近百余名活跃成员，并欢迎更多的Linux志愿者加入我们的团队。
+LCTT 已经拥有几百名活跃成员，并欢迎更多的Linux志愿者加入我们的团队。
 
 ![logo](http://img.linux.net.cn/static/image/common/lctt_logo.png)
 
-LCTT的组成
+LCTT 的组成
 -------------------------------
 
-**选题**，负责选择合适的内容，并将原文转换为markdown格式，提交到LCTT的[TranslateProject](https://github.com/LCTT/TranslateProject) 库中。
+**选题**，负责选择合适的内容，并将原文转换为 markdown 格式，提交到 LCTT 的 [TranslateProject](https://github.com/LCTT/TranslateProject) 库中。
 
 **译者**，负责从选题中选择内容进行翻译。
 
@@ -21,44 +21,46 @@ LCTT的组成
 加入我们
 -------------------------------
 
-请首先加入翻译组的QQ群，群号是：198889102，加群时请说明是“志愿者”。加入后记得修改您的群名片为您的github的ID。
+请首先加入翻译组的 QQ 群，群号是：198889102，加群时请说明是“志愿者”。加入后记得修改您的群名片为您的 GitHub 的 ID。
 
-加入的成员，请先阅读[WIKI 如何开始](https://github.com/LCTT/TranslateProject/wiki/01-如何开始)。
+加入的成员，请先阅读 [WIKI 如何开始](https://github.com/LCTT/TranslateProject/wiki/01-如何开始)。
 
 如何开始
 -------------------------------
 
-请阅读[WIKI](https://github.com/LCTT/TranslateProject/wiki)。
+请阅读 [WIKI](https://github.com/LCTT/TranslateProject/wiki)。
 
 历史
 -------------------------------
 
 * 2013/09/10 倡议并得到了大家的积极响应，成立翻译组。
-* 2013/09/11 采用github进行翻译协作，并开始进行选题翻译。
+* 2013/09/11 采用 GitHub 进行翻译协作，并开始进行选题翻译。
 * 2013/09/16 公开发布了翻译组成立消息后，又有新的成员申请加入了。并从此建立见习成员制度。
-* 2013/09/24 鉴于大家使用Github的水平不一，容易导致主仓库的一些错误，因此换成了常规的fork+PR的模式来进行翻译流程。
-* 2013/10/11 根据对LCTT的贡献，划分了Core Translators组，最先的加入成员是vito-L和tinyeyeser。
-* 2013/10/12 取消对LINUX.CN注册用户的依赖，在QQ群内、文章内都采用github的注册ID。
-* 2013/10/18 正式启动man翻译计划。
+* 2013/09/24 鉴于大家使用 GitHub 的水平不一，容易导致主仓库的一些错误，因此换成了常规的 fork+PR 的模式来进行翻译流程。
+* 2013/10/11 根据对 LCTT 的贡献，划分了 Core Translators 组，最先的加入成员是 vito-L 和 tinyeyeser。
+* 2013/10/12 取消对 LINUX.CN 注册用户的依赖，在 QQ 群内、文章内都采用 GitHub 的注册 ID。
+* 2013/10/18 正式启动 man 翻译计划。
 * 2013/11/10 举行第一次北京线下聚会。
-* 2014/01/02 增加了Core Translators 成员: geekpi。
-* 2014/05/04 更换了新的QQ群：198889102
-* 2014/05/16 增加了Core Translators 成员: will.qian、vizv。
-* 2014/06/18 由于GOLinux令人惊叹的翻译速度和不错的翻译质量，升级为Core Translators成员。
+* 2014/01/02 增加了 Core Translators 成员: geekpi。
+* 2014/05/04 更换了新的 QQ 群：198889102
+* 2014/05/16 增加了 Core Translators 成员: will.qian、vizv。
+* 2014/06/18 由于 GOLinux 令人惊叹的翻译速度和不错的翻译质量，升级为 Core Translators 成员。
 * 2014/09/09 LCTT 一周年，做一年[总结](http://linux.cn/article-3784-1.html)。并将曾任 CORE 的成员分组为 Senior，以表彰他们的贡献。
-* 2014/10/08 提升bazz2为Core Translators成员。
-* 2014/11/04 提升zpl1025为Core Translators成员。
-* 2014/12/25 提升runningwater为Core Translators成员。
+* 2014/10/08 提升 bazz2 为 Core Translators 成员。
+* 2014/11/04 提升 zpl1025 为 Core Translators 成员。
+* 2014/12/25 提升 runningwater 为 Core Translators 成员。
 * 2015/04/19 发起 LFS-BOOK-7.7-systemd 项目。
-* 2015/06/09 提升ictlyh和dongfengweixiao为Core Translators成员。
-* 2015/11/10 提升strugglingyouth、FSSlc、Vic020、alim0x为Core Translators成员。
+* 2015/06/09 提升 ictlyh 和 dongfengweixiao 为 Core Translators 成员。
+* 2015/11/10 提升 strugglingyouth、FSSlc、Vic020、alim0x 为 Core Translators 成员。
+* 2016/05/09 提升 PurlingNayuki 为校对。
 
 活跃成员
 -------------------------------
 
 目前 TP 活跃成员有：
-- CORE @wxy,
-- CORE @DeadFire,
+- Leader @wxy,
+- Source @oska874,
+- Proofreader @PurlingNayuki,
 - CORE @geekpi,
 - CORE @GOLinux,
 - CORE @ictlyh,
@@ -71,50 +73,53 @@ LCTT的组成
 - CORE @Vic020,
 - CORE @dongfengweixiao,
 - CORE @alim0x,
-- Senior @reinoir,
+- Senior @DeadFire,
+- Senior @reinoir222,
 - Senior @tinyeyeser,
 - Senior @vito-L,
 - Senior @jasminepeng,
 - Senior @willqian,
 - Senior @vizv,
 - ZTinoZ,
+- martin2011qi,
 - theo-l,
-- luoxcat,
-- disylee,
+- Luoxcat,
 - wi-cuckoo,
+- disylee,
 - haimingfg,
 - KayGuoWhu,
 - wwy-hust,
-- martin2011qi,
-- cvsher,
+- felixonmars,
 - su-kaiyao,
+- GHLandy,
+- ivo-wang,
+- cvsher,
+- wyangsun,
+- DongShuaike,
 - flsf,
 - SPccman,
 - Stevearzh
+- mr-ping,
 - Linchenguang,
-- oska874
 - Linux-pdz,
 - 2q1w2007,
-- felixonmars,
-- wyangsun,
-- MikeCoder,
-- mr-ping,
-- xiqingongzi
 - H-mudcup,
-- zhangboyue,
+- cposture,
+- xiqingongzi,
 - goreliu,
-- DongShuaike,
+- NearTan,
 - TxmszLou,
 - ZhouJ-sh,
 - wangjiezhe,
-- NearTan,
 - icybreaker,
 - shipsw,
 - johnhoow,
+- soooogreen,
 - linuhap,
-- boredivan,
 - blueabysm,
-- liaoishere,
+- boredivan,
+- name1e5s,
+- StdioA,
 - yechunxiao19,
 - l3b2w1,
 - XLCYun,
@@ -122,46 +127,42 @@ LCTT的组成
 - tenght,
 - coloka,
 - luoyutiantang,
-- yupmoon,
+- sonofelice,
 - jiajia9linuxer,
 - scusjs,
 - tnuoccalanosrep,
 - woodboow,
 - 1w2b3l,
-- crowner,
-- mtunique,
-- dingdongnigetou,
-- CNprober,
 - JonathanKang,
-- Medusar,
+- crowner,
+- dingdongnigetou,
+- mtunique,
+- CNprober,
 - hyaocuk,
 - szrlee,
+- KnightJoker,
 - Xuanwo,
 - nd0104,
+- Moelf,
 - xiaoyu33,
 - guodongxiaren,
-- zzlyzq,
-- yujianxuechuan,
-- ailurus1991,
+- ynmlml,
+- vim-kakali,
 - ggaaooppeenngg,
 - Ricky-Gong,
+- zky001,
 - lfzark,
 - 213edu,
-- Tanete,
+- bestony,
+- mudongliang,
 - liuaiping,
-- jerryling315,
-- tomatoKiller,
-- stduolc,
-- shaohaolin,
 - Timeszoro,
 - rogetfan,
-- FineFan,
-- kingname,
-- jasminepeng,
 - JeffDing,
-- CHINAANSHE,
+- Yuking-net,
 
-（按提交行数排名前百）
+
+（按增加行数排名前百）
 
 LFS 项目活跃成员有：
 
@@ -173,7 +174,7 @@ LFS 项目活跃成员有：
 - @KevinSJ
 - @Yuking-net
 
-（更新于2015/11/29）
+（更新于2016/06/20）
 
 谢谢大家的支持！
 
