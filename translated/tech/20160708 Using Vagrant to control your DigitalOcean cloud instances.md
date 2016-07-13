@@ -1,21 +1,19 @@
-MikeCoder Translating...
-
-Using Vagrant to control your DigitalOcean cloud instances
+使用 Vagrant 控制你的 DigitalOcean 云主机
 =========================================================
 
 ![](https://cdn.fedoramagazine.org/wp-content/uploads/2016/06/fedora-vagrant-do-945x400.jpg)
 
-[Vagrant][1] is an application to create and support virtual development environments using virtual machines. Fedora has [official support for Vagrant][2] with libvirt on your local system. [DigitalOcean][3] is a cloud provider that provides a one-click deployment of a Fedora Cloud instance to an all-SSD server in under a minute. During the [recent Cloud FAD][4] in Raleigh, the Fedora Cloud team packaged a new plugin for Vagrant which enables Fedora users to keep up cloud instances in DigitalOcean using local Vagrantfiles.
+[Vagrant][1]  是一个创建和管理支持虚拟机开发环境的应用。Fedora 已经[官方支持 Vagrant][2]。[DigitalOcean][3]是一个提供一键部署的云计算服务提供商(主要是 Fedora 的服务实例)。在[最近的 Raleigh 举办的云计算 FAD][4]中，Fedora 云计算队伍已经打包了一个 Vagrant 的新的插件。它能够帮助用户通过使用本地的 Vagrantfile 来管理 DigitalOcean 实例。
 
 ### How to use this plugin
 
-First step is to install the package in the command line.
+第一步是安装 vagrant DigitalOcean 的插件软件包。
 
 ```
 $ sudo dnf install -y vagrant-digitalocean
 ```
 
-After installing the plugin, the next task is to create the local Vagrantfile. An example is provided below.
+安装 结束之后，下一个任务是创建本地的 Vagrantfile 文件。下面是一个例子。
 
 ```
 $ mkdir digitalocean
@@ -39,17 +37,17 @@ Vagrant.configure('2') do |config|
 end
 ```
 
-### Notes about Vagrant DigitalOcean plugin
+### Vagrant DigitalOcean 插件
 
-A few points to remember about the SSH key naming scheme: if you already have the key uploaded to DigitalOcean, make sure that the provider.ssh_key_name matches the name of the existing key in their server. The provider.image details are found at the [DigitalOcean documentation][5]. The AUTH token is created on the control panel within the Apps & API section.
+一定要记住几个 SSH 命令规范:如果你已经在 DigitalOcean 上传了秘钥，请确保 provider.ssh_key_name 和已经在服务器中的名字吻合。provider.image 具体的文档可以在[DigitalOcean documentation][5]找到。认证 Token 可以在控制管理器的 Apps & API 区域找到。
 
-You can then get the instance up with the following command.
+你可以通过以下命令来实例化一台主机。
 
 ```
 $ vagrant up --provider=digital_ocean
 ```
 
-This command will fire up the instance in the DigitalOcean server. You can then SSH into the box by using vagrant ssh command. Run vagrant destroy to destroy the instance.
+这个命令会启动一台 DigitalOcean 的服务器实例。你可以使用 vagrant ssh 命令来 ssh 登陆进入这个实例。执行 vagrant destroy 来废弃这个实例。
 
 
 
@@ -59,7 +57,7 @@ This command will fire up the instance in the DigitalOcean server. You can then 
 via: https://fedoramagazine.org/using-vagrant-digitalocean-cloud/
 
 作者：[Kushal Das][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/MikeCoder)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
