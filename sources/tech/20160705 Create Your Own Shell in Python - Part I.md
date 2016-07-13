@@ -152,16 +152,15 @@ execvp 是系统调用 exec 的一个变体。第一个参数是程序名字。v
 
 （还有其他 exec 变体，比如 execv、execvpe、execl、execlp、execlpe；你可以 google 它们获取更多的信息。）
 
+exec 会用即将运行的新进程替换调用进程的当前内存。在我们的例子中，我们的 shell 进程内存会被替换为 `mkdir` 程序。接着，mkdir 成为主进程并创建 test_dir 目录。最后该进程退出。
 
-exec replaces the current memory of a calling process with a new process to be executed. In our case, our shell process memory was replaced by `mkdir` program. Then, mkdir became the main process and created the test_dir directory. Finally, its process exited.
+这里的重点在于我们的 shell 进程已经被 mkdir 进程所替换。这就是我们的 shell 消失且不会等待下一条命令的原因。
 
-The main point here is that our shell process was replaced by mkdir process already. That’s the reason why our shell disappeared and did not wait for the next command.
+因此，我们需要其他的系统调用来解决问题：fork
 
-Therefore, we need another system call to rescue: fork.
+fork 会开辟新的内存并拷贝当前进程到一个新的进程。我们称这个新的进程为子进程，调用者进程为父进程。然后，子进程内存会被替换为被执行的程序。因此，我们的 shell，也就是父进程，可以免受内存替换的危险。
 
-fork will allocate new memory and copy the current process into a new process. We called this new process as child process and the caller process as parent process. Then, the child process memory will be replaced by a execed program. Therefore, our shell, which is a parent process, is safe from memory replacement.
-
-Let’s see our modified code.
+让我们看看已修改的代码。
 
 ```
 ...
@@ -194,25 +193,25 @@ def execute(cmd_tokens):
 ...
 ```
 
-When the parent process call `os.fork()`, you can imagine that all source code is copied into a new child process. At this point, the parent and child process see the same code and run in parallel.
+当我们的父进程调用 `os.fork()`时，你可以想象所有的源代码被拷贝到了新的子进程。此时此刻，父进程和子进程看到的是相同的代码，并且并行运行着。
 
-If the running code is belong to the child process, pid will be 0. Else, the running code is belong to the parent process, pid will be the process id of the child process.
+如果运行的代码属于子进程，pid 将为 0。否则，如果运行的代码属于父进程，pid 将会是子进程的进程 id。
 
-When os.execvp is invoked in the child process, you can imagine like all the source code of the child process is replaced by the code of a program that is being called. However, the code of the parent process is not changed.
+当 os.execvp 在子进程中被调用时，你可以想象子进程的所有源代码被替换为正被调用程序的代码。然而父进程的代码不会被改变。
 
-When the parent process finishes waiting its child process to exit or be terminated, it returns the status indicating to continue the shell loop.
+当父进程完成等待子进程退出或终止时，它会返回一个状态，指示继续 shell 循环。
 
-### Run
+### 运行
 
-Now, you can try running our shell and enter mkdir test_dir2. It should work properly. Our main shell process is still there and waits for the next command. Try ls and you will see the created directories.
+现在，你可以尝试运行我们的 shell 并输入 mkdir test_dir2。它应该可以正确执行。我们的主 shell 进程仍然存在并等待下一条命令。尝试执行 ls，你可以看到已创建的目录。
 
-However, there are some problems here.
+但是，这里仍有许多问题。
 
-First, try cd test_dir2 and then ls. It’s supposed to enter the directory test_dir2 which is an empty directory. However, you will see that the directory was not changed into test_dir2.
+第一，尝试执行 cd test_dir2，接着执行 ls。它应该会进入到一个空的 test_dir2 目录。然而，你将会看到目录没有变为 test_dir2。
 
-Second, we still have no way to exit from our shell gracefully.
+第二，我们仍然没有办法优雅地退出我们的 shell。
 
-We will continue to solve such problems in [Part 2][1].
+我们将会在 [Part 2][1] 解决诸如此类的问题。
 
 
 --------------------------------------------------------------------------------
