@@ -101,12 +101,12 @@ def shell_loop():
 
 当一个用户在我们的 shell 中输入命令并按下回车键，该命令将会是一个包含命令名称及其参数的很长的字符串。因此，我们必须切分该字符串（分割一个字符串为多个标记）。
 
-咋一看它似乎很简单。我们或许可以使用 cmd.split()，用空格分割输入。
-It seems simple at first glance. We might use cmd.split() to separate the input by spaces. It works well for a command like `ls -a my_folder` because it splits the command into a list `['ls', '-a', 'my_folder']` which we can use them easily.
+咋一看似乎很简单。我们或许可以使用 cmd.split()，用空格分割输入。它对类似 `ls -a my_folder` 的命令起作用，因为它能够将命令分割为一个列表 `['ls', '-a', 'my_folder']`，这样我们便能轻易处理它们了。
 
-However, there are some cases that some arguments are quoted with single or double quotes like `echo "Hello World"` or `echo 'Hello World'`. If we use cmd.split(), we will get a list of 3 tokens `['echo', '"Hello', 'World"']` instead of 2 tokens `['echo', 'Hello World']`.
+然而，也有一些类似 `echo "Hello World"` 或 `echo 'Hello World'` 以单引号或双引号引用参数的情况。如果我们使用 cmd.spilt，我们将会得到一个存有 3 个标记的列表 `['echo', '"Hello', 'World"']` 而不是 2 个标记 `['echo', 'Hello World']`。
 
-Fortunately, Python provides a library called shlex that helps us split like a charm. (Note: we can also use regular expression but it’s not the main point of this article.)
+幸运的是，Python 提供了一个名为 shlex 的库，能够帮助我们效验如神地分割命令。（提示：我们也可以使用正则表达式，但它不是本文的重点。）
+
 
 ```
 import sys
@@ -120,13 +120,13 @@ def tokenize(string):
 ...
 ```
 
-Then, we will send these tokens to the execution process.
+然后我们将这些标记发送到执行过程。
 
-### Step 3: Execution
+### 步骤 3：执行
 
-This is the core and fun part of a shell. What happened when a shell executes mkdir test_dir? (Note: mkdir is a program to be executed with arguments test_dir for creating a directory named test_dir.)
+这是 shell 中核心和有趣的一部分。当 shell 执行 mkdir test_dir 时，发生了什么？（提示：midir 是一个带有 test_dir 参数的执行程序，用于创建一个名为 test_dir 的目录。）
 
-The first function involved in this step is execvp. Before I explain what execvp does, let’s see it in action.
+execvp 是涉及这一步的首个函数。在我们解释 execvp 所做的事之前，让我们看看它的实际效果。
 
 ```
 import os
@@ -142,15 +142,16 @@ def execute(cmd_tokens):
 ...
 ```
 
-Try running our shell again and input a command `mkdir test_dir`, then, hit enter.
+再次尝试运行我们的 shell，并输入 `mkdir test_dir` 命令，接着按下回车键。
 
-The problem is, after we hit enter, our shell exits instead of waiting for the next command. However, the directory is correctly created.
+在我们敲下回车键之后，问题是我们的 shell 会直接退出而不是等待下一个命令。然而，目标正确地被创建。
 
-So, what execvp really does?
+因此，execvp 实际上做了什么？
 
-execvp is a variant of a system call exec. The first argument is the program name. The v indicates the second argument is a list of program arguments (variable number of arguments). The p indicates the PATH environment will be used for searching for the given program name. In our previous attempt, the mkdir program was found based on your PATH environment variable.
+execvp 是系统调用 exec 的一个变体。第一个参数是程序名字。v 表示第二个参数是一个程序参数列表（可变参数）。p 表示环境变量 PATH 会被用于搜索给定的程序名字。在我们上一次的尝试中，可以在你的 PATH 环境变量查找到 mkdir 程序。
 
-(There are other variants of exec such as execv, execvpe, execl, execlp, execlpe; you can google them for more information.)
+（还有其他 exec 变体，比如 execv、execvpe、execl、execlp、execlpe；你可以 google 它们获取更多的信息。）
+
 
 exec replaces the current memory of a calling process with a new process to be executed. In our case, our shell process memory was replaced by `mkdir` program. Then, mkdir became the main process and created the test_dir directory. Finally, its process exited.
 
