@@ -1,3 +1,5 @@
+MikeCoder Translating...
+
 Using Vagrant to control your DigitalOcean cloud instances
 =========================================================
 
