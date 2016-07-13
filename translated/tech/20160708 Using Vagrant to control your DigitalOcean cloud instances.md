@@ -5,7 +5,7 @@
 
 [Vagrant][1]  是一个创建和管理支持虚拟机开发环境的应用。Fedora 已经[官方支持 Vagrant][2]。[DigitalOcean][3]是一个提供一键部署的云计算服务提供商(主要是 Fedora 的服务实例)。在[最近的 Raleigh 举办的云计算 FAD][4]中，Fedora 云计算队伍已经打包了一个 Vagrant 的新的插件。它能够帮助用户通过使用本地的 Vagrantfile 来管理 DigitalOcean 实例。
 
-### How to use this plugin
+### 如何使用 Vagrant DigitalOcean 插件
 
 第一步是安装 vagrant DigitalOcean 的插件软件包。
 
