@@ -118,16 +118,19 @@ def main():
     shell_loop()
 ```
 
-我们定义 register_command 函数以添加一个内置函数到我们内置的命令哈希映射。 
-We define register_command function for adding a built-in function to our built-in commmand hash map. Then, we define init function and register the built-in cd function there.
+我们定义 register_command 函数以添加一个内置函数到我们内置的命令哈希映射。接着，我们定义 init 函数并且在这里注册内置的 cd 函数。 
 
-Notice the line register_command("cd", cd). The first argument is a command name. The second argument is a reference to a function. In order to let cd, in the second argument, refer to the cd function reference in yosh/builtins/cd.py, we have to put the following line in yosh/builtins/__init__.py.
+注意这行 register_command("cd", cd) 。第一个参数为命令的名字。第二个参数为一个函数引用。为了能够让第二个参数 cd 引用到 yosh/builtins/cd.py 中的cd 函数引用，我们必须将以下这行代码放在 yosh/builtins/__init__.py 文件中。
 
 ```
 from yosh.builtins.cd import *
 ```
+
+因此，在 yosh/shell.py 中，当我们从 yosh.builtins 导入 * 时，我们可以得到已经通过 yosh.builtins 
+被导入的 cd 函数引用。
 Therefore, in yosh/shell.py, when we import * from yosh.builtins, we get cd function reference that is already imported by yosh.builtins.
 
+我们已经准备好了代码。
 We’ve done preparing our code. Let’s try by running our shell as a module python -m yosh.shell at the same level as the yosh directory.
 
 Now, our cd command should change our shell directory correctly while non-built-in commands still work too. Cool.
