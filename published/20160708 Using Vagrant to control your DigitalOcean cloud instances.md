@@ -3,7 +3,7 @@
 
 ![](https://cdn.fedoramagazine.org/wp-content/uploads/2016/06/fedora-vagrant-do-945x400.jpg)
 
-[Vagrant][1]  是一个使用虚拟机创建和支持虚拟开发环境的应用。Fedora 官方已经在本地系统上通过库 `libvirt` [支持 Vagrant][2]。[DigitalOcean][3]是一个提供一键部署 Fedora 云服务实例到全固态存储服务器的云计算服务提供商。在[最近的 Raleigh 举办的 FAD 大会][4]中，Fedora 云计算队伍已经打包了一个 Vagrant 的新的插件，它能够帮助 Fedora 用户通过使用本地的 Vagrantfile 文件来管理 DigitalOcean 上的云服务实例。
+[Vagrant][1]  是一个使用虚拟机创建和支持虚拟开发环境的应用。Fedora 官方已经在本地系统上通过库 `libvirt` [支持 Vagrant][2]。[DigitalOcean][3] 是一个提供一键部署 Fedora 云服务实例到全 SSD 服务器的云计算服务提供商。在[最近的 Raleigh 举办的 FAD 大会][4]中，Fedora 云计算队伍为 Vagrant 打包了一个新的插件，它能够帮助 Fedora 用户通过使用本地的 Vagrantfile 文件来管理 DigitalOcean 上的云服务实例。
 
 ### 如何使用这个插件
 
@@ -39,8 +39,7 @@ end
 
 ### Vagrant DigitalOcean 插件的注意事项
 
-
-一定要记住的几个关于 SSH 的关键命名规范 : 如果你已经在 DigitalOcean 上传了秘钥，请确保 `provider.ssh_key_name`  和已经在服务器中的名字吻合。 `provider.image` 具体的文档可以在[DigitalOcean documentation][5]找到。在控制面板上的 `App & API` 部分可以创建认证令牌。
+一定要记住的几个关于 SSH 的关键命名规范 : 如果你已经在 DigitalOcean 上传了秘钥，请确保 `provider.ssh_key_name`  和已经在服务器中的名字吻合。 `provider.image` 具体的文档可以在[DigitalOcean documentation][5]找到。在控制面板上的 `App & API` 部分可以创建 AUTH 令牌。
 
 你可以使用下面的命令启动一个实例。
 
@@ -48,14 +47,14 @@ end
 $ vagrant up --provider=digital_ocean
 ```
 
-这个命令会在 DigitalOcean 的启动一个服务器实例。然后你就可以使用 `vagrant ssh` 命令来 `ssh` 登陆进入这个实例。执行 vagrant destroy 来删除这个实例。
+这个命令会在 DigitalOcean 的启动一个服务器实例。然后你就可以使用 `vagrant ssh` 命令来 `ssh` 登录进入这个实例。可以执行 `vagrant destroy` 来删除这个实例。
 
 --------------------------------------------------------------------------------
 
 via: https://fedoramagazine.org/using-vagrant-digitalocean-cloud/
 
 作者：[Kushal Das][a]
-译者：[译者ID](https://github.com/MikeCoder)
+译者：[MikeCoder](https://github.com/MikeCoder)
 校对：[Ezio](https://github.com/oska874)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
