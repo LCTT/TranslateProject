@@ -1,4 +1,3 @@
-translating by kylepeng93
 给学习OpenStack基础设施的新手的入门指南
 ===========================================================
 
@@ -39,7 +38,7 @@ translating by kylepeng93
 via: https://opensource.com/business/16/4/interview-openstack-infrastructure-beginners
 
 作者：[linux.com][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[kylepeng93](https://github.com/kylepeng93)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
