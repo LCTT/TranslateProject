@@ -1,26 +1,25 @@
-Translating by cposture 2016.07.09
-Create Your Own Shell in Python - Part II
+使用 Python 创建你自己的 Shell:Part II
 ===========================================
 
-In [part 1][1], we already created a main shell loop, tokenized command input, and executed a command by fork and exec. In this part, we will solve the remaining problmes. First, `cd test_dir2` does not change our current directory. Second, we still have no way to exit from our shell gracefully.
+在[part 1][1]，我们已经创建了一个主要的 shell 循环、切分了的命令输入，以及通过 fork 和 exec 执行命令。在这部分，我们将会解决剩下的问题。首先，`cd test_dir2` 命令无法修改我们的当前目录。其次，我们仍无法优雅地从 shell 中退出。
 
-### Step 4: Built-in Commands
+### 步骤 4：内置命令
 
-The statement “cd test_dir2 does not change our current directory” is true and false in some senses. It’s true in the sense that after executing the command, we are still at the same directory. However, the directory is actullay changed, but, it’s changed in the child process.
+“cd test_dir2 无法修改我们的当前目录” 这句话是对的，但在某种意义上也是错的。在执行完该命令之后，我们仍然处在同一目录，从这个意义上讲，它是对的。然而，目录实际上已经被修改，只不过它是在子进程中被修改。
 
-Remember that we fork a child process, then, exec the command which does not happen on a parent process. The result is we just change the current directory of a child process, not the directory of a parent process.
+还记得我们 fork 了一个子进程，然后执行命令，执行命令的过程没有发生在父进程上。结果是我们只是改变了子进程的当前目录，而不是父进程的目录。
 
-Then, the child process exits, and the parent process continues with the same intact directory.
+然后子进程退出，且父进程在原封不动的目录下继续运行。
 
-Therefore, this kind of commands must be built-in with the shell itself. It must be executed in the shell process without forking.
+因此，这类与 shell 自己相关的命令必须是内置命令。它必须在 shell 进程中执行而没有分叉（forking）。
 
 #### cd
 
-Let’s start with cd command.
+让我们从 cd 命令开始。
 
-We first create a builtins directory. Each built-in command will be put inside this directory.
+我们首先创建一个内置目录。每一个内置命令都会被放进这个目录中。
 
-```
+```shell
 yosh_project
 |-- yosh
    |-- builtins
@@ -30,9 +29,9 @@ yosh_project
    |-- shell.py
 ```
 
-In cd.py, we implement our own cd command by using a system call os.chdir.
+在 cd.py，我们通过使用系统调用 os.chdir 实现自己的 cd 命令。
 
-```
+```python
 import os
 from yosh.constants import *
 
@@ -43,9 +42,9 @@ def cd(args):
     return SHELL_STATUS_RUN
 ```
 
-Notice that we return shell running status from a built-in function. Therefore, we move constants into yosh/constants.py to be used across the project.
+注意，我们会从内置函数返回 shell 的运行状态。所以，为了能够在项目中继续使用常量，我们将它们移至 yosh/constants.py。
 
-```
+```shell
 yosh_project
 |-- yosh
    |-- builtins
@@ -56,16 +55,16 @@ yosh_project
    |-- shell.py
 ```
 
-In constants.py, we put shell status constants here.
+在 constants.py，我们将状态常量放在这里。
 
-```
+```python
 SHELL_STATUS_STOP = 0
 SHELL_STATUS_RUN = 1
 ```
 
-Now, our built-in cd is ready. Let’s modify our shell.py to handle built-in functions.
+现在，我们的内置 cd 已经准备好了。让我们修改 shell.py 来处理这些内置函数。
 
-```
+```python
 ...
 # Import constants
 from yosh.constants import *
@@ -90,6 +89,7 @@ def execute(cmd_tokens):
     ...
 ```
 
+我们使用一个 python 字典变量 built_in_cmds 作为哈希映射（a hash map），以存储我们的内置函数。在 execute 函数，我们提取命令的名字和参数。如果该命令在我们的哈希映射中，则调用对应的内置函数。
 We use a Python dictionary built_in_cmds as a hash map to store our built-in functions. In execute function, we extract command name and arguments. If the command name is in our hash map, we call that built-in function.
 
 (Note: built_in_cmds[cmd_name] returns the function reference that can be invoked with arguments immediately.)
