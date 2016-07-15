@@ -89,12 +89,11 @@ def execute(cmd_tokens):
     ...
 ```
 
-我们使用一个 python 字典变量 built_in_cmds 作为哈希映射（a hash map），以存储我们的内置函数。在 execute 函数，我们提取命令的名字和参数。如果该命令在我们的哈希映射中，则调用对应的内置函数。
-We use a Python dictionary built_in_cmds as a hash map to store our built-in functions. In execute function, we extract command name and arguments. If the command name is in our hash map, we call that built-in function.
+我们使用一个 python 字典变量 built_in_cmds 作为哈希映射（a hash map），以存储我们的内置函数。我们在 execute 函数中提取命令的名字和参数。如果该命令在我们的哈希映射中，则调用对应的内置函数。
 
-(Note: built_in_cmds[cmd_name] returns the function reference that can be invoked with arguments immediately.)
+（提示：built_in_cmds[cmd_name] 返回能直接使用参数调用的函数引用的。) 
 
-We are almost ready to use the built-in cd function. The last thing is to add cd function into the built_in_cmds map.
+我们差不多准备好使用内置的 cd 函数了。最后一步是将 cd 函数添加到 built_in_cmds 映射中。
 
 ```
 ...
@@ -119,6 +118,7 @@ def main():
     shell_loop()
 ```
 
+我们定义 register_command 函数以添加一个内置函数到我们内置的命令哈希映射。 
 We define register_command function for adding a built-in function to our built-in commmand hash map. Then, we define init function and register the built-in cd function there.
 
 Notice the line register_command("cd", cd). The first argument is a command name. The second argument is a reference to a function. In order to let cd, in the second argument, refer to the cd function reference in yosh/builtins/cd.py, we have to put the following line in yosh/builtins/__init__.py.
