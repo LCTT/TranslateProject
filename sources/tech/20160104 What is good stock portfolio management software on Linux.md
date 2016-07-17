@@ -1,26 +1,27 @@
 Translating by ivo-wang
 What is good stock portfolio management software on Linux
-linux上那些不错的股票投资组合管理软件
+linux上那些不错的管理股票组合投资软件
 ================================================================================
-If you are investing in the stock market, you probably understand the importance of a sound portfolio management plan.
-如果你在股票市场做投资，那么你可能非常清楚管理组合投资的计划有多重要。
- The goal of portfolio management is to come up with the best investment plan tailored for you, considering your risk tolerance, time horizon and financial goals.
- 组合投资管理的目标是依据你能承受的风险，时间层面的长短和资金盈利的目标去为你量身打造的一种投资计划。
-  Given its importance, no wonder there are no shortage of commercial portfolio management apps and stock market monitoring software, each touting various sophisticated portfolio performance tracking and reporting capabilities.
+如果你在股票市场做投资，那么你可能非常清楚管理组合投资的计划有多重要。管理组合投资的目标是依据你能承受的风险，时间层面的长短和资金盈利的目标去为你量身打造的一种投资计划。鉴于这类软件的重要性，难怪从不缺乏商业性质的app和股票行情检测软件，每一个都可以兜售复杂的组合投资以及跟踪报告功能。
 
 For those of you Linux aficionados who are looking for a **good open-source portfolio management tool** to manage and track your stock portfolio on Linux, I would highly recommend a Java-based portfolio manager called [JStock][1]. If you are not a big Java fan, you might be turned off by the fact that JStock runs on a heavyweight JVM. At the same time I am sure many people will appreciate the fact that JStock is instantly accessible on every Linux platform with JRE installed. No hoops to jump through to make it work on your Linux environment.
+对于这些linux爱好者们，我们找一个 **好用的开源组合投资管理工具** 用来在linux上管理和跟踪股票的组合投资，这里高度推荐一个基于java编写的管理软件[JStock][1]。如果你不是一个java粉，你不得不面对这样一个事实JStock需要运行在重型的JVM上。同时我相信许多人非常欣赏JStock安装JRE以后它可以非常迅速的安装在各个linux平台上。没有障碍能阻止你将它安装在你的linux环境中。
 
 The day is gone when "open-source" means "cheap" or "subpar". Considering that JStock is just a one-man job, JStock is impressively packed with many useful features as a portfolio management tool, and all that credit goes to Yan Cheng Cheok! For example, JStock supports price monitoring via watchlists, multiple portfolios, custom/built-in stock indicators and scanners, support for 27 different stock markets and cross-platform cloud backup/restore. JStock is available on multiple platforms (Linux, OS X, Android and Windows), and you can save and restore your JStock portfolios seamlessly across different platforms via cloud backup/restore.
+开源就意味着免费或标准低下的时代已经过去录。鉴于JStock只是一个个人完成的产物，作为一个组合投资管理软件它最令人印象深刻的是包含了非常多实用的功能，以上所有的荣誉属于它的作者Yan Cheng Cheok!例如，JStock 支持通过监视列表去监控价格，多种组合投资，按习惯/按固定 做股票指示与相关扫描，支持27个不同的股票市场和交易平台云端备份/还原。JStock支持多平台部署(Linux, OS X, Android 和 Windows)，你可以通过云端保存你的JStock记录，它可以无缝的还原到其他的不同平台上面。
 
 Sounds pretty neat, huh? Now I am going to show you how to install and use JStock in more detail.
 
-### Install JStock on Linux ###
+哈，现在我将向你展示如何安装以及使用过程的一些具体细节。
 
-Since JStock is written in Java, you must [install JRE][2] to run it. Note that JStock requires JRE 1.7 or higher. If your JRE version does not meet this requirement, JStock will fail with the following error.
+### 在Linux上安装JStock ###
+
+因为JStock使用Java编写，所以必须[安装 JRE][2]才能让它运行起来.小提示JStock 需要JRE1.7或更高版本。如你的JRE版本不能满足这个需求，JStock将会安装失败然后出现下面的报错。
 
     Exception in thread "main" java.lang.UnsupportedClassVersionError: org/yccheok/jstock/gui/JStock : Unsupported major.minor version 51.0
 
 Once you install JRE on your Linux, download the latest JStock release from the official website, and launch it as follows.
+一旦你安装了JRE在你的linux上，从官网下载最新的发布的JStock，然后启动它。
 
     $ wget https://github.com/yccheok/jstock/releases/download/release_1-0-7-13/jstock-1.0.7.13-bin.zip
     $ unzip jstock-1.0.7.13-bin.zip
@@ -28,31 +29,35 @@ Once you install JRE on your Linux, download the latest JStock release from the 
     $ chmod +x jstock.sh
     $ ./jstock.sh
 
-In the rest of the tutorial, let me demonstrate several useful features of JStock.
 
-### Monitor Stock Price Movements via Watchlist ###
+教程的其他部分，让我来给大家展示一些JStock的实用功能
+
+### 监视监控列表股票价格的波动 ###
 
 On JStock you can monitor stock price movement and automatically get notified by creating one or more watchlists. In each watchlist, you can add multiple stocks you are interested in. Then add your alert thresholds under "Fall Below" and "Rise Above" columns, which correspond to minimum and maximum stock prices you want to set, respectively.
 
+使用JStock你可以创建一个或多个监视列表，它可以自动的监视股票价格的波动并给你提供相应的通知。在每一个监视列表里面你可以添加多个感兴趣的股票进去。之后添加你的警戒值在"Fall Below"和"Rise Above"的表格里，分别是在相同股票设定最低价格和最高价格。
+
 ![](https://c2.staticflickr.com/2/1588/23795349969_37f4b0f23c_c.jpg)
 
-For example, if you set minimum/maximum prices of AAPL stock to $102 and $115.50, you will be alerted via desktop notifications if the stock price goes below $102 or moves higher than $115.50 at any time.
+例如你设置了AAPL股票的最低/最高价格分别是$102 和 $115.50，你将在价格低于$102或高于$115.50的任意时间在桌面得到通知。
 
 You can also enable email alert option, so that you will instead receive email notifications for such price events. To enable email alerts, go to "Options" menu. Under "Alert" tab, turn on "Send message to email(s)" box, and enter your Gmail account. Once you go through Gmail authorization steps, JStock will start sending email alerts to that Gmail account (and optionally CC to any third-party email address).
-
+你也可以设置邮件通知，因此你将收到一些价格信息的邮件通知。设置邮件通知在栏的"Options"选项。在"Alert"标签，打开"Send message to email(s)"，填入你的Gmail账户。一旦完成Gmail认证步骤，JStock将开始发送邮件通知到你的Gmail账户（也可以设置其他的第三方邮件地址）
 ![](https://c2.staticflickr.com/2/1644/24080560491_3aef056e8d_b.jpg)
 
-### Manage Multiple Portfolios ###
+### 管理多个组合投资 ###
 
 JStock allows you to manage multiple portfolios. This feature is useful if you are using multiple stock brokers. You can create a separate portfolio for each broker and manage your buy/sell/dividend transactions on a per-broker basis. You can switch different portfolios by choosing a particular portfolio under "Portfolio" menu. The following screenshot shows a hypothetical portfolio.
-
+JStock能够允许你管理多个组合投资。这个功能对于股票经纪人是非常实用的。你可以为经纪人创建一个投资项去管理你的 买入/卖出/红利 用来处理每一个经纪人的基本业务。你也可以切换不同的组合项目通过选择一个特别项目在"Portfolio"菜单里面。下面是一张截图用来展示一个意向投资
 ![](https://c2.staticflickr.com/2/1646/23536385433_df6c036c9a_c.jpg)
 
-Optionally you can enable broker fee option, so that you can enter any broker fees, stamp duty and clearing fees for each buy/sell transaction. If you are lazy, you can enable fee auto-calculation and enter fee schedules for each brokering firm from the option menu beforehand. Then JStock will automatically calculate and enter fees when you add transactions to your portfolio.
+Optionally you can enable broker fee option, so that you can enter any broker fees, stamp duty and clearing fees for each buy/sell transaction. If you are lazy, you can enable fee auto-calculation and enter fee schedules for each brokering firm from the option menu beforehand. Then JStock will automatically calculate and enter fees when you add transactions toyour portfolio.
+你可以随意的设置付给经纪人的消费，因此你能付给经纪人任意的小费，印花税以及清空每一比交易买卖的小费。如果你非常懒，你也能够在菜单里面设置自动计算小费和给每一个经纪人固定的小费。在完成交易之后JStock将自动的计算并发送小费。
 
 ![](https://c2.staticflickr.com/2/1653/24055085262_0e315c3691_b.jpg)
 
-### Screen Stocks with Built-in/Custom Indicators ###
+### 显示固定/自选股票提示 ###
 
 If you are doing any technical analysis on stocks, you may want to screen stocks based on various criteria (so-called "stock indicators"). For stock screening, JStock offers several [pre-built technical indicators][3] that capture upward/downward/reversal trends of individual stocks. The following is a list of available indicators.
 
