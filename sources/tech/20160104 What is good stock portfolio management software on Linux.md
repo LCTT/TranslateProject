@@ -1,7 +1,12 @@
 Translating by ivo-wang
 What is good stock portfolio management software on Linux
+linux上那些不错的股票投资组合管理软件
 ================================================================================
-If you are investing in the stock market, you probably understand the importance of a sound portfolio management plan. The goal of portfolio management is to come up with the best investment plan tailored for you, considering your risk tolerance, time horizon and financial goals. Given its importance, no wonder there are no shortage of commercial portfolio management apps and stock market monitoring software, each touting various sophisticated portfolio performance tracking and reporting capabilities.
+If you are investing in the stock market, you probably understand the importance of a sound portfolio management plan.
+如果你在股票市场做投资，那么你可能非常清楚管理组合投资的计划有多重要。
+ The goal of portfolio management is to come up with the best investment plan tailored for you, considering your risk tolerance, time horizon and financial goals.
+ 组合投资管理的目标是依据你能承受的风险，时间层面的长短和资金盈利的目标去为你量身打造的一种投资计划。
+  Given its importance, no wonder there are no shortage of commercial portfolio management apps and stock market monitoring software, each touting various sophisticated portfolio performance tracking and reporting capabilities.
 
 For those of you Linux aficionados who are looking for a **good open-source portfolio management tool** to manage and track your stock portfolio on Linux, I would highly recommend a Java-based portfolio manager called [JStock][1]. If you are not a big Java fan, you might be turned off by the fact that JStock runs on a heavyweight JVM. At the same time I am sure many people will appreciate the fact that JStock is instantly accessible on every Linux platform with JRE installed. No hoops to jump through to make it work on your Linux environment.
 
