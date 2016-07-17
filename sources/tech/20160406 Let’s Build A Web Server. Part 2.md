@@ -1,4 +1,3 @@
-Translating by cposture 2016.07.13
 Let’s Build A Web Server. Part 2.
 ===================================
 
