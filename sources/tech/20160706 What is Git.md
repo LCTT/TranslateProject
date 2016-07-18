@@ -1,3 +1,4 @@
+translating by cvsher
 What is Git
 ===========
 
