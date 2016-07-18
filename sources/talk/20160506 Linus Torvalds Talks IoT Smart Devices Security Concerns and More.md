@@ -1,3 +1,5 @@
+vim-kakali translating
+
 Linus Torvalds Talks IoT, Smart Devices, Security Concerns, and More[video]
 ===========================================================================
 
@@ -44,3 +46,4 @@ via: https://www.linux.com/news/linus-torvalds-talks-iot-smart-devices-security-
 [a]: https://www.linux.com/users/ericstephenbrown
 [0]: http://events.linuxfoundation.org/events/embedded-linux-conference
 [1]: http://go.linuxfoundation.org/elc-openiot-summit-2016-videos?utm_source=lf&utm_medium=blog&utm_campaign=linuxcom
+

@@ -222,7 +222,7 @@ KDE Plasma 5 – 第五代 KDE。大幅改进了设计和系统，新的默认�
 via: [https://tlhp.cf/kde-history/](https://tlhp.cf/kde-history/)
 
 作者：[Pavlo Rudyi][a] 
-译者：[jerryling315](https://github.com/jerryling315) 
+译者：[Moelf](https://github.com/Moelf) 
 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
