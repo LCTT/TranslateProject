@@ -1,3 +1,5 @@
+MikeCoder translating...
+
 How To Setup Bridge (br0) Network on Ubuntu Linux 14.04 and 16.04 LTS
 =======================================================================
 
