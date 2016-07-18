@@ -1,3 +1,5 @@
+vim-kakali translating
+
 Linus Torvalds Talks IoT, Smart Devices, Security Concerns, and More[video]
 ===========================================================================
 
