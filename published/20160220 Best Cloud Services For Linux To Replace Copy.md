@@ -3,9 +3,9 @@
 
 ![](http://itsfoss.com/wp-content/uploads/2016/02/Linux-cloud-services.jpg)
 
-云存储服务 Copy 即将关闭，我们 Linux 用户是时候该寻找其他优秀的** Copy 之外的 Linux 云存储服务**。
+云存储服务 Copy 已经关闭，我们 Linux 用户是时候该寻找其他优秀的** Copy 之外的 Linux 云存储服务**。
 
-全部文件将会在 2016年5月1号 被删除。如果你是 Copy 的用户，你应该保存你的文件并将它们移至其他地方。
+全部文件会在 2016年5月1号 被删除。如果你是 Copy 的用户，你应该保存你的文件并将它们移至其他地方。
 
 在过去的两年里，Copy 已经成为了我最喜爱的云存储。它为我提供了大量的免费空间并且带有桌面平台的原生应用程序，包括 Linux 和移动平台如 iOS 和 Android。
 
@@ -13,16 +13,16 @@
 
 当我从 Copy.com 看到它即将关闭的消息，我的担忧成真了。事实上，Copy 并不孤独。它的母公司 [Barracuda Networks](https://www.barracuda.com/)正经历一段困难时期并且已经[雇佣 Morgan Stanely 寻找 合适的卖家](http://www.bloomberg.com/news/articles/2016-02-01/barracuda-networks-said-to-work-with-morgan-stanley-to-seek-sale)(s)
 
-无论什么理由，我们所知道的是 Copy 将会成为历史，我们需要寻找相似的**优秀的 Linux 云服务**。我之所以强调 Linux 是因为其他流行的云存储服务，如[微软的OneDrive](https://onedrive.live.com/about/en-us/) 和 [Google Drive](https://www.google.com/drive/) 都没有提供本地 Linux 客户端。这是微软预计的事情，但是谷歌对 Linux 的冷漠令人震惊。
+无论什么理由，我们所知道的是 Copy 将会成为历史，我们需要寻找相似的**优秀的 Linux 云服务**。我之所以强调 Linux 是因为其他流行的云存储服务，如[微软的 OneDrive](https://onedrive.live.com/about/en-us/) 和 [Google Drive](https://www.google.com/drive/) 都没有提供本地 Linux 客户端。微软并没有出乎我们的预料，但是[谷歌对 Linux 的冷漠][1]令人震惊。
 
 ## Linux 下 Copy 的最佳替代者
 
-现在，作为一个 Linux 存储，在云存储中你需要什么？让我们猜猜：
+什么样的云服务才适合作为 Linux 下的存储服务？让我们猜猜：
 
-- 大量的免费空间。毕竟，个人用户无法每月支付巨额款项。
-- 原生的 Linux 客户端。因此你能够使用提供的服务，方便地同步文件，而不用做一些特殊的调整或者定时执行脚本。
-- 其他桌面系统的客户端，比如 Windows 和 OS X。便携性是必要的，并且同步设备间的文件是一种很好的缓解。
-- Android 和 iOS 的移动应用程序。在今天的现代世界里，你需要连接所有设备。
+- 大量的免费空间。毕竟，个人用户无法支付每月的巨额款项。
+- 原生的 Linux 客户端。以便你能够方便的在服务器之间同步文件，而不用做一些特殊的调整或者定时执行脚本。
+- 其他桌面系统的客户端，比如 Windows 和 OS X。移动性是必要的，并且同步设备间的文件也很有必要。
+- 基于 Android 和 iOS 的移动应用程序。在今天的现代世界里，你需要连接所有设备。
 
 我不将自托管的云服务计算在内，比如 OwnCloud 或 [Seafile](https://www.seafile.com/en/home/) ，因为它们需要自己建立和运行一个服务器。这不适合所有想要类似 Copy 的云服务的家庭用户。
 
@@ -32,7 +32,7 @@
 
 ![](http://itsfoss.com/wp-content/uploads/2016/02/Mega-Linux.jpg)
 
-如果你是一个 It’s FOSS 的普通读者，你可能已经看过我之前的一篇有关[Mega on Linux](http://itsfoss.com/install-mega-cloud-storage-linux/)的文章。这种云服务由[Megaupload scandal](https://en.wikipedia.org/wiki/Megaupload) 公司下臭名昭著的[Kim Dotcom](https://en.wikipedia.org/wiki/Kim_Dotcom)提供。这也使一些用户怀疑它，因为 Kim Dotcom 已经很长一段时间成为美国当局的目标。
+如果你是一个 It’s FOSS 的普通读者，你可能已经看过我之前的一篇有关 [Mega on Linux](http://itsfoss.com/install-mega-cloud-storage-linux/)的文章。这种云服务由 [Megaupload scandal](https://en.wikipedia.org/wiki/Megaupload) 公司下臭名昭著的 [Kim Dotcom](https://en.wikipedia.org/wiki/Kim_Dotcom) 提供。这也使一些用户怀疑它，因为 Kim Dotcom 已经很长一段时间成为美国当局的目标。
 
 Mega 拥有方便免费云服务下你所期望的一切。它给每个个人用户提供 50 GB 的免费存储空间。提供Linux 和其他平台下的原生客户端，并带有端到端的加密。原生的 Linux 客户端运行良好，可以无缝地跨平台同步。你也能在浏览器上查看操作你的文件。
 
@@ -74,7 +74,7 @@ Hubic 拥有一些不错的功能。除了简单的用户界面、文件共享�
 
 ![](http://itsfoss.com/wp-content/uploads/2016/02/pCloud-Linux.jpeg)
 
-pCloud 是另一款欧洲的发行软件，但这一次从瑞士横跨法国边境。专注于加密和安全，pCloud 为每一个注册者提供 10 GB 的免费存储空间。你可以通过邀请好友、在社交媒体上分享链接等方式将空间增加至 20 GB。
+pCloud 是另一款欧洲的发行软件，但这一次跨过了法国边境，它来自瑞士。专注于加密和安全，pCloud 为每一个注册者提供 10 GB 的免费存储空间。你可以通过邀请好友、在社交媒体上分享链接等方式将空间增加至 20 GB。
 
 它拥有云服务的所有标准特性，例如文件共享、同步、选择性同步等等。pCloud 也有跨平台原生客户端，当然包括 Linux。
 
@@ -128,8 +128,9 @@ via: http://itsfoss.com/cloud-services-linux/
 
 作者：[ABHISHEK][a]
 译者：[cposture](https://github.com/cposture)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:http://itsfoss.com/author/abhishek/
+[1]:https://itsfoss.com/google-hates-desktop-linux/
