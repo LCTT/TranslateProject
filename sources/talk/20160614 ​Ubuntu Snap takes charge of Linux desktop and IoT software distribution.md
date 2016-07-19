@@ -1,3 +1,6 @@
+vim-kakali translating
+
+
 Ubuntu Snap takes charge of Linux desktop and IoT software distribution
 ===========================================================================
 
