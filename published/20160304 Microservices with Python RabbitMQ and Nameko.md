@@ -1,4 +1,4 @@
-基于 Python、 RabbitMQ 和 Nameko 的微服务
+用 Python、 RabbitMQ 和 Nameko 实现微服务
 ==============================================
 
 >"微服务是一股新浪潮" - 现如今，将项目拆分成多个独立的、可扩展的服务是保障代码演变的最好选择。在 Python 的世界里，有个叫做 “Nameko” 的框架，它将微服务的实现变得简单并且强大。
@@ -8,19 +8,17 @@
 
 > 在最近的几年里，“微服务架构”如雨后春笋般涌现。它用于描述一种特定的软件应用设计方式，这种方式使得应用可以由多个独立部署的服务以服务套件的形式组成。 - M. Fowler
 
-推荐各位读一下 [Fowler's posts][1] 以理解它背后的原理。
-
+推荐各位读一下 [Fowler 的文章][1] 以理解它背后的原理。
 
 #### 好吧，那它究竟意味着什么呢？
 
-简单来说，**微服务架构**可以将你的系统拆分成多个负责不同任务的小块儿，它们之间互不依赖，各自只提供用于通讯的通用指向。这个指向通常是已经将通讯协议和接口定义好的消息队列。
-
+简单来说，**微服务架构**可以将你的系统拆分成多个负责不同任务的小的（单一上下文内）功能块（responsibilities blocks），它们彼此互无感知，各自只提供用于通讯的通用指向（common point）。这个指向通常是已经将通讯协议和接口定义好的消息队列。
 
 #### 这里给大家提供一个真实案例
 
->案例的代码可以通过github:  <http://github.com/rochacbruno/nameko-example> 访问，查看 service 和 api 文件夹可以获取更多信息。
+> 案例的代码可以通过 github:  <http://github.com/rochacbruno/nameko-example> 访问，查看 service 和 api 文件夹可以获取更多信息。
 
-想象一下，你有一个 REST API ，这个 API 有一个端点（译者注：REST 风格的 API 可以有多个端点用于处理对同一资源的不同类型的请求）用来接受数据，并且你需要将接收到的数据进行一些运算。那么相比阻塞接口调用者的请求来说，异步实现此接口是一个更好的选择。你可以先给用户返回一个 "OK - 你的请求稍后会处理" 的状态，然后在后台任务中完成运算。
+想象一下，你有一个 REST API ，这个 API 有一个端点（LCTT 译注：REST 风格的 API 可以有多个端点用于处理对同一资源的不同类型的请求）用来接受数据，并且你需要将接收到的数据进行一些运算工作。那么相比阻塞接口调用者的请求来说，异步实现此接口是一个更好的选择。你可以先给用户返回一个 "OK - 你的请求稍后会处理" 的状态，然后在后台任务中完成运算。
 
 同样，如果你想要在不阻塞主进程的前提下，在计算完成后发送一封提醒邮件，那么将“邮件发送”委托给其他服务去做会更好一些。
 
@@ -30,19 +28,17 @@
 ![](http://brunorocha.org/static/media/microservices/micro_services.png)
 
 
-### 用代码说话：
+### 用代码说话
 
 让我们将系统创建起来，在实践中理解它：
-
 
 #### 环境
 
 我们需要的环境：
 
-- 运行良好的 RabbitMQ（译者注：[RabbitMQ][2]是一个流行的消息队列实现）
+- 运行良好的 RabbitMQ（LCTT 译注：[RabbitMQ][2] 是一个流行的消息队列实现）
 - 由 VirtualEnv 提供的 Services 虚拟环境
 - 由 VirtualEnv 提供的 API　虚拟环境
-
 
 #### Rabbit
 
@@ -56,10 +52,9 @@ docker run -d --hostname my-rabbit --name some-rabbit -p 15672:15672 -p 5672:567
 
 ![](http://brunorocha.org/static/media/microservices/RabbitMQManagement.png)
 
-
 #### 服务环境
 
-现在让我们创建微服务来消费我们的任务。其中一个服务用来执行计算任务，另一个用来发送邮件。按以下步骤执行：
+现在让我们创建微服务来满足我们的任务需要。其中一个服务用来执行计算任务，另一个用来发送邮件。按以下步骤执行：
 
 在 Shell 中创建项目的根目录
 
@@ -81,7 +76,6 @@ $ source service_env/bin/activate
 (service_env)$ pip install nameko
 (service_env)$ pip install yagmail
 ```
-
 
 #### 服务的代码
 
@@ -135,7 +129,7 @@ class Compute(object):
 
 现在我们已经用以上代码定义好了两个服务，下面让我们将 Nameko RPC service 运行起来。
 
->注意：我们会在控制台中启动并运行它。但在生产环境中，建议大家使用 supervisord 替代控制台命令。
+> 注意：我们会在控制台中启动并运行它。但在生产环境中，建议大家使用 supervisord 替代控制台命令。
 
 在 Shell 中启动并运行服务
 
@@ -149,7 +143,7 @@ Connected to amqp://guest:**@127.0.0.1:5672//
 
 #### 测试
 
-在另外一个 Shell 中(使用相同的虚拟环境)，用 nameko shell 进行测试：
+在另外一个 Shell 中（使用相同的虚拟环境），用 nameko shell 进行测试：
 
 ```
 (service_env)$ nameko shell --broker amqp://guest:guest@localhost
@@ -178,19 +172,18 @@ Broker: amqp://guest:guest@localhost
 3
 ```
 
-
 ### 在 API 中调用微服务
 
 在另外一个 Shell 中（甚至可以是另外一台服务器上），准备好 API 环境。
 
-用 virtualenv 工具创建并且激活一个虚拟环境(你也可以使用virtualenv-wrapper)
+用 virtualenv 工具创建并且激活一个虚拟环境（你也可以使用 virtualenv-wrapper）
 
 ```
 $ virtualenv api_env
 $ source api_env/bin/activate
 ```
 
-安装 Nameko, Flask 和 Flasgger
+安装 Nameko、 Flask 和 Flasgger
 
 ```
 (api_env)$ pip install nameko
@@ -269,7 +262,7 @@ app.run(debug=True)
 
 ![](http://brunorocha.org/static/media/microservices/Flasgger_API_documentation.png)
 
->注意： 你可以在 shell 中查看到服务的运行日志，打印信息和错误信息。也可以访问 RabbitMQ 控制面板来查看消息在队列中的处理情况。
+> 注意： 你可以在 shell 中查看到服务的运行日志，打印信息和错误信息。也可以访问 RabbitMQ 控制面板来查看消息在队列中的处理情况。
 
 Nameko 框架还为我们提供了很多高级特性，你可以从 <https://nameko.readthedocs.org/en/stable/> 获取更多的信息。
 
@@ -282,7 +275,7 @@ via: http://brunorocha.org/python/microservices-with-python-rabbitmq-and-nameko.
 
 作者: [Bruno Rocha][a]
 译者: [mr-ping](http://www.mr-ping.com)
-校对: [校对者ID](https://github.com/校对者ID)
+校对: [wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

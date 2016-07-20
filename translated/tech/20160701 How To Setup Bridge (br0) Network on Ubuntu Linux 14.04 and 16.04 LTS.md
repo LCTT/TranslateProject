@@ -1,48 +1,49 @@
-How To Setup Bridge (br0) Network on Ubuntu Linux 14.04 and 16.04 LTS
+如何在 Ubuntu 14.04 和 16.04 上建立网桥(br0)
 =======================================================================
 
-> am a new Ubuntu Linux 16.04 LTS user. How do I setup a network bridge on the host server powered by Ubuntu 14.04 LTS or 16.04 LTS operating system?
+> 作为一个 Ubuntu 16.04 LTS 的初学者。如何在 Ubuntu 14.04 和 16.04 的主机上建立网桥呢？
 
 ![](http://s0.cyberciti.org/images/category/old/ubuntu-logo.jpg)
 
-A Bridged networking is nothing but a simple technique to connect to the outside network through the physical interface. It is useful for LXC/KVM/Xen/Containers virtualization and other virtual interfaces. The virtual interfaces appear as regular hosts to the rest of the network. In this tutorial I will explain how to configure a Linux bridge with bridge-utils (brctl) command line utility on Ubuntu server.
+顾名思义，网桥的作用是通过物理接口连接内部和外部网络。对于虚拟端口或者 LXC/KVM/Xen/容器来说，这非常有用。通过网桥虚拟端口看起来是网络上的一个常规设备。在这个教程中，我将会介绍如何在 Ubuntu 服务器上通过 bridge-utils(brctl) 命令行来配置 Linux 网桥。
 
-### Our sample bridged networking
+### 网桥网络示例
 
 ![](http://s0.cyberciti.org/uploads/faq/2016/07/my-br0-br1-setup.jpg)
->Fig.01: Sample Ubuntu Bridged Networking Setup For Kvm/Xen/LXC Containers (br0)
+>Fig.01: Kvm/Xen/LXC 容器网桥实例 (br0)
 
 In this example eth0 and eth1 is the physical network interface. eth0 connected to the LAN and eth1 is attached to the upstream ISP router/Internet.
+在这个例子中，eth0 和 eth1 是物理网络接口。eth0 连接着局域网，eth1 连接着上游路由器/网络。
 
-### Install bridge-utils
+### 安装 bridge-utils
 
-Type the following [apt-get command][1] to install the bridge-utils:
+使用[apt-get 命令][1] 安装 bridge-utils:
 
 ```
 $ sudo apt-get install bridge-utils
 ```
 
-OR
+或者
 
 ````
 $ sudo apt install bridge-utils
 ```
 
-Sample outputs:
+样例输出:
 
 ![](http://s0.cyberciti.org/uploads/faq/2016/07/ubuntu-install-bridge-utils.jpg)
->Fig.02: Ubuntu Linux install bridge-utils package
+>Fig.02: Ubuntu 安装 bridge-utils 包
 
-### Creating a network bridge on the Ubuntu server
+### 在 Ubuntu 服务器上创建网桥
 
-Edit `/etc/network/interfaces` using a text editor such as nano or vi, enter:
+使用你熟悉的文本编辑器修改 `/etc/network/interfaces` ，例如 vi 或者 nano ：
 
 ```
 $ sudo cp /etc/network/interfaces /etc/network/interfaces.bakup-1-july-2016
 $ sudo vi /etc/network/interfaces
 ```
 
-Let us setup eth1 and map it to br1, enter (delete or comment out all eth1 entries):
+接下来设置 eth1 并且将他绑定到 br1 ，输入（删除或者注释所有 eth1 相关配置）：
 
 ```
 # br1 setup with static wan IPv4 with ISP router as gateway
@@ -59,7 +60,7 @@ iface br1 inet static
         bridge_maxwait 0
 ```
 
-To setup eth0 and map it to br0, enter (delete or comment out all eth1 entries):
+接下来设置 eth0 并将它绑定到 br0，输入（删除或者注释所有 eth1 相关配置）：
 
 ```
 auto br0
@@ -77,9 +78,9 @@ iface br0 inet static
         bridge_maxwait 0
 ```
 
-### A note about br0 and DHCP
+### 关于 br0 和 DHCP 的一点说明
 
-DHCP config options:
+DHCP 的配置选项：
 
 ```
 auto br0
@@ -90,25 +91,25 @@ iface br0 inet dhcp
         bridge_maxwait 0
 ```
 
-Save and close the file.
+保存并且关闭文件。
 
-### Restart the server or networking service
+### 重启服务器或者网络服务
 
-You need to reboot the server or type the following command to restart the networking service (this may not work on SSH based session):
+你需要重启服务器或者输入下列命令来重启网络服务（在 SSH 登陆的会话中这可能不管用）：
 
 ```
 $ sudo systemctl restart networking
 ```
 
-If you are using Ubuntu 14.04 LTS or older not systemd based system, enter:
+如果你证使用 Ubuntu 14.04 LTS 或者更老的没有 systemd 的系统，输入：
 
 ```
 $ sudo /etc/init.d/restart networking
 ```
 
-### Verify connectivity
+### 验证网络配置成功
 
-Use the ping/ip commands to verify that both LAN and WAN interfaces are reachable:
+使用 ping/ip 命令来验证 LAN 和 WAN 网络接口运行正常：
 ```
 # See br0 and br1
 ip a show
@@ -120,12 +121,12 @@ ping -c 2 cyberciti.biz
 ping -c 2 10.0.80.12
 ```
 
-Sample outputs:
+样例输出：
 
 ![](http://s0.cyberciti.org/uploads/faq/2016/07/br0-br1-eth0-eth1-configured-on-ubuntu.jpg)
->Fig.03: Verify Bridging Ethernet Connections
+>Fig.03: 验证网桥的以太网连接
 
-Now, you can configure XEN/KVM/LXC containers to use br0 and br1 to reach directly to the internet or private lan. No need to setup special routing or iptables SNAT rules.
+现在，你就可以配置 br0 和 br1 来让 XEN/KVM/LXC 容器访问因特网或者私有局域网了。再也没有必要去设置特定路由或者 iptables 的 SNAT 规则了。
 
 
 --------------------------------------------------------------------------------
@@ -133,7 +134,7 @@ Now, you can configure XEN/KVM/LXC containers to use br0 and br1 to reach direct
 via: http://www.cyberciti.biz/faq/how-to-create-bridge-interface-ubuntu-linux/
 
 作者：[VIVEK GITE][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/MikeCoder)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

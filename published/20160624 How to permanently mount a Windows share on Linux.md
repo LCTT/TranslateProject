@@ -4,13 +4,14 @@
 > 如果你已经厌倦了每次重启 Linux 就得重新挂载 Windows 共享，读读这个让共享永久挂载的简单方法。
 
 ![](http://tr2.cbsistatic.com/hub/i/2016/06/02/e965310b-b38d-43e6-9eac-ea520992138b/68fd9ec5d6731cc405bdd27f2f42848d/linuxadminhero.jpg)
->图片： Jack Wallen
 
-在 Linux 上和一个 Windows 网络进行交互从来就不是件轻松的事情。想想多少企业正在采用 Linux，这两个平台不得不一起好好协作。幸运的是，有了一些工具的帮助，你可以轻松地将 Windows 网络驱动器映射到一台 Linux 机器上，甚至可以确保在重启 Linux 机器之后共享还在。
+*图片： Jack Wallen*
+
+在 Linux 上和一个 Windows 网络进行交互从来就不是件轻松的事情。想想多少企业正在采用 Linux，需要在这两个平台上彼此协作。幸运的是，有了一些工具的帮助，你可以轻松地将 Windows 网络驱动器映射到一台 Linux 机器上，甚至可以确保在重启 Linux 机器之后共享还在。
 
 ### 在我们开始之前
 
-要实现这个，你需要用到命令行。过程十分简单，但你需要编辑 /etc/fstab 文件，所以小心操作。还有，我假设你已经有正常工作的 Samba 了，可以手动从 Windows 网络挂载共享到你的 Linux 机器，还知道这个共享的主机 IP 地址。
+要实现这个，你需要用到命令行。过程十分简单，但你需要编辑 /etc/fstab 文件，所以小心操作。还有，我假设你已经让  Samba  正常工作了，可以手动从 Windows 网络挂载共享到你的 Linux 机器，还知道这个共享的主机 IP 地址。
 
 准备好了吗？那就开始吧。
 
@@ -22,7 +23,7 @@
 sudo mkdir /media/share
 ```
 
-### 一些安装
+### 安装一些软件
 
 现在我们得安装允许跨平台文件共享的系统；这个系统是 cifs-utils。在终端窗口输入：
 
@@ -44,7 +45,7 @@ hosts: files mdns4_minimal [NOTFOUND=return] dns
 hosts: files mdns4_minimal [NOTFOUND=return] wins dns
 ```
 
-现在你必须安装 windbind 让你的 Linux 机器可以在 DHCP 网络中解析 Windows 机器名。在终端里执行：
+现在你需要安装 windbind 让你的 Linux 机器可以在 DHCP 网络中解析 Windows 机器名。在终端里执行：
 
 ```
 sudo apt-get install libnss-windbind windbind
@@ -70,7 +71,7 @@ sudo cp /etc/fstab /etc/fstab.old
 sudo mv /etc/fstab.old /etc/fstab
 ```
 
-在你的主目录创建一个认证信息文件 .smbcredentials。在这个文件里添加你的用户名和密码，就像这样（USER 和 PASSWORD 是实际的用户名和密码）：
+在你的主目录创建一个认证信息文件 .smbcredentials。在这个文件里添加你的用户名和密码，就像这样（USER 和 PASSWORD 替换为实际的用户名和密码）：
 
 ```
 username=USER
@@ -84,7 +85,7 @@ password=PASSWORD
 id USER
 ```
 
-USER 是实际的用户名，你应该会看到类似这样的信息：
+USER 是你的实际用户名，你应该会看到类似这样的信息：
 
 ```
 uid=1000(USER) gid=1000(GROUP)
@@ -115,7 +116,7 @@ via: http://www.techrepublic.com/article/how-to-permanently-mount-a-windows-shar
 
 作者：[Jack Wallen][a]
 译者：[alim0x](https://github.com/alim0x)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
