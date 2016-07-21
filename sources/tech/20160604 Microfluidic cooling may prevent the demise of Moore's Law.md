@@ -1,11 +1,13 @@
 Translating by ivo-wang
 Microfluidic cooling may prevent the demise of Moore's Law
+微流体冷却可能会阻止摩尔定律的消亡
 ============================================================
 
 ![](http://tr1.cbsistatic.com/hub/i/r/2015/12/09/a7cb82d1-96e8-43b5-bfbd-d4593869b230/resize/620x/9607388a284e3a61a39f4399a9202bd7/networkingistock000042544852agsandrew.jpg)
 >Image: iStock/agsandrew
 
 Existing technology's inability to keep microchips cool is fast becoming the number one reason why [Moore's Law][1] may soon meet its demise.
+微型芯片冷却
 
 In the ongoing need for digital speed, scientists and engineers are working hard to squeeze more transistors and support circuitry onto an already-crowded piece of silicon. However, as complex as that seems, it pales in comparison to the [problem of heat buildup][2].
 
