@@ -1,3 +1,6 @@
+Translating by chenzhijun
+
+
 BEST TEXT EDITORS FOR LINUX COMMAND LINE
 ==========================================
 
