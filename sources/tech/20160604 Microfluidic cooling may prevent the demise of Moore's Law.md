@@ -49,7 +49,7 @@ For more about networking, subscribe to our Data Centers newsletter.
 via: http://www.techrepublic.com/article/microfluidic-cooling-may-prevent-the-demise-of-moores-law/
 
 作者：[Michael Kassner][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ivo-wang](https://github.com/ivo-wang)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
