@@ -7,11 +7,13 @@ Microfluidic cooling may prevent the demise of Moore's Law
 >Image: iStock/agsandrew
 
 Existing technology's inability to keep microchips cool is fast becoming the number one reason why [Moore's Law][1] may soon meet its demise.
-微型芯片冷却
+现有的技术无法保持微型芯片足够冷却，这也是为什么我们即将遇到[摩尔定律][1]瓶颈的一个主要原因。
 
 In the ongoing need for digital speed, scientists and engineers are working hard to squeeze more transistors and support circuitry onto an already-crowded piece of silicon. However, as complex as that seems, it pales in comparison to the [problem of heat buildup][2].
+为保持数码技术的持续发展，科学家和工程师们一直致力于将更多的晶体管以及相应的电路塞进本来就十分拥挤的硅晶片中。然而，看上去这是十分复杂的，最尖锐的是[热积累问题][2]
 
 "Right now, we're limited in the power we can put into microchips," says John Ditri, principal investigator at Lockheed Martin in [this press release][3]. "One of the biggest challenges is managing the heat. If you can manage the heat, you can use fewer chips, and that means using less material, which results in cost savings as well as reduced system size and weight. If you manage the heat and use the same number of chips, you'll get even greater performance in your system."
+Lockheed Martin公司的主要研究员John Ditri在[这篇报道][3]里面说：“我们在芯片上能够投入的精力是有限的”。一个最大的挑战是热量管理。如果你能管理热量
 
 Resistance to the flow of electrons through silicon causes the heat, and packing so many transistors in such a small space creates enough heat to destroy components. One way to eliminate heat buildup is to reduce the flow of electrons by [using photonics at the chip level][4]. However, photonic technology is not without its set of problems.
 
