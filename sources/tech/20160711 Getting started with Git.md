@@ -1,3 +1,5 @@
+Being translated by ChrisLeeGit
+
 Getting started with Git
 =========================
 
