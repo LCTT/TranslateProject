@@ -1,8 +1,8 @@
-Git 入门指南
+初步了解 Git
 =========================
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/get_started_lead.jpeg?itok=r22AKc6P)
->Image by : opensource.com
+> 图片来源：opensource.com
 
 在这个系列的介绍中，我们学习到了谁应该使用 Git，以及 Git 是用来做什么的。今天，我们将学习如何克隆公共的 Git 仓库，以及如何提取出独立的文件而不用克隆整个仓库。
 
@@ -118,7 +118,7 @@ $ git pull
 via: https://opensource.com/life/16/7/stumbling-git
 
 作者：[Seth Kenlon][a]
-译者：[译者ID](https://github.com/chrisleegit)
+译者：[ChrisLeeGit](https://github.com/chrisleegit)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
