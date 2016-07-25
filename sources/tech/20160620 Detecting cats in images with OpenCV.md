@@ -1,3 +1,4 @@
+[translating by kokialoves]
 Detecting cats in images with OpenCV
 =======================================
 
