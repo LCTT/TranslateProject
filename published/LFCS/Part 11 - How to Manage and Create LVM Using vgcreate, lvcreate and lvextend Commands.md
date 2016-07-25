@@ -1,14 +1,15 @@
 LFCS 系列第十一讲：如何使用命令 vgcreate、lvcreate 和 lvextend 管理和创建 LVM
-============================================================================================
+========================================================================================
 
 由于 LFCS 考试中的一些改变已在 2016 年 2 月 2 日生效，我们添加了一些必要的专题到 [LFCS 系列][1]。我们也非常推荐备考的同学，同时阅读 [LFCE 系列][2]。
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/03/Manage-LVM-and-Create-LVM-Partition-in-Linux.png)
->LFCS：管理 LVM 和创建 LVM 分区
 
-在安装 Linux 系统的时候要做的最重要的决定之一便是给系统文件，home 目录等分配空间。在这个地方犯了错，再要增长空间不足的分区，那样既麻烦又有风险。
+*LFCS：管理 LVM 和创建 LVM 分区*
 
-**逻辑卷管理** （即 **LVM**）相较于传统的分区管理有许多优点，已经成为大多数（如果不能说全部的话） Linux 发行版安装时的默认选择。LVM 最大的优点应该是能方便的按照你的意愿调整（减小或增大）逻辑分区的大小。
+在安装 Linux 系统的时候要做的最重要的决定之一便是给系统文件、home 目录等分配空间。在这个地方犯了错，再要扩大空间不足的分区，那样既麻烦又有风险。
+
+**逻辑卷管理** （**LVM**）相较于传统的分区管理有许多优点，已经成为大多数（如果不能说全部的话） Linux 发行版安装时的默认选择。LVM 最大的优点应该是能方便的按照你的意愿调整（减小或增大）逻辑分区的大小。
 
 LVM 的组成结构：
 
@@ -16,7 +17,7 @@ LVM 的组成结构：
 * 一个用一个或多个物理卷创建出的卷组（**VG**）。可以把一个卷组想象成一个单独的存储单元。
 * 在一个卷组上可以创建多个逻辑卷。每个逻辑卷相当于一个传统意义上的分区 —— 优点是它的大小可以根据需求重新调整大小，正如之前提到的那样。
 
-本文，我们将使用三块 **8 GB** 的磁盘（**/dev/sdb**、**/dev/sdc** 和 **/dev/sdd**）分别创建三个物理卷。你既可以直接在设备上创建 PV，也可以先分区在创建。
+本文，我们将使用三块 **8 GB** 的磁盘（**/dev/sdb**、**/dev/sdc** 和 **/dev/sdd**）分别创建三个物理卷。你既可以直接在整个设备上创建 PV，也可以先分区在创建。
 
 在这里我们选择第一种方式，如果你决定使用第二种（可以参考本系列[第四讲：创建分区和文件系统][3]）确保每个分区的类型都是 `8e`。
 
@@ -59,7 +60,8 @@ LVM 的组成结构：
 由于 `vg00` 是由两个 **8 GB** 的磁盘组成的，所以它将会显示成一个 **16 GB** 的硬盘：
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/03/List-LVM-Volume-Groups.png)
->LVM 卷组列表
+
+*LVM 卷组列表*
 
 当谈到创建逻辑卷，空间的分配必须考虑到当下和以后的需求。根据每个逻辑卷的用途来命名是一个好的做法。
 
@@ -78,7 +80,7 @@ LVM 的组成结构：
 # lvs
 ```
 
-或是详细信息，通过：
+或是查看详细信息，通过：
 
 ```
 # lvdisplay
@@ -91,9 +93,10 @@ LVM 的组成结构：
 ```
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/03/List-Logical-Volume.png)
->逻辑卷列表
 
-如上图，我们看到 LV 已经被创建成存储设备了（参考  LV Path line）。在使用每个逻辑卷之前，需要先在上面创建文件系统。
+*逻辑卷列表*
+
+如上图，我们看到 LV 已经被创建成存储设备了（参考  LV Path 那一行）。在使用每个逻辑卷之前，需要先在上面创建文件系统。
 
 这里我们拿 ext4 来做举例，因为对于每个 LV 的大小， ext4 既可以增大又可以减小（相对的 xfs 就只允许增大）：
 
@@ -116,7 +119,8 @@ LVM 的组成结构：
 ```
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/03/Resize-Reduce-Logical-Volume-and-Volume-Group.png)
->减小逻辑卷和卷组
+
+*减小逻辑卷和卷组*
 
 在调整逻辑卷的时候，其中包含的减号 `(-)` 或加号 `(+)` 是十分重要的。否则 LV 将会被设置成指定的大小，而非调整指定大小。
 
@@ -135,7 +139,8 @@ LVM 的组成结构：
 ```
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/03/List-Volume-Group-Size.png)
->查看卷组磁盘大小
+
+*查看卷组磁盘大小*
 
 现在，你可以使用新加的空间，按照你的需求调整现有 LV 的大小，或者创建一个新的 LV。
 
@@ -151,7 +156,8 @@ LVM 的组成结构：
 ```
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/03/Find-Logical-Volume-UUID.png)
->寻找逻辑卷的 UUID
+
+*寻找逻辑卷的 UUID*
 
 为每个 LV 创建挂载点：
 
@@ -175,7 +181,8 @@ UUID=e1929239-5087-44b1-9396-53e09db6eb9e /home/backups ext4    defaults 0 0
 ```
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/03/Mount-Logical-Volumes-on-Linux-1.png)
->挂载逻辑卷
+
+*挂载逻辑卷*
 
 在涉及到 LV 的实际使用时，你还需要按照曾在本系列[第八讲：管理用户和用户组][4]中讲解的那样，为其设置合适的 `ugo+rwx`。
 
@@ -193,7 +200,7 @@ via: http://www.tecmint.com/manage-and-create-lvm-parition-using-vgcreate-lvcrea
 
 作者：[Gabriel Cánepa][a]
 译者：[martin2011qi](https://github.com/martin2011qi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -202,5 +209,5 @@ via: http://www.tecmint.com/manage-and-create-lvm-parition-using-vgcreate-lvcrea
 [2]: http://www.tecmint.com/installing-network-services-and-configuring-services-at-system-boot/
 [3]: https://linux.cn/article-7187-1.html
 [4]: https://linux.cn/article-7418-1.html
-[5]: http://www.tecmint.com/create-lvm-storage-in-linux/
+[5]: https://linux.cn/article-3965-1.html
 [6]: https://linux.cn/article-7229-1.html
