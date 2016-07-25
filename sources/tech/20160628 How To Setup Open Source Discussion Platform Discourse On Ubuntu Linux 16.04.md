@@ -1,3 +1,4 @@
+[translating by kokialoves]
 How To Setup Open Source Discussion Platform Discourse On Ubuntu Linux 16.04
 ===============================================================================
 
