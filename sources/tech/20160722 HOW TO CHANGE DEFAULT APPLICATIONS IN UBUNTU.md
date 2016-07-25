@@ -57,7 +57,7 @@
 via: https://itsfoss.com/change-default-applications-ubuntu/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+ItsFoss+%28Its+FOSS%21+An+Open+Source+Blog%29
 
 作者：[Abhishek Prakash][a]
-译者：[译者ID](https://github.com/locez)
+译者：[Locez](https://github.com/locez)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
