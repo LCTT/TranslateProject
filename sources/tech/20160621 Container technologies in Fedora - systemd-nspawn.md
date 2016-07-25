@@ -1,3 +1,5 @@
+Being translated by [ChrisLeeGit](https://github.com/chrisleegit)
+
 Container technologies in Fedora: systemd-nspawn
 ===
 
@@ -97,7 +99,7 @@ $ restorecon -R /home/johnmh/DebianJessie/
 via: http://linoxide.com/linux-how-to/set-nginx-reverse-proxy-centos-7-cpanel/
 
 作者：[John M. Harris, Jr.][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ChrisLeeGit](https://github.com/ChrisLeeGit)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
