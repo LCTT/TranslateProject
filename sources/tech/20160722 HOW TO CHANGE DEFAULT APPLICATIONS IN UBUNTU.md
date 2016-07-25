@@ -1,3 +1,4 @@
+translating by Locez
 HOW TO CHANGE DEFAULT APPLICATIONS IN UBUNTU
 ==============================================
 
