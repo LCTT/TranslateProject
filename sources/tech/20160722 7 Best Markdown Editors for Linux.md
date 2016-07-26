@@ -1,3 +1,4 @@
+translating by Locez
 7 Best Markdown Editors for Linux
 ======================================
 
