@@ -1,3 +1,4 @@
+chenxinlong translating
 Who needs a GUI? How to live in a Linux terminal
 =================================================
 
@@ -84,7 +85,7 @@ LibreOffice, Google Slides or, gasp, PowerPoint. I spend a lot of time in presen
 via: http://www.networkworld.com/article/3091139/linux/who-needs-a-gui-how-to-live-in-a-linux-terminal.html#slide1
 
 作者：[Bryan Lunduke][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/chenxinlong)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出

@@ -1,3 +1,5 @@
+jovov 正在翻译。。。
+
 Linux Practicality vs Activism
 ==================================
 
