@@ -1,8 +1,8 @@
-Git 入门指南
+初步了解 Git
 =========================
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/get_started_lead.jpeg?itok=r22AKc6P)
->Image by : opensource.com
+> 图片来源：opensource.com
 
 在这个系列的介绍中，我们学习到了谁应该使用 Git，以及 Git 是用来做什么的。今天，我们将学习如何克隆公共的 Git 仓库，以及如何提取出独立的文件而不用克隆整个仓库。
 
@@ -72,7 +72,7 @@ Checking connectivity... done.
 
 ![](https://opensource.com/sites/default/files/1_gitlab-zip.jpg)
 
-### 挑选和选择
+### 仔细挑选
 另外一种从 Git 仓库中获取文件的方法是找到你想要的文件，然后把它从仓库中拽出来。只有 web 界面才提供这种方法，本质上来说，你看到的是别人仓库的克隆；你可以把它想象成一个 HTTP 共享目录。
 
 使用这种方法的问题是，你也许会发现某些文件并不存在于原始仓库中，因为完整形式的文件可能只有在执行 make 命令后才能构建，那只有你下载了完整的仓库，阅读了 README 或者 INSTALL 文件，然后运行相关命令之后才会产生。不过，假如你确信文件存在，而你只想进入仓库，获取那个文件，然后离开的话，你就可以那样做。
@@ -111,14 +111,14 @@ bar.clone
 $ git pull
 ```
 
-到目前为止，你需要了解的所有终端命令就是那些了，那就出去探索吧。你实践得越多，Git 掌握得就越好（孰能生巧），那就是游戏的名称，至少它教会了你一些基础（give or take a vowel）。
+到目前为止，你需要初步了解的所有终端命令就是那些了，那就去探索吧。你实践得越多，Git 掌握得就越好（孰能生巧），那就是游戏的名称，至少给了或取了一个元音。
 
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/life/16/7/stumbling-git
 
 作者：[Seth Kenlon][a]
-译者：[译者ID](https://github.com/chrisleegit)
+译者：[ChrisLeeGit](https://github.com/chrisleegit)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
