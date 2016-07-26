@@ -1,3 +1,5 @@
+Translating by GitFuture  [07.26]
+
 How to Encrypt a Flash Drive Using VeraCrypt
 ============================================
 
