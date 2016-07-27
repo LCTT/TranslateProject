@@ -1,3 +1,5 @@
+Being translated by ChrisLeeGit
+
 What makes up the Fedora kernel?
 ====================================
 
@@ -22,7 +24,7 @@ The Fedora kernel contains code from many places. All of it is necessary to give
 via: https://fedoramagazine.org/makes-fedora-kernel/
 
 作者：[Laura Abbott][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ChrisLeeGit](https://github.com/chrisleegit)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
