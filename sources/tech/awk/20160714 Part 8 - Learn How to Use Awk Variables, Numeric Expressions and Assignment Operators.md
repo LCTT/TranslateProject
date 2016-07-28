@@ -1,4 +1,8 @@
+vim-kakali translating
+
+
 Learn How to Use Awk Variables, Numeric Expressions and Assignment Operators – part8
+
 =======================================================================================
 
 The [Awk command series][1] is getting exciting I believe, in the previous seven parts, we walked through some fundamentals of Awk that you need to master to enable you perform some basic text or string filtering in Linux.
