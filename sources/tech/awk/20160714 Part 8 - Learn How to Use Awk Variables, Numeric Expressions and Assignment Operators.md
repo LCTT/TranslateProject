@@ -1,4 +1,4 @@
-vim-kakali translating
+translating  by vim-kakali
 
 
 Learn How to Use Awk Variables, Numeric Expressions and Assignment Operators – part8
