@@ -1,3 +1,4 @@
+[translating by kokialoves]
 YOU CAN TRY A DEMO UBUNTU VERSION IN A WEB BROWSER
 =====================================================
 
