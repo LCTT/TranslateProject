@@ -1,3 +1,5 @@
+MikeCoder Translating...
+
 GNU KHATA: OPEN SOURCE ACCOUNTING SOFTWARE
 ============================================
 
