@@ -1,3 +1,4 @@
+Translating by cposture 2016-07-29
 An Introduction to Mocking in Python
 =====================================
 
