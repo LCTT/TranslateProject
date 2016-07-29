@@ -58,7 +58,7 @@ GNU Khata 在浏览器中打开，并且展现以下的画面。
 via: https://itsfoss.com/using-gnu-khata/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+ItsFoss+%28Its+FOSS%21+An+Open+Source+Blog%29
 
 作者：[Aquil Roshan][a]
-译者：[MikeCoder](https://github.com/MikeCoder)
+译者：[译者ID](https://github.com/MikeCoder)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
