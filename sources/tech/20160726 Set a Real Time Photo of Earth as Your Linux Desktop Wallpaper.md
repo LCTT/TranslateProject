@@ -1,3 +1,5 @@
+Being translated by ChrisLeeGit
+
 Set a Real Time Photo of Earth as Your Linux Desktop Wallpaper
 =================================================================
 
@@ -27,7 +29,7 @@ Find all instructions on getting the app installed and set up (hint: there’s n
 via: http://www.tecmint.com/mandatory-access-control-with-selinux-or-apparmor-linux/
 
 作者：[ JOEY-ELIJAH SNEDDON][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ChrisLeeGit](https://github.com/chrisleegit)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
