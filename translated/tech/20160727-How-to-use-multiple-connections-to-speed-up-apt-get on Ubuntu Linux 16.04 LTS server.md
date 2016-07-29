@@ -3,7 +3,7 @@
 
 我该如何在Ubuntu Linux 16.04或者14.04 LTS中从多个仓库中下载包来加速apt-get或者apt命令？
 
-你需要使用到apt-fast这个脚本。它会通过多个连接同时下载一个包来加速apt-get/apt和aptitude命令。所有的包都会同时下载。它使用aria2c作为默认的下载加速。
+你需要使用到apt-fast这个shell封装器。它会通过多个连接同时下载一个包来加速apt-get/apt和aptitude命令。所有的包都会同时下载。它使用aria2c作为默认的下载加速。
 
 ### 安装 apt-fast 工具
 
