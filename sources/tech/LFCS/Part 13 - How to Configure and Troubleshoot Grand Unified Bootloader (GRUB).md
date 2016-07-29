@@ -1,3 +1,5 @@
+Being translated by ChrisLeeGit
+
 Part 13 - LFCS: How to Configure and Troubleshoot Grand Unified Bootloader (GRUB)
 =====================================================================================
 
@@ -167,7 +169,7 @@ Do you have questions or comments? Don’t hesitate to let us know using the com
 via: http://www.tecmint.com/linux-basic-shell-scripting-and-linux-filesystem-troubleshooting/
 
 作者：[Gabriel Cánepa][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ChrisLeeGit](https://github.com/chrisleegit)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
