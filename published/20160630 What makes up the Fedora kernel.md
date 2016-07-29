@@ -3,11 +3,11 @@ Fedora 内核是由什么构成的？
 
 ![](https://cdn.fedoramagazine.org/wp-content/uploads/2016/06/kernel-945x400.png)
 
-每个 Fedora 系统都运行着一个内核。许多代码段组合在一起使之成为现实。
+每个 Fedora 系统都运行着一个内核。许多代码片段组合在一起使之成为现实。
 
-每个 Fedora 内核都起始于一个来自于 [上游社区][1] 的基线版本，通常称之为 vanilla 内核。上游内核就是标准。（Fedora 的）目标是包含尽可能多的上游代码，这样使得 bug 修复和 API 更新更加容易，同时也会有更多的人审查代码。理想情况下，Fedora 能够直接从 kernel.org 获得内核，然后发送给所有用户。
+每个 Fedora 内核都起始于一个来自于[上游社区][1]的基线版本——通常称之为 vanilla 内核。上游内核就是标准。（Fedora 的）目标是包含尽可能多的上游代码，这样使得 bug 修复和 API 更新更加容易，同时也会有更多的人审查代码。理想情况下，Fedora 能够直接获取 kernel.org 的内核，然后发送给所有用户。
 
-现实情况是，使用 vanilla 内核并不能完全满足 Fedora。Vanilla 内核可能并不支持一些 Fedora 用户希望拥有的功能。用户接收的 [Fedora 内核] 是在 vanilla 内核之上打了很多补丁的内核。这些补丁被认为“不在树上”。许多这些位于补丁树之外的补丁都不会存在太久。如果某补丁能够修复一个问题，那么该补丁可能会被合并到 Fedora 树，以便用户能够更快地收到修复。当内核变基到一个新版本时，在新版本中的补丁都将被清除。
+现实情况是，使用 vanilla 内核并不能完全满足 Fedora。Vanilla 内核可能并不支持一些 Fedora 用户希望拥有的功能。用户接收的 [Fedora 内核] 是在 vanilla 内核之上打了很多补丁的内核。这些补丁被认为“不在树上（out of tree）”。许多这些位于补丁树之外的补丁都不会存在太久。如果某补丁能够修复一个问题，那么该补丁可能会被合并到 Fedora 树，以便用户能够更快地收到修复。当内核变基到一个新版本时，在新版本中的补丁都将被清除。
 
 一些补丁会在 Fedora 内核树上存在很长时间。一个很好的例子是，安全启动补丁就是这类补丁。这些补丁提供了 Fedora 希望支持的功能，即使上游社区还没有接受它们。保持这些补丁更新是需要付出很多努力的，所以 Fedora 尝试减少不被上游内核维护者接受的补丁数量。
 
@@ -21,7 +21,7 @@ via: https://fedoramagazine.org/makes-fedora-kernel/
 
 作者：[Laura Abbott][a]
 译者：[ChrisLeeGit](https://github.com/chrisleegit)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
