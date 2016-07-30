@@ -1,3 +1,5 @@
+Being translated by ChrisLeeGit
+
 Keeweb A Linux Password Manager
 ================================
 
@@ -52,7 +54,7 @@ I have already posted about two other Linux password managers, Keepass and Encry
 via: http://www.tecmint.com/mandatory-access-control-with-selinux-or-apparmor-linux/
 
 作者：[author][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ChrisLeeGit](https://github.com/chrisleegit)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
