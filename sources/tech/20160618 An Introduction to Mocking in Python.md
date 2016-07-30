@@ -99,14 +99,18 @@ class RmTestCase(unittest.TestCase):
 
 ### 潜在陷阱
 
-第一件需要注意的事情就是，我们使用了用于模拟 mock.patch 方法的装饰器位于mymodule.os
+第一件需要注意的事情就是，我们使用了位于 mymodule.os 且用于模拟对象的 mock.patch 方法装饰器，并且将该 mock 注入到我们的测试用例方法。相比在 mymodule.os 引用它，那么只是模拟 os 本身，会不会更有意义？
 One of the first things that should stick out is that we’re using the mock.patch method decorator to mock an object located at mymodule.os, and injecting that mock into our test case method. Wouldn’t it make more sense to just mock os itself, rather than the reference to it at mymodule.os?
 
+当然，当涉及到导入和管理模块，Python 的用法非常灵活。在运行时，mymodule 模块拥有被导入到本模块局部作用域的 os。因此，如果我们模拟 os，我们是看不到模拟在 mymodule 模块中的作用的。
 Well, Python is somewhat of a sneaky snake when it comes to imports and managing modules. At runtime, the mymodule module has its own os which is imported into its own local scope in the module. Thus, if we mock os, we won’t see the effects of the mock in the mymodule module.
 
+这句话需要深刻地记住：
 The mantra to keep repeating is this:
 
+> 模拟测试一个项目，只需要了解它用在哪里，而不是它从哪里来。
 > Mock an item where it is used, not where it came from.
+
 
 If you need to mock the tempfile module for myproject.app.MyElaborateClass, you probably need to apply the mock to myproject.app.tempfile, as each module keeps its own imports.
 
