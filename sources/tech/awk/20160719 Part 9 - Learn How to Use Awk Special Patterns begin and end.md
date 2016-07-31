@@ -1,3 +1,5 @@
+Being translated by ChrisLeeGit
+
 Learn How to Use Awk Special Patterns ‘BEGIN and END’ – Part 9
 ===============================================================
 
@@ -158,7 +160,7 @@ As I pointed out before, these Awk features will help us build more complex text
 via: http://www.tecmint.com/learn-use-awk-special-patterns-begin-and-end/
 
 作者：[Aaron Kili][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ChrisLeeGit](https://github.com/chrisleegit)
 校对：[校对ID](https://github.com/校对ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
