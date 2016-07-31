@@ -99,26 +99,26 @@ class RmTestCase(unittest.TestCase):
 
 ### 潜在陷阱
 
-第一件需要注意的事情就是，我们使用了位于 mymodule.os 且用于模拟对象的 mock.patch 方法装饰器，并且将该 mock 注入到我们的测试用例方法。相比在 mymodule.os 引用它，那么只是模拟 os 本身，会不会更有意义？
+第一件需要注意的事情就是，我们使用了位于 mymodule.os 且用于模拟对象的 mock.patch 方法装饰器，并且将该 mock 注入到我们的测试用例方法。相比在 mymodule.os 引用它，那么只是模拟 os 本身，会不会更有意义呢？
 One of the first things that should stick out is that we’re using the mock.patch method decorator to mock an object located at mymodule.os, and injecting that mock into our test case method. Wouldn’t it make more sense to just mock os itself, rather than the reference to it at mymodule.os?
 
 当然，当涉及到导入和管理模块，Python 的用法非常灵活。在运行时，mymodule 模块拥有被导入到本模块局部作用域的 os。因此，如果我们模拟 os，我们是看不到模拟在 mymodule 模块中的作用的。
-Well, Python is somewhat of a sneaky snake when it comes to imports and managing modules. At runtime, the mymodule module has its own os which is imported into its own local scope in the module. Thus, if we mock os, we won’t see the effects of the mock in the mymodule module.
 
 这句话需要深刻地记住：
-The mantra to keep repeating is this:
 
 > 模拟测试一个项目，只需要了解它用在哪里，而不是它从哪里来。
 > Mock an item where it is used, not where it came from.
 
-
+如果你需要为 myproject.app.MyElaborateClass 模拟 tempfile 模块，你可能需要
 If you need to mock the tempfile module for myproject.app.MyElaborateClass, you probably need to apply the mock to myproject.app.tempfile, as each module keeps its own imports.
 
+先将那个陷阱置身事外，让我们继续模拟。
 With that pitfall out of the way, let’s keep mocking.
 
-### Adding Validation to ‘rm’
+### 向 ‘rm’ 中加入验证
 
-The rm method defined earlier is quite oversimplified. We’d like to have it validate that a path exists and is a file before just blindly attempting to remove it. Let’s refactor rm to be a bit smarter:
+之前定义的 rm 方法相当的简单。在盲目地删除之前，我们倾向于拿它来验证一个路径是否存在，并验证其是否是一个文件。让我们重构 rm 使其变得更加智能:
+
 
 ```
 #!/usr/bin/env python
@@ -132,7 +132,7 @@ def rm(filename):
         os.remove(filename)
 ```
 
-Great. Now, let’s adjust our test case to keep coverage up.
+很好。现在，让我们调整测试用例来保持测试的覆盖程度。
 
 ```
 #!/usr/bin/env python
@@ -164,13 +164,13 @@ class RmTestCase(unittest.TestCase):
         mock_os.remove.assert_called_with("any path")
 ```
 
-Our testing paradigm has completely changed. We now can verify and validate internal functionality of methods without any side-effects.
+我们的测试用例完全改变了。现在我们可以在没有任何副作用下核实并验证方法的内部功能。
 
-### File-Removal as a Service
+### 将文件删除作为服务
 
-So far, we’ve only been working with supplying mocks for functions, but not for methods on objects or cases where mocking is necessary for sending parameters. Let’s cover object methods first.
+到目前为止，我们只是对函数功能提供模拟测试，并没对需要传递参数的对象和实例的方法进行模拟测试。接下来我们将介绍如何对对象的方法进行模拟测试。
 
-We’ll begin with a refactor of the rm method into a service class. There really isn’t a justifiable need, per se, to encapsulate such a simple function into an object, but it will at the very least help us demonstrate key concepts in mock. Let’s refactor:
+首先，我们将rm方法重构成一个服务类。实际上将这样一个简单的函数转换成一个对象，在本质上，这不是一个合理的需求，但它能够帮助我们了解mock的关键概念。让我们开始重构:
 
 ```
 #!/usr/bin/env python
@@ -187,6 +187,7 @@ class RemovalService(object):
             os.remove(filename)
 ```
 
+### 你会注意到我们的测试用例没有太大的变化
 ### You’ll notice that not much has changed in our test case:
 
 ```
@@ -222,6 +223,7 @@ class RemovalServiceTestCase(unittest.TestCase):
         mock_os.remove.assert_called_with("any path")
 ```
 
+很好，我们知道 RemovalService 会如期工作。接下来让我们创建另一个服务，将其声明为一个依赖
 Great, so we now know that the RemovalService works as planned. Let’s create another service which declares it as a dependency:
 
 ```
