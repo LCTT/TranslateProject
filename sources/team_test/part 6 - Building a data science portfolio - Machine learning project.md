@@ -1,20 +1,3 @@
-### Setting up the classifier for machine learning
-
-We’ll use cross validation to make predictions. With cross validation, we’ll divide our data into 3 groups. Then we’ll do the following:
-
-- Train a model on groups 1 and 2, and use the model to make predictions for group 3.
-- Train a model on groups 1 and 3, and use the model to make predictions for group 2.
-- Train a model on groups 2 and 3, and use the model to make predictions for group 1.
-
-Splitting it up into groups this way means that we never train a model using the same data we’re making predictions for. This avoids overfitting. If we overfit, we’ll get a falsely low false negative rate, which makes it hard to improve our algorithm or use it in the real world.
-
-[Scikit-learn][35] has a function called [cross_val_predict][36] which will make it easy to perform cross validation.
-
-We’ll also need to pick an algorithm to use to make predictions. We need a classifier that can do [binary classification][37]. The target variable, foreclosure_status only has two values, True and False.
-
-We’ll use [logistic regression][38], because it works well for binary classification, runs extremely quickly, and uses little memory. This is due to how the algorithm works – instead of constructing dozens of trees, like a random forest, or doing expensive transformations, like a support vector machine, logistic regression has far fewer steps involving fewer matrix operations.
-
-We can use the [logistic regression classifier][39] algorithm that’s implemented in scikit-learn. The only thing we need to pay attention to is the weights of each class. If we weight the classes equally, the algorithm will predict False for every row, because it is trying to minimize errors. However, we care much more about foreclosures than we do about loans that aren’t foreclosed on. Thus, we’ll pass balanced to the class_weight keyword argument of the [LogisticRegression][40] class, to get the algorithm to weight the foreclosures more to account for the difference in the counts of each class. This will ensure that the algorithm doesn’t predict False for every row, and instead is penalized equally for making errors in predicting either class.
 
 ### Making predictions
 
