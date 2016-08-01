@@ -1,3 +1,7 @@
+vim-kakali translating
+
+
+
 ### Computing values from the performance data
 
 The next step we’ll take is to calculate some values from processed/Performance.txt. All we want to do is to predict whether or not a property is foreclosed on. To figure this out, we just need to check if the performance data associated with a loan ever has a foreclosure_date. If foreclosure_date is None, then the property was never foreclosed on. In order to avoid including loans with little performance history in our sample, we’ll also want to count up how many rows exist in the performance file for each loan. This will let us filter loans without much performance history from our training data.
