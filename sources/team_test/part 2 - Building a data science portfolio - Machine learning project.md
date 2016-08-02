@@ -66,10 +66,8 @@ loan-prediction
 ```
 
 ### 创建初始文件
-To start with, we’ll need to create a loan-prediction folder. Inside that folder, we’ll need to make a data folder and a processed folder. The first will store our raw data, and the second will store any intermediate calculated values.
-
-Next, we’ll make a .gitignore file. A .gitignore file will make sure certain files are ignored by git and not pushed to Github. One good example of such a file is the .DS_Store file created by OSX in every folder. A good starting point for a .gitignore file is here. We’ll also want to ignore the data files because they are very large, and the Fannie Mae terms prevent us from redistributing them, so we should add two lines to the end of our file:
-
+首先，我们需要创建一个loan-prediction文件夹，在此文件夹下面，再创建一个data文件夹和一个processed文件夹。data文件夹存放原始数据，processed文件夹存放所有的中间计算结果。
+其次，创建.gitignore文件，.gitignore文件将保证某些文件被git忽略而不会被推送至github。关于这个文件的一个好的例子是由OSX在每一个文件夹都会创建的.DS_Store文件，.gitignore文件一个很好的起点就是在这了。我们还想忽略数据文件因为他们实在是太大了，同时房利美的条文禁止我们重新分发该数据文件，所以我们应该在我们的文件后面添加以下2行：
 ```
 data
 processed
