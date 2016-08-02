@@ -1,44 +1,38 @@
-[translating by kokialoves]
-### Annotating the data
+注解数据
+我们已经在annotate.py中添加了一些功能, 现在我们来看一看数据文件. 我们需要将采集到的数据转换到training dataset来进行机器学习的训练. 这涉及到以下几件事情:
 
-We’ve already added a few functions to annotate.py, but now we can get into the meat of the file. We’ll need to convert the acquisition data into a training dataset that can be used in a machine learning algorithm. This involves a few things:
+转换所以列数字. 
+填充缺失值. 
+分配 performance_count 和 foreclosure_status. 
+移除出现次数很少的行(performance_count 计数低). 
+我们有几个列是strings类型的, 看起来对于机器学习算法来说并不是很有用. 然而, 他们实际上是分类变量, 其中有很多不同的类别代码, 例如R,S等等. 我们可以把这些类别标签转换为数值:
 
-- Converting all columns to numeric.
-- Filling in any missing values.
-- Assigning a performance_count and a foreclosure_status to each row.
-- Removing any rows that don’t have a lot of performance history (where performance_count is low).
 
-Several of our columns are strings, which aren’t useful to a machine learning algorithm. However, they are actually categorical variables, where there are a few different category codes, like R, S, and so on. We can convert these columns to numeric by assigning a number to each category label:
 
-![](https://github.com/LCTT/wiki-images/blob/master/TranslateProject/ref_img/002.png)
+通过这种方法转换的列我们可以应用到机器学习算法中.
 
-Converting the columns this way will allow us to use them in our machine learning algorithm.
+还有一些包含日期的列 (first_payment_date 和 origination_date). 我们可以将这些日期放到两个列中:
 
-Some of the columns also contain dates (first_payment_date and origination_date). We can split these dates into 2 columns each:
+ 在下面的代码中, 我们将转换采集到的数据. 我们将定义一个函数如下:
 
-![](https://github.com/LCTT/wiki-images/blob/master/TranslateProject/ref_img/003.png)
-In the below code, we’ll transform the Acquisition data. We’ll define a function that:
-
-- Creates a foreclosure_status column in acquisition by getting the values from the counts dictionary.
-- Creates a performance_count column in acquisition by getting the values from the counts dictionary.
-- Converts each of the following columns from a string column to an integer column:
-    - channel
-    - seller
-    - first_time_homebuyer
-    - loan_purpose
-    - property_type
-    - occupancy_status
-    - property_state
-    - product_type
-- Converts first_payment_date and origination_date to 2 columns each:
-    - Splits the column on the forward slash.
-    - Assigns the first part of the split list to a month column.
-    - Assigns the second part of the split list to a year column.
-    - Deletes the column.
-    - At the end, we’ll have first_payment_month, first_payment_year, origination_month, and origination_year.
-- Fills any missing values in acquisition with -1.
-
-```
+在采集到的数据中创建foreclosure_status列 . 
+在采集到的数据中创建performance_count列. 
+将下面的string列转换为integer列: 
+channel 
+seller 
+first_time_homebuyer 
+loan_purpose 
+property_type 
+occupancy_status 
+property_state 
+product_type 
+转换first_payment_date 和 origination_date 为两列: 
+通过斜杠分离列. 
+将第一部分分离成月清单. 
+将第二部分分离成年清单. 
+删除这一列. 
+最后, 我们得到 first_payment_month, first_payment_year, origination_month, and origination_year. 
+所有缺失值填充为-1. 
 def annotate(acquisition, counts):
     acquisition["foreclosure_status"] = acquisition["id"].apply(lambda x: get_performance_summary_value(x, "foreclosure_status", counts))
     acquisition["performance_count"] = acquisition["id"].apply(lambda x: get_performance_summary_value(x, "performance_count", counts))
@@ -63,25 +57,21 @@ def annotate(acquisition, counts):
     acquisition = acquisition.fillna(-1)
     acquisition = acquisition[acquisition["performance_count"] > settings.MINIMUM_TRACKING_QUARTERS]
     return acquisition
-```
 
-### Pulling everything together
+聚合到一起
+我们差不多准备就绪了, 我们只需要再在annotate.py添加一点点代码. 在下面代码中, 我们将:
 
-We’re almost ready to pull everything together, we just need to add a bit more code to annotate.py. In the below code, we:
-
-- Define a function to read in the acquisition data.
-- Define a function to write the processed data to processed/train.csv
-- If this file is called from the command line, like python annotate.py:
-    - Read in the acquisition data.
-    - Compute the counts for the performance data, and assign them to counts.
-    - Annotate the acquisition DataFrame.
-    - Write the acquisition DataFrame to train.csv.
-
-```
+定义一个函数来读取采集的数据. 
+定义一个函数来写入数据到/train.csv 
+如果我们在命令行运行annotate.py来读取更新过的数据文件，它将做如下事情: 
+读取采集到的数据. 
+计算数据性能. 
+注解数据. 
+将注解数据写入到train.csv. 
 def read():
     acquisition = pd.read_csv(os.path.join(settings.PROCESSED_DIR, "Acquisition.txt"), sep="|")
     return acquisition
-    
+
 def write(acquisition):
     acquisition.to_csv(os.path.join(settings.PROCESSED_DIR, "train.csv"), index=False)
 
@@ -90,13 +80,11 @@ if __name__ == "__main__":
     counts = count_performance_rows()
     acquisition = annotate(acquisition, counts)
     write(acquisition)
-```
 
-Once you’re done updating the file, make sure to run it with python annotate.py, to generate the train.csv file. You can find the complete annotate.py file [here][34].
+修改完成以后为了确保annotate.py能够生成train.csv文件. 你可以在这里找到完整的 annotate.py file [here][34].
 
-The folder should now look like this:
+文件夹结果应该像这样:
 
-```
 loan-prediction
 ├── data
 │   ├── Acquisition_2012Q1.txt
@@ -114,54 +102,42 @@ loan-prediction
 ├── README.md
 ├── requirements.txt
 ├── settings.py
-```
 
-### Finding an error metric
+找到标准
+我们已经完成了training dataset的生成, 现在我们需要最后一步, 生成预测. 我们需要找到错误的标准, 以及该如何评估我们的数据. 在这种情况下, 因为有很多的贷款没有收回, 所以根本不可能做到精确的计算.
 
-We’re done with generating our training dataset, and now we’ll just need to do the final step, generating predictions. We’ll need to figure out an error metric, as well as how we want to evaluate our data. In this case, there are many more loans that aren’t foreclosed on than are, so typical accuracy measures don’t make much sense.
+我们需要读取数据, 并且计算foreclosure_status列, 我们将得到如下信息:
 
-If we read in the training data, and check the counts in the foreclosure_status column, here’s what we get:
-
-```
 import pandas as pd
 import settings
 
 train = pd.read_csv(os.path.join(settings.PROCESSED_DIR, "train.csv"))
 train["foreclosure_status"].value_counts()
-```
 
-```
 False    4635982
 True        1585
 Name: foreclosure_status, dtype: int64
-```
 
-Since so few of the loans were foreclosed on, just checking the percentage of labels that were correctly predicted will mean that we can make a machine learning model that predicts False for every row, and still gets a very high accuracy. Instead, we’ll want to use a metric that takes the class imbalance into account, and ensures that we predict foreclosures accurately. We don’t want too many false positives, where we make predict that a loan will be foreclosed on even though it won’t, or too many false negatives, where we predict that a loan won’t be foreclosed on, but it is. Of these two, false negatives are more costly for Fannie Mae, because they’re buying loans where they may not be able to recoup their investment.
+因为只有一点点贷款收回, 通过百分比标签来建立的机器学习模型会把每行都设置为Fasle, 所以我们在这里要考虑每个样本的不平衡性,确保我们做出的预测是准确的. 我们不想要这么多假的false, 我们将预计贷款收回但是它并没有收回, 我们预计贷款不会回收但是却回收了. 通过以上两点, Fannie Mae的false太多了, 因此显示他们可能无法收回投资.
 
-We’ll define false negative rate as the number of loans where the model predicts no foreclosure but the the loan was actually foreclosed on, divided by the number of total loans that were actually foreclosed on. This is the percentage of actual foreclosures that the model “Missed”. Here’s a diagram:
-
-![](https://github.com/LCTT/wiki-images/blob/master/TranslateProject/ref_img/004.png)
-
-In the diagram above, 1 loan was predicted as not being foreclosed on, but it actually was. If we divide this by the number of loans that were actually foreclosed on, 2, we get the false negative rate, 50%. We’ll use this as our error metric, so we can evaluate our model’s performance.
-
-### Setting up the classifier for machine learning
-
-We’ll use cross validation to make predictions. With cross validation, we’ll divide our data into 3 groups. Then we’ll do the following:
-
-- Train a model on groups 1 and 2, and use the model to make predictions for group 3.
-- Train a model on groups 1 and 3, and use the model to make predictions for group 2.
-- Train a model on groups 2 and 3, and use the model to make predictions for group 1.
-
-Splitting it up into groups this way means that we never train a model using the same data we’re making predictions for. This avoids overfitting. If we overfit, we’ll get a falsely low false negative rate, which makes it hard to improve our algorithm or use it in the real world.
-
-[Scikit-learn][35] has a function called [cross_val_predict][36] which will make it easy to perform cross validation.
-
-We’ll also need to pick an algorithm to use to make predictions. We need a classifier that can do [binary classification][37]. The target variable, foreclosure_status only has two values, True and False.
-
-We’ll use [logistic regression][38], because it works well for binary classification, runs extremely quickly, and uses little memory. This is due to how the algorithm works – instead of constructing dozens of trees, like a random forest, or doing expensive transformations, like a support vector machine, logistic regression has far fewer steps involving fewer matrix operations.
-
-We can use the [logistic regression classifier][39] algorithm that’s implemented in scikit-learn. The only thing we need to pay attention to is the weights of each class. If we weight the classes equally, the algorithm will predict False for every row, because it is trying to minimize errors. However, we care much more about foreclosures than we do about loans that aren’t foreclosed on. Thus, we’ll pass balanced to the class_weight keyword argument of the [LogisticRegression][40] class, to get the algorithm to weight the foreclosures more to account for the difference in the counts of each class. This will ensure that the algorithm doesn’t predict False for every row, and instead is penalized equally for making errors in predicting either class.
+所以我们将定义一个百分比，就是模型预测没有收回但是实际上收回了, 这个数除以总的负债回收总数. 这个负债回收百分比模型实际上是“没有的”. 下面看这个图表:
 
 
 
+通过上面的图表, 1个负债预计不会回收, 也确实没有回收. 如果我们将这个数除以总数, 2, 我们将得到false的概率为50%. 我们将使用这个标准, 因此我们可以评估一下模型的性能.
 
+设置机器学习分类器
+我们使用交叉验证预测. 通过交叉验证法, 我们将数据分为3组. 按照下面的方法来做:
+
+Train a model on groups 1 and 2, and use the model to make predictions for group 3. 
+Train a model on groups 1 and 3, and use the model to make predictions for group 2. 
+Train a model on groups 2 and 3, and use the model to make predictions for group 1. 
+将它们分割到不同的组 ,这意味着我们永远不会用相同的数据来为预测训练模型. 这样就避免了 overfitting. 如果我们overfit, 我们将得到很低的false概率, 这使得我们难以改进算法或者应用到现实生活中.
+
+[Scikit-learn][35] 有一个叫做 [cross_val_predict][36] 他可以帮助我们理解交叉算法.
+
+我们还需要一种算法来帮我们预测. 我们还需要一个分类器 [binary classification][37]（二元分类）. 目标变量foreclosure_status 只有两个值, True 和 False.
+
+我们用[logistic regression][38]（回归算法）, 因为它能很好的进行binary classification（二元分类）, 并且运行很快, 占用内存很小. 我们来说一下它是如何工作的 – 取代许多树状结构, 更像随机森林, 进行转换, 更像一个向量机, 逻辑回归涉及更少的步骤和更少的矩阵.
+
+我们可以使用[logistic regression classifier][39]（逻辑回归分类器）算法 来实现scikit-learn. 我们唯一需要注意的是每个类的标准. 如果我们使用同样标准的类, 算法将会预测每行都为false, 因为它总是试图最小化误差.不管怎样, 我们关注有多少贷款能够回收而不是有多少不能回收. 因此, 我们通过 [LogisticRegression][40]（逻辑回归）来平衡标准参数, 并计算回收贷款的标准. 这将使我们的算法不会认为每一行都为false.
