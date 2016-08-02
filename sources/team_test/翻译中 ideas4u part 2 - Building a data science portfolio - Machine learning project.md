@@ -1,54 +1,47 @@
 
 ### 理解数据
-Let’s take a quick look at the raw data files. Here are the first few rows of the acquisition data from quarter 1 of 2012:
-让我们来简单看一下原始数据文件。下面是2012年1季度采集数据的前几行。
+我们来简单看一下原始数据文件。下面是2012年1季度前几行的采集数据。
 ```
 100000853384|R|OTHER|4.625|280000|360|02/2012|04/2012|31|31|1|23|801|N|C|SF|1|I|CA|945||FRM|
 100003735682|R|SUNTRUST MORTGAGE INC.|3.99|466000|360|01/2012|03/2012|80|80|2|30|794|N|P|SF|1|P|MD|208||FRM|788
 100006367485|C|PHH MORTGAGE CORPORATION|4|229000|360|02/2012|04/2012|67|67|2|36|802|N|R|SF|1|P|CA|959||FRM|794
 ```
 
-Here are the first few rows of the performance data from quarter 1 of 2012:
-
-下面是2012年1季度执行数据的前几行
+下面是2012年1季度的前几行执行数据
 ```
 100000853384|03/01/2012|OTHER|4.625||0|360|359|03/2042|41860|0|N||||||||||||||||
 100000853384|04/01/2012||4.625||1|359|358|03/2042|41860|0|N||||||||||||||||
 100000853384|05/01/2012||4.625||2|358|357|03/2042|41860|0|N||||||||||||||||
 ```
-
-Before proceeding too far into coding, it’s useful to take some time and really understand the data. This is more critical in operational projects – because we aren’t interactively exploring the data, it can be harder to spot certain nuances unless we find them upfront. In this case, the first step is to read the materials on the Fannie Mae site:
 在开始编码之前，花些时间真正理解数据是值得的。这对于操作项目优为重要，因为我们没有交互式探索数据，将很难察觉到细微的差别除非我们在前期发现他们。在这种情况下，第一个步骤是阅读房利美站点的资料：
-- [Overview][15]
 - [概述][15]
-- [Glossary of useful terms][16]
-- [用用的术语表][16]
-- [FAQs][17]
+- [有用的术语表][16]
 - [问答][17]
-- [Columns in the Acquisition and Performance files][18]
-- [Columns in the Acquisition and Performance files][18]
-- [Sample Acquisition data file][19]
-- [Sample Performance data file][20]
+- [采集和执行文件中的列][18]
+- [采集数据文件样本][19]
+- [执行数据文件样本][20]
 
-After reading through these files, we know some key facts that will help us:
-
-- There’s an Acquisition file and a Performance file for each quarter, starting from the year 2000 to present. There’s a 1 year lag in the data, so the most recent data is from 2015 as of this writing.
-- The files are in text format, with a pipe (|) as a delimiter.
-- The files don’t have headers, but we have a list of what each column is.
-- All together, the files contain data on 22 million loans.
-- Because the Performance files contain information on loans acquired in previous years, there will be more performance data for loans acquired in earlier years (ie loans acquired in 2014 won’t have much performance history).
-
-These small bits of information will save us a ton of time as we figure out how to structure our project and work with the data.
-
+在看完这些文件后后，我们了解到一些能帮助我们的关键点：
+- 从2000年到现在，每季度都有一个采集和执行文件，因数据是滞后一年的，所以到目前为止最新数据是2015年的。
+- 这些文件是文本格式的，采用管道符号“|”进行分割。
+- 这些文件是没有表头的，但我们有文件各列的名称。
+- 所有一起，文件包含2200万个贷款的数据。
+由于执行文件包含过去几年获得的贷款的信息，在早些年获得的贷款将有更多的执行数据（即在2014获得的贷款没有多少历史执行数据）。
+这些小小的信息将会为我们节省很多时间，因为我们知道如何构造我们的项目和利用这些数据。
 ### Structuring the project
-
+### 构造项目
 Before we start downloading and exploring the data, it’s important to think about how we’ll structure the project. When building an end-to-end project, our primary goals are:
-
+在我们开始下载和探索数据之前，先想一想将如何构造项目是很重要的。当建立端到端项目时，我们的主要目标是：
 - Creating a solution that works
+- 创建一个可行解决方案
 - Having a solution that runs quickly and uses minimal resources
+- 有一个快速运行且占用最小资源的解决方案
 - Enabling others to easily extend our work
+- 容易可扩展
 - Making it easy for others to understand our code
+- 容易理解的代码
 - Writing as little code as possible
+- 写尽量少的代码
 
 In order to achieve these goals, we’ll need to structure our project well. A well structured project follows a few principles:
 
