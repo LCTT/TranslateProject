@@ -1,3 +1,4 @@
+Being translated by ChrisLeeGit
 Learn How to Use Awk Built-in Variables – Part 10
 =================================================
 
@@ -111,7 +112,7 @@ After this, we shall progress to cover how we can use shell variables in Awk com
 via: http://www.tecmint.com/awk-built-in-variables-examples/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+tecmint+%28Tecmint%3A+Linux+Howto%27s+Guide%29
 
 作者：[Aaron Kili][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ChrisLeeGit](https://github.com/chrisleegit)
 校对：[校对ID](https://github.com/校对ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
