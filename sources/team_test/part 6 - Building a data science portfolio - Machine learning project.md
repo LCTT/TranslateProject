@@ -1,4 +1,4 @@
-
+Translating by cposture 2016-08-02
 ### Making predictions
 
 Now that we have the preliminaries out of the way, we’re ready to make predictions. We’ll create a new file called predict.py that will use the train.csv file we created in the last step. The below code will:
