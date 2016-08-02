@@ -1,3 +1,4 @@
+[translating by kokialoves]
 ### Annotating the data
 
 We’ve already added a few functions to annotate.py, but now we can get into the meat of the file. We’ll need to convert the acquisition data into a training dataset that can be used in a machine learning algorithm. This involves a few things:
