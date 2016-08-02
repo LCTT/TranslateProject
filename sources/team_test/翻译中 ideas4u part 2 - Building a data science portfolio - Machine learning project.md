@@ -24,7 +24,7 @@
 在看完这些文件后后，我们了解到一些能帮助我们的关键点：
 - 从2000年到现在，每季度都有一个采集和执行文件，因数据是滞后一年的，所以到目前为止最新数据是2015年的。
 - 这些文件是文本格式的，采用管道符号“|”进行分割。
-- 这些文件是没有表头的，但我们有文件各列的名称。
+- 这些文件是没有表头的，但我们有文件列明各列的名称。
 - 所有一起，文件包含2200万个贷款的数据。
 由于执行文件包含过去几年获得的贷款的信息，在早些年获得的贷款将有更多的执行数据（即在2014获得的贷款没有多少历史执行数据）。
 这些小小的信息将会为我们节省很多时间，因为我们知道如何构造我们的项目和利用这些数据。
@@ -46,13 +46,13 @@
     - 例如，如果从多个Python脚本读取相同的文件，把它们全部import设置和从一个集中的地方获得文件名是有用的。
 - 有一个.gitignore文件，防止大的或秘密文件被提交。
 - 分解任务中每一步可以单独执行的步骤到单独的文件中。
-    - For example, we may have one file for reading in the data, one for creating features, and one for making predictions.
-    - 例如，
-- Stores intermediate values. For example, one script may output a file that the next script can read.
+    - 例如，我们将有一个文件用于读取数据，一个用于创建特征，一个用于做出预测。
+- 保存中间结果，例如，一个脚本可输出下一个脚本可读取的文件。
 
-    - This enables us to make changes in our data processing flow without recalculating everything.
+    - 这使我们无需重新计算就可以在数据处理流程中进行更改。
+    
 
-Our file structure will look something like this shortly:
+我们的文件结构大体如下：
 
 ```
 loan-prediction
@@ -64,8 +64,7 @@ loan-prediction
 ├── settings.py
 ```
 
-### Creating the initial files
-
+### 创建初始文件
 To start with, we’ll need to create a loan-prediction folder. Inside that folder, we’ll need to make a data folder and a processed folder. The first will store our raw data, and the second will store any intermediate calculated values.
 
 Next, we’ll make a .gitignore file. A .gitignore file will make sure certain files are ignored by git and not pushed to Github. One good example of such a file is the .DS_Store file created by OSX in every folder. A good starting point for a .gitignore file is here. We’ll also want to ignore the data files because they are very large, and the Fannie Mae terms prevent us from redistributing them, so we should add two lines to the end of our file:
