@@ -66,21 +66,16 @@ loan-prediction
 ```
 
 ### 创建初始文件
-To start with, we’ll need to create a loan-prediction folder. Inside that folder, we’ll need to make a data folder and a processed folder. The first will store our raw data, and the second will store any intermediate calculated values.
-
-Next, we’ll make a .gitignore file. A .gitignore file will make sure certain files are ignored by git and not pushed to Github. One good example of such a file is the .DS_Store file created by OSX in every folder. A good starting point for a .gitignore file is here. We’ll also want to ignore the data files because they are very large, and the Fannie Mae terms prevent us from redistributing them, so we should add two lines to the end of our file:
-
+首先，我们需要创建一个loan-prediction文件夹，在此文件夹下面，再创建一个data文件夹和一个processed文件夹。data文件夹存放原始数据，processed文件夹存放所有的中间计算结果。
+其次，创建.gitignore文件，.gitignore文件将保证某些文件被git忽略而不会被推送至github。关于这个文件的一个好的例子是由OSX在每一个文件夹都会创建的.DS_Store文件，.gitignore文件一个很好的起点就是在这了。我们还想忽略数据文件因为他们实在是太大了，同时房利美的条文禁止我们重新分发该数据文件，所以我们应该在我们的文件后面添加以下2行：
 ```
 data
 processed
 ```
 
-[Here’s][21] an example .gitignore file for this project.
-
-Next, we’ll need to create README.md, which will help people understand the project.  .md indicates that the file is in markdown format. Markdown enables you write plain text, but also add some fancy formatting if you want. [Here’s][22] a guide on markdown. If you upload a file called README.md to Github, Github will automatically process the markdown, and show it to anyone who views the project. [Here’s][23] an example.
-
-For now, we just need to put a simple description in README.md:
-
+这是该项目的一个关于.gitignore文件的例子。
+再次，我们需要创建README.md文件，它将帮助人们理解该项目。后缀.md表示这个文件采用markdown格式。Markdown使你能够写纯文本文件，同时还可以添加你想要的梦幻格式。这是关于markdown的导引。如果你上传一个叫README.md的文件至Github，Github会自动处理该markdown，同时展示给浏览该项目的人。
+至此，我们仅需在README.md文件中添加简单的描述：
 ```
 Loan Prediction
 -----------------------
@@ -88,8 +83,7 @@ Loan Prediction
 Predict whether or not loans acquired by Fannie Mae will go into foreclosure.  Fannie Mae acquires loans from other lenders as a way of inducing them to lend more.  Fannie Mae releases data on the loans it has acquired and their performance afterwards [here](http://www.fanniemae.com/portal/funding-the-market/data/loan-performance-data.html).
 ```
 
-Now, we can create a requirements.txt file. This will make it easy for other people to install our project. We don’t know exactly what libraries we’ll be using yet, but here’s a good starting point:
-
+现在，我们可以创建requirements.txt文件了。这会唯其它人可以很方便地安装我们的项目。我们还不知道我们将会具体用到哪些库，但是以下几个库是一个很好的开始：
 ```
 pandas
 matplotlib
@@ -99,9 +93,6 @@ ipython
 scipy
 ```
 
-The above libraries are the most commonly used for data analysis tasks in Python, and its fair to assume that we’ll be using most of them. [Here’s][24] an example requirements file for this project.
-
-After creating requirements.txt, you should install the packages. For this post, we’ll be using Python 3. If you don’t have Python installed, you should look into using [Anaconda][25], a Python installer that also installs all the packages listed above.
-
-Finally, we can just make a blank settings.py file, since we don’t have any settings for our project yet.
-
+以上几个是在python数据分析任务中最常用到的库。可以认为我们将会用到大部分这些库。这里是【24】该项目requirements文件的一个例子。
+ 创建requirements.txt文件之后，你应该安装包了。我们将会使用python3.如果你没有安装python，你应该考虑使用 [Anaconda][25]，一个python安装程序，同时安装了上面列出的所有包。
+最后，我们可以建立一个空白的settings.py文件，因为我们的项目还没有任何设置。
