@@ -1,7 +1,7 @@
-### Understanding the data
 
+### 理解数据
 Let’s take a quick look at the raw data files. Here are the first few rows of the acquisition data from quarter 1 of 2012:
-
+让我们来简单看一下原始数据文件。下面是2012年1季度采集数据的前几行。
 ```
 100000853384|R|OTHER|4.625|280000|360|02/2012|04/2012|31|31|1|23|801|N|C|SF|1|I|CA|945||FRM|
 100003735682|R|SUNTRUST MORTGAGE INC.|3.99|466000|360|01/2012|03/2012|80|80|2|30|794|N|P|SF|1|P|MD|208||FRM|788
@@ -10,6 +10,7 @@ Let’s take a quick look at the raw data files. Here are the first few rows of 
 
 Here are the first few rows of the performance data from quarter 1 of 2012:
 
+下面是2012年1季度执行数据的前几行
 ```
 100000853384|03/01/2012|OTHER|4.625||0|360|359|03/2042|41860|0|N||||||||||||||||
 100000853384|04/01/2012||4.625||1|359|358|03/2042|41860|0|N||||||||||||||||
@@ -17,10 +18,14 @@ Here are the first few rows of the performance data from quarter 1 of 2012:
 ```
 
 Before proceeding too far into coding, it’s useful to take some time and really understand the data. This is more critical in operational projects – because we aren’t interactively exploring the data, it can be harder to spot certain nuances unless we find them upfront. In this case, the first step is to read the materials on the Fannie Mae site:
-
+在开始编码之前，花些时间真正理解数据是值得的。这对于操作项目优为重要，因为我们没有交互式探索数据，将很难察觉到细微的差别除非我们在前期发现他们。在这种情况下，第一个步骤是阅读房利美站点的资料：
 - [Overview][15]
+- [概述][15]
 - [Glossary of useful terms][16]
+- [用用的术语表][16]
 - [FAQs][17]
+- [问答][17]
+- [Columns in the Acquisition and Performance files][18]
 - [Columns in the Acquisition and Performance files][18]
 - [Sample Acquisition data file][19]
 - [Sample Performance data file][20]
