@@ -1,31 +1,29 @@
-translating---geekpi
-
-How to use multiple connections to speed up apt-get/apt on Ubuntu Linux 16.04 LTS server
+如何在Ubuntu Linux 16.04 LTS中使用多条连接加速apt-get/apt
 =========================================================================================
 
-ow do I speed up my apt-get or apt command to download packages from multiple repos on a Ubuntu Linux 16.04 or 14.04 LTS server?
+我该如何在Ubuntu Linux 16.04或者14.04 LTS中从多个仓库中下载包来加速apt-get或者apt命令？
 
-You need to use apt-fast shell script wrapper. It should speed up apt-get command/apt command and aptitude command by downloading packages with multiple connections per package. All packages are downloaded simultaneously in parallel. It uses aria2c as default download accelerator.
+你需要使用到apt-fast这个shell封装器。它会通过多个连接同时下载一个包来加速apt-get/apt和aptitude命令。所有的包都会同时下载。它使用aria2c作为默认的下载加速。
 
-### Install apt-fast tool
+### 安装 apt-fast 工具
 
-Type the following command on Ubuntu Linux 14.04 and later versions:
+在Ubuntu Linux 14.04或者之后的版本尝试下面的命令：
 
 ```
 $ sudo add-apt-repository ppa:saiarcot895/myppa
 ```
 
-Sample outputs:
+示例输出：
 
 ![](http://s0.cyberciti.org/uploads/faq/2016/07/install-apt-fast-repo.jpg)
 
-Update your repo:
+更新你的仓库：
 
 ```
 $ sudo apt-get update
 ```
 
-OR
+或者
 
 ```
 $ sudo apt update
@@ -33,19 +31,19 @@ $ sudo apt update
 
 ![](http://s0.cyberciti.org/uploads/faq/2016/07/install-apt-fast-command.jpg)
 
-Install apt-fast shell wrapper:
+安装 apt-fast：
 
 ```
 $ sudo apt-get -y install apt-fast
 ```
 
-OR
+或者
 
 ```
 $ sudo apt -y install apt-fast
 ```
 
-Sample outputs:
+示例输出：
 
 
 ```
@@ -69,122 +67,122 @@ Get:4 http://01.archive.ubuntu.com/ubuntu xenial/universe amd64 aria2 amd64 1.19
 54% [4 aria2 486 kB/1,143 kB 42%]                                    20.4 kB/s 32s
 ```
 
-### Configure apt-fast
+### 配置 apt-fast
 
-You will be prompted as follows (a value between 5 and 16 must be entered):
+你将会得到下面的提示（必须输入一个5到16的数值）：
 
 ![](http://s0.cyberciti.org/uploads/faq/2016/07/max-connection-10.jpg)
 
-And:
+并且
 
 ![](http://s0.cyberciti.org/uploads/faq/2016/07/apt-fast-confirmation-box.jpg)
 
-You can edit settings directly too:
+你可以直接编辑设置：
 
 ```
 $ sudo vi /etc/apt-fast.conf
 ```
 
->**Please note that this tool is not for slow network connections; it is for fast network connections. If you have a slow connection to the Internet, you are not going to benefit by this tool.**
+>**请注意这个工具并不是给慢速网络连接的，它是给快速网络连接的。如果你的网速慢，那么你将无法从这个工具中得到好处。**
 
-### How do I use apt-fast command?
+### 我该怎么使用 apt-fast 命令？
 
-The syntax is:
+语法是：
 
 ```
 apt-fast command
 apt-fast [options] command
 ```
 
-#### To retrieve new lists of packages using apt-fast
+#### 使用apt-fast取回新的包列表
 
 ```
 sudo apt-fast update
 ```
 
-#### To perform an upgrade using apt-fast
+#### 使用apt-fast执行升级
 
 ```
 sudo apt-fast upgrade
 ```
 
 
-#### To perform distribution upgrade (release or force kernel upgrade), enter:
+#### 执行发行版升级（发布或者强制内核升级），输入：
 
 ```
 $ sudo apt-fast dist-upgrade
 ```
 
-#### To install new packages
+#### 安装新的包
 
-The syntax is:
+语法是：
 
 ```
 sudo apt-fast install pkg
 ```
 
-For example, install nginx package, enter:
+比如要安装nginx，输入：
 
 ```
 $ sudo apt-fast install nginx
 ```
 
-Sample outputs:
+示例输出：
 
 ![](http://s0.cyberciti.org/uploads/faq/2016/07/sudo-apt-fast-install.jpg)
 
-#### To remove packages
+#### 删除包
 
 ```
 $ sudo apt-fast remove pkg
 $ sudo apt-fast remove nginx
 ```
 
-#### To remove packages and its config files too
+#### 删除包和它的配置文件
 
 ```
 $ sudo apt-fast purge pkg
 $ sudo apt-fast purge nginx
 ```
 
-#### To remove automatically all unused packages, enter:
+#### 删除所有未使用的包
 
 ```
 $ sudo apt-fast autoremove
 ```
 
-#### To Download source archives
+#### 下载源码包
 
 ```
 $ sudo apt-fast source pkgNameHere
 ```
 
-#### To erase downloaded archive files
+#### 清理下载的文件
 
 ```
 $ sudo apt-fast clean
 ```
 
-#### To erase old downloaded archive files
+#### 清理旧的下载文件
 
 ```
 $ sudo apt-fast autoclean
 ```
 
-#### To verify that there are no broken dependencies
+#### 验证没有破坏的依赖
 
 ```
 $ sudo apt-fast check
 ```
 
-#### To download the binary package into the current directory
+#### 下载二进制包到当前目录
 
 ```
 $ sudo apt-fast download pkgNameHere
 $ sudo apt-fast download nginx
 ```
 
-Sample outputs:
+示例输出：
 
 ```
 [#7bee0c 0B/0B CN:1 DL:0B]
@@ -198,7 +196,7 @@ Status Legend:
 (OK):download completed.
 ```
 
-#### To download and display the changelog for the given package
+#### 下载并显示指定包的changelog
 
 ```
 $ sudo apt-fast changelog pkgNameHere
@@ -212,7 +210,7 @@ $ sudo apt-fast changelog nginx
 via: https://fedoramagazine.org/introducing-flatpak/
 
 作者：[VIVEK GITE][a]
-译者：[zky001](https://github.com/zky001)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
