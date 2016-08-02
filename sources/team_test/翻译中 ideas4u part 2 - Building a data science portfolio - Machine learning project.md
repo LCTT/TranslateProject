@@ -28,33 +28,28 @@
 - 所有一起，文件包含2200万个贷款的数据。
 由于执行文件包含过去几年获得的贷款的信息，在早些年获得的贷款将有更多的执行数据（即在2014获得的贷款没有多少历史执行数据）。
 这些小小的信息将会为我们节省很多时间，因为我们知道如何构造我们的项目和利用这些数据。
-### Structuring the project
+
 ### 构造项目
-Before we start downloading and exploring the data, it’s important to think about how we’ll structure the project. When building an end-to-end project, our primary goals are:
 在我们开始下载和探索数据之前，先想一想将如何构造项目是很重要的。当建立端到端项目时，我们的主要目标是：
-- Creating a solution that works
 - 创建一个可行解决方案
-- Having a solution that runs quickly and uses minimal resources
 - 有一个快速运行且占用最小资源的解决方案
-- Enabling others to easily extend our work
 - 容易可扩展
-- Making it easy for others to understand our code
-- 容易理解的代码
-- Writing as little code as possible
+- 写容易理解的代码
 - 写尽量少的代码
 
-In order to achieve these goals, we’ll need to structure our project well. A well structured project follows a few principles:
-
-- Separates data files and code files.
-- Separates raw data from generated data.
-- Has a README.md file that walks people through installing and using the project.
-- Has a requirements.txt file that contains all the packages needed to run the project.
-- Has a single settings.py file that contains any settings that are used in other files.
-    - For example, if you are reading the same file from multiple Python scripts, it’s useful to have them all import settings and get the file name from a centralized place.
-- Has a .gitignore file that prevents large or secret files from being committed.
-- Breaks each step in our task into a separate file that can be executed separately.
+为了实现这些目标，需要对我们的项目进行良好的构造。一个结构良好的项目遵循几个原则：
+- 分离数据文件和代码文件
+- 从原始数据中分离生成的数据。
+- 有一个README.md文件帮助人们安装和使用该项目。
+- 有一个requirements.txt文件列明项目运行所需的所有包。
+- 有一个单独的settings.py 文件列明其它文件中使用的所有的设置
+    - 例如，如果从多个Python脚本读取相同的文件，把它们全部import设置和从一个集中的地方获得文件名是有用的。
+- 有一个.gitignore文件，防止大的或秘密文件被提交。
+- 分解任务中每一步可以单独执行的步骤到单独的文件中。
     - For example, we may have one file for reading in the data, one for creating features, and one for making predictions.
+    - 例如，
 - Stores intermediate values. For example, one script may output a file that the next script can read.
+
     - This enables us to make changes in our data processing flow without recalculating everything.
 
 Our file structure will look something like this shortly:
