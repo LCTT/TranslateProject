@@ -1,17 +1,17 @@
-使用 Python 创建你自己的 Shell:Part II
+使用 Python 创建你自己的 Shell（下）
 ===========================================
 
-在 [part 1][1] 中，我们已经创建了一个主要的 shell 循环、切分了的命令输入，以及通过 `fork` 和 `exec` 执行命令。在这部分，我们将会解决剩下的问题。首先，`cd test_dir2` 命令无法修改我们的当前目录。其次，我们仍无法优雅地从 shell 中退出。
+在[上篇][1]中，我们已经创建了一个 shell 主循环、切分了命令输入，以及通过 `fork` 和 `exec` 执行命令。在这部分，我们将会解决剩下的问题。首先，`cd test_dir2` 命令无法修改我们的当前目录。其次，我们仍无法优雅地从 shell 中退出。
 
 ### 步骤 4：内置命令
 
-“cd test_dir2 无法修改我们的当前目录” 这句话是对的，但在某种意义上也是错的。在执行完该命令之后，我们仍然处在同一目录，从这个意义上讲，它是对的。然而，目录实际上已经被修改，只不过它是在子进程中被修改。
+“`cd test_dir2` 无法修改我们的当前目录” 这句话是对的，但在某种意义上也是错的。在执行完该命令之后，我们仍然处在同一目录，从这个意义上讲，它是对的。然而，目录实际上已经被修改，只不过它是在子进程中被修改。
 
-还记得我们 fork 了一个子进程，然后执行命令，执行命令的过程没有发生在父进程上。结果是我们只是改变了子进程的当前目录，而不是父进程的目录。
+还记得我们分叉（fork）了一个子进程，然后执行命令，执行命令的过程没有发生在父进程上。结果是我们只是改变了子进程的当前目录，而不是父进程的目录。
 
 然后子进程退出，而父进程在原封不动的目录下继续运行。
 
-因此，这类与 shell 自己相关的命令必须是内置命令。它必须在 shell 进程中执行而没有分叉（forking）。
+因此，这类与 shell 自己相关的命令必须是内置命令。它必须在 shell 进程中执行而不是在分叉中（forking）。
 
 #### cd
 
@@ -34,7 +34,6 @@ yosh_project
 ```python
 import os
 from yosh.constants import *
-
 
 def cd(args):
     os.chdir(args[0])
@@ -66,23 +65,21 @@ SHELL_STATUS_RUN = 1
 
 ```python
 ...
-# Import constants
+### 导入常量
 from yosh.constants import *
 
-# Hash map to store built-in function name and reference as key and value
+### 使用哈希映射来存储内建的函数名及其引用
 built_in_cmds = {}
-
 
 def tokenize(string):
     return shlex.split(string)
 
-
 def execute(cmd_tokens):
-    # Extract command name and arguments from tokens
+    ### 从元组中分拆命令名称与参数
     cmd_name = cmd_tokens[0]
     cmd_args = cmd_tokens[1:]
 
-    # If the command is a built-in command, invoke its function with arguments
+    ### 如果该命令是一个内建命令，使用参数调用该函数
     if cmd_name in built_in_cmds:
         return built_in_cmds[cmd_name](cmd_args)
 
@@ -91,29 +88,29 @@ def execute(cmd_tokens):
 
 我们使用一个 python 字典变量 `built_in_cmds` 作为哈希映射（hash map），以存储我们的内置函数。我们在 `execute` 函数中提取命令的名字和参数。如果该命令在我们的哈希映射中，则调用对应的内置函数。
 
-（提示：`built_in_cmds[cmd_name]` 返回能直接使用参数调用的函数引用的。)
+（提示：`built_in_cmds[cmd_name]` 返回能直接使用参数调用的函数引用。)
 
 我们差不多准备好使用内置的 `cd` 函数了。最后一步是将 `cd` 函数添加到 `built_in_cmds` 映射中。
 
 ```
 ...
-# Import all built-in function references
+### 导入所有内建函数引用
 from yosh.builtins import *
 
 ...
 
-# Register a built-in function to built-in command hash map
+### 注册内建函数到内建命令的哈希映射中
 def register_command(name, func):
     built_in_cmds[name] = func
 
 
-# Register all built-in commands here
+### 在此注册所有的内建命令
 def init():
     register_command("cd", cd)
 
 
 def main():
-    # Init shell before starting the main loop
+    ###在开始主循环之前初始化 shell
     init()
     shell_loop()
 ```
@@ -138,7 +135,7 @@ from yosh.builtins.cd import *
 
 我们需要一个可以修改 shell 状态为 `SHELL_STATUS_STOP` 的函数。这样，shell 循环可以自然地结束，shell 将到达终点而退出。
 
-和 `cd` 一样，如果我们在子进程中 fork 和执行 `exit` 函数，其对父进程是不起作用的。因此，`exit` 函数需要成为一个 shell 内置函数。
+和 `cd` 一样，如果我们在子进程中分叉并执行 `exit` 函数，其对父进程是不起作用的。因此，`exit` 函数需要成为一个 shell 内置函数。
 
 让我们从这开始：在 `builtins` 目录下创建一个名为 `exit.py` 的新文件。
 
@@ -159,7 +156,6 @@ yosh_project
 ```
 from yosh.constants import *
 
-
 def exit(args):
     return SHELL_STATUS_STOP
 ```
@@ -173,11 +169,10 @@ from yosh.builtins.exit import *
 
 最后，我们在 `shell.py` 中的 `init()` 函数注册 `exit` 命令。
 
-
 ```
 ...
 
-# Register all built-in commands here
+### 在此注册所有的内建命令
 def init():
     register_command("cd", cd)
     register_command("exit", exit)
@@ -193,7 +188,7 @@ def init():
 
 我希望你能像我一样享受创建 `yosh` （**y**our **o**wn **sh**ell）的过程。但我的 `yosh` 版本仍处于早期阶段。我没有处理一些会使 shell 崩溃的极端状况。还有很多我没有覆盖的内置命令。为了提高性能，一些非内置命令也可以实现为内置命令（避免新进程创建时间）。同时，大量的功能还没有实现（请看 [公共特性](http://tldp.org/LDP/Bash-Beginners-Guide/html/x7243.html) 和 [不同特性](http://www.tldp.org/LDP/intro-linux/html/x12249.html)）
 
-我已经在 github.com/supasate/yosh 中提供了源代码。请随意 fork 和尝试。
+我已经在 https://github.com/supasate/yosh 中提供了源代码。请随意 fork 和尝试。
 
 现在该是创建你真正自己拥有的 Shell 的时候了。
 
@@ -205,12 +200,12 @@ via: https://hackercollider.com/articles/2016/07/06/create-your-own-shell-in-pyt
 
 作者：[Supasate Choochaisri][a]
 译者：[cposture](https://github.com/cposture)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://disqus.com/by/supasate_choochaisri/
-[1]: https://hackercollider.com/articles/2016/07/05/create-your-own-shell-in-python-part-1/
+[1]: https://linux.cn/article-7624-1.html
 [2]: http://tldp.org/LDP/Bash-Beginners-Guide/html/x7243.html
 [3]: http://www.tldp.org/LDP/intro-linux/html/x12249.html
 [4]: https://github.com/supasate/yosh
