@@ -223,8 +223,8 @@ class RemovalServiceTestCase(unittest.TestCase):
         mock_os.remove.assert_called_with("any path")
 ```
 
-很好，我们知道 RemovalService 会如期工作。接下来让我们创建另一个服务，将其声明为一个依赖
-Great, so we now know that the RemovalService works as planned. Let’s create another service which declares it as a dependency:
+很好，我们知道 RemovalService 会如期工作。接下来让我们创建另一个服务，将 RemovalService 声明为一个依赖
+：
 
 ```
 #!/usr/bin/env python
@@ -250,18 +250,18 @@ class UploadService(object):
         self.removal_service.rm(filename)
 ```
 
-Since we already have test coverage on the RemovalService, we’re not going to validate internal functionality of the rm method in our tests of UploadService. Rather, we’ll simply test (without side-effects, of course) that UploadService calls the RemovalService.rm method, which we know “just works™” from our previous test case.
+因为我们的测试覆盖了 RemovalService，因此我们不会对我们测试用例中 UploadService 的内部函数 rm 进行验证。相反，我们将调用 UploadService 的 RemovalService.rm 方法来进行简单测试（当然是没有其他副作用），我们通过之前的测试用例便能知道它可以正确地工作。
 
-There are two ways to go about this:
+这里有两种方法来实现它：
 
-1. Mock out the RemovalService.rm method itself.
-2. Supply a mocked instance in the constructor of UploadService.
+1. 模拟 RemovalService.rm 方法本身。
+2. 在 UploadService 的构造函数中提供一个模拟实例。
 
-As both methods are often important in unit-testing, we’ll review both.
+因为这两种方法都是单元测试中非常重要的方法，所以我们将同时对这两种方法进行回顾。
 
-### Option 1: Mocking Instance Methods
+### 方法 1：模拟实例的方法
 
-The mock library has a special method decorator for mocking object instance methods and properties, the @mock.patch.object decorator:
+该模拟库有一个特殊的方法装饰器，可以模拟对象势力的方法和属性，即 @mock.patch.object decorator：
 
 ```
 #!/usr/bin/env python
@@ -314,11 +314,12 @@ class UploadServiceTestCase(unittest.TestCase):
         removal_service.rm.assert_called_with("my uploaded file")
 ```
 
-Great! We’ve validated that the UploadService successfully calls our instance’s rm method. Notice anything interesting in there? The patching mechanism actually replaced the rm method of all RemovalService instances in our test method. That means that we can actually inspect the instances themselves. If you want to see more, try dropping in a breakpoint in your mocking code to get a good feel for how the patching mechanism works.
+非常棒！我们验证了 UploadService 成功调用了我们实例的 rm 方法。你是否注意到一些有趣的地方？这种修补机制实际上替换了我们测试用例中的所有 RemovalService 实例的 rm 方法。这意味着我们可以检查实例本身。如果你想要了解更多，可以试着在你模拟的代码下断点，以对这种修补机制的原理获得更好的认识。
 
-### Pitfall: Decorator Order
+### 陷阱：装饰顺序
 
-When using multiple decorators on your test methods, order is important, and it’s kind of confusing. Basically, when mapping decorators to method parameters, [work backwards][3]. Consider this example:
+当我们在测试方法中使用多个装饰器，其顺序是很重要的，并且很容易混乱。基本桑，当装饰器被映射到方法参数时，[装饰器的工作顺序是反向的][3]。思考这个例子：
+
 
 ```
 @mock.patch('mymodule.sys')
@@ -328,16 +329,17 @@ When using multiple decorators on your test methods, order is important, and it�
         pass
 ```
 
-Notice how our parameters are matched to the reverse order of the decorators? That’s partly because of [the way that Python works][4]. With multiple method decorators, here’s the order of execution in pseudocode:
+注意到我们的参数和装饰器的顺序是反向匹配了吗？这多多少少是由 [Python 的工作方式][4] 导致的。这里是使用多个装饰器的情况下它们的执行顺序的伪代码：
 
 ```
 patch_sys(patch_os(patch_os_path(test_something)))
 ```
 
-Since the patch to sys is the outermost patch, it will be executed last, making it the last parameter in the actual test method arguments. Take note of this well and use a debugger when running your tests to make sure that the right parameters are being injected in the right order.
+因为 sys 补丁位于最外层，所以它会最晚执行，使得它成为实际测试方法参数的最后一个参数。请特别注意这一点，并且在运行你的测试用例时，使用调试器来保证正确的参数以正确的顺序注入。
 
-### Option 2: Creating Mock Instances
+### 方法 2：创建 Mock 实例
 
+我们可以使用构造函数为 UploadService 提供一个 Mock 实例，而不是模拟特定的实例方法。我推荐上面的方法 1,因为它更加精确，但在多数情况，方法 2 或许更加有效和必要。让我们再次重构测试用例：
 Instead of mocking the specific instance method, we could instead just supply a mocked instance to UploadService with its constructor. I prefer option 1 above, as it’s a lot more precise, but there are many cases where option 2 might be efficient or necessary. Let’s refactor our test again:
 
 ```
@@ -387,6 +389,7 @@ class UploadServiceTestCase(unittest.TestCase):
         mock_removal_service.rm.assert_called_with("my uploaded file")
 ```
 
+在这个例子中，我们甚至不需要补充任何功能，只需创建一个
 In this example, we haven’t even had to patch any functionality, we simply create an auto-spec for the RemovalService class, and then inject this instance into our UploadService to validate the functionality.
 
 The [mock.create_autospec][5] method creates a functionally equivalent instance to the provided class. What this means, practically speaking, is that when the returned instance is interacted with, it will raise exceptions if used in illegal ways. More specifically, if a method is called with the wrong number of arguments, an exception will be raised. This is extremely important as refactors happen. As a library changes, tests break and that is expected. Without using an auto-spec, our tests will still pass even though the underlying implementation is broken.
