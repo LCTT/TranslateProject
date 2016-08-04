@@ -1,3 +1,4 @@
+translated by strugglingyouth
 How to restore older file versions in Git
 =============================================
 
