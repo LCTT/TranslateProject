@@ -1,32 +1,34 @@
 Mock 在 Python 中的使用介绍
 =====================================
-http://www.oschina.net/translate/an-introduction-to-mocking-in-python?cmp
+
 本文讲述的是 Python 中 Mock 的使用
 
-**如何在避免测试你的耐心的情景下执行单元测试**
+**如何在避免测试你的耐心的情况下执行单元测试**
 
-通常，我们编写的软件会直接与我们称之为肮脏无比的服务交互。用外行人的话说：交互已设计好的服务对我们的应用程序很重要，但是这会带来我们不希望的副作用，也就是那些在我们自己测试的时候不希望的功能。例如：我们正在写一个社交 app，并且想要测试一下我们 "发布到 Facebook" 的新功能，但是不想每次运行测试集的时候真的发布到 Facebook。
+很多时候，我们编写的软件会直接与那些被标记为肮脏无比的服务交互。用外行人的话说：交互已设计好的服务对我们的应用程序很重要，但是这会给我们带来不希望的副作用，也就是那些在一个自动化测试运行的上下文中不希望的功能。
+
+例如：我们正在写一个社交 app，并且想要测试一下 "发布到 Facebook" 的新功能，但是不想每次运行测试集的时候真的发布到 Facebook。
 
 
-Python 的单元测试库包含了一个名为 unittest.mock 或者可以称之为依赖的子包，简言之为 mock——其提供了极其强大和有用的方法，通过它们可以模拟和打桩我们不希望的副作用。
+Python 的 `unittest` 库包含了一个名为 `unittest.mock` 或者可以称之为依赖的子包，简称为
+`mock` —— 其提供了极其强大和有用的方法，通过它们可以模拟和打桩来去除我们不希望的副作用。
 
 
 >Source | <http://www.toptal.com/python/an-introduction-to-mocking-in-python>
 
-注意：mock [最近收录][1]到了 Python 3.3 的标准库中；先前发布的版本必须通过 [PyPI][2] 下载 Mock 库。
+> 注意：`mock` [最近收录][1]到了 Python 3.3 的标准库中；先前发布的版本必须通过 [PyPI][2] 下载 Mock 库。
 
-###
-### Fear System Calls
+### 恐惧系统调用
 
-再举另一个例子，思考一个我们会在余文讨论的系统调用。不难发现，这些系统调用都是主要的模拟对象：无论你是正在写一个可以弹出 CD 驱动的脚本，还是一个用来删除 /tmp 下过期的缓存文件的 Web 服务，这些调用都是在你的单元测试上下文中不希望的副作用。
+再举另一个例子，思考一个我们会在余文讨论的系统调用。不难发现，这些系统调用都是主要的模拟对象：无论你是正在写一个可以弹出 CD 驱动的脚本，还是一个用来删除 /tmp 下过期的缓存文件的 Web 服务，或者一个绑定到 TCP 端口的 socket 服务器，这些调用都是在你的单元测试上下文中不希望的副作用。
 
 > 作为一个开发者，你需要更关心你的库是否成功地调用了一个可以弹出 CD 的系统函数，而不是切身经历 CD 托盘每次在测试执行的时候都打开了。
 
 作为一个开发者，你需要更关心你的库是否成功地调用了一个可以弹出 CD 的系统函数（使用了正确的参数等等），而不是切身经历 CD 托盘每次在测试执行的时候都打开了。（或者更糟糕的是，很多次，在一个单元测试运行期间多个测试都引用了弹出代码！）
 
-同样，保持你的单元测试的效率和性能意味着需要让如此多的 "缓慢代码" 远离自动测试，比如文件系统和网络访问。
+同样，保持单元测试的效率和性能意味着需要让如此多的 "缓慢代码" 远离自动测试，比如文件系统和网络访问。
 
-对于我们首个例子，我们要从原始形式到使用 mock 地重构一个标准 Python 测试用例。我们会演示如何使用 mock 写一个测试用例使我们的测试更加智能、快速，并且能展示更多关于我们软件的工作原理。
+对于首个例子，我们要从原始形式到使用 `mock` 重构一个标准 Python 测试用例。我们会演示如何使用 mock 写一个测试用例，使我们的测试更加智能、快速，并展示更多关于我们软件的工作原理。
 
 ### 一个简单的删除函数
 
@@ -42,9 +44,9 @@ def rm(filename):
     os.remove(filename)
 ```
 
-很明显，我们的 rm 方法此时无法提供比相关 os.remove 方法更多的功能，但我们的基础代码会逐步改善，允许我们在这里添加更多的功能。
+很明显，我们的 `rm` 方法此时无法提供比 `os.remove` 方法更多的相关功能，但我们可以在这里添加更多的功能，使我们的基础代码逐步改善。
 
-让我们写一个传统的测试用例，即，没有使用 mock：
+让我们写一个传统的测试用例，即，没有使用 `mock`：
 
 ```
 #!/usr/bin/env python
@@ -71,7 +73,7 @@ class RmTestCase(unittest.TestCase):
         self.assertFalse(os.path.isfile(self.tmpfilepath), "Failed to remove the file.")
 ```
 
-我们的测试用例相当简单，但是当它每次运行的时候，它都会创建一个临时文件并且随后删除。此外，我们没有办法测试我们的 rm 方法是否正确地将我们的参数向下传递给 os.remove 调用。我们可以基于以上的测试认为它做到了，但还有很多需要改进的地方。
+我们的测试用例相当简单，但是在它每次运行的时候，它都会创建一个临时文件并且随后删除。此外，我们没有办法测试我们的 `rm` 方法是否正确地将我们的参数向下传递给 `os.remove` 调用。我们可以基于以上的测试认为它做到了，但还有很多需要改进的地方。
 
 ### 使用 Mock 重构
 
@@ -95,29 +97,25 @@ class RmTestCase(unittest.TestCase):
         mock_os.remove.assert_called_with("any path")
 ```
 
-使用这些重构，我们从根本上改变了该测试用例的运行方式。现在，我们有一个可以用于验证其他功能的内部对象。
+使用这些重构，我们从根本上改变了测试用例的操作方式。现在，我们有一个可以用于验证其他功能的内部对象。
 
 ### 潜在陷阱
 
-第一件需要注意的事情就是，我们使用了位于 mymodule.os 且用于模拟对象的 mock.patch 方法装饰器，并且将该 mock 注入到我们的测试用例方法。相比在 mymodule.os 引用它，那么只是模拟 os 本身，会不会更有意义呢？
-One of the first things that should stick out is that we’re using the mock.patch method decorator to mock an object located at mymodule.os, and injecting that mock into our test case method. Wouldn’t it make more sense to just mock os itself, rather than the reference to it at mymodule.os?
+第一件需要注意的事情就是，我们使用了 `mock.patch` 方法装饰器，用于模拟位于 `mymodule.os` 的对象,并且将 mock 注入到我们的测试用例方法。那么只是模拟 `os` 本身，而不是 `mymodule.os` 下 `os` 的引用（注意 `@mock.patch('mymodule.os')` 便是模拟 `mymodule.os` 下的 `os`，译者注），会不会更有意义呢？
 
-当然，当涉及到导入和管理模块，Python 的用法非常灵活。在运行时，mymodule 模块拥有被导入到本模块局部作用域的 os。因此，如果我们模拟 os，我们是看不到模拟在 mymodule 模块中的作用的。
+当然，当涉及到导入和管理模块，Python 的用法非常灵活。在运行时，`mymodule` 模块拥有被导入到本模块局部作用域的 `os`。因此，如果我们模拟 `os`，我们是看不到 mock 在 `mymodule` 模块中的作用的。
 
 这句话需要深刻地记住：
 
 > 模拟测试一个项目，只需要了解它用在哪里，而不是它从哪里来。
-> Mock an item where it is used, not where it came from.
 
-如果你需要为 myproject.app.MyElaborateClass 模拟 tempfile 模块，你可能需要
-If you need to mock the tempfile module for myproject.app.MyElaborateClass, you probably need to apply the mock to myproject.app.tempfile, as each module keeps its own imports.
+如果你需要为 `myproject.app.MyElaborateClass` 模拟 `tempfile` 模块，你可能需要将 mock 用于 `myproject.app.tempfile`，而其他模块保持自己的导入。
 
 先将那个陷阱置身事外，让我们继续模拟。
-With that pitfall out of the way, let’s keep mocking.
 
 ### 向 ‘rm’ 中加入验证
 
-之前定义的 rm 方法相当的简单。在盲目地删除之前，我们倾向于拿它来验证一个路径是否存在，并验证其是否是一个文件。让我们重构 rm 使其变得更加智能:
+之前定义的 rm 方法相当的简单。在盲目地删除之前，我们倾向于验证一个路径是否存在，并验证其是否是一个文件。让我们重构 rm 使其变得更加智能:
 
 
 ```
@@ -132,7 +130,7 @@ def rm(filename):
         os.remove(filename)
 ```
 
-很好。现在，让我们调整测试用例来保持测试的覆盖程度。
+很好。现在，让我们调整测试用例来保持测试的覆盖率。
 
 ```
 #!/usr/bin/env python
@@ -168,9 +166,9 @@ class RmTestCase(unittest.TestCase):
 
 ### 将文件删除作为服务
 
-到目前为止，我们只是对函数功能提供模拟测试，并没对需要传递参数的对象和实例的方法进行模拟测试。接下来我们将介绍如何对对象的方法进行模拟测试。
+到目前为止，我们只是将 mock 应用在函数上，并没应用在需要传递参数的对象和实例的方法。我们现在开始涵盖对象的方法。
 
-首先，我们将rm方法重构成一个服务类。实际上将这样一个简单的函数转换成一个对象，在本质上，这不是一个合理的需求，但它能够帮助我们了解mock的关键概念。让我们开始重构:
+首先，我们将 `rm` 方法重构成一个服务类。实际上将这样一个简单的函数转换成一个对象，在本质上这不是一个合理的需求，但它能够帮助我们了解 `mock` 的关键概念。让我们开始重构：
 
 ```
 #!/usr/bin/env python
@@ -187,8 +185,7 @@ class RemovalService(object):
             os.remove(filename)
 ```
 
-### 你会注意到我们的测试用例没有太大的变化
-### You’ll notice that not much has changed in our test case:
+你会注意到我们的测试用例没有太大变化：
 
 ```
 #!/usr/bin/env python
@@ -223,8 +220,8 @@ class RemovalServiceTestCase(unittest.TestCase):
         mock_os.remove.assert_called_with("any path")
 ```
 
-很好，我们知道 RemovalService 会如期工作。接下来让我们创建另一个服务，将其声明为一个依赖
-Great, so we now know that the RemovalService works as planned. Let’s create another service which declares it as a dependency:
+很好，我们知道 `RemovalService` 会如期工作。接下来让我们创建另一个服务，将 `RemovalService` 声明为它的一个依赖：
+：
 
 ```
 #!/usr/bin/env python
@@ -250,18 +247,18 @@ class UploadService(object):
         self.removal_service.rm(filename)
 ```
 
-Since we already have test coverage on the RemovalService, we’re not going to validate internal functionality of the rm method in our tests of UploadService. Rather, we’ll simply test (without side-effects, of course) that UploadService calls the RemovalService.rm method, which we know “just works™” from our previous test case.
+因为我们的测试覆盖了 `RemovalService`，因此我们不会对我们测试用例中 `UploadService` 的内部函数 `rm` 进行验证。相反，我们将调用 `UploadService` 的 `RemovalService.rm` 方法来进行简单测试（当然没有其他副作用），我们通过之前的测试用例便能知道它可以正确地工作。
 
-There are two ways to go about this:
+这里有两种方法来实现测试：
 
-1. Mock out the RemovalService.rm method itself.
-2. Supply a mocked instance in the constructor of UploadService.
+1. 模拟 RemovalService.rm 方法本身。
+2. 在 UploadService 的构造函数中提供一个模拟实例。
 
-As both methods are often important in unit-testing, we’ll review both.
+因为这两种方法都是单元测试中非常重要的方法，所以我们将同时对这两种方法进行回顾。
 
-### Option 1: Mocking Instance Methods
+### 方法 1：模拟实例的方法
 
-The mock library has a special method decorator for mocking object instance methods and properties, the @mock.patch.object decorator:
+`mock` 库有一个特殊的方法装饰器，可以模拟对象实例的方法和属性，即 `@mock.patch.object decorator` 装饰器：
 
 ```
 #!/usr/bin/env python
@@ -314,31 +311,32 @@ class UploadServiceTestCase(unittest.TestCase):
         removal_service.rm.assert_called_with("my uploaded file")
 ```
 
-Great! We’ve validated that the UploadService successfully calls our instance’s rm method. Notice anything interesting in there? The patching mechanism actually replaced the rm method of all RemovalService instances in our test method. That means that we can actually inspect the instances themselves. If you want to see more, try dropping in a breakpoint in your mocking code to get a good feel for how the patching mechanism works.
+非常棒！我们验证了 UploadService 成功调用了我们实例的 rm 方法。你是否注意到一些有趣的地方？这种修补机制（patching mechanism）实际上替换了我们测试用例中的所有 `RemovalService` 实例的 `rm` 方法。这意味着我们可以检查实例本身。如果你想要了解更多，可以试着在你模拟的代码下断点，以对这种修补机制的原理获得更好的认识。
 
-### Pitfall: Decorator Order
+### 陷阱：装饰顺序
 
-When using multiple decorators on your test methods, order is important, and it’s kind of confusing. Basically, when mapping decorators to method parameters, [work backwards][3]. Consider this example:
+当我们在测试方法中使用多个装饰器，其顺序是很重要的，并且很容易混乱。基本上，当装饰器被映射到方法参数时，[装饰器的工作顺序是反向的][3]。思考这个例子：
+
 
 ```
-@mock.patch('mymodule.sys')
+    @mock.patch('mymodule.sys')
     @mock.patch('mymodule.os')
     @mock.patch('mymodule.os.path')
     def test_something(self, mock_os_path, mock_os, mock_sys):
         pass
 ```
 
-Notice how our parameters are matched to the reverse order of the decorators? That’s partly because of [the way that Python works][4]. With multiple method decorators, here’s the order of execution in pseudocode:
+注意到我们的参数和装饰器的顺序是反向匹配了吗？这多多少少是由 [Python 的工作方式][4] 导致的。这里是使用多个装饰器的情况下它们执行顺序的伪代码：
 
 ```
 patch_sys(patch_os(patch_os_path(test_something)))
 ```
 
-Since the patch to sys is the outermost patch, it will be executed last, making it the last parameter in the actual test method arguments. Take note of this well and use a debugger when running your tests to make sure that the right parameters are being injected in the right order.
+因为 sys 补丁位于最外层，所以它最晚执行，使得它成为实际测试方法参数的最后一个参数。请特别注意这一点，并且在运行你的测试用例时，使用调试器来保证正确的参数以正确的顺序注入。
 
-### Option 2: Creating Mock Instances
+### 方法 2：创建 Mock 实例
 
-Instead of mocking the specific instance method, we could instead just supply a mocked instance to UploadService with its constructor. I prefer option 1 above, as it’s a lot more precise, but there are many cases where option 2 might be efficient or necessary. Let’s refactor our test again:
+我们可以使用构造函数为 UploadService 提供一个 Mock 实例，而不是模拟特定的实例方法。我更推荐方法 1，因为它更加精确，但在多数情况，方法 2 或许更加有效和必要。让我们再次重构测试用例：
 
 ```
 #!/usr/bin/env python
@@ -387,13 +385,13 @@ class UploadServiceTestCase(unittest.TestCase):
         mock_removal_service.rm.assert_called_with("my uploaded file")
 ```
 
-In this example, we haven’t even had to patch any functionality, we simply create an auto-spec for the RemovalService class, and then inject this instance into our UploadService to validate the functionality.
+在这个例子中，我们甚至不需要补充任何功能，只需为 `RemovalService` 类创建一个 auto-spec，然后将实例注入到我们的 `UploadService` 以验证功能。
 
-The [mock.create_autospec][5] method creates a functionally equivalent instance to the provided class. What this means, practically speaking, is that when the returned instance is interacted with, it will raise exceptions if used in illegal ways. More specifically, if a method is called with the wrong number of arguments, an exception will be raised. This is extremely important as refactors happen. As a library changes, tests break and that is expected. Without using an auto-spec, our tests will still pass even though the underlying implementation is broken.
+`mock.create_autospec` 方法为类提供了一个同等功能实例。实际上来说，这意味着在使用返回的实例进行交互的时候，如果使用了非法的方式将会引发异常。更具体地说，如果一个方法被调用时的参数数目不正确，将引发一个异常。这对于重构来说是非常重要。当一个库发生变化的时候，中断测试正是所期望的。如果不使用 auto-spec，尽管底层的实现已经被破坏，我们的测试仍然会通过。
 
-### Pitfall: The mock.Mock and mock.MagicMock Classes
+### 陷阱：mock.Mock 和 mock.MagicMock 类
 
-The mock library also includes two important classes upon which most of the internal functionality is built upon: [mock.Mock][6] and mock.MagicMock. When given a choice to use a mock.Mock instance, a mock.MagicMock instance, or an auto-spec, always favor using an auto-spec, as it helps keep your tests sane for future changes. This is because mock.Mock and mock.MagicMock accept all method calls and property assignments regardless of the underlying API. Consider the following use case:
+`mock` 库包含了两个重要的类 [mock.Mock](http://www.voidspace.org.uk/python/mock/mock.html) 和 [mock.MagicMock](http://www.voidspace.org.uk/python/mock/magicmock.html#magic-mock)，大多数内部函数都是建立在这两个类之上的。当在选择使用 `mock.Mock` 实例，`mock.MagicMock` 实例或 auto-spec 的时候，通常倾向于选择使用 auto-spec，因为对于未来的变化，它更能保持测试的健全。这是因为 `mock.Mock` 和 `mock.MagicMock` 会无视底层的 API，接受所有的方法调用和属性赋值。比如下面这个用例：
 
 ```
 class Target(object):
@@ -404,7 +402,7 @@ def method(target, value):
     return target.apply(value)
 ```
 
-We can test this with a mock.Mock instance like this:
+我们可以像下面这样使用 mock.Mock 实例进行测试：
 
 ```
 class MethodTestCase(unittest.TestCase):
@@ -417,7 +415,7 @@ class MethodTestCase(unittest.TestCase):
         target.apply.assert_called_with("value")
 ```
 
-This logic seems sane, but let’s modify the Target.apply method to take more parameters:
+这个逻辑看似合理，但如果我们修改 `Target.apply` 方法接受更多参数：
 
 ```
 class Target(object):
@@ -428,11 +426,11 @@ class Target(object):
             return None
 ```
 
-Re-run your test, and you’ll find that it still passes. That’s because it isn’t built against your actual API. This is why you should always use the create_autospec method and the autospec parameter with the @patch and @patch.object decorators.
+重新运行你的测试，你会发现它仍能通过。这是因为它不是针对你的 API 创建的。这就是为什么你总是应该使用 `create_autospec` 方法，并且在使用 `@patch`和 `@patch.object` 装饰方法时使用 `autospec` 参数。
 
-### Real-World Example: Mocking a Facebook API Call
+### 现实例子：模拟 Facebook API 调用
 
-To finish up, let’s write a more applicable real-world example, one which we mentioned in the introduction: posting a message to Facebook. We’ll write a nice wrapper class and a corresponding test case.
+为了完成，我们写一个更加适用的现实例子，一个在介绍中提及的功能：发布消息到 Facebook。我将写一个不错的包装类及其对应的测试用例。
 
 ```
 import facebook
@@ -447,7 +445,7 @@ class SimpleFacebook(object):
         self.graph.put_object("me", "feed", message=message)
 ```
 
-Here’s our test case, which checks that we post the message without actually posting the message:
+这是我们的测试用例，它可以检查我们发布的消息,而不是真正地发布消息：
 
 ```
 import facebook
@@ -466,18 +464,18 @@ class SimpleFacebookTestCase(unittest.TestCase):
         mock_put_object.assert_called_with(message="Hello World!")
 ```
 
-As we’ve seen so far, it’s really simple to start writing smarter tests with mock in Python.
+正如我们所看到的，在 Python 中，通过 mock，我们可以非常容易地动手写一个更加智能的测试用例。
 
-### Mocking in python Conclusion
+### Python Mock 总结
 
-Python’s mock library, if a little confusing to work with, is a game-changer for [unit-testing][7]. We’ve demonstrated common use-cases for getting started using mock in unit-testing, and hopefully this article will help [Python developers][8] overcome the initial hurdles and write excellent, tested code.
+对 [单元测试][7] 来说，Python 的 `mock` 库可以说是一个游戏变革者，即使对于它的使用还有点困惑。我们已经演示了单元测试中常见的用例以开始使用 `mock`，并希望这篇文章能够帮助 [Python 开发者][8] 克服初期的障碍，写出优秀、经受过考验的代码。
 
 --------------------------------------------------------------------------------
 
 via: http://slviki.com/index.php/2016/06/18/introduction-to-mocking-in-python/
 
 作者：[Dasun Sucharith][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[cposture](https://github.com/cposture)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
