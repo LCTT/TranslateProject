@@ -1,6 +1,7 @@
 Android vs. iPhone: Pros and Cons
 ===================================
 
+正在翻译 by jovov
 >When comparing Android vs. iPhone, clearly Android has certain advantages even as the iPhone is superior in some key ways. But ultimately, which is better?
 
 The question of Android vs. iPhone is a personal one.
