@@ -144,7 +144,7 @@ loan-prediction
 
 如果你建立了任何有趣的东西,请在评论中让我们知道!
 
-如果你喜欢这个,你可能会喜欢阅读 ‘Build a Data Science Porfolio’ 系列其他文章:
+如果你喜欢这个,你可能会喜欢阅读 ‘Build a Data Science Porfolio’ 系列的其他文章:
 
 - [Storytelling with data][45].
 - [How to setup up a data science blog][46].
