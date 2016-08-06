@@ -1,3 +1,5 @@
+Being translated by ChrisLeeGit
+
 How to Allow Awk to Use Shell Variables – Part 11
 ==================================================
 
@@ -87,7 +89,7 @@ In the next part of the Awk series, we shall dive into yet another critical sect
 via: http://www.tecmint.com/use-shell-script-variable-in-awk/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+tecmint+%28Tecmint%3A+Linux+Howto%27s+Guide%29
 
 作者：[Aaron Kili][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ChrisLeeGit](https://github.com/chrisleegit)
 校对：[校对ID](https://github.com/校对ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
