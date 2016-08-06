@@ -1,17 +1,15 @@
-Translating by cposture 2016-08-02
-### Making predictions
+### 做出预测
 
-Now that we have the preliminaries out of the way, we’re ready to make predictions. We’ll create a new file called predict.py that will use the train.csv file we created in the last step. The below code will:
+既然完成了前期准备，我们可以开始准备做出预测了。我将创建一个名为 predict.py 的新文件，它会使用我们在最后一步创建的 train.csv 文件。下面的代码：
 
-- Import needed libraries.
-- Create a function called cross_validate that:
-    - Creates a logistic regression classifier with the right keyword arguments.
-    - Creates a list of columns that we want to use to train the model, removing id and foreclosure_status.
-    - Run cross validation across the train DataFrame.
-    - Return the predictions.
+- 导入所需的库
+- 创建一个名为 `cross_validate` 的函数：
+    - 使用正确的关键词参数创建逻辑回归分类器（logistic regression classifier）
+    - 创建移除了 `id` 和 `foreclosure_status` 属性的用于训练模型的列
+    - 跨 `train` 数据帧使用交叉验证
+    - 返回预测结果
 
-
-```
+```python
 import os
 import settings
 import pandas as pd
@@ -29,22 +27,19 @@ def cross_validate(train):
     return predictions
 ```
 
-### Predicting error
+### 预测误差
 
-Now, we just need to write a few functions to compute error. The below code will:
+现在，我们仅仅需要写一些函数来计算误差。下面的代码：
 
-- Create a function called compute_error that:
-    - Uses scikit-learn to compute a simple accuracy score (the percentage of predictions that matched the actual foreclosure_status values).
-- Create a function called compute_false_negatives that:
-    - Combines the target and the predictions into a DataFrame for convenience.
-    - Finds the false negative rate.
-- Create a function called compute_false_positives that:
-    - Combines the target and the predictions into a DataFrame for convenience.
-    - Finds the false positive rate.
-        - Finds the number of loans that weren’t foreclosed on that the model predicted would be foreclosed on.
-        - Divide by the total number of loans that weren’t foreclosed on.
+- 创建函数 `compute_error`：
+    - 使用 scikit-learn 计算一个简单的精确分数（与实际 `foreclosure_status` 值匹配的预测百分比）
+- 创建函数 `compute_false_negatives`：
+    - 为了方便，将目标和预测结果合并到一个数据帧
+    - 查找漏报率
+        - 找到原本应被预测模型取消但没有取消的贷款数目
+        - 除以没被取消的贷款总数目
 
-```
+```python
 def compute_error(target, predictions):
     return metrics.accuracy_score(target, predictions)
 
@@ -57,21 +52,20 @@ def compute_false_positives(target, predictions):
     return df[(df["target"] == 0) & (df["predictions"] == 1)].shape[0] / (df[(df["target"] == 0)].shape[0] + 1)
 ```
 
+### 聚合到一起
 
-### Putting it all together
+现在，我们可以把函数都放在 `predict.py`。下面的代码：
 
-Now, we just have to put the functions together in predict.py. The below code will:
+- 读取数据集
+- 计算交叉验证预测
+- 计算上面的 3 个误差
+- 打印误差
 
-- Read in the dataset.
-- Compute cross validated predictions.
-- Compute the 3 error metrics above.
-- Print the error metrics.
-
-```
+```python
 def read():
     train = pd.read_csv(os.path.join(settings.PROCESSED_DIR, "train.csv"))
     return train
-    
+
 if __name__ == "__main__":
     train = read()
     predictions = cross_validate(train)
@@ -83,11 +77,11 @@ if __name__ == "__main__":
     print("False Positives: {}".format(fp))
 ```
 
-Once you’ve added the code, you can run python predict.py to generate predictions. Running everything shows that our false negative rate is .26, which means that of the foreclosed loans, we missed predicting 26% of them. This is a good start, but can use a lot of improvement!
+一旦你添加完代码，你可以运行 `python predict.py` 来产生预测结果。运行结果向我们展示漏报率为 `.26`，这意味着我们没能预测 `26%` 的取消贷款。这是一个好的开始，但仍有很多改善的地方！
 
-You can find the complete predict.py file [here][41].
+你可以在[这里][41]找到完整的 `predict.py` 文件
 
-Your file tree should now look like this:
+你的文件树现在看起来像下面这样：
 
 ```
 loan-prediction
@@ -110,47 +104,47 @@ loan-prediction
 ├── settings.py
 ```
 
-### Writing up a README
+### 撰写 README
 
-Now that we’ve finished our end to end project, we just have to write up a README.md file so that other people know what we did, and how to replicate it. A typical README.md for a project should include these sections:
+既然我们完成了端到端的项目，那么我们可以撰写 README.md 文件了，这样其他人便可以知道我们做的事，以及如何复制它。一个项目典型的 README.md 应该包括这些部分：
 
-- A high level overview of the project, and what the goals are.
-- Where to download any needed data or materials.
-- Installation instructions.
-    - How to install the requirements.
-- Usage instructions.
-    - How to run the project.
-    - What you should see after each step.
-- How to contribute to the project.
-    - Good next steps for extending the project.
+- 一个高水准的项目概览，并介绍项目目的
+- 任何必需的数据和材料的下载地址
+- 安装命令
+    - 如何安装要求依赖
+- 使用命令
+    - 如何运行项目
+    - 每一步之后会看到的结果
+- 如何为这个项目作贡献
+    - 扩展项目的下一步计划
 
-[Here’s][42] a sample README.md for this project.
+[这里][42] 是这个项目的一个 README.md 样例。
 
-### Next steps
+### 下一步
 
-Congratulations, you’re done making an end to end machine learning project! You can find a complete example project [here][43]. It’s a good idea to upload your project to [Github][44] once you’ve finished it, so others can see it as part of your portfolio.
+恭喜你完成了端到端的机器学习项目！你可以在[这里][43]找到一个完整的示例项目。一旦你完成了项目，把它上传到 [Github][44] 是一个不错的主意，这样其他人也可以看到你的文件夹的部分项目。
 
-There are still quite a few angles left to explore with this data. Broadly, we can split them up into 3 categories – extending this project and making it more accurate, finding other columns to predict, and exploring the data. Here are some ideas:
+这里仍有一些留待探索数据的角度。总的来说，我们可以把它们分割为 3 类 - 扩展这个项目并使它更加精确，发现预测其他列并探索数据。这是其中一些想法：
 
-- Generate more features in annotate.py.
-- Switch algorithms in predict.py.
-- Try using more data from Fannie Mae than we used in this post.
-- Add in a way to make predictions on future data. The code we wrote will still work if we add more data, so we can add more past or future data.
-- Try seeing if you can predict if a bank should have issued the loan originally (vs if Fannie Mae should have acquired the loan).
-    - Remove any columns from train that the bank wouldn’t have known at the time of issuing the loan.
-        - Some columns are known when Fannie Mae bought the loan, but not before.
-    - Make predictions.
-- Explore seeing if you can predict columns other than foreclosure_status.
-    - Can you predict how much the property will be worth at sale time?
-- Explore the nuances between performance updates.
-    - Can you predict how many times the borrower will be late on payments?
-    - Can you map out the typical loan lifecycle?
-- Map out data on a state by state or zip code by zip code level.
-    - Do you see any interesting patterns?
+- 在 `annotate.py` 中生成更多的特性
+- 切换 `predict.py` 中的算法
+- 尝试使用比我们发表在这里的更多的来自 `Fannie Mae` 的数据
+- 添加对未来数据进行预测的方法。如果我们添加更多数据，我们所写的代码仍然可以起作用，这样我们可以添加更多过去和未来的数据。
+- 尝试看看是否你能预测一个银行是否应该发放贷款（相对地，`Fannie Mae` 是否应该获得贷款）
+    - 移除 train 中银行不知道发放贷款的时间的任何列
+        - 当 Fannie Mae 购买贷款时，一些列是已知的，但不是之前
+    - 做出预测
+- 探索是否你可以预测除了 foreclosure_status 的其他列
+    - 你可以预测在销售时财产值多少？
+- 探索探索性能更新之间的细微差别
+    - 你能否预测借款人会逾期还款多少次?
+    - 你能否标出的典型贷款周期?
+- 标出一个州到州或邮政编码到邮政级水平的数据
+    - 你看到一些有趣的模式了吗?
 
-If you build anything interesting, please let us know in the comments!
+如果你建立了任何有趣的东西,请在评论中让我们知道!
 
-If you liked this, you might like to read the other posts in our ‘Build a Data Science Porfolio’ series:
+如果你喜欢这个,你可能会喜欢阅读 ‘Build a Data Science Porfolio’ 系列的其他文章:
 
 - [Storytelling with data][45].
 - [How to setup up a data science blog][46].
