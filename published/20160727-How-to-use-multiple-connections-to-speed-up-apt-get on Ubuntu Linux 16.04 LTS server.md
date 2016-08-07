@@ -1,13 +1,13 @@
-如何在Ubuntu Linux 16.04 LTS中使用多条连接加速apt-get/apt
-=========================================================================================
+如何在 Ubuntu Linux 16.04 LTS 中使用多个连接加速 apt-get/apt
+=================================================
 
-我该如何在Ubuntu Linux 16.04或者14.04 LTS中从多个仓库中下载包来加速apt-get或者apt命令？
+我该如何加速在 Ubuntu Linux 16.04 或者 14.04 LTS 上从多个仓库中下载包的 apt-get 或者 apt 命令？
 
-你需要使用到apt-fast这个shell封装器。它会通过多个连接同时下载一个包来加速apt-get/apt和aptitude命令。所有的包都会同时下载。它使用aria2c作为默认的下载加速。
+你需要使用到 apt-fast 这个 shell 封装器。它会通过多个连接同时下载一个包来加速 apt-get/apt 和 aptitude 命令。所有的包都会同时下载。它使用 aria2c 作为默认的下载加速器。
 
 ### 安装 apt-fast 工具
 
-在Ubuntu Linux 14.04或者之后的版本尝试下面的命令：
+在 Ubuntu Linux 14.04 或者之后的版本尝试下面的命令：
 
 ```
 $ sudo add-apt-repository ppa:saiarcot895/myppa
@@ -45,7 +45,6 @@ $ sudo apt -y install apt-fast
 
 示例输出：
 
-
 ```
 Reading package lists... Done
 Building dependency tree
@@ -77,13 +76,13 @@ Get:4 http://01.archive.ubuntu.com/ubuntu xenial/universe amd64 aria2 amd64 1.19
 
 ![](http://s0.cyberciti.org/uploads/faq/2016/07/apt-fast-confirmation-box.jpg)
 
-你可以直接编辑设置：
+你也可以直接编辑设置：
 
 ```
 $ sudo vi /etc/apt-fast.conf
 ```
 
->**请注意这个工具并不是给慢速网络连接的，它是给快速网络连接的。如果你的网速慢，那么你将无法从这个工具中得到好处。**
+> **请注意这个工具并不是给慢速网络连接的，它是给快速网络连接的。如果你的网速慢，那么你将无法从这个工具中得到好处。**
 
 ### 我该怎么使用 apt-fast 命令？
 
@@ -94,13 +93,13 @@ apt-fast command
 apt-fast [options] command
 ```
 
-#### 使用apt-fast取回新的包列表
+#### 使用 apt-fast 取回新的包列表
 
 ```
 sudo apt-fast update
 ```
 
-#### 使用apt-fast执行升级
+#### 使用 apt-fast 执行升级
 
 ```
 sudo apt-fast upgrade
@@ -121,7 +120,7 @@ $ sudo apt-fast dist-upgrade
 sudo apt-fast install pkg
 ```
 
-比如要安装nginx，输入：
+比如要安装 nginx，输入：
 
 ```
 $ sudo apt-fast install nginx
@@ -196,22 +195,20 @@ Status Legend:
 (OK):download completed.
 ```
 
-#### 下载并显示指定包的changelog
+#### 下载并显示指定包的 changelog
 
 ```
 $ sudo apt-fast changelog pkgNameHere
 $ sudo apt-fast changelog nginx
 ```
 
-
-
 --------------------------------------------------------------------------------
 
-via: https://fedoramagazine.org/introducing-flatpak/
+via: http://www.cyberciti.biz/faq/how-to-speed-up-apt-get-apt-command-ubuntu-linux/
 
 作者：[VIVEK GITE][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
