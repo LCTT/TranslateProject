@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 Translating by maywanting
+=======
+translating by maywanting
+>>>>>>> 39eb115a31c076f0c0deee4689c172a39c387644
 
 5 SSH Hardening Tips
 ======================
