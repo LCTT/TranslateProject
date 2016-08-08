@@ -1,3 +1,7 @@
+vim-kakali translating
+
+
+
 Scientific Audio Processing, Part I - How to read and write Audio files with Octave 4.0.0 on Ubuntu
 ================
 
