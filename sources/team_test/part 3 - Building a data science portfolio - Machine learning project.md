@@ -1,3 +1,4 @@
+翻译完成－－by zky001
 ### Acquiring the data
 
 Once we have the skeleton of our project, we can get the raw data.
