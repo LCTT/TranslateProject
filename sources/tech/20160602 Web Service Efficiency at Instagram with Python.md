@@ -1,3 +1,5 @@
+Being translated by ChrisLeeGit
+
 Web Service Efficiency at Instagram with Python
 ===============================================
 
@@ -64,7 +66,7 @@ With the work we’ve put into building the efficiency framework for Instagram�
 via: https://engineering.instagram.com/web-service-efficiency-at-instagram-with-python-4976d078e366#.tiakuoi4p
 
 作者：[Min Ni][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ChrisLeeGit](https://github.com/chrisleegit)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
