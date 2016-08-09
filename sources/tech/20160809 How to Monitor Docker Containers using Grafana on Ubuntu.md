@@ -17,35 +17,37 @@ In this article, I'll explain on how to install Grafana on a docker container in
 
 We can build our Grafana in a docker container. There is an official docker image available for building Grafana. Please run this command to build a Grafana container.
 
-    root@ubuntu:~# docker run -i -p 3000:3000 grafana/grafana
+```
+root@ubuntu:~# docker run -i -p 3000:3000 grafana/grafana
 
-    Unable to find image 'grafana/grafana:latest' locally
-    latest: Pulling from grafana/grafana
-    5c90d4a2d1a8: Pull complete
-    b1a9a0b6158e: Pull complete
-    acb23b0d58de: Pull complete
-    Digest: sha256:34ca2f9c7986cb2d115eea373083f7150a2b9b753210546d14477e2276074ae1
-    Status: Downloaded newer image for grafana/grafana:latest
-    t=2016-07-27T15:20:19+0000 lvl=info msg="Starting Grafana" logger=main version=3.1.0 commit=v3.1.0 compiled=2016-07-12T06:42:28+0000
-    t=2016-07-27T15:20:19+0000 lvl=info msg="Config loaded from" logger=settings file=/usr/share/grafana/conf/defaults.ini
-    t=2016-07-27T15:20:19+0000 lvl=info msg="Config loaded from" logger=settings file=/etc/grafana/grafana.ini
-    t=2016-07-27T15:20:19+0000 lvl=info msg="Config overriden from command line" logger=settings arg="default.paths.data=/var/lib/grafana"
-    t=2016-07-27T15:20:19+0000 lvl=info msg="Config overriden from command line" logger=settings arg="default.paths.logs=/var/log/grafana"
-    t=2016-07-27T15:20:19+0000 lvl=info msg="Config overriden from command line" logger=settings arg="default.paths.plugins=/var/lib/grafana/plugins"
-    t=2016-07-27T15:20:19+0000 lvl=info msg="Path Home" logger=settings path=/usr/share/grafana
-    t=2016-07-27T15:20:19+0000 lvl=info msg="Path Data" logger=settings path=/var/lib/grafana
-    t=2016-07-27T15:20:19+0000 lvl=info msg="Path Logs" logger=settings path=/var/log/grafana
-    t=2016-07-27T15:20:19+0000 lvl=info msg="Path Plugins" logger=settings path=/var/lib/grafana/plugins
-    t=2016-07-27T15:20:19+0000 lvl=info msg="Initializing DB" logger=sqlstore dbtype=sqlite3
+Unable to find image 'grafana/grafana:latest' locally
+latest: Pulling from grafana/grafana
+5c90d4a2d1a8: Pull complete
+b1a9a0b6158e: Pull complete
+acb23b0d58de: Pull complete
+Digest: sha256:34ca2f9c7986cb2d115eea373083f7150a2b9b753210546d14477e2276074ae1
+Status: Downloaded newer image for grafana/grafana:latest
+t=2016-07-27T15:20:19+0000 lvl=info msg="Starting Grafana" logger=main version=3.1.0 commit=v3.1.0 compiled=2016-07-12T06:42:28+0000
+t=2016-07-27T15:20:19+0000 lvl=info msg="Config loaded from" logger=settings file=/usr/share/grafana/conf/defaults.ini
+t=2016-07-27T15:20:19+0000 lvl=info msg="Config loaded from" logger=settings file=/etc/grafana/grafana.ini
+t=2016-07-27T15:20:19+0000 lvl=info msg="Config overriden from command line" logger=settings arg="default.paths.data=/var/lib/grafana"
+t=2016-07-27T15:20:19+0000 lvl=info msg="Config overriden from command line" logger=settings arg="default.paths.logs=/var/log/grafana"
+t=2016-07-27T15:20:19+0000 lvl=info msg="Config overriden from command line" logger=settings arg="default.paths.plugins=/var/lib/grafana/plugins"
+t=2016-07-27T15:20:19+0000 lvl=info msg="Path Home" logger=settings path=/usr/share/grafana
+t=2016-07-27T15:20:19+0000 lvl=info msg="Path Data" logger=settings path=/var/lib/grafana
+t=2016-07-27T15:20:19+0000 lvl=info msg="Path Logs" logger=settings path=/var/log/grafana
+t=2016-07-27T15:20:19+0000 lvl=info msg="Path Plugins" logger=settings path=/var/lib/grafana/plugins
+t=2016-07-27T15:20:19+0000 lvl=info msg="Initializing DB" logger=sqlstore dbtype=sqlite3
 
-    t=2016-07-27T15:20:20+0000 lvl=info msg="Executing migration" logger=migrator id="create playlist table v2"
-    t=2016-07-27T15:20:20+0000 lvl=info msg="Executing migration" logger=migrator id="create playlist item table v2"
-    t=2016-07-27T15:20:20+0000 lvl=info msg="Executing migration" logger=migrator id="drop preferences table v2"
-    t=2016-07-27T15:20:20+0000 lvl=info msg="Executing migration" logger=migrator id="drop preferences table v3"
-    t=2016-07-27T15:20:20+0000 lvl=info msg="Executing migration" logger=migrator id="create preferences table v3"
-    t=2016-07-27T15:20:20+0000 lvl=info msg="Created default admin user: [admin]"
-    t=2016-07-27T15:20:20+0000 lvl=info msg="Starting plugin search" logger=plugins
-    t=2016-07-27T15:20:20+0000 lvl=info msg="Server Listening" logger=server address=0.0.0.0:3000 protocol=http subUrl=
+t=2016-07-27T15:20:20+0000 lvl=info msg="Executing migration" logger=migrator id="create playlist table v2"
+t=2016-07-27T15:20:20+0000 lvl=info msg="Executing migration" logger=migrator id="create playlist item table v2"
+t=2016-07-27T15:20:20+0000 lvl=info msg="Executing migration" logger=migrator id="drop preferences table v2"
+t=2016-07-27T15:20:20+0000 lvl=info msg="Executing migration" logger=migrator id="drop preferences table v3"
+t=2016-07-27T15:20:20+0000 lvl=info msg="Executing migration" logger=migrator id="create preferences table v3"
+t=2016-07-27T15:20:20+0000 lvl=info msg="Created default admin user: [admin]"
+t=2016-07-27T15:20:20+0000 lvl=info msg="Starting plugin search" logger=plugins
+t=2016-07-27T15:20:20+0000 lvl=info msg="Server Listening" logger=server address=0.0.0.0:3000 protocol=http subUrl=
+```
 
 We can confirm the working of the Grafana container by running this command `docker ps -a` or by accessing it by URL `http://Docker IP:3000`
 
@@ -84,7 +86,9 @@ Both these paths are usually specified via command line in the init.d scripts or
 
 `http_port` : The port to which the application is bind to, defaults is 3000. You can redirect your 80 port to 3000 using the below command.
 
-    $iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 3000
+```
+$iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 3000
+```
 
 `root_url` : This is the URL used to access Grafana from a web browser.
 
@@ -157,26 +161,28 @@ We need to install each of these components one by one in our docker system.
 
 We can use this command to pull InfluxDB image and setuup a influxDB container.
 
-    root@ubuntu:~# docker run -d -p 8083:8083 -p 8086:8086 --expose 8090 --expose 8099 -e PRE_CREATE_DB=cadvisor --name influxsrv tutum/influxdb:0.8.8
-    Unable to find image 'tutum/influxdb:0.8.8' locally
-    0.8.8: Pulling from tutum/influxdb
-    a3ed95caeb02: Already exists
-    23efb549476f: Already exists
-    aa2f8df21433: Already exists
-    ef072d3c9b41: Already exists
-    c9f371853f28: Already exists
-    a248b0871c3c: Already exists
-    749db6d368d0: Already exists
-    7d7c7d923e63: Pull complete
-    e47cc7808961: Pull complete
-    1743b6eeb23f: Pull complete
-    Digest: sha256:8494b31289b4dbc1d5b444e344ab1dda3e18b07f80517c3f9aae7d18133c0c42
-    Status: Downloaded newer image for tutum/influxdb:0.8.8
-    d3b6f7789e0d1d01fa4e0aacdb636c221421107d1df96808ecbe8e241ceb1823
+```
+root@ubuntu:~# docker run -d -p 8083:8083 -p 8086:8086 --expose 8090 --expose 8099 -e PRE_CREATE_DB=cadvisor --name influxsrv tutum/influxdb:0.8.8
+Unable to find image 'tutum/influxdb:0.8.8' locally
+0.8.8: Pulling from tutum/influxdb
+a3ed95caeb02: Already exists
+23efb549476f: Already exists
+aa2f8df21433: Already exists
+ef072d3c9b41: Already exists
+c9f371853f28: Already exists
+a248b0871c3c: Already exists
+749db6d368d0: Already exists
+7d7c7d923e63: Pull complete
+e47cc7808961: Pull complete
+1743b6eeb23f: Pull complete
+Digest: sha256:8494b31289b4dbc1d5b444e344ab1dda3e18b07f80517c3f9aae7d18133c0c42
+Status: Downloaded newer image for tutum/influxdb:0.8.8
+d3b6f7789e0d1d01fa4e0aacdb636c221421107d1df96808ecbe8e241ceb1823
 
-        -p 8083:8083 : user interface, log in with username-admin, pass-admin
-        -p 8086:8086 : interaction with other application
-        --name influxsrv : container have name influxsrv, use to cAdvisor link it.
+    -p 8083:8083 : user interface, log in with username-admin, pass-admin
+    -p 8086:8086 : interaction with other application
+    --name influxsrv : container have name influxsrv, use to cAdvisor link it.
+```
 
 You can test your InfluxDB installation by calling this URL >>http://45.79.148.234:8083 and login with user/password as "root".
 
@@ -190,23 +196,25 @@ We can create our required databases from this tab.
 
 Our next step is to  install cAdvisor container and link it to the InfluxDB container. You can use this command to create it.
 
-    root@ubuntu:~# docker run --volume=/:/rootfs:ro --volume=/var/run:/var/run:rw --volume=/sys:/sys:ro --volume=/var/lib/docker/:/var/lib/docker:ro --publish=8080:8080 --detach=true --link influxsrv:influxsrv --name=cadvisor google/cadvisor:latest -storage_driver_db=cadvisor -storage_driver_host=influxsrv:8086
-    Unable to find image 'google/cadvisor:latest' locally
-    latest: Pulling from google/cadvisor
-    09d0220f4043: Pull complete
-    151807d34af9: Pull complete
-    14cd28dce332: Pull complete
-    Digest: sha256:8364c7ab7f56a087b757a304f9376c3527c8c60c848f82b66dd728980222bd2f
-    Status: Downloaded newer image for google/cadvisor:latest
-    3bfdf7fdc83872485acb06666a686719983a1172ac49895cd2a260deb1cdde29
-    root@ubuntu:~#
+```
+root@ubuntu:~# docker run --volume=/:/rootfs:ro --volume=/var/run:/var/run:rw --volume=/sys:/sys:ro --volume=/var/lib/docker/:/var/lib/docker:ro --publish=8080:8080 --detach=true --link influxsrv:influxsrv --name=cadvisor google/cadvisor:latest -storage_driver_db=cadvisor -storage_driver_host=influxsrv:8086
+Unable to find image 'google/cadvisor:latest' locally
+latest: Pulling from google/cadvisor
+09d0220f4043: Pull complete
+151807d34af9: Pull complete
+14cd28dce332: Pull complete
+Digest: sha256:8364c7ab7f56a087b757a304f9376c3527c8c60c848f82b66dd728980222bd2f
+Status: Downloaded newer image for google/cadvisor:latest
+3bfdf7fdc83872485acb06666a686719983a1172ac49895cd2a260deb1cdde29
+root@ubuntu:~#
 
-        --publish=8080:8080 : user interface
-        --link=influxsrv:influxsrv: link to container influxsrv
-        -storage_driver=influxdb: set the storage driver as InfluxDB
-        Specify what InfluxDB instance to push data to:
-        -storage_driver_host=influxsrv:8086: The ip:port of the database. Default is ‘localhost:8086’
-        -storage_driver_db=cadvisor: database name. Uses db ‘cadvisor’ by default
+    --publish=8080:8080 : user interface
+    --link=influxsrv:influxsrv: link to container influxsrv
+    -storage_driver=influxdb: set the storage driver as InfluxDB
+    Specify what InfluxDB instance to push data to:
+    -storage_driver_host=influxsrv:8086: The ip:port of the database. Default is ‘localhost:8086’
+    -storage_driver_db=cadvisor: database name. Uses db ‘cadvisor’ by default
+```
 
 You can test our cAdvisor installation by calling this URL >>http://45.79.148.234:8080. This will provide you the statistics of your Docker host and containers.
 
@@ -216,8 +224,10 @@ You can test our cAdvisor installation by calling this URL >>http://45.79.148.23
 
 Finally, we need to install the Grafana Dashboard and link to the InfluxDB. You can run this command to setup that.
 
-    root@ubuntu:~# docker run -d -p 3000:3000 -e INFLUXDB_HOST=localhost -e INFLUXDB_PORT=8086 -e INFLUXDB_NAME=cadvisor -e INFLUXDB_USER=root -e INFLUXDB_PASS=root --link influxsrv:influxsrv --name grafana grafana/grafana
-    f3b7598529202b110e4e6b998dca6b6e60e8608d75dcfe0d2b09ae408f43684a
+```
+root@ubuntu:~# docker run -d -p 3000:3000 -e INFLUXDB_HOST=localhost -e INFLUXDB_PORT=8086 -e INFLUXDB_NAME=cadvisor -e INFLUXDB_USER=root -e INFLUXDB_PASS=root --link influxsrv:influxsrv --name grafana grafana/grafana
+f3b7598529202b110e4e6b998dca6b6e60e8608d75dcfe0d2b09ae408f43684a
+```
 
 Now we can login to Grafana and configure the Data Sources. Navigate to http://45.79.148.234:3000 or just http://45.79.148.234:
 
@@ -251,3 +261,4 @@ via: http://linoxide.com/linux-how-to/monitor-docker-containers-grafana-ubuntu/
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:http://linoxide.com/author/saheethas/
+[1]:https://github.com/vegasbrianc/docker-monitoring
