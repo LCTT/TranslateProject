@@ -1,3 +1,4 @@
+Being translated by ChrisLeeGit
 How to Monitor Docker Containers using Grafana on Ubuntu
 ================================================================================
 
@@ -255,7 +256,7 @@ You can get [more information][1] on docker monitoring here. Thank you for readi
 via: http://linoxide.com/linux-how-to/monitor-docker-containers-grafana-ubuntu/
 
 作者：[Saheetha Shameer][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ChrisLeeGit](https://github.com/chrisleegit)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
