@@ -1,5 +1,6 @@
-translating by fw8899
+translating by WangYueScream
 18 Best IDEs for C/C++ Programming or Source Code Editors on Linux
+
 ======================================================================
 
 C++, an extension of well known C language, is an excellent, powerful and general purpose programming language that offers modern and generic programming features for developing large-scale applications ranging from video games, search engines, other computer software to operating systems.
