@@ -1,12 +1,5 @@
-translating by fw8899
-18 Best IDEs for C/C++ Programming or Source Code Editors on Linux
-======================================================================
-/*
-新人测试，如果给相关人员带来干扰还望谅解。
 translating by WangYueScream
 18 Best IDEs for C/C++ Programming or Source Code Editors on Linux
-
-*/
 
 ======================================================================
 
