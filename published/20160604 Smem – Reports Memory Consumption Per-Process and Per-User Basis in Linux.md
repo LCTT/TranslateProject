@@ -1,45 +1,45 @@
-Smem – Linux 下基于进程和用户的内存占用报告程序
+Smem – Linux 下基于进程和用户的内存占用报告
 ===========================================================================
 
+Linux 系统的内存管理工作中，内存使用情况的监控是十分重要的，在各种 Linux 发行版上你会找到许多这种工具。它们的工作方式多种多样，在这里，我们将会介绍如何安装和使用这样的一个名为 SMEM 的工具软件。
 
-Linux 系统的内存管理工作中，内存使用情况的监控是十分重要的，不同的 Linux 发行版可能会提供不同的工具。但是它们的工作方式多种多样，这里，我们将会介绍如何安装和使用这样的一个名为 SMEM 的工具软件。
-
-Smem 是一款命令行下的内存使用情况报告工具。和其它传统的内存报告工具不同个，它仅做这一件事情——报告 PPS（实际使用的物理内存[比例分配共享库占用的内存]），这种内存使用量表示方法对于那些在虚拟内存中的应用和库更有意义。
+Smem 是一款命令行下的内存使用情况报告工具，它能够给用户提供 Linux 系统下的内存使用的多种报告。和其它传统的内存报告工具不同的是，它有个独特的功能，可以报告 PSS（按比例占用大小：Proportional Set Size），这种内存使用量表示方法对于那些在虚拟内存中的应用和库更有意义。
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/06/Smem-Linux-Memory-Reporting-Tool.png)
->Smem – Linux 内存报告工具
 
-已有的传统工具会将目光主要集中于读取 RSS（实际使用物理内存[包含共享库占用的内存]），这种方法对于恒量那些使用物理内存方案的使用情况来说是标准方法，但是应用程序往往会高估内存的使用情况。
+*Smem – Linux 内存报告工具*
 
-PSS 从另一个侧面，为那些使用虚拟内存方案的应用和库提供了给出了确定内存“公评分担”的合理措施。
+已有的传统工具会将目光主要集中于读取 RSS（实际占用大小：Resident Set Size），这种方法是以物理内存方案来衡量使用情况的标准方法，但是往往高估了应用程序的内存的使用情况。
 
-你可以 [阅读此指南了解 (关于内存的 RSS 和 PSS)][1] Linux 系统中的内存占用。
+PSS 从另一个侧面，通过判定在虚拟内存中的应用和库所使用的“合理分享”的内存，来给出更可信的衡量结果。
+
+你可以阅读此[指南 (关于内存的 RSS 和 PSS)][1]了解 Linux 系统中的内存占用，不过现在让我们继续看看 smem 的特点。
 
 ### Smem 这一工具的特点
 
 - 系统概览列表
-- 以进程，映射和用户来显示或者是过滤
+- 以进程、映射和用户来显示或者是过滤
 - 从 /proc 文件系统中得到数据
-- 从多个数据源配置显示条目
-- 可配置输出单元和百分比
-- 易于配置列表标题和汇总
+- 从多个数据源配置显示的条目
+- 可配置输出单位和百分比
+- 易于配置列表表头和汇总
 - 从镜像文件夹或者是压缩的 tar 文件中获得数据快照
 - 内置的图表生成机制
-- 在嵌入式系统中使用轻量级的捕获工具
+- 轻量级的捕获工具，可用于嵌入式系统
 
 ### 如何安装 Smem - Linux 下的内存使用情况报告工具
 
 安装之前，需要确保满足以下的条件：
 
-- 现代内存 (版本号高于 2.6.27)
+- 现代内核 (版本号高于 2.6.27)
 - 较新的 Python 版本 (2.4 及以后版本)
 - 可选的 [matplotlib][2] 库用于生成图表
 
-对于当今的大多数的 Linux 发行版而言，内核版本和 Python 的版本都能够 满足需要，所以仅需要为生成良好的图表安装 matplotlib 库。
+对于当今的大多数的 Linux 发行版而言，内核版本和 Python 的版本都能够满足需要，所以仅需要为生成良好的图表安装 matplotlib 库。
 
 #### RHEL, CentOS 和 Fedora
 
-首先启用 [EPEL (Extra Packages for Enterprise Linux)][3] 软件源然后按照下列步骤操作：
+首先启用 [EPEL (Extra Packages for Enterprise Linux)][3] 软件源，然后按照下列步骤操作：
 
 ```
 # yum install smem python-matplotlib python-tk
@@ -59,7 +59,7 @@ $ sudo apt-get install smem python-matplotlib python-tk
 
 #### Arch Linux
 
-使用此 [AUR repository][4]。
+使用此 [AUR 仓库][4]。
 
 ### 如何使用 Smem – Linux 下的内存使用情况报告工具
 
@@ -69,7 +69,7 @@ $ sudo apt-get install smem python-matplotlib python-tk
 $ sudo smem
 ```
 
-监视 Linux 系统中的内存使用情况
+*监视 Linux 系统中的内存使用情况*
 
 ```
  PID User     Command                         Swap      USS      PSS      RSS
@@ -108,7 +108,7 @@ $ sudo smem
 ....
 ```
 
-当常规用户运行 smem，将会显示由用户启用的进程的占用情况，其中进程按照 PSS 的值升序排列。
+当普通用户运行 smem，将会显示由该用户启用的进程的占用情况，其中进程按照 PSS 的值升序排列。
 
 下面的输出为用户 “aaronkilik” 启用的进程的使用情况：
 
@@ -116,7 +116,7 @@ $ sudo smem
 $ smem
 ```
 
-监视 Linux 系统中的内存使用情况
+*监视 Linux 系统中的内存使用情况*
 
 ```
  PID User     Command                         Swap      USS      PSS      RSS
@@ -156,12 +156,13 @@ $ smem
 ...
 ```
 
-使用 smem 是还有一些参数可以选用，例如当参看整个系统的内存占用情况，运行以下的命令：
+使用 smem 时还有一些参数可以选用，例如当查看整个系统的内存占用情况，运行以下的命令：
 
 ```
 $ sudo smem -w
 ```
-监视 Linux 系统中的内存使用情况
+
+*监视 Linux 系统中的内存使用情况*
 
 ```
 Area                           Used      Cache   Noncache
@@ -178,7 +179,7 @@ free memory                 4424936    4424936          0
 $ sudo smem -u
 ```
 
-Linux 下以用户为单位监控内存占用情况
+*Linux 下以用户为单位监控内存占用情况*
 
 ```
 User     Count     Swap      USS      PSS      RSS
@@ -201,7 +202,7 @@ tecmint     64        0  1652888  1815699  2763112
 $ sudo smem -m
 ```
 
-Linux 下以映射为单位监控内存占用情况
+*Linux 下以映射为单位监控内存占用情况*
 
 ```
 Map                                       PIDs   AVGPSS      PSS
@@ -231,15 +232,15 @@ Map                                       PIDs   AVGPSS      PSS
 ....
 ```
 
-还有其它的选项用于 smem 的输出，下面将会举两个例子。
+还有其它的选项可以筛选 smem 的输出，下面将会举两个例子。
 
-要按照用户名筛选输出的信息，调用 -u 或者是 --userfilter="regex" 选项，就像下面的命令这样：
+要按照用户名筛选输出的信息，使用 -u 或者是 --userfilter="regex" 选项，就像下面的命令这样：
 
 ```
 $ sudo smem -u
 ```
 
-按照用户报告内存使用情况
+*按照用户报告内存使用情况*
 
 ```
 User     Count     Swap      USS      PSS      RSS
@@ -256,13 +257,13 @@ root        39        0   323804   353374   496552
 tecmint     64        0  1708900  1871766  2819212
 ```
 
-要按照进程名称筛选输出信息，调用 -P 或者是 --processfilter="regex" 选项，就像下面的命令这样：
+要按照进程名称筛选输出信息，使用 -P 或者是 --processfilter="regex" 选项，就像下面的命令这样：
 
 ```
 $ sudo smem --processfilter="firefox"
 ```
 
-按照进程名称报告内存使用情况
+*按照进程名称报告内存使用情况*
 
 ```
 PID User     Command                         Swap      USS      PSS      RSS
@@ -271,7 +272,7 @@ PID User     Command                         Swap      USS      PSS      RSS
  4424 tecmint  /usr/lib/firefox/firefox           0   931732   937590   961504
 ```
 
-输出的格式有时候也很重要，smem 提供了一些参数帮助您格式化内存使用报告，我们将举出几个例子。
+输出的格式有时候也很重要，smem 提供了一些帮助您格式化内存使用报告的参数，我们将举出几个例子。
 
 设置哪些列在报告中，使用 -c 或者是 --columns选项，就像下面的命令这样：
 
@@ -279,7 +280,7 @@ PID User     Command                         Swap      USS      PSS      RSS
 $ sudo smem -c "name user pss rss"
 ```
 
-按列报告内存使用情况
+*按列报告内存使用情况*
 
 ```
 Name                     User          PSS      RSS
@@ -317,7 +318,7 @@ ssh-agent                tecmint       485      992
 $ sudo smem -p
 ```
 
-按百分比报告内存使用情况
+*按百分比报告内存使用情况*
 
 ```
  PID User     Command                         Swap      USS      PSS      RSS
@@ -345,13 +346,13 @@ $ sudo smem -p
 ....
 ```
 
-下面的额命令将会在输出的最后输出一行汇总信息：
+下面的命令将会在输出的最后输出一行汇总信息：
 
 ```
 $ sudo smem -t
 ```
 
-报告内存占用合计
+*报告内存占用合计*
 
 ```
 PID User     Command                         Swap      USS      PSS      RSS
@@ -389,27 +390,29 @@ PID User     Command                         Swap      USS      PSS      RSS
 
 比如，你可以生成一张进程的 PSS 和 RSS 值的条状图。在下面的例子中，我们会生成属于 root 用户的进程的内存占用图。
 
-纵坐标为每一个进程的 PSS 和 RSS 值，横坐标为 root 用户的所有进程：
+纵坐标为每一个进程的 PSS 和 RSS 值，横坐标为 root 用户的所有进程（的 ID）：
 
 ```
 $ sudo smem --userfilter="root" --bar pid -c"pss rss"
 ```
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/06/Linux-Memory-Usage-in-PSS-and-RSS-Values.png)
->Linux Memory Usage in PSS and RSS Values
 
-也可以生成进程及其 PSS 和 RSS 占用量的饼状图。以下的命令将会输出一张 root 用户的所有进程的饼状。
+*Linux Memory Usage in PSS and RSS Values*
 
-`--pie` name 意思为以各个进程名字为标签，`-s` 选项帮助以 PSS 的值排序。
+也可以生成进程及其 PSS 和 RSS 占用量的饼状图。以下的命令将会输出一张 root 用户的所有进程的饼状图。
+
+`--pie` name 意思为以各个进程名字为标签，`-s` 选项用来以 PSS 的值排序。
 
 ```
 $ sudo smem --userfilter="root" --pie name -s pss
 ```
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/06/Linux-Memory-Consumption-by-Processes.png)
->Linux Memory Consumption by Processes
 
-它们还提供了一些其它与 PSS 和 RSS 相关的字段用于图表的标签：
+*Linux Memory Consumption by Processes*
+
+除了 PSS 和 RSS ，其它的字段也可以用于图表的标签：
 
 假如需要获得帮助，非常简单，仅需要输入 `smem -h` 或者是浏览帮助页面。
 
@@ -420,16 +423,16 @@ $ sudo smem --userfilter="root" --pie name -s pss
 
 --------------------------------------------------------------------------------
 
-via: http://www.tecmint.com/smem-linux-memory-usage-per-process-per-user/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+tecmint+%28Tecmint%3A+Linux+Howto%27s+Guide%29
+via: http://www.tecmint.com/smem-linux-memory-usage-per-process-per-user/
 
 作者：[Aaron Kili][a]
 译者：[dongfengweixiao](https://github.com/dongfengweixiao)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: http://www.tecmint.com/author/aaronkili/
 [1]: https://emilics.com/notebook/enblog/p871.html
 [2]: http://matplotlib.org/index.html
-[3]: http://www.tecmint.com/how-to-enable-epel-repository-for-rhel-centos-6-5/
+[3]: https://linux.cn/article-2324-1.html
 [4]: https://www.archlinux.org/packages/community/i686/smem/
