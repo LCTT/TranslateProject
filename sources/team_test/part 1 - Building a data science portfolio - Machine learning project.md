@@ -1,84 +1,79 @@
-+@noobfish translating since Aug 2nd,2016.
-+
-+
 
+>这是这个系列的第三次发布关于如何建立科学的投资数据. 如果你喜欢这个系列并且想继续关注, 你可以在订阅页面的底部找到链接[subscribe at the bottom of the page][1].
 
->This is the third in a series of posts on how to build a Data Science Portfolio. If you like this and want to know when the next post in the series is released, you can [subscribe at the bottom of the page][1].
+数据科学公司越来越关注投资组合问题. 这其中的一个原因是，投资组合是最好的判断人们生活技能的方法. 好消息是投资组合是完全在你的控制之下的. 只要你做些投资方面的工作，就可以做出很棒的投资组合.
 
-Data science companies are increasingly looking at portfolios when making hiring decisions. One of the reasons for this is that a portfolio is the best way to judge someone’s real-world skills. The good news for you is that a portfolio is entirely within your control. If you put some work in, you can make a great portfolio that companies are impressed by.
+高质量投资组合的第一步就是知道需要什么技能. 客户想要将这些初级技能应用到数据科学, 因此这些投资技能显示如下:
 
-The first step in making a high-quality portfolio is to know what skills to demonstrate. The primary skills that companies want in data scientists, and thus the primary skills they want a portfolio to demonstrate, are:
+- 沟通能力
+- 协作能力
+- 技术能力
+- 数据推理能力
+- 主动性
 
-- Ability to communicate
-- Ability to collaborate with others
-- Technical competence
-- Ability to reason about data
-- Motivation and ability to take initiative
+任何好的投资组合都由多个能力组成，其中必然包含以上一到两点. 这里我们主要讲第三点如何做好科学的数据投资组合. 在这一节, 我们主要讲第二项以及如何创建一个端对端的机器学习项目. 在最后, 在最后我们将拥有一个项目它将显示你的能力和技术水平. [Here’s][2]如果你想看一下这里有一个完整的例子.
 
-Any good portfolio will be composed of multiple projects, each of which may demonstrate 1-2 of the above points. This is the third post in a series that will cover how to make a well-rounded data science portfolio. In this post, we’ll cover how to make the second project in your portfolio, and how to build an end to end machine learning project. At the end, you’ll have a project that shows your ability to reason about data, and your technical competence. [Here’s][2] the completed project if you want to take a look.
+### 一个端到端的项目
 
-### An end to end project
+作为一个数据科学家, 有时候你会拿到一个数据集并被问到是 [如何产生的][3]. 在这个时候, 交流是非常重要的, 走一遍流程. 用用Jupyter notebook, 看一看以前的例子，这对你非常有帮助. 在这里你能找到一些可以用的报告或者文档.
 
-As a data scientist, there are times when you’ll be asked to take a dataset and figure out how to [tell a story with it][3]. In times like this, it’s important to communicate very well, and walk through your process. Tools like Jupyter notebook, which we used in a previous post, are very good at helping you do this. The expectation here is that the deliverable is a presentation or document summarizing your findings.
+不管怎样, 有时候你会被要求创建一个具有操作价值的项目. 一个直接影响公司业务的项目, 不止一次的, 许多人用的项目. 这个任务可能像这样 “创建一个算法来预测波动率”或者 “创建一个模型来自动标签我们的文章”. 在这种情况下, 技术能力比说评书更重要. 你必须能够创建一个数据集, 并且理解它, 然后创建脚本处理该数据. 还有很重要的脚本要运行的很快, 占用系统资源很小. 它可能要运行很多次, 脚本的可使用性也很重要，并不仅仅是一个演示版. 可使用性是指整合操作流程, 因为他很有可能是面向用户的.
 
-However, there are other times when you’ll be asked to create a project that has operational value. A project with operational value directly impacts the day-to-day operations of a company, and will be used more than once, and often by multiple people. A task like this might be “create an algorithm to forecast our churn rate”, or “create a model that can automatically tag our articles”. In cases like this, storytelling is less important than technical competence. You need to be able to take a dataset, understand it, then create a set of scripts that can process that data. It’s often important that these scripts run quickly, and use minimal system resources like memory. It’s very common that these scripts will be run several times, so the deliverable becomes the scripts themselves, not a presentation. The deliverable is often integrated into operational flows, and may even be user-facing.
+端对端项目的主要组成部分:
 
-The main components of building an end to end project are:
+- 理解背景
+- 浏览数据并找出细微差别
+- 创建结构化项目, 那样比较容易整合操作流程
+- 运行速度快占用系统资源小的代码
+- 写好文档以便其他人用
 
-- Understanding the context
-- Exploring the data and figuring out the nuances
-- Creating a well-structured project, so its easy to integrate into operational flows
-- Writing high-performance code that runs quickly and uses minimal system resources
-- Documenting the installation and usage of your code well, so others can use it
-
-In order to effectively create a project of this kind, we’ll need to work with multiple files. Using a text editor like [Atom][4], or an IDE like [PyCharm][5] is highly recommended. These tools will allow you to jump between files, and edit files of different types, like markdown files, Python files, and csv files. Structuring your project so it’s easy to version control and upload to collaborative coding tools like [Github][6] is also useful.
+为类有效的创建这种类型的项目, 我们可能需要处理多个文件. 强烈推荐使用 [Atom][4]或者[PyCharm][5] . 这些工具允许你在文件间跳转, 编辑不同类型的文件, 例如 markdown 文件, Python 文件, 和csv 文件. 结构化你的项目还利于版本控制 [Github][6] 也很有用.
 
 ![](https://www.dataquest.io/blog/images/end_to_end/github.png)
->This project on Github.
+>Github上的这个项目.
 
-We’ll use our editing tools along with libraries like [Pandas][7] and [scikit-learn][8] in this post. We’ll make extensive use of Pandas [DataFrames][9], which make it easy to read in and work with tabular data in Python.
+在这一节中我们将使用  [Pandas][7] 和 [scikit-learn][8]扩展包 . 我们还将用到Pandas [DataFrames][9], 它使得python读取和处理表格数据更加方便.
 
-### Finding good datasets
+### 找到好的数据集
 
-A good dataset for an end to end portfolio project can be hard to find. [The dataset][10] needs to be sufficiently large that memory and performance constraints come into play. It also needs to potentially be operationally useful. For instance, this dataset, which contains data on the admission criteria, graduation rates, and graduate future earnings for US colleges would be a great dataset to use to tell a story. However, as you think about the dataset, it becomes clear that there isn’t enough nuance to build a good end to end project with it. For example, you could tell someone their potential future earnings if they went to a specific college, but that would be a quick lookup without enough nuance to demonstrate technical competence. You could also figure out if colleges with higher admissions standards tend to have graduates who earn more, but that would be more storytelling than operational.
+找到一个好的端到端投资项目数据集很难. [The dataset][10]数据集需要足够大但是内存和性能限制了它. 它还需要实际有用的. 例如, 这个数据集, 它包含有美国院校的录取标准, 毕业率以及毕业以后的收入是个很好的数据集了. 不管怎样, 不管你如何想这个数据, 很显然它不适合创建端到端的项目. 比如, 你能告诉人们他们去了这些大学以后的未来收益, 但是却没有足够的细微差别. 你还能找出院校招生标准收入更高, 但是却没有告诉你如何实际操作.
 
-These memory and performance constraints tend to come into play when you have more than a gigabyte of data, and when you have some nuance to what you want to predict, which involves running algorithms over the dataset.
+这里还有内存和性能约束的问题比如你有几千兆的数据或者有一些细微差别需要你去预测或者运行什么样的算法数据集等.
 
-A good operational dataset enables you to build a set of scripts that transform the data, and answer dynamic questions. A good example would be a dataset of stock prices. You would be able to predict the prices for the next day, and keep feeding new data to the algorithm as the markets closed. This would enable you to make trades, and potentially even profit. This wouldn’t be telling a story – it would be adding direct value.
+一个好的数据集包括你可以动态的转换数组, 并且回答动态的问题. 一个很好的例子是股票价格数据集. 你可以预测明天的价格, 持续的添加数据在算法中. 它将有助于你预测利润. 这不是讲故事这是真实的.
 
-Some good places to find datasets like this are:
+一些找到数据集的好地方:
 
-- [/r/datasets][11] – a subreddit that has hundreds of interesting datasets.
-- [Google Public Datasets][12] – public datasets available through Google BigQuery.
-- [Awesome datasets][13] – a list of datasets, hosted on Github.
+- [/r/datasets][11] – subreddit（Reddit是国外一个社交新闻站点,subreddit指该论坛下的各不同板块）.
+- [Google Public Datasets][12] – 通过Google BigQuery发布的可用数据集.
+- [Awesome datasets][13] – Github上的数据集.
 
-As you look through these datasets, think about what questions someone might want answered with the dataset, and think if those questions are one-time (“how did housing prices correlate with the S&P 500?”), or ongoing (“can you predict the stock market?”). The key here is to find questions that are ongoing, and require the same code to be run multiple times with different inputs (different data).
+当你查看这些数据集, 想一下人们想要在这些数据集中得到什么答案, 哪怕这些问题只想过一次 (“放假是如何S&P 500关联的?”), 或者更进一步(“你能预测股市吗?”). 这里的关键是更进一步找出问题, 并且多次运行不同的数据相同的代码.
 
-For the purposes of this post, we’ll look at [Fannie Mae Loan Data][14]. Fannie Mae is a government sponsored enterprise in the US that buys mortgage loans from other lenders. It then bundles these loans up into mortgage-backed securities and resells them. This enables lenders to make more mortgage loans, and creates more liquidity in the market. This theoretically leads to more homeownership, and better loan terms. From a borrowers perspective, things stay largely the same, though.
+为了这个目标, 我们来看一下[Fannie Mae 贷款数据][14]. Fannie Mae 是一家政府赞助的企业抵押贷款公司它从其他银行购买按揭贷款. 然后捆绑这些贷款为抵押贷款来倒卖证券. 这使得贷款机构可以提供更多的抵押贷款, 在市场上创造更多的流动性. 这在理论上会导致更多的住房和更好的贷款条件. 从借款人的角度来说,他们大体上差不多, 话虽这样说.
 
-Fannie Mae releases two types of data – data on loans it acquires, and data on how those loans perform over time. In the ideal case, someone borrows money from a lender, then repays the loan until the balance is zero. However, some borrowers miss multiple payments, which can cause foreclosure. Foreclosure is when the house is seized by the bank because mortgage payments cannot be made. Fannie Mae tracks which loans have missed payments on them, and which loans needed to be foreclosed on. This data is published quarterly, and lags the current date by 1 year. As of this writing, the most recent dataset that’s available is from the first quarter of 2015.
+Fannie Mae 发布了两种类型的数据 – 它获得的贷款, 随着时间的推移这些贷款是否被偿还.在理想的情况下, 有人向贷款人借钱, 然后还清贷款. 不管怎样, 有些人没还的起钱, 丧失了抵押品赎回权. Foreclosure 是说没钱还了被银行把房子给回收了. Fannie Mae 追踪谁没还钱, 并且需要收回房屋抵押权. 每个季度会发布此数据, 并滞后一年. 当前可用是2015年第一季度数据.
 
-Acquisition data, which is published when the loan is acquired by Fannie Mae, contains information on the borrower, including credit score, and information on their loan and home. Performance data, which is published every quarter after the loan is acquired, contains information on the payments being made by the borrower, and the foreclosure status, if any. A loan that is acquired may have dozens of rows in the performance data. A good way to think of this is that the acquisition data tells you that Fannie Mae now controls the loan, and the performance data contains a series of status updates on the loan. One of the status updates may tell us that the loan was foreclosed on during a certain quarter.
+采集数据是由Fannie Mae发布的贷款数据, 它包含借款人的信息, 信用评分, 和他们的家庭贷款信息. 性能数据, 贷款回收后的每一个季度公布, 包含借贷人所支付款项信息和丧失抵押品赎回状态, 收回贷款的性能数据可能有十几行.一个很好的思路是这样的采集数据告诉你Fannie Mae所控制的贷款, 性能数据包含几个属性来更新贷款. 其中一个属性告诉我们每个季度的贷款赎回权.
 
 ![](https://www.dataquest.io/blog/images/end_to_end/foreclosure.jpg)
->A foreclosed home being sold.
+>一个没有及时还贷的房子就这样的被卖了.
 
-### Picking an angle
+### 选择一个角度
 
-There are a few directions we could go in with the Fannie Mae dataset. We could:
+这里有几个方向我们可以去分析 Fannie Mae 数据集. 我们可以:
 
-- Try to predict the sale price of a house after it’s foreclosed on.
-- Predict the payment history of a borrower.
-- Figure out a score for each loan at acquisition time.
+- 预测房屋的销售价格.
+- 预测借款人还款历史.
+- 在收购时为每一笔贷款打分.
 
-The important thing is to stick to a single angle. Trying to focus on too many things at once will make it hard to make an effective project. It’s also important to pick an angle that has sufficient nuance. Here are examples of angles without much nuance:
+最重要的事情是坚持单一的角度. 关注太多的事情很难做出效果. 选择一个有着足够细节的角度也很重要. 下面的理解就没有太多差别:
 
-- Figuring out which banks sold loans to Fannie Mae that were foreclosed on the most.
-- Figuring out trends in borrower credit scores.
-- Exploring which types of homes are foreclosed on most often.
-- Exploring the relationship between loan amounts and foreclosure sale prices
+- 找出哪些银行将贷款出售给Fannie Mae.
+- 计算贷款人的信用评分趋势.
+- 搜索哪些类型的家庭没有偿还贷款的能力.
+- 搜索贷款金额和抵押品价格之间的关系
 
-All of the above angles are interesting, and would be great if we were focused on storytelling, but aren’t great fits for an operational project.
+上面的想法非常有趣, 它会告诉我们很多有意思的事情, 但是不是一个很适合操作的项目。
 
-With the Fannie Mae dataset, we’ll try to predict whether a loan will be foreclosed on in the future by only using information that was available when the loan was acquired. In effect, we’ll create a “score” for any mortgage that will tell us if Fannie Mae should buy it or not. This will give us a nice foundation to build on, and will be a great portfolio piece.
-
+在Fannie Mae数据集中, 我们将预测贷款是否能被偿还. 实际上, 我们将建立一个抵押贷款的分数来告诉 Fannie Mae买还是不买. 这将给我提供很好的基础.
