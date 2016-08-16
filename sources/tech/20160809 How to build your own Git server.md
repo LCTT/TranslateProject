@@ -1,3 +1,5 @@
+translating by maywanting
+
 How to build your own Git server
 ====================
 
