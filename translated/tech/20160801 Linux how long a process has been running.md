@@ -1,63 +1,62 @@
-MikeCoder translating...
-
-Linux how long a process has been running
+在 Linux 如何查看一个进程的运行时间
 =====================
 
 ![](http://s0.cyberciti.org/images/category/old/linux-logo.png)
 
->I‘m a new Linux system user. How do I check how long a process or pid has been running on my Ubuntu Linux server?
+>我是一个 Linux 系统的新手。我该如何在我的 Ubuntu 服务器上查看一个进程或者根据一个进程 id 来查看他已经运行的时间？
 
 You need to use the ps command to see information about a selection of the active processes. The ps command provide following two formatting options:
+你需要使用 ps 命令来查看关于一组正在运行的进程的信息。ps 命令提供了如下的两种格式化选项。
 
-1. etime Display elapsed time since the process was started, in the form [[DD-]hh:]mm:ss.
-2. etimes Display elapsed time since the process was started, in seconds.
+1. etime 显示了自从该进程启动以来，经历过的时间。以[[DD-]hh:]mm:ss 的格式。
+2. etimes 显示了自该进程启动以来，经历过的时间，以秒的形式。
 
-### How to check how long a process has been running?
+### 如何查看一个进程已经运行的时间？
 
-You need to pass the -o etimes or -o etime to the ps command. The syntax is:
+你需要在 ps 命令之后添加 -o etimes 或者 -o etime 参数。它的语法如下：
 
 ```
 ps -p {PID-HERE} -o etime
 ps -p {PID-HERE} -o etimes
 ```
 
-#### Step 1: Find PID of a process (say openvpn)
+#### 第一步：找到一个进程的 PID (openvpn 为例)
 
 ```
 $ pidof openvpn
 6176
 ```
 
-#### Step 2: How long a openvpn process has been running?
+#### 第二步：openvpn 进程运行了多长时间？
 
 ```
 $ ps -p 6176 -o etime
 ```
 
-OR
+或者
 
 ```
 $ ps -p 6176 -o etimes
 ```
 
-To hide header:
+隐藏头部:
 
 ```
 $ ps -p 6176 -o etime=
 $ ps -p 6176 -o etimes=
 ```
 
-Sample outputs:
+样例输出：
 
 ![](http://s0.cyberciti.org/uploads/faq/2016/08/How-to-check-how-long-a-process-has-been-running.jpg)
 
-The 6176 is the PID of the process you want to check. In this case I’m looking into openvpn process. Feel free to replace openvpn and PID # 6176 as per your own requirements. In this find example, I am printing PID, command, elapsed time, user ID, and group ID:
+这个 6176 就是你想查看的进程的 PID。在这个例子中，我查看的是 openvpn 进程。你可以按照你的需求随意的更换 openvpn 进程名或者是 PID。在下面的例子中，我打印了 PID，执行命令，运行时间，用户 ID，和用户组 ID：
 
 ```
 $ ps -p 6176 -o pid,cmd,etime,uid,gid
 ```
 
-Sample outputs:
+样例输出：
 
 ```
   PID CMD                             ELAPSED   UID   GID
@@ -69,7 +68,7 @@ Sample outputs:
 via: http://www.cyberciti.biz/faq/how-to-check-how-long-a-process-has-been-running/
 
 作者：[VIVEK GITE][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[MikeCoder](https://github.com/MikeCoder)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
