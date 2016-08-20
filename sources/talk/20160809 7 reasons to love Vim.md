@@ -1,3 +1,5 @@
+hkurj translating
+
 7 reasons to love Vim
 ====================
 
