@@ -1,3 +1,4 @@
+翻译中 by－zky001
 Excel “Filter and Edit” - Demonstrated in Pandas
 ==================================================
 
@@ -313,7 +314,7 @@ Thanks for reading through the article. I find that one of the biggest challenge
 via: http://pbpython.com/excel-filter-edit.html 
 
 作者：[Chris Moffitt ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zky001](https://github.com/zky001)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
