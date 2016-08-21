@@ -23,11 +23,11 @@ Protocol Buffer Basics: C++
 
 `Protocol buffers` 是针对这个问题的一种灵活、高效、自动化的解决方案。使用 `Protocol buffers`，你需要写一个 `.proto` 说明，用于描述你所希望存储的数据结构。利用 `.proto` 文件，protocol buffer 编译器可以创建一个类，用于实现自动化编码和解码高效的二进制格式的 protocol buffer 数据。产生的类提供了构造 `protocol buffer` 的字段的 getters 和 setters，并且作为一个单元，关注读写 `protocol buffer` 的细节。重要的是，`protocol buffer` 格式支持扩展格式，代码仍然可以读取以旧格式编码的数据。
 
-# 在哪可以找到示例代码
+### 在哪可以找到示例代码
 
 示例代码被包含于源代码包，位于 "examples" 文件夹。在[这][4]下载代码。
 
-# 定义你的协议格式
+### 定义你的协议格式
 
 为了创建自己的地址簿应用程序，你需要从 `.proto` 开始。`.proto` 文件中的定义很简单：为你所需要序列化的数据结构添加一个消息（message），然后为消息中的每一个字段指定一个名字和类型。这里是定义你消息的 `.proto` 文件，`addressbook.proto`。
 
