@@ -1,12 +1,15 @@
+Protocol Buffer Basics: C++
+============================
+
 这篇教程提供了一个面向 C++ 程序员、关于 `protocol buffers` 的基础介绍。通过创建一个简单的示例应用程序，它将向我们展示：
 
 * 在 `.proto` 文件中定义消息格式
 * 使用 `protocol buffer`  编译器
 * 使用 `C++ protocol buffer API` 读写消息
 
-这不是一个关于使用 C++ protocol buffers 的全面指南。要获取更详细的信息，请参考 [Protocol Buffer Language Guide](https://developers.google.com/protocol-buffers/docs/proto) 和 [Encoding Reference](https://developers.google.com/protocol-buffers/docs/encoding)。
+这不是一个关于使用 C++ protocol buffers 的全面指南。要获取更详细的信息，请参考 [Protocol Buffer Language Guide][1] 和 [Encoding Reference][2]。
 
-# 为什么使用 Protocol Buffers
+### 为什么使用 Protocol Buffers
 
 我们接下来要使用的例子是一个非常简单的"地址簿"应用程序，它能从文件中读取联系人详细信息。地址簿中的每一个人都有一个名字，ID，邮件地址和联系电话。
 
@@ -22,7 +25,7 @@
 
 # 在哪可以找到示例代码
 
-示例代码被包含于源代码包，位于 "examples" 文件夹。在[这](https://developers.google.com/protocol-buffers/docs/downloads)下载代码。
+示例代码被包含于源代码包，位于 "examples" 文件夹。在[这][4]下载代码。
 
 # 定义你的协议格式
 
@@ -71,17 +74,15 @@ message AddressBook {
 
 * repeated：字段可以重复任意次数（包括 0）。repeated 值的顺序会被保存于 protocol buffer。可以将 repeated 字段想象为动态大小的数组。
 
-你可以查找关于编写 `.proto` 文件的完整指导——包括所有可能的字段类型——在 [Protocol Buffer Language Guide](https://developers.google.com/protocol-buffers/docs/proto)。不要在这里面查找与类继承相似的特性，因为 protocol buffers 不会做这些。
-
-Required Is Forever You should be very careful about marking fields as required. If at some point you wish to stop writing or sending a required field, it will be problematic to change the field to an optional field – old readers will consider messages without this field to be incomplete and may reject or drop them unintentionally. You should consider writing application-specific custom validation routines for your buffers instead. Some engineers at Google have come to the conclusion that using required does more harm than good; they prefer to use only optional and repeated. However, this view is not universal.
+你可以查找关于编写 `.proto` 文件的完整指导——包括所有可能的字段类型——在 [Protocol Buffer Language Guide][6]。不要在这里面查找与类继承相似的特性，因为 protocol buffers 不会做这些。
 
 > required 是永久性的，在把一个字段标识为 required 的时候，你应该特别小心。如果在某些情况下你不想写入或者发送一个 required 的字段，那么将该字段更改为 optional 可能会遇到问题——旧版本的读者（译者注：即读取、解析旧版本 Protocol Buffer 消息的一方）会认为不含该字段的消息是不完整的，从而有可能会拒绝解析。在这种情况下，你应该考虑编写特别针对于应用程序的、自定义的消息校验函数。Google 的一些工程师得出了一个结论：使用 required 弊多于利；他们更愿意使用 optional 和 repeated 而不是 required。当然，这个观点并不具有普遍性。
 
-# 编译你的 Protocol Buffers
+### 编译你的 Protocol Buffers
 
 既然你有了一个 `.proto`，那你需要做的下一件事就是生成一个将用于读写 `AddressBook` 消息的类（从而包括 `Person` 和 `PhoneNumber`）。为了做到这样，你需要在你的 `.proto` 上运行 protocol buffer 编译器 `protoc`：
 
-1. 如果你没有安装编译器，请[下载这个包](https://developers.google.com/protocol-buffers/docs/downloads.html)，并按照 README 中的指令进行安装。
+1. 如果你没有安装编译器，请[下载这个包][4]，并按照 README 中的指令进行安装。
 2. 现在运行编译器，知道源目录（你的应用程序源代码位于哪里——如果你没有提供任何值，将使用当前目录），目标目录（你想要生成的代码放在哪里;常与 `$SRC_DIR` 相同），并且你的 `.proto` 路径。在此示例，你...：
 
 ```
@@ -95,7 +96,7 @@ protoc -I=$SRC_DIR --cpp_out=$DST_DIR $SRC_DIR/addressbook.proto
 * `addressbook.pb.h`，声明你生成类的头文件。
 * `addressbook.pb.cc`，包含你的类的实现。
 
-# Protocol Buffer API
+### Protocol Buffer API
 
 让我们看看生成的一些代码，了解一下编译器为你创建了什么类和函数。如果你查看 `tutorial.pb.h`，你可以看到有一个在 `tutorial.proto` 中指定所有消息的类。关注 `Person` 类，可以看到编译器为每个字段生成了读写函数（accessors）。例如，对于 `name`、`id`、`email` 和 `phone` 字段，有下面这些方法：
 
@@ -143,15 +144,15 @@ repeated 字段也有一些特殊的方法——如果你看看 repeated `phone`
 * 更新特定下标的电话号码
 * 添加新的电话号码到消息中，之后你便可以编辑。（repeated 标量类型有一个 `add_` 方法，用于传入新的值）
 
-为了获取 protocol 编译器为所有字段定义生成的方法的信息，可以查看 [C++ generated code reference](https://developers.google.com/protocol-buffers/docs/reference/cpp-generated)。
+为了获取 protocol 编译器为所有字段定义生成的方法的信息，可以查看 [C++ generated code reference][5]。
 
-### 枚举和嵌套类（Enums and Nested Classes）
+#### 枚举和嵌套类（Enums and Nested Classes）
 
 与 `.proto` 的枚举相对应，生成的代码包含了一个 `PhoneType` 枚举。你可以通过 `Person::PhoneType` 引用这个类型，通过 `Person::MOBILE`、`Person::HOME` 和 `Person::WORK` 引用它的值。（实现细节有点复杂，但是你无须了解它们而可以直接使用）
 
 编译器也生成了一个 `Person::PhoneNumber` 的嵌套类。如果你查看代码，你可以发现真正的类型为 `Person_PhoneNumber`，但它通过在 `Person` 内部使用 typedef 定义，使你可以把 `Person_PhoneNumber` 当成嵌套类。唯一产生影响的一个例子是，如果你想要在其他文件前置声明该类——在 C++ 中你不能前置声明嵌套类，但是你可以前置声明 `Person_PhoneNumber`。
 
-### 标准的消息方法
+#### 标准的消息方法
 
 所有的消息方法都包含了许多别的方法，用于检查和操作整个消息，包括：
 
@@ -160,12 +161,11 @@ repeated 字段也有一些特殊的方法——如果你看看 repeated `phone`
 * `void CopyFrom(const Person& from);`：使用给定的值重写消息。
 * `void Clear();`：清除所有元素为空（empty）的状态。
 
-上面这些方法以及下一节要讲的 I/O 方法实现了被所有 C++ protocol buffer 类共享的消息（Message）接口。为了获取更多信息，请查看 [complete API documentation for Message](https://developers.google.com/protocol-buffers/docs/reference/cpp/google.protobuf.message.html#Message)。
+上面这些方法以及下一节要讲的 I/O 方法实现了被所有 C++ protocol buffer 类共享的消息（Message）接口。为了获取更多信息，请查看 [complete API documentation for Message][7]。
 
-### 解析和序列化（Parsing and Serialization）
+#### 解析和序列化（Parsing and Serialization）
 
-最后，所有 protocol buffer 类都有读写你选定类型消息的方法，这些方法使用了特定的 protocol buffer [二进制格式](https://developers.google.com/protocol-buffers/docs/encoding)
-。这些方法包括：
+最后，所有 protocol buffer 类都有读写你选定类型消息的方法，这些方法使用了特定的 protocol buffer [二进制格式][8]。这些方法包括：
 
 * `bool SerializeToString(string* output) const;`：序列化消息以及将消息字节数据存储在给定的字符串。注意，字节数据是二进制格式的，而不是文本格式；我们只使用 `string` 类作为合适的容器。
 * `bool ParseFromString(const string& data);`：从给定的字符创解析消息。
@@ -176,7 +176,7 @@ repeated 字段也有一些特殊的方法——如果你看看 repeated `phone`
 
 > Protocol Buffers 和 面向对象设计的 Protocol buffer 类通常只是纯粹的数据存储器（像 C++ 中的结构体）；它们在对象模型中并不是一等公民。如果你想向生成的 protocol buffer 类中添加更丰富的行为，最好的方法就是在应用程序中对它进行封装。如果你无权控制 .proto 文件的设计的话，封装 protocol buffers 也是一个好主意（例如，你从另一个项目中重用一个 .proto 文件）。在那种情况下，你可以用封装类来设计接口，以更好地适应你的应用程序的特定环境：隐藏一些数据和方法，暴露一些便于使用的函数，等等。但是你绝对不要通过继承生成的类来添加行为。这样做的话，会破坏其内部机制，并且不是一个好的面向对象的实践。
 
-# 写消息（Writing A Message）
+### 写消息（Writing A Message）
 
 现在我们尝试使用 protocol buffer 类。你的地址簿程序想要做的第一件事是将个人详细信息写入到地址簿文件。为了做到这一点，你需要创建、填充 protocol buffer 类实例，并且将它们写入到一个输出流（output stream）。
 
@@ -282,7 +282,7 @@ int main(int argc, char* argv[]) {
 
 同时注意在程序最后调用 `ShutdownProtobufLibrary()`。它用于释放 Protocol Buffer 库申请的所有全局对象。对大部分程序，这不是必须的，因为虽然程序只是简单退出，但是 OS 会处理释放程序的所有内存。然而，如果你使用了内存泄漏检测工具，工具要求全部对象都要释放，或者你正在写一个库，该库可能会被一个进程多次加载和卸载，那么你可能需要强制 Protocol Buffer 清除所有东西。
 
-# 读取消息
+### 读取消息
 
 当然，如果你无法从它获取任何信息，那么这个地址簿没多大用处！这个示例读取上面例子创建的文件，并打印文件里的所有内容。
 
@@ -355,7 +355,7 @@ int main(int argc, char* argv[]) {
 }
 ```
 
-# 扩展 Protocol Buffer
+### 扩展 Protocol Buffer
 
 早晚在你发布了使用 protocol buffer 的代码之后，毫无疑问，你会想要 "改善"
  protocol buffer 的定义。如果你想要新的 buffers 向后兼容，并且老的 buffers 向前兼容——几乎可以肯定你很渴望这个——这里有一些规则，你需要遵守。在新的 protocol buffer 版本：
@@ -365,25 +365,25 @@ int main(int argc, char* argv[]) {
  * 你可以删除 optional 或 repeated 字段
  * 你可以添加新的 optional 或 repeated 字段，但是你必须使用新的标签数字（也就是说，标签数字在 protocol buffer 中从未使用过，甚至不能是已删除字段的标签数字）。
 
- （这是对于上面规则的一些[异常情况](https://developers.google.com/protocol-buffers/docs/proto#updating)，但它们很少用到。）
+ （这是对于上面规则的一些[异常情况][9]，但它们很少用到。）
 
  如果你能遵守这些规则，旧代码则可以欢快地读取新的消息，并且简单地忽略所有新的字段。对于旧代码来说，被删除的 optional 字段将会简单地赋予默认值，被删除的 `repeated` 字段会为空。新代码显然可以读取旧消息。然而，请记住新的 optional 字段不会呈现在旧消息中，因此你需要显式地使用 `has_` 检查它们是否被设置或者在 `.proto` 文件在标签数字后使用 `[default = value]` 提供一个合理的默认值。如果一个 optional 元素没有指定默认值，它将会使用类型特定的默认值：对于字符串，默认值为空字符串；对于布尔值，默认值为 false；对于数字类型，默认类型为 0。注意，如果你添加一个新的 repeated 字段，新代码将无法辨别它被留空（left empty）（被新代码）或者从没被设置（被旧代码）,因为 repeated 字段没有 `has_` 标志。
 
-# 优化技巧
+### 优化技巧
 
 C++ Protocol Buffer 库已极度优化过了。但是，恰当的用法能够更多地提高性能。这里是一些技巧，可以帮你从库中挤压出最后一点速度：
 
-* 尽可能复用消息对象。即使它们被清除掉，消息也会尽量保存所有被分配来重用的内存。因此，如果我们正在处理许多相同类型或一系列相似结构的消息，一个好的办法是重用相同的消息对象，从而减少内存分配的负担。但是，随着时间的流逝，对象可能会膨胀变大，尤其是当你的消息尺寸（译者注：各消息内容不同，有些消息内容多一些，有些消息内容少一些）不同的时候，或者你偶尔创建了一个比平常大很多的消息的时候。你应该自己通过调用 [SpaceUsed](https://developers.google.com/protocol-buffers/docs/reference/cpp/google.protobuf.message.html#Message.SpaceUsed.details) 方法监测消息对象的大小，并在它太大的时候删除它。
+* 尽可能复用消息对象。即使它们被清除掉，消息也会尽量保存所有被分配来重用的内存。因此，如果我们正在处理许多相同类型或一系列相似结构的消息，一个好的办法是重用相同的消息对象，从而减少内存分配的负担。但是，随着时间的流逝，对象可能会膨胀变大，尤其是当你的消息尺寸（译者注：各消息内容不同，有些消息内容多一些，有些消息内容少一些）不同的时候，或者你偶尔创建了一个比平常大很多的消息的时候。你应该自己通过调用 [SpaceUsed][10] 方法监测消息对象的大小，并在它太大的时候删除它。
 
-* 对于在多线程中分配大量小对象的情况，你的操作系统内存分配器可能优化得不够好。你可以尝试使用 google 的 [tcmalloc](http://code.google.com/p/google-perftools/)。
+* 对于在多线程中分配大量小对象的情况，你的操作系统内存分配器可能优化得不够好。你可以尝试使用 google 的 [tcmalloc][11]。
 
-# 高级用法
+### 高级用法
 
-Protocol Buffers 绝不仅用于简单的数据存取以及序列化。请阅读 [C++ API reference](https://developers.google.com/protocol-buffers/docs/reference/cpp/index.html) 来看看你还能用它来做什么。
+Protocol Buffers 绝不仅用于简单的数据存取以及序列化。请阅读 [C++ API reference][12] 来看看你还能用它来做什么。
 
 protocol 消息类所提供的一个关键特性就是反射。你不需要编写针对一个特殊的消息类型的代码，就可以遍历一个消息的字段并操作它们的值。一个使用反射的有用方法是 protocol 消息与其他编码互相转换，比如 XML 或 JSON。反射的一个更高级的用法可能就是可以找出两个相同类型的消息之间的区别，或者开发某种 "协议消息的正则表达式"，利用正则表达式，你可以对某种消息内容进行匹配。只要你发挥你的想像力，就有可能将 Protocol Buffers 应用到一个更广泛的、你可能一开始就期望解决的问题范围上。
 
-反射是由 [Message::Reflection interface](https://developers.google.com/protocol-buffers/docs/reference/cpp/google.protobuf.message.html#Message.Reflection) 提供的。
+反射是由 [Message::Reflection interface][13] 提供的。
 
 --------------------------------------------------------------------------------
 
@@ -394,3 +394,18 @@ via: https://developers.google.com/protocol-buffers/docs/cpptutorial
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+
+[a]: https://developers.google.com/protocol-buffers/docs/cpptutorial
+[1]: https://developers.google.com/protocol-buffers/docs/proto
+[2]: https://developers.google.com/protocol-buffers/docs/encoding
+[3]: https://developers.google.com/protocol-buffers/docs/downloads
+[4]: https://developers.google.com/protocol-buffers/docs/downloads.html
+[5]: https://developers.google.com/protocol-buffers/docs/reference/cpp-generated
+[6]: https://developers.google.com/protocol-buffers/docs/proto
+[7]: https://developers.google.com/protocol-buffers/docs/reference/cpp/google.protobuf.message.html#Message
+[8]: https://developers.google.com/protocol-buffers/docs/encoding
+[9]: https://developers.google.com/protocol-buffers/docs/proto#updating
+[10]: https://developers.google.com/protocol-buffers/docs/reference/cpp/google.protobuf.message.html#Message.SpaceUsed.details
+[11]: http://code.google.com/p/google-perftools/
+[12]: https://developers.google.com/protocol-buffers/docs/reference/cpp/index.html
+[13]: https://developers.google.com/protocol-buffers/docs/reference/cpp/google.protobuf.message.html#Message.Reflection
