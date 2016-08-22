@@ -69,7 +69,7 @@ b、 一旦你保存了这个文件，你应该能在 Wifi 菜单里看到你刚
 via: http://www.linuxveda.com/2015/08/23/how-to-create-an-ap-in-ubuntu-15-04-to-connect-to-androidiphone/
 
 作者：[Sayantan Das][a]
-译者：[jerryling315](https://github.com/jerryling315)
+译者：[Moelf](https://github.com/Moelf)
 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
