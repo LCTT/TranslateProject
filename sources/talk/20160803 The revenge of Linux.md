@@ -1,3 +1,4 @@
+翻译中 by H-mudcup
 The revenge of Linux
 ========================
 
