@@ -1,3 +1,4 @@
+[translating by kokialoves]
 Writing a JavaScript framework - Execution timing, beyond setTimeout
 ===================
 
