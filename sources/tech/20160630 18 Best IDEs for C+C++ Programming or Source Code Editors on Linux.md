@@ -1,4 +1,4 @@
-translating by fw8899
+translating by WangYueScream & LiBrad
 18 Best IDEs for C/C++ Programming or Source Code Editors on Linux
 ======================================================================
 
