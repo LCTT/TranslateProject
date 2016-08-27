@@ -1,3 +1,5 @@
+Translating by GitFuture
+
 How to cache static files on nginx
 ===========================
 
