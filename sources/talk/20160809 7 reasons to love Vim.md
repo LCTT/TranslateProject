@@ -30,7 +30,7 @@ Vim，有40年的历史了，有足够的时间发展一个巨大而又复杂的
 via: https://opensource.com/business/16/8/7-reasons-love-vim
 
 作者：[Giles Orr][a]
-译者：[译者ID](https://github.com/hkurj)
+译者：[hkurj](https://github.com/hkurj)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
