@@ -1,30 +1,27 @@
-hkurj translating
-
-7 reasons to love Vim
+爱Vim的7个原因
 ====================
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/BUS_OpenSourceExperience_520x292_cm.png?itok=APna2N9Y)
 
-When I started using the vi text editor, I hated it. I thought it was the most painful and counter-intuitive editor ever designed. But I'd decided I had to learn the thing, because if you're using Unix, vi was everywhere and was the only editor you were guaranteed to have access to. That was back in 1998, but it remains true today—vi is available, usually as part of the base install, on almost every Linux distribution in existence.
+当我刚刚开始用vi文本编辑器的时候，我厌恶它。我认为这是最痛苦和反人类的设计。但我决定我必须学习使用它，因为如果你使用的是Unix，vi无处不在并且是唯一一个保证你会使用的编辑器。在1998年是如此，但是直到今天vi也仍然是可用的，几乎每个现有的发行版中，vi基本上都是基础安装的一部分。
 
-It took about a month before I could do anything with any proficiency in vi and I still didn't love it, but by then I'd realized that there was an insanely powerful editor hiding behind this bizarre facade. So I stuck with it, and eventually found out that once you know what you're doing, it's an incredibly fast editor.
+在我学会能使用任何功能前，我花费了1个月在Vi上，我仍然不喜欢它。但那时我意识到有个强大的编辑器隐藏在这个奇特的外表后面。所以我坚持使用它，并且最终发现一旦你知道你在干什么，它就是一个快的令人难以置信的编辑器。
 
-The name "vi" is short for "visual." When vi originated, line editing was the norm and being able to display and edit multiple lines at once was unusual. Vim, a contraction of "Vi IMproved" and originally released by Bram Moolenaar in 1991, has become the dominant vi clone and continued to extend the capabilities of an already powerful editor. Vim's powerful regex and ":" command-line syntax started in the world of line editing and teletypes.
+“vi”这个名称是“visual”的缩写。在vi出现的时候，行编辑器是很普遍的，能共同显示和编辑多行是非同寻常的。Vim，“Vi IMproved”的缩写，最初由Bram Moolenaar发布于1991年，它成为了仿vi的主导软件并且扩展了这个强大的编辑器已有的功能。vim的强大的正则表达式和“：”命令行语法开始于行编辑和打印设备的世界。
 
-Vim, with its 40 years of history, has had time to develop a massive and complex bag of tricks that even the most knowledgeable users don't fully grasp. Here are a few reasons to love Vim:
+Vim，有40年的历史了，有足够的时间发展一个巨大而又复杂的技巧，甚至最有知识的用户还不能完全掌握。这里列出了一些爱Vim的理由
 
-1. Colour schemes: You probably know Vim has colour syntax highlighting. Did you know you can download literally hundreds of colour schemes? [Find some of the better ones here][1].
-2. You never need to take your hands off the keyboard or reach for the mouse.
-3. Vi or Vim is everywhere. Even [OpenWRT][2] has vi (okay, it's [BusyBox][3], but it works).
-4. Vimscript: You've probably remapped a few keys, but did you know that Vim has its own programming language? You can rewrite the behaviour of your editor, or create language-specific editor extensions. (Recently I've spent time customizing Vim's behaviour with Ansible.) The best entry point to the language is Steve Losh's brilliant [Learn Vimscript the Hard Way][4].
-5. Vim has plugins. Use [Vundle][5] (my choice) or [Pathogen][6] to manage your plugins to improve Vim's capabilities.
-6. Plugins to integrate git (or your VCS of choice) into Vim are available.
-7. The online community is huge and active, and if you ask your question about Vim online, it will be answered.
+1. 配色方案：你可能知道Vim有彩色语法高亮。但你知道可以下载数百个配色方案么？[在这找到些更好的][1]
+2. 你再也不需要让你的手离开键盘或者去碰触鼠标
+3. Vi或者Vim存在任何地方，甚至在[OpenWRT]也有vi（好吧，是其实是在[BusyBox][3]中，它挺好用的）。
+4. Vimscript：你可能会想重映射几个键，但是你知道Vim有自己的编程语言么？你可以重写自己的编辑行为，或者创造特定语言的编辑器扩展。（最近我在和Ansible一起定制Vim的行为。）学习这个语言最佳的切入点是看Steve Losh著名的书[Learn Vimscript the Hard Way][4]。
+5. Vim插件。使用[vundle][5]（我的选择）或者[Pathogen][6]来管理你的插件来增加你Vim的功能。
+6. 可以将集成git（或者你选择的VCS）的插件插入到Vim。
+7. 有庞大和活跃的在线社区，如果你在线上提问关于Vim的问题，它将很快被回答
 
-The irony of my original hatred of vi is that I'd been bouncing from editor to editor for five years, always looking for "something better." I never hated any editor as much as I hated vi, and now I've stuck with it for 17 years because I can no longer imagine a better editor. Well, maybe a little better: Go try Neovim—it's the future. It looks like Bram Moolenaar will be merging most of Neovim into Vim version 8, which will mean a 30% reduction in the code base, better tab completion, real async, built-in terminal, built-in mouse support, and complete compatibility.
+我一开始讨厌vi的可笑之处在于，这5年来不断的尝试新的编辑器，总是想找到“一些更好的”。我Vi是我最讨厌的编辑器，现在我已经使用它17年了，因为我想象不到一个更好的编辑器。额，或许有稍微好一点的：可以尝试下Neovim-这是未来的主流。看起来Bram Moolenaar将会吧Neovim融入到Vim第8版中，这意味着将会在现有的代码基础上减少30%，更好的代码补全功能，真正的异步，内置终端，内置鼠标支持，完全兼容。
 
-In his [LinuxCon talk][7] in Toronto, Giles will explain some of the features you may have missed in the welter of extensions and improvements added in the past four decades. The class isn't for beginners, so if you don't know why "hjklia:wq" are important, this probably isn't the talk for you. He'll also cover a bit about the history of vi, because knowing some history helps to understand how we've ended up where we are now. Attend his talk to find out how to make your favourite editor better and faster.
-
+在他于多伦多的 [LinuxCon 演讲][7]中（译者注：LinuxCon 是Linux基金会举办的年度会议），Giles解释了一些在你可能错过的，过去四十年混乱的扩展和改进。这类不适合初学者，所以如果你不知道为什么“hjklia:wq”是很重要的，这就可能不是讲给你听的。它还会涉及一点关于vi的历史，因为知道一些历史能帮助我们理解我们现在所停留在的地方。参加他的演讲能帮助你使你最喜欢的编辑器更好更快。
 
 
 
@@ -33,7 +30,7 @@ In his [LinuxCon talk][7] in Toronto, Giles will explain some of the features yo
 via: https://opensource.com/business/16/8/7-reasons-love-vim
 
 作者：[Giles Orr][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/hkurj)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
