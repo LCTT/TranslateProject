@@ -1,3 +1,5 @@
+Translating by bianjp
+
 What Datatype Should You Use to Represent Time in MySQL? We Compare Datetime, Timestamp and INT
 ==========================================================
 
