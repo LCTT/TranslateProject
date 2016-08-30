@@ -1,4 +1,5 @@
-5 Best Modern Linux ‘init’ Systems (1992-2015)
+hkurj translating  
+I Best Modern Linux ‘init’ Systems (1992-2015)
 ============================================
 
 In Linux and other Unix-like operating systems, the init (initialization) process is the first process executed by the kernel at boot time. It has a process ID (PID) of 1, it is executed in the background until the system is shut down.
