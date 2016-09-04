@@ -91,14 +91,13 @@ And if you’d like to know next time I publish results, [head to the survey hom
 
 via: https://www.oreilly.com/ideas/spark-comparison-aws-vs-gcp?utm_source=dbweekly&utm_medium=email
 
-作者：[Michael Li][a]  [Ariel M'Ndange-Pfupfu][b] 
+作者：[Sacha Greif][a]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]: https://www.oreilly.com/people/76a5b-michael-li
-[b]: https://www.oreilly.com/people/Ariel-Mndange-Pfupfu
-[1]: https://aws.amazon.com/
-[2]: https://cloud.google.com/
-[3]: https://www.thedataincubator.com/training.html?utm_source=OReilly&utm_medium=blog&utm_campaign=AWSvsGCP
+[a]: https://medium.com/@sachagreif
+[1]: https://twitter.com/intent/tweet/?text=The%20State%20Of%20JavaScript%3A%20take%20a%20short%20survey%20about%20popular%20JavaScript%20technologies%20http%3A%2F%2Fstateofjs.com%20%23stateofjs
+[2]: https://facebook.com/sharer/sharer.php?u=http%3A%2F%2Fstateofjs.com
+[3]: http://stateofjs.com/
