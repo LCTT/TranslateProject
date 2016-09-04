@@ -1,3 +1,5 @@
+rusking 翻译中
+
 I've been Linuxing since before you were born
 =====================
 
