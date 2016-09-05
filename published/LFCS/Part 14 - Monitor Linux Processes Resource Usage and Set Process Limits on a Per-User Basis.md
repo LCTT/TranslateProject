@@ -1,10 +1,11 @@
-LFCS 系列第十四讲： Linux 进程资源使用监控和基于每个用户的进程限制设置
-=============================================================================================
+LFCS 系列第十四讲： Linux 进程资源用量监控和按用户设置进程限制
+============================================================
 
 由于 2016 年 2 月 2 号开始启用了新的 LFCS 考试要求，我们在已经发表的 [LFCS 系列][1] 基础上增加了一些必要的主题。为了准备考试，同时也建议你看看 [LFCE 系列][2] 文章。
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/03/Linux-Process-Monitoring-Set-Process-Limits-Per-User.png)
->第十四讲： 监控 Linux 进程并为每个用户设置进程限制
+
+*第十四讲： 监控 Linux 进程并为每个用户设置进程限制*
 
 每个 Linux 系统管理员都应该知道如何验证硬件、资源和主要进程的完整性和可用性。另外，基于每个用户设置资源限制也是其中一项必备技能。
 
@@ -26,13 +27,13 @@ LFCS 系列第十四讲： Linux 进程资源使用监控和基于每个用户�
 
 安装完 **mpstat** 之后，就可以使用它生成处理器统计信息的报告。
 
-你可以使用下面的命令每隔 2 秒显示所有 CPU(用 `-P` ALL 表示) 的 CPU 利用率(`-u`)，共显示 **3** 次。
+你可以使用下面的命令每隔 2 秒显示所有 CPU（用 `-P` ALL 表示）的 CPU 利用率（`-u`），共显示 **3** 次。
 
 ```
 # mpstat -P ALL -u 2 3
 ```
 
-### 事例输出
+**示例输出：**
 
 ```
 Linux 3.19.0-32-generic (tecmint.com) 	Wednesday 30 March 2016 	_x86_64_	(4 CPU)
@@ -72,7 +73,7 @@ Average:       3   12.25    0.00    1.16    0.00    0.00    0.00    0.00    0.00
 # mpstat -P 0 -u 2 3
 ```
 
-### 事例输出
+**示例输出：**
 
 ```
 Linux 3.19.0-32-generic (tecmint.com) 	Wednesday 30 March 2016 	_x86_64_	(4 CPU)
@@ -86,16 +87,16 @@ Average:       0    5.58    0.00    0.34    0.85    0.00    0.00    0.00    0.00
 
 上面命令的输出包括这些列：
 
-* `CPU`： 整数表示的处理器号或者 all 表示所有处理器的平局值。
+* `CPU`： 整数表示的处理器号或者 all 表示所有处理器的平均值。
 * `%usr`： 运行在用户级别的应用的 CPU 利用率百分数。
 * `%nice`： 和 `%usr` 相同，但有 nice 优先级。
 * `%sys`： 执行内核应用的 CPU 利用率百分比。这不包括用于处理中断或者硬件请求的时间。
-* `%iowait`： 指定(或所有) CPU 的空闲时间百分比，这表示当前 CPU 处于 I/O 操作密集的状态。更详细的解释(附带示例)可以查看[这里][4]。
+* `%iowait`： 指定（或所有）CPU 的空闲时间百分比，这表示当前 CPU 处于 I/O 操作密集的状态。更详细的解释（附带示例）可以查看[这里][4]。
 * `%irq`： 用于处理硬件中断的时间所占百分比。
-* `%soft`： 和 `%irq` 相同，但是软中断。
-* `%steal`： 当一个客户虚拟机在竞争 CPU 时，非自主等待(时间片窃取)所占时间的百分比。应该保持这个值尽可能小。如果这个值很大，意味着虚拟机正在或者将要停止运转。
+* `%soft`： 和 `%irq` 相同，但是是软中断。
+* `%steal`： 虚拟机非自主等待（时间片窃取）所占时间的百分比，即当虚拟机在竞争 CPU 时所从虚拟机管理程序那里“赢得”的时间。应该保持这个值尽可能小。如果这个值很大，意味着虚拟机正在或者将要停止运转。
 * `%guest`： 运行虚拟处理器所用的时间百分比。
-* `%idle`： CPU(s) 没有运行任何任务所占时间的百分比。如果你观察到这个值很小，意味着系统负载很重。在这种情况下，你需要查看详细的进程列表、以及下面将要讨论的内容来确定这是什么原因导致的。
+* `%idle`： CPU 没有运行任何任务所占时间的百分比。如果你观察到这个值很小，意味着系统负载很重。在这种情况下，你需要查看详细的进程列表、以及下面将要讨论的内容来确定这是什么原因导致的。
 
 运行下面的命令使处理器处于极高负载，然后在另一个终端执行 mpstat 命令：
 
@@ -109,7 +110,8 @@ Average:       0    5.58    0.00    0.34    0.85    0.00    0.00    0.00    0.00
 最后，和 “正常” 情况下 **mpstat** 的输出作比较：
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/03/Report-Processors-Related-Statistics.png)
-> Linux 处理器相关统计信息报告
+
+*Linux 处理器相关统计信息报告*
 
 正如你在上面图示中看到的，在前面两个例子中，根据 `%idle` 的值可以判断 **CPU 0** 负载很高。
 
@@ -126,7 +128,8 @@ Average:       0    5.58    0.00    0.34    0.85    0.00    0.00    0.00    0.00
 上面的命令只会显示 `PID`、`PPID`、和进程相关的命令、 CPU 使用率以及 RAM 使用率，并按照 CPU 使用率降序排序。创建 .iso 文件的时候运行上面的命令，下面是输出的前面几行：
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/03/Find-Linux-Processes-By-CPU-Usage.png)
->根据 CPU 使用率查找进程
+
+*根据 CPU 使用率查找进程*
 
 一旦我们找到了感兴趣的进程(例如 `PID=2822` 的进程)，我们就可以进入 `/proc/PID`(本例中是 `/proc/2822`) 列出目录内容。
 
@@ -134,10 +137,9 @@ Average:       0    5.58    0.00    0.34    0.85    0.00    0.00    0.00    0.00
 
 #### 例如：
 
-* `/proc/2822/io` 包括该进程的 IO 统计信息（　IO 操作时的读写字符数）。
+* `/proc/2822/io` 包括该进程的 IO 统计信息（IO 操作时的读写字符数）。
 * `/proc/2822/attr/current` 显示了进程当前的 SELinux 安全属性。
-* `/proc/2822/attr/current` shows the current SELinux security attributes of the process.
-* `/proc/2822/cgroup` 如果启用了 CONFIG_CGROUPS 内核设置选项，这会显示该进程所属的控制组(简称 cgroups)，你可以使用下面命令验证是否启用了 CONFIG_CGROUPS：
+* `/proc/2822/cgroup` 如果启用了 CONFIG_CGROUPS 内核设置选项，这会显示该进程所属的控制组（简称 cgroups），你可以使用下面命令验证是否启用了 CONFIG_CGROUPS：
 
 ```
 # cat /boot/config-$(uname -r) | grep -i cgroups
@@ -154,7 +156,8 @@ CONFIG_CGROUPS=y
 `/proc/2822/fd` 这个目录包含每个打开的描述进程的文件的符号链接。下面的截图显示了 tty1（第一个终端） 中创建 **.iso** 镜像进程的相关信息：
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/03/Find-Linux-Process-Information.png)
->查找 Linux 进程信息
+
+*查找 Linux 进程信息*
 
 上面的截图显示 **stdin**（文件描述符 **0**）、**stdout**（文件描述符 **1**）、**stderr**（文件描述符 **2**） 相应地被映射到 **/dev/zero**、 **/root/test.iso** 和   **/dev/tty1**。
 
@@ -170,14 +173,15 @@ CONFIG_CGROUPS=y
 *   	hard	nproc   10
 ```
 
-第一个字段可以用来表示一个用户、组或者所有`(*)`， 第二个字段强制限制可以使用的进程数目（nproc） 为 **10**。退出并重新登录就可以使设置生效。
+第一个字段可以用来表示一个用户、组或者所有人`(*)`， 第二个字段强制限制可以使用的进程数目（nproc） 为 **10**。退出并重新登录就可以使设置生效。
 
-然后，让我们来看看非 root 用户（合法用户或非法用户） 试图引起 shell fork bomb[WiKi][12] 时会发生什么。如果我们没有设置限制， shell fork bomb 会无限制地启动函数的两个实例，然后无限循环地复制任意一个实例。最终导致你的系统卡死。
+然后，让我们来看看非 root 用户（合法用户或非法用户） 试图引起 shell fork 炸弹 （参见 [WiKi][12]） 时会发生什么。如果我们没有设置限制， shell fork 炸弹会无限制地启动函数的两个实例，然后无限循环地复制任意一个实例。最终导致你的系统卡死。
 
-但是，如果使用了上面的限制，fort bomb 就不会成功，但用户仍然会被锁在外面直到系统管理员杀死相关的进程。
+但是，如果使用了上面的限制，fort 炸弹就不会成功，但用户仍然会被锁在外面直到系统管理员杀死相关的进程。
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/03/Shell-Fork-Bomb.png)
->运行 Shell Fork Bomb
+
+*运行 Shell Fork 炸弹*
 
 **提示**： `limits.conf` 文件中可以查看其它 **ulimit** 可以更改的限制。 
 
@@ -185,7 +189,7 @@ CONFIG_CGROUPS=y
 
 除了上面讨论的工具， 一个系统管理员还可能需要：
 
-**a)** 通过使用 **renice** 调整执行优先级（系统资源使用）。这意味着内核会根据分配的优先级（众所周知的 “**niceness**”，它是一个范围从 `-20` 到 `19` 的整数）给进程分配更多或更少的系统资源。
+**a)** 通过使用 **renice** 调整执行优先级（系统资源的使用）。这意味着内核会根据分配的优先级（众所周知的 “**niceness**”，它是一个范围从 `-20` 到 `19` 的整数）给进程分配更多或更少的系统资源。
 
 这个值越小，执行优先级越高。普通用户（而非 root）只能调高他们所有的进程的 niceness 值（意味着更低的优先级），而 root 用户可以调高或调低任何进程的 niceness 值。
 
@@ -195,9 +199,9 @@ renice 命令的基本语法如下：
 # renice [-n] <new priority> <UID, GID, PGID, or empty> identifier
 ```
 
-如果没有 new priority 后面的参数（为空），默认就是 PID。在这种情况下，  **PID=identifier** 的进程的 niceness 值会被设置为 `<new priority>`。
+如果 new priority 后面的参数没有（为空），默认就是 PID。在这种情况下，**PID=identifier** 的进程的 niceness 值会被设置为 `<new priority>`。
 
-**b)** 需要的时候中断一个进程的正常执行。这也就是通常所说的 [“杀死”进程][9]。实质上，这意味着给进程发送一个信号使它恰当地结束运行并以有序的方式释放任何占用的资源。
+**b)** 需要的时候中断一个进程的正常执行。这也就是通常所说的[“杀死”进程][9]。实质上，这意味着给进程发送一个信号使它恰当地结束运行并以有序的方式释放任何占用的资源。
 
 按照下面的方式使用 **kill** 命令[杀死进程][10]：
 
@@ -205,7 +209,7 @@ renice 命令的基本语法如下：
 # kill PID
 ```
 
-另外，你也可以使用 [pkill][11] 结束指定用户`(-u)`、指定组`(-G)` 甚至有共同 PPID`(-P)` 的所有进程。这些选项后面可以使用数字或者名称表示的标识符。
+另外，你也可以使用 [pkill][11] 结束指定用户`(-u)`、指定组`(-G)` 甚至有共同的父进程 ID `(-P)` 的所有进程。这些选项后面可以使用数字或者名称表示的标识符。
 
 ```
 # pkill [options] identifier
@@ -217,9 +221,7 @@ renice 命令的基本语法如下：
 # pkill -G 1000
 ```
 
-会杀死组 `GID=1000` 的所有进程。
-
-而
+会杀死组 `GID=1000` 的所有进程。而
 
 ```
 # pkill -P 4993 
@@ -236,7 +238,8 @@ renice 命令的基本语法如下：
 用下面的图片说明：
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/03/List-User-Running-Processes.png)
->在 Linux 中查找用户运行的进程
+
+*在 Linux 中查找用户运行的进程*
 
 ### 总结
 
@@ -246,17 +249,13 @@ renice 命令的基本语法如下：
 
 我们希望本篇中介绍的概念能对你有所帮助。如果你有任何疑问或者评论，可以使用下面的联系方式联系我们。
 
-
-
-
-
 --------------------------------------------------------------------------------
 
-via: http://www.tecmint.com/linux-basic-shell-scripting-and-linux-filesystem-troubleshooting/
+via: http://www.tecmint.com/monitor-linux-processes-and-set-process-limits-per-user/
 
 作者：[Gabriel Cánepa][a]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[ictlyh](https://github.com/ictlyh)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
