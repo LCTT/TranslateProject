@@ -1,21 +1,16 @@
 
-
-【Bestony翻译中】
-
-
-
-How to Set Nginx as Reverse Proxy on Centos7 CPanel
+如何在 CentOS 7 cPanel 上 配置 Nginx 作为反向代理
 ================================================================================
 
-Nginx is one of the fastest and most powerful web-server. It is known for its high performance and low resource utilization. It can be installed as both a standalone and a Reverse Proxy Web-server. In this article, I'm discussing about the installation of Nginx as a reverse proxy along with Apache on a CPanel server with latest CentOS 7 installed.
+Nginx 是最快和最强大的 Web-Server 之一。以其高性能和低资源利用率而闻名。它可以被安装为一个独立的Web服务器和反向代理Web服务器。在这篇文章，我将讨论在安装了 cPanel 服务器的 Centos 7 服务器上安装Nginx作为Apache的反向代理服务器. 
 
-Nginx as a reverse proxy will work as a frontend webserver serving static contents along with Apache serving the dynamic files in backend. This setup will boost up the overall server performance.
+Nginx 作为反向代理为静态文件提供服务，Apache 作为后端为动态文件提供服务。这个设置将整体提高服务器的性能。
 
-Let's walk through the installation steps for Nginx as reverse proxy in CentOS7 x86_64 bit server with cPanel 11.52 installed.
+让我们过一遍在已经安装好 cPanel 11.52 的 CentOS 7 x86_64 服务器上配置 Nginx 作为反向代理的安装过程。
 
-First of all, we need to install the EPEL repo to start-up with the process.
+首先，我们需要安装 EPEL 库来启动这个进程
 
-### Step 1: Install the EPEL repo. ###
+### 第一步: 安装EPEL库. ###
 
     root@server1 [/usr]# yum -y install epel-release
     Loaded plugins: fastestmirror, tsflags, universal-hooks
@@ -37,7 +32,7 @@ First of all, we need to install the EPEL repo to start-up with the process.
     Installing:
     epel-release noarch 7-5 extras 14 k
 
-### Step 2: After installing the repo, we can start with the installation of the nDeploy RPM repo for CentOS to install our required nDeploy Webstack and Nginx plugin. ###
+### 第二步: 安装完成这个 Repo ,我们可以安装 nDeploy的 CentOS RPM 库来安装我们需要的  nDeploy Webstack 和 Nginx 插件. ###
 
     root@server1 [/usr]# yum -y install http://rpm.piserve.com/nDeploy-release-centos-1.0-1.noarch.rpm
     Loaded plugins: fastestmirror, tsflags, universal-hooks
@@ -57,7 +52,7 @@ First of all, we need to install the EPEL repo to start-up with the process.
     Installing:
     nDeploy-release-centos noarch 1.0-1 /nDeploy-release-centos-1.0-1.noarch 110
 
-### Step 3: Install the nDeploy and Nginx nDeploy plugins. ###
+### 第三步：安装 nDeploy 和 Nginx nDeploy 插件. ###
 
     root@server1 [/usr]# yum --enablerepo=ndeploy install nginx-nDeploy nDeploy
     Loaded plugins: fastestmirror, tsflags, universal-hooks
@@ -87,9 +82,9 @@ First of all, we need to install the EPEL repo to start-up with the process.
     ===============================================================================================================================================
     Install 2 Packages (+5 Dependent packages)
 
-With these steps, we've completed with the installation of Nginx plugin in our server. Now we need to configure Nginx as reverse proxy and create the virtualhost for the existing cPanel user accounts. For that we can run the following script.
+有以上这些步骤，我们完成了在我们的服务器上 Nginx 插件的安装。现在我们可以配置 Nginx 作为反向代理和为已有的 cPanel 用户账户创建虚拟主机，为此我们可以运行如下脚本。
 
-### Step 4: To enable Nginx as a front end Web Server and create the default configuration files. ###
+### 第四步：启动Nginx作为默认的前端 Web 服务器 并创建默认的配置文件。 ###
 
     root@server1 [/usr]# /opt/nDeploy/scripts/cpanel-nDeploy-setup.sh enable
     Modifying apache http and https port in cpanel
@@ -101,9 +96,9 @@ With these steps, we've completed with the installation of Nginx plugin in our s
     ConfGen:: saheetha
     ConfGen:: satest
 
-As you can see these script will modify the Apache port from 80 to another port to make Nginx run as a front end web server and create the virtual host configuration files for the existing cPanel accounts. Once it is done, confirm the status of both Apache and Nginx.
+你可以看到这个脚本将修改 Apache 的端口从 80 到另一个端口来让 Nginx 作为前端 Web 服务器并为现有的 cPanel 用户创建虚拟主机配置文件。一旦完成，确认 Apache 和 Nginx 的状态。
 
-### Apache Status: ###
+### Apache 状态: ###
 
     root@server1 [/var/run/httpd]# systemctl status httpd
     ● httpd.service - Apache Web Server
@@ -118,7 +113,7 @@ As you can see these script will modify the Apache port from 80 to another port 
     Jan 18 06:34:23 server1.centos7-test.com apachectl[25606]: httpd (pid 24760) already running
     Jan 18 06:34:23 server1.centos7-test.com systemd[1]: Started Apache Web Server.
 
-### Nginx Status: ###
+### Nginx 状态: ###
 
     root@server1 [~]# systemctl status nginx
     ● nginx.service - nginx-nDeploy - high performance web server
@@ -137,7 +132,7 @@ As you can see these script will modify the Apache port from 80 to another port 
     Jan 17 17:18:29 server1.centos7-test.com nginx[3804]: nginx: configuration file /etc/nginx/nginx.conf test is successful
     Jan 17 17:18:29 server1.centos7-test.com systemd[1]: Started nginx-nDeploy - high performance web server.
 
-Nginx act as a frontend webserver running on port 80 and Apache configuration is modified to listen on http port 9999 and https port 4430. Please see their status below:
+Nginx 作为前端服务器运行在 80 端口，Apache 配置被更改为监听 http 端口 9999 和 https 端口 4430。请看他们的情况
 
     root@server1 [/usr/local/src]# netstat -plan | grep httpd
     tcp 0 0 0.0.0.0:4430 0.0.0.0:* LISTEN 17270/httpd
@@ -151,13 +146,13 @@ Nginx act as a frontend webserver running on port 80 and Apache configuration is
     tcp 0 0 127.0.0.1:80 0.0.0.0:* LISTEN 17802/nginx: master
     tcp 0 0 45.79.183.73:80 0.0.0.0:* LISTEN 17802/nginx: master
 
-The virtualhost entries created for the existing users as located in the folder "**/etc/nginx/sites-enabled**". This file path is included in the Nginx main configuration file.
+为已有用户创建的虚拟主机的配置文件在 "**/etc/nginx/sites-enabled**". 这个文件路径包含了 Nginx 主要配置文件. 
 
     root@server1 [/etc/nginx/sites-enabled]# ll | grep .conf
     -rw-r--r-- 1 root root 311 Jan 17 09:02 saheetha.com.conf
     -rw-r--r-- 1 root root 336 Jan 17 09:02 saheethastest.com.conf
 
-### Sample Vhost for a domain: ###
+### 一个域名的示例虚拟主机: ###
 
     server {
 
@@ -173,7 +168,7 @@ The virtualhost entries created for the existing users as located in the folder 
     
     }
 
-We can confirm the working of the web server status by calling a website in the browser. Please see the web server information on my server after the installation.
+我们可以启动浏览器查看完整来确定 Web 服务器的工作状态。安装后，请阅读服务器上的 web 服务信息。
 
     root@server1 [/home]# ip a | grep -i eth0
     3: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP qlen 1000
@@ -183,23 +178,23 @@ We can confirm the working of the web server status by calling a website in the 
 
 ![webserver-status](http://blog.linoxide.com/wp-content/uploads/2016/01/webserver.png)
 
-Nginx will create the virtual host automatically for any newly created accounts in cPanel. With these simple steps we can configure Nginx as reverse proxy on a CentOS 7/CPanel server.
 
-### Advantages of Nginx as Reverse Proxy: ###
+Nginx 将会为任何最新在 cPanel 中创建的账户创建虚拟主机。通过这些简单的的步骤，我们能够在一台 CentOS 7 / cPanel 的服务器上配置 Nginx 作为反向代理
+### Nginx 作为反向代理的优势 : ###
 
- 1. Easy to install and configure
- 2. Performance and efficiency
- 3. Prevent DDOS attacks
- 4. Allows .htaccess PHP rewrite rules
+ 1. 便于安装和配置
+ 2. 效率高性能好
+ 3. 防止 Ddos 攻击
+ 4. 支持使用.htaccess作为PHP的重写规则
 
-I hope this article is useful for you guys. Thank you for referring to this. I would appreciate your valuable comments and suggestions on this for further improvements.
+我希望这篇文章对你们有用。感谢你提到它。我非常高兴收到你的宝贵意见和建议，并进一步改善。
 
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/linux-how-to/set-nginx-reverse-proxy-centos-7-cpanel/
 
 作者：[Saheetha Shameer][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[bestony](https://github.com/bestony)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
