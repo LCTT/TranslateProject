@@ -733,7 +733,7 @@ Now that you know the basics of hacking Atom, feel free to practice what you've 
 
 --------------------------------------------------------------------------------
 
-via: http://www.webupd8.org/2016/09/qownnotes-is-note-taking-and-todo-list.html
+via: https://github.com/blog/2231-building-your-first-atom-plugin
 
 作者：[NickTikhonov][a]
 译者：[译者ID](https://github.com/译者ID)
