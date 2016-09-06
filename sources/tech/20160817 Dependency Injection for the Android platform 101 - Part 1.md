@@ -1,3 +1,5 @@
+Translating by GitFuture
+
 Dependency Injection for the Android platform 101 - Part 1 
 ===========================
 
