@@ -1,3 +1,4 @@
+Eriwoon 认领翻译
 The State Of JavaScript: JavaScript Flavors
 ===========
 
