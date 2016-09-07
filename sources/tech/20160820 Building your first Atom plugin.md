@@ -1,3 +1,4 @@
+Tranlating by lengmi.
 Building your first Atom plugin
 =====
 
