@@ -1,106 +1,104 @@
 transalting by bestony
-5 Best Linux Package Managers for Linux Newbies
+
+5个对 Linux 新人来说最好的 Linux 包管理器
 =====================================================
 
+一个 Linux 新用户应该知道 他/她 进步是源于他们使用已经存在的多个 Linux 发行版，使用不同的方式来管理包。
 
-One thing a new Linux user will get to know as he/she progresses in using it is the existence of several Linux distributions and the different ways they manage packages.
-
-Package management is very important in Linux, and knowing how to use multiple package managers can proof life saving for a power user, since downloading or installing software from repositories, plus updating, handling dependencies and uninstalling software is very vital and a critical section in Linux system Administration.
+在 Linux 中，包管理器非常重要，知道如何使用多种包管理器可以为一个高级用户优化生活，从到仓库下载软件、安装软件、更新软件、处理依赖是非常重要的，这也是Linux 系统管理的一个重要部分。
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/06/Best-Linux-Package-Managers.png)
->Best Linux Package Managers
+>最好的Linux包管理器
 
-Therefore to become a Linux power user, it is significant to understand how the major Linux distributions actually handle packages and in this article, we shall take a look at some of the best package managers you can find in Linux.
+为了成为一个 Linux 高级用户，一个标志是了解主要的 Linux 发行版如何处理包，在这篇文章中，我们应该看一些你能找到的Linux的最好的包管理器，
 
-Here, our main focus is on relevant information about some of the best package managers, but not how to use them, that is left to you to discover more. But I will provide meaningful links that point out usage guides and many more.
+在这里，我们的主要重点是关于一些最好包管理器的相关信息，但不是如何使用它们，这些留给你亲自发现。但我会提供一些有意义的链接，使用指南或更多。
 
-### 1. DPKG – Debian Package Management System
+### 1. DPKG – Debian 包管理系统
 
-Dpkg is a base package management system for the Debian Linux family, it is used to install, remove, store and provide information about `.deb` packages.
+Dpkg 是 Debian Linux 家族的基础包管理系统，他用于安装、删除、存储和提供`.deb`包的信息
 
-It is a low-level tool and there are front-end tools that help users to obtain packages from remote repositories and/or handle complex package relations and these include:
+这是一个低级的工具，并且他的前面有多个前端工具来帮助用户从远程的仓库获取包，或处理复杂的包关系的工具，包括：
 
-Don’t Miss: [15 Practical Examples of “dpkg commands” for Debian Based Distros][1]
+不要错过: [15 Practical Examples of “dpkg commands” for Debian Based Distros][1]
 
-#### APT (Advanced Packaging Tool)
+#### APT (高级打包工具)
 
-It is a very popular, free, powerful and more so, useful command line package management system that is a front end for dpkg package management system.
+这个是一个基于 DPKG 包管理系统非常受欢迎的、免费的、强大的，有用的命令行包管理器系统
 
-Users of Debian or its derivatives such as Ubuntu and Linux Mint should be familiar with this package management tool.
+Debian 的用户 或他的衍生版 例如 Ubuntu 和 Linux Mint 在包管理工具上非常的相似
 
-To understand how it actually works, you can go over these how to guides:
+想要了解他是如何工作的，你可以去看面这些 HOW TO 指南
 
-Don’t Miss: [15 Examples of How to Use New Advanced Package Tool (APT) in Ubuntu/Debian][2]
+不要错过: [15 Examples of How to Use New Advanced Package Tool (APT) in Ubuntu/Debian][2]
 
-Don’t Miss: [25 Useful Basic Commands of APT-GET and APT-CACHE for Package Management][3]
+不要错过: [25 Useful Basic Commands of APT-GET and APT-CACHE for Package Management][3]
 
-#### Aptitude Package Manager
+#### Aptitude 包管理器
 
-This is also a popular command line front-end package management tool for Debian Linux family, it works similar to APT and there have been a lot of comparisons between the two, but above all, testing out both can make you understand which one actually works better.
+这个也是 Debian Linux 家族一个非常出名的命令行前端包管理工具,它工作很像 APT ，它们之间有很多比较，但是测试可以让你明白那个工作的更好。
 
-It was initially built for Debian and its derivatives but now its functionality stretches to RHEL family as well. You can refer to this guide for more understanding of APT and Aptitude:
+它最初为 Debian 和它的衍生版设计的，但是现在它的功能延伸到 RHEL 家族.你可以参考这个指南了解更多关于 APT 和 Aptitude.
 
-Don’t Miss: [What is APT and Aptitude? and What’s real Difference Between Them?][4]
+不要错过: [What is APT and Aptitude? and What’s real Difference Between Them?][4]
 
-#### Synaptic Package Manager
+#### Synaptic 包管理器
 
-Synaptic is a GUI package management tool for APT based on GTK+ and it works fine for users who may not want to get their hands dirty on a command line. It implements the same features as apt-get command line tool.
+Synaptic是一个基于GTK+的APT的可视化包管理器，对于一些不想使用命令行的用户，它非常好用。
 
-### 2. RPM (Red Hat Package Manager)
+### 2. RPM (红帽包管理器)
 
-This is the Linux Standard Base packing format and a base package management system created by RedHat. Being the underlying system, there several front-end package management tools that you can use with it and but we shall only look at the best and that is:
+这个是红帽创建的Linux 基础打包格式和包管理系统。基于底层的系统，你可以使用的多个前端包管理工具，但我们应该只看那些最好的，比如：
 
 #### YUM (Yellowdog Updater, Modified)
 
-It is an open source and popular command line package manager that works as a interface for users to RPM. You can compare it to APT under Debian Linux systems, it incorporates the common functionalities that APT has. You can get a clear understanding of YUM with examples from this how to guide:
+这个是一个作为对用户的 RPM 管理接口的开源、流行的命令行包管理器。你可以把它和 Debian Linux 系统中的 APT 进行对比，它和 APT 拥有相同的功能。你可以从这个 How to 指南中的例子更加清晰的理解YUM
+不要错过: [20 Linux YUM Commands for Package Management][5]
 
-Don’t Miss: [20 Linux YUM Commands for Package Management][5]
+#### DNF – 优美的 Yum
 
-#### DNF – Dandified Yum
+这个也是一个基于RPM的发行版的包管理器，Fedora 18 引入了它，它是下一代YUM。
 
-It is also a package manager for the RPM-based distributions, introduced in Fedora 18 and it is the next generation of version of YUM.
+如果你用 Fedora 22 或更新，你需要意识到，它是默认的包管理器.这里有一些链接，将为你提供更多关于 DNF 的信息和如何使用它。
 
-If you have been using Fedora 22 onwards, you must have realized that it is the default package manager. Here are some links that will provide you more information about DNF and how to use it:
+不要错过: [DNF – The Next Generation Package Management for RPM Based Distributions][6]
 
-Don’t Miss: [DNF – The Next Generation Package Management for RPM Based Distributions][6]
+不要错过: [27 ‘DNF’ Commands Examples to Manage Fedora Package Management][7]
 
-Don’t Miss: [27 ‘DNF’ Commands Examples to Manage Fedora Package Management][7]
+### 3. Pacman 包管理器 – Arch Linux
 
-### 3. Pacman Package Manager – Arch Linux
+这个是一个流行而且强大的包管理器，它服务于 Arch Linux 和其他的一些小众发行版。它提供了一些其他包管理器提供的基本功能，包括安装、升级、卸载和降级软件。
 
-It is a popular and powerful yet simple package manager for Arch Linux and some little known Linux distributions, it provides some of the fundamental functionalities that other common package managers provide including installing, automatic dependency resolution, upgrading, uninstalling and also downgrading software.
+但是很有效果，它为 Arch 用户 创建了一个简单易用的包管理方式。你可以阅读 [Pacman overview][8]，它会解释上面提到的一些功能。
 
-But most effectively, it is built to be simple for easy package management by Arch users. You can read this [Pacman overview][8] which explains into details some of its functions mentioned above.
+### 4. Zypper 包管理器 – openSUSE
 
-### 4. Zypper Package Manager – openSUSE
+这个是一个使用 libzypp 库制作的用于 OpenSUSE 系统上的命令行包管理器,它的功能包括访问仓库、安装包、解决依赖问题和其他功能。
 
-It is a command line package manager on OpenSUSE Linux and makes use of the libzypp library, its common functionalities include repository access, package installation, resolution of dependencies issues and many more.
+更重要的是，它也可以处理存储库扩展，如模式、补丁和产品。新的 OpenSUSE 用户可以参考下面的链接来掌控它。
 
-Importantly, it can also handle repository extensions such as patterns, patches, and products. New OpenSUSE user can refer to this following guide to master it.
+不要错过: [45 Zypper Commands to Master OpenSUSE Package Management][9]
 
-Don’t Miss: [45 Zypper Commands to Master OpenSUSE Package Management][9]
+### 5. Portage 包管理器 – Gentoo
 
-### 5. Portage Package Manager – Gentoo
+这个是 Gentoo 的包管理器，当下不怎么流行的一个发行版，但是这并不阻止他是 Linux 下最好的软件包管理器之一。
 
-It is a package manager for Gentoo, a less popular Linux distribution as of now, but this won’t limit it as one of the best package managers in Linux.
+Portage项目的主要目标是创建一个简单、无故障的包含向后兼容、自动化等功能的包管理系统。
 
-The main aim of the Portage project is to make a simple and trouble free package management system to include functionalities such as backwards compatibility, automation plus many more.
+如果希望理解的更清晰，可以看下： [Portage project page][10].
 
-For better understanding, try reading [Portage project page][10].
+### 结束语
 
-### Concluding Remarks
+正如我在开始时提到的，这个指南的主要意图是给 Linux 用户提供一个最好的包管理器的列表，但知道如何使用它们可以通过下面提供的重要的链接和尝试测试它们。
 
-As I already hinted at the beginning, the main purpose of this guide was to provide Linux users a list of the best package managers but knowing how to use them can be done by following the necessary links provided and trying to test them out.
-
-Users of the different Linux distributions will have to learn more on their own to better understand the different package managers mentioned above.
-
+不同发行版的用户将学习超出他们本身的来理解上述提到的不同的包管理器。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/linux-package-managers/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+tecmint+%28Tecmint%3A+Linux+Howto%27s+Guide%29
 
 作者：[Ravi Saive][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Bestony](https://github.com/bestony)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
