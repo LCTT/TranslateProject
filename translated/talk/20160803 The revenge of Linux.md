@@ -1,5 +1,3 @@
-Translated by H-mudcup
-
 Linux 的逆袭
 ========================
 
