@@ -3,13 +3,13 @@ JavaScript 现状：方言篇
 
 JavaScript 和其他编程语言有一个很大的不同，它不像单纯的一个语言，而像一个由众多方言组成大家族。
 
-从2009年 CoffeeScript 的出现开始，近几年出现了大量基于 JavaScript 语言，或者叫方言，例如 ES6，TypeScript，Elm 等等。它们都有自己的优势，且都可以被完美编译成标准 JavaScript。
+从 2009 年 CoffeeScript 出现开始，近几年出现了大量基于 JavaScript 语言，或者叫方言，例如 ES6、TypeScript、Elm 等等。它们都有自己的优势，且都可以被完美编译成标准 JavaScript。
 
 所以，继上周的前端框架篇，今天带来 JavaScript 现状之方言篇，看一下大家对于 JavaScript 的方言是怎么选择的。
 
-> 声明：下面的结论是根据部分数据得出的初步结果，希望能将我的一些想法带给大家，对于完整数据后面我会用更好方式呈现出来。
+> 声明：下面的部分结论来自部分数据，这是在我想要展示完整数据时找到的最好的办法，这便于我分享我的一些想法。
 
-> 注意：如果你还没有参与这个调查，现在就来参加吧，可以花十分钟完成调查然后再回来看这篇文章。
+> 注意：如果你还没有参与[这个调查][3]，现在就来参加吧，可以花十分钟完成调查然后再回来看这篇文章。
 
 ### 认知度
 
@@ -22,7 +22,7 @@ JavaScript 和其他编程语言有一个很大的不同，它不像单纯的一
 - Elm: 66%
 - ClojureScript: 77%
 
-你可能觉得100%的人都应该知道『经典的 JavaScript 』，我想是有人无法抵抗『我从来没有听说过 JavaScript 』这个选项的强大诱惑吧……
+你可能觉得 100% 的人都应该知道『经典的 JavaScript 』，我想是有人无法抵抗在一个 JavaScript 调查中投『我从来没有听说过 JavaScript 』这个选项的强大诱惑吧……
 
 几乎所有人都知道 ES6、CoffeeScript 和 TypeScript 这三种语言，比较令我惊讶的是 TypeScript 竟然会稍微落后于 ES6 和 CoffeeScript。
 
@@ -34,7 +34,7 @@ JavaScript 和其他编程语言有一个很大的不同，它不像单纯的一
 
 ![](https://d3ugvbs94d921r.cloudfront.net/57c4dc599973d2525fee820a.png?t=3efc9491eba2ce2)
 
-要注意，表是统计该语言对从未使用过它们的用户的吸引度，因为只有很少人没有用过经典 JavaScript，所以『经典 JavaScript 』这一列的数值很低。
+要注意，该表是统计该语言对从未使用过它们的用户的吸引度，因为只有很少人没有用过经典 JavaScript，所以『经典 JavaScript 』这一列的数值很低。
 
 ES6的数值很有趣：已有很大比例的用户在使用 ES6 了，没有用过的人中的绝大部分（89%）也很想学习它。
 
@@ -51,6 +51,7 @@ TypeScript 和 Elm 的状态差不多：用过的人不多，但感兴趣的比�
 ![](https://d3ugvbs94d921r.cloudfront.net/57c4e5f79973d29461ee820a.png?t=1061d2ab8fc9838)
 
 虽然经典 JavaScript 拥有最多的用户量，但就满意度来说 ES6 才是大赢家，而且我想现在已经能安全的说，ES6 可以作为开发 JavaScript App 默认的语言。
+
 TypeScript 和 Elm 有相似的高满意度，都在 85% 上下。然后，只有可怜的 17% 的开发者会考虑继续使用 CoffeeScript。
 
 ### 快乐度
@@ -71,25 +72,24 @@ TypeScript 和 Elm 有相似的高满意度，都在 85% 上下。然后，只�
 
 个人认为，当前 JavaScript 大家庭百花齐放的现象还只是一个开始，或许几年之后 JavaScript 就会变得非常不同了。
 
-### 结语&敬请期待
+### 结语 & 敬请期待
 
 对于我这样的调查来说数据越多就意味着数据越准确！越多人参加这个调查，那就越能代表整个 JavaScript 社区。
 
 所以，我十分希望你能帮忙分享这个调查问卷：
 
-[On Twitter][1]
-
-[On Facebook][2]
+- [在 Twitter 上][1]
+- [在 Facebook 上][2]
 
 另外，如果你想收到我下一个调查结果分析，前往 [调查问卷主页][3] 并留下自己的邮箱吧。
 
 --------------------------------------------------------------------------------
 
-via: https://www.oreilly.com/ideas/spark-comparison-aws-vs-gcp?utm_source=dbweekly&utm_medium=email
+via: https://medium.com/@sachagreif/the-state-of-javascript-javascript-flavors-1e02b0bfefb6
 
 作者：[Sacha Greif][a]
 译者：[eriwoon](https://github.com/eriwoon)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
