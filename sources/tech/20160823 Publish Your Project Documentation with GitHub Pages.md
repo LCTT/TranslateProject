@@ -1,44 +1,43 @@
-translating by Bestony
-
-Publish Your Project Documentation with GitHub Pages
+使用Github Pages 发布你的项目文档
 =====
 
-You might be familiar with [how GitHub Pages helps you share your work with the world][3] or maybe you have [attended a class][4] that helped you build your first GitHub Pages site. Recent improvements to GitHub Pages have made it easier to [publish your site from a variety of sources][5]. One of these sources is your repository's /docs folder.
+你可能比较熟悉[Github Pages 如何帮你分享你的工作][3] 又或许你加入了[一堂课][4] 来帮你建立你的第一个 Github Pages 的网站。近期 Github Pages 的改进使[从不同的源来发布您的网站][5]更加的方便.其中的来源之一就是你的仓库的 /docs 目录. 
 
-Quality documentation is a hallmark of any healthy software project. For open-source projects, however, maintaining a robust compendium of knowledge detailing all the ins and outs is paramount. Well-curated documentation increases your project's approachability, provides asynchronous guidance, and fosters the type of uncoordinated collaboration that propels open-source software development.
+文档的质量是任何一个健康的软件项目的标志。对于开源项目来说，维护一个强大的知识大纲详细说明所有的细节是至关重要的。维护很好的文档可以增强项目的可用性，提供一步一步的指导和培养不同步合作可以推动开源软件开发的协作进程。
 
-Hosting your documentation on the web can present time-consuming challenges that make publishing and maintaining it an unrewarding experience — one that it's often easy to avoid. Grappling with multiple disparate publishing tools like FTP servers and databases means files often exist in various states and multiple locations, all of which require manual synchronization. To be clear, conventional web publishing provides unparalleled flexibility and power; but it comes at the expense of simplicity and, in many cases, utility.
+在Web上托管你的文档是一个消耗时间的挑战而且发布和维护不会有什么有用的经验，而这是可以避免的。面对不同的发布工具，比如 FTP 服务器 和 数据库 意味着文件存在于多个不同的状态下和不同的地点，而这些都需要手动来同步。需要澄清的是，传统的 Web 发布提供了无与伦比的灵活性和性能，但是在许多情况下，这是以牺牲简单为代价的。
 
-When it comes to documentation, a path with less resistance is often the better approach.
+当作为文档时，一个路径显然更容易去接触到。
 
-[GitHub Pages][2] gives you a direct path to create websites for your projects, which makes it a natural choice for publishing and maintaining documentation. Because GitHub Pages supports Jekyll, you can pen your documentation in plain text or Markdown to help maintain a lower barrier to contribution. Jekyll also includes support for many helpful tools like variables, templates, and automatic code highlighting, which gives you much of the flexibility you'd find in a bulkier platform without the added complexity.
 
-Most importantly, using GitHub Pages means your documentation lives alongside your code on GitHub, where you can use things like Issues and Pull Requests to ensure it receives the high level of care it deserves; and because GitHub Pages lets you publish from the /docs directory on the master branch, you can maintain your codebase and its published documentation on the same branch.
+[GitHub Pages][2] 给你一个指定的路径来为你的项目创建网站，这使得他天然适合发布和维护文档。因为 Github Pages 支持 Jekyll ,所以你可以使用纯文本或 Markdown 来书写你的文档，降低你维护的成本，减少维护时的障碍。Jekyll还支持许多有用的工具比如变量、模板、以及自动的代码高亮，他会给你更多的灵活性而不会增加复杂性，这些你在一些笨重的平台是见不到的。
 
-### Get started today
+最重要的是,在 Github 上使用 GitHub Pages 意味着你的文档和代码可以使用诸如 Issues 和 Pull Requests 来确保它受到到应有的高水平的维护,而且因为 GitHub Pages 允许您发布主分支的 /docs 目录,您可以在同一分支维护你的代码库及其文档。
 
-Publishing your first documentation page only takes a few minutes.
+### 现在开始！
 
-1. Create a /docs/index.md file on your repository's master branch.
+发布你的第一个文档页面只需要短短几分钟。
 
-2. Add your content and any necessary Jekyll front matter, then commit your changes.
+1. 在你的仓库的主分支里创建一个 /docs/index.md 文件。
+
+2. 把你的内容以 Jekyll 格式添加进去，并提交你的修改。
 
 ![](https://cloud.githubusercontent.com/assets/3477155/17778793/47c5a586-6533-11e6-982c-ebd41ec6968c.gif)
 
-1. Visit your repository's settings tab and select master branch /docs folder as the GitHub Pages source. Click save, and you're done.
+3. 查看你的仓库的设置分支然后选择主分支 /docs 目录，将其设置为 GitHub Pages 的源 ，点击保存，你就搞定了。
 
 ![](https://cloud.githubusercontent.com/assets/3477155/17778792/47c2ecc4-6533-11e6-828a-91980daa7297.gif)
 
-GitHub Pages will read the contents of your /docs directory, convert the index.md into HTML, and publish the results at your GitHub Pages URL.
+GitHub Pages 将会从你的 /docs 目录中读取内容,转换 index.md 为 HTML。然后把它发布到你的 GitHub Pages URL 上。
 
-This will generate the most basic HTML output that you can further customize with templates, CSS, and other features available in Jekyll. To see examples of what all is possible, take a look at the [GitHub Pages Showcase][1].
+这样将会创建一个最基础的HTML并输出，而且你可以在Jekyll自定义模板、CSS 和其他特性.如果想要看所有的可能，你可以看看 [GitHub Pages Showcase][1]。
 
 --------------------------------------------------------------------------------
 
 via: https://github.com/blog/2233-publish-your-project-documentation-with-github-pages
 
 作者：[ loranallensmith ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Bestony](https://github.com/bestony)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
