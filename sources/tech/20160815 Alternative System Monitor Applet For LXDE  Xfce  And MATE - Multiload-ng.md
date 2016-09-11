@@ -1,3 +1,5 @@
+FSSlc translating
+
 Alternative System Monitor Applet For LXDE, Xfce, And MATE: Multiload-ng
 ======
 
