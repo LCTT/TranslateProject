@@ -1,3 +1,6 @@
+LinuxBars Translating
+LinuxBars 翻译中
+
 Baidu Takes FPGA Approach to Accelerating SQL at Scale
 ===================
 
