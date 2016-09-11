@@ -1,3 +1,5 @@
+Translating by Chao-zhi
+
 Linux Applications That Works On All Distributions – Are They Any Good?
 ============================================================================
 

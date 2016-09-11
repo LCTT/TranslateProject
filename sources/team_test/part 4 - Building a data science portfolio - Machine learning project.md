@@ -1,44 +1,42 @@
-vim-kakali translating
 
+### 计算运用数据中的值
 
+接下来我们会计算过程数据或运用数据中的值。我们要做的就是推测这些数据代表的贷款是否被收回。如果能够计算出来，我们只要看一下包含贷款的运用数据的参数 foreclosure_date 就可以了。如果这个参数的值是 None　，那么这些贷款肯定没有收回。为了避免我们的样例中存在少量的运用数据，我们会计算出运用数据中有贷款数据的行的行数。这样我们就能够从我们的训练数据中筛选出贷款数据，排除了一些运用数据。
 
-### Computing values from the performance data
-
-The next step we’ll take is to calculate some values from processed/Performance.txt. All we want to do is to predict whether or not a property is foreclosed on. To figure this out, we just need to check if the performance data associated with a loan ever has a foreclosure_date. If foreclosure_date is None, then the property was never foreclosed on. In order to avoid including loans with little performance history in our sample, we’ll also want to count up how many rows exist in the performance file for each loan. This will let us filter loans without much performance history from our training data.
-
-One way to think of the loan data and the performance data is like this:
+下面是一种区分贷款数据和运用数据的方法：
 
 ![](https://github.com/LCTT/wiki-images/blob/master/TranslateProject/ref_img/001.png)
 
-As you can see above, each row in the Acquisition data can be related to multiple rows in the Performance data. In the Performance data, foreclosure_date will appear in the quarter when the foreclosure happened, so it should be blank prior to that. Some loans are never foreclosed on, so all the rows related to them in the Performance data have foreclosure_date blank.
 
-We need to compute foreclosure_status, which is a Boolean that indicates whether a particular loan id was ever foreclosed on, and performance_count, which is the number of rows in the performance data for each loan id.
+在上面的表格中，采集数据中的每一行数据都与运用数据中的多行数据有联系。在运用数据中，在收回贷款的时候 foreclosure_date 就会以季度的的形式显示出收回时间，而且它会在该行数据的最前面显示一个空格。一些贷款没有收回，所以与运用数据中的贷款数据有关的行都会在前面出现一个表示 foreclosure_date 的空格。
 
-There are a few different ways to compute the counts we want:
+我们需要计算 foreclosure_status 的值，它的值是布尔类型，可以表示一个特殊的贷款数据 id 是否被收回过，还有一个参数 performance_count ，它记录了运用数据中每个贷款 id 出现的行数。　
 
-- We could read in all the performance data, then use the Pandas groupby method on the DataFrame to figure out the number of rows associated with each loan id, and also if the foreclosure_date is ever not None for the id.
-    - The upside of this method is that it’s easy to implement from a syntax perspective.
-    - The downside is that reading in all 129236094 lines in the data will take a lot of memory, and be extremely slow.
-- We could read in all the performance data, then use apply on the acquisition DataFrame to find the counts for each id.
-    - The upside is that it’s easy to conceptualize.
-    - The downside is that reading in all 129236094 lines in the data will take a lot of memory, and be extremely slow.
-- We could iterate over each row in the performance dataset, and keep a separate dictionary of counts.
-    - The upside is that the dataset doesn’t need to be loaded into memory, so it’s extremely fast and memory-efficient.
-    - The downside is that it will take slightly longer to conceptualize and implement, and we need to parse the rows manually.
+计算这些行数有多种不同的方法：
 
-Loading in all the data will take quite a bit of memory, so let’s go with the third option above. All we need to do is to iterate through all the rows in the Performance data, while keeping a dictionary of counts per loan id. In the dictionary, we’ll keep track of how many times the id appears in the performance data, as well as if foreclosure_date is ever not None. This will give us foreclosure_status and performance_count.
+- 我们能够读取所有的运用数据，然后我们用 Pandas 的 groupby 方法在数据框中计算出与每个贷款 id 有关的行的行数，然后就可以查看贷款 id 的 foreclosure_date 值是否为 None 。
+　　　 - 这种方法的优点是从语法上来说容易执行。
+　　　　- 它的缺点需要读取所有的 129236094 行数据，这样就会占用大量内存，并且运行起来极慢。
+- 我们可以读取所有的运用数据，然后使用采集到的数据框去计算每个贷款 id　出现的次数。
+　　　　- 这种方法的优点是容易理解。
+　　　　- 缺点是需要读取所有的 129236094 行数据。这样会占用大量内存，并且运行起来极慢。
+- 我们可以在迭代访问运用数据中的每一行数据，而且会建立一个区分开的计数字典。
+    - 这种方法的优点是数据不需要被加载到内存中，所以运行起来会很快且不需要占用内存。
+　　　　- 缺点是这样的话理解和执行上可能有点耗费时间，我们需要对每一行数据进行语法分析。
 
-We’ll create a new file called annotate.py, and add in code that will enable us to compute these values. In the below code, we’ll:
+加载所有的数据会非常耗费内存，所以我们采用第三种方法。我们要做的就是迭代运用数据中的每一行数据，然后为每一个贷款 id 生成一个字典值。在这个字典中，我们会计算出贷款 id 在运用数据中出现的次数，而且如果 foreclosure_date 不是 Nnoe 。我们可以查看 foreclosure_status 和 performance_count 的值 。
 
-- Import needed libraries.
-- Define a function called count_performance_rows.
-    - Open processed/Performance.txt. This doesn’t read the file into memory, but instead opens a file handler that can be used to read in the file line by line.
-    - Loop through each line in the file.
-    - Split the line on the delimiter (|)
-    - Check if the loan_id is not in the counts dictionary.
-        - If not, add it to counts.
-    - Increment performance_count for the given loan_id because we’re on a row that contains it.
-    - If date is not None, then we know that the loan was foreclosed on, so set foreclosure_status appropriately.
+我们会新建一个 annotate.py 文件，文件中的代码可以计算这些值。我们会使用下面的代码：
+
+- 导入需要的库
+- 定义一个函数 count_performance_rows 。
+    - 打开 processed/Performance.txt 文件。这不是在内存中读取文件而是打开了一个文件标识符，这个标识符可以用来以行为单位读取文件。　
+    - 迭代文件的每一行数据。
+    - 使用分隔符(|)分开每行的不同数据。
+    - 检查 loan_id 是否在计数字典中。
+        - 如果不存在，进行一次计数。
+    - loan_id 的 performance_count 参数自增 1 次，因为我们这次迭代也包含其中。
+    - 如果日期是 None ，我们就会知道贷款被收回了，然后为foreclosure_status 设置合适的值。
 
 ```
 import os
@@ -65,9 +63,9 @@ def count_performance_rows():
     return counts
 ```
 
-### Getting the values
+### 获取值
 
-Once we create our counts dictionary, we can make a function that will extract values from the dictionary if a loan_id and a key are passed in:
+只要我们创建了计数字典，我们就可以使用一个函数通过一个 loan_id 和一个 key 从字典中提取到需要的参数的值：
 
 ```
 def get_performance_summary_value(loan_id, key, counts):
@@ -78,7 +76,7 @@ def get_performance_summary_value(loan_id, key, counts):
     return value[key]
 ```
 
-The above function will return the appropriate value from the counts dictionary, and will enable us to assign a foreclosure_status value and a performance_count value to each row in the Acquisition data. The [get][33] method on dictionaries returns a default value if a key isn’t found, so this enables us to return sensible default values if a key isn’t found in the counts dictionary.
 
+上面的函数会从计数字典中返回合适的值，我们也能够为采集数据中的每一行赋一个 foreclosure_status 值和一个 performance_count 值。如果键不存在，字典的 [get][33] 方法会返回一个默认值，所以在字典中不存在键的时候我们就可以得到一个可知的默认值。
 
 
