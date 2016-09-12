@@ -1,3 +1,5 @@
+Translating by Chao-zhi
+
 Ubuntu’s Snap, Red Hat’s Flatpak And Is ‘One Fits All’ Linux Packages Useful?
 =================================================================================
 
