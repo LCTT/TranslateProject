@@ -1,3 +1,4 @@
+[jiajia9linuxer translating]
 Backup Photos While Traveling With an Ipad Pro and a Raspberry Pi
 ===================================================================
 
