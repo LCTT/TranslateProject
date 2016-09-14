@@ -1,3 +1,5 @@
+echoma 翻译中
+
 Tips for managing your project's issue tracker
 ==============================================
 
