@@ -1,64 +1,41 @@
 Translating by ucasFL
 
-Ohm: JavaScript Parser that Creates a Language in 200 Lines of Code
+
 ===========
-Ohm: 一种能用可以用两百行代码创造一种语言的 JavaScript 解释器
-Parsers are an incredibly useful software libraries. While conceptually simple, they can be challenging to implement and are often considered a dark art in computer science. In this blog series, I’ll show you why you don’t need to be Harry Potter to master parsers. But bring your wand just in case.
-
-We’ll explore a new open source Javascript library called Ohm that makes building parsers easy and easier to reuse. In this series, we use Ohm to recognize numbers, build a calculator, and more. By the end of this series you will have created a complete programming language in under 200 lines of code. This powerful tool will let you do things that you might have thought impossible otherwise.
-
-### Why Parsers are Hard
-
-Parsers are useful. There are lots of times you might need a parser. A new file format might come along that you need to process and no one else has written a library for it yet. Or maybe you find files in an old file format and the existing parsers aren’t built for the platform you need. I’ve seen this happen over and over. Code will come and go but data is forever.
-
-Fundamentally parsers are simple: just transform one data structure into another. So why does it feel like you need to be Dumbledore to figure them out?
-
-The challenge that parsers have historically been surprisingly difficult to write, and most of the existing tools are old and assume a fair amount of arcane computer science knowledge. If you took a compilers class in college the textbook may well have techniques from the 1970s. Fortunately, parser technology has improved a great deal since then.
-
-Typically a parser is created by defining what you want to parse using a special syntax called a formal grammar. Then you feed this into several tools like Bison and Yacc which generate a bunch of C code that you the need to modify or link into whatever programming language you are actually writing in. The other option is to manually write a parser in your preferred language, which is slow and error prone. That’s a lot of extra work before you get to actually use the parser.
-
-Imagine if your description of the thing you wanted to parse, the grammar, was also the parser? What if you could just run the grammar directly, then add hooks only where you want? That’s what Ohm does.
-
-### Introducing Ohm
-
-[Ohm][1] is a new kind of parsing system. While it resembles the grammars you may have seen in text books it’s a lot more powerful and easier to use. With Ohm you write your format definition in a very flexible syntax in a .ohm file, then attach semantic meaning to it using your host language. For this blog we will use JavaScript as the host language.
-
-Ohm is based on years of research into making parsers easier and more flexible. VPRI’s [STEPS program][2] (pdf) created many custom languages for specific tasks (like a fully parallelizable graphics renderer in 400 lines of code!) using Ohm’s precursor [OMeta][3].
-
-Ohm has many interesting features and notations, but rather than explain them all I think we should just dive in and build something.
-
-### Parsing Integers
-
-Let’s parse some numbers. It seems like this would be easy. Just look for adjacent digits in a string of text; but let’s try to handle all forms of numbers: Integers and floating point. Hex and octal. Scientific notation. A leading negative digit. Parsing numbers is easy. Doing it right is hard
-
-To build this code by hand would be difficult and buggy, with lots of special cases which sometimes conflict with each other. A regular expression could probably do it, but would be ugly and hard to maintain. Let’s do it with Ohm instead.
-
-Every parser in Ohm involves three parts: the grammar, the semantics, and the tests. I usually pick part of the problem and write tests for it, then build enough of the grammar and semantics to make the tests pass. Then I pick another part of the problem, add more tests, update the grammar and semantics, while making sure all of the tests continue to pass. Even with our new powerful tool, writing parsers is still conceptually complicated. Tests are the only way to build parsers in a reasonable manner. Now let’s dig in.
-
-We’ll start with an integer number. An integer is composed of a sequences of digits next to each other. Let’s put this into a file called grammar.ohm:
-
+Ohm: 一种可以用两百行代码创造一种语言的 JavaScript 解释器
+解释器是一种非常有用的软件库。从概念上简单的说，它们的实现很有挑战并且在计算机科学中经常被认为是暗黑艺术。在这个系列的博文中，我会向你们展示为什么你不需要成为哈利波特就能够很好的控制解释器。但是为了以防万一带上你的魔杖。
+我们将探索一种叫做 Ohm 的新的开源库，它使得搭建解释器很简单并且更加容易再利用。在这个系列里，我们使用 Ohm 去识别数字，构建计算器等等。在这个系列的最后你将已经用少于 200 行的代码发明了一种完整的编程语言。这个强大的工具将让你能够做一些你可能过去认为不可能的事情。
+###为什么解释器很困难？
+解释器非常有用。在很多时候你可能需要一个解释器。一种新的文件格式可能出现，你需要去处理但还没有人为它写了一个库；或者你发现了一种老格式的文件但是现存的解释器不能构建你需要的平台。我已经看到这样的事发生无数次。代码会来来去去但数据却是永恒的。
+基础的解释器很简单：只是把一个数据结构转化成另一个。所以为什么感觉你需要成为 邓布利多【魔法师】才能够把它们做出来。
+解释器的一些历史性的挑战是很难写，绝大多数工具很老并且假设了大量晦涩难懂的计算机科学知识。如果你在大学里上过编译器课程那么课本里可能也有从 1970 年以来的技术。幸运的是，解释器技术从那时候起已经提高了很多。
+代表性地，解释器是通过使用一种叫作形式语法的特殊语法来定义你想要解析的东西这样发明的，然后你需要把它放入像 Bison 和 Yacc 的工具中，这些工具能够产生一堆你需要修改的 C 代码或者链接到你实际写入额的编程语言。另外的选择是用你更喜欢的语言亲自动手写一个解释器，这很慢且很容易出错，在你能够真正使用它之前还有许多额外的工作。
+想像一下，是否你关于你想要解析的东西的语法描述也是解释器？如果你能够仅仅直接运行语法，然后在你需要的地方增加挂钩，那是什么？那就是 Ohm 所做的事。
+###解释器简介
+[Ohm][1]是一种新的解析系统。它类似你可能已经在课本里面看到的语法并且它更强大，使用起来更简单。通过 Ohm, 你能够使用一种灵活的语法以 .ohm 文件格式来写格式定义，然后使用你的宿主语言把语义加入到里面。在这篇博文里，我们将用 JavaScript 作为宿主语言。
+Ohm 建立在一个为制造更简单、更灵活的解释器的一个多年调查基础之上。VPRI 的 [STEPS program](pdf) 使用 Ohm 的前驱为许多特殊的工作创造了专门的语言（比如一个有 400 行代码的平行制图描绘器）[Ometa][3].
+Ohm 有许多有趣的特点和符号，但是不是要全部解释它们，我认为我们应该只需投入其中并构建一些东西。
+###解析整数
+让我们来解析一些数字。这看起来会很简单，只需在一个文本串中寻找毗邻的数字，但是让我们尝试去处理所有形式的数字：整数和浮点数，十六进制数和八进制数，科学计数，负数。解析数字很简单，正确解析却很难。
+亲自构建这个代码将会很困难，会有很多故障，会伴随有许多特殊的情况，比如有时会相互矛盾。
+用 Ohm 构建的解释器涉及三个部分：语法、语义和测试。我通常挑选一个问题的一部分为它写测试，然后构建足够的语法和语义来使测试通过。然后我再挑选问题的另一部分，增加更多的测试，更新语法和语义，从而确保所有的测试能够持续通过。即使我们有了新的强大的工具，写解释器从概念上来说依旧很困难。测试是用一种合理的方式来构建解释器的唯一方法。现在，让我们开始工作。
+我们将从整数开始。一个整数由一系列相互毗邻的数字组成。让我们把下面的内容放入一个叫做 grammar.ohm 的文件中：
 ```
 CoolNums {
    // just a basic integer
    Number = digit+
 }
 ```
-
-This creates a single rule called Number which matches one or more digits. The + means one or more, just like in a regular expression. This rule will match if there is one digit or more than one digit. It won’t match if there are zero digits or something something other than a digit. A digit is defined as the characters for the numbers 0 to 9. digit is also a rule like Number is, but it’s one of Ohm’s built in rules so we don’t have to define it ourselves. We could override if it we wanted to but that wouldn’t make sense in this case. After all we don’t plan to invent a new form of number (yet!)
-
-Now we can read in this grammar and process it with the Ohm library.
-
-Put this into test1.js
-
+这创造了一条撮合一个或多个数字叫作 Number 的单一规则。＋ 意味着一个或更多，就像一个常规的表达。当有一个或更多的数字时，这个规则将会撮合它们，如果没有数字或者有一些不是数字的东西将不会撮合。一个数字定义成从 0 到 9 其中的一个字符。数字也是像 Number 一样的规则，但是它是 Ohm 的其中一条构建规则因此我们不需要去定义它。我们可以推翻它如果我们想的话但在这时候这没有任何意义，毕竟我们不打算去发明一种新的数。
+现在，我们可以读入这个语法并用 Ohm 库来运行它。
+把它放入 test1.js
 ```
 var ohm = require('ohm-js');
 var fs = require('fs');
 var assert = require('assert');
 var grammar = ohm.grammar(fs.readFileSync('src/blog_numbers/syntax1.ohm').toString());
 ```
-
-The ohm.grammar call will read in the file and parse it into a grammar object. Now we can add semantics. Add this to your Javascript file:
-
+Ohm 的语法调用将把文件读入并解释成一个语法对象。现在我们可以增加一些语义。把下面内容增加到你的 JavaScript 文件中：
 ```
 var sem = grammar.createSemantics().addOperation('toJS', {
     Number: function(a) {
@@ -66,16 +43,11 @@ var sem = grammar.createSemantics().addOperation('toJS', {
     }
 });
 ```
-
-This creates a set of semantics called sem with the operation toJS. The semantics are essentially a bunch of functions matching up to each rule in the grammar. Each function will be called when the corresponding rule in the grammar is parsed. The Number function above will be called when the Number rule in the grammar is parsed. The grammar defines what chunks are in the language. The semantics define what to do with chunks once they’ve been parsed.
-
-Our semantics functions can do anything we want, such as print debugging information, create objects, or recursively call toJS on any sub-nodes. In this case we just want to convert the matched text into a real Javascript integer.
-
-All semantic functions have an implicit this object with some useful properties. The source property represents the part of the input text that matches this node. this.sourceString is the matched input as a string. Calling the built in JavaScript function parseInt turns this string to a number. The 10 argument to parseInt tells JavaScript that we are giving it a number in base ten. If we leave it out then JS will assume it’s base 10 anyway, but I’ve included it because later on we will support base 16 (hex) numbers, so it’s good to be explicit.
-
-Now that we have some semantics, let’s actually parse something to see if our parser works. How do we know our parser works? By testing it. Lots and lots of testing. Every possible edge case needs a test.
-
-With the standard assert API, here is a test function which matches some input then applies our semantics to it to turn it into a number, then compares the number with the expected input.
+这创造了一系列叫作 sem with the operation to JS[伴有 JavaScript 操作的语义] 的语义。这些语义至关重要，一群函数和语法中的每一条规则相匹配。一个函数将会被调用当与它相匹配的语法规则被解析时。上面的 Number 函数将会被调用当语法中的 Number 规则被解析时。语法定义在语言中 chunks[大块] 是什么，语义定义当 chunks[大块] 被解析时应该做什么。
+语义函数能够做我们想做的任何事，比如打印初故障信息，创造对象，或者递归调用 toJS 作用于任何子节点。此时我们仅仅想把文本转换成真正的 JavaScript 整数。
+所有的语义函数有一个包含一些有用性质的暗含对象。源属性代表输入文本和这个节点相匹配。这个 sourceString[源串] 是一个匹配输入串，调用构建在 JavaScript 中的parseInt 函数会把这个串转换成一个数。parseInt 中 10 这个参数告诉 JavaScript 我们输入的是一个以 10 为基底的数。如果少了这个参数， JavaScript 也会假定以 10 为基底，但是我们把它包含在里面因为后面我们将支持以 16 为基底的数，所以使之明确比较好。
+既然我们有一些语法，让我们来实际解析一些东西看一看我们的解释器是否能够工作。如果知道我们的解释器工作？通过测试它，许多许多的测试，每一个边缘情况都需要一个测试。
+伴随标准断言 API，有一个测试函数能够匹配一些输入并运用我们的语义把它转换成一个数，然后比较转换生成的数和我们期望的输入。
 ```
    function test(input, answer) {
      var match = grammar.match(input);
@@ -85,19 +57,14 @@ With the standard assert API, here is a test function which matches some input t
      console.log('success = ', result, answer);
     }
 ```
-
-That’s it. Now we can write a bunch of tests for different numbers. If the match fails then our script will throw an exception. If not it will print success. Let’s try it out. Add this to the script
-
+这个函数就是上面这个。现在我们能够为不同的数写一堆测试。如果匹配失败我们的脚本将会丢弃一个例外。如果不能打印成功，让我们尝试一下，把下面这些内容加入到脚本中：
 ```
     test("123",123);
     test("999",999);
     test("abc",999);
 ```
-
-Then run the script with node test1.js
-
-Your output should look like this:
-
+然后用节点 test.js 运行脚本
+你的输出应该是这样：
 ```
 success =  123 123
 success =  999 999
@@ -106,13 +73,9 @@ input failed to match abcLine 1, col 1:
       ^
 Expected a digit
 ```
-
-Cool. The first two succeed and the third one fails, as it should. Even better, Ohm automatically gave us a nice error message pointing to the match failure.
-
-### Floating Point
-
-Our parser works, but it doesn’t do anything very interesting. Let’s extend it to parse both integers and floating point numbers. Change the grammar.ohm file to look like this:
-
+真酷。正如理所当然的那样，前两个成功了，第三个失败了。更好的是，Ohm 自动给了我们一个很棒的错误信息指出匹配失败。
+###浮点数
+我们的解释器工作了，但是它不能做任何非常有趣的事。让我们把它扩展成既能解析整数又能解析浮点数。改变 grammar.ohm 文件使它看起来像下面这样：
 ```
 CoolNums {
   // just a basic integer
@@ -121,11 +84,8 @@ CoolNums {
   float  = digit+ "." digit+
 }
 ```
-
-This changes the Number rule to point to either a float or an int. The | means or. We read this as “a Number is composed of a float or an int.” Then int is defined as digit+ and float is defined as digit+ followed by a period followed by another digit+. This means there must be at least one digit before the period and at least one after. If there is not a period then it won’t be a float at all, so int will match instead.
-
-Now let’s go look at our semantic actions again. Since we now have new rules we need new action functions: one for int and one for float.
-
+这把 Number 规则改变成指向一个浮点数或者一个整数。我的意思是，我们把这读成"一个 Number 由一个浮点数或者一个整数构成。”然后整数定义成 digit+, 浮点数定义成 digit+ 后面跟着一个句号然后再跟着另一个 digit+. 这意味着在句号前和句号后都至少要有一个数字。如果一个数中没有一个句号那么它就不是一个浮点数，因此就是一个整数。
+现在，让我们再次看一下我们的语义作用。由于我们现在有了新的规则所以我们需要新的作用函数：一个作为整数的，一个作为浮点数的。
 ```
 var sem = grammar.createSemantics().addOperation('toJS', {
     Number: function(a) {
@@ -141,19 +101,13 @@ var sem = grammar.createSemantics().addOperation('toJS', {
     }
 });
 ```
-
-There’s two things to note here. First, int and float and Number all have matching grammar rules and functions. However, the action for Number no longer does anything interesting. It receives the child node ‘a’ and returns the result of toJS on the child. In other words the Number rule simply returns whatever its child rule matched. Since this is the default behavior of any rule in Ohm we can actually just leave the Number action out. Ohm will do it for us.
-
-Second, int has one argument a while float has three: a, b, and c. This is because of the rule’s arity. Arity means how many arguments a rule has. If we look back at the grammar, the rule for float is
-
+这里有两件事情需要注意。首先，整数，浮点数和数都有相匹配的语法规则和函数。然而，针对数的作用不再有任何意义。它接收子节点 'a' 然后通过子节点返回 toJS 的结果。换句话说，Number 规则简单的返回相匹配的子规则。由于这是在 Ohm 中任何规则的默认行为，因此实际上我们不用去考虑 Number 的作用，Ohm 会替我们来做这件事。
+第二，整数有一个参数然而浮点数有三个：a, b, 和 c. 这是由于规则的参数数量。参数数量意味着一个规则里面有多少参数。如果我们回过头去看语法，浮点数的规则是：
 ```
   float  = digit+ "." digit+
 ```
-
-The float rule is defined by three parts: the first digit+, the "." and the second digit+. All three of those parts will be passed as parameters to the action function for float. Thus float must have three arguments or else the Ohm library will give us an error. In this case we don’t care about the arguments because we will just grab the input string directly, but we still need the arguments listed to avoid compiler errors. Later on we will actually use some of these parameters.
-
-Now we can add a few more tests for our new floating point number support.
-
+浮点数规则通过三个部分来定义：第一个 digit+, '.', 还有第二个 digit+. 这三个部分都会作为参数传递给浮点数的作用函数。因此浮点数必须有三个参数否则 Ohm 库给出一个错误。在这种情况下我们不用在意参数因为我们仅仅直接攫取了输入串，但是我们仍然需要列表的参数来回避编译器错误。后面我们将实际使用其中一些参数。
+现在我们可以为新的浮点数支持添加更多的测试。
 ```
 test("123",123);
 test("999",999);
@@ -162,15 +116,10 @@ test('123.456',123.456);
 test('0.123',0.123);
 test('.123',0.123);
 ```
-
-Note that the last test will fail. A floating point number must begin with a digit, even if it’s just zero. .123 is not valid, and in fact the real JavaScript language has the same rule.
-
-### Hexadecimal
-
-So now we have integers and floats but there’s a few other number syntaxes that might be good to support: hexadecimal and scientific notation. Hex numbers are integers in base sixteen. The digits can be from 0 to 9 and A to F. Hex is often used in computer science when working with binary data because you can represent 0 through 255 exactly with only two digits.
-
-In most C derived programming languages (including JavaScript) hex numbers are preceded by `0x` to indicate to the compiler that what follows is a hexadecimal number. To support hex numbers in our parser we just need to add another rule.
-
+注意最后一个测试将会失败。一个浮点数必须以一个数开始，即使它仅仅是 0, .123 不是有效的，实际上真正的 JavaScript 语言有相同的规则。
+###十六进制数
+现在我们已经有了整数和浮点数，但是有一些其他的数的语法可能能够很好的支持：十六进制数和科学计数。十六进制数是是以 16 为基底2的数。十六进制数的数字能从 0 到 9 和从 A 到 F. 十六进制数经常用在计算机科学中当用二进制数据工作时，因为你可以仅仅使用两个数字表示 0 到 255 的数。
+在绝大多数源自 C 的编程语言（包括 JavaScript), 十六进制数通过在前面加上 ‘0x' 来向编译器表明后面跟的是一个十六进制数。为了让我们的解释器支持十六进制数，我们只需要添加另一条规则。
 ```
   Number = hex | float | int
   int    = digit+
@@ -178,67 +127,49 @@ In most C derived programming languages (including JavaScript) hex numbers are p
   hex    = "0x" hexDigit+
   hexDigit := "0".."9" | "a".."f" | "A".."F"
 ```
-
-I’ve actually added two rules. `hex` says that a hex number is the string `0x` followed by one or more `hexDigits`. A `hexDigit` is any letter from 0 to 9, or a to f, or A to F (covering both upper and lower case). I also modified Number to recognize hex as another possible option. Now we just need another action rule for hex.
-
+我实际上已经增加了两条规则。'hex' 表明十六进制数是一个 'ox' 后面一个或多个 ’hexDigits'[十六进制数子] 的串。一个 'hexDigit' 是从 0 到 9, 或从 a 到 f, 或 A 到 F（包扩大写和小写的情况）的一个字符。我也修改了 Number 规则来识别十六进制数作为其他可能的选择。现在我们只需要另一条针对十六进制数的作用规则。
 ```
     hex: function(a,b) {
         return parseInt(this.sourceString,16);
     }
 ```
+注意到，在这种情况下，我们把 '16' 作为基数传递给 'parseInt'， 因为我们希望 JavaScript 知道这是一个十六进制数。
 
-Notice that in this case we are passing `16` as the radix to `parseInt` because we want JavaScript to know that this is a hexadecimal number.
-
-I skipped over something important to notice. The rule for `hexDigit` looks like this.
-
+我略过了一些很重要需要注意的事。针对 'hexDigit' 的规则像下面这样：
 ```
   hexDigit := "0".."9" | "a".."f" | "A".."F"
 ```
-
-Notice that I used `:=` instead of `=`. In Ohm, the `:=` is used when you are overriding a rule. It turns out Ohm already has a default rule for `hexDigit`, just as it does for `digit`, `space` and a bunch of others. If I had used = then Ohm would have reported an error. This is a check so I can’t override a rule unintentionally. Since our new hexDigit rule is actually the same as Ohm’s built in rule we can just comment it out and let Ohm do it. I left the rule in just so we can see what’s really going on.
-
+注意我使用的是 ':=' 而不是 '='. 在 Ohm 中，'=' 是当你需要推翻一条规则的时候使用。证明是 Ohm 已经有了针对 'hexDigit' 的默认规则，就像针对 'digit', 'space' 等一堆其他的东西。如果我使用了 '=', Ohm 将会报告一个错误。这是一个检查从而我不能无意识的推翻一个规则。由于新的 hexDigit 规则和 Ohm 的构建规则一样，所以我们可以仅仅对它添加注释然后让 Ohm 来实现它。我留下这个规则仅仅是因为这样我们可以看到它实际上是如何进行的。
 Now we can add some more tests and see that our hex digits really work:
-
+现在，我们可以添加更多的测试然后看到十六进制数真的工作。
 ```
 test('0x456',0x456);
 test('0xFF',255);
 ```
-
-### Scientific Notation
-
-Finally let’s support scientific notation. This is for very large or small numbers like 1.8 x 10^3 In most programming languages numbers in scientific notation would be written as 1.8e3 for 18000 or 1.8e-3 for .0018. Let’s add another couple of rules to support this exponent notation.
-
+###科学计数
+最后，让我们来支持科学计数。科学计数是针对非常大或非常小的数比如 1.8×10^3, 在大多数编程语言中，科学计数法表示的数会写成这样：1.8e3 表示 18000, 或者 1.8e-3 表示 .018. 让我们增加另外一对规则来支持这个指数表示：
 ```
     float  = digit+ "." digit+ exp?
     exp    = "e" "-"? digit+
 ```
-
-This adds a the exp rule to the end of the float rule with a question mark. The ? means zero or one, so exp is optional but there can’t be more than one. Adding the exp rule also changes the arity of the float rule, so we need to add another argument to the float action, even if we don’t use it.
-
+上面增加了一个指数规则通过在浮点数规则末尾加上一个 '?'. '?' 表示 0 或 1，所以指数是可选择的但是不能超过一个。增加指数规则也改变了浮点数规则的参数数量，所以我们需要为浮点数作用增加又一个参数，即使我们不使用它。
 ```
     float: function(a,b,c,d) {
         console.log("doing float", this.sourceString);
         return parseFloat(this.sourceString);
     },
 ```
-
-And now our new tests can pass:
-
+现在我们的测试可以通过了：
 ```
 test('4.8e10',4.8e10);
 test('4.8e-10',4.8e-10);
 ```
-
-### Conclusion
-
-Ohm is a great tool for building parsers because it’s easy to get started and you can incrementally add to it. It also has other great features that I didn’t cover today, like a debugging visualizer and sub-classing.
-
-So far we have used Ohm to translate character strings into JavaScript numbers, and often Ohm is used for this very purpose: converting one representation to another. However, Ohm can be used for a lot more. By putting in a different set of semantic actions you can use Ohm to actually process and calculate things. This is one of Ohm’s magic features. A single grammar can be used with many different semantics.
-
-In the next article of this series I’ll show you how to not just parse numbers but actually evaluate math expressions like `(4.8+5 * (238-68)/2)`, just like a real calculator.
-
-Bonus challenge: Can you extend the grammar with support for octal numbers? These are numbers in base 8 and can be represented with only the digits 0 to 7, preceded by a zero and the letter o. See if you are right with these test cases. Next time I’ll show you the answer.
-
+###结论
+Ohm 是构建解释器的一个很棒的工具，因为它很容易开始并且你可以递增的增加规则。Ohm 也还有其他我今天没有写到的很棒的特点，比如故障观察仪和子类化。
+s.
+到目前为止，我们已经使用 Ohm 来把字符串翻译成 JavaScript 数，并且 Ohm 经常由于需要把一个表示转化成另一个这一目的而使用。然而，Ohm 还有更多的用途。通过放入以系列不同的语义作用你可以使用 Ohm 来真正处理和计算东西。一个单独的语法可以被许多不同的语义使用，这是 Ohm 其中一个不可思议的特点。
+在这个系列的下一篇文章中，我将向你们展示如何计算像（4.85 + 5 * (238 - 68)/2) 这样的数学表达式，不仅仅是解析数。
+额外的挑战：你能够扩展语法来支持八进制数吗？这些以 8 为基底的数能够只用 0 到 7 这几个数字来表示，前面加上一个数字 0 或者字母 o. 看看针对下面这些测试情况是够正确。下次我将给出答案。
 ```
 test('0o77',7*8+7);
 test('0o23',0o23);
@@ -252,7 +183,7 @@ test('0o23',0o23);
 via: https://www.pubnub.com/blog/2016-08-30-javascript-parser-ohm-makes-creating-a-programming-language-easy/?utm_source=javascriptweekly&utm_medium=email
 
 作者：[Josh Marinacci][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ucasFL](https://github.com/ucasFL)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
