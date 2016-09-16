@@ -2,7 +2,7 @@ Translating by ucasFL
 
 Ohm: JavaScript Parser that Creates a Language in 200 Lines of Code
 ===========
-
+Ohm: 一种能用可以用两百行代码创造一种语言的 JavaScript 解释器
 Parsers are an incredibly useful software libraries. While conceptually simple, they can be challenging to implement and are often considered a dark art in computer science. In this blog series, I’ll show you why you don’t need to be Harry Potter to master parsers. But bring your wand just in case.
 
 We’ll explore a new open source Javascript library called Ohm that makes building parsers easy and easier to reuse. In this series, we use Ohm to recognize numbers, build a calculator, and more. By the end of this series you will have created a complete programming language in under 200 lines of code. This powerful tool will let you do things that you might have thought impossible otherwise.
