@@ -120,15 +120,19 @@ For the initial deployment, our monitoring showed a 1.5 replacement factor, whic
 新设备刚部署的时候，我们的监控发现新设备只能代替1.5台旧设备，这比我们的目标低很多。对性能数据检查后发现我们之前对设备的假设是错的，而这正是我们在做性能测试时候需要识别出来的问题。
 
 Our Hardware Engineering Team's initial action was to develop a model to predict the packing efficiency of the current Aurora job set into various hardware configurations. This model correctly predicted the scaling factor we were observing in the fleet, and suggested we were stranding cores due to unforeseen storage requirements. Additionally, the model predicted we would see a still improved scaling factor by changing the memory configuration as well.
-
+我们硬件团队做的第一项工作就是开发一个模型，用来预测在不同的硬件配置下当前Aurora任务的打包效率。这个模型正确的预测了当前集群的替代系数，并且还根据我们还没有预料到的存储需求建议我们增加 CPU 核心数。另外，模型还预测，如果我们修改内存的配置，那系统的性能还会有较大提高。
 
 Hardware configuration changes take time to implement, so Hardware Engineering identified a few large jobs and worked with our SRE teams to adjust the scheduling requirements to reduce the storage needs. These changes were quick to deploy, and resulted in an immediate improvement to a 1.85 scaling factor.
+硬件配置的改变都需要花时间去实现，所以我们的硬件工程师们就首先定位出几个较大的工作，然后和我们的站点工程团队一起调整任务表来降低存储需求。这些修改很容易实施，并且很快将我们的硬件性能提高了1.85倍。
 
 In order to address the situation permanently, we needed to adjust to configuration of the server. Simply expanding the installed memory and disk capacity resulted in a 20% improvement in the CPU core utilization, at a minimal cost increase. Hardware Engineering worked with our manufacturing partners to adjust the bill of materials for the initial shipments of these servers. Follow up observations confirmed a 2.4 scaling factor exceeding the target design.
+为了一直保持这样的优化效率，我们需要修改服务器的配置。简单的扩大内存和磁盘容量就讲 CPU 利用率提高了20%，而这只增加了非常小的成本。同时我们的硬件工程师也和生产的伙伴一起优化发货来降低货运成本。后续的观察发现我们的硬件相比就硬件有2.4倍的提升，这个超出了我们预期的设计目标。
 
 ### Migration from bare metal to mesos
+### 从裸设备迁移到 mesos 集群
 
 Until 2012, running a service inside Twitter required hardware requisitions. Service owners had to find out and request the particular model or class of server, worry about your rack diversity, maintain scripts to deploy code, and manage dead hardware. There was essentially no "service discovery." When a web service needed to talk to the user service, it typically loaded up a YAML file containing all of the host IPs and ports of the user service and the service used that list (port reservations were tracked in a wiki page). As hardware died or was added, managing required editing and committing changes to the YAML file that would go out with the next deploy. Making changes in the caching tier meant many deploys over hours and days, adding a few hosts at a time and deploying in stages. Dealing with cache inconsistencies during the deploy was a common occurrence, since some hosts would be using the new list and some the old. It was possible to have a host running old code (because the box was temporarily down during the deploy) resulting in a flaky behavior with the site.
+直到2012年，在 Twitter 运行一个新的服务还需要提硬件需求。服务所有者需要提出硬件的规格需求，小心处理机架尺寸和维护，开发部署脚本以及处理故障的硬件。同时，系统中没有所谓的“服务发现”机制，当一个网络服务需要调用一个用户服务时候，它就是加载一个 YAML 配置文件，这个配置文件中包含用户服务的主机 IP 和端口信息（端口是有一个公狗
 
 In 2012/2013, two things started to get adopted at Twitter: service discovery (via a zookeeper cluster and a library in the core module of Finagle) and Mesos (including our own scheduler framework on top of Mesos called Aurora, now an Apache project).
 
