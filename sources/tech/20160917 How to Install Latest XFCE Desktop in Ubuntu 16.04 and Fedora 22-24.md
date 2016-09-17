@@ -1,3 +1,5 @@
+translating by ucasFL
+
 How to Install Latest XFCE Desktop in Ubuntu 16.04 and Fedora 22-24
 ====
 
