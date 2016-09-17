@@ -1,3 +1,5 @@
+Translating by bianjp
+
 It's time to make LibreOffice and OpenOffice one again
 ==========
 
