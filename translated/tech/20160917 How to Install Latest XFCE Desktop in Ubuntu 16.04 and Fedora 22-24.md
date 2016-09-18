@@ -65,8 +65,8 @@ $ sudo apt autoremove
 ```
 
 
-在这个简单的入门指南中，我们讲解讲解了如何安装最新版 Xfce 桌面的步骤，我相信这很容易掌握。如果一切进行良好，你可以享受一下使用 xfce, 作为其中一个 [best desktop environments for Linux systems][1].
-However, to get back to us, you can use the feedback section below and remember to always stay connected to Tecmint.
+在这个简单的入门指南中，我们讲解了如何安装最新版 Xfce 桌面的步骤，我相信这很容易掌握。如果一切进行良好，你可以享受一下使用 xfce, 作为其中一个 [best desktop environments for Linux systems][1].
+
 然而，如果想再次和我们联系，你可以利用下面的反馈部分并且记得始终和 Tecmint 保持联系。
 --------------------------------------------------------------------------------
 
