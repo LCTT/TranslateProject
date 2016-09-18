@@ -9,18 +9,13 @@ Xfce 是一款针对 Linux 系统的现代化轻型开源桌面环境，它在�
 ### XFCE 桌面的功能特性
 
 另外，它的一些显著的组成部分和功能特性列在下面：
-- Xfwm windows manager
-- Thunar file manager
-- User session manger to deal with logins, power management and beyond
-- Desktop manager for setting background image, desktop icons and many more
-- An application manager
-- It’s highly pluggable as well plus several other minor features
+
 - Xfwm 窗口管理器
 - Thunar 文件管理器
 - 用户会话管理器：用来处理用户登录，电源管理及以后
 - 桌面管理器：用来设置背景图片，桌面头像等更多操作
 - 运用管理器
-- 
+- 它的高度可连接性也增加了一些其他次要功能特性
 
 Xfce 的最新稳定发行版是 Xfce 4.12, 它所有的功能特性和区别于旧版本的变化都列在了这儿。
 
