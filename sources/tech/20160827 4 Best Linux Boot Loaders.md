@@ -1,68 +1,60 @@
 translating by ucasFL
 
-4 Best Linux Boot Loaders
+4 个最好的 Linux 引导程序
 ====
 
-When you turn on your machine, immediately after POST (Power On Self Test) is completed successfully, the BIOS locates the configured bootable media, and reads some instructions from the master boot record (MBR) or GUID partition table which is the first 512 bytes of the bootable media. The MBR contains two important sets of information, one is the boot loader and two, the partition table.
+当你打开你的机器，开机自检成功完成后，BIOS（基本输入输出系统）立即定位配置的引导介质，并从主引导记录（MBR）或 GUID（全局唯一标识符）分区表读取一些命令，这是引导介质的最前面 512 个字节。MBR（主引导记录）包含两个重要的信息集合，第一个是引导程序，第二个是分区表。
+### 什么是引导程序？
 
-### What is a Boot Loader?
+引导程序是存储在 MBR（主引导记录）或 GUID（全局唯一标识符）分区表中的一个小程序，它可以帮助把操作系统装载到内存中。如果没有引导程序，那么你的操作系统将不能够装载到内存中。
 
-A boot loader is a small program stored in the MBR or GUID partition table that helps to load an operating system into memory. Without a boot loader, your operating system can not be loaded into memory.
-
-There are several boot loaders we can install together with Linux on our systems and in this article, we shall briefly talk about a handful of the best Linux boot loaders to work with.
-
+有一些引导程序我们可以通过 Linux 同时安装在系统上，在这篇文章里，我将简要地谈论几个最好的 Linux 引导程序。
 ### 1. GNU GRUB
 
-GNU GRUB is a popular and probably the most used multiboot Linux boot loader available, based on the original GRUB (GRand Unified Bootlader) which was created by Eirch Stefan Broleyn. It comes with several improvements, new features and bug fixes as enhancements of the original GRUB program.
+GNU GRUB 是一个非常受欢迎并且用得最多的多重引导 Linux 引导程序，它以原始的 Eirch Stefan Broleyn 发明的 GRUB（GRand Unified Bootlader）为基础。GNU GRUB 的到来伴随着一些改善的地方，新的特性和漏洞修复作为原始 GRUB 程序的增强。
 
-Importantly, GRUB 2 has now replaced the GRUB. And notably, the name GRUB was renamed to GRUB Legacy and is not actively developed, however, it can be used for booting older systems since bug fixes are still on going.
+重要的是，GRUB 2 现在已经取代了 GRUB。值得注意的是，GRUB 这个名字被重新命名给了 GRUB Legacy, 但没有积极发展，然而，它可以用来引导老的系统因为漏洞修复依然还在工作。
 
-GRUB has the following prominent features:
+GRUB 具有下面一些显著的特性：
 
-- Supports multiboot
-- Supports multiple hardware architectures and operating systems such as Linux and Windows
-- Offers a Bash-like interactive command line interface for users to run GRUB commands as well interact with configuration files
-- Enables access to GRUB editor
-- Supports setting of passwords with encryption for security
-- Supports booting from a network combined with several other minor features
+- 支持多重引导
+- 支持多重硬件结构和操作系统比如 Linux 和 Windows
+- 提供一个类似 Bash 的交互式命令行界面从而用户可以和配置文件进行交互来运行 GRUB 命令。允许访问 GRUB 编辑器。
+- 支持通过安全加密设置密码
+- 支持从由一些次要特性组成的网络进行引导
+访问主页: <https://www.gnu.org/software/grub/>
 
-Visit Homepage: <https://www.gnu.org/software/grub/>
+### 2. LILO（Linux 载入程序）
 
-### 2. LILO (Linux Loader)
+LTIO 是一个简单但强大且非常稳定的 Linux 引导程序。由于 GRUB 有很大改善和增加了许多强大的特性，越来越受欢迎，因此 LTIO 在 Linux 用户中已经不是很受欢迎。
 
-LILO is a simple yet powerful and stable Linux boot loader. With the growing popularity and use of GRUB, which has come with numerous improvements and powerful features, LILO has become less popular among Linux users.
+当 LTIO 引导的时候，单词 "LITO" 会出现在频幕上并且每一个字母在一个特别的事件发生之前或之后出现。然而，从 2015 年 12 月开始，LITO 的发展停止了，它有许多特性比如下面列举的：
 
-While it loads, the word “LILO” is displayed on the screen and each letter appears before or after a particular event has occurred. However, the development of LILO was stopped in December 2015, it has a number of features as listed below:
+- 不提供交互命令行界面
+- 支持一些错误代码
+- 提供无支持的网络引导
+- 所有的文件存储在驱动的最开始 1024 个柱面上
+- 面临 BTFS, GTP, RAID 等的限制
+访问主页: <http://lilo.alioth.debian.org/>
 
-- Does not offer an interactive command line interface
-- Supports several error codes
-- Offers no support for booting from a network
-- All its files are stored in the first 1024 cylinders of a drive
-- Faces limitation with BTFS, GPT and RAID plus many more.
+### 3. BURG - 新的引导程序
 
-Visit Homepage: <http://lilo.alioth.debian.org/>
+以 GRUB 为基础, BURG 是一个相对来说很新的引导程序。由于 BURG 起源于 GRUB, 所以它装载有一些原始的 GRUB 特性。尽管如此, BURG 也提供了一些显著的特性，比如一种新的对象格式可以支持包括 Linux, Windows, Mac OS, FreeBSD 等的多重平台。
 
-### 3. BURG – New Boot Loader
-
-Based on GRUB, BURG is a relatively new Linux boot loader. Because it is derived from GRUB, it ships in with some of the primary GRUB features, nonetheless, it also offers remarkable features such as a new object format to support multiple platforms including Linux, Windows, Mac OS, FreeBSD and beyond.
-
-Additionally, it supports a highly configurable text and graphical mode boot menu, stream plus planned future improvements for it to work with various input/output devices.
-
-Visit Homepage: <https://launchpad.net/burg>
+另外，BURG 支持高配置文本和图标模式引导菜单，stream plus 计划未来针对它进行改进从而和不同的输入输出设备一同工作。
+访问主页: <https://launchpad.net/burg>
 
 ### 4. Syslinux
 
-Syslinux is an assortment of light weight boot loaders that enable booting from CD-ROMs, from a network and so on. It supports filesystems such as FAT for MS-DOS, and ext2, ext3, ext4 for Linux. It as well supports uncompressed single-device Btrfs.
+Syslinux 是一种能从光盘驱动器、网络等进行引导的轻型引导程序。Syslinux 支持文件系统，比如 MS-DOS 上的 FAT, Linux 上的 ext2, ext3, ext4。Syslinux 也支持未压缩的单独设备 Btrfs。
+注意由于 Syslinux 仅能访问自己分区上的文件，因此不具备多重文件系统引导能力。
+访问主页: <http://www.syslinux.org/wiki/index.php?title=The_Syslinux_Project>
 
-Note that Syslinux only accesses files in its own partition, therefore, it does not offer multi-filesystem boot capabilities.
+### 结论
 
-Visit Homepage: <http://www.syslinux.org/wiki/index.php?title=The_Syslinux_Project>
+一个引导程序允许你在你的机器上管理多重操作系统并在特定的时间选择其中一个使用。没有引导程序，你的机器就不能狗装载内核以及剩余部分的操作系统文件。
 
-### Conclusion
-
-A boot loader allows you to manage multiple operating systems on your machine and select which one to use at a particular time, without it, your machine can not load the kernel and the rest of the operating system files.
-
-Have we missed any tip-top Linux boot loader here? If so, then let us know by using the comment form below by making suggestions of any commendable boot loaders that can support Linux operating system.
+我们是否遗漏了任何一流的 Linux 引导程序？如果有，在下面的评论表中填入值得赞扬的 Linux 系统引导程序，从而让我们知道。
 
 
 --------------------------------------------------------------------------------
@@ -70,7 +62,7 @@ Have we missed any tip-top Linux boot loader here? If so, then let us know by us
 via: http://linoxide.com/firewall/pfsense-setup-basic-configuration/
 
 作者：[Aaron Kili][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ucasFL](https://github.com/ucasFL)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
