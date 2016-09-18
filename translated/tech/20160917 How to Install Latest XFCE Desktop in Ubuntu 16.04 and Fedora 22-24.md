@@ -8,7 +8,7 @@ Xfce 是一款针对 Linux 系统的现代化轻型开源桌面环境，它在�
 
 ### XFCE 桌面的功能特性
 
-另外，它的一些显著的组成部分和功能特点列在下面：
+另外，它的一些显著的组成部分和功能特性列在下面：
 - Xfwm windows manager
 - Thunar file manager
 - User session manger to deal with logins, power management and beyond
@@ -19,6 +19,8 @@ Xfce 是一款针对 Linux 系统的现代化轻型开源桌面环境，它在�
 - Thunar 文件管理器
 - 用户会话管理器：用来处理用户登录，电源管理及以后
 - 桌面管理器：用来设置背景图片，桌面头像等更多操作
+- 运用管理器
+- 
 
 Xfce 的最新稳定发行版是 Xfce 4.12, 它所有的功能特性和区别于旧版本的变化都列在了这儿。
 
@@ -69,6 +71,8 @@ $ sudo apt autoremove
 
 然而，如果想再次和我们联系，你可以利用下面的反馈部分并且记得始终和 Tecmint 保持联系。
 --------------------------------------------------------------------------------
+
+
 
 via: http://linoxide.com/firewall/pfsense-setup-basic-configuration/
 
