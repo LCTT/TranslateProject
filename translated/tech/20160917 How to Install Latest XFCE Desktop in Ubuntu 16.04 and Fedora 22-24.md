@@ -27,7 +27,7 @@ $ sudo apt update
 $ sudo apt install xfce4 
 ```
 
-等待安装进程结束，然后退出当前会话或者你也可以选择重启系统。在登录界面，选择 Xfce 桌面，然后在像下面这样的频幕截图中登录：
+等待安装进程结束，然后退出当前会话或者你也可以选择重启系统。在登录界面，选择 Xfce 桌面，然后在像下面的频幕截图这样登录：
 ![](http://www.tecmint.com/wp-content/uploads/2016/09/Select-Xfce-Desktop-at-Login.png)
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/09/XFCE-Desktop.png)
@@ -37,9 +37,9 @@ $ sudo apt install xfce4
 
 如果你想在现存 Linux 分支 Fedora 上安装 xfce 桌面，那么你可以使用下面展示的 yum 或 dnf 命令。
 ```
--------------------- On Fedora 22 --------------------
+-------------------- 在 Fedora 22 上 --------------------
 # yum install @xfce
--------------------- On Fedora 23-24 --------------------
+-------------------- 在 Fedora 23-24 上 --------------------
 # dnf install @xfce-desktop-environment
 ```
 
@@ -64,7 +64,10 @@ $ sudo apt autoremove
 
 在这个简单的入门指南中，我们讲解了如何安装最新版 Xfce 桌面的步骤，我相信这很容易掌握。如果一切进行良好，你可以享受一下使用 xfce, 作为其中一个 [best desktop environments for Linux systems]（Linux 系统上最好的桌面环境）[1].
 
-然而，如果想再次和我们联系，你可以利用下面的反馈部分并且记得始终和 Tecmint 保持联系。
+然而，如果想再次和我们联系，你可以通过下面的反馈环节并且记得始终和 Tecmint 保持联系。
+
+
+
 --------------------------------------------------------------------------------
 
 
