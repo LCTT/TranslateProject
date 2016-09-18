@@ -1,3 +1,5 @@
+translating by Chao-zhi
+
 15 Top Open Source Artificial Intelligence Tools
 ====
 
