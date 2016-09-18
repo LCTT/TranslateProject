@@ -1,3 +1,4 @@
+LinuxBars 翻译认领
 GOOGLER: NOW YOU CAN GOOGLE FROM LINUX TERMINAL!
 ====
 
