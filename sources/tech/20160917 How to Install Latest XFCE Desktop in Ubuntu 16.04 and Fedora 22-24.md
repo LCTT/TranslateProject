@@ -1,44 +1,46 @@
 translating by ucasFL
 
-How to Install Latest XFCE Desktop in Ubuntu 16.04 and Fedora 22-24
+
+如何在 Ubuntu 16.04 和 Fedora 22-24 上安装最新的 XFCE 桌面？
 ====
 
-Xfce is a modern, open source and lightweight desktop environment for Linux systems. It also works well on many other Unix-like systems such as Mac OS X, Solaris, *BSD plus several others. It is fast and also user friendly with a simple and elegant user interface.
+Xfce 是一款针对 Linux 系统的现代化轻型开源桌面环境，它在其他的类 Unix 系统上，比如 Mac OS X, Solaries, *BSD plus, 也能工作得很好。它非常快并且因具有一个简单而优雅的用户界面很好地体现出了用户友好性。
 
-Installing a desktop environment on servers can sometimes prove helpful, as certain applications may require a desktop interface for efficient and reliable administration and one of the remarkable properties of Xfce is its low system resources utilization such as low RAM consumption, thereby making it a recommended desktop environment for servers if need be.
+在服务器上安装一个桌面环境有时被证明是很有用的，因为确切的运用程序可能需要一个桌面界面来高效和可靠的管理。 Xfce 一个卓越的性能是它的系统资源占用率很低，比如内存消耗很低，因此，如果服务器需要一个桌面环境的话它会是首选。
 
-### XFCE Desktop Features
+### XFCE 桌面的功能特性
 
-Additionally, some of its noteworthy components and features are listed below:
-
+另外，它的一些显著的组成部分和功能特点列在下面：
 - Xfwm windows manager
 - Thunar file manager
 - User session manger to deal with logins, power management and beyond
 - Desktop manager for setting background image, desktop icons and many more
 - An application manager
 - It’s highly pluggable as well plus several other minor features
+- Xfwm 窗口管理器
+- Thunar 文件管理器
+- 用户会话管理器：用来处理用户登录，电源管理及以后
+- 桌面管理器：用来设置背景图片，桌面头像等更多操作
 
-The latest stable release of this desktop is Xfce 4.12, all its features and changes from previous versions are listed here.
+Xfce 的最新稳定发行版是 Xfce 4.12, 它所有的功能特性和区别于旧版本的变化都列在了这儿。
 
-#### Install Xfce Desktop on Ubuntu 16.04
+#### 在Ubuntu 16.04 上安装 Xfce 桌面
 
-Linux distributions such as Xubuntu, Manjaro, OpenSUSE, Fedora Xfce Spin, Zenwalk and many others provide their own Xfce desktop packages, however, you can install the latest version as follows.
-
+Linux 分支比如 Xubuntu, Manjaro, OpenSUSE, Fedora Xfce Spin, Zenwalk 等许多其他版本的都提供它们自己的 Xfce 桌面安装包，但你也可以像下面这样安装最新的版本。
 ```
 $ sudo apt update
 $ sudo apt install xfce4 
 ```
 
-Wait for the installation process to complete, then logout out of your current session or you can possibly restart your system as well. At the login interface, choose Xfce desktop and login as in the screen shot below:
-
+等待安装进程结束，然后退出当前会话或者你也可以选择重启系统。在登录界面，选择 Xfce 桌面，然后在像下面这样的频幕截图中登录：
 ![](http://www.tecmint.com/wp-content/uploads/2016/09/Select-Xfce-Desktop-at-Login.png)
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/09/XFCE-Desktop.png)
 
-#### Install Xfce Desktop in Fedora 22-24
 
-If you have an existing Fedora distribution and wanted to install xfce desktop, you can use yum or dnf to install it as shown.
+#### 在 Fedora 22-24 上安装 Xfce 桌面
 
+如果你想在现存 Linux 分支 Fedora 上安装 xfce 桌面，那么你可以使用下面展示的 yum 或 dnf 命令。
 ```
 -------------------- On Fedora 22 --------------------
 # yum install @xfce
@@ -46,34 +48,34 @@ If you have an existing Fedora distribution and wanted to install xfce desktop, 
 # dnf install @xfce-desktop-environment
 ```
 
-After installing Xfce, you can choose the xfce login from the Session menu or reboot the system.
 
+安装 Xfce 以后，你可以从会话菜单选择 xfce 登录或者重启系统。
 ![](http://www.tecmint.com/wp-content/uploads/2016/09/Select-Xfce-Desktop-at-Fedora-Login.png)
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/09/Install-Xfce-Desktop-in-Fedora.png)
 
-If you don’t want Xfce desktop on your system anymore, use the command below to uninstall it:
 
+如果你不再想要 Xfce 桌面留在你的系统上，那么可以使用下面的命令来卸载它：
 ```
--------------------- On Ubuntu 16.04 -------------------- 
+-------------------- 在 Ubuntu 16.04 上 -------------------- 
 $ sudo apt purge xfce4
 $ sudo apt autoremove
--------------------- On Fedora 22 -------------------- 
+-------------------- 在 Fedora 22 上 -------------------- 
 # yum remove @xfce
--------------------- On Fedora 23-24 --------------------
+-------------------- 在 Fedora 23-24 上 --------------------
 # dnf remove @xfce-desktop-environment
 ```
 
-In this simple how-to guide, we walked through the steps for installation of latest version of Xfce desktop, which I believe were easy to follow. If all went well, you can enjoy using xfce, as one of the [best desktop environments for Linux systems][1].
 
+在这个简单的入门指南中，我们讲解讲解了如何安装最新版 Xfce 桌面的步骤，我相信这很容易掌握。如果一切进行良好，你可以享受一下使用 xfce, 作为其中一个 [best desktop environments for Linux systems][1].
 However, to get back to us, you can use the feedback section below and remember to always stay connected to Tecmint.
-
+然而，如果想再次和我们联系，你可以利用下面的反馈部分并且记得始终和 Tecmint 保持联系。
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/firewall/pfsense-setup-basic-configuration/
 
 作者：[Aaron Kili ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ucasFL](https://github.com/ucasFL)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
