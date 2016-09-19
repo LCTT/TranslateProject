@@ -1,4 +1,5 @@
-translating by hkurj
+Translating by bianjp
+
 Basic Linux Networking Commands You Should Know
 ==================================================
 
@@ -85,7 +86,7 @@ Arp is used to translate IP addresses into Ethernet addresses. Root can add and 
 - tcptarget –p [port] it’s able to receive TCP traffic
 - ifconfig netmask [up] : it allows to subnet the sub-networks
 
- 
+
 
 #### Switching:
 
