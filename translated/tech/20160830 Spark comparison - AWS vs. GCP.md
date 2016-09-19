@@ -12,9 +12,9 @@ AWS和GCP Spark技术哪家强？
 
 ###提交Spark任务到云
 
-Spark是一个类MapReduce但是比MapReduce更灵活、更抽象的并行计算框架。Spark提供Pthon和Java 编程接口，但它更愿意用户使用原生的Scala语言进行应用程序开发。Scala可以把应用程序和依赖文件打包在一个JAR文件从而使Spark任务提交变得简单。
+Spark是一个类MapReduce但是比MapReduce更灵活、更抽象的并行计算框架。Spark提供Python和Java 编程接口，但它更愿意用户使用原生的Scala语言进行应用程序开发。Scala可以把应用程序和依赖文件打包在一个JAR文件从而使Spark任务提交变得简单。
 
-通常情况下，Sprark结合HDFS应用于分布式数据存储，而与YARN协同工作则应用于集群管理；这种堪称完美的配合使得Spark非常适用于AWS的弹性MapReduce(EMR)集群和GDP的Dataproc集群。这两种集群都已有HDFS和YARN预配置，不需要额外进行配置。
+通常情况下，Sprark结合HDFS应用于分布式数据存储，而与YARN协同工作则应用于集群管理；这种堪称完美的配合使得Spark非常适用于AWS的弹性MapReduce(EMR)集群和GCP的Dataproc集群。这两种集群都已有HDFS和YARN预配置，不需要额外进行配置。
 
 通过命令行比通过网页接口管理数据、集群和任务具有更高的可扩展性。对AWS而言，这意味着客户需要安装CLI。客户必须获得证书并为每个EC2实例创建独立的密钥对。除此之外，客户还需要为EMR用户和EMR本身创建规则，主要是准入许可规则，从而使EMR用户获得足够多的权限。
 
