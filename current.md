@@ -147,6 +147,7 @@ With Mesos/Aurora, instead of having a script (we were heavy users of Capistrano
 #### Twitter 的私有 PaaS 云平台
 
 Mesos/Aurora and Service Discovery in combination were revolutionary. There were many bugs and growing pains over the next few years and many hard lessons learned about distributed systems, but the fundamental design was sound. In the old world, the teams were constantly dealing with and thinking about hardware and its management. In the new world, the engineers only have to think about how best to configure their services and how much capacity to deploy. We were also able to radically improve the CPU utilization of Twitter's fleet over time, since generally each service that got their own bare metal hardware didn't fully utilize its resources and did a poor job of managing capacity. Mesos allows us to pack multiple services into a box without having to think about it, and adding capacity to a service is only requesting quota, changing one line of a config, and doing a deploy.
+Mesos/Aurora和服务发现这两个合在一起是一个革命性的变化。虽然接下来几年里，我们碰到了无数bug，伤透了无数脑筋，并且从分布式系统里学到了很多的教训，但是这套系统的基础是非常棒的。以前我们的团队一直在处理和思考搭配和管理硬件。而现在，工程师们只需要考虑如何优化业务以及他需要多少系统能力就可以了。
 
 Within two years, most "stateless" services moved into Mesos. Some of the most important and largest services (including our user service and our ads serving system) were among the first to move. Being the largest, they saw the biggest benefit to their operational burden. This allowed them to reduce their operational burden.
 
