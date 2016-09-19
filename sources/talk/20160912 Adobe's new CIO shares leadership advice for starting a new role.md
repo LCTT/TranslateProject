@@ -1,3 +1,5 @@
+translating by Chao-zhi
+
 Adobe's new CIO shares leadership advice for starting a new role
 ====
 
@@ -42,7 +44,7 @@ Through this whole process, I’ve been very open with people that this is not g
 via: https://enterprisersproject.com/article/2016/9/adobes-new-cio-shares-leadership-advice-starting-new-role   
 
 作者：[Cynthia Stoddard][a]
-译者：Tangyuanjiang(https://github.com/译者ID)
+译者：[Chao-zhi](https://github.com/Chao-zhi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
