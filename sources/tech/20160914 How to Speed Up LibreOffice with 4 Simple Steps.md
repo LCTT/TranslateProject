@@ -1,3 +1,5 @@
+
+translating by ucasFL
 How to Speed Up LibreOffice with 4 Simple Steps
 ====
 
