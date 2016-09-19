@@ -1,3 +1,4 @@
+translating by ucasFL
 Understanding Different Classifications of Shell Commands and Their Usage in Linux
 ====
 
