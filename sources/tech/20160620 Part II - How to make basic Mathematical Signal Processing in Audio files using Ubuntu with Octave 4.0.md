@@ -1,3 +1,5 @@
+translating by ucasFL
+
 # Scientific Audio Processing, Part II - How to make basic Mathematical Signal Processing in Audio files using Ubuntu with Octave 4.0
 
 
