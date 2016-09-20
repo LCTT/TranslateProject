@@ -1,5 +1,4 @@
-[firstadream 翻译完成]
-Spark comparison: AWS vs. GCP
+
 AWS和GCP Spark技术哪家强？
 ===========
 
@@ -69,7 +68,7 @@ AWS是云计算的先驱，这甚至体现在API中。AWS拥有巨大的生态�
 via: https://www.oreilly.com/ideas/spark-comparison-aws-vs-gcp?utm_source=dbweekly&utm_medium=email
 
 作者：[Michael Li][a]  [Ariel M'Ndange-Pfupfu][b] 
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/firstadream)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
