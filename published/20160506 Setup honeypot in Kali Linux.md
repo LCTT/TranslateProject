@@ -1,8 +1,7 @@
-
 在 Kali Linux 环境下设置蜜罐
-====
+=========================
 
- Pentbox 是一个为了使工作变得简单流程化渗透测试的包含了许多工具的安全套件。它是用 Ruby 编写并且面向 GNU / Linux, 同时支持 Windows, MacOS 和其它任何安装有 Ruby 的系统。在这篇短文中我们将讲解如何在 Kali Linux 环境下设置蜜罐。如果你还不知道什么是蜜罐（如下解释仅供参考），“蜜罐是一种计算机安全机制设置用来发现，转移，或者，以某种方式，抵消非授权的信息系统的尝试。"
+Pentbox 是一个包含了许多可以使渗透测试工作变得简单流程化的工具的安全套件。它是用 Ruby 编写并且面向 GNU / Linux，同时也支持 Windows、MacOS 和其它任何安装有 Ruby 的系统。在这篇短文中我们将讲解如何在 Kali Linux 环境下设置蜜罐。如果你还不知道什么是蜜罐（honeypot），“蜜罐是一种计算机安全机制，其设置用来发现、转移、或者以某种方式，抵消对信息系统的非授权尝试。"
 
 ### 下载 Pentbox：
 
@@ -26,7 +25,7 @@ root@kali:~# tar -zxvf pentbox-1.8.tar.gz
 
 ### 运行 pentbox 的 ruby 脚本
 
-改变目录到 pentbox 文件夹
+改变目录到 pentbox 文件夹：
 
 ```
 root@kali:~# cd pentbox-1.8/
@@ -34,7 +33,7 @@ root@kali:~# cd pentbox-1.8/
 
 ![](https://www.blackmoreops.com/wp-content/uploads/2016/05/Set-up-a-honeypot-in-Kali-Linux-blackMORE-Ops-3.jpg)
 
-使用下面的命令来运行 pentbox
+使用下面的命令来运行 pentbox：
 
 ```
 root@kali:~# ./pentbox.rb
@@ -44,15 +43,16 @@ root@kali:~# ./pentbox.rb
 
 ### 设置一个蜜罐
 
-使用选项 2 (Network Tools) 然后是选项 3 (Honeypot)。（这里的 2（Network Tools) 和 3(Honeypot) 就想不翻译了因为引用的图上也是英文）
+使用选项 2 (Network Tools) 然后是其中的选项 3 (Honeypot)。
 
 ![](https://www.blackmoreops.com/wp-content/uploads/2016/05/Set-up-a-honeypot-in-Kali-Linux-blackMORE-Ops-5.jpg)
 
-最后让我们执行第一次测试，选择选项 1 (Fast Auto Configuration) （同上理由）
+完成让我们执行首次测试，选择其中的选项 1 (Fast Auto Configuration) 
 
 ![](https://www.blackmoreops.com/wp-content/uploads/2016/05/Set-up-a-honeypot-in-Kali-Linux-blackMORE-Ops-6.jpg)
 
-这样就在 80 端口上开启了一个蜜罐。打开浏览器并且打开链接 http://192.168.160.128 (这里的 192.168.160.128 是你自己的 IP 地址.)(感觉这里少了一个‘）’就加上了）你应该会看到一个 Access denied 的报错（这里的 Access denied 没有翻译也是因为配图上是英文可能会更好些）
+这样就在 80 端口上开启了一个蜜罐。打开浏览器并且打开链接 http://192.168.160.128 (这里的 192.168.160.128 是你自己的 IP 地址。)你应该会看到一个 Access denied 的报错。
+
 
 ![](https://www.blackmoreops.com/wp-content/uploads/2016/05/Set-up-a-honeypot-in-Kali-Linux-blackMORE-Ops-7.jpg)
 
@@ -60,15 +60,15 @@ root@kali:~# ./pentbox.rb
 
 ![](https://www.blackmoreops.com/wp-content/uploads/2016/05/Set-up-a-honeypot-in-Kali-Linux-blackMORE-Ops-8.jpg)
 
-现在，如果你再次执行相同的步骤但是这次选择了选项 2 (Manual Configuration), 你应该看见更多的其它选项
+现在，如果你在同一步选择了选项 2 (Manual Configuration), 你应该看见更多的其它选项：
 
 ![](https://www.blackmoreops.com/wp-content/uploads/2016/05/Set-up-a-honeypot-in-Kali-Linux-blackMORE-Ops-9.jpg)
 
-执行相同的步骤但是这次选择 22 端口 (SSH 端口)。接着在你家里的路由器上做一个端口转发将外部的 22 端口转发到这台机器的 22 端口上。或者，把这个蜜罐设置在你的云端服务器的一个 VPS 上。
+执行相同的步骤但是这次选择 22 端口 (SSH 端口)。接着在你家里的路由器上做一个端口转发，将外部的 22 端口转发到这台机器的 22 端口上。或者，把这个蜜罐设置在你的云端服务器的一个 VPS 上。
 
-你将会被有如此多的机器在持续的扫描着 SSH 端口而震惊。 你知道接着会干什么么？ 你会试着攻破它们桀桀桀！
+你将会被有如此多的机器在持续不断地扫描着 SSH 端口而震惊。 你知道你接着应该干什么么？ 你应该黑回它们去！桀桀桀！
 
-如果时评是你的菜的话，这里有一个设置蜜罐的视频：
+如果视频是你的菜的话，这里有一个设置蜜罐的视频：
 
 <https://youtu.be/NufOMiktplA>
 
@@ -78,7 +78,7 @@ via: https://www.blackmoreops.com/2016/05/06/setup-honeypot-in-kali-linux/
 
 作者：[blackmoreops.com][a]
 译者：[wcnnbdk1](https://github.com/wcnnbdk1)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
