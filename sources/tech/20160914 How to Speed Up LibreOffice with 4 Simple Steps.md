@@ -31,53 +31,53 @@
 ### 2.启用 Libreoffice 的快速启动
 
 如果你的机器上有足够大的 RAM（随机存取存储器），比如 4GB 或者更大，你可以启用“系统托盘快速启动”，从而让内存中的部分 Libreoffice 在打开新文件时能够快速反应。
-You will definitely see improved performance in opening new documents after enabling this option.
+
 在启用这个选择以后，你会清楚的看到在打开新文件时它的性能有了很大的提高。
-1. Open the options dialog by navigating to “Tools -> Options.”
+
 1.通过点击“工具 -> 选择”来打开选择对话框
-2. In the sidebar under “LibreOffice”, select “Memory.”
+
 2. 在 “Libreoffice” 下面的侧边栏选择“内存。”
-3. Tick the “Enable Systray Quickstarter” checkbox.
+
 3. 勾选“系统托盘快速启动”复选框。
-4. Click “OK” to save the changes.
+
 4. 点击“确定”来保存修改。
 ![](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2016/08/speed-up-libreoffice-2.png)
 
-Once this option is enabled, you will see the LibreOffice icon in your system tray with options to open any type of document.
+
 一旦这个选项启用以后，你将会在你的系统托盘看到 Libreoffice 图标，可以选择来打开任何类型的文件。
-### 3. Disable Java Runtime
+
 ### 3. 关闭 Java 运行环境
-Another easy way to speed up the launch time and responsiveness of LibreOffice is to disable Java.
+
 另一个加快 Libreoffice 加载时间和响应能力的简单方法是关闭 Java。
-1. Open the Options dialog using “Alt + F12.”
-1. 通过“Alt + F12”打开选择对话框
-2. In the sidebar, select “LibreOffice,” then “Advanced.”
+
+1. 同时按下“Alt + F12”打开选择对话框
+
 2. 在侧边栏里，选择“Libreoffice”, 然后选择“高级”。
-3. Uncheck the “Use Java runtime environment” option.
+
 3. 取消勾选“使用 Java 运行环境”选项。
-4. Click “OK” to close the dialog.
+
 4. 点击“确定”来关闭对话框。
 ![](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2016/08/speed-up-libreoffice-3.png)
 
-If all you use is Writer and Calc, disabling Java will not stop you from working with your files as normal. But to use LibreOffice Base and some other special features, you may need to re-enable it again. In that case, you will get a popup asking if you wish to turn it back on.
+
 如果你只使用 Writer 和 Calc，那么关闭 Java 不会影响你正常使用，但如果你需要使用 Libreoffice Base 和一些其他的特性，那么你可能需要重新启用它。在那种情况，将会弹出一个框询问你是否希望再次打开它。
-### 4. Reduce Number of Undo Steps
+
 ### 4. 减少使用撤销步骤
-By default, LibreOffice allows you to undo up to 100 changes to a document. Most users do not need anywhere near that, so holding that many steps in memory is largely a waste of resources.
+
 默认情况下，Libreoffice 允许你最多撤销一个文件的 100 个改变。绝大多数用户不需要靠近那儿任何地方（使用撤销操作），所以多次使用撤销步骤是对内存资源的巨大浪费。
-I recommend that you reduce this number to 20 to free up memory for other things, but feel free to customise this part to suit your needs.
+
 我建议减少撤销步骤到 20 次以下来为其他东西释放内存，但是这部分可以自由选择来满足你的需求。
-1. Open the options dialog by navigating to “Tools -> Options.”
+
 1. 通过点击 “工具 -> 选择”来打开选择对话框。
-2. In the sidebar under “LibreOffice,” select “Memory.”
+
 2. 在 “Libreoffice” 下面的侧边栏，选择“内存”。
-3. Under “Undo” and change the number of steps to your preferred value.
+
 3. 在“撤销”下面把步骤数目改成最适合你的值。
-4. Click “OK” to save the changes.
+
 4. 点击“确定”来保存修改。
 ![](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2016/08/speed-up-libreoffice-5.png)
 
-If the tips provided helped you speed up the launch time of your LibreOffice Suite, let us know in the comments. Also, please share any other tips you may know for others to benefit as well.
+
 如果你这些技巧为加速你的 Libreoffice 套件的加载时间提供了帮助，请在评论里告诉我们。同样，请分享你知道的任何其他技巧来给其他人带来帮助。
 
 
@@ -86,7 +86,7 @@ If the tips provided helped you speed up the launch time of your LibreOffice Sui
 via: https://www.maketecheasier.com/speed-up-libreoffice/?utm_medium=feed&utm_source=feedpress.me&utm_campaign=Feed%3A+maketecheasier
 
 作者：[Ayo Isaiah][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ucasFL](https://github.com/ucasFL)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
