@@ -1,3 +1,4 @@
+LinuxBars翻译认领
 Server Monitoring with Shinken on Ubuntu 16.04
 =====
 
