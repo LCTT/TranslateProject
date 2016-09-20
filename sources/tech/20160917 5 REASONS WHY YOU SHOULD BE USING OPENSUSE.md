@@ -1,4 +1,4 @@
-
+@eriwoon 正在翻译本文
 
 # 5 REASONS WHY YOU SHOULD BE USING OPENSUSE
 
