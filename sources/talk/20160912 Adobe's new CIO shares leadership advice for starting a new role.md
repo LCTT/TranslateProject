@@ -31,12 +31,11 @@ Adobe 的新首席信息官（CIO）股份领导对于开始一个新的职位�
 
 作为一个新上任的领导者，我有一个全新的视角用以考虑组织的未来，而不会有挑战和障碍来干扰我。
 
-CIOs 所需要做的就是推动 IT 进化到下一代。
-When I meet my staff, I’m asking them what we want to be three to five years out so we can start positioning ourselves for that future. That means discussing the initiatives and priorities.
+CIOs 所需要做的就是推动 IT 进化到下一代。当我会见我的员工是，我问他们我们可以开始定位我们三到五年后的未来。这意味着开始讨论方案和当务之急的事。
 
-After that, it makes sense to bring the leadership team together so you can work to co-create the next generation of the organization – its mission, vision, modes of alignment, and operating norms.  If you start changing IT from the inside out, it will percolate into business and everything else you do.
+从那以后，它使领导小组团结在一起，所以我们能够共同来组建我们的下一代体系——它的使命、愿景、组织模式和操作规范。如果你开始从内而外的改变，那么它会渗透到业务和其他你所做的一切事情上。
 
-Through this whole process, I’ve been very open with people that this is not going to be a top-down directive. I have ideas on priorities and what we need to focus on, but we have to be in lockstep, working as a team and figuring out what we want to do jointly.
+贯穿整个过程，我对他人都表现一种开明的态度，这不是一个自上而下的命令。也许我对我们当前要做的事有一个自己的看法，但是我们必须使看法保持一致，我们是一个团队，我们应该共同找出我们需要做的事。
 
 --------------------------------------------------------------------------------
 
