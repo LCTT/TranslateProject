@@ -13,7 +13,21 @@ tar 命令语法如下：
 
 下面列举 tar 命令中一些常用的选项：
 
-![](http://www.linuxtechi.com/wp-content/uploads/2016/09/tar-command-options.jpg)
+```
+--delete : 从归档文件 (而非磁带) 中删除
+-r, --append : 将文件追加到归档文件中
+-t, --list : 列出归档文件中包含的内容
+--test-label : 测试归档文件卷标并退出
+-u, --update : 将已更新的文件追加到归档文件中
+-x, --extract, --get : 释放归档文件中文件及目录
+-C, --directory-DIR : 执行归档动作前变更工作目录到 DIR
+-f, --file=ARCHIVE : 指定 (将要创建或已存在的) 归档文件名
+-j, --bip2 : 对归档文件使用 bzip2 压缩
+-J, --xz : 对归档文件使用 xz 压缩
+-p, --preserve-permissions : 保留原文件的访问权限
+-v, --verbose : 显示命令整个执行过程
+-z, gzip : 对归档文件使用 gzip 压缩
+```
 
 注 : 在 tar 命令选项中的连接符 ( – ) 是可选的 (LCTT 译注：不用 - 也没事)。
 
