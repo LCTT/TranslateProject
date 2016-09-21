@@ -1,3 +1,4 @@
+翻译中 by runningwater
 NitroShare – Easily Share Files Between Multiple Operating Systems on Local Network
 ====
 
@@ -90,7 +91,7 @@ That’s it for now, if you have any issues regarding Nitroshare, you can share 
 via: http://linoxide.com/firewall/pfsense-setup-basic-configuration/
 
 作者：[Aaron Kili][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
