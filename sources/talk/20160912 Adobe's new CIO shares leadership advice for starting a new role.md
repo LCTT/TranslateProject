@@ -1,4 +1,4 @@
-Adobe 的新首席信息官（CIO）股份领导对于开始一个新的职位的忠告
+Adobe 的新任首席信息官（CIO）股份领导对于开始一个新职位的忠告
 ====
 
 ![](https://enterprisersproject.com/sites/default/files/styles/620x350/public/images/CIO_Leadership_3.png?itok=QWUGMw-V)
