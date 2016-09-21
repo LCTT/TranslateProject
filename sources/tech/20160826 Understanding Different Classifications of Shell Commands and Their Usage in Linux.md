@@ -5,12 +5,15 @@ Understanding Different Classifications of Shell Commands and Their Usage in Lin
 
 When it comes to gaining absolute control over your Linux system, then nothing comes close to the command line interface (CLI). In order to become a Linux power user, one must understand the [different types of shell commands][1] and the appropriate ways of using them from the terminal.
 当你打算真正操纵好你的 Linux 系统，没有什么更接近命令行界面。为了成为一个 Linux 高手，你必须能够理解【不同种类的 Shell 命令】【１】并且会在终端下正确的使用它们。
-In Linux, there are several types of commands, and for a new Linux user, knowing the meaning of different commands enables for efficient and precise usage. Therefore, in this article, we shall walk through the various classifications of shell commands iｎ
+In Linux, there are several types of commands, and for a new Linux user, knowing the meaning of different commands enables for efficient and precise usage. Therefore, in this article, we shall walk through the various classifications of shell commands inLinux.
+在 Linux 下，有一些不同种类的命令，对于一个 Linux 新手来说，知道不同命令的意思才能够高效和准确的使用它们。因此，在这篇文章里，我们将会分享 Linux 下不同分类的 Shell 命令。
 One important thing to note is that the command line interface is different from the shell, it only provides a means for you to access the shell. The shell, which is also programmable then makes it possible to communicate with the kernel using commands.
-
+需要注意一件非常重要的事：命令行界面和 Shell 是不同的，它只是为你提供一个访问 Shell 的方式。Shell 是可编程的，这使得它可以通过命令与内核进行交流。
 Different classifications of Linux commands fall under the following classifications:
+下面列出了 Linux 下不同种类的命令：
 
 ### 1. Program Executables (File System Commands)
+### 1. 程序可执行文件（文件系统命令）
 
 When you run a command, Linux searches through the directories stored in the $PATH environmental variable from left to right for the executable of that specific command.
 
