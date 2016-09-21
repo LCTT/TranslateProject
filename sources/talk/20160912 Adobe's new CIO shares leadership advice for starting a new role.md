@@ -1,9 +1,9 @@
-Adobe 的新首席信息官（CIO）股份领导对于开始一个新的角色的忠告
+Adobe 的新首席信息官（CIO）股份领导对于开始一个新的职位的忠告
 ====
 
 ![](https://enterprisersproject.com/sites/default/files/styles/620x350/public/images/CIO_Leadership_3.png?itok=QWUGMw-V)
 
-我现在几个月在一家十分受人尊敬的基于云的技术公司担任新的 CIO 一职。我的首要任务之一就是熟悉组织的人、文化和当务之急的事件。
+我目前的几个月在一家十分受人尊敬的基于云的技术公司担任新的 CIO 一职。我的首要任务之一就是熟悉组织的人、文化和当务之急的事件。
 
 作为这一目标的一部分，我访问了所有主要的网站。而在印度，上任不到两个月时，我被问道：“你打算做什么？你的计划是什么？” 我回答道，这个问题不会让经验丰富的 CIOs 感到吃惊，我现在仍然处于探索模式，我在做的主要是聆听和学习。
 
@@ -21,17 +21,18 @@ Adobe 的新首席信息官（CIO）股份领导对于开始一个新的角色�
 
 ### 了解你的产品和公司文化
 
-One of the things that surprised me coming into to Adobe was how broad our product portfolio is. We have a platform of solutions and services across three clouds – Adobe Creative Cloud, Document Cloud and Marketing Cloud – and a vast portfolio of products within each. You’ll never know how much opportunity your new company presents until you get to know your products and learn how to support all of them. At Adobe we use many of our digital media and digital marketing solutions as Customer Zero, so we have first-hand experiences to share with our customers
+来到 Adobe 后最让我震惊的是我们的产品组合是如此的广泛。我们有一个横贯三个云的提供解决方案和服务的平台——Adobe 创新云、文档云和营销云——和对每一个产品的丰富的组合。除非你去了解你的产品和学会如何为他们提供支持，否则你永远也不知道你的新公司有着多么多的机会。在 Adobe 我们给我们的零号客户使用许多数字媒体和数字市场解决方案，所以我们可以将我们的第一手经验分享给我们的客户。
 
-### Get to know customers
+### 了解客户
 
-Very early on, I started getting requests to meet with customers. Meeting with customers is a great way to jump-start your thinking into the future of the IT organization, which includes the different types of technologies, customers, and consumers we could have going forward.
+从很早开始，我们就收到客户的会面请求。与客户会面是一种很好的方式来启发你对 IT 机构未来的的思考，包括各种我们可以改进的地方，如技术、客户和消费者
 
-### Plan for the future
+### 对未来的计划
 
-As a new leader, I have a fresh perspective and can think about the future of the organization without getting distracted by challenges or obstacles.
+作为一个新上任的领导者，我有一个全新的视角用以考虑组织的未来，而不会有挑战和障碍来干扰我。
 
-What CIOs need to do is jump-start IT into its next generation. When I meet my staff, I’m asking them what we want to be three to five years out so we can start positioning ourselves for that future. That means discussing the initiatives and priorities.
+CIOs 所需要做的就是推动 IT 进化到下一代。
+When I meet my staff, I’m asking them what we want to be three to five years out so we can start positioning ourselves for that future. That means discussing the initiatives and priorities.
 
 After that, it makes sense to bring the leadership team together so you can work to co-create the next generation of the organization – its mission, vision, modes of alignment, and operating norms.  If you start changing IT from the inside out, it will percolate into business and everything else you do.
 
