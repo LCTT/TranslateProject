@@ -1,6 +1,3 @@
-ezio is translating
-
-
 Part 4 - LXD 2.0: Resource control
 ======================================
 
