@@ -139,11 +139,13 @@ until is a shell keyword
 ```
 
 Suggested Read: 10 Useful Linux Chaining Operators with Practical Examples
-推荐阅读：
+推荐阅读：10 个有用的 Linux 链接操作实例
 
 ### 4. Linux Shell Functions
+### 4. Linux shell 函数
 
 A shell function is a group of commands that are executed collectively within the current shell. Functions help to carry out a specific task in a shell script. The conventional form of writing shell functions in a script is:
+一个 shell 函数是一群在当前 shell 内一起执行的命令。函数有利于在 shell 脚本中实现特殊任务。在 shell 脚本中写 shell 函数的传统形式是下面这样：
 
 ```
 function_name() {
@@ -164,6 +166,7 @@ command2
 ```
 
 Let’s take a look at how to write shell functions in a script named shell_functions.sh.
+让我们看一看如何在名为 shell_functions.sh 的脚本中写 shell 函数。
 
 ```
 #!/bin/bash 
@@ -177,8 +180,10 @@ upgrade_system
 ```
 
 Instead of executing the two commands: sudo apt update and sudo apt dist-upgrade from the command line, we have written a simple shell function to execute the two commands as a single command, upgrade_system within a script.
+并不是通过命令行执行两条命令：sudo apt update 和 sudo apt dist-upgrade，实际上我们已经写好了一个 shell 函数来像执行一条单一命令一样来执行两条命令，从而在一个脚本内升级系统。
 
 Save the file and thereafter, make the script executable. Finally run it as below:
+保存文件，然后使脚本可执行。最后像下面这样运行 shell 函数：
 
 ```
 $ chmod +x shell_functions.sh
@@ -188,10 +193,13 @@ $ ./shell_functions.sh
 ![](http://www.tecmint.com/wp-content/uploads/2016/08/Linux-Shell-Functions-Script.png)
 
 ### 5. Linux Shell Built-in Commands
+### 5. Linux Shell 内置命令
 
 These are Linux commands that built into the shell, thus you cannot find them within the file system. They include pwd, cd, bg, alias, history, type, source, read, exit and many others.
+这些是在 shell 中内置的 Linux 命令，所以你无法在文件系统中找到它们。这些命令包括 pwd，cd，bg，alias，history，type，source，read，exit 等。
 
 You can list or check Linux built-in commands using type command as shown:
+你可以通过下面展示的类型命令来列出或检查 Linux 内置命令：
 
 ```
 $ type pwd
@@ -207,23 +215,27 @@ history is a shell builtin
 ```
 
 Learn about some Linux built-in Commands usage:
+学习一些 Linux 内置命令用法：
 
 - [15 ‘pwd’ Command Examples in Linux][2]
 - [15 ‘cd’ Command Examples in Linux][3]
 - [Learn The Power of Linux ‘history’ Command][4]
 
 ### Conclusion
+### 结论
 
 As a Linux user, it is always important to know the type of command you are running. I believe, with the precise and simple-to-understand explanation above including a few relevant illustrations, you probably have a good understanding of the [various categories of Linux commands][5].
+作为一个 Linux 用户，知道你所运行的命令类型是很重要的。我相信，通过上面明确、简单并且易于理解的解释，包括一些相关的说明，你可能对【不同种类的 Linux 命令】有了很好的理解。
 
 You can as well get in tough through the comment section below for any questions or supplementary ideas that you would like to offer us.
+你也可以在下面的评论区提任何问题或补充意见，从而和我们取得联系。
 
 --------------------------------------------------------------------------------
 
 via: http://linoxide.com/firewall/pfsense-setup-basic-configuration/
 
 作者：[Aaron Kili ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ucasFL](https://github.com/ucasFL)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
