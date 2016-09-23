@@ -58,7 +58,7 @@ lrwxrwxrwx  1 root root       6 Jul 31 16:19 bzfgrep -> bzgrep*
 -rwxr-xr-x  1 root root    3642 May 20  2015 bzgrep*
 ```
 
-### 2. Linux 的别名
+### 2. Linux 别名
 
 
 这些是用户定义的命令，它们是通过内置命令的别名壳创建的，其中包含其他一些选择和参数的 shell 命令。这个想法就是基本上使用新颖、简短的名字来命名冗长的命令。
