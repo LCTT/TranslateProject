@@ -103,7 +103,7 @@ $ alias -p | grep 'up'
 $ source ~/.bashrc
 ```
 
-### 3. Linus Shell 保留字
+### 3. Linux Shell 保留字
 
 
 在 shell 程序设计中，if，then，fi，for，while，case，esac，else，until 以及其他更多的字都是 shell 保留字。正如描述所暗示的，它们在 shell 中有特殊的含义。
