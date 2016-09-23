@@ -69,15 +69,17 @@ lrwxrwxrwx  1 root root       6 Jul 31 16:19 bzfgrep -> bzgrep*
 ### 2. Linux 的别名
 
 These are user defined commands, they are created using the alias shell built-in command, and contain other shell commands with some options and arguments. The ideas is to basically use new and short names for lengthy commands.
-这些是命令是用户定义的，
+这些是用户定义的命令，它们是通过内置命令的别名壳创建的，其中包含其他一些选择和参数的 shell 命令。这个想法就是基本上使用新颖、简短的名字来命名冗长的命令。
 
 The syntax for creating an alias is as follows:
+创建一个别名的语法像下面这样：
 
 ```
 $ alias newcommand='command -options'
 ```
 
 To list all aliases on your system, issue the command below:
+通过下面的命令，可以列举系统中的所有别名：
 
 ```
 $ alias -p
@@ -92,6 +94,7 @@ alias ls='ls --color=auto'
 ```
 
 To create a new alias in Linux, go through some below examples.
+要在 Linux 中创建一个新的别名，仔细阅读下面的例子。
 
 ```
 $ alias update='sudo apt update'
@@ -102,20 +105,25 @@ $ alias -p | grep 'up'
 ![](http://www.tecmint.com/wp-content/uploads/2016/08/Create-Aliase-in-Linux.png)
 
 However, the aliases we have created above only work temporarily, when the system is restarted, they will not work after the next boot. You can set permanent aliases in your `.bashrc` file as shown below.
+然而，上面这些我们创建的别名只能暂时的工作，当经过下一次引导，系统重启以后它们不再工作。你可以像下面展示的这样在 '.bashrc' 文件中设置永久别名。
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/08/Set-Linux-Aliases-Permanent.png)
 
 After adding them, run the command below to active.
+添加以后，运行下面的命令来激活。
 
 ```
 $ source ~/.bashrc
 ```
 
 ### 3. Linux Shell Reserved Words
+### 3. Linus Shell 保留字
 
 In shell programming, words such as if, then, fi, for, while, case, esac, else, until and many others are shell reserved words. As the description implies, they have specialized meaning to the shell.
+在 shell 程序设计中，if，then，fi，for，while，case，esac，else，until 以及其他更多的字都是 shell 保留字。正如描述所暗示的，它们在 shell 中有特殊的含义。
 
 You can list out all Linux shell keywords using type command as shown:
+你可以通过使用下面展示的类型命令来列出所有的 shell 关键字：
 
 ```
 $ type if then fi for while case esac else until
@@ -131,6 +139,7 @@ until is a shell keyword
 ```
 
 Suggested Read: 10 Useful Linux Chaining Operators with Practical Examples
+推荐阅读：
 
 ### 4. Linux Shell Functions
 
