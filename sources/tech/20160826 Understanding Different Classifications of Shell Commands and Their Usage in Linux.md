@@ -16,23 +16,25 @@ Different classifications of Linux commands fall under the following classificat
 ### 1. 程序可执行文件（文件系统命令）
 
 When you run a command, Linux searches through the directories stored in the $PATH environmental variable from left to right for the executable of that specific command.
-
+当你执行一条命令的时候，Linux 通过从左到右搜索存储在 $PATH 环境变量中的目录来找到这条命令的可执行文件。
 You can view the directories in the $PATH as follows:
-
+你可以像下面这样查看存储在 $PATH 中的目录
 ```
 $ echo $PATH
 /home/aaronkilik/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 ```
 
 In the above order, the directory /home/aaronkilik/bin will be searched first followed by /usr/local/sbin and so on, the order is significant in the search process.
-
+在上面的命令中，目录 /home/aaronkilik/bin 将会被首先搜索，紧跟着是 /usr/local/sbin，然后一直接着下去。在搜索进程中，搜索顺序是至关重要的。
 Examples of file system commands in /usr/bin directory:
+比如在 /usr/bin 目录中的文件系统命令：
 
 ```
 $ ll /bin/
 ```
 
 Sample Output
+样本输出
 
 ```
 total 16284
@@ -64,8 +66,10 @@ lrwxrwxrwx  1 root root       6 Jul 31 16:19 bzfgrep -> bzgrep*
 ```
 
 ### 2. Linux Aliases
+### 2. Linux 的别名
 
 These are user defined commands, they are created using the alias shell built-in command, and contain other shell commands with some options and arguments. The ideas is to basically use new and short names for lengthy commands.
+这些是命令是用户定义的，
 
 The syntax for creating an alias is as follows:
 
