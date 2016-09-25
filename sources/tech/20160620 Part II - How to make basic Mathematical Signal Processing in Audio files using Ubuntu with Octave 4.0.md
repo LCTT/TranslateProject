@@ -1,9 +1,10 @@
 translating by ucasFL
 
 # Scientific Audio Processing, Part II - How to make basic Mathematical Signal Processing in Audio files using Ubuntu with Octave 4.0
-
+# 科学音频处理，第二节　－　如何用 Ubuntu 上的 Octave 4.0 软件对音频文件进行基本数学信号处理
 
 In the [previous tutorial](https://www.howtoforge.com/tutorial/how-to-read-and-write-audio-files-with-octave-4-in-ubuntu/), we saw the simple steps to read, write and playback audio files. We even saw how we can  synthesize  an audio file from a periodic function such as the cosine function. In this tutorial, we will see how we can do additions to signals, multiplying signals (modulation), and applying some basic mathematical functions to see their effect on the original signal.
+在过去的指导教程中【previous tutorial】(https://www.howtoforge.com/tutorial/how-to-read-and-write-audio-files-with-octave-4-in-ubuntu/)，　我们看到了读，写以及重放音频文件的简单步骤，我们甚至看到如何从一个周期函数比如余弦函数合成一个音频文件。在这个指导教程中，我们将会看到如何
 
 ### Adding Signals
 
