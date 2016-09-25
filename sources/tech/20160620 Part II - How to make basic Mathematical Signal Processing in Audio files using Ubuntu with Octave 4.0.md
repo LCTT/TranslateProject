@@ -1,22 +1,21 @@
 translating by ucasFL
 
-# Scientific Audio Processing, Part II - How to make basic Mathematical Signal Processing in Audio files using Ubuntu with Octave 4.0
+
 # 科学音频处理，第二节　－　如何用 Ubuntu 上的 Octave 4.0 软件对音频文件进行基本数学信号处理
 
-In the [previous tutorial](https://www.howtoforge.com/tutorial/how-to-read-and-write-audio-files-with-octave-4-in-ubuntu/), we saw the simple steps to read, write and playback audio files. We even saw how we can  synthesize  an audio file from a periodic function such as the cosine function. In this tutorial, we will see how we can do additions to signals, multiplying signals (modulation), and applying some basic mathematical functions to see their effect on the original signal.
-在过去的指导教程中【previous tutorial】(https://www.howtoforge.com/tutorial/how-to-read-and-write-audio-files-with-octave-4-in-ubuntu/)，　我们看到了读，写以及重放音频文件的简单步骤，我们甚至看到如何从一个周期函数比如余弦函数合成一个音频文件。在这个指导教程中，我们将会看到如何
+在过去的指导教程中【previous tutorial】(https://www.howtoforge.com/tutorial/how-to-read-and-write-audio-files-with-octave-4-in-ubuntu/)，　我们看到了读，写以及重放音频文件的简单步骤，我们甚至看到如何从一个周期函数比如余弦函数合成一个音频文件。在这个指导教程中【tutorial】，我们将会看到如何对信号进行相加和调整，并看一看基本数学函数它们对原始信号的影响。
 
-### Adding Signals
+###　信号相加
 
-The sum of two signals S1(t) and S2(t) results in a signal R(t) whose value at any instant of time is the sum of the added signal values at that moment. Just like this:
+两个信号 S1（t） 和 S2（t） 相加形成一个新的信号 R(t), 这个信号在任何瞬间的值等于构成它的两个信号在那个时刻的值之和。就像下面这样：
 
 ```
 R(t) = S1(t) + S2(t)
 ```
 
-We will recreate the sum of two signals in Octave and see the effect graphically. First, we will generate two signals of different frequencies to see the signal resulting from the sum.
+我们将用 Octave 重新产生两个信号的和并通过图表看达到的效果。首先，我们生成两个不同频率的信号，看一看它们的和信号是什么样的。
 
-#### Step 1: Creating two signals of different frequencies (ogg files)
+#### 第一步：产生两个不同频率的信号（oog 文件）
 
 ```
 >> sig1='cos440.ogg';                  %creating the audio file @440 Hz
@@ -29,70 +28,70 @@ We will recreate the sum of two signals in Octave and see the effect graphically
 >> audiowrite(sig2,cos(w2),fs);
 ```
 
-Here we will plot both signals.
+然后我们绘制出两个信号的图像。
 
-Plot of Signal 1 (440 Hz)
+信号 1 的图像（４４０ 赫兹）
 
 ```
 >> [y1, fs] = audioread(sig1);
 >> plot(y1)
 ```
 
-[![Plot of signal 1](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/plotsignal1.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/plotsignal1.png)
+[![信号 1 的图像](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/plotsignal1.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/plotsignal1.png)
 
-Plot of Signal 2 (880 Hz)
+信号 2 的图像（８８０ 赫兹）
 
 ```
 >> [y2, fs] = audioread(sig2);
 >> plot(y2)
 ```
 
-[![Plot of signal 2](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/plotsignal2.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/plotsignal2.png)
+[![信号 2 的图像](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/plotsignal2.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/plotsignal2.png)
 
-#### Step 2: Adding two signals
+#### 第二部：把两个信号相加
 
-Now we perform the sum of the two signals created in the previous step.
+现在我们展示一下前面步骤中产生的两个信号的和。
 
 ```
 >> sumres=y1+y2;
 >> plot(sumres)
 ```
 
-Plot of Resulting Signal
+和信号的图像
 
-[![Plot Signal sum.](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/plotsum.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/plotsum.png)
+[![和信号的图像](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/plotsum.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/plotsum.png)
 
-The Octaver Effect
+八度器（Octaver)的效果
 
-In the Octaver, the sound provided by this effect is characteristic because it emulates the note being played by the musician, either in a lower or higher octave (according as it has been programmed), coupled with sound the original note, ie two notes appear identically sounding.
+在八度器（Octaver)中，八度器的效果产生的声音是典型化的，因为它可以仿真音乐家弹奏的低八度或者高八度音符（取决于内部程序设计），仿真音符和原始音符成对，也就是两个音符发出相同的声音。
 
-#### Step 3: Adding two real signals (example with two musical tracks)
+#### 第三步：把两个真实的信号相加（比如两首音乐歌曲）
 
-For this purpose, we will use two tracks of Gregorian Chants (voice sampling).
+为了实现这个目的，我们使用格列高利圣咏（Gregorian Chants)中的两首歌曲（声音采样）。
 
-Avemaria Track
+圣母颂曲（Avemaria Track)
 
-First, will read and plot an Avemaria track:
+首先，我们看一下圣母颂曲并绘出它的图像：
 
 ```
 >> [y1,fs]=audioread('avemaria_.ogg');
 >> plot(y1)
 ```
 
-[![Avemaria track](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/avemaria.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/avemaria.png)
+[![圣母歌曲](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/avemaria.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/avemaria.png)
 
-Hymnus Track
+赞美诗曲（Hymnus Track)
 
-Now, will read and plot an hymnus track
+现在我们看一下赞美诗曲并绘出它的图像
 
 ```
 >> [y2,fs]=audioread('hymnus.ogg');
 >> plot(y2)
 ```
 
-[![Hymnus track](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/hymnus.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/hymnus.png)
+[![赞美诗曲](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/hymnus.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/hymnus.png)
 
-Avemaria + Hymnus Track
+圣母颂曲 + 赞美诗曲
 
 ```
 >> y='avehymnus.ogg';
@@ -101,11 +100,11 @@ Avemaria + Hymnus Track
 >> plot(y)
 ```
 
-[![Avearia + hymnus track](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/avehymnus.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/avehymnus.png)The result, from the point of view of audio, is that both tracks will sound mixed.
+[![圣母歌曲 + 赞美诗曲](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/avehymnus.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/avehymnus.png)结果，从音频的角度来看，两个声音信号混合在了一起。 
 
-### Product of two Signals
+### 两个信号的乘
 
-To multiply two signals, we have to use an analogous way to the sum. Let´s use the same files created previously.
+对于求两个信号的乘，我们可以使用类似求它们和的方法。我们使用之前生成的相同文件。
 
 ```
 R(t) = S1(t) * S2(t)
@@ -126,17 +125,18 @@ R(t) = S1(t) * S2(t)
 >> plot(yprod);                        %plotting the product
 ```
 
-Note: we have to use the operand  '.*' because this product is made, value to value, on the argument files. For more information, please refer to the manual of product operations with matrices of Octave.
 
-#### Plot of Resulting Product Signal
+注意：我们必须使用操作符 ‘.*’，因为在参数文件中，这个乘积是值与值相乘。更多信息，请参考【八度矩阵操作产品手册】。
 
-[![Plotted product](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/plotprod.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/plotprod.png)
+#### 乘积生成信号的图像
 
-#### Graphical effect of multiplying two signals with a big fundamental frequency difference (Principles of Modulation)
+[![乘积信号的图像](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/plotprod.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/plotprod.png)
 
-##### Step 1:
+#### 两个基本频率相差很大的信号相乘后的图表效果（调制原理
 
-Create an audio frequency signal with a 220Hz frequency.
+##### 第一步：
+
+生成两个频率为 220 赫兹的声音信号。
 
 ```
 >> fs=44100;
@@ -146,32 +146,32 @@ Create an audio frequency signal with a 220Hz frequency.
 >> plot(y1);
 ```
 
-[![Carrier](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/carrier.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/carrier.png)
+[![载波](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/carrier.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/carrier.png)
 
-##### Step 2:
+##### 第二步：
 
-Create a higher frequency modulating signal of 22000 Hz.
+生成一个 22000 赫兹的高频调制信号。
 
 ```
 >> y2=cos(100*w);
 >> plot(y2);
 ```
 
-[![Modulating](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/modulating.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/modulating.png)
+[![调制中](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/modulating.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/modulating.png)
 
-##### Step 3:
+##### 第三步：
 
-Multiplying and plotting the two signals.
+把两个信号相乘并绘出图像。
 
 ```
 >> plot(y1.*y2);
 ```
 
-[![Modulated signal](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/modulated.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/modulated.png)
+[![调制后的信号](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/modulated.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/modulated.png)
 
-### Multiplying a signal by a scalar
+### 一个信号和一个标量相乘
 
-The effect of multiplying a function by a scalar is equivalent to modify their scope and, in some cases, the sign of the phase. Given a scalar K, the product of a function F(t) by the scalar is defined as:
+一个函数和一个标量相乘的效果等于更改它的值域，在某些情况下，更改的是相标志。给定一个标量 K ，一个函数 F（t） 和这个标量相乘定义为：
 
 ```
 R(t) = K*F(t)
@@ -188,7 +188,7 @@ R(t) = K*F(t)
 >> audiowrite(res3, K3*y, fs);
 ```
 
-#### Plot of the Original Signal
+#### 原始信号的图像
 
 ```
 >> plot(y)
@@ -196,40 +196,40 @@ R(t) = K*F(t)
 
 [![](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/originalsignal.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/originalsignal.png)
 
-Plot of a Signal reduced in amplitude by 0.2
+信号振幅减为原始信号振幅的 0.2 倍后的图像
 
 ```
 >> plot(res1)
 ```
 
-[![Cosine low](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/coslow.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/coslow.png)
+[![低余弦](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/coslow.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/coslow.png)
 
-Plot of a Signal reduced in amplitude by 0.5
+信号振幅减为原始振幅的 0.5 倍后的图像
 
 ```
 >> plot(res2)
 ```
 
-[![Cosine high](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/coshigh.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/coshigh.png)
+[![高余弦](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/coshigh.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/coshigh.png)
 
-Plot of a Signal with inverted phase
+倒相后的信号图像
 
 ```
 >> plot(res3)
 ```
 
-[![Cosine inverted](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/cosinverted.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/cosinverted.png)
+[![倒相余弦](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/cosinverted.png)](https://www.howtoforge.com/images/octave-audio-signal-processing-ubuntu/big/cosinverted.png)
 
-### Conclusion
+### 结论
 
-The basic mathematical operations, such as algebraic sum, product, and product of a function by a scalar are the backbone of more advanced operations among which are, spectrum analysis, modulation in amplitude, angular modulation, etc. In the next tutorial, we will see how to make such operations and their effects on audio signals.
+基本数学运算比如代数和、乘，以及函数与常量相乘是更多高级运算比如谱分析、振幅调制，角调制等的支柱和基础。在下一个教程中，我们来看一看如何进行这样的运算以及它们对声音文件产生的效果。
 
 --------------------------------------------------------------------------------
 
 via: https://www.howtoforge.com/tutorial/octave-audio-signal-processing-ubuntu/
 
 作者：[David Duarte][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ucasFL](https://github.com/ucasFL)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
