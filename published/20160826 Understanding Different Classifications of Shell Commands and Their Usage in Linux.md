@@ -1,33 +1,34 @@
+理解 Linux 下 Shell 命令的不同分类及它们的用法
+====================
 
-理解 Linux 下不同分类的 Shell 命令及它们的用法
-====
+当你打算真正操纵好你的 Linux 系统，没有什么能比命令行界面更让你做到这一点。为了成为一个 Linux 高手，你必须能够理解 [Shell 命令的不同类型][1]，并且会在终端下正确的使用它们。
 
-当你打算真正操纵好你的 Linux 系统，没有什么更接近命令行界面。为了成为一个 Linux 高手，你必须能够理解【不同种类的 Shell 命令】【１】并且会在终端下正确的使用它们。
+在 Linux 下，命令有几种类型，对于一个 Linux 新手来说，知道不同命令的意思才能够高效和准确的使用它们。因此，在这篇文章里，我们将会遍及各种不同分类的 Linux Shell 命令。
 
-在 Linux 下，有一些不同种类的命令，对于一个 Linux 新手来说，知道不同命令的意思才能够高效和准确的使用它们。因此，在这篇文章里，我们将会分享 Linux 下不同分类的 Shell 命令。
+需要注意一件非常重要的事：命令行界面和 Shell 是不同的，命令行界面只是为你提供一个访问 Shell 的方式。而 Shell ，它是可编程的，这使得它可以通过命令与内核进行交流。
 
-需要注意一件非常重要的事：命令行界面和 Shell 是不同的，它只是为你提供一个访问 Shell 的方式。Shell 是可编程的，这使得它可以通过命令与内核进行交流。
+下面列出了 Linux 下命令的不同种类：
 
-下面列出了 Linux 下不同种类的命令：
+### 1. 程序可执行文件（文件系统 中的命令）
 
-### 1. 程序可执行文件（文件系统命令）
+当你执行一条命令的时候，Linux 通过从左到右搜索存储在 `$PATH` 环境变量中的目录来找到这条命令的可执行文件。
 
-当你执行一条命令的时候，Linux 通过从左到右搜索存储在 $PATH 环境变量中的目录来找到这条命令的可执行文件。
+你可以像下面这样查看存储在 `$PATH` 中的目录：
 
-你可以像下面这样查看存储在 $PATH 中的目录
 ```
 $ echo $PATH
 /home/aaronkilik/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
 ```
 
-在上面的命令中，目录 /home/aaronkilik/bin 将会被首先搜索，紧跟着是 /usr/local/sbin，然后一直接着下去。在搜索进程中，搜索顺序是至关重要的。
-比如在 /usr/bin 目录中的文件系统命令：
+在上面的命令中，目录 `/home/aaronkilik/bin` 将会被首先搜索，紧跟着是 `/usr/local/sbin`，然后一直接着下去。在搜索过程中，搜索顺序是至关重要的。
+
+比如在 `/usr/bin` 目录里的文件系统中的命令：
 
 ```
 $ ll /bin/
 ```
 
-样本输出
+样本输出：
 
 ```
 total 16284
@@ -60,8 +61,7 @@ lrwxrwxrwx  1 root root       6 Jul 31 16:19 bzfgrep -> bzgrep*
 
 ### 2. Linux 别名
 
-
-这些是用户定义的命令，它们是通过内置命令的别名壳创建的，其中包含其他一些选择和参数的 shell 命令。这个想法就是基本上使用新颖、简短的名字来命名冗长的命令。
+这些是用户定义的命令，它们是通过 shell 内置命令 `alias` 创建的，其中包含其它一些带有选项和参数的 shell 命令。这个意图主要是使用新颖、简短的名字来替代冗长的命令。
 
 创建一个别名的语法像下面这样：
 
@@ -93,11 +93,11 @@ $ alias -p | grep 'up'
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/08/Create-Aliase-in-Linux.png)
 
-然而，上面这些我们创建的别名只能暂时的工作，当经过下一次引导，系统重启以后它们不再工作。你可以像下面展示的这样在 '.bashrc' 文件中设置永久别名。
+然而，上面这些我们创建的别名只能暂时的工作，当经过下一次系统启动后它们不再工作。你可以像下面展示的这样在 '.bashrc' 文件中设置永久别名。
 
 ![](http://www.tecmint.com/wp-content/uploads/2016/08/Set-Linux-Aliases-Permanent.png)
 
-添加以后，运行下面的命令来激活。
+添加以后，运行下面的命令来激活：
 
 ```
 $ source ~/.bashrc
@@ -105,10 +105,9 @@ $ source ~/.bashrc
 
 ### 3. Linux Shell 保留字
 
+在 shell 程序设计中，`if`、`then`、`fi`、`for`、`while`、`case`、`esac`、`else`、`until` 以及其他更多的字都是 shell 保留字。正如描述所暗示的，它们在 shell 中有特殊的含义。
 
-在 shell 程序设计中，if，then，fi，for，while，case，esac，else，until 以及其他更多的字都是 shell 保留字。正如描述所暗示的，它们在 shell 中有特殊的含义。
-
-你可以通过使用下面展示的类型命令来列出所有的 shell 关键字：
+你可以通过使用下面展示的 `type` 命令来列出所有的 shell 关键字：
 
 ```
 $ type if then fi for while case esac else until
@@ -123,8 +122,6 @@ else is a shell keyword
 until is a shell keyword
 ```
 
-推荐阅读：10 个有用的 Linux 链接操作实例
-
 ### 4. Linux shell 函数
 
 一个 shell 函数是一组在当前 shell 内一起执行的命令。函数有利于在 shell 脚本中实现特殊任务。在 shell 脚本中写 shell 函数的传统形式是下面这样：
@@ -133,7 +130,7 @@ until is a shell keyword
 function_name() {
 command1
 command2
-…….
+......
 }
 ```
 
@@ -143,12 +140,11 @@ command2
 function function_name {
 command1
 command2
-…….
+......
 }
 ```
 
-
-让我们看一看如何在名为 shell_functions.sh 的脚本中写 shell 函数。
+让我们看一看如何在一个名为 shell_functions.sh 的脚本中写 shell 函数。
 
 ```
 #!/bin/bash 
@@ -161,7 +157,7 @@ sudo apt dist-upgrade;
 upgrade_system
 ```
 
-并不是通过命令行执行两条命令：sudo apt update 和 sudo apt dist-upgrade，实际上我们已经写好了一个 shell 函数来像执行一条单一命令一样来执行两条命令，从而在一个脚本内升级系统。
+取代通过命令行执行两条命令：`sudo apt update` 和 `sudo apt dist-upgrade`，我们在脚本内写了一个像执行一条单一命令一样来执行两条命令的  shell 函数 upgrade_system。
 
 保存文件，然后使脚本可执行。最后像下面这样运行 shell 函数：
 
@@ -174,9 +170,9 @@ $ ./shell_functions.sh
 
 ### 5. Linux Shell 内置命令
 
-这些是在 shell 中内置的 Linux 命令，所以你无法在文件系统中找到它们。这些命令包括 pwd，cd，bg，alias，history，type，source，read，exit 等。
+这些是在 shell 中内置的 Linux 命令，所以你无法在文件系统中找到它们。这些命令包括 `pwd`、`cd`、`bg`、`alias`、`history`、`type`、`source`、`read`、`exit` 等。
 
-你可以通过下面展示的类型命令来列出或检查 Linux 内置命令：
+你可以通过下面展示的 `type` 命令来列出或检查 Linux 内置命令：
 
 ```
 $ type pwd
@@ -193,23 +189,23 @@ history is a shell builtin
 
 学习一些 Linux 内置命令用法：
 
-- [15 ‘pwd’ Command Examples in Linux][2]
-- [15 ‘cd’ Command Examples in Linux][3]
-- [Learn The Power of Linux ‘history’ Command][4]
+- [Linux 下 15 个 pwd 命令例子][2]
+- [Linux 下 15 个 cd 命令例子][3]
+- [了解 Linux 下 history 命令的威力][4]
 
 ### 结论
 
-作为一个 Linux 用户，知道你所运行的命令类型是很重要的。我相信，通过上面明确、简单并且易于理解的解释，包括一些相关的说明，你可能对【不同种类的 Linux 命令】有了很好的理解。
+作为一个 Linux 用户，知道你所运行的命令类型是很重要的。我相信，通过上面明确、简单并且易于理解的解释，包括一些相关的说明，你可能对 “[Linux 命令的不同种类][1]”有了很好的理解。
 
 你也可以在下面的评论区提任何问题或补充意见，从而和我们取得联系。
 
 --------------------------------------------------------------------------------
 
-via: http://linoxide.com/firewall/pfsense-setup-basic-configuration/
+via: http://www.tecmint.com/understanding-different-linux-shell-commands-usage/
 
-作者：[Aaron Kili ][a]
+作者：[Aaron Kili][a]
 译者：[ucasFL](https://github.com/ucasFL)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
