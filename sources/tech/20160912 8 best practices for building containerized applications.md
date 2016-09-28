@@ -1,3 +1,4 @@
+LinuxBars 翻译中
 8 best practices for building containerized applications
 ====
 
