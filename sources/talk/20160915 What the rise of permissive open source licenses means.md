@@ -1,9 +1,9 @@
-What the rise of permissive open source licenses means
+宽松开源许可证的崛起意味着什么
 ====
 
-Why restrictive licenses such as the GNU GPL are steadily falling out of favor.
+为什么像 GNU GPL 这样的限制性许可证越来越不受青睐。
 
-"If you use any open source software, you have to make the rest of your software open source." That's what former Microsoft CEO Steve Ballmer said back in 2001, and while his statement was never true, it must have spread some FUD (fear, uncertainty and doubt) about free software. Probably that was the intention.
+“如果你使用了任何开源软件， 你必须把你软件的其他部分也开源。” 这是前微软 CEO Steve Ballmer 在 2001 年说的，尽管他说得不对，但还是给自由软件引起了恐惧，不确定性和怀疑。很可能他是故意的。
 
 This FUD about open source software is mainly about open source licensing. There are many different licenses, some more restrictive (some people use the term "protective") than others. Restrictive licenses such as the GNU General Public License (GPL) use the concept of copyleft, which grants people the right to freely distribute copies and modified versions of a piece of software as long as the same rights are preserved in derivative works. The GPL (v3) is used by open source projects such as bash and GIMP. There's also the Affero GPL, which provides copyleft to software that is offered over a network (for example as a web service.)
 
