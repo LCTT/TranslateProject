@@ -1,3 +1,5 @@
+translating by theArcticOcean.
+
 Part III - How to apply Advanced Mathematical Processing Effects on Audio files with Octave 4.0 on Ubuntu
 =====
 
