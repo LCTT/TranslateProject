@@ -166,7 +166,6 @@ chmod +x create-cluster.sh
 
 ### 创建集群
 
-As the name suggests, we’ll use the script to create the cluster. By default, the script will create a cluster with a single master and two workers. If you want to configure the number of workers, you can do that by setting the WORKERS environment variable.
 如文件名所示，我们可以用它来创建集群。默认情况下这个脚本会创建一个 master 和两个 worker，如果你想修改 worker 个数，可以设置环境变量 WORKERS。
 
 现在就来创建集群吧。
