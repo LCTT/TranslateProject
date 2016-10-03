@@ -1,17 +1,23 @@
 Translating by Yinr
 
 The cost of small modules
+小模块的成本
 ====
 
 About a year ago I was refactoring a large JavaScript codebase into smaller modules, when I discovered a depressing fact about Browserify and Webpack:
+大约一年之前，我在将一个大型 JavaScript 代码库重构为小模块时发现了 Browserify 和 Webpack 中一个令人沮丧的事实：
 
 > “The more I modularize my code, the bigger it gets. ”– Nolan Lawson
+> “代码越模块化，代码体积就越大。”- Nolan Lawson
 
 Later on, Sam Saccone published some excellent research on [Tumblr](https://docs.google.com/document/d/1E2w0UQ4RhId5cMYsDcdcNwsgL0gP_S6SDv27yi1mCEY/edit) and [Imgur](https://github.com/perfs/audits/issues/1)‘s page load performance, in which he noted:
+过了一段时间，Sam Saccone 发布了一些关于 [Tumblr](https://docs.google.com/document/d/1E2w0UQ4RhId5cMYsDcdcNwsgL0gP_S6SDv27yi1mCEY/edit) 和 [Imgur](https://github.com/perfs/audits/issues/1) 页面加载性能的出色的研究。其中指出：
 
 > “Over 400ms is being spent simply walking the Browserify tree.”– Sam Saccone
+> “超过 400 ms 的时间单纯的花费在了遍历 Browserify 树上。”- Sam Saccone
 
 In this post, I’d like to demonstrate that small modules can have a surprisingly high performance cost depending on your choice of bundler and module system. Furthermore, I’ll explain why this applies not only to the modules in your own codebase, but also to the modules within dependencies, which is a rarely-discussed aspect of the cost of third-party code.
+在本篇文章中，我将演示小模块可能会根据你选择的打包器（bundler）和模块系统（module system）而出现高得惊人的性能开销。此外，我还将解释为什么这种方法不但影响你自己代码的模块，也会影响依赖项中的模块，这也正是第三方代码在性能开销上很少提及的方面。
 
 ### Web perf 101
 
