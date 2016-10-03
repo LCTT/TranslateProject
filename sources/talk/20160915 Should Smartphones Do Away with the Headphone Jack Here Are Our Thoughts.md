@@ -1,3 +1,10 @@
+Translating by WangYueScream 
+============================================================================
+
+
+
+
+
 Should Smartphones Do Away with the Headphone Jack? Here Are Our Thoughts
 ====
 
