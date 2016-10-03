@@ -1,3 +1,5 @@
+willcoderwang 正在翻译
+
 What the rise of permissive open source licenses means
 ====
 
