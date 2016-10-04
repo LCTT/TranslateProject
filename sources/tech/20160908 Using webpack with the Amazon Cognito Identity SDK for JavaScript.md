@@ -33,8 +33,12 @@ In the many requests we get to provide more detail on how to integrate the Amazo
 - [JavaScript BN library for BigInteger computation][8] (jsbn)
 - [an extension to jsbn][9] the with the rest of the jsbn methods including most public BigInteger methods (jsbn2)
 - the [Stanford JavaScript Crypto Library][10] (sjcl)
+- 【用于 BigInteger 计算的 JavaScript 库】【8】（jsbn）
+- 【jsbn 扩展】【9】其余的 jsbn 方法包含大多数公共 BigInteger 方法（jsbn2）
+- 【标准 JavaScript Crypto 库】【10】（jscl）
 
 Throughout these examples, the following bower libraries are used by bower.json
+通过这些例子，可以看到，下面这些 bower 库都被 bower.json 使用
 
 ```
 "aws-cognito-sdk": "https://raw.githubusercontent.com/aws/amazon-cognito-identity-js/master/dist/aws-cognito-sdk.js",
@@ -44,6 +48,7 @@ Throughout these examples, the following bower libraries are used by bower.json
 ```
 
 For all the reasons we gave earlier for the importance of asset packaging to development processes, and unless your application is extremely small, the use of an asset packaging tool such as webpack is almost always recommended. Of course, one could simply pull in all of these dependencies using tags. However, this would pollute global namespace, and not provide the most optimal resource management and loading approach. Many developers start with a standard webpack.config.js file that has a standard babel loader, as shown here.
+出于我们前面给出的所有关于通过资产打包来改善进程的重要性的原因，除非你的应用程序非常小，使用像 webpack 这样的资产打包工具几乎总是必须的。当然，还有一个方法是可以通过使用标签简单的处理所有依赖关系。然而，这会污染全局命名空间，不能够提供最理想的资源管理和加载方法。许多开发者首次使用的是具有标准 babel 加载机的标准 webpack.config.js 文件，像下面展示的这样。
 
 ```
 {
@@ -62,26 +67,35 @@ For all the reasons we gave earlier for the importance of asset packaging to dev
 ```
 
 It’s important to remember that this configuration doesn’t take into account that some of third-party dependencies used by the Amazon Cognito Identity SDK for JavaScript currently do not use the [Universal Module Definition (UMD) pattern for JavaScript][11].
+需要重点记住的是，这个配置没有考虑一些第三方关系，这些被针对 JavaScript 的亚马逊 Cognito 标志 SDK 使用的第三方关系目前没有使用【JavaScript 通用模块定义(UMD)】【11】.
 
 The UMD pattern attempts to offer Asynchronous Module Definition (AMD) based compatibility with the most popular script loaders of the day such as [RequireJS][12] and [CommonJS][13].
+UMD 模式试图提供基于当前最流行的脚本加载器比如【RequireJS】【12】和【CommonJS】【13】兼容性的异步模块定义【AMD】.
 
 This is a pattern that webpack relies on, and so we must make some changes to how webpack loads these modules. Without these changes, you may encounter errors such as the following.
+这是 webpack 所依靠的模式，为了让 webpack 能够工作我们必须做一些改变。不进行这些改变，你可能会遇到下面这些错误。
 
 ```
 amazon-cognito-identity.min.js:19 Uncaught ReferenceError: BigInteger is not defined
 ```
 
 Such an error may be encountered when making a call to AWSCognito.CognitoIdentityServiceProvider.CognitoUser property authenticateUser This is an example of where we can make use of the webpack imports and exports loader capability to overcome this error.
+这样一个错误可能会在调用 AWSCognito.CognitoIdentityServiceProvider.CognitoUser property authenticateUser 的时候出现。这是一个出现错误的例子，我们可以利用 webpack 的进出口加载能力来解决这个错误。
 
 ### Using webpack Loaders
+### 使用 webpack 加载器
 
 According to the [webpack documentation][14] "loaders allow you to preprocess files as you require() or “load” them. Loaders are kind of like “tasks” are in other build tools, and provide a powerful way to handle front-end build steps. Loaders can transform files from a different language like, CoffeeScript to JavaScript, or inline images as data URLs"
+根据【webpack 文件】，”加载器允许你按你的需求来预处理或“加载”文件。加载器是一种在其他搭建工具中类似 “tasks” 的工具，他可以提供一个处理前端搭建步骤的强大方法。加载器可以把一个文件从一种语言转化成另一种语言，比如把 CoffeeScript 转化成 JavaScript 或者作为数据 URLs 的内联图像。
 
 In order to resolve the lack of UMD compatibility, you will rely to two specific loaders, import and export.
+为了解决 UMD 的兼容性缺乏问题，你必须依赖两个具体的加载器，导入和导出加载器。
 
 #### Using the Export Loader
+#### 使用导出加载器
 
 In the case of the Amazon Cognito Identity SDK for JavaScript, we need to ensure we export theAWSCognito variables into the scope of the module that requires/imports (for ES6) them.
+在使用针对 JavaScript 的亚马逊 Cognito 标志 SDK 的情况下，我们需要确保把 theAWSCognito 变量导出到需要它们的模块/导出范围（针对 ES6）.
 
 ```
 {
@@ -91,6 +105,7 @@ In the case of the Amazon Cognito Identity SDK for JavaScript, we need to ensure
 ```
 
 Using the exports loader has the effect of exporting a module method within bundle created by webpack. As a result, both AWSCognito and AWS are now accessible when required or import(ed) (for ES6).
+使用导出加载器可以在 webpack 创建的束【bundle】内导出模块。结果，现在 AWSCognito 和 AWS 都可以在需要它们的时候导出【针对 ES6】.
 
 ```
 var AWSCognito = require('aws-cognito-sdk')
@@ -100,12 +115,16 @@ module.exports = AWSCongito
 ```
 
 More information about the exports loader can be found here
+这儿可以找到更多关于导出加载器的信息。
 
 #### Using the Import Loader
+#### 使用导入加载器
 
 The import loader is mostly used to inject (import) variables into the scope of another module. This is especially useful if third-party modules are relying on global variables like BitInteger or sjcl as is the case with Amazon Cognito Identity SDK for JavaScript.
+导入加载器主要用于把（import）变量导入到另一个模块中。当第三方模块需要依赖全局变量的时候，导出加载器非常有用的，比如在针对 JavaScript 的亚马逊 Cognito 标志 SDK 需要依赖 BigInteger 或者sjcl 的时候。
 
 If you don’t use the webpack loader, the following is generated within the bundle.
+如果你不使用 webpack 加载器，下面这些会在一个束【bundle】中生成。
 
 ```
 __webpack_require__(431);       // refers to jsbin
@@ -113,8 +132,10 @@ __webpack_require__(432);       // refers to sjcl
 ```
 
 Beacuse neither jsbin or sjcl export anything, any calls that rely on these modules will result in an error.
+因为 jsbin 和 sjcl 都不能导出任何东西，因此任何依赖于这些模块的调用都会导致一个错误。
 
 To resolve this, we can use the following webpack loader configuration:
+为了解决这个问题，我们需要使用下面的 webpack 加载器配置：
 
 ```
 {
@@ -128,6 +149,7 @@ To resolve this, we can use the following webpack loader configuration:
 ```
 
 This injects the following into the bundle (in this case bundle.js) created by webpack.
+这个配置把下面的这些插入到了由 webpack 创建的束【bundle】中（此时是 bundle.js）。
 
 ````
 /*** IMPORTS FROM imports-loader ***/
@@ -137,26 +159,34 @@ var sjcl = __webpack_require__(432);
 ```
 
 As a result, jsbn, BigInteger and sjcl are all imported from their respective modules into Amazon Cognito Identity SDK for JavaScript.
+结果，jsbn， BigInteger 和 sjcl 都被从它们各自的模块中导入到了用于 JavaScript 的亚马逊 Cognito 标志 SDK 中。
 
 More information about the import loader can be found [here][15]
+有关导出加载器的更多信息可以在这儿找到【15】。
 
 ### Next Steps
+### 下一步
 
 We encourage you to download the [Amazon Cognito Identity SDK for JavaScript][16] and start building your application. Coupled with webpack, and by following the guidance in this blog, you we hope you have a smooth development experience.
+如果你具有快速学习经验，我们鼓励你下载【用于 JavaScript 的亚马逊 Cognito 标志 SDk】【16】，并在这篇文章的指导下通过 webpack 开始构建你的应用程序。
+
 
 If you have any comments or questions, please free to comment below, reach out via email (teichtah@amazon.com) or raise an issue [here][17].
+如果你有任何意见或问题，请在下面自由评论，也可以发邮件到 teichtah@amazon.com 或者在这儿提出问题【17】.
 
 ### References
+### 引用
 
 This blog post makes reference to the following third party resources
+这篇文章引用了下面这些第三方资源
 
 - webpack - https://webpack.github.io/
-- webpack documentation - http://webpack.github.io/docs/what-is-webpack.html
-- webpack exports loader - https://github.com/webpack/exports-loader
-- webpack imports loader - https://github.com/webpack/imports-loader
-- JavaScript BN library for BigInteger computation - http://www-cs-students.stanford.edu/~tjw/jsbn/jsbn.js
+- webpack 文件 - http://webpack.github.io/docs/what-is-webpack.html
+- webpack 导出加载器 - https://github.com/webpack/exports-loader
+- webpack 导入加载器 - https://github.com/webpack/imports-loader
+- 用于 BigInteger 计算的 JavaScript BN 库- http://www-cs-students.stanford.edu/~tjw/jsbn/jsbn.js
 - jsbns - http://www-cs-students.stanford.edu/~tjw/jsbn/jsbn2.js
-- Stanford JavaScript Crypto Library - https://github.com/bitwiseshiftleft/sjcl
+- 标准 JavaScript Crypto 库 - https://github.com/bitwiseshiftleft/sjcl
 - RequireJS - http://requirejs.org/
 - CommonJS - http://www.commonjs.org/
 
@@ -165,7 +195,7 @@ This blog post makes reference to the following third party resources
 via: https://mobile.awsblog.com/post/Tx1A84CLMDJ744T/Using-webpack-with-the-Amazon-Cognito-Identity-SDK-for-JavaScript?utm_source=webopsweekly&utm_medium=email
 
 作者：[Marc Teichtahl ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ucasFL](https://github.com/ucasFL)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
