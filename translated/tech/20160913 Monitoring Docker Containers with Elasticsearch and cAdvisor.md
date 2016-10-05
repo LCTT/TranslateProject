@@ -177,6 +177,278 @@ chmod +x create-cluster.sh
 
 最后集群部署好了。
 
+![](https://blog.codeship.com/wp-content/uploads/2016/09/cluster.png)
+
+现在为了验证 Swarm 模式集群已经正常运行，我们可以通过 ssh 登录进 master：
+
+```
+docker-machine ssh master1
+```
+
+然后列出集群的节点：
+
+```
+docker node ls
+```
+
+```
+ID                           HOSTNAME  STATUS  AVAILABILITY  MANAGER STATUS
+26fi3wiqr8lsidkjy69k031w2 *  master1   Ready   Active        Leader
+dyluxpq8sztj7kmwlzs51u4id    worker2   Ready   Active
+epglndegvixag0jztarn2lte8    worker1   Ready   Active
+```
+
+### 安装 Elasticsearch 和 Kibana
+
+> 注意，从现在开始所有的命令都运行在 master1 上。
+
+在生产环境中，你可能会把 Elasticsearch 和 Kibana 安装在一个单独的、大小合适的实例集合中。但是在我们的实验中，我们还是把它们和 Swarm 模式集群安装在一起。
+
+为了将 Elasticsearch 和 cAdvisor 连通，我们需要创建一个自定义的网络，因为我们使用了集群，并且容器可能会分布在不同的节点上，我们需要使用 [overlay][10] 网络（LCTT 译注：overlay 网络是指在不改变现有网络基础设施的前提下，通过某种约定通信协议，把二层报文封装在IP报文之上的新的数据格式，是目前最主流的容器跨节点数据传输和路由方案）。
+
+
+也许你会问，“为什么还要网络？我们不是可以用 LINK 吗？” 请考虑一下，自从引入用户定义网络后，LINK 机制就已经过时了。
+
+以下内容摘自[此文档][11]：
+
+> 在 Docker network 特性出来以前，你可以使用 Docker link 特性实现容器互相发现、安全通信。而在 NETWORK 特性出来以后，你还可以使用 LINK，但是当容器处于默认桥接网络或用户自定义网络时，它们的表现是不一样的。
+
+现在创建 overlay 网络，名称为 monitoring：
+
+```
+docker network create monitoring -d overlay
+```
+
+### Elasticsearch 容器
+
+```
+docker service create --network=monitoring \
+  --mount type=volume,target=/usr/share/elasticsearch/data \
+  --constraint node.hostname==worker1 \
+  --name elasticsearch elasticsearch:2.4.0
+```
+
+注意 Elasticsearch 容器处于 worker1 节点，这是因为它运行时需要依赖 worker1 节点上挂载的卷。
+
+### Kibana 容器
+
+```
+docker service create --network=monitoring --name kibana -e ELASTICSEARCH_URL="http://elasticsearch:9200" -p 5601:5601 kibana:4.6.0
+```
+
+如你所见，我们启动这两个容器时，都让它们加入 monitoring 网络，这样一来它们可以通过名称（如 elasticsearch 和 kibana）被（其他容器）访问。
+
+现在，通过 [routing mesh][12] 机制，我们可以使用浏览器访问服务器的 IP 地址来查看 Kibana 报表界面。
+
+获取 master1 实例的公共 IP 地址：
+
+```
+docker-machine ip master1
+```
+
+打开浏览器输入地址：http://[master1 的 ip 地址]:5601/status
+
+所有项目都应该是绿色：
+
+![](https://blog.codeship.com/wp-content/uploads/2016/09/kibana-screenshot.png)
+
+让我们接下来开始收集数据！
+
+### 收集容器的运行数据
+
+收集数据之前，我们需要创建一个服务，以全局模式运行 cAdvisor，为每个有效节点设置一个定时任务。
+
+这个服务与 Elasticsearch 处于相同的网络，以便于 cAdvisor 可以推送数据给 Elasticsearch。
+
+```
+docker service create --network=monitoring --mode global --name cadvisor \
+  --mount type=bind,source=/,target=/rootfs,readonly=true \
+  --mount type=bind,source=/var/run,target=/var/run,readonly=false \
+  --mount type=bind,source=/sys,target=/sys,readonly=true \
+  --mount type=bind,source=/var/lib/docker/,target=/var/lib/docker,readonly=true \
+  google/cadvisor:latest \
+  -storage_driver=elasticsearch \
+  -storage_driver_es_host="http://elasticsearch:9200"
+```
+
+> 注意：如果你想配置 cAdvisor 选项，参考[这里][13]。
+
+现在 cAdvisor 在发送数据给 Elasticsearch，我们通过定义一个索引模型来检索 Kibana 中的数据。两个方式做到这一点：通过 Kibana 或者通过 API，在这里我们使用 API 方式实现。
+
+我们需要在一个运行中的容器中运行索引创建命令，你可以在 cAdvisor 容器中拿到 shell，不幸的是 Swarm 模式在开启服务时会在容器名称后面附加一个唯一的 ID 号，所以你需要手动指定 cAdvisor 容器的名称。
+
+拿到 shell：
+
+```
+docker exec -ti <cadvisor-container-name> sh
+```
+
+创建索引：
+
+```
+curl -XPUT http://elasticsearch:9200/.kibana/index-pattern/cadvisor -d '{"title" : "cadvisor*",  "timeFieldName": "container_stats.timestamp"}'
+```
+
+如果你够懒，可以只执行下面这一句：
+
+```
+docker exec $(docker ps | grep cadvisor | awk '{print $1}' | head -1) curl -XPUT http://elasticsearch:9200/.kibana/index-pattern/cadvisor -d '{"title" : "cadvisor*",  "timeFieldName": "container_stats.timestamp"}'
+```
+
+### 把数据汇总成报表
+
+你现在可以使用 Kibana 来创建一份美观的报表了。但是不要着急，我为你们建了一份报表和一些图形界面来方便你们入门。
+
+![](https://blog.codeship.com/wp-content/uploads/2016/09/dashboard.png)
+
+访问 Kibana 界面 => Setting => Objects => Import，然后选择包含以下内容的 JSON 文件，就可以导入我的配置信息了：
+
+```
+[
+  {
+    "_id": "cAdvisor",
+    "_type": "dashboard",
+    "_source": {
+      "title": "cAdvisor",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"id\":\"Filesystem-usage\",\"type\":\"visualization\",\"panelIndex\":1,\"size_x\":6,\"size_y\":3,\"col\":1,\"row\":1},{\"id\":\"Memory-[Node-equal->Container]\",\"type\":\"visualization\",\"panelIndex\":2,\"size_x\":6,\"size_y\":4,\"col\":7,\"row\":4},{\"id\":\"memory-usage-by-machine\",\"type\":\"visualization\",\"panelIndex\":3,\"size_x\":6,\"size_y\":6,\"col\":1,\"row\":4},{\"id\":\"CPU-Total-Usage\",\"type\":\"visualization\",\"panelIndex\":4,\"size_x\":6,\"size_y\":5,\"col\":7,\"row\":8},{\"id\":\"Network-RX-TX\",\"type\":\"visualization\",\"panelIndex\":5,\"size_x\":6,\"size_y\":3,\"col\":7,\"row\":1}]",
+      "optionsJSON": "{\"darkTheme\":false}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}]}"
+      }
+    }
+  },
+  {
+    "_id": "Network",
+    "_type": "search",
+    "_source": {
+      "title": "Network",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "machine_name",
+        "container_Name",
+        "container_stats.network.name",
+        "container_stats.network.interfaces",
+        "container_stats.network.rx_bytes",
+        "container_stats.network.rx_packets",
+        "container_stats.network.rx_dropped",
+        "container_stats.network.rx_errors",
+        "container_stats.network.tx_packets",
+        "container_stats.network.tx_bytes",
+        "container_stats.network.tx_dropped",
+        "container_stats.network.tx_errors"
+      ],
+      "sort": [
+        "container_stats.timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"cadvisor*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Filesystem-usage",
+    "_type": "visualization",
+    "_source": {
+      "title": "Filesystem usage",
+      "visState": "{\"title\":\"Filesystem usage\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"container_stats.filesystem.usage\",\"customLabel\":\"USED\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"machine_name\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"row\":false}},{\"id\":\"3\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"container_stats.filesystem.capacity\",\"customLabel\":\"AVAIL\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"container_stats.filesystem.device\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"Average container_stats.filesystem.available\":\"#E24D42\",\"Average container_stats.filesystem.base_usage\":\"#890F02\",\"Average container_stats.filesystem.capacity\":\"#3F6833\",\"Average container_stats.filesystem.usage\":\"#E24D42\",\"USED\":\"#BF1B00\",\"AVAIL\":\"#508642\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"cadvisor*\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "CPU-Total-Usage",
+    "_type": "visualization",
+    "_source": {
+      "title": "CPU Total Usage",
+      "visState": "{\"title\":\"CPU Total Usage\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"container_stats.cpu.usage.total\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"container_stats.timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"container_Name\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"machine_name\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"row\":true}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"cadvisor*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "memory-usage-by-machine",
+    "_type": "visualization",
+    "_source": {
+      "title": "Memory [Node]",
+      "visState": "{\"title\":\"Memory [Node]\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"container_stats.memory.usage\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"container_stats.timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"machine_name\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"cadvisor*\",\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Network-RX-TX",
+    "_type": "visualization",
+    "_source": {
+      "title": "Network RX TX",
+      "visState": "{\"title\":\"Network RX TX\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":true,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"container_stats.network.rx_bytes\",\"customLabel\":\"RX\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"container_stats.timestamp\",\"interval\":\"s\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"container_stats.network.tx_bytes\",\"customLabel\":\"TX\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{\"vis\":{\"colors\":{\"RX\":\"#EAB839\",\"TX\":\"#BF1B00\"}}}",
+      "description": "",
+      "savedSearchId": "Network",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    }
+  },
+  {
+    "_id": "Memory-[Node-equal->Container]",
+    "_type": "visualization",
+    "_source": {
+      "title": "Memory [Node=>Container]",
+      "visState": "{\"title\":\"Memory [Node=>Container]\",\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"container_stats.memory.usage\"}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"container_stats.timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"container_Name\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"4\",\"type\":\"terms\",\"schema\":\"split\",\"params\":{\"field\":\"machine_name\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\",\"row\":true}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"cadvisor*\",\"query\":{\"query_string\":{\"query\":\"* NOT container_Name.raw: \\\\\\\"/\\\\\\\" AND NOT container_Name.raw: \\\\\\\"/docker\\\\\\\"\",\"analyze_wildcard\":true}},\"filter\":[]}"
+      }
+    }
+  }
+]
+```
+
+这里还有很多东西可以玩，你也许想自定义报表界面，比如添加内存页错误状态，或者收发包的丢包数。如果你能实现开头列表处我没能实现的项目，那也是很好的。
+
+### 总结
+
+正确监控需要大量时间和精力，容器的 CPU、内存、IO、网络和磁盘，监控的这些参数还只是整个监控项目中的沧海一粟而已。
+
+我不知道你执行到本文的哪一步，但接下来的任务也许是：
+
+- 收集容器的日志
+- 收集应用的日志
+- 监控应用的性能
+- 报警
+- 监控健康状态
+
+如果你有意见或建议，请留言。祝你玩得开心。
+
+现在你可以关掉基础架构了：
+
+```
+docker-machine rm master1 worker{1,2}
+```
+
 --------------------------------------------------------------------------------
 
 via: https://blog.codeship.com/monitoring-docker-containers-with-elasticsearch-and-cadvisor/
@@ -198,3 +470,7 @@ via: https://blog.codeship.com/monitoring-docker-containers-with-elasticsearch-a
 [7]: https://docs.docker.com/machine/install-machine/
 [8]: https://cloud.digitalocean.com/settings/api/tokens/new
 [9]: https://blog.codeship.com/nginx-reverse-proxy-docker-swarm-clusters/
+[10]: https://docs.docker.com/engine/userguide/networking/get-started-overlay/
+[11]: https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/
+[12]: https://docs.docker.com/engine/swarm/ingress/
+[13]: https://github.com/google/cadvisor/blob/master/docs/runtime_options.md
