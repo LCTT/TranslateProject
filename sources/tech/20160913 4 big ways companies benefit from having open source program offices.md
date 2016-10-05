@@ -1,3 +1,5 @@
+translating by Chao-zhi
+
 4 big ways companies benefit from having open source program offices
 ====
 
