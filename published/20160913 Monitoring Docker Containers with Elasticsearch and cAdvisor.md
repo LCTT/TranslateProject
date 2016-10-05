@@ -15,7 +15,7 @@
 4. 一段时间内的通信峰值。
 5. 孤儿卷和网络（LCTT 译注：孤儿卷就是当你删除容器时忘记删除它的卷，这个卷就不会再被使用，但会一直占用资源）。
 6. 可用磁盘空间、可用 inode 数。
-7. 容器数量与连接在 docker0 和 docker_gwbridge 上的虚拟网卡数量不一致（LCTT 译注：当 docker 启动时，它会在宿主机器上创建一个名为 docker0 的虚拟网络接口）。
+7. 容器数量与连接在 `docker0` 和 `docker_gwbridge` 上的虚拟网卡数量不一致（LCTT 译注：当 docker 启动时，它会在宿主机器上创建一个名为 docker0 的虚拟网络接口）。
 8. 开启和关闭 Swarm 节点。
 9. 收集并集中处理日志。
 
@@ -200,18 +200,17 @@ epglndegvixag0jztarn2lte8    worker1   Ready   Active
 
 ### 安装 Elasticsearch 和 Kibana
 
-> 注意，从现在开始所有的命令都运行在 master1 上。
+> 注意，从现在开始所有的命令都运行在主节点 master1 上。
 
-在生产环境中，你可能会把 Elasticsearch 和 Kibana 安装在一个单独的、大小合适的实例集合中。但是在我们的实验中，我们还是把它们和 Swarm 模式集群安装在一起。
+在生产环境中，你可能会把 Elasticsearch 和 Kibana 安装在一个单独的、[大小合适][14]的实例集合中。但是在我们的实验中，我们还是把它们和 Swarm 模式集群安装在一起。
 
-为了将 Elasticsearch 和 cAdvisor 连通，我们需要创建一个自定义的网络，因为我们使用了集群，并且容器可能会分布在不同的节点上，我们需要使用 [overlay][10] 网络（LCTT 译注：overlay 网络是指在不改变现有网络基础设施的前提下，通过某种约定通信协议，把二层报文封装在IP报文之上的新的数据格式，是目前最主流的容器跨节点数据传输和路由方案）。
+为了将 Elasticsearch 和 cAdvisor 连通，我们需要创建一个自定义的网络，因为我们使用了集群，并且容器可能会分布在不同的节点上，我们需要使用 [overlay][10] 网络（LCTT 译注：overlay 网络是指在不改变现有网络基础设施的前提下，通过某种约定通信协议，把二层报文封装在 IP 报文之上的新的数据格式，是目前最主流的容器跨节点数据传输和路由方案）。
 
+也许你会问，“为什么还要网络？我们不是可以用 link 吗？” 请考虑一下，自从引入*用户定义网络*后，link 机制就已经过时了。
 
-也许你会问，“为什么还要网络？我们不是可以用 LINK 吗？” 请考虑一下，自从引入用户定义网络后，LINK 机制就已经过时了。
+以下内容摘自[ Docker 文档][11]：
 
-以下内容摘自[此文档][11]：
-
-> 在 Docker network 特性出来以前，你可以使用 Docker link 特性实现容器互相发现、安全通信。而在 NETWORK 特性出来以后，你还可以使用 LINK，但是当容器处于默认桥接网络或用户自定义网络时，它们的表现是不一样的。
+> 在 Docker network 特性出来以前，你可以使用 Docker link 特性实现容器互相发现、安全通信。而在 network 特性出来以后，你还可以使用 link，但是当容器处于默认桥接网络或用户自定义网络时，它们的表现是不一样的。
 
 现在创建 overlay 网络，名称为 monitoring：
 
@@ -228,7 +227,7 @@ docker service create --network=monitoring \
   --name elasticsearch elasticsearch:2.4.0
 ```
 
-注意 Elasticsearch 容器处于 worker1 节点，这是因为它运行时需要依赖 worker1 节点上挂载的卷。
+注意 Elasticsearch 容器被限定在 worker1 节点，这是因为它运行时需要依赖 worker1 节点上挂载的卷。
 
 ### Kibana 容器
 
@@ -236,7 +235,7 @@ docker service create --network=monitoring \
 docker service create --network=monitoring --name kibana -e ELASTICSEARCH_URL="http://elasticsearch:9200" -p 5601:5601 kibana:4.6.0
 ```
 
-如你所见，我们启动这两个容器时，都让它们加入 monitoring 网络，这样一来它们可以通过名称（如 elasticsearch 和 kibana）被（其他容器）访问。
+如你所见，我们启动这两个容器时，都让它们加入 monitoring 网络，这样一来它们可以通过名称（如 Kibana）被相同网络的其他服务访问。
 
 现在，通过 [routing mesh][12] 机制，我们可以使用浏览器访问服务器的 IP 地址来查看 Kibana 报表界面。
 
@@ -246,7 +245,7 @@ docker service create --network=monitoring --name kibana -e ELASTICSEARCH_URL="h
 docker-machine ip master1
 ```
 
-打开浏览器输入地址：http://[master1 的 ip 地址]:5601/status
+打开浏览器输入地址：`http://[master1 的 ip 地址]:5601/status`
 
 所有项目都应该是绿色：
 
@@ -273,9 +272,9 @@ docker service create --network=monitoring --mode global --name cadvisor \
 
 > 注意：如果你想配置 cAdvisor 选项，参考[这里][13]。
 
-现在 cAdvisor 在发送数据给 Elasticsearch，我们通过定义一个索引模型来检索 Kibana 中的数据。两个方式做到这一点：通过 Kibana 或者通过 API，在这里我们使用 API 方式实现。
+现在 cAdvisor 在发送数据给 Elasticsearch，我们通过定义一个索引模型来检索 Kibana 中的数据。有两种方式可以做到这一点：通过 Kibana 或者通过 API。在这里我们使用 API 方式实现。
 
-我们需要在一个运行中的容器中运行索引创建命令，你可以在 cAdvisor 容器中拿到 shell，不幸的是 Swarm 模式在开启服务时会在容器名称后面附加一个唯一的 ID 号，所以你需要手动指定 cAdvisor 容器的名称。
+我们需要在一个连接到 monitoring 网络的正在运行的容器中运行索引创建命令，你可以在 cAdvisor 容器中拿到 shell，不幸的是 Swarm 模式在开启服务时会在容器名称后面附加一个唯一的 ID 号，所以你需要手动指定 cAdvisor 容器的名称。
 
 拿到 shell：
 
@@ -433,9 +432,9 @@ docker exec $(docker ps | grep cadvisor | awk '{print $1}' | head -1) curl -XPUT
 
 正确监控需要大量时间和精力，容器的 CPU、内存、IO、网络和磁盘，监控的这些参数还只是整个监控项目中的沧海一粟而已。
 
-我不知道你执行到本文的哪一步，但接下来的任务也许是：
+我不知道你做到了哪一阶段，但接下来的任务也许是：
 
-- 收集容器的日志
+- 收集运行中的容器的日志
 - 收集应用的日志
 - 监控应用的性能
 - 报警
@@ -443,7 +442,7 @@ docker exec $(docker ps | grep cadvisor | awk '{print $1}' | head -1) curl -XPUT
 
 如果你有意见或建议，请留言。祝你玩得开心。
 
-现在你可以关掉基础架构了：
+现在你可以关掉这些测试系统了：
 
 ```
 docker-machine rm master1 worker{1,2}
@@ -474,3 +473,4 @@ via: https://blog.codeship.com/monitoring-docker-containers-with-elasticsearch-a
 [11]: https://docs.docker.com/engine/userguide/networking/default_network/dockerlinks/
 [12]: https://docs.docker.com/engine/swarm/ingress/
 [13]: https://github.com/google/cadvisor/blob/master/docs/runtime_options.md
+[14]: https://www.elastic.co/blog/found-sizing-elasticsearch
