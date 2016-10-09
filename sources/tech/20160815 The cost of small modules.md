@@ -4,39 +4,45 @@ The cost of small modules
 小模块的成本
 ====
 
-About a year ago I was refactoring a large JavaScript codebase into smaller modules, when I discovered a depressing fact about Browserify and Webpack:
+About a year ago I was refactoring a large JavaScript codebase into smaller modules, when I discovered a depressing fact about Browserify and Webpack:  
 大约一年之前，我在将一个大型 JavaScript 代码库重构为小模块时发现了 Browserify 和 Webpack 中一个令人沮丧的事实：
 
-> “The more I modularize my code, the bigger it gets. ”– Nolan Lawson
+> “The more I modularize my code, the bigger it gets. ”– Nolan Lawson  
 > “代码越模块化，代码体积就越大。”- Nolan Lawson
 
-Later on, Sam Saccone published some excellent research on [Tumblr](https://docs.google.com/document/d/1E2w0UQ4RhId5cMYsDcdcNwsgL0gP_S6SDv27yi1mCEY/edit) and [Imgur](https://github.com/perfs/audits/issues/1)‘s page load performance, in which he noted:
-过了一段时间，Sam Saccone 发布了一些关于 [Tumblr](https://docs.google.com/document/d/1E2w0UQ4RhId5cMYsDcdcNwsgL0gP_S6SDv27yi1mCEY/edit) 和 [Imgur](https://github.com/perfs/audits/issues/1) 页面加载性能的出色的研究。其中指出：
+Later on, Sam Saccone published some excellent research on [Tumblr][1] and [Imgur][2]'s page load performance, in which he noted:  
+过了一段时间，Sam Saccone 发布了一些关于 [Tumblr][1] 和 [Imgur][2] 页面加载性能的出色的研究。其中指出：
 
-> “Over 400ms is being spent simply walking the Browserify tree.”– Sam Saccone
+> “Over 400ms is being spent simply walking the Browserify tree.”– Sam Saccone  
 > “超过 400 ms 的时间单纯的花费在了遍历 Browserify 树上。”- Sam Saccone
 
-In this post, I’d like to demonstrate that small modules can have a surprisingly high performance cost depending on your choice of bundler and module system. Furthermore, I’ll explain why this applies not only to the modules in your own codebase, but also to the modules within dependencies, which is a rarely-discussed aspect of the cost of third-party code.
+In this post, I’d like to demonstrate that small modules can have a surprisingly high performance cost depending on your choice of bundler and module system. Furthermore, I’ll explain why this applies not only to the modules in your own codebase, but also to the modules within dependencies, which is a rarely-discussed aspect of the cost of third-party code.  
 在本篇文章中，我将演示小模块可能会根据你选择的打包器（bundler）和模块系统（module system）而出现高得惊人的性能开销。此外，我还将解释为什么这种方法不但影响你自己代码的模块，也会影响依赖项中的模块，这也正是第三方代码在性能开销上很少提及的方面。
 
 ### Web perf 101
 
-The more JavaScript included on a page, the slower that page tends to be. Large JavaScript bundles cause the browser to spend more time downloading, parsing, and executing the script, all of which lead to slower load times.
+The more JavaScript included on a page, the slower that page tends to be. Large JavaScript bundles cause the browser to spend more time downloading, parsing, and executing the script, all of which lead to slower load times.  
+一个页面中包含的 JavaScript 脚本越多，页面加载也将越慢。庞大的 JavaScript 包会导致浏览器花费更多的时间去下载、解析和执行，这些都将加长载入时间。
 
-Even when breaking up the code into multiple bundles – Webpack [code splitting](https://webpack.github.io/docs/code-splitting.html), Browserify[factor bundles](https://github.com/substack/factor-bundle), etc. – the cost is merely delayed until later in the page lifecycle. Sooner or later, the JavaScript piper must be paid.
+Even when breaking up the code into multiple bundles – Webpack [code splitting][3], Browserify [factor bundles][4], etc. – the cost is merely delayed until later in the page lifecycle. Sooner or later, the JavaScript piper must be paid.  
+即使当你使用如 Webpack [code splitting][3]、Browserify [factor bundles][4] 等工具将代码分解为多个包，时间的花费也仅仅是被延迟到页面生命周期的晚些时候。JavaScript 迟早都将有一笔开销。
 
-Furthermore, because JavaScript is a dynamic language, and because the prevailing[CommonJS](http://www.commonjs.org/) module system is also dynamic, it’s fiendishly difficult to extract unused code from the final payload that gets shipped to users. You might only need jQuery’s $.ajax, but by including jQuery, you pay the cost of the entire library.
+Furthermore, because JavaScript is a dynamic language, and because the prevailing [CommonJS][5] module system is also dynamic, it’s fiendishly difficult to extract unused code from the final payload that gets shipped to users. You might only need jQuery’s $.ajax, but by including jQuery, you pay the cost of the entire library.  
+此外，由于 JavaScript 是一门动态语言，同时流行的 [CommonJS][5] 模块也是动态的，所以这就使得在最终分发给用户的代码中剔除无用的代码变得异常困难。譬如你可能只使用到 jQuery 中的 $.ajax，但是通过载入 jQuery 包，你将以整个包为代价。
 
-The JavaScript community has responded to this problem by advocating the use of [small modules](http://substack.net/how_I_write_modules). Small modules have a lot of [aesthetic and practical benefits](http://dailyjs.com/2015/07/02/small-modules-complexity-over-size/) – easier to maintain, easier to comprehend, easier to plug together – but they also solve the jQuery problem by promoting the inclusion of small bits of functionality rather than big “kitchen sink” libraries.
+The JavaScript community has responded to this problem by advocating the use of [small modules][6]. Small modules have a lot of [aesthetic and practical benefits][7] – easier to maintain, easier to comprehend, easier to plug together – but they also solve the jQuery problem by promoting the inclusion of small bits of functionality rather than big “kitchen sink” libraries.  
+JavaScript 社区对这个问题提出的解决办法是提倡 [小模块][6] 的使用。小模块不仅有许多 [美好且实用的好处][7] 如易于维护，易于理解，易于集成等，而且还可以通过鼓励包含小巧的功能而不是庞大的库来解决之前提到的 jQuery 的问题。
 
-So in the “small modules” world, instead of doing:
+So in the “small modules” world, instead of doing:  
+所以在小模块下，你将不需要这样：
 
 ```
 var _ = require('lodash')
 _.uniq([1,2,2,3])
 ```
 
-You might do:
+You might do:  
+而是可以如此：
 
 ```
 var uniq = require('lodash.uniq')
@@ -45,15 +51,15 @@ uniq([1,2,2,3])
 
 ### Packages vs modules
 
-It’s important to note that, when I say “modules,” I’m not talking about “packages” in the npm sense. When you install a package from npm, it might only expose a single module in its public API, but under the hood it could actually be a conglomeration of many modules.
+It’s important to note that, when I say “modules”, I’m not talking about “packages” in the npm sense. When you install a package from npm, it might only expose a single module in its public API, but under the hood it could actually be a conglomeration of many modules.
 
-For instance, consider a package like [is-array](https://www.npmjs.com/package/is-array). It has no dependencies and only contains[one JavaScript file](https://github.com/retrofox/is-array/blob/d79f1c90c824416b60517c04f0568b5cd3f8271d/index.js#L6-L33), so it has one module. Simple enough.
+For instance, consider a package like [is-array][8]. It has no dependencies and only contains [one JavaScript file][9], so it has one module. Simple enough.
 
-Now consider a slightly more complex package like [once](https://www.npmjs.com/package/once), which has exactly one dependency:[wrappy](https://www.npmjs.com/package/wrappy). [Both](https://github.com/isaacs/once/blob/2ad558657e17fafd24803217ba854762842e4178/once.js#L1-L21) [packages](https://github.com/npm/wrappy/blob/71d91b6dc5bdeac37e218c2cf03f9ab55b60d214/wrappy.js#L6-L33) contain one module, so the total module count is 2\. So far, so good.
+Now consider a slightly more complex package like [once][10], which has exactly one dependency: [wrappy][11]. [Both][12] [packages][13] contain one module, so the total module count is 2\. So far, so good.
 
-Now let’s consider a more deceptive example: [qs](https://www.npmjs.com/package/qs). Since it has zero dependencies, you might assume it only has one module. But in fact, it has four!
+Now let’s consider a more deceptive example: [qs][14]. Since it has zero dependencies, you might assume it only has one module. But in fact, it has four!
 
-You can confirm this by using a tool I wrote called [browserify-count-modules](https://www.npmjs.com/package/browserify-count-modules), which simply counts the total number of modules in a Browserify bundle:
+You can confirm this by using a tool I wrote called [browserify-count-modules][15], which simply counts the total number of modules in a Browserify bundle:
 
 ```
 $ npm install qs
@@ -67,18 +73,18 @@ This means that a given package can actually contain one or more modules. These 
 
 How many modules are in a typical web application? Well, I ran browserify-count-moduleson a few popular Browserify-using sites, and came up with these numbers:
 
-*   [requirebin.com](http://requirebin.com/): 91 modules
-*   [keybase.io](https://keybase.io/): 365 modules
-*   [m.reddit.com](http://m.reddit.com/): 1050 modules
-*   [Apple.com](http://images.apple.com/ipad-air-2/): 1060 modules (Added. [Thanks, Max!](https://twitter.com/denormalize/status/765300194078437376))
+*   [requirebin.com][16]: 91 modules
+*   [keybase.io][17]: 365 modules
+*   [m.reddit.com][18]: 1050 modules
+*   [Apple.com][19]: 1060 modules (Added. [Thanks, Max!][20])
 
-For the record, my own [Pokedex.org](https://pokedex.org/) (the largest open-source site I’ve built) contains 311 modules across four bundle files.
+For the record, my own [Pokedex.org][21] (the largest open-source site I’ve built) contains 311 modules across four bundle files.
 
-Ignoring for a moment the raw size of those JavaScript bundles, I think it’s interesting to explore the cost of the number of modules themselves. Sam Saccone has already blown this story wide open in [“The cost of transpiling es2015 in 2016”](https://github.com/samccone/The-cost-of-transpiling-es2015-in-2016#the-cost-of-transpiling-es2015-in-2016), but I don’t think his findings have gotten nearly enough press, so let’s dig a little deeper.
+Ignoring for a moment the raw size of those JavaScript bundles, I think it’s interesting to explore the cost of the number of modules themselves. Sam Saccone has already blown this story wide open in [“The cost of transpiling es2015 in 2016”][22], but I don’t think his findings have gotten nearly enough press, so let’s dig a little deeper.
 
 ### Benchmark time!
 
-I put together [a small benchmark](https://github.com/nolanlawson/cost-of-small-modules) that constructs a JavaScript module importing 100, 1000, and 5000 other modules, each of which merely exports a number. The parent module just sums the numbers together and logs the result:
+I put together [a small benchmark][23] that constructs a JavaScript module importing 100, 1000, and 5000 other modules, each of which merely exports a number. The parent module just sums the numbers together and logs the result:
 
 ```
 // index.js
@@ -94,13 +100,13 @@ console.log(total)
 module.exports = 1
 ```
 
-I tested five bundling methods: Browserify, Browserify with the [bundle-collapser](https://www.npmjs.com/package/bundle-collapser) plugin, Webpack, Rollup, and Closure Compiler. For Rollup and Closure Compiler I used ES6 modules, whereas for Browserify and Webpack I used CommonJS, so as not to unfairly disadvantage them (since they would need a transpiler like Babel, which adds its own overhead).
+I tested five bundling methods: Browserify, Browserify with the [bundle-collapser][24] plugin, Webpack, Rollup, and Closure Compiler. For Rollup and Closure Compiler I used ES6 modules, whereas for Browserify and Webpack I used CommonJS, so as not to unfairly disadvantage them (since they would need a transpiler like Babel, which adds its own overhead).
 
 In order to best simulate a production environment, I used Uglify with the --mangle and--compress settings for all bundles, and served them gzipped over HTTPS using GitHub Pages. For each bundle, I downloaded and executed it 15 times and took the median, noting the (uncached) load time and execution time using performance.now().
 
 ### Bundle sizes
 
-Before we get into the benchmark results, it’s worth taking a look at the bundle files themselves. Here are the byte sizes (minified but ungzipped) for each bundle ([chart view](https://nolanwlawson.files.wordpress.com/2016/08/min.png)):
+Before we get into the benchmark results, it’s worth taking a look at the bundle files themselves. Here are the byte sizes (minified but ungzipped) for each bundle ([chart view][25]):
 
 |  | 100 modules | 1000 modules | 5000 modules |
 | --- | --- | --- | --- |
@@ -142,23 +148,23 @@ If you understand the inherent cost of functions-within-functions in JavaScript,
 
 I ran this benchmark on a Nexus 5 with Android 5.1.1 and Chrome 52 (to represent a low- to mid-range device) as well as an iPod Touch 6th generation running iOS 9 (to represent a high-end device).
 
-Here are the results for the Nexus 5 ([tabular results](https://gist.github.com/nolanlawson/e84ad060a20f0cb7a7c32308b6b46abe)):
+Here are the results for the Nexus 5 ([tabular results][26]):
 
-[![Nexus 5 results](https://nolanwlawson.files.wordpress.com/2016/08/modules_nexus_5.png?w=570&h=834)](https://nolanwlawson.files.wordpress.com/2016/08/modules_nexus_5.png)
+[![Nexus 5 results][27]](https://nolanwlawson.files.wordpress.com/2016/08/modules_nexus_5.png)
 
-And here are the results for the iPod Touch ([tabular results](https://gist.github.com/nolanlawson/45ed2c7fa53da035dfc1e153763b9f93)):
+And here are the results for the iPod Touch ([tabular results][28]):
 
-[![iPod Touch results](https://nolanwlawson.files.wordpress.com/2016/08/modules_ipod.png?w=570&h=827)](https://nolanwlawson.files.wordpress.com/2016/08/modules_ipod.png)
+[![iPod Touch results][29]](https://nolanwlawson.files.wordpress.com/2016/08/modules_ipod.png)
 
 At 100 modules, the variance between all the bundlers is pretty negligible, but once we get up to 1000 or 5000 modules, the difference becomes severe. The iPod Touch is hurt the least by the choice of bundler, but the Nexus 5, being an aging Android phone, suffers a lot under Browserify and Webpack.
 
 I also find it interesting that both Rollup and Closure’s execution cost is essentially free for the iPod, regardless of the number of modules. And in the case of the Nexus 5, the runtime costs aren’t free, but they’re still much cheaper for Rollup/Closure than for Browserify/Webpack, the latter of which chew up the main thread for several frames if not hundreds of milliseconds, meaning that the UI is frozen just waiting for the module loader to finish running.
 
-Note that both of these tests were run on a fast Gigabit connection, so in terms of network costs, it’s really a best-case scenario. Using the Chrome Dev Tools, we can manually throttle that Nexus 5 down to 3G and see the impact ([tabular results](https://gist.github.com/nolanlawson/6269d304c970174c21164288808392ea)):
+Note that both of these tests were run on a fast Gigabit connection, so in terms of network costs, it’s really a best-case scenario. Using the Chrome Dev Tools, we can manually throttle that Nexus 5 down to 3G and see the impact ([tabular results][30]):
 
-[![Nexus 5 3G results](https://nolanwlawson.files.wordpress.com/2016/08/modules_nexus_53g.png?w=570&h=834)](https://nolanwlawson.files.wordpress.com/2016/08/modules_nexus_53g.png)
+[![Nexus 5 3G results][31]](https://nolanwlawson.files.wordpress.com/2016/08/modules_nexus_53g.png)
 
-Once we take slow networks into account, the difference between Browserify/Webpack and Rollup/Closure is even more stark. In the case of 1000 modules (which is close to Reddit’s count of 1050), Browserify takes about 400 milliseconds longer than Rollup. And that 400ms is no small potatoes, since Google and Bing have both noted that sub-second delays have an[appreciable impact on user engagement](http://radar.oreilly.com/2009/06/bing-and-google-agree-slow-pag.html).
+Once we take slow networks into account, the difference between Browserify/Webpack and Rollup/Closure is even more stark. In the case of 1000 modules (which is close to Reddit’s count of 1050), Browserify takes about 400 milliseconds longer than Rollup. And that 400ms is no small potatoes, since Google and Bing have both noted that sub-second delays have an [appreciable impact on user engagement][32].
 
 One thing to note is that this benchmark doesn’t measure the precise execution cost of 100, 1000, or 5000 modules per se, since that will depend on your usage of require(). Inside of these bundles, I’m calling require() once per module, but if you are calling require()multiple times per module (which is the norm in most codebases) or if you are callingrequire() multiple times on-the-fly (i.e. require() within a sub-function), then you could see severe performance degradations.
 
@@ -172,13 +178,13 @@ For the purposes of this analysis, though, I think it’s best to just assume th
 
 First off, the bundle-collapser plugin seems to be a valuable addition to Browserify. If you’re not using it in production, then your bundle will be a bit larger and slower than it would be otherwise (although I must admit the difference is slight). Alternatively, you could switch to Webpack and get an even faster bundle without any extra configuration. (Note that it pains me to say this, since I’m a diehard Browserify fanboy.)
 
-However, these results clearly show that Webpack and Browserify both underperform compared to Rollup and Closure Compiler, and that the gap widens the more modules you add. Unfortunately I’m not sure [Webpack 2](https://gist.github.com/sokra/27b24881210b56bbaff7) will solve any of these problems, because although they’ll be [borrowing some ideas from Rollup](http://www.2ality.com/2015/12/webpack-tree-shaking.html), they seem to be more focused on the[tree-shaking aspects](http://www.2ality.com/2015/12/bundling-modules-future.html) and not the scope-hoisting aspects. (Update: a better name is “inlining,” and the Webpack team is [working on it](https://github.com/webpack/webpack/issues/2873#issuecomment-240067865).)
+However, these results clearly show that Webpack and Browserify both underperform compared to Rollup and Closure Compiler, and that the gap widens the more modules you add. Unfortunately I’m not sure [Webpack 2][33] will solve any of these problems, because although they’ll be [borrowing some ideas from Rollup][34], they seem to be more focused on the [tree-shaking aspects][35] and not the scope-hoisting aspects. (Update: a better name is “inlining,” and the Webpack team is [working on it][36].)
 
-Given these results, I’m surprised Closure Compiler and Rollup aren’t getting much traction in the JavaScript community. I’m guessing it’s due to the fact that (in the case of the former) it has a Java dependency, and (in the case of the latter) it’s still fairly immature and doesn’t quite work out-of-the-box yet (see [Calvin’s Metcalf’s comments](https://github.com/rollup/rollup/issues/552) for a good summary).
+Given these results, I’m surprised Closure Compiler and Rollup aren’t getting much traction in the JavaScript community. I’m guessing it’s due to the fact that (in the case of the former) it has a Java dependency, and (in the case of the latter) it’s still fairly immature and doesn’t quite work out-of-the-box yet (see [Calvin’s Metcalf’s comments][37] for a good summary).
 
-Even without the average JavaScript developer jumping on the Rollup/Closure bandwagon, though, I think npm package authors are already in a good position to help solve this problem. If you npm install lodash, you’ll notice that the main export is one giant JavaScript module, rather than what you might expect given Lodash’s hyper-modular nature (require('lodash/uniq'), require('lodash.uniq'), etc.). For PouchDB, we made a similar decision to [use Rollup as a prepublish step](http://pouchdb.com/2016/01/13/pouchdb-5.2.0-a-better-build-system-with-rollup.html), which produces the smallest possible bundle in a way that’s invisible to users.
+Even without the average JavaScript developer jumping on the Rollup/Closure bandwagon, though, I think npm package authors are already in a good position to help solve this problem. If you npm install lodash, you’ll notice that the main export is one giant JavaScript module, rather than what you might expect given Lodash’s hyper-modular nature (require('lodash/uniq'), require('lodash.uniq'), etc.). For PouchDB, we made a similar decision to [use Rollup as a prepublish step][38], which produces the smallest possible bundle in a way that’s invisible to users.
 
-I also created [rollupify](https://github.com/nolanlawson/rollupify) to try to make this pattern a bit easier to just drop-in to existing Browserify projects. The basic idea is to use imports and exports within your own project ([cjs-to-es6](https://github.com/nolanlawson/cjs-to-es6) can help migrate), and then use require() for third-party packages. That way, you still have all the benefits of modularity within your own codebase, while exposing more-or-less one big module to your users. Unfortunately, you still pay the costs for third-party modules, but I’ve found that this is a good compromise given the current state of the npm ecosystem.
+I also created [rollupify][39] to try to make this pattern a bit easier to just drop-in to existing Browserify projects. The basic idea is to use imports and exports within your own project ([cjs-to-es6][40] can help migrate), and then use require() for third-party packages. That way, you still have all the benefits of modularity within your own codebase, while exposing more-or-less one big module to your users. Unfortunately, you still pay the costs for third-party modules, but I’ve found that this is a good compromise given the current state of the npm ecosystem.
 
 So there you have it: one horse-sized JavaScript duck is faster than a hundred duck-sized JavaScript horses. Despite this fact, though, I hope that our community will eventually realize the pickle we’re in – advocating for a “small modules” philosophy that’s good for developers but bad for users – and improve our tools, so that we can have the best of both worlds.
 
@@ -186,17 +192,17 @@ So there you have it: one horse-sized JavaScript duck is faster than a hundred d
 
 Normally I like to run performance tests on mobile devices, since that’s where you see the clearest differences. But out of curiosity, I also ran this benchmark on Chrome 52, Edge 14, and Firefox 48 on an i7 Surface Book using Windows 10 RS1\. Here are the results:
 
-Chrome 52 ([tabular results](https://gist.github.com/nolanlawson/4f79258dc05bbd2c14b85cf2196c6ef0))
+Chrome 52 ([tabular results][41])
 
-[![Chrome results](https://nolanwlawson.files.wordpress.com/2016/08/modules_chrome.png?w=570&h=831)](https://nolanwlawson.files.wordpress.com/2016/08/modules_chrome.png)
+[![Chrome results][42]](https://nolanwlawson.files.wordpress.com/2016/08/modules_chrome.png)
 
-Edge 14 ([tabular results](https://gist.github.com/nolanlawson/726fa47e0723b45e4ee9ecf0cf2fcddb))
+Edge 14 ([tabular results][43])
 
-[![Edge results](https://nolanwlawson.files.wordpress.com/2016/08/modules_edge.png?w=570&h=827)](https://nolanwlawson.files.wordpress.com/2016/08/modules_edge.png)
+[![Edge results][44]](https://nolanwlawson.files.wordpress.com/2016/08/modules_edge.png)
 
-Firefox 48 ([tabular results](https://gist.github.com/nolanlawson/7eed17e6ffa18752bf99a9d4bff2941f))
+Firefox 48 ([tabular results][45])
 
-[![Firefox results](https://nolanwlawson.files.wordpress.com/2016/08/modules_firefox.png?w=570&h=830)](https://nolanwlawson.files.wordpress.com/2016/08/modules_firefox.png)
+[![Firefox results][46]](https://nolanwlawson.files.wordpress.com/2016/08/modules_firefox.png)
 
 The only interesting tidbits I’ll call out in these results are:
 
@@ -205,13 +211,13 @@ The only interesting tidbits I’ll call out in these results are:
 
 This latter point could be extremely important if your JavaScript is largely lazy-loaded, because if you can afford to wait on the network, then using Rollup and Closure will have the additional benefit of not clogging up the UI thread, i.e. they’ll introduce less jank than Browserify or Webpack.
 
-Update: in response to this post, JDD has [opened an issue on Webpack](https://github.com/webpack/webpack/issues/2873). There’s also [one on Browserify](https://github.com/substack/node-browserify/issues/1379).
+Update: in response to this post, JDD has [opened an issue on Webpack][47]. There’s also [one on Browserify][48].
 
-Update 2: [Ryan Fitzer](https://github.com/nolanlawson/cost-of-small-modules/pull/5) has generously added RequireJS and RequireJS with [Almond](https://github.com/requirejs/almond) to the benchmark, both of which use AMD instead of CommonJS or ES6.
+Update 2: [Ryan Fitzer][49] has generously added RequireJS and RequireJS with [Almond][50] to the benchmark, both of which use AMD instead of CommonJS or ES6.
 
-Testing shows that RequireJS has [the largest bundle sizes](https://gist.github.com/nolanlawson/511e0ce09fed29fed040bb8673777ec5) but surprisingly its runtime costs are [very close to Rollup and Closure](https://gist.github.com/nolanlawson/4e725df00cd1bc9673b25ef72b831c8b). Here are the results for a Nexus 5 running Chrome 52 throttled to 3G:
+Testing shows that RequireJS has [the largest bundle sizes][51] but surprisingly its runtime costs are [very close to Rollup and Closure][52]. Here are the results for a Nexus 5 running Chrome 52 throttled to 3G:
 
-[![Nexus 5 (3G) results with RequireJS](https://nolanwlawson.files.wordpress.com/2016/08/2016-08-20-14_45_29-small_modules3-xlsx-excel.png?w=570&h=829)](https://nolanwlawson.files.wordpress.com/2016/08/2016-08-20-14_45_29-small_modules3-xlsx-excel.png)
+[![Nexus 5 (3G) results with RequireJS][53]](https://nolanwlawson.files.wordpress.com/2016/08/2016-08-20-14_45_29-small_modules3-xlsx-excel.png)
 
 
 
@@ -220,9 +226,62 @@ Testing shows that RequireJS has [the largest bundle sizes](https://gist.github.
 via: https://nolanlawson.com/2016/08/15/the-cost-of-small-modules/?utm_source=javascriptweekly&utm_medium=email
 
 作者：[Nolan][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Yinr](https://github.com/Yinr)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://nolanlawson.com/
+[1]: https://docs.google.com/document/d/1E2w0UQ4RhId5cMYsDcdcNwsgL0gP_S6SDv27yi1mCEY/edit
+[2]: https://github.com/perfs/audits/issues/1
+[3]: https://webpack.github.io/docs/code-splitting.html
+[4]: https://github.com/substack/factor-bundle
+[5]: http://www.commonjs.org/
+[6]: http://substack.net/how_I_write_modules
+[7]: http://dailyjs.com/2015/07/02/small-modules-complexity-over-size/
+[8]: https://www.npmjs.com/package/is-array
+[9]: https://github.com/retrofox/is-array/blob/d79f1c90c824416b60517c04f0568b5cd3f8271d/index.js#L6-L33
+[10]: https://www.npmjs.com/package/once
+[11]: https://www.npmjs.com/package/wrappy
+[12]: https://github.com/isaacs/once/blob/2ad558657e17fafd24803217ba854762842e4178/once.js#L1-L21
+[13]: https://github.com/npm/wrappy/blob/71d91b6dc5bdeac37e218c2cf03f9ab55b60d214/wrappy.js#L6-L33
+[14]: https://www.npmjs.com/package/qs
+[15]: https://www.npmjs.com/package/browserify-count-modules
+[16]: http://requirebin.com/
+[17]: https://keybase.io/
+[18]: http://m.reddit.com/
+[19]: http://images.apple.com/ipad-air-2/
+[20]: https://twitter.com/denormalize/status/765300194078437376
+[21]: https://pokedex.org/
+[22]: https://github.com/samccone/The-cost-of-transpiling-es2015-in-2016#the-cost-of-transpiling-es2015-in-2016
+[23]: https://github.com/nolanlawson/cost-of-small-modules
+[24]: https://www.npmjs.com/package/bundle-collapser
+[25]: https://nolanwlawson.files.wordpress.com/2016/08/min.png
+[26]: https://gist.github.com/nolanlawson/e84ad060a20f0cb7a7c32308b6b46abe
+[27]: https://nolanwlawson.files.wordpress.com/2016/08/modules_nexus_5.png?w=570&h=834
+[28]: https://gist.github.com/nolanlawson/45ed2c7fa53da035dfc1e153763b9f93
+[29]: https://nolanwlawson.files.wordpress.com/2016/08/modules_ipod.png?w=570&h=827
+[30]: https://gist.github.com/nolanlawson/6269d304c970174c21164288808392ea
+[31]: https://nolanwlawson.files.wordpress.com/2016/08/modules_nexus_53g.png?w=570&h=834
+[32]: http://radar.oreilly.com/2009/06/bing-and-google-agree-slow-pag.html
+[33]: https://gist.github.com/sokra/27b24881210b56bbaff7
+[34]: http://www.2ality.com/2015/12/webpack-tree-shaking.html
+[35]: http://www.2ality.com/2015/12/bundling-modules-future.html
+[36]: https://github.com/webpack/webpack/issues/2873#issuecomment-240067865
+[37]: https://github.com/rollup/rollup/issues/552
+[38]: http://pouchdb.com/2016/01/13/pouchdb-5.2.0-a-better-build-system-with-rollup.html
+[39]: https://github.com/nolanlawson/rollupify
+[40]: https://github.com/nolanlawson/cjs-to-es6
+[41]: https://gist.github.com/nolanlawson/4f79258dc05bbd2c14b85cf2196c6ef0
+[42]: https://nolanwlawson.files.wordpress.com/2016/08/modules_chrome.png?w=570&h=831
+[43]: https://gist.github.com/nolanlawson/726fa47e0723b45e4ee9ecf0cf2fcddb
+[44]: https://nolanwlawson.files.wordpress.com/2016/08/modules_edge.png?w=570&h=827
+[45]: https://gist.github.com/nolanlawson/7eed17e6ffa18752bf99a9d4bff2941f
+[46]: https://nolanwlawson.files.wordpress.com/2016/08/modules_firefox.png?w=570&h=830
+[47]: https://github.com/webpack/webpack/issues/2873
+[48]: https://github.com/substack/node-browserify/issues/1379
+[49]: https://github.com/nolanlawson/cost-of-small-modules/pull/5
+[50]: https://github.com/requirejs/almond
+[51]: https://gist.github.com/nolanlawson/511e0ce09fed29fed040bb8673777ec5
+[52]: https://gist.github.com/nolanlawson/4e725df00cd1bc9673b25ef72b831c8b
+[53]: https://nolanwlawson.files.wordpress.com/2016/08/2016-08-20-14_45_29-small_modules3-xlsx-excel.png?w=570&h=829
