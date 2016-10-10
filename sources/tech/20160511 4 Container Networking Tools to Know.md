@@ -1,47 +1,48 @@
-[Translating by bestony]
-4 Container Networking Tools to Know
-=======================================
+
+# 4 Container Networking Tools to Know
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/network-crop.jpeg?itok=Na1tb9aR)
->[Creative Commons Zero][1]
 
-With so many new cloud computing technologies, tools, and techniques to keep track of, it can be hard to know where to start learning new skills. This series on [next-gen cloud technologies][2] aims to help you get up to speed on the important projects and products in emerging and rapidly changing areas such as software-defined networking (SDN) , containers, and the space where they coincide: container networking.
+> [Creative Commons Zero][1]
 
-The relationship between containers and networks remains challenging for enterprise container deployment. Containers need networking functionality to connect distributed applications. Part of the challenge, according to a recent [Enterprise Networking Planet][3] article, is “to deploy containers in a way that provides the isolation they need to function as their own self-contained data environments while still maintaining effective connectivity.”
+有了这么多新的云计算技术、工具和技术要跟踪，知道从哪开始学习新的技能变得难了。这一系列[下一代云计算技术][2]的目的是为了帮助你在重要的项目和产品在信息和快速变化的领域速度更快，如软件定义网络（SDN）、容器，他们不谋而合：容器网络
 
-[Docker][4], the popular container platform, uses software-defined virtual networks to connect containers with the local network. Additionally, it uses Linux bridging features and virtual extensible LAN (VXLAN) technology so containers can communicate with each other in the same Swarm, or cluster. Docker’s plug-in architecture also allows other network management tools, such as those listed below, to control containers.
+对于企业容器部署，容器和网络之间的关系依然具有挑战性。容器需要网络功能来链接分布式应用程序。根据最新的[企业网络星球][3]文章，一部分的挑战是“将容器部署在自己的独立数据环境中，同时保持有效链接的有隔离的容器部署方式”。
 
-Innovation in container networking has enabled containers to connect with other containers across hosts. This enables developers to start an application in a container on a host in a development environment and transition it across testing and then into a production environment enabling continuous integration, agility, and rapid deployment.
+[Docker][4],流行的容器平台，使用了软件定义虚拟网络来链接容器和本地网络。此外，它使用Linux的桥接功能和虚拟可扩展局域网（VXLAN）技术，可以在同一容器集群互相沟通。Docker的插件架构也允许其他网络管理工具，比如下面的提到的工具来管理容器网络。 
 
-Container networking tools help accomplish container networking scalability, mainly by:
+容器网络上的创新使得容器可以链接到主机上的其他容器。这使开发人员可以在一个主机上部署一个容器运行一个应用，并过渡到整个测试环境，然后到一个生产环境，使应用可以持续集成，敏捷性和快速部署。
 
-1) enabling complex, multi-host systems to be distributed across multiple container hosts.
+容器网络工具有助于实现容器网络的可扩展性，主要是通过：
 
-2) enabling orchestration for container systems spanning a tremendous number of hosts across multiple public and private cloud platforms.
+1) 使复杂的，多主机系统被分发到多个容器主机。
+
+2) 允许跨越多个公有云和私有云平台上的主机的容器系统的业务流程。
 
 ![](https://www.linux.com/sites/lcom/files/styles/floated_images/public/john-willis_k.jpg?itok=lTsH9eqI)
->John Willis speaking at Open Networking Summit 2016.
 
-For more information, check out the [Docker Networking Tutorial][5] video, which was presented by Brent Salisbury and John Willis at the recent [Open Networking Summit (ONS)][6]. This and many other ONS keynotes and presentations can be found [here][7].
+> John Willis speaking 在 Open Networking Summit 2016.
 
-Container networking tools and projects you should know about include:
+获取更多信息，查看 [Docker 网络教程][5] , 由 Brent Salisbury and John Willis 在最近的 [Open Networking Summit (ONS)][6]发布的. 更多关于ONS 的KeyNote可以 [这里][7]找到.
 
-[Calico][8] -- The Calico project (from [Metaswitch][9]) leverages Border Gateway Protocol (BGP) and integrates with cloud orchestration systems for secure IP communication between virtual machines and containers.
+你应该知道的容器网络工具和项目包括下述：
 
-[Flannel][10] -- Flannel (previously called rudder) from [CoreOS][11] provides an overlay network that can be used as an alternative to existing SDN solutions.
+[Calico][8] -- Calico 项目 (源自Metaswitch][9])利用边界网关协议（BGP）和集成的云编排系统来保证虚拟机和容器之间的IP通信安全。
 
-[Weaveworks][12] -- The Weaveworks projects for managing containers include [Weave Net][13], Weave Scope, and Weave Flux. Weave Net is a tool for building and deploying Docker container networks.
+[Flannel][10] -- Flannel (之前叫 rudder) 源自[CoreOS][11] 提供一个覆盖网络，可以作为一个现有的SDN解决方案的替代品。
 
-[Canal][14] -- Just this week, CoreOS and Tigera announced the formation of a new open source project called Canal. According to the announcement, the Canal project aims to combine aspects of Calico and Flannel, "weaving security policy into both the network fabric and the cloud orchestrator."
+[Weaveworks][12] -- Weaveworks 项目管理容器的工具包括 [Weave Net][13], Weave Scope, Weave Flux. Weave Net 是一种用于构建和部署Docker容器的网络工具。
 
-You can learn more about container management, software-defined networking, and other next-gen cloud technologies through The Linux Foundation’s free “Cloud Infrastructure Technologies” course -- a massively open online course being offered through edX. [Registration for this course is open now][15], and course content will be available in June.
+[Canal][14] -- 就在本周, CoreOS 和Tigera 宣布了新项目 Canal 的信息 .根据声明,Canal项目旨在结合Calico和Flannel, “构造网络安全策略包括网络架构,云管理平台 ”.
 
---------------------------------------------------------------------------------
+你可以通过Linux基金会在EDX的大规模开放在线课程上的免费“云基础设施技术”课程来了解更多关于容器管理，软件定义网络，和其他下一代云技术。[课程注册目前已经开放][15], 课程内容将于6月开放。
+
+------
 
 via: https://www.linux.com/news/4-container-networking-tools-know
 
 作者：[AMBER ANKERHOLZ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Bestony](https://github.com/Bestony)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -61,4 +62,4 @@ via: https://www.linux.com/news/4-container-networking-tools-know
 [12]: https://www.weave.works/
 [13]: https://www.weave.works/products/weave-net/
 [14]: https://github.com/tigera/canal
-[15]: https://training.linuxfoundation.org/linux-courses/system-administration-training/introduction-to-cloud-infrastructure-technologies?utm_source=linuxcom&utm_medium=article&utm_campaign=cloud%20mooc%20article%201
+[15]: https://training.linuxfoundation.org/linux-courses/system-administration-training/introduction-to-cloud-infrastructure-technologies?utm_source=linuxcom&amp;utm_medium=article&amp;utm_campaign=cloud%20mooc%20article%201
