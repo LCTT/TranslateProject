@@ -50,16 +50,22 @@ uniq([1,2,2,3])
 ```
 
 ### Packages vs modules
+### 包与模块
 
-It’s important to note that, when I say “modules”, I’m not talking about “packages” in the npm sense. When you install a package from npm, it might only expose a single module in its public API, but under the hood it could actually be a conglomeration of many modules.
+It’s important to note that, when I say “modules”, I’m not talking about “packages” in the npm sense. When you install a package from npm, it might only expose a single module in its public API, but under the hood it could actually be a conglomeration of many modules.  
+需要强调的是这里我提到的“模块”并不同于 npm 中的“包”的概念。当你从 npm 安装一个包时，它会将该模块通过公用 API 展现出来，但是在这之下其实是一个许多模块的聚合物。
 
-For instance, consider a package like [is-array][8]. It has no dependencies and only contains [one JavaScript file][9], so it has one module. Simple enough.
+For instance, consider a package like [is-array][8]. It has no dependencies and only contains [one JavaScript file][9], so it has one module. Simple enough.  
+例如，我们来看一个包 [is-array][8]，它没有别的依赖，并且只包含 [一个 JavaScript 文件][9]，所以它只有一个模块。这算是足够简单的。
 
-Now consider a slightly more complex package like [once][10], which has exactly one dependency: [wrappy][11]. [Both][12] [packages][13] contain one module, so the total module count is 2\. So far, so good.
+Now consider a slightly more complex package like [once][10], which has exactly one dependency: [wrappy][11]. [Both][12] [packages][13] contain one module, so the total module count is 2\. So far, so good.  
+现在来看一个稍微复杂一点的包，如 [once][10]。它有一个依赖的包 [wrappy][11]。[两][12][个][13] 包都各自包含一个模块，所以总模块数为 2。至此，也还算好。
 
-Now let’s consider a more deceptive example: [qs][14]. Since it has zero dependencies, you might assume it only has one module. But in fact, it has four!
+Now let’s consider a more deceptive example: [qs][14]. Since it has zero dependencies, you might assume it only has one module. But in fact, it has four!  
+现在来一起看一个更为令人迷惑的例子：[qs][14]。因为它没有依赖的包，所以你可能就认为它只有一个模块，然而事实上，它有四个模块！
 
-You can confirm this by using a tool I wrote called [browserify-count-modules][15], which simply counts the total number of modules in a Browserify bundle:
+You can confirm this by using a tool I wrote called [browserify-count-modules][15], which simply counts the total number of modules in a Browserify bundle:  
+你可以用一个我写的工具 [browserify-count-modules][15] 来统计一个 Browserify 包的总模块数：
 
 ```
 $ npm install qs
@@ -67,7 +73,8 @@ $ browserify node_modules/qs | browserify-count-modules
 4
 ```
 
-This means that a given package can actually contain one or more modules. These modules can also depend on other packages, which might bring in their own packages and modules. The only thing you can be sure of is that each package contains at least one module.
+This means that a given package can actually contain one or more modules. These modules can also depend on other packages, which might bring in their own packages and modules. The only thing you can be sure of is that each package contains at least one module.  
+这说明了一个包可以包含一个或者多个模块。这些模块也可以依赖于其他的包，而这些包又将附带其自己所带的包与模块。由此可以确定的事就是任何一个包将包含至少一个模块。
 
 ### Module bloat
 
