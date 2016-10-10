@@ -1,3 +1,5 @@
+OneNewLife translating
+
 Building your first Atom plugin
 =====
 
