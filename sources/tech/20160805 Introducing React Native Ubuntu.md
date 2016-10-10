@@ -1,3 +1,5 @@
+OneNewLife Translating
+
 Introducing React Native Ubuntu
 =====================
 
