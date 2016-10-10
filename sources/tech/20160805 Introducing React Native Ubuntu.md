@@ -1,4 +1,3 @@
-ch_cn translating
 Introducing React Native Ubuntu
 =====================
 
