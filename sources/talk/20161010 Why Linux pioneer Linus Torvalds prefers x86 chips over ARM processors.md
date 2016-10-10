@@ -1,3 +1,5 @@
+OneNewLife translating
+
 Why Linux pioneer Linus Torvalds prefers x86 chips over ARM processors
 =============
 
