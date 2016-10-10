@@ -1,4 +1,3 @@
-Translating by Flowsnow!
 Best Password Manager — For Windows, Linux, Mac, Android, iOS and Enterprise
 ==============================
 

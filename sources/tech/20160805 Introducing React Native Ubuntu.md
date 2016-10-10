@@ -1,4 +1,5 @@
-ch_cn translating
+OneNewLife Translating
+
 Introducing React Native Ubuntu
 =====================
 

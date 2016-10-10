@@ -1,4 +1,3 @@
-Translating by cposture
 Python unittest: assertTrue is truthy, assertFalse is falsy
 ===========================
 
