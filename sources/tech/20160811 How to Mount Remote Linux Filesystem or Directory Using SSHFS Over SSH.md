@@ -1,4 +1,3 @@
-Translating by cposture
 How to Mount Remote Linux Filesystem or Directory Using SSHFS Over SSH
 ============================
 
