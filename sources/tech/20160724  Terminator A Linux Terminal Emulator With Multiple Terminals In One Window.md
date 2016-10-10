@@ -1,3 +1,4 @@
+yangmingming translating
 Terminator A Linux Terminal Emulator With Multiple Terminals In One Window
 =============================================================================
 
