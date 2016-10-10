@@ -1,5 +1,4 @@
-chisper is translating.
-
+Translated by chunyang-wen
 A Raspberry Pi Hadoop Cluster with Apache Spark on YARN: Big Data 101
 ======
 
