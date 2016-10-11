@@ -76,22 +76,32 @@ $ browserify node_modules/qs | browserify-count-modules
 This means that a given package can actually contain one or more modules. These modules can also depend on other packages, which might bring in their own packages and modules. The only thing you can be sure of is that each package contains at least one module.  
 这说明了一个包可以包含一个或者多个模块。这些模块也可以依赖于其他的包，而这些包又将附带其自己所带的包与模块。由此可以确定的事就是任何一个包将包含至少一个模块。
 
-### Module bloat
+### Module bloat  
+### 模块膨胀
 
-How many modules are in a typical web application? Well, I ran browserify-count-moduleson a few popular Browserify-using sites, and came up with these numbers:
+How many modules are in a typical web application? Well, I ran browserify-count-moduleson a few popular Browserify-using sites, and came up with these numbers:  
+一个典型的网页应用中会包含多少个模块呢？我在一些流行的使用 Browserify 的网站上运行 browserify-count-moduleson 并且得到了以下结果：
 
 *   [requirebin.com][16]: 91 modules
+*   [requirebin.com][16]: 91 个模块
 *   [keybase.io][17]: 365 modules
+*   [keybase.io][17]: 365 个模块
 *   [m.reddit.com][18]: 1050 modules
+*   [m.reddit.com][18]: 1050 个模块
 *   [Apple.com][19]: 1060 modules (Added. [Thanks, Max!][20])
+*   [Apple.com][19]: 1060 个模块 (新增。 [感谢 Max！][20])
 
-For the record, my own [Pokedex.org][21] (the largest open-source site I’ve built) contains 311 modules across four bundle files.
+For the record, my own [Pokedex.org][21] (the largest open-source site I’ve built) contains 311 modules across four bundle files.  
+顺带一提，我写过的最大的开原站点 [Pokedex.org][21] 包含了 4 个包，共 311 个模块。
 
-Ignoring for a moment the raw size of those JavaScript bundles, I think it’s interesting to explore the cost of the number of modules themselves. Sam Saccone has already blown this story wide open in [“The cost of transpiling es2015 in 2016”][22], but I don’t think his findings have gotten nearly enough press, so let’s dig a little deeper.
+Ignoring for a moment the raw size of those JavaScript bundles, I think it’s interesting to explore the cost of the number of modules themselves. Sam Saccone has already blown this story wide open in [“The cost of transpiling es2015 in 2016”][22], but I don’t think his findings have gotten nearly enough press, so let’s dig a little deeper.  
+让我们先暂时忽略这些 JavaScript 包的实际大小，我认为去探索一下一定数量的模块本身开销回事一件有意思的事。虽然 Sam Saccone 的文章 [“2016 年 ES2015 转译的开销”][22] 已经广为流传，但是我认为他的结论还未到达最深程度，所以让我们挖掘的稍微再深一点吧。 
 
 ### Benchmark time!
+### 测试环节！
 
-I put together [a small benchmark][23] that constructs a JavaScript module importing 100, 1000, and 5000 other modules, each of which merely exports a number. The parent module just sums the numbers together and logs the result:
+I put together [a small benchmark][23] that constructs a JavaScript module importing 100, 1000, and 5000 other modules, each of which merely exports a number. The parent module just sums the numbers together and logs the result:  
+我构造了一个能导入 100、1000 和 5000 个其他小模块的测试模块，其中每个小模块仅仅导出一个数字。而父模块则将这些数字求和并记录结果：
 
 ```
 // index.js
@@ -107,9 +117,11 @@ console.log(total)
 module.exports = 1
 ```
 
-I tested five bundling methods: Browserify, Browserify with the [bundle-collapser][24] plugin, Webpack, Rollup, and Closure Compiler. For Rollup and Closure Compiler I used ES6 modules, whereas for Browserify and Webpack I used CommonJS, so as not to unfairly disadvantage them (since they would need a transpiler like Babel, which adds its own overhead).
+I tested five bundling methods: Browserify, Browserify with the [bundle-collapser][24] plugin, Webpack, Rollup, and Closure Compiler. For Rollup and Closure Compiler I used ES6 modules, whereas for Browserify and Webpack I used CommonJS, so as not to unfairly disadvantage them (since they would need a transpiler like Babel, which adds its own overhead).  
+我测试了五种打包方法：Browserify, 带 [bundle-collapser][24] 插件的 Browserify, Webpack, Rollup 和 Closure Compiler。对于 Rollup 和 Closure Compiler 我使用了 ES6 模块，而对于 Browserify 和 Webpack 则用的 CommonJS，目的是为了不涉及其各自缺点而导致测试的不公平（由于它们可能需要做一些转译工作，如 Babel 一样，而这些工作将会增加其自身的运行时间）。
 
-In order to best simulate a production environment, I used Uglify with the --mangle and--compress settings for all bundles, and served them gzipped over HTTPS using GitHub Pages. For each bundle, I downloaded and executed it 15 times and took the median, noting the (uncached) load time and execution time using performance.now().
+In order to best simulate a production environment, I used Uglify with the --mangle and--compress settings for all bundles, and served them gzipped over HTTPS using GitHub Pages. For each bundle, I downloaded and executed it 15 times and took the median, noting the (uncached) load time and execution time using performance.now().  
+为了更好地模拟一个生产环境，我将带 -mangle 和 -compress 参数的 Uglify 用于所有的包，并且使用 gzip 压缩后通过 GitHub Pages 用 HTTPS 协议进行传输。对于每个包，我一共下载并执行 15 次，然后取其平均值，并使用 performance.now() 函数来记录载入时间（未使用缓存）与执行时间。
 
 ### Bundle sizes
 
