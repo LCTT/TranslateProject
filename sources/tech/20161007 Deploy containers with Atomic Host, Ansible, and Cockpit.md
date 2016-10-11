@@ -1,3 +1,4 @@
+translating by  Bestony
 Deploy containers with Atomic Host, Ansible, and Cockpit
 ====
 
@@ -74,7 +75,7 @@ via: https://fedoramagazine.org/deploy-containers-atomic-host-ansible-cockpit/
 
 作者：[trishnag][a]
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[Bestony](https://github.com/Bestony)
 
 校对：[校对者ID](https://github.com/校对者ID)
 
