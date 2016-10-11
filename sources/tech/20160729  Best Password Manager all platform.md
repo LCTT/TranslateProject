@@ -1,81 +1,79 @@
-Translating By Bestony
-Best Password Manager — For Windows, Linux, Mac, Android, iOS and Enterprise
-==============================
+# 对于Windows、Linux、Mac、Android、iOS以及企业最好的密码管理工具
 
 ![](https://4.bp.blogspot.com/-uMOdpnxBV9w/V5x4YW54SbI/AAAAAAAAo_E/o-gUmO46UB0Ji2IMzd_xdY5pVsCcJnFwQCLcB/s1600/free-best-password-manager-2016.png)
 
-When it comes to safeguarding your Internet security, installing an antivirus software or running a [Secure Linux OS][1] on your system does not mean you are safe enough from all kinds of cyber-threats.
+当涉及到维护你的网络安全,从各种网络威胁的角度来看，安装防病毒软件或运行一个[安全的Linux操作系统][1],并不意味你就是安全的。
 
-Today majority of Internet users are vulnerable to cyber attacks, not because they aren't using any best antivirus software or other security measures, but because they are using [weak passwords][2] to secure their online accounts.
+今天大多数网络用户都容易收到网络攻击，并不是因为他们使用任何最好的防病毒软件或其他安全措施，而是因为他们使用[弱密码][2]来保护他们自己的网上帐号。
 
-Passwords are your last lines of defense against online threats. Just look back to some recent data breaches and cyber attacks, including high-profile [data breach at OPM][3] (United States Office of Personnel Management) and the extra-marital affair site [Ashley Madison][4], that led to the exposure of hundreds of millions of records online.
+密码是你抵御网络威胁的最后一道防线。只要回顾一下最近的一些数据泄露和网络攻击，包括高调的数据泄露在[OPM数据 ][ 3 ]（美国人事管理办公室）和婚外情网站[ Ashley Madison ]的[ 4 ]，导致成千上万的记录的网上曝光。
 
-Although you can not control data breaches, it is still important to create strong passwords that can withstand dictionary and [brute-force attacks][5].
+虽然你不能控制数据泄露，但它仍然是重要的，创建强大的密码，可以抵御字典和[暴力破解][ 5 ]。
 
-You see, the longer and more complex your password is, the much harder it is crack.
+你看，你的密码越长，它越难破解。
 
-### How to Stay Secure Online?
+### 如何保证在线服务的安全？
 
-Security researchers have always advised online users to create long, complex and different passwords for their various online accounts. So, if one site is breached, your other accounts on other websites are secure enough from being hacked.
+安全研究人员一直建议在线用户为他们的各种网上账户创建长的，复杂和不同的密码。因此，如果一个网站被攻破，你的其他网站上的其他帐户是安全的，不会被黑客攻击。
 
-Ideally, your strong password should be at least 16 characters long, should contain a combination of digits, symbols, uppercase letters and lowercase letters and most importantly the most secure password is one you don't even know.
+理想的情况下，你的密码必须至少16个字符长，应该包含数字、符号、大写字母和小写字母，最重要的是最安全的密码是一个你甚至不知道的。
 
-The password should be free of repetition and not contain any dictionary word, pronoun, your username or ID, and any other predefined letter or number sequences.
+密码应该不会重复而且不包含任何字典的单词，代词，你的用户名或身份证，和任何其他预定义的字母或数字序列。
 
-I know this is a real pain to memorize such complex password strings and unless we are human supercomputers, remembering different passwords for several online accounts is not an easy task.
+我知道记住这样的复杂的密码字符串是一个真正痛苦的过程，除非我们是人类的超级计算机，为不同的在线账户记住不同的密码不是一个容易的任务。
 
-The issue is that today people subscribe to a lot of online sites and services, and it's usually hard to create and remember different passwords for every single account.
+问题是，今天人们订阅了大量的在线网站和服务，它为每一个帐户创建和记住不同的密码通常很难的。
 
 But, Luckily to make this whole process easy, there's a growing market for password managers for PCs and phones that can significantly reduce your password memorizing problem, along with the cure for your bad habit of setting weak passwords.
 
-### What is Password Manager?
+### 密码管理器是什么？
 
 ![](https://1.bp.blogspot.com/-LY7pI45tMq0/V5r_XV083RI/AAAAAAAAo6M/MivILg0_4Vs7UgLKZJqM5vhvYujQCCcpgCLcB/s1600/best-password-manager-software.png)
 
-Password Manager software has come a very long way in the past few years and is an excellent system that both allows you to create complex passwords for different sites and remember them.
+在过去的几年里，密码管理软件已经走了很长的路，它是一个很好的系统，都可以让你为不同的网站创建复杂的密码，并记住他们。
 
-A password manager is just software that creates, stores and organizes all your passwords for your computers, websites, applications and networks.
+密码管理器是一个创建，存储和组织你的电脑，网站，应用程序和网络的所有密码的软件。
 
-Password managers that generate passwords and double as a form filler are also available in the market, which has the ability to enter your username and password automatically into login forms on websites.
+密码管理器也可在市场上生成密码和作为表单填充，它可以自动在网站的登录表单中输入您的用户名和密码。
 
-So, if you want super secure passwords for your multiple online accounts, but you do not want to memorize them all, Password Manager is the way to go.
+所以，如果你想为你的多个在线帐户的超级安全的密码，但你不想记住他们所有，密码管理器是你最好的选择。
 
-### How does a Password Manager work?
+### 密码管理器如何工作？
 
 Typically, Password Manager software works by generating long, complex, and, most importantly, unique password strings for you, and then stores them in encrypted form to protect the confidential data from hackers with physical access to your PC or mobile device.
 
-The encrypted file is accessible only through a master password. So, all you need to do is remember just one master password to open your password manager or vault and unlock all your other passwords.
+加密的文件只能通过主密码访问。因此，所有你需要做的是记住只有一个主密码来打开你的密码管理器和解锁所有你的其他密码。
 
 ?
 
-However, you need to make sure your master password is extra-secure of at least 16 characters long.
+然而，你需要确保你的主密码是至少16个字符的额外的安全性。
 
-### Which is the Best Password Manager? How to Choose?
+### 哪个是最好的密码管理器？如何选择？
 
-I've long recommended password managers, but most of our readers always ask:
+我一直推荐的密码管理器，但大多数读者总是问
 
-- Which password manager is best?
-- Which password manager is the most secure? Help!
+- 哪个密码管理器最好？
+- 哪个密码管理器最安全？帮帮我！
 
-So, today I'm introducing you some of the best Password Manager currently available in the market for Windows, Linux, Mac, Android, iOS and Enterprise.
+所以，今天我要介绍给你一些最好的密码管理器，目前可在Windows，Mac，Linux，Android、iOS和企业中使用。
 
-Before choosing a good password manager for your devices, you should check these following features:
+在为你的设备选择一个好的密码管理器之前，你应该检查以下功能：
 
-- Cross-Platform Application
-- Works with zero-knowledge model
-- Offers two-factor authentication (multi-factor authentication)
+- 跨平台应用
+- 零知识模型
+- 提供双因素认证（多因素身份验证）
 
-Note: Once adopted, start relying on your password manager because if you are still using weak passwords for your important online accounts, nobody can save you from malicious hackers.
+注意：一旦通过，开始依赖于您的密码管理器，因为如果你仍然使用弱密码为您的重要的在线帐户，没有人可以拯救你从恶意黑客。
 
-### Best Password Managers for Windows
+### Windows最佳密码管理工具
 
 ![](https://2.bp.blogspot.com/-8MUEI5RctdA/V5sDM_oCoaI/AAAAAAAAo60/LX4AktoS_f0JeYDORSqmDZMfmsbOa6QnACLcB/s1600/Best-Password-Manager-for-Windows.png)
 
-Windows users are most vulnerable to cyber attacks because Windows operating system has always been the favorite target of hackers. So, it is important for Windows users to make use of a good password manager.
+Windows用户最容易受到网络攻击，因为Windows操作系统一直是黑客最喜欢的目标。所以，Windows用户使用一个好的密码管理器是重要的。
 
-Some other best password manager for windows: Keeper, Password Safe, LockCrypt, 1Password, and Dashlane.
+一些其他Windows最好的密码管理器：Keeper，Password Safe，LockCrypt，1 Password 和 Dashlane。
 
-- 1. Keeper Password Manager (Cross-Platform)
+- 1. Keeper密码管理器（跨平台）
 
 ![](https://1.bp.blogspot.com/-9ISKGyTAX9U/V5xec18I21I/AAAAAAAAo8E/i8IqZXXpDwMGe8wnI6Adj3qduR_Qm5o3ACLcB/s1600/keeper-Password-Manager-for-mac-os-x.png)
 
@@ -91,7 +89,7 @@ But you don't need worry, as this action will not delete the backup records stor
 
 Download Keeper Password Manager: [Windows, Linux and Mac][6] | [iOS][7] | [Android][8] | [Kindle][9]
 
-- 2. Dashlane Password Manager (Cross-Platform)
+- 1. Dashlane 密码管理器（跨平台）
 
 ![](https://3.bp.blogspot.com/-2BuFpcAe9K8/V5xjugOWPuI/AAAAAAAAo9A/wpooAjcH74EzxfNJwrFu-Mcn0IkwiRGjACLcB/s1600/Dashlane-Password-Manager-for-Android.png)
 
@@ -107,7 +105,7 @@ DashLane Password Manager app for Android is completely free to use on a single 
 
 Download DashLane Password Manager: [Windows][10] and [Mac][11] | [iOS][12] | [Android][13]
 
-- 3. LastPass Password Manager (Cross-Platform)
+- 1. LastPass密码管理器（跨平台）
 
 ![](https://3.bp.blogspot.com/--o_hWTgXh2M/V5sAjw7FlYI/AAAAAAAAo6U/Ajmvt0rgRAQE3M_YeYurpbsUoLBN8OTLwCLcB/s1600/LastPass-Password-Manager-for-Windows.png)
 
@@ -119,7 +117,7 @@ LastPass Password Manager comes for free as well as a premium with a fingerprint
 
 Download LastPass Password Manager: [Windows, Mac, and Linux][14] | [iOS][15] | [Android][16]
 
-### Best Password Manager for Mac OS X
+Mac OS X的最佳密码管理器
 
 ![](https://2.bp.blogspot.com/-lEim3E-0wcg/V5sFhOVYK7I/AAAAAAAAo7A/z6Lp8_ULdJAD8ErZ1a-FevXPO8nR3JKNACLcB/s1600/Best-Password-Manager-for-mac-os-x.png)
 
@@ -129,7 +127,7 @@ As proof, you can read our previous articles on cyber attacks against Mac and iO
 
 Some other best password manager for Mac OS X:  1Password, Dashlane, LastPass, OneSafe, PwSafe.
 
-- 1. LogMeOnce Password Manager (Cross-Platform)
+- 1. LogMeOnce密码管理器（跨平台）
 
 ![](https://4.bp.blogspot.com/-fl64fXK2bdA/V5sHL215j_I/AAAAAAAAo7M/fbn4EsrQMkU3tWWfiAsWlTgKKXb0oEzlwCLcB/s1600/LogMeOnce-Password-Manager-for-Mac-os-x.png)
 
@@ -143,7 +141,7 @@ LogmeOnce protects your passwords with military-grade AES-256 encryption technol
 
 Download LogMeOnce Password Manager: [Windows and Mac][17] | [iOS][18] | [Android][19]
 
-- 2. KeePass Password Manager (Cross-Platform)
+- 1. KeePass密码管理器（跨平台）
 
 ![](https://4.bp.blogspot.com/-XWwdG1z9sDw/V5sA7azAy6I/AAAAAAAAo6c/dkkfMRuxDoE_gi5OMRvDOUFq15P5NRO6QCLcB/s1600/Keepass-Password-Manager-for-Windows.png)
 
@@ -158,7 +156,8 @@ KeePass encrypts your passwords and login info using the most secure encryption 
 KeePass is not just free, but it is also open source, which means its code and integrity can be examined by anyone, adding a degree of confidence.
 
 Download KeePass Password Manager: [Windows and Linux][20] | [Mac][21] | [iOS][22] | [Android][23]
-3. Apple iCloud Keychain
+
+1. 苹果iCloud钥匙扣
 
 ![](https://4.bp.blogspot.com/-vwY_dmsKIBg/V5xfhIZGxxI/AAAAAAAAo8M/OjPrBsp9GysF-bK3oqHtW74hKNYO61W9QCLcB/s1600/Apple-iCloud-Keychain-Security.png)
 
@@ -171,7 +170,7 @@ Also, iCloud Keychain generates new, unique and strong passwords for you to use 
 Major limitation: Keychain doesn't work with other browsers other than Apple Safari.
 
 Also Read: [How to Setup iCloud Keychain][24]?
-Best Password Manager for Linux
+Linux最佳密码管理器
 
 ![](https://1.bp.blogspot.com/-2zDAqYEQTQA/V5xgbo_OcQI/AAAAAAAAo8Y/hWzGLW7R4vse3QnpCM5-qmSHLtzK5M1VACLcB/s1600/best-Password-Manager-for-linux.png)
 
@@ -195,7 +194,7 @@ Encryptr software lets you encrypt three types of files: Passwords, Credit Card 
 
 Download Encryptr Password Manager: [Windows, Linux and Mac][25] | [iOS][26] | [Android][27]
 
-2. EnPass Password Manager (Cross-Platform)
+1. EnPass Password Manager (Cross-Platform)
 
 ![](https://4.bp.blogspot.com/-_IF81t9rL7U/V5xhBIPUSHI/AAAAAAAAo8c/6-kbLXTl2G0EESTH4sP9KvZLzTFlCyypACLcB/s1600/EnPass-Password-Manager-for-Linux.png)
 
@@ -207,7 +206,7 @@ Additionally, by default, Enpass locks itself every minute when you leave your c
 
 Download EnPass Password Manager: [Windows][28], [Linux][29] | [Mac][30] | [iOS][31] | [Android][32]
 
-3. RoboForm Password Manager (Cross-Platform)
+1. RoboForm Password Manager (Cross-Platform)
 
 ![](https://3.bp.blogspot.com/-g8Qf9V1EdqU/V5sBkDk614I/AAAAAAAAo6k/5ZTr9LyosU82F16GxajewvU4sWYyJFq5gCLcB/s1600/Roboform-Password-Manager-for-Windows.png)
 
@@ -243,7 +242,7 @@ Recently, the Android version of 1Password password manager app has added Finger
 
 Download 1Password Password Manager: [Windows and Mac][37] | [iOS][38] | [Android][39]
 
-- 2. mSecure Password Manager (Cross-Platform)
+- 1. mSecure Password Manager (Cross-Platform)
 
 ![](https://4.bp.blogspot.com/-nvjjS2dWfPc/V5xkEdAOYvI/AAAAAAAAo9I/EDGfA5hzacIq46gWG-6BD2UPHwQAHD-pgCLcB/s1600/mSecure-password-manager-for-android.png)
 
@@ -275,7 +274,7 @@ Besides this, OneSafe also provides advanced security for your accounts' passwor
 
 Download OneSafe Password Manager: [iOS][43] | [Mac][44] | [Android][45] | [Windows][46]
 
-- 2. SplashID Safe Password Manager (Cross-Platform)
+- 1. SplashID Safe Password Manager (Cross-Platform)
 
 ![](https://1.bp.blogspot.com/-FcNub2p-QNE/V5xmDW7QXvI/AAAAAAAAo9o/23VuGUAMCYYS64kKlUqBcfx3JIfBr5gTgCLcB/s1600/SplashID-Safe-password-manager-for-ios.png)
 
@@ -289,7 +288,7 @@ The free version of SplashID Safe app comes with basic record storage functional
 
 Download SplashID Safe Password Manager: [Windows and Mac][47] | [iOS][48] | [Android][49]
 
-3. LoginBox Pro Password Manager
+1. LoginBox Pro Password Manager
 
 ![](https://3.bp.blogspot.com/-4GzhwZFXDHQ/V5xogkDk49I/AAAAAAAAo90/69rmVdKD-VUG0kHJXIqE2x-mVlWZEDrYwCLcB/s1600/LoginBox-Pro-Password-Manager-for-ios.png)
 
@@ -323,7 +322,7 @@ Chrome password manager lets you manage all your accounts' passwords from the We
 
 So, if you prefer using a different browser, like Microsoft Edge on Windows 10 or Safari on iPhone, just visit [passwords.google.com][52], and you'll see a list of all your passwords you have saved with Chrome. Google's two-factor authentication protects this list.
 
-- 2. Clipperz Online Password Manager
+- 1. Clipperz Online Password Manager
 
 ![](https://2.bp.blogspot.com/-gs8b_N_k6CA/V5xrvzbUIKI/AAAAAAAAo-M/vsTXHZNErkQu6g8v9V1R2FxLkdppZq_GACLcB/s1600/Clipperz-Online-Password-Manager.png)
 
@@ -335,7 +334,7 @@ Some features of Clipperz online password manager also includes password strengt
 
 Clipperz online password manager can work on any computer that runs a browser with a JavaScript browser.
 
-- 3. Passpack Online Password Manager
+- 1. Passpack Online Password Manager
 
 ![](https://4.bp.blogspot.com/-ng91nPnzbWI/V5xsarl2mqI/AAAAAAAAo-Q/zJlFK-63vugeoyymDL26c5mPiWNsGQjuACLcB/s1600/Passpack-Free-Online-Password-Manager.png)
 
@@ -365,7 +364,7 @@ It automatically logs users into apps and websites without typing usernames and 
 
 Meldium password manager is perfect for sharing accounts within your team member without sharing the actual password, which helps organizations to protect themselves from phishing attacks.
 
-- 2. Zoho Vault Password Management Software
+- 1. Zoho Vault Password Management Software
 
 ![](https://2.bp.blogspot.com/-J-N_1wOYxmI/V5xtrz42QWI/AAAAAAAAo-o/QF4n4QAF7ZMBd7uIRdjM6Hdd1MHwsXWQACLcB/s1600/zoho-vault--Enterprise-Password-Manager.png)
 
@@ -391,7 +390,7 @@ So, I recommend you to enable two-factor authentication now along with using a p
 
 
 
---------------------------------------------------------------------------------
+------
 
 via: https://thehackernews.com/2016/07/best-password-manager.html
 
@@ -402,7 +401,6 @@ via: https://thehackernews.com/2016/07/best-password-manager.html
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://thehackernews.com/2016/07/best-password-manager.html#author-info
-
 [1]: http://thehackernews.com/2016/03/subgraph-secure-operating-system.html
 [2]: http://thehackernews.com/2016/01/password-security-manager.html
 [3]: http://thehackernews.com/2015/09/opm-hack-fingerprint.html
@@ -415,16 +413,15 @@ via: https://thehackernews.com/2016/07/best-password-manager.html
 [10]: https://www.dashlane.com/download
 [11]: https://www.dashlane.com/passwordmanager/mac-password-manager
 [12]: https://itunes.apple.com/in/app/dashlane-free-secure-password/id517914548?mt=8
-[13]: https://play.google.com/store/apps/details?id=com.dashlane&hl=en
+[13]: https://play.google.com/store/apps/details?id=com.dashlane&amp;hl=en
 [14]: https://lastpass.com/misc_download2.php
-[15]: https://itunes.apple.com/us/app/lastpass-for-premium-customers/id324613447?mt=8&ign-mpt=uo%3D4
+[15]: https://itunes.apple.com/us/app/lastpass-for-premium-customers/id324613447?mt=8&amp;ign-mpt=uo%3D4
 [16]: https://play.google.com/store/apps/details?id=com.lastpass.lpandroid
 [17]: https://www.logmeonce.com/download/
-[18]: https://itunes.apple.com/us/app/logmeonce-free-password-manager/id972000703?ls=1&mt=8
+[18]: https://itunes.apple.com/us/app/logmeonce-free-password-manager/id972000703?ls=1&amp;mt=8
 [19]: https://play.google.com/store/apps/details?id=log.me.once
-
 [20]: http://keepass.info/download.html
-[21]: https://itunes.apple.com/us/app/kypass-companion/id555293879?ls=1&mt=12
+[21]: https://itunes.apple.com/us/app/kypass-companion/id555293879?ls=1&amp;mt=12
 [22]: https://itunes.apple.com/de/app/ikeepass/id299697688?mt=8
 [23]: https://play.google.com/store/apps/details?id=keepass2android.keepass2android
 [24]: https://support.apple.com/en-in/HT204085
@@ -435,26 +432,25 @@ via: https://thehackernews.com/2016/07/best-password-manager.html
 [29]: https://www.enpass.io/download-enpass-linux/
 [30]: https://itunes.apple.com/app/enpass-password-manager-best/id732710998?mt=12
 [31]: https://itunes.apple.com/us/app/enpass-password-manager/id455566716?mt=8
-[32]: https://play.google.com/store/apps/details?id=io.enpass.app&hl=en
+[32]: https://play.google.com/store/apps/details?id=io.enpass.app&amp;hl=en
 [33]: http://www.roboform.com/download
 [34]: http://www.roboform.com/for-linux
-[35]: https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=331787573&mt=8
+[35]: https://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=331787573&amp;mt=8
 [36]: https://play.google.com/store/apps/details?id=com.siber.roboform
 [37]: https://1password.com/downloads/
 [38]: https://itunes.apple.com/in/app/1password-password-manager/id568903335?mt=8
-[39]: https://play.google.com/store/apps/details?id=com.agilebits.onepassword&hl=en
+[39]: https://play.google.com/store/apps/details?id=com.agilebits.onepassword&amp;hl=en
 [40]: https://www.msecure.com/desktop-app/
 [41]: https://itunes.apple.com/in/app/msecure-password-manager/id292411902?mt=8
-[42]: https://play.google.com/store/apps/details?id=com.mseven.msecure&hl=en
-[43]: https://itunes.apple.com/us/app/onesafe/id455190486?ls=1&mt=8
-[44]: https://itunes.apple.com/us/app/onesafe-secure-password-manager/id595543758?ls=1&mt=12
+[42]: https://play.google.com/store/apps/details?id=com.mseven.msecure&amp;hl=en
+[43]: https://itunes.apple.com/us/app/onesafe/id455190486?ls=1&amp;mt=8
+[44]: https://itunes.apple.com/us/app/onesafe-secure-password-manager/id595543758?ls=1&amp;mt=12
 [45]: https://play.google.com/store/apps/details?id=com.lunabee.onesafe
 [46]: https://www.microsoft.com/en-us/store/apps/onesafe/9wzdncrddtx9
 [47]: https://splashid.com/downloads.php
 [48]: https://itunes.apple.com/app/splashid-safe-password-manager/id284334840?mt=8
-[49]: https://play.google.com/store/apps/details?id=com.splashidandroid&hl=en
+[49]: https://play.google.com/store/apps/details?id=com.splashidandroid&amp;hl=en
 [50]: https://itunes.apple.com/app/loginbox-pro/id579954762?mt=8
 [51]: https://play.google.com/store/apps/details?id=com.mygosoftware.android.loginbox
 [52]: https://passwords.google.com/
 [53]: http://thehackernews.com/2014/01/Kali-linux-Self-Destruct-nuke-password.html
-
