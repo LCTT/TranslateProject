@@ -124,10 +124,12 @@ In order to best simulate a production environment, I used Uglify with the --man
 为了更好地模拟一个生产环境，我将带 -mangle 和 -compress 参数的 Uglify 用于所有的包，并且使用 gzip 压缩后通过 GitHub Pages 用 HTTPS 协议进行传输。对于每个包，我一共下载并执行 15 次，然后取其平均值，并使用 performance.now() 函数来记录载入时间（未使用缓存）与执行时间。
 
 ### Bundle sizes
+### 包大小
 
-Before we get into the benchmark results, it’s worth taking a look at the bundle files themselves. Here are the byte sizes (minified but ungzipped) for each bundle ([chart view][25]):
+Before we get into the benchmark results, it’s worth taking a look at the bundle files themselves. Here are the byte sizes (minified but ungzipped) for each bundle ([chart view][25]):  
+在我们查看测试结果之前，我们有必要先来看一眼我们要测试的包文件。一下是每个包最小处理后但并未使用 gzip 压缩时的体积大小（单位：Byte）：
 
-|  | 100 modules | 1000 modules | 5000 modules |
+|  | 100 个模块 | 1000 个模块 | 5000 个模块 |
 | --- | --- | --- | --- |
 | browserify | 7982 | 79987 | 419985 |
 | browserify-collapsed | 5786 | 57991 | 309982 |
@@ -135,7 +137,7 @@ Before we get into the benchmark results, it’s worth taking a look at the bund
 | rollup | 671 | 6971 | 38968 |
 | closure | 758 | 7958 | 43955 |
 
-|  | 100 modules | 1000 modules | 5000 modules |
+|  | 100 个模块 | 1000 个模块 | 5000 个模块 |
 | --- | --- | --- | --- |
 | browserify | 1649 | 13800 | 64513 |
 | browserify-collapsed | 1464 | 11903 | 56335 |
@@ -143,13 +145,15 @@ Before we get into the benchmark results, it’s worth taking a look at the bund
 | rollup | 300 | 2145 | 11510 |
 | closure | 302 | 2140 | 11789 |
 
-The way Browserify and Webpack work is by isolating each module into its own function scope, and then declaring a top-level runtime loader that locates the proper module whenever require() is called. Here’s what our Browserify bundle looks like:
+The way Browserify and Webpack work is by isolating each module into its own function scope, and then declaring a top-level runtime loader that locates the proper module whenever require() is called. Here’s what our Browserify bundle looks like:  
+Browserify 和 Webpack 的工作方式是隔离各个模块到各自的函数空间，然后声明一个全局载入器，并在每次 require() 函数调用时定位到正确的模块处。下面是我们的 Browserify 包的样子：
 
 ```
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o
 ```
 
-Whereas the Rollup and Closure bundles look more like what you might hand-author if you were just writing one big module. Here’s Rollup:
+Whereas the Rollup and Closure bundles look more like what you might hand-author if you were just writing one big module. Here’s Rollup:  
+而 Rollup 和 Closure 包看上去则更像你亲手写的一个大模块。这是 Rollup 打包的包：
 
 ```
 (function () {
@@ -161,7 +165,8 @@ Whereas the Rollup and Closure bundles look more like what you might hand-author
 // etc.
 ```
 
-If you understand the inherent cost of functions-within-functions in JavaScript, and of looking up a value in an associative array, then you’ll be in a good position to understand the following benchmark results.
+If you understand the inherent cost of functions-within-functions in JavaScript, and of looking up a value in an associative array, then you’ll be in a good position to understand the following benchmark results.  
+如果你清楚在 JavaScript 中使用嵌套函数与在关联数组查找一个值的固有开销， 那么你将很容易理解出现以下测试的结果的原因。
 
 ### Results
 
