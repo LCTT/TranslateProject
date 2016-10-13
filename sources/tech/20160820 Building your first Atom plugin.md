@@ -1,32 +1,32 @@
 OneNewLife translating
 
-Building your first Atom plugin
+制作你的第一个 Atom 插件
 =====
 
->Authored by [GitHub Campus Expert][1] @NickTikhonov.
+>作者： [GitHub 校园专家][1] @NickTikhonov。
 
-This tutorial will teach you how to write your first package for the Atom text editor. We'll be building a clone of [Sourcerer][2], a plugin for finding and using code snippets from StackOverflow. By the end of this tutorial you will have written a plugin that converts programming problems written in English into code snippets pulled from StackOverflow:
+这篇教程将会教你怎么制作你的第一个 Atom 插件。我们将会制作一个山寨的 [Sourcerer][2]——一个查询并使用 StackOverflow 的代码片段的插件。到教程结束时，你将会制作好一个将编程问题（用英语描述的）转换成获取自 StackOverflow 的代码片段的插件，像这样：
 
 ![](https://cloud.githubusercontent.com/assets/6755555/17759382/836dd780-64ab-11e6-8f6a-329f66f01fd7.gif)
 
-### What you need to know
+### 教程须知
 
-Atom is written using web technologies. Our package will be built entirely using the EcmaScript 6 standard for JavaScript. You will need to be familiar with:
+Atom 是用 web 技术创造出来的。我们将完全使用 JavaScript 的 EcmaScript 6 规范来制作插件。你需要熟悉以下内容：
 
-- Using the command line
-- JavaScript programming
-- Promises
-- HTTP
+- 使用命令行
+- JavaScript 编程
+- [Promises][14]
+- [HTTP][16]
 
-### Tutorial repository
+### 教程仓库
 
-You can follow this tutorial step-by-step or check out the [supplementary repository on GitHub][3], which contains the plugin source code. The repository history contains one commit for each step outlined here.
+你可以跟着教程一步一步走，或者看看 [GitHub 上的补充仓库][3]，这里有插件的源代码。这个仓库的历史提交记录标注有每一步的大纲。
 
-### Getting Started
+### 开始
 
-#### Installing Atom
+#### 安装 Atom
 
-Download Atom by following the instructions on the [Atom website][4]. We will also need to install apm, the Atom Package Manager command line tool. You can do this by opening Atom and navigating to Atom > Install Shell Commands in the application menu. Check that apm was installed correctly by opening your command line terminal and running apm -v, which should print the version of the tool and related environments:
+根据 [Atom 官网][16] 的说明来下载 Atom。我们同时还要装上 `apm`（Atom 包管理器的命令行工具）。你可以打开 Atom并在应用菜单中导航到 `Atom > Install Shell Commands`。通过打开你的命令行终端，运行 `apm -v` 来检查 `apm` 是否已经正确安装好，安装成功的话打印出来的工具版本和相关环境信息应该是像这样的：
 
 ```
 apm -v
@@ -37,35 +37,35 @@ apm -v
 > git 2.7.4
 ```
 
-#### Generating starter code
+#### 生成启动包
 
-Let's begin by creating a new package using a utility provided by Atom.
+让我们通过使用 Atom 提供的一个实用工具创建一个新的 **package**（软件包）来开始这篇教程。
 
-- Launch the editor and press Cmd+Shift+P (on MacOS) or Ctrl+Shift+P (on Windows/Linux) to open the Command Palette.
+- 启动编辑器，按下 `Cmd+Shift+P`（MacOS）或者 `Ctrl+Shift+P`（Windows/Linux）来打开 **Command Palette**（命令面板）。
 
-- Search for "Package Generator: Generate Package" and click the corresponding item on the list. You will see a prompt where you can enter the name of the package - "sourcefetch".
+- 搜索“Package Generator: Generate Package”并点击列表中选中的条目，你会看到一个弹窗，输入软件包的名称——“sourcefetch”。
 
-- Press enter to generate the starter package, which should automatically be opened in Atom.
+- 按下回车键来生成这个启动包，它会自动在 Atom 中打开。
 
-If you don't see package files appear in the sidebar, press Cmd+K Cmd+B (on MacOS) or Ctrl+K Ctrl+B (on Windows/Linux).
+如果你在侧边栏没有看到软件包的文件，依次按下 `Cmd+K` `Cmd+B`（MacOS）或者 `Ctrl+K` `Ctrl+B`（Windows/Linux）。
 
 ![](https://cloud.githubusercontent.com/assets/6755555/17759387/8387a354-64ab-11e6-97db-ea469f008bef.gif)
 
-The Command Palette lets you find and run package commands using fuzzy search. This is a convenient way to run commands without navigating menus or remembering shortcuts. We will be using it throughout this tutorial.
+命令面板可以让你通过模糊搜索来找到并运行软件包。这是一个执行命令比较方便的途径，你不用去找导航菜单，也不用刻意去记快捷键。我们将会在整篇教程中使用这个方法。
 
-#### Running the starter code
+#### 运行启动包
 
-Let's try out the starter package before diving into the code itself. We will first need to reload Atom to make it aware of the new package that was added. Open the Command Palette again and run the "Window: Reload" command.
+在开始编程前让我们来试用一下这个启动包。我们首先需要重启 Atom，这样它才可以识别我们新增的软件包。再次打开命令面板，执行 `Window: Reload` 命令。
 
-Reloading the current window ensures that Atom runs the latest version of our source code. We will be running this command every time we want to test the changes we make to our package.
+重新加载当前窗口以确保 Atom 执行的是我们最新的源代码。每当需要测试对软件包的改动的时候，我们就需要运行这条命令。
 
-Run the package toggle command by navigating to Packages > sourcefetch > Toggle using the editor menu, or run sourcefetch: Toggle using the Command Palette. You should see a black box appear at the top of the screen. Hide it by running the command again.
+通过导航到编辑器菜单的 `Packages > sourcefetch > Toggle` 或者在命令面板执行 `sourcefetch: Toggle` 来运行软件包的 `toggle` 命令。你应该会看到屏幕的顶部出现了一个小黑窗。再次运行这条命令就可以隐藏它。
 
 ![](https://cloud.githubusercontent.com/assets/6755555/17759386/83799fc0-64ab-11e6-9f0c-0df9b1dbff8b.gif)
 
-#### The "toggle" command
+#### “toggle”命令
 
-Let's open lib/sourcefetch.js, which contains the package logic and defines the toggle command.
+打开 `lib/sourcefetch.js`，这个文件包含有软件包的逻辑和 `toggle` 命令的定义。
 
 ```
 toggle() {
@@ -78,7 +78,7 @@ toggle() {
 }
 ```
 
-toggle is a function exported by the module. It uses a ternary operator to call show and hide on the modal panel based on its visibility. modalPanel is an instance of Panel, a UI element provided by the Atom API. We declare modalPanel inside export default, which lets us access it as an instance variable with this.
+`toggle` 是这个模块导出的一个函数。根据模态面板的可见性，它通过一个 [三目运算符][17] 来调用 `show` 和 `hide` 方法。`modalPanel` 是 [Panel][18]（一个由 Atom API 提供的 UI 元素） 的一个实例。我们需要在 `export default` 内部声明 `modalPanel` 才可以让我们通过一个实例变量 `this` 来访问它。
 
 ```
 this.subscriptions.add(atom.commands.add('atom-workspace', {
@@ -86,25 +86,25 @@ this.subscriptions.add(atom.commands.add('atom-workspace', {
 }));
 ```
 
-The above statement tells Atom to execute toggle every time the user runs sourcefetch:toggle. We subscribe an anonymous function, () => this.toggle(), to be called every time the command is run. This is an example of event-driven programming, a common paradigm in JavaScript.
+上面的语句让 Atom 在用户运行 `sourcefetch:toggle` 的时候执行 `toggle` 方法。我们订阅了一个 [匿名函数][19] `() => this.toggle()`，每次执行这条命令的时候都会执行这个函数。这是 [事件驱动编程][20]（一种常用的 JavaScript 模式）的一个范例。
 
-#### Atom Commands
+#### Atom 命令
 
-Commands are nothing more than string identifiers for events triggered by the user, defined within a package namespace. We've already used:
+命令只是用户触发事件时使用的一些字符串标识符，它在软件包的一个命名空间内定义。我们已经用过的命令有：
 
-- package-generator:generate-package
-- window:reload
-- sourcefetch:toggle
+- `Package-Generator: Generate-Package`
+- `Window: Reload`
+- `sourcefetch:toggle`
 
-Packages subscribe to commands in order to execute code in response to these events.
+软件包通过订阅命令来执行代码以达到响应事件的目的。
 
-### Making your first code change
+### 进行你的第一次代码更改
 
-Let's make our first code change—we're going to change toggle to reverse text selected by the user.
+让我们来进行第一次代码更改——我们将通过改变 `toggle` 函数来实现逆转用户选中文本的功能。
 
-#### Change "toggle"
+#### 改变“toggle”函数
 
-- Change the toggle function to match the snippet below.
+- 更改 `toggle` 函数以匹配下面的代码段。
 
 ```
 toggle() {
@@ -117,65 +117,65 @@ toggle() {
 }
 ```
 
-#### Test your changes
+#### 测试你的改动
 
-- Reload Atom by running Window: Reload in the Command Palette
+- 通过在命令面板运行 `Window: Reload` 来重新加载 Atom
 
-- Navigate to File > New to create a new file, type anything you like and select it with the cursor.
+- 通过导航到 `File > New` 来创建一个新文件，随便写点什么并通过光标选中它。
 
-- Run the sourcefetch:toggle command using the Command Palette, Atom menu, or by right clicking and selecting "Toggle sourcefetch"
+- 通过命令面板、Atom 菜单或者右击文本然后选中 `Toggle sourcefetch` 来运行 `sourcefetch:toggle` 命令
 
-The updated command will toggle the order of the selected text:
+更新后的命令将会改变选中文本的顺序：
 
 ![](https://cloud.githubusercontent.com/assets/6755555/17759381/836acd60-64ab-11e6-84dc-4ef4471a361f.gif)
 
-See all code changes for this step in the [sourcefetch tutorial repository][4].
+在 [sourcefetch 教程仓库][4] 查看这一步所有的代码更改。
 
-### The Atom Editor API
+### Atom 编辑器 API
 
-The code we added uses the TextEditor API to access and manipulate the text inside the editor. Let's take a closer look.
+我们添加的代码通过用 [TextEditor API][21] 来访问编辑器内的文本并进行操作。让我们来仔细看看。
 
 ```
 let editor
 if (editor = atom.workspace.getActiveTextEditor()) { /* ... */ }
 ```
 
-The first two lines obtain a reference to a TextEditor instance. The variable assignment and following code is wrapped in a conditional to handle the case where there is no text editor instance available, for example, if the command was run while the user was in the settings menu.
+头两行代码获取了 [TextEditor][5] 实例的一个引用。变量的赋值和后面的代码被包在一个条件结构里，这是为了处理没有可用的编辑器实例的情况，例如，当用户在设置菜单中运行命令时。
 
 ```
 let selection = editor.getSelectedText()
 ```
 
-Calling getSelectedText gives us access to text selected by the user. If no text is currently selected, the function returns an empty string.
+调用 `getSelectedText` 方法可以让我们访问到用户选中的文本。如果当前没有文本被选中，函数将返回一个空字符串。
 
 ```
 let reversed = selection.split('').reverse().join('')
 editor.insertText(reversed)
 ```
 
-Our selected text is reversed using [JavaScript String methods][6] . Finally, we call insertText to replace the selected text with the reversed counterpart. You can learn more about the different TextEditor methods available by reading the [Atom API documentation][5].
+我们选中的文本通过一个 [JavaScript 字符串方法][6] 来逆转。最后，我们调用 `insertText` 方法来将选中的文本替换为逆转后的文本副本。通过阅读 [Atom API 文档][5]，你可以学到更多关于 TextEditor 的不同的方法。
 
-### Exploring the starter package
+### 浏览启动包
 
-Now that we've made our first code change, let's take a closer look at how an Atom package is organized by exploring the starter code.
+现在我们已经完成第一次代码更改了，让我们浏览启动包的代码来深入了解一下 Atom 的软件包是怎样构成的。
 
-#### The main file
+#### 主文件
 
-The main file is the entry-point to an Atom package. Atom knows where to find the main file from an entry in package.json:
+主文件是 Atom 软件包的入口文件。Atom 通过 `package.json` 里的条目设置来找到主文件的位置：
 
 ```
 "main": "./lib/sourcefetch",
 ```
 
-The file exports an object with lifecycle functions which Atom calls on certain events.
+这个文件导出一个带有生命周期函数（Atom 在特定的事件发生时调用的处理函数）的对象。
 
-- activate is called when the package is initially loaded by Atom. This function is used to initialize objects such as user interface elements needed by the package, and to subscribe handler functions to package commands.
+- **activate** 会在 Atom 初次加载软件包的时候调用。这个函数用来初始化一些诸如软件包所需的用户界面元素的对象，以及订阅软件包命令的处理函数。
 
-- deactivate is called when the package is deactivated, for example, when the editor is closed or refreshed by the user.
+- **deactivate** 会在软件包停用的时候调用，例如，当用户关闭或者刷新编辑器的时候。
 
-- serialize is called by Atom to allow you to save the state of the package between uses. The returned value is passed as an argument to activate when the package is next loaded by Atom.
+- **serialize** 会在使用软件包的过程中被 Atom 调用以保存软件包的当前状态。它的返回值会在 Atom 下一次加载软件包的时候作为一个参数传递给 `activate`。
 
-We are going to rename our package command to fetch, and remove user interface elements we won't be using. Update the file to match the version below:
+我们将会重命名我们的软件包命令为 `fetch`，并移除一些我们不再需要的用户界面元素。更改主文件以匹配下面这个版本：
 
 ```
 'use babel';
@@ -209,9 +209,9 @@ export default {
 };
 ```
 
-### Activation commands
+### 启用命令
 
-To improve performance, Atom packages can be lazy loading. We can tell Atom to load our package only when certain commands are run by the user. These commands are called activation commands and are defined in package.json:
+为了提升性能，Atom 软件包可以懒加载。我们可以让 Atom 在用户执行特定的命令的时候加载我们的软件包。这些命令被称为 **启用命令**，它们在 `package.json` 中定义：
 
 ```
 "activationCommands": {
@@ -219,7 +219,7 @@ To improve performance, Atom packages can be lazy loading. We can tell Atom to l
 },
 ```
 
-Update this entry to make fetch an activation command.
+更新一下条目设置，让 `fetch` 成为一个启用命令。
 
 ```
 "activationCommands": {
@@ -227,13 +227,13 @@ Update this entry to make fetch an activation command.
 },
 ```
 
-Some packages, such as those which modify Atom's appearance need to be loaded on startup. In those cases, activationCommands can be omitted entirely.
+有一些软件包需要在 Atom 启动的时候被加载，例如那些改变 Atom 外观的软件包。在那样的情况下，`activationCommands` 会被完全忽略。
 
-### Triggering commands
+### 触发命令
 
-#### Menu items
+#### 菜单项
 
-JSON files inside the menus folder specify which menu items are created for our package. Let's take a look at `menus/sourcefetch.json`:
+`menus` 目录下的 JSON 文件指定了哪些菜单项是为我们的软件包而建的。让我们看看 `menus/sourcefetch.json`：
 
 ```
 "context-menu": {
@@ -246,7 +246,7 @@ JSON files inside the menus folder specify which menu items are created for our 
 },
 ```
 
-The context-menu object lets us define new items in the right-click menu. Each item is defined by a label to be displayed in the menu and a command to run when the item is clicked.
+这个 `context-menu` 对象可以让我们定义右击菜单的一些新条目。每一个条目都是通过一个决定显示内容的 `label` 属性和一个决定点击后执行的命令的 `command` 属性来定义的。
 
 ```
 "context-menu": {
@@ -259,7 +259,7 @@ The context-menu object lets us define new items in the right-click menu. Each i
 },
 ```
 
-The menu object in the same file defines custom application menu items created for the package. We're going to rename this entry as well:
+同一个文件中的这个 `menu` 对象用来定义插件的自定义应用菜单。我们同样要重命名它的条目：
 
 ```
 "menu": [
@@ -280,9 +280,9 @@ The menu object in the same file defines custom application menu items created f
 ]
 ```
 
-#### Keyboard shortcuts
+#### 键盘快捷键
 
-Commands can also be triggered with keyboard shortcuts, defined with JSON files in the keymaps directory:
+命令还可以通过键盘快捷键来触发。快捷键通过 `keymaps` 目录的 JSON 文件来定义：
 
 ```
 {
@@ -292,32 +292,32 @@ Commands can also be triggered with keyboard shortcuts, defined with JSON files 
 }
 ```
 
-The above lets package users call toggle with Ctrl+Alt+O on Windows/Linux or Cmd+Alt+O on MacOS.
+以上代码可以让用户通过 `Ctrl+Alt+O`（Windows/Linux） 或 `Cmd+Alt+O`（MacOS） 来触发 `toggle` 命令。
 
-Rename the referenced command to fetch:
+重命名引用的命令为 `fetch`：
 
 ```
 "ctrl-alt-o": "sourcefetch:fetch"
 ```
 
-Reload Atom by running the Window: Reload command. You should see that the application and right-click menus are updated, and the reverse functionality should work as before.
+通过执行 `Window: Reload` 命令来重启 Atom。你应该会看到 Atom 的右击菜单更新了，并且逆转文本的功能应该还可以像之前一样使用。
 
-See all code changes for this step in the [sourcefetch tutorial repository][7].
+在 [sourcefetch 教程仓库][7] 查看这一步所有的代码更改。
 
-### Using NodeJS modules
+### 使用 NodeJS 模块
 
-Now that we've made our first code change and learned about Atom package structure, let's introduce our first dependency—a module from Node Package Manager (npm). We will use the request module to make HTTP requests and download the HTML of a website. This functionality will be needed later, to scrape StackOverflow pages.
+现在我们已经完成了第一次代码更改并且了解了 Atom 软件包的结构，让我们介绍一下 [Node 包管理器（npm）][22] 中的第一个依赖项模块。我们将使用 **request** 模块发 HTTP 请求来下载网站的 HTML 文件。稍后将会用到这个功能来扒 StackOverflow 的页面。
 
-#### Installing dependencies
+#### 安装依赖
 
-Open your command line application, navigate to your package root directory and run:
+打开你的命令行工具，切换到你的软件包的根目录并运行：
 
 ```
 npm install --save request@2.73.0
 apm install
 ```
 
-These commands add the request Node module to our dependencies list and install the module into the node_modules directory. You should see a new entry in package.json. The @ symbol tells npm to install the specific version we will be using for this tutorial. Running apm install lets Atom know to use our newly installed module.
+这两条命令将 `request` 模块添加到我们软件包的依赖列表并将模块安装到 `node_modules` 目录。你应该会在 `package.json` 看到一个新条目。`@` 符号的作用是让 npm 安装我们这篇教程需要用到的特定版本的模块。运行 `apm install` 是为了让 Atom 知道使用我们新安装的模块。
 
 ```
 "dependencies": {
@@ -325,16 +325,16 @@ These commands add the request Node module to our dependencies list and install 
 }
 ```
 
-#### Downloading and logging HTML to the Developer Console
+#### 下载 HTML 并将记录打印在开发者控制台
 
-Import request into our main file by adding an import statement to the top of lib/sourcefetch.js:
+通过在 `lib/sourcefetch.js` 的顶部添加一条引用语句引入 `request` 模块到我们的主文件：
 
 ```
 import { CompositeDisposable } from 'atom'
 import request from 'request'
 ```
 
-Now, add a new function, download to the module's exports, below fetch:
+现在，在 `fetch` 函数下面添加一个新函数 `download` 作为模块的导出项：
 
 ```
 export default {  
@@ -355,9 +355,9 @@ export default {
 }
 ```
 
-This function uses request to download the contents of a web page and logs the output to the Developer Console. When the HTTP request completes, our callback function will be called with the response as an argument.
+这个函数用 `request` 模块来下载一张页面的内容并将记录输出到控制台。当 HTTP 请求完成之后，我们的 [回调函数][23] 会将响应体作为参数来被调用。
 
-The final step is to update fetch so that it calls download:
+最后一步是更新 `fetch` 函数以调用 `download` 函数：
 
 ```
 fetch() {
@@ -369,29 +369,29 @@ fetch() {
 },
 ```
 
-Instead of reversing the selected text, fetch now treats the selection as a URL, passing it to download. Let's see our changes in action:
+`fetch` 函数现在的功能是将 selection 当作一个 URL 传递给 `download` 函数，而不再是逆转选中的文本了。让我们来看看这次的更改：
 
-- Reload Atom by running the Window: Reload command.
+- 通过执行 `Window: Reload` 命令来重新加载 Atom。
 
-- Open the Developer Tools. To do this, navigate to View > Developer > Toggle Developer Tools in the menu.
+- 打开开发者工具。为此，导航到菜单中的 `View > Developer > Toggle Developer Tools`。
 
-- Create a new file, navigate to File > New.
+- 新建一个文件，导航到 `File > New`。
 
-- Enter and select a URL, for example, http://www.atom.io.
+- 输入一个 URL 并选中它，例如：`http://www.atom.io`。
 
-- Run our package command in any of the three ways previously described:
+- 用上述的任意一种方法执行我们软件包的命令：
 
 ![](https://cloud.githubusercontent.com/assets/6755555/17759384/836ea91c-64ab-11e6-8fbe-7d15fb482c6d.gif)
 
->Developer Tools make it easy to debug Atom packages. Any console.log statement will print to the interactive console, and you can use the Elements tab to explore the visual structure of the whole applicatio—which is just an HTML [Document Object Model (DOM)][8].
+**开发者工具** 让 Atom 软件包的调试更轻松。任意 `console.log` 语句都可以将信息打印到交互控制台，你还可以使用 `Elements` 选项卡来浏览整个应用的可视化结构——即 HTML 的 [文本对象模型（DOM）][8]。
 
-See all code changes for this step in the [sourcefetch tutorial repository][9].
+在 [sourcefetch 教程仓库][9] 查看这一步所有的代码更改。
 
-### Using Promises to insert downloaded HTML into the editor
+### 用 Promises 来将下载好的 HTML 插入到编辑器中
 
-Ideally, we would like our download function to return the HTML as a string instead of just printing page contents into the console. Returning body won't work, however, since we get access to body inside of the callback rather than download itself.
+理想情况下，我们希望 download 函数可以将 HTML 作为一个字符串来返回，而不仅仅是将页面的内容打印到控制台。然而，`返回体` 是无法实现的，因为我们要在回调函数里面访问 `返回体` 而不是在 `download` 函数那里。
 
-We will solve this problem by returning a Promise rather than the value itself. Let's change download to return a Promise:
+我们会通过返回一个 [Promise][24] 来解决这个问题，而不再是返回一个值。让我们改动 `download` 函数来返回一个 Promise：
 
 ```
 download(url) {
@@ -409,9 +409,9 @@ download(url) {
 }
 ```
 
-Promises allow us to return values obtained asynchronously by wrapping asynchronous logic in a function that provides two callbacks— resolve for returning a value successfully, and reject for notifying the caller of an error. We call reject if an error is returned by request, and resolve the HTML otherwise.
+Promises 允许我们通过将异步逻辑封装在一个提供两个回调方法（`resolve` 用来处理请求成功的返回值，`reject` 用来向使用者报错）的函数里来返回获得的值。如果请求返回了错误我们就调用 `reject`，否则就用 `resolve` 来处理 HTML。
 
-Let's change fetch to work with the Promise returned by download:
+让我们更改 `fetch` 函数来使用 `download` 返回的 Promise：
 
 ```
 fetch() {
@@ -427,37 +427,37 @@ fetch() {
 },
 ```
 
-In our new version of fetch, we get access to the HTML by calling then on the Promise returned by download. This lets us insert the HTML into the editor. We also accept and handle any errors returned by calling catch. We handle errors by displaying a warning notification using the Atom Notification API.
+在我们新版的 `fetch` 函数里，我们通过在 `download` 返回的 Promise 调用 `then` 方法来对 HTML 进行操作。这会将 HTML 插入到编辑器中。我们同样会通过调用 `catch` 方法来接收并处理所有的错误。我们通过用 [Atom Notification API][25] 来显示警告的形式来处理错误。
 
-Let's see what changed. Reload Atom and run the package command on a selected URL:
+看看发生了什么变化。重新加载 Atom 并在一个选中的 URL 上执行软件包命令：
 
 ![](https://cloud.githubusercontent.com/assets/6755555/17759379/8357bb08-64ab-11e6-9bd2-6f63b8f50dcc.gif)
 
-If the command is run on an invalid URL, a warning notification will be displayed:
+如果这个 URL 是无效的，一个警告通知将会弹出来：
 
 ![](https://cloud.githubusercontent.com/assets/6755555/17759378/833ab09e-64ab-11e6-9896-2f874b0fdc8a.gif)
 
-See all code changes for this step in the [sourcefetch tutorial repository][10].
+在 [sourcefetch 教程仓库][10] 查看这一步所有的代码更改。
 
-#### Building a scraper to extract code snippets from StackOverflow HTML
+#### 编写一个爬虫来提取 StackOverflow 页面的代码片段
 
-The next step involves extracting code snippets from the HTML of a StackOverflow page we obtained in the previous step. In particular, we're interested in code from the accepted answer—an answer chosen to be correct by the question author. We can greatly simplify our package implementation by assuming any such answer to be relevant and correct.
+下一步涉及用我们前面扒到的 StackOverflow 的页面的 HTML 来提取代码片段。我们尤其关注那些来自采纳答案（提问者选择的一个正确答案）的代码。我们可以在假设这类答案都是相关且正确的前提下大大简化我们这个软件包的实现。
 
-#### Constructing a query using jQuery and Chrome Developer Tools
+#### 使用 jQuery 和 Chrome 开发者工具来构建查询
 
-This section assumes you are using the Chrome web browser. You may be able to follow along using another browser, but instructions may change.
+这一部分假设你使用的是 [Chrome][26] 浏览器。你接下来可以使用其它浏览器，但是提示可能会不一样。
 
-Let's take a look at a typical StackOverflow page that contains an accepted answer with a code snippet. We are going to explore the HTML using Chrome Developer Tools:
+让我们先看看一张典型的包含采纳答案和代码片段的 StackOverflow 页面。我们将会使用 Chrome 开发者工具来浏览 HTML：
 
-- Open Chrome and navigate to any StackOverflow page containing an accepted answer with code, such as this hello world example in Python or this question about reading text from a file in C.
+- 打开 Chrome 并跳到任意一张带有采纳答案和代码的 StackOverflow 页面，比如像这个用 Python 写的 [hello world][27] 的例子或者这个关于 [用 `C` 来读取文本内容的问题][28]。
 
-- Scroll down to the accepted answer and highlight a section of the code snippet.
+- 滚动窗口到采纳答案的位置并选中一部分代码。
 
-- Right click and select Inspect
+- 右击选中文本并选择 `检查`。
 
-- Inspect the location of the code snippet within the HTML code using the Elements browser.
+- 使用元素侦察器来检查代码片段在 HTML 中的位置。
 
-Note that the document has the following structure:
+注意文本结构应该是这样的：
 
 ```
 <div class="accepted-answer">
@@ -473,59 +473,59 @@ Note that the document has the following structure:
 </div>
 ```
 
-- The accepted answer is denoted by a div with class accepted-answer
+- 采纳答案通过一个 class 为 `accepted-answer` 的 `div` 来表示
 
-- Block code snippets are located inside a pre element
+- 代码块位于 `pre` 元素的内部
 
-- Elements that render the code snippet itself sit inside a code tag
+- 呈现代码片段的元素就是里面那一对 `code` 标签
 
 ![](https://cloud.githubusercontent.com/assets/6755555/17759380/83689a90-64ab-11e6-89b2-7172c03baae7.gif)
 
-Now let's construct a jQuery statement for extracting code snippets:
+现在让我们写一些 `jQuery` 代码来提取代码片段：
 
-- Click the Console tab within Developer Tools to access the JavaScript console.
+- 在开发者工具那里点击 **Console** 选项卡来访问 Javascript 控制台。
 
-- Type $('div.accepted-answer pre code').text() into the console and press Enter.
+- 在控制台中输入 `$('div.accepted-answer pre code').text()` 并按下回车键。
 
-You should see the accepted answer code snippets printed out in the console. The code we just ran uses a special $ function provided by jQuery. $ accepts a query string to select and return certain HTML elements from the website. Let's take a look at how this code works by considering a couple of intermediate example queries:
+你应该会看到控制台中打印出采纳答案的代码片段。我们刚刚运行的代码使用了一个 jQuery 提供的特别的 `$` 函数。`$` 接收要选择的 **查询字符串** 并返回网站中的某些 HTML 元素。让我们通过思考几个查询案例看看这段代码的工作原理：
 
 ```
 $('div.accepted-answer')
 > [<div id="answer-1077349" class="answer accepted-answer" ... ></div>]
 ```
 
-The above query will match all <div> elements that contain the class accepted-answer, in our case - just one div.
+上面的查询会匹配所有 class 为 `accepted-answer` 的 `<div>` 元素，在我们的案例中只有一个 div。
 
 ```
 $('div.accepted-answer pre code')
 > [<code>...</code>]
 ```
 
-Building upon the previous, this query will match any `<code>` element that is inside a `<pre>` element contained within the previously matched `<div>`.
+在前面的基础上改造了一下，这个查询会匹配所有在之前匹配的 `<div>` 内部的 `<pre>` 元素内部的 `<code>` 元素。
 
 ```
 $('div.accepted-answer pre code').text()
 > "print("Hello World!")"
 ```
 
-The text function extracts and concatenates all text from the list of elements that would otherwise be returned by the previous query. This also strips out elements used for syntax highlighting purposes from the code.
+`text` 函数提取并连接原本将由上一个查询返回的元素列表中的所有文本。这也从代码中去除了用来使语法高亮的元素。
 
-### Introducing Cheerio
+### 介绍 Cheerio
 
-Our next step involves using the query we created to implement a scraping function using Cheerio, a jQuery implementation for server-side applications.
+我们的下一步涉及使用我们创建好的查询结合 [Cheerio][29]（一个服务器端实现的 jQuery）来实现扒页面的功能。
 
-#### Install Cheerio
+#### 安装 Cheerio
 
-Open your command line application, navigate to your package root directory and run:
+打开你的命令行工具，切换到你的软件包的根目录并执行：
 
 ```
 npm install --save cheerio@0.20.0
 apm install
 ```
 
-#### Implement the scraping function
+#### 实现扒页面的功能
 
-- Add an import statement for cheerio in lib/sourcefetch.js:
+- 在 `lib/sourcefetch.js` 为 `cheerio` 添加一条引用语句：
 
 ```
 import { CompositeDisposable } from 'atom'
@@ -533,7 +533,7 @@ import request from 'request'
 import cheerio from 'cheerio'
 ```
 
-- Now create a new function that extracts code snippets given StackOverflow HTML, called scrape:
+- 现在创建一个新函数 `scrape`，它用来提取 StackOverflow HTML 里面的代码片段：
 
 ```
 fetch() {
@@ -550,7 +550,7 @@ download(url) {
 }
 ```
 
-- Finally, let's change fetch to pass downloaded HTML to scrape instead of inserting it into the editor:
+- 最后，让我们更改 `fetch` 函数以传递下载好的 HTML 给 `scrape` 而不是将其插入到编辑器：
 
 ```
 fetch() {
@@ -574,55 +574,54 @@ fetch() {
 },
 ```
 
-Our scraping function is implemented in just two lines because cheerio does all of the work for us! We create a $ function by calling load with our HTML string, and use this function to run our jQuery statement and return the results. You can explore the entire Cheerio API in their developer documentation.
+我们扒取页面的功能仅仅用两行代码就实现了，因为 cheerio 已经替我们做好了所有的工作！我们通过调用 `load` 方法加载 HTML 字符串来创建一个 `$` 函数，然后用这个函数来执行 jQuery 语句并返回结果。你可以在官方 [开发者文档][30] 查看完整的 `Cheerio API`。
 
-### Testing the updated package
+### 测试更新后的软件包
 
-- Reload Atom and run soucefetch:fetch on a selected StackOverflow URL to see the progress so far.
+- 重新加载 Atom 并在一个选中的 StackOverflow URL 上运行 `soucefetch:fetch` 以查看到目前为止的进度。
 
-If we run the command on a page with an accepted answer, it will be inserted into the editor:
+如果我们在一个有采纳答案的页面上运行这条命令，代码片段将会被插入到编辑器中：
 
 ![](https://cloud.githubusercontent.com/assets/6755555/17759383/836e26b8-64ab-11e6-9f16-321903470ce2.gif)
 
-If we run the command on a page with no accepted answer, a warning notification will be displayed instead:
-
+如果我们在一个没有采纳答案的页面上运行这条命令，将会弹出一个警告通知：
 
 ![](https://cloud.githubusercontent.com/assets/6755555/17759388/838d3864-64ab-11e6-8091-b4d15bd56025.gif)
 
-Our new iteration of fetch gives us the code snippet within a StackOverflow page instead of the entire HTML contents. Note that our updated fetch function checks for the absence of an answer and displays a notification to alert the user.
+我们最新的 `fetch` 函数给我们提供了一个 StackOverflow 页面的代码片段而不再是整个 HTML 内容。要注意我们更新的 `fetch` 函数会检查有没有答案并显示通知以提醒用户。
 
-See all code changes for this step in the [sourcefetch tutorial repository][11].
+在 [sourcefetch 教程仓库][11] 查看这一步所有的代码更改。
 
-### Implementing Google search to find relevant StackOverflow URLs
+### 实现用来查找相关的 StackOverflow URL 的谷歌搜索功能
 
-Now that we can turn StackOverflow URLs into code snippets, let's implement our final function, search, which will return a relevant URL given the description of a snippet, such as "hello world" or "quicksort". We will be using Google search via the unofficial google npm module, which allows us to search programmatically.
+现在我们已经将 StackOverflow 的 URL 转化为代码片段了，让我们来实现最后一个函数——`search`，它应该要返回一个相关的 URL 并附加一些像“hello world”或者“快排”这样的描述。我们会通过一个非官方的 `google` npm 模块来使用谷歌搜索功能，这样可以让我们以编程的方式来搜索。
 
-#### Installing the Google npm module
+#### 安装 Google npm 模块
 
-- Install google by opening your command line application at the package root directory, and run:
+- 通过在软件包的根目录打开命令行工具并执行命令来安装 `google` 模块：
 
 ```
 npm install --save google@2.0.0
 apm install
 ```
 
-#### Importing and configuring the module
+#### 引入并配置模块
 
-Add an import statement for google at the top of lib/sourcefetch.js:
+在 `lib/sourcefetch.js` 的顶部为 `google` 模块添加一条引用语句：
 
 ```
 import google from "google"
 ```
 
-We will configure the library to limit the number of results returned during search. Add the following line below the import statement to limit returned results to just the top one.
+我们将配置一下 `google` 以限制搜索期间返回的结果数。将下面这行代码添加到引用语句下面以限制搜索返回最热门的那个结果。
 
 ```
 google.resultsPerPage = 1
 ```
 
-#### Implementing the search function
+#### 实现 search 函数
 
-Next, let's implement our search function itself:
+接下来让我们来实现我们的 `search` 函数：
 
 ```
 fetch() {
@@ -654,13 +653,13 @@ scrape() {
 }
 ```
 
-The code above searches Google for a StackOverflow page relevant to the given query and programming language, returning the URL of the top result. Let's take a look at how it works:
+以上代码通过谷歌来搜索一张和指定的关键词以及编程语言相关的 StackOverflow 页面，并返回一个最热门的 URL。让我们看看这是怎样来实现的：
 
 ```
 let searchString = `${query} in ${language} site:stackoverflow.com`
 ```
 
-We construct the search string using the query entered by the user and the current language selected. For example, if the user types "hello world" while editing Python, the query will be hello world in python site:stackoverflow.com. The final part of the string is a filter provided by Google Search that lets us limit results to those linked to StackOverflow.
+我们使用用户输入的查询和当前所选的语言来构造搜索字符串。比方说，当用户在写 Python 的时候输入“hello world”，查询语句就会变成 `hello world in python site:stackoverflow.com`。字符串的最后一部分是谷歌搜索提供的一个过滤器，它让我们可以将搜索结果的来源限制为 StackOverflow。
 
 ```
 google(searchString, (err, res) => {
@@ -678,11 +677,11 @@ google(searchString, (err, res) => {
 })
 ```
 
-We wrap the call to google inside a Promise so that we can return our URL asynchronously. We propagate any errors returned by the library, also returning an error when there are no results available. We resolve the URL of the top result otherwise.
+我们将 `google` 方法放在一个 `Promise` 里面，这样我们可以异步地返回我们的 URL。我们会传递由 `google` 返回的所有错误并且会在没有可用的搜索结果的时候返回一个错误。否则我们将通过 `resolve` 来解析最热门结果的 URL。
 
-### Updating fetch to use search
+### 更新 fetch 来使用 search
 
-Our final step is to update fetch to use search:
+我们的最后一步是更新 `fetch` 函数来使用 `search` 函数：
 
 ```
 fetch() {
@@ -711,34 +710,34 @@ fetch() {
 }
 ```
 
-Let's take a look at what changed:
+让我们看看发生了什么变化：
 
-- Our selected text is now treated as the query entered by the user.
+- 我们选中的文本现在变成了用户输入的 `query`
 
-- We obtain the language of the current editor tab using the TextEditor API
+- 我们使用 [TextEditor API][21] 来获取当前编辑器选项卡使用的 `language`
 
-- We call search to obtain a URL, which we access by calling then on the resulting Promise
+- 我们调用 `search` 方法来获取一个 URL，然后通过在得到的 Promise 上调用 `then` 方法来访问这个 URL
 
-Instead of calling then on the Promise returned by download, we instead return the Promise itself and chain another then call onto the original call. This helps us avoid callback hell
+我们不在 `download` 返回的 Promise 上调用 `then` 方法，而是在前面 `search` 方法本身链式调用的另一个 `then` 方法返回的 Promise 上面接着调用 `then` 方法。这样可以帮助我们避免 [回调地狱][31]  
 
-See all code changes for this step in the [sourcefetch tutorial repository][12].
+在 [sourcefetch 教程仓库][12] 查看这一步所有的代码更改。
 
-### Testing the final plugin
+### 测试最终的插件
 
-And we're done! See the final plugin in action by reloading Atom and running our package command on a problem description, and don't forget to select a language in the bottom-right corner.
+大功告成了！重新加载 Atom，对一个问题描述运行软件包的命令来看看我们最终的插件，不要忘了在编辑器右下角选择一种语言。
 
 ![](https://cloud.githubusercontent.com/assets/6755555/17759382/836dd780-64ab-11e6-8f6a-329f66f01fd7.gif)
 
-### Next steps
+### 下一步
 
-Now that you know the basics of hacking Atom, feel free to practice what you've learned [by forking the sourcefetch repository and adding your own features][13].
+现在你知道怎么去“hack” Atom 的基本原理了，通过 [fork sourcefetch 这个仓库并添加你的特性][13] 来随心所欲地实践你所学到的知识。
 
 --------------------------------------------------------------------------------
 
-via: https://github.com/blog/2231-building-your-first-atom-plugin
+编译自: https://github.com/blog/2231-building-your-first-atom-plugin
 
 作者：[NickTikhonov][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[OneNewLife](https://github.com/OneNewLife)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -757,3 +756,21 @@ via: https://github.com/blog/2231-building-your-first-atom-plugin
 [11]: https://github.com/NickTikhonov/sourcefetch-tutorial/commit/039a1e1e976d029f7d6b061b4c0dac3eb4a3b5d2
 [12]: https://github.com/NickTikhonov/sourcefetch-tutorial/commit/aa9d0b5fc4811a70292869730e0f60ddf0bcf2aa
 [13]: https://github.com/NickTikhonov/sourcefetch-tutorial
+[14]: https://developers.google.com/web/fundamentals/getting-started/primers/promises
+[15]: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
+[16]: https://atom.io/
+[17]: https://en.wikipedia.org/wiki/%3F:
+[18]: https://atom.io/docs/api/v1.9.4/Panel
+[19]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+[20]: https://en.wikipedia.org/wiki/Event-driven_programming
+[21]: https://atom.io/docs/api/v1.11.1/TextEditor
+[22]: https://www.npmjs.com/
+[23]: http://recurial.com/programming/understanding-callback-functions-in-javascript/
+[24]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+[25]: https://atom.io/docs/api/v1.11.1/NotificationManager
+[26]: https://www.google.com/chrome/
+[27]: http://stackoverflow.com/questions/1077347/hello-world-in-python
+[28]: http://stackoverflow.com/questions/3463426/in-c-how-should-i-read-a-text-file-and-print-all-strings
+[29]: https://www.npmjs.com/package/cheerio
+[30]: https://github.com/cheeriojs/cheerio
+[31]: http://callbackhell.com/
