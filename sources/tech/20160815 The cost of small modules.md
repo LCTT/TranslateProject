@@ -214,49 +214,66 @@ For the purposes of this analysis, though, I think it’s best to just assume th
 为了我们这个分析的最初目的，我认为最好假设模块的数量是性能的短板。而事实上，“5000 个模块”也是一个比“5000 个 require() 函数调用”更好的度量标准。
 
 ### Conclusions
+### 结论
 
-First off, the bundle-collapser plugin seems to be a valuable addition to Browserify. If you’re not using it in production, then your bundle will be a bit larger and slower than it would be otherwise (although I must admit the difference is slight). Alternatively, you could switch to Webpack and get an even faster bundle without any extra configuration. (Note that it pains me to say this, since I’m a diehard Browserify fanboy.)
+First off, the bundle-collapser plugin seems to be a valuable addition to Browserify. If you’re not using it in production, then your bundle will be a bit larger and slower than it would be otherwise (although I must admit the difference is slight). Alternatively, you could switch to Webpack and get an even faster bundle without any extra configuration. (Note that it pains me to say this, since I’m a diehard Browserify fanboy.)  
+首先，bundle-collapser 对 Browserify 看来是一个非常有用的插件。如果你在产品中还没使用它，那么你的包将会相对来说略大且运行呢略慢（虽然我得承认这之间的区别非常小）。另一方面，你还可以转换到 Webpack 以获得更快的包而不需要额外的配置（其实我非常不愿意这么说，因为我是个顽固的 Browserify 粉）。
 
-However, these results clearly show that Webpack and Browserify both underperform compared to Rollup and Closure Compiler, and that the gap widens the more modules you add. Unfortunately I’m not sure [Webpack 2][33] will solve any of these problems, because although they’ll be [borrowing some ideas from Rollup][34], they seem to be more focused on the [tree-shaking aspects][35] and not the scope-hoisting aspects. (Update: a better name is “inlining,” and the Webpack team is [working on it][36].)
+However, these results clearly show that Webpack and Browserify both underperform compared to Rollup and Closure Compiler, and that the gap widens the more modules you add. Unfortunately I’m not sure [Webpack 2][33] will solve any of these problems, because although they’ll be [borrowing some ideas from Rollup][34], they seem to be more focused on the [tree-shaking aspects][35] and not the scope-hoisting aspects. (Update: a better name is “inlining,” and the Webpack team is [working on it][36].)  
+不管怎样，这些结果都明确地指出 Webpack 和 Browserify 相较 Rollup 和 Closure Compiler 而言表现都稍差，并且性能差异随着模块大小的增大而增大。不幸的是，我并不确定 [Webpack 2][33] 是否能解决这些问题，因为尽管他们将 [从 Rollup 中借鉴一些想法][34]，但是看起来他们的关注点更多在于 [tree-shaking 方面][35] 而不是在于 scope-hoisting 方面。（更新：一个更好的名字称为内联（inlining），并且 Webpack 团队 [正在做这方面的工作][36] 。
 
-Given these results, I’m surprised Closure Compiler and Rollup aren’t getting much traction in the JavaScript community. I’m guessing it’s due to the fact that (in the case of the former) it has a Java dependency, and (in the case of the latter) it’s still fairly immature and doesn’t quite work out-of-the-box yet (see [Calvin’s Metcalf’s comments][37] for a good summary).
+Given these results, I’m surprised Closure Compiler and Rollup aren’t getting much traction in the JavaScript community. I’m guessing it’s due to the fact that (in the case of the former) it has a Java dependency, and (in the case of the latter) it’s still fairly immature and doesn’t quite work out-of-the-box yet (see [Calvin’s Metcalf’s comments][37] for a good summary).  
+给出这些结果之后，我对 Closure Compiler 和 Rollup 在 JavaScript 社区并没有得到过多关注而感到惊讶。我猜测或许是因为（前者）需要依赖 Java，而（后者）仍然想当不成熟并且未能做到开箱即用（详见 [Calvin’s Metcalf 的评论][37] 所作的不错的总结）。
 
-Even without the average JavaScript developer jumping on the Rollup/Closure bandwagon, though, I think npm package authors are already in a good position to help solve this problem. If you npm install lodash, you’ll notice that the main export is one giant JavaScript module, rather than what you might expect given Lodash’s hyper-modular nature (require('lodash/uniq'), require('lodash.uniq'), etc.). For PouchDB, we made a similar decision to [use Rollup as a prepublish step][38], which produces the smallest possible bundle in a way that’s invisible to users.
+Even without the average JavaScript developer jumping on the Rollup/Closure bandwagon, though, I think npm package authors are already in a good position to help solve this problem. If you npm install lodash, you’ll notice that the main export is one giant JavaScript module, rather than what you might expect given Lodash’s hyper-modular nature (require('lodash/uniq'), require('lodash.uniq'), etc.). For PouchDB, we made a similar decision to [use Rollup as a prepublish step][38], which produces the smallest possible bundle in a way that’s invisible to users.  
+即使没有足够数量的 JavaScript 开发者加入到 Rollup 或 Closure 的队伍中，我认为 npm 包作者们也已准备好了去帮助解决这些问题。如果你使用 npm 安装 lodash，你将会发其现基本的导入是一个巨大的 JavaScript 模块，而不是你期望的 Lodash 的超模块特性（require('lodash/uniq')，require('lodash.uniq') 等等）。对于 PouchDB，我们做了一个类似的声明以 [使用 Rollup 作为预发布步骤][38]，这将产生对于用户而言尽可能小的包。
 
-I also created [rollupify][39] to try to make this pattern a bit easier to just drop-in to existing Browserify projects. The basic idea is to use imports and exports within your own project ([cjs-to-es6][40] can help migrate), and then use require() for third-party packages. That way, you still have all the benefits of modularity within your own codebase, while exposing more-or-less one big module to your users. Unfortunately, you still pay the costs for third-party modules, but I’ve found that this is a good compromise given the current state of the npm ecosystem.
+I also created [rollupify][39] to try to make this pattern a bit easier to just drop-in to existing Browserify projects. The basic idea is to use imports and exports within your own project ([cjs-to-es6][40] can help migrate), and then use require() for third-party packages. That way, you still have all the benefits of modularity within your own codebase, while exposing more-or-less one big module to your users. Unfortunately, you still pay the costs for third-party modules, but I’ve found that this is a good compromise given the current state of the npm ecosystem.  
+同时，我创建了 [rollupify][39] 来尝试将这过程变得更为简单一些，只需拖动到已存在的 Browserify 工程中即可。其基本思想是在你自己的项目中使用导入导出（可以使用 [cjs-to-es6][40] 来帮助迁移），然后使用 require() 函数来载入第三方包。这样一来，你依旧可以在你自己的代码库中享受所有模块化的优点，同时导出一个适当大小的大模块来交给你的用户。不幸的是，你依旧得为第三方库付出一些代价，但是我发现这是对当前 npm 生态系统的一个很好的折中方案。
 
-So there you have it: one horse-sized JavaScript duck is faster than a hundred duck-sized JavaScript horses. Despite this fact, though, I hope that our community will eventually realize the pickle we’re in – advocating for a “small modules” philosophy that’s good for developers but bad for users – and improve our tools, so that we can have the best of both worlds.
+So there you have it: one horse-sized JavaScript duck is faster than a hundred duck-sized JavaScript horses. Despite this fact, though, I hope that our community will eventually realize the pickle we’re in – advocating for a “small modules” philosophy that’s good for developers but bad for users – and improve our tools, so that we can have the best of both worlds.  
+所以结论如下：一个大的 JavaScript 包比一百个小 JavaScript 模块要快。尽管这是事实，我依旧希望我们社区能最终发现我们所处的困境————提倡小模块的原则对开发者有利，但是对用户不利。同时希望能优化我们的工具，使得我们可以对两方面都有利。
 
 ### Bonus round! Three desktop browsers
+### 福利时间！三款桌面浏览器
 
-Normally I like to run performance tests on mobile devices, since that’s where you see the clearest differences. But out of curiosity, I also ran this benchmark on Chrome 52, Edge 14, and Firefox 48 on an i7 Surface Book using Windows 10 RS1\. Here are the results:
+Normally I like to run performance tests on mobile devices, since that’s where you see the clearest differences. But out of curiosity, I also ran this benchmark on Chrome 52, Edge 14, and Firefox 48 on an i7 Surface Book using Windows 10 RS1\. Here are the results:  
+通常来说我喜欢在移动设备上运行性能测试，因为在这里我们能更清楚的看到差异。但是出于好奇，我也分别在一台搭载 i7 的 Surface Book 上的 Chrome 52、Edge 14 和 Firefox 48 上运行了测试。这分别是它们的测试结果：
 
-Chrome 52 ([tabular results][41])
+Chrome 52 ([查看表格][41])
 
-[![Chrome results][42]](https://nolanwlawson.files.wordpress.com/2016/08/modules_chrome.png)
+[![Chrome 结果][42]](https://nolanwlawson.files.wordpress.com/2016/08/modules_chrome.png)
 
-Edge 14 ([tabular results][43])
+Edge 14 ([查看表格][43])
 
-[![Edge results][44]](https://nolanwlawson.files.wordpress.com/2016/08/modules_edge.png)
+[![Edge 结果][44]](https://nolanwlawson.files.wordpress.com/2016/08/modules_edge.png)
 
-Firefox 48 ([tabular results][45])
+Firefox 48 ([查看表格][45])
 
-[![Firefox results][46]](https://nolanwlawson.files.wordpress.com/2016/08/modules_firefox.png)
+[![Firefox 结果][46]](https://nolanwlawson.files.wordpress.com/2016/08/modules_firefox.png)
 
-The only interesting tidbits I’ll call out in these results are:
+The only interesting tidbits I’ll call out in these results are:  
+我在这些结果中发现的有趣的地方如下：
 
 1.  bundle-collapser is definitely not a slam-dunk in all cases.
 2.  The ratio of network-to-execution time is always extremely high for Rollup and Closure; their runtime costs are basically zilch. ChakraCore and SpiderMonkey eat them up for breakfast, and V8 is not far behind.
 
-This latter point could be extremely important if your JavaScript is largely lazy-loaded, because if you can afford to wait on the network, then using Rollup and Closure will have the additional benefit of not clogging up the UI thread, i.e. they’ll introduce less jank than Browserify or Webpack.
+1.  bundle-collapser 总是与 slam-dunk 完全不同。
+2.  Rollup 和 Closure 的下载时间与运行时间之比总是非常高，它们的运行时间基本上微不足道。ChakraCore 和 SpiderMonkey 运行最快，V8 紧随其后。
 
-Update: in response to this post, JDD has [opened an issue on Webpack][47]. There’s also [one on Browserify][48].
+This latter point could be extremely important if your JavaScript is largely lazy-loaded, because if you can afford to wait on the network, then using Rollup and Closure will have the additional benefit of not clogging up the UI thread, i.e. they’ll introduce less jank than Browserify or Webpack.  
+如果你的 JavaScript 非常大并且是延迟加载，那么第二点将非常重要。因为如果你可以接受等待网络下载的时间，那么使用 Rollup 和 Closure 将会避免界面线程冻结的优点。也就是说，它们将比 Browserify 和 Webpack 更少出现界面阻塞。
 
-Update 2: [Ryan Fitzer][49] has generously added RequireJS and RequireJS with [Almond][50] to the benchmark, both of which use AMD instead of CommonJS or ES6.
+Update: in response to this post, JDD has [opened an issue on Webpack][47]. There’s also [one on Browserify][48].  
+更新：在这篇文章的回应中，JDD 已经 [给 Webpack 提交了一个 issue][47]。还有 [一个是给 Browserify 的][48]。
 
-Testing shows that RequireJS has [the largest bundle sizes][51] but surprisingly its runtime costs are [very close to Rollup and Closure][52]. Here are the results for a Nexus 5 running Chrome 52 throttled to 3G:
+Update 2: [Ryan Fitzer][49] has generously added RequireJS and RequireJS with [Almond][50] to the benchmark, both of which use AMD instead of CommonJS or ES6.  
+更新 2：[Ryan Fitzer][49] 慷慨地增加了 RequireJS 和包含 [Almond][50] 的 RequireJS 的测试结果，两者都是使用 AMD 而不是 CommonJS 或者 ES6。
 
-[![Nexus 5 (3G) results with RequireJS][53]](https://nolanwlawson.files.wordpress.com/2016/08/2016-08-20-14_45_29-small_modules3-xlsx-excel.png)
+Testing shows that RequireJS has [the largest bundle sizes][51] but surprisingly its runtime costs are [very close to Rollup and Closure][52]. Here are the results for a Nexus 5 running Chrome 52 throttled to 3G:  
+测试结果表明 RequireJS 具有 [最大的包大小][51] 但是令人惊讶的是它的运行开销 [与 Rollup 和 Closure 非常接近][52]。这是在运行 Chrome 52 的 Nexus 5 下限制网速为 3G 的测试结果：
+
+[![Nexus 5 (3G) RequireJS 结果][53]](https://nolanwlawson.files.wordpress.com/2016/08/2016-08-20-14_45_29-small_modules3-xlsx-excel.png)
 
 
 
