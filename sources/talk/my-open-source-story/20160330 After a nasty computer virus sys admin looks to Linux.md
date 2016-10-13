@@ -1,3 +1,5 @@
+Martin translating
+
 After a nasty computer virus, sys admin looks to Linux
 =======================================================
 

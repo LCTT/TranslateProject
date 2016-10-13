@@ -1,4 +1,5 @@
-Tranlating by lengmi.
+OneNewLife translating
+
 Building your first Atom plugin
 =====
 
