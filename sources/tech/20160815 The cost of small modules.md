@@ -169,34 +169,49 @@ If you understand the inherent cost of functions-within-functions in JavaScript,
 如果你清楚在 JavaScript 中使用嵌套函数与在关联数组查找一个值的固有开销， 那么你将很容易理解出现以下测试的结果的原因。
 
 ### Results
+### 测试结果
 
-I ran this benchmark on a Nexus 5 with Android 5.1.1 and Chrome 52 (to represent a low- to mid-range device) as well as an iPod Touch 6th generation running iOS 9 (to represent a high-end device).
+I ran this benchmark on a Nexus 5 with Android 5.1.1 and Chrome 52 (to represent a low- to mid-range device) as well as an iPod Touch 6th generation running iOS 9 (to represent a high-end device).  
+我选择在搭载 Android 5.1.1 与 Chrome 52 的 Nexus 5（代表中低端设备）和运行 iOS 9 的第 6 代 iPod Touch（代表高端设备）上进行测试。
 
-Here are the results for the Nexus 5 ([tabular results][26]):
+Here are the results for the Nexus 5 ([tabular results][26]):  
+这是 Nexus 5 下的测试结果（[查看表格][26]）：
 
 [![Nexus 5 results][27]](https://nolanwlawson.files.wordpress.com/2016/08/modules_nexus_5.png)
+[![Nexus 5 结果][27]](https://nolanwlawson.files.wordpress.com/2016/08/modules_nexus_5.png)
 
-And here are the results for the iPod Touch ([tabular results][28]):
+And here are the results for the iPod Touch ([tabular results][28]):  
+这是 iPod Touch 下的测试结果（[查看表格][28]）：
 
 [![iPod Touch results][29]](https://nolanwlawson.files.wordpress.com/2016/08/modules_ipod.png)
+[![iPod Touch 结果][29]](https://nolanwlawson.files.wordpress.com/2016/08/modules_ipod.png)
 
-At 100 modules, the variance between all the bundlers is pretty negligible, but once we get up to 1000 or 5000 modules, the difference becomes severe. The iPod Touch is hurt the least by the choice of bundler, but the Nexus 5, being an aging Android phone, suffers a lot under Browserify and Webpack.
+At 100 modules, the variance between all the bundlers is pretty negligible, but once we get up to 1000 or 5000 modules, the difference becomes severe. The iPod Touch is hurt the least by the choice of bundler, but the Nexus 5, being an aging Android phone, suffers a lot under Browserify and Webpack.  
+在 100 个模块时，各包的差异是微不足道的，但是一旦模块数量达到 1000 个甚至 5000 个时，差异将会变得非常巨大。iPod Touch 在不同包上的差异并不明显，而对于具有一定年代的 Nexus 5 来说，Browserify 和 Webpack 明显耗时更多。
 
-I also find it interesting that both Rollup and Closure’s execution cost is essentially free for the iPod, regardless of the number of modules. And in the case of the Nexus 5, the runtime costs aren’t free, but they’re still much cheaper for Rollup/Closure than for Browserify/Webpack, the latter of which chew up the main thread for several frames if not hundreds of milliseconds, meaning that the UI is frozen just waiting for the module loader to finish running.
+I also find it interesting that both Rollup and Closure’s execution cost is essentially free for the iPod, regardless of the number of modules. And in the case of the Nexus 5, the runtime costs aren’t free, but they’re still much cheaper for Rollup/Closure than for Browserify/Webpack, the latter of which chew up the main thread for several frames if not hundreds of milliseconds, meaning that the UI is frozen just waiting for the module loader to finish running.  
+与此同时，我发现有意思的是 Rollup 和 Closure 的运行开销对于 iPod而言几乎可以忽略，并且与模块的数量关系也不大。而对于 Nexus 5 来说，运行的开销并非完全可以忽略，但它们仍比 Browserify 或 Webpack 低很多。后者若未在几百毫秒内完成加载则将会占用主线程的好几帧的时间，这就意味着用户界面将冻结并且等待直到模块载入完成。
 
-Note that both of these tests were run on a fast Gigabit connection, so in terms of network costs, it’s really a best-case scenario. Using the Chrome Dev Tools, we can manually throttle that Nexus 5 down to 3G and see the impact ([tabular results][30]):
+Note that both of these tests were run on a fast Gigabit connection, so in terms of network costs, it’s really a best-case scenario. Using the Chrome Dev Tools, we can manually throttle that Nexus 5 down to 3G and see the impact ([tabular results][30]):  
+值得注意的是前面这些测试都是在千兆网速下进行的，所以在网络情况来看，这只是一个最理想的状况。借助 Chrome 开发者工具，我们可以认为地将 Nexus 5 的网速限制到 3G 水平，然后来看一眼这对测试产生的影响（[查看表格][30]）：
 
 [![Nexus 5 3G results][31]](https://nolanwlawson.files.wordpress.com/2016/08/modules_nexus_53g.png)
+[![Nexus 5 3G 结果][31]](https://nolanwlawson.files.wordpress.com/2016/08/modules_nexus_53g.png)
 
-Once we take slow networks into account, the difference between Browserify/Webpack and Rollup/Closure is even more stark. In the case of 1000 modules (which is close to Reddit’s count of 1050), Browserify takes about 400 milliseconds longer than Rollup. And that 400ms is no small potatoes, since Google and Bing have both noted that sub-second delays have an [appreciable impact on user engagement][32].
+Once we take slow networks into account, the difference between Browserify/Webpack and Rollup/Closure is even more stark. In the case of 1000 modules (which is close to Reddit’s count of 1050), Browserify takes about 400 milliseconds longer than Rollup. And that 400ms is no small potatoes, since Google and Bing have both noted that sub-second delays have an [appreciable impact on user engagement][32].  
+一旦我们将网速考虑进来，Browserify/Webpack 和 Rollup/Closure 的差异将变得更为显著。在 1000 个模块规模（接近于 Reddit 1050 个模块的规模）时，Browserify 花费的时间比 Rollup 长大约 400 毫秒。然而 400 毫秒已经不是一个小数目了，正如 Google 和 Bing 指出的，亚秒级的延迟都会 [对用户的参与产生明显的影响][32] 。
 
-One thing to note is that this benchmark doesn’t measure the precise execution cost of 100, 1000, or 5000 modules per se, since that will depend on your usage of require(). Inside of these bundles, I’m calling require() once per module, but if you are calling require()multiple times per module (which is the norm in most codebases) or if you are callingrequire() multiple times on-the-fly (i.e. require() within a sub-function), then you could see severe performance degradations.
+One thing to note is that this benchmark doesn’t measure the precise execution cost of 100, 1000, or 5000 modules per se, since that will depend on your usage of require(). Inside of these bundles, I’m calling require() once per module, but if you are calling require()multiple times per module (which is the norm in most codebases) or if you are callingrequire() multiple times on-the-fly (i.e. require() within a sub-function), then you could see severe performance degradations.  
+还有一件事需要指出，那就是这个测试并非测量 100 个、1000 个或者 5000 个模块的每个模块的精确运行时间。因为这还与你对 require() 函数的使用有关。在这些包中，我采用的是对每个模块调用一次 require() 函数。但如果你每个模块调用了多次 require() 函数（这在代码库中非常常见）或者你多次动态调用 require() 函数（例如在子函数中调用 require() 函数），那么你将发现明显的性能退化。 
 
-Reddit’s mobile site is a good example of this. Even though they have 1050 modules, I clocked their real-world Browserify execution time as much worse than the “1000 modules” benchmark. When profiling on that same Nexus 5 running Chrome, I measured 2.14 seconds for Reddit’s Browserify require() function, and 197 milliseconds for the equivalent function in the “1000 modules” script. (In desktop Chrome on an i7 Surface Book, I also measured it at 559ms vs 37ms, which is pretty astonishing given we’re talking desktop.)
+Reddit’s mobile site is a good example of this. Even though they have 1050 modules, I clocked their real-world Browserify execution time as much worse than the “1000 modules” benchmark. When profiling on that same Nexus 5 running Chrome, I measured 2.14 seconds for Reddit’s Browserify require() function, and 197 milliseconds for the equivalent function in the “1000 modules” script. (In desktop Chrome on an i7 Surface Book, I also measured it at 559ms vs 37ms, which is pretty astonishing given we’re talking desktop.)  
+Reddit 的移动站点就是一个很好的例子。虽然该站点有 1050 个模块，但是我测量了它们使用 Browserify 的实际执行时间后发现比“1000 个模块”的测试结果差好多。当使用那台运行 Chrome 的 Nexus 5 时，我测出 Reddit 的 Browserify require() 函数耗时 2.14 秒。而那个“1000 个模块”脚本中的等效函数只需要 197 毫秒（在搭载 i7 处理器的 Surface Book 上的桌面版 Chrome，我测出的结果分别为 559 毫秒与 37 毫秒，虽然给出桌面平台的结果有些令人惊讶）。
 
-This suggests that it may be worthwhile to run the benchmark again with multiplerequire()s per module, although in my opinion it wouldn’t be a fair fight for Browserify/Webpack, since Rollup/Closure both resolve duplicate ES6 imports into a single hoisted variable declaration, and it’s also impossible to import from anywhere but the top-level scope. So in essence, the cost of a single import for Rollup/Closure is the same as the cost of n imports, whereas for Browserify/Webpack, the execution cost will increase linearly with n require()s.
+This suggests that it may be worthwhile to run the benchmark again with multiplerequire()s per module, although in my opinion it wouldn’t be a fair fight for Browserify/Webpack, since Rollup/Closure both resolve duplicate ES6 imports into a single hoisted variable declaration, and it’s also impossible to import from anywhere but the top-level scope. So in essence, the cost of a single import for Rollup/Closure is the same as the cost of n imports, whereas for Browserify/Webpack, the execution cost will increase linearly with n require()s.  
+这结果提示我们有必要对每个模块使用多个 require() 函数的情况再进行一次测试。不过，我并不认为这对 Browserify 和 Webpack 会是一个公平的测试，因为 Rollup 和 Closure 都会将重复的 ES6 库导入处理为一个的顶级变量声明，同时也阻止了顶层空间以外的其他区域的导入。所以根本上来说，Rollup 和 Closure 中一个导入和多个导入的开销是相同的，而对于 Browserify 和 Webpack，运行开销随 require() 函数的数量线性增长。
 
-For the purposes of this analysis, though, I think it’s best to just assume that the number of modules is only a lower bound for the performance hit you might feel. In reality, the “5000 modules” benchmark may be a better yardstick for “5000 require() calls.”
+For the purposes of this analysis, though, I think it’s best to just assume that the number of modules is only a lower bound for the performance hit you might feel. In reality, the “5000 modules” benchmark may be a better yardstick for “5000 require() calls.”  
+为了我们这个分析的最初目的，我认为最好假设模块的数量是性能的短板。而事实上，“5000 个模块”也是一个比“5000 个 require() 函数调用”更好的度量标准。
 
 ### Conclusions
 
