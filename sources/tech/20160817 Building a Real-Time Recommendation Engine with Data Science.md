@@ -1,3 +1,4 @@
+
 用数据科学搭建一个实时推荐引擎
 ======================
 
@@ -32,7 +33,6 @@ Neo4j 已经伴随我两年了，但实际上我已经使用 Neo4j 和 Cypher �
 ![](https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/20160816215537/cypher-query-dfw-food-drink-real-time-recommendations-768x364.png)
 
 这将提取出目录中用户所请求的所有地点，终点和出入口。然后我们可以计算出用户所在位置到出入口的准确距离，并以升序返回结果。再次说明，一个非常简单的 Cypher 推荐仅仅依据用户在机场中的位置。
-
 ### 社会推荐
 
 让我们来看一下社会推荐。在我们的假想应用程序中，用户可以登录并且可以用和 Facebook 类似的方式标记自己“喜爱”的地点，也可以查询登记地点。
