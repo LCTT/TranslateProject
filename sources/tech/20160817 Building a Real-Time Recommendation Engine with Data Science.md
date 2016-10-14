@@ -54,18 +54,22 @@ This is going to pull all the places in the category, terminal and gate the user
 ### 社会推荐
 
 Let’s look at a social recommendation. In our hypothetical app, we have users who can log in and “like” places in a way similar to Facebook and can also check into places:
+让我们来看一下社会推荐。在我们的假想应用程序中，用户可以登录并且可以用和 Facebook 类似的方式标记自己“喜欢”的地点，也可以查询登记地点。
 
 ![](https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/20160816215655/social-media-recommendation-engine-data-model-768x550.png)
 
 Consider this data model on top of the first model that we explored, and now let’s find food and drink places in the following categories closest to some gate in whatever terminal that user’s friends like:
+考虑我们所探索的第一个模型顶部的数据模型，现在让我们在下面的目录中国找到离一些出入口最近的饮食场所，不考虑用户的朋友想要去哪个终点：
 
 ![](https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/20160816215751/social-recommendation-engine-parameters-768x258.png)
 
 The MATCH clause is very similar to the MATCH clause of our first Cypher query, except now we are matching on likes and friends:
+匹配项目和我们第一次 Cypher 查询得到的匹配项目相似，只是现在我们依据喜好和朋友来匹配：
 
 ![](https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/20160816215846/social-recommendation-engine-cypher-query-768x468.png)
 
 The first three lines are the same, but for the user in question – the user that’s “logged in” – we want to find their friends through the :FRIENDS_WITH relationship along with the places those friends liked. With just a few added lines of Cypher, we are now taking a social aspect into account for our recommendation engine.
+前三行是完全一样的，但是现在正在考虑的是关于那些登录的用户，我们想要通过` 
 
 Again, we’re only showing categories that the user explicitly asked for that are in the same terminals the user is in. And, of course, we want to filter this by the user who is logged in and making this request, and it returns the name of the place along with its location and category. We are also accounting for how many friends have liked that place and the absolute value of the distance of the place from the gate, all returned in the RETURN clause.
 
