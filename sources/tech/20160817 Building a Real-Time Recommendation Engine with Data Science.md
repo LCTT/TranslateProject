@@ -1,5 +1,6 @@
 translating by ucasFL
 Building a Real-Time Recommendation Engine with Data Science
+用数据科学搭建一个实时推荐引擎
 ======================
 
 Editor’s Note: This presentation was given by Nicole White at GraphConnect Europe in April 2016. Here’s a quick review of what she covered:
@@ -7,34 +8,50 @@ Editor’s Note: This presentation was given by Nicole White at GraphConnect Eur
 - [Social recommendations][2]
 - [Similarity recommendations][3]
 - [Cluster recommendations][4]
+编者注：本文是 2016 年四月 Nicole Whilte 在欧洲 GraphConnect 时所作。这儿我们快速回顾一下她所涉及的内容：
+- 【基本图表动力推荐】【1】
+- 【社会推荐】【2】
+- 【相似性推荐】【3】
+- 【集群推荐】【4】
 
 What we’re going to be talking about today is data science and graph recommendations:
+我们今天将要讨论的内容是数据科学和图表推荐：
 
 I’ve been with Neo4j for two years now, but have been working with Neo4j and Cypher for three. I discovered this particular graph database when I was a grad student at the University of Texas Austin studying for a masters in statistics with a focus on social networks.
+Neo4j 已经伴随我两年了，但实际上我已经使用 Neo4j 和 Cypher 工作三年了。当我首次发现这个特别的图表数据库的时候，我还是一个研究生，那时候我在奥斯丁的德克萨斯大学攻读关于社会网络的统计学硕士学位。
 
 [Real-time recommendation engines][5] are one of the most common use cases for Neo4j, and one of the things that makes it so powerful and easy to use. To explore this, I’ll explain how to incorporate statistical methods into these recommendations by using example datasets.
+【实时推荐引擎】【5】是 Neo4j 中广泛使用的一个实例，有一样东西使它如此强大并且容易使用。为了探索这个东西，我将通过使用示例数据集来阐述如何将统计学方法并入这些引擎中。
 
 The first will be simple – entirely in Cypher with a focus on social recommendations. Next we’ll look at the similarity recommendation, which involves similarity metrics that can be calculated, and finally a clustering recommendation.
+第一个很简单 - 仅仅在 Cypher 中关注社会推荐。接下来，我们将看一看相似性推荐，这涉及到可以被计算的相似性度量，最后探索的是集群推荐
 
 ### Basic Graph-Powered Recommendations
+### 基本图表动力推荐
 
 The following dataset includes food and drink places in the Dallas Fort Worth International Airport, one of the major airport hubs in the United States:
+下面的数据集包含所有达拉斯 Fort Worth 国际机场的饮食场所，达拉斯 Fort Worth 国际机场是美国主要的机场枢纽之一：
 
 ![](https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/20160816214938/recommendation-engine-data-science-nicole-white-graphconnect-768x432.png)
 
 We have place nodes in yellow and are modeling their location in terms of gate and terminal. And we are also categorizing the place in terms of major categories for food and drink. Some include Mexican food, sandwiches, bars and barbecue.
+我们把节点标记成黄色并按照出入口和终点给它们的位置建模。同时我们也按照食物和饮料的主类别将地点分类，其中一些包括墨西哥食物，三明治，酒吧和烤肉。
 
 Let’s do a simple recommendation. We want to find a specific type of food in a certain location in the airport, and the curled brackets represent user inputs which are being entered into our hypothetical app:
+让我们做一个简单的推荐。我们想要在机场的某一地点找到一种特定食物，大括号中的内容所表示的用户输入将进入我们假想的应用程序中。
 
 ![](https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/20160816215426/food-drink-real-time-recommendation-engine-parameters-768x208.png)
 
 This English sentence maps really well as a Cypher query:
+这个英文句子很好地表示出了密码查询：
 
 ![](https://s3.amazonaws.com/dev.assets.neo4j.com/wp-content/uploads/20160816215537/cypher-query-dfw-food-drink-real-time-recommendations-768x364.png)
 
 This is going to pull all the places in the category, terminal and gate the user has requested. Then we get the absolute distance of the place to gate where the user is, and return the results in ascending order. Again, a very simple Cypher recommendation to a user based just on their location in the airport.
+这将提取出目录中用户所提取的所以地点，终点和出入口。然后我们可以计算出用户所在位置到出入口的准确距离，并以升序返回结果。再次说明，一个非常简单的 Cypher 推荐仅仅依据用户在机场中的位置。
 
 ### Social Recommendations
+### 社会推荐
 
 Let’s look at a social recommendation. In our hypothetical app, we have users who can log in and “like” places in a way similar to Facebook and can also check into places:
 
