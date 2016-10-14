@@ -1,45 +1,43 @@
-willcoderwang 正在翻译
-
-What the rise of permissive open source licenses means
+宽松开源许可证的崛起意味着什么
 ====
 
-Why restrictive licenses such as the GNU GPL are steadily falling out of favor.
+为什么像 GNU GPL 这样的限制性许可证越来越不受青睐。
 
-"If you use any open source software, you have to make the rest of your software open source." That's what former Microsoft CEO Steve Ballmer said back in 2001, and while his statement was never true, it must have spread some FUD (fear, uncertainty and doubt) about free software. Probably that was the intention.
+“如果你用了任何开源软件， 那么你软件的其他部分也必须开源。” 这是微软 CEO Steve Ballmer 2001 年说的， 尽管他说的不对， 还是引发了人们对自由软件的 FUD （恐惧， 不确定和怀疑）。 大概这才是他的意图。
 
-This FUD about open source software is mainly about open source licensing. There are many different licenses, some more restrictive (some people use the term "protective") than others. Restrictive licenses such as the GNU General Public License (GPL) use the concept of copyleft, which grants people the right to freely distribute copies and modified versions of a piece of software as long as the same rights are preserved in derivative works. The GPL (v3) is used by open source projects such as bash and GIMP. There's also the Affero GPL, which provides copyleft to software that is offered over a network (for example as a web service.)
+对开源软件的这些 FUD 主要与开源许可有关。 现在有许多不同的许可证， 当中有些限制比其他的更严格（也有人称“更具保护性”）。 诸如 GNU 通用公共许可证 （GPL） 这样的限制性许可证使用了 copyleft 的概念。 copyleft 赋予人们自由发布软件副本和修改版的权力， 只要衍生工作给予人们同样的权力。 bash 和 GIMP 等开源项目就是使用了 GPL （v3）。 还有一个 Affero GPL 的许可证， 它为网络上的软件（如网络服务）提供了 copyleft 许可。
 
-What this means is that if you take code that is licensed in this way and you modify it by adding some of your own proprietary code, then in some circumstances the whole new body of code, including your code, becomes subject to the restrictive open source license. It was this type of license that Ballmer was probably referring to when he made his statement.
+这意味着， 如果你使用了这种许可的代码， 然后加入了你自己的专有代码， 那么在一些情况下， 整个代码， 包括你的代码也就遵从这种限制性开源许可证。 Ballmer 说的大概就是这类的许可证。
 
-But permissive licenses are a different animal. The MIT License, for example, lets anyone take open source code and do what they want with it — including modifying and selling it — as long as they provide attribution and don't hold the developer liable. Another popular permissive open source license, the Apache License 2.0, also provides an express grant of patent rights from contributors to users. JQuery, the .NET Core and Rails are licensed using the MIT license, while the Apache 2.0 license is used by software including Android, Apache and Swift.
+但宽松许可证不同。 比如， 只要保留属性且不要求开发者承担责任， MIT 许可证允许任何人任意使用开源代码， 包括修改和出售。 另一个比较流行的宽松开源许可证， Apache 许可证 2.0 也把专利权从贡献者授予用户。 JQuery, .NET Core 和 Rails 使用了 MIT 许可证， 使用 Apache 许可证 2.0 的软件包括安卓， Apache 和 Swift。
 
-Ultimately both license types are intended to make software more useful. Restrictive licenses aim to foster the open source ideals of participation and sharing so everyone gets the maximum benefit from software. And permissive licenses aim to ensure that people can get the maximum benefit from software by allowing them to do what they want with it — even if that means they take the code, modify it and keep it for themselves or even sell the resulting work as proprietary software without contributing anything back.
+两种许可证类型最终都是为了让软件更有用。 限制性许可证促进了参与和分享的开源理念， 使每个人从软件中得到最多的利益。 而宽松许可证通过允许人们任意使用软件来确保人们能从软件中得到最多的利益， 即使这意味着他们可以使用代码， 修改它， 据为己有，甚至以专有软件出售，而不做任何回报。
 
-Figures compiled by open source license management company Black Duck Software show that the restrictive GPL 2.0 was the most commonly used open source license last year with about 25 percent of the market. The permissive MIT and Apache 2.0 licenses were next with about 18 percent and 16 percent respectively, followed by the GPL 3.0 with about 10 percent. That's almost evenly split at 35 percent restrictive and 34 percent permissive.
+开源许可证管理公司 Black Duck Software 的数据显示， 去年使用最多的开源许可证是限制性许可证 GPL 2.0, 市占率大约 25%。 宽松许可证 MIT 和 Apache 2.0 次之， 市占率分别为 18% 和 16%， 再后面是 GPL 3.0, 市占率大约 10%。 这样来看， 限制性许可证占 35%， 宽松许可证占 34%， 几乎是平手。
 
-But this snapshot misses the trend. Black Duck's data shows that in the six years from 2009 to 2015 the MIT license's share of the market has gone up 15.7 percent and Apache's share has gone up 12.4 percent. GPL v2 and v3's share during the same period has dropped by a staggering 21.4 percent. In other words there was a significant move away from restrictive licenses and towards permissive ones during that period.
+但这个数据没有显示趋势。 Black Duck 的数据显示， 从 2009 年到 2015 年的六年间， MIT 许可证的市占率上升了 15.7%， Apache 的市占率上升了 12.4%。 在这段时期， GPL v2 和 v3 的市占率惊人地下降了 21.4%。 换言之， 在这段时期里， 大量市占率从限制性许可证移动到宽松许可证。
 
-And the trend is continuing. Black Duck's [latest figures][1] show that MIT is now at 26 percent, GPL v2 21 percent, Apache 2 16 percent, and GPL v3 9 percent. That's 30 percent restrictive, 42 percent permissive — a huge swing from last year’s 35 percent restrictive and 34 percent permissive. Separate [research][2] of the licenses used on GitHub appears to confirm this shift. It shows that MIT is overwhelmingly the most popular license with a 45 percent share, compared to GLP v2 with just 13 percent and Apache with 11 percent.
+这个趋势还在继续。 Black Duck 的[最新数据][1]显示， MIT 现在的市占率为 26%， GPL v2 为 21%， Apache 2 为 16%， GPL v3 为 9%。 即 30% 的限制性许可证和 42% 的宽松许可证－－与前一年的 35% 的限制许可证和 34% 的宽松许可证相比， 发生了重大的转变。 对 GitHub 上使用许可证的[调查研究][2]证实了这种转变。 它显示 MIT 以压倒性的 45% 占有率成为最流行的许可证， 与之相比， GPL v2 只有 13%， Apache 11%。
 
 ![](http://images.techhive.com/images/article/2016/09/open-source-licenses.jpg-100682571-large.idge.jpeg)
 
-### Driving the trend
+### 引领趋势
 
-What’s behind this mass move from restrictive to permissive licenses? Do companies fear that if they let restrictive software into the house they will lose control of their proprietary software, as Ballmer warned? In fact, that may well be the case. Google, for example, has [banned Affero GPL software][3] from its operations.
+从限制性许可证到宽松许可证，这么大的转变背后是什么呢？ 是公司害怕如果使用了限制性许可证的软件，他们就会像Ballmer说的那样，失去自己私有软件的控制权了吗？ 事实上， 可能就是如此。 比如， Google [禁用了 Affero GPL 软件][3]。
 
-Jim Farmer, chairman of [Instructional Media + Magic][4], a developer of open source technology for education, believes that many companies avoid restrictive licenses to avoid legal difficulties. "The problem is really about complexity. The more complexity in a license, the more chance there is that someone has a cause of action to bring you to court. Complexity makes litigation more likely," he says.
+[Instructional Media + Magic][4] 的主席 Jim Farmer， 是一个教育开源技术的开发者。 他作为很多公司为避开法律问题而不使用限制性许可证。 “问题就在于复杂性。 许可证的复杂性越高， 被人因为某此行为而告上法庭的可能性越高。 高复杂性更可能带来麻烦“， 他说。
 
-He adds that fear of restrictive licenses is being driven by lawyers, many of whom recommend that clients use software that is licensed with the MIT or Apache 2.0 licenses, and who specifically warn against the Affero license.
+他补充说， 这种对限制性许可证的恐惧正被律师们驱动着， 许多律师建议自己的客户使用 MIT 或 Apache 2.0 许可证的软件， 并明确反对使用 Affero 许可证的软件。
 
-This has a knock-on effect with software developers, he says, because if companies avoid software with restrictive licenses then developers have more incentive to license their new software with permissive ones if they want it to get used.
+他说， 这会对软件开发者产生影响， 因为如果公司都避开限制性许可证软件的使用，开发者想要自己的软件被使用， 就更会把新的软件使用宽松许可证。
 
-But Greg Soper, CEO of SalesAgility, the company behind the open source SuiteCRM, believes that the move towards permissive licenses is also being driven by some developers. "Look at an application like Rocket.Chat. The developers could have licensed that with GPL 2.0 or Affero but they chose a permissive license," he says. "That gives the app the widest possible opportunity, because a proprietary vendor can take it and not harm their product or expose it to an open source license. So if a developer wants an application to be used inside a third-party application it makes sense to use a permissive license."
+但 SalesAgility， 也就是开源 SuiteCRM 的那家公司，的 CEO Greg Soper 认为这种到宽松许可证的转变也由一些开发者驱动。 “看看像 Rocket.Chat 这样的应用。 开发者本可以选择 GPL 2.0 或 Affero 许可证， 但他们选择了宽松许可证，” 他说。 “这样可以给这个应用最大的机会， 因为专有软件厂商可以使用它， 不会伤害到他们的产品， 且不需要把他们的产品也使用开源许可证。 这样如果开发者想要让第三方应用使用他的应用的话， 他有理由选择宽松许可证。”
 
-Soper points out that restrictive licenses are designed to help an open source project succeed by stopping developers from taking other people's code, working on it, and then not sharing the results back with the community. "The Affero license is critical to the health of our product because if people could make a fork that was better than ours and not give the code back that would kill our product," he says. "For Rocket.Chat it's different because if it used Affero then it would pollute companies' IP and so it wouldn't get used. Different licenses have different use cases."
+Soper 指出， 限制性许可证的设计，就是通过阻止开发者拿了别人的代码，做了修改，但不把结果回报给社区来帮助开源项目。 “ Affero 许可证对我们的产品很重要， 因为如果有人 fork 了，并做得比我们好， 却又不把代码回报回来， 就会杀死我们的产品，” 他说。 “ 对 Rocket.Chat 则不同， 因为如果它使用 Affero， 那么它会污染公司的 IP， 所以公司不会使用它。 不同的许可证有不同的使用案例。”
 
-Michael Meeks, an open source developer who has worked on Gnome, OpenOffice and now LibreOffice, agrees with Jim Farmer that many companies do choose to use software with permissive licenses for fear of legal action. "There are risks with copyleft licenses, but there are also huge benefits. Unfortunately people listen to lawyers, and lawyers talk about risk but they never tell you that something is safe."
+曾在 Gnome， 现在是 LibreOffice 的 OpenOffice 上工作的开源开发者 Michael Meeks 同意 Jim Farmer 的，许多公司确实出于对法律的担心，而选择使用宽松许可证的软件的观点。 “copyleft 许可证有风险， 但同样也有巨大的益处。 遗憾的是人们都听从律师， 而律师只是讲风险， 但从不告诉你有些事是安全的。”
 
-Fifteen years after Ballmer made his inaccurate statement it seems that the FUD it generated it is still having an effect — even if the move from restrictive licenses to permissive ones is not quite the effect he intended.
+Ballmer 发表他不正确的言论已经 15 年了， 但它产生的 FUD 还是有影响－－即使从限制性许可证到宽松许可证的转变并不是他想要的。
 
 --------------------------------------------------------------------------------
 
