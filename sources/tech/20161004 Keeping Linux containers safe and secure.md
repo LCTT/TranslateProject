@@ -1,67 +1,64 @@
-translating by Bestony
-
-Keeping Linux containers safe and secure
-====
+# 保持Linux容器的安全和稳定
 
 ![Interview with Andy Cathrow of Anchore](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/bus-containers2.png?itok=rG1pTnZ4)
 
->Image credits : [Lucarelli](http://commons.wikimedia.org/wiki/User:Lucarelli) via [Wikimedia Commons](http://commons.wikimedia.org/wiki/File:Containers_Livorno.jpg). CC-BY-SA 3.0
+> 图片来源: [Lucarelli](http://commons.wikimedia.org/wiki/User:Lucarelli) 基于 [Wikimedia Commons](http://commons.wikimedia.org/wiki/File:Containers_Livorno.jpg). CC-BY-SA 3.0
 
-Linux containers are helping to change the way that IT operates. In place of large, monolithic virtual machines, organizations are finding effective ways to deploy their applications inside Linux containers, providing for faster speeds, greater density, and increased agility in their operations.
+Linux容器正在帮助改变IT从业者的工作方式。相比于大的、其中的虚拟机器，一些组织发现把他们的应用部署在容器中更有效，可以提供更快的速度，更加密集，提升他们操作的敏捷性
 
-While containers can bring a number of advantages from a security perspective, they come with their own set of security challenges as well. Just as with traditional infrastructure, it is critical to ensure that the system libraries and components running within a container are regularly updated in order to avoid vulnerabilities. But how do you know what is running inside of your containers? To help manage the full set of security challenges facing container technologies, a startup named[Anchore](https://anchore.com/) is developing an [open source](https://github.com/anchore/anchore)[ project](https://github.com/anchore/anchore) of the same name to bring visibility inside of Linux containers. 
+和传统的基础设施一样，确保运行在一个容器内的组件和系统库的定期更新是至关重要的，但是你如何知道什么东西运行在你的容器内？为了帮助管理全部这些的安全挑战，一个名为[Anchore](https://anchore.com)的[开源项目](https://github.com/anchore/anchore)正在开发，它用来帮助展示Linux容器中的内容。
 
-To learn more about Anchore, I caught up with Andrew Cathrow, Anchore's vice president of products and marketing, to learn more about the open source project and the company behind it.
+为了了解更多关于Anchore，我赶上了 Anchore 的市场和产品的发言人 Andrew Cathrow，来了解更多关于这个开源项目背后的公司。
 
 ![](https://opensource.com/sites/default/files/images/life/Interview%20banner%20Q%26A.png)
 
-### In a nutshell, what is Anchore? How does the toolset work?
+### 简而言之 Anchore是什么? 它如何工作?
 
-Anchore's goal is to provide a toolset that allows developers, operations, and security teams to maintain full visibility of the 'chain of custody' as containers move through the development lifecycle, while providing the visibility, predictability, and control needed for production deployment. The Anchore engine is comprised of pluggable modules that can perform analysis (extraction of data and metadata from an image), queries (allowing reporting against the container), and policy evaluation (where policies can be specified that govern the deployment of images).
+Anchore 的目标是提供一个允许开发人员、运营团队、安全团队通过开发生命周期的容器，保持完整的“托管链”的可见性，同时提供生产部署所需的可见性、可预测性和控制性。Anchore的引擎通过插件可以进行分析（通过提取图像数据和元数据）、查询（允许对容器进行报告）、以及策略评估（这里的正常指可以被指定的管理的图像）。
 
-While there are a number of scanning tools on the market, most are not open source. We believe that security and compliance products should be open source, otherwise, how could you trust them?
+虽然市场上有很多扫描工具，但是大部分不开源。我们认为安全合规的产品应该是开源的，否则你怎么才能信任他们。
 
-Anchore, in addition to being open source, has two other major differentiators that set it apart from the commercial offerings in the market.
+Anchore 除了开源以外，还有两大优势，使他可以区别于市场中的商业产品。
 
-First, we look beyond the operating system image. Scanning tools today concentrate on operating system packages, e.g. "Do you have any CVEs (security vulnerabilities) in your RPMs or DEB packages?" While that is certainly important, you don't want vulnerable packages in your image, the operating system packages are just the foundation on which the rest of the image is built. All layers need to be validated, including configuration files, language modules, middleware, etc. You can have all the latest packages, but with even one configuration file wrong, insecurity sets in. A second differentiator is the ability to extend the engine by adding users' own data, queries or policies.
+首先，我们看的不止是操作系统的镜像。如今的扫描工具专注于操作系统的软件包，比如“你的RPM或DEB包中有CVE(安全漏洞)么？”.这虽然是很重要的，你不希望你的镜像中有不安全的包，但是操作系统包只是镜像的基础。其他的层次都需要进行验证，包括配置文件、语言模块、中间件等等。你可以拥有所有的最新的软件包，但是可能一个配置文件配置出现错误或者是不安全的配置。第二个不同就是允许用户添加自己的数据库拓展、查询或策略。
 
-### What is driving the need for an inspection and analytics tool for containers? What problems are operators facing that this helps to solve?
+### 什么推动了容器的校验和分析工具？这个工具可以解决运营面临的什么问题呢？
 
-A primary concern for enterprises adopting Docker today is security, in particular, the governance and compliance of the containers they are deploying. It's almost too easy to pull an application image from a public registry, run it, and within seconds deploy an application in production without even knowing what's under the covers. End users must have confidence that when they deploy applications they will be secure, performant and easily maintained.
+企业使用Docker首要关注的就是安全，特别是他们正在部署的容器的分配和合规性。在生产环境中，从公共镜像库拉取一个镜像，运行它，并在几秒钟部署，是非常简单的，甚至不知道下面可能发生什么。
 
-Containers are opaque in that they are deployable ‘black boxes' that contain applications. While it's easy to treat these images as "just packaged applications," they include operating system images with up to hundreds of packages and thousands of files. As with all operating systems on physical servers, virtual machines, or in the cloud, images need to be maintained. The images may contain unpatched security vulnerabilities, outdated software that contains bugs, or may be misconfigured.
+容器是不透明的，包含应用程序的他们是可以部署的“黑盒”。虽然非常容易把这些镜像看作“打包的应用程序”，但是他们包括了系统的镜像和多达数百个包和成千上万个文件。
 
-To have confidence in your container deployments you need to know what's under the covers to analyze and make decisions based on the contents of your container images.
+要对您的容器部署有信心，你需要知道底层是什么和基于容器镜像的内容来做出决定。
 
-### The innovation around containers today is almost entirely happening in open source. Why do you think that is? What's driving the desire for openness?
+### 如今容器的创新基本上都是开源的，你认为那是什么呢？是什么驱动了他们开源呢？
 
-Over the past 20 years organizations have experienced the advantages open source brings to cost savings, reduced lock-in, improved security and faster innovation. Containers, and Docker specifically, are great examples. The team at Docker Inc. would not have been able to create this innovative new software deployment paradigm on top of a proprietary system. They would not have been able to make the required modifications to the code in a proprietary system, nor be able to work cooperatively with industry leaders such as Google, IBM, Intel, and Red Hat—all working toward a common goal. Open source and Linux have always enabled innovation and positive industry disruption. In the past, delivering a big idea required a big team and lots of resources. In the open source world, a small company with big ideas can work in the wider community and benefit from shared intellectual horsepower to collaboratively deliver real enterprise IT innovation.
+在过去的20年中，组织已经经历了开源带来的优势，节省成本，减少锁定，提高了安全性和更快的创新。容器，特别是Docker，都是非常好的例子。Docker公司的团队不能创建在专有系统上创建一个新的软件部署模式，也不能够于行业领导者比如谷歌、IBM、英特尔、红帽合作，朝着一个共同的目标。开源和Linux总是开启创新和进行积极的产业干扰。在过去，实现一个大的想法需要一个大的团队和很多资源。在开源世界，一个有着大的创意的小公司可以工作在一个更大的社区中，通过知识共享的力量来协作，提供真正的企业创新
 
-To illustrate the deep adoption of open source, the Anchore team recently returned from LinuxCon in Toronto, where it was incredible to see Microsoft as a diamond level sponsor presenting a growing portfolio of their products that work with or on Linux! Linus Torvalds once said, "If Microsoft ever does applications for Linux it means I've won." I'd amend that statement to read "Open has won."
+为了深入的说明开源的使用，Anchroe 团队最近从多伦多的 LinuxCon 返回，在哪里，令人难以相信的是，微软作为钻石级的赞助商，展示了他们的产品组合在Linux上的工作。Linus Toravlds 曾说过，“如果微软为Linux做应用就意味着我赢了”。我要把这句话改为“开源赢了”。
 
-### The days of common standards in the container space are still very young, and there are still many competing visions for nearly every part of the stack. What challenges does that create for a startup in this space?
+### 容器领域的通用标准的创建还需要时间，在容器的几乎所有部分，仍有许多挑战。在这个领域，创业公司有哪些挑战？
 
-It is important to remember that without open standards and open source we wouldn't have seen the innovation that is driving rapid container adoption and changing the industry landscape. The Open Container Initiative (OCI), comprised of industry leaders from the Linux and Container industries, is doing great work setting standards for both the runtime and image formats that will allow us to see even more innovation. Anchore is proud to be a new member of the OCI and we look forward to helping form the standards.
+这里有个很重要的点，就是没有开放的标准和开源，我们不可能看到快速推动容器的采用和改变行业格局的创新。开放容器倡议（OCI）由Linux和容器行业的行业领导者组成，正在为运行环境和镜像格式创造标准，这将使我们能够看到更多的创新。Anchore很自豪能成为OCI的新成员，我们期待帮助形成标准。
 
-### How are you working to build an open source community around the Anchore project?
+你如何为Anchor项目建立一个开源社区？
 
-The Anchore team has a rich history of building and working within open source communities, with leaders from Ansible, Eucalyptus Systems, and Red Hat. From the start, Anchore began building a strong open source community and we are applying lessons learned in the open source world. The first lesson, of course, is to release early and often. We open sourced our inspection and analysis engine back in June, far in advance of our commercial offering, to ensure that the open source project can stand on its own with features that make it useful to many end-users without having to purchase Anchore's commercial offering. There will always be opportunities to add more value with support, services, and enhanced data feeds with a commercial offering, but if the open source engine is not useful in itself then we will not see an active community.
+Anchore团队来自Ansible，Eucalyptus Systems和Red Hat的领导团队，在开源社区中拥有丰富的工作经验。从一开始，Anchore开始创建一个强大的开源社区，我们正在应用我们在开源世界中学到的经验和教训。第一课，当然，很快，也很频繁。我们在6月开源我们的检测和分析引擎，远远早于我们的商用产品。为了确保开源项目能够独立运行，使更多的直接用户能够使用它，而无需购买Anchore的商用产品。有很多机会，通过支持、服务和增强型的数据源，通过商用产品创造更多价值，但是如果开源引擎本身没有用，我们将看不到活跃的社区。
 
-We built Anchore to be modular to allow analysis, reporting and policy plugins to be added without requiring changes to the core engine. We want to ensure that anyone can create plugins, so we chose Python as the base language for the project because it is widely used by developers and sysadmins alike. But even if you are not well versed in Python you can still create plugins using whatever language or scripting environment you prefer. If you can create a bash script then you can create an Anchore plugin. Our goal is to enable the broadest possible community to attract participation. While we encourage our users to pass these contributions back to the community we've architected and licensed the project to ensure that private plugins/modules can be created and maintained independently.
+我们将Anchore模块化，允许添加分析、报告和策略插件，而不需要更改核心的引擎。我们希望保证任何人都可以创建插件，所以我们选择了Python作为项目的基本语言，因为Python被开发者和系统管理员广泛应用。但是，即使你不熟悉Python，你仍然可以使用任何你喜欢的语言或者脚本环境创建插件。如果你可以创建一个Bash脚本，那么你可以创建一个Anchore插件。我们的目标是最大化的吸引社区的参与。虽然我们鼓励用户将贡献回馈给社区，但是我们也为这个项目构建并授权来确保可以独立创建和维护这些私有的插件和模块。
 
-### The promise of containers is not just greater application density on servers or greater speed on the technical side, but a combination of different tools that together provide a different way of approaching the way developers and operators work together. As a company working in this space, how are you providing a message that resonates with both developers and operators?
+### 容器的约定不止是在服务器上更大密度的部署应用程序或者技术层面更快的速度，而且还有不同工具的组合，这些工具提供了一种不同的方式来接近开发者和操作者共同工作的方式。作为在这个领域工作的公司，你们希望提供一个什么样的消息来让开发者和运营产生共鸣？
 
-The container ecosystem is evolving rapidly with a growing number of runtime, orchestration, monitoring and integration products. So the first consideration we had to factor into our architecture was to not be prescriptive about Anchore deployment and usage, we need to ensure that we can fit into any CI/CD pipeline whether it's on-premise or deployed in the cloud. A common question we are asked is if Anchore will provide a container registry that includes image scanning and analysis. While this would simplify our work considerably, it would force customers into specific deployment architectures and limit customers' ability to deploy their own best-of-breed stack. We've made sure that Anchore works with all leading registries, runtime platforms, CI/CD platforms and orchestration tools.
+随着越来越多的运行环境、编排、监控和集成产品，容器的生态系统正在快速发展。所以，我们的架构中的第一个考虑因素不是关于Anchore的部署和使用。我们需要确保我们可以适应任何CI/CD的通道，无论是私有部署还是云端部署。我们通常做的假设是，如果Anchore将提供一个包含镜像扫描和分析的容器仓库。虽然这将大大简化我们的工作，但是这会迫使用户进入特定的部署架构，并限制了用户部署他们自己最好的组件的能力。我们已经确保Anchore可以和所有先进的仓库、运行环境CI/CD平台和编排工具配合使用。
 
-Some developers are adding operations skills and moving to DevOps roles, and we see sysadmin/operations teams that are learning more about development as they take DevOps roles. We also see teams with mixed skills. We designed Anchore to be used by development operations and security teams so they can work together to define rules and policies that can be evaluated at any point in the development cycle. Another example is the architecture of the plugins/module interface that enables anyone to easily create a module in their favorite environment—whether it is Python, Go, Perl, C or even a bash script.
+一些开发者添加了运营技能，并转移到 Devops 角色，我们看到系统管理员/运营团队在转换角色时，更多的了解开发。我们也看到了具有混合能力的团队。我们设计了Anchore来供开发运营和安全团队使用，因此他们可以在开发周期中的任何一点来一起工作，评估规则和策略。另外一个例子是插件/模块的架构，使任何人都可以在他们喜欢的环境中轻松创建一个模块 -无论是Python、Go、Perl、C 甚至是一个Bash脚本。
 
---------------------------------------------------------------------------------
+------
 
 via: https://opensource.com/business/16/10/interview-andy-cathrow-anchore
 
 作者：[Jason Baker][a]
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[Bestony](https://github.co/Bestony)
 
 校对：[校对者ID](https://github.com/校对者ID)
 
