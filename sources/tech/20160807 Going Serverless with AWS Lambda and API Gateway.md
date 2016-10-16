@@ -10,7 +10,7 @@ A brief digression on computing
 简短回忆下计算机的发展
 
 In the beginning, there was... well. It's a little complicated. At the very beginning, we had mechanical computers. Then along came ENIAC. Things really don't start to get "mass production", however, until the advent of mainframes.
-很早的时候，只有机器计算机，后来又有了ENIAC，但是都没有大规模生产。直到大型机出现后，计算机才迅速发展。
+很早的时候，只有机器计算机，后来又有了ENIAC(Electronic Numerical Integrator And Computer)，但是都没有大规模生产。直到大型机出现后，计算机才快速发展。
 
 ```
 1950s - Mainframes
@@ -32,20 +32,28 @@ In the beginning, there was... well. It's a little complicated. At the very begi
 2014 - Serverless(计算资源服务化)
 
 >These are rough release/popularity dates. Argue amongst yourselves about the timeline.
+注:这些日期是大概的发布或是流行时间，不要和我争论这些时间的准确性。
 
 The progression here seems to be a trend toward executing smaller and smaller units of functionality. Each step down generally represents a decrease in the operational overhead and an increase in the operational flexibility.
+从变化的趋势来看，计算在执行越来越小的功能单元。每一次变化通常都代表了运维负担的减小和运维灵活性的增加。
 
 ### The possibilities
+### 机会
 
 Yay! Serverless! But. What advantages do we gain by going serverless? And what challenges do we face?
+最新的进展是Serverlss! 但是, serverless能给我们带来什么好处? 我们要面临什么挑战呢?
 
 No billing when there is no execution. In my mind, this is a huge selling point. When no one is using your site or your API, you aren't paying for. No ongoing infrastructure costs. Pay only for what you need. In some ways, this is the fulfillment of the cloud computing promise "pay only for what you use".
+没有运行代码时不需要付费. 我认为，这是个巨大的卖点。当没有人访问你的站点或用你的API,你不需要付钱，也没有基础设备成本。仅仅支付你需要的部分。换句话说，这兑现了云计算的承诺:"仅仅支付你真正用的资源".
 
 No servers to maintain or secure. Server maintenance and security is handled by your vendor (you could, of course, host serverless yourself, but in some ways this seems like a step in the wrong direction). Since your execution times are also limited, the patching of security issues is also simplified since there is nothing to restart. This should all be handled seamlessly by your vendor.
+不需要维护服务器，也不需要考虑服务器安全。服务器的维护和安全将由你的供应商来处理(当然，你也可以架设自己的serverless，只是这似乎不是正确的选择方向).由于你的执行时间有限，安全补丁也被简化了，因为没有什么需要重启。这些都应该由你的服务供应商无缝地处理。
 
 Unlimited scalability. This is another big one. Let's say you write the next Pokémon Go. Instead of your site being down every couple of days, serverless lets you just keep growing and growing. A double-edged sword, for sure (with great scalability comes great... bills), but if your service's profitability depends on being up, then serverless can help enable that.
+无限的可扩展性.这是又一个大的好处。假设你又开发了一个Pokemon Go, 与其频繁地把站点下线维护，不如用serverless来不断地扩展。当然，这也是个双刃剑，大量的账单也会随之而来。如果你的业务的利润和站点的可用性强相关的话，serverless确实能帮上忙。
 
 Forced microservices architecture. This one really goes both ways. Microservices seem to be a good way to build flexible, scalable, and fault-tolerant architectures. On the other hand, if your business' services aren't designed this way, you're going to have difficulty adding serverless into your existing architecture.
+强制的微服务架构。这也是有两面性，微服务似乎是一种好的构建灵活可扩展的，故障容忍架构的方式。另一方面，如果你的业务没有按照这种方式设计，你将很难在已有的架构中引入serverless.
 
 ### But now your stuck on their platform
 
