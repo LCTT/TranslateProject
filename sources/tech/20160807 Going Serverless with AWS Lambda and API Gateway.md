@@ -56,35 +56,52 @@ Forced microservices architecture. This one really goes both ways. Microservices
 强制的微服务架构。这也是有两面性，微服务似乎是一种好的构建灵活可扩展的，故障容忍架构的方式。另一方面，如果你的业务没有按照这种方式设计，你将很难在已有的架构中引入serverless.
 
 ### But now your stuck on their platform
+### 但是现在你被限制在他们的平台
 
 Limited range of environments. You get what the vendor gives. You want to go serverless in Rust? You're probably out of luck.
+有限的环境.你只能从供应商提供的环境中选择. 你想用老的serverless服务?你可能不太幸运。
 
 Limited preinstalled packages. You get what the vendor pre-installs. But you may be able to supply your own.
+有限的预装包.你只能用供应商预装的包.但是你可能能够提供你自己的。
 
 Limited execution time. Your function can only run for so long. If you have to process a 1TB file you will likely need to 1) use a work around or 2) use something else.
+有限的执行时间。你的功能只可以运行这么长时间。如果你必须处理1TB的文件，你可能需要用规避方案或者用其他方案。
 
 Forced microservices architecture. See above.
+强制的微服务架构. 参考上面的描述。
 
 Limited insight and ability to instrument. Just what is your code doing? With serverless, it is basically impossible to drop in a debugger and ride along. You still have the ability to log and emit metrics the usual way but these generally can only take you so far. Some of the most difficult problems may be out of reach when the occur in a serverless environment.
+有限的监视和诊断能力。例如，你的代码在干什么? 通过serverless, 基本不可能在调试器中设置断点和跟踪流程。你仍然可以像往常一样记录日志并发出度量，但是这能带来的帮助很有限，无法找到在serverless环境中发生的高难度的问题。
 
 ### The playing field
+### 应用领域
 
 Since the introduction of AWS Lambda in 2014, the number of offerings has expanded quite a bit. Here are a few popular ones:
+自从2014年出现AWS Lambda以后，serverless提供者已经增加了很多。下面是一些流行的serverless服务:
 
 - AWS Lambda - The Original
+- AWS Lambda - 最早的
 - OpenWhisk - Available on IBM's Bluemix cloud
+- OpenWhisk - 在IBM的Bluemix云上可用
 - Google Cloud Functions
+- Google Cloud Functions
+- Azure Functions
 - Azure Functions
 
 While all of these have their relative strengths and weaknesses (like, C# support on Azure or tight integration on any vendor's platform) the biggest player here is AWS.
+这些平台都有他们的相对优势和劣势(例如，Azure支持C#, 在其他供应商的平台上需深度集成). 这里面最大的玩家是AWS.
 
 ### Building your first API with AWS Lambda and API Gateway
+### 通过AWS Lambda和API Gateway构建你的第一个API
 
 Let's give serverless a whirl, shall we? We'll be using AWS Lambda and API Gateway offerings to build an API that returns "Guru Meditations" as spoken by Jimmy.
+我们试一试serverless. 我们将用AWS Lambda和API Gateway来构建一个能返回Jimmy所说的"Guru Meditations"的API.
 
 All of the code is available on [GitHub][1].
+所有代码在[GitHub][1]上可以找到.
 
 API Documentation:
+API文档:
 
 ```
 POST /
@@ -95,8 +112,9 @@ POST /
 ```
 
 ### How we'll structure things
-
+### 结构化这些信息
 The layout:
+层次如下：
 
 ```
 .
@@ -119,18 +137,28 @@ The layout:
 ```
 
 Things in AWS (for a more detailed view as to what is happening here, consult the source of tools/deploy.py):
+AWS中的内容(关于这里发生了什么的更详细的信息，可查看源码tools/deploy.py)
 
 - API. The thing that were actually building. It is represented as a separate object in AWS.
+- API. 实际上构建的东西。它在AWS中表示为一个单独的对象。
 - Execution Role. Every function executes as a particular role in AWS. Ours will be meditations.
+- 执行角色。在AWS中,每个函数作为一个单独的角色执行。这里就是meditations.
 - Role Policy. Every function executes as a role, and every role needs permission to do things. Our lambda function doesn't do much, so we'll just add some logging permissions.
+- 角色策略. 每个函数作为一个角色执行，每个角色需要权限来运行。Lambda函数不干太多活，我们只添加一些记录日志权限。
 - Lambda Function. The thing that runs our code.
+- Lambda函数. 运行我们的代码的函数。
 - Swagger. Swagger is a specification of an API. API Gateway supports consuming a swagger definition to configure most resources for that API.
+- Swagger. Swagger是API的规范. API Gateway支持消耗swagger的定义来为API配置大部分资源.
 - Deployments. API Gateway provides for the notion of deployments. We won't be using more than one of these for our API here (i.e., everything is production, yolo, etc.), but know that they exist and for a real production-ready service you will probably want to use development and staging environments.
+- Deployment. API Gateway提供部署的标记。我们只需要为我们的API用一个(所有的都是生产,yolo等), 但是知道他们已存在,并为了一个真正的准备生产的服务，你可能想用开发和staging环境。
 - Monitoring. In case our service crashes (or begins to accumulate a hefty bill from usage) we'll want to add some monitoring in the form of cloudwatch alarms for errors and billing. Note that you should modify tools/deploy.py to set your email correctly.
+- Monitoring. 在我们的业务崩溃的情况下, 我们想为错误和费用以云告警查看方式添加一些监控。注意你应该修改tools/deploy.py去正确地设置你的email.
 
 ### the codes
+### 代码
 
 The lambda function itself will be returning guru meditations at random from a hardcoded list and is very simple:
+Lambda函数将从硬编码列表中随机选择并返回guru meditations，非常简单:
 
 ```
 import logging
