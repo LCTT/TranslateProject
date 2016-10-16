@@ -148,13 +148,13 @@ AWS中的信息(想了解这里发生了什么，更详细的信息，可查看�
 - Role Policy. Every function executes as a role, and every role needs permission to do things. Our lambda function doesn't do much, so we'll just add some logging permissions.
 - 角色策略. 每个function作为一个角色执行，每个角色需要权限来干活。Lambda function不干太多活，故我们只添加一些日志记录权限。
 - Lambda Function. The thing that runs our code.
-- Lambda Function. 运行我们的代码的Function。
+- Lambda 函数。 运行我们的代码的函数。
 - Swagger. Swagger is a specification of an API. API Gateway supports consuming a swagger definition to configure most resources for that API.
-- Swagger. Swagger是API的规范. API Gateway支持解析swagger的定义来为API配置大部分资源.
+- Swagger. Swagger是API的规范。API Gateway支持解析swagger的定义来为API配置大部分资源。
 - Deployments. API Gateway provides for the notion of deployments. We won't be using more than one of these for our API here (i.e., everything is production, yolo, etc.), but know that they exist and for a real production-ready service you will probably want to use development and staging environments.
-- Deployment. API Gateway提供部署的标记。我们只需要为我们的API用一个(例如，所有的都用生产或者yolo等)， 但是得知道他们是存在的,并且为了真正的能够启动生产的服务，你可能想用开发和分期环境。
+- 部署。 API Gateway提供部署的标记。我们只需要为我们的API用一个(例如，所有的都用生产或者yolo等)， 但是得知道他们是存在的,并且为了真正的能够启动生产的服务，你可能想用开发和分期环境。
 - Monitoring. In case our service crashes (or begins to accumulate a hefty bill from usage) we'll want to add some monitoring in the form of cloudwatch alarms for errors and billing. Note that you should modify tools/deploy.py to set your email correctly.
-- 监控. 在我们的业务崩溃的情况下(或者开始从利用率累积出大额账单时), 我们想为错误和费用以云告警查看方式添加一些监控。注意你应该修改tools/deploy.py来正确地设置你的email.
+- 监控。在我们的业务崩溃的情况下(或者开始从利用率累积出大额账单时), 我们想为错误和费用以云告警查看方式添加一些监控。注意你应该修改tools/deploy.py来正确地设置你的email.
 
 ### the codes
 ### 代码
