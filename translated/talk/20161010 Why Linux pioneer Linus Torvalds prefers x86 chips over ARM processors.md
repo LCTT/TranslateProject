@@ -1,61 +1,60 @@
-OneNewLife translating
+OneNewLife translated
 
-Why Linux pioneer Linus Torvalds prefers x86 chips over ARM processors
+为何 Linux 之父 Linus Torvalds 选择 x86 芯片而不是 ARM 处理器
 =============
 
-**Torvalds has an affinity for x86 because of the infrastructure and ecosystem**
+**Torvalds 因为 x86 的基础架构和生态系统而对其宠爱有加**
 
 ![linus torvalds](http://core2.staticworld.net/images/article/2015/08/linus_torvalds-100600260-large.jpg)
 
-*Linus Torvalds addressed a packed auditorium of Linux enthusiasts during his speech at the LinuxWorld show in San Jose, California, on August 10, 1999. Credit: James Niccolai
-*
+*Linus Torvalds 于 1999 年 8 月 10 日在加州圣何塞举行的 LinuxWorld 节目中给挤满礼堂的 Linux 发烧友作演讲。 ——出自：James Niccolai*
 
-Linux pioneer Linus Torvalds is a stand-up guy—he says what he feels. There’s no sugarcoating, and he’ll admit to faults, like [recent issues][1] with the Linux 4.8 kernel.
+Linux 之父 Linus Torvalds 是一个直率的人——他总是心口如一。比方说最近在 Linux 内核 4.8 的 [事故][1] 中，他没有文过饰非，而是承认了自己的过失。
 
-He was [full of surprises][2] at last week’s Linaro Connect conference, when he was asked about his favorite chip architecture. He didn’t blink before saying it was x86, not ARM.
+不过他在上周的 Linaro Connect 会议上倒是 [让人瞠目结舌][2]。当他被问到最喜欢的芯片架构的时候，他不假思索地说 x86，而不是 ARM。
 
-It may have been the long history of x86 with PCs that influenced his answer. There’s little fragmentation of software and hardware with x86, and things just work.
+或许是 x86 电脑悠久的历史让他得出这个答案。x86 没有多少碎片化的软件和硬件，它几乎仅仅是用来工作的。
 
-People are too fixated with the instruction set and the CPU core, Torvalds said, but it ultimately is the ecosystem around the architecture that matters more.
+Torvalds 说，人们总是痴迷于指令集和 CPU 核心，但事实是围绕架构的生态系统更为重要。
 
-“What matters is all the infrastructure around the instruction set, and x86 has all that infrastructure... at a lot of different levels,” Torvalds said. “It’s opening a way that no other architecture is.”
+“重要的是围绕指令集的所有基础设施，而 x86 拥有大量的不同级别的基础设施”，Torvalds 说。“它在走一条与众不同的路。”
 
-A lot of application development happens on PCs with x86 chips from Intel or AMD. Compatibility matters for x86 chips and PCs, which have a unified model around hardware, development, and other infrastructure.
+许多应用都是在英特尔或者 AMD 的 x86 机器上开发的。兼容性对于 x86 芯片和电脑来说是重要的，x86 平台有统一的硬件、开发模式以及其它的基础设施。
 
-The same can’t be said about ARM. From hardware vendor perspective, that leads to a fragmented market, Torvalds said.
+而 ARM 则迥然不同。从硬件供应商的角度来看，它引领着一个碎片化的市场，Torvalds 说。
 
-“Being compatible just wasn’t as big of a deal for the ARM ecosystem as it has been traditionally for the x86 ecosystem,” Torvalds said during a fireside chat with ARM developers listening on.
+“x86 的生态系统一向都秉承着兼容为先的理念，而 ARM 则不以为然，”Torvalds 在炉边与一位 ARM 开发者聊天时如是说。
 
 
-ARM dominates the mobile-device market, and a majority of devices use Android, which is based on the Linux kernel. But there are a lot of fragmentation in the ARM ecosystem, and that’s caused support and device issues.
+ARM 主导了移动设备的市场，有大量的安卓设备是基于 Linux 内核的。但是 ARM 的生态系统太过于碎片化了，这导致了很多支持和设备的问题。
 
-One problem: It’s not possible to make one build of Android that can be deployed across all mobile devices because of different hardware configurations. Hardware makers tune Android to be compatible with chipsets in their devices. One Android update can’t be delivered to all mobile devices, unlike Windows updates to PCs.
+有一个问题：由于硬件的配置不同，在所有移动设备上部署同一个版本的 Android 是不可能的。硬件制造商会调整 Android 系统以兼容他们设备的芯片组。不像 Windows 更新到 PC，一个 Android 更新无法推送到所有的移动设备。
 
-Intel tried to put its x86 chips in smartphones but has now stopped the effort. One of Intel’s goals was to [deliver Android updates][3] that could be downloaded and installed on all x86 handsets.
+英特尔尝试过将 x86 芯片放在智能手机上，但是现在已经放弃了。英特尔的其中一个目标就是推送可以在所有 x86 手机上下载并安装成功的 [安卓更新][3]
 
-There are also ARM server software development issues. Architectural, networking, and I/O characteristics are different on each chipset, and software has to be written to exploit those features. That has significantly slowed down the adoption of ARM in servers. There isn’t a matching problem with x86, which continues to dominate the server market.
+还有 ARM 服务器软件的开发问题。每个芯片组的架构、网络和 I/O 特性不同，必须编写软件才能利用这些特性。这大大减慢了服务器中采用 ARM 的速度。x86 不存在匹配的问题，它将继续主导服务器市场。
 
-“I’ve been personally pretty disappointed with ARM as a hardware platform, not as an instruction set, though I’ve had my issues there, too,” Torvalds said. “As a hardware platform, it is still not very pleasant to deal with.”
+“我对于 ARM 作为一个硬件平台而不是一个指令集感到非常失望，虽然我也有我的问题，”Torvalds 说。“作为一个硬件平台，它始终不太好对付。”
 
-When he was growing up, Torvalds programmed on an 8-bit 6502 microprocessor in machine code and loved the architecture because the instructions were pipelined, something no other hardware did at the time. That architecture delivered more on-chip performance.
+Torvalds 长大后在一台装配 8 位的 6502 处理器的微机上编程，他很喜欢这种架构，因为它的指令是流式的，当时还没有其它硬件可以与之媲美。这种架构为芯片提供了更高的性能。
 
-“What I wanted to upgrade to was Acorn Archimedes ... the thing that gave ARM its name,” Torvalds said. “That was my dream machine for a while.”
+“我那时想升级的是一台 Acorn Archimedes，呃，给 ARM 命名的机器，“Torvalds说，“那曾经是我梦寐以求的机器。”
 
-The [Archimedes][4] was a personal computer based on the first ARM RISC chips from Acorn Computer Group. ARM was formed as an offshoot of Acorn.
+[Archimedes][4] 是第一台基于 Acorn 电脑公司的 ARM RISC 芯片的个人电脑。ARM 作为 Acorn 的一个分支而成立。
 
-Torvalds liked the Archimedes because it had the 6502-like feature of pipelining with RAM chips to get high-performance. Unfortunately, he couldn’t find the computer.
+Torvalds 喜欢 Archimedes，因为它搭载了像 6502 一样的流式的 RAM 芯片以获得高性能。不尽人意的是，他找不到那台电脑。
 
-He went with an “odd British computer,” [Sinclair QL][5], which was an even bigger failure than Acorn Archimedes, Torvalds said.
+他尝试过一台“古怪的英式电脑”，[Sinclair QL][5]，这是一台比 Acorn Archimedes 还要失败的机器，Torvalds 说。
 
-“Finland wasn’t the center of the universe back then,” Torvalds said. “After that, I learned my lesson—never ever go buy into something that doesn’t have infrastructure.”
+“那时的芬兰不是宇宙的中心，”Torvalds 说。“在那之后我吸取教训了——再也没有去买没有基础设施的机器。”
 
 
 --------------------------------------------------------------------------------
 
-via: http://www.pcworld.com/article/3129300/linux/why-linux-pioneer-linus-torvalds-prefers-x86-over-arm.html
+编译自: http://www.pcworld.com/article/3129300/linux/why-linux-pioneer-linus-torvalds-prefers-x86-over-arm.html
 
 作者：[Agam Shah][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[OneNewLife](https://github.com/OneNewLife)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
