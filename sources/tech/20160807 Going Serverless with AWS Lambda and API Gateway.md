@@ -192,16 +192,22 @@ def handler(event, context):
 ```
 
 ### The deploy.py script
+### deploy.py脚本
 
 This one is rather long (sadly) and I won't be including it here. It basically goes through each of the items under "Things in AWS" and ensures each item exists.
+这个脚本相当长，我没法贴在这里。它基本只是浏览"Things in AWS"下的项目，确保每项都存在。
 
 Let's deploy this shit
+我们来部署这个脚本
 
 Just run `./tools/deploy.py`.
+只需运行 './tools/deploy.py'
 
 Well. Almost. There seems to be some issue applying privileges that I can't seem to figure out. Your lambda function will fail to execute because API Gateway does not have permissions to execute your function. The specific error should be "Execution failed due to configuration error: Invalid permissions on Lambda function". I am not sure how to add these using botocore. You can work around this issue by going to the AWS console (sadness), locating your API, going to the / POST endpoint, going to integration request, clicking the pencil icon next to "Lambda Function" to edit it, and then saving it. You'll get a popup stating "You are about to give API Gateway permission to invoke your Lambda function". Click "OK".
+几乎完成了. 不过似乎在权限申请上有些问题. 由于API Gateway没有权限去执行你的函数,Lambda函数将不能执行.报错应该是"Execution failed due to configuration error: Invalid permissions on Lambda function". 我不知道怎么用botocore添加这些。你可以通过AWS console来解决这个问题，找到你的API,跳到/POST端点，跳到集成请求,点击"Lambda Function"旁边的编辑图标，修改它，然后保存。将弹出一个窗口提示"You are about to give API Gateway permission to invoke your Lambda function". 点击"OK".
 
 When you're finished with that, take the URL that ./tools/deploy.py printed and call it like so to see your new API in action:
+当你完成后，记录./tools/deploy.py打印的URL,像下面这样调用它，然后查看你的新API的行为:
 
 ```
 $ curl -X POST https://a1b2c3d4.execute-api.us-east-1.amazonaws.com/prod/
@@ -209,8 +215,10 @@ $ curl -X POST https://a1b2c3d4.execute-api.us-east-1.amazonaws.com/prod/
 ```
 
 ### Running Locally
+### 本地运行
 
 One unfortunate thing about AWS Lambda is that there isn't really a good way to run your code locally. In our case, we will use a simple flask server to host the appropriate endpoint locally and handle calling our handler function:
+AWS Lambda有一个不幸的地方是没有好的方法能在本地运行你的代码。在这个例子里，我们将用一个简单的flask服务器来在本地驻守合适的端点，并调用handler函数。
 
 ```
 from __future__ import absolute_import
@@ -234,6 +242,7 @@ app.run(host="0.0.0.0")
 ```
 
 You can run this in the repo with ./tools/serve.sh. Invoke like:
+你可以在仓库中用./tools/serve.sh运行它，像这样调用:
 
 ```
 $ curl -X POST http://localhost:5000/
@@ -244,8 +253,10 @@ $ curl -X POST http://localhost:5000/
 ```
 
 ### Testing
+### 测试
 
 You should always test your code. The way we'll be doing this is importing and running our handler function. This is really just plain vanilla python testing:
+你总是应该测试你的代码。我们的测试方法是导入并运行我们的handler函数.这是最基本的python测试:
 
 ```
 from __future__ import absolute_import
@@ -270,21 +281,26 @@ class SubmitTestCase(unittest.TestCase):
 ```
 
 You can run the tests in the repo with nose2.
+你可以在仓库里通过nose2运行这个测试代码。
 
 ### Other possibilities
+### 其他可能
 
 Seamless integration with AWS services. Using boto, you can pretty simply connect to any of AWS other services. You simply allow your execution role access to these services using IAM and you're on your way. You can get/put files from S3, connect to Dynamo DB, invoke other lambda functions, etc. etc. The list goes on.
+和AWS服务无缝集成。通过boto,你可以完美地简单连接到任何其他的AWS服务。你可以很容易地让你的执行角色用IAM访问这些服务。你可以从S3取文件或放文件到S3，连接到Dynamo DB,调用其他lambda函数，等等.
 
 Accessing a database. You can easily access remote databases as well. Connect to the database at the top of your lambda handler's module. Execute queries on the connection from within the handler function itself. You will (very likely) have to upload the associated package contents from where it is installed locally for this to work. You may also need to statically compile certain libraries.
+访问数据库.你也可以很容易地访问远程数据库。在你的lambda handler模块的最上面连接数据库，并在handler函数中执行查询。你很可能必须从它的安装位置上传相关的包内容才能使它正常工作。你可能也需要静态编译某些库。
 
 Calling other webservices. API Gateway is also a way to translate the output from one web service into a different form. You can take advantage of this to proxy calls through to a different webservice or provide backwards compatibility when a service changes.
+调用其他web服务。API Gateway也是一种把web服务的输出从一个格式转换成另一个格式的方法。你可以充分利用这个特点通过不同的web服务来代理调用，或者当业务变更时提供后向兼容能力。
 
 --------------------------------------------------------------------------------
 
 via: http://blog.ryankelly.us/2016/08/07/going-serverless-with-aws-lambda-and-api-gateway.html?utm_source=webopsweekly&utm_medium=email
 
 作者：[Ryan Kelly][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/messon007)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
