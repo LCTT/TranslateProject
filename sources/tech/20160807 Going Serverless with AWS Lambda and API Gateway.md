@@ -1,11 +1,16 @@
 Going Serverless with AWS Lambda and API Gateway
 ============================
+通过AWS的Lambda和API网关实现Serverless
+============================
 
 Lately, there's been a lot of buzz in the computing world about "serverless". Serverless is a concept wherein you don't manage any servers yourself but instead provide your code or executables to a service that executes them for you. This is execution-as-a-service. It introduces many opportunities and also presents its own unique set of challenges.
+近来, 计算机领域出现了很多关于"serverless"的讨论。serverless是一个新的概念，它能帮你执行你的代码或可执行程序，而你无需自己管理服务器。这就是所谓的执行作为一个服务。它带来了许多机会，也呈现了自己独特的挑战。
 
 A brief digression on computing
+简短回忆下计算机的发展
 
 In the beginning, there was... well. It's a little complicated. At the very beginning, we had mechanical computers. Then along came ENIAC. Things really don't start to get "mass production", however, until the advent of mainframes.
+很早的时候，只有机器计算机，后来又有了ENIAC，但是都没有大规模生产。直到大型机出现后，计算机才迅速发展。
 
 ```
 1950s - Mainframes
@@ -17,6 +22,14 @@ In the beginning, there was... well. It's a little complicated. At the very begi
 2013 - Containers
 2014 - Serverless
 ```
+1950s - 大型机
+1960s - 微型机
+1994 - 机架服务器
+2001 - 刀片服务器
+2000s - 虚拟服务器
+2006 - 服务器云化
+2013 - 容器化
+2014 - Serverless(计算资源服务化)
 
 >These are rough release/popularity dates. Argue amongst yourselves about the timeline.
 
