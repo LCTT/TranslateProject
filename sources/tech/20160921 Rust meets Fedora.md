@@ -1,3 +1,5 @@
+OneNewLife translating
+
 ### [Rust meets Fedora](https://fedoramagazine.org/rust-meets-fedora/)
 
 ### ![rust](https://i2.wp.com/cdn.fedoramagazine.org/wp-content/uploads/2016/09/rust.jpg?fit=945%2C400&ssl=1)
