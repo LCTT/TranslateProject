@@ -1,3 +1,5 @@
+translating by chao-zhi
+
 An Everyday Linux User Review Of Xubuntu 16.10 - A Good Place To Start
 ===============
 
