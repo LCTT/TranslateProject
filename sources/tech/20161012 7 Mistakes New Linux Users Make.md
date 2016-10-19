@@ -1,3 +1,5 @@
+OneNewLife translating.
+
 7 Mistakes New Linux Users Make
 ===================
 
