@@ -73,18 +73,18 @@ via: https://freedompenguin.com/articles/opinion/open-source-design-thing/
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://freedompenguin.com/author/seanleroy/
-[1]:[https://www.youtube.com/channel/UCOfXyFkINXf_e9XNosTJZDw]
-[2]:[https://www.youtube.com/user/desainew]
-[3]:[https://www.youtube.com/channel/UCEQXp_fcqwPcqrzNtWJ1w9w]
-[4]:[http://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffreedompenguin.com%2Farticles%2Fopinion%2Fopen-source-design-thing%2F]
-[5]:[http://twitter.com/intent/tweet/?text=Is+Open+Source+Design+a+Thing%3F&url=https%3A%2F%2Ffreedompenguin.com%2Farticles%2Fopinion%2Fopen-source-design-thing%2F]
-[6]:[https://plus.google.com/share?url=https%3A%2F%2Ffreedompenguin.com%2Farticles%2Fopinion%2Fopen-source-design-thing%2F]
-[7]:[https://atom.io/]
-[8]:[http://froont.com/]
-[9]:[https://webflow.com/]
-[10]:[https://gravit.io/]
-[11]:[http://getbootstrap.com/]
-[12]:[https://inkscape.org/en/]
-[13]:[https://www.gimp.org/]
-[14]:[https://en.wikipedia.org/wiki/Free_and_open-source_software]
-[15]:[https://medium.com/dawn-capital/why-leverage-the-power-of-open-source-to-build-a-successful-software-business-8aba6f665bc4#.ggmn2ojxp]
+[1]:https://www.youtube.com/channel/UCOfXyFkINXf_e9XNosTJZDw
+[2]:https://www.youtube.com/user/desainew
+[3]:https://www.youtube.com/channel/UCEQXp_fcqwPcqrzNtWJ1w9w
+[4]:http://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffreedompenguin.com%2Farticles%2Fopinion%2Fopen-source-design-thing%2F
+[5]:http://twitter.com/intent/tweet/?text=Is+Open+Source+Design+a+Thing%3F&url=https%3A%2F%2Ffreedompenguin.com%2Farticles%2Fopinion%2Fopen-source-design-thing%2F
+[6]:https://plus.google.com/share?url=https%3A%2F%2Ffreedompenguin.com%2Farticles%2Fopinion%2Fopen-source-design-thing%2F
+[7]:https://atom.io/
+[8]:http://froont.com/
+[9]:https://webflow.com/
+[10]:https://gravit.io/
+[11]:http://getbootstrap.com/
+[12]:https://inkscape.org/en/
+[13]:https://www.gimp.org/
+[14]:https://en.wikipedia.org/wiki/Free_and_open-source_software
+[15]:https://medium.com/dawn-capital/why-leverage-the-power-of-open-source-to-build-a-successful-software-business-8aba6f665bc4#.ggmn2ojxp

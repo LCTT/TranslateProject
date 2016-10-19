@@ -51,8 +51,6 @@ To make sure that Syntastic highlights the errors automatically when a file is o
 
 ```
 let g:syntastic_check_on_open = 1
-```
-```
 let g:syntastic_auto_jump = 1
 ```
 
@@ -83,42 +81,42 @@ via: https://www.howtoforge.com/tutorial/vim-editor-plugins-for-software-develop
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://www.howtoforge.com/tutorial/vim-editor-plugins-for-software-developers-2-syntastic/
-[1]:[https://www.youtube.com/channel/UCOfXyFkINXf_e9XNosTJZDw]
-[2]:[https://www.youtube.com/user/desainew]
-[3]:[https://www.youtube.com/channel/UCEQXp_fcqwPcqrzNtWJ1w9w]
-[4]:[http://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffreedompenguin.com%2Farticles%2Fopinion%2Fopen-source-design-thing%2F]
-[5]:[http://twitter.com/intent/tweet/?text=Is+Open+Source+Design+a+Thing%3F&url=https%3A%2F%2Ffreedompenguin.com%2Farticles%2Fopinion%2Fopen-source-design-thing%2F]
-[6]:[https://plus.google.com/share?url=https%3A%2F%2Ffreedompenguin.com%2Farticles%2Fopinion%2Fopen-source-design-thing%2F]
-[7]:[https://atom.io/]
-[8]:[http://froont.com/]
-[9]:[https://webflow.com/]
-[10]:[https://gravit.io/]
-[11]:[http://getbootstrap.com/]
-[12]:[https://inkscape.org/en/]
-[13]:[https://www.gimp.org/]
-[14]:[https://en.wikipedia.org/wiki/Free_and_open-source_software]
-[15]:[https://medium.com/dawn-capital/why-leverage-the-power-of-open-source-to-build-a-successful-software-business-8aba6f665bc4#.ggmn2ojxp]
-[16]:[https://github.com/majutsushi/tagbar]
-[17]:[http://ctags.sourceforge.net/]
-[18]:[https://github.com/majutsushi/tagbar/zipball/70fix]
-[19]:[https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim]
-[20]:[http://www.vim.org/scripts/script.php?script_id=2332]
-[21]:[https://www.howtoforge.com/tutorial/vim-editor-plugins-for-software-developers-2-syntastic/]
-[22]:[https://www.howtoforge.com/images/vim-editor-plugins-for-software-developers/big/vimplugins-delimitmate-help.png]
-[23]:[https://github.com/Raimondi/delimitMate]
-[24]:[https://www.howtoforge.com/images/vim-editor-plugins-for-software-developers/big/vimplugins-tagbar-visibility.png]
-[25]:[https://www.howtoforge.com/images/vim-editor-plugins-for-software-developers/big/vimplugins-tagbar-ex2.png]
-[26]:[https://www.howtoforge.com/images/vim-editor-plugins-for-software-developers/big/vimplugins-tagbar-example.png]
-[27]:[http://www.tldp.org/LDP/intro-linux/html/sect_06_02.html]
-[28]:[http://majutsushi.github.io/tagbar/]
-[29]:[http://vi.stackexchange.com/questions/388/what-is-the-difference-between-the-vim-plugin-managers]
-[30]:[https://www.howtoforge.com/images/vim-editor-plugins-for-software-developers/big/vimplugins-vimrc.png]
-[31]:[http://www.vim.org/]
-[32]:[https://github.com/scrooloose/syntastic]
-[33]:[https://github.com/scrooloose/syntastic/blob/master/doc/syntastic.txt]
-[34]:[https://www.howtoforge.com/images/3337/big/syntastic-error-all-descr.png]
-[35]:[https://www.howtoforge.com/images/3337/big/syntastic-error-descr.png]
-[36]:[https://www.howtoforge.com/images/3337/big/syntastic-error-highlight.png]
-[37]:[https://github.com/scrooloose/syntastic]
-[38]:[http://www.vim.org/]
-[39]:[https://www.howtoforge.com/tutorial/vim-editor-plugins-for-software-developers/]
+[1]:https://www.youtube.com/channel/UCOfXyFkINXf_e9XNosTJZDw
+[2]:https://www.youtube.com/user/desainew
+[3]:https://www.youtube.com/channel/UCEQXp_fcqwPcqrzNtWJ1w9w
+[4]:http://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffreedompenguin.com%2Farticles%2Fopinion%2Fopen-source-design-thing%2F
+[5]:http://twitter.com/intent/tweet/?text=Is+Open+Source+Design+a+Thing%3F&url=https%3A%2F%2Ffreedompenguin.com%2Farticles%2Fopinion%2Fopen-source-design-thing%2F
+[6]:https://plus.google.com/share?url=https%3A%2F%2Ffreedompenguin.com%2Farticles%2Fopinion%2Fopen-source-design-thing%2F
+[7]:https://atom.io/
+[8]:http://froont.com/
+[9]:https://webflow.com/
+[10]:https://gravit.io/
+[11]:http://getbootstrap.com/
+[12]:https://inkscape.org/en/
+[13]:https://www.gimp.org/
+[14]:https://en.wikipedia.org/wiki/Free_and_open-source_software
+[15]:https://medium.com/dawn-capital/why-leverage-the-power-of-open-source-to-build-a-successful-software-business-8aba6f665bc4#.ggmn2ojxp
+[16]:https://github.com/majutsushi/tagbar
+[17]:http://ctags.sourceforge.net/
+[18]:https://github.com/majutsushi/tagbar/zipball/70fix
+[19]:https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+[20]:http://www.vim.org/scripts/script.php?script_id=2332
+[21]:https://www.howtoforge.com/tutorial/vim-editor-plugins-for-software-developers-2-syntastic/
+[22]:https://www.howtoforge.com/images/vim-editor-plugins-for-software-developers/big/vimplugins-delimitmate-help.png
+[23]:https://github.com/Raimondi/delimitMate
+[24]:https://www.howtoforge.com/images/vim-editor-plugins-for-software-developers/big/vimplugins-tagbar-visibility.png
+[25]:https://www.howtoforge.com/images/vim-editor-plugins-for-software-developers/big/vimplugins-tagbar-ex2.png
+[26]:https://www.howtoforge.com/images/vim-editor-plugins-for-software-developers/big/vimplugins-tagbar-example.png
+[27]:http://www.tldp.org/LDP/intro-linux/html/sect_06_02.html
+[28]:http://majutsushi.github.io/tagbar/
+[29]:http://vi.stackexchange.com/questions/388/what-is-the-difference-between-the-vim-plugin-managers
+[30]:https://www.howtoforge.com/images/vim-editor-plugins-for-software-developers/big/vimplugins-vimrc.png
+[31]:http://www.vim.org/
+[32]:https://github.com/scrooloose/syntastic
+[33]:https://github.com/scrooloose/syntastic/blob/master/doc/syntastic.txt
+[34]:https://www.howtoforge.com/images/3337/big/syntastic-error-all-descr.png
+[35]:https://www.howtoforge.com/images/3337/big/syntastic-error-descr.png
+[36]:https://www.howtoforge.com/images/3337/big/syntastic-error-highlight.png
+[37]:https://github.com/scrooloose/syntastic
+[38]:http://www.vim.org/
+[39]:https://www.howtoforge.com/tutorial/vim-editor-plugins-for-software-developers/
