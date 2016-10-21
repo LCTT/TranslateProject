@@ -1,3 +1,5 @@
+GHLandy Translating
+
 WattOS: A Rock-Solid, Lightning-Fast, Lightweight Linux Distro For All
 =============================
 
