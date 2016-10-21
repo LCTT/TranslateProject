@@ -14,21 +14,21 @@
 Chapeau 24 的特性几乎和 Fedora 24 提供的特性一样。它仍然运行在 GNOME 3.20 上，这是可以理解的，因为【GNOME 3.22】【15】最近才刚发布。Chapeau 24 发行版一些主要的新亮点是：
 
 *  【Gnome】【10】3.20 桌面环境
-*   LibreOffice 5
+*    LibreOffice 5
 *  【PlayOnLinux】【9】和【Wine】【8】
 *  【Steam】【7】
 *  【VLC】【6】
 *  【Mozilla 火狐浏览器】【5】伴有【Adobe Flash】【4】
 *  【硬件帮助工具（hht）】【3】（在【Chapeau】【2】中介绍，这个工具能够帮助你找到硬件的驱动程序）
 *  【RPMFusion】【1】软件源预配置
-*   媒体解码和 DVD 回放支持
-*   Gnome 盒子
-*   KVM 虚拟化
-*   Dropbox 集成
-*   UI 改善
-*   博通（公司名）无线芯片硬件
-*   针对标准打印机的 CUPS 后端
-*   Linux 4.7 内核
+*    媒体解码和 DVD 回放支持
+*    Gnome 盒子
+*    KVM 虚拟化
+*    Dropbox 集成
+*    UI 改善
+*    博通（公司名）无线芯片硬件
+*    针对标准打印机的 CUPS 后端
+*    Linux 4.7 内核
 
 [![Chapeau 24 桌面屏幕截图](https://itsfoss.com/wp-content/uploads/2016/09/chapeau-24-desktop-1.jpg)][14]
 
