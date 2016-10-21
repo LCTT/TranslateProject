@@ -1,3 +1,4 @@
+translating by ucasFL
 FEDORA FOR BEGINNERS: CHAPEAU LINUX 24 RELEASED
 ===================
 
