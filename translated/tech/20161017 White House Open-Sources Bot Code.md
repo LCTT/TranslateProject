@@ -1,17 +1,16 @@
-translating by ucasFL
-White House Open-Sources Bot Code
+白宫开源机器人代码
 ===================
 
 
-The race to build bots, that is automated chat technology that responds to user queries, has gone all the way to President Obama's home, The White House. The White House announced on October 14 that it is now open-sourcing its bot code in a bid to help enable more open collaboration and communication.
+建造机器人的比赛，实质竞争的是响应用户查询的自动化聊天技术，机器人比赛已经一路到达了奥巴马总统的家 —— 白宫。白宫在 10 月 14 号宣布开放其机器人代码，目的是为了使更加开放的合作与交流成为可能。
 
-![WhiteHouse Drupal](http://www.internetnews.com/imagesvr_ce/9946/whitehouse-drupal.png)
+![白宫 Drupal](http://www.internetnews.com/imagesvr_ce/9946/whitehouse-drupal.png)
 
-"To be specific, we are open-sourcing a Drupal module, complete with easy steps and boiler plate code," Jason Goldman, Chief Digital Officer of the White House wrote in a blog [post][48]. "This will enable Drupal 8 developers to quickly launch a Facebook Messenger bot."
+“具体地说，我们正在通过一些简单的步骤和样板化代码开源一个 Drupal 模块，” Jason Goldman，白宫首席数字执行官在他的博客【博文】【48】中这样写到。“这将促使 Drupal 8 开发者迅速推出 Facebook 信使程序。”
 
-The White House first [deployed ][47]its own website with the open-source Drupal Content Management System (CMS) back in 2009\. The White House has since been an active contributor to Drupal in many different ways, including releasing code used on the site as open-source. Among the items that the White House has previously release is the entire Drupal theme, known as 'fourtyfour' that is used on the WhiteHouse.gov site.
+白宫早在 2009 年就首先用开源 Drupal 内容管理系统（CMS）【部署】【47】了自己的网站。从那时起白宫就已经成为了 Drupal 的积极贡献者，并以许多不同的方式做着贡献，包括在网站上发布可使用的开源代码。在开源项目中，白宫过去发布的是完整的 Drupal 主题，被称作‘fourtyfour’，目前用于 WhiteHouse.gov 网站。
 
-The full code for the new White House Facebook Messenger bot is now available on GitHub, including complete installation instructions as well as the project roadmap. Among the large items on the roadmap (listed under 'Enhancements and hopes') is to actually make the project into more of a standalone, modular effort by refactoring code such that it's usable outside of a Drupal CMS as well.
+现在，白宫最新 Facebook 信使机器人的完整代码可以从 GitHub 上获取，包括完整的安装指导和项目蓝图。围绕蓝图中大项目（列在‘增强和期望’下面）的主题是从实际上让项目更加独立，通过重构代码使项目模块化，从而让 Drupal 内容管理系统（CMS）外部可用。
 
 --------------------------------------------------------------------------------
 
@@ -19,7 +18,7 @@ via: http://www.internetnews.com/blog/skerner/white-house-open-sources-bot-code.
 
 作者：[Michael Kerner][a]
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[ucasFL](https://github.com/ucasFL)
 
 校对：[校对者ID](https://github.com/校对者ID)
 
