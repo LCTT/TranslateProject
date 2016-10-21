@@ -1,3 +1,4 @@
+translating by ucasFL
 White House Open-Sources Bot Code
 ===================
 
