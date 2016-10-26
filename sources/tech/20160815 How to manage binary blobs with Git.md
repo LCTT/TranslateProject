@@ -1,5 +1,3 @@
-icecoobe translating
-
 part 7 - How to manage binary blobs with Git
 =====================
 
