@@ -1,4 +1,3 @@
-chenxinlong translating
 Who needs a GUI? How to live in a Linux terminal
 =================================================
 

@@ -1,16 +1,11 @@
-Translating by wikiios
 Building a data science portfolio: Machine learning project
-构建一个数据科学投资：机器学习项目
 ===========================================================
 
 >This is the third in a series of posts on how to build a Data Science Portfolio. If you like this and want to know when the next post in the series is released, you can [subscribe at the bottom of the page][1].
->这是如何构建一个数据科学投资系列文章的第三弹。如果你喜欢本文并且想知道本系列下一篇文章发布的时间，你可以订阅本文底[邮箱][1]。
 
 Data science companies are increasingly looking at portfolios when making hiring decisions. One of the reasons for this is that a portfolio is the best way to judge someone’s real-world skills. The good news for you is that a portfolio is entirely within your control. If you put some work in, you can make a great portfolio that companies are impressed by.
-数据科学公司越来越多地研究投资并同时作出雇佣决定。原因之一就是一个投资是评判某人真实能力最好的方式。对你来说好消息是一个投资是完全在你掌控之中。如果你花些心思在其中，你就可以做出一个令公司印象深刻的投资。
 
 The first step in making a high-quality portfolio is to know what skills to demonstrate. The primary skills that companies want in data scientists, and thus the primary skills they want a portfolio to demonstrate, are:
-做出高质量投资的第一步是了解应该展示哪些技能，
 
 - Ability to communicate
 - Ability to collaborate with others
