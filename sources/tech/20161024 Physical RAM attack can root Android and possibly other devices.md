@@ -1,3 +1,4 @@
+wcnnbdk1 translating
 Physical RAM attack can root Android and possibly other devices
 ===
 
