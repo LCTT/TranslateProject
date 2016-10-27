@@ -1,3 +1,6 @@
+/*翻译中 WangYueScream LemonDemo*/
+
+
 Fedora-powered computer lab at our university
 ==========
 
