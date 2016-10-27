@@ -1,3 +1,4 @@
+(翻译中 by runningwater)
 part 7 - How to manage binary blobs with Git
 =====================
 
@@ -125,7 +126,7 @@ Git is a powerful and extensible system, and by now there is really no excuse fo
 via: https://opensource.com/life/16/8/how-manage-binary-blobs-git-part-7
 
 作者：[Seth Kenlon][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
