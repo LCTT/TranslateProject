@@ -1,3 +1,4 @@
+yangmingming translating
 # 3 Ways to Delete All Files in a Directory Except One or Few Files with Extensions
 
 Sometimes you get into a situation where you need to delete all files in a directory or simply cleanup a directory by removing all files except files of a given type (ending with a particular extension).
