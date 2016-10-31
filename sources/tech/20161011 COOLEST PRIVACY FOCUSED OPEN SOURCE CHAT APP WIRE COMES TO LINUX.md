@@ -1,3 +1,4 @@
+translating by ucasFL
 COOLEST PRIVACY FOCUSED OPEN SOURCE CHAT APP WIRE COMES TO LINUX
 ===========
 
