@@ -1,3 +1,4 @@
+yangmingming translating
 # How to Start Linux Command in Background and Detach Process in Terminal
 
 In this guide, we shall bring to light a simple yet important concept in [process handling in a Linux system][8], that is how to completely detach a process from its controlling terminal.
