@@ -1,3 +1,5 @@
+Translating by Haohong WANG
+
 2 free desktop recording tools to try: SimpleScreenRecorder and Kazam
 ====
 
