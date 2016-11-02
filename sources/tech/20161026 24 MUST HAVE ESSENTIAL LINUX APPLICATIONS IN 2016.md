@@ -203,7 +203,7 @@ Synapse has been around for years. It’s a simple launcher that can search and
 As Abhishek advised, we will keep this list of best Linux software updated with our readers’ (i.e. yours) feedback. So, what are your favorite must have Linux applications? Share with us and do suggest more categories of software to add to this list.
 
 --------------------------------------------------------------------------------
-via: https://itsfoss.com/essential-linux-applications/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+ItsFoss+%28Its+FOSS%21+An+Open+Source+Blog%29
+via: https://itsfoss.com/essential-linux-applications
 
 作者：[Munif Tanjim][a]
 
