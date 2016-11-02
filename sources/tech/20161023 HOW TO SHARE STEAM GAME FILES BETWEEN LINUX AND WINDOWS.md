@@ -139,7 +139,7 @@ But for now, these are the best ways to share Steam games between Linux and Wind
 
 --------------------------------------------------------------------------------
 
-via: https://itsfoss.com/share-steam-files-linux-windows/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+ItsFoss+%28Its+FOSS%21+An+Open+Source+Blog%29
+via: https://itsfoss.com/share-steam-files-linux-windows/
 
 作者：[Avimanyu Bandyopadhyay][a]
 
