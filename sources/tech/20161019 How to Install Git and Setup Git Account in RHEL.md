@@ -1,3 +1,5 @@
+OneNewLife translating.
+
 How to Install Git and Setup Git Account in RHEL, CentOS and Fedora
 =========
 
@@ -29,14 +31,14 @@ We shall install Git from the system default repositories, and make sure that 
 Next, install Git by typing the following command:
 
 ```
-# yum install git 
+# yum install git
 
 ```
 
 After git successfully installed, you can issue the following command to display the version of Git installed:
 
 ```
-# git --version 
+# git --version
 
 ```
 
@@ -84,7 +86,7 @@ Important: Make sure to replace username with the actual name for the Git user
 You can start by creating a Git user with the [useradd command][3] as below, where the `-m` flag used to create the user’s home directory under `/home` and `-s` specifies the user’s default shell.
 
 ```
-# useradd -m -s /bin/bash username 
+# useradd -m -s /bin/bash username
 # passwd username
 
 ```
@@ -92,7 +94,7 @@ You can start by creating a Git user with the [useradd command][3] as below, w
 Now, add the new user to the wheel group to enable the account to use the `sudo` command:
 
 ```
-# usermod username -aG wheel 
+# usermod username -aG wheel
 
 ```
 
@@ -103,7 +105,7 @@ Create Git User Account
 Then configure Git with the new user as follows:
 
 ```
-# su username 
+# su username
 $ sudo git config --global user.name "Your Name"
 $ sudo git config --global user.email "you@example.com"
 
@@ -112,7 +114,7 @@ $ sudo git config --global user.email "you@example.com"
 Now verify Git configuration using following command.
 
 ```
-$ sudo git config --list 
+$ sudo git config --list
 
 ```
 
