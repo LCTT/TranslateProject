@@ -1,3 +1,5 @@
+alim0x translating
+
 How to Check Bad Sectors or Bad Blocks on Hard Disk in Linux
 ===
 
