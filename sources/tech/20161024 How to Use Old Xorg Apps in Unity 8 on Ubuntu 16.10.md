@@ -53,7 +53,7 @@ Unity 8 shows a lot of promise. It’s modern, sleek, and faster than any iterat
 
 --------------------------------------------------------------------------------
 
-via: https://www.maketecheasier.com/use-old-xorg-apps-unity-8/?utm_medium=feed&utm_source=feedpress.me&utm_campaign=Feed%3A+maketecheasier
+via: https://www.maketecheasier.com/use-old-xorg-apps-unity-8/
 
 作者：[Derrik Diener][a]
 
