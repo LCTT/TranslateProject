@@ -83,7 +83,7 @@ Well, that was fairly easy, isn’t it? I hope this tutorial helped you to crea
 
 --------------------------------------------------------------------------------
 
-via: https://itsfoss.com/create-ebook-calibre-linux/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+ItsFoss+%28Its+FOSS%21+An+Open+Source+Blog%29
+via: https://itsfoss.com/create-ebook-calibre-linux/
 
 作者：[John Paul ][a]
 
