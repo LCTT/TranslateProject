@@ -133,7 +133,7 @@ In this simple tutorial, we have looked at how to install Git on your Linux syst
 
 --------------------------------------------------------------------------------
 
-via: http://www.tecmint.com/install-git-centos-fedora-redhat/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+tecmint+%28Tecmint%3A+Linux+Howto%27s+Guide%29
+via: http://www.tecmint.com/install-git-centos-fedora-redhat/
 
 作者：[Aaron Kili ][a]
 
