@@ -132,7 +132,7 @@ Was this article helpful to you? Do you have any questions or comments? Feel fre
 
 --------------------------------------------------------------------------------
 
-via: http://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+tecmint+%28Tecmint%3A+Linux+Howto%27s+Guide%29
+via: http://www.tecmint.com/secure-linux-tcp-wrappers-hosts-allow-deny-restrict-access/
 
 作者：[Gabriel Cánepa][a]
 
