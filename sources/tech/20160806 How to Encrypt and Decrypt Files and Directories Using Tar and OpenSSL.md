@@ -1,3 +1,5 @@
+OneNewLife translating
+
 # How to Encrypt and Decrypt Files and Directories Using Tar and OpenSSL
 
 When you have important sensitive data, then its crucial to have an extra layer of security to your files and directories, specially when you need to transmit the data with others over a network.
