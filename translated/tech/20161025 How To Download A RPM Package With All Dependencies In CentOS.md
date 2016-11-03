@@ -1,40 +1,39 @@
-翻译认领
-How To Download A RPM Package With All Dependencies In CentOS
+在CentOS下根据依赖性来下载RPM软件包
 ===
 
-![download a RPM package with all dependencies](https://www.ostechnix.com/wp-content/uploads/2016/10/Download-a-package-720x340.png)
+![在CentOS下根据依赖性来下载RPM软件包](https://www.ostechnix.com/wp-content/uploads/2016/10/Download-a-package-720x340.png)
 
-The other day I was trying to create a local repository with packages only we use often in CentOS 7\. Of course we can download any package using _curl_ or _wget_ commands. These commands however won’t download the required dependencies. You have to spend some time and manually search and download the dependencies required by the package to install. Well, not anymore. In this brief tutorial, I will walk you through how to download a RPM package with all dependencies in two methods. I tested this guide on CentOS 7, although the same steps may work on other RPM based systems such as RHEL, Fedora and Scientific Linux.
+前几天我尝试去创建一个我们在CentOS 7下经常使用的软件的本地的仓库。当然我们可以使用 curl 或者 wget 下载任何软件包。然而这些命令并不能下载要求的依赖软件包。你必须去花一些时间而且手动的去寻找和下载被安装的软件所依赖的软件包。然而，这并不是我们必须要做的事情。在这个简短的教程中，我将会带领你学习如何根据依赖性来下载软件包的两种方法。我已经在CentOS 7 下进行了测试，尽管这些相同的步骤或许在其他基于 RPM 管理系统的发行版上也可以工作，例如 RHEL，Fedora 和 Scientific Linux。
 
-### Method 1 – Download A RPM Package With All Dependencies Using “Downloadonly” plugin
+### 方法 1-利用“Downloadonly”插件来根据依赖性来下载RPM软件包
 
-We can easily download any RPM package with all dependencies using “Downloadonly” plugin for yum command.
+我们可以通过 yum 命令的“Downloadonly”插件来很容易地根据依赖性来下载RPM软件包。
 
-To install Downloadonly plugin, run the following command as root user.
+为了安装 Downloadonly 插件，以 root 身份运行以下命令。
 
 ```
 yum install yum-plugin-downloadonly
 ```
 
-Now, run the following command to download a RPM package.
+现在，运行以下命令去下载一个 RPM 软件包
 
 ```
 yum install --downloadonly <package-name>
 ```
 
-By default, this command will download and save the packages in /var/cache/yum/ in rhel-{arch}-channel/packageslocation. However, you can download and save the packages in any location of your choice using _“–downloaddir”_ option.
+默认情况下，这个命令将会下载并把软件包保存到  /var/cache/yum/ 在 rhel-{arch}-channel/packageslocation，然而，你可以下载和保存软件包到任何位置，你可以通过 “–downloaddir” 选项来指定。
 
 ```
 yum install --downloadonly --downloaddir=<directory> <package-name>
 ```
 
-Example:
+例子:
 
 ```
 yum install --downloadonly --downloaddir=/root/mypackages/ httpd
 ```
 
-Sample output:
+终端输出:
 
 ```
 Loaded plugins: fastestmirror
@@ -89,15 +88,15 @@ exiting because "Download Only" specified
 
 [![rootserver1_001](http://www.ostechnix.com/wp-content/uploads/2016/10/root@server1_001.png)][6]
 
-Now go the location that you specified in the above command. You will see there the downloaded package with all dependencies. In my case, I have downloaded the packages in _/root/mypackages/_ directory.
+现在去你指定的目录位置下。你将会看到那里有下载好的软件包和依赖的软件。在我这种情况下，我已经把软件包下载到/root/mypackages/ 目录下。
 
-Let us verify the contents.
+让我们来查看一下内容。
 
 ```
 ls /root/mypackages/
 ```
 
-Sample output:
+样本输出：
 
 ```
 apr-1.4.8-3.el7.x86_64.rpm
@@ -109,11 +108,12 @@ mailcap-2.1.41-2.el7.noarch.rpm
 
 [![rootserver1_003](http://www.ostechnix.com/wp-content/uploads/2016/10/root@server1_003-1.png)][5]
 
-As you see in the above output, the package httpd has been downloaded with all dependencies.
+正如你在上面输出所看到的, httpd软件包已经被依据所有依赖性下载完成了.
 
-Please note that this plugin is applicable for “yum install/yum update” and not for “yum groupinstall”. By default this plugin will download the latest available packages in the repository. You can however download a particular version by specifying the version.
 
-Example:
+请注意，这个插件适用于 “yum install/yum update” 而且并不适用于 “yum groupinstall”。默认情况下，这个插件将会下载仓库中最新可用的软件包。然而你可以通过指定版本号来下载某个特定的软件版本。
+
+例子:
 
 ```
 yum install --downloadonly --downloaddir=/root/mypackages/ httpd-2.2.6-40.el7
@@ -125,44 +125,42 @@ Also, you can download multiple packages at once as shown below.
 yum install --downloadonly --downloaddir=/root/mypackages/ httpd vsftpd
 ```
 
-### Method 2 – Download A RPM Package With All Dependencies Using “Yumdownloader” utility
+### 方法 2-使用 Yumdownloader 工具来根据依赖性下载 RPM 软件包，
 
 
-Yumdownloader is a simple, yet useful command-line utility that downloads any RPM package along with all required dependencies in one go.
 
-Install Yumdownloader using the following command as root user.
+Yumdownloader是一款简单，但是却十分有用的命令行工具，它可以一次性根据依赖性下载任何 RPM 软件包
+
+以 root 身份运行如下命令安装 Yumdownloader 工具
 
 ```
 yum install yum-utils
 ```
-
-Once installed, run the following command to download a package, for example httpd.
+一旦安装完成，运行如下命令去下载一个软件包，例如 httpd
 
 ```
 yumdownloader httpd
 ```
-
-To download packages with all dependencies, use _–resolve_ option:
+为了根据所有依赖性下载软件包，我们使用 _–resolve 参数：
 
 ```
 yumdownloader --resolve httpd
 ```
 
-By default, Yumdownloader will download the packages in the current working directory.
+默认情况下，Yumdownloader 将会下载软件包到当前工作目录下。
 
-To download packages along with all dependencies to a specific location, use _–destdir_ option:
-
+为了将软件下载到一个特定的目录下，我们使用 _–destdir 参数：
 ```
 yumdownloader --resolve --destdir=/root/mypackages/ httpd
 ```
 
-Or
+或者
 
 ```
 yumdownloader --resolve --destdir /root/mypackages/ httpd
 ```
 
-Sample output:
+终端输出:
 
 ```
 Loaded plugins: fastestmirror
@@ -192,13 +190,12 @@ Loading mirror speeds from cached hostfile
 
 [![rootserver1_004](http://www.ostechnix.com/wp-content/uploads/2016/10/root@server1_004-1.png)][3]
 
-Let us verify whether packages have been downloaded in the specified location.
-
+让我们确认一下软件包是否被下载到我们指定的目录下。
 ```
 ls /root/mypackages/
 ```
 
-Sample output:
+终端输出：
 
 ```
 apr-1.4.8-3.el7.x86_64.rpm
@@ -210,17 +207,17 @@ mailcap-2.1.41-2.el7.noarch.rpm
 
 [![rootserver1_005](http://www.ostechnix.com/wp-content/uploads/2016/10/root@server1_005.png)][2]
 
-Unlike “Downloadonly” plugin, Yumdownload can download the packages related to a particular group.
+不像 Downloadonly 插件，Yumdownload 可以下载一组相关的软件包。
 
 ```
 yumdownloader "@Development Tools" --resolve --destdir /root/mypackages/
 ```
 
-Personally, I prefer Yumdownloader over “Downloadonly” plugin for yum. But, both are extremely easy and handy and does the same job.
+在我看来，我更喜欢 Yumdownloader 应用在 Yum 上面。但是，两者都是十分简单易懂而且可以完成相同的工作。
 
-That’s all for today. If you find this guide helpful, please share it on your social networks and let others to benefit.
+这就是今天所有的内容，如果你觉得这份引导教程有用，清在你的社交媒体上面分享一下去让更多的人知道。
 
-Cheers!
+干杯！
 
 --------------------------------------------------------------------------------
 
@@ -228,7 +225,7 @@ via: https://www.ostechnix.com/download-rpm-package-dependencies-centos/
 
 作者：[SK][a]
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[LinuxBars](https://github.com/LinuxBars)
 
 校对：[校对者ID](https://github.com/校对者ID)
 
