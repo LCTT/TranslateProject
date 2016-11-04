@@ -1,77 +1,54 @@
-COOLEST PRIVACY FOCUSED OPEN SOURCE CHAT APP WIRE COMES TO LINUX
 WIRE：一个极酷、专注于个人隐私的开源聊天应用程序已经来到了 LINUX 上
 ===========
 
 [![开源聊天应用程序 WIRE 来到了 Linux 上](https://itsfoss.com/wp-content/uploads/2016/10/wire-on-desktop-linux.jpeg)][21]
 
-Around two years back, a few people behind [Skype][20] launched a beautiful new messaging app, [Wire][19]. When I say beautiful, I am talking about the looks. Wire has an uncluttered, sleek look which many other messaging apps don’t have. But that’s not it’s best selling point.
+
 回到大约两年前，【Skype】【20】背后的一些开发人员发行了一个漂亮的新聊天应用个程序：【Wire】【19】。当我说它漂亮的时候，只是谈论它的“外貌”。Wire 具有一个许多其他聊天应用程序所没有的整洁优美的“外貌”，但这并不是它最大的卖点。
 
-Since the beginning, Wire marketed itself as the [world’s most private messaging app][18]. It offers end to end encryption to text and voice calls, graphics, images, basically every content you share.
 从一开始，Wire 就推销自己是【世界上最注重隐私的聊天应用程序】【18】。无论是文本、语音电话，还是图表、图像等基本的内容，它都提供端到端的加密。
 
-WhatsApp also offers ‘end to end encryption’ but considering that its owner [Facebook is sharing WhatsApp data for ad targeting][17], I have less faith in WhatsApp and its encryption.
-WhatsApp 也提供‘端到端加密’，但是考虑一下它的所有者【Facebook 为了吸引用户而把 WhatsApp 的数据分享出去】【17】。我不太相信 WhatsApp 以及它的加密。
+WhatsApp 也提供‘端到端加密’，但是考虑一下它的所有者【Facebook 为了吸引用户而把 WhatsApp 的数据分享出去】【17】。我不太相信 WhatsApp 以及它的加密手段。
 
-What makes Wire even more special for us FOSS lovers is that a few months back [Wire went open source][16]. Few months down the line and we have a beta version of Wire desktop application for Linux.
 使 Wire 对于我们这些 FOSS【自由/开源软件】爱好者来说更加特殊的是，几个月前【Wire 开源了】【16】。几个月下来我们开发了一个针对 Linux 的 beta 版本 Wire 桌面应用程序。
 
-The desktop client is nothing more than a wrapper of its web version. Thank [open source project Electron][15] for providing a way to easily make cross-platform desktop applications. Many other applications have used Electron to bring a native desktop app for Linux, including [Skype][14].
 除了一个包装器以外，桌面版的 Wire 并没有比 web 版多任何东西。感谢【Electron 开源项目】【15】提供了一种开发跨平台桌面应用程序的简单方式。许多其他应用程序也通过使用 Electron 为 Linux 带去了一个本地桌面应用程序，包括【Skype】【14】。 
 
-### WIRE FEATURES:
 ### WIRE 的特性：
 
-Before we see more about the Linux version of Wire, let’s have a quick look at some of its main features.
 在我们了解有关 Linux 版 Wire 应用程序的更多信息之前，让我们先快速看一下它的一些主要特性。
 
-*   Open source application
 *   开源应用程序
-*   Complete encryption for all type of contents
 *   针对所有类型内容的全加密
-*   No ads, no data gathering, no data sharing
 *   无广告，无数据收集，无数据分享
-*   Text, voice and video chats
 *   支持文本，语音以及视频聊天
-*   Group chats and calls
 *   支持群聊和群电话
-*   [Audio filters][1] (no need to inhale Helium, just apply that filter and talk in a funny voice)
 *   【音频过滤器】【1】（不需要吸入氦元素，只需要使用过滤器就可以用有趣的声音说话）
-*   No phone numbers required, can be signed up with email
 *   不需要电话号码，可以使用邮箱登录
-*   Sleek, modern interface
 *   优美、现代化的界面
-*   Cross platform messaging app with iOS, Android, Web, Mac, Windows and Linux clients
 *   跨平台聊天应用程序，iOS，Android，Web，Mac，Windows 和 Linux 客户机均有相应版本
-*   Protected by European laws (which are more privacy oriented that the US ones)
 *   欧洲法保护（欧洲法比美国法更注重隐私）
 
-Wire has some seriously cool features up its sleeve, especially those audio filters akin to [Snapchat][13].
 Wire 有一些更棒的特性，尤其是和【Snapchat】【13】类似的音频过滤器。
 
-### INSTALL WIRE ON LINUX
 ### 在 Linux 上安装 WIRE
-Before you go on installing Wire on Linux, let me warn you that it is still in beta phase. So, if you encounter a few bugs, don’t get miffed.
-在安装 Wire 到 Linux 上之前，让我先警告你它还处于 beta 阶段。所以，如果你遇到一些故障，请不要生气。
 
-Wire has a .deb client available for 64 bit systems. You can use these tips to find out if you got [32 bit or 64 bit system][12]. You can download the .deb file from the link below:
+在安装 Wire 到 Linux 上之前，让我先警告你它目前还处于 beta 阶段。所以，如果你遇到一些故障，请不要生气。
+
 Wire 有一个 64 位系统可使用的 .deb 客户机。如果你有一台【32 位或者 64 位系统】【12】的电脑，你可以使用这些技巧来找到它。你可以从下面的链接下载 .deb 文件。
 
 【下载 Linux 版 Wire 【Beta】】【11】
 
-If you are interested, you can have a look at the source code also:
 如果感兴趣的话，你也可以看一看它的源代码：
 
 [桌面版 Wire 源代码】【10】
 
-This is what the default interface of Wire look like in [elementary OS Loki][9]:
 这是 Wire 的默认界面，看起来像【初级 Loki 操作系统】【9】:
 
 [![Linux 上的 Wire 桌面应用程序](https://itsfoss.com/wp-content/uploads/2016/10/Wire-desktop-appl-linux.jpeg)][8]
 
 你看，它们甚至能在这儿得到机器人：）
 
-Have you been already using Wire? If yes, how is your experience with it? If no, will you give it a try since it’s [open source][7] now and available for Linux?
 你已经开始使用 Wire 了吗？如果是，你的体验是什么样的？如果没有，你将尝试一下吗？因为它现在是开源的【7】并且可以在 Linux 上使用。
 
 --------------------------------------------------------------------------------
