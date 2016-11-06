@@ -1,33 +1,33 @@
 translating by chao-zhi
 
-An Everyday Linux User Review Of Xubuntu 16.10 - A Good Place To Start
+一个日常 Linux 使用者关于 Xubuntu 16.10 的论述 - 一个开始的好选择
 ===============
 
-### Introduction
+### 简介
 
 [![](https://2.bp.blogspot.com/-i4QOIuRjyWA/WAJ9zWbjKeI/AAAAAAAAM1U/-t0-4KB6cFgdyk3LvYbNDNiuC0dB29vRACLcB/s640/live1.png)][36]
 
-Xubuntu has always been one of my favourite distributions. It doesn't look as glamourous as some of the other Linux offerings out there and it certainly doesn't come with all the software you need pre-installed.
+Xubuntu 一直是我最喜欢的发行版。与其他的 Linux 发行版相比，他的外观看起来不那么迷人，它当然也不会预装所有你需要的软件。
 
-The thing that Xubuntu gives you is a great base to start from. 
+Xubuntu 给你的仅仅是一个基础的初始形态. 
 
-If you are the sort of person who likes to customise the look and feel of their desktop then XFCE is definitely the best desktop environment for this. 
+如果你是那种喜欢定制桌面的外观和触感的人，那么 XFCE 绝对是最好的桌面环境。
 
-If you are low on system resources or you like to keep things nice and slick then XFCE is again a great option.
+如果你希望低系统资源占用，或你想让工作又漂亮又丝滑，那么 XFCE 则是一个伟大的选择。
 
-Xubuntu therefore has a head start on many of the other top Linux distributions because the XFCE desktop is installed by default.
+Xubuntu 之所以成为一个优秀的 Linux 发行版，就是因为他默认安装 XFCE 桌面。
 
-There is no doubt that when it comes to hardware compatibility, ease of use, stability, ease of installation and a large community, Ubuntu is hard to beat.
+毫无疑问，当涉及到硬件兼容性、易用性、稳定性、易于安装和拥有一个大型社区，Ubuntu 是很难被超越的。
 
-Xubuntu is an official flavour of the Ubuntu Linux distribution so you get the best of Ubuntu but with the XFCE desktop installed instead of Unity.
+Xubuntu 是 Ubuntu Linux 发行版的官方支持的，因此你可以拥有所有 Ubuntu 的优点，除了用 XFCE 桌面代替 Untiy 桌面。
 
-If you want to be the one to choose the applications that come with your distribution then some other distributions come lots of applications pre-installed that you may not need.
+你可以选择性的安装应用到你的发行版上，而不是像其他发行版那样预装了一堆你不需要的应用。
 
-Xubuntu comes with the bare essentials and beyond the small core of default inclusions it is up to you to find and install the rest.
+Xubuntu 只在小核心中附带了一些必须的应用，直到你找到并安装其他的应用。
 
-This for me is why Xubuntu has always been a great distribution. Start with a simple base installation and customise it to be what you want it to be. 
+对我来说，以上就是我为什么认为 Xubuntu 是一个极好的发行版的原因。一个简单的初始安装并且任由我将其自定义为我想要的样子。
 
-### How To Get Xubuntu
+### 如何获得 Xubuntu
 
 You can visit the Xubuntu website at
 
