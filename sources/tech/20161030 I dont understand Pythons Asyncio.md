@@ -1,3 +1,5 @@
+Translating by firstadream
+
 # I don't understand Python's Asyncio
 
 Recently I started looking into Python's new [asyncio][4] module a bit more. The reason for this is that I needed to do something that works better with evented IO and I figured I might give the new hot thing in the Python world a try. Primarily what I learned from this exercise is that I it's a much more complex system than I expected and I am now at the point where I am very confident that I do not know how to use it properly.
