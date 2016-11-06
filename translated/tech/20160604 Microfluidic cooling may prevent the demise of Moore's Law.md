@@ -17,7 +17,7 @@ SEE:2015年硅光子将引起数据中心的革命 [Silicon photonics will revol
 
 ### 微流冷却技术可能是问题的解决之道
 
-为了寻找其他解决办法，国防高级研究计划局DARPA发起了一个关于ICECool应用[ICECool Applications][6] (片内/片间增强冷却技术)的项目。GSA网站FedBizOpps.gov.[GSA website FedBizOpps.gov][7]报道：ICECool正在探索革命性的热技术，其将减轻热耗对军用电子系统的限制，同时能显著减小军用电子系统的尺寸，重量和功耗。
+为了寻找其他解决办法，国防高级研究计划局DARPA发起了一个关于ICECool应用[ICECool Applications][6] (片内/片间增强冷却技术)的项目。GSA网站 [GSA website FedBizOpps.gov][7] 报道：ICECool正在探索革命性的热技术，其将减轻热耗对军用电子系统的限制，同时能显著减小军用电子系统的尺寸，重量和功耗。
 
 微流冷却方法的独特之处在于组合使用片内和(或)片间微流冷却技术和片上热互连技术。
 
