@@ -1,122 +1,123 @@
-zpl1025
-How To Setup A WiFi Network In Arch Linux Using Terminal
+如何在 Arch Linux 的 Terminal 里设定 WiFi 网络
 ===
 
 ![How To Setup A WiFi In Arch Linux Using Terminal﻿](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/how-to-connect-to-wifi-in-arch-linux-cli_orig.jpg)
 
-If you're using [Linux distro][16] other than [Arch][15] CLI then it's one of the toughest tasks to setup WiFi on [Arch Linux][14] using terminal. Though the process is slightly straight forward. In this article, I'll walk you newbies through the step-by-step setup guide to connect your Arch Linux to your  WiFi network.There are a lot of programs to setup a wireless connection in Linux, we could use **ip** and **iw** to configure an Internet connection, but it would be a little complicated for newbies. So we'll use **netctl**, it's a cli-based tool used to configure and manage network connections via profiles.
+如果你使用的是其他 [Linux 发行版][16] 而不是 [Arch][15] CLI，那么在 [Arch Linxu][14] 的终端里设置 WiFi 将是一件很困难的事情。尽管整个过程有点简单。在这篇文章里，我将带领新手们一起一步步走一边设置向导，把你们的 Arch Linux 接入到你的 WiFi 网络里。在 Linux 里有很多程序来设置无线连接，我们可以用 **ip** 和 **iw** 来配置因特网连接，但是对于新手来说有点复杂。所以我们会使用 **netctl** 命令，这是一个基于命令行的工具，用来通过配置文件来设置和管理网络连接。
 
-Note: You must be root for all the configurations, also you can use sudo.
+注意：所有的设定都需要 root 权限，你也可以使用 sudo 命令。
 
-### Scanning Network
+### 搜索网络
 
-Run the command to know the name of your network interface -
+运行下面的命令来查看你的网络接口 -
 
 ```
 iwconfig
 ```
 
-Run the command - 
+运行命令 - 
 
 ```
 ip link set  _interface_ up
 ```
 
-Run the command to search the available WiFi networks. Now move down to look for your WiFi network.
+运行下面的命令搜索可用的 WiFi 网络。可以向下滚动来查看。
 
 ```
 iwlist interface scan | less
 ```
 
-**Note:** Where interface is your network interface that you found using the above  **iwconfig** command.
+**注意：** 命令里的 interface 是之前用 **iwconfig** 获取到的实际网络接口。
 
-Run the command -
+运行命令 -
 
 ```
 ip link set interface down
 ```
 
-### Setup A Wi-Fi Using netctl:
+### 使用 netctl 配置 Wi-Fi：
 
-Before configure a connection with netctl you must check the compatibility of your network card with Linux.
+在使用 netctl 设置连接之前，你必须先检查一下你的网卡在 Linux 下的兼容性。
 
-1.  Run the command:
+1.  运行命令：
 
 ```
 lspci -k
 ```
 
-This command is to check if kernel loaded the driver for wireless card. The output must look like this:
+这条命令是用来检查内核是否加载了你的无线网卡驱动。输出必须是像这样的：
 
 [![arch linux wifi kernel compatibility ](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/arch-wifi-find-kernel-compatibility_orig.png)][12]
 
-If the kernel didn't load the driver, you must install it using an Ethernet connection. Here is the Official Linux Wireless Wiki: [https://wireless.wiki.kernel.org/][11]
+如果内核没有加载驱动，你就必须使用以太网连接来安装一下。这里是 Linux 无线网络的官方维基页面：[https://wireless.wiki.kernel.org/][11]
 
-If your wireless card is compatible with Linux, you can start with **netctl configuration**.
+如果你的无线网卡和 Linux 兼容，你可以使用 **netctl configuration**。
 
-**netctl** works with profiles, profile is a file that contains information about connection. A profile can be created by the hard way or the easy way.
+**netctl** 通过配置文件生效，这是一个包含连接信息的文件。创建这个文件有简单方式和困难方式。
 
-### The Easy Way – Wifi-menu
+### 简单方式 – Wifi-menu
 
-If you want use wifi-menu, dialog must be installed.
+如果你想用 wifi-menu，必须安装 dialog
 
-1. Run the command: wifi-menu
-2.  Select your Network
+1. 运行命令: wifi-menu
+2. 选择你的网络
   [![wifi-menu to setup wifi in arch](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/wifi-menu-to-setup-wifi-in-arch_orig.png)][1] |
-3. Type the correct password and wait.
+3. 输入正确的密码并等待
   [![wifi-menu setup wifi password in arch](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/wifi-menu-type-wifi-password-in-arch.png?605)][9]
 
-If you don't have a failed connection message, then you can prove it typing the command:
+如果没有连接失败的信息，你可以用下面的命令确认下：
 
 ```
 ping -c 3 www.google.com
 ```
 
-Hurrah! If you're watching it pinging, then the network is setup successfully. You're now connected to WiFi network in Arch Linux. If you've any error then follow the above steps again. Perhaps you've missed something to do.
+哇！如果你看到正在 ping，意味着网络设置成功。你现在已经在 Arch Linux 下连上 WiFi 了。如果有任何问题，可以倒回去重来。也许漏了什么。
 
-### The Hard Way
+### 困难方式
 
-In camparison to the above wifi-menu method, this method is a little hard. That's I call it the hard way. In the above command, the network profile was setup automatically. In this method, we'll setup the profile manually. But don't worry this is not going to be much more complicated. So let's get started!
+比起上面的 wifi-menu 命令，这种方式会难一点点。所有我叫做困难方式。在上面的命令里，网络配置会自动生成。而在困难方式里，我们将手动修改配置文件。不过不要担心，也没那么难。那我们开始吧！
 
-1.  The first thing that you must do is know the name of your interface, generally the name is wlan0/wlp2s0, but there are many exceptions. To know the name of your interface, you must type the command iwconfig and note it down.
+1. 首先第一件事，你必须要知道网络接口的名字，通常会是 wlan0 或 wlp2s0，但是也有很多例外。要确认你自己的网络接口，输入 iwconfig 命令并记下来。
 
   [![scan wifi networks in arch linux cli](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/scan-wifi-networks-in-arch-linux-cli_orig.png)][8]      
 
-2. Run the command:
+2. 运行命令:
 
   ```
   cd /etc/netctl/examples
   ```
 
-  In this subdirectory you can see different profile examples.
+  在这个目录里，有很多不同的配置文件例子。
 
-3.Copy your profile example to **_/etc/netctl/your_profile_**
+3. 拷贝将用到的配置文件例子到 **_/etc/netctl/your_profile_**
 
 ```
 cp /etc/netctl/examples/wireless-wpa /etc/netctl/your_profile
 ```
 
-4. You can see the profile content typing: cat /etc/netctl/your_profile
+4. 你可以用这个命令来查看配置文件内容: cat /etc/netctl/your_profile
 
 [![view network profile in arch linux](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/view-network-profile-in-arch-linux_orig.png)][7]
 
-5. Edit the following fields of your profile using vi or nano:
+5. 用 vi 或者 nano 编辑你的配置文件的下面几个部分：
 
 ```
 nano /etc/netctl/your_profile
 ```
 
-1. **Interface**: it would be wlan0
-2. **ESSID**: The name of your Internet connection
-3. **key**: The password of your Internet connection**Note:** 
+1. **Interface**: 比如说 wlan0
+2. **ESSID**: 你的无线网络名字
+3. **key**: 你的无线网络密码
 
-If you don't know how to use nano, only edit your text, when you finish type ctrl+o and return, then type ctrl+x.
+**注意:** 
+
+如果你不知道怎么用 nano，打开文件后，编辑要修改的地方，完了按 ctrl+o，然后回车，然后按 ctrl+x。
 
 [![edit network profile in arch](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/edit-network-profile-in-arch_orig.png)][6]
 
-### Running netctl
+### 运行 netctl
 
-1. Run the command:
+1. 运行命令:
 
 ```
 cd /etc/netctl
@@ -124,35 +125,35 @@ cd /etc/netctl
 ls
 ```
 
-  You must see the profile created by wifi-menu, for example wlan0-SSID; or if you used the hard way then you must see the profile created by yourself.
+  你必须看到 wifi-menu 生成的配置文件，比如 wlan0-SSID; 或者你选择了困难方式，你必须要看到你自己创建的配置文件。
 
-2. Start your connection profile typing the command: netctl start your_profile.
-3. Test your connection typing:
+2. 运行命令启动连接配置: netctl start your_profile.
+3. 用下面的命令测试连接:
 
 ```
 ping -c 3 www.google.com
 ```
 
-  The output must look like this:[![check internet connection in arch linux](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/check-internet-connection-in-arch-linux_orig.png)][5]       
+  输出必须看上去像这样:[![check internet connection in arch linux](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/check-internet-connection-in-arch-linux_orig.png)][5]       
 
-6. Finally, you must run the following command: netctl enable your_profile. 
+6. 最后，你必须运行下面的命令: netctl enable your_profile. 
 
 ```
 netctl enable your_profile
 ```
 
-This will create and enable a systemd service that will start when the computer boots. So it's time shout Hurrah! You've setup wifi network in your Arch Linux.
+这样将创建并激活一个 systemd 服务，然后开机时自动启动。然后欢呼吧！你在你的 Arch Linux 里配置好 wifi 网络啦。
 
-### Other Utilities
+### 其他工具
 
-Also, you can use other programs to setup a wireless connection: For example iw -
+你还可以使用其他程序来设置无线连接：比如 iw -
 
 iw
 
-1.  iw dev wlan0 link – status
-2.  iw dev wlan0 scan – Scanning networks
-3.  iw dev wlan0 connect your_essid – Connecting to open network
-4.  iw dev wlan0 connect your_essid key your_key - Connecting to WEP encrypted network using hexadecimal key.
+1.  iw dev wlan0 link – 状态
+2.  iw dev wlan0 scan – 搜索网络
+3.  iw dev wlan0 connect your_essid – 连接到开放网络
+4.  iw dev wlan0 connect your_essid key your_key - 使用 16 进制密钥连接到 WEP 加密的网络
 
 wpa_supplicant
 
@@ -166,9 +167,9 @@ NetworkManager
 
 [https://wiki.archlinux.org/index.php/NetworkManager][2]
 
-### Conclusion
+### 总结
 
-So there you go! I have mentioned 3 ways to connect to a WiFi network in your  **Arch Linux** . One thing that I want to focus here is that when you're exeuting first command, please note down the interface. In the next command where we're scanning networks, don't just use interface but the name of your interface such wlan0 or wlp2s0 (you got from previous command). If you have any problem, then do talk to me in the comment section below. Also don't forget to share this article with your friends on social media. Thank you!
+会了吧！我提供了在 **Arch Linux** 里接入 WiFI 网络的三种方式。这里有一件事我再强调一下，当你执行第一条命令的时候，请记住你的网络接口名字。在接下来搜索网络的命令里，请使用你的网络接口名字比如 wlan0 或 wlp2s0（上一个命令里得到的），而不是用 interface 这个词。如果你碰到任何问题，可以在下面的评论区里直接留言给我。然后别忘了在你的朋友圈里和大家分享这篇文章哦。谢谢！
 
 --------------------------------------------------------------------------------
 
@@ -176,7 +177,7 @@ via: http://www.linuxandubuntu.com/home/how-to-setup-a-wifi-in-arch-linux-using-
 
 作者：[Mohd Sohail][a]
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[zpl1025](https://github.com/zpl1025)
 
 校对：[校对者ID](https://github.com/校对者ID)
 
