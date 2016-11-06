@@ -1,5 +1,4 @@
-(翻译中 by runningwater)
-part 7 - How to manage binary blobs with Git
+第七部分 - 使用 Git 管理二进制大对象
 =====================
 
 
