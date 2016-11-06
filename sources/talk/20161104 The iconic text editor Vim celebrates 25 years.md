@@ -1,3 +1,5 @@
+translating by StdioA
+
 # The iconic text editor Vim celebrates 25 years
 
  ![The iconic text editor Vim celebrates 25 years](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/osdc-lead-happybirthday.png?itok=38SOo5_T "The iconic text editor Vim celebrates 25 years") 
