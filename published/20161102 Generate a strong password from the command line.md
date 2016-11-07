@@ -38,35 +38,31 @@ pwgen 14 1
 
 你也可以使用以下标记：
 
-<small style="transition: height 0.15s ease-out, width 0.15s ease-out; font-size: 14.45px;"></small>
-
-```
-  -c 或 --capitalize
+-  -c 或 --capitalize
         生成的密码中至少包含一个大写字母
-  -A 或 --no-capitalize
+-  -A 或 --no-capitalize
         生成的密码中不含大写字母
-  -n 或 --numerals
+-  -n 或 --numerals
         生成的密码中至少包含一个数字
-  -0 或 --no-numerals
+-  -0 或 --no-numerals
         生成的密码中不含数字
-  -y 或 --symbols
+-  -y 或 --symbols
         生成的密码中至少包含一个特殊字符
-  -s 或 --secure
+-  -s 或 --secure
         生成一个完全随机的密码
-  -B 或 --ambiguous
-        生成的密码中不含模糊字符 (ambiguous characters)
-  -h 或 --help
+-  -B 或 --ambiguous
+        生成的密码中不含易混淆字符 (ambiguous characters)
+-  -h 或 --help
         输出帮助信息
-  -H 或 --sha1=path/to/file[#seed]
+-  -H 或 --sha1=path/to/file[#seed]
         使用指定文件的 sha1 哈希值作为随机生成器
-  -C
+-  -C
         按列输出生成的密码
-  -1
+-  -1
         不按列输出生成的密码
-  -v 或 --no-vowels
+-  -v 或 --no-vowels
         不使用任何元音，以免意外生成让人讨厌的单词
 
-```
 
 ### 使用 gpg 生成高强度密码
 
@@ -76,10 +72,9 @@ pwgen 14 1
 gpg --gen-random --armor 1 14
 ```
 
-* * *
+### 其它方法
 
 当然，可能还有很多方法可以生成一个高强度密码。比方说，你可以添加以下 bash shell 方法到 `~/.bashrc` 文件：
-Of course, there are many other ways to generate a strong password. For example, you can add the following bash shell function to your `~/.bashrc` file:
 
 ```
 genpasswd() { 
@@ -94,10 +89,8 @@ genpasswd() {
 via: https://www.rosehosting.com/blog/generate-password-linux-command-line/
 
 作者：[RoseHosting][a]
-
 译者：[GHLandy](https://github.com/GHLandy)
-
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
