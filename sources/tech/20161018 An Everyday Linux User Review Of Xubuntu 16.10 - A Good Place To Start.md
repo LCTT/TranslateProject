@@ -29,52 +29,49 @@ Xubuntu 只在小核心中附带了一些必须的应用，直到你找到并安
 
 ### 如何获得 Xubuntu
 
-You can visit the Xubuntu website at
+你可以在 [http://xubuntu.org/][35] 访问 Xubuntu 的网站。
 
- [http://xubuntu.org/][35]
 [![](https://3.bp.blogspot.com/-GnYseQr9r3c/WAKA9R3hHPI/AAAAAAAAM1g/A3rvnr3W3Tk55apwsqmFs8nvr7zAMWnLACLcB/s640/getxubuntu.PNG)][34]
 
-The download page can be found at 
+你可以在这里 [http://xubuntu.org/getxubuntu/][33] 找到下载页。
 
-[http://xubuntu.org/getxubuntu/][33]
+它有两个版本，大多数人会选择长期支持版本（LTS），除非你希望每六个月更新一次系统。
 
-There are two versions available. The LTS version is 16.04 and is the one most people will want to go for unless you like updating your operating system every 6 months.
+另一个版本是我今天要讲的，它就是 16.10 版。 
 
-The other version is the one I am reviewing today which is version 16.10. 
-
-You can either download a torrent in order to get the ISO file or you can visit one of the mirrors.
+你既可以选择一个种子文件来下载，也可以访问他的镜像源下载。
 
 [![](https://3.bp.blogspot.com/-VBWH0CJsijM/WAKB3uDPvNI/AAAAAAAAM1k/cpigdxtjMEUQANxb6BF4efS9g7EZDFnZACLcB/s640/mirrorlist.PNG)][32]
 
-If you choose to download from a mirror click on the appropriate ISO. For example click on the amd-64.iso file for 64-bit or i386.iso for 32-bit.
+如果你选择在镜像源中下载，你需要点击合适的 ISO 文件。比如 64 位的选择 amd-64.iso 文件，而 32 位的选择 i386.iso。
 
-There are lots of guides for showing how to create bootable Linux USB drives:
+有很多教程，可以教你怎么创建一个 Linux 启动 U 盘。
 
-*   [This one shows how to create a Ubuntu one but it will work with Xubuntu][3]
-*   [You can also try this one which is for Xubuntu][2]
-*   [Or you can even try this one][1]
+*   [这是 Ubuntu 的教程，同样适用于 Xubuntu][3]
+*   [你也可以试试这款针对 Xubuntu 的教程][2]
+*   [或者你也可以试试这个][1]
 
-If all this seems too much trouble you can also
+如果这些你都觉得太复杂，你可以看看这个
 
- [buy one from here][31]
+ [从这买一个][31]
 
 .
 
-### Installation
+### 安装
 
 [![](https://4.bp.blogspot.com/-4GZVmSbI3nw/WAKDyLh8UdI/AAAAAAAAM10/BhSSR0e3GkYC-5fSrjyLmhNKpuQnogbdQCLcB/s320/install1.png)][30]
 
-Installation of Xubuntu, as with other flavours of Ubuntu, is relatively straight forward.
+与 Ubuntu 相比，安装 Xubuntu 相对要直接一点。
 
-If you have installed one, then you can generally install any of them.
+如果你曾经装了一个，那么你可以简单的安装任何一个。
 
-Start off by choosing the installation language.
+开始时选择你的安装语言。
 
 [![](https://4.bp.blogspot.com/-0YgUIjeTb6I/WAKECFfeOwI/AAAAAAAAM14/lyUO2P7O9WYjLgCS0i-ARAbhnvGho_71ACLcB/s320/install2.png)][29]
 
-You will be asked whether you want to update as you go and whether you wish to install the third party codecs and tools which enable you to play MP3 audio and use proprietary drivers.
+你会被问到，是否需要同时安装更新，和是否要安装第三方软件，包括播放音乐的软件和专有驱动。
 
-You need to be connected to the internet in order to do either of these things.
+想要完成这些，你需要联网。
 
 Again It is relatively straight forward and covered later on in the review.
 
