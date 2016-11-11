@@ -204,9 +204,9 @@ There is a official guide on Nmap Network Scanning by author Gordon Lyon, ava
 
 --------------------------------------------------------------------------------
 
-via: http://www.tecmint.com/kali-linux-installation-guide/
+via: http://www.tecmint.com/nmap-network-security-scanner-in-kali-linux/
 
-作者：[ Rob Turner][a]
+作者：[Rob Turner][a]
 
 译者：[译者ID](https://github.com/译者ID)
 
