@@ -5,7 +5,7 @@ LCTT 是“Linux中国”（[https://linux.cn/](https://linux.cn/)）的翻译�
 
 LCTT 已经拥有几百名活跃成员，并欢迎更多的Linux志愿者加入我们的团队。
 
-![logo](http://img.linux.net.cn/static/image/common/lctt_logo.png)
+![logo](https://linux.cn/static/image/common/lctt_logo.png)
 
 LCTT 的组成
 -------------------------------
