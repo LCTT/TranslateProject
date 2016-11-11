@@ -109,7 +109,7 @@ Azure 部署过程始于输入一些基本用户信息，如 ssh 登录的管理
 
 --------------------------------------------------------------------------------
 
-via: https://blog.docker.com/2016/06/docker-数据中心-aws-azure-cloud/
+via: https://blog.docker.com/2016/06/docker-datacenter-aws-azure-cloud/
 
 作者：[Trisha McCanna][a]
 译者：[firstadream](https://github.com/firstadream)
@@ -118,13 +118,13 @@ via: https://blog.docker.com/2016/06/docker-数据中心-aws-azure-cloud/
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://blog.docker.com/author/trisha/
-[1]: https://store.docker.com/login?next=%2Fbundles%2Fdocker-数据中心%2Fpurchase?plan=free-trial
-[2]: https://store.docker.com/login?next=%2Fbundles%2Fdocker-数据中心%2Fpurchase?plan=free-trial
+[1]: https://store.docker.com/login?next=%2Fbundles%2Fdocker-datacenter%2Fpurchase?plan=free-trial
+[2]: https://store.docker.com/login?next=%2Fbundles%2Fdocker-datacenter%2Fpurchase?plan=free-trial
 [4]: https://goto.docker.com/contact-us.html
-[5]: https://store.docker.com/login?next=%2Fbundles%2Fdocker-数据中心%2Fpurchase?plan=free-trial
+[5]: https://store.docker.com/login?next=%2Fbundles%2Fdocker-datacenter%2Fpurchase?plan=free-trial
 [6]: https://goto.docker.com/contact-us.html
-[7]: https://azure.microsoft.com/en-us/marketplace/partners/docker/docker数据中心docker-数据中心/
-[8]: https://success.docker.com/数据中心/Apply/Docker_数据中心_on_Azure
+[7]: https://azure.microsoft.com/en-us/marketplace/partners/docker/dockerdatacenterdocker-datacenter/
+[8]: https://success.docker.com/Datacenter/Apply/Docker_Datacenter_on_Azure
 [9]: http://www.docker.com/trial
 [10]: https://www.youtube.com/playlist?list=PLkA60AVN3hh8tFH7xzI5Y-vP48wUiuXfH
 [11]: https://www.youtube.com/playlist?list=PLkA60AVN3hh8a8JaIOA5Q757KiqEjPKWr
