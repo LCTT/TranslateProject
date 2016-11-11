@@ -73,31 +73,29 @@ Xubuntu 只在小核心中附带了一些必须的应用，直到你找到并安
 
 想要完成这些，你需要联网。
 
-Again It is relatively straight forward and covered later on in the review.
+相比于直接安装，他会在安装好后覆盖安装更新.
 
 [![](https://1.bp.blogspot.com/-Pzt6YUVJbGY/WAKEf6QY2-I/AAAAAAAAM18/I41MoEvv_aguUX6Y9HkVLC_QnONpzyCVwCLcB/s320/install3.png)][28]
 
-If you have a spare unallocated disk partition and you have Windows installed you will see the option to install Xubuntu alongside Windows in a dual boot setup.
+如果你有一个备用的未分配的磁盘分区和并且安装了 Windows，您将看到可以选择安装 Xubuntu 并设置双启动。
 
-You also get the option to install Xubuntu as the sole operating system and you can also choose something else which lets you partition the way you want to.
+您还可以选择安装 Xubuntu 作为唯一的操作系统，你也可以选择别的任何你喜欢的分区来安装。
 
 [![](https://4.bp.blogspot.com/-tcwOutnWJk8/WAKE5kGhPxI/AAAAAAAAM2A/9ZZrZRi6KR4renDxjwbRw8uoRqpAI8NzACLcB/s320/install4.png)][27]
 
-The next step is to choose where you live. This sets your time zone so that the clock is set up correctly.
+下一步是设置你所在的区域以确定你的时区。
 
 [![](https://4.bp.blogspot.com/-cCNxMeLAE-Y/WAKFQjSZe2I/AAAAAAAAM2I/ZaTKZ8DAzFg-TOfS5BkNdN1-HYlRXweYwCLcB/s320/install5.png)][26]
 
-Two steps to go.
-
-Choose your keyboard layout by choosing the language and keyboard configuration.
+接下来两步是选择你的键盘模式，并选择你的语言。
 
 [![](https://3.bp.blogspot.com/-rnLEH6sBp7E/WAKFbgaxakI/AAAAAAAAM2M/-mG3lSxc41EKPQ2BnNbSmLRdgVeyT36jwCLcB/s320/install6.png)][25]
 
-Finally create a default user.
+最后还是创建一个初始账户.
 
-Enter your name, give your computer a name, set a username and then enter and repeat a password.
+输入你的名字，你计算机的名字，设置用户名和密码。
 
-Xubuntu will now install and you should be good to go.
+Xubuntu 将会被安装在你的电脑上了。
 
 ### First Impressions
 
