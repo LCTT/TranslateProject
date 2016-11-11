@@ -1,3 +1,5 @@
+Translating  By GitFuture
+
 # dpkg commands to manage packages on Debian Based Systems
 
 [dpkg][7] stands for Debian package manager (dpkg). dpkg is a command-line tool to install, build, remove and manage Debian packages. dpkg uses Aptitude (primary and more user-friendly) as a front-end to perform all the actions.
