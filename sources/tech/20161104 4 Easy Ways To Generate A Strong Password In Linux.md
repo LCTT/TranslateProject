@@ -1,4 +1,7 @@
+（translating by chenzhijun）
+
 # 4 Easy Ways To Generate A Strong Password In Linux
+
 
  ![Generate a strong password in Linux](https://www.ostechnix.com/wp-content/uploads/2016/11/password-720x340.jpg) 
 Image Courtesy: Google.
