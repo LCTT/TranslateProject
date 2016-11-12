@@ -1,43 +1,43 @@
-# 用 dpkg 命令在 Debian 系的系统中管理软件包
+用 dpkg 命令在 Debian 系的 Linux 系统中管理软件包
+==================
 
-[dpkg][7] 表示 Debian package manager (dpkg), Debian 软件包管理。dpkg 是一个可以安装、构建、删除及管理 Debian 软件包的命令行工具。dpkg 将 Aptitude（主要并且用户友好的）作为执行所有操作的前端。
+[dpkg][7] 意即 Debian 包管理器（Debian PacKaGe manager）。dpkg 是一个可以安装、构建、删除及管理 Debian 软件包的命令行工具。dpkg 将 Aptitude（首选而更用户友好）作为执行所有操作的前端界面。
 
-dpkg 被 dpkg-deb 和 dpkg-query 等工具作为执行操作的前端。
+其它的一些工具如 dpkg-deb 和 dpkg-query 等也使用 dpkg 作为执行某些操作的前端。
 
-现在大多数系统管理员使用 Apt，[Apt-Get][6] 及 Aptitude 等工具，不用维护就可以轻松地管理软件。
+现在大多数系统管理员使用 Apt、[Apt-Get][6] 及 Aptitude 等工具，不用费心就可以轻松地管理软件。
 
-尽管如此，必要的时候还是需要用 dpkg 来安装某些软件。在 Linux 系统上广泛使用的包管理工具有 [yum][5], [dnf][4], [apt-get][3], dpkg, [rpm][2], [Zypper][1], pacman, urpmi 等等。
+尽管如此，必要的时候还是需要用 dpkg 来安装某些软件。其它的一些在 Linux 系统上广泛使用的包管理工具还有 [yum][5]、[dnf][4]、[apt-get][3]、dpkg、[rpm][2]、[Zypper][1]、pacman、urpmi 等等。
 
 现在，我要在装有 Ubuntu 15.10 的机器上用一些实例讲解最常用的 dpkg 命令。
 
 ### 1) dpkg 常见命令的语法及 dpkg 文件位置
 
-下面是 dpkg 常见命令的语法及 dpkg 文件的位置，如果想深入了解，对你肯定大有益处。
+下面是 dpkg 常见命令的语法及 dpkg 相关文件的位置，如果想深入了解，这些对你肯定大有益处。
 
-<iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="90" width="728" id="_mN_gpt_827143833" style="border-width: 0px; border-style: initial; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;"></iframe>
 ```
-[General syntax for dpkg]
+### dpkg 命令的语法
 $ dpkg -[command] [.deb package name]
 
 $ dpkg -[command] [package name]
 
-[dpkg releated files location]
+### dpkg 相关文件的位置
 $ /var/lib/dpkg
 
-[This file contain modified package info by dpkg command like (install, remove, etc..,)]
+### 这个文件包含了被 dpkg 命令（install、remove 等）所修改的包的信息
 $ /var/lib/dpkg/status
 
-[This file contain available package list]
+### 这个文件包含了可用包的列表
 $ /var/lib/dpkg/status
 
 ```
 
 ### 2) 安装/升级软件
 
-在基于 Debian 的系统里，比如 Debian， Mint， Ubuntu 和 elementryOS，用以下命令来安装/升级 .deb 软件包。这里我要用 atom-amd64.deb 文件安装 Atom。要是已经安装了 Atom，就会升级它。要么就会安装一个新的 Atom。
+在基于 Debian 的系统里，比如 Debian、Mint、Ubuntu 和 elementryOS，用以下命令来安装/升级 .deb 软件包。这里我要用 `atom-amd64.deb` 文件安装 Atom。要是已经安装了 Atom，就会升级它。要么就会安装一个新的 Atom。
 
 ```
-[Install/Upgrade dpkg packages]
+### 安装或升级 dpkg 软件包
 $ sudo dpkg -i atom-amd64.deb
 Selecting previously unselected package atom.
 (Reading database ... 426102 files and directories currently installed.)
@@ -54,7 +54,7 @@ Processing triggers for mime-support (3.58ubuntu1) ...
 
 ### 3) 从文件夹里安装软件
 
-在基于 Debian 的系统中，用下列命令从目录下递归的安装软件。这会安装 /opt/software 目录下的所有以 .deb 为后缀的软件。
+在基于 Debian 的系统里，用下列命令从目录中逐个安装软件。这会安装 `/opt/software` 目录下的所有以 .deb 为后缀的软件。
 
 ```
 $ sudo dpkg -iR /opt/software
@@ -96,7 +96,6 @@ ii  account-plugin-salut        3.12.10-0ubuntu2                   amd64        
 
 用以下命令列出指定的一个已安装软件，同时会显示软件版本和描述信息。
 
-<iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="90" width="728" id="_mN_gpt_827143833" style="border-width: 0px; border-style: initial; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;"></iframe>
 ```
 $ dpkg -l atom
 Desired=Unknown/Install/Remove/Purge/Hold
@@ -151,7 +150,7 @@ drwxr-xr-x root/root         0 2016-02-13 02:13 ./usr/share/doc/
 
 ### 8) 显示软件的详细信息
 
-以下命令可以显示软件的详细信息，如软件名，软件类别，版本，维护者，软件架构，依赖的软件，软件描述等等。
+以下命令可以显示软件的详细信息，如软件名、软件类别、版本、维护者、软件架构、依赖的软件、软件描述等等。
 
 ```
 $ dpkg -s atom
@@ -183,7 +182,7 @@ atom: /usr/bin/atom
 
 以下命令可以用来移除/删除一个已经安装的软件，但不删除配置文件。
 
-<iframe marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="90" width="728" id="_mN_gpt_827143833" style="border-width: 0px; border-style: initial; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline;"></iframe>
+
 ```
 $ sudo dpkg -r atom
 (Reading database ... 426404 files and directories currently installed.)
@@ -218,7 +217,7 @@ Processing triggers for mime-support (3.58ubuntu1) ...
 
 ```
 $ dpkg -help
-or
+或
 $ man dpkg
 
 ```
@@ -229,11 +228,9 @@ $ man dpkg
 
 via: http://www.2daygeek.com/dpkg-command-examples/
 
-作者：[MAGESH MARUTHAMUTHU ][a]
-
+作者：[MAGESH MARUTHAMUTHU][a]
 译者：[GitFuture](https://github.com/GitFuture)
-
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
