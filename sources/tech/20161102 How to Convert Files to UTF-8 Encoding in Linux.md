@@ -1,3 +1,5 @@
+Translating by StdioA
+
 # How to Convert Files to UTF-8 Encoding in Linux
 
 In this guide, we will describe what character encoding and cover a few examples of converting files from one character encoding to another using a command line tool. Then finally, we will look at how to convert several files from any character set (charset) to UTF-8 encoding in Linux.
