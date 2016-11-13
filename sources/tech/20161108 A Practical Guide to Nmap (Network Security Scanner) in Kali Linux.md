@@ -1,3 +1,5 @@
+DockerChen翻译中
+
 # A Practical Guide to Nmap (Network Security Scanner) in Kali Linux
 
 In the second Kali Linux article, the network tool known as ‘[nmap][30]‘ will be discussed. While nmap isn’t a Kali only tool, it is one of the most [useful network mapping tools][29] in Kali.
