@@ -1,9 +1,11 @@
-ucasFL translating
 # How to Recover a Deleted File in Linux
+# 在 Linux 中如何还原一个删除了的文件
 
 Did this ever happen to you? You realized that you had mistakenly deleted a file – either through the Del key, or using `rm` in the command line.
+你曾经是否遇到这样的事？你意识到你已经通过删除键或者在命令行中使用 ‘rm’ 命令错误的删除了一个不该删除的文件。
 
 In the first case, you can always go to the Trash, [search for the file][6], and restore it to its original location. But what about the second case? As I am sure you probably know, the Linux command line does not send removed files anywhere – it REMOVES them. Bum. They’re gone.
+在第一种情况下，你可以到垃圾箱，[搜索文件][6]，然后把它重新存储到它原始的位置。但是第二种情况又该怎么办呢？我想你可能也知道，Linux 命令行不会把被删除的文件放到任何位置，而是直接把它们清除了，于是它们不再存在了。
 
 In this article we will share a tip that may be helpful to prevent this from happening to you, and a tool that you may consider using if at any point you are careless enough to do it anyway.
 
