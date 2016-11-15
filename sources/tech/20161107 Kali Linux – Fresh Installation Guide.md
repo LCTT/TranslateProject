@@ -1,3 +1,5 @@
+Translating by rusking
+
 # Kali Linux – Fresh Installation Guide
 
 Kali Linux is arguably one of the best out of the box [Linux distributions available for security testing][18]. While many of the tools in Kali can be installed in most Linux distributions, the Offensive Security team developing Kali has put countless hours into perfecting their ready to boot security distribution.
