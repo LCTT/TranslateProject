@@ -1,3 +1,5 @@
+translating--geekpi
+
 How to Compress and Decompress a .bz2 File in Linux
 ============================================================
 
@@ -115,3 +117,5 @@ via: http://www.tecmint.com/linux-compress-decompress-bz2-files-using-bzip2
 [5]:http://www.tecmint.com/wp-content/uploads/2016/11/Decompression-bzip2-File-in-Linux.png
 [6]:http://www.tecmint.com/18-tar-command-examples-in-linux/
 [7]:http://www.tecmint.com/compress-files-and-finding-files-in-linux/
+
+
