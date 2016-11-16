@@ -1,3 +1,4 @@
+yangmingming translating
 # aria2 (Command Line Downloader) command examples
 
 [aria2][4] is a Free, open source, lightweight multi-protocol & multi-source command-line download utility. It supports HTTP/HTTPS, FTP, SFTP, BitTorrent and Metalink. aria2 can be manipulated via built-in JSON-RPC and XML-RPC interfaces. aria2 automatically validates chunks of data while downloading a file. It can download a file from multiple sources/protocols and tries to utilize your maximum download bandwidth. By default all the Linux Distribution included aria2, so we can install easily from official repository. some of the GUI download manager using aria2 as a plugin to improve the download speed like [uget][3].

@@ -1,3 +1,5 @@
+ Vic020
+
 # How to design and add your own font on Linux with Glyphr
 
 LibreOffice already offers a galore of fonts, and users can always download and add more. However, if you want to create your own custom font, you can do it easily by using Glyphr. Glyphr is a new open source vector font designer with an intuitive and easy to use graphical interface and a rich set of features that will take care every aspect of the font design. Although the application is still in early development, it is already pretty good. Here’s a quick guide showing how to design your own custom fonts on Glyphr, and how to add them on LibreOffice once you’re done.
