@@ -1,9 +1,11 @@
+OneNewLife translating
+
 When to use NGINX instead of Apache
 =====
 
 >They're both popular open-source web servers but, according to NGINX CEO Gus Robertson, they have different use cases. And Microsoft? Its web server has dropped below 10 percent of all active websites for the first time in 20 years.
 
- ![web-server-popularity-october-2016.png](http://zdnet1.cbsistatic.com/hub/i/r/2016/11/07/f38d190e-046c-49e6-b451-096ee0776a04/resize/770xauto/b009f53417e9a4af207eff6271b90c43/web-server-popularity-october-2016.png) 
+ ![web-server-popularity-october-2016.png](http://zdnet1.cbsistatic.com/hub/i/r/2016/11/07/f38d190e-046c-49e6-b451-096ee0776a04/resize/770xauto/b009f53417e9a4af207eff6271b90c43/web-server-popularity-october-2016.png)
 
 Apache is the top web server, but NGINX continues to gain and Microsoft IIS falls below 10 percent for the first time in decades.
 
