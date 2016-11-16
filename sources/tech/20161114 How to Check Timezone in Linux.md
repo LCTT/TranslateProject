@@ -1,3 +1,5 @@
+Translating by StdioA
+
 How to Check Timezone in Linux
 ============================================================
 
