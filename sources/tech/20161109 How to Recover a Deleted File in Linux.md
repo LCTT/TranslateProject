@@ -7,17 +7,23 @@ Did this ever happen to you? You realized that you had mistakenly deleted a file
 In the first case, you can always go to the Trash, [search for the file][6], and restore it to its original location. But what about the second case? As I am sure you probably know, the Linux command line does not send removed files anywhere – it REMOVES them. Bum. They’re gone.
 在第一种情况下，你可以到垃圾箱，[搜索文件][6]，然后把它重新存储到它原始的位置。但是第二种情况又该怎么办呢？我想你可能也知道，Linux 命令行不会把被删除的文件放到任何位置，而是直接把它们清除了，于是它们不再存在了。
 
-In this article we will share a tip that may be helpful to prevent this from happening to you, and a tool that you may consider using if at any point you are careless enough to do it anyway.
+In this article we will share a tip that may be helpful to prevent this from happening to you, and a tool that you may consider using if at any point you are careless enough to do it anyway.、
+在这篇文章里，我将分享一个可能很有帮助的技巧来阻止这件事发生在你身上。同时，我也会分享一个你可能会考虑使用的工具，当你由于过分粗心而删除了某些不该删除的文件时。
 
 ### Create an alias to ‘rm -i’
+### 为 ’rm -i‘ 创建一个别名
 
 The `-i` switch, when used with rm (and also other [file-manipulation tools such as cp or mv][5]) causes a prompt to appear before removing a file.
+当 ‘-i' 选项和 rm 命令（也包括其他[文件处理命令比如 cp 或者 mv][5]）同时使用时，在删除文件前会出现一个提示。
 
 The same applies to [copying, moving, or renaming a file][4] in a location where one with the same name exists already.
+这同样也可以运用到[复制，移动或重命名一个文件][4]，当所在位置已经存在一个和目标文件同名的文件时。
 
 This prompt gives you a second chance to consider if you actually want to remove the file – if you confirm the prompt, it will be gone. In that case, I’m sorry but this tip will not protect you from your own carelessness.
+这个提示给你第二次机会来考虑你是否真的想删除该文件 - 如果你在这个提示上选择确定，那么文件就被删除了。在那种情况下，很抱歉，这个技巧没能保护你远离粗心。
 
 To replace rm with an alias to `'rm -i'`, do:
+为了让 rm 成为 ‘rm -i’ 别名，这样做：
 
 ```
 alias rm='rm -i'
@@ -25,9 +31,10 @@ alias rm='rm -i'
 ```
 
 The alias command will confirm that rm is now aliased:
+别名命令将确定 rm 现在已经成为了别名：
 
 [
- ![Add Alias rm Command](http://www.tecmint.com/wp-content/uploads/2016/11/Add-Alias-rm-Command.png) 
+ ![增加 rm 别名的命令](http://www.tecmint.com/wp-content/uploads/2016/11/Add-Alias-rm-Command.png) 
 ][3]
 
 Add Alias rm Command
