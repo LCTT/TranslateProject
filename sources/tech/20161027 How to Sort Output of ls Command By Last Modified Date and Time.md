@@ -1,3 +1,4 @@
+翻译中 by zky001
 How to Sort Output of ‘ls’ Command By Last Modified Date and Time
 ============================================================
 
@@ -88,7 +89,7 @@ We will end here for now, however, there is more usage information and options i
 via: http://www.tecmint.com/sort-ls-output-by-last-modified-date-and-time
 
 作者：[Aaron Kili][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zky001](https://github.com/zky001)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
