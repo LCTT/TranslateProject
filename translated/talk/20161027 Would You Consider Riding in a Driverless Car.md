@@ -34,7 +34,7 @@ via: https://www.maketecheasier.com/riding-driverless-car/?utm_medium=feed&utm_s
 
 作者：[Laura Tucker][a]
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[willcoderwang](https://github.com/willcoderwang)
 
 校对：[校对者ID](https://github.com/校对者ID)
 
