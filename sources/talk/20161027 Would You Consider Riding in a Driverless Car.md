@@ -1,35 +1,32 @@
-willcoderwang translating
+# 你会考虑乘坐无人驾驶汽车吗？
 
-# Would You Consider Riding in a Driverless Car?
+![](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2016/10/Writers-Opinion-Driverless-Car-Featured.jpg "你会考虑乘坐无人驾驶汽车吗？")
 
-![](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2016/10/Writers-Opinion-Driverless-Car-Featured.jpg "Would You Consider Riding in a Driverless Car?s")
+技术经历了重大运动。最近我们遇到的是如苹果手表及克隆，FitBits， 谷歌眼镜等可穿戴设备。看起来下一个就是人们研究了很长时间的无人驾驶汽车了。
 
-Technology goes through major movements. The last one we entered into was the wearables phase with the Apple Watch and clones, FitBits, and Google Glass. It seems like the next phase they’ve been working on for quite a while is the driverless car.
+这些汽车，有时叫做自动汽车，自动驾驶汽车，或机器人汽车，确实可以依靠技术自己驾驶。它们能探测周边环境，如障碍物和标志，并使用 GPS 找到自己的路线。但是它们驾驶起来安全吗？我们请教我们的技术编辑，“你会考虑乘坐无人驾驶汽车吗？
 
+### 我们的观点
 
-These cars, sometimes called autonomous cars, self-driving cars, or robotic cars, would literally drive themselves thanks to technology. They detect their surroundings, such as obstacles and signs, and use GPS to find their way. But would they be safe to drive in? We asked our technology-minded writers, “Would you consider riding in a driverless car?
+**Derrik** 说他会乘坐无人驾驶汽车，因为 “_技术就在那里，而且很多聪明的人研究了很长时间。_” 他承认它们还是有些问题，但他相信很多事故的发生是因为人的参与。但是如果不考虑人，他认为乘坐无人驾驶汽车“_难以置信地安全_。”
 
-### Our Opinion
+对 **Phil**来说，这些汽车让他“发毛”，但他也承认这是他想象出的，因为他从没乘坐过。他同意 Derrik 这些技术是高度发达的观点，也知道它的原理，但仍然认为“_ 做为勒德主义者，很难接受_” 他甚至坦白说很少使用巡航定速。他认为依赖它太多的司机会让他感到不安全。
 
-**Derrik** reports that he would ride in a driver-less car because “_the technology is there and a lot of smart people have been working on it for a long time._” He admits there are issues with them, but for the most part he believes a lot of the accidents happen when a human does get involved. But if you take humans out of the equation, he thinks riding in a driverless car “_would be incredibly safe_.”
+![writers-opinion-driverless-car](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2016/10/Writers-Opinion-Driverless-Car.jpg "编辑对无人驾驶汽车的观点")
 
-For **Phil**, these cars give him “the willies,” yet he admits that’s only in the abstract as he’s never ridden in one. He agrees with Derrik that the tech is well developed and knows how it works, but then sees himself as “a_ tough sell being a bit of a luddite at heart._” He admits to even rarely using cruise control. Yet he agrees that a driver relying on it too much would be what would make him feel unsafe.
+**Robert** 认为“_这个概念确实有点怪，_”但原则上他看不到汽车不向那个方向发展的理由。 他指出飞机已经走了那条路，而且变得更加安全， 他认为事故发生的主因是“_人们过于依赖科技，而当科技出现故障时不知所措而产生的错误。_”
 
-![writers-opinion-driverless-car](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2016/10/Writers-Opinion-Driverless-Car.jpg "writers-opinion-driverless-car")
+他是一个“焦虑乘客”， 更喜欢控制整个局面， 即对他来说就是他的车子在向哪里开。如果是以低速在城市中驾驶他感觉还好，但如果是在“宽不够两辆车交叉通过的绕来绕去的英国乡村道路”上，则决不可以。他和 Phil 都认为英国道路与美国不同。他建议让别人去做小白鼠， 等到确定安全了再乘坐。 
 
-**Robert** agrees that “_the concept is a little freaky,_” but in principle he doesn’t see why cars shouldn’t go in that direction. He notes that planes have gone that route and become much safer, and he believes the accidents we see are mainly “_caused by human error due to over-relying on the technology then not knowing what to do when it fails._”
+对 **Mahesh**来说， 他绝对会乘坐无人驾驶汽车，因为他知道这些汽车公司“ 拥有安全技术，决不会让他们的顾客去冒险。 ” 他承认安全与否还与车辆行驶的道路有关。
 
-He’s a bit of an “anxious passenger” as it is, preferring to have control over the situation, so for him much of it would have to do with where he car is being driven. He’d be okay with it if it was driving in the city at slow speeds but definitely not on “motorways of weaving English country roads with barely enough room for two cars to drive past each other.” He and Phil both see English roads as much different than American ones. He suggests letting others be the guinea pigs and joining in after it’s known to be safe.
+我的观点有些像这些观点的折中。虽然平时我会投入到新科技中，但要拿生命去冒险，我不会那么做。我承认这些汽车发展了很久，所以很安全。而且诚恳地说，路上有很多司机比无人驾驶汽车还要危险很多。但像 Robert 一样，我想我会让其他人去做小白鼠，等到它更普遍了再去乘坐。
 
-For **Mahesh**, he would definitely ride in a driverless car, as he knows that the companies with these cars “_have robust technology and would never put their customers at risk._” He agrees that it depends on the roads that the cars are being driven on.
+### 你的观点
 
-My opinion kind of floats in the middle of all the others. While I’m normally one to jump readily into new technology, putting my life at risk makes it different. I agree that the cars have been in development so long they’re bound to be safe. And frankly there are many drivers on the road that are much more dangerous than driverless cars. But like Robert, I think I’ll let others be the guinea pigs and will welcome the technology once it becomes a bit more commonplace.
+在这个问题上，你的观点是什么呢？ 你会信任新生的科学技术？ 还是乘坐无人驾驶汽车时会紧张到不行？ 你会考虑乘坐无人驾驶汽车吗？ 在下面的评论里加入讨论吧。
 
-### Your Opinion
-
-Where do you sit with this issue? Do you trust this emerging technology? Or would you be a nervous nelly in one of these cars? Would you consider driving in a driverless car? Jump into the discussion below in the comments.
-
-<small style="box-sizing: inherit; font-size: 16px;">Image Credit: [Steve Jurvetson][4] and [Steve Jurvetson at Wikimedia Commons][3]</small>
+<small style="box-sizing: inherit; font-size: 16px;">图片来自: [Steve Jurvetson][4] 和 [Steve Jurvetson at Wikimedia Commons][3]</small>
 
 --------------------------------------------------------------------------------
 
