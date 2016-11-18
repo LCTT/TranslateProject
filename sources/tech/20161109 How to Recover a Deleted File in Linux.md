@@ -106,17 +106,22 @@ To recover it, use foremost as follows (you’ll need to identify the underlying
 ```
 
 where /home/gacanepa/rescued is a directory on a separate disk – keep in mind that recovering files on the same drive where the removed ones were located is not a wise move.
-/home/gacanepa/rescued 是单独磁盘中的一个目录－记住恢复的文件位于和删除的文件相同的驱动中
+/home/gacanepa/rescued 是单独磁盘中的一个目录 － 请记住把文件恢复到被删除文件所位于的驱动中不是一个明智的做法。
 
 If, during the recovery, you occupy the same disk sectors where the removed files used to be, it may not be possible to recover anything. Additionally, it is essential to stop all your activities before performing the recovery.
+如果在恢复过程中，占用了被删除文件过去所位于的磁盘分区，那么可能没法恢复文件。另外，在进行文件恢复操作前停止所有进程也是至关重要的。
 
 After foremost has finished executing, the recovered file (if recovery was possible) will be found inside the /home/gacanepa/rescued/jpg directory.
+当 Foremost 执行文件恢复操作完成以后，恢复文件（如果可以恢复）将能够在目录 /home/gacanepa/rescue/jpg 中找到。
 
 ##### Summary
+##### 总结
 
 In this article we have explained how to avoid removing a file accidentally and how to attempt to recover it if such an undesired event happens. Be warned, however, that foremost can take quite a while to run depending on the size of the partition.
+这篇在文章中，我们阐述了如何避免意外删除一个不该删除的文件以及如何恢复文件如果这样一件不期望的事情发生。然而，警告一下， Foremost 需要花费一段时间运行，长短取决于分区的大小。
 
 As always, don’t hesitate to let us know if you have questions or comments. Feel free to drop us a note using the form below.
+一如既往，如果你有什么问题或想法，不要犹豫，让我们知道。请自由使用下面的形式给我们留下一个注记。
 
 --------------------------------------------------------------------------------
 
@@ -124,7 +129,7 @@ via: http://www.tecmint.com/recover-deleted-file-in-linux/
 
 作者：[ Gabriel Cánepa][a]
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[ucasFL](https://github.com/ucasFL)
 
 校对：[校对者ID](https://github.com/校对者ID)
 
