@@ -1,3 +1,4 @@
+ｕｃａｓFL translating
 [XFCE GETS A `DO NOT DISTURB` MODE AND PER APPLICATION NOTIFICATION SETTINGS][7]
 ============================================================
 
