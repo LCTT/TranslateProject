@@ -1,4 +1,4 @@
-通过安装扩展让 KDE Plasma 5　桌面看起来感觉就像 Windows 10 桌面
+通过安装扩展让 KDE Plasma 5 桌面看起来感觉就像 Windows 10 桌面
 ============================================================
 
  ![kde-plasma-to-windows-10](https://iwf1.com/wordpress/wp-content/uploads/2016/11/KDE-Plasma-to-Windows-10.jpg) 
