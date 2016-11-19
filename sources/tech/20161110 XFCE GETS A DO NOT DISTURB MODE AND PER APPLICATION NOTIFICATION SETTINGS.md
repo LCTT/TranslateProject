@@ -1,5 +1,5 @@
-ｕｃａｓFL translating
 [XFCE GETS A `DO NOT DISTURB` MODE AND PER APPLICATION NOTIFICATION SETTINGS][7]
+[XFCE 桌面新增 '免打扰‘模式以及单一应用提醒设置的新特性][7]
 ============================================================
 
 The Xfce developers are busy [porting][3] Xfce applications and components to GTK3, and in the process, they are also adding new features.
