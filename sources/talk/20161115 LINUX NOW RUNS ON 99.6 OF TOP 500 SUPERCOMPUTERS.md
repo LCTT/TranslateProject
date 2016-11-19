@@ -1,6 +1,6 @@
 LINUX NOW RUNS ON 99.6% OF TOP 500 SUPERCOMPUTERS
 ============================================================
-
+ypingcn 翻译中
 [
  ![Linux rules the world of supercomputers](https://itsfoss.com/wp-content/uploads/2016/11/Linux-King-Supercomputer-world-min.jpg) 
 ][12]
