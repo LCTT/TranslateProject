@@ -1,10 +1,4 @@
-<<<<<<< HEAD:published/20161115-How-to-Check-Which-Apache-Modules-are-Enabled-Loaded in Linux.md
 如何使用 Apache 控制命令检查它的模块是否已经启用或加载
-=======
-How to Check Which Apache Modules are Enabled/Loaded in Linux
-=======
-如何在Linux中检查Apache的模块已经加载
->>>>>>> origin/master:translated/tech/20161115-How-to-Check-Which-Apache-Modules-are-Enabled-Loaded in Linux.md
 ============================================================
 
 本篇中，我们会简要地讨论 Apache 服务器前端以及如何列出或查看已经启用的 Apache 模块。
