@@ -1,27 +1,26 @@
-如何在Linux中检查Apache的模块已经加载
+如何使用 Apache 控制命令检查它的模块是否已经启用或加载
 ============================================================
 
-本篇中，我们会简要地讨论Apache服务器前端以及如何列出已经启用的Apache模块。
+本篇中，我们会简要地讨论 Apache 服务器前端以及如何列出或查看已经启用的 Apache 模块。
 
-Apache基于模块构成，因此它可以让web管理员可以添加不同的模块来扩展主要的功能及[增强性能][5]。
+Apache 基于模块化的理念而构建，这样就可以让 web 管理员添加不同的模块来扩展主要的功能及[增强性能][5]。
 
-常见的Apache模块有：
+常见的 Apache 模块有：
 
-1. mod_ssl – 提供了[HTTPS功能][1]。
-2. mod_rewrite – 可以用正则表达式匹配url样式，并且使用[.htaccess技巧][2]来进行透明转发，或者用于HTTP状态码回应。
-3. mod_security – 用于[保护Apache免于暴力破解或者DDoS攻击][3]。
-4. mod_status - 用于[监测Apache的负载及页面统计][4]。
+1. mod_ssl – 提供了 [HTTPS 功能][1]。
+2. mod_rewrite – 可以用正则表达式匹配 url 样式，并且使用 [.htaccess 技巧][2]来进行透明转发，或者提供 HTTP 状态码回应。
+3. mod_security – 用于[保护 Apache 免于暴力破解或者 DDoS 攻击][3]。
+4. mod_status - 用于[监测 Apache 的负载及页面统计][4]。
 
-在Linux中apachectl或者apache2ctl用于控制Apache服务器，是Apache的前端。
+在 Linux 中 `apachectl` 或者 `apache2ctl`用于控制 Apache 服务器，是 Apache 的前端。
 
-你可以用下面的命令显示apache2ctl的使用信息：
+你可以用下面的命令显示 `apache2ctl` 的使用信息：
 
 ```
 $ apache2ctl help
 或者
 $ apachectl help
 ```
-apachectl help
 ```
 Usage: /usr/sbin/httpd [-D name] [-d directory] [-f file]
                        [-C "directive"] [-c "directive"]
@@ -46,8 +45,7 @@ Options:
   -M                 : a synonym for -t -D DUMP_MODULES
   -t                 : run syntax check for config files
 ```
-
-apache2ctl可以工作在两种模式下，SysV init模式和直通模式。在SysV init模式下，apache2ctl用下面的命令形式：
+`apache2ctl` 可以工作在两种模式下，SysV init 模式和直通模式。在 SysV init 模式下，`apache2ctl` 用如下的简单的单命令形式：
 
 ```
 $ apachectl command
@@ -55,13 +53,12 @@ $ apachectl command
 $ apache2ctl command
 ```
 
-比如要启动并检查它的状态，以防你是普通用户，使用[sudo命令][6]来以root用户权限来运行这两个命令：
+比如要启动并检查它的状态，运行这两个命令。如果你是普通用户，使用 [sudo 命令][6]来以 root 用户权限来运行：
 
 ```
 $ sudo apache2ctl start
 $ sudo apache2ctl status
 ```
-检查Apache状态
 ```
 tecmint@TecMint ~ $ sudo apache2ctl start
 AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1\. Set the 'ServerName' directive globally to suppress this message
@@ -97,39 +94,39 @@ Scoreboard Key:
 "I" Idle cleanup of worker, "." Open slot with no current process
 ```
 
-当在直通模式下，apache2ctl可以用下面的语法带上所有Apache的参数：
+当在直通模式下，`apache2ctl` 可以用下面的语法带上所有 Apache 的参数：
 
 ```
 $ apachectl [apache-argument]
 $ apache2ctl [apache-argument]
 ```
 
-可以用下面的命令列出所有的Apache参数：
+可以用下面的命令列出所有的 Apache 参数：
 
 ```
 $ apache2 help    [在基于Debian的系统中]
 $ httpd help      [在RHEL的系统中]
 ```
 
-#### 检查启用的Apache模块
+### 检查启用的 Apache 模块
 
-因此，为了检测你的Apache服务器启动了哪些模块，在你的发行版中运行适当的命令，`-t -D DUMP_MODULES`是一个Apache参数用于显示所有启用的模块：
+因此，为了检测你的 Apache 服务器启动了哪些模块，在你的发行版中运行适当的命令，`-t -D DUMP_MODULES` 是一个用于显示所有启用的模块的 Apache 参数：
 
 ```
----------------  在基于Debian的系统中 --------------- 
+---------------  在基于 Debian 的系统中 --------------- 
 $ apache2ctl -t -D DUMP_MODULES   
 或者 
 $ apache2ctl -M
 ```
 
 ```
----------------  在RHEL的系统中 --------------- 
+---------------  在 RHEL 的系统中 --------------- 
 $ apachectl -t -D DUMP_MODULES   
 或者 
 $ httpd -M
 $ apache2ctl -M
 ```
-List Apache Enabled Loaded Modules
+
 ```
 [root@tecmint httpd]# apachectl -M
 Loaded Modules:
@@ -156,7 +153,7 @@ Loaded Modules:
 ....
 ```
 
-就是这样！在这篇简单的教程中，我们解释了如何使用Apache前端工具来列出启动的apache模块。记住你可以在下面的反馈表中给我们留下你的问题或者留言。
+就是这样！在这篇简单的教程中，我们解释了如何使用 Apache 前端工具来列出启动的 apache 模块。记住你可以在下面的反馈表中给我们留下你的问题或者留言。
 
 --------------------------------------------------------------------------------
 
@@ -164,7 +161,7 @@ via: http://www.tecmint.com/check-apache-modules-enabled
 
 作者：[Aaron Kili][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
