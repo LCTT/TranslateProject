@@ -36,7 +36,7 @@ via: https://www.maketecheasier.com/riding-driverless-car/?utm_medium=feed&utm_s
 
 译者：[willcoderwang](https://github.com/willcoderwang)
 
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
