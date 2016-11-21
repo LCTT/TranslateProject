@@ -2,24 +2,24 @@
 =====================
 
 
-In the previous six articles in this series we learned how to manage version control on text files with Git. But what about binary files? Git has extensions for handling binary blobs such as multimedia files, so today we will learn how to manage binary assets with Git.
+通过这系列的前六篇文章，我们已经学会使用 Git 来对文本文件进行版本控制的管理。不禁要问，还有二进制文件呢，也可进行进行版本控制吗？答案是肯定的，Git 已经有了扩展可以处理像多媒体文件这样的二进制大对象块。因此，今天我们会学习使用 Git 来管理所谓的二进制资产。
 
-One thing everyone seems to agree on is Git is not great for big binary blobs. Keep in mind that a binary blob is different from a large text file; you can use Git on large text files without a problem, but Git can't do much with an impervious binary file except treat it as one big solid black box and commit it as-is.
+似乎大家都认可的事就是 Git 对于大的二进制对象文件支持得不好。要记住，二进制大对象与大文本文件是不同的。虽然 Git 对大型的文本文件版本控制毫无问题，但是对于不透明的二进制文件起不了多大作用，只能把它当作一个大的实体黑盒来提交。
 
-Say you have a complex 3D model for the exciting new first person puzzle game you're making, and you save it in a binary format, resulting in a 1 gigabyte file. Yougit commit it once, adding a gigabyte to your repository's history. Later, you give the model a different hair style and commit your update; Git can't tell the hair apart from the head or the rest of the model, so you've just committed another gigabyte. Then you change the model's eye color and commit that small change: another gigabyte. That is three gigabytes for one model with a few minor changes made on a whim. Scale that across all the assets in a game, and you have a serious problem.
+设想这样的场景，有一个另人兴奋的第一人称解密游戏，您正在为它制作复杂的 3D 建模，源文件是以二进制格式保存的，最后生成一个 1G 大小的的文件。您提交过一次，在 Git 源仓库历史中有一个 1G 大小的新增提交。随后，您修改了下模型人物的头发造型，然后提交更新，因为 Git 并不能把头发和头部及模型中其余的部分离开来，所以您仅仅只能又提交 1G 的量。接着，您改变了模型的眼睛颜色，提交这部分更新：又是 G 字节的提交量。对一个模型的一些微小修改，就会导致三个 G 字节的量提交。对于想对一个游戏所有资源进行版本控制这样的级别，这是个严重的问题。
 
-Contrast that to a text file like the .obj format. One commit stores everything, just as with the other model, but an .obj file is a series of lines of plain text describing the vertices of a model. If you modify the model and save it back out to .obj, Git can read the two files line by line, create a diff of the changes, and process a fairly small commit. The more refined the model becomes, the smaller the commits get, and it's a standard Git use case. It is a big file, but it uses a kind of overlay or sparse storage method to build a complete picture of the current state of your data.
+对比如 .obj 这种格式的文本文件，和其它模块文件一样，都是一个提交就存储所有更新修改状态，不同的是 .obj 文件是一系列描述模型生成目标的纯文本行。如果您修改了模型并保存出成为 .obj 文件，Git 可以逐行读取这两个文件，然后创建一个差异版本，得到一个相当小的提交。模块越精致，提交就越小，这就是精典的 Git 用例。虽然文件本身很大，但 Git 使用覆盖或稀疏存储的方法来构建当前数据使用状态的完整图案。
 
-However, not everything works in plain text, and these days everyone wants to work with Git. A solution was required, and several have surfaced.
+然而，不是所有的都是纯文本的，但都要使用 Git。所以需要解决方案，其实有几个已经浮现了。
 
-[OSTree](https://ostree.readthedocs.io/en/latest/) began as a GNOME project and is intended to manage operating system binaries. It doesn't apply here, so I'll skip it.
+[OSTree](https://ostree.readthedocs.io/en/latest/) 是GNOME 项目用的，旨在管理操作系统的二进制文件。它不适用于这里，所以我直接跳过。
 
-[Git Large File Storage](https://git-lfs.github.com/) (LFS) is an open source project from GitHub that began life as a fork of git-media. [git-media](https://github.com/alebedev/git-media) and [git-annex](https://git-annex.branchable.com/walkthrough/) are extensions to Git meant to manage large files. They are two different approaches to the same problem, and they each have advantages. These aren't official statements from the projects themselves, but in my experience, the unique aspects of each are:
+[Git 大文件存储](https://git-lfs.github.com/)(LFS) 是在 GitHub 上的一个开源项目，是从 git-media 项目中分支出来的。[git-media](https://github.com/alebedev/git-media) 和 [git-annex](https://git-annex.branchable.com/walkthrough/) 是 Git 对于管理大文件的扩展。它们是对同一问题的两种不同的解决方案，各有优点。虽然它们都不是官方的项目，但在我看来，都是独一无二的，体现在：
 
-*   git-media is a centralised model, a repository for common assets. You tellgit-media where your large files are stored, whether that is a hard drive, a server, or a cloud storage service, and each user on your project treats that location as the central master location for large assets.
-*   git-annex favors a distributed model; you and your users create repositories, and each repository gets a local .git/annex directory where big files are stored. The annexes are synchronized regularly so that all assets are available to all users as needed. Unless configured otherwise with annex-cost, git-annex prefers local storage before off-site storage.
+*  git-media 是一个集中模式，有一个公共资源的存储库。您可以告诉告诉 git-media 大文件需要存储的位置，是在硬盘驱动器、服务器还是在云存储服务器，项目中的每个用户都将该位置视为大型资产的中心主位置。
+*   git-annex 更侧重于分布模式。用户各自创建存储库，每个存储库都有一个存储大文件的本地目录 .git/annex。annexes 会定期同步，只要有需要，每个用户都可以访问到所有的资源。除非是特别配置，否则 git-annex 优先使用本地存储，再使用外部存储。
 
-Of these options, I've used git-media and git-annex in production, so I'll give you an overview of how they each work.
+基于这些选项，我已经在生产中使用了 git-media 和 git-annex，那么下面会向你们概述其工作原理。	
 
 ```
 git-media
