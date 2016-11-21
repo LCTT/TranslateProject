@@ -21,13 +21,13 @@ alias rm='rm -i'
 
 ```
 
-别名命令将确定 rm 现在已经成为了别名：
+** alias ** 命令将确定 **rm** 现在已经成为了别名：
 
 [
  ![增加 rm 别名的命令](http://www.tecmint.com/wp-content/uploads/2016/11/Add-Alias-rm-Command.png) 
 ][3]
 
-增加 rm 别名的命令
+*增加 rm 别名的命令*
 
 然而，这只能在当前用户的当前 shell 上有效。为了永久改变，你必须像下面展示的这样把它保存到　'~/.bashrc'　中（一些版本的　Linux 系统可能是　'~/.profile'）。
 
@@ -35,7 +35,7 @@ alias rm='rm -i'
  ![在 Linux 中永久增添别名](http://www.tecmint.com/wp-content/uploads/2016/11/Add-Alias-Permanently-in-Linux.png) 
 ][2]
 
-在 Linux 中永久增添别名
+*在 Linux 中永久增添别名*
 
 为了让 '~/.bashrc'（或 '~/.profile'）中所做的改变立即生效，从当前 shell 中运行文件：
 
@@ -47,7 +47,7 @@ alias rm='rm -i'
  ![在 Linux 中激活别名](http://www.tecmint.com/wp-content/uploads/2016/11/Active-Alias-in-Linux.png) 
 ][1]
 
-在 Linux 中激活别名
+*在 Linux 中激活别名*
 
 ### 取证工具　－　Foremost
 
