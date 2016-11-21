@@ -1,12 +1,13 @@
-# 如何在 Linux 中将文件编码转换为 UTF-8
+如何在 Linux 中将文件编码转换为 UTF-8
+===============
 
 在这篇教程中，我们将解释字符编码的含义，然后给出一些使用命令行工具将使用某种字符编码的文件转化为另一种编码的例子。最后，我们将一起看一看如何在 Linux 下将使用各种字符编码的文件转化为 UTF-8 编码。
 
-你可能已经知道，计算机是不会理解和存储字符、数字或者任何人类能够理解的东西的，除了二进制数据。一个二进制位只有两种可能的值，也就是 `0` 或 `1`，`真`或`假`，`对`或`错`。其它的任何事物，比如字符、数据和图片，必须要以二进制的形式来表现，以供计算机处理。
+你可能已经知道，计算机除了二进制数据，是不会理解和存储字符、数字或者任何人类能够理解的东西的。一个二进制位只有两种可能的值，也就是 `0` 或 `1`，`真`或`假`，`是`或`否`。其它的任何事物，比如字符、数据和图片，必须要以二进制的形式来表现，以供计算机处理。
 
-简单来说，字符编码是一种可以指示电脑来将原始的 0 和 1 解释成实际字符的方式，在这些字符编码中，字符都可以用数字串来表示。
+简单来说，字符编码是一种可以指示电脑来将原始的 0 和 1 解释成实际字符的方式，在这些字符编码中，字符都以一串数字来表示。
 
-字符编码方案有很多种，比如 ASCII, ANCI, Unicode 等等。下面是 ASCII 编码的一个例子。
+字符编码方案有很多种，比如 ASCII、ANCI、Unicode 等等。下面是 ASCII 编码的一个例子。
 
 ```
 字符            二进制
@@ -22,11 +23,9 @@ B               01000010
 $ file -i Car.java
 $ file -i CarDriver.java
 ```
-[
- ![在 Linux 中查看文件的编码](http://www.tecmint.com/wp-content/uploads/2016/10/Check-File-Encoding-in-Linux.png) 
-][3]
+![在 Linux 中查看文件的编码](http://www.tecmint.com/wp-content/uploads/2016/10/Check-File-Encoding-in-Linux.png) 
 
-在 Linux 中查看文件的编码
+*在 Linux 中查看文件的编码*
 
 iconv 工具的使用方法如下：
 
@@ -34,25 +33,21 @@ iconv 工具的使用方法如下：
 $ iconv option
 $ iconv options -f from-encoding -t to-encoding inputfile(s) -o outputfile 
 ```
-
-在这里，`-f` 或 `--from-code` 标明了输入编码，而 `-t` 或 `--to-encoding` 指定了输出编码。
+在这里，`-f` 或 `--from-code` 表明了输入编码，而 `-t` 或 `--to-encoding` 指定了输出编码。
 
 为了列出所有已有编码的字符集，你可以使用以下命令：
 
 ```
 $ iconv -l 
 ```
-[
- ![列出所有已有编码字符集](http://www.tecmint.com/wp-content/uploads/2016/10/List-Coded-Charsets-in-Linux.png) 
-][2]
+![列出所有已有编码字符集](http://www.tecmint.com/wp-content/uploads/2016/10/List-Coded-Charsets-in-Linux.png) 
 
-列出所有已有编码字符集
+*列出所有已有编码字符集*
 
 ### 将文件从 ISO-8859-1 编码转换为 UTF-8 编码
 
 下面，我们将学习如何将一种编码方案转换为另一种编码方案。下面的命令将会将 ISO-8859-1 编码转换为 UTF-8 编码。
 
-Consider a file named `input.file` which contains the characters:
 考虑如下文件 `input.file`，其中包含这几个字符：
 
 ```
@@ -70,17 +65,15 @@ $ iconv -f ISO-8859-1 -t UTF-8//TRANSLIT input.file -o out.file
 $ cat out.file 
 $ file -i out.file 
 ```
-[
- ![在 Linux 中将 ISO-8859-1 转化为 UTF-8](http://www.tecmint.com/wp-content/uploads/2016/10/Converts-UTF8-to-ASCII-in-Linux.png) 
-][1]
+![在 Linux 中将 ISO-8859-1 转化为 UTF-8](http://www.tecmint.com/wp-content/uploads/2016/10/Converts-UTF8-to-ASCII-in-Linux.png) 
 
-在 Linux 中将 ISO-8859-1 转化为 UTF-8
+*在 Linux 中将 ISO-8859-1 转化为 UTF-8*
 
 注意：如果输出编码后面添加了 `//IGNORE` 字符串，那些不能被转换的字符将不会被转换，并且在转换后，程序会显示一条错误信息。
 
-好，如果字符串 `//TRANSLIT` 被添加到了上面例子中的输出编码之后 (UTF-8//TRANSLIT)，待转换的字符会尽量采用形译原则。也就是说，如果某个字符在输出编码方案中不能被表示的话，它将会被替换为一个形状比较相似的字符。
+好，如果字符串 `//TRANSLIT` 被添加到了上面例子中的输出编码之后 (`UTF-8//TRANSLIT`)，待转换的字符会尽量采用形译原则。也就是说，如果某个字符在输出编码方案中不能被表示的话，它将会被替换为一个形状比较相似的字符。
 
-而且，如果一个字符不在输出编码中，而且不能被形译，它将会在输出文件中被一个问号标记 `(?)` 代替。
+而且，如果一个字符不在输出编码中，而且不能被形译，它将会在输出文件中被一个问号标记 `?` 代替。
 
 ### 将多个文件转换为 UTF-8 编码
 
@@ -88,13 +81,13 @@ $ file -i out.file
 
 ```
 #!/bin/bash
-# 将 values_here 替换为输入编码
+### 将 values_here 替换为输入编码
 FROM_ENCODING="value_here"
-# 输出编码 (UTF-8)
+### 输出编码 (UTF-8)
 TO_ENCODING="UTF-8"
-# 转换命令
+### 转换命令
 CONVERT=" iconv  -f   $FROM_ENCODING  -t   $TO_ENCODING"
-# 使用循环转换多个文件
+### 使用循环转换多个文件
 for  file  in  *.txt; do
 $CONVERT   "$file"   -o  "${file%.txt}.utf8.converted"
 done
@@ -122,13 +115,11 @@ $ man iconv
 
 --------------------------------------------------------------------------------
 
-via: http://www.tecmint.com/convert-files-to-utf-8-encoding-in-linux/#
+via: http://www.tecmint.com/convert-files-to-utf-8-encoding-in-linux/
 
 作者：[Aaron Kili][a]
-
 译者：[StdioA](https://github.com/StdioA)
-
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
