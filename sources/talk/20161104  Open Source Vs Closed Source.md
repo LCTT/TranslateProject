@@ -1,3 +1,5 @@
+Martin translating
+
 [
  ![open source vs closed source](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/open-source-vs-closed-source_orig.jpg) 
 ][2]There are many differences between **open source operating system** and **closed source operating system**. Here we have written few of them.
