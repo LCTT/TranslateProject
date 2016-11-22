@@ -1,4 +1,4 @@
-谁需要 GUI？——L[inux 终端生存之道
+谁需要 GUI？——Linux 终端生存之道
 =================================================
 
 ![](http://core0.staticworld.net/images/article/2016/07/linux-terminal-1-100669790-orig.jpg)
@@ -85,7 +85,7 @@ via: http://www.networkworld.com/article/3091139/linux/who-needs-a-gui-how-to-li
 
 作者：[Bryan Lunduke][a]
 译者：[GHLandy](https://github.com/GHLandy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
