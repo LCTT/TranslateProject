@@ -5,19 +5,19 @@
  ![Linux rules the world of supercomputers](https://itsfoss.com/wp-content/uploads/2016/11/Linux-King-Supercomputer-world-min.jpg) 
 ][12]
 
-_简介：虽然Linux在桌面操作系统只有2%的市场占有率，但是对于超级计算机来说，Linux用99%的市场占有率轻松地获取了统治地位_
+_简介：虽然Linux在桌面操作系统只有2%的市场占有率，但是对于超级计算机来说，Linux用99%的市场占有率轻松地获取了统治地位。_
 
-Linux运行在超过99%的TOP500超级计算机上，这并不会让人感到惊讶。如果你关注了我们之前2015年的报道[《Linux正运行在超过97%的TOP500超级计算机》][13]，今年Linux表现得更好。
+**Linux运行在超过99%的TOP500超级计算机上**，这并不会让人感到惊讶。2015年我们报道过[《Linux正运行在超过97%的TOP500超级计算机上》][13]，今年Linux表现得更好。
 
-[#Linux now runs on more than 99% of top 500 #supercomputers in the world][4]
+[#现在Linux运行在99.6%的TOP500超级计算机上][4]
 
-[CLICK TO TWEET][5]
+[点击到twitter][5]
 
 这些信息是由独立组织[Top500][4]收集的，每两年他们会公布已知的最快的500台超级计算机的细节。你可以[打开这个网站，用以下条件筛选所需要的信息][15]：国家、使用的操作系统类型、所有者等。别担心，我将会从这份表格中筛选整理出今年几个有趣的事实。
 
 ### Linux运行在500台超级计算机中的498台
 
-如果要将上面的百分比细化到具体数量的话，500台超级计算机中的498台运行着Linux。剩余的两台超级计算机运行着基于Unix的操作系统。Windows运行在一台超级计算机上，这情况一直持续到去年，今年的列表中没有出现Windows的身影。或许，这些超级计算机没一台能运行Windows 10（一语双关）。
+如果要将上面的百分比细化到具体数量的话，500台超级计算机中的498台运行着Linux。剩余的两台超级计算机运行着基于Unix的操作系统。直到去年，还有一台超级计算机上在运行Windows，今年的列表中没有出现Windows的身影。或许，这些超级计算机没一台能运行Windows 10（一语双关）。
 
 总结一下今年表单上TOP500超级计算机所运行操作系统情况：
 
@@ -34,7 +34,7 @@ Linux运行在超过99%的TOP500超级计算机上，这并不会让人感到惊
 *   2016年: 99.6%
 *   2017年: ???
 
-另外，最快的前380台超级计算机运行着Linux，包括中国那台最快的超级计算机。排名第386和第387的超级计算机运行着Unix，它们同样来自中国。
+另外，最快的前380台超级计算机运行着Linux，包括在中国的那台最快的超级计算机。排名第386和第387的超级计算机运行着Unix，它们同样来自中国。
 
 ### 其他关于最快的超级计算机的有趣数据
 
@@ -42,7 +42,7 @@ Linux运行在超过99%的TOP500超级计算机上，这并不会让人感到惊
  ![List of top 10 fastest supercomputers in the world in 2016](https://itsfoss.com/wp-content/uploads/2016/11/fastest-supercomputers.png) 
 ][16]
 
-除去Linux，我在表单中搜寻，找到了几个有趣的数据想跟你分享。
+除去Linux，我在表单中还找到了几个有趣的数据想跟你分享。
 
 *   全球最快的超级计算机是[神威太湖一号][9]. 它位于[国家超级计算无锡中心][10]。它有着93PFlops的速度.
 *   全球第二快的超级计算机是中国的[天河二号][11]，第三的位置则属于美国的Titan。
@@ -61,7 +61,7 @@ via: https://itsfoss.com/linux-99-percent-top-500-supercomputers
 
 作者：[Abhishek Prakash ][a]
 译者：[ypingcn](https://github.com/ypingcn)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
