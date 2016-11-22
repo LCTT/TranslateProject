@@ -1,7 +1,8 @@
-谁需要 GUI？——Linux 终端生存之道
+谁需要 GUI？—— Linux 终端生存之道
 =================================================
 
 完全在 Linux 终端中生存并不容易，但这绝对是可行的。
+
 ![](http://core0.staticworld.net/images/article/2016/07/linux-terminal-1-100669790-orig.jpg)
 
 ### 处理常见功能的最佳 Linux shell 应用
@@ -18,7 +19,7 @@
 
 ### 在 Linux 终端里浏览网页
 
-我有一个词要告诉你：[w3m][5]。好吧，我承认这并不是一个真实的词。但 w3m 的确是我在 Linux 终端的 web 浏览器选择。它能够很好的呈现网页，并且它也足够强大，可以用来在像 Google+ 之类的网站上发布消息（尽管方法并不有趣）。 Lynx 可能是事实上的基于文本的 Web 浏览器，但 w3m 还是我的最爱。
+我有一个词要告诉你：[w3m][5]。好吧，我承认这并不是一个真实的词。但 w3m 的确是我在 Linux 终端的 web 浏览器选择。它能够很好的呈现网页，并且它也足够强大，可以用来在像 Google+ 之类的网站上发布消息（尽管方法并不有趣）。 Lynx 可能是基于文本的 Web 浏览器的事实标准，但 w3m 还是我的最爱。
 
 ![](http://core0.staticworld.net/images/article/2016/07/linux-terminal-4-100669838-orig.jpg)
 
@@ -30,7 +31,7 @@
 
 ### 在 Linux 终端里处理文字
 
-在一个只有文本的 shell 之中，“文本编辑器” 和 “文字处理程序” 实在没有什么大的区别。但是像我这样需要大量写作的，有一个专门用于长期写作的软件是非常必要的。而我最爱的就是 wordgrinder。它由足够的工具让我愉快工作——一个菜单驱动的界面（使用快捷键控制）并且支持OpenDocument、HTML或其他等多种文件格式。
+在一个只有文本的 shell 之中，“文本编辑器” 和 “文字处理程序” 实在没有什么大的区别。但是像我这样需要大量写作的，有一个专门用于长期写作的软件是非常必要的。而我最爱的就是 wordgrinder。它由足够的工具让我愉快工作——一个菜单驱动的界面（使用快捷键控制）并且支持 OpenDocument、HTML 或其他等多种文件格式。
 
 ![](http://core0.staticworld.net/images/article/2016/07/linux-terminal-6-100669795-orig.jpg)
 
@@ -41,14 +42,14 @@
 ![](http://core0.staticworld.net/images/article/2016/07/linux-terminal-7-100669796-orig.jpg)
 
 ### 在 Linux 终端里发送即时消息
-When I realized how will I could instant message from the terminal, my head exploded. You know Pidgin, the multi-protocol IM client? Well, it has a version for the terminal, called “finch,” that allows you to connect to multiple networks and chat with multiple people at once. The interface is even similar to Pidgin. Just amazing. Use Google Hangouts? Try hangups. It has a nice tabbed interface and works amazingly well. Seriously. Other than needing perhaps some emoji and inline pictures, instant messaging from the shell is a great experience.
+
 当我在想如果可以在终端里发送即时消息会是什么样子的时候，我的思绪瞬间爆发了。你可能知道 Pidgin——一个支持多种协议的 IM 客户端，它也有一个终端版，叫做“[finch][8]”，你可以使用它来同时链接多个网络、同时和几个人聊天。而且，它的界面也和 Pidgin 极为相似。多么令人惊叹啊！想要使用 Google 环聊（Google Hangouts）就试试 [hangups][9]。它有一个非常漂亮的分页式界面，并且效果非常好。认真来说，除了一些可能需要的 emoji 表情和嵌入式图片外，在终端里发送即时消息真的是一个很好的体验。
 
 ![](http://core0.staticworld.net/images/article/2016/07/linux-terminal-8-100669797-orig.jpg)
 
 ### 在 Linux 终端里发布推文
 
-这不是开玩笑！由于 [rainbowstream][10] 的存在，我们已经可以在终端里发布推文了。尽管我时不时遇到一些bug，但整体上，它工作得很好。虽然没有网页版 Twitter 或官方移动客户端那么好用，但这是一个终端版的Twitter，来试一试吧。尽管它的功能还未完善，但是用起来还是很酷，不是吗？
+这不是开玩笑！由于 [rainbowstream][10] 的存在，我们已经可以在终端里发布推文了。尽管我时不时遇到一些 bug，但整体上，它工作得很好。虽然没有网页版 Twitter 或官方移动客户端那么好用，但这是一个终端版的 Twitter，来试一试吧。尽管它的功能还未完善，但是用起来还是很酷，不是吗？
 
 ![](http://core0.staticworld.net/images/article/2016/07/linux-terminal-9-100669798-orig.jpg)
 
@@ -60,13 +61,13 @@ When I realized how will I could instant message from the terminal, my head expl
 
 ### 在 Linux 终端里管理进程
 
-可以使用 [htop][12]。与 top 相似，但更好用、更美观。有时候，我打开 htop 之后就让它一直运行。没有愿意，就是喜欢！从某方面说，它就像将音乐可视化——当然，这里显示的是 RAM 和 CPU 的使用情况。
+可以使用 [htop][12]。与 top 相似，但更好用、更美观。有时候，我打开 htop 之后就让它一直运行。没有原因，就是喜欢！从某方面说，它就像将音乐可视化——当然，这里显示的是 RAM 和 CPU 的使用情况。
 
 ![](http://core0.staticworld.net/images/article/2016/07/linux-terminal-11-100669800-orig.png)
 
 ### 在 Linux 终端里管理文件
 
-在一个纯文本终端里并不意味着你不能享受生活的美好之物。比方说一个出色的文件浏览和管理器。这方面，[Midnight Commander][13] 是很好用的。
+在一个纯文本终端里并不意味着你不能享受生活之美好。比方说一个出色的文件浏览和管理器。这方面，[Midnight Commander][13] 是很好用的。
 
 ![](http://core0.staticworld.net/images/article/2016/07/linux-terminal-12-100669801-orig.png)
 
@@ -78,7 +79,7 @@ When I realized how will I could instant message from the terminal, my head expl
 
 ### 在 Linux 终端里进行讲稿演示
 
-这类软件有 LibreOffice、Google slides、gasp 或者 PowerPoint。我在讲稿演示软件花费很多时间，很高兴有一个终端版的软件。它称做“[文本演示程序][16]”。很显然，没有图片，只是一个使用简单标记语言将放在一起的幻灯片展示出来的简单程序。它不可能让你在其中插入猫的图片，但可以让你在终端里进行完整的演示。
+这类软件有 LibreOffice、Google slides、gasp 或者 PowerPoint。我在讲稿演示软件花费很多时间，很高兴有一个终端版的软件。它称做“[文本演示程序（tpp）][16]”。很显然，没有图片，只是一个使用简单标记语言将放在一起的幻灯片展示出来的简单程序。它不可能让你在其中插入猫的图片，但可以让你在终端里进行完整的演示。
 
 --------------------------------------------------------------------------------
 
