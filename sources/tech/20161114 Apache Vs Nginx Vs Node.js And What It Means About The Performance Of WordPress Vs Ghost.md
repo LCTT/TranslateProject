@@ -1,3 +1,5 @@
+OneNewLife translating
+
 Apache Vs Nginx Vs Node.js And What It Means About The Performance Of WordPress Vs Ghost
 ============================================================
 
@@ -44,7 +46,7 @@ In addition, stress test to measure server function under high load was also iss
 As for the content, the main focus was about a static file containing a number of Lorem Ipsum verses with headings and an image.
 
 [
- ![Lorem Ipsum and ApacheBenchmark](http://iwf1.com/wordpress/wp-content/uploads/2016/11/Lorem-Ipsum-and-ApacheBenchmark-730x411.jpg) 
+ ![Lorem Ipsum and ApacheBenchmark](http://iwf1.com/wordpress/wp-content/uploads/2016/11/Lorem-Ipsum-and-ApacheBenchmark-730x411.jpg)
 ][3]
 
 Lorem Ipsum and ApacheBenchmark
@@ -60,7 +62,7 @@ That aside, I also wanted to test a more real case scenario where I benchmarked 
 As I’m running Gentoo Linux, you could say that either one of my HTTP servers is starting from an optimized state to begin with, since I built them using only the use-flags I actually needed. I.e there shouldn’t be any unnecessary code or module loading or running in the background while I ran my tests.
 
 [
- ![Apache vs Nginx vs Node.js use-flags](http://iwf1.com/wordpress/wp-content/uploads/2016/10/Apache-vs-Nginx-vs-Node.js-use-flags-730x241.jpg) 
+ ![Apache vs Nginx vs Node.js use-flags](http://iwf1.com/wordpress/wp-content/uploads/2016/10/Apache-vs-Nginx-vs-Node.js-use-flags-730x241.jpg)
 ][4]
 
 Apache vs Nginx vs Node.js use-flags
@@ -116,13 +118,13 @@ The Node.js server used in the static tests was custom built from scratch, tailo
 Click on the images to enlarge:
 
 [
- ![Apache vs Nginx vs Node: performance under requests load (per 100 concurrent users)](http://iwf1.com/wordpress/wp-content/uploads/2016/11/requests-730x234.jpg) 
+ ![Apache vs Nginx vs Node: performance under requests load (per 100 concurrent users)](http://iwf1.com/wordpress/wp-content/uploads/2016/11/requests-730x234.jpg)
 ][5]
 
 Apache vs Nginx vs Node: performance under requests load (per 100 concurrent users)
 
 [
- ![Apache vs Nginx vs Node: performance under concurrent users load](http://iwf1.com/wordpress/wp-content/uploads/2016/11/concurrency-730x234.jpg) 
+ ![Apache vs Nginx vs Node: performance under concurrent users load](http://iwf1.com/wordpress/wp-content/uploads/2016/11/concurrency-730x234.jpg)
 ][6]
 
 Apache vs Nginx vs Node: performance under concurrent users load (per 1,000 requests)
@@ -130,7 +132,7 @@ Apache vs Nginx vs Node: performance under concurrent users load (per 1,000 requ
 ### Stress Testing
 
 [
- ![Apache vs Nginx vs Node: time to complete 100,000 requests with concurrency of 1,000](http://iwf1.com/wordpress/wp-content/uploads/2016/11/stress.jpg) 
+ ![Apache vs Nginx vs Node: time to complete 100,000 requests with concurrency of 1,000](http://iwf1.com/wordpress/wp-content/uploads/2016/11/stress.jpg)
 ][7]
 
 Apache vs Nginx vs Node: time to complete 100,000 requests with concurrency of 1,000
@@ -192,7 +194,7 @@ Indeed, a scientific lab-conditioned test would be hard to devise. However, in t
 Since the results were measured against different criteria and most importantly not exact same sizes, it wouldn’t be fair to display them side by side in a chart. Hence a table is used instead:
 
 [
- ![Node vs Nginx vs Apache comparison table](http://iwf1.com/wordpress/wp-content/uploads/2016/11/Node-vs-Nginx-vs-Apache-comparison-table-730x185.jpg) 
+ ![Node vs Nginx vs Apache comparison table](http://iwf1.com/wordpress/wp-content/uploads/2016/11/Node-vs-Nginx-vs-Apache-comparison-table-730x185.jpg)
 ][8]
 
 Node vs Nginx vs Apache running WordPress & Ghost. Top 2 rows are WordPress, bottom 2 are Ghost

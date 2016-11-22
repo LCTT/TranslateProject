@@ -1,27 +1,26 @@
-How to Check Which Apache Modules are Enabled/Loaded in Linux
+如何使用 Apache 控制命令检查它的模块是否已经启用或加载
 ============================================================
 
-In this guide, we will briefly talk about the Apache web server front-end and how to list or check which Apache modules have been enabled on your server.
+本篇中，我们会简要地讨论 Apache 服务器前端以及如何列出或查看已经启用的 Apache 模块。
 
-Apache is built, based on the principle of modularity, this way, it enables web server administrators to add different modules to extend its primary functionalities and [enhance apache performance][5] as well.
+Apache 基于模块化的理念而构建，这样就可以让 web 管理员添加不同的模块来扩展主要的功能及[增强性能][5]。
 
-Some of the common Apache modules include:
+常见的 Apache 模块有：
 
-1.  mod_ssl – which offers [HTTPS for Apache][1].
-2.  mod_rewrite – which allows for matching url patterns with regular expressions, and perform a transparent redirect using [.htaccess tricks][2], or apply a HTTP status code response.
-3.  mod_security – which offers you to [protect Apache against Brute Force or DDoS attacks][3].
-4.  mod_status – that allows you to [monitor Apache web server load and page statics][4].
+1. mod_ssl – 提供了 [HTTPS 功能][1]。
+2. mod_rewrite – 可以用正则表达式匹配 url 样式，并且使用 [.htaccess 技巧][2]来进行透明转发，或者提供 HTTP 状态码回应。
+3. mod_security – 用于[保护 Apache 免于暴力破解或者 DDoS 攻击][3]。
+4. mod_status - 用于[监测 Apache 的负载及页面统计][4]。
 
-In Linux, the apachectl or apache2ctl command is used to control Apache HTTP server interface, it is a front-end to Apache.
+在 Linux 中 `apachectl` 或者 `apache2ctl`用于控制 Apache 服务器，是 Apache 的前端。
 
-You can display the usage information for apache2ctl as below:
+你可以用下面的命令显示 `apache2ctl` 的使用信息：
 
 ```
 $ apache2ctl help
-OR
+或者
 $ apachectl help
 ```
-apachectl help
 ```
 Usage: /usr/sbin/httpd [-D name] [-d directory] [-f file]
                        [-C "directive"] [-c "directive"]
@@ -46,22 +45,20 @@ Options:
   -M                 : a synonym for -t -D DUMP_MODULES
   -t                 : run syntax check for config files
 ```
-
-apache2ctl can function in two possible modes, a Sys V init mode and pass-through mode. In the SysV init mode, apache2ctl takes simple, one-word commands in the form below:
+`apache2ctl` 可以工作在两种模式下，SysV init 模式和直通模式。在 SysV init 模式下，`apache2ctl` 用如下的简单的单命令形式：
 
 ```
 $ apachectl command
-OR
+或者
 $ apache2ctl command
 ```
 
-For instance, to start Apache and check its status, run these two commands with root user privileges by employing the [sudo command][6], in case you are a normal user:
+比如要启动并检查它的状态，运行这两个命令。如果你是普通用户，使用 [sudo 命令][6]来以 root 用户权限来运行：
 
 ```
 $ sudo apache2ctl start
 $ sudo apache2ctl status
 ```
-Check Apache Status
 ```
 tecmint@TecMint ~ $ sudo apache2ctl start
 AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1\. Set the 'ServerName' directive globally to suppress this message
@@ -97,39 +94,39 @@ Scoreboard Key:
 "I" Idle cleanup of worker, "." Open slot with no current process
 ```
 
-And when operating in pass-through mode, apache2ctl can take all the Apache arguments in the following syntax:
+当在直通模式下，`apache2ctl` 可以用下面的语法带上所有 Apache 的参数：
 
 ```
 $ apachectl [apache-argument]
 $ apache2ctl [apache-argument]
 ```
 
-All the Apache-arguments can be listed as follows:
+可以用下面的命令列出所有的 Apache 参数：
 
 ```
-$ apache2 help    [On Debian based systems]
-$ httpd help      [On RHEL based systems]
+$ apache2 help    [在基于Debian的系统中]
+$ httpd help      [在RHEL的系统中]
 ```
 
-#### Check Enabled Apache Modules
+### 检查启用的 Apache 模块
 
-Therefore, in order to check which modules are enabled on your Apache web server, run the applicable command below for your distribution, where `-t -D DUMP_MODULES` is a Apache-argument to show all enabled/loaded modules:
+因此，为了检测你的 Apache 服务器启动了哪些模块，在你的发行版中运行适当的命令，`-t -D DUMP_MODULES` 是一个用于显示所有启用的模块的 Apache 参数：
 
 ```
----------------  On Debian based systems --------------- 
+---------------  在基于 Debian 的系统中 --------------- 
 $ apache2ctl -t -D DUMP_MODULES   
-OR 
+或者 
 $ apache2ctl -M
 ```
 
 ```
----------------  On RHEL based systems --------------- 
+---------------  在 RHEL 的系统中 --------------- 
 $ apachectl -t -D DUMP_MODULES   
-OR 
+或者 
 $ httpd -M
 $ apache2ctl -M
 ```
-List Apache Enabled Loaded Modules
+
 ```
 [root@tecmint httpd]# apachectl -M
 Loaded Modules:
@@ -156,15 +153,15 @@ Loaded Modules:
 ....
 ```
 
-That’s all! in this simple tutorial, we explained how to use the Apache front-end tools to list enabled/loaded apache modules. Keep in mind that you can get in touch using the feedback form below to send us your questions or comments concerning this guide.
+就是这样！在这篇简单的教程中，我们解释了如何使用 Apache 前端工具来列出启动的 apache 模块。记住你可以在下面的反馈表中给我们留下你的问题或者留言。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/check-apache-modules-enabled
 
 作者：[Aaron Kili][a]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -175,3 +172,5 @@ via: http://www.tecmint.com/check-apache-modules-enabled
 [4]:http://www.tecmint.com/monitor-apache-web-server-load-and-page-statistics/
 [5]:http://www.tecmint.com/apache-performance-tuning/
 [6]:http://www.tecmint.com/su-vs-sudo-and-how-to-configure-sudo-in-linux/
+
+
