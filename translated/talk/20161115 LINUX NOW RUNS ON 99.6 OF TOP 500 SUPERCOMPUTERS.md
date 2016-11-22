@@ -9,7 +9,7 @@ _简介：虽然Linux在桌面操作系统只有2%的市场占有率，但是对
 
 **Linux运行在超过99%的TOP500超级计算机上**，这并不会让人感到惊讶。2015年我们报道过[《Linux正运行在超过97%的TOP500超级计算机上》][13]，今年Linux表现得更好。
 
-[#现在Linux运行在99.6%的TOP500超级计算机上][4]
+[#Linux now runs on more than 99% of top 500 #supercomputers in the world][4]
 
 [点击到twitter][5]
 
