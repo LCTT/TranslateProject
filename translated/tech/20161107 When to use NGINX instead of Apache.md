@@ -1,6 +1,5 @@
-OneNewLife translated
 
-什么时候用 NGINX 来取代 Apache
+什么时候使用 NGINX 而不是 Apache
 =====
 
 >两者都是主流的开源网络服务器，但是据 NGINX 的首席执行官 Gus Robertson 所言，他们有不同的使用场景。还有微软呢？他们家的服务器的活跃网站份额在 20 年间首次跌破 10%。
@@ -40,7 +39,7 @@ via: http://www.zdnet.com/article/when-to-use-nginx-instead-of-apache/
 
 作者：[ Steven J. Vaughan-Nichols][a]
 译者：[OneNewLife](https://github.com/OneNewLife)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
