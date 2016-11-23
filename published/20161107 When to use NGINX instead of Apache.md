@@ -1,10 +1,9 @@
-
-什么时候使用 NGINX 而不是 Apache
+何时 NGINX 将取代 Apache？
 =====
 
->两者都是主流的开源 web 服务器，但是据 NGINX 的首席执行官 Gus Robertson 所言，他们有不同的使用场景。此外还有微软，其 web 服务器在活跃网站的份额 20 年间首次跌破 10%。
+> NGINX 和 Apache 两者都是主流的开源 web 服务器，但是据 NGINX 的首席执行官 Gus Robertson 所言，他们有不同的使用场景。此外还有微软，其 web 服务器 IIS 在活跃网站的份额在 20 年间首次跌破 10%。
 
- ![活跃网站的 web 服务器市场份额](http://zdnet1.cbsistatic.com/hub/i/r/2016/11/07/f38d190e-046c-49e6-b451-096ee0776a04/resize/770xauto/b009f53417e9a4af207eff6271b90c43/web-server-popularity-october-2016.png)
+![活跃网站的 web 服务器市场份额](http://zdnet1.cbsistatic.com/hub/i/r/2016/11/07/f38d190e-046c-49e6-b451-096ee0776a04/resize/770xauto/b009f53417e9a4af207eff6271b90c43/web-server-popularity-october-2016.png)
 
 *Apache 是最受欢迎的 web 服务器，不过 NGINX 正逐渐增长，而微软的 IIS 几十年来首次跌破 10%。*
 
@@ -12,19 +11,19 @@
 
 “我认为 Apache 是很好的 web 服务器。NGINX 和它的使用场景不同，”Robertson 说。“我们没有把 Apache 当成竞争对手。我们的用户使用 NGINX 来取代硬件负载均衡器和构建微服务，这两个都不是 Apache 的长处。”
 
-事实上，Robertson 发现许多用户同时使用了这两种开源的 web 服务。“用户会在 Apache 的上层使用 NGINX 来实现负载均衡。我们的架构差异很大，我们可以做更好的并发 web 服务。”他还表示 NGINX 在云配置方面表现更优秀。
+事实上，Robertson 发现许多用户同时使用了这两种开源的 web 服务。“用户会在 Apache 的上层使用 NGINX 来实现负载均衡。我们的架构差异很大，我们可以提供更好的并发 web 服务。”他还表示 NGINX 在云环境中表现更优秀。
 
 他总结说，“我们是唯一一个仍然在持续增长的 web 服务器，其它的 web 服务器都在慢慢缩小份额。”
 
-这不太准确。根据[Netcraft 十月份的网络服务器调查][7]，Apache 当月的活跃网站增加得最多，获得了 180 万个新站点，而 NGINX 增加了 40 万个新站点，排在第二位。
+这不太准确。根据 [Netcraft 十月份的网络服务器调查][7]，Apache 当月的活跃网站增加得最多，获得了 180 万个新站点，而 NGINX 增加了 40 万个新站点，排在第二位。
 
 这些增长，加上微软损失的 120 万个活跃站点，导致微软的活跃网站份额下降到 9.27%，这是他们第一次跌破 10%。Apache 的市场份额提高了 0.19%，并继续领跑市场，现在坐拥 46.3% 的活跃站点。尽管如此，多年来 Apache 一直在缓慢下降，而 NGINX 现在上升到了 19%。
 
-NGINX 的开发者正在努力创造他们的开放商业 web 服务器 —— [NGINX Plus][8]，通过不断的改进使其变得更有竞争力。NGINX Plus 最新的 [第 11 个发行版（R11）][9]发行了，这个版本更易于扩展和自定义，并支持更广泛的部署。
+NGINX 的开发者正在努力创造他们的核心开放（open-core ）的商业 web 服务器 —— [NGINX Plus][8]，通过不断的改进使其变得更有竞争力。NGINX Plus 最新的版本是 [NGINX Plus 11 版（R11）][9]，该服务器易于扩展和自定义，并支持更广泛的部署。
 
-这次最大的补充是 [动态模块][10] 的二进制兼容性。也就是说通过 [开源 NGINX 软件][11] 编译的动态模块可以加载到 NGINX Plus。
+这次最大的补充是 [动态模块][10] 的二进制兼容性。也就是说为 [开源 NGINX 软件][11] 编译的动态模块也可以加载到 NGINX Plus。
 
-这意味着你可以利用大量的 [第三方 NGINX 模块][12] 来扩展 NGINX Plus 的功能，仿照一系列开源和商业化的生产模块。开发者可以基于支持 NGINX Plus 的内核创建自定义扩展、附加组件和新产品。
+这意味着你可以利用大量的[第三方 NGINX 模块][12] 来扩展 NGINX Plus 的功能，借鉴一系列开源和商业化生产的模块。开发者可以基于支持 NGINX Plus 的内核创建自定义扩展、附加组件和新产品。
 
 NGINX Plus R11 还增强了其它功能：
 
@@ -38,7 +37,7 @@ NGINX Plus R11 还增强了其它功能：
 
 via: http://www.zdnet.com/article/when-to-use-nginx-instead-of-apache/
 
-作者：[ Steven J. Vaughan-Nichols][a]
+作者：[Steven J. Vaughan-Nichols][a]
 译者：[OneNewLife](https://github.com/OneNewLife)
 校对：[jasminepeng](https://github.com/jasminepeng)
 
