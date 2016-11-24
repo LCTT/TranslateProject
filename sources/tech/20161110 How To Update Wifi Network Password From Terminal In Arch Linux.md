@@ -1,3 +1,4 @@
+translating by chenzhijun 
 How To Update Wifi Network Password From Terminal In Arch Linux
 ============================================================
  ![Update Wifi Network Password From Terminal In Arch Linux](https://www.ostechnix.com/wp-content/plugins/lazy-load/images/1x1.trans.gif) 
