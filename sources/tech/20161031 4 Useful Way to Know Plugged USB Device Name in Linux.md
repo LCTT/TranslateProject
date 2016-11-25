@@ -1,3 +1,5 @@
+###Translating by rusking
+
 4 Useful Way to Know Plugged USB Device Name in Linux
 ============================================================
 
