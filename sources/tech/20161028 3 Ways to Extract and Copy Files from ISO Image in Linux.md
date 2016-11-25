@@ -1,3 +1,5 @@
+##Translating by rusking
+
 3 Ways to Extract and Copy Files from ISO Image in Linux
 ============================================================
 
