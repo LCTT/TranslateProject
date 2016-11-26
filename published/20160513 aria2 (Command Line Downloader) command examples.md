@@ -1,27 +1,27 @@
-# aria2 （命令行下载器）命令行实例
+aria2 （命令行下载器）实例
+============
 
-[aria2][4] 是一个免费的、开源的、轻量级多协议和多源命令行下载工具。它支持 HTTP/HTTPS、 FTP、 SFTP、 BitTorrent 和 Metalink 协议。aria2 可以通过内建的 JSON-RPC 和 XML-RPC 接口来操纵。aria2 下载文件的时候，自动验证数据块。它可以通过多源或者多协议下载一个文件，并且尝试利用你的最大下载带宽。默认情况下，所有的 Linux 发行版都包括 aria2，所以我们可以从官方库中很容易的安装。一些 GUI 下载管理器例如 [uget][3] 使用 aria2作为一个插件来提高下载速度。
+[aria2][4] 是一个自由、开源、轻量级多协议和多源的命令行下载工具。它支持 HTTP/HTTPS、FTP、SFTP、 BitTorrent 和 Metalink 协议。aria2 可以通过内建的 JSON-RPC 和 XML-RPC 接口来操纵。aria2 下载文件的时候，自动验证数据块。它可以通过多个来源或者多个协议下载一个文件，并且会尝试利用你的最大下载带宽。默认情况下，所有的 Linux 发行版都包括 aria2，所以我们可以从官方库中很容易的安装。一些 GUI 下载管理器例如 [uget][3] 使用 aria2 作为插件来提高下载速度。
 
+### Aria2 特性
 
-#### Aria2 特性
-
-*   HTTP/HTTPS GET 支持
-*   HTTP 代理支持
-*   HTTP BASIC 认证支持
-*   HTTP 代理认证支持
-*   FTP 支持（主动、被动模式）
+*   支持 HTTP/HTTPS GET
+*   支持 HTTP 代理
+*   支持 HTTP BASIC 认证
+*   支持 HTTP 代理认证
+*   支持 FTP （主动、被动模式）
 *   通过 HTTP 代理的 FTP（GET 命令行或者隧道）
 *   分段下载
-*   Cookie 支持
+*   支持 Cookie
 *   可以作为守护进程运行。
-*   使用 快速扩展的 BitTorrent 协议支持
-*   在多 torrent 文件下选择性下载
-*   Metalink 3.0 版本支持（HTTP/FTP/BitTorrent）。
+*   支持使用 fast 扩展的 BitTorrent 协议
+*   支持在多文件 torrent 中选择文件
+*   支持 Metalink 3.0 版本（HTTP/FTP/BitTorrent）
 *   限制下载、上传速度
 
-#### 1) Linux 下安装 aria2
+### 1) Linux 下安装 aria2
 
-我们可以很容易的在所有的 Linux 发行版 上安装 aria2 命令行下载器，例如 Debian、 Ubuntu、 Mint、 RHEL、 CentOS、 Fedora、 suse、 openSUSE、 Arch Linux、 Manjaro、 Mageia 等等……只需要输入下面的命令安装即可。对于 CentOS、 RHEL 系统，我们需要开启 [uget][2] 或者 [RPMForge][1] 库的支持。
+我们可以很容易的在所有的 Linux 发行版上安装 aria2 命令行下载器，例如 Debian、 Ubuntu、 Mint、 RHEL、 CentOS、 Fedora、 suse、 openSUSE、 Arch Linux、 Manjaro、 Mageia 等等……只需要输入下面的命令安装即可。对于 CentOS、 RHEL 系统，我们需要开启 [uget][2] 或者 [RPMForge][1] 库的支持。
 
 ```
 [对于 Debian、 Ubuntu 和 Mint]
@@ -44,7 +44,7 @@ $ sudo pacman -S aria2
 
 ```
 
-#### 2) 下载单个文件
+### 2) 下载单个文件
 
 下面的命令将会从指定的 URL 中下载一个文件，并且保存在当前目录，在下载文件的过程中，我们可以看到文件的（日期、时间、下载速度和下载进度）。
 
@@ -63,9 +63,9 @@ Status Legend:
 
 ```
 
-#### 3) 使用不同的名字保存文件
+### 3) 使用不同的名字保存文件
 
-在初始化下载的时候，我们可以使用 -o（小写）选项在保存文件的时候使用不同的名字。这儿我们将要使用 owncloud.zip 文件名来保存文件。
+在初始化下载的时候，我们可以使用 `-o`（小写）选项在保存文件的时候使用不同的名字。这儿我们将要使用 owncloud.zip 文件名来保存文件。
 
 ```
 # aria2c -o owncloud.zip https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
@@ -82,9 +82,9 @@ Status Legend:
 
 ```
 
-#### 4) 下载速度限制
+### 4) 下载速度限制
 
-默认情况下，aria2 利用全带宽限制文件，在文件下载完成之前，我们不可以在服务器上使用任何东西（这将会影响其他服务访问带宽）。所以在下载大文件时最好使用 –max-download-limit 选项来避免进一步的问题。
+默认情况下，aria2 会利用全部带宽来下载文件，在文件下载完成之前，我们在服务器就什么也做不了（这将会影响其他服务访问带宽）。所以在下载大文件时最好使用 `–max-download-limit` 选项来避免进一步的问题。
 
 ```
 # aria2c --max-download-limit=500k https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
@@ -101,9 +101,9 @@ Status Legend:
 
 ```
 
-#### 5) 下载多个文件
+### 5) 下载多个文件
 
-下面的命令将会从指定位置下载不止一个文件并保持到当前目录，在下载文件的过程中，我们可以看到文件的（日期、时间、下载速度和下载进度）。
+下面的命令将会从指定位置下载超过一个的文件并保存到当前目录，在下载文件的过程中，我们可以看到文件的（日期、时间、下载速度和下载进度）。
 
 ```
 # aria2c -Z https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2 ftp://ftp.gnu.org/gnu/wget/wget-1.17.tar.gz
@@ -123,9 +123,9 @@ Status Legend:
 
 ```
 
-#### 6) 恢复不完整下载
+### 6) 续传未完成的下载
 
-当你遇到一些网络连接问题或者系统问题的时候，并将要下载一个大文件（例如： ISO 镜像文件），我建议你使用 -c 选项，他可以通过状态帮助我们恢复已经存在的未完成的下载，并且像往常一样完成。不然的话，当你再次下载，它将会初始化新的下载，并保存成一个不同的文件名（自动的在文件名后面添加 .1 ）。注意：如果任意打断发生，aria2 使用 .aria2 后缀保存文件。
+当你遇到一些网络连接问题或者系统问题的时候，并将要下载一个大文件（例如： ISO 镜像文件），我建议你使用 `-c` 选项，它可以帮助我们从该状态续传未完成的下载，并且像往常一样完成。不然的话，当你再次下载，它将会初始化新的下载，并保存成一个不同的文件名（自动的在文件名后面添加 .1 ）。注意：如果出现了任何中断，aria2 使用 .aria2 后缀保存（未完成的）文件。
 
 ```
 # aria2c -c https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
@@ -142,7 +142,7 @@ db0b08|INPR|   3.3MiB/s|/opt/owncloud-9.0.0.tar.bz2
 Status Legend:
 (INPR):download in-progress.
 
-如果重新启动传输，aria2 将会恢复下载
+如果重新启动传输，aria2 将会恢复下载。
 
 # aria2c -c https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
 [#873d08 21MiB/21MiB(98%) CN:1 DL:2.7MiB]
@@ -158,9 +158,9 @@ Status Legend:
 
 ```
 
-#### 7) 从文件获取输入
+### 7) 从文件获取输入
 
-或许 wget 可以从一个文件获取输入的 URL 列表来下载。我们需要创建一个文件，将每一个 URL 存储在单独的行中。ara2 命令行可以添加 -i 选项来执行此操作。
+就像 wget 可以从一个文件获取输入的 URL 列表来下载一样。我们需要创建一个文件，将每一个 URL 存储在单独的行中。ara2 命令行可以添加 `-i` 选项来执行此操作。
 
 ```
 # aria2c -i test-aria2.txt
@@ -180,9 +180,9 @@ Status Legend:
 
 ```
 
-#### 8) 每个主机使用两个连接来下载
+### 8) 每个主机使用两个连接来下载
 
-默认情况，每次下载连接到一台服务器的最大数目，对于一条主机只能建立一条。我们可以通过 aria2 命令行添加 -x2（2 表示两个连接）来创建到每台主机多于一个连接，以加快下载速度。
+默认情况，每次下载连接到一台服务器的最大数目，对于一条主机只能建立一条。我们可以通过 aria2 命令行添加 `-x2`（2 表示两个连接）来创建到每台主机的多个连接，以加快下载速度。
 
 ```
 # aria2c -x2 https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
@@ -199,9 +199,9 @@ Status Legend:
 
 ```
 
-#### 9) 下载种子文件
+### 9) 下载 BitTorrent 种子文件
 
-我们可以使用 aria2 命令行直接下载一个种子文件
+我们可以使用 aria2 命令行直接下载一个 BitTorrent 种子文件：
 
 ```
 # aria2c https://torcache.net/torrent/C86F4E743253E0EBF3090CCFFCC9B56FA38451A3.torrent?title=[kat.cr]irudhi.suttru.2015.official.teaser.full.hd.1080p.pathi.team.sr
@@ -221,25 +221,25 @@ Status Legend:
 
 ```
 
-#### 10) 下载 Bit 种子磁力链接
+### 10) 下载 BitTorrent 磁力链接
 
-使用 aria2 我们也可以通过 bit 磁力链接直接下载一个种子文件
+使用 aria2 我们也可以通过 BitTorrent 磁力链接直接下载一个种子文件：
 
 ```
 # aria2c 'magnet:?xt=urn:btih:248D0A1CD08284299DE78D5C1ED359BB46717D8C'
 
 ```
 
-#### 11) 下载 Metalink Bit 种子
+### 11) 下载 BitTorrent Metalink 种子
 
-我们也可以通过 aria2 命令行直接下载一个 Metalink 文件。
+我们也可以通过 aria2 命令行直接下载一个  Metalink 文件。
 
 ```
 # aria2c https://curl.haxx.se/metalink.cgi?curl=tar.bz2
 
 ```
 
-#### 12) 从密码保护的网站下载一个文件
+### 12) 从密码保护的网站下载一个文件
 
 或者，我们也可以从一个密码保护网站下载一个文件。下面的命令行将会从一个密码保护网站中下载文件。
 
@@ -250,7 +250,7 @@ Status Legend:
 
 ```
 
-#### 13) 阅读更多关于 aria2
+### 13) 阅读更多关于 aria2
 
 如果你希望了解了解更多选项 —— 它们同时适用于 wget，可以输入下面的命令行在你自己的终端获取详细信息：
 
@@ -268,10 +268,8 @@ or
 via: http://www.2daygeek.com/aria2-command-line-download-utility-tool/
 
 作者：[MAGESH MARUTHAMUTHU][a]
-
 译者：[yangmingming](https://github.com/yangmingming)
-
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
