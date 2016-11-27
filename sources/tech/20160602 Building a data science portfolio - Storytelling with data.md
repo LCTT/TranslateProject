@@ -1,3 +1,6 @@
+
+@poodarchu 翻译中
+
 Building a data science portfolio: Storytelling with data
 ========
 
@@ -419,13 +422,13 @@ data["class_size"].head()
 
 Out[4]:
 
-|  | CSD | BOROUGH | SCHOOL CODE | SCHOOL NAME | GRADE | PROGRAM TYPE | CORE SUBJECT (MS CORE and 9-12 ONLY) | CORE COURSE (MS CORE and 9-12 ONLY) | SERVICE CATEGORY(K-9* ONLY) | NUMBER OF STUDENTS / SEATS FILLED | NUMBER OF SECTIONS | AVERAGE CLASS SIZE | SIZE OF SMALLEST CLASS | SIZE OF LARGEST CLASS | DATA SOURCE | SCHOOLWIDE PUPIL-TEACHER RATIO |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 0 | 1 | M | M015 | P.S. 015 Roberto Clemente | 0K | GEN ED | - | - | - | 19.0 | 1.0 | 19.0 | 19.0 | 19.0 | ATS | NaN |
-| 1 | 1 | M | M015 | P.S. 015 Roberto Clemente | 0K | CTT | - | - | - | 21.0 | 1.0 | 21.0 | 21.0 | 21.0 | ATS | NaN |
-| 2 | 1 | M | M015 | P.S. 015 Roberto Clemente | 01 | GEN ED | - | - | - | 17.0 | 1.0 | 17.0 | 17.0 | 17.0 | ATS | NaN |
-| 3 | 1 | M | M015 | P.S. 015 Roberto Clemente | 01 | CTT | - | - | - | 17.0 | 1.0 | 17.0 | 17.0 | 17.0 | ATS | NaN |
-| 4 | 1 | M | M015 | P.S. 015 Roberto Clemente | 02 | GEN ED | - | - | - | 15.0 | 1.0 | 15.0 | 15.0 | 15.0 | ATS | NaN |
+|      | CSD  | BOROUGH | SCHOOL CODE | SCHOOL NAME               | GRADE | PROGRAM TYPE | CORE SUBJECT (MS CORE and 9-12 ONLY) | CORE COURSE (MS CORE and 9-12 ONLY) | SERVICE CATEGORY(K-9* ONLY) | NUMBER OF STUDENTS / SEATS FILLED | NUMBER OF SECTIONS | AVERAGE CLASS SIZE | SIZE OF SMALLEST CLASS | SIZE OF LARGEST CLASS | DATA SOURCE | SCHOOLWIDE PUPIL-TEACHER RATIO |
+| ---- | ---- | ------- | ----------- | ------------------------- | ----- | ------------ | ------------------------------------ | ----------------------------------- | --------------------------- | --------------------------------- | ------------------ | ------------------ | ---------------------- | --------------------- | ----------- | ------------------------------ |
+| 0    | 1    | M       | M015        | P.S. 015 Roberto Clemente | 0K    | GEN ED       | -                                    | -                                   | -                           | 19.0                              | 1.0                | 19.0               | 19.0                   | 19.0                  | ATS         | NaN                            |
+| 1    | 1    | M       | M015        | P.S. 015 Roberto Clemente | 0K    | CTT          | -                                    | -                                   | -                           | 21.0                              | 1.0                | 21.0               | 21.0                   | 21.0                  | ATS         | NaN                            |
+| 2    | 1    | M       | M015        | P.S. 015 Roberto Clemente | 01    | GEN ED       | -                                    | -                                   | -                           | 17.0                              | 1.0                | 17.0               | 17.0                   | 17.0                  | ATS         | NaN                            |
+| 3    | 1    | M       | M015        | P.S. 015 Roberto Clemente | 01    | CTT          | -                                    | -                                   | -                           | 17.0                              | 1.0                | 17.0               | 17.0                   | 17.0                  | ATS         | NaN                            |
+| 4    | 1    | M       | M015        | P.S. 015 Roberto Clemente | 02    | GEN ED       | -                                    | -                                   | -                           | 15.0                              | 1.0                | 15.0               | 15.0                   | 15.0                  | ATS         | NaN                            |
 
 As you can see above, it looks like the `DBN` is actually a combination of `CSD`, `BOROUGH`, and `SCHOOL CODE`. For those unfamiliar with New York City, it is composed of `5` boroughs. Each borough is an organizational unit, and is about the same size as a fairly large US City.`DBN` stands for `District Borough Number`. It looks like `CSD` is the District, `BOROUGH` is the borough, and when combined with the `SCHOOL CODE`, forms the `DBN`. There’s no systematized way to find insights like this in data, and it requires some exploration and playing around to figure out.
 
@@ -468,13 +471,13 @@ survey.head()
 ```
 Out[16]:
 
-|  | N_p | N_s | N_t | aca_p_11 | aca_s_11 | aca_t_11 | aca_tot_11 | bn | com_p_11 | com_s_11 | ... | t_q8c_1 | t_q8c_2 | t_q8c_3 | t_q8c_4 | t_q9 | t_q9_1 | t_q9_2 | t_q9_3 | t_q9_4 | t_q9_5 |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 0 | 90.0 | NaN | 22.0 | 7.8 | NaN | 7.9 | 7.9 | M015 | 7.6 | NaN | ... | 29.0 | 67.0 | 5.0 | 0.0 | NaN | 5.0 | 14.0 | 52.0 | 24.0 | 5.0 |
-| 1 | 161.0 | NaN | 34.0 | 7.8 | NaN | 9.1 | 8.4 | M019 | 7.6 | NaN | ... | 74.0 | 21.0 | 6.0 | 0.0 | NaN | 3.0 | 6.0 | 3.0 | 78.0 | 9.0 |
-| 2 | 367.0 | NaN | 42.0 | 8.6 | NaN | 7.5 | 8.0 | M020 | 8.3 | NaN | ... | 33.0 | 35.0 | 20.0 | 13.0 | NaN | 3.0 | 5.0 | 16.0 | 70.0 | 5.0 |
-| 3 | 151.0 | 145.0 | 29.0 | 8.5 | 7.4 | 7.8 | 7.9 | M034 | 8.2 | 5.9 | ... | 21.0 | 45.0 | 28.0 | 7.0 | NaN | 0.0 | 18.0 | 32.0 | 39.0 | 11.0 |
-| 4 | 90.0 | NaN | 23.0 | 7.9 | NaN | 8.1 | 8.0 | M063 | 7.9 | NaN | ... | 59.0 | 36.0 | 5.0 | 0.0 | NaN | 10.0 | 5.0 | 10.0 | 60.0 | 15.0 |
+|      | N_p   | N_s   | N_t  | aca_p_11 | aca_s_11 | aca_t_11 | aca_tot_11 | bn   | com_p_11 | com_s_11 | ...  | t_q8c_1 | t_q8c_2 | t_q8c_3 | t_q8c_4 | t_q9 | t_q9_1 | t_q9_2 | t_q9_3 | t_q9_4 | t_q9_5 |
+| ---- | ----- | ----- | ---- | -------- | -------- | -------- | ---------- | ---- | -------- | -------- | ---- | ------- | ------- | ------- | ------- | ---- | ------ | ------ | ------ | ------ | ------ |
+| 0    | 90.0  | NaN   | 22.0 | 7.8      | NaN      | 7.9      | 7.9        | M015 | 7.6      | NaN      | ...  | 29.0    | 67.0    | 5.0     | 0.0     | NaN  | 5.0    | 14.0   | 52.0   | 24.0   | 5.0    |
+| 1    | 161.0 | NaN   | 34.0 | 7.8      | NaN      | 9.1      | 8.4        | M019 | 7.6      | NaN      | ...  | 74.0    | 21.0    | 6.0     | 0.0     | NaN  | 3.0    | 6.0    | 3.0    | 78.0   | 9.0    |
+| 2    | 367.0 | NaN   | 42.0 | 8.6      | NaN      | 7.5      | 8.0        | M020 | 8.3      | NaN      | ...  | 33.0    | 35.0    | 20.0    | 13.0    | NaN  | 3.0    | 5.0    | 16.0   | 70.0   | 5.0    |
+| 3    | 151.0 | 145.0 | 29.0 | 8.5      | 7.4      | 7.8      | 7.9        | M034 | 8.2      | 5.9      | ...  | 21.0    | 45.0    | 28.0    | 7.0     | NaN  | 0.0    | 18.0   | 32.0   | 39.0   | 11.0   |
+| 4    | 90.0  | NaN   | 23.0 | 7.9      | NaN      | 8.1      | 8.0        | M063 | 7.9      | NaN      | ...  | 59.0    | 36.0    | 5.0     | 0.0     | NaN  | 10.0   | 5.0    | 10.0   | 60.0   | 15.0   |
 
 5 rows × 2773 columns
 
@@ -513,13 +516,13 @@ data["class_size"].head()
 
 Out[18]:
 
-|  | CSD | BOROUGH | SCHOOL CODE | SCHOOL NAME | GRADE | PROGRAM TYPE | CORE SUBJECT (MS CORE and 9-12 ONLY) | CORE COURSE (MS CORE and 9-12 ONLY) | SERVICE CATEGORY(K-9* ONLY) | NUMBER OF STUDENTS / SEATS FILLED | NUMBER OF SECTIONS | AVERAGE CLASS SIZE | SIZE OF SMALLEST CLASS | SIZE OF LARGEST CLASS | DATA SOURCE | SCHOOLWIDE PUPIL-TEACHER RATIO | DBN |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 0 | 1 | M | M015 | P.S. 015 Roberto Clemente | 0K | GEN ED | - | - | - | 19.0 | 1.0 | 19.0 | 19.0 | 19.0 | ATS | NaN | 01M015 |
-| 1 | 1 | M | M015 | P.S. 015 Roberto Clemente | 0K | CTT | - | - | - | 21.0 | 1.0 | 21.0 | 21.0 | 21.0 | ATS | NaN | 01M015 |
-| 2 | 1 | M | M015 | P.S. 015 Roberto Clemente | 01 | GEN ED | - | - | - | 17.0 | 1.0 | 17.0 | 17.0 | 17.0 | ATS | NaN | 01M015 |
-| 3 | 1 | M | M015 | P.S. 015 Roberto Clemente | 01 | CTT | - | - | - | 17.0 | 1.0 | 17.0 | 17.0 | 17.0 | ATS | NaN | 01M015 |
-| 4 | 1 | M | M015 | P.S. 015 Roberto Clemente | 02 | GEN ED | - | - | - | 15.0 | 1.0 | 15.0 | 15.0 | 15.0 | ATS | NaN | 01M015 |
+|      | CSD  | BOROUGH | SCHOOL CODE | SCHOOL NAME               | GRADE | PROGRAM TYPE | CORE SUBJECT (MS CORE and 9-12 ONLY) | CORE COURSE (MS CORE and 9-12 ONLY) | SERVICE CATEGORY(K-9* ONLY) | NUMBER OF STUDENTS / SEATS FILLED | NUMBER OF SECTIONS | AVERAGE CLASS SIZE | SIZE OF SMALLEST CLASS | SIZE OF LARGEST CLASS | DATA SOURCE | SCHOOLWIDE PUPIL-TEACHER RATIO | DBN    |
+| ---- | ---- | ------- | ----------- | ------------------------- | ----- | ------------ | ------------------------------------ | ----------------------------------- | --------------------------- | --------------------------------- | ------------------ | ------------------ | ---------------------- | --------------------- | ----------- | ------------------------------ | ------ |
+| 0    | 1    | M       | M015        | P.S. 015 Roberto Clemente | 0K    | GEN ED       | -                                    | -                                   | -                           | 19.0                              | 1.0                | 19.0               | 19.0                   | 19.0                  | ATS         | NaN                            | 01M015 |
+| 1    | 1    | M       | M015        | P.S. 015 Roberto Clemente | 0K    | CTT          | -                                    | -                                   | -                           | 21.0                              | 1.0                | 21.0               | 21.0                   | 21.0                  | ATS         | NaN                            | 01M015 |
+| 2    | 1    | M       | M015        | P.S. 015 Roberto Clemente | 01    | GEN ED       | -                                    | -                                   | -                           | 17.0                              | 1.0                | 17.0               | 17.0                   | 17.0                  | ATS         | NaN                            | 01M015 |
+| 3    | 1    | M       | M015        | P.S. 015 Roberto Clemente | 01    | CTT          | -                                    | -                                   | -                           | 17.0                              | 1.0                | 17.0               | 17.0                   | 17.0                  | ATS         | NaN                            | 01M015 |
+| 4    | 1    | M       | M015        | P.S. 015 Roberto Clemente | 02    | GEN ED       | -                                    | -                                   | -                           | 15.0                              | 1.0                | 15.0               | 15.0                   | 15.0                  | ATS         | NaN                            | 01M015 |
 
 There are several rows for each high school (as you can see by the repeated `DBN` and `SCHOOL NAME` fields). However, if we take a look at the `sat_results` dataset, it only has one row per high school:
 
@@ -531,13 +534,13 @@ data["sat_results"].head()
 
 Out[21]:
 
-|  | DBN | SCHOOL NAME | Num of SAT Test Takers | SAT Critical Reading Avg. Score | SAT Math Avg. Score | SAT Writing Avg. Score |
-| --- | --- | --- | --- | --- | --- | --- |
-| 0 | 01M292 | HENRY STREET SCHOOL FOR INTERNATIONAL STUDIES | 29 | 355 | 404 | 363 |
-| 1 | 01M448 | UNIVERSITY NEIGHBORHOOD HIGH SCHOOL | 91 | 383 | 423 | 366 |
-| 2 | 01M450 | EAST SIDE COMMUNITY SCHOOL | 70 | 377 | 402 | 370 |
-| 3 | 01M458 | FORSYTH SATELLITE ACADEMY | 7 | 414 | 401 | 359 |
-| 4 | 01M509 | MARTA VALLE HIGH SCHOOL | 44 | 390 | 433 | 384 |
+|      | DBN    | SCHOOL NAME                              | Num of SAT Test Takers | SAT Critical Reading Avg. Score | SAT Math Avg. Score | SAT Writing Avg. Score |
+| ---- | ------ | ---------------------------------------- | ---------------------- | ------------------------------- | ------------------- | ---------------------- |
+| 0    | 01M292 | HENRY STREET SCHOOL FOR INTERNATIONAL STUDIES | 29                     | 355                             | 404                 | 363                    |
+| 1    | 01M448 | UNIVERSITY NEIGHBORHOOD HIGH SCHOOL      | 91                     | 383                             | 423                 | 366                    |
+| 2    | 01M450 | EAST SIDE COMMUNITY SCHOOL               | 70                     | 377                             | 402                 | 370                    |
+| 3    | 01M458 | FORSYTH SATELLITE ACADEMY                | 7                      | 414                             | 401                 | 359                    |
+| 4    | 01M509 | MARTA VALLE HIGH SCHOOL                  | 44                     | 390                             | 433                 | 384                    |
 
 In order to combine these datasets, we’ll need to find a way to condense datasets like `class_size` to the point where there’s only a single row per high school. If not, there won’t be a way to compare SAT scores to class size. We can accomplish this by first understanding the data better, then by doing some aggregation. With the `class_size`dataset, it looks like `GRADE` and `PROGRAM TYPE` have multiple values for each school. By restricting each field to a single value, we can filter most of the duplicate rows. In the below code, we:
 
