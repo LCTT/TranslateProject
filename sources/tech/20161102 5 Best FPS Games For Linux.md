@@ -1,3 +1,5 @@
+【翻译中】 by jayjay823
+
 # 5 Best FPS Games For Linux
 
 ![best FPS games for linux](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/fps-games-for-linux.jpg?581) 
