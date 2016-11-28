@@ -3,7 +3,7 @@
  ![在 Linux 下生成一个高强度密码](https://www.ostechnix.com/wp-content/uploads/2016/11/password-720x340.jpg) 
 图片来源： Google.
 
-前一段时间，我们已经分享了如何 [强制用户在基于 DEB 的系统中使用高强度的密码][8]，例如 Debian，Ubuntu，Linux Mint， Elementary OS 等系统中。那么，你可能会疑惑一个高强度的密码究竟是什么样的呢？怎么才能生成一个那样的密码呢？不用担心，下面我们将介绍 4 种简单方法让你在 Linux 中生成一个高强度密码。当然，已经有很多免费的工具或者方式来完成这个任务，但这里我们仅考虑那些简单直接的方法。下面就让我们开始吧。
+前一段时间，我们已经分享了如何 [强制用户在基于 DEB 的系统中使用高强度的密码][8]  ，例如 Debian，Ubuntu，Linux Mint， Elementary OS 等系统中。那么，你可能会疑惑一个高强度的密码究竟是什么样的呢？怎么才能生成一个那样的密码呢？不用担心，下面我们将介绍 4 种简单方法让你在 Linux 中生成一个高强度密码。当然，已经有很多免费的工具或者方式来完成这个任务，但这里我们仅考虑那些简单直接的方法。下面就让我们开始吧。
 
 ### 1. 在 Linux 中使用 OpenSSL 来生成一个高强度密码
 
@@ -58,7 +58,7 @@ sudo yum install pwgen
 sudo pacman -S pwgen
 ```
 
-pwgen 安装完成后，便可以使用下面的命令来生成 一个长度为 14 个字符的随机高强度密码：
+pwgen 安装完成后，便可以使用下面的命令来生成一个长度为 14 个字符的随机高强度密码：
 
 ```
 pwgen 14 1
@@ -92,7 +92,7 @@ xee7seerez6Kau Aeshu0geveeji8
 pwgen 14
 ```
 
-样例输出：
+输出样例：
 
 ```
 kaeNg3EiVei4ei Oo0iehiJaix5Ae aenuv2eree2Quo iaT7zahH1eN2Aj Bie2owaiFahsie
@@ -148,7 +148,7 @@ xoiFush3ceiPhe
 
  -s 或 --secure （生成完全随机的密码）
 
- -B 或 --ambiguous （在密码中不包含难于区分的字母，如0和o, 1和l）
+ -B 或 --ambiguous （在密码中不包含难于区分的字母，如 0 和 o, 1 和 l）
 
  -h 或 --help （输出帮助信息）
 
@@ -169,7 +169,7 @@ man pwgen
 
 ### 3. 在 Linux 中使用 GPG 来生成一个高强度密码
 
-GPG (GnuPG or GNU Privacy Guard) 是一个免费的命令行程序，可以用于替代赛门铁克的 PGP 加密软件。在类 Unix 操作系统、Microsoft Windows 和 Android 中都可以获取到它。
+GPG (GnuPG 或 GNU Privacy Guard) 是一个免费的命令行程序，可以用于替代赛门铁克的 PGP 加密软件。在类 Unix 操作系统、Microsoft Windows 和 Android 中都可以获取到它。
 
 要使用 PGP 生成 1 个长度为 14 个字符的高强度密码，请在终端中运行下面的命令：
 
@@ -177,7 +177,7 @@ GPG (GnuPG or GNU Privacy Guard) 是一个免费的命令行程序，可以用�
  gpg --gen-random --armor 1 14
 ```
 
-样例输出：
+输出样例：
 
 ```
 DkmsrUy3klzzbIbavx8=
@@ -199,7 +199,7 @@ Perl 在大多数 Linux 发行版本的默认软件仓库中都可以获取到�
 sudo apt-get install perl
 ```
 
-在基于 RPM 的系统中安装 Perl ，可以运行：
+在基于 RPM 的系统中安装 Perl，可以运行：
 
 ```
 sudo yum install perl
@@ -241,7 +241,7 @@ perl password.pl
 
 使用你自己定义的文件名来替换上面命令中的 `password.pl` 。
 
-样例输出：
+输出样例：
 
 ```
 3V4CJJnYd
@@ -253,14 +253,11 @@ perl password.pl
 
 注： 我无法找到这个脚本的原有作者，假如你知道作者的名字，请在下面的评论部分让我知晓，我将在这篇指南中添加上该作者的名字。
 
-Please note that you must memorize or keep the passwords you have generated in a safe place in your computer. I recommend you to memorize the password and delete it from your system. It is much better in case your system is compromised by any hackers.
-请注意：对于你生成的密码，你必须记住它，或者将它保存到你电脑中一个安全的地方。我建议你记住密码并将它从你的系统中删除，因为这总比你的系统被黑客控制要好。
+请注意：对于生成的密码，你必须记住它，或者将它保存到电脑中一个安全的地方。我建议你记住密码并将它从系统中删除，因为这比你的系统被黑客控制要好的多。
 
-伙计们，今天就是这么多了。不久我将带来另一篇有意思的文章。在此之前，敬请关注 OSTechNix。
+伙计们，今天就是这么多了。不久我将带来另一篇有意思的文章。在此之前，敬请继续关注 OSTechNix。
 
-Happy Weekend!
 
-Cheers!! 
 
 --------------------------------------------------------------------------------
 
