@@ -1,4 +1,4 @@
-4 Useful Way to Know Plugged USB Device Name in Linux
+
 在Linux系统里识别USB设备名字的4种方法
 ============================================================
 
@@ -6,18 +6,17 @@
 
 现如今，使用USB设备来传输文件是十分常见的事，对于那些喜欢使用命令行的新手来说，当你需要格式化USB设备时，学会使用不同的方法来识别USB设备名是非常重要的。
 
-如果你插入一个设备到你的系统中，尤其是在桌面环境下，比如USB设备，它会自动挂载到一个指定目录,正常情况下是在/media/username/device-label目录下，之后你就可以进入到该目录下访问那些文件了。然而，在服务器上就不是这么回事了，你必须手动挂载这个设备，并且指定一个挂载点。
+如果在系统中插入一个设备，尤其是在桌面环境下，比如USB设备，它会自动挂载到一个指定目录,一般是在/media/username/device-label目录下，之后你就可以进入到该目录下访问那些文件了。然而，在服务器上就不是这么回事了，你必须手动挂载这个设备，并且指定一个挂载点。
 
 Linux系统使用/dev目录下特定的设备文件来标识插入的设备。你会发现该目录下的某些文件，包括/dev/sda或者/dev/sha表示你的第一个主设备，每个分区使用一个数字来表示，比如/dev/sda1或/dev/sha1表示主设备的第一个分区等等。
 
 ```
 $ ls /dev/sda*
 ```
-[
- ![List All Linux Device Names](http://www.tecmint.com/wp-content/uploads/2016/10/List-All-Linux-Device-Names.png) 
+[ ![List All Linux Device Names](http://www.tecmint.com/wp-content/uploads/2016/10/List-All-Linux-Device-Names.png) 
 ][3]
 
-列出Linux系统下所有的设备名
+*列出Linux系统下所有的设备名*
 
 现在咱们来使用下面一些特殊的命令行工具找出设备名：
 
@@ -28,11 +27,10 @@ $ ls /dev/sda*
 ```
 $ df -h
 ```
-[
- ![Find USB Device Name Using df Command](http://www.tecmint.com/wp-content/uploads/2016/10/Find-USB-Device-Name.png) 
+[![Find USB Device Name Using df Command](http://www.tecmint.com/wp-content/uploads/2016/10/Find-USB-Device-Name.png) 
 ][5]
 
-使用df命令查找USB设备名
+*使用df命令查找USB设备名*
 
 ### 使用lsblk命令查找USB设备名
 
@@ -45,11 +43,11 @@ $ lsblk
  ![List Linux Block Devices](http://www.tecmint.com/wp-content/uploads/2016/10/List-Linux-Block-Devices.png) 
 ][7]
 
-列出Linux系统里的块设备
+*列出Linux系统里的块设备*
 
 ### 使用fdisk工具识别USB设备名
 
-fdisk是一个功能强大的工具，用于查看你系统中的所有分区表，包括所有的USB设备，使用root权限执行如下命令：
+[fdisk是一个功能强大的工具][12]，用于查看你系统中的所有分区表，包括所有的USB设备，使用root权限执行如下命令：
 ```
 $ sudo fdisk -l
 ```
@@ -57,13 +55,13 @@ $ sudo fdisk -l
  ![List Partition Table of Block Devices](http://www.tecmint.com/wp-content/uploads/2016/10/List-Partition-Table.png) 
 ][9]
 
-列出块设备的分区表
+*列出块设备的分区表*
 
 ### 使用dmesg命令来识别出USB设备名
 
-dmesg是一个重要的用于打印或者控制内核环形缓冲区的命令。环形缓冲区是一种数据结构，它存放着内核操作数据的信息。
+dmesg是一个重要的用于打印或者控制内核环形缓冲区的命令。环形缓冲区是一种数据结构，它[存放着内核操作数据的信息][13]。
 
-运行如下的命令来查看内核操作信息，它同时也会打印出USB设备的信息：
+运行如下命令来查看内核操作信息，它同时也会打印出USB设备的信息：
 
 ```
 $ dmesg
@@ -72,7 +70,7 @@ $ dmesg
  ![dmesg - Prints USB Device Name](http://www.tecmint.com/wp-content/uploads/2016/10/dmesg-shows-kernel-information.png) 
 ][11]
 
-dmesg – 打印USB设备名
+*dmesg – 打印USB设备名*
 
 以上就是这篇文章中提及到的所有命令，我们在命令行下使用不同的方法来找出USB设备名。你也可以跟大家分享下实现这个目的的其它方法，或者如果你对这篇文章有什么想法也可以在下面跟大家交流下。
 
@@ -98,3 +96,5 @@ via: http://www.tecmint.com/find-usb-device-name-in-linux
 [9]:http://www.tecmint.com/wp-content/uploads/2016/10/List-Partition-Table.png
 [10]:http://www.tecmint.com/dmesg-commands/
 [11]:http://www.tecmint.com/wp-content/uploads/2016/10/dmesg-shows-kernel-information.png
+[12]:http://www.tecmint.com/fdisk-commands-to-manage-linux-disk-partitions/
+[13]:http://www.tecmint.com/dmesg-commands/
