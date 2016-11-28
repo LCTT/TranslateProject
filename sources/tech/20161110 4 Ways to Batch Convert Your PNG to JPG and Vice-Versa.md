@@ -1,3 +1,4 @@
+(翻译中 by runningwater)
 # 4 Ways to Batch Convert Your PNG to JPG and Vice-Versa
 
 In computing, Batch processing is the [execution of a series of tasks][11] in a program non-interactively. In this guide will offer you 4 simple ways to batch convert several `.PNG` images to `.JPG` and vice-versa using Linux command-line tools.
@@ -162,7 +163,7 @@ via: http://www.tecmint.com/linux-image-conversion-tools/
 
 作者：[Aaron Kili][a]
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 
 校对：[校对者ID](https://github.com/校对者ID)
 
