@@ -1,3 +1,6 @@
+
+### rusking translating
+ 
 # Forget Technical Debt —Here'sHowtoBuild Technical Wealth
 
 [Andrea Goulet][58] and her business partner sat in her living room, casually reviewing their strategic plan, when an episode of This Old House came on television. It was one of those moments where ideas collide to create something new. They’d been looking for a way to communicate their value proposition — cleaning up legacy code and technical debt for other companies. And here they were, face to face with the perfect analogy.
