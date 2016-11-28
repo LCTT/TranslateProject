@@ -1,58 +1,57 @@
 Yinux 翻译中
-Livepatch – Apply Critical Security Patches to Ubuntu Linux Kernel Without Rebooting
+ 热补丁 - 免重启安装Ubuntu Linux 关键性补丁
 ============================================================
 
-If you are a system administrator in charge of maintaining critical systems in enterprise environments, we are sure you know two important things:
+如果你是一个在企业环境中掌管关键性系统的系统管理员,你肯定知道以下两件事:
 
-1) Finding a downtime window to install security patches in order to handle kernel or operating system vulnerabilities can be difficult. If the company or business you work for does not have security policies in place, operations management may end up favoring uptime over the need to solve vulnerabilities. Additionally, internal bureaucracy can cause delays in granting approvals for a downtime. Been there myself.
+1) 很难找个停机时间去给系统安装安全补丁以修复内核或者系统漏洞 . 如果你工作的公司或者客户没有专门制定安全策略,运营管理可能最终会优先保证系统的运行而不是解决系统漏洞. 此外,内部的官僚主义也可能造成停机批准的延迟.我当时就是这样的.
 
-2) Sometimes you can’t really afford a downtime, and should be prepared to mitigate any potential exposures to malicious attacks some other way.
+2) 有时候你确实停不起, 并且还要做好用别的什么方法减小恶意攻击的风险.
 
-The good news is that Canonical has recently released (actually, a couple of days ago) its Livepatchservice to apply critical kernel patches to Ubuntu 16.04 (64-bit edition / 4.4.x kernel) without the need for a later reboot. Yes, you read that right: with Livepatch, you don’t need to restart your Ubuntu 16.04 server in order for the security patches to take effect.
+好消息是 Canonical公司最近(事实上,几十天前)针对Ubuntu 16.04 (64位 / 4.4.x 内核)发布了一个不用重启就能安装关键性内核补丁的服务. 对,你没看错:打热补丁,你不用重启,就能使Ubuntu 160.4服务器 的安全补丁生效.
 
-### Signing up for Ubuntu Livepatch
+### 注册 Ubuntu Livepatch 账号
 
-In order to use Canonical Livepatch Service, you need to sign up at [https://auth.livepatch.canonical.com/][1] and indicate if you are a regular Ubuntu user or an Advantage subscriber (paid option). All Ubuntu users can link up to 3 different machines to Livepatch through the use of a token:
+要享受 Canonical Livepatch 服务你先要在这里注册一个账号 [https://auth.livepatch.canonical.com/][1] 然后表明你是一个普通用户还是企业用户(付费). 通过令牌,所有的Ubuntu用户都能连接3台不同的电脑:
 
 [
  ![Canonical Livepatch Service](http://www.tecmint.com/wp-content/uploads/2016/10/Canonical-Livepatch-Service.png) 
 ][2]
 
-Canonical Livepatch Service
-
-In the next step you will be prompted to enter your Ubuntu One credentials or sign up for a new account. If you choose the latter, you will need to confirm your email address in order to finish your registration:
+Canonical 热补丁服务
+下一步会提示你输入你的 Ubuntu One 用户名密码或者注册一个新账号. 要是你注册的话,还会要你确认你的邮件地址以完成注册:
+:
 
 [
  ![Ubuntu One Confirmation Mail](http://www.tecmint.com/wp-content/uploads/2016/10/Ubuntu-One-Confirmation-Mail.png) 
 ][3]
 
-Ubuntu One Confirmation Mail
+Ubuntu One  确认邮件
 
-Once you click on the link above to confirm your email address, you’ll be ready to go back to [https://auth.livepatch.canonical.com/][4] and get your Livepatch token.
+一旦你点了上面的链接确认了你的邮件地址,你就会回到这个界面 [https://auth.livepatch.canonical.com/][4] 得到你的热补丁令牌.
 
-### Getting and Using your Livepatch Token
+### 获取令牌并使用它
 
-To begin, copy the unique token assigned to your Ubuntu One account:
+首先,把分配给你账号的这个独一无二的令牌复制下来:
 
 [
  ![Canonical Livepatch Token](http://www.tecmint.com/wp-content/uploads/2016/10/Livepatch-Token.png) 
 ][5]
 
-Canonical Livepatch Token
+Canonical 热补丁令牌
 
-Then go to a terminal and type:
+然后打开终端,输入:
 
 ```
 $ sudo snap install canonical-livepatch
 ```
 
-The above command will install the livepatch, whereas
+上面的命令会安装 livepach程序,下面的命令会激活热补丁服务
 
 ```
 $ sudo canonical-livepatch enable [YOUR TOKEN HERE]
 ```
-
-will enable it for your system. If this last command indicates it can’t find canonical-livepatch, make sure `/snap/bin` has been added to your path. A workaround consists of changing your working directory to `/snap/bin` and do.
+如果后面的命令提示 找不到  canonical-livepatch, 检查一下 `/snap/bin` 是不是在 path路径里面. 或者把你的工作目录切换到 `/snap/bin` 也行.
 
 ```
 $ sudo ./canonical-livepatch enable [YOUR TOKEN HERE]
@@ -61,25 +60,25 @@ $ sudo ./canonical-livepatch enable [YOUR TOKEN HERE]
  ![Install Livepatch in Ubuntu](http://www.tecmint.com/wp-content/uploads/2016/10/Install-Livepatch-in-Ubuntu.png) 
 ][6]
 
-Install Livepatch in Ubuntu
+安装热补丁
 
-Overtime, you’ll want to check the description and the status of patches applied to your kernel. Fortunately, this is as easy as doing.
+以后你可能会看一下已安装补丁的描述,检查一下安装状况.幸运的是,这很简单
 
 ```
 $ sudo ./canonical-livepatch status --verbose
 ```
 
-as you can see in the following image:
+执行上面的命令,你就能看到下图:
 
 [
  ![Check Livepatch Status in Ubuntu](http://www.tecmint.com/wp-content/uploads/2016/10/Check-Livepatch-Status.png) 
 ][7]
 
-Check Livepatch Status in Ubuntu
+检查补丁安装情况
 
-Having enabled Livepatch on your Ubuntu server, you will be able to reduce planned and unplanned downtimes at a minimum while keeping your system secure. Hopefully Canonical’s initiative will award you a pat on the back by management – or better yet, a raise.
+在你的Ubuntu服务器上启用了热补丁,你就可以把计划的非计划的停机降到最低,并且还能保证系统的安全.希望Canonical的这个服务能让你在运维上得到鼓励或者更近一步,一个提高.
 
-Feel free to let us know if you have any questions about this article. Just drop us a note using the comment form below and we will get back to you as soon as possible.
+如果你对这篇文章有什么疑问,欢迎在下面留言,我们会尽快回复.
 
 --------------------------------------------------------------------------------
 
