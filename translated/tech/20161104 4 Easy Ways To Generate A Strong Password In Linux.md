@@ -3,23 +3,21 @@
  ![在 Linux 下生成一个高强度密码](https://www.ostechnix.com/wp-content/uploads/2016/11/password-720x340.jpg) 
 图片来源： Google.
 
-昨天，我们已经分享了如何 [要求用户在基于 DEB 的系统中使用一个高强度的密码][8]，例如在 Debian，Ubuntu，Linux Mint， Elementary OS 等系统中。那么，你可能会疑惑一个高强度的密码究竟是什么样的呢？怎么才能生成一个那样的密码呢？不用担心，下面我们将介绍 4 种简单方法让你在 Linux 中生成一个高强度密码。当然，已经有很多免费的工具或者方式来完成这个任务，但这里我们仅考虑那些简单直接的方法。下面就让我们开始吧。
-
-下载 – [免费电子书：“Ubuntu 16.04 入门”][7]
+前一段时间，我们已经分享了如何 [强制用户在基于 DEB 的系统中使用高强度的密码][8]，例如 Debian，Ubuntu，Linux Mint， Elementary OS 等系统中。那么，你可能会疑惑一个高强度的密码究竟是什么样的呢？怎么才能生成一个那样的密码呢？不用担心，下面我们将介绍 4 种简单方法让你在 Linux 中生成一个高强度密码。当然，已经有很多免费的工具或者方式来完成这个任务，但这里我们仅考虑那些简单直接的方法。下面就让我们开始吧。
 
 ### 1. 在 Linux 中使用 OpenSSL 来生成一个高强度密码
 
 OpenSSL 在所有的类 Unix 发行版本，Solaris，Mac OS X 和 Windows 中都可以获取到。
 
-要使用 OpenSSL 生成一个随机密码，唤起你的终端并运行下面的命令：
+要使用 OpenSSL 生成一个随机密码，打开终端并运行下面的命令：
 
 ```
 openssl rand 14 -base64
 ```
 
-上面的 `-base64` 字符串将确保生成的密码可以被键盘敲出来。
+上面的 `-base64` 参数将确保生成的密码可以被键盘敲出来。
 
-样例输出：
+输出样例：
 
 ```
 wXCHXlxuhrFrFMQLqik=
@@ -29,7 +27,7 @@ wXCHXlxuhrFrFMQLqik=
  ![sksk_003](http://www.ostechnix.com/wp-content/uploads/2016/11/sk@sk_003.png) 
 ][6]
 
-上面的命令将生成一个随机的、长度为 14 个字符的高强度密码。记住我们强烈推荐你生成 14 个字符的密码。
+上面的命令将生成一个随机的、长度为 14 个字符的高强度密码。我们强烈推荐你生成 14 个字符的密码。
 当然你可以使用 OpenSSL 生成任意长度的密码。
 
 要了解更多信息，可以参考联机手册：
@@ -60,13 +58,13 @@ sudo yum install pwgen
 sudo pacman -S pwgen
 ```
 
-一旦 pwgen 安装完成后，便可以使用下面的命令来生成 1 个长度为 14 个字符的随机高强度密码：
+pwgen 安装完成后，便可以使用下面的命令来生成 一个长度为 14 个字符的随机高强度密码：
 
 ```
 pwgen 14 1
 ```
 
-样例输出：
+输出样例：
 
 ```
 Choo4aicozai3a
@@ -76,19 +74,19 @@ Choo4aicozai3a
 ![sksk_004](http://www.ostechnix.com/wp-content/uploads/2016/11/sk@sk_004.png) 
 ][5]
 
-上面的命令将只生成 1 个长度为 14 个字符的密码，如果要生成 2 个长度为 14 个字符的不同密码，则可以运行：
+上面的命令将只生成 一个 14 位字符长的密码，如果要生成两个不同的 14 位字符长的密码，则可以运行：
 
 ```
 pwgen 14 2
 ```
 
-样例输出：
+输出样例：
 
 ```
 xee7seerez6Kau Aeshu0geveeji8
 ```
 
-如果要生成 100 个（尽管可能没有必要生成那么多）长度为 14 个字符的不同密码，则可以运行：
+如果要生成 100 个（尽管可能没有必要生成那么多）不同的 14 位字符长的密码，则可以运行：
 
 ```
 pwgen 14
@@ -129,7 +127,7 @@ aiyoxeiva8Maih gieRahgh8anahM ve2ath9Eyi5iet quohg6ok3Ahgee theingaech5Nef
 pwgen 14 1 -n 1
 ```
 
-样例输出：
+输出样例：
 
 ```
 xoiFush3ceiPhe
@@ -150,7 +148,7 @@ xoiFush3ceiPhe
 
  -s 或 --secure （生成完全随机的密码）
 
- -B 或 --ambiguous （在密码中不包含双关词语）
+ -B 或 --ambiguous （在密码中不包含难于区分的字母，如0和o, 1和l）
 
  -h 或 --help （输出帮助信息）
 
@@ -283,5 +281,4 @@ via: https://www.ostechnix.com/4-easy-ways-to-generate-a-strong-password-in-linu
 [4]:http://www.ostechnix.com/wp-content/uploads/2016/11/sk@sk_005.png
 [5]:http://www.ostechnix.com/wp-content/uploads/2016/11/sk@sk_004.png
 [6]:http://www.ostechnix.com/wp-content/uploads/2016/11/sk@sk_003.png
-[7]:http://ostechnix.tradepub.com/free/w_ubun08/prgm.cgi?a=1
 [8]:https://www.ostechnix.com/force-users-use-strong-passwords-debian-ubuntu/
