@@ -90,7 +90,7 @@ via: https://opensource.com/life/16/7/how-take-your-projects-github-issues-good-
 
 作者：[Matt Butler][a]
 译者：[echoma](https://github.com/echoma)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
