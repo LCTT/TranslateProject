@@ -29,7 +29,7 @@
 
 ![](https://opensource.com/sites/default/files/resize/issuetemplate-new-520x293.png)
           
->          问题单模板让特性需求单保持统一的形式
+*问题单模板让特性需求单保持统一的形式*
 
 这个做法的核心点在于，问题单要清晰的呈现给它涉及的每一个人：它要尽量简单的指明受众（或者说用户），操作（或者说任务），和输出（或者说目标）。不过，不需要过分拘泥于这个模板，只要能把故事里的是什么事情或者是什么原因说清楚，就达到目的了。
 
@@ -61,7 +61,8 @@
 比如说，你打算提交一个关于新版网站主页的问题单。那这个问题单的子任务列表可能就是这样的：
 
 ![](https://opensource.com/sites/default/files/resize/markdownchecklist-520x255.png)
->              使用 markdown 的清单把复杂问题拆分成多个部分
+
+*使用 markdown 的清单把复杂问题拆分成多个部分*
 
 在必要的情况下，你还可以链接到其他问题单，以进一步明确任务。（GitHub 里做这个挺方便的）
 
@@ -78,7 +79,8 @@
 
 
 ![](https://opensource.com/sites/default/files/resize/readme-520x184.png)
->       在 ReadMe 文件里增加清晰的说明，供新合作者参考
+
+*在 ReadMe 文件里增加清晰的说明，供新合作者参考*
 
 ReadMe 文件是提供“问题单指引”的完美场所。如果希望特性需求单遵循“用户讲故事”的格式，那就把格式写在 ReadMe 里。如果使用某种跟踪工具来管理待办事项，那就标记在 ReadMe 里，这样别人也能看到。
 
