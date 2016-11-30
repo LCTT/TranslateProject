@@ -97,69 +97,69 @@ Xubuntu 只在小核心中附带了一些必须的应用，直到你找到并安
 
 Xubuntu 将会被安装在你的电脑上了。
 
-### First Impressions
+### 第一印象
 
 [![](https://1.bp.blogspot.com/-twtmUl3w008/WAKFtvOGMuI/AAAAAAAAM2Q/txM1lfCM7QkzhLDqEqacavmAMMg2DSr0ACLcB/s640/fulldesktop.png)][24]
 
-Xubuntu starts with a blue desktop with a single panel at the top. You will also see all of the drives that are available on your computer as icons on the desktop.
+Xubuntu 的初始界面只有面板位于蓝色桌面的顶部。通过你桌面上的图标，你可以看到所有可用的驱动。
 
-At the top of the screen is a single panel.
+画面的顶部是个简单的面板。
 
-The left corner on the panel has a single icon (picture of a mouse) which when clicked brings up a styl￼ish, lightweight but fully functional menu known as the Whisker menu.
+面板的左侧角落有一个单独的图标（老鼠的样子），点击它后会出现一个时尚，轻量但功能全面的菜单，它被称为 Whisker（胡须）菜单。
 
-The top right corner has icons for notifications, power settings, bluetooth settings, network settings, audio settings and a clock.
+在右上角有着通知、电源、蓝牙、网络、音量和时钟的图标。
 
-### Connecting To The Internet
+### 连接互联网
 
 [![](https://2.bp.blogspot.com/-nEvPMHkpTQ8/WAKG17nVliI/AAAAAAAAM2Y/2K6alEtBWAg9x9GS7hDEoJwprrwOqUQfwCLcB/s640/internet.png)][23]
 
-You can connect to the internet by clicking the network icon on the panel. A list of wireless networks will appear and you can connect to one by clicking on it and enter the password for the network.
+你可以通过点击面板上的网络图标来连接互联网。一个无线网络的列表将会出现，你可以选择一个点击进去，并键入密码，就可以连接了。
 
-I have installed Xubuntu on my Lenovo Ideapad Y700 which is quite modern. Many distributions have caused subtle issues with wireless connectivity which I have had to work around.
+我是在我的联想 Ideapad Y700 上安装 Xubuntu 的，这个本子还是比较新潮的。但是许多发行版在无线网络连接时都会报错，而我必须使用无线网络工作。
 
-Xubuntu 16.10 works without having to make any modifications.
+Xubuntu 16.10 工作时却没有出现任何问题。
 
-### Drivers
+### 驱动
 
 [![](https://2.bp.blogspot.com/-bBGLZIp5J5k/WAKHG1w2RqI/AAAAAAAAM2c/nSISH5XFhQUfoIpXyuEUKlVqTieEi6_oACLcB/s640/nvidia.png)][22]
 
-It is worth looking for additional drivers which may be available for your computer. 
+为你的电脑寻找可用的附加驱动是十分必要的。
 
-Quite often the default option will be the open source drivers which are decent enough but if you have a good graphics card then it is worth installing the proprietary drivers.
+虽然作为默认设置的开源驱动是基本够用的，但是如果你有着较好的显卡，并且想获得更好的图形体验，那就十分有必要去寻找专有的驱动。
 
-You can find the additional drivers setup screen by opening the menu and searching for additional drivers.
+你可以找到附加驱动的窗口，通过打开它来寻找附加驱动。
 
-If you see a driver appear for your graphics card and it says not working then I recommend sticking with the default graphics driver.
+如果你找到了适合你的显卡驱动，但是它显示不工作，那么我还是建议你用默认的图形驱动。
 
-### Printers
+### 打印
 
 [![](https://1.bp.blogspot.com/-loH1k_rWYcA/WAKICKT7YUI/AAAAAAAAM2g/01rCedfYovgesf5Cf1RlcwFVfwPwhf2JACLcB/s320/printer.png)][21]
 
-I have an Epson WF-2630 wireless printer. Xubuntu was able to find the printer straight away and installed the drivers relevant for the printer.
+我有一个爱普生 WF-2630 无线打印机. Xubuntu 能够直接找到这台打印机，并安装相关驱动，来进行打印工作。
 
-I printed test pages and the output was perfectly adequate.
+我试着打印了一张纸，发现它的输出非常合适。
 
-### Network Attached Storage
+### 网络附加存储
 
 [![](https://4.bp.blogspot.com/-hFDeZKOzZu4/WAKIWilPHoI/AAAAAAAAM2o/GhJBVIDfU0oPgc7Z8cvH4i4gbu_3tlOfgCLcB/s640/wdmycloud.png)][20]
 
-I have a WD MyCloud Storage device which is accessible over a wireless network. 
+我有一个 WD MyCloud 存储设备需要通过网络连接上。 
 
-You can access the device using the default file manager called Thunar. It is worth noting that when I clicked on Network to show devices the WD MyCloud device showed up but when I clicked on it I received an error.
+你可以通过默认的文件管理器 Thunar 来访问这个设备。值得注意的是，我在网络设备中找到了 WD MyCloud 设备，但是点击它时显示错误。
 
-However when I opened the Windows Network Folder the WD MyCloud device showed up again and I was able to access the folders on the drive.
+但是我打开 Windows 的网络文件夹时，WD MyCloud 也显示出来了，而且我也能正常的访问文件夹
 
-### Software
+### 软件
 
 [![](https://1.bp.blogspot.com/-nPqWKUsDVoI/WAKJTxLDxUI/AAAAAAAAM2w/8LoOvhNltV8IQtSoyN_oPWjjKyV1bTMyACLcB/s640/whynotfirefox.png)][19]
 
-I mentioned at the beginning of the review that Xubuntu comes with a minimal set of applications. There is however almost everything you could need to get started.
+我在文章开始时提到了，Xubuntu 给了一个最小化的应用程序配置，所以几乎所有事情你都可以直接开始。
 
-Firefox is installed as the default web browser and Thunderbird is the default email client.
+火狐浏览器是它的默认浏览器，Thunderbird 是默认的邮件客户端
 
 [![](https://1.bp.blogspot.com/-Tw2PlooCqVU/WAKJznZu2DI/AAAAAAAAM20/E0RDAQKPxNY6l0TF10s2Yo9ge-LToZFtQCLcB/s640/parole.png)][18]
 
-You also get the full LibreOffice suite and the Parole media player which does the job.
+你也有一个全套的 Libreoffice 套件和 Parole 媒体播放器。
 
 There are a host of other tools such as an image viewer, calculator, disk burning software and a bittorrent client.
 
@@ -263,7 +263,7 @@ via: http://www.everydaylinuxuser.com/2016/10/an-everyday-linux-user-review-of_1
 
 作者：[Gary Newell][a]
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/chao-zhi)
 
 校对：[校对者ID](https://github.com/校对者ID)
 
