@@ -1,4 +1,6 @@
-The history of Android		
+alim0x translating
+
+The history of Android
 ================================================================================
 
 >Follow the endless iterations from Android 0.5 to Android 7 and beyond.
@@ -6,22 +8,22 @@ The history of Android
 ### Android Wear
 
 *   [
-     ![](https://cdn.arstechnica.net/wp-content/uploads/2016/10/g-watch-150x150.png) 
+     ![](https://cdn.arstechnica.net/wp-content/uploads/2016/10/g-watch-150x150.png)
     ][1]
 *   [
-     ![](https://cdn.arstechnica.net/wp-content/uploads/2016/10/Untitled-150x150.jpg) 
+     ![](https://cdn.arstechnica.net/wp-content/uploads/2016/10/Untitled-150x150.jpg)
     ][2]
 *   [
-     ![](https://cdn.arstechnica.net/wp-content/uploads/2016/10/home-screen33-640x261-150x150.png) 
+     ![](https://cdn.arstechnica.net/wp-content/uploads/2016/10/home-screen33-640x261-150x150.png)
     ][3]
 *   [
-     ![](https://cdn.arstechnica.net/wp-content/uploads/2016/10/feature-640x212-150x150.png) 
+     ![](https://cdn.arstechnica.net/wp-content/uploads/2016/10/feature-640x212-150x150.png)
     ][4]
 *   [
-     ![](https://cdn.arstechnica.net/wp-content/uploads/2016/10/superlayout2000-150x150.png) 
+     ![](https://cdn.arstechnica.net/wp-content/uploads/2016/10/superlayout2000-150x150.png)
     ][5]
 *   [
-     ![](https://cdn.arstechnica.net/wp-content/uploads/2016/10/darker-150x150.png) 
+     ![](https://cdn.arstechnica.net/wp-content/uploads/2016/10/darker-150x150.png)
     ][6]
 
 June 2014 saw Android tackle a new form factor: smartwatches. Google launched "[Android Wear][10]" at Google I/O 2014 with the intention of putting a tiny computer on your wrist. Designing for [a 1.6-inch screens][11] meant having to rethink the entire interface from the ground up, so Google stripped down Android 4.4 KitKat and created a tiny smartwatch OS. Android Wear devices weren't standalone computers. They depended on an Android smartphone running the Android Wear companion app for connectivity, authentication, and app data.
@@ -34,7 +36,7 @@ Only 720,000 Android Wear devices shipped in 2014, and since then we haven't see
 
 ### Android 5.0 Lollipop—The most important Android release ever
 
- ![](https://cdn.arstechnica.net/wp-content/uploads/2016/10/heade2r-980x479-980x479.jpg) 
+ ![](https://cdn.arstechnica.net/wp-content/uploads/2016/10/heade2r-980x479-980x479.jpg)
 
 In November 2014, Google launched [Android 5.0 Lollipop][14]. Lots of OS updates get called "the biggest release ever," but that cliche actually holds true for Android 5.0 Lollipop. For starters, it changed the way Android was released. With this version of Android, Google started the "Developer Preview" program, which saw the new OS released in beta form months before the release. With the code name and version number now used as marketing tools, the final name was kept secret during the beta and referred to only by letter. At Google I/O 2014, Google announced the "Android L Developer Preview."
 
@@ -54,7 +56,7 @@ The primary metaphor for Material Design is "paper and ink." All UI surfaces wer
 
 Anination was a big focus, too, with the idea that nothing should "pop" onto the screen. Components should slide in, shrink, or grow. The "paper" surfaces didn't quite work like real world paper, either they could shrink, expand, merge, and grow. To make the animation system work with image assets, shadows weren't baked into the UI widgets the way they were in previous versions—Google actually created a real-time, 3D shadowing system so that shadows would be correctly rendered during these animations and transitions.
 
- ![An exaggerated side view of Lollipop's layered interface and the shadows it creates.](https://cdn.arstechnica.net/wp-content/uploads/2014/07/2014-07-10_21-56-05.jpg) 
+ ![An exaggerated side view of Lollipop's layered interface and the shadows it creates.](https://cdn.arstechnica.net/wp-content/uploads/2014/07/2014-07-10_21-56-05.jpg)
 
 <figcaption class="caption" style="box-sizing: inherit; position: relative; margin-top: -6px;">An exaggerated side view of Lollipop's layered interface and the shadows it creates.[Google I/O 2014 - Material design principles][8]</figcaption>
 
@@ -88,5 +90,3 @@ via: http://arstechnica.com/gadgets/2016/10/building-android-a-40000-word-histor
 [15]:https://design.google.com/resources/
 [16]:https://design.google.com/events/
 [17]:https://design.google.com/articles/material-design-awards/
-
-
