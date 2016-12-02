@@ -87,9 +87,7 @@ Xubuntu 只附带了一些必须的应用，在小核心包含之外的应用要
 
 [![](https://3.bp.blogspot.com/-rnLEH6sBp7E/WAKFbgaxakI/AAAAAAAAM2M/-mG3lSxc41EKPQ2BnNbSmLRdgVeyT36jwCLcB/s320/install6.png)][25]
 
-最后创建一个初始账户.
-
-输入你的名字，你计算机的名字，设置用户名和密码。
+最后创建一个初始账户，输入你的名字，你计算机的名字，设置用户名和密码。
 
 Xubuntu 将会被安装在你的电脑上了。
 
