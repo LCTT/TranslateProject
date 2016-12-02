@@ -69,7 +69,7 @@ Xubuntu 只附带了一些必须的应用，在小核心包含之外的应用要
 
 想要完成这些，你需要联网。
 
-Again It is relatively straight forward and covered later on in the review.相比于直接安装，他会在安装好后覆盖安装更新.
+再次，这也很直白，我们会在之后再次涉及它。
 
 [![](https://1.bp.blogspot.com/-Pzt6YUVJbGY/WAKEf6QY2-I/AAAAAAAAM18/I41MoEvv_aguUX6Y9HkVLC_QnONpzyCVwCLcB/s320/install3.png)][28]
 
@@ -99,12 +99,6 @@ Xubuntu 将会被安装在你的电脑上了。
 
 Xubuntu 的初始界面只有一个面板位于蓝色桌面的顶部。通过桌面上的图标，你可以看到所有可用的设备。
 
-At the top of the screen is a single panel.
-
-The left corner on the panel has a single icon (picture of a mouse) which when clicked brings up a styl￼ish, lightweight but fully functional menu known as the Whisker menu.
-
-The top right corner has icons for notifications, power settings, bluetooth settings, network settings, audio settings and a clock.
-
 画面的顶部是个简单的面板。
 
 面板的左侧角落有一个单独的图标（老鼠的样子），点击它后会出现一个时尚，轻量但功能全面的菜单，它被称为 Whisker（胡须）菜单。
@@ -117,9 +111,9 @@ The top right corner has icons for notifications, power settings, bluetooth sett
 
 你可以通过点击面板上的网络图标来连接互联网。一个无线网络的列表将会出现，你可以选择一个点击进去，并键入密码，就可以连接了。
 
-我是在我的联想 Ideapad Y700 上安装 Xubuntu 的，这个本子还是比较新潮的。但是许多发行版在无线网络连接时都会报错，而我必须使用无线网络工作。
+我是在我的联想 Ideapad Y700 上安装 Xubuntu 的，这个本子很现代，其上运行的许多发行版在无线网络连接时会有些小问题，我不得不找些规避问题的方法。
 
-Xubuntu 16.10 工作时却没有出现任何问题。
+但 Xubuntu 16.10 工作的很好，不需要做任何修改。
 
 ### 驱动
 
@@ -127,37 +121,37 @@ Xubuntu 16.10 工作时却没有出现任何问题。
 
 为你的电脑寻找可用的附加驱动是十分必要的。
 
-虽然作为默认设置的开源驱动是基本够用的，但是如果你有着较好的显卡，并且想获得更好的图形体验，那就十分有必要去寻找专有的驱动。
+虽然默认的开源驱动是基本够用的，但是如果你有着较好的显卡，并且想获得更好的图形体验，那就十分有必要去寻找专有的驱动。
 
-你可以找到附加驱动的窗口，通过打开它来寻找附加驱动。
+打开菜单，搜索附加驱动，你可以找到附加驱动设置界面。
 
-如果你找到了适合你的显卡驱动，但是它显示不工作，那么我还是建议你用默认的图形驱动。
+如果看到你的显卡驱动，但是它显示不工作，那么我还是建议你用默认的显卡驱动。
 
 ### 打印
 
 [![](https://1.bp.blogspot.com/-loH1k_rWYcA/WAKICKT7YUI/AAAAAAAAM2g/01rCedfYovgesf5Cf1RlcwFVfwPwhf2JACLcB/s320/printer.png)][21]
 
-我有一个爱普生 WF-2630 无线打印机。 Xubuntu 能够直接找到这台打印机，并安装相关驱动，来进行打印工作。
+我有一个爱普生 WF-2630 无线打印机。 Xubuntu 能够直接找到这台打印机，并安装相关驱动。
 
-我试着打印了一张纸，发现它的输出非常合适。
+我打印了测试页，发现它的输出非常合适。
 
 ### 网络附加存储
 
 [![](https://4.bp.blogspot.com/-hFDeZKOzZu4/WAKIWilPHoI/AAAAAAAAM2o/GhJBVIDfU0oPgc7Z8cvH4i4gbu_3tlOfgCLcB/s640/wdmycloud.png)][20]
 
-我有一个 WD MyCloud 存储设备需要通过网络连接上。 
+我有一个 WD MyCloud 存储设备需要通过无线网络连接上。 
 
-你可以通过默认的文件管理器 Thunar 来访问这个设备。值得注意的是，我在网络设备中找到了 WD MyCloud 设备，但是点击它时显示错误。
+可以通过默认的文件管理器 Thunar 来访问这个设备。值得注意的是，我在网络设备中找到了 WD MyCloud 设备，但是点击它时显示错误。
 
-但是我打开 Windows 的网络文件夹时，WD MyCloud 也显示出来了，而且我也能正常的访问文件夹
+但是我打开 Windows 的网络文件夹时，WD MyCloud 也显示出来了，而且我也能正常访问该设备上的文件夹。
 
 ### 软件
 
 [![](https://1.bp.blogspot.com/-nPqWKUsDVoI/WAKJTxLDxUI/AAAAAAAAM2w/8LoOvhNltV8IQtSoyN_oPWjjKyV1bTMyACLcB/s640/whynotfirefox.png)][19]
 
-我在文章开始时提到了，Xubuntu 给了一个最小化的应用程序配置，所以几乎所有事情你都可以直接开始。
+我在文章开始时提到了，Xubuntu 配备了最小化的应用，不过它包含了你开始所需要的所有应用。
 
-火狐浏览器是它的默认浏览器，Thunderbird 是默认的邮件客户端
+火狐浏览器是它的默认浏览器，Thunderbird 是默认的邮件客户端。
 
 [![](https://1.bp.blogspot.com/-Tw2PlooCqVU/WAKJznZu2DI/AAAAAAAAM20/E0RDAQKPxNY6l0TF10s2Yo9ge-LToZFtQCLcB/s640/parole.png)][18]
 
@@ -171,9 +165,9 @@ Xubuntu 16.10 工作时却没有出现任何问题。
 
 缺乏专门的音频播放器这点比较奇怪。另外我需要提到的是我通常最终会安装谷歌的 Chrome 浏览器，而不是使用Firefox。
 
-这章节的第一个图片说明了原因。这张图片里，我试图利用谷歌商店里的东西激起你的兴趣，可惜的是各种版本的 DRM 和其他一些问题导致了视频无法播放。
+本节的第一个图片说明了原因。这张图片里，我试图观看 Google Play 商店的 “Curb Your Enthusiam” 视频，可惜的是各种 DRM 和其他一些问题导致了视频无法播放。
 
-当从谷歌网站上下载一个东西都报错了之后，我就不能接受简单的跳过这个问题。如下所示。
+从谷歌网站上一个简单的下载就可以解决问题。如下所示。
 
 [![](https://3.bp.blogspot.com/-_aqn8leBcuY/WAKLOAzAhnI/AAAAAAAAM3A/yruGYEG0PHc4WRAqRjeVoYxjhVlHiIfCwCLcB/s640/Screenshot_2016-10-15_17-57-28.png)][16]
 
@@ -181,9 +175,9 @@ Xubuntu 16.10 工作时却没有出现任何问题。
 
 [![](https://2.bp.blogspot.com/-6kjAgQV6Oss/WAKLhFbihcI/AAAAAAAAM3E/TLeK0xPexNEaxdzb_NkPn_BDDxOoTR2-gCLcB/s640/software.png)][15]
 
-在基于 Ubuntu 16.04 版本的发行版上普遍存在的一个主要问题是有些程序无法在图形安装软件中安装。
+在 Ubuntu 16.04 以后的发行版上普遍存在的一个主要问题是有些程序无法在图形安装软件中安装。
 
-比如你在软件管理器中找不到 Steam 。
+比如在软件管理器中找不到 Steam。
 
 [![](https://3.bp.blogspot.com/-4e1ozcMoijU/WAKL2Gp5C1I/AAAAAAAAM3I/VY7XBvxOLCkiK-UdSvypfQFnrkfCtt3rwCLcB/s640/steamnotinsoftware.png)][14]
 
@@ -191,39 +185,37 @@ Xubuntu 16.10 工作时却没有出现任何问题。
 
 [![](https://3.bp.blogspot.com/-rzTMI5a6EAE/WAKMFfDi-2I/AAAAAAAAM3Q/1-l612iZmSEYY188kfyzKo5s75nFWSz6ACLcB/s640/steaminaptget.png)][13]
 
-并不是 只有Steam 被遗漏了，其他软件比如 Skype 同样不能再图形软件管理工具中找到。
+并不是只有 Steam 被遗漏了，其他软件比如 Skype 同样不能在图形软件管理工具中找到。
 
-我希望这个问题能够在所有 Ubuntu 发现版中间被解决。
+我真希望这个问题已经在所有 Ubuntu 发行版中解决了。
 
-我最近还试用了 Kubuntu 16.04 ，发现他的软件工具完全无用，搜索根本不工作。
+我最近还试用了 Kubuntu 16.04 ，发现他的叫做 Discover 的软件工具完全无用，搜索根本不工作。
 
-幸运的是，Xubuntu 上的软件工具可以安装大多数软件包，我利用它搜寻并装上了 Quod Libet 音乐播放器。
+幸运的是，Xubuntu 上的软件管理器可以安装大多数软件包，我利用它搜寻并装上了 Quod Libet 音乐播放器。
 
 [![](https://4.bp.blogspot.com/-l_INcXhflac/WAKMqz8mYtI/AAAAAAAAM3U/qBNl5YO8VOEMndpZm5IEMYOGYrih_Q4DQCLcB/s640/quodlibet.png)][12]
 
 [![](https://1.bp.blogspot.com/-erNT96pq67c/WAKM-331qKI/AAAAAAAAM3Y/jbnf5cZbFxgM9Q543XA3bFDqQ91MkmpJACLcB/s320/music.png)][11]
 
-顺便说一下，如果你在安装 Xubuntu 时选择了同时安装 MP3 播放器，它也不会出现任何问题。
+顺便说一下，如果你在安装 Xubuntu 时选择了同时安装 codecs，那么 MP3 播放也不会出现任何问题。
 
-如果你没有同时安装 MP3 播放器，那么你需要打开终端模拟器，安装 Xubuntu 限制的额外包。
+如果没有安装，那么你需要打开终端模拟器，安装  Xubuntu Restricted Extras 包。
 
 ### 个性化 Xubuntu
 
 [![](https://1.bp.blogspot.com/-MlFCGvvjSe8/WAKNdG8i6SI/AAAAAAAAM3g/6g7WNJbmZX856kp4ezO56boIWbGLRLMdQCLcB/s320/changewallpaper.png)][10]
 
-在这方面你可以做很多事：
+在这方面你可以做很多事来定制 Xubuntu， [参见这里][9]。
 
- [个性，Xubuntu 的方法在这][9]。
- 
-Xubuntu 提供一整套壁纸，如上图所示，你要做的第一件事就是选一个好看的壁纸并添加一个像 Dock 的面板和一个能够启动所有你喜欢的软件的启动器。
+Xubuntu 提供一整套漂亮的壁纸，如上图所示，你要做的第一件事就是选一个好看的壁纸并添加一个 Dock 风格的面板，里面含所有你喜欢的软件的启动器。
 
 [![](https://2.bp.blogspot.com/-h_HRUcMTYu0/WAKN7J_0BJI/AAAAAAAAM3k/NKy7ybXZCEM23IK0Nkjp-TDo2PQ1ff4bQCLcB/s640/newwallpaper.png)][8]
 
-Xubuntu 有一个相对较新的特性就是 XFDashboard 。它带来了与 Gnome 类似的 Dash 面板。你可以在上面添加启动器和能够让他快速出现的键盘快捷键。
+Xubuntu 有一个相对较新的特性就是 XFDashboard 。它带来了与 Gnome 桌面类似的 Dash 面板。你可以在上面添加启动器和能够让应用快速出现的键盘快捷键。
 
 [![](https://1.bp.blogspot.com/-ZCmwHtAahH0/WAKORXPnNFI/AAAAAAAAM3o/lKR4bnEbi-syQdMp_KoCb8xQAd4WTP5dgCLcB/s640/xfdashboard.png)][7]
 
-展示了一个快速选择不同工作区和启动应用的好方法。
+此图展示了一个快速选择不同工作区和启动应用的好方法。
 
 说老实话，当谈到个性化 Xubuntu 时，有一种世界尽在我掌中的感觉。
 
@@ -241,17 +233,19 @@ Xubuntu 有一个相对较新的特性就是 XFDashboard 。它带来了与 Gnom
 
 ### 总结
 
-我并没有经常使用 Xubuntu ，并不是因为我不喜欢它。事实上我是 Xubuntu 的大粉丝，并且我在另一个电脑上有一个它的大量定制版。 
+我不经常使用 Xubuntu ，并不是因为我不喜欢它。事实上我是 Xubuntu 的大粉丝，并且我在另一个电脑上有一个它的大量定制版。 
+
+I use that computer when I want to get things done because lets face it there is nothing more annoying than seeing this:
 
 我使用电脑时，我希望把事情做到最好，我最恼火的是看到下面这个情况。
 
 [![](https://1.bp.blogspot.com/-GX3xYYXeTfY/WAKTRbvHv0I/AAAAAAAAM4Q/NzN8PfAOHGouj6z7-TPLyC18e_TXhCukACLcB/s640/IMG_20161015_163354-min.jpg)][4]
 
-认真的说，为啥会有人认为 windows 适合工作，当他每天看到这个消息 “正在安装(1/285)” ，于是你就失去了一个小时，以便让他进行自我更新。
+认真的说，为啥会有人认为 windows 适合工作，似乎每隔一就会看到消息 “正在安装(1/285)” ，于是你就失去了一个小时，以便让它进行自我更新。
 
 而 Xubuntu（和其他发行版一样）更新不会打断你每天的工作。
 
-事实是，Xubuntu 真的没有什么改变，它是坚固的,稳定的,它不需要改变（除了软件管理的需要以外）。
+事实是，Xubuntu 真的没有什么改变，它是坚固的,稳定的,它不需要改变（除了软件管理器）。
 
 我非常推荐 Xubuntu。
 
