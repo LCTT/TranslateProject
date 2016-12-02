@@ -1,6 +1,4 @@
-translating by chao-zhi
-
-一个日常 Linux 使用者关于 Xubuntu 16.10 的论述 - 一个开始的好选择
+一个日常 Linux 使用者关于 Xubuntu 16.10 的论述 - 起步的好选择
 ===============
 
 ### 简介
@@ -11,19 +9,19 @@ Xubuntu 一直是我最喜欢的发行版。与其他的 Linux 发行版相比�
 
 Xubuntu 给你的仅仅是一个基础的初始形态. 
 
-如果你是那种喜欢定制桌面的外观和触感的人，那么 XFCE 绝对是最好的桌面环境。
+如果你喜欢定制桌面，那么 XFCE 绝对是最好的桌面环境。
 
-如果你希望低系统资源占用，或你想让工作又漂亮又丝滑，那么 XFCE 则是一个伟大的选择。
+如果系统资源不足，或想让工作漂亮顺畅， XFCE 还是一个很棒的选择。
 
 Xubuntu 之所以成为一个优秀的 Linux 发行版，就是因为他默认安装 XFCE 桌面。
 
 毫无疑问，当涉及到硬件兼容性、易用性、稳定性、易于安装和拥有一个大型社区，Ubuntu 是很难被超越的。
 
-Xubuntu 是 Ubuntu Linux 发行版的官方支持的，因此你可以拥有所有 Ubuntu 的优点，除了用 XFCE 桌面代替 Untiy 桌面。
+Xubuntu 是 Ubuntu Linux 发行版的官方支持的，因此你可以拥有所有 Ubuntu 的优点，除了用 XFCE 桌面代替 Unity 桌面。
 
 你可以选择性的安装应用到你的发行版上，而不是像其他发行版那样预装了一堆你不需要的应用。
 
-Xubuntu 只在小核心中附带了一些必须的应用，直到你找到并安装其他的应用。
+Xubuntu 只附带了一些必须的应用，在小核心包含之外的应用要靠你自己去找并安装。
 
 对我来说，以上就是我为什么认为 Xubuntu 是一个极好的发行版的原因。一个简单的初始安装并且任由我将其自定义为我想要的样子。
 
@@ -51,33 +49,31 @@ Xubuntu 只在小核心中附带了一些必须的应用，直到你找到并安
 *   [你也可以试试这款针对 Xubuntu 的教程][2]
 *   [或者你也可以试试这个][1]
 
-如果这些你都觉得太复杂，你可以看看这个
+如果这些你都觉得太复杂，你可以 [从这买一个。][31]
 
- [从这买一个][31]
 
-.
 
 ### 安装
 
 [![](https://4.bp.blogspot.com/-4GZVmSbI3nw/WAKDyLh8UdI/AAAAAAAAM10/BhSSR0e3GkYC-5fSrjyLmhNKpuQnogbdQCLcB/s320/install1.png)][30]
 
-与 Ubuntu 相比，安装 Xubuntu 相对要直接一点。
+与 Ubuntu 其他版本相比，安装 Xubuntu 相对要直接一点。
 
-如果你曾经装了一个，那么你可以简单的安装任何一个。
+如果你曾经装过一个版本，那么基本上你可以安装任何一个版本。
 
 开始时选择你的安装语言。
 
 [![](https://4.bp.blogspot.com/-0YgUIjeTb6I/WAKECFfeOwI/AAAAAAAAM14/lyUO2P7O9WYjLgCS0i-ARAbhnvGho_71ACLcB/s320/install2.png)][29]
 
-你会被问到，是否需要同时安装更新，和是否要安装第三方软件，包括播放音乐的软件和专有驱动。
+你会被问到，是否需要同时安装更新，是否要安装第三方软件，包括播放音乐的软件和专有驱动。
 
 想要完成这些，你需要联网。
 
-相比于直接安装，他会在安装好后覆盖安装更新.
+Again It is relatively straight forward and covered later on in the review.相比于直接安装，他会在安装好后覆盖安装更新.
 
 [![](https://1.bp.blogspot.com/-Pzt6YUVJbGY/WAKEf6QY2-I/AAAAAAAAM18/I41MoEvv_aguUX6Y9HkVLC_QnONpzyCVwCLcB/s320/install3.png)][28]
 
-如果你有一个备用的未分配的磁盘分区和并且安装了 Windows，您将看到可以选择安装 Xubuntu 并设置双启动。
+如果你有一个备用的未分配的磁盘分区和并且安装了 Windows，您将看到可以选择在已有 Windows 的情况下安装 Xubuntu 并设置双启动。
 
 您还可以选择安装 Xubuntu 作为唯一的操作系统，你也可以选择别的任何你喜欢的分区来安装。
 
@@ -87,11 +83,11 @@ Xubuntu 只在小核心中附带了一些必须的应用，直到你找到并安
 
 [![](https://4.bp.blogspot.com/-cCNxMeLAE-Y/WAKFQjSZe2I/AAAAAAAAM2I/ZaTKZ8DAzFg-TOfS5BkNdN1-HYlRXweYwCLcB/s320/install5.png)][26]
 
-接下来两步是选择你的键盘模式，并选择你的语言。
+接下来两步是选择语言和键盘设置，以确定键盘模式。
 
 [![](https://3.bp.blogspot.com/-rnLEH6sBp7E/WAKFbgaxakI/AAAAAAAAM2M/-mG3lSxc41EKPQ2BnNbSmLRdgVeyT36jwCLcB/s320/install6.png)][25]
 
-最后还是创建一个初始账户.
+最后创建一个初始账户.
 
 输入你的名字，你计算机的名字，设置用户名和密码。
 
@@ -101,7 +97,13 @@ Xubuntu 将会被安装在你的电脑上了。
 
 [![](https://1.bp.blogspot.com/-twtmUl3w008/WAKFtvOGMuI/AAAAAAAAM2Q/txM1lfCM7QkzhLDqEqacavmAMMg2DSr0ACLcB/s640/fulldesktop.png)][24]
 
-Xubuntu 的初始界面只有面板位于蓝色桌面的顶部。通过你桌面上的图标，你可以看到所有可用的设备。
+Xubuntu 的初始界面只有一个面板位于蓝色桌面的顶部。通过桌面上的图标，你可以看到所有可用的设备。
+
+At the top of the screen is a single panel.
+
+The left corner on the panel has a single icon (picture of a mouse) which when clicked brings up a styl￼ish, lightweight but fully functional menu known as the Whisker menu.
+
+The top right corner has icons for notifications, power settings, bluetooth settings, network settings, audio settings and a clock.
 
 画面的顶部是个简单的面板。
 
