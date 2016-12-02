@@ -1,3 +1,4 @@
+@Yinux 翻译中
 Neofetch – Shows Linux System Information with Distribution Logo
 ============================================================
 
