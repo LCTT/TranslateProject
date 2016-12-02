@@ -263,7 +263,7 @@ via: http://www.everydaylinuxuser.com/2016/10/an-everyday-linux-user-review-of_1
 
 译者：[chao-zhi](https://github.com/chao-zhi)
 
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
