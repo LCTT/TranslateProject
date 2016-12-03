@@ -59,7 +59,7 @@ via: http://www.datamation.com/open-source/linux-practicality-vs-activism.html
 
 作者：[Matt Hartley][a]
 译者：[joVoV](https://github.com/joVoV)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
