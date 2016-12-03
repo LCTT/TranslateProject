@@ -1,23 +1,26 @@
 Linux 的实用性 VS 行动主义
 ==================================
 
->我们使用 Linux 是因为它比其他操作系统更实用，还是其他更高级的理由呢？
+*我们使用 Linux 是因为它比其他操作系统更实用，还是其他更高级的理由呢？*
 
-其中一件关于运行 Linux 的最伟大的事情之一就是它所提供的自由。凡出现在 Linux 社区之间的划分在于我们如何珍惜这种自由。
+运行 Linux 的最吸引人的事情之一就是它所提供的自由。 Linux 社区之间的划分在于我们如何珍惜这种自由。
 
-一些人认为，通过使用 Linux 所享有的自由是从供应商锁定或高软件成本的自由。大多数人会称这个是一个实际的考虑。而其他用户会告诉你，他们享受的是自由软件的自由。那就意味着拥抱支持 [开源软件运动][1] 的 Linux 发行版，完全避免专有软件和所有相关的东西。
-
+对一些人来说，使用 Linux 可以享受不受供应商或高软件成本限制的自由。大多数人会称这个是一个实用性的考虑。而其他用户会告诉你，他们享受的是自由软件的自由。那就意味着拥护支持<ruby> [开源软件运动][1]<rt> Free Software Movement</rt> </ruby>的 Linux 发行版，完全避免专有软件和所有相关的东西。
 
 在这篇文章中，我将带你比较这两种自由的区别，以及他们如何影响 Linux 的使用。
 
 ### 专有的问题
 
-大多数的用户有一个共同的一点是他们的喜欢避免专有软件。对于像我这样的实际的爱好者来说，这是一个我怎么样花我的钱，来控制我的软件和避免供应商锁定的问题。当然，我不是一个程序员……所以我调整我的安装软件是十分温柔的。但也有一些个别情况，一个应用程序的小调整可以意味着它的工作和不工作的区别。
+大多数 Linux 用户有一个共同点，就是他们尽量避免使用专有软件。对像我这样的实用主义的爱好者来说，这意味着我能够控制我的软件支出，避免过度依赖特定供应商。当然，我不是一个程序员……所以我对安装软件的调整是十分微小的。但也有一些个别情况，一个应用程序的小调整可以意味着它能否正常工作。
 
-还有就是选择避开专有软件的Linux爱好者，因为他们觉得这是不道德的使用。通常这里主要的问题是使用专有软件会带走或者干脆阻碍你的个人自由。像这些用户更喜欢使用的Linux发行版和软件来支持 [自由软件理念][2] 。虽然它类似于开源的概念并经常直接与之混淆，[这里有些差异][3] 。
+还有一些 Linux 爱好者，倾向于避开专有软件，因为他们觉得使用它们是不道德的。通常这里主要的问题是使用专有软件会剥夺或者干脆阻碍你的个人自由。像这些用户更喜欢使用 Linux 发行版和软件来支持 [自由软件理念][2] 。虽然它类似于开源的概念并经常直接与之混淆，[还是有些差异的][3] 。
 
 因此，这里有个问题：像我这样的用户往往以其便利掩盖了其纯软件自由的理想化。不要误会我的意思，像我这样的人更喜欢使用符合自由软件背后的理想软件，但我们也更有可能做出让步，以完成特定的任务。
+So here's the issue: Users such as myself tend to put convenience over the ideals of pure software freedom. Don't get me wrong, folks like me prefer to use software that meets the ideals behind Free Software, but we also are more likely to make concessions in order to accomplish specific tasks.
 
+Both types of Linux enthusiasts prefer using non-proprietary solutions. But Free Software advocates won't use proprietary at all, where as the practical user will rely on the best tool with the best performance. This means there are instances where the practical user is willing to run a proprietary application or code on their non-proprietary operating system.
+
+In the end, both user types enjoy using what Linux has to offer. But our reasons for doing so tend to vary. Some have argued that this is a matter of ignorance with those who don't support Free Software. I disagree and believe it's a matter of practical convenience. Users who prefer practical convenience simply aren't concerned about the politics of their software.
 这两种类型的 Linux 爱好者都喜欢使用非专有的解决方案。但是，自由软件倡导者根本不会去使用所有权，在那里作为实际的用户将依靠具有最佳性能的最佳工具。这意味着，在有些情况下的实际用户愿意来运行他们的非专有操作系统上的专有应用或代码实例。
 
 最终，这两种类型的用户都喜欢使用 Linux 所提供的。但是，我们这样做的原因往往会有所不同。有人认为那些不支持自由软件的人是无知的。我不同意，我认为它是实用方便性的问题。那些喜欢实用方便性的用户根本不关心他们软件的政治问题。
