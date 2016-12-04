@@ -1,3 +1,5 @@
+#rusking translating 
+
 Fedora 25 Workstation Installation Guide
 ============================================================
 

@@ -1,3 +1,5 @@
+#rusking translating 
+
 How to Manage Samba4 AD Infrastructure from Linux Command Line – Part 2
 ============================================================
 
