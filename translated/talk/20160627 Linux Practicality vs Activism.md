@@ -3,7 +3,7 @@ Linux 的实用性 VS 行动主义
 
 *我们使用 Linux 是因为它比其他操作系统更实用，还是其他更高级的理由呢？*
 
-运行 Linux 的最吸引人的事情之一就是它所提供的自由。 Linux 社区之间的划分在于我们如何珍惜这种自由。 Where the division among the Linux community appears is in how we value this freedom.
+运行 Linux 的最吸引人的事情之一就是它所提供的自由。 Linux 社区之间的划分在于我们如何看待这种自由。 
 
 对一些人来说，使用 Linux 可以享受不受供应商或高软件成本限制的自由。大多数人会称这个是一个实用性的考虑。而其他用户会告诉你，他们享受的是自由软件的自由。那就意味着拥护支持<ruby> [开源软件运动][1]<rt> Free Software Movement</rt> </ruby>的 Linux 发行版，完全避免专有软件和所有相关的东西。
 
@@ -31,8 +31,7 @@ Linux 的实用性 VS 行动主义
 
 ### 自由的价值
 
-我不羡慕那些自由软件倡导者的一个地方，就是根据<ruby> [自由软件基金会][4] <rt>Free Software Foundation</rt></ruby>规定的标准，为实现自由，他们要始终使用 Linux 发行版和硬件而带来的额外工作，。这意味着 Linux 内核需要摆脱专有的驱动支持，而且硬件不需要任何专有代码。当然不是不可能的，但确实很难。
-
+我不羡慕那些自由软件倡导者的一个地方，就是根据<ruby> [自由软件基金会][4] <rt>Free Software Foundation</rt></ruby>规定的标准，为实现自由，他们要始终使用 Linux 发行版和硬件而带来的额外工作。这意味着 Linux 内核需要摆脱专有的驱动支持，而且硬件不需要任何专有代码。当然不是不可能的，但确实很难。
 
 一个自由软件倡导者可以达到的最好的情况是硬件是“自由兼容”的。有些供应商，可以满足这一需求，但大多提供依赖于 Linux 兼容专有固件的硬件。实用主义用户对自由软件倡导者来说是个搅局者。
 
@@ -44,20 +43,15 @@ Linux 的实用性 VS 行动主义
 
 对我来说，我更喜欢使用能满足我所有需求的 Linux 桌面，这包括使用非专有软件和专有软件。尽管有人认为专有软件限制了我的个人自由，但我必须反驳这一点，因为我有优先使用它的自由，即选择的自由。
 
-或许，这也就是为什么我发现自己更确定开源软件的理想，而不是坚持自由软件运动背后的理念的原因。我更愿意和那些不会花时间告诉我，我是怎么用错了的那些人群在一起。我的经验是，那些开源的人群仅仅是感兴趣去分享自由软件的优点，而不是因为自由软件的理想主义的激情。
+或许，这也就是为什么我更认同<ruby>开源软件<rt> Open Source Software</rt></ruby>的理想，而不是坚持<ruby>自由软件运动<rt>Free Software movement</rt></ruby>的理念。我更愿意和这样的人群在一起，他们不会花时间告诉我，我使用对我最适合的方式却是错误的。根据我的经验，这些开源的人群仅仅是感兴趣去分享自由软件的优点，不带有自由软件的理想主义的激情。
 
-我觉的自由软件的概念实在是太棒了。对那些需要活跃在软件政治，并指出使用专有软件的人的缺陷的人来说，那么我认为 Linux ( [GNU/Linux][5] ) 行动是一个不错的选择。在我们的介绍里，像我一样的实际用户更倾向于从自由软件的支持者改变方向。
+我觉得自由软件的概念很棒。而且对那些需要活跃在软件政治，并向大众指出使用专有软件的缺陷的人来说，我认为 Linux ( [GNU/Linux][5] ) 行动是一个不错的选择。而像我这样的实用主义用户可能从自由软件的支持者转向，如本文中所说。
 
-当我介绍 Linux 的桌面时，我富有激情地分享它的实际优点。而且我成功地让他们享受这一经历，我允许用户自己去发现自由软件的观点。但我发现大多数人使用的 Linux 不是因为他们想拥抱自由软件，而是因为他们只是想要最好的用户体验。也许只有我是这样的，很难说。
+当我介绍 Linux 的桌面时，我富有激情地分享它的实际优点。如果我成功地让他们享受这一经历，我鼓励用户自己去发现自由软件的观点。但我发现大多数人使用 Linux 并不是因为他们想拥抱自由软件，而仅仅是他们想要最好的用户体验。也许只有我是这样的观点，很难说。
 
 你怎么认为呢？你是一个自由软件倡导者吗？也许你倾向于在桌面 Linux 发行版中使用专有软件/代码？那么评论和分享您的 Linux 桌面体验吧！
 
 
-Perhaps this too, is why I find myself identifying more with the ideals of Open Source Software instead of sticking with the ideals behind the Free Software movement. I prefer to stand with the group that doesn't spend their time telling me how I'm wrong for using what works best for me. It's been my experience that the Open Source crowd is merely interested in sharing the merits of software freedom without the passion for Free Software idealism.
-
-I think the concept of Free Software is great. And to those who need to be active in software politics and point out the flaws of using proprietary software to folks, then I think Linux (GNU/Linux) activism is a good fit. Where practical users such as myself tend to change course from Free Software Linux advocates is in our presentation.
-
-When I present Linux on the desktop, I share my passion for its practical merits. And if I'm successful and they enjoy the experience, I allow the user to discover the Free Software perspective on their own. I've found most people use Linux on their computers not because they want to embrace software freedom, rather because they simply want the best user experience possible. Perhaps I'm alone in this, it's hard to say.
 
 
 --------------------------------------------------------------------------------
