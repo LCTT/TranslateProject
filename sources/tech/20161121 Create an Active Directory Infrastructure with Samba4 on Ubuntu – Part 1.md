@@ -1,3 +1,5 @@
+#rusking translating 
+
 Create an Active Directory Infrastructure with Samba4 on Ubuntu – Part 1
 ============================================================
 
