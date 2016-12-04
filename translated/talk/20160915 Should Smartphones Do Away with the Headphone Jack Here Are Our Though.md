@@ -55,7 +55,7 @@ via: https://www.maketecheasier.com/should-smartphones-do-away-with-the-headphon
 
 作者：[Laura Tucker][a]
 译者：[WangYueScream](https://github.com/WangYueScream) [LemonDemo](https://github.com/LemonDemo) 
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
