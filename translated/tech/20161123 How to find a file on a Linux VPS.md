@@ -5,7 +5,6 @@
 
 在 Linux 中使用命令行可能会非常不方便，尤其对于新手而言。没有 GUI，很难在不同文件夹间浏览，找到需要的文件。本篇教程中，我会展示如何在 **[Linux VPS][1]** 中查找特定的文件。
 
-The first thing your need to do is to connect to your Linux VPS via SSH. There are two common ways to search for a file under Linux. The one way is to use the find command and the other way is to use the locate command. Let’s start with the former.
 第一步要做的是**[通过 SSH 连接到你的 Linux VPS][2]**。在Linux中查找文件有两种方法。一种是使用 `find` 命令，另外一种是使用 `locate` 命令。我们先看第一种。
 
 ### find命令
