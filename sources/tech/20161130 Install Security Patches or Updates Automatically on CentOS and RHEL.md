@@ -1,25 +1,21 @@
-Install Security Patches or Updates Automatically on CentOS and RHEL
-在 CentOS 和 RHEL 上安装或自动更新安全补丁
+在 CentOS 和 RHEL 系统上安装或自动更新安全补丁
 ============================================================
 
-One of the serious needs of a Linux system is to be kept up to date regularly with the latest security patches or updates available for the corresponding distribution.
 在 Linux 系统上，其中一个最重要的需求就是保持定期更新最新的安全补丁，或者为相应的 Linux 版本更新可用的安全补丁。
-In a previous article, we’ve explained how to [configure automatic security update in Debian/Ubuntu][1], in this article we will explain how to set up your CentOS/RHEL 7/6 distribution to auto update essential security packages when needed.
-在之前的文章中，我们分享了[如何在 Debian/Ubuntu 上配置和自动更新安全补丁][1]，在这篇文章中，我们将分享如何在 CentOS/RHEL 7/6 版本中设置自动更新重要的安全补丁，当你需要这样做的时候。
-Other Linux distributions in the same families (Fedora or Scientific Linux) can be configured similarly.
+
+在之前的文章中，我们分享了[如何在 Debian/Ubuntu 上配置自动安全更新][1]，在这篇文章中，我们将分享如何在 CentOS/RHEL 7/6 版本中设置自动更新重要的安全补丁，当你需要这样做的时候。
+
 在相同家族的其他 Linux 版本（Fedora 或 Scientific Linux）中可以用类似的方法进行配置。
-### Configure Automatic Security Updates on CentOS/RHEL Systems
-### 在 CentOS/RHEL 系统上配置自动更新安全补丁
-On CentOS/RHEL 7/6, you will need to install the following package:
+
+### 在 CentOS/RHEL 系统上配置自动安全更新
+
 在 CentOS/RHEL 7/6 系统上，你需要安装下面的安装包：
 ```
 # yum update -y && yum install yum-cron -y
 ```
 
-#### Enable Automatic Security Updates on CentOS/RHEL 7
+#### 在 CentOS/RHEL 7　系统上启用自动安全更新
 
-#### 在 CentOS/RHEL 7　系统上启用自动更新安全补丁
-Once the installation is complete, open /etc/yum/yum-cron.conf and locate these lines – you will have to make sure that the values matches those listed here:
 安装完成以后，打开 /etc/yum/yum-cron.conf，然后找到下面这些行内容，你必须确保它们的值和下面展示的一样
 
 ```
@@ -29,16 +25,15 @@ download_updates = yes
 apply_updates = yes
 ```
 
-The first line indicates that the unattended update command will be:
-第一行表明自动更新命令行应该是这样：
+第一行表明自动更新命令行应该像这样：
 
 ```
 # yum --security upgrade
 ```
 
-whereas the other lines enable notifications and automatic download and installation of security upgrades.
+而其他的行保证能够通知并自动下载和安装安全升级。
 
-The following lines are also required to indicate that notifications will be sent via email from root@localhost to the same account (again, you may choose another one if you want).
+为了使来自 root@localhost 的通知能够通过邮件发送给相同的账户（再次说明，你可以选择其他账户，如果你想这样的话），下面这些行也是必须的。
 
 ```
 emit_via = email
@@ -46,9 +41,9 @@ email_from = root@localhost
 email_to = root
 ```
 
-#### Enable Automatic Security Updates on CentOS/RHEL 6
+#### 在 CentOS/RHEL 6 上启用自动安全更新
 
-By default, the cron is configured to download and install all updates immediately, but we can change this behavior in /etc/sysconfig/yum-cron configuration file by modifying these two parameters to `yes`.
+默认情况下， cron 被配置成立即下载和安装所有更新，但是我们可以通过在 /etc/sysconfig/yum-cron 配置文件中把下面两个参数改为 ‘yes’，从而改变这种行为。
 
 ```
 # Don't install, just check (valid: yes|no)
@@ -58,7 +53,7 @@ CHECK_ONLY=yes
 DOWNLOAD_ONLY=yes
 ```
 
-To enable email notification that about the security package updates, set the MAILTO parameter to a valid mail address.
+为了启用关于安装包更新的邮件通知，你需要把 MAILTO 参数设置为一个有效的邮件地址。
 
 ```
 # by default MAILTO is unset, so crond mails the output by itself
@@ -66,7 +61,7 @@ To enable email notification that about the security package updates, set the M
 MAILTO=admin@tecmint.com
 ```
 
-Finally, start and enable the yum-cron service:
+最后，打开并启用 yum-cron 设备：
 
 ```
 ------------- On CentOS/RHEL 7 ------------- 
@@ -77,20 +72,22 @@ systemctl enable yum-cron
 # chkconfig --level 35 yum-cron on
 ```
 
-Congrats! You have successfully set up unattended upgrades on CentOS/RHEL 7/6.
+恭喜你，你已经成功的在 CentOS/RHEL 7/6 系统上设置了自动升级。
 
-##### Summary
+##### 总结
 
-In this article we have discussed how to keep your server updated regularly with the latest security patches or updates. Additionally, you learned how to configure email notifications in order to keep yourself updated when new patches are applied.
+在这篇文章中，我们讨论了如何保持你的设备定期更新或升级最新的安全补丁。另外，为了保证当新的补丁被应用时你自己能够知道，你也学习了如何配置邮件通知。
 
-If you have any concerns about this article? Feel free to drop us a note using the comment form below. We look forward to hearing from you.
+如果你有任何关于这篇文章的顾忌，请在下面的评论区留下你的问题。我们期待收到你的来信。
+
+
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/auto-install-security-patches-updates-on-centos-rhel/
 
 作者：[Gabriel Cánepa][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ucasFL](https://github.com/ucasFL)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
