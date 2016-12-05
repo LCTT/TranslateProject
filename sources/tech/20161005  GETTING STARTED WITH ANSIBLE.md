@@ -1,4 +1,3 @@
-Translating by Bestony
 GETTING STARTED WITH ANSIBLE
 ==========
 
