@@ -216,7 +216,7 @@ via: http://www.tecmint.com/install-configure-ganglia-monitoring-centos-linux/
 
 校对：[校对者ID](https://github.com/校对者ID)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: http://www.tecmint.com/author/gacanepa/
 [1]:http://ganglia.info/
