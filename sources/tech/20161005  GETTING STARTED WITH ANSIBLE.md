@@ -597,6 +597,6 @@ via: https://gorillalogic.com/blog/getting-started-with-ansible/?utm_source=webo
 
 校对：[校对者ID](https://github.com/校对者ID)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://gorillalogic.com/author/josehidalgo/

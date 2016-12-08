@@ -84,11 +84,11 @@ DevOps团队应该尽可能将重点放到如何更好的监控服务的运行�
 
 --------------------------------------------------------------------------------
 
-via: http://linoxide.com/firewall/pfsense-setup-basic-configuration/
+via: http://thenewstack.io/five-principles-monitoring-microservices/
 
 作者：[Apurva Dave][a] [Loris Degioanni][b]
 译者：[jiajia9linuxer](https://github.com/jiajia9linuxer)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

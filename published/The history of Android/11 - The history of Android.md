@@ -74,7 +74,7 @@ Nexus One 代表着拥有纯净的安卓体验，没有运营商的定制和应�
 
 --------------------------------------------------------------------------------
 
-via: http://arstechnica.com/gadgets/2014/06/building-android-a-40000-word-history-of-googles-mobile-os/11/
+via: http://arstechnica.com/gadgets/2016/10/building-android-a-40000-word-history-of-googles-mobile-os/11/
 
 译者：[alim0x](https://github.com/alim0x) 校对：[wxy](https://github.com/wxy)
 
