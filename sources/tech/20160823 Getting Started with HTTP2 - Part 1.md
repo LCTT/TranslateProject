@@ -51,7 +51,7 @@ via: https://www.viget.com/articles/getting-started-with-http-2-part-1?imm_mid=0
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织翻译，[Linux中国](https://linux.cn/) 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://www.viget.com/about/team/btinsley
 [1]:https://twitter.com/home?status=Using%20pizza%20to%20show%20how%20HTTP%2F2%20beats%20HTTP%2F1.1%20when%20your%20orders%20get%20too%20big.%20https%3A%2F%2Fwww.viget.com%2Farticles%2Fgetting-started-with-http-2-part-1

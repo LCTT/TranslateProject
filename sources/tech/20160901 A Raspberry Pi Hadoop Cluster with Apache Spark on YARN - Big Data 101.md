@@ -226,7 +226,7 @@ via: https://dqydj.com/raspberry-pi-hadoop-cluster-apache-spark-yarn/?utm_source
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织翻译，[Linux中国](https://linux.cn/) 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://dqydj.com/about/#contact_us
 [1]: https://www.raspberrypi.org/downloads/raspbian/

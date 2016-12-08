@@ -116,7 +116,7 @@ via: https://code.facebook.com/posts/1671373793181703/apache-spark-scale-a-60-tb
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织翻译，[Linux中国](https://linux.cn/) 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://www.facebook.com/sitalkedia
 [b]: https://www.facebook.com/shuojiew
