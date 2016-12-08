@@ -1,24 +1,23 @@
-ucasFL translating
-Uncommon but useful GCC command line options - part 2
+Uncommon but useful GCC command line options - part 2不常见但是很有用的 GCC 命令行选项 - （二）
 ============================================================
 
 ### On this page
-
-1.  [Enable warnings that aren't covered by -Wall][1]
+### 本文导航
+1.  [Enable warnings that aren't covered by -Wall][1]
+1.  [启用 Wall 选项不包括的警告][1]
 2.  [Enable warning for floating point values in equity comparisons][2]
+2.  [通过公平比较启用浮点值警告][2]
 3.  [How to better manage gcc command line options][3]
+3.  [如何更好的管理 gcc 命令行选项][3]
 4.  [Conclusion][4]
+4.  [结论][4]
 
 The gcc compiler offers a seemingly never-ending list of command line options. Of course, no body uses or has expertise on all of them, but there are a select bunch that every gcc user should - if not must - know. While some of them are commonly used, others are a bit uncommon but no less useful.
-
-In this article series, we are focusing on some of those uncommon but useful gcc command line options, and have already covered a couple of them in the [part 1][5].
-
-If you recall, in the beginning of the first part of this tutorial series, I briefly mentioned that the -Wall option that developers generally use for generating warnings doesn't cover some specific warnings. If you aren't aware of these warnings and have no idea on how to enable them, worry not, as we'll be explaining all that in detail in this article. 
-
-Aside from this, we'll also be covering a gcc warning option related to floating point variables, as well as how to better manage the gcc command line options if the list grows large. 
-
-But before we move ahead, please keep in mind that all the examples, command, and instructions mentioned in this tutorial have been tested on Ubuntu 16.04 LTS, and the gcc version that we've used is 5.4.0.
-
+gcc 编译器看起来提供了无数的命令行选项。当然，没有人使用或者精通它所有的命令行选项，但是有一系列被精心挑选出来的命令行选项是每一个 gcc 用户都应该知道的 - 即使不是必须知道。然而它们中的一些很常见，其他一些不太常见但并不意味着它们的用处没前者大。
+In this article series, we are focusing on some of those uncommon but useful gcc command line options, and have already covered a couple of them in the [part 1][5].在这个系列的文章中，我们集中于一些不常见但是很有用的 gcc 命令行选项，在[第一节][5]已经涉及到几个这样的命令行选项。
+If you recall, in the beginning of the first part of this tutorial series, I briefly mentioned that the -Wall option that developers generally use for generating warnings doesn't cover some specific warnings. If you aren't aware of these warnings and have no idea on how to enable them, worry not, as we'll be explaining all that in detail in this article. 不知道你是否能够回想起，在这个系列教程的第一部分的开始，我简要的提到了 - Wall 选项，开发者们通常使用它来生成警告，但不包括一些特殊的警告。如果你不认识这些特殊警告并且不知道如何启用它们，不用担心，因为我将在这篇文章中详细讲解它们所有的细节。
+Aside from this, we'll also be covering a gcc warning option related to floating point variables, as well as how to better manage the gcc command line options if the list grows large. 除此以外，这篇文章也将涉及与浮点值相关的 gcc 警告选项，以及在目录变得很大的时候如何更好的管理 gcc 命令行选项。
+But before we move ahead, please keep in mind that all the examples, command, and instructions mentioned in this tutorial have been tested on Ubuntu 16.04 LTS, and the gcc version that we've used is 5.4.0.但是在往前看之前，请记住，在这个教程中的所有例子，命令，指令都已经在 Ubuntu 16.04 LTS 中测试过，并且我使用的 gcc 版本是 5.4.0.
 ### Enable warnings that aren't covered by -Wall
 
 While the -Wall option of the gcc compiler covers most of the warning flags, there are some that remain disabled. To enable them, use the **-Wextra** option.
