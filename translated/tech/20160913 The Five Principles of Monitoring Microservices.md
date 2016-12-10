@@ -40,7 +40,7 @@
 
 DevOps 团队应该将告警重点放到尽可能贴近服务监控的运行特征上。如果应用受到了影响，这些告警是评估事态的第一道防线。但是获得这些告警并不容易，除非你的监控系统是容器本地的。
 
-<ruby>[容器原生]<rt>Container-native</rt></ruby>[1]解决方案利用<ruby>编排元数据<rt>orchestration metadata</rt></ruby>来动态聚合容器和应用程序数据，并按每个服务计算监控度量。根据您的编排工具，您可能想在不同层次进行深入检测。比如，在 Kubernetes 里，你通常有 Namespace、ReplicaSets、Pods 和一些其他容器。这些不同的层聚合，对排除逻辑故障是很有必要的，与构成服务的容器的物理部署无关。
+<ruby>[原生容器][1]<rt>Container-native</rt></ruby>解决方案利用<ruby>编排元数据<rt>orchestration metadata</rt></ruby>来动态聚合容器和应用程序数据，并按每个服务计算监控度量。根据您的编排工具，您可能想在不同层次进行深入检测。比如，在 Kubernetes 里，你通常有 Namespace、ReplicaSets、Pods 和一些其他容器。这些不同的层聚合，对排除逻辑故障是很有必要的，与构成服务的容器的物理部署无关。
 
 ![](http://thenewstack.io/wp-content/uploads/2016/09/servicemonitoring.jpg)
 
@@ -68,7 +68,7 @@ DevOps 团队应该将告警重点放到尽可能贴近服务监控的运行特�
 
 这篇文章着重在微服务和监控上，像其他科技文章一样，这是因为很多人都关注此层面。
 
-对于那些熟悉<ruby>[康威定律]<rt> Conway’s law</rt></ruby>[2]的人来说，系统的设计是基于开发团队的组织结构。创造更快，更敏捷的软件的压力，推动团队思考重新调整他们的开发组织和管理它的规则。
+对于那些熟悉<ruby>[康威定律][2]<rt> Conway’s law</rt></ruby>的人来说，系统的设计是基于开发团队的组织结构。创造更快，更敏捷的软件的压力，推动团队思考重新调整他们的开发组织和管理它的规则。
 
 ![](http://thenewstack.io/wp-content/uploads/2016/09/mapmonitoring.jpg)
 
