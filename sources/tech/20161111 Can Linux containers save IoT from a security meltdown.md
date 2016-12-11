@@ -1,3 +1,5 @@
+Translating by firstadream
+
 ### [Can Linux containers save IoT from a security meltdown?][28]
 
  ![](http://hackerboards.com/files/internet_of_things_wikimedia1-thm.jpg) 
