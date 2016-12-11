@@ -1,52 +1,54 @@
-Translating by firstadream
 
-# I don't understand Python's Asyncio
+# 雾里看花Python之Asyncio
 
-Recently I started looking into Python's new [asyncio][4] module a bit more. The reason for this is that I needed to do something that works better with evented IO and I figured I might give the new hot thing in the Python world a try. Primarily what I learned from this exercise is that I it's a much more complex system than I expected and I am now at the point where I am very confident that I do not know how to use it properly.
 
-It's not conceptionally hard to understand and borrows a lot from Twisted, but it has so many elements that play into it that I'm not sure any more how the individual bits and pieces are supposed to go together. Since I'm not clever enough to actually propose anything better I just figured I share my thoughts about what confuses me instead so that others might be able to use that in some capacity to understand it.
+最近我开始发力钻研Python的新[asyncio][4]模块。原因是我需要做一些事情，使用事件IO会使这些事情工作得更好，炙手可热的asynio正好可以用来牛刀小试。从试用的经历来看，该模块比我预想的复杂许多，我现在有足够的信心说，我已经不知道如何恰当地使用asyncio了。
 
-### The Primitives
 
-<cite>asyncio</cite> is supposed to implement asynchronous IO with the help of coroutines. Originally implemented as a library around the <cite>yield</cite> and <cite>yield from</cite> expressions it's now a much more complex beast as the language evolved at the same time. So here is the current set of things that you need to know exist:
+从Twisted框架借鉴一些经验来理解asynio并非难事，但是，asyncio包含众多的元素，我开始动摇，不知道如何将这些孤立的零碎拼图组合成一副完整的图画。我已没有足够的智力提出任何更好的建议，这在里，只想说出我的困惑，求大神指点。
 
-*   event loops
-*   event loop policies
+
+#### 原语
+
+
+<cite>asyncio</cite>通过coroutines辅助来实现异步IO。最初它是通过<cite>yield</cite>和<cite>yield from</cite>表达式实现的一个库，因为Python语言本身演进的缘故，现在它已经变成一个更复杂的怪兽。所以，为了在同一个频道讨论下去，你需要了解如下一些术语：
+
+*  事件循环（event loops）
+*   事件循环策略（event loop policies）
 *   awaitables
-*   coroutine functions
-*   old style coroutine functions
-*   coroutines
-*   coroutine wrappers
-*   generators
+*   协程函数（coroutine function）
+*   老式协程函数（old style coroutine functions）
+*   协程（coroutines）
+*   协程封装（coroutine wrappers）
+*   生成器（generators）
 *   futures
-*   concurrent futures
-*   tasks
-*   handles
-*   executors
-*   transports
-*   protocols
+*   并发的futures（oncurrent futures）
+*   任务（tasks）
+*   句柄（handles）
+*   执行器（executors）
+*   传输（transports）
+*   协议（protocols）
 
-In addition the language gained a few special methods that are new:
+此外，Python还新增了一些新的特殊方法：
+*   aenter和aexit，用于异步块操作
+*   aiter和anext，用于异步迭代器（异步循环和异步推导）。为了更多的乐趣，协议已经改变一次。 在3.5它返回一个awaitable（协程）；在Python 3.6它返回一个新的异步生成器。
+*   await，用于原生的awaitables
 
-*   <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">__aenter__</tt> and <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">__aexit__</tt> for asynchronous <cite>with</cite> blocks
-*   <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">__aiter__</tt> and <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">__anext__</tt> for asynchronous iterators (async loops and async comprehensions). For extra fun that protocol already changed once. In 3.5 it returns an awaitable (a coroutine) in Python 3.6 it will return a newfangled async generator.
-*   <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">__await__</tt> for custom awaitables
+你还需要了解相当多的内容，文档涵盖了那些部分。尽管如此，我做了一些额外说明以便对其有更好的理解：
 
-That's quite a bit to know and the documentation covers those parts. However here are some notes I made on some of those things to understand them better:
+### 事件循环
 
-### Event Loops
 
-The event loop in asyncio is a bit different than you would expect from first look. On the surface it looks like each thread has one event loop but that's not really how it works. Here is how I think this works:
+asyncio事件循环和你第一眼看上去的略有不同。表面看，每个线程都有一个事件循环，然而事实并非如此。我认为他们应该按照如下的方式工作：
+*   如果是主线程，当调用asyncio.get_event_loop()时创建一个事件循环。
+*   如果是其他线程，当调用asyncio.get_event_loop()时返回运行时错误。
+*   当前线程可以使用asyncio.set_event_loop()，在任何时间节点绑定事件循环。该事件循环可由asyncio.new_evet_loop()函数创建。
+*   事件循环可以在不绑定到当前线程的情况下使用。
+*   asyncio.get_event_loop()返回绑定线程的事件循环，而非当前运行的事件循环。
 
-*   if you are the main thread an event loop is created when you call <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">asyncio.get_event_loop()</tt>
-*   if you are any other thread, a runtime error is raised from <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">asyncio.get_event_loop()</tt>
-*   You can at any point <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">asyncio.set_event_loop()</tt> to bind an event loop with the current thread. Such an event loop can be created with the <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">asyncio.new_event_loop()</tt> function.
-*   Event loops can be used without being bound to the current thread.
-*   <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">asyncio.get_event_loop()</tt> returns the thread bound event loop, it does not return the currently running event loop.
+这些行为的组合是超混淆的，主要有以下几个原因。 首先，你需要知道这些函数是全局设置的基础事件循环策略的委托。 默认是将事件循环绑定到线程。 或者，可以在理论上将事件循环绑定到一个greenlet或类似的，如果有人想要的话。 然而，重要的是要知道库代码不控制策略，因此不能推断asyncio将适用于线程。
 
-The combination of these behaviors is super confusing for a few reasons. First of all you need to know that these functions are delegates to the underlying event loop policy which is globally set. The default is to bind the event loop to the thread. Alternatively one could in theory bind the event loop to a greenlet or something similar if one would so desire. However it's important to know that library code does not control the policy and as such cannot reason that asyncio will scope to a thread.
-
-Secondly asyncio does not require event loops to be bound to the context through the policy. An event loop can work just fine in isolation. However this is the first problem for library code as a coroutine or something similar does not know which event loop is responsible for scheduling it. This means that if you call <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">asyncio.get_event_loop()</tt> from within a coroutine you might not get the event loop back that ran you. This is also the reason why all APIs take an optional explicit loop parameter. So for instance to figure out which coroutine is currently running one cannot invoke something like this:
+其次，asyncio不需要通过策略将事件循环绑定到上下文。 事件循环可以单独工作。 但是这正是库代码的第一个问题，因为协同程序或类似的东西不知道哪个事件循环负责调度它。 这意味着，如果从协程中调用asyncio.get_event_loop()，你可能得不到运行你的事件循环。 这也是所有API均采用可选的显式事件循环参数的原因。 举例来说，要弄清楚当前哪个协程正在运行，不能使用如下调用：
 
 ```
 def get_task():
@@ -58,15 +60,15 @@ def get_task():
 
 ```
 
-Instead the loop has to be passed explicitly. This furthermore requires you to pass through the loop explicitly everywhere in library code or very strange things will happen. Not sure what the thinking for that design is but if this is not being fixed (that for instance <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">get_event_loop()</tt> returns the actually running loop) then the only other change that makes sense is to explicitly disallow explicit loop passing and require it to be bound to the current context (thread etc.).
+相反，必须显式地传递事件循环。 这进一步要求你在库代码中显式地遍历事件循环，否则可能发生很奇怪的事情。 我不知道这种设计的思想是什么，但如果不解决这个问题（例如get_event_loop()返回实际运行的事件循环），那么唯一有意义的其他方案是明确禁止显式事件循环传递，并要求它绑定到当前上下文（线程等）。
 
-Since the event loop policy does not provide an identifier for the current context it also is impossible for a library to "key" to the current context in any way. There are also no callbacks that would permit to hook the tearing down of such a context which further limits what can be done realistically.
+由于事件循环策略不提供当前上下文的标识符，因此库也不可能以任何方式“索引”到当前上下文。 也没有回调函数用来监视这样的上下文的拆除，这进一步限制了实际可以开展的操作。
 
-### Awaitables and Coroutines
+### 等待与协同
 
-In my humble opinion the biggest design mistake of Python was to overload iterators so much. They are now being used not just for iteration but also for various types of coroutines. One of the biggest design mistakes of iterators in Python is that <cite>StopIteration</cite> bubbles if not caught. This can cause very frustrating problems where an exception somewhere can cause a generator or coroutine elsewhere to abort. This is a long running issue that Jinja for instance has to fight with. The template engine internally renders into a generator and when a template for some reason raises a <cite>StopIteration</cite> the rendering just ends there.
+以我的愚见，Python最大的设计错误是过度重载迭代器。 它们现在不仅用于迭代，而且用于各种类型的协程。 Python中迭代器最大的设计错误之一是如果 StopIteration没有被捕获形成的气泡。 这可能导致非常令人沮丧的问题，其中某处的异常可能导致其他地方的生成器或协同程序中止。 这是一个长期运行的问题，基于Python的模板引擎如Jinja，必须奋力解决。 模板引擎在内部渲染为生成器，并且当由于某种原因的模板引起StopIteration时，该渲染就会在那里结束。
 
-Python is slowly learning the lesson of overloading this system more. First of all in 3.something the asyncio module landed and did not have language support. So it was decorators and generators all the way down. To implemented the <cite>yield from</cite> support and more, the <cite>StopIteration</cite>was overloaded once more. This lead to surprising behavior like this:
+Python正在慢慢学习过度重载这个系统的教训。 首先在3.x 版本加入asyncio模块，并没有语言支持。 所以自始至终它不过仅仅是装饰器和生成器。 为了实现yield from等，StopIteration再次重载。 这导致了令人困惑的行为，像这样：
 
 ```
 >>> def foo(n):
@@ -84,23 +86,23 @@ Python is slowly learning the lesson of overloading this system more. First of a
 
 ```
 
-No error, no warning. Just not the behavior you expect. This is because a <cite>return</cite> with a value from a function that is a generator actually raises a <cite>StopIteration</cite> with a single arg that is not picked up by the iterator protocol but just handled in the coroutine code.
+没有错误，没有警告。 只是不是你期望的行为。 这是因为从一个作为生成器的函数中返回的值实际上引发了一个带有单个参数的StopIteration，它不是由迭代器协议捕获，而只是在协程代码中处理。
 
-With 3.5 and 3.6 a lot changed because now in addition to generators we have coroutine objects. Instead of making a coroutine by wrapping a generator there is no a separate object which creates a coroutine directly. It's implemented by prefixing a function with <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">async</tt>. For instance <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">async def x()</tt> will make such a coroutine. Now in 3.6 there will be separate async generators that will raise <cite>AsyncStopIteration</cite> to keep it apart. Additionally with Python 3.5 and later there is now a future import (<tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">generator_stop</tt>) that will raise a <cite>RuntimeError</cite> if code raises <cite>StopIteration</cite> in an iteration step.
+在3.5和3.6有很多改变，因为现在除了生成器对象我们还有协程对象。 它不是通过包装一个生成器来生成协程，而是用一个单独的对象直接创建协程。通过用给函数加async前缀来实现。 例如async def x（）会产生这样的协程。 现在在3.6，将有单独的异步生成器，它通过触发AsyncStopIteration保持其独立性。 此外，对于Python 3.5和更高版本，导入新的future对象（generator_stop），如果代码在迭代步骤中触发StopIteration，它将引发RuntimeError。
 
-Why am I mentioning all this? Because the old stuff does not really go away. Generators still have <cite>send</cite> and <cite>throw</cite> and coroutines still largely behave like generators. That is a lot of stuff you need to know now for quite some time going forward.
+为什么我提到这一切？ 因为老的实现方式并未真的消失。 生成器仍然具有send和throw方法以及协程仍然在很大程度上表现为生成器。你需要知道这些东西，它们将在未来伴随你相当长的时间。
 
-To unify a lot of this duplication we have a few more concepts in Python now:
+为了统一很多这样的重复，现在我们在Python中有更多的概念了：
 
-*   awaitable: an object with an <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">__await__</tt> method. This is for instance implemented by native coroutines and old style coroutines and some others.
-*   coroutinefunction: a function that returns a native coroutine. Not to be confused with a function returning a coroutine.
-*   a coroutine: a native coroutine. Note that old asyncio coroutines are not considered coroutines by the current documentation as far as I can tell. At the very least <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">inspect.iscoroutine</tt> does not consider that a coroutine. It's however picked up by the future/awaitable branches.
+*   awaitable：具有await方法的对象。 应用于由本地协同程序和旧式协同程序以及一些其他协同程序实现。
+*   coroutinefunction：返回本地协同程序的函数。 不要与返回协程的函数混淆。
+* a coroutine: 原生的协同程序。 注意，目前为止，本文档不认为老asyncio协程是协同程序。 至少我不认为inspect.iscoroutine是协程。 尽管它被未来式/等待分支接纳。
 
-In particularly confusing is that <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">asyncio.iscoroutinefunction</tt> and <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">inspect.iscoroutinefunction</tt> are doing different things. Same with <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">inspect.iscoroutine</tt> and <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">inspect.iscoroutinefunction</tt>. Note that even though inspect does not know anything about asycnio legacy coroutine functions in the type check, it is apparently aware of them when you check for awaitable status even though it does not conform to <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">__await__</tt>.
+特别令人困惑的是asyncio.iscoroutinefunction和inspect.iscoroutinefunction正在做不同的事情，这与inspect.iscoroutine和inspect.iscoroutinefunction相同。 到得注意的是，尽管在类型检查中不知道有关asycnio遗留协同功能的任何信息，但是当您检查等待状态时它显然知道它们，即使它与await不一致。
 
-### Coroutine Wrappers
+### 协程包装器
 
-Whenever you run <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">async def</tt> Python invokes a thread local coroutine wrapper. It's set with <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">sys.set_coroutine_wrapper</tt> and it's a function that can wrap this. Looks a bit like this:
+每当你运行async def ，Python就会调用一个线程局部coroutine包装器。 它由sys.set_coroutine_wrapper设置，并且它是可以包装这些东西的一个函数。 看起来有点像如下代码：
 
 ```
 >>> import sys
@@ -114,81 +116,82 @@ __main__:1: RuntimeWarning: coroutine 'foo' was never awaited
 
 ```
 
-In this case I never actually invoke the original function and just give you a hint of what this can do. As far as I can tell this is always thread local so if you swap out the event loop policy you need to figure out separately how to make this coroutine wrapper sync up with the same context if that's something you want to do. New threads spawned will not inherit that flag from the parent thread.
+在这种情况下，我从来没有实际调用原始的函数，只是给你一个提示，说明这个函数可以做什么。 目前我只能说它总是线程局部有效，所以，如果替换事件循环策略，你需要搞清楚如何让coroutine封装在相同的上下文同步更新。创建新线程不会从父线程继承那些标识。
 
-This is not to be confused with the asyncio coroutine wrapping code.
+这不要与asyncio协程包装代码混淆。
 
-### Awaitables and Futures
+### Awaitables和Futures
 
-Some things are awaitables. As far as I can see the following things are considered awaitable:
+有些东西是awaitables。 据我所见，以下概念被认为是awaitable:
 
-*   native coroutines
-*   generators that have the fake <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">CO_ITERABLE_COROUTINE</tt> flag set (we will cover that)
-*   objects with an <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">__await__</tt> method
+*   原生的协程
+*   配置了CO_ITERABLE_COROUTINE标识的生成器（文中有涉及）
+* 具有await方法的对象
 
-Essentially these are all objects with an <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">__await__</tt> method except that the generators don't for legacy reasons. Where does the <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">CO_ITERABLE_COROUTINE</tt> flag come from? It comes from a coroutine wrapper (now to be confused with <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">sys.set_coroutine_wrapper</tt>) that is <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">@asyncio.coroutine</tt>. That through some indirection will wrap the generator with <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">types.coroutine</tt> (to to be confused with<tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">types.CoroutineType</tt> or <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">asyncio.coroutine</tt>) which will re-create the internal code object with the additional flag <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">CO_ITERABLE_COROUTINE</tt>.
 
-So now that we know what those things are, what are futures? First we need to clear up one thing: there are actually two (completely incompatible) types of futures in Python 3. <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">asyncio.futures.Future</tt> and <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">concurrent.futures.Future</tt>. One came before the other but they are also also both still used even within asyncio. For instance <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">asyncio.run_coroutine_threadsafe()</tt> will dispatch a coroutine to a event loop running in another thread but it will then return a<tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">concurrent.futures.Future</tt> object instead of a <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">asyncio.futures.Future</tt> object. This makes sense because only the <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">concurrent.futures.Future</tt> object is thread safe.
+除了生成器由于遗留的原因不是使用await方法，其他的对象都使用。 CO_ITERABLE_COROUTINE标志来自哪里？ 它来自一个协程包装器（现在与sys.set_coroutine_wrapper有些混淆），即@ asyncio.coroutine。 通过一些间接方法，它使用types.coroutine（现在与types.CoroutineType或asyncio.coroutine有些混淆）包装生成器，并通过另外一个标志CO_ITERABLE_COROUTINE重新创建内部代码对象。
 
-So now that we know there are two incompatible futures we should clarify what futures are in asyncio. Honestly I'm not entirely sure where the differences are but I'm going to call this "eventual" for the moment. It's an object that eventually will hold a value and you can do some handling with that eventual result while it's still computing. Some variations of this are called deferreds, others are called promises. What the exact difference is is above my head.
+所以现在我们知道这些东西是什么，什么是future？ 首先，我们需要澄清一件事情：在Python 3中，实际上有两种（完全不兼容）future类型：asyncio.futures.Future和concurrent.futures。 其中一个再现在另一个之前，但他们都仍然在asyncio使用。 例如，asyncio.run_coroutine_threadsafe（）将调度一个协程到在另一个线程中运行的事件循环，但它返回一个concurrent.futures。Future对象而不是asyncio.futures。Future对象。 这是有道理的，因为只有concurrent.futures.Future对象是线程安全的。
 
-What can you do with a future? You can attach a callback that will be invoked once it's ready or you can attach a callback that will be invoked if the future fails. Additionally you can <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">await</tt> it (it implements <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">__await__</tt> and is thus awaitable). Additionally futures can be cancelled.
+所以现在我们知道有两个不兼容的future，我们应该澄清哪个future在asyncio中。 老实说，我不完全确定差异在哪里，但我打算暂时称之为“最终”。 它是一个最终将持有一个值的对象，你可以在最终结果仍然在计算时做一些处理。 future对象的一些变种称为deferred，还有一些叫做promise。 我实在难以理解它们真正的区别。
 
-So how do you get such a future? By calling <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">asyncio.ensure_future</tt> on an awaitable object. This will also make a good old generator into such a future. However if you read the docs you will read that <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">asyncio.ensure_future</tt> actually returns a <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">Task</tt>. So what's a task?
+你能用一个future对象做什么？ 你可以关联一个准备就绪时将被调用的回调函数，或者你可以关联一个失败时将被触发的回调函数。 此外，你可以等待它（它实现await，因此可以等待），也可以取消它。
 
-### Tasks
+那么你怎样才能得到这样的future对象？ 通过在await对象上调用asyncio.ensure_future。 它会把一个旧版的生成器转变为future对象。 然而，如果你阅读文档，你会读到asyncio.ensure_future实际上返回一个任务。 那么问题来了，什么是任务？
 
-A task is a future that is wrapping a coroutine in particular. It works like a future but it also has some extra methods to extract the current stack of the contained coroutine. We already saw the tasks mentioned earlier because it's the main way to figure out what an event loop is currently doing via <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">Task.get_current</tt>.
+### 任务
 
-There is also a difference in how cancellation works for tasks and futures but that's beyond the scope of this. Cancellation is its own entire beast. If you are in a coroutine and you know you are currently running you can get your own task through <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">Task.get_current</tt> as mentioned but this requires knowledge of what event loop you are dispatched on which might or might not be the thread bound one.
+任务是一个包装协同程序的future对象。 它的工作方式和future类似，但它也有一些额外的方法来提取当前栈中包含的协同程序。 我们已经看到了前面提到的任务，因为它是通过Task.get_current确定事件循环当前正在做什么的主要方式。
 
-It's not possible for a coroutine to know which loop goes with it. Also the <cite>Task</cite> does not provide that information through a public API. However if you did manage to get hold of a task you can currently access <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">task._loop</tt> to find back to the event loop.
+在如何取消工作上任务和future也有区别，但这超出了本文的范围。 取消是它们自己最大的问题。 如果你在一个协程上，并且知道自己正在运行，你可以通过前面提到的Task.get_current获取自己的任务，但这需要你知道自己被派遣在哪个事件循环，该事件循环可能是也可能不是已绑定的线程。
 
-### Handles
+协程不可能知道它与哪个循环一起使用。任务也没有提供该信息公共API。 然而，如果你确实可以获得一个任务，你可以访问task._loop，通过它反指到事件循环。
 
-In addition to all of this there are handles. Handles are opaque objects of pending executions that cannot be awaited but they can be cancelled. In particular if you schedule the execution of a call with <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">call_soon</tt> or <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">call_soon_threadsafe</tt> (and some others) you get that handle you can then use to cancel the execution as a best effort attempt but you can't wait for the call to actually take place.
+### 句柄
 
-### Executors
+除了上面提到的所有一切还有句柄。 句柄是等待执行的透明对象，不能等待，但可以被取消。 特别是如果你使用call_soon或者call_soon_threadsafe（还有其他一些）调度一个调用的执行，你可以通过句柄尽力尝试取消执行，但不能等待实际调用生效。
 
-Since you can have multiple event loops but it's not obvious what the use of more than one of those things per thread is the obvious assumption can be made that a common setup is to have N threads with an event loop each. So how do you inform another event loop about doing some work? You cannot schedule a callback into an event loop in another thread _and_ get the result back. For that you need to use executors instead.
+### 执行器
 
-Executors come from <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">concurrent.futures</tt> for instance and they allow you to schedule work into threads that itself is not evented. For instance if you use <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">run_in_executor</tt> on the event loop to schedule a function to be called in another thread. The result is then returned as an asyncio coroutine instead of a concurrent coroutine like <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">run_coroutine_threadsafe</tt> would do. I did not yet have enough mental capacity to figure out why those APIs exist, how you are supposed to use and when which one. The documentation suggests that the executor stuff could be used to build multiprocess things.
+因为你可以有多个事件循环，但这并不意味着每个线程理所当然地应用多个事件循环，最常见的情形还是一个线程一个事件循环。 那么你如何通知另一个事件循环做一些工作？ 你不能到另一个线程的事件循环中执行回调函数并获取结果。 这种情况下，你需要使用执行器。
 
-### Transports and Protocols
+执行器来自concurrent.futures，它允许你将工作安排到本身未发生事件的线程中。 例如，如果在事件循环中使用run_in_executor来安编排将在另一个线程中调用的函数。 其返回结果是asyncio协程，而不是像run_coroutine_threadsafe这样的并发协同程序。 我还没有足够的心理能力来弄清楚为什么设计这样的API，应该如何使用，以及什么时候使用。 文档建议执行器可以用于构建多进程。
 
-I always though those would be the confusing things but that's basically a verbatim copy of the same concepts in Twisted. So read those docs if you want to understand them.
+### 传输和协议
 
-### How to use asyncio
+我总是认为传输与协议也凌乱不堪，实际这部分内容基本上是对Twisted的逐字拷贝。详情毋庸赘述也，请直接阅读相关文档。
 
-Now that we know roughly understand asyncio I found a few patterns that people seem to use when they write asyncio code:
+### 如何使用asyncio
 
-*   pass the event loop to all coroutines. That appears to be what a part of the community is doing. Giving a coroutine knowledge about what loop is going to schedule it makes it possible for the coroutine to learn about its task.
-*   alternatively you require that the loop is bound to the thread. That also lets a coroutine learn about that. Ideally support both. Sadly the community is already torn of what to do.
-*   If you want to use contextual data (think thread locals) you are a bit out of luck currently. The most popular workaround is apparently atlassian's <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">aiolocals</tt> which basically requires you to manually propagate contextual information into coroutines spawned since the interpreter does not provide support for this. This means that if you have a utility library spawning coroutines you will lose context.
-*   Ignore that the old coroutine stuff in Python exists. Use 3.5 only with the new <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">async def</tt>keyword and co. In particular you will need that anyways to somewhat enjoy the experience because with older versions you do not have async context managers which turn out to be very necessary for resource management.
-*   Learn to restart the event loop for cleanup. This is something that took me longer to realize than I wish it did but the sanest way to deal with cleanup logic that is written in async code is to restart the event loop a few times until nothing pending is left. Since sadly there is no common pattern to deal with this you will end up with some ugly workaround at time. For instance <cite>aiohttp</cite>'s web support also does this pattern so if you want to combine two cleanup logics you will probably have to reimplement the utility helper that it provides since that helper completely tears down the loop when it's done. This is also not the first library I saw do this :(
-*   Working with subprocesses is non obvious. You need to have an event loop running in the main thread which I suppose is listening in on signal events and then dispatches it to other event loops. This requires that the loop is notified via<tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">asyncio.get_child_watcher().attach_loop(...)</tt>.
-*   Writing code that supports both async and sync is somewhat of a lost cause. It also gets dangerous quickly when you start being clever and try to support <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">with</tt> and <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">async with</tt> on the same object for instance.
-*   If you want to give a coroutine a better name to figure out why it was not being awaited, setting <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">__name__</tt> doesn't help. You need to set <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">__qualname__</tt> instead which is what the error message printer uses.
-*   Sometimes internal type conversations can screw you over. In particular the <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">asyncio.wait()</tt>function will make sure all things passed are futures which means that if you pass coroutines instead you will have a hard time finding out if your coroutine finished or is pending since the input objects no longer match the output objects. In that case the only real sane thing to do is to ensure that everything is a future upfront.
+现在我们已经大致了解asyncio，我发现了一些模式，人们似乎在使用asyncio代码时使用：
 
-### Context Data
+*   将事件循环传递给所有协程。 这似乎是社区中一部分人的做法。 把事件循环信息提供给协程为协程获取自己运行的任务提供了可能性。
+*   或者你要求事件循环绑定到线程，这也能达到同样的目的。 理想情况下两者都支持。 可悲的是，社区已经分化。
+*   如果想使用上下文数据（如线程本地数据），你可谓是运气不佳。 最流行的变通方法显然是atlassian的aiolocals，它基本上需要你手动传递上下文信息到协程，因为解释器不提供支持。 这意味着如果你有一个实用程序库生成协程，你将失去上下文。
+* 忽略Python中的旧协程。 只使用3.5版本中async def和co关键字。 你总可能要用到它们，因为在老版本中，没有异步上下文管理器，这是非常必要的资源管理。
+*  学习重新启动事件循环进行善后清理。 这部分功能和我预想的不同，我花了比较长的时间来厘清它的实现。清理操作的最好方式是不断重启事件循环直到没有等待事件。 遗憾的是没有什么通用的模式来处理清理操作，你只能用一些丑陋的临时方案糊口度日。 例如aiohttp的web支持也做这个模式，所以如果你想要结合两个清理逻辑，你可能需要重新实现它提供的实用程序助手，因为该助手功能实现后，它彻底破坏了事件循环的设计。 当然，它不是我见过的第一个干这种坏事的库:(
+*  使用子进程是不明显的。 你需要一个事件循环在主线程中运行，我想它是在监听信号事件，然后分派到其他事件循环。 这需要通过asyncio.get_child_watcher（）、attach_loop（...）通知循环。
+* 编写同时支持异步和同步的代码在某种程度上注定要失败。 尝试在同一个对象上支持with和async with是危险的事情。
+*  如果你想给coroutine一个更好的名字，弄清楚为什么它没有被等待，设置name没有帮助。 你需要设置qualname。
+* 有时内部类型交换使你麻痹。 特别是asyncio.wait（）函数将确保所有的事情都是future，这意味着如果你传递协程，你将很难发现你的协程是否已经完成或者正在等待，因为输入对象不再匹配输出对象 。 在这种情况下，唯一真正理智的做法是确保前期一切都是future。
 
-Aside from the insane complexity and lack of understanding on my part of how to best write APIs for it my biggest issue is the complete lack of consideration for context local data. This is something that the node community learned by now. <tt class="docutils literal" style="font-family: &quot;Ubuntu Mono&quot;, Consolas, &quot;Deja Vu Sans Mono&quot;, &quot;Bitstream Vera Sans Mono&quot;, Monaco, &quot;Courier New&quot;; font-size: 0.9em; background: rgb(238, 238, 238);">continuation-local-storage</tt> exists but has been accepted as implemented too late. Continuation local storage and similar concepts are regularly used to enforce security policies in a concurrent environment and corruption of that information can cause severe security issues.
+### 上下文数据
 
-The fact that Python does not even have any store at all for this is more than disappointing. I was looking into this in particular because I'm investigating how to best support [Sentry's breadcrumbs][3] for asyncio and I do not see a sane way to do it. There is no concept of context in asyncio, there is no way to figure out which event loop you are working with from generic code and without monkeypatching the world this information will not be available.
+除了疯狂的复杂性和缺乏理解如何更好地编写API，我最大的问题是完全缺乏对上下文本地数据的考虑。这是Node社区现在学习的东西。continuation-local-storage存在，但实现太晚。连续本地存储和类似概念被定期用于在并发环境中实施安全策略，并且该信息的损坏可能导致严重的安全问题。
 
-Node is currently going through the process of [finding a long term solution for this problem][2]. That this is not something to be left ignored can be seen by this being a recurring issue in all ecosystems. It comes up with JavaScript, Python and the .NET environment. The problem [is named async context propagation][1] and solutions go by many names. In Go the context package needs to be used and explicitly passed to all goroutines (not a perfect solution but at least one). .NET has the best solution in the form of local call contexts. It can be a thread context, an web request context, or something similar but it's automatically propagating unless suppressed. This is the gold standard of what to aim for. Microsoft had this solved since more than 15 years now I believe.
+事实上，Python甚至没有任何存储，这令人失望至极。我正在研究这个内容，因为我正在调查如何最好地支持[Sentry's breadcrumbs] [3] 的asyncio，然而我并没有看到一个合理的方式做到这一点。在asyncio中没有上下文的概念，没有办法从通用代码中找出您正在使用的事件循环，并且如果没有monkeypatching（运行环境下的补丁），也无法获取这些信息。
 
-I don't know if the ecosystem is still young enough that logical call contexts can be added but now might still be the time.
+Node当前正在经历如何[找到这个问题的长期解决方案] [2]的过程。这个问题不容忽视，因为它在所有生态系统中反复出现过，如JavaScript，Python和.NET环境。问题[被命名为异步上下文传播] [1]，其解决方案有许多名称。在Go中，需要使用上下文包，并明确地传递给所有goroutine（不是一个完美的解决方案，但至少有一个）。 .NET具有本地调用上下文形式的最佳解决方案。它可以是线程上下文，Web请求上下文或类似的东西，除非被抑制，否则它会自动传播。微软的解决方案是我们的黄金标准。我现在相信，微软在15年前已经解决了该问题。
 
-### Personal Thoughts
+我不知道生态系统是否还年轻，还可以添加逻辑调用上下文，可能现在仍然为时未晚。
 
-Man that thing is complex and it keeps getting more complex. I do not have the mental capacity to casually work with asyncio. It requires constantly updating the knowledge with all language changes and it has tremendously complicated the language. It's impressive that an ecosystem is evolving around it but I can't help but get the impression that it will take quite a few more years for it to become a particularly enjoyable and stable development experience.
+### 个人感想
 
-What landed in 3.5 (the actual new coroutine objects) is great. In particular with the changes that will come up there is a sensible base that I wish would have been in earlier versions. The entire mess with overloading generators to be coroutines was a mistake in my mind. With regards to what's in asyncio I'm not sure of anything. It's an incredibly complex thing and super messy internally. It's hard to comprehend how it works in all details. When you can pass a generator, when it has to be a real coroutine, what futures are, what tasks are, how the loop works and that did not even come to the actual IO part.
+输出asynio的man帮助是复杂的，并且它变得越来越复杂。 我没有心理能力随便使用asyncio。 它需要不断地更新所有Python语言更新的知识，这很大程度上使语言本身变得复杂。 令人鼓舞的是，一个生态系统正围绕着它不断发展，只是不知道需要几年的时间，才能带给开发者愉快和稳定的开发体验。
 
-The worst part is that asyncio is not even particularly fast. David Beazley's live demo hacked up asyncio replacement is twice as fast as it. There is an enormous amount of complexity that's hard to understand and reason about and then it fails on it's main promise. I'm not sure what to think about it but I know at least that I don't understand asyncio enough to feel confident about giving people advice about how to structure code for it.
+3.5版本引入的东西（新的协程对象）非常棒。 特别是这些变化包括引入了一个合理的基础，这些都是我在早期的版本中一直期盼的。在我心中， 通过生成器实现协程是一个错误。 关于什么是asyncio，我难以置喙。 这是一个非常复杂的事情，内部令人眼花缭乱。 我很难理解它工作的所有细节。 你什么时候可以传递一个生成器，什么时候它必须是一个真正的协程，future是什么，任务是什么，事件循环如何工作，这甚至还没有触碰到真正的IO部分。
+
+最糟糕的是，asyncio甚至不是特别快。 David Beazley演示的他设计的asyncio的替代品是原生版本速度的两倍。 asyncio巨复杂，很难理解，也无法兑现自己在主要特性上的承诺，对于它，我只想说我想静静。我知道，至少我对asyncio理解的不够透彻，没有足够的信心对人们如何构建代码给出建议。
 
 --------------------------------------------------------------------------------
 
@@ -196,7 +199,7 @@ via: http://lucumr.pocoo.org/2016/10/30/i-dont-understand-asyncio/
 
 作者：[Armin Ronacher][a]
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[firstadream](https://github.com/译者ID)
 
 校对：[校对者ID](https://github.com/校对者ID)
 
