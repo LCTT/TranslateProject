@@ -1,6 +1,6 @@
 Translating by ivo-wang
 Microfluidic cooling may prevent the demise of Moore's Law
-微流体冷却可能会阻止摩尔定律的消亡
+微观流体冷却技术可能会阻止摩尔定律的消亡
 ============================================================
 
 ![](http://tr1.cbsistatic.com/hub/i/r/2015/12/09/a7cb82d1-96e8-43b5-bfbd-d4593869b230/resize/620x/9607388a284e3a61a39f4399a9202bd7/networkingistock000042544852agsandrew.jpg)
@@ -13,15 +13,17 @@ In the ongoing need for digital speed, scientists and engineers are working hard
 为保持数码技术的持续发展，科学家和工程师们一直致力于将更多的晶体管以及相应的电路塞进本来就十分拥挤的硅晶片中。然而，看上去这是十分复杂的，最尖锐的是[热积累问题][2]
 
 "Right now, we're limited in the power we can put into microchips," says John Ditri, principal investigator at Lockheed Martin in [this press release][3]. "One of the biggest challenges is managing the heat. If you can manage the heat, you can use fewer chips, and that means using less material, which results in cost savings as well as reduced system size and weight. If you manage the heat and use the same number of chips, you'll get even greater performance in your system."
-Lockheed Martin公司的主要研究员John Ditri在[这篇报道][3]里面说：“我们在芯片上能够投入的精力是有限的”。一个最大的挑战是热量管理。如果你能管理热量
+Lockheed Martin公司的主要研究员John Ditri在[这篇报道][3]里面说：“我们在芯片上能够投入的精力是有限的”。一个最大的挑战是热量管理。如果你能管理热量那么使用相同数量的晶片，你将在你的系统里面得到更加强劲的性能。
 
 Resistance to the flow of electrons through silicon causes the heat, and packing so many transistors in such a small space creates enough heat to destroy components. One way to eliminate heat buildup is to reduce the flow of electrons by [using photonics at the chip level][4]. However, photonic technology is not without its set of problems.
+电子在硅的介质里面流动由于有电阻所以会产生热量，封装如此多晶片在一个狭小的空间内产生的热量足以摧毁其他的元件。其中一种减少热量的方法是[在芯片上使用光子级别的技术]，然而光电技术也有它自己的问题。
 
 SEE: [Silicon photonics will revolutionize data centers in 2015][5]
 
 ### Microfluid cooling might be the answer
-
+### 微观流体冷却技术可能会解决这种问题
 To seek out other solutions, the Defense Advanced Research Projects Agency (DARPA) has initiated a program called [ICECool Applications][6] (Intra/Interchip Enhanced Cooling). "ICECool is exploring disruptive thermal technologies that will mitigate thermal limitations on the operation of military electronic systems while significantly reducing the size, weight, and power consumption," explains the [GSA website FedBizOpps.gov][7].
+为寻找其他方法，
 
 What is unique about this method of cooling is the push to use a combination of intra- and/or inter-chip microfluidic cooling and on-chip thermal interconnects.
 
