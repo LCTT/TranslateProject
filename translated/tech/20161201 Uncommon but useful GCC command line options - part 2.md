@@ -1,12 +1,6 @@
 不常见但是很有用的 GCC 命令行选项 （二）
 ============================================================
 
-### 本文导航
--  [生成 -Wall 选项不包括的警告][1]
--  [在等值比较时生成浮点值警告][2]
--  [如何更好的管理 gcc 命令行选项][3]
--  [结论][4]
-
 gcc 编译器提供了几乎无数的命令行选项列表。当然，没有人使用或者精通它所有的命令行选项，但是有一系列命令行选项是每一个 gcc 用户都应该知道的 - 即使不是必须知道。它们中有一些很常用，其他一些不太常用，但不常用并不意味着它们的用处没前者大。
 
 在这个系列的文章中，我们集中于一些不常用但是很有用的 gcc 命令行选项，在[第一节][5]已经讲到几个这样的命令行选项。
@@ -60,7 +54,7 @@ test.c:10:8: warning: suggest braces around empty body in an ‘if’ statement 
 从上面的警告清楚的看到， -Wextra 选项从内部生成了 -Wempty-body 标记，从而检测可疑代码并生成警告。下面是这个选项生成的全部警告标记。
 -Wclobbered, -Wempty-body, -Wignored-qualifiers, -Wmissing-field-initializers, -Wmissing-parameter-type (仅 C 语言能生成), -Wold-style-declaration (仅 C 语言能生成), -Woverride-init, -Wsign-compare, -Wtype-limits, -Wuninitialized, -Wunused-parameter (只有和 -Wunused 或 -Wall 选项同时使用时才会生成), 以及 -Wunused-but-set-parameter (只有和 -Wunused 或 -Wall 选项同时使用时才会生成). 
 
-如果想对上面所提到的标记有更进一步的了解，请查看 [gcc 手册][6]
+如果想对上面所提到的标记有更进一步的了解，请查看 [gcc 手册][6]。
 
 此外，遇到下面这些情况， -Wextra 选项也会生成警告：
 
