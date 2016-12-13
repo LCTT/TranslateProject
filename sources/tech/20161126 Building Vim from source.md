@@ -1,3 +1,4 @@
+翻译中-byzky001
 Compiling Vim from source is actually not that difficult.
 Here's what you should do:
 
