@@ -98,7 +98,7 @@ Python 正在慢慢学习过度重载这个系统的教训。 首先在3.x 版�
 特别令人困惑的是 asyncio.iscoroutinefunctio n和 inspect.iscoroutinefunction 正在做不同的事情，这与 inspect.iscoroutine 和 inspect.iscoroutinefunction 相同。 到得注意的是，尽管 inspect 在类型检查中不知道有关 asycnio 遗留协同功能的任何信息，但是当您检查 awaitable 状态时它显然知道它们，即使它与`__await__`不一致。
 
 
-### 协程包装器
+### <ruby>协程包装器<rt>Coroutine Wrappers</rt></ruby>
 
 每当你运行 async def ，Python 就会调用一个线程局部 coroutine 包装器。 它由 sys.set_coroutine_wrapper 设置，并且它是可以包装这些东西的一个函数。 看起来有点像如下代码：
 
@@ -120,15 +120,16 @@ __main__:1: RuntimeWarning: coroutine 'foo' was never awaited
 
 ### Awaitables 和 Futures
 
-有些东西是awaitables。 据我所见，以下概念被认为是awaitable:
+有些东西是 awaitables。 据我所见，以下概念被认为是awaitable:
 
 *   原生的协程
-*   配置了CO_ITERABLE_COROUTINE标识的生成器（文中有涉及）
-* 具有await方法的对象
+*   配置了 `CO_ITERABLE_COROUTINE` 标识的生成器（文中有涉及）
+*  具有`__await__`方法的对象
 
 
-除了生成器由于遗留的原因不是使用await方法，其他的对象都使用。 CO_ITERABLE_COROUTINE标志来自哪里？ 它来自一个协程包装器（现在与sys.set_coroutine_wrapper有些混淆），即@ asyncio.coroutine。 通过一些间接方法，它使用types.coroutine（现在与types.CoroutineType或asyncio.coroutine有些混淆）包装生成器，并通过另外一个标志CO_ITERABLE_COROUTINE重新创建内部代码对象。
+除了生成器由于遗留的原因不是使用`__await__`方法，其他的对象都使用。 `CO_ITERABLE_COROUTINE` 标志来自哪里？ 它来自一个协程包装器（现在与 `sys.set_coroutine_wrapper` 有些混淆），即 `@asyncio.coroutine`。 通过一些间接方法，它使用types.coroutine（现在与types.CoroutineType或asyncio.coroutine有些混淆）包装生成器，并通过另外一个标志CO_ITERABLE_COROUTINE重新创建内部代码对象。
 
+It comes from a coroutine wrapper (now to be confused with sys.set_coroutine_wrapper) that is @asyncio.coroutine. That through some indirection will wrap the generator with types.coroutine (to to be confused with types.CoroutineType or asyncio.coroutine) which will re-create the internal code object with the additional flag CO_ITERABLE_COROUTINE.
 所以现在我们知道这些东西是什么，什么是future？ 首先，我们需要澄清一件事情：在Python 3中，实际上有两种（完全不兼容）future类型：asyncio.futures.Future和concurrent.futures。 其中一个再现在另一个之前，但他们都仍然在asyncio使用。 例如，asyncio.run_coroutine_threadsafe（）将调度一个协程到在另一个线程中运行的事件循环，但它返回一个concurrent.futures。Future对象而不是asyncio.futures。Future对象。 这是有道理的，因为只有concurrent.futures.Future对象是线程安全的。
 
 所以现在我们知道有两个不兼容的future，我们应该澄清哪个future在asyncio中。 老实说，我不完全确定差异在哪里，但我打算暂时称之为“最终”。 它是一个最终将持有一个值的对象，你可以在最终结果仍然在计算时做一些处理。 future对象的一些变种称为deferred，还有一些叫做promise。 我实在难以理解它们真正的区别。
