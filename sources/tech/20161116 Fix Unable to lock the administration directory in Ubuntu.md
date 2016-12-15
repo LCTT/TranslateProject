@@ -1,3 +1,5 @@
+translating---geekpi
+
 Fix “Unable to lock the administration directory (/var/lib/dpkg/)” in Ubuntu
 ============================================================
 
