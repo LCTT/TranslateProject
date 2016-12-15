@@ -157,7 +157,7 @@ via: https://medium.com/@bartobri/applying-the-linus-tarvolds-good-taste-coding-
 
 校对：[校对者ID](https://github.com/校对者ID)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://medium.com/@bartobri?source=post_header_lockup
 [1]:https://www.ted.com/talks/linus_torvalds_the_mind_behind_linux
