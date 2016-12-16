@@ -1,3 +1,5 @@
+translating---geekpi
+
 Installation of CentOS 7.3 Guide
 ============================================================
 
