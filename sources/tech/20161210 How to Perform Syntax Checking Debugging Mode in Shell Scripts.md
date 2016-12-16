@@ -1,3 +1,5 @@
+translating---geekpi
+
 How to Perform Syntax Checking Debugging Mode in Shell Scripts
 ============================================================
 
