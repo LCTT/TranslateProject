@@ -1,3 +1,5 @@
+translating----geekpi
+
 Add Rainbow Colors to Linux Command Output in Slow Motion
 ============================================================
 
