@@ -1,3 +1,5 @@
+Translating by firstadream
+
 ### [Can Linux containers save IoT from a security meltdown?][28]
 
  ![](http://hackerboards.com/files/internet_of_things_wikimedia1-thm.jpg) 
@@ -139,7 +141,7 @@ via: http://hackerboards.com/can-linux-containers-save-iot-from-a-security-meltd
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织翻译，[Linux中国](https://linux.cn/) 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:http://hackerboards.com/can-linux-containers-save-iot-from-a-security-meltdown/
 [1]:http://hackerboards.com/atom-based-gateway-taps-new-open-source-iot-cloud-platform/

@@ -1,3 +1,5 @@
+translating by dongdongmian
+
 How to Build an Email Server on Ubuntu Linux
 ============================================================
 
@@ -110,7 +112,7 @@ via: https://www.linux.com/learn/how-build-email-server-ubuntu-linux
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织翻译，[Linux中国](https://linux.cn/) 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://www.linux.com/users/cschroder
 [1]:https://www.linux.com/licenses/category/creative-commons-zero
