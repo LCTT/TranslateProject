@@ -1,121 +1,120 @@
-CentOS 7.3安装向导
+CentOS 7.3 安装指南
 ============================================================
 
-基于Red Hat企业版的最新版本的CentOS 7在今年的11月发布了，包含了许多bug修复、新的包更新、比如Samba、Squid、libreoffice、SELinux、systemd等其他支持第七代Intel酷睿i3、i5、 i7处理器的软件包。
+基于 Red Hat 企业版的最新版本的 CentOS 7 在今年的 11 月发布了，包含了许多 bug 修复和包更新,比如 Samba、Squid、libreoffice、SELinux、systemd 等，并支持第七代 Intel 酷睿 i3、i5、 i7 处理器。
 
-本指南会向你展示如何在UEFI的机器上使用DVD ISO镜像来安装CentOS 7.3。
+本指南将向你展示如何在 UEFI 的机器上使用 DVD ISO 镜像来安装 CentOS 7.3。
 
-如果你在查找RHEL，看下我们的[RHEL 7.3安装指南][2]
+如果你在查找 **RHEL**，看下我们的 [RHEL 7.3 安装指南][2]
 
 #### 要求
 
-1.  [下载CentOS 7.3 ISO镜像][1]
+1.  [下载 CentOS 7.3 ISO 镜像][1]
 
-
-要在UEFI的机器上正确安装CentOS 7.3，首先按键（(`F2`、 `F11`、 `F12`取决与你的主板类型）进入主板的UEFI的设置，并且确保QuickBoot/FastBoot以及Secure Boot已被禁用。
+要在 UEFI 的机器上正确安装C entOS 7.3，首先按键（(`F2`、 `F11`、 `F12`，取决与你的主板类型）进入主板的 UEFI 的设置，并且确保 QuickBoot/FastBoot以及 Secure Boot 已被禁用。
 
 ### CentOS 7.3安装
 
-1. 在你从上面的链接下载完成镜像之后，使用[Rufus][3]将它烧录到DVD或者创建一个可启动的UEFI兼容USB盘。
+1. 在你从上面的链接下载完成镜像之后，使用 [Rufus][3] 工具将它烧录到 DVD 或者创建一个可启动的 UEFI 兼容 USB 盘。
 
-将USB/DVD放入主板中，重启电脑并用特定的功能键（`F12`、 `F10`，取决于主板供应商）让BIOS/UEFI从DVD/USB启动。
+将 USB/DVD 放入主板驱动器中，重启电脑并用特定的功能键（`F12`、 `F10`，取决于主板供应商）让 BIOS/UEFI 从 DVD/USB 启动。
 
-ISO镜像启动完成后，你机器上会显示一个页面。在菜单中选择Install CentOS 7并按下回车继续。
+ISO 镜像启动完成后，你机器上会显示一个页面。在菜单中选择 **Install CentOS 7** 并按下回车继续。
 
 [
  ![CentOS 7.3 Boot Menu](http://www.tecmint.com/wp-content/uploads/2016/12/CentOS-7.3-Boot-Menu.png) 
 ][4]
 
-CentOS 7.3启动菜单
+*CentOS 7.3 启动菜单*
 
-2. 在安装镜像加载到内存完成后，会显示一个欢迎页面。选择你在安装中使用的语言并按下继续按钮。
+2. 在安装镜像加载到内存完成后，会显示一个欢迎页面。选择你在安装中使用的语言并按下**继续**按钮。
 
 [
  ![Select CentOS 7.3 Installation Language](http://www.tecmint.com/wp-content/uploads/2016/12/Select-CentOS-7.3-Installation-Language.png) 
 ][5]
 
-选择CentOS 7.3安装语言
+*选择 CentOS 7.3 安装语言*
 
-3. 在下一个页面点击日期和时间，从地图中选择你的地理位置。确认日期和时间正确配置了并点击完成按钮来回到主安装界面。
+3. 在下一个页面点击**日期和时间**，从地图中选择你的地理位置。确认正确配置了日期和时间，并点击**完成**回到主安装界面。
 
 [
  ![CentOS 7.3 Installation Summary ](http://www.tecmint.com/wp-content/uploads/2016/12/CentOS-7.3-Installation-Summary.png) 
 ][6]
 
-CentOS 7.3 安装总结
+*CentOS 7.3 安装总结*
 
 [
  ![Select Date and Time](http://www.tecmint.com/wp-content/uploads/2016/12/Select-Date-and-Time.png) 
 ][7]
 
-选择日期和时间
+*选择日期和时间*
 
-4. 点击键盘菜单进入键盘布局页面。选择或者添加一个键盘布局并点击完成继续。
+4. 点击**键盘**菜单进入键盘布局页面。选择或者添加一个键盘布局并点击**完成**继续。
 
 [
  ![Select Keyboard Layout](http://www.tecmint.com/wp-content/uploads/2016/12/Select-Keyboard-Layout.png) 
 ][8]
 
-选择键盘布局
+*选择键盘布局*
 
-5. 接下来，添加或者配置一个你系统中的语言并点击完成进入下一步。
+5. 接下来，添加或者配置一个你系统中的语言并点击**完成**进入下一步。
 
 [
  ![Select Language Support](http://www.tecmint.com/wp-content/uploads/2016/12/Select-Language-Support.png) 
 ][9]
 
-选择语言支持
+*选择语言支持*
 
-6. 在这步中，你可以通过选择列表中安全配置来设置你的系统安全策略。
+6. 在这步中，你可以通过选择列表中安全配置来设置你的系统**安全策略**。
 
-点击选择配置按钮选择你想要的安全配置并点击应用安全设置按钮到On。点击完成按钮后继续安装流程。
+点击**选择配置**按钮，选择你想要的安全配置，并点击**应用安全设置**按钮到 **On**。点击**完成**后继续安装。
 
 [
  ![Enable CentOS 7.3 Security Policy](http://www.tecmint.com/wp-content/uploads/2016/12/Enable-CentOS-7-Security-Policy.png) 
 ][10]
 
-启用CentOS 7.3 安全策略
+*启用 CentOS 7.3 安全策略*
 
-7. 下一步中你可以点击软件选择按钮来配置你的基础机器环境。
+7. 下一步，点击**软件选择**按钮来配置基础机器环境。
 
-左边的列表是你可以选择安装桌面环境（Gnome、KDE Plasma或者创造型工作站）或者安装一个服务器环境（Web服务器、计算节点、虚拟化主机、基础设施服务器、带图形界面的服务器或者文件及打印服务器）或者执行一个最小化的安装。
+从左边的列表，你可以选择安装桌面环境（**Gnome、KDE Plasma 或者创造型工作站**），或者选择一个服务器自定义安装类型（Web 服务器、计算节点、虚拟化主机、基础设施服务器、带图形界面的服务器或者文件及打印服务器），或者执行一个最小化的安装。
 
-为了随后能自定义你的系统，选择最小化带兼容库安装点击完成按钮继续。
+为了随后能自定义你的系统，选择**最小化**带兼容库安装，点击完成按钮继续。
 
 [
  ![CentOS 7.3 Software Selection](http://www.tecmint.com/wp-content/uploads/2016/12/CentOs-7.3-Software-Selection.png) 
 ][11]
 
-CentOS 7.3软件选择
+*CentOS 7.3 软件选择*
 
-对于完整的Gnome或者KDE桌面环境，使用下面的截图作为指引。
+对于完整的 **Gnome 或者 KDE** 桌面环境，使用下面的截图作为指引。
 
 [
  ![Gnome Desktop Software Selection](http://www.tecmint.com/wp-content/uploads/2016/12/Gnome-Desktop-Software-Selection.png) 
 ][12]
 
-Gnome桌面软件选择
+*Gnome 桌面软件选择*
 
 [
  ![KDE Desktop Software Selection](http://www.tecmint.com/wp-content/uploads/2016/12/KDE-Desktop-Software-Selection.png) 
 ][13]
 
-KDE桌面软件选择
+*KDE 桌面软件选择*
 
-8. 假设你要在服务器上安装一个图形界面，选择左边那栏带GUI的服务器那项，并在右边那栏中根据你需要提供给客户端的服务选择合适的附加软件。
+8. 假设你要在服务器上安装一个**图形用户界面**，从左栏选择**<ruby>带GUI的服务器<rt>Server with GUI</rt></ruby>**，并在右栏中根据服务器要提供给客户端的服务选择合适的附加软件。
 
-你可以选择的服务是非常多样化的，从备份、DNS或者e-mai服务到文件存储服务、FTP、HA或者[监控工具][14]。只选择对你网络设置最重要的服务。
+你可以选择的服务是非常多样化的，从备份、DNS 或者 e-mai 服务到文件存储服务、FTP、HA 或者[监控工具][14]。只选择对你网络设置最重要的服务。
 
 [
  ![Select Server with GUI](http://www.tecmint.com/wp-content/uploads/2016/12/Select-Server-with-Gui.png) 
 ][15]
 
-选择带GUI的服务器
+*选择带 GUI 的服务器*
 
-9 安装源保持默认，这为了防止你使用了特定的网络比如HTTP、HTTPS、FTP或者NFS协议作为额外的仓库，并点击安装位置来创建一个磁盘分区。
+9. 使用默认**安装源**，以防没有使用其它特定的网络位置，比如 HTTP、HTTPS、FTP 或者NFS 协议作为额外的仓库，并点击安装位置来创建一个磁盘分区。
 
 在设备选择页面，确保你已经选择了本地磁盘。同样，在其他存储选项中确保选择了自动配置分区。
-
+in case you’re not using other specific network locations such as HTTP, HTTPS, FTP or NFS protocols as additional repositories and hit on Installation Destination in order to create hard disk partitions.
 这个选项可以确保你的磁盘会根据磁盘空间和Linux文件系统层次结构被正确分区。它会为你自动创建/（root）、/home和swap分区。点击完成来应用磁盘分区计划并回到主安装界面。
 
 重要提醒：如你你想要创建自定义分区及自定义分区大小，你可以选择“I will configure partitioning”选项来创建自定义分区。
