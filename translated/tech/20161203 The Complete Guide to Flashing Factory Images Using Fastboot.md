@@ -209,7 +209,7 @@ via: http://android.wonderhowto.com/how-to/complete-guide-flashing-factory-image
 
 作者：[ Dallas Thomas][a]
 译者：[name1e5s](https://github.com/name1e5s)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织编译，[Linux中国](https://linux.cn/) 荣誉推出
 
