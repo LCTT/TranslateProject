@@ -31,7 +31,7 @@
 
 注意： 以下是完成该任务的一系列命令，再后面是每个命令用途的解释。
 
-`
+```
 adb root
 
 adb shell
@@ -42,7 +42,7 @@ exit
 
 adb pull /PATH/TO/mmssms.db /PATH/TO/DESTINATION/FOLDER
 
-`
+```
 
 #### 解释：
 
