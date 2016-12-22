@@ -1,68 +1,66 @@
-translating---geekpi
-
-### Create a simple wallpaper with Fedora and Inkscape
+### 用Fedora和Inkscape制作一张简单点的壁纸
 
  ![inkscape-wallpaper](https://cdn.fedoramagazine.org/wp-content/uploads/2016/10/inkscape-wallpaper-945x400.png) 
 
-In our previous two Inkscape articles, we have [covered the basics of using Inkscape, creating objects,][18] and [doing some basic manipulations and color changes.][17]
+在先前的两篇Inkscape的文章中，我么已经[介绍了Inkscape的基本使用、创建对象][18]以及[一些基本操作和修改颜色。][17]
 
-In this next installment, we are going to put all these new skills together, and create our first composition — a simple wallpaper.
+在接下来的介绍中，我们会集合这些新的技巧，并且创建我们的第一个作品- 一张简单点的壁纸。
 
-### Changing the document size
+### 更改文档颜色
 
-When going through the previous tutorials, you probably noticed the default document size shown on the main canvas window as a black bordered rectangle. The default document size in Inkscape is the A4 paper size:
+当回顾先前的教程时，你可能会注意到主画板上的默认文档尺寸是一个黑色边框的矩形。Inkscape中默认文档的大小是A4纸大小：
 
 [
  ![Screenshot from 2016-09-07 08-37-01](https://1504253206.rsc.cdn77.org/wp-content/uploads/2016/10/Screenshot-from-2016-09-07-08-37-01.png) 
 ][16]
 
-For this wallpaper, we are going to resize the the document to **1024px x 768px**. To change the document size, Go to `File` > `Document Properties…` . In the Custom Size section of the Document Properties dialog, enter the width of 1024px, and a height of 768px:
+对于这张壁纸而言，我们会将尺寸改为**1024px x 768px**。要改变文档的尺寸，进入`File` > `Document Properties…`。在自定义文档大小那块区域输入宽度为1024px，高度为768px：
 
 [
  ![Screenshot from 2016-09-07 09-00-00](https://1504253206.rsc.cdn77.org/wp-content/uploads/2016/10/Screenshot-from-2016-09-07-09-00-00.png) 
 ][15]
 
-The document outline on the page should now look something like this:
+页面上文档的轮廓大概像这样：
 
 [
  ![Screenshot from 2016-09-07 09-01-03](https://1504253206.rsc.cdn77.org/wp-content/uploads/2016/10/Screenshot-from-2016-09-07-09-01-03.png) 
 ][14]
 
-### Drawing the background
+### 绘画背景
 
-Next up, we are going to draw a rectangle as big as the document. So choose the using **rectangle tool, ** draw a rectangle, and adjust the size of the rectangle using the Tools Control bar.
+接下来，我们会画一个和文档一样大的矩形。因此选择**矩形工具**来画一个矩形，并使用工具控制栏来调整矩形的大小。
 
 [
  ![rect](https://1504253206.rsc.cdn77.org/wp-content/uploads/2016/10/rect.png) 
 ][13]
 
-Next up, add a Gradient Fill to the rectangle. [If you need a refresher on adding gradients, check out the previous adding colours article.][12]
+接着在矩形中添加一个渐变填充。[如果你需要复习添加渐变，请阅读先前添加色彩的文章。][12]
 
 [
  ![Screenshot from 2016-09-07 09-41-13](https://1504253206.rsc.cdn77.org/wp-content/uploads/2016/10/Screenshot-from-2016-09-07-09-41-13.png) 
 ][11]
 
-Your rectangle might also have a stroke colour set. Use the fill and stroke dialog to set the stroke paint to **none**.
+你的矩形可能也设置了笔触颜色。 使用填充和笔触对话框将笔触设置为** none **。
 
 [
  ![Screenshot from 2016-09-07 09-44-15](https://1504253206.rsc.cdn77.org/wp-content/uploads/2016/10/Screenshot-from-2016-09-07-09-44-15.png) 
 ][10]
 
-### Drawing the pattern
+### 绘制图样
 
-Next we are going to draw a triangle. Use the star / polygon tool with 3 points. You can** PRESS and HOLD DOWN CTRL** key, to give your triangle an angle and symmetry.
+接下来我们画一个三角形，使用星型/多边形工具，角为3个。你可以**按住CTRL**键来复制一个对称的三角形。
 
 [
  ![Screenshot from 2016-09-07 09-52-38](https://1504253206.rsc.cdn77.org/wp-content/uploads/2016/10/Screenshot-from-2016-09-07-09-52-38.png) 
 ][9]
 
-Select the triangle and press **CTRL+D**, to duplicate it (the duplicated figure will overlap the existing one), **so be sure to move it after duplicating.**
+选中三角形并按下**CTRL+D**来复制它（复制的图形会覆盖掉存在的那个），**因此在复制后确保将它移动到别处。**
 
 [
  ![Screenshot from 2016-09-07 10-44-01](https://1504253206.rsc.cdn77.org/wp-content/uploads/2016/10/Screenshot-from-2016-09-07-10-44-01.png) 
 ][8]
 
-Select one of the triangles as shown, and go to **OBJECT > FLIP-HORIZONTAL**
+选中如图三角形，进入**OBJECT > FLIP-HORIZONTAL**
 
 [
  ![Screenshot from 2016-09-07 09-57-23](https://1504253206.rsc.cdn77.org/wp-content/uploads/2016/10/Screenshot-from-2016-09-07-09-57-23.png) 
@@ -70,27 +68,27 @@ Select one of the triangles as shown, and go to **OBJECT > FLIP-HORIZONTAL**
  ![Screenshot from 2016-09-07 09-57-42](https://1504253206.rsc.cdn77.org/wp-content/uploads/2016/10/Screenshot-from-2016-09-07-09-57-42.png) 
 ][6]
 
-Recolour your three triangles to three colors that look good with your background.
+为你的三个三角形重新着色让它看上去和你的背景和谐。
 
 [
  ![Screenshot from 2016-09-07 09-58-52](https://1504253206.rsc.cdn77.org/wp-content/uploads/2016/10/Screenshot-from-2016-09-07-09-58-52.png) 
 ][5]
 
-Select all your triangles, and duplicate them again to fill out your pattern:
+选中所有的三角形并复制来填充你的样式：
 
 [
  ![Screenshot from 2016-09-07 10-49-25](https://1504253206.rsc.cdn77.org/wp-content/uploads/2016/10/Screenshot-from-2016-09-07-10-49-25.png) 
 ][4]
 
-### Exporting your background
+### 导出背景
 
-Finally, we need to export our document as a PNG file. Open up the export dialog with** FILE > EXPORT PNG**, select the file location and name, make sure the Drawing  tab is pressed, and click on **EXPORT**
+最后，我们需要将我们的文档导出为PNG文件。点击** FILE > EXPORT PNG**打开导出对话框，选择文件位置和名字，确保选中的是Drawing标签，并点击**EXPORT**。
 
 [
  ![Screenshot from 2016-09-07 11-07-05](https://1504253206.rsc.cdn77.org/wp-content/uploads/2016/10/Screenshot-from-2016-09-07-11-07-05-1.png) 
 ][3]
 
-Let no tool be a barrier to your imagination. Come up with beautiful wallpapers and submit the designs for [FEDORA 25 wallpapers][2]. Your design might get lucky enough to be used by thousands of Fedora users. Here are some examples of wallpapers created with Inkscape and the techniques above:
+不要让工具成为你想象力的障碍。来制作美丽的壁纸并提交你的设计到[FEDORA 25 壁纸][2]上来吧。你的设计或许会幸运地被选中成为上千外用户的壁纸。下面是用Inkscape和上面提到的技术制作的一些壁纸样品：
 
 [
  ![back1](https://1504253206.rsc.cdn77.org/wp-content/uploads/2016/10/back1.png) 
@@ -103,7 +101,7 @@ via: https://fedoramagazine.org/inkscape-design-imagination/
 
 作者：[a2batic][a]
 
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 
 校对：[校对者ID](https://github.com/校对者ID)
 
