@@ -1,13 +1,15 @@
-# 4 种简单方法让你在 Linux 下生成一个高强度密码
+在 Linux 下生成高强度密码的四种方法
+===============
 
- ![在 Linux 下生成一个高强度密码](https://www.ostechnix.com/wp-content/uploads/2016/11/password-720x340.jpg) 
-图片来源： Google.
+![在 Linux 下生成一个高强度密码](https://www.ostechnix.com/wp-content/uploads/2016/11/password-720x340.jpg) 
 
-前一段时间，我们已经分享了如何 [强制用户在基于 DEB 的系统中使用高强度的密码][8]  ，例如 Debian，Ubuntu，Linux Mint， Elementary OS 等系统中。那么，你可能会疑惑一个高强度的密码究竟是什么样的呢？怎么才能生成一个那样的密码呢？不用担心，下面我们将介绍 4 种简单方法让你在 Linux 中生成一个高强度密码。当然，已经有很多免费的工具或者方式来完成这个任务，但这里我们仅考虑那些简单直接的方法。下面就让我们开始吧。
+*图片来源： Google.*
+
+前一段时间，我们已经分享了如何在诸如 Debian、Ubuntu、Linux Mint、Elementary OS 的基于 DEB 的系统中[强制用户使用高强度的密码][8] ，比如。那么，你可能会疑惑一个高强度的密码究竟是什么样的呢？怎么才能生成一个那样的密码呢？不用担心，下面我们将介绍 4 种简单方法让你在 Linux 中生成一个高强度密码。当然，已经有很多免费的工具或者方式来完成这个任务，但这里我们仅考虑那些简单直接的方法。下面就让我们开始吧。
 
 ### 1. 在 Linux 中使用 OpenSSL 来生成一个高强度密码
 
-OpenSSL 在所有的类 Unix 发行版本，Solaris，Mac OS X 和 Windows 中都可以获取到。
+OpenSSL 在所有的类 Unix 发行版、Solaris、Mac OS X 和 Windows 中都可以获取到。
 
 要使用 OpenSSL 生成一个随机密码，打开终端并运行下面的命令：
 
@@ -74,7 +76,7 @@ Choo4aicozai3a
 ![sksk_004](http://www.ostechnix.com/wp-content/uploads/2016/11/sk@sk_004.png) 
 ][5]
 
-上面的命令将只生成 一个 14 位字符长的密码，如果要生成两个不同的 14 位字符长的密码，则可以运行：
+上面的命令将生成一个 14 位字符长的密码，如果要生成两个不同的 14 位字符长的密码，则可以运行：
 
 ```
 pwgen 14 2
@@ -135,30 +137,18 @@ xoiFush3ceiPhe
 
 另外，pwgen 命令还有一些很实用的选项：
 
-```
- -c 或 --capitalize （在密码中包含至少一个大写字母）
-
- -A 或 --no-capitalize （在密码中不包含大写字母）
-
- -n 或 --numerals （在密码中包含至少一个数字）
-
- -0 或 --no-numerals （在密码中不包含数字） 
-
- -y 或 --symbols （在密码中包含至少一个特殊字符）
-
- -s 或 --secure （生成完全随机的密码）
-
- -B 或 --ambiguous （在密码中不包含难于区分的字母，如 0 和 o, 1 和 l）
-
- -h 或 --help （输出帮助信息）
-
- -H 或 --sha1=path/to/file[#seed] （使用某个给定文件的 sha1 哈希值来作为随机数的生成种子）
-
- -C （按列输出生成好的密码）
-
- -1 （不按列输出生成好的密码）
-
- -v 或 --no-vowels （不使用任何元音字母，以防止生成下流的词语）
+- `-c` 或 `--capitalize` 在密码中包含至少一个大写字母
+- `-A` 或 `--no-capitalize` 在密码中不包含大写字母
+- `-n` 或 `--numerals` 在密码中包含至少一个数字
+- `-0` 或 `--no-numerals` 在密码中不包含数字
+- `-y` 或 `--symbols` 在密码中包含至少一个特殊字符
+- `-s` 或 `--secure` 生成完全随机的密码
+- `-B` 或 `--ambiguous` 在密码中不包含难于区分的字母，如 `0` 和 `o`、`1` 和 `l`
+- `-h` 或 `--help` 输出帮助信息
+- `-H` 或 `--sha1=path/to/file[#seed]` 使用某个给定文件的 sha1 哈希值来作为随机数的生成种子
+- `-C` 按列输出生成好的密码
+- `-1` 不按列输出生成好的密码
+- `-v` 或 `--no-vowels` 不使用任何元音字母，以防止生成下流的词语
 ```
 
 若想了解更多信息，请查阅其联机手册：
@@ -169,7 +159,7 @@ man pwgen
 
 ### 3. 在 Linux 中使用 GPG 来生成一个高强度密码
 
-GPG (GnuPG 或 GNU Privacy Guard) 是一个免费的命令行程序，可以用于替代赛门铁克的 PGP 加密软件。在类 Unix 操作系统、Microsoft Windows 和 Android 中都可以获取到它。
+GPG (GnuPG 或 GNU Privacy Guard) 是一个自由开源的命令行程序，可以用于替代赛门铁克的 PGP 加密软件。在类 Unix 操作系统、Microsoft Windows 和 Android 中都可以获取到它。
 
 要使用 PGP 生成 1 个长度为 14 个字符的高强度密码，请在终端中运行下面的命令：
 
@@ -251,22 +241,19 @@ perl password.pl
 ![sksk_002](http://www.ostechnix.com/wp-content/uploads/2016/11/sk@sk_002.png) 
 ][1]
 
-注： 我无法找到这个脚本的原有作者，假如你知道作者的名字，请在下面的评论部分让我知晓，我将在这篇指南中添加上该作者的名字。
+注： 我无法找到这个脚本的原作者，假如你知道作者的名字，请在下面的评论部分让我知晓，我将在这篇指南中添加上该作者的名字。
 
 请注意：对于生成的密码，你必须记住它，或者将它保存到电脑中一个安全的地方。我建议你记住密码并将它从系统中删除，因为这比你的系统被黑客控制要好的多。
 
-伙计们，今天就是这么多了。不久我将带来另一篇有意思的文章。在此之前，敬请继续关注 OSTechNix。
-
+伙计们，今天就是这么多了。不久我将带来另一篇有意思的文章。在此之前，敬请继续关注。
 
 
 --------------------------------------------------------------------------------
 
 via: https://www.ostechnix.com/4-easy-ways-to-generate-a-strong-password-in-linux/
 
-作者：[ SK ][a]
-
+作者：[SK][a]
 译者：[FSSlc](https://github.com/FSSlc)
-
 校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
