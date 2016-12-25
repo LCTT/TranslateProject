@@ -40,7 +40,7 @@
  ![Screenshot from 2016-09-07 09-41-13](https://1504253206.rsc.cdn77.org/wp-content/uploads/2016/10/Screenshot-from-2016-09-07-09-41-13.png) 
 ][11]
 
-你的矩形可能也设置了轮廓颜色。 使用<ruby>填充和轮廓<rt> Fill and Stroke</rt></ruby>对话框将轮廓设置为** none **。
+你的矩形可能也设置了轮廓颜色。 使用<ruby>填充和轮廓<rt> Fill and Stroke</rt></ruby>对话框将轮廓设置为 **none**。
 
 [
  ![Screenshot from 2016-09-07 09-44-15](https://1504253206.rsc.cdn77.org/wp-content/uploads/2016/10/Screenshot-from-2016-09-07-09-44-15.png) 
@@ -82,7 +82,7 @@
 
 ### 导出背景
 
-最后，我们需要将我们的文档导出为 PNG 文件。点击 **FILE > EXPORT PNG**，打开导出对话框，选择文件位置和名字，确保选中的是 Drawing 标签，并点击 ** EXPORT**。
+最后，我们需要将我们的文档导出为 PNG 文件。点击 **FILE > EXPORT PNG**，打开导出对话框，选择文件位置和名字，确保选中的是 Drawing 标签，并点击 **EXPORT**。
 
 [
  ![Screenshot from 2016-09-07 11-07-05](https://1504253206.rsc.cdn77.org/wp-content/uploads/2016/10/Screenshot-from-2016-09-07-11-07-05-1.png) 
