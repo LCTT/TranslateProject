@@ -1,3 +1,5 @@
+翻译中 by ypingcn
+
 Moving with SQL Server to Linux? Move from SQL Server to MySQL as well!
 ============================================================
 
