@@ -26,15 +26,16 @@ The migration may be based on the following key factors:
 
 ### To have Control Over the Platform
 
-不像Windows那样每次发布和修复都不能完全掌控,Linux 真正给了你灵活性去获取修复。
+不像Windows那样每次发布和修复都不能完全掌控,当你需要修复的时候， Linux 真正给了你灵活性去获取他们。这一点受到开发者和安全人员的喜爱，因为他们能在一个安全威胁被确定时立即修复它。
 Unlike in windows where you are not in full control of the releases and fixes, Linux does give you that flexibility to get fixes as and when you require them. This is preferred by developers and security personnel in that they are able to immediately apply a fix when a security threat is identified, unlike in Windows where you can only hope they release the fixes soon.
 
 ### Joining the Crowd
 
+目前， 运行在 Linux 平台上的服务器在数量上远超过 Windows，几乎是全世界服务器数量的四分之三,而且这种趋势在最近一段时间内不会改变。因此，许多组织正在将他们的服务完全迁移到 Linux 上，而不是同时使用两种平台，那将会增加他们的运营成本。
 The Linux platform far outnumbers Windows in the number of servers that are running on it, nearly a quarter of all servers in the world, and the trend is not about to change anytime soon. Many organizations, therefore, do migrate so as to be fully on Linux rather than running two platforms concurrently, which adds up to their operating costs.
 
 ### Microsoft isn’t Open Sourcing SQL Server’s Code
-
+尽管微软宣称他们下一个名为 Denali 的新版 MSSQL Server 将会是一个 Linux 版，但是微软并不会开放源代码，这意味着他们的协议依旧有效。
 In as much as Microsoft have announced that their next release of MSSQL server (named Denali) will be a Linux version, that will still not open their source code, meaning that their licenses will still apply, but the release will be run on Linux. This still locks out the many users who would happily take to the release if it was open source.
 
 This still does not give an alternative to those users who are using Oracle, which is not open source; neither does it to those [using MySQL][7], which is fully open source.
