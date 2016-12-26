@@ -73,7 +73,7 @@ via: https://opensource.com/life/16/5/my-open-source-story-larissa-shapiro
 
 作者：[Larissa Shapiro][a]
 译者：[name1e5s](https://github.com/name1e5s)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
 
