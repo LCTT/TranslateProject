@@ -1,3 +1,5 @@
+translating by beyondworld
+
 9 Open Source/Commercial Software for Data Center Infrastructure Management
 ============================================================
 
