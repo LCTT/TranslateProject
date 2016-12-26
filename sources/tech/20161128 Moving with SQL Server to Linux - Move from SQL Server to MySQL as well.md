@@ -1,27 +1,32 @@
 翻译中 by ypingcn
 
-Moving with SQL Server to Linux? Move from SQL Server to MySQL as well!
+把 SQL Server 迁移到Linux？也把 SQL Server 换成 MySQL 吧！
 ============================================================
 
-### On this page
+### 在这篇文章里将会讲
 
-1.  [To have Control Over the Platform][1]
+1.  [To have Control Over the Platform][1]
 2.  [Joining the Crowd][2]
 3.  [Microsoft isn’t Open Sourcing SQL Server’s Code][3]
 4.  [Saving on License Costs][4]
 5.  [Sometimes, the Specific Hardware being Used][5]
 6.  [Support][6]
 
+最近几年，数量庞大的个人和组织放弃 Windows 平台选择 Linux 平台，而且随着人们体验到更多 Linux 的发展，这个数字将会继续增长。在很长的一段时间内， Linux是网络服务器的领导者，因为大部分的网络服务器都运行在 Linux 之上，这或许是一个为什么那么多个人和组织选择迁移的原因。
 Over the recent years, there has been a large number of individuals as well as organizations who are ditching the Windows platform for Linux platform, and this number will continue to grow as more developments in Linux are experienced. Linux has for long been the leader in Web servers as most of the web servers run on Linux, and this could be one of the reasons why the high migration is being experienced.
 
+迁移的原因有很多，从更强的平台稳定性、可靠性、花费、所有权和安全性。更多的个人和组织迁移到 Linux 平台，MS SQL Server数据库管理系统的迁移也有着同样的趋势， 首选的是MySQL，因为MySQL的互用性、平台独立和低的购置成本。
 The reasons for this migration are as numerous, ranging from more platform stability, reliability, costs, ownership and security among others. As more entities migrate to the Linux platform, so is the migration from MS SQL server database management system, top MySQL, because of interoperability and platform independence of MySQL, as well as low acquisition costs.
 
+有多少个人和组织完成了迁移，就有多少商业需求应该被满足，迁移，不能只是为了乐趣。同样的，一个综合可行性和成本效益分析是有必要执行的，分析能了解迁移对于你业务上的正面和负面影响。
 As much as the migration is to be done, the need for it should be necessitated by the business and not just for the mere pleasure of it.As such, a comprehensive feasibility and cost-benefit analysis should be carried out to know the impact that the migration will have on your business, both positive and negative.
 
+迁移需要基于以下的重要因素：
 The migration may be based on the following key factors:
 
 ### To have Control Over the Platform
 
+不像Windows那样每次发布和修复都不能完全掌控,Linux 真正给了你灵活性去获取修复。
 Unlike in windows where you are not in full control of the releases and fixes, Linux does give you that flexibility to get fixes as and when you require them. This is preferred by developers and security personnel in that they are able to immediately apply a fix when a security threat is identified, unlike in Windows where you can only hope they release the fixes soon.
 
 ### Joining the Crowd
