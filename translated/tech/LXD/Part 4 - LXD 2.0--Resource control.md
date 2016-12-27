@@ -379,12 +379,15 @@ LXD团队花费了几个月的时间来迭代我们使用的这些限制语言�
 
 实时的应用限制和继承配置文件，使其成为一种非常强大的工具，可以在不影响正在运行的服务的情况下实时管理服务器上的负载。
 
-### 额外的信息
+### 额外信息
 
-LXD主站： <https://linuxcontainers.org/lxd>
-Github上的页面： <https://github.com/lxc/lxd>
-邮件列表： <https://lists.linuxcontainers.org>
-IRC：#lxcontainers on irc.freenode.net
+LXD 的主站在: <https://linuxcontainers.org/lxd>
+
+LXD 的 GitHub 仓库: <https://github.com/lxc/lxd>
+
+LXD 的邮件列表: <https://lists.linuxcontainers.org>
+
+LXD 的 IRC 频道: #lxcontainers on irc.freenode.net
 
 如果你不想在你的机器上安装LXD，你可以[在线尝试下][3]
 
