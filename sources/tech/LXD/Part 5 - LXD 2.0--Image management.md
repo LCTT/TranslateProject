@@ -1,3 +1,5 @@
+translating---geekpi
+
 Part 5 - LXD 2.0: Image management
 ==================================
 This is the fifth blog post [in this series about LXD 2.0][0].
