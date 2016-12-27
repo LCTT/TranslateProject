@@ -1,4 +1,3 @@
-translating by dongdongmian  
 translating by WangYihang  
   
 如何在Ubuntu环境下搭建邮件服务器  
