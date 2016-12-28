@@ -1,38 +1,36 @@
-translating----geekpi
+LXD 2.0 系列（九）：实时迁移
+======================================
 
-Part 9 - LXD 2.0: Live migration
-=================================
-
-This is the ninth blog post [in this series about LXD 2.0][0].
+这是 [LXD 2.0 系列介绍文章][0]的第九篇。
 
 ![](https://linuxcontainers.org/static/img/containers.png)
 
-### Introduction
+### 介绍
 
-One of the very exciting feature of LXD 2.0, albeit experimental, is the support for container checkpoint and restore.
+LXD 2.0中的有一个尽管是实验性质的但非常令人兴奋的功能，那就是支持容器检查点和恢复。
 
-Simply put, checkpoint/restore means that the running container state can be serialized down to disk and then restored, either on the same host as a stateful snapshot of the container or on another host which equates to live migration.
+简单地说，检查点/恢复意味着正在运行的容器状态可以被序列化到磁盘，然后在与容器状态快照相同的主机上或者在等同于实时迁移的另一主机上恢复。
 
-### Requirements
+### 要求
 
-To have access to container live migration and stateful snapshots, you need the following:
+要访问容器实时迁移和有状态快照，你需要以下条件：
 
-- A very recent Linux kernel, 4.4 or higher.
-- CRIU 2.0, possibly with some cherry-picked commits depending on your exact kernel configuration.
-- Run LXD directly on the host. It’s not possible to use those features with container nesting.
-- For migration, the target machine must at least implement the instruction set of the source, the target kernel must at least offer the same syscalls as the source and any kernel filesystem which was mounted on the source must also be mountable on the target.
+- 一个最近的Linux内核，4.4或更高版本。
+- CRIU 2.0，可能有一些cherry-pick的提交，具体取决于你确切的内核配置。
+- 直接在主机上运行LXD。 不能在容器嵌套下使用这些功能。
+- 对于迁移，目标机器必须至少实现源的指令集，目标内核必须至少提供与源相同的系统调用，并且在源上挂载的任何内核文件系统也必须可挂载到目标主机上。
 
-All the needed dependencies are provided by Ubuntu 16.04 LTS, in which case, all you need to do is install CRIU itself:
+Ubuntu 16.04 LTS已经提供了所有需要的依赖，在这种情况下，您只需要安装CRIU本身：
 
 ```
 apt install criu
 ```
 
-### Using the thing
+### 使用CRIU
 
-#### Stateful snapshots
+#### 有状态快照
 
-A normal container snapshot looks like:
+一个普通的快照看上去像这样：
 
 ```
 stgraber@dakara:~$ lxc snapshot c1 first
@@ -40,7 +38,7 @@ stgraber@dakara:~$ lxc info c1 | grep first
  first (taken at 2016/04/25 19:35 UTC) (stateless)
  ```
  
-A stateful snapshot instead looks like:
+一个有状态快照看上去像这样：
 
 ```
 stgraber@dakara:~$ lxc snapshot c1 second --stateful
@@ -48,24 +46,24 @@ stgraber@dakara:~$ lxc info c1 | grep second
  second (taken at 2016/04/25 19:36 UTC) (stateful)
  ```
  
-This means that all the container runtime state was serialized to disk and included as part of the snapshot. Restoring one such snapshot is done as you would a stateless one:
+这意味着所有容器运行时状态都被序列化到磁盘并且作为了快照的一部分。就像你还原无状态快照那样还原一个有状态快照：
 
 ```
 stgraber@dakara:~$ lxc restore c1 second
 stgraber@dakara:~$
 ```
 
-#### Stateful stop/start
+#### 有状态快照的停止/启动
 
-Say you want to reboot your server for a kernel update or similar maintenance. Rather than have to wait for all the containers to start from scratch after reboot, you can do:
+比方说你想要升级内核或者其他类似的维护。与其等待所有的容器启动，你可以：
 
 ```
 stgraber@dakara:~$ lxc stop c1 --stateful
 ```
 
-The container state will be written to disk and then picked up the next time you start it.
+容器状态将会写入到磁盘，会在下次启动时读取。
 
-You can even look at what the state looks like:
+你甚至可以看到像下面那样的状态：
 
 ```
 root@dakara:~# tree /var/lib/lxd/containers/c1/rootfs/state/
@@ -228,15 +226,15 @@ root@dakara:~# tree /var/lib/lxd/containers/c1/rootfs/state/
 0 directories, 154 files
 ```
 
-Restoring the container can be done with a simple:
+还原容器也很简单：
 
 ```
 stgraber@dakara:~$ lxc start c1
 ```
 
-### Live migration
+### 实时迁移
 
-Live migration is basically the same as the stateful stop/start above, except that the container directory and configuration happens to be moved to another machine too.
+实时迁移基本上与上面的有状态快照的停止/启动相同，除了容器目录和配置被移动到另一台机器上。
 
 ```
 stgraber@dakara:~$ lxc list c1
@@ -266,52 +264,52 @@ stgraber@dakara:~$ lxc list s-tollana:
 +------+---------+-----------------------+----------------------------------------------+------------+-----------+
 ```
 
-### Limitations
+### 限制
 
-As I said before, checkpoint/restore of containers is still pretty new and we’re still very much working on this feature, fixing issues as we are made aware of them. We do need more people trying this feature and sending us feedback, I would however not recommend using this in production just yet.
+正如我之前说的，容器的检查点/恢复还是非常新的功能，我们还在努力地开发这个功能、修复问题已知问题。我们确实需要更多的人来尝试这个功能，并给我们反馈，但我不建议在生产中使用这个功能。
 
-The current list of issues we’re tracking is [available on Launchpad][1].
+我们跟踪的问题列表在[Launchpad上][1]。
 
-We expect a basic Ubuntu container with a few services to work properly with CRIU in Ubuntu 16.04. However more complex containers, using device passthrough, complex network services or special storage configurations are likely to fail.
+我们期望在Ubuntu 16.04上有一个基本的带有几个服务的Ubuntu容器能够与CRIU一起工作。然而在更复杂的容器、使用设备传递、复杂的网络服务或特殊的存储配置可能会失败。
 
-Whenever possible, CRIU will fail at dump time, rather than at restore time. In such cases, the source container will keep running, the snapshot or migration will simply fail and a log file will be generated for debugging.
+只要有可能，CRIU会在转储时失败，而不是在恢复时。在这种情况下，源容器将继续运行，快照或迁移将会失败，并生成一个日志文件用于调试。
 
-In rare cases, CRIU fails to restore the container, in which case the source container will still be around but will be stopped and will have to be manually restarted.
+在极少数情况下，CRIU无法恢复容器，在这种情况下，源容器仍然存在但将被停止，并且必须手动重新启动。
 
-### Sending bug reports
+### 发送bug报告
 
-We’re tracking bugs related to checkpoint/restore against the CRIU Ubuntu package on Launchpad. Most of the work to fix those bugs will then happen upstream either on CRIU itself or the Linux kernel, but it’s easier for us to track things this way.
+我们正在跟踪Launchpad上关于CRIU Ubuntu软件包的检查点/恢复相关的错误。大多数修复bug工作是在上游的CRIU或Linux内核上，但是这种方式我们更容易跟踪。
 
-To file a new bug report, head here.
+要提交新的bug报告，请看这里。
 
-Please make sure to include:
+请务必包括：
 
-The command you ran and the error message as displayed to you
+你运行的命令和显示给你的错误消息
 
-- Output of “lxc info” (*)
-- Output of “lxc info <container name>”
-- Output of “lxc config show –expanded <container name>”
-- Output of “dmesg” (*)
-- Output of “/proc/self/mountinfo” (*)
-- Output of “lxc exec <container name> — cat /proc/self/mountinfo”
-- Output of “uname -a” (*)
-- The content of /var/log/lxd.log (*)
-- The content of /etc/default/lxd-bridge (*)
-- A tarball of /var/log/lxd/<container name>/ (*)
+- “lxc info”的输出（*）
+- “lxc info <container name>”的输出
+- “lxc config show -expanded <container name>”的输出
+- “dmesg”（*）的输出
+- “/proc/self/mountinfo”的输出（*）
+- “lxc exec <container name> - cat /proc/self/mountinfo”的输出
+- “uname -a”（*）的输出
+- /var/log/lxd.log（*）的内容
+- /etc/default/lxd-bridge（*）的内容
+- /var/log/lxd/<container name>/ 的tarball（*）
 
-If reporting a migration bug as opposed to a stateful snapshot or stateful stop bug, please include the data for both the source and target for any of the above which has been marked with a (*).
+如果报告迁移错误，而不是状态快照或有状态停止错误，请将上面所有含有（*）标记的源与目标主机的信息发来。
 
-### Extra information
+### 额外信息
 
-The CRIU website can be found at: <https://criu.org>
+CRIU 的网站在: <https://criu.org>
 
-The main LXD website is at: <https://linuxcontainers.org/lxd>
+LXD 的主站在: <https://linuxcontainers.org/lxd>
 
-Development happens on Github at: <https://github.com/lxc/lxd>
+LXD 的 GitHub 仓库: <https://github.com/lxc/lxd>
 
-Mailing-list support happens on: <https://lists.linuxcontainers.org>
+LXD 的邮件列表: <https://lists.linuxcontainers.org>
 
-IRC support happens in: #lxcontainers on irc.freenode.net
+LXD 的 IRC 频道: #lxcontainers on irc.freenode.net
 
 
 --------------------------------------------------------------------------------
@@ -319,7 +317,7 @@ IRC support happens in: #lxcontainers on irc.freenode.net
 via: https://www.stgraber.org/2016/03/19/lxd-2-0-your-first-lxd-container-312/
 
 作者：[Stéphane Graber][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织翻译，[Linux中国](https://linux.cn/) 荣誉推出
