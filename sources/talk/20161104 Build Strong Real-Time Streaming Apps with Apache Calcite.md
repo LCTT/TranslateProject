@@ -1,3 +1,5 @@
+translating by H-mudcup
+
 # Build Strong Real-Time Streaming Apps with Apache Calcite
 
 
