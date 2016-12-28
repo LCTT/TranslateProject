@@ -1,3 +1,5 @@
+translating---geekpi
+
 Part 6 - LXD 2.0: Remote hosts and container migration
 =======================================================
 
