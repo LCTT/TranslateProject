@@ -1,27 +1,27 @@
-Building an Email Server on Ubuntu Linux, Part 2
+在Ubuntu上搭建一台Email服务器（二）
 ============================================================
 
 ### [dovecot-email.jpg][4]
 
  ![Dovecot email](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/dovecot-email.jpg?itok=tY4veggw "Dovecot email") 
-Part 2 in this tutorial shows how to use Dovecot to move messages off your Postfix server and into your users' email inboxes.[Creative Commons Zero][2]Pixabay
+本教程的第2部分将介绍如何使用Dovecot将邮件从Postfix服务器移动到用户的收件箱。以[Creative Commons Zero][2]Pixabay方式授权发布
 
-In [part 1][5], we installed and tested the Postfix SMTP server. Postfix, or any SMTP server, isn't a complete mail server because all it does is move messages between SMTP servers. We need Dovecot to move messages off your Postfix server and into your users' email inboxes.
+在[第一部分][5]中，我们安装并测试了Postfix SMTP服务器。Postfix或任何SMTP服务器都不是一个完整的邮件服务器，因为它所做的是在SMTP服务器之间移动邮件。我们需要Dovecot将邮件从Postfix服务器移动到用户的收件箱中。
 
-Dovecot supports the two standard mail protocols, IMAP (Internet Message Access Protocol) and POP3 (Post Office Protocol). An IMAP server retains all messages on the server. Your users have the option to download messages to their computers or access them only on the server. IMAP is convenient for users who have multiple machines. It's more work for you because you have to ensure that your server is always available, and IMAP servers require a lot of storage and memory.
+Dovecot支持两种标准邮件协议：IMAP（Internet邮件访问协议）和POP3（邮局协议）。 IMAP服务器保留服务器上的所有邮件。您的用户可以选择将邮件下载到计算机或仅在服务器上访问它们。 IMAP对于有多台机器的用户是方便的。但对你而言会有更多的工作，因为你必须确保你的服务器始终可用，而且IMAP服务器需要大量的存储和内存。
 
-POP3 is an older protocol. A POP3 server can serve many more users than an IMAP server because messages are downloaded to your users' computers. Most mail clients have the option to leave messages on the server for a certain number of days, so POP3 can behave somewhat like IMAP. But it's not IMAP, and when you do this messages are often downloaded multiple times or deleted unexpectedly.
+POP3是较旧的协议。POP3服务器可以比IMAP服务器服务更多的用户，因为邮件会下载到用户的计算机。大多数邮件客户端可以选择在服务器上保留一定天数的邮件，因此POP3的行为有点像IMAP。但它不是IMAP，当你像IMAP那样做那么常常会下载多次或意外删除。
 
-### Install Dovecot
+### 安装 Dovecot
 
-Fire up your trusty Ubuntu system and install Dovecot:
+启动你信任的Ubuntu系统并安装Dovecot：
 
 ```
 
 $ sudo apt-get install dovecot-imapd dovecot-pop3d
 ```
 
-It installs with a working configuration and automatically starts after installation, which you can confirm with `ps ax | grep dovecot`:
+它会在安装可用的配置并在完成后自动启动，你可以用`ps ax | grep dovecot`确认：
 
 ```
 
@@ -31,7 +31,7 @@ $ ps ax | grep dovecot
 15991 ?  S  0:00 dovecot/log
 ```
 
-Open your main Postfix configuration file, `/etc/postfix/main.cf`, and make sure it is configured for maildirs and not mbox mail stores; mbox is single giant file for each user, while maildir gives each message its own file. Lots of little files are more stable and easier to manage than giant bloaty files. Add these two lines; the second line tells Postfix you want maildir format, and to create a `.Mail` directory for every user in their home directories. You can name this directory anything you want, it doesn't have to be `.Mail`:
+打开你的Postfix配置文件`/etc/postfix/main.cf`，确保配置了maildirs而不是mbox邮件存储，mbox是对于每个用户的大文件，而maildir是每条消息都有一个文件。大量的小文件比一个庞大的文件更稳定且易于管理。下面添加两行，第二行告诉Postfix你需要maildir格式，并且在每个用户的家目录下创建一个`.Mail`目录。你可以取任何名字，不一定要是`.Mail`：
 
 ```
 
@@ -39,14 +39,14 @@ mail_spool_directory = /var/mail
 home_mailbox = .Mail/
 ```
 
-Now tweak your Dovecot configuration. First rename the original `dovecot.conf` file to get it out of the way, because it calls a host of `conf.d` files and it is better to keep things simple while you're learning:
+现在调整你的Dovecot配置。首先把原始的`dovecot.conf`文件重命名，因为它会调用`conf.d`中的文件来让事情简单些：
 
 ```
 
 $ sudo mv /etc/dovecot/dovecot.conf /etc/dovecot/dovecot-oldconf
 ```
 
-Now create a clean new `/etc/dovecot/dovecot.conf` with these contents:
+现在创建一个新的`/etc/dovecot/dovecot.conf`：
 
 ```
 
@@ -74,7 +74,7 @@ userdb {
 }
 ```
 
-Note that `mail_location = maildir` must match the `home_mailbox` parameter in `main.cf`. Save your changes and reload both Postfix and Dovecot's configurations:
+注意`mail_location = maildir` 必须和`main.cf`中的`home_mailbox`参数匹配。保存你的更改并重新加载Postfix和Dovecot配置：
 
 ```
 
@@ -82,9 +82,9 @@ $ sudo postfix reload
 $ sudo dovecot reload
 ```
 
-### Fast Way to Dump Configurations
+### 快速导出配置
 
-Use these commands to quickly review your Postfix and Dovecot configurations:
+使用下面的命令来查看你的Postfix和Dovecot配置：
 
 ```
 
@@ -92,9 +92,9 @@ $ postconf -n
 $ doveconf -n
 ```
 
-### Test Dovecot
+### 测试 Dovecot
 
-Now let's put telnet to work again, and send ourselves a test message. The lines in bold are the commands that you type. `studio` is my server's hostname, so of course you must use your own:
+现在再次启动telnet，并且给自己发送一条测试消息。粗体显示的是你输入的命令。`studio`是我服务器的主机名，因此你必须用自己的：
 
 ```
 
@@ -132,7 +132,7 @@ quit
 Connection closed by foreign host.
 ```
 
-Now query Dovecot to fetch your new message. Log in using your Linux username and password:
+现在请求Dovecot来取回你的新消息，使用你的Linux用户名和密码登录：
 
 ```
 
@@ -173,7 +173,7 @@ quit
 Connection closed by foreign host.
 ```
 
-Take a moment to compare the message entered in the first example, and the message received in the second example. It is easy to spoof the return address and date, but Postfix is not fooled. Most mail clients default to displaying a minimal set of headers, but you need to read the full headers to see the true backtrace.
+花一点时间比较第一个例子中输入的消息和第二个例子中接收的消息。 它很容易欺骗返回地址和日期，但Postfix不会这样。大多数邮件客户端默认显示一个最小的标头集，但是你需要读取完整的标头以查看真实的回溯。
 
 You can also read your messages by looking in your `~/Mail/cur` directory. They are plain text. Mine has two test messages:
 
@@ -184,9 +184,9 @@ $ ls .Mail/cur/
 1480555224.V806I28e000eM41463.studio:2,S
 ```
 
-### Testing IMAP
+### 测试 IMAP
 
-Our Dovecot configuration enables both POP3 and IMAP, so let's use telnet to test IMAP.
+我们Dovecot同时启用了POP3和IMAP，因此我们使用telnet测试IMAP。
 
 ```
 
@@ -221,26 +221,27 @@ A4 OK Logout completed.
 Connection closed by foreign host
 ```
 
-### Thunderbird Mail Client
+### Thunderbird邮件客户端
 
-This screenshot in Figure 1 shows what my messages look like in a graphical mail client on another host on my LAN.
+图1中的屏幕截图显示了我局域网上另一台主机上的图形邮件客户端中的邮件。
+
 
 ### [thunderbird-mail.png][3]
 
  ![thunderbird mail](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/thunderbird-mail.png?itok=IkWK5Ti_ "thunderbird mail") 
 
-Figure 1: Thunderbird mail.[Used with permission][1]
+图1： Thunderbird mail.[Used with permission][1]
 
-At this point, you have a working IMAP and POP3 mail server, and you know how to test your server. Your users will choose which protocol they want to use when they set up their mail clients. If you want to support only one mail protocol, then name just the one in your Dovecot configuration.
+此时，你已有一个工作的IMAP和POP3邮件服务器，并且你也知道该如何测试你的服务器。你的用户将在他们设置邮件客户端时选择要使用的协议。如果您只想支持一个邮件协议，那么只需要命名您的Dovecot配置中的一个。
 
-However, you are far from finished. This is a very simple, wide-open setup with no encryption. It also works only for users on the same system as your mail server. This is not scalable and has some security risks, such as no protection for passwords. Come back [next week ][6]to learn how to create mail users that are separate from system users, and how to add encryption.
+然而，这还远远没有完成。这是一个非常简单、没有加密的开放的安装。它也只适用于与邮件服务器在同一系统上的用户。这是不可扩展的，并具有一些安全风险，例如没有密码保护。 我们会在[下周][6]了解如何创建与系统用户分开的邮件用户，以及如何添加加密。
 
 --------------------------------------------------------------------------------
 
 via: https://www.linux.com/learn/sysadmin/building-email-server-ubuntu-linux-part-2
 
 作者：[ CARLA SCHRODER][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
