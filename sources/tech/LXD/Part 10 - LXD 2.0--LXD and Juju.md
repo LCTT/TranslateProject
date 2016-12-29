@@ -1,3 +1,5 @@
+translating---geekpi
+
 # LXD 2.0: LXD and Juju [10/12]
 
 This is the tenth blog post in [this series about LXD 2.0][1].
