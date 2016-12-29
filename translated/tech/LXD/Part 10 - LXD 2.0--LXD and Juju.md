@@ -1,27 +1,26 @@
-translating---geekpi
+LXD 2.0 系列（十）：LXD和Juju
+======================================
 
-# LXD 2.0: LXD and Juju [10/12]
-
-This is the tenth blog post in [this series about LXD 2.0][1].
+这是 [LXD 2.0 系列介绍文章][1]的第十篇。
 
  ![LXD logo](https://linuxcontainers.org/static/img/containers.png) 
 
-Introduction
+介绍
 ============================================================
 
-Juju is Canonical’s service modeling and deployment tool. It supports a very wide range of cloud providers to make it easy for you to deploy any service you want on any cloud you want.
+Juju是Canonical的服务建模和部署工具。 它支持非常广泛的云提供商，使您能够轻松地在任何云上部署任何您想要的服务。
 
-On top of that, Juju 2.0 also includes support for LXD, both for local deployments, ideal for development and as a way to co-locate services on a cloud instance or physical machine.
+此外，Juju 2.0还支持LXD，既适用于本地部署，也适合开发，并且可以在云实例或物理机上共同协作。
 
-This post will focus on the local use case, going through the experience of a LXD user without any pre-existing Juju experience.
+本篇文章将关注本地使用，通过一个没有任何Juju经验的LXD用户来体验。
 
-# Requirements
+# 要求
 
-This post assumes that you already have LXD 2.0 installed and configured (see previous posts) and that you’re running it on Ubuntu 16.04 LTS.
+本篇文章假设你已经安装了LXD 2.0并且配置完毕（看前面的文章），并且是在Ubuntu 16.04 LTS上运行的。
 
-# Setting up Juju
+# 设置 Juju
 
-The first thing to do is to install Juju 2.0\. On Ubuntu 16.04, it’s as simple as:
+第一件事是在Ubuntu 16.04上安装Juju 2.0。这个很简单：
 
 ```
 stgraber@dakara:~$ sudo apt install juju
@@ -53,9 +52,9 @@ Setting up juju-2.0 (2.0~beta7-0ubuntu1.16.04.1) ...
 Setting up juju (2.0~beta7-0ubuntu1.16.04.1) ...
 ```
 
-Once that’s done, we can bootstrap a new “controller” using LXD. This means that Juju will not modify anything on your host, it will instead install its management service inside a LXD container.
+安装完成后，我们可以使用LXD启动一个新的“控制器”。这意味着Juju不会修改你主机上的任何东西，它会在LXD容器中安装它的管理服务。
 
-Here, we’ll be creating a controller called “test” with:
+现在我们创建一个“test”控制器：
 
 ```
 stgraber@dakara:~$ juju bootstrap localhost test
@@ -87,7 +86,7 @@ Waiting for API to become available: upgrade in progress (upgrade in progress)
 Bootstrap complete, local.test now available.
 ```
 
-This should take about a minute, at which point you’ll see a new LXD container running:
+这会花费一点时间，这时你可以看到一个正在运行的一个新的LXD容器：
 
 ```
 stgraber@dakara:~$ lxc list juju-
@@ -98,7 +97,7 @@ stgraber@dakara:~$ lxc list juju-
 +-----------------------------------------------------+---------+----------------------+------+------------+-----------+
 ```
 
-On the Juju side of things, you can confirm that it’s responding and that nothing is running yet:
+在Juju这边，你可以确认它有响应，并且还没有服务运行：
 
 ```
 stgraber@dakara:~$ juju status
@@ -112,7 +111,7 @@ ID WORKLOAD-STATUS JUJU-STATUS VERSION MACHINE PORTS PUBLIC-ADDRESS MESSAGE
 ID STATE DNS INS-ID SERIES AZ
 ```
 
-You can also access the Juju GUI in your web browser with:
+你也可以在浏览器中访问Juju的GUI界面：
 
 ```
 stgraber@dakara:~$ juju gui
@@ -123,11 +122,11 @@ https://10.178.150.72:17070/gui/97fa390d-96ad-44df-8b59-e15fdcfc636b/
 
  ![Juju web UI](https://www.stgraber.org/wp-content/uploads/2016/06/juju-gui.png) 
 
-Though I prefer the command line so that’s what I’ll be using next.
+尽管我更倾向使用命令行，因此我会在接下来使用。
 
-# Deploying a minecraft server
+# 部署一个minecraft服务
 
-So lets start with something very trivial, just deploy a service that uses a single Juju unit in a single container.
+让我们先来一个简单的，部署在一个容器中使用一个Juju单元的服务。
 
 ```
 stgraber@dakara:~$ juju deploy cs:trusty/minecraft
@@ -135,7 +134,7 @@ Added charm "cs:trusty/minecraft-3" to the model.
 Deploying charm "cs:trusty/minecraft-3" with the charm series "trusty".
 ```
 
-This should return pretty much immediately. It however doesn’t mean the service is already up and running. Instead you’ll want to look at “juju status”:
+返回会很快，然而这不意味着服务已经启动并运行了。你应该使用“juju status”来查看：
 
 ```
 stgraber@dakara:~$ juju status
@@ -153,7 +152,7 @@ ID STATE DNS INS-ID SERIES AZ
 
 ```
 
-Here we can see it’s currently busy installing java in the LXD container it just created.
+我们可以看到它正在忙于在刚刚创建的LXD容器中安装java。
 
 ```
 stgraber@dakara:~$ lxc list juju-
@@ -166,7 +165,7 @@ stgraber@dakara:~$ lxc list juju-
 +-----------------------------------------------------+---------+----------------------+------+------------+-----------+
 ```
 
-After a little while, the service will be done deploying as can be seen here:
+过一会之后，如我们所见服务就部署完毕了：
 
 ```
 stgraber@dakara:~$ juju status
@@ -183,23 +182,23 @@ ID STATE DNS INS-ID SERIES AZ
 1 started 10.178.150.74 juju-97fa390d-96ad-44df-8b59-e15fdcfc636b-machine-1 trusty
 ```
 
-At which point you can fire up your minecraft client, point it at 10.178.150.74 on port 25565 and play with your all new minecraft server!
+这时你就可以启动你的Minecraft客户端了，它指向10.178.150.74，端口是25565。现在可以在新的minecraft服务器上玩了！
 
-When you want to get rid of it, just run:
+当你不再需要它，只需运行：
 
 ```
 stgraber@dakara:~$ juju destroy-service minecraft
 ```
 
-Wait a few seconds and everything will be gone.
+只要等待几秒就好了。
 
-# Deploying a more complex web application
+# 部署一个更复杂的web应用
 
-Juju’s main focus is on modeling complex services and deploying them in a scallable way.
+Juju的主要工作是建模复杂的服务，并以可扩展的方式部署它们。
 
-To better show that, lets deploy a Juju “bundle”. This bundle is a basic web service, made of a website, an API endpoint, a database, a static web server and a reverse proxy.
+为了更好地展示，让我们部署一个Juju “组合”。 这个组合是由网站，API，数据库，静态Web服务器和反向代理组成的基本Web服务。
 
-So that’s going to expand to 4, inter-connected LXD containers.
+所以这将扩展到4个互联的LXD容器。
 
 ```
 stgraber@dakara:~$ juju deploy cs:~charmers/bundle/web-infrastructure-in-a-box
@@ -229,7 +228,7 @@ added nginx-proxy/0 unit to new machine
 deployment of bundle "cs:~charmers/bundle/web-infrastructure-in-a-box-10" completed
 ```
 
-A few seconds later, you’ll see all the LXD containers running:
+几秒后，你会看到LXD容器在运行了：
 
 ```
 stgraber@dakara:~$ lxc list juju-
@@ -248,7 +247,7 @@ stgraber@dakara:~$ lxc list juju-
 +-----------------------------------------------------+---------+-----------------------+------+------------+-----------+
 ```
 
-After a couple of minutes, all the services should be deployed and running:
+几分钟后，所有的服务应该部署完毕并运行了：
 
 ```
 stgraber@dakara:~$ juju status
@@ -284,15 +283,15 @@ ID STATE DNS INS-ID SERIES AZ
 5 started 10.178.150.214 juju-97fa390d-96ad-44df-8b59-e15fdcfc636b-machine-5 trusty
 ```
 
-At which point, you can hit the reverse proxy on port 80 with http://10.178.150.214 and you’ll hit the Juju academy web service.
+这时你就可以在80端口访问http://10.178.150.214，并且会看到一个Juju学院页面。
 
 [
  ![Juju Academy web service](https://www.stgraber.org/wp-content/uploads/2016/06/juju-academy.png) 
 ][2]
 
-# Cleaning everything up
+# 清理所有东西
 
-If you want to get rid of all the containers Juju created and don’t mind having to bootstrap again next time, the easiest way to destroy everything is with:
+如果你不需要Juju创建的容器并且不在乎下次需要再次启动，最简单的方法是：
 
 ```
 stgraber@dakara:~$ juju destroy-controller test --destroy-all-models
@@ -320,7 +319,7 @@ Waiting on 1 model
 All hosted models reclaimed, cleaning up controller machines
 ```
 
-And we can confirm that it’s all gone:
+我们用下面的方式确认：
 
 ```
 stgraber@dakara:~$ lxc list juju-
@@ -329,23 +328,23 @@ stgraber@dakara:~$ lxc list juju-
 +------+-------+------+------+------+-----------+
 ```
 
-# Conclusion
+# 总结
 
-Juju 2.0’s built-in LXD support makes for a very clean way to test a whole variety of services.
+Juju 2.0内置的LXD支持使得可以用一种非常干净的方式来测试各种服务。
 
-There are quite a few pre-made “bundles” for you to deploy in the Juju charm store and even more “charms” that you can use to piece together the architecture you want.
+在Juju charm store中有很多预制的“组合”可以用来部署，甚至可以用多个“charm”来组合你想要的架构。
 
-Juju with LXD is the perfect solution for easily developing anything from a small web service to a big scale out infrastructure, all on your own machine, without creating a mess on your system!
+Juju与LXD是一个完美的解决方案，从一个小的Web服务到大规模的基础设施都可以简单开发，这些都在你自己的机器上，并且不会在你的系统上造成混乱！
 
 --------------------------------------------------------------------------
-作者简介：I’m Stéphane Graber. I’m probably mostly known as the LXC and LXD project leader, currently working as a technical lead for LXD at Canonical Ltd. from my home in Montreal, Quebec, Canada.
+作者简介：我是Stéphane Graber。我是LXC和LXD项目的领导者，目前在加拿大魁北克蒙特利尔的家所在的Canonical有限公司担任LXD的技术主管。
 
 --------------------------------------------------------------------------------
 
 via: https://www.stgraber.org/2016/06/06/lxd-2-0-lxd-and-juju-1012/
 
 作者：[ Stéphane Graber][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
