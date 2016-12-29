@@ -1,3 +1,5 @@
+Rusking translating
+
 Manage Samba4 Active Directory Infrastructure from Windows10 via RSAT – Part 3
 ============================================================
 
