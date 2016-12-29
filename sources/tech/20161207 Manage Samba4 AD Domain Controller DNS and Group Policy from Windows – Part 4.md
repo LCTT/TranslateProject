@@ -1,3 +1,5 @@
+Rusking translating
+
 Manage Samba4 AD Domain Controller DNS and Group Policy from Windows – Part 4
 ============================================================
 
