@@ -1,34 +1,32 @@
-translating---geekpi
-
-sshpass: An Excellent Tool for Non-Interactive SSH Login – Never Use on Production Server
+sshpass：一个很棒的无交互SSH登录工具 - 不要在生产服务器上使用
 ============================================================
 
-In most cases, Linux system administrators login to remote Linux servers using SSH either by supplying a password, or [passwordless SSH login][1], or keybased SSH authentication.
+在大多数情况下，Linux系统管理员使用SSH通过密码或[无密码SSH登录][1]或基于密钥的SSH身份验证登录到远程Linux服务器。
 
-What if you want to supply a password along with username to SSH prompt itself? this is where sshpass comes to rescue.
+如果你想自动在SSH中提供密码和用户名怎么办？这是可以用sshpass了。
 
-sshpass is a simple and lightweight command line tool that enables us to provide password (non-interactive password authentication) to the command prompt itself, so that automated shell scripts can be executed to take backups via [cron scheduler][2].
+sshpass是一个简单、轻量级的命令行工具，使我们能够向命令提示符本身提供密码（非交互式密码验证），以便可以通过[cron调度器][2]执行自动化的shell脚本进行备份。
 
-ssh uses straight TTY access to make sure that the password is actually supplied by an interactive keyboard user. Sshpass runs ssh in a devoted tty, mislead it into believing that it is receiving the password from an interactive user.
+ssh直接使用TTY访问，以确保密码是用户键盘输入的。 sshpass在专门的tty中运行ssh，以误导它相信它是从用户接收到的密码。
 
-Important: Using sshpass considered to be least secure, as it reveals the password to all system users on the command line with simple “ps” command. I highly recommend using [SSH Passwordless authentication][3].
+重要：使用sshpass被认为是最不安全的，因为它通过简单的“ps”命令就可在命令行上显示所有系统用户的密码。我强烈建议使用[SSH无密码身份验证][3]。
 
-### Install sshpass on Linux Systems
+### 在Linux中安装sshpass
 
-In RedHat/CentOS based systems, first you need to [enable Epel repository][4] on your system to install it using [yum command][5] as shown.
+在基于RedHat/CentOS的系统中，首先需要[启用Epel仓库][4]并使用[yum命令安装][5]它。
 
 ```
 # yum install sshpass
 # dnf install sshpass    [On Fedora 22+ versions]
 ```
 
-On Debian/Ubuntu and its derivatives, you can install it using [apt-get command][6] as shown.
+在Debian/Ubuntu和它的衍生版中，你可以使用[apt-get命令][6]来安装。
 
 ```
 $ sudo apt-get install sshpass
 ```
 
-Alternatively, you can install from source to have latest version of sshpass, first download the source code and then extract contents of the tar file and install it like so:
+另外你也可以从最新的源码安装sshpass，首先下载源码并从tar文件中解压出内容：
 
 ```
 $ wget http://sourceforge.net/projects/sshpass/files/latest/download -O sshpass.tar.gz
@@ -38,9 +36,9 @@ $ ./configure
 # sudo make install 
 ```
 
-### How to Use sshpass in Linux
+### 如何在Linux中使用sshpass
 
-sshpass is used together with ssh, you can view all the sshpass usage options with full descriptions by issuing the command below:
+sshpass与ssh一起使用，可以使用下面的命令查看sshpass的使用使用选项的完整描述：
 
 ```
 $ sshpass -h
@@ -58,23 +56,23 @@ With no parameters - password will be taken from stdin
 At most one of -f, -d, -p or -e should be used
 ```
 
-As I mentioned before, sshpass is more reliable and useful for scripting purposes, consider the example commands below.
+正如我之前提到的，sshpass在用于脚本时才更可靠及更有用，考虑下面的示例命令。
 
-Login to remote Linux ssh server (10.42.0.1) with the username and password and [check the file-system disk usage][7] of remote system as shown.
+使用用户名和密码登录到远程Linux ssh服务器（10.42.0.1），并如图所示[检查文件系统磁盘使用情况] [7]。
 
 ```
 $ sshpass -p 'my_pass_here' ssh aaronkilik@10.42.0.1 'df -h' 
 ```
 
-Important: Here, the password is provided on the command line which is practically unsecure and using this option is not recommended.
+重要提示：此处，密码在命令行中提供，实际上不安全，不建议使用此选项。
 
 [
  ![sshpass - Linux Remote Login via SSH](http://www.tecmint.com/wp-content/uploads/2016/12/sshpass-Linux-Remote-Login.png) 
 ][8]
 
-sshpass – Linux Remote Login via SSH
+sshpass – 使用SSH远程登录Linux
 
-However, to prevent showing password on the screen, you can use the `-e` flag and enter the password as a value of the SSHPASS environment variable as below:
+但是，为了防止在屏幕上显示密码，可以使用`-e`标志，并输入密码作为SSHPASS环境变量的值，如下所示：
 
 ```
 $ export SSHPASS='my_pass_here'
@@ -85,23 +83,23 @@ $ sshpass -e ssh aaronkilik@10.42.0.1 'df -h'
  ![sshpass - Hide Password in Prompt](http://www.tecmint.com/wp-content/uploads/2016/12/sshpass-Hide-Password-in-Prompt.png) 
 ][9]
 
-sshpass – Hide Password in Prompt
+sshpass – 在终端中隐藏密码
 
-Note: In the example above, SSHPASS environment variable is for temporary purpose only and will be removed during reboot.
+注意：在上面的示例中，SSHPASS环境变量仅用于临时目的，并将在重新启动后删除。
 
-To permanently set the SSHPASS environment variable, open the /etc/profile file and type the export statement at the beginning of the file:
+要永久设置SSHPASS环境变量，打开/etc/profile文件，并在文件开头输入export语句：
 
 ```
 export SSHPASS='my_pass_here'
 ```
 
-Save the file and exit, then run the command below to effect the changes:
+保存文件并退出，接着运行下面的命令使更改生效：
 
 ```
 $ source /etc/profile 
 ```
 
-On the other hand, you can also use the `-f` flag and put the password in a file. This way, you can read the password from the file as follows:
+另一方面，你也可以使用`-f'标志，并把密码放在一个文件中。 这样，您可以从文件中读取密码，如下所示：
 
 ```
 $ sshpass -f password_filename ssh aaronkilik@10.42.0.1 'df -h'
@@ -110,9 +108,9 @@ $ sshpass -f password_filename ssh aaronkilik@10.42.0.1 'df -h'
  ![sshpass - Supply Password File to Login](http://www.tecmint.com/wp-content/uploads/2016/12/sshpass-Provide-Password-File.png) 
 ][10]
 
-sshpass – Supply Password File to Login
+sshpass – 在登录时提供密码文件
 
-You can also use sshpass to [transfer files using scp][11] or [backup/sync files over rsync][12] using SSH as shown:
+你也可以使用sshpass[使用scp传输文件][11]或者[使用rsync备份/同步文件][12]，如下所示：
 
 ```
 ------- Transfer Files Using SCP ------- 
@@ -121,15 +119,15 @@ $ scp -r /var/www/html/example.com --rsh="sshpass -p 'my_pass_here' ssh -l aaron
 $ rsync --rsh="sshpass -p 'my_pass_here' ssh -l aaronkilik" 10.42.0.1:/data/backup/ /backup/
 ```
 
-For more usage, I suggest you to read through the sshpass man page, type:
+更多的用法，我建议你阅读一下sshpass的man页面，输入：
 
 ```
 $ man sshpass
 ```
 
-In this article, we explained sshpass a simple tool that enables non-interactive password authentication. Although, this tools may be helpful, it is highly recommended to use ssh’s more secure public key authentication mechanism.
+在本文中，我们解释了sshpass是一个启用非交互式密码验证的简单工具。 虽然这个工具可能是有帮助的，但是强烈建议使用更安全的ssh公钥认证机制。
 
-Please, do leave a question or comment via the feedback section below for any further discussions.
+请在下面的评论栏写下任何问题或评论，以便可以进一步讨论。
 
 --------------------------------------------------------------------------------
 
@@ -140,7 +138,7 @@ Please, do leave a question or comment via the feedback section below for any fu
 via: http://www.tecmint.com/sshpass-non-interactive-ssh-login-shell-script-ssh-password/
 
 作者：[Aaron Kili][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
