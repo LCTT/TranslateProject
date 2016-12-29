@@ -1,3 +1,5 @@
+translating by ypingcn.
+
 How to Use Old Xorg Apps in Unity 8 on Ubuntu 16.10
 ====
 
