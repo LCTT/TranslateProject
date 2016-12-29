@@ -1,4 +1,3 @@
-翻译中 by zky001
 How to check if port is in use on Linux or Unix
 ============================================================
 
@@ -115,7 +114,7 @@ netstat -bano | findstr /R /C:"[LISTING]"
 via: https://www.cyberciti.biz/faq/unix-linux-check-if-port-is-in-use-command/
 
 作者：[ VIVEK GITE][a]
-译者：[zky001](https://github.com/zky001)
+译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

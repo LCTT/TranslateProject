@@ -1,3 +1,5 @@
+It's translated by GitFuture now.
+
 Getting Started with HTTP/2: Part 2
 ============================================================
  ![](https://static.viget.com/_284x284_crop_center-center/ben-t-http-blog-thumb-01_360.png?mtime=20160928234634) 

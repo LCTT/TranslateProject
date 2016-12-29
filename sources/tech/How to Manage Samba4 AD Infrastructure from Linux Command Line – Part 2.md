@@ -1,15 +1,15 @@
-#rusking translating 
-
 How to Manage Samba4 AD Infrastructure from Linux Command Line – Part 2
 ============================================================
 
-This tutorial will cover [some basic daily commands][2] you need to use in order to manage Samba4 AD Domain Controller infrastructure, such as adding, removing, disabling or listing users and groups.
+This tutorial will cover [some basic daily commands][4] you need to use in order to manage Samba4 AD Domain Controller infrastructure, such as adding, removing, disabling or listing users and groups.
 
 We’ll also take a look on how to manage domain security policy and how to bind AD users to local PAM authentication in order for AD users to be able to perform local logins on Linux Domain Controller.
 
 #### Requirements
 
 1.  [Create an AD Infrastructure with Samba4 on Ubuntu 16.04 – Part 1][1]
+2.  [Manage Samba4 Active Directory Infrastructure from Windows10 via RSAT – Part 3][2]
+3.  [Manage Samba4 AD Domain Controller DNS and Group Policy from Windows – Part 4][3]
 
 ### Step 1: Manage Samba AD DC from Command Line
 
@@ -24,7 +24,7 @@ To review the entire functionality of samba-tool just type the command with root
 ```
 [
  ![samba-tool - Manage Samba Administration Tool](http://www.tecmint.com/wp-content/uploads/2016/11/Samba-Administration-Tool.png) 
-][3]
+][5]
 
 samba-tool – Manage Samba Administration Tool
 
@@ -45,7 +45,7 @@ To add a user with several important fields required by AD, use the following sy
 ```
 [
  ![Create User on Samba AD](http://www.tecmint.com/wp-content/uploads/2016/11/Create-User-on-Samba-AD.png) 
-][4]
+][6]
 
 Create User on Samba AD
 
@@ -56,7 +56,7 @@ Create User on Samba AD
 ```
 [
  ![List Samba AD Users](http://www.tecmint.com/wp-content/uploads/2016/11/List-Samba-AD-Users.png) 
-][5]
+][7]
 
 List Samba AD Users
 
@@ -106,7 +106,7 @@ List Samba AD Users
 ```
 [
  ![List Samba Domain Members of Group](http://www.tecmint.com/wp-content/uploads/2016/11/List-Samba-Domain-Members-of-Group.png) 
-][6]
+][8]
 
 List Samba Domain Members of Group
 
@@ -126,7 +126,7 @@ To review your samba domain password settings use the below command:
 ```
 [
  ![Check Samba Domain Password](http://www.tecmint.com/wp-content/uploads/2016/11/Check-Samba-Domain-Password.png) 
-][7]
+][9]
 
 Check Samba Domain Password
 
@@ -138,7 +138,7 @@ Check Samba Domain Password
 ```
 [
  ![Manage Samba Domain Password Settings](http://www.tecmint.com/wp-content/uploads/2016/11/Manage-Samba-Domain-Password-Settings.png) 
-][8]
+][10]
 
 Manage Samba Domain Password Settings
 
@@ -164,7 +164,7 @@ winbind enum groups = yes
 ```
 [
  ![Samba Authentication Using Active Directory User Accounts](http://www.tecmint.com/wp-content/uploads/2016/11/Samba-Authentication-Using-Active-Directory-Accounts.png) 
-][9]
+][11]
 
 Samba Authentication Using Active Directory User Accounts
 
@@ -176,7 +176,7 @@ $ sudo systemctl restart samba-ad-dc.service
 ```
 [
  ![Check Samba Configuration for Errors](http://www.tecmint.com/wp-content/uploads/2016/11/Check-Samba-Configuration-for-Errors.png) 
-][10]
+][12]
 
 Check Samba Configuration for Errors
 
@@ -191,13 +191,13 @@ $ sudo pam-auth-update
 ```
 [
  ![Configure PAM for Samba4 AD](http://www.tecmint.com/wp-content/uploads/2016/11/PAM-Configuration-for-Samba4-AD.png) 
-][11]
+][13]
 
 Configure PAM for Samba4 AD
 
 [
  ![Enable PAM Authentication Module for Samba4 AD Users](http://www.tecmint.com/wp-content/uploads/2016/11/Enable-PAM-Authentication-Module-for-Samba4-AD.png) 
-][12]
+][14]
 
 Enable PAM Authentication Module for Samba4 AD Users
 
@@ -208,7 +208,7 @@ $ sudo vi /etc/nsswitch.conf
 ```
 [
  ![Add Windbind Service Switch for Samba](http://www.tecmint.com/wp-content/uploads/2016/11/Add-Windbind-Service-Switch-for-Samba.png) 
-][13]
+][15]
 
 Add Windbind Service Switch for Samba
 
@@ -221,7 +221,7 @@ password       [success=1 default=ignore]      pam_winbind.so try_first_pass
 ```
 [
  ![Allow Samba AD Users to Change Passwords](http://www.tecmint.com/wp-content/uploads/2016/11/Allow-Samba-AD-Users-to-Change-Password.png) 
-][14]
+][16]
 
 Allow Samba AD Users to Change Passwords
 
@@ -251,13 +251,13 @@ $ wbinfo -i your_domain_user
 ```
 [
  ![Check Samba4 AD Information ](http://www.tecmint.com/wp-content/uploads/2016/11/Check-Information-of-Samba4-AD.png) 
-][15]
+][17]
 
 Check Samba4 AD Information
 
 [
  ![Check Samba4 AD User Info](http://www.tecmint.com/wp-content/uploads/2016/11/Check-Samba4-AD-User-Info.png) 
-][16]
+][18]
 
 Check Samba4 AD User Info
 
@@ -271,7 +271,7 @@ Pipe getent command through a grep filter in order to narrow the results reg
 ```
 [
  ![Get Samba4 AD Details](http://www.tecmint.com/wp-content/uploads/2016/11/Get-Samba4-AD-Details.png) 
-][17]
+][19]
 
 Get Samba4 AD Details
 
@@ -290,7 +290,7 @@ $ exit
 ```
 [
  ![Check Samba4 AD User Authentication on Linux](http://www.tecmint.com/wp-content/uploads/2016/11/Check-Samba4-AD-User-Authentication-on-Linux.png) 
-][18]
+][20]
 
 Check Samba4 AD User Authentication on Linux
 
@@ -302,7 +302,7 @@ $ passwd
 ```
 [
  ![Change Samba4 AD User Password](http://www.tecmint.com/wp-content/uploads/2016/11/Change-Samba4-AD-User-Password.png) 
-][19]
+][21]
 
 Change Samba4 AD User Password
 
@@ -324,7 +324,7 @@ $ sudo apt-get update
 ```
 [
  ![Grant sudo Permission to Samba4 AD User](http://www.tecmint.com/wp-content/uploads/2016/11/Grant-sudo-Permission-to-Samba4-AD-User.png) 
-][20]
+][22]
 
 Grant sudo Permission to Samba4 AD User
 
@@ -340,7 +340,7 @@ Sudoers file doesn’t handles very well the use of ASCII quotation marks, so 
 
 [
  ![Give Sudo Access to All Samba4 AD Users](http://www.tecmint.com/wp-content/uploads/2016/11/Give-Sudo-Access-to-All-Samba4-AD-Users.png) 
-][21]
+][23]
 
 Give Sudo Access to All Samba4 AD Users
 
@@ -348,11 +348,16 @@ That’s all for now! Managing Samba4 AD infrastructure can be also achieved w
 
 To administer Samba4 AD DC through RSAT utilities, it’s absolutely necessary to join the Windows system into Samba4 Active Directory. This will be the subject of our next tutorial, till then stay tuned to TecMint.
 
+------
+
+作者简介：I'am a computer addicted guy, a fan of open source and linux based system software, have about 4 years experience with Linux distributions desktop, servers and bash scripting.
+
+
 --------------------------------------------------------------------------------
 
-via: http://www.tecmint.com/manage-samba4-active-directory-linux-command-line
+via: http://www.tecmint.com/manage-samba4-active-directory-linux-command-line/
 
-作者：[Matei Cezar  ][a]
+作者：[Matei Cezar ][a]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
@@ -360,23 +365,30 @@ via: http://www.tecmint.com/manage-samba4-active-directory-linux-command-line
 
 [a]:http://www.tecmint.com/author/cezarmatei/
 [1]:http://www.tecmint.com/install-samba4-active-directory-ubuntu/
-[2]:http://www.tecmint.com/60-commands-of-linux-a-guide-from-newbies-to-system-administrator/
-[3]:http://www.tecmint.com/wp-content/uploads/2016/11/Samba-Administration-Tool.png
-[4]:http://www.tecmint.com/wp-content/uploads/2016/11/Create-User-on-Samba-AD.png
-[5]:http://www.tecmint.com/wp-content/uploads/2016/11/List-Samba-AD-Users.png
-[6]:http://www.tecmint.com/wp-content/uploads/2016/11/List-Samba-Domain-Members-of-Group.png
-[7]:http://www.tecmint.com/wp-content/uploads/2016/11/Check-Samba-Domain-Password.png
-[8]:http://www.tecmint.com/wp-content/uploads/2016/11/Manage-Samba-Domain-Password-Settings.png
-[9]:http://www.tecmint.com/wp-content/uploads/2016/11/Samba-Authentication-Using-Active-Directory-Accounts.png
-[10]:http://www.tecmint.com/wp-content/uploads/2016/11/Check-Samba-Configuration-for-Errors.png
-[11]:http://www.tecmint.com/wp-content/uploads/2016/11/PAM-Configuration-for-Samba4-AD.png
-[12]:http://www.tecmint.com/wp-content/uploads/2016/11/Enable-PAM-Authentication-Module-for-Samba4-AD.png
-[13]:http://www.tecmint.com/wp-content/uploads/2016/11/Add-Windbind-Service-Switch-for-Samba.png
-[14]:http://www.tecmint.com/wp-content/uploads/2016/11/Allow-Samba-AD-Users-to-Change-Password.png
-[15]:http://www.tecmint.com/wp-content/uploads/2016/11/Check-Information-of-Samba4-AD.png
-[16]:http://www.tecmint.com/wp-content/uploads/2016/11/Check-Samba4-AD-User-Info.png
-[17]:http://www.tecmint.com/wp-content/uploads/2016/11/Get-Samba4-AD-Details.png
-[18]:http://www.tecmint.com/wp-content/uploads/2016/11/Check-Samba4-AD-User-Authentication-on-Linux.png
-[19]:http://www.tecmint.com/wp-content/uploads/2016/11/Change-Samba4-AD-User-Password.png
-[20]:http://www.tecmint.com/wp-content/uploads/2016/11/Grant-sudo-Permission-to-Samba4-AD-User.png
-[21]:http://www.tecmint.com/wp-content/uploads/2016/11/Give-Sudo-Access-to-All-Samba4-AD-Users.png
+[2]:http://www.tecmint.com/manage-samba4-ad-from-windows-via-rsat/
+[3]:http://www.tecmint.com/manage-samba4-dns-group-policy-from-windows/
+[4]:http://www.tecmint.com/60-commands-of-linux-a-guide-from-newbies-to-system-administrator/
+[5]:http://www.tecmint.com/wp-content/uploads/2016/11/Samba-Administration-Tool.png
+[6]:http://www.tecmint.com/wp-content/uploads/2016/11/Create-User-on-Samba-AD.png
+[7]:http://www.tecmint.com/wp-content/uploads/2016/11/List-Samba-AD-Users.png
+[8]:http://www.tecmint.com/wp-content/uploads/2016/11/List-Samba-Domain-Members-of-Group.png
+[9]:http://www.tecmint.com/wp-content/uploads/2016/11/Check-Samba-Domain-Password.png
+[10]:http://www.tecmint.com/wp-content/uploads/2016/11/Manage-Samba-Domain-Password-Settings.png
+[11]:http://www.tecmint.com/wp-content/uploads/2016/11/Samba-Authentication-Using-Active-Directory-Accounts.png
+[12]:http://www.tecmint.com/wp-content/uploads/2016/11/Check-Samba-Configuration-for-Errors.png
+[13]:http://www.tecmint.com/wp-content/uploads/2016/11/PAM-Configuration-for-Samba4-AD.png
+[14]:http://www.tecmint.com/wp-content/uploads/2016/11/Enable-PAM-Authentication-Module-for-Samba4-AD.png
+[15]:http://www.tecmint.com/wp-content/uploads/2016/11/Add-Windbind-Service-Switch-for-Samba.png
+[16]:http://www.tecmint.com/wp-content/uploads/2016/11/Allow-Samba-AD-Users-to-Change-Password.png
+[17]:http://www.tecmint.com/wp-content/uploads/2016/11/Check-Information-of-Samba4-AD.png
+[18]:http://www.tecmint.com/wp-content/uploads/2016/11/Check-Samba4-AD-User-Info.png
+[19]:http://www.tecmint.com/wp-content/uploads/2016/11/Get-Samba4-AD-Details.png
+[20]:http://www.tecmint.com/wp-content/uploads/2016/11/Check-Samba4-AD-User-Authentication-on-Linux.png
+[21]:http://www.tecmint.com/wp-content/uploads/2016/11/Change-Samba4-AD-User-Password.png
+[22]:http://www.tecmint.com/wp-content/uploads/2016/11/Grant-sudo-Permission-to-Samba4-AD-User.png
+[23]:http://www.tecmint.com/wp-content/uploads/2016/11/Give-Sudo-Access-to-All-Samba4-AD-Users.png
+[24]:http://www.tecmint.com/manage-samba4-active-directory-linux-command-line/#
+[25]:http://www.tecmint.com/manage-samba4-active-directory-linux-command-line/#
+[26]:http://www.tecmint.com/manage-samba4-active-directory-linux-command-line/#
+[27]:http://www.tecmint.com/manage-samba4-active-directory-linux-command-line/#
+[28]:http://www.tecmint.com/manage-samba4-active-directory-linux-command-line/#comments

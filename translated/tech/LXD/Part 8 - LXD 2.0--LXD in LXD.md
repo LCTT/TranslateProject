@@ -1,41 +1,41 @@
-Part 8 - LXD 2.0: LXD in LXD
-==============================
+LXD 2.0 系列（八）：LXD中的LXD
+======================================
 
-This is the eighth blog post [in this series about LXD 2.0][0].
+这是 [LXD 2.0 系列介绍文章][0]的第八篇。
 
 ![](https://linuxcontainers.org/static/img/containers.png)
 
-### Introduction
+### 介绍
 
-In the previous post I covered how to run [Docker inside LXD][1] which is a good way to get access to the portfolio of application provided by Docker while running in the safety of the LXD environment.
+在上一篇文章中，我介绍了如何运行[LXD中的Docker][1]，这是一个很好的方式来访问由Docker提供的应用程序组合，同时Docker还运行在LXD提供的安全环境中。
 
-One use case I mentioned was offering a LXD container to your users and then have them use their container to run Docker. Well, what if they themselves want to run other Linux distributions inside their container using LXD, or even allow another group of people to have access to a Linux system by running a container for them?
+我提到的一个情况是为你的用户提供一个LXD容器，然后让他们使用他们的容器来运行Docker。那么，如果他们自己想使用LXD在其容器中运行其他Linux发行版，或者甚至运行容器允许另一组人来访问Linux系统？
 
-Turns out, LXD makes it very simple to allow your users to run nested containers.
+原来LXD使得用户运行嵌套容器变得非常简单。
 
-### Nesting LXD
+### 嵌套LXD
 
-The most simple case can be shown by using an Ubuntu 16.04 image. Ubuntu 16.04 cloud images come with LXD pre-installed. The daemon itself isn’t running as it’s socket-activated so it doesn’t use any resources until you actually talk to it.
+最简单的情况可以使用Ubuntu 16.04镜像来展示。 Ubuntu 16.04云镜像预装了LXD。守护进程本身没有运行，因为它是套接字激活的，所以它不使用任何资源，直到你真正使用它。
 
-So lets start an Ubuntu 16.04 container with nesting enabled:
+让我们启动一个启用了嵌套的Ubuntu 16.04容器：
 
 ```
 lxc launch ubuntu-daily:16.04 c1 -c security.nesting=true
 ```
 
-You can also set the security.nesting key on an existing container with:
+你也可以在一个存在的容器上设置security.nesting：
 
 ```
 lxc config set <container name> security.nesting true
 ```
 
-Or for all containers using a particular profile with:
+或者对所有的容器使用一个配置文件：
 
 ```
 lxc profile set <profile name> security.nesting true
 ```
 
-With that container started, you can now get a shell inside it, configure LXD and spawn a container:
+容器启动后，你可以从容器内部得到一个shell，配置LXD并生成一个容器：
 
 ```
 stgraber@dakara:~$ lxc launch ubuntu-daily:16.04 c1 -c security.nesting=true
@@ -79,34 +79,37 @@ root@c1:~# lxc list
 root@c1:~#
 ```
 
-It really is that simple!
+就是这样简单
 
-### The online demo server
+### 在线演示服务器
 
-As this post is pretty short, I figured I would spend a bit of time to talk about the [demo server][2] we’re running. We also just reached the 10000 sessions mark earlier today!
+因为这篇文章很短，我想我会花一点时间谈论我们运行中的[演示服务器][2]。我们今天早些时候刚刚达到了10000个会话！
 
-That server is basically just a normal LXD running inside a pretty beefy virtual machine with a tiny daemon implementing the REST API used by our website.
+这个服务器基本上只是一个运行在一个相当强大的虚拟机上的正常的LXD，一个小型的守护进程实现我们的网站使用的REST API。
 
-When you accept the terms of service, a new LXD container is created for you with security.nesting enabled as we saw above. You are then attached to that container as you would when using “lxc exec” except that we’re doing it using websockets and javascript.
+当你接受服务条款时，将为你创建一个新的LXD容器，并启用security.nesting，如上所述，接着你就像使用“lxc exec”时一样连接到了那个容器，除了我们使用websockets和javascript来做这些。
 
-The containers you then create inside this environment are all nested LXD containers.
-You can then nest even further in there if you want to.
+你在此环境中创建的容器都是嵌套的LXD容器。
+如果你想，你可以进一步地嵌套。
 
-We are using the whole range of [LXD resource limitations][3] to prevent one user’s actions from impacting the others and pretty closely monitor the server for any sign of abuse.
+我们全范围地使用了[LXD资源限制][3]，以防止一个用户的行为影响其他用户，并仔细监控服务器的任何滥用迹象。
 
-If you want to run your own similar server, you can grab the code for our website and the daemon with:
+如果你想运行自己的类似的服务器，你可以获取我们的网站和守护进程的代码：
 
 ```
 git clone https://github.com/lxc/linuxcontainers.org
 git clone https://github.com/lxc/lxd-demo-server
 ```
 
-### Extra information
+### 额外信息
 
-The main LXD website is at: <https://linuxcontainers.org/lxd>
-Development happens on Github at: <https://github.com/lxc/lxd>
-Mailing-list support happens on: <https://lists.linuxcontainers.org>
-IRC support happens in: #lxcontainers on irc.freenode.net
+LXD 的主站在: <https://linuxcontainers.org/lxd>
+
+LXD 的 GitHub 仓库: <https://github.com/lxc/lxd>
+
+LXD 的邮件列表: <https://lists.linuxcontainers.org>
+
+LXD 的 IRC 频道: #lxcontainers on irc.freenode.net
 
 
 --------------------------------------------------------------------------------
@@ -114,7 +117,7 @@ IRC support happens in: #lxcontainers on irc.freenode.net
 via: https://www.stgraber.org/2016/04/14/lxd-2-0-lxd-in-lxd-812/
 
 作者：[Stéphane Graber][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织翻译，[Linux中国](https://linux.cn/) 荣誉推出
