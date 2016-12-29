@@ -1,3 +1,5 @@
+translating---geekpi
+
 # LXD 2.0: LXD and OpenStack [11/12]
 
 This is the eleventh blog post in [this series about LXD 2.0][1].
