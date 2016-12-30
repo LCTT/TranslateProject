@@ -1,55 +1,49 @@
-在Ubuntu上搭建一台Email服务器（二）
+如何在 Ubuntu 环境下搭建邮件服务器（二）
 ============================================================
 
-### [dovecot-email.jpg][4]
+![Dovecot email](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/dovecot-email.jpg?itok=tY4veggw "Dovecot email") 
 
- ![Dovecot email](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/dovecot-email.jpg?itok=tY4veggw "Dovecot email") 
-本教程的第2部分将介绍如何使用Dovecot将邮件从Postfix服务器移动到用户的收件箱。以[Creative Commons Zero][2]Pixabay方式授权发布
+本教程的第 2 部分将介绍如何使用 Dovecot 将邮件从 Postfix 服务器移动到用户的收件箱。以[Creative Commons Zero][2] 方式授权发布
 
-在[第一部分][5]中，我们安装并测试了Postfix SMTP服务器。Postfix或任何SMTP服务器都不是一个完整的邮件服务器，因为它所做的是在SMTP服务器之间移动邮件。我们需要Dovecot将邮件从Postfix服务器移动到用户的收件箱中。
+在[第一部分][5]中，我们安装并测试了 Postfix SMTP 服务器。Postfix 或任何 SMTP 服务器都不是一个完整的邮件服务器，因为它所做的只是在 SMTP 服务器之间移动邮件。我们需要 Dovecot 将邮件从 Postfix 服务器移动到用户的收件箱中。
 
-Dovecot支持两种标准邮件协议：IMAP（Internet邮件访问协议）和POP3（邮局协议）。 IMAP服务器保留服务器上的所有邮件。您的用户可以选择将邮件下载到计算机或仅在服务器上访问它们。 IMAP对于有多台机器的用户是方便的。但对你而言会有更多的工作，因为你必须确保你的服务器始终可用，而且IMAP服务器需要大量的存储和内存。
+Dovecot 支持两种标准邮件协议：IMAP（Internet 邮件访问协议）和 POP3（邮局协议）。 IMAP 服务器会在服务器上保留所有邮件。您的用户可以选择将邮件下载到计算机或仅在服务器上访问它们。 IMAP 对于有多台机器的用户是方便的。但对你而言需要更多的工作，因为你必须确保你的服务器始终可用，而且 IMAP 服务器需要大量的存储和内存。
 
-POP3是较旧的协议。POP3服务器可以比IMAP服务器服务更多的用户，因为邮件会下载到用户的计算机。大多数邮件客户端可以选择在服务器上保留一定天数的邮件，因此POP3的行为有点像IMAP。但它不是IMAP，当你像IMAP那样做那么常常会下载多次或意外删除。
+POP3 是较旧的协议。POP3 服务器可以比 IMAP 服务器服务更多的用户，因为邮件会下载到用户的计算机。大多数邮件客户端可以选择在服务器上保留一定天数的邮件，因此 POP3 的行为有点像 IMAP。但它又不是 IMAP，当你像 IMAP 那样（在多台计算机上使用它时）那么常常会下载多次或意外删除。
 
 ### 安装 Dovecot
 
-启动你信任的Ubuntu系统并安装Dovecot：
+启动你的 Ubuntu 系统并安装 Dovecot：
 
 ```
-
 $ sudo apt-get install dovecot-imapd dovecot-pop3d
 ```
 
-它会在安装可用的配置并在完成后自动启动，你可以用`ps ax | grep dovecot`确认：
+它会安装可用的配置，并在完成后自动启动，你可以用 `ps ax | grep dovecot` 确认：
 
 ```
-
 $ ps ax | grep dovecot
 15988 ?  Ss 0:00 /usr/sbin/dovecot
 15990 ?  S  0:00 dovecot/anvil
 15991 ?  S  0:00 dovecot/log
 ```
 
-打开你的Postfix配置文件`/etc/postfix/main.cf`，确保配置了maildirs而不是mbox邮件存储，mbox是对于每个用户的大文件，而maildir是每条消息都有一个文件。大量的小文件比一个庞大的文件更稳定且易于管理。下面添加两行，第二行告诉Postfix你需要maildir格式，并且在每个用户的家目录下创建一个`.Mail`目录。你可以取任何名字，不一定要是`.Mail`：
+打开你的 Postfix 配置文件 `/etc/postfix/main.cf`，确保配置了maildir 而不是 mbox 的邮件存储方式，mbox 是给每个用户一个单一大文件，而 maildir 是每条消息都存储为一个文件。大量的小文件比一个庞大的文件更稳定且易于管理。添加如下两行，第二行告诉 Postfix 你需要 maildir 格式，并且在每个用户的家目录下创建一个 `.Mail` 目录。你可以取任何名字，不一定要是 `.Mail`：
 
 ```
-
 mail_spool_directory = /var/mail
 home_mailbox = .Mail/
 ```
 
-现在调整你的Dovecot配置。首先把原始的`dovecot.conf`文件重命名，因为它会调用`conf.d`中的文件来让事情简单些：
+现在调整你的 Dovecot 配置。首先把原始的 `dovecot.conf` 文件重命名放到一边，因为它会调用存放在 `conf.d` 中的文件，在你刚刚开始学习时把配置放一起更简单些：
 
 ```
-
 $ sudo mv /etc/dovecot/dovecot.conf /etc/dovecot/dovecot-oldconf
 ```
 
-现在创建一个新的`/etc/dovecot/dovecot.conf`：
+现在创建一个新的 `/etc/dovecot/dovecot.conf`：
 
 ```
-
 disable_plaintext_auth = no
 mail_location = maildir:~/.Mail
 namespace inbox {
@@ -74,30 +68,27 @@ userdb {
 }
 ```
 
-注意`mail_location = maildir` 必须和`main.cf`中的`home_mailbox`参数匹配。保存你的更改并重新加载Postfix和Dovecot配置：
+注意 `mail_location = maildir` 必须和 `main.cf` 中的 `home_mailbox` 参数匹配。保存你的更改并重新加载 Postfix 和 Dovecot 配置：
 
 ```
-
 $ sudo postfix reload
 $ sudo dovecot reload
 ```
 
 ### 快速导出配置
 
-使用下面的命令来查看你的Postfix和Dovecot配置：
+使用下面的命令来快速查看你的 Postfix 和 Dovecot 配置：
 
 ```
-
 $ postconf -n
 $ doveconf -n
 ```
 
 ### 测试 Dovecot
 
-现在再次启动telnet，并且给自己发送一条测试消息。粗体显示的是你输入的命令。`studio`是我服务器的主机名，因此你必须用自己的：
+现在再次启动 telnet，并且给自己发送一条测试消息。粗体显示的是你输入的命令。`studio` 是我服务器的主机名，因此你必须用自己的：
 
 ```
-
 $ telnet studio 25
 Trying 127.0.1.1...
 Connected to studio.
@@ -132,7 +123,7 @@ quit
 Connection closed by foreign host.
 ```
 
-现在请求Dovecot来取回你的新消息，使用你的Linux用户名和密码登录：
+现在请求 Dovecot 来取回你的新消息，使用你的 Linux 用户名和密码登录：
 
 ```
 
@@ -173,12 +164,11 @@ quit
 Connection closed by foreign host.
 ```
 
-花一点时间比较第一个例子中输入的消息和第二个例子中接收的消息。 它很容易欺骗返回地址和日期，但Postfix不会这样。大多数邮件客户端默认显示一个最小的标头集，但是你需要读取完整的标头以查看真实的回溯。
+花一点时间比较第一个例子中输入的消息和第二个例子中接收的消息。 返回地址和日期是很容易伪造的，但 Postfix 不会被愚弄。大多数邮件客户端默认显示一个最小的标头集，但是你需要读取完整的标头才能查看真实的回溯。
 
-You can also read your messages by looking in your `~/Mail/cur` directory. They are plain text. Mine has two test messages:
+你也可以在你的 `~/Mail/cur` 目录中查看你的邮件，它们是普通文本，我已经有两封测试邮件：
 
 ```
-
 $ ls .Mail/cur/
 1480540325.V806I28e0229M351743.studio:2,S
 1480555224.V806I28e000eM41463.studio:2,S
@@ -186,10 +176,9 @@ $ ls .Mail/cur/
 
 ### 测试 IMAP
 
-我们Dovecot同时启用了POP3和IMAP，因此我们使用telnet测试IMAP。
+我们 Dovecot 同时启用了 POP3 和 IMAP 服务，因此让我们使用 telnet 测试 IMAP。
 
 ```
-
 $ telnet studio imap2   
 Trying 127.0.1.1...
 Connected to studio.
@@ -221,28 +210,25 @@ A4 OK Logout completed.
 Connection closed by foreign host
 ```
 
-### Thunderbird邮件客户端
+### Thunderbird 邮件客户端
 
-图1中的屏幕截图显示了我局域网上另一台主机上的图形邮件客户端中的邮件。
+图 1 中的屏幕截图显示了我局域网上另一台主机上的图形邮件客户端中的邮件。
 
+![thunderbird mail](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/thunderbird-mail.png?itok=IkWK5Ti_ "thunderbird mail") 
 
-### [thunderbird-mail.png][3]
+*图1： Thunderbird mail*
 
- ![thunderbird mail](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/thunderbird-mail.png?itok=IkWK5Ti_ "thunderbird mail") 
+此时，你已有一个可以工作的 IMAP 和 POP3 邮件服务器，并且你也知道该如何测试你的服务器。你的用户可以在他们设置邮件客户端时选择要使用的协议。如果您只想支持一个邮件协议，那么只需要在您的 Dovecot 配置中留下你要的协议名字。
 
-图1： Thunderbird mail.[Used with permission][1]
-
-此时，你已有一个工作的IMAP和POP3邮件服务器，并且你也知道该如何测试你的服务器。你的用户将在他们设置邮件客户端时选择要使用的协议。如果您只想支持一个邮件协议，那么只需要命名您的Dovecot配置中的一个。
-
-然而，这还远远没有完成。这是一个非常简单、没有加密的开放的安装。它也只适用于与邮件服务器在同一系统上的用户。这是不可扩展的，并具有一些安全风险，例如没有密码保护。 我们会在[下周][6]了解如何创建与系统用户分开的邮件用户，以及如何添加加密。
+然而，这还远远没有完成。这是一个非常简单、没有加密的、大门敞开的安装。它也只适用于与邮件服务器在同一系统上的用户。这是不可扩展的，并具有一些安全风险，例如没有密码保护。 我们会在[下篇][6]了解如何创建与系统用户分开的邮件用户，以及如何添加加密。
 
 --------------------------------------------------------------------------------
 
 via: https://www.linux.com/learn/sysadmin/building-email-server-ubuntu-linux-part-2
 
-作者：[ CARLA SCHRODER][a]
+作者：[CARLA SCHRODER][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -251,5 +237,5 @@ via: https://www.linux.com/learn/sysadmin/building-email-server-ubuntu-linux-par
 [2]:https://www.linux.com/licenses/category/creative-commons-zero
 [3]:https://www.linux.com/files/images/thunderbird-mailpng
 [4]:https://www.linux.com/files/images/dovecot-emailjpg
-[5]:https://www.linux.com/learn/how-build-email-server-ubuntu-linux
+[5]:https://linux.cn/article-8071-1.html
 [6]:https://www.linux.com/learn/sysadmin/building-email-server-ubuntu-linux-part-3
