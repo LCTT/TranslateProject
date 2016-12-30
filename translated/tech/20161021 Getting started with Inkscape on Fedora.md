@@ -71,7 +71,7 @@ sudo dnf install inkscape
 
 现在你有一堆图形了，你使用选择工具来移动它们。要使用选择工具，首先从工具栏中选择它，然后单击要操作的形状，接着将图形拖动到您想要的位置。
 
-选择形状时，你还可以使用调整大小手柄来缩放图形。此外，如果你单击所选的图形，调整大小控点将变为旋转模式，并允许你旋转图形：
+选择形状时，你还可以使用调整大小锚点来缩放图形。此外，如果你单击所选的图形，调整大小控点将变为旋转模式，并允许你旋转图形：
 
 [
  ![inkscape-movingshapes](https://cdn.fedoramagazine.org/wp-content/uploads/2016/10/inkscape-movingshapes.gif) 
