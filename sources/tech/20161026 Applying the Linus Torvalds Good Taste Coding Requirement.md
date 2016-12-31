@@ -1,3 +1,4 @@
+Translating by cposture 20161228
 # Applying the Linus Torvalds “Good Taste” Coding Requirement
 
 In [a recent interview with Linus Torvalds][1], the creator of Linux, at approximately 14:20 in the interview, he made a quick point about coding with “good taste”. Good taste? The interviewer prodded him for details and Linus came prepared with illustrations.
@@ -44,7 +45,7 @@ Again, the purpose of this code was to only initialize the values of the points 
 
 To accomplish this I initially looped over every point in the grid and used conditionals to test for the edges. This is what it looked like:
 
-```
+```Tr
 for (r = 0; r < GRID_SIZE; ++r) {
     for (c = 0; c < GRID_SIZE; ++c) {
 ```
