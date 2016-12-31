@@ -1,4 +1,4 @@
-### [Inkscape: 添加颜色][1]
+## [Inkscape: 添加颜色][1]
 
  ![inkscape-addingcolour](https://cdn.fedoramagazine.org/wp-content/uploads/2016/10/inkscape-addingcolour-945x400.png) 
 
@@ -22,7 +22,7 @@
 
  ![create-gradient](https://cdn.fedoramagazine.org/wp-content/uploads/2016/10/create-gradient.gif) 
 
-要进一步编辑我们的渐变，我们需要使用专门的<ruby>渐变工具><rt>Gradient Tool</rt></ruby>。 从工具栏中选择“Gradient Tool”，会有一些渐变编辑锚点出现在你选择的形状上。 **移动锚点**将改变渐变的位置。 如果你**单击一个锚点**，您还可以在“Fill and Stroke”对话框中更改该锚点的颜色。 要**在渐变中添加新的锚点**，请双击连接锚点的线，然后会出现一个新的锚点。
+要进一步编辑我们的渐变，我们需要使用专门的<ruby>渐变工具<rt>Gradient Tool</rt></ruby>。 从工具栏中选择“Gradient Tool”，会有一些渐变编辑锚点出现在你选择的形状上。 **移动锚点**将改变渐变的位置。 如果你**单击一个锚点**，您还可以在“Fill and Stroke”对话框中更改该锚点的颜色。 要**在渐变中添加新的锚点**，请双击连接锚点的线，然后会出现一个新的锚点。
 
  ![editing-gradient](https://cdn.fedoramagazine.org/wp-content/uploads/2016/10/editing-gradient.gif) 
 
@@ -32,7 +32,7 @@
 
 -----------------------
 
-作者简介：Ryan是一名 Fedora 设计师。他使用 Fedora Workstation 作为他的主要桌面，还有来自Libre Graphics 世界的最好的工具，尤其是矢量图形编辑器 Inkscape。
+作者简介：Ryan是一名 Fedora 设计师。他使用 Fedora Workstation 作为他的主要桌面，还有来自 Libre Graphics 世界的最好的工具，尤其是矢量图形编辑器 Inkscape。
 
 --------------------------------------------------------------------------------
 
