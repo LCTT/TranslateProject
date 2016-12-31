@@ -1,3 +1,5 @@
+rusking translating
+
 HOW TO INSTALL AND REMOVE SOFTWARE IN UBUNTU [COMPLETE GUIDE]
 ============================================================
 
