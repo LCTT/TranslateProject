@@ -1,8 +1,9 @@
-### [Fedora 中使用 Inkscape 起步][2]
+Fedora 中使用 Inkscape 起步
+=============
 
- ![inkscape-gettingstarted](https://cdn.fedoramagazine.org/wp-content/uploads/2016/10/inkscape-gettingstarted-945x400.png) 
+![inkscape-gettingstarted](https://cdn.fedoramagazine.org/wp-content/uploads/2016/10/inkscape-gettingstarted-945x400.png) 
 
-Inkscape 是一个流行的、功能齐全、免费和开源的矢量[图形编辑器][3]，它已经在 Fedora 官方仓库中。它特别适合生成 [SVG 格式][4]的矢量图形。Inkscape 非常适于创建和操作图片和插图，以及创建图表和模拟用户界面。
+Inkscape 是一个流行的、功能齐全、自由而开源的矢量[图形编辑器][3]，它已经在 Fedora 官方仓库中。它特别适合创作 [SVG 格式][4]的矢量图形。Inkscape 非常适于创建和操作图片和插图，以及创建图表和用户界面设计。
 
 [
  ![cyberscoty-landscape-800px](https://cdn.fedoramagazine.org/wp-content/uploads/2016/10/cyberscoty-landscape-800px.png) 
@@ -10,13 +11,13 @@ Inkscape 是一个流行的、功能齐全、免费和开源的矢量[图形编�
 
 *使用 inkscape 创建的[风车景色][1]的插图*
 
-[官方网站的截图页][6]上有一些很好的例子，说明 Inkscape 可以做些什么。<ruby>Fedora 杂志<rt>Fedora Magazine</rt></ruby>上的大多数精选图片也是使用 Inkscape 创建的，包括最近的精选图片：
+[其官方网站的截图页][6]上有一些很好的例子，说明 Inkscape 可以做些什么。<ruby>Fedora 杂志<rt>Fedora Magazine</rt></ruby>上的大多数精选图片也是使用 Inkscape 创建的，包括最近的精选图片：
 
 [
  ![communty](https://cdn.fedoramagazine.org/wp-content/uploads/2016/09/communty.png) 
 ][7]
 
-*最近使用 Inkscape 创建的 Fedora 杂志精选图片*
+*Fedora 杂志最近使用 Inkscape 创建的精选图片*
 
 ### 在 Fedora 上安装 Inkscape
 
@@ -32,7 +33,7 @@ Inkscape 是一个流行的、功能齐全、免费和开源的矢量[图形编�
 sudo dnf install inkscape
 ```
 
-### (开始)深入 Inkscape
+### （开始）深入 Inkscape
 
 当第一次打开程序时，你会看到一个空白页面，并且有一组不同的工具栏。对于初学者，最重要的三个工具栏是：Toolbar、Tools Control Bar、 Colour Palette（调色板）：
 
@@ -43,13 +44,13 @@ sudo dnf install inkscape
 **Toolbar**提供了创建绘图的所有基本工具，包括以下工具：
 
 * 矩形工具：用于绘制矩形和正方形
-* 星/多边形（形状）工具
+* 星形/多边形（形状）工具
 * 圆形工具：用于绘制椭圆和圆
 * 文本工具：用于添加标签和其他文本
 * 路径工具：用于创建或编辑更复杂或自定义的形状
 * 选择工具：用于选择图形中的对象
 
-**Colour Palette** 提供了一种快速方式来设置当前选定对象的颜色。 **Tools Control Bar** 提供了工具栏中当前选定工具的所有设置。每次选择新工具时，Tools Control Bar 会变成该工具的设置：
+**Colour Palette** 提供了一种设置当前选定对象的颜色的快速方式。 **Tools Control Bar** 提供了工具栏中当前选定工具的所有设置。每次选择新工具时，Tools Control Bar 会变成该工具的相应设置：
 
 [
  ![](https://cdn.fedoramagazine.org/wp-content/uploads/2016/10/inkscape-toolscontrolbar.gif) 
@@ -65,7 +66,7 @@ sudo dnf install inkscape
  ![inkscape-drawastar](https://cdn.fedoramagazine.org/wp-content/uploads/2016/10/inkscape-drawastar.gif) 
 ][12]
 
-接下来，在 Toolbar 中实验一些其他形状工具，如矩形工具，螺旋工具和圆形工具。通过不同的设置，每个工具都可以创建一些独特的图形。
+接下来，可以在 Toolbar 中实验一些其他形状工具，如矩形工具，螺旋工具和圆形工具。通过不同的设置，每个工具都可以创建一些独特的图形。
 
 ### 在绘图中选择并移动对象
 
