@@ -1,3 +1,5 @@
+alim0x translating
+
 The (updated) history of Android
 ============================================================
 
