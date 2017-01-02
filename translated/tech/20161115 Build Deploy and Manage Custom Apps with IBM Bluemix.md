@@ -165,7 +165,7 @@ Bluemix构建在IBM的SoftLayer IaaS（基础架构即服务）之上。它使�
 via: http://opensourceforu.com/2016/11/build-deploy-manage-custom-apps-ibm-bluemix/
 
 作者：[MITESH_SONI][a]
-译者：[Vic020](http//vicyu.net)
+译者：[Vic020](http//www.vicyu.net)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织编译，[Linux中国](https://linux.cn/) 荣誉推出
