@@ -1,23 +1,23 @@
-sshpass：一个很棒的无交互 SSH 登录工具 - 安全原因，不要在生产服务器上使用
+sshpass：一个很棒的免交互 SSH 登录工具，但不要用在生产服务器上
 ============================================================
 
-在大多数情况下，Linux 系统管理员使用 SSH，通过密码或[无密码 SSH 登录][1]或基于密钥的 SSH 身份验证登录到远程 Linux 服务器。
+在大多数情况下，Linux 系统管理员使用 SSH 登录到程 Linux 服务器时，要么是通过密码，要么是[无密码 SSH 登录][1]或基于密钥的 SSH 身份验证。
 
-如果你想自动在 SSH 中提供**密码**和**用户名**怎么办？这是可以用 **sshpass** 了。
+如果你想自动在 SSH 登录提示符中提供**密码**和**用户名**怎么办？这时 **sshpass** 就可以帮到你了。
 
 sshpass 是一个简单、轻量级的命令行工具，通过它我们能够向命令提示符本身提供密码（非交互式密码验证），这样就可以通过 [cron 调度器][2]执行自动化的 shell 脚本进行备份。
 
-ssh 直接使用 TTY 访问，以确保密码是用户键盘输入的。 sshpass 在专门的 tty 中运行 ssh，以误导它相信它是从用户接收到的密码。
+ssh 直接使用 TTY 访问，以确保密码是用户键盘输入的。 sshpass 在专门的 tty 中运行 ssh，以误导 ssh 相信它是从用户接收到的密码。
 
-重要：使用 **sshpass** 被认为是最不安全的，因为在命令行中通过简单的 “**ps**” 命令就可将密码显示给所有系统用户。我强烈建议使用 [SSH 无密码身份验证][3]。
+重要：使用 **sshpass** 是最不安全的，因为所有系统上的用户在命令行中通过简单的 “**ps**” 命令就可看到密码。因此，如果必要，比如说在生产环境，我强烈建议使用 [SSH 无密码身份验证][3]。
 
 ### 在 Linux 中安装 sshpass
 
-在基于 **RedHat/CentOS** 的系统中，首先需要[启用 Epel 仓库][4]并使用[ yum 命令][5]安装它。
+在基于 **RedHat/CentOS** 的系统中，首先需要[启用 Epel 仓库][4]并使用 [yum 命令][5]安装它。
 
 ```
 # yum install sshpass
-# dnf install sshpass    [On Fedora 22+ versions]
+# dnf install sshpass    [Fedora 22 及以上版本]
 ```
 
 在 Debian/Ubuntu 和它的衍生版中，你可以使用 [apt-get 命令][6]来安装。
@@ -26,7 +26,7 @@ ssh 直接使用 TTY 访问，以确保密码是用户键盘输入的。 sshpass
 $ sudo apt-get install sshpass
 ```
 
-另外，你也可以从最新的源码安装 sshpass，首先下载源码并从 tar 文件中解压出内容：
+另外，你也可以从最新的源码安装 `sshpass`，首先下载源码并从 tar 文件中解压出内容：
 
 ```
 $ wget http://sourceforge.net/projects/sshpass/files/latest/download -O sshpass.tar.gz
@@ -38,12 +38,14 @@ $ ./configure
 
 ### 如何在 Linux 中使用 sshpass
 
-**sshpass** 与 **ssh** 一起使用，使用下面的命令可以查看 sshpass 的使用选项的完整描述：
+**sshpass** 与 **ssh** 一起使用，使用下面的命令可以查看 `sshpass` 的使用选项的完整描述：
 
 ```
 $ sshpass -h
 ```
+
 下面为显示的 sshpass 帮助内容：
+
 ```
 Usage: sshpass [-f|-d|-p|-e] [-hV] command parameters
 -f filename   Take password to use from file
@@ -56,7 +58,7 @@ With no parameters - password will be taken from stdin
 At most one of -f, -d, -p or -e should be used
 ```
 
-正如我之前提到的，**sshpass** 在用于脚本时才更可靠及更有用，考虑下面的示例命令。
+正如我之前提到的，**sshpass** 在用于脚本时才更可靠及更有用，请看下面的示例命令。
 
 使用用户名和密码登录到远程 Linux ssh 服务器（10.42.0.1），并[检查文件系统磁盘使用情况][7]，如图所示。
 
@@ -79,15 +81,16 @@ $ export SSHPASS='my_pass_here'
 $ echo $SSHPASS
 $ sshpass -e ssh aaronkilik@10.42.0.1 'df -h' 
 ```
+
 [
  ![sshpass - Hide Password in Prompt](http://www.tecmint.com/wp-content/uploads/2016/12/sshpass-Hide-Password-in-Prompt.png) 
 ][9]
 
 *sshpass – 在终端中隐藏密码*
 
-**注意：**在上面的示例中，**SSHPASS** 环境变量仅用于临时目的，并将在重新启动后删除。
+**注意：**在上面的示例中，`SSHPASS` 环境变量仅用于临时目的，并将在重新启动后删除。
 
-要永久设置 **SSHPASS** 环境变量，打开 /etc/profile 文件，并在文件开头输入 export 语句：
+要永久设置 `SSHPASS` 环境变量，打开 `/etc/profile` 文件，并在文件开头输入 `export` 语句：
 
 ```
 export SSHPASS='my_pass_here'
@@ -99,7 +102,7 @@ export SSHPASS='my_pass_here'
 $ source /etc/profile 
 ```
 
-另外，也可以使用`-f`标志，并把密码放在一个文件中。 这样，您可以从文件中读取密码，如下所示：
+另外，也可以使用 `-f` 标志，并把密码放在一个文件中。 这样，您可以从文件中读取密码，如下所示：
 
 ```
 $ sshpass -f password_filename ssh aaronkilik@10.42.0.1 'df -h'
@@ -110,7 +113,7 @@ $ sshpass -f password_filename ssh aaronkilik@10.42.0.1 'df -h'
 
 *sshpass – 在登录时提供密码文件*
 
-你也可以使用 sshpass [通过 scp 传输文件][11]或者[ rsync 备份/同步文件][12]，如下所示：
+你也可以使用 `sshpass` [通过 scp 传输文件][11]或者 [rsync 备份/同步文件][12]，如下所示：
 
 ```
 ------- Transfer Files Using SCP ------- 
@@ -119,13 +122,13 @@ $ scp -r /var/www/html/example.com --rsh="sshpass -p 'my_pass_here' ssh -l aaron
 $ rsync --rsh="sshpass -p 'my_pass_here' ssh -l aaronkilik" 10.42.0.1:/data/backup/ /backup/
 ```
 
-更多的用法，建议阅读 **sshpass** 的 man 页面，输入：
+更多的用法，建议阅读 `sshpass` 的 man 页面，输入：
 
 ```
 $ man sshpass
 ```
 
-在本文中，我们解释了 sshpass 是一个启用非交互式密码验证的简单工具。 虽然这个工具可能是有帮助的，但还是强烈建议使用更安全的 ssh 公钥认证机制。
+在本文中，我们解释了 `sshpass` 是一个非交互式密码验证的简单工具。 虽然这个工具可能是有帮助的，但还是强烈建议使用更安全的 ssh 公钥认证机制。
 
 请在下面的评论栏写下任何问题或评论，以便可以进一步讨论。
 
@@ -147,7 +150,7 @@ via: http://www.tecmint.com/sshpass-non-interactive-ssh-login-shell-script-ssh-p
 [1]:http://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/
 [2]:http://www.tecmint.com/11-cron-scheduling-task-examples-in-linux/
 [3]:http://www.tecmint.com/ssh-passwordless-login-using-ssh-keygen-in-5-easy-steps/
-[4]:http://www.tecmint.com/how-to-enable-epel-repository-for-rhel-centos-6-5/
+[4]:https://linux.cn/article-2324-1.html
 [5]:http://www.tecmint.com/20-linux-yum-yellowdog-updater-modified-commands-for-package-mangement/
 [6]:http://www.tecmint.com/useful-basic-commands-of-apt-get-and-apt-cache-for-package-management/
 [7]:http://www.tecmint.com/how-to-check-disk-space-in-linux/
