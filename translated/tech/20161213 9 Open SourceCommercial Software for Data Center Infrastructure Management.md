@@ -194,7 +194,7 @@ via: http://www.tecmint.com/data-center-server-management-tools/
 
 作者：[ Nikita Nesmiyanov][a]
 译者：[beyondworld](https://github.com/beyondworld)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
