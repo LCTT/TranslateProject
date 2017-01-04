@@ -43,12 +43,11 @@ NTP synchronized: no
 
 如果安装了 NTP，并用它替代 *timedatectl* 来同步时间，则 “NTP synchronized” 是 “yes”。
 
-timedatectl 和 timesyncd 用以同步时间的 nameserver 可以通过 /etc/systemd/timesyncd.conf 来指定，另外还有一个非常灵活的配置目录 /etc/systemd/timesyncd.conf.d/。
-The nameserver to fetch time for timedatectl and timesyncd from can be specified in /etc/systemd/timesyncd.conf and with flexible additional config files in /etc/systemd/timesyncd.conf.d/.
+timedatectl 和 timesyncd 从 nameserver 处获取时间，这可以通过 /etc/systemd/timesyncd.conf 来指定，另外在 /etc/systemd/timesyncd.conf.d/ 下还有灵活的配置文件。
 
 ### <sapan id="ntpdate">ntpdate</sapan>
 
-由于 timedatectl 的存在，各发行版已经弃用了 ntpdate，所有默认不在进行安装。如果你安装了，它会在系统启动的时候根据 Ubuntu 的 NTP 服务器来设置你电脑的时间。之后的任意时刻中，它会有一个接口用来重新尝试同步时间——在这期间只要其涵盖的时间增量不是太大，它就会慢慢偏移时间。该行为可以通过 -B/-b 开关来进行控制。
+由于 *timedatectl* 的存在，各发行版已经弃用了 *ntpdate*，默认不再进行安装。如果你安装了，它会在系统启动的时候根据 Ubuntu 的 NTP 服务器来设置你电脑的时间。之后每当一个新接口启动时，它就会重新尝试同步时间 —— 在这期间只要其涵盖的时间差不是太大，它就会慢慢偏移时间。该行为可以通过 -B/-b 开关来进行控制。
 
 ```
 ntpdate ntp.ubuntu.com
@@ -56,15 +55,15 @@ ntpdate ntp.ubuntu.com
 
 ### <sapan id="timeservers">timeservers</sapan>
 
-默认情况下，基于 systemd 的工具都是从 ntp.ubuntu.com 请求时间同步的。经典的 ntpd 服务基本上都是使用的 [0-3].ubuntu.pool.ntp.org 池，这等同于 ntp.ubuntu.com，并且需要的话还支持 IPv6。如果说你想强制使用 IPv6，可以使用 ipv6.ntp.ubuntu.com，当然这并非默认配置。
+默认情况下，基于 systemd 的工具都是从 ntp.ubuntu.com 请求时间同步的。经典的基于 ntpd 的服务基本上都是使用 [0-3].ubuntu.pool.ntp.org 池中的 2.ubuntu.pool.ntp.org，还有 ntp.ubuntu.com，此外需要的话还支持 IPv6。如果想强制使用 IPv6，可以使用 ipv6.ntp.ubuntu.com，不过这并非默认配置。
 
 ### <sapan id="ntpd">ntpd</sapan>
 
-ntp 的守护进程 ntpd 会计算你的系统时钟的时间偏移量并且持续的进行调整，所以不会出现时间差距较大的更正，以保证不会导致不连续的日志。该进程只花费少量的进程资源和内存，但对于现代的服务器来说实在是微不足道的了。
+ntp 的守护进程 ntpd 会计算你的系统时钟的时间偏移量并且持续的进行调整，所以不会出现时间差距较大的更正，比如说，不会导致不连续的日志。该进程只花费少量的进程资源和内存，但对于现代的服务器来说实在是微不足道的了。
 
 ### <sapan id="installation">安装</sapan>
 
-打开终端命令行来安装 ntpd：
+要安装 ntpd，在终端命令行中输入：
 
 ```
 sudo apt install ntp
@@ -72,7 +71,7 @@ sudo apt install ntp
 
 ### <sapan id="configuration">配置</sapan>
 
-编辑 /etc/ntp.conf ——增加/移除 server 行。默认配置有一下服务器：
+编辑 /etc/ntp.conf —— 增加/移除 server 行。默认配置有以下服务器：
 
 ```
 # Use servers from the NTP Pool Project. Approved by Ubuntu Technical Board
@@ -84,7 +83,7 @@ server 2.ubuntu.pool.ntp.org
 server 3.ubuntu.pool.ntp.org
 ```
 
-修改配置文件之后，你需要重新加载 ntpd：
+修改配置文件之后，你需要重新加载 *ntpd*：
 
 ```
 sudo systemctl reload ntp.service
@@ -107,7 +106,7 @@ sudo systemctl reload ntp.service
 
 ### <sapan id="Support">PPS Support</sapan>
 
-从 Ubuntu 16.04 开始，ntp 支持 PPS 规范，增强了本地时间资源已提供更高的精度。查看下边列出的链接来获取更多信息。
+从 Ubuntu 16.04 开始，ntp 支持 PPS 规范，增强了本地时间资源已提供更高的精度。查看下边列出的链接来获取更多配置信息。
 
 ### <sapan id="reference">参考资料</sapan>
 
