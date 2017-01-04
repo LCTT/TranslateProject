@@ -1,23 +1,22 @@
-在Ubuntu上搭建一台Email服务器（四）
+在 Ubuntu 上搭建一台 Email 服务器（三）
 ============================================================
 
 ### [mail-server.jpg][2]
 
  ![Mail server](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/mail-server.jpg?itok=Ox1SCDsV "Mail server") 
-本系列的第四部分我们将详细介绍在Dovecot和Postfix中设置虚拟用户。以[Creative Commons Zero][2]Pixabay方式授权发布
+在本系列的最后，我们将详细介绍如何在 Dovecot 和 Postfix 中设置虚拟用户和邮箱。
 
-欢迎回来，我热心的Linux系统管理员们！ 在本系列的[第一部分][3]和[第二部分][4]中，我们学习了如何将Postfix和Dovecot组合在一起，搭建一个不错的IMAP和POP3邮件服务器。 现在我们将学习设置虚拟用户，以便我们可以管理所有在Dovecot中的用户。
+欢迎回来，热心的 Linux 系统管理员们！ 在本系列的[第一部分][3]和[第二部分][4]中，我们学习了如何将 Postfix 和 Dovecot 组合在一起，搭建一个不错的 IMAP 和 POP3 邮件服务器。 现在我们将学习设置虚拟用户，以便我们可以管理所有 Dovecot 中的用户。
 
-### 抱歉还不能配置SSL
+### 抱歉，还不能配置SSL
 
-我知道我答应教你们如何设置一个正确的受SSL保护的服务器。 不幸的是，我低估了这个话题的范围。 所以，我会下个月再写一个全面的教程。
+我知道我答应过教你们如何设置一个受 SSL 保护的服务器。 不幸的是，我低估了这个话题的范围。 所以，我会下个月再写一个全面的教程。
 
-对于今天，在本系列的最后一部分中，我们将详细介绍如何在Dovecot和Postfix中设置虚拟用户和邮箱。 在你看来这是有点奇怪，所以我尽量让下面的例子是简单点。我们将使用纯文件和纯文本来进行身份验证。 你也可以选择使用数据库后端和很好的加密认证形式，具体请参阅文末链接了解有关这些的更多信息。
+今天，在本系列的最后一部分中，我们将详细介绍如何在 Dovecot 和 Postfix 中设置虚拟用户和邮箱。 在你看来这是有点奇怪，所以我尽量让下面的例子简单点。我们将使用纯文本文件和纯文本来进行身份验证。 你也可以选择使用数据库后端和较强的加密认证形式，具体请参阅文末链接了解有关这些的更多信息。
 
 ### 虚拟用户
 
-You want virtual users on your email server and not Linux system users. Using Linux system users does not scale, and it exposes their logins, and your Linux server, to unnecessary risk. Setting up virtual users requires editing configuration files in both Postfix and Dovecot. We'll start with Postfix. First, we'll start with a clean, simplified `/etc/postfix/main.cf`. Move your original `main.cf` out of the way and create a new clean one with these contents:
-你希望电子邮件服务器上的是虚拟用户而不是Linux系统用户。使用Linux系统用户不能扩展，并且它们会暴露登录账号以及会给你的服务器带来不必要的风险。 设置虚拟用户需要在Postfix和Dovecot中编辑配置文件。我们将从Postfix开始。首先，我们将从一个干净、简单的`/etc /postfix/main.cf`开始。移动你原始的`main.cf`到别处，创建一个新的干净的文件：
+你希望邮件服务器上的是虚拟用户而不是 Linux 系统用户。使用 Linux 系统用户不能扩展，并且它们会暴露登录账号，给你的服务器带来不必要的风险。 设置虚拟用户需要在 Postfix 和 Dovecot 中编辑配置文件。我们将从 Postfix 开始。首先，我们将从一个干净、简化的 `/etc /postfix/main.cf` 开始。移动你原始的`main.cf` 到别处，创建一个新的干净的文件，内容如下：
 
 ```
 
@@ -44,9 +43,9 @@ virtual_gid_maps = static:5000
 virtual_transport = lmtp:unix:private/dovecot-lmtp0
 ```
 
-你或许可以直接拷贝这份文件除了`mynetworks`的参数`192.168.0.0/24`，它反映了你的本地子网掩码。
+你可以直接拷贝这份文件，除了 `mynetworks` 参数的设置 `192.168.0.0/24`，它应为你的本地子网掩码。
 
-接下来，创建用户和组`vmail`，它会拥有你的虚拟邮箱。虚拟邮箱存在 `vmail`的家目录下。
+接下来，创建用户和组 `vmail` 来拥有你的虚拟邮箱。虚拟邮箱保存在  `vmail` 的家目录下。
 
 ```
 
@@ -54,7 +53,7 @@ $ sudo groupadd -g 5000 vmail
 $ sudo useradd -m -u 5000 -g 5000 -s /bin/bash vmail
 ```
 
-接下来重新加载Postfix配置：
+接下来重新加载 Postfix 配置：
 
 ```
 
@@ -63,16 +62,16 @@ $ sudo postfix reload
 postfix/postfix-script: refreshing the Postfix mail system
 ```
 
-### Dovecot虚拟用户
+### Dovecot 虚拟用户
 
-我们会使用Dovecot的`lmtp`协议来连接到Postfix。你可以这样安装：
+我们会使用 Dovecot 的 `lmtp` 协议来连接到 Postfix。你可以这样安装：
 
 ```
 
 $ sudo apt-get install dovecot-lmtpd
 ```
 
-`main.cf`的最后一行参考`lmtp`。复制这个例子`/etc/dovecot/dovecot.conf`来替换已存在的文件。再说一次，我们只使用这个文件，而不是`/etc/dovecot/conf.d`内的所有文件。
+`main.cf` 的最后一行涉及到 `lmtp`。复制这个 `/etc/dovecot/dovecot.conf` 示例文件来替换已存在的文件。再说一次，我们只使用这个文件，而不是 `/etc/dovecot/conf.d` 内的所有文件。
 
 ```
 
@@ -112,7 +111,7 @@ service lmtp {
 }
 ```
 
-最后，你快可以创建一个含有用户和密码的文件 `/etc/dovecot/passwd`。对于纯文本验证，我们只需要用户的完整邮箱地址和密码：
+最后，你可以创建一个含有用户和密码的文件 `/etc/dovecot/passwd`。对于纯文本验证，我们只需要用户的完整邮箱地址和密码：
 
 ```
 
@@ -123,7 +122,7 @@ molly@studio:{PLAIN}password
 benny@studio:{PLAIN}password
 ```
 
-Dovecot虚拟用户独立于Postfix虚拟用户，因此你需要管理Dovecot中的用户。保存所有的设置并重启Postfix和Dovecot：
+Dovecot 虚拟用户独立于 Postfix 虚拟用户，因此你需要管理 Dovecot 中的用户。保存所有的设置并重启 Postfix 和 Dovecot：
 
 ```
 
@@ -131,7 +130,7 @@ $ sudo service postfix restart
 $ sudo service dovecot restart
 ```
 
-现在让我们使用较旧的telnet来看下Dovecot是否设置正确了。
+现在让我们使用老朋友 telnet 来看下 Dovecot 是否设置正确。
 
 ```
 
@@ -149,7 +148,7 @@ quit
 Connection closed by foreign host.
 ```
 
-现在一切都好！让我们用`mail`测试发送消息给我们的用户。确保使用用户的电子邮箱地址而不只是用户名。
+现在一切都好！让我们用 `mail` 命令，发送测试消息给我们的用户。确保使用用户的完整电子邮箱地址而不只是用户名。
 
 ```
 
@@ -159,7 +158,7 @@ Please enjoy your new mail account!
 .
 ```
 
-最后一行的点是发送消息。让我们看下它是否到达了正确的邮箱。
+最后一行的句点表示发送消息。让我们看下它是否到达了正确的邮箱。
 
 ```
 
@@ -191,15 +190,19 @@ From: carla@localhost (carla)
 Please enjoy your new mail account!
 ```
 
-你还可以使用telnet进行测试，如本系列前面部分所述，并在你最喜欢的邮件客户端中设置帐户，如Thunderbird，Claws-Mail或KMail。
+你还可以使用 telnet 进行测试，如本系列前面部分所述，并在你最喜欢的邮件客户端中设置帐户，如 Thunderbird，Claws-Mail 或 KMail。
 
 ### 故障排查
 
-当它不工作时，请检查日志文件（请参阅配置示例），然后运行`journalctl -xe`。 这时应该就会给你提供输入错误、已卸载的包和可以谷歌的字词了。
+当邮件工作不正常时，请检查日志文件（请参阅配置示例），然后运行 `journalctl -xe`。 这时会提供定位输入错误、未安装包和可以 Google 的短语等所有需要的信息。
 
 ### 接下来？
 
-假设你的LAN名称服务配置正确，你现在有一台很好用的LAN邮件服务器。 显然以纯文本发送消息不是最佳的，并且对于Internet邮件也是绝对否定的。 请参阅[Dovecot SSL配置][5]和[Postfix TLS支持][6]。 [VirtualUserFlatFilesPostfix][7]涵盖TLS和数据库后端。并记得看即将到来的SSL指南。这次我说的是真的。
+假设你的 LAN 名称服务配置正确，你现在有一台很好用的 LAN 邮件服务器。 显然，以纯文本发送消息不是最佳的，对于 Internet 邮件也是绝对不可以的。 请参阅[ Dovecot SSL 配置][5]和[ Postfix TLS 支持][6]，涵盖了 TLS 和数据库后端。并请期待我之后的 SSL 指南。这次我说的是真的。
+
+
+
+
 
 --------------------------------------------------------------------------------
 
@@ -207,7 +210,7 @@ via: https://www.linux.com/learn/sysadmin/building-email-server-ubuntu-linux-par
 
 作者：[ CARLA SCHRODER][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
