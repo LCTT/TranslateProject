@@ -3,12 +3,12 @@
 
 1.首先，安装包括 Git 在内的所有必备的库。对于一个 Debian Linux 发行版，例如 Ubuntu，命令如下：
 
-    ```
-    sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
+   ```
+       sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
         libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
         libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \
         python3-dev ruby-dev lua5.1 lua5.1-dev libperl-dev git
-    ```
+   ```
 
    在 Ubuntu 16.04 上,  lua 开发包的名称是 `liblua5.1-dev` 而非 `lua5.1-dev`。
 
@@ -16,27 +16,27 @@
 
     对于 Fedora 20, 将是以下命令:
 
-    ```
-    sudo yum install -y ruby ruby-devel lua lua-devel luajit \
+  ```
+        sudo yum install -y ruby ruby-devel lua lua-devel luajit \
         luajit-devel ctags git python python-devel \
         python3 python3-devel tcl-devel \
         perl perl-devel perl-ExtUtils-ParseXS \
         perl-ExtUtils-XSpp perl-ExtUtils-CBuilder \
         perl-ExtUtils-Embed
-    ```
+   ```
 
 需要这一步来纠正 Fedora 20 上安装 XSubPP 时出现的问题：
 
-    ```
+   ```
     # symlink xsubpp (perl) from /usr/bin to the perl dir
     sudo ln -s /usr/bin/xsubpp /usr/share/perl5/ExtUtils/xsubpp 
-    ```
+   ```
 
 2. 如果你已经安装了 vim，删掉它。
 
     ```
     sudo apt-get remove vim vim-runtime gvim
-    ```
+   ```
 
     如果是 Ubuntu 12.04.2，你或许也需要同时删除下面这些软件包:
 
@@ -76,27 +76,27 @@
 
     如果要轻松卸载 vim，可以使用 `checkinstall` 。
     
-    ```sh
+   ```
     sudo apt-get install checkinstall
     cd ~/vim
     sudo checkinstall
-    ```
+  ```
 
     或者, 可以使用 `make` 来安装。
     
-    ```sh
+  ```
     cd ~/vim
     sudo make install
-    ```
+  ```
 
     要让 vim 成为你默认的编辑器，请使用 `update-alternatives`。
     
-    ```sh
+```
     sudo update-alternatives --install /usr/bin/editor editor /usr/bin/vim 1
     sudo update-alternatives --set editor /usr/bin/vim
     sudo update-alternatives --install /usr/bin/vi vi /usr/bin/vim 1
     sudo update-alternatives --set vi /usr/bin/vim
-    ```
+ ```
 
 4. 再检查下，通过查看 `vim --version` 输出来确认确实在运行新的 Vim 应用程序版本。
 
