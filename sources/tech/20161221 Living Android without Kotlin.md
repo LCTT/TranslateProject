@@ -1,3 +1,4 @@
+Translating by DockerChen
 Living (Android) without Kotlin
 ============================================================
 
