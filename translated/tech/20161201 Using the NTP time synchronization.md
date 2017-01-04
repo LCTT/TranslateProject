@@ -3,7 +3,7 @@
 
 NTP 是通过网络来同步时间的一种 TCP/IP 协议。通常客户端向服务器请求当前的时间，并根据结果来设置其时钟。
 
-这个描述是挺简单的，实现这一功能是极为复杂的——首先要有多层 NTP 服务器，其中的第一次链接着原子时钟，第二层、第三层则担起负载均衡的责任，以处理因特网传来的所有请求。并且，客户端可能也超乎你想象的复杂——时间同步存在着通讯延迟，使用一种方法来调整时间并不能使用所有运行在服务器中进程的到同步设置。幸运的是，所有的这些复杂性都进行了封装，你是不可见也不需要见到的。
+这个描述是挺简单的，实现这一功能却是极为复杂的 - 首先要有多层 NTP 服务器，第一层 NTP 服务器连接原子时钟，第二层、第三层服务器则担起负载均衡的责任，以处理因特网传来的所有请求。另外，客户端可能也超乎你想象的复杂 - 它必须排除通讯延迟，调整时间的同时不干扰其它在服务器中运行的进程。幸运的是，所有的这些复杂性都进行了封装，你是不可见也不需要见到的。
 
 在 Ubuntu 中，是使用 ntpdate 和 ntpd 来同步时间的。
 
@@ -20,15 +20,15 @@ NTP 是通过网络来同步时间的一种 TCP/IP 协议。通常客户端向�
 
 ### <sapan id="timedatectl">timedatectl</sapan>
 
-在最新的 Ubuntu 版本中，timedatectl 替代了老旧的 ntpdate。默认情况下，timedatectl 在系统启动的时候会立刻同步时间，同时还开启 socket 以便恢复网络之后进行同步。
+在最新的 Ubuntu 版本中，*timedatectl* 替代了老旧的 *ntpdate*。默认情况下，*timedatectl* 在系统启动的时候会立刻同步时间，同时还开启 socket 以便恢复网络之后进行同步。
 
-如果已安装 ntpdate / ntp，timedatectl 会让你使用之前的设置。这样确保了在有两个时间同步服务的时候不会相互冲突，同时在你进行的时候还保留原本的配置。但这也意味着升级时旧版本的 ntp / ntpdate 仍会安装，迁移到新的 systemd 服务是默认禁用的。
+如果已安装 *ntpdate / ntp*，*timedatectl* 会让你使用之前的设置。这样确保了在有两个时间同步服务的时候不会相互冲突，同时在你进行的时候还保留原本的配置。但这也意味着升级旧版本时 ntp/ntpdate 仍会安装，因此会使新的 systemd 服务被禁用。
 
 ### <sapan id="timesyncd">timesyncd</sapan>
 
-在最新的 Ubuntu 版本中，timesyncd 替代了 ntpd 的客户端的部分，它默认情况下会定期检测并同步时间。它还会在本地存储时间更新计划，以便在系统重启时做时间单步递增调整。
+在最新的 Ubuntu 版本中，*timesyncd* 替代了 *ntpd* 的客户端的部分。默认情况下 *timesyncd* 会定期检测并同步时间。它还会在本地存储时间更新计划，以便在系统重启时做时间单步调整。
 
-通过 timedatectl 和 timesyncd 设置的当前的时间状态和时间配置，现在可以使用 timedatectl status 命令来进行确认。
+通过 *timedatectl* 和 *timesyncd* 设置的当前时间状态和时间配置，可以使用 *timedatectl status* 命令来进行确认。
 
 ```
 timedatectl status
@@ -41,9 +41,10 @@ NTP synchronized: no
  RTC in local TZ: no
 ```
 
-如果安装了 NTP，并用它替代 timedatectl 来同步时间，则 "NTP synchronized" 是 "yes"。
+如果安装了 NTP，并用它替代 *timedatectl* 来同步时间，则 “NTP synchronized” 是 “yes”。
 
 timedatectl 和 timesyncd 用以同步时间的 nameserver 可以通过 /etc/systemd/timesyncd.conf 来指定，另外还有一个非常灵活的配置目录 /etc/systemd/timesyncd.conf.d/。
+The nameserver to fetch time for timedatectl and timesyncd from can be specified in /etc/systemd/timesyncd.conf and with flexible additional config files in /etc/systemd/timesyncd.conf.d/.
 
 ### <sapan id="ntpdate">ntpdate</sapan>
 
@@ -130,3 +131,4 @@ via: https://help.ubuntu.com/lts/serverguide/NTP.html
 [1]:https://help.ubuntu.com/community/UbuntuTime
 [2]:http://www.ntp.org/
 [3]:http://www.ntp.org/ntpfaq/NTP-s-config-adv.htm#S-CONFIG-ADV-PPS
+
