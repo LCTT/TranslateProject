@@ -25,7 +25,7 @@
         perl-ExtUtils-Embed
    ```
 
-需要这一步来纠正 Fedora 20 上安装 XSubPP 时出现的问题：
+   需要这一步来纠正 Fedora 20 上安装 XSubPP 时出现的问题：
 
    ```
     # symlink xsubpp (perl) from /usr/bin to the perl dir
@@ -46,12 +46,11 @@
 
 3. 一旦上述内容被安装好之后，获取 vim 源代码很容易。
 
-注意：如果你使用 python，你的配置目录或许有一个特定的机器名 (例如 `config-3.5m-x86_64-linux-gnu`)。
-   检查 /usr/lib/python[2/3/3.5] 目录来找到你的 python 配置目录, 据此更改 `python-config-dir` 和/或 `python3-config-dir `的参数。
+   注意：如果你使用 python，你的配置目录或许有一个特定的机器名 (例如 `config-3.5m-x86_64-linux-gnu`)。检查 /usr/lib/python[2/3/3.5] 目录来找到你的 python 配置目录，据此更改 `python-config-dir` 和/或 `python3-config-dir `的参数。
 
-添加/删除下面的的标记符以适合您的设置。例如，如果您不打算写任何 Lua，您可以删去 `enable-luainterp`。
+   添加/删除下面的的标记符以适合您的设置。例如，如果您不打算写任何 Lua，您可以删去 `enable-luainterp`。
 
-同时，如果你使用的不是 vim8.0，请确认下面 VIMRUNTIMEDIR 参数设置正确(例如，如果使用 vim 8.0a, 就用 /usr/share/vim/vim80a)。记住，一些 vim 安装是直接安装在 /usr/share/vim 下的；调整好参数以适应你的系统:
+   同时，如果你使用的不是 vim8.0，请确认下面 VIMRUNTIMEDIR 参数设置正确（例如，如果使用 vim 8.0a, 就用 /usr/share/vim/vim80a）。记住，一些 vim 安装是直接安装在 /usr/share/vim 下的；调整好参数以适应你的系统:
 
    
    ```
@@ -82,7 +81,7 @@
     sudo checkinstall
   ```
 
-    或者, 可以使用 `make` 来安装。
+    或者，可以使用 `make` 来安装。
     
   ```
     cd ~/vim
@@ -102,13 +101,12 @@
 
     **如果你的 gvim 不工作 (在 ubuntu 12.04.1 LTS 上),试着把 `--enable-gui=gtk2` 参数变为 `--enable-gui=gnome2`。**
 
-如果你遇到问题，仔细检查在步骤 3 开始提到的，使用正确的 Python 配置目录配置 `configure`。
+   如果你遇到问题，仔细检查在步骤 3 开始提到的，使用正确的 Python 配置目录配置 `configure`。
 
-这些 `configure` 和 `make` 命令假设你是一个 Debian 发行版，Vim 的运行库文件目录放在 `/usr/share/vim/vim80/`,这不是 vim 的默认路径。 在 `configure` 命令中的 `--prefix=/usr` 也是如此。这些参数或许对一个不是基于 Debian 的 Linux 发行版来说是有所不同的，在这种情况下, 试着移除 `configure` 命令中的 `--prefix` 变量和 `make` 命令中的 `VIMRUNTIMEDIR` (换句话说，使用这些参数的默认值)。
+   这些 `configure` 和 `make` 命令假设你是一个 Debian 发行版，Vim 的运行库文件目录放在 `/usr/share/vim/vim80/`,这不是 vim 的默认路径。 在 `configure` 命令中的 `--prefix=/usr` 也是如此。这些参数或许对一个不是基于 Debian 的 Linux 发行版来说是有所不同的，在这种情况下，试着移除 `configure` 命令中的 `--prefix` 变量和 `make` 命令中的 `VIMRUNTIMEDIR` (换句话说，使用这些参数的默认值)。
 
 
-   如果你遇到麻烦, 这里是一些[其它编译 Vim 的有用的信息]
-    (http://vim.wikia.com/wiki/Building_Vim)。
+   如果你遇到麻烦, 这里是一些[其它编译 Vim 的有用的信息](http://vim.wikia.com/wiki/Building_Vim)。
     
 --------------------------------------------------------------------------------
 
