@@ -23,23 +23,30 @@ As I have repeatedly said, there is always something for everybody in the Linux 
 ### 1\. CUB LINUX
 
  ![Cub Linux Desktop](https://itsfoss.com/wp-content/uploads/2016/10/cub1.jpg) 
-
+ 
+这不是 Chrome OS ，上述图片描绘的是 Cub Linux 的桌面。不清楚我说的什么？
 It is not Chrome OS. But the above image is featuring the desktop of [Cub Linux][9]. Say what?
 
+Cub Linux 对于 Linux 用户来说不再新鲜，但是如果你确实不知道的话，（我来解释下，）Cub Linux 灵感来源于主流的 Chrome OS ，是一款专注于网页的 Linux 发行版。从母亲 Linux 来讲，它也是 Chrome OS 的开源兄弟。
 Cub Linux is no news for Linux users. But if you already did not know, Cub Linux is the web focused Linux distro that is inspired from mainstream Chrome OS. It is also the open source brother of Chrome OS from mother Linux.
 
+Chrome OS 内置了 Chrome 浏览器。不久之前，一个名为 [Chromixium OS][10] 的项目启动，旨在用 Chromium 浏览器取代 Chrome 浏览器，来提供与 Chrome OS 同样的体验。因为一些法律上的争论，项目名字后来改为 Cub Linux （取自 Chromium 和 Ubuntu 两个词）。
 Chrome OS has the Chrome Browser as it’s primary component. Not so long ago, a project by name [Chromixium OS][10] was started to recreate Chrome OS like experience by using the Chromium Browser in place of Chrome Browser. Due to some legal issues, the name was later changed to Cub Linux (Chromium+Ubuntu).
 
  ![cub2](https://itsfoss.com/wp-content/uploads/2016/10/cub2.jpg) 
-
+ 
+在历史上，如名字提示的那样，Cub Linux 基于 Ubuntu ，使用了轻量的 Openbox 桌面环境。定制桌面来给人以 Chrome OS 的印象，而且看起来很整洁。
 Well, history apart, as the name hints, Cub Linux is based on Ubuntu, features the lightweight Openbox Desktop Environment. The Desktop is customized to give a Chrome OS impression and looks really neat.
 
+在应用部分，你能安装 Chrome 网上商店的网络应用和所有的 Ubuntu 应用。对，有 Chrome OS 的精美应用，你还能体会到 Ubuntu 的好处。
 In the apps department, you can install the web applications from the Chrome web store and all the Ubuntu software. Yup, with all the snappy apps of the Chrome OS, You’ll still get the Ubuntu goodies.
 
+就表现而言，这操作系统相当快多亏了它自身的 Openbox 桌面环境。基于 Ubuntu ，Cub Linux 的稳定性是毋庸置疑的。这桌面流畅的动画和漂亮的用户界面，对于眼睛是一种享受，
 As far as the performance is concerned, the operating system is super fast thanks to its Openbox Desktop Environment. Based on Ubuntu Linux, the stability of Cub Linux is unquestionable. The desktop itself is a treat to the eyes with all its smooth animations and beautiful UI.
 
 [Suggested Read[Year 2013 For Linux] 2 Linux Distributions Discontinued][11]
 
+我向花费大部分时间在浏览器，时不时做些家务的人推荐 Cub Linux 。嗯，一个浏览器就是你所需要的全部，而且，一个浏览器正是你将会得到的全部。
 I suggest Cub Linux to anybody who spends most their times on a browser and do some home tasks now and then. Well, a browser is all you need and a browser is exactly what you’ll get.
 
 ### 2\. PEPPERMINT OS
