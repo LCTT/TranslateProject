@@ -156,11 +156,11 @@ CentOS 和 RHEL 6、7, 以及 Fedora 的所有版本，追溯到至少 Fedora 15
 
 资源
 
-[Everything is a file][1], David Both, Opensource.com
-[An introduction to Linux filesystems][2], David Both, Opensource.com
-[Filesystem Hierarchy][10], The Linux Documentation Project
-[Device File][4], Wikipedia
-[Linux Allocated Devices][5], Kernel.org
+-  [Everything is a file][1], David Both, Opensource.com
+- [An introduction to Linux filesystems][2], David Both, Opensource.com
+- [Filesystem Hierarchy][10], The Linux Documentation Project
+- [Device File][4], Wikipedia
+- [Linux Allocated Devices][5], Kernel.org
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/16/11/managing-devices-linux
