@@ -1,5 +1,6 @@
 translating by ypingcn.
 
+为了畅游网络的人们、专注于云端的Linux 发行版
 CLOUD FOCUSED LINUX DISTROS FOR PEOPLE WHO BREATHE ONLINE
 ============================================================
 
@@ -7,12 +8,16 @@ CLOUD FOCUSED LINUX DISTROS FOR PEOPLE WHO BREATHE ONLINE
  ![Best Linux distributions for cloud computing](https://itsfoss.com/wp-content/uploads/2016/11/cloud-centric-Linux-distributions.jpg) 
 ][6]
 
+概述：我们列举了几款以云端为中心的 Linux 发行版，它们被视为真正能替代 Chrome OS 的 Linux 发行版。
 _Brief: We list some _Cloud centric_ Linux distributions that might be termed as real Linux alternatives to Chrome OS._
 
+这个世界正在向云端服务转变，而且我们都知道 Chrome OS 倍受人们喜爱。嗯，它确实值得尊重。它超级快、轻盈、省电、简约、设计精美而且充分发挥了当今科技所能提供的云端潜能。
 The world is moving to cloud-based services and we all know the kind of love that Chrome OS got. Well, it does deserve respect. It’s super fast, light, power-efficient, minimalistic, beautifully designed and utilizes the full potential of cloud that technology permits today.
 
+虽然 [Chrome OS][7] 只能在谷歌的硬件上使用，但是，就只是在你的台式机或者笔记本上，还是有其他的方法来体验云计算的潜能。
 Although [Chrome OS][7] is exclusively available only for Google’s hardware, there are other means to experience the potential of cloud computing right on your laptop or desktop.
 
+正如我重复说的，在 Linux 领域中，人们总能参与其中。有那些看起来像 Windows 或者 Mac OS 的Linux 发行版。Linux 汇集了分享，爱和计算体验的最前沿。让我们马上看看这份列表吧！
 As I have repeatedly said, there is always something for everybody in the Linux domain, be it [Linux distributions that look like Windows][8] or Mac OS. Linux is all about sharing, love and some really bleeding edge computing experience. Let’s crack this list right away!
 
 ### 1\. CUB LINUX
