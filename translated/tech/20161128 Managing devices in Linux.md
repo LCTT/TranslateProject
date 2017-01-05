@@ -1,34 +1,32 @@
 ### 在 Linux 中管理设备
 
-探索如何使您直接访问到 Linux 中的 /dev 目录设备。
+探索 /dev 目录如何使您直接访问到 Linux 中的设备。
 
 ![Managing devices in Linux](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/OSDC_Penguin_Image_520x292_12324207_0714_mm_v1a.png itok=WfAkwbFy "Managing devices in Linux") 
 
-> Image by :Opensource.com
+*照片提供：Opensource.com*
 
-Linux 目录结构有很多有趣的功能，这个月我涉及（报导）了一些令人着迷的 /dev 目录。在继续这篇文章的任何操作之前，建议你看看我前面的文章。Linux 文件系统，一切皆为文件，这两个都介绍有趣的 Linux 文件系统概念。继续吗？我会等待。
+Linux 目录结构有很多有趣的功能。这个月我涉及了 /dev 目录一些迷人之处。在继续阅读这篇文章之前，建议你看看我前面的文章。[Linux 文件系统][9]，[一切皆为文件][8]，这两篇文章介绍了一些有趣的 Linux 文件系统概念。请先看看 - 我会等待。
 
-太好了 ！欢迎回来。现在我们可以继续进行更详尽地探讨 /dev 目录。
+太好了 ！欢迎回来。现在我们可以继续更详尽地探讨 /dev 目录。
 
 ### 设备文件
 
-设备文件也称为？驱动 ][3][special files][4]. 设备文件被操作系统用来代表提供给用户的设备接口。所有的 Linux 设备文件位于 /dev 目录，是根 （/） 文件系统的一个组成部分，因为这些设备文件要在操作系统启动过程中必须用到。
+设备文件也称为 [special files][4]。设备文件用来为操作系统和用户提供它们代表的设备接口。所有的 Linux 设备文件位于 /dev 目录，是根 （/） 文件系统的一个组成部分，因为这些设备文件在操作系统启动过程中必须用到。
 
-关于要记住这些设备文件最重要的事情之一是大多数没有明确的设备驱动。他们是更准确地描述为门户对设备驱动程序。数据从应用程序或操作系统传递到该设备文件，然后将它传递给设备驱动程序，再将它发给物理设备。反向数据通道也可以用，从物理设备通过设备驱动程序再到设备文件最后到达一个应用程序或其他设备。
+关于这些设备文件，要记住一件重要的事情，就是它们大多不是设备驱动。更准确地描述来说，它们是对设备驱动程序的门户。数据从应用程序或操作系统传递到设备文件，然后设备文件将它传递给设备驱动程序，驱动再将它发给物理设备。反向数据通道也可以用，从物理设备通过设备驱动程序，再到设备文件，最后到达一个应用程序或其他设备。
 
 让我们以一个可视化的典型命令看看这数据的流程。
 
  ![dboth-dev-dir_0.png](https://opensource.com/sites/default/files/images/life-uploads/dboth-dev-dir_0.png) 
 
-图1：典型命令的简单数据流。
+*图 1：一个典型命令的简单数据流。*
 
-在上面示出的图1中，显示一个简单命令的简化数据流程。**cat /etc/resolv.conf** 命令来自Konsole 或 xterm 终端仿真器解释 resolv.conf 文件从磁盘与磁盘设备驱动程序读取处理设备的具体功能。例如将文件定位在硬盘驱动器上并读取它。数据通过设备文件传递，然后命令终端会话中的显示位置从设备文件到设备驱动程序为 6 的伪终端。
+在图 1 中，显示一个简单命令的简化数据流程。从一个 GUI 终端仿真器，例如 Konsole 或 xterm 中发出 **cat /etc/resolv.conf** 命令，从磁盘中读取 resolv.conf 文件，磁盘设备驱动程序处理设备的具体功能，例如在硬盘驱动器上定位文件并读取它。数据通过设备文件传递，然后从命令到设备文件，然后到伪终端 6 的设备驱动，然后在终端会话中显示。
 
-当然，输出命令 **cat** 可以以下面的方式被重定向到一个文件 **cat /etc/resolv.conf > /etc/resolv.bak** 创建文件的备份。
+当然， **cat** 命令的输出可以下面的方式被重定向到一个文件， **cat /etc/resolv.conf > /etc/resolv.bak** ，以创建该文件的备份。在这种情况下，图 1 左侧的数据流量将保持不变，而右边的数据流量将通过 /dev/sda2 设备文件，硬盘设备驱动程序，然后到硬盘驱动器本身。
 
-在这种情况下，图 1 左侧的数据流量将保持不变而右边的数据流量将通过 /dev/sda2 设备文件，硬盘设备驱动程序，然后到硬驱动器本身。
-
-这些设备文件使它使用标准流 (STD/IO) 和重定向访问Linux 或 Unix 计算机上的任何一个设备非常容易。只需将数据流定向到设备文件即可将数据发送到该设备。
+这些设备文件使用标准流 (STD/IO) 和重定向，使得访问 Linux 或 Unix 计算机上的任何一个设备非常容易。只需将数据流定向到设备文件，即可将数据发送到该设备。
 
 ### 设备文件类别
 
@@ -165,8 +163,9 @@ via: https://opensource.com/article/16/11/managing-devices-linux
 [a]:https://opensource.com/users/dboth
 [1]:https://opensource.com/life/15/9/everything-is-a-file
 [2]:https://opensource.com/life/16/10/introduction-linux-filesystems
-[3]:https://en.wikipedia.org/wiki/Device_file
 [4]:https://en.wikipedia.org/wiki/Device_file
 [5]:https://www.kernel.org/doc/Documentation/devices.txt
 [6]:https://www.linux.com/
 [7]:https://www.linux.com/news/udev-introduction-device-management-modern-linux-system
+[8]:https://opensource.com/life/15/9/everything-is-a-file
+[9]:https://opensource.com/life/16/10/introduction-linux-filesystems
