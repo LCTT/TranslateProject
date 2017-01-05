@@ -50,8 +50,6 @@ crw--w----   1 root tty         4,  11 Nov  7 07:06 tty11
 
 你大概可以从上面的示例中推出磁盘驱动器次设备号的样式。次设备号 0、 16、 32 等等，直到 240，是整磁盘号。所以主/次 8/16 表示整个磁盘 /dev/sdb ， 8/17 是第一个分区的设备文件，/dev/sdb1。数字 8/34 代表 /dev/sdc2。
 
-The tty device files in the list above are numbered a bit more simply from tty0 through tty63.
-
 在上面列表中的 tty 设备文件编号更简单一些，从 tty0 到 tty63 。
 
 Kernel.org 上的 [Linux Allocated Devices][5] 文件是设备类型和主次编号分配的正式注册表。 它可以帮助您了解所有当前定义的设备的主要/次要号码。
@@ -161,6 +159,7 @@ CentOS 和 RHEL 6、7, 以及 Fedora 的所有版本，追溯到至少 Fedora 15
 - [Filesystem Hierarchy][10], The Linux Documentation Project
 - [Device File][4], Wikipedia
 - [Linux Allocated Devices][5], Kernel.org
+
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/16/11/managing-devices-linux
