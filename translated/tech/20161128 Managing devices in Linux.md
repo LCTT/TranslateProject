@@ -158,7 +158,7 @@ via: https://opensource.com/article/16/11/managing-devices-linux
 
 作者：[David Both][a]
 译者：[erlinux](http://www.itxdm.me)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织编译，[Linux中国](https://linux.cn/) 荣誉推出
 
