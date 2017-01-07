@@ -1,3 +1,5 @@
+#rusking translating
+
 A Guide To Buying A Linux Laptop
 ============================================================
 
