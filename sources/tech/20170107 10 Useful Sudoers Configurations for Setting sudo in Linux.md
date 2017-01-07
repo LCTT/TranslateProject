@@ -1,3 +1,6 @@
+GHLandy Translating 
+
+
 10 Useful Sudoers Configurations for Setting ‘sudo’ in Linux
 ============================================================
 
