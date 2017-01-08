@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How to Customize Bash Colors and Content in Linux Terminal Prompt
 ============================================================
 
