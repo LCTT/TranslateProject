@@ -51,46 +51,60 @@ I suggest Cub Linux to anybody who spends most their times on a browser and do s
 
 ### 2\. PEPPERMINT OS
 
+不少人把目光投向 Linux 因为他们想要一个良好的使用计算机的体验。一些人是真的不喜欢防病毒软件、磁盘整理程序、清理工具的打扰，他们只是想要一个操作系统而不是个孩子。我必须说 Peppermint OS 真的不会打扰用户。[Peppermint OS][12] 的开发者在理解用户需求上花费了大量的时间精力。
 A good number of people look towards Linux because they want a no-BS computing experience. Some people do not really like the hassle of an anti-virus, a defragmenter, a cleaner etcetera as they want an operating system and not a baby. And I must say Peppermint OS is really good at being no-BS. [Peppermint OS][12] developers have put a good amount of effort in understanding the user requirements and needs.
 
  ![pep1](https://itsfoss.com/wp-content/uploads/2016/11/pep1.jpg) 
 
+系统默认内置了很少的软件。内置从每一个软件类别挑选的一些应用，这传统的想法没有被开发者所采纳，这为了良好的用户体验。个性化定制电脑的权力已经移交给用户。顺便说一句，当能用网页替代几乎大部分应用时，我们真的需要安装那么多的应用吗？
 There is a very small number of selected software included by default. The traditional ideology of including a couple apps from every software category is ditched here for good. The power to customize the computer as per needs has been given to the user. By the way, do we really need to install so many applications when we can get web alternatives for almost all the applications?
 
 Ice
 
+Ice 是一个有用的小工具，它能将你最喜爱和经常用到的网页转化成桌面应用，这样你就能直接从你的桌面或菜单启动。这就是我们所说的特定页浏览器。
 Ice is a utile little tool that converts your favorite and most used websites into desktop applications that you can directly launch from your desktop or the menu. It’s what we call a site-specific browser.
 
  ![pep4](https://itsfoss.com/wp-content/uploads/2016/11/pep4.jpg) 
 
+喜欢 facebook ？为了快速启动，为什么不弄一个 facebook 的网页应用在你的桌面上？当人们抱怨 Linux 上不知如何正确安装 Google Drive 应用时，Ice 能让你在一次单击就能访问 Google Drive。不只是 Google Drive ，Ice 的功能只会被你的想象力所限制。
 Love facebook? Why not make a facebook web app on your desktop for quick launch? While there are people complaining about a decent Google drive application for Linux, Ice allows you to access Drive with just a click. Not just Drive, the functionality of Ice is limited only by your imagination.
 
+Peppermint OS 7 是基于 Ubuntu 16.04 。它不仅有流畅、稳固的表现，而且反应很快。一个深度定制的 LXDE 将会是你的首页。我所说到的定制是为了实现时髦的表现和视觉吸引力。
 Peppermint OS 7 is based on Ubuntu 16.04\. It not only provides a smooth, rock solid performance but also a very swift response. A heavily customizes LXDE will be your home screen. And the customization I’m speaking about is driven to achieve both a snappy performance as well as visual appeal.
 
+Peppermint OS 在云操作系统中 。虽然这操作系统的框架被设计来支持快速的云端应用，但是本地的 Ubuntu 应用运行得也不错。如果你是像我那样，想要一个能在在线和离线之间保持平衡的操作系统的话，[Peppermint OS 很适合你][13]。
 Peppermint OS hits more of a middle ground in the cloud-native operating system types. Although the skeleton of the OS is designed to support the speedy cloudy apps, the native Ubuntu application play well too. If you are someone like me who wants an OS that is balanced in online-offline capabilities, [Peppermint OS is for you][13].
 
 [Suggested ReadPennsylvania High School Distributes 1,700 Ubuntu Laptops to Students][14]
 
 ### 3.APRICITY OS
 
+[Apricity OS][15] 在这里是极具美感的 Linux 发行版之一。它就像是 Linux 里的蒙娜丽莎。但是，不止外观优美，它还有更多优点。
 [Apricity OS][15] stole the show for being one of the top aesthetically pleasing Linux distros out there. It’s just gorgeous. It’s like the Mona Lisa of the Linux domain. But, there’s more to it than just the looks.
 
  ![ap2](https://itsfoss.com/wp-content/uploads/2016/11/ap2.jpg) 
 
+将 [Apricity OS][16] 加入这名单中的基本理由是它的简洁。当桌面操作系统设计变得越来越乱、堆砌元素时（我只是在讨论 Linux 操作系统），Apricity 除去所有杂项，简化最基本的人机交互。在这，Gnome 桌面环境被定制得非常优美。他们使其变得更简单。
 The prime reason [Apricity OS][16] makes this list is because of its simplicity. While OS desktop design is getting chaotic and congested with elements (and I’m not talking only about non-Linux operating systems), Apricity de-clutters everything and simplifies the very basic human-desktop interaction. Gnome desktop environment is customized beautifully here. They made it really simpler.
 
+预装的软件真的很少。几乎所有的 Linux 发行版有同样的预装软件。但是 Apricity OS 有一个全新的软件集合。Chrome 而不是 Firefox 。我真的很期待这点。我是说为什么不在外面告诉我们改变了什么。
 The pre-installed software list is really small. Almost all Linux distros have the same pre-installed software. But Apricity OS has a completely new set of software. Chrome instead of Firefox. I was really waiting for this.  I mean why not give us what’s rocking out there?
 
+Apricity OS 也展现了我们在上一段讨论的 Ice 工具。但不是 Firefox ，Chrome 浏览器被用在网页-桌面一体化里。Apricity OS 默认内置了 Numix Circle 图标。。每一次你添加一个网页应用，那就会有一个优美的图标放在你的底栏上。
 Apricity OS also features the Ice tool that we discussed in the last segment. But instead of Firefox, Chrome browser is used in website-desktop integration. Apricity OS has Numix Circle icons by default and everytime you add a popular webapp, there will be a beautiful icon placed on your Dock.
 
  ![](https://itsfoss.com/wp-content/uploads/2016/11/ap1.jpg) 
 
+看见我所说的了吗？
 See what I mean?
 
+Apricity OS 基于 Arch Linux 。（所以任何想要快速上手 Arch ，想要优美发行版的人，来[这里][17]下载 Apricity 的 ISO 文件。) Apricity 完全保持了 Arch  选择自由的原则。在 Ice 花费10分钟，你将会拥有所有安装好的你最爱的网页应用。
 Apricity OS is based on Arch Linux. (So anybody looking for a quick start with Arch, and a beautiful at that one, download that Apricity ISO [here][17]) Apricity fully upholds the Arch principle of freedom of choice. Within just 10 minutes on the Ice, and you’ll have all your favorite webapps set up.
 
+华丽的背景，极简主义的桌面和一大堆的功能。在建立一个很棒的云端系统上，这些特性使得 Apricity OS 成为一个极佳选择。在 Apricity OS 花上5分钟来使你完全爱上它。我是认真的。
 Gorgeous backgrounds, minimalistic desktop and a great functionality. These make Apricity OS a really great choice for setting up an amazing cloud-centric system. It’ll take 5 mins for Apricity OS to make you fall in love with it. I mean it.
 
+到此你就看完了全部。给网上居住者的云端 Linux 发行版。给我们关于网页应用和本地应用话题的看法。别忘了分享。
 There you have it, people. Cloud-centric Linux distros for online dwellers. Do give us your take on the webapp-native app topic. Don’t forget to share.
 
 --------------------------------------------------------------------------------
