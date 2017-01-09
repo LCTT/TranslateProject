@@ -1,3 +1,5 @@
+translating by ypingcn.
+
 CLOUD FOCUSED LINUX DISTROS FOR PEOPLE WHO BREATHE ONLINE
 ============================================================
 
