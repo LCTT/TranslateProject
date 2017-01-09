@@ -1,3 +1,5 @@
+translating---geekpi
+
 5 things to watch in Go programming in 2017
 ============================================================
 
