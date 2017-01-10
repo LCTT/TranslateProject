@@ -1,3 +1,7 @@
+
+beyondworld 翻译中
+
+
 Powerline – Adds Powerful Statuslines and Prompts to Vim Editor and Bash Terminal
 ============================================================
 
