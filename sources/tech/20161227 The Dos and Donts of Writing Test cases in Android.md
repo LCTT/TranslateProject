@@ -1,3 +1,4 @@
+translating by kokialoves
 The Do’s and Don’ts of Writing Test cases in Android.
 ============================================================
 
