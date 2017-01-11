@@ -1,3 +1,5 @@
+translating by ypingcn
+
 10 Linux System Administrators New Year’s Resolutions (2017)
 ============================================================
 
