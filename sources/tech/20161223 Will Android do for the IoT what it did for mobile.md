@@ -1,3 +1,6 @@
+
+Translating by fristadream
+
 Will Android do for the IoT what it did for mobile?
 ============================================================
 

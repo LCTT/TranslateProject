@@ -1,3 +1,5 @@
+alim0x translating
+
 ### Android 6.0 Marshmallow
 
 In October 2015, Google brought Android 6.0 Marshmallow into the world. For the OS's launch, Google commissioned two new Nexus devices: the [Huawei Nexus 6P and LG Nexus 5X][39]. Rather than just the usual speed increase, the new phones also included a key piece of hardware: a fingerprint reader for Marshmallow's new fingerprint API. Marshmallow was also packing a crazy new search feature called "Google Now on Tap," user controlled app permissions, a new data backup system, and plenty of other refinements.
