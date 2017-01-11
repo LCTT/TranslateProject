@@ -160,7 +160,7 @@ via: https://blog.mindorks.com/the-dos-and-don-ts-of-writing-test-cases-in-andro
 
 作者：[Anshul Jain][a]
 译者：[kokialoves](https://github.com/kokialoves)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
