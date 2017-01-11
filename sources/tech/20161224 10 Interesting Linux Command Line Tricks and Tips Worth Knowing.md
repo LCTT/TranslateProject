@@ -1,3 +1,4 @@
+Translating by zhb127
 10 Interesting Linux Command Line Tricks and Tips Worth Knowing
 ============================================================
 
