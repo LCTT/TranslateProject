@@ -1,3 +1,5 @@
+translating---geekpi
+
 4 hot skills for Linux pros in 2017
 ============================================================
 
