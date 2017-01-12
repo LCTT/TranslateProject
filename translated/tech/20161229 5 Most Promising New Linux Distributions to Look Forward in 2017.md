@@ -99,7 +99,7 @@ via: http://www.tecmint.com/new-linux-distributions-2017/
 
 作者：[Gabriel Cánepa][a]
 译者：[rusking](https://github.com/rusking)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
