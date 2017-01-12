@@ -1,3 +1,5 @@
+# rusking translating
+
 How Linux got to be Linux: Test driving 1993-2003 distros
 ============================================================
 
