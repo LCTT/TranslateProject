@@ -1,3 +1,5 @@
+translating---geekpi
+
 The difference between development and deployment
 ============================================================
  ![The difference between development and deployment](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/BUS_OpenSourceExperience_520x292_cm.png?itok=APna2N9Y "The difference between development and deployment") 
