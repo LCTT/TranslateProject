@@ -1,3 +1,5 @@
+# rusking translating
+
 How to get started as an open source programmer
 ============================================================
  ![How to get started as an open source programmer](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/programming_keys.jpg?itok=_VDcN66X "How to get started as an open source programmer") 
