@@ -1,6 +1,4 @@
-translating---geekpi
-
-5 Ways to Find a ‘Binary Command’ Description and Location on File System
+5个找出‘二进制命令’描述和系统中位置的方法
 ============================================================
 
 With the thousands of [commands/programs available in Linux systems][1], knowing the type and purpose of a given command as well as its location (absolute path) on the system can be a little challenge for newbies.
@@ -14,6 +12,17 @@ To discover new commands on your system look into all the directories in your P
 Once you find an interesting command name, before you proceed to read more about it probably in the man page, try to gather some shallow information about it as follows.
 
 Assuming you have echoed the values of PATH and moved into the directory /usr/local/bin and noticed a new command called [fswatch (monitors file modification changes)][3]:
+在数千个[ Linux 系统可用的命令/程序][1]中，知道给定命令的类型和目的以及其在系统上的位置（绝对路径）对于新手来说可能是一个挑战。
+
+知道命令/程序的一些细节不仅有助于[ Linux 用户掌握大量命令][2]，而且还使用户能够从命令行或脚本了解系统上的操作来使用它们。
+
+因此，在本文中我们将向你解释五个有用的命令，用于显示简短描述和给定命令的位置。
+
+要在系统上发现新命令，请查看 PATH 环境变量中的所有目录。这些目录存储系统上安装的所有命令/程序。
+
+一旦你找到一个有趣的命令名，在继续阅读更多关于它的手册页面之前，请尝试如下收集一些简要的信息。
+
+假设你输出了 PATH 的值，并进到目录 /usr/local/bin，并注意到一个名为[ fswatch（监视文件修改更改）][3]的新命令：
 
 ```
 $ echo $PATH
@@ -23,15 +32,15 @@ $ cd /usr/local/bin
  ![Find New Commands in Linux](http://www.tecmint.com/wp-content/uploads/2017/01/Find-New-Commands-in-Linux.png) 
 ][4]
 
-Find New Commands in Linux
+在 Linux 中找出新命令
 
-Now let’s find out the description and location of the fswatch command using following different ways in Linux.
+现在让我们在 Linux 中用不同的方法找出 fswatch 命令的描述和位置。
 
-### 1\. whatis Command
+### 1\. whatis 命令
 
-whatis is used to display one-line manual page descriptions of the command name (such as fswatch in the command below) you enter as an argument.
+whatis 用于显示你作为参数输入的命令名的单行描述（例如下面命令中的fswatch）。
 
-If the description is too long some parts are trimmed of by default, use the `-l` flag to show a complete description.
+如果描述太长，一些部分在默认情况下会被省略，使用 `-l` 标志来显示完整的描述。
 
 ```
 $ whatis fswatch
@@ -41,13 +50,13 @@ $ whatis -l fswatch
  ![Linux whatis Command Example](http://www.tecmint.com/wp-content/uploads/2017/01/Whatis-Command-Example.png) 
 ][5]
 
-Linux whatis Command Example
+Linux whatis 命令示例
 
-### 2\. apropos Command
+### 2\. apropos 命令
 
-apropos searches for the manual page names and descriptions of the keyword (considered a regex, which is the command name) provided.
+apropos 会搜索手册和描述中的关键字（命令名作为正则）。
 
-The `-l` option enables showing of the compete description.
+使用 `-l` 标志来显示完整的描述。
 
 ```
 $ apropos fswatch 
@@ -57,9 +66,9 @@ $ apropos -l fswatch
  ![Linux apropos Command Example](http://www.tecmint.com/wp-content/uploads/2017/01/Linux-apropos-Command-Example.png) 
 ][6]
 
-Linux apropos Command Example
+Linux apropos 命令示例
 
-By default, apropos may show an output of all matched lines, as in the example below. You can only match the exact keyword using the `-e` switch:
+默认上，apropos 会如示例那样输出所有匹配的行。你可以使用 `-e` 选项来精确匹配：
 
 ```
 $ apropos fmt
@@ -69,15 +78,15 @@ $ apropos -e fmt
  ![Linux apropos Command Show by Keyword](http://www.tecmint.com/wp-content/uploads/2017/01/Linux-apropos-Command-Keyword-Example.png) 
 ][7]
 
-Linux apropos Command Show by Keyword
+Linux apropos 命令根据关键词显示
 
-### 3\. type Command
+### 3\. type 命令
 
-type tells you the full pathname of a given command, additionally, in case the command name entered is not a program that exists as a separate disk file, type also tells you the command classification:
+type 命令会输出给定命令的完整路径名，此外，如果输入的命令名不是磁盘中存在的程序，type 还会告诉你命令分类：
 
-1.  Shell built-in command or
-2.  Shell keyword or reserved word or
-3.  An alias
+1. shell 内置命令或
+2. shell 关键字或保留字或
+3. 别名
 
 ```
 $ type fswatch 
@@ -86,9 +95,9 @@ $ type fswatch
  ![Linux type Command Example](http://www.tecmint.com/wp-content/uploads/2017/01/Linux-type-Command-Example.png) 
 ][8]
 
-Linux type Command Example
+Linux type 命令示例
 
-When the command is an alias for another command, type shows the command executed when the alias is run. Use the alias command to view all aliases created on your system:
+当命令是另外一个命令的别名时，type 会显示运行别名时执行的命令。使用 alias 命令查看你系统上创建的所有别名：
 
 ```
 $ alias
@@ -99,11 +108,11 @@ $ type ll
  ![Show All Aliases in Linux](http://www.tecmint.com/wp-content/uploads/2017/01/Show-All-Aliases-in-Linux.png) 
 ][9]
 
-Show All Aliases in Linux
+显示 Linux 中所有别名
 
-### 4\. which Command
+### 4\. which 命令
 
-which helps to locate a command, it prints the absolute command path as below:
+which 帮助定位命令，它打印出命令的绝对路径：
 
 ```
 $ which fswatch 
@@ -112,13 +121,13 @@ $ which fswatch
  ![Find Linux Command Location](http://www.tecmint.com/wp-content/uploads/2017/01/Find-Linux-Command-Location.png) 
 ][10]
 
-Find Linux Command Location
+找出 Linux 命令位置
 
-Some binaries can be stored in more than one directory under the PATH, use the `-a` flag to show all matching pathnames.
+一些二进制文件存在于 PATH 中的多个目录，使用 `-a` 标志来找出所有匹配的路径名。
 
-### 5\. whereis Command
+### 5\. whereis 命令
 
-whereis command locates the binary, source, and manual page files for the command name provided as follows:
+whereis 命令定位二进制命令、源路径和帮助页面，如下所示：
 
 ```
 $ whereis fswatch
@@ -129,15 +138,15 @@ $ whereis rm
  ![Linux whereis Command Example](http://www.tecmint.com/wp-content/uploads/2017/01/Linux-whereis-Command-Example.png) 
 ][11]
 
-Linux whereis Command Example
+Linux whereis 命令示例
 
-Although the commands above may be vital in finding some quick info about a command/program, opening and reading through its manual page always provides a full documentation, including a list of other related programs:
+虽然上面的命令对于查找关于命令/程序的一些快速信息很重要，但是通过打开和阅读其手册总是可以提供完整的文档，它还包括其他相关程序的列表：
 
 ```
 $ man fswatch
 ```
 
-In this article, we reviewed five simple commands used to display short manual page descriptions and location of a command. You can make a contribution to this post or ask a question via the feedback section below.
+在本文中，我们回顾了五个简单的命令，用于显示简短的手册描述和命令的位置。 你可以在反馈栏对此文章做出贡献或提出问题。
 
 --------------------------------------------------------------------------------
 
@@ -145,13 +154,13 @@ In this article, we reviewed five simple commands used to display short manual p
 
 ![](http://1.gravatar.com/avatar/4e444ab611c7b8c7bcb76e58d2e82ae0?s=128&d=blank&r=g)
 
-Aaron Kili is a Linux and F.O.S.S enthusiast, an upcoming Linux SysAdmin, web developer, and currently a content creator for TecMint who loves working with computers and strongly believes in sharing knowledge.
+Aaron Kili 是 Linux 和 F.O.S.S 爱好者，将来的 Linux SysAdmin、web开 发人员，目前是 TecMint 的内容创作者，他喜欢用电脑工作，并坚信分享知识。
 
 --------------------------------------------------------------------------------
 via: http://www.tecmint.com/find-linux-command-description-and-location/
 
 作者：[Aaron Kili ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
