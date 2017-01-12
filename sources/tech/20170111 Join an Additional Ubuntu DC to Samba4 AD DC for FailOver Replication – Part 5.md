@@ -1,3 +1,5 @@
+# rusking translating
+
 Join an Additional Ubuntu DC to Samba4 AD DC for FailOver Replication – Part 5
 ============================================================
 
