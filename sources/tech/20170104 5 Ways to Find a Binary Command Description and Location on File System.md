@@ -1,3 +1,5 @@
+translating---geekpi
+
 5 Ways to Find a ‘Binary Command’ Description and Location on File System
 ============================================================
 
