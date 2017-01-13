@@ -1,18 +1,18 @@
-如何用 shell 跟踪跟踪命令在 shell 中的执行
+如何用 Shell Tracing 跟踪 shell 脚本中命令的执行
 ============================================================
 
-在本文的[ shell 脚本调试系列][3]中，我们将解释第三种 shell 脚本调试模式，即 shell 跟踪，并查看一些示例来演示它如何工作以及如何使用它。
+在[ shell 脚本调试系列][3] 中，本文将解释第三种 shell 脚本调试模式，即 shell tracing，并查看一些示例来演示它如何工作以及如何使用它。
 
 本系列的前面部分清晰地阐明了另外两种 shell 脚本调试模式：verbose 模式和语法检查模式，以及如何在这些模式下启用 shell 脚本调试的易于理解的示例。
 
 1. [如何在 Linux 中启用 shell 脚本调试模式 - 第1部分][1]
 2. [如何在 shell 脚本中执行语法检查调试模式 - 第2部分][2]
 
-shell 跟踪只是跟踪 shell 脚本中的命令的执行。要打开 shell 跟踪，请使用 `-x` 调试选项。
+shell tracing 只是跟踪 shell 脚本中的命令的执行。要打开 shell tracing，请使用 `-x` 调试选项。
 
 这让 shell 在终端上执行时显示所有命令及其参数。
 
-我们将使用下面的 `sys_info.sh` shell 脚本，它会简要地打印你的系统日期和时间、登录的用户数和系统的运行时间。但是它包含我们需要查找和更正的语法错误。
+我们将使用下面的 `sys_info.sh` shell 脚本，它会简要地打印你的系统日期和时间、登录的用户数和系统的运行时间。脚本中包含我们需要查找和更正的语法错误。
 
 ```
 #!/bin/bash
@@ -46,11 +46,11 @@ $ sudo bash -x sys_info.sh
  ![Shell Tracing - Show Error in Script](http://www.tecmint.com/wp-content/uploads/2016/12/Shell-Tracing-Errors.png) 
 ][5]
 
-shell 跟踪 - 显示脚本中的错误
+*shell 跟踪 - 显示脚本中的错误*
 
-从上面的输出我们可以观察到，命令首先在其输出被替换为变量的值之前执行。
+从上面的输出我们可以观察到，首先执行命令，然后其输出做为一个变量的值。
 
-例如，首次执行 date，其输出被替换为变量 DATE 的值。
+例如，先执行 date，其输出做为变量 DATE 的值。
 
 我们可以执行语法检查，只显示语法错误，如下所示：
 
@@ -61,9 +61,9 @@ $ sudo bash -n sys_info.sh
  ![Syntax Checking in Script](http://www.tecmint.com/wp-content/uploads/2016/12/Syntax-Checking-in-Script.png) 
 ][6]
 
-脚本中语法检查
+*脚本中语法检查*
 
-如果我们批判地看这个 shell 脚本，我们就会发现 `if 语句`缺少了 `fi` 关键字。因此，让我们加上它，新的脚本应该看起来像这样：
+如果我们批判地看这个 shell 脚本，我们就会发现 `if 语句` 缺少了封闭条件的 `fi` 关键字。因此，让我们加上它，新的脚本应该看起来像这样：
 
 ```
 #!/bin/bash
@@ -97,11 +97,11 @@ $ sudo bash -n sys_info.sh
  ![Perform Syntax Check in Shell Scripts](http://www.tecmint.com/wp-content/uploads/2016/12/Syntax-Check-in-Shell-Scripts.png) 
 ][7]
 
-在 shell 脚本中执行语法检查
+*在 shell 脚本中执行语法检查*
 
 上面的语法检查操作的结果仍然显示在脚本的第 21 行还有一个错误。所以，我们仍然要纠正一些语法。
 
-如果我们再分析一次脚本，第 21 行的错误是由于在 `print_sys_info` 函数内最后一个 [echo 命令][8]中没有闭合双引号`（”）`。
+再一次分析脚本，会发现第 21 行的错误是由于在 `print_sys_info` 函数内最后一个 [echo 命令][8]中没有闭合双引号`（”）`。
 
 我们将在 echo 命令中添加闭合双引号并保存文件。修改过的脚本如下：
 
@@ -128,7 +128,7 @@ print_sys_info
 exit 0
 ```
 
-现在在一次检查语法。
+现在再一次检查语法。
 
 ```
 $ sudo bash -n sys_info.sh
@@ -143,7 +143,7 @@ $ sudo bash -x sys_info.sh
  ![Trace Shell Script Execution](http://www.tecmint.com/wp-content/uploads/2016/12/Trace-Shell-Execution.png) 
 ][9]
 
-跟踪 shell 脚本执行
+*跟踪 shell 脚本执行*
 
 现在运行脚本。
 
@@ -154,7 +154,7 @@ $ sudo ./sys_info.sh
  ![Shell Script to Show Date, Time and Uptime](http://www.tecmint.com/wp-content/uploads/2016/12/Script-to-Show-Date-and-Uptime.png) 
 ][10]
 
-用 shell 脚本显示日期、时间和运行时间
+*用 shell 脚本显示日期、时间和运行时间*
 
 ### shell 跟踪执行的重要性
 
@@ -169,9 +169,9 @@ fi
 }
 ```
 
-这里的魔法是由 `if 语句`表达式 `["$ UID" -ne "$ ROOT_ID"]` 控制的，一旦我们不使用合适的数字运算符（示例中为 `-ne`，这意味着不相等），我们最终会出现一个可能的逻辑错误。
+这里的魔法是由 `if 语句` 表达式 `["$ UID" -ne "$ ROOT_ID"]` 控制的，一旦我们不使用合适的数字运算符（示例中为 `-ne`，这意味着不相等），我们最终可能会出一个逻辑错误。
 
-假设我们使用 `-eq` （意思等于），这将允许任何系统用户以及 root 用户运行脚本，因此是一个逻辑错误。
+假设我们使用 `-eq` （意思是等于），这将允许任何系统用户以及 root 用户运行脚本，因此是一个逻辑错误。
 
 ```
 check_root(){
@@ -182,9 +182,9 @@ fi
 }
 ```
 
-注意：我们在本系列开头介绍的到 set 这个 shell 内置命令可以在shell脚本的特定部分激活调试。
+注意：我们在本系列开头介绍过，set 这个 shell 内置命令可以在 shell 脚本的特定部分激活调试。
 
-因此，下面的行将帮助我们通过跟踪它在函数中的执行找到这个逻辑错误：
+因此，下面的行将帮助我们通过跟踪脚本的执行在其中找到这个逻辑错误：
 
 具有逻辑错误的脚本：
 
@@ -212,7 +212,7 @@ print_sys_info
 exit 0
 ```
 
-保存文件并调用脚本，在输出中，我们可以看到一个普通的系统用户可以没有 sudo 运行脚本。 这是因为 USER_ID 的值为100，不等于 ROOT_ID 为 0 的 root。
+保存文件并调用脚本，在输出中，我们可以看到一个普通系统用户可以在未 sudo 的情况下运行脚本。 这是因为 **USER_ID** 的值为 100，不等于 **ROOT_ID** 为 **0** 的 root。
 
 ```
 $ ./sys_info.sh
@@ -221,9 +221,9 @@ $ ./sys_info.sh
  ![Run Shell Script Without Sudo](http://www.tecmint.com/wp-content/uploads/2016/12/Run-Shell-Script-Without-Sudo.png) 
 ][11]
 
-不用 sudo 运行 shell 脚本
+**未 sudo 的情况下运行 shell 脚本**
 
-那么，现在我们已经到了[ shell 脚本调试系列][12]的末尾，可以在下面的反馈栏里给我们关于本篇或者本系列提出问题或反馈。
+那么，现在我们已经完成了[ shell 脚本调试系列][12]，可以在下面的反馈栏里给我们关于本篇或者本系列提出问题或反馈。
 
 --------------------------------------------------------------------------------
 
@@ -231,7 +231,7 @@ $ ./sys_info.sh
 
 ![](http://1.gravatar.com/avatar/4e444ab611c7b8c7bcb76e58d2e82ae0?s=128&d=blank&r=g)
 
-Aaron Kili 是 Linux 和 F.O.S.S 爱好者，将来的 Linux SysAdmin、web开 发人员，目前是 TecMint 的内容创作者，他喜欢用电脑工作，并坚信分享知识。
+Aaron Kili 是 Linux 和 F.O.S.S 爱好者，将来的 Linux SysAdmin、web 开 发人员，目前是 TecMint 的内容创作者，他喜欢用电脑工作，并坚信分享知识。
 
 --------------------------------------------------------------------------------
 
