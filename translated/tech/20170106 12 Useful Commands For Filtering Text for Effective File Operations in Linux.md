@@ -1,41 +1,40 @@
-yangmingming translating
-12 Useful Commands For Filtering Text for Effective File Operations in Linux
+为了在 Linux 下更有效的进行文件操作的 12 个有用的过滤文本的命令
 ============================================================
 
-In this article, we will review a number of command line tools that act as filters in Linux. A filter is a program that reads standard input, performs an operation upon it and writes the results to standard output.
+在这篇文章中，我们将会复习一些可以作为 Linux 中的过滤器的命令行工具。过滤器是一个程序，它从标准输入读取数据，在数据上执行一个操作，然后把输出结果输出到标准输出。
 
-For this reason, it can be used to process information in powerful ways such as restructuring output to generate useful reports, modifying text in files and many other system administration tasks.
+出于这样的原因，它可以被用于以一种强大的方式处理信息，例如重新结构化输出以生成有用的报告，修改文件里面的文本，和其他的一些系统管理任务。
 
-With that said, below are some of the useful file or text filters in Linux.
+说到这里，下面是 Linux 上的一些有用的文件或者文本过滤器。
 
-### 1\. Awk Command
+### 1\. Awk 命令
 
-Awk is a remarkable pattern scanning and processing language, it can be used to build useful filters in Linux. You can start using it by reading through our [Awk series Part 1 to Part 13][7].
+Awk 是一个卓越的模式扫描和处理语言，它可被用于在 Linux 下构造有用的过滤器。你可以通过阅读我们的 [Awk 系列从 1 到 13][7] 来开始使用它。
 
-Additionally, also read through the awk man page for more info and usage options:
+另外，也可以通过阅读 awk 的 man 手册来获取更多的信息和使用选项。
 
 ```
 $ man awk
 ```
 
-### 2\. Sed Command
+### 2\. Sed 命令
 
-sed is a powerful stream editor for filtering and transforming text. We’ve already written a two useful articles on sed, that you can go through it here:
+sed 是一款为了过滤和转换文本的强大的流编辑器。我们已经写了两篇关于 sed 的有用的文章，你可以通过这儿来了解：
 
-1.  [How to use GNU ‘sed’ Command to Create, Edit, and Manipulate files in Linux][1]
-2.  [15 Useful ‘sed’ Command Tips and Tricks for Daily Linux System Administration Tasks][2]
+1.  [如何使用 GNU ‘sed’ 命令在 Linux 下创建、编辑和处理文件][1]
+2.  [日常 Linux 系统管理员任务使用的 15 个有用的 ‘sed’ 命令小贴士和技巧][2]
 
-The sed man page has added control options and instructions:
+sed 的 man 手册已经添加控制选项和说明：
 
 ```
 $ man sed
 ```
 
-### 3\. Grep, Egrep, Fgrep, Rgrep Commands
+### 3\. Grep、 Egrep、 Fgrep、 Rgrep 命令行
 
-These filters output lines matching a given pattern. They read lines from a file or standard input, and print all matching lines by default to standard output.
+这些过滤器输出匹配指定模式的行。他们从一个文件或者标准输入读取行，并且输出所有匹配的行，默认输出到标准输出。
 
-Note: The main program is [grep][8], the variations are simply the same as [using specific grep options][9] as below (and they are still being used for backward compatibility):
+注意：主要的程序是 [grep][8]，变化只是简单的类似于 [使用特殊的 grep 选项][9]，如下所示（为了向后兼容性，它们依旧被使用）：
 
 ```
 $ egrep = grep -E
@@ -43,7 +42,7 @@ $ fgrep = grep -F
 $ rgrep = grep -r  
 ```
 
-Below are some basic grep commands:
+下面是一些基本的 grep 命令：
 
 ```
 tecmint@TecMint ~ $ grep "aaronkilik" /etc/passwd
@@ -52,11 +51,11 @@ tecmint@TecMint ~ $ cat /etc/passwd | grep "aronkilik"
 aaronkilik:x:1001:1001::/home/aaronkilik:
 ```
 
-You can read more about [What’s Difference Between Grep, Egrep and Fgrep in Linux?][10].
+你可以阅读更多的关于 [Linux 下的 grep、 egrep 和 fgrep 的差异？][10]。
 
-### 4\. head Command
+### 4\. head 命令
 
-head is used to display the first parts of a file, it outputs the first 10 lines by default. You can use the `-n` num flag to specify the number of lines to be displayed:
+head 被用于显示文件前面的部分，默认情况下它输出前面的 10 行。你可以使用 `-n` 行标志来指定显示的行数：
 
 ```
 tecmint@TecMint ~ $ head /var/log/auth.log  
@@ -78,13 +77,13 @@ Jan  2 10:51:34 TecMint sudo: pam_unix(sudo:session): session opened for user ro
 Jan  2 10:51:39 TecMint sudo: pam_unix(sudo:session): session closed for user root
 ```
 
-Learn how to use [head command with tail and cat commands][11] for effective usage in Linux.
+学习如何 [搭配 tail 和 cat 命令使用 head 命令][11] 以便于在 Linux 下更有效的使用。
 
-### 5\. tail Command
+### 5\. tail 命令
 
-tail outputs the last parts (10 lines by default) of a file. Use the `-n` num switch to specify the number of lines to be displayed.
+tail 输出一个文件的后面的部分（默认10行）。使用 `-n` 行选项来指定显示的行数。
 
-The command below will output the last 5 lines of the specified file:
+下面的命令将会输出指定文件的最后5行：
 
 ```
 tecmint@TecMint ~ $ tail -n 5 /var/log/auth.log
@@ -95,9 +94,9 @@ Jan  6 13:01:27 TecMint sshd[1269]: Server listening on 0.0.0.0 port 22.
 Jan  6 13:01:27 TecMint sshd[1269]: Server listening on :: port 22.
 ```
 
-Additionally, tail has a special option `-f` for [watching changes in a file in real-time][12] (especially log files).
+另外，tail 有一个特殊的选项 `-f` ，可以 [实时查看一个文件的变化][12] （尤其是日志文件）。
 
-The following command will enable you monitor changes in the specified file:
+下面的命令将会使你能够监控指定文件的变化：
 
 ```
 tecmint@TecMint ~ $ tail -f /var/log/auth.log
@@ -113,17 +112,17 @@ Jan  6 13:01:27 TecMint sshd[1269]: Server listening on 0.0.0.0 port 22.
 Jan  6 13:01:27 TecMint sshd[1269]: Server listening on :: port 22.
 ```
 
-Read through the tail man page for a complete list of usage options and instructions:
+通过阅读 tail 的 man 手册，获取使用手册和说明的完整列表：
 
 ```
 $ man tail
 ```
 
-### 6\. sort Command
+### 6\. sort 命令
 
-sort is used to sort lines of a text file or from standard input.
+sort 用于文本文件和标准输入的行进行排序。
 
-Below is the content of a file named domains.list:
+下面是一个名为 domain.list 的文件的内容： 
 
 ```
 tecmint@TecMint ~ $ cat domains.list
@@ -137,7 +136,7 @@ windowsmint.com
 windowsmint.com
 ```
 
-You can run a simple [sort command][13] to sort the file content like so:
+你可以像这样运行一个简单的 [sort 命令][13] 来排序文件内容：
 
 ```
 tecmint@TecMint ~ $ sort domains.list
@@ -151,20 +150,20 @@ windowsmint.com
 windowsmint.com
 ```
 
-You can use sort command in many ways, go through some of the useful articles on sort command as follows:
+你可以通过以下一些关于 sort 命令的有用的文章，以多种方式来使用 sort 命令。
 
-1.  [14 Useful Examples of Linux ‘sort’ Command – Part 1][3]
-2.  [7 Interesting Linux ‘sort’ Command Examples – Part 2][4]
-3.  [How to Find and Sort Files Based on Modification Date and Time][5]
+1.  [14 个关于 Linux ‘sort’ 命令的有用的示例 – 第 1 部分][3]
+2.  [7 个有趣的 Linux ‘sort’ 命令示例 – 第 2 部分][4]
+3.  [如何基于修改日期和时间来查找和排序文件][5]
 4.  [http://www.tecmint.com/sort-ls-output-by-last-modified-date-and-time/][6]
 
-### 7\. uniq Command
+### 7\. uniq 命令
 
-uniq command is used to report or omit repeated lines, it filters lines from standard input and writes the outcome to standard output.
+uniq 命令用于报告或者忽略重复行，它从标准输入过滤行，并且把结果写到标准输出。
 
-After running sort on an input stream, you can remove repeated lines with uniq as in the example below.
+在一个输入流运行 sort 之后，你可以像下面的例子一样删除重复行。
 
-To indicate the number of occurrences of a line, use the `-c` option and ignore differences in case while comparing by including the `-i` option:
+为了显示行出现的数目，使用 `-c` 选项，如果对比的时候包含 `-i` 选项的话将会忽略大小写的差异：
 
 ```
 tecmint@TecMint ~ $ cat domains.list
@@ -182,23 +181,23 @@ tecmint@TecMint ~ $ sort domains.list | uniq -c
 1 windowsmint.com 
 ```
 
-Read through the uniq man page for further usage info and flags:
+通过阅读 uniq 的 man 手册来获取进一步的使用信息和选项：
 
 ```
 $ man uniq
 ```
 
-### 8\. fmt Command
+### 8\. fmt 命令行
 
-fmt simple optimal text formatter, it reformats paragraphs in specified file and prints results to the standard output.
+fmt 是一款简单的最优的文本格式化器，它重新格式化指定文件的段落，并且打印结果到标准输出。
 
-The following is the content extracted from the file domain-list.txt:
+以下是从文件 domain-list.txt 提取的内容：
 
 ```
 1.tecmint.com 2.news.tecmint.com 3.linuxsay.com 4.windowsmint.com
 ```
 
-To reformat the above content to a standard list, run the following command with `-w` switch is used to define the maximum line width:
+为了把上面的内容重新格式化成一个标准的清单，运行下面的命令，使用 `-w` 选项是用于定义最大行宽度：
 
 ```
 tecmint@TecMint ~ $ cat domain-list.txt 
@@ -210,15 +209,15 @@ tecmint@TecMint ~ $ fmt -w 1 domain-list.txt
 4.windowsmint.com
 ```
 
-### 9\. pr Command
+### 9\. pr 命令
 
-pr command converts text files or standard input for printing. For instance on Debian systems, you can list all installed packages as follows:
+pr 命令转换文本文件或者标准输入之后打印出来。例如在 Debian 系统上，你可以像下面这样显示所有的安装包：
 
 ```
 $ dpkg -l
 ```
 
-To organize the list in pages and columns ready for printing, issue the following command.
+为了组织在页面和列中准备打印的列表，发出以下命令。
 
 ```
 tecmint@TecMint ~ $ dpkg -l | pr --columns 3 -l 20  
@@ -247,24 +246,24 @@ ii  avahi-autoipd	ii  bc			ii  bluez-obexd
 .....
 ```
 
-The flags used here are:
+使用的标志如下：
 
-1.  `--column` defines number of columns created in the output.
-2.  `-l` specifies page length (default is 66 lines).
+1.  `--column` 定义在输出中创建的列数。
+2.  `-l` 指定页面的长度（默认是 66 行）。
 
-### 10\. tr Command
+### 10\. tr 命令行
 
-This tool translates or deletes characters from standard input and writes results to standard output.
+这个命令从标准输入转换或者删除字符，然后输出结果到标准输出。
 
-The syntax for using tr is as follows:
+使用 tr 的语法如下：
 
 ```
 $ tr options set1 set2
 ```
 
-Take a look at the examples below, in the first command, `set1( [:upper:] )` represents the case of input characters (all upper case).
+看一下下面的例子，在第一个命令，`set1( [:upper:] )` 代表指定输入字符的大小写（所有的大写字符）。
 
-Then `set2([:lower:])` represents the case in which the resultant characters will be. It’s same thing in the second example and the escape sequence `\n` means print output on a new line:
+`set2([:lower:])` 代表期望结果字符的大小写。它和第二个例子做着类似的事情，转义字符 `\n` 表示在新的一行打印输出：
 
 ```
 tecmint@TecMint ~ $ echo "WWW.TECMINT.COM" | tr [:upper:] [:lower:]
@@ -273,11 +272,11 @@ tecmint@TecMint ~ $ echo "news.tecmint.com" | tr [:lower:] [:upper:]
 NEWS.TECMINT.COM
 ```
 
-### 11\. more Command
+### 11\. more 命令
 
-more command is a useful file perusal filter created basically for certificate viewing. It shows file content in a page like format, where users can press [Enter] to view more information.
+more 命令是一个有用的文件过滤器，创建基本上用于证书的查看。它在一页中如同格式化之后那样显示文件内容，用户可以通过按 [Enter] 来显示更多的信息。
 
-You can use it to view large files like so:
+你可以像这样使用它来显示大文件：
 
 ```
 tecmint@TecMint ~ $ dmesg | more
@@ -307,11 +306,11 @@ tecmint@TecMint ~ $ dmesg | more
 --More--
 ```
 
-### 12\. less Command
+### 12\. less 命令
 
-less is the opposite of more command above but it offers extra features and it’s a little faster with large files.
+less 是和上面的 more 命令相反的一个命令，但是它提供了额外的特性，而且对于大文件，它会更快些。
 
-Use it in the same way as more:
+按照 more 命令相同的方式使用它：
 
 ```
 tecmint@TecMint ~ $ dmesg | less
@@ -341,13 +340,13 @@ tecmint@TecMint ~ $ dmesg | less
 :
 ```
 
-Learn Why [‘less’ is Faster Than ‘more’ Command][14] for effective file navigation in Linux.
+学习为什么对于在 Linux 下进行有效的文件浏览， [‘less’ 比 ‘more’ 命令更快][14]。
 
-That’s all for now, do let us know of any [useful command line tools][15] not mentioned here, that act as a text filters in Linux via the comment section below.
+基本上就这些了，如果你还知道其他本文没有提供的 Linux 下[有用的文本过滤命令行工具][15]，可以在下面的评论部分通知我们。
 
 --------------------------------------------------------------------------------
 
-作者简介：Aaron Kili is a Linux and F.O.S.S enthusiast, an upcoming Linux SysAdmin, web developer, and currently a content creator for TecMint who loves working with computers and strongly believes in sharing knowledge.
+作者简介：Aaron Kili 是一名 Linux 和 F.O.S.S 爱好者、一名未来的 Linux 系统管理员、web 开发者，并且目前是一名 TecMint 上的内容创造者，他喜欢计算机相关的工作，并且坚信知识的分享。
 
 ![](http://1.gravatar.com/avatar/4e444ab611c7b8c7bcb76e58d2e82ae0?s=128&d=blank&r=g)
 
@@ -356,7 +355,7 @@ That’s all for now, do let us know of any [useful command line tools][15] no
 via: http://www.tecmint.com/linux-file-operations-commands/
 
 作者：[Aaron Kili][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[yangmingming](https://github.com/yangmingming)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
