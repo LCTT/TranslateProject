@@ -33,9 +33,7 @@
 
 通常，我们在准备职业生涯时所考虑的最后一件事是所谓的 *软技能* - 社交和沟通技巧 - 但是他们可能是最有可能决定你的成功的技能。无论你正在寻找一份新工作，还是试图适应当前职业生涯的变化，软技能是至关重要的。
 
-划分 IT 各个领域的线是交错的，并且良好的沟通能力使得这些模糊的线成为一个优点，而不是绊脚石。我们生活在一个开发人员围绕着服务器，而操作团队正在编写 Ruby 代码来维护服务器农场的世界里。这些都是 IT 中的大胆的新思想，没有人能够在不同学科之间沟通，工作场所迅速变得敌对。此外，IT 人员总是需要与其他业务领域的人员进行有效沟通。如果有什么，现在比以往有更大的需求。
-
-The lines dividing the various areas of IT are blending, and the ability to communicate well makes those blurred lines an advantage instead of a stumbling block. We live in a world in which developers are spinning up servers, and operations teams are writing Ruby code to maintain server farms. These are bold new ideas in IT, and without people able to communicate between disciplines, the workplace becomes hostile quickly. Plus, IT folks have always needed to communicate effectively with people in other areas of business. If anything, that need is greater now than ever.
+划分 IT 各个领域的线是交错的，并且良好的沟通能力使得这些模糊的线成为一个优点，而不是绊脚石。我们正生活在一个开发人员围绕着服务器，而运维团队编写 Ruby 代码来维护服务器农场的世界里。这些都是 IT 中的大胆的新思想，如果人们不能在不同部门间很好的沟通，工作场所将迅速有敌对气氛。此外，IT 人员总是需要与其他业务领域的人员进行有效沟通。而且，现在比以往有更大的需求。
 
 
 你计划在 2017 年里添加什么到你的技能中？在评论栏中让我们知道吧。
