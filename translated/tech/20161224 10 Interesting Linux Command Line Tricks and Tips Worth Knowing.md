@@ -31,7 +31,7 @@ $ mv filename .tecmint.info
 
 ### 2\. 在 Linux 中将 rwx 权限转为八进制格式
 
-默认情况下，当你运行 [ls 命令]之后，它会使用 `rwx` 格式显示文件权限，为了了解 rwx 格式和八进制格式的等同性，你可以学习如何[在 Linux 中将 rwx 权限转为八进制格式]。
+默认情况下，当你运行 [ls 命令][6]之后，它会使用 `rwx` 格式显示文件权限，为了了解 rwx 格式和八进制格式的等同性，你可以学习如何[在 Linux 中将 rwx 权限转为八进制格式][7]。
 
 ### 3\. 当 `sudo` 命令执行失败时怎么使用 `su` 命令
 
@@ -128,6 +128,7 @@ rename 命令会根据第一个参数中的规则重命名指定文件。
 ```
 $ rename -v 's/\.pdf$/\.doc/' *.pdf
 ```
+[
  ![在 Linux 中重命名多个文件](http://www.tecmint.com/wp-content/uploads/2016/12/Rename-Multiple-Files-in-Linux.png) 
 ][20]
 
@@ -220,7 +221,7 @@ Aaron Kili 是一名 Linux 和 F.O.S.S 的爱好者，未来的 Linux 系统管�
 via: http://www.tecmint.com/linux-command-line-tricks-and-tips-worth-knowing/
 
 作者：[Aaron Kili][a]
-译者：[译者ID](https://github.com/zhb127)
+译者：[zhb127](https://github.com/zhb127)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
