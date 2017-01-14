@@ -1,3 +1,4 @@
+Translating by Hymantin
 Set Date and Time for Each Command You Execute in Bash History
 ============================================================
 
