@@ -1,5 +1,6 @@
 Translating by Hymantin
 Set Date and Time for Each Command You Execute in Bash History
+设置
 ============================================================
 
 By default, all commands executed by Bash on the command line are stored in history buffer or recorded in a file called ~/.bash_history. This means that a system administrator can view a list of commands executed by users on the system or a user can view his/her command history using the [history command][1] like so.
