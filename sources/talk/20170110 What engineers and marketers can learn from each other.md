@@ -1,3 +1,5 @@
+# rusking translating
+
 What engineers and marketers can learn from each other
 ============================================================
 
