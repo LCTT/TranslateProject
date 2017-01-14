@@ -101,9 +101,9 @@ $ shred -zvu tecmint.pdf
 
 上述命令中所使用的选项说明：
 
-1.  `-z` – 最后一次使用 0 进行覆盖以隐藏覆盖动作。
-2.  `-u` – 覆盖后截断并移除文件。
-3.  `-v` – 显示详细过程。
+1.  `-z` – 最后一次使用 0 进行覆盖以隐藏覆盖动作。
+2.  `-u` – 覆盖后截断并移除文件。
+3.  `-v` – 显示详细过程。
 
 [
  ![在 Linux 中永久删除文件](http://www.tecmint.com/wp-content/uploads/2016/12/Delete-File-Permanently-in-Linux.png) 

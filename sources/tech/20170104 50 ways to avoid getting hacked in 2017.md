@@ -1,3 +1,4 @@
+Translating by GOLinux!
 50 ways to avoid getting hacked in 2017
 ============================================================
 

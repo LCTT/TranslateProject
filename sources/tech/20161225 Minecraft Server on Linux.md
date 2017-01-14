@@ -1,3 +1,4 @@
+**translating by [erlinux](https://github.com/erlinux)**
 Minecraft Server on Linux
 =============================
 
