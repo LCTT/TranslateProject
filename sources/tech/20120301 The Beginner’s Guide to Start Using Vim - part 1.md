@@ -1,3 +1,5 @@
+Tarnslating by Yinr
+
 The Beginner’s Guide to Start Using Vim
 ============================================================
  ![](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2012/03/vim-beginner-guide-featured.jpg "The Beginner's Guide to Start Using Vims") 
