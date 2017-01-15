@@ -3,7 +3,7 @@
 
 [Axel][7] 是一个轻量级下载程序，它和其他加速器一样，为一个文件打开多个连接，每个连接下载单独的文件片段以更快地完成下载。
 
-Axel支持 HTTP、HTTPS、FTP和 FTPS 协议。它也可以使用多个镜像下载单个文件。所以，Axel 可以加速下载高达 40％（大约，我个人认为）。它非常轻量级，因为它没有依赖并且使用非常少的 CPU 和 RAM。
+Axel 支持 HTTP、HTTPS、FTP和 FTPS 协议。它也可以使用多个镜像下载单个文件。所以，Axel 可以加速下载高达 40％（大约，我个人认为）。它非常轻量级，因为它没有依赖并且使用非常少的 CPU 和 RAM。
 
 Axel 使用一个单线程将所有数据直接下载到目标文件。
 
@@ -11,10 +11,10 @@ Axel 使用一个单线程将所有数据直接下载到目标文件。
 
 你还可以尝试其他命令行下载管理器/加速器。
 
-*   [[aria2 - 超快速下载程序] [1]
-*   [[wget - 标准命令行下载程序] [2]
-*   [[curl - 命令行下载程序] [3]
-*   [[Linux 下的最好的 4 个命令行下载管理器/加速器] [4]
+*   [aria2 - 超快速下载程序] [1]
+*   [wget - 标准命令行下载程序] [2]
+*   [curl - 命令行下载程序] [3]
+*   [Linux 下的最好的 4 个命令行下载管理器/加速器] [4]
 
 大多数发行版（Debian、Ubuntu、Mint、Fedora、suse、openSUSE、Arch Linux、Manjaro、Mageia 等）都有 axel 包，所以我们可以从发行版官方仓库轻松安装。对于 CentOS/RHEL，我们需要启用 [EPEL Repository][5]。
 
@@ -150,9 +150,8 @@ Downloaded 21.6 megabytes in 44 seconds. (494.54 KB/s)
 
 #### 4) 限制连接数
 
-axel 默认建立 4 个连接以从不同的镜像获取文件。此外，我们可以通过使用 `-n` 选项添加更多的连接，后跟连接数 `8` 来提高下载速度。我们为了更安全新添加了八个连接，但不幸的是，它花了更多时间来下载文件。
+axel 默认建立 4 个连接以从不同的镜像获取文件。此外，我们可以通过使用 `-n` 选项添加更多的连接，后跟连接数 `10` 来提高下载速度。我们为了更安全新添加了八个连接，但不幸的是，它花了更多时间来下载文件。
 
-Additionally we can boost the download speed by adding more connection with -n option followed by connections count 8. We have added eight connection for safer side but unfortunately it took much time to get the file downloaded.
 ```
 # axel -n 10 https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
 Initializing download: https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
@@ -193,7 +192,7 @@ Downloaded 21.6 megabytes in 5 seconds. (4109.41 KB/s)
 
 #### 5) 恢复未完成的下载
 
-axel 默认具有恢复未完成的下载的行为。Axel 在下载文件时定期更新状态文件（扩展名为 .st）。由于某些原因，下载中途停止了？不用担心，只要使用相同的 axel 命令，它将会检查 `file` 和 `file.st`，如果找到，它会从停止处恢复下载。
+axel 默认具有恢复未完成的下载的行为。Axel 在下载文件时定期更新状态文件（扩展名为 `.st`）。由于某些原因，下载中途停止了？不用担心，只要使用相同的 axel 命令，它将会检查 `file` 和 `file.st`，如果找到，它会从停止处恢复下载。
 
 ```
 # axel https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
@@ -268,7 +267,7 @@ Downloaded 3415.4 kilobytes in 1 second. (2264.93 KB/s)
 
 #### 7) 替换进度条
 
-如果你不喜欢默认的进度条，你可以使用 -a 选项来替换进度条。
+如果你不喜欢默认的进度条，你可以使用 **-a** 选项来替换进度条。
 
 ```
 # axel -a https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
@@ -300,7 +299,7 @@ Downloaded 21.6 megabytes in 4 seconds. (5062.32 KB/s)
 
 #### 8) 阅读更多关于 axel
 
-如果你想要了解更多关于 axel 的内容，只需要进入它的手册。
+如果你想要了解更多关于 axel 的选项，只需要进入它的手册。
 
 ```
 # man axel
