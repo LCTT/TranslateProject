@@ -1,6 +1,7 @@
+ucasFL translating
 5 Vim Tips and Tricks for Experienced Users
 ============================================================
- ![](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2014/08/vim-tips-tricks-featured.jpg "5 Vim Tips and Tricks for Experienced Userss") 
+ ![](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2014/08/vim-tips-tricks-featured.jpg "5 Vim Tips and Tricks for Experienced Userss")
 
 This article is part of the [VIM User Guide][12] series:
 
@@ -30,7 +31,7 @@ Once inside the editor, use the `:next` or `:n` command to move to the next 
 
 At any point if it is required to list down currently opened files, use the `:ls` command. See the screen shot shown below.
 
- ![vim-ls](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2014/08/vim-ls.png "vim-ls") 
+ ![vim-ls](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2014/08/vim-ls.png "vim-ls")
 
 Note that “%a” represents the file in the current active window, while “#” represents the file in the previous active window.
 
@@ -66,7 +67,7 @@ Open one of the two files and then split the Vim window to open the other file. 
 
 will split the window and open “test.c”.
 
- ![vim-split](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2014/08/vim-split.png "vim-split") 
+ ![vim-split](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2014/08/vim-split.png "vim-split")
 
 Observe that the command split the Vim window horizontally. In case you want to split the window vertically, you can do so using the `vsplit` command. Once both the files are opened, copy the stuff from one file, press “Ctrl + w” to switch the control to another file, and paste.
 
@@ -74,7 +75,7 @@ Observe that the command split the Vim window horizontally. In case you want to 
 
 There are times when you realize that a file is read-only only after making a bunch of changes to it.
 
- ![vim-sudo](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2014/08/vim-sudo.png "vim-sudo") 
+ ![vim-sudo](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2014/08/vim-sudo.png "vim-sudo")
 
 Although closing the file and reopening it with the required permissions is a way out, it’s a sheer waste of time if you’ve already made a lot of changes, as all of them will be lost during the process. Vim provides you a way to handle this situation by allowing you to change the file permissions from within the editor before you save it. The command for this is:
 
@@ -90,7 +91,7 @@ The command will ask you for the password, just like `sudo` does on the comman
 
 Most of the experienced programmers work on Vim with auto indentation enabled. Although it’s a time-saving practice, it creates a problem while pasting an already indented code. For example, this is what happened when I pasted an already indented code into a file opened in Vim editor with auto indent on.
 
- ![vim-indentation](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2014/08/vim-indentation.png "vim-indentation") 
+ ![vim-indentation](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2014/08/vim-indentation.png "vim-indentation")
 
 The solution to this problem is the `pastetoggle` option. Add the line
 
