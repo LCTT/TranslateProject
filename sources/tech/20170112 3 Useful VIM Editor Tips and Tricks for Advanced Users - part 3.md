@@ -1,7 +1,8 @@
+ucasFL translating
 3 Useful VIM Editor Tips and Tricks for Advanced Users
 ============================================================
 
-![](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2017/01/vim-featured.jpg "3 Useful VIM Editor Tips and Tricks for Advanced Userss") 
+![](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2017/01/vim-featured.jpg "3 Useful VIM Editor Tips and Tricks for Advanced Userss")
 
 This article is part of the [VIM User Guide][12] series:
 
@@ -52,7 +53,7 @@ Thankfully, with Vim you can just write some initial letters of the variable. Wi
 
 Here’s this feature in action.
 
- ![vim-keyword-completion1](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2017/01/vim-keyword-completion1.jpg "vim-keyword-completion1") 
+ ![vim-keyword-completion1](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2017/01/vim-keyword-completion1.jpg "vim-keyword-completion1")
 
 As is clear from the screenshot above, the list that pops up also contains words from other source files. For more information on this feature, head [here][18].
 
