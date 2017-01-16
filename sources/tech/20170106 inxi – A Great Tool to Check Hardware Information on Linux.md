@@ -1,3 +1,4 @@
+**translating by [erlinux](https://github.com/erlinux)**
 inxi – A Great Tool to Check Hardware Information on Linux
 ============================================================
 

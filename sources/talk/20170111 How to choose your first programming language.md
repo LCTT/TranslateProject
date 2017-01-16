@@ -1,3 +1,6 @@
+
+translating by ypingcn
+
 How to choose your first programming language
 ============================================================[
 
