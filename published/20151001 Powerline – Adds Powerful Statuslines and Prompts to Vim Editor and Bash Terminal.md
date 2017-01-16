@@ -1,49 +1,44 @@
+Powerline：给 Vim 和 Bash 提供更棒的状态行和提示信息
+=================================================
 
-beyondworld 翻译中
-
-
-Powerline – Adds Powerful Statuslines and Prompts to Vim Editor and Bash Terminal
-============================================================
-
-Powerline is a great statusline plugin for [Vim editor][1], which is developed in Python and provides statuslines and prompts for many other applications such as bash, zsh, tmux and many more.
+Powerline 是一个极棒的 [Vim 编辑器][1]的状态行插件，这个插件是使用 Python 开发的，主要用于显示状态行和提示信息，适用于很多软件，比如 bash、zsh、tmux 等等。
 
 [
  ![Install Powerline Statuslines in Linux](http://www.tecmint.com/wp-content/uploads/2015/10/Install-Powerline-Statuslines-in-Linux-620x297.png) 
 ][2]
 
-Add Power to Linux Terminal with Powerline Tool
+*Powerline 使 Linux 终端更具威力*
 
-#### Features
+### 特色
 
-1.  It is written in Python, which makes it extensible and feature rich.
-2.  Stable and testable code base, which works well with Python 2.6+ and Python 3.
-3.  It also supports prompts and statuslines in several Linux utilities and tools.
-4.  It has configurations and decorator colors developed using JSON.
-5.  Fast and lightweight, with daemon support, which provides even more better performance.
+1. 使用 python 编写，使其更具扩展性且功能丰富
+2. 稳定易测的代码库，兼容 python 2.6+ 和 python 3
+3. 支持多种 Linux 功能及工具的提示和状态栏
+4. 通过 JSON 保存配置和颜色方案
+5. 快速、轻量级，具有后台守护进程支持，提供更佳的性能
 
-#### Powerline Screenshots
+### Powerline 效果截图
 
 [
  ![Powerline Vim Statuslines](http://www.tecmint.com/wp-content/uploads/2015/10/Powerline-Vim-Statuslines.png) 
 ][3]
 
-Powerline Vim Statuslines
+*Vim 中 Powerline 状态行效果*
 
-In this article, I will show you how to install Powerline and Powerline fonts and how to use with Bash and Vimunder RedHat and Debian based systems.
+在本文中，我会介绍如何安装 Powerline 及其字体，以及如何在 RedHat 和 Debian 类的系统中使 Bash 和 Vim 支持 Powerline。
 
-### Step 1: Installing Generic Requirements for Powerline
+### 第一步：准备好安装 Powerline 所需的软件
 
-Due to a naming conflict with some other unrelated projects, powerline program is available on PyPI (Python Package Index) under the package name as powerline-status.
+由于和其它无关项目之间存在命名冲突，因此 powerline 只能放在 PyPI（Python Package Index）中的 `powerline-status` 包下.
 
-To install packages from PyPI, we need a ‘pip‘ (package management tool for installing Python packages). So, let’s first install pip tool under our Linux systems.
+为了从 PyPI 中安装该包，需要先准备好 `pip`（该工具专门用于 Python 包的管理）工具。所以首先要在 Linux 系统下安装好 `pip` 工具。
 
-#### Install Pip on Debian, Ubuntu and Linux Mint
+#### 在 Debian、Ubuntu 和 Linux Mint 中安装 pip
 
 ```
 # apt-get install python-pip
 ```
-
-##### Sample Output
+**示例输出：**
 
 ```
 Reading package lists... Done
@@ -66,16 +61,16 @@ Processing triggers for man-db (2.6.7.1-1ubuntu1) ...
 Setting up python-pip (1.5.4-1ubuntu3) ...
 ```
 
-#### Install Pip on CentOS, RHEL and Fedora
+#### 在 CentOS、RHEL 和 Fedora 中安装 pip
 
-Under Fedora-based systems, you need to first [enable epel-repository][4] and then install pip package as shown.
+在 Fedora 类系统中，需要先打开 [epel 仓库][4]，然后按照如下方法安装 pip 包。
 
 ```
 # yum install python-pip          
-# dnf install python-pip                     [On Fedora 22+ versions]           
+# dnf install python-pip                     [Fedora 22+ 以上]           
 ```
 
-##### Sample Output
+**示例输出：**
 
 ```
 Installing:
@@ -99,9 +94,9 @@ python-pip.noarch 0:7.1.0-1.el7
 Complete!
 ```
 
-### Step 2: Installing Powerline Tool in Linux
+### 第二步：在 Linux 中安装 Powerline
 
-Now it’s’ time to install Powerline latest development version from the Git repository. For this, your system must have git package installed in order to fetch the packages from Git.
+现在可以从 Git 仓库中安装 Powerline 的最新开发版。在此之前系统需要安装好 Git 工具以便可以从仓库拉下代码。
 
 ```
 # apt-get install git
@@ -109,16 +104,16 @@ Now it’s’ time to install Powerline latest development version from the G
 # dnf install git
 ```
 
-Next you can install Powerline with the help of pip command as shown.
+然后你可以通过 `pip` 命令安装 Powerline。
 
 ```
 # pip install git+git://github.com/Lokaltog/powerline
 ```
 
-##### Sample Output
+**示例输出：**
 
 ```
- Cloning git://github.com/Lokaltog/powerline to /tmp/pip-WAlznH-build
+Cloning git://github.com/Lokaltog/powerline to /tmp/pip-WAlznH-build
 Running setup.py (path:/tmp/pip-WAlznH-build/setup.py) egg_info for package from git+git://github.com/Lokaltog/powerline
 warning: no previously-included files matching '*.pyc' found under directory 'powerline/bindings'
 warning: no previously-included files matching '*.pyo' found under directory 'powerline/bindings'
@@ -141,50 +136,50 @@ Successfully installed powerline-status
 Cleaning up...
 ```
 
-### Step 3: Installing Powerline Fonts in Linux
+### 第三步：在 Linux 中安装 Powerline 的字体
 
-Powerline uses special glyphs to show special arrow effect and symbols for developers. For this, you must have a symbol font or a patched font installed on your systems.
+Powerline 使用特殊的符号来为开发者显示特殊的箭头效果和符号内容。因此你的系统中必须要有符号字体或者补丁过的字体。
 
-Download the most recent version of the symbol font and fontconfig configuration file using following [wget command][5].
+通过下面的 [wget][5] 命令下载最新的系统字体及字体配置文件。
 
 ```
 # wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
 # wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
 ```
 
-Then you need to move the font to your fonts directory, /usr/share/fonts/ or /usr/local/share/fonts as follows or you can get the valid font paths by using command `xset q`.
+然后你将下载的字体放到字体目录下 `/usr/share/fonts` 或者 `/usr/local/share/fonts`，或者你可以通过 `xset q` 命令找到一个有效的字体目录。
 
 ```
 # mv PowerlineSymbols.otf /usr/share/fonts/
 ```
 
-Next, you need to update your system’s font cache as follows.
+接下来你需要通过如下命令更新你系统的字体缓存。
 
 ```
 # fc-cache -vf /usr/share/fonts/
 ```
 
-Now install the fontconfig file.
+其次安装字体配置文件。
 
 ```
 # mv 10-powerline-symbols.conf /etc/fonts/conf.d/
 ```
 
-Note: If custom symbols doesn’t appear, then try to close all terminal sessions and restart X window for the changes to take effect.
+注意：如果相应的符号没有出现，可以尝试关闭终端会话并重启 X window，这样就会生效了。
 
-### Step 4: Setting Powerline for Bash Shell and Vim Statuslines
+### 第四步：给 Bash Shell 和 Vim 状态行设置 Powerline
 
-In this section we shall look at configuring Powerline for bash shell and vim editor. First make your terminal to support 256color by adding the following line to ~/.bashrc file as follows.
+在这一节将介绍 bash shell 和 vim 编辑器中关于 Powerline 的配置。首先通过在 `~/.bashrc` 中添加如下内容以便设置终端为 256 色。
 
 ```
-export TERM=”screen-256color” 
+export TERM="screen-256color"
 ```
 
-#### Enable Powerline on Bash Shell
+#### 打开 Bash Shell 中的 Powerline
 
-To enable Powerline in bash shell by default, you need to add the following snippet to your ~/.bashrc file.
+如果希望在 bash shell 中默认打开 Powerline，可以在 `~/.bashrc` 中添加如下内容。
 
-First get the location of installed powerline using following command.
+首先通过如下命令获取 powerline 的安装位置。
 
 ```
 # pip show powerline-status
@@ -194,7 +189,7 @@ Location: /usr/local/lib/python2.7/dist-packages
 Requires: 
 ```
 
-Once you know the actual location of powerline, make sure to replace the location in the below line as per your system suggested.
+一旦找到 powerline 的具体位置后，根据你系统的情况替换到下列行中的 `/usr/local/lib/python2.7/dist-packages` 对应的位置。
 
 ```
 powerline-daemon -q
@@ -203,35 +198,35 @@ POWERLINE_BASH_SELECT=1
 . /usr/local/lib/python2.7/dist-packages/powerline/bindings/bash/powerline.sh
 ```
 
-Now try to logout and login back again, you will see powerline statuesline as shown below.
+然后退出后重新登录，现在 powerline 的状态行应该如下显示了。
 
 [
  ![Bash Powerline Statuslines](http://www.tecmint.com/wp-content/uploads/2015/10/Bash-Powerline-Statuslines.gif) 
 ][6]
 
-Try changing or switching to different directories and keep a eye on “breadcrumb” prompt changes to show your current location.
+现在切换目录并注意显示你当前路径的面包屑导航提示的变化。
 
-You will also be able to watch pending background jobs and if powerline is installed on a remote Linux machine, you can notice that the prompt adds the hostname when you connect via SSH.
+如果远程 Linux 服务器上安装了 powerline，你能看到后台挂起的任务，当你用 ssh 登录上去时，会看到该提示增加了主机名。
 
-#### Enable Powerline for Vim
+#### 在 Vim 中打开 Powerline
 
-If vim is your favorite editor, luckily there is a powerful plugin for vim, too. To enable this plugin, add these lines to `~/.vimrc` file.
+如果你喜欢使用 vim，正好有一个 vim 的强力插件。可以在 `~/.vimrc` 中添加如下内容打开该插件（LCTT 译注：注意同样需要根据你的系统情况修改路径）。
 
 ```
-set  rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
 set laststatus=2
 set t_Co=256
 ```
 
-Now you can launch vim and see a spiffy new status line:
+然后你打开 vim 后会看到一个新的状态行:
 
 [
  ![Vim Powerline Statuslines](http://www.tecmint.com/wp-content/uploads/2015/10/Vim-Powerline-Statuslines.gif) 
 ][7]
 
-### Summary
+### 总结
 
-Powerline helps to set colorful and beautiful statuslines and prompts in several applications, good for coding environments. I hope you find this guide helpful and remember to post a comment if you need any help or have additional ideas.
+Powerline 可以在某些软件中提供颜色鲜艳、很优美的状态行及提示内容，这对编程环境有利。希望这篇指南对您有帮助，如果您需要帮助或者有任何好的想法，请留言给我。
 
 --------------------------------------------------------------------------------
 
@@ -239,15 +234,15 @@ Powerline helps to set colorful and beautiful statuslines and prompts in severa
 
 ![](http://1.gravatar.com/avatar/7badddbc53297b2e8ed7011cf45df0c0?s=128&d=blank&r=g)
 
-I am Ravi Saive, creator of TecMint. A Computer Geek and Linux Guru who loves to share tricks and tips on Internet. Most Of My Servers runs on Open Source Platform called Linux. Follow Me: Twitter, Facebook and Google+
+我是Ravi Saive，TecMint的作者。一个喜欢分享诀窍和想法的电脑极客及Linux专家。我的大部分服务都运行在开源平台Linux中。关注我的Twitter，Facebook和Google+。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/powerline-adds-powerful-statuslines-and-prompts-to-vim-and-bash/
 
 作者：[Ravi Saive][a]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[beyondworld](https://github.com/beyondworld)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -255,7 +250,7 @@ via: http://www.tecmint.com/powerline-adds-powerful-statuslines-and-prompts-to-v
 [1]:http://www.tecmint.com/vi-editor-usage/
 [2]:http://www.tecmint.com/wp-content/uploads/2015/10/Install-Powerline-Statuslines-in-Linux.png
 [3]:http://www.tecmint.com/wp-content/uploads/2015/10/Powerline-Vim-Statuslines.png
-[4]:http://www.tecmint.com/how-to-enable-epel-repository-for-rhel-centos-6-5/
+[4]:https://linux.cn/article-2324-1.html
 [5]:http://www.tecmint.com/10-wget-command-examples-in-linux/
 [6]:http://www.tecmint.com/wp-content/uploads/2015/10/Bash-Powerline-Statuslines.gif
 [7]:http://www.tecmint.com/wp-content/uploads/2015/10/Vim-Powerline-Statuslines.gif

@@ -1,72 +1,72 @@
-How to change the Linux I/O scheduler to fit your needs
+如何更改Linux I/O 调度器来满足你的需求
 ============================================================
 
-In order to eek out as much performance from Linux servers as possible, learn how to change your I/O scheduler to meet your needs.
-
+为了从 Linux 服务器尽可能多地榨取性能，请了解如何更改 I/O 调度器以满足你的需求。
 
  ![](http://tr1.cbsistatic.com/hub/i/r/2016/05/04/f765c3c7-ee08-4f3a-876a-66137ad4e6df/resize/770x/131c6931386ecf37104e8ada8d01e903/hackershero.jpg) 
 
 
-The Linux I/O scheduler controls the way the kernel commits read and writes to disk. Since the 2.6 kernel, administrators have been able to change the scheduler, so they can customize their platforms to perfectly suit their needs.
+Linux I/O 调度器控制内核提交读取和写入磁盘的方式。自从 2.6 内核以来，管理员已经能够更改调度器，所以他们可以自定义他们的平台以完全适合他们的需要。
 
-There are three schedulers to choose from, and each one has its benefits. Those schedulers are:
+有三个调度器可供选择，每个调度器都有其优点。这些调度器是：
 
-*   **CFQ (cfq):** the default scheduler for many Linux distributions; it places synchronous requests, submitted by processes, into a number of per-process queues and then allocates timeslices for each of the queues to access the disk.
-*   **Noop scheduler (noop):** the simplest I/O scheduler for the Linux kernel based on the First In First Out (FIFO) queue concept. This scheduler is best suited for SSDs.
-*   **Deadline scheduler (deadline):** attempts to guarantee a start service time for a request.
+*   **CFQ（cfq）：** 许多 Linux 发行版的默认调度器;它将由进程提交的同步请求放到多个进程队列中，然后为每个队列分配时间片以访问磁盘。
+*   **Noop调度器（noop）：** 基于先入先出（FIFO）队列概念的 Linux 内核最简单的 I/O 调度器。此调度程序最适合于SSD。
+*   **截止时间调度器（deadline）：** 尝试保证请求的开始服务时间。
 
 
-When you want to squeeze the most performance out of your Linux-powered machines, this might be one of the areas you turn. Fortunately, it is quite simple to change the scheduler that powers I/O. Let me show you how.
+当你想要利用 Linux 驱动的机器来获得最佳性能时，这可能是你所要做的事情之一。幸运的是，更改 I/O 调度器非常简单。让我告诉你怎么做。
 
-### Finding out which scheduler you have
+### 找出你有的调度器
 
 The first thing you need to do is find out which scheduler is handling I/O on your system. This is done from the command line, and you must know the name of your disk. For simplicity sake, I'll assume the disk is question is sda. With that information in hand, open a terminal window and issue the following command:
+你需要做的第一件事是找出哪个调度器正在处理系统上的 I/O。这是从命令行完成的，你必须知道磁盘的名称。为简单起见，我假设磁盘是 sda。使用该信息，打开终端窗口并输入以下命令：
 
 ```
 cat /sys/block/sda/queue/scheduler
 ```
 
-The results of the command will display the current running scheduler (**Figure A**).
+该命令的结果将显示当前运行的调度程序（**图 A**）。
 
-**Figure A**
+**图 A**
 
  ![Figure A](http://tr3.cbsistatic.com/hub/i/2017/01/03/abba7f22-3252-4b76-91c0-bb15630fd42c/6b4a6d971202b70926b2d991e6c9afe3/schedulera.jpg) 
 
-Elementary OS Loki running the noop scheduler.
+Elementary OS Loki 运行 noop 调度器。
 
-### Changing your scheduler
+### 更改你的调度器
 
-You can change your scheduler in two ways: on the fly or persistently. If you change the scheduler on the fly, it can revert to the default scheduler (after a reboot). You might want to do an on the fly change first, to see which scheduler brings about the best performance for your needs.
+你可以通过两种方式更改你的调度器：即时或永久。如果你随时更改调度器，它可以恢复到默认调度器（重启后）。你可能希望首先进行即时更改，以查看哪个调度器能为你的需求带来最佳性能。
 
-Say you want to change to the noop scheduler on the fly. To do this, you would issue the following command:
+说到你要即时改到 noop 调度器。 为此，输入以下命令：
 
 ```
 sudo echo noop > /sys/block/hda/queue/scheduler
 ```
 
-You can change _noop_ to _cfq_, or _deadline_.
+你可以将 _noop_ 更改为 _cfq_  或 _deadline_。
 
-This change can be done without having to reboot your machine. Once changed, the I/O scheduler will switch and (hopefully) you'll see a performance increase (again, depending upon your needs).
+此更改可以在不重新启动计算机的情况下完成。 一旦更改，I/O 调度器将会切换，（希望）你能看到性能提高（再说一次，根据你的需要而定）。
 
-If you want to change the scheduler to be persistent, you must do this within the GRUB configuration file. To do that, issue the command sudo nano /etc/default/grub and then change the line:
+如果要将调度器更改为永久，则必须在 GRUB 配置文件中执行此操作。 为此，请输入 sudo nano /etc/default/grub，然后修改下面的行：
 
 ```
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
 ```
 
-to
+到
 
 ```
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash elevator=noop"
 ```
 
-Again, you can change noop to whatever scheduler you need. If you make this change after you do an on the fly change, you won't have to do a reboot to have the new scheduler take effect.
+同样，你可以改变 noop 到任何你需要的调度器。如果你用的是即时修改，则不必重新启动以使新调度器生效。
 
-That's all there is to it.
+这些就是修改调度器的方法了。
 
-### Choose wisely
+### 做出明智的选择
 
-You should do research to find out what scheduler is best suited for your particular situation. To find out more about each scheduler, check out these Wiki pages: [CFS][7], [Noop][8], and [Deadline][9].
+你应该做研究，找出什么调度器最适合你的特殊情况。要了解每个调度器的更多信息，请查看这些 Wiki 页面：[CFS][7]、[Noop][8]和 [Deadline][9]。
 
 
 --------------------------------------------------------------------------------
@@ -74,7 +74,7 @@ You should do research to find out what scheduler is best suited for your partic
 via: http://www.techrepublic.com/article/how-to-change-the-linux-io-scheduler-to-fit-your-needs/
 
 作者：[Jack Wallen ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

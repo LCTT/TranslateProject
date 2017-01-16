@@ -1,9 +1,10 @@
+ucasFL translating
 Top 10 open source projects of 2016
 ============================================================
 
 ### In our annual list of the year's top open source projects, we look back at popular projects our writers covered in 2016, plus favorites our Community Moderators picked.
 
- ![Top 10 open source projects of 2016](https://opensource.com/sites/default/files/styles/image-full-size/public/images/law/bowling-10-ten-520_cc.png?itok=Jd1FYLWt "Top 10 open source projects of 2016") 
+ ![Top 10 open source projects of 2016](https://opensource.com/sites/default/files/styles/image-full-size/public/images/law/bowling-10-ten-520_cc.png?itok=Jd1FYLWt "Top 10 open source projects of 2016")
 
 Image by : [George Eastman House][1] and [Internet Archive Book Images][2]. Modified by Opensource.com. CC BY-SA 4.0
 

@@ -4,35 +4,47 @@
 ### 回顾年度最热门的 AI 项目语言、新语言和更多编程趋势。
 
  ![Top programming trends in 2016](https://opensource.com/sites/default/files/styles/image-full-size/public/u23316/climb-top-bridge-yearbook_red.png?itok=YITYmpoR "Top programming trends in 2016") 
-图片提供： 
 
-[Museum of Photographic Arts][6]. 由 Opensource.com 修改。 CC BY-SA 4.0
+图片提供：[Museum of Photographic Arts][6]。由 Opensource.com 修改。 CC BY-SA 4.0
 
-技术在不断前进 - 可能不总是向前，但总是在变动。即使对于那些关注趋势及其对程序员的影响的人来说，确切地了解技术的方向也是一个挑战。当我与我的同事，Kelsey Hightower 和 Scott Hanselman，和我们的非常棒的编程委员会，以塑造来年的[OSCON] [7]（O'Reilly 开放源码公约 ），我清楚地看到开源编程趋势总是出现在秋天。我们获得的建议和关注特定主题的数字被证明是开源世界热门趋势的良好指标。以下是我们在 2016 年看到的顶级编程趋势的概述。
+技术在不断前进 - 可能不总是向前，但总是在变动。即使对于那些关注趋势及其对程序员的影响的人来说，确切地了解技术的方向也是一个挑战。我们总是在秋天才能够清晰地看出当年开源编程趋势，那是我与我的同事，Kelsey Hightower 和 Scott Hanselman，以及我们非常棒的编程委员会，筹备来年的 [OSCON] [7]（O'Reilly 开源大会）的时候。我们获得的建议和对特定主题的关注数量是开源世界热门趋势的良好指标。以下是我们在 2016 年看到的顶级编程趋势的概述。
 
 ### 语言驱动 AI
 
-在 20 世纪 90 年代的人工智能冬季，人工智能随着计算能力的提升再次出现，它一直影响我们如何构建软件。机器学习、深度学习、自然语言处理和汽车语音识别覆盖了世界各地 - 从 GitHub 的项目和工作岗位，到新公司成立背后的原因，以及清除我们杂乱的台面上的空间（嘿，Alexa！）。是的，即使像 OSCON 这样的会议都处处提及 AI。虽然计算能力的可用性已经铺平了道路，所有关于 AI 的开源已经引起了行业广泛开放的创新和竞争。谷歌的 [TensorFlow][8]、[OpenAI][9] 和 [Apache Spark][10]领导的强大框架，但也有较小的球员，如 [Nervana][11] 的 [Neon][12] 和 [Theano][13]。
+走出 20 世纪 90 年代的人工智能冬季，人工智能随着它所依赖的计算能力的提升再次出现，影响着我们如何构建软件。机器学习、深度学习、自然语言处理和自动语音识别覆盖了世界各地 - 从 GitHub 的项目和工作岗位，到新公司成立背后的原因，以及清除我们杂乱的台面（Hey, Alexa!）。是的，即使像 OSCON 这样的会议都处处提及 <ruby>“万物皆智能”<rt>all things AI</rt></ruby> 。虽然计算能力的提升已经铺平了道路，所有关于 all things AI 的开源已经引起了行业广泛开放的创新和竞争。谷歌的 [TensorFlow][8]、[OpenAI][9] 和 [Apache Spark][10] 使用强大框架成为行业领导者，但也有较小的参与者，如 [Nervana][11] 的 [Neon][12] 和 [Theano][13]。
 
-AI 的兴起如何影响软件开发者的前景？好了，现在是了解 Python 的好时机 - 它的敏捷性和流行性与数据工程师和科学家使它成为最流行的AI编程语言，其次是R、Java和Scala。
+译者注：Alexa是预装在亚马逊 Echo 内的个人虚拟助手，可以接收及相应语音命令，Alexa 可以被看成是亚马逊版的 Siri 语音助手。用户只需要说一声“Alexa”，就可以创建各种任务，还可以和各种智能家居设备进行交互。
+
+AI 的兴起如何影响软件开发者的前景？好，现在是了解 Python 的好时机 - 它对数据工程师和科学家的敏捷性和流行性使它成为最流行的 AI 编程语言，其次是 R、Java 和 Scala。
 
 ### 容器和 Go 的结合就像花生、黄油和果冻
 
-[Go 1.0 发布][14]于 2012 年 3 月。紧接着 [Docker][15] 在一年后发布，[Kubernetes][16] 在另外一年后发布。总之，Go 并不是如我们所知的那样专为基础设施的未来而设计的，但 Go 似乎是为了填充编程世界的一个主要的空洞。对于一个高度联网的世界，一个必须拥有一流并发性的世界而言，Go 是以 Java 或 C++ 永远不会存在的方式专门写的。如果你在做这些事或者类似的事，你应该至少在 Go 世界的尖端，因为它正在发展中，它将会被使用多年，并成为许多程序的骨干。
+[Go 1.0 发布][14]于 2012 年 3 月。紧接着 [Docker][15] 在一年后发布，[Kubernetes][16] 在另外一年后发布。总之，Go 并不是如我们所知的那样专为基础设施的未来而设计的，但 Go 似乎是为了填充编程世界的一个主要的空洞。对于一个高度联网的世界，一个必须拥有一流并发性的世界而言，Go 是以 Java 或 C++ 永远不会的方式专门写的。如果你在做运维或者类似的事，你应该至少稍微了解下 Go ，因为它正在发展中，它将会被使用多年，并成为许多程序的骨干。
 
 ### Swift 超越了 Apple 的生态系统
 
-Swift 是[ Apple 在 2015 年发布不就之后就开源的][17]。Swift 已经成为 iOS 和 Mac OS X 开发人员的热门话题。这种语言很容易理解因此很快流行起来，并且它比它要取代的语言 - Objective-C 和 C++ 赢得了一个[更安全的声誉][18]。在[ JavaScript 框架][19]和其他新语言的世界中 Swift 的成功如何成功仍有待观察，但如果它继续获得苹果忠实用户的欢迎，Swift 将有机会成为伟大的网络世界中有望成功的竞争者和超越者。
+Swift 是[ Apple 在 2015 年启动该编程语言不久之后就开源的][17]。Swift 已经成为 iOS 和 Mac OS X 开发人员的热门话题。这种语言很容易理解，因此很快流行起来，并且它比它要取代的语言 - Objective-C 和 C++ 赢得了一个[更安全的声誉][18]。在[ JavaScript 框架][19]和其他新语言的世界中，Swift 是否成功仍有待观察，但如果它继续获得苹果忠实用户的欢迎，Swift 将有机会成为伟大的网络世界中有望成功的竞争者和超越者。
+
 
 ### Java 8 vs 使用 JVM 的函数式语言
 
 Java 8 的函数式能力（即引入 Lambdas ）的出现使得 JVM 语言（如 Scala 和 Clojure）上榜单了。最近，很大程度上由于 Apache Spark 的增长使得 Scala 有一点小爆发。因为长期的和新的开发人员一起都来关注 Java 8 所带来的东西，至少在那一刻，Scala 和 Clojure 似乎被搁置。Java 现在能够解决并发和大数据关心的事，这些其他编程语言专门为满足这些要求已经做了多年。在 2017 年，OSCON 几乎缺乏 Scala 和 Clojure 的提案，不是因为设计，但似乎潜在发言者没有什么兴趣提交提案。
 
+The advent of Java 8's functional capability—namely the introduction of Lambdas—has put JVM languages like Scala and Clojure on notice. Recently, due in large part to the growth of Apache Spark, Scala was having a bit of a growth spurt. Now both Scala and Clojure are seeming to be set aside, at least for the moment, as long-time and new developers alike take a hard look at what Java 8 brings to the table. Java is now able to address concurrency and big data concerns that other programming languages specifically built to address these requirements have been doing for years. In 2017, OSCON is nearly devoid of both Scala and Clojure, not by design, but by seemingly little interest from potential speakers who submitted proposals.
 ### 新兴语言
 
 和往常一样，世上总是有更多的新兴语言，旨在把事情做得更好，它们可以做到从前的语言出现时没有的需求，或者开始只是疯狂思想，最终改变了我们对编程的看法。今年有五种语言即将进入大时代：Rust、Elixir、Elm、Kotlin和 Perl 6。
 
 这 5 个会给行业带来什么？
+And as usual, there are always more up and coming languages on the horizon intended to do something better than those that came before them, that can answer needs that weren't around when previous languages were born, or that simply start out as a crazy idea and end up changing how we think about programming. This year five languages are on the verge of making it into the big time: Rust, Elixir, Elm, Kotlin, and Perl 6.
+
+What do the hot five bring to the industry?
+
+Rust: Systems programming at speed and more than a modicum of safety.
+Elixir: Functional, dynamic, and fault-tolerant for those larger and larger-scale apps.
+Elm: More functional fun that plays with JavaScript, leaning increasingly toward being a pleasure to use.
+Kotlin: This one is for the Java and JVM folks—statically typed, safe, and did I mention Java compatible?
+Perl 6: It lives! Perl 6 happens to be a new language that is expressive and feature-rich for the win.
 
 * [Rust][1]：兼顾速度和一定安全的系统编程语言。
 * [Elixir][2]：函数式、动态和容错，适用于那些规模越来越大的应用程序。
@@ -56,7 +68,7 @@ via: https://opensource.com/article/16/12/yearbook-top-programming-trends-2016
 
 作者：[Rachel Roumeliotis][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
