@@ -1,3 +1,5 @@
+translating---geekpi
+
 Learn The Basics of How Linux I/O (Input/Output) Redirection Works
 ============================================================
 
