@@ -1,15 +1,15 @@
-在 Linux 系统下使用 PhotoRec 工具来恢复已删除或丢失的文件
+在 Linux 系统下使用 PhotoRec & TestDisk 工具来恢复文件
 ============================================================
 
-当你在系统中有意或无意地使用 'shift + delete‘ 组合键或者删除选项或是清空回收站的方式来删除一个文件时，该文件的内容并没有从硬盘（或是其它存储设备）上直接销毁。
+当你在系统中有意或无意地使用 `shift + delete` 组合键、删除选项，或是清空回收站的方式来删除一个文件时，该文件的内容并没有从硬盘（或是其它存储设备）上直接销毁。
 
 它仅仅是从系统的目录结构中被移除，然后你在删除文件的目录下就看不到该文件了，但是这个文件仍然存在你磁盘中的某个位置上。
 
 如果你有一个合适的工具和相关的专业知识，你就可以[从电脑中恢复已丢失的文件][1]。然而，随着你存储的文件越来越多，删除的文件将会被覆盖，你可能只能恢复最近删除的文件了。
 
-在这篇文章中，我们将阐明如何在 Linux 系统中使用 **Testdisk** 来恢复硬盘上已删除或丢失的文件，它是非常优秀的修复工具，随一款免费的叫做 **PhotoRec** 的工具发布。
+在这篇文章中，我们将阐明如何在 Linux 系统中使用 **TestDisk** 来恢复硬盘上已删除或丢失的文件，它是非常优秀的修复工具，随一款免费的叫做 **PhotoRec** 的工具发布。
 
-**PhoteRec** 工具用于从存储介质比如硬盘，数码相机和 cdrom 设备中恢复丢失的文件。
+**PhoteRec** 工具用于从存储介质比如硬盘，数码相机和 cdrom 设备中恢复丢失的文件。（LCTT 译注：PhotoRec 的意思是 Photo Recovery，不是 Photo Recorder。）
 
 ### 在 Linux 系统中安装 TestDisk（PhotoRec）
 
@@ -46,7 +46,7 @@ $ sudo photorec /dev/sda3
 
 *Linux 系统 PhotoRec 数据恢复工具*
 
-使用左右箭头选择菜单选项，按 Enter 键确认。要继续恢复操作，选择 `[Proceed]` 并单击 Enter。
+使用左右箭头选择菜单选项，按回车键确认。要继续恢复操作，选择 `[Proceed]` 并单击 Enter。
 
 你将看到下面的界面：
 
@@ -64,9 +64,9 @@ $ sudo photorec /dev/sda3
 
 *Linux  系统文件恢复选项*
 
-按 `Q`  返回，在下图界面，你可以指定你想要查询并恢复的文件扩展名。因此，选择 `[File Opt]`，按 Enter 键确认。
+按 `Q`  返回，在下图界面，你可以指定你想要查询并恢复的文件扩展名。因此，选择 `[File Opt]`，按回车键确认。
 
-按 `s` 禁用或启用所有文件扩展名，如果你已经停止所有文件扩展，只需要使用向右箭头选择你想要恢复的文件类型即可（或者按向左箭头取消选择）。
+按 `s` 来选择或取消选择所有的文件扩展名，如果你已经取消选择了所有的文件扩展名，只需要使用向右箭头选择你想要恢复的文件类型即可（或者按向左箭头取消选择）。
 
 例如，我想恢复所有系统中丢失的 `.mov` 类型的文件：
 
@@ -76,7 +76,7 @@ $ sudo photorec /dev/sda3
 
 *指定恢复文件类型*
 
-按 `b` 键保存设置，之后你应该看到如下图所示信息。单击 Enter 键返回（或者按 `Q` 键），再按 `Q` 键返回到主界面。
+按 `b` 键保存设置，之后你应该看到如下图所示信息。单击回车键返回（或者按 `Q` 键），再按 `Q` 键返回到主界面。
 
 [
  ![Save File Recovery Settings](http://www.tecmint.com/wp-content/uploads/2017/01/Save-File-Recovery-Settings.png) 
@@ -84,7 +84,7 @@ $ sudo photorec /dev/sda3
 
 *保存文件恢复设置*
 
-现在选择 `[Search]` 开始文件恢复。在下图中，选择存储文件分区的文件系统类型，然后按 Enter 键。
+现在选择 `[Search]` 开始文件恢复。在下图中，选择存储文件分区的文件系统类型，然后按回车键。
 
 [
  ![Select Filesystem to Recover Deleted Files](http://www.tecmint.com/wp-content/uploads/2017/01/Select-Filesystem-to-Recover-Files.png) 
@@ -92,7 +92,7 @@ $ sudo photorec /dev/sda3
 
 *选择文件系统类型来恢复删除的文件*
 
-下一步，如下图所示，选择是仅对空闲空间还是整个分区进行分析。注意选择整个分区将会让操作过程变得更长更慢。选择合适的选项后，按 Enter 键继续。
+下一步，如下图所示，选择是仅对空闲空间还是整个分区进行分析。注意选择整个分区将会让操作过程变得更长更慢。选择合适的选项后，按回车键继续。
 
 [
  ![Choose Filesystem to Analyze](http://www.tecmint.com/wp-content/uploads/2017/01/Select-Filesystem-to-Analyze.png) 
@@ -110,7 +110,7 @@ $ sudo photorec /dev/sda3
 
 *选择要保存恢复文件的目录*
 
-下图显示正在被恢复的指定类型的已删除文件。你可以按 Enter 键来停止操作。
+下图显示正在被恢复的指定类型的已删除文件。你可以按回车键来停止操作。
 
 **注意**：在恢复的过程中，你的系统会变得很慢，很可能会卡住一段时间，请耐心等待直至恢复完成。
 
@@ -161,7 +161,7 @@ via: http://www.tecmint.com/photorec-recover-deleted-lost-files-in-linux/
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:http://www.tecmint.com/author/aaronkili/
-[1]:http://www.tecmint.com/recover-deleted-file-in-linux/
+[1]:https://linux.cn/article-7974-1.html
 [2]:http://www.cgsecurity.org/wiki/TestDisk_Download
 [3]:http://www.tecmint.com/wp-content/uploads/2017/01/PhotoRec-Data-Recovery-Tool.png
 [4]:http://www.tecmint.com/wp-content/uploads/2017/01/Select-Partition-to-Proceed-File-Recovery.png
