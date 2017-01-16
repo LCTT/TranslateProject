@@ -1,3 +1,5 @@
+wyangsun translating
+
 How to install a Ceph Storage Cluster on Ubuntu 16.04
 ============================================================
 
