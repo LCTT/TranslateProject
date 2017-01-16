@@ -127,7 +127,7 @@ _sudo java -Xms2048m -Xmx3096m -jar /home/tux/MCS/minecraft_server.1.10.2.jar no
 
 **图 4**
 
-**Troubleshooting certain connections**
+**连接的某些麻烦**
 
 如果一些客户端无法连接到服务器，那么你需要按下 “CTRL+Z” 退出 Java 程序。打开文件 “server.propertices” 使用一个像nano的编辑器。记住要root（权限）编辑“在线模式”行...它应该被改变为了 “true” ，改变这个文件为 “false” 并保存。重启服务器并打开 Minecraft 服务器。客户端重新连接服务器并且一切都开始工作。
 
