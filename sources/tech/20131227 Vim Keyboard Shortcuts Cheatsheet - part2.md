@@ -1,3 +1,5 @@
+Martin translating...
+
 Vim Keyboard Shortcuts Cheatsheet
 ============================================================
  ![](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2013/12/vim-shortcut-cheatsheet-featured.jpg "Vim Keyboard Shortcuts Cheatsheets") 
