@@ -11,13 +11,11 @@
 
 ### 语言驱动 AI
 
-走出 20 世纪 90 年代的人工智能冬季，人工智能随着它所依赖的计算能力的提升再次出现，影响着我们如何构建软件。机器学习、深度学习、自然语言处理和自动语音识别覆盖了世界各地 - 从 GitHub 的项目和工作岗位，到新公司成立背后的原因，以及清除我们杂乱的台面（Hey, Alexa!）。是的，即使像 OSCON 这样的会议都处处提及 <ruby>“万物皆智能”<rt>all things AI</rt></ruby> 。虽然计算能力的提升已经铺平了道路，所有关于 all things AI 的开源已经引起了行业广泛开放的创新和竞争。谷歌的 [TensorFlow][8]、[OpenAI][9] 和 [Apache Spark][10] 使用强大框架成为行业领导者，但也有较小的参与者，如 [Nervana][11] 的 [Neon][12] 和 [Theano][13]。
-
-译者注：Alexa是预装在亚马逊 Echo 内的个人虚拟助手，可以接收及相应语音命令，Alexa 可以被看成是亚马逊版的 Siri 语音助手。用户只需要说一声“Alexa”，就可以创建各种任务，还可以和各种智能家居设备进行交互。
+走出 20 世纪 90 年代的人工智能冬季，人工智能随着它所依赖的计算能力的提升再次出现，影响着我们如何构建软件。机器学习、深度学习、自然语言处理和自动语音识别覆盖了世界各地 - 从 GitHub 的项目和工作岗位，到新公司成立背后的原因，以及清除我们杂乱的台面（Hey, Alexa!）。[LCTT 译注：Alexa 是预装在亚马逊 Echo 内的个人虚拟助手，可以接收及相应语音命令，可被看成是亚马逊版的 Siri 语音助手。用户只需要说一声“Alexa”，就可以创建各种任务，还可以和各种智能家居设备进行交互。] 是的，即使像 OSCON 这样的会议都处处提及 <ruby>“万物皆智能”<rt>all things AI</rt></ruby> 。虽然计算能力的提升已经铺平了道路，所有关于 all things AI 的开源已经引起了行业广泛开放的创新和竞争。谷歌的 [TensorFlow][8]、[OpenAI][9] 和 [Apache Spark][10] 使用强大框架成为行业领导者，但也有较小的参与者，如 [Nervana][11] 的 [Neon][12] 和 [Theano][13]。
 
 AI 的兴起如何影响软件开发者的前景？好，现在是了解 Python 的好时机 - 它对数据工程师和科学家的敏捷性和流行性使它成为最流行的 AI 编程语言，其次是 R、Java 和 Scala。
 
-### 容器和 Go 的结合就像花生、黄油和果冻
+### 容器和 Go 的结合就像花生、黄油和果冻（LCTT译注：最佳组合）
 
 [Go 1.0 发布][14]于 2012 年 3 月。紧接着 [Docker][15] 在一年后发布，[Kubernetes][16] 在另外一年后发布。总之，Go 并不是如我们所知的那样专为基础设施的未来而设计的，但 Go 似乎是为了填充编程世界的一个主要的空洞。对于一个高度联网的世界，一个必须拥有一流并发性的世界而言，Go 是以 Java 或 C++ 永远不会的方式专门写的。如果你在做运维或者类似的事，你应该至少稍微了解下 Go ，因为它正在发展中，它将会被使用多年，并成为许多程序的骨干。
 
@@ -28,28 +26,18 @@ Swift 是[ Apple 在 2015 年启动该编程语言不久之后就开源的][17]�
 
 ### Java 8 vs 使用 JVM 的函数式语言
 
-Java 8 的函数式能力（即引入 Lambdas ）的出现使得 JVM 语言（如 Scala 和 Clojure）上榜单了。最近，很大程度上由于 Apache Spark 的增长使得 Scala 有一点小爆发。因为长期的和新的开发人员一起都来关注 Java 8 所带来的东西，至少在那一刻，Scala 和 Clojure 似乎被搁置。Java 现在能够解决并发和大数据关心的事，这些其他编程语言专门为满足这些要求已经做了多年。在 2017 年，OSCON 几乎缺乏 Scala 和 Clojure 的提案，不是因为设计，但似乎潜在发言者没有什么兴趣提交提案。
+Java 8 的函数式能力（即引入 Lambdas ）的出现使得 JVM 语言（如 Scala 和 Clojure）上榜单了。最近，很大程度上由于 Apache Spark 的增长使得 Scala 有一点小爆发。现在，因为长期的和新的开发人员一起都在关注 Java 8 所带来的东西，至少目前，Scala 和 Clojure 似乎被搁置了。Java 现在能够解决并发和大数据相关的事，而那些专门为满足此方面要求而构建的其他编程语言已经做了多年。在 2017 年，OSCON 几乎缺乏 Scala 和 Clojure 的提案，不是因为设计，而是那些提交提案的发言者似乎没有什么兴趣。
 
-The advent of Java 8's functional capability—namely the introduction of Lambdas—has put JVM languages like Scala and Clojure on notice. Recently, due in large part to the growth of Apache Spark, Scala was having a bit of a growth spurt. Now both Scala and Clojure are seeming to be set aside, at least for the moment, as long-time and new developers alike take a hard look at what Java 8 brings to the table. Java is now able to address concurrency and big data concerns that other programming languages specifically built to address these requirements have been doing for years. In 2017, OSCON is nearly devoid of both Scala and Clojure, not by design, but by seemingly little interest from potential speakers who submitted proposals.
 ### 新兴语言
 
-和往常一样，世上总是有更多的新兴语言，旨在把事情做得更好，它们可以做到从前的语言出现时没有的需求，或者开始只是疯狂思想，最终改变了我们对编程的看法。今年有五种语言即将进入大时代：Rust、Elixir、Elm、Kotlin和 Perl 6。
+和往常一样，世上总是在不停出现新兴语言，目的是比之前的语言做得更好，可以响应从前的语言出现时没有的需求，或者开始只是疯狂思想，最终却改变了我们对编程的看法。今年有五种语言即将进入大时代：Rust、Elixir、Elm、Kotlin 和 Perl 6。
 
-这 5 个会给行业带来什么？
-And as usual, there are always more up and coming languages on the horizon intended to do something better than those that came before them, that can answer needs that weren't around when previous languages were born, or that simply start out as a crazy idea and end up changing how we think about programming. This year five languages are on the verge of making it into the big time: Rust, Elixir, Elm, Kotlin, and Perl 6.
-
-What do the hot five bring to the industry?
-
-Rust: Systems programming at speed and more than a modicum of safety.
-Elixir: Functional, dynamic, and fault-tolerant for those larger and larger-scale apps.
-Elm: More functional fun that plays with JavaScript, leaning increasingly toward being a pleasure to use.
-Kotlin: This one is for the Java and JVM folks—statically typed, safe, and did I mention Java compatible?
-Perl 6: It lives! Perl 6 happens to be a new language that is expressive and feature-rich for the win.
+这 5 个热门会给行业带来什么？
 
 * [Rust][1]：兼顾速度和一定安全的系统编程语言。
 * [Elixir][2]：函数式、动态和容错，适用于那些规模越来越大的应用程序。
 * [Elm][3]：更多函数式的乐趣，使用 JavaScript，学习成为一种乐趣。
-* [Kotlin][4]：这一个是为使用 Java 和 JVM 的人设计的语言 - 静态类型、安全，我提到Java兼容？
+* [Kotlin][4]：这一个是为使用 Java 和 JVM 的人设计的语言 - 静态类型、安全，此外我提到 Java 兼容了吗？
 * [Perl 6] [5]：它还活着！Perl 6 碰巧是一种新的语言，它胜在富有表现力和功能丰富。
 
 时间会告诉他们是否会如约发布。尝试他们，为他们贡献，成为未来的一部分！
