@@ -1,22 +1,22 @@
 使用 Axel 命令行下载器/加速器加速你的下载
 ============================================================
 
-[Axel][7] 是一个轻量级下载程序，它如其他加速器那样做着同样的事情。它为一个文件打开多个连接，每个连接下载单独的文件片段以更快地完成下载。
+[Axel][7] 是一个轻量级下载程序，它和其他加速器一样，为一个文件打开多个连接，每个连接下载单独的文件片段以更快地完成下载。
 
-Axel支持 HTTP】HTTPS、FTP和 FTPS 协议。它也可以使用多个镜像下载单个文件。所以，Axel 可以加速下载高达 40％（大约，我个人认为）。它非常轻量级，因为它没有依赖并且使用非常少的 CPU 和 RAM。
+Axel 支持 HTTP、HTTPS、FTP和 FTPS 协议。它也可以使用多个镜像下载单个文件。所以，Axel 可以加速下载高达 40％（大约，我个人认为）。它非常轻量级，因为它没有依赖并且使用非常少的 CPU 和 RAM。
 
 Axel 使用一个单线程将所有数据直接下载到目标文件。
 
-注意：没有选项可以在单条命令中下载两个文件
+**注意**：没有选项可以在单条命令中下载两个文件。
 
-你还可以尝试其他命令行下载管理器/加速器
+你还可以尝试其他命令行下载管理器/加速器。
 
-*   [[aria2 - 超快速下载程序] [1]
-*   [[wget - 标准命令行下载程序] [2]
-*   [[curl - 命令行下载程序] [3]
-*   [[Linux 下的最好的 4 个命令行下载管理器/加速器] [4]
+*   [aria2 - 超快速下载程序] [1]
+*   [wget - 标准命令行下载程序] [2]
+*   [curl - 命令行下载程序] [3]
+*   [Linux 下的最好的 4 个命令行下载管理器/加速器] [4]
 
-大多数发行版（Debian、Ubuntu、Mint、Fedora、suse、openSUSE、Arch Linux、Manjaro、Mageia等）都有 axel 包，所以我们可以从发行版官方仓库轻松安装。对于CentOS/RHEL，我们需要启用[EPEL Repository][5]。
+大多数发行版（Debian、Ubuntu、Mint、Fedora、suse、openSUSE、Arch Linux、Manjaro、Mageia 等）都有 axel 包，所以我们可以从发行版官方仓库轻松安装。对于 CentOS/RHEL，我们需要启用 [EPEL Repository][5]。
 
 ```
 [在 Debian/Ubuntu/LinuxMint 上安装 Axel]
@@ -40,7 +40,7 @@ $ sudo pacman -S axel
 
 #### 1) 下载单个文件
 
-以下命令将从给定的 URL 下载文件并存储在当前目录中，而下载文件时，我们可以看到文件的信息（建立的连接数、下载速度、下载进度、完成下载所花费的时间以及连接完成的时间）。
+以下命令将从给定的 URL 下载文件并存储在当前目录中，下载文件时，我们可以看到文件的信息（建立的连接数、下载速度、下载进度、完成下载所花费的时间以及连接完成的时间）。
 
 ```
 # axel https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
@@ -76,7 +76,7 @@ Downloaded 21.6 megabytes in 3 seconds. (5755.94 KB/s)
 
 #### 2) 用不同的名称保存文件
 
-你可以通过添加 -o（小写）选项和文件名来启动下载，并使用其他名称来保存文件。这里我们使用 owncloud.tar.bz2 作为保存文件名。
+要使用其他名称来保存文件，启动下载时可以添加 -o（小写）选项和文件名。这里我们使用文件名 **owncloud.tar.bz2** 来保存文件。
 
 ```
 # axel -o cloud.tar.bz2 https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
@@ -114,7 +114,7 @@ Downloaded 21.6 megabytes in 3 seconds. (6001.05 KB/s)
 
 #### 3) 限制下载速度
 
-默认上 axel 以字节/秒为单位设置下载文件的最大速度。当我们的网络连接速度较慢时，我们可以使用此选项。只需添加 `-s` 选项，后面跟字节值。这里我们要下载一个限速为 `512 KB/s` 的文件。
+默认 axel 以字节/秒为单位设置下载文件的最大速度。当我们的网络连接速度较慢时，可以使用此选项。只需添加 `-s` 选项，后面跟字节值。这里我们要限速 `512 KB/s` 下载一个文件。
 
 ```
 # axel -s 512000 https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
@@ -150,7 +150,7 @@ Downloaded 21.6 megabytes in 44 seconds. (494.54 KB/s)
 
 #### 4) 限制连接数
 
-axel 默认建立 4 个连接以从不同的镜像获取文件。此外，我们可以通过使用 `-n` 选项添加更多的连接，后跟连接数 `8` 来提高下载速度。我们为了更安全新添加了八个连接，但不幸的是，它花了更多时间来下载文件。
+axel 默认建立 4 个连接以从不同的镜像获取文件。此外，我们可以通过使用 `-n` 选项添加更多的连接，后跟连接数 `10` 来提高下载速度。我们为了更安全新添加了八个连接，但不幸的是，它花了更多时间来下载文件。
 
 ```
 # axel -n 10 https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
@@ -192,7 +192,7 @@ Downloaded 21.6 megabytes in 5 seconds. (4109.41 KB/s)
 
 #### 5) 恢复未完成的下载
 
-axel 默认具有恢复未完成的下载的行为。Axel 在下载文件时定期更新状态文件（扩展名为 .st）。由于某些原因，下载中途停止了？不用担心，只要使用相同的 axel 命令，它将会检查 `file` 和 `file.st`，如果找到，它会从停止处恢复下载。
+axel 默认具有恢复未完成的下载的行为。Axel 在下载文件时定期更新状态文件（扩展名为 `.st`）。由于某些原因，下载中途停止了？不用担心，只要使用相同的 axel 命令，它将会检查 `file` 和 `file.st`，如果找到，它会从停止处恢复下载。
 
 ```
 # axel https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
@@ -267,7 +267,7 @@ Downloaded 3415.4 kilobytes in 1 second. (2264.93 KB/s)
 
 #### 7) 替换进度条
 
-如果你不喜欢默认的进度条，你可以使用 -a 选项来替换进度条。
+如果你不喜欢默认的进度条，你可以使用 **-a** 选项来替换进度条。
 
 ```
 # axel -a https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
@@ -299,7 +299,7 @@ Downloaded 21.6 megabytes in 4 seconds. (5062.32 KB/s)
 
 #### 8) 阅读更多关于 axel
 
-如果你想要了解更多关于 axel 的内容，只需要进入它的手册。
+如果你想要了解更多关于 axel 的选项，只需要进入它的手册。
 
 ```
 # man axel
@@ -315,7 +315,7 @@ via: http://www.2daygeek.com/axel-command-line-downloader-accelerator-for-linux/
 
 作者：[ MAGESH MARUTHAMUTHU][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

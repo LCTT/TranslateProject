@@ -1,7 +1,8 @@
+ucasFL translating
 Best Linux Distributions for New Users
 ============================================================
 
- ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/distros-new-users.jpg?itok=Prp88H71) 
+ ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/distros-new-users.jpg?itok=Prp88H71)
 Jack Wallen considers which Linux distributions are best designed for new users coming from different environments.[Creative Commons Zero][5]Pixabay
 
 Ah, the age-old question...one that holds far more importance than simply pointing out which Linux distribution is a fan-favorite. Why is that?
@@ -15,7 +16,7 @@ That’s why we often take the time to point out which distributions are best de
 With that said, what are the best distributions for new users? I’m going to take a bit of a different approach this time and point out which distributions would be best for users coming from different environments. You can also check out my list of [best distros for 2017][11].
 
 [
- ![Advertisement for Intro to Linux](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/introtolinux_1_800x200.jpg?itok=VV8GZold "Advertisement for Intro to Linux") 
+ ![Advertisement for Intro to Linux](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/introtolinux_1_800x200.jpg?itok=VV8GZold "Advertisement for Intro to Linux")
 ][12]
 
 ### From Windows 7 to Linux: ZorinOS
@@ -28,14 +29,14 @@ Beyond the desktop environment (Figure 1), ZorinOS is based on Ubuntu, so under 
 
 ### [zorinos.jpg][6]
 
- ![ZorinOS](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/zorinos.jpg?itok=i970f1Id "ZorinOS") 
+ ![ZorinOS](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/zorinos.jpg?itok=i970f1Id "ZorinOS")
 
 Figure 1: The ZorinOS Windows 7-like desktop ready to serve.[Used with permission][1]
 
 Do note, however, there are two versions of ZorinOS: Zorin Ultimate and Zorin Core. While Core is free, it doesn’t include nearly the amount of software that you’ll find in Ultimate. If you want an out of the box distribution that will please anyone coming from Windows 7, I highly recommend purchasing [Zorin Ultimate][14] (for approximately $20.00 USD). Of course, if you don’t want to splurge for the Ultimate edition, you can always install nearly everything you need from the included Software package management tool.
 
 [
- ![Advertisement for New Year&#039;s resolution to be a Linux sysadmin](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/newyearsresolution_1_800x200.jpg?itok=BeGasy1I "Advertisement for New Year&#039;s resolution to be a Linux sysadmin") 
+ ![Advertisement for New Year&#039;s resolution to be a Linux sysadmin](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/newyearsresolution_1_800x200.jpg?itok=BeGasy1I "Advertisement for New Year&#039;s resolution to be a Linux sysadmin")
 ][15]
 
 ### From Windows 8 to Linux: Ubuntu GNOME
@@ -46,7 +47,7 @@ Ubuntu GNOME is a best of two worlds amalgamation between Ubuntu and GNOME (Figu
 
 ### [ubuntugnome.jpg][7]
 
- ![Ubuntu GNOME](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/ubuntugnome.jpg?itok=SNjA3y7T "Ubuntu GNOME") 
+ ![Ubuntu GNOME](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/ubuntugnome.jpg?itok=SNjA3y7T "Ubuntu GNOME")
 
 Figure 2: Simplicity at its elegant best can be found in Ubuntu GNOME.[Used with permission][2]
 
@@ -58,7 +59,7 @@ Any Mac user would feel immediately at home on the desktop environment (Figure 3
 
 ### [elementaryos.jpg][8]
 
- ![Elementary OS](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/elementaryos.jpg?itok=qaXRClRM "Elementary OS") 
+ ![Elementary OS](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/elementaryos.jpg?itok=qaXRClRM "Elementary OS")
 
 Figure 3: The glory that is the Elementary OS desktop.[Used with permission][3]
 
@@ -72,7 +73,7 @@ This may seem like a bit of a stretch, but considering how dominant Android is w
 
 ### [ubuntu.jpg][9]
 
- ![Ubuntu Unity](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/ubuntu.jpg?itok=HsvBJAIN "Ubuntu Unity") 
+ ![Ubuntu Unity](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/ubuntu.jpg?itok=HsvBJAIN "Ubuntu Unity")
 
 Figure 4: The Unity Heads Up Display in action.[Used with permission][4]
 

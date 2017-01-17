@@ -1,3 +1,6 @@
+vim-kakali translating
+
+
 How to record a region of your desktop as animated GIF on Linux
 ============================================================
 
