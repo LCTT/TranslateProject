@@ -20,7 +20,7 @@ How terms and conditions of the AGPL could be interpreted, including whether the
 
 作者简介：
 
-![]()
+![](https://opensource.com/sites/default/files/styles/profile_pictures/public/pictures/kaufman-picture.jpg?itok=FPIizDR-)
 
 Jeffrey R. Kaufman is an Open Source IP Attorney for Red Hat, Inc., the world’s leading provider of open source software solutions. Jeffrey also serves as an adjunct professor at the Thomas Jefferson School of Law. Previous to Red Hat, Jeffrey served as Patent Counsel at Qualcomm Incorporated providing open source counsel to the Office of the Chief Scientist. Jeffrey holds multiple patents in RFID, barcoding, image processing, and printing technologies.
 
