@@ -1,23 +1,21 @@
-translating---geekpi
-
-[Use Docker remotely on Atomic Host][1]
+[远程在 Atomic 主机上使用 Docker][1]
 ---------------------
 
  ![remote-atomic-docker](https://cdn.fedoramagazine.org/wp-content/uploads/2017/01/remote-atomic-docker-945x400.jpg) 
 
-Atomic Host from [Project Atomic][2] is a lightweight container based OS that can run Linux containers. It’s been optimized to use as a container run-time system for cloud environments. For instance, it can host a Docker daemon and containers. At times, you may want to run docker commands on that host and manage the server from elsewhere. This article shows you how to remotely access the [Docker][3] daemon of the Fedora Atomic Host, [which you can download here.][4] The entire process is automated by [Ansible][5] — which is a great tool when it comes to automating everything.
+来自 [Atomic 项目][2] 的 Atomic 主机是一个基于轻量级容器的操作系统，它可以运行 Linux 容器。它已被优化为用作云环境的容器运行时系统。例如，它可以托管 Docker 守护进程和容器。有时，你可能需要在该主机上运行 docker 命令，并从其他地方管理服务器。本文介绍如何远程访问 Fedora Atomic 主机上的[Docker][3]守护进程，[你可以在这里下载到它][4]。整个过程由[Ansible][5]自动完成 - 在涉及到自动化的一切上，这是一个伟大的工具。
 
-### A note on security
+### 一份安全笔记
 
-We’ll secure the Docker daemon with [TLS][6], since we’re connecting via the network. This process requires a client certificate and server certificate. The OpenSSL package is used to to create the certificate keys for establishing a TLS connection. Here, the Atomic Host is running the daemon, and our local [Fedora Workstation][7] acts as a client.
+由于我们通过网络连接，所以我们使用[TLS][6]保护 Docker 守护进程。此过程需要客户端证书和服务器证书。OpenSSL 包用于创建用于建立 TLS 连接的证书密钥。这里，Atomic 主机运行守护程序，我们的本地的 [Fedora Workstation][7] 充当客户端。
 
-Before you follow these steps, note that _any_ process on the client that can access the TLS certs now has **full root access on the server.** Thus, the client can do anything it wants to do on the server. Therefore, we need to give cert access only to the specific client host that can be trusted. You should copy the client certificates only to a client host completely under your control. Even in that case, client machine security is critical.
+在你按照这些步骤进行之前，请注意，_任何_在客户端上可以访问 TLS 证书的进程在服务器上具有**完全根访问权限。** 因此，客户端可以在服务器上做任何它想做的事情。因此，我们需要仅向可信任的特定客户端主机授予证书访问权限。你应该将客户端证书仅复制到完全由你控制的客户端主机。即使在这种情况下，客户端机器的安全也至关重要。
 
-However, this method is only one way to remotely access the daemon. Orchestration tools often provide more secure controls. The simple method below works for personal experimenting, but may not be appropriate for an open network.
+但是，此方法只是远程访问守护程序的一种方法。编排工具通常提供更安全的控制。下面的简单方法适用于个人实验，但可能不适合开放式网络。
 
-### Getting the Ansible role
+### 获取 Ansible role
 
-[Chris Houseknecht][8] wrote an Ansible role that creates all the certs required. This way you don’t need to run _openssl_commands manually. These are provided in an [Ansible role repository][9]. Clone it to your present working host.
+[Chris Houseknecht][8] 写了一个 Ansible role，它会创造所需的所有证书。这样，你不需要手动运行 _openssl_ 命令了。 这些在[ Ansible role 仓库][9]中提供。将它克隆到你当前的工作主机。
 
 ```
 $ mkdir docker-remote-access
@@ -25,11 +23,11 @@ $ cd docker-remote-access
 $ git clone https://github.com/ansible/role-secure-docker-daemon.git
 ```
 
-### Create config files
+### 创建配置文件
 
-Next, you must create an Ansible configuration file, inventory and playbook file to setup the client and daemon. The following instructions create client and server certs on the Atomic Host. Then, they fetch the client certs to the local machine. Finally, they configure the daemon and client so they talk to each other.
+接下来，你必须创建 Ansible 配置文件、inventory 和 playbook 文件以设置客户端和守护进程。以下说明在 Atomic 主机上创建客户端和服务器证书。然后，获取客户端证书到本地。最后，它们会配置守护进程以及客户端，使它们能彼此交互。
 
-Here is the directory structure you need. Create each of the files below as shown.
+这里是你需要的目录结构。如下所示，创建下面的每个文件。
 
 ```
 $ tree docker-remote-access/
@@ -56,7 +54,7 @@ inventory=inventory
 'IP_OF_ATOMIC_HOST' ansible_ssh_private_key_file='PRIVATE_KEY_FILE'
 ```
 
-Replace _IP_OF_ATOMIC_HOST_ in the inventory file with the IP of your Atomic Host. Replace _PRIVATE_KEY_FILE_ with the location of the SSH private key file on your local system.
+将 inventory 中的 _IP_OF_ATOMIC_HOST_ 替换为 Atomic 主机的 IP。将 _PRIVATE_KEY_FILE_ 替换为本地系统上的 SSH 私钥文件的位置。
 
 ### _remote-access.yml_
 
@@ -130,19 +128,19 @@ $ vim remote-access.yml
       command: systemctl restart docker.service
 ```
 
-### Access the remote Atomic Host
+### 访问 Atomic 主机
 
-Now, run the Ansible playbook:
+现在运行 Ansible playbook：
 
 ```
 $ ansible-playbook remote-access.yml
 ```
 
-Make sure that the tcp port 2376 is opened on your Atomic Host. If you’re using Openstack, add TCP port 2376 in your security rule. If you’re using AWS, add it to your security group.
+确保 tcp 端口 2376 在你的 Atomic 主机上打开了。如果你在使用 Openstack，请在安全规则中添加 TCP 端口 2376。 如果你使用 AWS，请将其添加到你的安全组。
 
-Now, a _docker_ command run as a regular user on your workstation talks to the daemon of the Atomic host, and executes the command there. You don’t need to manually _ssh_ or issue a command on your Atomic host. This allows you to launch containerized applications remotely and easily, yet securely.
+现在，在你的工作站上作为普通用户运行的 _docker_ 命令与 Atomic 主机的守护进程通信了，并在那里执行命令。你不需要手动 _ssh_ 或在 Atomic 主机上发出命令。这允许你远程、轻松、安全地启动容器化应用程序。
 
-If you want to clone the playbook and the config file, there is [a git repository available here][10].
+如果你想克隆 playbook 和配置文件，这里有[一个可用的 git 仓库][10]。
 
 [
  ![docker-daemon](https://cdn.fedoramagazine.org/wp-content/uploads/2017/01/docker-daemon.jpg) 
@@ -153,7 +151,7 @@ If you want to clone the playbook and the config file, there is [a git reposito
 via: https://fedoramagazine.org/use-docker-remotely-atomic-host/
 
 作者：[Trishna Guha][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
