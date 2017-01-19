@@ -1,13 +1,13 @@
-使用 Axel 命令行下载器/加速器加速你的下载
+使用 Axel 命令行下载器/加速器加速下载
 ============================================================
 
-[Axel][7] 是一个轻量级下载程序，它和其他加速器一样，为一个文件打开多个连接，每个连接下载单独的文件片段以更快地完成下载。
+[Axel][7] 是一个轻量级下载程序，它和其他加速器一样，对同一个文件建立多个连接，每个连接下载单独的文件片段以更快地完成下载。
 
-Axel 支持 HTTP、HTTPS、FTP和 FTPS 协议。它也可以使用多个镜像下载单个文件。所以，Axel 可以加速下载高达 40％（大约，我个人认为）。它非常轻量级，因为它没有依赖并且使用非常少的 CPU 和 RAM。
+Axel 支持 HTTP、HTTPS、FTP 和 FTPS 协议。它也可以使用多个镜像站点下载单个文件，所以，Axel 可以加速下载高达 40％（大约，我个人认为）。它非常轻量级，因为它没有依赖并且使用非常少的 CPU 和内存。
 
-Axel 使用一个单线程将所有数据直接下载到目标文件。
+Axel 一步到位地将所有数据直接下载到目标文件（LCTT 译注：而不是像其它的下载软件那样下载成多个文件块，然后拼接）。
 
-**注意**：没有选项可以在单条命令中下载两个文件。
+**注意**：不支持在单条命令中下载两个文件。
 
 你还可以尝试其他命令行下载管理器/加速器。
 
@@ -76,7 +76,7 @@ Downloaded 21.6 megabytes in 3 seconds. (5755.94 KB/s)
 
 #### 2) 用不同的名称保存文件
 
-要使用其他名称来保存文件，启动下载时可以添加 -o（小写）选项和文件名。这里我们使用文件名 **owncloud.tar.bz2** 来保存文件。
+要使用其他名称来保存文件，启动下载时可以添加 `-o`（小写字母）选项和文件名。这里我们使用文件名 `owncloud.tar.bz2` 来保存文件。
 
 ```
 # axel -o cloud.tar.bz2 https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
@@ -114,7 +114,7 @@ Downloaded 21.6 megabytes in 3 seconds. (6001.05 KB/s)
 
 #### 3) 限制下载速度
 
-默认 axel 以字节/秒为单位设置下载文件的最大速度。当我们的网络连接速度较慢时，可以使用此选项。只需添加 `-s` 选项，后面跟字节值。这里我们要限速 `512 KB/s` 下载一个文件。
+默认情况下 axel 以字节/秒为单位设置下载文件的最大速度。当我们的网络连接速度较慢时，可以使用此选项。只需添加 `-s` 选项，后面跟字节值。这里我们要限速 `512 KB/s` 下载一个文件。
 
 ```
 # axel -s 512000 https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
@@ -150,7 +150,7 @@ Downloaded 21.6 megabytes in 44 seconds. (494.54 KB/s)
 
 #### 4) 限制连接数
 
-axel 默认建立 4 个连接以从不同的镜像获取文件。此外，我们可以通过使用 `-n` 选项添加更多的连接，后跟连接数 `10` 来提高下载速度。我们为了更安全新添加了八个连接，但不幸的是，它花了更多时间来下载文件。
+axel 默认建立 4 个连接以从不同的镜像获取文件。此外，我们可以通过使用 `-n` 选项添加更多的连接，后跟连接数 `10` 来提高下载速度。保险起见，我们添加了十个连接，但不幸的是，它花了更多时间来下载文件。
 
 ```
 # axel -n 10 https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
@@ -267,7 +267,7 @@ Downloaded 3415.4 kilobytes in 1 second. (2264.93 KB/s)
 
 #### 7) 替换进度条
 
-如果你不喜欢默认的进度条，你可以使用 **-a** 选项来替换进度条。
+如果你不喜欢默认的进度条，你可以使用 `-a` 选项来替换进度条。
 
 ```
 # axel -a https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
@@ -281,7 +281,7 @@ Starting download
 Downloaded 14.3 megabytes in 2 seconds. (5916.11 KB/s)
 ```
 
-我们已经了中断上面的下载，以便在下载文件时能清楚地显示替代进度条状态。一旦文件成功下载后，你可以看到相同的输出，如下所示。
+我们中断了上面的下载，以便在下载文件时能清楚地显示替代进度条状态。一旦文件成功下载后，你可以看到相同的输出，如下所示。
 
 ```
 # axel -a https://download.owncloud.org/community/owncloud-9.0.0.tar.bz2
@@ -297,7 +297,7 @@ Connection 0 finished                                                          ]
 Downloaded 21.6 megabytes in 4 seconds. (5062.32 KB/s)
 ```
 
-#### 8) 阅读更多关于 axel
+#### 8) 了解关于 axel 的更多信息
 
 如果你想要了解更多关于 axel 的选项，只需要进入它的手册。
 
@@ -313,7 +313,7 @@ Downloaded 21.6 megabytes in 4 seconds. (5062.32 KB/s)
 
 via: http://www.2daygeek.com/axel-command-line-downloader-accelerator-for-linux/
 
-作者：[ MAGESH MARUTHAMUTHU][a]
+作者：[Magesh Maruthamuthu][a]
 译者：[geekpi](https://github.com/geekpi)
 校对：[jasminepeng](https://github.com/jasminepeng)
 
@@ -323,7 +323,7 @@ via: http://www.2daygeek.com/axel-command-line-downloader-accelerator-for-linux/
 [1]:http://www.2daygeek.com/aria2-command-line-download-utility-tool/
 [2]:http://www.2daygeek.com/wget-command-line-download-utility-tool/
 [3]:http://www.2daygeek.com/aria2-command-line-download-utility-tool/
-[4]:http://www.2daygeek.com/best-4-command-line-download-managers-accelerators-for-linux/
-[5]:http://www.2daygeek.com/install-enable-epel-repository-on-rhel-centos-scientific-linux-oracle-linux/
+[4]:https://linux.cn/article-8124-1.html
+[5]:https://linux.cn/article-2324-1.html
 [6]:http://www.2daygeek.com/author/magesh/
 [7]:https://axel.alioth.debian.org/
