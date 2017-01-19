@@ -1,18 +1,18 @@
-translating---geekpi
-
-OpenSSL For Apache and Dovecot: Part 2
+OpenSSL 在 Apache 和 Dovecot 下的使用：第二部分
 ============================================================
 
  ![OpenSSL](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/key-openssl_0.jpg?itok=FDO3qAOt "OpenSSL") 
-In this tutorial, Carla Schroder explains how to protect your Postfix/Dovecot mail server with OpenSSL.[Creative Commons Zero][1]Pixabay
+本篇中，Carla Schroder 会解释如何使用 OpenSSL 保护你的 Postfix/Dovecot 邮件服务器
 
-[Last week][11], as part of our meandering OpenSSL series, we learned how to configure Apache to use OpenSSL and to force all sessions to use HTTPS. Today, we'll protect our Postfix/Dovecot mail server with OpenSSL. The examples build on the previous tutorials; see the Resources section at the end for links to all previous tutorials in this series.
+[Creative Commons Zero][1]Pixabay
 
-You will have to configure both Postfix and Dovecot to use OpenSSL, and we'll use the key and certificate that we created in [OpenSSL For Apache and Dovecot ][12].
+在[上周][11]，作为我们 OpenSSL 系列的一部分，我们学习了如何配置 Apache 以使用 OpenSSL 并强制所有会话使用 HTTPS。 今天，我们将使用 OpenSSL 保护我们的 Postfix/Dovecot 邮件服务器。这些示例基于前面的教程; 请参阅最后的参考资料部分，了解本系列中以前的所有教程的链接。
 
-### Postfix Configuration
+你需要配置 Postfix 以及 Dovecot 来使用 OpenSSL，我们将使用我们在[在 Apache 和 Dovecot 中使用 OpenSSL][12]中创建的密钥和证书。
 
-You must edit `/etc/postfix/main.cf` and `/etc/postfix/master.cf`. The `main.cf`example is the complete configuration, building on our previous tutorials. Substitute your own OpenSSL key and certificate names, and local network:
+### Postfix 配置
+
+你必须编辑 `/etc/postfix/main.cf` 以及 `/etc/postfix/master.cf`。`main.cf` 这个例子是完整的配置，它在我们先前的教程中构建过了。替换成你自己的 OpenSSL 密钥和证书名以及本地网络。
 
 ```
 compatibility_level=2
@@ -47,7 +47,7 @@ smtpd_sasl_path = private/auth
 smtpd_sasl_authenticated_header = yes
 ```
 
-In `master.cf` un-comment the following lines in the `submission inet` section, and edit `smtpd_recipient_restrictions` as shown:
+在 `master.cf` 解除 `submission inet` 部分的注释，并编辑 `smtpd_recipient_restrictions`：
 
 ```
 #submission inet n  -  y  -  - smtpd
@@ -59,15 +59,15 @@ In `master.cf` un-comment the following lines in the `submission inet` secti
   -o smtpd_tls_wrappermode=no
 ```
 
-Reload Postfix and you're finished:
+完成后重新加载 Postfix：
 
 ```
 $ sudo service postfix reload
 ```
 
-### Dovecot Configuration
+### Dovecot 配置
 
-In our previous tutorials we made a single configuration file for Dovecot, `/etc/dovecot/dovecot.conf`, rather than using the default giant herd of multiple configuration files. This is a complete configuration that builds on our previous tutorials. Again, use your own OpenSSL key and certificate, and your own `userdb` home file:
+在我们以前的教程中，我们为 Dovecot 在 `/etc/dovecot/dovecot.conf` 创建了一个配置文件，而不是使用多个默认配置文件。这是一个建立在我们以前的教程的完整配置。再说一次，使用你自己的 OpenSSL 密钥和证书，以及你自己的 `userdb` 家文件：
 
 ```
 protocols = imap pop3 lmtp
@@ -117,15 +117,15 @@ ssl_cert = </etc/ssl/certs/test-com.pem
 ssl_key = </etc/ssl/private/test-com.key
 ```
 
-Restart Dovecot:
+重启 Dovecot:
 
 ```
 $ sudo service postfix reload
 ```
 
-### Testing With Telnet
+### 用 telnet 测试
 
-Now we can test our setup by sending a message with telnet, just like we did before. But wait, you say, telnet does not support TLS/SSL, so how can this be so? By opening an encrypted session with `openssl s_client` first is how. The `openssl s_client` output will display your certificate, fingerprint, and a ton of other information so you'll know that your server is using the correct certificate. Commands that you type after the session is established are in bold:
+就像我们以前一样，现在我们可以通过使用 telnet 发送消息来测试我们的设置。 但是等等，你说 telnet 不支持 TLS/SSL，那么怎么能这样呢？首先通过使用 `openssl s_client` 打开一个加密会话。`openssl s_client` 的输出将显示你的证书、指纹和大量其他信息，以便你知道你的服务器正在使用正确的证书。会话建立后输入的命令以粗体显示：
 
 ```
 $ openssl s_client -starttls smtp -connect studio:25
@@ -158,7 +158,7 @@ quit
 221 2.0.0 Bye
 ```
 
-You should see a new message in your mail client, and it will ask you to verify your SSL certificate when you open it. You may also use `openssl s_client`to test your Dovecot POP3 and IMAP services. This example tests encrypted POP3, and message #5 is the one we created in telnet (above):
+你应该可以在邮件客户端中看到一条新邮件，并在打开 SSL 证书时要求你验证 SSL 证书。你也可以使用 `openssl s_client` 来测试 Dovecot POP3 和 IMAP 服务。此示例测试加密的 POP3，#5 消息是我们在 telnet（上面）中创建的：
 
 ```
 $ openssl s_client -connect studio:995
@@ -201,29 +201,29 @@ quit
 closed
 ```
 
-### Now What?
+### 现在做什么？
 
-Now you have a nice functioning mail server with proper TLS/SSL protection. I encourage you to study Postfix and Dovecot in-depth; the examples in these tutorials are as simple as I could make them, and don't include fine-tuning for security, anti-virus scanners, spam filters, or any other advanced functionality. I think it's easier to learn the advanced features when you have a basic working system to use.
+现在你有一个很好的有适当的 TLS/SSL 保护的邮件服务器了。我鼓励你深入学习 Postfix 以及 Dovecot; 这些教程中的示例尽可能地简单，不包括对安全性、防病毒扫描程序、垃圾邮件过滤器或任何其他高级功能的微调。我认为当你有一个基本工作系统时更容易学习高级功能。
 
-Come back next week for an openSUSE package management cheat sheet.
+下周回到 openSUSE 包管理备忘录上。
 
-### Resources
+### 资源
 
-*   [OpenSSL For Apache and Dovecot][3]
-*   [How to Build an Email Server on Ubuntu Linux][4]
-*   [Building an Email Server on Ubuntu Linux, Part 2][5]
-*   [Building an Email Server on Ubuntu Linux, Part 3][6]
-*   [Apache on Ubuntu Linux For Beginners][7]
-*   [Apache on Ubuntu Linux For Beginners: Part 2][8]
-*   [Apache on CentOS Linux For Beginners][9]
-*   [Quieting Scary Web Browser SSL Alerts][10]
+*   [为 Apache 和 Dovecot 使用 OpenSSL][3]
+*   [如何在 Ubuntu Linux 上构建电子邮件服务器][4]
+*   [在 Ubuntu Linux 上构建电子邮件服务器：第2部分][5]
+*   [在 Ubuntu Linux 上构建电子邮件服务器：第3部分][6]
+*   [给初学者看的在 Ubuntu Linux 上使用 Apache][7]
+*   [初学者看的在 Ubuntu Linux 上使用 Apache：第二部分][8]
+*   [给初学者看的在 CentOS Linux 上使用 Apache][9]
+*   [消灭让人害怕的 web 浏览器 SSL 警告][10]
 
 --------------------------------------------------------------------------------
 
 via: https://www.linux.com/learn/intro-to-linux/openssl-apache-and-dovecot-part-2
 
 作者：[CARLA SCHRODER][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
