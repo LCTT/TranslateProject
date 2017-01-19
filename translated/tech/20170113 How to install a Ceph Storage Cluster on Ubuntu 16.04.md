@@ -26,14 +26,15 @@ Ceph 是一个高性能，可靠行和可扩展性的开源存储平台。他是
 
 我将使用下面这些 hostname /IP 安装：
 
-**hostname**        **IP address**
-
-_ceph-admin        10.0.15.10
+```
+hostname              IP address
+ceph-admin        10.0.15.10
 mon1                 10.0.15.11
 osd1                  10.0.15.21
 osd2                  10.0.15.22
 osd3                  10.0.15.23
-client                 10.0.15.15_
+client                 10.0.15.15
+```
 
 ### 第1步 - 配置所有节点
 
@@ -43,44 +44,56 @@ client                 10.0.15.15_
 
 在所有节点创建一个名为'**cephuser**'的新用户
 
+```
 useradd -m -s /bin/bash cephuser
 passwd cephuser
+```
 
 创建完新用户后，我们需要配置 **cephuser** 无密码 sudo 权限。这意味着 ‘cephuser’ 首次可以不输入密码执行和获取 sudo 权限。
 
 运行下面的命令来完成配置。
 
+```
 echo "cephuser ALL = (root) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/cephuser
 chmod 0440 /etc/sudoers.d/cephuser
 sed -i s'/Defaults requiretty/#Defaults requiretty'/g /etc/sudoers
+```
 
 **安装和配置 NTP**
 
 安装 NTP 来同步所有节点的日期和时间。运行 ntpdate 命令通过 NTP 设置日期。我们将使用 US 池 NTP 服务器。然后开启并使 NTP 服务在开机时启动。
 
+```
 sudo apt-get install -y ntp ntpdate ntp-doc
 ntpdate 0.us.pool.ntp.org
 hwclock --systohc
 systemctl enable ntp
 systemctl start ntp
+```
 
 **安装 Open-vm-tools**
 
 如果你正在VMware里运行所有节点，你需要安装这个虚拟化工具。
 
+```
 sudo apt-get install -y open-vm-tools
+```
 
 **安装 Python 和 parted**
 
 在这个教程，我们需要 python 包来建立 ceph 集群。安装 python 和 python-pip。
 
+```
 sudo apt-get install -y python python-pip parted
+```
 
 **配置 Hosts 文件**
 
 用 vim 编辑器编辑所有节点的 hosts 文件。
 
+```
 vim /etc/hosts
+```
 
 Paste the configuration below:
 
@@ -97,7 +110,9 @@ Paste the configuration below:
 
 现在你可以试着在两个服务器间 ping 主机名来测试网络连通性。
 
+```
 ping -c 5 mon1
+```
 
 [
  ![Ceph cluster Installation on Ubuntu 16.04](https://www.howtoforge.com/images/how-to-install-a-ceph-cluster-on-ubuntu-16-04/1.png) 
@@ -107,20 +122,26 @@ ping -c 5 mon1
 
 这一步，我们将配置 **ceph-admin 节点**。管理节点是用来配置监控节点和 osd 节点的。登录到 ceph-admin 节点然后使用 '**cephuser**'。
 
+```
 ssh root@ceph-admin
 su - cephuser
+```
 
 管理节点用来安装配置所有集群节点，所以 ceph-admin 用户必须有不使用密码连接到所有节点的权限。我们需要为 'ceph-admin' 节点的 'cephuser' 用户配置无密码登录权限。
 
 生成 '**cephuser**' 的 ssh 密钥。
 
+```
 ssh-keygen
+```
 
 让密码为空
 
 下面，为 ssh 创建一个配置文件
 
+```
 vim ~/.ssh/config
+```
 
 Paste the configuration below:
 
@@ -158,15 +179,19 @@ Host ceph-client
 
 改变配置文件权限为644。
 
+```
 chmod 644 ~/.ssh/config
+```
 
 现在使用 ssh-copy-id 命令增加密钥到所有节点。
 
+```
 ssh-keyscan ceph-osd1 ceph-osd2 ceph-osd3 ceph-client mon1 >> ~/.ssh/known_hosts
 ssh-copy-id ceph-osd1
 ssh-copy-id ceph-osd2
 ssh-copy-id ceph-osd3
 ssh-copy-id mon1
+```
 
 当请求输入密码时输入你的 cephuser 密码。
 
@@ -176,7 +201,9 @@ ssh-copy-id mon1
 
 现在尝试从 ceph-admin 节点登录 osd1 服务器，测试无密登录是否正常。
 
+```
 ssh ceph-osd1
+```
 
 [
  ![SSH Less password from ceph-admin to all nodes cluster](https://www.howtoforge.com/images/how-to-install-a-ceph-cluster-on-ubuntu-16-04/4.png) 
@@ -188,19 +215,25 @@ ssh ceph-osd1
 
 登录到 ceph-admin 节点，然后安装 ufw 包。
 
+```
 ssh root@ceph-admin
 sudo apt-get install -y ufw
+```
 
 打开 80，2003 和 4505-4506 端口，然后重载防火墙。
 
+```
 sudo ufw allow 22/tcp
 sudo ufw allow 80/tcp
 sudo ufw allow 2003/tcp
 sudo ufw allow 4505:4506/tcp
+```
 
 开启 ufw 并设置开机启动。
 
+```
 sudo ufw enable
+```
 
 [
  ![UFW Firewall with Ceph service](https://www.howtoforge.com/images/how-to-install-a-ceph-cluster-on-ubuntu-16-04/5.png) 
@@ -208,27 +241,35 @@ sudo ufw enable
 
 从 ceph-admin 节点，登录到监控节点 'mon1' 然后安装 ufw。
 
+```
 ssh mon1
 sudo apt-get install -y ufw
+```
 
 打开 ceph 监控节点的端口然后开启 ufw。
 
+```
 sudo ufw allow 22/tcp
 sudo ufw allow 6789/tcp
 sudo ufw enable
+```
 
 最后，在每个 osd 节点：ceph-osd1,ceph-osd2 和 ceph-osd3 打开这些端口 6800-7300。
 
 从 ceph-admin 登录到每个 ceph-osd 节点安装 ufw。
 
+```
 ssh ceph-osd1
 sudo apt-get install -y ufw
+```
 
 在 osd 节点打开端口并重载防火墙。
 
+```
 sudo ufw allow 22/tcp
 sudo ufw allow 6800:7300/tcp
 sudo ufw enable
+```
 
 ufw 防火墙配置完成。
 
@@ -241,26 +282,36 @@ ufw 防火墙配置完成。
 
 我们要使用 **/dev/sdb** 作为 ceph 磁盘。从 ceph-admin 节点，登录到所有 OSD 节点，然后格式化 /dev/sdb 分区为 **XFS** 文件系统。
 
+```
 ssh ceph-osd1
 ssh ceph-osd2
 ssh ceph-osd3
+```
 
 使用 fdisk 命令检查分区表。
 
+```
 sudo fdisk -l /dev/sdb
+```
 
 格式化 /dev/sdb 分区为 XFS 文件系统，使用 parted 命令创建一个 GPT 分区表。
 
+```
 sudo parted -s /dev/sdb mklabel gpt mkpart primary xfs 0% 100%
+```
 
 下面，使用 mkfs 命令格式化分区为 XFS 格式。
 
+```
 sudo mkfs.xfs -f /dev/sdb
+```
 
 现在检查分区，然后你会看见 XFS /dev/sdb 分区。
 
+```
 sudo fdisk -s /dev/sdb
 sudo blkid -o value -s TYPE /dev/sdb
+```
 
 [
  ![Format partition ceph OSD nodes](https://www.howtoforge.com/images/how-to-install-a-ceph-cluster-on-ubuntu-16-04/6.png) 
@@ -270,8 +321,10 @@ sudo blkid -o value -s TYPE /dev/sdb
 
 在这步，我们将从 ceph-admin 安装 Ceph 到所有节点。马上开始，登录到 ceph-admin 节点。
 
+```
 ssh root@ceph-admin
 su - cephuser
+```
 
 **在 ceph-admin 节点上安装 ceph-deploy**
 
@@ -280,7 +333,9 @@ su - cephuser
 Install ceph-deploy on the ceph-admin node with the pip command.
 用 pip 命令在 ceph-admin 节点安装 ceph-deploy 。
 
+```
 sudo pip install ceph-deploy
+```
 
 注意： 确保所有节点都已经更新.
 
@@ -290,12 +345,16 @@ ceph-deploy 工具已经安装完毕后，为 Ceph 集群配置创建一个新�
 
 创建一个新集群目录。
 
+```
 mkdir cluster
 cd cluster/
+```
 
 下一步，用 '**ceph-deploy**' 命令通过定义监控节点 '**mon1**' 创建一个新集群。
 
+```
 ceph-deploy new mon1
+```
 
 命令将在集群目录生成 Ceph 集群配置文件 'ceph.conf'。
 
@@ -305,7 +364,9 @@ ceph-deploy new mon1
 
 用 vim 编辑 ceph.conf。
 
+```
 vim ceph.conf
+```
 
 在 [global] 块下，粘贴下面的配置。
 
@@ -321,17 +382,23 @@ osd pool default size = 2
 
 现在用一个命令从 ceph-admin 节点安装 Ceph 到所有节点。
 
+```
 ceph-deploy install ceph-admin ceph-osd1 ceph-osd2 ceph-osd3 mon1
+```
 
 命令将自动安装 Ceph 到所有节点：mon1，osd1-3 和 ceph-admin - 安装将花一些时间。
 
 现在到 mon1 节点部署监控节点。
 
+```
 ceph-deploy mon create-initial
+```
 
 命令将创建一个监控密钥，用 ceph 命令检查密钥。
 
+```
 ceph-deploy gatherkeys mon1
+```
 
 [
  ![Deploy key ceph](https://www.howtoforge.com/images/how-to-install-a-ceph-cluster-on-ubuntu-16-04/8.png) 
@@ -343,7 +410,9 @@ ceph-deploy gatherkeys mon1
 
 检查所有 osd 节点的 /dev/sdb 磁盘可用性。
 
+```
 ceph-deploy disk list ceph-osd1 ceph-osd2 ceph-osd3
+```
 
 [
  ![disk list of osd nodes](https://www.howtoforge.com/images/how-to-install-a-ceph-cluster-on-ubuntu-16-04/9.png) 
@@ -353,13 +422,17 @@ ceph-deploy disk list ceph-osd1 ceph-osd2 ceph-osd3
 
 下面，在所有节点用 zap 选项删除分区表。
 
+```
 ceph-deploy disk zap ceph-osd1:/dev/sdb ceph-osd2:/dev/sdb ceph-osd3:/dev/sdb
+```
 
 这个命令将删除所有 Ceph OSD 节点的 /dev/sdb 上的数据。
 
 现在准备所有 OSD 节点并确保结果没有报错。
 
+```
 ceph-deploy osd prepare ceph-osd1:/dev/sdb ceph-osd2:/dev/sdb ceph-osd3:/dev/sdb
+```
 
 当你看到 ceph-osd1-3 结果已经准备好 OSD 使用，然后命令已经成功。
 
@@ -369,11 +442,15 @@ ceph-deploy osd prepare ceph-osd1:/dev/sdb ceph-osd2:/dev/sdb ceph-osd3:/dev/sdb
 
 用下面的命令激活 OSD：
 
+```
 ceph-deploy osd activate ceph-osd1:/dev/sdb ceph-osd2:/dev/sdb ceph-osd3:/dev/sdb
+```
 
 现在你可以再一次检查 OSDS 节点的 sdb 磁盘。
 
+```
 ceph-deploy disk list ceph-osd1 ceph-osd2 ceph-osd3
+```
 
 [
  ![Ceph osds activated](https://www.howtoforge.com/images/how-to-install-a-ceph-cluster-on-ubuntu-16-04/11.png) 
@@ -386,8 +463,10 @@ ceph-deploy disk list ceph-osd1 ceph-osd2 ceph-osd3
 
 或者你直接在 OSD 节点山检查。
 
+```
 ssh ceph-osd1
 sudo fdisk -l /dev/sdb
+```
 
 [
  ![Ceph OSD nodes were created](https://www.howtoforge.com/images/how-to-install-a-ceph-cluster-on-ubuntu-16-04/12.png) 
@@ -395,11 +474,15 @@ sudo fdisk -l /dev/sdb
 
 接下来，部署管理密钥到所有关联节点。
 
+```
 ceph-deploy admin ceph-admin mon1 ceph-osd1 ceph-osd2 ceph-osd3
+```
 
 在所有节点运行下面的命令，改变密钥文件权限。
 
+```
 sudo chmod 644 /etc/ceph/ceph.client.admin.keyring
+```
 
 Ceph 集群在 Ubuntu 16.04 已经创建完成。
 
@@ -409,15 +492,21 @@ Ceph 集群在 Ubuntu 16.04 已经创建完成。
 
 从 ceph-admin 节点，登录到 Ceph 监控服务器 '**mon1**'。
 
+```
 ssh mon1
+```
 
 运行下面命令来检查集群健康。
 
+```
 sudo ceph health
+```
 
 现在检查集群状态。
 
+```
 sudo ceph -s
+```
 
 你可以看到下面返回结果：
 
