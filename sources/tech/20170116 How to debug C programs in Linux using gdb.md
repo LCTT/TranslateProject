@@ -1,3 +1,4 @@
+Translating by zhb127
 How to debug C programs in Linux using gdb
 ============================================================
 
