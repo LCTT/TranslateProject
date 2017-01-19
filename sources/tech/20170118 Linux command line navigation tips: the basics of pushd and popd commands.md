@@ -1,3 +1,5 @@
+translating---geekpi
+
 Linux command line navigation tips: the basics of pushd and popd commands
 ============================================================
 
