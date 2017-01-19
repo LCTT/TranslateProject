@@ -1,3 +1,5 @@
+alim0x translating
+
 # Behind-the-scenes changes
 
 Marshmallow expanded on the power-saving JobScheduler APIs that were originally introduced in Lollipop. JobScheduler turned app background processing from a free-for-all that frequently woke up the device to an organized system. JobScheduler was basically a background-processing traffic cop.
