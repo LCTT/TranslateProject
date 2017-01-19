@@ -1,3 +1,5 @@
+translating---geekpi
+
 How to Keep ‘sudo’ Password Timeout Session Longer in Linux
 ============================================================
 
