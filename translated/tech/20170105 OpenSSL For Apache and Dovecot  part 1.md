@@ -1,25 +1,25 @@
-translating---geekpi
-
-OpenSSL For Apache and Dovecot : part 1
+OpenSSL 在 Apache 和 Dovecot 下的使用：第一部分
 ============================================================
 
  ![OpenSSL](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/openssl.jpg?itok=RWoqdCAI "OpenSSL") 
-In this two-part series, Carla Schroder shows how to create your own OpenSSL certificates and how to configure Apache and Dovecot to use them.[Creative Commons Zero][1]Pixabay
+在这有两部分的系列中，Carla Schroder 会向你展示如何创建自己的 OpenSSL 证书以及如何配置 Apache 和 Dovecot 来使用它们。
+
+[Creative Commons Zero][1]Pixabay
 
 
-At long last, my wonderful readers, here is your promised OpenSSL how-to for Apache, and next week you get SSL for Dovecot. In this two-part series, we'll learn how to create our own OpenSSL certificates and how to configure Apache and Dovecot to use them.
+这么长时间之后，我的读者们，这里是我给你们承诺的在 Apache 中使用 OpenSSL 的方法，下周你会看到在 Dovecot 中使用 SSL。 在这个分为两部分的系列中，我们将学习如何创建自己的 OpenSSL 证书，以及如何配置 Apache 和 Dovecot 来使用它们。
 
-The examples here build on these tutorials:
+这些例子基于这些教程：
 
-*   [Apache on Ubuntu Linux For Beginners][3]
-*   [Apache on Ubuntu Linux For Beginners: Part 2][4]
-*   [Apache on CentOS Linux For Beginners][5]
+*   [给初学者看的在 Ubuntu Linux 上使用 Apache][3]
+*   [给初学者看的在 Ubuntu Linux 上使用 Apache：第2部分][4]
+*   [给初学者看的在 CentOS Linux 上使用 Apache][5]
 
-### Creating Your Own Certificate
+### 创建你的证书
 
-Debian/Ubuntu/Mint store private keys and symlinks to certificates in `/etc/ssl`. The certificates bundled with your system are kept in `/usr/share/ca-certificates`. Certificates that you install or create go in `/usr/local/share/ca-certificates/`.
+Debian/Ubuntu/Mint 存储私钥和符号链接到位于 `/etc/ssl` 中的证书中。与系统捆绑的证书保存在 `/usr/share/ca-certificates` 中。你安装或创建的证书在 `/usr/local/share/ca-certificates/` 中。
 
-This example for Debian/etc. creates a private key and public certificate, converts the certificate to the correct format, and symlinks it to the correct directory:
+这个例子是对 Debian 而言。创建私钥和公用证书，将证书转换为正确的格式，并将其符号链接到正确的目录：
 
 ```
 
@@ -56,7 +56,7 @@ done.
 done.
 ```
 
-CentOS/Fedora use a different file structure and don't use `update-ca-certificates`, so use this command:
+CentOS/Fedora 使用不同的文件结构，并不使用 `update-ca-certificates`，使用这个命令：
 
 ```
 
@@ -65,11 +65,11 @@ $ sudo openssl req -x509 -days 365 -nodes -newkey rsa:2048 \
    /etc/httpd/ssl/test-com.crt
 ```
 
-The most important item is the Common Name, which must exactly match your fully qualified domain name. Everything else is arbitrary. `-nodes`creates a password-less certificate, which is necessary for Apache. `- days`defines an expiration date. It's a hassle to renew expired certificates, but it supposedly provides some extra security. See [Pros and cons of 90-day certificate lifetimes][10] for a good discussion.
+最重要的条目是 Common Name，它必须与你的完全限定域名完全匹配。 这一切都是任意的。 用 `-nodes` 创建一个无密码的证书，这是Apache所必需的。用 `-days` 定义过期日期。这是一个麻烦的更新证书的方法，但它应该能够提供一些额外的安全。参见[ 90 天证书有效期的利弊][10]，以便进行良好的讨论。
 
-### Configure Apache
+### 配置 Apache
 
-Now configure Apache to use your new certificate. If you followed [Apache on Ubuntu Linux For Beginners: Part 2][11], all you do is modify the `SSLCertificateFile` and `SSLCertificateKeyFile` lines in your virtual host configuration to point to your new private key and public certificate. The `test.com` example from the tutorial now looks like this:
+现在配置 Apache 以使用你的新证书。如果你遵循[给初学者看的在 Ubuntu Linux 上使用 Apache：第2部分][11]，你所要做的就是修改虚拟主机配置中的 `SSLCertificateFile` 和 `SSLCertificateKeyFile`，以指向你的新私钥和公共证书。本教程中的 `test.com` 示例现在看起来像这样：
 
 ```
 
@@ -77,13 +77,13 @@ SSLCertificateFile /etc/ssl/certs/test-com.pem
 SSLCertificateKeyFile /etc/ssl/private/test-com.key
 ```
 
-CentOS users, see [Setting up an SSL secured Webserver with CentOS][12] in the CentOS wiki. The process is similar, and the wiki tells how to deal with SELinux.
+CentOS 用户，请参阅在 CentOS wiki 中[使用 CentOS 设置 SSL 加密的 Web 服务器][12]。过程是类似的，wiki 会告诉如何处理 SELinux。
 
-### Testing Apache SSL
+### 测试 Apache SSL
 
-The easy way is to point your web browser to [https://yoursite.com][13] and see if it works. The first time you do this you will get the scary warning from your over-protective web browser how the site is unsafe because it uses a self-signed certificate. Ignore your hysterical browser and click through the nag screens to create a permanent exception. If you followed the example virtual host configuration in [Apache on Ubuntu Linux For Beginners: Part 2][14]all traffic to your site will be forced over HTTPS, even if your site visitors try plain HTTP.
+一个简单的方法是将你的网络浏览器指向 [https://yoursite.com][13]，看看它是否可以正常工作。在第一次这样做时，你会在你过度保护的 web 浏览器中看到可怕的警告说网站是不安全的，因为它使用的是自签名证书。请忽略你的浏览器并单击屏幕创建永久性异常。 如果你遵循在[给初学者看的在 Ubuntu Linux 上使用 Apache：第2部分][14]上的示例虚拟主机配置，那么即使你的网站访问者尝试使用纯 HTTP，你的网站的所有流量都将被迫通过 HTTPS。
 
-The cool nerdy way to test is by using OpenSSL. Yes, it has a nifty command for testing these things. Try this:
+一个很好测试方法是使用OpenSSL。是的，有一个漂亮的命令来测试这些东西。试下这个：
 
 ```
 
@@ -104,11 +104,11 @@ Server certificate
 [...]
 ```
 
-This spits out a giant torrent of information. There is a lot of nerdy fun to be had with `openssl s_client`; for now it is enough that we know if our web server is using the correct SSL certificate.
+这里输出了大量的信息。这里有很多关于 `openssl s_client` 的有趣信息; 现在足够我们知道我们的 web 服务器是否使用了正确的 SSL 证书。
 
-### Creating a Certificate Signing Request
+### 创建一个证书签名请求
 
-Should you decide to use a third-party certificate authority (CA), you will have to create a certificate signing request (CSR). You will send this to your new CA, and they will sign it and send it back to you. They may have their own requirements for creating your CSR; this a typical example of how to create a new private key and CSR:
+如果你决定使用第三方证书颁发机构（CA），那么就必须创建证书签名请求（CSR）。你将它发送给你的新 CA，他们将签署并将其发送给您。他们可能有自己的要求来创建你的 CSR; 这是如何创建一个新的私钥和 CSR 的示例：
 
 ```
 
@@ -116,7 +116,7 @@ $ openssl req -newkey rsa:2048 -nodes \
    -keyout yourdomain.key -out yourdomain.csr
 ```
 
-You can also create a CSR from an existing key:
+你可以从一个已经存在的 key 中创建一个 CSR：
 
 ```
 
@@ -124,22 +124,22 @@ $ openssl req  -key yourdomain.key \
    -new -out domain.csr
 ```
 
-That is all for today. Come back next week to [learn how to properly set up Dovecot to use OpenSSL][15].
+今天就是这样了。下周我们将[学习如何正确地在 Dovecot 中设置 OpenSSL][15]。
 
-### Additional Tutorials
+### 额外的教程
 
-[Quieting Scary Web Browser SSL Alerts][16]
-[How to Set Up Secure Remote Networking with OpenVPN on Linux, Part 1][17]
-[How to Set Up Secure Remote Networking with OpenVPN on Linux, Part 2][18]
+[消灭让人害怕的 web 浏览器 SSL 警告][16]
+[如何在 Linux 上使用 OpenVPN 设置安全远程网络：第一部分][17]
+[如何在 Linux 上使用 OpenVPN 设置安全远程网络：第一部分][18]
 
-_Advance your career in system administration! Check out the[ ][6][Essentials of System Administration][7][ ][8]course from The Linux Foundation._
+_提高你的系统管理职业生涯吧！查看Linux基金会的[ ][6][系统管理的要点][7][ ][8]课程。_
 
 --------------------------------------------------------------------------------
 
 via: https://www.linux.com/learn/sysadmin/openssl-apache-and-dovecot
 
 作者：[CARLA SCHRODER][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
