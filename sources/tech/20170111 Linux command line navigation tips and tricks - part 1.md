@@ -1,3 +1,4 @@
+# translating by ruskking
 Linux command line navigation tips and tricks - part 1
 ============================================================
 
