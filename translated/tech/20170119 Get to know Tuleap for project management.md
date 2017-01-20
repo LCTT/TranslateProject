@@ -65,7 +65,7 @@ Nitish 是一名专业的软件开发人员并对开源有热情。作为基于 
 via: https://opensource.com/article/17/1/interview-Tuleap-project
 
 作者：[Nitish Tiwari][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geeki)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
