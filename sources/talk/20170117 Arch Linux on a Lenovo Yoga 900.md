@@ -1,3 +1,4 @@
+#rusking translating 
 # Arch Linux on a Lenovo Yoga 900
 
 _Warning: this is about 5,500 words with plenty of interesting links, so wait till you’ve got something to drink and some time._
