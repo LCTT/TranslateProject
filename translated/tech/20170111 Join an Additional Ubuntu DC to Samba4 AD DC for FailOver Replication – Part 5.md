@@ -412,13 +412,14 @@ Samba 生成的新配置文件在 /var/lib/samba/private 目录下。使用 Linu
 ![](http://1.gravatar.com/avatar/7badddbc53297b2e8ed7011cf45df0c0?s=128&d=blank&r=g)
 
 我叫 Ravi Saive，TecMint 网站博主。一个喜欢在网上分享技术知识及经验的电脑极客和 Linux 系统专家。我的大多数的服务器都运行在 Linux 开源平台上。关注我：Twitter ，Facebook 和 Google+ 。
+
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/join-additional-ubuntu-dc-to-samba4-ad-dc-failover-replication/
 
 作者：[Ravi Saive][a]
 译者：[rusking](https://github.com/rusking)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
