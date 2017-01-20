@@ -1,3 +1,5 @@
+# translating by rusking
+
 Why every business should consider an open source point of sale system
 ============================================================
  ![Why every business should consider an open source point of sale system](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/BUS_lovemoneyglory2.png?itok=WxnzxyWP "Why every business should consider an open source point of sale system") 
