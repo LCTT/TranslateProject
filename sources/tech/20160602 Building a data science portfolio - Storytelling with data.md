@@ -1,5 +1,4 @@
-
-@poodarchu 翻译中
+Translated by Yoo-4x
 
 Building a data science portfolio: Storytelling with data
 ========
