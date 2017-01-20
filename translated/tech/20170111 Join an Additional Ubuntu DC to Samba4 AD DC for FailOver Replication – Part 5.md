@@ -403,9 +403,6 @@ Samba 生成的新配置文件在 /var/lib/samba/private 目录下。使用 Linu
 
 如果第一台 DC 服务器 192.168.1.254 网络不通，则调整配置文件中 DNS 服务器 IP 地址的顺序，以免先查询这台不可用的 DNS 服务器。
 
-Assuming that the first DC with 192.168.1.254 goes offline, reverse the order of the DNS server IP addresses in the configuration file so it won’t try to query first an unavailable DNS server.
-
-Finally, in case you want to perform local authentication on a Linux system with a Samba4 Active Directory account or grant root privileges for AD LDAP accounts in Linux, read the steps 2 and 3 from the tutorial Manage Samba4 AD Infrastructure from Linux Command Line.
 最后，如果你想在 Linux 系统上使用 Samba4 活动目录账号来进行本地认证，或者为 AD LDAP 账号授予 root 权限，请查看[在 Linux 命令行下管理 Samba4 AD 架构][27] 这篇教程的 第 2 步和第 3 步。
 
 --------------------------------------------------------------------------------
