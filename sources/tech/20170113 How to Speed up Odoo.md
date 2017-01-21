@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How to Speed up Odoo
 ============================================================
 
