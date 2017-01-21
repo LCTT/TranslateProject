@@ -1,33 +1,31 @@
-fuowang翻译中
-
-Installing, Obtaining, and Making GTK Themes
+获取、安装和制作 GTK 主题
 ----------------
 
-Many Linux desktops supporting themes. A theme is a particular appearance or "****" for the GUI. Users can change the theme to make the desktop look different. Usually, users also change the icons. However, the theme and icon-pack are two separate entities. Numerous people want to make their own theme, so here is an article about making GTK themes as well as various essential information.
+非常多的桌面版 Linux 都支持主题。GUI（译者注：图形用户界面）独有的外观或者”风格“叫做主题。用户可以改变主题让桌面看起来与众不同。通常，用户也会更改图标。然而，主题和图标包是两个独立的实体。很多人想制作他们自己的主题，因此这是一篇关于GTK 主题的制作以及各种制作时必需的信息的文章。
 
-**NOTE:** This article primarily focuses on GTK3, but it will discuss a little about GTK2, Metacity, and others. Cursors and icons will not be discussed in this article.
+**注意：** 这篇文章着重讨论 GTK3，但会稍微谈一下 GTK2、Metacity 等。本文不会讨论光标和图标。
 
-**Basic Concepts**
-The GIMP ToolKit (GTK) is a widget-toolkit used to create GUIs on a variety of systems (thus making GTK cross-platform). GTK ([http://www.gtk.org/][17]) is commonly and incorrectly thought to stand for "GNOME ToolKit", but is actually stands for "GIMP ToolKit" because it was first created to design an user interface for GIMP. GTK is an object-oriented toolkit written in C (GTK itself is not a language). GTK is entirely open-source under the LGPL license. GTK is a widely used toolkit for GUIs and many tools are available for GTK.
+**基本概念**
+GIMP 工具包（简称 GTK）是一个用来创造在多种系统上（如此造就了 GTK 的跨平台）图形用户界面的构件工具包。GTK（[http://www.gtk.org/][17]）通常被错误地认为代表“GNOME 工具包”，但实际上它代表“GIMP 工具包”，因为最初创造它是为了给 GIMP 设计用户界面。GTK 是一个用 C 语言编写的面向对象工具包（GTK 本身不是一种语言）。GTK 遵循 LGPL协议完全开源。GTK 是一个使用广泛的图形用户界面工具包，它含有很多可用工具。
 
-Themes made for GTK will not work in Qt-based applications. A Qt-theme is needed to apply a theme to Qt applications.
+GTK 主题无法在基于 QT 的应用上使用。QT 主题需要在基于 QT 的应用上使用。
 
-The themes use Cascading Style-Sheets (CSS) to generate the theme's appearance. This is the same CSS that web-developers use on web-pages. However, instead of HTML tags being referenced, GTK widgets are specified. It is important that theme developers learn CSS.
+主题使用层叠样式表（CSS）来生成主题样式。这里的 CSS 和网站开发者在网页上使用的相同。然而它引用的 HTML 标签被 GTK 构件的专用标签代替。学习 CSS 对主题开发者来说很重要。
 
-**Theme Location**
-Themes may be stored in "~/.themes" or "/usr/share/themes". Themes that are in "~/.themes" are only accessible to the owner of that home folder. While themes in "/usr/share/themes" are global-themes that are accessible by all users. When a GTK application executes, it has a list of possible theme files that it checks in a specific order. If the theme file is not found, then it will try the next file on the list. Below is the list in the order that GTK3 applications try to use.
-$XDG_CONFIG_HOME/gtk-3.0/gtk.css (typically ~/.config/gtk-3.0/gtk.css)
+**主题存放位置**
+主题可能会存储在“~/.themes”或者“/usr/share/themes”文件夹中。存放在“~/.themes”文件夹下的主题只有此 home 文件夹的所有者可以使用。而存放在“/usr/share/themes”文件夹下的全局主题可供所有用户使用。当执行 GTK 程序时，它会按照某种确定的顺序检查可用主题文件的列表。如果没有找到主题文件，它会尝试检查列表中的下一个文件。下述文字是 GTK3 程序检查时的顺序列表。
+$XDG_CONFIG_HOME/gtk-3.0/gtk.css （另一写法 ~/.config/gtk-3.0/gtk.css）
 ~/.themes/NAME/gtk-3.0/gtk.css
-$datadir/share/themes/NAME/gtk-3.0/gtk.css (typically /usr/share/themes/name/gtk-3.0/gtk.css)
+$datadir/share/themes/NAME/gtk-3.0/gtk.css （另一写法 /usr/share/themes/name/gtk-3.0/gtk.css）
 
-**NOTE:** "NAME" is a placeholder for the name of the current theme.
+**注意：** ”NAME“是当前主题名称的占位符。
 
-If there are two themes with the same name, then the one in the user's home folder (~/.themes) will be used. Developers can take advantage of GTK's theme-seeking algorithm by testing new themes in their local home's theme directory.
+如果有两个主题名字相同，那么存放在用户 home 文件夹（~/.themes）里的主题会被使用。开发者测试存放在本地 home 文件夹的主题时可以好好的利用 GTK 的主题查找算法。
 
-**Theme Engines**
-A "Theme engine" is a piece of software that changes the look of the GUI's widgets. The engine reads and uses the theme's files to know how the various widgets should be drawn. Some engines come with themes of their own. Each engine has its advantages and disadvantages, and some engines add special properties and features.
+**主题引擎**
+主题引擎是软件的一部分，用来改变图形用户界面构件的外观。引擎通过解析主题文件来了解应当绘制多少种构件。有些引擎随着主题被开发出来。每种引擎都有优点和缺点，还有些引擎添加了某些特性和特色。
 
-Many theme-engines can be obtained from the default repositories. Debian-based Linux distros can execute "apt-get install gtk2-engines-murrine gtk2-engines-pixbuf gtk3-engines-unico" to install three different engines. Many engines are available for both GTK2 and GTK3\. Below is a small list of examples.
+从默认软件源中可以获取很多主题引擎。Debian 系的 Linux 发行版可以执行“apt-get install gtk2-engines-murrine gtk2-engines-pixbuf gtk3-engines-unico”命令来安装三种不同的引擎。很多引擎同时支持 GTK2 和 GTK3。以下述短列表为例。
 
 *   gtk2-engines-aurora - Aurora GTK2 engine
 *   gtk2-engines-pixbuf - Pixbuf GTK2 engine
@@ -35,21 +33,21 @@ Many theme-engines can be obtained from the default repositories. Debian-based L
 *   gtk3-engines-unico - Unico GTK3 engine
 *   gtk3-engines-xfce - GTK3 engine for Xfce
 
-**Creating GTK3 Themes**
-To create a GTK3 theme, developers can start with an empty file or they can use a pre-existing theme as a template. It may help beginners to start with a pre-existing theme. For instance, a theme can be copied to the user's home folder and then the developer can start editing the files.
+**创作 GTK3 主题**
+开发者创作 GTK3 主题时，或者从空文件着手，或者将已有的主题作为模板。从现存主题着手可能会对新手有帮助。比如，开发者可以把主题复制到用户的 home 文件夹，然后编辑这些文件。
 
-The general format for a GTK3 theme is to create a folder named after the theme. Then, create a sub-directory called "gtk-3.0" and create a file inside of it named "gtk.css". In the "gtk.css" file, use CSS code to control how the theme will look. Move the theme to ~/.themes for testing purposes. Use the newly created theme and make changes as necessary. If desired, developers can add additional components to the theme for GTK2, Openbox, Metacity, Unity, etc.
+GTK3 主题的通用格式是新建一个以主题名字命名的文件夹。然后新建一个名为“gtk-3.0”的子目录，在子目录里新建一个名为“gtk.css”的文件。在文件“gtk.css“里，使用 CSS 代码写出主题的外观。为了测试将主题移动到 ~/.theme 里。使用新主题并在必要时进行改进。如果有需求，开发者可以添加额外的组件，使主题支持 GTK2，Openbox，Metacity，Unity等桌面环境。
 
-To explain how to create themes, we will study the "Ambiance" theme, which is usually found at /usr/share/themes/Ambiance. This directory contains the below listed sub-directories and a file named "index.theme".
+为了阐明如何创造主题，我们会学习”Ambiance“主题，通常可以在 /usr/share/themes/Ambiance 找到它。此目录包含下面列出的子目录以及一个名为”index.theme“的文件。
 
 *   gtk-2.0
 *   gtk-3.0
 *   metacity-1
 *   unity
 
-"**index.theme**" contains metadata (such as the theme's name) and some important settings (such as the button layout). Below is the "index.theme" file for "Ambiance".
+“**index.theme**”含有元数据（比如主题的名字）和一些重要的配置（比如按钮的布局）。下面是”Ambiance“主题的”index.theme“文件内容。
 
-Code:
+代码：
 ```
 [Desktop Entry]
 Type=X-GNOME-Metatheme
@@ -66,9 +64,9 @@ ButtonLayout=close,minimize,maximize:
 X-Ubuntu-UseOverlayScrollbars=true
 ```
 
-The "**gtk-2.0**" directory contains files for GTK2 such as a "gtkrc" file and an "apps" directory that contains application-specific GTK settings. The "gtkrc" file is the main CSS-file for the GTK2 portion of the theme. Below are the contents of /usr/share/themes/Ambiance/gtk-2.0/apps/nautilus.rc
+”**gtk-2.0**“目录包括支持 GTK2 的文件，比如文件”gtkrc“和文件夹”apps“。文件夹”apps“包括具体程序的 GTK 配置。文件”gtkrc“是 GTK2 部分的主要 CSS 文件。下面是 /usr/share/themes/Ambiance/gtk-2.0/apps/nautilus.rc 文件的内容。
 
-Code:
+代码:
 ```
 # ==============================================================================
 # NAUTILUS SPECIFIC SETTINGS
@@ -83,9 +81,9 @@ widget_class "*Nautilus*<GtkButton>" style "notebook_button"
 widget_class "*Nautilus*<GtkButton>*<GtkLabel>" style "notebook_button"
 ```
 
-The "**gtk-3.0**" directory contains files for GTK3\. Instead of "gtkrc", GTK3 uses "gtk.css" as the main theme file. In the Ambiance theme, the file contains one line - '@import url("gtk-main.css");'. The "settings.ini" file contains important theme-wide settings. GTK3 themes use an "apps" directory for the same purpose as GTK2\. The "assets" directory contains images for radio buttons, check-boxes, etc. Below are the contents of /usr/share/themes/Ambiance/gtk-3.0/gtk-main.css
+”**gtk-3.0**“目录里是 GTK3 的文件。GTK3 使用”gtk.css“取代了"gtkrc"，作为主文件。对于 Ambiance 主题，此文件有一行‘@import url("gtk-main.css");’。”settings.ini“是重要的主题范围配置文件。GTK3 主题的”apps“目录和 GTK2 有同样的作用。”assets“目录里有单选按钮、多选框等的图像文件。下面是 /usr/share/themes/Ambiance/gtk-3.0/gtk-main.css 的内容。
 
-Code:
+代码:
 ```
 /*default color scheme */
 @define-color bg_color #f2f1f0;
@@ -157,14 +155,14 @@ Code:
 @import url("public-colors.css");
 ```
 
-The "**metacity-1**" folder contains images that the Metacity window-manager uses for buttons (such as the "close window" button). This directory also contains a file named "metacity-theme-1.xml" that contain's the theme's metadata (like the developer's name) and styling. However, the Metacity portion of the theme uses XML rather than CSS.
+”**metacity-1**“文件夹含有 Metacity 窗口管理器按钮（比如”关闭窗口“按钮）的图像文件。此目录还有一个名为”metacity-theme-1.xml“的文件，包括了主题的元数据（像开发者的名字）和主题设计。然而，主题的 Metacity 部分使用 XML 文件而不是 CSS 文件。
 
-The "**unity**" directory contains SVG files that Unity uses for buttons. Besides the SVG files, there are no other files in this folder.
+”**unity**“文件夹含有 Unity 按钮使用的 SVG 文件。除了 SVG 文件，这里没有其他的文件。
 
-Some themes may contain other directories. For instance, "Clearlooks-Phenix" has a folder named "**openbox-3**" and "**xfwm4**". The "openbox-3" folder only contains a "themerc" file that declares the settings and appearance (a sample is seen below). The "xfwm4" directory contains *.xpm files, *.png images (in the "png" folder), a "README" file, and a "themerc" file which contains settings (as seen below).
+一些主题可能也会包含其他的目录。比如，“Clearlooks-Phenix”主题有名为”**openbox-3**”和“**xfwm4**“的文件夹。”openbox-3“文件夹仅有一个”themerc“文件，声明了主题配置和外观（下面有文件示例）。”xfwm4“目录含有几个 xpm 文件，几个 png 图像文件（在”png“文件夹里），一个”README“文件，还有个包含了主题配置的”themerc“文件（就像下面看到的那样）。
 /usr/share/themes/Clearlooks-Phenix/xfwm4/themerc
 
-Code:
+代码：
 ```
 # Clearlooks XFWM4 by Casey Kirsle
 
@@ -184,7 +182,7 @@ title_vertical_offset_inactive=1
 
 /usr/share/themes/Clearlooks-Phenix/openbox-3/themerc
 
-Code:
+代码：
 ```
 !# Clearlooks-Evolving
 !# Clearlooks as it evolves in gnome-git...
@@ -351,16 +349,16 @@ osd.unhilight.bg.color: #BABDB6
 osd.unhilight.bg.colorTo: #efefef
 ```
 
-**Testing Themes**
-When creating themes, it may be helpful to test it and tweak the code to get the desired appearance. Such developers may want to use some type of "theme-previewer". Thankfully, some exist.
+**测试主题**
+在创作主题时，测试主题并且微调代码对得到想要的样子是很有帮助的。有相当的开发者想要用到”主题预览器“这样的工具呢。幸运的是，已经有了。
 
-*   GTK+ Change Theme - This program can change the GTK theme and allow developers to preview the theme. The program is composed of one window that contains many widgets, thus providing a complete preview for the theme. To install this program, type "apt-get install gtk-chtheme".
-*   GTK Theme Switch - This program allows users to easily change the user's theme. Be sure to have some applications open to view and test the theme. To install this program, type "apt-get install gtk-theme-switch" and type "gtk-theme-switch2" in a terminal to run it.
-*   LXappearance - This program can change themes, icons, and fonts.
-*   PyWF - This is a Python-based alternative to "The Widget Factory". PyWF can be obtained at [http://gtk-apps.org/content/show.php/PyTWF?content=102024][1]
-*   The Widget Factory - This is an old GTK-previewer. To install this program, type "apt-get install thewidgetfactory" and type "twf" in a terminal to run it.
+*   GTK+ Change Theme - 这个程序可以更改 GTK 主题，开发者可以用它预览主题。这个程序由一个含有很多构件的窗口组成，因此可以为主题提供一个完整的预览。要安装它，只需输入命令”apt-get install gtk-chtheme“。
+*   GTK Theme Switch - 用户可以使用它轻松的更换用户主题。测试主题时确保打开了一些应用，方便预览效果。要安装它，只需输入命令”apt-get install gtk-theme-switch“，然后在终端敲出”gtk-theme-switch2“即可运行。
+*   LXappearance - 它可以更换主题，图标以及字体。
+*   PyWF - 这是”The Widget Factory“的一个基于 Python 的可选组件。可以在[http://gtk-apps.org/content/show.php/PyTWF?content=102024][1]获取Pywf。
+*   The Widget Factory - 这是一个古老的 GTK 预览器。要安装它，只需输入命令”apt-get install thewidgetfactory"，然后在终端敲出“twf”即可运行。
 
-**Theme Downloads**
+**主题下载**
 
 *   Cinnamon - [http://gnome-look.org/index.php?xcontentmode=104][2]
 *   Compiz - [http://gnome-look.org/index.php?xcontentmode=102][3]
@@ -372,7 +370,7 @@ When creating themes, it may be helpful to test it and tweak the code to get the
 *   Metacity - [http://gnome-look.org/index.php?xcontentmode=101][9]
 *   Ubuntu Themes - [http://www.ubuntuthemes.org/][10]
 
-**Further Reading**
+**延伸阅读**
 
 *   Graphical User Interface (GUI) Reading Guide - [http://www.linux.org/threads/gui-reading-guide.6471/][11]
 *   GTK - [http://www.linux.org/threads/understanding-gtk.6291/][12]
@@ -386,7 +384,7 @@ When creating themes, it may be helpful to test it and tweak the code to get the
 via: http://www.linux.org/threads/installing-obtaining-and-making-gtk-themes.8463/
 
 作者：[DevynCJohnson][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[fuowang](https://github.com/fuowang)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
