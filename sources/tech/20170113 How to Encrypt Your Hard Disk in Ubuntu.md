@@ -1,3 +1,5 @@
+GHLandy Translating
+
 How to Encrypt Your Hard Disk in Ubuntu
 ============================================================
  ![](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2017/01/hdd-encryption-ubuntu.jpg "How to Encrypt Your Hard Disk in Ubuntus") 
