@@ -1,6 +1,7 @@
+hkurj translating
 Getting started with shell scripting
 ============================================================
- ![Getting started with shell scripting](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/osdc_terminals.png?itok=QmkPW7P1 "Getting started with shell scripting") 
+ ![Getting started with shell scripting](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/osdc_terminals.png?itok=QmkPW7P1 "Getting started with shell scripting")
 
 Image by : 
 
@@ -28,7 +29,7 @@ You can generate your own **hello world** script from a terminal window. Mind 
 
 ```
 $ echo "#\!/bin/sh" > hello.sh
-$ echo "echo 'hello world' " >> hello.sh 
+$ echo "echo 'hello world' " >> hello.sh
 ```
 
 As you can see, writing a shell script consists, with the exception of the first line, of echoing or pasting commands into a text file.
