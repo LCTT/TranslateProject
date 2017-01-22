@@ -208,7 +208,7 @@ via: http://www.tecmint.com/install-configure-ganglia-monitoring-centos-linux/
 
 译者：[ivo-wang](https://github.com/ivo-wang)
 
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织编译，[Linux中国](https://linux.cn/) 荣誉推出
 
