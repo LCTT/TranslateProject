@@ -1,3 +1,5 @@
+translating---geekpi
+
 It’s Time to Ditch Skype and TeamSpeak, Discord Launches Its App for Linux Users
 ============================================================
 
