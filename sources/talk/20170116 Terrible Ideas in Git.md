@@ -1,3 +1,5 @@
+translating---geekpi
+
 Terrible Ideas in Git
 ============================================================
 
