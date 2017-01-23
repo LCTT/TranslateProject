@@ -2,7 +2,7 @@
 ============================================================
 
  ![Jan Lübbe ](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/jan-lubbe-elc.png?itok=6G5lADKu "Jan Lübbe ") 
-Pengutronix 内核黑客 JanLübbe 总结了嵌入式 Linux 中正在增长的安全威胁，并在这次 [Linux 基金会][1]在欧洲举行的嵌入式 Linux 会议上概述了一个计划，以保持长期设备的安全和完整功能。
+Pengutronix 内核黑客 JanLübbe 总结了嵌入式 Linux 中正在增长的安全威胁，并在这次在欧洲举行的嵌入式 Linux 会议上概述了一个计划，以保持长期设备的安全和完整功能。[Linux 基金会][1]
 
 过去安全漏洞只发生在在民间快速衰落的 Windows 上。恶意软件黑客和拒绝服务专家越来越多地针对过时的嵌入式 Linux 设备，因此 10 月在[欧洲举行的嵌入式 Linux 会议][3]（ELCE）上的几个演讲的主题是关于修复 Linux 安全漏洞。
 
