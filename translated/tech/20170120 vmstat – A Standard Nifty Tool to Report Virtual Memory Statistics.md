@@ -1,49 +1,47 @@
-translating---geekpi
-
-vmstat – A Standard Nifty Tool to Report Virtual Memory Statistics
+vmstat - 一个标准的报告虚拟内存统计工具
 ============================================================
 
-#### What’s RAM ?
+#### 什么是 RAM？
 
-As we already know about RAM because we all are in smartphone world. So, i don’t want to go in depth, even though i will tell you in single line. RAM stands for `Random Access Memory` is a computer data storage, which stores frequently used program to increase the system performance.
+因为我们在智能手机世界，所以我们都知道 RAM。因此，我不想深入，即使这样我会简要概括下。RAM 代表`随机访问内存`（Random Access Memory，是一种计算机存储，它会存储经常使用的程序来提升系统性能。
 
-#### What’s Virtual Memory ?
+#### 什么是虚拟内存？
 
-virtual memory is a memory management method that allows a computer to balance/manage the shortages of physical memory by temporarily transferring recently unused applications data from RAM to hard disk. [Read More][4]
+虚拟内存是一种通过临时将最近未使用的程序数据从 RAM 转移到硬盘，允许计算机平衡/管理内存短缺的内存管理方式。
 
-#### What’s vmstat ?
+#### 什么是 vmstat？
 
-vmstat is a standard nifty tool that report virtual memory statistics of Linux system. vmstat reports information about processes, memory, paging, block IO, traps, and cpu activity. It helps Linux administrator to identify system bottlenecks while troubleshooting the issues.
+vmstat 是一个标准的工具，它会报告 Linux 系统的虚拟内存统计。vmstat 报告有关进程、内存、分页、块IO、陷阱和 cpu 活动的信息。它帮助 Linux 管理员在解决问题时识别系统瓶颈。
 
-#### Install Sysstat in Linux
+#### 在 Linux 中安装 Sysstat
 
-There is no separate package for `vmstat` on Linux. It’s bundled with `sysstat` package and available in most of the distribution default repository. If it’s not installed, just fire the following command based on your distribution.
+Linux 中没有独立的 `vmstat` 包。它与 `sysstat` 绑定在一起，并在大多数发行版的默认仓库上都有。如果还没有安装，只要基于你的发行版输入下面的命令。
 
-[SAR Command Usage][5]
+[SAR 命令用法][5]
 
 ```
-[Install vmstat on CentOS/RHEL]
+[在 CentOS/RHEL 中安装 vmstat]
 $ sudo yum install sysstat
 
 [Install vmstat on Fedora]
 $ sudo dnf install sysstat
 
-[Install vmstat on Debian/Ubuntu]
+[在 Debian/Ubuntu 中安装 vmstat]
 $ sudo apt-get install sysstat
 
-[Install vmstat on Arch Linux]
+[在 Arch Linux 中安装 vmstat]
 $ sudo pacman -S sysstat
 
-[Install vmstat on Mageia]
+[在 Mageia 中安装 vmstat]
 $ sudo urpmi sysstat
 
-[Install vmstat on openSUSE]
+[在 openSUSE 中安装 vmstat]
 $ sudo zypper install sysstat
 ```
 
-#### Rum vmstat without parameter
+#### 不带参数运行 vmstat
 
-Let’s assume, you have successfully installed vmstat then run the `vmstat` command on terminal without any parameter which will show you a default result of vmstat.
+假设你已经成功安装 vmstat，接着在终端中不带参数运行 `vmstat`，它会想你展示 vmstat 的默认结果。
 
 ```
 # vmstat
@@ -52,48 +50,48 @@ procs -----------memory---------- ---swap-- -----io---- -system-- ----cpu----
  2  0  79496 1614120 139240 787928   0    0    23    10    0    0 11  1 88  0
 ```
 
-When you saw the above output, you might know few things what it is and the purpose. Don’t worry we will explain each and every parameter deeply, so that you can understand the vmstat usage & purpose.
+当你看到上面的输出，你可能已经知道一些意思和目的。不要担心，我们将深入解释每个参数，以便你可以了解 vmstat 的用途和目的。
 
-procs : procs own `r & b` column which reports about process statistics. In the above output there are two processes in the run queue waiting for CPU & zero sleep process. Usually, it should not exceed number of processors (or cores), if you found abnormal on this better to use [top command][1] for further troubleshooting.
+procs：procs 中有 `r 和 b` 列，它报告进程统计信息。在上面的输出中，在运行队列中有两个进程在等待CPU并有零个休眠进程。通常，它不应该超过处理器（或核心）的数量，如果你发现异常，最好使用[top命令][1]进一步地排除故障。
 
-*   r : The number of processes waiting for run time.
-*   b : The number of processes in sleeping stat.
+*   r：等待运行时的进程数。
+*   b：休眠状态下的进程数。
 
-memory : memory own `swpd`, `free`, `buff` & `cache` column which reports about memory statistics. The same information you can see with help of free -m command. In the above output memory statistics shows in kilobytes which is bit difficult to understand, better to add `M` parameter to get the statistics with megabytes.
+memory： memory 下有 `swpd`、`free`、`buff` 和 `cache` 列内存报告统计。你可以用 free -m 命令获取相同的功能。在上面的内存统计中，统计数据以千字节表示，这有点难以理解，最好添加 `M` 参数来获得以兆字节为单位的统计数据。
 
-*   swpd : The amount of virtual memory used.
-*   free : The amount of idle memory.
-*   buff : The amount of memory used as buffers.
-*   cache : The amount of memory used as cache.
-*   inact : The amount of inactive memory.
-*   active : The amount of active memory.
+*   swpd：使用的虚拟内存量。
+*   free：空闲内存量。
+*   buff：用作缓冲区的内存量。
+*   cache：用作缓存的内存量。
+*   inact：非活动内存的数量。
+*   active：活动内存量。
 
-swap : swap own `si` & `so` column which reports about swap memory statistics. The same information you can see with help of free -m command.
+swap：swap 有 `si` 和 `so` 列，报告交换内存统计信息。你可以看到用 free -m 命令看到相同的信息。
 
-*   si : Amount of memory swapped from disk (memory moved from swap to real memory).
-*   so : Amount of memory swapped to disk (memory moved from real memory to swap).
+*   si：从磁盘交换的内存量（从 swap 移到实际内存的内存）。
+*   so：交换到磁盘的内存量（从实际内存移动到 swap 的内存）。
 
-I/O : I/O own `bi` & `bo` column which reports about disk read & write statistics per second in terms of blocks read and blocks written. If you found huge I/O read & write better to navigate [iotop][2] & [iostat][3] command.
+I/O：I/O 有 `bi` 和 `bo` 列，它以块读取和块写入报告每秒磁盘读取和写入的统计信息。如果你发现有巨大的 I/O读写，最好使用 [iotop][2] 和 [iostat][3] 命令来查看。
 
-*   bi : Number of Blocks received from a block device.
-*   bo : Number of Blocks sent to a block device.
+*   bi：从块设备接收的块数。
+*   bo：发送到块设备的块数。
 
-system : system own `in` & `cs` column which reports about system operations per second. If you found huge I/O read & write better to navigate iotop & iostat command.
+system：system 有 `in` 和 `cs` 列，它报告每秒的系统操作。如果你发现巨大的 I/O 读写，最好使用 iotop 和 iostat 命令。
 
-*   in : The number of system interrupts per second, including the clock.
-*   cs : Number of Blocks sent to a block device.
+*   in：每秒的系统中断数，包括时钟。
+*   cs：发送到块设备的块数。
 
-CPU : CPU own `cs`, `us`, `sy`, `id` & `wa` column which reports about CPUs resources percentages of total CPU time. If you found abnormal better to navigate top & free command.
+CPU：CPU 有 `cs`、`us`、`sy`、`id` 和 `wa` 列，报告 CPU 资源占总 CPU 时间的百分比。如果你发现异常，最好使用 top 和 free 命令。
 
-*   cs : The number of system interrupts per second, including the clock.
-*   us : Number of Blocks sent to a block device.
-*   sy : The amount of memory used as cache.
-*   id : The amount of inactive memory.
-*   wa : The amount of active memory.
+*   cs：每秒的系统中断数，包括时钟。
+*   us：发送到块设备的块数。
+*   sy：用作高速缓存的内存量。
+*   id：非活动内存量。
+*   wa：活动内存量。
 
-#### Display output in Megabytes
+#### 以 MB 方式输出
 
-By default vmstat shows memory statistics output in kilobytes which is very difficult to understand, better to add `-S & m` parameters to get the statistics with megabytes.
+默认情况下，vmstat 以千字节为单位显示内存统计，这是非常难以理解的，最好添加 `-S 和 `m` 参数以获取以兆字节为单位的统计。
 
 ```
 # vmstat -S m
@@ -102,11 +100,11 @@ procs -----------memory---------- ---swap-- -----io---- -system-- ----cpu----
  1  0    103    371    406   2116    0    0    40    15    0    0 11  1 87  0
 ```
 
-#### Run vmstat with delay for better statistics
+#### 延迟运行 vmstat 获取更好的统计信息
 
-By default vmstat shows single statistics output which is not enough to troubleshoot further so, add delay (delay is the delay between updates in seconds) which capture the activity periodically. If you want to run vmstat with 2 second delay, just use the below command (If you want more delay you can change as per your wish).
+默认情况下，vmstat 的单次统计信息不足以进一步进行故障排除，因此，添加延迟（延迟是更新之间的延迟（以秒为单位））以定期捕获活动。如果你想以 2 秒延迟运行 vmstat ，只需使用下面的命令（如果你想要更多的延迟，你可以根据你的愿望改变）。
 
-The following command will run every 2 seconds until you exit.
+以下命令将每 2 秒运行一次，直到退出。
 
 ```
 # vmstat 2
@@ -123,11 +121,11 @@ procs -----------memory---------- ---swap-- -----io---- -system-- ----cpu----
  0  0 105500 365224 416060 2166996   0    0     1    19  984 1097 11  1 88  0
 ```
 
-#### Run vmstat with delay & counts
+#### 带延迟和计数运行 vmstat
 
-Alternatively you can run vmstat with delay and specific counts, once it reach the given counts then exit automatically.
+或者，你可以带延迟和特定计数运行 vmstat，一旦达到给定的计数，然后自动退出。
 
-The following command will run every 2 seconds with 10 counts then exit automatically.
+以下命令将每 2 秒运行一次，10 次后自动退出。
 
 ```
 # vmstat 2 10
@@ -145,9 +143,9 @@ procs -----------memory---------- ---swap-- -----io---- -system-- ----cpu----
  1  0  79496 1583612 157400 810444   0    0     7    39 2001 2530 20  2 77  0
 ```
 
-#### To show active & inactive memory
+#### 显示活动和非活动内存
 
-By default vmstat shows memory statistics except active & inactive memory. If you want to see active & inactive memory statistics, add `-a` parameters followed by vmstat command.
+默认情况下，vmstat 显示除活动和非活动内存之外的内存统计信息。如果要查看活动和非活动内存统计信息，请在 vmstat 后添加 `-a` 参数。
 
 ```
 # vmstat -a
@@ -156,9 +154,9 @@ procs -----------memory---------- ---swap-- -----io---- -system-- ----cpu----
  1  0 105500 2387592 415148 584112   0    0    40    15    0    1 11  1 87  0
 ```
 
-#### To print disk statistics
+#### 打印磁盘统计
 
-Add `-d` parameter with vmstat which will shows each disk statistics in separate line (included read, write & IO).
+在 vmstat 后面添加 `-d` 参数会以独立的行显示磁盘统计（包含读、写和 IO）。
 
 ```
 # vmstat -d
@@ -193,9 +191,9 @@ sda   16604050 904497 2594882190 57455732 30037054 28093770 2160032056 118189160
 sdb   257357577 479985 3124712204 577235320 8502519 1283237 36645890 11250948      0 182336
 ```
 
-#### To summarize disk statistics
+#### 总结磁盘统计
 
-Add `-D` parameter with vmstat which will shows overall disk statistics (included total disks, partitions, total reads, merged reads, read sectors, writes, merged writes, written sectors & IO).
+在 vmstat 后面添加 `-D` 会显示全局统计（包括全部的磁盘、分区、全部读、合并的读、读取的扇区、写、合并的写、写入的扇区和 IO）。
 
 ```
 # vmstat -D
@@ -213,9 +211,9 @@ Add `-D` parameter with vmstat which will shows overall disk statistics (inclu
        224704 milli spent IO
 ```
 
-#### To print specific partition statistics
+#### 打印特定分区统计
 
-Add `-p` parameter followed by device name with vmstat which will shows specific partition statistics (included reads, read sectors, writes & requested writes).
+vmstat 添加 `-p` 参数后面跟上设备名会显示指定分区统计（包括读、读取的扇区、写以及请求的写）。
 
 ```
 # vmstat -p /dev/sdb1
@@ -223,11 +221,11 @@ sdb1          reads   read sectors  writes    requested writes
                 3115      27890     839453  206728016
 ```
 
-#### To print vmstat statistics with timestamp
+#### vmstat 统计信息带上时间戳
 
-When you want to find the memory spikes on particular duration, add `-t` parameter followed by delay & counts with wmstat command.
+当你想在特定时间区间内找到内存尖峰时，用 vmstat 命令添加 `-t` 参数，后跟延迟和计数。
 
-Note : This combination will not work with Debian based systems.
+注意：此组合不适用于基于 Debian 的系统。
 
 ```
 # vmstat -t 1 5
@@ -240,9 +238,9 @@ procs -----------memory---------- ---swap-- -----io---- --system-- -----cpu-----
  0  0      0 6982280 181324 24588604    0    0     0     0  113  185  0  0 100  0  0    2017-01-11 15:42:19 MST
 ```
 
-#### To print more statistics
+#### 打印更多统计
 
-Add `-s` parameter with vmstat which will shows summarize of various statistics.
+vmstat 后面跟上 `-s` 参数会显示不同统计的总结。
 
 ```
 # vmstat -s
@@ -274,9 +272,9 @@ Add `-s` parameter with vmstat which will shows summarize of various statistic
       2196121 forks
 ```
 
-#### To print slabinfo
+#### 打印 slab 统计
 
-Add `-m` parameter with vmstat which will shows slabinfo.
+vmstat 后面跟上 `-m` 参数会显示 slab 信息。
 
 ```
 # vmstat -m
@@ -303,13 +301,13 @@ ext4_xattr                    0      0     88     44
 .
 ```
 
-#### Read more about vmstat
+#### 阅读更多关于 vmstat
 
-If you want to know more option which is available for vmstat, simply navigate to man page.
+如果你想了解关于 vmstat 的更多选项，请阅读手册。
 
 ```
 # vmstat --help
-or
+或者
 # man vmstat
 ```
 
@@ -319,14 +317,14 @@ or
 
 ![](http://1.gravatar.com/avatar/d487bef1de15143a7b80a40396e96118?s=256&d=mm&r=g)
 
-Love to play with all Linux distribution
+热爱玩所有的 Linux 发行版
 
 --------------------------------------------------------------------------------
 
 via: http://www.2daygeek.com/linux-vmstat-command-examples-tool-report-virtual-memory-statistics/
 
 作者：[Magesh Maruthamuthu][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
