@@ -1,4 +1,4 @@
-你计算机上的剪切板是一个安全问题 - 在 Linux 中用 xsel 和 cron 修复它
+计算机上的剪切板是一个安全问题 - 在 Linux 中用 xsel 和 cron 修复它
 ============================================================
 
  ![](https://irp-cdn.multiscreensite.com/58a25abc/dms3rep/multi/desktop/clip2-630x520.png) 
