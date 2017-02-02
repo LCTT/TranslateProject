@@ -1,18 +1,19 @@
-OpenSSL 在 Apache 和 Dovecot 下的使用：第二部分
+OpenSSL 在 Apache 和 Dovecot 下的使用（二）
 ============================================================
 
  ![OpenSSL](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/key-openssl_0.jpg?itok=FDO3qAOt "OpenSSL") 
-本篇中，Carla Schroder 会解释如何使用 OpenSSL 保护你的 Postfix/Dovecot 邮件服务器
+ 
+> 本篇中，Carla Schroder 会解释如何使用 OpenSSL 保护你的 Postfix/Dovecot 邮件服务器
 
 [Creative Commons Zero][1]Pixabay
 
 在[上周][11]，作为我们 OpenSSL 系列的一部分，我们学习了如何配置 Apache 以使用 OpenSSL 并强制所有会话使用 HTTPS。 今天，我们将使用 OpenSSL 保护我们的 Postfix/Dovecot 邮件服务器。这些示例基于前面的教程; 请参阅最后的参考资料部分，了解本系列中以前的所有教程的链接。
 
-你需要配置 Postfix 以及 Dovecot 来使用 OpenSSL，我们将使用我们在[在 Apache 和 Dovecot 中使用 OpenSSL][12]中创建的密钥和证书。
+你需要配置 Postfix 以及 Dovecot 都使用 OpenSSL，我们将使用我们在[OpenSSL 在 Apache 和 Dovecot 下的使用（一）][12]中创建的密钥和证书。
 
 ### Postfix 配置
 
-你必须编辑 `/etc/postfix/main.cf` 以及 `/etc/postfix/master.cf`。`main.cf` 这个例子是完整的配置，它在我们先前的教程中构建过了。替换成你自己的 OpenSSL 密钥和证书名以及本地网络。
+你必须编辑 `/etc/postfix/main.cf` 以及 `/etc/postfix/master.cf`。实例的 `main.cf` 是完整的配置，基于我们先前的教程。替换成你自己的 OpenSSL 密钥和证书名以及本地网络地址。
 
 ```
 compatibility_level=2
@@ -47,7 +48,7 @@ smtpd_sasl_path = private/auth
 smtpd_sasl_authenticated_header = yes
 ```
 
-在 `master.cf` 解除 `submission inet` 部分的注释，并编辑 `smtpd_recipient_restrictions`：
+在 `master.cf` 取消 `submission inet` 部分的注释，并编辑 `smtpd_recipient_restrictions`：
 
 ```
 #submission inet n  -  y  -  - smtpd
@@ -67,7 +68,7 @@ $ sudo service postfix reload
 
 ### Dovecot 配置
 
-在我们以前的教程中，我们为 Dovecot 在 `/etc/dovecot/dovecot.conf` 创建了一个配置文件，而不是使用多个默认配置文件。这是一个建立在我们以前的教程的完整配置。再说一次，使用你自己的 OpenSSL 密钥和证书，以及你自己的 `userdb` 家文件：
+在我们以前的教程中，我们为 Dovecot 创建了一个单一配置文件 `/etc/dovecot/dovecot.conf`，而不是使用多个默认配置文件。这是一个基于我们以前的教程的完整配置。再说一次，使用你自己的 OpenSSL 密钥和证书，以及你自己的 `userdb` 的 home 文件：
 
 ```
 protocols = imap pop3 lmtp
@@ -125,7 +126,7 @@ $ sudo service postfix reload
 
 ### 用 telnet 测试
 
-就像我们以前一样，现在我们可以通过使用 telnet 发送消息来测试我们的设置。 但是等等，你说 telnet 不支持 TLS/SSL，那么怎么能这样呢？首先通过使用 `openssl s_client` 打开一个加密会话。`openssl s_client` 的输出将显示你的证书、指纹和大量其他信息，以便你知道你的服务器正在使用正确的证书。会话建立后输入的命令以粗体显示：
+就像我们以前一样，现在我们可以通过使用 telnet 发送消息来测试我们的设置。 但是等等，你说 telnet 不支持 TLS/SSL，那么这样怎么办呢？首先通过使用 `openssl s_client` 打开一个加密会话。`openssl s_client` 的输出将显示你的证书及其指纹和大量其它信息，以便你知道你的服务器正在使用正确的证书。会话建立后输入的命令都是不以数字开头的：
 
 ```
 $ openssl s_client -starttls smtp -connect studio:25
@@ -158,7 +159,7 @@ quit
 221 2.0.0 Bye
 ```
 
-你应该可以在邮件客户端中看到一条新邮件，并在打开 SSL 证书时要求你验证 SSL 证书。你也可以使用 `openssl s_client` 来测试 Dovecot POP3 和 IMAP 服务。此示例测试加密的 POP3，#5 消息是我们在 telnet（上面）中创建的：
+你应该可以在邮件客户端中看到一条新邮件，并在打开时要求你验证 SSL 证书。你也可以使用 `openssl s_client` 来测试 Dovecot 的 POP3 和 IMAP 服务。此示例测试加密的 POP3，第 5 号消息是我们在 telnet（如上）中创建的：
 
 ```
 $ openssl s_client -connect studio:995
@@ -203,7 +204,7 @@ closed
 
 ### 现在做什么？
 
-现在你有一个很好的有适当的 TLS/SSL 保护的邮件服务器了。我鼓励你深入学习 Postfix 以及 Dovecot; 这些教程中的示例尽可能地简单，不包括对安全性、防病毒扫描程序、垃圾邮件过滤器或任何其他高级功能的微调。我认为当你有一个基本工作系统时更容易学习高级功能。
+现在你有一个功能良好的，具有合适的 TLS/SSL 保护的邮件服务器了。我鼓励你深入学习 Postfix 以及 Dovecot； 这些教程中的示例尽可能地简单，不包括对安全性、防病毒扫描程序、垃圾邮件过滤器或任何其他高级功能的调整。我认为当你有一个基本工作系统时更容易学习高级功能。
 
 下周回到 openSUSE 包管理备忘录上。
 
@@ -214,7 +215,7 @@ closed
 *   [在 Ubuntu Linux 上构建电子邮件服务器：第2部分][5]
 *   [在 Ubuntu Linux 上构建电子邮件服务器：第3部分][6]
 *   [给初学者看的在 Ubuntu Linux 上使用 Apache][7]
-*   [初学者看的在 Ubuntu Linux 上使用 Apache：第二部分][8]
+*   [给初学者看的在 Ubuntu Linux 上使用 Apache：第二部分][8]
 *   [给初学者看的在 CentOS Linux 上使用 Apache][9]
 *   [消灭让人害怕的 web 浏览器 SSL 警告][10]
 
@@ -224,20 +225,20 @@ via: https://www.linux.com/learn/intro-to-linux/openssl-apache-and-dovecot-part-
 
 作者：[CARLA SCHRODER][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://www.linux.com/users/cschroder
 [1]:https://www.linux.com/licenses/category/creative-commons-zero
 [2]:https://www.linux.com/files/images/key-openssljpg-0
-[3]:https://www.linux.com/learn/sysadmin/openssl-apache-and-dovecot
-[4]:https://www.linux.com/learn/how-build-email-server-ubuntu-linux
-[5]:https://www.linux.com/learn/sysadmin/building-email-server-ubuntu-linux-part-2
-[6]:https://www.linux.com/learn/sysadmin/building-email-server-ubuntu-linux-part-3
+[3]:https://linux.cn/article-8167-1.html
+[4]:https://linux.cn/article-8071-1.html
+[5]:https://linux.cn/article-8077-1.html
+[6]:https://linux.cn/article-8088-1.html
 [7]:https://www.linux.com/learn/apache-ubuntu-linux-beginners
 [8]:https://www.linux.com/learn/apache-ubuntu-linux-beginners-part-2
 [9]:https://www.linux.com/learn/apache-centos-linux-beginners
 [10]:https://www.linux.com/learn/quieting-scary-web-browser-ssl-alerts
-[11]:https://www.linux.com/learn/sysadmin/openssl-apache-and-dovecot
-[12]:https://www.linux.com/learn/sysadmin/openssl-apache-and-dovecot
+[11]:https://linux.cn/article-8167-1.html
+[12]:https://linux.cn/article-8167-1.html
