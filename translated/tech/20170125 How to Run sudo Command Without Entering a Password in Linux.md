@@ -60,9 +60,9 @@ aaronkilik ALL=(ALL) NOPASSWD: /bin/kill
 
 对于更多的 **sudo** 配置和其他使用选项，请阅读我们的有更多例子描述的文章，：
 
-1.  [在 Linux 中设置 sudo 的十条 sudoers 实用配置][1]
-2.  [让 sudo 在你输入错误的密码时“嘲讽”你][2]
-3.  [如何在 Linux 中让 sudo 密码会话的超时更长些][3]
+-  [在 Linux 中设置 sudo 的十条 sudoers 实用配置][1]
+-  [让 sudo 在你输入错误的密码时“嘲讽”你][2]
+-  [如何在 Linux 中让 sudo 密码会话的超时更长些][3]
 
 在本篇中，我们讨论了如何配置 sudo 命令来不用输入密码运行。不要忘记在评论栏中给我们提供你关于这份指导的想法和其他对于 Linux 系统管理员有用的 sudoers 配置。
 
