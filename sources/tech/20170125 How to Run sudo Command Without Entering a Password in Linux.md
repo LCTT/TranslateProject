@@ -1,3 +1,4 @@
+yangmingming translating
 How to Run ‘sudo’ Command Without Entering a Password in Linux
 ============================================================
 
