@@ -1,13 +1,13 @@
 如何在 HTTP 头中隐藏 PHP 版本号
 ============================================================
 
-PHP 配置默认允许服务器在 HTTP 响应头 “**X-Powered-By**” 显示安装在服务器上的 PHP 版本。
+PHP 配置默认允许服务器在 HTTP 响应头 “**X-Powered-By**” 中显示安装在服务器上的 PHP 版本。
 
 出于服务器安全原因（虽然不是主要的要担心的威胁），建议你禁用或隐藏此信息，避免那些针对你的服务器的攻击者知道你是否运行了 PHP。
 
 假设你服务器上安装的特定版本的 PHP 具有安全漏洞，另一方面，攻击者可以了解这一点，他们将更容易利用漏洞并通过脚本访问服务器。
 
-在我以前的文章中，我已经展示了[如何隐藏 apache 版本号][1]，在那里你已经看到如何不再显示 apache 的安装版本。但是如果你在你的 apache 服务器上运行 PHP，你需要隐藏 PHP 的安装版本，这我们将在本文中展示。
+在我以前的文章中，我已经展示了[如何隐藏 apache 版本号][1]，你已经看到如何不再显示 apache 的安装版本。但是如果你在你的 apache 服务器上运行 PHP，你需要隐藏 PHP 的安装版本，这我们将在本文中展示。
 
 因此，在本文中，我们将解释如何隐藏或关闭服务器 HTTP 响应头中的 PHP 版本号。
 
@@ -48,7 +48,7 @@ $ sudo vi /etc/php/7.0/cli/php.ini
 expose_php = off
 ```
 
-保存并退出文件。在这之后，重启 web 服务器：
+保存并退出文件。之后，重启 web 服务器：
 
 ```
 ---------------- 使用 SystemD ---------------- 
@@ -59,7 +59,7 @@ $ sudo service httpd restart
 $ sudo service apache2 restart
 ```
 
-最后但并非不重要，使用下面的命令检查服务器 HTTP 响应头是否仍然显示你的 PHP 版本号。
+最后，不过同样重要，使用下面的命令检查服务器 HTTP 响应头是否仍然显示你的 PHP 版本号。
 
 ```
 $ lynx -head -mime_header http://localhost 
@@ -67,10 +67,10 @@ $ lynx -head -mime_header http://localhost
 $ lynx -head -mime_header http://server-address
 ```
 
-这里的标志是：
+这里的标志含义是：
 
-1.  `-head` – 发送对 mime 报头的 HEAD 请求。
-2.  `-mime_header` – 打印所提取文档的 MIME 标头及其来源。
+-  `-head` – 发送对 mime 报头的 HEAD 请求。
+-  `-mime_header` – 打印所提取文档的 MIME 标头及其来源。
 
 **注意**: 确保你系统中已经安装了 [lynx- 命令行 web 浏览器][3]。
 
