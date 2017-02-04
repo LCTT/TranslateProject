@@ -1,3 +1,6 @@
+
+beyondworld 翻译中
+
 How to get up and running with sweet Orange Pi
 ============================================================
 
