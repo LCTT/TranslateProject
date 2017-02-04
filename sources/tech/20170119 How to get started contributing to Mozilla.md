@@ -1,3 +1,5 @@
+translating by ypingcn
+
 How to get started contributing to Mozilla
 ============================================================
  ![How to get started contributing to Mozilla](https://opensource.com/sites/default/files/styles/image-full-size/public/images/education/rh_003588_01_rd3os.combacktoschoolserieshe_rh_041x_0.png?itok=yUgHEdMK "How to get started contributing to Mozilla") 
