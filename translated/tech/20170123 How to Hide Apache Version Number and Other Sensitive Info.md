@@ -1,11 +1,11 @@
 如何隐藏 Apache 版本号和其他敏感信息
 ============================================================
 
-当远程请求发送到你的 Apache Web 服务器时，在默认情况下，一些有价值的信息，如 web 服务器版本号、服务器操作系统详细信息、已安装的 Apache 模块等等，这些服务器生成的信息会发送回客户端。
+当远程请求发送到你的 Apache Web 服务器时，在默认情况下，一些有价值的信息，如 web 服务器版本号、服务器操作系统详细信息、已安装的 Apache 模块等等，会随服务器生成的文档发回客户端。
 
 这里包含了攻击者可利用的漏洞并访问 web 服务器的很多信息。为了避免显示 web 服务器信息，我们将在本文中演示如何使用特定的 Apache 指令隐藏 Apache Web 服务器的信息。
 
-**推荐阅读：** [13 个有用的使你的 Apache 服务器安全的贴士][1]
+**推荐阅读：** [13 个有用的 Apache 服务器安全贴士][1]
 
 两个重要的指令是：
 
@@ -15,13 +15,13 @@
 
 它有三个可能的值：
 
-1.  **On** - 允许在服务器生成的文档中添加尾部页脚行，
-2.  **Off** - 禁用页脚行
-3.  **EMail** - 创建一个 “**mailto:**” 引用; 它将邮件发送到所引用文档的 ServerAdmin。
+-  **On** - 允许在服务器生成的文档中添加尾部页脚行，
+-  **Off** - 禁用页脚行
+-  **EMail** - 创建一个 “**mailto:**” 引用; 它将邮件发送到所引用文档的 ServerAdmin。
 
 ##### ServerTokens
 
-它确定发送回客户端的服务器响应头字段是否包含服务器操作系统类型的描述和有关已启用的 Apache 模块的信息。
+它决定发送回客户端的服务器响应头字段是否包含服务器操作系统类型的描述和有关已启用的 Apache 模块的信息。
 
 此指令具有以下可能的值（以及在设置特定值时发送到客户端的示例信息）：
 
@@ -40,7 +40,7 @@ ServerTokens   OS
 发送给客户端的信息： Server: Apache/2.4.2 (Unix) 
 ```
 
-**注意**：在 Apache **2.0.44** 之后，**ServerTokens** 同样控制由 **ServerSignature** 指令提供的信息。
+**注意**：在 Apache **2.0.44** 之后，**ServerTokens** 也控制由 **ServerSignature** 指令提供的信息。
 
 **推荐阅读：** [5 个加速 Apache Web 服务器的贴士][2]
 
@@ -83,7 +83,7 @@ via: http://www.tecmint.com/hide-apache-web-server-version-information/
 
 作者：[Aaron Kili][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

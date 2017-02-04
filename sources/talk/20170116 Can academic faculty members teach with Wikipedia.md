@@ -1,3 +1,4 @@
+Translating by scoutydren
 Can academic faculty members teach with Wikipedia?
 ============================================================
  ![Can academic faculty members teach with Wikipedia?](https://opensource.com/sites/default/files/styles/image-full-size/public/images/education/EDU_academics_520x292_ma.png?itok=9xFWOct6 "Can academic faculty members teach with Wikipedia?") 
