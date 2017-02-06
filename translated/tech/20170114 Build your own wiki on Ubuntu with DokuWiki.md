@@ -1,16 +1,15 @@
 在 Ubuntu 上使用 DokuWiki 构建你自己的 wiki
 ============================================================
 
-
-我们在使用[DokuWiki][2]，它是一个真棒的工具。我们团队有一个内部知识库，我们使用 DokuWiki 存储我们的所有评论，教程等。它很简单，并且易于安装和使用。在这篇文章中，我们将展示如何在 Ubuntu 16.04 服务器上安装 DokuWiki。
+我们在使用 [DokuWiki][2]，它是一个真棒的工具。我们团队有一个内部知识库，我们使用 DokuWiki 存储我们的所有评论、教程等。它很简单，并且易于安装和使用。在这篇文章中，我们将展示如何在 Ubuntu 16.04 服务器上安装 DokuWiki。
 
 ### 需求
 
-DokuWiki 不需要太多，因为它不需要数据库。这里是 DokuWiki 的要求：
+DokuWiki 不需要太多依赖，因为它不需要数据库。这里是 DokuWiki 的要求：
 
 *   PHP 5.3.4 或更高版本（建议使用 PHP 7+）
 *   一台 web 服务器（Apache/Nginx/任何其他）
-*   一台 VPS。[买一台便宜的托管VPS][1]，那么你就不必这样做了。你只需与支持团队联系，他们将会为您安装。
+*   一台 VPS。[买一台便宜的托管 VPS][1]，那么你就不必这样做了。你只需与支持团队联系，他们将会为您安装。
 
 ### 指导
 
@@ -30,7 +29,7 @@ apt-get install apache2
 
 ### 安装 PHP7 和模块
 
-接下来，如果你还没有安装 PHP，你应该先安装 PHP。在本教程中，我们使用PHP7。所以请使用下面的命令安装 PHP7 和一些其他 PHP 模块：
+接下来，如果你还没有安装 PHP，你应该先安装 PHP。在本教程中，我们使用 PHP7。所以请使用下面的命令安装 PHP7 和一些其他 PHP 模块：
 
 ```
 apt-get install php7.0-fpm php7.0-cli php-apcu php7.0-gd php7.0-xml php7.0-curl php7.0-json php7.0-mcrypt php7.0-cgi php7.0 libapache2-mod-php7.0
@@ -73,7 +72,7 @@ chmod -R 707 /var/www/thrwiki
 
 ### 为 DokuWiki 配置 Apache
 
-为你的 DokuWiki 创建一个 .conf 文件（我们把它命名为 thrwiki.conf，但是你可以把它命名成任何你想要的），并用你喜欢的文本编辑器打开。我们使用 nano：
+为你的 DokuWiki 创建一个 .conf 文件（我们把它命名为 `thrwiki.conf`，但是你可以把它命名成任何你想要的），并用你喜欢的文本编辑器打开。我们使用 nano：
 
 ```
 touch /etc/apache2/sites-available/thrwiki.conf
@@ -100,7 +99,7 @@ CustomLog /var/log/apache2/wiki.thishosting.rocks-access_log common
 </VirtualHost>
 ```
 
-编辑与你服务器相关的行。将 wikiadmin@thishosting.rocks、wiki.thishosting.rocks 替换成你自己的数据，重启 apache 使更改生效：
+编辑与你服务器相关的行。将 `wikiadmin@thishosting.rocks`、`wiki.thishosting.rocks` 替换成你自己的数据，重启 apache 使更改生效：
 
 ```
 systemctl restart apache2.service
@@ -120,7 +119,7 @@ via: https://thishosting.rocks/build-your-own-wiki-on-ubuntu-with-dokuwiki/
 
 作者：[thishostrocks.com][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
