@@ -1,54 +1,53 @@
-  Vic020
-
-Troubleshooting tips for the 5 most common Linux issues
+故障排除提示:5个最常见的Linux问题
 ============================================================
 
-### Learn how to tackle the most common challenges Linux desktop users encounter.
+### 了解如何解决Linux桌面用户遇到的最常见的问题
 
- ![Troubleshooting tips for the 5 most common Linux issues](https://opensource.com/sites/default/files/styles/image-full-size/public/images/law/rh_003601_05_mech_osyearbook2016_containers_cc.png?itok=0ZEfXLEE "Troubleshooting tips for the 5 most common Linux issues") 
-Image by : 
+ ![5个linux最常见问题解决提示](https://opensource.com/sites/default/files/styles/image-full-size/public/images/law/rh_003601_05_mech_osyearbook2016_containers_cc.png?itok=0ZEfXLEE "Troubleshooting tips for the 5 most common Linux issues") 
+ 
+图片：
 
 Opensource.com
 
-Although Linux installs and operates as expected for most users, inevitably some users will run into problems. For my final article in The Queue column for the year, I thought it would be interesting to summarize the most common technical Linux issues people ran into in 2016\. I posted the question to LinuxQuestions.org and on social media, and I analyzed LQ posting patterns. Here are the results.
+尽管绝大多数用户已经按照预期成功安装和操作Linux， 但不可避免地会有一些用户遇到问题。作为今年任务队列里的最后一篇文章，我认为总结2016年人们遇到的最常见的技术Linux问题会很有趣。我同样把问题发布到LinuxQuestions.org和社交媒体，我分析了LQ发布模式。接下来是成果。
 
-### 1\. Wifi drivers (especially Broadcom chips)
+### 1. Wifi驱动程序（特别是Broadcom芯片）
 
-Generally speaking, wifi drivers—and Broadcom cards in particular—continue to be one of the most problematic technical issues facing Linux. There were hundreds of posts about this topic on LQ alone in 2016, and myriad more elsewhere. Dozens of Broadcom wireless cards are available, and detailed instructions for getting them to work with each distribution is far too involved for a single article, but the basic troubleshooting steps are the same:
+一般来说，wifi驱动程序，特别是Broadcom卡，仍然是Linux面临的最大的问题技术问题之一。在LQ上，2016年有数以百计的帖子关于这个话题，还有其他无数的地方。市场上有数十种Broadcom无线网卡可供使用，对于每一种型号单独发布一篇文章来说明实在有些过分，但是基本的故障排除步骤是相同的：
 
-*   ascertain exactly which Broadcom card you have by using _lspci_ to find out the PCI ID,
-*   determine whether the distribution you use supports that card,
-*   and if it does, identify the proper way to get the card working.
+* 通过使用_lspci_命令确定使用的Broadcom卡，以找出PCI ID，
+* 确定使用的驱动是否支持该卡，
+* 如果是正确的驱动，确定正确的方法来使网卡工作。
 
-For example, if you have a 14e4:4315 PCI ID and are using Ubuntu, then you know the BCM4312 card is supported by installing the _firmware-b43-installer_package. The other option you have is to research the wifi card before your purchase to ensure it's fully supported by your distribution of choice out of the box.
+例如，如果有一个14e4：4315 PCI ID并且系统为Ubuntu，则应该知道BCM4312卡可以通过安装_firmware-b43-installer_包驱动。另一个选择是在购买之前，研究好可用的WiFi卡，以确保它的完全支持您的发行版。
 
-### 2\. Printer drivers (especially Canon and Lexmark)
+### 2. 打印机驱动程序（特别是Canon和Lexmark）
 
-Printers also continue to be problematic, with Canon and Lexmark repeatedly cited for being an issue. If you're purchasing a new printer, research compatibility before you buy. But if you are migrating from another operating system, that may not be an option. If you are doing research, the [OpenPrinting][1] database and the official support channel for your distribution are the two best places to start. Note that you should ensure all functionality of a device is fully compatible, especially if it's a multifunction product. One common complaint with Canon printers is that the drivers are often only available on non-English and sometimes obscure sites.
+打印机也是常有问题的，这个问题使得佳能和利盟被反复提及。如果您购买的是新打印机，请在购买之前研究兼容性。但是，如果您从其他操作系统迁移，这可能没得选择。如果你正在做研究，[OpenPrinting][1]数据库和您的发行版的官方支持渠道是两个最好的起点。请注意，您应确保设备的所有功能完全兼容，特别是如果它是多功能产品。对佳能打印机的一个常见的抱怨是，驱动程序通常只能在非英语，甚至是模糊的网站上才有。
 
->If you're purchasing a new printer, research compatibility before you buy.
+> 如果您购买的是新打印机，请在购买之前研究兼容性。
 
-### 3\. Video
+### 3. 显卡
 
-Video is a nuanced topic, as simple straightforward video works extremely well out of the box on Linux. Where the issues pop up are video accelerators/​acceleration; the latest video cards and newest technologies, such as NVIDIA Optimus and ATI dynamic GPU switching; installation and stability of proprietary drivers; efficient power management; and reliable suspend and resume. If you're not a gamer, do not need high-end graphics for another reason, and are not on a laptop, then you probably don't have to worry about this. If you're looking for a new laptop, be sure to research compatibility before your purchase. If you're a gamer or need the highest-end graphics, you'll need to know exactly what your requirements are and start your research there. Luckily, the situation here is improving and, Wayland teething issues aside, the situation should be quite a bit better in 2017.
+显卡是一个细微的话题，因为在Linux上显卡可以非常好的简单直观的开箱即用。出现的问题是：显卡加速器/加速度；最新的显卡和最新技术，如NVIDIA Optimus和ATI动态GPU切换;安装和专有驱动程序的稳定性; 高效电源管理; 并可靠暂停和恢复。如果你不是一个游戏玩家，或者另一个原因不需要高端的图形，并且不是在笔记本电脑上，那么你可能不必担心这个。如果您正在寻找一台新的笔记本电脑，一定要研究兼容性，然后再购买。如果你是一个游戏玩家或需要最高端的图形，你需要知道你的要求是什么，并开始你的研究。幸运的是，这种情况正在改善，Wayland开始解决问题，情况应该在2017年会变得好一些。
 
-### 4\. Audio
+### 4. 声卡
 
-Once again, for simple setups, audio has been easy to configure and reliable under Linux for a while. As soon as you get into professional production, echo cancellation, audio routing, unified mixing, and other complex setups, however, it can go south pretty quickly. My suggestion is to use one of the dedicated audio-related distributions if you need high-end real-time audio.
+再次，对于简单的设置，声卡非常容易配置并可以很可靠在Linux运行。一旦你进入专业配置，例如回声消除，音频路由，统一混合和其他复杂的设置，然而，它可以很快地每况愈下。我的建议是，如果你需要高端的实时声卡，请使用专用的音频相关发行版。
 
-### 5\. Installation
+### 5. 安装
 
-With a category this all-encompassing, it's almost guaranteed to be high volume. That said, I don't know that it's fair to say Linux has wide-spread installation issues. The vast majority of installs go as expected. The sheer variety of hardware that Linux supports, and nearly infinite combinations of hardware on which Linux installs are attempted, inevitably lead to edge cases here and there. Keep in mind that end users rarely install other operating systems, such as Mac OS and Windows, as they come pre-installed on new devices.
+有了这个包罗万象的分类，本文几乎保证是高质量的。也就是说，我不知道说Linux有广泛的安装问题是否公平。绝大多数的安装都按预期进行。Linux支持的多种硬件，以及尝试以近乎无限的硬件组合，安装Linux，不可避免地导致了某种情况下的边缘情况。
 
->The vast majority of installs go as expected.
+> 绝大多数的安装都按预期进行。
 
-### Future looks bright
+### 未来看起来明亮
 
-Other issues that were mentioned frequently include Bluetooth, suspend/resume, HiDPI, and touchscreens. You may see a pattern forming here—most of the issues noted in this article focus on desktop use cases. When you think about it, that makes sense. With Linux desktop adoption being relatively low, the result is that less testing and resources go into finding and fixing related issues. As desktop usage increases, you can anticipate these areas improving.
+其他提到的问题经常包括蓝牙，暂停/恢复，HiDPI和触摸屏。您可能会看到这里形成一个模式，本文中提到的大多数问题集中在桌面用例。如果你已经意识到了，这其实是有意义的。Linux桌面使用率相对较低，导致结果是，很少的测试和资源用于发现和解决相关问题。随着桌面使用量的增加，可以预期这些区域的改善。
 
-On that note, I thought it would be nice to end with a mention of one area that used to pop up frequently as a problem area for Linux, and very rarely does these days: fonts. Only a few short years ago, getting high-quality antialiased fonts were the exception. With modern distribution releases, it has become the rule.
+在这方面，我认为最好提及的一个例子，曾经常常作为Linux的问题提出，但是反而最近很罕见：字体。几年前，获得高品质的抗锯齿字体常常是个问题。但是，随着现代发行版本的更新，它已成为常见规则。
 
-What technical Linux issues did you find most common in 2016? Let me know about them in the comments.
+你认为2016年最常见的Linux技术问题是什么？ 请在评论中留言告诉我。
 
 --------------------------------------------------------------------------------
 
@@ -63,7 +62,7 @@ Jeremy Garcia - Jeremy Garcia is the founder of LinuxQuestions.org  and an arden
 via: https://opensource.com/article/17/1/yearbook-linux-troubleshooting-tips
 
 作者：[Jeremy Garcia][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Vic020](http://vicyu.net)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
