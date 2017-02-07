@@ -1,3 +1,5 @@
+translating---geekpi
+
 How to Create a Shared Directory for All Users in Linux
 ============================================================
 
