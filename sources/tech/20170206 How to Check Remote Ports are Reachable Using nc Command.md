@@ -1,3 +1,5 @@
+translating---geekpi
+
 How to Check Remote Ports are Reachable Using ‘nc’ Command
 ============================================================
 
