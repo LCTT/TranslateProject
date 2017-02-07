@@ -1,3 +1,4 @@
+translating by trnhoe
 Using rsync to back up your Linux system
 ============================================================
 
