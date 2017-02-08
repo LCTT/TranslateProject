@@ -60,7 +60,7 @@ via: https://opensource.com/article/17/1/expand-project-contributor-base
 
 作者：[Kushal Das][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Bestony](https://github.com/bestony)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
