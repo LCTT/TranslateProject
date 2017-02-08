@@ -99,7 +99,7 @@ Sean Kane 目前在 New Relic 公司的共享基础设施团队中担任首席�
 via: https://www.oreilly.com/learning/what-is-docker
 
 作者：[Karl Matthias ][a],[Sean Kane][b]
-译者：[译者ID](https://github.com/Cathon)
+译者：[Cathon](https://github.com/Cathon)
 校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
