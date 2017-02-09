@@ -1,4 +1,5 @@
 Vim Editor Modes Explained
+#ch-cn translating
 ============================================================
 
 ### On this page
