@@ -3,16 +3,16 @@
 
 作为系统管理员，你可能有一个特定目录，你希望为 Linux 服务器上的每个用户授予读/写访问权限。在本指南中，我们将回顾如何在 Linux 中对特定目录（共享目录）上的所有用户启用写访问。
 
-这要求设置适当的访问权限，以及为将要共享或具有对特定目录的写访问权的所有用户分配公共组的最有效和可靠的方法。
+这要求设置适当的访问权限，而最有效、可靠的方法是为所有要共享或对特定目录的写访问权的用户分配一个公共组。
 
-以防你系统中还没有存在这个目录和公众组，用下面的命令创建：
+如果你系统中还没有存在这个目录和公众组，用下面的命令创建：
 
 ```
 $ sudo mkdir -p /var/www/reports/
 $ sudo groupadd project 
 ```
 
-接着将对目录 /var/www/reports/ 有写权限的用户添加到 project 组中。
+接着将对目录 `/var/www/reports/` 有写权限的用户添加到 `project` 组中。
 
 ```
 $ sudo usermod -a -G project tecmint 
@@ -21,14 +21,14 @@ $ sudo usermod -a -G project tecmint
  ![Create Common Directory Group](http://www.tecmint.com/wp-content/uploads/2017/01/Create-Common-Directory-Group.png) 
 ][1]
 
-创建公共目录组
+*创建公共目录组*
 
 上面命令使用到的标志和参数是：
 
 1.  `-a` – 将用户添加到增补组中。
 2.  `-G` – 指定组名。
 3.  `project` – 组名。
-4.  `tecmint` – 存在的用户名。
+4.  `tecmint` – 已有的用户名。
 
 在这之后，给目录配置适当的权限，`-R` 会让操作递归进入子目录中： 
 
@@ -37,9 +37,9 @@ $ sudo chgrp -R project /var/www/reports/
 $ sudo chmod -R 2775 /var/www/reports/
 ```
 
-解释下上面 chmod 命令中的 2775：
+解释下上面 `chmod` 命令中的 `2775`：
 
-1.  `2` - 打开 setGID 位，意味着新创建的子文件继承与目录相同的组，新创建的子目录继承父目录的设置 GID 位。
+1.  `2` - 打开 setGID 位，意味着新创建的子文件继承与目录相同的组，新创建的子目录继承父目录的 setGID 位。
 2.  `7` - 为所有者提供 rwx 权限。
 3.  `7` - 给组 rwx 权限。
 4.  `5` - 为其他人提供 rx 权限。
@@ -78,7 +78,7 @@ via: http://www.tecmint.com/create-a-shared-directory-in-linux/
 
 作者：[Aaron Kili][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
