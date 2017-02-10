@@ -1,5 +1,7 @@
-### How to install Google Chrome Browser on Kali Linux
+GHLandy Translating
 
+How to install Google Chrome Browser on Kali Linux
+######
 
 Contents
 
