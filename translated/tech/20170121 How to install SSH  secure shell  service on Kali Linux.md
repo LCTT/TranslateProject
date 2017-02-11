@@ -1,62 +1,61 @@
-ucasFL translating
-# How to install SSH ( secure shell ) service on Kali Linux
+# 如何在 Kali Linux 上安装 SSH（安全 shell）服务
 
-Contents
+内容
 
-*   *   [1. Objective][4]
-    *   [2. Requirements][5]
-    *   [3. Difficulty][6]
-    *   [4. Conventions][7]
-    *   [5. Instructions][8]
-        *   [5.1. Install SSH][1]
-        *   [5.2. Enable and Start SSH][2]
-        *   [5.3. Allow SSH Root Access][3]
+*   *   [1. 目的][4]
+    *   [2. 要求][5]
+    *   [3. 困难][6]
+    *   [4. 惯例][7]
+    *   [5. 指导][8]
+        *   [5.1 安装 SSH][1]
+        *   [5.2 启用和开始使用 SSH][2]
+        *   [5.3 允许 SSH Root 访问][3]
 
-### Objective
+### 目的
 
-The objective is to install SSH ( secure shell ) service on Kali Linux.
+我们的目的是 Kali Linux 上安装 SSH（安全 shell）。
 
-### Requirements
+### 要求
 
-Privileged access to your Kali Linux installation or Live system is required.
+你需要有特权访问你的 Kali Linux 安装或者实时系统。
 
-### Difficulty
+### 困难
 
-EASY
+很容易！
 
-### Conventions
+### 惯例
 
-*   **#** - requires given command to be executed with root privileges either directly as a root user or by use of `sudo` command
-*   **$** - given command to be executed as a regular non-privileged user
+*   **#** - 要求安装过程中涉及的命令能够以 root 权限执行：直接以 root 用户执行或者使用 ‘sudo’ 命令。
+*   **$** - 安装过程涉及到的命令以常规非特权用户执行。
 
-### Instructions
+### 指导
 
-### Install SSH
+### 安装 SSH
 
-From the terminal use `apt-get` command to install SSH packages:
+从终端使用 ‘apt-get’ 命令安装 SSH 包：
 ```
 # apt-get update
 # apt-get install ssh
 ```
 
-### Enable and Start SSH
+### 启用和开始使用 SSH
 
-To make sure that secure shell starts after reboot use `systemctl` command to enable it:
+为了确保安全 shell 能够使用，在重启系统后使用 ‘systemctl’ 命令来启用它：
 ```
 # systemctl enable ssh
 ```
-To start SSH for a current session execute:
+在当前对话执行中使用 SSH:
 ```
 # service ssh start
 ```
 
-### Allow SSH Root Access
+### 允许 SSH Root 访问
 
-By default SSH would not allow you to SSH login as root user, thus the following error message will appear:
+默认情况下 SSH 不允许以 root 用户登录，因此将会出现下面的错误提示信息：
 ```
 Permission denied, please try again.
 ```
-You have two options in order to be able to SSH into your Kali Linux. First option is to create a new non-privileged user and use its credentials to log in. Second, allow the root user to access the secure shell. To do so, either edit or insert the following line within the `/etc/ssh/sshd_config` SSH config file:
+为了通过 SSH 进入你的 Kali Linux 系统，你可以有两个不同的选择。第一个选择是创建一个新的非特权用户然后使用它的证书来登录。第二个选择，你可以以 root 用户访问 SSH 。为了实现这件事，需要在 ‘/etc/ssh/sshd_config’ - SSH 配置文件中插入下面这些行内容或对其进行编辑
 ```
 FROM:
 #PermitRootLogin prohibit-password
@@ -68,7 +67,7 @@ PermitRootLogin yes
  ![kali linux enable ssh root access](https://linuxconfig.org/images/enable-root-ssh-login-kali-linux.jpg)
 </center>
 
-After you have made the above change of the `/etc/ssh/sshd_config`, restart ssh service before you attempt SSH login as a root user:
+对 ‘/etc/ssh/sshd_config’ 进行更改以后，需在以 root 用户登录 SSH 前重启 SSH 服务：
 
 ```
 # service ssh restart
@@ -80,7 +79,7 @@ After you have made the above change of the `/etc/ssh/sshd_config`, restart ssh
 via: https://linuxconfig.org/how-to-install-ssh-secure-shell-service-on-kali-linux
 
 作者：[Lubos Rendek][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ucasFL](https://github.com/ucasFL)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
