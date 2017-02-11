@@ -1,3 +1,4 @@
+ucasFL translating
 # How to install SSH ( secure shell ) service on Kali Linux
 
 Contents
@@ -64,7 +65,7 @@ PermitRootLogin yes
 ```
 
 <center style="box-sizing: inherit;">
- ![kali linux enable ssh root access](https://linuxconfig.org/images/enable-root-ssh-login-kali-linux.jpg) 
+ ![kali linux enable ssh root access](https://linuxconfig.org/images/enable-root-ssh-login-kali-linux.jpg)
 </center>
 
 After you have made the above change of the `/etc/ssh/sshd_config`, restart ssh service before you attempt SSH login as a root user:
