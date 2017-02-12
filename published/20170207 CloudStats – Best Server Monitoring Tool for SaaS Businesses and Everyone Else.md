@@ -62,7 +62,7 @@ CloudStats 允许你使用任何操作系统对任何服务器执行服务器监
 
 via: http://www.tecmint.com/cloudstats-linux-server-monitoring-tool/
 
-作者：[Ravi Saive ][a]
+作者：[Ravi Saive][a]
 译者：[geekpi](https://github.com/geekpi)
 校对：[wxy](https://github.com/校对者ID)
 
