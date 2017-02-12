@@ -1,19 +1,19 @@
-rtop - 一个通过 SSH 监控远程主机的交互式工具
+rtop：一个通过 SSH 监控远程主机的交互式工具
 ============================================================
 
-rtop 是一个基于 SSH 的直接和交互式的[远程系统监控工具][2]，它收集并显示重要的系统性能值，如 CPU、磁盘、内存和网络指标。
+rtop 是一个基于 SSH 的直接的交互式[远程系统监控工具][2]，它收集并显示重要的系统性能指标，如 CPU、磁盘、内存和网络指标。
 
-它用[ Go 语言][3]编写，不需要在要监视的服务器上安装任何额外的程序，除了 SSH 服务器和工作凭据。
+它用 [Go 语言][3]编写，不需要在要监视的服务器上安装任何额外的程序，除了 SSH 服务器和登录凭据。
 
-rtop 基本上通过启动 SSH 会话和[在远程服务器上执行某些命令][4]来收集各种系统性能信息。
+rtop 基本上是通过启动 SSH 会话和[在远程服务器上执行某些命令][4]来收集各种系统性能信息。
 
-一旦 SSH 会话建立，它每隔几秒（默认情况下为 5 秒）刷新来自远程服务器收集的信息，类似于 Linux 中的所有其他[类似 top 的使用程序（如htop）][5]。
+一旦 SSH 会话建立，它每隔几秒（默认情况下为 5 秒）刷新来自远程服务器收集的信息，类似于 Linux 中的所有其它[类似 top 的使用程序（如 htop）][5]。
 
 #### 安装要求：
 
-要安装 rtop 确保你已经在 Linux 中安装了 Go（GoLang）1.2 或更高版本，不然点击下面的链接根据步骤安装 GoLang：
+要安装 rtop 确保你已经在 Linux 中安装了 Go（GoLang）1.2 或更高版本，否则请点击下面的链接根据步骤安装 GoLang：
 
-1.  [在 Linux 中安装 GoLang （Go 编程语言）][1]
+- [在 Linux 中安装 GoLang （Go 编程语言）][1]
 
 ### 如何在 Linux 系统中安装 rtop
 
@@ -29,9 +29,9 @@ $ go get github.com/rapidloop/rtop
  ![Build rtop in Linux](http://www.tecmint.com/wp-content/uploads/2017/02/Build-rtop-Tool.png) 
 ][6]
 
-在 Linux 中构建 rtop 
+*在 Linux 中构建 rtop*
 
-注意：开始使用 rtop 不需要任何运行时或配置。
+注意：使用 rtop 不需要任何运行时环境或配置。
 
 ### 如何在 Linux 系统中使用 rtop
 
@@ -41,7 +41,7 @@ $ go get github.com/rapidloop/rtop
 $ $GOBIN/rtop
 ```
 
-##### 示例输出
+示例输出：
 
 ```
 rtop 1.0 - (c) 2015 RapidLoop - MIT Licensed - http://rtop-monitor.org
@@ -58,13 +58,13 @@ refresh interval in seconds (default: 5)
 现在让我们用 rtop 监控远程 Linux 服务器，默认每 5 秒刷新收集到的信息：
 
 ```
-$ $GOBIN/rtop   aaronkilik@10.42.0.1 
+$ $GOBIN/rtop aaronkilik@10.42.0.1 
 ```
 [
  ![rtop - Monitor Remote Linux Server](http://www.tecmint.com/wp-content/uploads/2017/02/Monitor-Remote-Linux-Server.png) 
 ][7]
 
-rtop – 监控远程 Linux 主机
+*rtop – 监控远程 Linux 主机*
 
 命令会每隔 10 秒刷新系统性能指标：
 
@@ -74,9 +74,9 @@ $ $GOBIN/rtop aaronkilik@10.42.0.1 10
 
 rtop 同样可以使用 ssh-agent、[密钥][8]或者密码授权连接。
 
-访问 rtop 的 Github 仓库：[https://github.com/rapidloop/rtop][9]
+访问 rtop 的 Github 仓库：[https://github.com/rapidloop/rtop][9]。
 
-总结一下，rtop 是一个简单易于使用的远程服务器监控工具，它使用非常少且直接的选项。你可以阅读服务器中其他[监控系统的命令行工具][10]来提高你的[ Linux 性能监控][11]技能。
+总结一下，rtop 是一个简单易用的远程服务器监控工具，它使用非常少且直白的选项。你可以阅读服务器中其他[监控系统的命令行工具][10]来提高你的[ Linux 性能监控][11]技能。
 
 最后，在下面的评论栏中留下你的任何问题和想法。
 
@@ -92,7 +92,7 @@ via: http://www.tecmint.com/rtop-monitor-remote-linux-server-over-ssh/
 
 作者：[Aaron Kili][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
