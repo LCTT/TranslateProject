@@ -1,21 +1,37 @@
 
 beyondworld 翻译中
 
+如何获取并运行Orange Pi
+===========================
+
 How to get up and running with sweet Orange Pi
 ============================================================
 
+ ![如何获取并运行Orange Pi](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/the_orange_pi_zero.jpg?itok=00T8KODN "How to get up and running with sweet Orange Pi") 
+
  ![How to get up and running with sweet Orange Pi](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/the_orange_pi_zero.jpg?itok=00T8KODN "How to get up and running with sweet Orange Pi") 
 Image credits : 
+索引：
 
 Dave Egts, CC BY-SA 4.0
 
+通过开源驱动的硬件比如[Arduino][2]和[Raspberry Pi][3]变得更加主流了，这些开源硬件的成本持续下降，给那些全新的且具有创新性[IoT][4]的[STEM][5](译者注：STEM代表科学Science，技术Technology，工程Engineering，数学Mathematics。STEM教育就是科学，技术，工程，数学的教育)类软件降低了使用门槛。由于我对这些比较感兴趣，总是持续关注以便能找到一些可以应用到教育产业的创新点，比如课堂教育和我女儿的机器人小组[6]。当听说Orange Pi比Raspberry Pi更优秀[7]时，我开始关注Orange Pi。
+
 As open source-powered hardware like [Arduino][2] and [Raspberry Pi][3] becomes more and more mainstream, its cost keeps dropping, which opens the door to new and innovative [IoT][4] and [STEM][5] applications. As someone who's passionate about both, I'm always on the lookout for new innovations that can be applied in industry, the classroom, and [my daughter's robotics team][6]. When I heard about the Orange Pi as being a "[Raspberry Pi killer][7]," I paused to take notice.
+
+尽管是这个略带酸味儿的名字，但是我仍然被Orange Pi Zero迷住了。我最近刚上手了一个Orange Pi Zero并且在本文中分享我的第一体验。真情提示：我真着迷了。
 
 Despite the sour sounding name, the Orange Pi Zero intrigued me. I recently got my hands on one and in this article share my first impressions. Spoiler alert: I was very impressed.
 
+### 为什么是Orange Pi?
+
 ### Why Orange Pi?
 
+Orange Pi 是由Linux驱动的单板计算机家族一员，由深圳迅龙软件有限公司研发[8]并在[AliExpress][9]上售卖。在AliExpress上买东西需要有耐心，提前计划并预留2到4周的运输时间，因为这些产品都是从中国大陆直接发往全世界其它地方的。
+
 Orange Pi is a family of Linux-powered, single board computers manufactured by [Shenzhen Xunlong Software Co., Limited][8], and [sold on AliExpress][9]. As with anything sold on AliExpress, be patient and plan ahead for shipping times of two to four or more weeks, because the products are shipped directly from mainland China to locations around the world.
+
+与Raspberry Pi不同，Raspberry Pi有一个小却不断增加不同价位的单板计算机家族，这些型号有不同尺寸和特色但是Orange Pi的数量更多。还有个好消息就是你可以在巨大的软件库中选择你需要的东西，但是坏消息就是你的选择数量太大了。在我看来，可以使用[Orange Pi Zero][10]的512MB版本，因为该版本平衡了适合高校学术环境的特性和价格因数。
 
 Unlike the Raspberry Pi, which has had a small but growing family of single board computers for different price points, form factors, and features, the number of Orange Pi boards is much larger. The good news is that you have a tremendous amount of choice in the application you want, but the bad news is that amount of choice could be overwhelming. In my case, I went with the [Orange Pi Zero][10] 512MB version, because it has the right balance of features and is priced for use in high school, academic environments.
 
