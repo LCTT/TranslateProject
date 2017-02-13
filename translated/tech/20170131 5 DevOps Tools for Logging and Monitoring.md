@@ -4,7 +4,7 @@
 
  ![DevOps tools](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/devops-logging.jpg?itok=8-1glKie "DevOps tools") 
 
-这些  DevOps 日志记录和监控工具是重塑云计算趋势的一部分 -- 在“开放云指南”中了解更多。
+这些  DevOps 日志记录和监控工具是重塑云计算趋势的一部分 -- 在《开放云指南》中了解更多。
 
 [Creative Commons Zero][1] Pixabay
 
@@ -26,11 +26,11 @@ Fluentd 是一个用于统一日志记录层的开源数据收集器，由 Treas
 
 [Heapster][11]
 
-Heapster 是 Kubernetes 的一个容器集群监控和性能分析工具。它本身支持 Kubernetes 和 CoreOS，并可以适应在 OpenShift 上运行。它还支持可插拔的存储后端：使用 Grafana 的 InfluxDB、Google Cloud Monitoring、Google Cloud Logging、Hawkular、Riemann 和 Kafka。[Heapster 的 GitHub][12]
+Heapster 是 Kubernetes 的一个容器集群监控和性能分析工具。它本身支持 Kubernetes 和 CoreOS，并可以适应在 OpenShift 上运行。它还支持可插拔的存储后端：使用 Grafana 的 InfluxDB、Google Cloud Monitoring、Google Cloud Logging、Hawkular、Riemann 和 Kafka。[Heapster 的 GitHub][12]。
 
 [Logstash][13]
 
-Logstash 是 Elastic 的开源数据管道，用于帮助处理来自各种系统的日志和其他事件数据。它的插件可以连接到各种源和大规模流数据到中央分析系统。[LogStash 的 GitHub][14]
+Logstash 是 Elastic 的开源数据管道，用于帮助处理来自各种系统的日志和其他事件数据。它的插件可以连接到各种源和大规模流数据到中央分析系统。[LogStash 的 GitHub][14]。
 
 [Prometheus][15]
 
@@ -40,7 +40,7 @@ Prometheus 是一个开源系统监控和警报工具包，最初由 SoundCloud 
 
 Weave Scope 是 Weaveworks 的开源工具，用于实时监控分布式应用程序及其容器。它与 Kubernetes 和 AWS ECS 集成。[Weave Scope 的 GitHub][18]。
 
-_要了解更多关于开源云计算的趋势，查看顶级开源云计算项目的完整列表。[现在下载 Linux 基金会的《开放云指南》报告！][3] _
+_要了解更多关于开源云计算的趋势，查看顶级开源云计算项目的完整列表。[现在下载 Linux 基金会的《开放云指南》报告！][3]_
 
 --------------------------------------------------------------------------------
 
