@@ -1,3 +1,5 @@
+translating---geekpi
+
 # How to increase screen resolution on XenServer 7 GUI Virtual Machine (VM)
 
 Contents
