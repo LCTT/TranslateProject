@@ -1,4 +1,4 @@
-5 个新的使用 OpenStack 指南
+5 个新的 OpenStack 使用指南
 ============================================================
 
  ![OpenStack tutorials](https://opensource.com/sites/default/files/styles/image-full-size/public/images/education/rh_003588_01_rd3os.combacktoschoolserieshe_rh_051x_0.png?itok=Tm2UcSXw "OpenStack tutorials") 
