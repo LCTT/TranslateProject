@@ -1,73 +1,75 @@
-# 如何在 Kali Linux 上安装 SSH（安全 shell）服务
+如何在 Kali Linux 上安装 SSH 服务
+===============
 
-内容
+### 介绍
 
-*   *   [1. 目的][4]
-    *   [2. 要求][5]
-    *   [3. 困难][6]
-    *   [4. 惯例][7]
-    *   [5. 指导][8]
-        *   [5.1 安装 SSH][1]
-        *   [5.2 启用和开始使用 SSH][2]
-        *   [5.3 允许 SSH Root 访问][3]
-
-### 目的
+**目的**
 
 我们的目的是 Kali Linux 上安装 SSH（安全 shell）。
 
-### 要求
+**要求**
 
-你需要有特权访问你的 Kali Linux 安装或者实时系统。
+你需要有特权访问你的 Kali Linux 安装或者 Live 系统。
 
-### 困难
+**困难程度**
 
 很容易！
 
-### 惯例
+**惯例**
 
-*   **#** - 要求安装过程中涉及的命令能够以 root 权限执行：直接以 root 用户执行或者使用 ‘sudo’ 命令。
-*   **$** - 安装过程涉及到的命令以常规非特权用户执行。
+- `#` - 给定命令需要以 root 用户权限运行或者使用 `sudo` 命令
+- `$` - 给定命令以常规权限用户运行
 
 ### 指导
 
-### 安装 SSH
+**安装 SSH**
 
-从终端使用 ‘apt-get’ 命令安装 SSH 包：
+从终端使用 `apt-get` 命令安装 SSH 包：
+
 ```
 # apt-get update
 # apt-get install ssh
 ```
 
-### 启用和开始使用 SSH
+**启用和开始使用 SSH**
 
-为了确保安全 shell 能够使用，在重启系统后使用 ‘systemctl’ 命令来启用它：
+为了确保安全 shell 能够使用，在重启系统后使用 `systemctl` 命令来启用它：
+
 ```
 # systemctl enable ssh
 ```
+
 在当前对话执行中使用 SSH:
+
 ```
 # service ssh start
 ```
 
-### 允许 SSH Root 访问
+**允许 SSH Root 访问**
 
 默认情况下 SSH 不允许以 root 用户登录，因此将会出现下面的错误提示信息：
+
 ```
 Permission denied, please try again.
 ```
-为了通过 SSH 进入你的 Kali Linux 系统，你可以有两个不同的选择。第一个选择是创建一个新的非特权用户然后使用它的证书来登录。第二个选择，你可以以 root 用户访问 SSH 。为了实现这件事，需要在 ‘/etc/ssh/sshd_config’ - SSH 配置文件中插入下面这些行内容或对其进行编辑
+
+为了通过 SSH 进入你的 Kali Linux 系统，你可以有两个不同的选择。第一个选择是创建一个新的非特权用户然后使用它的身份来登录。第二个选择，你可以以 root 用户访问 SSH 。为了实现这件事，需要在SSH 配置文件 `/etc/ssh/sshd_config` 中插入下面这些行内容或对其进行编辑：
+
+将 
+
 ```
-FROM:
 #PermitRootLogin prohibit-password
-TO:
+```
+
+改为：
+
+```
 PermitRootLogin yes
 ```
 
-<center style="box-sizing: inherit;">
- ![kali linux enable ssh root access](https://linuxconfig.org/images/enable-root-ssh-login-kali-linux.jpg)
-</center>
+![kali linux enable ssh root access](https://linuxconfig.org/images/enable-root-ssh-login-kali-linux.jpg)
 
-对 ‘/etc/ssh/sshd_config’ 进行更改以后，需在以 root 用户登录 SSH 前重启 SSH 服务：
+对 `/etc/ssh/sshd_config` 进行更改以后，需在以 root 用户登录 SSH 前重启 SSH 服务：
 
 ```
 # service ssh restart
@@ -80,7 +82,7 @@ via: https://linuxconfig.org/how-to-install-ssh-secure-shell-service-on-kali-lin
 
 作者：[Lubos Rendek][a]
 译者：[ucasFL](https://github.com/ucasFL)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
