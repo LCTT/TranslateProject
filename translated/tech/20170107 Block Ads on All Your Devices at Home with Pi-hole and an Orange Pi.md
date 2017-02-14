@@ -60,7 +60,7 @@ Amazon 上的 Orange Pi (附属链接):  [Orange Pi PC Single Board Computer Q
 
 [AliExpress 上的Orange Pi 商店][5] (附属连接).
 
-编辑：这篇文章讽刺的是，如果你成功设置了 Pi-hole，这个站点上的链接 (s.click.aliexpress.com) 将被屏蔽，是否将它加入到白名单取决于你。
+编辑：这篇文章具有讽刺意味的是，如果你成功设置了 Pi-hole，这个站点上的链接 (s.click.aliexpress.com) 将被屏蔽，是否将它加入到白名单取决于你。
 
 --------------------------------------------------------------------------------
 
