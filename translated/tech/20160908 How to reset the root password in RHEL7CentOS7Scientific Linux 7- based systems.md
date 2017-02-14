@@ -1,92 +1,93 @@
-translating---geekpi
+### 如何重置基于 RHEL7/CentOS7/Scientific Linux 7 系统的密码
 
-### How to reset the root password in RHEL7/CentOS7/Scientific Linux 7- based systems
+内容
 
-Contents
+*   *   [1. 目的][9]
+    *   [2. 要求][10]
+    *   [3. 难易度][11]
+    *   [4. 指导][12]
+        *   [4.1. 启动进入最小模式][1]
+        *   [4.2. 中断启动进程][2]
+        *   [4.3. 重新挂载可以读写的系统][3]
+        *   [4.4. 使 /sysroot 成为根目录][4]
+        *   [4.5. 修改 root 密码][5]
+        *   [4.6. 加载 SELinux 策略][6]
+        *   [4.7. 在 /etc/shadow 中设置上下文类型][7]
+        *   [4.8. 退出并重启][8]
 
-*   *   [1. Objective][9]
-    *   [2. Requirements][10]
-    *   [3. Difficulty][11]
-    *   [4. Instructions][12]
-        *   [4.1. Boot into the minimal mode][1]
-        *   [4.2. Interrupt the boot process][2]
-        *   [4.3. Remount the system so that it can read and write][3]
-        *   [4.4. Make /sysroot your root][4]
-        *   [4.5. Change the root password][5]
-        *   [4.6. Load SELinux policy][6]
-        *   [4.7. Set context type on /etc/shadow file][7]
-        *   [4.8. Exit & reboot][8]
+### 目的
 
-### Objective
+在 RHEL7/CentOS7/Scientific Linux 7 中重设 root 密码。
 
-Resetting the root password in RHEL7/CentOS7/Scientific Linux 7
-
-### Requirements
+### 要求
 
 RHEL7 / CentOS7 / Scientific Linux 7
 
-### Difficulty
+### 难易度
 
-MODERATE
+中等
 
-### Instructions
+### 指导
 
-Things have changed in the RHEL7 world and so has the preferred way of resetting the root password. Although the old way of interrupting the boot process (init=/bin/bash) still works, it is no longer bulletproof and recommended. 'Systemd' uses 'rd.break' to interrupt the boot. Let's have a quick walk through the whole procedure. 
+RHEL7 的世界发生了变化，重置 root 密码的方式也一样。虽然中断引导过程（init=/bin/bash）的旧方法仍然有效，但它不再是推荐的。“Systemd” 使用 “rd.break” 来中断引导。让我们快速浏览下整个过程。 
 
-### Boot into the minimal mode
+### 启动进入最小模式
 
-Reboot the system and press `e` while being on the kernel list page, before the autoboot starts the system automatically. You get into the edit mode.
+重启系统并在内核列表页面在系统启动之前按下 `e`。你会进入编辑模式。
 
-### Interrupt the boot process
+### 中断启动进程
 
-In the kernel string - at the end of the line starting `linux 16 /vmlinuz- ect` type `rd.break`. Then Ctrl+X to reboot. The system boots into the initial ram drive and it's mounted on /sysroot In this mode you are not required to type the password.
+在内核字符串中 - 在以 “linux 16 /vmlinuz- ect” 结尾的行中输入 “rd.break”。接着 Ctrl+X 重启。系统启动进入初始化内存磁盘，并挂载在 /sysroot。在此模式中你不需要输入密码。
 
-### Remount the system so that it can read and write
+### 重新挂载可以读写的系统
 
 ```
  switch_root:/# mount -o remount,rw /sysroot/
 ```
 
-### Make /sysroot your root
+### 使 /sysroot 成为根目录
 
 ```
  switch_root:/# chroot /sysroot 
 ```
-The command line will change slightly.
+命令行会稍微改变。
 
-### Change the root password
+### 修改 root 密码
 
 ```
 sh-4.2# passwd 
 ```
 
-### Load SELinux policy
+### 加载 SELinux 策略
 
 ```
 sh-4.2# load_policy -i 
 ```
 
-### Set context type on /etc/shadow file
+###  在 /etc/shadow 中设置上下文类型
 
 ```
 sh-4.2# chcon -t shadow_t /etc/shadow 
 ```
-Note: You could bypass the last 2 steps by creating an autorelabel file instead, but autorelabeling might take a long time.
+
+注意：你可以通过创建 autorelabel 文件略过最后两步，但是 autorelabel 会花费很长时间。
+
 ```
 sh-4.2# touch /.autorelabel 
 ```
-For that reason, and despite it is easier, it should be regarded as the 'lazy option', and is not recommended.
 
-### Exit & reboot
+因为这个原因，尽管它更简单，它应该作为“懒人选择”，而不是建议。
 
-Exit & reboot and log in with your new root password.
+### 退出并重启
+
+退出并重启并用新的 root 密码登录。
 
 --------------------------------------------------------------------------------
 
 via: https://linuxconfig.org/how-to-reset-the-root-password-in-rhel7-centos7-scientific-linux-7-based-systems
 
 作者：[Rado Folwarczny][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
