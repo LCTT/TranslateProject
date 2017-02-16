@@ -4,7 +4,7 @@ screen 命令使用及示例
 
  ![linux screen command usage and examples](https://www.rosehosting.com/blog/wp-content/uploads/2017/02/linux-screen-usage-examples.jpg) 
 
-screen 是一个非常有用的命令，提供从单个 SSH 会话中使用多个 shell 窗口（会话）的能力。当会话分离或网络中断时，screen 会话中启动的进程仍将运行，你可以随时重新连接到 screen 会话。如果你想运行一个持久的进程或者连接到多个位置的 shell 会话，这也很方便。
+screen 是一个非常有用的命令，提供从单个 SSH 会话中使用多个 shell 窗口（会话）的能力。当会话分离或网络中断时，screen 会话中启动的进程仍将运行，你可以随时重新连接到 screen 会话。如果你想运行一个持久的进程或者从多个位置连接到 shell 会话，这也很方便。
 
 在本文中，我们将展示在 Linux VPS 上安装和使用 screen 的基本知识。
 
@@ -33,7 +33,7 @@ apt-get -y install screen
 
 ### 如何启动一个 screen 会话
 
-你可以在命令行中输入 “screen” 来启动screen，接着会有一个看上去和命令行一样的 screen 会话启动。
+你可以在命令行中输入 “screen” 来启动 screen，接着会有一个看上去和命令行一样的 screen 会话启动。
 
 ```
 screen
@@ -49,7 +49,7 @@ screen -S name
 
 ### 从 screen 会话分离
 
-要从当前的 screen 会话中分离，你可以按下 “Ctrl-A” 和 “d”。所有的 screen 会话仍是活跃的，你之后可以随时重新连接。
+要从当前的 screen 会话中分离，你可以按下 “**Ctrl-A**” 和 “**d**”。所有的 screen 会话仍是活跃的，你之后可以随时重新连接。
 
 ### 重新连接到 screen 会话
 
@@ -77,7 +77,7 @@ There are screens on:
 screen -r 7934
 ```
 
-或者使用 screen 名称
+或者使用 screen 名称。
 
 ```
 screen -r -S session2
@@ -85,7 +85,7 @@ screen -r -S session2
 
 ### 中止 screen 会话
 
-有几种方法来中止 screen 会话。你可以按下 “Ctrl+d”, 或者在命令行中使用 “exit” 命令。
+有几种方法来中止 screen 会话。你可以按下 “**Ctrl**”+“**d**”, 或者在命令行中使用 “exit” 命令。
 
 要查看 screen 命令所有有用的功能，你可以查看 screen 的 man 手册。
 
@@ -105,7 +105,7 @@ screen -r sessionowner/[[pid.]tty[.host]]
 
 当然，如果你使用我们的[ Linux VPS 托管][9]服务，你不必这样做，在这种情况下，你可以要求我们的专家 Linux 管理员为你做这个。他们提供 24×7 的服务，并会立即响应你的要求。
 
-顺便说一下，如果你喜欢这篇文章，请使用下面的按钮在社交网络上与你的朋友分享，或者在评论区留下评论。谢谢。
+顺便说一下，如果你喜欢这篇文章，请在社交网络上与你的朋友分享，或者在评论区留下评论。谢谢。
 
 --------------------------------------------------------------------------------
 
