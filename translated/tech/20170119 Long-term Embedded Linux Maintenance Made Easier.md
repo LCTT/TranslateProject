@@ -40,7 +40,7 @@ via: https://www.linux.com/news/event/ELCE/2017/long-term-embedded-linux-mainten
 
 作者：[ERIC BROWN][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
