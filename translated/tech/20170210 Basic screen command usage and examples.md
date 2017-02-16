@@ -113,7 +113,7 @@ via: https://www.rosehosting.com/blog/basic-screen-command-usage-and-examples/
 
 作者：[rosehosting.com][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
