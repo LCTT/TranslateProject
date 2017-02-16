@@ -225,24 +225,24 @@ tecmint@TecMint ~ $ dpkg -l | pr --columns 3 -l 20
 Desired=Unknown/Install ii  adduser	          	ii  apg
 | Status=Not/Inst/Conf- ii  adwaita-icon-theme	ii  app-install-data
 |/ Err?=(none)/Reinst-r ii  adwaita-icon-theme- ii  apparmor
-||/ Name		            ii  alsa-base		        ii  apt
+||/ Name                ii  alsa-base		        ii  apt
 +++-=================== ii  alsa-utils		      ii  apt-clone
 ii  accountsservice	    ii  anacron		          ii  apt-transport-https
-ii  acl			            ii  apache2		          ii  apt-utils
-ii  acpi-support	      ii  apache2-bin		      ii  apt-xapian-index
-ii  acpid		            ii  apache2-data	      ii  aptdaemon
-ii  add-apt-key		      ii  apache2-utils	      ii  aptdaemon-data
+ii  acl                 ii  apache2		          ii  apt-utils
+ii  acpi-support        ii  apache2-bin		      ii  apt-xapian-index
+ii  acpid               ii  apache2-data	      ii  aptdaemon
+ii  add-apt-key         ii  apache2-utils	      ii  aptdaemon-data
 2017-01-06 13:19                                                  Page 2
-ii  aptitude		        ii  avahi-daemon	      ii  bind9-host
-ii  aptitude-common   	ii  avahi-utils		      ii  binfmt-support
-ii  apturl		          ii  aview		            ii  binutils
-ii  apturl-common	      ii  banshee		          ii  bison
-ii  archdetect-deb	    ii  baobab		          ii  blt
-ii  aspell		          ii  base-files		      ii  blueberry
-ii  aspell-en		        ii  base-passwd		      ii  bluetooth
-ii  at-spi2-core	      ii  bash		            ii  bluez
-ii  attr		            ii  bash-completion	    ii  bluez-cups
-ii  avahi-autoipd     	ii  bc			            ii  bluez-obexd
+ii  aptitude            ii  avahi-daemon	      ii  bind9-host
+ii  aptitude-common     ii  avahi-utils		      ii  binfmt-support
+ii  apturl              ii  aview		            ii  binutils
+ii  apturl-common       ii  banshee		          ii  bison
+ii  archdetect-deb      ii  baobab		          ii  blt
+ii  aspell              ii  base-files		      ii  blueberry
+ii  aspell-en           ii  base-passwd		      ii  bluetooth
+ii  at-spi2-core        ii  bash		            ii  bluez
+ii  attr                ii  bash-completion	    ii  bluez-cups
+ii  avahi-autoipd       ii  bc			            ii  bluez-obexd
 .....
 ```
 
