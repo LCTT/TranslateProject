@@ -1,15 +1,15 @@
-Linux 上 12 个用于高效文件操作的文本过滤命令
+Linux 上 12 个高效的文本过滤命令
 ============================================================
 
-在这篇文章中，我们将会看一些作为 Linux 中过滤器的命令行工具。过滤器是一个程序，它从标准输入读取数据，在数据上执行操作，然后把结果写到标准输出。
+在这篇文章中，我们将会看一些 Linux 中的过滤器命令行工具。过滤器是一个程序，它从标准输入读取数据，在数据上执行操作，然后把结果写到标准输出。
 
 因此，它可以用来以强大的方式处理信息，例如重新结构化输出以生成有用的报告，修改文件里面的文本，以及其他很多系统管理任务。
 
-说到这里，下面是 Linux 上的一些有用的文件或者文本过滤器。
+下面是 Linux 上的一些有用的文件或者文本过滤器。
 
-### 1\. Awk 命令
+### 1、 awk 命令
 
-**Awk** 是一个卓越的模式扫描和处理语言，它可被用于在 Linux 下构造有用的过滤器。你可以通过阅读我们的 [Awk 系列 1 到 13 部分][7] 来开始使用它。
+**awk** 是一个卓越的模式扫描和处理语言，它可被用于在 Linux 下构造有用的过滤器。你可以通过阅读我们的 [awk 系列 1 到 13 部分][7] 来开始使用它。
 
 另外，也可以通过阅读 **awk** 的 man 手册来获取更多的信息和使用选项。
 
@@ -17,12 +17,12 @@ Linux 上 12 个用于高效文件操作的文本过滤命令
 $ man awk
 ```
 
-### 2\. Sed 命令
+### 2、 sed 命令
 
 **sed** 是一款过滤和转换文本的强大的流编辑器。我们已经写了两篇关于 sed 的有用的文章，你可以通过这儿来了解：
 
-*  [如何使用 GNU ‘sed’ 命令在 Linux 下创建、编辑和处理文件][1]
-*  [日常 Linux 系统管理员任务使用的 15 个有用的 ‘sed’ 命令小贴士和技巧][2]
+*  [如何使用 GNU sed 命令在 Linux 下创建、编辑和处理文件][1]
+*  [日常 Linux 系统管理员任务使用的 15 个有用的 sed 命令小贴士和技巧][2]
 
 sed 的 man 手册已经添加控制选项和说明：
 
@@ -30,11 +30,11 @@ sed 的 man 手册已经添加控制选项和说明：
 $ man sed
 ```
 
-### 3\. Grep、 Egrep、 Fgrep、 Rgrep 命令行
+### 3、 grep、 egrep、 fgrep、 rgrep 命令行
 
-这些过滤器输出匹配指定模式的行。他们从一个文件或者标准输入读取行，并且输出所有匹配的行，默认输出到标准输出。
+这些过滤器输出匹配指定模式的行。它们从一个文件或者标准输入读取行，并且输出所有匹配的行，默认输出到标准输出。
 
-**注意**：主程序是 [grep][8]，变化与[使用特定的 grep 选项][9]相同，如下所示（为了向后兼容性，它们依旧被使用）：
+**注意**：主程序是 [grep][8]，这些变体与[使用特定的选项的 grep][9] 相同，如下所示（为了向后兼容性，它们依旧在使用）：
 
 ```
 $ egrep = grep -E
@@ -53,7 +53,7 @@ aaronkilik:x:1001:1001::/home/aaronkilik:
 
 在 [Linux 下的 grep、 egrep 和 fgrep 的差异？][10]中，你可以了解更多。
 
-### 4\. head 命令
+### 4、 head 命令
 
 **head** 用于显示文件前面的部分，默认情况下它输出前 **10** 行。你可以使用 `-n` 标志来指定显示的行数：
 
@@ -79,7 +79,7 @@ Jan  2 10:51:39 TecMint sudo: pam_unix(sudo:session): session closed for user ro
 
 学习如何 [使用带有 tail 和 cat 命令的 head 命令][11]，以便在 Linux 下更有效的使用。
 
-### 5\. tail 命令
+### 5、 tail 命令
 
 **tail** 输出一个文件的后面的部分（默认 **10** 行）。使用 `-n` 选项来指定显示的行数。
 
@@ -118,7 +118,7 @@ Jan  6 13:01:27 TecMint sshd[1269]: Server listening on :: port 22.
 $ man tail
 ```
 
-### 6\. sort 命令
+### 6、 sort 命令
 
 **sort** 用于将文本文件或标准输入的行进行排序。
 
@@ -152,18 +152,17 @@ windowsmint.com
 
 你可以有多种方式来使用 sort 命令，请参阅以下一些关于 sort 命令的有用的文章。
 
-*  [14 个 Linux ‘sort’ 命令的有用的示例 – 第 1 部分][3]
-*  [7 个有趣的 Linux ‘sort’ 命令示例 – 第 2 部分][4]
+*  [Linux 的 ‘sort’命令的14个有用的范例（一）][3]
+*  [Linux 的 'sort'命令的七个有趣实例（二）][4]
 *  [如何基于修改日期和时间来查找和排序文件][5]
-*  [http://www.tecmint.com/sort-ls-output-by-last-modified-date-and-time/][6]
 
-### 7\. uniq 命令
+### 7、 uniq 命令
 
 **uniq** 命令用于报告或者忽略重复行，它从标准输入过滤行，并且把结果写到标准输出。
 
-在对一个输入流运行 sort 之后，你可以使用 uniq 删除重复行，如下例所示。
+在对一个输入流运行 `sort` 之后，你可以使用 `uniq` 删除重复行，如下例所示。
 
-为了显示行出现的数目，使用 `-c` 选项，要在对比时忽略大小写的差异，使用 -i 选项：
+为了显示行出现的数目，使用 `-c` 选项，要在对比时忽略大小写的差异，使用 `-i` 选项：
 
 ```
 tecmint@TecMint ~ $ cat domains.list
@@ -181,13 +180,13 @@ tecmint@TecMint ~ $ sort domains.list | uniq -c
 1 windowsmint.com 
 ```
 
-通过阅读 **uniq** 的 man 手册来获取进一步的使用信息和选项：
+通过阅读 `uniq` 的 man 手册来获取进一步的使用信息和选项：
 
 ```
 $ man uniq
 ```
 
-### 8\. fmt 命令行
+### 8、 fmt 命令行
 
 **fmt** 是一款简单的优化的文本格式化器，它重新格式化指定文件的段落，并且打印结果到标准输出。
 
@@ -209,7 +208,7 @@ tecmint@TecMint ~ $ fmt -w 1 domain-list.txt
 4.windowsmint.com
 ```
 
-### 9\. pr 命令
+### 9、 pr 命令
 
 **pr** 命令转换文本文件或者标准输入之后打印出来。例如在 **Debian** 系统上，你可以像下面这样显示所有的安装包：
 
@@ -251,11 +250,11 @@ ii  avahi-autoipd       ii  bc			            ii  bluez-obexd
 *  `--column` 定义在输出中创建的列数。
 *  `-l` 指定页面的长度（默认是 66 行）。
 
-### 10\. tr 命令行
+### 10、 tr 命令行
 
 这个命令从标准输入转换或者删除字符，然后输出结果到标准输出。
 
-使用 **tr** 的语法如下：
+使用 `tr` 的语法如下：
 
 ```
 $ tr options set1 set2
@@ -271,9 +270,9 @@ tecmint@TecMint ~ $ echo "news.tecmint.com" | tr [:lower:] [:upper:]
 NEWS.TECMINT.COM
 ```
 
-### 11\. more 命令
+### 11、 more 命令
 
-**more** 命令是一个有用的文件过滤器，最初为查看证书而建。它一页页显示文件内容，用户可以通过按 [Enter] 来显示更多的信息。
+**more** 命令是一个有用的文件过滤器，最初为查看证书而建。它一页页显示文件内容，用户可以通过按回车来显示更多的信息。
 
 你可以像这样使用它来显示大文件：
 
@@ -305,11 +304,11 @@ tecmint@TecMint ~ $ dmesg | more
 --More--
 ```
 
-### 12\. less 命令
+### 12、 less 命令
 
 **less** 是和上面的 **more** 命令相反的一个命令，但是它提供了额外的特性，而且对于大文件，它会更快些。
 
-按照 more 命令相同的方式使用它：
+按照 `more` 命令相同的方式使用它：
 
 ```
 tecmint@TecMint ~ $ dmesg | less
@@ -360,13 +359,13 @@ via: http://www.tecmint.com/linux-file-operations-commands/
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:http://www.tecmint.com/author/aaronkili/
-[1]:http://www.tecmint.com/sed-command-to-create-edit-and-manipulate-files-in-linux/
+[1]:https://linux.cn/article-7161-1.html
 [2]:http://www.tecmint.com/linux-sed-command-tips-tricks/
-[3]:http://www.tecmint.com/sort-command-linux/
-[4]:http://www.tecmint.com/linux-sort-command-examples/
+[3]:https://linux.cn/article-5372-1.html
+[4]:https://linux.cn/article-5373-1.html
 [5]:http://www.tecmint.com/find-and-sort-files-modification-date-and-time-in-linux/
 [6]:http://how%20to%20sort%20output%20of%20%E2%80%98ls%E2%80%99%20command%20by%20last%20modified%20date%20and%20time/
-[7]:http://www.tecmint.com/category/awk-command/
+[7]:https://linux.cn/article-7586-1.html
 [8]:http://www.tecmint.com/12-practical-examples-of-linux-grep-command/
 [9]:http://www.tecmint.com/linux-grep-commands-character-classes-bracket-expressions/
 [10]:http://www.tecmint.com/difference-between-grep-egrep-and-fgrep-in-linux/
