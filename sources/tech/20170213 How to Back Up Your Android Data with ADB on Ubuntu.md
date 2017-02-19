@@ -1,8 +1,9 @@
+ucasFL translating
 How to Back Up Your Android Data with ADB on Ubuntu
 ============================================================
 
 
-![](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2017/02/android-backup-ubuntu.jpg "How to Back Up Your Android Data with ADB on Ubuntus") 
+![](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2017/02/android-backup-ubuntu.jpg "How to Back Up Your Android Data with ADB on Ubuntus")
 
 
 
@@ -22,11 +23,11 @@ Open a terminal window and enter this command to install the ADB tool that will 
 sudo apt install adb
 ```
 
- ![adb-install-adb-ubuntu](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2017/02/adb-install-adb-ubuntu.jpg "adb-install-adb-ubuntu") 
+ ![adb-install-adb-ubuntu](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2017/02/adb-install-adb-ubuntu.jpg "adb-install-adb-ubuntu")
 
 With the ADB tool installed on the system, debugging will need to be enabled inside of Android. Start by opening the Settings area of Android. Scroll all the way to the bottom to find “About Phone” and select it. This opens a “Phone status” page. On this page scroll to the bottom again, find “Build number’ and tap on it seven times. This will enable Developer Mode.
 
- ![adb-about-phone](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2017/02/adb-about-phone.jpg "adb-about-phone") 
+ ![adb-about-phone](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2017/02/adb-about-phone.jpg "adb-about-phone")
 
 To get to Developer Settings, press the Back button on the device to go back a page. A new option in settings will appear: “Developer options.” Tap on it to enter the developer settings area. Scroll through till you see “Android debugging” (or some variation of it), and tap it to enable the setting.
 
@@ -40,7 +41,7 @@ adb start-server
 
 This will start the Android Debugging Bridge server. With this command running, quickly unlock the Android device, as ADB will force a confirmation window that must be accepted to continue.
 
- ![adb-all-usb-debugging](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2017/02/adb-all-usb-debugging.jpg "adb-all-usb-debugging") 
+ ![adb-all-usb-debugging](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2017/02/adb-all-usb-debugging.jpg "adb-all-usb-debugging")
 
 To start the backup process, go to the terminal and enter this backup command. It’ll take text messages and other bits of app data, and store it into an encrypted file.
 
@@ -48,7 +49,7 @@ To start the backup process, go to the terminal and enter this backup command. I
 adb backup -apk -shared -all -f backup-file.adb
 ```
 
- ![adb-full-backup](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2017/02/adb-full-backup.jpg "adb-full-backup") 
+ ![adb-full-backup](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2017/02/adb-full-backup.jpg "adb-full-backup")
 
 Running the backup command will prompt the user to look at Android and set a password for the file before Android will run the backup procedure. Enter a strong, memorable password. Then, select the “back up my data” button. The backup may take some time, but when it is finished, a file named “backup-file.adb” will be in “/home/username/.”
 
@@ -60,7 +61,7 @@ To restore the backup, enable the ADB server (like mentioned above) and run this
 adb restore backup-file.adb
 ```
 
- ![adb-full-restore](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2017/02/adb-full-restore.jpg "adb-full-restore") 
+ ![adb-full-restore](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2017/02/adb-full-restore.jpg "adb-full-restore")
 
 Once again, go to Android, as ADB will prompt the user to enter a password. This time, instead of creating a password, all that is required is entering the one created from earlier. After that select “restore my data,” and the restoration process will begin. Be patient, as this may take a bit of time.
 
