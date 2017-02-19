@@ -1,3 +1,4 @@
+ucasFL translating
 How To Hide Files And Folders in File Manager Without Renaming
 ============================================================
 
@@ -27,7 +28,7 @@ total 36K
 
 File Manager View.
 [
- ![](http://www.2daygeek.com/wp-content/plugins/lazy-load/images/1x1.trans.gif) 
+ ![](http://www.2daygeek.com/wp-content/plugins/lazy-load/images/1x1.trans.gif)
 ][2]
 
 For clarification, i added `-a` options with ls command to list hidden files too (Yes, now i can see the file name .magi).
@@ -43,7 +44,7 @@ drwxr-xr-x  2 magi magi  4096 Feb 12 01:09 .magi
 
 To see the hidden files on file manager, simple press `Ctrl+h`, again press `Ctrl+h` to hide it.
 [
- ![](http://www.2daygeek.com/wp-content/plugins/lazy-load/images/1x1.trans.gif) 
+ ![](http://www.2daygeek.com/wp-content/plugins/lazy-load/images/1x1.trans.gif)
 ][3]
 
 #### Hide a file or folder with help of (“.hidden”) file Without Renaming
@@ -65,17 +66,17 @@ For testing purpose, i’m going create a file name called `.hidden` and 2g &
 
 Before adding files into .hidden file.
 [
- ![](http://www.2daygeek.com/wp-content/plugins/lazy-load/images/1x1.trans.gif) 
+ ![](http://www.2daygeek.com/wp-content/plugins/lazy-load/images/1x1.trans.gif)
 ][4]
 
 After files added into .hidden file.
 [
- ![](http://www.2daygeek.com/wp-content/plugins/lazy-load/images/1x1.trans.gif) 
+ ![](http://www.2daygeek.com/wp-content/plugins/lazy-load/images/1x1.trans.gif)
 ][5]
 
 Bring all the files by hitting `Ctrl+h`
 [
- ![](http://www.2daygeek.com/wp-content/plugins/lazy-load/images/1x1.trans.gif) 
+ ![](http://www.2daygeek.com/wp-content/plugins/lazy-load/images/1x1.trans.gif)
 ][6]
 
 #### Nautilus Hide extension
@@ -122,12 +123,12 @@ You might ask me, why i want to install Nautilus Hide extension because method t
 
 Hide a file using Nautilus Hide extension See the below screenshot, we are using Nautilus Hide extension to hiding a file.
 [
- ![](http://www.2daygeek.com/wp-content/plugins/lazy-load/images/1x1.trans.gif) 
+ ![](http://www.2daygeek.com/wp-content/plugins/lazy-load/images/1x1.trans.gif)
 ][8]
 
 Unhide a file using Nautilus Hide extension See the below screenshot, we are using Nautilus Hide extension to unhiding a file (Bring all the files by hitting `Ctrl+k`, so that you can see all the hidden files & folders).
 [
- ![](http://www.2daygeek.com/wp-content/plugins/lazy-load/images/1x1.trans.gif) 
+ ![](http://www.2daygeek.com/wp-content/plugins/lazy-load/images/1x1.trans.gif)
 ][9]
 
 --------------------------------------------------------------------------------
