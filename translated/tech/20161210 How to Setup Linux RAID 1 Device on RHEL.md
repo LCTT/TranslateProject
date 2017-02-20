@@ -1,26 +1,24 @@
-translating---geekpi
-
-How to Setup Linux RAID 1 Device on RHEL
+如何在 RHEL 上设置 Linux RAID 1
 ============================================================
 
 
-### Setting up Linux RAID 1
+### 设置 Linux RAID 1
 
-Configuring LINUX RAID 1 is very essential as its provides redundancy.
+配置 LINUX RAID 1 非常重要，因为它提供冗余。
 
-RAID partitions allows advanced features such as redundancy and better performance. So lets describe how to implement RAID, let’s look at the different types of RAID:
+RAID 分区拥有高级功能，如冗余和更好的性能。所以让我们来说下如何实现 RAID，以及让我们来看看不同类型的 RAID：
 
-■ RAID 0 (Striping) disks are grouped together to form one large drive. This offers better performance at the cost of availability. Should any single disk in the RAID fail, the entire set of disks becomes unusable. Two disk minimum.
+■ RAID 0（分条）磁盘组合在一起，形成一个大型驱动器。这以可用性为代价提供了更好的性能。如果 RAID 中的任何一块磁盘出现故障，则整个磁盘集将无法使用。最少需要两块磁盘。
 
-■ RAID 1 (Mirroring) disks are copied from one to another, allowing for redundancy. Should one disk fail, the other disk takes over, having an exact copy of data from the original disk. The downside here is slow write times. Two disk minimum.
+■ RAID 1（镜像）磁盘从一个复制到另一个，允许冗余。如果一块磁盘发生故障，则另一块磁盘接管，从原始磁盘获取数据的完整的副本。这里的缺点是写入时间慢。最少需要两块磁盘。
 
-■ RAID 5 (Striping with parity) disks are similar to RAID 0 and are join together to form one large drive. The difference here is that 25% of the disk is used for a parity bit, which allows the disks to be recovered should a single disk fail. Three disk minimum.
+■ RAID 5（带奇偶校验的分条）磁盘类似于 RAID 0，并且连接在一起以形成一个大型驱动器。这里的区别是，25％ 的磁盘用于奇偶校验位，这允许在单个磁盘发生故障时恢复磁盘。最少需要三块盘。
 
-Let’s move on to hands on for Linux RAID 1 configuration.
+让我们继续进行 Linux RAID 1 配置。
 
-Prerequisites for  Linux RAID 1:
+安装 Linux RAID 1 的要求：
 
-1. mdam should be installed on system, Please confirm using below command.
+1. 系统中应该安装了 mdam，请用下面的命令确认。
 
 	```
 	[root@rhel1 ~]# rpm -qa|grep -i mdadm
@@ -28,9 +26,9 @@ Prerequisites for  Linux RAID 1:
 	[root@rhel1 ~]#
 	```
 
-2. System should have 2 HDD attached with the system.
+2. 系统应该连接了 2 块磁盘。
 
-	For This Create two partitions, one on each disk (sdc, sdd), allowing each partition to consume the whole disk
+	因此创建两个分区，一个磁盘一个（sdc、sdd），每个分区占据整块磁盘。
 
 	```
 	Disk /dev/sdc: 1073 MB, 1073741824 bytes
@@ -59,7 +57,7 @@ Prerequisites for  Linux RAID 1:
 
 作者简介：
 
-Hi there! I am Manmohan Mirkar. I'm so happy you're here! I began this journey in Linux over 10 years ago and I would have never dreamed that I'd be where I am today. My passion is to help you get Knowledge on Linux.Thank you for being here!
+大家好！我是 Manmohan Mirkar。我很高兴你们在这里！我在 10 多年前开始使用 Linux，我从来没有想过我会到今天这个地步。我的激情是帮助你们获取 Linux 知识。谢谢你们在这！
 
 --------------------------------------------------------------------------------
 
