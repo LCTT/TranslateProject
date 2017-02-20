@@ -1,3 +1,5 @@
+@zijung 翻譯中……
+
 Getting Started with PowerShell 6.0 in Linux [Beginner Guide]
 ============================================================
 
