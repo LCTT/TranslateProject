@@ -28,7 +28,7 @@ total 36K
 文件管理器查看。
 
 [
- ![](http://www.2daygeek.com/wp-content/plugins/lazy-load/images/1x1.trans.gif)
+ ![](http://www.2daygeek.com/wp-content/uploads/2020/08/hide-files-and-folders-in-file-manager-without-renaming-linux-1a.png)
 ][2]
 
 为了澄清，我在 ls 命令后面加上 `-a` 选项来列出被隐藏文件（是的，现在我可以看到文件名 .magi 了）。
@@ -45,7 +45,7 @@ drwxr-xr-x  2 magi magi  4096 Feb 12 01:09 .magi
 为了查看文件管理器中的被隐藏文件，只需按 `Ctrl+h` 快捷键，再次按 `Ctrl+h` 又可以把这些文件隐藏。
 
 [
- ![](http://www.2daygeek.com/wp-content/plugins/lazy-load/images/1x1.trans.gif)
+ ![](http://www.2daygeek.com/wp-content/uploads/2020/08/hide-files-and-folders-in-file-manager-without-renaming-linux-2a.png)
 ][3]
 
 #### 用非重命名方法，通过 “.hidden” 文件的帮助隐藏文件或文件夹
@@ -68,19 +68,19 @@ drwxr-xr-x  2 magi magi  4096 Feb 12 01:09 .magi
 将两个文件加到 .hidden 文件中前。
 
 [
- ![](http://www.2daygeek.com/wp-content/plugins/lazy-load/images/1x1.trans.gif)
+ ![](http://www.2daygeek.com/wp-content/uploads/2020/08/hide-files-and-folders-in-file-manager-without-renaming-linux-5.png)
 ][4]
 
 将两个文件加到 .hidden 文件中后。
 
 [
- ![](http://www.2daygeek.com/wp-content/plugins/lazy-load/images/1x1.trans.gif)
+ ![](http://www.2daygeek.com/wp-content/uploads/2017/02/hide-files-and-folders-in-file-manager-without-renaming-linux-6.png)
 ][5]
 
 通过按 ‘Ctrl+h’ 显示所有文件。
 
 [
- ![](http://www.2daygeek.com/wp-content/plugins/lazy-load/images/1x1.trans.gif)
+ ![](http://www.2daygeek.com/wp-content/uploads/2017/02/hide-files-and-folders-in-file-manager-without-renaming-linux-7.png)
 ][6]
 
 #### Nautilus Hide 扩展
@@ -127,12 +127,12 @@ $ nautilus -q
 
 **使用 Nautilus Hide 扩展来隐藏一个文件。**看下面的屏幕截图，我们使用 Nautilus Hide 扩展来隐藏一个文件。
 [
- ![](http://www.2daygeek.com/wp-content/plugins/lazy-load/images/1x1.trans.gif)
+ ![](http://www.2daygeek.com/wp-content/uploads/2017/02/hide-files-and-folders-in-file-manager-without-renaming-linux-3a.png)
 ][8]
 
 **使用 Nautilus Hide 扩展来解除文件隐藏。**看下面的屏幕截图，我们使用 Nautilus Hide 扩展解除对一个文件的隐藏（通过按 `Ctrl+k`， 你可以查看所有的被隐藏文件和文件夹）。
 [
- ![](http://www.2daygeek.com/wp-content/plugins/lazy-load/images/1x1.trans.gif)
+ ![](http://www.2daygeek.com/wp-content/uploads/2020/08/hide-files-and-folders-in-file-manager-without-renaming-linux-4.png)
 ][9]
 
 --------------------------------------------------------------------------------
