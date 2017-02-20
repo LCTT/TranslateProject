@@ -5,7 +5,7 @@ LCTT 是“Linux中国”（[https://linux.cn/](https://linux.cn/)）的翻译�
 
 LCTT 已经拥有几百名活跃成员，并欢迎更多的Linux志愿者加入我们的团队。
 
-![logo](http://img.linux.net.cn/static/image/common/lctt_logo.png)
+![logo](https://linux.cn/static/image/common/lctt_logo.png)
 
 LCTT 的组成
 -------------------------------
@@ -38,7 +38,7 @@ LCTT 的组成
 * 2013/09/16 公开发布了翻译组成立消息后，又有新的成员申请加入了。并从此建立见习成员制度。
 * 2013/09/24 鉴于大家使用 GitHub 的水平不一，容易导致主仓库的一些错误，因此换成了常规的 fork+PR 的模式来进行翻译流程。
 * 2013/10/11 根据对 LCTT 的贡献，划分了 Core Translators 组，最先的加入成员是 vito-L 和 tinyeyeser。
-* 2013/10/12 取消对 LINUX.CN 注册用户的依赖，在 QQ 群内、文章内都采用 GitHub 的注册 ID。
+* 2013/10/12 取消对 LINUX.CN 注册用户的关联，在 QQ 群内、文章内都采用 GitHub 的注册 ID。
 * 2013/10/18 正式启动 man 翻译计划。
 * 2013/11/10 举行第一次北京线下聚会。
 * 2014/01/02 增加了 Core Translators 成员: geekpi。
@@ -52,7 +52,11 @@ LCTT 的组成
 * 2015/04/19 发起 LFS-BOOK-7.7-systemd 项目。
 * 2015/06/09 提升 ictlyh 和 dongfengweixiao 为 Core Translators 成员。
 * 2015/11/10 提升 strugglingyouth、FSSlc、Vic020、alim0x 为 Core Translators 成员。
+* 2016/02/18 由于选题 DeadFire 重病，任命 oska874 接手选题工作。
+* 2016/02/29 选题 DeadFire 病逝。
 * 2016/05/09 提升 PurlingNayuki 为校对。
+* 2016/09/10 LCTT 三周年。
+* 2016/12/24 拟定 LCTT [Core 规则](core.md)，并增加新的 Core 成员： @ucasFL、@martin2011qi，及调整一些组。
 
 活跃成员
 -------------------------------
@@ -60,121 +64,108 @@ LCTT 的组成
 目前 TP 活跃成员有：
 - Leader @wxy,
 - Source @oska874,
-- Proofreader @PurlingNayuki,
+- Proofreaders @jasminepeng,
 - CORE @geekpi,
 - CORE @GOLinux,
 - CORE @ictlyh,
-- CORE @carolinewuyan,
 - CORE @strugglingyouth,
 - CORE @FSSlc
 - CORE @zpl1025,
 - CORE @runningwater,
 - CORE @bazz2,
 - CORE @Vic020,
-- CORE @dongfengweixiao,
 - CORE @alim0x,
+- CORE @tinyeyeser,
+- CORE @Locez,
+- CORE @ucasFL
+- CORE @martin2011qi
 - Senior @DeadFire,
 - Senior @reinoir222,
-- Senior @tinyeyeser,
 - Senior @vito-L,
-- Senior @jasminepeng,
 - Senior @willqian,
 - Senior @vizv,
+- Senior @dongfengweixiao,
+- Senior @PurlingNayuki,
+- Senior @carolinewuyan,
+- cposture,
 - ZTinoZ,
-- martin2011qi,
 - theo-l,
 - Luoxcat,
+- GHLandy,
 - wi-cuckoo,
+- StdioA,
 - disylee,
-- haimingfg,
-- KayGuoWhu,
 - wwy-hust,
 - felixonmars,
+- KayGuoWhu,
+- mr-ping,
+- wyangsun,
 - su-kaiyao,
-- GHLandy,
 - ivo-wang,
 - cvsher,
-- wyangsun,
+- OneNewLife
 - DongShuaike,
 - flsf,
 - SPccman,
-- Stevearzh
-- mr-ping,
+- Stevearzh,
+- bestony,
 - Linchenguang,
 - Linux-pdz,
 - 2q1w2007,
+- NearTan,
 - H-mudcup,
-- cposture,
+- GitFuture,
+- MikeCoder,
 - xiqingongzi,
 - goreliu,
-- NearTan,
+- rusking,
+- jiajia9linuxer,
+- name1e5s,
 - TxmszLou,
 - ZhouJ-sh,
 - wangjiezhe,
 - icybreaker,
+- zky001,
+- vim-kakali,
 - shipsw,
+- LinuxBars,
+- Moelf,
+- Chao-zhi
 - johnhoow,
 - soooogreen,
+- kokialoves,
 - linuhap,
+- ChrisLeeGit,
 - blueabysm,
+- yangmingming,
 - boredivan,
-- name1e5s,
-- StdioA,
 - yechunxiao19,
-- l3b2w1,
 - XLCYun,
 - KevinSJ,
+- l3b2w1,
 - tenght,
+- firstadream,
 - coloka,
 - luoyutiantang,
 - sonofelice,
-- jiajia9linuxer,
 - scusjs,
-- tnuoccalanosrep,
 - woodboow,
 - 1w2b3l,
 - JonathanKang,
 - crowner,
 - dingdongnigetou,
 - mtunique,
-- CNprober,
 - hyaocuk,
 - szrlee,
-- KnightJoker,
-- Xuanwo,
 - nd0104,
-- Moelf,
-- xiaoyu33,
-- guodongxiaren,
-- ynmlml,
-- vim-kakali,
-- ggaaooppeenngg,
-- Ricky-Gong,
-- zky001,
-- lfzark,
-- 213edu,
-- bestony,
-- mudongliang,
+- chenzhijun,
+- frankatlingingdigital,
+- willcoderwang,
 - liuaiping,
-- Timeszoro,
 - rogetfan,
 - JeffDing,
-- Yuking-net,
 
-
-（按增加行数排名前百）
-
-LFS 项目活跃成员有：
-
-- @ictlyh
-- @dongfengweixiao
-- @wxy
-- @H-mudcup
-- @zpl1025
-- @KevinSJ
-- @Yuking-net
-
-（更新于2016/06/20）
+（按增加行数排名前百，更新于2016/12/24）
 
 谢谢大家的支持！
 
