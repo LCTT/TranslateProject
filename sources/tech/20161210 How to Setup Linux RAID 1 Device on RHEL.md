@@ -1,3 +1,5 @@
+translating---geekpi
+
 How to Setup Linux RAID 1 Device on RHEL
 ============================================================
 
