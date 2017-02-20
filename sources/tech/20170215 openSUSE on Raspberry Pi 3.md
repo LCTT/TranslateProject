@@ -1,3 +1,5 @@
+Cathon is translating...
+
 # openSUSE on Raspberry Pi 3: From Zero to Functional System in a Few Easy Steps
 
 
