@@ -1,3 +1,5 @@
+translating by ypingcn
+
 A beginner's guide to understanding sudo on Ubuntu
 ============================================================
 
