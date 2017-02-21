@@ -1,3 +1,5 @@
+Transtating by Chao-zhi
+
 # Manjaro Linux explained
 
 Today we have Manjaro on our seventh segment. Manjaro is based on Arch Linux with a beautiful user interface. Manjaro is not much older like Debian or Arch but still it emerged as a stable and reliable Linux Distribution,standing and differentiating itself in the crowd of Distros. In 2011 there was the first initial release of Manjaro. Since then it improved a lot and today we are having the latest version 16.06.1 codenamed 'Daniella'. 
