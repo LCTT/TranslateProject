@@ -1,3 +1,4 @@
+ucasFL translating
 # What is Linux? A brief Description
 
 
@@ -19,8 +20,8 @@ It is an operating system which is made on top of Linux kernel. It is loaded wit
 Ubuntu, Fedora, Opensuse, Red hat Linux, Debian, etc. are few very popular Linux distributions.
 
  [
- ![](https://3.bp.blogspot.com/-8ckfHXqKaPA/U2o2ufvZ0nI/AAAAAAAAAN0/Frd4OS7m7dk/s280/image_1.png) 
-][1] 
+ ![](https://3.bp.blogspot.com/-8ckfHXqKaPA/U2o2ufvZ0nI/AAAAAAAAAN0/Frd4OS7m7dk/s280/image_1.png)
+][1]
 > Ubuntu, a very popular Linux distribution and 3rd most popular operating system.
 
 
