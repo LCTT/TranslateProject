@@ -1,3 +1,5 @@
+申请翻译
+
 A Raspberry Pi Hadoop Cluster with Apache Spark on YARN: Big Data 101
 ======
 
@@ -223,10 +225,10 @@ What do you think?  Are you going to build a Raspberry Pi Hadoop Cluster?  Want 
 via: https://dqydj.com/raspberry-pi-hadoop-cluster-apache-spark-yarn/?utm_source=dbweekly&utm_medium=email
 
 作者：[PK][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[popy32](https://github.com/sfantree)
 校对：[校对者ID](https://github.com/校对者ID)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://dqydj.com/about/#contact_us
 [1]: https://www.raspberrypi.org/downloads/raspbian/

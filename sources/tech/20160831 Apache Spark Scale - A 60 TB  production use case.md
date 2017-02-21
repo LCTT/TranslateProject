@@ -1,4 +1,3 @@
-翻译中 by-zky001
 Apache Spark @Scale: A 60 TB+ production use case
 ===========
 
@@ -114,10 +113,10 @@ While this post details our most challenging use case for Spark, a growing numbe
 via: https://code.facebook.com/posts/1671373793181703/apache-spark-scale-a-60-tb-production-use-case/?utm_source=dbweekly&utm_medium=email
 
 作者：[Sital Kedia][a]  [王硕杰][b]  	[Avery Ching][c]
-译者：[zky001](https://github.com/zky001)
+译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://www.facebook.com/sitalkedia
 [b]: https://www.facebook.com/shuojiew
