@@ -64,7 +64,7 @@ RAID 分区拥有高级功能，如冗余和更好的性能。所以让我们来
 via: http://www.linuxroutes.com/linux-raid-1/
 
 作者：[Manmohan Mirkar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
