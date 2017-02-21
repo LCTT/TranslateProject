@@ -1,3 +1,4 @@
+申请翻译
 How to Auto Execute Commands/Scripts During Reboot or Startup
 ============================================================
 
