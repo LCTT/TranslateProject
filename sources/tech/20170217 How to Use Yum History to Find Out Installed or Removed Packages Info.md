@@ -1,3 +1,5 @@
+OneNewLife translating
+
 How to Use ‘Yum History’ to Find Out Installed or Removed Packages Info
 ============================================================
 
