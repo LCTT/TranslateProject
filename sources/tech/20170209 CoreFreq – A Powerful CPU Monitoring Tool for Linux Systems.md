@@ -1,3 +1,5 @@
+translating---geekpi
+
 CoreFreq – A Powerful CPU Monitoring Tool for Linux Systems
 ============================================================
 
