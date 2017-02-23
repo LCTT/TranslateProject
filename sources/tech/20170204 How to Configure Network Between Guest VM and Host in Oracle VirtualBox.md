@@ -1,3 +1,5 @@
+#rusking translating
+
 How to Configure Network Between Guest VM and Host in Oracle VirtualBox
 ============================================================
 
