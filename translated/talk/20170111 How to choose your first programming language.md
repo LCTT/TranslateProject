@@ -1,7 +1,6 @@
 如何挑选你的第一门编程语言
-============================================================[
-
-][1]
+============================================================
+[][1]
  ![How to choose your first programming language](https://opensource.com/sites/default/files/styles/image-full-size/public/images/education/EDU_OSDC_IntroOS_520x292_FINAL.png?itok=va-tdc8j "How to choose your first programming language") 
 
 
