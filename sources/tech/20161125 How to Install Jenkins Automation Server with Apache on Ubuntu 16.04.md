@@ -1,3 +1,4 @@
+willcoderwang  翻译中
 How to Install Jenkins Automation Server with Apache on Ubuntu 16.04
 ============================================================
 
@@ -236,7 +237,7 @@ via: https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-u
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织翻译，[Linux中国](https://linux.cn/) 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://twitter.com/howtoforgecom
 [1]:https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/#prerequisite

@@ -1,3 +1,4 @@
+Translating by cposture 20161228
 # Applying the Linus Torvalds “Good Taste” Coding Requirement
 
 In [a recent interview with Linus Torvalds][1], the creator of Linux, at approximately 14:20 in the interview, he made a quick point about coding with “good taste”. Good taste? The interviewer prodded him for details and Linus came prepared with illustrations.
@@ -44,7 +45,7 @@ Again, the purpose of this code was to only initialize the values of the points 
 
 To accomplish this I initially looped over every point in the grid and used conditionals to test for the edges. This is what it looked like:
 
-```
+```Tr
 for (r = 0; r < GRID_SIZE; ++r) {
     for (c = 0; c < GRID_SIZE; ++c) {
 ```
@@ -157,7 +158,7 @@ via: https://medium.com/@bartobri/applying-the-linus-tarvolds-good-taste-coding-
 
 校对：[校对者ID](https://github.com/校对者ID)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织翻译，[Linux中国](https://linux.cn/) 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://medium.com/@bartobri?source=post_header_lockup
 [1]:https://www.ted.com/talks/linus_torvalds_the_mind_behind_linux
