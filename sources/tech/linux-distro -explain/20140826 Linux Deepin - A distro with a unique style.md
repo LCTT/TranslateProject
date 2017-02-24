@@ -1,3 +1,5 @@
+Translating by Chao-zhi
+
 ### Linux Deepin - A distro with a unique style
 
 
