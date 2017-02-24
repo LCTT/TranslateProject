@@ -1,8 +1,9 @@
+ucasFL translating
 # [Tips To Improve Ubuntu Speed][4]
 
 
 [
- ![Tips To Improve Ubuntu Speed](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/tips-to-improve-ubuntu-speed_orig.jpg) 
+ ![Tips To Improve Ubuntu Speed](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/tips-to-improve-ubuntu-speed_orig.jpg)
 ][2]Chances are that your Ubuntu desktop will run so smooth. You will wonder why you did not switch from those other slow loading desktop operating systems (looking at you Windows). Ubuntu runs smoothly on most modern machines and older machines using variants such as Lubuntu, Xubuntu and [Ubuntu MATE][6] are going to be impressive as well. Very few times, your experience can get poorer on your Ubuntu desktop. On the off chance that your Ubuntu PC is not running as smoothly as you would like, there are a few things you could do to improve your system performance and response.​But why is my computer running slow in the first place? Let me enumerate a few
 
 1.  Computer is getting old
@@ -24,7 +25,7 @@ Indexing aims to speed up search results, but on the other hand, can cause syste
 ### 3\. Manage your startup applications
 
 Startup applications can have a huge impact on the performance of your system. Some applications you install will add their startup entries to have them started at boot but you can remove some of these applications to improve your system performance. Open “Startup Applications” by typing searching in Unity launcher. Most of autostart entries will be hidden so enter the following command in terminal to make the visiblesudo sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/*.desktop[
- ![ubuntu startup application](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/ubuntu-startup-application_orig.jpg) 
+ ![ubuntu startup application](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/ubuntu-startup-application_orig.jpg)
 ][3]
 
 ### 4\. Try Preload
