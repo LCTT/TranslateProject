@@ -1,32 +1,42 @@
-# [一些给 Ubuntu 系统加速的技巧][4]
+# [提高 Ubuntu 系统速度的技巧][4]
 
 
 [
  ![Tips To Improve Ubuntu Speed](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/tips-to-improve-ubuntu-speed_orig.jpg)
 ][2]
-你的 Ubuntu 系统有机会可以运行得很顺畅。你将会想知道为什么你没有去使用那些加载桌面很慢的操作系统（比如 Windows 系统）。Ubuntu 在大多数现代化的机器上都能够很顺畅的运行，一些更老的机器使用 Ubuntu 系统的一些变种版本，比如 Lubuntu、Xubuntu 和 [Ubuntu MATE][6]，它们同样给人留下了深刻印象。很多时候，你对 Ubuntu 桌面的使用体验会越来越糟。因为你的 Ubuntu 系统并没有像你所希望的那样运行得很顺畅。但是你可以通过做一些事情来提高系统性能和响应。不过首先我们来看一看为什么电脑会运行得很慢。下面是我列举的一些原因：
 
-1. 电脑变旧
+你的 Ubuntu 系统可以运行得如此顺畅，以至于你会奇怪为什么没有早一些从那些桌面加载很慢的操作系统（比如 Windows）转过来。Ubuntu 在大多数现代化的机器上都能够很顺畅的运行，一些更老的机器使用 Ubuntu 系统的一些变种版本，比如 Lubuntu、Xubuntu 和 [Ubuntu MATE][6]，同样给人留下了深刻印象。极少的情况下，你对 Ubuntu 桌面的使用体验会越来越糟。如果非常不走运，你的 Ubuntu 系统并没有像你所希望的那样运行顺畅，那么你可以做一些事情来提高系统性能和响应速度。
+
+不过首先我们来看一看为什么电脑会运行得很慢？下面是我列举的一些原因：
+
+1. 电脑陈旧
 2. 安装了太多的应用
 3. 系统里的一些东西坏了
 4. 还有更多的原因...
 
 现在让我们来看一些改善这个问题的技巧。
 
-### 1\. 交换值
+### 1\. <ruby>交换值<rt>Swappiness</rt></ruby>
 
-如果你有一个交换分区的系统，那么这个技巧对你是最适合的（注：交换分区不建议为固态驱动器，因为这样会缩短驱动器的使用寿命）。交换分区可以改善系统，特别是安装有低速 RAM 来管理内存的系统。将数据写入交换分区（硬盘）比写入 RAM 要慢一些，所以你可以通过减少‘交换’值来限制数据多久写入分区一次。默认情况下， Ubuntu 的‘交换’值是 60%， 所以你可以通过下面的命令将它减至 10%：
+如果你的系统有一个交换分区，那么这个技巧对你是最适合的（注：交换分区不建议为固态驱动器，因为这样会缩短驱动器的使用寿命）。交换分区可以帮助系统，特别是低 RAM 的系统，来管理系统内存。将数据写入交换分区（硬盘）比写入 RAM 要慢一些，所以你可以通过减少‘交换’值来限制数据写入交换分区的频率。默认情况下， Ubuntu 的‘交换’值是 60%， 所以你可以通过下面的命令将它减至 10%：
+```
 sudo bash -c "echo 'vm.swappiness = 10' >> /etc/sysctl.conf"
+```
 
 ### 2\. 停止索引
 
 索引的目的是加快搜索结果，但另一方面，索引会导致系统还原为旧的配置。为了停止索引，输入下面的命令来移除索引工具：
+```
 sudo apt-get purge apt-xapian-index
+```
 
-### 3\. 管理启动应用
+### 3\. 管理<ruby>启动应用<rt>startup applications</rt></ruby>
 
 启动应用会对系统性能造成很大的影响。当你安装一些应用以后，这些应用会添加启动项，从而当你启动系统的时候它们也跟着启动，但你可以移除这些应用以提高系统性能。通过在 Unity 窗口搜索打开 “启动应用”。绝大多数自启动选项都会被隐藏，所以在终端输入下面的命令使它们可见：
-sudo sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/\*.desktop[
+```
+sudo sed -i "s/NoDisplay=true/NoDisplay=false/g" /etc/xdg/autostart/\*.desktop
+```
+[
  ![ubuntu startup application](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/ubuntu-startup-application_orig.jpg)
 ][3]
 
