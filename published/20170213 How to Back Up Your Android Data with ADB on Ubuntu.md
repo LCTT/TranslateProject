@@ -3,7 +3,7 @@
 
 ![](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2017/02/android-backup-ubuntu.jpg "How to Back Up Your Android Data with ADB on Ubuntus")
 
-备份 Android 系统上的应用数据、文本信息等等是非常乏味的，有时还很昂贵。电子市场的许多应用都承诺可以备份数据，但效果不佳或者需要付大量费用。你是否知道有一种更好的方法可以来做这件事，并且在你的电脑上就可以完成？
+备份 Android 系统上的应用数据、文本信息等等是非常乏味的，有时还很昂贵。电子市场的许多应用都承诺可以备份数据，但效果不佳或者需要付昂贵费用。你是否知道有一种更好的方法可以来做这件事，并且在你的电脑上就可以完成？
 
 Android 自带一套开发工具。有许多种开发工具，但人们最为感兴趣的项目是 ADB（或者叫做 <ruby>Android 调试桥<rt> Android Debug Bridge</rt></ruby>）。它允许用户通过命令行直接访问任何 Android 设备。有了这个工具，一切皆有可能 - 包括备份整个 Android 设备。在这篇文章中，将讨论如何在 Ubuntu 系统上完成这件事。
 
@@ -45,7 +45,7 @@ adb backup -apk -shared -all -f backup-file.adb
 
  ![adb-full-backup](https://maketecheasier-2d0f.kxcdn.com/assets/uploads/2017/02/adb-full-backup.jpg "adb-full-backup")
 
-当运行备份命令时，Android 会在启动备份进程前提示用户查看 Android 并设置加密文件的密码。请输入一个强大、容易记住的密码。然后，点击“备份我的数据”按钮。备份过程将会花费一定时间。备份完成以后，在目录 “/home/username/” 中会出现一个叫做 “backup-file.adb” 的文件。
+当运行备份命令时，Android 会在启动备份进程前提示用户查看 Android 并设置加密文件的密码。请输入一个强壮而容易记住的密码。然后，点击“备份我的数据”按钮。备份过程将会花费一定时间。备份完成以后，在目录 `/home/username/` 中会出现一个叫做 `backup-file.adb` 的文件。
 
 ### 恢复备份
 
@@ -62,7 +62,7 @@ adb restore backup-file.adb
 
 ### 结论
 
-没有多少 Android 用户知道这样备份数据，但是 ADB 的确很强大。利用它甚至可以获得对一个设备的 root 访问。事实上，利用这个工具还可以做很多的事情，需要更多的文章来讨论它。
+没有多少 Android 用户知道这样备份数据，但是 ADB 的确很强大。利用它甚至可以获得对设备的 root 访问。事实上，利用这个工具还可以做很多的事情，需要更多的文章来讨论它。
 
 你还知道 ADB 可以用来干什么吗？请在下面的评论区告知我们！
 
