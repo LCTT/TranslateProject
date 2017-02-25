@@ -1,6 +1,6 @@
 # 什么是 Manjaro Linux 操作系统？
 
-今天我们用七段话来阐述一下什么是 Manjaro。Manjaro 是基于 Arch Linux 并且拥有一个漂亮的用户界面的操作系统。 Manjaro 并不像 Debian 或者 Arch  这些 Linux 发行版一样古老，但是他依然十分的稳定而可靠，从而在各色发行版中显得鹤立鸡群。2011 年 Manjaro 才推出了第一个版本。从那以后它一直在不断的进步，今天最新的版本为 16.06.1，代号为 “Daniella”。
+这个系列的第七篇，我们来说一说什么是 Manjaro。Manjaro 是基于 Arch Linux 并且拥有一个漂亮的用户界面的操作系统。 Manjaro 并不像 Debian 或者 Arch  这些 Linux 发行版一样古老，但是他依然十分的稳定而可靠，从而在各色发行版中显得鹤立鸡群。2011 年 Manjaro 才推出了第一个版本。从那以后它一直在不断的进步，今天最新的版本为 16.06.1，代号为 “Daniella”。
 
 **为什么我认为 Manjaro 超越了其他的发行版?** 我并没有强求你使用 Manjaro 来替代其他发行版，但是我会尝试说服你来使用 Manjaro。那么让我开始吧！
 
