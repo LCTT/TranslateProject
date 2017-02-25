@@ -1,3 +1,4 @@
+#rusking translating
 Create a Shared Directory on Samba AD DC and Map to Windows/Linux Clients – Part 7
 ============================================================
 
