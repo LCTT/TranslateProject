@@ -1,35 +1,35 @@
-CoreFreq - 一款强大的 Linux 下监控 CPU 的工具
+CoreFreq：一款强大的监控 CPU 的专业工具
 ============================================================
 
-CoreFreq 是一个用于英特尔64位处理器的[ CPU 监控程序][1]，并且支持Atom、Core2、Nehalem、SandyBridge 及以上、还有 AMD 0F 家族。
+CoreFreq 是一个用于英特尔 64 位处理器的 [CPU 监控程序][1]，并且支持 Atom、Core2、Nehalem、SandyBridge 及以上、还有 AMD 0F 家族。
 
-它的核心建立在内核模块上，帮助从每个 CPU 核心检索内部性能计数器，并且与收集数据的守护进程一起工作，并用一个小型控制台客户端链接到守护程序并显示收集的数据。
+它的核心建立在内核模块上，用于从每个 CPU 核心检索内部性能计数器，并且与收集数据的守护进程一起工作，一个小型控制台客户端连接到该守护程序并显示收集的数据。
 
 [
  ![CoreFreq CPU Monitoring](http://www.tecmint.com/wp-content/uploads/2017/02/CoreFreq-CPU-Monitoring.gif) 
 ][2]
 
-它提供了以高精度重新捕获 CPU 数据的基础工作：
+它提供了高精度的重新捕获 CPU 数据的基础工作：
 
-1.  核心频率和比率; SpeedStep（EIST）、Turbo Boost、超线程（HTT）以及基本时钟。
-2.  性能计数器结合时间戳计数器（TSC）、未分配的核心循环（UCC）、未赋值的引用循环（URC）。
-3.  每周期或每秒的指令数、IPS、IPC 或 CPI。
-4.  CPU C 的状态 C0 C1 C3 C6 C7 - C1E - C1、C3 的自动/降级。
-5.  带有 Tjunction Max 的 DTS 温度、热监测 TM1、TM2 的状态。
-6.  包括用于自举的高速缓存和应用程序 CPU 拓扑图。
-7.  处理器特性、品牌、架构字符串。
+1. 核心频率和比率；SpeedStep（EIST）、Turbo Boost、超线程（HTT）以及基本时钟（Base Clock）。
+2. 性能计数器结合时间戳计数器（Time Stamp Counter）（TSC）、非停机核心周期（Unhalted Core Cycles）（UCC）、非停机引用周期（Unhalted Reference Cycles）（URC）。
+3. 每周期或每秒的指令数：IPS、IPC 或 CPI。
+4. CPU C 状态： C0 C1 C3 C6 C7 - C1E - C1、C3 的自动/非降级（UnDemotion）。
+5. 带有 Tjunction Max 的 DTS 温度、热监测（Thermal Monitoring） TM1、TM2 状态。
+6. 包括用于自举的高速缓存和应用程序 CPU 拓扑图。
+7. 处理器特性、品牌、架构字符串。
 
-注意：此工具更适用于专家 Linux 用户和经验丰富的系统管理员，但新手用户可以逐步学习如何使用它。
+注意：此工具更适用于 Linux 专家用户和经验丰富的系统管理员，但新手用户可以逐步学习如何使用它。
 
 #### CoreFreq 如何工作
 
-它通过调用一个 Linux 内核模块，然后使用：
+它通过调用一个 Linux 内核模块实现，它使用了：
 
-1.  汇编代码保持性能计数器的读数尽可能接近。
-2.  每个 CPU 影响 slab 数据内存加上高分辨率定时器。
-3.  可以暂停/恢复和 CPU 热插拔。
-4.  使用共享内存来保护内核免受来自用户空间程序的损害。
-5.  使用原子同步的线程来消除互斥和死锁。
+1. 汇编代码保持尽可能接近性能计数器读数。
+2. 按每个 CPU 影响的 slab 数据内存加上高分辨率定时器。
+3. 支持 CPU 暂停/恢复和 CPU 热插拔。
+4. 使用共享内存来保护内核免受来自用户空间程序的损害。
+5. 使用原子级同步的线程来消除互斥和死锁。
 
 ### 如何在 Linux 中安装 CoreFreq
 
@@ -48,11 +48,12 @@ $ git clone https://github.com/cyring/CoreFreq.git
 $ cd CoreFreq
 $ make 
 ```
+
 [
  ![Build CoreFreq Program](http://www.tecmint.com/wp-content/uploads/2017/02/make-corefreq.png) 
 ][3]
 
-构建 CoreFreq 程序
+*构建 CoreFreq 程序*
 
 注意：Arch Linux 用户可以从 AUR 中安装 [corefreq-git][4]。
 
@@ -68,19 +69,20 @@ $ sudo ./corefreqd
 ```
 $ ./corefreq-cli
 ```
+
 [
  ![CoreFreq Linux CPU Monitoring](http://www.tecmint.com/wp-content/uploads/2017/02/CoreFreq-Linux-CPU-Monitoring.gif) 
 ][5]
 
-CoreFreq Linux CPU 监控
+*CoreFreq Linux CPU 监控*
 
 在上面的界面中，你可以使用这些快捷键：
 
-1.  使用 `F2` 显示屏幕顶部显示的使用菜单。
-2.  使用 `右` 和 `左` 箭头移动菜单选项卡。
-3.  使用 `上`和 `下` 箭头选择菜单项，然后单击[Enter]。
-4.  使用 `F4` 关闭程序。
-5.  使用 `h` 打开快速参考。
+1. 使用 `F2` 显示屏幕顶部显示的使用菜单。
+2. 使用 `右` 和 `左` 箭头移动菜单选项卡。
+3. 使用 `上`和 `下` 箭头选择菜单项，然后单击回车。
+4. 使用 `F4` 关闭程序。
+5. 使用 `h` 打开快速参考。
 
 要查看所有的使用选项，请输入以下命令：
 
@@ -88,7 +90,7 @@ CoreFreq Linux CPU 监控
 $ ./corefreq-cli -h
 ```
 
-CoreFreq 选项
+CoreFreq 选项：
 
 ```
 CoreFreq.  Copyright (C) 2015-2017 CYRIL INGENIERIE
@@ -135,9 +137,9 @@ $ ./corefreq-cli -i
 $ ./corefreq-cli -c
 ```
 
-有关更多信息和用法，请访问 CoreFreq Github 仓库：[https://github.com/cyring/CoreFreq][6]
+有关更多信息和用法，请访问 CoreFreq 的 Github 仓库：[https://github.com/cyring/CoreFreq][6] 。
 
-在本文中，我们回顾了一个强大的 CPU 监控工具，这对于 Linux 专家或经验丰富的系统管理员来说可能比新手用户更有用。
+在本文中，我们评估了一个强大的 CPU 监控工具，这对于 Linux 专家或经验丰富的系统管理员来说可能比新手用户更有用。
 
 通过下面的评论栏与我们分享你对这个工具或任何相关的想法。
 
@@ -153,7 +155,7 @@ via: http://www.tecmint.com/corefreq-linux-cpu-monitoring-tool/
 
 作者：[Aaron Kili][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
