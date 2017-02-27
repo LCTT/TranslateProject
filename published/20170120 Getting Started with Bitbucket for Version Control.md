@@ -1,4 +1,4 @@
-用于版本控制的 Bitbucket 入门指南
+Bitbucket 版本控制入门指南
 ============================================================
 
  ![](https://www.blogmint.com/frontendUtil/openPage?page=blog-post-read&oId=c41aba944ad4408095c09ccabc1921ec&uId=1a715d24df2f49c0be2acf7d7409ffbb&count=1&image=one-pixel.png) 
@@ -9,11 +9,11 @@
 
 自从 2008 年首次推出以来，[Bitbucket][1] 已成为使用 **Mercurial** 或 **Git** 版本控制系统（**VCS**）的开发人员团队中越来越受欢迎的选择。
 
-它既提供免费帐户，带有不限数量的私人存储库（每个帐户最多 5 个用户），也提供多个付费计划，允许每个帐户有更多用户。此外，标记为 public 的仓库对可以编辑或读取其内容的人数没有限制。
+它既提供免费帐户，带有不限数量的私人存储库（每个账户最多 5 个用户），也提供多种付费计划，允许每个帐户有更多用户。此外，标记为“公开”的仓库对可以编辑或读取其内容的人数没有限制。
 
 ### 注册 Bitbucket
 
-要使用 **Bitbucket**，你需要建立一个免费帐户。要这样做，请进入 [https://bitbucket.org/][2]， 然后单击**<ruby>免费开始<rt>Get started for free</rt></ruby>**按钮。
+要使用 **Bitbucket**，你需要建立一个免费帐户。要这样做，请进入 [https://bitbucket.org/][2]， 然后单击<ruby>免费开始<rt>Get started for free</rt></ruby>按钮。
 
 首先，你需要输入有效的电子邮件地址，然后点击**继续**。 你的电子邮件帐户将被验证，如果一切正常，你将被提示输入所需的密码。完成后，再次点击 **继续**，然后检查你的电子邮件**收件箱**，以确认你的帐户是否已创建：
 
@@ -43,7 +43,7 @@
 
 *探索 Bitbucket 功能*
 
-###### 1). 创建一个团队，通过允许多个 Bitbucket 用户共享一个账号计划的方式鼓励协作。
+#### 1). 创建一个团队，通过允许多个 Bitbucket 用户共享一个账号计划的方式鼓励协作。
 
 这将允许他们轻松管理团队拥有的仓库。要创建团队，请输入**团队名称**，并确保团队标识不存在。接下来，输入你要添加到群组的人员的电子邮件地址，并指明是否要将其设为**管理员**。最后，单击**创建**：
 
@@ -53,11 +53,11 @@
 
 *Bitbucket – 创建一个团队*
 
-###### 2) 创建或导入一个仓库
+#### 2) 创建或导入一个仓库
 
 如果你已经使用基于 Git 的解决方案，你可以轻松地将你的仓库导入 **Bitbucket**。否则，你可以从头创建一个。让我们看看在每种情况下你需要做什么。
 
-要创建新的仓库，请单击**<ruby>仓库<rt>Repositories</rt></ruby>**菜单中的**<ruby>创建仓库<rt>Create repository</rt></ruby>**选项。为新仓库和要分组到的项目选择一个名称。接下来，指明是否要将其设置为 private 并指定类型（Git 或 Mercurial）。最后，单击**创建仓库**：
+要创建新的仓库，请单击<ruby>仓库<rt>Repositories</rt></ruby>菜单中的<ruby>创建仓库<rt>Create repository</rt></ruby>选项。为新仓库和要分组到的项目选择一个名称。接下来，指明是否要将其设置为 private 并指定类型（Git 或 Mercurial）。最后，单击**创建仓库**：
 
 [
  ![Bitbucket - Create a New Repository](http://www.tecmint.com/wp-content/uploads/2017/01/Bitbucket-Create-a-New-Repository.png) 
@@ -87,7 +87,7 @@
 
 *Bitbucket – 仓库概览*
 
-如果想了解如何用仓库工作，或者想要提升你的 git 技能，可以参考[ Bitbucket 官方文档][10]。
+如果想了解如何用仓库工作，或者想要提升你的 git 技能，可以参考 [Bitbucket 官方文档][10]。
 
 ##### 总结
 
