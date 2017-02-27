@@ -52,7 +52,7 @@ via: https://www.suse.com/communities/blog/opensuse-raspberry-pi-3-zero-function
 
 作者：[chabowski][a]
 译者：[译者ID](https://github.com/Cathon)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
