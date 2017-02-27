@@ -1,21 +1,9 @@
 如何在 CentOS 7 中使用 Nginx 和 PHP7-FPM 安装 Nextcloud
 ==========================
 
-### 导航
+Nextcloud 是一款自由 (开源) 的类 Dropbox 软件，由 ownCloud 分支演化形成。它使用 PHP 和 JavaScript 编写，支持多种数据库系统，比如 MySQL/MariaDB、PostgreSQL、Oracle 数据库和 SQLite。它可以使你的桌面系统和云服务器中的文件保持同步，Nextcloud 为 Windows、Linux、Mac、安卓以及苹果手机都提供了客户端支持。Nextcloud 并非只是 Dropbox 的克隆，它还提供了很多附加特性，如日历、联系人、计划任务以及流媒体 Ampache。
 
-1. [步骤 1 - 在 CentOS 7 中安装 Nginx 和 PHP7-FPM][1]
-2. [步骤 2 - 配置 PHP7-FPM][2]
-3. [步骤 3 - 安装和配置 MariaDB][3]
-4. [步骤 4 - 为 Nextcloud 生成一个自签名 SSL 证书][4]
-5. [步骤 5 - 下载和安装 Nextcloud][5]
-6. [步骤 6 - 在 Nginx 中为 Nextcloud 配置虚拟主机][6]
-7. [步骤 7 - 为 Nextcloud 配置 SELinux 和 FirewallD 规则][7]
-8. [步骤 8 - Nextcloud 安装][8]
-9. [参考链接][9]
-
-Nextcloud 是一款自由 (开源) 的类 Dropbox 软件，由 ownCloud 分支演化形成。它使用 PHP 和 JavaScript 编写，支持多种数据库系统，比如 MySQL/MariaDB、PostgreSQL、Oracle 数据库和 SQLite。为了让你的桌面系统和云服务器中的文件能够保持同步，Nextcloud 为 Windows、Linux、Mac、安卓以及苹果手机都提供了客户端支持。Nextcloud 并非只是 Dropbox 的克隆，他还提供了很多附加特性，如日历、联系人、计划任务以及流媒体 Ampache。
-
-在这片文章中，我将向你展示如何在 CentOS 7 服务器中安装和配置最新版本的 Nextcloud 10。我会通过 Nginx 和 PHP7-FPM 来运行 Nextcloud，同时使用 MariaDB 做为数据库系统。
+在这篇文章中，我将向你展示如何在 CentOS 7 服务器中安装和配置最新版本的 Nextcloud 10。我会通过 Nginx 和 PHP7-FPM 来运行 Nextcloud，同时使用 MariaDB 做为数据库系统。
 
 **先决条件**
 
@@ -58,17 +46,17 @@ php -v
 
 [![查看 PHP 版本号](https://www.howtoforge.com/images/how-to-install-nextcloud-with-nginx-and-php-fpm-on-centos-7/1.png)][10]
 
-### 步骤 2 - Configure PHP7-FPM
+### 步骤 2 - 配置 PHP7-FPM
 
-在这一个步骤中，我们将配置 php-fpm 与 Nginx 协同运行。Php7-fpm 将使用 nginx 用户来运行，并监听 9000 端口。
+在这一个步骤中，我们将配置 php-fpm 与 Nginx 协同运行。Php7-fpm 将使用 `nginx` 用户来运行，并监听 `9000` 端口。
 
-使用 vim 编辑 默认的 php7-fpm 配置文件。
+使用 vim 编辑默认的 php7-fpm 配置文件。
 
 ```
 vim /etc/php-fpm.d/www.conf
 ```
 
-在第 8 行和第 10行，user 和 group 赋值为 '**nginx**'.
+在第 8 行和第 10行，`user` 和 `group` 赋值为 `nginx`。
 
 ```
 user = nginx
@@ -81,7 +69,7 @@ group = nginx
 listen = 127.0.0.1:9000
 ```
 
-去注释第 366-370 行，启用 php-fpm 的系统环境变量。
+取消第 366-370 行的注释，启用 php-fpm 的系统环境变量。
 
 ```
 env[HOSTNAME] = $HOSTNAME
@@ -93,7 +81,7 @@ env[TEMP] = /tmp
 
 保存文件并退出 vim 编辑器。
 
-下一步，就是在 '/var/lib/' 目录下创建一个新的文件夹 session，并将其拥有者变更为 'nginx' 用户。
+下一步，就是在 `/var/lib/` 目录下创建一个新的文件夹 `session`，并将其拥有者变更为 `nginx` 用户。
 
 ```
 mkdir -p /var/lib/php/session
@@ -116,7 +104,7 @@ PHP7-FPM 配置完成
 
 ### 步骤 3 - 安装和配置 MariaDB
 
-我这里使用 MariaDB 作为 Nextcloud 的数据库。可以直接使用 yum 命令从 CentOS 默认远程仓库中安装 mariadb-server 包。
+我这里使用 MariaDB 作为 Nextcloud 的数据库。可以直接使用 `yum` 命令从 CentOS 默认远程仓库中安装 `mariadb-server` 包。
 
 ```
 yum -y install mariadb mariadb-server
@@ -135,7 +123,7 @@ systemctl enable mariadb
 mysql_secure_installation
 ```
 
-键入 'Y' ，然后设置MariaDB 的 root 密码。
+键入 `Y` ，然后设置 MariaDB 的 root 密码。
 
 ```
 Set root password? [Y/n] Y
@@ -148,13 +136,13 @@ Remove test database and access to it? [Y/n] Y
 Reload privilege tables now? [Y/n] Y
 ```
 
-这样就设置好了密码，现在登录到 mysql shell 并为 Nextcloud 创建一个新的数据库和用户。这里我创建名为 '**nextcloud_db**' 的数据库以及名为 '**nextclouduser**' 的用户，用户密码为 '**nextclouduser@**'。当然了，在创建的时候你要需用一个更安全的密码。
+这样就设置好了密码，现在登录到 mysql shell 并为 Nextcloud 创建一个新的数据库和用户。这里我创建名为 `nextcloud_db` 的数据库以及名为 `nextclouduser` 的用户，用户密码为 `nextclouduser@`。当然了，要给你自己的系统选用一个更安全的密码。
 
 ```
 mysql -u root -p
 ```
 
-输入密码即可登录 mysql shell。
+输入 MariaDB 的 root 密码，即可登录 mysql shell。
 
 输入以下 mysql 查询语句来创建新的数据库和用户。
 
@@ -167,11 +155,11 @@ flush privileges;
 
 [![为 Nextcloud 创建一个新的数据库和用户](https://www.howtoforge.com/images/how-to-install-nextcloud-with-nginx-and-php-fpm-on-centos-7/3.png)][12]
 
-nextcloud_db 数据库和 'nextclouduser' 用户创建完成
+`nextcloud_db` 数据库和 `nextclouduser` 数据库用户创建完成
 
 ### 步骤 4 - 为 Nextcloud 生成一个自签名 SSL 证书
 
-在教程中，我会让客户端以 https 连接来运行 Nextcloud。你可以使用诸如 let's encrypt 等免费 SSL 证书，或者是自己创建 <g class="gr_ gr_207 gr-alert gr_gramm gr_run_anim Grammar only-ins doubleReplace replaceWithoutSep" id="207" data-gr-id="207">自签名 (self signed)</g> SSL 证书。这里我使用 OpenSSL 来创建自己的自签名 SSL 证书。
+在教程中，我会让客户端以 https 连接来运行 Nextcloud。你可以使用诸如 let's encrypt 等免费 SSL 证书，或者是自己创建自签名 (self signed) SSL 证书。这里我使用 OpenSSL 来创建自己的自签名 SSL 证书。
 
 为 SSL 文件创建新目录：
 
@@ -179,13 +167,13 @@ nextcloud_db 数据库和 'nextclouduser' 用户创建完成
 mkdir -p /etc/nginx/cert/
 ```
 
-如下，使用 openssl 生成一个新的 SSL 证书。
+如下，使用 `openssl` 生成一个新的 SSL 证书。
 
 ```
 openssl req -new -x509 -days 365 -nodes -out /etc/nginx/cert/nextcloud.crt -keyout /etc/nginx/cert/nextcloud.key
 ```
 
-最后使用 'chmod' 命令将所有证书文件的权限设置为 '600'。
+最后使用 `chmod` 命令将所有证书文件的权限设置为 `600`。
 
 ```
 chmod 700 /etc/nginx/cert
@@ -196,34 +184,34 @@ chmod 600 /etc/nginx/cert/*
 
 ### 步骤 5 - 下载和安装 Nextcloud
 
-我直接使用 wget 命令下载 Nextcloud 到服务器上，因此需要先行安装 wget。此外，还需要安装 unzip 来进行解压。使用 'yum' 命令来安装这两个程序。
+我直接使用 `wget` 命令下载 Nextcloud 到服务器上，因此需要先行安装 `wget`。此外，还需要安装 `unzip` 来进行解压。使用 `yum` 命令来安装这两个程序。
 
 ```
 yum -y install wget unzip
 ```
 
-先进入 /tmp 目录，然后使用 wget 从官网下载最新的 Nextcloud 10。
+先进入 `/tmp` 目录，然后使用 `wget` 从官网下载最新的 Nextcloud 10。
 
 ```
 cd /tmp
 wget https://download.nextcloud.com/server/releases/nextcloud-10.0.2.zip
 ```
 
-解压 Nextcloud，并将其移动到 '/usr/share/nginx/html/' 目录。
+解压 Nextcloud，并将其移动到 `/usr/share/nginx/html/` 目录。
 
 ```
 unzip nextcloud-10.0.2.zip
 mv nextcloud/ /usr/share/nginx/html/
 ```
 
-下一步，转到 Nginx web 根目录为 Nextcloud 创建一个 'data' 文件夹。
+下一步，转到 Nginx 的 web 根目录为 Nextcloud 创建一个 `data` 文件夹。
 
 ```
 cd /usr/share/nginx/html/
 mkdir -p nextcloud/data/
 ```
 
-变更 'nextcloud' 目录的拥有者为 'nginx' 用户和组。
+变更 `nextcloud` 目录的拥有者为 `nginx` 用户和组。
 
 ```
 chown nginx:nginx -R nextcloud/
@@ -231,7 +219,7 @@ chown nginx:nginx -R nextcloud/
 
 ### 步骤 6 - 在 Nginx 中为 Nextcloud 配置虚拟主机
 
-在步骤 5 我们已经下载好了 Nextcloud 源码，并配置好了让它运行于 Nginx 服务器中，但我们还需要为它配置一个虚拟主机。在 Nginx 的 'conf.d' 目录下创建一个新的虚拟主机配置文件 'nextcloud.conf'。
+在步骤 5 我们已经下载好了 Nextcloud 源码，并配置好了让它运行于 Nginx 服务器中，但我们还需要为它配置一个虚拟主机。在 Nginx 的 `conf.d` 目录下创建一个新的虚拟主机配置文件 `nextcloud.conf`。
 
 ```
 cd /etc/nginx/conf.d/
@@ -388,7 +376,7 @@ systemctl restart nginx
 yum -y install policycoreutils-python
 ```
 
-然后以 root 用户来运行一下命令，以便让 Nextcloud 运行于 SELinux 环境之下。如果你是用的其他名称的目录，记得将 'nextcloud' 替换掉哦。
+然后以 root 用户来运行以下命令，以便让 Nextcloud 运行于 SELinux 环境之下。如果你是用的其他名称的目录，记得将 `nextcloud` 替换掉。
 
 ```
 semanage fcontext -a -t httpd_sys_rw_content_t '/usr/share/nginx/html/nextcloud/data(/.*)?'
@@ -410,7 +398,7 @@ systemctl start firewalld
 systemctl enable firewalld
 ```
 
-现在使用 firewall-cmd 命令来开启command http 和 https 端口，然后重新加载 firewall。
+现在使用 `firewall-cmd` 命令来开启 http 和 https 端口，然后重新加载防火墙。
 
 ```
 firewall-cmd --permanent --add-service=http
@@ -420,17 +408,17 @@ firewall-cmd --reload
 
 [![为 Nextcloud 配置 FirewallD 规则](https://www.howtoforge.com/images/how-to-install-nextcloud-with-nginx-and-php-fpm-on-centos-7/6.png)][15]
 
-至此，服务器配置完成
+至此，服务器配置完成。
 
 ### 步骤 8 - Nextcloud 安装
 
-打开你的 Web 浏览器，输入你为 Nextcloud 设置的域名，我这里设置为 cloud.nextcloud.co，然后会重定向到安全性更好的 https 连接。
+打开你的 Web 浏览器，输入你为 Nextcloud 设置的域名，我这里设置为 `cloud.nextcloud.co`，然后会重定向到安全性更好的 https 连接。
 
 设置你的管理员用户名和密码，然后输入数据验证信息，点击 '**完成安装 (Finish Setup)**'。
 
 [![Nextcloud 安装](https://www.howtoforge.com/images/how-to-install-nextcloud-with-nginx-and-php-fpm-on-centos-7/7.png)][16]
 
-Nextcloud 管理面板 (文件挂了) 大致如下：
+Nextcloud 管理面板大致如下：
 
 [![Nextcloud 管理面板](https://www.howtoforge.com/images/how-to-install-nextcloud-with-nginx-and-php-fpm-on-centos-7/8.png)][17]
 
@@ -438,7 +426,7 @@ Nextcloud 用户设置：
 
 [![Nextcloud 用户设置](https://www.howtoforge.com/images/how-to-install-nextcloud-with-nginx-and-php-fpm-on-centos-7/9.png)][18]
 
-管理设置
+管理设置：
 
 [![管理设置](https://www.howtoforge.com/images/how-to-install-nextcloud-with-nginx-and-php-fpm-on-centos-7/10.png)][19]
 
@@ -460,7 +448,7 @@ via: https://www.howtoforge.com/tutorial/how-to-install-nextcloud-with-nginx-and
 
 作者：[Muhammad Arul][a]
 译者：[GHLandy](https://github.com/GHLandy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
