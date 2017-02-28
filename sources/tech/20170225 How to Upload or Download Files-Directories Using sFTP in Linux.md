@@ -1,9 +1,7 @@
 How to Upload or Download Files/Directories Using sFTP in Linux
 ============================================================
 
-by [Aaron Kili][9] | Published: February 25, 2017 | Last Updated: February 25, 2017
-
- Download Your Free eBooks NOW - [10 Free Linux eBooks for Administrators][10] | [4 Free Shell Scripting eBooks][11]
+Download Your Free eBooks NOW - [10 Free Linux eBooks for Administrators][10] | [4 Free Shell Scripting eBooks][11]
 
 [sFTP (secure File Transfer Program)][1] is a secure and interactive file transfer program, which works in a similar way as FTP (File Transfer Protocol). However, sFTP is more secure than FTP; it handles all operations over an encrypted SSH transport.
 
