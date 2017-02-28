@@ -1,29 +1,29 @@
-如何在Ubuntu和CentOS上启用Nginx的HTTP/2协议
+如何在 Ubuntu 和 CentOS 上启用 Nginx 的 HTTP/2 协议支持
 ===
 
- ![](https://www.rosehosting.com/blog/wp-content/uploads/2017/02/enable-http2-nginx.jpg) 
+![](https://www.rosehosting.com/blog/wp-content/uploads/2017/02/enable-http2-nginx.jpg) 
 
-HTTP/2是HTTP网络协议的主要修订版本，它专注于HTTP协议的性能改进。HTTP/2协议的目标是减少延迟，并且允许在Web浏览器和服务器之间发起多个并发请求，因此Web应用程序会更快。在本篇教程中，我们将像你展示如何在安装有Ubuntu或CentOS作为操作系统的Linux VPS上使用开启Nginx的HTTP/2协议。如果你使用Apache，你可以查看我们的另一篇教程：[如何在Ubuntu上开启Apache的HTTP/2协议][6]。
+HTTP/2 是 HTTP 网络协议的主要修订版本，其专注于 HTTP 协议的性能改进。HTTP/2 协议的目标是减少延迟，并且允许在 Web 浏览器和服务器之间的一个连接上并行发起多个请求，因此 Web 应用程序会更快。在本篇教程中，我们将像你展示如何在安装有 Ubuntu 或 CentOS 作为操作系统的 Linux VPS 上使用开启 Nginx 的 HTTP/2 协议。如果你使用 Apache，你可以查看我们的另一篇教程：[如何在 Ubuntu 上开启 Apache 的 HTTP/2 协议][6]。
 
 ### 必备条件
 
-为了能够按照本篇教程最终在服务器上启用HTTP/2协议，你需要先安装好 [Nginx][7] 。并且确保功能正常而且配置没有错误。你可以使用下面的命令来检查一下：
+为了能够按照本篇教程最终在服务器上启用 HTTP/2 协议，你需要先安装好 [Nginx][7] 。并且确保功能正常而且配置没有错误。你可以使用下面的命令来检查一下：
 
 ```
 sudo nginx -t
 ```
 
-此外，你需要有服务器的root访问权限，或者至少有一个具有sudo权限的非root系统用户，以便你在修改Nginx配置文件的时候不会出现权限问题。最后你需要有一个[域名][8]和一个颁发给这个域名的有效的[SSL证书][9]。 
+此外，你需要有服务器的 root 访问权限，或者至少有一个具有 sudo 权限的非 root 系统用户，以便你在修改 Nginx 配置文件的时候不会出现权限问题。最后你需要有一个[域名][8]和一个颁发给这个域名的有效的 [SSL 证书][9]。 
 
-### 在Ubuntu上开启Nginx的HTTP/2协议
+### 在 Ubuntu 上开启 Nginx 的 HTTP/2 协议
 
-为了在[Ubuntu VPS][10]上开启Nginx的HTTP/2协议，你需要编辑默认的Nginx的服务块，我们使用的是 `nano`，你可以使用你自己的文本编辑器。
+为了在 [Ubuntu VPS][10] 上开启 Nginx 的 HTTP/2 协议，你需要编辑默认的 Nginx 的服务（`server`）块，我们使用的是 `nano`，你可以使用你自己的文本编辑器。
 
 ```
 sudo nano /etc/nginx/sites-available/default
 ```
 
-增加下面的服务块:
+增加下面的服务块：
 
 ```
 server {  
@@ -47,39 +47,39 @@ server {
 }
 ```
 
-确保 `domain.com` 被你真正的域名替换掉了。 此外，应正确设置文档根目录，还有SSL证书和密钥的路径。
+确保 `domain.com` 替换成你真正的域名。 此外，应正确设置文档根（`root`）目录，还有 SSL 证书和密钥的路径。
 
-当你编辑完成这个服务块之后，需要保存并关闭文件。使用以下命令检查Nginx配置是否有错误：
+当你编辑完成这个服务块之后，需要保存并关闭文件。使用以下命令检查 Nginx 配置是否有错误：
 
 ```
 sudo nginx -t
 ```
 
-为了刚刚的改变生效，需要重启Nginx：
+为了刚刚的改变生效，需要重启 Nginx：
 
 ```
 sudo systemctl restart nginx.service
 ```
 
-如果你想为另一个域名开启HTTP/2协议，你可以查看我们的博客[如何在Ubuntu和CentOS上设置Nginx服务块][11]。
+如果你想为另一个域名开启 HTTP/2 协议，你可以查看我们的博客[如何在 Ubuntu 和 CentOS 上设置 Nginx 服务块][11]。
 
-### 在CentOS上开启Nginx的HTTP/2协议
+### 在 CentOS 上开启 Nginx 的 HTTP/2 协议
 
-为了在[CentOS VPS][12] 开启Nginx的HTTP/2协议，你需要按照Ubuntu上完全相同的步骤做。唯一的不同点是Nginx块文件的位置。为了在CentOS上编辑默认的Nginx服务块，你需要进入`/etc/nginx/conf.d` 这个文件夹。
+为了在 [CentOS VPS][12] 开启 Nginx 的 HTTP/2 协议，你需要按照 Ubuntu 上完全相同的步骤做。唯一的不同点是 Nginx 块文件的位置。为了在 CentOS 上编辑默认的 Nginx 服务块，你需要进入 `/etc/nginx/conf.d`  这个文件夹。
 
 ```
 # nano /etc/nginx/conf.d/default.conf
 ```
 
-再次检查配置是否有错误，保存并关闭文件，然后使用以下命令重新启动Nginx服务：
+再次检查配置是否有错误，保存并关闭文件，然后使用以下命令重新启动 Nginx 服务：
 
 ```
 # systemctl restart nginx.service
 ```
 
-为了检测Nginx的HTTP/2协议是否开启成功，你可以使用一些[在线HTTP/2检测工具][13]。
+为了检测 Nginx 的 HTTP/2 协议是否开启成功，你可以使用一些[在线 HTTP/2 检测工具][13]。
 
-当然如果你使用我们的[Linux VPS主机][14]服务，在这种情况下你可以简易地要求我们的专家级的Linux管理员帮助你在你的服务器上启用Nginx的HTTP/2协议。他们提供7×24小时的服务，并且会很快关注的你要求。
+当然如果你使用我们的 [Linux VPS 主机][14]服务，在这种情况下你可以简易地要求我们的专家级的 Linux 管理员帮助你在你的服务器上启用 Nginx 的 HTTP/2 协议。他们提供 7×24 小时的服务，并且会很快关注的你要求。
 
 PS：如果你喜欢这篇文章，请使用下面的按钮分享给你社交网络上的朋友们，或者发表一下评论。谢谢。
 
@@ -89,7 +89,7 @@ via: https://www.rosehosting.com/blog/how-to-enable-http2-in-nginx-on-ubuntu-and
 
 作者：[rosehosting.com][a]
 译者：[Flowsnow](https://github.com/Flowsnow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
