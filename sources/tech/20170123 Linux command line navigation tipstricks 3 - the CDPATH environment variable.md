@@ -1,69 +1,88 @@
 [HaitaoBio](https://github.com/HaitaoBio) translating...
 
 Linux command line navigation tips/tricks 3 - the CDPATH environment variable
+Linux 命令行航行技巧 3 - 环境变量 CDPATH
 ============================================================
 
-### On this page
+### 文章导航
 
-1.  [The CDPATH environment variable][1]
-2.  [Points to keep in mind][2]
-3.  [Conclusion][3]
+1.  [The CDPATH environment variable 环境变量 CDPATH ][1]
+2.  [Points to keep in mind 要点][2]
+3.  [Conclusion 总结][3]
 
-In the first part of this series, we discussed the **cd -** command in detail, and the in the second part, we took an in-depth look into the **pushd** and **popd** commands as well as the scenarios where-in they come in handy.
+In the first part of this series, we discussed the `cd -` command in detail, and the in the second part, we took an in-depth look into the **pushd** and **popd** commands as well as the scenarios where-in they come in handy.
+在这个系列的第一部分，我们详细地讨论了 `cd -` 命令，并且在第二部分，我们深入探究了 `pushd` 和 `popd` 两个命令
 
 Continuing with our discussion on the command line navigation aspects, in this tutorial, we'll discuss the **CDPATH** environment variable through easy to understand examples. We'll also discuss some advance details related to this variable.
+继续对命令行的讨论，在这篇教程中，我们将会通过简单易懂的实例来讨论 `CDPATH` 这个环境变量。我们也会讨论关于此变量的一些进阶细节。
 
 _But before we proceed, it's worth mentioning that all the examples in this tutorial have been tested on Ubuntu 14.04 with Bash version 4.3.11(1)._
+_在这之前，先声明一下此教程中的所有实例都已经在 Ubuntu 14.04 和 4.3.11(1) 版本的 Bash 下测试过。_
 
-### The CDPATH environment variable
+### The CDPATH environment variable 环境变量 CDPATH
 
 Even if your command line work involves performing all operations under a particular directory - say your home directory - then also you have to provide absolute paths while switching directories. For example, consider a situation where-in I am in _/home/himanshu/Downloads_ directory:
+即使你的命令行在指定的目录下 - 然后你必须在切换目录时提供绝对路径。比如，在 _/home/himanshu/Downloads_ 目录下确认当前的目录位置:
 
+```sh
 $ pwd
+```
+
 /home/himanshu/Downloads
 
 And the requirement is to switch to the _/home/himanshu/Desktop_ directory. To do this, usually, I'll have to either run:
-
+要切换至 _/home/himanshu/Desktop_ 目录，我一般会这样做:
+```sh
 cd /home/himanshu/Desktop/
-
-or 
-
+```
+或者
+```sh
 cd ~/Desktop/
-
-or
-
+```
+或者
+```sh
 cd ../Desktop/
-
+```
 Wouldn't it be easy if I could just run the following command:
-
+能不能只是运行以下命令就能简单地实现呢:
+```sh
 cd Desktop
-
+```
 Yes, that's possible. And this is where the CDPATH environment variable comes in.You can use this variable to define the base directory for the **cd** command.
+是的，这完全有可能。这就是环境变量 `CDPATH` 出现的时候了。你可使用这个变量来为 `cd` 命令定义基础目录。
 
 If you try printing its value, you'll see that this env variable is empty by default:
-
+如果你想尝试打印它的值，你会看见这个环境变量默认是空值的:
+```sh
 $ echo $CDPATH
 $
-
+```
 Now, considering the case we've been discussing so far, let's use this environment variable to define _/home/himanshu_ as the base directory for the cd command.
+现在 ，考虑到已经详细地对它进行了讨论，接着让我们定义这个环境变量为 _/home/himanshu_，作为 `cd` 命令的基础目录来使用把。
 
 The easiest way to do this is:
-
+最简单的做法时这样:
+```sh
 export CDPATH=/home/himanshu
-
+```
 And now, I can do what I wasn't able to do earlier - from within the _/home/himanshu/Downloads_ directory, run the _cd Desktop_ command successfully.
+现在，我能做到之前所不能做到的事了 - 当前工作目录在 _/home/himanshu/Downloads_ 目录里时，成功地运行了 `cd Desktop` 命令。
 
+```sh
 $ pwd
 /home/himanshu/Downloads
-$ **cd Desktop/**
-**/home/himanshu/Desktop**
+$ cd Desktop/
+/home/himanshu/Desktop
 $
+```
 
 This means that I can now do a cd to any directory under _/home/himanshu_ without explicitly specifying _/home/himanshu_ or _~_ or _../_ (or multiple _../_)in the cd command.
+这表明了我可以使用 `cd` 命令来到达 _`/home/himanshu`_ 下的任意一个目录，而不需要在 `cd ` 命令中显式地指定 _`/home/himanshu`_ 或者 _`~`_，又或者是 _`../`_ (或者多个 _`../`_)。
 
-### Points to keep in mind
+### Points to keep in mind 要点
 
 So you now know how we used the CDPATH environment variable to easily switch to/from _/home/himanshu/Downloads_ from/to _/home/himanshu/Desktop_. Now, consider a situation where-in the _/home/himanshu/Desktop_ directory contains a subdirectory named _Downloads_, and it's the latter where you intend to switch.
+现在你应该知道是怎样利用环境变量 CDPATH 来简易地在 _/home/himanshu/Downloads_ 和 _/home/himanshu/Desktop_ 之间切换。现在，考虑以下这种情况， 在 _/home/himanshu/Desktop_ 目录里包含一个名字叫做 _Downloads_ 的子目录，这是之后将要切换到的目录。
 
 But suddenly you realize that doing a _cd Desktop_ will take you to _/home/himanshu/Desktop_. So, to make sure that doesn't happen, you do:
 
