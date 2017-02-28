@@ -1,8 +1,6 @@
 Setting Up a Secure FTP Server using SSL/TLS on Ubuntu
 ============================================================
 
-by [Aaron Kili][12] | Published: February 24, 2017 | Last Updated: February 24, 2017
-
  Download Your Free eBooks NOW - [10 Free Linux eBooks for Administrators][13] | [4 Free Shell Scripting eBooks][14]
 
 In this tutorial, we will describe how to secure a FTP server (VSFTPD stands for “Very Secure FTP Daemon”) using SSL/TLS in Ubuntu 16.04/16.10.
