@@ -3,21 +3,21 @@
 
 ### 简介
 
-Linux内核提供了多种睡眠状态，各个状态通过设置系统中的不同部件进入低耗电模式来节约能源。目前总共有四种状态，分别是：suspend to idle，power-on standby，suspend to ram和suspend to disk。这些状态分别对应ACPI的4种状态：S0,S1，S3和S4。suspend to idle是纯软件实现的，主要用于尽量保持CPU处于睡眠状态。powder-on standby则使设备处于低耗电状态，并且停止non-boot CPU运行。suspend to ram则会更进一步处理关闭部件节约能源，包括停止CPU运行，只保持内存自刷新工作，保证内存中的内容仍然存在。suspend to disk则是尽最大努力关闭部件进行节能，包括关闭内存。然后内存中的内容会被写到硬盘，待唤醒计算机的时候将硬盘中的内容重新恢复到内存中。
+Linux 内核提供了多种睡眠状态，各个状态通过设置系统中的不同部件进入低耗电模式来节约能源。目前总共有四种状态，分别是：suspend to idle，power-on standby（standby），suspend to ram 和 suspend to disk。这些状态分别对应 ACPI 的 4 种状态：S0，S1，S3 和 S4。suspend to idle 是纯软件实现的，用于将 CPU 维持在尽可能深的 idle 状态。powder-on standby 则使设备处于低功耗状态，并且关闭所有 non-boot CPU。suspend to ram 就更进一步，关闭所有CPU 并且设置 RAM 进入自刷新模式。suspend to disk 则是最省功耗的模式，关闭尽可能多的系统，包括关闭内存。然后内存中的内容会被写到硬盘，待唤醒计算机的时候将硬盘中的内容重新恢复到内存中。
 
-这篇博文主要介绍挂起suspend to idle的实现。如上所说，suspend to idle主要通过软件实现。一般平台的挂起过程包括冻结用户空间并将外围设备调至低耗电模式。但是系统并不是直接关闭和拔掉运行中的cpu，而是静静地强制将CPU进入休眠状态。随着外围设备进入了低耗电模式，除了唤醒相关的中断外不会有其他中断产生。唤醒中断包括那些设置用于唤醒系统的计时器（比如RTC，普通计时器等）、或者电源开关、USB和其它外围设备。
+这篇博文主要介绍 suspend to idle 的实现。如上所说，suspend to idle 主要通过软件实现。一般平台的挂起过程包括冻结用户空间并将外围设备调至低耗电模式。但是，系统并不是直接关闭和拔掉 cpu，而是静静地强制将 CPU 进入空闲状态。随着外围设备进入了低耗电模式，除了唤醒相关的中断外不应有其他中断产生。唤醒中断包括那些设置用于唤醒系统的计时器（比如 RTC，普通计时器等）、或者电源开关、USB 和其它外围设备等。
 
-在冻结过程中，当系统进入休眠状态时会调用一个特殊的cpu休眠函数。这个enter_freeze()函数可以简单得和调用cpu进入休眠的enter()函数相同，也可以更复杂。复杂的程度由将SoCs置为低耗电模式的条件和方法决定。
+在冻结过程中，当系统进入空闲状态时会调用一个特殊的 cpu 空闲函数。这个 enter_freeze() 函数可以和调用使 cpu 空闲的 enter() 函数一样简单，也可以复杂得多。该函数复杂的程度由将 SoCs 置为低耗电模式的条件和方法决定。
 
 ### 先决条件
 
 ### 平台挂起条件
 
-一般情况，为了支持S2I，系统必须实现platform_suspend_ops并提供最低限度的挂起支持。这意味着至少要实现platform_suspend_ops中的所有必要函数的功能。如果suspend to idle 和suspend to ram都支持，那么至少要实现suspend_valid_only_men。
+一般情况，为了支持 S2I，系统必须实现 platform_suspend_ops 并提供最低限度的挂起支持。这意味着至少要完成 platform_suspend_ops 中的 valid() 函数。如果 suspend to idle 和 suspend to ram 都要支持，valid 函数中应使用 suspend_valid_only_men。
 
-最近，内核开始支持支持S2I。Sudeep Holla表示无须满足platform_suspend_ops条件也会支持S2I。这个分支已经被接收并将在4.9版本被合并，该分支的路径在[https://lkml.org/lkml/2016/8/19/474][1]
+不过，最近内核开始自动支持 S2I。Sudeep Holla 提出了一个变更，系统不需满足 platform_suspend_ops 条件也能提供 S2I 支持。这个补丁已经被接收并将合并在 4.9 版本中，该补丁可从这里获取： [https://lkml.org/lkml/2016/8/19/474][1]。
 
-如果定义了suspend_ops。那么可以通过查看/sys/power/state文件得知系统具体支持哪些挂起状态。如下操作：
+如果定义了 suspend_ops，那么可以通过查看 /sys/power/state 文件得知系统具体支持哪些挂起状态。如下操作：
 
 ```
 # cat /sys/power/state
@@ -25,11 +25,11 @@ Linux内核提供了多种睡眠状态，各个状态通过设置系统中的不
 
 freeze mem_
 
-这个示例的结果显示该平台支持S0（suspend to idle）和S3（suspend to ram）。随着Sudeep's的发展，只有那些没有实现platform_suspend_ops的平台才会显示freeze的结果。
+这个示例的结果显示该平台支持 S0（suspend to idle）和 S3（suspend to ram）。按 Sudeep 的变更，那些没有实现 platform_suspend_ops 的平台只显示 freeze 状态。
 
 ### 唤醒中断
 
-一旦系统处于某种睡眠状态，系统必须要接收某个唤醒事件才能恢复系统。这些唤醒事件一般由系统的设备产生。因此确保这些设备的驱动实现了唤醒中断，并且在接收这些中断的基础上产生了唤醒事件。如果唤醒设备没有正确配置，那么系统收到中断后只能继续保持睡眠状态而不会恢复。
+一旦系统处于某种睡眠状态，系统必须要接收某个唤醒事件才能恢复系统。这些唤醒事件一般由系统的设备产生。因此一定要确保这些设备驱动使用唤醒中断，并且将自身配置为接收唤醒中断后产生唤醒事件。如果没有正确识别唤醒设备，系统收到中断后会继续保持睡眠状态而不会恢复。
 
 一旦设备正确实现了唤醒接口的调用，那么该设备就能产生唤醒事件。确保DT正确配置了唤醒源。下面是一个示例唤醒源配置，该文件来自（arch/arm/boot/dst/am335x-evm.dts）:
 
