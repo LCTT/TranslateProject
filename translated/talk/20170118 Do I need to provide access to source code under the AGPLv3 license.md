@@ -6,7 +6,7 @@
 
 opensource.com
 
-[GNU Affero 通用公共许可证版本 3][1]（A​​GPLv3）是与 GPLv3 几乎相同的公共版权许可证。两个许可证具有相同的公共版权范围，但在一个重要方面有重大差异。 AGPLv3 的第 13 节规定了 GPLv2 或 GPLv3 中不存在的附加条件：
+[GNU Affero 通用公共许可证版本 3][1]（AGPLv3）是与 GPLv3 几乎相同的公共版权许可证。两个许可证具有相同的公共版权范围，但在一个重要方面有重大差异。 AGPLv3 的第 13 节规定了 GPLv2 或 GPLv3 中不存在的附加条件：
 
 >你必须给你那些使用计算机网络远程（如果你的版本支持此类交互）与它交互的用户提供一个通过网络服务器利用一些标准或者常规复制手段免费获得相关你的版本的源码的机会。
 
@@ -14,7 +14,7 @@ opensource.com
 
 常常被误解的是，AGPLv3 第 13 节中的源代码要求仅在 AGPLv3 软件已被“你”（例如，提供网络服务的实体）修改的地方触发。我的解释是，只要“你”不修改 AGPLv3 的代码，许可证不应该被理解为需要按照第 13 节规定的方式访问相应的源码。如我所见，尽管即使公开许可证不必要的源代码也是一个好主意，但在 AGPL 下许多未修改以及标准部署的软件模块根本不会触发第 13 节。
 
-如何解释 AGPL 的条款和条件，包括 AGPL 软件是否已被修改，可能需要根据具体情况的事实和细节进行法律分析。
+如何解释 AGPL 的条款和条件，包括 AGPL 软件是否已被修改，可能需要根据具体情况的事实和细节进行法律层面的分析。
 
 --------------------------------------------------------------------------------
 
@@ -30,7 +30,7 @@ via: https://opensource.com/article/17/1/providing-corresponding-source-agplv3-l
 
 作者：[Jeffrey Robert Kaufman][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Bestony](https://github.com/Bestony)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
