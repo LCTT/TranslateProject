@@ -1,10 +1,9 @@
-How to Configure Network Between Guest VM and Host in Oracle VirtualBox
+如何配置 VirtualBox 中的客户机与宿主机之间的网络连接
 ============================================================
-如何配置 Oracle VirtualBox 中的客户机与宿主机网络
 
-当你在 [Oracle VirtualBox 虚拟机软件][2] 中安装了各种操作系统时，你可能需要实现宿主机与虚拟机之间的相互访问。
+当你在 [VirtualBox 虚拟机软件][2] 中安装了各种操作系统时，你可能需要实现宿主机与虚拟机之间的相互访问。
 
-在这篇文章中，我们将会以最简单明了的方式来说明如何配置客户机与 Linux 宿主机的网络，以实现两者相互访问或者让客户机连接到外网。（译者注：客户机指 Oracle VirtualBox 虚拟机软件中安装的操作系统，如本文中用到的 CentOS 7 和 Ubuntu 16.10 。宿主机就是你自己的笔记本电脑或台式机，注意这篇文章中作者的宿主机上安装的操作系统是 Linux Mint 18 ，而不是我们平时使用的 Windows 系统。）
+在这篇文章中，我们将会以最简单明了的方式来说明如何配置客户机与 Linux 宿主机的网络，以实现两者相互访问或者让客户机连接到外网。（LCTT 译注：客户机指 Oracle VirtualBox 虚拟机软件中安装的操作系统，如本文中用到的 CentOS 7 和 Ubuntu 16.10 。宿主机就是你自己的笔记本电脑或台式机，注意这篇文章中作者的宿主机上安装的操作系统是 Linux Mint 18 ，而不是我们平时使用的 Windows 系统。）
 
 本文测试环境：
 1、宿主机操作系统—— Linux Mint 18
@@ -13,42 +12,36 @@ How to Configure Network Between Guest VM and Host in Oracle VirtualBox
 #### 要求
 
 1、宿主机上安装的 [Oracle VirtualBox 虚拟机][1] 能正常使用。
-2、你得事先在 Oracle virtualBox 虚拟机软件中安装好客户机操作系统，比如 Ubuntu ， Fedora ， CentOS ， Linux Mint 或者其它的 Linux 系统也行。
+2、你得事先在 Oracle virtualBox 虚拟机软件中安装好客户机操作系统，比如 Ubuntu、Fedora、CentOS、 Linux Mint 或者其它的 Linux 系统也行。
 3、在你配置网络前，请先关闭客户机。
 
-为了让宿主机和客户机能够互相联通，这两个机器的默认网卡 IP 必须设置在同一网段，你可以为客户机添加 4 块网卡。
+为了让宿主机和客户机能够互相联通，这两个机器的默认网卡 IP 必须设置在同一网段，你可以为客户机添加多达 4 块网卡。
 
-默认网卡（网卡 1 ）通常用于使用 NAT 连接方式连接到宿主机进行上网。
+默认网卡（网卡 1）通常用于使用 NAT 连接方式连接到宿主机进行上网。
 
-重要提示：设置第一块网卡与宿主机通信，第二块网卡连接到外网。
+重要提示：通常总是设置第一块网卡与宿主机通信，第二块网卡连接到外网。
 
 ### 为客户机和宿主机创建网卡
 
 在下面的 VirtualBox 管理器界面，创建客户机和宿主机之间的通信网卡。
 
-打开文件->首选项配置或者使用组合键 `Ctrl + G` ：
+打开文件->首选项配置，或者使用组合键 `Ctrl + G` ：
 
 [
  ![Virtualbox Preferences Window](http://www.tecmint.com/wp-content/uploads/2017/02/Virtualbox-Preferences-Window.png) 
 ][3]
 
-Virtualbox 首选项配置界面
+*Virtualbox 首选项界面*
 
-在下图中有两个选项，单击并选择仅主机（ Host-only ）网络。然后使用右侧的 `+` 号来添加一个新的仅主机网络。
+在下图中有两个选项，单击并选择仅主机（ Host-only ）网络。然后使用右侧的 `+` 按钮来添加一个新的仅主机网络。
 
 [
  ![Set Guest Network](http://www.tecmint.com/wp-content/uploads/2017/02/Set-Guest-Network.png) 
 ][4]
 
-设置客户机网络
+*设置客户机网络*
 
-下图显示一个名为 vboxnet0 的新的仅主机模式网卡已经被创建。
-
-[
- ![Virtualbox Preferences Window](http://www.tecmint.com/wp-content/uploads/2017/02/Virtualbox-Preferences-Window-1.png) 
-][5]
-
-VirtualBox 首选项界面
+这样就创建好了一个名为 vboxnet0 的新的仅主机模式网卡。
 
 如果你愿意，你可以使用中间的 `-` 按钮来删除这个网卡，你可以单击编辑按钮来查看这个网卡的详细配置信息。
 
@@ -60,7 +53,7 @@ VirtualBox 首选项界面
  ![Host Network Details](http://www.tecmint.com/wp-content/uploads/2017/02/Host-Network-Details.png) 
 ][6]
 
-宿主机网络信息
+*宿主机网络信息*
 
 下图中，如果你想让客户机使用动态 IP 地址，你可以通过配置 DHCP 服务来完成（在使用前请确保启用 DHCP ）。但是我建议你为客户机配置一个静态 IP 地址。
 
@@ -70,7 +63,7 @@ VirtualBox 首选项界面
  ![Set Guest Static IP aAddress](http://www.tecmint.com/wp-content/uploads/2017/02/Set-Guest-Static-IP-Address.png) 
 ][7]
 
-为客户机设置静态 IP 地址
+*为客户机设置静态 IP 地址*
 
 #### 配置客户机网络设置
 
@@ -82,11 +75,12 @@ VirtualBox 首选项界面
  ![Configure VM Settings](http://www.tecmint.com/wp-content/uploads/2017/02/Configure-VM-Settings.png) 
 ][8]
 
-配置客户机网络设置
+*配置客户机网络设置*
 
 #### 配置客户机网卡以连接到宿主机
 
 从下图的界面中选择网络选项。然后配置第一块网卡（ 网卡 1 ）的信息如下：
+
 1、勾选选项：“启用网卡”来开启该网卡。
 2、在连接方式选项：选择仅主机（ Host-only ）网络。
 3、然后选择网卡名称：vboxnet0
@@ -97,7 +91,7 @@ VirtualBox 首选项界面
  ![Enable Network Adapter for Guest VM](http://www.tecmint.com/wp-content/uploads/2017/02/Enable-Network-Adapter-for-Guest-VM.png) 
 ][9]
 
-启用客户机网络
+*启用客户机网络*
 
 #### 配置客户机网卡连接外网
 
@@ -123,18 +117,19 @@ $ ip add
  ![Configure Static IP Address for VM](http://www.tecmint.com/wp-content/uploads/2017/02/Configure-Static-IP-Address-for-VM.png) 
 ][12]
 
-为客户机配置静态 IP 地址
+*为客户机配置静态 IP 地址*
 
 从上面的截图中可以看出客户机已启用了三块网卡：
-1、 `lo` ——回环网络接口
-2、  `enp0s3` （网卡 1）—— 前一步我们配置的连接方式为仅主机（ Host-Only）模式并且已启用 DHCP 的网卡，之后我们又配置成了静态 IP 地址。
-3、  `enp0s8` （网卡 2 ）—— 用于连接到外网。该网卡默认情况下使用 DHCP 来动态获取 IP 地址。
+
+1、`lo` ——回环网络接口
+2、`enp0s3` （网卡 1）—— 前一步我们配置的连接方式为仅主机（ Host-Only）模式并且已启用 DHCP 的网卡，之后我们又配置成了静态 IP 地址。
+3、`enp0s8` （网卡 2）—— 用于连接到外网。该网卡默认情况下使用 DHCP 来动态获取 IP 地址。
 
 ##### 在 Debian/Ubuntu/Linux Mint 系统下的配置
 
 重要提示: 这里我使用的是 Ubuntu 16.10 Server ， IP 地址为 192.168.56.5 。
 
-使用你喜欢的编辑器及管理员账号打开 /etc/network/interfaces 配置文件：
+使用你喜欢的编辑器及管理员账号打开 `/etc/network/interfaces` 配置文件：
 
 ```
 $ sudo vi /etc/network/interfaces
@@ -170,7 +165,7 @@ $ ip add
 
 重要提示: 这里我使用的是 CentOS 7 系统， IP 地址为： 192.168.56.10 。
 
-使用管理员帐号及你喜欢的编辑器打开 enp0s3 （仅主机网络）的网卡配置文件 /etc/sysconfig/network-scripts/ifcfg-enp0s3 ：
+使用管理员帐号及你喜欢的编辑器打开 enp0s3 （仅主机网络）的网卡配置文件 `/etc/sysconfig/network-scripts/ifcfg-enp0s3` ：
 
 ```
 $ sudo vi /etc/sysconfig/network-scripts/ifcfg-enp0s3
@@ -213,7 +208,7 @@ $ who
  ![Connect Guest VM using SSH](http://www.tecmint.com/wp-content/uploads/2017/02/Connect-Guest-VM-using-SSH.png) 
 ][13]
 
-使用 SSH 工具连接客户机
+*使用 SSH 工具连接客户机*
 
 就写到这里吧！在这篇文章中，我们用简单易懂的方法讲述了如何在宿主机与客户机之间设置网络连接方式。请在下面的评论区跟大家分享下你的想法。
 
@@ -222,6 +217,7 @@ $ who
 作者简介：
 
 Aaron Kili 是一名 Linux 和 F.O.S.S 爱好者，即将从事 Linux 系统管理员和网页开发工作，他日前是 TecMint 技术网站的原创作者，非常喜欢使用电脑工作，坚信分享知识是一种美德。
+
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/network-between-guest-vm-and-host-virtualbox/
