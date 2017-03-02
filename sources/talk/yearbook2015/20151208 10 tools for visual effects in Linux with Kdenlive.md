@@ -144,7 +144,7 @@ via: https://opensource.com/life/15/12/10-kdenlive-tools
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://opensource.com/users/seth
 [1]:https://creativecommons.org/licenses/by-sa/4.0/
