@@ -1,3 +1,5 @@
+ezio is translating
+
 How to create your own Linux Distribution with Yocto on Ubuntu
 ============================================================
 
