@@ -646,7 +646,7 @@ StopIteration
     rv = yield from gen
 ```
 
-前面我们批评过基于回调的异步编程模式，其中最大的不满是关于 “stack ripping”：当一个回调抛出异常，它的堆栈回溯通常是毫无用处的。它只显示出事件循环运行了它，而没有说为什么。那么协程怎么样？
+前面我们批评过基于回调的异步编程模式，其中最大的不满是关于 “堆栈撕裂（stack ripping）”：当一个回调抛出异常，它的堆栈回溯通常是毫无用处的。它只显示出事件循环运行了它，而没有说为什么。那么协程怎么样？
 
 ```python
 >>> def gen_fn():
@@ -1019,7 +1019,7 @@ loop.run_until_complete(self.crawler.crawl())
 
 程序如何结束？因为 `crawl` 是一个生成器函数，调用它返回一个生成器。为了驱动它，asyncio 把它包装成一个 task：
 
-
+```python
 class EventLoop:
     def run_until_complete(self, coro):
         """Run until the coroutine is done."""
