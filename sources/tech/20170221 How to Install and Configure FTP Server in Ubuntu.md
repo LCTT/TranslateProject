@@ -1,3 +1,4 @@
+ucasfl translating
 How to Install and Configure FTP Server in Ubuntu
 ============================================================
 
@@ -21,10 +22,10 @@ $ sudo apt-get install vsftpd
 2. Once the installation completes, the service will be disabled initially, therefore, we need to start it manually for the mean time and also enable it to start automatically from the next system boot:
 
 ```
-------------- On SystemD ------------- 
+------------- On SystemD -------------
 # systemctl start vsftpd
 # systemctl enable vsftpd
-------------- On SysVInit ------------- 
+------------- On SysVInit -------------
 # service vsftpd start
 # chkconfig --level 35 vsftpd on
 ```
@@ -101,9 +102,9 @@ And we must as well understand that VSFTPD does not permit the chroot jail direc
 Save the file and close it. Then we have to restart VSFTPD services for the changes above to take effect:
 
 ```
-------------- On SystemD ------------- 
+------------- On SystemD -------------
 # systemctl restart vsftpd
-------------- On SysVInit ------------- 
+------------- On SysVInit -------------
 # service vsftpd restart
 ```
 
@@ -164,7 +165,7 @@ Using binary mode to transfer files.
 ftp> ls
 ```
 [
- ![Verify FTP Login in Ubuntu](http://www.tecmint.com/wp-content/uploads/2017/02/Verify-FTP-Login-in-Ubuntu.png) 
+ ![Verify FTP Login in Ubuntu](http://www.tecmint.com/wp-content/uploads/2017/02/Verify-FTP-Login-in-Ubuntu.png)
 ][7]
 
 Verify FTP Login in Ubuntu
@@ -210,16 +211,16 @@ $ sudo chmod -R 0770 /home/aaronkilik/ftp/files/
 Afterwards, add/modify the options below in the VSFTPD config file with their corresponding values:
 
 ```
-user_sub_token=$USER          # inserts the username in the local root directory 
+user_sub_token=$USER          # inserts the username in the local root directory
 local_root=/home/$USER/ftp    # defines any users local root directory
 ```
 
 Save the file and close it. And restart the VSFTPD services with the recent settings:
 
 ```
-------------- On SystemD ------------- 
+------------- On SystemD -------------
 # systemctl restart vsftpd
-------------- On SysVInit ------------- 
+------------- On SysVInit -------------
 # service vsftpd restart
 ```
 
@@ -238,7 +239,7 @@ Using binary mode to transfer files.
 ftp> ls
 ```
 [
- ![FTP User Home Directory Login](http://www.tecmint.com/wp-content/uploads/2017/02/FTP-User-Home-Directory-Login.png) 
+ ![FTP User Home Directory Login](http://www.tecmint.com/wp-content/uploads/2017/02/FTP-User-Home-Directory-Login.png)
 ][8]
 
 FTP User Home Directory Login
