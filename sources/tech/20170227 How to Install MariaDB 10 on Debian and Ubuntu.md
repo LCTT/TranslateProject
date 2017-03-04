@@ -1,3 +1,4 @@
+ucasFL translating
 How to Install MariaDB 10 on Debian and Ubuntu
 ============================================================
 
@@ -77,7 +78,7 @@ $ sudo apt-get install mariadb-server
 During the course of installation, you’ll be asked to configure the MariaDB server; set a secure root user password in the interface below.
 
 [
- ![Set New Root Password for MariaDB](http://www.tecmint.com/wp-content/uploads/2017/02/Set-New-Root-Password-for-MariaDB.png) 
+ ![Set New Root Password for MariaDB](http://www.tecmint.com/wp-content/uploads/2017/02/Set-New-Root-Password-for-MariaDB.png)
 ][6]
 
 Set New Root Password for MariaDB
@@ -85,7 +86,7 @@ Set New Root Password for MariaDB
 Re-enter the password and press [Enter] to continue with the installation process.
 
 [
- ![Repeat MariaDB Password](http://www.tecmint.com/wp-content/uploads/2017/02/Repeat-MariaDB-Password.png) 
+ ![Repeat MariaDB Password](http://www.tecmint.com/wp-content/uploads/2017/02/Repeat-MariaDB-Password.png)
 ][7]
 
 Repeat MariaDB Password
@@ -93,19 +94,19 @@ Repeat MariaDB Password
 3. When the installation of MariaDB packages completes, start the database server daemon for the mean time and enable it to start automatically at the next boot as follows:
 
 ```
-------------- On SystemD Systems ------------- 
+------------- On SystemD Systems -------------
 $ sudo systemctl start mariadb
 $ sudo systemctl enable mariadb
 $ sudo systemctl status mariadb
-------------- On SysVinit Systems ------------- 
-$ sudo service mysql  start 
+------------- On SysVinit Systems -------------
+$ sudo service mysql  start
 $ chkconfig --level 35 mysql on
 OR
 $ update-rc.d mysql defaults
 $ sudo service mysql status
 ```
 [
- ![Start MariaDB Service](http://www.tecmint.com/wp-content/uploads/2017/02/Start-MariaDB-Service.png) 
+ ![Start MariaDB Service](http://www.tecmint.com/wp-content/uploads/2017/02/Start-MariaDB-Service.png)
 ][8]
 
 Start MariaDB Service
@@ -122,7 +123,7 @@ Start MariaDB Service
 $ sudo mysql_secure_installation
 ```
 [
- ![Secure MariaDB Installation](http://www.tecmint.com/wp-content/uploads/2017/02/sudo-mysql-secure-installation.png) 
+ ![Secure MariaDB Installation](http://www.tecmint.com/wp-content/uploads/2017/02/sudo-mysql-secure-installation.png)
 ][9]
 
 Secure MariaDB Installation
@@ -134,7 +135,7 @@ $ mysql -V
 $ mysql -u root -p
 ```
 [
- ![Check MariaDB Version](http://www.tecmint.com/wp-content/uploads/2017/02/Check-MariaDB-Version.png) 
+ ![Check MariaDB Version](http://www.tecmint.com/wp-content/uploads/2017/02/Check-MariaDB-Version.png)
 ][10]
 
 Check MariaDB Version
