@@ -235,7 +235,7 @@ via: https://www.howtoforge.com/tutorial/sudo-beginners-guide/
 
 作者：[Himanshu Arora][a]
 译者：[ypingcn](https://ypingcn.github.io/wiki/lctt)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
