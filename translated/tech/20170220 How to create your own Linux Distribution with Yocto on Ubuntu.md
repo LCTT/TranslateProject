@@ -3,8 +3,8 @@
 
 ### 本文内容
 
-1. [开发机的基本条件][1]
-2. [Yocto 编译和构建的过程][2]
+1.  [开发机的基本条件][1]
+2.  [Yocto 编译和构建的过程][2]
 
 In this article, our focus is the creation of a minimal Linux distribution using the Yocto project on the Ubuntu platform. The Yocto project is very famous in the embedded Linux world because of its flexibility and ease of use.  The purpose of the Yocto project is to create a Linux distro for manufacturers of embedded hardware and software. A new minimal Linux distro will be created for qemu as the (qemu is a basic software emulator) target machine and we will run it in qemu. 
 
@@ -79,13 +79,12 @@ TMPDIR ?= "${TOPDIR}/tmp"
 
  ![Set TMPDIR](https://www.howtoforge.com/images/how-to-create-your-own-linux-distribution-with-yocto/tempdir_uncheck_paramerter.png)
 
-``
+```
 PACKAGE_CLASSES ?= "package_rpm"
-
 SDKMACHINE ?= "i686"
 ```
 
- ![Set PACKAGE_CLASSES and SDKMACHINE](https://www.howtoforge.com/images/how-to-create-your-own-linux-distribution-with-yocto/sdk_and_package_selection.png)
+![Set PACKAGE_CLASSES and SDKMACHINE](https://www.howtoforge.com/images/how-to-create-your-own-linux-distribution-with-yocto/sdk_and_package_selection.png)
 
 
 如下所示，在 `local.conf` 为基于 Yocto 的 Linux 设置空密码和后续的一些参数。否则的话用户就不能登录进新的发行版。
