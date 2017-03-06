@@ -1,3 +1,4 @@
+zschong 翻译中
 ### What is Debian? A brief introduction
 
 Hello buddies.!! 
