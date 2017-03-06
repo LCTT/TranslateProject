@@ -1,43 +1,42 @@
 
-一份关于理解 Ubuntu 上 sudo 的初学者指导
+理解 Ubuntu 上 sudo 的初学者指南
 ============================================================
 
-### 在这页面上
+### 本文内容
 
-1.  [什么是 sudo?][4]
-2.  [任何用户都能用  sudo 吗？][5]
-3.  [什么是一个 sudo 会话?][6]
-4.  [sudo 密码][7]
-5.  [一些重要的  sudo 命令行参数][8]
-    1.  [ -k 参数][1]
-    2.  [-s 参数][2]
-    3.  [-i 参数][3]
-6.  [总结][9]
+*  [什么是 sudo？][4]
+*  [任何用户都能用  sudo 吗？][5]
+*  [什么是一个 sudo 会话？][6]
+*  [sudo 密码][7]
+*  [一些重要的  sudo 命令行参数][8]
+    *  [-k 参数][1]
+    *  [-s 参数][2]
+    *  [-i 参数][3]
+*  [总结][9]
 
-曾经在你使用 Linux 命令行时提示“拒绝访问”的错误？这可能是你正在尝试做一个需要根权限的命令。例如，下面的截图展示了当我正在尝试复制一个二进制文件到一个系统目录时显示的错误。
+你在使用 Linux 命令行时曾经得到过“拒绝访问”的错误提示吗？这可能是因为你正在尝试执行一个需要 root 权限的操作。例如，下面的截图展示了当我尝试复制一个二进制文件到一个系统目录时产生的错误。
 
 [
  ![shell 的拒绝访问](https://www.howtoforge.com/images/sudo-beginners-guide/perm-denied-error.png) 
 ][11]
 
-所以该怎么解决这个错误？很简单，使用 ** sudo ** 命令。
+那么该怎么解决这个错误？很简单，使用 **sudo** 命令。
 
 [
  ![用 sudo 运行命令](https://www.howtoforge.com/images/sudo-beginners-guide/sudo-example.png) 
 ][12]
 
-正在运行命令的用户被提示需要他们的登录密码。一旦输入了正确的密码，操作将会成功执行。
+运行此命令的用户被提示输入他们的登录密码。一旦输入了正确的密码，操作将会成功执行。
 
-毫无疑问，sudo 是任何在 Linux 上使用命令行的人所必须知道的命令。但是，为了更负责有效地使用命令，你还是得知道一些相关（深入）的细节。这正是我们将会在这篇文章中讨论的。
+毫无疑问，sudo 是任何在 Linux 上使用命令行的人都必须知道的命令。但是，为了更负责更有效地使用该命令，你还是要知道一些相关（深入）的细节。这正是我们将会在这篇文章中讨论的。
 
-但是在我们继续之前，值得提一下的是，这篇文章所提到的所有命令指示都已经在 Ubuntu 14.04LTS 下的 4.3.11版 Bash 通过测试。
-
+*在我们继续之前，值得提一下的是，这篇文章所提到的所有命令指示都已经在 Ubuntu 14.04LTS 下的 4.3.11版 Bash 通过测试。*
 
 ### 什么是 sudo
 
-正如你们大部分人所知道的，sudo 是用来执行需要提升权限（通常是作为 root 用户）的命令。在这篇文章之前的简介部分已经讨论过这样的一个例子。然而，如果你想的话，你能用 sudo 运行一些其他（非 root ）用户的命令。
+正如你们大部分人所知道的，sudo 用来执行需要提升权限（通常是作为 root 用户）的命令。在这篇文章之前的简介部分已经讨论过这样的一个例子。然而，如果你想的话，你能用 sudo 作为其他（非 root ）用户运行命令。
 
-这点是由工具提供的 -u 命令行选项所实现的。举个例子，如下面的例子所展示的那样，我（himanshu）尝试留一个文件在其他用户（howtoforge）的家目录中，但是得到一个“访问拒绝”的错误。然后我尝试加上“sudo -u howtoforge”后用同样的“mv”命令，命令成功执行了：
+这是由工具提供的 -u 命令行选项所实现的。举个例子，如下例所展示的那样，我（himanshu）尝试将一个在其他用户（howtoforge）的 Home 目录中的文件重命名，但是得到一个“访问拒绝”的错误。然后我加上“sudo -u howtoforge”后用同样的“mv”命令，命令成功执行了：
 
 [
  ![什么是 sudo](https://www.howtoforge.com/images/sudo-beginners-guide/sudo-switch-user.png) 
@@ -45,69 +44,67 @@
 
 ### 任何人都能用 sudo 吗？
 
-不，为了让一个用户能使用 sudo ，跟用户相关的信息应该在 /etc/sudoers 里。下述摘自 Ubuntu 网页的段落能讲得更清楚：
+不是。一个用户要能使用 sudo ，应该在 /etc/sudoers 文件里有一条跟该用户相关的信息。下述摘自 Ubuntu 网站的一段能讲得更清楚：
 
 ```
-/etc/sudoers 文件控制了谁能以何种用户的身份在何种机器上运行何种命令，同样控制了特殊的事件例如对于特定的命令你是否需要输入密码。这个文件由 aliases （基本变量）和用户识别符（控制谁能运行什么命令）组成。
+/etc/sudoers 文件控制了谁能以何种用户的身份在何种机器上运行何种命令，还可以控制特别的情况，例如对于特定的命令是否需要输入密码。这个文件由<ruby>别名<rt>aliases</rt></ruby>（基本变量）和<ruby>用户标识<rt>user specifications</rt></ruby>（控制谁能运行什么命令）组成。
 
 ```
-如果你正在使用 Ubuntu，很容易去确认一个用户能运行 sudo 命令：你所需要做的就是把账户改成管理员。这能直接到 系统设置->用户账户里完成。
+如果你正在使用 Ubuntu，让一个用户能运行 sudo 命令很容易：你所需要做的就是把账户类型改成<ruby>“管理员”<rt>administrator</rt></ruby>。这可直接在 <ruby>系统设置<rt>System Settings</rt></ruby> -> <ruby>用户账户<rt> User Accounts</rt></ruby>里完成。
 
 
 [
  ![sudo 用户](https://www.howtoforge.com/images/sudo-beginners-guide/sudo-user-accounts.png) 
 ][14]
 
-解锁窗口
-
+解锁窗口：
 
 [
  ![unlocking window](https://www.howtoforge.com/images/sudo-beginners-guide/sudo-user-unlock.png) 
 ][15]
 
-然后选择你想改变用户类型的用户，然后将类型改成“管理员”
-
+然后选择你想改变用户类型的用户，然后将类型改成“管理员”。
 
 [
  ![choose sudo accounts](https://www.howtoforge.com/images/sudo-beginners-guide/sudo-admin-account.png) 
 ][16]
 
-然而，如果你不使用 Ubuntu，或者你的发行版没有提供这个特性，你能手动编辑 /etc/sudoers 文件来实现改变。你要在文件添加这样的一行：
+然而，如果你不使用 Ubuntu，或者你的发行版没有提供这个特性，你可以手动编辑 /etc/sudoers 文件来实现此改变。要在文件中添加这样的一行：
 
 
 ```
 [user]    ALL=(ALL:ALL) ALL
 ```
 
-无需赘言，[user] 应该被你想提升 sudo 权限的用户的用户名所代替。在这里值得提到的一件重要的事情是，官方建议的编辑该文件的方式是通过 **visudo** 命令——你需要做的就是运行下述命令：
+无需赘言，[user] 应该被你想提升 sudo 权限的用户的用户名所代替。在这里值得提到的一件重要的事情是，官方建议通过 **visudo** 命令编辑该文件 —— 你需要做的就是运行下述命令：
 
-
+```
 sudo visudo
+```
 
 为了说清究竟是怎么一回事，这里有段从 visudo 手册里的摘要：
 
 
 ```
-visudo 以安全的模式编辑 sudoers 文件。visudo 锁定 sudoers 文件以防重复同时的编辑，提供基本的检查（sanity checks）和语法错误检查。如果 sudoers 文件现在正在被编辑，你将会收到一个信息提示稍后再试。
+visudo 以安全的模式编辑 sudoers 文件。visudo 锁定 sudoers 文件以防多个编辑同时进行，提供基本的检查（sanity checks）和语法错误检查。如果 sudoers 文件现在正在被编辑，你将会收到一个信息提示稍后再试。
 
 ```
 
-关于 visudo 的更多信息，前往[这里][17]
-
+关于 visudo 的更多信息，前往[这里][17]。
 
 ### 什么是 sudo 会话
 
-如果你经常使用 sudo 命令，我很确定你注意过当你成功输入一次密码后，你能不用密码提升权限地运行几次 sudo 命令。但是一段时间后，sudo 命令又再次要求你的密码。
+如果你经常使用 sudo 命令，你肯定注意到过当你成功输入一次密码后，可以不用输入密码再运行几次 sudo 命令。但是一段时间后，sudo 命令会再次要求你的密码。
 
+这种现象跟运行 sudo 命令数目无关，跟时间有关。是的，sudo 默认在输入一次密码后 15 分钟内不会再次要求密码。15 分钟后，你会再次被要求输入密码。
 
-这种现象跟运行 sudo 命令数目无关，跟时间有关。是的，sudo 默认在输入一次密码后 15 分钟内不会再次要求密码。15 分钟后，你会再次被要求输入密码提升权限。
+然而，如果你想的话，你能改变这种现象。用以下命令打开 /etc/sudoers 文件：
 
-
-然而，如果你想的话，你能改变这种现象。用以下命令打开 /etc/sudoers 文件
-
+```
 sudo visudo
+```
 
-接下来的一行显示：
+找到这一行：
 
 ```
 Defaults env_reset
@@ -119,32 +116,26 @@ Defaults env_reset
 
 然后在这行最后添加以下变量（下面用黑体字强调）：
 
-
 ```
-Defaults env_reset,timestamp_timeout=[new-value]
+Defaults env_reset,**timestamp_timeout=[new-value]**
 ```
 
-[new-value]  应该用你想要 sudo 会话持续时间数替换。例如，我用数值 40。
+[new-value] 为想要 sudo 会话持续的时间数。例如，用数值 40。
 
 
 [
  ![sudo timeout value](https://www.howtoforge.com/images/sudo-beginners-guide/sudo-session-timeout.png) 
 ][19]
 
-万一你想每次使用 sudo 命令时都要求输入密码提升权限，这样你能把这个变量赋值为 0 。想要 sudo 会话永远不过时，你得赋值为 -1。
+如果你希望每次使用 sudo 命令时都要求输入密码，你可以把这个变量赋值为 0 。想要 sudo 会话永远不过时，应赋值为 -1。
 
-
-注意数值为 -1 的  timestamp_timeout 是强烈不推荐的。 
-
+注意将 timestamp_timeout 的值赋为 “-1” 是强烈不推荐的。 
 
 ### sudo 密码
 
-
-正如你可能观察过的，当 sudo 要求输入密码然后你开始输入时，不会显示任何东西——甚至连标准的星号都没有。通常这不是什么大问题，一些用户无论什么原因想要显示星号、
-
+你可能注意过，当 sudo 要求输入密码然后你开始输入时，不会显示任何东西 —— 甚至连常规的星号都没有。虽然这不是什么大问题，不过一些用户就是希望显示星号。
 
 好消息是那有可能也很容易做到。所有你需要做的就是在 /etc/sudoers 文件里将下述的行：
-
 
 ```
 Defaults        env_reset
@@ -156,8 +147,7 @@ Defaults        env_reset
 Defaults        env_reset,pwfeedback
 ```
 
-然后保存文件
-
+然后保存文件。
 
 现在，无论什么时候输入 sudo 密码，星号都会显示。
 
@@ -169,18 +159,13 @@ Defaults        env_reset,pwfeedback
 ## 一些重要的 sudo 命令行参数
 
 
-除了 -u命令行参数（我们已经在这篇教程的开始部分讨论过了），还有其他重要的 sudo 命令行参数值得注意。在这部分，我们将会讨论其中一些。
-
-
+除了 -u 命令行参数（我们已经在这篇教程的开始部分讨论过了），还有其他重要的 sudo 命令行参数值得注意。在这部分，我们将会讨论其中一些。
 
 ### -k 参数
-### The -k option
 
-考虑下一种情况：当你刚输入密码后运行了几个 sudo 驱动的命令时。现在，正如你已经知道的，sudo 会话默认保持 15 分钟。假设在这会话期间，你得给你终端一些权限，但你不想让他们使用 sudo ，你将会怎么做？
+考虑下这种情况：输入密码后你刚刚运行了几个 sudo 驱动的命令。现在，如你所知，sudo 会话默认保持 15 分钟。假设在这会话期间，你得给你终端一些权限，但你不想让他们使用 sudo ，你将会怎么做？
 
-
-还好，有 -k 命令行参数允许用户取消 sudo 权限。这是 sudo 帮助页面（man page）关于这一点所讲的：
-
+还好，有 -k 命令行参数允许用户取消 sudo 权限。这是 sudo 帮助页面（man page）对此的解释：
 
 ```
 -k, --reset-timestamp
@@ -193,11 +178,9 @@ Defaults        env_reset,pwfeedback
 
 ### -s 参数
 
+有时你的工作要求你运行一堆需要 root 权限的命令，你不想每次都输入密码。你也不想通过改变 /etc/sudoers 文件调整 sudo 会话的过期时限。
 
-或许有几次当你的工作要求你运行一堆需要 root 权限的命令时，你不想每次都输入密码。你也不想通过改变 /etc/sudoers 文件调整 sudo 会话的过期时限。
-
-这种情况下，你可以用 sudo 的 -s 参数。这是 sudo 帮助页面（man page）所解释的：
-
+这种情况下，你可以用 sudo 的 -s 参数。这是 sudo 帮助页面（man page）对此的解释：
 
 ```
 -s, --shell
@@ -208,22 +191,19 @@ Defaults        env_reset,pwfeedback
 
 所以，基本地，这命令参数做的是：
 
-
-*   启动一个新的 shell ，对于哪一个 shell 来说，SHELL 赋值变量都有引用。万一 $SHELL 是空的，将会用  /etc/passwd 定义的内容。
+*   启动一个新的 shell - 至于是哪一个 shell，参照 SHELL 环境变量赋值。如果 $SHELL 是空的，将会用  /etc/passwd 中定义的 shell。
 
 *   如果你用 -s 参数传递了一个命令名（例如 sudo -s whoami）,实际执行的是 sudo /bin/bash -c whoami。
 
-*   如果你尝试执行其他命令（意思是 你只是正在尝试运行 sudo -s），你将会得到一个有有 root 权限的交互式的 shell。
+*   如果你没有尝试执行其他命令（也就是说，你只是要运行 sudo -s），你将会得到一个有 root 权限的交互式的 shell。
 
-这里值得记住的是 -s 命令行参数给你一个有 root 权限的 shell，但是你没有 root 环境——你的 .bashrc 决定的。这意思是，例如在一个用 sudo -s 运行的新 shell 里，执行 whoami 命令仍会返回你的用户名，而非 root 。
+请记住，-s 命令行参数给你一个有 root 权限的 shell，但不是 root 环境 —— 你的 .bashrc 决定的。这意思是，例如在一个用 sudo -s 运行的新 shell 里，执行 whoami 命令仍会返回你的用户名，而非 root 。
 
 ###　-i 参数
--i 参数跟我们讨论过的 -s 参数相像。然而，还是有点区别。一个重要的区别是 -i 也给了你 root 环境，意味着你的（用户的）.bashrc 被忽略。这就像没有明确指明用 root 登录也能称为成为 root 。此外，你也不用输入 root 用户密码。 
 
+-i 参数跟我们讨论过的 -s 参数相像。然而，还是有点区别。一个重要的区别是 -i 也给了你 root 环境，意味着你的（用户的）.bashrc 被忽略。这就像没有明确指明用 root 登录也能成为 root 。此外，你也不用输入 root 用户密码。 
 
-** 重要 **：请注意有也能让你切换用户的 **su** 命令（默认的是切换到 root ） 这个命令需要你输入 root 密码。为了避免这一点，你也要用 sudo 执行（‘ sudo su’），这样你只需要输入你的登录密码。然而，su 和 sudo su 有隐含的区别 ——了解他们和跟相应的  sudo -i 区别，来[这里][10] 
-**Important**: Please note that there exists a **su** command which also 
-
+** 重要 **：请注意 **su** 命令也能让你切换用户（默认切换到 root ）。这个命令需要你输入 root 密码。为了避免这一点，你可以使用 sudo 执行它（‘sudo su’），这样你只需要输入你的登录密码。然而，su 和 sudo su 有隐含的区别 —— 要了解它们，以及它们和  sudo -i 的区别，请看[这里][10] 。
 
 ### 总结
 
