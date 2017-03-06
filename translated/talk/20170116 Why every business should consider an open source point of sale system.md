@@ -9,7 +9,7 @@ opensource.com
 
 销售点终端 (POS) 系统是从很久以前的简单的收银机发展而来的。如今的 POS 系统可以提供一体化解决方案，包括支付流程，库存管理，营销工具等等。零售店也可以使用移动设备来接收现金流和各种成本支出相关的日报表。
 
-POS 系统是每家企业重要的生命线，那就意味着你在选择 POS 系统的过程中要非常谨慎。目前可供选择的收银系统也很多，但是如果你想节约成本，适应不断变化的业务需求，跟上技术发展的脚步，你应该很明智地考虑使用开源系统。你可以随意使用一款开源 POS 系统公开的源代码，这比那些严格保密源代码的专有系统要有更大的优势。
+POS 系统是每家企业重要的生命线，那就意味着你在选择 POS 系统的过程中要非常谨慎。目前可供选择的收银系统也很多，但是如果你想节约成本，适应不断变化的业务需求，跟上技术发展的脚步，你应该很明智地考虑使用开源系统。你可以随意使用一款源代码公开的开源 POS 系统，这比那些严格保密源代码的专有系统要有更大的优势。
 
 使用开源的 POS 系统，你可以获得它的一些非常重要的特性。
 
@@ -54,7 +54,7 @@ POS 系统是每家企业重要的生命线，那就意味着你在选择 POS �
 
 作者简介：
 
-![](https://opensource.com/sites/default/files/styles/profile_pictures/public/pictures/preston-pilgrim-2016_0.jpg?itok=7fzNsTww)
+![](https://opensource.com/sites/default/files/styles/profile_pictures/public/pictures/img_1217_1.jpg)
 
 我是 AcroMedia 公司数字化市场营销项目经理。我们主要使用 Drupal 开源系统来为客户提供定制化商业解决方案。
 
@@ -64,7 +64,7 @@ via: https://opensource.com/article/17/1/open-source-point-sale-system
 
 作者：[Preston Pilgrim][a]
 译者：[rusking](https://github.com/rusking)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Bestony](https://github.com/Bestony)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
