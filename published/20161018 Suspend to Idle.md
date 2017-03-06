@@ -33,26 +33,26 @@ freeze mem
 一旦设备正确实现了唤醒接口的调用，就可用来生成唤醒事件。请确保 DT 文件正确配置了唤醒源。下面是一个配置唤醒源示例，该文件来自（`arch/arm/boot/dst/am335x-evm.dts`）:
 
 ```
-    gpio_keys: volume_keys@0 {__
-               compatible = “gpio-keys”;
-               #address-cells = <1>;
-               #size-cells = <0>;
-               autorepeat;
+     gpio_keys: volume_keys@0 {
+               compatible = “gpio-keys”;
+               #address-cells = <1>;
+               #size-cells = <0>;
+               autorepeat;
 
-               switch@9 {
-                       label = “volume-up”;
-                       linux,code = <115>;
-                       gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;
-                       wakeup-source;
-               };
+               switch@9 {
+                       label = “volume-up”;
+                       linux,code = <115>;
+                       gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;
+                       wakeup-source;
+               };
 
-               switch@10 {
-                       label = “volume-down”;
-                       linux,code = <114>;
-                       gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;
-                       wakeup-source;
-               };
-       };
+               switch@10 {
+                       label = “volume-down”;
+                       linux,code = <114>;
+                       gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;
+                       wakeup-source;
+               };
+       };
 ```
 如上所示，有两个 gpio 键被配置为唤醒源，在系统挂起期间，其中任何一个键被按下都会产生一个唤醒事件。
 
@@ -94,24 +94,24 @@ freeze mem
  
 ```
 / # echo freeze > /sys/power/state
-[  142.580832] PM: Syncing filesystems … done.
-[  142.583977] Freezing user space processes … (elapsed 0.001 seconds) done.
-[  142.591164] Double checking all user space processes after OOM killer disable… (elapsed 0.000 seconds)
-[  142.600444] Freezing remaining freezable tasks … (elapsed 0.001 seconds) done._
-_[  142.608073] Suspending console(s) (use no_console_suspend to debug)
-[  142.708787] mmc1: Reset 0x1 never completed.
-[  142.710608] msm_otg 78d9000.phy: USB in low power mode
-[  142.711379] PM: suspend of devices complete after 102.883 msecs
-[  142.712162] PM: late suspend of devices complete after 0.773 msecs
-[  142.712607] PM: noirq suspend of devices complete after 0.438 msecs
+[  142.580832] PM: Syncing filesystems … done.
+[  142.583977] Freezing user space processes … (elapsed 0.001 seconds) done.
+[  142.591164] Double checking all user space processes after OOM killer disable… (elapsed 0.000 seconds)
+[  142.600444] Freezing remaining freezable tasks … (elapsed 0.001 seconds) done.
+[  142.608073] Suspending console(s) (use no_console_suspend to debug)
+[  142.708787] mmc1: Reset 0x1 never completed.
+[  142.710608] msm_otg 78d9000.phy: USB in low power mode
+[  142.711379] PM: suspend of devices complete after 102.883 msecs
+[  142.712162] PM: late suspend of devices complete after 0.773 msecs
+[  142.712607] PM: noirq suspend of devices complete after 0.438 msecs
 < system suspended >
 ….
 < wake irq triggered >
-[  147.700522] PM: noirq resume of devices complete after 0.216 msecs
-[  147.701004] PM: early resume of devices complete after 0.353 msecs
-[  147.701636] msm_otg 78d9000.phy: USB exited from low power mode
-[  147.704492] PM: resume of devices complete after 3.479 msecs
-[  147.835599] Restarting tasks … done.
+[  147.700522] PM: noirq resume of devices complete after 0.216 msecs
+[  147.701004] PM: early resume of devices complete after 0.353 msecs
+[  147.701636] msm_otg 78d9000.phy: USB exited from low power mode
+[  147.704492] PM: resume of devices complete after 3.479 msecs
+[  147.835599] Restarting tasks … done.
 / #
 ```
 
@@ -120,7 +120,7 @@ _[  142.608073] Suspending console(s) (use no_console_suspend to debug)
 如果系统定义了冻结（freeze），那么系统将尝试挂起操作，如果没有冻结功能，那么你会看到下面的提示：
 
 ```
-/ # echo freeze > /sys/power/state 
+/ # echo freeze > /sys/power/state
 sh: write error: Invalid argument
 / #
 ```
