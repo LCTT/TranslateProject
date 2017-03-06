@@ -1,3 +1,4 @@
+申请翻译
 Understanding the difference between sudo and su
 ============================================================
 
