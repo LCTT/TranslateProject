@@ -1,3 +1,5 @@
+translating---geekpi
+
 4 open source tools for conducting online surveys
 ============================================================
 
@@ -10,6 +12,7 @@ Ah, the venerable survey. It can be a fast, simple, cheap, and effective way gat
 Millions turn to proprietary tools like SurveyGizmo, Polldaddy, SurveyMonkey, or even Google Forms to set up their surveys. But if you want more control, not just over the application but also the data you collect, then you'll want to go open source.
 
 Let's take a look at four open source survey tools that can suit your needs, no matter how simple or complex those needs are.
+
 
 ### LimeSurvey
 
