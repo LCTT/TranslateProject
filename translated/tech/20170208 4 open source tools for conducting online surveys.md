@@ -25,7 +25,7 @@ LimeSurvey 还允许你使用自己的 JavaScript、照片和视频自定义调�
 
 使用 JD Esurvey，你可以收集一系列信息，包括 “是/否” 问题的答案以及产品和服务的星级。你甚至可以处理多个部分的问题的答案。JD Esurvey 支持使用平板电脑和智能手机创建和管理调查，你发布的调查也是移动友好的。根据开发者的说法，该程序[残疾人也可使用][6]。
 
-要使用它，你可以[在 GitHub 上 fork JD Esurvey][7]或者[下载并安装][8]程序的预编译版本。
+要使用它，你可以[在 GitHub 上 fork JD Esurvey][7] 或者[下载并安装][8]程序的预编译版本。
 
 ### Quick Survey
 
@@ -33,7 +33,7 @@ LimeSurvey 还允许你使用自己的 JavaScript、照片和视频自定义调�
 
 Quick Survey 只允许你创建问答和多选调查列表。你可以添加问题或创建列表，然后发布并共享网址。你可以根据需要在调查中添加任意数量的条目，回复将显示在 Quick Survey 的管理页面上。你也可以将调查结果下载为 CSV 文件。
 
-虽然你可以从 GitHub 下载 Quick Survey 的代码，但它目前针对 [Sandstorm.io][10]和 [Sandstorm Oasis][11] 进行了优化，你可以从 [Sandstorm 应用市场][12]中获取。
+虽然你可以从 GitHub 下载 Quick Survey 的代码，但它目前针对 [Sandstorm.io][10] 和 [Sandstorm Oasis][11] 进行了优化，你可以从 [Sandstorm 应用市场][12]中获取。
 
 ### TellForm
 
