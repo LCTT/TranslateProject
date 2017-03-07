@@ -114,14 +114,13 @@ Defaults env_reset
  ![env_reset](https://www.howtoforge.com/images/sudo-beginners-guide/sudo-session-time-default.png) 
 ][18]
 
-然后在这行最后添加以下变量（下面用黑体字强调）：
+然后在这行最后添加以下变量：
 
 ```
-Defaults env_reset,**timestamp_timeout=[new-value]**
+Defaults env_reset,timestamp_timeout=[new-value]
 ```
 
-[new-value] 为想要 sudo 会话持续的时间数。例如，用数值 40。
-
+[new-value] 为想要 sudo 会话持续的时间数。例如，设数值为 40。
 
 [
  ![sudo timeout value](https://www.howtoforge.com/images/sudo-beginners-guide/sudo-session-timeout.png) 
@@ -151,13 +150,11 @@ Defaults        env_reset,pwfeedback
 
 现在，无论什么时候输入 sudo 密码，星号都会显示。
 
-
 [
  ![hide the sudo password](https://www.howtoforge.com/images/sudo-beginners-guide/sudo-password.png) 
 ][20]
 
 ## 一些重要的 sudo 命令行参数
-
 
 除了 -u 命令行参数（我们已经在这篇教程的开始部分讨论过了），还有其他重要的 sudo 命令行参数值得注意。在这部分，我们将会讨论其中一些。
 
@@ -185,7 +182,7 @@ Defaults        env_reset,pwfeedback
 ```
 -s, --shell
 
-如果 SHELL 环境变量设置了或者 shell 调用了用户的密码数据库，就能用它运行 shell 。如果指定了命令，命令将会通过 shell 的 -c 参数传递给 shell 执行。如果没有指定命令，一个交互式 shell 将会执行。
+如果设置了 SHELL 环境变量或者调用用户的密码数据库指定了 shell，就运行该 shell 。如果指定了命令，命令将会通过 shell 的 -c 参数传递给 shell 执行。如果没有指定命令，一个交互式 shell 将会执行。
 
 ```
 
@@ -197,17 +194,17 @@ Defaults        env_reset,pwfeedback
 
 *   如果你没有尝试执行其他命令（也就是说，你只是要运行 sudo -s），你将会得到一个有 root 权限的交互式的 shell。
 
-请记住，-s 命令行参数给你一个有 root 权限的 shell，但不是 root 环境 —— 你的 .bashrc 决定的。这意思是，例如在一个用 sudo -s 运行的新 shell 里，执行 whoami 命令仍会返回你的用户名，而非 root 。
+请记住，-s 命令行参数给你一个有 root 权限的 shell，但不是 root 环境 —— 那是由你的 .bashrc 决定的。例如，在 sudo -s 运行的新 shell 里，执行 whoami 命令仍会返回你的用户名，而非 root 。
 
 ###　-i 参数
 
--i 参数跟我们讨论过的 -s 参数相像。然而，还是有点区别。一个重要的区别是 -i 也给了你 root 环境，意味着你的（用户的）.bashrc 被忽略。这就像没有明确指明用 root 登录也能成为 root 。此外，你也不用输入 root 用户密码。 
+-i 参数跟我们讨论过的 -s 参数相像。然而，还是有点区别。一个重要的区别是 -i 也给了你 root 环境，意味着你的（用户的）.bashrc 被忽略。这就像没有显式地用 root 登录也能成为 root 。此外，你也不用输入 root 用户密码。 
 
-** 重要 **：请注意 **su** 命令也能让你切换用户（默认切换到 root ）。这个命令需要你输入 root 密码。为了避免这一点，你可以使用 sudo 执行它（‘sudo su’），这样你只需要输入你的登录密码。然而，su 和 sudo su 有隐含的区别 —— 要了解它们，以及它们和  sudo -i 的区别，请看[这里][10] 。
+** 重要 **：请注意 **su** 命令也能让你切换用户（默认切换到 root ）。这个命令需要你输入 root 密码。为了避免这一点，你可以使用 sudo 执行它（“sudo su”），这样你只需要输入你的登录密码。然而，su 和 sudo su 有隐含的区别 —— 要了解它们，以及它们和  sudo -i 的区别，请看[这里][10] 。
 
 ### 总结
 
-我希望现在你至少知道了 sudo 的基本知识，和如何调整 sudo 的默认行为。请按我们解释过的那样全部尝试调整 /etc/sudoers 。同时也浏览一下论坛讨论（在最后一段中有链接）来更深入了解 sudo 命令。
+我希望现在你至少知道了 sudo 的基本知识，以及如何调整 sudo 的默认行为。请按我们解释过的那样全部尝试调整 /etc/sudoers 。同时也浏览一下论坛讨论来更深入了解 sudo 命令。
 
 --------------------------------------------------------------------------------
 
