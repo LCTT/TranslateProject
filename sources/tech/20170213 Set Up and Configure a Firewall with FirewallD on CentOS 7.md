@@ -1,3 +1,4 @@
+translating by Locez
 Set Up and Configure a Firewall with FirewallD on CentOS 7
 ============================================================
 

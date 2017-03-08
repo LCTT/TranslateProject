@@ -1,3 +1,4 @@
+translating by xiaow6
 Using Scripting Languages in IoT: Challenges and Approaches
 ============================================================
 
@@ -65,6 +66,6 @@ via: https://www.linux.com/news/event/elcna/2017/2/using-scripting-languages-iot
 [2]:https://www.linux.com/licenses/category/creative-commons-zero
 [3]:https://www.linux.com/files/images/paul-sokolovsky-2014-09-21jpg
 [4]:https://www.linux.com/files/images/scripting-languages-iotjpg
-[5]:http://events.linuxfoundation.org/events/embedded-linux-conference/program/schedule?utm_source=linux&utm_campaign=elc17&utm_medium=blog&utm_content=video-blog
+[5]:http://events.linuxfoundation.org/events/embedded-linux-conference/program/schedule?utm_source=linux&amp;utm_campaign=elc17&amp;utm_medium=blog&amp;utm_content=video-blog
 [6]:http://events.linuxfoundation.org/events/embedded-linux-conference
 [7]:https://events.linuxfoundation.org/events/openiot-summit/program/schedule

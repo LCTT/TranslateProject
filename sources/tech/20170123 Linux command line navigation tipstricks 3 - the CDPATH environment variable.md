@@ -1,3 +1,5 @@
+[HaitaoBio](https://github.com/HaitaoBio) translating...
+
 Linux command line navigation tips/tricks 3 - the CDPATH environment variable
 ============================================================
 
