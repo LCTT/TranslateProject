@@ -1,4 +1,4 @@
-(翻译中 by runningwater)
+(翻译中 by chenxinlong)
 15 JavaScript frameworks and libraries
 ============================================================
  ![15 JavaScript frameworks and libraries](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/code_javascript.jpg?itok=a4uULCF0 "15 JavaScript frameworks and libraries") 
@@ -112,7 +112,7 @@ If you have something to add, please comment below and let us know. We are eager
 via: https://opensource.com/article/16/11/15-javascript-frameworks-libraries
 
 作者：[Dr. Michael J. Garbade  ][a]
-译者：[runningwater](https://github.com/runningwater)
+译者：[chenxinlong](https://github.com/chenxinlong)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
