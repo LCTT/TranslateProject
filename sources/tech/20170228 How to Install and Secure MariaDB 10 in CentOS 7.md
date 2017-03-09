@@ -1,3 +1,6 @@
+
+beyondworld translating
+
 How to Install and Secure MariaDB 10 in CentOS 7
 ============================================================
 
