@@ -1,3 +1,5 @@
+FSSlc translating
+
 Introduction to LaTeXila - a multi-language LaTeX editor for Linux
 ============================================================
 
