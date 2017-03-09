@@ -1,3 +1,7 @@
+Meditator-hkx 翻译中...
+
+
+
 Windows wins the desktop, but Linux takes the world
 ============================================================
 
