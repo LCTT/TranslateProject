@@ -1,8 +1,7 @@
 如何在 Ubuntu 中升级到最新内核
 ============================================================
 
-
-定期都会有新的设备和技术出来，因此如果我们想要充分利用它，保持最新的 Linux 内核就显得很重要。此外，更新系统内核将使我们能够利用新的内核优化，并且它还可以帮助我们避免在早期版本中发现的漏洞。
+每过段时间，就有新的设备和技术出来，因此如果我们想要充分利用它，保持最新的 Linux 内核就显得很重要。此外，更新系统内核将使我们能够利用新的内核优化，并且它还可以帮助我们避免在早期版本中发现的漏洞。
 
 **建议阅读：** [如何升级 CentOS 7内核][1]
 
@@ -22,18 +21,27 @@ $ uname -sr
  ![Check Kernel Version in Ubuntu](http://www.tecmint.com/wp-content/uploads/2017/03/Check-Kernel-Version-in-Ubuntu.png) 
 ][2]
 
-在 Ubuntu 中检查内核版本
+*在 Ubuntu 中检查内核版本*
 
 ### 第二步：在 Ubuntu 16.04 中升级内核
 
-要升级 Ubuntu 16.04 的内核，打开 [http://kernel.ubuntu.com/~kernel-ppa/mainline/][3] 并选择列表中需要的版本。
+要升级 Ubuntu 16.04 的内核，打开 [http://kernel.ubuntu.com/~kernel-ppa/mainline/][3] 并选择列表中需要的版本（发布此文时最新内核是 4.10.1）。
 
-接下来，根据你的系统架构下载 `.deb` 文件（黄色高亮的部分是给 32 位系统的）：
+接下来，根据你的系统架构下载 `.deb` 文件：
 
+对于 64 位系统：
 ```
-$ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.9.13/linux-headers-4.9.13-040913_4.9.13-040913.201702260631_all.deb
-$ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.9.13/linux-headers-4.9.13-040913-generic_4.9.13-040913.201702260631_i386.deb
-$ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.9.13/linux-image-4.9.13-040913-generic_4.9.13-040913.201702260631_i386.deb 
+$ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.1/linux-headers-4.10.1-041001_4.10.1-041001.201702260735_all.deb
+$ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.1/linux-headers-4.10.1-041001-generic_4.10.1-041001.201702260735_amd64.deb
+$ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.1/linux-image-4.10.1-041001-generic_4.10.1-041001.201702260735_amd64.deb
+ 
+```
+
+这是 32 位系统的：
+```
+$ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.1/linux-headers-4.10.1-041001_4.10.1-041001.201702260735_all.deb
+$ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.1/linux-headers-4.10.1-041001-generic_4.10.1-041001.201702260735_i386.deb
+$ wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.1/linux-image-4.10.1-041001-generic_4.10.1-041001.201702260735_i386.deb
 ```
 
 下载完成这些所有内核文件后，如下安装：
@@ -50,20 +58,13 @@ $ uname -sr
 
 就是这样。你下载就可以使用比 Ubuntu 16.04 默认安装的内核的更新版本了。
 
-##### 总结
+### 总结
 
 本文我们展示了如何在 Ubuntu 系统上轻松升级Linux内核。这里还有另一个流程，但我们在这里没有展示，因为它需要从源代码编译内核，这不推荐在生产 Linux 系统上使用。
 
 如果你仍然有兴趣编译内核作为一个学习经验，你可以在 [Kernel Newbies][4] 网站中得到指导该如何做。
 
 一如既往，如果你对本文有任何问题或意见，请随时使用下面的评论栏。
-
---------------------------------------------------------------------------------
-
-
-作者简介：
-
-Aaron Kili 是 Linux 和 F.O.S.S 爱好者，将来的 Linux SysAdmin 和 web 开发人员，目前是 TecMint 的内容创建者，他喜欢用电脑工作，并坚信分享知识。
 
 --------------------------------------------------------------------------------
 作者简介：
@@ -76,7 +77,7 @@ via: http://www.tecmint.com/upgrade-kernel-in-ubuntu/
 
 作者：[Gabriel Cánepa][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
