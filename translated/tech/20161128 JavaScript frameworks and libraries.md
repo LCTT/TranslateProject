@@ -1,7 +1,6 @@
-(翻译中 by chenxinlong)
-15 JavaScript 的框架和库
+一些 JavaScript 的框架和库
 ============================================================
- ![15 JavaScript frameworks and libraries](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/code_javascript.jpg?itok=a4uULCF0 "15 JavaScript frameworks and libraries") 
+ ![JavaScript frameworks and libraries](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/code_javascript.jpg?itok=a4uULCF0 "JavaScript frameworks and libraries") 
 
 >来源 : 图片来自 Jen Wike Huger
 
