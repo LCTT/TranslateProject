@@ -1,3 +1,5 @@
+translating by XLCYun
+
 Reactive programming vs. Reactive systems
 ============================================================
 
