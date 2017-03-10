@@ -1,40 +1,38 @@
-translating---geekpi
-
-7 Ways to Determine the File System Type in Linux (Ext2, Ext3 or Ext4)
+Linux 中 7 个判断文件系统类型的方法（Ext2、Ext3 或者 Ext4）
 ============================================================
 
 
-A file system is the way in which files are named, stored, retrieved as well as updated on a storage disk or partition; the way files are organized on the disk.
+文件系统是文件命名、存储、检索以及磁盘更新及分区的方式，也就是磁盘上组织文件的方式。
 
-A file system is divided in two segments called: User Data and Metadata (file name, time it was created, modified time, it’s size and location in the directory hierarchy etc).
+文件系统分为两个部分：用户数据和元数据（文件名、创建时间、修改时间、大小以及目录层次结构中的位置等）。
 
-In this guide, we will explain seven ways to identify your Linux file system type such as Ext2, Ext3, Ext4, BtrFS, GlusterFS plus many more.
+在本指南中，我们将用 7 中方法来识别你的 Linux 文件系统类型，如Ext2、Ext3、Ext4、BtrFS、GlusterFS 等等。
 
-### 1\. Using df Command
+### 1\. df 命令使用
 
-df command reports file system disk space usage, to include the file system type on a particular disk partition, use the `-T` flag as below:
+df 命令报告文件系统磁盘空间利用率，包括特定磁盘分区的文件系统类型，像下面那样使用 `-T` 标志：
 
 ```
 $ df -Th
-OR
+或者
 $ df -Th | grep "^/dev"
 ```
 [
  ![df Command - Find Filesystem Type](http://www.tecmint.com/wp-content/uploads/2017/03/Find-Filesystem-Type-Using-df-Command.png) 
 ][3]
 
-df Command – Find Filesystem Type
+df 命令 – 找出文件系统类型
 
-For a comprehensive guide for df command usage go through our articles:
+要更好理解 df 命令，阅读下面的文章：
 
-1.  [12 Useful “df” Commands to Check Disk Space in Linux][1]
-2.  [Pydf – An Alternative ‘df’ Command That Shows Disk Usage in Colours][2]
+1.  [12 个有用的 “df” 命令检查 Linux 中的磁盘空间][1]
+2.  [Pydf - 一个替代 “df” 的命令，用颜色显示磁盘使用率][2]
 
-### 2\. Using fsck Command
+### 2\. 使用 fsck 命令
 
-fsck is used to check and optionally [repair Linux file systems][4], it can also print the [file system type on specified disk partitions][5].
+fsck 用来检查以及可以[修复 Linux 文件系统][4]，它也可以输出[指定磁盘分区的文件系统类型][5]。
 
-The flag `-N` disables checking of file system for errors, it just shows what would be done (but all we need is the file system type):
+`-N 标志禁用检查文件系统错误，它只是显示会做什么（但是我们只需要文件系统类型）：
 
 ```
 $ fsck -N /dev/sda3
@@ -44,11 +42,11 @@ $ fsck -N /dev/sdb1
  ![fsck - Print Linux Filesystem Type](http://www.tecmint.com/wp-content/uploads/2017/03/fsck-Print-Linux-Filesystem-Type.png) 
 ][6]
 
-fsck – Print Linux Filesystem Type
+fsck – 打印 Linux 文件系统类型
 
-### 3\. Using lsblk Command
+### 3\. 使用 lsblk 命令
 
-lsblk displays block devices, when used with the `-f` option, it prints file system type on partitions as well:
+lsblk 会显示块设备，当使用 `-f` 选项时，它也会打印分区的文件系统类型：
 
 ```
 $ lsblk -f
@@ -57,13 +55,13 @@ $ lsblk -f
  ![lsblk - Shows Linux Filesystem Type](http://www.tecmint.com/wp-content/uploads/2017/03/lsblk-Shows-Linux-Filesystem-Type.png) 
 ][7]
 
-lsblk – Shows Linux Filesystem Type
+lsblk – 显示 Linux 文件系统类型
 
-### 4\. Using mount Command
+### 4\. 使用 mount 命令
 
-mount command is used to [mount a file system in Linux][8], it can also be used to [mount an ISO image][9], [mount remote Linux filesystem][10] and so much more.
+mount 命令用来[在 Linux 中挂载文件系统][8]，它也可以用来[挂载一个 ISO 镜像][9]，[挂载远程 Linux 文件系统][10]等等。
 
-When run without any arguments, it prints [info about disk partitions][11] including the file system type as below:
+当不带任何参数运行时，它会打印包含文件系统类型的[磁盘分区的信息][11]：
 
 ```
 $ mount | grep "^/dev"
@@ -72,11 +70,11 @@ $ mount | grep "^/dev"
  ![Mount - Show Filesystem Type in Linux](http://www.tecmint.com/wp-content/uploads/2017/03/Mount-Show-Filesystem-Type.png) 
 ][12]
 
-Mount – Show Filesystem Type in Linux
+Mount – 在 Linux 中显示文件系统类型
 
-### 5\. Using blkid Command
+### 5\. 使用 blkid 命令
 
-blkid command is used to [find or print block device properties][13], simply specify the disk partition as an argument like so:
+blkid 命令用来[找出或答应块设备属性][13]，只要将磁盘分区作为参数就行了：
 
 ```
 $ blkid /dev/sda3
@@ -85,11 +83,11 @@ $ blkid /dev/sda3
  ![blkid - Find Filesystem Type](http://www.tecmint.com/wp-content/uploads/2017/03/blkid-Find-Filesystem-Type.png) 
 ][14]
 
-blkid – Find Filesystem Type
+blkid – 找出文件系统类型
 
-### 6\. Using file Command
+### 6\. 使用 file 命令
 
-file command identifies file type, the `-s` flag enables reading of block or character files and `-L` enables following of symlinks:
+file 命令会识别文件类型，使用  `-s` 标志启用读取块设备或字符设备，`-L` 启用文件链接：
 
 ```
 $ sudo file -sL /dev/sda3
@@ -98,11 +96,11 @@ $ sudo file -sL /dev/sda3
  ![file - Identifies Filesystem Type](http://www.tecmint.com/wp-content/uploads/2017/03/file-command-identifies-filesystem-type.png) 
 ][15]
 
-file – Identifies Filesystem Type
+file – 识别文件系统类型
 
-### 7\. Using fstab File
+### 7\. 使用 fstab 文件
 
-The /etc/fstab is a static file system info (such as mount point, file system type, mount options etc) file:
+/etc/fstab 是一个静态文件系统信息（比如挂载点、文件系统类型、挂载选项等等）文件：
 
 ```
 $ cat /etc/fstab
@@ -111,22 +109,22 @@ $ cat /etc/fstab
  ![Fstab - Shows Linux Filesystem Type](http://www.tecmint.com/wp-content/uploads/2017/03/fstab-shows-filesystem-types.png) 
 ][16]
 
-Fstab – Shows Linux Filesystem Type
+Fstab – 显示 Linux 文件系统类型
 
-That’s it! In this guide, we explained seven ways to identify your Linux file system type. Do you know of any method not mentioned here? Share it with us in the comments.
+就是这样了！在这篇指南中，我们用 7 中方法来识别你的 Linux 文件系统类型。你还知道这里没有提到的其他方法么？在评论中与我们分享。
 
 --------------------------------------------------------------------------------
 
 作者简介：
 
-Aaron Kili is a Linux and F.O.S.S enthusiast, an upcoming Linux SysAdmin, web developer, and currently a content creator for TecMint who loves working with computers and strongly believes in sharing knowledge.
+Aaron Kili是一名 Linux 和 F.O.S.S 的爱好者，未来的 Linux 系统管理员、网站开发人员，目前是 TecMint 的内容创作者，他喜欢用电脑工作，并乐于分享知识。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/find-linux-filesystem-type/
 
 作者：[Aaron Kili][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
