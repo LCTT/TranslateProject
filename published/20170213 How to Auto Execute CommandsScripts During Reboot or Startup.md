@@ -32,22 +32,26 @@
 
 然后在这个文件底部添加脚本。
 
-下图说明如何分别使用 **cron** 任务和 **rc.local** 运行两个示例脚本（`/home/gacanepa/script1.sh` 和 `/home/gacanepa/script2.sh`）。
+下图说明如何分别使用 cron 任务和 rc.local 运行两个示例脚本（`/home/gacanepa/script1.sh` 和 `/home/gacanepa/script2.sh`）。
 
-script1.sh:
+script1.sh：
+
 ```
 #!/bin/bash
 DATE=$(date +'%F %H:%M:%S')
 DIR=/home/gacanepa
 echo "Current date and time: $DATE" > $DIR/file1.txt
 ```
-script2.sh:
+
+script2.sh：
+
 ```
 #!/bin/bash
 SITE="Tecmint.com"
 DIR=/home/gacanepa
 echo "$SITE rocks... add us to your bookmarks." > $DIR/file2.txt
 ```
+
 [
  ![启动时执行 Linux 脚本](http://www.tecmint.com/wp-content/uploads/2017/02/Run-Linux-Commands-at-Startup.png) 
 ][3]
@@ -65,7 +69,7 @@ $ chmod +x /home/gacanepa/script2.sh
 
 要在登录或注销时执行脚本，分别需要使用 `~.bash_profile` 和 `~.bash_logout` 文件。多数情况下，后者需要手动创建。在每个文件的底部，添加调用脚本代码，如前面例中所示，就可以实现这个功能。
 
-##### 总结
+### 总结
 
 本文主要介绍如何在启动、登录以及注销系统时执行脚本。如果你有其他的方法可以补充，请使用下面的评论表给我们指出，我们期待您的回应！
 
