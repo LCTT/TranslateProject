@@ -1,3 +1,5 @@
+翻译中 [ChrisLeeGit](https://github.com/chrisleegit)
+
 Assign Read/Write Access to a User on Specific Directory in Linux
 ============================================================
 
@@ -130,7 +132,7 @@ Aaron Kili is a Linux and F.O.S.S enthusiast, an upcoming Linux SysAdmin, web de
 via: http://www.tecmint.com/give-read-write-access-to-directory-in-linux/
 
 作者：[Aaron Kili][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ChrisLeeGit](https://github.com/chrisleegit)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
