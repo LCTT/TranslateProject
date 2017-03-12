@@ -1,117 +1,123 @@
-Linux 中 7 个判断文件系统类型的方法（Ext2、Ext3 或者 Ext4）
+Linux 中 7 个判断文件系统类型的方法
 ============================================================
 
-
-文件系统是文件命名、存储、检索以及磁盘更新及分区的方式，也就是磁盘上组织文件的方式。
+文件通过文件系统在磁盘及分区上命名、存储、检索以及更新，文件系统是在磁盘上组织文件的方式。
 
 文件系统分为两个部分：用户数据和元数据（文件名、创建时间、修改时间、大小以及目录层次结构中的位置等）。
 
-在本指南中，我们将用 7 中方法来识别你的 Linux 文件系统类型，如Ext2、Ext3、Ext4、BtrFS、GlusterFS 等等。
+在本指南中，我们将用 7 种方法来识别你的 Linux 文件系统类型，如 Ext2、Ext3、Ext4、BtrFS、GlusterFS 等等。
 
-### 1\. df 命令使用
+### 1、 使用 df 命令
 
-df 命令报告文件系统磁盘空间利用率，包括特定磁盘分区的文件系统类型，像下面那样使用 `-T` 标志：
+`df` 命令报告文件系统磁盘空间利用率，要显示特定的磁盘分区的文件系统类型，像下面那样使用 `-T` 标志：
 
 ```
 $ df -Th
 或者
 $ df -Th | grep "^/dev"
 ```
+
 [
  ![df Command - Find Filesystem Type](http://www.tecmint.com/wp-content/uploads/2017/03/Find-Filesystem-Type-Using-df-Command.png) 
 ][3]
 
-df 命令 – 找出文件系统类型
+*df 命令 – 找出文件系统类型*
 
-要更好理解 df 命令，阅读下面的文章：
+要更好理解 `df` 命令，阅读下面的文章：
 
-1.  [12 个有用的 “df” 命令检查 Linux 中的磁盘空间][1]
-2.  [Pydf - 一个替代 “df” 的命令，用颜色显示磁盘使用率][2]
+1.  [12 个有用的 df 命令来检查 Linux 中的磁盘空间][1]
+2.  [Pydf - 一个替代 df 的命令，用颜色显示磁盘使用率][2]
 
-### 2\. 使用 fsck 命令
+### 2、 使用 fsck 命令
 
-fsck 用来检查以及可以[修复 Linux 文件系统][4]，它也可以输出[指定磁盘分区的文件系统类型][5]。
+`fsck` 用来检查以及[修复 Linux 文件系统][4]，它也可以输出[指定磁盘分区的文件系统类型][5]。
 
-`-N 标志禁用检查文件系统错误，它只是显示会做什么（但是我们只需要文件系统类型）：
+`-N` 标志禁用检查文件系统错误，它只是显示会做什么（但是我们只需要文件系统类型）：
 
 ```
 $ fsck -N /dev/sda3
 $ fsck -N /dev/sdb1
 ```
+
 [
  ![fsck - Print Linux Filesystem Type](http://www.tecmint.com/wp-content/uploads/2017/03/fsck-Print-Linux-Filesystem-Type.png) 
 ][6]
 
-fsck – 打印 Linux 文件系统类型
+*fsck – 打印 Linux 文件系统类型*
 
-### 3\. 使用 lsblk 命令
+### 3、 使用 lsblk 命令
 
-lsblk 会显示块设备，当使用 `-f` 选项时，它也会打印分区的文件系统类型：
+`lsblk` 会显示块设备，当使用 `-f` 选项时，它也会打印分区的文件系统类型：
 
 ```
 $ lsblk -f
 ```
+
 [
  ![lsblk - Shows Linux Filesystem Type](http://www.tecmint.com/wp-content/uploads/2017/03/lsblk-Shows-Linux-Filesystem-Type.png) 
 ][7]
 
-lsblk – 显示 Linux 文件系统类型
+*lsblk – 显示 Linux 文件系统类型*
 
-### 4\. 使用 mount 命令
+### 4、 使用 mount 命令
 
-mount 命令用来[在 Linux 中挂载文件系统][8]，它也可以用来[挂载一个 ISO 镜像][9]，[挂载远程 Linux 文件系统][10]等等。
+`mount` 命令用来[在 Linux 中挂载文件系统][8]，它也可以用来[挂载一个 ISO 镜像][9]，[挂载远程 Linux 文件系统][10]等等。
 
-当不带任何参数运行时，它会打印包含文件系统类型的[磁盘分区的信息][11]：
+当不带任何参数运行时，它会打印包含文件系统类型在内的[磁盘分区的信息][11]：
 
 ```
 $ mount | grep "^/dev"
 ```
+
 [
  ![Mount - Show Filesystem Type in Linux](http://www.tecmint.com/wp-content/uploads/2017/03/Mount-Show-Filesystem-Type.png) 
 ][12]
 
-Mount – 在 Linux 中显示文件系统类型
+*Mount – 在 Linux 中显示文件系统类型*
 
-### 5\. 使用 blkid 命令
+### 5、 使用 blkid 命令
 
-blkid 命令用来[找出或答应块设备属性][13]，只要将磁盘分区作为参数就行了：
+`blkid` 命令用来[找出或打印块设备属性][13]，只要将磁盘分区作为参数就行了：
 
 ```
 $ blkid /dev/sda3
 ```
+
 [
  ![blkid - Find Filesystem Type](http://www.tecmint.com/wp-content/uploads/2017/03/blkid-Find-Filesystem-Type.png) 
 ][14]
 
-blkid – 找出文件系统类型
+*blkid – 找出文件系统类型*
 
-### 6\. 使用 file 命令
+### 6、 使用 file 命令
 
-file 命令会识别文件类型，使用  `-s` 标志启用读取块设备或字符设备，`-L` 启用文件链接：
+`file` 命令会识别文件类型，使用 `-s` 标志启用读取块设备或字符设备，`-L` 启用符号链接跟随：
 
 ```
 $ sudo file -sL /dev/sda3
 ```
+
 [
  ![file - Identifies Filesystem Type](http://www.tecmint.com/wp-content/uploads/2017/03/file-command-identifies-filesystem-type.png) 
 ][15]
 
-file – 识别文件系统类型
+*file – 识别文件系统类型*
 
-### 7\. 使用 fstab 文件
+### 7、 使用 fstab 文件
 
-/etc/fstab 是一个静态文件系统信息（比如挂载点、文件系统类型、挂载选项等等）文件：
+`/etc/fstab` 是一个静态文件系统信息（比如挂载点、文件系统类型、挂载选项等等）文件：
 
 ```
 $ cat /etc/fstab
 ```
+
 [
  ![Fstab - Shows Linux Filesystem Type](http://www.tecmint.com/wp-content/uploads/2017/03/fstab-shows-filesystem-types.png) 
 ][16]
 
-Fstab – 显示 Linux 文件系统类型
+*fstab – 显示 Linux 文件系统类型*
 
-就是这样了！在这篇指南中，我们用 7 中方法来识别你的 Linux 文件系统类型。你还知道这里没有提到的其他方法么？在评论中与我们分享。
+就是这样了！在这篇指南中，我们用 7 种方法来识别你的 Linux 文件系统类型。你还知道这里没有提到的其他方法么？在评论中与我们分享。
 
 --------------------------------------------------------------------------------
 
@@ -125,7 +131,7 @@ via: http://www.tecmint.com/find-linux-filesystem-type/
 
 作者：[Aaron Kili][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
