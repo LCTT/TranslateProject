@@ -1,6 +1,5 @@
 # Microsoft Office Online gets better - on Linux, too
 
-
 One of the core things that will make or break your Linux experience is the lack of the Microsoft Office suite, well, for Linux. If you are forced to use Office products to make a living, and this applies to a very large number of people, you might not be able to afford open-source alternatives. Get the paradox?
 
 Indeed, LibreOffice a [great][1] free program, but what if your client, customer or boss demands Word and Excel files? Can you, indeed, [afford any mistakes][2] or errors or glitches in converting these files from ODT or whatnot into DOCX and such, and vice versa? This is a very tricky set of questions. Unfortunately, for most people, technically, this means Linux is out of limits. Well, not quite.
