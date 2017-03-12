@@ -102,7 +102,7 @@ Aaron Kili is a Linux and F.O.S.S enthusiast, an upcoming Linux SysAdmin, web de
 
 --------------------------------------------------------------------------------
 
-via: 网址
+via: http://www.tecmint.com/best-pdf-page-cropping-tools-for-linux/
 
 作者：[Aaron Kili][a]
 译者：[译者ID](https://github.com/译者ID)
