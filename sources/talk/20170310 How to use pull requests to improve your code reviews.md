@@ -1,3 +1,4 @@
+translating by Bestony
 How to use pull requests to improve your code reviews
 ============================================================
 
