@@ -3,13 +3,11 @@
 
 如果你是第一次设置 MySQL 或 MariaDB 数据库，你可以直接运行 mysql_secure_installation 来实现基本的安全设置。
 
-其中一个设置是数据库 root 帐户的密码 - 你必须保持私密，并仅在严格要求下使用。如果你忘记了密码或需要重置密码（例如，当数据库管理员更改角色或被裁员！）。
+其中一项是设置数据库 root 帐户的密码 - 你必须保持私密，并仅在绝对需要时使用。如果你忘记了密码或需要重置密码（例如，当数据库管理员更改角色或被裁员！），这篇文章会派上用场。我们将解释如何在 Linux 中重置或恢复 MySQL 或 MariaDB 的 root 密码。
 
-**建议阅读：** [更改 MySQL 或 MariaDB 的 root 密码] [1]
+**建议阅读：** [更改 MySQL 或 MariaDB 的 root 密码] [1]。
 
-这篇文章会派上用场。我们将解释如何在 Linux 中重置或恢复 MySQL 或 MariaDB 的 root 密码。
-
-虽然我们将在本文中使用 MariaDB，但这些说明也同样适用于 MySQL。
+虽然我们将在本文中使用 MariaDB，但这些说明同样也适用于 MySQL。
 
 ### 恢复 MySQL 或者 MariaDB 的 root 密码
 
@@ -36,7 +34,7 @@
  ![Start MySQL/MariaDB with Skip Tables](http://www.tecmint.com/wp-content/uploads/2017/03/Start-MySQL-with-Skip-Tables.png) 
 ][2]
 
-使用 skip tables 启动 MySQL/MariaDB
+*使用 skip tables 启动 MySQL/MariaDB*
 
 这可以让你不用 root 密码就能连接到数据库（你也许需要切换到另外一个终端上）：
 
@@ -69,12 +67,6 @@ MariaDB [(none)]> FLUSH PRIVILEGES;
 ##### 总结
 
 本文我们讨论了如何重置 MariaDB/MySQL 的 root 密码。一如往常，如果你有任何问题或反馈请在评论栏中给我们留言。我们期待听到你的声音。
-
-分享[+][3][0][4][6][5][12][6][
- ![Ask Anything](http://www.tecmint.com/wp-content/themes/tecmint/images/help.png) 
-][7]</article>
-
-### 如果你喜欢
 
 --------------------------------------------------------------------------------
 
