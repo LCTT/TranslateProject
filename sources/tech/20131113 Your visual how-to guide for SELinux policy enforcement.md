@@ -1,3 +1,4 @@
+translating by xiaow6
 Your visual how-to guide for SELinux policy enforcement
 ============================================================
 
