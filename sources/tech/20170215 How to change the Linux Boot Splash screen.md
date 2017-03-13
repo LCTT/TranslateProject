@@ -1,3 +1,5 @@
+GHLandy Translating
+
 How to change the Linux Boot Splash screen
 ============================================================
 
