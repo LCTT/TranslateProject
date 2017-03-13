@@ -1,21 +1,19 @@
-translating---geekpi
-
-How to Reset MySQL or MariaDB Root Password in Linux
+如何在 Linux 中重置 MySQL 或者 MariaDB 的 root 密码
 ============================================================
 
-If you are setting up a MySQL or MariaDB database server for the first time, chances are you will be running mysql_secure_installation soon afterwards to implement basic security settings.
+如果你是第一次设置 MySQL 或 MariaDB 数据库，你可以直接运行 mysql_secure_installation 来实现基本的安全设置。
 
-One of these settings is the password for the database root account – which you must keep private and use only when strictly required. If you forget the password or need to reset it (for example, when a database administrator changes roles – or is laid off!).
+其中一个设置是数据库 root 帐户的密码 - 你必须保持私密，并仅在严格要求下使用。如果你忘记了密码或需要重置密码（例如，当数据库管理员更改角色或被裁员！）。
 
-**Suggested Read:** [Change MySQL or MariaDB Root Password][1]
+**建议阅读：** [更改 MySQL 或 MariaDB 的 root 密码] [1]
 
-This article will come in handy. We will explain how to reset or recover forgottent MySQL or MariaDB root password in Linux.
+这篇文章会派上用场。我们将解释如何在 Linux 中重置或恢复 MySQL 或 MariaDB 的 root 密码。
 
-Although we will use a MariaDB server in this article, the instructions should work for MySQL as well.
+虽然我们将在本文中使用 MariaDB，但这些说明也同样适用于 MySQL。
 
-### Recover MySQL or MariaDB root Password
+### 恢复 MySQL 或者 MariaDB 的 root 密码
 
-To begin, stop the database service and check the service status, we should see the environment variable we set previously:
+开始之前，先停止数据库服务并检查服务状态，我们应该可以看到先前设置的环境变量：
 
 ```
 ------------- SystemD ------------- 
@@ -24,7 +22,7 @@ To begin, stop the database service and check the service status, we should see 
 # /etc/init.d/mysqld stop
 ```
 
-Next, start the service with `--skip-grant-tables`:
+接下来，用 `--skip-grant-tables` 启动服务：
 
 ```
 ------------- SystemD ------------- 
@@ -38,15 +36,15 @@ Next, start the service with `--skip-grant-tables`:
  ![Start MySQL/MariaDB with Skip Tables](http://www.tecmint.com/wp-content/uploads/2017/03/Start-MySQL-with-Skip-Tables.png) 
 ][2]
 
-Start MySQL/MariaDB with Skip Tables
+使用 skip tables 启动 MySQL/MariaDB
 
-This will allow you to connect to the database server as root without a password (you may need to switch to a different terminal to do so):
+这可以让你不用 root 密码就能连接到数据库（你也许需要切换到另外一个终端上）：
 
 ```
 # mysql -u root
 ```
 
-From then on, follow the steps outlined below.
+接下来，按照下面列出的步骤来。
 
 ```
 MariaDB [(none)]> USE mysql;
@@ -54,7 +52,7 @@ MariaDB [(none)]> UPDATE user SET password=PASSWORD('YourNewPasswordHere') WHERE
 MariaDB [(none)]> FLUSH PRIVILEGES;
 ```
 
-Finally, stop the service, unset the environment variable and start the service once again:
+最后，停止服务，取消环境变量设置并再次启动服务：
 
 ```
 ------------- SystemD ------------- 
@@ -66,30 +64,30 @@ Finally, stop the service, unset the environment variable and start the service 
 # /etc/init.d/mysql start
 ```
 
-This will cause the previous changes to take effect, allowing you to connect to the database server using the new password.
+这可以让先前的改变生效，允许你使用新的密码连接到数据库。
 
-##### Summary
+##### 总结
 
-In this article we have discussed how to reset the MariaDB / MySQL root password. As always, feel free to use the comment form below to drop us a note if you have any questions or feedback. We look forward to hearing from you!
+本文我们讨论了如何重置 MariaDB/MySQL 的 root 密码。一如往常，如果你有任何问题或反馈请在评论栏中给我们留言。我们期待听到你的声音。
 
-SHARE[+][3][0][4][6][5][12][6][
+分享[+][3][0][4][6][5][12][6][
  ![Ask Anything](http://www.tecmint.com/wp-content/themes/tecmint/images/help.png) 
 ][7]</article>
 
-### If You Appreciate
+### 如果你喜欢
 
 --------------------------------------------------------------------------------
 
 作者简介：
 
-Gabriel Cánepa is a GNU/Linux sysadmin and web developer from Villa Mercedes, San Luis, Argentina. He works for a worldwide leading consumer product company and takes great pleasure in using FOSS tools to increase productivity in all areas of his daily work.
+Gabriel Cánepa - 一位来自阿根廷圣路易斯梅塞德斯镇 (Villa Mercedes, San Luis, Argentina) 的 GNU/Linux 系统管理员，Web 开发者。就职于一家世界领先级的消费品公司，乐于在每天的工作中能使用 FOSS 工具来提高生产力。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/reset-mysql-or-mariadb-root-password/
 
 作者：[Gabriel Cánepa][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
