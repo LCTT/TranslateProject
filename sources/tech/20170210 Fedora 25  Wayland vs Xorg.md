@@ -1,3 +1,5 @@
+translating by cycoe
+
 # Fedora 25: Wayland vs Xorg
 
 Almost as good as Alien vs Predator only much better. Anyhow, as you probably know, I have recently tested [Fedora 25][1]. It was an okay experience. Overall, the distro behaved reasonably well. Not the fastest, but stable enough, usable enough, with some neat improvements here and there. Most importantly, apart from some performance and responsiveness loss, Wayland did not cause my system to melt. But that's just a beginning.
