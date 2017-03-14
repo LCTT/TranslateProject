@@ -1,12 +1,7 @@
 Linux 命令行工具使用小贴士及技巧 ——（一）
 ============================================================
 
-### 相关内容
-
-- [Linux 命令行工具使用的一些小技巧][3]  
-    - [轻松切换目录 —— 快捷方式][1]
-    - [轻松切换目录 —— 相关细节][2]
--  [总结][4]    
+###  相关内容
 
 如果你刚开始在 Linux 系统中使用命令行工具，那么应该了解它是 Linux 操作系统中功能最强大和有用的工具之一。学习的难易程度跟你想研究的深度有关。但是，无论你的技术能力水平怎么样，这篇文章中的一些小贴士和技巧都会对你有所帮助。
 
@@ -14,11 +9,11 @@ Linux 命令行工具使用小贴士及技巧 ——（一）
 
 **但是在开始下一步之前，我得强调一点，这篇文章中的测试实例都是在 Ubuntu 14.04LTS 系统下测试通过的。我们使用命令行 Shell 版本是 bash 4.3.11 。**
 
-### Linux 命令行小技巧
-
+### Linux 命令行工具使用的一些小技巧 
+ 
 我们假设你已经掌握了一些 Linux 命令行的基础知识，比如什么是 root 账号及 home 目录，什么是环境变量，如何查看目录内容等等。说明这些小技巧的同时也会介绍涉及到的概念，如果有的话。
 
-### 轻松切换目录 —— 快捷方式
+#### 轻松切换目录 —— 快捷方式
 
 假设你正在命令行下做一些操作，并且你需要经常在两个目录间来回切换。而且这两个目录在完全不同的两个路径下，比如说，分别在 /home/ 和 /usr/ 下。你会怎么做呢？
 
@@ -55,7 +50,7 @@ cd -
 
 有一点我得跟大家强调下，如果你在操作的过程中使用 cd 加路径的方式切换到第三个目录下，那么 **cd -** 命令将应用于当前目录及第三个目录之间进行切换。
 
-### 轻松切换目录 —— 相关细节
+#### 轻松切换目录 —— 相关细节
 
 对于那些有强烈好奇心的用户，他们想搞懂 **cd -** 的工作原理，解释如下：如大家所知道的那样， cd 命令需要加上一个路径作为它的参数。现在，当 - 符号作为参数传输给 cd 命令时，它将被 OLDPWD 环境变量的值所替代。
 
@@ -136,10 +131,6 @@ via: https://www.howtoforge.com/tutorial/linux-command-line-navigation-tips-and-
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://www.howtoforge.com/tutorial/linux-command-line-navigation-tips-and-tricks-part-1/
-[1]:https://www.howtoforge.com/tutorial/linux-command-line-navigation-tips-and-tricks-part-1/#easily-switch-between-two-directories-the-quick-tip
-[2]:https://www.howtoforge.com/tutorial/linux-command-line-navigation-tips-and-tricks-part-1/#easily-switch-between-two-directories-related-details
-[3]:https://www.howtoforge.com/tutorial/linux-command-line-navigation-tips-and-tricks-part-1/#linux-command-line-tipstricks
-[4]:https://www.howtoforge.com/tutorial/linux-command-line-navigation-tips-and-tricks-part-1/#conclusion
 [5]:https://www.howtoforge.com/images/linux-command-line-tips-for-beginners/big/cmd-line-tips.png
 [6]:https://www.howtoforge.com/images/linux-command-line-tips-for-beginners/big/cmd-line-tips-oldpwd.png
 [7]:https://www.howtoforge.com/images/linux-command-line-tips-for-beginners/big/cmd-line-tips-no-oldpwd.png
