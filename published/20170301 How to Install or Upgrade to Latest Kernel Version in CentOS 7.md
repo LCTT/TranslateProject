@@ -1,10 +1,6 @@
 如何在 CentOS 7 中安装或升级最新的内核
 ============================================================
 
-by [Gabriel Cánepa][14] | Published: March 1, 2017 | Last Updated: March 6, 2017
-
-现在下载你的免费电子书 - [10 本免费的 Linux 电子书][15] | [4 本免费的 shell 脚本电子书][16]
-
 虽然有些人使用 Linux 来表示整个操作系统，但要注意的是，严格地来说，Linux 只是个内核。另一方面，发行版是一个完整功能的系统，它建立在内核之上，具有各种各样的应用程序工具和库。
 
 在正常操作期间，内核负责执行两个重要任务：
@@ -16,7 +12,7 @@ by [Gabriel Cánepa][14] | Published: March 1, 2017 | Last Updated: March 6, 
 
 例如，当你计算机上运行的程序想要连接到无线网络时，它会将该请求提交给内核，后者又会使用正确的驱动程序连接到网络。
 
-**建议阅读：** [如何在 Ubuntu 中升级内核][1]
+- **建议阅读：** [如何在 Ubuntu 中升级内核][1]
 
 随着新的设备和技术定期出来，如果我们想充分利用它们，保持最新的内核就很重要。此外，更新内核将帮助我们利用新的内核函数，并保护自己免受先前版本中发现的漏洞的攻击。
 
@@ -36,15 +32,15 @@ by [Gabriel Cánepa][14] | Published: March 1, 2017 | Last Updated: March 6, 
  ![Check Kernel Version in CentOS 7](http://www.tecmint.com/wp-content/uploads/2017/03/Check-Kernel-Version-in-CentOS-7.png) 
 ][2]
 
-在 CentOS 7 上检查内核版本
+*在 CentOS 7 上检查内核版本*
 
 如果我们现在进入 [https://www.kernel.org/][3]，在撰写本文时，我们看到最新的内核版本是4.10.1（其他版本可以从同一网站获得）。
 
-还要考虑的一个重要的事情是内核版本的生命周期 - 如果你当前使用的版本接近它的生命周期，那么在该日期后将不会提供更多的 bug 修复。关于更多信息，请参阅[内核发布][4]页。
+还要考虑的一个重要的事情是内核版本的生命周期 - 如果你当前使用的版本接近它的生命周期结束，那么在该日期后将不会提供更多的 bug 修复。关于更多信息，请参阅[内核发布][4]页。
 
 ### 步骤 2：在 CentOS 7 中升级内核
 
-大多数现代发行版提供了一种使用[ yum 等包管理系统][5]和官方支持的仓库升级内核的方法。
+大多数现代发行版提供了一种使用 [yum 等包管理系统][5]和官方支持的仓库升级内核的方法。
 
 但是，这只会升级内核到仓库中可用的最新版本 - 而不是在 [https://www.kernel.org/][6] 中可用的最新版本。不幸的是，Red Hat 只允许使用前者升级内核。
 
@@ -60,7 +56,7 @@ by [Gabriel Cánepa][14] | Published: March 1, 2017 | Last Updated: March 6, 
  ![Enable ELRepo in CentOS 7](http://www.tecmint.com/wp-content/uploads/2017/03/Enable-ELRepo-in-CentOS-7.png) 
 ][7]
 
-在 CentOS 7 启用 ELRepo
+*在 CentOS 7 启用 ELRepo*
 
 仓库启用后，你可以使用下面的命令列出可用的内核相关包：
 
@@ -71,7 +67,7 @@ by [Gabriel Cánepa][14] | Published: March 1, 2017 | Last Updated: March 6, 
  ![Yum - Find Available Kernel Versions](http://www.tecmint.com/wp-content/uploads/2017/03/Yum-Find-Available-Kernel-Versions.png) 
 ][8]
 
-yum - 找出可用的内核版本
+*yum - 找出可用的内核版本*
 
 接下来，安装最新的主线稳定内核：
 
@@ -82,7 +78,7 @@ yum - 找出可用的内核版本
  ![Install Latest Kernel Version in CentOS 7](http://www.tecmint.com/wp-content/uploads/2017/03/Install-Latest-Kernel-Version-in-CentOS-7.png) 
 ][9]
 
-在 CentOS 7 中安装最新的内核版本
+*在 CentOS 7 中安装最新的内核版本*
 
 最后，重启机器并应用最新内核，接着运行下面的命令检查最新内核版本：
 
@@ -93,13 +89,13 @@ uname -sr
  ![Verify Kernel Version](http://www.tecmint.com/wp-content/uploads/2017/03/Verify-Kernel-Version.png) 
 ][10]
 
-验证内核版本
+*验证内核版本*
 
 ### 步骤 3：设置 GRUB 默认的内核版本
 
 为了让新安装的内核成为默认启动选项，你需要如下修改 GRUB 配置：
 
-打开并编辑 /etc/default/grub 并设置 `GRUB_DEFAULT=0`。意思是 GRUB 初始化页面的第一个内核将作为默认内核。
+打开并编辑 `/etc/default/grub` 并设置 `GRUB_DEFAULT=0`。意思是 GRUB 初始化页面的第一个内核将作为默认内核。
 
 ```
 GRUB_TIMEOUT=5
@@ -119,7 +115,7 @@ GRUB_DISABLE_RECOVERY="true"
  ![Set Kernel in GRUB](http://www.tecmint.com/wp-content/uploads/2017/03/Set-Kernel-in-GRUB.png) 
 ][11]
 
-在 GRUB 中设置内核
+*在 GRUB 中设置内核*
 
 重启并验证最新的内核已作为默认内核。
 
@@ -145,7 +141,7 @@ GRUB_DISABLE_RECOVERY="true"
 
 作者简介：
 
-我是一个计算机上瘾的家伙，并且是开源和 linux 系统软件的粉丝，有大约 4 年的  Linux 发行版桌面、服务器和 bash 脚本的经验。
+我是一个计算机上瘾的家伙，并且是开源和 Linux 系统软件的粉丝，有大约 4 年的  Linux 发行版桌面、服务器和 bash 脚本的经验。
 
 --------------------------------------------------------------------------------
 
@@ -153,13 +149,13 @@ via: http://www.tecmint.com/install-upgrade-kernel-version-in-centos-7/
 
 作者：[Matei Cezar][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:http://www.tecmint.com/author/cezarmatei/
 
-[1]:http://www.tecmint.com/upgrade-kernel-in-ubuntu/
+[1]:https://linux.cn/article-8284-1.html
 [2]:http://www.tecmint.com/wp-content/uploads/2017/03/Check-Kernel-Version-in-CentOS-7.png
 [3]:https://www.kernel.org/
 [4]:https://www.kernel.org/category/releases.html
