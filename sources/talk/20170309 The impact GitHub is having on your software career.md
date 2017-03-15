@@ -1,3 +1,5 @@
+Translating by SysTick
+
 The impact GitHub is having on your software career
 ============================================================
 
