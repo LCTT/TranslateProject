@@ -16,7 +16,7 @@
 
 ![depressed-developer](https://github.com/GHLandy/comic/raw/master/depressed-developer-series/depressed-developer-3.png)
 
-哎，重要发现错误了，感觉有点可笑，自己居然犯这样的错误，原来是那次急于提交代码造成的。
+哎，终于发现错误了，感觉有点可笑，自己居然犯这样的错误，原来是那次急于提交代码造成的。
 
 ### 消沉的程序员 4
 
