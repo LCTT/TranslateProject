@@ -238,7 +238,7 @@ ForceCommand internal-sftp
  ![Test SSH Chroot Jail](http://www.tecmint.com/wp-content/uploads/2017/03/Test-SSH-Chroot-Jail.png) 
 ][16]
 
-**测试 ssh root jail**
+*测试 SSH Chroot Jail*
 
 试下使用 sftp：
 
