@@ -1,8 +1,10 @@
+translating by SysTick
+
 The impact GitHub is having on your software career
 ============================================================
 
 
- ![The impact GitHub is having on your software career](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/github-universe.jpg?itok=HCU81VX8 "The impact GitHub is having on your software career") 
+ ![The impact GitHub is having on your software career](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/github-universe.jpg?itok=HCU81VX8 "The impact GitHub is having on your software career")
 >Image credits : From GitHub
 
 Over the next 12 to 24 months (in other words, between 2018 and 2019), how people hire software developers will change radically.
