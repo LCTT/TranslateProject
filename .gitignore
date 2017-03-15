@@ -3,3 +3,4 @@ members.md
 *.html
 *.bak
 .DS_Store
+makefile
