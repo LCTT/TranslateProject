@@ -1,5 +1,3 @@
-vim-kakali translating
-
 如何在 Linux 上录制你的桌面 GIF 动画 ?
 ============================================================
 
@@ -21,7 +19,6 @@ vim-kakali translating
 开始之前，你必须知道在本教程中所有的例子都是在 Ubuntu 14.04 上测试过的，它的 Bash 版本是 4.3.11(1) 。
 
 
-### Gifine
 ### Gifine
 
 这个工具的主页是 [Gifine][5] 。它基于 GTK 工具包，并且由 MoonScript 使用 lgi 库编写。Gifine 不仅能够录屏、创建动画或视频，而且能够用它来把几个小型动画或视频拼接在一起。
