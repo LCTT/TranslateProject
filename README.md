@@ -56,7 +56,9 @@ LCTT 的组成
 * 2016/02/29 选题 DeadFire 病逝。
 * 2016/05/09 提升 PurlingNayuki 为校对。
 * 2016/09/10 LCTT 三周年。
-* 2016/12/24 拟定 LCTT [Core 规则](core.md)，并增加新的 Core 成员： @ucasFL、@martin2011qi，及调整一些组。
+* 2016/12/24 拟定 LCTT [Core 规则](core.md)，并增加新的 Core 成员： ucasFL、martin2011qi，及调整一些组。
+* 2017/03/13 制作了 LCTT 主页、成员列表和成员主页，LCTT 主页将移动至 https://linux.cn/lctt 。
+* 2017/03/16 提升 GHLandy、bestony、rusking 为新的 Core 成员。创建 Comic 小组。
 
 活跃成员
 -------------------------------
@@ -69,7 +71,7 @@ LCTT 的组成
 - CORE @GOLinux,
 - CORE @ictlyh,
 - CORE @strugglingyouth,
-- CORE @FSSlc
+- CORE @FSSlc,
 - CORE @zpl1025,
 - CORE @runningwater,
 - CORE @bazz2,
@@ -77,8 +79,11 @@ LCTT 的组成
 - CORE @alim0x,
 - CORE @tinyeyeser,
 - CORE @Locez,
-- CORE @ucasFL
-- CORE @martin2011qi
+- CORE @ucasFL,
+- CORE @martin2011qi,
+- CORE @GHLandy,
+- CORE @bestony,
+- CORE @rusking,
 - Senior @DeadFire,
 - Senior @reinoir222,
 - Senior @vito-L,
@@ -87,85 +92,8 @@ LCTT 的组成
 - Senior @dongfengweixiao,
 - Senior @PurlingNayuki,
 - Senior @carolinewuyan,
-- cposture,
-- ZTinoZ,
-- theo-l,
-- Luoxcat,
-- GHLandy,
-- wi-cuckoo,
-- StdioA,
-- disylee,
-- wwy-hust,
-- felixonmars,
-- KayGuoWhu,
-- mr-ping,
-- wyangsun,
-- su-kaiyao,
-- ivo-wang,
-- cvsher,
-- OneNewLife
-- DongShuaike,
-- flsf,
-- SPccman,
-- Stevearzh,
-- bestony,
-- Linchenguang,
-- Linux-pdz,
-- 2q1w2007,
-- NearTan,
-- H-mudcup,
-- GitFuture,
-- MikeCoder,
-- xiqingongzi,
-- goreliu,
-- rusking,
-- jiajia9linuxer,
-- name1e5s,
-- TxmszLou,
-- ZhouJ-sh,
-- wangjiezhe,
-- icybreaker,
-- zky001,
-- vim-kakali,
-- shipsw,
-- LinuxBars,
-- Moelf,
-- Chao-zhi
-- johnhoow,
-- soooogreen,
-- kokialoves,
-- linuhap,
-- ChrisLeeGit,
-- blueabysm,
-- yangmingming,
-- boredivan,
-- yechunxiao19,
-- XLCYun,
-- KevinSJ,
-- l3b2w1,
-- tenght,
-- firstadream,
-- coloka,
-- luoyutiantang,
-- sonofelice,
-- scusjs,
-- woodboow,
-- 1w2b3l,
-- JonathanKang,
-- crowner,
-- dingdongnigetou,
-- mtunique,
-- hyaocuk,
-- szrlee,
-- nd0104,
-- chenzhijun,
-- frankatlingingdigital,
-- willcoderwang,
-- liuaiping,
-- rogetfan,
-- JeffDing,
 
-（按增加行数排名前百，更新于2016/12/24）
+全部成员列表请参见： https://linux.cn/lctt-list/ 。
 
 谢谢大家的支持！
 
