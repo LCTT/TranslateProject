@@ -1,23 +1,23 @@
-Restrict SSH User Access to Certain Directory Using Chrooted Jail
+使用 chroot 监狱限制 SSH 用户访问指定目录
 ============================================================
 
-There are several reasons to [restrict a SSH user session][1] to a particular directory, especially on web servers, but the obvious one is a system security. In order to lock SSH users in a certain directory, we can use chroot mechanism.
+将 [SSH 用户会话限制][1]访问到特定的目录内，特别是在 web 服务器上，这样做有多个原因，但最显而易见的是为了系统安全。为了锁定 SSH 用户在某个目录，我们可以使用 **chroot** 机制。
 
-change root (chroot) in Unix-like systems such as Linux, is a means of separating specific user operations from the rest of the Linux system; changes the apparent root directory for the current running user process and its child process with new root directory called a chrooted jail.
+在诸如 Linux 之类的类 Unix 系统中更改 root（**chroot**）是将特定用户操作与其他 Linux 系统分离的一种手段；使用称为 **chrooted 监狱** 的新根目录更改当前运行的用户进程及其子进程的明显根目录。
 
-In this tutorial, we’ll show you how to restrict a SSH user access to a given directory in Linux. Note that we’ll run the all the commands as root, use the [sudo command][2] if you are logged into server as a normal user.
+在本教程中，我们将向你展示如何限制 SSH 用户访问 Linux 中指定的目录。注意，我们将以 root 用户身份运行所有命令，如果你以普通用户身份登录服务器，请使用  [sudo 命令][2]。
 
-### Step 1: Create SSH Chroot Jail
+### 步骤 1：创建 SSH chroot 监狱
 
-1. Start by creating the chroot jail using the mkdir command below:
+1、 使用 mkdir 命令开始创建 chroot 监狱：
 
 ```
 # mkdir -p /home/test
 ```
 
-2. Next, identify required files, according to the sshd_config man page, the `ChrootDirectory` option specifies the pathname of the directory to chroot to after authentication. The directory must contain the necessary files and directories to support a user’s session.
+2、 接下来，根据 `sshd_config` 手册找到所需的文件，`ChrootDirectory` 选项指定在身份验证后要 chroot 到的目录的路径名。该目录必须包含支持用户会话所必需的文件和目录。
 
-For an interactive session, this requires at least a shell, commonly `sh`, and basic `/dev` nodes such as null, zero, stdin, stdout, stderr, and tty devices:
+对于交互式会话，这需要至少一个 shell，通常为 `sh` 和基本的 `/dev` 节点，例如 `null`、`zero`、`stdin`、`stdout`、`stderr` 和 `tty` 设备：
 
 ```
 # ls -l /dev/{null,zero,stdin,stdout,stderr,random,tty}
@@ -26,9 +26,9 @@ For an interactive session, this requires at least a shell, commonly `sh`, and 
  ![Listing Required Files](http://www.tecmint.com/wp-content/uploads/2017/03/Listing-Required-Files.png) 
 ][3]
 
-Listing Required Files
+*列出所需文件*
 
-3. Now, create the `/dev` files as follows using the mknod command. In the command below, the `-m` flag is used to specify the file permissions bits, `c` means character file and the two numbers are major and minor numbers that the files point to.
+3、 现在，使用 `mknod` 命令创建 `/dev` 下的文件。在下面的命令中，`-m` 标志用来指定文件权限位，`c` 意思是字符文件，两个数字分别是文件指向的主要号和次要号。
 
 ```
 # mkdir -p /home/test/dev/		
@@ -42,9 +42,9 @@ Listing Required Files
  ![Create /dev and Required Files](http://www.tecmint.com/wp-content/uploads/2017/03/Create-Required-Files.png) 
 ][4]
 
-Create /dev and Required Files
+*创建 /dev 和所需文件*
 
-4. Afterwards, set the appropriate permission on the chroot jail. Note that the chroot jail and its subdirectories and subfiles must be owned by root user, and not writable by any normal user or group:
+4、 在此之后，在 chroot 监狱中设置合适的权限。注意 chroot 监狱和它的子目录以及子文件必须被 `root` 用户所有，并且对普通用户或用户组不可写：
 
 ```
 # chown root:root /home/test
@@ -55,11 +55,11 @@ Create /dev and Required Files
  ![Set Permissions on Directory](http://www.tecmint.com/wp-content/uploads/2017/03/Set-Permission-on-Directory.png) 
 ][5]
 
-Set Permissions on Directory
+*设置目录权限*
 
-### Step 2: Setup Interactive Shell for SSH Chroot Jail
+### 步骤 2：为 SSH chroot 监狱设置交互式 shell
 
-5. First, create the `bin` directory and then copy the `/bin/bash` files into the `bin` directory as follows:
+5、 首先，创建 `bin` 目录并复制 `/bin/bash` 到 `bin` 中：
 
 ```
 # mkdir -p /home/test/bin
@@ -69,9 +69,9 @@ Set Permissions on Directory
  ![Copy Files to bin Directory](http://www.tecmint.com/wp-content/uploads/2017/03/Copy-Bin-Files.png) 
 ][6]
 
-Copy Files to bin Directory
+*复制文件到 bin 目录中*
 
-6. Now, identify bash required shared `libs`, as below and copy them into the `lib` directory:
+6、 现在，识别 bash 所需的共享库，如下所示复制它们到 `lib64` 中：
 
 ```
 # ldd /bin/bash
@@ -82,18 +82,18 @@ Copy Files to bin Directory
  ![Copy Shared Library Files](http://www.tecmint.com/wp-content/uploads/2017/03/Copy-Shared-Library-Files.png) 
 ][7]
 
-Copy Shared Library Files
+*复制共享库文件*
 
-### Step 3: Create and Configure SSH User
+### 步骤 3：创建并配置 SSH 用户
 
-7. Now, create the SSH user with the [useradd command][8] and set a secure password for the user:
+7、 现在，使用 [useradd 命令][8]创建 SSH 用户，并设置安全密码：
 
 ```
 # useradd tecmint
 # passwd tecmint
 ```
 
-8. Create the chroot jail general configurations directory, `/home/test/etc` and copy the updated account files (/etc/passwd and /etc/group) into this directory as follows:
+8、 创建 chroot 监狱通用配置目录 `/home/test/etc` 并复制已更新的账号文件（`/etc/passwd` 和 `/etc/group`）到这个目录中：
 
 ```
 # mkdir /home/test/etc
@@ -103,43 +103,43 @@ Copy Shared Library Files
  ![Copy Password Files](http://www.tecmint.com/wp-content/uploads/2017/03/Copy-Password-Files.png) 
 ][9]
 
-Copy Password Files
+*复制密码文件*
 
-Note: Each time you add more SSH users to the system, you will need to copy the updated account files into the `/home/test/etc` directory.
+注意：每次向系统添加更多 SSH 用户时，都需要将更新的帐户文件复制到 `/home/test/etc` 目录中。
 
-### Step 4: Configure SSH to Use Chroot Jail
+### 步骤 4：配置 SSH 来使用 chroot 监狱
 
-9. Now, open the `sshd_config` file.
+9、 现在打开 `sshd_config` 文件。
 
 ```
 # vi /etc/ssh/sshd_config
 ```
 
-and add/modify the lines below in the file.
+在此文件中添加或修改下面这些行。
 
 ```
-#define username to apply chroot jail to
+# 定义要使用 chroot 监狱的用户
 Match User tecmint
-#specify chroot jail
+# 指定 chroot 监狱
 ChrootDirectory /home/test
 ```
 [
  ![Configure SSH Chroot Jail](http://www.tecmint.com/wp-content/uploads/2017/03/Configure-SSH-Chroot-Jail.png) 
 ][10]
 
-Configure SSH Chroot Jail
+*配置 SSH chroot 监狱*
 
-Save the file and exit, and restart the SSHD services:
+保存文件并退出，重启 sshd 服务：
 
 ```
 # systemctl restart sshd
-OR
+或者
 # service sshd restart
 ```
 
-### Step 5: Testing SSH with Chroot Jail
+### 步骤 5：测试 SSH 的 chroot 监狱
 
-10. At this point, test if the chroot jail setup is working as expected:
+10、 这次，测试 chroot 监狱的设置是否如希望的那样成功了：
 
 ```
 # ssh tecmint@192.168.0.10
@@ -151,11 +151,11 @@ OR
  ![Testing SSH User Chroot Jail](http://www.tecmint.com/wp-content/uploads/2017/03/Testing-SSH-User-Chroot-Jail.png) 
 ][11]
 
-Testing SSH User Chroot Jail
+*测试 SSH 用户 chroot 监狱*
 
-From the screenshot above, we can see that the SSH user is locked in the chrooted jail, and can’t run any external commands (ls, date, uname etc).
+从上面的截图上来看，我们可以看到 SSH 用户被锁定在了 chroot 监狱中，并且不能使用任何外部命令如（`ls`、`date`、`uname` 等等）。
 
-The user can only execute bash and its builtin commands such as(pwd, history, echo etc) as seen below:
+用户只可以执行 `bash` 以及它内置的命令（比如：`pwd`、`history`、`echo` 等等）：
 
 ```
 # ssh tecmint@192.168.0.10
@@ -167,11 +167,11 @@ The user can only execute bash and its builtin commands such as(pwd, history, ec
  ![SSH Built-in Commands](http://www.tecmint.com/wp-content/uploads/2017/03/SSH-Builtin-Commands.png) 
 ][12]
 
-SSH Built-in Commands
+*SSH 内置命令*
 
-### Step 6\. Create SSH User’s Home Directory and Add Linux Commands
+### 步骤6： 创建用户的主目录并添加 Linux 命令
 
-11. From the previous step, we can notice that the user is locked in the root directory, we can create a home directory for the the SSH user like so (do this for all future users):
+11、 从前面的步骤中，我们可以看到用户被锁定在了 root 目录，我们可以为 SSH 用户创建一个主目录（以及为所有将来的用户这么做）：
 
 ```
 # mkdir -p /home/test/home/tecmint
@@ -182,9 +182,9 @@ SSH Built-in Commands
  ![Create SSH User Home Directory](http://www.tecmint.com/wp-content/uploads/2017/03/Create-SSH-User-Home-Directory.png) 
 ][13]
 
-Create SSH User Home Directory
+*创建 SSH 用户主目录*
 
-12. Next, install a few user commands such as ls, date, mkdir in the `bin` directory:
+12、 接下来，在 `bin` 目录中安装几个用户命令，如 `ls`、`date`、`mkdir`：
 
 ```
 # cp -v /bin/ls /home/test/bin/
@@ -195,9 +195,9 @@ Create SSH User Home Directory
  ![Add Commands to SSH User](http://www.tecmint.com/wp-content/uploads/2017/03/Add-Commands-to-SSH-User.png) 
 ][14]
 
-Add Commands to SSH User
+*向 SSH 用户添加命令*
 
-13. Next, check the shared libraries for the commands above and move them into the chrooted jail libraries directory:
+13、 接下来，检查上面命令的共享库并将它们移到 chroot 监狱的库目录中：
 
 ```
 # ldd /bin/ls
@@ -207,28 +207,28 @@ Add Commands to SSH User
  ![Copy Shared Libraries](http://www.tecmint.com/wp-content/uploads/2017/03/Copy-Shared-Libraries.png) 
 ][15]
 
-Copy Shared Libraries
+*复制共享库*
 
-### Step 7\. Testing SFTP with Chroot Jail
+### 步骤 7：测试 sftp 的 用 chroot 监狱
 
-14. Do a final test using sftp; check if the commands you have just installed are working.
+14、 最后用 sftp 做一个测试；测试你先前安装的命令是否可用。
 
-Add the line below in the `/etc/ssh/sshd_config` file:
+在 `/etc/ssh/sshd_config` 中添加下面的行：
 
 ```
-#Enable sftp to chrooted jail 
+# 启用 sftp 的 chrooted 监狱 
 ForceCommand internal-sftp
 ```
 
-Save the file and exit. Then restart the SSHD services:
+保存并退出文件。接下来重启 sshd 服务：
 
 ```
 # systemctl restart sshd
-OR
+或者
 # service sshd restart
 ```
 
-15. Now, test using SSH, you’ll get the following error:
+15、 现在使用 ssh 测试，你会得到下面的错误：
 
 ```
 # ssh tecmint@192.168.0.10
@@ -237,9 +237,9 @@ OR
  ![Test SSH Chroot Jail](http://www.tecmint.com/wp-content/uploads/2017/03/Test-SSH-Chroot-Jail.png) 
 ][16]
 
-Test SSH Chroot Jail
+*测试 SSH Chroot 监狱*
 
-Try using SFTP as follows:
+试下使用 sftp：
 
 ```
 # sftp tecmint@192.168.0.10
@@ -248,26 +248,25 @@ Try using SFTP as follows:
  ![Testing sFTP SSH User](http://www.tecmint.com/wp-content/uploads/2017/03/Testing-sFTP-SSH-User.png) 
 ][17]
 
-Testing sFTP SSH User
+*测试 sFTP SSH 用户*
 
-**Suggested Read:** [Restrict SFTP Users to Home Directories Using chroot Jail][18]
+**建议阅读：** [使用 chroot 监狱将 sftp 用户限制在主目录中][18]。
 
-That’s it for now!. In this article, we showed you how to restrict a SSH user in a given directory (chrooted jail) in Linux. Use the comment section below to offer us your thoughts about this guide.
+就是这样了！在文本中，我们向你展示了如何在 Linux 中限制 ssh 用户到指定的目录中（ chroot 监狱）。请在评论栏中给我们提供你的想法。
 
 --------------------------------------------------------------------------------
 
-
 作者简介：
 
-Aaron Kili is a Linux and F.O.S.S enthusiast, an upcoming Linux SysAdmin, web developer, and currently a content creator for TecMint who loves working with computers and strongly believes in sharing knowledge.
+Aaron Kili 是一个 Linux 及 F.O.S.S 热衷者，即将成为 Linux 系统管理员、web 开发者，目前是 TecMint 的内容创作者，他喜欢用电脑工作，并坚信分享知识。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/restrict-ssh-user-to-directory-using-chrooted-jail/
 
 作者：[Aaron Kili][a]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[geekpi](https://github.com/geekpi)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

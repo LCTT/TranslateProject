@@ -1,4 +1,4 @@
-Odoo提速指南
+Odoo 提速指南
 ============================================================
 
  ![speed up odoo](https://www.rosehosting.com/blog/wp-content/uploads/2016/12/speed-up-odoo.jpg) 
@@ -9,19 +9,19 @@ Odoo 是最流行的 ERP（企业资源计划）软件，它由 Python 编写，
 
 *   使用一个快速磁盘驱动器来存储（最好是 SSD）。
 *   使用[内存充足的 Linux VPS][1]。
-*   在 Odoo 中激活多重处理模式。
+*   在 Odoo 中激活<ruby>多处理器模式<rt>multiprocessing mode</rt></ruby>。
 *   正确配置并优化 PostgreSQL 服务。
 
 ### 获得一台有着更多内存的 SSD VPS
 
-正如我们先前提到的，随机磁盘访问速度时 Odoo 的主要瓶颈之一。因此，要确保 Odoo 部署在一台[基于 SSD 的 VPS][2] 上。由于 Odoo 是一个对资源十分敏感的应用，因此始终要把它安装在一台有着更多 RAM 的 VPS 上，如果可能，将整个 Odoo 实例及其数据库加载到 RAM 中。固态磁盘驱动器尤其以随机存取见长，而且由于 SSD 没有任何活动部件，它们能够取得数百倍于传统机械硬盘驱动器的随机存取 IOPS。如果服务器没有采用 SSD 来驱动或提速，那么不管你对 Odoo 做多少优化和配置都无济于事，它仍然会很慢。所以，获得正确的主机来部署 Odoo 是提升其性能的最重要因素。
-
-跟大家提过 Odoo 是一个资源饥渴的应用有没有？貌似说过吧。但是不要担心，RoseHosting 将为你们提供一个终极解决方案——一台为性能而量身定做的 [Odoo SSD VPS][3]，为匹配你的最大需求而优化。来，从我们这搞一台 SSD VPS 吧，你会发现什么才真的叫 Odoo 破纪录的速度。
+正如我们先前提到的，随机磁盘访问速度是 Odoo 的主要瓶颈之一。因此，要确保 Odoo 部署在一台[基于 SSD 的 VPS][2] 上。由于 Odoo 是一个对资源十分敏感的应用，因此始终要把它安装在一台有着更多 RAM 的 VPS 上，如果可能，将整个 Odoo 实例及其数据库加载到 RAM 中。固态磁盘驱动器尤其以随机存取见长，而且由于 SSD 没有任何活动部件，它们能够取得数百倍于传统机械硬盘驱动器的随机存取 IOPS（LCTT译注：即每秒读写操作的次数）。如果服务器没有采用 SSD 来驱动或提速，那么不管你对 Odoo 做多少优化和配置都无济于事，它仍然会很慢。所以，获得正确的主机来部署 Odoo 是提升其性能的最重要因素。
 
 其它 Odoo 优化包括：
-### 在 Odoo 配置中启用多重处理选项
+
+### 在 Odoo 配置中启用多处理器选项
 
 要实现此功能，请定位到 openerp 服务器二进制文件：
+
 ```
 #updatedb
 #locate openerp-server
@@ -64,11 +64,11 @@ Options:
                         (default 8192).
 ```
 
-工作进程的数量应该和分配到 VPS 的 CPU 核心数一样，或者，如果你想为 PostgreSQL 数据库，cron 任务，或者其它和 Odoo 实例安装在同一台 VPS 上的其它应用预留出一些 CPU 核心，那么你可以将工作进程数设置为一个比 VPS 上可用 CPU 核心更低的值，以避免资源耗尽。
+工作进程的数量应该和分配到 VPS 的 CPU 核心数一样，或者，如果你想为 PostgreSQL 数据库、cron 任务、或者其它和 Odoo 实例安装在同一台 VPS 上的其它应用预留出一些 CPU 核心，那么你可以将工作进程数设置为一个比 VPS 上可用 CPU 核心更低的值，以避免资源耗尽。
 
 limit-memory-soft 和 limit-memory-hard 参数不言自明，你可以使用默认值，也可以根据 VPS 上的实际可用 RAM 来进行修改。 
 
-例如，如果你的 VPS 有 8 个 CPU 核心，以及 16 GB 内存，那么你可以将工作进程数设置为 17（CPU 核心数 x 2 + 1），limit-memory-soft 总值设置为 be 640 x 17 = 10880 MB，而 limit-memory-hard 总数设置为 68MB x 17 = 13056 MB，这样，Odoo 就会有总计达 12.75 GB 的 RAM。
+例如，如果你的 VPS 有 8 个 CPU 核心，以及 16 GB 内存，那么你可以将工作进程数设置为 17（CPU 核心数 x 2 + 1），limit-memory-soft 总值设置为 640 x 17 = 10880 MB，而 limit-memory-hard 总数设置为 68MB x 17 = 13056 MB，这样，Odoo 就会有总计达 12.75 GB 的 RAM。
 
 例如，在一台拥有 16 GB RAM 和 8 个 CPU 核心的 VPS 上，编辑 Odoo 配置文件（如 /etc/odoo-server.conf），并添加以下行：
 ```
@@ -94,9 +94,10 @@ max_cron_threads = 2
 
 ### 正确配置并优化 PostgreSQL
 
-对于 PostgreSQL 优化，时刻将它更新到最新版本是一个不错的主意。在 PostgreSQL 配置文件（pg_hba.conf）中，有两个设置需要修改：shared_buffers 和 effective_cache_size。将 shared_buffers 设置为可用内存的 20%，effective_cache_size 设置为可用内存的 50%。
+对于 PostgreSQL 优化，及时将它更新到最新版本是一个不错的主意。在 PostgreSQL 配置文件（pg_hba.conf）中，有两个设置需要修改：shared_buffers 和 effective_cache_size。将 shared_buffers 设置为可用内存的 20%，effective_cache_size 设置为可用内存的 50%。
 
 例如，如果 Odoo 安装到了一台 16 GB RAM 的 SSD VPS 上，那么在 pg_hba.conf 中使用如下设置：
+
 ```
 vi /var/lib/postgresql/data/pg_hba.conf
 ```
@@ -105,9 +106,11 @@ vi /var/lib/postgresql/data/pg_hba.conf
 shared_buffers = 3072MB
 effective_cache_size = 8192MB
 ```
+
 重启 PostgreSQL 服务来让修改生效。
 
-同时，也别忘了周期性手动执行‘[VACUUM][4]‘ 。‘Vacuuming’会将陈旧或临时数据清理干净，但请牢记，它会大量占用 CPU 和磁盘使用。
+同时，也别忘了周期性手动执行 ‘**[VACUUM][4]**’。此操作会将陈旧或临时数据清理干净，但请牢记，它会大量占用 CPU 和磁盘使用。
+
 
 --------------------------------------------------------------------------------
 
@@ -115,12 +118,11 @@ via: https://www.rosehosting.com/blog/how-to-speed-up-odoo/
 
 作者：[rosehosting.com][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://www.rosehosting.com/
 [1]:https://www.rosehosting.com/linux-vps-hosting.html
 [2]:https://www.rosehosting.com/linux-vps-hosting.html
-[3]:https://www.rosehosting.com/odoo-hosting.html
 [4]:https://wiki.postgresql.org/wiki/Introduction_to_VACUUM,_ANALYZE,_EXPLAIN,_and_COUNT
