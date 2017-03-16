@@ -1,24 +1,24 @@
 如何在 Ubuntu 下安装和配置 FTP 服务器
 ============================================================
 
-FTP（文件传输协议）是一个较老且最常用的标准网络协议，用于在两台计算机之间通过网络上传/下载文件。然而， FTP 最初的时候并不安全，因为它仅通过用户凭证（用户名和密码）传输数据，没有进行加密。
+**FTP（文件传输协议）** 是一个较老且最常用的标准网络协议，用于在两台计算机之间通过网络上传/下载文件。然而，FTP 最初的时候并不安全，因为它仅通过用户凭证（用户名和密码）传输数据，没有进行加密。
 
-警告：如果你打算使用 FTP， 考虑通过 SSL/TLS（将在下篇文章中讨论）配置 FTP 连接。否则，使用安全 FTP，比如 [SFTP][1] 会更好一些。
+警告：如果你打算使用 **FTP**， 请考虑通过 SSL/TLS（将在下篇文章中讨论）配置 FTP 连接。否则，最好使用安全 FTP，比如 [SFTP][1]。
 
 **推荐阅读：**[如何在 CentOS 7 中安装并保护 FTP 服务器][2]
 
-在这个教程中，我将向你们展示如何在 Ubuntu 中安装、配置并保护 FTP 服务器（VSFTPD 的全称是 “Very Secure FTP Deamon”），从而拥有强大的安全性，能够防范 FTP 漏洞。
+在这个教程中，我将向你们展示如何在 Ubuntu 中安装、配置并保护 **FTP** 服务器（**VSFTPD** 的全称是“**Very Secure FTP Deamon**”），从而拥有强大的安全性，能够防范 FTP 漏洞。
 
 ### 第一步：在 Ubuntu 中安装 VsFTP 服务器
 
-1、首先，我们需要更新系统安装包列表，然后像下面这样安装 VSFTPD 二进制包：
+1、首先，我们需要更新系统安装包源列表，然后像下面这样安装 **VSFTPD** 二进制包：
 
 ```
 $ sudo apt-get update
 $ sudo apt-get install vsftpd
 ```
 
-2、一旦安装完成，初始情况下服务被禁用。因此，我们需要手动开启服务，同时，启动它使得在下次开机时能够自动开启服务：
+2、安装完成后，初始情况下服务为被禁用状态。因此，我们需要手动开启服务，同时，使它在下次开机时能够自动开启服务：
 
 ```
 ------------- On SystemD -------------
@@ -29,7 +29,7 @@ $ sudo apt-get install vsftpd
 # chkconfig --level 35 vsftpd on
 ```
 
-3、接下来，如果你在服务器上启用了 [UFW 防火墙][3]（默认情况下不启用），那么需要打开端口 20 和 21，FTP daemons 正在监听它们，从而才能允许从远程机器访问 FTP 服务，然后，像下面这样添加新的防火墙规则：
+3、接下来，如果你在服务器上启用了 [UFW 防火墙][3]（默认情况下不启用），那么需要打开端口 20 和 21，它们是 FTP 守护进程监听的端口，从而允许从远程机器访问 FTP 服务，然后，像下面这样添加新的防火墙规则：
 
 ```
 $ sudo ufw allow 20/tcp
@@ -57,25 +57,25 @@ $ sudo nano /etc/vsftpd.conf
 
 ```
 anonymous_enable=NO             # 关闭匿名登录
-local_enable=YES		# 允许本地登录
-write_enable=YES		# 启用改变文件系统的 FTP 命令
-local_umask=022		        # 本地用户创建文件的 umask 值
-dirmessage_enable=YES	        # 启用从而当用户第一次进入新目录时显示消息
-xferlog_enable=YES		# 一个存有详细的上传和下载信息的日志文件
-connect_from_port_20=YES        # 在服务器上针对端口类型连接使用端口 20（FTP 数据）
+local_enable=YES		              # 允许本地登录
+write_enable=YES	              	# 启用改变文件系统的 FTP 命令
+local_umask=022		               # 本地用户创建文件的 umask 值
+dirmessage_enable=YES	          # 当用户第一次进入新目录时显示消息
+xferlog_enable=YES	            	# 存有详细的上传和下载信息的日志文件
+connect_from_port_20=YES        # 在服务器上对 PORT 模式连接使用端口 20（ftp-data）
 xferlog_std_format=YES          # 保持标准日志文件格式
-listen=NO   			# 阻止 vsftpd 在独立模式下运行
-listen_ipv6=YES		        # vsftpd 将监听 ipv6 而不是 IPv4
+listen=NO   			                 # 阻止 vsftpd 在独立模式下运行
+listen_ipv6=YES		               # vsftpd 将监听 ipv6 而不是 IPv4
 pam_service_name=vsftpd         # vsftpd 将使用的 PAM 设备的名字
-userlist_enable=YES  	        # enable vsftpd to load a list of usernames启用 vsftpd 加载用户名字列表
-tcp_wrappers=YES  		# 打开 tcp 包装器
+userlist_enable=YES  	          # 允许 vsftpd 加载用户名字列表
+tcp_wrappers=YES  	            	# 打开 tcp 包装器
 ```
 
-5、现在，配置 VSFTPD ，从而允许/拒绝 FTP 访问基于用户列表文件 `/etc/vsftpd.userlist` 的用户。
+5、现在，配置 **VSFTPD** ，从而允许/拒绝 FTP 访问基于用户列表文件 `/etc/vsftpd.userlist` 的用户。
 
-注意，在默认情况下，如果 `userlist_enable=YES` 而 `userlist_deny=YES` ，那么，用户列表文件 `/etc/vsftpd.userlist` 中的用户是不能登录访问的。
+注意，在默认情况下，如果 `userlist_enable=YES` 而 `userlist_deny=YES` ，那么，用户列表文件 **userlist_file=/etc/vsftpd.userlist** 中的用户是不能登录访问的。
 
-但是，选项 ` userlist_deny =NO` 则改变了默认设置，所以只有用户名被明确列出在用户列表文件 `/ etc / vsftpd` 中的用户才允许登录到FTP服务器。
+但是，选项 `userlist_deny =NO` 则改变了默认设置，只有用户名被明确列出在用户列表文件 **userlist_file=/etc/vsftpd.userlist** 中的用户才允许登录到 FTP 服务器。
 
 ```
 userlist_enable=YES                   # vsftpd 将会从所给的用户列表文件中加载用户名字列表
@@ -83,20 +83,20 @@ userlist_file=/etc/vsftpd.userlist    # 存储用户名字
 userlist_deny=NO   
 ```
 
-重要的是，当用户登录 FTP 服务器以后，他们将进入 chrooted 环境，这是因为本地 root 目录将作为 FTP 会话唯一的 home 目录。
+**重要：**当用户登录 FTP 服务器以后，他们被置于 chrooted jail 中，这是本地 root 目录，它将仅作为 FTP 会话的 Home 目录。
 
-接下来，我们来看一看两种可能的途径来设置 chrooted（本地 root）目录，正如下面所展示的。
+接下来，我们来看一看设置 chrooted jail（本地 root）目录的两种场景，如下所示。
 
-6、这时，让我们添加/修改/取消这两个选项来[阻止 FTP 用户进入 home 目录][4]
+6、现在，让我们添加/修改/取消下面两个选项，[将 FTP 用户限制在他们的 Home 目录][4]
 
 ```
 chroot_local_user=YES
 allow_writeable_chroot=YES
 ```
 
-选项 `chroot_local_user=YES` 意味着本地用户将进入 chroot 环境，当登录以后 root 目录成为默认的 home 目录。
+选项 `chroot_local_user=YES` 意味着本地用户登录后被置于 chroot jail，默认是他们的 Home 目录。
 
-并且我们要理解，默认情况下，出于安全原因，VSFTPD 不允许 chroot 目录具有可写权限。然而，我们可以通过选项 `allow_writeable_chroot=YES` 来改变这个设置
+我们还要了解，默认情况下，出于安全原因，VSFTPD 不允许 chroot 目录具有可写权限。然而，我们可以通过选项 `allow_writeable_chroot=YES` 来改变这个设置。
 
 保存文件然后关闭。现在我们需要重启 VSFTPD 服务从而使上面的这些更改生效：
 
@@ -116,7 +116,7 @@ $ sudo useradd -m -c "Aaron Kili, Contributor" -s /bin/bash aaronkilik
 $ sudo passwd aaronkilik
 ```
 
-然后，我们需要像下面这样使用[ echo 命令][6]和 tee 命令来明确地列出文件 `/etc/vsftpd.userlist` 中的用户 aaronkilik：
+然后，我们需要像下面这样，使用[ **echo 命令**][6]和 **tee 命令**来明确地列出文件 `/etc/vsftpd.userlist` 中的用户 **aaronkilik**：
 
 
 ```
@@ -131,10 +131,10 @@ $ cat /etc/vsftpd.userlist
 Connected to 192.168.56.102  (192.168.56.102).
 220 Welcome to TecMint.com FTP service.
 Name (192.168.56.102:aaronkilik) : anonymous
-530 权限拒绝.
-登录失败.
+530 Permission denied.
+Login failed.
 ftp> bye
-221 再见.
+221 Goodbye.
 ```
 
 9、接下来，我们将测试，如果用户的名字没有在文件 `/etc/vsftpd.userlist` 中，是否能够登录。从下面的输出中，我们看到，这是不可以的：
@@ -144,10 +144,10 @@ ftp> bye
 Connected to 192.168.56.102  (192.168.56.102).
 220 Welcome to TecMint.com FTP service.
 Name (192.168.56.10:root) : user1
-530 权限拒绝.
-登录失败.
+530 Permission denied.
+Login failed.
 ftp> bye
-221 再见.
+221 Goodbye.
 ```
 
 10、现在，我们将进行最后一项测试，来确定列在文件 `/etc/vsftpd.userlist` 文件中的用户登录以后，是否进入 home 目录。从下面的输出中可知，是这样的：
@@ -157,11 +157,11 @@ ftp> bye
 Connected to 192.168.56.102  (192.168.56.102).
 220 Welcome to TecMint.com FTP service.
 Name (192.168.56.102:aaronkilik) : aaronkilik
-331 请输入密码.
+331 Please specify the password.
 Password:
-230 登录成功.
-远程系统类型为 UNIX.
-使用二进制模式来传输文件.
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
 ftp> ls
 ```
 [
@@ -192,7 +192,7 @@ $ sudo nano /etc/vsftpd.conf
 #allow_writeable_chroot=YES
 ```
 
-接下来，创建一个可供用户选择的本地 root 目录（aaronkilik，你的可能和这不一样），然后，通过取消其他所有用户对此目录的写入权限来设置目录权限：
+接下来，为用户（**aaronkilik**，你的可能不同）创建另外一个本地 root 目录，然后，设置权限，取消其他所有用户对此目录的写入权限：
 
 ```
 $ sudo mkdir /home/aaronkilik/ftp
@@ -231,11 +231,11 @@ local_root=/home/$USER/ftp    # defines any users local root directory
 Connected to 192.168.56.102  (192.168.56.102).
 220 Welcome to TecMint.com FTP service.
 Name (192.168.56.10:aaronkilik) : aaronkilik
-331 请输入密码.
+331 Please specify the password.
 Password:
-230 登录成功.
-远程系统类型为 UNIX.
-使用二进制模式来传输文件.
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
 ftp> ls
 ```
 [
@@ -244,9 +244,9 @@ ftp> ls
 
 *FTP 用户 Home 目录登录*
 
-就是这样的！记得通过下面的评论栏来分享你关于这篇指导的想法，或者你也可以提供关于这一话题的任何重要信息。
+就是这些！记得通过下面的评论栏来分享你关于这篇指导的想法，或者你也可以提供关于这一话题的任何重要信息。
 
-最后但不是不重要，请不要错过我的下一篇文章，在下一篇文章中，我将阐述如何[使用 SSL/TLS 来保护连接到 Ubuntu 16.04/16.10 的 FTP 服务器][9]，在那之前，请始终关注 TecMint。
+最后值得一提的是，在我的下一篇文章中，将阐述如何[在 Ubuntu 上使用 SSL/TLS 设置安全 的 FTP 服务器][9]。请不要错过哦。
 
 --------------------------------------------------------------------------------
 
