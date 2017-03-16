@@ -1,29 +1,26 @@
 
-beyondworld translating
+如何在CentOS 7上安装和安全配置MariaDB 10 
+===========================================
 
-How to Install and Secure MariaDB 10 in CentOS 7
-============================================================
+MariaDB是MySQL数据库的免费开源分支，与MySQL在思想上同出一源，在未来仍将是免费且开源的。
 
+在这篇博文中，我将会介绍如何在当前使用最广的RHEL/CentOS和Fedora发行版上安装MariaDB 10.1稳定版。
 
-MariaDB is a free and open source fork of well known MySQL database management server software, developed by the brains behind MySQL, it’s envisioned to remain free/open source.
+目前了解到的情况是：Red Hat Enterprise Linux/CentOS 7.0发行版已将默认的数据库从MySQL切换到MariaDB。
 
-In this tutorial, we will show you how to install MariaDB 10.1 stable version in the most widely used versions of RHEL/CentOS and Fedora distributions.
+在本文中需要注意的是，我们假定您能够在服务器中使用root帐号工作，或者可以使用[sudo command][7]运行任何命令。
 
-For your information, Red Hat Enterprise Linux/CentOS 7.0 switched from supporting MySQL to MariaDB as the default database management system.
+### 第一步：添加MariaDB的yum仓库
 
-Note that in this tutorial, we’ll assume your working on the server as root, otherwise, use the [sudo command][7] to run all the commands.
-
-### Step 1: Add MariaDB Yum Repository
-
-1. Start by adding the MariaDB YUM repository file `MariaDB.repo` for RHEL/CentOS and Fedora systems.
+1、首先在RHEL/CentOS和Fedora操作系统中添加MariaDB的YUM配置文件'MariaDB.repo'文件。
 
 ```
 # vi /etc/yum.repos.d/MariaDB.repo
 ```
 
-Now add the following lines to your respective Linux distribution version as shown.
+根据您操作系统版本选择下面的相应内容添加到文件的末尾。
 
-#### On CentOS 7
+#### 在CentOS 7中安装
 
 ```
 [mariadb]
@@ -33,7 +30,7 @@ gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 ```
 
-#### On RHEL 7
+#### 在RHEL 7中安装
 
 ```
 [mariadb]
@@ -46,11 +43,11 @@ gpgcheck=1
  ![Add MariaDB Yum Repo](http://www.tecmint.com/wp-content/uploads/2017/02/Add-MariaDB-Repo.png) 
 ][8]
 
-Add MariaDB Yum Repo
+添加MariaDB YUM仓库
 
-### Step 2: Install MariaDB in CentOS 7
+### 第二步：在CentOS 7中安装MariaDB
 
-2. Once MariaDB repository has been added, you can easily install it with just one single command.
+2、当MariaDB仓库地址添加好后，你可以通过下面的一行命令轻松安装MariaDB。
 
 ```
 # yum install MariaDB-server MariaDB-client -y
@@ -59,9 +56,9 @@ Add MariaDB Yum Repo
  ![Install MariaDB in CentOS 7](http://www.tecmint.com/wp-content/uploads/2017/02/Install-MariaDB-in-CentOS-7.png) 
 ][9]
 
-Install MariaDB in CentOS 7
+在CentOS 7中安装MariaDB
 
-3. As soon as the installation of MariaDB packages completes, start the database server daemon for the time being, and also enable it to start automatically at the next boot like so:
+3. 一旦MariaDB包安装完毕，可以手动启动数据库服务守护进程，并可以通过下面的操作设置在操作系统重启后自动启动服务。
 
 ```
 # systemctl start mariadb
@@ -72,11 +69,11 @@ Install MariaDB in CentOS 7
  ![Start MariaDB Service in CentOS 7](http://www.tecmint.com/wp-content/uploads/2017/02/Start-MariaDB-Service-in-CentOS-7.png) 
 ][10]
 
-Start MariaDB Service in CentOS 7
+在CentOS 7中启动MariaDB服务
 
-### Step 3: Secure MariaDB in CentOS 7
+### 第三步：在CentOS 7中对MariaDB进行安全配置
 
-4. Now its time to secure your MariaDB by setting root password, disabling remote root login, removing the test database as well as anonymous users and finally reload privileges as shown in the screen shot below:
+4. 现在可以通过以下操作进行安全配置：设置MariaDB的root账户密码，禁用root远程登录，删除测试数据库以及测试帐号，最后需要使用下面的命令重新加载权限。
 
 ```
 # mysql_secure_installation
@@ -85,9 +82,9 @@ Start MariaDB Service in CentOS 7
  ![Secure MySQL in CentOS 7](http://www.tecmint.com/wp-content/uploads/2017/02/Secure-MySQL-in-CentOS-7.png) 
 ][11]
 
-Secure MySQL in CentOS 7
+CentOS 7中的MySQL安全配置
 
-5. After securing the database server, you may want to check certain MariaDB features such as: installed version, default program argument list, and also login to the MariaDB command shell as follows:
+5. 在配置完数据库的安全配置后，你可能想检查下MariaDB的特性，比如：版本号，默认参数列表，以及通过MariaDB命令行登录。如下所示：
 
 ```
 # mysql -V
@@ -98,36 +95,35 @@ Secure MySQL in CentOS 7
  ![Verify MySQL Version](http://www.tecmint.com/wp-content/uploads/2017/02/Verify-MySQL-Version.png) 
 ][12]
 
-Verify MySQL Version
+检查MySQL版本信息
 
-### Step 4: Learn MariaDB Administration
+### 第四步：学习MariaDB管理
 
-If you are new to MySQL/MariaDB, start off by going through these guides:
+如果你刚开始学习使用MySQL/MariaDB，可以通过以下指南学习：
 
 1.  [Learn MySQL / MariaDB for Beginners – Part 1][1]
 2.  [Learn MySQL / MariaDB for Beginners – Part 2][2]
 3.  [MySQL Basic Database Administration Commands – Part III][3]
 4.  [20 MySQL (Mysqladmin) Commands for Database Administration – Part IV][4]
 
-Also check out these following articles to fine tune your MySQL/MariaDB performance and use the tools to monitor the activity of your databases.
+同样查看下面的文档学习如何优化你的MySQL/MariaDB服务，并使用工具监控数据库的活动情况。
 
 1.  [15 Tips to Tune and Optimize Your MySQL/MariaDB Performance][5]
 2.  [4 Useful Tools to Monitor MySQL/MariaDB Database Activities][6]
 
-That’s it for now! In this simple tutorial, we showed you how to install MariaDB 10.1 stable version in various RHEL/CentOS and Fedora. Use the feedback form below to send us any questions or any thoughts concerning this guide.
+文章到此就结束了，本文内容比较浅显，文中主要展示了如何在RHEL/CentOS和Fefora操作系统中安装MariaDB 10.1稳定版。您可以通过下面的联系方式将您遇到的任何问题或者想法发给我们。
 
 --------------------------------------------------------------------------------
 
 作者简介：
-
-Aaron Kili is a Linux and F.O.S.S enthusiast, an upcoming Linux SysAdmin, web developer, and currently a content creator for TecMint who loves working with computers and strongly believes in sharing knowledge.
+Aaron Kill是Linux和开源软件的狂热爱好者，即将成为一名Linux系统管理员和网站开发工程师，现在是TecMint的内容编辑喜欢使用电脑工作并且热衷分享知识。
 
 --------------------------------------------------------------------------------
 
 via: http://www.tecmint.com/install-mariadb-in-centos-7/
 
 作者：[Aaron Kili][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[beyondworld](https://github.com/beyondworld)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
