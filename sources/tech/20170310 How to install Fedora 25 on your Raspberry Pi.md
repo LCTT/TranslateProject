@@ -1,3 +1,5 @@
+translating---geekpi
+
 How to install Fedora 25 on your Raspberry Pi
 ============================================================
 
