@@ -1,3 +1,5 @@
+正在校对 By GitFuture
+
 使用 Min 浏览器消除 web 噪音
 ============================================================
  ![Min Browser Muffles the Web's Noise](http://www.linuxinsider.com/ai/637666/browser-tabs.jpg) 
