@@ -45,7 +45,7 @@ AWS 控制台将如下所示：
 
 4\. 要继续操作，请选择以下选项：
 
-a\. **在经典实例向导中选择一个 AMI：selection - >我将使用 Red Hat Enterprise Linux 7.2（HVM），SSD 存储 **
+a\. 在经典实例向导中选择一个 AMI（Amazon Machine Image），然后选择使用 **Red Hat Enterprise Linux 7.2（HVM），SSD 存储**
 
 b\. 选择 “**t2.micro**” 作为实例详细信息。
 
@@ -65,7 +65,7 @@ g\. **选择<ruby>“查看并启动”<rt>Review and Launch</rt></ruby>按钮�
 
 h\. 如果所有的详情都无误，点击 <ruby>**“启动”**<rt>Launch</rt></ruby>按钮。
 
-i\. 单击“启动”按钮后，系统会像下面那样弹出一个窗口以创建“密钥对”：选择选项 “create a new key pair”，并给密钥对起个名字，然后下载下来。在使用 ssh 连接到服务器时，需要此密钥对。最后，单击<ruby>**“启动实例”**<rt>Launch Instance</rt></ruby>按钮。
+i\. 单击“启动”按钮后，系统会像下面那样弹出一个窗口以创建“密钥对”：选择选项<ruby>**“创建密钥对”**<rt>create a new key pair</rt></ruby>，并给密钥对起个名字，然后下载下来。在使用 ssh 连接到服务器时，需要此密钥对。最后，单击<ruby>**“启动实例”**<rt>Launch Instance</rt></ruby>按钮。
 
 [
  ![Create Key pair](https://www.howtoforge.com/images/how_to_setup_linux_server_with_aws/aws_key_pair.png) 
