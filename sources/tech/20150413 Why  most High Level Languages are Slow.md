@@ -1,4 +1,4 @@
-
+[kenxx](https://github.com/kenxx)
 
 [Why (most) High Level Languages are Slow][7]
 ============================================================
@@ -98,7 +98,7 @@ I typically blog graphics, languages, performance, and such. Feel free to hit me
 via: https://www.sebastiansylvan.com/post/why-most-high-level-languages-are-slow
 
 作者：[Sebastian Sylvan ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[kenxx](https://github.com/kenxx)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
