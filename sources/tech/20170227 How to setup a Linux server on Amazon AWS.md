@@ -1,4 +1,6 @@
-​How to setup a Linux server on Amazon AWS
+​translating---geekpi
+
+How to setup a Linux server on Amazon AWS
 ============================================================
 
 ### On this page
