@@ -1,3 +1,4 @@
+dongdongmian  翻译中
 How to take screenshots on Linux using Scrot
 ============================================================
 
