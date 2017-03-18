@@ -1,9 +1,9 @@
 如何在 Linux 中安装最新的 Python 3.6 版本
 ============================================================
 
-在这篇文章中，我将展示如何在 CentOS/RHEL 7、Debian 以及它的衍生版本比如 Ubuntu（最新的 LTS(Ubuntu 16.04) 版本已经安装了最新的 Python 版本）或 Linux Mint 上安装和使用 Python 3.x 。我们的重点是安装可用于命令行的核心语言工具。
+在这篇文章中，我将展示如何在 CentOS/RHEL 7、Debian 以及它的衍生版本比如 Ubuntu（最新的 Ubuntu 16.04 LTS 版本已经安装了最新的 Python 版本）或 Linux Mint 上安装和使用 Python 3.x 。我们的重点是安装可用于命令行的核心语言工具。
 
-然而，我们也会阐述如何安装 Python IDLE － 一个基于 GUI 的工具，它允许我们运行 Python 代码和创建独立函数。
+然后，我们也会阐述如何安装 Python IDLE － 一个基于 GUI 的工具，它允许我们运行 Python 代码和创建独立函数。
 
 ### 在 Linux 中安装 Python 3.6
 
@@ -33,8 +33,7 @@
 # tar xJf Python-3.6.0.tar.xz
 # cd Python-3.6.0
 # ./configure
-# make
-# make install
+# make && make install
 ```
 
 现在，放松一下，或者饿的话去吃个三明治，因为这可能需要花费一些时间。安装完成以后，使用 `which` 命令来查看主要二进制代码的位置：
@@ -60,7 +59,7 @@ quit()
 exit()
 ```
 
-然后按 Enter 键。
+然后按回车键。
 
 恭喜！Python 3.6 已经安装在你的系统上了。
 
@@ -83,7 +82,7 @@ Python IDLE 是一个基于 GUI 的 Python 工具。如果你想安装 Python ID
 
 在这篇文章中，我们阐述了如何从源代码安装最新的 Python 稳定版本。
 
-最后但不是不重要，如果你之前使用 Python 2，那么你可能需要看一下 [从 Python 2 到 Python 3 的官方文档][5]。这是一个可以读入 Python 2 代码，然后转化为有效的 Python 3 代码的程序。
+最后但不是不重要，如果你之前使用 Python 2，那么你可能需要看一下 [从 Python 2 迁移到 Python 3 的官方文档][5]。这是一个可以读入 Python 2 代码，然后转化为有效的 Python 3 代码的程序。
 
 你有任何关于这篇文章的问题或想法吗？请使用下面的评论栏与我们联系
 
@@ -99,7 +98,7 @@ via: http://www.tecmint.com/install-python-in-linux/
 
 作者：[Gabriel Cánepa][a]
 译者：[ucasFL](https://github.com/ucasFL)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
