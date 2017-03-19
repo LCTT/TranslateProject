@@ -1,29 +1,32 @@
 在 Linux 中修改 MySQL 或 MariaDB 的 Root 密码
 ============================================================
 
-如果你正在首次[安装 MySQL 或 MariaDB][1]，你很有可能会执行 mysql_secure_installation 脚本来进行基本设置以保证 MySQL 安装过程安全。
+如果你是第一次[安装 MySQL 或 MariaDB][1]，你可以执行 `mysql_secure_installation` 脚本来实现基本的安全设置。
 
 其中的一个设置是数据库的 root 密码 —— 该密码必须保密，并且只在必要的时候使用。如果你需要修改它（例如，当数据库管理员换了人 —— 或者被解雇了！）。
 
-**建议阅读：**[在 Linux 中恢复 MysQL 或 MariaDB 的 Root 密码][2]
+**建议阅读：**[在 Linux 中恢复 MySQL 或 MariaDB 的 Root 密码][2]
 
-这篇文章迟早会派上用场的。我们讲说明怎样来在 Linux 中修改 MysQL 或 MariaDB 数据库服务器的 root 密码。
+这篇文章迟早会派上用场的。我们讲说明怎样来在 Linux 中修改 MySQL 或 MariaDB 数据库服务器的 root 密码。
 
 尽管我们会在本文中使用 MariaDB 服务器，但本文中的用法说明对 MySQL 也有效。
-### 修改 MySQL 或 MariaDB 的 Root 密码
+
+### 修改 MySQL 或 MariaDB 的 root 密码
 
 你知道 root 密码，但是想要重置它，对于这样的情况，让我们首先确定 MariaDB 正在运行：
+
 ```
 ------------- CentOS/RHEL 7 and Fedora 22+ ------------- 
 # systemctl is-active mariadb
 ------------- CentOS/RHEL 6 and Fedora -------------
 # /etc/init.d/mysqld status
 ```
+
 [
  ![Check MySQL Status](http://www.tecmint.com/wp-content/uploads/2017/03/Check-MySQL-Status.png) 
 ][3]
 
-检查 MysQL 状态
+*检查 MysQL 状态*
 
 如果上面的命令返回中没有 `active` 这个关键词，那么该服务就是停止状态，你需要在进行下一步之前先启动数据库服务：
 
@@ -34,7 +37,7 @@
 # /etc/init.d/mysqld start
 ```
 
-接下来，我们将以 root 登陆进数据库服务器：
+接下来，我们将以 root 登录进数据库服务器：
 
 ```
 # mysql -u root -p
@@ -48,7 +51,7 @@ MariaDB [(none)]> UPDATE user SET password=PASSWORD('YourPasswordHere') WHERE Us
 MariaDB [(none)]> FLUSH PRIVILEGES;
 ```
 
-要验证，请输入以下命令退出当前 MariaDB 会话。
+要验证是否操作成功，请输入以下命令退出当前 MariaDB 会话。
 
 ```
 MariaDB [(none)]> exit;
@@ -60,7 +63,7 @@ MariaDB [(none)]> exit;
  ![Change MySQL/MariaDB Root Password](http://www.tecmint.com/wp-content/uploads/2017/03/Change-MySQL-Root-Password.png) 
 ][4]
 
-修改 MysQL/MariaDB Root 密码
+*修改 MysQL/MariaDB Root 密码*
 
 
 ##### 小结
@@ -81,7 +84,7 @@ via: http://www.tecmint.com/change-mysql-mariadb-root-password/
 
 作者：[Gabriel Cánepa][a]
 译者：[GOLinux](https://github.com/GOLinux)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
