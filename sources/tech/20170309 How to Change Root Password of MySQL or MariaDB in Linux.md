@@ -1,3 +1,4 @@
+Translating by GOLinux!
 How to Change Root Password of MySQL or MariaDB in Linux
 ============================================================
 
