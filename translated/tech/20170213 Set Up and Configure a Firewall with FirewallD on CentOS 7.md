@@ -4,27 +4,23 @@
 
  ![](https://www.rosehosting.com/blog/wp-content/uploads/2017/02/set-up-and-configure-a-firewall-with-firewalld-on-centos-7.jpg)
 
-
-
-FirewallD 是 CentOS 7 服务器上的一个默认可用的防火墙管理工具。基本上，它是 iptables 的封装，有图形配置工具 firewall-config 和命令行工具 firewall-cmd。使用 iptables 服务每次改动都要求刷新旧规则，并且从 `/etc/sysconfig/iptables` 读取新规则，然而 firewalld 仅仅会应用改动了的不同部分。
+FirewallD 是 CentOS 7 服务器上的一个默认可用的防火墙管理工具。基本上，它是 iptables 的封装，有图形配置工具 firewall-config 和命令行工具 firewall-cmd。使用 iptables 服务，每次改动都要求刷新旧规则，并且从 `/etc/sysconfig/iptables` 读取新规则，然而 firewalld 仅仅会应用改动了的不同部分。
 
 ### FirewallD zones
-
 
 FirewallD 使用 services 和 zones 代替 iptables 的 rules 和 chains 。
 
 默认情况下，有以下的 zones 可用：
 
-
-*   drop – 丢弃所有传入的网络数据包并且无回应，只有传出网络连接可用。
-*   block — 拒绝所有传入网络数据包并回应一条主机禁止 ICMP 的消息，只有传出网络连接可用。
-*   public — 只接受被选择的传入网络连接，用于公共区域。
-*   external — 用于启用伪装的外部网络，只接受被选择的传入网络连接。
-*   dmz — DMZ 隔离区，外部受限地访问内部网络，只接受被选择的传入网络连接。
-*   work — 对于处在你家庭区域内的计算机，只接受被选择的传入网络连接。
-*   home — 对于处在你家庭区域内的计算机，只接受被选择的传入网络连接。
-*   internal — 对于处在你内部网络的计算机，只接受被选择的传入网络连接。
-*   trusted — 所有网络连接都接受。
+*   **drop** – 丢弃所有传入的网络数据包并且无回应，只有传出网络连接可用。
+*   **block** — 拒绝所有传入网络数据包并回应一条主机禁止 ICMP 的消息，只有传出网络连接可用。
+*   **public** — 只接受被选择的传入网络连接，用于公共区域。
+*   **external** — 用于启用伪装的外部网络，只接受被选择的传入网络连接。
+*   **dmz** — DMZ 隔离区，外部受限地访问内部网络，只接受被选择的传入网络连接。
+*   **work** — 对于处在你家庭区域内的计算机，只接受被选择的传入网络连接。
+*   **home** — 对于处在你家庭区域内的计算机，只接受被选择的传入网络连接。
+*   **internal** — 对于处在你内部网络的计算机，只接受被选择的传入网络连接。
+*   **trusted** — 所有网络连接都接受。
 
 列出所有可用的 zones ：
 ```
@@ -145,7 +141,7 @@ via: https://www.rosehosting.com/blog/set-up-and-configure-a-firewall-with-firew
 
 作者：[rosehosting.com][a]
 译者：[Locez](https://github.com/locez)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
