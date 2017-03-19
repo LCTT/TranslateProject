@@ -1,3 +1,4 @@
+【翻译中】
 How Linux Helped Me Become an Empowered Computer User
 ============================================================
 
