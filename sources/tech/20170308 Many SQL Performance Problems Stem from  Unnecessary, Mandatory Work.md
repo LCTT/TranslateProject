@@ -1,3 +1,4 @@
+申请翻译
 Many SQL Performance Problems Stem from “Unnecessary, Mandatory Work”
 ============================================================ 
 
