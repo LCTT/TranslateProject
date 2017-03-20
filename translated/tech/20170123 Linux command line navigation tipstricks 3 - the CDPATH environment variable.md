@@ -1,6 +1,6 @@
 [HaitaoBio](https://github.com/HaitaoBio) translating...
 
-Linux 命令行贴士 3 - 环境变量 CDPATH
+Linux 命令行工具使用小贴士及技巧 3 - 环境变量 CDPATH
 ============================================================
 
 ### 文章导航
