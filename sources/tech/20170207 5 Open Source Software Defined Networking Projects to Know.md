@@ -1,3 +1,4 @@
+translating by flankershen
 5 Open Source Software Defined Networking Projects to Know
 ============================================================
 
@@ -53,7 +54,7 @@ via: https://www.linux.com/news/open-cloud-report/2016/5-open-source-software-de
 [3]:https://www.idc.com/getdoc.jsp?containerId=prUS41005016
 [4]:http://www.idc.com/getdoc.jsp?containerId=PRF003513
 [5]:https://www.linux.com/blog/linux-foundation-issues-2016-guide-open-source-cloud-projects
-[6]:http://ctt.marketwire.com/?release=11G120876-001&id=10172077&type=0&url=http%3A%2F%2Fgo.linuxfoundation.org%2Frd-open-cloud-report-2016-pr
+[6]:http://ctt.marketwire.com/?release=11G120876-001&amp;id=10172077&amp;type=0&amp;url=http%3A%2F%2Fgo.linuxfoundation.org%2Frd-open-cloud-report-2016-pr
 [7]:http://go.linuxfoundation.org/l/6342/2016-10-31/3krbjr
 [8]:http://onosproject.org/
 [9]:https://github.com/opennetworkinglab/onos
