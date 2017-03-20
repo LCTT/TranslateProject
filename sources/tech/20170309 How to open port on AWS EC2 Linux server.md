@@ -1,3 +1,5 @@
+translating--geekpi
+
 How to open port on AWS EC2 Linux server
 ============================================================
 
