@@ -1,3 +1,4 @@
+#rusking translating 
 Join CentOS 7 Desktop to Samba4 AD as a Domain Member – Part 9
 ============================================================
 

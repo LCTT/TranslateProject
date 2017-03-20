@@ -1,4 +1,4 @@
-
+ucasFL translating 
 # [10 Best Linux Terminal Emulators For Ubuntu And Fedora][12]
 
 [
@@ -35,7 +35,7 @@ sudo apt-get install terminator
 The specialities of **Tilda** are that it does not behave like a normal window instead it can be pulled up and down from the top of the screen with a special hotkey. Additionally, Tilda is highly configurable. It is possible to configure the hotkeys for keybindings, change the appearance and many options that affect the behaviour of Tilda.
 
 Tilda is available for Ubuntu and Fedora through the package manager, also you can check its GitHub repository: [https://github.com/lanoxx/tilda][14][
- 
+
  ![tilda linux terminal](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/tilda-linux-terminal_orig.png) 
 ][5]Also read - [Terminator Emulator With Multiple Terminals In One Window][1]
 
@@ -155,5 +155,5 @@ via: http://www.linuxandubuntu.com/home/10-best-linux-terminals-for-ubuntu-and-f
 [13]:http://www.linuxandubuntu.com/home/10-best-linux-terminals-for-ubuntu-and-fedora#comments
 [14]:https://github.com/lanoxx/tilda
 [15]:http://guake-project.org/
-[16]:http://roxterm.sourceforge.net/index.php?page=index&lang=en
+[16]:http://roxterm.sourceforge.net/index.php?page=index&amp;lang=en
 [17]:http://www.eterm.org/
