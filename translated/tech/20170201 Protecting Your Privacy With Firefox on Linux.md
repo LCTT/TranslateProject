@@ -9,8 +9,6 @@
 
 ## 火狐设置
 
- ![火狐隐私浏览](linuxconfig.orgimagesprivate-browsing-firefox-linux.jpg) 
-
 火狐里有几个你能设定的设置，能更好地保护你的隐私。这些设置唾手可得，能帮你控制那些在你浏览的时候分享的数据。
 
 ### 健康报告
@@ -23,9 +21,7 @@
 
 新版的火狐浏览器默认使用雅虎搜索引擎。一些发行版更改设置，替代使用的是谷歌。两个方法都不理想。火狐有默认使用 DuckDuckGo 的选项。
 
-
- ![在火狐中使用 DuckDuckGo ](httpslinuxconfig.orgimagesff-ddg.jpg) 
-center
+ ![在火狐中使用 DuckDuckGo ](https://linuxconfig.org/images/ff-ddg.jpg?58cf18fd) 
 
 为了启用 DuckDuckGo，你得打开火狐菜单点击<ruby>“选项”<rt>Preferences</rt></ruby>。直接来到侧边栏的<ruby>“搜索”<rt>Search</rt></ruby>选项卡。然后，用<ruby>“默认搜索引擎”<rt>Default Search Engine</rt></ruby>的下拉菜单来选择 DuckDuckGo 。
 
@@ -33,7 +29,7 @@ center
 
 这个功能并不完美，但它确实向站点发送了一个信号，告诉它们不要使用分析工具来记录你的活动。这些网页或许会遵从，会许不会。但是，最好启用请勿跟踪，也许它们会遵从呢。
 
- ![启用火狐中的请勿跟踪](httpslinuxconfig.orgimagesff-tracking.jpg) 
+ ![启用火狐中的请勿跟踪](https://linuxconfig.org/images/ff-tracking.jpg?58cf18fc) 
 
 再次打开火狐的菜单，点击<ruby>“选项”<rt>Preferences</rt></ruby>，然后是<ruby>“隐私”<rt>Privacy</rt></ruby>。页面的最上面有一个<ruby>“跟踪”<rt>Tracking</rt></ruby>部分。点击那一行写着<ruby>“您还可以管理您的‘请勿跟踪’设置”<rt>You can also manage your Do Not Track settings</rt></ruby>的链接。会出现一个有复选框的弹出窗口，那里允许你启用“请勿跟踪”设置。
 
@@ -47,12 +43,12 @@ center
 
 你将会看到一个包含结果的新表格。找一下名为 extensions.pocket.enabled 的设置。当你找到它的时候，双击使其转变为“否”。你也能在这儿编辑 Pocket 的其他相关设置。不过没什么必要。注意不要编辑那些跟 Pocket 扩展不直接相关的任何东西。
 
- ![禁用火狐的 Pocket](httpslinuxconfig.orgimagesff-pocket.jpg) 
+ ![禁用火狐的 Pocket](https://linuxconfig.org/images/ff-pocket.jpg?58cf18fd) 
 
 
 ## <ruby>附加组件<rt>Add-ons</rt></ruby>
 
- ![安全化火狐的附加组件](https://linuxconfig.orgimagesff-addons.jpg) 
+ ![安全化火狐的附加组件](https://linuxconfig.org/images/ff-addons.jpg?58cf18fd) 
 
 火狐最有效地保护你隐私和安全的方式来自附加组件。火狐有大量的附加组件库，其中很多是免费、开源的。在这篇指导中着重提到的附加组件，在使浏览器更安全方面是名列前茅的。
 
@@ -77,11 +73,11 @@ center
 
 阻止 JavaScript 是有点争议， JavaScript 虽说驱动了那么多的网站，但还是臭名昭著，因为 JavaScript 成为侵略隐私和攻击的媒介。NoScript 是应对 JavaScript 的绝佳方案。
 
- ![向 NoScript 的白名单添加网页](https://linuxconfig.org/images/ff-noscript.jpg) 
+ ![向 NoScript 的白名单添加网页](https://linuxconfig.org/images/ff-noscript.jpg?58cf18fc) 
 
 NoScript 是一个 JavaScript 的白名单，它通常会屏蔽 JavaScript，除非该站点被添加进白名单中。可以通过插件的“选项”菜单，事先将一个站点加入白名单，或者通过在页面上点击 NoScript 图标的方式添加。
 
- ![添加你所在的网页到 NoScript 的白名单中](https://linuxconfig.org/images/ff-noscript2.jpg) 
+ ![添加你所在的网页到 NoScript 的白名单中](https://linuxconfig.org/images/ff-noscript2.jpg?58cf18fd) 
 
 通过火狐附加组件仓库可以安装 NoScript `https://addons.mozilla.org/en-US/firefox/addon/noscript/`
 如果网页提示不支持你使用的火狐版本，点<ruby>“无论如何下载”<rt>Download Anyway</rt></ruby>。这已经在 Firefox 51 上测试有效。
@@ -100,7 +96,7 @@ Random Agent Spoofer 能改变火狐浏览器的签名，让浏览器看起来�
 你能通过火狐附加插件仓库添加 Random Agent Spoofer。`https://addons.mozilla.org/en-us/firefox/addon/random-agent-spoofer/`（LCTT 译注：对应的中文页面是`https://addons.mozilla.org/zh-CN/firefox/addon/random-agent-spoofer/`）。像其他附加组件那样，页面或许会提示它不兼容最新版的火狐。再说一次，那并不是真的。
 
 
- ![在火狐上使用Random Agent Spoofer ](https://linuxconfig.org/images/ff-random-agent.jpg) 
+ ![在火狐上使用Random Agent Spoofer ](https://linuxconfig.org/images/ff-random-agent.jpg?58cf18fc) 
 
 你可以通过点击火狐菜单栏上的图标来使用 Random Agent Spoofer。点开后将会出现一个下拉菜单，有不同模拟的浏览器选项。最好的选项之一是选择"Random Desktop" 和任意的改变时间。这样，就不会有绝对的模式来跟踪，也保证了你只能获得网页的桌面版本。
 
