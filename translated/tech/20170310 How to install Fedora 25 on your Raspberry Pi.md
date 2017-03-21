@@ -45,7 +45,7 @@
 **growpart /dev/mmcblk0 4
 resize2fs /dev/mmcblk0p4**
 
-注意：在 Fedora 中，** growpart** 命令由 **cloud-utils-growpart.noarch** 这个 RPM 提供。
+注意：在 Fedora 中，**growpart** 命令由 **cloud-utils-growpart.noarch** 这个 RPM 提供。
 
 5\.文件系统更新后，您需要将 **vc4** 模块列入黑名单。[更多有关此 bug 的信息。][10]
 
@@ -83,7 +83,7 @@ resize2fs /dev/mmcblk0p4**
 
 按照我在这里分享的步骤操作，GNOME、KDE、LXDE 和 minimal 都运行得很好。考虑到 KDE 和 GNOME 会占用更多资源，我会推荐想要在树莓派上使用 Fedora 25 的人 使用 LXDE 和 Minimal。如果你是一位系统管理员，想要一台廉价的 SELinux 支持的服务器来满足你的安全考虑，而且只是想要使用树莓派作为你的服务器，开放 22 端口以及 vi 可用，那就用 Minimal 版本。对于开发人员或刚开始学习 Linux 的人来说，LXDE 可能是更好的方式，因为它可以快速方便地访问所有基于 GUI 的工具，如浏览器、IDE 和你可能需要的客户端。
 
- ！[LXES on Raspberry Pi 3]（https://opensource.com/sites/default/files/lxde_on_rpi.png“LXDE on Raspberry Pi 3”）
+ ![LXES on Raspberry Pi ](https://opensource.com/sites/default/files/lxde_on_rpi.png "LXDE on Raspberry Pi 3")
 
 *Raspberry Pi 3 上的 Fedora 25 workstation、LXDE。*
 
