@@ -1,42 +1,41 @@
-
-在 CentOS 7 上利用 FirewallD 设置和配置防火墙
+CentOS 7 上的 FirewallD 简明指南
 ============================================================
 
- ![](https://www.rosehosting.com/blog/wp-content/uploads/2017/02/set-up-and-configure-a-firewall-with-firewalld-on-centos-7.jpg)
+![](https://www.rosehosting.com/blog/wp-content/uploads/2017/02/set-up-and-configure-a-firewall-with-firewalld-on-centos-7.jpg)
 
-FirewallD 是 CentOS 7 服务器上的一个默认可用的防火墙管理工具。基本上，它是 iptables 的封装，有图形配置工具 firewall-config 和命令行工具 firewall-cmd。使用 iptables 服务，每次改动都要求刷新旧规则，并且从 `/etc/sysconfig/iptables` 读取新规则，然而 firewalld 只应用改动了的不同部分。
+FirewallD 是 CentOS 7 服务器上默认可用的防火墙管理工具。基本上，它是 iptables 的封装，有图形配置工具 firewall-config 和命令行工具 `firewall-cmd`。使用 iptables 服务，每次改动都要求刷新旧规则，并且从 `/etc/sysconfig/iptables` 读取新规则，然而 firewalld 只应用改动了的不同部分。
 
-### FirewallD zones
+### FirewallD 的区域（zone）
 
-FirewallD 使用 services 和 zones 代替 iptables 的 rules 和 chains 。
+FirewallD 使用服务（service） 和区域（zone）来代替 iptables 的规则（rule）和链（chain）。
 
-默认情况下，有以下的 zones 可用：
+默认情况下，有以下的区域（zone）可用：
 
 *   **drop** – 丢弃所有传入的网络数据包并且无回应，只有传出网络连接可用。
-*   **block** — 拒绝所有传入网络数据包并回应一条主机禁止 ICMP 的消息，只有传出网络连接可用。
+*   **block** — 拒绝所有传入网络数据包并回应一条主机禁止的 ICMP 消息，只有传出网络连接可用。
 *   **public** — 只接受被选择的传入网络连接，用于公共区域。
-*   **external** — 用于启用伪装的外部网络，只接受被选择的传入网络连接。
-*   **dmz** — DMZ 隔离区，外部受限地访问内部网络，只接受被选择的传入网络连接。
+*   **external** — 用于启用了地址伪装的外部网络，只接受选定的传入网络连接。
+*   **dmz** — DMZ 隔离区，外部受限地访问内部网络，只接受选定的传入网络连接。
 *   **work** — 对于处在你工作区域内的计算机，只接受被选择的传入网络连接。
 *   **home** — 对于处在你家庭区域内的计算机，只接受被选择的传入网络连接。
 *   **internal** — 对于处在你内部网络的计算机，只接受被选择的传入网络连接。
 *   **trusted** — 所有网络连接都接受。
 
-要列出所有可用的 zones，运行：
+要列出所有可用的区域，运行：
 
 ```
 # firewall-cmd --get-zones
 work drop internal external trusted home dmz public block
 ```
 
-列出默认的 zone ：
+列出默认的区域 ：
 
 ```
 # firewall-cmd --get-default-zone
 public
 ```
 
-改变默认的 zone ：
+改变默认的区域 ：
 
 ```
 # firewall-cmd --set-default-zone=dmz
@@ -46,7 +45,7 @@ dmz
 
 ### FirewallD 服务
 
-FirewallD 服务使用 XML 配置文件，为 firewalld 服务入口信息。
+FirewallD 服务使用 XML 配置文件，记录了 firewalld 服务信息。
 
 列出所有可用的服务：
 
@@ -59,7 +58,7 @@ XML 配置文件存储在 `/usr/lib/firewalld/services/` 和 `/etc/firewalld/
 
 ### 用 FirewallD 配置你的防火墙
 
-作为一个例子，假设你正在运行一个 web 服务，端口为 7022 的 SSH 服务和邮件服务，你可以利用 FirewallD 这样配置你的 [RoseHosting VPS][6]:
+作为一个例子，假设你正在运行一个 web 服务器，SSH 服务端口为 7022 ，以及邮件服务，你可以利用 FirewallD 这样配置你的服务器:
 
 首先设置默认区为 dmz。
 
@@ -70,19 +69,20 @@ dmz
 ```
 
 为 dmz 区添加持久性的 HTTP 和 HTTPS 规则：
+
 ```
 # firewall-cmd --zone=dmz --add-service=http --permanent
 # firewall-cmd --zone=dmz --add-service=https --permanent
 ```
 
-开启端口 25 (SMTP) 和端口 465 (SMTPS) :
+开启端口 25 (SMTP) 和端口 465 (SMTPS) ：
 
 ```
 firewall-cmd --zone=dmz --add-service=smtp --permanent
 firewall-cmd --zone=dmz --add-service=smtps --permanent
 ```
 
-开启 IMAP， IMAPS， POP3 和 POP3S 端口：
+开启 IMAP、IMAPS、POP3 和 POP3S 端口：
 
 ```
 firewall-cmd --zone=dmz --add-service=imap --permanent
@@ -91,14 +91,14 @@ firewall-cmd --zone=dmz --add-service=pop3 --permanent
 firewall-cmd --zone=dmz --add-service=pop3s --permanent
 ```
 
-因为将 SSH 端口改到 7022，所以要移除 ssh 服务（端口 22），开启端口 7022
+因为将 SSH 端口改到了 7022，所以要移除 ssh 服务（端口 22），开启端口 7022：
 
 ```
 firewall-cmd --remove-service=ssh --permanent
 firewall-cmd --add-port=7022/tcp --permanent
 ```
 
-要实现这些更改，我们需要重新加载防火墙：
+要应用这些更改，我们需要重新加载防火墙：
 
 ```
 firewall-cmd --reload
@@ -106,9 +106,8 @@ firewall-cmd --reload
 
 最后可以列出这些规则：
 
-### firewall-cmd –list-all
-
 ```
+# firewall-cmd –list-all
 dmz
 target: default
 icmp-block-inversion: no
