@@ -1,3 +1,5 @@
+translating---geekpi
+
 Kgif – A Simple Shell Script to Create a Gif File from Active Window
 ============================================================
 
