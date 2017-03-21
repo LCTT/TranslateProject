@@ -7,14 +7,14 @@
 
 
 *   *   [回顾缓存消耗问题Cache costs review][1]
-    *   [Why C# introduces cache misses][2]
+    *   [为什么 C# 存在缓存未命中问题Why C# introduces cache misses][2]
     *   [垃圾回收Garbage Collection][3]
 *   [结语Closing remarks][5]
 
 
 In the last month or two I’ve had basically the same conversation half a dozen times, both online and in real life, so I figured I’d just write up a blog post that I can refer to in the future.
 
-上一两个月中，我不下六次的和线上线下的朋友讨论了这个话题，所以我干脆直接把它写在博客中，以便以后查阅。
+在近两个个月中，我多次的和线上线下的朋友讨论了这个话题，所以我干脆直接把它写在博客中，以便以后查阅。
 
 The reason most high level languages are slow is usually because of two reasons:
 
@@ -28,19 +28,19 @@ The reason most high level languages are slow is usually because of two reasons:
 
 But really, both of these boil down to a single reason: the language heavily encourages too many allocations.
 
-但事实上，这两个原因可以归因于：高级语言强烈地鼓励去使用很多的内存。
+但事实上，这两个原因可以归因于：高级语言强烈地鼓励编程人员分配很多的内存。
 
 First, I’ll just state up front that for all of this I’m talking mostly about client-side applications. If you’re spending 99.9% of your time waiting on the network then it probably doesn’t matter how slow your language is – optimizing network is your main concern. I’m talking about applications where local execution speed is important.
 
-首先，以下内容大部分是关于客户端应用的。如果你花费了 99.9% 的时间去等待网络，那么这很可能不是拖慢语言运行效率的原因——优化网络是优先考虑的问题。在本文中程序本地执行速度才是重要的。
+首先，下文内容主要讨论客户端应用。如果你的程序有 99.9% 的时间都在等待网络，那么这很可能不是拖慢语言运行效率的原因——优先考虑的问题当然是优化网络。在本文中，我们主要讨论程序在本地执行的速度。
 
 I’m going to pick on C# as the specific example here for two reasons: the first is that it’s the high level language I use most often these days, and because if I used Java I’d get a bunch of C# fans telling me how it has value types and therefore doesn’t have these issues (this is wrong).
 
-我将选用 C# 语言作为本文参考语言，其原因有二：首先这是个最近我常用的高级语言；其次如果我使用 Java 语言，许多使用 C# 的朋友会告诉我 C# 不会有这些问题，因为它有值类型（但这是错误的）。
+我将选用 C# 语言作为本文的参考语言，其原因有二：首先它是我常用的高级语言；其次如果我使用 Java 语言，许多使用 C# 的朋友会告诉我 C# 不会有这些问题，因为它有值类型（但这是错误的）。
 
 In the following I will be talking about what happens when you write idiomatic code. When you work “with the grain” of the language. When you write code in the style of the standard libraries and tutorials. I’m not very interested in ugly workarounds as “proof” that there’s no problem. Yes, you can sometimes fight the language to avoid a particular issue, but that doesn’t make the language unproblematic.
 
-接下来我将会讨论，出于编程习惯编写的代码、使用普遍编程方法（with the grain）的代码或使用库或教程中提到的常用代码来编写程序时会发生什么。我对编程时使用丑陋的解决方法来“证明”语言本身没问题这事没有兴趣，当然你可以和语言抗争来避免该语言独有的问题，但这并不能说明语言本身是没有问题的。
+接下来我将会讨论，出于编程习惯编写的代码、使用普遍编程方法（with the grain）的代码或使用库或教程中提到的常用代码来编写程序时会发生什么。我对那些使用难搞的办法来解决语言自身毛病以“证明”语言没毛病这事没兴趣，当然你可以和语言抗争来避免它的毛病，但这并不能说明语言本身是没有问题的。
 
 ### Cache costs review
 
@@ -54,24 +54,24 @@ First, let’s review the importance of playing well with the cache. Here’s a 
 
 The latency for this particular CPU to get to memory is about 230 cycles, meanwhile the cost of reading data from L1 is 4 cycles. The key takeaway here is that doing the wrong thing for the cache can make code ~50x slower. In fact, it may be even worse than that – modern CPUs can often do multiple things at once so you could be loading stuff from L1 while operating on stuff that’s already in registers, thus hiding the L1 load cost partially or completely.
 
-内存的潜在因素对于这款 CPU 要读取内存的数据需要近 230 个运算周期，同时需要从 L1 缓冲区消耗 4 个运算周期来读取数据。此处的关键是当错误的去使用缓存可导致运行速度拖慢近 50 倍。事实上，这并不是最糟糕的——在现代的 CPU 中它们都能同时地做多种操作，所以当你一边加载 L1 缓冲区的内容的同时这个内容已经进入到了寄存器，因此数据从 L1 缓冲区加载这个过程的性能消耗被完整的隐藏了起来。
+针对这款 CPU 的内存因素，读取内存的数据需要近 230 个运算周期，同时需要消耗 L1 缓冲区的 4 个运算周期。因此错误的去使用缓存可导致运行速度拖慢近 50 倍。还好这并不是最糟糕的——在现代 CPU 中它们能同时地做多种操作，所以当你加载 L1 缓冲区内容的同时这个内容已经进入到了寄存器，因此数据从 L1 缓冲区加载这个过程的性能消耗就被完整的隐藏了起来。
 
 Without exaggerating we can say that aside from making reasonable algorithm choices, cache misses are the main thing you need to worry about for performance. Once you’re accessing data efficiently you can worry about fine tuning the actual operations you do. In comparison to cache misses, minor inefficiencies just don’t matter much.
 
-撇开选择合理的算法不谈，不夸张地讲，在性能优化中你要考虑的最主要因素其实是缓存未命中。当你能够有效的访问一个数据时候，你才可以调整你的每个具体的操作。与缓存未命中问题相比，次要的低效问题对效率并没有什么过多的影响。
+撇开选择合理的算法不谈，不夸张地讲，在性能优化中你要考虑的最主要因素其实是缓存未命中。当你能够有效的访问一个数据时候，你才可以调整你的每个具体的操作。与缓存未命中的问题相比，那些次要的低效问题对运行速度并没有什么过多的影响。
 
 This is actually good news for language designers! You don’t  _have_  to build the most efficient compiler on the planet, and you totally can get away with some extra overhead here and there for your abstractions (e.g. array bounds checking), all you need to do is make sure that your design makes it easy to write code that accesses data efficiently and programs in your language won’t have any problems running at speeds that are competitive with C.
 
-这对于编程语言的设计者来说是一个好消息！你都_不需要_去建造一个最高效的编译器，你可以完全摆脱一些额外的开销（比如：数组边界检查），你只需要专注怎么设计能使你的语言访问数据更高效、又不用担心与 C 语言代码比较运行速度。
+这对于编程语言的设计者来说是一个好消息！你都_不必_去编写一个更高效的编译器，你可以完全摆脱一些额外的开销（比如：数组边界检查），你只需要专注怎么设计能使你的语言访问数据更高效，也不用担心与 C 语言代码比较运行速度。
 
 
 ### Why C# introduces cache misses
 
-### 为什么介绍 C# 的缓存未命中问题
+### 为什么 C# 存在缓存未命中问题
 
 To put it bluntly, C# is a language that simply isn’t designed to run efficiently with modern cache realities in mind. Again, I’m now talking about the limitations of the design and the “pressure” it puts on the programmer to do things in inefficient ways. Many of these things have theoretical workarounds that you could do at great inconvenience. I’m talking about idiomatic code, what the language “wants” you to do.
 
-坦率地讲，C# 在设计时就没打算在现代缓存中实现高效运行。我又一次提到程序语言设计的局限性以及其带给程序员无法编写高效的代码的“压力”。大部分的理论解决方法都非常的不便。我是在说那些编程语言“希望”你这样编写的习惯性代码。
+坦率地讲 C# 在设计时就没打算在现代缓存中实现高效运行。我又一次提到程序语言设计的局限性以及其带给程序员无法编写高效的代码的“压力”。大部分的理论解决方法都非常的不便。我是在说那些编程语言“希望”你这样编写的习惯性代码。
 
 The basic problem with C# is that it has very poor support for value-based programming. Yes, it has structs which are values that are stored “embedded” where they are declared (e.g. on the stack, or inside another object). But there are a several big issues with structs that make them more of a band-aid than a solution.
 
