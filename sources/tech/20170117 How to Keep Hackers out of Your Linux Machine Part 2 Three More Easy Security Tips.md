@@ -1,3 +1,5 @@
+...being translated by mec2cod...
+
 How to Keep Hackers out of Your Linux Machine Part 2: Three More Easy Security Tips
 ============================================================
 
