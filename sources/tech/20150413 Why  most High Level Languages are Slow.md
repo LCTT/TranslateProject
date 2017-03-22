@@ -75,11 +75,13 @@ To put it bluntly, C# is a language that simply isn’t designed to run efficien
 
 The basic problem with C# is that it has very poor support for value-based programming. Yes, it has structs which are values that are stored “embedded” where they are declared (e.g. on the stack, or inside another object). But there are a several big issues with structs that make them more of a band-aid than a solution.
 
-C# 最基本的问题是对于 `value-based` 低下的支持性
+C# 最基本的问题是对基础值类型（value-base）低下的支持性。其大部分的数据结构都是“内置”在语言内定义的（例如：栈，或其他内置对象）。但这些具有帮助性的内置结构体恰恰好会造成一些大问题。
 
 *   You have to declare your data types as struct up front – which means that if you  _ever_  need this type to exist as a heap allocation then  _all_  of them need to be heap allocations. You could make some kind of class-wrapper for your struct and forward all the members but it’s pretty painful. It would be better if classes and structs were declared the same way and could be used in both ways on a case-by-case basis. So when something can live on the stack you declare it as a value, and when it needs to be on the heap you declare it as an object. This is how C++ works, for example. You’re not encouraged to make everything into an object-type just because there’s a few things here and there that need them on the heap.
+*   你得把自己定义的结构体类型在最先声明——这意味着你如果需要用到这个类型作为堆分配，那么所有的结构体都会被堆分配。你也可以使用一些类包装器来打包你的结构体和其中的成员变量，但这十分的痛苦。如果类和结构体可以相同的方式声明，并且可根据具体情况来使用，这将是更好的。当数据可以作为值地存储在自定义的栈中，当这个数据需要被对分配时你就可以将其定义为一个对象，比如 C++ 就是这样工作的。因为只有少数的内容需要被堆分配，所以我们不鼓励所有的内容都被定义为对象类型。
 
 *   _Referencing_  values is extremely limited. You can pass values by reference to functions, but that’s about it. You can’t just grab a reference to an element in a List<int>, you have to store both a reference to the list and an index. You can’t grab a pointer to a stack-allocated value, or a value stored inside an object (or value). You can only copy them, unless you’re passing them to a function (by ref). This is all understandable, by the way. If type safety is a priority, it’s pretty difficult (though not imposible) to support flexible referencing of values while also guaranteeing type safety. The rationale behind these restrictions don’t change the fact that the restrictions are there, though.</int>
+*   _引用_ 值被苛刻的限制。你可以将一个引用值传给函数，但只能这样。你不能直接引用 `List<int>` 中的元素，你必须先把所有的引用和索引全部存储下来。你不能直接取得指向栈、对象中的变量（或其他变量）的指针。你只能把他们复制一份，除了将他们传给一个函数（使用引用的方式）。当然这也是可以理解的。如果类型安全是一个先驱条件，灵活的引用变量和保证类型安全这两项要同时支持太难了（虽然不可能）。
 
 *   [Fixed sized buffers][6] don’t support custom types and also requires you to use an unsafe keyword.
 
