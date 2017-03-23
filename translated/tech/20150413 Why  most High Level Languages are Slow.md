@@ -84,11 +84,7 @@ C# 最基本的问题是对基础值类型（value-base）低下的支持性。�
 *   _引用_ 值被苛刻的限制。你可以将一个引用值传给函数，但只能这样。你不能直接引用 `List<int>` 中的元素，你必须先把所有的引用和索引全部存储下来。你不能直接取得指向栈、对象中的变量（或其他变量）的指针。你只能把他们复制一份，除了将他们传给一个函数（使用引用的方式）。当然这也是可以理解的。如果类型安全是一个先驱条件，灵活的引用变量和保证类型安全这两项要同时支持太难了（虽然这不可能）。
 
 *   [Fixed sized buffers][6] don’t support custom types and also requires you to use an unsafe keyword.
-<<<<<<< HEAD:sources/tech/20150413 Why  most High Level Languages are Slow.md
 *   [固定大小的缓冲区][6] 不支持自定义类型，而且还必须使用 `unsafe` 关键字。
-=======
-*   
->>>>>>> 4235a30e9078deb2baf0e55926b2b1ad5c143b65:translated/tech/20150413 Why  most High Level Languages are Slow.md
 
 *   Limited “array slice” functionality. There’s an ArraySegment class, but it’s not really used by anyone, which means that in order to pass a range of elements from an array you have to create an IEnumerable, which means allocation (boxing). Even if the APIs accepted ArraySegment parameters it’s still not good enough – you can only use it for normal arrays, not for List<t>, not for [stack-allocated array][4]s, etc.</t>
 *   有限的“数组切片”功能。虽然有提供 `ArraySegment` 类，但并没有人会使用它，这意味着如果只需要传递数组的一部分，你必须去创建一个 `IEnumerable` 对象，也就意味着要分配大小（包装）。就算接口接受 `ArraySegment` 对象作为参数，也是不够的——你只能用普通数组，而不能用 `List<T>`，也不能用 [栈数组][4] 等等。
