@@ -1,3 +1,4 @@
+#rusking translating
 Why do you use Linux and open source software?
 ============================================================
 

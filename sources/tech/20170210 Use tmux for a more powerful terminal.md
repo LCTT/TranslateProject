@@ -1,3 +1,5 @@
+translating by Flowsnow
+
 # [Use tmux for a more powerful terminal][3]
 
 
@@ -45,7 +47,7 @@ Stretch your terminal window to make it much larger. Now let’s experiment with
 *   Hit  _Ctrl+b, “_  to split the current single pane horizontally. Now you have two command line panes in the window, one on top and one on bottom. Notice that the new bottom pane is your active pane.
 *   Hit  _Ctrl+b, %_  to split the current pane vertically. Now you have three command line panes in the window. The new bottom right pane is your active pane.
 
- ![tmux window with three panes](https://cdn.fedoramagazine.org/wp-content/uploads/2017/01/Screenshot-from-2017-02-04-12-54-59.png) 
+    ![tmux window with three panes](https://cdn.fedoramagazine.org/wp-content/uploads/2017/01/Screenshot-from-2017-02-04-12-54-59.png)
 
 Notice the highlighted border around your current pane. To navigate around panes, do any of the following:
 
@@ -119,9 +121,9 @@ via: https://fedoramagazine.org/use-tmux-more-powerful-terminal/
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:https://fedoramagazine.org/author/pfrields/
-[1]:http://man.openbsd.org/OpenBSD-current/man1/tmux.1
-[2]:https://pragprog.com/book/bhtmux2/tmux-2
-[3]:https://fedoramagazine.org/use-tmux-more-powerful-terminal/
-[4]:http://www.cryptonomicon.com/beginning.html
-[5]:https://fedoramagazine.org/howto-use-sudo/
+[a]: https://fedoramagazine.org/author/pfrields/
+[1]: http://man.openbsd.org/OpenBSD-current/man1/tmux.1
+[2]: https://pragprog.com/book/bhtmux2/tmux-2
+[3]: https://fedoramagazine.org/use-tmux-more-powerful-terminal/
+[4]: http://www.cryptonomicon.com/beginning.html
+[5]: https://fedoramagazine.org/howto-use-sudo/
