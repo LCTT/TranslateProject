@@ -1,3 +1,5 @@
+translating----geekpi
+
 How to deploy Kubernetes on the Raspberry Pi
 ============================================================
 
