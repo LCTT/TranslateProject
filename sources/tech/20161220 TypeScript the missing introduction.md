@@ -1,3 +1,5 @@
+[HaitaoBio](https://github.com/HaitaoBio)
+
 TypeScript: the missing introduction
 ============================================================
 
