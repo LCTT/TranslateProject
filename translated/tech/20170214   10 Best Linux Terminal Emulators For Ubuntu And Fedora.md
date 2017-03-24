@@ -4,7 +4,7 @@
  ![10 Best Linux Terminals](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/10-best-linux-terminals_orig.jpg)
 ][3]
 
-对于 Linux 用户来说，最重要的应用程序之一就是终端仿真器。它允许每个用户获得对 shell 的访问。Bash 是 Linux 和 UNIX 发行版中最常用的 shell，它很强大，对于新手和高级用户来说，掌握 bash 都很有必要。因此，在这篇文章中，你将知晓一个 Linux 用户应作出的伟大选择，那就是你必须使用一个优秀的终端仿真器。
+对于 Linux 用户来说，最重要的应用程序之一就是终端仿真器。它允许每个用户获得对 shell 的访问。Bash 是 Linux 和 UNIX 发行版中最常用的 shell，它很强大，对于新手和高级用户来说，掌握 bash 都很有必要。因此，在这篇文章中，你可以了解 Linux 用户有哪些优秀的终端仿真器可以选择。
 
 ### 1、Terminator
 
@@ -36,8 +36,9 @@ sudo apt-get install terminator
 
 在 Ubuntu 和 Fedora 上都可以使用包管理器安装 Tilda，当然，你也可以查看它的 [GitHub 仓库][14]。
 
- ![tilda linux terminal](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/tilda-linux-terminal_orig.png)
-][5]Also read - [Terminator Emulator With Multiple Terminals In One Window][1]
+[
+![tilda linux terminal](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/tilda-linux-terminal_orig.png)
+][5]
 
 ### 3、Guake
 
@@ -63,7 +64,9 @@ Guake 在许多发行版上均可用，所以如果你想安装它，你可以�
 
 [
  ![roxterm linux terminal](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/roxterm-linux-terminal_orig.png)
-][6][http://roxterm.sourceforge.net/index.php?page=index&lang=en][16]
+][6]
+
+[http://roxterm.sourceforge.net/index.php?page=index&lang=en][16]
 
 ### 5、XTerm
 
@@ -71,7 +74,7 @@ Xterm 是 Linux 和 UNIX 系统上最受欢迎的终端仿真器，因为它是 
 
 [
  ![xterm linux terminal](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/published/xterm-linux-terminal.png?1487083067)
-][7]Also read - [Guake Another Linux Terminal Emulator][2]
+][7]
 
 ### 6、Eterm
 
@@ -79,7 +82,9 @@ Xterm 是 Linux 和 UNIX 系统上最受欢迎的终端仿真器，因为它是 
 
 [
  ![etern linux terminal](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/published/etern-linux-terminal.jpg?1487083129)
-][8]Official Website: [http://www.eterm.org/][17]
+][8]
+
+官网： [http://www.eterm.org/][17]
 
 ### 7、Gnome Terminal
 
