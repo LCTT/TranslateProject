@@ -1,36 +1,35 @@
-申领翻译
 
-# This Xfce Bug Is Wrecking Users’ Monitors
+# 这个 Xfce Bug 会毁坏用户的显示器
 
-The Xfce desktop environment for Linux may be fast and flexible — but it’s currently affected by a very serious flaw.
+在 Linux 上使用 Xfce 桌面环境可以很快速和灵活的 — 但是它目前遭受着一个很严重的缺陷影响。
 
-Users of this lightweight alternative to GNOME and KDE have reported that the choice of default wallpaper in Xfce is causing damaging to laptop displays and LCD monitors.
+有用户报告说这个轻量级替代 GNOME 和 KDE 的 Xfce 桌面选用默认桌面壁纸会造成笔记本电脑显示器和液晶显示的损坏。
 
-And there’s damning photographic evidence to back the claims up.
+有确凿的摄影证据来要求索赔。
 
 ### Xfce Bug #12117
 
- _“The default desktop startup screen causes damage to monitor!”_  screams one user in [a bug filed][1] on the Xfce bugzilla.
+ _“桌面默认开机画面造成显示器损坏！”_  某用户在 Xfce 社区的 Bugzilla (译者注：Bugzilla 是一个开源的缺陷跟踪系统) 尖叫似的  [一个Bug 提交][1] 。
 
- _“The defualt wallpaper is having my animal scritch (sic) all the plastic off my LED MONITOR! Can we choose a different wallpaper? I cannot expect the scratches and whu not? Let’s end the mouse games over here.”_ 
+ _“默认桌面壁纸被我的动物抓破(译者注：原文在这里标注了 sic 这个单词，是指猛烈攻击，也指碳化硅晶片，是应用于LED的材料)导致全部塑料从我的液晶显示器掉落！能让我们选择不同的壁纸吗？我不想再有划痕，谁不想呢？让我们在这里结束这老鼠游戏。”_ 
 
 [
  ![](http://www.omgubuntu.co.uk/wp-content/uploads/2017/03/cat-xfce-bug-2-750x801.jpg) 
 ][6]
 
-The flaw — or should that be claw? — is not isolated to just one user’s desktop either. Other users have been able to reproduce the issue, albeit inconsistently, as this second, separate photo an affected Reddtior proves:
+这缺陷 — 或者说是这爪？ — 不只是单独一个用户的桌面遇到问题。其他用户都能能重现这个问题了，尽管不一致，在这个第二个例子，是红迪网友(Redditor)的不同图片证实了：
 
  ![](http://www.omgubuntu.co.uk/wp-content/uploads/2017/03/cat-xfce-bug-1-750x395.jpeg) 
 
-It’s not clear whether the  lay with Xfce or with cats. If it’s the latter the hope for a fix is moot; like cheap Android phones cats do not receive upgrades from their OEM.
+目前不清楚到底是 Xfce 导致的还是猫猫。如果是后者就没希望修复了，就像便宜的 Android 手机商品(译者注：原文这里是用 cats 这个单词，是 catalogues  的缩写，看来原文作者也是个猫奴)从来不从他们的 OEM(译者注：OEM 表示原始设备制造商) 接收升级。
 
-‘for users of Xfce on other Linux distributions the outlook is less paw-sitive’
+‘在其他 Linux 发行版的 Xfce 用户们比较少见萌爪子’(译者注：这句应该是小段落的小标题)
 
-Thankfully Xubuntu users are not affected by clawful issue. This is because the Xfce-based Ubuntu flavor ships with its own, mouse-free desktop wallpaper.
+值得庆幸的是 Xubuntu 用户们并没有受到这爪子(译者注：原文单词是 clawful，这是个虚构人物的名称，是《 Masters of the Universe 》中的邪恶战士成员) 问题的影响。这是因为基于 Xfce 的 Ubuntu 有自己的风格，老鼠自由的桌面壁纸。
 
-But for users of Xfce on other Linux distributions the outlook is less paw-sitive.
+但是在其他 Linux 发行版的 Xfce 用户们比较少见萌爪子。
 
-A patch has been proposed to fix the foul up but is yet to be accepted upstream. If you’re at all concerned by bug #12117 you can apply the patch manually on your own system by downloading the image below and setting it as your wallpaper.
+已经提交了一个补丁修复这个问题，但是上游尚未接受。如果你们都全程关注了 bug #12117 你们可以手动应用这个补丁在你们自己的系统，去下载以下图片并设置成桌面壁纸。
 
 [
  ![](http://www.omgubuntu.co.uk/wp-content/uploads/2017/03/xfce-dog-wallpaper-750x363.jpg) 
@@ -41,7 +40,7 @@ A patch has been proposed to fix the foul up but is yet to be accepted upstream
 via: http://www.omgubuntu.co.uk/2017/03/xfce-wallpaper-cat-bug
 
 作者：[JOEY SNEDDON ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ddvio](https://github.com/ddvio)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
