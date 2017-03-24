@@ -1,3 +1,5 @@
+申领翻译
+
 # This Xfce Bug Is Wrecking Users’ Monitors
 
 The Xfce desktop environment for Linux may be fast and flexible — but it’s currently affected by a very serious flaw.
