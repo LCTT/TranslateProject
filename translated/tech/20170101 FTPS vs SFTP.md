@@ -70,7 +70,7 @@ FTPS将更难以实现通过紧密安全的防火墙，因为FTPS使用多个网
 
 作者：[Techmixer.com] [a]
 译者：[译者ID]（https://github.com/译者ID）
-校对：[校对者ID]（https://github.com/校对者ID）
+校对：[jasminepeng]（https://github.com/jasminepeng）
 
 本文由[LCTT]（https://github.com/LCTT/TranslateProject）原创编译，[Linux中国]（https://linux.cn/）荣誉推出
 
