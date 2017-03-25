@@ -11,7 +11,7 @@
 
  _“桌面默认开机画面造成显示器损坏！”_  某用户在 Xfce 社区的 Bugzilla (译者注：Bugzilla 是一个开源的缺陷跟踪系统) 尖叫似的  [一个Bug 提交][1] 。
 
- _“默认桌面壁纸被我的动物抓破(<ruby>猛烈攻击<rt>sic<rt><ruby>)(译者注： sic 是指猛烈攻击，也指碳化硅晶片，是应用于LED的材料)导致全部塑料从我的液晶显示器掉落！能让我们选择不同的壁纸吗？我不想再有划痕，谁想呢(译者注：原文是 whu not，可能想打 who not，也许因屏幕坏了太激动打错字了)？让我们在这里结束这老鼠游戏。”_ 
+ _“默认桌面壁纸被我的动物抓破(<ruby>猛烈攻击<rt>sic<rt><ruby>)(译者注：sic 是指猛烈攻击，也指碳化硅晶片，是应用于LED的材料)导致全部塑料从我的液晶显示器掉落！能让我们选择不同的壁纸吗？我不想再有划痕，谁想呢(译者注：原文是 whu not，可能想打 who not，也许因屏幕坏了太激动打错字了)？让我们在这里结束这老鼠游戏。”_ 
 
 [
  ![](http://www.omgubuntu.co.uk/wp-content/uploads/2017/03/cat-xfce-bug-2-750x801.jpg) 
@@ -25,7 +25,7 @@
 
 ‘对其他 Linux 发行版的 Xfce 用户们看来还是比较棘手的’(译者注：这里在原文应该是小段落的小标题)
 
-值得庆幸的是 Xubuntu 用户们并没有受到这<ruby>爪牙<rt>clawful<rt><bury>(译者注：clawful 是个虚构人物的名称，是<bury>《决胜时空战区》<rt>Masters of the Universe <rt><buby>中的邪恶战士成员) 问题的影响。这是因为它是基于 Xfce 的 Ubuntu 特色桌面发行版，能自由选老鼠的桌面壁纸。
+值得庆幸的是 Xubuntu 用户们并没有受到这<ruby>爪牙<rt>clawful<rt><ruby>(译者注：clawful 是个虚构人物的名称，是<bury>《决胜时空战区》<rt>Masters of the Universe <rt><buby>中的邪恶战士成员) 问题的影响。这是因为它是基于 Xfce 的 Ubuntu 特色桌面发行版，能自由选老鼠的桌面壁纸。
 
 但是对其他 Linux 发行版的 Xfce 用户们看来还是比较棘手的。
 
