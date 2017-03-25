@@ -21,7 +21,7 @@ _“默认桌面壁纸被我的动物抓破 (<ruby>猛烈攻击<rt>sic</rt></rub
 
  ![](http://www.omgubuntu.co.uk/wp-content/uploads/2017/03/cat-xfce-bug-1-750x395.jpeg) 
 
-目前不清楚到底是 Xfce 导致的还是猫猫。如果是后者就没希望修复了，就像便宜的 Android 手机商品(译者注：原文这里是用 cats 这个单词，是 catalogues  的缩写，原文作者也是个猫奴，#TeamCat成员)从来不从他们的 <ruby>设备制造商<rt>OEM</rt></ruby >接收升级。
+目前不清楚到底是 Xfce 导致的还是猫猫。如果是后者就没希望修复了，就像便宜的 Android 手机商品(译者注：原文这里是用 cats 这个单词，是 catalogues  的缩写，原文作者也是个猫奴，#TeamCat成员)从来不从他们的 <ruby>设备制造商<rt>OEM</rt></ruby > 接收升级。
 
 ‘对其他 Linux 发行版的 Xfce 用户们看来还是比较棘手的’(译者注：这里在原文应该是小段落的小标题)
 
