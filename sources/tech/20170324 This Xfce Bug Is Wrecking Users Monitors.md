@@ -25,7 +25,7 @@ _“默认桌面壁纸被我的动物抓破 (<ruby>猛烈攻击<rt>sic</rt></rub
 
 ‘对其他 Linux 发行版的 Xfce 用户们看来还是比较棘手的’(译者注：这里在原文应该是小段落的小标题)
 
-值得庆幸的是 Xubuntu 用户们并没有受到这 <ruby>爪牙<rt>clawful</rt></ruby> (译者注：clawful是个虚构人物的名称，是<ruby>《决胜时空战区》<rt>Masters of the Universe</rt></ruby>中的邪恶战士成员) 问题的影响。这是因为它是基于 Xfce 的 Ubuntu 特色桌面发行版，能自由选老鼠的桌面壁纸。
+值得庆幸的是 Xubuntu 用户们并没有受到这 <ruby>爪牙<rt>clawful</rt></ruby> (译者注：clawful 是个虚构人物的名称，是<ruby>《决胜时空战区》<rt>Masters of the Universe</rt></ruby>中的邪恶战士成员) 问题的影响。这是因为它是基于 Xfce 的 Ubuntu 特色桌面发行版，能自由选老鼠的桌面壁纸。
 
 
 但是对其他 Linux 发行版的 Xfce 用户们看来还是比较棘手的。
