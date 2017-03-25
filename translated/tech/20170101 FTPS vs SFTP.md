@@ -67,7 +67,7 @@ via: http://www.techmixer.com/ftps-sftp/
 译者：[Yuan0302](https://github.com/Yuan0302)
 校对：[jasminepeng](https://github.com/jasminepeng)
 
-本文由[LCTT]（https://github.com/LCTT/TranslateProject）原创编译，[Linux中国]（https://linux.cn/）荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:http://www.techmixer.com/
 [1]:http://www.techmixer.com/ftps-sftp/#respond
