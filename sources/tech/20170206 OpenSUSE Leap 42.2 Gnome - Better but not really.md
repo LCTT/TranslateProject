@@ -1,3 +1,4 @@
+translating by mudongliang
 # OpenSUSE Leap 42.2 Gnome - Better but not really
 
 Updated: February 6, 2017
