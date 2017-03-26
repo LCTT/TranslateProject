@@ -37,22 +37,29 @@ Obviously, not every time a corresponding file with the same name exists. In the
 g如果你不想要神器开启此功能，你可以在你的家目录的隐藏文件夹 .vimrc 中写入 g:alternateNonDefaultAlternate 变量，并且赋给它一个非零值即可．
 In case you want to disable this behavior, you can set the g:alternateNoDefaultAlternate variable (give it a non-zero value) in the .vimrc file present in your home directory.
 
-h
+h还有一种情况也很普遍，你需要打开的文件并非是当前源代码的头文件．比如你目前在 test.c 你想打开 men.h 这个头文件，那么你可以输入这个命令 :IH ，毋需赘言，你肯定要在后面输入你要打开的的文件名称
 Moving on, it's pretty normal to refer to a non-corresponding header file from a source file as well. For example, if you are in test.c, and want to switch to some other header file (say mem.h) and not test.h, then you can do that by running the :**IH <filename>** command in Vim. Needless to say, you'll have to replace <filename> with the actual name of the file you need to open.
 
+j目前为止，我们讨论的功能都仅限于你当前文件和要操作的文件都在同一个目录去实现．但是，你也知道，我们还有特殊情况，我是说，许多项目中头文件与对应的源文件并不一定在同一目录下
 Up until now, whatever functionality we discussed is assuming that the file that you intend to open is present in the same directory as the current file. However, as you'd agree, it's not always the case. What I mean to say is that in many projects the location of the source files and the corresponding header files is not always the same directory.
 
+k为了搞定这个问题，你要使用这个 g:alternateSearchPath 这个变量．官方文档是这么解释的：
 To handle such situations, you need to use the g:alternateSearchPath variable. This is what the official documentation [says][4] about this variable:
 
+l这个插件可以让用户配置它的搜索源文件和头文件的搜索路径．这个搜索路径可以通过设置 g:alternateSearchPath 这个变量的值指定．默认的设定如下：
 "This plugin allows the search path it uses to locate source and header files to be configured. The search path is specified by setting the g:alternateSearchPath variable. The default setting is as follows:"  
 
 ```
 g:alternateSearchPath = 'sfr:../source,sfr:../src,sfr:../include,sfr:../inc' 
 ```
 
+m使用这个代码表示神器将搜索../source,../src..,../include 和 ../inc 下所有与目标文件相关的文件． g:alternateSearchPath 变量的值由前缀和路径组成，每个单元用逗号隔开． "sfr"　前缀是指后面的路径是相对于目前文件的, "wdr" 前缀是指目录是相对于目前的工作目录， "abs" 是指路径是绝对路径．如果不指定前缀，那么默认为 "sfr".
 "This indicates that the corresponding file will be searched for in ../source, ../src. ../include and ../inc all relative to the current file being switched from. The value of the g:alternateSearchPath variable is simply a comma separated list of prefixes and directories. The "sfr:" prefix indicates that  the path is relative to the file. Other prefixes are "wdr:" which indicates that the directory is relative to the current working directory and "abs:" which indicates the path is absolute. If no prefix is specified "sfr:" is assumed."
 
+n如果我们前文所提及的特性就能让你觉得很炫酷，那我不得不告诉你，这才哪跟哪．还有一个十分有用的功能是分割 Vim 屏幕，这样你就可以同时看到头文件和相应的源文件．
 If all the aforementioned features of this plugin have already made you go "wow," let me tell you that's not all. Another extremely useful functionality the plugin offers is the ability to split your Vim screen so that both source and its corresponding header file can be viewed simultaneously
+
+o还有，你还可以选择垂直或者水平分割．全凭你心意．使用 :AS 命令可以水平分割，使用 :AV 可以垂直分割
 What more, you can split the screen both horizontally and vertically, depending upon what fits best for you. Use **:AS** command to split the screen horizontally and **:AV** command for vertical split.
 
 [
@@ -63,20 +70,26 @@ What more, you can split the screen both horizontally and vertically, depending 
  ![vim.a horizontal split screen](https://www.howtoforge.com/images/vim-editor-plugins-for-software-developers-3/vim-hor-split.png) 
 ][6]
 
+p使用 :A 命令在已经打开的文件中选择你想要的
 Use **:A** command to switch between opened files.
 
+r这个插件还可以让你打开多个相应的文件在同一个 Vim 窗口中不同列表中，你键入这个命令 :AT
 The plugin also lets you open a corresponding file in a separate tab within the same Vim window. You can do this by running the **:AT** command.
 
 [
  ![tabs in Vim with a.vim.](https://www.howtoforge.com/images/vim-editor-plugins-for-software-developers-3/vim-tab1.png) 
 ][7]
 
+s当然，你可以用这些命令 :AV :AS :AT，也可以使用这些命令 :IHV :IHS :IHT
 Of course, like **:AV**, **:AS**, and **:AT**, you can use **:IHV**, **:IHS**, and **:IHT** commands as well.
 
+t最后
 ### Conclusion
 
+u还有许多和编程相关的 Vim 的插件，我们在这个第三方系列主要讨论的是，如果你为你的软件开发工作安装了合适的插件，你就会明白为什么 vim 被叫做编辑器之神
 While there are many programming-related Vim plugins available to use, the ones that we discussed in this three-part series should be enough to give you an idea about how powerful the editor becomes if you have the correct plugins enabled for your software development work.
 
+v当然，我们在这只关注编程方面，对于那些把　Vim 当做日常文档编辑器的人来说，你也应该了解一些 Vim 的插件，让你的编辑更好，更高效．我们就改日再谈这个问题吧．
 **Of course, we've only focused on the programming part here. For those of you who use Vim as you daily text editor, you should know that there are a plethora of plugins available that add to Vim's text editing functionality and make it even better. But we'll leave this discussion for some other day.**
 
 --------------------------------------------------------------------------------
