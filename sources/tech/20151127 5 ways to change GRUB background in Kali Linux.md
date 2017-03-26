@@ -1,3 +1,5 @@
+fuowang 翻译中
+
 5 ways to change GRUB background in Kali Linux
 ============================================================
 
