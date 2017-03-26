@@ -1,7 +1,6 @@
-<header class="page-header" style="padding-bottom: 9px; margin-top: 40px; margin-bottom: 10px; font-family: &quot;Droid Sans&quot;, sans-serif; font-size: 16px; text-align: start; background-color: rgb(255, 255, 255);">[How debuggers work: Part 3 - Debugging information][25]
-============================================================</header>
+[How debuggers work: Part 3 - Debugging information][25]
+============================================================
 
-<footer class="post-info"> <time>February 07, 2011 at 19:02</time> Tags [Articles][8] , [Debuggers][9] , [Programming][10]</footer>
 
 This is the third part in a series of articles on how debuggers work. Make sure you read [the first][26] and [the second][27] parts before this one.
 
