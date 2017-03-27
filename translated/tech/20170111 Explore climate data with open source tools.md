@@ -10,7 +10,7 @@
 
 遍览 NASA，美国国防部，以及其他机构针对气候的研究成果，我的心中有个疑惑。那就是是否有开源的工具，使对此感兴趣的人们能够自行去探索气候数据的奥秘，并总结出我们自己的结论。我在网上快速的检索了一下，然后找到了[Open Climate Workbench （开源气候工作台）][4]，[Apache 软件基金会][5]旗下的一个工程。
 
-Open Climate Workbench （缩写 OCW） 开发软件，对来自 [<ruby>地球系统网格联盟（缩写 ESGF）<rt>Earth System Grid Federation</rt></ruby>][6]、[<ruby>协调区域气候降尺度实验（缩写 CORDEX）<rt>Coordinated Regional Climate Downscaling Experiment</rt></ruby>][7]、美国全球变化研究项目的[<ruby>国家气候研究<rt> National Climate Assessment</rt></ruby>][8]、[<ruby>北美区域气候评估计划<rt>North American Regional Climate Assessment Program</rt></ruby>][9]，以及 NASA、NOAA 和其他组织或机构的数据进行气候模型评价。
+Open Climate Workbench （缩写 OCW） 开发软件，对来自 [<ruby>地球系统网格联盟<rt>Earth System Grid Federation</rt></ruby>][6]（缩写 ESGF）、[<ruby>协调区域气候降尺度实验<rt>Coordinated Regional Climate Downscaling Experiment</rt></ruby>][7]（缩写 CORDEX）、美国全球变化研究项目的[<ruby>国家气候研究<rt> National Climate Assessment</rt></ruby>][8]、[<ruby>北美区域气候评估计划<rt>North American Regional Climate Assessment Program</rt></ruby>][9]，以及 NASA、NOAA 和其他组织或机构的数据进行气候模型评价。
 
 你可下载 OCW 的 [tar ball][10] 并将它安装到满足以下[条件][11]的 Linux 电脑上。也可以使用 Vagrant 或者 VirtualBox 将 OCW 安装到虚拟机中，详见 OCW 的[虚拟机指南][12]。  
 
@@ -20,7 +20,7 @@ Open Climate Workbench （缩写 OCW） 开发软件，对来自 [<ruby>地球�
 
 你需要在宿主机上安装 VirtualBox 和 Vagrant。通过它们，你就能看到一个超赞的 OCW 作业示例。RCMES 为下载、导入、运行虚拟机提供了[详细的说明][17]。当你的虚拟机开始工作时，你可以用以下身份登陆。
 
-** 用户名：vagrant，密码：vagrant。 **
+**用户名：vagrant，密码：vagrant。**
 
  ![Regional Climate Model Evaluation System Data Plot](https://opensource.com/sites/default/files/rcmes_data_plot.png "Regional Climate Model Evaluation System Data Plot") 
 
