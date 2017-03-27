@@ -1,3 +1,5 @@
+translating by [kenxx](https://github.com/kenxx)
+
 Hire a DDoS service to take down your enemies
 ========================
 
@@ -57,7 +59,7 @@ The solution to cutting down on these attacks involves users resetting factory p
 via: http://www.csoonline.com/article/3180246/data-protection/hire-a-ddos-service-to-take-down-your-enemies.html
 
 作者：[Ryan Francis][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[kenxx](https://github.com/kenxx)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
