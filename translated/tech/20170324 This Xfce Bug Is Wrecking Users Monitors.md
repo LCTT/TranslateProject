@@ -18,20 +18,17 @@ _“默认桌面壁纸导致我的动物去抓，全部塑料从我的液晶显�
  ![](http://www.omgubuntu.co.uk/wp-content/uploads/2017/03/cat-xfce-bug-2-750x801.jpg) 
 ][6]
 
-这缺陷 — 或者说是这爪？ — 不是一个用户的桌面遇到问题。其他用户都能重现这个问题了，尽管不一致，在这第二个例子，是 <ruby>红迪网友<rt>Redditor</rt></ruby> 的不同图片证实了：
+这缺陷 — 或者说是这爪？ — 不是个别用户的桌面遇到问题。其他用户也重现了这个问题，尽管不一致，在这第二个例子，是 <ruby>红迪网友<rt>Redditor</rt></ruby> 的不同图片证实：
 
  ![](http://www.omgubuntu.co.uk/wp-content/uploads/2017/03/cat-xfce-bug-1-750x395.jpeg) 
 
-目前不清楚到底是 Xfce 导致的还是猫猫。如果是后者就没希望修复了，就像便宜的 Android 手机商品(译者注：原文这里是用 cats 这个单词，是 catalogues  的缩写，原文作者也是个猫奴，#TeamCat成员)从来不从他们的 <ruby>设备制造商<rt>OEM</rt></ruby > 接收升级。
+目前不清楚到底是 Xfce 导致的还是猫猫。如果是后者就没希望修复了，就像便宜的 Android 手机商品(LCTT 译注：原文这里是用 cats 这个单词，是 catalogues  的缩写，原文作者也是个猫奴，#TeamCat 成员)从来不从他们的 OEM 厂商接收升级。
 
-‘对其他 Linux 发行版的 Xfce 用户们看来还是比较棘手的’(译者注：这里在原文应该是小段落的小标题)
+值得庆幸的是 Xubuntu 用户们并没有受到这“爪牙”问题的影响。这是因为它这个基于 Xfce 的 Ubuntu 特色版带有自己的非老鼠的桌面壁纸。
 
-值得庆幸的是 Xubuntu 用户们并没有受到这 <ruby>爪牙<rt>clawful</rt></ruby> (译者注：clawful 是个虚构人物的名称，是<ruby>《决胜时空战区》<rt>Masters of the Universe</rt></ruby>中的邪恶战士成员) 问题的影响。这是因为它是基于 Xfce 的 Ubuntu 特色桌面发行版，能自由选老鼠的桌面壁纸。
+对其他 Linux 发行版的 Xfce 用户来说，“爪爪们”对其桌面倒不是那么感兴趣。
 
-
-但是对其他 Linux 发行版的 Xfce 用户们看来还是比较棘手的。
-
-已经提出了一个补丁修复这个问题，但是上游尚未接受。如果你们都全程关注了 bug #12117 你们可以手动应用这个补丁在你们自己的系统，去下载以下图片并设置成桌面壁纸。
+已经提出了一个补丁修复这个问题，但是上游尚未接受。如果你们关注了 bug #12117 ，就可以在你们自己的系统上手动应用这个补丁，去下载以下图片并设置成桌面壁纸。
 
 [
  ![](http://www.omgubuntu.co.uk/wp-content/uploads/2017/03/xfce-dog-wallpaper-750x363.jpg) 
