@@ -82,11 +82,11 @@ Lucas Käldström - 谢谢你发现我！我是一名来自芬兰的说瑞典语
 
 ------------------
 
-via: 网址
+via: https://opensource.com/article/17/3/kubernetes-raspberry-pi
 
 作者：[ Lucas Käldström][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
