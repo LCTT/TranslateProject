@@ -1,39 +1,39 @@
 如何在 Ubuntu 以及 Debian 中安装 DHCP 服务器
 ============================================================
 
-动态主机配置协议（DHCP）是一种用于使主机能够从服务器自动分配IP地址和相关的网络配置的网络协议。
+**动态主机配置协议（DHCP）** 是一种用于使主机能够从服务器自动分配 IP 地址和相关的网络配置的网络协议。
 
-DHCP 服务器分配给 DHCP 客户端的IP地址处于“租用”状态，租用时间通常取决于客户端计算机可能需要连接的时间或 DHCP 配置的时间。
+DHCP 服务器分配给 DHCP 客户端的 IP 地址处于“租用”状态，租用时间通常取决于客户端计算机要求连接的时间或 DHCP 配置的时间。
 
 #### DHCP 如何工作？
 
 以下是 DHCP 实际工作原理的简要说明：
 
-*   一旦客户端（配置使用 DHCP）并连接到网络后，它会向 DHCP 服务器发送 DHCPDISCOVER 数据包。
-*   当 DHCP 服务器收到 DHCPDISCOVER 请求报文后会使用 DHCPOFFER 包进行回复。
-*   然后客户端获取到 DHCPOFFER 数据包，并向服务器发送一个 DHCPREQUEST 包，表示它已准备好接收 DHCPOFFER 包中提供的网络配置信息。
-*   最后，DHCP 服务器从客户端收到 DHCPREQUEST 报文后，发送 DHCPACK 报文，表示客户端现在允许使用分配给它的IP地址。
+*   一旦客户端（配置为使用 DHCP 的机器）连接到网络后，它会向 DHCP 服务器发送 **DHCPDISCOVER** 数据包。
+*   当 DHCP 服务器收到 **DHCPDISCOVER** 请求报文后会使用 **DHCPOFFER** 包进行回复。
+*   然后客户端获取到 **DHCPOFFER** 数据包，并向服务器发送一个 **DHCPREQUEST** 包，表示它已准备好接收 **DHCPOFFER** 包中提供的网络配置信息。
+*   最后，DHCP 服务器从客户端收到 **DHCPREQUEST** 报文后，发送 **DHCPACK** 报文，表示现在允许客户端使用分配给它的 IP 地址。
 
 在本文中，我们将介绍如何在 Ubuntu/Debian Linux 中设置 DHCP 服务器，我们将使用[ sudo 命令][1]来运行所有命令，以获得 root 用户权限。
 
 ### 测试环境设置
 
-这步我们会使用如下的测试环境。
+在这步中我们会使用如下的测试环境。
 
 ```
 DHCP Server - Ubuntu 16.04 
 DHCP Clients - CentOS 7 and Fedora 25
 ```
 
-### 步骤1：在 Ubuntu 中安装 DHCP 服务器
+### 步骤 1：在 Ubuntu 中安装 DHCP 服务器
 
-1. 运行下面的命令来安装 DHCP 服务器包，也就是 dhcp3-server。
+1. 运行下面的命令来安装 DHCP 服务器包，也就是 **dhcp3-server**。
 
 ```
 $ sudo apt install isc-dhcp-server
 ```
 
-2. 安装完成后，编辑 /etc/default/isc-dhcp-server 使用 INTERFACES 选项定义 DHCPD 响应 DHCP 请求所使用的接口。
+2. 安装完成后，编辑 **/etc/default/isc-dhcp-server** 使用 INTERFACES 选项定义 DHCPD 响应 DHCP 请求所使用的接口。
 
 比如，如果你想让 DHCPD 守护进程监听 `eth0`，按如下设置：
 
@@ -49,8 +49,8 @@ INTERFACES="eth0"
 
 并且 DHCP 配置中定义了两种不同的声明，它们是：
 
-*   parameters - 指定如何执行任务、是否执行任务，还有指定要发送给 DHCP 客户端的网络配置选项。
-*   declarations - 定义网络拓扑、指定客户端、为客户端提供地址，或将一组参数应用于一组声明。
+*   **parameters** - 指定如何执行任务、是否执行任务，还有指定要发送给 DHCP 客户端的网络配置选项。
+*   **declarations** - 定义网络拓扑、指定客户端、为客户端提供地址，或将一组参数应用于一组声明。
 
 4. 现在打开并修改主文件，定义 DHCP 服务器选项：
 
@@ -68,7 +68,7 @@ max-lease-time 7200;
 authoritative;
 ```
 
-5. 现在定义一个子网，这里我们为 192.168.10.0/24 局域网设置 DHCP （使用适用你情况的参数）：
+5. 现在定义一个子网，这里我们为 **192.168.10.0/24** 局域网设置 DHCP （请使用适用你情况的参数）：
 
 ```
 subnet 192.168.10.0 netmask 255.255.255.0 {
@@ -83,7 +83,7 @@ range   192.168.10.110   192.168.10.200;
 
 ### 步骤 3：在 DHCP 客户端上配置静态地址
 
-6. 要给特定的客户机分配一个固顶的（静态）的IP，你需要显式将这台机器的 MAC 地址以及静态分配的地址添加到下面这部分。
+6. 要给特定的客户机分配一个固顶的（静态）的 IP，你需要显式将这台机器的 MAC 地址以及静态分配的地址添加到下面这部分。
 
 ```
 host centos-node {
@@ -149,9 +149,9 @@ $ sudo service networking restart
  ![Set DHCP Network in Fedora](http://www.tecmint.com/wp-content/uploads/2017/03/Set-DHCP-Network-in-Fedora.png) 
 ][3]
 
-在 Fedora 中设置 DHCP 网络
+*在 Fedora 中设置 DHCP 网络*
 
-此时，如果所有设置完成了，你的客户端应该可以自动从 DHCP 服务器接收IP 地址了。
+此时，如果所有设置完成了，你的客户端应该可以自动从 DHCP 服务器接收 IP 地址了。
 
 就是这样了！在本篇教程中，我们向你展示了如何在 Ubuntu/Debian 设置 DHCP 服务器。在反馈栏中分享你的想法。如果你正在使用基于 Fedora 的发行版，请阅读如何在 CentOS/RHEL 中设置 DHCP 服务器。
 
