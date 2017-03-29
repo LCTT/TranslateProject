@@ -3,7 +3,7 @@
 
 **动态主机配置协议（DHCP）** 是一种用于使主机能够从服务器自动分配 IP 地址和相关的网络配置的网络协议。
 
-DHCP 服务器分配给 DHCP 客户端的 IP 地址处于“租用”状态，租用时间通常取决于客户端计算机要求连接的时间或 DHCP 配置的时间。
+DHCP 服务器分配给 DHCP 客户端的 IP 地址处于“租用”状态，租用时间通常取决于客户端计算机要求连接的时间或 DHCP 服务器配置的时间。
 
 #### DHCP 如何工作？
 
@@ -14,26 +14,24 @@ DHCP 服务器分配给 DHCP 客户端的 IP 地址处于“租用”状态，�
 *   然后客户端获取到 **DHCPOFFER** 数据包，并向服务器发送一个 **DHCPREQUEST** 包，表示它已准备好接收 **DHCPOFFER** 包中提供的网络配置信息。
 *   最后，DHCP 服务器从客户端收到 **DHCPREQUEST** 报文后，发送 **DHCPACK** 报文，表示现在允许客户端使用分配给它的 IP 地址。
 
-在本文中，我们将介绍如何在 Ubuntu/Debian Linux 中设置 DHCP 服务器，我们将使用[ sudo 命令][1]来运行所有命令，以获得 root 用户权限。
+在本文中，我们将介绍如何在 Ubuntu/Debian Linux 中设置 DHCP 服务器，我们将使用 [sudo 命令][1]来运行所有命令，以获得 root 用户权限。
 
 ### 测试环境设置
 
 在这步中我们会使用如下的测试环境。
 
-```
-DHCP Server - Ubuntu 16.04 
-DHCP Clients - CentOS 7 and Fedora 25
-```
+- DHCP Server - Ubuntu 16.04 
+- DHCP Clients - CentOS 7 and Fedora 25
 
 ### 步骤 1：在 Ubuntu 中安装 DHCP 服务器
 
-1. 运行下面的命令来安装 DHCP 服务器包，也就是 **dhcp3-server**。
+1、 运行下面的命令来安装 DHCP 服务器包，也就是 **dhcp3-server**。
 
 ```
 $ sudo apt install isc-dhcp-server
 ```
 
-2. 安装完成后，编辑 **/etc/default/isc-dhcp-server** 使用 INTERFACES 选项定义 DHCPD 响应 DHCP 请求所使用的接口。
+2、 安装完成后，编辑 `/etc/default/isc-dhcp-server` 使用 `INTERFACES` 选项定义 DHCPD 响应 DHCP 请求所使用的接口。
 
 比如，如果你想让 DHCPD 守护进程监听 `eth0`，按如下设置：
 
@@ -45,14 +43,14 @@ INTERFACES="eth0"
 
 ### 步骤 2：在 Ubuntu 中配置 DHCP 服务器
 
-3. DHCP 配置的主文件是 `/etc/dhcp/dhcpd.conf`， 你必须填写会发送到客户端的所有网络信息。
+3、 DHCP 配置的主文件是 `/etc/dhcp/dhcpd.conf`， 你必须填写会发送到客户端的所有网络信息。
 
 并且 DHCP 配置中定义了两种不同的声明，它们是：
 
-*   **parameters** - 指定如何执行任务、是否执行任务，还有指定要发送给 DHCP 客户端的网络配置选项。
-*   **declarations** - 定义网络拓扑、指定客户端、为客户端提供地址，或将一组参数应用于一组声明。
+*   `parameters` - 指定如何执行任务、是否执行任务，还有指定要发送给 DHCP 客户端的网络配置选项。
+*   `declarations` - 定义网络拓扑、指定客户端、为客户端提供地址，或将一组参数应用于一组声明。
 
-4. 现在打开并修改主文件，定义 DHCP 服务器选项：
+4、 现在打开并修改主文件，定义 DHCP 服务器选项：
 
 ```
 $ sudo vi /etc/dhcp/dhcpd.conf 
@@ -68,7 +66,7 @@ max-lease-time 7200;
 authoritative;
 ```
 
-5. 现在定义一个子网，这里我们为 **192.168.10.0/24** 局域网设置 DHCP （请使用适用你情况的参数）：
+5、 现在定义一个子网，这里我们为 `192.168.10.0/24` 局域网设置 DHCP （请使用适用你情况的参数）：
 
 ```
 subnet 192.168.10.0 netmask 255.255.255.0 {
@@ -83,7 +81,7 @@ range   192.168.10.110   192.168.10.200;
 
 ### 步骤 3：在 DHCP 客户端上配置静态地址
 
-6. 要给特定的客户机分配一个固顶的（静态）的 IP，你需要显式将这台机器的 MAC 地址以及静态分配的地址添加到下面这部分。
+6、 要给特定的客户机分配一个固定的（静态）的 IP，你需要显式将这台机器的 MAC 地址以及静态分配的地址添加到下面这部分。
 
 ```
 host centos-node {
@@ -98,7 +96,7 @@ fixed-address 192.168.10.106;
 
 保存并关闭文件。
 
-7.接下来，启动 DHCP 服务，并让它下次开机自启动，如下所示：
+7、 接下来，启动 DHCP 服务，并让它下次开机自启动，如下所示：
 
 ```
 ------------ SystemD ------------ 
@@ -109,7 +107,7 @@ $ sudo service isc-dhcp-server.service start
 $ sudo service isc-dhcp-server.service enable
 ```
 
-8. 接下来不要忘记允许 DHCP 服务（DHCP 守护进程监听 67 UDP 端口）的防火墙权限：
+8、 接下来不要忘记允许 DHCP 服务（DHCP 守护进程监听 67 UDP 端口）的防火墙权限：
 
 ```
 $ sudo ufw allow  67/udp
@@ -119,7 +117,7 @@ $ sudo ufw show
 
 ### 步骤 4：配置 DHCP 客户端
 
-9. 此时，你可以将客户端计算机配置为自动从 DHCP 服务器接收 IP 地址。
+9、 此时，你可以将客户端计算机配置为自动从 DHCP 服务器接收 IP 地址。
 
 登录到客户端并编辑以太网接口的配置文件（注意接口名称/号码）：
 
@@ -171,7 +169,7 @@ via: http://www.tecmint.com/install-dhcp-server-in-ubuntu-debian/
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:http://www.tecmint.com/author/aaronkili/
-[1]:http://www.tecmint.com/sudoers-configurations-for-setting-sudo-in-linux/
+[1]:https://linux.cn/tag-sudo.html
 [2]:http://www.tecmint.com/set-add-static-ip-address-in-linux/
 [3]:http://www.tecmint.com/wp-content/uploads/2017/03/Set-DHCP-Network-in-Fedora.png
 [4]:http://www.tecmint.com/author/aaronkili/
