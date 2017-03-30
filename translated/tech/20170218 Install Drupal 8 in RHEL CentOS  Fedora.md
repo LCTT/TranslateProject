@@ -170,7 +170,7 @@ gpgcheck=1
 
 14. 现在我们必须为 Drupal 站点去创建一个数据库和用户来管理。
 
-
+```
 # mysql -u root -p
 Enter password: 
 MySQL Shell
@@ -189,11 +189,12 @@ Query OK, 0 rows affected (0.00 sec)
 Query OK, 0 rows affected (0.00 sec)
 **MySQL [(none)]> exit**
 Bye
+```
 
 15. 最后，打开地址: `http://server_IP/drupal/` 开始网站的安装，选择你首选的安装语言然后点击保存以继续。
 
 [
- !Drupal 安装语言](http://www.tecmint.com/wp-content/uploads/2013/07/Drupal-Installation-Language.png) 
+ ![Drupal 安装语言](http://www.tecmint.com/wp-content/uploads/2013/07/Drupal-Installation-Language.png) 
 ][8]
 
 *Drupal 安装语言*
@@ -238,7 +239,7 @@ Bye
 
 *Drupal 数据库配置*
 
-若上述设置正确，Drupal 站点安装应该完成了，如下图界面.
+若上述设置正确，Drupal 站点安装应该完成了，如下图界面。
 
 [
  ![Drupal 安装](http://www.tecmint.com/wp-content/uploads/2013/07/Drupal-Installation.png) 
@@ -248,13 +249,13 @@ Bye
 
 19. 接下来配置站点为下面的设置(使用适用你的情况的值):
 
-	1.  **站点名称**         – TecMint Drupal Site
-	2.  **站点邮箱地址**     – admin@tecmint.com
-	3.  **用户名**          – admin
-	4. ** 密码**            – ##########
-	5.  **用户的邮箱地址**   – admin@tecmint.com
-	6.  **默认国家**        – India
-	7.  **默认时区**        – UTC
+	-  **站点名称**         – TecMint Drupal Site
+	-  **站点邮箱地址**     – admin@tecmint.com
+	-  **用户名**          – admin
+	-  **密码**            – ##########
+	-  **用户的邮箱地址**   – admin@tecmint.com
+	-  **默认国家**        – India
+	-  **默认时区**        – UTC
 
 设置适当的值后，点击**保存并继续**完成站点安装过程。
 
