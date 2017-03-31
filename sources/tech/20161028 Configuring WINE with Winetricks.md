@@ -1,3 +1,6 @@
+++翻译中
++
++
 ### Configuring WINE with Winetricks
 
 Contents

@@ -1,18 +1,19 @@
 使用开源工具探索气候数据的奥秘
-============================================================[up][1]
+============================================================
+
  ![Explore climate data with open source tools](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/bus-cloud.png?itok=bdROR1aE "Explore climate data with open source tools") 
 
 图片源自： [Flickr user: theaucitron][2] (CC BY-SA 2.0)
 
-如今你看地球上的任何地方，都可以看到天气变化的证据，每个月，事实和数据都在向我们诠释一点 —— 全球变暖。
+如今你看地球上的任何地方，都可以找到天气变化的证据，每个月，无论是事实还是数据都在向我们诠释一点 —— 全球变暖。
 
-气候学家如是告诫我们，如今的不作为，对于我们的将来可能是致命的。五角大楼的军事战略家[最近警告][3]当选总统的川普，申明如果不对气候变化有所动作，可能会造成威胁国家安全的灾难。愈趋减少的的水供应和微薄的降雨量会导致作物歉收，这将迫使大量的移民逃往世界各地，到那些可以维持他们生计的地方去。
+气候学家如是告诫我们，如今的不作为，对于我们的将来可能是致命的。五角大楼的军事战略家[最近警告][3]当选总统的川普，向他申明如果不对气候变化有所动作，可能会造成威胁国家安全的灾难。愈趋减少的的水供应和微薄的降雨量会导致作物歉收，这将迫使大量的移民逃往世界各地，到那些可以维持他们生计的地方去。
 
-遍览 NASA，美国国防部，以及其他机构针对气候的研究成果，我的心中有个疑惑。那就是是否有开源的工具，使对此感兴趣的人们能够自行去探索气候数据的奥秘，并总结出我们自己的结论。我在网上快速的检索了一下，然后找到了[Open Climate Workbench （开源气候工作台）][4]，[Apache 软件基金会][5]旗下的一个工程。
+遍览 NASA、美国国防部，以及其他机构针对气候的研究成果，我的心中有个疑惑。那就是是否有开源的工具，使对此感兴趣的人们能够自行去探索气候数据的奥秘，并总结出我们自己的结论。我在网上快速的检索了一下，然后找到了 [Open Climate Workbench （开源气候工作台）][4]，这是 [Apache 软件基金会][5]旗下的一个工程。
 
-Open Climate Workbench （缩写 OCW） 开发软件，对来自 [<ruby>地球系统网格联盟<rt>Earth System Grid Federation</rt></ruby>][6]（缩写 ESGF）、[<ruby>协调区域气候降尺度实验<rt>Coordinated Regional Climate Downscaling Experiment</rt></ruby>][7]（缩写 CORDEX）、美国全球变化研究项目的[<ruby>国家气候研究<rt> National Climate Assessment</rt></ruby>][8]、[<ruby>北美区域气候评估计划<rt>North American Regional Climate Assessment Program</rt></ruby>][9]，以及 NASA、NOAA 和其他组织或机构的数据进行气候模型评价。
+Open Climate Workbench （缩写 OCW） 开发该软件，对来自 [<ruby>地球系统网格联盟<rt>Earth System Grid Federation</rt></ruby>][6]（缩写 ESGF）、[<ruby>协调区域气候降尺度实验<rt>Coordinated Regional Climate Downscaling Experiment</rt></ruby>][7]（缩写 CORDEX）、美国全球变化研究项目的[<ruby>国家气候研究<rt> National Climate Assessment</rt></ruby>][8]、[<ruby>北美区域气候评估计划<rt>North American Regional Climate Assessment Program</rt></ruby>][9]，以及 NASA、NOAA 和其他组织或机构的数据进行气候模型评价。
 
-你可下载 OCW 的 [tar ball][10] 并将它安装到满足以下[条件][11]的 Linux 电脑上。也可以使用 Vagrant 或者 VirtualBox 将 OCW 安装到虚拟机中，详见 OCW 的[虚拟机指南][12]。  
+你可下载 OCW 的 [tar 包][10] 并将它安装到满足其[条件][11]的 Linux 电脑上。也可以使用 Vagrant 或者 VirtualBox 将 OCW 安装到虚拟机中，详见 OCW 的[虚拟机指南][12]。  
 
 个人觉得想要了解 OCW 是如何工作的，最便捷的方式就是到 <ruby>区域气候模式评价系统<rt>Regional Climate Model Evaluation System </rt></ruby> （缩写 RCMES），下载一个[虚拟机镜像][13]。
 
