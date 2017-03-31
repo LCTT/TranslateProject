@@ -1,15 +1,15 @@
-使用 Rsync 命令同步两个 Samba4 AD DC 之间的 SysVol 目录 ——（六）
+Samba 系列（六）：使用 Rsync 命令同步两个 Samba4 AD DC 之间的 SysVol 目录
 ============================================================
 
-这篇文章讲的是在两个 Samba4 活动目录域控制器之间，通过一些强大的 Linux 工具来完成 SysVol 的复制操作，比如[Rsync 数据同步工具][2]，[Cron 任务调度进程][3]和[SSH 协议][4]。
+这篇文章讲的是在两个 **Samba4 活动目录域控制器**之间，通过一些强大的 Linux 工具来完成 SysVol 的复制操作，比如 [Rsync 数据同步工具][2]，[Cron 任务调度进程][3]和 [SSH 协议][4]。
 
 #### 要求：:
 
-1、  [将 Ubuntu 16.04 服务器作为域控制器加入到 Samba4 AD DC 环境中——（五）][1]
+-  [Samba 系列（五）：将另一台 Ubuntu DC 服务器加入到 Samba4 AD DC 实现双域控主机模][1]
 
 ### 第一步：配置 DC 服务器时间同步
 
-1、在两个域控制器之间复制 sysvol 目录的内容之前，你得保证这两个服务器时间设置准确且一致。
+1、在两个域控制器之间复制 **sysvol** 目录的内容之前，你得保证这两个服务器时间设置准确且一致。
 
 如果这两个服务器的时间延迟大于 5 分钟，并且时钟也不同步，你将会遇到 AD 账号和域复制的各种问题。
 
@@ -19,13 +19,13 @@
 # apt-get install ntp
 ```
 
-2、在 NTP 服务安装完成之后，打开主配置文件，把默认的 pool 值注释（在第一行 pool 参数前添加 # ），并且添加新的 pool 值指向已安装了 NTP 服务端的主 Samba4 AD DC FQDN ，如下所示。
+2、在 NTP 服务安装完成之后，打开主配置文件，把默认的 pool 值注释（在每行 pool 参数前添加 # ），并且添加新的 pool 值，指向已安装了 **NTP** 服务端的主 **Samba4 AD DC FQDN**，如下所示。
 
 ```
 # nano /etc/ntp.conf
 ```
 
-把下面几行添加到 ntp.conf 配置文件。
+把下面几行添加到 **ntp.conf** 配置文件。
 
 ```
 pool 0.ubuntu.pool.ntp.org iburst
@@ -40,7 +40,7 @@ pool ntp.ubuntu.com
  ![Configure NTP for Samba4](http://www.tecmint.com/wp-content/uploads/2017/01/Configure-NTP-for-Samba4.png) 
 ][6]
 
-Samba4 配置 NTP 服务
+*Samba4 配置 NTP 服务*
 
 3、先不要关闭该文件，在文件末尾添加如下内容，这是为了让其它客户端能够查询并[与这个 NTP 服务器同步时间][7]，并发出 NTP 签署请求，以防主 DC 离线：
 
@@ -49,7 +49,7 @@ restrict source notrap nomodify noquery mssntp
 ntpsigndsocket /var/lib/samba/ntp_signd/
 ```
 
-4、最后，关闭并保存该配置文件，然后重启 NTP 服务以应用更改。等待几分钟后时间同步完成，执行 ntpq 命令来查看时间同步情况。
+4、最后，关闭并保存该配置文件，然后重启 NTP 服务以应用更改。等待几分钟后时间同步完成，执行 **ntpq** 命令打印出 **adc1** 时间同步情况。
 
 ```
 # systemctl restart ntp
@@ -59,23 +59,23 @@ ntpsigndsocket /var/lib/samba/ntp_signd/
  ![Synchronize NTP Time with Samba4 AD](http://www.tecmint.com/wp-content/uploads/2017/01/Synchronize-Time.png) 
 ][8]
 
-与 Samba4 AD 同步 NTP 时间
+*与 Samba4 AD 同步 NTP 时间*
 
 ### 第二步：通过 Rsync 命令来复制第一个 DC 服务器上的 SysVol 目录
 
-默认情况下，Samba4 AD DC 不会通过 DFS-R（分布式文件系统复制）或者 FRS（文件复制服务）来复制 SysVol 目录。
+默认情况下，**Samba4 AD DC** 不会通过 **DFS-R**（<ruby>分布式文件系统复制<rt>Distributed File System Replication</rt></ruby>）或者 **FRS**（<ruby>文件复制服务<rt>File Replication Service</rt></ruby>）来复制 SysVol 目录。
 
-这意味着只有在第一个域控制器联机时，组策略对象才可用。否则组策略设置和登录脚本不会应用到已加入域的 Windosws 机器上。
+这意味着只有在第一个域控制器联机时，<ruby>**组策略对象**<rt>Group Policy objects </rt></ruby>才可用。否则组策略设置和登录脚本不会应用到已加入域的 Windosws 机器上。
 
-为了解决这个问题及实现 SysVol 目录的犁，我们通过执行一个[基于 SSH 的身份认证][10]并使用 SSH 加密通道的[Linux 同步命令][9]来从第一个域控制器安全地传输 GPO 对象到第二个域控制器。
+为了克服这个障碍，以及基本实现 SysVol 目录复制的目的，我们通过执行一个[基于 SSH 的身份认证][10]并使用 SSH 加密通道的[Linux 同步命令][9]来从第一个域控制器安全地传输 **GPO** 对象到第二个域控制器。
 
-这种方式能够确保 GPO 对象在域控制器之间的一致性，但是也有一个很大的缺点。它只能进行单向同步，因为在同步 GPO 目录的时候， rsync 命令会从源 DC 服务器传输所有的更改到目标 DC 服务器，
+这种方式能够确保 **GPO** 对象在域控制器之间的一致性，但是也有一个很大的缺点。它只能进行单向同步，因为在同步 GPO 目录的时候， **rsync** 命令会从源 DC 服务器传输所有的更改到目标 DC 服务器，
 
 源 DC 服务器上不存在的组策略对象也会从目标 DC 服务器上删除，为了限制并避免任何冲突，所有的 GPO 编辑操作只能在第一个 DC 服务器上执行。
 
-5、要进行 SysVol 复制，先到[第一个 AD DC 服务器上生成 SSH 密钥][11]，然后使用下面的命令把该密钥传输到第二个 DC 服务器。
+5、要进行 **SysVol** 复制，先到[第一个 AD DC 服务器上生成 SSH 密钥][11]，然后使用下面的命令把该密钥传输到第二个 DC 服务器。
 
-在生成密钥的过程中不要设置密码，以便在无用户干预的情况下进行传输。
+在生成密钥的过程中不要设置密码 **passphrase**，以便在无用户干预的情况下进行传输。
 
 ```
 # ssh-keygen -t RSA  
@@ -87,7 +87,7 @@ ntpsigndsocket /var/lib/samba/ntp_signd/
  ![Generate SSH Key on Samba4 DC](http://www.tecmint.com/wp-content/uploads/2017/01/Generate-SSH-Key.png) 
 ][12]
 
-在 Samba4 DC 服务器上生成 SSH 密钥
+*在 Samba4 DC 服务器上生成 SSH 密钥*
 
 6、 当你确认 root 用户可以从第一个 DC 服务器以免密码方式登录到第二个 DC 服务器时，执行下面的 Rsync 命令，加上 `--dry-run` 参数来模拟 SysVol 复制过程。注意把对应的参数值替换成你自己的数据。
 
@@ -178,7 +178,7 @@ via: http://www.tecmint.com/samba4-ad-dc-sysvol-replication/
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:http://www.tecmint.com/author/cezarmatei/
-[1]:http://www.tecmint.com/join-additional-ubuntu-dc-to-samba4-ad-dc-failover-replication/
+[1]:https://linux.cn/article-8358-1.html
 [2]:http://www.tecmint.com/rsync-local-remote-file-synchronization-commands/
 [3]:http://www.tecmint.com/11-cron-scheduling-task-examples-in-linux/
 [4]:http://www.tecmint.com/5-best-practices-to-secure-and-protect-ssh-server/
