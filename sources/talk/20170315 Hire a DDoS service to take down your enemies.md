@@ -1,25 +1,35 @@
 translating by [kenxx](https://github.com/kenxx)
 
 Hire a DDoS service to take down your enemies
+雇个 `DDoS` 服务干掉你的对手
 ========================
 
 >With the rampant availability of IoT devices, cybercriminals offer denial of service attacks to take advantage of password problems.
 
+>随着物联网设备的普及，网络犯罪分子提供拒绝服务攻击来占密码问题的便宜。
+
 ![](http://images.techhive.com/images/article/2016/12/7606416730_e659cea89c_o-100698667-large.jpg)
 
 With the onrush of connected internet of things (IoT) devices, distributed denial-of-service attacks are becoming a dangerous trend. Similar to what happened to [DNS service provider Dyn last fall][3], anyone and everyone is in the crosshairs. The idea of using unprotected IoT devices as a way to bombard networks is gaining momentum.
+随物联网设备飞速发展，分布式拒绝服务攻击也变得越来越具有危险性了。就如 [DNS 服务商 Dyn 上年秋季之遭遇][3] 一样，黑客似乎瞄上了每个人，使用未受保护的物联网设备来轰炸网络正迎面而来。
 
 The advent of DDoS-for-hire services means that even the least tech-savvy individual can exact  revenge on some website. Step on up to the counter and purchase a stresser that can systemically take down a company.
+可雇用的分布式拒绝服务攻击的出现意味着每个会点技术的人都能精准报复一些网站。加大攻击能力甚至可以从系统级别的让一个公司完蛋。
 
 According to [Neustar][4], almost three quarters of all global brands, organizations and companies have been victims of a DDoS attack. And more than 3,700 [DDoS attacks occur each day][5].
+根据 [Neustar][4] 的报告，全球四分之三的品牌、组织和公司都是 `DDos` 攻击的受害者。[每天 `DDoS` 攻击发生次数][5] 不少于 3700 次。
 
 
 #### [■ RELATED: How can you detect a fake ransom letter?][1]
 
+#### [■ 相关阅读：如何判断假绑架信？][1]
 
-Chase Cunningham, director of cyber operations at A10 Networks, said to find IoT-enabled devices, all you have to do is go on an underground site and ask around for the Mirai scanner code. Once you have that you can scan for anything talking to the internet that can be used for that type of attack.  
+
+Chase Cunningham, director of cyber operations at A10 Networks, said to find IoT-enabled devices, all you have to do is go on an underground site and ask around for the Mirai scanner code. Once you have that you can scan for anything talking to the internet that can be used for that type of attack. 
+ 睿科网络公司（A10 Networks）网络运营总监 Chase Cunningham 说：“想要找个可用的物联网设备，你只需要在地下网站找一个 `Mirai` 扫描器，一旦你得到了这款扫描器，你将能够利用在线的每一台设备来进行攻击”。
 
 “Or you can go to a site like Shodan and craft a couple of simple queries to look for device specific requests. Once you get that information you just go to your DDoS for hire tool and change the configuration to point at the right target and use the right type of traffic emulator and bingo, nuke whatever you like,” he said.
+或者你可以去一些类似 `Shodan` 的网站然后简单的搜一下设备特殊请求，
 
 “Basically everything is for sale," he added. "You can buy a 'stresser', which is just a simple botnet type offering that will allow anyone who knows how to click the start button access to a functional DDoS botnet.”
 
