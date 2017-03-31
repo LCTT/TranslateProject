@@ -1,6 +1,5 @@
-Setup SysVol Replication Across Two Samba4 AD DC with Rsync – Part 6
+使用 Rsync 命令同步两个 Samba4 AD DC 之间的 SysVol 目录 ——（六）
 ============================================================
-使用 Rsync 命令来同步两个 Samba4 AD DC 之间的 SysVol 目录——（六）
 
 这篇文章讲的是在两个 Samba4 活动目录域控制器之间，通过一些强大的 Linux 工具来完成 SysVol 的复制操作，比如[Rsync 数据同步工具][2]，[Cron 任务调度进程][3]和[SSH 协议][4]。
 
@@ -174,7 +173,7 @@ via: http://www.tecmint.com/samba4-ad-dc-sysvol-replication/
 
 作者：[Matei Cezar][a]
 译者：[rusking](https://github.com/rusking)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
