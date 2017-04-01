@@ -3,7 +3,7 @@ Samba 系列（六）：使用 Rsync 命令同步两个 Samba4 AD DC 之间的 S
 
 这篇文章讲的是在两个 **Samba4 活动目录域控制器**之间，通过一些强大的 Linux 工具来完成 SysVol 的复制操作，比如 [Rsync 数据同步工具][2]，[Cron 任务调度进程][3]和 [SSH 协议][4]。
 
-#### 要求：:
+#### 要求：
 
 -  [Samba 系列（五）：将另一台 Ubuntu DC 服务器加入到 Samba4 AD DC 实现双域控主机模][1]
 
@@ -89,13 +89,14 @@ ntpsigndsocket /var/lib/samba/ntp_signd/
 
 *在 Samba4 DC 服务器上生成 SSH 密钥*
 
-6、 当你确认 root 用户可以从第一个 DC 服务器以免密码方式登录到第二个 DC 服务器时，执行下面的 Rsync 命令，加上 `--dry-run` 参数来模拟 SysVol 复制过程。注意把对应的参数值替换成你自己的数据。
+6、 当你确认 root 用户可以从第一个 **DC** 服务器以免密码方式登录到第二个 **DC** 服务器时，执行下面的 **Rsync** 命令，加上 `--dry-run` 参数来模拟 SysVol 复制过程。注意把对应的参数值替换成你自己的数据。
 
 ```
 # rsync --dry-run -XAavz --chmod=775 --delete-after  --progress --stats  /var/lib/samba/sysvol/ root@adc2:/var/lib/samba/sysvol/
 ```
 
-7、如果模拟复制过程正常，那么再次执行 rsync 命令，去掉 `--dry-run` 参数来真实的在域控制器之间复制 GPO 对象。
+7、如果模拟复制过程正常，那么再次执行去掉 `--dry-run` 参数的 rsync 命令，来真实的在域控制器之间复制 GPO 对象。
+
 ```
 # rsync -XAavz --chmod=775 --delete-after  --progress --stats  /var/lib/samba/sysvol/ root@adc2:/var/lib/samba/sysvol/
 ```
@@ -103,7 +104,7 @@ ntpsigndsocket /var/lib/samba/ntp_signd/
  ![Samba4 AD DC SysVol Replication](http://www.tecmint.com/wp-content/uploads/2017/01/SysVol-Replication-for-Samba4-DC.png) 
 ][13]
 
-Samba4 AD DC SysVol 复制
+*Samba4 AD DC SysVol 复制*
 
 8、在 SysVol 复制完成之后，登录到目标域控制器，然后执行下面的命令来列出其中一个 GPO 对象目录的内容。
 
@@ -116,9 +117,9 @@ Samba4 AD DC SysVol 复制
  ![Verify Samba4 DC SysVol Replication](http://www.tecmint.com/wp-content/uploads/2017/01/Verify-Samba4-DC-SysVol-Replication.png) 
 ][14]
 
-验证 Samba4 DC SysVol 复制结果是否正常
+*验证 Samba4 DC SysVol 复制结果是否正常*
 
-9、为了自动完成组策略复制的过程（从网络来传输 sysvol 目录），你可以使用 root 账号设置一个任务来执行同步命令，如下所示，设置为每隔 5 分钟执行一次该命令。
+9、为了自动完成**组策略**复制的过程（通过网络传输 sysvol 目录），你可以使用 root 账号设置一个任务来执行同步命令，如下所示，设置为每隔 5 分钟执行一次该命令。
 
 ```
 # crontab -e 
@@ -130,7 +131,7 @@ Samba4 AD DC SysVol 复制
 */5 * * * * rsync -XAavz --chmod=775 --delete-after  --progress --stats  /var/lib/samba/sysvol/ root@adc2:/var/lib/samba/sysvol/ > /var/log/sysvol-replication.log 2>&1
 ```
 
-10、如果以后 SysVol ACL 权限有问题，你可以通过下面的命令来检测和修复这些异常。
+10、如果以后 **SysVol ACL** 权限有问题，你可以通过下面的命令来检测和修复这些异常。
 
 ```
 # samba-tool ntacl sysvolcheck
@@ -140,24 +141,24 @@ Samba4 AD DC SysVol 复制
  ![Fix SysVol ACL Permissions](http://www.tecmint.com/wp-content/uploads/2017/01/Fix-SysVol-ACL-Permissions.png) 
 ][15]
 
-修复 SysVol ACL 权限问题
+*修复 SysVol ACL 权限问题*
 
-11、如果第一个 Samba4 AD DC 的 FSMO 角色，即“ PDC 模拟器”不可用，你可以强制 Microsoft Windows 系统上的组策略管理控制台只连接到第二个域控制器，通过选择更改域控制器选项和手动选择目标机器，如下图所示。
+11、如果第一个 **Samba4 AD DC** 的 **FSMO** 角色，即“PDC 模拟器”不可用，你可以强制 **Microsoft Windows** 系统上的**组策略管理控制台**只连接到第二个域控制器，通过选择更改域控制器选项和手动选择目标机器，如下图所示。
 
 [
  ![Change Samba4 Domain Controller](http://www.tecmint.com/wp-content/uploads/2017/01/Change-Samba4-Domain-Controller.png) 
 ][16]
 
-更改 Samba4 域控制器
+*更改 Samba4 域控制器*
 
 [
  ![Select Samba4 Domain Controller](http://www.tecmint.com/wp-content/uploads/2017/01/Select-Samba4-Domain-Controller.png) 
 ][17]
 
 
-选择 Samba4 域控制器
+*选择 Samba4 域控制器*
 
-当你从组策略管理控制台连接到第二个 DC 服务器时，你应该避免对组策略做任何更改。否则，当第一个 DC 服务器恢复正常后， rsync 命令将会删除在第二个 DC 服务器上所做的更改。
+当你从**组策略管理控制台**连接到第二个 **DC** 服务器时，你应该避免对**组策略**做任何更改。否则，当第一个 **DC** 服务器恢复正常后， **rsync 命令**将会删除在第二个 DC 服务器上所做的更改。
 
 --------------------------------------------------------------------------------
 
@@ -165,7 +166,7 @@ Samba4 AD DC SysVol 复制
 
 ![](http://2.gravatar.com/avatar/be16e54026c7429d28490cce41b1e157?s=128&d=blank&r=g)
 
-我是一个电脑迷，开源软件和 Linux 系统爱好者，有超过 4 年的 Linux 桌面、服务器版本系统和 bash 编程经验。
+Matei Cezar -- 我是一个电脑迷，开源软件和 Linux 系统爱好者，有超过 4 年的 Linux 桌面、服务器版本系统和 bash 编程经验。
 
 --------------------------------------------------------------------------------
 
