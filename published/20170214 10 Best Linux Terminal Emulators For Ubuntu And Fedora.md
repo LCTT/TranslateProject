@@ -1,10 +1,11 @@
-# [Ubuntu 和 Fedora 上 10 个最好的 Linux 终端仿真器][12]
+ 10 个常见的 Linux 终端仿真器
+==========
 
 [
  ![10 Best Linux Terminals](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/10-best-linux-terminals_orig.jpg)
 ][3]
 
-对于 Linux 用户来说，最重要的应用程序之一就是终端仿真器。它允许每个用户获得对 shell 的访问。Bash 是 Linux 和 UNIX 发行版中最常用的 shell，它很强大，对于新手和高级用户来说，掌握 bash 都很有必要。因此，在这篇文章中，你可以了解 Linux 用户有哪些优秀的终端仿真器可以选择。
+对于 Linux 用户来说，最重要的应用程序之一就是终端仿真器。它允许每个用户获得对 shell 的访问。而 Bash 是 Linux 和 UNIX 发行版中最常用的 shell，它很强大，对于新手和高级用户来说，掌握 bash 都很有必要。因此，在这篇文章中，你可以了解 Linux 用户有哪些优秀的终端仿真器可以选择。
 
 ### 1、Terminator
 
@@ -14,10 +15,10 @@
 
 *   以网格形式排列终端
 *   Tab 设定
-*   通过拖放重排终端
+*   通过拖放重新排布终端
 *   大量的快捷键
 *   通过 GUI 参数编辑器保存多个布局和配置文件
-*   同时对不同分组的终端进行输入
+*   同时对任意组合的终端进行输入
 
 [
  ![terminator linux terminals](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/published/terminator-linux-terminals.png?1487082905)
@@ -29,9 +30,9 @@
 sudo apt-get install terminator
 ```
 
-### 2、Tilda － 一个可以拖动的终端
+### 2、Tilda － 一个可以下拉的终端
 
-**Tilda** 的独特之处在于它不像一个普通的窗口，相反，你可以使用一个特殊的热键从屏幕的顶部上下拖动它。
+**Tilda** 的独特之处在于它不像一个普通的窗口，相反，你可以使用一个特殊的热键从屏幕的顶部拉下和收回它。
 另外，Tilda 是高度可配置的，可以自定义绑定热键，改变外观，以及其他许多能够影响 Tilda 特性的选项。
 
 在 Ubuntu 和 Fedora 上都可以使用包管理器安装 Tilda，当然，你也可以查看它的 [GitHub 仓库][14]。
@@ -42,25 +43,26 @@ sudo apt-get install terminator
 
 ### 3、Guake
 
-Guake 是一个和 Tilda 或 yakuake 类似的可拖动终端仿真器。如果你知道一些关于 Python、Git 和 GTK 的知识的话，你可以给 Guake 添加一些新的特性。
+Guake 是一个和 Tilda 或 yakuake 类似的下拉式终端仿真器。如果你知道一些关于 Python、Git 和 GTK 的知识的话，你可以给 Guake 添加一些新的特性。
 ​
 Guake 在许多发行版上均可用，所以如果你想安装它，你可以查看你的版本仓库。
 
 #### 特性浏览
 
 *   轻量
-*   简单、容易且很优雅
-*   从终端到 GUI 的流畅集成
+*   简单易用且优雅
+*   将终端自然地集成到 GUI 之中
 *   当你使用的时候出现，一旦按下预定义热键便消失（默认情况下是 F12）
-*   Compiz 透明支持
+*   支持Compiz 透明
 *   多重 Tab
 *   丰富的调色板
 *   还有更多……
+
 主页: [http://guake-project.org/][15]
 
 ### 4、ROXTerm
 
-如果你正在寻找一个轻量型、高度可定制的终端仿真器，那么 ROXTerm 就是专门为你准备的。这是一个旨在提供和 gnome-terminal 相似特性的终端仿真器，它们都基于相同的 VTE 库。它的最初设计只占用很小的空间并且能够快速启动，它具有比 gnome-terminal 更强的可配置性，更加针对经常使用终端的 “Power” 用户。
+如果你正在寻找一个轻量型、高度可定制的终端仿真器，那么 ROXTerm 就是专门为你准备的。这是一个旨在提供和 gnome-terminal 相似特性的终端仿真器，它们都基于相同的 VTE 库。它的最初设计是只占用很小的资源并且能够快速启动，它具有比 gnome-terminal 更强的可配置性，更加针对经常使用终端的 “Power” 用户。
 
 [
  ![roxterm linux terminal](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/roxterm-linux-terminal_orig.png)
@@ -90,7 +92,7 @@ Xterm 是 Linux 和 UNIX 系统上最受欢迎的终端仿真器，因为它是 
 
 Gnome Terminal 是最受欢迎的终端仿真器之一，它被许多 Linux 用户使用，因为它默认安装在 Gnome 桌面环境中，而 Gnome 桌面很常用。它有许多特性并且支持大量主题。
 
-在许多 Linux 发行版中都默认安装有 Gnome Terminal，但你也可以使用你的包管理器来安装它。
+在许多 Linux 发行版中都默认安装有 Gnome Terminal，但你如果没有的话，也可以使用你的包管理器来安装它。
 
 [
  ![gnome terminal](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/gnome-terminal_orig.jpg)
