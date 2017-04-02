@@ -7,7 +7,7 @@
 
 啊，一个好的调查，能够以快速、简单、便宜、有效的方式收集朋友、家人、同学、同事、客户、读者和其他人的意见。
 
-许多人开始使用专有工具，如 SurveyGizmo、Polldaddy、SurveyMonkey 甚至 Google 表单来设置他们的调查。但是如果你想对应用还有收集到的数据有更多的控制，那么你会希望使用开源工具。
+许多人开始使用专有工具，如 SurveyGizmo、Polldaddy、SurveyMonkey 甚至 Google 表单来设置他们的调查。但是如果你不仅是对这些应用还有你自己收集到的数据有更多的控制，那么你会希望使用开源工具。
 
 让我们来看看四个开源调查工具，无论需求简单还是复杂，它们都可以满足你的需求。
 
@@ -23,7 +23,7 @@ LimeSurvey 还允许你使用自己的 JavaScript、照片和视频自定义调�
 
 如果 LimeSurvey 没有为你提供足够的功能，并且对 Java 驱动的 web 程序感兴趣，那么我推荐 [JD Esurvey][5]。它被称为“一个开源的企业调查 web 应用”。它绝对强大，并满足了那些寻找大容量、健壮的调查工具的组织的很多需求。
 
-使用 JD Esurvey，你可以收集一系列信息，包括 “是/否” 问题的答案以及产品和服务的星级。你甚至可以处理多个部分的问题的答案。JD Esurvey 支持使用平板电脑和智能手机创建和管理调查，你发布的调查也是移动友好的。根据开发者的说法，该程序[残疾人也可使用][6]。
+使用 JD Esurvey，你可以收集一系列信息，包括 “是/否” 问题的答案以及产品和服务的星级。你甚至可以处理带有多个部分答案的问题。JD Esurvey 支持使用平板电脑和智能手机创建和管理调查，你发布的调查也是移动友好的。根据开发者的说法，该程序[残疾人也可使用][6]。
 
 要使用它，你可以[在 GitHub 上 fork JD Esurvey][7] 或者[下载并安装][8]程序的预编译版本。
 
@@ -37,11 +37,11 @@ Quick Survey 只允许你创建问答和多选调查列表。你可以添加问�
 
 ### TellForm
 
-在功能方面，[TellForm][13] 位于 LimeSurvey 和 Quick Survey 之间。它适合那些功能需求超出最小需求，但无需完全功能的人使用。
+在功能方面，[TellForm][13] 介于 LimeSurvey 和 Quick Survey 之间。它适合那些功能需求超出最小需求，但无需完整功能的人使用。
 
 除了有 11 种不同类型的调查之外，TellForm 还有很好的分析功能。你可以轻松地自定义调查的外观和感觉，而且程序的界面简单干净。
 
-如果你想自己托管 TellForm，你可以从[ GitHub 仓库][14]中获取代码。或者，你可以注册[免费托管帐户][15]。
+如果你想自己托管 TellForm，你可以从 [GitHub 仓库][14]中获取代码。或者，你可以注册[免费托管帐户][15]。
 
 * * *
 
@@ -58,7 +58,7 @@ Scott Nesbitt - 作家、编辑、雇佣兵（Soldier of fortune）、豹猫牧�
 
 via: https://opensource.com/article/17/2/tools-online-surveys-polls
 
-作者：[Scott Nesbitt  ][a]
+作者：[Scott Nesbitt][a]
 译者：[geekpi](https://github.com/geekpi)
 校对：[jasminepeng](https://github.com/jasminepeng)
 
