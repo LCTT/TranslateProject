@@ -1,4 +1,5 @@
 Translating by sanfusu
+
 [Data-Oriented Hash Table][1]
 ============================================================
 
