@@ -1,3 +1,5 @@
+Translating by sanfusu
+
 [Data-Oriented Hash Table][1]
 ============================================================
 
@@ -47,7 +49,7 @@ There’s a ton of data here. In this section I’ll discuss the results in some
 Here are the graphed results of all the tests, compiled with Visual Studio 2012, and run on Windows 8.1 on a Core i7-4710HQ machine. (Click to zoom.)
 
 [
- ![Results for VS 2012, Windows 8.1, Core i7-4710HQ](http://reedbeta.com/blog/data-oriented-hash-table/results-vs2012.png "Results for VS 2012, Windows 8.1, Core i7-4710HQ") 
+ ![Results for VS 2012, Windows 8.1, Core i7-4710HQ](http://reedbeta.com/blog/data-oriented-hash-table/results-vs2012.png "Results for VS 2012, Windows 8.1, Core i7-4710HQ")
 ][12]
 
 From left to right are different payload sizes, from top to bottom are the various operations, and each graph plots time in milliseconds versus hash table element count for each of the five implementations. (Note that not all the Y-axes have the same scale!) I’ll summarize the main trends for each operation.
@@ -75,7 +77,7 @@ UM is the slowest to destruct—by an order of magnitude at small payloads, and 
 I also ran tests with gcc 4.8 and clang 3.5, on Linux Mint 17.1 on a Core i5-4570S machine. The gcc and clang results were very similar, so I’ll only show the gcc ones; the full set of results are in the code download archive, linked above. (Click to zoom.)
 
 [
- ![Results for g++ 4.8, Linux Mint 17.1, Core i5-4570S](http://reedbeta.com/blog/data-oriented-hash-table/results-g++4.8.png "Results for g++ 4.8, Linux Mint 17.1, Core i5-4570S") 
+ ![Results for g++ 4.8, Linux Mint 17.1, Core i5-4570S](http://reedbeta.com/blog/data-oriented-hash-table/results-g++4.8.png "Results for g++ 4.8, Linux Mint 17.1, Core i5-4570S")
 ][15]
 
 Most of the results are quite similar to those in Windows, so I’ll just highlight a few interesting differences.
