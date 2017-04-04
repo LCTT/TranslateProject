@@ -1,3 +1,5 @@
+translated by zhousiyu325
+
 Yes, Python is Slow, and I Don’t Care
 ============================================================
 
