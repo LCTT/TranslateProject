@@ -1,3 +1,5 @@
+ictlyh translating
+
 First 5 Commands When I Connect on a Linux Server
 ============================================================
 
