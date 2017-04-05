@@ -76,4 +76,3 @@ via: https://linuxconfig.org/configuring-wine-with-winetricks
 作者：Nick Congleton 译者：Taylor1024 校对：校对者ID
 
 本文由 LCTT 原创编译，Linux中国 荣誉推出
-
