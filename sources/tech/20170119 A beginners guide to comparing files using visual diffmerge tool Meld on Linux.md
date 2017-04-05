@@ -1,3 +1,5 @@
+GitFuture is translating
+
 A beginner's guide to comparing files using visual diff/merge tool Meld on Linux
 ============================================================
 

@@ -1,3 +1,5 @@
+Translating by SysTick
+
 The decline of GPL?
 ============================================================
 

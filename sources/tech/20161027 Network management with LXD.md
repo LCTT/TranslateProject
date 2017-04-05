@@ -1,3 +1,5 @@
+translating by flankershen
+
 # Network management with LXD (2.3+)
 
  ![LXD logo](https://linuxcontainers.org/static/img/containers.png) 
