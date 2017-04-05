@@ -14,14 +14,12 @@
 
 简介
 
-
 如果 winecfg (WINE的配置文件) 是一把螺丝刀，那么　winetricks 就是一个钻床．它们各有特长．但是 winetricks 真的是一个强大的工具．实际上，它完全有能力配置 winecfg，充当配置文件的配置文件
 
 winecfg 让你可以改变 WINE 本身的设置，而winetricks 则可以让你改造 Windows 层，它可以让你安装 Windows重要的系统组件，比如 .dulls　文件，还可以允许你修改 Windows注册表的信息．它还有任务管理器，卸载工具和文件浏览器．
 
-
 尽管 winetricks 可以功能强大，但是大部分时间我们用到的功能也就是管理 dll 文件和　Windows　组件
-Even though `winetricks` can do all of this, the majority of the time, you're going to be using it to manage `dlls` and Windows components.
+
 
 安装
 
@@ -49,8 +47,8 @@ $ ~/winetricks
 
  ![The winetricks prefix menu](https://linuxconfig.org/images/winetricks-prefix.png) 
 
-字体
 
+字体
 
  ![The winetricks font menu](https://linuxconfig.org/images/winetricks-font.png) 
 
@@ -60,6 +58,7 @@ $ ~/winetricks
 
 要安装 corefonts ，请选择相应的确认框，然后点击 OK ，你就会看到大概和在 Windows 下差不多的提示，字体就会被安装了．完成了这个插件的安装，你就会回到先前的菜单界面．接下来就是安装你需要的别的插件，步骤相同．
 
+
 .dlls和组件
 
  ![The winetricks dll menu](https://linuxconfig.org/images/winetricks-dll.png) 
@@ -68,11 +67,13 @@ winetricks　安装 Windows 下的 .dll 文件和别的组件也十分简单．�
 
 窗口就会进入到另一个菜单界面，其中包含可用的 dlls 和其他 Windows 组件．选择相应的确认框，点击 OK，winetricks 就会下载你选择的组件，接着通过 Windows 一般安装进程进行安装．跟着提示，它很像 Windows 界面下的那种提示，忽略掉报错信息．很多时候，Windows　安装程序会报错，但是你会发现 winetricks 已经将它安装到工作区．这很正常．由于组件之间的相互依赖关系，你可能会也可能不会看到成功安装的信息．只要安装完成时候，确定在菜单页中你的选项仍旧处于被选中状态就行了
 
+
 注册表
 
  ![WINE regedit](https://linuxconfig.org/images/winetricks-regedit.png) 
 
 在WINE中你不需要常常编辑注册表对应的值，但是对于有些程序确实需要．技术层面来讲，winetricks 不向用户提供注册表编辑器，但是要获取编辑器也很容易．在菜单页选中 Run regedit，点击 OK，你就可以打开一个简单的注册表编辑器．讲真，写入注册表的值有点超出本篇引导文章的范围了，但是我还要多说一句，如果你已经知道你在干什么，增加一个注册表条目不是很难．注册表有点像电子表格，你可以将正确的值填入右面的格子中．这个有点过于简单，但是就是这样做的．你可以在以下地址精准地找到你需要在 WINE Appdp所要填入的东西．
+
 
 关闭
 
