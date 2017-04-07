@@ -92,7 +92,7 @@ via: https://githubengineering.com/a-formal-spec-for-github-markdown/
 
 作者：[Yuki Izumi][a][Vicent Martí][b]
 译者：[GHLandy](https://github.com/GHLandy)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
