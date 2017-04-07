@@ -18,6 +18,7 @@
 现在假定你想在你的 `/home` 目录下配置 `winetricks`。　`cd` 到此，然后 `wget` 这个脚本。
 
 $ cd ~
+
 $ wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
 
 然后，给这个脚本可执行权限。
@@ -30,8 +31,7 @@ $ ~/winetricks
 
 ![winetricks-main](https://linuxconfig.org/images/winetricks-main.png) 
 
-当窗口第一次打开时候，将会给你一个有 View help 和 Install an application 选项的菜单．一般情况下，我们都选择 Select the default wineprefix，这将是你主要使用的选项．其他的也能用，但是我们不推荐．接下来，单击 OK，你就会进入到 WINE 的配置菜单，你可以在这完成所有的你要使用 winetricks 完成的事情
-
+当窗口第一次打开时候，将会给你一个有 <ruby>“查看帮助”<rt>View help</rt></ruby> 和 <ruby>“安装应用”<rt>Install an application</rt></ruby> 选项的菜单。一般情况下，我们选择 <ruby>“选择默认的 wineprefix”<rt>Select the default wineprefix</rt></ruby>，这将是你主要使用的选项。其他的也能用，但是不推荐使用。接下来，单击 OK，你就会进入到 WINE prefix 的配置菜单，你可以在这完成所有你要使用 `winetricks` 完成的事情。
 
 ![The winetricks prefix menu](https://linuxconfig.org/images/winetricks-prefix.png)
 
@@ -39,35 +39,34 @@ $ ~/winetricks
 
 ![The winetricks font menu](https://linuxconfig.org/images/winetricks-font.png)
 
-字体一直很重要，一些应用程序没有字体没法正常的加载．winetricks 可以轻松地安装许多常用 Windows 字体．在配置菜单中，选中 Install a font　单选按钮，然后点击 OK　即可．
+字体一直很重要，一些应用程序没有字体没法正常的加载。`winetricks` 可以轻松地安装许多常用 Windows 字体．在配置菜单中，选中 <ruby>“安装字体”<rt>Install a font</rt></ruby>　单选按钮，然后点击 “OK”　即可。
 
-然后你就会得到一列字体清单，它们都有着相对应的确认框．你很难确切地知道你到底要安装什么字体，毕竟它们都是在应用程序的配置中预先被设定的，那么我们可以先安装一款插件 corefonts，它包含了大多数 Windows 系统中应用程序被设定的字体．安装它也十分简单，所以可以试试．
+然后你就会得到一列字体清单，它们都有着相对应的复选框。你很难确切知道你到底需要什么字体，所以一般按每个应用决定使用什么字体，我们可以先安装一款插件 `corefonts`，它包含了大多数 Windows 系统中应用程序被设定的字体。安装它也十分简单，所以可以试试。
 
-要安装 corefonts ，请选择相应的确认框，然后点击 OK ，你就会看到大概和在 Windows 下差不多的提示，字体就会被安装了．完成了这个插件的安装，你就会回到先前的菜单界面．接下来就是安装你需要的别的插件，步骤相同．
+要安装 `corefonts` ，请选择相应的复选框，然后点击 “OK”，你就会看到和在 Windows 下差不多的提示，字体就会被安装了。完成了这个插件的安装，你就会回到先前的菜单界面。接下来就是安装你需要的别的插件，步骤相同。
 
-### .dlls和组件
+### .dll 文件和组件
 
 ![The winetricks dll menu](https://linuxconfig.org/images/winetricks-dll.png)
 
+`winetricks` 安装 Windows 下的 .dll 文件和别的组件也十分简单。如果你需要安装的话，在菜单页选择 <ruby>“安装 Windows DLL 或组件”<rt>Install a Windows DLL or component</rt></ruby>，然后点击“OK”。 
 
-winetricks　安装 Windows 下的 .dll 文件和别的组件也十分简单．如果你需要安装的话，在菜单页选择 Install a Windows DLL or component，然后点击 OK 
-
-窗口就会进入到另一个菜单界面，其中包含可用的 dlls 和其他 Windows 组件．选择相应的确认框，点击 OK，winetricks 就会下载你选择的组件，接着通过 Windows 一般安装进程进行安装．跟着提示，它很像 Windows 界面下的那种提示，忽略掉报错信息．很多时候，Windows　安装程序会报错，但是你会发现 winetricks 已经将它安装到工作区．这很正常．由于组件之间的相互依赖关系，你可能会也可能不会看到成功安装的信息．只要安装完成时候，确定在菜单页中你的选项仍旧处于被选中状态就行了
+窗口就会进入到另一个菜单界面，其中包含可用的 `dll` 和其他 Windows 组件。在相应的复选框进行选择，点击 “OK”。脚本就会下载你选择的组件，接着通过 Windows 一般安装进程进行安装。像 Windows 机器上安装那样跟着提示往下走。可能会有报错信息。很多时候，Windows　安装程序会报错，但是你接着会收到来自 `winetricks` 窗口的消息，说明它正在绕过此问题。这很正常。由于组件之间的相互依赖关系，你可能会也可能不会看到成功安装的信息。只要确保安装完成时候，菜单页中你的选项仍旧处于被选中状态就行了。
 
 ### 注册表
 
 ![WINE regedit](https://linuxconfig.org/images/winetricks-regedit.png)
 
-在WINE中你不需要常常编辑注册表对应的值，但是对于有些程序确实需要．技术层面来讲，winetricks 不向用户提供注册表编辑器，但是要获取编辑器也很容易．在菜单页选中 Run regedit，点击 OK，你就可以打开一个简单的注册表编辑器．讲真，写入注册表的值有点超出本篇引导文章的范围了，但是我还要多说一句，如果你已经知道你在干什么，增加一个注册表条目不是很难．注册表有点像电子表格，你可以将正确的值填入右面的格子中．这个有点过于简单，但是就是这样做的．你可以在以下地址精准地找到你需要在 WINE Appdp所要填入的东西．
+你不需要常常编辑注册表中 WINE 对应的值，但是对于有些程序确实需要。技术层面来讲，`winetricks` 不向用户提供注册表编辑器，但是要访问编辑器也很容易。在菜单页选中<ruby>“运行注册表编辑”<rt>Run regedit</rt></ruby>，点击 “OK”，你就可以打开一个简单的注册表编辑器。事实上，写入注册表的值有点超出本篇引导文章的范围了，但是我还要多说一句，如果你已经知道你在干什么，增加一个注册表条目不是很难。注册表有点像电子表格，你可以将正确的值填入右面的格子中。这个说的有点过于简单，但是就是这样做的。你可以在以下地址精准地找到你需要在 WINE Appdp 所要填入或编辑的东西。 https://appdb.winehq.org。
 
 ### 结束语
 
-很明显 winetricks 还有许多许多强大的功能远，远不止此，但是本篇引导的目的只是给你一点基础的知识，在你通过 WINE 运行程序一般都会用到．WINE Appdp 提供了强大的各种程序库，是一笔宝贵的知识财富，以后，它会变得更加无价．好好利用它吧．
+很明显 `winetricks` 还有许多许多强大的功能远，但是本篇指南的目的只是给你一点基础知识，以使用这个强大的工具，使你的程序通过 WINE 运行。WINE Appdb 对程序有丰富的了解，将来会变得更加可贵。
 
 ------------------
 via: https://linuxconfig.org/configuring-wine-with-winetricks
 
-作者：[ Nick Congleton][a]
+作者：Nick Congleton
 译者：[Taylor1024](https://github.com/Taylor1024)
 校对：[jasminepeng](https://github.com/jasminepeng)
 
