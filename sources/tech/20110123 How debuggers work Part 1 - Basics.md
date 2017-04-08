@@ -1,3 +1,6 @@
+Translating by YYforymj
+
+
 [How debuggers work: Part 1 - Basics][21]
 ============================================================
 

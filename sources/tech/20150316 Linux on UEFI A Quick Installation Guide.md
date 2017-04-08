@@ -1,3 +1,5 @@
+fuowang 翻译中
+
 Linux on UEFI:A Quick Installation Guide
 ============================================================
 
