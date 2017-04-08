@@ -1,3 +1,4 @@
+XYenChi is translating
 # Microsoft Office Online gets better - on Linux, too
 
 One of the core things that will make or break your Linux experience is the lack of the Microsoft Office suite, well, for Linux. If you are forced to use Office products to make a living, and this applies to a very large number of people, you might not be able to afford open-source alternatives. Get the paradox?

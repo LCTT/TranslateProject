@@ -1,3 +1,6 @@
+＋＋＋
+＋＋翻译中
++++++
 The 6 unwritten rules of open source development
 ============================================================
 
