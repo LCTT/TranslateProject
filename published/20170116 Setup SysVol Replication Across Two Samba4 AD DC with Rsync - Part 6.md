@@ -3,7 +3,7 @@ Samba 系列（六）：使用 Rsync 命令同步两个 Samba4 AD DC 之间的 S
 
 这篇文章讲的是在两个 **Samba4 活动目录域控制器**之间，通过一些强大的 Linux 工具来完成 SysVol 的复制操作，比如 [Rsync 数据同步工具][2]，[Cron 任务调度进程][3]和 [SSH 协议][4]。
 
-#### 要求：
+### 需求：
 
 -  [Samba 系列（五）：将另一台 Ubuntu DC 服务器加入到 Samba4 AD DC 实现双域控主机模][1]
 
@@ -25,7 +25,7 @@ Samba 系列（六）：使用 Rsync 命令同步两个 Samba4 AD DC 之间的 S
 # nano /etc/ntp.conf
 ```
 
-把下面几行添加到 **ntp.conf** 配置文件。
+把下面几行添加到 `ntp.conf` 配置文件。
 
 ```
 pool 0.ubuntu.pool.ntp.org iburst
@@ -36,6 +36,7 @@ pool adc1.tecmint.lan
 # Use Ubuntu's ntp server as a fallback.
 pool ntp.ubuntu.com
 ```
+
 [
  ![Configure NTP for Samba4](http://www.tecmint.com/wp-content/uploads/2017/01/Configure-NTP-for-Samba4.png) 
 ][6]
@@ -49,12 +50,13 @@ restrict source notrap nomodify noquery mssntp
 ntpsigndsocket /var/lib/samba/ntp_signd/
 ```
 
-4、最后，关闭并保存该配置文件，然后重启 NTP 服务以应用更改。等待几分钟后时间同步完成，执行 **ntpq** 命令打印出 **adc1** 时间同步情况。
+4、最后，关闭并保存该配置文件，然后重启 NTP 服务以应用更改。等待几分钟后时间同步完成，执行 `ntpq` 命令打印出 **adc1** 时间同步情况。
 
 ```
 # systemctl restart ntp
 # ntpq -p
 ```
+
 [
  ![Synchronize NTP Time with Samba4 AD](http://www.tecmint.com/wp-content/uploads/2017/01/Synchronize-Time.png) 
 ][8]
@@ -65,7 +67,7 @@ ntpsigndsocket /var/lib/samba/ntp_signd/
 
 默认情况下，**Samba4 AD DC** 不会通过 **DFS-R**（<ruby>分布式文件系统复制<rt>Distributed File System Replication</rt></ruby>）或者 **FRS**（<ruby>文件复制服务<rt>File Replication Service</rt></ruby>）来复制 SysVol 目录。
 
-这意味着只有在第一个域控制器联机时，<ruby>**组策略对象**<rt>Group Policy objects </rt></ruby>才可用。否则组策略设置和登录脚本不会应用到已加入域的 Windosws 机器上。
+这意味着只有在第一个域控制器联机时，<ruby>**组策略对象**<rt>Group Policy objects</rt></ruby>才可用。否则组策略设置和登录脚本不会应用到已加入域的 Windosws 机器上。
 
 为了克服这个障碍，以及基本实现 SysVol 目录复制的目的，我们通过执行一个[基于 SSH 的身份认证][10]并使用 SSH 加密通道的[Linux 同步命令][9]来从第一个域控制器安全地传输 **GPO** 对象到第二个域控制器。
 
@@ -75,7 +77,7 @@ ntpsigndsocket /var/lib/samba/ntp_signd/
 
 5、要进行 **SysVol** 复制，先到[第一个 AD DC 服务器上生成 SSH 密钥][11]，然后使用下面的命令把该密钥传输到第二个 DC 服务器。
 
-在生成密钥的过程中不要设置密码 **passphrase**，以便在无用户干预的情况下进行传输。
+在生成密钥的过程中不要设置密码，以便在无用户干预的情况下进行传输。
 
 ```
 # ssh-keygen -t RSA  
@@ -83,23 +85,25 @@ ntpsigndsocket /var/lib/samba/ntp_signd/
 # ssh adc2 
 # exit 
 ```
+
 [
  ![Generate SSH Key on Samba4 DC](http://www.tecmint.com/wp-content/uploads/2017/01/Generate-SSH-Key.png) 
 ][12]
 
 *在 Samba4 DC 服务器上生成 SSH 密钥*
 
-6、 当你确认 root 用户可以从第一个 **DC** 服务器以免密码方式登录到第二个 **DC** 服务器时，执行下面的 **Rsync** 命令，加上 `--dry-run` 参数来模拟 SysVol 复制过程。注意把对应的参数值替换成你自己的数据。
+6、 当你确认 root 用户可以从第一个 **DC** 服务器以免密码方式登录到第二个 **DC** 服务器时，执行下面的 `rsync` 命令，加上 `--dry-run` 参数来模拟 SysVol 复制过程。注意把对应的参数值替换成你自己的数据。
 
 ```
 # rsync --dry-run -XAavz --chmod=775 --delete-after  --progress --stats  /var/lib/samba/sysvol/ root@adc2:/var/lib/samba/sysvol/
 ```
 
-7、如果模拟复制过程正常，那么再次执行去掉 `--dry-run` 参数的 rsync 命令，来真实的在域控制器之间复制 GPO 对象。
+7、如果模拟复制过程正常，那么再次执行去掉 `--dry-run` 参数的 `rsync` 命令，来真实的在域控制器之间复制 GPO 对象。
 
 ```
 # rsync -XAavz --chmod=775 --delete-after  --progress --stats  /var/lib/samba/sysvol/ root@adc2:/var/lib/samba/sysvol/
 ```
+
 [
  ![Samba4 AD DC SysVol Replication](http://www.tecmint.com/wp-content/uploads/2017/01/SysVol-Replication-for-Samba4-DC.png) 
 ][13]
@@ -113,6 +117,7 @@ ntpsigndsocket /var/lib/samba/ntp_signd/
 ```
 # ls -alh /var/lib/samba/sysvol/your_domain/Policiers/
 ```
+
 [
  ![Verify Samba4 DC SysVol Replication](http://www.tecmint.com/wp-content/uploads/2017/01/Verify-Samba4-DC-SysVol-Replication.png) 
 ][14]
@@ -125,7 +130,7 @@ ntpsigndsocket /var/lib/samba/ntp_signd/
 # crontab -e 
 ```
 
-添加一条每隔 5 分钟运行的同步命令，并把执行结果以及错误信息输出到日志文件 /var/log/sysvol-replication.log 。如果执行命令异常，你可以查看该文件来定位问题。
+添加一条每隔 5 分钟运行的同步命令，并把执行结果以及错误信息输出到日志文件 `/var/log/sysvol-replication.log` 。如果执行命令异常，你可以查看该文件来定位问题。
 
 ```
 */5 * * * * rsync -XAavz --chmod=775 --delete-after  --progress --stats  /var/lib/samba/sysvol/ root@adc2:/var/lib/samba/sysvol/ > /var/log/sysvol-replication.log 2>&1
