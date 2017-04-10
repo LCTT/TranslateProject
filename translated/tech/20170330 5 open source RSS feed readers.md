@@ -44,7 +44,7 @@ Ticker 的源代码和二进制文件以 GPL 许可证的形式在这个[网站]
 
 Tiny Tiny RSS 还有官方的 [Android客户端][15]，希望能够随时随地阅读。
 
-[Tiny Tiny RSS] 的 [web][16] 和 [Android][17] 源代码以 [GPLv3 许可][18] 在 GitLab 上发布。
+Tiny Tiny RSS 的 [web][16] 和 [Android][17] 源代码以 [GPLv3 许可][18] 在 GitLab 上发布。
 
 ### Winds
 
