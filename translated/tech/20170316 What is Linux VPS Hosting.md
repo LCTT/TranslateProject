@@ -4,7 +4,7 @@
 
  ![what is linux vps hosting](https://www.rosehosting.com/blog/wp-content/uploads/2017/03/what-is-linux-vps-hosting.jpg) 
 
-如果你有一个吞吐量很大的网站，或者至少，预期网站吞吐量很大，那么你可以考虑使用 [Linux VPS hosting][6] 包 。如果你想对网站托管的服务器上安装的东西有更多控制，那么 Linux VPS hosting 包就是最好的选择之一。这里我会回答一些频繁被提及的关于 Linux VPS hosting 的问题。
+如果你有一个吞吐量很大的网站，或者至少，预期网站吞吐量很大，那么你可以考虑使用 [Linux VPS 托管][6] 包 。如果你想对网站托管的服务器上安装的东西有更多控制，那么 Linux VPS 托管包就是最好的选择之一。这里我会回答一些频繁被提及的关于 Linux VPS 托管的问题。
 
 ### Linux VPS 意味着什么？
 
@@ -63,7 +63,7 @@ via: https://www.rosehosting.com/blog/what-is-linux-vps-hosting/
 
 作者：[https://www.rosehosting.com ][a]
 译者：[vim-kakali](https://github.com/vim-kakali)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
