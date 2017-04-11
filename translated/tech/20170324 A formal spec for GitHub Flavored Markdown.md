@@ -38,7 +38,6 @@
 ### 迁移
 
 变更我们用户的内容堆栈以兼容 CommonMark 规范，并不同于转换我们用来解析 Markdown 的库那样容易：目前我们在遇到最根本的障碍就是由于一些不常用语法 (LCTT 译注：原文是 the Corner，作为名词的原意为角落、偏僻处、窘境，这应该是指那些不常用语法)，CommonMark 规范 (以及有歧义的 Markdown 原文) 可能会以一种意想不到的方式来渲染一些老旧的 Markdown 内容。
-the fundamental roadblock we encountered here is that the corner cases that CommonMark specifies (and that the original Markdown documentation left ambiguous) could cause some old Markdown content to render in unexpected ways.
 
 通过综合分析 GitHub 中大量的 Markdown 语料库，我们断定现存的用户内容只有不到 1% 会受到新版本实现的影响：我们是通过同时使用新 (`cmark`，兼容 CommonMark 规范) 旧 (Sundown) 版本的库来渲染大量的 Markdown 文档、标准化 HTML 结果、分析它们的不同点，最后才得到这一个数据的。
 
@@ -56,11 +55,11 @@ the fundamental roadblock we encountered here is that the corner cases that Comm
 
 除了转换之外，这还是一个高效的标准化过程，并且我们对此信心满满，毕竟完成这一任务的是我们在五年前就使用过的解析器。因此，所有的现存文档在保留其原始语意的情况下都能够进行明确的解析。
 
-一旦升级 Sundown 来标准化输入文档并充分测试之后，我们就会做好开启转换进程的准备。最开始的一步，就是在新的 `cmark` 实现上为所有的用户内容进行反置转换，以便确保我们能有一个有限的分界点来进行过渡。我们将为网站上这几个月内所有 **新的** 用户评论启用 CommonMark，这一过程不会引起任何人注意的 —— 他们这是一个关于 CommonMark 团队出色工作的圣约,通过一个最具现实世界用法的方式来正式规范 Markdown 语言。
+一旦升级 Sundown 来标准化输入文档并充分测试之后，我们就会做好开启转换进程的准备。最开始的一步，就是在新的 `cmark` 实现上为所有新用户内容进行反置转换，以便确保我们能有一个有限的分界点来进行过渡。实际上，几个月前我们就为网站上所有 **新的** 用户评论启用了 CommonMark，这一过程几乎没有引起任何人注意 —— 这是关于 CommonMark 团队出色工作的证明,通过一个最具现实世界用法的方式来正式规范 Markdown 语言。
 
-在后端，我们开启 MySQL 转换来升级替代用户的 Markdown 内容。在所有的评论进行标准化之后，在将其写回到数据库之前，我们将使用新实现来进行渲染并与旧实现的渲染结果进行对比，以确保 HTML 输出结果视觉可鉴以及用户数据在任何情况下都不被破坏。总而言之，只有不到 1% 的输入文档会受到表彰进程的修改，这符合我们的的期望，同时再次证明 CommonMark 规范能够呈现语言的真实用法。
+在后端，我们开启 MySQL 转换来升级替代所有 Markdown 用户内容。在所有的评论进行标准化之后，在将其写回到数据库之前，我们将使用新实现来进行渲染并与旧实现的渲染结果进行对比，以确保 HTML 输出结果视觉上感觉相同，并且用户数据在任何情况下都不会被破坏。总而言之，只有不到 1% 的输入文档会受到标准进程的修改，这符合我们的的期望，同时再次证明 CommonMark 规范能够呈现语言的真实用法。
 
-整个过程会持续好几天，最后的结果是网站上所有的 Markdown 用户内容会得到全面升级以符合新的 Markdown 标准，同时确保所有的最终渲染输出效果都对用户视觉可辩。
+整个过程会持续好几天，最后的结果是网站上所有的 Markdown 用户内容会得到全面升级以符合新的 Markdown 标准，同时确保所有的最终渲染输出效果对用户视觉上感觉相同。
 
 #### 结论
 
@@ -68,11 +67,11 @@ the fundamental roadblock we encountered here is that the corner cases that Comm
 
 能够让在 GitHub 上的所有 Markdown 内容符合一个动态变化且使用的标准，同时还可以为我的用户提供一个关于 GFM 如何进行解析和渲染 [清晰且权威的参考说明][19]，我们是相当激动的。
 
-我们还将致力于 CommonMark 规范，一直到在它正式发布之前消沉最后一个 bug。我们也希望 GitHub.com 在 1.0 规范发布之后可以进行完美兼容。
+我们还将致力于 CommonMark 规范，一直到在它正式发布之前消除最后一个 bug。我们也希望 GitHub.com 在 1.0 规范发布之后可以进行完美兼容。
 
 作为结束，以下为想要学习 CommonMark 规范或则自己来编写实现的朋友提供一些有用的链接。
 
-*   [CommonMark 主页][1]，可以了解该项目该多信息
+*   [CommonMark 主页][1]，可以了解本项目更多信息
 *   [CommonMark 论坛讨论区][2]，可以提出关于该规范的的问题和更改建议
 *   [CommonMark 规范][3]
 *   [使用 C 语言编写的参考实现][4]
