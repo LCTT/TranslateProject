@@ -1,3 +1,4 @@
+【翻译中】
 Getting started with Perl on the Raspberry Pi
 ============================================================
 
