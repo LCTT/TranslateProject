@@ -68,20 +68,20 @@ Asterisk has many nuances and the FreePBX software easily leveraged them.
 
 作者简介：
 
-Ian Kluft - Ian has had parallel interests since grade school in computing and flight. He was coding on Unix before there was Linux, and started on Linux 6 months after the kernel was posted. He has a masters degree in Computer Science and is a CSSLP (Certified Secure Software Lifecycle Professional). On the side he's a pilot and a certified flight instructor. As a licensed Ham Radio operator for over 25 years, experimentation with electronics has evolved in recent years to include the Raspberry Pi 
+Don Watkins - Educator, education technology specialist,  entrepreneur, open source advocate. M.A. in Educational Psychology, MSED in Educational Leadership, Linux system administrator, CCNA, virtualization using Virtual Box. Follow me at @Don_Watkins .
 
 ----------
 
 
-via: https://opensource.com/article/17/3/perl-raspberry-pi
+via: https://opensource.com/article/17/4/asterisk-raspberry-pi-3
 
-作者：[Ian Kluft][a]
+作者：[Don Watkins][a]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:https://opensource.com/users/ikluft
+[a]:https://opensource.com/users/don-watkins
 [1]:https://opensource.com/tags/raspberry-pi?src=raspberry_pi_resource_menu
 [2]:https://opensource.com/resources/what-raspberry-pi?src=raspberry_pi_resource_menu
 [3]:https://opensource.com/article/16/12/getting-started-raspberry-pi?src=raspberry_pi_resource_menu
