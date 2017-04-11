@@ -1,3 +1,4 @@
+Translating by ucasFL
 NMAP Common Scans – Part Two
 =====================
 
@@ -51,7 +52,7 @@ In this case the port is listed as Filtered and the Port may or may not be open.
 
 I will perform a scan of a single system (10.0.0.2) and perform the TCP Syn Scan as shown in Figure 1\. The scan is done with the command ‘sudo nmap -sS <IP Address>’. The ‘<IP Address>’ can be exchanged with a single IP Address, as in Figure 1, or by using a group of IP Addresses.
 
- ![Figure 01.jpg](https://www.linuxforum.com/attachments/figure-01-jpg.119/) 
+ ![Figure 01.jpg](https://www.linuxforum.com/attachments/figure-01-jpg.119/)
 
 **FIGURE 1**
 
@@ -61,11 +62,11 @@ You can see that it states that 997 Filtered Ports are not shown. NMAP then find
 
 The scan was captured by WireShark as shown in Figure 2\. Here you can see the initial Address Resolution Protocol (ARP) requests being made for the Target System. Following the ARP requests are a long list of TCP requests to the Ports on the Target System. Line 4 is to the ‘http-alt’ Port (8080). The Source System Port number is 47,128\. Many SYN requests are sent until a response is made as shown in Figure 3.
 
- ![Figure 2.jpg](https://www.linuxforum.com/attachments/figure-2-jpg.120/) 
+ ![Figure 2.jpg](https://www.linuxforum.com/attachments/figure-2-jpg.120/)
 
 **FIGURE 2**
 
- ![Figure 3.jpg](https://www.linuxforum.com/attachments/figure-3-jpg.121/) 
+ ![Figure 3.jpg](https://www.linuxforum.com/attachments/figure-3-jpg.121/)
 
 **FIGURE 3**
 
@@ -73,7 +74,7 @@ In Figure 3 on Lines 50 and 51 you can see the RST (Reset) packet sent to the So
 
 The Target System was a Windows System and I turned off the Firewall software on the system and performed the scan again as shown in Figure 4\. Now instead of seeing 997 Filtered Ports there are 997 Closed Ports. Port 135 is also now open on the Target System which was being blocked by the Firewall.
 
- ![Figure 04.jpg](https://www.linuxforum.com/attachments/figure-04-jpg.122/) 
+ ![Figure 04.jpg](https://www.linuxforum.com/attachments/figure-04-jpg.122/)
 
 **FIGURE 4**
 
@@ -99,13 +100,13 @@ The scan is done with the command ‘nmap -sT <IP Address>’. The ‘<IP Addres
 
 The results of a TCP Connect Scan can be seen in Figure 5\. Here you can see that the two open Ports, 139 and 445, are found just like with the TCP SYN Scan. Port 80 is listed as being Closed. The remaining Ports are not shown and listed as Filtered.
 
- ![Figure 05.jpg](https://www.linuxforum.com/attachments/figure-05-jpg.123/) 
+ ![Figure 05.jpg](https://www.linuxforum.com/attachments/figure-05-jpg.123/)
 
 **FIGURE 5**
 
 Let’s try the scan again after shutting off the Firewall. The results are shown in Figure 6.
 
- ![Figure 06.jpg](https://www.linuxforum.com/attachments/figure-06-jpg.124/) 
+ ![Figure 06.jpg](https://www.linuxforum.com/attachments/figure-06-jpg.124/)
 
 **FIGURE 6**
 
