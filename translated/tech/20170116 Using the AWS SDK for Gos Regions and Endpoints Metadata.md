@@ -1,21 +1,21 @@
-使用AWS的GO SDK获取区域与Endpoint信息
+使用AWS的GO SDK获取区域与终端节点信息
 ============================================================
 
 <section itemprop="articleBody" style="font-family: HelveticaNeue, Helvetica, Helvetica, Arial, sans-serif;">
 
-译注: Endpoint选择不翻译是因为在查阅官方文档中时候发现, 它并不是指代某个端点,而是某个服务,或者区域或者是主机等的url.[详情请见: http://docs.aws.amazon.com/general/latest/gr/rande.html](http://docs.aws.amazon.com/general/latest/gr/rande.html)
+译注: Endpoint(终端节点)[详情请见: http://docs.amazonaws.cn/general/latest/gr/rande.html](http://docs.amazonaws.cn/general/latest/gr/rande.html)
 
-最新发布的GO的SDK[v1.6.0][1]版本, 加入了获取区域与Endpoint信息的功能. 它可以很方便地列出区域, 服务 和Endpoint的相关信息.可以通过[github.com/aws/aws-sdk-go/aws/endpoints][3]包使用这些功能.
+最新发布的GO的SDK[v1.6.0][1]版本, 加入了获取区域与终端节点信息的功能. 它可以很方便地列出区域, 服务 和终端节点的相关信息.可以通过[github.com/aws/aws-sdk-go/aws/endpoints][3]包使用这些功能.
 
-endpoints包提供了一个易用的接口,可以获取到一个服务的endpoint url列表和区域列表信息.并且我们将相关信息根据AWS服务区域进行了分组,如 AWS 标准, AWS 中国, and AWS GovCloud (美国).
+endpoints包提供了一个易用的接口,可以获取到一个服务的终端节点的url列表和区域列表信息.并且我们将相关信息根据AWS服务区域进行了分组,如 AWS 标准, AWS 中国, and AWS GovCloud (美国).
 
-### 解析Endpoint
+### 解析终端节点
 
-设置SDK的默认配置时, SDK会自动地使用endpoints.DefaultResolver函数. 你也可以自己调用包中的EndpointFor方法来解析endpoint.
+设置SDK的默认配置时, SDK会自动地使用endpoints.DefaultResolver函数. 你也可以自己调用包中的EndpointFor方法来解析终端节点.
 
 Go
 ```
-// 解析在us-west-2区域的S3服务的endpoint
+// 解析在us-west-2区域的S3服务的终端节点
 resolver := endpoints.DefaultResolver()
 endpoint, err := resolver.EndpointFor(endpoints.S3ServiceID, endpoints.UsWest2RegionID)
 if err != nil {
@@ -26,9 +26,9 @@ if err != nil {
 fmt.Println("Resolved URL:", endpoint.URL)
 ```
 
-如果你需要自定义endpoint的解析逻辑,你可以实现endpoints.Resolver接口, 并传值给aws.Config.EndpointResolver. 当你打算编写自定义的endpoint逻辑,让sdk可以用来解析服务endpoint时候,这个功能就会很有用.
+如果你需要自定义终端节点的解析逻辑,你可以实现endpoints.Resolver接口, 并传值给aws.Config.EndpointResolver. 当你打算编写自定义的终端节点逻辑,让sdk可以用来解析服务的终端节点时候,这个功能就会很有用.
 
-以下示例, 创建了一个配置好的Session, 然后[Amazon S3][4]服务的客服端就可以使用这个自定义的endpoint.
+以下示例, 创建了一个配置好的Session, 然后[Amazon S3][4]服务的客服端就可以使用这个自定义的终端节点.
 
 Go
 ```
