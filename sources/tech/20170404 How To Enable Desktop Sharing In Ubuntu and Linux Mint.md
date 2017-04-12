@@ -1,3 +1,4 @@
+ucasFL is Translating
 How To Enable Desktop Sharing In Ubuntu and Linux Mint
 ============================================================
 
@@ -11,7 +12,7 @@ In this article, we will show you how to enable desktop sharing in Ubuntu and Li
 1. In the Ubuntu Dash or Linux Mint Menu, search for “desktop sharing” as shown in the following screenshot, once you get it, launch it.
 
 [
- ![Search for Desktop Sharing in Ubuntu](http://www.tecmint.com/wp-content/uploads/2017/03/search-for-desktop-sharing.png) 
+ ![Search for Desktop Sharing in Ubuntu](http://www.tecmint.com/wp-content/uploads/2017/03/search-for-desktop-sharing.png)
 ][1]
 
 Search for Desktop Sharing in Ubuntu
@@ -21,7 +22,7 @@ Search for Desktop Sharing in Ubuntu
 Under sharing, check the option “Allow others users to view your desktop” to enable desktop sharing. Optionally, you can also permit other users to remotely control your desktops by checking the option “Allow others users to control your desktop”.
 
 [
- ![Desktop Sharing Preferences](http://www.tecmint.com/wp-content/uploads/2017/03/desktop-sharing-settings-inte.png) 
+ ![Desktop Sharing Preferences](http://www.tecmint.com/wp-content/uploads/2017/03/desktop-sharing-settings-inte.png)
 ][2]
 
 Desktop Sharing Preferences
@@ -33,7 +34,7 @@ Again, another useful security feature is creating a certain shared password usi
 4. Concerning notifications, you can keep an eye on remote connections by choosing to show the notification area icon each time there is a remote connection to your desktops by selecting “Only when someone is connected”.
 
 [
- ![Configure Desktop Sharing Set](http://www.tecmint.com/wp-content/uploads/2017/03/Configure-Desktop-Sharing-Set.png) 
+ ![Configure Desktop Sharing Set](http://www.tecmint.com/wp-content/uploads/2017/03/Configure-Desktop-Sharing-Set.png)
 ][3]
 
 Configure Desktop Sharing Set
@@ -47,7 +48,7 @@ You can test to ensure that it’s working using a remote connection application
 5. I will connect to my Ubuntu PC using VNC (Virtual Network Computing) protocol via [remmina remote connection application][4].
 
 [
- ![Remmina Desktop Sharing Tool](http://www.tecmint.com/wp-content/uploads/2017/03/Remmina-Desktop-Sharing-Tool.png) 
+ ![Remmina Desktop Sharing Tool](http://www.tecmint.com/wp-content/uploads/2017/03/Remmina-Desktop-Sharing-Tool.png)
 ][5]
 
 Remmina Desktop Sharing Tool
@@ -55,7 +56,7 @@ Remmina Desktop Sharing Tool
 6. After clicking on Ubuntu PC item, I get the interface below to configure my connection settings.
 
 [
- ![Remmina Desktop Sharing Preferences](http://www.tecmint.com/wp-content/uploads/2017/03/Remmina-Configure-Remote-Desk.png) 
+ ![Remmina Desktop Sharing Preferences](http://www.tecmint.com/wp-content/uploads/2017/03/Remmina-Configure-Remote-Desk.png)
 ][6]
 
 Remmina Desktop Sharing Preferences
@@ -63,7 +64,7 @@ Remmina Desktop Sharing Preferences
 7. After performing all the settings, I will click Connect. Then provide the SSH password for the username and click OK.
 
 [
- ![Enter SSH User Password](http://www.tecmint.com/wp-content/uploads/2017/03/shared-pass.png) 
+ ![Enter SSH User Password](http://www.tecmint.com/wp-content/uploads/2017/03/shared-pass.png)
 ][7]
 
 Enter SSH User Password
@@ -71,7 +72,7 @@ Enter SSH User Password
 I have got this black screen after clicking OK because, on the remote machine, the connection has not been confirmed yet.
 
 [
- ![Black Screen Before Confirmation](http://www.tecmint.com/wp-content/uploads/2017/03/black-screen-before-confirmat.png) 
+ ![Black Screen Before Confirmation](http://www.tecmint.com/wp-content/uploads/2017/03/black-screen-before-confirmat.png)
 ][8]
 
 Black Screen Before Confirmation
@@ -79,7 +80,7 @@ Black Screen Before Confirmation
 8. Now on the remote machine, I have to accept the remote access request by clicking on “Allow” as shown in the next screenshot.
 
 [
- ![Allow Remote Desktop Sharing](http://www.tecmint.com/wp-content/uploads/2017/03/accept-remote-access-request.png) 
+ ![Allow Remote Desktop Sharing](http://www.tecmint.com/wp-content/uploads/2017/03/accept-remote-access-request.png)
 ][9]
 
 Allow Remote Desktop Sharing
@@ -87,7 +88,7 @@ Allow Remote Desktop Sharing
 9. After accepting the request, I have successfully connected, remotely to my Ubuntu desktop machine.
 
 [
- ![Remote Ubuntu Desktop](http://www.tecmint.com/wp-content/uploads/2017/03/successfully-connected-to-rem.png) 
+ ![Remote Ubuntu Desktop](http://www.tecmint.com/wp-content/uploads/2017/03/successfully-connected-to-rem.png)
 ][10]
 
 Remote Ubuntu Desktop
