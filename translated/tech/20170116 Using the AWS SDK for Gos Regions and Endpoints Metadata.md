@@ -1,21 +1,21 @@
-    Vic020
-    
-Using the AWS SDK for Go’s Regions and Endpoints Metadata
+使用AWS的GO SDK获取区域与终端节点信息
 ============================================================
 
 <section itemprop="articleBody" style="font-family: HelveticaNeue, Helvetica, Helvetica, Arial, sans-serif;">
 
-In release [v1.6.0][1] of the [AWS SDK for Go][2], we added Regions and Endpoints metadata to the SDK. This feature enables you to easily enumerate the metadata and discover Regions, Services, and Endpoints. You can find this feature in the [github.com/aws/aws-sdk-go/aws/endpoints][3] package.
+译注: Endpoint(终端节点)[详情请见: http://docs.amazonaws.cn/general/latest/gr/rande.html](http://docs.amazonaws.cn/general/latest/gr/rande.html)
 
-The endpoints package provides a simple interface to get a service’s endpoint URL and enumerate the Region metadata. The metadata is grouped into partitions. Each partition is a group of AWS Regions such as AWS Standard, AWS China, and AWS GovCloud (US).
+最新发布的GO的SDK[v1.6.0][1]版本, 加入了获取区域与终端节点信息的功能. 它可以很方便地列出区域, 服务 和终端节点的相关信息.可以通过[github.com/aws/aws-sdk-go/aws/endpoints][3]包使用这些功能.
 
-### Resolving Endpoints
+endpoints包提供了一个易用的接口,可以获取到一个服务的终端节点的url列表和区域列表信息.并且我们将相关信息根据AWS服务区域进行了分组,如 AWS 标准, AWS 中国, and AWS GovCloud (美国).
 
-The SDK automatically uses the endpoints.DefaultResolver function when setting the SDK’s default configuration. You can resolve endpoints yourself by calling the EndpointFor methods in the endpoints package.
+### 解析终端节点
+
+设置SDK的默认配置时, SDK会自动地使用endpoints.DefaultResolver函数. 你也可以自己调用包中的EndpointFor方法来解析终端节点.
 
 Go
 ```
-// Resolve endpoint for S3 in us-west-2
+// 解析在us-west-2区域的S3服务的终端节点
 resolver := endpoints.DefaultResolver()
 endpoint, err := resolver.EndpointFor(endpoints.S3ServiceID, endpoints.UsWest2RegionID)
 if err != nil {
@@ -26,9 +26,9 @@ if err != nil {
 fmt.Println("Resolved URL:", endpoint.URL)
 ```
 
-If you need to add custom endpoint resolution logic to your code, you can implement the endpoints.Resolver interface, and set the value to aws.Config.EndpointResolver. This is helpful when you want to provide custom endpoint logic that the SDK will use for resolving service endpoints.
+如果你需要自定义终端节点的解析逻辑,你可以实现endpoints.Resolver接口, 并传值给aws.Config.EndpointResolver. 当你打算编写自定义的终端节点逻辑,让sdk可以用来解析服务的终端节点时候,这个功能就会很有用.
 
-The following example creates a Session that is configured so that [Amazon S3][4] service clients are constructed with a custom endpoint.
+以下示例, 创建了一个配置好的Session, 然后[Amazon S3][4]服务的客服端就可以使用这个自定义的终端节点.
 
 Go
 ```
@@ -50,13 +50,13 @@ sess := session.Must(session.NewSessionWithOptions(session.Options{
 }))
 ```
 
-### Partitions
+### 分区
 
-The return value of the endpoints.DefaultResolver function can be cast to the endpoints.EnumPartitions interface. This will give you access to the slice of partitions that the SDK will use, and can help you enumerate over partition information for each partition.
+endpoints.DefaultResolver函数的返回值可以被endpoints.EnumPartitions接口使用.这样就可以获取SDK使用的分区片段，也可以列出每个分区的分区信息。
 
 Go
 ```
-// Iterate through all partitions printing each partition's ID.
+// 迭代所有分区表打印每个分区的ID
 resolver := endpoints.DefaultResolver()
 partitions := resolver.(endpoints.EnumPartitions).Partitions()
 
@@ -65,7 +65,7 @@ for _, p := range partitions {
 }
 ```
 
-In addition to the list of partitions, the endpoints package also includes a getter function for each partition group. These utility functions enable you to enumerate a specific partition without having to cast and enumerate over all the default resolver’s partitions.
+除了分区表之外, endpoints包也提供了每个分区组的getter函数. 这些工具函数可以方便列出指定分区,而不用执行默认解析器列出所有的分区.
 
 Go
 ```
@@ -78,9 +78,9 @@ for id, _ := range region.Services() {
 }
 ```
 
-Once you have a Region or Service value, you can call ResolveEndpoint on it. This provides a filtered view of the Partition when resolving endpoints.
+当你获取区域和服务值后, 可以调用ResolveEndpoint. 这样解析端点时,就可以提供分区的过滤视图.
 
-Check out the AWS SDK for Go repo for [more examples][5]. Let us know in the comments what you think of the endpoints package.
+获取更多AWS SDK for GO信息, 请关注[开源库][5]. 若你有更好的看法,请留言评论.
 
 </section>
 
@@ -89,7 +89,7 @@ Check out the AWS SDK for Go repo for [more examples][5]. Let us know in the co
 via: https://aws.amazon.com/cn/blogs/developer/using-the-aws-sdk-for-gos-regions-and-endpoints-metadata
 
 作者：[ Jason Del Ponte][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Vic020](http://vicyu.com)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
