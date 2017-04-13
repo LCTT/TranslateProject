@@ -1,6 +1,6 @@
+ucasFL is Translating
 pyDash – A Web Based Linux Performance Monitoring Tool
 ============================================================
-
 
 pydash is a lightweight [web-based monitoring tool for Linux][1] written in Python and [Django][2] plus Chart.js. It has been tested and can run on the following mainstream Linux distributions: CentOS, Fedora, Ubuntu, Debian, Arch Linux, Raspbian as well as Pidora.
 
@@ -13,9 +13,9 @@ In this article, we will show you how to install pydash to monitor Linux server
 1. First install required packages: git and Python pip as follows:
 
 ```
--------------- On Debian/Ubuntu -------------- 
+-------------- On Debian/Ubuntu --------------
 $ sudo apt-get install git python-pip
--------------- On CentOS/RHEL -------------- 
+-------------- On CentOS/RHEL --------------
 # yum install epel-release
 # yum install git python-pip
 -------------- On Fedora 22+ --------------
@@ -43,7 +43,7 @@ $ sudo pip install virtualenv
 $ virtualenv pydashtest #give a name for your virtual environment like pydashtest
 ```
 [
- ![Create Virtual Environment](http://www.tecmint.com/wp-content/uploads/2017/03/create-virtual-environment.png) 
+ ![Create Virtual Environment](http://www.tecmint.com/wp-content/uploads/2017/03/create-virtual-environment.png)
 ][3]
 
 Create Virtual Environment
@@ -56,7 +56,7 @@ Important: Take note the virtual environment’s bin directory path highlighted 
 $ source /home/aaronkilik/pydash/pydashtest/bin/activate
 ```
 [
- ![Active Virtual Environment](http://www.tecmint.com/wp-content/uploads/2017/03/after-activating-virtualenv.png) 
+ ![Active Virtual Environment](http://www.tecmint.com/wp-content/uploads/2017/03/after-activating-virtualenv.png)
 ][4]
 
 Active Virtual Environment
@@ -76,7 +76,7 @@ $ pip install -r requirements.txt
 $ vi pydash/settings.py
 ```
 [
- ![Set Secret Key](http://www.tecmint.com/wp-content/uploads/2017/03/change-secret-key.png) 
+ ![Set Secret Key](http://www.tecmint.com/wp-content/uploads/2017/03/change-secret-key.png)
 ][6]
 
 Set Secret Key
@@ -99,7 +99,7 @@ Password: ###########
 Password (again): ############
 ```
 [
- ![Create Project Database](http://www.tecmint.com/wp-content/uploads/2017/03/python-manage.py-syncdb.png) 
+ ![Create Project Database](http://www.tecmint.com/wp-content/uploads/2017/03/python-manage.py-syncdb.png)
 ][7]
 
 Create Project Database
@@ -113,7 +113,7 @@ $ python manage.py runserver
 10. Next, open your web browser and type the URL: http://127.0.0.1:8000/ to get the web dashboard login interface. Enter the super user name and password you created while creating the database and installing Django’s auth system in step 8 and click Sign In.
 
 [
- ![pyDash Login Interface](http://www.tecmint.com/wp-content/uploads/2017/03/pyDash-web-login-interface.png) 
+ ![pyDash Login Interface](http://www.tecmint.com/wp-content/uploads/2017/03/pyDash-web-login-interface.png)
 ][8]
 
 pyDash Login Interface
@@ -123,7 +123,7 @@ pyDash Login Interface
 Simply scroll down to view more sections.
 
 [
- ![pyDash Server Performance Overview](http://www.tecmint.com/wp-content/uploads/2017/03/pyDash-Server-Performance-Overview.png) 
+ ![pyDash Server Performance Overview](http://www.tecmint.com/wp-content/uploads/2017/03/pyDash-Server-Performance-Overview.png)
 ][9]
 
 pyDash Server Performance Overview
@@ -131,7 +131,7 @@ pyDash Server Performance Overview
 12. Next, screenshot of the pydash showing a section for keeping track of interfaces, IP addresses, Internet traffic, disk read/writes, online users and netstats.
 
 [
- ![pyDash Network Overview](http://www.tecmint.com/wp-content/uploads/2017/03/pyDash-Network-Overview.png) 
+ ![pyDash Network Overview](http://www.tecmint.com/wp-content/uploads/2017/03/pyDash-Network-Overview.png)
 ][10]
 
 pyDash Network Overview
@@ -139,7 +139,7 @@ pyDash Network Overview
 13. Next is a screenshot of the pydash main interface showing a section to keep an eye on active processes on the system.
 
 [
- ![pyDash Active Linux Processes](http://www.tecmint.com/wp-content/uploads/2017/03/pyDash-Active-Linux-Processes.png) 
+ ![pyDash Active Linux Processes](http://www.tecmint.com/wp-content/uploads/2017/03/pyDash-Active-Linux-Processes.png)
 ][11]
 
 pyDash Active Linux Processes
