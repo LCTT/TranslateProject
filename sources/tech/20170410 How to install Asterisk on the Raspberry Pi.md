@@ -1,3 +1,5 @@
+translating---geekpi
+
 How to install Asterisk on the Raspberry Pi
 ============================================================
 
