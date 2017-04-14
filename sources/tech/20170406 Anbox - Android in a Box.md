@@ -1,3 +1,5 @@
+translating---geekpi
+
 # Anbox
 
 Anbox is container based approach to boot a full Android system on a
