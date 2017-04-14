@@ -1,4 +1,4 @@
-willcoderwang  翻译中
+ictlyh 接手 willcoderwang   翻译
 How to Install Jenkins Automation Server with Apache on Ubuntu 16.04
 ============================================================
 
