@@ -1,38 +1,30 @@
-### 在Linux上使用Nginx和Gunicorn托管Django
+在 Linux 上使用 Nginx 和 Gunicorn 托管 Django 应用
+==========
 
 ![](https://linuxconfig.org/images/gunicorn_logo.png?58963dfd)
 
-内容
-
-*   *   [1. 介绍][4]
-    *   [2. Gunicorn][5]
-        *   [2.1. 安装][1]
-        *   [2.2. 配置][2]
-        *   [2.3. 运行][3]
-    *   [3. Nginx][6]
-    *   [4. 结语][7]
 
 ### 介绍
 
-托管Django Web应用程序相当简单，虽然它比标准的PHP应用程序更复杂一些。 处理带Web服务器的Django接口的方法有很多。 Gunicorn就是其中最简单的一个。
+托管 Django Web 应用程序相当简单，虽然它比标准的 PHP 应用程序更复杂一些。 让 Web 服务器对接 Django 的方法有很多。 Gunicorn 就是其中最简单的一个。
 
-Gunicorn（Green Unicorn的缩写）在你的Web服务器Django之间作为中间服务器使用，在这里，Web服务器就是Nginx。 Gunicorn服务于应用程序，而Nginx处理静态内容。
+Gunicorn（Green Unicorn 的缩写）在你的 Web 服务器 Django 之间作为中间服务器使用，在这里，Web 服务器就是 Nginx。 Gunicorn 服务于应用程序，而 Nginx 处理静态内容。
 
 ### Gunicorn
 
-### 安装
+#### 安装
 
-使用Pip安装Gunicorn是超级简单的。 如果你已经使用virtualenv搭建好了你的Django项目，那么你就有了Pip，并且应该熟悉Pip的工作方式。 所以，在你的virtualenv中安装Gunicorn。
+使用 Pip 安装 Gunicorn 是超级简单的。 如果你已经使用 virtualenv 搭建好了你的 Django 项目，那么你就有了 Pip，并且应该熟悉 Pip 的工作方式。 所以，在你的 virtualenv 中安装 Gunicorn。
 
 ```
 $ pip install gunicorn
 ```
 
-### 配置
+#### 配置
 
-Gunicorn 最有吸引力的一个地方就是它的配置非常简单。处理配置最好的方法就是在Django项目的根目录下创建一个名叫Gunicorn的文件夹。然后 在该文件夹内，创建一个配置文件。
+Gunicorn 最有吸引力的一个地方就是它的配置非常简单。处理配置最好的方法就是在 Django 项目的根目录下创建一个名叫 `Gunicorn` 的文件夹。然后在该文件夹内，创建一个配置文件。
 
-在本篇教程中，配置文件名称是`gunicorn-conf.py`。在改文件中，创建类似于下面的配置
+在本篇教程中，配置文件名称是 `gunicorn-conf.py`。在该文件中，创建类似于下面的配置：
 
 ```
 import multiprocessing
@@ -42,25 +34,27 @@ workers = multiprocessing.cpu_count() * 2 + 1
 reload = True
 daemon = True
 ```
-在上述配置的情况下，Gunicorn会在`/tmp/`目录下创建一个名为`gunicorn1.sock`的Unix套接字。 还会启动一些工作进程，进程数量相当于CPU内核数量的2倍。 它还会自动重新加载并作为守护进程运行。
 
-### 运行
+在上述配置的情况下，Gunicorn 会在 `/tmp/` 目录下创建一个名为 `gunicorn1.sock` 的 Unix 套接字。 还会启动一些工作进程，进程数量相当于 CPU 内核数量的 2 倍。 它还会自动重新加载并作为守护进程运行。
 
-Gunicorn的运行命令有点长，指定了一些附加的配置项。 最重要的部分是将Gunicorn指向你项目的`.wsgi`文件。
+#### 运行
+
+Gunicorn 的运行命令有点长，指定了一些附加的配置项。 最重要的部分是将 Gunicorn 指向你项目的 `.wsgi` 文件。
 
 ```
 gunicorn -c gunicorn/gunicorn-conf.py -D --error-logfile gunicorn/error.log yourproject.wsgi
 ```
-上面的命令应该从项目的根目录运行。 Gunicorn会使用你用`-c`选项创建的配置。 `-D`再次指定gunicorn为守护进程。 最后一部分指定Gunicorn的错误日志文件在`Gunicorn`文件夹中的位置。 命令结束部分就是为Gunicorn指定`.wsgi`file的位置。
+
+上面的命令应该从项目的根目录运行。 `-c` 选项告诉 Gunicorn 使用你创建的配置文件。 `-D` 再次指定 gunicorn 为守护进程。 最后一部分指定 Gunicorn 的错误日志文件在你创建 `Gunicorn` 文件夹中的位置。 命令结束部分就是为 Gunicorn 指定 `.wsgi` 文件的位置。
 
 ### Nginx
 
-现在Gunicorn配置好了并且已经开始运行了，你可以设置Nginx连接它，为你的静态文件提供服务。 本指南假定你已经配置了Nginx，而且你通过它托管的站点使用了单独的服务块。 它还将包括一些SSL信息。
+现在 Gunicorn 配置好了并且已经开始运行了，你可以设置 Nginx 连接它，为你的静态文件提供服务。 本指南假定你已经配置好了 Nginx，而且你通过它托管的站点使用了单独的 server 块。 它还将包括一些 SSL 信息。
 
-如果你想知道如何让你的网站获得免费的SSL证书，请查看我们的[LetsEncrypt指南][8]。
+如果你想知道如何让你的网站获得免费的 SSL 证书，请查看我们的 [Let'sEncrypt 指南][8]。
 
 ```nginx
-# 连接到Gunicorn
+# 连接到 Gunicorn
 upstream yourproject-gunicorn {
     server unix:/tmp/gunicorn1.sock fail_timeout=0;
 }
@@ -83,7 +77,7 @@ server {
     access_log /var/log/nginx/yourwebsite.access_log main;
     error_log /var/log/nginx/yourwebsite.error_log info;
 
-	# 将nginx指向你的ssl证书
+	# 告诉 nginx 你的 ssl 证书
     ssl on;
     ssl_certificate /etc/letsencrypt/live/yourwebsite.com/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/yourwebsite.com/privkey.pem;
@@ -91,7 +85,7 @@ server {
 	# 设置根目录
 	root /var/www/yourvirtualenv/yourproject;
 
-	# 为Nginx指定静态文件路径
+	# 为 Nginx 指定静态文件路径
     location /static/ {
 		# Autoindex the files to make them browsable if you want
         autoindex on;
@@ -104,7 +98,7 @@ server {
         proxy_ignore_headers "Set-Cookie";
     }
 
-	# 为Nginx指定你上传文件的路径
+	# 为 Nginx 指定你上传文件的路径
     location /media/ {
 		Autoindex if you want
         autoindex on;
@@ -122,7 +116,7 @@ server {
         try_files $uri @proxy_to_app;
     }
 
-	# 将请求传递给Gunicorn
+	# 将请求传递给 Gunicorn
     location @proxy_to_app {
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header Host $http_host;
@@ -130,7 +124,7 @@ server {
         proxy_pass   http://njc-gunicorn;
     }
 
-	# 缓存HTML，XML和JSON
+	# 缓存 HTML、XML 和 JSON
     location ~* \.(html?|xml|json)$ {
         expires 1h;
     }
@@ -144,18 +138,19 @@ server {
     }
 }
 ```
-配置文件有点长，但是还可以更长一些。其中重点是指向 Gunicorn 的`upstream`块以及将流量传递给 Gunicorn 的`location`块。大多数其他的配置项都是可选，但是你应该按照一定的形式来配置。配置中的注释应该可以帮助你了解具体细节。
+配置文件有点长，但是还可以更长一些。其中重点是指向 Gunicorn 的 `upstream` 块以及将流量传递给 Gunicorn 的 `location` 块。大多数其他的配置项都是可选，但是你应该按照一定的形式来配置。配置中的注释应该可以帮助你了解具体细节。
 
-保存文件之后，你可以重启Nginx，让修改的配置生效。
+保存文件之后，你可以重启 Nginx，让修改的配置生效。
 
 ```
 # systemctl restart nginx
 ```
-一旦Nginx在线生效，你的站点就可以通过域名访问了。
+
+一旦 Nginx 在线生效，你的站点就可以通过域名访问了。
 
 ### 结语
 
-如果你想深入研究，Nginx可以做很多事情。但是，上面提供的配置是一个很好的开始，并且你可以用于实践中。 如果你习惯于Apache和臃肿的PHP应用程序，像这样的服务器配置的速度应该是一个惊喜。
+如果你想深入研究，Nginx 可以做很多事情。但是，上面提供的配置是一个很好的开始，并且你可以用于实践中。 如果你见惯了 Apache 和臃肿的 PHP 应用程序，像这样的服务器配置的速度应该是一个惊喜。
 
 --------------------------------------------------------------------------------
 
@@ -163,7 +158,7 @@ via: https://linuxconfig.org/hosting-django-with-nginx-and-gunicorn-on-linux
 
 作者：[Nick Congleton][a]
 译者：[Flowsnow](https://github.com/Flowsnow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
