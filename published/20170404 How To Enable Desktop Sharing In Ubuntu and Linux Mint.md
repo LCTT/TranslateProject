@@ -1,7 +1,6 @@
 如何在 Ubuntu 和 Linux Mint 上启用桌面共享
 ============================================================
 
-
 桌面共享是指通过图形终端仿真器在计算机桌面上实现远程访问和远程协作的技术。桌面共享允许两个或多个连接到网络的计算机用户在不同位置对同一个文件进行操作。
 
 在这篇文章中，我将向你展示如何在 Ubuntu 和 Linux Mint 中启用桌面共享，并展示一些重要的安全特性。
@@ -76,7 +75,7 @@
 
 *连接确认前的黑屏*
 
-８、现在，在远程机器上，我需要像下一个屏幕截图显示的那样点击 `Allow` 来接受远程访问请求。
+８、现在，在远程机器上，我需要如下一个屏幕截图显示的那样点击 `Allow` 来接受远程访问请求。
 
 [
  ![Allow Remote Desktop Sharing](http://www.tecmint.com/wp-content/uploads/2017/03/accept-remote-access-request.png)
@@ -107,7 +106,7 @@ via: http://www.tecmint.com/enable-desktop-sharing-in-ubuntu-linux-mint/
 
 作者：[Aaron Kili][a]
 译者：[ucasFL](https://github.com/ucasFL)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
