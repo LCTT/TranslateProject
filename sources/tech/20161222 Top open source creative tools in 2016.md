@@ -1,4 +1,4 @@
-Translating by StdioA
+GitFuture is translating.
 
 Top open source creative tools in 2016
 ============================================================

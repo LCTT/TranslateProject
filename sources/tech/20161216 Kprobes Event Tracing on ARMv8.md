@@ -1,6 +1,5 @@
 # Kprobes Event Tracing on ARMv8
 
-Timeszoro Translating
 
  ![core-dump](http://www.linaro.org/wp-content/uploads/2016/02/core-dump.png) 
 

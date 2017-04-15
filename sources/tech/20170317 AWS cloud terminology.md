@@ -1,3 +1,4 @@
+translating by chenxinlong
 AWS cloud terminology
 ============================================================
 
@@ -17,7 +18,7 @@ As of today, AWS offers total of 71 services which are grouped together in�
 
 * * *
 
- _Compute _ 
+ _Compute_ 
 
 Its a cloud computing means virtual server provisioning. This group provides below services.
 
@@ -210,7 +211,7 @@ Its desktop app streaming over cloud.
 via: http://kerneltalks.com/virtualization/aws-cloud-terminology/
 
 作者：[Shrikant Lavhate][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[chenxinlong](https://github.com/chenxinlong)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
