@@ -59,41 +59,42 @@ LCTT 的组成
 * 2016/12/24 拟定 LCTT [Core 规则](core.md)，并增加新的 Core 成员： ucasFL、martin2011qi，及调整一些组。
 * 2017/03/13 制作了 LCTT 主页、成员列表和成员主页，LCTT 主页将移动至 https://linux.cn/lctt 。
 * 2017/03/16 提升 GHLandy、bestony、rusking 为新的 Core 成员。创建 Comic 小组。
+* 2017/04/11 启用头衔制，为各位重要成员颁发头衔。
 
-活跃成员
+核心成员
 -------------------------------
 
-目前 TP 活跃成员有：
-- Leader @wxy,
-- Source @oska874,
-- Proofreaders @jasminepeng,
-- CORE @geekpi,
-- CORE @GOLinux,
-- CORE @ictlyh,
-- CORE @strugglingyouth,
-- CORE @FSSlc,
-- CORE @zpl1025,
-- CORE @runningwater,
-- CORE @bazz2,
-- CORE @Vic020,
-- CORE @alim0x,
-- CORE @tinyeyeser,
-- CORE @Locez,
-- CORE @ucasFL,
-- CORE @martin2011qi,
-- CORE @GHLandy,
-- CORE @bestony,
-- CORE @rusking,
-- Senior @DeadFire,
-- Senior @reinoir222,
-- Senior @vito-L,
-- Senior @willqian,
-- Senior @vizv,
-- Senior @dongfengweixiao,
-- Senior @PurlingNayuki,
-- Senior @carolinewuyan,
+目前 LCTT  核心成员有：
+
+- 组长 @wxy,
+- 选题 @oska874,
+- 校对 @jasminepeng,
+- 钻石译者 @geekpi,
+- 钻石译者 @GOLinux,
+- 钻石译者 @ictlyh,
+- 技术组长 @bestony,
+- 漫画组长 @GHLandy,
+- LFS 组长 @martin2011qi,
+- 核心成员 @strugglingyouth,
+- 核心成员 @FSSlc,
+- 核心成员 @zpl1025,
+- 核心成员 @runningwater,
+- 核心成员 @bazz2,
+- 核心成员 @Vic020,
+- 核心成员 @alim0x,
+- 核心成员 @tinyeyeser,
+- 核心成员 @Locez,
+- 核心成员 @ucasFL,
+- 核心成员 @rusking,
+- 前任选题 @DeadFire,
+- 前任校对 @reinoir222,
+- 前任校对 @PurlingNayuki,
+- 前任校对 @carolinewuyan,
+- 功勋成员 @vito-L,
+- 功勋成员 @willqian,
+- 功勋成员 @vizv,
+- 功勋成员 @dongfengweixiao,
 
 全部成员列表请参见： https://linux.cn/lctt-list/ 。
 
 谢谢大家的支持！
-
