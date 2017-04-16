@@ -1,189 +1,190 @@
-translating by XLCYun
-
-Reactive programming vs. Reactive systems
+响应式编程vs.响应式系统
 ============================================================
 
->Landing on a set of simple reactive design principles in a sea of constant confusion and overloaded expectations.
+>在恒久的迷惑与过多期待的海洋中，登上一组简单响应式设计原则的小岛。
 
- ![Micro Fireworks](https://d3tdunqjn7n0wj.cloudfront.net/360x240/micro_fireworks-db2d0a45f22f348719b393dd98ebefa2.jpg) 
+>
 
-Download Konrad Malawski's free ebook "[Why Reactive? Foundational Principles for Enterprise Adoption][5]" to dive deeper into the technical aspects and benefits of Reactive.
+ ![Micro Fireworks](https://d3tdunqjn7n0wj.cloudfront.net/360x240/micro_fireworks-db2d0a45f22f348719b393dd98ebefa2.jpg)
 
-Since co-authoring the "[Reactive Manifesto][23]" in 2013, we’ve seen the topic of reactive go from being a virtually unacknowledged technique for constructing applications—used by only fringe projects within a select few corporations—to become part of the overall platform strategy in numerous big players in the middleware field. This article aims to define and clarify the different aspects of reactive by looking at the differences between writing code in a _reactive programming_ style, and the design of _reactive systems_ as a cohesive whole.
+下载 Konrad Malawski 的免费电子书[《为什么选择响应式？企业应用中的基本原则》][5]，深入了解更多响应式技术的知识与好处。
 
+自从2013年一起合作写了[《响应式宣言》][23]之后，我们看着响应式从一种几乎无人知晓的软件构建技术——当时只有少数几个公司的边缘项目使用了这一技术——最后成为中间件领域(middleware field)大佬们全平台战略中的一部分。本文旨在定义和澄清响应式各个方面的概念，方法是比较在_响应式编程_风格下，以及把_响应式系统_视作一个紧密整体的设计方法下写代码的不同。
 ### Reactive is a set of design principles
+### 响应式是一组设计原则
+响应式技术目前成功的标志之一是“响应式”成为了一个热词，并且跟一些不同的事物与人联系在了一起——常常伴随着像“流(streaming)”,“轻量级(lightweight)”和“实时(real-time)”这样的词。
 
-One recent indicator of success is that "reactive" has become an overloaded term and is now being associated with several different things to different people—in good company with words like "streaming," "lightweight," and "real-time."
+举个例子：当我们看到一支运动队时（像棒球队或者篮球队），我们一般会把他们看成一个个单独个体的组合，但是当他们之间碰撞不出火花，无法像一个团队一样高效地协作时，他们就会输给一个“更差劲”的队伍。从这篇文章的角度来看，响应式是一组设计原则，一种关于系统架构与设计的思考方式，一种关于在一个分布式环境下，当实现技术(implementation techniques)，工具和设计模式都只是一个更大系统的一部分时如何设计的思考方式。
 
-Consider the following analogy: When looking at an athletic team (think: baseball, basketball, etc.) it’s not uncommon to see it composed of exceptional individuals, yet when they come together something doesn’t click and they lack the synergy to operate effectively as a team and lose to an "inferior" team.From the perspective of this article, reactive is a set of design principles, a way of thinking about systems architecture and design in a distributed environment where implementation techniques, tooling, and design patterns are components of a larger whole—a system.
+这个例子展示了不经考虑地将一堆软件拼揍在一起——尽管单独来看，这些软件都很优秀——和响应式系统之间的不同。在一个响应式系统中，正是_不同组件(parts)间的相互作用_让响应式系统如此不同，它使得不同组件能够独立地运作，同时又一致协作从而达到最终想要的结果。
 
-This analogy illustrates the difference between a set of reactive applications put together without thought—even though _individually_ they’re great—and a reactive system. In a reactive system, it’s the _interaction between the individual parts_ that makes all the difference, which is the ability to operate individually yet act in concert to achieve their intended result.
+_一个响应式系统_ 是一种架构风格(architectural style)，它允许许多独立的应用结合在一起成为一个单元，共同响应它们所处的环境，同时保留着对单元内其它应用的“感知”——这能够表现为它能够做到放大/缩小规模(scale up/down)，负载平衡，甚至能够主动地执行这些步骤。
 
-_A reactive system_ is an architectural style that allows multiple individual applications to coalesce as a single unit, reacting to its surroundings, while remaining aware of each other—this could manifest as being able to scale up/down, load balancing, and even taking some of these steps proactively.
+以响应式的风格（或者说，通过响应式编程）写一个软件是可能的；然而，那也不过是拼图中的一块罢了。虽然在上面的提到的各个方面似乎都足以称其为“响应式的”，但仅就其它们自身而言，还不足以让一个_系统_成为响应式的。
 
-It’s possible to write a single application in a reactive style (i.e. using reactive programming); however, that’s merely one piece of the puzzle. Though each of the above aspects may seem to qualify as "reactive," in and of themselves they do not make a _system_ reactive.
+当人们在软件开发与设计的语境下谈论“响应式”时，他们的意思通常是以下三者之一：
 
-When people talk about "reactive" in the context of software development and design, they generally mean one of three things:
+*   响应式系统（架构与设计）
+*   响应式编程（基于声明的事件的）
+*   函数响应式编程（FRP）
 
-*   Reactive systems (architecture and design)
-*   Reactive programming (declarative event-based)
-*   Functional reactive programming (FRP)
+我们将检查这些做法与技术的意思，特别是前两个。更明确地说，我们会在使用它们的时候讨论它们，例如它们是怎么联系在一起的，从它们身上又能到什么样的好处——特别是在为多核、云或移动架构搭建系统的情境下。
 
-We’ll examine what each of these practices and techniques mean, with emphasis on the first two. More specifically, we’ll discuss when to use them, how they relate to each other, and what you can expect the benefits from each to be—particularly in the context of building systems for multicore, cloud, and mobile architectures.
+让我们先来说一说函数响应式编程吧，以及我们在本文后面不再讨论它的原因。
 
-Let’s start by talking about functional reactive programming, and why we chose to exclude it from further discussions in this article.
+### 函数响应式编程（FRP）
 
-### Functional reactive programming (FRP)
+_函数响应式编程_，通常被称作_FRP_，是最常被误解的。FRP在二十年前就被Conal Elliott[精确地定义][24]了。但是最近这个术语却被错误地用来描述一些像Elm，Bacon.js的技术以及其它技术中的响应式插件（RxJava, Rx.NET, RxJS）。许多的库(libraries)声称他们支持FRP，事实上他们说的并非_响应式编程_，因此我们不会再进一步讨论它们。
 
-_Functional reactive programming_, commonly called _FRP_, is most frequently misunderstood. FRP was very [precisely defined][24] 20 years ago by Conal Elliott. The term has most recently been used incorrectly[1][8] to describe technologies like Elm, Bacon.js, and Reactive Extensions (RxJava, Rx.NET, RxJS) amongst others. Most libraries claiming to support FRP are almost exclusively talking about _reactive programming_ and it will therefore not be discussed further.
+### 响应式编程
 
-### Reactive programming
+_响应式编程_，不要把它跟_函数响应式编程_混淆了，它是异步编程下的一个子集，也是一种范式，在这种范式下，由新信息的有效性(availability)推动逻辑的前进，而不是让一条执行线程(a thread-of-execution)去推动控制流(control flow)。
 
-_Reactive programming_, not to be confused with _functional reactive programming_, is a subset of asynchronous programming and a paradigm where the availability of new information drives the logic forward rather than having control flow driven by a thread-of-execution.
+它能够把问题分解为多个独立的步骤，这些独立的步骤可以以异步且非阻塞(non-blocking)的方式被执行，最后再组合在一起产生一条工作流(workflow)——它的输入和输出可能是非绑定的(unbounded)。
 
-It supports decomposing the problem into multiple discrete steps where each can be executed in an asynchronous and non-blocking fashion, and then be composed to produce a workflow—possibly unbounded in its inputs or outputs.
+[“异步地(Asynchronous)”][25]被牛津词典定义为“不在同一时刻存在或发生”，在我们的语境下，它意味着一条消息或者一个事件可发生在任何时刻，有可能是在未来。这在响应式编程中是非常重要的一项技术，因为响应式编程允许[非阻塞式(non-blocking)]的执行方式——执行线程在竞争一块共享资源时不会因为阻塞(blocking)而陷入等待（防止执行线程在当前的工作完成之前执行任何其它操作），而是在共享资源被占用的期间转而去做其它工作。阿姆达尔定律(Amdahl's Law)[2][9]告诉我们，竞争是可伸缩性(scalability)最大的敌人，所以一个响应式系统应当在极少数的情况下才不得不做阻塞工作。
 
-[Asynchronous][25] is defined by the Oxford Dictionary as “not existing or occurring at the same time,” which in this context means that the processing of a message or event is happening at some arbitrary time, possibly in the future. This is a very important technique in reactive programming since it allows for [non-blocking][26] execution—where threads of execution competing for a shared resource don’t need to wait by blocking (preventing the thread of execution from performing other work until current work is done), and can as such perform other useful work while the resource is occupied. Amdahl’s Law[2][9] tells us that contention is the biggest enemy of scalability, and therefore a reactive program should rarely, if ever, have to block.
+响应式编程一般是_事件驱动(event-driven)_ ，相比之下，响应式系统则是_消息驱动(message-driven)_ 的——事件驱动与消息驱动之间的差别会在文章后面阐明。
 
-Reactive programming is generally _event-driven_, in contrast to reactive systems, which are _message-driven_—the distinction between event-driven and message-driven is clarified later in this article.
+响应式编程库的应用程序接口（API）一般是以下二者之一：
 
-The application program interface (API) for reactive programming libraries are generally either:
+*   基于回调的（Callback-based)——匿名的间接作用(side-effecting)回调函数被绑定在事件源(event sources)上，当事件被放入数据流(dataflow chain)中时，回调函数被调用。
+*   声明式的（Declarative)——通过函数的组合，通常是使用一些固定的函数，像 _map_, _filter_, _fold_ 等等。
 
-*   Callback-based—where anonymous side-effecting callbacks are attached to event sources, and are being invoked when events pass through the dataflow chain.
-*   Declarative—through functional composition, usually using well-established combinators like _map_, _filter_, _fold_etc.
+大部分的库会混合这两种风格，一般还带有基于流(stream-based)的操作符(operators)，像windowing, counts, triggers。
 
-Most libraries provide a mix of these two styles, often with the addition of stream-based operators like windowing, counts, triggers, etc.
+说响应式编程跟[数据流编程(dataflow programming)][27]有关是很合理的，因为它强调的是_数据流_而不是_控制流_。
 
-It would be reasonable to claim that reactive programming is related to [dataflow programming][27], since the emphasis is on the _flow of data_ rather than the _flow of control_.
+举几个为这种编程技术提供支持的的编程抽象概念：
 
-Examples of programming abstractions that support this programming technique are:
+*   [Futures/Promises][10]——一个值的容器，具有读共享/写独占（many-read/single-write)的语义，即使变量尚不可用也能够添加异步的值转换操作。
+*   流(streams)-[响应式流][11]——无限制的数据处理流，支持异步，非阻塞式，支持多个源与目的的反压转换管道(back-pressured transformation pipelines)。
+*   [数据流变量][12]——依赖于输入，过程(procedures)或者其它单元的单赋值变量(存储单元)(single assignment variables)，它能够自动更新值的改变。其中一个应用例子是表格软件——一个单元的值的改变会像涟漪一样荡开，影响到所有依赖于它的函数，顺流而下地使它们产生新的值。
 
-*   [Futures/Promises][10]—containers of a single value, many-read/single-write semantics where asynchronous transformations of the value can be added even if it is not yet available.
-*   Streams—as in [reactive streams][11]: unbounded flows of data processing, enabling asynchronous, non-blocking, back-pressured transformation pipelines between a multitude of sources and destinations.
-*   [Dataflow variables][12]—single assignment variables (memory-cells) which can depend on input, procedures and other cells, so that they are automatically updated on change. A practical example is spreadsheets—where the change of the value in a cell ripples through all dependent functions, producing new values downstream.
+在JVM中，支持响应式编程的流行库有Akka Streams、Ratpack、Reactor、RxJava和Vert.x等等。这些库实现了响应式编程的规范，成为JVM上响应式编程库之间的互通标准(standard for interoperability)，并且根据它自身的叙述是“……一个为如何处理非阻塞式反压异步流提供标准的倡议”
 
-Popular libraries supporting the reactive programming techniques on the JVM include, but are not limited to, Akka Streams, Ratpack, Reactor, RxJava, and Vert.x. These libraries implement the reactive streams specification, which is a standard for interoperability between reactive programming libraries on the JVM, and according to its own description is “...an initiative to provide a standard for asynchronous stream processing with non-blocking back pressure.”
+响应式编程的基本好处是：提高多核和多CPU硬件的计算资源利用率；根据阿姆达尔定律以及引申的Günther的通用可伸缩性定律[3][13](Günther’s Universal Scalability Law)，通过减少序列化点(serialization points)来提高性能。
 
-The primary benefits of reactive programming are: increased utilization of computing resources on multicore and multi-CPU hardware; and increased performance by reducing serialization points as per Amdahl’s Law and, by extension, Günther’s Universal Scalability Law[3][13].
+另一个好处是开发者生产效率，传统的编程范式都尽力想提供一个简单直接的可持续的方法来处理异步非阻塞式计算和I/O。在响应式编程中，因活动(active)组件之间通常不需要明确的协作，从而也就解决了其中大部分的挑战。
 
-A secondary benefit is one of developer productivity as traditional programming paradigms have all struggled to provide a straightforward and maintainable approach to dealing with asynchronous and non-blocking computation and I/O. Reactive programming solves most of the challenges here since it typically removes the need for explicit coordination between active components.
+响应式编程真正的发光点在于组件的创建跟工作流的组合。为了在异步执行上取得最大的优势，把[反压(back-pressure)][28]加进来是很重要，这样能避免过度使用，或者确切地说，无限度的消耗资源。
 
-Where reactive programming shines is in the creation of components and composition of workflows. In order to take full advantage of asynchronous execution, the inclusion of [back-pressure][28] is crucial to avoid over-utilization, or rather unbounded consumption of resources.
+尽管如此，响应式编程在搭建现代软件上仍然非常有用，为了在更高层次上理解(reason about)一个系统，那么必须要使用到另一个工具：_响应式架构_——设计响应式系统的方法。此外，要记住编程范式有很多，而响应式编程仅仅只是其中一个，所以如同其它工具一样，响应式编程并不是万金油，它不意图适用于任何情况。
 
-Even though reactive programming is a very useful piece when constructing modern software, in order to reason about a system at a higher level one has to use another tool: _reactive architecture_—the process of designing reactive systems. Furthermore, it is important to remember that there are many programming paradigms and reactive programming is but one of them, so just as with any tool, it is not intended for any and all use-cases.
+### 事件驱动 vs. 消息驱动
+如上面提到的，响应式编程——专注于短时间的数据流链条上的计算——因此倾向于_事件驱动_，而响应式系统——关注于通过分布式系统的通信和协作所得到的弹性和韧性——则是[_消息驱动的_][29][4][14]（或者称之为 _消息式(messaging)_ 的）。
 
-### Event-driven vs. message-driven
+一个拥有长期存活的可寻址(long-lived addressable)组件的消息驱动系统跟一个事件驱动的数据流驱动模型的不同在于，消息具有固定的导向，而事件则没有。消息会有明确的（一个）去向，而事件则只是一段等着被观察(observe)的信息。另外，消息式(messaging)更适用于异步，因为消息的发送与接收和发送者和接收者是分离的。
 
-As mentioned previously, reactive programming—focusing on computation through ephemeral dataflow chains—tend to be _event-driven_, while reactive systems—focusing on resilience and elasticity through the communication, and coordination, of distributed systems—is [_message-driven_][29][4][14](also referred to as _messaging_).
+响应式宣言中的术语表定义了两者之间[概念上的不同][30]：
+> 一条消息就是一则被送往一个明确目的地的数据。一个事件则是达到某个给定状态的组件发出的一个信号。在一个消息驱动系统中，可寻址到的接收者等待消息的到来然后响应它，否则保持休眠状态。在一个事件驱动系统中，通知的监听者被绑定到消息源上，这样当消息被发出时它就会被调用。这意味着一个事件驱动系统专注于可寻址的事件源而消息驱动系统专注于可寻址的接收者。
 
-The main difference between a message-driven system with long-lived addressable components, and an event-driven dataflow-driven model, is that messages are inherently directed, events are not. Messages have a clear (single) destination, while events are facts for others to observe. Furthermore, messaging is preferably asynchronous, with the sending and the reception decoupled from the sender and receiver respectively.
+分布式系统需要通过消息在网络上传输进行交流，以实现其沟通基础，与之相反，事件的发出则是本地的。在底层通过发送包裹着事件的消息来搭建跨网络的事件驱动系统的做法很常见。这样能够维持在分布式环境下事件驱动编程模型的相对简易性并且在某些特殊的和合理范围内的使用案例上工作得很好。
 
-The glossary in the Reactive Manifesto [defines the conceptual difference as][30]:
+然而，这是有利有弊的：在编程模型的抽象性和简易性上得一分，在控制上就减一分。消息强迫我们去拥抱分布式系统的真实性和一致性——像局部错误(partial failures)，错误侦测(failure detection)，丢弃/复制/重排序 消息（dropped/duplicated/reordered messages)，最后还有一致性，管理多个并发真实性等等——然后直面它们，去处理它们，而不是像过去无数次一样，藏在一个蹩脚的抽象面罩后——假装网络并不存在(例如EJB, [RPC][31], [CORBA][32], 和 [XA][33])。
 
-> A message is an item of data that is sent to a specific destination. An event is a signal emitted by a component upon reaching a given state. In a message-driven system addressable recipients await the arrival of messages and react to them, otherwise lying dormant. In an event-driven system notification listeners are attached to the sources of events such that they are invoked when the event is emitted. This means that an event-driven system focuses on addressable event sources while a message-driven system concentrates on addressable recipients.
+这些在语义学和适用性上的不同在应用设计中有着深刻的含义，包括分布式系统的复杂性(complexity)中的 _弹性(resilience)_， _韧性(elasticity)_，_移动性(mobility)_，_位置透明性(location transparency)_ 和 _管理(management)_，这些在文章后面再进行介绍。
 
-Messages are needed to communicate across the network and form the basis for communication in distributed systems, while events on the other hand are emitted locally. It is common to use messaging under the hood to bridge an event-driven system across the network by sending events inside messages. This allows maintaining the relative simplicity of the event-driven programming model in a distributed context and can work very well for specialized and well-scoped use cases (e.g., AWS Lambda, Distributed Stream Processing products like Spark Streaming, Flink, Kafka, and Akka Streams over Gearpump, and distributed Publish Subscribe products like Kafka and Kinesis).
+在一个响应式系统中，特别是使用了响应式编程技术的，这样的系统中就即有事件也有消息——一个是用于沟通的强大工具（消息），而另一个则呈现现实（事件）。
 
-However, it is a trade-off: what one gains in abstraction and simplicity of the programming model, one loses in terms of control. Messaging forces us to embrace the reality and constraints of distributed systems—things like partial failures, failure detection, dropped/duplicated/reordered messages, eventual consistency, managing multiple concurrent realities, etc.—and tackle them head on instead of hiding them behind a leaky abstraction—pretending that the network is not there—as has been done too many times in the past (e.g. EJB, [RPC][31], [CORBA][32], and [XA][33]).
+### 响应式系统和架构
 
-These differences in semantics and applicability have profound implications in the application design, including things like _resilience_, _elasticity_, _mobility_, _location transparency,_ and _management_ of the complexity of distributed systems, which will be explained further in this article.
+_响应式系统_ —— 如同在《响应式宣言》中定义的那样——是一组用于搭建现代系统——已充分准备好满足如今应用程序所面对的不断增长的需求的现代系统——的架构设计原则。
 
-In a reactive system, especially one which uses reactive programming, both events and messages will be present—as one is a great tool for communication (messages), and another is a great way of representing facts (events).
+响应式系统的原则决对不是什么新东西，它可以被追溯到70和80年代Jim Gray和Pat Helland在[串级系统(Tandem System)][34]上和Joe aomstrong和Robert Virding在[Erland][35]上做出的重大工作。然而，这些人在当时都超越了时代，只有到了最近5-10年，技术行业才被不得不反思当前企业系统最好的开发实践活动并且学习如何将来之不易的响应式原则应用到今天这个多核、云计算和物联网的世界中。
 
-### Reactive systems and architecture
+响应式系统的基石是_消息传递(message-passing)_ ，消息传递为两个组件之间创建一条暂时的边界，使得他们能够在 _时间_ 上分离——实现并发性——和 _空间(space)_ ——实现分布式(distribution)与移动性(mobility)。这种分离是两个组件完全[隔离(isolation)][36]以及实现 _弹性(resilience)_ 和 _韧性(elasticity)_ 基础的必需条件。
 
-_Reactive systems_—as defined by the Reactive Manifesto—is a set of architectural design principles for building modern systems that are well prepared to meet the increasing demands that applications face today.
+### 从程序到系统
 
-The principles of reactive systems are most definitely not new, and can be traced back to the '70s and '80s and the seminal work by Jim Gray and Pat Helland on the [Tandem System][34] and Joe Armstrong and Robert Virding on [Erlang][35]. However, these people were ahead of their time and it is not until the last 5-10 years that the technology industry have been forced to rethink current best practices for enterprise system development and learn to apply the hard-won knowledge of the reactive principles on today’s world of multicore, cloud computing, and the Internet of Things.
+这个世界的连通性正在变得越来越高。我们构建 _程序_ ——为单个操作子计算某些东西的端到端逻辑——已经不如我们构建 _系统_ 来得多了。
 
-The foundation for a reactive system is _message-passing_, which creates a temporal boundary between components that allows them to be decoupled in _time_—this allows for concurrency—and _space_—which allows for distribution and mobility. This decoupling is a requirement for full [isolation][36]between components, and forms the basis for both _resilience_ and _elasticity_.
+系统从定义上来说是复杂的——每一部分都包含多个组件，每个组件的自身或其子组件也可以是一个系统——这意味着软件要正常工作已经越来越依赖于其它软件。
 
-### From programs to systems
+我们今天构建的系统会在多个计算机上被操作，小型的或大型的，数量少的或数量多的，相近的或远隔半个地球的。同时，由于人们的生活正变得越来越依赖于系统顺畅运行的有效性，用户的期望也变得越得越来越难以满足。
 
-The world is becoming increasingly interconnected. We are no longer building _programs_—end-to-end logic to calculate something for a single operator—as much as we are building _systems_.
+为了实现用户——和企业——能够依赖的系统，这些系统必须是 _灵敏的(responsive)_ ，这样无论是某个东西提供了一个正确的响应，还是当需要一个响应时响应无法使用，都不会有影响。为了达到这一点，我们必须保证在错误( _弹性_ )和欠载( _韧性_ )下，系统仍然能够保持灵敏性。为了实现这一点，我们把系统设计为 _消息驱动的_ ，我们称其为 _响应式系统_ 。
 
-Systems are complex by definition—each consisting of a multitude of components, who in and of themselves also can be systems—which mean software is increasingly dependent on other software to function properly.
+### 响应式系统的弹性
 
-The systems we create today are to be operated on computers small and large, few and many, near each other or half a world away. And at the same time users’ expectations have become harder and harder to meet as everyday human life is increasingly dependent on the availability of systems to function smoothly.
+弹性是与 _错误下_ 的灵敏性(responsiveness)有关的，它是系统内在的功能特性，是需要被设计的东西，而不是能够被动的加入系统中的东西。弹性是大于容错性的——弹性无关于故障退化(graceful degradation)——虽然故障退化对于系统来说是很有用的一种特性——与弹性相关的是与从错误中完全恢复达到 _自愈_ 的能力。这就需要组件的隔离以及组件对错误的包容，以免错误散播到其相邻组件中去——否则，通常会导致灾难性的连锁故障。
 
-In order to deliver systems that users—and businesses—can depend on, they have to be _responsive_, for it does not matter if something provides the correct response if the response is not available when it is needed. In order to achieve this, we need to make sure that responsiveness can be maintained under failure (_resilience_) and under load (_elasticity_). To make that happen, we make these systems _message-driven_, and we call them _reactive systems_.
+因此构建一个弹性的，自愈(self-healing)系统的关键是允许错误被：容纳，具体化为消息，发送给其他的（担当监管者的(supervisors)）组件，从而在错误组件之外修复出一个安全环境。在这，消息驱动是其促成因素：远离高度耦合的、脆弱的深层嵌套的同步调用链，大家长期要么学会忍受其煎熬或直接忽略。解决的想法是将调用链中的错误管理分离，将客户端从处理服务端错误的责任中解放出来。
 
-### The resilience of reactive systems
+### 响应式系统的韧性
 
-Resilience is about responsiveness _under failure_ and is an inherent functional property of the system, something that needs to be designed for, and not something that can be added in retroactively. Resilience is beyond fault-tolerance—it’s not about graceful degradation—even though that is a very useful trait for systems—but about being able to fully recover from failure: to _self-heal_. This requires component isolation and containment of failures in order to avoid failures spreading to neighbouring components—resulting in, often catastrophic, cascading failure scenarios.
+[韧性(Elasticity)][37]是关于 _欠载下的灵敏性(responsiveness)_ 的——意味着一个系统的吞吐量在资源增加或减少时能够自动地相应增加或减少(scales up or down)（同样能够向内或外扩展(scales in or out)）以满足不同的需求。这是利用云计算承诺的特性所必需的因素：使系统利用资源更加有效，成本效益更佳，对环境友好以及实现按次付费。
 
-So the key to building resilient, self-healing systems is to allow failures to be: contained, reified as messages, sent to other components (that act as supervisors), and managed from a safe context outside the failed component. Here, being message-driven is the enabler: moving away from strongly coupled, brittle, deeply nested synchronous call chains that everyone learned to suffer through, or ignore. The idea is to decouple the management of failures from the call chain, freeing the client from the responsibility of handling the failures of the server.
+系统必须能够在不重写甚至不重新设置的情况下，适应性地——即无需介入自动伸缩——响应状态及行为，沟通负载均衡，故障转移(failover)，以及升级。实现这些的就是 _位置透明性(location transparency)_ ：使用同一个方法，同样的编程抽象，同样的语义，在所有向度中伸缩(scaling)系统的能力——从CPU核心到数据中心。
 
-### The elasticity of reactive systems
+如同《响应式宣言》所述：
 
-[Elasticity][37] is about _responsiveness under load_—meaning that the throughput of a system scales up or down (as well as in or out) automatically to meet varying demand as resources are proportionally added or removed. It is the essential element needed to take advantage of the promises of cloud computing: allowing systems to be resource efficient, cost-efficient, environment-friendly and pay-per-use.
+> 一个极大地简化问题的关键洞见在于意识到我们都在使用分布式计算。无论我们的操作系统是运行在一个单一结点上（拥有多个独立的CPU，并通过QPI链接进行交流）,还是在一个节点集群(cluster of nodes，独立的机器，通过网络进行交流)上。拥抱这个事实意味着在垂直方向上多核的伸缩与在水平方面上集群的伸缩并无概念上的差异。在空间上的解耦 [...]，是通过异步消息传送以及运行时实例与其引用解耦从而实现的，这就是我们所说的位置透明性。
 
-Systems need to be adaptive—allow intervention-less auto-scaling, replication of state and behavior, load-balancing of communication, failover, and upgrades, without rewriting or even reconfiguring the system. The enabler for this is _location transparency_: the ability to scale the system in the same way, using the same programming abstractions, with the same semantics, _across all dimensions of scale_—from CPU cores to data centers.
+因此，不论接收者在哪里，我们都以同样的方式与它交流。唯一能够在语义上等同实现的方式是消息传送。
 
-As the Reactive Manifesto [puts it][38]:
+### 响应式系统的生产效率
 
-> One key insight that simplifies this problem immensely is to realize that we are all doing distributed computing. This is true whether we are running our systems on a single node (with multiple independent CPUs communicating over the QPI link) or on a cluster of nodes (with independent machines communicating over the network). Embracing this fact means that there is no conceptual difference between scaling vertically on multicore or horizontally on the cluster. This decoupling in space [...], enabled through asynchronous message-passing, and decoupling of the runtime instances from their references is what we call Location Transparency.
+既然大多数的系统生来即是复杂的，那么其中一个最重要的点即是保证一个系统架构在开发和维护组件时，最小程度地减低生产效率，同时将操作的 _偶发复杂性(accidental complexity_ 降到最低。
 
-So no matter where the recipient resides, we communicate with it in the same way. The only way that can be done semantically equivalent is via messaging.
+这一点很重要，因为在一个系统的生命周期中——如果系统的设计不正确——系统的维护会变得越来越困难，理解、定位和解决问题所需要花费时间和精力会不断地上涨。
 
-### The productivity of reactive systems
+响应式系统是我们所知的最具 _生产效率_ 的系统架构（在多核、云及移动架构的背景下）：
 
-As most systems are inherently complex by nature, one of the most important aspects is to make sure that a system architecture will impose a minimal reduction of productivity, in the development and maintenance of components, while at the same time reducing the operational _accidental complexity_ to a minimum.
+*   错误的隔离为组件与组件之间裹上[舱壁][15]（译者注：当船遭到损坏进水时，舱壁能够防止水从损坏的船舱流入其他船舱），防止引发连锁错误，从而限制住错误的波及范围以及严重性。
 
-This is important since during the lifecycle of a system—if not properly designed—it will become harder and harder to maintain, and require an ever-increasing amount of time and effort to understand, in order to localize and to rectify problems.
+*   监管者的层级制度提供了多个等级的防护，搭配以自我修复能力，避免了许多曾经在侦查(inverstigate)时引发的操作代价(cost)——大量的瞬时故障(transient failures)。
 
-Reactive systems are the most _productive_ systems architecture that we know of (in the context of multicore, cloud and mobile architectures):
+*   消息传送和位置透明性允许组件被卸载下线、代替或重新布线(rerouted)同时不影响终端用户的使用体验，并降低中断的代价、它们的相对紧迫性以及诊断和修正所需的资源。
 
-*   Isolation of failures offer [bulkheads][15] between components, preventing failures to cascade, which limits the scope and severity of failures.
-*   Supervisor hierarchies offer multiple levels of defenses paired with self-healing capabilities, which remove a lot of transient failures from ever incurring any operational cost to investigate.
-*   Message-passing and location transparency allow for components to be taken offline and replaced or rerouted without affecting the end-user experience, reducing the cost of disruptions, their relative urgency, and also the resources required to diagnose and rectify.
-*   Replication reduces the risk of data loss, and lessens the impact of failure on the availability of retrieval and storage of information.
-*   Elasticity allows for conservation of resources as usage fluctuates, allowing for minimizing operational costs when load is low, and minimizing the risk of outages or urgent investment into scalability as load increases.
+*   复制减少了数据丢失的风险，减轻了数据检索(retrieval)和存储的有效性错误的影响。
 
-Thus, reactive systems allows for the creation systems that cope well under failure, varying load and change over time—all while offering a low cost of ownership over time.
+*   韧性允许在使用率波动时保存资源，允许在负载很低时，最小化操作开销，并且允许在负载增加时，最小化运行中断(outgae)或紧急投入(urgent investment)伸缩性的风险。
 
-### How does reactive programming relate to reactive systems?
+因此，响应式系统使生成系统(creation systems)很好的应对错误、随时间变化的负载——同时还能保持低运营成本。
 
-Reactive programming is a great technique for managing internal logic and dataflow transformation, locally within the components, as a way of optimizing code clarity, performance and resource efficiency. Reactive systems, being a set of architectural principles, puts the emphasis on distributed communication and gives us tools to tackle resilience and elasticity in distributed systems.
+### 响应式编程与响应式系统的关联
 
-One common problem with only leveraging reactive programming is that its tight coupling between computation stages in an event-driven callback-based or declarative program makes _resilience_ harder to achieve as its transformation chains are often ephemeral and its stages—the callbacks or combinators—are anonymous, i.e. not addressable.
+响应式编程是一种管理内部逻辑(internal logic)和数据流转换(dataflow transformation)的好技术，在本地的组件中，做为一种优化代码清晰度、性能以及资源利用率的方法。响应式系统，是一组架构上的原则，旨在强调分布式信息交流并为我们提供一种处理分布式系统弹性与韧性的工具。
 
-This means that they usually handle success or failure directly without signaling it to the outside world. This lack of addressability makes recovery of individual stages harder to achieve as it is typically unclear where exceptions should, or even could, be propagated. As a result, failures are tied to ephemeral client requests instead of to the overall health of the component—if one of the stages in the dataflow chain fails, then the whole chain needs to be restarted, and the client notified. This is in contrast to a message-driven reactive system which has the ability to self-heal, without necessitating notifying the client.
+只使用响应式编程常遇到的一个问题，是一个事件驱动的基于回调的或声明式的程序中两个计算阶段的高度耦合(tight coupling)，使得 _弹性_ 难以实现，因此时它的转换链通常存活时间短，并且它的各个阶段——回调函数或组合子(combinator)——是匿名的，也就是不可寻址的。
 
-Another contrast to the reactive systems approach is that pure reactive programming allows decoupling in _time_, but not _space_ (unless leveraging message-passing to distribute the dataflow graph under the hood, across the network, as discussed previously). As mentioned, decoupling in time allows for _concurrency_, but it is decoupling in space that allows for _distribution_, and _mobility_—allowing for not only static but also dynamic topologies—which is essential for _elasticity_.
+这意味着，它通常在内部处理成功与错误的状态而不会向外界发送相应的信号。这种寻址能力的缺失导致单个阶段(stages)很难恢复，因为它通常并不清楚异常应该，甚至不清楚异常可以，发送到何处去。
 
-A lack of location transparency makes it hard to scale out a program purely based on reactive programming techniques adaptively in an elastic fashion and therefore requires layering additional tools, such as a message bus, data grid, or bespoke network protocols on top. This is where the message-driven programming of reactive systems shines, since it is a communication abstraction that maintains its programming model and semantics across all dimensions of scale, and therefore reduces system complexity and cognitive overhead.
+另一个与响应式系统方法的不同之处在于单纯的响应式编程允许 _时间_ 上的解耦(decoupling)，但不允许 _空间_ 上的（除非是如上面所述的，在底层通过网络传送消息来分发(distribute)数据流）。正如叙述的，在时间上的解耦使 _并发性_ 成为可能，但是是空间上的解耦使 _分布(distribution)_ 和 _移动性(mobility)_ （使得不仅仅静态拓扑可用，还包括了动态拓扑）成为可能的——而这些正是 _韧性_ 所必需的要素。
 
-A commonly cited problem of callback-based programming is that while writing such programs may be comparatively easy, it can have real consequences in the long run.
+位置透明性的缺失使得很难以韧性方式对一个基于适应性响应式编程技术的程序进行向外扩展，因为这样就需要分附加工具，例如消息总线(message bus)，数据网格(data grid)或者在顶层的定制网络协议(bespoke network protocol)。而这点正是响应式系统的消息驱动编程的闪光的地方，因为它是一个包含了其编程模型和所有伸缩向度语义的交流抽象概念，因此降低了复杂性与认知超载。
 
-For example, systems based on anonymous callbacks provide very little insight when you need to reason about them, maintain them, or most importantly figure out what, where, and why production outages and misbehavior occur.
+对于基于回调的编程，常会被提及的一个问题是写这样的程序或许相对来说会比较简单，但最终会引发一些真正的后果。
 
-Libraries and platforms designed for reactive systems (such as the [Akka][39] project and the [Erlang][40] platform) have long learned this lesson and are relying on long-lived addressable components that are easier to reason about in the long run. When failures occurs, the component is uniquely identifiable along with the message that caused the failure. With the concept of addressability at the core of the component model, monitoring solutions have a _meaningful_ way to present data that is gathered—leveraging the identities that are propagated.
+例如，对于基于匿名回调的系统，当你想理解它们，维护它们或最重要的是在生产供应中断(production outages)或错误行为发生时，你想知道到底发生了什么、发生在哪以及为什么发生，但此时它们只提供极少的内部信息。
 
-The choice of a good programming paradigm, one that enforces things like addressability and failure management, has proven to be invaluable in production, as it is designed with the harshness of reality in mind, to _expect and embrace failure_ rather than the lost cause of trying to prevent it.
+为响应式系统设计的库与平台（例如[Akka][39]项目和[Erlang][40]平台）学到了这一点，它们依赖于那些更容易理解的长期存活的可寻址组件。当错误发生时，根据导致错误的消息可以找到唯一的组件。当可寻址的概念存在组件模型的核心中时，监控方案(monitoring solution)就有了一个 _有意义_ 的方式来呈现它收集的数据——利用传播(propagated)的身份标识。
 
-All in all, reactive programming is a very useful implementation technique, which can be used in a reactive architecture. Remember that it will only help manage one part of the story: dataflow management through asynchronous and nonblocking execution—usually only within a single node or service. Once there are multiple nodes, there is a need to start thinking hard about things like data consistency, cross-node communication, coordination, versioning, orchestration, failure management, separation of concerns and responsibilities etc.—i.e. system architecture.
+一个好的编程范式的选择，一个选择实现像可寻址能力和错误管理这些东西的范式，已经被证明在生产中是无价的，因它在设计中承认了现实并非一帆风顺，_接受并拥抱错误的出现_ 而不是毫无希望地去尝试避免错误。
 
-Therefore, to maximize the value of reactive programming, use it as one of the tools to construct a reactive system. Building a reactive system requires more than abstracting away OS-specific resources and sprinkling asynchronous APIs and [circuit breakers][41] on top of an existing, legacy, software stack. It should be about embracing the fact that you are building a distributed system comprising multiple services—that all need to work together, providing a consistent and responsive experience, not just when things work as expected but also in the face of failure and under unpredictable load.
+总而言之，响应式编程是一个非常有用的实现技术，可以用在响应式架构当中。但是记住这只能帮助管理一部分：异步且非阻塞执行下的数据流管理——通常只在单个结点或服务中。当有多个结点时，就需要开始认真地考虑像数据一致性(data consistency)、跨结点沟通(cross-node communication)、协调(coordination)、版本控制(versioning)、编制(orchestration)、错误管理(failure management)、关注与责任(concerns and responsibilities)的分离等等的东西——也即是：系统架构。
 
-### Summary
+因此，要最大化响应式编程的价值，就把它作为构建响应式系统的工具来使用。构建一个响应式系统需要的不仅是在一个已存在的遗留下来的软件栈(software stack)上抽象掉特定的操作系统资源和少量的异步API和[断路器(circuit breakers)][41]。此时应该拥抱你在创建一个包含多个服务的分布式系统这一事实——这意味着所有东西都要共同合作，提供一致性与灵敏的体验，而不仅仅是如预期工作，但同时还要在发生错误和不可预料的负载下正常工作。
 
-Enterprises and middleware vendors alike are beginning to embrace reactive, with 2016 witnessing a huge growth in corporate interest in adopting reactive. In this article, we have described reactive systems as being the end goal—assuming the context of multicore, cloud and mobile architectures—for enterprises, with reactive programming serving as one of the important tools.
+### 总结
 
-Reactive programming offers productivity for developers—through performance and resource efficiency—at the component level for internal logic and dataflow transformation. Reactive systems offer productivity for architects and DevOps practitioners—through resilience and elasticity—at the system level, for building _cloud native_ and other large-scale distributed systems. We recommend combining the techniques of reactive programming within the design principles of reactive systems.
+企业和中间件供应商在目睹了应用响应式所带来的企业利润增长后，同样开始拥抱响应式。在本文中，我们把响应式系统做为企业最终目标进行描述——假设了多核、云和移动架构的背景——并且响应式编程从中担任重要工具的角色。
+
+响应式编程在内部逻辑及数据流转换的组件层次上为开发者提高了生产率——通过性能与资源的有效利用实现。而响应式系统在构建 _原生云(cloud native)_ 和其它大型分布式系统的系统层次上为架构师及DevOps从业者提高了生产率——通过弹性与韧性。我们建议在响应式系统设计原则中结合响应式编程技术。
 
 ```
-1 According to Conal Elliott, the inventor of FRP, in [this presentation][16][↩][17]
-2 [Amdahl’s Law][18] shows that the theoretical speedup of a system is limited by the serial parts, which means that the system can experience diminishing returns as new resources are added. [↩][19]
-3 Neil Günter’s [Universal Scalability Law][20] is an essential tool in understanding the effects of contention and coordination in concurrent and distributed systems, and shows that the cost of coherency in a system can lead to negative results, as new resources are added to the system.[↩][21]
-4 Messaging can be either synchronous (requiring the sender and receiver to be available at the same time) or asynchronous (allowing them to be decoupled in time). Discussing the semantic differences is out scope for this article.[↩][22]
+1 参考Conal Elliott，FRP的发明者，见[这个演示][16][↩][17]
+2 [Amdahl 定律][18]揭示了系统理论上的加速会被一系列的子部件限制，这意味着系统在新的资源加入后会出现收益递减(diminishing returns)。 [↩][19]
+3 Neil Günter的[通用可伸缩性定律(Universal Scalability Law)][20]是理解并发与分布式系统的竞争与协作的重要工具，它揭示了当新资源加入到系统中时，保持一致性的开销会导致不好的结果。
+4 消息可以是同步的（要求发送者和接受者同时存在），也可以是异步的（允许他们在时间上解耦）。其语义上的区别超出本文的讨论范围。[↩][22]
 ```
 --------------------------------------------------------------------------------
 
 via: https://www.oreilly.com/ideas/reactive-programming-vs-reactive-systems
 
 作者：[Jonas Bonér][a] , [Viktor Klang][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[XLCYun](https://github.com/XLCYun)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织编译，[Linux中国](https://linux.cn/) 荣誉推出
