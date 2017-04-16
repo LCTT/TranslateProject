@@ -1,3 +1,5 @@
+vim-kakali translating
+
 Inxi – A Powerful Feature-Rich Commandline System Information Tool for Linux
 ============================================================
 

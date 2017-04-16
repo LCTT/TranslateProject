@@ -1,20 +1,21 @@
 #教职人员是否可以运用维基百科教学?
 
 [![Can academic faculty members teach with Wikipedia?](https://camo.githubusercontent.com/47dfe3fec215387fa7bb1f2c038f4e78e0e2e47d/68747470733a2f2f6f70656e736f757263652e636f6d2f73697465732f64656661756c742f66696c65732f7374796c65732f696d6167652d66756c6c2d73697a652f7075626c69632f696d616765732f656475636174696f6e2f4544555f61636164656d6963735f353230783239325f6d612e706e673f69746f6b3d397846574f637436)](https://camo.githubusercontent.com/47dfe3fec215387fa7bb1f2c038f4e78e0e2e47d/68747470733a2f2f6f70656e736f757263652e636f6d2f73697465732f64656661756c742f66696c65732f7374796c65732f696d6167652d66756c6c2d73697a652f7075626c69632f696d616765732f656475636174696f6e2f4544555f61636164656d6963735f353230783239325f6d612e706e673f69746f6b3d397846574f637436)
+
 图片来自 : opensource.com
 
 自从2010年，已经有29000 个学生完成了 Wiki Ed 这一项目。他们在维基百科上添加了 25 百万的词条，等同于 85000 页纸张的内容。这还是 Britannica 百科全书中所有词条的 66%。Wiki Ed 的学生们最积极的时候，他们正贡献着维基百科上那 10% 且尚未发展的学术板块。
 
 为了了解更多关于这个项目的信息，我联络了 LiAnna Davis -- Wiki Ed项目的负责人。他极富热情地同意来回答我的问题。
 
-贴士：[Wiki Education Foundation (Wiki Ed)](https://wikiedu.org/) 的平台是用免费软件搭建的，链接为： [WikiEdu Dashboard GitHub](https://github.com/WikiEducationFoundation/WikiEduDashboard).
+提示：[Wiki Education Foundation (Wiki Ed)](https://wikiedu.org/) 的平台是用免费软件搭建的，链接为： [WikiEdu Dashboard GitHub](https://github.com/WikiEducationFoundation/WikiEduDashboard).
 
 
 **Wiki Ed 这一项目是如何启动的？说说你的背景以及你是如何参与进这个项目的。**
 
 在2010年，[Wikimedia Foundation](https://wikimediafoundation.org/wiki/Home)（简称WMF，运营维基百科的非营利组织）注意到了一个趋势 -- 大学的教职人员如果本身也是维基词条的编辑者，他们已经成功地将编辑维基词条作为一项任务交给了自己课堂里的学生。WMF 就此开展了一个试行项目试图回答这个问题：如果本身不编辑维基词条的教职人员支持课程中包含维基词条的编辑任务，他们是否可以通过维基百科实现教学呢？
 
-我是这个团队的一员，在2010年被试行雇用，我对这个问题的回答是：“可以。” 在 2013年，WMF将这个项目的美国分部和加拿大分部拆分，形成了一个新的非营利性组织 -- the Wiki Education Foundation （Wiki Ed）；自此我也从 WMF 到了Wiki Ed。自那以后我们便成为了一个独立组织，我们可以专注于这个项目并且将这个项目拓展开来 -- 起初 WMF 时期每年只有75个班级参与，而这个学期以及有275班级参与了 Wiki Ed。
+我是这个团队的一员，在2010年被试行雇用，我对这个问题的回答是：“可以。” 在 2013年，WMF将这个项目的美国分部和加拿大分部拆分，形成了一个新的非营利性组织 -- the Wiki Education Foundation （Wiki Ed）；自此我也从 WMF 到了Wiki Ed。自那以后我们便成为了一个独立组织，我们可以专注于这个项目并且将这个项目拓展开来 -- 起初 WMF 时期每年只有75个班级参与，而这个学期已经有275班级参与了 Wiki Ed。
 
 **人们总是默认大学生对科技相关的一切事物都很敏感，尤其是互联网，但是你们的网站上写道，“大学本科学生可能具有高科技敏感度，但这并不代表他们具有高科技成熟度。” 你可以稍微解释一下这句话吗？**
 
@@ -34,7 +35,7 @@
 
 **一个教师会需要哪些职业素养来参与这个项目？学生又是需要哪些训练呢？**
 
-当你在 [the Wikipedia Education Foundation's Teach page](http://teach.wikiedu.org/)上注册的时候，你会发现Wiki Ed为新加入的教职人员提供了如何运用维基百科实现教学的在线指南。我们还有为学生提供的一系列的在线训练，根据他们不同的任务自动分配不同的指南（例如，如果你希望你的学生在文章中插入图片，他们会得到一个如何插入编辑图片的教学单元，如果你不需要，他们便不会得到这个单元的指南）。在部分十几个学科中，我们还有特定的指南书展示了这几个学科的特定编辑方式。除此之外，我们还有熟练维基百科编辑的工作人员帮助回答学生和导师们的问题。我们的系统已经在逐步扩大；我们在这个秋季学期已经支持了超过 6300 个学生，并且已经适应了与没有维基编辑经验的教职人员合作，因此这样就保证了没有人会因为资历不够而不参与。
+当你在 [the Wikipedia Education Foundation's Teach page](http://teach.wikiedu.org/)上注册的时候，你会发现Wiki Ed为新加入的教职人员提供了如何运用维基百科实现教学的在线指南。我们还有为学生提供的一系列的在线训练，根据他们不同的任务自动分配不同的指南（例如，如果你希望你的学生在文章中插入图片，他们会得到一个如何插入编辑图片的教学单元，如果你不需要，他们便不会得到这个单元的指南）。在部分十几个学科中，我们还有特定的指南书展示了这几个学科的特定编辑方式。除此之外，我们还有熟练维基百科编辑的工作人员帮助回答学生和导师们的问题。我们的系统已经在逐步扩大；我们在这个秋季学期已经支持了超过 6300 个学生，并且已经适应了与没有维基编辑经验的教职人员合作，因此这样就保证了没有人会因为资历不够而无法参与。
 
 **”访问学者“这个项目是指？**
 
@@ -55,6 +56,8 @@ Don Watkins 是一个教育家，专注教育技术，创业家，开源提倡�
 
 via: https://opensource.com/article/17/1/Wiki-Education-Foundation
 
-作者：Don Watkins 译者：scoutydren 校对：校对者ID
+作者： Don Watkins
+译者：[scoutydren](https://github.com/scoutydren)
+校对：[Bestony](https://github.com/Bestony)
 
-本文由 LCTT 原创编译，Linux中国 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](http://linux.cn/) 荣誉推出 
