@@ -1,3 +1,4 @@
+ictlyh Translating
 # Recover from a badly corrupt Linux EFI installation
 
 In the past decade or so, Linux distributions would occasionally fail before, during and after the installation, but I was always able to somehow recover the system and continue working normally. Well, [Solus][1]broke my laptop. Literally.
