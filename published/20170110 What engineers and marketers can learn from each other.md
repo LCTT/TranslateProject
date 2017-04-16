@@ -1,7 +1,7 @@
 工程师和市场营销人员之间能够相互学习什么？
 ============================================================
 
-> 营销人员觉得工程师在工作中都太严谨了；而工程师则认为营销人员都很懒散。但是他们都错了。
+> 营销人员觉得工程师在工作中都太严谨了；而工程师则认为营销人员毫无用处。但是他们都错了。
 
  ![What engineers and marketers can learn from each other](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/BIZ_fortunecookie3.png?itok=dlRX4vO9 "What engineers and marketers can learn from each other") 
 
