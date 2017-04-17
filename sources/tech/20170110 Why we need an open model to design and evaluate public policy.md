@@ -1,51 +1,49 @@
-translating---geekpi
-
-Why we need an open model to design and evaluate public policy
+为何我们需要一个开放模型来设计评估公共政策
 ============================================================
 
-### Imagine an app that allows citizens to test drive proposed policies.
+### 想象一个 app 可以让市民测试驱动提出的政策。
 
 [up][3]
  ![Why we need an open model to design and evaluate public policy](https://opensource.com/sites/default/files/styles/image-full-size/public/images/government/GOV_citizen_participation.jpg?itok=eeLWQgev "Why we need an open model to design and evaluate public policy") 
-Image by : 
+图片提供：
 
 opensource.com
 
-In the months leading up to political elections, public debate intensifies and citizens are exposed to a proliferation of information around policy options. In a data-driven society where new insights have been informing decision-making, a deeper understanding of this information has never been more important, yet the public still hasn't realized the full potential of public policy modeling.
+在政治选举之前的几个月中，公众辩论会加剧，并且公民面临大量的政策选择信息。在数据驱动的社会中，新的见解一直在为决策提供信息，对这些信息的深入了解从未如此重要，但公众仍然没有意识到公共政策建模的全部潜力。
 
-At a time where the concept of "open government" is constantly evolving to keep pace with new technological advances, government policy models and analysis could be the new generation of open knowledge.
+在“开放政府”的概念不断演变以跟上新技术进步的时代，政府的政策模型和分析可能是新一代的开放知识。
 
-Government Open Source Models (GOSMs) refer to the idea that government-developed models, whose purpose is to design and evaluate policy, are freely available to everyone to use, distribute, and modify without restrictions. The community could potentially improve the quality, reliability, and accuracy of policy modeling, creating new data-driven apps that benefit the public.
+政府开源模型 （GOSM） 是指政府开发的模型，其目的是设计和评估政策，免费提供给所有人使用、分发、不受限制地修改。社区可以提高政策建模的质量、可靠性和准确性，创造有利于公众的新的数据驱动程序。
 
-Today's generation interacts with technology like it's second nature, absorbing vast amounts of information tacitly. What if we could interact with different public policies in a virtual, immersive environment using a GOSM?
+今天的这代与技术相互作用，就像它的第二大本质，它默认吸收了大量的信息。如果我们可以在使用 GOSM 的虚拟、沉浸式环境中与不同的公共政策进行互动那会如何？
 
-Imagine an app that allows citizens to test drive proposed policies to determine the future in which they want to live. They would instinctively learn the key drivers and what to expect. Before long the public would have a deeper understanding of public policy impacts and become more savvy at navigating the controversial terrains of public debate.
+想象一下有一个允许公民测试推动政策来确定他们想要生活的未来的程序。他们会本能地学习关键的驱动因素和所需要的东西。不久之后，公众将更深入地了解公共政策的影响，并更加精明地引导有争议的公众辩论。
 
-Why haven't we had greater access to these models before? The reason lies behind the veils of public policy modeling.
+为什么我们以前没有更好的使用这些模型？原因在于公共政策建模的神秘面纱。
 
-In a society as complex as the one we live in, quantifying policy impacts is a difficult task and has been described as a "fine-art." Moreover, most government policy models are based on administrative and other privately held data. Nevertheless, policy analysts valiantly go about their quest with the aim of guiding policy design, and many a political battle has been won with a quantitative call to arms.
+在一个如我们所生活的复杂的社会中，量化政策影响是一项艰巨的任务，并被被描述为一种“美好艺术”。此外，大多数政府政策模型都是基于行政和其他私人持有的数据。然而，政策分析师为了指导政策设计而勇于追求，多次以大量武力而获得政治斗争。
 
-Numbers are powerful. They build credibility and are often used as a rationale for introducing new policies. The development of public policy models lends power to both politicians and bureaucrats, who may be reluctant to disrupt the status quo. Giving that up may not be easy, but GOSMs provide an opportunity for unprecedented public policy reform.
+数字是很有说服力的。它们构建可信度并常常被用作引入新政策的理由。公共政策模型的发展赋予政治家和官僚权力，这些政治家和官僚们可能不愿意破坏现状。给予这一点可能并不容易，但 GOSM 为前所未有的公共政策改革提供了机会。
 
-GOSMs level the playing field for everyone: politicians, the media, lobby groups, stakeholders, and the general public. By opening the doors of policy evaluation to the community, governments can tap into new and undiscovered capabilities for creativity, innovation, and efficiency within the public sphere. But what are the practical implications for the strategic interactions between stakeholders and governments in public policy design?
+GOSM 将所有人的竞争环境均衡化：政治家、媒体、游说团体、利益相关者和公众。通过向社区开放政策评估的大门, 政府可以利用新的和未发现的能力用来创造、创新在公共领域的效率。但在公共政策设计中，利益相关者和政府之间战略互动有哪些实际影响？
 
-GOSMs are unique because they are primarily a tool for designing public policy and do not necessarily require re-distribution for private gains. Stakeholders and lobby groups could potentially employ GOSMs along with their own privately held information to gain new insights into the workings of the policy environment in which they are economic players for private benefit.
+GOSM 是独一无二的，因为它们主要是设计公共政策的工具，而不一定需要重新分配私人收益。利益相关者和游说团体可能会将 GOSM 与其私人信息一起使用，以获得对经济参与者私人利益的政策环境运作的新见解。
 
-Could GOSMs become a weapon where stakeholders hold the balance of power in public debate and strategize for optimal benefit?
+GOSM 可以成为利益相关者在公共辩论中保持权力平衡的武器，并为战略争取最佳利益么？
 
-Being a modifiable public good, GOSMs are, in notion, funded by the taxpayer and attributed to the state. Would it be ethically appropriate for private entities to gain from GOSMs without passing on the benefits to society? Unlike apps that may be used for more efficient service provision, alternate policy proposals are more likely to be used by consultancies and contribute to public debate.
+作为一个可变的公共资源，GOSM 在概念上由纳税人资助，并属于国家。私有实体在不向社会带来利益的情况下从 GOSM 中获得资源是合乎道德的吗？与可能用于更有效的服务提供的程序不同，替代政策建议更有可能由咨询机构使用，并有助于公众辩论。
 
-The open source community has frequently used the "copyleft license" to ensure that code and any derivative works under this license remains open to everyone. This works well when the product of value is the code itself, which requires re-distribution for maximum benefit. However, what if the code or GOSM redistribution is incidental to the main product, which may be new strategic insights into the existing policy environment?
+开源社区经常使用“ copyleft 许可证” 来确保代码和根据此许可证的任何衍生作品对所有人都开放。当产品价值是代码本身，这需要重新分配才能获得最大利益，它需要重新分发来获得最大的利益。但是，如果代码或 GOSM 重新分发是主要产品附带的，那它会是对现有政策环境的新战略洞察么？
 
-At a time when privately collected data is becoming prolific, the real value behind GOSMs may be the underlying data, which could be used to refine the models themselves. Ultimately, government is the only consumer with the authority to implement policy, and stakeholders may choose to share their modified GOSMs in negotiations.
+在私人收集的数据变得越来越多的时候，GOSM 背后的真正价值可能是底层数据，它可以用来改进模型本身。最终，政府是唯一有权实施政策的消费者，利益相关者可以选择在谈判中分享修改后的 GOSM。
 
-The big challenge government has when publicly releasing policy models is increasing transparency while protecting privacy. Ideally, releasing GOSMs would require securing closed data in a way that preserves the key features of the modeling.
+政府在公开发布政策模型时面临的巨大挑战是提高透明度的同时保护隐私。理想情况下，发布 GOSM 将需要以保护建模关键特征的方式保护封闭数据。
 
-Publicly releasing GOSMs empower citizens by promoting a greater understanding and participation into our democracy, which would lead to improved policy outcomes and greater public satisfaction. In an open government utopia, open public policy development will be a collaborative effort between government and the community, where knowledge, data, and analysis are freely available to everyone.
+公开发布 GOSM 通过促进市民对民主的更多了解和参与，使公民获得权力，从而改善政策成果和提高公众满意度。在开放的政府乌托邦中，开放的公共政策发展将是政府和社区之间的合作性努力，这里知识、数据和分析可供大家免费使用。
 
-_Learn more in Audrey Lobo-Pulo's talk at linux.conf.au 2017 ([#lca2017][1]) in Hobart: [Publicly Releasing Government Models][2]._
+_在霍巴特举行的 linux.conf.au 2017（[＃lca2017][1]）了解更多 Audrey Lobo-Pulo 的讲话：[公开发布的政府模型][2]。_
 
-_Disclaimer: The views presented in this article belong to Audrey Lobo-Pulo and are not necessarily those of the Australian Government._
+_声明：本文中提出的观点属于 Audrey Lobo-Pulo，不一定是澳大利亚政府的观点。_
 
 --------------------------------------------------------------------------------
 
@@ -53,14 +51,14 @@ _Disclaimer: The views presented in this article belong to Audrey Lobo-Pulo and 
 
 ![](https://opensource.com/sites/default/files/styles/profile_pictures/public/pictures/1-_mg_2552.jpg?itok=-RflZ4Wv)
 
-Audrey Lobo-Pulo - Dr. Audrey Lobo-Pulo is a co-founder of Phoensight and is an advocate for open government and open source software in government modelling. A physicist, she moved to working in economic policy modelling after joining the Australian Public Service. Audrey has been involved in modelling a wide range of economic policy options and is currently interested in government open data and open policy modelling. Audrey's vision for government is to bring data science to public policy analytics.
+Audrey Lobo-Pulo - Audrey Lobo-Pulo 博士是 Phoensight 的联合创始人，并且开放政府以及政府建模开源软件的倡导者。一位物理学家，在加入澳大利亚公共服务部后，她转而从事经济政策建模工作。Audrey 参与了各种经济政策选择的建模，目前对政府开放数据和开放式政策建模感兴趣。 Audrey 对政府的愿景是将数据科学纳入公共政策分析。
 
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/17/1/government-open-source-models
 
 作者：[Audrey Lobo-Pulo ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
