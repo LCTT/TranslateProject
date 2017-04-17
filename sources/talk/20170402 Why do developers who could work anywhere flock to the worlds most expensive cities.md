@@ -1,5 +1,9 @@
+
+translating by xiaow6
+
 Why do developers who could work anywhere flock to the world’s most expensive cities?
 ============================================================
+
  ![](https://tctechcrunch2011.files.wordpress.com/2017/04/img_20170401_1835042.jpg?w=977) 
 
 Politicians and economists [lament][10] that certain alpha regions — SF, LA, NYC, Boston, Toronto, London, Paris — attract all the best jobs while becoming repellently expensive, reducing economic mobility and contributing to further bifurcation between haves and have-nots. But why don’t the best jobs move elsewhere?
@@ -39,13 +43,13 @@ via: https://techcrunch.com/2017/04/02/why-do-developers-who-could-work-anywhere
 [a]:https://techcrunch.com/author/jon-evans/
 [1]:https://techcrunch.com/2017/04/02/why-do-developers-who-could-work-anywhere-flock-to-the-worlds-most-expensive-cities/#comments
 [2]:https://techcrunch.com/2017/04/02/why-do-developers-who-could-work-anywhere-flock-to-the-worlds-most-expensive-cities/#
-[3]:http://twitter.com/share?via=techcrunch&url=http://tcrn.ch/2owXJ0C&text=Why%20do%20developers%20who%20could%20work%20anywhere%20flock%20to%20the%20world%E2%80%99s%20most%20expensive%C2%A0cities%3F&hashtags=
-[4]:https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Ftechcrunch.com%2F2017%2F04%2F02%2Fwhy-do-developers-who-could-work-anywhere-flock-to-the-worlds-most-expensive-cities%2F&title=Why%20do%20developers%20who%20could%20work%20anywhere%20flock%20to%20the%20world%E2%80%99s%20most%20expensive%C2%A0cities%3F
+[3]:http://twitter.com/share?via=techcrunch&amp;url=http://tcrn.ch/2owXJ0C&amp;text=Why%20do%20developers%20who%20could%20work%20anywhere%20flock%20to%20the%20world%E2%80%99s%20most%20expensive%C2%A0cities%3F&amp;hashtags=
+[4]:https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Ftechcrunch.com%2F2017%2F04%2F02%2Fwhy-do-developers-who-could-work-anywhere-flock-to-the-worlds-most-expensive-cities%2F&amp;title=Why%20do%20developers%20who%20could%20work%20anywhere%20flock%20to%20the%20world%E2%80%99s%20most%20expensive%C2%A0cities%3F
 [5]:https://plus.google.com/share?url=https://techcrunch.com/2017/04/02/why-do-developers-who-could-work-anywhere-flock-to-the-worlds-most-expensive-cities/
-[6]:http://www.reddit.com/submit?url=https://techcrunch.com/2017/04/02/why-do-developers-who-could-work-anywhere-flock-to-the-worlds-most-expensive-cities/&title=Why%20do%20developers%20who%20could%20work%20anywhere%20flock%20to%20the%20world%E2%80%99s%20most%20expensive%C2%A0cities%3F
+[6]:http://www.reddit.com/submit?url=https://techcrunch.com/2017/04/02/why-do-developers-who-could-work-anywhere-flock-to-the-worlds-most-expensive-cities/&amp;title=Why%20do%20developers%20who%20could%20work%20anywhere%20flock%20to%20the%20world%E2%80%99s%20most%20expensive%C2%A0cities%3F
 [7]:http://www.stumbleupon.com/badge/?url=https://techcrunch.com/2017/04/02/why-do-developers-who-could-work-anywhere-flock-to-the-worlds-most-expensive-cities/
-[8]:mailto:?subject=Why%20do%20developers%20who%20could%20work%20anywhere%20flock%20to%20the%20world%E2%80%99s%20most%20expensive%C2%A0cities?&body=Article:%20https://techcrunch.com/2017/04/02/why-do-developers-who-could-work-anywhere-flock-to-the-worlds-most-expensive-cities/
-[9]:https://share.flipboard.com/bookmarklet/popout?v=2&title=Why%20do%20developers%20who%20could%20work%20anywhere%20flock%20to%20the%20world%E2%80%99s%20most%20expensive%C2%A0cities%3F&url=https://techcrunch.com/2017/04/02/why-do-developers-who-could-work-anywhere-flock-to-the-worlds-most-expensive-cities/
+[8]:mailto:?subject=Why%20do%20developers%20who%20could%20work%20anywhere%20flock%20to%20the%20world%E2%80%99s%20most%20expensive%C2%A0cities?&amp;body=Article:%20https://techcrunch.com/2017/04/02/why-do-developers-who-could-work-anywhere-flock-to-the-worlds-most-expensive-cities/
+[9]:https://share.flipboard.com/bookmarklet/popout?v=2&amp;title=Why%20do%20developers%20who%20could%20work%20anywhere%20flock%20to%20the%20world%E2%80%99s%20most%20expensive%C2%A0cities%3F&amp;url=https://techcrunch.com/2017/04/02/why-do-developers-who-could-work-anywhere-flock-to-the-worlds-most-expensive-cities/
 [10]:https://mobile.twitter.com/Noahpinion/status/846054187288866
 [11]:http://happyfuncorp.com/
 [12]:https://twitter.com/rezendi
