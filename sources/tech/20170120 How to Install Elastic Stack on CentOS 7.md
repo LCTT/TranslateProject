@@ -1,3 +1,5 @@
+translating by Flowsnow!
+
 How to Install Elastic Stack on CentOS 7
 ============================================================
 
@@ -538,25 +540,25 @@ via: https://www.howtoforge.com/tutorial/how-to-install-elastic-stack-on-centos-
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:https://www.howtoforge.com/tutorial/how-to-install-elastic-stack-on-centos-7/
-[1]:https://www.howtoforge.com/tutorial/how-to-install-elastic-stack-on-centos-7/#step-nbspprepare-the-operating-system
-[2]:https://www.howtoforge.com/tutorial/how-to-install-elastic-stack-on-centos-7/#step-install-java
-[3]:https://www.howtoforge.com/tutorial/how-to-install-elastic-stack-on-centos-7/#step-install-and-configure-elasticsearch
-[4]:https://www.howtoforge.com/tutorial/how-to-install-elastic-stack-on-centos-7/#step-install-and-configure-kibana-with-nginx
-[5]:https://www.howtoforge.com/tutorial/how-to-install-elastic-stack-on-centos-7/#step-install-and-configure-logstash
-[6]:https://www.howtoforge.com/tutorial/how-to-install-elastic-stack-on-centos-7/#step-install-and-configure-filebeat-on-the-centos-client
-[7]:https://www.howtoforge.com/tutorial/how-to-install-elastic-stack-on-centos-7/#step-install-and-configure-filebeat-on-the-ubuntu-client
-[8]:https://www.howtoforge.com/tutorial/how-to-install-elastic-stack-on-centos-7/#step-testing
-[9]:https://www.howtoforge.com/tutorial/how-to-install-elastic-stack-on-centos-7/#reference
-[10]:https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/1.png
-[11]:https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/2.png
-[12]:https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/3.png
-[13]:https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/4.png
-[14]:https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/5.png
-[15]:https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/6.png
-[16]:https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/12.png
-[17]:https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/7.png
-[18]:https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/8.png
-[19]:https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/9.png
-[20]:https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/10.png
-[21]:https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/11.png
+[a]: https://www.howtoforge.com/tutorial/how-to-install-elastic-stack-on-centos-7/
+[1]: https://www.howtoforge.com/tutorial/how-to-install-elastic-stack-on-centos-7/#step-nbspprepare-the-operating-system
+[2]: https://www.howtoforge.com/tutorial/how-to-install-elastic-stack-on-centos-7/#step-install-java
+[3]: https://www.howtoforge.com/tutorial/how-to-install-elastic-stack-on-centos-7/#step-install-and-configure-elasticsearch
+[4]: https://www.howtoforge.com/tutorial/how-to-install-elastic-stack-on-centos-7/#step-install-and-configure-kibana-with-nginx
+[5]: https://www.howtoforge.com/tutorial/how-to-install-elastic-stack-on-centos-7/#step-install-and-configure-logstash
+[6]: https://www.howtoforge.com/tutorial/how-to-install-elastic-stack-on-centos-7/#step-install-and-configure-filebeat-on-the-centos-client
+[7]: https://www.howtoforge.com/tutorial/how-to-install-elastic-stack-on-centos-7/#step-install-and-configure-filebeat-on-the-ubuntu-client
+[8]: https://www.howtoforge.com/tutorial/how-to-install-elastic-stack-on-centos-7/#step-testing
+[9]: https://www.howtoforge.com/tutorial/how-to-install-elastic-stack-on-centos-7/#reference
+[10]: https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/1.png
+[11]: https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/2.png
+[12]: https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/3.png
+[13]: https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/4.png
+[14]: https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/5.png
+[15]: https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/6.png
+[16]: https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/12.png
+[17]: https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/7.png
+[18]: https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/8.png
+[19]: https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/9.png
+[20]: https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/10.png
+[21]: https://www.howtoforge.com/images/how-to-install-elastic-stack-on-centos-7/big/11.png
