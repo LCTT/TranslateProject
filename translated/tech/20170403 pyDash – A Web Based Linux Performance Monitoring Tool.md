@@ -1,16 +1,15 @@
 pyDash — 一个基于 web 的 Linux 性能监测工具
 ============================================================
 
-pyDash 是一个轻量且[基于 web 的 Linux 性能监测工具][1]，它是用 Python 和 [Django][2] 加上 Chart.js 来写的。经测试，在下面这些主流 Linux 发行版上可运行：CentOS、Fedora、Ubuntu、Debian、Raspbian 以及 Pidora 。
+**pyDash** 是一个轻量且[基于 web 的 Linux 性能监测工具][1]，它是用 **Python** 和 [Django][2] 加上 **Chart.js** 来写的。经测试，在下面这些主流 Linux 发行版上可运行：CentOS、Fedora、Ubuntu、Debian、Raspbian 以及 Pidora 。
 
-你可以使用这个工具来监视你的 Linux 个人电脑/服务器资源，比如 CPU、内存
-、网络统计，包括在线用户以及更多的进程。仪表盘是完全使用主要的 Python 版本提供的 Python 库开发的，因此它的依赖关系很少，你不需要安装许多包或库来运行它。
+你可以使用这个工具来监视你的 Linux 个人电脑/服务器资源，比如 CPU、内存、网络统计，包括在线用户的进程以及更多。仪表盘是完全使用主要的 Python 版本提供的 Python 库开发的，因此它的依赖关系很少，你不需要安装许多包或库来运行它。
 
-在这篇文章中，我将展示如果安装 pyDash 来监测 Linux 服务器性能。
+在这篇文章中，我将展示如果安装 **pyDash** 来监测 Linux 服务器性能。
 
 #### 如何在 Linux 系统下安装 pyDash
 
-１、首先，像下面这样安装需要的软件包 git 和 Python pip：
+１、首先，像下面这样安装需要的软件包 **git** 和 **Python pip**：
 
 ```
 -------------- 在 Debian/Ubuntu 上 --------------
@@ -22,7 +21,7 @@ $ sudo apt-get install git python-pip
 # dnf install git python-pip
 ```
 
-２、如果安装好了 git 和 Python pip，那么接下来，像下面这样安装 virtualenv，它有助于处理针对 Python 项目的依赖关系：
+２、如果安装好了 git 和 Python pip，那么接下来，像下面这样安装 **virtualenv**，它有助于处理针对 Python 项目的依赖关系：
 
 ```
 # pip install virtualenv
@@ -37,7 +36,7 @@ $ sudo pip install virtualenv
 # cd pydash
 ```
 
-４、下一步，使用下面的 virtualenv 命令为项目创建一个叫做 pydashtest 虚拟环境：
+４、下一步，使用下面的 **virtualenv** 命令为项目创建一个叫做 **pydashtest** 虚拟环境：
 
 ```
 $ virtualenv pydashtest #give a name for your virtual environment like pydashtest
@@ -48,9 +47,9 @@ $ virtualenv pydashtest #give a name for your virtual environment like pydashtes
 
 *创建虚拟环境*
 
-重点：请注意，上面的屏幕截图中，虚拟环境的 bin 目录被高亮显示，你的可能和这不一样，取决于你把 pyDash 目录克隆到什么位置。
+重要：请注意，上面的屏幕截图中，虚拟环境的 bin 目录被高亮显示，你的可能和这不一样，取决于你把 pyDash 目录克隆到什么位置。
 
-５、创建好虚拟环境（pydashtest）以后，你需要在使用前像下面这样激活它：
+５、创建好虚拟环境（**pydashtest**）以后，你需要在使用前像下面这样激活它：
 
 ```
 $ source /home/aaronkilik/pydash/pydashtest/bin/activate
@@ -61,9 +60,9 @@ $ source /home/aaronkilik/pydash/pydashtest/bin/activate
 
 *激活虚拟环境*
 
-从上面的屏幕截图中，你可以注意到，提示字符串 1（PS1）已经发生改变，这表明虚拟环境已经被激活，而且可以开始使用。
+从上面的屏幕截图中，你可以注意到，提示字符串 1（**PS1**）已经发生改变，这表明虚拟环境已经被激活，而且可以开始使用。
 
-６、现在，安装 pydash 项目 requirements；如何你是一个细心的人，那么可以使用 [cat 命令][5]查看 requirements.txt 的内容，然后像下面展示这样进行安装：
+６、现在，安装 pydash 项目 requirements；如何你好奇的话，可以使用 [cat 命令][5]查看 **requirements.txt** 的内容，然后像下面所示那样进行安装：
 
 ```
 $ cat requirements.txt
@@ -110,7 +109,7 @@ Password (again): ############
 $ python manage.py runserver
 ```
 
-１０、接下来，打开你的 web 浏览器，输入网址：http://127.0.0.1:8000/ 进入 web 控制台登录界面，输入你在第 8 步中创建数据库和安装 Django 身份验证系统时创建的超级用户名和密码，然后点击登录。
+１０、接下来，打开你的 web 浏览器，输入网址：**http://127.0.0.1:8000/** 进入 web 控制台登录界面，输入你在第 8 步中创建数据库和安装 Django 身份验证系统时创建的超级用户名和密码，然后点击登录。
 
 [
  ![pyDash Login Interface](http://www.tecmint.com/wp-content/uploads/2017/03/pyDash-web-login-interface.png)
@@ -118,7 +117,7 @@ $ python manage.py runserver
 
 *pyDash 登录界面*
 
-１１、登录到 pydash 主页面以后，你将会得到一段监测系统的基本信息，包括 CPU、内存和硬盘使用量以及系统平均负载。
+１１、登录到 pydash 主页面以后，你将会可以看到监测系统的基本信息，包括 CPU、内存和硬盘使用量以及系统平均负载。
 
 向下滚动便可查看更多部分的信息。
 
@@ -154,7 +153,7 @@ $ python manage.py runserver
 
 作者简介：
 
-我叫 Ravi Saive，是 TecMint 的创建者，是一个喜欢在网上分享技巧和知识的计算机极客和 Linux Guru 。我的大多数服务器都运行在叫做 Linux 的开源平台上。请关注我：[Twitter][10]、[Facebook][01] 以及 [Google+][02] 。
+我叫 Ravi Saive，是 TecMint 的原创作者，是一个喜欢在网上分享技巧和知识的计算机极客和 Linux Guru。我的大多数服务器都运行在 Linux 开源平台上。请关注我：[Twitter][10]、[Facebook][01] 以及 [Google+][02] 。
 
 --------------------------------------------------------------------------------
 
