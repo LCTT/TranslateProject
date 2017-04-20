@@ -1,4 +1,4 @@
-翻译中 [ChrisLeeGit](https://github.com/chrisleegit)
+Translating by Ping
 
 Assign Read/Write Access to a User on Specific Directory in Linux
 ============================================================
