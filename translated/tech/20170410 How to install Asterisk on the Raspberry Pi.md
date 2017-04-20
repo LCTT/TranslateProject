@@ -7,22 +7,22 @@
  ![How to install Asterisk on the Raspberry Pi](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/life-raspberrypi_0.png?itok=wxVxQ0Z4 "How to install Asterisk on the Raspberry Pi") 
 >图片版权： Dwight Sipler 的 [Flickr][8]
 
-你是否在为小型企业或家庭办公室寻找电话系统？我一直对可扩展 VoIP（Voice over IP）解决方案感兴趣，我在树莓派上找到 [Asterisk][9] 的一个实现。
+你是否在为小型企业或家庭办公室寻找电话系统？我一直对可扩展 VoIP（Voice over IP）解决方案感兴趣，后来我在树莓派上找到 [Asterisk][9] 的一个实现。
 
 我的好奇心被激起了，我决心尝试一下，所以我从 [Asterisk][11] 官网[下载][10]了它，然后使用我的树莓派 3 构建服务器。
 
 ### 准备开始
 
-首先，我将下载的镜像刻录到 MicroSD 卡上。建议的最小值是 4GB。将镜像传输到 MicroSD 卡并插到树莓派上的相应插槽中后，我将网线连接到树莓派和家庭路由器上的以太网端口中。
+首先，我将下载的镜像刻录到 MicroSD 卡上。建议的最小值是 4 GB。将镜像传输到 MicroSD 卡并插到树莓派上的相应插槽中后，我将网线连接到树莓派和家庭路由器上的以太网端口中。
 
-更多关于树莓派的
+更多关于树莓派的内容：
 
 *   [我们最新的树莓派教程][1]
 *   [什么是树莓派？][2]
 *   [开始使用树莓派][3]
 *   [给我们发送你的树莓派项目和教程][4]
 
-接下来，我在 Linux 上打开一个终端，并输入 **ssh root@192.168.1.8**，这是我的服务器的IP地址。我被提示以 root 用户身份登录到 **raspbx** 上。默认密码是 “raspberry”。 （出于安全考虑，如果你打算再多试试，请务必更改默认密码。）
+接下来，我在 Linux 上打开一个终端，并输入 **ssh root@192.168.1.8**，这是我的服务器的 IP 地址。我被提示以 root 用户身份登录到 **raspbx** 上。默认密码是 “raspberry”。 （出于安全考虑，如果你打算再多试试，请务必更改默认密码。）
 
 当我登录到了 raspbx 上的 shell 后，接下来我需要准备配置了。根据网站上提供的[文档][12]，我在 shell 下输入 **regen-hostkeys** 来创建新的主机密钥。然后输入 **configure-timezone** 来配置服务器的时区。我通过在提示符下输入 **dpkg-reconfigure locales** 来配置区域设置。我也安装了 [Fail2Ban][13] 来提供服务器的安全性。
 
@@ -36,21 +36,21 @@
 
  ![FreePBX_Login_Screen](https://opensource.com/sites/default/files/freepbx_login_screen.png "FreePBX_Login_Screen") 
 
-登录之后，我进入位于显示屏左上方的 “Application Menu”。点击菜单链接并选择了第二个选项，即 “Applications”，接着选择了第四个选项，其中标有 “Extensions”。从那里我选择创建一个  **New Chan_Sip** 分机。
+登录之后，我进入位于显示屏左上方的<ruby>应用菜单<rt>Application Menu</rt></ruby>。点击菜单链接并选择了第二个选项，即 <ruby>“应用”<rt>Applications</rt></ruby>，接着选择了第四个选项，<ruby>“分机”<rt>Extensions</rt></ruby>。从那里我选择创建一个  **New Chan_Sip** 分机。
 
  ![](https://opensource.com/sites/default/files/add_a_new_chan_sip_extension.png) 
 
 我使用密码配置了一个 **sip** 分机用户。密码是自动生成的，也可以选择创建自己的密码。
 
-现在我有了一个完整的分机，我急于尝试我的新的 VoIP 服务器。我下载并安装了[ Yate 客户端][16]，这是在构建服务器的过程中发现的。安装 [Yate][17] 之后，我想测试与服务器的连接。我发现我可以使用 Yate 连接到服务器并输入 **43** 进行回声测试。当我听到客户端指示时，我感到很激动。
+现在我有了一个完整的分机，我急于尝试我的新的 VoIP 服务器。我下载并安装了[ Yate 客户端][16]，这是在构建服务器的过程中发现的。安装 [Yate][17] 之后，我想测试与服务器的连接。我发现我可以使用 Yate 连接到服务器并输入 \*43 进行回声测试。当我听到客户端指示时，我感到很激动。
 
  ![](https://opensource.com/sites/default/files/echotest.png) 
 
-我决定创建另外一个 **sip** 分机，这样我就可以测试系统的语音信箱功能。 在完成后，我使用 Yate 客户端来呼叫这个分机，并留下了简短的语音留言。然后再次使用 Yate 呼叫该分机并输入 **97** 来检索语音留言。然后我想看看我是否可以使用我的新服务器来呼叫外线。返回到菜单，选择 “Connectivity” 选项，并添加了 Google Voice 号码。
+我决定创建另外一个 **sip** 分机，这样我就可以测试系统的语音信箱功能。 在完成后，我使用 Yate 客户端来呼叫这个分机，并留下了简短的语音留言。然后再次使用 Yate 呼叫该分机并输入 \*97 来检索语音留言。然后我想看看我是否可以使用我的新服务器来呼叫外线。返回到菜单，选择 <ruby>“连接”<rt>Connectivity</rt></ruby> 选项，并添加了 Google Voice 号码。
 
  ![Google_Voice_Connectivity](https://opensource.com/sites/default/files/google_voice_connectivity.png "Google_Voice_Connectivity") 
 
-接着我返回到 “Connectivity” 菜单将 Google Voice 添加到出站路由中。
+接着我返回到 “连接” 菜单，并将 Google Voice 添加到出站路由中。
 
  ![Google_Voice_outbound_route](https://opensource.com/sites/default/files/google_voice_outbound_route.png "Google_Voice_outbound_route") 
 
@@ -77,7 +77,7 @@ via: https://opensource.com/article/17/4/asterisk-raspberry-pi-3
 
 作者：[Don Watkins][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
