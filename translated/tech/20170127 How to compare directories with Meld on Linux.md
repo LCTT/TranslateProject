@@ -1,17 +1,13 @@
 在 Linux 上使用 Meld 比较文件夹
 ============================================================
 
-### 本文导航
-1.  [用 Meld 比较文件夹][1]
-2.  [总结][2]
+我们已经从一个新手的角度了解了 Meld (包括 Meld 的安装)，我们也提及了一些 Meld 中级用户常用的小技巧。如果你有印象，在新手教程中，我们说过 Meld 可以比较文件和文件夹。已经讨论过怎么比较文件，今天，我们来看看 Meld 怎么比较文件夹。
 
-我们已经从一个新手的角度了解了 Meld (包括 Meld 的安装)，我们也提及了一些 Meld 中级用户常用的小技巧。如果你有印象，在新手教程中，我们说过 Meld 可以比较文件和文件夹。已经讨论过怎么讨论文件，今天，我们来看看 Meld 怎么比较文件夹。
-
-本教程中的所有命令和例子都是在 Ubuntu 14.04 上测试的，使用的 Meld 版本基于 3.14.2 版。 
-
+*需要指出的是，本教程中的所有命令和例子都是在 Ubuntu 14.04 上测试的，使用的 Meld 版本为 3.14.2。 *
 
 ### 用 Meld 比较文件夹
-打开 Meld 工具，然后选择_比较文件夹_选项来比较两个文件夹。
+
+打开 Meld 工具，然后选择 <ruby>比较文件夹<rt>Directory comparison</rt></ruby> 选项来比较两个文件夹。
 [
  ![Compare directories using Meld](https://www.howtoforge.com/images/beginners-guide-to-visual-merge-tool-meld-on-linux-part-3/meld-dir-comp-1.png) 
 ][5]
@@ -21,13 +17,13 @@
  ![select the directories](https://www.howtoforge.com/images/beginners-guide-to-visual-merge-tool-meld-on-linux-part-3/meld-sel-dir-2.png) 
 ][6]
 
-然后单击_比较_按钮，你会看到 Meld 像图中这样分成两栏显示。
+然后单击<ruby>比较<rt>Compare </rt></ruby>按钮，你会看到 Meld 像图中这样分成两栏比较目录，就像文件比较一样。
 [
  ![Compare directories visually](https://www.howtoforge.com/images/beginners-guide-to-visual-merge-tool-meld-on-linux-part-3/meld-dircomp-begins-3.png) 
 ][7]
-分栏会树形显示这些文件/文件夹。你可以在上图中看到明显的区别——不论文件是新建的还是被修改过的——都会以不同的颜色高亮显示。
+分栏会树形显示这些文件夹。你可以在上图中看到 —— 区别之处，不论是新建的还是被修改过的文件 —— 都会以不同的颜色高亮显示。
 
-根据 Meld 的官方文档可以知道在窗口中看到的每个不同的文件或文件夹都会被突出显示。这样就很容易看出这个文件/文件夹与另一个分栏中对应位置的文件/文件夹的区别。
+根据 Meld 的官方文档可以知道，在窗口中看到的每个不同的文件或文件夹都会被突出显示。这样就很容易看出这个文件/文件夹与另一个分栏中对应位置的文件/文件夹的区别。
 
 下表是 Meld 网站上列出的在比较文件夹时突出显示的不同字体大小/颜色/背景等代表的含义。
 
@@ -40,7 +36,8 @@
 | New | Green and bold | This file/folder exists in this folder, but not in the others. |
 | Missing | Greyed out text with a line through the middle | This file/folder doesn't exist in this folder, but does in one of the others. |
 | Error | Bright red with a yellow background and bold | When comparing this file, an error occurred. The most common error causes are file permissions (i.e., Meld was not allowed to open the file) and filename encoding errors. |
-Meld 默认会列出文件夹中的所有内容，即使这些内容没有任何不同。当然，你也可以在工具栏中单击_同样的_按钮设置 Meld 不显示这些相同的文件/文件夹——单击这个按钮使其不可用。
+
+Meld 默认会列出比较文件夹中的所有内容，即使这些内容没有任何不同。当然，你也可以在工具栏中单击<ruby>相同<rt>Same</rt></ruby>按钮设置 Meld 不显示这些相同的文件/文件夹 —— 单击这个按钮使其不可用。
 [
  ![same button](https://www.howtoforge.com/images/beginners-guide-to-visual-merge-tool-meld-on-linux-part-3/meld-same-button.png) 
 ][3]
@@ -110,7 +107,7 @@ via: https://www.howtoforge.com/tutorial/how-to-perform-directory-comparison-usi
 
 作者：[Ansh][a]
 译者：[vim-kakali](https://github.com/vim-kakali)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
