@@ -110,7 +110,7 @@ via: https://www.howtoforge.com/tutorial/how-to-perform-directory-comparison-usi
 
 作者：[Ansh][a]
 译者：[vim-kakali](https://github.com/vim-kakali)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
