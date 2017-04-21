@@ -1,3 +1,5 @@
+being translated by zhousiyu325
+
 A comprehensive guide to taking screenshots in Linux using gnome-screenshot
 ============================================================
 
