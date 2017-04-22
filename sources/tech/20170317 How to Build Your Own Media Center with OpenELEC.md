@@ -1,3 +1,5 @@
+svtter translating...(=w=)
+
 How to Build Your Own Media Center with OpenELEC
 ============================================================
 
