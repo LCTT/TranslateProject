@@ -1,3 +1,4 @@
+svtter翻译中..
 The Many, the Humble, the Ubuntu Users
 ============================================================
 
@@ -44,7 +45,7 @@ Robin "Roblimo" Miller is a freelance writer and former editor-in-chief at Open 
 via: http://fossforce.com/2017/01/many-humble-ubuntu-users/
 
 作者：[Robin "Roblimo" Miller][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[svtter](https://github.com/svtter)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
