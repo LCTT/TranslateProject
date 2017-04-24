@@ -3,21 +3,24 @@
 
 我们已经从一个新手的角度了解了 Meld (包括 Meld 的安装)，我们也提及了一些 Meld 中级用户常用的小技巧。如果你有印象，在新手教程中，我们说过 Meld 可以比较文件和文件夹。已经讨论过怎么比较文件，今天，我们来看看 Meld 怎么比较文件夹。
 
-*需要指出的是，本教程中的所有命令和例子都是在 Ubuntu 14.04 上测试的，使用的 Meld 版本为 3.14.2。 *
+**需要指出的是，本教程中的所有命令和例子都是在 Ubuntu 14.04 上测试的，使用的 Meld 版本为 3.14.2。**
 
 ### 用 Meld 比较文件夹
 
 打开 Meld 工具，然后选择 <ruby>比较文件夹<rt>Directory comparison</rt></ruby> 选项来比较两个文件夹。
+
 [
  ![Compare directories using Meld](https://www.howtoforge.com/images/beginners-guide-to-visual-merge-tool-meld-on-linux-part-3/meld-dir-comp-1.png) 
 ][5]
 
 选择你要比较的文件夹：
+
 [
  ![select the directories](https://www.howtoforge.com/images/beginners-guide-to-visual-merge-tool-meld-on-linux-part-3/meld-sel-dir-2.png) 
 ][6]
 
 然后单击<ruby>比较<rt>Compare </rt></ruby>按钮，你会看到 Meld 像图中这样分成两栏比较目录，就像文件比较一样。
+
 [
  ![Compare directories visually](https://www.howtoforge.com/images/beginners-guide-to-visual-merge-tool-meld-on-linux-part-3/meld-dircomp-begins-3.png) 
 ][7]
@@ -39,6 +42,7 @@
 | 错误 | 黄色背景的红色粗体 | 比较文件时发生错误，最常见错误原因是文件权限（例如，Meld 无法打开该文件）和文件名编码错误。 |
 
 Meld 默认会列出比较文件夹中的所有内容，即使这些内容没有任何不同。当然，你也可以在工具栏中单击<ruby>相同<rt>Same</rt></ruby>按钮设置 Meld 不显示这些相同的文件/文件夹 —— 单击这个按钮使其不可用。
+
 [
  ![same button](https://www.howtoforge.com/images/beginners-guide-to-visual-merge-tool-meld-on-linux-part-3/meld-same-button.png) 
 ][3]
@@ -48,6 +52,7 @@ Meld 默认会列出比较文件夹中的所有内容，即使这些内容没有
 ][8]
 
 下面是单击 _Same_ 按钮使其不可用的截图：
+
 [
  ![Directory Comparison without same files](https://www.howtoforge.com/images/beginners-guide-to-visual-merge-tool-meld-on-linux-part-3/meld-only-diff.png) 
 ][9]
@@ -55,6 +60,7 @@ Meld 默认会列出比较文件夹中的所有内容，即使这些内容没有
 这样你会看到只显示了两个文件夹中不同的文件（新建的和修改过的）。同样，如果你单击 <ruby>新建<rt>New</rt></ruby> 按钮使其不可用，那么 Meld 就只会列出修改过的文件。所以，在比较文件夹时可以通过这些按钮自定义要显示的内容。
 
 你可以使用工具窗口显示区的上下箭头来切换选择是显示新建的文件还是修改过的文件。要打开两个文件进行分栏比较，可以双击文件，或者单击箭头旁边的 <ruby>比较<rt>Compare</rt></ruby>按钮。
+
 [
  ![meld compare arrow keys](https://www.howtoforge.com/images/beginners-guide-to-visual-merge-tool-meld-on-linux-part-3/meld-compare-arrows.png) 
 ][10]
