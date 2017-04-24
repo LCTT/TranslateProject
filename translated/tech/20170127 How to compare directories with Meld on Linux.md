@@ -101,7 +101,7 @@ Meld 默认会列出比较文件夹中的所有内容，即使这些内容没有
 
 最重要的一点是 Meld 的文件名默认大小写敏感。也就是说，Meld 认为 readme 和 ReadMe 与 README 是不一样的文件。
 
-幸运的是，你可以关掉 Meld 的大小写敏感。只需要打开_浏览_菜单然后选择_<ruby>忽略文件名大小写<rt> Ignore Filename Case </rt></ruby>_选项。
+幸运的是，你可以关掉 Meld 的大小写敏感。只需要打开 _浏览_ 菜单然后选择 <ruby>忽略文件名大小写<rt> Ignore Filename Case </rt></ruby> 选项。
 [
  ![Meld ignore filename case](https://www.howtoforge.com/images/beginners-guide-to-visual-merge-tool-meld-on-linux-part-3/meld-ignore-case.png) 
 ][14]
