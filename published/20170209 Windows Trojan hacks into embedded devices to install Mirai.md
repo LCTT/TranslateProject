@@ -1,4 +1,4 @@
-Windows 木马黑进嵌入式设备来安装 Mirai
+Windows 木马攻破嵌入式设备来安装 Mirai 恶意软件
 ============================================================
 
 > 木马尝试使用出厂默认凭证对不同协议进行身份验证，如果成功则会部署 Mirai 僵尸程序。
@@ -31,7 +31,7 @@ Doctor Web 发现的新木马被称为 [Trojan.Mirai.1][23]，从它可以看到
 
 via: http://www.csoonline.com/article/3168357/security/windows-trojan-hacks-into-embedded-devices-to-install-mirai.html
 
-作者：[ Lucian Constantin][a]
+作者：[Lucian Constantin][a]
 译者：[geekpi](https://github.com/geekpi)
 校对：[jasminepeng](https://github.com/jasminepeng)
 
