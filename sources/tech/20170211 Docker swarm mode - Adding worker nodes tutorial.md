@@ -1,3 +1,5 @@
+translating---geekpi
+
 # Docker swarm mode - Adding worker nodes tutorial
 
 Let us expand on what we started with CentOS 7.2 several weeks ago. In this [guide][1], we learned how to initiate and start the native clustering and orchestration functionality built into Docker 1.12\. But we only had our manager node and no other workers. Today, we will expand this.
