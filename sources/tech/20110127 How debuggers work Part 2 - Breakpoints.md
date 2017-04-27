@@ -1,5 +1,3 @@
-Firstadream translating 
-
 [How debuggers work: Part 2 - Breakpoints][26]
 ============================================================
 

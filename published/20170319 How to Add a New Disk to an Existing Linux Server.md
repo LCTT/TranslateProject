@@ -13,7 +13,7 @@
 
 我已经添加了一块 **20GB** 容量的硬盘，挂载到了 `/data` 分区。
 
-**fdisk** 是一个在 Linux 系统上用于显示和管理硬盘和分区命令行工具。
+`fdisk` 是一个在 Linux 系统上用于显示和管理硬盘和分区命令行工具。
 
 ```
 # fdisk -l
@@ -148,7 +148,7 @@ via: http://www.tecmint.com/add-new-disk-to-an-existing-linux/
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:http://www.tecmint.com/author/lakshmi/
-[1]:http://www.tecmint.com/add-disk-larger-than-2tb-to-an-existing-linux/
+[1]:https://linux.cn/article-8398-1.html
 [2]:http://www.tecmint.com/fdisk-commands-to-manage-linux-disk-partitions/
 [3]:http://www.tecmint.com/wp-content/uploads/2017/03/Find-Linux-Partition-Details.png
 [4]:http://www.tecmint.com/wp-content/uploads/2017/03/Find-New-Partition-Details.png
