@@ -264,7 +264,7 @@ $ sudo-rasps-config
 
  ![PuTTY configuration](https://opensource.com/sites/default/files/putty_configuration.png "PuTTY configuration") 
 
-[下载并运行 PuTTY] [11] 或 Windows 的另一个 SSH 客户端。 在该字段中输入你的 IP 地址，如上图所示。 将默认端口保留在 22。 回车，PuTTY 将打开一个终端窗口，提示你输入用户名和密码。 填写然后开始在树莓派上进行你的远程工作。
+[下载并运行 PuTTY][11] 或 Windows 的另一个 SSH 客户端。 在该字段中输入你的 IP 地址，如上图所示。 将默认端口保留在 22。 回车，PuTTY 将打开一个终端窗口，提示你输入用户名和密码。 填写然后开始在树莓派上进行你的远程工作。
 
 [6] 如果尚未安装，请下载 [Microsoft Remote Desktop] [12]。 搜索您的计算机上的的 Microsoft Remote Desktop。 运行。 提示时输入 IP 地址。 接下来，会弹出一个 xrdp 窗口，提示你输入用户名和密码。
 
