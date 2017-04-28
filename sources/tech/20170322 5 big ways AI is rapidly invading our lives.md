@@ -1,3 +1,5 @@
+translated by zhousiyu325
+
 5 big ways AI is rapidly invading our lives
 ============================================================
 
