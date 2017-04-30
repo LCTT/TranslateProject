@@ -1,15 +1,15 @@
-pyDash — 一个基于 web 的 Linux 性能监测工具
+pyDash：一个基于 web 的 Linux 性能监测工具
 ============================================================
 
-**pyDash** 是一个轻量且[基于 web 的 Linux 性能监测工具][1]，它是用 **Python** 和 [Django][2] 加上 **Chart.js** 来写的。经测试，在下面这些主流 Linux 发行版上可运行：CentOS、Fedora、Ubuntu、Debian、Raspbian 以及 Pidora 。
+`pyDash` 是一个轻量且[基于 web 的 Linux 性能监测工具][1]，它是用 Python 和 [Django][2] 加上 Chart.js 来写的。经测试，在下面这些主流 Linux 发行版上可运行：CentOS、Fedora、Ubuntu、Debian、Raspbian 以及 Pidora 。
 
-你可以使用这个工具来监视你的 Linux 个人电脑/服务器资源，比如 CPU、内存、网络统计，包括在线用户的进程以及更多。仪表盘是完全使用主要的 Python 版本提供的 Python 库开发的，因此它的依赖关系很少，你不需要安装许多包或库来运行它。
+你可以使用这个工具来监视你的 Linux 个人电脑/服务器资源，比如 CPU、内存、网络统计，包括在线用户的进程以及更多。仪表盘完全由主要的 Python 发行版本所提供的 Python 库开发，因此它的依赖关系很少，你不需要安装许多包或库来运行它。
 
-在这篇文章中，我将展示如果安装 **pyDash** 来监测 Linux 服务器性能。
+在这篇文章中，我将展示如何安装 `pyDash` 来监测 Linux 服务器性能。
 
-#### 如何在 Linux 系统下安装 pyDash
+### 如何在 Linux 系统下安装 pyDash
 
-１、首先，像下面这样安装需要的软件包 **git** 和 **Python pip**：
+1、首先，像下面这样安装需要的软件包 `git` 和 `Python pip`：
 
 ```
 -------------- 在 Debian/Ubuntu 上 --------------
@@ -21,7 +21,7 @@ $ sudo apt-get install git python-pip
 # dnf install git python-pip
 ```
 
-２、如果安装好了 git 和 Python pip，那么接下来，像下面这样安装 **virtualenv**，它有助于处理针对 Python 项目的依赖关系：
+2、如果安装好了 git 和 Python pip，那么接下来，像下面这样安装 `virtualenv`，它有助于处理针对 Python 项目的依赖关系：
 
 ```
 # pip install virtualenv
@@ -29,14 +29,14 @@ $ sudo apt-get install git python-pip
 $ sudo pip install virtualenv
 ```
 
-３、现在，像下面这样使用 git 命令，把 pyDash 仓库克隆到 home 目录中：
+3、现在，像下面这样使用 `git` 命令，把 pyDash 仓库克隆到 home 目录中：
 
 ```
 # git clone https://github.com/k3oni/pydash.git
 # cd pydash
 ```
 
-４、下一步，使用下面的 **virtualenv** 命令为项目创建一个叫做 **pydashtest** 虚拟环境：
+4、下一步，使用下面的 `virtualenv` 命令为项目创建一个叫做 `pydashtest` 虚拟环境：
 
 ```
 $ virtualenv pydashtest #give a name for your virtual environment like pydashtest
@@ -47,9 +47,9 @@ $ virtualenv pydashtest #give a name for your virtual environment like pydashtes
 
 *创建虚拟环境*
 
-重要：请注意，上面的屏幕截图中，虚拟环境的 bin 目录被高亮显示，你的可能和这不一样，取决于你把 pyDash 目录克隆到什么位置。
+重要：请注意，上面的屏幕截图中，虚拟环境的 `bin` 目录被高亮显示，你的可能和这不一样，取决于你把 pyDash 目录克隆到什么位置。
 
-５、创建好虚拟环境（**pydashtest**）以后，你需要在使用前像下面这样激活它：
+5、创建好虚拟环境（`pydashtest`）以后，你需要在使用前像下面这样激活它：
 
 ```
 $ source /home/aaronkilik/pydash/pydashtest/bin/activate
@@ -60,16 +60,16 @@ $ source /home/aaronkilik/pydash/pydashtest/bin/activate
 
 *激活虚拟环境*
 
-从上面的屏幕截图中，你可以注意到，提示字符串 1（**PS1**）已经发生改变，这表明虚拟环境已经被激活，而且可以开始使用。
+从上面的屏幕截图中，你可以注意到，提示字符串 1（`PS1`）已经发生改变，这表明虚拟环境已经被激活，而且可以开始使用。
 
-６、现在，安装 pydash 项目 requirements；如何你好奇的话，可以使用 [cat 命令][5]查看 **requirements.txt** 的内容，然后像下面所示那样进行安装：
+6、现在，安装 pydash 项目 requirements；如何你好奇的话，可以使用 [cat 命令][5]查看 `requirements.txt` 的内容，然后像下面所示那样进行安装：
 
 ```
 $ cat requirements.txt
 $ pip install -r requirements.txt
 ```
 
-７、现在，进入 `pydash` 目录，里面包含一个名为 `settings.py` 的文件，也可直接运行下面的命令打开这个文件，然后把 `SECRET_KEY` 改为一个特定值：
+7、现在，进入 `pydash` 目录，里面包含一个名为 `settings.py` 的文件，也可直接运行下面的命令打开这个文件，然后把 `SECRET_KEY` 改为一个特定值：
 
 ```
 $ vi pydash/settings.py
@@ -82,7 +82,7 @@ $ vi pydash/settings.py
 
 保存文件然后退出。
 
-８、之后，运行下面的命令来创建一个项目数据库和安装 Django 的身份验证系统，并创建一个项目的超级用户：
+8、之后，运行下面的命令来创建一个项目数据库和安装 Django 的身份验证系统，并创建一个项目的超级用户：
 
 ```
 $ python manage.py syncdb
@@ -103,13 +103,13 @@ Password (again): ############
 
 *创建项目数据库*
 
-９、这个时候，一切都设置好了，然后，运行下面的命令来启用 Django 开发服务器：
+9、这个时候，一切都设置好了，然后，运行下面的命令来启用 Django 开发服务器：
 
 ```
 $ python manage.py runserver
 ```
 
-１０、接下来，打开你的 web 浏览器，输入网址：**http://127.0.0.1:8000/** 进入 web 控制台登录界面，输入你在第 8 步中创建数据库和安装 Django 身份验证系统时创建的超级用户名和密码，然后点击登录。
+10、接下来，打开你的 web 浏览器，输入网址：`http://127.0.0.1:8000/` 进入 web 控制台登录界面，输入你在第 8 步中创建数据库和安装 Django 身份验证系统时创建的超级用户名和密码，然后点击登录。
 
 [
  ![pyDash Login Interface](http://www.tecmint.com/wp-content/uploads/2017/03/pyDash-web-login-interface.png)
@@ -117,7 +117,7 @@ $ python manage.py runserver
 
 *pyDash 登录界面*
 
-１１、登录到 pydash 主页面以后，你将会可以看到监测系统的基本信息，包括 CPU、内存和硬盘使用量以及系统平均负载。
+11、登录到 pydash 主页面以后，你将会可以看到监测系统的基本信息，包括 CPU、内存和硬盘使用量以及系统平均负载。
 
 向下滚动便可查看更多部分的信息。
 
@@ -127,7 +127,7 @@ $ python manage.py runserver
 
 *pydash 服务器性能概述*
 
-１２、下一个屏幕截图显示的是一段 pydash 的跟踪界面，包括 IP 地址、互联网流量、硬盘读/写、在线用户以及 netstats 。
+12、下一个屏幕截图显示的是一段 pydash 的跟踪界面，包括 IP 地址、互联网流量、硬盘读/写、在线用户以及 netstats 。
 
 [
  ![pyDash Network Overview](http://www.tecmint.com/wp-content/uploads/2017/03/pyDash-Network-Overview.png)
@@ -135,7 +135,7 @@ $ python manage.py runserver
 
 *pyDash 网络概述*
 
-１３、下一个 pydash 主页面的截图显示了一部分系统中被监视的活跃进程。
+13、下一个 pydash 主页面的截图显示了一部分系统中被监视的活跃进程。
 
 
 [
@@ -160,7 +160,7 @@ $ python manage.py runserver
 
 via: http://www.tecmint.com/pydash-a-web-based-linux-performance-monitoring-tool/
 
-作者：[Ravi Saive ][a]
+作者：[Ravi Saive][a]
 译者：[ucasFL](https://github.com/ucasFL)
 校对：[jasminepeng](https://github.com/jasminepeng)
 
