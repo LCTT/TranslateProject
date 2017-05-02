@@ -134,7 +134,7 @@ via: http://www.tecmint.com/give-read-write-access-to-directory-in-linux/
 
 作者：[Aaron Kili][a]
 译者：[Mr-Ping](http://www.mr-ping.com)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
