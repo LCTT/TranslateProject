@@ -79,8 +79,8 @@ Filesystem type: Ext4
 
 如果想要获取ACL列表的更多信息。可以在下方查看我们的其他指南。
 
-1.  [How to Use ACLs (Access Control Lists) to Setup Disk Quotas for Users/Groups][1]
-2.  [How to Use ACLs (Access Control Lists) to Mount Network Shares][2]
+1.  [如何使用访问控制列表（ACL）为用户/组设置磁盘配额][1]
+2.  [如何使用访问控制列表（ACL）挂载网络共享][2]
 
 现在我们来看看如何使用第二种方法来为目录赋予读写权限。
 
