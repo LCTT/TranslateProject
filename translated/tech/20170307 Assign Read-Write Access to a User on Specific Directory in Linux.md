@@ -1,11 +1,11 @@
-给用户赋予指定目录的读写权限
+在 Linux 上给用户赋予指定目录的读写权限
 ============================================================
 
 
-在上篇文章中我们向您展示了如何在Linux上[创建一个共享目录][3]。这次，我们会为您介绍如何将Linux上指定目录的读写权限赋予用户。
+在上篇文章中我们向您展示了如何在 Linux 上[创建一个共享目录][3]。这次，我们会为您介绍如何将 Linux 上指定目录的读写权限赋予用户。
 
 
-有两种方法可以实现这个目标：第一种是 [使用 ACLs (访问控制列表)][4] ，第二种是[创建用户组来管理文件权限][5]，下面会一一介绍。
+有两种方法可以实现这个目标：第一种是 [使用 ACL (访问控制列表)][4] ，第二种是[创建用户组来管理文件权限][5]，下面会一一介绍。
 
 
 为了完成这个教程，我们将使用以下设置。
@@ -17,7 +17,7 @@ Test user: tecmint
 Filesystem type: Ext4
 ```
 
-请确认所有的命令都是使用root用户执行的，或者使用 [sudo 命令][6] 来享受与之同样的权限。
+请确认所有的命令都是使用 root 用户执行的，或者使用 [sudo 命令][6] 来享受与之同样的权限。
 
 让我们开始吧！下面，先使用 mkdir 命令来创建一个名为 `reports` 的目录。
 
@@ -25,26 +25,26 @@ Filesystem type: Ext4
 # mkdir -p /shares/project1/reports   				
 ```
 
-### 使用ACL来为用户赋予目录的读写权限
+### 使用 ACL 来为用户赋予目录的读写权限
 
-重要提示：打算使用此方法的话，您需要确认您的Linux文件系统类型（如 Ext3 and Ext4, NTFS, BTRFS）支持 ACLs.
+重要提示：打算使用此方法的话，您需要确认您的 Linux 文件系统类型（如 Ext3 和 Ext4, NTFS, BTRFS）支持 ACL。
 
-1. 首先， 依照以下命令在您的系统中[检查当前文件系统类型][7]，并且查看内核是否支持ACL：
+1. 首先， 依照以下命令在您的系统中[检查当前文件系统类型][7]，并且查看内核是否支持A CL：
 
 ```
 # df -T | awk '{print $1,$2,$NF}' | grep "^/dev"
 # grep -i acl /boot/config*
 ```
 
-从下方的截屏可以看到，文件系统类型是 Ext4，并且从 CONFIG_EXT4_FS_POSIX_ACL=y 选项可以发现内核是支持 POSIX ACLs 的。
+从下方的截屏可以看到，文件系统类型是 **Ext4**，并且从 **CONFIG_EXT4_FS_POSIX_ACL=y** 选项可以发现内核是支持 **POSIX ACLs** 的。
 
 [
  ![Check Filesystem Type and Kernel ACL Support](http://www.tecmint.com/wp-content/uploads/2017/03/Check-Filesystem-Type-and-Kernel-ACL-Support.png) 
 ][8]
 
-查看文件系统类型和内核的ACL支持。
+*查看文件系统类型和内核的 ACL 支持。*
 
-2. 接下来，查看文件系统（分区）挂载时是否使用了ACL选项。
+2. 接下来，查看文件系统（分区）挂载时是否使用了 ACL 选项。
 
 ```
 # tune2fs -l /dev/sda1 | grep acl
@@ -53,9 +53,9 @@ Filesystem type: Ext4
  ![Check Partition ACL Support](http://www.tecmint.com/wp-content/uploads/2017/03/Check-Partition-ACL-Support.png) 
 ][9]
 
-查看分区是否支持ACL
+*查看分区是否支持 ACL*
 
-通过上边的输出可以发现，默认的挂载项目中已经对ACL进行了支持。如果发现结果不如所愿，你可以通过以下命令对指定分区（此例中使用/dev/sda3）开启ACL的支持。
+通过上边的输出可以发现，默认的挂载项目中已经对 **ACL** 进行了支持。如果发现结果不如所愿，你可以通过以下命令对指定分区（此例中使用 **/dev/sda3**）开启 ACL 的支持。
 
 ```
 # mount -o remount,acl /
@@ -73,9 +73,9 @@ Filesystem type: Ext4
  ![Give Read/Write Access to Directory Using ACL](http://www.tecmint.com/wp-content/uploads/2017/03/Give-Read-Write-Access-to-Directory-Using-ACL.png) 
 ][10]
 
-通过ACL对指定目录赋予读写权限
+*通过 ACL 对指定目录赋予读写权限*
 
-在上方的截屏中，通过输出结果的第二行getfacl命令可以发现，用户 `tecmint` 已经成功的被赋予了 /shares/project1/reports 目录的读写权限。
+在上方的截屏中，通过输出结果的第二行 **getfacl** 命令可以发现，用户 `tecmint` 已经成功的被赋予了 **/shares/project1/reports** 目录的读写权限。
 
 如果想要获取ACL列表的更多信息。可以在下方查看我们的其他指南。
 
@@ -92,7 +92,7 @@ Filesystem type: Ext4
 # chgrp tecmint /shares/project1/reports
 ```
 
-另外，我们也可以通过以下方法为多个用户（需要赋予指定目录读写权限的）新建一个用户组。如此一来，也就[创建了一个共享目录][11]
+另外，我们也可以通过以下方法为多个用户（需要赋予指定目录读写权限的）新建一个用户组。如此一来，也就[创建了一个共享目录][11]。
 
 ```
 # groupadd projects
@@ -119,7 +119,7 @@ Filesystem type: Ext4
 ```
 
 
-好了！这篇教程中，我们向您展示了如何在Linux中将指定目录的读写权限赋予用户。若有疑问，请在留言区中提问。
+好了！这篇教程中，我们向您展示了如何在 Linux 中将指定目录的读写权限赋予用户。若有疑问，请在留言区中提问。
 
 --------------------------------------------------------------------------------
 
