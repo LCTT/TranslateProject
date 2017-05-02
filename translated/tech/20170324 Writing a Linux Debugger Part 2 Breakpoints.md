@@ -14,12 +14,13 @@
 3.	寄存器和内存
 4.	Elves 和 dwarves
 5.	逐步、源码和信号
-6.	Stepping on dwarves
+6.	使用 DWARF 调试信息逐步执行
 7.	源码层断点
 8.	调用栈
 9.	读取变量
 10.	下一步
 
+译者注：ELF（[Executable and Linkable Format](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format "Executable and Linkable Format") 可执行文件格式），DWARF（一种广泛使用的调试数据格式，参考 [WIKI](https://en.wikipedia.org/wiki/DWARF "DWARF WIKI")）
 * * *
 
 ### 断点如何形成？

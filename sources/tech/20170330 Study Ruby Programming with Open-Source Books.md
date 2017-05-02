@@ -1,3 +1,7 @@
+svtter tranlating...
+
+---
+
 STUDY RUBY PROGRAMMING WITH OPEN-SOURCE BOOKS
 ============================================================
 

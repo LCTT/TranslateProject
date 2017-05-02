@@ -3,7 +3,8 @@
 
  ![cockpit](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/cockpit-containers.jpg?itok=D3MMNlkg "cockpit")
  
-如果你正在寻找一种简单的方法来管理包含容器的 Linux 服务器，那么你应该看看 Cockpit。[Creative Commons Zero][6]
+如果你正在寻找一种简单的方法来管理包含容器的 Linux 服务器，那么你应该看看 Cockpit。
+                                                                 [Creative Commons Zero][6]
 
 如果你管理着一台 Linux 服务器，那么你可能正在寻找一个可靠的管理工具。为了这个你可能已经看了 [Webmin][14] 和 [cPanel][15] 这类软件。但是，如果你正在寻找一种简单的方法来管理还包括 Docker 的 Linux 服务器，那么有一个工具可以用于这个需求：[Cockpit][16]。
 
@@ -25,7 +26,7 @@
 
 *   查看系统服务和日志文件
 
-Cockpit 可以安装在 [Debian][17]、[Red Hat][18]、[CentOS] [19]、[Arch Linux][20] 和 [Ubuntu][21] 之上。在这里，我将使用一台已经安装了 Docker 的 Ubuntu 16.04 服务器来安装系统。
+Cockpit 可以安装在 [Debian][17]、[Red Hat][18]、[CentOS][19]、[Arch Linux][20] 和 [Ubuntu][21] 之上。在这里，我将使用一台已经安装了 Docker 的 Ubuntu 16.04 服务器来安装系统。
 
 在上面的功能列表中，其中最突出的是容器管理。为什么？因为它使安装和管理容器变得非常简单。事实上，你可能很难找到更好的容器管理解决方案。
 因此，让我们来安装这个方案并看看它的使用是多么简单。
@@ -65,7 +66,7 @@ sudo systemctl enable cockpit
 
  ![login](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/cockpit_a.jpg?itok=RViOst2V "login") 
 
-图 1：Cockpit 登录页面。[授权使用][1]
+*图 1：Cockpit 登录页面。[授权使用][1]*
 
 在 Ubuntu 中使用 Cockpit 有个警告。Cockpit 中的很多任务需要管理员权限。如果你使用标准用户登录，则无法使用 Docker 等一些工具。 要解决这个问题，你可以在 Ubuntu 上启用 root 用户。但这并不总是一个好主意。通过启用 root 帐户，你将绕过多年来一直存在的安全系统。但是，为了本文，我将使用以下两个命令启用 root 用户：
 
@@ -75,7 +76,7 @@ sudo passwd root
 sudo passwd -u root 
 ```
 
-注意，请确保你给 root 帐户一个强壮的密码。
+注意，请确保给 root 帐户一个强壮的密码。
 
 你想恢复这个修改的话，你只需输入下面的命令：
 
@@ -85,13 +86,13 @@ sudo passwd -l root
 
 在其他发行版（如 CentOS 和 Red Hat）中，你可以使用用户名 _root_ 和 root 密码登录 Cockpit，而无需像上面那样需要额外的步骤。
 
-如果你还在犹豫启用 root 用户，则可以始终在服务终端拉取镜像（使用命令 _docker pull IMAGE_NAME _， 这里的 _IMAGE_NAME_ 是你要拉取的镜像）。这会将镜像添加到你的 docker 服务器中，然后可以通过普通用户进行管理。唯一需要注意的是，普通用户必须使用以下命令将自己添加到 Docker 组：
+如果你对启用 root 用户感到担心，则可以在服务终端拉取镜像（使用命令 _docker pull IMAGE_NAME _， 这里的 _IMAGE_NAME_ 是你要拉取的镜像）。这会将镜像添加到你的 docker 服务器中，然后可以通过普通用户进行管理。唯一需要注意的是，普通用户必须使用以下命令将自己添加到 Docker 组：
 
 ```
 sudo usermod -aG docker USER
 ```
 
- USER 是实际添加到组的用户名。在你完成后，重新登出并登入，接着使用下面的命令重启 Docker：
+ 其中，USER 是实际添加到组的用户名。在你完成后，重新登出并登入，接着使用下面的命令重启 Docker：
 
 ```
 sudo service docker restart
@@ -99,27 +100,26 @@ sudo service docker restart
 
 现在常规用户可以启动并停止 Docker 镜像/容器而无需启用 root 用户了。唯一一点是用户不能通过 Cockpit 界面添加新的镜像。
 
-使用 Cockpit
+### 使用 Cockpit
 
 一旦你登录后，你可以看到 Cockpit 的主界面（图 2）。
 
 
  ![main window](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/cockpit_b.jpg?itok=tZCHcq-Y "main window") 
 
-图 2：Cockpit 主界面。[授权使用][2]
+*图 2：Cockpit 主界面。[授权使用][2]*
 
 你可以通过每个栏目来检查服务器的状态，与用户合作等，但是我们想要直接进入容器。单击 “Containers” 那栏以显示当前运行的以及可用的镜像（图3）。
 
  ![Cockpit](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/cockpit_c.jpg?itok=OOYJt2yv "Cockpit") 
 
-图 3：使用 Cockpit 管理容器难以置信地简单。[授权使用][3]
+*图 3：使用 Cockpit 管理容器难以置信地简单。[授权使用][3]*
 
 要启动一个镜像，只要找到镜像并点击关联的启动按钮。在弹出的窗口中（图 4），你可以在点击运行之前查看所有镜像的信息（并根据需要调整）。
 
-
  ![Running Docker image](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/cockpit_d.jpg?itok=8uldEq_r "Running Docker image") 
 
-图 4： 使用 Cockpit 运行 Docker 镜像。[授权使用][4]
+*图 4： 使用 Cockpit 运行 Docker 镜像。[授权使用][4]*
 
 镜像运行后，你可以点击它查看状态，并可以停止、重启、删除示例。你也可以点击修改资源限制并接着调整内存限制还有（或者）CPU 优先级。
 
@@ -129,13 +129,13 @@ sudo service docker restart
 
  ![Adding image](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/cockpit_f.jpg?itok=_S5g8Da2 "Adding image") 
 
-图 5：使用 Cockpit 添加最新的官方构建 CentOS 镜像到 Docker 中。[Used with permission][5]
+*图 5：使用 Cockpit 添加最新的官方构建 CentOS 镜像到 Docker 中。[授权使用][5]*
 
 镜像下载完后，那它就在 Docker 中可用了，并可以通过 Cockpit 运行。
 
-### 如它获取那样简单
+### 如获取它那样简单
 
-管理 Docker 并不容易。是的，在 Ubuntu 上运行 Cockpit 会有一个警告，但如果这是你唯一的选择，那么还有办法让它工作。在 Cockpit 的帮助下，你不仅可以轻松管理 Docker 镜像，也可以在任何可以访问 Linux 服务器的 web 浏览器上进行。请享受这个新发现的容易使用 Docker 的方法。
+管理 Docker 并不容易。是的，在 Ubuntu 上运行 Cockpit 会有一个警告，但如果这是你唯一的选择，那么还有办法让它工作。在 Cockpit 的帮助下，你不仅可以轻松管理 Docker 镜像，也可以在任何可以访问 Linux 服务器的 web 浏览器上这样做。请享受这个新发现的容易使用 Docker 的方法。
 
 _在 Linux Foundation 以及 edX 中通过免费的 ["Introduction to Linux"][13] 课程学习 Linux。_
 
@@ -145,7 +145,7 @@ via: https://www.linux.com/learn/intro-to-linux/2017/3/make-container-management
 
 作者：[JACK WALLEN][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
