@@ -14,18 +14,18 @@
 
 我本可以选择 AWS ，但我更喜欢完全自由且安全性可控，并且我可以学一下这些东西是如何搭建的。
 
-*   私有主机： 不使用 BlueHost 或 DreamHost
-*   云存储：不使用 Dropbox, Box, Google Drive, Microsoft Azure, iCloud, 或是 AWS
-*   内部部署安全
-*   HTTPS：Let’s Encrypt
-*   分析： Google
-*   OpenVPN：不需要专有互联网连接 (预计每个月花费 $7)
+*  私有主机： 不使用 BlueHost 或 DreamHost
+*  云存储：不使用 Dropbox, Box, Google Drive, Microsoft Azure, iCloud, 或是 AWS
+*  内部部署安全
+*  HTTPS：Let’s Encrypt
+*  分析： Google
+* OpenVPN：不需要专有互联网连接 (预计每个月花费 $7)
 
 我所使用的物品清单：
 
 *   树莓派 3 代 Model B
-*   MicroSD 卡 (推荐使用 32 GB, [兼容树莓派的 SD 卡][1])
-*   USB microSD 卡读卡器
+*   MicroSD 卡（推荐使用 32 GB, [兼容树莓派的 SD 卡][a1]）
+*   USB microSD 卡读卡器
 *   以太网络线
 *   连接上 Wi-Fi 的路由器
 *   树莓派盒子
@@ -39,7 +39,7 @@
 
 ### 步骤 1: 启动树莓派
 
-下载最新发布的 Raspbian (树莓派的操作系统)。 [Raspbian Jessie][6] 的 ZIP 包就可以用。解压缩或提取下载的文件然后把它拷贝到 SD 卡里。使用 [Pi Filler][7] 可以让这些过程变得更简单。[下载 Pi Filer 1.3][8] 或最新的版本。解压或提取下载文件之后打开它，你应该会看到这样的提示：
+下载最新发布的 Raspbian (树莓派的操作系统)。 [Raspbian Jessie][a6] 的 ZIP 包就可以用 [1]。解压缩或提取下载的文件然后把它拷贝到 SD 卡里。使用 [Pi Filler][a7] 可以让这些过程变得更简单。[下载 Pi Filer 1.3][8] 或最新的版本。解压或提取下载文件之后打开它，你应该会看到这样的提示：
 
  ![Pi Filler prompt](https://opensource.com/sites/default/files/2-image_by_mitchell_mclaughlin_cc_by-sa_4.0.png "Pi Filler prompt") 
 
@@ -56,7 +56,7 @@
 
  ![Raspberry Pi software configuration setup](https://opensource.com/sites/default/files/4-image_by_mitchell_mclaughlin_cc_by-sa_4.0.png "Raspberry Pi software configuration setup") 
 
-选择 “Expand Filesystem” 这一选项并回车 [3]。 同时，我还推荐选择第二个选项 “Change User Password”。这对保证安全性来说尤为重要。它还能个性化你的树莓派.
+选择 “Expand Filesystem” 这一选项并回车 [3]。 同时，我还推荐选择第二个选项 “Change User Password”。这对保证安全性来说尤为重要。它还能个性化你的树莓派。
 
 在选项列表中选择第三项 “Enable Boot To Desktop/Scratch” 并回车。这时会跳到另一个标题为 “Choose boot option” 的界面，就像下面这张图这样。
 
@@ -106,7 +106,7 @@ $ sudo ifconfig
 $ ssh pi@192.168.1.115
 ```
 
-对于 PC 上的 SSH，请参见脚注[5]。
+对于 PC 上的 SSH，请参见脚注 [5]。
 
 出现提示时输入默认密码 “raspberry”，除非你之前更改过密码。
 
@@ -122,7 +122,7 @@ $ sudo apt-get install xrdp
 
 Xrdp 支持 Mac 和 PC 的 Microsoft Remote Desktop 客户端。
 
-在 Mac 上，在 App store 中搜索 “Microsoft Remote Desktop”。 下载它。 （对于 PC，请参见脚注[6]。）
+在 Mac 上，在 App store 中搜索 “Microsoft Remote Desktop”。 下载它。 （对于 PC，请参见脚注 [6]。）
 
 安装完成之后，在你的 Mac 中搜索一个叫 “Microsoft Remote Desktop” 的应用并打开它，你会看到 :
 
@@ -210,7 +210,7 @@ $ sudo ifconfig
 
 如果您的 ISP（互联网服务提供商）已经给您一个静态外部 IP 地址，您可以跳到端口转发部分。 如果没有，请继续阅读。
 
-你已经设置了 SSH，远程桌面和静态内部 IP 地址，因此现在本地网络中的计算机将会知道在哪里可以找到你的树莓派。 但是你仍然无法从本地 Wi-Fi 网络外部访问你的树莓派。 你需要树莓派可以从互联网上的任何地方公开访问。这需要静态外部 IP 地址[7]。
+你已经设置了 SSH，远程桌面和静态内部 IP 地址，因此现在本地网络中的计算机将会知道在哪里可以找到你的树莓派。 但是你仍然无法从本地 Wi-Fi 网络外部访问你的树莓派。 你需要树莓派可以从互联网上的任何地方公开访问。这需要静态外部 IP 地址 [7]。
 
 调用您的 ISP 并请求静态外部（有时称为静态全局）IP 地址可能会是一个非常敏感的过程。 ISP 拥有决策权，所以我会非常小心处理。 他们可能拒绝你的的静态外部 IP 地址请求。 如果他们拒绝了你的请求，你不要怪罪于他们，因为这种类型的请求有法律和操作风险。 他们特别不希望客户运行中型或大型互联网服务。 他们可能会明确地询问为什么需要一个静态的外部 IP 地址。 最好说实话，告诉他们你打算主办一个低流量的个人网站或类似的小型非营利互联网服务。 如果一切顺利，他们应该会建立一个任务，并在一两个星期内给你打电话。
 
@@ -218,11 +218,11 @@ $ sudo ifconfig
 
 这个新获得的 ISP 分配的静态全局 IP 地址是用于访问路由器。 树莓派现在仍然无法访问。 你需要设置端口转发才能访问树莓派。
 
-端口是信息在互联网上传播的虚拟途径。 你有时需要转发端口，以使计算机像树莓派一样可以访问 Internet，因为它位于网络路由器后面。 VollmilchTV 专栏在 YouTube 上的一个视频，名字是[什么是 TCP/IP，端口，路由，Intranet，防火墙，互联网] [9]，帮助我更好地了解端口。
+端口是信息在互联网上传播的虚拟途径。 你有时需要转发端口，以使计算机像树莓派一样可以访问 Internet，因为它位于网络路由器后面。 VollmilchTV 专栏在 YouTube 上的一个视频，名字是[什么是 TCP/IP，端口，路由，Intranet，防火墙，互联网][9]，帮助我更好地了解端口。
 
-端口转发可用于像 树莓派 Web 服务器或 VoIP 或点对点下载的应用程序。 有 [65,000+个端口] [10]可供选择，因此你可以为你构建的每个 Internet 应用程序分配一个不同的端口。
+端口转发可用于像 树莓派 Web 服务器或 VoIP 或点对点下载的应用程序。 有 [65,000+个端口][10]可供选择，因此你可以为你构建的每个 Internet 应用程序分配一个不同的端口。
 
-设置端口转发的方式取决于你的路由器。 如果你有 Linksys 的话，Gabriel Ramirez 在 YouTbue 上有一个标题叫 [How to go online with your Apache Ubuntu server] [2] 的视频解释了如何设置。 如果您没有 Linksys，请阅读路由器附带的文档，以便自定义和定义要转发的端口。
+设置端口转发的方式取决于你的路由器。 如果你有 Linksys 的话，Gabriel Ramirez 在 YouTbue 上有一个标题叫 [How to go online with your Apache Ubuntu server][a2] 的视频解释了如何设置。 如果您没有 Linksys，请阅读路由器附带的文档，以便自定义和定义要转发的端口。
 
 你将需要转发 SSH 以及远程桌面端口。
 
@@ -244,7 +244,7 @@ $ ssh pi@your_global_ip_address
 
 作为一个奖励选项，您可以保持两个远程连接到您的 Pi。 一个通过互联网，另一个通过 LAN（局域网）。很容易设置。在 Microsoft Remote Desktop 中，保留一个称为 “Pi Internet” 的远程连接，另一个称为 “Pi Local”。 将 Pi Internet 的 “PC name” 配置为静态外部 IP 地址，例如 195.198.227.116。 将 Pi Local 的 “PC name” 配置为静态内部 IP 地址，例如192.168.1.115。 现在，您可以选择在全球或本地连接。
 
-如果你还没有看过由 Gabriel Ramirez 发布的 [如何使用您的Apache Ubuntu服务器上线] [3]，那么你可以去看一下，作为过渡到第二个项目的教程。 它将向您展示项目背后的技术架构。 在我们的例子中，你使用的是树莓派而不是 Ubuntu 服务器。 动态 DNS 位于域公司和您的路由器之间，这是 Ramirez 省略的部分。 除了这个微妙之处外，视频是在整体上解释系统的工作原理。 您可能会注意到本教程涵盖了树莓派设置和端口转发，这是服务器端或后端。 查看原始来源，涵盖域名，动态 DNS，Jekyll（静态 HTML 生成器）和 Apache（网络托管）的更高级项目，这是客户端或前端。
+如果你还没有看过由 Gabriel Ramirez 发布的 [如何使用您的Apache Ubuntu服务器上线][a3]，那么你可以去看一下，作为过渡到第二个项目的教程。 它将向您展示项目背后的技术架构。 在我们的例子中，你使用的是树莓派而不是 Ubuntu 服务器。 动态 DNS 位于域公司和您的路由器之间，这是 Ramirez 省略的部分。 除了这个微妙之处外，视频是在整体上解释系统的工作原理。 您可能会注意到本教程涵盖了树莓派设置和端口转发，这是服务器端或后端。 查看原始来源，涵盖域名，动态 DNS，Jekyll（静态 HTML 生成器）和 Apache（网络托管）的更高级项目，这是客户端或前端。
 
 ### 脚注
 
@@ -266,11 +266,11 @@ $ sudo-rasps-config
 
 [下载并运行 PuTTY][11] 或 Windows 的另一个 SSH 客户端。 在该字段中输入你的 IP 地址，如上图所示。 将默认端口保留在 22。 回车，PuTTY 将打开一个终端窗口，提示你输入用户名和密码。 填写然后开始在树莓派上进行你的远程工作。
 
-[6] 如果尚未安装，请下载 [Microsoft Remote Desktop] [12]。 搜索您的计算机上的的 Microsoft Remote Desktop。 运行。 提示时输入 IP 地址。 接下来，会弹出一个 xrdp 窗口，提示你输入用户名和密码。
+[6] 如果尚未安装，请下载 [Microsoft Remote Desktop][12]。 搜索您的计算机上的的 Microsoft Remote Desktop。 运行。 提示时输入 IP 地址。 接下来，会弹出一个 xrdp 窗口，提示你输入用户名和密码。
 
 [7] 路由器具有动态分配的外部 IP 地址，所以在理论上，它可以从互联网上暂时访问，但是您需要 ISP 的帮助才能使其永久访问。 如果不是这样，你需要在每次使用时重新配置远程连接。
 
- _原文出自 [Mitchell McLaughlin's Full-Stack Computer Projects][4]。_
+ _原文出自 [Mitchell McLaughlin's Full-Stack Computer Projects][a4]。_
 
 --------------------------------------------------------------------------------
 
@@ -291,13 +291,13 @@ via: https://opensource.com/article/17/3/building-personal-web-server-raspberry-
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://opensource.com/users/mitchm
-[1]:http://elinux.org/RPi_SD_cards
-[2]:https://www.youtube.com/watch?v=i1vB7JnPvuE#t=07m08s
-[3]:https://www.youtube.com/watch?v=i1vB7JnPvuE#t=07m08s
-[4]:https://mitchellmclaughlin.com/server.html
-[5]:https://opensource.com/article/17/3/building-personal-web-server-raspberry-pi-3?rate=Zdmkgx8mzy9tFYdVcQZSWDMSy4uDugnbCKG4mFsVyaI
-[6]:https://www.raspberrypi.org/downloads/raspbian/
-[7]:http://ivanx.com/raspberrypi/
+[a1]:http://elinux.org/RPi_SD_cards
+[a2]:https://www.youtube.com/watch?v=i1vB7JnPvuE#t=07m08s
+[a3]:https://www.youtube.com/watch?v=i1vB7JnPvuE#t=07m08s
+[a4]:https://mitchellmclaughlin.com/server.html
+[a5]:https://opensource.com/article/17/3/building-personal-web-server-raspberry-pi-3?rate=Zdmkgx8mzy9tFYdVcQZSWDMSy4uDugnbCKG4mFsVyaI
+[a6]:https://www.raspberrypi.org/downloads/raspbian/
+[a7]:http://ivanx.com/raspberrypi/
 [8]:http://ivanx.com/raspberrypi/files/PiFiller.zip
 [9]:https://www.youtube.com/watch?v=iskxw6T1Wb8
 [10]:https://en.wikipedia.org/wiki/List_of_TCP_and_UDP_port_numbers
