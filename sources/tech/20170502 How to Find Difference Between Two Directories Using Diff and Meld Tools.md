@@ -1,3 +1,4 @@
+hkurj translating
 How to Find Difference Between Two Directories Using Diff and Meld Tools
 ============================================================
 
