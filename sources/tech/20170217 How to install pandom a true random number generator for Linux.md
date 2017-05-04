@@ -1,3 +1,5 @@
+FSSlc translating
+
 How to install pandom: a true random number generator for Linux
 ============================================================
 
