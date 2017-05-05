@@ -1,3 +1,5 @@
+translating---geekpi
+
 bd – Quickly Go Back to a Parent Directory Instead of Typing “cd ../../..” Redundantly
 ============================================================
 
