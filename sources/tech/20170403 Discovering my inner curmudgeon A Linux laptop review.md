@@ -1,4 +1,7 @@
+translating by [kenxx](https://github.com/kenxx)
+
 # [Discovering my inner curmudgeon: A Linux laptop review][1]
+
 
 Quick refresher: I'm a life-long Mac user, but I was [disappointed by Apple's latest MacBook Pro release][2]. I researched [a set of alternative computers][3] to consider. And, as a surprise even to myself, I decided to leave the Mac platform.
 
@@ -67,7 +70,7 @@ Follow @haxor if you'd like to read posts from me in the future. You can also em
 via: http://www.onebigfluke.com/2017/04/discovering-my-inner-curmudgeon-linux.html
 
 作者：[Brett Slatkin ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[kenxx](https://github.com/kenxx)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
