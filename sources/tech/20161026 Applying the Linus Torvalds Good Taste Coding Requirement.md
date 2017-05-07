@@ -1,4 +1,4 @@
-Translating by cposture 20161228
+Translating by ucasFL
 # Applying the Linus Torvalds “Good Taste” Coding Requirement
 
 In [a recent interview with Linus Torvalds][1], the creator of Linux, at approximately 14:20 in the interview, he made a quick point about coding with “good taste”. Good taste? The interviewer prodded him for details and Linus came prepared with illustrations.
