@@ -1,8 +1,7 @@
 如何在 Ubuntu16.04 中用 Apache 部署 Jenkins 自动化服务器
 ============================================================
 
-
-Jenkins 是从 Hudson 项目衍生出来的自动化服务器。Jenkins 是一个基于服务器的应用程序，运行在 Java servlet 容器中，它支持包括 Git、SVN 以及 Mercurial 在内的多种 SCM（Source Control Management，源码控制工具）。Jenkins 提供了上百种插件帮助你的项目实现自动化。Jenkins 由 Kohsuke Kawaguchi 开发，在 2011 年使用 MIT 协议发布了第一个发行版，它是个免费软件。
+Jenkins 是从 Hudson 项目衍生出来的自动化服务器。Jenkins 是一个基于服务器的应用程序，运行在 Java servlet 容器中，它支持包括 Git、SVN 以及 Mercurial 在内的多种 SCM（Source Control Management，源码控制工具）。Jenkins 提供了上百种插件帮助你的项目实现自动化。Jenkins 由 Kohsuke Kawaguchi 开发，在 2011 年使用 MIT 协议发布了第一个发行版，它是个自由软件。
 
 在这篇指南中，我会向你介绍如何在 Ubuntu 16.04 中安装最新版本的 Jenkins。我们会用自己的域名运行 Jenkins，在 apache web 服务器中安装和配置 Jenkins，而且支持反向代理。
 
@@ -17,22 +16,28 @@ Jenkins 基于 Java，因此我们需要在服务器上安装 Java OpenJDK 7。�
 
 默认情况下，Ubuntu 16.04 没有安装用于管理 PPA 仓库的 python-software-properties 软件包，因此我们首先需要安装这个软件。使用 apt 命令安装 python-software-properties。 
 
-`apt-get install python-software-properties`
+```
+apt-get install python-software-properties
+```
 
 下一步，添加 Java PPA 仓库到服务器中。
 
-`add-apt-repository ppa:openjdk-r/ppa`
+```
+add-apt-repository ppa:openjdk-r/ppa
+```
 
-输入回车键
+用 apt 命令更新 Ubuntu 仓库并安装 Java OpenJDK。
 
-用 apt 命令更新 Ubuntu 仓库并安装 Java OpenJDK。`
-
-`apt-get update`  
-`apt-get install openjdk-7-jdk`
+```
+apt-get update
+apt-get install openjdk-7-jdk
+```
 
 输入下面的命令验证安装：
 
-`java -version`
+```
+java -version
+```
 
 你会看到安装到服务器上的 Java 版本。
 
@@ -46,21 +51,29 @@ Jenkins 给软件安装包提供了一个 Ubuntu 仓库，我们会从这个仓�
 
 用下面的命令添加 Jenkins 密钥和仓库到系统中。
 
-`wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -`
-`echo 'deb https://pkg.jenkins.io/debian-stable binary/' | tee -a /etc/apt/sources.list`
+```
+wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+echo 'deb https://pkg.jenkins.io/debian-stable binary/' | tee -a /etc/apt/sources.list
+```
 
 更新仓库并安装 Jenkins。
 
-`apt-get update`
-`apt-get install jenkins`
+```
+apt-get update
+apt-get install jenkins
+```
 
 安装完成后，用下面的命令启动 Jenkins。
 
-`systemctl start jenkins`
+```
+systemctl start jenkins
+```
 
-通过检查 Jenkins 默认使用的端口（端口 8080）验证 Jenkins 正在运行。我会像下面这样用 netstat 命令检测：
+通过检查 Jenkins 默认使用的端口（端口 8080）验证 Jenkins 正在运行。我会像下面这样用 `netstat` 命令检测：
 
-`netstat -plntu`
+```
+netstat -plntu
+```
 
 Jenkins 已经安装好了并运行在 8080 端口。
 
@@ -70,23 +83,29 @@ Jenkins 已经安装好了并运行在 8080 端口。
 
 ### 第三步 - 为 Jenkins 安装和配置 Apache 作为反向代理
 
-在这篇指南中，我们会在一个 apache web 服务器中运行 Jenkins，我们会为 Jenkins 配置 apache 作为反向代理。首先我会安装 apache 并启用一些需要的模块，然后我会为 Jenkins 用域名 my.jenkins.id 创建虚拟 host 文件。请在这里使用你自己的域名并在所有配置文件中出现的地方替换。
+在这篇指南中，我们会在一个 Apache web 服务器中运行 Jenkins，我们会为 Jenkins 配置 apache 作为反向代理。首先我会安装 apache 并启用一些需要的模块，然后我会为 Jenkins 用域名 my.jenkins.id 创建虚拟主机文件。请在这里使用你自己的域名并在所有配置文件中出现的地方替换。
 
 从 Ubuntu 仓库安装 apache2 web 服务器。
 
-`apt-get install apache2`
+```
+apt-get install apache2
+```
 
 安装完成后，启用 proxy 和 proxy_http 模块以便将 apache 配置为 Jenkins 的前端服务器/反向代理。
 
-`a2enmod proxy`
-`a2enmod proxy_http`
+```
+a2enmod proxy
+a2enmod proxy_http
+```
 
-下一步，在 sites-available 目录创建新的虚拟 host 文件。
+下一步，在 `sites-available` 目录创建新的虚拟主机文件。
 
-`cd /etc/apache2/sites-available/`
-`vim jenkins.conf`
+```
+cd /etc/apache2/sites-available/
+vim jenkins.conf
+```
 
-粘贴下面的虚拟 host 配置。
+粘贴下面的虚拟主机配置。
 
 ```
 <Virtualhost *:80>
@@ -106,18 +125,24 @@ Jenkins 已经安装好了并运行在 8080 端口。
 </Virtualhost>
 ```
 
-保存文件。然后用 a2ensite 命令激活 Jenkins 虚拟 host。
+保存文件。然后用 `a2ensite` 命令激活 Jenkins 虚拟主机。
 
-`a2ensite jenkins`
+```
+a2ensite jenkins
+```
 
 重启 Apache 和 Jenkins。
 
-`systemctl restart apache2`
-`systemctl restart jenkins`
+```
+systemctl restart apache2
+systemctl restart jenkins
+```
 
 检查 Jenkins 和 Apache 正在使用 80 和 8080 端口。
 
-`netstat -plntu`
+```
+netstat -plntu
+```
 
 [
  ![检查 Apache 和 Jenkins 是否在运行](https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/3.png) 
@@ -127,29 +152,30 @@ Jenkins 已经安装好了并运行在 8080 端口。
 
 Jenkins 用域名 'my.jenkins.id' 运行。打开你的 web 浏览器然后输入 URL。你会看到要求你输入初始管理员密码的页面。Jenkins 已经生成了一个密码，因此我们只需要显示并把结果复制到密码框。
 
-用 cat 命令显示 Jenkins 初始管理员密码。
+用 `cat` 命令显示 Jenkins 初始管理员密码。
 
-`cat /var/lib/jenkins/secrets/initialAdminPassword`
-
+```
+cat /var/lib/jenkins/secrets/initialAdminPassword
 a1789d1561bf413c938122c599cf65c9
+```
 
 [
  ![获取 Jenkins 管理员密码](https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/4.png) 
 ][12]
 
-将结果粘贴到密码框然后点击 ‘**Continue**’。
+将结果粘贴到密码框然后点击 Continue。
 
 [
  ![安装和配置 Jenkins](https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/5.png) 
 ][13]
 
-现在为了后面能比较好的使用，我们需要在 Jenkins 中安装一些插件。选择 ‘**Install Suggested Plugin**’，点击它。
+现在为了后面能比较好的使用，我们需要在 Jenkins 中安装一些插件。选择 Install Suggested Plugin，点击它。
 
 [
  ![安装 Jenkins 插件](https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/6.png) 
 ][14]
 
-Jenkins 插件安装过程
+Jenkins 插件安装过程：
 
 [
  ![Jenkins 安装完插件](https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/7.png) 
@@ -199,27 +225,29 @@ Jenkins 在 ‘**Access Control**’ 部分提供了多种认证方法。为了�
  ![在 Jenkins 中创建新的任务](https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/13.png) 
 ][21]
 
-输入任务的名称，在这里我用 ‘Checking System’，选择 ‘**Freestyle Project**’ 然后点击 ‘**OK**’。
+输入任务的名称，在这里我输入 ‘Checking System’，选择 Freestyle Project 然后点击 OK。
 
 [
  ![配置 Jenkins 任务](https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/14.png) 
 ][22]
 
-进入 ‘**Build**’ 标签页。在 ‘**Add build step**’，选择选项 ‘**Execute shell**’。
+进入 Build 标签页。在 Add build step，选择选项 Execute shell。
 
 在输入框输入下面的命令。
 
-`top -b -n 1 | head -n 5`
+```
+top -b -n 1 | head -n 5
+```
 
-点击 ‘**Save**’。
+点击 Save。
 
 [
  ![启动 Jenkins 任务](https://www.howtoforge.com/images/how-to-install-jenkins-with-apache-on-ubuntu-16-04/15.png) 
 ][23]
 
-现在你是在任务 ‘Project checking system’的任务页。点击 ‘**Build Now**’ 执行任务 ‘checking system’。
+现在你是在任务 ‘Project checking system’ 的任务页。点击 Build Now 执行任务 ‘checking system’。
 
-任务执行完成后，你会看到 ‘**Build History**’，点击第一个任务查看结果。
+任务执行完成后，你会看到 Build History，点击第一个任务查看结果。
 
 下面是 Jenkins 任务执行的结果。
 
@@ -233,9 +261,9 @@ Jenkins 在 ‘**Access Control**’ 部分提供了多种认证方法。为了�
 
 via: https://www.howtoforge.com/tutorial/how-to-install-jenkins-with-apache-on-ubuntu-16-04/
 
-作者：[Muhammad Arul ][a]
+作者：[Muhammad Arul][a]
 译者：[ictlyh](https://github.com/ictlyh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 组织编译，[Linux中国](https://linux.cn/) 荣誉推出
 
