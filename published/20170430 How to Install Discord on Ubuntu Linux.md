@@ -1,14 +1,13 @@
-如何在 Ubuntu 中安装 Discord
+如何在 Ubuntu 中安装语音聊天工具 Discord
 ============================================================
 
  ![](https://www.maketecheasier.com/assets/uploads/2017/04/discord-feat.jpg "How to Install Discord on Ubuntu Linuxs") 
 
+Discord 是一个非常受欢迎的文字和语音聊天程序。虽然开始时主要面向游戏玩家，但它几乎获得了所有人的了广泛青睐。
 
-Discord 是一个非常受欢迎的文字和语音聊天程序。虽然开始了主要面向游戏玩家，但它几乎获得了所有人的了广泛青睐。
+Discord 不仅仅是一个很好的聊天客户端。当你安装它时，你还可以获得其强大的服务端功能，强力而自足。游戏玩家和非玩家都可以在几分钟内开启自己的私人聊天服务，这使 Discord 成为团队、公会和各种社区的明显选择。
 
-Discord 不仅仅是一个很好的聊天客户端。当你安装它时，你还可以获得其强大的服务端功能，包括电池。游戏玩家和非玩家都可以在几分钟内开启自己的私人聊天服务，这使 Discord 成为团队、公会和各种社区的明显选择。
-
-Linux 用户经常在游戏世界中被遗忘。但 Discord 并不是这样。它的开发人员也在 Linux 下积极构建并维护其流行聊天平台。Ubuntu 用户拥有更好的功能。Discord 捆绑在方便的 Debian/Ubuntu .deb 包中。
+Linux 用户经常被游戏世界遗忘。但 Discord 并不是这样。它的开发人员也在 Linux 下积极构建并维护其流行聊天平台。Ubuntu 用户甚至拥有更好的待遇，Discord 捆绑在方便的 Debian/Ubuntu .deb 包中。
 
 ### 获取并安装软件包
 
@@ -46,7 +45,7 @@ sudo apt install libgconf-2-4 libappindicator1
 
 ### 命令行安装
 
-懒惰的 Linux 熟手并不在意花哨的 GUI 工具。如果你是这个阵营的人，那么你有一个更直接的命令行选项。
+“懒惰”的 Linux 熟手并不在意花哨的 GUI 工具。如果你是这个阵营的人，那么你有一个更直接的命令行选项。
 
 首先，打开一个终端并进入你的下载目录。在那里可以使用 `wget` 直接下载 .deb 包。
 
@@ -55,7 +54,7 @@ cd ~/Downloads
 wget -O discord-0.0.1.deb https://discordapp.com/api/download?platform=linux&format=deb
 ```
 
-下载完成后，你可以使用 dpkg 直接安装 .deb 软件包。运行下面的命令：
+下载完成后，你可以使用 `dpkg` 直接安装 .deb 软件包。运行下面的命令：
 
 ```
 sudo dpkg -i discord-0.0.1.deb
@@ -69,19 +68,19 @@ sudo dpkg -i discord-0.0.1.deb
 
  ![Login to Discord on Ubuntu](https://www.maketecheasier.com/assets/uploads/2017/04/discord-login.jpg "Login to Discord on Ubuntu") 
 
-首次启动，你需要创建一个帐户或者登录。做任意一个你需要做的。
+首次启动，根据你需求，创建一个帐户或者登录。
 
  ![Discord running on Ubuntu Linux](https://www.maketecheasier.com/assets/uploads/2017/04/discord-running.jpg "Discord running on Ubuntu Linux") 
 
-登录后，你就进入 Discord 了。它会提供一些介绍教程和建议。你可以直接略过开始尝试。欢迎进入你新的 Linux 聊天体验！
+登录后，你就进入 Discord 了。它会提供一些介绍教程和建议。你可以直接略过并开始尝试。欢迎进入你新的 Linux 聊天体验！
 
 --------------------------------------------------------------------------------
 
 via: https://www.maketecheasier.com/install-discord-ubuntu/
 
-作者：[ Nick Congleton][a]
+作者：[Nick Congleton][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
