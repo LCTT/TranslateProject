@@ -1,3 +1,5 @@
+translating--geekpi
+
 Oracle Policy Change Raises Prices on AWS
 ============================================================
 
