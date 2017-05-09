@@ -1,24 +1,24 @@
-Remmina - 一个 Linux 下功能丰富的远程桌面共享工具
+Remmina：一个 Linux 下功能丰富的远程桌面共享工具
 ============================================================
 
-**Remmina** 是一款在 Linux 和其他类 Unix 系统下的免费开源、功能丰富、强大的远程桌面客户端，它用 GTK+ 3 编写而成。它适用于那些需要远程访问及使用许多计算机的系统管理员和在外出行人员。
+**Remmina** 是一款在 Linux 和其他类 Unix 系统下的自由开源、功能丰富、强大的远程桌面客户端，它用 GTK+ 3 编写而成。它适用于那些需要远程访问及使用许多计算机的系统管理员和在外出行人员。
 
-它以简单、统一、同一性、易于使用的用户界面支持多种网络协议。
+它以简单、统一、同质、易用的用户界面支持多种网络协议。
 
-#### Remmina 功能
+### Remmina 功能
 
 *   支持 RDP、VNC、NX、XDMCP 和 SSH。
 *   用户能够以组的形式维护一份连接配置列表。
 *   支持用户直接输入服务器地址的快速连接。
 *   具有更高分辨率的远程桌面，可以在窗口和全屏模式下滚动/缩放。
 *   支持窗口全屏模式；当鼠标移动到屏幕边缘时，远程桌面会自动滚动。
-*   还支持全屏模式浮动工具栏；使你能够在不同模式间切换、触发键盘获取、最小化等。
-*   提供选项卡式界面，可选择由组管理。
+*   还支持全屏模式的浮动工具栏；使你能够在不同模式间切换、触发键盘获取、最小化等。
+*   提供选项卡式界面，可以按组管理。
 *   还提供托盘图标，允许你快速访问已配置的连接文件。
 
 在本文中，我们将向你展示如何在 Linux 中安装 Remmina，以及使用它通过支持的不同协议实现桌面共享。
 
-#### 先决条件
+### 先决条件
 
 *   在远程机器上允许桌面共享（让远程机器允许远程连接）。
 *   在远程机器上设置 SSH 服务。
@@ -43,7 +43,7 @@ $ sudo dnf copr enable hubbitus/remmina-next
 $ sudo dnf upgrade --refresh 'remmina*' 'freerdp*'
 ```
 
-一旦安装完成后，在 Ubuntu 或 Linux Mint 菜单中搜索 **remmina**，接着运行它：
+一旦安装完成后，在 Ubuntu 或 Linux Mint 菜单中搜索 `remmina`，接着运行它：
 
 [
  ![Remmina Desktop Sharing Client](http://www.tecmint.com/wp-content/uploads/2017/03/Remmina-Desktop-Sharing-Client.png) 
@@ -53,7 +53,7 @@ $ sudo dnf upgrade --refresh 'remmina*' 'freerdp*'
 
 你可以通过图形界面或者编辑 `$HOME/.remmina` 或者 `$HOME/.config/remmina` 下的文件来进行配置。
 
-要设置到一个新的远程服务器的连接，按下 `[Ctrl+N]` 并点击 **Connection -> New**，如下截图中配置远程连接。这是基本的设置界面。
+要设置到一个新的远程服务器的连接，按下 `Ctrl+N` 并点击 **Connection -> New**，如下截图中配置远程连接。这是基本的设置界面。
 
 [
  ![Remmina Basic Desktop Preferences](http://www.tecmint.com/wp-content/uploads/2017/03/Remmina-Basic-Desktop-Preferences.png) 
@@ -87,7 +87,7 @@ $ sudo dnf upgrade --refresh 'remmina*' 'freerdp*'
 
 #### 使用 sFTP 连接到远程机器
 
-选择连接配置并编辑设置，在 “**Protocols**” 下拉菜单中选择 **sFTP - 安全文件传输**。接着设置启动路径（可选），并指定 SSH 验证细节。最后点击**连接**。
+选择连接配置并编辑设置，在 “**Protocols**” 下拉菜单中选择 **sFTP - Secure File Transfer**。接着设置启动路径（可选），并指定 SSH 验证细节。最后点击**连接**。
 
 [
  ![Remmina sftp Connection](http://www.tecmint.com/wp-content/uploads/2017/03/Remmina-sftp-connection.png) 
@@ -103,7 +103,7 @@ $ sudo dnf upgrade --refresh 'remmina*' 'freerdp*'
 
 *输入 SSH 密码*
 
-如果你看到下面的界面，那么代表 SFTP 连接成功了，你现在可以[在两台机器键传输文件了][8]。
+如果你看到下面的界面，那么代表 sFTP 连接成功了，你现在可以[在两台机器键传输文件了][8]。
 
 [
  ![Remmina Remote sFTP Filesystem](http://www.tecmint.com/wp-content/uploads/2017/03/Remmina-Remote-sFTP-Filesystem.png) 
@@ -131,7 +131,7 @@ $ sudo dnf upgrade --refresh 'remmina*' 'freerdp*'
 
 #### 使用 VNC 连接到远程机器
 
-选择连接配置并编辑设置，在 “**Protocols**” 下拉菜单中选择 **VNC - 虚拟网络计算**。为连接配置基础、高级以及 ssh 设置，点击**连接**，接着输入用户 SSH 密码。
+选择连接配置并编辑设置，在 “**Protocols**” 下拉菜单中选择 **VNC - Virtual Network Computing**。为该连接配置基础、高级以及 ssh 设置，点击**连接**，接着输入用户 SSH 密码。
 
 [
  ![Remmina VNC Connection](http://www.tecmint.com/wp-content/uploads/2017/03/Remmina-VNC-Connection.png) 
@@ -172,7 +172,7 @@ via: http://www.tecmint.com/remmina-remote-desktop-sharing-and-ssh-client/
 
 作者：[Aaron Kili][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
