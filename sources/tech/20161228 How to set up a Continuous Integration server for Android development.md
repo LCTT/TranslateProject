@@ -1,3 +1,4 @@
+＋＋＋＋翻译中＋＋＋＋＋＋
 How to set up a Continuous Integration server for Android development (Ubuntu + Jenkins + SonarQube)
 ============================================================
 
