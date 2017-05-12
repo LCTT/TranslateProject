@@ -1,3 +1,5 @@
+translating---geekpi
+
 Installing Google TensorFlow Neural Network Software for CPU and GPU on Ubuntu 16.04
 ============================================================
 
