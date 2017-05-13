@@ -1,3 +1,5 @@
+tranlated by mudongliang
+
 FEWER MALLOCS IN CURL
 ===========================================================
 
