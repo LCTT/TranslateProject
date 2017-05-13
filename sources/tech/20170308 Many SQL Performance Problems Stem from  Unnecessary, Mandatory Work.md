@@ -1,4 +1,4 @@
-申请翻译
+translating by Flowsnow!
 
 Many SQL Performance Problems Stem from “Unnecessary, Mandatory Work”
 ============================================================ 

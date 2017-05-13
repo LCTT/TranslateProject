@@ -1,3 +1,5 @@
+being translated by zhousiyu325
+
 How to control GPIO pins and operate relays with the Raspberry Pi
 ============================================================
 
