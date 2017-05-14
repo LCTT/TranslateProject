@@ -1,80 +1,79 @@
-ucasFL translating
-How to make file-specific setting changes in Vim using Modeline
+如何在 Vim 中使用模式行进行文件特定设置的更改
 ============================================================
 
-### On this page
+### 摘要
 
-1.  [VIM Modeline][2]
-    1.  [Usage][1]
-2.  [Conclusion][3]
+1.  [VIM 模式行][2]
+    1.  [用法][1]
+2.  [结论][3]
 
-While [plugins][4] are no doubt one of Vim's biggest strengths, there are several other functionalities that make it one of the most powerful and feature-rich text editors/IDEs available to Linux users today. One of these functionalities is the ability to make file-specific setting changes. This ability can be accessed using the editor's Modeline feature.
+虽然[插件][4]毫无疑问是 Vim 最大的优势，然而，还有其它一些功能，使得它成为当今 Linux 用户中最强大、功能最丰富的文本编辑器/IDE 之一。其中一个功能就是进行文本特定设置的更改。我们可以使用编辑器的模式行特性来实现该功能。
 
-In this article, we will discuss how you can use Vim's [Modeline][5] feature using easy to understand examples.
+在这篇文章中，我将讨论如何使用 Vim 的[模式行][5]特性来简单的理解一些例子。
 
-But before we start doing that, it's worth mentioning that all the examples, commands, and instructions mentioned in this tutorial have been tested on Ubuntu 16.04, and the Vim version we've used is 7.4.
+在开始之前，值得提醒一下，这篇教程中提及的所有例子、命令和指令都已经在 Ubuntu 16.04 中使用 Vim 7.4 版本测试过。
 
-### VIM Modeline
+### VIM 模式行
 
-### Usage
+### 用法
 
-As we've already mentioned, Vim's Modeline feature lets you make file-specific changes. For example, suppose you want to replace all the tabs used in a particular file of your project with spaces, and make sure that all other files aren't affected by this change. This is an ideal use-case where Modeline helps you in what you want to do.
+正如上面已经提到的， Vim 的模式行特性让你能够进行文件特定设置更改。比如，假设你想把项目中的一个特定文件中的所有制表符用空格替换，并且确保这个更改不会影响到其它所有文件。这是模式行帮助你完成你想做的事情的一个理想情况。
 
-So, what you can do is, you can put the following line in the beginning or end of the file in question:
+因此，你可以考虑将下面这一行加入文件的开头或结尾来完成这件事。
 
 ```
 # vim: set expandtab:
 ```
 
-There are high chances that if you try doing the aforementioned exercise to test the use-case on your Linux machine, things won't work as expected. If that's the case, worry not, as the Modeline feature needs to be activated first in some cases (it's disabled by default on systems such as Debian, Ubuntu, Gentoo, and OSX for security reasons).
+有很大的可能性，如果你在 Linux 系统上尝试上面的练习来测试用例，它将不会像你所期望的那样工作。如果是这样，也不必担心，因为某些情况下，模式行特性需要先激活才能起作用（出于安全原因，在一些系统比如 Debian、Ubuntu、GGentoo 和 OSX 上默认情况下禁用）。
 
-To enable the feature, open the .vimrc file (located in your home directory), and then add the following line to it:
+为了启用该特性，打开 .vimrc 文件（位于 `home` 目录），然后加入下面一行内容：
 
 ```
 set modeline
 ```
 
-Now, whenever you enter a tab and save the file (where the expandtab modeline command was entered), the tab will automatically convert into white spaces.
+现在，无论何时你输入一个制表符然后保存文件（文件中已输入 expandtab 模式行命令的情况下），都会被自动转换为空白符
 
-Let's consider another use-case. Suppose the default tab space in Vim is set to 4, but for a particular file, you want to increase it to 8. For this, you need to add the following line in the beginning or the end of the file:
+让我们考虑另一个用例。假设在 Vim 中， Tab 默认设置为 4 个空格，但对于某个特殊的文件，你想把它增加到 8 个。对于这种情况，你需要在文件的开头或末尾加上下面这行内容：
 
 ```
 // vim: noai:ts=8:
 ```
 
-Now try entering a tab and you'll see that the number of spaces it covers will be 8. 
+现在，输入一个 Tab，你会看到，空格的数量为 8 个。
 
-You might have noticed me saying that these modeline commands need to be entered somewhere near the top or the bottom of the file. If you're wondering why this is so, the reason is that the feature is designed this way. The following lines (taken from the official Vim documentation) should make this more clear:
+你可能已经注意到我刚才说的，这些模式行命令需要加在靠近文件的顶部或底部。如果你好奇为什么是这样，那么理由是该特性以这种方式设计的。下面这一行（来自 Vim 官方文件）将会解释清楚：
 
-"The modeline cannot be anywhere in the file: it must be in the first or last few lines. The exact location where vim checks for the modeline is controlled by the `modelines` variable; see :help modelines. By default, it is set to 5 lines."
+“模式行不能随意放在文件中的一个位置：它需要放在文件中的前几行或最后几行。‘模式行’变量控制 Vim 检查模式行在文件中的确切位置。请查看： help modelines 。默认情况下，设置为 5 行。”
 
-And here's what the :help modelines command (referred to in the above lines) says:
+下面是 :help modelines 命令（指上面提到的）输出的内容：
 
-If 'modeline' is on 'modelines' gives the number of lines that is checked for set commands. If 'modeline' is off or 'modelines' is zero no lines are checked.
+如果模式行已启用并且给出了行数那么便在相应位置查找设置命令。如果模式行禁用或模式行设置的行数为 0 则不查找。
 
-Try and put the modeline command beyond the default 5 lines (either from the bottom or from the top) range, and you'll notice that tab spaces will revert to the Vim default - in my case that's 4 spaces.
+尝试把模式行命令置于超出 5 行的范围（距离文件底部和顶部的距离均超过 5 行），你会发现， Tab 将会恢复为 Vim 默认数目的空格 —　在我的情况里是 4 个空格。
 
-However, you can change this behavior if you want, using the following command in your .vimrc file. 
+然而，你可以按照自己的意愿改变默认行数，只需在你的 .vimrc 文件中加入下面一行命令
 
 ```
-set modelines=[new-value]
+set modelines=[新值]
 ```
 
-For example, I increased the value from 5 to 10.
+比如，我把值从 5 增加到了 10 。
 
 ```
 set modelines=10
 ```
 
-This means that now I can put the modeline command anywhere between first or last 10 lines of the file.
+这意味着，现在我可以把模式行命令置于文件前 10 行或最后 10 行的任意位置。
 
-Moving on, at any point in time, while editing a file, you can enter the following (with the Vim editor in the command mode) to see the current modeline-related settings as well as where they were last set.
+继续，无论何时，当你在编辑以个文件的时候，你可以输入下面的命令（在 Vim 编辑器的命令模式下输入）来查看当前与命令行相关的设置以及它们最新的设置。
 
 ```
 :verbose set modeline? modelines?
 ```
 
-For example, in my case, the above command produced the following output:
+比如，在我的例子中，上面的命令产生了如下所示的输出：
 
 ```
  modeline
@@ -83,28 +82,28 @@ For example, in my case, the above command produced the following output:
       Last set from ~/.vimrc
 ```
 
-Here are some of the important points you need to know about Vim's Modeline feature:
+关于 Vim 的模式行特性，你还需要知道一些重要的点：
 
-*   This feature is enabled by default for Vim running in nocompatible (non Vi-compatible) mode, but some notable distributions of Vim disable this option in the system vimrc for security.
-*   The feature is disabled by default when editing as root (if you've opened the file using 'sudo' then there's no issue - the feature works).
-*   With '`set'`, the modeline ends at the first colon not following a backslash. And without '`set'`, no text can follow the options. For example, **/* vim: noai:ts=4:sw=4 */** is an invalid modeline.
+*   默认情况下，该特性是启用的，并以不兼容 Vi 的模式运行，但需要注意的是，在一些发行版中，出于安全考虑，系统的 vimrc 文件禁止了 Vim 的该选项。
+*   默认情况下，当以 `root` 权限编辑文件时，该特性被禁用（如果你是使用 `sudo` 命令打开文件，那么该特性依旧能够正常工作）。
+*   通过 `set` 来设置模式行，以一个冒号结束，而不是反斜杠。没有 `set`，就无法设置该选项。比如，**/* vim: noai:ts=4:sw=4*/** 是一个无效的模式行。
 
-### Security Concerns
+### 安全考虑
 
-Sadly, Vim's Modeline feature can be used to compromise security. In fact, multiple security-related Modeline issues have been reported in the past, including [shell command injection][6], [arbitrary commands execution][7], [unauthorized access][8], and more. Agreed, most of these are old, and would have been fixed by now, but it does give an idea that the Modeline feature could be misused by hackers.
+令人沮丧的是， Vim 的模式行特性可能会造成安全性问题。事实上，在过去，已经报道过多个和模式行相关的问题，包括[ shell 命令注入][6]，[任意命令执行][7]和[无授权访问][8]等。我同意，这些问题发生在很早的一些时候，现在应该已经修复好了，但是，这提醒了我们，模式行特性有可能会被黑客滥用。
 
-### Conclusion
+### 结论
 
-Modeline may be an advanced feature of the Vim editor, but it's not very difficult to understand. There's no doubt that a bit of learning curve involved, but that's not much to ask for given how useful the feature is. Of course, there are security concerns, which means that you should weigh your options before enabling and using the feature.
+模式行可能是 Vim 编辑器的一个高级命令，但是它并不难理解。毫无疑问，它的学习曲线会有一些复杂，但是不需多问也知道，该特性是多么的有用。当然，出于安全考虑，在启用并使用该选项前，你需要对自己的选择进行权衡。
 
-Have you ever used the Modeline feature? How was your experience? Share with us (and the whole HowtoForge community) in the comments below.
+你有使用过模式行特性吗？你的体验是什么样的？记得在下面的评论中分享给我们（以及整个 HowtoForge 社区）。
 
 --------------------------------------------------------------------------------
 
 via: https://www.howtoforge.com/tutorial/vim-modeline-settings/
 
 作者：[ Ansh][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ucasFL](https://github.com/ucasFL)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
