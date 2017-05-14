@@ -1,6 +1,6 @@
+ucasFL translating
 How to make file-specific setting changes in Vim using Modeline
 ============================================================
-ch-cn translating
 
 ### On this page
 
