@@ -1,3 +1,5 @@
+translating--geekpi
+
 <header class="post-header" style="text-rendering: optimizeLegibility; font-family: &quot;Noto Serif&quot;, Georgia, Cambria, &quot;Times New Roman&quot;, Times, serif; font-size: 20px; text-align: start; background-color: rgb(255, 255, 255);">[How to use slice capacity and length in Go][14]
 ============================================================</header>
 
