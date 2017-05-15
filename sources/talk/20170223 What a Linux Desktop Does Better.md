@@ -1,81 +1,81 @@
-# rusking translating
 What a Linux Desktop Does Better
 ============================================================
+Linux 桌面系统的优势
 
  ![linux-desktop-advantages](http://www.linuxinsider.com/article_images/story_graphics_xlarge/xl-2017-linux-1.jpg) 
 
  ![](http://www.linuxinsider.com/images/2015/image-credit-adobe-stock_130x15.gif) 
 
-After I [resolved to adopt Linux][3], my confidence grew slowly but surely. Security-oriented considerations were compelling enough to convince me to switch, but I soon discovered many more advantages to the Linux desktop.
+当我放弃 Windows [转而使用 Linux 系统][3] 后，我的信心不断增长。出于安全方面的考虑促使我选用 Linux 系统，但是我很快发现了很多使用 Linux 桌面系统的优势。
 
-For those still unsure about making the transition, or those who have done so but may not know everything their system can do, I'll showcase here some of the Linux desktop's advantages.
+对于那些还对 Linux 系统犹豫不决，或是那些不甚了解 Linux 系统的用户，我将通过这篇文章给大家介绍一些使用 Linux 桌面系统的优势。
 
-### You Can't Beat Free!
+### 免费才是王道
 
-First and foremost, Linux is literally free. Neither the operating system nor any of the programs you run will cost you a dime. Beyond the obvious financial benefit of getting software for free, Linux allows users to  _be_  free by affording access to the basic tools of modern computer use -- such as word processing and photo editing -- which otherwise might be unavailable due to the cost barrier.
+首先， Linux 系统完全免费。你无须为使用的操作系统或软件花费一分钱。除了免费获取软件产生的经济效益之外，你还可以在 Linux 系统中随意使用当前一些很流行的软件——比如文字处理软件和照片编辑软件——但是，由于费用方面的原因，我们可能不太愿意花钱去购买这些软件。
 
-Microsoft Office, which sets the de facto standard formats for documents of nearly every kind, demands a US$70 per year subscription. However, you can run [LibreOffice][4] for free while still handling documents in all the same formats with ease.
+微软的 Office 办公软件几乎是处理各种类型文档的一种标准软件了，但是它每年的费用竟高达 70 美元。然而，你却可以免费使用 [LibreOffice][4] 软件来代替，它同样可以处理各种类型的文档，而且使用也很方便。
 
-Free software also gives you the chance to try new programs, and with them new ways of pursuing business and leisure, without their prospective costs forcing you to make a commitment.
+免费软件还能让您有机会尝试新的功能，并与它们一起寻求商业发展和操作便捷的新方式，而且你也不需要支付任何预期的费用。
 
-Instead of painstakingly weighing the merits of Mac or Windows and then taking a leap of faith, you can consider a vast spectrum of choices offered by[hundreds of distributions][5] -- basically, different flavors of Linux -- by trying each in turn until you find the one that's right for you.
+与其费尽周折的去衡量 Mac 或 Windows 系统的优点，你可以考虑下在[上百款不同风格的 Linux 发行版][5]中选择一款最适合自己的操作系统。
 
-Linux can even save money on hardware, as some manufacturers -- notably Dell -- offer a discount for buying a computer with Linux preinstalled. They can charge less because they don't have to pass on the cost of licensing Windows from Microsoft.
+Linux 系统甚至在硬件方面也为用户节省了不少钱，比如有些厂商——尤其是戴尔公司——为购买预安装了 Linux 系统的电脑的用户提供打折优惠。这些电脑的价格相对来说比较便宜，因为用户无须再花钱购买微软的 Windows 系统许可证。
 
-### You Can Make It Your Own
+### 随心所欲的系统定制
 
-There is practically nothing in Linux that can't be customized. Among the projects central to the Linux ecosystem are desktop environments -- that is, collections of basic user programs and visual elements, like status bars and launchers, that make up the user interface.
+其次，在 Linux 系统中，你可以对系统功能进行任意更改。 Linux 生态系统中的核心项目之一就是桌面环境——它是一些由基础用户程序和可视化元素组成的一个集合，比如状态栏和启动器，这些元素构成了用户与计算机的一个交互界面。
 
-Some Linux distributions come bundled with a desktop environment. Ubuntu is paired with the Unity desktop, for example. Others, such as with Debian, give you a choice at installation. In either case, users are free to change to any one they like.
+有些 Linux 发行版还预安装了桌面环境。比如， Ubuntu 系统就预安装了 Unity 桌面。其它系统，比如 Debian 会在系统安装的过程中让用户选择需要的桌面环境。总之，在 Linux 系统中，用户都可以随意更换他们喜欢的桌面环境。
 
-Most distributions officially support (i.e., vouch for compatibility) dozens of the most popular desktops, which makes finding the one you like best that much simpler. Within the pantheon of desktops, you can find anything from glossy modern interfaces like KDE Plasma or [Gnome][6], to simple and lightweight ones like Xfce and MATE. Within each of these, you can personalize your setup further by changing the themes, system trays and menus, choosing from galleries of other users' screens for inspiration.
+大多数的 Linux 发行版都支持（也就是兼容）那些非常流行的桌面环境，因此，找到一款适合自己的桌面系统也非常容易。在桌面系统这个万花筒里，你可以找到界面华丽的系统桌面，比如 KDE Plasma 或者 [Gnome][6]，以及轻量级的系统桌面，比如 Xfce 和 MATE 桌面。使用任一款系统桌面，你都可以通过更改主题、系统托盘和菜单，以及根据其它用户的桌面环境来进一步定制自己的桌面环境。
 
-The customization possibilities go well beyond aesthetics. If you prize system stability, you can run a distribution like Mint, which offers dependable hardware support and ensures smooth updates.
+Linux 系统的可定制特性完全超出你的想象力。如果你更看重系统的稳定性，你可以使用 Mint 这个发行版系统，它对硬件的兼容性非常好，而且也能确保系统顺利更新。
 
-On the other hand, if you want to live on the cutting edge, you can install an OS like Arch Linux, which gives you the latest update to each program as soon as developers release it.
+除此之外，如果你想使用最简洁的 Linux 系统，你可以安装 Arch Linux ，它提供最新的稳定版系统，并且每一款软件只要开发者发布出来，你就可以进行更新使用。
 
-If you'd rather take the middle path and stick with a stable foundation while running a few programs on the bleeding edge, you can download the source code -- that is, the code files written by the program's developers -- and compile them yourself. That requires running the source code through a utility to translate them into files of 1s and 0s (called "binaries") for your computer to execute.
+如果你愿意在源生版的 Linux 系统中运行几个小程序，你可以下载程序的源代码，然后自己进行编译。这就需要你使用工具来编译源代码，生成 01 的二进制文件，这样你的电脑才能运行该软件。
 
-The Linux system is yours to tweak in whatever ways work best for you.
+你可以使用自己喜欢的任何方式去折腾属于自己的 Linux 系统。
 
-### Lock It Down
+### 无与伦比的安全性
 
-This versatility lends itself well to a third major advantage to Linux: security.
+第三，Linux 系统还有一个更重要的特性：安全。
 
-To start with, while there are viruses for Linux, the number pales in comparison even to those for Mac. More importantly, the fact that the code for the core OS framework is open source -- and thus transparent to evaluation -- means there are fewer vulnerabilities in your basic system.
+起初，尽管有一些针对 Linux 系统的病毒，但是跟 Mac 系统比起来，已经屈指可数了。更重要的是，实际上 Linux 系统的核心代码是开源的，对用户完全透明，这意味着你的 Linux 系统漏洞更少。
 
-While proprietary (i.e., non-open source) OSes sometimes are criticized as maliciously compromising user security, they pose just as great a threat due to poorly implemented, opaque processes.
+然而，一些专有（未开源）的操作系统被认为是不安全的，因为它们会启动一些不透明的进程，这严重影响了系统的安全性。
 
-For instance, lots of Windows computers by default [do not check the cryptographic signatures][7] -- the mathematically guaranteed seals of authenticity -- on OS updates.
+比如说， Windows 系统在升级的过程中，默认情况下[不会检查加密签名][7]来验证更新文件的可靠性。
 
-With Linux, you can implement as much fine-grained control over signature checking as you choose, and the major distributions enforce safe default settings. This kind of accountability arises directly from the transparency of Linux's open source development model.
+而使用 Linux 系统，你可以在选择更新时通过签名方式进行严格的细粒度控制，大多数的发行版在系统更新时都实行默认的安全设置。这种安全性源自 Linux 系统的开源开发模式。
 
-Rolling release distributions like Arch add even more security, as critical patches are available almost as soon as they are approved. You would be hard-pressed to find a single mainstream OS that offers daily updates, but with Linux there are dozens.
+像 Arch Linux 这种滚动发行版则增加了更多的安全性设置，因为一些重要的补丁一旦可用， Arch Linux 会即时进行验证。你可能很难找到那些每天都提供更新的单一主流操作系统，但是这样的 Linux 发行版却有很多。
 
-### It's a Natural Development Platform
+### 开箱即用的编程环境
 
-With a Linux desktop, developers -- or anyone interested in programming -- have the added benefit of Linux's great development tools. Among the best compiling tools around are the GNU C Compiler, or GCC, and GNU Autoconf, both key foundations of Linux.
+很多开发者或者任何对编程有兴趣的人都得益于 Linux 桌面系统中集成的强大开发工具。其中包括那些最经典的编程工具，比如 GNU C 编译器，或者 GCC 和 GNU Autoconf 工具都是 Linux 系统中一些非常重要的基础工具。
 
-Linux comfortably supports dozens of programming languages available in most default repositories, which are the pools of pre-compiled software available to a distribution.
+Linux 系统的默认软件库友好地支持数十种编程语言，这个软件库是 Linux 系统中的一个预编译软件池。
 
-Much of the Internet's infrastructure and many connected devices run on Linux -- from servers to smart devices such as security cameras and thermostats. Coding for these devices on Linux makes testing that much easier. If you have a computer-related project, Linux has everything you need to get the job done.
+很多因特网的基础架构和相关连接设备都运行于 Linux 系统中——从服务器到智能设备，比如安防摄像机和恒温器。在 Linux 系统下开发调试这些设备的软件时非常容易。如果你有一个跟计算机相关的项目， Linux 系统可以完美地支持你完成这个项目。
 
-### Community Is at the Heart of Everything Linux
+### 社区是 Linux 系统发展的关键
 
-Finally, Linux has a tightly knit and friendly community. Because Linux is a relatively niche desktop OS, with around 3 percent market share, those who use it want prospective newcomers to stick around.
+最后一点， Linux 系统拥有一个紧密且友好型的社区。由于 Linux 在桌面系统中仅占有 3% 左右的市场份额，因此， Linux 社区更希望有更多的潜在用户加入进来。
 
-User forums, especially for beginner-friendly distributions like Ubuntu, include comprehensive guides to walk you through the basics and troubleshoot issues. Because power users tend to prefer Linux, wiki pages for distributions often contain thorough documentation -- often applicable across distributions -- to enable users to pursue even the most esoteric projects.
+Linux 系统有很多的用户论坛，尤其是对新手比较友好的 Unbuntu 系统论坛，它包括非常丰富且全面的知识来帮助用户解决一些基本的系统问题。很多高级用户更倾向于使用 Linux 系统，因此那些 Linux 发行版都拥有非常非常详尽维基文档，以指导用户完成高级的系统应用项目。
 
-There are even casual Linux forums and [Reddit][8] threads for everything from comparing different software to showing off desktop themes. Taken together, this makes for a community with more camaraderie than I ever experienced as a Windows user.
+甚至还有业余的 Linux 论坛和 [Reddit] [8] 讨论区，所涉及的范围包括从对比 Linux 系统各种应用软件到炫耀桌面主题等。总而言之，这是一个比 Windows 用户群更加友善的社区。
 
-Immersing myself in the world of Linux for just over two years has convinced me that it offers something for everyone. I hope this brief sampling of its advantages gives you a sense of what you might discover in a Linux desktop. But don't just take my word for it -- the real fun is finding out for yourself!
+我沉浸在 Linux 的世界里两年多了，我更加相信 Linux 系统对每一个用户都有所帮助。我希望这篇文章能够让你了解到 Linux 桌面系统的各种优势。但是真正的乐趣是从中发现自己感兴趣的东西！
 
 --------------------------------------------------------------------------------
 
 via: http://www.linuxinsider.com/story/84326.html?rss=1
 
 作者：[Jonathan Terrasi ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[rusking](https://github.com/rusking)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
