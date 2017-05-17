@@ -77,8 +77,8 @@ Aaron Kili 是一个Linux和F.O.S.S爱好者，即将变成的Linux 系统管理
 via: http://www.tecmint.com/compare-find-difference-between-two-directories-in-linux/
 
 作者：[Aaron Kili ][a]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[hkurj](https://github.com/hkurj)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
