@@ -43,7 +43,7 @@ Choi先生，一个有着对朝鲜的黑客能力进行了广泛的研究的人�
 via: http://www.abc.net.au/news/2017-05-21/north-koreas-unit-180-cyber-warfare-cell-hacking/8545106
 
 作者：[www.abc.net.au ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/hwlog)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
