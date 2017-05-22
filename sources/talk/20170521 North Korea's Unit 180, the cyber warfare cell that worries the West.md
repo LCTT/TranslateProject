@@ -1,4 +1,9 @@
+
 朝鲜180局的网络战部门让西方国家忧虑。
+
+Translating by hwlog
+North Korea's Unit 180, the cyber warfare cell that worries the West
+
 ============================================================
  [![在夜色的映衬下，部队的军车通过平壤市区,](http://www.abc.net.au/news/image/8545124-3x2-700x467.jpg "Military trucks through Pyongyang")][13] [**PHOTO:** 脱北者说， 平壤的网络战攻击目的在于一个叫做“180局”的部门来筹集资金。(Reuters: Damir Sagolj, file)][14]
  据叛逃者，官方和网络安全专家称，朝鲜的情报机关有一个叫做180局的特殊部门， 这个部门已经发起过多起勇敢且成功的网络战。

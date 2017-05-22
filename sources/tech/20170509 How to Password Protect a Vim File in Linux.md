@@ -1,5 +1,6 @@
 How to Password Protect a Vim File in Linux
 ============================================================
+ch-cn translating
 
  Download Your Free eBooks NOW - [10 Free Linux eBooks for Administrators][16] | [4 Free Shell Scripting eBooks][17]
 
