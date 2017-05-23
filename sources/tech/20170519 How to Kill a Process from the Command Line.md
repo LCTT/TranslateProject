@@ -1,4 +1,4 @@
-How to Kill a Process from the Command Line
+怎样在命令行杀死一个进程
 ============================================================
 
 ![stop processes](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/stop-processes.jpg?itok=vfNx8VRz "stop processes")
