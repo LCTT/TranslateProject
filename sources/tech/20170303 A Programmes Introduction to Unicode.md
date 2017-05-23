@@ -1,3 +1,4 @@
+translating by chenxinlong
 [A Programmer’s Introduction to Unicode][18]
 ============================================================
 
@@ -223,7 +224,7 @@ You can contact me at nathaniel dot reed at gmail dot com, or follow me on Twitt
 via: http://reedbeta.com/blog/programmers-intro-to-unicode/?imm_mid=0ee8ca&cmp=em-prog-na-na-newsltr_20170311
 
 作者：[ Nathan][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/chenxinlong)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
