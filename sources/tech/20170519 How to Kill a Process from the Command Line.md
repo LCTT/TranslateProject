@@ -2,87 +2,86 @@ How to Kill a Process from the Command Line
 ============================================================
 
 ![stop processes](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/stop-processes.jpg?itok=vfNx8VRz "stop processes")
->Linux has all the tools you need to stop running processes at the command line. Jack Wallen has details.[Creative Commons Zero][4]
+>linux的命令行有你需要的用来停止正在运行的进程的所有工具。Jack Wallen透露出细节。[Creative Commons Zero][4]
 
-Picture this: You’ve launched an application (be it from your favorite desktop menu or from the command line) and you start using that launched app, only to have it lock up on you, stop performing, or unexpectedly die. You try to run the app again, but it turns out the original never truly shut down completely.
+想像一下: 你打开了一个程序 (可能来自于你的桌面菜单或者命令行) ，然后开始使用这个app, 没想到程序会锁死, 停止运行, 或者以外死机. 你尝试再次运行app, 但是结果是不能够完全真正的关机。
 
-What do you do? You kill the process. But how? Believe it or not, your best bet most often lies within the command line. Thankfully, Linux has every tool necessary to empower you, the user, to kill an errant process. However, before you immediately launch that command to kill the process, you first have to know what the process is. How do you take care of this layered task? It’s actually quite simple...once you know the tools at your disposal.
+你该怎么办? 你要结束进程. 但该如何做? 信或者不信,最好的解决方法大都在命令行里. 值得庆幸的是， Linux有每个必要的工具来供用户杀死错误的进程，然而, 你在执行杀死进程的命令之前, 你首先必须知道进程是什么. 该如何处理这层的任务? 一旦你能够掌握这个工具，它实际是十分简单的...
 
-Let me introduce you to said tools.
+让我来介绍给你这些工具.
+我来概述的步骤是每个linux发行版都能用的，不论是桌面版还是服务器版。
+我讲严格使用命令行，打开你的终端开始输入命令吧。
 
-The steps I’m going to outline will work on almost every Linux distribution, whether it is a desktop or a server. I will be dealing strictly with the command line, so open up your terminal and prepare to type.
+### 定位进程
 
-### Locating the process
+杀死一个没有响应的进程的第一个步骤是定位这个进程。我用来定位进程的命令有两个：top和ps命令。top是每个系统管理员都知道的工具，用top命令，你能够get到所有当前正在运行的进程有那些。在命令行里，输入top命令能够就看到你正在运行的程序进程（图1）
 
-The first step in killing the unresponsive process is locating it. There are two commands I use to locate a process:  _top _ and  _ps_ . Top is a tool every administrator should get to know. With  _top_ , you get a full listing of currently running process. From the command line, issue  _top_  to see a list of your running processes (Figure 1).
 
 ### [killa.jpg][5]
 
 ![top](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/killa.jpg?itok=95cUI9Lh "top")
 
-Figure 1: The top command gives you plenty of information.[Used with permission][1]
+图1: top命令给出你许多的信息.[通过权限使用][1]
 
-From this list you will see some rather important information. Say, for example, Chrome has become unresponsive. According to our  _top_ display, we can discern there are four instances of chrome running with Process IDs (PID) 3827, 3919, 10764, and 11679\. This information will be important to have with one particular method of killing the process.
+从显示的列表中你能够看到相当重要的信息，举个例子，Chrome浏览器反映迟钝，依据我们的top命令显示，我们能够辨别的有四个Chrome浏览器的进程在运行，进程的pid号分别是3827，3919，10764，和11679.这个信息是重要的，可以用一个特殊的方法来结束进程。
 
-Although  _top_  is incredibly handy, it’s not always the most efficient means of getting the information you need. Let’s say you know the Chrome process is what you need to kill, and you don’t want to have to glance through the real-time information offered by  _top_ . For that, you can make use of the  _ps_ command and filter the output through  _grep_ . The  _ps_  command reports a snapshot of a current process and  _grep _ prints lines matching a pattern. The reason why we filter  _ps_  through  _grep_  is simple: If you issue the  _ps_  command by itself, you will get a snapshot listing of all current processes. We only want the listing associated with Chrome. So this command would look like:
+尽管top命令很是方便, 但也不是得到你所要信息最有效的方法。 你知道你要杀死的Chrome进程是那个，并且你也不想看top命令所显示的实时信息。 鉴于此, 你能够使用ps命令然后用grep命令来过滤出输出结果。这个ps命令能够显示出当前进程的快照，然后用grep命令输出匹配的样式。我们通过grep命令过滤ps命令的输出的理由很简单：如果你只输入ps命令，你将会得到当前所有进程的快照列表，而我们需要的是列出Chrome浏览器进程相关的。所以这个命令是这个样子:
 
 ```
 ps aux | grep chrome
 ```
 
-The  _aux_  options are as follows:
+The  _aux_  options are as follows:     #辅助选项如下所示
 
-*   a = show processes for all users
+*   a = show processes for all users     #a = 显示所有用户的进程
 
-*   u = display the process's user/owner
+*   u = display the process's user/owner   #u = 显示进程的用户和拥有者
 
-*   x = also show processes not attached to a terminal
+*   x = also show processes not attached to a terminal   #x = 显示进程不依附于终端
 
-The  _x_  option is important when you’re hunting for information regarding a graphical application.
+当你在图形化程序上搜寻信息的时候，这个x参数是很重要的。
 
-When you issue the command above, you’ll be given more information than you need (Figure 2) for the killing of a process, but it is sometimes more efficient than using top.
-
+当你输入以上命令的时候，你将会得到比图2更多的结束一个进程的信息，而且它有事用起来比top命令更有效。
 ### [killb.jpg][6]
 
 ![ps command](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/killb.jpg?itok=vyWIuTva "ps command")
 
-Figure 2: Locating the necessary information with the ps command.[Used with permission][2]
+图2: 用ps命令来定位所需的内容信息。[通过权限使用][2]
 
-### Killing the process
+### 结束进程
 
-Now we come to the task of killing the process. We have two pieces of information that will help us kill the errant process:
+现在我们开始结束进程的任务。我们有两种信息来帮我们杀死错误的进程。
 
-*   Process name
+*   Process name   #进程的名字
 
-*   Process ID
+*   Process ID      #进程的ID
 
-Which you use will determine the command used for termination. There are two commands used to kill a process:
+你用哪一个将会决定终端命令如何使用，通常有两个命令来结束进程：
 
-*   kill - Kill a process by ID
+*   kill - Kill a process by ID      #通过ID来结束进程
 
-*   killall - Kill a process by name
+*   killall - Kill a process by name    #通过进程名字来结束进程
 
-There are also different signals that can be sent to both kill commands. What signal you send will be determined by what results you want from the kill command. For instance, you can send the HUP (hang up) signal to the kill command, which will effectively restart the process. This is always a wise choice when you need the process to immediately restart (such as in the case of a daemon). You can get a list of all the signals that can be sent to the kill command by issuing kill -l. You’ll find quite a large number of signals (Figure 3).
+有两个不同的信号能够发送给两个结束进程的命令。你发送的信号决定着你想要从结束进程命令中得到的结果。举个例子，你可以发送HUP（挂起）信号给结束进程的命令，命令实际上将会重启这个进程。当你需要立即重启一个进程（比如就守护进程来说），这是一个明智的选择。你通过输入kill -l可以得到所有信号的列表。，你将会发现大量的信号。（图3）
 
 ### [killc.jpg][7]
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/killc.jpg?itok=9ewRHFW2)
 
-Figure 3: The available kill signals.[Used with permission][3]
+图3: 可用的结束进程信号.[通过权限使用][3]
 
-The most common kill signals are:
+最经常使用的结束进程的信号是：T
 
 | 
 
-Signal Name
+Signal Name  
 
  | 
 
-Single Value
-
+Single Value  
  | 
 
-Effect
+Effect        
 
  |
 | 
@@ -151,14 +150,14 @@ Stop the process
 
  |
 
-What’s nice about this is that you can use the Signal Value in place of the Signal Name. So you don’t have to memorize all of the names of the various signals. 
-So, let’s now use the  _kill _ command to kill our instance of chrome. The structure for this command would be:
+好的是，你能用信号值来代替信号名字。所以你没有必要来记住所有各种各样的信号名字。
+所以，让我们现在用kill命令来杀死Chrome浏览器的进程。这个命令的结构是：
 
 ```
 kill SIGNAL PID
 ```
 
-Where SIGNAL is the signal to be sent and PID is the Process ID to be killed. We already know, from our  _ps_  command that the IDs we want to kill are 3827, 3919, 10764, and 11679\. So to send the kill signal, we’d issue the commands:
+信号被发送到那里，进程的ID就会被结束。我们已经知道，来自我们的ps命令显示我们想要结束的进程ID号是3827, 3919, 10764, and 11679\。所以要发送结束进程信号，我们输入以下命令：
 
 ```
 kill -9 3827
@@ -170,24 +169,24 @@ kill -9 10764
 kill -9 11679
 ```
 
-Once we’ve issued the above commands, all of the chrome processes will have been successfully killed.
+一旦我们输入了以上命令，Chrome浏览器的所有进程将会成功被杀死。
 
-Let’s take the easy route! If we already know the process we want to kill is named chrome, we can make use of the  _killall _ command and send the same signal the process like so:
+我们有更简单的方法! 如果我们已经知道我们想要杀死的那个进程的名字，我们能够利用killall命令发送同样的信号，像这样：
 
  _killall -9 chrome_ 
 
-The only caveat to the above command is that it may not catch all of the running chrome processes. If, after running the above command, you issue the ps aux|grep chrome command and see remaining processes running, your best bet is to go back to the  _kill _ command and send signal 9 to terminate the process by PID.
+附带说明的是，上边这个命令可能不能捕捉到所有正在运行的Chrome进程。如果，运行了上边这个命令之后，你输入ps aux|grep chrome 命令过滤一下，看到剩下正在运行的Chrome进程有那些，最好的办法还是回到KIll命令通过进程的ID来发送信号值9来结束这个进程。
 
-### Ending processes made easy
+### 结束进程变得容易
 
-As you can see, killing errant processes isn’t nearly as challenging as you might have thought. When I wind up with a stubborn process, I tend to start off with the  _killall _ command as it is the most efficient route to termination. However, when you wind up with a really feisty process, the  _kill _ command is the way to go.
+正如你看到的，杀死错误的进程并没有你原本想的那样有挑战性。当我让一个顽固的进程结束的时候，我趋向于用killall命令来作为有效的方法来终止，然而，当我让一个真正的活跃的进程结束的时候，kill命令是一个好的方法。
 
---------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
 
 via: https://www.linux.com/learn/intro-to-linux/2017/5/how-kill-process-command-line
 
 作者：[JACK WALLEN][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[hwlog](https://github.com/hwlog)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
