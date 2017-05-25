@@ -1,3 +1,4 @@
+zhousiyu325翻译
 10 Useful Tips for Writing Effective Bash Scripts in Linux
 ============================================================
 ch-cn translating
