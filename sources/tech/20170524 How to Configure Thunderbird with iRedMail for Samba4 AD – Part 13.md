@@ -144,7 +144,7 @@ I'am a computer addicted guy, a fan of open source and linux based system softwa
 
 --------------
 
-via: 网址
+via: https://www.tecmint.com/configure-thunderbird-with-iredmail-for-samba4-ad-ldap/
 
 作者：[Matei Cezar ][a]
 译者：[译者ID](https://github.com/译者ID)
