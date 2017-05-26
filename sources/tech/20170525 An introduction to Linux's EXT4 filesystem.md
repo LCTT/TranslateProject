@@ -257,7 +257,7 @@ David Both - David Both is a Linux and Open Source advocate who resides in Ralei
 
 -------------------
 
-via: 网址
+via: https://opensource.com/article/17/5/introduction-ext4-filesystem
 
 作者：[David Both ][a]
 译者：[译者ID](https://github.com/译者ID)
