@@ -1,29 +1,27 @@
-Python-mode - 在 Vim 编辑器中开发 Python 应用的一个 Vim 插件
+Python-mode：在 Vim 编辑器中开发 Python 应用的 Vim 插件
 ============================================================
 
-
-
-Python-mode 是一个 Vim 插件，它使你能够在 [Vim 编辑器][1]中更快的利用各种库来写 Python 代码，这些库包括 pylint、rope、pydoc、pyflakes、pep8、autopep8、pep257　和 mccable，它们具有一些编码特性，比如静态分析、特征重构、折叠、补全和文件化等。
+Python-mode 是一个 Vim 插件，它使你能够在 [Vim 编辑器][1]中更快的利用包括 pylint、rope、pydoc、pyflakes、pep8、autopep8、pep257　和 mccable 在内的各种库来写 Python 代码，这些库提供了一些编码功能，比如静态分析、特征重构、折叠、补全和文档等。
 
 **推荐阅读：** [如何用 Bash-Support 插件将 Vim 编辑器打造成编写 Bash 脚本的 IDE][2]
 
 这个插件包含了所有你在 Vim 编辑器中可以用来开发 Python 应用的特性。
 
-#### Python-mode 的特性
+### Python-mode 的特性
 
 它包含下面这些值得一提的特性：
 
 *   支持 Python 2.6+ 至 Python 3.2 版本
 *   语法高亮
 *   提供 virtualenv 支持
-*   支持 Python 折叠
+*   支持 Python 式折叠
 *   提供增强的 Python 缩进
 *   能够在 Vim 中运行 Python 代码
 *   能够添加/删除断点
-*   支持 Python 的请求和运算符
-*   能够在运行的同时检查代码（pylint、pyflakes、pylama，...）
+*   支持 Python 的 motion 和运算符
+*   能够在运行的同时检查代码（pylint、pyflakes、pylama ……）
 *   支持自动修复 PEP8 错误
-*   允许在 Python 文件中进行搜索
+*   允许在 Python 文档中进行搜索
 *   支持代码重构
 *   支持强代码补全
 *   支持定义跳转
@@ -32,7 +30,7 @@ Python-mode 是一个 Vim 插件，它使你能够在 [Vim 编辑器][1]中更�
 
 ### 如何在 Linux 系统中为 Vim 安装 Python-mode
 
-首先安装 [Pathogen][3] （它使得安装插件超级简单并且运行文件位于私有目录中）从而更加容易的安装 Python-mode
+首先安装 [Pathogen][3] （它使得安装插件超级简单，并且运行文件位于私有目录中），从而更加容易的安装 Python-mode
 
 运行下面的命令来获取 `pathogen.vim` 文件和它需要的目录：
 
@@ -41,7 +39,7 @@ Python-mode 是一个 Vim 插件，它使你能够在 [Vim 编辑器][1]中更�
 # curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 ```
 
-然后把下面这些内容加入 `~/.vimrc` 文件中
+然后把下面这些内容加入 `~/.vimrc` 文件中：
 
 ```
 execute pathogen#infect()
@@ -49,7 +47,7 @@ syntax on
 filetype plugin indent on
 ```
 
-安装好 pathogen 以后，你可以像下面这样把 Python-mode 放入 `~/.vim/bunble` 目录中：
+安装好 pathogen 以后，你可以像下面这样把 Python-mode 插件放入 `~/.vim/bunble` 目录中：
 
 ```
 # cd ~/.vim/bundle 
@@ -80,7 +78,7 @@ $ sudo apt-get install vim-python-mode
 $ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys B5DF65307000E266
 ```
 
-现在，使用 vim-addon-manager 启用 Python-mode：
+现在，使用 `vim-addon-manager` 启用 Python-mode：
 
 ```
 $ sudo apt install vim-addon-manager
@@ -122,13 +120,13 @@ via: https://www.tecmint.com/python-mode-a-vim-editor-plugin/
 
 作者：[Aaron Kili][a]
 译者：[ucasFL](https://github.com/ucasFL)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://www.tecmint.com/author/aaronkili/
 [1]:https://www.tecmint.com/vi-editor-usage/
-[2]:https://www.tecmint.com/use-vim-as-bash-ide-using-bash-support-in-linux/
+[2]:https://linux.cn/article-8467-1.html
 [3]:https://github.com/tpope/vim-pathogen
 [4]:https://github.com/python-mode/python-mode
 [5]:https://www.tecmint.com/author/aaronkili/
