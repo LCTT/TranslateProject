@@ -1,3 +1,5 @@
+GitFuture is translating
+
 OpenGL & Go Tutorial Part 2: Drawing the Game Board
 ============================================================
 
