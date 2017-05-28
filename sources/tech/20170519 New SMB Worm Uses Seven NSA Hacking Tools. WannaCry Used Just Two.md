@@ -1,3 +1,5 @@
+> translating by hwlog
+
 ### New SMB Worm Uses Seven NSA Hacking Tools. WannaCry Used Just Two
 
 
