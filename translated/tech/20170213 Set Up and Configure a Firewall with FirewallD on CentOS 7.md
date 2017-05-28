@@ -1,4 +1,4 @@
-在 CentOS 上用 FirewallD 设置和配置防火墙
+在 CentOS 上使用 FirewallD 配置防火墙
 ================================================
 
 ![](https://www.rosehosting.com/blog/wp-content/uploads/2017/02/set-up-and-configure-a-firewall-with-firewalld-on-centos-7.jpg) 
