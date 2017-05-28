@@ -1,4 +1,4 @@
-translating by Locez
+zhousiyu325翻译中
 Set Up and Configure a Firewall with FirewallD on CentOS 7
 ============================================================
 
