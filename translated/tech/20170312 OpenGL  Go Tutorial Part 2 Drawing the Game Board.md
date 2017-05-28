@@ -1,21 +1,19 @@
-GitFuture is translating
-
-OpenGL & Go Tutorial Part 2: Drawing the Game Board
+OpenGL 与 Go 教程第二节：绘制游戏面板
 ============================================================
 
- _[Part 1: Hello, OpenGL][6]_  |  _[Part 2: Drawing the Game Board][7]_  |  _[Part 3: Implementing the Game][8]_ 
+ _[第一节: Hello, OpenGL][6]_  |  _[第二节: 绘制游戏面板][7]_  |  _[第三节：实现游戏功能][8]_ 
 
- _The full source code of the tutorial is available on [GitHub][9]._ 
+ _这篇教程的所有源代码都可以在 [GitHub][9] 上找到._ 
 
-Welcome back to the  _OpenGL & Go Tutorial!_  If you haven’t gone through [Part 1][15] you’ll definitely want to take a step back and check it out.
+欢迎回到《OpenGL 与 Go 教程》。如果你还没有看过[第一节][15]，那就要回过头去看看那一节。
 
-At this point you should be the proud creator of a magnificent white triangle, but we’re not in the business of using triangles as our game unit so it’s time to turn the triangle into a square, and then we’ll make an entire grid of them.
+你现在应该能够创造一个漂亮的白色三角形，但我们不会把三角形当成我们游戏的基本单元，是时候把三角形变成正方形了，然后我们会做出一个完整的方格。
 
-Let’s get started!
+让我们现在开始做吧！
 
-### Make a Square out of Triangles
+### 利用三角形绘制方形
 
-Before we can make a square, let’s turn our triangle into a right-angle. Open up **main.go** and change the **triangle** definition to look like so:
+在我们绘制方形之前，先把三角形变成直角三角形。打开 **main.go** 文件，把 **triangle** 的定义改成像这个样子：
 
 ```
 triangle = []float32{
@@ -25,11 +23,11 @@ triangle = []float32{
 }
 ```
 
-What we’ve done is move the X-coordinate of the top vertex to the left (**-0.5**), giving us a triangle like so:
+我们做的事情是，把最上面的顶点 X 坐标移动到左边（也就是变为**-0.5**），这就变成了像这样的三角形：
 
  ![Conway's Game of Life in OpenGL and Golang Tutorial - Right-Angle Triangle](https://kylewbanks.com/images/post/golang-opengl-conway-4.png) 
 
-Easy enough, right? Now let’s make a square out of two of these. Let’s rename **triangle** to **square** and add a second, inverted right-angle triangle to the slice:
+很简单，对吧？现在让我们用两个这样的三角形顶点做成正方形。把 **triangle** 重命名为 **square**，然后添加第二个三角形的顶点数据，把直角三角形变成这样的：
 
 ```
 square = []float32{
@@ -43,17 +41,17 @@ square = []float32{
 }
 ```
 
-Note: You’ll also need to rename the two references to **triangle** to be **square**, namely in **main** and **draw**.
+注意：你也要把在 **main** 和 **draw** 里面命名的 **triangle** 改为 **square**。
 
-Here we’ve doubled the number of points by adding a second set of three vertices to be our upper top-right triangle to complete the square. Run it for glory:
+我们通过添加三个顶点，把顶点数增加了一倍，这三个顶点就是右上角的三角形，用来拼成方形。运行它看看效果：
 
  ![Conway's Game of Life in OpenGL and Golang Tutorial - Two Triangles Make a Square](https://kylewbanks.com/images/post/golang-opengl-conway-5.png) 
 
-Great, now we have the ability to draw a square! OpenGL isn’t so tough after all, is it?
+很好，现在我们能够绘制正方形了！OpenGL 一点都不难，对吧？
 
-### Draw a Grid of Squares covering the Window
+### 在窗口中绘制方形格子
 
-Now that we can draw one square, how about 100 of them? Let’s create a **cell** struct to represent each unit of our grid so that we can be flexible in the number of squares we draw:
+现在我们能画一个方形，怎么画 100 个吗？我们来创建一个 **cell** 结构体，用来表示格子的每一个单元，因此我们能够很灵活的选择绘制的数量：
 
 ```
 type cell struct {
@@ -64,9 +62,9 @@ type cell struct {
 }
 ```
 
-The **cell** contains a **drawable** which is a square **Vertex Array Object** just like the one we created above, and an X and Y coordinate to dictate where on the grid this cell resides.
+**cell** 结构体包含一个 **drawable** 属性，这是一个 **Vertex Array Object（顶点数组对象）**，就像我们在之前创建的一样，这个结构体还包含 X 和 Y 坐标，用来表示这个格子的位置。
 
-We’re also going to want two more constants that define the size and shape of our grid:
+我们还需要两个常量，用来设定格子的大小和形状：
 
 ```
 const (
@@ -77,7 +75,7 @@ const (
 )
 ```
 
-Now let’s add a function to create the grid:
+现在我们添加一个创建格子的函数：
 
 ```
 func makeCells() [][]*cell {
@@ -93,9 +91,9 @@ func makeCells() [][]*cell {
 }
 ```
 
-Here we create a multi-dimensional slice to represent our game’s board, and populate each element of the matrix with a **cell** using a new function called **newCell** which we’ll write in just a moment.
+这里我们创建多维的 slice（注：这是 Go 语言中的一种动态数组），代表我们的游戏面板，用 **newCell** 新函数创建的 **cell** 来填充矩阵的每个元素，我们待会就来实现 **newCell** 这个函数。
 
-Before moving on, let’s take a moment to visualize what **makeCells** is creating. We’re creating a slice that is equal in length to the number of rows on the grid, and each of these slices contains a slice of cells, equal in length to the number of columns. If we were to define **rows** and **columns** each equal to two, we’d create the following matrix:
+在接着往下阅读前，我们先花一点时间来看看 **makeCells** 函数做了些什么。我们创造了一个 slice（切片），这个 slice 的长度和格子的行数相等，每一个 slice 里面都有一个用 slice 包含的一系列格子，这些格子的数量与列数相等。如果我们把 **rows** 和 **columns** 都设定成 2，那么就会创建如下的矩阵：
 
 ```
 [
@@ -104,7 +102,7 @@ Before moving on, let’s take a moment to visualize what **makeCells** is cre
 ]
 ```
 
-We’re creating a much larger matrix that’s **10x10** cells:
+还可以创建一个更大的矩阵，包含 **10x10** 个格子：
 
 ```
 [
@@ -121,7 +119,7 @@ We’re creating a much larger matrix that’s **10x10** cells:
 ]
 ```
 
-Now that the we understand the shape and representation of the matrix we’re creating, let’s have a look at **newCell** which we use to actually populate the matrix:
+现在应该理解了我们创造的矩阵的形状和表示方法。让我们看看 **newCell** 函数到底是怎么填充矩阵的：
 
 ```
 func newCell(x, y int) *cell {
@@ -158,15 +156,15 @@ func newCell(x, y int) *cell {
 }
 ```
 
-There’s quite a lot going on in this function so let’s break it down. The first thing we do is create a copy of our **square** definition. This allows us to change its contents to customize the current cell’s position, without impacting any other cells that are also using the **square** slice. Next we iterate over the **points** copy and act based on the current index. We use a modulo operation to determine if we’re at an X (**i % 3 == 0**) or Y (**i % 3 == 1**) coordinate **of the shape** (skipping Z since we’re operating in two dimensions) and determine the size (as a percentage of the entire game board) of the cell accordingly, as well as it’s position based on the X and Y coordinate of the cell **on the game board**.
+这个函数里有很多内容，我们把它分成几个部分。我们做的第一件事是复制了 **square**  的定义。这让我们能够修改该定义，定制当前的格子位置，而不会影响其它使用 **square** 定义的格子。然后我们基于当前索引迭代复制后的 **points**。我们用求余数的方法来判断我们是在操作 X 坐标（**i % 3 == 0**），还是在操作 Y 坐标（**i % 3 == 1**）（跳过 Z 坐标是因为我们仅在二维层面上进行操作），跟着确定格子的大小（也就是占据整个游戏面板的比例），当然它的位置是基于格子在 **相对游戏面板的** X 和 Y 坐标。
 
-Next, we modify the points which currently contain a combination of **0.5**, **0** and **-0.5** as we defined them in the **square** slice. If the point is less than zero, we set it equal to the position times 2 (because OpenGL coordinates have a range of 2, between **-1** and **1**), minus 1 to normalize to OpenGL coordinates. If the position is greater than or equal to zero, we do the same thing but add the size we calculated.
+接着，我们改变那些包含在 **square** slice 中定义的 **0.5**，**0**， **-0.5** 这样的点。如果点小于 0，我们就把它设置成原来的 2 倍（因为 OpenGL 坐标的范围在 **-1** 到 **1** 之间，范围大小是 2），减 1 是为了归一化 OpenGL 坐标。如果点大于等于 0，我们的做法还是一样的，不过要加上我们计算出的尺寸。
 
-The purpose of this is to set the scale of each cell so that it fills only its percentage of the game board. Since we have 10 rows and 10 columns, each cell will be given 10% of the width and 10% of the height of the game board.
+这样做是为了设置每个格子的大小，这样它就能只填充它在面板中的部分。因为我们有 10 行 10 列，每一个格子能分到游戏面板的 10% 宽度和高度。
 
-Finally, after all the points have been scaled and positioned, we create a **cell** with the X and Y coordinate provided, and set the **drawable**field equal to a **Vertex Array Object** created from the **points** slice we just manipulated.
+最后，确定了所有点的位置和大小，我们用提供的 X 和 Y 坐标创建一个格子，设置 **drawable** 字段和我们刚刚操作 **points** 得到的 **Vertex Array Object** 对象一致。
 
-Alright, now in **main** we can remove our call to **makeVao** and replace it with a call to **makeCells**. We’ll also change **draw** to take the matrix of cells instead of a single **vao**:
+好了，现在我们在 **main** 函数里可以移去对 **makeVao** 的调用了，用 **makeCells** 代替。我们还修改了 **draw**，让它绘制一系列的格子而不是一个 **vao**。
 
 ```
 func main() {
@@ -191,7 +189,7 @@ func draw(cells [][]*cell, window *glfw.Window, program uint32) {
 }
 ```
 
-Now we’ll need each cell to know how to draw itself. Let’s add a **draw** function to the **cell**:
+现在我们要让每个格子知道怎么绘制出自己。在 **cell** 里面添加一个 **draw** 函数：
 
 ```
 func (c *cell) draw() {
@@ -200,9 +198,9 @@ func (c *cell) draw() {
 }
 ```
 
-This should look familiar, its nearly identical to how we were drawing the square **vao** in **draw** previously, the only difference being we **BindVertexArray** using **c.drawable**, which is the cell’s **vao** we created in **newCell**.
+这看上去很熟悉，它很像我们之前在 **vao** 里写的 **draw**，唯一的区别是我们的 **BindVertexArray** 函数用的是 **c.drawable**，这是我们在 **newCell** 中创造的格子的 **vao**。
 
-Back in the main **draw** function, we can loop over each cell and have it draw itself:
+回到 main 中的 **draw** 函数上，我们可以循环每个格子，让它们自己绘制自己：
 
 ```
 func draw(cells [][]*cell, window *glfw.Window, program uint32) {
@@ -220,13 +218,13 @@ func draw(cells [][]*cell, window *glfw.Window, program uint32) {
 }
 ```
 
-As you can see we loop over each of the cells and call its **draw** function. If you run the application you should see the following:
+你看到了我们循环每一个格子，调用它的 **draw** 函数。如果运行这段代码，你能看到像下面这样的东西：
 
  ![Conway's Game of Life in OpenGL and Golang Tutorial - Full Grid](https://kylewbanks.com/images/post/golang-opengl-conway-6.png) 
 
-Is this what you expected? What we’ve done is create a square for each row and column on the grid, and colored it in, effectively filling the entire game board!
+这是你想看到的吗？我们做的是在格子里为每一行每一列创建了一个方块，然后给它上色，这就填满了整个面板！
 
-We can see an visualize individual cells by commenting out the for-loop for a moment and doing the following:
+注释掉 for 循环，我们就可以看到分隔的格子，像这样：
 
 ```
 // for x := range cells {
@@ -240,23 +238,24 @@ cells[2][3].draw()
 
  ![Conway's Game of Life in OpenGL and Golang Tutorial - A Single Cell](https://kylewbanks.com/images/post/golang-opengl-conway-7.png) 
 
-This draws only the cell located at coordinate **(X=2, Y=3)**. As you can see, each individual cell takes up a small portion of the game board, and is responsible for drawing its own space. We can also see that our game board has its origin, that is the **(X=0, Y=0)** coordinate, in the bottom-left corner of the window. This is simply a result of the way our **newCell** function calculates the position, and could be made to use the top-right, bottom-right, top-left, center, or any other position as its origin.
+这只绘制坐标在 **(X=2, Y=3)** 的格子。你可以看到，每一个独立的格子占据着面板的一小块部分，并且会绘制自己那部分空间。我们也能看到游戏面板有自己的原点，也就是坐标为 **(X=0, Y=0)** 的点，在窗口的左下方。这仅仅是我们的 **newCell** 函数计算位置的方式，也可以用右上角，右下角，左上角，中央，或者其它任何位置当作原点。
 
-Let’s go ahead and remove the **cells[2][3].draw()** line and uncomment the for-loop, leaving us with the fully drawn grid we had above.
+接着往下做，移除 **cells[2][3].draw()** 这一行，取消 for 循环的那部分注释，变成之前那样全部绘制的样子。
 
-### Summary
+### 总结
 
-Alright - we can now use two triangles to draw a square, and we have ourselves a game board! We should be proud, we’ve covered a lot of ground up to this point and to be completely honest, the hardest part is behind us now!
+好了，我们现在能用两个三角形画出一个正方形了，我们还有一个游戏的面板了！我们该为此自豪，目前为止我们已经接触到了很多零碎的内容，老实说，最难的部分还在前面等着我们！
 
-Next up in [Part 3][16] we’ll implement the core game logic and see some cool simulations!
+在接下来的 [第三节]，我们会实现游戏核心逻辑，看到很酷的东西！
 
- _[Part 1: Hello, OpenGL][10]_  |  _[Part 2: Drawing the Game Board][11]_  |  _[Part 3: Implementing the Game][12]_ 
+ _[第 1 节: Hello, OpenGL][10]_  |  _[第二节: 绘制游戏面板][11]_  |  _[第三节：实现游戏功能][12]_ 
 
- _The full source code of the tutorial is available on [GitHub][13]._ 
+ _该教程的完整源代码可以在 [GitHub][13] 上获得。_ 
 
-### Checkpoint
 
-Here’s the contents of **main.go** at this point of the tutorial:
+### 回顾
+
+这是这一部分教程中 **main.go** 文件的内容：
 
 ```
 package main
@@ -391,7 +390,7 @@ func (c *cell) draw() {
 	gl.DrawArrays(gl.TRIANGLES, 0, int32(len(square)/3))
 }
 
-// initGlfw initializes glfw and returns a Window to use.
+// initGlfw initializes glfw and returns a Window to use. 初始化 glfw，返回一个可用的 Window
 func initGlfw() *glfw.Window {
 	if err := glfw.Init(); err != nil {
 		panic(err)
@@ -411,7 +410,7 @@ func initGlfw() *glfw.Window {
 	return window
 }
 
-// initOpenGL initializes OpenGL and returns an intiialized program.
+// initOpenGL initializes OpenGL and returns an intiialized program.  初始化 OpenGL 并返回一个可用的着色器程序
 func initOpenGL() uint32 {
 	if err := gl.Init(); err != nil {
 		panic(err)
@@ -436,7 +435,7 @@ func initOpenGL() uint32 {
 	return prog
 }
 
-// makeVao initializes and returns a vertex array from the points provided.
+// makeVao initializes and returns a vertex array from the points provided. 初始化并返回由 points 提供的顶点数组
 func makeVao(points []float32) uint32 {
 	var vbo uint32
 	gl.GenBuffers(1, &vbo)
@@ -476,8 +475,8 @@ func compileShader(source string, shaderType uint32) (uint32, error) {
 	return shader, nil
 }
 ```
-Let me know if this post was helpful on Twitter [@kylewbanks][20] or down below, and follow me to keep up with future posts!
 
+让我知道这篇文章对你有没有帮助，在 Twitter [@kylewbanks][20] 或者下方的连接，关注我以便获取最新的文章！
 
 
 --------------------------------------------------------------------------------
@@ -485,7 +484,7 @@ Let me know if this post was helpful on Twitter [@kylewbanks][20] or down belo
 via: https://kylewbanks.com/blog/tutorial-opengl-with-golang-part-2-drawing-the-game-board
 
 作者：[kylewbanks ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[GitFtuture](https://github.com/GitFuture)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
