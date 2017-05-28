@@ -1,19 +1,18 @@
 在 Linux 服务器关机前向用户显示一条自定义消息
 ============================================================
 
-
-在先前的文章中，我们解释了 Linux 中[ shutdown、poweroff、halt、reboot 命令的不同之处][3]，并揭示了在用不同的选项执行这些命令时它们实际做了什么。
+在先前的文章中，我们解释了 Linux 中 [shutdown、poweroff、halt、reboot 命令的不同之处][3]，并揭示了在用不同的选项执行这些命令时它们实际做了什么。
 
 本篇将会向你展示如何在系统关机时向所有的系统用户发送一条自定义的消息。
 
 **建议阅读：**[tuptime - 显示 Linux 系统的历史和统计运行时间][4]
 
-作为一名系统管理员，在你关闭服务器之前，你也许想要发送一条消息来警告他们系统将要关闭。默认上，shutdown 命令会如下所示给其他系统用户广播这条信息：
+作为一名系统管理员，在你关闭服务器之前，你也许想要发送一条消息来警告他们系统将要关闭。默认上，`shutdown` 命令会如下所示给其他系统用户广播这条信息：
 
 ```
 # shutdown 13:25
 ```
-Linux Shutdown Broadcast Message
+Linux 关机操作广播消息：
 ```
 Shutdown scheduled for Fri 2017-05-12 13:25:00 EAT, use 'shutdown -c' to cancel.
 Broadcast message for root@tecmint (Fri 2017-05-12 13:23:34 EAT):
@@ -27,14 +26,14 @@ The system is going down for power-off at Fri 2017-05-12 13:25:00 EAT!
 ```
  [![Linux System Shutdown Message](https://www.tecmint.com/wp-content/uploads/2017/05/Linux-System-Shutdown-Message.png)][5] 
 
-Linux 系统关闭消息
+*Linux 系统关闭消息*
 
 假设你有一些关键的系统操作，如计划系统备份或更新会在系统关闭的时候进行，如下所示，你可以使用 `-c` 选项取消关机，并在执行玩这些操作后继续执行：
 
 ```
 # shutdown -c
 ```
-Linux Shutdown Cancel Message
+Linux 关机操作取消消息：
 ```
 Shutdown scheduled for Fri 2017-05-12 14:10:22 EAT, use 'shutdown -c' to cancel.
 Broadcast message for root@tecmint (Fri 2017-05-14 :10:27 EAT):
@@ -45,8 +44,7 @@ The system shutdown has been cancelled at Fri 2017-05-12 14:11:27 EAT!
 
 不要错过：
 
-1.  [关系系统启动进程和服务（SysVinit、Systemd 和 Upstart）][1]
-
+1.  [管理系统启动进程和服务（SysVinit、Systemd 和 Upstart）][1]
 2.  [11 个 Linux 中 cron 计划任务示例][2]
 
 现在你知道了如何在系统关闭前向其他系统用户发送自定义消息了。你有其他关于这个主题想要分享的想法么？何不使用下面的评论栏？
@@ -61,9 +59,9 @@ Aaron Kili 是一个 Linux 和 F.O.S.S 爱好者、Linux 系统管理员、网�
 
 via: https://www.tecmint.com/show-linux-server-shutdown-message/
 
-作者：[Aaron Kili  ][a]
+作者：[Aaron Kili][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
