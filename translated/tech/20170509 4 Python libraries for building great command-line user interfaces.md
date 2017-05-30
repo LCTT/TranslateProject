@@ -1,38 +1,37 @@
-ucasFL translating
-4 Python libraries for building great command-line user interfaces
+4 个用于构建优秀的命令行用户界面的 Python 库
 ============================================================
 
-### In the second installment of a two-part series on terminal applications with great command-line UIs, we explore Prompt Toolkit, Click, Pygments, and Fuzzy Finder.
+### 在一个分为两部分的关于具有优秀命令行用户界面的应用的系列文章的第二篇安装教程中，我们将讨论 Prompt、Toolkit、Click、Pygments 和 Fuzzy Finder 。
 
 
 ![Getting started with 4 practical Python libraries: Prompt Toolkit, Click, Pygments, and Fuzzy Finder](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/library-libraries-search.png?itok=YE0Qk276 "Getting started with 4 practical Python libraries: Prompt Toolkit, Click, Pygments, and Fuzzy Finder")
->Image by : [Mennonite Church USA Archives][16]. Modified by Opensource.com. [CC BY-SA 4.0][17]
+>图片来自 ： [美国 Mennonite 教堂档案][16] 。 Opensource.com. [CC BY-SA 4.0][17]
 
-This is the second installment in my two-part series on terminal applications with great command-line UIs. In the [first article][18], I discussed features that make a command-line application a pure joy to use. In part two, I'll look at how to implement those features in Python with the help of a few libraries. By the end of this article, readers should have a good understanding of how to use [Prompt Toolkit][19], [Click][20] (Command Line Interface Creation Kit), [Pygments][21], and [Fuzzy Finder][22] to implement an easy-to-use [REPL][23].
+这是我的一个分为两部分的关于具有优秀命令行用户界面的应用的系列文章的第二篇安装教程。在[第一篇文章][18]中，我们讨论了一些能够使命令行应用用起来令人感到高兴的特性。在第二篇文章中，我们来看看如何用 Python 的一些库来实现这些特性。
 
-I plan to achieve this in fewer than 20 lines of Python code. Let's begin.
+我打算用少于 20 行 Python 代码来实现。让我们开始吧。
 
-Programming and development
+编程和开发的一些资源
 
-*   [New Python content][1]
+*   [最新的 Python 内容][1]
 
-*   [Our latest JavaScript articles][2]
+*   [我们最新的 JavaScript 文章][2]
 
-*   [Recent Perl posts][3]
+*   [近期 Perl 文章][3]
 
-*   [Red Hat Developers Blog][4]
+*   [Red Hat 开发者博客][4]
 
 ### Python Prompt Toolkit
 
-I like to think of this library as the Swiss Army knife of command-line apps—it acts as a replacement for **[readline][5]**, **[curses][6]**, and much more. Let's install the library and get started:
+我习惯于把这个库称为命令行应用的瑞士军刀，它可以作为 **[readline][5]** 、**[cursed][6]** 等的替代品。让我们首先安装这个库，然后开始该教程：
 
 ```
 pip install prompt_toolkit
 ```
 
-We'll start with a simple REPL. Typically a REPL will accept user input, do an operation, and print the results. For our example, we're going to build an "echo" REPL. It merely prints back what the user typed in:
+我们以一个简单的 REPL 开始。一个典型的 REPL 会接收用户的输入，进行一个操作，然后输出结果。比如在我们的例子中，我们将要实现一个和 “echo” 功能一样的 REPL 。它仅仅是打印出用户的输入：
 
-### REPL
+#### REPL
 
 ```
 from prompt_toolkit import prompt
@@ -42,11 +41,11 @@ while 1:
     print(user_input)
 ```
 
-That is all it takes to implement a REPL. It can read user input and print out what they have entered. The **prompt** function used in this code snippet is from the **prompt_toolkit** library; it is a replacement for the **readline** library.
+这就是实现 REPL 的全部代码。它可以读取用户的输入，然后打印出用户的输入内容。在这段代码中使用的 `prompt` 函数来自 `prompt_toolkit` 库，它是 `readline` 库的一个替代品。
 
-### History
+#### 历史命令
 
-To enhance our REPL, we can add command history:
+为了提高我们的 REPL，我们可以添加历史命令：
 
 ```
 from prompt_toolkit import prompt
@@ -59,11 +58,11 @@ while 1:
     print(user_input)
 ```
 
-We've just added persistent history to our REPL. Now we can use the up/down arrow to navigate the history, and use the **Ctrl**+**R** to search the history. This satisfies the basic etiquette of a command line.
+我们刚刚给 REPL 添加了持续的**历史命令**。现在，我们可以使用上/下箭头来浏览**历史命令**，并使用 **Ctrl+R** 来搜索**历史命令**。它满足命令行的基本准则。
 
-### Auto-suggestion
+#### 自动推荐
 
-One of the discoverability tricks I covered in part one was the automatic suggestion of commands from the history. (We saw this feature pioneered in the **fish** shell.) Let's add that feature to our REPL:
+在第一篇教程中，我讲到的一个已发现技巧是自动推荐**历史命令**。（我首先在 **fish** shell 中看到这一特性。）让我们把这一特性加入到我们的 REPL 中：
 
 ```
 from prompt_toolkit import prompt
@@ -78,15 +77,15 @@ while 1:
     print(user_input)
 ```
 
-All we had to do was add a new argument to the **prompt()** API call. Now we have a REPL that has **fish**-style auto-suggestion from the history.
+我们只需要给 `prompt()` API 调用添加一个新的参数。现在，我们有了一个具有 **fish shell** 风格的 REPL，它可以自动推荐**历史命令**。
 
-### Auto-completion
+#### 自动补全
 
-Now let's implement an enhancement of Tab-completion via auto-completion, which pops up possible suggestions as the user starts typing input.
+现在，让我们通过**自动补全**来加强 Tab-补全。它能够在用户开始输入的时候弹出可能的命令推荐。
 
-How will our REPL know what to suggest? We supply a dictionary of possible items to suggest.
+REPL 如何来进行推荐呢？我们使用一个字典来进行可能项的推荐。
 
-Let's say we're implementing a REPL for SQL. We can stock our auto-completion dictionary with SQL keywords. Let's see how to do that:
+我们实现一个针对 SQL 的 REPL 。我们可以把自动补全字典和 SQL 存到一起。让我们看一看这是如何实现的：
 
 ```
 from prompt_toolkit import prompt
@@ -106,25 +105,25 @@ while 1:
     print(user_input)
 ```
 
-Once again, we simply can use a built-in completion routine of prompt-toolkit called **WordCompleter**, which matches the user input with the dictionary of possible suggestions and offers up a list.
+再次说明，我们只是简单的使用了 `prompt-toolkit` 内建的一个叫做 `WordCompleter` 的补全特性，它能够把用户输入和可能推荐的字典进行匹配，然后提供一个列表。
 
-We now have a REPL that can do auto-completion, fish-style suggestions from history, and up/down traversal of history. All of that in less than 10 lines of actual code.
+现在，我们有了一个能够自动补全、`fish shell` 风格的历史命令推荐以及上/下浏览历史的 REPL 。实现这些特性只用了不到 10 行的实际代码。
 
 ### Click
 
-Click is a command-line creation toolkit that makes it easy to parse command-line options arguments and parameters for the program. This section does not talk about how to use Click as an arguments parser; instead, I'm going to look at some utilities that ship with Click.
+`Click` 是一个命令行创建工具包，使用它能够更容易的为程序解析命令行选项的参数和常量。在这儿我们不讨论如何使用 `Click` 来作为参数解析器。相反，我们将会看到 `Click` 的一些实际功能。
 
-Installing click is simple:
+安装 `Click`： 
 
 ```
 pip install click
 ```
 
-### Pager
+#### Pager
 
-Pagers are Unix utilities that display long output one page at a time. Examples of pagers are **less**, **more**, **most**, etc. Displaying the output of a command via a pager is not just friendly design, but also the decent thing to do.
+`Paper` 是 Unix 系统上的实用工具，它们能够一次性在一页上显示很长的输出。`Pager` 的一些例子包括 `less`、`more`、`most` 等。通过 `pager` 来显示一个命令的输出不仅仅是一个友好的设计，同时也是需要正确做的事。
 
-Let's take the previous example further. Instead of using the default **print()** statement, we can use **click.echo_via_pager()**. This will take care of sending the output to stdout via a pager. It is platform-agnostic, so it will work in Unix or Windows. **click.echo_via_pager()** will try to use decent defaults for the pager to be able to show color codes if necessary:
+让我们进一步改进前面的例子。我们不再使用默认的 `print()` 语句，取而代之的是 `click.echo_via_pager()` 。它将会把输出通过 `pager` 发送到标准输出。这是平台无关的，因此在 Unix 系统或 Windows 系统上均能工作。如果必要的话，`click_via_pager` 会尝试使用一个合适的默认 `pager` 来输出，从而能够显示代码高亮。
 
 ```
 from prompt_toolkit import prompt
@@ -145,9 +144,9 @@ while 1:
     click.echo_via_pager(user_input)
 ```
 
-### Editor
+#### 编辑器
 
-One of the niceties mentioned in my previous article was falling back to an editor when the command gets too complicated. Once again **click** has an [easy API][24] to launch an editor and return the text entered in the editor back to the application:
+在我以前的文章中，一个值得一提的细节是，当命令过于复杂的时候进入编辑器来编辑。`Click` 有一个[简单的 API][24] 能够打开编辑器，然后把在编辑器中输入的文本返回给应用。
 
 ```
 import click
@@ -156,13 +155,13 @@ message = click.edit()
 
 ### Fuzzy Finder
 
-Fuzzy Finder is a way for users to narrow down the suggestions with minimal typing. Once again, there is a library that implements Fuzzy Finder. Let's install the library:
+`Fuzzy Finder` 是一种通过极小输入来为用户减少推荐的方法。幸运的是，有一个库可以实现 `Fuzzy Finder` 。让我们首先安装这个库：
 
 ```
 pip install fuzzyfinder
 ```
 
-The API for Fuzzy Finder is simple. You pass in the partial string and a list of possible choices, and Fuzzy Finder will return a new list that matches the partial string using the fuzzy algorithm ranked in order of relevance. For example:
+`Fuzzy Finder` 的 API 很简单。用户向它传递部分字符串和一系列可能的选择，然后，`Fuzzy Finder` 将会返回一个与部分字符串匹配的列表，这一列表是通过模糊算法根据相关性排序得出的。比如：
 
 ```
 >>> from fuzzyfinder import fuzzyfinder
@@ -173,7 +172,7 @@ The API for Fuzzy Finder is simple. You pass in the partial string and a list of
 ['abcd', 'defabca', 'aagbec']
 ```
 
-Now that we have our **fuzzyfinder**, let's add it into our SQL REPL. The way we do this is to define a custom completer instead of the **WordCompleter** that comes with **prompt-toolkit**. For example:
+现在我们有了 `fuzzyfinder`，让我们把它加入到我们的 SQL REPL 中。方法是我们自定义一个 `completer` 而不是使用来自 `prompt-toolkit` 库的 `WordCompleter` 。比如：
 
 ```
 from prompt_toolkit import prompt
@@ -203,17 +202,17 @@ while 1:
 
 ### Pygments
 
-Now let's add syntax highlighting to the user input. We are building a SQL REPL, and having colorful SQL statements will be nice.
+现在，让我们给用户输入添加语法高亮。我们搭建一个 SQL REPL，并且具有丰富多彩的 SQL 语句，这会很棒。
 
-Pygments is a syntax highlighting library with built-in support for more than 300 languages. Adding syntax highlighting makes an application colorful, which helps users spot mistakes—such as typos, unmatched quotes, or brackets—in their SQL before executing it.
+`Pygments` 是一个提供语法高亮的库，内建支持超过 300 种语言。添加语法高亮能够使应用变得丰富多彩，从而能够帮助用户在执行程序前发现 SQL 中存在的错误，比如拼写错误、引号不匹配或括号不匹配。
 
-First install Pygments:
+首先，安装 `Pygments` ：
 
 ```
 pip install pygments
 ```
 
-Let's use Pygments to add color to our SQL REPL:
+让我们使用 `Pygments` 来为 SQL REPL 添加颜色：
 
 ```
 from prompt_toolkit import prompt
@@ -243,38 +242,34 @@ while 1:
     click.echo_via_pager(user_input)
 ```
 
-Prompt Toolkit works well with the Pygments library. We pick **SqlLexer** supplied by **Pygments** and pass it into the **prompt** API from **prompt-toolkit**. Now all user input is treated as SQL statements and colored appropriately.
+`Prompt Toolkit` 能够和 `Pygments` 一同很好的工作。我们把 `Pygments` 提供的 `SqlLexer` 加入到来自 `prompt-toolkit` 的 `prompt` 中。现在，所有的用户输入都会被当作 SQL 语句，并进行适当着色。
 
-### Conclusion
+### 结论
 
-That concludes our journey through the creation of a powerful REPL that has all the features of a common shell, such as history, key bindings, and user-friendly features such as auto-completion, fuzzy finding, pager support, editor support, and syntax highlighting. We achieved all of that in fewer than 20 statements of Python.
+我们的“旅途”通过创建一个强大的 REPL 结束，这个 REPL 具有常见的 shell 的全部特性，比如历史命令，键位绑定，用户友好性比如自动补全、模糊查找、`pager` 支持、编辑器支持和语法高亮。我们仅用少于 20 行 Python 代码实现了这个 REPL 。
 
-Wasn't that easy? Now you have no excuses not to write a stellar command-line app. These resources might help:
+不是很简单吗？现在，你没有理由不会写一个自己的命令行应用了。下面这些资源可能有帮助：
 
-*   [Click][7] (Command Line Interface Creation Kit)
-
+*   [Click][7] （命令行界面创建工具）
 *   [Fuzzy Finder][8]
-
 *   [Prompt Toolkit][9]
-
-*   See the [Prompt Toolkit tutorial tutorial][10] and [examples][11] in the prompt-toolkit repository.
-
+*   在 `prompt-toolkit` 的仓库中查看 [Prompt Toolkit 教程][10] 和[例子][11] 
 *   [Pygments][12]
 
- _Learn more in Amjith Ramanujam's  [PyCon US 2017][13] talk, [Awesome Commandline Tools][14], May 20th in Portland, Oregon._
+你也可以在我在 [PyCon US 2017][13] 的演讲[优秀的命令行工具][14]中学到更多东西，该会议是 5 月 20 日在波特兰，俄勒冈举行的。
 
 --------------------------------------------------------------------------------
 
 作者简介：
 
-Amjith Ramanujam - Amjith Ramanujam is the creator of pgcli and mycli. People think they're pretty cool and he doesn't disagree. He likes programming in Python, Javascript and C. He likes to write simple, understandable code, sometimes he even succeeds. 
+Amjith Ramanujam - Amjith Ramanujam 是 `pgcli` 和 `mycli` 的作者。人们认为它们很酷，但是他不同意。他喜欢用 Python、JavaScript 和 C 编程。他喜欢写一些简单、易于理解的代码，有时候这样做是成功的。
 
 ----------------------------
 
 via: https://opensource.com/article/17/5/4-practical-python-libraries
 
 作者：[ Amjith Ramanujam][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ucasFL](https://github.com/ucasFL)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -283,7 +278,7 @@ via: https://opensource.com/article/17/5/4-practical-python-libraries
 [1]:https://opensource.com/tags/python?src=programming_resource_menu
 [2]:https://opensource.com/tags/javascript?src=programming_resource_menu
 [3]:https://opensource.com/tags/perl?src=programming_resource_menu
-[4]:https://developers.redhat.com/?intcmp=7016000000127cYAAQ&src=programming_resource_menu
+[4]:https://developers.redhat.com/?intcmp=7016000000127cYAAQ&amp;amp;src=programming_resource_menu
 [5]:https://docs.python.org/2/library/readline.html
 [6]:https://docs.python.org/2/library/curses.html
 [7]:http://click.pocoo.org/5/

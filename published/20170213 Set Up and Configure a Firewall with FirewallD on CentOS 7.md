@@ -1,40 +1,46 @@
-translating by Locez
-Set Up and Configure a Firewall with FirewallD on CentOS 7
-============================================================
+在 CentOS 上使用 FirewallD 配置防火墙
+================================================
 
- ![](https://www.rosehosting.com/blog/wp-content/uploads/2017/02/set-up-and-configure-a-firewall-with-firewalld-on-centos-7.jpg) 
+![](https://www.rosehosting.com/blog/wp-content/uploads/2017/02/set-up-and-configure-a-firewall-with-firewalld-on-centos-7.jpg) 
 
-FirewallD is a firewall management tool available by default on CentOS 7 servers. Basically, it is a wrapper around iptables and it comes with graphical configuration tool firewall-config and command line tool firewall-cmd. With the iptables service, every change requires flushing of the old rules and reading the new rules from the `/etc/sysconfig/iptables` file, while with firewalld only differences are applied.
+FirewallD 是 CentOS 7 服务器上默认使用的防火墙管理工具。从根本上来讲，它是在 iptables 基础上的一个包装，它同时拥有图形配置工具 firewall-config 和命令行工具 firewall-cmd。使用 iptables 服务的话，每次更改设置后都要求刷新旧的规则，然后从文件 `/etc/sysconfig/iptables` 中读取新的规则，然而 firewalld 只对差异进行改动。
 
-### FirewallD zones
+### FirewallD 区域
 
-FirewallD uses services and zones instead of iptables rules and chains. By default the following zones are available:
+FirewallD 使用服务和区域代替 iptables 的规则和链。默认下面的区域都是可用的：
 
-*   drop – Drop all incoming network packets with no reply, only outgoing network connections are available.
-*   block – Reject all incoming network packets with an icmp-host-prohibited message, only outgoing network connections are available.
-*   public – Only selected incoming connections are accepted, for use in public areas
-*   external For external networks with masquerading enabled, only selected incoming connections are accepted.
-*   dmz – DMZ demilitarized zone, publicly-accessible with limited access to the internal network, only selected incoming connections are accepted.
-*   work – For computers in your home area, only selected incoming connections are accepted.
-*   home – For computers in your home area, only selected incoming connections are accepted.
-*   internal -For computers in your internal network, only selected incoming connections are accepted.
-*   trusted – All network connections are accepted.
+* drop——任何流入网络的包都被丢弃，不作出任何响应，只允许流出的网络连接。
 
-To list all available zones run:
+* block——任何进入的网络连接都被拒绝，并返回 IPv4 的 icmp-host-prohibited 报文。只允许流出的网络连接。
+
+* public——只接受选中的传入网络连接，例如在公共场合。
+
+* public——用于启用伪装的外部网络，只接受被选中的传入网络连接。
+
+* dmz——隔离区域(demilitarized zone),有限制地公开访问内部网络，只接受被选中的传入网络连接。
+
+* work——用于工作区域中的计算机，只接受选中的流入网络连接。
+
+* home——用于家庭区域中的计算机，只接受选中的流入网络连接。
+
+* internal——用于内部网络中的计算机，只接受选中的流入网络连接。
+
+* trusted——所有的网络连接都可以接受。
+
+要显示所有可用的区域可以运行：
 
 ```
 # firewall-cmd --get-zones
 work drop internal external trusted home dmz public block
 ```
-
-To list the default zone:
+要显示默认的区域：
 
 ```
 # firewall-cmd --get-default-zone
 public
 ```
 
-To change the default zone:
+改变默认的区域：
 
 ```
 # firewall-cmd --set-default-zone=dmz
@@ -42,44 +48,41 @@ To change the default zone:
 dmz
 ```
 
-### FirewallD services
+### FirewallD 服务
 
-FirewallD services are xml configuration files, with information of a service entry for firewalld. TO list all available services run:
+FirewallD服务是 xml 配置文件，每个文件里面记录有防火墙针对某项服务的配置信息。要列出所有可用的服务，运行命令：
 
 ```
 # firewall-cmd --get-services
 amanda-client amanda-k5-client bacula bacula-client ceph ceph-mon dhcp dhcpv6 dhcpv6-client dns docker-registry dropbox-lansync freeipa-ldap freeipa-ldaps freeipa-replication ftp high-availability http https imap imaps ipp ipp-client ipsec iscsi-target kadmin kerberos kpasswd ldap ldaps libvirt libvirt-tls mdns mosh mountd ms-wbt mysql nfs ntp openvpn pmcd pmproxy pmwebapi pmwebapis pop3 pop3s postgresql privoxy proxy-dhcp ptp pulseaudio puppetmaster radius rpc-bind rsyncd samba samba-client sane smtp smtps snmp snmptrap squid ssh synergy syslog syslog-tls telnet tftp tftp-client tinc tor-socks transmission-client vdsm vnc-server wbem-https xmpp-bosh xmpp-client xmpp-local xmpp-server
 ```
 
-xml configuration files are stored in the `/usr/lib/firewalld/services/` and `/etc/firewalld/services/`directories.
+xml 配置文件存放在 `/usr/lib/firewalld/services/` 和 `/etc/firewalld/services/` 目录内。
 
-### Configuring your firewall with FirewallD
+### 使用 FirewallD 配置你的防火墙
 
-As an example, here is how you can configure your [RoseHosting VPS][6] firewall with FirewallD if you were running a web server, SSH on port 7022 and mail server.
+作为一个例子，如果你正在运行一个 web 服务器、7022端口上的 SSH 和 mail 服务器，这里会告诉你如何用 FirewallD 配置你的 [RoseHosting VPS](6) 防火墙。
 
-First we will set the default zone to dmz.
+我们首先设置默认区域为 dmz：
 
 ```
 # firewall-cmd --set-default-zone=dmz
 # firewall-cmd --get-default-zone
 dmz
 ```
-
-To add permanent service rules for HTTP and HTTPS to the dmz zone, run:
+为了将 HTTP 和 HTTPS 的服务规则永久加入 dmz 区域，运行命令：
 
 ```
 # firewall-cmd --zone=dmz --add-service=http --permanent
 # firewall-cmd --zone=dmz --add-service=https --permanent
 ```
-
-Open port 25 (SMTP) and port 465 (SMTPS) :
+打开 25 端口SMTP)和 465 端口(SMTPS):
 
 ```
 firewall-cmd --zone=dmz --add-service=smtp --permanent
 firewall-cmd --zone=dmz --add-service=smtps --permanent
 ```
-
-Open, IMAP, IMAPS, POP3 and POP3S ports:
+打开 IMAP、IMAPS、POP3 和 POP3S端口：
 
 ```
 firewall-cmd --zone=dmz --add-service=imap --permanent
@@ -88,24 +91,22 @@ firewall-cmd --zone=dmz --add-service=pop3 --permanent
 firewall-cmd --zone=dmz --add-service=pop3s --permanent
 ```
 
-Since the SSH port is changed to 7022, we will remove the ssh service (port 22) and open port 7022
+因为 SSH 端口号已经被改为 7022，所以我们将删除 ssh 服务(端口 22)，然后开启端口 7022：
 
 ```
 firewall-cmd --remove-service=ssh --permanent 
 firewall-cmd --add-port=7022/tcp --permanent 
 ```
-
-To implement the changes we need to reload the firewall with:
+为了让这些改变生效，我们需要用命令重新加载防火墙：
 
 ```
 firewall-cmd --reload
 ```
+最后，你可以使用命令列出规则：
 
-Finally, you can list the rules with:
-
-### firewall-cmd –list-all
 
 ```
+### firewall-cmd –list-all
 dmz
 target: default
 icmp-block-inversion: no
@@ -119,20 +120,21 @@ forward-ports:
 sourceports:
 icmp-blocks:
 rich rules:
+
 ```
 
-* * *
+***
 
-Of course, you don’t have to do any of this if you use one of our [CentOS VPS hosting][7] services, in which case you can simply ask our expert Linux admins to setup this for you. They are available 24×7 and will take care of your request immediately.
+当然，如果您使用我们的 [CentOS VPS hosting][7] 服务中任何一种服务，您都不必亲自做上面任何设置，您可以让我们专业的 Linux 管理员来为您设置。他们提供 24x7 的服务，并且会立即处理您的要求。
 
-PS. If you liked this post please share it with your friends on the social networks using the sharing buttons or simply leave a reply below. Thanks.
+PS：如果您喜欢这篇文章，请将它分享到社交平台上与您的朋友共享，或者仅仅在下面留言回复。谢谢！
 
 --------------------------------------------------------------------------------
 
 via: https://www.rosehosting.com/blog/set-up-and-configure-a-firewall-with-firewalld-on-centos-7/
 
 作者：[rosehosting.com][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zhousiyu325](https://github.com/zhousiyu325)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
