@@ -1,3 +1,4 @@
+Translating by chenxinlong
 An introduction to Linux's EXT4 filesystem
 ============================================================
 
@@ -260,7 +261,7 @@ David Both - David Both is a Linux and Open Source advocate who resides in Ralei
 via: https://opensource.com/article/17/5/introduction-ext4-filesystem
 
 作者：[David Both ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/chenxinlong)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
