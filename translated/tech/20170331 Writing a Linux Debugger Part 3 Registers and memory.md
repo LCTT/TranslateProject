@@ -1,40 +1,40 @@
-ictlyh Translating
-Writing a Linux Debugger Part 3: Registers and memory
+开发 Linux 调试器第三部分：寄存器和内存
 ============================================================ 
 
-In the last post we added simple address breakpoints to our debugger. This time we’ll be adding the ability to read and write registers and memory, which will allow us to screw around with our program counter, observe state and change the behaviour of our program.
+上一篇博文中我们给调试器添加了一个简单的地址断点。这次，我们将添加读写寄存器和内存的功能，这将使我们能够使用我们的程序计数器、观察状态和改变程序的行为。
 
 * * *
 
-### Series index
+### 系列文章索引
 
-These links will go live as the rest of the posts are released.
+随着后面文章的发布，这些链接会逐渐生效。
 
-1.  [Setup][3]
+1.  [启动][3]
 
-2.  [Breakpoints][4]
+2.  [断点][4]
 
-3.  [Registers and memory][5]
+3.  [寄存器和内存][5]
 
-4.  [Elves and dwarves][6]
+4.  [Elves 和 dwarves][6]
 
-5.  [Source and signals][7]
+5.  [源码和信号][7]
 
-6.  [Source-level stepping][8]
+6.  [源码级逐步执行][8]
 
-7.  Source-level breakpoints
+7.  源码级断点
 
-8.  Stack unwinding
+8.  调用栈展开
 
-9.  Reading variables
+9.  读取变量
 
-10.  Next steps
+10.  下一步
 
+译者注：ELF（[Executable and Linkable Format](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format "Executable and Linkable Format") 可执行文件格式），DWARF（一种广泛使用的调试数据格式，参考 [WIKI](https://en.wikipedia.org/wiki/DWARF "DWARF WIKI")）
 * * *
 
-### Registering our registers
+### 注册我们的寄存器
 
-Before we actually read any registers, we need to teach our debugger a bit about our target, which is x86_64\. Alongside sets of general and special purpose registers, x86_64 has floating point and vector registers available. I’ll be omitting the latter two for simplicity, but you can choose to support them if you like. x86_64 also allows you to access some 64 bit registers as 32, 16, or 8 bit registers, but I’ll just be sticking to 64\. Due to these simplifications, for each register we just need its name, its DWARF register number, and where it is stored in the structure returned by `ptrace`. I chose to have a scoped enum for referring to the registers, then I laid out a global register descriptor array with the elements in the same order as in the `ptrace` register structure.
+在我们真正读取任何寄存器之前，我们需要告诉调试器更多关于我们平台，也就是 x86_64 的信息。除了多组通用和专用目的寄存器，x86_64 还提供浮点和向量寄存器。为了简化，我将跳过后两种寄存器，但是你如果喜欢的话也可以选择支持它们。x86_64 也允许你像访问 32、16 或者 8 位寄存器那样访问一些 64 位寄存器，但我只会介绍 64 位寄存器。由于这些简化，对于每个寄存器我们只需要它的名称，它的 DWARF 寄存器编号以及 `ptrace` 返回结构体中的存储地址。我使用范围枚举引用这些寄存器，然后我列出了一个全局寄存器描述符数组，其中元素顺序和 `ptrace` 中寄存器结构体相同。
 
 ```
 enum class reg {
@@ -87,9 +87,9 @@ const std::array<reg_descriptor, n_registers> g_register_descriptors {{
 }};
 ```
 
-You can typically find the register data structure in `/usr/include/sys/user.h` if you’d like to look at it yourself, and the DWARF register numbers are taken from the [System V x86_64 ABI][11].
+如果你想自己看看的话，你通常可以在 `/usr/include/sys/user.h` 找到寄存器数据结构，另外 DWARF 寄存器编号取自 [System V x86_64 ABI][11]。
 
-Now we can write a bunch of functions to interact with registers. We’d like to be able to read registers, write to them, retrieve a value from a DWARF register number, and lookup registers by name and vice versa. Let’s start with implementing `get_register_value`:
+现在我们可以编写一堆函数来和寄存器交互。我们想要读取寄存器、写入数据、根据 DWARF 寄存器编号获取值，以及通过名称查找寄存器，反之类似。让我们先从实现 `get_register_value` 开始：
 
 ```
 uint64_t get_register_value(pid_t pid, reg r) {
@@ -99,9 +99,9 @@ uint64_t get_register_value(pid_t pid, reg r) {
 }
 ```
 
-Again, `ptrace` gives us easy access to the data we want. We just construct an instance of `user_regs_struct` and give that to `ptrace` alongside the `PTRACE_GETREGS` request.
+`ptrace` 使得我们可以轻易获得我们想要的数据。我们只需要构造一个 `user_regs_struct` 实例并把它和 `PTRACE_GETREGS` 请求传递给 `ptrace`。
 
-Now we want to read `regs` depending on which register was requested. We could write a big switch statement, but since we’ve laid out our `g_register_descriptors` table in the same order as `user_regs_struct`, we can just search for the index of the register descriptor, and access `user_regs_struct` as an array of `uint64_t`s.[1][9]
+现在取决于被请求的寄存器，我们想要读取 `regs`。我们可以写一个很大的 switch 语句，但由于我们 `g_register_descriptors` 表的布局顺序和 `user_regs_struct` 相同，我们只需要搜索寄存器描述符的索引，然后作为 `uint64_t` 数组访问 `user_regs_struct`。[1][9]
 
 ```
         auto it = std::find_if(begin(g_register_descriptors), end(g_register_descriptors),
@@ -110,9 +110,9 @@ Now we want to read `regs` depending on which register was requested. We could
         return *(reinterpret_cast<uint64_t*>(&regs) + (it - begin(g_register_descriptors)));
 ```
 
-The cast to `uint64_t` is safe because `user_regs_struct` is a standard layout type, but I think the pointer arithmetic is technically UB. No current compilers even warn about this and I’m lazy, but if you want to maintain utmost correctness, write a big switch statement.
+到 `uint64_t` 的转换是安全的，因为 `user_regs_struct` 是一个标准布局类型，但我认为指针算术技术上是未定义的行为（undefined behavior）。当前没有编译器会对此产生警告，我也懒得修改，但是如果你想保持最严格的正确性，那就写一个大的 switch 语句。
 
-`set_register_value` is much the same, we just write to the location and write the registers back at the end:
+`set_register_value` 非常类似，我们只是写入到地址并在最后写回寄存器：
 
 ```
 void set_register_value(pid_t pid, reg r, uint64_t value) {
@@ -126,7 +126,7 @@ void set_register_value(pid_t pid, reg r, uint64_t value) {
 }
 ```
 
-Next is lookup by DWARF register number. This time I’ll actually check for an error condition just in case we get some weird DWARF information:
+下一步是通过 DWARF 寄存器编号查找。这次我会真正检查一个错误条件以防我们得到一些奇怪的 DWARF 信息。
 
 ```
 uint64_t get_register_value_from_dwarf_register (pid_t pid, unsigned regnum) {
@@ -140,7 +140,7 @@ uint64_t get_register_value_from_dwarf_register (pid_t pid, unsigned regnum) {
 }
 ```
 
-Nearly finished, now he have register name lookups:
+就快完成啦，现在我们已经有了寄存器名称查找：
 
 ```
 std::string get_register_name(reg r) {
@@ -156,7 +156,7 @@ reg get_register_from_name(const std::string& name) {
 }
 ```
 
-And finally we’ll add a simple helper to dump the contents of all registers:
+最后我们会添加一个简单的帮助函数用于导出所有寄存器的内容：
 
 ```
 void debugger::dump_registers() {
@@ -167,15 +167,15 @@ void debugger::dump_registers() {
 }
 ```
 
-As you can see, iostreams has a very concise interface for outputting hex data nicely[2][10]. Feel free to make an I/O manipulator to get rid of this mess if you like.
+正如你看到的，iostreams 有非常精确的接口用于美观地输出十六进制数据[2][10]。如果你喜欢你也可以通过 I/O 操纵器来摆脱这种混乱。
 
-This gives us enough support to handle registers easily in the rest of the debugger, so we can now add this to our UI.
+这些已经足够支持我们在调试器接下来的部分轻松地处理寄存器，因为我们现在可以把这些添加到我们的用户界面。
 
 * * *
 
-### Exposing our registers
+### 显示我们的寄存器
 
-All we need to do here is add a new command to the `handle_command` function. With the following code, users will be able to type `register read rax`, `register write rax 0x42` and so on.
+这里我们要做的就是给 `handle_command` 函数添加一个命令。通过下面的代码，用户可以输入 `register read rax`、 `register write rax 0x42` 以及类似的语句。
 
 ```
     else if (is_prefix(command, "register")) {
@@ -194,9 +194,9 @@ All we need to do here is add a new command to the `handle_command` function. 
 
 * * *
 
-### Where is my mind?
+### 接下来做什么？
 
-We’ve already read from and written to memory when setting our breakpoints, so we just need to add a couple of functions to hide the `ptrace` call a bit.
+设置断点的时候我们已经读取和写入内存，因此我们只需要添加一些函数用于隐藏 `ptrace`调用。
 
 ```
 uint64_t debugger::read_memory(uint64_t address) {
@@ -208,9 +208,9 @@ void debugger::write_memory(uint64_t address, uint64_t value) {
 }
 ```
 
-You might want to add support for reading and writing more than a word at a time, which you can do by just incrementing the address each time you want to read another word. You could also use [`process_vm_readv` and `process_vm_writev`][12] or `/proc/<pid>/mem` instead of `ptrace` if you like.
+你可能想要添加支持一次读取或者写入多个字节，你可以在每次希望读取另一个字节时通过递增地址来实现。如果你需要的话，你也可以使用  [`process_vm_readv` 和 `process_vm_writev`][12] 或 `/proc/<pid>/mem` 代替 `ptrace`。
 
-Now we’ll add commands for our UI:
+现在我们会给我们的用户界面添加命令：
 
 ```
     else if(is_prefix(command, "memory")) {
@@ -228,11 +228,11 @@ Now we’ll add commands for our UI:
 
 * * *
 
-### Patching `continue_execution`
+### 给  `continue_execution` 打补丁
 
-Before we test out our changes, we’re now in a position to implement a more sane version of `continue_execution`. Since we can get the program counter, we can check our breakpoint map to see if we’re at a breakpoint. If so, we can disable the breakpoint and step over it before continuing.
+在我们测试我们的更改之前，我们现在可以实现一个更健全的 `continue_execution` 版本。由于我们可以获取程序计数器，我们可以检查我们的断点映射来判断我们是否处于一个断点。如果是的话，我们可以停用断点并在继续之前跳过它。
 
-First we’ll add for couple of helper functions for clarity and brevity:
+为了清晰和简洁，首先我们要添加一些帮助函数：
 
 ```
 uint64_t debugger::get_pc() {
@@ -244,7 +244,7 @@ void debugger::set_pc(uint64_t pc) {
 }
 ```
 
-Then we can write a function to step over a breakpoint:
+然后我们可以编写函数来跳过断点：
 
 ```
 void debugger::step_over_breakpoint() {
@@ -267,9 +267,9 @@ void debugger::step_over_breakpoint() {
 }
 ```
 
-First we check to see if there’s a breakpoint set for the value of the current PC. If there is, we first put execution back to before the breakpoint, disable it, step over the original instruction, and re-enable the breakpoint.
+首先我们检查当前程序计算器的值是否设置了一个断点。如果有，首先我们把执行返回到断点之前，停用它，跳过原来的指令，再重新启用断点。
 
-`wait_for_signal` will encapsulate our usual `waitpid` pattern:
+`wait_for_signal` 封装了我们常用的 `waitpid` 模式：
 
 ```
 void debugger::wait_for_signal() {
@@ -279,7 +279,7 @@ void debugger::wait_for_signal() {
 }
 ```
 
-Finally we rewrite `continue_execution` like this:
+最后我们像下面这样重写 `continue_execution`：
 
 ```
 void debugger::continue_execution() {
@@ -291,9 +291,10 @@ void debugger::continue_execution() {
 
 * * *
 
-### Testing it out
+### 测试效果
 
-Now that we can read and modify registers, we can have a bit of fun with our hello world program. As a first test, try setting a breakpoint on the call instruction again and continue from it. You should see `Hello world` being printed out. For the fun part, set a breakpoint just after the output call, continue, then write the address of the call argument setup code to the program counter (`rip`) and continue. You should see `Hello world` being printed a second time due to this program counter manipulation. Just in case you aren’t sure where to set the breakpoint, here’s my `objdump` output from the last post again:
+现在我们可以读取和修改寄存器了，我们可以对我们的 hello world 程序做一些有意思的更改。类似第一次测试，再次尝试在 call 指令处设置断点然后从那里继续执行。你可以看到输出了 `Hello world`。现在是有趣的部分，在输出调用后设一个断点、继续、将 call 参数设置代码的地址写入程序计数器(`rip`) 并继续。由于程序计数器操纵，你应该再次看到输出了  `Hello world`。为了以防你不确定在哪里设置断点，下面是我上一篇博文中的 `objdump` 输出：
+
 
 ```
 0000000000400936 <main>:
@@ -308,24 +309,24 @@ Now that we can read and modify registers, we can have a bit of fun with our hel
 
 ```
 
-You’ll want to move the program counter back to `0x40093a` so that the `esi` and `edi` registers are set up properly.
+你要将程序计数器移回 `0x40093a` 使得正确设置 `esi` and `edi` 寄存器。
 
-In the next post, we’ll take our first look at DWARF information and add various kinds of single stepping to our debugger. After that, we’ll have a mostly functioning tool which can step through code, set breakpoints wherever we like, modify data and so forth. As always, drop a comment below if you have any questions!
+在下一篇博客中，我们会第一次接触到 DWARF 信息并给我们的调试器添加一系列逐步调试的功能。之后，我们会有一个功能工具，它能逐步执行代码、在想要的地方设置断点、修改数据以及其它。一如以往，如果你有任何问题请留下你的评论！
 
-You can find the code for this post [here][13].
+你可以在[这里][13]找到这篇博文的代码。
 
 * * *
 
-1.  You could also reorder the `reg` enum and cast them to the underlying type to use as indexes, but I wrote it this way in the first place, it works, and I’m too lazy to change it. [↩][1]
+1.	你也可以重新排序 `reg` 枚举变量，然后使用索引把它们转换为底层类型，但第一次我就使用这种方式编写，它能正常工作，我也就懒得改它了。 [↩][1]
 
-2.  Ahahahahahahahahahahahahahahahaha [↩][2]
+2.	Ahahahahahahahahahahahahahahahaha [↩][2]
 
 --------------------------------------------------------------------------------
 
 via: https://blog.tartanllama.xyz/c++/2017/03/31/writing-a-linux-debugger-registers/
 
 作者：[ TartanLlama ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ictlyh](https://github.com/ictlyh)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
