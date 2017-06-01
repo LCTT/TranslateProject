@@ -1,26 +1,24 @@
-Translating by chenxinlong
 An introduction to Linux's EXT4 filesystem
 ============================================================
 
-### Take a walk through EXT4's history, features, and optimal use, and learn how it differs from previous iterations of the EXT filesystem.
-
+### 让我们大概了解一下 EXT4  的历史、特性以及最佳实践来学习它和之前的所有 EXT 文件系统有何不同。
 
 ![An introduction to the EXT4 filesystem](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/hard_drives.png?itok=yZWyaSO6 "An introduction to the EXT4 filesystem")
->Image credits : [WIlliam][8][ Warby][9]. Modified by [Jason Baker][10]. Creative Commons [BY-SA 2.0][11].
+>图片来自 : [WIlliam][8][ Warby][9]. 由 [Jason Baker][10] 编辑. Creative Commons [BY-SA 2.0][11].
 
-In previous articles about Linux filesystems, I wrote [an introduction to Linux filesystems][12] and about some higher-level concepts such as [everything is a file][13]. I want to go into more detail about the specifics of the EXT filesystems, but first, let's answer the question, "What is a filesystem?" A filesystem is all of the following:
+在之前关于 Linux 文件系统的文章里，我写过一篇 [an introduction to Linux filesystems][12] 和一些更高级的概念例如 [everything is a file][13]. 我想要更深入地了解 EXT 文件系统的特性的详细内容，但是首先让我们来回答一个问题，“什么样才算是一个文件系统 ？” 一个文件系统应该涵盖以下所有点：
 
-1.  **Data storage: **The primary function of any filesystem is to be a structured place to store and retrieve data.
+1.  **数据存储:** 对于任何一个文件系统来说，一个最主要的功能就是能够被当作一个容器结构来存储和恢复数据。
 
-2.  **Namespace: **A naming and organizational methodology that provides rules for naming and structuring data.
+2.  **命名空间:** 命名空间是一个提供了命名规则和数据结构的用于命名与组织的方法学。
 
-3.  **Security model: **A scheme for defining access rights.
+3.  **安全模型:** 一个用于定义访问权限的策略。
 
-4.  **API: **System function calls to manipulate filesystem objects like directories and files.
+4.  **API:** 指的是调用了操作这个系统的对象的系统方法，这些对象诸如目录和文件。
 
-5.  **Implementation: **The software to implement the above.
+5.  **实现:** 能够实现以上几点的软件。
 
-This article concentrates on the first item in the list and explores the metadata structures that provide the logical framework for data storage in an EXT filesystem.
+本文内容的讨论主要集中于上述几点中的第一项并探索为一个 EXT 文件系统的数据存储提供逻辑框架的元数据结构。
 
 ### EXT filesystem history
 
@@ -261,7 +259,7 @@ David Both - David Both is a Linux and Open Source advocate who resides in Ralei
 via: https://opensource.com/article/17/5/introduction-ext4-filesystem
 
 作者：[David Both ][a]
-译者：[译者ID](https://github.com/chenxinlong)
+译者：[chenxinlong](https://github.com/chenxinlong)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
