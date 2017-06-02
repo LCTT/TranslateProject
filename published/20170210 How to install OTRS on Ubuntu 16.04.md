@@ -1,21 +1,8 @@
-如何在 Ubuntu 16.04 上安装 OTRS （开源故障单系统）
+如何在 Ubuntu 16.04 上安装 OTRS （开源问题单系统）
 ============================================================
+ 
 
-### 在本页中
-
-1.  [步骤 1 - 安装 Apache 和 PostgreSQL][1]
-2.  [步骤 2 - 安装 Perl 模块][2]
-3.  [步骤 3 - 为 OTRS 创建新用户][3]
-4.  [步骤 4 - 创建和配置数据库][4]
-5.  [步骤 5 - 下载和配置 OTRS][5]
-6.  [步骤 6 - 导入样本数据库][6]
-7.  [步骤 7 - 启动 OTRS][7]
-8.  [步骤 8 - 配置 OTRS 计划任务][8]
-9.  [步骤 9 - 测试 OTRS][9]
-10. [步骤 10 - 疑难排查][10]
-11. [参考][11]
-
-OTRS 或者开源单据申请系统一个用于客户服务、帮助台和 IT 服务管理的开源单据软件。该软件是用 Perl 和 javascript 编写的。对于那些需要管理票据、投诉、支持请求或其他类型的报告的公司和组织，这是一个单据解决方案。OTRS 支持包括 MySQL、PostgreSQL、Oracle 和 SQL Server 在内的多个数据库系统，它是一个可以安装在 Windows 和 Linux 上的多平台软件。
+OTRS ，及开源问题单（ticket）申请系统是一个用于客户服务、帮助台和 IT 服务管理的开源问题单软件。该软件是用 Perl 和 javascript 编写的。对于那些需要管理票据、投诉、支持请求或其他类型的报告的公司和组织来说，这是一个问题单解决方案。OTRS 支持包括 MySQL、PostgreSQL、Oracle 和 SQL Server 在内的多个数据库系统，它是一个可以安装在 Windows 和 Linux 上的多平台软件。
 
 在本教程中，我将介绍如何在 Ubuntu 16.04 上安装和配置 OTRS。我将使用 PostgreSQL 作为 OTRS 的数据库，将 Apache Web 服务器用作 Web 服务器。
 
@@ -31,19 +18,27 @@ OTRS 或者开源单据申请系统一个用于客户服务、帮助台和 IT �
 
 使用 SSH 登录到你的 Ubuntu 服务器中：
 
-`ssh root@192.168.33.14`
+```
+ssh root@192.168.33.14
+```
 
 更新 Ubuntu 仓库。
 
-`sudo apt-get update`
+```
+sudo apt-get update
+```
 
 使用 apt 安装 Apache2 以及 PostgreSQL：
 
-`sudo apt-get install -y apache2 libapache2-mod-perl2 postgresql`
+```
+sudo apt-get install -y apache2 libapache2-mod-perl2 postgresql
+```
 
 通过检查服务器端口确保 Apache 以及 PostgreSQL 运行了。
 
-`netstat -plntu`
+```
+netstat -plntu
+```
 
 [
  ![Install Apache and PostgreSQL](https://www.howtoforge.com/images/how-to-install-otrs-opensource-trouble-ticket-system-on-ubuntu-16-04/1.png) 
@@ -68,9 +63,11 @@ a2enmod perl
 systemctl restart apache2
 ```
 
-接下来，使用下面的命令检查模块已经加载了：
+接下来，使用下面的命令检查模块是否已经加载了：
 
-`apachectl -M | sort`
+```
+apachectl -M | sort
+```
 
 [
  ![Enable Apache Perl Module](https://www.howtoforge.com/images/how-to-install-otrs-opensource-trouble-ticket-system-on-ubuntu-16-04/2.png) 
@@ -82,21 +79,23 @@ systemctl restart apache2
 
 OTRS 是一个基于 web 的程序并且运行与 apache web 服务器下。为了安全，我们需要以普通用户运行它，而不是 root 用户。
 
-使用 useradd 命令创建一个 “otrs” 新用户：
+使用 useradd 命令创建一个 `otrs` 新用户：
 
 ```
 useradd -r -d /opt/otrs -c 'OTRS User' otrs
-
-**-r**: make the user as a system account.
-**-d /opt/otrs**: define home directory for new user on '/opt/otrs'.
-**-c**: comment.
 ```
 
-接下来，将 otrs 用户加入到 “www-data” 用户组，因为 apache 运行于 “www-data” 用户以及用户组。
+* `-r`：将用户作为系统用户。 
+* `-d /opt/otrs`：在 `/opt/otrs` 下放置新用户的主目录。
+* `-c`：备注。
 
-`usermod -a -G www-data otrs`
+接下来，将 `otrs` 用户加入到 `www-data` 用户组，因为 apache 运行于 `www-data` 用户及用户组。
 
-在 “/etc/passwd” 文件中已经有 otrs 用户了。
+```
+usermod -a -G www-data otrs
+```
+
+在 `/etc/passwd` 文件中已经有 `otrs` 用户了。
 
 ```
 grep -rin otrs /etc/passwd
@@ -110,35 +109,35 @@ OTRS 的新用户已经创建了。
 
 ### 步骤 4 - 创建和配置数据库
 
-在这节中，我们会为 OTRS 系统创建一个新 PostgreSQL 数据库并对 PostgreSQL 数据库的配置做一些小的更改。
+在这节中，我们会为 OTRS 系统创建一个新 PostgreSQL 数据库，并对 PostgreSQL 数据库的配置做一些小的更改。
 
-登录到 **postgres** 用户并访问 PostgreSQL shell。
+登录到 `postgres` 用户并访问 PostgreSQL shell。
 
 ```
 su - postgres
 psql
 ```
 
-创建一个新的 “**otrs**” 角色，密码是 “**myotrspw**”，并且是非特权用户。
+创建一个新的角色  `otrs`，密码是 `myotrspw`，并且是非特权用户。
 
 ```
 create user otrs password 'myotrspw' nosuperuser;
 ```
 
-接着使用 “**otrs**” 用户权限创建一个新的 “**otrs**” 数据库：
+接着使用 `otrs` 用户权限创建一个新的 `otrs` 数据库：
 
 ```
 create database otrs owner otrs;
 \q
 ```
 
-接下来为 otrs 角色验证编辑 PostgreSQL 配置文件。
+接下来为 `otrs` 角色验证编辑 PostgreSQL 配置文件。
 
 ```
 vim /etc/postgresql/9.5/main/pg_hba.conf
 ```
 
-在 84 换行后粘贴下面的配置：
+在 84 行后粘贴下面的配置：
 
 ```
 local   otrs            otrs                                    password
@@ -151,7 +150,7 @@ host    otrs            otrs            127.0.0.1/32 �
  ![Database Authentication OTRS](https://www.howtoforge.com/images/how-to-install-otrs-opensource-trouble-ticket-system-on-ubuntu-16-04/4.png) 
 ][20]
 
-使用 “exit” 回到 root 权限并重启 PostgreSQL：
+使用 `exit` 回到 root 权限并重启 PostgreSQL：
 
 ```
 exit
@@ -168,14 +167,14 @@ PostgreSQL 已经为 OTRS 的安装准备好了。
 
 在本教程中，我们会使用 OTRS 网站中最新的版本。
 
-进入 “/opt” 目录并使用 wget 命令下载 OTRS 5.0：
+进入 `/opt` 目录并使用 `wget` 命令下载 OTRS 5.0：
 
 ```
 cd /opt/
 wget http://ftp.otrs.org/pub/otrs/otrs-5.0.16.tar.gz
 ```
 
- otrs 文件，重命名目录并更改所有 otrs 的文件和目录的所属人为 “otrs”。
+展开该 otrs 文件，重命名目录并更改所有 otrs 的文件和目录的所属人为 `otrs`。
 
 ```
 tar -xzvf otrs-5.0.16.tar.gz
@@ -206,7 +205,7 @@ cd /opt/otrs/
 cp Kernel/Config.pm.dist Kernel/Config.pm
 ```
 
-使用 vim 编辑 “Config.pm” 文件：
+使用 vim 编辑 `Config.pm` 文件：
 
 ```
 vim Kernel/Config.pm
@@ -220,7 +219,9 @@ $Self->{DatabasePw} = 'myotrspw';
 
 注释 45 行的 MySQL 数据库支持：
 
+```
 # $Self->{DatabaseDSN} = "DBI:mysql:database=$Self->{Database};host=$Self->{DatabaseHost};";
+```
 
 取消注释 49 行的 PostgreSQL 数据库支持：
 
@@ -264,13 +265,13 @@ perl -cw /opt/otrs/bin/otrs.Console.pl
 
 在本教程中，我们会使用样本数据库，这可以在脚本目录中找到。因此我们只需要将所有的样本数据库以及表结构导入到第 4 步创建的数据库中。
 
-登录到 postgres 用户并进入 otrs 目录中。
+登录到 `postgres` 用户并进入 otrs 目录中。
 
 ```
 su - postgres
 cd /opt/otrs/
 ```
-作为 otrs 用户使用 psql 命令插入数据库以及表结构。
+作为 otrs 用户使用 `psql` 命令插入数据库以及表结构。
 
 ```
 psql -U otrs -W -f scripts/database/otrs-schema.postgresql.sql otrs
@@ -278,7 +279,7 @@ psql -U otrs -W -f scripts/database/otrs-initial_insert.postgresql.sql otrs
 psql -U otrs -W -f scripts/database/otrs-schema-post.postgresql.sql otrs
 ```
 
-在需要的时候输入数据库密码 “**myotrspw**”。
+在需要的时候输入数据库密码 `myotrspw`。
 
 [
  ![Import OTRS Sample Database](https://www.howtoforge.com/images/how-to-install-otrs-opensource-trouble-ticket-system-on-ubuntu-16-04/8.png) 
@@ -288,7 +289,7 @@ psql -U otrs -W -f scripts/database/otrs-schema-post.postgresql.sql otrs
 
 数据库以及 OTRS 已经配置了，现在我们可以启动 OTRS。
 
-将 otrs 的文件及目录权限设置为 www-data 用户和用户组。
+将 otrs 的文件及目录权限设置为 `www-data` 用户和用户组。
 
 ```
 /opt/otrs/bin/otrs.SetPermissions.pl --otrs-user=www-data --web-group=www-data
@@ -307,7 +308,7 @@ a2ensite otrs
 systemctl restart apache2
 ```
 
-确保 apache 没有错误。
+确保 apache 启动没有错误。
 
 [
  ![Enable OTRS Apache Virtual Host](https://www.howtoforge.com/images/how-to-install-otrs-opensource-trouble-ticket-system-on-ubuntu-16-04/9.png) 
@@ -317,7 +318,7 @@ systemctl restart apache2
 
 OTRS 已经安装并运行在 Apache Web 服务器中了，但是我们仍然需要配置 OTRS 计划任务。
 
-登录到 “otrs” 用户，接着以 otrs 用户进入 “var/cron” 目录。
+登录到 `otrs` 用户，接着以 otrs 用户进入 `var/cron` 目录。
 
 ```
 su - otrs
@@ -325,13 +326,13 @@ cd var/cron/
 pwd
 ```
 
-使用下面的命令复制所有 .dist 计划任务脚本：
+使用下面的命令复制所有 `.dist` 计划任务脚本：
 
 ```
 for foo in *.dist; do cp $foo `basename $foo .dist`; done
 ```
 
-使用 exit 回到 root 权限，并使用 otrs 用户启动计划任务脚本。
+使用 `exit` 回到 root 权限，并使用 otrs 用户启动计划任务脚本。
 
 ```
 exit
@@ -372,11 +373,9 @@ OTRS 安装以及配置完成了。
 
 ### 步骤 9 - 测试 OTRS
 
-打开你的 web 浏览器并输入你的服务器 IP 地址：
+打开你的 web 浏览器并输入你的服务器 IP 地址： [http://192.168.33.14/otrs/][28]
 
-[http://192.168.33.14/otrs/][28]
-
-使用默认的用户 “**root@localhost**'” 以及密码 “**root**” 登录。
+使用默认的用户 `root@localhost` 以及密码 `root` 登录。
 
 [
  ![Installation Successfully OTRS Home Page](https://www.howtoforge.com/images/how-to-install-otrs-opensource-trouble-ticket-system-on-ubuntu-16-04/12.png) 
@@ -390,9 +389,7 @@ OTRS 安装以及配置完成了。
  ![OTRS Admin Dashboard Without Error Messages](https://www.howtoforge.com/images/how-to-install-otrs-opensource-trouble-ticket-system-on-ubuntu-16-04/13.png) 
 ][30]
 
-如果你想作为客户登录，你可以使用 “customer.pl”。
-
-[http://192.168.33.14/otrs/customer.pl][31]
+如果你想作为客户登录，你可以使用 `customer.pl` ：[http://192.168.33.14/otrs/customer.pl][31]
 
 你会看到客户登录界面，输入客户的用户名和密码。
 
@@ -422,7 +419,7 @@ cd /opt/otrs/
 bin/otrs.Daemon.pl stop
 ```
 
-使用 --debug 选项启动 OTRS 守护进程。
+使用 `--debug` 选项启动 OTRS 守护进程。
 
 ```
 bin/otrs.Daemon.pl start --debug
@@ -440,7 +437,7 @@ via: https://www.howtoforge.com/tutorial/how-to-install-otrs-opensource-trouble-
 
 作者：[Muhammad Arul][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
