@@ -20,9 +20,9 @@ An introduction to Linux's EXT4 filesystem
 
 本文内容的讨论主要集中于上述几点中的第一项并探索为一个 EXT 文件系统的数据存储提供逻辑框架的元数据结构。
 
-### EXT filesystem history
+### EXT 文件系统历史
 
-Although written for Linux, the EXT filesystem has its roots in the Minix operating system and the Minix filesystem, which predate Linux by about five years, being first released in 1987\. Understanding the EXT4 filesystem is much easier if we look at the history and technical evolution of the EXT filesystem family from its Minix roots.
+虽然 EXT 文件系统是为 Linux 编写的，但其真正起源于 Minix 操作系统和 Minix 文件系统，而 Minix 最早发布于 1987，早于 Linux 5 年。如果我们从 EXT 文件系统大家族的 Minix 起源来观察其历史与技术发展那么理解 EXT4 文件系统就会简单得多。
 
 ### Minix
 
@@ -252,7 +252,7 @@ The EXT filesystems have been the default for many Linux distributions for more 
 
 作者简介：
 
-David Both - David Both is a Linux and Open Source advocate who resides in Raleigh, North Carolina. He has been in the IT industry for over forty years and taught OS/2 for IBM where he worked for over 20 years. While at IBM, he wrote the first training course for the original IBM PC in 1981. He has taught RHCE classes for Red Hat and has worked at MCI Worldcom, Cisco, and the State of North Carolina. He has been working with Linux and Open Source Software for almost 20 years. 
+David Both - David Both 是一名 Linux 于开源的贡献者，目前居住在北卡罗莱纳州的罗利。他从事 IT 行业有 40 余年并在 IBM 中从事 OS/2 培训约 20 余年。在 IBM 就职期间，他在 1981 年为最早的 IBM PC 写了一个培训课程。他已经为红帽教授了 RHCE 课程，曾在 MCI Worldcom，思科和北卡罗来纳州工作。 他使用 Linux 和开源软件工作了近 20 年。
 
 -------------------
 
