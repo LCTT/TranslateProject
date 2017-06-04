@@ -1,3 +1,4 @@
+ucasFL translating
 MyCLI – A MySQL/MariaDB Client with Auto-completion and Syntax-highlighting
 ============================================================
 
