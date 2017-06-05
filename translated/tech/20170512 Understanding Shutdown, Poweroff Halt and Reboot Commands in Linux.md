@@ -1,17 +1,15 @@
-理解 Linux 中的 shutdown、poweroff、halt 命令
+理解 Linux 中的 Shutdown、Poweroff、Halt 和 Reboot 命令
 ============================================================
 
-现在下载你的免费电子书 - [10 本给管理员的免费 Linux 电子书][3] | [4 本免费的 shell 脚本电子书][4]
+在本篇中，我们会向你解释 **shutdown、poweroff、halt 以及 reboot** 命令。我们会解释当使用可选项时，它们实际做了什么。
 
-在本篇中，我们会向你解释shitdown、poweroff、halt 以及 reboot 命令。我们会解释清楚当你用那些可用的选项执行的时候它们实际做了什么。
-
-如果你想深入 Linux 服务器管理，那么为了有效和可靠的服务器管理，这些[重要的 Linux 命令][1]你需要完全理解。
+如果你想深入管理 Linux 服务器，那么为了有效和可靠的服务器管理，这些[重要的 Linux 命令][1]你需要完全理解。
 
 通常上，当你想要关闭或者重启你的机器时，你会运行下面之一的命令：
 
-### shutdown 命令
+### Shutdown 命令
 
-shutdown 会给系统计划一个时间关机。它也许被用于停止、关机、重启机器。
+**shutdown** 会给系统计划一个时间关机。它可被用于停止、关机、重启机器。
 
 你也许会指定一个时间字符串（通常是 “now” 或者 “hh:mm” 用于小时/分钟）作为第一个参数。额外地，你也可以设置一个广播信息在系统关闭前发送给所有已登录的用户。
 
@@ -34,9 +32,9 @@ shutdown 命令示例：
 # shutdown -c
 ```
 
-### halt 命令
+### Halt 命令
 
-halt 通知硬件来停止所有的 CPU 功能，但是仍然保持通电。你可以用它使系统处于低层维护状态。
+**halt** 通知硬件来停止所有的 CPU 功能，但是仍然保持通电。你可以用它使系统处于低层维护状态。
 
 注意在有些情况会它会完全关闭系统。下面是 halt 命令示例：
 
@@ -48,7 +46,7 @@ halt 通知硬件来停止所有的 CPU 功能，但是仍然保持通电。你�
 
 ### poweroff 命令
 
-poweroff 会发送一个 ACPI 信号来通知系统关机。
+**poweroff** 会发送一个 ACPI 信号来通知系统关机。
 
 下面是 poweroff 命令示例：
 
@@ -58,7 +56,7 @@ poweroff 会发送一个 ACPI 信号来通知系统关机。
 # poweroff --reboot    #重启机器
 ```
 
-### reboot 命令
+### Reboot 命令
 
 reboot 通知系统重启。
 
@@ -74,7 +72,7 @@ reboot 通知系统重启。
 
 作者简介：
 
-Aaron Kili是一名 Linux 和 F.O.S.S 的爱好者，未来的 Linux 系统管理员、网站开发人员，目前是 TecMint 的内容创作者，他喜欢用电脑工作，并乐于分享知识。
+Aaron Kili 是一名 Linux 和 F.O.S.S 的爱好者，未来的 Linux 系统管理员、网站开发人员，目前是 TecMint 的内容创作者，他喜欢用电脑工作，并乐于分享知识。
 
 --------------------------
 
@@ -89,5 +87,4 @@ via: https://www.tecmint.com/shutdown-poweroff-halt-and-reboot-commands-in-linux
 [a]:https://www.tecmint.com/author/aaronkili/
 [1]:https://www.tecmint.com/60-commands-of-linux-a-guide-from-newbies-to-system-administrator/
 [2]:https://www.tecmint.com/author/aaronkili/
-[3]:https://www.tecmint.com/10-useful-free-linux-ebooks-for-newbies-and-administrators/
-[4]:https://www.tecmint.com/free-linux-shell-scripting-books/
+
