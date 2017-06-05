@@ -1,23 +1,21 @@
-GitFuture is translating!
-
-OpenGL & Go Tutorial Part 3: Implementing the Game
+OpenGL 与 Go 教程第三节：实现游戏
 ============================================================
 
-[Part 1: Hello, OpenGL][8] | [Part 2: Drawing the Game Board][9] | [Part 3: Implementing the Game][10]
+[第一节: Hello, OpenGL][8]  |  [第二节: 绘制游戏面板][9]  |  [第三节：实现游戏功能][10] 
 
-The full source code of the tutorial is available on [GitHub][11].
+该教程的完整源代码可以从 [GitHub][11] 上获得。
 
-Welcome back to the OpenGL & Go Tutorial! If you haven’t gone through [Part 1][12] and [Part 2][13] you’ll definitely want to take a step back and check them out.
+欢迎回到《OpenGL 与 Go 教程》！如果你还没有看过 [第一节][12] 和 [第二节][13]，那就要回过头去看一看。
 
-At this point you should have a grid system created and a matrix of cells to represent each unit of the grid. Now it’s time to implement Conway’s Game of Life using the grid as the game board.
+到目前为止，你应该懂得如何创建网格系统以及创建代表方格中每一个单元的格子阵列。现在可以开始把网格当作游戏面板实现《Conway's Game of Life》。
 
-Let’s get started!
+开始吧！
 
-### Implement Conway’s Game
+### 实现 《Conway’s Game》
 
-One of the keys to Conway’s game is that each cell must determine its next state based on the current state of the board, at the same time. This means that if Cell (X=3, Y=4) changes state during its calculation, its neighbor at (X=4, Y=4) must determine its own state based on what (X=3, Y=4) was, not what is has become. Basically, this means we must loop through the cells and determine their next state without modifying their current state before we draw, and then on the next loop of the game we apply the new state and repeat.
+《Conway's Game》的其中一个要点是所有 cell 必须同时基于当前 cell 在面板中的状态确定下一个 cell 的状态。也就是说如果 Cell （X=3，Y=4）在计算过程中状态发生了改变，那么邻近的 cell （X=4，Y=4）必须基于（X=3，T=4）的状态决定自己的状态变化，而不是基于自己现在的状态。简单的讲，这意味着我们必须遍历 cell ，确定下一个 cell 的状态，在绘制之前，不改变他们的当前状态，然后在下一次循环中我们将新状态应用到游戏里，依此循环往复。
 
-In order to accomplish this, we’ll add two booleans to the cell struct:
+为了完成这个功能，我们需要在 cell 结构体中添加两个布尔型变量：
 
 ```
 type cell struct {
@@ -31,39 +29,39 @@ type cell struct {
 }
 ```
 
-Now let’s add two functions that we’ll use to determine the cell’s state:
+现在添加两个函数，我们会用它们来确定 cell 的状态：
 
 ```
-// checkState determines the state of the cell for the next tick of the game.
+// checkState 函数决定下一次游戏循环时的 cell 状态
 func (c *cell) checkState(cells [][]*cell) {
     c.alive = c.aliveNext
     c.aliveNext = c.alive
 
     liveCount := c.liveNeighbors(cells)
     if c.alive {
-        // 1\. Any live cell with fewer than two live neighbours dies, as if caused by underpopulation.
+		// 1\. 当任何一个存活的 cell 的附近少于 2 个存活的 cell 时，该 cell 将会消亡，就像人口过少所导致的结果一样
         if liveCount < 2 {
             c.aliveNext = false
         }
 
-        // 2\. Any live cell with two or three live neighbours lives on to the next generation.
+		// 2\. 当任何一个存活的 cell 的附近有 2 至 3 个存活的 cell 时，该 cell 在下一代中仍然存活。
         if liveCount == 2 || liveCount == 3 {
             c.aliveNext = true
         }
 
-        // 3\. Any live cell with more than three live neighbours dies, as if by overpopulation.
+		// 3\. 当任何一个存活的 cell 的附近多于 3 个存活的 cell 时，该 cell 将会消亡，就像人口过多所导致的结果一样
         if liveCount > 3 {
             c.aliveNext = false
         }
     } else {
-        // 4\. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
+		// 4\. 任何一个消亡的 cell 附近刚好有 3 个存活的 cell，该 cell 会变为存活的状态，就像重生一样。
         if liveCount == 3 {
             c.aliveNext = true
         }
     }
 }
 
-// liveNeighbors returns the number of live neighbors for a cell.
+// liveNeighbors 函数返回当前 cell 附近存活的 cell 数
 func (c *cell) liveNeighbors(cells [][]*cell) int {
     var liveCount int
     add := func(x, y int) {
@@ -97,9 +95,9 @@ func (c *cell) liveNeighbors(cells [][]*cell) int {
 }
 ```
 
-What’s more interesting is the liveNeighbors function where we return the number of neighbors to the current cell that are in an alivestate. We define an inner function called add that will do some repetitive validation on X and Y coordinates. What it does is check if we’ve passed a number that exceeds the bounds of the board - for example, if cell (X=0, Y=5) wants to check on its neighbor to the left, it has to wrap around to the other side of the board to cell (X=9, Y=5), and likewise for the Y-axis.
+更加值得注意的是 liveNeighbors 函数里在返回地方，我们返回的是当前处于存活状态的 cell 的邻居个数。我们定义了一个叫做 add 的内嵌函数，它会对 X 和 Y 坐标做一些重复性的验证。它所做的事情是检查我们传递的数字是否超出了范围——比如说，如果 cell（X=0，Y=5）想要验证它左边的 cell，它就得验证面板另一边的 cell（X=9，Y=5），Y 轴与之类似。
 
-Below the inner add function we call add with each of the cell’s eight neighbors, depicted below:
+在 add 内嵌函数后面，我们给当前 cell 附近的八个 cell 分别调用 add 函数，示意如下：
 
 ```
 [
@@ -111,9 +109,9 @@ Below the inner add function we call add with each of the cell’s eight nei
 ]
 ```
 
-In this depiction, each cell labeled N is a neighbor to C.
+在该示意中，每一个叫做 N 的 cell 是与 C 相邻的 cell。
 
-Now in our main function, where we have our core game loop, let’s call checkState on each cell prior to drawing:
+现在是我们的主函数，在我们执行循环核心游戏的地方，调用每个 cell 的 checkState 函数进行绘制：
 
 ```
 func main() {
@@ -142,7 +140,7 @@ func (c *cell) draw() {
 }
 ```
 
-Let’s fix that. Back in makeCells we’ll use a random number between 0.0 and 1.0 to set the initial state of the game. We’ll define a constant threshold of 0.15 meaning that each cell has a 15% chance of starting in an alive state:
+现在完善这个函数。回到 makeCells 函数，我们用 0.0 到 1.0 之间的一个随机数来设置游戏的初始状态。我们会定义一个大小为 0.15 的常量阈值，也就是说每个 cell 都有 15% 的几率处于存活状态。
 
 ```
 import (
@@ -176,11 +174,11 @@ func makeCells() [][]*cell {
 }
 ```
 
-Next in the loop, after creating a cell with the newCell function we set its alive state equal to the result of a random float, between 0.0and 1.0, being less than threshold (0.15). Again, this means each cell has a 15% chance of starting out alive. You can play with this number to increase or decrease the number of living cells at the outset of the game. We also set aliveNext equal to alive, otherwise we’ll get a massive die-off on the first iteration because aliveNext will always be false!
+接下来在循环中，在用 newCell 函数创造一个新的 cell 时，我们根据随机数的大小设置它的存活状态，随机数在 0.0 到 1.0 之间，如果比阈值（0.15）小，就是存活状态。再次强调，这意味着每个 cell 在开始时都有 15% 的几率是存活的。你可以修改数值大小，增加或者减少当前游戏中存活的 cell。我们还把 aliveNext 设成 alive 状态，否则在第一次迭代之后我们会发现一大片 cell 消亡了，这是因为 aliveNext 将永远是 false。
 
-Now go ahead and give it a run, and you’ll likely see a quick flash of cells that you can’t make heads or tails of. The reason is that your computer is probably way too fast and is running through (or even finishing) the simulation before you have a chance to really see it.
+现在接着往下看，运行它，你很有可能看到 cell 们一闪而过，但你却无法理解这是为什么。原因可能在于你的电脑太快了，在你能够看清楚之前就运行了（甚至完成了）模拟过程。
 
-Let’s reduce the game speed by introducing a frames-per-second limitation in the main loop:
+降低游戏速度，在主循环中引入一个 frames-per-second 限制：
 
 ```
 const (
@@ -210,7 +208,7 @@ func main() {
 }
 ```
 
-Now you should be able to see some patterns, albeit very slowly. Increase the FPS to 10 and the size of the grid to 100x100 and you should see some really cool simulations:
+现在你能给看出一些图案了，尽管它变换的很慢。把 FPS 加到 10，把方格的尺寸加到 100x100，你就能看到更真实的模拟：
 
 ```
 const (
@@ -225,34 +223,34 @@ const (
 )
 ```
 
- ![Conway's Game of Life in OpenGL and Golang Tutorial - Demo Game](https://kylewbanks.com/images/post/golang-opengl-conway-1.gif) 
+ ![《OpenGL 和 Golang 教程》 中的 “Conway's Game of Life” - 示例游戏](https://kylewbanks.com/images/post/golang-opengl-conway-1.gif) 
 
-Try playing with the constants to see how they impact the simulation - cool right? Your very first OpenGL application with Go!
+试着修改常量，看看它们是怎么影响模拟过程的 —— 这是你用 Go 语言写的第一个 OpenGL 程序，很酷吧？
 
 ### What’s Next?
 
-This concludes the OpenGL with Go Tutorial, but that doesn’t mean you should stop now. Here’s a few challenges to further improve your OpenGL (and Go) knowledge:
+这是《OpenGL 与 Go 教程》的最后一节，但是这不意味着到此而止。这里有些新的挑战，能够增进你对 OpenGL （以及 Go）的理解。
 
-1.  Give each cell a unique color.
-2.  Allow the user to specify, via command-line arguments, the grid size, frame rate, seed and threshold. You can see this one implemented on GitHub at [github.com/KyleBanks/conways-gol][4].
-3.  Change the shape of the cells into something more interesting, like a hexagon.
-4.  Use color to indicate the cell’s state - for example, make cells green on the first frame that they’re alive, and make them yellow if they’ve been alive more than three frames.
-5.  Automatically close the window if the simulation completes, meaning all cells are dead or no cells have changed state in the last two frames.
-6.  Move the shader source code out into their own files, rather than having them as string constants in the Go source code.
+1.  给每个 cell 一种不同的颜色。
+2.  让用户能够通过命令行参数指定格子尺寸，帧率，种子和阈值。在 GitHub 上的 [github.com/KyleBanks/conways-gol][4] 里你可以看到一个已经实现的程序。
+3.  把格子的形状变成其它更有意思的，比如六边形。
+4.  用颜色表示 cell 的状态 —— 比如，在第一帧把存活状态的格子设成绿色，如果它们存活了超过三帧的时间，就变成黄色。
+5.  如果模拟过程结束了，就自动关闭窗口，也就是说所有 cell 都消亡了，或者是最后两帧里没有格子的状态有改变。
+6.  将着色器源代码放到单独的文件中，而不是把它们用字符串的形式放在 Go 的源代码中。
 
 ### Summary
 
-Hopefully this tutorial has been helpful in gaining a foundation on OpenGL (and maybe even Go)! It was a lot of fun to make so I can only hope it was fun to go through and learn.
+希望这篇教程对想要入门 OpenGL （或者是 Go）的人有所帮助！这很有趣，因此我也希望理解学习它也很有趣。
 
-As I’ve mentioned, OpenGL can be very intimidating, but it’s really not so bad once you get started. You just want to break down your goals into small, achievable steps, and enjoy each victory because while OpenGL isn’t always as tough as it looks, it can certainly be very unforgiving. One thing that I have found helpful when stuck on OpenGL issues was to understand that the way go-gl is generated means you can always use C code as a reference, which is much more popular in tutorials around the internet. The only difference usually between the C and Go code is that functions in Go are prefixed with gl. instead of gl, and constants are prefixed with gl instead of GL_. This vastly increases the pool of knowledge you have to draw from!
+正如我所说的，OpenGL 可能是非常恐怖的，但只要你开始着手了就不会太差。你只用制定一个个可达成的小目标，然后享受每一次成功，因为尽管 OpenGL 不会总像它看上去的那么难，但也肯定有些难懂的东西。我发现，当遇到一个难于用 go-gl 方式理解的 OpenGL 问题时，你总是可以参考一下在网上更流行的当作教程的 C 语言代码，这很有用。通常 C 语言和 Go 语言的唯一区别是在 Go 中，gl 的前缀是 gl. 而不是 GL_。这极大地增加了你的绘制知识！
 
-[Part 1: Hello, OpenGL][14] | [Part 2: Drawing the Game Board][15] | [Part 3: Implementing the Game][16]
+[第一节: Hello, OpenGL][14]  |  [第二节: 绘制游戏面板][15]  |  [第三节：实现游戏功能][16] 
 
-The full source code of the tutorial is available on [GitHub][17].
+该教程的完整源代码可从 [GitHub][17] 上获得。
 
 ### Checkpoint
 
-Here’s the final contents of main.go:
+这是 main.go 文件最终的内容：
 
 ```
 package main
@@ -414,36 +412,36 @@ func (c *cell) draw() {
 	gl.DrawArrays(gl.TRIANGLES, 0, int32(len(square)/3))
 }
 
-// checkState determines the state of the cell for the next tick of the game.
+// checkState 函数决定下一次游戏循环时的 cell 状态
 func (c *cell) checkState(cells [][]*cell) {
-	c.alive = c.aliveNext
-	c.aliveNext = c.alive
+    c.alive = c.aliveNext
+    c.aliveNext = c.alive
 
-	liveCount := c.liveNeighbors(cells)
-	if c.alive {
-		// 1\. Any live cell with fewer than two live neighbours dies, as if caused by underpopulation.
-		if liveCount < 2 {
-			c.aliveNext = false
-		}
+    liveCount := c.liveNeighbors(cells)
+    if c.alive {
+		// 1\. 当任何一个存活的 cell 的附近少于 2 个存活的 cell 时，该 cell 将会消亡，就像人口过少所导致的结果一样
+        if liveCount < 2 {
+            c.aliveNext = false
+        }
 
-		// 2\. Any live cell with two or three live neighbours lives on to the next generation.
-		if liveCount == 2 || liveCount == 3 {
-			c.aliveNext = true
-		}
+		// 2\. 当任何一个存活的 cell 的附近有 2 至 3 个存活的 cell 时，该 cell 在下一代中仍然存活。
+        if liveCount == 2 || liveCount == 3 {
+            c.aliveNext = true
+        }
 
-		// 3\. Any live cell with more than three live neighbours dies, as if by overpopulation.
-		if liveCount > 3 {
-			c.aliveNext = false
-		}
-	} else {
-		// 4\. Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
-		if liveCount == 3 {
-			c.aliveNext = true
-		}
-	}
+		// 3\. 当任何一个存活的 cell 的附近多于 3 个存活的 cell 时，该 cell 将会消亡，就像人口过多所导致的结果一样
+        if liveCount > 3 {
+            c.aliveNext = false
+        }
+    } else {
+		// 4\. 任何一个消亡的 cell 附近刚好有 3 个存活的 cell，该 cell 会变为存活的状态，就像重生一样。
+        if liveCount == 3 {
+            c.aliveNext = true
+        }
+    }
 }
 
-// liveNeighbors returns the number of live neighbors for a cell.
+// liveNeighbors 函数返回当前 cell 附近存活的 cell 数
 func (c *cell) liveNeighbors(cells [][]*cell) int {
 	var liveCount int
 	add := func(x, y int) {
@@ -476,7 +474,7 @@ func (c *cell) liveNeighbors(cells [][]*cell) int {
 	return liveCount
 }
 
-// initGlfw initializes glfw and returns a Window to use.
+// initGlfw 初始化 glfw，返回一个可用的 Window
 func initGlfw() *glfw.Window {
 	if err := glfw.Init(); err != nil {
 		panic(err)
@@ -496,7 +494,7 @@ func initGlfw() *glfw.Window {
 	return window
 }
 
-// initOpenGL initializes OpenGL and returns an intiialized program.
+// initOpenGL 初始化 OpenGL 并返回一个已经编译好的着色器程序
 func initOpenGL() uint32 {
 	if err := gl.Init(); err != nil {
 		panic(err)
@@ -521,7 +519,7 @@ func initOpenGL() uint32 {
 	return prog
 }
 
-// makeVao initializes and returns a vertex array from the points provided.
+// makeVao 初始化并从提供的点里面返回一个顶点数组
 func makeVao(points []float32) uint32 {
 	var vbo uint32
 	gl.GenBuffers(1, &vbo)
@@ -562,18 +560,18 @@ func compileShader(source string, shaderType uint32) (uint32, error) {
 }
 ```
 
-Let me know if this post was helpful on Twitter
+请在 Twitter 上告诉我这篇文章对你是否有帮助。
 
  [@kylewbanks][18] 
 
-or down below, and follow me to keep up with future posts!
+或者在 Twitter 下方关注我以便及时获取最新文章！
 
 --------------------------------------------------------------------------------
 
 via: https://kylewbanks.com/blog/tutorial-opengl-with-golang-part-3-implementing-the-game
 
 作者：[kylewbanks ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[GitFuture](https://github.com/GitFuture)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
