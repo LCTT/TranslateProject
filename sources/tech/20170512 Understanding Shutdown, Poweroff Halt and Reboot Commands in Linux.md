@@ -1,3 +1,5 @@
+translating---geekpi
+
 Understanding Shutdown, Poweroff, Halt and Reboot Commands in Linux
 ============================================================
 
