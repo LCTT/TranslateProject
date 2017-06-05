@@ -1,4 +1,3 @@
-geekrainy translating
 A look at 6 iconic open source brands
 ============================================================
 

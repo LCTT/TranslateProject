@@ -1,4 +1,3 @@
-(翻译中 by runningwater)
 FreeFileSync – Compare and Synchronize Files in Ubuntu
 ============================================================
 
