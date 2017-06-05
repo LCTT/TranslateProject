@@ -1,23 +1,20 @@
-ssh_scan - 在 Linux 中验证你 SSH 服务的配置和策略
+ssh_scan：远程验证你 SSH 服务的配置和策略
 ============================================================
 
-ssh_scan 是一个面向 Linux 和 UNIX 服务器的 SSH 服务参数配置和策略的扫描器程序原型，灵感来自[Mozilla OpenSSH 安全指南][6]，这个指南为 SSH 服务参数配置提供了一个可靠的安全策略基线建议参考，如加密算法（Ciphers），报文认证信息码算法（MAC），密钥交换算法（KexAlgos）和其它。
+`ssh_scan` 是一个面向 Linux 和 UNIX 服务器的易用的 SSH 服务参数配置和策略的扫描器程序，其思路来自[Mozilla OpenSSH 安全指南][6]，这个指南为 SSH 服务参数配置提供了一个可靠的安全策略基线的建议，如加密算法（Ciphers），报文认证信息码算法（MAC），密钥交换算法（KexAlgos）和其它。
 
-它有如下好处：
+`ssh_scan` 有如下好处：
 
-*   它的依赖是最小化的，ssh_scan 只引入了本地 Ruby 和 BinData 来进行它的工作，没有太多的依赖。
-
-*   它是可移植的，你可以在其它的项目中使用 ssh_scan 或者将它用在[自动化任务][1]上。
-
-*   它是易于使用的，只需要简单的将它指向一个 SSH 服务就可以获得一个包含这个服务所支持选项和策略状态的 JSON 格式报告。
-
-*   它同时也是易于配置的，你可以创建适合你策略需求的策略。
+* 它的依赖是最小化的，`ssh_scan` 只引入了本地 Ruby 和 BinData 来进行它的工作，没有太多的依赖。
+* 它是可移植的，你可以在其它的项目中使用 `ssh_scan` 或者将它用在[自动化任务][1]上。
+* 它是易于使用的，只需要简单的将它指向一个 SSH 服务就可以获得一个该服务所支持的选项和策略状态的 JSON 格式报告。
+* 它同时也是易于配置的，你可以创建适合你策略需求的策略。
 
 **建议阅读:** [如何在 Linux 上安装配置 OpenSSH 服务][7]
 
 ### 如何在 Linux 上安装 ssh_scan
 
-有如下三种安装 ssh_scan 的方式：
+有如下三种安装 `ssh_scan` 的方式：
 
 使用 Ruby gem 来安装运行，如下：
 
@@ -53,7 +50,7 @@ $ sudo gem install ssh_scan
 
 ### 如何在 Linux 上使用 ssh_scan
 
-使用 ssh_scan 的语法如下：
+使用 `ssh_scan` 的语法如下：
 
 ```
 $ ssh_scan -t ip地址
@@ -73,7 +70,7 @@ $ ssh_scan -t 192.168.43.198,200,205
 $ ssh_scan -t test.tecmint.lan
 ```
 
-##### 输出示例
+输出示例：
 
 ```
 I, [2017-05-09T10:36:17.913644 #7145]  INFO -- : You're using the latest version of ssh_scan 0.0.19
@@ -196,7 +193,7 @@ I, [2017-05-09T10:36:17.913644 #7145]  INFO -- : You're using the latest version
 $ ssh_scan -t 192.168.43.198 -p 22222 -L ssh-scan.log -V INFO
 ```
 
-另外，可以使用 `-P` 或 `--policy` 选项来指定一个策略文件（默认是 Mozilla Modern）（这里的 Modern 可能指的是 https://wiki.mozilla.org/Security/Server_Side_TLS 中提到的 Modern compatibility 吧 ）：
+另外，可以使用 `-P` 或 `--policy` 选项来指定一个策略文件（默认是 Mozilla Modern）（LCTT 译注：这里的 Modern 可能指的是 https://wiki.mozilla.org/Security/Server_Side_TLS 中提到的 Modern compatibility ）：
 
 ```
 $ ssh_scan -t 192.168.43.198 -L ssh-scan.log -V INFO -P /path/to/custom/policy/file
@@ -208,7 +205,7 @@ ssh_scan 使用帮助与其它示例：
 $ ssh_scan -h
 ```
 
-##### 输出示例
+输出示例：
 
 ```
 ssh_scan v0.0.17 (https://github.com/mozilla/ssh_scan)
@@ -246,16 +243,12 @@ ssh_scan -t 192.168.1.1 --unit-test -P custom_policy.yml
 SSH 服务器相关参考阅读：
 
 1.  [使用 SSH Keygen（ssh-keygen）五步实现 SSH 免密登录][2]
-
 2.  [安全 SSH 服务器的 5 个最佳实践][3]
-
 3.  [使用 Chroot 来限制 SSH 用户进入某些目录][4]
-
 4.  [如何配置 SSH 连接来简化远程登录][5]
 
-如果需要更详细的信息可以访问 ssh_scan 的 Github 仓库：[https://github.com/mozilla/ssh_scan][9]
+如果需要更详细的信息可以访问 `ssh_scan` 的 Github 仓库：[https://github.com/mozilla/ssh_scan][9]
 
-（这里的一段删了，感觉留在这里有点怪，这种的话还是去原文中留言就可以了吧，不知这样处理是否合适）
 
 --------------------------------------------------------------------------------
 作者简介：
@@ -266,9 +259,9 @@ Aaron Kili 是 Linux 与 F.O.S.S （自由及开源软件）爱好者，一位�
 
 via: https://www.tecmint.com/ssh_scan-ssh-configuration-and-policy-scanner-for-linux/
 
-作者：[Aaron Kili  ][a]
-译者：[译者ID](https://github.com/wcnnbdk1)
-校对：[校对者ID](https://github.com/校对者ID)
+作者：[Aaron Kili][a]
+译者：[wcnnbdk1](https://github.com/wcnnbdk1)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
