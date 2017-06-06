@@ -1,4 +1,3 @@
-trnhoe translating~
 Introduction to functional programming
 ============================================================
 
