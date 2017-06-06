@@ -1,3 +1,5 @@
+Translating by kylecao
+
 Understand Linux Load Averages and Monitor Performance of Linux
 ============================================================
 
