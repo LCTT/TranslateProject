@@ -1,45 +1,40 @@
-wcnnbdk1 translating
-ssh_scan – Verifies Your SSH Server Configuration and Policy in Linux
+ssh_scan：远程验证你 SSH 服务的配置和策略
 ============================================================
 
+`ssh_scan` 是一个面向 Linux 和 UNIX 服务器的易用的 SSH 服务参数配置和策略的扫描器程序，其思路来自[Mozilla OpenSSH 安全指南][6]，这个指南为 SSH 服务参数配置提供了一个可靠的安全策略基线的建议，如加密算法（Ciphers），报文认证信息码算法（MAC），密钥交换算法（KexAlgos）和其它。
 
-ssh_scan is an easy-to-use prototype SSH configuration and policy scanner for Linux and UNIX servers, inspired by [Mozilla OpenSSH Security Guide][6], which provides a reasonable baseline policy recommendation for SSH configuration parameters such as Ciphers, MACs, and KexAlgos and much more.
+`ssh_scan` 有如下好处：
 
-It has some of the following benefits:
+* 它的依赖是最小化的，`ssh_scan` 只引入了本地 Ruby 和 BinData 来进行它的工作，没有太多的依赖。
+* 它是可移植的，你可以在其它的项目中使用 `ssh_scan` 或者将它用在[自动化任务][1]上。
+* 它是易于使用的，只需要简单的将它指向一个 SSH 服务就可以获得一个该服务所支持的选项和策略状态的 JSON 格式报告。
+* 它同时也是易于配置的，你可以创建适合你策略需求的策略。
 
-*   It has minimal dependencies, ssh_scan only employs native Ruby and BinData to do its work, no heavy dependencies.
+**建议阅读:** [如何在 Linux 上安装配置 OpenSSH 服务][7]
 
-*   It’s portable, you can use ssh_scan in another project or for [automation of tasks][1].
+### 如何在 Linux 上安装 ssh_scan
 
-*   It’s easy to use, simply point it at an SSH service and get a JSON report of what it supports and it’s policy status.
+有如下三种安装 `ssh_scan` 的方式：
 
-*   It’s also configurable, you can create your own custom policies that fit your specific policy requirements.
-
-**Suggested Read:** [How to Install and Configure OpenSSH Server in Linux][7]
-
-### How to Install ssh_scan in Linux
-
-There are three ways you can install ssh_scan and they are:
-
-To install and run as a gem, type:
+使用 Ruby gem 来安装运行，如下：
 
 ```
------------ On Debian/Ubuntu ----------- 
+----------- 在 Debian/Ubuntu ----------- 
 $ sudo apt-get install ruby gem
 $ sudo gem install ssh_scan
------------ On CentOS/RHEL ----------- 
+----------- 在 CentOS/RHEL ----------- 
 # yum install ruby rubygem
 # gem install ssh_scan
 ```
 
-To run from a [docker container][8], type:
+使用[docker 容器][8]来运行，如下：
 
 ```
 # docker pull mozilla/ssh_scan
 # docker run -it mozilla/ssh_scan /app/bin/ssh_scan -t github.com
 ```
 
-To install and run from source, type:
+使用源码安装运行，如下：
 
 ```
 # git clone https://github.com/mozilla/ssh_scan.git
@@ -53,29 +48,29 @@ To install and run from source, type:
 # ./bin/ssh_scan
 ```
 
-### How to Use ssh_scan in Linux
+### 如何在 Linux 上使用 ssh_scan
 
-The syntax for using ssh_scan is as follows:
+使用 `ssh_scan` 的语法如下：
 
 ```
-$ ssh_scan -t ip-address
-$ ssh_scan -t server-hostname
+$ ssh_scan -t ip地址
+$ ssh_scan -t 主机名
 ```
 
-For example to scan SSH configs and policy of server 92.168.43.198, enter:
+举个例子来扫描 192.168.43.198 这台服务器的 SSH 配置和策略，键入：
 
 ```
 $ ssh_scan -t 192.168.43.198
 ```
 
-Note you can also pass a [IP/Range/Hostname] to the `-t` option as shown in the options below:
+注意你同时也可以像下方展示的给 `-t` 选项传入一个[IP地址/地址段/主机名]：
 
 ```
 $ ssh_scan -t 192.168.43.198,200,205
 $ ssh_scan -t test.tecmint.lan
 ```
 
-##### Sample Output
+输出示例：
 
 ```
 I, [2017-05-09T10:36:17.913644 #7145]  INFO -- : You're using the latest version of ssh_scan 0.0.19
@@ -192,25 +187,25 @@ I, [2017-05-09T10:36:17.913644 #7145]  INFO -- : You're using the latest version
 ]
 ```
 
-You can use `-p` to specify a different port, `-L` to enable the logger and `-V` to define the verbosity level as shown below:
+你可以使用 `-p` 选项来指定不同的端口，`-L` 选项来开启日志记录配合 `-V` 选项来指定日志级别：
 
 ```
 $ ssh_scan -t 192.168.43.198 -p 22222 -L ssh-scan.log -V INFO
 ```
 
-Additionally, use a custom policy file (default is Mozilla Modern) with the `-P` or `--policy [FILE]` like so:
+另外，可以使用 `-P` 或 `--policy` 选项来指定一个策略文件（默认是 Mozilla Modern）（LCTT 译注：这里的 Modern 可能指的是 https://wiki.mozilla.org/Security/Server_Side_TLS 中提到的 Modern compatibility ）：
 
 ```
 $ ssh_scan -t 192.168.43.198 -L ssh-scan.log -V INFO -P /path/to/custom/policy/file
 ```
 
-Type this to view all ssh_scan usage options and more examples:
+ssh_scan 使用帮助与其它示例：
 
 ```
 $ ssh_scan -h
 ```
 
-##### Sample Output
+输出示例：
 
 ```
 ssh_scan v0.0.17 (https://github.com/mozilla/ssh_scan)
@@ -245,34 +240,28 @@ ssh_scan -t 192.168.1.1 -P custom_policy.yml
 ssh_scan -t 192.168.1.1 --unit-test -P custom_policy.yml
 ```
 
-Check out some useful artilces on SSH Server:
+SSH 服务器相关参考阅读：
 
-1.  [SSH Passwordless Login Using SSH Keygen in 5 Easy Steps][2]
+1.  [使用 SSH Keygen（ssh-keygen）五步实现 SSH 免密登录][2]
+2.  [安全 SSH 服务器的 5 个最佳实践][3]
+3.  [使用 Chroot 来限制 SSH 用户进入某些目录][4]
+4.  [如何配置 SSH 连接来简化远程登录][5]
 
-2.  [5 Best Practices to Secure SSH Server][3]
+如果需要更详细的信息可以访问 `ssh_scan` 的 Github 仓库：[https://github.com/mozilla/ssh_scan][9]
 
-3.  [Restrict SSH User Access to Certain Directory Using Chrooted Jail][4]
-
-4.  [How to Configure Custom SSH Connections to Simplify Remote Access][5]
-
-For more details visit ssh_scan Github repository: [https://github.com/mozilla/ssh_scan][9]
-
-In this article, we showed you how to set up and use ssh_scan in Linux. Do you know of any similar tools out there? Let us know via the feedback form below, including any other thoughts concerning this guide.
-
-SHARE[+][10][0][11][20][12][25][13] [![Ask Anything](https://www.tecmint.com/wp-content/themes/tecmint/images/help.png)][14]
 
 --------------------------------------------------------------------------------
 作者简介：
 
-Aaron Kili is a Linux and F.O.S.S enthusiast, an upcoming Linux SysAdmin, web developer, and currently a content creator for TecMint who loves working with computers and strongly believes in sharing knowledge.
+Aaron Kili 是 Linux 与 F.O.S.S （自由及开源软件）爱好者，一位将来的 Linux 系统管理员，网站开发者，现在是一个热爱与计算机一起工作并且拥有强烈知识分信念的 TecMint 内容贡献者。
 
 ------------------
 
 via: https://www.tecmint.com/ssh_scan-ssh-configuration-and-policy-scanner-for-linux/
 
-作者：[Aaron Kili  ][a]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+作者：[Aaron Kili][a]
+译者：[wcnnbdk1](https://github.com/wcnnbdk1)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -286,11 +275,4 @@ via: https://www.tecmint.com/ssh_scan-ssh-configuration-and-policy-scanner-for-l
 [7]:https://www.tecmint.com/install-openssh-server-in-linux/
 [8]:https://www.tecmint.com/install-docker-and-learn-containers-in-centos-rhel-7-6/
 [9]:https://github.com/mozilla/ssh_scan
-[10]:https://www.tecmint.com/ssh_scan-ssh-configuration-and-policy-scanner-for-linux/#
-[11]:https://www.tecmint.com/ssh_scan-ssh-configuration-and-policy-scanner-for-linux/#
-[12]:https://www.tecmint.com/ssh_scan-ssh-configuration-and-policy-scanner-for-linux/#
-[13]:https://www.tecmint.com/ssh_scan-ssh-configuration-and-policy-scanner-for-linux/#
-[14]:https://www.tecmint.com/ssh_scan-ssh-configuration-and-policy-scanner-for-linux/#comments
 [15]:https://www.tecmint.com/author/aaronkili/
-[16]:https://www.tecmint.com/10-useful-free-linux-ebooks-for-newbies-and-administrators/
-[17]:https://www.tecmint.com/free-linux-shell-scripting-books/

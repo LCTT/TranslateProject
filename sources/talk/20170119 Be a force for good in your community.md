@@ -1,5 +1,3 @@
- Translating by scoutydren
- 
 Be a force for good in your community
 ============================================================
 

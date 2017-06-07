@@ -1,4 +1,3 @@
-翻译中--by zky001
 Top 8 systems operations and engineering trends for 2017
 =================
 

@@ -1,5 +1,3 @@
-jayjay823 翻译中
-
 User Editorial: Steam Machines & SteamOS after a year in the wild
 ====
 

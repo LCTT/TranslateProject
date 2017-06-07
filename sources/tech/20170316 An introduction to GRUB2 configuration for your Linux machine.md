@@ -1,5 +1,3 @@
-#rusking translating
-
 An introduction to GRUB2 configuration for your Linux machine
 ============================================================
 

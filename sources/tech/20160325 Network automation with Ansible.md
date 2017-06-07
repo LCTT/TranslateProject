@@ -1,5 +1,3 @@
-Martin translating...
-
 Network automation with Ansible
 ================
 

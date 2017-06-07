@@ -1,4 +1,3 @@
-# rusking translating
 An introduction to the Linux boot and startup processes
 ============================================================
 
