@@ -26,21 +26,21 @@ An introduction to Linux's EXT4 filesystem
 
 ### Minix
 
-When writing the original Linux kernel, Linus Torvalds needed a filesystem but didn't want to write one then. So he simply included the [Minix filesystem][14], which had been written by [Andrew S. Tanenbaum][15] and was a part of Tanenbaum's Minix operating system. [Minix][16] was a Unix-like operating system written for educational purposes. Its code was freely available and appropriately licensed to allow Torvalds to include it in his first version of Linux.
+当 Linux Torvalds 在写最初的 Linux 内核的时候，他需要一个文件系统但是他又不想自己写一个。于是他简单地把 [Minix 文件系统][14] 加了进去，这个 Minix 文件系统是由 [Andrew S. Tanenbaum][15] 写的同时也是 Tanenbaum 的 Minix 操作系统的一部分。[Minix][16] 是一个类 Unix 风格的操作系统，最初编写它的原因是用于教育。Minx 的代码是自由可用的且经过适当的许可的，所以 Torvalds 可以把它用 Linux 的最初版本里。
 
-Minix has the following structures, most of which are located in the partition where the filesystem is generated:
+Minix 有以下这些结构，其中的大部分位于生成文件系统的分区中：
 
-*   A [**boot sector**][6] in the first sector of the hard drive on which it is installed. The boot block includes a very small boot record and a partition table.
+*   [**boot 扇区**][6] 是硬盘驱动安装后的第一个扇区。这个 boot 块包含了一个非常小的 boot 记录和一个分区表。
 
-*   The first block in each partition is a **superblock **that contains the metadata that defines the other filesystem structures and locates them on the physical disk assigned to the partition.
+*   每一个分区的第一个块都是一个包含了元数据的 **superblock** ，这些元数据定义了其他文件系统的结构并将其定位于物理硬盘的具体分区上。
 
-*   An **inode bitmap block**, which determines which inodes are used and which are free.
+*   一个 **inode 位图块** 决定了哪些 inode 是在使用中的，哪一些是未使用的。
 
-*   The **inodes**, which have their own space on the disk. Each inode contains information about one file, including the locations of the data blocks, i.e., zones belonging to the file.
+*   **inode** 在硬盘上有它们自己的空间。每一个 inode 都包含了一个文件的信息包括其所处的数据块的位置，也就是该文件所处的区域。
 
-*   A **zone bitmap** to keep track of the used and free data zones.
+*   一个 **区位图** 用于保持追踪数据区域的使用和未使用情况。
 
-*   A **data zone**, in which the data is actually stored.
+*   一个 **数据区**, 这里是数据存储的地方。
 
 For both types of bitmaps, one bit represents one specific data zone or one specific inode. If the bit is zero, the zone or inode is free and available for use, but if the bit is one, the data zone or inode is in use.
 
