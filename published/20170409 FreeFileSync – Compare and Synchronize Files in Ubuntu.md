@@ -1,10 +1,9 @@
-FreeFileSync - 在 Ubuntu 中对比及同步文件
+FreeFileSync：在 Ubuntu 中对比及同步文件
 ============================================================
 
+FreeFileSync 是一个自由、开源以及跨平台的文件夹对比及同步软件，它可以帮助你[同步 Linux、Windows 和 Mac OS 中的文件和文件夹][2]。
 
-FreeFileSync 是一个免费、开源以及跨平台的文件夹对比及同步软件，它可以帮助你[同步 Linux、Windows 和 Mac OS 中的文件和文件夹][2]。
-
-它是可移植的并可以被本地安装在系统中，它的功能丰富，旨在节省设置和执行备份操作的时间，同时具有有吸引力的图形界面。
+它是便携的，也可以被安装在本地系统中，它的功能丰富，旨在节省设置和执行备份操作的时间，同时具有有吸引力的图形界面。
 
 #### FreeFileSync 功能
 
@@ -16,7 +15,7 @@ FreeFileSync 是一个免费、开源以及跨平台的文件夹对比及同步
 4.  它可以识别被移动和被重命名的文件和文件夹。
 5.  使用目录树显示磁盘空间使用情况。
 6.  支持复制锁定文件（卷影复制服务）。
-7.  确定冲突并同步删除（propagate deletions）。
+7.  识别冲突并同步删除（propagate deletions）。
 8.  支持按内容比较文件。
 9.  它可以配置为处理符号链接。
 10.  支持批量自动同步。
@@ -25,12 +24,12 @@ FreeFileSync 是一个免费、开源以及跨平台的文件夹对比及同步
 13.  支持复制 NTFS 扩展属性，如（压缩、加密、稀疏）。
 14.  还支持复制 NTFS 安全权限和 NTFS 备用数据流。
 15.  支持超过 260 个字符的长文件路径。
-16.  支持故障安全的文件复制防止数据损坏。
-17.  允许扩展环境变量，例如 ％UserProfile％。
+16.  支持免故障的文件复制防止数据损坏。
+17.  允许扩展环境变量，例如 `％UserProfile％`。
 18.  支持通过卷名访问可变驱动器盘符（U盘）。
 19.  支持管理已删除/更新文件的版本。
 20.  通过最佳同步序列防止光盘空间问题。
-21.  支持完整的 Unicode。
+21.  完全支持 Unicode。
 22.  提供高度优化的运行时性能。
 23.  支持过滤器包含和排除文件等。
 
@@ -45,9 +44,9 @@ $ sudo apt-get update
 $ sudo apt-get install freefilesync
 ```
 
-对于 Ubuntu 16.04 或者更新的版本，进入[ FreeFileSync 的下载页][3]为你的 Ubuntu 和 Debian 获取合适的包。
+对于 Ubuntu 16.04 或者更新的版本，进入 [FreeFileSync 的下载页][3]为你的 Ubuntu 和 Debian 获取合适的包。
 
-接下来，进入下载文件夹，如下解压 FreeFileSync_*.tar.gz 到 /opt 目录中：
+接下来，进入下载文件夹，如下解压 FreeFileSync_*.tar.gz 到 `/opt` 目录中：
 
 ```
 $ cd Downloads/
@@ -57,13 +56,13 @@ $ ls
 $ sudo unzip FreeFileSync/Resources.zip -d /opt/FreeFileSync/Resources/
 ```
 
-下载我们会使用 Gnome Panel创建一个程序启动器（.desktop 文件）。要浏览系统中 `.desktop` 文件的例子，列出 /usr/share/applications 目录的内容：
+下载我们会使用 Gnome 面板创建一个程序启动器（`.desktop` 文件）。要浏览系统中 `.desktop` 文件的例子，列出 `/usr/share/applications` 目录的内容：
 
 ```
 $ ls /usr/share/applications
 ```
 
-为防你没有安装 Gnome Panel，输入下面的命令来安装：
+为防你没有安装 Gnome 面板，输入下面的命令来安装：
 
 ```
 $ sudo apt-get install --no-install-recommends gnome-panel
@@ -84,7 +83,7 @@ Command:   /opt/FreeFileSync/FreeFileSync
 Comment:   Folder Comparison and Synchronization
 ```
 
-要为启动器添加一个图标，只需要点击图标选择：/opt/FreeFileSync/Resources/FreeFileSync.png。
+要为启动器添加一个图标，只需要点击图标选择：`/opt/FreeFileSync/Resources/FreeFileSync.png`。
 
 当你设置完成之后，点击 OK 创建。
 
@@ -92,7 +91,7 @@ Comment:   Folder Comparison and Synchronization
  ![Create Desktop Launcher](http://www.tecmint.com/wp-content/uploads/2017/03/Create-Desktop-Launcher.png) 
 ][4]
 
-创建桌面启动器
+*创建桌面启动器*
 
 如果你不想要创建桌面启动器，你可以从目录中启动 FreeFileSync。
 
@@ -108,7 +107,7 @@ $ ./FreeFileSync
  ![FreeFileSync ](http://www.tecmint.com/wp-content/uploads/2017/03/FreeFileSync-launched.png) 
 ][5]
 
-FreeFileSync
+*FreeFileSync*
 
 #### 使用 FreeFileSync 比较两个文件夹
 
@@ -125,7 +124,7 @@ Destination Folder:	/media/aaronkilik/J_CPRA_X86F/scripts
  ![Compare Two Folders in Linux](http://www.tecmint.com/wp-content/uploads/2017/03/compare-two-folders.png) 
 ][6]
 
-在 Linux 中比较两个文件夹
+*在 Linux 中比较两个文件夹*
 
 通过下面的界面，可以在两个文件夹中按 `F6` 来更改要比较的内容：文件时间和大小、内容或文件大小。请注意，你选择的每个选项的含义也包括在内。
 
@@ -133,7 +132,7 @@ Destination Folder:	/media/aaronkilik/J_CPRA_X86F/scripts
  ![File Comparison Settings](http://www.tecmint.com/wp-content/uploads/2017/03/comparison-settings.png) 
 ][7]
 
-文件比较设置
+*文件比较设置*
 
 #### 使用 FreeFileSync 同步两个文件夹
 
@@ -147,27 +146,27 @@ Destination Folder: /media/aaronkilik/Data/Tecmint
  ![Compare and Synchronize Two Folders](http://www.tecmint.com/wp-content/uploads/2017/03/compare-and-sychronize-two-folders.png) 
 ][8]
 
-比较以及同步两个文件夹
+*比较以及同步两个文件夹*
 
 [
  ![Start File Synchronization](http://www.tecmint.com/wp-content/uploads/2017/03/start-sychronization.png) 
 ][9]
 
-开始文件同步
+*开始文件同步*
 
 [
  ![File Synchronization Completed](http://www.tecmint.com/wp-content/uploads/2017/03/synchronization-complete.png) 
 ][10]
 
-文件同步完成
+*文件同步完成*
 
-在下面的界面中按下 `F8` 设置默认同步选项：two way、mirror、update 或 custom。每个选项的意义都包含在内。
+在下面的界面中按下 `F8` 设置默认同步选项：two way、mirror、update 或 custom。每个选项的意义不言自明。
 
 [
  ![File Synchronization Settings](http://www.tecmint.com/wp-content/uploads/2017/03/synchronization-setttings.png) 
 ][11]
 
-文件同步设置
+*文件同步设置*
 
 要了解更多信息，访问 FreeFileSync 主页：[http://www.freefilesync.org/][12]
 
@@ -184,9 +183,9 @@ Ravi Saive，TecMint 的原创作者。一个喜爱在互联网上分享技巧�
 
 via: http://www.tecmint.com/freefilesync-compare-synchronize-files-in-ubuntu/
 
-作者：[Ravi Saive ][a]
+作者：[Ravi Saive][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
