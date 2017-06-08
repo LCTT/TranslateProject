@@ -33,7 +33,7 @@ DevOps 的意义
 
 ### 清除栅栏
 
-> "In the matter of reforming things, as distinct from deforming them, there is one plain and simple principle; a principle which will probably be called a paradox. There exists in such a case a certain institution or law; let us say, for the sake of simplicity, a fence or gate erected across a road. The more modern type of reformer goes gaily up to it and says, "I don't see the use of this; let us clear it away." To which the more intelligent type of reformer will do well to answer: "If you don't see the use of it, I certainly won't let you clear it away. Go away and think. Then, when you can come back and tell me that you do see the use of it, I may allow you to destroy it."—G.K Chesterton, 1929
+> 就改革而言，它不同于腐化。有一条明显且简单的原则，这个原则可能被称为悖论。 在这种情况下，存在某种制度或法律; 让我们说，为了简单起见，在一条路上架设了一个栅栏或门。 现代化的改革者们来到这儿，并说：“我看不到它的用处，让我们把它清除掉。”聪明的改革者会很好地回答：“如果你看不到它的用处，我肯定不会让你清除它，回去想想，然后你可以回来 告诉我你看到它的用处，我会允许你摧毁它."—G.K Chesterton, 1929
 
 为了了解对 DevOps 的需求——它试图将传统意义上分开的开发部门和运维部门进行重新组合——我们首先必须明白这个分开是如何产生的。一旦我们"知道了它的用处"，然后我们就会知道将它们分开是为了什么，并且在必要的时候可以取消分开。
 
@@ -41,7 +41,7 @@ DevOps 的意义
 
 我们可以很容易地画一个以 Taylor 为起源的历史树。基于泰勒早在18世纪80年代后期的研究而出现的时间运动研究和其他质量改进计划跨越20世纪20年代一直到今天，我们可以从中看到六西格玛、精益，等等一些。自上而下、指导式管理，再加上研究过程的有条理的方法，今天主宰主流商业文化。它主要侧重于把效率作为工人成功的测量标准。
 
->The "Dev" and "Ops" split is not the result of personality, diverging skills, or a magic hat placed on the heads of new employees; it's a byproduct of Taylorism and Sloanianism.
+> “开发”和“运维”的分开不是因为人的原因，不同的技能，或者放在新员工头上的一顶魔术帽，它是 Taylor 和 Sloan 的理论的副产品。
 
 如果 Taylor 是我们的历史树的根，那么我们主干上的下一个主叉将是 20 世纪 20 年代通用汽车公司的 Alfred P. Sloan。通用汽车公司创造的斯隆结构不仅持续强劲到 21 世纪初，而且在未来五十年的大部分时间里，都将成为该公司的主要模式。
 
@@ -71,7 +71,7 @@ DevOps 的意义
 
 ### 抵抗并不是没用的
 
-> "Bert Lance believes he can save Uncle Sam billions if he can get the government to adopt a simple motto: 'If it ain't broke, don't fix it.' He explains: 'That's the trouble with government: Fixing things that aren't broken and not fixing things that are broken.'" — Nation's Business, May 1977
+> "Bert Lance 认为如果他能让政府采纳一条简单的格言“如果东西还没损坏，那就别去修理它”，他就可以为山姆拯救三十亿。他解释说：“这是政府的麻烦：'修复没有损坏的东西，而不是修复已经损坏了的东西。'” — Nation's Business, 1977.5
 
 通常，改革是组织针对所出现的错误所做的应对。 在这个意义上说，如果紧张局势（即使逆境）是变革的正常催化剂，那么 *抵抗* 变化就是成功的指标。但是过分强调成功的道路会使组织变得僵硬、衰竭和独断。 重视有效结果的政策导航是这种不断增长的僵局的症状。重视有效结果的政策导航是这种不断增长的僵局的症状。 
 
@@ -79,13 +79,13 @@ DevOps 的意义
 
 正如“软件吃掉世界”，IT 越来越成为组织整体成功的核心。具有前瞻性的IT组织认识到这一点，并且已经对其战略规划进行了有意义的改变，而不是将改变视为恐惧。
 
->Change isn't just about rebuilding the organization; it's also about new ways to cross historically uncrossable gaps.
+>改革不仅仅只是重构组织，它也是关于跨越历史上不可跨越的鸿沟的新途径。
 
 例如，Facebook与人类学家罗宾·邓巴（Robin Dunbar）就社会团体的方法进行了磋商，而且意识到这一点对公司成长的内部团体（不仅仅是网站的外部用户）的影响。扎波斯的文化得到了很多的赞誉，该组织创立了一个部门，专注于培养他人对于核心价值观和企业文化的看法。当然，这本书是  _The Open Organization_ 的姊妹篇， 一本描述被应用于管理的开放原则——透明度、参与度和社区——可以如何为我们快节奏的有连系的时代重塑组织。
 
 ### 决心改变
 
-> "If the rate of change on the outside exceeds the rate of change on the inside, the end is near."—Jack Welch, 2004
+> "如果外界的变化率超过了内部的变化率，那末日就不远了."—Jack Welch, 2004
 
 一位同事曾经告诉我他可以只用 [Information Technology Infrastructure Library][9] 框架里面的词汇向一位项目经理解释 DevOps。
 
