@@ -1,7 +1,7 @@
-在 Linux 中使用 ‘pushd’ 和 ‘popd’ 命令来进行高效的文件浏览
+在 Linux 中使用 pushd 和 popd 命令来进行高效的目录导航
 ======
 
-有时候，通过命令来浏览 Linux 文件系统是一件非常痛苦的事情，特别是对于一些新手。通常情况下，我们主要使用 [cd（改变目录）命令][1]在 Linux 文件系统之间移动。
+有时候，通过命令来在 Linux 文件系统导航是一件非常痛苦的事情，特别是对于一些新手。通常情况下，我们主要使用 [cd（改变目录）命令][1]在 Linux 文件系统之间移动。
 
 在之前的文章中，我们回顾了一个非常简单但很有用的 Linux 上的 CLI 工具，文章叫做 [bd：快速返回某级父目录而不用冗余地输入 “cd ../../..”][2]
 
@@ -19,7 +19,7 @@
 
 ```
 $ dirs
-OR
+或
 $ dirs -v
 ```
 
@@ -102,15 +102,15 @@ via: https://www.tecmint.com/pushd-and-popd-linux-filesystem-navigation/
 
 作者：[Aaron Kili][a]
 译者：[ucasFL](https://github.com/ucasFL)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://www.tecmint.com/author/aaronkili/
 [1]:https://www.tecmint.com/cd-command-in-linux/
-[2]:hhttps://linux.cn/article-8491-1.html
-[3]:https://www.tecmint.com/autojump-a-quickest-way-to-navigate-linux-filesystem/
-[4]:https://www.tecmint.com/autojump-a-quickest-way-to-navigate-linux-filesystem/
+[2]:https://linux.cn/article-8491-1.html
+[3]:https://linux.cn/article-5983-1.html
+[4]:https://linux.cn/article-5983-1.html
 [5]:https://www.tecmint.com/author/aaronkili/
 [6]:https://www.tecmint.com/10-useful-free-linux-ebooks-for-newbies-and-administrators/
 [7]:https://www.tecmint.com/free-linux-shell-scripting-books/

@@ -1,5 +1,3 @@
-Yoo-4x Translating
-
 OpenGL & Go Tutorial Part 1: Hello, OpenGL
 ============================================================
 

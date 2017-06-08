@@ -3,7 +3,7 @@
 
 在之前的一篇文章里，我们回顾了[ Linux 下 9 个最好的文件比较工具][1]，本篇文章中，我们将会描述在 Linux 下怎样找到两个目录之间的不同。
 
-一般情况下，要在 Linux 下比较两个文件，我们会使用 **diff** (一个简单的源自 Unix 的命令行工具 )来显示两个计算机文件的不同；它一行一行的去比较文件，而且很方便使用，在几乎全部的 Linux 发行版都预装了。
+一般情况下，要在 Linux 下比较两个文件，我们会使用 `diff` （一个简单的源自 Unix 的命令行工具）来显示两个计算机文件的不同；它一行一行的去比较文件，而且很方便使用，在几乎全部的 Linux 发行版都预装了。
 
 问题是在 Linux 下我们怎么才能比较两个目录？现在，我们想知道两个目录中哪些文件/子目录是共有的，哪些只存在一个于目录。
 
@@ -14,7 +14,7 @@ $ diff [OPTION]… FILES
 $ diff options dir1 dir2 
 ```
 
-默认情况下，输出是按文件/子文件夹的文件名的字母排序的，如下面截图所示，在命令中， `-q` 开关是告诉 diif 只有在文件有差异时报告。
+默认情况下，输出是按文件/子文件夹的文件名的字母排序的，如下面截图所示，在命令中， `-q` 开关是告诉 `diif` 只有在文件有差异时报告。
 
 ```
 $ diff -q directory-1/ directory-2/
@@ -25,7 +25,7 @@ $ diff -q directory-1/ directory-2/
 
 *两个文件夹之间的差异*
 
-再次运行 diff 并不能进入子文件夹，但是我们可以使用 `-r` 开关来读子文件夹，如下所示。
+再次运行 `diff` 并不能进入子文件夹，但是我们可以使用 `-r` 开关来读子文件夹，如下所示。
 
 ```
 $ diff -qr directory-1/ directory-2/ 
@@ -33,7 +33,7 @@ $ diff -qr directory-1/ directory-2/
 
 ### 使用 Meld 可视化比较和合并工具
 
-meld 是一个很酷的图形化工具（一个 GNOME 桌面下的可视化的比较和合并工具），可供那些喜欢使用鼠标的人使用，可按如下来安装。
+`meld` 是一个很酷的图形化工具（一个 GNOME 桌面下的可视化的比较和合并工具），可供那些喜欢使用鼠标的人使用，可按如下来安装。
 
 ```
 $ sudo apt install meld  [Debian/Ubuntu systems]
@@ -51,6 +51,7 @@ $ sudo dnf install meld  [Fedora 22+]
 *Meld 比较工具*
 
 选择你想要比较的文件夹，注意你可以勾选 “**3-way Comparison**” 选项，添加第三个文件夹。
+
 [
  ![Select Comparison Directories](http://www.tecmint.com/wp-content/uploads/2017/05/Select-Comparison-Directories.png) 
 ][5]
@@ -76,7 +77,7 @@ Aaron Kili 是一个 Linux 和 F.O.S.S 爱好者，即将成为 Linux 系统管�
 
 via: http://www.tecmint.com/compare-find-difference-between-two-directories-in-linux/
 
-作者：[Aaron Kili ][a]
+作者：[Aaron Kili][a]
 译者：[hkurj](https://github.com/hkurj)
 校对：[jasminepeng](https://github.com/jasminepeng)
 
