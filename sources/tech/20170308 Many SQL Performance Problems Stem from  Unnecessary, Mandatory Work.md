@@ -1,3 +1,5 @@
+ictlyh Translating
+
 Many SQL Performance Problems Stem from “Unnecessary, Mandatory Work”
 ============================================================ 
 
