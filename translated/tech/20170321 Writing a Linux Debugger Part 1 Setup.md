@@ -1,7 +1,7 @@
 开发 Linux 调试器第一部分：启动
 ============================================================
 
-任何写过 hello world 程序的人都应该使用过调试器（如果你还没有，那就停下手头的工作先学习一下吧）。但是，尽管这些工具已经得到了广泛的使用，却并没有太多的资源告诉你它们的工作原理以及如何开发[1][1]，尤其是和其它类似编译器等工具链技术相比的时候。
+任何写过比 hello world 复杂点程序的人都应该使用过调试器（如果你还没有，那就停下手头的工作先学习一下吧）。但是，尽管这些工具已经得到了广泛的使用，却并没有太多的资源告诉你它们的工作原理以及如何开发[1][1]，尤其是和其它类似编译器等工具链技术相比的时候。
 
 我们将会支持以下功能：
 
@@ -39,14 +39,14 @@
 2.	[断点][3]
 3.	寄存器和内存
 4.	Elves 和 dwarves
-5.	逐步、源码和信号
-6.	使用 DWARF 调试信息逐步执行
+5.	源码和信号
+6.	源码层逐步执行
 7.	源码层断点
 8.	调用栈
 9.	读取变量
-10.	下一步
+10.	之后步骤
 
-译者注：ELF（[Executable and Linkable Format](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format "Executable and Linkable Format") 可执行文件格式），DWARF（一种广泛使用的调试数据格式，参考 [WIKI](https://en.wikipedia.org/wiki/DWARF "DWARF WIKI")）
+LCTT 译注：ELF（[Executable and Linkable Format](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format "Executable and Linkable Format") 可执行文件格式），DWARF（一种广泛使用的调试数据格式，参考 [WIKI](https://en.wikipedia.org/wiki/DWARF "DWARF WIKI")）
 * * *
 
 ### 准备环境
@@ -82,7 +82,7 @@ int main(int argc, char* argv[]) {
     }
 ```
 
-我们调用 `fort` 把我们的程序分成两个进程。如果我们是在子进程，`fork` 返回 0，如果我们是在父进程，它会返回子进程的进程ID。
+我们调用 `fort` 把我们的程序分成两个进程。如果我们是在子进程，`fork` 返回 0，如果我们是在父进程，它会返回子进程的进程 ID。
 
 如果我们是在子进程，我们要用希望调试的程序替换正在执行的程序。
 
@@ -224,7 +224,7 @@ via: http://blog.tartanllama.xyz/c++/2017/03/21/writing-a-linux-debugger-setup/
 
 作者：[Simon Brand ][a]
 译者：[ictlyh](https://github.com/ictlyh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
