@@ -1,7 +1,7 @@
-An introduction to Linux's EXT4 filesystem
+Linux 的 EXT4 文件系统简介
 ============================================================
 
-### 让我们大概了解一下 EXT4  的历史、特性以及最佳实践来学习它和之前的所有 EXT 文件系统有何不同。
+### 让我们大概地从 EXT4  的历史、特性以及最佳实践这几个方面来学习它和之前的所有的 EXT 文件系统有何不同。
 
 ![An introduction to the EXT4 filesystem](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/hard_drives.png?itok=yZWyaSO6 "An introduction to the EXT4 filesystem")
 >图片来自 : [WIlliam][8][ Warby][9]. 由 [Jason Baker][10] 编辑. Creative Commons [BY-SA 2.0][11].
@@ -42,9 +42,11 @@ Minix 有以下这些结构，其中的大部分位于生成文件系统的分�
 
 *   一个 **数据区**, 这里是数据存储的地方。
 
-For both types of bitmaps, one bit represents one specific data zone or one specific inode. If the bit is zero, the zone or inode is free and available for use, but if the bit is one, the data zone or inode is in use.
+对上述了两种位图类型来说，一个 bit 表示一个制定的数据区或者一个指定的 inode. 如果这个 bit 是 0 则表示这个数据区或者这个 inode 是可以使用的，如果是 1 则表示正在使用中。
 
-What is an [inode][17]? Short for index-node, an inode is a 256-byte block on the disk and stores data about the file. This includes the file's size; the user IDs of the file's user and group owners; the file mode (i.e., the access permissions); and three timestamps specifying the time and date that: the file was last accessed, last modified, and the data in the inode was last modified.
+那么，[inode][17] 又是什么呢 ? 就是 index-node (索引节点)的简写。 inode 是位于磁盘上的一个 256 字节的块，用于存储和该 inode 对应的文件的相关数据。这些数据包含了文件的大小、文件的所有者和所属组的用户的 ID、文件模式（即访问权限）以及三个时间戳用于指定：该文件最后的访问时间、该文件的最后修改时间和该 inode 中的数据的最后修改时间。
+
+The inode also contains data that points to the location of the file's data on the hard drive. In Minix and the EXT1-3 filesystems, this is a list of data zones or blocks. The Minix filesystem inodes supported nine data blocks, seven direct and two indirect. If you'd like to learn more, there is an excellent PDF with a detailed description of the [Minix filesystem structure][18] and a quick overview of the [inode pointer structure][19] on Wikipedia.
 
 The inode also contains data that points to the location of the file's data on the hard drive. In Minix and the EXT1-3 filesystems, this is a list of data zones or blocks. The Minix filesystem inodes supported nine data blocks, seven direct and two indirect. If you'd like to learn more, there is an excellent PDF with a detailed description of the [Minix filesystem structure][18] and a quick overview of the [inode pointer structure][19] on Wikipedia.
 
