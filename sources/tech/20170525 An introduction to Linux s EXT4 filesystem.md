@@ -46,21 +46,19 @@ Minix 有以下这些结构，其中的大部分位于生成文件系统的分�
 
 那么，[inode][17] 又是什么呢 ? 就是 index-node (索引节点)的简写。 inode 是位于磁盘上的一个 256 字节的块，用于存储和该 inode 对应的文件的相关数据。这些数据包含了文件的大小、文件的所有者和所属组的用户的 ID、文件模式（即访问权限）以及三个时间戳用于指定：该文件最后的访问时间、该文件的最后修改时间和该 inode 中的数据的最后修改时间。
 
-The inode also contains data that points to the location of the file's data on the hard drive. In Minix and the EXT1-3 filesystems, this is a list of data zones or blocks. The Minix filesystem inodes supported nine data blocks, seven direct and two indirect. If you'd like to learn more, there is an excellent PDF with a detailed description of the [Minix filesystem structure][18] and a quick overview of the [inode pointer structure][19] on Wikipedia.
-
-The inode also contains data that points to the location of the file's data on the hard drive. In Minix and the EXT1-3 filesystems, this is a list of data zones or blocks. The Minix filesystem inodes supported nine data blocks, seven direct and two indirect. If you'd like to learn more, there is an excellent PDF with a detailed description of the [Minix filesystem structure][18] and a quick overview of the [inode pointer structure][19] on Wikipedia.
+同时，这个 inode 还包含了指向了其所对应的文件的数据在硬盘中的位置。在 Minix 和 EXT1-3 文件系统中，inode 表示的是一系列的的数据区和块。Minix 文件系统的 inode 支持 9 个数据块包括 7 个直接数据块和 2 个间接数据块。如果你想要更深入的了解，这里有一个优秀的 PDF 详细地描述了 [Minix 文件系统街头][18] 。同时你也可以在维基百科上对 [inode 指针结构][19] 做一个快速的浏览。
 
 ### EXT
 
-The original [EXT filesystem][20] (Extended) was written by [Rémy Card][21] and released with Linux in 1992 to overcome some size limitations of the Minix filesystem. The primary structural changes were to the metadata of the filesystem, which was based on the Unix filesystem (UFS), which is also known as the Berkeley Fast File System (FFS). I found very little published information about the EXT filesystem that can be verified, apparently because it had significant problems and was quickly superseded by the EXT2 filesystem.
+原生的 [EXT 文件系统][20] (指经过扩展的) 是由 [Rémy Card][21] 编写并于 1992 年与 Linux 一同发行。主要是为了克服 Minix 文件系统中的一些文件大小限制的问题。其中，最主要的结构变化就是文件系统中的元数据。它基于 Unix 文件系统 （UFS），也被称为伯克利快速文件系统（FFS）。我发现只有很少一部分关于 EXT 文件系统的发行信息是可以被验证的，显然这是因为其存在着严重的问题并且它很快地被 EXT2 文件系统取代了。
 
 ### EXT2
 
-The [EXT2 filesystem][22] was quite successful. It was used in Linux distributions for many years, and it was the first filesystem I encountered when I started using Red Hat Linux 5.0 back in about 1997\. The EXT2 filesystem has essentially the same metadata structures as the EXT filesystem, however EXT2 is more forward-looking, in that a lot of disk space is left between the metadata structures for future use.
+[EXT2 文件系统][22] 就相当地成功，它在 Linux 发行版中存活了多年。它是我在 1997 年开始使用 Red Hat Linux 时认识的第一个文件系统。实际上，EXT2 文件系统有着和 EXT 文件系统基本相同的元数据结构。然而 EXT2 更高瞻远瞩，因为其元数据结构之间留有很多磁盘空间供将来使用。
 
-Like Minix, EXT2 has a [boot sector][23] in the first sector of the hard drive on which it is installed, which includes a very small boot record and a partition table. Then there is some reserved space after the boot sector, which spans the space between the boot record and the first partition on the hard drive that is usually on the next cylinder boundary. [GRUB2][24]—and possibly GRUB1—uses this space for part of its boot code.
+和 Minix 类似，EXT2 也有一个[boot 扇区][23] ，它是硬盘驱动安装后的第一个扇区。它包含了少量的 boot 记录和一个分区表。接着 boot 扇区之后是一些保留的空间，它跨越引导记录和通常位于下一个柱面的硬盘驱动器上的第一个分区之间的空间。 [GRUB2] [24] - 也可能是GRUB1 - 将此空间用于其部分启动代码。
 
-The space in each EXT2 partition is divided into cylinder groups that allow for more granular management of the data space. In my experience, the group size usually amounts to about 8MB. Figure 1, below, shows the basic structure of a cylinder group. The data allocation unit in a cylinder is the block, which is usually 4K in size.
+每个 EXT2 分区中的空间分为各柱面组，它允许更精细地管理数据空间。 根据我的经验，每一组大小通常约为8MB。 下面的图1显示了一个柱面组的基本结构。 柱面中的数据分配单元是块，通常大小为4K。
 
 ![cylindergroup-01_1.png](https://opensource.com/sites/default/files/images/life-uploads/cylindergroup-01_1.png)
 
