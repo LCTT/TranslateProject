@@ -1,3 +1,5 @@
+【xllc翻译中】
+
 How I got started with bash scripting
 ============================================================
 
