@@ -1,3 +1,4 @@
+translated by zhousiyu325
 How to master the art of Git
 ============================================================
 

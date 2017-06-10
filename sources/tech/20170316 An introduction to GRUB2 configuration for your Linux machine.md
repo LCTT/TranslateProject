@@ -1,3 +1,4 @@
+ictlyh Translating
 An introduction to GRUB2 configuration for your Linux machine
 ============================================================
 
