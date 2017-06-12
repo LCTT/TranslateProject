@@ -1,7 +1,6 @@
-ictlyh Translating
+ch-cn translating
 10 Useful Tips for Writing Effective Bash Scripts in Linux
 ============================================================
-ch-cn translating
 
 [Shell scripting][4] is the easiest form of programming you can learn/do in Linux. More so, it is a required skill for [system administration for automating tasks][5], developing new simple utilities/tools just to mention but a few.
 
