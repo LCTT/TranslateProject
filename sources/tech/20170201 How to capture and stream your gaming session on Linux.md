@@ -1,3 +1,4 @@
+XYenChi is traslating
 How to capture and stream your gaming session on Linux
 ============================================================
 
