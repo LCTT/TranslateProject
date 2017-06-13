@@ -1,3 +1,5 @@
+translating---geekpi
+
 8 ways to get started with open source hardware
 ============================================================
 
