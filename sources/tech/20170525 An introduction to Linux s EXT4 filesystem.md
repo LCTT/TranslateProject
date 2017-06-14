@@ -62,11 +62,11 @@ Minix 有以下这些结构，其中的大部分位于生成文件系统的分�
 
 ![cylindergroup-01_1.png](https://opensource.com/sites/default/files/images/life-uploads/cylindergroup-01_1.png)
 
-Figure 1: The structure of a cylinder group in the EXT filesystems
+Figure 1: EXT 文件系统中的柱面组的结构
 
-The first block in the cylinder group is a superblock, which contains the metadata that defines the other filesystem structures and locates them on the physical disk. Some of the additional groups in the partition will have backup superblocks, but not all. A damaged superblock can be replaced by using a disk utility such as **dd** to copy the contents of a backup superblock to the primary superblock. It does not happen often, but once, many years ago, I had a damaged superblock, and I was able to restore its contents using one of the backup superblocks. Fortunately, I had been foresighted and used the **dumpe2fs** command to dump the descriptor information of the partitions on my system.
+柱面组中的第一个块是一个超级块，它包含了一个定义了其他文件系统的结构并将其定位于物理硬盘的具体分区上的元数据。分区中有一些柱面组还会有备用超级块，但并不是所有的柱面组都有。我们还可以使用例如 **dd** 等磁盘工具来拷贝备用超级块的内容到主超级块上以达到更换损坏超级块的目的。虽然这种情况不会经常发生，但是在几年前我的一个超级块损坏了，我就是用这种方法来修复的。幸好，我很有先见之明地使用了 **dumpe2fs** 命令来备份了我的分区描述符信息到我的系统上。
 
-Following is the partial output from the **dumpe2fs** command. It shows the metadata contained in the superblock, as well as data about each of the first two cylinder groups in the filesystem.
+以下是 **dumpe2fs** 命令的一部分输出。这部分输出主要是超级块上包含的一些元数据，同时也是文件系统上的前两个柱面组的数据。
 
 ```
 # dumpe2fs /dev/sda1
@@ -150,7 +150,7 @@ Group 3: (Blocks 98304-131071)
 <snip>
 ```
 
-Each cylinder group has its own inode bitmap that is used to determine which inodes are used and which are free within that group. The inodes have their own space in each group. Each inode contains information about one file, including the locations of the data blocks belonging to the file. The block bitmap keeps track of the used and free data blocks within the filesystem. Notice that there is a great deal of data about the filesystem in the output shown above. On very large filesystems the group data can run to hundreds of pages in length. The group metadata includes a listing of all of the free data blocks in the group.
+每一个柱面组都有自己的 inode 位图用于判定该柱面组中的哪些 inode 是使用中的而哪些又是未被使用的。每一个柱面组的 inode 都有它们自己的空间。每一个 inode 都包含了对应的文件的相关信息，包括其位于该文件的数据块中的位置。The block bitmap keeps track of the used and free data blocks within the filesystem. Notice that there is a great deal of data about the filesystem in the output shown above. On very large filesystems the group data can run to hundreds of pages in length. The group metadata includes a listing of all of the free data blocks in the group.
 
 The EXT filesystem implemented data-allocation strategies that ensured minimal file fragmentation. Reducing fragmentation improved filesystem performance. Those strategies are described below, in the section on EXT4.
 
