@@ -1,3 +1,5 @@
+transalting---geekpi
+
 How Microsoft is becoming a Linux vendor
 =====================================
 
