@@ -1,40 +1,40 @@
-ictlyh Translating
-Writing a Linux Debugger Part 6: Source-level stepping
+开发 Linux 调试器第六部分：源码级逐步执行
 ============================================================ 
 
-A couple of posts ago we learned about DWARF information and how it lets us relate the machine code to the high-level source. This time we’ll be putting this knowledge into practice by adding source-level stepping to our debugger.
+在前几篇博文中我们学习了 DWARF 信息以及它如何使我们将机器码和上层源码联系起来。这一次我们通过为我们的调试器添加源码级逐步调试将该知识应用于实际。
 
 * * *
 
-### Series index
+### 系列文章索引
 
-These links will go live as the rest of the posts are released.
+随着后面文章的发布，这些链接会逐渐生效。
 
-1.  [Setup][1]
+1.  [启动][1]
 
-2.  [Breakpoints][2]
+2.  [断点][2]
 
-3.  [Registers and memory][3]
+3.  [寄存器和内存][3]
 
-4.  [Elves and dwarves][4]
+4.  [Elves 和 dwarves][4]
 
-5.  [Source and signals][5]
+5.  [源码和信号][5]
 
-6.  [Source-level stepping][6]
+6.  [源码级逐步执行][6]
 
-7.  Source-level breakpoints
+7.  源码级断点
 
-8.  Stack unwinding
+8.  调用栈展开
 
-9.  Reading variables
+9.  读取变量
 
-10.  Next steps
+10.  下一步
 
+译者注：ELF（[Executable and Linkable Format](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format "Executable and Linkable Format") 可执行文件格式），DWARF（一种广泛使用的调试数据格式，参考 [WIKI](https://en.wikipedia.org/wiki/DWARF "DWARF WIKI")）
 * * *
 
-### Exposing instruction-level stepping
+### 暴露指令级逐步执行
 
-But we’re getting ahead of ourselves. First let’s expose instruction-level single stepping through the user interface. I decided to split it between a `single_step_instruction` which can be used by other parts of the code, and a `single_step_instruction_with_breakpoint_check` which ensures that any breakpoints are disabled and re-enabled.
+我们已经超越了自己。首先让我们通过用户接口暴露指令级单步执行。我决定将它切分为能被其它部分代码利用的 `single_step_instruction` 和确保是否启用了某个断点的 `single_step_instruction_with_breakpoint_check`。
 
 ```
 void debugger::single_step_instruction() {
@@ -43,7 +43,7 @@ void debugger::single_step_instruction() {
 }
 
 void debugger::single_step_instruction_with_breakpoint_check() {
-    //first, check to see if we need to disable and enable a breakpoint
+    //首先，检查我们是否需要停用或者启用某个断点
     if (m_breakpoints.count(get_pc())) {
         step_over_breakpoint();
     }
@@ -53,7 +53,7 @@ void debugger::single_step_instruction_with_breakpoint_check() {
 }
 ```
 
-As usual, another command gets lumped into our `handle_command` function:
+正如以往，另一个命令被集成到我们的 `handle_command` 函数：
 
 ```
 else if(is_prefix(command, "stepi")) {
@@ -63,15 +63,15 @@ else if(is_prefix(command, "stepi")) {
  }
 ```
 
-With these functions added we can begin to implement our source-level stepping functions.
+利用新增的这些函数我们可以开始实现我们的源码级逐步执行函数。
 
 * * *
 
-### Implementing the steps
+### 实现逐步执行
 
-We’re going to write very simple versions of these functions, but real debuggers tend to have the concept of a  _thread plan_  which encapsulates all of the stepping information. For example, a debugger might have some complex logic to determine breakpoint sites, then have some callback which determines whether or not the step operation has completed. This is a lot of infrastructure to get in place, so we’ll just take a naive approach. We might end up accidentally stepping over breakpoints, but you can spend some time getting all the details right if you like.
+我们打算编写这些函数非常简单的版本，但真正的调试器有 _thread plan_ 的概念，它封装了所有的单步信息。例如，调试器可能有一些复杂的逻辑去决定断点的位置，然后有一些回调函数用于判断单步操作是否完成。这其中有非常多的基础设施，我们只采用一种朴素的方法。我们可能会意外地跳过断点，但如果你愿意的话，你可以花一些时间把所有的细节都处理好。
 
-For `step_out`, we’ll just set a breakpoint at the return address of the function and continue. I don’t want to get into the details of stack unwinding yet – that’ll come in a later part – but it suffices to say for now that the return address is stored 8 bytes after the start of a stack frame. So we’ll just read the frame pointer and read a word of memory at the relevant address:
+对于跳出`step_out`，我们只是在函数的返回地址处设一个断点然后继续执行。我暂时还不想考虑调用栈展开的细节 - 这些都会在后面的部分介绍 - 但可以说返回地址就保存在栈帧开始的后 8 个字节中。因此我们会读取栈指针然后在内存相对应的地址读取值：
 
 ```
 void debugger::step_out() {
@@ -92,7 +92,7 @@ void debugger::step_out() {
 }
 ```
 
-`remove_breakpoint` is a little helper function:
+`remove_breakpoint` 是一个小的帮助函数：
 
 ```
 void debugger::remove_breakpoint(std::intptr_t addr) {
@@ -103,7 +103,7 @@ void debugger::remove_breakpoint(std::intptr_t addr) {
 }
 ```
 
-Next is `step_in`. A simple algorithm is to just keep on stepping over instructions until we get to a new line.
+接下来是跳入`step_in`。一个简单的算法是继续逐步执行指令直到新的一行。
 
 ```
 void debugger::step_in() {
@@ -118,7 +118,7 @@ void debugger::step_in() {
 }
 ```
 
-`step_over` is the most difficult of the three for us. Conceptually, the solution is to just set a breakpoint at the next source line, but what is the next source line? It might not be the one directly succeeding the current line, as we could be in a loop, or some conditional construct. Real debuggers will often examine what instruction is being executed and work out all of the possible branch targets, then set breakpoints on all of them. I’d rather not implement or integrate an x86 instruction emulator for such a small project, so we’ll need to come up with a simpler solution. A couple of horrible options are to just keep stepping until we’re at a new line in the current function, or to just set a breakpoint at every line in the current function. The former would be ridiculously inefficient if we’re stepping over a function call, as we’d need to single step through every single instruction in that call graph, so I’ll go for the second solution.
+跳过`step_over` 对于我们来说是三个中最难的。理论上，解决方法就是在下一行源码中设置一个断点，但下一行源码是什么呢？它可能不是当前行后续的那一行，因为我们可能处于一个循环、或者某种条件结构之中。真正的调试器一般会检查当前正在执行什么指令然后计算出所有可能的分支目标，然后在所有分支目标中设置断点。对于一个小的项目，我不打算实现或者集成一个 x86 指令模拟器，因此我们要想一个更简单的解决办法。有几个可怕的选项，一个是一直逐步执行直到当前函数新的一行，或者在当前函数的每一行都设置一个断点。如果我们是要跳过一个函数调用，前者将会相当的低效，因为我们需要逐步执行那个调用图中的每个指令，因此我会采用第二种方法。
 
 ```
 void debugger::step_over() {
@@ -154,7 +154,7 @@ void debugger::step_over() {
 }
 ```
 
-This function is a bit more complex, so I’ll break it down a bit.
+这个函数有一点复杂，我们将它拆开来看。
 
 ```
     auto func = get_function_from_pc(get_pc());
@@ -162,7 +162,7 @@ This function is a bit more complex, so I’ll break it down a bit.
     auto func_end = at_high_pc(func);
 ```
 
-`at_low_pc` and `at_high_pc` are functions from `libelfin` which will get us the low and high PC values for the given function DIE.
+`at_low_pc` 和 `at_high_pc` 是 `libelfin` 中的函数，它们能给我们指定函数 DWARF 信息条目的最小和最大程序计数器值。
 
 ```
     auto line = get_line_entry_from_pc(func_entry);
@@ -179,7 +179,7 @@ This function is a bit more complex, so I’ll break it down a bit.
     }
 ```
 
-We’ll need to remove any breakpoints we set so that they don’t leak out of our step function, so we keep track of them in a `std::vector`. To set all the breakpoints, we loop over the line table entries until we hit one which is outside the range of our function. For each one, we make sure that it’s not the line we are currently on, and that there’s not already a breakpoint set at that location.
+我们需要移除我们设置的所有断点，以便不会泄露我们的逐步执行函数，为此我们把它们保存到一个 `std::vector` 中。为了设置所有断点，我们循环遍历行表条目直到找到一个不在我们函数范围内的。对于每一个，我们都要确保它不是我们当前所在的行，而且在这个位置还没有设置任何断点。
 
 ```
     auto frame_pointer = get_register_value(m_pid, reg::rbp);
@@ -190,7 +190,7 @@ We’ll need to remove any breakpoints we set so that they don’t leak out of o
     }
 ```
 
-Here we are setting a breakpoint on the return address of the function, just like in `step_out`.
+这里我们在函数的返回地址处设置一个断点，正如跳出 `step_out`。
 
 ```
     continue_execution();
@@ -200,11 +200,11 @@ Here we are setting a breakpoint on the return address of the function, just lik
     }
 ```
 
-Finally, we continue until one of those breakpoints has been hit, then remove all the temporary breakpoints we set.
+最后，我们继续执行直到命中它们中的其中一个断点，然后移除所有我们设置的临时断点。
 
-It ain’t pretty, but it’ll do for now.
+它并不美观，但暂时先这样吧。
 
-Of course, we also need to add this new functionality to our UI:
+当然，我们还需要将这个新功能添加到用户界面：
 
 ```
     else if(is_prefix(command, "step")) {
@@ -220,9 +220,9 @@ Of course, we also need to add this new functionality to our UI:
 
 * * *
 
-### Testing it out
+### 测试
 
-I tested out my implementation with a simple program which calls a bunch of different functions:
+我通过实现一个调用一系列不同函数的简单函数来进行测试：
 
 ```
 void a() {
@@ -259,16 +259,16 @@ int main() {
 }
 ```
 
-You should be able to set a breakpoint on the address of `main` and then in, over, and out all over the program. Expect things to break if you try to step out of `main` or into some dynamically linked library.
+你应该可以在 `main` 地址处设置一个断点，然后在整个程序中跳入、跳过、跳出函数。如果你尝试跳出 `main` 函数或者跳入任何动态链接库，就会出现意料之外的事情。
 
-You can find the code for this post [here][7]. Next time we’ll use our newfound DWARF expertise to implement source-level breakpoints.  
+你可以在[这里][7]找到这篇博文的相关代码。下次我们会利用我们新的 DWARF 技巧来实现源码级断点。
 
 --------------------------------------------------------------------------------
 
 via: https://blog.tartanllama.xyz/c++/2017/05/06/writing-a-linux-debugger-dwarf-step/
 
 作者：[TartanLlama  ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ictlyh](https://github.com/ictlyh)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

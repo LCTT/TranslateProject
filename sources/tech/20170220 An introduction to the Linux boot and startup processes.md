@@ -1,3 +1,5 @@
+Translating by CherryMill
+
 An introduction to the Linux boot and startup processes
 ============================================================
 

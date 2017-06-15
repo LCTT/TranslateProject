@@ -1,3 +1,5 @@
+translating by xiaow6
+
 # Go Serverless with Apex and Compose's MongoDB
 
 _Apex is tooling that wraps the development and deployment experience for AWS Lambda functions. It provides a local command line tool which can create security contexts, deploy functions, and even tail cloud logs. While AWS's Lambda service treats each function as an independent unit, Apex provides a framework which treats a set of functions as a project. Plus, it even extends the service to languages beyond just Java, Javascript, and Python such as Go._
@@ -182,10 +184,10 @@ via: https://www.compose.com/articles/go-serverless-with-apex-and-composes-mongo
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://www.compose.com/articles/author/hays-hutton/
-[1]:https://twitter.com/share?text=Go%20Serverless%20with%20Apex%20and%20Compose%27s%20MongoDB&url=https://www.compose.com/articles/go-serverless-with-apex-and-composes-mongodb/&via=composeio
+[1]:https://twitter.com/share?text=Go%20Serverless%20with%20Apex%20and%20Compose%27s%20MongoDB&amp;url=https://www.compose.com/articles/go-serverless-with-apex-and-composes-mongodb/&amp;via=composeio
 [2]:https://www.facebook.com/sharer/sharer.php?u=https://www.compose.com/articles/go-serverless-with-apex-and-composes-mongodb/
 [3]:https://plus.google.com/share?url=https://www.compose.com/articles/go-serverless-with-apex-and-composes-mongodb/
-[4]:http://news.ycombinator.com/submitlink?u=https://www.compose.com/articles/go-serverless-with-apex-and-composes-mongodb/&t=Go%20Serverless%20with%20Apex%20and%20Compose%27s%20MongoDB
+[4]:http://news.ycombinator.com/submitlink?u=https://www.compose.com/articles/go-serverless-with-apex-and-composes-mongodb/&amp;t=Go%20Serverless%20with%20Apex%20and%20Compose%27s%20MongoDB
 [5]:https://www.compose.com/articles/rss/
 [6]:https://unsplash.com/@esaiastann
 [7]:https://www.compose.com/articles
