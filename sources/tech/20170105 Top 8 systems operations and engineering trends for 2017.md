@@ -1,3 +1,5 @@
+translating---geekpi
+
 Top 8 systems operations and engineering trends for 2017
 =================
 
