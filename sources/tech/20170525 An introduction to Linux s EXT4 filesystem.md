@@ -150,17 +150,17 @@ Group 3: (Blocks 98304-131071)
 <snip>
 ```
 
-每一个柱面组都有自己的 inode 位图用于判定该柱面组中的哪些 inode 是使用中的而哪些又是未被使用的。每一个柱面组的 inode 都有它们自己的空间。每一个 inode 都包含了对应的文件的相关信息，包括其位于该文件的数据块中的位置。The block bitmap keeps track of the used and free data blocks within the filesystem. Notice that there is a great deal of data about the filesystem in the output shown above. On very large filesystems the group data can run to hundreds of pages in length. The group metadata includes a listing of all of the free data blocks in the group.
+每一个柱面组都有自己的 inode 位图用于判定该柱面组中的哪些 inode 是使用中的而哪些又是未被使用的。每一个柱面组的 inode 都有它们自己的空间。每一个 inode 都包含了对应的文件的相关信息，包括其位于该文件的数据块中的位置。这个块位图纪录了文件系统中的使用中和非使用中的数据块。请注意，在上面的输出中有大量关于文件系统的数据。在非常大的文件系统上，组数据可以运行到数百页的长度。 组元数据包括组中所有空闲数据块的列表。
 
-The EXT filesystem implemented data-allocation strategies that ensured minimal file fragmentation. Reducing fragmentation improved filesystem performance. Those strategies are described below, in the section on EXT4.
+EXT 文件系统实现了数据分配策略以确保产生最少的文件碎片。减少文件碎片可以提高文件系统的性能。这些策略会在下面的 EXT4 中描述到。
 
-The biggest problem with the EXT2 filesystem, which I encountered on some occasions, was that it could take many hours to recover after a crash because the **fsck** (file system check) program took a very long time to locate and correct any inconsistencies in the filesystem. It once took over 28 hours on one of my computers to fully recover a disk upon reboot after a crash—and that was when disks were measured in the low hundreds of megabytes in size.
+我所遇见的关于 EXT2 文件系统最大的问题是 **fsck** (文件系统检查) 程序这一环节占用了很长一段时间来定位和校准文件系统中的所有不一致性导致其共花费了数个小时来修复一个崩溃。有一次我的其中一台电脑共花费了 28 个小时在一次崩溃后重新启动时恢复磁盘上，并且是在磁盘被检测量在几百兆字节大小的情况下。
 
 ### EXT3
 
-The [EXT3 filesystem][25] had the singular objective of overcoming the massive amounts of time that the **fsck** program required to fully recover a disk structure damaged by an improper shutdown that occurred during a file-update operation. The only addition to the EXT filesystem was the [journal][26], which records in advance the changes that will be performed to the filesystem. The rest of the disk structure is the same as it was in EXT2.
+[EXT3 文件系统][25] 具有克服 **fsck** 程序需要完全恢复在文件更新操作期间发生的不正确关机损坏的磁盘结构所需的大量时间的单一目标。EXT 文件系统的唯一新增是 [日志][26]，它将提前记录将对文件系统执行的更改。 磁盘结构的其余部分与 EXT2 中的相同。
 
-Instead of writing data to the disk's data areas directly, as in previous versions, the journal in EXT3 writes file data, along with its metadata, to a specified area on the disk. Once the data is safely on the hard drive, it can be merged in or appended to the target file with almost zero chance of losing data. As this data is committed to the data area of the disk, the journal is updated so that the filesystem will remain in a consistent state in the event of a system failure before all the data in the journal is committed. On the next boot, the filesystem will be checked for inconsistencies, and data remaining in the journal will then be committed to the data areas of the disk to complete the updates to the target file.
+作为一个先前的版本，除了直接写入数据到磁盘的数据区域外，EXT3 的日志在写入元数据时同时也写入文件数据到磁盘上的一个指定数据区域。一旦这些数据安全地到达硬盘，它就可以几乎零丢失率地被合并或者被追加到目标文件。当这些数据被提交到磁盘上的数据区域上，这些日志就会随即更新，这样在系统发生故障之前，文件系统将保持一致状态，才能提交日志中的所有数据。在下次启动时，将检查文件系统的不一致性，然后将日志中保留的数据提交到磁盘的数据区，以完成对目标文件的更新。
 
 Journaling does reduce data-write performance, however there are three options available for the journal that allow the user to choose between performance and data integrity and safety. My personal preference is on the side of safety because my environments do not require heavy disk-write activity.
 
@@ -244,9 +244,9 @@ Due to the low amount of fragmentation on most EXT filesystems, it is not necess
 
 If it becomes necessary to perform a complete defragmentation on an EXT filesystem, there is only one method that will work reliably. You must move all the files from the filesystem to be defragmented, ensuring that they are deleted after being safely copied to another location. If possible, you could then increase the size of the filesystem to help reduce future fragmentation. Then copy the files back onto the target filesystem. Even this does not guarantee that all the files will be completely defragmented.
 
-### Conclusions
+### 总结
 
-The EXT filesystems have been the default for many Linux distributions for more than 20 years. They offer stability, high capacity, reliability, and performance while requiring minimal maintenance. I have tried other filesystems but always return to EXT. Every place I have worked with Linux has used the EXT filesystems and found them suitable for all the mainstream loads used on them. Without a doubt, the EXT4 filesystem should be used for most Linux systems unless there is a compelling reason to use another filesystem.
+EXT 文件系统在一些 Linux 发行版本上作为默认文件系统已经超过二十多年了。它们用最少的维护代价提供了稳定性、高可用性、可靠性和其他各种表现。我尝试过一些其它的文件系统但最终都还是回归到 EXT。每一个我在工作中使用到 Linux 的地方都使用到了 EXT 文件系统，同时发现了它们适用于任何主流的负载。毫无疑问，EXT4 文件系统应该被用于大部分的 Linux 文件系统上，除非我们有明显的使用其它文件系统的理由。
 
 --------------------------------------------------------------------------------
 
