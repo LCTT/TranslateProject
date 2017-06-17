@@ -1,3 +1,5 @@
+translated by zhousiyu325
+
 Tips for non-native English speakers working on open source projects
 ============================================================
  ![Tips for non-native English speakers working on open source projects](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/world_hands_diversity.png?itok=LMT5xbxJ "Tips for non-native English speakers working on open source projects") 
