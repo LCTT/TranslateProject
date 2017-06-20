@@ -193,7 +193,7 @@ via: http://blog.tartanllama.xyz/c++/2017/03/24/writing-a-linux-debugger-breakpo
 
 作者：[Simon Brand ][a]
 译者：[ictlyh](https://github.com/ictlyh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
