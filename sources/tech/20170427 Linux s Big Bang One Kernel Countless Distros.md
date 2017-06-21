@@ -1,3 +1,5 @@
+translating---geekpi
+
 Linux's Big Bang: One Kernel, Countless Distros
 ============================================================[Print][1][Email][2]By Jonathan Terrasi 
 Apr 27, 2017 3:24 PM PT
