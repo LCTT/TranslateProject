@@ -1,3 +1,4 @@
+translating by kylecao
 OpenGL & Go Tutorial Part 1: Hello, OpenGL
 ============================================================
 
