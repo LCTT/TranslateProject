@@ -1,4 +1,6 @@
-A look at 6 iconic open source brands
+GHLandy Translating
+
+简览 6 大形象的开源商标
 ============================================================
 
  ![A look at 6 iconic open source brands](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/BUSINESS_brandbalance.png?itok=opwotgEh "A look at 6 iconic open source brands") 
