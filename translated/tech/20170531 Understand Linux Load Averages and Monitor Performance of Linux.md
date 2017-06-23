@@ -1,55 +1,52 @@
-Translating by kylecao
-
-Understand Linux Load Averages and Monitor Performance of Linux
+理解Linux平均负载和性能监控
 ============================================================
 
 
+在本文中,我们将解释Linux系统中最关键的管理任务之一——关于系统/CPU的负载和平均负载的性能监控。
 
-In this article, we will explain one of the critical Linux system administration tasks – performance monitoring in regards to system/CPU load and load averages.
+首先来看类UNIX系统中两个重要的表述:
 
-Before we move any further, let’s understand these two important phrases in all Unix-like systems:
+*   系统负载/CPU负载 – 衡量Linux系统的CPU过载或利用率低;处于运算状态或等待状态的CPU核心数。
 
-*   System load/CPU Load – is a measurement of CPU over or under-utilization in a Linux system; the number of processes which are being executed by the CPU or in waiting state.
+*   平均负载 – 通过固定周期如1，5，15分钟计算出的平均系统负载。
 
-*   Load average – is the average system load calculated over a given period of time of 1, 5 and 15 minutes.
+Linux中，平均负载一般指在内核运行队列中被标记为运行或不可打断状态的平均进程数。
 
-In Linux, the load-average is technically believed to be a running average of processes in it’s (kernel) execution queue tagged as running or uninterruptible.
+注意：
 
-Note that:
+*   多数Linux或类Unix系统会为用户展示平均负载的值。
 
-*   All if not most systems powered by Linux or other Unix-like systems will possibly show the load average values somewhere for a user.
+*   完全空闲的Linux系统平均负载为0，不包括空闲进程。
 
-*   A downright idle Linux system may have a load average of zero, excluding the idle process.
+*   绝大多数类Unix系统只统计运行和等待状态的进程。但是在Linux中，平均负载包括不可打断的睡眠状态进程；等待其它系统资源如磁盘I/O的进程等。
 
-*   Nearly all Unix-like systems count only processes in the running or waiting states. But this is not the case with Linux, it includes processes in uninterruptible sleep states; those waiting for other system resources like disk I/O etc.
+### 如何监测Linux系统平均负载
 
-### How to Monitor Linux System Load Average
-
-There are numerous ways of monitoring system load average including uptime which shows how long the system has been running, number of users together with load averages:
+有诸多方式监测系统平均负载，如uptime，展示系统运行时间，用户数量及平均负载:
 
 ```
 $ uptime
 07:13:53 up 8 days, 19 min,  1 user,  load average: 1.98, 2.15, 2.21
 ```
 
-The numbers are read from left to right, and the output above means that:
+平均负载的数字从左到右的含义依次为:
 
-*   load average over the last 1 minute is 1.98
+*   最近1分钟的平均负载为 1.98
 
-*   load average over the last 5 minutes is 2.15
+*   最近5分钟的平均负载为 2.15
 
-*   load average over the last 15 minutes is 2.21
+*   最近15分钟的平均负载为 2.21
 
-High load averages imply that a system is overloaded; many processes are waiting for CPU time.
+高平均负载意味着系统是过载的；许多进程在等待CPU时间。
 
-We will uncover this in the next section in relation to number of CPU cores. Additionally, we can as well use other well known tools such as [top][5] and [glances][6] which display a real-time state of a running Linux system, plus many other tools:
+下一节将介绍平均负载和CPU核数的关系。此外，常用的工具[top][5] 和 [glances][6] 可以实时显示Linux系统的运行状态：
 
-#### Top Command
+#### Top命令
 
 ```
 $ top
 ```
-Display Running Linux Processes
+显示运行中的Linux进程
 ```
 top - 12:51:42 up  2:11,  1 user,  load average: 1.22, 1.12, 1.26
 Tasks: 243 total,   1 running, 242 sleeping,   0 stopped,   0 zombie
@@ -71,12 +68,12 @@ PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
 ....
 ```
 
-#### Glances Tool
+#### Glances工具
 
 ```
 $ glances
 ```
-Glances – Linux System Monitoring Tool
+Glances – Linux系统监测工具
 ```
 TecMint (LinuxMint 18 64bit / Linux 4.4.0-21-generic)                                                                                                                                               Uptime: 2:16:06
 CPU      16.4%  nice:     0.1%                                        LOAD    4-core                                        MEM     60.5%  active:    4.90G                                        SWAP      0.1%
@@ -98,74 +95,74 @@ ram13          0      0      1.6   4.8 1.45G  382M  3272 tecmint      0 S  6:25.
 ...
 ```
 
-The load averages shown by these tools is read /proc/loadavg file, which you can view using the [cat command][7] as below:
+这些工具中的平均负载是从/proc/loadavg文件中读取的，可以直接使用[cat 命令][7]查看：
 
 ```
 $ cat /proc/loadavg
 2.48 1.69 1.42 5/889 10570
 ```
 
-To monitor load averages in graph format, check out: [ttyload – Shows a Color-coded Graph of Linux Load Average in Terminal][8]
+想要图形样式监测平均负载，请戳：[ttyload – 终端中颜色编码图形显示Linux平均负载][8]
 
-On desktop machines, there are graphical user interface tools that we can use to view system load averages.
+在PC中，可以使用用户图形接口工具查看系统平均负载。
 
-### Understanding System Average Load in Relation Number of CPUs
+### 理解系统平均负载和CPU核心数的关系
 
-We can’t possibly explain system load or system performance without shedding light on the impact of the number of CPU cores on performance.
+考虑了CPU核心数的影响，才能解释系统负载。
 
-#### Multi-processor Vs Multi-core
+#### 多处理器 Vs 多核处理器
 
-*   Multi-processor – is where two or more physical CPU’s are integrated into a single computer system.
+*   多处理器 – 一个计算机系统中集成两个或多个物理CPU
 
-*   Multi-core processor – is a single physical CPU which has at least two or more separate cores (or what we can also refer to as processing units) that work in parallel. Meaning a dual-core has 2 two processing units, a quad-core has 4 processing units and so on.
+*   多核处理器 – 单个物理CPU有两个或多个单独的核并行工作（也叫处理单元）。双核意味着有两个处理单元，4核有4个处理单元，以此类推。
 
-Furthermore, there is also a processor technology which was first introduced by Intel to improve parallel computing, referred to as hyper threading.
+此外，Intel引入了超线程技术用来提高并行计算能力。
 
-Under hyper threading, a single physical CPU core appears as two logical CPUs core to an operating system (but in reality, there is one physical hardware component).
+通过超线程技术，在操作系统中，单物理CPU表现的和双逻辑CPU一样。（实际在硬件上只有一个CPU）。
 
-Note that a single CPU core can only carry out one task at a time, thus technologies such as multiple CPUs/processors, multi-core CPUs and hyper-threading were brought to life.
+单CPU核同一时间只能执行一个任务，于是产生了多CPU/处理器，多核CPU，以及多线程技术。
 
-With more than one CPU, several programs can be executed simultaneously. Present-day Intel CPUs use a combination of both multiple cores and hyper-threading technology.
+多CPU时，多个程序可以同时执行。如今的Intel CPU使用了多核心和超线程技术。
 
-To find the number of processing units available on a system, we may use the [nproc or lscpu commands][9] as follows:
+可以使用 [nproc or lscpu 命令][9]查看系统中的处理器单元数量。
 
 ```
 $ nproc
 4
-OR
+或者
 lscpu
 ```
 
-Another way to find the number of processing units using [grep command][10] as shown.
+也可以使用 [grep 命令][10] 
 
 ```
 $ grep 'model name' /proc/cpuinfo | wc -l
 4
 ```
 
-Now, to further understand system load, we will take a few assumptions. Let’s say we have load averages below:
+为了进一步理解系统负载，需要做一些假设。假设系统负载如下：
 
 ```
 23:16:49 up  10:49,  5 user,  load average: 1.00, 0.40, 3.35
 ```
 
-###### On a single core system this would mean:
+######单核系统中意味着：
 
-*   The CPU was fully (100%) utilized on average; 1 processes was running on the CPU (1.00) over the last 1 minute.
+*   CPU被充分利用(100%)；最近的1分钟平均有1个进程在运行。
 
-*   The CPU was idle by 60% on average; no processes were waiting for CPU time (0.40) over the last 5 minutes.
+*   CPU有60%处于空闲状态；在最近的5分钟平均没有进程等待CPU时间。
 
-*   The CPU was overloaded by 235% on average; 2.35 processes were waiting for CPU time (3.35) over the last 15 minutes.
+*   CPU平均过载了235%；最近的15分钟平均有2.35个进程在等待CPU时间。
 
-###### On a dual-core system this would mean:
+###### 双核系统中意味着：
 
-*   The one CPU was 100% idle on average, one CPU was being used; no processes were waiting for CPU time(1.00) over the last 1 minute.
+*   有一个CPU处于完全空闲状态，另一个CPU被使用；最近的1分钟平均没有进程等待CPU时间。
 
-*   The CPUs were idle by 160% on average; no processes were waiting for CPU time. (0.40) over the last 5 minutes.
+*   CPU平均160%处于空闲状态；最近的5分钟平均没有进程等待CPU时间。
 
-*   The CPUs were overloaded by 135% on average; 1.35 processes were waiting for CPU time. (3.35) over the last 15 minutes.
+*   CPU平均过载了135%；最近的15分钟平均有1.35个进程等到CPU时间。
 
-You might also like:
+也许你还会喜欢：
 
 1.  [20 Command Line Tools to Monitor Linux Performance – Part 1][1]
 
@@ -175,12 +172,12 @@ You might also like:
 
 4.  [Nmon: Analyze and Monitor Linux System Performance][4]
 
-In conclusion, if you are a system administrator then high load averages are real to worry about. When they are high, above the number of CPU cores, it signifies high demand for the CPUs, and low load averages below the number of CPU cores tells us that CPUs are underutilized.
+总而言之，如果你是系统管理员，你应该关注高平均负载。平均负载高于CPU核心数意味着需要增加CPU，反之则意味着CPU未被充分利用。
 
 --------------------------------------------------------------------------------
 作者简介：
 
-Aaron Kili is a Linux and F.O.S.S enthusiast, an upcoming Linux SysAdmin, web developer, and currently a content creator for TecMint who loves working with computers and strongly believes in sharing knowledge.
+Aaron Kili是Linux和自由软件的热心者，热衷于分享知识，现在是TecMint网站的内容创作者，不久之后将成为Linux系统管理员，web开发者。
 
 
 
@@ -189,7 +186,7 @@ Aaron Kili is a Linux and F.O.S.S enthusiast, an upcoming Linux SysAdmin, web de
 via: https://www.tecmint.com/understand-linux-load-averages-and-monitor-performance/
 
 作者：[Aaron Kili  ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[kylecao](https://github.com/kylecao)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
