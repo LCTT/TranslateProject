@@ -1,28 +1,24 @@
-理解Linux平均负载和性能监控
+理解 Linux 的平均负载和性能监控
 ============================================================
 
+在本文中，我们将解释 Linux 系统中最关键的管理任务之一——关于系统 / CPU 的负载（load）和平均负载（Load average）的性能监控。
 
-在本文中,我们将解释Linux系统中最关键的管理任务之一——关于系统/CPU的负载和平均负载的性能监控。
+首先来看所有的类 UNIX 系统中两个重要的表述:
 
-首先来看类UNIX系统中两个重要的表述:
+*   系统负载 / CPU 负载 – 衡量 Linux 系统的 CPU 过载或利用率低的指标，即处于运算状态或等待状态的 CPU 核心数。
+*   平均负载 – 通过固定的时间周期如 1、5、15 分钟计算出的平均的系统负载。
 
-*   系统负载/CPU负载 – 衡量Linux系统的CPU过载或利用率低;处于运算状态或等待状态的CPU核心数。
-
-*   平均负载 – 通过固定周期如1，5，15分钟计算出的平均系统负载。
-
-Linux中，平均负载一般指在内核运行队列中被标记为运行或不可打断状态的平均进程数。
+Linux 中，平均负载一般指在内核运行队列中被标记为运行或不可打断状态的进程的平均数。
 
 注意：
 
-*   多数Linux或类Unix系统会为用户展示平均负载的值。
+*   几乎没有 Linux 或类 Unix 系统不为用户展示平均负载的值。
+*   完全空闲的 Linux 系统平均负载为 0，不包括空闲进程。
+*   绝大多数类 Unix 系统只统计运行和等待状态的进程。但是在 Linux 中，平均负载也包括处于不可打断的睡眠状态的进程——它们是在等待其它系统资源如磁盘 I/O 等的进程。
 
-*   完全空闲的Linux系统平均负载为0，不包括空闲进程。
+### 如何监测 Linux 系统平均负载
 
-*   绝大多数类Unix系统只统计运行和等待状态的进程。但是在Linux中，平均负载包括不可打断的睡眠状态进程；等待其它系统资源如磁盘I/O的进程等。
-
-### 如何监测Linux系统平均负载
-
-有诸多方式监测系统平均负载，如uptime，展示系统运行时间，用户数量及平均负载:
+有诸多方式监测系统平均负载，如 `uptime`，它会展示系统运行时间、用户数量及平均负载：
 
 ```
 $ uptime
@@ -31,22 +27,22 @@ $ uptime
 
 平均负载的数字从左到右的含义依次为:
 
-*   最近1分钟的平均负载为 1.98
+*   最近 1 分钟的平均负载为 1.98
+*   最近 5 分钟的平均负载为 2.15
+*   最近 15 分钟的平均负载为 2.21
 
-*   最近5分钟的平均负载为 2.15
+高平均负载意味着系统是过载的：许多进程在等待 CPU 时间。
 
-*   最近15分钟的平均负载为 2.21
-
-高平均负载意味着系统是过载的；许多进程在等待CPU时间。
-
-下一节将介绍平均负载和CPU核数的关系。此外，常用的工具[top][5] 和 [glances][6] 可以实时显示Linux系统的运行状态：
+下一节将介绍平均负载和 CPU 核数的关系。此外，常用的工具 [top][5] 和 [glances][6] 可以实时显示 Linux 系统的运行状态：
 
 #### Top命令
 
 ```
 $ top
 ```
-显示运行中的Linux进程
+
+显示运行中的Linux进程：
+
 ```
 top - 12:51:42 up  2:11,  1 user,  load average: 1.22, 1.12, 1.26
 Tasks: 243 total,   1 running, 242 sleeping,   0 stopped,   0 zombie
@@ -68,12 +64,14 @@ PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND
 ....
 ```
 
-#### Glances工具
+#### Glances 工具
 
 ```
 $ glances
 ```
-Glances – Linux系统监测工具
+
+Glances – Linux系统监测工具：
+
 ```
 TecMint (LinuxMint 18 64bit / Linux 4.4.0-21-generic)                                                                                                                                               Uptime: 2:16:06
 CPU      16.4%  nice:     0.1%                                        LOAD    4-core                                        MEM     60.5%  active:    4.90G                                        SWAP      0.1%
@@ -95,45 +93,44 @@ ram13          0      0      1.6   4.8 1.45G  382M  3272 tecmint      0 S  6:25.
 ...
 ```
 
-这些工具中的平均负载是从/proc/loadavg文件中读取的，可以直接使用[cat 命令][7]查看：
+这些工具中的平均负载是从 `/proc/loadavg` 文件中读取的，也可以直接使用 [cat 命令][7]查看：
 
 ```
 $ cat /proc/loadavg
 2.48 1.69 1.42 5/889 10570
 ```
 
-想要图形样式监测平均负载，请戳：[ttyload – 终端中颜色编码图形显示Linux平均负载][8]
+想要图形样式监测平均负载，请戳：[ttyload – 终端中颜色编码图形显示 Linux 平均负载][8]。
 
-在PC中，可以使用用户图形接口工具查看系统平均负载。
+在桌面计算机中，可以使用图形用户接口工具查看系统平均负载。
 
-### 理解系统平均负载和CPU核心数的关系
+### 理解系统平均负载和 CPU 核心数的关系
 
-考虑了CPU核心数的影响，才能解释系统负载。
+考虑了 CPU 核心数的影响，才能解释系统负载。
 
 #### 多处理器 Vs 多核处理器
 
-*   多处理器 – 一个计算机系统中集成两个或多个物理CPU
+*   多处理器 – 一个计算机系统中集成两个或多个物理 CPU
+*   多核处理器 – 单个物理 CPU 有两个或多个单独的核并行工作（也叫处理单元）。双核意味着有两个处理单元，4 核有 4 个处理单元，以此类推。
 
-*   多核处理器 – 单个物理CPU有两个或多个单独的核并行工作（也叫处理单元）。双核意味着有两个处理单元，4核有4个处理单元，以此类推。
+此外，Intel 引入了超线程技术用来提高并行计算能力。
 
-此外，Intel引入了超线程技术用来提高并行计算能力。
+通过超线程技术，在操作系统中，单个物理 CPU 表现的和两个逻辑 CPU 一样。（实际在硬件上只有一个 CPU）。
 
-通过超线程技术，在操作系统中，单物理CPU表现的和双逻辑CPU一样。（实际在硬件上只有一个CPU）。
+注意，单个 CPU 核同一时间只能执行一个任务，于是产生了多 CPU/处理器、多核 CPU，以及多线程技术。
 
-单CPU核同一时间只能执行一个任务，于是产生了多CPU/处理器，多核CPU，以及多线程技术。
+多 CPU 时，多个程序可以同时执行。如今的 Intel CPU 使用了多核心和超线程技术。
 
-多CPU时，多个程序可以同时执行。如今的Intel CPU使用了多核心和超线程技术。
-
-可以使用 [nproc or lscpu 命令][9]查看系统中的处理器单元数量。
+可以使用 [nproc 或 lscpu 命令][9]查看系统中的处理器单元数量。
 
 ```
 $ nproc
 4
-或者
+# 或者
 lscpu
 ```
 
-也可以使用 [grep 命令][10] 
+也可以使用 [grep 命令][10]：
 
 ```
 $ grep 'model name' /proc/cpuinfo | wc -l
@@ -146,48 +143,39 @@ $ grep 'model name' /proc/cpuinfo | wc -l
 23:16:49 up  10:49,  5 user,  load average: 1.00, 0.40, 3.35
 ```
 
-######单核系统中意味着：
+**在单核系统中意味着：**
 
-*   CPU被充分利用(100%)；最近的1分钟平均有1个进程在运行。
+*   CPU 被充分利用（100%）；最近的 1 分钟有 1 个进程在运行。
+*   CPU 有 60% 处于空闲状态；在最近的 5 分钟没有进程等待 CPU 时间。
+*   CPU 平均过载了 235%；最近的 15 分钟平均有 2.35 个进程在等待 CPU 时间。
 
-*   CPU有60%处于空闲状态；在最近的5分钟平均没有进程等待CPU时间。
+**在双核系统中意味着：**
 
-*   CPU平均过载了235%；最近的15分钟平均有2.35个进程在等待CPU时间。
-
-###### 双核系统中意味着：
-
-*   有一个CPU处于完全空闲状态，另一个CPU被使用；最近的1分钟平均没有进程等待CPU时间。
-
-*   CPU平均160%处于空闲状态；最近的5分钟平均没有进程等待CPU时间。
-
-*   CPU平均过载了135%；最近的15分钟平均有1.35个进程等到CPU时间。
+*   有一个 CPU 处于完全空闲状态，另一个 CPU 被使用；最近的 1 分钟没有进程等待 CPU 时间。
+*   CPU 平均 160% 处于空闲状态；最近的 5 分钟没有进程等待 CPU 时间。
+*   CPU 平均过载了 135%；最近的 15 分钟有 1.35 个进程等待 CPU 时间。
 
 也许你还会喜欢：
 
-1.  [20 Command Line Tools to Monitor Linux Performance – Part 1][1]
+1.  [20 个监控系统性能的命令行工具（一）][1]
+2.  [13 个 Linux 性能监控工具（二）][2]
+3.  [Perf：一个 Linux 上的性能监控分析工具][3]
+4.  [使用 Nmon 监控 Linux 的系统性能][4]
 
-2.  [13 Linux Performance Monitoring Tools – Part 2][2]
-
-3.  [Perf- A Performance Monitoring and Analysis Tool for Linux][3]
-
-4.  [Nmon: Analyze and Monitor Linux System Performance][4]
-
-总而言之，如果你是系统管理员，你应该关注高平均负载。平均负载高于CPU核心数意味着需要增加CPU，反之则意味着CPU未被充分利用。
+总而言之，如果你是系统管理员，你应该关注高的平均负载。平均负载高于 CPU 核心数意味着需要增加 CPU，反之则意味着 CPU 未被充分利用。
 
 --------------------------------------------------------------------------------
 作者简介：
 
-Aaron Kili是Linux和自由软件的热心者，热衷于分享知识，现在是TecMint网站的内容创作者，不久之后将成为Linux系统管理员，web开发者。
-
-
+Aaron Kili 是  Linux 和自由软件的热心者，热衷于分享知识，现在是 TecMint 网站的内容创作者，不久之后将成为 Linux 系统管理员，web 开发者。
 
 -----
 
 via: https://www.tecmint.com/understand-linux-load-averages-and-monitor-performance/
 
-作者：[Aaron Kili  ][a]
+作者：[Aaron Kili][a]
 译者：[kylecao](https://github.com/kylecao)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -195,11 +183,11 @@ via: https://www.tecmint.com/understand-linux-load-averages-and-monitor-performa
 [1]:https://www.tecmint.com/command-line-tools-to-monitor-linux-performance/
 [2]:https://www.tecmint.com/linux-performance-monitoring-tools/
 [3]:https://www.tecmint.com/perf-performance-monitoring-and-analysis-tool-for-linux/
-[4]:https://www.tecmint.com/nmon-analyze-and-monitor-linux-system-performance/
+[4]:https://linux.cn/article-6886-1.html
 [5]:https://www.tecmint.com/12-top-command-examples-in-linux/
-[6]:https://www.tecmint.com/glances-an-advanced-real-time-system-monitoring-tool-for-linux/
+[6]:https://linux.cn/article-6882-1.html
 [7]:https://www.tecmint.com/13-basic-cat-command-examples-in-linux/
-[8]:https://www.tecmint.com/ttyload-shows-color-coded-graph-of-linux-load-average/
+[8]:https://linux.cn/article-8553-1.html
 [9]:https://www.tecmint.com/check-linux-cpu-information/
 [10]:https://www.tecmint.com/12-practical-examples-of-linux-grep-command/
 [11]:https://www.tecmint.com/author/aaronkili/
