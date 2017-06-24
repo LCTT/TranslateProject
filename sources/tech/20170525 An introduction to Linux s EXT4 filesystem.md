@@ -214,9 +214,10 @@ Linux 的扩展文件系统使用数据分配策略，有助于最小化硬盘�
 fsck -fn /dev/mapper/vg_01-home
 ```
 
-I once performed some theoretical calculations to determine whether disk defragmentation might result in any noticeable performance improvement. While I did make some assumptions, the disk performance data I used were from a new 300GB, Western Digital hard drive with a 2.0ms track-to-track seek time. The number of files in this example was the actual number that existed in the filesystem on the day I did the calculation. I did assume that a fairly large amount of the fragmented files (20%) would be touched each day.
+我曾经进行过一些理论计算，以确定磁盘碎片整理是否会导致任何明显的性能提升。 虽然我做了一些假设，我使用的磁盘性能数据来自一个新的 300GB 的西部数字硬盘驱动器，具有 2.0ms 的追踪到追踪时间。 此示例中的文件数是在计算当天文件系统中存在的实际数。 我假设有相当大量的碎片文件（约 20％）每天都会被触动。
 
 | **Total files** | **271,794** |
+|--|--|
 | % fragmentation | 5.00% |
 | Discontinuities | 13,590 |
 |   |   |
@@ -230,19 +231,19 @@ I once performed some theoretical calculations to determine whether disk defragm
 | Total additional seek time per day | 5.44 sec |
 |   | 0.091 min |
 
-Table 1: The theoretical effects of fragmentation on disk performance
+表 1: 碎片对磁盘性能的理论影响
 
-I have done two calculations for the total additional seek time per day, one based on the track-to-track seek time, which is the more likely scenario for most files due to the EXT file allocation strategies, and one for the average seek time, which I assumed would make a fair worst-case scenario.
+我对每天的全部追加寻道时间进行了两次计算，一次是单磁道寻道时间，这是由于EXT文件分配策略而导致大多数文件的可能性更大的情况，一个是平均搜索时间，我认为这将是一个公平的最坏情况。
 
-As you can see from Table 1, the impact of fragmentation on a modern EXT filesystem with a hard drive of even modest performance would be minimal and negligible for the vast majority of applications. You can plug the numbers from your environment into your own similar spreadsheet to see what you might expect in the way of performance impact. This type of calculation most likely will not represent actual performance, but it can provide a bit of insight into fragmentation and its theoretical impact on a system.
+从表 1 可以看出，对绝大多数应用程序而言，碎片化对具有甚至适度性能的硬盘驱动器的现代EXT文件系统的影响将是微乎其微的。您可以将您的环境中的数字插入到您自己的类似电子表格中，以了解你对性能影响的期望。这种类型的计算不一定能够代表实际的性能，但它可以提供一些洞察碎片化及其对系统的理论影响。
 
-Most of my partitions are around 1.5% or 1.6% fragmented; I do have one that is 3.3% fragmented but that is a large, 128GB filesystem with fewer than 100 very large ISO image files; I've had to expand the partition several times over the years as it got too full.
+我的大部分分区的碎片率都在 1.5％ 左右或 1.6％，我有一个分区有 3.3％ 的碎片，但是这是一个大的 128GB 文件系统，具有少于100 个非常大的 ISO 映像文件; 多年来，我不得不扩张分区，因为它已经太满了。
 
-That is not to say that some application environments don't require greater assurance of even less fragmentation. The EXT filesystem can be tuned with care by a knowledgeable admin who can adjust the parameters to compensate for specific workload types. This can be done when the filesystem is created or later using the **tune2fs** command. The results of each tuning change should be tested, meticulously recorded, and analyzed to ensure optimum performance for the target environment. In the worst case, where performance cannot be improved to desired levels, other filesystem types are available that may be more suitable for a particular workload. And remember that it is common to mix filesystem types on a single host system to match the load placed on each filesystem.
+这并不是说一些应用的环境不需要更多的保证，甚至更少的碎片。 EXT 文件系统可以由有经验和知识的管理员小心调整，管理员可以调整参数以抵消特定的工作负载类型。这个工作可以在文件系统创建的时候或稍后使用 **tune2fs** 命令时完成。每一次调整变化的结果应进行测试，精心的记录和分析，以确保目标环境的最佳性能。在最坏的情况下，如果性能不能提高到期望的水平，则其他文件系统类型可能更适合特定的工作负载。并记住，在单个主机系统上使用混合文件系统类型以匹配放在每个文件系统上的负载是常见的。
 
-Due to the low amount of fragmentation on most EXT filesystems, it is not necessary to defragment. In any event, there is no safe defragmentation tool for EXT filesystems. There are a few tools that allow you to check the fragmentation of an individual file or the fragmentation of the remaining free space in a filesystem. There is one tool, **e4defrag**, which will defragment a file, directory, or filesystem as much as the remaining free space will allow. As its name implies, it only works on files in an EXT4 filesystem, and it does have some limitations.
+由于大多数 EXT 文件系统的碎片数量较少，因此无需进行碎片整理。在任何情况下，EXT 文件系统都没有安全的碎片整理工具。有几个工具允许你检查单个文件的碎片或文件系统中剩余可用空间的碎片。有一个工具，**e4defrag**，它将对剩余可用空间允许的文件，目录或文件系统进行碎片整理。顾名思义，它只适用于 EXT4 文件系统中的文件，并且它还有一其它的些限制。
 
-If it becomes necessary to perform a complete defragmentation on an EXT filesystem, there is only one method that will work reliably. You must move all the files from the filesystem to be defragmented, ensuring that they are deleted after being safely copied to another location. If possible, you could then increase the size of the filesystem to help reduce future fragmentation. Then copy the files back onto the target filesystem. Even this does not guarantee that all the files will be completely defragmented.
+如果有必要在 EXT 文件系统上执行完整的碎片整理，则只有一种方法能够可靠地工作。你必须将文件系统中的所有要进行碎片整理的文件在确保在安全复制到其他位置后将其删除。如果可能，你可以增加文件系统的大小，以帮助减少将来的碎片。然后将文件复制回目标文件系统。但是其实即使这样也不能保证所有文件都被完全碎片整理。
 
 ### 总结
 
