@@ -1,7 +1,17 @@
-开发 Linux 调试器第一部分：启动
+开发一个 Linux 调试器（一）：准备环境
 ============================================================
 
-任何写过比 hello world 复杂点程序的人都应该使用过调试器（如果你还没有，那就停下手头的工作先学习一下吧）。但是，尽管这些工具已经得到了广泛的使用，却并没有太多的资源告诉你它们的工作原理以及如何开发[1][1]，尤其是和其它类似编译器等工具链技术相比的时候。
+任何写过比 hello world 复杂一些的程序的人都应该使用过调试器（如果你还没有，那就停下手头的工作先学习一下吧）。但是，尽管这些工具已经得到了广泛的使用，却并没有太多的资源告诉你它们的工作原理以及如何开发，尤其是和其它那些比如编译器等工具链技术相比而言。
+
+> 此处有一些其它的资源可以参考：
+
+> - http://eli.thegreenplace.net/2011/01/23/how-debuggers-work-part-1
+
+> - https://t-a-w.blogspot.co.uk/2007/03/how-to-code-debuggers.html
+
+> - https://www.codeproject.com/Articles/43682/Writing-a-basic-Windows-debugger
+
+> - http://system.joekain.com/debugger/ 
 
 我们将会支持以下功能：
 
@@ -29,13 +39,11 @@
 
 在本项目中我会将重点放在 C 和 C++，但对于那些将源码编译为机器码并输出标准 DWARE 调试信息的语言也应该能起作用（如果你还不知道这些东西是什么，别担心，马上就会介绍到啦）。另外，我只关注如何将程序运行起来并在大部分情况下能正常工作，为了简便，会避开类似健壮错误处理方面的东西。
 
-* * *
-
 ### 系列文章索引
 
 随着后面文章的发布，这些链接会逐渐生效。
 
-1.	[启动][2]
+1.	[准备环境][2]
 2.	[断点][3]
 3.	寄存器和内存
 4.	Elves 和 dwarves
@@ -46,20 +54,17 @@
 9.	读取变量
 10.	之后步骤
 
-LCTT 译注：ELF（[Executable and Linkable Format](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format "Executable and Linkable Format") 可执行文件格式），DWARF（一种广泛使用的调试数据格式，参考 [WIKI](https://en.wikipedia.org/wiki/DWARF "DWARF WIKI")）
-* * *
+LCTT 译注：ELF —— <ruby>可执行文件格式<rt>[Executable and Linkable Format](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format "Executable and Linkable Format")</rt></ruby>；DWARF（一种广泛使用的调试数据格式，参考 [WIKI](https://en.wikipedia.org/wiki/DWARF "DWARF WIKI")）。
 
 ### 准备环境
 
-在我们正式开始之前，我们首先要设置环境。在这篇文章中我会依赖两个工具：[Linenoise][4] 用于处理命令行输入，[libelfin][5] 用于解析调试信息。你也可以使用更传统的 libdwarf 而不是 libelin，但是界面没有那么友好，另外 libelfin 还提供大部分完整的 DWARF 表达式求值程序，当你想读取变量的值时这能帮你节省很多时间。确认你使用的是我 libelfin 仓库中的 fbreg 分支，因为它提供 x86 上读取变量的额外支持。
+在我们正式开始之前，我们首先要设置环境。在这篇文章中我会依赖两个工具：[Linenoise][4] 用于处理命令行输入，[libelfin][5] 用于解析调试信息。你也可以使用更传统的 libdwarf 而不是 libelfin，但是界面没有那么友好，另外 libelfin 还提供了基本完整的 DWARF 表达式求值器，当你想读取变量的值时这能帮你节省很多时间。确认你使用的是 libelfin 我的 fbreg 分支，因为它提供 x86 上读取变量的额外支持。
 
 一旦你在系统上安装或者使用你喜欢的编译系统编译好了这些依赖工具，就可以开始啦。我在 CMake 文件中把它们设置为和我其余的代码一起编译。
 
-* * *
-
 ### 启动可执行程序
 
-在真正调试任何程序之前，我们需要启动被调试的程序。我们会使用经典的 fork/exec 模式。
+在真正调试任何程序之前，我们需要启动被调试的程序。我们会使用经典的 `fork`/`exec` 模式。
 
 ```
 int main(int argc, char* argv[]) {
@@ -82,7 +87,7 @@ int main(int argc, char* argv[]) {
     }
 ```
 
-我们调用 `fort` 把我们的程序分成两个进程。如果我们是在子进程，`fork` 返回 0，如果我们是在父进程，它会返回子进程的进程 ID。
+我们调用 `fork` 把我们的程序分成两个进程。如果我们是在子进程，`fork` 返回 0，如果我们是在父进程，它会返回子进程的进程 ID。
 
 如果我们是在子进程，我们要用希望调试的程序替换正在执行的程序。
 
@@ -91,22 +96,20 @@ int main(int argc, char* argv[]) {
    execl(prog.c_str(), prog.c_str(), nullptr);
 ```
 
-这里我们第一次遇到了 `ptrace`，它会在我们编写调试器的时候经常遇到。`ptrace` 通过读取寄存器、内存、逐步调试等让我们观察和控制另一个进程的执行。API 非常简单；你需要给这个简单函数提供一个枚举值用于你想要进行的操作，然后是一些取决于你提供的值可能会被使用也可能会被忽略的参数。函数签名看起来类似：
+这里我们第一次遇到了 `ptrace`，它会在我们编写调试器的时候经常遇到。`ptrace` 通过读取寄存器、内存、逐步调试等让我们观察和控制另一个进程的执行。其 API 非常简单；你需要给这个简单函数提供一个枚举值指定你想要进行的操作，然后是一些取决于你所提供的值可能会被使用也可能会被忽略的参数。函数原型看起来类似：
 
 ```
 long ptrace(enum __ptrace_request request, pid_t pid,
             void *addr, void *data);
 ```
 
-`request` 是我们想对被跟踪进程进行的操作；`pid` 是被跟踪进程的进程 ID；`addr` 是一个内存地址，用于在一些调用中指定被跟踪程序的地址；`data` 是和 `request` 相应的资源。返回值通常是一些错误信息，因此在你实际的代码中你也许应该检查返回值；为了简洁我这里就省略了。你可以查看 man 手册获取更多（关于 ptrace）的信息。
+`request` 是我们想对被跟踪进程进行的操作；`pid` 是被跟踪进程的进程 ID；`addr` 是一个内存地址，用于在一些调用中指定被跟踪程序的地址；`data` 是 `request` 相应的资源。返回值通常是一些错误信息，因此在你实际的代码中你也许应该检查返回值；为了简洁我这里就省略了。你可以查看 man 手册获取更多（关于 ptrace）的信息。
 
-上面代码中我们发送的请求 `PTRACE_TRACEME` 表示这个进程应该允许父进程跟踪它。所有其它参数都会被忽略，因为 API 设计并不是很重要
+上面代码中我们发送的请求 `PTRACE_TRACEME` 表示这个进程应该允许父进程跟踪它。所有其它参数都会被忽略，因为 API 设计并不是很重要，哈哈。
 
-下一步，我们会调用 `execl`，这是很多类似的 `exec` 函数之一。我们执行指定的程序，通过命令行参数传递它的名称，然后用一个 `nullptr` 终止列表。如果你愿意，你还可以传递其它执行你的程序所需的参数。
+下一步，我们会调用 `execl`，这是很多诸多的 `exec` 函数格式之一。我们执行指定的程序，通过命令行参数传递它的名称，然后用一个 `nullptr` 终止列表。如果你愿意，你还可以传递其它执行你的程序所需的参数。
 
-在完成这些后，我们就会结束子进程的执行；在我们结束它之前它会一直执行。
-
-* * *
+在完成这些后，我们就会和子进程一起结束；在我们结束它之前它会一直执行。
 
 ### 添加调试循环
 
@@ -134,7 +137,7 @@ private:
 };
 ```
 
-在 `run` 函数中，我们需要等待，直到子进程完成启动，然后一直从 linenoise 获取输入直到收到 EOF（ctrl+d）。
+在 `run` 函数中，我们需要等待，直到子进程完成启动，然后一直从 `linenoise` 获取输入直到收到 `EOF`（`CTRL+D`）。
 
 ```
 void debugger::run() {
@@ -151,15 +154,13 @@ void debugger::run() {
 }
 ```
 
-当被跟踪的进程启动时，会发送一个 `SIGTRAP` 信号给它，这是一个跟踪或者断点中断。我们可以使用 `waitpid` 函数等待直到这个信号被发送。
+当被跟踪的进程启动时，会发送一个 `SIGTRAP` 信号给它，这是一个跟踪或者断点中断。我们可以使用 `waitpid` 函数等待这个信号发送。
 
-当我们知道进程可以被调试之后，我们监听用户输入。`linenoise` 函数它自己会用一个窗口显示和处理用户输入。这意味着我们不需要做太多的工作就会有一个有历史记录和导航命令的命令行。当我们获取到输入时，我们把命令发给我们写的小程序 `handle_command`，然后我们把这个命令添加到 linenoise 历史并释放资源。
-
-* * *
+当我们知道进程可以被调试之后，我们监听用户输入。`linenoise` 函数它自己会用一个窗口显示和处理用户输入。这意味着我们不需要做太多的工作就会有一个支持历史记录和导航命令的命令行。当我们获取到输入时，我们把命令发给我们写的小程序 `handle_command`，然后我们把这个命令添加到 `linenoise` 历史并释放资源。
 
 ### 处理输入
 
-我们的命令和 gdb 以及 lldb 有类似的格式。要继续执行程序，用户需要输入 `continue` 或 `cont` 甚至只需 `c`。如果他们想在一个地址中设置断点，他们会输入 `break 0xDEADBEEF`，其中 `0xDEADBEEF` 就是所需地址的 16 进制格式。让我们来增加对这些命令的支持吧。
+我们的命令类似 gdb 以及 lldb 的格式。要继续执行程序，用户需要输入 `continue` 或 `cont` 甚至只需 `c`。如果他们想在一个地址中设置断点，他们会输入 `break 0xDEADBEEF`，其中 `0xDEADBEEF` 就是所需地址的 16 进制格式。让我们来增加对这些命令的支持吧。
 
 ```
 void debugger::handle_command(const std::string& line) {
@@ -222,7 +223,7 @@ void debugger::continue_execution() {
 
 via: http://blog.tartanllama.xyz/c++/2017/03/21/writing-a-linux-debugger-setup/
 
-作者：[Simon Brand ][a]
+作者：[Simon Brand][a]
 译者：[ictlyh](https://github.com/ictlyh)
 校对：[jasminepeng](https://github.com/jasminepeng)
 
