@@ -1,3 +1,5 @@
+translating by xllc
+
 ps_mem – A Simple Python Script To Report Core Memory Usage Accurately In Linux
 ============================================================
 
