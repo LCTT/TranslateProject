@@ -1,3 +1,4 @@
+translating by chenxinlong  
 A introduction to creating documents in LaTeX
 ============================================================
 
@@ -126,7 +127,7 @@ Aaron Cocker - BSc Computing student attending university in the UK. I am an asp
 via: https://opensource.com/article/17/6/introduction-latex
 
 作者：[ Aaron Cocker][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[chenxinlong](https://github.com/chenxinlong)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
