@@ -1,3 +1,6 @@
+
+translating by xllc
+
 3 mistakes to avoid when learning to code in Python
 ============================================================
 
