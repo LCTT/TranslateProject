@@ -1,3 +1,5 @@
+translating by chenxinlong  
+
 Free Up Some Space in Ubuntu/LinuxMint With Ubuntu Cleaner (Fork of Janitor Module)
 ============================================================
 
@@ -60,7 +62,7 @@ Yes, we have successfully cleaned our system now.
 via: http://www.2daygeek.com/ubuntu-cleaner-system-cleaner-ubuntu-tweak-alternative-janitor/#
 
 作者：[2DAYGEEK  ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[chenxinlong](https://github.com/chenxinlong)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
