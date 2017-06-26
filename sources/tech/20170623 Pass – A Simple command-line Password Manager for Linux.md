@@ -1,3 +1,4 @@
+translating by chenxinlong   
 Pass – A Simple command-line Password Manager for Linux
 ============================================================
 
