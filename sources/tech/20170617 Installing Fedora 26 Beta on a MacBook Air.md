@@ -1,3 +1,5 @@
+Translating by cycoe
+
 Installing Fedora 26 Beta on a MacBook Air
 ======================
 
