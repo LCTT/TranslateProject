@@ -1,5 +1,3 @@
-translating by chenxinlong  
-
 使用 Ubuntu Cleaner 为 Ubuntu/LinuxMint 释放空间 (Janitor 模块的衍生)
 ============================================================
 
