@@ -1,96 +1,92 @@
-translating by xllc
-
-ps_mem – A Simple Python Script To Report Core Memory Usage Accurately In Linux
+ps_mem：一个用于精确报告 Linux 核心内存用量的简单 Python 脚本
 ============================================================
 
-[ps_mem][2] is a simple python script which help us to get core memory usage accurately for a program in Linux. There are many utilities available in Linux to see memory usage such as free, vmstat, smem & top, etc,. but this utility bit different compare with others since its showing core memory usage accurately.
+[ps_mem][2] 是一个可以帮助我们精确获取 Linux 中各个程序核心内存使用情况的简单 python 脚本。虽然在 Linux 上有很多可用于查看内存使用情况的工具，比如 `free`、`vmstat`、`smem`、`top` 等，但这个工具和其它的区别在于其精确显示核心内存使用情况。
 
-It’s calculating the sum of private & sum of shared memory against a program and giving total used RAM in more appropriate way, definitely it will help everyone to understand which program eating more RAM in system.
+它会分别计算一个程序私有内存总量和共享内存总量，并以更准确的方式给出了总的内存使用量。很明显的，它将帮助大家知道系统中哪个程序正在占用更多的内存。
 
-You can install the ps_mem utility in many ways, through package manager, pip and directly method (by running the ps_mem.py script). Make a note, it’s requires root privilege.
+你可以通过包管理器、`pip` 、或直接运行 `ps_mem.py` 脚本等多种方式来安装 `ps_mem` 工具。需要注意的是：需要有 root 权限。
 
-Also read the below suggested memory utilities.
+另外，推荐阅读以下内存工具：
 
-Suggested Read : [free – A Standard Command to Check Memory Usage Statistics (Free & Used) in Linux][3]
+- [free – 一个在 Linux 上查看内存用量统计（可用和已用）的标准工具][3]
+- [smem – Linux 内存报告/统计工具][4]
+- [vmstat – 一个好用的用于虚拟内存统计的标准工具][5]
 
-Suggested Read : [smem – Linux Memory Reporting/Statistics Tool][4]
+### 通过包管理器安装 ps_mem
 
-Suggested Read : [vmstat – A Standard Nifty Tool to Report Virtual Memory Statistics][5]
+基于 RHEL 的系统默认仓库就包含 ps_mem 工具，所以我们可以简单地通过包管理器进行安装。
 
-#### Install ps_mem Via Package Manager
-
-RHEL based system has the ps_mem utility in default repository, so we can easily install it through package manager.
-
-For RHEL/CentOS, use [yum Package Manager][6] to install ps_mem package.
+对于 RHEL/CentOS ，使用 [yum 包管理器][6] 安装 `ps_mem` 包：
 
 ```
 $ sudo yum install ps_mem
 ```
 
-For Fedora, use [dnf Package Manager][7] to install ps_mem package.
+对于Fedora ，使用 [dnf 包管理器][7] 安装 ps_mem 包：
 
 ```
 $ sudo dnf install ps_mem
 ```
 
-For Arch Linux, use [pacman Package Manager][8] to install ps_mem package.
+对于 Arch Linux ，使用 [pacman 包管理器][8] 安装 ps_mem 包：
 
 ```
 $ sudo pacman -S ps_mem
 ```
 
-#### Install ps_mem Via Pip
+#### 通过 pip 安装 ps_mem
 
-pip is a recommended tool for installing Python packages in Linux. Use pip command instead of package manager to get latest build. Make sure you should have install pip package on your system in order to use the pip package. If no, use distribution package manager and install `python-pip` package.
+`pip` 是在 Linux 上推荐使用的一种安装 Python 包的工具。可以使用 `pip` 命令而不是包管理器去获取最新的版本。使用 `pip` 包前，请确保你的系统上已安装过 `pip` 包。否则，先使用发行版本的包管理器安装 `python-pip` 包。
 
-For Debian based systems.
+对于基于 Debian 的系统：
 
 ```
 $ sudo apt-get install python-pip
 ```
 
-For RHEL/CentOS based systems.
+对于基于 RHEL/CentOS 的系统：
 
 ```
 $ sudo yum install python-pip
 ```
 
-For Fedora
+对于 Fedora
 
 ```
 $ sudo dnf install python-pip
 ```
 
-For openSUSE
+对于 openSUSE
 
 ```
 $ sudo zypper install python-pip
 ```
 
-For Arch Linux based systems
+对于基于 Arch Linux 的系统：
 
 ```
 $ sudo pacman -S python-pip
 ```
 
-Finally run the pip tool to install ps_mem on Linux.
+最后，在 Linux 上运行 `pip` 工具安装 `ps_mem` ：
 
 ```
 $ sudo pip install ps_mem
 ```
 
-#### Run ps_mem.py script directly
+### 直接运行 ps_mem.py 脚本
 
-Alternatively we can run the `ps_mem.ph` script directly by downloading the file from developer github page.
+我们也可以从开发者 github 页面下载文件，并直接运行 `ps_mem.py` 脚本。
 
 ```
 $ git clone https://github.com/pixelb/ps_mem.git && cd ps_mem
 $ sudo python ps_mem.py
 ```
 
-#### ps_mem Usage
+### ps_mem 使用方法
 
-Just run the `ps_mem` without any option to get core memory usage accurately for per program.
+不带任何参数直接运行 `ps_mem` 以精确获取每个程序的的核心内存使用情况。
 
 ```
 $ sudo ps_mem
@@ -158,7 +154,7 @@ $ sudo ps_mem
 =================================
 ```
 
-To print an output with full path.
+输出中打印出全路径：
 
 ```
 $ sudo ps_mem -s
@@ -211,7 +207,7 @@ $ sudo ps_mem -s
 =================================
 ```
 
-Only show memory usage PIDs in the specified list
+只显示特定的 PID 列表的内存使用情况：
 
 ```
 $ sudo ps_mem -p 2886,4386
@@ -224,13 +220,13 @@ $ sudo ps_mem -p 2886,4386
 =================================
 ```
 
-To print process memory in every N seconds. The following command reports memory usage in every 2 seconds.
+每 N 秒打印进程内存。以下命令每 2 秒报告一次内存使用情况：
 
 ```
 $ sudo ps_mem w 2
 ```
 
-To show only total memory.
+只显示内存总量：
 
 ```
 $ sudo ps_mem -t
@@ -241,9 +237,9 @@ $ sudo ps_mem -t
 
 via: http://www.2daygeek.com/ps_mem-report-core-memory-usage-accurately-in-linux/
 
-作者：[  2DAYGEEK ][a]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+作者：[2DAYGEEK][a]
+译者：[xllc](https://github.com/xllc)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
