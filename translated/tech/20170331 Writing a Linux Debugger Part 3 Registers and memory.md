@@ -1,4 +1,4 @@
-开发 Linux 调试器第三部分：寄存器和内存
+开发 Linux 调试器（三）：寄存器和内存
 ============================================================ 
 
 上一篇博文中我们给调试器添加了一个简单的地址断点。这次，我们将添加读写寄存器和内存的功能，这将使我们能够使用我们的程序计数器、观察状态和改变程序的行为。
@@ -9,7 +9,7 @@
 
 随着后面文章的发布，这些链接会逐渐生效。
 
-1.  [启动][3]
+1.  [准备环境][3]
 
 2.  [断点][4]
 
@@ -29,12 +29,11 @@
 
 10.  下一步
 
-译者注：ELF（[Executable and Linkable Format](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format "Executable and Linkable Format") 可执行文件格式），DWARF（一种广泛使用的调试数据格式，参考 [WIKI](https://en.wikipedia.org/wiki/DWARF "DWARF WIKI")）
 * * *
 
 ### 注册我们的寄存器
 
-在我们真正读取任何寄存器之前，我们需要告诉调试器更多关于我们平台，也就是 x86_64 的信息。除了多组通用和专用目的寄存器，x86_64 还提供浮点和向量寄存器。为了简化，我将跳过后两种寄存器，但是你如果喜欢的话也可以选择支持它们。x86_64 也允许你像访问 32、16 或者 8 位寄存器那样访问一些 64 位寄存器，但我只会介绍 64 位寄存器。由于这些简化，对于每个寄存器我们只需要它的名称，它的 DWARF 寄存器编号以及 `ptrace` 返回结构体中的存储地址。我使用范围枚举引用这些寄存器，然后我列出了一个全局寄存器描述符数组，其中元素顺序和 `ptrace` 中寄存器结构体相同。
+在我们真正读取任何寄存器之前，我们需要告诉调试器一些关于我们的目标，也就是 x86_64 的信息。除了多组通用和专用目的寄存器，x86_64 还提供浮点和向量寄存器。为了简化，我将跳过后两种寄存器，但是你如果喜欢的话也可以选择支持它们。x86_64 也允许你像访问 32、16 或者 8 位寄存器那样访问一些 64 位寄存器，但我只会介绍 64 位寄存器。由于这些简化，对于每个寄存器我们只需要它的名称，它的 DWARF 寄存器编号以及 `ptrace` 返回结构体中的存储地址。我使用范围枚举引用这些寄存器，然后我列出了一个全局寄存器描述符数组，其中元素顺序和 `ptrace` 中寄存器结构体相同。
 
 ```
 enum class reg {
@@ -169,7 +168,7 @@ void debugger::dump_registers() {
 
 正如你看到的，iostreams 有非常精确的接口用于美观地输出十六进制数据[2][10]。如果你喜欢你也可以通过 I/O 操纵器来摆脱这种混乱。
 
-这些已经足够支持我们在调试器接下来的部分轻松地处理寄存器，因为我们现在可以把这些添加到我们的用户界面。
+这些已经足够支持我们在调试器接下来的部分轻松地处理寄存器，所以我们现在可以把这些添加到我们的用户界面。
 
 * * *
 
@@ -196,7 +195,7 @@ void debugger::dump_registers() {
 
 ### 接下来做什么？
 
-设置断点的时候我们已经读取和写入内存，因此我们只需要添加一些函数用于隐藏 `ptrace`调用。
+设置断点的时候我们已经读取和写入内存，因此我们只需要添加一些函数用于隐藏 `ptrace` 调用。
 
 ```
 uint64_t debugger::read_memory(uint64_t address) {
@@ -309,7 +308,7 @@ void debugger::continue_execution() {
 
 ```
 
-你要将程序计数器移回 `0x40093a` 使得正确设置 `esi` and `edi` 寄存器。
+你要将程序计数器移回 `0x40093a` 以便正确设置 `esi` 和 `edi` 寄存器。
 
 在下一篇博客中，我们会第一次接触到 DWARF 信息并给我们的调试器添加一系列逐步调试的功能。之后，我们会有一个功能工具，它能逐步执行代码、在想要的地方设置断点、修改数据以及其它。一如以往，如果你有任何问题请留下你的评论！
 
@@ -334,8 +333,8 @@ via: https://blog.tartanllama.xyz/c++/2017/03/31/writing-a-linux-debugger-regist
 [a]:https://www.twitter.com/TartanLlama
 [1]:https://blog.tartanllama.xyz/c++/2017/03/31/writing-a-linux-debugger-registers/#fnref:2
 [2]:https://blog.tartanllama.xyz/c++/2017/03/31/writing-a-linux-debugger-registers/#fnref:1
-[3]:https://blog.tartanllama.xyz/2017/03/21/writing-a-linux-debugger-setup/
-[4]:https://blog.tartanllama.xyz/c++/2017/03/24/writing-a-linux-debugger-breakpoints/
+[3]:https://linux.cn/article-8626-1.html
+[4]:https://linux.cn/article-8645-1.html
 [5]:https://blog.tartanllama.xyz/c++/2017/03/31/writing-a-linux-debugger-registers/
 [6]:https://blog.tartanllama.xyz/c++/2017/04/05/writing-a-linux-debugger-elf-dwarf/
 [7]:https://blog.tartanllama.xyz/c++/2017/04/24/writing-a-linux-debugger-source-signal/
