@@ -1,3 +1,4 @@
+translating by chenxinlong
 # [Boot Repair Tool - Repair The Most Boot Related Problems][15]
 
 
