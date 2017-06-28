@@ -1,18 +1,18 @@
-Automatically Create/Remove And Mount Swap File In Linux Using Shell Script
+在 Linux 中使用 shell 脚本自动创建/移除并挂载交换文件
 ============================================================ 
 
 
-Few days ago we have covered an article about swap file creation in Linux using three ways which is the common method but it requires manual human effort.
+几天前我们写了一篇关于在 Linux 中 3 种创建交换文件的方法，它们是常见的方法，但是需要人工操作。
 
-Today i have found a small shell script (Two shell script, one for swap file creation and another one for removing swap file) which was written by [Gary Stafford][3] that help us to create/remove & mount swap file automatically in Linux.
+今天我发现了一个小的 [Gary Stafford][3] 写的 shell 脚本（两个 shell 脚本，一个用于创建交换文件，另外一个用于移除交换文件），它帮助我们在 Linux 中创建/移除并且自动挂载交换文件。
 
-By default the script create and mount `512MB` swapfile. If you want more swap space and different file name you have to modify the script accordingly. It’s not a big deal to modify the script since it’s very handy and small script, even though i have colored the line where you want to modify the script.
+默认这个脚本创建并挂载 `512MB` 的交换文件。如果你想要更多的交换空间和不同的文件名，你需要相应地修改脚本。修改脚本不是一件困难的事，因为这是一个非常上手而且小的脚本，设置我已经为你想要修改的脚本行加上了颜色。
 
-**Suggested Read : **[3 Easy Ways To Create Or Extend Swap Space In Linux][4]
+**推荐阅读：** [Linux 中 3 中简易的创建或扩展交换空间的方法][4]
 
-#### How to check current swap size
+#### 如何检查当前交换文件大小
 
-Lets first check the size of existing swap space partition using **[free][1]** & `swapon` command.
+使用 **[free][1]** 和 `swapon` 命令检查已经存在交换空间。
 
 ```
 $ free -h
@@ -25,11 +25,11 @@ NAME      TYPE      SIZE   USED PRIO
 /dev/sda5 partition   2G 655.2M   -1
 ```
 
-The above output clearly shows `2GB` is my current swap space.
+上面的输出显示我当前的交换空间是 `2GB`。
 
-#### Create Swap File
+#### 创建交换文件
 
-Create `create_swap.sh` file and add below script to automate the swap space creation and mounting.
+创建 `create_swap.sh` 文件并添加下面的脚本来自动化交换空间的创建和挂载。
 
 ```
 $ nano create_swap.sh
@@ -59,13 +59,13 @@ echo '--------------------------------------------'
 swapon --show
 ```
 
-Add execute permission to the file.
+给文件添加执行权限。
 
 ```
 $ sudo +x create_swap.sh
 ```
 
-Run the file to create and mount swap file.
+运行文件来创建和挂载交换文件。
 
 ```
 $ sudo ./create_swap.sh
@@ -81,11 +81,11 @@ NAME      TYPE       SIZE   USED PRIO
 /swapfile file      1024M     0B   -2
 ```
 
-Yes i can see the new `1024M swapfile`. Reboot the system to use the new swap file.
+你可以看到新的 `1024M swapfile`。重启系统以使用新的交换文件。
 
-#### Remove Swap File
+#### 移除交换文件
 
-If the swap file is no longer required, then create `remove_swap.sh` file and add below script to remove swap file and its mount point from /etc/fstab.
+如果不再需要交换文件，接着创建 `remove_swap.sh` 文件并添加下面的脚本移除交换文件以及它的 /etc/fstab 挂载点。
 
 ```
 $ nano remove_swap.sh
@@ -111,13 +111,13 @@ echo '--------------------------------------------'
 swapon --show
 ```
 
-Add execute permission to the file.
+并给文件添加可执行权限。
 
 ```
 $ sudo +x remove_swap.sh
 ```
 
-Run the file to remve and unmount swap file.
+运行脚本来移除并卸载交换文件。
 
 ```
 $ sudo ./remove_swap.sh
@@ -138,7 +138,7 @@ NAME      TYPE      SIZE   USED PRIO
 via: http://www.2daygeek.com/shell-script-create-add-extend-swap-space-linux/
 
 作者：[2DAYGEEK ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
