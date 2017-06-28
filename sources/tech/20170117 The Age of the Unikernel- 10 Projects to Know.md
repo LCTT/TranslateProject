@@ -1,4 +1,3 @@
-ictlyh Translating
 The Age of the Unikernel: 10 Projects to Know
 ============================================================
 
