@@ -1,3 +1,4 @@
+translating by chenxinlong   
 3 Easy Ways To Create Or Extend Swap Space In Linux
 ============================================================
 
@@ -200,7 +201,7 @@ Yes i can see the new `1GB /dev/sda4` swap partition. Reboot the system to use
 via: http://www.2daygeek.com/add-extend-increase-swap-space-memory-file-partition-linux/
 
 作者：[2DAYGEEK ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[chenxinlong](https://github.com/chenxinlong)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
