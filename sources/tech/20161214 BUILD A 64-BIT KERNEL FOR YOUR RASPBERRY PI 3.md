@@ -1,3 +1,5 @@
+translating---geekpi
+
 BUILD A 64-BIT KERNEL FOR YOUR RASPBERRY PI 3
 ============================================================
 
