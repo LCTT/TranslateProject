@@ -1,40 +1,38 @@
-translating---geekpi
-
-uCareSystem – All-In-One System Update And Maintenance Tool For Ubuntu/LinuxMint
+uCareSystem - Ubuntu/Linux Mint 的一体化系统更新和维护工具
 ============================================================
 
 
-[uCareSystem Core][2] is a thin utility that automates the basic system maintenance activity, in other hand it will reduce system administrator task in many ways and save some good amount of time. It doesn’t have any GUI and offers purely command line interface to perform the activity.
+[uCareSystem Core][2] 是一种能够自动执行基本系统维护活动的轻型实用程序，另一方面它可以通过多种方式减少系统管理员的任务，节省大量时间。它没有任何 GUI，并提供纯粹的命令行界面来执行活动。
 
-There are several utilities available in Ubuntu to perform system maintenance activity. Each tool has their own unique features and designed accordingly. You can automate this task by adding a cron-job.
+Ubuntu 中有几种实用程序来执行系统维护活动。每种工具有它们相应的独特功能和设计。你可以添加一个 cron 任务来自动化这些任务。
 
-uCareSystem Core will automatically refresh distribution repository, Updates the list of available packages, uninstall packages (obsolete, orphaned & old Linux Kernels) & Clears the retrieved packages to save some disk space on system.
+uCareSystem Core 会自动刷新发行版仓库、更新可用包列表、卸载包（过期包、孤儿包和旧的 Linux 内核）以及清理取回的包来节省系统磁盘空间。
 
-Suggested Read : [Stacer – Linux System Optimizer and Monitoring Tool][3]
+建议阅读：[Stacer - Linux 系统优化器及监控工具][3]
 
-Suggested Read : [BleachBit – A Quick And Best Way to Clean Up Your System In Linux][4]
+建议阅读：[BleachBit – 快速及最佳的方式清理你的 Linux 系统][4]
 
-Suggested Read : [Free Up Some Space in Ubuntu/LinuxMint With Ubuntu Cleaner (Fork of Janitor Module)][5]
+建议阅读：[用 Ubuntu Cleaner（Janitor Module 的分支）在 Ubuntu/LinuxMint 中释放一些空间][5]
 
-#### uCareSystem Core Features
+#### uCareSystem Core 功能
 
-*   Update package lists (It will refresh package index)
+*   更新包列表（它将刷新包索引）
 
-*   Downloads and install updates
+*   下载及安装更新
 
-*   Update packages and system libraries to latest available version
+*   更新包及系统库到最新版本
 
-*   Remove unneeded, obsolete & orphaned packages
+*   移除不需要的、过期和孤儿包。
 
-*   Remove old kernels (It keeps the current and previous one for safety purpose)
+*   移除旧内核（它为了安全保留当前和之前一个内核）
 
-*   Remove unused config files
+*   移除不需要的配置文件
 
-*   Clean downloaded temporary packages
+*   清理已下载的临时包
 
-#### Install uCareSystem Core In Ubuntu/LinuxMint
+#### 在 Ubuntu/LinuxMint 中安装 uCareSystem Core
 
-We can easily install uCareSystem Core in Ubuntu/LinuxMint through PPA since developer offering the own PPA.
+因为开发者提供了自己的 PPA，因此我们可以轻易地通过 PPA 在 Ubuntu/LinuxMint 中安装 uCareSystem Core。
 
 ```
 $ sudo add-apt-repository ppa:utappia/stable
@@ -42,7 +40,7 @@ $ sudo apt update
 $ sudo apt install ucaresystem-core
 ```
 
-We have successfully installed `uCareSystem Core` package and going to check current disk space utilization with help of `df -h`command before executing uCareSystem Core command to know whether it will save some disk space or not?
+我们已经成功安装了 `uCareSystem Core` 包并且在执行 CareSystem Core 命令之前要了解它是否会节省磁盘空间，使用 `df -h` 命令检查当前磁盘利用率。
 
 ```
 $ df -h
@@ -56,7 +54,7 @@ tmpfs           999M     0  999M   0% /sys/fs/cgroup
 tmpfs           200M  112K  200M   1% /run/user/1000
 ```
 
-Just run an `ucaresystem-core` command in terminal and sitback reset it will take care automatically and no human interaction requires till the end.
+只需在终端中运行 `ucaresystem-core` 命令, 在结束之前它会自动执行而不需要人类交互。
 
 ```
 $ sudo ucaresystem-core
@@ -117,7 +115,7 @@ Del terminix 1.5.6-1~webupd8~yakkety1 [13.7 kB]
 #########################
 ```
 
-I could see that, it does the job as expected. Also found it saved almost `2GB` in `/ partition`.
+我可以看见它如预期那样工作。同样也可以发现大概在`/ 分区`节省了 `2GB`。   
 
 ```
 $ df -h
@@ -136,7 +134,7 @@ tmpfs           200M  112K  200M   1% /run/user/1000
 via: http://www.2daygeek.com/ucaresystem-system-update-and-maintenance-tool-for-ubuntu-linuxmint/
 
 作者：[2DAYGEEK  ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
