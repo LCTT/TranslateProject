@@ -1,18 +1,17 @@
 在 Linux 中使用 shell 脚本自动创建/移除并挂载交换文件
-============================================================ 
-
+======
 
 几天前我们写了一篇关于在 Linux 中 3 种创建交换文件的方法，它们是常见的方法，但是需要人工操作。
 
-今天我发现了一个小的 [Gary Stafford][3] 写的 shell 脚本（两个 shell 脚本，一个用于创建交换文件，另外一个用于移除交换文件），它帮助我们在 Linux 中创建/移除并且自动挂载交换文件。
+今天我发现了一个 [Gary Stafford][3] 写的 shell 小脚本（两个 shell 脚本，一个用于创建交换文件，另外一个用于移除交换文件），它可以帮助我们在 Linux 中创建/移除并且自动挂载交换文件。
 
-默认这个脚本创建并挂载 `512MB` 的交换文件。如果你想要更多的交换空间和不同的文件名，你需要相应地修改脚本。修改脚本不是一件困难的事，因为这是一个非常上手而且小的脚本，设置我已经为你想要修改的脚本行加上了颜色。
+默认这个脚本创建并挂载 512MB 的交换文件。如果你想要更多的交换空间和不同的文件名，你需要相应地修改脚本。修改脚本不是一件困难的事，因为这是一个容易上手而且很小的脚本。
 
-**推荐阅读：** [Linux 中 3 中简易的创建或扩展交换空间的方法][4]
+**推荐阅读：** [Linux 中 3 种简易创建或扩展交换空间的方法][4]
 
-#### 如何检查当前交换文件大小
+### 如何检查当前交换文件大小
 
-使用 **[free][1]** 和 `swapon` 命令检查已经存在交换空间。
+使用 [free][1] 和 `swapon` 命令检查已经存在交换空间。
 
 ```
 $ free -h
@@ -27,9 +26,9 @@ NAME      TYPE      SIZE   USED PRIO
 
 上面的输出显示我当前的交换空间是 `2GB`。
 
-#### 创建交换文件
+### 创建交换文件
 
-创建 `create_swap.sh` 文件并添加下面的脚本来自动化交换空间的创建和挂载。
+创建 `create_swap.sh` 文件并添加下面的内容来自动化交换空间的创建和挂载。
 
 ```
 $ nano create_swap.sh
@@ -81,11 +80,11 @@ NAME      TYPE       SIZE   USED PRIO
 /swapfile file      1024M     0B   -2
 ```
 
-你可以看到新的 `1024M swapfile`。重启系统以使用新的交换文件。
+你可以看到新的 1024M 的 `swapfile`。重启系统以使用新的交换文件。
 
-#### 移除交换文件
+### 移除交换文件
 
-如果不再需要交换文件，接着创建 `remove_swap.sh` 文件并添加下面的脚本移除交换文件以及它的 /etc/fstab 挂载点。
+如果不再需要交换文件，接着创建 `remove_swap.sh` 文件并添加下面的内容来移除交换文件以及它的 `/etc/fstab` 挂载点。
 
 ```
 $ nano remove_swap.sh
@@ -131,15 +130,14 @@ NAME      TYPE      SIZE   USED PRIO
 /dev/sda5 partition   2G 951.8M   -1
 ```
 
-<nav class="pagination group" style="display: block; margin: 0px 0px 15px; padding: 0px; border: 0px; font-style: inherit; font-variant: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; vertical-align: baseline; zoom: 1;"></nav>
 
 --------------------------------------------------------------------------------
 
 via: http://www.2daygeek.com/shell-script-create-add-extend-swap-space-linux/
 
-作者：[2DAYGEEK ][a]
+作者：[2DAYGEEK][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
