@@ -1,3 +1,5 @@
+translating---geekpi
+
 # Debian armhf VM on arm64 server
 
 
