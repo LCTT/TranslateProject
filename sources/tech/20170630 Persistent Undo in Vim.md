@@ -34,7 +34,7 @@ That’s all. Vim will store all the undo history files in that directory, and y
 
 ------
 
- via: [https://jovicailic.org/2017/04/vim-persistent-undo/](https://opensource.com/article/17/3/perl-raspberry-pi)
+ via: [https://jovicailic.org/2017/04/vim-persistent-undo/](https://jovicailic.org/2017/04/vim-persistent-undo/)
 
 作者：JOLE 译者：[erlinux](https://github.com/erlinux/) 校对：[校对者ID](https://github.com/%E6%A0%A1%E5%AF%B9%E8%80%85ID)
 
