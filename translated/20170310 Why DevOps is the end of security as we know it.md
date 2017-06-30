@@ -1,16 +1,24 @@
 Translating by windcode
 
 # Why DevOps is the end of security as we know it
+# 为什么我们知道 DevOps 是安全的终结
 
 ![](https://techbeacon.com/sites/default/files/styles/article_hero_image/public/field/image/rugged-devops-end-of-security.jpg?itok=Gp1xxSMK)
 
 Security can be a hard sell. It’s difficult to convince development teams to spend their limited cycles patching security holes with line-of-business managers pressuring them to release applications as quickly as possible. But given that 84 percent of all cyberattacks happen on the application layer, organizations can’t afford for their dev teams not to include security.
 
+安全是很难去推销的。在公司里，你很难说服开发团队在业务经理对他们施加压力，迫使他们需要尽快发布应用程序的情况下，花费本就有限的开发周期去修补安全漏洞。但考虑到 84% 的网络攻击发生在应用层，组织承担不起开发团队不考虑安全造成的后果。
+
 The rise of DevOps presents a dilemma for many security leads. “It’s a threat to security,” [Josh Corman, former CTO at Sonatype][2], “and it’s an opportunity for security to get better.” Corman is a staunch advocate of [integrating security and DevOps practices to create “Rugged DevOps.”][3]  _Business Insights_  talked with Corman about the values security and DevOps share, and how those shared values help make organizations less vulnerable to outages and exploits.
+
+DevOps 的兴起给安全专家们带来了一个难题。“这是对安全的威胁，”[Josh Corman，Sonatype 的前首席技术官][2]说，“也是安全发展的一个更好的机会。”Corman 将[安全与 DevOps 结合起来，创造了“Rugged DevOps”的概念][3]，他是这个概念的坚定支持者。_Business Insights_ 与 Corman 讨论了安全和 DevOps 结合的价值，以及这种结合如何帮助组织更不容易受到宕机和攻击的影响。 
 
 What Is the True State of Security in DevOps?[Get Report][1]
 
+DevOps的真正安全状况是什么？[Get Report][1]
+
 ### How are security and DevOps practices mutually beneficial?
+### 安全和 DevOps 是如何相互促进的？
 
 **Josh Corman: **A primary example is the tendency for DevOps teams to instrument everything that can be measured. Security is always looking for more intelligence and telemetry. You can take a lot of what DevOps teams are measuring and enter that info into your log management or your SIEM [security information and event management system].
 
