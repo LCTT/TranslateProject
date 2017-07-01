@@ -1,3 +1,4 @@
+翻译中 by zky001
 # [Open source social robot kit runs on Raspberry Pi and Arduino][22]
 
 
@@ -77,7 +78,7 @@ The Q.bo One is available on Indiegogo through mid-July starting at $369 for the
 via: http://linuxgizmos.com/open-source-social-robot-kit-runs-on-raspberry-pi-and-arduino/
 
 作者：[ Eric Brown][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zky001](https://github.com/zky001)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
