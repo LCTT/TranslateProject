@@ -1,3 +1,5 @@
+translating---geekpi
+
 Chromebook Dual Boot How-to: Ubuntu 17.04 GNOME and Chrome OS
 ============================================================
 
