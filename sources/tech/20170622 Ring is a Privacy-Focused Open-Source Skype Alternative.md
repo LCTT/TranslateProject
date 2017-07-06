@@ -1,3 +1,5 @@
+translating----geekpi
+
 Ring is a Privacy-Focused, Open-Source Skype Alternative
 ============================================================
 
