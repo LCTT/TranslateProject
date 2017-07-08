@@ -1,3 +1,5 @@
+翻译中 by  WangYueScream
+===========================================================
 3 open source music players: Aqualung, Lollypop, and GogglesMM
 ============================================================
  ![3 open source music players: Aqualung, Lollypop, and GogglesMM](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/music-birds-recording-520.png?itok=wvh1g4Lw "3 open source music players: Aqualung, Lollypop, and GogglesMM") 
