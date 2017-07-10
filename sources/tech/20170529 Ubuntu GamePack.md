@@ -6,53 +6,100 @@ Ubuntu GamePack
 
 A lot of people who like to use their Linux system for gaming. There seems to be no shortage of gaming systems which can supply access to games. UALinux is a Ukrainian company which promotes the use of GNU/Linux. UALinux has created a Ubuntu version to fill the gap for gaming. The Operating System (OS) is called Ubuntu GamePack and is based off of Ubuntu 16.04.
 
-很大一部分 Linux爱好者喜欢用他们的系统玩游戏。现在看起来能够可以支持游戏的游戏系统很短缺。UALinux是一家推广使用GNU/Linux的乌克兰公司。UALinux开发了一个Ubuntu版本填补了这一空白。这个操作系统（OS）命名为Ubuntu GamePack 基于Ubuntu 16.04.
+
+很大一部分 Linux 爱好者喜欢用他们的系统玩游戏。现在看起来能够可以支持游戏的游戏系统很短缺。UALinux 是一家推广使用 GNU/Linux 的乌克兰公司。UALinux 开发了一个 Ubuntu 版本填补了这一空白。把这个基于 Ubuntu 16.04 的操作系统（OS）命名为 Ubuntu GamePack .
 
 **Contents**
+
 ** 内容 **
+
 The list of games would be quite extensive but the company claims there is access to over 22,381 games.
+
 游戏现在已经相当广泛，但是游戏公司已经宣称可以访问超过22,381款游戏。
+
 The GamePack includes Lutris and Steam to allow you access to the specific gaming services the distributer provides.
-GamePack 包括 Lutris 和 Steam两部分，允许您访问分发商提供的定制游戏服务。
+
+GamePack 包括 Lutris 和 Steam 两部分，允许您访问分发商提供的定制游戏服务。
+
 For Windows-based games there is PlayOnLinux, WINE and CrossOver so the games will run on Linux.
-对于基于Windows的游戏，有PlayOnLinux，WINE和CrossOver转换到Linux上运行。
+
+对于基于 Windows 的游戏，有 PlayOnLinux，WINE 和 CrossOver 转换到 Linux 上运行。
+
 For DOS games you can run the games in DosBox which is a DOS emulator for Linux.
-对于DOS游戏，您可以在DosBox中运行游戏，这是一个Linux的DOS模拟器
+
+对于 DOS 游戏，您可以在 DosBox 中运行游戏，这是一个 Linux 的 DOS 模拟器
+
 Sparky APTus Gamer is also installed to allow access to numerous gaming console emulators. The emulators include:
-Sparky APTus Gamer被安装应用允许访问众多游戏控制模拟器。 模拟器包括：
+
+Sparky APTus Gamer 被安装应用允许访问众多游戏控制模拟器。 模拟器包括：
+
 *   AdvanceMENU – front-end for AdvanceMAME, AdvanceMESS, MAME, MESS, xmame, Raine and other emulators
+
 *   AdvanceMENU - 前端包括 AdvanceMAME, AdvanceMESS, MAME, MESS, xmame, Raine 以及其他的模拟器
+
 *   Atari800 - emulator for Atari 8-bit systems, XE Game System and Atari 5200 SuperSystem
-*   Atari800 - Atari 8位系统的模拟器，XE游戏系统和Atari 5200 超级系统
+
+*   Atari800 - Atari 8位系统的模拟器，XE 游戏系统和 Atari 5200 超级系统
+
 *   DeSmuME - Nintendo DS emulator
+
 *   DeSmuME - Nintendo DS 模拟器
+
 *   Desura - digital distribution platform for Windows, Linux and X systems - OnLine installer
-*   Desura - 
+
+*   Desura - 为Windows数字化分发平台，Linux 和 x 系统 - 在线安装
+
 *   DOSBox - DOS emulator for BeOS, Linux, Mac X, OS2, and Windows
+
+*   DOSBox - 为系统 BeOS, Linux, Mac X, OS2, 和 Windows 定制的 DOS 模拟器
 
 *   DOSEMU - DOS Emulator for Linux
 
+*   DOSEMU - 为 Linux 系统定制的 DOS 模拟器
+
 *   ePSXe - enhanced PSX emulator
+
+*   ePSXe - 增强的 PSX 模拟器（仿真器）
 
 *   FCEUX - Nintendo Entertainment System (NES), Famicom and Famicom Disk System (FDS) emulator
 
+*   FCEUX - 任天堂娱乐系统（NES）,费米康和费米康磁盘系统（FDS）模拟器（仿真器）
+
 *   FS-UAE - Cross-platform Amiga emulator
+
+*   FS-UAE - 跨平台多媒体（Amiga）模拟器
 
 *   GNOME Video Arcade - Simple MAME frontend
 
+*   GNOME Video Arcade - 简化 MAME 前端
+
 *   Hatari - Atari ST, STE, TT and Falcon emulator for Linux and other systems
+
+*   Hatari - 用于Linux和其他系统的Atari ST，STE，TT和 Falcon 模拟器（仿真器）
 
 *   Higan - Emulator for Nintendos SNES, NES, Gameboy, Gameboy Color and Gameboy Advance
 
+*   Higan - 任天堂 SNES，NES，Gameboy，Gameboy Color 和 Gameboy Advance 的模拟器
+
 *   Kega_Fusion - Sega SG/SC/SF, Master System, Game Gear, Genesis/Megadrive, SVP, Pico, SegaCD/MegaCD emulator
+
+*   Kega_Fusion - 世嘉 SG / SC / SF，主系统，游戏机，创世纪 / 麦加驱动，SVP，Pico，SegaCD / MegaCD 模拟器（仿真器）
 
 *   MAME - Hardware emulator which faithfully reproduces the behavior of many arcade machines
 
+*   MAME - 不折不扣地复制许多街机行为硬件模拟器（仿真器）
+
 *   Mednafen - Atari Lynx, GameBoy, NES, SNES, PC-FX, Sega, Sony PlayStation and other systems
+
+*   Mednafen - Atari Lynx，GameBoy，NES，SNES，PC-FX，世嘉，索尼游戏站等系统
 
 *   MESS - Emulator for various consoles and computing systems
 
+*   MESS - 各种控制台和计算系统的模拟器（仿真器）
+
 *   Nestopia - Nintendo Entertainment System/Famicom emulator
+
+*   Nestopia - 任天堂娱乐系统/费米康模拟器
 
 *   PCSX - Sony PlayStation emulator
 
