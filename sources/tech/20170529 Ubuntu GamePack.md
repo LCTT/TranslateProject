@@ -6,26 +6,28 @@ Ubuntu GamePack
 
 A lot of people who like to use their Linux system for gaming. There seems to be no shortage of gaming systems which can supply access to games. UALinux is a Ukrainian company which promotes the use of GNU/Linux. UALinux has created a Ubuntu version to fill the gap for gaming. The Operating System (OS) is called Ubuntu GamePack and is based off of Ubuntu 16.04.
 
+很大一部分 Linux爱好者喜欢用他们的系统玩游戏。现在看起来能够可以支持游戏的游戏系统很短缺。UALinux是一家推广使用GNU/Linux的乌克兰公司。UALinux开发了一个Ubuntu版本填补了这一空白。这个操作系统（OS）命名为Ubuntu GamePack 基于Ubuntu 16.04.
+
 **Contents**
-
+** 内容 **
 The list of games would be quite extensive but the company claims there is access to over 22,381 games.
-
+游戏现在已经相当广泛，但是游戏公司已经宣称可以访问超过22,381款游戏。
 The GamePack includes Lutris and Steam to allow you access to the specific gaming services the distributer provides.
-
+GamePack 包括 Lutris 和 Steam两部分，允许您访问分发商提供的定制游戏服务。
 For Windows-based games there is PlayOnLinux, WINE and CrossOver so the games will run on Linux.
-
+对于基于Windows的游戏，有PlayOnLinux，WINE和CrossOver转换到Linux上运行。
 For DOS games you can run the games in DosBox which is a DOS emulator for Linux.
-
+对于DOS游戏，您可以在DosBox中运行游戏，这是一个Linux的DOS模拟器
 Sparky APTus Gamer is also installed to allow access to numerous gaming console emulators. The emulators include:
-
-*   AdvanceMENU – front-end for AdvanceMAME, AdvanceMESS, MAME, MESS, xmame, Raine and other emulators
-
-*   Atari800 - emulator for Atari 8-bit systems, XE Game System and Atari 5200 SuperSystem
-
-*   DeSmuME - Nintendo DS emulator
-
-*   Desura - digital distribution platform for Windows, Linux and X systems - OnLine installer
-
+Sparky APTus Gamer被安装应用允许访问众多游戏控制模拟器。 模拟器包括：
+*   AdvanceMENU – front-end for AdvanceMAME, AdvanceMESS, MAME, MESS, xmame, Raine and other emulators
+*   AdvanceMENU - 前端包括 AdvanceMAME, AdvanceMESS, MAME, MESS, xmame, Raine 以及其他的模拟器
+*   Atari800 - emulator for Atari 8-bit systems, XE Game System and Atari 5200 SuperSystem
+*   Atari800 - Atari 8位系统的模拟器，XE游戏系统和Atari 5200 超级系统
+*   DeSmuME - Nintendo DS emulator
+*   DeSmuME - Nintendo DS 模拟器
+*   Desura - digital distribution platform for Windows, Linux and X systems - OnLine installer
+*   Desura - 
 *   DOSBox - DOS emulator for BeOS, Linux, Mac X, OS2, and Windows
 
 *   DOSEMU - DOS Emulator for Linux
