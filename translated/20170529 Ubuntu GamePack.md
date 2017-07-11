@@ -161,6 +161,7 @@ The main place to download the OS is from UALinux. The link from UALinux is [ht
 下载此操作系统镜像的主要是来自 UALinux 。其下载链接是： [https://ualinux.com/en/download/category/25-ubuntu-gamepack][1]。
 由于此链接来自国外，所以下载速度很慢。另一种选择是利用种子文件下载此操作系统。如果没有你想要下载的“传输”种子下载程序。你可以通过[https://zooqle.com/ubuntu-gamepack-16-04-i386-amd64-январь-2017-pc-vkn99.html][2]
 此链接获得。这个种子文件下载可以下载 64 位和 32 位 的 ISO 镜像文件。
+
 The file sizes vary depending on the architecture you need. The 64-bit OS ISO file is 2.27 GB, while the 32-bit OS ISO file is 2.13 GB.
 
 文件大小取决于您需要的架构。64 位操作系统 ISO 镜像文件大小是 2.27 GB,而 32 位的操作系统 ISO 镜像文件大小是 2.13 GB.
@@ -216,6 +217,7 @@ Boot from the Ubuntu GamePack media and you should see a screen similar to Figur
 ![Figure 01.png](https://www.linux.org/attachments/figure-01-png.671/)
 
 **FIGURE 1**
+
 **图 1**
 
 Once everything is loaded the installer can proceed with the installation. Figure 2 shows the next screen which allows you to specify your language and whether you want to install or try the GamePack. If you wish, you can click ‘Try Ubuntu’ to simply load it into memory and try it out without making changes to your drive.
@@ -225,6 +227,7 @@ Once everything is loaded the installer can proceed with the installation. Figur
 ![Figure 02.png](https://www.linux.org/attachments/figure-02-png.672/)
 
 **FIGURE 2**
+
 **图 2**
 
 Once you are ready to continue select ‘Install Ubuntu’.
@@ -242,6 +245,7 @@ Once you have made your selections, press ‘Continue’.
 ![Figure 03.png](https://www.linux.org/attachments/figure-03-png.673/)
 
 **FIGURE 3**
+
 **图 3**
 
 Next, you must specify how the drive will be configured for use as shown in Figure 4\. If you plan on using the whole drive, then it may be easier to leave the settings as they are and click ‘Install Now’.
@@ -251,6 +255,7 @@ Next, you must specify how the drive will be configured for use as shown in Figu
 ![Figure 04.png](https://www.linux.org/attachments/figure-04-png.674/)
 
 **FIGURE 4**
+
 **图 4**
 
 As shown in Figure 5 you will be prompted to verify your selection for configuring the hard drive. If you approve the changes then click ‘Continue’.
@@ -260,6 +265,7 @@ As shown in Figure 5 you will be prompted to verify your selection for configuri
 ![Figure 05.png](https://www.linux.org/attachments/figure-05-png.675/)
 
 **FIGURE 5**
+
 **图 5**
 
 Next you will be prompted to choose your Time Zone as shown in Figure 6\. Click ‘Continue’ once you have set your Time Zone.
@@ -269,6 +275,7 @@ Next you will be prompted to choose your Time Zone as shown in Figure 6\. Click 
 ![Figure 06.png](https://www.linux.org/attachments/figure-06-png.676/)
 
 **FIGURE 6**
+
 **图 6**
 
 A window will appear, Figure 7, to allow you to set the default keyboard layout. Choose the correct layout and press ‘Continue’.
@@ -278,6 +285,7 @@ A window will appear, Figure 7, to allow you to set the default keyboard layout.
 ![Figure 07.png](https://www.linux.org/attachments/figure-07-png.677/)
 
 **FIGURE 7**
+
 **图 7**
 
 The last configuration screen is for you to set up a User account as shown in Figure 8\. Type in your name, computer name, User name, password and select if you need to type the password to log onto the system. You can also set to encrypt the Home Folder for this User.
@@ -287,6 +295,7 @@ The last configuration screen is for you to set up a User account as shown in Fi
 ![Figure 08.png](https://www.linux.org/attachments/figure-08-png.678/)
 
 **FIGURE 8**
+
 **图 8**
 
 The installation should proceed now by setting up the drive as specified. Files will be copied from the boot media to the hard drive as shown in Figure 9\. Once everything is copied to the drive and set up you will be prompted to remove the Boot Media to allow the system to restart.
@@ -296,6 +305,7 @@ The installation should proceed now by setting up the drive as specified. Files 
 ![Figure 09.png](https://www.linux.org/attachments/figure-09-png.679/)
 
 **FIGURE 9**
+
 **图 9**
 
 After the restart, if you selected to require the User to log in, then you will be given a screen like Figure 10\. Here you enter the password you specified for the User and log onto Ubuntu GamePack.
@@ -305,6 +315,7 @@ After the restart, if you selected to require the User to log in, then you will 
 ![Figure 10.png](https://www.linux.org/attachments/figure-10-png.680/)
 
 **FIGURE 10**
+
 **图 10**
 
 After you log onto Ubuntu GamePack you should probably try to perform any software upgrades which may be necessary. Open a Terminal and enter the following two commands:
