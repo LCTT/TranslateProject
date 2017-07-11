@@ -263,20 +263,25 @@ As shown in Figure 5 you will be prompted to verify your selection for configuri
 **图 5**
 
 Next you will be prompted to choose your Time Zone as shown in Figure 6\. Click ‘Continue’ once you have set your Time Zone.
+
 接下来，如图6所示，你将按照提示选择时区，选择完毕后点击“Continue”。
+
 ![Figure 06.png](https://www.linux.org/attachments/figure-06-png.676/)
 
 **FIGURE 6**
 **图 6**
 
 A window will appear, Figure 7, to allow you to set the default keyboard layout. Choose the correct layout and press ‘Continue’.
+
 接下来，如图7所示，需要您设置默认的键盘布局。选择适合您的正确的布局后并按“Continue”。
+
 ![Figure 07.png](https://www.linux.org/attachments/figure-07-png.677/)
 
 **FIGURE 7**
 **图 7**
 
 The last configuration screen is for you to set up a User account as shown in Figure 8\. Type in your name, computer name, User name, password and select if you need to type the password to log onto the system. You can also set to encrypt the Home Folder for this User.
+
 最后一个配置屏幕是为您设置一个用户帐户，如图8所示。键入您的姓名、计算机名、用户名、密码和选择您需要键入密码登录系统的方式。您还可以为该用户设置加密主目录。
 
 ![Figure 08.png](https://www.linux.org/attachments/figure-08-png.678/)
@@ -285,6 +290,7 @@ The last configuration screen is for you to set up a User account as shown in Fi
 **图 8**
 
 The installation should proceed now by setting up the drive as specified. Files will be copied from the boot media to the hard drive as shown in Figure 9\. Once everything is copied to the drive and set up you will be prompted to remove the Boot Media to allow the system to restart.
+
 安装将按定制进行设置驱动器。安装文件将从引导媒体复制到硬盘驱动器，如图9所示。所有内容复制到驱动器并设置，您将被提示移除引导媒体并允许重新启动系统。
 
 ![Figure 09.png](https://www.linux.org/attachments/figure-09-png.679/)
@@ -293,6 +299,7 @@ The installation should proceed now by setting up the drive as specified. Files 
 **图 9**
 
 After the restart, if you selected to require the User to log in, then you will be given a screen like Figure 10\. Here you enter the password you specified for the User and log onto Ubuntu GamePack.
+
 重新启动后，您需要选择用户登录，会得到类似于图10的屏幕\\。输入指定的用户密码登录到 Ubuntu Gamepack。
 
 ![Figure 10.png](https://www.linux.org/attachments/figure-10-png.680/)
@@ -301,15 +308,21 @@ After the restart, if you selected to require the User to log in, then you will 
 **图 10**
 
 After you log onto Ubuntu GamePack you should probably try to perform any software upgrades which may be necessary. Open a Terminal and enter the following two commands:
+
 当你登录到 Ubuntu Gamepack 你应该尝试执行可能需要的任何软件升级。打开一个终端并输入以下两个命令：
 
 sudo apt-get update && sudo apt-get upgrade
 
 Any updates which are not installed should be installed to bring the GamePack system up-to-date.
+
 更新会安装 GamePack 系统定制的软件更新。
+
 Now, simply look through the menu and find the games you wish to play. Open the emulators or any of the game services like Steam.
+
 现在，只要看看菜单，找到你想玩的游戏就行了。打开模拟器或任何游戏服务如 Steam 。
+
 Hope you enjoy the GamePack and have fun!
+
 希望你喜欢 Gamepack 并且玩得高兴！
 --------------------------------------------------------------------------------
 
