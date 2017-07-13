@@ -1,3 +1,5 @@
+Translating by stevenzdg988.
+
 An introduction to Libral, a systems management library for Linux
 ============================================================
 
