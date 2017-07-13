@@ -19,7 +19,7 @@
 
 ### 你的学习方式是什么？
 
-Before  you start your learning process, consider not only your options, but also yourself. The ancient Greeks had a saying, [γνῶθι σεαυτόν][24] (gnothi seauton), meaning "know thyself". Undertaking a large learning program is difficult. Self awareness is necessary to make sure you are making the choices that will lead to the highest chance of success. Be honest with yourself when you answer the following questions:
+
 
 
 在你开始学习编程之前，你需要考虑的不仅仅是你的方向选择，还要更多的考虑下你自己。古罗马人有句谚语，[γνῶθι σεαυτόν][24]（gnothi seauton），意思是“认识你自己”。进行一个大型的编程学习难度不小。足够的自我认识是非常有必要的，这能够确保你做出的选择通向成功的机会非常大。你需要思考并诚实地回答接下来的这些问题：
@@ -41,7 +41,6 @@ Before  you start your learning process, consider not only your options, but als
 
 
 
-### Test the waters
 
 ### 市场测试
 
@@ -87,17 +86,7 @@ Before  you start your learning process, consider not only your options, but als
 
 ### 开始学习编程的几个步骤
 
-In summary, to give yourself the best chance of success should you decide to learn to program, follow these steps:
 
-1.  Gather your list of requirements/needs and resources
-
-2.  Research the options available to you in your area
-
-3.  Discard the options that do not meet your requirements and resources
-
-4.  Select the option(s) that best suit your requirements, resources, and learning style
-
-5.  Find a support network
 
 简单的来说，既然你决定学习编程，可以参考这几个方法给自己一个尽可能成功的机会：
 
