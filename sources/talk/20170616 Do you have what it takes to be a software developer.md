@@ -1,3 +1,5 @@
+translating---geekpi
+
 # Do you have what it takes to be a software developer?
 
 ![](https://www.linuxcareer.com/images/software_developer_skills.jpg)
