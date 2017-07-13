@@ -1,17 +1,27 @@
 Translating by stevenzdg988.
 
 An introduction to Libral, a systems management library for Linux
+
+Libral,开源的 Linux 系统管理库入门
+
 ============================================================
 
 ### Libral provides a uniform management API across system resources and serves as a solid foundation for scripting management tasks and building configuration-management systems.
 
+Libral 提供相同管理标准并通过系统提供的 API 接口，提供可靠地脚本管理任务的服务并且增加实时配置管理系统。
 
 ![An introduction to Libral, a systems management library for Linux](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/yearbook-haff-rx-linux-file-lead_0.png?itok=48iDNoH8 "An introduction to Libral, a systems management library for Linux")
 >Image by : [Internet Archive Book Images][10]. Modified by Opensource.com. CC BY-SA 4.0
 
+图像:[Internet Archive Book Images][10].修改：Opensource.com. CC BY-SA 4.0
+
 Linux, in keeping with Unix traditions, doesn't have a comprehensive systems management API. Instead, management is done through a variety of special-purpose tools and APIs, all with their own conventions and idiosyncrasies. That makes scripting even simple systems-management tasks difficult and brittle.
 
+Linux,保持了 Unix 的传统，但是没有一个综合管理系统的 API接口。相反，管理操作是通过多种特定的工具和 API 按照约定和特有的风格来实现的。这就使得编写一个极其简单的系统管理任务脚本将变得很困难很脆弱。
+
 For example, changing the login shell of the "app" user is done by running **usermod -s /sbin/nologin app**. This works great until it is attempted on a system that does not have an app user. To fix the ensuing failure, the enterprising script writer might now resort to:
+
+举个例子来说，改变 “app” 登录的命令行方式的用户可以运行 "usermod -s /sbin/nologin app"。这个命令运行能够试图探测出这个系统没有这个 app 用户。为了修复接下来产生的错误，有事业心的脚本编写者可能凭借下面的脚本来解决：
 
 ```
     grep -q app /etc/passwd \
@@ -21,11 +31,15 @@ For example, changing the login shell of the "app" user is done by running **us
 
 So that the change in the login shell is performed when the app user is present on the system, and the user is created if it is not present yet. Unfortunately, this approach to scripting systems-management tasks is not sustainable: For each kind of resource, a different set of tools and their idiosyncrasies must be taken into account; inconsistent and often incomplete error reporting makes error handling difficult; and it is easy to trip over small bugs caused by the ad hoc nature of the tools involved.
 
+因此，当“app”用户在系统中存在时更改登录命令行的方式就被执行了，当此用户不存在时，此用户就被创建个。不幸的是，这种利用编写系统管理任务脚本的途径是不能被接受的：对于每一种资源来说，都必须有不同的设置工具和其特有的风格必须合并到一个用户账户；不一致和经常性的不完备的错误报告将会使错误的处理变得困难；再者会因为工具所具有的本质特性引起的故障而导致执行失败。
+
 In fact, the above example is not correct: **grep** doesn't look for the **app** user, it simply looks for any line in **/etc/passwd** that contains the string **app**, something that might work most of the time, but can fail—usually at the worst possible moment.
 
-
+实际上，以上所举的例子是不正确的：“grep” 不能用在查找 “app”用户的，它只能简单的查找文件“/etc/passwd”的一些行中是否有字符串“app”，在很多时候，会在最关键的时刻经常出错。
 
 Clearly, management tools that make it hard to perform simple tasks from scripts are, at best, a difficult basis for larger management systems. Recognizing this, existing configuration-management systems, such as Puppet, Chef, or Ansible, have gone to great lengths to build their own internal APIs around the management of basic operating system resources. These resource abstractions are internal APIs, and closely tied to the needs of their respective tools. This causes not only a colossal duplication of effort, but also creates a strong barrier to entry for new and innovative management tools.
+
+
 
 One area where this barrier to entry becomes evident is in building VM or container images: In the course of building such images, it is often necessary to either answer simple questions about them or make simple changes to them. But since the tools for this all require special treatment, these questions and changes face exactly the problems that somebody trying to script them faces. As a consequence, image building must rely on either ad hoc scripts or using (and installing) a quite substantial configuration-management system.
 
