@@ -1,3 +1,5 @@
+translating----geekpi
+
 Talk of tech innovation is bullsh*t. Shut up and get the work done – says Linus Torvalds
 ============================================================
 
