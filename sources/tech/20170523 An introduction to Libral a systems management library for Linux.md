@@ -2,7 +2,7 @@ Translating by stevenzdg988.
 
 An introduction to Libral, a systems management library for Linux
 
-Libral,开源的 Linux 系统管理库入门
+Libral,开源的 Linux 系统管理库
 
 ============================================================
 
@@ -56,6 +56,9 @@ Libral 将为管理工具和任务提供一个可靠的保证，通过系统资�
 
 and to create or change an entry in **/etc/hosts**, one runs:
 
+接下来创建和修改入口文件 “/etc/hosts",可以运行命令：
+
+
 ```
     ralsh hostmyhost.example.com ip=10.0.0.1 \
       host_aliases=myhost,apphost
@@ -63,40 +66,81 @@ and to create or change an entry in **/etc/hosts**, one runs:
 
 In this manner, the user of ralsh is isolated from the fact that these two commands work quite differently internally: The first one needs to use the proper invocation of **useradd** or **usermod**, whereas the second needs to edit the file **/etc/hosts**. For the user, though, they both appear to take the same shape: "Make sure that this resource is in the state that I need."
 
-
+以这种方式运行，用户的 ”ralsh“ 在内部运行是完全不同的，事实上是分离开执行的：第一步需要适当的调用命令”useradd“或者”usermod“，然而第二步需要在”/etc/hosts"文件中进行编辑。对于用户来说，他们似乎都采取同样的模型：“确保资源就是我所所需要的。”
 
 
 ### Where to get Libral and how to use it
 
+怎样获取和使用 Libral 呢？
+
+
 Libral is available from [this git repo][12]. Its core is written in C++, and instructions for building it can be found [in the repo][13]. That is only necessary if you actually want to contribute to Libral's C++ core. The Libral site also contains a [prebuilt tarball][14] that can be used on any Linux machine that uses **glibc 2.12** or later. The contents of that tarball can be used both to explore ralsh further and to develop new providers, which give Libral the capability to manage new kinds of resources.
+
+Libral可以在[this git repo][12]找到并下载。核心是由C++编写的，创建他的说明可以在[in the repo][13]查找到。如果你真的想要为Libral 的 C++ 核心做贡献的话是很有必要的。Libral 的网站上包含了一个[prebuilt tarball][14],可以在任何 Linux 机器上使用“glibc 2.12”或者更高版本。可以使该“tarball”的内容链接进一步探究 ralsh 和开发新的供应商，这样做就使得 Libral 具备了管理新类型资源的能力。
+
 
 After downloading and unpacking the tarball, the **ralsh** command can be found in **ral/bin**. Running it without arguments will list all resource types that Libral knows about. Passing the **--help **option prints output that contains more example of how to use **ralsh**.
 
+下载完毕后解压“tarball”，“ralsh”命令就会生成在目录“ral/bin”下。运行这个不需要任何参数的命令就会将 Libral 所知道所有资源类型列举出来。利用“--help“选项打印输出关于”ralsh“更多的实例。
+
+
 ### Relationship to configuration-management systems
+
+如何配置管理系统
+
 
 Well-known configuration-management systems, such as Puppet, Chef, or Ansible, address some of the same problems that Libral addresses. What sets Libral apart from them is mostly in the things that these systems do and Libral doesn't. Configuration-management systems are built to deal with the variety and complexity of managing many different things across large numbers of nodes. Libral, on the other hand, aims at providing a low-level systems management API that is well-defined, independent of any particular tool, and usable with a wide variety of programming languages.
 
+众所周知配置管理系统，如 Puppet，Chef，及 Ansible，地址等相同的问题是 Libral 的地址。这就是为什么一般将 Libral 与其他设置分离开的原因，即让系统去执行。配置管理系统被创建处理多样复杂的通过管理大量的节点的多事务管理行为。Libral，在另一方面，
+旨在提供一个低级别的定义明确的系统管理 API 独立于任何特定的工具，可用各种各样的编程语言进行设计。
+
 By removing the application logic that the large configuration-management systems contain, Libral is much more versatile in how it can be used, from the simple scripting tasks mentioned in the introduction, to serving as the building blocks for complex management applications. Focusing on these basics also allows it to be very small, currently less than 2.5 MB, an important consideration for resource-constrained environments, including containers and small devices.
+
+通过消除大量的配置管理系统中包含的应用程序逻辑，Libral在怎样使用方面是非常万能的，从简单的脚本任务介绍中提到的，为构建复杂的管理应用程序块服务。专注与这些基础之外，还允许它很小，目前小于 2.5 MB，一个重要的考虑就是资源严重受限的环境包括容器和小型设备。
 
 ### The Libral API
 
+Libral API
+
 The design of the Libral API is guided by the experience of implementing large configuration-management systems over the last decade; while it is not directly tied to any of them, it takes them into account and makes choices to overcome their shortcomings.
+
+在过去的十年里，Libral API 设计指导下实施配置管理上的经验，虽然不是解绑定到其中任何一个应用上，但需要考虑这些问题，做出选择克服他们的缺点。
+
 
 There are four important principles that the API design rests on:
 
+四个重要的 API 设计原则
+
 *   Desired state 
+
+期望的声明
 
 *   Bidirectionality 
 
+双向性
+
 *   Lightweight abstractions
+
+轻量级的抽象
 
 *   Ease of extension
 
+平行程式扩展
+
 Basing a management API on desired state, i.e., the idea that the user expresses what the system should look like after an operation rather than how to get into that state, is hardly controversial at this point. Bidirectionality makes it possible to use the same API and, more importantly, the same resource abstractions to read existing state and to enforce changes to it. Lightweight abstractions ensure that it is easy to learn the API and make use of it quickly; past attempts at such management APIs have unduly burdened the user with learning a modeling framework, an important factor in their lack of adoption.
+
+给予期望状态管理API，举个例子来说，这个理解应该是当用户在一个操作执行后希望系统看起来是什么表达方式，而不是怎么进入这个状态，在这一点上很难引起争议。双向性使得使用相同的 API 成为可能，更重要的是，相同的资源抽象成读取已经存在的和强制改变它。轻量级的抽象行为确保能容易的学习和快速的使用API；过去尝试管理 API 的方式已经过度的加重了学习框架建模的使用者的负担了，一个重要的因素是他们的接受力缺乏。
+
 
 Finally, it has to be easy to extend Libral's management capabilities so that users can teach Libral how to manage new kinds of resources. This is important both because of the sheer amount of resources that one might want to manage (and that Libral will manage in due time), as well as because even a fully built-out Libral will always fall short of a user's custom management needs.
 
+终于，它必须易于扩展 Libral 的管理功能，这样用户可以让 Libral 如何管理新类型的资源。这很重要，因为绝对数量的资源，一种情况可能需要管理（Libral 将在适当时间进行管理），再者，因为既是一个完全成熟的 Libral 也总是存在达不到用户自定义的管理需求。
+
+
 Currently, the main way to interact with the Libral API is through the **ralsh **command line tool. It exposes the underlying C++ API, which is still in flux, and is mainly geared at simple scripting tasks. The project also provides language bindings for CRuby, with others to follow.
+
+
+
 
 In the future, Libral will also provide a daemon with a remote API, so that it can serve as the basis for management systems that do not need to install additional agents on managed nodes. This, coupled with the ability to tailor the management capabilities of Libral, makes it possible to tightly control which aspects of a system can be managed and which ones are protected from any interference.
 
