@@ -1,3 +1,4 @@
+translating by chenxinlong
 An introduction to functional programming in JavaScript
 ============================================================
 
@@ -719,7 +720,7 @@ Matt Banz - Matt graduated from the University of Utah with a degree in mathemat
 via: https://opensource.com/article/17/6/functional-javascript
 
 作者：[Matt Banz ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[chenxinlong](https://github.com/chenxinlong)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
