@@ -1,82 +1,49 @@
-Translating by stevenzdg988.
-
-An introduction to Libral, a systems management library for Linux
-
-Libral,开源的 Linux 系统管理库
-
+Libral 简介：开源的 Linux 系统管理库
 ============================================================
 
-### Libral provides a uniform management API across system resources and serves as a solid foundation for scripting management tasks and building configuration-management systems.
-
-Libral 提供相同管理标准并通过系统提供的 API 接口，提供可靠地脚本管理任务的服务并且增加实时配置管理系统。
+> Libral 对系统资源和服务提供了一个统一的管理 API ，其可以作为脚本管理任务和配置管理系统的构建的坚实基础。
 
 ![An introduction to Libral, a systems management library for Linux](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/yearbook-haff-rx-linux-file-lead_0.png?itok=48iDNoH8 "An introduction to Libral, a systems management library for Linux")
->Image by : [Internet Archive Book Images][10]. Modified by Opensource.com. CC BY-SA 4.0
 
-图像:[Internet Archive Book Images][10].修改：Opensource.com. CC BY-SA 4.0
+作为继承了 Unix 的传统的 Linux 操作系统，其并没有一个综合的系统管理 API 接口，相反，管理操作是通过多种特定用途的工具和 API 来实现的，其每一个都有自己约定和特有的风格。这就使得编写一个极其简单的系统管理任务脚本将变得很困难很脆弱。
 
-Linux, in keeping with Unix traditions, doesn't have a comprehensive systems management API. Instead, management is done through a variety of special-purpose tools and APIs, all with their own conventions and idiosyncrasies. That makes scripting even simple systems-management tasks difficult and brittle.
-
-Linux,保持了 Unix 的传统，但是没有一个综合管理系统的 API接口。相反，管理操作是通过多种特定的工具和 API 按照约定和特有的风格来实现的。这就使得编写一个极其简单的系统管理任务脚本将变得很困难很脆弱。
-
-For example, changing the login shell of the "app" user is done by running **usermod -s /sbin/nologin app**. This works great until it is attempted on a system that does not have an app user. To fix the ensuing failure, the enterprising script writer might now resort to:
-
-举个例子来说，改变 “app” 登录的命令行方式的用户可以运行 "usermod -s /sbin/nologin app"。这个命令运行能够试图探测出这个系统没有这个 app 用户。为了修复接下来产生的错误，有事业心的脚本编写者可能凭借下面的脚本来解决：
+举个例子来说，改变 “app” 用户的登录 shell 要运行 `usermod -s /sbin/nologin app`。这个命令运行的很好，除了系统上没有 “app” 用户的情况之外。为了修复这个例外错误，具有创新精神的脚本编写者也许要这样写：
 
 ```
-    grep -q app /etc/passwd \
-      && usermod -s /sbin/nologin app \
-      || useradd ... -s /sbin/nologin app
+grep -q app /etc/passwd \
+  && usermod -s /sbin/nologin app \
+  || useradd ... -s /sbin/nologin app
 ```
 
-So that the change in the login shell is performed when the app user is present on the system, and the user is created if it is not present yet. Unfortunately, this approach to scripting systems-management tasks is not sustainable: For each kind of resource, a different set of tools and their idiosyncrasies must be taken into account; inconsistent and often incomplete error reporting makes error handling difficult; and it is easy to trip over small bugs caused by the ad hoc nature of the tools involved.
+因此，当 “app” 用户存在于系统中时，会执行更改登录 shell 的操作；而当此用户不存在时，此用户就会被创建。不幸的是，这种利用编写系统管理任务脚本的途径是不适合的：对于每一种资源来说，就会有一套不同的工具，而且必须考虑其不同的使用惯例；不一致和经常性的不完备的错误报告将会使错误的处理变得困难；再者会因为工具所具有的本质特性引起的故障而导致执行失败。
 
-因此，当“app”用户在系统中存在时更改登录命令行的方式就被执行了，当此用户不存在时，此用户就被创建个。不幸的是，这种利用编写系统管理任务脚本的途径是不能被接受的：对于每一种资源来说，都必须有不同的设置工具和其特有的风格必须合并到一个用户账户；不一致和经常性的不完备的错误报告将会使错误的处理变得困难；再者会因为工具所具有的本质特性引起的故障而导致执行失败。
+实际上，以上所举的例子是不正确的：`grep` 并不是用来查找 “app” 用户的，它只能简单的查找文件 `/etc/passwd` 的一些行中是否有字符串 “app”，在大多数情况下它或许可以工作，但是也可能会在最关键的时刻出错。
 
-In fact, the above example is not correct: **grep** doesn't look for the **app** user, it simply looks for any line in **/etc/passwd** that contains the string **app**, something that might work most of the time, but can fail—usually at the worst possible moment.
+很显然，管理工具不是执行简单的任务的脚本，充其量其也难以构成一个较大的管理系统。认识到这一点，现有的配置管理系统，比如 Puppet、Chef，及 Ansible，围绕基本的操作系统资源的管理竭尽全力的建立其内部 API 就是明智之举。这些资源由各自需要的密切相关的工具抽象成内部的 API。这不仅导致大量的重复性工作，也为尝试一个新的和创新管理工具设置了强大的障碍。
 
-实际上，以上所举的例子是不正确的：“grep” 不能用在查找 “app”用户的，它只能简单的查找文件“/etc/passwd”的一些行中是否有字符串“app”，在很多时候，会在最关键的时刻经常出错。
+在创建虚拟机或者容器镜像这一领域，这种障碍就变得非常明显：比如在创建镜像的过程中，就需要要么回答关于它们的简单问题，要么对其进行简单的更改。但是要使工具完成所有的任务就需要特殊的处理，这些问题和变化正好是一些人试图利用脚本解决的问题。因此，镜像构建要么依靠特定的脚本，要么需要使用（和安装）一个相当强大的配置管理系统。
 
-Clearly, management tools that make it hard to perform simple tasks from scripts are, at best, a difficult basis for larger management systems. Recognizing this, existing configuration-management systems, such as Puppet, Chef, or Ansible, have gone to great lengths to build their own internal APIs around the management of basic operating system resources. These resource abstractions are internal APIs, and closely tied to the needs of their respective tools. This causes not only a colossal duplication of effort, but also creates a strong barrier to entry for new and innovative management tools.
-
-很显然，管理工具很难从脚本执行简单的任务，在最好的情况下，对于一个较大的基础管理系统是困难的。认识到这一点，退出配置管理系统，比如 Puppet，Chef，及 Ansible，围绕基本操作系统资源管理竭尽全力的建立其内部的 API 就是明智的。这些资源由各自需要的密切相关的工具抽象成内部的 API。这不仅导致大量的重复性工作，也为尝试一个新的和创新管理工具设置了强大的障碍。
-
-One area where this barrier to entry becomes evident is in building VM or container images: In the course of building such images, it is often necessary to either answer simple questions about them or make simple changes to them. But since the tools for this all require special treatment, these questions and changes face exactly the problems that somebody trying to script them faces. As a consequence, image building must rely on either ad hoc scripts or using (and installing) a quite substantial configuration-management system.
-
-突破创建虚拟机(VM)或者图像容器这一领域就变得非常清晰：比如在创建图像的过程中，要么回答关于其的简单问题要么对其进行简单的更改是非常必要的。但是要使工具完成所有的任务需要特殊的处理，这些问题和变化将遇到一些人试图利用脚本精确解决的问题。因此，图像构建要么依靠特定的脚本要么使用（安装）一个相当强大的配置管理系统。
-
-[Libral][11] establishes a solid foundation for management tools and tasks by providing a common management API across system resources and by making it available through a command line tool, **ralsh**, that enables users to query and to modify system resources in a uniform way, with predictable error reporting. In the above example, checking whether the app user exists is done with **ralsh -aq user app**; checking whether the package **foo** is installed is done with **ralsh -aq package foo**; and, in general, checking whether a resource of type **TYPE** with name **NAME** is present is done with **ralsh -aq TYPE NAME**. Similarly, to create or change an existing user, one runs:
-
-Libral 将为管理工具和任务提供一个可靠的保证，通过系统资源提供通常管理的 API ，通过命令行工具是制作成为可能，"ralsh",允许用户按照相同的方法查询和修改系统资源，能够有可预见的错误报告。通过以上的举例，通过命令“ralsh -aq user app"检查“app”用户是否存在;通过”ralsh -aq package foo"检查“foo”包文件是否已经被安装；一般情况下，通过命令“ralsh -aq TYPE NAME"检查”NAME“是否是”TYPE“资源类型。类似的，创建和更改存在的用户，可以运行：
+[Libral][11] 将为管理工具和任务提供一个可靠的保证，通过对系统资源提供一个公用的管理 API，并使其可以通过命令行工具 `ralsh` 使用，它允许用户按照相同的方法查询和修改系统资源，能够有可预见的错误报告。对以上的举例来说，可以通过命令 `ralsh -aq user app` 检查 “app” 用户是否存在；通过 `ralsh -aq package foo` 检查 “foo” 软件包是否已经被安装；一般情况下，通过命令 `ralsh -aq TYPE NAME` 检查 ”NAME“ 是否是 ”TYPE“ 资源类型。类似的，创建或更改存在的用户，可以运行：
 
 
 ```
-    ralsh user app home=/srv/app shell=/sbin/nologin
+ralsh user app home=/srv/app shell=/sbin/nologin
 ```
 
-and to create or change an entry in **/etc/hosts**, one runs:
-
-接下来创建和修改入口文件 “/etc/hosts",可以运行命令：
+接下来在文件 `/etc/hosts` 创建和修改条目，可以运行命令：
 
 
 ```
-    ralsh hostmyhost.example.com ip=10.0.0.1 \
-      host_aliases=myhost,apphost
+ralsh hostmyhost.example.com ip=10.0.0.1 \
+  host_aliases=myhost,apphost
 ```
 
-In this manner, the user of ralsh is isolated from the fact that these two commands work quite differently internally: The first one needs to use the proper invocation of **useradd** or **usermod**, whereas the second needs to edit the file **/etc/hosts**. For the user, though, they both appear to take the same shape: "Make sure that this resource is in the state that I need."
-
-以这种方式运行，用户的 ”ralsh“ 在内部运行是完全不同的，事实上是分离开执行的：第一步需要适当的调用命令”useradd“或者”usermod“，然而第二步需要在”/etc/hosts"文件中进行编辑。对于用户来说，他们似乎都采取同样的模型：“确保资源就是我所所需要的。”
+以这种方式运行，“ralsh” 的用户事实上完全与那两个命令的内部运行工作机制相隔离：第一个需要适当的调用命令 `useradd` 或者 `usermod`，而第二个需要在 `/etc/hosts` 文件中进行编辑。而对于该用户来说，他们似乎都采取同样的模型：“确保资源处于我所需要的状态。”
 
 
-### Where to get Libral and how to use it
+### 怎样获取和使用 Libral 呢？
 
-怎样获取和使用 Libral 呢？
-
-
-Libral is available from [this git repo][12]. Its core is written in C++, and instructions for building it can be found [in the repo][13]. That is only necessary if you actually want to contribute to Libral's C++ core. The Libral site also contains a [prebuilt tarball][14] that can be used on any Linux machine that uses **glibc 2.12** or later. The contents of that tarball can be used both to explore ralsh further and to develop new providers, which give Libral the capability to manage new kinds of resources.
-
-Libral可以在[this git repo][12]找到并下载。核心是由C++编写的，创建他的说明可以在[in the repo][13]查找到。如果你真的想要为Libral 的 C++ 核心做贡献的话是很有必要的。Libral 的网站上包含了一个[prebuilt tarball][14],可以在任何 Linux 机器上使用“glibc 2.12”或者更高版本。可以使该“tarball”的内容链接进一步探究 ralsh 和开发新的供应商，这样做就使得 Libral 具备了管理新类型资源的能力。
+Libral 可以在[这个 git 仓库][12]找到并下载。其核心是由 C++ 编写的，构建它的说明可以[在该仓库中][13]找到，不过只是在你想要为 Libral 的 C++ 核心做贡献的时候才需要看它。Libral 的网站上包含了一个 [预构建的 tarball][14]，可以用在任何使用 “glibc 2.12” 或者更高版本的 Linux 机器上。可以使用该 “tarball” 的内容进一步探究 ralsh 和开发新的提供者（provider），它使得 Libral 具备了管理新类型资源的能力。
 
 
 After downloading and unpacking the tarball, the **ralsh** command can be found in **ral/bin**. Running it without arguments will list all resource types that Libral knows about. Passing the **--help **option prints output that contains more example of how to use **ralsh**.
@@ -84,51 +51,26 @@ After downloading and unpacking the tarball, the **ralsh** command can be foun
 下载完毕后解压“tarball”，“ralsh”命令就会生成在目录“ral/bin”下。运行这个不需要任何参数的命令就会将 Libral 所知道所有资源类型列举出来。利用“--help“选项打印输出关于”ralsh“更多的实例。
 
 
-### Relationship to configuration-management systems
+### 与配置管理系统的关系
 
-如何配置管理系统
+知名的配置管理系统，如 Puppet、Chef 及 Ansible，解决了一些 Libral 所解决的同样的问题。将 Libral 与它们的区别是是它们所做大部分工作和 Libral 不同。配置管理系统被构建来处理跨大量节点的管理各种事物的多样复杂性。而另一方面 Libral 旨在提供一个定义明确的低级别的系统管理 API ，独立于任何特定的工具，可用于各种各样的编程语言。
 
+通过消除大型配置管理系统中包含的应用程序逻辑，Libral 在如何使用方面是非常万能的，从介绍里提及的简单的脚本任务，到作为构建复杂的管理应用的构建块。专注与这些基础层面也使其保持很小，目前不到 2.5 MB，这对于资源严重受限的环境，如容器和小型设备来说是一个重要考虑因素。
 
-Well-known configuration-management systems, such as Puppet, Chef, or Ansible, address some of the same problems that Libral addresses. What sets Libral apart from them is mostly in the things that these systems do and Libral doesn't. Configuration-management systems are built to deal with the variety and complexity of managing many different things across large numbers of nodes. Libral, on the other hand, aims at providing a low-level systems management API that is well-defined, independent of any particular tool, and usable with a wide variety of programming languages.
+### Libral API
 
-众所周知配置管理系统，如 Puppet，Chef，及 Ansible，地址等相同的问题是 Libral 的地址。这就是为什么一般将 Libral 与其他设置分离开的原因，即让系统去执行。配置管理系统被创建处理多样复杂的通过管理大量的节点的多事务管理行为。Libral，在另一方面，旨在提供一个低级别的定义明确的系统管理 API 独立于任何特定的工具，可用各种各样的编程语言进行设计。
+在过去的十年里，Libral API 的设计是由实现配置管理系统的经验所指导的，虽然它并没有直接绑定到它们其中任何一个应用上，但它考虑这些问题，做出选择克服它们的缺点。
 
-By removing the application logic that the large configuration-management systems contain, Libral is much more versatile in how it can be used, from the simple scripting tasks mentioned in the introduction, to serving as the building blocks for complex management applications. Focusing on these basics also allows it to be very small, currently less than 2.5 MB, an important consideration for resource-constrained environments, including containers and small devices.
+在 API 设计中四个重要的原则：
 
-通过消除大量的配置管理系统中包含的应用程序逻辑，Libral在怎样使用方面是非常万能的，从简单的脚本任务介绍中提到的，为构建复杂的管理应用程序块服务。专注与这些基础之外，还允许它很小，目前小于 2.5 MB，一个重要的考虑就是资源严重受限的环境包括容器和小型设备。
-
-### The Libral API
-
-Libral API
-
-The design of the Libral API is guided by the experience of implementing large configuration-management systems over the last decade; while it is not directly tied to any of them, it takes them into account and makes choices to overcome their shortcomings.
-
-在过去的十年里，Libral API 设计指导下实施配置管理上的经验，虽然不是解绑定到其中任何一个应用上，但需要考虑这些问题，做出选择克服他们的缺点。
-
-
-There are four important principles that the API design rests on:
-
-四个重要的 API 设计原则
-
-*   Desired state 
-
-期望的声明
-
-*   Bidirectionality 
-
-双向性
-
-*   Lightweight abstractions
-
-轻量级的抽象
-
-*   Ease of extension
-
-平行程式扩展
+* 期望的状态
+* 双向性
+* 轻量级抽象
+* 易于扩展
 
 Basing a management API on desired state, i.e., the idea that the user expresses what the system should look like after an operation rather than how to get into that state, is hardly controversial at this point. Bidirectionality makes it possible to use the same API and, more importantly, the same resource abstractions to read existing state and to enforce changes to it. Lightweight abstractions ensure that it is easy to learn the API and make use of it quickly; past attempts at such management APIs have unduly burdened the user with learning a modeling framework, an important factor in their lack of adoption.
 
-给予期望状态管理API，举个例子来说，这个理解应该是当用户在一个操作执行后希望系统看起来是什么表达方式，而不是怎么进入这个状态，在这一点上很难引起争议。双向性使得使用相同的 API 成为可能，更重要的是，相同的资源抽象成读取已经存在的和强制改变它。轻量级的抽象行为确保能容易的学习和快速的使用API；过去尝试管理 API 的方式已经过度的加重了学习框架建模的使用者的负担了，一个重要的因素是他们的接受力缺乏。
+基于期望的状态的管理 API，举个例子来说，这个理解应该是当用户在一个操作执行后希望系统看起来是什么表达方式，而不是怎么进入这个状态，在这一点上很难引起争议。双向性使得使用相同的 API 成为可能，更重要的是，相同的资源抽象成读取已经存在的和强制改变它。轻量级的抽象行为确保能容易的学习和快速的使用API；过去尝试管理 API 的方式已经过度的加重了学习框架建模的使用者的负担了，一个重要的因素是他们的接受力缺乏。
 
 
 Finally, it has to be easy to extend Libral's management capabilities so that users can teach Libral how to manage new kinds of resources. This is important both because of the sheer amount of resources that one might want to manage (and that Libral will manage in due time), as well as because even a fully built-out Libral will always fall short of a user's custom management needs.
@@ -281,6 +223,7 @@ If any of this has made you curious, I would love to hear from you, be it in the
 
 如果这让你很好奇，我很想听听你的想法，可以使推拉请求的方式，可以是增强请求方式，亦或者报告你对“ralsh”测试的经验体验。
 
+（题图：[Internet Archive Book Images][10]，修改：Opensource.com. CC BY-SA 4.0）
 --------------------------------------------------------------------------------
 
 作者简介：
