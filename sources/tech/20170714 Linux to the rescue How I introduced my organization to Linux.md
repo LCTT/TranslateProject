@@ -1,3 +1,4 @@
+翻译中 by WuXiao/toyijiu
 Linux to the rescue: How I introduced my organization to Linux
 ============================================================
 
