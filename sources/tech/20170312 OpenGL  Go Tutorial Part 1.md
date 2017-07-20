@@ -1,4 +1,5 @@
-translating by kylecao
+translating by GitFuture
+
 OpenGL & Go Tutorial Part 1: Hello, OpenGL
 ============================================================
 
