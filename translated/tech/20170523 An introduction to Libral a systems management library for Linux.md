@@ -45,11 +45,7 @@ ralsh hostmyhost.example.com ip=10.0.0.1 \
 
 Libral 可以在[这个 git 仓库][12]找到并下载。其核心是由 C++ 编写的，构建它的说明可以[在该仓库中][13]找到，不过只是在你想要为 Libral 的 C++ 核心做贡献的时候才需要看它。Libral 的网站上包含了一个 [预构建的 tarball][14]，可以用在任何使用 “glibc 2.12” 或者更高版本的 Linux 机器上。可以使用该 “tarball” 的内容进一步探究 ralsh 和开发新的提供者（provider），它使得 Libral 具备了管理新类型资源的能力。
 
-
-After downloading and unpacking the tarball, the **ralsh** command can be found in **ral/bin**. Running it without arguments will list all resource types that Libral knows about. Passing the **--help **option prints output that contains more example of how to use **ralsh**.
-
-下载完毕后解压“tarball”，“ralsh”命令就会生成在目录“ral/bin”下。运行这个不需要任何参数的命令就会将 Libral 所知道所有资源类型列举出来。利用“--help“选项打印输出关于”ralsh“更多的实例。
-
+在下载解压“tarball”后，在目录“ral/bin”下就会生成“ralsh”命令。运行不需要任何参数的“ralsh”命令就会将 Libral 的所有资源类型列举出来。利用“--help“选项打印输出关于”ralsh“更多的说明。
 
 ### 与配置管理系统的关系
 
@@ -70,8 +66,8 @@ After downloading and unpacking the tarball, the **ralsh** command can be foun
 
 Basing a management API on desired state, i.e., the idea that the user expresses what the system should look like after an operation rather than how to get into that state, is hardly controversial at this point. Bidirectionality makes it possible to use the same API and, more importantly, the same resource abstractions to read existing state and to enforce changes to it. Lightweight abstractions ensure that it is easy to learn the API and make use of it quickly; past attempts at such management APIs have unduly burdened the user with learning a modeling framework, an important factor in their lack of adoption.
 
-基于期望的状态的管理 API，举个例子来说，这个理解应该是当用户在一个操作执行后希望系统看起来是什么表达方式，而不是怎么进入这个状态，在这一点上很难引起争议。双向性使得使用相同的 API 成为可能，更重要的是，相同的资源抽象成读取已经存在的和强制改变它。轻量级的抽象行为确保能容易的学习和快速的使用API；过去尝试管理 API 的方式已经过度的加重了学习框架建模的使用者的负担了，一个重要的因素是他们的接受力缺乏。
-
+建立一个期望状态的管理 API，举个例子来说，用户表示当操作执行后希望系统看起来是什么状态，而不是怎样进入这个状态，是很难引起争议的。双向性使得使用相同的 API 成为可能，更重要的是，相同的资源抽象成读取现有状态和强制修改成这种状态。轻量级的抽象行为确保能容易的学习 API 并能快速的使用；过去尝试管理 API 的方式已经过度加重了学习建模框架的使用者的负担了，一个重要的因素是他们的接受力缺乏。
+-->
 
 Finally, it has to be easy to extend Libral's management capabilities so that users can teach Libral how to manage new kinds of resources. This is important both because of the sheer amount of resources that one might want to manage (and that Libral will manage in due time), as well as because even a fully built-out Libral will always fall short of a user's custom management needs.
 
@@ -221,7 +217,7 @@ Libral 有很多方式方法，如 API ，它的性能在不断地进化发展�
 
 If any of this has made you curious, I would love to hear from you, be it in the form of a pull request, an enhancement request, or just a report of your experience trying out **ralsh**.
 
-如果这让你很好奇，我很想听听你的想法，可以使推拉请求的方式，可以是增强请求方式，亦或者报告你对“ralsh”测试的经验体验。
+如果这让你很好奇，我很想听听你的想法，可以用推拉请求的方式，可以是增强请求方式，亦或者报告你对“ralsh”测试的经验体验。
 
 （题图：[Internet Archive Book Images][10]，修改：Opensource.com. CC BY-SA 4.0）
 --------------------------------------------------------------------------------
