@@ -1,3 +1,4 @@
+翻译中 by WuXiao(toyijiu)
 How to use a man page: Faster than a Google search
 ============================================================
 
