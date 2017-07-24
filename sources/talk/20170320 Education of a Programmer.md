@@ -1,3 +1,5 @@
+翻译中 by WuXiao(toyijiu)
+
 Education of a Programmer
 ============================================================
 
