@@ -1,15 +1,13 @@
- Vic020
-
-Install Linux Kernel 4.12 (Stable) on Linux Mint
+Linux Mint安装Linux Kernel 4.12(稳定版)
 ============================================================
 
-![Install Linux Kernel 4.12 (Stable) on Linux Mint](https://mintguide.org/uploads/tux_system.jpg)
+![Linux Mint安装Linux Kernel 4.12(稳定版)](https://mintguide.org/uploads/tux_system.jpg)
 
-**Linus Torvalds** introduced the **[Linux][5] [kernel][6] 4.12**. You can download the relevant **deb**packages from **[HERE][7]** and install them. Or just follow the instructions given below that will help you to install a new kernel.
+**Linus Torvalds** 推荐的 **[Linux][5] [内核][6] 4.12**. 从 **[这里][7]** 可以直接下载相关的 **deb** 包来安装. 或者, 继续阅读本文,按下面的步骤安装新kernel.
 
- _**Warning. The [Linux][1] [kernel][2] is a critical element of the system. To do the upgrade costs when one of your hardware devices is not working properly, and the new kernel may fix this problem. But at the same time installing a new kernel unnecessarily can lead to undesirable regressions, such as: no network connection, no sound or even the inability to boot the system, so install a new kernel on your own risk.**_ 
+ _**警告. [Linux][1] [内核][2] 是系统的关键组成. 在硬件设备不正常工作时,可以尝试执行升级，新的内核可能会解决此问题。 但同样的, 非必须地更新一个新的内核也会导致不必要的回滚, 例如, 无网络连接, 没有声音, 甚至是无法正常启动系统, 所以安装一个新的内核,请正确认识风险.**_ 
 
-The easiest way to install any kernel - program [UKUU][8]Install UKUU on **[Linux Mint][9].**
+最简单的安装任意内核方法 - 在**[Linux Mint][9]** 使用 [UKUU][8] 项目.
 
 ```
 TerminalShekin@mylinuxmintpc~$sudo apt-add-repository -y ppa:teejee2008/ppa 
@@ -17,21 +15,25 @@ sudo apt-get update
 sudo apt-get install ukuu
 ```
 
-**Reminder  _to users of computers with [Nvidia][3]/AMD. Before installing the kernel, it is advisable to switch to the free driver._** 
+**提醒  _所有[Nvidia][3]/AMD电脑用户, 在安装内核之前, 建议切换到可用的驱动._** 
 
-**If you decide to delete the kernel 4.12,**
 
-1. When the computer boots, the [GRUB][12] menu, select your old kernel. After booting the system, remove the new kernel by command below
-2. Use program [UKUU][13] or command:
+**如果决定删除内核4.12，**
+
+1.首先, 重启计算机，选择[GRUB][12]菜单中的旧内核启动.引导系统结束，通过以下命令删除新的内核
+
+2.然后, 使用 [UKUU][13] 项目,或者命令:
 ```
 TerminalShekin@mylinuxmintpc~$sudo apt purge linux-image-4.12-*
 ```
-3. And update **GRUB** or **[BURG][10]**
+3.最后, 更新 **GRUB**或者**[BURG][10]**
 ```
 TerminalShekin@mylinuxmintpc~$sudo update-grub
 ```
-To return to the previous kernel when booting **Grub** select **Previous Linux versions**
+为了回到之前的内核, 在启动**Grub**的时候,选择**以前的Linux版本**
+
 Good Luck!!!
+
 [kernel.org][14]
 
 --------------------------------------------------------------------------------
@@ -39,7 +41,7 @@ Good Luck!!!
 via: https://mintguide.org/system/798-install-linux-kernel-4-12-stable-on-linux-mint.html
 
 作者：[Shekin ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[VicYu](https://vicyu.com)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
