@@ -1,3 +1,5 @@
+cygmris is translating
+
 OpenStack in a Snap
 ============================================================
 
