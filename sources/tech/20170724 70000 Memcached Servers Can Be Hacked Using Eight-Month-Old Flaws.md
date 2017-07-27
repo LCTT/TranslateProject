@@ -1,3 +1,5 @@
+Translating---firmianay
+
 70,000 Memcached Servers Can Be Hacked Using Eight-Month-Old Flaws
 ============================================================
 
