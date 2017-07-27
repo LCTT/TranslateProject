@@ -1,3 +1,4 @@
+Translating by name1e5s
 The decline of GPL?
 ============================================================
 
