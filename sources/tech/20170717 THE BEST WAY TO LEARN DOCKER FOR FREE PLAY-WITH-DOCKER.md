@@ -84,7 +84,7 @@ Victor is the Sr. Community Marketing Manager at Docker, Inc. He likes fine wine
 
 
 
------------
+--------------------------------------------------------------------------------
 
 via: https://blog.docker.com/2017/07/best-way-learn-docker-free-play-docker-pwd/
 
