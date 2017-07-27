@@ -1,4 +1,4 @@
-Top 4 reasons I use dwm for my Linux window manager
+【haoqixu 翻译中】Top 4 reasons I use dwm for my Linux window manager
 ============================================================
 
 ### A window manager handles the sizing and arrangement of the windows you open, among other things.
