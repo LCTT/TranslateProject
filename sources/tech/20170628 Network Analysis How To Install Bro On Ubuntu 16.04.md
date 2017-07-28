@@ -1,48 +1,46 @@
-translating by firmianay
-
-Network Analysis: How To Install Bro On Ubuntu 16.04
+网络分析利器：在 Ubuntu 16.04 上安装 Bro
 ============================================================
 
 
  [![Bro Network Analysis Logo](https://www.unixmen.com/wp-content/uploads/2017/07/brologo-696x696.jpg "brologo")][4]
 
-### Introduction: Bro Network Analysis Framework
+### 简介：Bro 网络分析框架
 
-Bro is an open source network analysis framework with a focus on network security monitoring. It is the result of 15 years of research, widely used by major universities, research labs, supercomputing centers and many open-science communities. It is developed mainly at the International Computer Science Institute, in Berkeley, and the National Center for Supercomputing Applications, in Urbana-Champaign.
+Bro是一个开源网络分析框架，侧重于网络安全监控。这是一项长达 15 年的研究成果，被各大学、研究实验室、超级计算机中心和许多开放科学界广泛使用。它主要由伯克利国际计算机科学研究所和　Urbana-Champaign　国家超级计算机应用中心开发。
 
-Bro has various features, including the following:
+Bro 的功能包括：
 
-*   Bro’s scripting language enables site-specific monitoring policies
+*   Bro 的脚本语言支持特定站点的监控策略
 
-*   Targeting of high-performance networks
+*   针对高性能网络
 
-*   Analyzers for many protocols, enabling high-level semantic analysis at the application level
+*   分析器支持许多协议，可以在应用层面实现高级语义分析
 
-*   It keeps extensive application-layer stats about the network it monitors.
+*   它保留了关于其监视的网络的广泛应用层统计信息
 
-*   Bro interfaces with other applications for real-time exchange of information
+*   Bro 能够与其他应用程序接口实时地交换信息
 
-*   It comprehensively logs everything and provides a high-level archive of a network’s activity.
+*   它的日志全面地记录一切信息，并提供网络活动的高级存档
 
-This tutorial explains how to build from source and install Bro on an Ubuntu 16.04 Server.
+本教程将介绍如何从源代码构建，并在 Ubuntu 16.04 服务器上安装 Bro。
 
-### Prerequisites
+### 准备工作
 
-Bro has many dependencies:
+Bro 有许多依赖文件:
 
 *   Libpcap ([http://www.tcpdump.org][2])
 
-*   OpenSSL libraries ([http://www.openssl.org][3])
+*   OpenSSL 库 ([http://www.openssl.org][3])
 
-*   BIND8 library
+*   BIND8 库
 
 *   Libz
 
-*   Bash (required for BroControl)
+*   Bash (BroControl 所需要)
 
-*   Python 2.6+ (required for BroControl)
+*   Python 2.6+ (BroControl 所需要)
 
-Building from source requires also:
+从源代码构建还需要：
 
 *   CMake 2.8+
 
@@ -62,48 +60,48 @@ Building from source requires also:
 
 *   zlib headers
 
-### Getting Started
+### 入门
 
-First of all, install all the required dependencies, by executing the following command:
+首先，通过执行以下命令来安装所有必需的依赖项：
 
 ```
 # apt-get install cmake make gcc g++ flex bison libpcap-dev libssl-dev python-dev swig zlib1g-dev
 ```
 
-#### Install GeoIP Database for IP Geolocation
+#### 安装定位 IP 地理位置的GeoIP数据库
 
-Bro depends on GeoIP for address geolocation. Install both the IPv4 and IPv6 versions:
+Bro 使用 GeoIP 的定位地理位置。安装 IPv4 和 IPv6 版本：
 
 ```
 $ wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCity.dat.gz
 $wget http://geolite.maxmind.com/download/geoip/database/GeoLiteCityv6-beta/GeoLiteCityv6.dat.gz
 ```
 
-Decompress both archives:
+解压这两个压缩包：
 
 ```
 $ gzip -d GeoLiteCity.dat.gz
 $ gzip -d GeoLiteCityv6.dat.gz
 ```
 
-Move the decompressed files to `/usr/share/GeoIP` directory:
+将解压后的文件移动到 `/usr/share/GeoIP` 目录下：
 
 ```
 # mvGeoLiteCity.dat /usr/share/GeoIP/GeoIPCity.dat
 # mv GeoLiteCityv6.dat /usr/share/GeoIP/GeoIPCityv6.dat
 ```
 
-Now, it’s possible to build Bro from source.
+现在，可以从源代码构建 Bro 了。
 
-### Build Bro
+### 构建 Bro
 
-The latest Bro development version can be obtained through `git` repositories. Execute the following command:
+最新的 Bro 开发版本可以通过 `git` 仓库获得。执行以下命令：
 
 ```
 $ git clone --recursive git://git.bro.org/bro
 ```
 
-Go to the cloned directory and simply build Bro with the following commands:
+转到克隆下来的目录，然后使用以下命令就可以简单地构建 Bro：
 
 ```
 $ cd bro
@@ -111,56 +109,56 @@ $ ./configure
 $ make
 ```
 
-The make command will require some time to build everything. The exact amount of time, of course, depends on the server performances.
+make 命令需要一些时间来构建一切。确切的时间取决于服务器的性能。
 
-The `configure` script can be executed with some argument to specify what dependencies you want build to, in particular the `--with-*` options.
+可以使用一些参数来执行 `configure` 脚本，以指定要构建的依赖关系，特别是 `--with-*` 选项。
 
-### Install Bro
+### 安装 Bro
 
-Inside the cloned `bro` directory, execute:
+在克隆的 `bro` 目录中执行：
 
 ```
 # make install
 ```
 
-The default installation path is `/usr/local/bro`.
+默认安装路径为 `/usr/local/bro`。
 
-### Configure Bro
+### 配置 Bro
 
-Bro configuration files are located in the `/usr/local/bro/etc` directory. There are three files:
+Bro 的配置文件位于 `/usr/local/bro/etc` 目录下。 这里有三个文件:
 
-*   `node.cfg`, used to configure which node (or nodes) to monitor.
+*   `node.cfg`，用于配置要监视的单个节点（或多个节点）。
 
-*   `broctl.cfg`, the BroControl configuration file.
+*   `broctl.cfg`，BroControl 的配置文件。
 
-*   `networks.cgf`, containing a list of networks in CIDR notation.
+*   `networks.cgf`，包含一个使用 CIDR 标记法表示的网络列表。
 
-#### Configure Mail Settings
+#### 配置邮件设置
 
-Open the `broctl.cfg` configuration file:
+打开 `broctl.cfg` 配置文件:
 
 ```
 # $EDITOR /usr/local/bro/etc/broctl.cfg
 ```
 
-Look for the **Mail Options** section, and edit the `MailTo` line as follow:
+查看 **Mail Options** 选项，并编辑 `MailTo` 行如下:
 
 ```
 # Recipient address for emails sent out by Bro and BroControl
 MailTo = admin@example.com
 ```
 
-Save and close. There are many other options, but in most cases the defaults are good enough.
+保存并关闭。还有许多其他选项，但在大多数情况下，默认值就足够好了。
 
-#### Choose Nodes To Monitor
+####　选择要监视的节点
 
-Out of the box, Bro is configured to operate in the standalone mode. In this tutorial we are doing a standalone installation, so it’s not necessary to change very much. However, look at the `node.cfg` configuration file:
+开箱即用，Bro 被配置为以独立模式运行。在本教程中，我们就是做一个独立的安装，所以没有必要改变。但是，也请查看 `node.cfg` 配置文件：
 
 ```
 # $EDITOR /usr/local/bro/etc/node.cfg
 ```
 
-In the `[bro]` section, you should see something like this:
+在 `[bro]` 部分，你应该看到这样的东西：
 
 ```
 [bro]
@@ -169,19 +167,19 @@ host=localhost
 interface=eth0
 ```
 
-Make sure that the interface matches the public interface of the Ubuntu 16.04 server.
+请确保接口与 Ubuntu 16.04 服务器的公共接口相匹配。
 
-Save and exit.
+保存并退出。
 
-### Configure Node’s Networks
+### 配置监视节点的网络
 
-The last file to edit is `network.cfg`. Open it with a text editor:
+最后一个要编辑的文件是 `network.cfg`。使用文本编辑器打开它：
 
 ```
 # $EDITOR /usr/local/bro/etc/networks.cfg
 ```
 
-By default, you should see the following content:
+默认情况下，你应该看到以下内容：
 
 ```
 # List of local networks in CIDR notation, optionally followed by a
@@ -193,48 +191,48 @@ By default, you should see the following content:
 192.168.0.0/16      Private IP space
 ```
 
-Delete the three entries (which are just example for how to use this file), and enter the public and private IP space of your server, in the format:
+删除这三个条目（这只是如何使用此文件的示例），并输入服务器的公用和专用 IP 空间，格式如下：
 
 ```
 X.X.X.X/X        Public IP space
 X.X.X.X/X        Private IP space
 ```
 
-Save and exit.
+保存并退出。
 
-### Manage Bro Installation with BroControl
+### 使用 BroControl 管理 Bro 的安装
 
-Managing Bro requires using BroControl, which comes in form of an interactive shell and a command line tool. Start the shell with:
+管理 Bro 需要使用 BroControl，它以交互式 shell 和命令行工具的形式出现。启动 shell：
 
 ```
 # /usr/local/bro/bin/broctl
 ```
 
-To use as a command line tool, just pass an argument to the previous command, for example:
+要想使用命令行工具，只需将参数传递给上一个命令，例如：
 
 ```
 # /usr/local/bro/bin/broctl status
 ```
 
-This will check Bro’s status, by showing output like:
+这将通过显示以下的输出来检查 Bro 的状态：
 
 ```
 Name         Type       Host          Status    Pid    Started
 bro          standalone localhost     running   6807   20 Jul 12:30:50
 ```
 
-### Conclusion
+### 结论
 
-This concludes the Bro’s installation tutorial. We used the source based installation because it is the most efficient way to obtain the latest version available, however this network analysis framework can also be downloaded in pre-built binary format.
+这是一篇 Bro 的安装教程。我们使用基于源代码的安装，因为它是获得可用的最新版本的最有效的方法，但是该网络分析框架也可以下载预构建的二进制格式文件。
 
-See you next time!
+下次见！
 
 --------------------------------------------------------------------------------
 
 via: https://www.unixmen.com/how-to-install-bro-ubuntu-1604/
 
 作者：[ Giuseppe Molica][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[firmianay](https://github.com/firmianay)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
