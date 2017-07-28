@@ -1,8 +1,10 @@
+translating by firmianay
+
 Network Analysis: How To Install Bro On Ubuntu 16.04
 ============================================================
 
 
- [![Bro Network Analysis Logo](https://www.unixmen.com/wp-content/uploads/2017/07/brologo-696x696.jpg "brologo")][4] 
+ [![Bro Network Analysis Logo](https://www.unixmen.com/wp-content/uploads/2017/07/brologo-696x696.jpg "brologo")][4]
 
 ### Introduction: Bro Network Analysis Framework
 
