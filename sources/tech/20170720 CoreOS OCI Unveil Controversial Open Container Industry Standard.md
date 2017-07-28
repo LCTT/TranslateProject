@@ -1,3 +1,4 @@
+translating---LHRchina
 CoreOS, OCI Unveil Controversial Open Container Industry Standard
 ============================================================
 ![coreos-oci-open-container-industry-standard](http://www.linuxinsider.com/article_images/story_graphics_xlarge/xl-2017-core-os-1.jpg)
