@@ -1,49 +1,47 @@
-translating by firmianay
-
-Linux Kernel Utilities (LKU) – A Set Of Shell Scripts To Compile, Install & Update Latest Kernel In Ubuntu/LinuxMint
+Linux Kernel Utilities（LKU） - 一套在 Ubuntu/LinuxMint 上编译、安装和更新最新内核的 Shell 脚本
 ============================================================
 
 
-Installing & Upgrading latest Linux kernel in the manual way is not a small task for everyone, including experience guys. It requires depth knowledge on Linux core. We have already covered in the past about UKUU (Ubuntu Kernel Upgrade Utility) which automatically detect the latest mainline kernel from kernel.ubuntu.com and popup the nice GUI for installation.
+以手动方式安装和升级最新的 Linux 内核对于每个人来说都不是一件小事，甚至包括一些有经验的人。它需要对 Linux 内核有深入的了解。过去我们已经介绍了 UKUU（Ubuntu Kernel Upgrade Utility），它可以从 kernel.ubuntu.com 网站上自动检测最新的主线内核，并弹出一个不错的窗口界面进行安装。
 
-[Linux Kernel Utilities][2] (LKU) offers set of shell scripts (Three Shell Scripts) which help users to compile & install latest Linux kernel from kernel.org, also install precompiled latest Ubuntu kernel from kernel.ubuntu.com. Even it has an option to choose required kernel (manual kernel selection) based on our requirement.
+[Linux Kernel Utilities][2] （LKU）提供一组 shell 脚本（三个 Shell 脚本），可以帮助用户从 kernel.org 获取并编译和安装最新的 Linux 内核，还可以从 kernel.ubuntu.com 获取安装最新的 Ubuntu 内核。甚至可以根据需要选择所需的内核（手动内核选择）。
 
-This script will also check the downloaded archive against the PGP signature file and possible to choose generic and lowlatency kernels.
+该脚本还将根据 PGP 签名文件检查下载的存档，并且可以选择通用和低版本的内核。
 
-Suggested Read : [Ukuu – An Easy Way To Install/Upgrade Linux Kernel In Ubuntu based Systems][3]
+建议阅读：[Ukuu – An Easy Way To Install/Upgrade Linux Kernel In Ubuntu based Systems][3]
 
-It remove/purge all inactive kernels and won’t leave backup kernel for safety purpose. It is highly recommended that a reboot be performed before executing this script.
+它可以删除或清除所有非活动的内核，并且不会为了安全目的留下备份的内核。强烈建议在执行此脚本之前重新启动。
 
-*   compile_linux_kernel.sh : Users can able to compile & install required or latest kernel from kernel.org
+*   compile_linux_kernel.sh ：用户可以从 kernel.org 编译和安装所需的或最新的内核
 
-*   update_ubuntu_kernel.sh : Users can able to install & update required or latest precompiled ubuntu kernel from kernel.ubuntu.com
+*   update_ubuntu_kernel.sh : 用户可以从 kernel.ubuntu.com 安装并更新所需或最新的预编译 Ubuntu 内核
 
-*   remove_old_kernels.sh : This will remove/purge all inactive kernels and will keep only the currently loaded version
+*   remove_old_kernels.sh : 这将删除或清除所有非活动内核，并且只保留当前加载的版本
 
-Kernel.org has regular release cycle (every three months once) which comes with new features, Improved Hardware & System Performance. Most of the distributions doesn’t offer/include the latest kernel except rolling release distributions such as Arch Linux, openSUSE Tumbleweed, etc., since it has a standard release cycle.
+Kernel.org 有固定的发布周期（每三个月一次），发布内容包括新功能，改进的硬件和系统性能。由于它具有标准的发布周期，除了滚动发布的版本（如 Arch Linux，openSUSE Tumbleweed 等），大多数发行版都不提供最新的内核。
 
-#### How to Install Linux Kernel Utilities (LKU)
+#### 如何安装 Linux Kernel Utilities (LKU)
 
-As we told in the beginning of the article, its set of shell script so just clone the developer github repository and run the appropriate shell file to perform the activity.
+正如我们在文章的开头所说的，它的 shell 脚本集只是克隆开发人员的 github 仓库并运行相应的 shell 文件来执行这个过程。
 
 ```
 $ git clone https://github.com/mtompkins/linux-kernel-utilities.git && cd linux-kernel-utilities
 ```
 
-#### Install Specific kernel
+#### 安装指定版本内核
 
-For testing purpose we are going to install `Linux v4.4.10-xenial` kernel. Before proceeding the new kernel installation we need to check current installed kernel version with help of `uanme -a` command so that we can check whether the new kernel get installed or not?
+为了测试的目的，我们将安装 `Linux v4.4.10-xenial` 内核。在安装新内核之前，我们需要通过 `uanme -a` 命令检查当前安装的内核版本，以便我们可以检查新内核是否可以安装
 
 ```
 $ uname -a
 Linux magi-VirtualBox 4.4.0-21-generic #37-Ubuntu SMP Mon Apr 18 18:33:37 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
-As per the above output, our system has `4.4.0-21-generic` kernel.
+根据上面的输出，我们的系统使用 4.4.0-21 通用内核。
 
-Just run `update_ubuntu_kernel.sh` shell file. In the very first time script will check whether all dependencies are met or not? and will install missing dependencies automatically. It detect which distribution it is and retrieve Precompiled kernels available from kernel.ubuntu.com. Now, choose your desired kernel from the list and input the value, and hit `Enter` then sit-back because it’s going to download the kernel images (linux-headers-4.4.10, linux-headers-4.4.10-xxx-generic & linux-image-4.4.10-xxx-generic).
+只需运行 `update_ubuntu_kernel.sh` shell 文件。第一次运行脚本时会检查是否满足所有的依赖关系，然后自动安装缺少的依赖项。它会检测系统使用的发行版，并检索 kernel.ubuntu.com 中可用的预编译内核。现在，从列表中选择你需要的内核并输入序号，然后按 Enter 键，它将下载内核映像（linux-headers-4.4.10，linux-headers-4.4.10-xxx-generic　和 linux-image-4.4.10-xxx-generic）。
 
-Once the kernel images get downloaded, it will popup the `sudo` password to start the new kernel installation.
+一旦内核镜像被下载，它将要求输入 `sudo` 密码来启动新内核的安装。
 
 ```
 $ ./update_ubuntu_kernel.sh
@@ -212,22 +210,22 @@ done
  \_ Done
 ```
 
-Post installation do the reboot to use the newly installed kernel.
+安装后需要重新启动以使用新安装的内核。
 
 ```
 $ sudo reboot now
 ```
 
-yes, we are using newly installed kernel `4.4.10-040410-generic`
+现在，你正在使用的就是新安装的 `4.4.10-040410-generic` 版本内核。
 
 ```
 $ uname -a
 Linux magi-VirtualBox 4.4.10-040410-generic #201605110631 SMP Wed May 11 10:33:23 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
-#### Install Latest Kernel
+#### 安装最新版本内核
 
-Its same as above but we don’t want to choose the descried one, its automatically install most recent latest kernel.
+过程与上述相同，它将自动安装最新版本的内核。
 
 ```
 $ ./update_ubuntu_kernel.sh --latest
@@ -271,22 +269,22 @@ done
  \_ Done
 ```
 
-Post installation do the reboot to use the newly installed kernel.
+安装后需要重新启动以使用新安装的内核。
 
 ```
 $ sudo reboot now
 ```
 
-yes, we are using newly installed kernel `4.11.3-041103-generic`.
+现在，你正在使用的就是最新版本 `4.11.3-041103-generic` 的内核。
 
 ```
 $ uname -a
 Linux magi-VirtualBox 4.11.3-041103-generic #201705251233 SMP Thu May 25 16:34:52 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
-#### Remove/Purge Old Kernel
+#### 删除或清除旧内核
 
-Just run `remove_old_kernels.sh` shell file to remove/purge all inactive kernels.
+只需要运行 `remove_old_kernels.sh` shell 文件即可删除或清除所有非活动状态的内核。
 
 ```
 $ ./remove_old_kernels.sh
@@ -340,7 +338,7 @@ run-parts: executing /etc/kernel/postrm.d/zz-update-grub 4.4.9-040409-lowlatency
 via: http://www.2daygeek.com/lku-linux-kernel-utilities-compile-install-update-latest-kernel-in-linux-mint-ubuntu/
 
 作者：[ 2DAYGEEK ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[firmianay](https://github.com/firmianay)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
