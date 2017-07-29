@@ -1,16 +1,17 @@
-Using Kdump for examining Linux Kernel crashes
+translating by firmianay
+
+使用 Kdump 检查 Linux 内核崩溃
 ============================================================
 
-### Let's examine the basics of kdump usage and look at the internals of kdump/kexec kernel implementation.
+### 我们先看一下 kdump 使用的基础知识，看看 kdump/kexec 内核实现的内部结构。
 
 ![Using Kdump for examining Linux Kernel crashes](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/linux_boot.png?itok=pSGmf8Ca "Using Kdump for examining Linux Kernel crashes")
-Image by : 
 
-[Penguin][13], [Boot][14]. Modified by Opensource.com. [CC BY-SA 4.0][15].
+Image by : [Penguin][13], [Boot][14]. Modified by Opensource.com. [CC BY-SA 4.0][15].
 
-[Kdump][16] is a way to acquire a crashed Linux kernel dump, but finding documents that explain its usage and internals can be challenging. In this article, I'll examine the basics of kdump usage and look at the internals of kdump/kexec kernel implementation.
+[Kdump][16] 是获取崩溃的 Linux 内核转储的一种方法，但是想找到解释其使用和内部结构的文档可能有点困难。在本文中，我将研究 kdump 使用的基础知识，并查看 kdump/kexec 内核实现的内部结构。
 
-[Kexec][17] is a Linux kernel-to-kernel boot loader that helps to boot the second kernel from the context of first kernel. Kexec shuts down the first kernel, bypasses the BIOS or firmware stage, and jumps to second kernel. Thus, reboots become faster in absence of the BIOS stage.
+[Kexec][17] 是一个 Linux 内核到内核的引导加载程序，可以帮助从第一个内核的上下文引导到第二个内核。Kexec 关闭第一个内核，绕过 BIOS 或固件阶段，并跳转到第二个内核。因此，在没有 BIOS 阶段的情况下，重新启动变得更快。
 
 Kdump can be used with the kexec application—for example, when the second kernel is booted when the first kernel panics, the second kernel is used to copy the memory dump of first kernel, which can be analyzed with tools such as gdb and crash to determine the panic reasons. (In this article, I'll use the terms  _first kernel_  for the currently running kernel,  _second kernel_  for the kernel run using kexec, and  _capture kernel_  for kernel run when current kernel panics.)
 
@@ -60,7 +61,7 @@ A typical command to load a capture kernel:
 
 **echo c > /pros/sysrq-trigger** can be used to crash the kernel for test purposes. See **man kexec** for detail about options provided by kexec-tools. Before moving to the next section, which focuses on internal implementation, watch this kexec_dump demo:
 
- ** 此处有iframe,请手动处理 ** 
+ ** 此处有iframe,请手动处理 **
 
 ### Kdump: End-to-end flow
 
