@@ -1,3 +1,5 @@
+translating by firmianay
+
 Linux Kernel Utilities (LKU) – A Set Of Shell Scripts To Compile, Install & Update Latest Kernel In Ubuntu/LinuxMint
 ============================================================
 
@@ -44,7 +46,7 @@ Just run `update_ubuntu_kernel.sh` shell file. In the very first time script w
 Once the kernel images get downloaded, it will popup the `sudo` password to start the new kernel installation.
 
 ```
-$ ./update_ubuntu_kernel.sh 
+$ ./update_ubuntu_kernel.sh
 
 [+] Checking Distro
  \_ Distro identified as LinuxMint.
@@ -168,7 +170,7 @@ Do you want the lowlatency kernel? (y/[n]):
 
 [+] Checking AntiVirus flag and disabling if necessary
 [+] Installing kernel . . .
-[sudo] password for magi: 
+[sudo] password for magi:
 Selecting previously unselected package linux-headers-4.4.10-040410.
 (Reading database ... 230647 files and directories currently installed.)
 Preparing to unpack linux-headers-4.4.10-040410_4.4.10-040410.201605110631_all.deb ...
@@ -287,10 +289,10 @@ Linux magi-VirtualBox 4.11.3-041103-generic #201705251233 SMP Thu May 25 16:34:5
 Just run `remove_old_kernels.sh` shell file to remove/purge all inactive kernels.
 
 ```
-$ ./remove_old_kernels.sh 
+$ ./remove_old_kernels.sh
 
 		++++++++++++++++++++++++++++++++
-		+++       W A R N I N G      +++ 
+		+++       W A R N I N G      +++
 		++++++++++++++++++++++++++++++++
 
 A reboot is recommended before running this script to ensure the current kernel tagged
@@ -303,7 +305,7 @@ You have been warned.
 
 [?]Continue to automagically remove ALL old kernels? (y/N)y
 \_ Removing ALL old kernels . . .
-[sudo] password for magi: 
+[sudo] password for magi:
 Reading package lists... Done
 Building dependency tree       
 Reading state information... Done
