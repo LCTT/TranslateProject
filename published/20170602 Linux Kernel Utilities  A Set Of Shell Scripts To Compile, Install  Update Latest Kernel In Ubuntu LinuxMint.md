@@ -1,26 +1,23 @@
-Linux Kernel Utilities（LKU） - 一套在 Ubuntu/LinuxMint 上编译、安装和更新最新内核的 Shell 脚本
+LKU：一套在 Ubuntu/LinuxMint 上编译、安装和更新最新内核的 Shell 脚本
 ============================================================
 
+以手动方式安装和升级最新的 Linux 内核对于每个人来说都不是一件小事，甚至包括一些有经验的人也是如此。它需要对 Linux 内核有深入的了解。过去我们已经介绍了 UKUU（Ubuntu Kernel Upgrade Utility），它可以从 kernel.ubuntu.com 网站上自动检测最新的主线内核，并弹出一个不错的窗口界面进行安装。
 
-以手动方式安装和升级最新的 Linux 内核对于每个人来说都不是一件小事，甚至包括一些有经验的人。它需要对 Linux 内核有深入的了解。过去我们已经介绍了 UKUU（Ubuntu Kernel Upgrade Utility），它可以从 kernel.ubuntu.com 网站上自动检测最新的主线内核，并弹出一个不错的窗口界面进行安装。
+[Linux Kernel Utilities][2] （LKU）提供一组 shell 脚本（三个 Shell 脚本），可以帮助用户从 kernel.org 获取并编译和安装最新的 Linux 内核，也可以从 kernel.ubuntu.com 获取安装最新的预编译的 Ubuntu 内核。甚至可以根据需要选择所需的内核（手动内核选择）。
 
-[Linux Kernel Utilities][2] （LKU）提供一组 shell 脚本（三个 Shell 脚本），可以帮助用户从 kernel.org 获取并编译和安装最新的 Linux 内核，还可以从 kernel.ubuntu.com 获取安装最新的 Ubuntu 内核。甚至可以根据需要选择所需的内核（手动内核选择）。
+该脚本还将根据 PGP 签名文件检查下载的归档文件，并且可以选择通用和低延迟版内核。
 
-该脚本还将根据 PGP 签名文件检查下载的存档，并且可以选择通用和低版本的内核。
+建议阅读：[ukuu：一种在基于 Ubuntu 的系统上轻松安装升级 Linux 内核的方式][3]
 
-建议阅读：[Ukuu – An Easy Way To Install/Upgrade Linux Kernel In Ubuntu based Systems][3]
+它可以删除或清除所有非活动的内核，并且不会为了安全目的留下备份的内核。强烈建议在执行此脚本之前重新启动一次。
 
-它可以删除或清除所有非活动的内核，并且不会为了安全目的留下备份的内核。强烈建议在执行此脚本之前重新启动。
+* `compile_linux_kernel.sh` ：用户可以从 kernel.org 编译和安装所需的或最新的内核
+* `update_ubuntu_kernel.sh` ：用户可以从 kernel.ubuntu.com 安装并更新所需或最新的预编译 Ubuntu 内核
+* `remove_old_kernels.sh` ：这将删除或清除所有非活动内核，并且只保留当前加载的版本
 
-*   compile_linux_kernel.sh ：用户可以从 kernel.org 编译和安装所需的或最新的内核
+kernel.org 有固定的发布周期（每三个月一次），发布的内核包括了新的功能，改进了硬件和系统性能。由于它具有标准的发布周期，除了滚动发布的版本（如 Arch Linux，openSUSE Tumbleweed 等），大多数发行版都不提供最新的内核。
 
-*   update_ubuntu_kernel.sh : 用户可以从 kernel.ubuntu.com 安装并更新所需或最新的预编译 Ubuntu 内核
-
-*   remove_old_kernels.sh : 这将删除或清除所有非活动内核，并且只保留当前加载的版本
-
-Kernel.org 有固定的发布周期（每三个月一次），发布内容包括新功能，改进的硬件和系统性能。由于它具有标准的发布周期，除了滚动发布的版本（如 Arch Linux，openSUSE Tumbleweed 等），大多数发行版都不提供最新的内核。
-
-#### 如何安装 Linux Kernel Utilities (LKU)
+### 如何安装 Linux Kernel Utilities (LKU)
 
 正如我们在文章的开头所说的，它的 shell 脚本集只是克隆开发人员的 github 仓库并运行相应的 shell 文件来执行这个过程。
 
@@ -28,18 +25,18 @@ Kernel.org 有固定的发布周期（每三个月一次），发布内容包括
 $ git clone https://github.com/mtompkins/linux-kernel-utilities.git && cd linux-kernel-utilities
 ```
 
-#### 安装指定版本内核
+### 安装指定版本内核
 
-为了测试的目的，我们将安装 `Linux v4.4.10-xenial` 内核。在安装新内核之前，我们需要通过 `uanme -a` 命令检查当前安装的内核版本，以便我们可以检查新内核是否可以安装
+为了测试的目的，我们将安装 Linux v4.4.10-xenial 内核。在安装新内核之前，我们需要通过 `uanme -a` 命令检查当前安装的内核版本，以便我们可以检查新内核是否可以安装。
 
 ```
 $ uname -a
 Linux magi-VirtualBox 4.4.0-21-generic #37-Ubuntu SMP Mon Apr 18 18:33:37 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
-根据上面的输出，我们的系统使用 4.4.0-21 通用内核。
+根据上面的输出，我们的系统使用的是 4.4.0-21 通用内核。
 
-只需运行 `update_ubuntu_kernel.sh` shell 文件。第一次运行脚本时会检查是否满足所有的依赖关系，然后自动安装缺少的依赖项。它会检测系统使用的发行版，并检索 kernel.ubuntu.com 中可用的预编译内核。现在，从列表中选择你需要的内核并输入序号，然后按 Enter 键，它将下载内核映像（linux-headers-4.4.10，linux-headers-4.4.10-xxx-generic　和 linux-image-4.4.10-xxx-generic）。
+只需运行 `update_ubuntu_kernel.sh` shell 脚本。第一次运行脚本时会检查是否满足所有的依赖关系，然后自动安装缺少的依赖项。它会检测系统使用的发行版，并检索 kernel.ubuntu.com 中可用的预编译内核。现在，从列表中选择你需要的内核并输入序号，然后按回车键，它将下载内核映像（linux-headers-4.4.10，linux-headers-4.4.10-xxx-generic　和 linux-image-4.4.10-xxx-generic）。
 
 一旦内核镜像被下载，它将要求输入 `sudo` 密码来启动新内核的安装。
 
@@ -216,14 +213,14 @@ done
 $ sudo reboot now
 ```
 
-现在，你正在使用的就是新安装的 `4.4.10-040410-generic` 版本内核。
+现在，你正在使用的就是新安装的 4.4.10-040410-generic 版本内核。
 
 ```
 $ uname -a
 Linux magi-VirtualBox 4.4.10-040410-generic #201605110631 SMP Wed May 11 10:33:23 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
-#### 安装最新版本内核
+### 安装最新版本内核
 
 过程与上述相同，它将自动安装最新版本的内核。
 
@@ -275,16 +272,16 @@ done
 $ sudo reboot now
 ```
 
-现在，你正在使用的就是最新版本 `4.11.3-041103-generic` 的内核。
+现在，你正在使用的就是最新版本 4.11.3-041103-generic 的内核。
 
 ```
 $ uname -a
 Linux magi-VirtualBox 4.11.3-041103-generic #201705251233 SMP Thu May 25 16:34:52 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
-#### 删除或清除旧内核
+### 删除或清除旧内核
 
-只需要运行 `remove_old_kernels.sh` shell 文件即可删除或清除所有非活动状态的内核。
+只需要运行 `remove_old_kernels.sh` shell 脚本即可删除或清除所有非活动状态的内核。
 
 ```
 $ ./remove_old_kernels.sh
@@ -337,9 +334,9 @@ run-parts: executing /etc/kernel/postrm.d/zz-update-grub 4.4.9-040409-lowlatency
 
 via: http://www.2daygeek.com/lku-linux-kernel-utilities-compile-install-update-latest-kernel-in-linux-mint-ubuntu/
 
-作者：[ 2DAYGEEK ][a]
+作者：[2DAYGEEK][a]
 译者：[firmianay](https://github.com/firmianay)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
