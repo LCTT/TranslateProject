@@ -1,3 +1,5 @@
+translating by firmianay
+
 DYNAMIC PORT FORWARDING / MOUNT A SOCKS SERVER WITH SSH
 =================
 
