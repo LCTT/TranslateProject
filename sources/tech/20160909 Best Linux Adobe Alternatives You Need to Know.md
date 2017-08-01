@@ -6,6 +6,7 @@ Best Linux Adobe Alternatives You Need to Know ###translating by ninaiwohe109
 
 Looking for Adobe alternatives as a Linux user? You’re not alone. If you’re an avid graphic designer, you’re probably well-versed at avoiding pricey Adobe products. Still, Linux users are typically the ones granted the shortest end of the stick when it comes to Adobe. Adobe alternatives are a must – but what exactly are the best options available?
 
+如果你是一个寻找Adobe代替者的linux用户？你并不孤独。如果你是一个图形界面设计师，你可能擅长不使用高价的adobe的产品。但是，linux用户们也是典型的对于Adobe，都了解的比较少。因此，adobe代替品无疑是一种更好的选择。
 [Ads by Google][4]
 
 It ultimately comes down to the specific Adobe program and what you hope to accomplish. Fortunately, as necessity remains the mother of all invention, others have answered the call. The result is a series of highly efficient stand-ins for Adobe software.
