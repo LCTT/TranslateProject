@@ -1,5 +1,9 @@
+translating----geekpi
+
 Encryption: How To Secure an NGINX web server on Ubuntu 16.04
-============================================================By [Giuseppe Molica][1]</header>
+============================================================
+
+By [Giuseppe Molica][1]</header>
 
  [![Let's Encrypt Encryption CA](https://www.unixmen.com/wp-content/uploads/2017/06/le-logo-standard.png "le-logo-standard")][2] 
 
