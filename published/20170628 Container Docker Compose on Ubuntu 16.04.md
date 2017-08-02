@@ -1,46 +1,43 @@
-translating by locez
-Container: Docker Compose on Ubuntu 16.04
+在 Ubuntu 16.04 中使用 Docker Compose
 ============================================================
 
  [![docker compose logo](https://www.unixmen.com/wp-content/uploads/2017/06/docker-compose-logo-696x1226.png "docker-compose-logo")][3] 
 
-### What is Docker Compose
+### 什么是 Docker Compose
 
-[Docker Compose][4] is a tool for running multi-container Docker applications. To configure an application’s services with Compose we use a configuration file, and then, executing a single command, it is possible to create and start all the services specified in the configuration.
+[Docker Compose][4] 是一个运行多容器 Docker 应用的工具。Compose 通过一个配置文件来配置一个应用的服务，然后通过一个命令创建并启动所有在配置文件中指定的服务。
 
-Docker Compose is useful for many different projects like:
+Docker Compose 适用于许多不同的项目，如：
 
-*   **Development**: with the Compose command line tools we create (and interact with) an isolated environment which will host the application being developed.
-    By using the [Compose file][2], developers document and configure all of the application’s service dependencies.
+*   **开发**：利用 Compose 命令行工具，我们可以创建一个隔离（而可交互）的环境来承载正在开发中的应用程序。通过使用 [Compose 文件][2]，开发者可以记录和配置所有应用程序的服务依赖关系。
+*   **自动测试**：此用例需求一个测试运行环境。Compose 提供了一种方便的方式来管理测试套件的隔离测试环境。完整的环境在 Compose 文件中定义。
 
-*   **Automated testing**: this use case requires an environment for running tests in. Compose provides a convenient way to manage isolated testing environments for a test suite. The full environment is defined in the Compose file.
+Docker Compose 是在 [Fig][5] 的源码上构建的，这个社区项目现在已经没有使用了。
 
-Docker Compose was made on the [Fig][5] source code, a community project now unused.
+在本教程中，我们将看到如何在 Ubuntn 16.04 上安装 Docker Compose。
 
-In this tutorial we will see how to install Docker Compose on an Ubuntu 16.04 machine.
+### 安装 Docker
 
-### Install Docker
-
-We need Docker in order to install Docker Compose. First, add the public key for the official Docker repository:
+我们需要安装 Docker 来安装 Docker Compose。首先为官方 Docker 仓库添加公钥。
 
 ```
-$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add-
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ```
 
-Next, add the Docker repository to `apt` sources list:
+接下来，添加 Docker 仓库到 `apt` 源列表：
 
 ```
 $ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 ```
 
-Update the packages database and install Docker with `apt`:
+更新包数据库，并使用 `apt` 安装 Docker
 
 ```
 $ sudo apt-get update
 $ sudo apt install docker-ce
 ```
 
-At the end of the installation process, the Docker daemon should be started and enabled to load at boot time. We can check its status with the following command:
+在安装进程结束后，Docker 守护程序应该已经启动并设为开机自动启动。我们可以通过下面的命令来查看它的状态：
 
 ```
 $ sudo systemctl status docker
@@ -51,69 +48,69 @@ $ sudo systemctl status docker
  Active: active (running) 
 ```
 
-### Install Docker Compose
+### 安装 Docker Compose 
 
-At this point it is possible to install Docker Compose. Download the current release by executing the following command:
+现在可以安装 Docker Compose 了。通过执行以下命令下载当前版本。
 
 ```
 # curl -L https://github.com/docker/compose/releases/download/1.14.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
 ```
 
-Make the downloaded binary executable:
+为二进制文件添加执行权限：
 
 ```
 # chmod +x /usr/local/bin/docker-compose
 ```
 
-Check the Docker Compose version:
+检查 Docker Compose 版本：
 
 ```
 $ docker-compose -v
 ```
 
-The output should be something like this:
+输出应该如下：
 
 ```
 docker-compose version 1.14.0, build c7bdf9e
 ```
 
-### Testing Docker Compose
+### 测试 Docker Compose
 
-The Docker Hub includes a Hello World image for demonstration purposes, illustrating the configuration required to run a container with Docker Compose.
+Docker Hub 包含了一个用于演示的 Hello World 镜像，可以用来说明使用 Docker Compose 来运行一个容器所需的配置。
 
-Create a new directory and move into it:
+创建并打开一个目录：
 
 ```
 $ mkdir hello-world
 $ cd hello-world
 ```
 
-Create a new YAML file:
+创建一个新的 YAML 文件：
 
 ```
 $ $EDITOR docker-compose.yml
 ```
 
-In this file paste the following content:
+在文件中粘贴如下内容：
 
 ```
 unixmen-compose-test:
  image: hello-world
 ```
 
- _**Note:** the first line is used as part of the container name._ 
+_**注意:** 第一行是容器名称的一部分。_
 
-Save and exit.
+保存并退出。
 
-#### Run the container
+### 运行容器
 
-Next, execute the following command in the `hello-world` directory:
+接下来，在 `hello-world` 目录执行以下命令：
 
 ```
 $ sudo docker-compose up
 ```
 
-If everything is correct, this should be the output shown by Compose:
+如果一切正常，Compose 输出应该如下：
 
 ```
 Pulling unixmen-compose-test (hello-world:latest)...
@@ -148,19 +145,19 @@ unixmen-compose-test_1 |
 helloworld_unixmen-compose-test_1 exited with code 0
 ```
 
-Docker containers only run as long as the command is active, so the container will stop when the test finishes running.
+Docker 容器只能在命令（LCTT 译注：此处应为容器中的命令）还处于活动状态时运行，因此当测试完成运行时，容器将停止运行。
 
-### Conclusion
+### 结论
 
-This concludes the tutorial about the installation of Docker Compose on an Ubuntu 16.04 machine. We have also seen how to create a simple project through the Compose file in YAML format.
+本文是关于在 Ubuntu 16.04 中安装 Docker Compose 的教程。我们还看到了如何通过一个 YAML 格式的 Compose 文件构建一个简单的项目。
 
 --------------------------------------------------------------------------------
 
 via: https://www.unixmen.com/container-docker-compose-ubuntu-16-04/
 
-作者：[  Giuseppe Molica][a]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+作者：[Giuseppe Molica][a]
+译者：[Locez](https://github.com/locez)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

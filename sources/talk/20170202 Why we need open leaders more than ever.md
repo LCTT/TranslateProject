@@ -1,3 +1,5 @@
+Translated by DPueng
+
 Why we need open leaders more than ever
 ============================================================
 
