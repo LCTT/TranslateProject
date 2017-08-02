@@ -1,3 +1,5 @@
+translating by penghuster
+
 IoT Framework for Edge Computing Gains Ground
 ============================================================
 
