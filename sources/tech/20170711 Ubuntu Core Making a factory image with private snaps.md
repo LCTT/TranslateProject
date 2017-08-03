@@ -1,4 +1,4 @@
-Ubuntu Core: Making a factory image with private snaps
+【Snaplee翻译中】Ubuntu Core: Making a factory image with private snaps
 ============================================================
 
 
