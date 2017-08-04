@@ -1,3 +1,5 @@
+Translating by firmianay
+
 The Filesystem Hierarchy Standard Shows Which Bits Are Boss
 ============================================================
 ![linux](http://www.linuxinsider.com/article_images/story_graphics_xlarge/xl-2016-linux-1.jpg)
@@ -17,19 +19,19 @@ Before we embark, here are a couple of tools that are worth getting familiar wit
 
 The most useful tool is "ls" -- it lists the contents of any directory given with a full or relative path (i.e., one starting from the current directory) as an argument.
 
-$ ls  _path_ 
+$ ls  _path_
 
 As you progress deeper into the filesystem, it might get cumbersome to type long paths repeatedly, so if you get to that point, you can replace "ls" with "cd" to change the current working directory (the one your terminal is currently "in") to that directory. As with "ls", just give "cd" a directory path as an argument.
 
-$ cd  _path_ 
+$ cd  _path_
 
 If you're not sure what kind of file something is, use the "file" command on it by running "file" and the filename as an argument.
 
-$ file  _filename_ 
+$ file  _filename_
 
 Finally, if the file seems like it could be human-readable, use "less" to look at it (again, with no fear of making changes). As with the last tool, give a filename as an argument to view it.
 
-$ less  _filename_ 
+$ less  _filename_
 
 When you're done scanning through the file, hit "q" to quit, which returns you to your terminal.
 
