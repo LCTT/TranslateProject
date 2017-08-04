@@ -1,3 +1,5 @@
+translating-----geekpi
+
 How To Setup Apache Hadoop On CentOS
 ============================================================
 
