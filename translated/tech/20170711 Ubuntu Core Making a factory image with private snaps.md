@@ -40,7 +40,7 @@ Fetching kyrofa-test-snap
 error: cannot find snap "kyrofa-test-snap": snap not found
 COMMAND FAILED: snap prepare-image --channel=stable amd64.model /tmp/tmp6p453gk9/unpack
 ```
-实际上商店中并没有名为 **kyrofa-test-snap** 的 snap。这里需要重点说明的是：模型定义（以及转换后的断言）会包含一列 snap 的名字。如果你在本地有个名字相同的 snap，即使它没有存在于商店中，你也可以通过 **--extra-snaps**  选项告诉 **ubuntu-image**  在断言中增加这个名字的来使用它：
+实际上商店中并没有名为 **kyrofa-test-snap** 的 snap。这里需要重点说明的是：模型定义（以及转换后的断言）会包含一列 snap 的名字。如果你在本地有个名字相同的 snap，即使它没有存在于商店中，你也可以通过 **--extra-snaps**  选项告诉 **ubuntu-image**  在断言中增加这个名字来使用它：
 ```
 $ sudo ubuntu-image -c stable \
          --extra-snaps /path/to/kyrofa-test-snap_0.1_amd64.snap \
