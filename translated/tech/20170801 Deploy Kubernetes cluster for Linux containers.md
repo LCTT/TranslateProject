@@ -1,33 +1,31 @@
-> translating by rieon
-
 Deploy Kubernetes cluster for Linux containers
+部署Kubernetes 容器集群
 ============================================================
 
-In this quick start, a Kubernetes cluster is deployed using the Azure CLI. A multi-container application consisting of web front-end and a Redis instance is then deployed and run on the cluster. Once completed, the application is accessible over the internet.
+在这个快速入门教程中，我们使用 Azure CLI 创建 Kubernetes 集群。 然后在集群上部署并运行由 Web 前端和 Redis 实例组成的多容器应用程序。 一旦部署完成，应用程序可以通过互联网访问。
+![示例应用截图](https://docs.microsoft.com/en-us/azure/container-service/kubernetes/media/container-service-kubernetes-walkthrough/azure-vote.png)
 
-![Image of browsing to Azure Vote](https://docs.microsoft.com/en-us/azure/container-service/kubernetes/media/container-service-kubernetes-walkthrough/azure-vote.png)
+这个快速入门教程假设你已经基本了解了Kubernetes 的概念，有关 Kubernetes 的详细信息，请参阅[ Kubernetes 文档] [3]。
 
-This quick start assumes a basic understanding of Kubernetes concepts, for detailed information on Kubernetes see the [Kubernetes documentation][3].
+如果您没有 Azure 账号订阅，请在开始之前创建一个[免费帐户] [4]。
 
-If you don't have an Azure subscription, create a [free account][4] before you begin.
+### 登陆Azure 云控制台
 
-### Launch Azure Cloud Shell
-
-The Azure Cloud Shell is a free Bash shell that you can run directly within the Azure portal. It has the Azure CLI preinstalled and configured to use with your account. Click the Cloud Shell button on the menu in the upper-right of the [Azure portal][5].
+Azure 云控制台是一个免费的 Bash shell ，你可以直接在 Azure 网站上运行。 它已经在你的账户中预先配置好了， 单击[ Azure 门户] [5]右上角菜单上的 “Cloud Shell” 按钮；
 
  [![Cloud Shell](https://docs.microsoft.com/en-us/azure/includes/media/cloud-shell-try-it/cloud-shell-menu.png)][6] 
 
-The button launches an interactive shell that you can use to run all of the steps in this topic:
+ 该按钮启动一个交互式 shell，您可以使用它来运行本教程中的所有操作步骤。
 
- [![Screenshot showing the Cloud Shell window in the portal](https://docs.microsoft.com/en-us/azure/includes/media/cloud-shell-try-it/cloud-shell-safari.png)][7] 
+ [![ Cloud Shell 截图](https://docs.microsoft.com/en-us/azure/includes/media/cloud-shell-try-it/cloud-shell-safari.png)][7] 
 
-If you choose to install and use the CLI locally, this quickstart requires that you are running the Azure CLI version 2.0.4 or later. Run `az --version` to find the version. If you need to install or upgrade, see [Install Azure CLI 2.0][8].
+此快速入门教程所用的 Azure CLI 的版本最低要求为 2.0.4 。如果您选择在本地安装和使用 CLI 工具，请运行`az --version' 来检查已安装的版本。 如果您需要安装或升级请参阅[安装 Azure CLI 2.0 ] [8]。
 
-### Create a resource group
+### 创建一个资源组
 
-Create a resource group with the [az group create][9] command. An Azure resource group is a logical group in which Azure resources are deployed and managed.
+使用 [az group create] 命令[9]创建一个资源组,一个 Azure 资源组是 Azure 资源部署和管理的逻辑组。
 
-The following example creates a resource group named  _myResourceGroup_  in the  _eastus_  location.
+以下示例在 _eastus_ 位置中创建名为 _myResourceGroup_ 的资源组。
 
 Azure CLICopyTry It
 
@@ -36,7 +34,7 @@ az group create --name myResourceGroup --location eastus
 
 ```
 
-Output:
+输出:
 
 JSONCopy
 
@@ -54,9 +52,9 @@ JSONCopy
 
 ```
 
-### Create Kubernetes cluster
+### 创建一个 Kubernetes 集群
 
-Create a Kubernetes cluster in Azure Container Service with the [az acs create][10]command. The following example creates a cluster named  _myK8sCluster_  with one Linux master node and three Linux agent nodes.
+使用 [az acs create] [10]命令在 Azure 容器服务中创建 Kubernetes 集群。 以下示例使用一个 Linux 主节点和三个 Linux 代理节点创建一个名为 _myK8sCluster_ 的集群。
 
 Azure CLICopyTry It
 
@@ -64,16 +62,15 @@ Azure CLICopyTry It
 az acs create --orchestrator-type=kubernetes --resource-group myResourceGroup --name=myK8sCluster --generate-ssh-keys 
 
 ```
+几分钟后，命令将完成并返回有关该集群的json格式的信息。
 
-After several minutes, the command completes and returns json formatted information about the cluster.
+### 连接到 Kubernetes 集群
 
-### Connect to the cluster
+要管理 Kubernetes 群集，可以使用 Kubernetes 命令行工具 [kubectl] [11]。
 
-To manage a Kubernetes cluster, use [kubectl][11], the Kubernetes command-line client.
+如果您使用 Azure CloudShell ，则已经安装了 kubectl 。 如果要在本地安装，可以使用[az acs kubernetes install-cli] [12]命令。
 
-If you're using Azure CloudShell, kubectl is already installed. If you want to install it locally, you can use the [az acs kubernetes install-cli][12] command.
-
-To configure kubectl to connect to your Kubernetes cluster, run the [az acs kubernetes get-credentials][13] command. This steps downloads credentials and configures the Kubernetes CLI to use them.
+要配置 kubectl 连接到您的 Kubernetes 群集，请运行 [az acs kubernetes get-credentials] [13] 命令下载凭据并配置 Kubernetes CLI 以使用它们。
 
 Azure CLICopyTry It
 
@@ -82,7 +79,7 @@ az acs kubernetes get-credentials --resource-group=myResourceGroup --name=myK8sC
 
 ```
 
-To verify the connection to your cluster, use the [kubectl get][14] command to return a list of the cluster nodes.
+要验证与集群的连接，请使用 [kubectl get] [14] 命令查看集群节点的列表。
 
 Azure CLICopyTry It
 
@@ -91,7 +88,7 @@ kubectl get nodes
 
 ```
 
-Output:
+输出:
 
 bashCopy
 
@@ -104,11 +101,11 @@ k8s-master-14ad53a1-0   Ready,SchedulingDisabled   10m       v1.6.6
 
 ```
 
-### Run the application
+### 运行应用程序
 
-A Kubernetes manifest file defines a desired state for the cluster, including things like what container images should be running. For this example, a manifest is used to create all object needed to run the Azure Vote application.
+Kubernetes 清单文件为集群定义了一个所需的状态，包括了集群中应该运行什么样的容器镜像。 对于此示例，清单用于创建运行 Azure Vote 应用程序所需的所有对象。
 
-Create a file named `azure-vote.yaml` and copy into it the following YAML.
+创建一个名为 `azure-vote.yaml` ，将下面的内容拷贝到 YAML 中。
 
 yamlCopy
 
@@ -174,7 +171,7 @@ spec:
 
 ```
 
-Use the [kubectl create][15] command to run the application.
+使用 [kubectl create][15] 命令来运行该应用程序。
 
 Azure CLICopyTry It
 
@@ -183,7 +180,7 @@ kubectl create -f azure-vote.yaml
 
 ```
 
-Output:
+输出:
 
 bashCopy
 
@@ -195,11 +192,11 @@ service "azure-vote-front" created
 
 ```
 
-### Test the application
+### 测试应用程序
 
-As the application is run, a [Kubernetes service][16] is created that exposes the application front-end to the internet. This process can take a few minutes to complete.
+当应用程序的跑起来之后，需要创建一个[ Kubernetes 服务] [16]，将应用程序前端暴露在互联网上。 此过程可能需要几分钟才能完成。
 
-To monitor progress, use the [kubectl get service][17] command with the `--watch`argument.
+要监控这个进程，使用 [kubectl get service][17] 命令时加上 `--watch` 参数。
 
 Azure CLICopyTry It
 
@@ -209,6 +206,7 @@ kubectl get service azure-vote-front --watch
 ```
 
 Initially the EXTERNAL-IP for the  _azure-vote-front_  service appears as  _pending_ . Once the EXTERNAL-IP address has changed from  _pending_  to an  _IP address_ , use `CTRL-C` to stop the kubectl watch process.
+最初，_azure-vote-front_ 服务的 EXTERNAL-IP 显示为 _pending_ 。 一旦 EXTERNAL-IP 地址从 _pending_ 变成一个具体的IP地址，请使用 “CTRL-C” 来停止 kubectl 监视进程。
 
 bashCopy
 
@@ -219,12 +217,13 @@ azure-vote-front   10.0.34.242   52.179.23.131   80:30676/TCP   2m
 ```
 
 You can now browse to the external IP address to see the Azure Vote App.
+现在你可以通过这个外网 IP 地址访问到 Azure Vote 这个应用了。
 
-![Image of browsing to Azure Vote](https://docs.microsoft.com/en-us/azure/container-service/kubernetes/media/container-service-kubernetes-walkthrough/azure-vote.png)
+![浏览 Azure Vote 应用截图 ](https://docs.microsoft.com/en-us/azure/container-service/kubernetes/media/container-service-kubernetes-walkthrough/azure-vote.png)
 
-### Delete cluster
+### 删除集群
 
-When the cluster is no longer needed, you can use the [az group delete][18]command to remove the resource group, container service, and all related resources.
+当不再需要集群时，可以使用 [az group delete] [18]命令删除资源组，容器服务和所有相关资源。
 
 Azure CLICopyTry It
 
@@ -233,24 +232,23 @@ az group delete --name myResourceGroup --yes --no-wait
 
 ```
 
-### Get the code
+### 获取示例代码
 
-In this quick start, pre-created container images have been used to create a Kubernetes deployment. The related application code, Dockerfile, and Kubernetes manifest file are available on GitHub.+
+在这个快速入门教程中，预先创建的容器镜像已被用于部署 Kubernetes 。相关应用程序代码 Dockerfile 和 Kubernetes 清单文件可在 GitHub 中获得。Github 仓库地址是 [https://github.com/Azure-Samples/azure-voting-app-redis][19]
 
-[https://github.com/Azure-Samples/azure-voting-app-redis][19]
 
-### Next steps
+### 下一步
 
-In this quick start, you deployed a Kubernetes cluster and deployed a multi-container application to it.
+在这个快速入门教程中，您部署了一个 Kubernetes 集群，并部署了一个多容器应用程序。
 
-To learn more about Azure Container Service, and walk through a complete code to deployment example, continue to the Kubernetes cluster tutorial.
+要了解有关 Azure 容器服务的更多信息，走完一个完整的从代码到部署的全流程，请继续阅读 Kubernetes 集群教程。
 
 --------------------------------------------------------------------------------
 
 via: https://docs.microsoft.com/en-us/azure/container-service/kubernetes/container-service-kubernetes-walkthrough
 
 作者：[neilpeterson ][a],[mmacy][b]
-译者：[译者ID](https://github.com/译者ID)
+译者：[rieonke](https://github.com/rieonke)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
