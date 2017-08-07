@@ -1,3 +1,4 @@
+translating by LHRchina
 What you need to know about hybrid cloud
 ============================================================
 
