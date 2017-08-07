@@ -1,3 +1,5 @@
+> translating by rieon
+
 DOCKER LEADS OCI RELEASE OF V1.0 RUNTIME AND IMAGE FORMAT SPECIFICATIONS
 ============================================================
 

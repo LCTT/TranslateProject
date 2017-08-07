@@ -1,3 +1,5 @@
+> translating by rieon
+
 DEMYSTIFYING THE OPEN CONTAINER INITIATIVE (OCI) SPECIFICATIONS
 ============================================================
 
