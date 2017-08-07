@@ -1,27 +1,25 @@
-translating-----geekpi
-
-How To Setup Apache Hadoop On CentOS
+如何在 CentOS 上安装 Apache Hadoop
 ============================================================
 
  [![](https://www.unixmen.com/wp-content/uploads/2015/06/hadoop1-696x249.png "hadoop1")][2] 
 
-The **Apache Hadoop** software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models The Apache™ Hadoop® project develops open-source software for reliable, scalable, distributed computing.
+**Apache Hadoop** 软件库是一个框架，它允许使用简单的编程模型在计算机集群上对大型数据集进行分布式处理。Apache™ Hadoop® 是可靠、可扩展、分布式计算的开源软件。
 
-The project includes these modules:
+该项目包括以下模块：
 
-*   **Hadoop Common**: The common utilities that support the other Hadoop modules.
+*   **Hadoop Common**：支持其他 Hadoop 模块的常用工具
 
-*   **Hadoop Distributed File System (HDFS™)**: A distributed file system that provides high-throughput access to application data.
+*   **Hadoop 分布式文件系统 （HDFS™）**：分布式文件系统，可提供对应用程序数据的高吞吐量访问
 
-*   **Hadoop YARN**: A framework for job scheduling and cluster resource management.
+*   **Hadoop YARN**：作业调度和集群资源管理框架。
 
-*   **Hadoop MapReduce**: A YARN-based system for parallel processing of large data sets.
+*   **Hadoop MapReduce**：一个基于 YARN 的大型数据集并行处理系统。
 
-This article will help you for step by step install and configure single node hadoop cluster using Hadoop on centos.
+本文将帮助你逐步在 CentOS 上安装 hadoop 并配置单节点 hadoop 集群。
 
-### Install Java
+### 安装 Java
 
-Before installing hadoop make sure you have java installed on your system. Use this command to check the version of the installed Java.
+在安装 hadoop 之前，请确保你的系统上安装了 Java。使用此命令检查已安装 Java 的版本。
 
 ```
 java -version
@@ -30,9 +28,9 @@ Java(TM) SE Runtime Environment (build 1.7.0_75-b13)
 Java HotSpot(TM) 64-Bit Server VM (build 24.75-b04, mixed mode)
 ```
 
-To install or update Java use following step by step instructions.
+要安装或更新 Java，请参考下面逐步的说明。
 
-First step is to download latest version of java from the [Oracle official website][3].
+第一步是从[ Oracle 官方网站][3]下载最新版本的 java。
 
 ```
 cd /opt/
@@ -40,7 +38,7 @@ wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2F
 tar xzf jdk-7u79-linux-x64.tar.gz
 ```
 
-Need to set up to use newer version of Java using alternatives. Use the following commands to do it.
+需要设置使用更新版本的 Java 作为替代。使用以下命令来执行此操作。
 
 ```
 cd /opt/jdk1.7.0_79/
@@ -60,7 +58,7 @@ There are 3 programs which provide 'java'.
 Enter to keep the current selection[+], or type selection number: 3 [Press Enter]
 ```
 
-Now you may also required to set up javac and jar commands path using alternatives command.
+现在你可能还需要使用alternatives 命令设置 javac 和 jar 命令路径。 
 
 ```
 alternatives --install /usr/bin/jar jar /opt/jdk1.7.0_79/bin/jar 2
@@ -69,38 +67,38 @@ alternatives --set jar /opt/jdk1.7.0_79/bin/jar
 alternatives --set javac /opt/jdk1.7.0_79/bin/javac
 ```
 
-The next step is to configure environment variables. Use following commands to set up these variable properly
+下一步是配置环境变量。使用以下命令正确设置这些变量。
 
-*   Setup **JAVA_HOME** Variable
+*   设置 **JAVA_HOME** 变量
 
 ```
 export JAVA_HOME=/opt/jdk1.7.0_79
 ```
 
-*   Setup **JRE_HOME** Variable
+*   设置 **JRE_HOME** 变量
 
 ```
 export JRE_HOME=/opt/jdk1.7.0_79/jre
 ```
 
-*   Setup **PATH** Variable
+*   设置 **PATH** 变量
 
 ```
 export PATH=$PATH:/opt/jdk1.7.0_79/bin:/opt/jdk1.7.0_79/jre/bin
 ```
 
-### Installing **Apache Hadoop**
+### 安装 **Apache Hadoop**
 
-After setting up the java environment. Let stat installing **Apache Hadoop.**
+设置好 java 环境后。开始安装 **Apache Hadoop**。
 
-The first step is to create a system user account to use for hadoop installation.
+第一步是创建用于 hadoop 安装的系统用户帐户。
 
 ```
 useradd hadoop
 passwd hadoop
 ```
 
-Now you need to configure the ssh keys for the user hadoop. Using following command to enable ssh login without password.
+现在你需要配置用户 hadoop 的 ssh 密钥。使用以下命令启用无需密码的 ssh 登录。
 
 ```
 su - hadoop
@@ -110,7 +108,7 @@ chmod 0600 ~/.ssh/authorized_keys
 exit
 ```
 
-Now download hadoop latest available version from its official site [hadoop.apache.org][4].
+现在从官方网站 [hadoop.apache.org][4] 下载 hadoop 最新的可用版本。
 
 ```
 cd ~
@@ -119,9 +117,9 @@ tar xzf hadoop-2.6.0.tar.gz
 mv hadoop-2.6.0 hadoop
 ```
 
-Now the next step is to set environment variable uses by hadoop.
+下一步是设置 hadoop 使用的环境变量。
 
-Edit **~/.bashrc** file and add the following listes of  values at end of file.
+编辑 **~/.bashrc**，并在文件末尾添加以下这些值。
 
 ```
 export HADOOP_HOME=/home/hadoop/hadoop
@@ -134,27 +132,27 @@ export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
 export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
 ```
 
-Then apply the changes in current running environment
+在当前运行环境中应用更改。
 
 ```
 source ~/.bashrc
 ```
 
-edit **$HADOOP_HOME/etc/hadoop/hadoop-env.sh** file and set **JAVA_HOME**environment variable
+编辑 **$HADOOP_HOME/etc/hadoop/hadoop-env.sh** 并设置 **JAVA_HOME** 环境变量。
 
 ```
 export JAVA_HOME=/opt/jdk1.7.0_79/
 ```
 
-Now you start with the configuration with basic hadoop single node cluster setup.
+现在，先从配置基本的 hadoop 单节点集群开始。
 
-First edit hadoop configuration files and make following changes.
+首先编辑 hadoop 配置文件并进行以下更改。
 
 ```
  cd /home/hadoop/hadoop/etc/hadoop
 ```
 
-Let’s start by editing core-site.xml
+让我们编辑 core-site.xml。
 
 ```
 <configuration>
@@ -165,7 +163,7 @@ Let’s start by editing core-site.xml
 </configuration>
 ```
 
-Then Edit hdfs-site.xml:
+接着编辑 hdfs-site.xml：
 
 ```
 <configuration>
@@ -186,7 +184,7 @@ Then Edit hdfs-site.xml:
 </configuration>
 ```
 
-and edit mapred-site.xml:
+并编辑 mapred-site.xml：
 
 ```
 <configuration>
@@ -197,7 +195,7 @@ and edit mapred-site.xml:
 </configuration>
 ```
 
-finally edit yarn-site.xml:
+最后编辑 yarn-site.xml：
 
 ```
 <configuration>
@@ -208,13 +206,13 @@ finally edit yarn-site.xml:
 </configuration>
 ```
 
-Now format the namenode using following command:
+现在使用以下命令格式化 namenode：
 
 ```
 hdfs namenode -format
 ```
 
-To start all hadoop services use the following command:
+要启动所有 hadoop 服务，请使用以下命令：
 
 ```
 cd /home/hadoop/hadoop/sbin/
@@ -222,13 +220,13 @@ start-dfs.sh
 start-yarn.sh
 ```
 
-To check if all services are started well use ‘jps‘ command:
+要检查所有服务是否正常启动，请使用 “jps” 命令：
 
 ```
 jps
 ```
 
-You should see like this output.
+你应该看到这样的输出。
 
 ```
 26049 SecondaryNameNode
@@ -239,18 +237,18 @@ You should see like this output.
 25807 NameNode
 ```
 
-Now you can access to Hadoop Services in your Browser at: **http://your-ip-address:8088/.**
+现在，你可以在浏览器中访问 Hadoop 服务：**http://your-ip-address:8088/**。
 
  [![hadoop](http://www.unixmen.com/wp-content/uploads/2015/06/hadoop.png)][5] 
 
-Thanks!!!
+谢谢！！！
 
 --------------------------------------------------------------------------------
 
 via: https://www.unixmen.com/setup-apache-hadoop-centos/
 
 作者：[anismaj ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
