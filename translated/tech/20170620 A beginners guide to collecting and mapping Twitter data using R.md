@@ -1,8 +1,7 @@
-
 用 R 收集和映射推特数据的初学者向导
 ============================================================
 
-### Learn to use R's twitteR and leaflet packages, which allow you to map the location of tweets on any topic.
+### 学习使用 R's twitteR 和 leaflet 包, 你就可以把任何话题的推文定位画在地图上。
 
 ![用 R 收集和映射推特数据的初学者向导](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/cloud-globe.png?itok=H4f-RAz_ "用 R 收集和映射推特数据的初学者向导")
 Image by : 
