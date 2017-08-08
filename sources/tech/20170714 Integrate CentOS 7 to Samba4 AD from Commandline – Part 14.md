@@ -1,3 +1,5 @@
+translting----geekpi
+
 Integrate CentOS 7 to Samba4 AD from Commandline – Part 14
 ============================================================
 
