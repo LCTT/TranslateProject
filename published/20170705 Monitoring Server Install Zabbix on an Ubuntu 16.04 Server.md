@@ -1,12 +1,11 @@
-监控服务器：在 Ubuntu 16.04 Server 上安装 Zabbix
+在 Ubuntu 16.04 Server 上安装 Zabbix
 ============================================================
 
  [![Zabbix logo](https://www.unixmen.com/wp-content/uploads/2017/06/zabbix_logo.png "zabbix_logo")][3] 
 
 ### 监控服务器 - 什么是 Zabbix
 
-[Zabbix][2] 是企业级开源分布式监控服务器解决方案。该软件能监控网络的不同参数以及服务器的完整性，还允许为任何事件配置基于电子邮件的警报。Zabbix 根据存储在数据库（例如 MySQL）中的数据提供报告和数据可视化功能。软件收集的每个测量可以通过基于 Web 的界面访问。
-
+[Zabbix][2] 是企业级开源分布式监控服务器解决方案。该软件能监控网络的不同参数以及服务器的完整性，还允许为任何事件配置基于电子邮件的警报。Zabbix 根据存储在数据库（例如 MySQL）中的数据提供报告和数据可视化功能。软件收集的每个测量指标都可以通过基于 Web 的界面访问。
 
 Zabbix 根据 GNU 通用公共许可证版本 2（GPLv2）的条款发布，完全免费。
 
@@ -19,6 +18,7 @@ Zabbix 根据 GNU 通用公共许可证版本 2（GPLv2）的条款发布，完�
 ```
 # apt-get install php7.0-bcmath php7.0-xml php7.0-mbstring
 ```
+
 Ubuntu 仓库中提供的 Zabbix 软件包已经过时了。使用官方 Zabbix 仓库安装最新的稳定版本。
 
 通过执行以下命令来安装仓库软件包：
@@ -28,11 +28,12 @@ $ wget http://repo.zabbix.com/zabbix/3.2/ubuntu/pool/main/z/zabbix-release/zabbi
 # dpkg -i zabbix-release_3.2-1+xenial_all.deb
 ```
 
-然后更新 `apt` 包源码：
+然后更新 `apt` 包源：
 
 ```
 # apt-get update
 ```
+
 现在可以安装带有 MySQL 支持和 PHP 前端的 Zabbix 服务器。执行命令：
 
 ```
@@ -166,18 +167,19 @@ DBPassword=usr_strong_pwd
 
 ![Zabbix monitoring server Frontend Setup](https://www.unixmen.com/wp-content/uploads/2017/06/snapshot1.png)
 
-点击  _**Next step**_ 
+点击  **Next step** 
 
 ![snapshot2](https://www.unixmen.com/wp-content/uploads/2017/06/snapshot2.png)
 
-确保所有的值都是 **Ok**，然后再次单击 _**Next step** _ 。
+确保所有的值都是 **Ok**，然后再次单击 **Next step** 。
 
 ![Zabbix MySQL configuration](https://www.unixmen.com/wp-content/uploads/2017/06/snapshot3.png)
-输入 MySQL **zabbix** 的用户密码，然后点击 _ **Next step** _。
+
+输入 MySQL **zabbix** 的用户密码，然后点击 **Next step**。
 
 ![Zabbix server details](https://www.unixmen.com/wp-content/uploads/2017/06/snapshot4.png)
 
-单击 _**Next step**_ ，安装程序将显示具有所有配置参数的页面。再次检查以确保一切正确。
+单击 **Next step** ，安装程序将显示具有所有配置参数的页面。再次检查以确保一切正确。
 
 ![Zabbix pre-installation details](https://www.unixmen.com/wp-content/uploads/2017/06/snapshot5.png)
 
@@ -192,18 +194,24 @@ DBPassword=usr_strong_pwd
 ![Zabbix login interface](https://www.unixmen.com/wp-content/uploads/2017/06/snapshot7.png)
 
 使用上述凭证登录后，我们将看到 Zabbix 面板：
+
 ![zabbix dashboard](https://www.unixmen.com/wp-content/uploads/2017/06/snapshot8.png)
 
-前往 _Administration -> Users_，了解已启用帐户的概况
+前往 **Administration -> Users**，了解已启用帐户的概况：
+
 ![Zabbix users](https://www.unixmen.com/wp-content/uploads/2017/06/snapshot9.png)
 
-通过点击 _**Create user**_ 创建一个新帐户。
+通过点击 **Create user** 创建一个新帐户。
+
 ![Zabbix User Creation](https://www.unixmen.com/wp-content/uploads/2017/06/snapshot10.png)
 
-点击 **Groups** 中的 **Add**，然后选择一个组
+点击 **Groups** 中的 **Add**，然后选择一个组：
+
 ![snapshot11](https://www.unixmen.com/wp-content/uploads/2017/06/snapshot11.png)
 
-保存新用户凭证，它将显示在 _Administration -> Users_ 面板中。**请注意，在 Zabbix 中，主机的访问权限分配给用户组，而不是单个用户。**
+保存新用户凭证，它将显示在 **Administration -> Users** 面板中。
+
+**请注意，在 Zabbix 中，主机的访问权限分配给用户组，而不是单个用户。**
 
 ### 总结
 
@@ -213,9 +221,9 @@ DBPassword=usr_strong_pwd
 
 via: https://www.unixmen.com/monitoring-server-install-zabbix-ubuntu-16-04/
 
-作者：[Giuseppe Molica ][a]
+作者：[Giuseppe Molica][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
