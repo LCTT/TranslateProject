@@ -1,38 +1,38 @@
-Deploy Kubernetes cluster for Linux containers
-部署Kubernetes 容器集群
+在 Azure 中部署 Kubernetes 容器集群
 ============================================================
 
-在这个快速入门教程中，我们使用 Azure CLI 创建 Kubernetes 集群。 然后在集群上部署并运行由 Web 前端和 Redis 实例组成的多容器应用程序。 一旦部署完成，应用程序可以通过互联网访问。
+在这个快速入门教程中，我们使用 Azure CLI 创建一个 Kubernetes 集群，然后在集群上部署运行由 Web 前端和 Redis 实例组成的多容器应用程序。一旦部署完成，应用程序可以通过互联网访问。
+
 ![示例应用截图](https://docs.microsoft.com/en-us/azure/container-service/kubernetes/media/container-service-kubernetes-walkthrough/azure-vote.png)
 
-这个快速入门教程假设你已经基本了解了Kubernetes 的概念，有关 Kubernetes 的详细信息，请参阅[ Kubernetes 文档][3]。
+这个快速入门教程假设你已经基本了解了 Kubernetes 的概念，有关 Kubernetes 的详细信息，请参阅 [Kubernetes 文档][3]。
 
-如果您没有 Azure 账号订阅，请在开始之前创建一个[免费帐户][4]。
+如果您没有 Azure 账号，请在开始之前创建一个[免费帐户][4]。
 
-### 登陆Azure 云控制台
+### 登录 Azure 云控制台
 
-Azure 云控制台是一个免费的 Bash shell ，你可以直接在 Azure 网站上运行。 它已经在你的账户中预先配置好了， 单击[ Azure 门户][5]右上角菜单上的 “Cloud Shell” 按钮；
+Azure 云控制台是一个免费的 Bash shell，你可以直接在 Azure 网站上运行。它已经在你的账户中预先配置好了， 单击 [Azure 门户][5]右上角菜单上的 “Cloud Shell” 按钮；
 
- [![Cloud Shell](https://docs.microsoft.com/en-us/azure/includes/media/cloud-shell-try-it/cloud-shell-menu.png)][6] 
+[![Cloud Shell](https://docs.microsoft.com/en-us/azure/includes/media/cloud-shell-try-it/cloud-shell-menu.png)][6] 
 
- 该按钮启动一个交互式 shell，您可以使用它来运行本教程中的所有操作步骤。
+该按钮会启动一个交互式 shell，您可以使用它来运行本教程中的所有操作步骤。
 
- [![ Cloud Shell 截图](https://docs.microsoft.com/en-us/azure/includes/media/cloud-shell-try-it/cloud-shell-safari.png)][7] 
+[![ Cloud Shell 截图](https://docs.microsoft.com/en-us/azure/includes/media/cloud-shell-try-it/cloud-shell-safari.png)][7] 
 
-此快速入门教程所用的 Azure CLI 的版本最低要求为 2.0.4 。如果您选择在本地安装和使用 CLI 工具，请运行 `az --version` 来检查已安装的版本。 如果您需要安装或升级请参阅[安装 Azure CLI 2.0 ][8]。
+此快速入门教程所用的 Azure CLI 的版本最低要求为 2.0.4。如果您选择在本地安装和使用 CLI 工具，请运行 `az --version` 来检查已安装的版本。 如果您需要安装或升级请参阅[安装 Azure CLI 2.0 ][8]。
 
 ### 创建一个资源组
 
-使用 [az group create][9] 命令创建一个资源组,一个 Azure 资源组是 Azure 资源部署和管理的逻辑组。
+使用 [az group create][9] 命令创建一个资源组，一个 Azure 资源组是指 Azure 资源部署和管理的逻辑组。
 
-以下示例在 _eastus_ 位置中创建名为 _myResourceGroup_ 的资源组。
+以下示例在 _eastus_ 区域中创建名为 _myResourceGroup_ 的资源组。
 
 ```
 az group create --name myResourceGroup --location eastus
 
 ```
 
-输出:
+输出：
 
 
 ```
@@ -53,22 +53,20 @@ az group create --name myResourceGroup --location eastus
 
 使用 [az acs create][10] 命令在 Azure 容器服务中创建 Kubernetes 集群。 以下示例使用一个 Linux 主节点和三个 Linux 代理节点创建一个名为 _myK8sCluster_ 的集群。
 
-Azure CLICopyTry It
 
 ```
 az acs create --orchestrator-type=kubernetes --resource-group myResourceGroup --name=myK8sCluster --generate-ssh-keys 
 
 ```
-几分钟后，命令将完成并返回有关该集群的json格式的信息。
+几分钟后，命令将完成并返回有关该集群的 json 格式的信息。
 
 ### 连接到 Kubernetes 集群
 
 要管理 Kubernetes 群集，可以使用 Kubernetes 命令行工具 [kubectl][11]。
 
-如果您使用 Azure CloudShell ，则已经安装了 kubectl 。 如果要在本地安装，可以使用 [az acs kubernetes install-cli][12] 命令。
+如果您使用 Azure CloudShell ，则已经安装了 kubectl 。如果要在本地安装，可以使用 [az acs kubernetes install-cli][12] 命令。
 
 要配置 kubectl 连接到您的 Kubernetes 群集，请运行 [az acs kubernetes get-credentials][13] 命令下载凭据并配置 Kubernetes CLI 以使用它们。
-
 
 ```
 az acs kubernetes get-credentials --resource-group=myResourceGroup --name=myK8sCluster
@@ -83,7 +81,7 @@ kubectl get nodes
 
 ```
 
-输出:
+输出：
 
 
 ```
@@ -171,7 +169,7 @@ kubectl create -f azure-vote.yaml
 
 ```
 
-输出:
+输出：
 
 
 ```
@@ -188,15 +186,13 @@ service "azure-vote-front" created
 
 要监控这个进程，使用 [kubectl get service][17] 命令时加上 `--watch` 参数。
 
-Azure CLICopyTry It
 
 ```
 kubectl get service azure-vote-front --watch
 
 ```
 
-Initially the EXTERNAL-IP for the  _azure-vote-front_  service appears as  _pending_ . Once the EXTERNAL-IP address has changed from  _pending_  to an  _IP address_ , use `CTRL-C` to stop the kubectl watch process.
-最初，_azure-vote-front_ 服务的 EXTERNAL-IP 显示为 _pending_ 。 一旦 EXTERNAL-IP 地址从 _pending_ 变成一个具体的IP地址，请使用 “CTRL-C” 来停止 kubectl 监视进程。
+最初，_azure-vote-front_ 服务的 EXTERNAL-IP 显示为 _pending_ 。 一旦 EXTERNAL-IP 地址从 _pending_ 变成一个具体的 IP 地址，请使用 “CTRL-C” 来停止 kubectl 监视进程。
 
 ```
 azure-vote-front   10.0.34.242   <pending>     80:30676/TCP   7s
@@ -204,7 +200,6 @@ azure-vote-front   10.0.34.242   52.179.23.131   80:30676/TCP   2m
 
 ```
 
-You can now browse to the external IP address to see the Azure Vote App.
 现在你可以通过这个外网 IP 地址访问到 Azure Vote 这个应用了。
 
 ![浏览 Azure Vote 应用截图 ](https://docs.microsoft.com/en-us/azure/container-service/kubernetes/media/container-service-kubernetes-walkthrough/azure-vote.png)
@@ -234,9 +229,9 @@ az group delete --name myResourceGroup --yes --no-wait
 
 via: https://docs.microsoft.com/en-us/azure/container-service/kubernetes/container-service-kubernetes-walkthrough
 
-作者：[neilpeterson ][a],[mmacy][b]
+作者：[neilpeterson][a]，[mmacy][b]
 译者：[rieonke](https://github.com/rieonke)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
