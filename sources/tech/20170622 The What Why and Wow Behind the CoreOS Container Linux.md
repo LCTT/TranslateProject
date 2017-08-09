@@ -1,3 +1,4 @@
+translated by toyijiu
 The What, Why and Wow! Behind the CoreOS Container Linux
 ============================================================
 
