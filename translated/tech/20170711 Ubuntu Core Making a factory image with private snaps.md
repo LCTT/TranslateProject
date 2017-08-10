@@ -1,13 +1,16 @@
-# Ubuntu Core: 制作包含私有 snaps 的工厂镜像
----
-这篇帖子是有关 [ROS prototype to production on Ubuntu Core][1] 系列的补充，用来回答我接收到的一个问题： “如何在不公开发布 snaps 的情况下制作一个工厂镜像？” 当然，问题和回答都不只是针对于机器人技术。在这篇帖子中，我将会通过两种方法来回答这个问题。
+Ubuntu Core：制作包含私有 snap 的工厂镜像
+========
 
-开始之前，你需要了解一些制作 Ubuntu Core 镜像的背景知识，如果你已经看过 [ROS prototype to production on Ubuntu Core][3] 系列文章（具体是第 5 部分），你就已经有了需要的背景知识，如果没有看过的话，可以查看有关 [制作你的 Ubuntu Core 镜像][5] 的教程。
+这篇帖子是有关 [在 Ubuntu Core 开发 ROS 原型到成品][1] 系列的补充，用来回答我收到的一个问题： “我想做一个工厂镜像，但我不想使我的 snap 公开” 当然，这个问题和回答都不只是针对于机器人技术。在这篇帖子中，我将会通过两种方法来回答这个问题。
 
-如果你已经了解了最新的情况并且当我说 “模型定义” 或者 “模型断言” 时知道我在谈论什么，那就让我们开始通过不同的方法使用私有 sanps 来制作 Ubuntu Core 镜像吧。
+开始之前，你需要了解一些制作 Ubuntu Core 镜像的背景知识，如果你已经看过 [在 Ubuntu Core 开发 ROS 原型到成品[3] 系列文章（具体是第 5 部分），你就已经有了需要的背景知识，如果没有看过的话，可以查看有关 [制作你的 Ubuntu Core 镜像][5] 的教程。
 
-### 方法 1: 无需上传你的 snap 到商店
-这是最简单的方法了。首先看一下这个有关模型定义的例子——**amd64-model.json**：
+如果你已经了解了最新的情况，并且当我说 “模型定义” 或者 “模型断言” 时知道我在谈论什么，那就让我们开始通过不同的方法使用私有 sanps 来制作 Ubuntu Core 镜像吧。
+
+### 方法 1： 不要上传你的 snap 到商店
+
+这是最简单的方法了。首先看一下这个有关模型定义的例子——`amd64-model.json`：
+
 ```
 {
     "type": "model",
@@ -22,7 +25,9 @@
     "required-snaps": ["kyrofa-test-snap"]
 }
 ```
-让我们将它转换成模型断言
+
+让我们将它转换成模型断言：
+
 ```
 $ cat amd64-model.json | snap sign -k my-key-name > amd64.model
 You need a passphrase to unlock the secret key for
@@ -30,7 +35,9 @@ user: "my-key-name"
 4096-bit RSA key, ID 0B79B865, created 2016-01-01
 ...
 ```
-获得模型断言：**amd64.model** 后，如果你现在就把它交给 **ubuntu-image** 使用，你将会碰钉子：
+
+获得模型断言：`amd64.model` 后，如果你现在就把它交给 `ubuntu-image` 使用，你将会碰钉子：
+
 ```
 $ sudo ubuntu-image -c stable amd64.model 
 Fetching core
@@ -40,7 +47,9 @@ Fetching kyrofa-test-snap
 error: cannot find snap "kyrofa-test-snap": snap not found
 COMMAND FAILED: snap prepare-image --channel=stable amd64.model /tmp/tmp6p453gk9/unpack
 ```
-实际上商店中并没有名为 **kyrofa-test-snap** 的 snap。这里需要重点说明的是：模型定义（以及转换后的断言）会包含一列 snap 的名字。如果你在本地有个名字相同的 snap，即使它没有存在于商店中，你也可以通过 **--extra-snaps**  选项告诉 **ubuntu-image**  在断言中增加这个名字来使用它：
+
+实际上商店中并没有名为 `kyrofa-test-snap` 的 snap。这里需要重点说明的是：模型定义（以及转换后的断言）只包含了一系列的 snap 的名字。如果你在本地有个那个名字的 snap，即使它没有存在于商店中，你也可以通过 `--extra-snaps` 选项告诉 `ubuntu-image` 在断言中匹配这个名字来使用它：
+
 ```
 $ sudo ubuntu-image -c stable \
          --extra-snaps /path/to/kyrofa-test-snap_0.1_amd64.snap \
@@ -55,29 +64,34 @@ disconnected from a store and cannot be refreshed subsequently!
 Partition size/offset need to be a multiple of sector size (512).
 The size/offset will be rounded up to the nearest sector.
 ```
-现在，在 snap 并没有上传到商店的情况下，你已经获得一个预装了私有 snap 的 Ubuntu Core 镜像（名为 pc.img）。但是这样做有一个很大的问题，ubuntu-image 会提示一个警告：不通过连接商店预装 snap 意味着你没有办法在烧录了这些镜像的设备上更新它。你只能通过制作新的镜像并重新烧录到设备的方式来更新它。
 
-### 方法 2: 使用品牌商店
-当你注册了一个商店账号并访问 [dashboard.snapcraft.io][6] 时，你其实是在标准的 Ubuntu 商店中查看你的 snaps。如果你在系统中安装 snap（原文是：If you install snapd fresh on your system，但是 snapd 并不是从 Ubuntu 商城安装的，而是通过 apt-get 命令 安装的），默认会从这个商店下载。虽然你可以在 Ubuntu 商店中发布私有的 snaps，但是你 [不能将它们预装到镜像中][7]，因为只有你（以及你添加的合作者）才有权限去使用它。在这种情况下制作镜像的唯一方式就是公开发布你的 snaps，然而这并不符合这篇帖子的目的(原文是：which defeats the whole purpose of this post)。
+现在，在 snap 并没有上传到商店的情况下，你已经获得一个预装了私有 snap 的 Ubuntu Core 镜像（名为 `pc.img`）。但是这样做有一个很大的问题，ubuntu-image 会提示一个警告：不通过连接商店预装 snap 意味着你没有办法在烧录了这些镜像的设备上更新它。你只能通过制作新的镜像并重新烧录到设备的方式来更新它。
 
-对于这种用例，我们有所谓的 **[品牌商店][8]**。品牌商店仍然在 Ubuntu 商店里托管，但是它们是针对于某一特定公司或设备的一个可定制的策划（curated）版本。品牌商店可以继承或者不继承标准的 Ubuntu 商店，品牌商店也可以选择开放给所有的开发者或者将其限制在一个特定的组内（保持私有正是我们想要的）。
+### 方法 2： 使用品牌商店
 
-请注意，这是一个付费功能。你需要 [申请一个品牌商店][9]。请求通过后，你将可以通过访问用户名下的“stores you can access” 看到你的新商店。
-![图片.png-78.9kB][10]
+当你注册了一个商店账号并访问 [dashboard.snapcraft.io][6] 时，你其实是在标准的 Ubuntu 商店中查看你的 snap。如果你是在系统中新安装的 snapd，默认会从这个商店下载。虽然你可以在 Ubuntu 商店中发布私有的 snap，但是你[不能将它们预装到镜像中][7]，因为只有你（以及你添加的合作者）才有权限去使用它。在这种情况下制作镜像的唯一方式就是公开发布你的 snap，然而这并不符合这篇帖子的目的。
 
-在那里你可以看到多个有权使用的商店。最少的情况下也会有两个: 标准的 Ubuntu 商店以及你的新的品牌商店。选择品牌商店（红色矩形），进去后记录下你的商店 ID（蓝色矩形）：等下你将会用到它。
-![图片.png-43.9kB][11]
+对于这种用例，我们有所谓的 [品牌商店][8]。品牌商店仍然托管在 Ubuntu 商店里，但是它们是针对于某一特定公司或设备的一个定制的、专门的版本。品牌商店可以继承或者不继承标准的 Ubuntu 商店，品牌商店也可以选择开放给所有的开发者或者将其限制在一个特定的组内（保持私有正是我们想要的）。
 
+请注意，这是一个付费功能。你需要 [申请一个品牌商店][9]。请求通过后，你将可以通过访问用户名下的 “stores you can access” 看到你的新商店。
 
-在品牌商店里注册名字或者上传 snaps  和标准的商店使用的方法是一样的，只是它们现在是上传到你的品牌商店而不是标准的那个。如果你没有将品牌商店列出来，那么这些 snaps 对外部用户是不可见。但是这里需要注意的是第一次上传 snap 的时候需要通过web界面来操作。在那之后，你可以继续像往常一样使用 Snapcraft 。
+![](https://insights.ubuntu.com/wp-content/uploads/1a62/stores_you_can_access.jpg)
 
-那么这些是如何改变的呢？我的 “kyrofal-store” 从 Ubuntu 商店继承了 snaps，并且还包含一个发布在稳定通道中的 “kyrofa-bran-test-snap” 。这个 snap 在 Ubuntu 商店里是使用不了的，如果你去搜索它，你是找不到的：
+在那里你可以看到多个有权使用的商店。最少的情况下也会有两个：标准的 Ubuntu 商店以及你的新的品牌商店。选择品牌商店（红框），进去后记录下你的商店 ID（蓝框）：等下你将会用到它。
+
+![](https://insights.ubuntu.com/wp-content/uploads/b10c/Screenshot-from-2017-07-06-15-16-32.png)
+
+在品牌商店里注册名字或者上传 snap 和标准的商店使用的方法是一样的，只是它们现在是上传到你的品牌商店而不是标准的那个。如果你将品牌商店放在 unlisted 里面，那么这些 snap 对外部用户是不可见。但是这里需要注意的是第一次上传 snap 的时候需要通过 web 界面来操作。在那之后，你可以继续像往常一样使用 Snapcraft 来操作。
+
+那么这些是如何改变的呢？我的 “kyrofal-store” 从 Ubuntu 商店继承了 snap，并且还包含一个发布在稳定通道中的 “kyrofa-bran-test-snap” 。这个 snap 在 Ubuntu 商店里是使用不了的，如果你去搜索它，你是找不到的：
+
 ```
 $ snap find kyrofa-branded
 The search "kyrofa-branded" returned 0 snaps
 ```
 
-但是使用我们前面记录的商店 ID，我们可以创建一个从品牌商店而不是 Ubuntu 商店下载 snaps 的模型断言。我们只需要将 “store” 键添加到 JSON 文件中，就像这样：
+但是使用我们前面记录的商店 ID，我们可以创建一个从品牌商店而不是 Ubuntu 商店下载 snap 的模型断言。我们只需要将 “store” 键添加到 JSON 文件中，就像这样：
+
 ```
 {
     "type": "model",
@@ -93,7 +107,9 @@ The search "kyrofa-branded" returned 0 snaps
     "store": "ky<secret>ek"
 }
 ```
+
 使用方法 1 中的方式对它签名，然后我们就可以像这样很简单的制作一个预装有我们品牌商店私有 snap 的 Ubuntu Core 镜像：
+
 ```
 $ sudo ubuntu-image -c stable amd64.model
 Fetching core
@@ -103,7 +119,8 @@ Fetching kyrofa-branded-test-snap
 Partition size/offset need to be a multiple of sector size (512).
 The size/offset will be rounded up to the nearest sector.
 ```
-现在，和方法 1 的最后一样，你获得了一个为工厂准备的 pc.img。并且使用这种方法制作的镜像中的所有 snaps 都从商店下载的，这意味着它们将能像平常一样自动更新。
+
+现在，和方法 1 的最后一样，你获得了一个为工厂准备的 `pc.img`。并且使用这种方法制作的镜像中的所有 snap 都从商店下载的，这意味着它们将能像平常一样自动更新。
 
 ### 结论
 
@@ -113,35 +130,30 @@ The size/offset will be rounded up to the nearest sector.
 
 希望能帮助到您！
 
-
 ---
-关于作者
-Kyle 的图片
 
-![Kyle_Fazzari.jpg-12kB][13]
+关于作者
 
 Kyle 是 Snapcraft 团队的一员，也是 Canonical 公司的常驻机器人专家，他专注于 snaps 和 snap 开发实践，以及 snaps 和 Ubuntu Core 的机器人技术实现。
 
-- - - 
+---
+
 via: https://insights.ubuntu.com/2017/07/11/ubuntu-core-making-a-factory-image-with-private-snaps/
 
 作者：[Kyle Fazzari][a]
 译者：[Snaplee](https://github.com/Snaplee)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-  [1]: https://insights.ubuntu.com/2017/04/06/from-ros-prototype-to-production-on-ubuntu-core/
-  [2]: https://insights.ubuntu.com/2017/04/06/from-ros-prototype-to-production-on-ubuntu-core/
-  [3]: https://insights.ubuntu.com/2017/04/06/from-ros-prototype-to-production-on-ubuntu-core/
-  [4]: https://insights.ubuntu.com/2017/04/06/from-ros-prototype-to-production-on-ubuntu-core/
-  [5]: https://tutorials.ubuntu.com/tutorial/create-your-own-core-image
-  [6]: https://dashboard.snapcraft.io/dev/snaps/
-  [7]: https://forum.snapcraft.io/t/unable-to-create-an-image-that-uses-private-snaps
-  [8]: https://docs.ubuntu.com/core/en/build-store/index?_ga=2.103787520.1269328701.1501772209-778441655.1499262639
-  [9]: https://docs.ubuntu.com/core/en/build-store/create
-  [10]: http://static.zybuluo.com/apollomoon/hzffexclyv4srqsnf52a9udc/%E5%9B%BE%E7%89%87.png
-  [11]: http://static.zybuluo.com/apollomoon/9gevrgmq01s3vdtp5qfa8tp7/%E5%9B%BE%E7%89%87.png
-  [12]: https://forum.snapcraft.io/t/unable-to-create-an-image-that-uses-private-snaps/1115
-  [13]: http://static.zybuluo.com/apollomoon/xaxxjof19s7cbgk00xntgmqa/Kyle_Fazzari.jpg
-  [14]: https://insights.ubuntu.com/2017/04/06/from-ros-prototype-to-production-on-ubuntu-core/
+[1]: https://insights.ubuntu.com/2017/04/06/from-ros-prototype-to-production-on-ubuntu-core/
+[2]: https://insights.ubuntu.com/2017/04/06/from-ros-prototype-to-production-on-ubuntu-core/
+[3]: https://insights.ubuntu.com/2017/04/06/from-ros-prototype-to-production-on-ubuntu-core/
+[4]: https://insights.ubuntu.com/2017/04/06/from-ros-prototype-to-production-on-ubuntu-core/
+[5]: https://tutorials.ubuntu.com/tutorial/create-your-own-core-image
+[6]: https://dashboard.snapcraft.io/dev/snaps/
+[7]: https://forum.snapcraft.io/t/unable-to-create-an-image-that-uses-private-snaps
+[8]: https://docs.ubuntu.com/core/en/build-store/index?_ga=2.103787520.1269328701.1501772209-778441655.1499262639
+[9]: https://docs.ubuntu.com/core/en/build-store/create
+[12]: https://forum.snapcraft.io/t/unable-to-create-an-image-that-uses-private-snaps/1115
+[14]: https://insights.ubuntu.com/2017/04/06/from-ros-prototype-to-production-on-ubuntu-core/
