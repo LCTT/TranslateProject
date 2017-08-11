@@ -1,4 +1,3 @@
-polebug is translating
 
 Making the move from Scala to Go, and why we’re not going back
 ============================================================

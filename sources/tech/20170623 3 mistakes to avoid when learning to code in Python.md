@@ -1,5 +1,5 @@
 
-translating by xllc
+polebug is translating
 
 3 mistakes to avoid when learning to code in Python
 ============================================================
