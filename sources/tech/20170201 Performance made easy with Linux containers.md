@@ -1,5 +1,3 @@
-translating by xllc
-
 Performance made easy with Linux containers
 ============================================================
 

@@ -1,4 +1,3 @@
-Translating by ChauncyD
 11 reasons to use the GNOME 3 desktop environment for Linux
 ============================================================
 
