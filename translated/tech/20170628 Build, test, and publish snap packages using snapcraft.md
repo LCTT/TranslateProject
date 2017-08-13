@@ -1,7 +1,5 @@
 ﻿# 使用 Snapcraft 构建、测试并发布 Snaps
 
-标签（空格分隔）： snapcraft Snaps CircleCI
-
 ---
 
 这篇客座文章的作者是 Ricardo Feliciano —— CircleCi 的开发者传道士。如果您也有兴趣投稿，请联系 ubuntu-iot@canonical.com。
@@ -121,7 +119,7 @@ workflows:
 
 ```
 
-和前面的工作流示例一样，替代部署步骤的 `deplog` 任务也只有当验收测试任务通过时才会运行。
+和前面的工作流示例一样，替代部署步骤的 `deploy` 任务也只有当验收测试任务通过时才会运行。
 
 ### 更多的信息
 
