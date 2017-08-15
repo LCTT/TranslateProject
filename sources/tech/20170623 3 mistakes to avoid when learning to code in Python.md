@@ -4,8 +4,7 @@
 
 ### 这些错误会造成很麻烦的问题，需要数小时才能解决。
 
-![3 mistakes to avoid when learning to code in Python](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/blocks_building.png?itok=q0_Wo8Tr "3 mistakes to avoid when learning to code in Python")  
-图片来源： opensource.com
+![3 mistakes to avoid when learning to code in Python](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/blocks_building.png?itok=q0_Wo8Tr "3 mistakes to avoid when learning to code in Python")  图片来源： opensource.com
 
 当你做错事时，承认错误并不是一件容易的事，但是犯错是任何学习过程中的一部分，无论是学习走路，还是学习一种新的编程语言，比如 Python。
 
@@ -78,7 +77,7 @@ def search_for_links(page, add_to=None):
     return add_to
 ```
 
-这将在模块加载的时候移走实例，以便每次运行函数时都会发生列表实例化。请注意，对于不可变数据类型，比如 [**元组**][7]， [**字符串**][8]，[**整型**][9]，是不需要考虑这种情况的。这意味着，像下面这样的代码是非常可行的：
+这将在模块加载的时候移走实例，以便每次运行函数时都会发生列表实例化。请注意，对于不可变数据类型，比如[**元组**][7]，[**字符串**][8]，[**整型**][9]，是不需要考虑这种情况的。这意味着，像下面这样的代码是非常可行的：
 
 ```
 def func(message="my message"):
