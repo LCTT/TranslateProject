@@ -1,23 +1,21 @@
 
-polebug is translating
-
-3 mistakes to avoid when learning to code in Python
+学习用 python 编码时要避免的 3 个错误
 ============================================================
 
-### These errors created big problems that took hours to solve.
+### 这些错误会造成很麻烦的问题，需要数小时才能解决。
 
-![3 mistakes to avoid when learning to code in Python](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/blocks_building.png?itok=q0_Wo8Tr "3 mistakes to avoid when learning to code in Python")
-Image by : opensource.com
+![3 mistakes to avoid when learning to code in Python](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/blocks_building.png?itok=q0_Wo8Tr "3 mistakes to avoid when learning to code in Python")  
+图片来源： opensource.com
 
-It's never easy to admit when you do things wrong, but making errors is part of any learning process, from learning to walk to learning a new programming language, such as Python.
+当你做错事时，承认错误并不是一件容易的事，但是犯错是任何学习过程中的一部分，无论是学习走路，还是学习一种新的编程语言，比如 Python。
 
-Here's a list of three things I got wrong when I was learning Python, presented so that newer Python programmers can avoid making the same mistakes. These are errors that either I got away with for a long time or that that created big problems that took hours to solve.
+为了让初学 Python 的程序员避免犯同样的错误，以下列出了我学习 Python 时犯的三种错误。这些错误要么是我长期以来犯的，要么是造成了需要几个小时解决的麻烦。
 
-Take heed young coders, some of these mistakes are afternoon wasters!
+年轻人可要注意了，这些错误是会浪费一下午的！
 
-### 1\. Mutable data types as default arguments in function definitions
+### 1\. 可变数据类型作为函数定义中的默认参数
 
-It makes sense right? You have a little function that, let's say, searches for links on a current page and optionally appends it to another supplied list.
+这似乎是对的？你写了一些功能，比如，搜索当前页面上的链接，并选择将其附加到另一个提供的列表中。
 
 ```
 def search_for_links(page, add_to=[]):
@@ -26,9 +24,9 @@ def search_for_links(page, add_to=[]):
     return add_to
 ```
 
-On the face of it, this looks like perfectly normal Python, and indeed it is. It works. But there are issues with it. If we supply a list for the **add_to** parameter, it works as expected. If, however, we let it use the default, something interesting happens.
+O从表面看，这像是十分正常的 Python 代码，事实上它也是，而且是有用的。但是，这里有个问题。如果我们提供了 **add_to** 参数的列表，它将按照我们预期的那样工作。但是，如果我们让它使用默认值，将会发生奥妙重重的事情。
 
-Try the following code:
+试试下面的代码：
 
 ```
 def fn(var1, var2=[]):
@@ -40,19 +38,19 @@ fn(4)
 fn(5)
 ```
 
-You may expect that we would see:
+可能你认为我们将看到：
 
 **[3]
 [4]
 [5]**
 
-But we actually see this:
+但实际上，我们看到的却是：
 
 **[3]
 [3, 4]
 [3, 4, 5]**
 
-Why? Well, you see, the same list is used each time. In Python, when we write the function like this, the list is instantiated as part of the function's definition. It is not instantiated each time the function is run. This means that the function keeps using the exact same list object again and again, unless of course we supply another one:
+你看吧，每次都是输入相同大小的列表，输出为什么会是这样？在 Python 中，当我们编写这样的函数时，这个列表被实例化为函数定义的一部分。当函数运行时，它并不是每次都被实例化。这意味着，这个函数会一直使用完全相同的列表对象，除非我们提供一个新的对象：
 
 ```
 fn(3, [4])
@@ -60,7 +58,7 @@ fn(3, [4])
 
 **[4, 3]**
 
-Just as expected. The correct way to achieve the desired result is:
+答案正如我们所想的那样。要想得到这种结果，正确的方法是：
 
 ```
 def fn(var1, var2=None):
@@ -69,7 +67,7 @@ def fn(var1, var2=None):
     var2.append(var1)
 ```
 
-Or, in our first example:
+或是在第一个例子中：
 
 ```
 def search_for_links(page, add_to=None):
@@ -80,16 +78,16 @@ def search_for_links(page, add_to=None):
     return add_to
 ```
 
-This moves the instantiation from module load time so that it happens every time the function runs. Note that for immutable data types, like [**tuples**][7], [**strings**][8], or [**ints**][9], this is not necessary. That means it is perfectly fine to do something like:
+这将在模块加载的时候移走实例，以便每次运行函数时都会发生列表实例化。请注意，对于不可变数据类型，比如 [**元组**][7]， [**字符串**][8]，[**整型**][9]，是不需要考虑这种情况的。这意味着，像下面这样的代码是非常可行的：
 
 ```
 def func(message="my message"):
     print message
 ```
 
-### 2\. Mutable data types as class variables
+### 2\. 可变数据类型作为类变量
 
-Hot on the heels of the last error is one that is very similar. Consider the following:
+这和上面提到的最后一个错误很相像。思考以下代码：
 
 ```
 class URLCatcher(object):
@@ -99,7 +97,7 @@ class URLCatcher(object):
         self.urls.append(url)
 ```
 
-This code looks perfectly normal. We have an object with a storage of URLs. When we call the **add_url** method, it adds a given URL to the store. Perfect right? Let's see it in action:
+这段代码看起来非常正常。我们有一个储存 URL 的对象。当我们调用 add_url 模块时，它会添加一个给定的 URL 到存储中。看起来非常正确吧？让我们看看实际是怎样的：
 
 ```
 a = URLCatcher()
@@ -114,9 +112,9 @@ b.add_url('http://www.bbc.co.')
 **a.urls
 ['[http://www.google.com][4]', '[http://www.bbc.co.uk][5]']**
 
-Wait, what?! We didn't expect that. We instantiated two separate objects, **a** and **b**. **A** was given one URL and **b** the other. How is it that both objects have both URLs?
+等等，怎么回事？！我们想的不是这样啊。我们实例化了两个单独的对象 **a** 和 **b**。把一个 URL 给了 **a**，另一个给了 **b**。这两个对象怎么会都有这两个 URL 呢？
 
-Turns out it's kinda the same problem as in the first example. The URLs list is instantiated when the class definition is created. All instances of that class use the same list. Now, there are some cases where this is advantageous, but the majority of the time you don't want to do this. You want each object to have a separate store. To do that, we would modify the code like:
+这和第一个错例是同样的问题。创建类定义时，URL 列表将被实例化。该类所有的实例使用相同的列表。在有些时候这种情况是有用的，但大多数时候你并不想这样做。你希望每个对象有一个单独的仓库储存。为此，我们修改代码为：
 
 ```
 class URLCatcher(object):
@@ -127,17 +125,17 @@ class URLCatcher(object):
         self.urls.append(url)
 ```
 
-Now the URLs list is instantiated when the object is created. When we instantiate two separate objects, they will be using two separate lists.
+现在，当创建对象时，URL 列表被实例化。当我们实例化两个单独的对象时，它们将分别使用两个单独的列表。
 
-### 3\. Mutable assignment errors
+### 3\. 可变的分配错误
 
-This one confused me for a while. Let's change gears a little and use another mutable datatype, the [**dict**][10].
+这个问题困扰了我一段时间。让我们做出一些改变，并使用另一种可变数据类型 - [**字典**][10]。
 
 ```
 a = {'1': "one", '2': 'two'}
 ```
 
-Now let's assume we want to take that **dict** and use it someplace else, leaving the original intact.
+现在，假设我们想把这个字典用在别的地方，且保持它的初始数据完整。
 
 ```
 b = a
@@ -145,21 +143,20 @@ b = a
 b['3'] = 'three'
 ```
 
-Simple eh?
-
-Now let's look at our original dict, **a**, the one we didn't want to modify:
-
-```
-{'1': "one", '2': 'two', '3': 'three'}
-```
-
-Whoa, hold on a minute. What does **b** look like then?
+简单吧？
+现在，让我们看看原来那个我们不想改变的字典 **a**：
 
 ```
 {'1': "one", '2': 'two', '3': 'three'}
 ```
 
-Wait what? But… let's step back and see what happens with our other immutable types, a **tuple** for instance:
+哇等一下，我们再看看 **b**？
+
+```
+{'1': "one", '2': 'two', '3': 'three'}
+```
+
+等等，什么？有点乱...让我们回想一下，看看其他不可变类型在这种情况下会发生什么，例如一个**元组**：
 
 ```
 c = (2, 3)
@@ -167,48 +164,48 @@ d = c
 d = (4, 5)
 ```
 
-Now **c** is:
+现在 **c** 是：
 **(2, 3)**
 
-While **d** is:
+而 **d** 是：
 **(4, 5)**
 
-That functions as expected. So what happened in our example? When using mutable types, we get something that behaves a little more like a pointer from C. When we said **b = a** in the code above, what we really meant was: **b** is now also a reference to **a**. They both point to the same object in Python's memory. Sound familiar? That's because it's similar to the previous problems. In fact, this post should really have been called, "The Trouble with Mutables."
+这个函数结果如我们所料。那么，在之前的例子中到底发生了什么？当使用可变类型时，我们得到了某些东西，这一过程的行为有点像 **C** 的一个指针。在上面的代码中，我们令 **b = a**，我们真正想要的是：**b** 成为 **a** 的一个引用。他们都指向 Python 内存中的同一个对象。听起来有些熟悉？那是因为这个问题与先前的相似。其实，这个帖子应该被称为「可变引发的麻烦」。
 
-Does the same thing happen with lists? Yes. So how do we get around it? Well, we have to be very careful. If we really need to copy a list for processing, we can do so like:
+列表也会发生同样的事吗？是的。那么我们如何解决呢？这必须非常小心。如果我们真的需要复制一个列表进行处理，我们可以这样做：
 
 ```
 b = a[:]
 ```
 
-This will go through and copy a reference to each item in the list and place it in a new list. But be warned: If any objects in the list are mutable, we will again get references to those, rather than complete copies.
+这将通过复制列表中的每个对象的引用，并且把它放在一个新的列表中。但是要注意：如果列表中的每个对象都是可变的，我们将再次获得这些引用，而不是完整的副本。
 
-Imagine having a list on a piece of paper. In the original example, Person A and Person B are looking at the same piece of paper. If someone changes that list, both people will see the same changes. When we copy the references, each person now has their own list. But let's suppose that this list contains places to search for food. If "fridge" is first on the list, even when it is copied, both entries in both lists point to the same fridge. So if the fridge is modified by Person A, by say eating a large gateaux, Person B will also see that the gateaux is missing. There is no easy way around this. It is just something that you need to remember and code in a way that will not cause an issue.
+假设在一张纸上列清单。在原来的例子中相当于，A 某和 B 某正在看着同一张纸。如果有个人修改了这个清单，两个人都将看到相同的变化。当我们复制引用时，每个人现在有了他们自己的清单。但是，我们假设这个清单包括寻找食物的地方。如果「冰箱」是列表中的第一个，即使它被复制，两个列表中的条目也都指向同一个冰箱。所以，如果冰箱被 A 修改，吃掉了里面的大蛋糕，B 也将看到这个蛋糕的消失。这里没有简单的方法解决它。只要你记住它，并编写代码的时候，使用不会造成这个问题的方式。
 
-Dicts function in the same way, and you can create this expensive copy by doing:
+字典以相同的方式工作，并且你可以通过以下代价高的方式创建副本：
 
 ```
 b = a.copy()
 ```
 
-Again, this will only create a new dictionary pointing to the same entries that were present in the original. Thus, if we have two lists that are identical and we modify a mutable object that is pointed to by a key from dict 'a', the dict object present in dict 'b' will also see those changes.
+再次说明，这只会创建一个新的字典，指向原来存在的相同的条目。因此，如果我们有两个相同的列表，并且我们修改一个字典 a 的一个键指向的可变对象，那么在字典 b 中也将看到这些变化。
 
-The trouble with mutable data types is that they are powerful. None of the above are real problems; they are things to keep in mind to prevent issues. The expensive copy operations presented as solutions in the third item are unnecessary 99% of the time. Your program can and probably should be modified so that those copies are not even required in the first place.
+可变数据类型的麻烦在于它们的强大。以上都不是实际中的问题；它们是一些要注意防止的问题。在第三个项目中提出的代价高的复制操作在 99% 的时候是没有必要的。你的程序或许应该被改改，为了这些副本不在首要的地方被需要。
 
- _Happy coding! And feel free to ask questions in the comments._
+_编程快乐！在评论中可以随时提问。_
 
 --------------------------------------------------------------------------------
 
 作者简介：
 
-Pete Savage - Peter is a passionate Open Source enthusiast who has been promoting and using Open Source products for the last 10 years. He has volunteered in many different areas, starting in the Ubuntu community, before moving off into the realms of audio production and later into writing. Career wise he spent much of his early years managing and building datacenters as a sysadmin, before ending up working for Red Hat as a Principal Quailty Engineer for the CloudForms product. He occasionally pops out a
+Pete Savage - Peter 是一位充满激情的开源爱好者，在过去十年里一直在推广和使用开源产品。他从 Ubuntu 社区开始，在许多不同的领域自愿参与音频制作领域的研究工作。在职业经历方面，他起初作为公司的系统管理员，大部分时间在管理和建立数据中心，之后在 Red Hat 担任 CloudForms 产品的主要 Quailty 工程师。
 
 -----------------
 
 via: https://opensource.com/article/17/6/3-things-i-did-wrong-learning-python
 
 作者：[Pete Savage ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[polebug](https://github.com/polebug)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
