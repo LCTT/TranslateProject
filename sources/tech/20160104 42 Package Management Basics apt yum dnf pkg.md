@@ -1,4 +1,4 @@
-
+[Translate by Snapcrafter]
 42 Package Management Basics: apt, yum, dnf, pkg
 ============================================================
 
