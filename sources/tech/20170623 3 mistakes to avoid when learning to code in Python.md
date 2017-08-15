@@ -4,7 +4,7 @@
 
 ### 这些错误会造成很麻烦的问题，需要数小时才能解决。
 
-![3 mistakes to avoid when learning to code in Python](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/blocks_building.png?itok=q0_Wo8Tr "3 mistakes to avoid when learning to code in Python")  图片来源： opensource.com
+![学习用 python 编码时要避免的 3 个错误](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/blocks_building.png?itok=q0_Wo8Tr "3 mistakes to avoid when learning to code in Python")  图片来源： opensource.com
 
 当你做错事时，承认错误并不是一件容易的事，但是犯错是任何学习过程中的一部分，无论是学习走路，还是学习一种新的编程语言，比如 Python。
 
@@ -140,7 +140,7 @@ a = {'1': "one", '2': 'two'}
 b = a
 
 b['3'] = 'three'
-```
+``` 
 
 简单吧？
 现在，让我们看看原来那个我们不想改变的字典 **a**：
