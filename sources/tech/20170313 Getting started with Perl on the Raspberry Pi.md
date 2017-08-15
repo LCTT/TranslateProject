@@ -1,4 +1,4 @@
-Getting started with Perl on the Raspberry Pi
+(Translating by thinkwall)Getting started with Perl on the Raspberry Pi
 ============================================================
 
 > We're all free to pick what we want to run on our Raspberry Pi.
