@@ -1,3 +1,5 @@
+translating by wangs0622
+
 Book review: Ours to Hack and to Own
 ============================================================
 
