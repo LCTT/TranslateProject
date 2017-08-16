@@ -1,17 +1,15 @@
-# Linux 包管理的基础：apt、yum、dnf 和 pkg
-
+Linux 包管理基础：apt、yum、dnf 和 pkg
+========================
 
 ![Package_Management_tw_mostov.png-307.8kB][1]
-
-（这题图都有了：）
 
 ### 介绍
 
 大多数现代的类 Unix 操作系统都提供了一种中心化的机制用来搜索和安装软件。软件通常都是存放在存储库中，并通过包的形式进行分发。处理包的工作被称为包管理。包提供了操作系统的基本组件，以及共享的库、应用程序、服务和文档。
 
-包管理系统除了安装软件外，它还提供了用来更新已经安装包的工具。包存储库有助于确保你的系统中使用的代码是经过审查的，并且软件的安装版本已经得到了开发人员和包维护人员的认可。
+包管理系统除了安装软件外，它还提供了工具来更新已经安装的包。包存储库有助于确保你的系统中使用的代码是经过审查的，并且软件的安装版本已经得到了开发人员和包维护人员的认可。
 
-在配置服务器或开发环境时，我们最好了解下包在官方存储库之外的情况。某个发行版的稳定版本中的包有可能已经过时了，尤其是那些新的或者快速迭代的软件。然而，包管理对于系统管理员和开发人员来说都是至关重要的技能，而已打包的软件对于主要的 Linux 发行版来说也是一笔巨大的财富。
+在配置服务器或开发环境时，我们最好了解下包在官方存储库之外的情况。某个发行版的稳定版本中的包有可能已经过时了，尤其是那些新的或者快速迭代的软件。然而，包管理无论对于系统管理员还是开发人员来说都是至关重要的技能，而已打包的软件对于主流 Linux 发行版来说也是一笔巨大的财富。
 
 本指南旨在快速地介绍下在多种 Linux 发行版中查找、安装和升级软件包的基础知识，并帮助您将这些内容在多个系统之间进行交叉对比。
 
@@ -19,7 +17,7 @@
 
 大多数包系统都是围绕包文件的集合构建的。包文件通常是一个存档文件，它包含已编译的二进制文件和软件的其他资源，以及安装脚本。包文件同时也包含有价值的元数据，包括它们的依赖项，以及安装和运行它们所需的其他包的列表。
 
-虽然这些包管理系统的功能和优点大致相同，但打包格式和工具却因平台而异:
+虽然这些包管理系统的功能和优点大致相同，但打包格式和工具却因平台而异：
 
 | 操作系统 | 格式 | 工具 |
 | --- | --- | --- |
@@ -29,13 +27,13 @@
 | Fedora | `.rpm` | `dnf` |
 | FreeBSD | Ports, `.txz` | `make`, `pkg` |
 
-Debian 及其衍生版，如 Ubuntu、Linux Mint 和 Raspbian，它们的包格式是 `.deb`。APT 这款先进的包管理工具提供了大多数常见的操作命令：搜索存储库，安装软件包及其依赖项，并管理升级。在本地系统中，我们还可以使用 `dpkg` 程序来安装单个的 `deb` 文件，APT 命令作为底层 `dpkg` 的前端，有时也会直接调用它。
+Debian 及其衍生版，如 Ubuntu、Linux Mint 和 Raspbian，它们的包格式是 `.deb`。APT 这款先进的包管理工具提供了大多数常见的操作命令：搜索存储库、安装软件包及其依赖项，并管理升级。在本地系统中，我们还可以使用 `dpkg` 程序来安装单个的 `deb` 文件，APT 命令作为底层 `dpkg` 的前端，有时也会直接调用它。
 
 最近发布的 debian 衍生版大多数都包含了 `apt` 命令，它提供了一个简洁统一的接口，可用于通常由 `apt-get` 和 `apt-cache` 命令处理的常见操作。这个命令是可选的，但使用它可以简化一些任务。
 
-CentOS、Fedora 和其它 Red Hat 家族成员使用 `RPM` 文件。在 CentOS 中，通过 `yum` 来与单独的包文件和存储库进行交互。
+CentOS、Fedora 和其它 Red Hat 家族成员使用 RPM 文件。在 CentOS 中，通过 `yum` 来与单独的包文件和存储库进行交互。
 
-在最近的 Fedora 版本中，`yum` 已经被 `dnf` 取代，`dnf` 是一个现代化的分支，它保留了大部分 `yum` 的接口。
+在最近的 Fedora 版本中，`yum` 已经被 `dnf` 取代，`dnf` 是它的一个现代化的分支，它保留了大部分 `yum` 的接口。
 
 FreeBSD 的二进制包系统由 `pkg` 命令管理。FreeBSD 还提供了 `Ports` 集合，这是一个存在于本地的目录结构和工具，它允许用户获取源码后使用 Makefile 直接从源码编译和安装包。
 
@@ -54,9 +52,9 @@ FreeBSD 的二进制包系统由 `pkg` 命令管理。FreeBSD 还提供了 `Port
 
 ### 更新已安装的包
 
-在没有包系统的情况下，想确保机器上所有已安装的软件都保持在最新的状态是一个很艰巨的任务。你将不得不跟踪数百个不同包的上游的更改和安全警报。虽然包管理器并不能解决升级软件时遇到的所有问题，但它确实使你能够使用一些命令来维护大多数系统组件。
+在没有包系统的情况下，想确保机器上所有已安装的软件都保持在最新的状态是一个很艰巨的任务。你将不得不跟踪数百个不同包的上游更改和安全警报。虽然包管理器并不能解决升级软件时遇到的所有问题，但它确实使你能够使用一些命令来维护大多数系统组件。
 
-在 FreeBSD 上，升级已安装的 prots 可能会引入破坏性的改变，有些步骤还需要进行手动配置，所以在通过 `portmaster` 更新之前最好阅读下 `/usr/ports/UPDATING` 的内容。
+在 FreeBSD 上，升级已安装的 ports 可能会引入破坏性的改变，有些步骤还需要进行手动配置，所以在通过 `portmaster` 更新之前最好阅读下 `/usr/ports/UPDATING` 的内容。
 
 | 系统 | 命令 | 说明 |
 | --- | --- | --- |
@@ -67,7 +65,7 @@ FreeBSD 的二进制包系统由 `pkg` 命令管理。FreeBSD 还提供了 `Port
 | CentOS | `sudo yum update` |  |
 | Fedora | `sudo dnf upgrade` |  |
 | FreeBSD Packages | `sudo pkg upgrade` |  |
-| FreeBSD Ports | `less /usr/ports/UPDATING` | Uses `less` to view update notes for ports (use arrow keys to scroll, press q to quit). |
+| FreeBSD Ports | `less /usr/ports/UPDATING` | 使用 `less` 来查看 ports 的更新提示（使用上下光标键滚动，按 q 退出）。 |
 |  | `cd /usr/ports/ports-mgmt/portmaster && sudo make install && sudo portmaster -a` | 安装 `portmaster` 然后使用它更新已安装的 ports |
 
 ### 搜索某个包
@@ -126,7 +124,7 @@ FreeBSD 的二进制包系统由 `pkg` 命令管理。FreeBSD 还提供了 `Port
 
 ### 从本地文件系统安装一个包
 
-对于一个给定的操作系统，有时有些软件官方并没有提供相应的包，那么开发人员或供应商将需要提供包文件以供下载。你通常可以通过 web 浏览器检索这些包，或者通过命令行 `curl` 来检索这些信息。将包下载到目标系统后，我们通常可以通过单个命令来安装它。
+对于一个给定的操作系统，有时有些软件官方并没有提供相应的包，那么开发人员或供应商将需要提供包文件的下载。你通常可以通过 web 浏览器检索这些包，或者通过命令行 `curl` 来检索这些信息。将包下载到目标系统后，我们通常可以通过单个命令来安装它。
 
 在 Debian 派生的系统上，`dpkg` 用来处理单个的包文件。如果一个包有未满足的依赖项，那么我们可以使用 `gdebi` 从官方存储库中检索它们。
 
@@ -135,7 +133,7 @@ FreeBSD 的二进制包系统由 `pkg` 命令管理。FreeBSD 还提供了 `Port
 | 系统 | 命令 | 说明 |
 | --- | --- | --- |
 | Debian / Ubuntu | `sudo dpkg -i package.deb` |  |
-|  | `sudo apt-get install -y gdebi && sudo gdebi package.deb` | Installs and uses `gdebi` to install `package.deb`and retrieve any missing dependencies. 安装 `gdebi`，然后使用 `gdebi` 安装 `package.deb` 并处理缺失的依赖|
+|  | `sudo apt-get install -y gdebi && sudo gdebi package.deb` | 安装 `gdebi`，然后使用 `gdebi` 安装 `package.deb` 并处理缺失的依赖|
 | CentOS | `sudo yum install package.rpm` |  |
 | Fedora | `sudo dnf install package.rpm` |  |
 | FreeBSD Packages | `sudo pkg add package.txz` |  |
@@ -181,7 +179,7 @@ man page
 
 ```
 
-在 `man` 中，你可以用箭头键导航。按 / 搜索页面内的文本，使用 q 退出。
+在 `man` 中，你可以用箭头键导航。按 `/` 搜索页面内的文本，使用 `q` 退出。
 
 | 系统 | 命令 | 说明 |
 | --- | --- | --- |
@@ -198,14 +196,10 @@ man page
 
 本指南通过对多个系统间进行交叉对比概述了一下包管理系统的基本操作，但只涉及了这个复杂主题的表面。对于特定系统更详细的信息，可以参考以下资源：
 
-*  [这份指南][2] 详细介绍了 Ubuntu 和 Debian 的软件包管理。
-
-*  这里有一份 CentOS 官方的指南 [使用 yum 管理软件][3]
-
-*  这里有一个有关 Fedora 的 `dnf` 的 [wifi 页面][4] 以及一份有关 `dnf` [官方的手册][5] 
-
+* [这份指南][2] 详细介绍了 Ubuntu 和 Debian 的软件包管理。
+* 这里有一份 CentOS 官方的指南 [使用 yum 管理软件][3]
+* 这里有一个有关 Fedora 的 `dnf` 的 [wifi 页面][4] 以及一份有关 `dnf` [官方的手册][5] 
 * [这份指南][6] 讲述了如何使用 `pkg` 在 FreeBSD 上进行包管理   
-
 * 这本 [FreeBSD Handbook][7] 有一节讲述了[如何使用 Ports 集合][8]
 
 --------------------------------------------------------------------------------
@@ -214,11 +208,11 @@ via: https://www.digitalocean.com/community/tutorials/package-management-basics-
 
 译者后记：
 
-从经典的 configure / make / make install 三部曲到 dpkg，从需要手处理依赖关系的 dpkg 到全自动化的 apt-get，恩~，你有没有想过接下来会是什么？译者只能说可能会是 `Snaps`，如果你还没有听过这个东东，你也许需要关注下这个公众号了：**Snapcraft**
+从经典的 `configure` && `make` && `make install` 三部曲到 `dpkg`，从需要手处理依赖关系的 `dpkg` 到全自动化的 `apt-get`，恩~，你有没有想过接下来会是什么？译者只能说可能会是 `Snaps`，如果你还没有听过这个东东，你也许需要关注下这个公众号了：**Snapcraft**
 
-作者：[Brennen Bearnes ][a]
+作者：[Brennen Bearnes][a]
 译者：[Snapcrafter](https://github.com/Snapcrafter)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
