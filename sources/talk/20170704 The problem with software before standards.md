@@ -1,3 +1,5 @@
+Translating by softpaopao
+
 The problem with software before standards
 ============================================================
 
