@@ -1,3 +1,6 @@
+申请翻译 by WangYueScream
+=========================
+
 The Children's Illustrated Guide to Kubernetes
 ============================================================
 

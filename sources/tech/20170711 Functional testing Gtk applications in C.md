@@ -1,3 +1,4 @@
+translating by sugarfillet
 Functional testing Gtk+ applications in C
 ============================================================
 
