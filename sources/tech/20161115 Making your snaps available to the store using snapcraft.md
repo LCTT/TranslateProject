@@ -1,3 +1,4 @@
+[Translating by Snapcrafter]
 Making your snaps available to the store using snapcraft
 ============================================================
 
