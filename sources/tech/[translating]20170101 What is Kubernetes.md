@@ -1,56 +1,61 @@
-What is Kubernetes?
+Kubernetes是什么？What is Kubernetes?
 ============================================================
+本文是Kubernetes的概览。
 
-This page is an overview of Kubernetes.
 
-*   [Kubernetes is][6]
+*   [为什么选择Kubernetes?][7]
 
-*   [Why containers?][7]
-    *   [Why do I need Kubernetes and what can it do?][1]
+    *   [为什么我需要Kubernetes，它能做什么?][1]
 
-    *   [How is Kubernetes a platform?][2]
+    *   [Kubernetes是一个什么样的平台?][2]
 
-    *   [What Kubernetes is not][3]
+    *   [Kubernetes不是什么？][3]
 
-    *   [What does  _Kubernetes_  mean? K8s?][4]
+    *   [Kubernetes这个单词的含义？k8s?][4]
 
-*   [What’s next][8]
+*   [接下来][8]
 
-Kubernetes is an [open-source platform for automating deployment, scaling, and operations of application containers][25] across clusters of hosts, providing container-centric infrastructure.
 
-With Kubernetes, you are able to quickly and efficiently respond to customer demand:
+Kubernetes 是一款跨集群的 [专门为自动化部署、缩放、操作应用程序容器的开源平台][25] , 提供了以容器为中心的基础架构。
 
-*   Deploy your applications quickly and predictably.
+使用Kubernetes, 你可以快速、高效地满足用户以下的需求：
 
-*   Scale your applications on the fly.
+*   快速精准地部署应用程序
 
-*   Roll out new features seamlessly.
+*   即时缩放应用程序
 
-*   Limit hardware usage to required resources only.
+*   无缝展现新特征
 
-Our goal is to foster an ecosystem of components and tools that relieve the burden of running applications in public and private clouds.
+我们的目标是，在公有或私有云中，培育出可以释放正在运行的程序的负担的一系列工具和组件的生态系统。
 
-#### Kubernetes is
+#### Kubernetes 的优势
 
-*   **Portable**: public, private, hybrid, multi-cloud
+*   **轻便**: 公有云、私有云、混合云、多态云
 
-*   **Extensible**: modular, pluggable, hookable, composable
+*   **可扩展**: 模块化、组件化，可添加插件、可Hook
 
-*   **Self-healing**: auto-placement, auto-restart, auto-replication, auto-scaling
+*   **自动修正**: 自动布局、自动重启、自动复制、自动缩放
 
-Google started the Kubernetes project in 2014\. Kubernetes builds upon a [decade and a half of experience that Google has with running production workloads at scale][26], combined with best-of-breed ideas and practices from the community.
+Google公司于2014年启动了Kubernetes项目。Kubernetes是在[Google的长达15年的成规模的产品运行工作量的经验下][26]构建的, 结合了公司中最优秀的创意，并在社区中经历了反复地实践。
 
-### Why containers?
+### 为什么选择容器?
 
-Looking for reasons why you should be using [containers][27]?
+想要知道你为什么要选择使用 [容器][27]?
 
-![Why Containers?](https://d33wubrfki0l68.cloudfront.net/e7b766e0175f30ae37f7e0e349b87cfe2034a1ae/3e391/images/docs/why_containers.svg)
+![为什么是容器?](https://d33wubrfki0l68.cloudfront.net/e7b766e0175f30ae37f7e0e349b87cfe2034a1ae/3e391/images/docs/why_containers.svg)
+
 
 The  _Old Way_  to deploy applications was to install the applications on a host using the operating system package manager. This had the disadvantage of entangling the applications’ executables, configuration, libraries, and lifecycles with each other and with the host OS. One could build immutable virtual-machine images in order to achieve predictable rollouts and rollbacks, but VMs are heavyweight and non-portable.
 
 The  _New Way_  is to deploy containers based on operating-system-level virtualization rather than hardware virtualization. These containers are isolated from each other and from the host: they have their own filesystems, they can’t see each others’ processes, and their computational resource usage can be bounded. They are easier to build than VMs, and because they are decoupled from the underlying infrastructure and from the host filesystem, they are portable across clouds and OS distributions.
 
 Because containers are small and fast, one application can be packed in each container image. This one-to-one application-to-image relationship unlocks the full benefits of containers. With containers, immutable container images can be created at build/release time rather than deployment time, since each application doesn’t need to be composed with the rest of the application stack, nor married to the production infrastructure environment. Generating container images at build/release time enables a consistent environment to be carried from development into production. Similarly, containers are vastly more transparent than VMs, which facilitates monitoring and management. This is especially true when the containers’ process lifecycles are managed by the infrastructure rather than hidden by a process supervisor inside the container. Finally, with a single application per container, managing the containers becomes tantamount to managing deployment of the application.
+
+程序部署的 _旧方法_ 是指，通过操作系统包管理器在主机上安装程序。这样做的坏处是，容易混淆程序之间以及程序和主机系统之间的可执行文件、配置文件、库、生命周期。为了达到精准展现和精准回撤，你可以搭建一台不可变的虚拟机映象。但是虚拟机体量往往过于庞大。
+
+容器部署的 _新方法_ 是基于操作系统级别的可视化，而非硬件可视化。容器彼此是孤立的，相对于主机也是独立的：它们有自己的文件系统，彼此之间不能看到对方的进程，分配到的计算资源都是有边界的。它们比虚拟机更容易搭建。并且由于和基础架构、主机文件系统是解耦的，它们可以在不同类型的云上或分布式OS上应用。
+
+正因为容器又小又快，每一个容器映象都可以打包装载一个程序。这种一对一的「程序 - 映象」联系带给了容器诸多便捷。有了容器，静态容器映象可以在编译/发布时期创建，而非部署时期。因此，每个应用不必再等待和整个应用栈其它部分进行整合，也不必和产品基础架构环境之间进行妥协。在编译/发布时期生成容器映象建立了一个持续地把开发转化为产品的环境。相似地，容器远比虚拟机更加透明，尤其在设备监控和管理上。这一点，在容器的进程生命周期被基础架构管理而非被容器内的进程监督器隐藏掉时，尤为显著。最终，随着每个容器内都装载了单一的程序，管理容器就等于管理或部署整个应用。
 
 Summary of container benefits:
 
