@@ -18,7 +18,7 @@ Kubernetes是什么？What is Kubernetes?
 
 Kubernetes 是一款跨集群的 [专门为自动化部署、缩放、操作应用程序容器的开源平台][25] , 提供了以容器为中心的基础架构。
 
-使用Kubernetes, 你可以快速、高效地满足用户以下的需求：
+使用 Kubernetes , 你可以快速、高效地满足用户以下的需求：
 
 *   快速精准地部署应用程序
 
@@ -36,7 +36,7 @@ Kubernetes 是一款跨集群的 [专门为自动化部署、缩放、操作应
 
 *   **自动修正**: 自动布局、自动重启、自动复制、自动缩放
 
-Google公司于2014年启动了Kubernetes项目。Kubernetes是在[Google的长达15年的成规模的产品运行工作量的经验下][26]构建的, 结合了公司中最优秀的创意，并在社区中经历了反复地实践。
+Google 公司于2014年启动了 Kubernetes 项目。Kubernetes 是在[ Google 的长达15年的成规模的产品运行工作量的经验下][26]构建的, 结合了公司中最优秀的创意，并在社区中经历了反复地实践。
 
 ### 为什么选择容器?
 
@@ -44,82 +44,75 @@ Google公司于2014年启动了Kubernetes项目。Kubernetes是在[Google的长�
 
 ![为什么是容器?](https://d33wubrfki0l68.cloudfront.net/e7b766e0175f30ae37f7e0e349b87cfe2034a1ae/3e391/images/docs/why_containers.svg)
 
-
-The  _Old Way_  to deploy applications was to install the applications on a host using the operating system package manager. This had the disadvantage of entangling the applications’ executables, configuration, libraries, and lifecycles with each other and with the host OS. One could build immutable virtual-machine images in order to achieve predictable rollouts and rollbacks, but VMs are heavyweight and non-portable.
-
-The  _New Way_  is to deploy containers based on operating-system-level virtualization rather than hardware virtualization. These containers are isolated from each other and from the host: they have their own filesystems, they can’t see each others’ processes, and their computational resource usage can be bounded. They are easier to build than VMs, and because they are decoupled from the underlying infrastructure and from the host filesystem, they are portable across clouds and OS distributions.
-
-Because containers are small and fast, one application can be packed in each container image. This one-to-one application-to-image relationship unlocks the full benefits of containers. With containers, immutable container images can be created at build/release time rather than deployment time, since each application doesn’t need to be composed with the rest of the application stack, nor married to the production infrastructure environment. Generating container images at build/release time enables a consistent environment to be carried from development into production. Similarly, containers are vastly more transparent than VMs, which facilitates monitoring and management. This is especially true when the containers’ process lifecycles are managed by the infrastructure rather than hidden by a process supervisor inside the container. Finally, with a single application per container, managing the containers becomes tantamount to managing deployment of the application.
-
 程序部署的 _旧方法_ 是指，通过操作系统包管理器在主机上安装程序。这样做的坏处是，容易混淆程序之间以及程序和主机系统之间的可执行文件、配置文件、库、生命周期。为了达到精准展现和精准回撤，你可以搭建一台不可变的虚拟机映象。但是虚拟机体量往往过于庞大。
 
 容器部署的 _新方法_ 是基于操作系统级别的可视化，而非硬件可视化。容器彼此是孤立的，相对于主机也是独立的：它们有自己的文件系统，彼此之间不能看到对方的进程，分配到的计算资源都是有边界的。它们比虚拟机更容易搭建。并且由于和基础架构、主机文件系统是解耦的，它们可以在不同类型的云上或分布式OS上应用。
 
 正因为容器又小又快，每一个容器映象都可以打包装载一个程序。这种一对一的「程序 - 映象」联系带给了容器诸多便捷。有了容器，静态容器映象可以在编译/发布时期创建，而非部署时期。因此，每个应用不必再等待和整个应用栈其它部分进行整合，也不必和产品基础架构环境之间进行妥协。在编译/发布时期生成容器映象建立了一个持续地把开发转化为产品的环境。相似地，容器远比虚拟机更加透明，尤其在设备监控和管理上。这一点，在容器的进程生命周期被基础架构管理而非被容器内的进程监督器隐藏掉时，尤为显著。最终，随着每个容器内都装载了单一的程序，管理容器就等于管理或部署整个应用。
 
-Summary of container benefits:
+容器优势总结：
 
-*   **Agile application creation and deployment**: Increased ease and efficiency of container image creation compared to VM image use.
+*   **敏捷的应用创建与部署**: 相比虚拟机映象，容器映象的创建更简便、更高效。
 
-*   **Continuous development, integration, and deployment**: Provides for reliable and frequent container image build and deployment with quick and easy rollbacks (due to image immutability).
+*   **持续的开发，集成，以及部署**: 在快速回撤下提供可靠、高频的容器映象编译和部署（基于映象的不可变性）。
 
-*   **Dev and Ops separation of concerns**: Create application container images at build/release time rather than deployment time, thereby decoupling applications from infrastructure.
+*   **开发与运营的关注点分离**: 由于容器映象是在编译/发布期创建的，因此整个过程与基础架构解耦。
 
-*   **Environmental consistency across development, testing, and production**: Runs the same on a laptop as it does in the cloud.
+*   **跨开发、测试、产品阶段的环境稳定性**: 在笔记本电脑上的运行结果和在云上完全一致。
 
-*   **Cloud and OS distribution portability**: Runs on Ubuntu, RHEL, CoreOS, on-prem, Google Container Engine, and anywhere else.
+*   **云平台与分布式OS平台高适应性**: 可以在Ubuntu， RHEL， CoreOS， on-prem， Google 容器引擎，乃至其它各类平台上运行。
 
-*   **Application-centric management**: Raises the level of abstraction from running an OS on virtual hardware to run an application on an OS using logical resources.
+*   **以应用为核心的管理**: 从在虚拟硬件上运行系统，到在利用逻辑资源的系统上运行程序，从而提升了系统的抽象层级。
 
-*   **Loosely coupled, distributed, elastic, liberated [micro-services][5]**: Applications are broken into smaller, independent pieces and can be deployed and managed dynamically – not a fat monolithic stack running on one big single-purpose machine.
+*   **松散耦联、分布式、弹性、无拘束的 [微服务][5]**: 整个应用被分散为更小更独立的模块，并且这些模块可以被动态地部署和管理，而不再是存储在大型单用途机器上的臃肿的单一应用栈。
 
-*   **Resource isolation**: Predictable application performance.
+*   **资源隔离**: 增加程序表现的可预见性。
 
-*   **Resource utilization**: High efficiency and density.
+*   **资源利用率**: 高效且密集。
 
-#### Why do I need Kubernetes and what can it do?
+#### 为什么我需要Kubernetes，它能做什么?
 
-At a minimum, Kubernetes can schedule and run application containers on clusters of physical or virtual machines. However, Kubernetes also allows developers to ‘cut the cord’ to physical and virtual machines, moving from a **host-centric** infrastructure to a **container-centric** infrastructure, which provides the full advantages and benefits inherent to containers. Kubernetes provides the infrastructure to build a truly **container-centric** development environment.
+至少，Kubernetes 能在实体机或虚拟机集群上安排和运行程序容器。而且，Kubernetes 也能让开发者斩断联系着实体机或虚拟机的「锁链」，从 **主机为中心** 的架构跃至 **容器为中心** 的架构。该架构最终提供给开发者诸多内在的优势和便利。Kubernetes 提供给基础架构以真正的 **容器为中心** 的开发环境。
 
-Kubernetes satisfies a number of common needs of applications running in production, such as:
+Kubernetes 满足了一系列产品内运行程序的普通需求，诸如：
 
-*   [Co-locating helper processes][9], facilitating composite applications and preserving the one-application-per-container model
+*   [共用地址的帮助进程][9]，协助应用程序整合，维护一对一「程序 - 映象」模型。
 
-*   [Mounting storage systems][10]
+*   [装备存储系统][10]
 
-*   [Distributing secrets][11]
+*   [分布机密][11]
 
-*   [Checking application health][12]
+*   [检查程序状态][12]
 
-*   [Replicating application instances][13]
+*   [复制应用实例][13]
 
-*   [Using Horizontal Pod Autoscaling][14]
+*   [使用横向荚式自动缩放][14]
 
-*   [Naming and discovering][15]
+*   [命名与发现][15]
 
-*   [Balancing loads][16]
+*   [负载均衡][16]
 
-*   [Rolling updates][17]
+*   [滚动更新][17]
 
-*   [Monitoring resources][18]
+*   [资源监控][18]
 
-*   [Accessing and ingesting logs][19]
+*   [访问并读取日志][19]
 
-*   [Debugging applications][20]
+*   [程序调试][20]
 
-*   [Providing authentication and authorization][21]
+*   [提供验证与授权][21]
 
-This provides the simplicity of Platform as a Service (PaaS) with the flexibility of Infrastructure as a Service (IaaS), and facilitates portability across infrastructure providers.
+以上这些共同组成了一套精简的平台即服务 (PaaS) 系统以及相关的灵活的基础架构即服务 (IaaS) 系统。此外还协助跨平台服务提供商增强了适用性。
 
-#### How is Kubernetes a platform?
+#### Kubernetes是一个什么样的平台?
 
-Even though Kubernetes provides a lot of functionality, there are always new scenarios that would benefit from new features. Application-specific workflows can be streamlined to accelerate developer velocity. Ad hoc orchestration that is acceptable initially often requires robust automation at scale. This is why Kubernetes was also designed to serve as a platform for building an ecosystem of components and tools to make it easier to deploy, scale, and manage applications.
+虽然 Kubernetes 提供了非常多的功能，总会有更多受益于新特性的新场景出现。针对特定应用的工作流程，能被流水线化以加速开发速度。专属设备组合在初始状态就可以被系统接受，这往往需要系统拥有健壮的自动缩放功能。这也是为什么 Kubernetes 同样被设计为以构造为了更方便地部署、缩放、管理程序为目的的工具组生态系统的平台。
 
-[Labels][28] empower users to organize their resources however they please. [Annotations][29]enable users to decorate resources with custom information to facilitate their workflows and provide an easy way for management tools to checkpoint state.
+[标签][28] 可以让用户按照自己的喜好组织资源。 [注释][29]让用户在资源里添加客户信息，以优化工作流程、简化管理工具、标示调试状态。
 
-Additionally, the [Kubernetes control plane][30] is built upon the same [APIs][31] that are available to developers and users. Users can write their own controllers, such as [schedulers][32], with [their own APIs][33] that can be targeted by a general-purpose [command-line tool][34].
+此外，[Kubernetes 控制面板][30]由同一[API][31]搭建，开发者和用户都可以使用。用户可以编写自己的控制器，比如[schedulers][32]，使用[自己的 API][33]可以被通用的[命令行工具][34]识别。
 
-This [design][35] has enabled a number of other systems to build atop Kubernetes.
+这种 [设计][35] 让其它系统也能经由 Kubernetes 构建。
 
 #### What Kubernetes is not
 
