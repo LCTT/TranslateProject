@@ -114,42 +114,42 @@ Kubernetes 满足了一系列产品内运行程序的普通需求，诸如：
 
 这种 [设计][35] 让其它系统也能经由 Kubernetes 构建。
 
-#### What Kubernetes is not
+#### Kubernetes不是什么？
 
-Kubernetes is not a traditional, all-inclusive PaaS (Platform as a Service) system. It preserves user choice where it is important.
+Kubernetes 不是传统的，全包容的平台即服务（Paas）系统。关键时刻，它尊重用户的选择。
 
 Kubernetes:
 
-*   Does not limit the types of applications supported. It does not dictate application frameworks (e.g., [Wildfly][22]), restrict the set of supported language runtimes (for example, Java, Python, Ruby), cater to only [12-factor applications][23], nor distinguish  _apps_  from  _services_ . Kubernetes aims to support an extremely diverse variety of workloads, including stateless, stateful, and data-processing workloads. If an application can run in a container, it should run great on Kubernetes.
+*   并不限制支持的程序类型。它并不检测程序的框架 (例如， [Wildfly][22])，也不限制运行时支持的语言集合 (比如， Java， Python， Ruby)，也不仅仅迎合 [12因子应用程序][23]，也不区分 _应用_ 与 _服务_ 。Kubernetes 旨在支持尽可能多种类的工作负载，包括无状态的，有状态的，数据处理的工作负载。如果某程序在容器内运行良好，它在 Kubernetes 上只可能运行地更好。
 
-*   Does not provide middleware (e.g., message buses), data-processing frameworks (for example, Spark), databases (e.g., mysql), nor cluster storage systems (e.g., Ceph) as built-in services. Such applications run on Kubernetes.
+*   不提供中间件（例如消息总线），数据处理框架（例如Spark），数据库（例如mysql），也不提供集群存储系统（例如Ceph）和内置服务。但是以上程序都可以在 Kubernetes 上运行。
 
-*   Does not have a click-to-deploy service marketplace.
+*   没有「点击即部署」这类营销策略存在。
 
-*   Does not deploy source code and does not build your application. Continuous Integration (CI) workflow is an area where different users and projects have their own requirements and preferences, so it supports layering CI workflows on Kubernetes but doesn’t dictate how layering should work.
+*   不部署源代码，也不编译程序。持续集成 (CI) 工作流程是不同的用户和项目拥有其各自不同的需求和表现的地方。所以，Kubernetes 支持分层 CI 工作流程，却并不监听每层的工作状态。
 
-*   Allows users to choose their logging, monitoring, and alerting systems. (It provides some integrations as proof of concept.)
+*   允许用户自行选择日志、监控、预警系统。（ Kubernetes 提供一些集成工具以保证这一概念得到执行。）
 
-*   Does not provide nor mandate a comprehensive application configuration language/system (for example, [jsonnet][24]).
+*   不提供也不管理一套完整的程序配置语言/系统（例如[jsonnet][24]）。
 
-*   Does not provide nor adopt any comprehensive machine configuration, maintenance, management, or self-healing systems.
+*   不提供也不配合任何完整的机器配置、维护、管理、自我修复系统。
 
-On the other hand, a number of PaaS systems run  _on_  Kubernetes, such as [Openshift][36], [Deis][37], and [Eldarion][38]. You can also roll your own custom PaaS, integrate with a CI system of your choice, or use only Kubernetes by deploying your container images on Kubernetes.
+另一方面说，一系列 PaaS 系统运行  _在_  Kubernetes 上，诸如 [Openshift][36]， [Deis][37]， 以及 [Eldarion][38]。你也可以开发你的自定义 PaaS，整合上你自选的 CI 系统，或者只在 Kubernetes 上部署容器映象。
 
-Since Kubernetes operates at the application level rather than at the hardware level, it provides some generally applicable features common to PaaS offerings, such as deployment, scaling, load balancing, logging, and monitoring. However, Kubernetes is not monolithic, and these default solutions are optional and pluggable.
+而且， Kubernetes 不只是一个 _编排系统_ 。其实，它解决了编排的需求。 _编排_ 的技术定义是，对如下工作流程的执行：先做A，再做B，最后做C。相反地， Kubernetes 囊括了一系列独立、可组合的控制进程，它们持续驱动当前状态向需求的状态发展。从A到C的具体过程并不唯一。这将使系统更易用、更高效、更健壮、复用性、扩展性更强。
 
-Additionally, Kubernetes is not a mere  _orchestration system_ . In fact, it eliminates the need for orchestration. The technical definition of  _orchestration_  is execution of a defined workflow: first do A, then B, then C. In contrast, Kubernetes is comprised of a set of independent, composable control processes that continuously drive the current state towards the provided desired state. It shouldn’t matter how you get from A to C. Centralized control is also not required; the approach is more akin to  _choreography_ . This results in a system that is easier to use and more powerful, robust, resilient, and extensible.
+既然 Kubernetes 运行在应用层而非硬件层，它提供一些通用的应用特性，与一般 PaaS 提供的类似，如部署、缩放、负载均衡、日志、监控。然而， Kubernetes 并非铁板一块，这些默认的解决方案是可供选择，可自行增加或删除的。
 
-#### What does  _Kubernetes_  mean? K8s?
+#### Kubernetes这个单词的含义？k8s?
 
-The name **Kubernetes** originates from Greek, meaning  _helmsman_  or  _pilot_ , and is the root of  _governor_  and [cybernetic][39].  _K8s_  is an abbreviation derived by replacing the 8 letters “ubernete” with “8”.
+**Kubernetes** 这个单词来自于希腊语，含义是 _舵手_ 或 _领航员_ 。它的词根有 _governor_ 和 [cybernetic][39]。 _K8s_ 是它的缩写，用8字替代了「ubernete」。
 
 --------------------------------------------------------------------------------
 
 via: https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/
 
 作者：[kubernetes.io][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/songsuhang00)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
