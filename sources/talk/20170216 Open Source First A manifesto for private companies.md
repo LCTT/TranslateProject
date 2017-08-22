@@ -1,3 +1,5 @@
+translating----geekpi
+
 Open Source First: A manifesto for private companies
 ============================================================
 
