@@ -2,8 +2,7 @@
 Beyond public key encryption
 ============================================================
 
-关于应用密码学最令人扼腕也最引人入胜的一件事就是我们在现实中实际使用的密码学是多么的少。
-![6689264031_4c7516b3e1_z](https://matthewdgreen.files.wordpress.com/2017/07/6689264031_4c7516b3e1_z.jpg?w=300&h=200) _ This is not to say that cryptography isn’t widely used in industry — it is. Rather, what I mean is that cryptographic researchers have developed so many useful technologies, and yet industry on a day to day basis barely uses any of them. In fact, with a few minor exceptions, the vast majority of the cryptography we use was settled by the early-2000s.*
+关于应用密码学最令人扼腕也最引人入胜的一件事就是我们在现实中实际使用的密码学是多么的少。这并不是指密码学在业界没有被广泛的应用--事实上它的应用很广泛。我想指出的是，迄今为止密码学研究人员开发了如此多实用的技术，但工业界平常使用的却少之又少。实际上，除了少数个别情况，我们现今使用的绝大部分密码学技术是在21世纪初就已经存在的技术。* ![6689264031_4c7516b3e1_z](https://matthewdgreen.files.wordpress.com/2017/07/6689264031_4c7516b3e1_z.jpg?w=300&h=200)
 
 Most people don’t sweat this, but as a cryptographer who works on the boundary of research and deployed cryptography it makes me unhappy. So while I can’t solve the problem entirely, what I  _can_  do is talk about some of these newer technologies. And over the course of this summer that’s what I intend to do: talk. Specifically, in the next few weeks I’m going to write a series of posts that describe some of the advanced cryptography that we  _don’t_  generally see used.
 
