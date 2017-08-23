@@ -1,4 +1,4 @@
-Writing a Time Series Database from Scratch
+Translating by Torival Writing a Time Series Database from Scratch
 ============================================================
 
 
