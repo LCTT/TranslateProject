@@ -2,9 +2,9 @@
 Beyond public key encryption
 ============================================================
 
-关于应用密码学最令人扼腕也最引人入胜的一件事就是_我们在现实中实际使用的密码学是多么的少_。这并不是指密码学在业界没有被广泛的应用--事实上它的应用很广泛。我想指出的是，迄今为止密码学研究人员开发了如此多实用的技术，但工业界平常使用的却少之又少。实际上，除了少数个别情况，我们现今使用的绝大部分密码学技术是在 21 世纪初就已经存在的技术。* ![6689264031_4c7516b3e1_z](https://matthewdgreen.files.wordpress.com/2017/07/6689264031_4c7516b3e1_z.jpg?w=300&h=200)
+关于应用密码学最令人扼腕也最引人入胜的一件事就是*我们在现实中实际使用的密码学是多么的少*。这并不是指密码学在业界没有被广泛的应用--事实上它的应用很广泛。我想指出的是，迄今为止密码学研究人员开发了如此多实用的技术，但工业界平常使用的却少之又少。实际上，除了少数个别情况，我们现今使用的绝大部分密码学技术是在 21 世纪初就已经存在的技术。* ![6689264031_4c7516b3e1_z](https://matthewdgreen.files.wordpress.com/2017/07/6689264031_4c7516b3e1_z.jpg?w=300&h=200)
 
-大多数人并不在意这点，但作为一个工作在研究与应用之交领域的密码学家，这让我感到不开心。我不能完全解决这个问题，我能做的，就是谈论一部分这些新的技术。在这个夏天里，这就是我想要做的：谈论。具体来说，在接下来的几个星期里，我将会写一系列讲述这些前沿而又没被观察到正在被广泛使用的密码学技术的文章。
+大多数人并不在意这点，但作为一个工作在研究与应用之交领域的密码学家，这让我感到不开心。我不能完全解决这个问题，我*能*做的，就是谈论一部分这些新的技术。在这个夏天里，这就是我想要做的：谈论。具体来说，在接下来的几个星期里，我将会写一系列讲述这些前沿而又没被观察到正在被广泛使用的密码学技术的文章。
 
 今天我要从一个非常简单的问题开始：在公钥加密之外还有什么（可用的加密技术）？具体地说，我将讨论少量过去20年里开发出的技术，它们让我们可以走出传统的公钥加密的概念的局限。
 
@@ -12,7 +12,7 @@ Beyond public key encryption
 
 ### 基于身份加密
 
-在 20 世纪 80 年代中期，以为名叫 Adi Shamir 的密码学家提出了一个[全新的想法][3]。这个想法，简单来说，就是_摒弃公钥_。
+在 20 世纪 80 年代中期，以为名叫 Adi Shamir 的密码学家提出了一个[全新的想法][3]。这个想法，简单来说，就是*摒弃公钥*。
 
 To understand where Shamir was coming from, it helps to understand a bit about public key encryption. You see, prior to the invention of public key crypto, all cryptography involved secret keys. Dealing with such keys was a huge drag. Before you could communicate securely, you needed to exchange a secret with your partner. This process was fraught with difficulty and didn’t scale well.
 
