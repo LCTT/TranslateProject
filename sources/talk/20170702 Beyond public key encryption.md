@@ -14,13 +14,13 @@ Beyond public key encryption
 
 在 20 世纪 80 年代中期，以为名叫 Adi Shamir 的密码学家提出了一个[全新的想法][3]。这个想法，简单来说，就是*摒弃公钥*。
 
-To understand where Shamir was coming from, it helps to understand a bit about public key encryption. You see, prior to the invention of public key crypto, all cryptography involved secret keys. Dealing with such keys was a huge drag. Before you could communicate securely, you needed to exchange a secret with your partner. This process was fraught with difficulty and didn’t scale well.
+为了理解 Shamir 的成果从何而来，我们最好先了解一些关于公钥加密的东西。在公钥加密的发明之前，所有的加密技术都牵涉到私钥。处理这样的密钥是相当累赘的工作。在你可以安全地通信之前，你需要和你的伙伴交换密钥。这一过程非常的困难，而且当通信规模增大时不能很好地运作。
 
-Public key encryption (beginning with [Diffie-Hellman][4] and Shamir’s [RSA][5]cryptosystem) hugely revolutionized cryptography by dramatically simplifying this key distribution process. Rather than sharing secret keys, users could now transmit their  _public_  key to other parties. This public key allowed the recipient to encrypt to you (or verify your signature) but it could not be used to perform the corresponding decryption (or signature generation) operations. That part would be done with a secret key you kept to yourself.
+公钥加密（由 [Diffie-Hellman][4] 和 Shamir 的 [RSA][5] 密码系统发展而来的）通过极大地简化密钥分配的过程给密码学带来了革命性的改变。比起分享私钥，用户现在只要将他们的*公共*密钥发送给其他使用者。有了公共密钥，（密钥的）接收者可以加密给你的信息（或者验证你的数字签名），但是又不能用密钥来进行解密（或者产生数字签名）。这一部分要通过你自己保存的私有密钥来完成。
 
-While the use of public keys improved many aspects of using cryptography, it also gave rise to a set of new challenges. In practice, it turns out that having public keys is only half the battle — people still need to use distribute them securely.
+尽管公钥的使用改进了密码学应用的许多方面，它也带来了一系列新的挑战。从实践中的情况来看，拥有公钥往往只是成功的一半--人们通常还需要安全地分发这些公钥。
 
-For example, imagine that I want to send you a PGP-encrypted email. Before I can do this, I need to obtain a copy of your public key. How do I get this? Obviously we could meet in person and exchange that key on physical media — but nobody wants to do this. It would much more desirable to obtain your public key electronically. In practice this means either  _(1)_  we have to exchange public keys by email, or  _(2)_  I have to obtain your key from a third piece of infrastructure, such as a [website][6] or [key server][7]. And now we come to the  problem: if that email or key server is  _untrustworthy _ (or simply allows anyone to [upload a key in y][8][our name][9]),I might end up downloading a malicious party’s key by accident. When I send a message to “you”, I’d actually be encrypting it to Mallory.
+举一个例子，想象一下我想要给你发送一封 PGP 加密的电子邮件。在我可以这么做之前，我需要获得一份你的公钥的拷贝。我要怎么获得呢？显然我们可以亲自会面，然后当面交换这个密钥--但（由于肉体会面的麻烦）没有人愿意这样做。通过电子的方式获得你的公钥会更理想。在现实中，这意味着要么*（1）* 我们必须通过电子邮件交换公钥， 要么*（2）* 我必须通过某个第三方基础设施，比如一个[网站][6]或者[密钥服务器][7]，来获得你的密钥。现在我们面临这样的问题：如果电子邮件或密钥服务器是*不值得信赖的*（或者单纯地允许任何人以[你的名义][9][上传密钥][8]），我就可能会意外下载恶意用户的密钥。当我给“你”发送一条消息的时候，也许我实际上正在将消息加密发送给 Mallory.
 
 ![f64f315ec47f0b041e3d881177039414](https://matthewdgreen.files.wordpress.com/2017/07/f64f315ec47f0b041e3d881177039414.jpg?w=190&h=100)
 Mallory.
