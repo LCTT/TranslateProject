@@ -1,4 +1,4 @@
-cygmris is translating
+Snapcrafter is translating
 
 OpenStack in a Snap
 ============================================================
