@@ -2,17 +2,17 @@
 Beyond public key encryption
 ============================================================
 
-关于应用密码学最令人扼腕也最引人入胜的一件事就是我们在现实中实际使用的密码学是多么的少。这并不是指密码学在业界没有被广泛的应用--事实上它的应用很广泛。我想指出的是，迄今为止密码学研究人员开发了如此多实用的技术，但工业界平常使用的却少之又少。实际上，除了少数个别情况，我们现今使用的绝大部分密码学技术是在21世纪初就已经存在的技术。* ![6689264031_4c7516b3e1_z](https://matthewdgreen.files.wordpress.com/2017/07/6689264031_4c7516b3e1_z.jpg?w=300&h=200)
+关于应用密码学最令人扼腕也最引人入胜的一件事就是_我们在现实中实际使用的密码学是多么的少_。这并不是指密码学在业界没有被广泛的应用--事实上它的应用很广泛。我想指出的是，迄今为止密码学研究人员开发了如此多实用的技术，但工业界平常使用的却少之又少。实际上，除了少数个别情况，我们现今使用的绝大部分密码学技术是在 21 世纪初就已经存在的技术。* ![6689264031_4c7516b3e1_z](https://matthewdgreen.files.wordpress.com/2017/07/6689264031_4c7516b3e1_z.jpg?w=300&h=200)
 
-Most people don’t sweat this, but as a cryptographer who works on the boundary of research and deployed cryptography it makes me unhappy. So while I can’t solve the problem entirely, what I  _can_  do is talk about some of these newer technologies. And over the course of this summer that’s what I intend to do: talk. Specifically, in the next few weeks I’m going to write a series of posts that describe some of the advanced cryptography that we  _don’t_  generally see used.
+大多数人并不在意这点，但作为一个工作在研究与应用之交领域的密码学家，这让我感到不开心。我不能完全解决这个问题，我能做的，就是谈论一部分这些新的技术。在这个夏天里，这就是我想要做的：谈论。具体来说，在接下来的几个星期里，我将会写一系列讲述这些前沿而又没被观察到正在被广泛使用的密码学技术的文章。
 
-Today I’m going to start with a very simple question: what lies beyond public key cryptography? Specifically, I’m going to talk about a handful of technologies that were developed in the past 20 years, each of which allows us to go beyond the traditional notion of public keys.
+今天我要从一个非常简单的问题开始：在公钥加密之外还有什么（可用的加密技术）？具体地说，我将讨论少量过去20年里开发出的技术，它们让我们可以走出传统的公钥加密的概念的局限。
 
-This is a wonky post, but it won’t be mathematically-intense. For actual definitions of the schemes, I’ll provide links to the original papers, and references to cover some of the background. The point here is to explain what these new schemes do — and how they can be useful in practice.
+这是一篇专业的技术文章，但是不会有太困难的数学内容。对于涉及方案的实际定义，我会提供一些原论文的链接，以及一些背景知识的参考资料。在这里，我们的关注点是解释这些方案在做什么--以及他们在现实中可以怎样被应用。
 
-### Identity Based Cryptography
+### 基于身份加密
 
-In the mid-1980s, a cryptographer named Adi Shamir proposed a [radical new idea.][3]The idea, put simply, was  _to get rid of public keys_ .
+在 20 世纪 80 年代中期，以为名叫 Adi Shamir 的密码学家提出了一个[全新的想法][3]。这个想法，简单来说，就是_摒弃公钥_。
 
 To understand where Shamir was coming from, it helps to understand a bit about public key encryption. You see, prior to the invention of public key crypto, all cryptography involved secret keys. Dealing with such keys was a huge drag. Before you could communicate securely, you needed to exchange a secret with your partner. This process was fraught with difficulty and didn’t scale well.
 
