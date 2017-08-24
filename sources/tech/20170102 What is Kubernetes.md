@@ -1,4 +1,4 @@
-### What is Kubernetes?
+### 【翻译中@haoqixu】What is Kubernetes?
 
 Kubernetes, or k8s ( _k, 8 characters, s...get it?_ ), or “kube” if you’re into brevity, is an open source platform that automates [Linux container][3] operations. It eliminates many of the manual processes involved in deploying and scaling containerized applications. In other words, you can cluster together groups of hosts running Linux containers, and Kubernetes helps you easily and efficiently manage those clusters. These clusters can span hosts across [public][4], [private][5], or hybrid clouds.
 
