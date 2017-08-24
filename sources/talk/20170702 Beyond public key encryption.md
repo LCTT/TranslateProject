@@ -2,67 +2,67 @@
 Beyond public key encryption
 ============================================================
 
-关于应用密码学最令人扼腕也最引人入胜的一件事就是*我们在现实中实际使用的密码学是多么的少*。这并不是指密码学在业界没有被广泛的应用--事实上它的应用很广泛。我想指出的是，迄今为止密码学研究人员开发了如此多实用的技术，但工业界平常使用的却少之又少。实际上，除了少数个别情况，我们现今使用的绝大部分密码学技术是在 21 世纪初就已经存在的技术。* ![6689264031_4c7516b3e1_z](https://matthewdgreen.files.wordpress.com/2017/07/6689264031_4c7516b3e1_z.jpg?w=300&h=200)
+关于应用密码学最令人扼腕也最引人入胜的一件事就是*我们在现实中实际使用的密码学是多么的少*。这并不是指密码学在业界没有被广泛的应用————事实上它的应用很广泛。我想指出的是，迄今为止密码学研究人员开发了如此多实用的技术，但工业界平常使用的却少之又少。实际上，除了少数个别情况，我们现今使用的绝大部分密码学技术是在 21 世纪初*就已经存在的技术。![6689264031_4c7516b3e1_z](https://matthewdgreen.files.wordpress.com/2017/07/6689264031_4c7516b3e1_z.jpg?w=300&h=200)
 
 大多数人并不在意这点，但作为一个工作在研究与应用之交领域的密码学家，这让我感到不开心。我不能完全解决这个问题，我*能*做的，就是谈论一部分这些新的技术。在这个夏天里，这就是我想要做的：谈论。具体来说，在接下来的几个星期里，我将会写一系列讲述这些前沿而又没被观察到正在被广泛使用的密码学技术的文章。
 
 今天我要从一个非常简单的问题开始：在公钥加密之外还有什么（可用的加密技术）？具体地说，我将讨论少量过去20年里开发出的技术，它们让我们可以走出传统的公钥加密的概念的局限。
 
-这是一篇专业的技术文章，但是不会有太困难的数学内容。对于涉及方案的实际定义，我会提供一些原论文的链接，以及一些背景知识的参考资料。在这里，我们的关注点是解释这些方案在做什么--以及他们在现实中可以怎样被应用。
+这是一篇专业的技术文章，但是不会有太困难的数学内容。对于涉及方案的实际定义，我会提供一些原论文的链接，以及一些背景知识的参考资料。在这里，我们的关注点是解释这些方案在做什么————以及他们在现实中可以怎样被应用。
 
 ### 基于身份加密
 
-在 20 世纪 80 年代中期，以为名叫 Adi Shamir 的密码学家提出了一个[全新的想法][3]。这个想法，简单来说，就是*摒弃公钥*。
+在 20 世纪 80 年代中期，以为名叫 Adi Shamir 的密码学家提出了一个 [全新的想法][3] 。这个想法，简单来说，就是*摒弃公钥*。
 
 为了理解 Shamir 的成果从何而来，我们最好先了解一些关于公钥加密的东西。在公钥加密的发明之前，所有的加密技术都牵涉到私钥。处理这样的密钥是相当累赘的工作。在你可以安全地通信之前，你需要和你的伙伴交换密钥。这一过程非常的困难，而且当通信规模增大时不能很好地运作。
 
 公钥加密（由 [Diffie-Hellman][4] 和 Shamir 的 [RSA][5] 密码系统发展而来的）通过极大地简化密钥分配的过程给密码学带来了革命性的改变。比起分享私钥，用户现在只要将他们的*公共*密钥发送给其他使用者。有了公共密钥，（密钥的）接收者可以加密给你的信息（或者验证你的数字签名），但是又不能用密钥来进行解密（或者产生数字签名）。这一部分要通过你自己保存的私有密钥来完成。
 
-尽管公钥的使用改进了密码学应用的许多方面，它也带来了一系列新的挑战。从实践中的情况来看，拥有公钥往往只是成功的一半--人们通常还需要安全地分发这些公钥。
+尽管公钥的使用改进了密码学应用的许多方面，它也带来了一系列新的挑战。从实践中的情况来看，拥有公钥往往只是成功的一半————人们通常还需要安全地分发这些公钥。
 
-举一个例子，想象一下我想要给你发送一封 PGP 加密的电子邮件。在我可以这么做之前，我需要获得一份你的公钥的拷贝。我要怎么获得呢？显然我们可以亲自会面，然后当面交换这个密钥--但（由于肉体会面的麻烦）没有人愿意这样做。通过电子的方式获得你的公钥会更理想。在现实中，这意味着要么*（1）* 我们必须通过电子邮件交换公钥， 要么*（2）* 我必须通过某个第三方基础设施，比如一个[网站][6]或者[密钥服务器][7]，来获得你的密钥。现在我们面临这样的问题：如果电子邮件或密钥服务器是*不值得信赖的*（或者单纯地允许任何人以[你的名义][9][上传密钥][8]），我就可能会意外下载恶意用户的密钥。当我给“你”发送一条消息的时候，也许我实际上正在将消息加密发送给 Mallory.
+举一个例子，想象一下我想要给你发送一封 PGP 加密的电子邮件。在我可以这么做之前，我需要获得一份你的公钥的拷贝。我要怎么获得呢？显然我们可以亲自会面，然后当面交换这个密钥————但（由于身体会面的麻烦）没有人愿意这样做。通过电子的方式获得你的公钥会更理想。在现实中，这意味着要么*（1）* 我们必须通过电子邮件交换公钥， 要么*（2）* 我必须通过某个第三方基础设施，比如一个 [网站][6] 或者 [密钥服务器][7] ，来获得你的密钥。现在我们面临这样的问题：如果电子邮件或密钥服务器是*不值得信赖的*（或者单纯地允许任何人以 [你的名义][9] [上传密钥][8] ），我就可能会意外下载恶意用户的密钥。当我给“你”发送一条消息的时候，也许我实际上正在将消息加密发送给 Mallory.
 
 ![f64f315ec47f0b041e3d881177039414](https://matthewdgreen.files.wordpress.com/2017/07/f64f315ec47f0b041e3d881177039414.jpg?w=190&h=100)
 Mallory.
 
-Solving this problem — of exchanging public keys and verifying their provenance — has motivated a  _huge_ amount of practical cryptographic engineering, including the entire [web PKI.][10] In most cases, these systems work well. But Shamir wasn’t satisfied. What if, he asked, we could do it better? More specifically, he asked:  _could we replace those pesky public keys with something better?_ 
+解决这个问题————关于交换公钥和验证它们的来源的问题————激励了*大量的*实践密码工程，包括整个 [web PKI][10] (网络公钥基础设施)。在大部分情况下，这些系统非常奏效。但是 Shamir 并不满意。如果，他这样问道，我们能做得更好会怎样？更具体地说，他这样思考：*我们是否可以用一些更好的技术去替换那些麻烦的公钥？*
 
-Shamir’s idea was exciting. What he proposed was a new form of public key cryptography in which the user’s “public key” could simply be their  _identity_ . This identity could be a name (e.g., “Matt Green”) or something more precise like an email address. Actually, it didn’t realy matter. What did matter was that the public key would be some arbitrary string — and  _not_  a big meaningless jumble of characters like “7cN5K4pspQy3ExZV43F6pQ6nEKiQVg6sBkYPg1FG56Not”.
+Shamir 的想法非常令人激动。他提出的是一个新的公钥加密形式，在这个方案中用户的“公钥”可以就是他们的*身份*。这个身份可以是一个名字（比如“Matt Green”）或者某些诸如电子邮箱地址这样更准确的信息。事实上，“身份”是什么并不重要。重要的是这个公钥可以是一个任意的字符串————而*不是*一大串诸如“ 7cN5K4pspQy3ExZV43F6pQ6nEKiQVg6sBkYPg1FG56Not ”这样无意义的字符组合。
 
-Of course, using an arbitrary string as a public key raises a big problem. Meaningful identities sound great — but I don’t own them. If my public key is “Matt Green”, how do I get the corresponding private key? And if _I_  can get out that private key, what stops  _some other Matt Green_  from doing the same, and thus reading my messages? And ok, now that I think about this, what stops some random person who  _isn’t_  named Matt Green from obtaining it? Yikes. We’re headed straight into [Zooko’s triangle][11].
+当然，使用任意字符串作为公钥会造成一个严重的问题。有意义的身份听起来很棒————但我们无法拥有它们。如果我的公钥是 “Matt Green” ，我要怎么过的对应的私钥。如果*我*能获得那个私钥，又由谁来阻止*其他的某些 Matt Green* 获得同样的私钥，进而读取我的消息。进而考虑一下这个，谁来阻止任意的某个*不是*名为 Matt Green 的人来获得它。啊，我们现在陷入了 [Zooko 三难困境][11] 。
 
-Shamir’s idea thus requires a bit more finesse. Rather than expecting identities to be global, he proposed a special server called a “key generation authority” that would be responsible for generating the private keys. At setup time, this authority would generate a single  _master public key (MPK), _ which it would publish to the world. If you wanted to encrypt a message to “Matt Green” (or verify my signature), then you could do so using my identity and the single MPK of an authority we’d both agree to use. To  _decrypt _ that message (or sign one), I would have to visit the same key authority and ask for a copy of my secret key. The key authority would compute my key based on a  _master secret key (MSK)_ , which it would keep very secret.
+Shamir 的想法因此要求稍微更多一点的手段。相比期望身份可以全世界范围使用，他提出了一个名为“密钥生成机构”的特殊服务器，负责产生私钥。在设立初期，这个机构会产生一个*最高公共密钥（MPK）*，这个公钥将会向全世界公布。如果你想要加密一条消息给“Matt Green”（或者验证我的签名），你可以用我的身份和我们达成一致使用的权威机构的唯一 MPK 来加密。要*解密*这则消息（或者制作签名），我需要访问同一个密钥机构，然后请求一份我的密钥的拷贝。密钥机构将会基于一个秘密保存的 *最高私有密钥（MSK）*来计算我的密钥。
 
-With all algorithms and players specified, whole system looks like this:
+加上上述所有的算法和参与者，整个系统看起来是这样的：
 
 ![IBE](https://matthewdgreen.files.wordpress.com/2017/07/ibe1.png?w=700)
-Overview of an Identity-Based Encryption (IBE) system. The Setup algorithm of the Key Generation Authority generates the master public key (MPK) and master secret key (MSK). The authority can use the Extract algorithm to derive the secret key corresponding to a specific ID. The encryptor (left) encrypts using only the identity and MPK. The recipient requests the secret key for her identity, and then uses it to decrypt. (Icons by [Eugen Belyakoff][1])
+一个 基于身份加密（IBE）系统的概览。密钥生成机构的 Setup 算法产生最高公共密钥（MPK）和最高私有密钥（MSK）。机构可以使用 Extract 算法来根据指定的 ID 生成对应的私钥。加密器（左）仅使用身份和 MPK 来加密。消息的接受者请求对应她身份的私钥，然后用这个私钥解密。（图标由 [Eugen Belyakoff][1] 制作）
 
-This design has some important advantages — and more than a few obvious drawbacks. On the plus side, it removes the need for any key exchange  _at all_  with the person you’re sending the message to. Once you’ve chosen a master key authority (and downloaded its MPK), you can encrypt to anyone in the entire world. Even cooler: at the time you encrypt,  _your recipient doesn’t even need to have contacted the key authority yet_ . She can obtain her secret key  _after_  I send her a message.
+这个设计有一些重要的优点————并且胜过少数明显的缺点。在好的方面，它*完全*摆脱了任何和你发送消息的对象进行密钥交换的必要。一旦你选择了一个主密钥机构（然后下载了它的 MPK）,你就可以加密给整个世界上任何一个人的消息。甚至更酷炫地，在你加密的时候，*你的通讯对象甚至还不需要联系密钥机构*。她可以在你给她发送消息*之后*再取得她的私钥。
 
-Of course, this “feature” is also a bug. Because the key authority generates all the secret keys, it has an awful lot of power. A dishonest authority could easily generate your secret key and decrypt your messages. The polite way to say this is that standard IBE systems effectively “bake in” [key escrow][12].**
+当然，这个“特性”也同时是一个漏洞。因为密钥机构产生所有的私钥，它拥有相当大权力。一个不诚实的机构可以轻易生成你的私钥然后解密你的消息。用更得体的方式来说就是标准的 IBE 系统有效地“包含” [密钥托管机制][12]。**
 
-### Putting the “E” in IBE
+### 基于身份加密（IBE）中的“加密（E）”
 
-All of these ideas and more were laid out by Shamir in his 1984 paper. There was just one small problem: Shamir could only figure out half the problem.
+所有这些想法和额外的思考都是 Shamir 在他 1984 年的论文中提出来的。其中有一个小问题：Shamir 只能解决问题的一半。
 
-Specifically, Shamir’s proposed a scheme for  _identity-based signature_  (IBS) — a signature scheme where the public verification key is an identity, but the signing key is generated by the key authority. Try as he might, he could not find a solution to the problem of building identity-based _ encryption _ (IBE). This was left as an open problem.***
+具体地说，Shamir 提出了一个*基于身份签名（IBS）*的方案————一个公共验证密钥是身份，而签名密钥由密钥机构生成的签名方案。他尽力尝试了，但仍然不能找到一个简历基于身份*加密*的解决方案。这成为了一个公开的问题。***
 
-It would take more than 16 years before someone answered Shamir’s challenge. Surprisingly, when the answer came it came not once  _but three times_ .
+直到有人能解决 Shamir 的难题还有 16 年。令人惊讶的是，当回答出现的时候，它出现了不只一次，*而是三次*。
 
-The first, and probably most famous realization of IBE was developed by Dan Boneh and Matthew Franklin much later — in 2001\. The timing of Boneh and Franklin’s discovery makes a great deal of sense. The Boneh-Franklin scheme relies fundamentally on elliptic curves that support an efficient “[bilinear map][13]” (or “pairing”).**** The [algorithms][14] needed to compute such pairings were not known when Shamir wrote his paper, and weren’t employed  _constructively_  — that is, as a useful thing rather than [an attack][15] — until about [2000][16]. The same can be said about a second scheme called [Sakai-Kasahara][17], which would be independently discovered around the same time.
+第一个，或许也是最负盛名的 IBE 的实现，是由 Dan Boneh 和 Matthew Franklin 在多年以后开发的。Boneh 和 Franklin 的发现的时机十分有意义。Boneh-Franklin 方案根本上依赖于能支持有效的 [“双线性映射”][13] （或者“配对”）****的椭圆曲线。该类 [算法][14] 需要计算这些配对，而这些配对在 Shamir 撰写他的那篇论文是还不被知晓，因此没有被*建设性地*使用————即被作为比起 [一种攻击][15] 更有用的东西使用————直至 [2000年][16]。第二个被称为 [Sakai-Kasahara][17] 的方案的情况也大抵类似，这个方案将在与第一个大约同一时间被另外一组学者独立发现。
 
- _(For a brief tutorial on the Boneh-Franklin IBE scheme, see [this page][2].)_ 
+*（关于 Boneh-Franklin IBE 方案的简短教学，请查看 [这个页面][2]）*
 
-The third realization of IBE was not as efficient as the others, but was much more surprising. [This scheme][18] was developed by Clifford Cocks, a senior cryptologist at Britain’s GCHQ. It’s noteworthy for two reasons. First, Cocks’ IBE scheme does not require bilinear pairings at all — it is based in the much older RSA setting, which means  _in principle _ it spent all those years just waiting to be found. Second, Cocks himself had recently become known for something even more surprising: [discovering the RSA cryptosystem,][19] nearly five years before RSA did. To bookend that accomplishment with a second major advance in public key cryptography was a pretty impressive accomplishment.
+第三个 IBE 的实现并不如前二者有效，但却更令人吃惊得多。[这个方案][18] 由 Clifford Cocks，一位英国国家通信总局的资深密码学家开发。它因为两个原因而引人注目。第一，Cocks 的 IBE 方案完全不需要用到双线性映射————都是建立在以往的 RSA 的基础上的，这意味着*原则上*这个算法这么多年来仅仅是没有被人们发现（而非在等待相应的理论基础）而已。第二，Cocks 本人近期因为一些甚至更令人惊奇的东西而闻名：在 RSA 算法被提出之前将近 5 年 [发现 RSA 加密系统][19]（即公钥加密算法）。用再一个在公钥加密领域的重要成就来结束这一成就，实在堪称令人印象深刻的创举。
 
-In the years since 2001, a number of additional IBE constructions have been developed, using all sorts of cryptographic settings. Nonetheless, Boneh and Franklin’s early construction remains among the simplest and most efficient.
+自 2001 年起，许多另外的 IBE 构造涌现出来，用到了各种各样的密码学背景知识。尽管如此，Boneh 和 Franklin 早期的实现仍然是这些算法之中最为简单和有效的。
 
-Even if you’re not interested in IBE for its own sake, it turns out that this primitive is really useful to cryptographers for many things beyond simple encryption. In fact, it’s more helpful to think of IBE as a way of “pluralizing” a single public/secret master keypair into billions of related keypairs. This makes it useful for applications as diverse as blocking [chosen ciphertext attacks,][20] [forward-secure public key encryption][21], and short [signature schemes][22].
+即使你并不因为 IBE 自身而对它感兴趣，事实证明它的基本元素对密码学家来说在许许多多单纯地加密之外的领域都十分有用。事实上，如果我们把 IBE 看作是一种由单一的主公/私钥对来产生数以亿计的相关联的密钥对的方式，它将会显得意义非凡。这让 IBE 对于诸如 [选择密文攻击][20], [前向安全的公钥加密][21] 和 [短签名方案][22] 这样各种各样的应用来说非常有用。
 
-Attribute Based Encryption
+### 基于特征加密
 
-Of course, if you leave cryptographers alone with a tool like IBE, the first thing they’re going to do is find a way to ~~make things more complicated~~ improve on it.
+当然，如果你给密码学家以一个类似 IBE 的工具，那么首先他们要做的将是找到一种~~让事情更复杂~~改进它的方法。
 
 One of the biggest such improvements is due to [Sahai and Waters][23]. It’s called Attribute-Based Encryption, or ABE.
 
@@ -123,7 +123,7 @@ Perhaps the perfect application is out there. Maybe you’ll find it.
 via: https://github.com/LCTT/TranslateProject/tree/master/sources/tech
 
 作者：[Matthew Green][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Janzen_Liu](https://github.com/JanzenLiu)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
