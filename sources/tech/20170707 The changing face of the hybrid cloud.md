@@ -1,4 +1,5 @@
-﻿The changing face of the hybrid cloud
+Translating by ZH1122
+The changing face of the hybrid cloud
 ============================================================
 
 ### Terms and concepts around cloud computing are still new, but evolving.
