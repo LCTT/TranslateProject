@@ -171,7 +171,7 @@ Corey Bryant 是 Ubuntu 的核心开发者和 Canonical 公司 OpenStack 工程�
 
 译者简介：
 
-> 经常混迹于 snapcraft.io，对 Ubuntu Core、Snaps 和 Snapcraft 有着浓厚的兴趣，并致力于将这些还在快速发展的新技术通过翻译或原创的方式介绍到中文世界。有兴趣的小伙伴也可以关注译者个人的公众号： `Snapcraft`，最近会在上面连载几篇有关 Core snap 发布策略、交付流程和验证流程的文章，欢迎围观 :）
+> snapcraft.io 的钉子户，对 Ubuntu Core、Snaps 和 Snapcraft 有着浓厚的兴趣，并致力于将这些还在快速发展的新技术通过翻译或原创的方式介绍到中文世界。有兴趣的小伙伴也可以关注译者个人的公众号： `Snapcraft`，最近会在上面连载几篇有关 Core snap 发布策略、交付流程和验证流程的文章，欢迎围观 :）
 
 ------
 
