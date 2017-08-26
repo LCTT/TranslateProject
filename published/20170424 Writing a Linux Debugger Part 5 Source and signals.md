@@ -1,40 +1,26 @@
-开发 Linux 调试器第五部分：源码和信号
+开发一个 Linux 调试器（四）：源码和信号
 ============================================================
 
-在上一部分我们学习了关于 DWARF 的信息以及它如何可以被用于读取变量和将被执行的机器码和我们高层次的源码联系起来。在这一部分，我们通过实现一些我们调试器后面会使用的 DWARF 原语将它应用于实际情况。我们也会利用这个机会，使我们的调试器可以在命中一个断点时打印出当前的源码上下文。
-
-* * *
+在上一部分我们学习了关于 DWARF 的信息，以及它如何被用于读取变量和将被执行的机器码与我们的高级语言的源码联系起来。在这一部分，我们将进入实践，实现一些我们调试器后面会使用的 DWARF 原语。我们也会利用这个机会，使我们的调试器可以在命中一个断点时打印出当前的源码上下文。
 
 ### 系列文章索引
 
 随着后面文章的发布，这些链接会逐渐生效。
 
-1.  [启动][1]
-
+1.  [准备环境][1]
 2.  [断点][2]
-
 3.  [寄存器和内存][3]
-
 4.  [Elves 和 dwarves][4]
-
 5.  [源码和信号][5]
-
 6.  [源码级逐步执行][6]
-
 7.  源码级断点
-
 8.  调用栈展开
-
 9.  读取变量
-
 10.  下一步
-
-译者注：ELF（[Executable and Linkable Format](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format "Executable and Linkable Format") 可执行文件格式），DWARF（一种广泛使用的调试数据格式，参考 [WIKI](https://en.wikipedia.org/wiki/DWARF "DWARF WIKI")）
-* * *
 
 ### 设置我们的 DWARF 解析器
 
-正如我在这系列文章开始时备注的，我们会使用 [`libelfin`][7] 来处理我们的 DWARF 信息。希望你已经在第一部分设置好了这些，如果没有的话，现在做吧，确保你使用我仓库的 `fbreg` 分支。
+正如我在这系列文章开始时备注的，我们会使用 [libelfin][7] 来处理我们的 DWARF 信息。希望你已经在[第一部分][1]设置好了这些，如果没有的话，现在做吧，确保你使用我仓库的 `fbreg` 分支。
 
 一旦你构建好了 `libelfin`，就可以把它添加到我们的调试器。第一步是解析我们的 ELF 可执行程序并从中提取 DWARF 信息。使用 `libelfin` 可以轻易实现，只需要对`调试器`作以下更改：
 
@@ -59,11 +45,9 @@ private:
 
 我们使用了 `open` 而不是 `std::ifstream`，因为 elf 加载器需要传递一个 UNIX 文件描述符给  `mmap`，从而可以将文件映射到内存而不是每次读取一部分。
 
-* * *
-
 ### 调试信息原语
 
-下一步我们可以实现从程序计数器的值中提取行条目（line entries）以及函数 DWARF 信息条目（function DIEs）的函数。我们从 `get_function_from_pc` 开始：
+下一步我们可以实现从程序计数器的值中提取行条目（line entry）以及函数 DWARF 信息条目（function DIE）的函数。我们从 `get_function_from_pc` 开始：
 
 ```
 dwarf::die debugger::get_function_from_pc(uint64_t pc) {
@@ -83,7 +67,7 @@ dwarf::die debugger::get_function_from_pc(uint64_t pc) {
 }
 ```
 
-这里我采用了朴素的方法，迭代遍历编译单元直到找到一个包含程序计数器的，然后迭代遍历它的孩子直到我们找到相关函数（`DW_TAG_subprogram`）。正如我在上一篇中提到的，如果你想要的话你可以处理类似成员函数或者内联等情况。
+这里我采用了朴素的方法，迭代遍历编译单元直到找到一个包含程序计数器的，然后迭代遍历它的子节点直到我们找到相关函数（`DW_TAG_subprogram`）。正如我在上一篇中提到的，如果你想要的话你可以处理类似的成员函数或者内联等情况。
 
 接下来是 `get_line_entry_from_pc`：
 
@@ -107,8 +91,6 @@ dwarf::line_table::iterator debugger::get_line_entry_from_pc(uint64_t pc) {
 ```
 
 同样，我们可以简单地找到正确的编译单元，然后查询行表获取相关的条目。
-
-* * *
 
 ### 打印源码
 
@@ -149,13 +131,11 @@ void debugger::print_source(const std::string& file_name, unsigned line, unsigne
 }
 ```
 
-现在我们可以打印出源码了，我们需要将这些通过钩子添加到我们的调试器。一个实现这个的好地方是当调试器从一个断点或者（最终）逐步执行得到一个信号时。到了这里，我们可能想要给我们的调试器添加一些更好的信号处理。
-
-* * *
+现在我们可以打印出源码了，我们需要将这些通过钩子添加到我们的调试器。实现这个的一个好地方是当调试器从一个断点或者（最终）逐步执行得到一个信号时。到了这里，我们可能想要给我们的调试器添加一些更好的信号处理。
 
 ### 更好的信号处理
 
-我们希望能够得知什么信号被发送给了进程，同样我们也想知道它是如何产生的。例如，我们希望能够得知是否由于命中了一个断点从而获得一个 `SIGTRAP`，还是由于逐步执行完成、或者是产生了一个新线程，等等。幸运的是，我们可以再一次使用 `ptrace`。可以给 `ptrace` 的一个命令是 `PTRACE_GETSIGINFO`，它会给你被发送给进程的最后一个信号的信息。我们类似这样使用它：
+我们希望能够得知什么信号被发送给了进程，同样我们也想知道它是如何产生的。例如，我们希望能够得知是否由于命中了一个断点从而获得一个 `SIGTRAP`，还是由于逐步执行完成、或者是产生了一个新线程等等导致的。幸运的是，我们可以再一次使用 `ptrace`。可以给 `ptrace` 的一个命令是 `PTRACE_GETSIGINFO`，它会给你被发送给进程的最后一个信号的信息。我们类似这样使用它：
 
 ```
 siginfo_t debugger::get_signal_info() {
@@ -268,8 +248,6 @@ void debugger::step_over_breakpoint() {
 }
 ```
 
-* * *
-
 ### 测试
 
 现在你应该可以在某个地址设置断点，运行程序然后看到打印出了源码，而且正在被执行的行被光标标记了出来。
@@ -280,17 +258,17 @@ void debugger::step_over_breakpoint() {
 
 via: https://blog.tartanllama.xyz/c++/2017/04/24/writing-a-linux-debugger-source-signal/
 
-作者：[TartanLlama ][a]
+作者：[Simon Brand][a]
 译者：[ictlyh](https://github.com/ictlyh)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://www.twitter.com/TartanLlama
-[1]:https://blog.tartanllama.xyz/2017/03/21/writing-a-linux-debugger-setup/
-[2]:https://blog.tartanllama.xyz/c++/2017/03/24/writing-a-linux-debugger-breakpoints/
-[3]:https://blog.tartanllama.xyz/c++/2017/03/31/writing-a-linux-debugger-registers/
-[4]:https://blog.tartanllama.xyz/c++/2017/04/05/writing-a-linux-debugger-elf-dwarf/
+[1]:https://linux.cn/article-8626-1.html
+[2]:https://linux.cn/article-8645-1.html
+[3]:https://linux.cn/article-8663-1.html
+[4]:https://linux.cn/article-8719-1.html
 [5]:https://blog.tartanllama.xyz/c++/2017/04/24/writing-a-linux-debugger-source-signal/
 [6]:https://blog.tartanllama.xyz/c++/2017/05/06/writing-a-linux-debugger-dwarf-step/
 [7]:https://github.com/TartanLlama/libelfin/tree/fbreg
