@@ -46,7 +46,7 @@ Shamir 的想法因此要求稍微更多一点的手段。相比期望身份可�
 
 所有这些想法和额外的思考都是 Shamir 在他 1984 年的论文中提出来的。其中有一个小问题：Shamir 只能解决问题的一半。
 
-具体地说，Shamir 提出了一个*基于身份签名（IBS）*的方案————一个公共验证密钥是身份，而签名密钥由密钥机构生成的签名方案。他尽力尝试了，但仍然不能找到一个简历基于身份*加密*的解决方案。这成为了一个公开的问题。***
+具体地说，Shamir 提出了一个*基于身份签名（IBS）*的方案————一个公共验证密钥是身份，而签名密钥由密钥机构生成的签名方案。他尽力尝试了，但仍然不能找到一个建立基于身份*加密*的解决方案。这成为了一个公开的问题。***
 
 直到有人能解决 Shamir 的难题还有 16 年。令人惊讶的是，当回答出现的时候，它出现了不只一次，*而是三次*。
 
@@ -95,30 +95,29 @@ OR 门实现， 原文： a threshold gate can be used to implement the boolean 
 
 一旦拥有一个相关的基础工具，像 IBE 和 ABE，研究人员的本能是去扩充和一般化它。为什么要止步于简单的 boolean 表达式？我们能不能制作嵌入了*任意的计算机程序*的密钥（或者密文）？答案被证明是肯定的————尽管不是非常高效。一组 [近几年的][26] [研究][27] 显示可以根据各种各样的基于格的密码假设，构建在任意多项式大小线路运作的 ABE。所以这一方向毫无疑问非常有发展潜力。
 
-这一潜力启发了研究人员将所有以上的想法一般化成为一个被称作 “[函数式加密]” 的单独的类。函数式加密更多是一种抽象的概念而没有具体所指————它不过是一种将所有这些系统看作是一个特定的累的实例的方式。它基本的想法是，
-This potential has inspired researchers to generalize all of the above ideas into a single class of encryption called “[functional encryption][28]“. Functional encryption is more conceptual than concrete — it’s just a way to look at all of these systems as instances of a specific class. The basic idea is to represent the decryption procedure as an algorithm that computes an arbitary function  _F_  over (1) the plaintext inside of a ciphertext, and (2) the data embedded in the key. This function has the following profile:
+这一潜力启发了研究人员将所有以上的想法一般化成为一个被称作 [“函数式加密”][28] 的单独的类。函数式加密更多是一种抽象的概念而没有具体所指————它不过是一种将所有这些系统看作是一个特定的类的实例的方式。它基本的想法是，用一种计算任意依赖于（1）密文 （原文为 the plaintext inside of a ciphertext，但译者认为应该是密文，下面公式同），和（2）嵌入在密钥中的数据 的函数的算法来代表加密的过程。这个函数大概是这样的：
 
- _output = F(key data, plaintext data)_ 
+*输出 = F（密钥数据，密文数据）*
+ 
+在这一模型中，IBE 可以表达为一个包含加密函数 加密*（身份，明文）*和定义了一个函数 F：如果“*密钥输入 == 身份*”，则输出对应明文，否则输出空字符串的系统。相似地，ABE 可以表达为一个稍微更复杂的函数。依照这一范式，我们可以展望在将来，各类有趣的函数都可以由计算不同的函数得到，并在未来的方案中被实现。
 
-In this model  _IBE_  can be expressed by having the encryption algorithm encrypt _ (identity, plaintext) _ and defining the function  _F _ such that, if “ _key input == identity”, it _ outputs the plaintext, and outputs an empty string otherwise. Similarly, ABE can be expressed by a slightly more complex function. Following this paradigm, once can envision all sorts of interesting functions that might be computed by different functions and realized by future schemes.
+但这些都必须要等到以后了。今天我们的已经足够多了。
 
-But those will have to wait for another time. We’ve gone far enough for today.
+### 所以这一切的重点是什么？
 
-### So what’s the point of all this?
+对于我来说，重点不过是证明密码学可以做到一些十分优美惊人的事。当谈及工业与“应用”密码学时，我们鲜有见到这些出现在日常应用中，但我们都可以等待着它们被广泛使用的一天的到来。
 
-For me, the point is just to show that cryptography can do some pretty amazing things. We rarely see this on a day-to-day basis when it comes to industry and “applied” cryptography, but it’s all there waiting to be used.
+也许完美的应用就在某个地方，也许有一天我们会发现它。
 
-Perhaps the perfect application is out there. Maybe you’ll find it.
+*注：*
 
- _Notes:_ 
+* 最初在这片博文里我写的是 “20世纪90年代出”。在文章的评论里，Tom Ristenpart 提出了异议，并且非常好地论证了很多重要的发展都是在这个时间后发生的。所以我把时间再推进了大约5年，而我也在考虑怎样将这表达得更好一些。
 
-* An earlier version of this post said “mid-1990s”. In comments below, Tom Ristenpart takes issue with that and makes the excellent point that many important developments post-date that. So I’ve moved the date forward about five years, and I’m thinking about how to say this in a nicer way.
+** 我们知道有一种叫作 [“无证书加密”][29] 的加密的中间形式。这个想法由 Al-Riyami 和 Paterson 提出，并且使用到标准公钥加密和 IBE 的结合。基本的思路是用一个（消息接受者生成的）传统密钥和一个 IBE 身份*共同*加密每则消息。然后接受者必须从 IBE 权威机构处获得一份私钥的拷贝来解密。这种方案的优点是两方面的：（1）IBE 密钥机构不能独自解密消息，因为它没有对应的（接受者）私钥，这就解决了“托管”问题（即权威机构完全具备解密消息的能力）；（2）发送者不必验证公钥的确属于接收者（原文为 sender,但译者认为应该是笔误，应为 recipient），因为 IBE 方面会防止伪装者解密这则消息。但不幸的是，这个系统更像是传统的公钥加密系统，而缺少 IBE 简洁的实用特性。
 
-** There is also an intermediate form of encryption known as “[certificateless encryption][29]“. Proposed by Al-Riyami and Paterson, this idea uses a  _combination_  of standard public key encryption and IBE. The basic idea is to encrypt each message using  _both_  a traditional public key (generated by the recipient) and an IBE identity. The recipient must then obtain a copy of the secret key from the IBE authority to decrypt. The advantages here are twofold: (1) the IBE key authority can’t decrypt the message by itself, since it does not have the corresponding secret key, which solves the “escrow” problem. And (2) the sender does not need to verify that the public key really belongs to the sender (e.g., by checking a certificate), since the IBE portion prevents imposters from decrypting the resulting message. Unfortunately this system is more like traditional public key cryptography than IBE, and does not have the neat usability features of IBE.
+*** 开发 IBE 的一部分挑战在于构建一个面临不同密钥持有者的“勾结”安全的系统。譬如说，想象一个只有 2 位身份的非常简单的系统。这个系统只提供四个可能的身份：“00”，“01”，“10”，“11”。如果我分配给你对应 “01” 身份的密钥，分配给 Bob 对应 “10” 的密钥，我需要保证你们不能合谋生成对应 “00” 和 “11” 身份的密钥。一些早期提出的解决方法尝试通过用不同方式将标准公共加密密钥拼接到一起来解决这个问题（比如，为身份的每一个字节保留一个独立的公钥，然后将对应的多个私钥合并成一个分发）。但是，当仅仅只有少量用户合谋（或者他们的密钥被盗）时，这些系统就往往会出现灾难性的失败。因而基本上这个问题的解决就是真正的 IBE 与它的仿造近亲之间的区别。
 
-*** A part of the challenge of developing IBE is the need to make a system that is secure against “collusion” between different key holders. For example, imagine a very simple system that has only 2-bit identities. This gives four possible identities: “00”, “01”, “10”, “11”. If I give you a key for the identity “01” and I give Bob a key for “10”, we need to ensure that you two cannot collude to produce a key for identities “00” and “11”. Many earlier proposed solutions have tried to solve this problem by gluing together standard public encryption keys in various ways (e.g., by having a separate public key for each bit of the identity and giving out the secret keys as a single “key”). However these systems tend to fail catastrophically when just a few users collude (or their keys are stolen). Solving the collusion problem is fundamentally what separates real IBE from its faux cousins.
-
-**** A full description of Boneh and Franklin’s scheme can be found [here][30], or in the [original paper][31]. Some code is [here][32] and [here][33] and [here][34]. I won’t spend more time on it, except to note that the scheme is very efficient. It was patented and implemented by [Voltage Security][35], now part of HPE.
+**** Boneh 和 Franklin 方案的完整描述可以在 [这里][30] 看到，或者在他们的 [原版论文][31] 中。[这里][32], [这里][33] 和 [这里][34] 有一部分代码。除了指出这个方案十分高效之外，我不希望在这上面花太多的篇幅。它由 [Voltage Security][35]（现属于惠普） 实现并占有专利。
 
 --------------------------------------------------------------------------------
 
