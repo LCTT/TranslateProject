@@ -1,3 +1,5 @@
+Translating by firmianay
+
 ### [Getting Started With GitHub][11]
 
 
