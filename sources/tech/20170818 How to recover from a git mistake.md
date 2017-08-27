@@ -1,3 +1,5 @@
+Translating by firmianay
+
 How to recover from a git mistake
 ============================================================
 
