@@ -1,3 +1,5 @@
+Translating by firmianay
+
 Half a dozen clever Linux command line tricks
 ============================================================
 
