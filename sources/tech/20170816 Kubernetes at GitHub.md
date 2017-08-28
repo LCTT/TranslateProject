@@ -1,4 +1,4 @@
-[Kubernetes at GitHub][10]
+【翻译中 @haoqixu】[Kubernetes at GitHub][10]
 ============================================================
 
 Over the last year, GitHub has gradually evolved the infrastructure that runs the Ruby on Rails application responsible for `github.com` and `api.github.com`. We reached a big milestone recently: all web and API requests are served by containers running in [Kubernetes][13] clusters deployed on our [metal cloud][14]. Moving a critical application to Kubernetes was a fun challenge, and we’re excited to share some of what we’ve learned with you today.
