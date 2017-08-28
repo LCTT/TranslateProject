@@ -1,5 +1,3 @@
-polebug is translating
-
 How Machines Learn: A Practical Guide
 ============================================================
 
