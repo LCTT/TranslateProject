@@ -1,3 +1,5 @@
+translating by firmianay
+
 Splitting and Re-Assembling Files in Linux
 ============================================================
 
