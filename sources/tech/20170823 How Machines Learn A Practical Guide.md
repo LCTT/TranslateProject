@@ -1,3 +1,5 @@
+translating by Flowsnow
+
 How Machines Learn: A Practical Guide
 ============================================================
 
@@ -338,7 +340,7 @@ via: https://medium.freecodecamp.org/how-machines-learn-a-practical-guide-203aae
 [35]:https://www.coursera.org/learn/practical-machine-learning
 [36]:https://github.com/rasbt/python-machine-learning-book
 [37]:https://github.com/rasbt/deep-learning-book
-[38]:https://books.google.be/books/about/Machine_Learning_with_R.html?id=ZQu8AQAAQBAJ&source=kp_cover&redir_esc=y
+[38]:https://books.google.be/books/about/Machine_Learning_with_R.html?id=ZQu8AQAAQBAJ&amp;source=kp_cover&amp;redir_esc=y
 [39]:http://www.kaggle.com/
 [40]:https://www.datacamp.com/community/open-courses/kaggle-python-tutorial-on-machine-learning
 [41]:https://www.datacamp.com/community/open-courses/kaggle-tutorial-on-machine-learing-the-sinking-of-the-titanic
