@@ -1,21 +1,19 @@
-Translating by firmianay
-
-Half a dozen clever Linux command line tricks
+六个聪明的 Linux 命令行技巧
 ============================================================
 
-### Some very useful commands for making life on the command line more rewarding
+### 一些有用的命令能让命令行上的生命更有价值
 
 ![command key keyboard](https://images.idgesg.net/images/article/2017/08/commands-micah_elizabeth_scott-cropped-100733439-large.jpg)
 [Micah Elizabeth Scott][32] [(CC BY 2.0)][33]RELATED
 
 
-Working on the Linux command can be a lot of fun, but it can be even more fun when you use commands that take less work on your part or display information in interesting and useful ways. In today’s post, we’re going to look at half a dozen commands that might make your time on the command line more profitable.
+使用 Linux 命令工作可以获得许多乐趣，但是如果您使用一些命令，它们可以减少您的工作或以有趣的方式显示信息时，您将获得更多的乐趣。在今天的文章中，我们将介绍六个命令，它们可能会使你用在命令行上的时间更加值当。
 
 ### watch
 
-The watch command will repeatedly run whatever command you give it and show you the output. By default, it runs the command every two seconds. Each successive running of the command overwrites what it displayed on the previous run, so you're always looking at the latest data.
+watch 命令会重复运行您给出的任何命令，并显示输出。默认情况下，它每两秒运行一次命令。命令的每次运行都将覆盖上一次运行时显示的内容，因此您始终可以看到最新的数据。
 
-You might use it when you’re waiting for someone to log in. In this case, you would use the command “watch who” or maybe “watch -n 15 who” to have the command run every 15 seconds instead of every two seconds. The date and time will appear in the upper right-hand corner of your terminal window.
+您可能会在等待某人登录时使用它。在这种情况下，您可以使用 “watch who” 命令或者 “watch -n 15 who” 命令使每次运行的时间变为 15 秒，而不是两秒。另外终端窗口的右上角会显示日期和时间。
 
 ```
 $ watch -n 5 who
@@ -25,8 +23,7 @@ shs      pts/0        2017-08-23 14:45 (192.168.0.11)
 zoe      pts/1        2017-08-23 08:15 (192.168.0.19)
 ```
 
-You might also use it to watch a log file. If nothing changes in the data you’re displaying, only the date/time display in the corner of the window will change.
-
+您也可以使用它来查看日志文件。如果您显示的数据没有任何变化，则只有窗口角落里的日期和时间会发生变化。
 
 
 ```
@@ -50,11 +47,11 @@ Aug 23 15:15:01 stinkbug CRON[7828]: (root) CMD (command -v debian-sa1 > /dev/nu
 ll && debian-sa1 1 1)
 ```
 
-This output is similar to what you’d see using tail -f /var/log/syslog.
+这里的输出和使用命令 “tail -f /var/log/syslog” 的输出相似。
 
 ### look
 
-The name might suggest that look does something similar to watch, but it’s entirely different. The look command searches for words that begin with some particular string.
+这个命令的名字 look 可能会让我们以为它和 watch 做类似的事情，但其实是不同的。look 命令用于搜索以某个特定字符串开头的单词。
 
 ```
 $ look ecl
@@ -73,7 +70,7 @@ ecliptic
 ecliptic's
 ```
 
-The look command is generally helpful with spelling and used the /usr/share/dict/words file unless you specify a file name with a command like this one:
+look 命令通常有助于单词的拼写，它使用 /usr/share/dict/words 文件，除非你使用如下的命令指定了文件名：
 
 ```
 $ look esac .bashrc
@@ -82,12 +79,12 @@ esac
 esac
 ```
 
-In this case, it acts like grep following by an awk command that prints only the first word on the matching lines.
+在这种情况下，它的作用就像跟在一个 awk 命令后面的 grep ，只打印匹配行上的第一个单词。
 
 
 ### man -k
 
-The man -k command lists man pages that include the specified word. It basically works like the apropos command.
+man -k 命令列出包含指定单词的手册页。它的工作基本上和 apropos 命令一样。
 
 ```
 $ man -k logrotate
@@ -98,7 +95,7 @@ logrotate.conf (5)   - rotates, compresses, and mails system logs
 
 ### help
 
-While you may be tempted to use this command when you’re utterly frustrated, what the help command actually does is show you a list of shell built-ins. What’s most surprising is how many of these variables exist. You’re likely to see something like this and then start to wonder what all of these built-ins might do for you:
+当你完全绝望的时候，您可能会试图使用此命令，help 命令实际上是显示一个 shell 内置的列表。最令人惊讶的是它相当多的参数变量。你可能会看到这样的东西，然后开始想知道这些内置功能可以为你做些什么：
 
 ```
 $ help
@@ -152,7 +149,7 @@ A star (*) next to a name means that the command is disabled.
 
 ### stat -c
 
-The stat command displays the vital statistics for a file — its size, owner, group, inode number, permissions, modification and access times. It’s a very useful command that displays more detail than a simple ls -l.
+stat 命令用于显示文件的大小、所有者、组、索引节点号、权限、修改和访问时间等重要的统计信息。这是一个非常有用的命令，可以显示比 ls -l 更多的细节。
 
 ```
 $ stat .bashrc
@@ -166,14 +163,14 @@ Change: 2017-06-21 17:37:11.899157791 -0400
  Birth: -
 ```
 
-With the -c option, you can specify the fields you want to see. If, for example, you want to see just the file name and access rights for a file or series of files, you might do this:
+使用 -c 选项，您可以指定要查看的字段。例如，如果您只想查看一个文件或一系列文件的文件名和访问权限，则可以这样做：
 
 ```
 $ stat -c '%n %a' .bashrc
 .bashrc 644
 ```
 
-In this command, the %n represents the name of each file, while %a represents the access rights. A %u would be the numeric UID and %U the username.
+在此命令中， %n 表示每个文件的名称，而 %a 表示访问权限。一个 %u 表示数字类型的 UID，并且 %U 表示用户名。
 
 ```
 $ stat -c '%n %a' bin/*
@@ -191,7 +188,7 @@ bin/show_release 700 shs
 
 ### TAB
 
-If you’re not using the tab command for filename completion, you’re really missing out on a very useful command line trick. The tab command provides filename completion (including directories when you’re using cd). It fills in as much of a name as possible before it hits an ambiguity (more than one file starting with the same letters. If you have a file named bigplans and another named bigplans2017, you’ll hear a sound and have to decide whether to press enter or “2” and tab again to select the second file.
+如果你没有使用过 tab 命令来补全文件名，你真的错过了一个非常有用的命令行技巧。tab 命令提供文件名补全功能（包括使用 cd 时的目录）。它在出现歧义之前尽可能多的填充文件名（多个文件以相同的字母开头。如果您有一个名为 bigplans 的文件，另一个名为 bigplans2017 的文件会发生歧义，你必须决定是按下回车键还是输入 “2” 之后再按下 tab 键选择第二个文件。
 
 Join the Network World communities on [Facebook][30] and [LinkedIn][31] to comment on topics that are top of mind.
 
@@ -200,7 +197,7 @@ Join the Network World communities on [Facebook][30] and [LinkedIn][31] to c
 via: https://www.networkworld.com/article/3219684/linux/half-a-dozen-clever-linux-command-line-tricks.html
 
 作者：[ Sandra Henry-Stocker][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[firmianay](https://github.com/firmianay)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
