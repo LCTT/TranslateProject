@@ -1,3 +1,5 @@
+translating by firmianay
+
 Here are all the Git commands I used last week, and what they do.
 ============================================================
 
