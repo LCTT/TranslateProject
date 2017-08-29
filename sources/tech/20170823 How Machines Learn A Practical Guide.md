@@ -1,3 +1,5 @@
+translating by flowsow
+
 How Machines Learn: A Practical Guide
 ============================================================
 
