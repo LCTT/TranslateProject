@@ -1,5 +1,7 @@
-通过开源书籍学习 RUBY 编程
+通过开源书籍学习 Ruby 编程
 ============================================================
+
+![](https://i1.wp.com/www.ossblog.org/wp-content/uploads/2017/03/Ruby-Montage.png?w=565&ssl=1)
 
 ### 开源的 Ruby 书籍
 
@@ -13,11 +15,10 @@ Ruby 具有很高的可移植性性，在 Linux、Windows、Mac OS X、Cygwin、
 
 这篇文章是[ OSSBlog 的系列文章开源编程书籍][18]的一部分。
 
-| 
- ![Ruby Best Practices](https://i0.wp.com/www.ossblog.org/wp-content/uploads/2017/03/RubyBestPractices.jpg?resize=200%2C262&ssl=1) 
- | 
 
-### [Ruby Best Practices][1]
+### 《[Ruby Best Practices][1]》
+
+![Ruby Best Practices](https://i0.wp.com/www.ossblog.org/wp-content/uploads/2017/03/RubyBestPractices.jpg?resize=200%2C262&ssl=1) 
 
 作者： Gregory Brown (328 页)
 
@@ -31,26 +32,24 @@ Ruby 具有很高的可移植性性，在 Linux、Windows、Mac OS X、Cygwin、
 
 *   通过测试驱动代码 - 涉及了大量的测试哲学和技术。使用 mocks 和 stubs
 *   通过利用 Ruby 神秘的力量来设计漂亮的 API：灵活的参数处理和代码块
-*   利用动态工具包向开发者展示如何构建灵活的界面，实现对象行为，扩展和修改已有代码，以及程序化地构建类和模块
+*   利用动态工具包向开发者展示如何构建灵活的界面，实现单对象行为，扩展和修改已有代码，以及程序化地构建类和模块
 *   文本处理和文件管理集中于正则表达式，文件、临时文件标准库以及文本处理策略实战
-
-
-*   函数式编程技术优化模块代码组织、存储、无穷目录以及更高顺序程序。
+*   函数式编程技术优化了模块代码组织、存储、无穷目录以及更高顺序程序。
 *   理解代码如何出错以及为什么会出错，阐述如何处理日志记录
 *   通过利用 Ruby 的多语言能力削弱文化屏障
 *   熟练的项目维护
 
 本书为开源书籍，在 CC NC-SA 许可证下发布。
 
- |
- ![I Love Ruby](https://i2.wp.com/www.ossblog.org/wp-content/uploads/2017/03/LoveRuby.png?resize=200%2C282&ssl=1)
- | 
+[在此下载《Ruby Best Practices》][1]。 
 
-### [I Love Ruby][2]
+### 《[I Love Ruby][2]》
+
+ ![I Love Ruby](https://i2.wp.com/www.ossblog.org/wp-content/uploads/2017/03/LoveRuby.png?resize=200%2C282&ssl=1)
 
 作者： Karthikeyan A K (246 页)
 
-《I Love Ruby》以比传统介绍更高的深度阐述了基本概念和技术。该方法为编写有用、正确、易维护和高效的 Ruby 代码提供了一个坚实的基础。
+《I Love Ruby》以比传统的介绍更高的深度阐述了基本概念和技术。该方法为编写有用、正确、易维护和高效的 Ruby 代码提供了一个坚实的基础。
 
 章节内容涵盖：
 
@@ -75,14 +74,14 @@ Ruby 具有很高的可移植性性，在 Linux、Windows、Mac OS X、Cygwin、
 *   Gems
 *   元编程
 
-在 GNU 自由文档许可证有效期内，你可以复制、发布和修改本书，1.3 或任何更新版本由自由软件基金会发布。
+在 GNU 自由文档许可证之下，你可以复制、发布和修改本书，1.3 或任何之后版本由自由软件基金会发布。
 
- |
-| 
- ![Programming Ruby - The Pragmatic Programmer's Guide](https://i1.wp.com/www.ossblog.org/wp-content/uploads/2017/03/ProgrammingRuby.jpeg?resize=200%2C248&ssl=1) 
- | 
+[点此下载《I Love Ruby》][2]。
+
 
 ### [Programming Ruby – The Pragmatic Programmer’s Guide][3]
+
+![Programming Ruby - The Pragmatic Programmer's Guide](https://i1.wp.com/www.ossblog.org/wp-content/uploads/2017/03/ProgrammingRuby.jpeg?resize=200%2C248&ssl=1) 
 
 作者： David Thomas, Andrew Hunt (HTML)
 
@@ -111,12 +110,11 @@ Ruby 具有很高的可移植性性，在 Linux、Windows、Mac OS X、Cygwin、
 
 这本书的第一版在开放发布许可证 1.0 版或更新版的许可下发布。本书更新后的第二版涉及 Ruby 1.8 ，并且包括所有可用新库的描述，但是它不是在免费发行许可证下发布的。
 
- |
-| 
- ![Why’s (Poignant) Guide to Ruby](https://i1.wp.com/www.ossblog.org/wp-content/uploads/2017/03/WhysGuideRuby.jpg?resize=200%2C218&ssl=1) 
- | 
+[点此下载《Programming Ruby – The Pragmatic Programmer’s Guide》][3]。
 
-### [Why’s (Poignant) Guide to Ruby][4]
+### 《[Why’s (Poignant) Guide to Ruby][4]》
+
+![Why’s (Poignant) Guide to Ruby](https://i1.wp.com/www.ossblog.org/wp-content/uploads/2017/03/WhysGuideRuby.jpg?resize=200%2C218&ssl=1) 
 
 作者：why the lucky stiff (176 页)
 
@@ -135,12 +133,11 @@ Ruby 具有很高的可移植性性，在 Linux、Windows、Mac OS X、Cygwin、
 
 本书在 CC-SA 许可证许可下可用。
 
- |
-| 
- ![Ruby Hacking Guide](https://i1.wp.com/www.ossblog.org/wp-content/uploads/2017/03/RubyHackingGuide.png?resize=200%2C250&ssl=1) 
- | 
+[点此下载《Why’s (poignant) Guide to Ruby》][4]。
 
-### [Ruby Hacking Guide][5]
+### 《[Ruby Hacking Guide][5]》
+
+![Ruby Hacking Guide](https://i1.wp.com/www.ossblog.org/wp-content/uploads/2017/03/RubyHackingGuide.png?resize=200%2C250&ssl=1) 
 
 作者： Minero Aoki ，翻译自 Vincent Isambart 和 Clifford Escobar Caoille (HTML)
 
@@ -161,12 +158,11 @@ Ruby 具有很高的可移植性性，在 Linux、Windows、Mac OS X、Cygwin、
 
 原书的官方支持网站为 [i.loveruby.net/ja/rhg/][10]
 
- |
-| 
- ![The Book Of Ruby](https://i1.wp.com/www.ossblog.org/wp-content/uploads/2017/03/BookRuby.jpg?resize=200%2C270&ssl=1) 
- | 
+[点此下载《Ruby Hacking Guide》][5]
 
-### [The Book Of Ruby][6]
+### 《[The Book Of Ruby][6]》
+
+![The Book Of Ruby](https://i1.wp.com/www.ossblog.org/wp-content/uploads/2017/03/BookRuby.jpg?resize=200%2C270&ssl=1) 
 
 作者： How Collingbourne (425 页)
 
@@ -174,7 +170,7 @@ Ruby 具有很高的可移植性性，在 Linux、Windows、Mac OS X、Cygwin、
 
 《The Book Of Ruby》以 PDF 文件格式提供，并且每一个章节的所有例子都伴有可运行的源代码。同时，也有一个介绍来阐述如何在 Steel 或其他任何你喜欢的编辑器/IDE 中运行这些 Ruby 代码。它主要集中于 Ruby 语言的 1.8.x 版本。
 
-本书被分成字节大小的块。每一个章节介绍一个主题，并且分成几个不同的子话题。每一个编程主题由一个或多个小的自包含、可运行的 Ruby 程序构成。
+本书被分成很小的块。每一个章节介绍一个主题，并且分成几个不同的子话题。每一个编程主题由一个或多个小的自包含、可运行的 Ruby 程序构成。
 
 *   字符串、数字、类和对象 - 获取输入和输出、字符串和外部评估、数字和条件测试：if ... then、局部变量和全局变量、类和对象、实例变量、消息、方法、多态性、构造器和检属性和类变量 - 超类和子类，超类传参，访问器方法，’set‘ 访问器，属性读写器、超类的方法调用，以及类变量
 *   类等级、属性和类变量 - 超类和子类，超类传参，访问器方法，’set‘ 访问器，属性读写器、超类的方法调用，以及类变量
@@ -199,12 +195,12 @@ Ruby 具有很高的可移植性性，在 Linux、Windows、Mac OS X、Cygwin、
 
 本书由 SapphireSteel Software 发布，SapphireSteel Software 是用于 Visual Studio 的 Ruby In Steel 集成开发环境的开发者。读者可以复制和发布本书的文本和代码（免费版）
 
- |
-|  
- ![The Little Book of Ruby](https://i0.wp.com/www.ossblog.org/wp-content/uploads/2017/03/TheLittleBookRuby.png?resize=200%2C259&ssl=1) 
- | 
+[点此下载《The Book Of Ruby》][6]
 
-### [The Little Book Of Ruby][7]
+
+### 《[The Little Book Of Ruby][7]》
+
+ ![The Little Book of Ruby](https://i0.wp.com/www.ossblog.org/wp-content/uploads/2017/03/TheLittleBookRuby.png?resize=200%2C259&ssl=1) 
 
 作者： Huw Collingbourne (87 页)
 
@@ -225,12 +221,11 @@ Ruby 具有很高的可移植性性，在 Linux、Windows、Mac OS X、Cygwin、
 
 本书可免费复制和发布，只需保留原始文本且注明版权信息。
 
- |
-| 
- ![Kestrels, Quirky Birds, and Hopeless Egocentricity](https://i2.wp.com/www.ossblog.org/wp-content/uploads/2017/03/KestrelsQuirkyBirds.jpeg?resize=200%2C259&ssl=1) 
- | 
+[点此下载《The Little Book of Ruby》][7]
 
-### [Kestrels, Quirky Birds, and Hopeless Egocentricity][8]
+### 《[Kestrels, Quirky Birds, and Hopeless Egocentricity][8]》
+
+ ![Kestrels, Quirky Birds, and Hopeless Egocentricity](https://i2.wp.com/www.ossblog.org/wp-content/uploads/2017/03/KestrelsQuirkyBirds.jpeg?resize=200%2C259&ssl=1) 
 
 作者： Reg “raganwald” Braithwaite (123 页)
 
@@ -242,12 +237,11 @@ Ruby 具有很高的可移植性性，在 Linux、Windows、Mac OS X、Cygwin、
 
 本书在 MIT 许可证许可下发布。
 
+[点此下载《Kestrels, Quirky Birds, and Hopeless Egocentricity》][8]
 
-| 
+### 《[Ruby Programming][9]》
+
  ![Ruby Programming](https://i1.wp.com/www.ossblog.org/wp-content/uploads/2017/03/RubyProgrammingWikibooks.png?resize=200%2C285&ssl=1) 
- | 
-
-### [Ruby Programming][9]
 
 作者： Wikibooks.org (261 页)
 
@@ -264,15 +258,15 @@ Ruby 是一种解释性、面向对象的编程语言。
 
 本书在 CC-SA 3.0 本地化许可证许可下发布。
 
- |
+[点此下载《Ruby Programming》][9]
 
 * * *
 
 无特定顺序，我将在结束前推荐一些没有在开源许可证下发布但可以免费下载的 Ruby 编程书籍。
 
 *   [Mr. Neighborly 的 Humble Little Ruby Book][11] – 一个易读易学的 Ruby 完全指南。
-*   [Introduction to Programming with Ruby][12] – 学习编程时最基本的构建块，一切从零开始。
-*   [Object Oriented Programming with Ruby][13] – 学习编程时最基本的构建块，一切从零开始。
+*   [Introduction to Programming with Ruby][12] – 学习编程的基础知识，一切从零开始。
+*   [Object Oriented Programming with Ruby][13] – 学习编程的基础知识，一切从零开始。
 *   [Core Ruby Tools][14] – 对 Ruby 的四个核心工具 Gems、Ruby Version Managers、Bundler 和 Rake 进行了简短的概述。
 *   [Learn Ruby the Hard Way, 3rd Edition][15] – 一本适合初学者的入门书籍。
 *   [Learn to Program][16] – 来自 Chris Pine。
@@ -282,9 +276,9 @@ Ruby 是一种解释性、面向对象的编程语言。
 
 via: https://www.ossblog.org/study-ruby-programming-with-open-source-books/
 
-作者：[Steve Emms ][a]
+作者：[Steve Emms][a]
 译者：[ucasFL](https://github.com/ucasFL)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
