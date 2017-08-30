@@ -1,3 +1,4 @@
+[translating by Snapcraft]
 How to create a snap for timg with snapcraft on Ubuntu
 ============================================================
 
