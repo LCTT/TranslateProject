@@ -1,3 +1,5 @@
+translating---geekpi
+
 Manage your finances with LibreOffice Calc
 ============================================================
 
