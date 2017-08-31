@@ -1,21 +1,30 @@
 Why open source should be the first choice for cloud-native environments
+为什么开源应该是云原生环境的首选
 ============================================================
 
 ### For the same reasons Linux beat out proprietary software, open source should be the first choice for cloud-native environments.
-
+### 基于相同的原因，Linux击败了闭源软件，开源应该成为云原生环境的首选。
 
 ![Why open source should be the first choice for cloud-native environments](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/cloud-globe.png?itok=_drXt4Tn "Why open source should be the first choice for cloud-native environments")
 Image by : 
 
 [Jason Baker][6]. [CC BY-SA 4.0][7]. Source: [Cloud][8], [Globe][9]. Both [CC0][10].
 
-Let's take a trip back in time to the 1990s, when proprietary software reigned, but open source was starting to come into its own. What caused this switch, and more importantly, what can we learn from it today as we shift into cloud-native environments?
+Let's take a trip back in time to the 1990s, when proprietary software reigned, but open source was starting to come into its own. What caused this switch, and more importantly, what can we learn from it today as we shift into cloud-native environments? 
+
+让我们回溯到上世纪90年代，当时闭源软件大行其道，而开源才刚开始进入它自己的时代。是什么导致了这种转变，更重要的是，当我们转变为云原生环境时，我们能从今天学到什么?
 
 ### An infrastructure history lesson
 
+### 基础设施的历史教训
+
 I'll begin with a highly opinionated, open source view of infrastructure's history over the past 30 years. In the 1990s, Linux was merely a blip on most organizations' radar, if they knew anything about it. You had early buy-in from companies that quickly saw the benefits of Linux, mostly as a cheap replacement for proprietary Unix, but the standard way of deploying a server was with a proprietary form of Unix or—increasingly—by using Microsoft Windows NT.
 
+我将从一个高度武断的、开放的基础设施的过去30年的历史开始。如果他们知道什么的话，在20世纪90年代，Linux只是大多数组织的雷达上的一个闪光点。从那些很快就能看到Linux的好处的公司中，你已经得到了早期的支持，主要是作为私有Unix的廉价替代品，但是使用Microsoft Windows NT来部署服务器的方式是使用一种Unix或增加的专有形式。
+
 The proprietary nature of this tooling provided a fertile ecosystem for even more proprietary software. Software was boxed up to be sold in stores. Even open source got in on the packaging game; you could buy Linux on the shelf instead of tying up your internet connection downloading it from free sources. Going to the store or working with your software vendor was just how you got software.
+
+这种工具的专有特性为更专有的软件提供了一个肥沃的生态系统。软件被装箱出售。甚至开源也参与了包装游戏;你可以在书架上买到Linux，而不是把你的互联网连接从免费的来源下载。去商店或者和你的软件供应商一起工作只是你得到软件的方式。
 
 ### [ubuntu_box.png][1]
 
@@ -23,25 +32,47 @@ The proprietary nature of this tooling provided a fertile ecosystem for even mor
 
 Ubuntu box packaging on a Best Buy shelf
 
+Ubuntu盒包装在最好的买架上
+
 Where I think things changed was with the rise of the LAMP stack (Linux, Apache, MySQL, and PHP/Perl/Python).
+
+我认为，随着LAMP系列(Linux、Apache、MySQL和PHP / Perl / Python)的兴起，情况发生了变化。
 
 Where I think things changed was with the rise of the LAMP stack (Linux, Apache, MySQL, and PHP/Perl/Python).The LAMP stack is a major success story. It was stable, scalable, and relatively user-friendly. At the same time, I started seeing dissatisfaction with proprietary solutions. Once customers had this taste of open source in the LAMP stack, they changed what they expected from software, including:
 
+我认为，随着LAMP系列(Linux、Apache、MySQL和PHP / Perl / Python)的兴起，情况发生了变化。LAMP系列是一个巨大的成功故事。它是稳定的、可伸缩的、友好的。与此同时，我开始看到对闭源解决方案的不满。一旦客户在LAMP系列中有了这种开源的念头，他们就会改变他们对软件的期望，包括:
+
 *   reluctance to be locked in by a vendor,
+
+*   不愿被供应商绑架，
 
 *   concern over security,
 
+*   关注安全,
+
 *   desire to fix bugs themselves, and
+
+*   希望修复bug，以及
 
 *   recognition that innovation is stifled when software is developed in isolation.
 
+*   当软件被孤立开发时，意味着创新被扼杀了。
+
 On the technical side, we also saw a massive change in how organizations use software. Suddenly, downtime for a website was unacceptable. There was a move to a greater reliance on scaling and automation. In the past decade especially, we've seen a move from the traditional "pet" model of infrastructure to a "cattle" model, where servers can be swapped out and replaced, rather than kept and named. Companies work with massive amounts of data, causing a greater focus on data retention and the speed of processing and returning that data to users.
+
+在技术方面，我们也看到了组织者在如何使用软件上的巨大变化。突如其来一个网站的宕机是不可预测和接受的。这会对扩展性和自动化造成影响。特别是在过去的十年里，我们看到了从传统的基础设施模型到“牛”模型的转变，在这种模式中，服务器可以被替换和替换，而不是保存和命名。公司使用大量的数据，更注重数据保留和处理速度，并将数据返回给用户。
 
 Open source, with open communities and increasing investment from major companies, provided the foundation to satisfy this change in how we started using software. Systems administrators' job descriptions began requiring skill with Linux and familiarity with open source technologies and methodologies. Through the open sourcing of things like Chef cookbooks and Puppet modules, administrators could share the configuration of their tooling. No longer were we individually configuring and tuning MySQL in silos; we created a system for handling
 
+开源社区，开放社区和来自大公司的增持投资，为我们如何开始使用软件提供了基础。系统管理员的工作职责开始需要使用Linux的技能，熟悉开源技术和方法。通过开源，如Chef cookbooks和Puppet模块，管理员可以共享他们工具的配置。我们不再单独配置和调优MySQL;我们创建了一个用于处理以上问题的系统。
+
 Open source is ubiquitous today, and so is the tooling surrounding it.the basic parts so we could focus on the more interesting engineering work that brought specific value to our employers.
 
+开源现在无处不在，围绕它的工具也无处不在。我们可以把重点放在更有趣的工程上，从而为我们的雇主带来更大的价值。
+
 Open source is ubiquitous today, and so is the tooling surrounding it. Companies once hostile to the idea are not only embracing open source through interoperability programs and outreach, but also by releasing their own open source software projects and building communities around it.
+
+开源现在无处不在，围绕它的工具也无处不在。曾经对这个想法怀有敌意的公司不仅通过互操作性项目与外界拥抱开源，而且还通过发布他们自己的开源软件项目并且围绕它们构建社区。
 
 ### [microsoft_linux_stick.png][2]
 
@@ -53,50 +84,94 @@ A "Microsoft 
 
 ### Turning to the cloud
 
+### 转向云端
+
 Today, we're living in a world of DevOps and clouds. We've reaped the rewards of the innovation that open source movements brought. There's a sharp rise in what Tim O'Reilly called "[inner-sourcing][11]," where open source software development practices are adopted inside of companies. We're sharing deployment configurations for cloud platforms. Tools like Terraform are even allowing us to write and share how we deploy to specific platforms.
 
+今天，我们生活在一个DevOps和云端的世界里。我们收获了开源运动带来的创新成果。Tim O ' reilly所称的“[inner-sourcing][11]”，在公司内部采用开源软件开发实践。我们正在为云平台共享部署配置。像Terraform这样的工具甚至允许我们编写和分享我们如何部署到特定的平台。
+
 Today, we're living in a world of DevOps and clouds.But what about these platforms themselves?
+
+今天，我们生活在一个DevOps和云端的世界里。但这些平台本身呢?
 
 > "Most people just consume the cloud without thinking ... many users are sinking cost into infrastructure that is not theirs, and they are giving up data and information about themselves without thinking."
 > —Edward Snowden, OpenStack Summit, May 9, 2017
 
 It's time to put more thought into our knee-jerk reaction to move or expand to the cloud.
 
+现在是时候把更多的想法放入我们的本能反应中来部署扩展到云上。
+
 As Snowden highlighted, now we risk of losing control of the data that we maintain for our users and customers. Security aside, if we look back at our list of reasons for switching to open source, high among them were also concerns about vendor lock-in and the inability to drive innovation or even fix bugs.
+
+就像Snowden强调的那样，现在我们有可能失去对用户数据的控制。抛开安全不谈，如果我们回顾一下我们转向开源的原因，个中原因还包括对厂商锁定的担忧，创新难以推动，以及无法修复bug。
 
 Before you lock yourself and/or your company into a proprietary platform, consider the following questions:
 
+在你把自己和/或你的公司锁定在一个专有平台之前，考虑以下问题:
+
 *   Is the service I'm using adhering to open standards, or am I locked in?
+
+*   我使用的服务是遵循开放标准，还是闭源?
 
 *   What is my recourse if the service vendor goes out of business or is bought by a competitor?
 
+*   如果服务供应商破产或被竞争对手收购，我的追索权是什么?
+
 *   Does the vendor have a history of communicating clearly and honestly with its customers about downtime, security, etc.?
+
+*   关于停机、安全等问题，供应商在与客户沟通中是否有一个明确而真诚的历史过往?
 
 *   Does the vendor respond to bugs and feature requests, even from smaller customers?
 
+*   供应商是否响应bug和特性请求，即使那是来自小客户?
+
 *   Will the vendor use our data in a way that I'm not comfortable with (or worse, isn't allowed by our own customer agreements)?
+
+*   供应商是否会在我不知情的情况下使用我们的数据(或者更糟，不让我们反对的客户协议)?
 
 *   Does the vendor have a plan to handle long-term, escalating costs of growth, particularly if initial costs are low?
 
+*   供应商是否有一个计划来处理长期的，不断上升的增长成本，特别是如果最初的成本很低呢?
+
 You may go through this questionnaire, discuss each of the points, and still decide to use a proprietary solution. That's fine; companies do it all the time. However, if you're like me and would rather find a more open solution while still benefiting from the cloud, you do have options.
+
+您可以通过这个问卷，讨论每个要点，仍然决定使用专有的解决方案。这很好，公司一直都在这么做。然而，如果你像我一样，宁愿找到一个更开放的解决方案，而仍然受益于云，你确实有选择。
 
 ### Beyond the proprietary cloud
 
+### 基于私有云
+
 As you look beyond proprietary cloud solutions, your first option to go open source is by investing in a cloud provider whose core runs on open source software. [OpenStack][12] is the industry leader, with more than 100 participating organizations and thousands of contributors in its seven-year history (including me for a time). The OpenStack project has proven that interfacing with multiple OpenStack-based clouds is not only possible, but relatively trivial. The APIs are similar between cloud companies, so you're not necessarily locked in to a specific OpenStack vendor. As an open source project, you can still influence the features, bug requests, and direction of the infrastructure.
+
+当您寻找私有云解决方案时，您的第一个选择是投资一个云提供商，它的核心运行在开源软件上。[OpenStack][12]是行业领袖，在其7年的历史中，有100多个参与组织和成千上万的贡献者(包括我)。OpenStack项目已经证明，与多个openstackbased云的接口不仅是可以实现，而且相对简单。云公司之间的api是相似的，所以您不必局限于特定的OpenStack供应商。作为一个开放源码项目，您仍然可以影响基础设施的特性、bug请求和方向。
 
 The second option is to continue to use proprietary clouds at a basic level, but within an open source container orchestration system. Whether you select [DC/OS][13] (built on [Apache Mesos][14]), [Kubernetes][15], or [Docker in swarm mode][16], these platforms allow you to treat the virtual machines served up by proprietary cloud systems as independent Linux machines and install your platform on top of that. All you need is Linux—and don't get immediately locked into the cloud-specific tooling or platforms. Decisions can be made on a case-by-case basis about whether to use specific proprietary backends, but if you do, try to keep an eye toward the future should a move be required.
 
+第二种选择是继续在一个基本级别上使用专有云，但在一个开源容器编排系统中。无论您选择[DC / OS][13](基于[Apache Mesos][14])，[Kubernetes][15]，或[Docker in swarm mode][16]，这些平台都允许您将专有云系统提供的虚拟机作为独立的Linux机器，并在此之上安装您的平台。您所需要的只是linux不会立即被锁定在特定于云的工具或平台上。决策可以根据具体情况来决定是否使用特定的私有后端，但如果你这样做，就应该着眼于未来。
+
 With either option, you also have the choice to depart from the cloud entirely. You can deploy your own OpenStack cloud or move your container platform in-house to your own data center.
+
+有了这两种选择，你也可以选择完全离开云。您可以部署自己的OpenStack云，或者将容器平台内部架构移动到您自己的数据中心。
 
 ### Making a moonshot
 
+### 做一个月球探测器
+
 To conclude, I'd like to talk a bit about open source project infrastructures. Back in March, participants from various open source projects convened at the [Southern California Linux Expo][17] to talk about running open source infrastructures for their projects. (For more, read my [summary of this event][18].) I see the work these projects are doing as the final step in the open sourcing of infrastructure. Beyond the basic sharing that we're doing now, I believe companies and organizations can make far more of their infrastructures open source without giving up the "secret sauce" that distinguishes them from competitors.
+
+最后，我想谈一谈开源项目基础设施。今年3月，来自[Southern California Linux Expo][17]的多个开放源码项目的参与者讨论了为他们的项目运行开源基础设施。(更多的，请阅读我的[summary of this event][18]。)我认为这些项目的工作是基础设施开放采购的最后一步。除了我们现在正在做的基本分享之外，我相信公司和组织可以在不放弃与竞争对手较劲的情况下，充分利用他们的基础设施开源。
 
 The open source projects that have open sourced their infrastructures have proven the value of allowing multiple companies and organizations to submit educated bug reports, and even patches and features, to their infrastructure. Suddenly you can invite part-time contributors. Your customers can derive confidence by knowing what your infrastructure looks like "under the hood."
 
+开源项目已经公开了他们的基础设施，已经证明了允许多个公司和组织向他们的基础设施提交有系统知识的bug报告，甚至是补丁和特定论文。突然之间，你可以邀请兼职的贡献者。你的客户可以通过了解你的基础设施在“引擎”而使用放心。
+
 Want more evidence? Visit [Open Source Infrastructure][19]'s website to learn more about the projects making their infrastructures open source (and the extensive amount of infrastructure they've released).
 
+想要更多的证据吗?访问 [Open Source Infrastructure][19]的网站，了解更多的项目，使其基础设施开放源代码(以及他们已经发布的大量基础设施)。
+
  _Learn more in Elizabeth K. Joseph's talk, [The Open Sourcing of Infrastructure][4], at FOSSCON August 26th in Philadelphia._
+
+8月26日在费城的FOSSCON网站上，伊丽莎白·k·约瑟夫的演讲[The Open Sourcing of Infrastructure][4]。
 
 --------------------------------------------------------------------------------
 
