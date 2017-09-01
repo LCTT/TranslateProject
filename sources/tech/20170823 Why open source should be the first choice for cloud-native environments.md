@@ -1,7 +1,9 @@
 为什么开源应该是云原生环境的首选
 ============================================================
 
+
 ### 基于相同的原因，Linux 击败了闭源软件，开源应该成为云原生环境的首选。
+
 
 ![Why open source should be the first choice for cloud-native environments](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/cloud-globe.png?itok=_drXt4Tn "Why open source should be the first choice for cloud-native environments")
 Image by : 
@@ -10,7 +12,9 @@ Image by : 
 
 让我们回溯到上世纪 90 年代，当时闭源软件大行其道，而开源才刚开始进入它自己的时代。是什么导致了这种转变，更重要的是，当我们转变为云原生环境时，我们能从今天学到什么?
 
+
 ### 基础设施的历史教训
+
 
 我将从一个高度武断的、开放的基础设施的过去30年的历史开始。如果他们知道什么的话，在 20 世纪 90 年代，Linux 只是大多数组织的雷达上的一个闪光点。从那些很快就能看到 Linux 的好处的公司中，你已经得到了早期的支持，主要是作为私有 Unix 的廉价替代品，但是使用 Microsoft Windows NT 来部署服务器的方式是使用一种Unix或增加的专有形式。
 
@@ -50,7 +54,9 @@ A "Microsoft 
 ![heart](https://opensource.com/sites/all/libraries/ckeditor/plugins/smiley/images/heart.png "heart")
  Linux" USB stick
 
+
 ### 转向云端
+
 
 今天，我们生活在一个 DevOps 和云端的世界里。我们收获了开源运动带来的创新成果。Tim O ' reilly 所称的 “[inner-sourcing][11]” ，在公司内部采用开源软件开发实践。我们正在为云平台共享部署配置。像 Terraform 这样的工具甚至允许我们编写和分享我们如何部署到特定的平台。
 
@@ -82,13 +88,16 @@ A "Microsoft 
 
 ### 基于私有云
 
+
 当您寻找私有云解决方案时，您的第一个选择是投资一个云提供商，它的核心运行在开源软件上。 [OpenStack][12] 是行业领袖，在其7年的历史中，有100多个参与组织和成千上万的贡献者(包括我)。 OpenStack 项目已经证明，与多个 openstackbased 云的接口不仅是可以实现，而且相对简单。云公司之间的 api 是相似的，所以您不必局限于特定的 OpenStack 供应商。作为一个开放源码项目，您仍然可以影响基础设施的特性、bug请求和方向。
 
 第二种选择是继续在一个基本级别上使用专有云，但在一个开源容器编排系统中。无论您选择 [DC / OS][13](基于[Apache Mesos][14]) ，[Kubernetes][15] ，或[Docker in swarm mode][16] ，这些平台都允许您将专有云系统提供的虚拟机作为独立的 Linux 机器，并在此之上安装您的平台。您所需要的只是 linux 不会立即被锁定在特定于云的工具或平台上。决策可以根据具体情况来决定是否使用特定的私有后端，但如果你这样做，就应该着眼于未来。
 
 有了这两种选择，你也可以选择完全离开云。您可以部署自己的 OpenStack 云，或者将容器平台内部架构移动到您自己的数据中心。
 
+
 ### 做一个月球探测器
+
 
 最后，我想谈一谈开源项目基础设施。今年3月，来自 [Southern California Linux Expo][17] 的多个开放源码项目的参与者讨论了为他们的项目运行开源基础设施。(更多的，请阅读我的 [summary of this event][18]。)我认为这些项目的工作是基础设施开放采购的最后一步。除了我们现在正在做的基本分享之外，我相信公司和组织可以在不放弃与竞争对手较劲的情况下，充分利用他们的基础设施开源。
 
