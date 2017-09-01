@@ -1,39 +1,37 @@
 使用 LibreOffice Calc 管理你的财务
 ============================================================
 
-### 你想知道你的钱花在哪里？这个精心设计的电子表格可以一目了然地回答这个问题。
+> 你想知道你的钱花在哪里？这个精心设计的电子表格可以一目了然地回答这个问题。
 
 ![Get control of your finances with LibreOffice Calc](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/BIZ_WorkInPublic.png?itok=7nAi_Db_ "Get control of your finances with LibreOffice Calc")
-图片来源： opensource.com
+
 
 如果你像大多数人一样，没有一个无底般的银行帐户。你可能需要仔细观察你的每月支出。
 
-有很多方法可以做到这一点，但是最快最简单的方法是使用电子表格。许多人创建一个非常基本的电子表格来完成这项工作，它由两长列组成，总计位于底部。这是可行的, 但这有点傻。
+有很多方法可以做到这一点，但是最快最简单的方法是使用电子表格。许多人创建一个非常基本的电子表格来完成这项工作，它由两长列组成，总计位于底部。这是可行的，但这有点傻。
 
-我将通过使用 LibreOffice Calc 创建一个更可扫描的（我认为）以及更具视觉吸引力的个人消费电子表格。
+我将通过使用 LibreOffice Calc 创建一个更便于细查的（我认为）以及更具视觉吸引力的个人消费电子表格。
 
-你说不用 LibreOffice？没关系。你可以使用[Gnumeric][7]、[Calligra Sheets][8] 或 [EtherCalc][9] 等电子表格工具使用本文中的信息。
+你说不用 LibreOffice？没关系。你可以使用 [Gnumeric][7]、[Calligra Sheets][8] 或 [EtherCalc][9] 等电子表格工具使用本文中的信息。
 
 ### 首先列出你的费用
 
-先别费心 LibreOffice 了。坐下来用笔和纸，列出你的每月日常开支。花时间, 翻遍你的记录, 记下所有的事情, 无论它多么渺小。不要担心你花了多少钱。重点放在你把钱花在哪里。
+先别费心 LibreOffice 了。坐下来用笔和纸，列出你的每月日常开支。花时间，翻遍你的记录，记下所有的事情，无论它多么渺小。不要担心你花了多少钱。重点放在你把钱花在哪里。
 
-完成之后，将你的费用分组到最有意义的标题下。例如，将你的燃气、电气和水费放在“水电费”下。你也可能想要为我们每个月都会遇到的意外费用，使用一组名为“各项”。
+完成之后，将你的费用分组到最有意义的标题下。例如，将你的燃气、电气和水费放在“水电费”下。你也可能想要为我们每个月都会遇到的意外费用，使用一组名为“种种”。
 
 ### 创建电子表格
 
 启动 LibreOffice Calc 并创建一个空的电子表格。在电子表格的顶部留下三个空白行。之后我们会回来。
 
-你把你的费用归类是有原因的：这些组将成为电子表格上的块。我们首先将最重要的花费组（例如“家庭”）放在电子表格的顶部。
+你把你的费用归类是有原因的：这些组将成为电子表格上的块。我们首先将最重要的花费组（例如 “家庭”）放在电子表格的顶部。
 
 在工作表顶部第四行的第一个单元格中输入该花费组的名称。将它放大（可以是 12 号字体）、加粗使得它显眼。
 
 在该标题下方的行中，添加以下三列：
 
 *   花费
-
 *   日期
-
 *   金额
 
 在“花费”列下的单元格中输入该组内花费的名称。
@@ -42,15 +40,11 @@
 
 你会看到这样：
 
-### [spreadsheet-expense-block.png][1]
-
 ![A group of expenses](https://opensource.com/sites/default/files/u128651/spreadsheet-expense-block.png "A group of expenses")
 
-这是一组开支的方式。不要为每个花费组创建新块, 而是复制你创建的内容并将其粘贴到第一个块旁边。我建议有三块, 在它们之间有一个空列。
+这是一组开支的方式。不要为每个花费组创建新块, 而是复制你创建的内容并将其粘贴到第一个块旁边。我建议一行放三块, 在它们之间有一个空列。
 
 你会看到这样：
-
-### [spreadsheet-expense-rows.png][2]
 
 ![A row of expenses](https://opensource.com/sites/default/files/u128651/spreadsheet-expense-rows.png "A row of expenses")
 
@@ -62,19 +56,15 @@
 
 我们首先总计每个费用组的金额。你可以让 LibreOffice Calc 自动做这些。高亮显示“金额”列底部的单元格，然后单击 “Formula” 工具栏上的 “Sum” 按钮。
 
-### [spreadsheet-sum-button.png][3]
-
 ![The Sum button](https://opensource.com/sites/default/files/u128651/spreadsheet-sum-button.png "The Sum button")
 
 单击金额列中的第一个单元格，然后将光标拖动到列中的最后一个单元格。然后按下 Enter。
-
-### [spreadsheet-totaled-expenses.png][4]
 
 ![An expense block with a total](https://opensource.com/sites/default/files/u128651/spreadsheet-totaled-expenses.png "An expense block with a total")
 
 现在让我们用你顶部留下的两三行空白行做一些事。这就是你所有费用的总和。我建议把它放在那里，这样无论何时你打开文件时它都是可见的。
 
-在表格左上角的其中一个单元格中，输入类似“月总计”。然后，在它旁边的单元格中，输入 **=SUM()**。这是 LibreOffice Calc 函数，它可以在电子表格中添加特定单元格的值。
+在表格左上角的其中一个单元格中，输入类似“月总计”。然后，在它旁边的单元格中，输入 `=SUM()`。这是 LibreOffice Calc 函数，它可以在电子表格中添加特定单元格的值。
 
 不要手动输入要添加的单元格的名称，请按住键盘上的 Ctrl。然后在电子表格上单击你在每组费用中总计的单元格。
 
@@ -86,6 +76,8 @@
 
 现在设置完成了，你可以使用电子表格了。使用电子表格跟踪你的花费本身不会坚实你的财务基础，但它可以帮助你控制每个月的花费。
 
+（题图： opensource.com）
+
 --------------------------------------------------------------------------------
 作者简介：
 
@@ -95,9 +87,9 @@ Scott Nesbitt - 我是一名长期使用自由/开源软件的用户，并为了
 
 via: https://opensource.com/article/17/8/budget-libreoffice-calc
 
-作者：[Scott Nesbitt ][a]
+作者：[Scott Nesbitt][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
