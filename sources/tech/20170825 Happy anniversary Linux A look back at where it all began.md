@@ -1,5 +1,6 @@
 Happy anniversary, Linux: A look back at where it all began
 ============================================================
+Translating by softpaopao
 
 ### Installing SLS 1.05 shows just how far the Linux kernel has come in 26 years.
 
