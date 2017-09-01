@@ -114,7 +114,7 @@ A "Microsoft 
 via: https://opensource.com/article/17/8/open-sourcing-infrastructure
 
 作者：[ Elizabeth K. Joseph][a]
-译者：[wenzhiyi](https://github.com/wenzhiyi)
+译者：[ wenzhiyi ](https://github.com/wenzhiyi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
