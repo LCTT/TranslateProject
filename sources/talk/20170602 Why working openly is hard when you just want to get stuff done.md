@@ -1,3 +1,5 @@
+translating by @explosic4
+
 Why working openly is hard when you just want to get stuff done
 ============================================================
 
@@ -85,7 +87,7 @@ So perhaps I should reconsider my GSD mentality and expand it to GMD: Get **mor
 
 作者简介：
 
-Jason Hibbets - Jason Hibbets is a senior community evangelist in Corporate Marketing at Red Hat where he is a community manager for Opensource.com. He has been with Red Hat since 2003 and is the author of The foundation for an open source city. Prior roles include senior marketing specialist, project manager, Red Hat Knowledgebase maintainer, and support engineer. Follow him on Twitter: 
+Jason Hibbets - Jason Hibbets is a senior community evangelist in Corporate Marketing at Red Hat where he is a community manager for Opensource.com. He has been with Red Hat since 2003 and is the author of The foundation for an open source city. Prior roles include senior marketing specialist, project manager, Red Hat Knowledgebase maintainer, and support engineer. Follow him on Twitter:
 
 -----------
 
