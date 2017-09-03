@@ -1,3 +1,5 @@
+translating by firmianay
+
 Getting Started with Headless Chrome
 ============================================================
 
