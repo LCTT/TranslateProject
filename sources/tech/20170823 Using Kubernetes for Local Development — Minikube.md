@@ -1,3 +1,5 @@
+translating----geekpi
+
 Using Kubernetes for Local Development — Minikube
 ============================================================
 
