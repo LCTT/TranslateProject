@@ -1,3 +1,5 @@
+MonkeyDEcho translated
+
 [MySQL infrastructure testing automation at GitHub][31]
 ============================================================
 
