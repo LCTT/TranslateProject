@@ -1,19 +1,19 @@
-Using Kubernetes for Local Development — Minikube
+使用 Kubernetes 进行本地开发 - Minikube
 ============================================================
 
-If you ops team are using Docker and Kubernetes, it is recommended to adopt the same or similar technologies in development. This will reduce the number of incompatibility and portability problems and makes everyone consider the application container a common responsibility of both Dev and Ops teams.
-
+如果你的运维团队在使用 Docker 和 Kubernetes，那么建议开发上采用相同或相似的技术。这将减少不兼容性和可移植性问题的数量，并使每个人都认为应用程序容器是开发和运维团队的共同责任。
 
 
 ![](https://cdn-images-1.medium.com/max/1000/1*3RHSw_mAFsUhObmbHyjVOg.jpeg)
 
-This blog post introduces the usage of Kubernetes in development mode and it is inspired from a screencast that you can find in [Painless Docker Course][10].
+这篇博客文章介绍了 Kubernetes 在开发模式中的用法，它受到[没有痛苦的 Docker 教程][10]中的截屏的启发。
 
 ![](https://cdn-images-1.medium.com/max/800/1*a02rarYYYvd7GalkyQ3AXg.jpeg)][1] 
 
-Minikube is a tool that makes developers’ life easy by allowing them to use and run a Kubernetes cluster in a local machine.
+Minikube 允许开发人员在本地使用和运行 Kubernetes 集群，从而使开发人员的生活变得轻松的一种工具。
 
-In this blog post, for the examples that I tested, I am using Linux Mint 18, but it doesn’t change nothing apart the installation part.
+
+在这篇博客中，对于我测试的例子，我使用的是 Linux Mint 18，但它在安装部分没有区别
 
 ```
 cat /etc/lsb-release 
@@ -29,11 +29,11 @@ DISTRIB_DESCRIPTION=”Linux Mint 18.1 Serena”
 
 ![](https://cdn-images-1.medium.com/max/800/1*DZzICImnejKbNV-NCa3gEg.png)
 
-#### Prerequisites
+#### 先决条件
 
-In order to work with Minkube, we should have Kubectl and Minikube installed + some virtualization drivers.
+为了与 Minkube 一起工作，我们应该安装 Kubectl 和 Minikube 和一些虚拟化驱动程序。
 
-*   For OS X, install [xhyve driver][2], [VirtualBox][3], or [VMware Fusion][4], then Kubectl and Minkube
+*   对于 OS X，安装 [xhyve 驱动][2]、[VirtualBox][3] 或者 [VMware Fusion][4]，接着是 Kubectl 和 Minkube。
 
 ```
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/darwin/amd64/kubectl
@@ -51,19 +51,19 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.21.0/minikube-darwin-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
 ```
 
-*   For Windows, install [VirtualBox][6] or [Hyper-V][7] then Kubectl and Minkube
+*   对于 Windows，安装 [VirtualBox][6] 或者 [Hyper-V][7]，接着是 Kubectl 和 Minkube。
 
 ```
 curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.7.0/bin/windows/amd64/kubectl.exe
 ```
 
-Add the binary to your PATH (This [article][11] explains how to modify the PATH)
+将二进制文件添加到你的 PATH 中（这篇[文章][11]解释了如何修改 PATH）
 
-Download the `minikube-windows-amd64.exe` file, rename it to `minikube.exe`and add it to your path.
+下载 `minikube-windows-amd64.exe`，将其重命名为 `minikube.exe`，并将其添加到你的 PATH 中。
 
-Find the last release [here][12].
+[在这][12]找到最后一个版本。
 
-*   For Linux, install [VirtualBox][8] or [KVM][9] then Kubectl and Minkube
+*   对于 Linux，安装 [VirtualBox][8] 或者 [KVM][9]，接着是 Kubectl 和 Minkube。
 
 ```
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
@@ -81,9 +81,9 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.21.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
 ```
 
-#### Using Minikube
+#### 使用 Minikube
 
-Let’s start by creating an image from this Dockerfile:
+我们先从这个 Dockerfile 创建一个镜像：
 
 ```
 FROM busybox
@@ -92,21 +92,21 @@ EXPOSE 8000
 CMD httpd -p 8000 -h /www; tail -f /dev/null
 ```
 
-Add something you’d like to see in the index.html page.
+添加你希望在 index.html 中看到的内容。
 
-Build the image:
+构建镜像：
 
 ```
 docker build -t eon01/hello-world-web-server .
 ```
 
-Let’s run the container to test it:
+我们来运行容器来测试它：
 
 ```
 docker run -d --name webserver -p 8000:8000 eon01/hello-world-web-server
 ```
 
-This is the output of docker ps:
+这是 docker ps 的输出：
 
 ```
 docker ps
@@ -118,145 +118,145 @@ CONTAINER ID        IMAGE                          COMMAND                  CREA
 2ad8d688d812        eon01/hello-world-web-server   "/bin/sh -c 'httpd..."   3 seconds ago       Up 2 seconds        0.0.0.0:8000->8000/tcp   webserver
 ```
 
-Let’s commit the image and upload it to the public Docker Hub. You can use your own private registry:
+让我们提交镜像并将其上传到公共 Docker Hub 中。你可以使用自己的私有仓库：
 
 ```
 docker commit webserver
 docker push eon01/hello-world-web-server
 ```
 
-Remove the container since we will use it with Minikube
+删除容器，因为我们将与 Minikube 一起使用它。
 
 ```
 docker rm -f webserver
 ```
 
-Time to start Minikube:
+启动 Minikube：
 
 ```
 minkube start
 ```
 
-Check the status:
+检查状态：
 
 ```
 minikube status
 ```
 
-We are running a single node:
+我们运行一个节点：
 
 ```
 kubectl get node
 ```
 
-Run the webserver:
+运行 webserver：
 
 ```
 kubectl run webserver --image=eon01/hello-world-web-server --port=8000
 ```
 
-A webserver should have it’s port exposed:
+webserver 应该会暴露它的端口：
 
 ```
 kubectl expose deployment webserver --type=NodePort
 ```
 
-In order to get the service url type:
+为了得到服务 url 输入：
 
 ```
 minikube service webserver --url
 ```
 
-We can see the content of the web page using :
+使用下面的命令得到 Web 页面的内容：
 
 ```
 curl $(minikube service webserver --url)
 ```
 
-To show a summary of the running cluster run:
+显示运行中集群的摘要：
 
 ```
 kubectl cluster-info
 ```
 
-For more details:
+更多细节：
 
 ```
 kubectl cluster-info dump
 ```
 
-We can also list the pods using:
+我们还可以使用以下方式列出 pod：
 
 ```
 kubectl get pods
 ```
 
-And to access to the dashboard use:
+使用下面的方式访问面板：
 
 ```
 minikube dashboard
 ```
 
-If you would like to access the frontend of the web application type:
+如果你想访问 Web 程序的前端，输入：
 
 ```
 kubectl proxy
 ```
 
-If we want to execute a command inside the container, get the pod id using:
+如果我们要在容器内部执行一个命令，请使用以下命令获取 pod id：
 
 ```
 kubetctl get pods
 ```
 
-Then use it like :
+然后像这样使用：
 
 ```
 kubectl exec webserver-2022867364-0v1p9 -it -- /bin/sh
 ```
 
-To finish, delete all deployments:
+要完成，请删除所有部署：
 
 ```
 kubectl delete deployments --all
 ```
 
-Delete all pods:
+删除所有 pod：
 
 ```
 kubectl delete pods --all
 ```
 
-And stop Minikube
+并且停止 Minikube。
 
 ```
 minikube stop
 ```
 
-I hope you enjoyed this introduction.
+我希望你享受这个介绍。
 
-### Connect Deeper
+### 更加深入
 
-If you resonated with this article, you can find more interesting contents in [Painless Docker Course][13].
+如果你对本文感到共鸣，您可以在[没有痛苦的 Docker 教程][13]中找到更多有趣的内容。
 
-We, [Eralabs][14], will be happy to help you on your Docker and Cloud Computing projects, [contact us][15] and we will be happy to hear about your projects.
+我们 [Eralabs][14] 将很乐意为你的 Docker 和云计算项目提供帮助，[联系我们][15]，我们将很乐意听到你的项目。
 
-Please subscribe to [DevOpsLinks][16] : An Online Community Of Thousands Of IT Experts & DevOps Enthusiast From All Over The World.
+请订阅 [DevOpsLinks][16]：成千上万的 IT 专家和 DevOps 爱好者在线社区。
 
-You may be also interested in joining our newsletter [Shipped][17], a newsletter focused on containers, orchestration and serverless technologies.
+你可能也有兴趣加入我们的新闻订阅 [Shipped][17]，一个专注于容器，编排和无服务技术的新闻订阅。
 
-You can find me on [Twitter][18], [Clarity][19] or my [website][20] and you can also check my books: [SaltStack For DevOps][21].
+你可以在[Twitter][18]、[Clarity][19] 或我的[网站][20]上找到我，你也可以看看我的书：[SaltStack For DevOps][21]。
 
-Don’t forget to join my last project [Jobs For DevOps][22] !
+不要忘记加入我的最后一个项目[DevOps 的职位][22]！
 
-If you liked this post, please recommend it and share it with your followers.
+如果你喜欢本文，请推荐它，并与你的关注者分享。
 
 --------------------------------------------------------------------------------
 
 作者简介：
 
-Aymen El Amri
-Cloud & Software Architect, Entrepreneur, Author, CEO www.eralabs.io, Founder www.devopslinks.com, Personal Page : www.aymenelamri.com
+Aymen El Amri - 
+云和软件架构师、企业家、作者、www.eralabs.io 的 CEO、www.devopslinks.com 的创始人，个人页面：www.aymenelamri.com
 
 -------------------
 
@@ -264,7 +264,7 @@ Cloud & Software Architect, Entrepreneur, Author, CEO www.eralabs.io, Founder ww
 via: https://medium.com/devopslinks/using-kubernetes-minikube-for-local-development-c37c6e56e3db
 
 作者：[Aymen El Amri ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
