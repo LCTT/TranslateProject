@@ -1,3 +1,5 @@
+translating by StdioA
+
 Running WordPress in a Kubernetes Cluster
 ============================================================
 
@@ -170,7 +172,7 @@ via: https://deliciousbrains.com/running-wordpress-kubernetes-cluster/
 [9]:https://kubernetes.io/
 [10]:https://docs.docker.com/engine/swarm/
 [11]:http://mesos.apache.org/
-[12]:https://mesosphere.com/blog/docker-vs-kubernetes-vs-apache-mesos/
+[12]:https://mesosphere.com/blog/docker-vs-kubernetes-vs-apache-mesos/  
 [13]:https://kubernetes.io/docs/tutorials/kubernetes-basics/
 [14]:https://kubernetes.io/docs/getting-started-guides/minikube/
 [15]:https://kubernetes.io/docs/tasks/tools/install-kubectl/
