@@ -1,42 +1,42 @@
-Automated testing with Headless Chrome
+使用 Headless Chrome 进行自动化测试
 ============================================================
 
 
-If you want to run automated tests using Headless Chrome, look no further! This article will get you all set up using Karma as a runner and Mocha+Chai for authoring tests.
+如果你想使用 Headless Chrome 进行自动化测试，就看下去吧！这篇文章将让你完全使用 Karma 作为 runner，并且使用 Mocha+Chai 进行 authoring 测试。
 
-**What are these things?**
+**这些东西是什么？**
 
 Karma, Mocha, Chai, Headless Chrome, oh my!
 
-[Karma][2] is a testing harness that works with any of the the most popular testing frameworks ([Jasmine][3], [Mocha][4], [QUnit][5]).
+[Karma][2] 是一个测试工具，可以和所有最流行的测试框架（[Jasmine][3], [Mocha][4], [QUnit][5]）配合使用。
 
-[Chai][6] is an assertion library that works with Node and in the browser. We need the latter.
+[Chai][6] 是一个断言库，可以与 Node 和浏览器一起使用。这里我们需要后者。
 
-[Headless Chrome][7] is a way to run the Chrome browser in a headless environment without the full browser UI. One of the benefits of using Headless Chrome (as opposed to testing directly in Node) is that your JavaScript tests will be executed in the same environment as users of your site. Headless Chrome gives you a real browser context without the memory overhead of running a full version of Chrome.
+[Headless Chrome][7] 是一种在没有浏览器用户界面的 headless 环境中运行 Chrome 浏览器的方法。使用 Headless Chrome（而不是直接在 Node 中测试） 的一个好处是 JavaScript 测试将在与你的网站用户相同的环境中执行。Headless Chrome 为你提供了真正的浏览器环境，却没有运行完整版本的 Chrome 一样的内存开销。
 
 ### Setup
 
-### Installation
+### 安装
 
-Install Karma, the relevant, plugins, and the test runners using `yarn`:
+使用 `yarn` 安装 Karma、相关插件和测试用例：
 
 ```
 yarn add --dev karma karma-chrome-launcher karma-mocha karma-chai
 yarn add --dev mocha chai
 ```
 
-or use `npm`:
+或者使用 `npm`：
 
 ```
 npm i --save-dev karma karma-chrome-launcher karma-mocha karma-chai
 npm i --save-dev mocha chai
 ```
 
-I'm using [Mocha][8] and [Chai][9] in this post, but if you're not a fan, choose your favorite assertion library that works in the browser.
+在这篇文章中我使用 [Mocha][8] 和 [Chai][9]，但是你也可以选择自己最喜欢的在浏览器中工作的断言库。
 
-### Configure Karma
+### 配置 Karma
 
-Create a `karma.config.js` file that uses the `ChromeHeadless` launcher.
+创建一个使用 `ChromeHeadless` 启动器的 `karma.config.js` 文件。
 
 **karma.conf.js**
 
@@ -57,11 +57,11 @@ module.exports = function(config) {
 }
 ```
 
-<aside class="note" style="box-sizing: inherit; font-size: 14px; margin-top: 16px; margin-bottom: 16px; padding: 12px 24px 12px 60px; background: rgb(225, 245, 254); color: rgb(2, 136, 209);">**Note:** Run `./node_modules/karma/bin/ init karma.conf.js` to generate the Karma configuration file.</aside>
+<aside class="note" style="box-sizing: inherit; font-size: 14px; margin-top: 16px; margin-bottom: 16px; padding: 12px 24px 12px 60px; background: rgb(225, 245, 254); color: rgb(2, 136, 209);">**注意：** 运行 `./node_modules/karma/bin/ init karma.conf.js` 生成 Karma 的配置文件。</aside>
 
-### Write a test
+### 写一个测试
 
-Create a test in `/test/test.js`.
+在 `/test/test.js` 中写一个测试：
 
 **/test/test.js**
 
@@ -75,9 +75,9 @@ describe('Array', () => {
 });
 ```
 
-### Run your tests
+### 运行你的测试
 
-Add a `test` script in `package.json` that runs Karma with our settings.
+在我们设置好用于运行 Karma 的 `package.json` 中添加一个测试脚本。
 
 **package.json**
 
@@ -87,15 +87,15 @@ Add a `test` script in `package.json` that runs Karma with our settings.
 }
 ```
 
-When you run your tests (`yarn test`), Headless Chrome should fire up and output the results to the terminal:
+当你运行你的测试（`yarn test`）时，Headless Chrome 会启动并将运行结果输出到终端：
 
 ![Output from Karma](https://developers.google.com/web/updates/images/2017/06/headless-karma.png)
 
-### Creating your own Headless Chrome launcher
+### 创建你自己的 Headless Chrome 启动器
 
-The `ChromeHeadless` launcher is great because it works out of the box for testing on Headless Chrome. It includes the appropriate Chrome flags for you and launches a remote debugging version of Chrome on port `9222`.
+`ChromeHeadless` 启动器非常棒，因为它可以在 Headless Chrome 上进行测试。它包含了适合你的 Chrome 标志，并在端口 `9222` 上启动 Chrome 的远程调试版本。
 
-However, sometimes you may want to pass custom flags to Chrome or change the remote debugging port the launcher uses. To do that, create a `customLaunchers` field that extends the base `ChromeHeadless` launcher:
+但是，有时你可能希望将自定义的标志传递给 Chrome 或更改启动器使用的远程调试端口。要做到这一点，可以通过创建一个 `customLaunchers` 字段来扩展基础的 `ChromeHeadless` 启动器：
 
 **karma.conf.js**
 
@@ -116,11 +116,11 @@ module.exports = function(config) {
 };
 ```
 
-### Running it all on Travis CI
+### 在 Travis CI 上运行它
 
-Configuring Karma to run your tests in Headless Chrome is the hard part. Continuous integration in Travis is just a few lines away!
+在 Headless Chrome 中配置 Karma 运行测试是很困难的。而在 Travis 中持续整合就只有几种！
 
-To run your tests in Travis, use `dist: trusty` and install the Chrome stable addon:
+要在 Travis 中运行测试，请使用 `dist: trusty` 并安装稳定版 Chrome 插件：
 
 **.travis.yml**
 
@@ -146,14 +146,14 @@ script:
 
 作者简介
 
-[Eric Bidelman][1]Engineer @ Google working on Lighthouse, Web Components, Chrome, and the web
+[Eric Bidelman][1] 谷歌工程师，Lighthouse 开发，Web 和 Web 组件开发，Chrome 开发
 
 ----------------
 
 via: https://developers.google.com/web/updates/2017/06/headless-karma-mocha-chai
 
 作者：[ Eric Bidelman][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[firmianay](https://github.com/firmianay)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

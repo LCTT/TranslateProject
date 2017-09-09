@@ -1,6 +1,6 @@
 Top 8 IDEs for Raspberry Pi
 ============================================================
-
+translating by softpaopao
 
   _![](https://i2.wp.com/opensourceforu.com/wp-content/uploads/2017/05/LEGO_brick_robot_05.jpg?resize=700%2C479)_  
 

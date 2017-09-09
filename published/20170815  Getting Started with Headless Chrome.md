@@ -1,20 +1,20 @@
-Getting Started with Headless Chrome
+Headless Chrome 入门
 ============================================================
 
 
-### TL;DR
+### 摘要
 
-[Headless Chrome][9] is shipping in Chrome 59\. It's a way to run the Chrome browser in a headless environment. Essentially, running Chrome without chrome! It brings **all modern web platform features** provided by Chromium and the Blink rendering engine to the command line.
+在 Chrome 59　中开始搭载 [Headless Chrome][9]。这是一种在<ruby>无需显示<rt>headless</rt></ruby>的环境下运行 Chrome 浏览器的方式。从本质上来说，就是不用 chrome 浏览器来运行 Chrome 的功能！它将 Chromium 和 Blink 渲染引擎提供的所有现代 Web 平台的功能都带入了命令行。
 
-Why is that useful?
+它有什么用？
 
-A headless browser is a great tool for automated testing and server environments where you don't need a visible UI shell. For example, you may want to run some tests against a real web page, create a PDF of it, or just inspect how the browser renders an URL.
+<ruby>无需显示<rt>headless</rt></ruby>的浏览器对于自动化测试和不需要可视化 UI 界面的服务器环境是一个很好的工具。例如，你可能需要对真实的网页运行一些测试，创建一个 PDF，或者只是检查浏览器如何呈现 URL。
 
-<aside class="caution" style="box-sizing: inherit; font-size: 14px; margin-top: 16px; margin-bottom: 16px; padding: 12px 24px 12px 60px; background: rgb(255, 243, 224); color: rgb(221, 44, 0);">**Caution:** Headless mode is available on Mac and Linux in **Chrome 59**. [Windows support][2] is coming in Chrome 60\. To check what version of Chrome you have, open `chrome://version`.</aside>
+> **注意：** Mac 和 Linux 上的 Chrome 59 都可以运行无需显示模式。[对 Windows 的支持][2]将在 Chrome 60 中提供。要检查你使用的 Chrome 版本，请在浏览器中打开 `chrome://version`。
 
-### Starting Headless (CLI)
+### 开启<ruby>无需显示<rt>headless</rt></ruby>模式（命令行界面）
 
-The easiest way to get started with headless mode is to open the Chrome binary from the command line. If you've got Chrome 59+ installed, start Chrome with the `--headless` flag:
+开启<ruby>无需显示<rt>headless</rt></ruby>模式最简单的方法是从命令行打开 Chrome 二进制文件。如果你已经安装了 Chrome 59 以上的版本，请使用 `--headless` 标志启动 Chrome：
 
 ```
 chrome \
@@ -24,11 +24,11 @@ chrome \
   https://www.chromestatus.com   # URL to open. Defaults to about:blank.
 ```
 
-<aside class="note" style="box-sizing: inherit; font-size: 14px; margin-top: 16px; margin-bottom: 16px; padding: 12px 24px 12px 60px; background: rgb(225, 245, 254); color: rgb(2, 136, 209);">**Note:** Right now, you'll also want to include the `--disable-gpu` flag. That will eventually go away.</aside>
+> **注意：**目前你仍然需要使用 `--disable-gpu` 标志。但它最终会不需要的。
 
-`chrome` should point to your installation of Chrome. The exact location will vary from platform to platform. Since I'm on Mac, I created convenient aliases for each version of Chrome that I have installed.
+`chrome` 二进制文件应该指向你安装 Chrome 的位置。确切的位置会因平台差异而不同。当前我在 Mac 上操作，所以我为安装的每个版本的 Chrome 都创建了方便使用的别名。
 
-If you're on the stable channel of Chrome and cannot get the Beta, I recommend using `chrome-canary`:
+如果您使用 Chrome 的稳定版，并且无法获得测试版，我建议您使用 `chrome-canary` 版本：
 
 ```
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
@@ -36,31 +36,31 @@ alias chrome-canary="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Goo
 alias chromium="/Applications/Chromium.app/Contents/MacOS/Chromium"
 ```
 
-Download Chrome Canary [here][10].
+在[这里][10]下载 Chrome Cannary。
 
-### Command line features
+### 命令行的功能
 
-In some cases, you may not need to [programmatically script][11] Headless Chrome. There are some [useful command line flags][12] to perform common tasks.
+在某些情况下，你可能不需要[以脚本编程的方式][11]操作 Headless Chrome。可以使用一些[有用的命令行标志][12]来执行常见的任务。
 
-### Printing the DOM
+#### 打印 DOM
 
-The `--dump-dom` flag prints `document.body.innerHTML` to stdout:
+`--dump-dom` 标志将打印 `document.body.innerHTML` 到标准输出：
 
 ```
 chrome --headless --disable-gpu --dump-dom https://www.chromestatus.com/
 ```
 
-### Create a PDF
+#### 创建一个 PDF
 
-The `--print-to-pdf` flag creates a PDF of the page:
+`--print-to-pdf` 标志将页面转出为 PDF 文件：
 
 ```
 chrome --headless --disable-gpu --print-to-pdf https://www.chromestatus.com/
 ```
 
-### Taking screenshots
+#### 截图
 
-To capture a screenshot of a page, use the `--screenshot` flag:
+要捕获页面的屏幕截图，请使用 `--screenshot` 标志：
 
 ```
 chrome --headless --disable-gpu --screenshot https://www.chromestatus.com/
@@ -72,11 +72,11 @@ chrome --headless --disable-gpu --screenshot --window-size=1280,1696 https://www
 chrome --headless --disable-gpu --screenshot --window-size=412,732 https://www.chromestatus.com/
 ```
 
-Running with `--screenshot` will produce a file named `screenshot.png` in the current working directory. If you're looking for full page screenshots, things are a tad more involved. There's a great blog post from David Schnurr that has you covered. Check out [Using headless Chrome as an automated screenshot tool ][13].
+使用 `--screenshot` 标志运行 Headless Chrome 将在当前工作目录中生成一个名为 `screenshot.png` 的文件。如果你正在寻求整个页面的截图，那么会涉及到很多事情。来自 David Schnurr 的一篇很棒的博文已经介绍了这一内容。请查看 [使用 headless Chrome 作为自动截屏工具][13]。
 
-### REPL mode (read-eval-print loop)
+#### REPL 模式 (read-eval-print loop)
 
-The `--repl` flag runs Headless in a mode where you can evaluate JS expressions in the browser, right from the command line:
+`--repl` 标志可以使 Headless Chrome 运行在一个你可以使用浏览器评估 JS 表达式的模式下。执行下面的命令：
 
 ```
 $ chrome --headless --disable-gpu --repl https://www.chromestatus.com/
@@ -84,35 +84,35 @@ $ chrome --headless --disable-gpu --repl https://www.chromestatus.com/
 >>> location.href
 {"result":{"type":"string","value":"https://www.chromestatus.com/features"}}
 >>> quit
-$
 ```
 
-### Debugging Chrome without a browser UI?
+### 在没有浏览器界面的情况下调试 Chrome
 
-When you run Chrome with `--remote-debugging-port=9222`, it starts an instance with the [DevTools protocol][14] enabled. The protocol is used to communicate with Chrome and drive the headless browser instance. It's also what tools like Sublime, VS Code, and Node use for remote debugging an application. #synergy
+当你使用 `--remote-debugging-port=9222` 运行 Chrome 时，它会启动一个支持 [DevTools 协议][14]的实例。该协议用于与 Chrome 进行通信，并且驱动 Headless Chrome 浏览器实例。它也是一个类似 Sublime、VS Code 和 Node 的工具，可用于应用程序的远程调试。#协同效应
 
-Since you don't have browser UI to see the page, navigate to `http://localhost:9222` in another browser to check that everything is working. You'll see a list of inspectable pages where you can click through and see what Headless is rendering:
+由于你没有浏览器用户界面可用来查看网页，请在另一个浏览器中输入 `http://localhost:9222`，以检查一切是否正常。你将会看到一个<ruby>可检查的<rt>inspectable</rt></ruby>页面的列表，可以点击它们来查看 Headless Chrome 正在呈现的内容：
 
 ![DevTools Remote](https://developers.google.com/web/updates/images/2017/04/headless-chrome/remote-debugging-ui.jpg)
-DevTools remote debugging UI
 
-From here, you can use the familiar DevTools features to inspect, debug, and tweak the page as you normally would. If you're using Headless programmatically, this page is also a powerful debugging tool for seeing all the raw DevTools protocol commands going across the wire, communicating with the browser.
+*DevTools 远程调试界面*
 
-### Using programmatically (Node)
+从这里，你就可以像往常一样使用熟悉的 DevTools 来检查、调试和调整页面了。如果你以编程方式使用 Headless Chrome，这个页面也是一个功能强大的调试工具，用于查看所有通过网络与浏览器交互的原始 DevTools 协议命令。
 
-### The Puppeteer API
+### 使用编程模式 （Node）
 
-[Puppeteer][15] is a Node library developed by the Chrome team. It provides a high-level API to control headless (or full) Chrome. It's similar to other automated testing libraries like Phantom and NightmareJS, but it only works with the latest versions of Chrome.
+#### Puppeteer 库 API
 
-Among other things, Puppeteer can be used to easily take screenshots, create PDFs, navigate pages, and fetch information about those pages. I recommend the library if you want to quickly automate browser testing. It hides away the complexities of the DevTools protocol and takes care of redundant tasks like launching a debug instance of Chrome.
+[Puppeteer][15] 是一个由 Chrome 团队开发的 Node 库。它提供了一个高层次的 API 来控制无需显示版（或 完全版）的 Chrome。它与其他自动化测试库，如 Phantom 和 NightmareJS 相类似，但是只适用于最新版本的 Chrome。
 
-Install it:
+除此之外，Puppeteer 还可用于轻松截取屏幕截图，创建 PDF，页面间导航以及获取有关这些页面的信息。如果你想快速地自动化进行浏览器测试，我建议使用该库。它隐藏了 DevTools 协议的复杂性，并可以处理诸如启动 Chrome 调试实例等繁冗的任务。
+
+安装：
 
 ```
 yarn add puppeteer
 ```
 
-**Example** - print the user agent
+**例子** - 打印用户代理：
 
 ```
 const puppeteer = require('puppeteer');
@@ -124,7 +124,7 @@ const puppeteer = require('puppeteer');
 })();
 ```
 
-**Example** - taking a screenshot of the page
+**例子** - 获取页面的屏幕截图：
 
 ```
 const puppeteer = require('puppeteer');
@@ -140,19 +140,19 @@ browser.close();
 })();
 ```
 
-Check out [Puppeteer's documentation][16] to learn more about the full API.
+查看 [Puppeteer 的文档][16]，了解完整 API 的更多信息。
 
-### The CRI library
+#### CRI 库
 
-[chrome-remote-interface][17] is a lower-level library than Puppeteer's API. I recommend it if you want to be close to the metal and use the [DevTools protocol][18] directly.
+[chrome-remote-interface][17] 是一个比 Puppeteer API 更低层次的库。如果你想要更接近原始信息和更直接地使用 [DevTools 协议][18]的话，我推荐使用它。
 
-#### Launching Chrome
+**启动 Chrome**
 
-chrome-remote-interface doesn't launch Chrome for you, so you'll have to take care of that yourself.
+chrome-remote-interface 不会为你启动 Chrome，所以你要自己启动它。
 
-In the CLI section, we [started Chrome manually][19] using `--headless --remote-debugging-port=9222`. However, to fully automate tests, you'll probably want to spawn Chrome  _from_  your application.
+在前面的 CLI 章节中，我们使用 `--headless --remote-debugging-port=9222` [手动启动了 Chrome][19]。但是，要想做到完全自动化测试，你可能希望从你的应用程序中启动 Chrome。
 
-One way is to use `child_process`:
+其中一种方法是使用 `child_process`：
 
 ```
 const execFile = require('child_process').execFile;
@@ -168,19 +168,19 @@ launchHeadlessChrome('https://www.chromestatus.com', (err, stdout, stderr) => {
 });
 ```
 
-But things get tricky if you want a portable solution that works across multiple platforms. Just look at that hard-coded path to Chrome :(
+但是如果你想要在多个平台上运行可移植的解决方案，事情会变得很棘手。请注意 Chrome 的硬编码路径：
 
-##### Using ChromeLauncher
+**使用 ChromeLauncher**
 
-[Lighthouse][20] is a marvelous tool for testing the quality of your web apps. A robust module for launching Chrome was developed within Lighthouse and is now extracted for standalone use. The [`chrome-launcher` NPM module][21] will find where Chrome is installed, set up a debug instance, launch the browser, and kill it when your program is done. Best part is that it works cross-platform thanks to Node!
+[Lighthouse][20] 是一个令人称奇的网络应用的质量测试工具。Lighthouse 内部开发了一个强大的用于启动 Chrome 的模块，现在已经被提取出来单独使用。[chrome-launcher NPM 模块][21] 可以找到 Chrome 的安装位置，设置调试实例，启动浏览器和在程序运行完之后将其杀死。它最好的一点是可以跨平台工作，感谢 Node！
 
-By default, **`chrome-launcher` will try to launch Chrome Canary** (if it's installed), but you can change that to manually select which Chrome to use. To use it, first install from npm:
+默认情况下，**chrome-launcher 会尝试启动 Chrome Canary**（如果已经安装），但是你也可以更改它，手动选择使用的 Chrome 版本。要想使用它，首先从 npm 安装：
 
 ```
 yarn add chrome-launcher
 ```
 
-**Example** - using `chrome-launcher` to launch Headless
+**例子** - 使用 `chrome-launcher` 启动 Headless Chrome：
 
 ```
 const chromeLauncher = require('chrome-launcher');
@@ -214,23 +214,21 @@ launchChrome().then(chrome => {
 });
 ```
 
-Running this script doesn't do much, but you should see an instance of Chrome fire up in the task manager that loaded `about:blank`. Remember, there won't be any browser UI. We're headless.
+运行这个脚本没有做太多的事情，但你应该能在任务管理器中看到启动了一个 Chrome 的实例，它加载了页面 `about:blank`。记住，它不会有任何的浏览器界面，我们是无需显示的。
 
-To control the browser, we need the DevTools protocol!
+为了控制浏览器，我们需要 DevTools 协议！
 
-#### Retrieving information about the page
+#### 检索有关页面的信息
 
-<aside class="warning" style="box-sizing: inherit; font-size: 14px; margin-top: 16px; margin-bottom: 16px; padding: 12px 24px 12px 60px; background: rgb(251, 233, 231); color: rgb(213, 0, 0);">**Warning:** The DevTools protocol can do a ton of interesting stuff, but it can be a bit daunting at first. I recommend spending a bit of time browsing the [DevTools Protocol Viewer][3], first. Then, move on to the `chrome-remote-interface` API docs to see how it wraps the raw protocol.</aside>
+> **警告：** DevTools 协议可以做一些有趣的事情，但是起初可能有点令人生畏。我建议先花点时间浏览 [DevTools 协议查看器][3]。然后，转到 `chrome-remote-interface` 的 API 文档，看看它是如何包装原始协议的。
 
-Let's install the library:
+我们来安装该库：
 
 ```
 yarn add chrome-remote-interface
 ```
 
-##### Examples
-
-**Example** - print the user agent
+**例子** - 打印用户代理：
 
 ```
 const CDP = require('chrome-remote-interface');
@@ -243,9 +241,9 @@ launchChrome().then(async chrome => {
 });
 ```
 
-Results in something like: `HeadlessChrome/60.0.3082.0`
+结果是类似这样的东西：`HeadlessChrome/60.0.3082.0`。
 
-**Example** - check if the site has a [web app manifest][22]
+**例子** - 检查网站是否有 [Web 应用程序清单][22]：
 
 ```
 const CDP = require('chrome-remote-interface');
@@ -282,7 +280,7 @@ Page.loadEventFired(async () => {
 })();
 ```
 
-**Example** - extract the `<title>` of the page using DOM APIs.
+**例子** - 使用 DOM API 提取页面的 `<title>`：
 
 ```
 const CDP = require('chrome-remote-interface');
@@ -316,21 +314,21 @@ Page.loadEventFired(async () => {
 })();
 ```
 
-### Using Selenium, WebDriver, and ChromeDriver
+### 使用 Selenium、WebDriver 和 ChromeDriver
 
-Right now, Selenium opens a full instance of Chrome. In other words, it's an automated solution but not completely headless. However, Selenium can be configured to run headless Chrome with a little work. I recommend [Running Selenium with Headless Chrome][23] if you want the full instructions on how to set things up yourself, but I've dropped in some examples below to get you started.
+现在，Selenium 开启了 Chrome 的完整实例。换句话说，这是一个自动化的解决方案，但不是完全无需显示的。但是，Selenium 只需要进行小小的配置即可运行 Headless Chrome。如果你想要关于如何自己设置的完整说明，我建议你阅读“[使用 Headless Chrome 来运行 Selenium][23]”，不过你可以从下面的一些示例开始。
 
-#### Using ChromeDriver
+#### 使用 ChromeDriver
 
-[ChromeDriver][24] 2.3.0 supports Chrome 59 and later and works with headless Chrome. In some cases, you may need Chrome 60 to work around bugs. For example, there are known issues with taking screenshots in Chrome 59.
+[ChromeDriver][24] 2.3.0 支持 Chrome 59 及更新版本，可与 Headless Chrome 配合使用。在某些情况下，你可能需要等到 Chrome 60 以解决 bug。例如，Chrome 59 中屏幕截图已知存在问题。
 
-Install:
+安装：
 
 ```
 yarn add selenium-webdriver chromedriver
 ```
 
-Example:
+例子：
 
 ```
 const fs = require('fs');
@@ -368,17 +366,17 @@ driver.takeScreenshot().then(base64png => {
 driver.quit();
 ```
 
-#### Using WebDriverIO
+#### 使用 WebDriverIO
 
-[WebDriverIO][25] is a higher level API on top of Selenium WebDriver.
+[WebDriverIO][25] 是一个在 Selenium WebDrive 上构建的更高层次的 API。
 
-Install:
+安装：
 
 ```
 yarn add webdriverio chromedriver
 ```
 
-Example: filter CSS features on chromestatus.com
+例子：过滤 chromestatus.com 上的 CSS 功能：
 
 ```
 const webdriverio = require('webdriverio');
@@ -435,71 +433,69 @@ browser.end();
 })();
 ```
 
-### Further resources
+### 更多资源
 
-Here are some useful resources to get you started:
+以下是一些可以带你入门的有用资源：
 
-Docs
+文档
 
-*   [DevTools Protocol Viewer][4] - API reference docs
+*   [DevTools Protocol Viewer][4] - API 参考文档
 
-Tools
+工具
 
-*   [chrome-remote-interface][5] - node module that wraps the DevTools protocol
+*   [chrome-remote-interface][5] - 基于 DevTools 协议的 node 模块
+*   [Lighthouse][6] - 测试 Web 应用程序质量的自动化工具；大量使用了协议
+*   [chrome-launcher][7] - 用于启动 Chrome 的 node 模块，可以自动化
 
-*   [Lighthouse][6] - automated tool for testing web app quality; makes heavy use of the protocol
+样例
 
-*   [chrome-launcher][7] - node module for launching Chrome, ready for automation
+*   "[The Headless Web][8]" - Paul Kinlan 发布的使用了 Headless 和 api.ai 的精彩博客
 
-Demos
+### 常见问题
 
-*   "[The Headless Web][8]" - Paul Kinlan's great blog post on using Headless with api.ai.
+**我需要 `--disable-gpu` 标志吗？**
 
-### FAQ
+目前是需要的。`--disable-gpu` 标志在处理一些 bug 时是需要的。在未来版本的 Chrome 中就不需要了。查看 [https://crbug.com/546953#c152][26] 和 [https://crbug.com/695212][27] 获取更多信息。
 
-**Do I need the `--disable-gpu` flag?**
+**所以我仍然需要 Xvfb 吗？**
 
-Yes, for now. The `--disable-gpu` flag is a temporary requirement to work around a few bugs. You won't need this flag in future versions of Chrome. See [https://crbug.com/546953#c152][26] and [https://crbug.com/695212][27] for more information.
+不。Headless Chrome 不使用窗口，所以不需要像 Xvfb 这样的显示服务器。没有它你也可以愉快地运行你的自动化测试。
 
-**So I still need Xvfb?**
+什么是 Xvfb？Xvfb 是一个用于类 Unix 系统的运行于内存之内的显示服务器，可以让你运行图形应用程序（如 Chrome），而无需附加的物理显示器。许多人使用 Xvfb 运行早期版本的 Chrome 进行 “headless” 测试。
 
-No. Headless Chrome doesn't use a window so a display server like Xvfb is no longer needed. You can happily run your automated tests without it.
+**如何创建一个运行 Headless Chrome 的 Docker 容器？**
 
-What is Xvfb? Xvfb is an in-memory display server for Unix-like systems that enables you to run graphical applications (like Chrome) without an attached physical display. Many people use Xvfb to run earlier versions of Chrome to do "headless" testing.
+查看 [lighthouse-ci][28]。它有一个使用 Ubuntu 作为基础镜像的 [Dockerfile 示例][29]，并且在 App Engine Flexible 容器中安装和运行了 Lighthouse。
 
-**How do I create a Docker container that runs Headless Chrome?**
+**我可以把它和 Selenium / WebDriver / ChromeDriver 一起使用吗？**
 
-Check out [lighthouse-ci][28]. It has an [example Dockerfile][29] that uses Ubuntu as a base image, and installs + runs Lighthouse in an App Engine Flexible container.
+是的。查看 [Using Selenium, WebDrive, or ChromeDriver][30]。
 
-**Can I use this with Selenium / WebDriver / ChromeDriver**?
+**它和 PhantomJS 有什么关系？**
 
-Yes. See [Using Selenium, WebDrive, or ChromeDriver][30].
+Headless Chrome 和 [PhantomJS][31] 是类似的工具。它们都可以用来在无需显示的环境中进行自动化测试。两者的主要不同在于 Phantom 使用了一个较老版本的 WebKit 作为它的渲染引擎，而 Headless Chrome 使用了最新版本的 Blink。
 
-**How is this related to PhantomJS?**
+目前，Phantom 提供了比 [DevTools protocol][32] 更高层次的 API。
 
-Headless Chrome is similar to tools like [PhantomJS][31]. Both can be used for automated testing in a headless environment. The main difference between the two is that Phantom uses an older version of WebKit as its rendering engine while Headless Chrome uses the latest version of Blink.
+**我在哪儿提交 bug？**
 
-At the moment, Phantom also provides a higher level API than the [DevTools protocol][32].
+对于 Headless Chrome 的 bug，请提交到 [crbug.com][33]。
 
-**Where do I report bugs?**
-
-For bugs against Headless Chrome, file them on [crbug.com][33].
-
-For bugs in the DevTools protocol, file them at [github.com/ChromeDevTools/devtools-protocol][34].
+对于 DevTools 协议的 bug，请提交到 [github.com/ChromeDevTools/devtools-protocol][34]。
 
 --------------------------------------------------------------------------------
 
 作者简介
 
-[Eric Bidelman][1]Engineer @ Google working on Lighthouse, Web Components, Chrome, and the web
+[Eric Bidelman][1] 谷歌工程师，Lighthouse 开发，Web 和 Web 组件开发，Chrome 开发
 
 -----------------------------------
 
 via: https://developers.google.com/web/updates/2017/04/headless-chrome
 
-作者：[Eric Bidelman ][a]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+作者：[Eric Bidelman][a]
+译者：[firmianay](https://github.com/firmianay)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
