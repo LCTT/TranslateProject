@@ -1,125 +1,110 @@
-ucasFL translating
-
-An introduction to Linux filesystems
-============================================================ 
+Linux 文件系统简介
+====
 
 ![Introduction to Linux filesystems](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/community-penguins-osdc-lead.png?itok=BmqsAF4A "Introduction to Linux filesystems")
-Image credits : Original photo by Rikki Endsley. [CC BY-SA 4.0][9]
+图片来源 : 原始图片来自 Rikki Endsley. [CC BY-SA 4.0][9]
 
-This article is intended to be a very high-level discussion of Linux filesystem concepts. It is not intended to be a low-level description of how a particular filesystem type, such as EXT4, works, nor is it intended to be a tutorial of filesystem commands.
+本文旨在对 Linux 文件系统的概念进行高层次的讨论，而不是对某种特定的文件系统，比如 EXT4 是如何工作的进行底层的描述。另外，本文也不是一个文件系统命令的教程。
 
-More Linux resources
+每台通用计算机都需要将各种数据存储在硬盘驱动器（HDD）或其他类似设备上，比如 USB 存储器。这样做有两个原因。首先，当计算机关闭以后，内存（RAM）会失去存于它里面的内容。尽管存在非易失类型的 RAM，在计算机断电以后还能把数据存储下来（比如采用 USB 闪存和固态硬盘的 flash RAM），但是，flash RAM 和标准的、易失性的 RAM，比如 DDR3 以及其他相似类型的 RAM 相比，要贵很多。
 
-*   [What is Linux?][1]
+数据需要存储在硬盘驱动上的另一个原因是，即使是标准 RAM 也要比普通硬盘贵得多。尽管 RAM 和硬盘的价格都在迅速下降，但是 RAM 的价格依旧在以字节为单位来计算。让我们进行一个以字节为单位的快速计算：基于 16 GB 大的 RAM 的价格和 2 TB 大的硬盘驱动的价格。计算显示 RAM 的价格大约比硬盘驱动贵 71 倍。今天，一个典型的 RAM 的价格大约是 0.000000004373750 美元/每字节。
 
-*   [What are Linux containers?][2]
+直观的展示一下在很久以前 RAM 的价格，在计算机发展的非常早的时期，其中一种类型的 RAM 是基于在 CRT 屏幕上的点。这种 RAM 非常昂贵，大约 1 美元/每字节。
 
-*   [Download Now: Linux commands cheat sheet][3]
+### 定义
 
-*   [Advanced Linux commands cheat sheet][4]
+你可能听过其他人以各种不同和迷惑的方式谈论文件系统。这个单词本身有多重含义，你需要从一个讨论或文件的上下文中理解它的正确含义。
 
-*   [Our latest Linux articles][5]
+我将根据我所观察到的在不同情况下使用“文件系统”这个词来定义它的不同含义。注意，尽管我试图遵循标准的“官方”含义，但是我打算基于它的不同用法来定义这个术语。这意味着我将在本文的后续章节中进行更详细的探讨。
 
-Every general-purpose computer needs to store data of various types on a hard disk drive (HDD) or some equivalent, such as a USB memory stick. There are a couple reasons for this. First, RAM loses its contents when the computer is switched off. There are non-volatile types of RAM that can maintain the data stored there after power is removed (such as flash RAM that is used in USB memory sticks and solid state drives), but flash RAM is much more expensive than standard, volatile RAM like DDR3 and other, similar types.
+1. 整个 Linux 目录结构从顶层 root （/）目录开始。
+2. 一种特定类型的数据存储格式，比如 EXT3、EXT4、BTRFS 以及 XFS 等等。Linux 几乎支持 100 种类型的文件系统，包括一些非常老的以及一些最新的。每一种文件系统类型都使用它自己独特的元数据结构来定义数据是如何存储和访问的。
+3. 用特定类型的文件系统格式化后的分区或逻辑卷，可以挂载到Linux文件系统的指定挂载点上。
 
-The second reason that data needs to be stored on hard drives is that even standard RAM is still more expensive than disk space. Both RAM and disk costs have been dropping rapidly, but RAM still leads the way in terms of cost per byte. A quick calculation of the cost per byte, based on costs for 16GB of RAM vs. a 2TB hard drive, shows that the RAM is about 71 times more expensive per unit than the hard drive. A typical cost for RAM is around $0.0000000043743750 per byte today.
 
-For a quick historical note to put present RAM costs in perspective, in the very early days of computing, one type of memory was based on dots on a CRT screen. This was very expensive at about $1.00  _per bit_ !
+### 文件系统的基本功能
 
-### Definitions
+磁盘存储是必须的，它伴有一些有趣而且不可避免的细节。很明显，文件系统是用来为非易失数据的存储提供空间，这是它的基本功能。然而，它还有许多从需求出发的重要功能。
 
-You may hear people talk about filesystems in a number of different and confusing ways. The word itself can have multiple meanings, and you may have to discern the correct meaning from the context of a discussion or document.
+所有文件系统都需要提供一个名字空间，这是一种命名和组织方法。它定义了文件应该如何命令，文件名的最大长度，以及所有可用字符集中可用于文件名中字符集。它也定义了一个磁盘上数据的逻辑结构，比如使用目录来组织文件而不是把所有文件聚集成一个单一的大文件。
 
-I will attempt to define the various meanings of the word "filesystem" based on how I have observed it being used in different circumstances. Note that while attempting to conform to standard "official" meanings, my intent is to define the term based on its various usages. These meanings will be explored in greater detail in the following sections of this article.
+定义名字空间以后，元数据结构是为该名字空间提供逻辑基础所必须的。这包括所需数据结构要能够支持分层目录结构，同时能够通过结构来确定硬盘空间中的块已用或可用，支持维护文件或目录的名字，提供关于文件大小、创建时间、最后访问或修改时间等信息，以及位置或数据所属的文件在磁盘空间中的位置。其他的元数据用来存储关于磁盘细分的高级信息，比如逻辑容量和分区。这种更高层次的元数据以及它所代表的结构包含描述文件系统存储在驱动或分区中的信息，但与文件系统元数据无关，与之独立。
 
-1.  The entire Linux directory structure starting at the top (/) root directory.
+文件系统也需要一个应用程序接口（API），从而提供了对维护文件系统对象，比如文件和目录的系统功能调用的访问。API 也提供了诸如创建、移动和删除文件的功能。它也提供了算法来确定文件存于文件系统中的位置。这样的算法可以用来解释诸如磁盘速度和最小化磁盘碎片等术语。
 
-2.  A specific type of data storage format, such as EXT3, EXT4, BTRFS, XFS, and so on. Linux supports almost 100 types of filesystems, including some very old ones as well as some of the newest. Each of these filesystem types uses its own metadata structures to define how the data is stored and accessed.
+现代文件系统还提供一个安全模型，这是一个定义文件和目录的访问权限的方案。Linux 文件系统安全模型确保用户只能访问自己的文件，而不能访问其他用户的文件或操作系统本身。
 
-3.  A partition or logical volume formatted with a specific type of filesystem that can be mounted on a specified mount point on a Linux filesystem.
+最后的构建块是实现这些所有功能所需要的软件。Linux 使用两层的软件实现的方式来提高系统和程序员的效率。
 
-### Basic filesystem functions
 
-Disk storage is a necessity that brings with it some interesting and inescapable details. Obviously, a filesystem is designed to provide space for non-volatile storage of data; that is its ultimate function. However, there are many other important functions that flow from that requirement.
-
-All filesystems need to provide a namespace—that is, a naming and organizational methodology. This defines how a file can be named, specifically the length of a filename and the subset of characters that can be used for filenames out of the total set of characters available. It also defines the logical structure of the data on a disk, such as the use of directories for organizing files instead of just lumping them all together in a single, huge conglomeration of files.
-
-Once the namespace has been defined, a metadata structure is necessary to provide the logical foundation for that namespace. This includes the data structures required to support a hierarchical directory structure; structures to determine which blocks of space on the disk are used and which are available; structures that allow for maintaining the names of the files and directories; information about the files such as their size and times they were created, modified or last accessed; and the location or locations of the data belonging to the file on the disk. Other metadata is used to store high-level information about the subdivisions of the disk, such as logical volumes and partitions. This higher-level metadata and the structures it represents contain the information describing the filesystem stored on the drive or partition, but is separate from and independent of the filesystem metadata.
-
-Filesystems also require an Application Programming Interface (API) that provides access to system function calls which manipulate filesystem objects like files and directories. APIs provide for tasks such as creating, moving, and deleting files. It also provides algorithms that determine things like where a file is placed on a filesystem. Such algorithms may account for objectives such as speed or minimizing disk fragmentation.
-
-Modern filesystems also provide a security model, which is a scheme for defining access rights to files and directories. The Linux filesystem security model helps to ensure that users only have access to their own files and not those of others or the operating system itself.
-
-The final building block is the software required to implement all of these functions. Linux uses a two-part software implementation as a way to improve both system and programmer efficiency.
-
-<center>
 ![](https://opensource.com/sites/default/files/filesystem_diagram.png)
 
-Figure 1: The Linux two-part filesystem software implementation.</center>
+图片 1：Linux 两层文件系统软件实现。
 
-The first part of this two-part implementation is the Linux virtual filesystem. This virtual filesystem provides a single set of commands for the kernel, and developers, to access all types of filesystems. The virtual filesystem software calls the specific device driver required to interface to the various types of filesystems. The filesystem-specific device drivers are the second part of the implementation. The device driver interprets the standard set of filesystem commands to ones specific to the type of filesystem on the partition or logical volume.
+第一层实现是 Linux 虚拟文件系统。虚拟文件系统提供了内核和开发者访问所有类型文件系统的的单一命令集。虚拟文件系统软件通过调用特殊设备驱动来和不同类型的文件系统进行交互。文件系统特定设备驱动是第二层实现。设备驱动程序将文件系统命令的标准集解释为在分区或逻辑卷上的特定类型文件系统命令。
 
-### Directory structure
+### 目录结构
 
-As a usually very organized Virgo, I like things stored in smaller, organized groups rather than in one big bucket. The use of directories helps me to be able to store and then locate the files I want when I am looking for them. Directories are also known as folders because they can be thought of as folders in which files are kept in a sort of physical desktop analogy.
+作为一个通常来说非常有条理的处女座，我喜欢将东西存储在更小的、有组织的小容器中，而不是存于同一个大容器中。目录的使用使我能够存储文件，同时当我想要查看这些文件的时候也能够定位。目录也被称为文件夹，之所以被称为文件夹，是因为其中的文件被类比存于物理桌面上。
 
-In Linux and many other operating systems, directories can be structured in a tree-like hierarchy. The Linux directory structure is well defined and documented in the [Linux Filesystem Hierarchy Standard][10] (FHS). Referencing those directories when accessing them is accomplished by using the sequentially deeper directory names connected by forward slashes (/) such as /var/log and /var/spool/mail. These are called paths.
+在 Linux 和其他许多操作系统中，目录可以被组织成树状的分层结构。在 [Linux 文件系统层次标准][10]中定义了 Linux 文件系统层次。当通过目录引用来访问目录时，更深层目录名字是通过正斜杠（/）来连接，从而形成一个序列的，比如 `/var/log` 和 `/var/spool/mail` 。这些被称为路径。
 
-The following table provides a very brief list of the standard, well-known, and defined top-level Linux directories and their purposes.
+下表提供了标准的、众所周知的、定义好的顶层 Linux 目录及其用途的简要清单。
 
-| Directory | Description |
-| --- | --- |
-| / (root filesystem) | The root filesystem is the top-level directory of the filesystem. It must contain all of the files required to boot the Linux system before other filesystems are mounted. It must include all of the required executables and libraries required to boot the remaining filesystems. After the system is booted, all other filesystems are mounted on standard, well-defined mount points as subdirectories of the root filesystem. |
-| /bin | The /bin directory contains user executable files. |
-| /boot | Contains the static bootloader and kernel executable and configuration files required to boot a Linux computer. |
-| /dev | This directory contains the device files for every hardware device attached to the system. These are not device drivers, rather they are files that represent each device on the computer and facilitate access to those devices. |
-| /etc | Contains the local system configuration files for the host computer. |
-| /home | Home directory storage for user files. Each user has a subdirectory in /home. |
-| /lib | Contains shared library files that are required to boot the system. |
-| /media | A place to mount external removable media devices such as USB thumb drives that may be connected to the host. |
-| /mnt | A temporary mountpoint for regular filesystems (as in not removable media) that can be used while the administrator is repairing or working on a filesystem. |
-| /opt | Optional files such as vendor supplied application programs should be located here. |
-| /root | This is not the root (/) filesystem. It is the home directory for the root user. |
-| /sbin | System binary files. These are executables used for system administration. |
-| /tmp | Temporary directory. Used by the operating system and many programs to store temporary files. Users may also store files here temporarily. Note that files stored here may be deleted at any time without prior notice. |
-| /usr | These are shareable, read-only files, including executable binaries and libraries, man files, and other types of documentation. |
-| /var | Variable data files are stored here. This can include things like log files, MySQL, and other database files, web server data files, email inboxes, and much more. |
+| 目录            | 描述                                       |
+| ------------- | ---------------------------------------- |
+| / (root 文件系统) | root 文件系统是文件系统的顶级目录。它必须包含在挂载其他文件系统前需要用来启动 Linux 系统的全部文件。它必须包含需要用来启动剩余文件系统的全部可执行文件和库。文件系统启动以后，所有其他文件系统作为 root 文件系统的子目录挂载到标准的、预定义好的挂载点上。 |
+| /bin          | `/bin` 目录包含用户的可执行文件。                     |
+| /boot         | 包含启动 Linux 系统所需要的静态引导程序和内核可执行文件以及配置文件。   |
+| /dev          | 该目录包含每一个连接到系统的硬件设备的设备文件。这些文件不是设备驱动，而是代表计算机上的每一个计算机能够访问的设备。 |
+| /etc          | 包含主机计算机的本地系统配置文件。                        |
+| /home         | `Home` 目录存储用户文件，每一个用户都有一个子目录位于 `/home` 目录中。 |
+| /lib          | 包含启动系统所需要的共享库文件。                         |
+| /media        | 一个挂载外部可移动设备的地方，比如 USB 驱动可能连接到主机。         |
+| /mnt          | 一个普通文件系统的临时挂载点（如不可移动媒介），当管理员对一个文件系统进行修复或在其上工作时可以使用。 |
+| /opt          | 可选文件比如供应商提供的应用程序应该安装在这儿。                 |
+| /root         | 这不是 `root`（/）文件系统。它是 root 用户的 `home` 目录。 |
+| /sbin         | 系统二进制文件。这些是用于系统管理的可执行文件。                 |
+| /tmp          | 临时目录。被操作系统和许多程序用来存储临时文件。用户也可能临时在这儿存储文件。注意，存储在这儿的文件可能在任何时候在没有通知的情况下被删除。 |
+| /var          | 可变数据文件存储在这儿。这些文件包括日志文件，MySQL 和其他数据库文件，网络服务器数据文件，邮件以及更多。 |
+| /usr          | 该目录里面包含共享只读文件，包括可执行二进制文件和库，man 文件以及其他类型的文档。 |
 
-<center>Table 1: The top level of the Linux filesystem hierarchy.</center>
+*表 1：Linux 文件系统顶层*
 
-The directories and their subdirectories shown in Table 1, along with their subdirectories, that have a teal background are considered an integral part of the root filesystem. That is, they cannot be created as a separate filesystem and mounted at startup time. This is because they (specifically, their contents) must be present at boot time in order for the system to boot properly.
+这些目录以及它们的子目录如表 1 所示，在所有子目录中，有蓝绿色背景的目录组成了 root 文件系统的一部分。也就是说，它们不能作为一个分离的文件系统并且在开机时进行挂载。这是因为它们（特别是它们包含的内容）必须在系统启动的时候出现，从而系统才能正确启动。
 
-The /media and /mnt directories are part of the root filesystem, but they should never contain any data. Rather, they are simply temporary mount points.
+`/media` 目录和 `/mnt` 目录是 root 文件系统的一部分，但是它们从来不包含任何数据，因为它们只是一个临时挂载点。
 
-The remaining directories, those that have no background color in Table 1 do not need to be present during the boot sequence, but will be mounted later, during the startup sequence that prepares the host to perform useful work.
+表 1 中剩下的没有背景颜色的目录不需要在系统启动过程中出现，但会在之后挂载到 root 文件系统上，在开机阶段，它们为主机进行准备，从而执行有用的工作。
 
-Be sure to refer to the official [Linux Filesystem Hierarchy Standard][11] (FHS) web page for details about each of these directories and their many subdirectories. Wikipedia also has a good description of the [FHS][12]. This standard should be followed as closely as possible to ensure operational and functional consistency. Regardless of the filesystem types used on a host, this hierarchical directory structure is the same.
+请参考官方 [Linux 文件系统层次标准][11]（FHS）网页来来了解这些每一个目录以及它们的子目录的更多细节。维基百科上也有关于 [FHS][12] 的一个很好的介绍。应该尽可能的遵循这些标准，从而确保操作和功能的一致性。无论在主机上使用什么类型的文件系统，该层次目录结构都是相同的。
 
-### Linux unified directory structure
+### Linux 统一目录结构
 
-In some non-Linux PC operating systems, if there are multiple physical hard drives or multiple partitions, each disk or partition is assigned a drive letter. It is necessary to know on which hard drive a file or program is located, such as C: or D:. Then you issue the drive letter as a command, **D:**, for example, to change to the D: drive, and then you use the **cd** command to change to the correct directory to locate the desired file. Each hard drive has its own separate and complete directory tree.
+在一些非 Linux 操作系统的个人电脑上，如果有多个物理硬盘驱动或多重分区，每一个硬盘或分区都会分配一个驱动器号。知道文件或程序位于哪一个硬盘驱动器上是很有必要的，比如 C: 或 D: 。然后，你可以在命令中使用驱动器号，以 `D:` 为例，为了进入 `D:` 驱动器，你可以使用 `cd` 命令来更改工作目录为正确的目录，从而定位需要的文件。每一个硬盘驱动器都有自己单独的、完整的目录树。
 
-The Linux filesystem unifies all physical hard drives and partitions into a single directory structure. It all starts at the top–the root (/) directory. All other directories and their subdirectories are located under the single Linux root directory. This means that there is only one single directory tree in which to search for files and programs.
+Linux 文件系统将所有物理硬盘驱动器和分区统一为一个目录结构。它们均从顶层 root 目录（/）开始。所有其他目录以及它们的子目录均位于单一的 Linux 根目录下。这意味着只有一棵目录树来搜索文件和程序。
 
-This can work only because a filesystem, such as /home, /tmp, /var, /opt, or /usr can be created on separate physical hard drives, a different partition, or a different logical volume from the / (root) filesystem and then be mounted on a mountpoint (directory) as part of the root filesystem tree. Even removable drives such as a USB thumb drive or an external USB or ESATA hard drive will be mounted onto the root filesystem and become an integral part of that directory tree.
+因为只有一个文件系统，所以 /home、/tmp、/var、/opt 或 /usr 能够创建在和 root（/）文件系统不同的物理硬盘驱动器、分区或逻辑分区上，然后挂载到一个挂载点（目录）上，从而作为 root 文件系统树的一部分。甚至可移动驱动，比如 USB 驱动或一个外部 USB 驱动或 ESATA 硬盘驱动均可以挂载到 root 文件系统上，称为目录树不可或缺的部分。
 
-One good reason to do this is apparent during an upgrade from one version of a Linux distribution to another, or changing from one distribution to another. In general, and aside from any upgrade utilities like dnf-upgrade in Fedora, it is wise to occasionally reformat the hard drive(s) containing the operating system during an upgrade to positively remove any cruft that has accumulated over time. If /home is part of the root filesystem it will be reformatted as well and would then have to be restored from a backup. By having /home as a separate filesystem, it will be known to the installation program as a separate filesystem and formatting of it can be skipped. This can also apply to /var where database, email inboxes, website, and other variable user and system data are stored.
+当 Linux 发行版从一个版本升级到另一个版本或从一个版本更改到另一个版本的时候，就会很清楚地看到单文件系统的好处。通常情况下，除了任何像 Fedora 中的 dnf-upgrade 之类的升级工具，在升级过程中偶尔重新格式化包含操作系统的硬盘驱动来删除那些长期积累的垃圾是很明智的。如果 /home 目录是 root 文件系统的一部分（位于同一个硬盘驱动），那么它也会被格式化，然后通过之前的备份恢复。如果 /home 目录作为一个分离的文件系统，那么安装程序将会识别到，并跳过它的格式化。对于存储数据库、邮箱、网页和其他可变用户以及系统数据的 /var 目录也是同样的。
 
-There are other reasons for maintaining certain parts of the Linux directory tree as separate filesystems. For example, a long time ago, when I was not yet aware of the potential issues surrounding having all of the required Linux directories as part of the / (root) filesystem, I managed to fill up my home directory with a large number of very big files. Since neither the /home directory nor the /tmp directory were separate filesystems but simply subdirectories of the root filesystem, the entire root filesystem filled up. There was no room left for the operating system to create temporary files or to expand existing data files. At first, the application programs started complaining that there was no room to save files, and then the OS itself started to act very strangely. Booting to single-user mode and clearing out the offending files in my home directory allowed me to get going again. I then reinstalled Linux using a pretty standard multi-filesystem setup and was able to prevent complete system crashes from occurring again.
+将 Linux 系统目录树的某些部分作为一个分离的文件系统还有一些其他原因。比如，在很久以前，我还不知道将所有需要的 Linux 目录均作为 root（/）文件系统的一部分可能存在的问题，于是，一些非常大的文件填满了 /home 目录。因为 /home 目录和 /tmp 目录均不是分离的文件系统，而是 root 文件系统的简单子目录，整个 root 文件系统就被填满了。于是就不再有剩余空间可以让操作系统用来存储临时文件或扩展已存在数据文件。首先，应用程序开始抱怨没有空间来保存文件，然后，操作系统也开始异常行动。启动到单用户模式，并清除了 /home 目录中的多余文件之后，终于又能够重新工作了。然后，我使用非常标准的多重文件系统设置来重新安装 Linux 系统，从而避免了系统崩溃的再次发生。
 
-I once had a situation where a Linux host continued to run, but prevented the user from logging in using the GUI desktop. I was able to log in using the command line interface (CLI) locally using one of the [virtual consoles][13], and remotely using SSH. The problem was that the /tmp filesystem had filled up and some temporary files required by the GUI desktop could not be created at login time. Because the CLI login did not require files to be created in /tmp, the lack of space there did not prevent me from logging in using the CLI. In this case, the /tmp directory was a separate filesystem and there was plenty of space available in the volume group the /tmp logical volume was a part of. I simply [expanded the /tmp logical volume][14] to a size that accommodated my fresh understanding of the amount of temporary file space needed on that host and the problem was solved. Note that this solution did not require a reboot, and as soon as the /tmp filesystem was enlarged the user was able to login to the desktop.
+我曾经遇到一个情况，Linux 主机还在运行，但是却不运行用户通过 GUI 桌面登录。我可以通过局部使用[虚拟控制台][13]，通过命令行界面（CLI）登录，然后远程使用 SSH 。问题的原因是因为 /tmp 文件系统满了，因此 GUI 桌面登录时所需要的一些临时文件不能被创建。因为命令行界面登录不需要在 /tmp 目录中创建文件，所以无可用空间并不会阻止我使用命令行界面来登录。在这种情况下，/tmp 目录是一个分离的文件系统，在 /tmp 所位于的逻辑卷上还有大量的可用空间。我简单地[扩展了 /tmp 逻辑卷][14]的容量到能够容纳主机所需要的临时文件，于是问题便解决了。注意，这个解决方法不需要重启，当 /tmp 文件系统扩大以后，用户就可以登录到桌面了。
 
-Another situation occurred while I was working as a lab administrator at one large technology company. One of our developers had installed an application in the wrong location (/var). The application was crashing because the /var filesystem was full and the log files, which are stored in /var/log on that filesystem, could not be appended with new messages due to the lack of space. However, the system remained up and running because the critical / (root) and /tmp filesystems did not fill up. Removing the offending application and reinstalling it in the /opt filesystem resolved that problem.
+当我在一家很大的科技公司当实验室管理员的时候，遇到过另外一个故障。开发者将一个应用程序安装到了一个错误的位置（/var）。该应用程序崩溃了，因为 /var 文件系统满了，由于缺乏空间，当产生新消息的时候，存储于 /var/log 中的日志文件无法扩展。然而，系统仍然在运行，因为 root 文件系统和 /tmp 文件系统还没有被填满。删除了该应用程序并重新安装在 /opt 文件系统后，问题便解决了。
 
-### Filesystem types
+### 文件系统类型
 
-Linux supports reading around 100 partition types; it can create and write to only a few of these. But it is possible—and very common—to mount filesystems of different types on the same root filesystem. In this context we are talking about filesystems in terms of the structures and metadata required to store and manage the user data on a partition of a hard drive or a logical volume. The complete list of filesystem partition types recognized by the Linux **fdisk**command is provided here, so that you can get a feel for the high degree of compatibility that Linux has with very many types of systems.
+Linux 系统支持大约 100 中分区类型的读取，但是只能对很少的一些进行创建和写操作。但是，挂载不同类型的文件系统在相同的 root 文件系统上是可能的，并且是很常见的。在这样的背景下，我们是根据在硬盘驱动器或逻辑卷上的一个分区中存储和管理用户数据所需要的结构和元数据来讨论文件系统的。能够被 Linux 系统的 `fdisk` 命令识别的文件系统类型的完整列表如下表所示，因此，你应该有这样的感觉，Linux 系统对许多类型的系统均有很高的兼容性。
 
 ```
 0 Empty 24 NEC DOS 81 Minix / old Lin bf Solaris 1 FAT12 27 Hidden NTFS Win 82 Linux swap / So c1 DRDOS/sec (FAT- 2 XENIX root 39 Plan 9 83 Linux c4 DRDOS/sec (FAT- 3 XENIX usr 3c PartitionMagic 84 OS/2 hidden or c6 DRDOS/sec (FAT- 4 FAT16 <32M 40 Venix 80286 85 Linux extended c7 Syrinx 5 Extended 41 PPC PReP Boot 86 NTFS volume set da Non-FS data 6 FAT16 42 SFS 87 NTFS volume set db CP/M / CTOS / . 7 HPFS/NTFS/exFAT 4d QNX4.x 88 Linux plaintext de Dell Utility 8 AIX 4e QNX4.x 2nd part 8e Linux LVM df BootIt 9 AIX bootable 4f QNX4.x 3rd part 93 Amoeba e1 DOS access a OS/2 Boot Manag 50 OnTrack DM 94 Amoeba BBT e3 DOS R/O b W95 FAT32 51 OnTrack DM6 Aux 9f BSD/OS e4 SpeedStor c W95 FAT32 (LBA) 52 CP/M a0 IBM Thinkpad hi ea Rufus alignment e W95 FAT16 (LBA) 53 OnTrack DM6 Aux a5 FreeBSD eb BeOS fs f W95 Ext'd (LBA) 54 OnTrackDM6 a6 OpenBSD ee GPT 10 OPUS 55 EZ-Drive a7 NeXTSTEP ef EFI (FAT-12/16/ 11 Hidden FAT12 56 Golden Bow a8 Darwin UFS f0 Linux/PA-RISC b 12 Compaq diagnost 5c Priam Edisk a9 NetBSD f1 SpeedStor 14 Hidden FAT16 <3 61 SpeedStor ab Darwin boot f4 SpeedStor 16 Hidden FAT16 63 GNU HURD or Sys af HFS / HFS+ f2 DOS secondary 17 Hidden HPFS/NTF 64 Novell Netware b7 BSDI fs fb VMware VMFS 18 AST SmartSleep 65 Novell Netware b8 BSDI swap fc VMware VMKCORE 1b Hidden W95 FAT3 70 DiskSecure Mult bb Boot Wizard hid fd Linux raid auto 1c Hidden W95 FAT3 75 PC/IX bc Acronis FAT32 L fe LANstep 1e Hidden W95 FAT1 80 Old Minix be Solaris boot ff BBT
 ```
 
-The main purpose in supporting the ability to read so many partition types is to allow for compatibility and at least some interoperability with other computer systems' filesystems. The choices available when creating a new filesystem with Fedora are shown in the following list.
+Linux 支持读这么多类型的分区系统的主要目的是为了提高兼容性，从而至少能够与一些其他计算机系统文件类型进行交互。下面列出了在 Fedora 中创建一个新的文件系统时的所有可选类型：
 
 *   btrfs
 
@@ -149,52 +134,50 @@ The main purpose in supporting the ability to read so many partition types is to
 
 *   xfs
 
-Other distributions support creating different filesystem types. For example, CentOS 6 supports creating only those filesystems highlighted in bold in the above list.
+其他发行版支持创建不同的文件系统类型。比如，CentOS 6 只支持创建上表中标为黑体的文件系统类型。
 
-### Mounting
+### 挂载
 
-The term "to mount" a filesystem in Linux refers back to the early days of computing when a tape or removable disk pack would need to be physically mounted on an appropriate drive device. After being physically placed on the drive, the filesystem on the disk pack would be logically mounted by the operating system to make the contents available for access by the OS, application programs and users.
+在 Linux 系统上“挂载”文件系统的术语是指在计算机发展的早期，磁带或可移动的磁盘组需要需要物理地挂载到一个合适的驱动设备上。当通过物理的方式放置驱动以后，操作系统会逻辑地挂载位于磁盘上的文件系统，从而操作系统、应用程序和用户才能够访问文件系统中的内容。
 
-A mount point is simply a directory, like any other, that is created as part of the root filesystem. So, for example, the home filesystem is mounted on the directory /home. Filesystems can be mounted at mount points on other non-root filesystems but this is less common.
+一个挂载点就是一个简单的目录，就像任何其它目录一样，是作为 root 文件系统的一部分创建的。所以，比如，home 文件系统是挂载在目录 /home 下。文件系统可以被挂载到其他非 root 文件系统的挂载点上，但是这并不常见。
 
-The Linux root filesystem is mounted on the root directory (/) very early in the boot sequence. Other filesystems are mounted later, by the Linux startup programs, either **rc** under SystemV or by **systemd** in newer Linux releases. Mounting of filesystems during the startup process is managed by the /etc/fstab configuration file. An easy way to remember that is that fstab stands for "file system table," and it is a list of filesystems that are to be mounted, their designated mount points, and any options that might be needed for specific filesystems.
+在 Linux 系统启动阶段的早期，root 文件系统就会被挂载到 root 目录下（/）。其他文件系统在之后通过 SystemV 下的 `rc` 或更新的 Linux 发行版中的 `systemd` 等 Linux 启动程序挂载。在启动进程中挂载文件系统是由 `/etc/fstab` 配置文件管理的。一个简单的记忆方法是，fstab 代表“文件系统表”，它包含了需要挂载的文件系统的列表，这些文件系统均指定了挂载点，以及针对特定文件系统可能需要的选项。
 
-Filesystems are mounted on an existing directory/mount point using the **mount**command. In general, any directory that is used as a mount point should be empty and not have any other files contained in it. Linux will not prevent users from mounting one filesystem over one that is already there or on a directory that contains files. If you mount a filesystem on an existing directory or filesystem, the original contents will be hidden and only the content of the newly mounted filesystem will be visible.
+使用 `mount` 命令可以把文件系统挂载到一个存在的目录/挂载点上。通常情况下，任何作为挂载点的目录都应该是空的且不包含任何其他文件。Linux 系统会阻止用户挂载一个已被挂载的文件系统或将文件系统挂载到一个包含文件的目录上。如果你将文件系统挂载到一个已经存在的目录或文件系统上，那么原始内容将会被隐藏，只有新挂载的文件系统的内容是可见的。
 
-### Conclusion
+### 结论
 
-I hope that some of the possible confusion surrounding the term filesystem has been cleared up by this article. It took a long time and a very helpful mentor for me to truly understand and appreciate the complexity, elegance, and functionality of the Linux filesystem in all of its meanings.
+我希望通过这篇文章，围绕文件系统这个术语的一些可能的迷糊都被清除了。我花费了很长的时间，以及在一个良师的帮助下才真正理解和欣赏到 Linux 文件系统的复杂性、优雅性和功能以及它的全部含义。
 
-If you have questions, please add them to the comments below and I will try to answer them.
+如果你有任何问题，请写到下面的评论中，我会尽力来回答它们。
 
-### Next month
+### 下个月
 
-Another important concept is that for Linux, everything is a file. This concept has some interesting and important practical applications for users and system admins. The reason I mention this is that you might want to read my "[Everything is a file][15]" article before the article I am planning for next month on the /dev directory.
+Linux 的另一个重要概念是：万物皆为文件。这个概念对用户和系统管理员来说有一些有趣和重要的实际应用。当我说完这个理由之后，你可能会想阅读我的文章：[万物皆为文件][15]，这篇文章是在我下个月计划写的关于 /dev 目录的文章之前。
 
 -----------------
 
 作者简介：
 
-David Both - David Both is a Linux and Open Source advocate who resides in Raleigh, North Carolina. He has been in the IT industry for over forty years and taught OS/2 for IBM where he worked for over 20 years. While at IBM, he wrote the first training course for the original IBM PC in 1981\. He has taught RHCE classes for Red Hat and has worked at MCI Worldcom, Cisco, and the State of North Carolina. He has been working with Linux and Open Source Software for almost 20 years. David has written articles for[More about me][7]
-
-*   [Learn how you can contribute][22]
+David Both 居住在美国北卡罗纳州的首府罗利，是一个 Linux 开源贡献者。他已经从事 IT 行业 40 余年，在 IBM 教授 OS/2 20 余年。1981 年，他在 IBM 开发了第一个关于最初的 IBM 个人电脑的培训课程。他也曾在 Red Hat 教授 RHCE 课程，也曾供职于 MCI worldcom，Cico 以及北卡罗纳州等。他已经为 Linux 开源社区工作近 20 年。
 
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/life/16/10/introduction-linux-filesystems
 
 作者：[David Both][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ucasFL](https://github.com/ucasFL)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://opensource.com/users/dboth
-[1]:https://opensource.com/resources/what-is-linux?intcmp=70160000000h1jYAAQ&utm_source=intcallout&utm_campaign=linuxcontent
-[2]:https://opensource.com/resources/what-are-linux-containers?intcmp=70160000000h1jYAAQ&utm_source=intcallout&utm_campaign=linuxcontent
-[3]:https://developers.redhat.com/promotions/linux-cheatsheet/?intcmp=70160000000h1jYAAQ&utm_source=intcallout&utm_campaign=linuxcontent
-[4]:https://developers.redhat.com/cheat-sheet/advanced-linux-commands-cheatsheet?intcmp=70160000000h1jYAAQ&utm_source=intcallout&utm_campaign=linuxcontent
-[5]:https://opensource.com/tags/linux?intcmp=70160000000h1jYAAQ&utm_source=intcallout&utm_campaign=linuxcontent
+[1]:https://opensource.com/resources/what-is-linux?intcmp=70160000000h1jYAAQ&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;utm_source=intcallout&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;utm_campaign=linuxcontent
+[2]:https://opensource.com/resources/what-are-linux-containers?intcmp=70160000000h1jYAAQ&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;utm_source=intcallout&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;utm_campaign=linuxcontent
+[3]:https://developers.redhat.com/promotions/linux-cheatsheet/?intcmp=70160000000h1jYAAQ&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;utm_source=intcallout&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;utm_campaign=linuxcontent
+[4]:https://developers.redhat.com/cheat-sheet/advanced-linux-commands-cheatsheet?intcmp=70160000000h1jYAAQ&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;utm_source=intcallout&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;utm_campaign=linuxcontent
+[5]:https://opensource.com/tags/linux?intcmp=70160000000h1jYAAQ&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;utm_source=intcallout&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;utm_campaign=linuxcontent
 [6]:https://opensource.com/life/16/10/introduction-linux-filesystems?rate=Qyf2jgkdgrj5_zfDwadBT8KsHZ2Gp5Be2_tF7R-s02Y
 [7]:https://opensource.com/users/dboth
 [8]:https://opensource.com/user/14106/feed
