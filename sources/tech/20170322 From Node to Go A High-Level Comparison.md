@@ -1,3 +1,4 @@
+Translating by trnhoe
 From Node to Go: A High-Level Comparison
 ============================================================
 
