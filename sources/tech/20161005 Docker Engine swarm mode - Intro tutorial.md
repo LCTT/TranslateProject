@@ -1,3 +1,5 @@
+# Viz 翻译中……
+
 Docker Engine swarm mode - Intro tutorial
 ============================
 
@@ -151,7 +153,7 @@ Cheers.
 via: http://www.dedoimedo.com/computers/docker-swarm-intro.html
 
 作者：[Dedoimedo ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Viz](https://github.com/vizv)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
