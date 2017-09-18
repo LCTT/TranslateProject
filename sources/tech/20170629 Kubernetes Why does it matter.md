@@ -1,4 +1,3 @@
-Translating by Zhipeng-li
 Kubernetes: Why does it matter?
 ============================================================
 

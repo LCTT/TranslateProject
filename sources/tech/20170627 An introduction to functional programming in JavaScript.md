@@ -1,4 +1,3 @@
-translating by chenxinlong
 An introduction to functional programming in JavaScript
 ============================================================
 

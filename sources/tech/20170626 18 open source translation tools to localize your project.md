@@ -1,5 +1,3 @@
-translating by cycoe
-
 18 open source translation tools to localize your project
 ============================================================
 

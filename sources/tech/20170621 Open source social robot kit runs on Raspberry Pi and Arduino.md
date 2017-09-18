@@ -1,4 +1,3 @@
-翻译中 by zky001
 # [Open source social robot kit runs on Raspberry Pi and Arduino][22]
 
 
