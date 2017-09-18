@@ -1,3 +1,4 @@
+Translating by Snapcrafter
 [GIVE AWAY YOUR CODE, BUT NEVER YOUR TIME][23]
 ============================================================
 
