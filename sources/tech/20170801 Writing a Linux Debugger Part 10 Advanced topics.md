@@ -1,3 +1,5 @@
+translating---geekpi
+
 Writing a Linux Debugger Part 10: Advanced topics
 ============================================================ 
 
