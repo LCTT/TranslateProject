@@ -1,3 +1,4 @@
+Translating by TimeBear
 Why we need open leaders more than ever
 ============================================================
 
