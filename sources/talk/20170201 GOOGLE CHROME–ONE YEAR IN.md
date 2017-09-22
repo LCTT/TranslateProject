@@ -1,3 +1,5 @@
+Translating by gitlilys
+
 GOOGLE CHROME–ONE YEAR IN
 ========================================
 
