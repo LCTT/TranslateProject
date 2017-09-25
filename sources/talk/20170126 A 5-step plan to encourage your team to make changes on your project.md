@@ -1,4 +1,4 @@
-translating by XYenChi
+XYenChi is translating
 A 5-step plan to encourage your team to make changes on your project
 ============================================================
 

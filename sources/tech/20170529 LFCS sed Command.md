@@ -1,5 +1,3 @@
-GHLandy Translating
-
 LFCS sed Command
 =====================
 

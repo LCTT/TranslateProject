@@ -1,4 +1,3 @@
-【toutoudnf 翻译中】
 A public cloud migration in 22 days
 ============================================================
 

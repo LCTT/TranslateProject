@@ -1,5 +1,3 @@
-﻿Translating by windcode
-
 # Why DevOps is the end of security as we know it
 
 ![](https://techbeacon.com/sites/default/files/styles/article_hero_image/public/field/image/rugged-devops-end-of-security.jpg?itok=Gp1xxSMK)

@@ -1,4 +1,3 @@
-translated by zhousiyu325
 What all you need to know about HTML5
 ============================================================
 

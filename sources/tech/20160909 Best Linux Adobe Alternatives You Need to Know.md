@@ -1,4 +1,4 @@
-Best Linux Adobe Alternatives You Need to Know ###translating by ninaiwohe109
+Best Linux Adobe Alternatives You Need to Know
 ============================================================
 ![](https://www.maketecheasier.com/assets/uploads/2016/09/adobe-alternative-linux-featured.jpg "Best Linux Adobe Alternatives You Need to Knows")
 
