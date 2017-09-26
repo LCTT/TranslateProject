@@ -1,3 +1,5 @@
+translating by Flowsnow
+
 The user’s home dashboard in our app, AlignHow we built our first full-stack JavaScript web app in three weeks
 ============================================================
 
@@ -175,7 +177,6 @@ For now, however, we’re happy with the final product, and with the immeasurabl
 
 ![](https://cdn-images-1.medium.com/max/800/1*KbqmSW-PMjgfWYWS_vGIqg.jpeg)
 Team Align: Sara Kladky (left), Melanie Mohn (center), and myself.
-
 
 --------------------------------------------------------------------------------
 
