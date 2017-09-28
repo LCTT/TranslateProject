@@ -1,3 +1,5 @@
+translating by flankershen 
+
 Network automation with Ansible
 ================
 
@@ -965,7 +967,6 @@ Ansible’s ease of use and agentless architecture accounts for the platform’s
 
 There is no device left behind when using Ansible for network automation.
 
-
 -----------
 
 作者简介：
@@ -973,7 +974,6 @@ There is no device left behind when using Ansible for network automation.
  ![](https://d3tdunqjn7n0wj.cloudfront.net/360x360/jason-edelman-crop-5b2672f569f553a3de3a121d0179efcb.jpg) 
 
 Jason Edelman, CCIE 15394 & VCDX-NV 167, is a born and bred network engineer from the great state of New Jersey. He was the typical “lover of the CLI” or “router jockey.” At some point several years ago, he made the decision to focus more on software, development practices, and how they are converging with network engineering. Jason currently runs a boutique consulting firm, Network to Code, helping vendors and end users take advantage of new tools and technologies to reduce their operational inefficiencies. Jason has a Bachelor’s...
-
 
 --------------------------------------------------------------------------------
 
