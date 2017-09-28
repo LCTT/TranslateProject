@@ -1,4 +1,4 @@
-﻿Translating by windcode
+translating---geekpi
 
 # Why DevOps is the end of security as we know it
 
