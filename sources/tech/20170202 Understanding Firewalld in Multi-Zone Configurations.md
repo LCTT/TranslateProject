@@ -1,3 +1,4 @@
+(翻译中 by runningwater)
 Understanding Firewalld in Multi-Zone Configurations
 ============================================================
 
@@ -397,7 +398,7 @@ Firewalld is an under-documented firewall configuration tool with more potential
 via: https://www.linuxjournal.com/content/understanding-firewalld-multi-zone-configurations?page=0,0
 
 作者：[  Nathan Vance][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
