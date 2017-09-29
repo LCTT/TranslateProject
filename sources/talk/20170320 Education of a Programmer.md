@@ -1,3 +1,5 @@
+translating by @explosic4
+
 Education of a Programmer
 ============================================================
 
