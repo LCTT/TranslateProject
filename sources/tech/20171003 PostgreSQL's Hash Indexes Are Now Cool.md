@@ -1,3 +1,5 @@
+polebug is translating
+
 PostgreSQL's Hash Indexes Are Now Cool
 =======
 Since I just committed the last pending patch to improve hash indexes to PostgreSQL 11, and since most of the improvements to hash indexes were committed to PostgreSQL 10 which is expected to be released next week, it seems like a good time for a brief review of all the work that has been done over the last 18 months or so.  Prior to version 10, hash indexes didn't perform well under concurrency, lacked write-ahead logging and thus were not safe in the face either of crashes or of replication, and were in various other ways second-class citizens.  In PostgreSQL 10, this is largely fixed.
@@ -18,12 +20,12 @@ While there's [always more that can be done][15], I feel that my colleagues and 
 
 In closing, I'd like to thank Jeff Janes and Jesper Pedersen for their invaluable testing work, both related to this project and in general.  Getting a project of this magnitude correct is not simple, and having persistent testers who are determined to break whatever can be broken is a great help.  Others not already mentioned who deserve credit for testing, review, and general help of various sorts include Andreas Seltenreich, Dilip Kumar, Tushar Ahuja, Álvaro Herrera, Michael Paquier, Mark Kirkwood, Tom Lane, and Kyotaro Horiguchi.  Thank you, and thanks as well to anyone whose work should have been mentioned here but which I have inadvertently omitted.
 
----
-via：https://rhaas.blogspot.jp/2017/09/postgresqls-hash-indexes-are-now-cool.html?showComment=1507079869582#c6521238465677174123
+---  
+via：https://rhaas.blogspot.jp/2017/09/postgresqls-hash-indexes-are-now-cool.html?showComment=1507079869582#c6521238465677174123  
 
-作者：[作者名][a]
-译者：[译者ID](https://github.com/id)
-校对：[校对者ID](https://github.com/id)
+作者：[作者名][a]  
+译者：[译者ID](https://github.com/id)  
+校对：[校对者ID](https://github.com/id)  
 本文由[LCTT]（https://github.com/LCTT/TranslateProject）原创编译，[Linux中国]（https://linux.cn/）荣誉推出
 
 
