@@ -1,5 +1,6 @@
 12 cool things you can do with GitHub
 ============================================================
+translating by softpaopao
 
 I can’t for the life of me think of an intro, so…
 
