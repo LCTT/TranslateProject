@@ -89,21 +89,22 @@ Inkbird SSR (photo by Christopher Aedo. [CC BY-SA 4.0)][6]
 
 控制盒子 (photo by Christopher Aedo. [CC BY-SA 4.0)][7]
 
-The only other thing I needed that was a little tricky to find was a compression fitting for the temperature probes. The probes were mounted in T fittings before the valve on the lowest bulkhead in both the HLT and the mash tun. As long as the liquid is flowing past the temp sensor, it's going to be accurate. I thought about adding a thermowell into the kettles as well, but realized that's not going to be useful for me based on my brewing process. Anyway, I purchased [1/4" compression fittings][34] and they worked out perfectly.
+另一个事情是我要为温度探针找一个微型压缩装置，这个探针以T字型装置在加热酒精容器和麦芽浆桶球形阀门的最底部，只要是液体流过温度传感器，温度是准确显示的。我考虑加一个套管到热水壶里，但是基于我的酿造工艺没有什么用。无论如何，我买四分之一英寸的压缩配件，他们是完美的。
 
-### Software
+### 软件
 
-Once the hardware was sorted out, I had time to play with the software. I ran the latest [Raspbian distribution][35] on the Pi; nothing special was required on the operating-system side.
+一旦硬件整理好，我有时间来处理软件，我在树莓派上跑了最新的发行版，操作系统方面没有什么特别的。
 
-I started with [Strangebrew Elsinore][36] brewing software, which I had discovered when a friend asked whether I had heard of [Hosehead][37], a Raspberry Pi-based brewing controller. I thought Hosehead looked great, but rather than buying a brewing controller, I wanted the challenge of building my own.
+我开始使用Strangebrew Elsinore酿酒软件，当我的朋友问我是否我听说过[Hosehead]，一个基于树莓派的酿酒控制器，那时我已经听说过这个软件了。我认为[Hosehead]很棒，但并不是要买一个酿酒控制器，贰拾我要挑战自己搭建我自己的一个。
 
-Setting up Strangebrew Elsinore was straightforward—the [documentation][38] was thorough and I did not encounter any problems. Even though Strangebrew Elsinore was working fine, Java seemed to be taxing my first-generation Pi sometimes, and it crashed on me more than once. I also was sad to see development stall and there did not seem to be a big community of additional contributors (although there were—and still are—plenty of people using it).
+设置Strangebrew Elsinore 这个软件是按照说明文档操作，没有遇到任何的问题。尽管Strangebrew Elsinore工作的很好，在一代树莓派上运行java有时是费力的，不止崩溃一次。我看到这个软件开发停顿也很伤心，因为他们没有几个看起来很大的贡献者的社区（尽管有很多人还在用它）
+
 
 ### CraftBeerPi
 
-Then I stumbled across [CraftBeerPI][39], which is written in Python and supported by a development community of active contributors. The original author (and current maintainer) Manuel Fritsch is great about handling contributions and giving feedback on issues that folks open. Cloning [the repo][40] and getting started only took me a few minutes. The README also has a good example of connecting DS1820 temp sensors, along with notes on interfacing hardware to a Pi or a [C.H.I.P. computer][41].
+之后我偶然遇到了一个用Python写的支持活跃的贡献者的开发社区的CraftbeerPI，应该叫手工啤酒派吧。原作者和当前维护者Manuel Fritsch在做贡献和反馈问题是友好的。克隆这个仓库然后开始花了我一些时间。README文档也是一个连接DS1820温度传感器的好例子，同时注意关于硬件接口到树莓派或者芯片电脑。
 
-On startup, CraftBeerPi walks users through a configuration process that discovers the temperature probes available and lets you specify which GPIO pins are managing which pieces of equipment.
+在启动的时候，CraftbeerPI引导用户通过一个设置过程来发现温度探针是否可用，并且让你用GPIO总线控制器来管理树莓派上的特定设备部件
 
 ### [aedo-f4.png][14]
 
@@ -111,33 +112,34 @@ On startup, CraftBeerPi walks users through a configuration process that discove
 
 CraftBeerPi (photo by Christopher Aedo. [CC BY-SA 4.0)][8]
 
-Running a brew with this system is easy. I can count on it holding temperatures reliably, and I can input steps for a multi-temp step mash. Using CraftBeerPi has made my brew days a little bit boring, but I'm happy to trade off the "excitement" of traditional manually managed propane burners for the efficiency and consistency of this system.
+运行自制酿酒系统是容易的，我能够依靠它掌握可靠的温度，我能输入多个温度段来控制麦芽浆温度，用CraftbeerPi酿酒的日子有一点点累，但是传统手工管理丙烷燃烧器为系统的有效性和持续性我还是很高兴的。
 
-CraftBeerPI's user-friendliness inspired me to set up another controller to run a "fermentation chamber." In my case, that was a second-hand refrigerator I found for US$ 50 plus a $25 heater) on the inside. CraftBeerPI easily can control the cooling and heating elements, and you can set up multiple temperature steps. For instance, this graph shows the fermentation temperatures for a session IPA I made recently. The fermentation chamber held the fermenting wort at 67F for four days, then ramped up one degree every 12 hours until it was at 72F. That temp was held for a two-day diacetyl rest. After that it was set to drop down to 65F for five days, during which time I "dry hopped" the beer. Finally, the beer was cold-crashed down to 38F. CraftBeerPI made adding each step and letting the software manage the fermentation easy.
+CraftBeerPI的用户友好性鼓舞我设置了另一个控制器来运行“发酵室”。就我来说，那是一个二手冰箱，我用了50美元加25美元的加热器设置在里边。CraftBeerPI很容易控制电器元件的冷热，你也能够设置多个温度阶段。举个例子，这个图表显示我最近做的IPA进程的发酵温度。发酵室发酵麦芽汁在67F的温度下需要4天，然后每到12小时上升一度直到温度到达72F。温度保持剩下两天是为了双乙酰生成。之后5天温度降到65F，这段时间是让啤酒变“干”，最后啤酒发酵温度直接降到38F。CraftBeerPI加入了每个阶段，让软件管理发酵更加容易。
 
 ### [aedo-f5.png][15]
 
 ![SIPA fermentation profile](https://opensource.com/sites/default/files/aedo-f5.png "SIPA fermentation profile")
 
-SIPA fermentation profile (photo by Christopher Aedo. [CC BY-SA 4.0)][9]
+SIPA 发酵文档 (photo by Christopher Aedo. [CC BY-SA 4.0)][9]
 
-I have also been experimenting with the [TILT hydrometer][42] to monitor the gravity of the fermenting beer via a Bluetooth-connected floating sensor. There are integration plans for this to get it working with CraftBeerPI, but for now it logs the gravity to a Google spreadsheet. Once this hydrometer can talk to the fermentation controller, setting automated fermentation profiles that take action directly based on the yeast activity would be easy—rather than banking on primary fermentation completing in four days, you can set the temperature ramp to kick off after the gravity is stable for 24 hours.
+我也试验过用液体比重计来发对酵啤酒的重力进行监测，通过蓝牙连接的浮动传感器可以达到。有一个整合的计划能让CraftbeerPi很好工作，但是现在它记录这些重力数据到谷歌的电子表格里。一旦这个液体比重计能连接到发酵控制器，设置的自动发酵文档会基于酵母的活动性直接运行且更加容易，而不是在4天存贮的主要发酵完成，可以在重力24小时稳定在设定温度。
 
-As with any project like this, imaging and planning improvements and additional components is easy. Still, I'm happy with where things stand today. I've brewed a lot of beer with this setup and am hitting the expected mash efficiency every time, and the beer has been consistently tasty. My most important customer—me!—is pleased with what I've been putting on tap in my kitchen.
+
+像这样的一些项目，想象力和计划改进和额外的部件是很容易，不过，我很高兴今天经历过的事情。我用这种装置酿造了很多啤酒，每次都能达到预期的麦芽汁效率，而且啤酒一直都很美味。我最重要的消费者！-我，很高兴我可以随时饮用。
 
 ### [aedo-f6.png][16]
 
 ![Homebrew on tap](https://opensource.com/sites/default/files/aedo-f6.png "Homebrew on tap")
 
-Homebrew on tap (photo by Christopher Aedo. [CC BY-SA 4.0)][10]
+随时饮用 (photo by Christopher Aedo. [CC BY-SA 4.0)][10]
 
- _This article is based on Christopher's OpenWest talk, [Brewing Beer with Linux, Python and a RaspberryPi][18]. [OpenWest][19] will be held July 12-15, 2017 in Salt Lake City, Utah._
+ 这篇文章基于克里斯托弗的开放的西部的谈话,用Linux，Python和树莓派酿制啤酒。 这次谈话将在2017年7月12-15日盐湖城举行。
 
 --------------------------------------------------------------------------------
 
 作者简介：
 
-Christopher Aedo - Christopher Aedo has been working with and contributing to open source software since his college days. Most recently he can be found leading an amazing team of upstream developers at IBM who are also developer advocates. When he’s not at work or speaking at a conference, he’s probably using a RaspberryPi to brew and ferment a tasty homebrew in Portland OR.
+Christopher Aedo - Christopher Aedo 从他的学生时代就从事并且贡献于开源软件事业。最近他被发现是他在IBM领导一个逆流而上的开发者团队，同时他也是开发者拥护者。当他不再工作或者实在会议室演讲的时候，他可能在波特兰市俄勒冈州用树莓派酿制和发酵一杯美味的啤酒。
 
 
 via: https://opensource.com/article/17/7/brewing-beer-python-and-raspberry-pi
