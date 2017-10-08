@@ -1,7 +1,7 @@
-Brewing beer with Linux, Python, and Raspberry Pi
+用Linux，Python和树莓派酿制啤酒
 ============================================================
 
-### A handy how-to for building a homemade homebrew setup with Python and the Raspberry Pi.
+### 怎样在家用python和树莓派搭建一个家用便携的自制酿啤酒装置
 
  
 ![Brewing beer with Linux, Python, and Raspberry Pi](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/beer-drink-sample-sampler.png?itok=20jJLB8V "Brewing beer with Linux, Python, and Raspberry Pi")
@@ -9,57 +9,59 @@ Image by : 
 
 [Quinn Dombrowski][21]. Modified by Opensource.com. [CC BY-SA 4.0][22].
 
-I started brewing my own beer more than 10 years ago. Like most homebrewers, I started in my kitchen making extract-based brews. This required the least equipment and still resulted in really tasty beer. Eventually I stepped up to all-grain brewing using a big cooler for my mash tun. For several years I was brewing 5 gallons at a time, but brewing 10 gallons takes the same amount of time and effort (and only requires slightly larger equipment), so a few years ago I stepped it up. After moving up to 10 gallons, I stumbled across [StrangeBrew Elsinore][23] and realized what I  _really_  needed to do was convert my whole system to be all-electric, and run it with a [Raspberry Pi][24].
+大约十年前我开始酿制自制啤酒，和许多自己酿酒的人一样，我开始在厨房制造提纯啤酒。这需要一些设备并且做出来后确实是好的啤酒，最终，我用一个大的贮藏罐放入了所有大麦作为我的麦芽浆桶。几年之后我曾酿制了5加仑啤酒，但是酿制10加仑时会花费同样的时间和效用（只是容器比之前大些），之前我是这么做的。容量提升到10加仑之后，我偶然发现并意识到我真正需要的是将整个酿酒过程转换成全电子化的，用树莓派来运行它。
 
-There is a ton of great information available for building your own all-electric homebrew system, and most brewers start out at [TheElectricBrewery.com][25]. Just putting together the control panel can get pretty complicated, although the simplest approach is outlined well there. Of course you can also take [a less expensive approach][26] and still end up with the same result—a boil kettle and hot liquor tank powered by heating elements and managed by a PID controller. I think that's a little too boring though (and it also means you don't get neat graphs of your brew process).
+建造自己的家用电动化酿酒系统需要大量这方面的技术信息，许多学习酿酒的是在TheElectricBrewery.com这个网站起步的，只不过将那些控制版搭建在一起是十分复杂的，尽管最简单的办法在这个网站上总结的很好。当然你也能用一个小成本的方法并且依旧可以用相同的结果得到-用一个热水壶和热酒容器通过一个PID控制器来加热你的酿酒原料。但是我认为这有点太无聊（这也意味着你不能get到完成酿酒过程）
 
-More on Raspberry Pi
+关于树莓派更多信息
 
-*   [Our latest on Raspberry Pi][1]
+*   [关于树莓派最新消息[1]
 
-*   [What is Raspberry Pi?][2]
+*   [树莓派是什么?][2]
 
-*   [Getting started with Raspberry Pi][3]
+*   [树莓派如何开始使用][3]
 
-*   [Send us your Raspberry Pi projects and tutorials][4]
+*   [发送给我们你的树莓派项目和教程][4]
 
-### Hardware supplies
+### 需要用到的硬件
 
-Before I talked myself out of the project, I decided to start buying parts. My basic design was a Hot Liquor Tank (HLT) and boil kettle with 5500w heating elements in them, plus a mash tun with a false bottom. I would use a pump to recirculate the mash through a 50' stainless coil in the HLT (a ["heat exchanger recirculating mash system", known as HERMS][27]). I would need a second pump to circulate the water in the HLT, and to help with transferring water to the mash tun. All of the electrical components would be controlled with a Raspberry Pi.
+在我开始我得这个项目之前, 我决定开始买零件，我最基础的设计是一个可以将液体加热到5500w的热酒容器和开水壶，加一个活底的麦芽浆桶，我通过一个50的不锈钢线圈在热酒容器里让泵来再循环麦芽浆(a ["热量交换再循环麦芽浆系统, 也叫 HERMS][27]).同时我需要另一个泵来在热酒容器里循环水，并且把水传输到麦芽浆桶里，整个电子部件全部是用树莓派来控制的。
 
-Building my electric brew system and automating as much of it as possible meant I was going to need the following:
 
-*   HLT with a 5500w electric heating element
+建立我得电子酿酒系统并且尽可能的自动化意味着我需要以下的东东：
 
-*   HERMS coil (50' 1/2" stainless steel) in the HLT
 
-*   boil kettle with a 5500w electric heating element
+*   一个5500瓦的电子加热酒精容器
 
-*   multiple solid-state relays to switch the heaters on and off
+*   能够放入加热酒精容器里的一英尺（0.5英寸）长的不锈钢线圈（热量交换再循环麦芽浆系统）
 
-*   2 high-temp food-grade pumps
+*   一个5500瓦的电子加热水壶
 
-*   relays for switching the pumps on and off
+*   多个固态继电器加热开关
 
-*   fittings and high-temp silicon tubing
+*   2个高温食品级泵
 
-*   stainless ball valves
+*   泵的开关用继电器
 
-*   1-wire temperature probes
+*   可拆除装置和一个硅管
 
-*   lots of wire
+*   不锈钢球阀
 
-*   electrical box to hold everything
+*   一个测量温度的探针
+
+*   很多线
+
+*   一个来容纳这些配件的电路盒子
 
 ### [aedo-f1.png][11]
 
 ![Brew system](https://opensource.com/sites/default/files/aedo-f1.png "Brew system")
 
-Brew system (photo by Christopher Aedo. [CC BY-SA 4.0)][5]
+酿酒系统 (photo by Christopher Aedo. [CC BY-SA 4.0)][5]
 
-The details of building out the electrical side of the system are really well covered by [The Electric Brewery][28], so I won't repeat their detailed information. You can read through and follow their suggestions while planning to replace the PID controllers with a Raspberry Pi.
+建立酿酒系统的电气化方面的细节The Electric Brewery这个网站概括的很好，这里我不再重复，当你计划用树莓派代替这个PID控制器的话，你可以读以下的建议。
 
-One important thing to note is the solid-state relay (SSR) signal voltage. Many tutorials suggest using SSRs that need a 12-volt signal to close the circuit. The Raspberry Pi GPIO pins will only output 3v, however. Be sure to purchase relays that will trigger on 3 volts.
+一个重要的事情需要注意，固态继电器信号电压，许多教程建议使用一个12伏的固态继电器来关闭电路，树莓派的GPIO针插口只支持输出电压3伏，然而，必须购买继电器将电压变为3伏。
 
 ### [aedo-f2.png][12]
 
@@ -67,23 +69,25 @@ One important thing to note is the solid-state relay (SSR) signal voltage. Many 
 
 Inkbird SSR (photo by Christopher Aedo. [CC BY-SA 4.0)][6]
 
-To run your brew system, your Pi must do two key things: sense temperature from a few different places, and turn relays on and off to control the heating elements. The Raspberry Pi easily is able to handle these tasks.
+要运行酿酒系统，你的树莓派必须做两个关键事情：来自不同位置的敏感温度，用继电器开关来控制加热元件，树莓派很容易来处理这些任务。
 
-There are a few different ways to connect temp sensors to a Pi, but I've found the most convenient approach is to use the [1-Wire bus][29]. This allows for multiple sensors to share the same wire (actually three wires), which makes it a convenient way to instrument multiple components in your brew system. If you look for waterproof DS18B20 temperature sensors online, you'll find lots of options available. I used [Hilitchi DS18B20 Waterproof Temperature Sensors][30] for my project.
+这里有一些不同的方法来将温度传感器连到树莓派上，但是我找到了最方便的方法用单总线。这就可以让多个传感器分享相同的线路（实际上三根线），这三根线可以使酿酒系统的多个设备更方便的工作，如果你要从网上找一个DS18B20 防水的温度传感器，你将会找到更多的选择。我用的是日立DS18B20防水温度传感器。
 
-To control the heating elements, the Raspberry Pi includes several General Purpose IO (GPIO) pins that are software addressable. This allows you to send 3.3v to a relay by simply putting a **1** or a **0** in a file. The  _Raspberry Pi—Driving a Relay using GPIO_  tutorial was the most helpful for me when I was first learning how all this worked. The GPIO controls multiple solid-state relays, turning on and off the heating elements as directed by the brewing software.
+要控制加热元件，树莓派包括几个用来软件寻址的总线扩展器（GPIO），它会通过在某个文件写入0或者1让你发送3.3v的电压到一个继电器，在我第一次了解树莓派是怎样工作的时候，这个用GPIO驱动继电器的树莓派教程对我来说是最有帮助的，总线控制器控制多个固态继电器，通过酿酒软件来直接控制加热元件的开关。
 
-I first started working on the box to hold all the components. Because this would all be on a rolling cart, I wanted it to be relatively portable rather than permanently mounted. If I had a spot (for example, inside a garage, utility room, or basement), I would have used a larger electrical box mounted on the wall. Instead I found a decent-size [waterproof project box][31] that I expected I could shoehorn everything into. In the end, it turned out to be a little bit of a tight fit, but it worked out. In the bottom left corner is the Pi with a breakout board for connecting the GPIO to the 1-Wire temperature probes and the [solid state relays][32].
+我第一次将所有部件放到这个电路盒子，因为这将成为一个滚动的小车，我要让他方便移动，而不是固定不动的，如果我有一个店（比如说在车库，工具房，或者地下室），我需要要用一个更大的电路盒挂到墙上，而现在我找到一个大小正好的防水工程盒子，能放进每件东西，最后它成为紧密的结合工具盒，并且能够工作。在左下角是和树莓派连接的为总线控制器到单总线温度探针和固态继电器的扩展板。
 
-To keep the 240v SSRs cool, I cut holes in the case and stacked [copper shims][33] with CPU cooling grease between them and heat sinks mounted on the outside of the box. It worked out well and there haven't been any cooling issues inside the box. On the cover I put two switches for 120v outlets, plus two 240v LEDs to show which heating element was energized. I used dryer plugs and outlets for all connections so disconnecting a kettle from everything is easy. Everything worked right on the first try, too. (Sketching a wiring diagram first definitely pays off.)
+要保持240v的固态继电器温度不高，我在盒子上切了个洞，在盒子的外面用降温凝胶安装铜片散热片冷却cpu的温度。它工作的很好，盒子里没有温度上的问题了，在盒子盖上我放了两个开关为120v的插座，加两个240v的led来显示加热元件是否通电。我用干燥器的插座和插头很容易的开关电热水壶的连接。第一次尝试每件事情都弄好了。(决定第一次手画电路图.)
 
-The pictures are from the "proof-of-concept" version—the final production system should have two more SSRs so that both legs of the 240v circuit would be switched. The other thing I would like to switch via software is the pumps. Right now they're controlled via physical switches on the front of the box, but they could easily be controlled with relays.
+
+照片是从“概念”版的最终生产系统应该有两个固态继电器，以至于240v的电路两个针脚能够切换，另外我将通过软件来切换泵的开关，。现在他们通过盒子前面的物理开关控制，但是他们很容易用继电器控制。 
+
 
 ### [aedo-f3.png][13]
 
 ![Control box](https://opensource.com/sites/default/files/aedo-f3.png "Control box")
 
-Control box (photo by Christopher Aedo. [CC BY-SA 4.0)][7]
+控制盒子 (photo by Christopher Aedo. [CC BY-SA 4.0)][7]
 
 The only other thing I needed that was a little tricky to find was a compression fitting for the temperature probes. The probes were mounted in T fittings before the valve on the lowest bulkhead in both the HLT and the mash tun. As long as the liquid is flowing past the temp sensor, it's going to be accurate. I thought about adding a thermowell into the kettles as well, but realized that's not going to be useful for me based on my brewing process. Anyway, I purchased [1/4" compression fittings][34] and they worked out perfectly.
 
