@@ -1,4 +1,4 @@
-hwlife is translating
+hwlife is translating 
 Brewing beer with Linux, Python, and Raspberry Pi
 ============================================================
 
