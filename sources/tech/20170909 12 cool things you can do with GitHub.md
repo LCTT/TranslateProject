@@ -1,124 +1,124 @@
-12 cool things you can do with GitHub
+12 件可以用 GitHub 完成的很酷的事情
 ============================================================
-translating by softpaopao
 
-I can’t for the life of me think of an intro, so…
+我不能为我的人生想出一个引子来，所以...
 
-### #1 Edit code on GitHub.com
+### #1 在 GitHub.com 上编辑代码
 
-I’m going to start with one that I  _think_  most people know (even though I didn’t know until a week ago).
+我想我要开始的第一件事是多数人都已经知道的（尽管一周之前的我并不知道）。
 
-When you’re in GitHub, looking at a file (any text file, any repository), there’s a little pencil up in the top right. If you click it, you can edit the file. When you’re done, hit Propose file change and GitHub will fork the repo for you and create a pull request.
+当你登录到 GitHub ，查看一个文件时（任何文本文件，任何版本库），右上方会有一只小铅笔。点击它，你就可以编辑文件了。 当你编辑完成后，GitHub 会给出文件变更的建议然后为你 fork 你的仓库并创建一个 pull 请求。
 
-Isn’t that wild? It creates the fork for you!
+是不是很疯狂？它为你创建了 fork ！
 
-No need to fork and pull and change locally and push and create a PR.
-
+不需要去 fork ，pull ，本地更改，push 然后创建一个 PR。
 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*w3yKOnVwomvK-gc7hlQNow.png)
-Not a real PR
 
-This is great for fixing typos and a somewhat terrible idea for editing code.
+不是一个真正的 PR
 
-### #2 Pasting images
+这对于修改错误的拼写以及编辑代码时的一些糟糕的想法是很有用的。
 
-You’re not just limited to text in comments and issue descriptions. Did you know you can paste an image straight from the clipboard? When you paste, you’ll see it gets uploaded (to the ‘cloud’, no doubt) and becomes the markdown for showing an image.
+### #2 粘贴图像
 
-Neat.
+在评论和 issue 的描述中并不仅限于使用文字。你知道你可以直接从剪切板粘贴图像吗？ 在你粘贴的时候，你会看到图片被上传 (到云端，这毫无疑问)并转换成 markdown 显示的图片格式。
 
-### #3 Formatting code
+整洁。
 
-If you want to write a code block, you can start with three backticks — just like you learned when you read the [Mastering Markdown][3] page — and GitHub will make an attempt to guess what language you’re writing.
+### #3 格式化代码
 
-But if you’re posting a snippet of something like Vue, Typescript or JSX, you can specify that explicitly to get the right highlighting.
+如果你想写一个代码块的话，你可以用三个反引号作为开始 —— 就像你在浏览 [熟练掌握 Markdown][3] 页面所学的一样 —— 而且 GitHub 会尝试去推测你所写下的语言。
 
-Note the ````jsx` on the first line here:
+但如果你张贴像是 Vue ，Typescript 或 JSX 这样的代码，你就需要明确指出才能获得高亮显示。
+
+在首行注明 ````jsx`：
 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*xnt83oGWLtJzNzwp-YvSuA.png)
 
-…which means the snippet is rendered correctly:
+…这意味着代码段已经正确的呈现：
 
  
 ![](https://cdn-images-1.medium.com/max/1600/1*FnOcz-bZi3S9Tn3dDGiIbQ.png)
 
-(This extends to gists, by the way. If you give a gist the extension of `.jsx`you’ll get JSX syntax highlighting.)
+(顺便说一下，这些用法可以扩展到 gists。 如果你在 gist 中给出 `.jsx` 扩展，你的 JSX 语法就会高亮显示。)
 
-Here’s a list of [all the supported syntaxes][4].
+这里是[所有被支持的语法][4]的清单。
 
-### #4 Closing issues with magic words in PRs
+### #4 用 PRs 中的魔法词来关闭 issues
 
-Let’s say you’re creating a pull request that fixes issue #234\. You can put the text “fixes #234” in the description of your PR (or indeed anywhere in any comment on the PR).
+比方说你已经创建了一个 pull 请求用来修复 issue #234 。那么你就可以把 “fixes #234” 这段文字放在你的 PR 描述中（或者是在 PR 的评论的任何位置）。
 
-Then, merging the PR automagically closes that issue. Isn’t that cool?
+接下来，在合并 PR 时会自动关闭与之对应的问题。这是不是很酷？
 
-There’s [more to learn in the help][5].
+这里是[更详细的学习帮助][5]。
 
-### #5 Linking to comments
+### #5 链接到评论
 
-Have you even wanted to link to a particular comment but couldn’t work out how? That’s because you don’t know how to do it. But those days are behind you my friend, because I am here to tell you that clicking on the date/time next to the name is how you link to a comment.
+是否你曾经想要链接到一个特定的评论但却不知道该怎么做？这是因为你不知道如何去做到这些。但那都将是过去了我的朋友，因为我在这里告诉你，点击紧挨着名字的日期或时间，这就是如何链接到一个评论。
 
 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*rSq4W-utQGga5GOW-w2QGg.png)
-Hey, gaearon got a picture!
 
-### #6 Linking to code
+嘿，这里有 gaearon 的照片！
 
-So you want to link to a specific line of code. I get that.
+### #6 链接到代码
 
-Try this: while looking at the file, click the line number next to said code.
+那么你想要链接到代码的特定行。我明白。
 
-Whoa, did you see that? The URL was updated with the line number! If you hold down shift and click another line number, SHAZAAM, the URL is updated again and now you’ve highlighted a range of lines.
+试试这个：在查看文件的时候，点击挨着代码的行号。
 
-Sharing that URL will link to this file and those lines. But hold on, that’s pointing to the current branch. What if the file changes? Perhaps a permalink to the file in its current state is what you’re after.
+哇哦，你看到了么？行号位置更新出了 URL ！如果你按下 Shift 键并点击其他的行号，SHAZAAM ，URL 再一次更新并且现在出现了行范围的高亮。
 
-I’m lazy so I’ve done all of the above in one screenshot:
+分享这个 URL 将会链接到这个文件的那些行。但等一下，链接所指向的是当前分支。如果文件发生变更了怎么办？也许一个文件当前状态的永久链接就是你以后需要的。
+
+我比较懒，所以我已经在一张截图中做完了上面所有的步骤：
 
 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*5Qg2GqTkTKuXLARasZN57A.png)
 
-Speaking of URLs…
+说起 URLs…
 
-### #7 Using the GitHub URL like the command line
+### #7 像命令行一样使用 GitHub URL
 
-Navigating around GitHub using the UI is all well and fine. But sometimes the fastest way to get where you want to be is just to type it in the URL. For example, if I want to jump to a branch that I’m working on and see the diff with master, I can type `/compare/branch-name` after my repo name.
+使用 UI 来浏览 GitHub 有着很好的体验。但有些时候最快到达你想去的地方的方法就是在地址栏输入。举个例子，如果我想要跳转到一个我正在工作的分支然后查看与 master 分支的 diff，我就可以在我的仓库名称的后边输入 `/compare/branch-name` 。
 
-That will land me on the diff page for that branch:
+这样就会登录到指定分支的 diff 页面。
 
  
 
 ![](https://cdn-images-1.medium.com/max/2000/1*DqexM1y398gSaozLNllroA.png)
 
-That’s a diff with master though, if I was working off an integration branch, I’d type `/compare/integration-branch...my-branch`
+然而这就是与 master 分支的 diff ，如果我正在 integration 分支工作，我可以输入 `/compare/integration-branch...my-branch`。
 
 
 
 ![](https://cdn-images-1.medium.com/max/2000/1*roOXDuo_-9QKI5NLKmveGQ.png)
 
-For you keyboard short-cutters out there, `ctrl`+`L` or `cmd`+`L` will jump the cursor up into the URL (in Chrome at least). This — coupled with the fact that your browser is going to do auto-complete — can make it a handy way to jump around between branches.
+对于键盘上的快捷键，`ctrl`+`L`  或 `cmd`+`L` 将会向上跳转光标进入 URL 那里（至少在 Chrome 中是这样）。这一点 —— 加上你的浏览器会自动补全的事实 —— 能够成为一种在分支间跳转的便捷方式。
 
-Pro-tip: use the arrow keys to move through Chrome’s auto-complete suggestions and hit `shift`+`delete` to remove an item from history (e.g. once a branch is merged).
+小贴士：使用方向键在 Chrome 的自动完成建议中移动同时按 `shift`+`delete` 来删除历史条目（e.g. 一旦分支被合并）。
 
-(I really wonder if those shortcuts would be easier to read if I did them like `shift + delete`. But technically the ‘+’ isn’t part of it, so I don’t feel comfortable with that. This is what keeps  _me_  up at night, Rhonda.)
+（我真的好奇如果我把快捷键写成 `shift + delete` 这样的话，是不是读起来会更加容易。但严格来说 ‘+’ 并不是快捷键的一部分，所以我并不觉得这很舒服。这一点让 _我_ 整晚难以入睡，Rhonda。）
 
-### #8 Create lists, in issues
+### #8 在 issue 中创建列表
 
-Do you want to see a list of check boxes in your issue?
+你想要在你的 issue 中看到一个复选框列表吗？
 
 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*QIe-XOKOXTB3hXaLesr0zw.png)
 
-And would you like that to show up as a nifty “2 of 5” bar when looking at the issue in a list?
+想要在查看列表中的 issue 时候显示为一个漂亮的 “2 of 5” bar（译者注：条形码）吗?
 
 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*06WdEpxuasda2-lavjjvNw.png)
 
-That’s great! You can create interactive check boxes with this syntax:
+那很好！你可以使用这些的语法创建交互式的复选框：
 
 ```
  - [ ] Screen width (integer)
@@ -128,208 +128,210 @@ That’s great! You can create interactive check boxes with this syntax:
  - [ ] Custom elements
 ```
 
-That’s a space and a dash and a space and a left bracket and a space (or an x) and a close bracket and a space and then some words.
+表示方法是空格，破折号，再空格，左括号，填入空格（或者一个 x ），然后封闭括号 ，接着空格，最后是一些话。
 
-Then you can actually check/uncheck those boxes! For some reason this seems like technical wizardry to me. You can  _check_  the boxes! And it updates the underlying text!
+然后其实你可以选中或取消选中这些框！出于一些原因这些对我来说看上去就像是技术的魔法。你可以 _选中_ 这些框! 同时底层的文本会进行更新。
 
-What will they think of next.
+他们接下来会想什么？
 
-Oh and if you have this issue on a project board, it will show the progress there too:
+噢，如果你在一个 project board 上有这些 issue 的话，它也会在这里显示进度：
 
 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*x_MzgCJXFp-ygsqFQB5qHA.png)
 
-If you don’t know what I’m talking about when I say “on a project board” then you’re in for a treat further down the page.
+如果在我提到“在一个 project board 上”时你不知道我在说些什么，那么你会在下面的页面进一步了解。
 
-Like, 2cm further down the page.
+比如，在页面下 2 厘米的地方。
 
-### #9 Project boards in GitHub
+### #9 GitHub 上的 Project boards
 
-I’ve always used Jira for big projects. And for solo projects I’ve always used Trello. I quite like both of them.
+我常常在大项目中使用 Jira 。而对于个人项目我总是会使用 Trello 。我很喜欢他们两个。
 
-When I learned a few weeks back that GitHub has its own offering, right there on the Projects tab of my repo, I thought I’d replicate a set of tasks that I already had on the boil in Trello.
+当我学会的几周后 GitHub 有它自己的产品，就在我的仓库上的 Project 标签，我想过我会照搬一套我已经在 Trello 上进行的任务。
 
  
 
 ![](https://cdn-images-1.medium.com/max/2000/1*NF7ZnHndZQ2SFUc5PK-Cqw.png)
-None of them are funny
+没有一个是有趣的
 
-And here’s the same in a GitHub project:
+这里是在 GitHub project 上相同的内容：
 
 
 
 ![](https://cdn-images-1.medium.com/max/2000/1*CHsofapb4JtEDmveOvTYVQ.png)
-Your eyes adjust to the lack of contrast eventually
 
-For the sake of speed I added all of the above as ‘notes’ — which means they’re not actual GitHub issues.
+你的眼睛会因为缺乏对比而适应。
 
-But the power of managing your tasks in GitHub is that it’s integrated with the rest of the repository — so you’ll probably want to add existing issues from the repo to the board.
+出于速度的缘故，我把上面所有的都添加为 “notes” —— 意思是他们不是真正的 GitHub issue 。
 
-You can click Add Cards up in the top right and find the things you want to add. Here the special [search syntax][6] comes in handy, for example, type `is:pr is:open` and now you can drag any open PRs onto the board, or `label:bug` if you want to smash some bugs.
+但在 GitHub 上，管理任务的权限被集成在版本库的其他地方 —— 所以你可能想要从仓库添加存在的 issue 到 board 上。
+
+你可以点击右上角的 Add Cards 然后找你想要添加的东西。这里特殊的[搜索语法][6]就派上用场了，举个例子，输入 `is:pr is:open` 然后现在你可以拖动任何开启的 PRs 到 board 上，或者要是你想清理一些 bug 的话就输入 `label:bug`
 
 
 
 ![](https://cdn-images-1.medium.com/max/2000/1*rTVCR92HhIPhrVnOnXRZkQ.png)
 
-Or you can convert existing notes to issues.
+或者你可以将现有的 notes 转换为 issues 。
 
 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*pTm7dygsyLxsOUDkM7CTcg.png)
 
-Or lastly, from an existing issue’s screen, add it to a project in the right pane.
+或者最后，从一个现有的 issue 屏幕，把它添加到在右边面板的一个 project 。
 
 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*Czs0cSc91tXv411uneEM9A.png)
-It will go into a triage list on that project board so you can decide which column to put it in.
 
-There’s a huge (huuuuge) benefit in having your ‘task’ definition in the same repo as the code that implements that task. It means that years from now you can do a git blame on a line of code and find your way back to the original rationale behind the task that resulted in that code, without needing to go and track it down in Jira/Trello/elsewhere.
+它们将会进入一个  project board 的分类列表，这样你就能减少候选的列表的数量。
 
-#### The downsides
+作为实现那些 task 的代码，在同一仓库下你所拥有的 ‘task’ 定义有一个巨大（超大）的好处。这意味着今后的几年你能够用一行代码做一个 git blame 并且找出方法回到最初在这个 task 后面写下那些代码的根据，不需要在 Jira、Trello 或其他地方寻找蛛丝马迹。
 
-I’ve been trialling doing all tasks in GitHub instead of Jira for the last three weeks (on a smaller project that is kinda-sorta Kanban style) and I’m liking it so far.
+#### 缺点
 
-But I can’t imagine using it on scrum project where I want to do proper estimating and calculate velocity and all that good stuff.
+在过去的三周我已经对所有的 tasks 使用 GitHub 取代 Jira 进行了测试（在有点看板风格的较小规模的项目上) ，到目前为止我都很喜欢。
 
-The good news is, there are so few ‘features’ of GitHub Projects that it won’t take you long to assess if it’s something you could switch to. So give it a crack, see what you think.
+但是我无法想象在 scrum （译者注：迭代式增量软件开发过程）项目上使用，我想要在那里完成正确估算、速度的测算以及所有的好东西。
 
-FWIW, I have  _heard_  of [ZenHub][7] and opened it up 10 minutes ago for the first time ever. It effectively extends GitHub so you can estimate your issues and create epics and dependencies. There’s velocity and burndown charts too; it looks like it  _might just be_  the greatest thing on earth.
+好消息是，GitHub Projects 只有很少一些“功能”，并不会让你花很长时间去评估它是否值得让你去切换。因此留下一个悬念，看看你是怎么想的。
 
-Further reading: [GitHub help on Projects][8].
+总的来说，我有 _得知_ [ZenHub][7] 并且打开过 10 分钟，这也是有史以来的第一次。它是对 GitHub 高效的延伸，可以让你估计你的 issue 并创建 epics 和 dependencies。它也有速度和燃尽图功能；这看起来 _可能是_ 这地球上最伟大的事情。
+
+延伸阅读： [GitHub help on Projects][8]。
 
 ### #10 GitHub wiki
 
-For an unstructured collection of pages — just like Wikipedia — the GitHub Wiki offering (which I will henceforth refer to as Gwiki) is great.
+对于非结构化集合类的页面 —— 就像 Wikipedia —— GitHub Wiki 提供的（下文我会称之为 Gwiki ）就很优秀。 
 
-For a structured collection of pages — for example, your documentation — not so much. There is no way to say “this page is a child of that page”, or have nice things like ‘Next section’ and ‘Previous section’ buttons. And Hansel and Gretel would be screwed, because there’s no breadcrumbs.
+对于结构化集合类的页面 —— 举个例子，你的文档 —— 并没那么多。这里没办法说“这个页面是那个页面的子页”，或者有像‘下一节’和‘上一节’这样的按钮。Hansel 和 Gretel 将会完蛋，因为这里没有面包屑（译者注：引自童话故事《糖果屋》）。
 
-(Side note, have you  _read_  that story? It’s brutal. The two jerk kids murder the poor hungry old woman by burning her to death in her  _own oven_ . No doubt leaving her to clean up the mess. I think this is why youths these days are so darn sensitive — bedtime stories nowadays don’t contain enough violence.)
+(边注，你有 _读过_ 那个故事吗? 这是个残酷的故事。两个混蛋小子将饥肠辘辘的老巫婆烧死在 _她自己的火炉_ 里。无疑留下她来收拾残局。我想这就是为什么如今的年轻人是如此的敏感 —— 今天的睡前故事没有太多的暴力内容。)
 
-Moving on — to take Gwiki for a spin, I entered a few pages from the NodeJS docs as wiki pages, then created a custom sidebar so that I could emulate having some actual structure. The sidebar is there at all times, although it doesn’t highlight the page you are currently on.
+继续 —— 把 Gwiki 拿出来接着讲，我输入一些 NodeJS 文档中的内容作为 wiki 页面，然后创建一个侧边栏让我能够模拟出一些真实结构。这个侧边栏会一直存在，尽管它无法高亮显示你当前所在的页面。
 
-Links have to be manually maintained, but over all, I think it would work just fine. [Take a look][9] if you feel the need.
+链接不得不手动维护，但总的来说，我认为这已经很好了。如果你觉得有需要的话可以[看一下][9]。 
 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*BSKQpkLmVQpUML0Je9WsLQ.png)
 
-It’s not going to compete with something like GitBook (that’s what the [Redux docs][10] use) or a bespoke website. But it’s a solid 80% and it’s all right there in your repo.
+它将不会与像 GitBook（它使用了[Redux 文档][10]）或一个定制的网站这样的东西去竞争。但它仍然会占据 80% 的页面而且就在你的仓库里。
 
-I’m a fan.
+我是一个粉丝。
 
-My suggestion: if you’ve outgrown a single `README.md` file and want a few different pages for user guides or more detailed documentation, then your next stop should be a Gwiki.
+我的建议：如果你已经拥有不止一个 `README.md` 文件并且想要一些不同的页面作为用户指南或是更详细的文档，那么下一步你就需要停止使用 Gwiki 了。
 
-If you start to feel the lack of structure/navigation is holding you back, move on to something else.
+如果你开始觉得缺少的结构或导航非常有必要的话，去切换到其他的产品吧。
 
-### #11 GitHub Pages (with Jekyll)
+### #11 GitHub Pages （带有 Jekyll）
 
-You may already know that you can use GitHub Pages to host a static site. And if you didn’t now you do. However this section is specifically about using  _Jekyll_ to build out a site.
+你可能已经知道了可以使用 GitHub Pages 来托管静态站点。如果你不知道的话现在就可以去试试。不过这一节确切的说是关于使用 _Jekyll_ 来构建一个站点。
 
-At its very simplest, GitHub Pages + Jekyll will render your `README.md` in a pretty theme. For example, take a look at my readme page from [about-github][11]:
+最简单的就是， GitHub Pages + Jekyll 会将你的 `README.md` 呈现在一个漂亮的主题中。举个例子，从 [关于 github][11] 看看我的 readme 页面:
 
 
 
 ![](https://cdn-images-1.medium.com/max/2000/1*nU-vZfChZ0mZw9zO-6iJow.png)
 
-If I click the ‘settings’ tab for my site in GitHub, turn on GitHub Pages, and pick a Jekyll theme…
+如果我为我的 GitHub 站点点击 ‘settings’ 标签，开启 GitHub Pages，然后挑选一个 Jekyll 主题…
 
 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*tT9AS7tNfEjbAcT3mkzgdw.png)
 
-I will get a [Jekyll-themed page][12]:
+我会得到一个[ Jekyll 主题页面][12]:
 
 
 ![](https://cdn-images-1.medium.com/max/2000/1*pIE2FMyWih7nFAdP-yGXtQ.png)
 
-From this point on I can build out a whole static site based mostly around markdown files that are easily editable, essentially turning GitHub into a CMS.
+根据这一点我可以构建一个主要基于易于编辑的 markdown 文件的静态站点，本质上是把 GitHub 变成一个 CMS（译者注：内容管理系统）。
 
-I haven’t actually used it, but this is how the React and Bootstrap sites are made, so it can’t be terrible.
+我还没有真正的使用过它，但这就是 React 和 Bootstrap 站点构建的过程，所以并不可怕。
 
-Note, it requires Ruby to run locally (Windows users will exchange knowing glances and walk in the other direction. macOS users will be like “What’s the problem, where are you going? Ruby is a universal platform! GEMS!”)
+注意，在本地运行需要 Ruby （ Windows 用户就需要交换一下眼色并且转向其他的方向。macOS 用户会像这样 “出什么问题了，你要去哪里？Ruby 是一个通用平台！GEMS！”）。
 
-(It’s also worth adding here that “Violent or threatening content or activity” is not allowed on GitHub Pages, so you can’t go hosting your Hansel and Gretel reboot.)
+（这里也有必要加上“暴力或威胁的内容或活动” 在 GitHub Pages 上是不被允许的，因此你不能去部署重启你的 Hansel 和 Gretel 。）
 
-#### My opinion
+#### 我的意见
 
-The more I looked into GitHub Pages + Jekyll (for this post), the more it seemed like there was something a bit strange about the whole thing.
+我观察的 GitHub Pages + Jekyll 越多（为了这篇文章），整件事情好像越是看起来有一点奇怪。
 
-The idea of ‘taking all the complexity out of having your own web site’ is great. But you still need a build setup to work on it locally. And there’s an awful lot of CLI commands for something so ‘simple’.
+‘让所有的复杂性远离你所拥有的属于自己的网站’这样的想法是很棒的。但是你仍然需要在本地生成配置。而且可怕的是需要为这样“简单”的东西使用很多 CLI（译者注：命令行界面）命令。
 
-I just skimmed over the seven pages in the [Getting Started section][13], and I feel like  _I’m_  the only simple thing around here. And I haven’t even learnt the simple “Front Matter” syntax or the ins and outs of the simple “Liquid templating engine” yet.
+我只是略读了[入门部分][13]的七页，给我的感觉像是 _我是_ 这里仅有的简单的事情。此前我甚至从来没有学习过所谓简单的“Front Matter”的语法或者所谓简单的“Liquid 模板引擎”的来龙去脉。
 
-I’d rather just write a website.
+我宁愿只写一个网站。
 
-To be honest I’m a bit surprised Facebook use this for the React docs when they could probably build their help docs with React and [pre-render to static HTML files][14] in under a day.
+老实说我有点惊讶 Facebook 使用它来写 React 文档，因为他们能够用 React 来构件他们的帮助文档并且在一天之内 [pre-render 预渲染到静态的 HTML 文件][14]。
 
-All they would need is some way to consume their existing markdown files as though they were coming from a CMS.
+他们所需要的就跟使用 CMS 中已有的 Markdown 文件一样。
 
-I wonder if…
+我想是这样…
 
-### #12 Using GitHub as a CMS
+### #12 使用 GitHub 作为 CMS
 
-Let’s say you have a website with some text in it, but you don’t want to store that text in the actual HTML markup.
+比如说你有一个带有一些文本的网站，但是你并不想在 HTML 的标记中储存那些文本。
 
-Instead, you want to store chunks of text somewhere so they can easily be edited by non-developers. Perhaps with some form of version control. Maybe even a review process.
+取而代之，你想要存放文本块到一个很容易被非开发者编辑的地方。也许使用一些版本控制的形式。甚至可能是一个审查过程。
 
-Here’s my suggestion: use markdown files stored in your repository to hold the text. Then have a component in your front end that fetches those chunks of text and renders them on the page.
+这里是我的建议：在你的版本库中使用 markdown 文件存储文本。然后在你的前端使用插件来获取这些文本块并在页面呈现。
 
-I’m a React guy, so here’s an example of a `<Markdown>` component that, given the path to some markdown, will fetch, parse and render it as HTML.
+我是 React 的支持者，因此这里有一个 `<Markdown>` 插件的示例，给出一些 markdown 的路径，它们将被获取，解析，并以 HTML 的形式呈现。
 
 
-(I’m using the [marked][1] npm package to parse the markdown into HTML.)
+（我正在使用的是 [marked][1] npm 包来将 markdown 解析为 HTML。）
 
-That’s pointing to my example repo that has some markdown files in `[/text-snippets][2]`.
+这里是指向我的示例仓库 [/text-snippets][2]，里边有一些 markdown 文件 。
 
-(You could also use the GiHub API to [get the contents][15] — but I’m not sure why you would.)
+(你也可以前往[获取内容][15]页面获取 GiHub API 来使用 —— 但我不确定你是否可以。)
 
-You would use such a component like so:
+你可以使用像这样的插件：
 
-So now GitHub is your CMS, sort of, for whatever chunks of text you want it to house.
+所以现在 GitHub 就是你的 CMS，可以说，不管有多少文本块都可以放进去。
 
-The above example only fetches the markdown after the component has mounted in the browser. If you want a static site then you’ll want to server-render this.
+上边的示例只是在浏览器上安装好插件后获取 markdown 。如果你想要一个静态站点那么你需要服务器端渲染（server-render）。
 
-Good news! There’s nothing stopping you from fetching all the markdown files on the server (coupled with whatever caching strategy works for you). If you go down that road you might want to look at the GitHub API to get a list of all the markdown files in a directory.
+好消息！没什么能阻止你从服务器中获取所有的 markdown 文件 (配上各种为你服务的缓存策略)。如果你沿着这条路继续走下去的话，你可能会想要去看看使用 GitHub API 去获取目录中的所有 markdown 文件的列表。
 
-### Bonus round — GitHub tools!
+### Bonus round —— GitHub 工具！
 
-I’ve used the [Octotree Chrome extension][16] for a while now and I recommend it. Not wholeheartedly, but I recommend it nonetheless.
+我曾经使用过一段时间的 [Chrome 的扩展 Octotree ][16] 而且现在我推荐它。虽然并非真心诚意，但不管怎样我还是推荐它。
 
-It gives you a panel over on the left with a tree view of whatever repo you’re looking at.
+它会在左侧提供一个带有树视图的面板以显示当前你所查看的仓库。
 
 
 ![](https://cdn-images-1.medium.com/max/2000/1*-MgFq3TEjdys1coiF5-dCw.png)
 
-From [this video][17] I learned about [octobox][18], which so far seems pretty good. It’s an inbox for your GitHub issues. That’s all I have to say about that.
+从[这个视频][17]中我学会了 [octobox][18] ，到目前为止看起来还不错。它是一个 GitHub issues 的收件箱。这就是我要说的全部。
 
-Speaking of colors, I’ve taken all my screenshots above in the light theme so as not to startle you. But really, everything else I look at is dark themed, why must I endure a pallid GitHub?
+说到颜色，在上面所有的截图中我都使用了亮色主题，所以不要吓到你。不过说真的，我看到的其他东西都是在黑色的主题上，为什么我非要忍受 GitHub 这个苍白的主题呐？
 
 
 ![](https://cdn-images-1.medium.com/max/2000/1*SUdLeoaq8AtVQyE-dCw-Tg.png)
 
-That’s a combo of the [Stylish][19] Chrome extension (which can apply themes to any website) and the [GitHub Dark][20] style. And to complete the look, the dark theme of Chrome DevTools (which is built in, turn it on in settings) and the [Atom One Dark Theme][21] for Chrome.
+这是由 Chrome 扩展 [Stylish][19]（它可以在任何网站使用主题）和 [GitHub Dark][20] 风格的一个组合。同时为了完成这样的外观也需要，黑色主题的 Chrome 开发者工具（这是内建的，在设置中打开） 以及 [Atom One Dark for Chrome 主题][21]。
 
 ### Bitbucket
 
-This doesn’t strictly fit anywhere in this post, but it wouldn’t be right if I didn’t give a shout-out to Bitbucket.
+这些并不完全适合这篇文章的所有地方，但是如果我不称赞 Bitbucket 的话，那就不对了。
 
-Two years ago I was starting a project and spent half a day assessing which git host was best, and Bitbucket won by a considerable margin. Their code review flow was just so far ahead (this was long before GitHub even had the concept of assigning a reviewer).
+两年前我开始了一个项目并花了大半天时间评估哪一个 git 托管服务更适合，最终 Bitbucket 赢得了相当不错的成绩。他们的代码审查流程遥遥领先（这甚至比 GitHub 拥有的指派审阅者的概念要早很长时间）。
 
-GitHub has since caught up in the review game, which is great. But sadly I haven’t had the chance to use Bitbucket in the last year — perhaps they’ve bounded ahead in some other way. So, I would urge anyone in the position of choosing a git host to check out Bitbucket too.
+GitHub 在后来赶上了比赛，这是非常成功的。但不幸的是在过去的一年里我没有机会使用 Bitbucket —— 也许他们依然在某些方面领先。所以，我会力劝每一个选择 git 托管服务的人也要考虑 Bitbucket 。
 
-### Outro
+### 结尾
 
-So that’s it! I hope there were at least three things in here that you didn’t know already, and also I hope that you have a nice day.
+就是这样！我希望这里至少有三件事是你此前并不知道的，我也希望你拥有愉快的一天。
 
-Edit: there’s more tips in the comments; feel free to leave your own favourite. And seriously, I really do hope you have a nice day.
+编辑：在评论中有更多的建议；随便留下你自己喜欢的。真的，我真的希望你能拥有愉快的一天。
 
 --------------------------------------------------------------------------------
 
 via: https://hackernoon.com/12-cool-things-you-can-do-with-github-f3e0424cf2f0
 
 作者：[David Gilbertson][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[softpaopao](https://github.com/softpaopao)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
