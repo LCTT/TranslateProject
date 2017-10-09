@@ -1,7 +1,6 @@
 详解 Ubuntu snap 包的制作过程
 ============================================================
 
-
 > 如果你看过译者以前翻译的 snappy 文章，不知有没有感觉相关主题都是浅尝辄止，讲得不够透彻，看得也不太过瘾？如果有的话，相信这篇详细讲解如何从零开始制作一个 snap 包的文章应该不会让你失望。
 
 在这篇文章中，我们将看到如何为名为 [timg][1] 的实用程序制作对应的 snap 包。如果这是你第一次听说 snap 安装包，你可以先看看 [如何创建你的第一个 snap 包][2]。
@@ -9,10 +8,8 @@
 今天我们将学习以下有关使用 snapcraft 制作 snap 包的内容：
 
 *   [timg][3] 源码中的 Makefile 文件是手工编写，我们需要修改一些 [make 插件参数][4]。
-
 *   这个程序是用 C++ 语言写的，依赖几个额外的库文件。我们需要把相关的代码添加到 snap 包中。
-
-*   严格限制还是传统限制？我们将会讨论如何在它们之间进行选择。
+*   [严格限制还是传统限制][38]？我们将会讨论如何在它们之间进行选择。
 
 首先，我们了解下 [timg][5] 有什么用？
 
@@ -22,15 +19,15 @@ Linux 终端模拟器已经变得非常炫酷，并且还能显示颜色！
 
 ![1.png-19.9kB][6]
 
-除了标准的颜色，大多数终端模拟器都支持真彩色（1600 万种颜色）。
+除了标准的颜色，大多数终端模拟器（如上图显示的 GNOME 终端）都支持真彩色（1600 万种颜色）。
 
 ![图片.png-61.9kB][7]
 
-是的！终端模拟器已经支持真彩色了！从这个页面 [多个终端和终端应用程序已经支持真彩色（1600 万种颜色）][8] 可以获取 AWK 代码进行测试。你可以看到在代码中使用了一些 [转义序列][9] 来指定 RGB 的值（256 * 256 * 256 ~= 1600 万种颜色）。
+是的！终端模拟器已经支持真彩色了！从这个页面“ [多个终端和终端应用程序已经支持真彩色（1600 万种颜色）][8]” 可以获取 AWK 代码自己进行测试。你可以看到在代码中使用了一些 [转义序列][9] 来指定 RGB 的值（256 * 256 * 256 ~= 1600 万种颜色）。
 
 ### timg 是什么？
 
-好了，言归正传，[timg][10] 有什么用？它能将输入的图片重新调整为终端窗口字符能显示范围的大小（比如：80 x 25），然后在终端窗口的任何分辨率用彩色字符显示图像。
+好了，言归正传，[timg][10] 有什么用？它能将输入的图片重新调整为终端窗口字符所能显示范围的大小（比如：80 x 25），然后在任何分辨率的终端窗口用彩色字符显示图像。
 
 ![图片.png-37.3kB][11]
 
@@ -40,28 +37,26 @@ Linux 终端模拟器已经变得非常炫酷，并且还能显示颜色！
 
 这是 [@Doug8888 拍摄的花][14]。
 
-如果你通过远程连接服务器来管理自己的业务，并希望查看图像文件，那么 [timg][15] 将会特别有用。
+如果你通过远程连接服务器来管理自己的业务，并想要查看图像文件，那么 [timg][15] 将会特别有用。
 
-除了静态图片，[timg][16] 同样也可以显示 gif 动图。让我们开始 snap 之旅吧！
+除了静态图片，[timg][16] 同样也可以显示 gif 动图。
+
+那么让我们开始 snap 之旅吧！
 
 ### 熟悉 timg 的源码
 
-[timg][17] 的源码可以在 [这里][18] 找到。让我们试着手动编译它，以了解它有什么需求。
+[timg][17] 的源码可以在 [https://github.com/hzeller/timg][18] 找到。让我们试着手动编译它，以了解它有什么需求。
 
 ![图片.png-128.4kB][19]
 
-`Makefile` 在 `src/` 子文件夹中而不是项目的根文件夹中。在 github 页面上，他们说需要安装这两个开发包（GraphicsMagic++ 和 WebP），然后使用 `make` 就能生成可执行文件。在截图中可以看到我已经将它们安装好了（在我读完相关的 Readme.md 文件后）。
+`Makefile` 在 `src/` 子文件夹中而不是项目的根文件夹中。在 github 页面上，他们说需要安装两个开发包（GraphicsMagic++ 和 WebP），然后使用 `make` 就能生成可执行文件。在截图中可以看到我已经将它们安装好了（在我读完相关的 Readme.md 文件后）。
 
+因此，在编写 `snapcraft.yaml` 文件时已经有了四条腹稿：
 
-因此，在编写 snapcraft.yaml 文件时已经有了四条腹稿：
-
-1. Makefile 在 src/ 子文件夹中而不是项目的根文件夹中。
-
+1. `Makefile` 在 `src/` 子文件夹中而不是项目的根文件夹中。
 2. 这个程序编译时需要两个开发库。
-
 3. 为了让 timg 以 snap 包形式运行，我们需要将这两个库捆绑在 snap 包中（或者静态链接它们）。
-
-4. [timg][20] 是用 C++ 编写的，所以需要安装 g++。在编译之前，让我们通过 snapcraft.yaml 文件来检查 `build-essential` 元包是否已经安装。
+4. [timg][20] 是用 C++ 编写的，所以需要安装 g++。在编译之前，让我们通过 `snapcraft.yaml` 文件来检查 `build-essential` 元包是否已经安装。
 
 ### 从 snapcraft 开始
 
@@ -91,19 +86,14 @@ parts:
 
 ### 填充元数据
 
-snapcraft.yaml 配置文件的上半部分是元数据。我们需要一个一个把它们填满，这算是比较容易的部分。元数据由以下字段组成：
+`snapcraft.yaml` 配置文件的上半部分是元数据。我们需要一个一个把它们填满，这算是比较容易的部分。元数据由以下字段组成：
 
-1. `名字` —— snap 包的名字，它将公开在 Ubuntu 商店中。
-
-2. `版本` —— snap 包的版本号。可以是源代码存储库中一个适当的分支或者标记，如果没有分支或标记的话，也可以是当前日期。
-
-3. `摘要` —— 不超过 80 个字符的简短描述。
-
-4. `描述` —— 长一点的描述, 100 个字以下.
-
-5. `等级` —— 稳定或者开发。因为我们想要在 Ubuntu 商店的稳定通道中发布这个 snap 包，所以在 snap 包能正常工作后，就把它设置成稳定。
-
-6. `限制` —— 我们首先设置为开发模式，这样系统将不会以任何方式限制 snap 包。一旦它在开发模式 下能正常工作，我们再考虑选择严格还是传统限制。
+1. `name` （名字）—— snap 包的名字，它将公开在 Ubuntu 商店中。
+2. `version` （版本）—— snap 包的版本号。可以是源代码存储库中一个适当的分支或者标记，如果没有分支或标记的话，也可以是当前日期。
+3. `summary` （摘要）—— 不超过 80 个字符的简短描述。
+4. `description` （描述）—— 长一点的描述, 100 个字以下。
+5. `grade` （等级）—— `stable` （稳定）或者 `devel` （开发）。因为我们想要在 Ubuntu 商店的稳定通道中发布这个 snap 包，所以在 snap 包能正常工作后，就把它设置成 `stable`。
+6. `confinement` （限制）—— 我们首先设置为 `devmode` （开发模式），这样系统将不会以任何方式限制 snap 包。一旦它在 `devmode`下能正常工作，我们再考虑选择 `strict` （严格）还是 `classic` （传统）限制。
 
 我们将使用 `timg` 这个名字：
 
@@ -125,11 +115,11 @@ You already own the name 'timg'.
 
 然而主分支（`master`）中有两个看起来很重要的提交。因此我们使用主分支而不用 `v0.9.5` 标签的那个。我们使用今天的日期—— `20170226` 做为版本号。
 
-我们从仓库中搜集了摘要和描述。其中摘要的内容为 `一个终端图像查看器`，描述的内容为 `一个能用 24 位颜色和 unicode 字符块来在终端中显示图像的查看器`。
+我们从仓库中搜集了摘要和描述。其中摘要的内容为 `A terminal image viewer`，描述的内容为 `A viewer that uses 24-Bit color capabilities and unicode character blocks to display images in the terminal`。
 
-最后，将等级设置为稳定，将限制设置为开发模式（一直到 snap 包真正起作用）。
+最后，将 `grade` （等级）设置为 `stable` （稳定），将 `confinement` 限制设置为 `devmode` （开发模式）（一直到 snap 包真正起作用）。
 
-这是更新后的 snapcraft.yaml，带有所有的元数据：
+这是更新后的 `snapcraft.yaml`，带有所有的元数据：
 
 ```
 ubuntu@snaps:~/timg-snap$ cat snap/snapcraft.yaml 
@@ -148,22 +138,19 @@ parts:
     plugin: nil
 ```
 
-### 弄清楚 "parts:" 是什么
+### 弄清楚 `parts:` 是什么
 
 现在我们需要将上面已经存在的 `parts:` 部分替换成真实的 `parts:`。
 
 ![timg-git-url.png-8kB][23]
 
-<dd> Git 仓库的 URL。 </dd>
+*Git 仓库的 URL。*
 
 ![图片.png-28.7kB][24]
 
-<dd> 存在 Makefile，因此我们需要 make 插件。</dd>
+*存在 Makefile，因此我们需要 make 插件。*
 
-（这两张图在原文中是并排显示的，在 markdown 中不知道怎么设置。。）
-
-
-我们已经知道 git 仓库的 URL 链接，并且 timg 源码中存在 Makefile 文件。至于 [snapcraft  make 插件][25] 的 Makefile 命令，正如文档所言，这个插件总是会运行 `make` 后再运行 `make install`。为了确认 `make` 插件的用法，我查看了 [snapcraft 可用插件列表][26]。
+我们已经知道 git 仓库的 URL 链接，并且 timg 源码中已有了 `Makefile` 文件。至于 [snapcraft  make 插件][25] 的 Makefile 命令，正如文档所言，这个插件总是会运行 `make` 后再运行 `make install`。为了确认 `make` 插件的用法，我查看了 [snapcraft 可用插件列表][26]。
 
 因此，我们将最初的配置：
 
@@ -183,7 +170,7 @@ parts:
     plugin: make
 ```
 
-这是当前 snapcraft.yaml 文件的内容：
+这是当前 `snapcraft.yaml` 文件的内容：
 
 ```
 name: timg
@@ -222,13 +209,13 @@ Command '['/bin/sh', '/tmp/tmpem97fh9d', 'make', '-j4']' returned non-zero exit 
 ubuntu@snaps:~/timg-snap$
 ```
 
-我们可以看到 `snapcraft` 无法在源代码中找到 `Makefile` 文件，正如我们之前所暗示的，`Makefile` 只位于 `src/` 子文件夹中。那么，我们可以让 `snapcraft` 使用 `src/` 文件夹中的 `Makefile` 文件吗？
+我们可以看到 `snapcraft` 无法在源代码中找到 `Makefile` 文件，正如我们之前所暗示的，`Makefile` 位于 `src/` 子文件夹中。那么，我们可以让 `snapcraft` 使用 `src/` 文件夹中的 `Makefile` 文件吗？
 
 每个 snapcraft 插件都有自己的选项，并且有一些通用选项是所有插件共享的。在本例中，我们希望研究那些[与源代码相关的 snapcraft 选项][27]。我们开始吧：
 
-* source-subdir：path
+**source-subdir：path**
 
-snapcraft 会检出（checkout） `source` 关键字所引用的仓库或者解压归档文件到 `parts/<part-name>/src/` 中，但是它只会将特定的子目录复制到 `parts/<part-name>/build/` 中。
+snapcraft 会<ruby>检出<rt>checkout</rt></ruby> `source` 关键字所引用的仓库或者解压归档文件到 `parts/<part-name>/src/` 中，但是它只会将特定的子目录复制到 `parts/<part-name>/build/` 中。
 
 我们已经有了适当的选项，下面更新下 `parts`：
 
@@ -240,7 +227,7 @@ parts:
     plugin: make
 ```
 
-然后再次运行 snapcraft prime：
+然后再次运行 `snapcraft prime`：
 
 ```
 ubuntu@snaps:~/timg-snap$ snapcraft prime 
@@ -270,11 +257,11 @@ Command '['/bin/sh', '/tmp/tmpeeyxj5kw', 'make', '-j4']' returned non-zero exit 
 ubuntu@snaps:~/timg-snap$
 ```
 
-从错误信息我们可以得知 snapcraft 找不到 GraphicsMagick++ 这个开发库文件。根据 [snapcraft 常见关键字][29] 可知，我们需要在 snapcraft.yaml 中指定这个库文件，这样 snapcraft 才能安装它。
+从错误信息我们可以得知 snapcraft 找不到 GraphicsMagick++ 这个开发库文件。根据 [snapcraft 常见关键字][29] 可知，我们需要在 `snapcraft.yaml` 中指定这个库文件，这样 snapcraft 才能安装它。
 
-* `build-packages`：[deb, deb, deb…]
+**build-packages：[deb, deb, deb…]**
 
-构建 part 前需要在主机中安装的 Ubuntu 包列表。这些包通常不会进入最终的 snap 包中，除非它们含有 snap 包中二进制文件直接依赖的库文件（在这种情况下，可以通过 `ldd` 发现他们），或者在 `stage-package` 中显式地指定了它们。
+列出构建 part 前需要在主机中安装的 Ubuntu 包。这些包通常不会进入最终的 snap 包中，除非它们含有 snap 包中二进制文件直接依赖的库文件（在这种情况下，可以通过 `ldd` 发现它们），或者在 `stage-package` 中显式地指定了它们。
 
 让我们寻找下这个开发包的名字：
 
@@ -346,7 +333,7 @@ parts:
       - libwebp-dev
 ```
 
-下面是更新后 snapcraft.yaml 文件的内容：
+下面是更新后的 `snapcraft.yaml` 文件的内容：
 
 ```
 name: timg
@@ -408,9 +395,9 @@ terminal-canvas.cc  terminal-canvas.o  timg.cc
 ubuntu@snaps:~/timg-snap/parts/timg$
 ```
 
-在 `build/` 子目录中，我们可以找到 `make` 的输出结果。由于我们设置了 `source-subdir:` 为 `src`，所以 `artifacts:` 的基目录为 `build/src`。在这里我们可以找到可执行文件 `timg`，我们需要将它设置为 `artifacts:` 的一个参数:。通过 `artifacts:`，我们可以把 `make` 输出的某些文件复制到 snap 包的安装目录（在 `prime/` 中）。
+在 `build/` 子目录中，我们可以找到 `make` 的输出结果。由于我们设置了 `source-subdir:` 为 `src`，所以 `artifacts:` 的基目录为 `build/src`。在这里我们可以找到可执行文件 `timg`，我们需要将它设置为 `artifacts:` 的一个参数。通过 `artifacts:`，我们可以把 `make` 输出的某些文件复制到 snap 包的安装目录（在 `prime/` 中）。
 
-下面是更新后 snapcraft.yaml 文件 parts: 部分的内容：
+下面是更新后 `snapcraft.yaml` 文件 `parts:` 部分的内容：
 
 ```
 parts:
@@ -423,7 +410,9 @@ parts:
       - libwebp-dev
     artifacts: [timg]
 ```
+
 让我们运行 `snapcraft prime`：
+
 ```
 ubuntu@snaps:~/timg-snap$ snapcraft prime
 Preparing to pull timg 
@@ -459,7 +448,7 @@ meta/  snap/  timg*  usr/
 ubuntu@snaps:~/timg-snap$
 ```
 
-它在 `prime/` 子文件夹的根目录中。现在，我们已经准备好要在 snapcaft.yaml 中增加 `apps:` 的内容：
+它在 `prime/` 子文件夹的根目录中。现在，我们已经准备好要在 `snapcaft.yaml` 中增加 `apps:` 的内容：
 
 ```
 ubuntu@snaps:~/timg-snap$ cat snap/snapcraft.yaml 
@@ -503,9 +492,9 @@ ubuntu@snaps:~/timg-snap$
 
 ![图片.png-42.3kB][32]
 
-图片来源： https://www.flickr.com/photos/mustangjoe/6091603784/
+*图片来源： https://www.flickr.com/photos/mustangjoe/6091603784/*
 
-我们可以通过 `snap try --devmode prime/ ` 使能 snap 包然后测试 timg 命令。这是一种高效的测试方法，可以避免生成 .snap 文件，并且无需安装和卸载它们，因为 `snap try prime/` 直接使用了 `prime/` 文件夹中的内容。
+我们可以通过 `snap try --devmode prime/ ` 启用该 snap 包然后测试 `timg` 命令。这是一种高效的测试方法，可以避免生成 .snap 文件，并且无需安装和卸载它们，因为 `snap try prime/` 直接使用了 `prime/` 文件夹中的内容。
 
 ### 限制 snap 
 
@@ -527,9 +516,9 @@ Trouble loading pexels-photo-149813.jpeg (Magick: Unable to open file (pexels-ph
 ubuntu@snaps:~/timg-snap$
 ```
 
-通过这种方式，我们可以无需修改 snapcraft.yaml 文件就从开发模式切换到限制模式（confinement: strict）。正如预期的那样，timg 无法读取图像，因为我们没有开放访问文件系统的权限。
+通过这种方式，我们可以无需修改 `snapcraft.yaml` 文件就从开发模式（`devmode`）切换到限制模式（`jailmode`）（`confinement: strict`）。正如预期的那样，`timg` 无法读取图像，因为我们没有开放访问文件系统的权限。
 
-现在，我们需要作出决定。使用限制模式，我们可以很容易授予某个命令访问用户 `$HOME` 目录中文件的权限，但是只能访问那里。如果图像文件位于其它地方，我们总是需要复制到 `$HOME` 目录并在 `$HOME` 的副本上运行 timg。如果我们对此感到满意，那我们可以设置 snapcraf.yaml 为:
+现在，我们需要作出决定。使用限制模式，我们可以很容易授予某个命令访问用户 `$HOME` 目录中文件的权限，但是只能访问那里。如果图像文件位于其它地方，我们总是需要复制到 `$HOME` 目录并在 `$HOME` 的副本上运行 timg。如果我们觉得可行，那我们可以设置 `snapcraf.yaml` 为:
 
 ```
 name: timg
@@ -558,7 +547,7 @@ parts:
     artifacts: [timg]
 ```
 
-另一方面，如果希望 timg snap 包能访问整个文件系统，我们可以设置 传统限制来实现。对应的 snapcraft.yaml 内容如下：
+另一方面，如果希望 timg snap 包能访问整个文件系统，我们可以设置传统限制来实现。对应的 `snapcraft.yaml` 内容如下：
 
 ```
 name: timg
@@ -586,7 +575,7 @@ parts:
     artifacts: [timg]
 ```
 
-接下来我们将选择严格约束选项。因此，图像应该只能放在 $HOME 中。
+接下来我们将选择严格（`strict`）约束选项。因此，图像应该只能放在 $HOME 中。
 
 ### 打包和测试
 
@@ -663,9 +652,9 @@ latest   amd64   16        stable     20170226   6
 The 'stable' channel is now open.
 ```
 
-我们把 .snap 包推送到 Ubuntu 商店后，得到了一个 `修订版本号 6`。然后，我们将 timg `修订版本 6` 发布到了 Ubuntu 商店的稳定通道。
+我们把 .snap 包推送到 Ubuntu 商店后，得到了一个 `Revision 6`。然后，我们将 timg `Revision 6` 发布到了 Ubuntu 商店的稳定通道。
 
-在候选通道中没有已发布的 snap 包，他继承的是稳定通道的包，所以显示 `^` 字符。
+在候选通道中没有已发布的 snap 包，它继承的是稳定通道的包，所以显示 `^` 字符。
 
 在之前的测试中，我将一些较老版本的 snap 包上传到了测试和边缘通道。这些旧版本使用了 timg 标签为 `0.9.5` 的源代码。
 
@@ -688,7 +677,7 @@ latest   amd64   16        stable     20170226   6
 
 ### 使用 timg 
 
-让我们不带参数运行 timg：
+让我们不带参数运行 `timg`：
 
 ```
 ubuntu@snaptesting:~$ timg
@@ -709,7 +698,7 @@ If both -w and -t are given for some animation/scroll, -t takes precedence
 ubuntu@snaptesting:~$
 ```
 
-这里说，当前我们终端模拟器的缩放级别，即分辨率为：80 × 48。
+这里提到当前我们终端模拟器的缩放级别，即分辨率为：80 × 48。
 
 让我们缩小一点，并最大化 GNOME 终端窗口。
 
@@ -723,13 +712,13 @@ ubuntu@snaptesting:~$
 
 你所看到的是调整后的图像（1080p）。虽然它是用彩色文本字符显示的，但看起来依旧很棒。
 
-接下来呢？timg 其实也可以播放 gif 动画哦！
+接下来呢？`timg` 其实也可以播放 gif 动画哦！
 
 ```
 $ wget https://m.popkey.co/9b7141/QbAV_f-maxage-0.gif -O JonahHillAmazed.gif$ timg JonahHillAmazed.gif
 ```
 
-你可以试着安装 timg 来体验 gif 动画。要是不想自己动手，可以在 [asciinema][36] 上查看相关记录 （如果视频看上去起伏不定的，请重新运行它）。
+你可以试着安装 `timg` 来体验 gif 动画。要是不想自己动手，可以在 [asciinema][36] 上查看相关记录 （如果视频看上去起伏不定的，请重新运行它）。
 
 谢谢阅读！
 
@@ -743,13 +732,13 @@ via：https://blog.simos.info/how-to-create-a-snap-for-timg-with-snapcraft-on-ub
 
 作者：[Mi blog lah!][37]
 译者：[Snapcrafter](https://github.com/Snapcrafter)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 
   [1]: https://github.com/hzeller/timg
-  [2]:https://tutorials.ubuntu.com/tutorial/create-first-snap
+  [2]: https://tutorials.ubuntu.com/tutorial/create-your-first-snap
   [3]: https://github.com/hzeller/timg
   [4]: https://snapcraft.io/docs/reference/plugins/make
   [5]:https://github.com/hzeller/timg
@@ -785,3 +774,4 @@ via：https://blog.simos.info/how-to-create-a-snap-for-timg-with-snapcraft-on-ub
   [35]: http://static.zybuluo.com/apollomoon/clnv44g3bwhaqog7o1jpvpcd/%E5%9B%BE%E7%89%87.png
   [36]: https://asciinema.org/a/dezbe2gpye84e0pjndp8t0pvh
   [37]: https://blog.simos.info/
+ [38]:https://snapcraft.io/docs/reference/confinement
