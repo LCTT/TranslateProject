@@ -1,19 +1,19 @@
-动态端口转发：安装带有SSH的SOCKS服务器
+动态端口转发：安装带有 SSH 的 SOCKS 服务器
 =================
 
-在上一篇文章中（[Creating TCP / IP (port forwarding) tunnels with SSH: The 8 scenarios possible using OpenSSH][17]）,我们看到了处理端口转发的所有可能情况。但是对于静态端口转发，我们只介绍了通过 SSH 连接来访问另一个系统的端口的情况。
+在上一篇文章（[通过 SSH 实现 TCP / IP 隧道（端口转发）：使用 OpenSSH 可能的 8 种场景][17]）中，我们看到了处理端口转发的所有可能情况，不过只是静态端口转发。也就是说，我们只介绍了通过 SSH 连接来访问另一个系统的端口的情况。
 
-在这篇文章中，我们脱离动态端口转发的前端，而尝试补充它。
+在那篇文章中，我们未涉及动态端口转发，此外一些读者错过了该文章，本篇文章中将尝试补充完整。
 
 当我们谈论使用 SSH 进行动态端口转发时，我们谈论的是将 SSH 服务器 转换为 [SOCKS][2] 服务器。那么什么是 SOCKS 服务器？
 
-你知道 [Web 代理][3]是用来做什么的吗？答案可能是肯定的，因为很多公司都在使用它。它是一个直接连接到互联网的系统，允许没有互联网访问的[内部网][4]客户端通过配置浏览器的代理来请求（尽管也有[透明代理][5]）浏览网页。Web 代理除了允许输出到 Internet 之外，还可以缓存页面，图像等。资源已经由某些客户端下载，所以您不必为另一个客户端而下载它们。此外，它允许过滤内容并监视用户的活动。当然了，它的基本功能是转发 HTTP 和 HTTPS 流量。
+你知道 [Web 代理][3]是用来做什么的吗？答案可能是肯定的，因为很多公司都在使用它。它是一个直接连接到互联网的系统，允许没有互联网访问的[内部网][4]客户端通过配置浏览器的代理来请求（尽管也有[透明代理][5]）浏览网页。Web 代理除了允许输出到 Internet 之外，还可以缓存页面，图像等。已经由某客户端下载的资源，另一个客户端不必再下载它们。此外，它还可以过滤内容并监视用户的活动。当然了，它的基本功能是转发 HTTP 和 HTTPS 流量。
 
 一个 SOCKS 服务器提供的服务类似于公司内部网络提供的代理服务器服务，但不限于 HTTP/HTTPS，它还允许转发任何 TCP/IP 流量（SOCKS 5 也是 UDP）。
 
-例如，假设我们希望在一个没有直接连接到互联网的内部网上使用基于 POP3 或 ICMP 的邮件服务和 Thunderbird 的 SMTP 服务。如果我们只有一个 web 代理可以用，我们可以使用的唯一的简单方式是使用一些 webmail（也可以使用 [Thunderbird 的 Webmail 扩展][6]）。我们还可以[通过 HTTP 进行隧道传递][7]来利用代理。但最简单的方式是在网络中设置一个可用的 SOCKS 服务器，它可以让我们使用 POP3、ICMP 和 SMTP，而不会造成任何的不便。
+例如，假设我们希望在一个没有直接连接到互联网的内部网上使用基于 POP3 或 ICMP 的邮件服务和 Thunderbird 的 SMTP 服务。如果我们只有一个 web 代理可以用，我们可以使用的唯一的简单方式是使用某个 webmail（也可以使用 [Thunderbird 的 Webmail 扩展][6]）。我们还可以[通过 HTTP 隧道][7]来利用代理。但最简单的方式是在网络中设置一个 SOCKS 服务器，它可以让我们使用 POP3、ICMP 和 SMTP，而不会造成任何的不便。
 
-虽然有很多软件可以配置非常专业的 SOCKS 服务器，我们这里使用 OpenSSH 简单地设置一个：
+有很多软件可以配置非常专业的 SOCKS 服务器，我们这里使用 OpenSSH 简单地设置一个：
 
 > ```
 > Clientessh $ ssh -D 1080 user @ servidorssh
@@ -27,7 +27,7 @@
 
 其中:
 
-*   选项 `-D` 类似于选项为 `-L` 和 `-R` 的静态端口转发。像这样，我们就可以让客户端只监听本地请求或从其他节点到达的请求，具体的取决于我们将请求关联到哪个地址：
+*   选项 `-D` 类似于选项为 `-L` 和 `-R` 的静态端口转发。像这样，我们就可以让客户端只监听本地请求或从其他节点到达的请求，具体取决于我们将请求关联到哪个地址：
 
     > ```
     > -D [bind_address:] port
@@ -41,21 +41,21 @@
 
 *   选项 `-f` 会使 `ssh` 停留在后台并将其与当前 `shell` 分离，以便使进程成为守护进程。如果没有选项 `-N`（或不指定命令），则不起作用，否则交互式 shell 将与后台进程不兼容。
 
- 使用 [PuTTY][8] 也可以非常简单地进行端口重定向。相当于 `ssh -D 0.0.0.0:1080` 使用此配置：
+ 使用 [PuTTY][8] 也可以非常简单地进行端口重定向。与 `ssh -D 0.0.0.0:1080` 相当的配置：
 
 ![PuTTY SOCKS](https://wesharethis.com/wp-content/uploads/2017/07/putty_socks.png)
 
-对于通过 SOCKS 服务器访问另一个网络的应用程序，如果应用程序提供了特殊的支持，就会非常方便（虽然不是必需的），就像浏览器支持使用代理服务器一样。浏览器（如 Firefox 或 Internet Explorer）是使用 SOCKS 服务器访问另一个网络的应用程序示例：
+对于通过 SOCKS 服务器访问另一个网络的应用程序，如果应用程序提供了对 SOCKS 服务器的特别支持，就会非常方便（虽然不是必需的），就像浏览器支持使用代理服务器一样。如 Firefox 或 Internet Explorer 的浏览器是使用 SOCKS 服务器访问另一个网络的应用程序示例：
 
 ![Firefox SOCKS](https://wesharethis.com/wp-content/uploads/2017/07/firefox_socks.png)
 
 ![Internet Explorer SOCKS](https://wesharethis.com/wp-content/uploads/2017/07/internetexplorer_socks.png)
 
-注意：使用 [IEs 4 Linux][1] 进行捕获：如果您需要 Internet Explorer 并使用 Linux，强烈推荐！
+注意：截图来自 [IE for Linux][1] ：如果您需要 Internet Explorer 并使用 Linux，强烈推荐！
 
 然而，最常见的浏览器并不要求 SOCKS 服务器，因为它们通常与代理服务器配合得更好。
 
-Thunderbird 也允许这样做，而且很有用：
+不过，Thunderbird 也支持 SOCKS，而且很有用：
 
 ![Thunderbird SOCKS](https://wesharethis.com/wp-content/uploads/2017/07/thunderbird_socks.png)
 
@@ -63,11 +63,13 @@ Thunderbird 也允许这样做，而且很有用：
 
 ![Spotify SOCKS](https://wesharethis.com/wp-content/uploads/2017/07/spotify_socks.png)
 
-我们需要记住的是名称解析。有时我们会发现，在目前的网络中，我们无法解析 SOCKS 服务器另一端所要访问的系统的名称。SOCKS 5 还允许我们传播 DNS 请求（UDP 允许我们使用 SOCKS 5）并将它们发送到另一端：可以指定是否要本地或远程解析（或者也可以测试两者）。支持这一点的应用程序也必须考虑到这一点。例如，Firefox 具有参数 `network.proxy.socks_remote_dns`（在 `about:config` 中），允许我们指定远程解析。默认情况下，它在本地解析。
+需要关注名称解析。有时我们会发现，在目前的网络中，我们无法解析 SOCKS 服务器另一端所要访问的系统的名称。SOCKS 5 还允许我们传播 DNS 请求（UDP 允许我们使用 SOCKS 5）并将它们发送到另一端：可以指定是本地还是远程解析（或者也可以测试两者）。支持此功能的应用程序也必须考虑到这一点。例如，Firefox 具有参数 `network.proxy.socks_remote_dns`（在 `about:config` 中），允许我们指定远程解析。默认情况下，它在本地解析。
 
-Thunderbird 也支持参数 `network.proxy.socks_remote_dns`，但由于没有地址栏来放置 `about:config`，我们需要改变它，就像在 [MozillaZine:about:config][10] 中读到的，依次点击工具→选项→高级→常规→配置编辑器（按钮）。
+Thunderbird 也支持参数 `network.proxy.socks_remote_dns`，但由于没有地址栏来放置 `about:config`，我们需要改变它，就像在 [MozillaZine:about:config][10] 中读到的，依次点击 工具 → 选项 → 高级 → 常规 → 配置编辑器（按钮）。
 
-没有对 SOCKS 特殊支持的应用程序可以被 “socksified”。这对于使用 TCP/IP 的许多应用程序都没有问题，但并不是全部，这将很好地工作。“Socksifier” 包括加载一个额外的库，它可以检测对 TCP/IP 堆栈的请求，并修改它们以通过 SOCKS 服务器重定向它们，以便通信中不需要使用 SOCKS 支持进行特殊的编程。
+没有对 SOCKS 特别支持的应用程序可以被 <ruby>sock化<rt>socksified</rt></ruby>。这对于使用 TCP/IP 的许多应用程序都没有问题，但并不是全部，这将很好地工作。“Socksifier” 包括加载一个额外的库，它可以检测对 TCP/IP 堆栈的请求，并修改它们以通过 SOCKS 服务器重定向它们，以便通信中不需要使用 SOCKS 支持进行特殊的编程。
+
+Applications that do not specifically support SOCKS can be “socksified”. This will work well with many applications that use TCP / IP without problems, but not with all. “Socksifier” consists of loading an additional library that detects requests to the TCP / IP stack and modifying them to redirect them through the SOCKS server, so that the communication goes through without the application being specifically programmed with SOCKS support .
 
 在 Windows 和 [Linux.][18] 上都有 “Socksifiers”。
 
