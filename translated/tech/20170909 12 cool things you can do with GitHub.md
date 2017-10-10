@@ -332,7 +332,7 @@ via: https://hackernoon.com/12-cool-things-you-can-do-with-github-f3e0424cf2f0
 
 作者：[David Gilbertson][a]
 译者：[softpaopao](https://github.com/softpaopao)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[jasminepeng](https://github.com/jasminepeng)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
