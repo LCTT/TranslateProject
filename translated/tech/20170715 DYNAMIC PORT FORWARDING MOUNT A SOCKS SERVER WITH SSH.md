@@ -67,31 +67,29 @@
 
 Thunderbird 也支持参数 `network.proxy.socks_remote_dns`，但由于没有地址栏来放置 `about:config`，我们需要改变它，就像在 [MozillaZine:about:config][10] 中读到的，依次点击 工具 → 选项 → 高级 → 常规 → 配置编辑器（按钮）。
 
-没有对 SOCKS 特别支持的应用程序可以被 <ruby>sock化<rt>socksified</rt></ruby>。这对于使用 TCP/IP 的许多应用程序都没有问题，但并不是全部，这将很好地工作。“Socksifier” 包括加载一个额外的库，它可以检测对 TCP/IP 堆栈的请求，并修改它们以通过 SOCKS 服务器重定向它们，以便通信中不需要使用 SOCKS 支持进行特殊的编程。
+没有对 SOCKS 特别支持的应用程序可以被 <ruby>sock 化<rt>socksified</rt></ruby>。这对于使用 TCP/IP 的许多应用程序都没有问题，但并不是全部。“Sock 化” 包括加载一个额外的库，它可以检测对 TCP/IP 堆栈的请求，并修改请求，并通过 SOCKS 服务器重定向，以便正常通信，而不需要特别编程来支持 SOCKS 。
 
-Applications that do not specifically support SOCKS can be “socksified”. This will work well with many applications that use TCP / IP without problems, but not with all. “Socksifier” consists of loading an additional library that detects requests to the TCP / IP stack and modifying them to redirect them through the SOCKS server, so that the communication goes through without the application being specifically programmed with SOCKS support .
-
-在 Windows 和 [Linux.][18] 上都有 “Socksifiers”。
+在 Windows 和 [Linux][18] 上都有 “Socksifiers”。
 
 对于 Windows，我们举个例子，SocksCap 是一种非商业用途的闭源但免费的产品，我使用了很长时间都十分满意。SocksCap 由一家名为 Permeo 的公司制造，该公司是创建 SOCKS 参考技术的公司。Permeo 被 [Blue Coat][11] 买下后，它[停止了 SocksCap 项目][12]。现在你仍然可以在互联网上找到 `sc32r240.exe` 文件。[FreeCap][13] 也是面向 Windows 的免费代码项目，外观和使用都非常类似于 SocksCap。然而，它工作起来更加糟糕，多年来一直没有维护。看起来，它的作者倾向于推出需要付款的新产品 [WideCap][14]。
 
-这是 SocksCap 的一个方面，当我们 “socksified” 了几个应用程序。当我们从这里启动它们时，这些应用程序将通过 SOCKS 服务器访问网络：
+这是 SocksCap 的一个界面，可以看到我们 “socksified” 了几个应用程序。当我们从这里启动它们时，这些应用程序将通过 SOCKS 服务器访问网络：
 
 ![SocksCap](https://wesharethis.com/wp-content/uploads/2017/07/sockscap.png)
 
-在配置对话框中可以看到，如果选择了协议 SOCKS 5，我们必须选择在本地或远程解析名称：
+在配置对话框中可以看到，如果选择了协议 SOCKS 5，我们可以选择在本地或远程解析名称：
 
 ![SocksCap settings](https://wesharethis.com/wp-content/uploads/2017/07/sockscap_settings.png)
 
-在 Linux 上，一直以来我们都有许多方案来替换一个单一的远程命令。在 Debian/Ubuntu 中，命令行输出：
+在 Linux 上，如同往常一样，对某个远程命令我们都有许多替代方案。在 Debian/Ubuntu 中，命令行：
 
 > ```
 > $ Apt-cache search socks
 > ```
 
-输出会告诉我们很多东西
+其输出会告诉我们很多。
 
-最著名的是 [tsocks][15] 和 [proxychains][16]。他们的工作方式大致相同：只需启动我们想要与他们 “socksify” 的应用程序，就是这样。使用 `proxychains` 的 `wget` 的例子：
+最著名的是 [tsocks][15] 和 [proxychains][16]。他们的工作方式大致相同：只需启动我们想要用他们 “socksify” 的应用程序，就是这样。使用 `proxychains` 的 `wget` 的例子：
 
 > ```
 > $ Proxychains wget http://www.google.com
@@ -114,7 +112,7 @@ Applications that do not specifically support SOCKS can be “socksified”. Thi
 > 19:13:21 (24.0 KB / s) - `index.html 'saved [6016]
 > ```
 
-为此，我们必须指定要在 `/etc/proxychains.conf` 中使用的代理服务器：
+为此，我们必须在 `/etc/proxychains.conf` 中指定要使用的代理服务器：
 
 > ```
 > [ProxyList]
