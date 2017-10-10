@@ -1,3 +1,5 @@
+translating by penghuster
+
 How To Code Like The Top Programmers At NASA — 10 Critical Rules
 ============================================================
 
