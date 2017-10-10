@@ -160,5 +160,5 @@ via: https://wesharethis.com/2017/07/15/dynamic-port-forwarding-mount-socks-serv
 [14]:https://wesharethis.com/goto/http://widecap.ru/en/support/
 [15]:https://wesharethis.com/goto/http://tsocks.sourceforge.net/
 [16]:https://wesharethis.com/goto/http://proxychains.sourceforge.net/
-[17]:https://wesharethis.com/2017/07/14/creating-tcp-ip-port-forwarding-tunnels-ssh-8-possible-scenarios-using-openssh/
+[17]:https://linux.cn/article-8945-1.html
 [18]:https://wesharethis.com/2017/07/10/linux-swap-partition/
