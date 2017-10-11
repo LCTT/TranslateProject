@@ -2,7 +2,8 @@
 ========
 ### 这个简单教程教你如何测试你应用的功能
 
-![Functional testing Gtk+ applications in C ](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/cube_innovation_block_collaboration.png?itok=CbG3Mpqi "Functional testing Gtk+ applications in C ")
+![Functional testing Gtk+ applications in C](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/cube_innovation_block_collaboration.png?itok=CbG3Mpqi "Functional testing Gtk+ applications in C ")
+
 图片源自 : 
 
 opensource.com
