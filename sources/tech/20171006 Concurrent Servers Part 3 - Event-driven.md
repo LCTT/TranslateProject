@@ -1,6 +1,8 @@
 [Concurrent Servers: Part 3 - Event-driven][25]
 ============================================================
 
+GitFuture is Translating
+
 This is part 3 of a series of posts on writing concurrent network servers. [Part 1][26] introduced the series with some building blocks, and [part 2 - Threads][27] discussed multiple threads as one viable approach for concurrency in the server.
 
 Another common approach to achieve concurrency is called  _event-driven programming_ , or alternatively  _asynchronous_  programming [[1]][28]. The range of variations on this approach is very large, so we're going to start by covering the basics - using some of the fundamental APIs than form the base of most higher-level approaches. Future posts in the series will cover higher-level abstractions, as well as various hybrid approaches.

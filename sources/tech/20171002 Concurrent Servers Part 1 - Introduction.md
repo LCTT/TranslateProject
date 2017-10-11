@@ -1,6 +1,8 @@
 [Concurrent Servers: Part 1 - Introduction][18]
 ============================================================
 
+GitFuture is Translating
+
 This is the first post in a series about concurrent network servers. My plan is to examine several popular concurrency models for network servers that handle multiple clients simultaneously, and judge those models on scalability and ease of implementation. All servers will listen for socket connections and implement a simple protocol to interact with clients.
 
 All posts in the series:
