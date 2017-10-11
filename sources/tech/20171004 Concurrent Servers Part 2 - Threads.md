@@ -1,5 +1,8 @@
 [Concurrent Servers: Part 2 - Threads][19]
 ============================================================
+
+GitFuture is Translating
+
 This is part 2 of a series on writing concurrent network servers. [Part 1][20] presented the protocol implemented by the server, as well as the code for a simple sequential server, as a baseline for the series.
 
 In this part, we're going to look at multi-threading as one approach to concurrency, with a bare-bones threaded server implementation in C, as well as a thread pool based implementation in Python.
