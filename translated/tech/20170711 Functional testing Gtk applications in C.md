@@ -1,22 +1,18 @@
- C 语言对 Gtk+ 应用进行功能测试
+用 C 语言对 Gtk+ 应用进行功能测试
 ========
-### 这个简单教程教你如何测试你应用的功能
 
-![Functional testing Gtk+ applications in C](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/cube_innovation_block_collaboration.png?itok=CbG3Mpqi "Functional testing Gtk+ applications in C ")
+> 这个简单教程教你如何测试你应用的功能
 
-图片源自 : 
+![Functional testing Gtk+ applications in C](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/cube_innovation_block_collaboration.png?itok=pKbXpr1e "Functional testing Gtk+ applications in C ")
 
-opensource.com
+自动化测试用来保证你程序的质量以及让它以预想的运行。单元测试只是检测你算法的某一部分，而并不注重各组件间的适应性。这就是为什么会有功能测试，它有时也称为集成测试。
 
-
-自动化测试用来保证你程序的质量以及让它以预想的运行。单元测试只是检测你算法的某一部分，但是并不注重各组件间的适应性。这就是为什么会有功能测试，有时也称为集成测试。
-
-
-一个功能测试简单地与你的用户界面交互，可通过一个网站或者一个桌面应用。为了展示功能测试如何工作，我们以测试一个 Gtk+ 应用为例。为了简单，这个教程里，我们使用 Gtk+ 2.0 教程的示例。
+功能测试简单地与你的用户界面进行交互，无论它是网站还是桌面应用。为了展示功能测试如何工作，我们以测试一个 Gtk+ 应用为例。为了简单起见，这个教程里，我们使用 Gtk+ 2.0 教程的示例。
 
 ### 基础设置
 
-每一个功能测试，你通常需要定义一些全局变量，比如 “用户交互时延” 或者 “失败的超时时间”（也就是说，如果在指定的时间内一个时间没有发生，程序就要中断）。
+对于每一个功能测试，你通常需要定义一些全局变量，比如 “用户交互时延” 或者 “失败的超时时间”（也就是说，如果在指定的时间内一个事件没有发生，程序就要中断）。
+
 ```
 #define TTT_FUNCTIONAL_TEST_UTIL_IDLE_CONDITION(f) ((TttFunctionalTestUtilIdleCondition)(f))
 #define TTT_FUNCTIONAL_TEST_UTIL_REACTION_TIME (125000)
@@ -28,7 +24,8 @@ struct timespec ttt_functional_test_util_default_timeout = {
 };
 ```
 
-现在我们可以实现我们自己的超时函数。这里，为了能够得到期望的延迟，我们采用 **usleep** 函数。
+现在我们可以实现我们自己的超时函数。这里，为了能够得到期望的延迟，我们采用 `usleep` 函数。
+
 ```
 void
 ttt_functional_test_util_reaction_time()
@@ -43,7 +40,7 @@ ttt_functional_test_util_reaction_time_long()
 }
 ```
 
-直到控制状态被执行，超时函数才会推迟执行。这对于一个异步执行的动作很有帮助，这也是为什么采用这么长的时延。
+直到获得控制状态，超时函数才会推迟执行。这对于一个异步执行的动作很有帮助，这也是为什么采用这么长的时延。
 
 ```
 void
@@ -74,17 +71,15 @@ ttt_functional_test_util_idle_condition_and_timeout(
 
 ### 与图形化用户界面交互
 
+为了模拟用户交互的操作， [Gdk 库][7] 为我们提供了一些需要的函数。要完成我们的工作，我们只需要如下 3 个函数：
 
-为了模拟用户交互的操作， [**Gdk library**][7] 提供一些我们需要的函数。为了完成我们的工作，我们只需要如下 3 个函数。
-
-*   gdk_display_warp_pointer()
-
-*   gdk_test_simulate_button()
-
-*   gdk_test_simulate_key()
+*   `gdk_display_warp_pointer()`
+*   `gdk_test_simulate_button()`
+*   `gdk_test_simulate_key()`
 
 
 举个例子，为了测试按钮点击，我们可以这么做：
+
 ```
 gboolean
 ttt_functional_test_util_button_click(GtkButton *button)
@@ -179,9 +174,10 @@ ttt_functional_test_util_idle_test_toggle_active(
 
 ### 测试场景
 
-因为　Tictactoe　程序非常简单，我们只需要保证一个 [**GtkToggleButton**][8] 被点击。一旦说按钮肯定进入了激活状态，功能测试就可以执行。为了点击按钮，我们使用上面提到的手动的 **工具**　。
+因为这个 Tictactoe 程序非常简单，我们只需要确保点击了一个 [**GtkToggleButton**][8] 按钮即可。一旦该按钮肯定进入了激活状态，功能测试就可以执行。为了点击按钮，我们使用上面提到的很方便的 `util` 函数。
 
 如图所示，我们假设，填满第一行，玩家 A 就赢，因为玩家 B 没有注意，只填充了第二行。
+
 ```
 GtkWindow *window;
 Tictactoe *ttt;
@@ -265,18 +261,21 @@ main(int argc, char **argv)
 }
 ```
 
+（题图：opensource.com）
+
 --------------------------------------------------------------------------------
 
 作者简介：
 
 
-Joël Krähemann - 精通 C 语言编程的自由软件爱好者。我不怕代码有多复杂，它只是以一种简单的方法去编码。作为高级的 Gtk+ 序的开发者，我知道多线程编程有着多大的挑战性，有了多线程编程，我们就有了未来需求的良好基础。
+Joël Krähemann - 精通 C 语言编程的自由软件爱好者。不管代码多复杂，它也是一点点写成的。作为高级的 Gtk+ 程序开发者，我知道多线程编程有多大的挑战性，有了多线程编程，我们就有了未来需求的良好基础。
 
-摘自: https://opensource.com/article/17/7/functional-testing
+----
+via: https://opensource.com/article/17/7/functional-testing
 
 作者：[Joël Krähemann][a]
 译者：[sugarfillet](https://github.com/sugarfillet)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
