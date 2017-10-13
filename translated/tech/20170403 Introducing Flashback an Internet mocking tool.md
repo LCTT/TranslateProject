@@ -3,7 +3,8 @@
 
 > Flashback 用于模拟 HTTP 和 HTTPS 资源，如 Web 服务和 REST API，用于测试目的。
 
- ![Introducing Flashback, an Internet mocking tool](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/OSDC_Internet_Cables_520x292_0614_RD.png?itok=U4sZjWv5 "Introducing Flashback, an Internet mocking tool") 
+ ![Introducing Flashback, an Internet mocking tool](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/OSDC_Internet_Cables_520x292_0614_RD.png?itok=trjYWg6g "Introducing Flashback, an Internet mocking tool") 
+
 >图片提供： Opensource.com
 
 在 LinkedIn，我们经常开发需要与第三方网站交互的 Web 应用程序。我们还采用自动测试，以确保我们的软件在发布到生产环境之前的质量。然而，测试只是在可靠时才有用。
@@ -23,11 +24,11 @@
 
 ### 什么是 Flashback?
 
-Flashback 用于模拟 HTTP 和 HTTPS 资源，如 Web 服务和 [REST][5] API，用于测试目的。它记录 HTTP/HTTPS 请求并重放以前记录的 HTTP 事务 - 我们称之为“场景”，这样就不需要连接到 Internet 才能完成测试。
+Flashback 用于模拟 HTTP 和 HTTPS 资源，如 Web 服务和 [REST][5] API，用于测试目的。它记录 HTTP/HTTPS 请求并重放以前记录的 HTTP 事务 - 我们称之为“<ruby>场景<rt>scene</rt></ruby>”，这样就不需要连接到 Internet 才能完成测试。
 
 Flashback 也可以根据请求的部分匹配重放场景。它使用的是“匹配规则”。匹配规则将传入请求与先前记录的请求相关联，然后将其用于生成响应。例如，以下代码片段实现了一个基本匹配规则，其中测试方法“匹配”[此 URL][6]的传入请求。
 
-HTTP 请求通常包含URL、方法、标头和正文。Flashback 允许为这些组件的任意组合定义匹配规则。Flashback 还允许用户向 URL 查询参数，标头和正文添加白名单或黑名单标签。
+HTTP 请求通常包含 URL、方法、标头和正文。Flashback 允许为这些组件的任意组合定义匹配规则。Flashback 还允许用户向 URL 查询参数，标头和正文添加白名单或黑名单标签。
 
 例如，在 OAuth 授权流程中，请求查询参数可能如下所示：
 
@@ -43,9 +44,9 @@ oauth_version="1.0"
 
 这些值许多将随着每个请求而改变，因为 OAuth 要求客户端每次为 **oauth_nonce** 生成一个新值。在我们的测试中，我们需要验证 **oauth_consumer_key、oauth_signature_method** 和 **oauth_version** 的值，同时确保 **oauth_nonce**、**oauth_signature**、**oauth_timestamp** 和 **oauth_token** 存在于请求中。Flashback 使我们有能力创建我们自己的匹配规则来实现这一目标。此功能允许我们测试随时间变化的数据、签名、令牌等的请求，而客户端没有任何更改。
 
-这种灵活的匹配和在不连接互联网的情况下运行的功能是将 Flashback 与其他模拟解决方案分开的属性。其他一些显著特点包括：
+这种灵活的匹配和在不连接互联网的情况下运行的功能是 Flashback 与其他模拟解决方案不同的特性。其他一些显著特点包括：
 
-*   Flashback 是一种跨平台和跨语言解决方案，能够测试 JVM（Java虚拟机）和非 JVM（C++、Python等）应用程序。
+*   Flashback 是一种跨平台和跨语言解决方案，能够测试 JVM（Java虚拟机）和非 JVM（C++、Python 等）应用程序。
 *   Flashback 可以随时生成 SSL/TLS 证书，以模拟 HTTPS 请求的安全通道。
 
 ### 如何记录 HTTP 事务
@@ -77,27 +78,28 @@ git clone https://github.com/linkedin/flashback.git
 ```
 
 3\. 注意上面的 Flashback 将在本地端口 5555 上启动录制模式。匹配规则需要完全匹配（匹配 HTTP 正文、标题和 URL）。场景将存储在 **/tmp/test1** 下。
+
 4\. Flashback 现在可以记录了，所以用它来代理对 example.org 的请求：
 
 ```
 curl http://www.example.org -x localhost:5555 -X GET
 ```
 
-5\. Flashback可以（可选）在一个记录中记录多个请求。要完成录制，[关闭 Flashback][8]。
+5\. Flashback 可以（可选）在一个记录中记录多个请求。要完成录制，[关闭 Flashback][8]。
 
 6\. 要验证已记录的内容，我们可以在输出目录（**/tmp/test1**）中查看场景的内容。它应该[包含以下内容][9]。
 
-这也很容易[在 Java 代码中使用 Flashback][10]。
+[在 Java 代码中使用 Flashback][10]也很容易。
 
 ### 如何重放 HTTP 事务
 
 要重放先前存储的场景，请使用与录制时使用的相同的基本设置。唯一的区别是[将“场景模式”设置为上述步骤 3 中的“播放”][11]。
 
-验证响应来自场景而不是外部源的一种方法是在你执行步骤 1 到 6 时临时禁用 Internet 连接。另一种方法是修改场景文件，看看响应是否与文件中的相同。
+验证响应来自场景而不是外部源的一种方法，是在你执行步骤 1 到 6 时临时禁用 Internet 连接。另一种方法是修改场景文件，看看响应是否与文件中的相同。
 
 这是[ Java 中的一个例子][12]。
 
-### 如何记录并重播HTTPS事务
+### 如何记录并重播 HTTPS 事务
 
 使用 Flashback 记录并重放 HTTPS 事务的过程非常类似于 HTTP 事务的过程。但是，需要特别注意用于 HTTPS SSL 组件的安全证书。为了使 Flashback 作为 MITM 代理，必须创建证书颁发机构（CA）证书。在客户端和 Flashback 之间创建安全通道时将使用此证书，并允许 Flashback 检查其代理的 HTTPS 请求中的数据。然后将此证书存储为受信任的源，以便客户端在进行调用时能够对 Flashback 进行身份验证。有关如何创建证书的说明，有很多[类似这样][13]的资源是非常有帮助的。大多数公司都有自己的管理和获取证书的内部策略 - 请务必用你们自己的方法。
 
@@ -106,12 +108,12 @@ curl http://www.example.org -x localhost:5555 -X GET
 一旦涉及安全证书，HTTP 和 HTTPS 之间在记录设置方面的唯一区别是添加了一些其他参数。
 
 *   **RootCertificateInputStream**： 表示 CA 证书文件路径或流。
-*   **RootCertificatePassphrase**： 为CA证书创建的密码。
-*   **CertificateAuthority**： CA证书的属性
+*   **RootCertificatePassphrase**： 为 CA 证书创建的密码。
+*   **CertificateAuthority**： CA 证书的属性
 
-[查看 Flashback 中用于记录 HTTPS 事务的代码][14]，它包括上述条款。
+[查看 Flashback 中用于记录 HTTPS 事务的代码][14]，它包括上述条目。
 
-使用 Flashback 重放 HTTPS 事务使用与录制相同的过程。唯一的区别是场景模式设置为“播放”。这在[此代码][15]中演示。
+用 Flashback 重放 HTTPS 事务的过程与录制相同。唯一的区别是场景模式设置为“播放”。这在[此代码][15]中演示。
 
 ### 支持动态修改
 
@@ -119,11 +121,11 @@ curl http://www.example.org -x localhost:5555 -X GET
 
  ![Scenarios where we have POSTed data to update the external resource.](https://opensource.com/sites/default/files/changingscenes.jpg "Scenarios where we have POSTed data to update the external resource.") 
 
-这能够[更改匹配规则][17]动态地允许我们测试复杂的场景。例如，我们有一个情况，要求我们测试 Twitter 的公共和私有资源的 HTTP 调用。对于公共资源，HTTP 请求是不变的，所以我们可以使用 “MatchAll” 规则。然而，对于私人资源，我们需要使用 OAuth 消费者密码和 OAuth 访问令牌来签名请求。这些请求包含大量具有不可预测值的参数，因此静态 MatchAll 规则将无法正常工作。
+能够动态[更改匹配规则][17]可以使我们测试复杂的场景。例如，我们有一个使用情况，要求我们测试 Twitter 的公共和私有资源的 HTTP 调用。对于公共资源，HTTP 请求是不变的，所以我们可以使用 “MatchAll” 规则。然而，对于私人资源，我们需要使用 OAuth 消费者密码和 OAuth 访问令牌来签名请求。这些请求包含大量具有不可预测值的参数，因此静态 MatchAll 规则将无法正常工作。
 
 ### 使用案例
 
-在 LinkedIn，Flashback 主要用于在集成测试中模拟不同的互联网提供商，如下图所示。第一张图展示了通过代理层与 LinkedIn 生产数据中心内的内部服务，该服务与互联网提供商（如 Google）进行交互。我们想在测试环境中测试这个内部服务。
+在 LinkedIn，Flashback 主要用于在集成测试中模拟不同的互联网提供商，如下图所示。第一张图展示了 LinkedIn 生产数据中心内的一个内部服务，通过代理层，与互联网提供商（如 Google）进行交互。我们想在测试环境中测试这个内部服务。
 
  ![Testing this internal service in a testing environment.](https://opensource.com/sites/default/files/testingenvironment.jpg "Testing this internal service in a testing environment.") 
 
@@ -137,9 +139,9 @@ curl http://www.example.org -x localhost:5555 -X GET
 
 ### 未来方向
 
-我们希望将来可以支持非 HTTP 协议（如 FTP 或 JDBC），甚至可以让用户使用 MITM 代理框架来自行注入自己的定制协议。我们将继续改进 Flashback 设置 API，使其支持非 Java 语言更容易。
+我们希望将来可以支持非 HTTP 协议（如 FTP 或 JDBC），甚至可以让用户使用 MITM 代理框架来自行注入自己的定制协议。我们将继续改进 Flashback 设置 API，使其更容易支持非 Java 语言。
 
-### 现在作为一个开源项目可用
+### 现在为一个开源项目
 
 我们很幸运能够在 GTAC 2015 上发布 Flashback。在展会上，有几名观众询问是否将 Flashback 作为开源项目发布，以便他们可以将其用于自己的测试工作。
 
@@ -159,7 +161,7 @@ Flashback 由 [Shangshang Feng][19]、[Yabin Kang][20] 和 [Dan Vinegrad][21] �
 
 作者简介：
 
-Shangshang Feng - Shangshang 是 LinkedIn 纽约市办公室的高级软件工程师。他花了三年半的时间在 LinkedIn 的网关平台工作。在加入 LinkedIn 之前，他曾在 Thomson Reuters 和 ViewTrade 证券的基础设施团队工作。
+Shangshang Feng - Shangshang 是 LinkedIn 纽约市办公室的高级软件工程师。在 LinkedIn 他从事了三年半的网关平台工作。在加入 LinkedIn 之前，他曾在 Thomson Reuters 和 ViewTrade 证券的基础设施团队工作。
 
 ---------
 
