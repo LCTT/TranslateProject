@@ -1,3 +1,5 @@
+translating----geekpi
+
 ### Changes in Password Best Practices
 
 NIST recently published its four-volume  [_SP800-63b Digital Identity Guidelines_][3] . Among other things, it makes three important suggestions when it comes to passwords:
