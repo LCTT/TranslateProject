@@ -1,3 +1,5 @@
+Martin translating
+
 NixOS Linux Lets You Configure Your OS Before Installing
 ============================================================
 
