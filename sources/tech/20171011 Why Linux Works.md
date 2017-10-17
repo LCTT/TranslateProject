@@ -1,5 +1,6 @@
 Why Linux Works
 ============================================================
+translating by softpaopao
 
 _Amid the big cash and fierce corporate jockeying around Linux, it’s the developers who truly give the operating system its vitality._ 
 
