@@ -1,21 +1,23 @@
-OpenGL 与 Go 教程第三节：实现游戏
+OpenGL 与 Go 教程（三）实现游戏
 ============================================================
 
-[第一节: Hello, OpenGL][8]  |  [第二节: 绘制游戏面板][9]  |  [第三节：实现游戏功能][10] 
+- [第一节: Hello, OpenGL][8]
+- [第二节: 绘制游戏面板][9]
+- [第三节：实现游戏功能][10] 
 
-该教程的完整源代码可以从 [GitHub][11] 上获得。
+该教程的完整源代码可以从 [GitHub][11] 上找到。
 
 欢迎回到《OpenGL 与 Go 教程》！如果你还没有看过 [第一节][12] 和 [第二节][13]，那就要回过头去看一看。
 
-到目前为止，你应该懂得如何创建网格系统以及创建代表方格中每一个单元的格子阵列。现在可以开始把网格当作游戏面板实现《Conway's Game of Life》。
+到目前为止，你应该懂得如何创建网格系统以及创建代表方格中每一个单元的格子阵列。现在可以开始把网格当作游戏面板实现<ruby>康威生命游戏<rt>Conway's Game of Life</rt></ruby>。
 
 开始吧！
 
-### 实现 《Conway’s Game》
+### 实现康威生命游戏
 
-《Conway's Game》的其中一个要点是所有 cell 必须同时基于当前 cell 在面板中的状态确定下一个 cell 的状态。也就是说如果 Cell （X=3，Y=4）在计算过程中状态发生了改变，那么邻近的 cell （X=4，Y=4）必须基于（X=3，T=4）的状态决定自己的状态变化，而不是基于自己现在的状态。简单的讲，这意味着我们必须遍历 cell ，确定下一个 cell 的状态，在绘制之前，不改变他们的当前状态，然后在下一次循环中我们将新状态应用到游戏里，依此循环往复。
+康威生命游戏的其中一个要点是所有<ruby>细胞<rt>cell</rt></ruby>必须同时基于当前细胞在面板中的状态确定下一个细胞的状态。也就是说如果细胞 `(X=3,Y=4)` 在计算过程中状态发生了改变，那么邻近的细胞 `(X=4,Y=4)` 必须基于 `(X=3,Y=4)` 的状态决定自己的状态变化，而不是基于自己现在的状态。简单的讲，这意味着我们必须遍历细胞，确定下一个细胞的状态，而在绘制之前不改变他们的当前状态，然后在下一次循环中我们将新状态应用到游戏里，依此循环往复。
 
-为了完成这个功能，我们需要在 cell 结构体中添加两个布尔型变量：
+为了完成这个功能，我们需要在 `cell` 结构体中添加两个布尔型变量：
 
 ```
 type cell struct {
@@ -29,6 +31,8 @@ type cell struct {
 }
 ```
 
+这里我们添加了 `alive` 和 `aliveNext`，前一个是细胞当前的专题，后一个是经过计算后下一回合的状态。
+
 现在添加两个函数，我们会用它们来确定 cell 的状态：
 
 ```
@@ -39,22 +43,22 @@ func (c *cell) checkState(cells [][]*cell) {
 
     liveCount := c.liveNeighbors(cells)
     if c.alive {
-		// 1\. 当任何一个存活的 cell 的附近少于 2 个存活的 cell 时，该 cell 将会消亡，就像人口过少所导致的结果一样
+		// 1. 当任何一个存活的 cell 的附近少于 2 个存活的 cell 时，该 cell 将会消亡，就像人口过少所导致的结果一样
         if liveCount < 2 {
             c.aliveNext = false
         }
 
-		// 2\. 当任何一个存活的 cell 的附近有 2 至 3 个存活的 cell 时，该 cell 在下一代中仍然存活。
+		// 2. 当任何一个存活的 cell 的附近有 2 至 3 个存活的 cell 时，该 cell 在下一代中仍然存活。
         if liveCount == 2 || liveCount == 3 {
             c.aliveNext = true
         }
 
-		// 3\. 当任何一个存活的 cell 的附近多于 3 个存活的 cell 时，该 cell 将会消亡，就像人口过多所导致的结果一样
+		// 3. 当任何一个存活的 cell 的附近多于 3 个存活的 cell 时，该 cell 将会消亡，就像人口过多所导致的结果一样
         if liveCount > 3 {
             c.aliveNext = false
         }
     } else {
-		// 4\. 任何一个消亡的 cell 附近刚好有 3 个存活的 cell，该 cell 会变为存活的状态，就像重生一样。
+		// 4. 任何一个消亡的 cell 附近刚好有 3 个存活的 cell，该 cell 会变为存活的状态，就像重生一样。
         if liveCount == 3 {
             c.aliveNext = true
         }
@@ -95,9 +99,11 @@ func (c *cell) liveNeighbors(cells [][]*cell) int {
 }
 ```
 
-更加值得注意的是 liveNeighbors 函数里在返回地方，我们返回的是当前处于存活状态的 cell 的邻居个数。我们定义了一个叫做 add 的内嵌函数，它会对 X 和 Y 坐标做一些重复性的验证。它所做的事情是检查我们传递的数字是否超出了范围——比如说，如果 cell（X=0，Y=5）想要验证它左边的 cell，它就得验证面板另一边的 cell（X=9，Y=5），Y 轴与之类似。
+在 `checkState` 中我们设置当前状态（`alive`） 等于我们最近迭代结果（`aliveNext`）。接下来我们计数邻居数量，并根据游戏的规则来决定 `aliveNext` 状态。该规则是比较清晰的，而且我们在上面的代码当中也有说明，所以这里不再赘述。
 
-在 add 内嵌函数后面，我们给当前 cell 附近的八个 cell 分别调用 add 函数，示意如下：
+更加值得注意的是 `liveNeighbors` 函数里，我们返回的是当前处于存活（`alive`）状态的细胞的邻居个数。我们定义了一个叫做 `add` 的内嵌函数，它会对 `X` 和 `Y` 坐标做一些重复性的验证。它所做的事情是检查我们传递的数字是否超出了范围——比如说，如果细胞 `(X=0,Y=5)` 想要验证它左边的细胞，它就得验证面板另一边的细胞 `(X=9,Y=5)`，Y 轴与之类似。
+
+在 `add` 内嵌函数后面，我们给当前细胞附近的八个细胞分别调用 `add` 函数，示意如下：
 
 ```
 [
@@ -109,9 +115,9 @@ func (c *cell) liveNeighbors(cells [][]*cell) int {
 ]
 ```
 
-在该示意中，每一个叫做 N 的 cell 是与 C 相邻的 cell。
+在该示意中，每一个叫做 N 的细胞是 C 的邻居。
 
-现在是我们的主函数，在我们执行循环核心游戏的地方，调用每个 cell 的 checkState 函数进行绘制：
+现在是我们的 `main` 函数，这里我们执行核心游戏循环，调用每个细胞的 `checkState` 函数进行绘制：
 
 ```
 func main() {
@@ -129,6 +135,8 @@ func main() {
 }
 ```
 
+现在我们的游戏逻辑全都设置好了，我们需要修改细胞绘制函数来跳过绘制不存活的细胞：
+
 ```
 func (c *cell) draw() {
     if !c.alive {
@@ -140,7 +148,10 @@ func (c *cell) draw() {
 }
 ```
 
-现在完善这个函数。回到 makeCells 函数，我们用 0.0 到 1.0 之间的一个随机数来设置游戏的初始状态。我们会定义一个大小为 0.15 的常量阈值，也就是说每个 cell 都有 15% 的几率处于存活状态。
+如果我们现在运行这个游戏，你将看到一个纯黑的屏幕，而不是我们辛苦工作后应该看到生命模拟。为什么呢？其实这正是模拟在工作。因为我们没有活着的细胞，所以就一个都不会绘制出来。
+
+
+现在完善这个函数。回到 `makeCells` 函数，我们用 `0.0` 到 `1.0` 之间的一个随机数来设置游戏的初始状态。我们会定义一个大小为 `0.15` 的常量阈值，也就是说每个细胞都有 15% 的几率处于存活状态。
 
 ```
 import (
@@ -174,11 +185,13 @@ func makeCells() [][]*cell {
 }
 ```
 
-接下来在循环中，在用 newCell 函数创造一个新的 cell 时，我们根据随机数的大小设置它的存活状态，随机数在 0.0 到 1.0 之间，如果比阈值（0.15）小，就是存活状态。再次强调，这意味着每个 cell 在开始时都有 15% 的几率是存活的。你可以修改数值大小，增加或者减少当前游戏中存活的 cell。我们还把 aliveNext 设成 alive 状态，否则在第一次迭代之后我们会发现一大片 cell 消亡了，这是因为 aliveNext 将永远是 false。
+我们首先增加两个引入：随机（`math/rand`）和时间（`time`），并定义我们的常量阈值。然后在 `makeCells` 中我们使用当前时间作为随机种子，给每个游戏一个独特的起始状态。你也可也指定一个特定的种子值，来始终得到一个相同的游戏，这在你想重放某个有趣的模拟时很有用。
 
-现在接着往下看，运行它，你很有可能看到 cell 们一闪而过，但你却无法理解这是为什么。原因可能在于你的电脑太快了，在你能够看清楚之前就运行了（甚至完成了）模拟过程。
+接下来在循环中，在用 `newCell` 函数创造一个新的细胞时，我们根据随机浮点数的大小设置它的存活状态，随机数在 `0.0` 到 `1.0` 之间，如果比阈值（`0.15`）小，就是存活状态。再次强调，这意味着每个细胞在开始时都有 15% 的几率是存活的。你可以修改数值大小，增加或者减少当前游戏中存活的细胞。我们还把 `aliveNext` 设成 `alive` 状态，否则在第一次迭代之后我们会发现一大片细胞消亡了，这是因为 `aliveNext` 将永远是 `false`。
 
-降低游戏速度，在主循环中引入一个 frames-per-second 限制：
+现在继续运行它，你很有可能看到细胞们一闪而过，但你却无法理解这是为什么。原因可能在于你的电脑太快了，在你能够看清楚之前就运行了（甚至完成了）模拟过程。
+
+让我们降低游戏速度，在主循环中引入一个帧率（FPS）限制：
 
 ```
 const (
@@ -223,7 +236,7 @@ const (
 )
 ```
 
- ![《OpenGL 和 Golang 教程》 中的 “Conway's Game of Life” - 示例游戏](https://kylewbanks.com/images/post/golang-opengl-conway-1.gif) 
+ ![ “Conway's Game of Life” - 示例游戏](https://kylewbanks.com/images/post/golang-opengl-conway-1.gif) 
 
 试着修改常量，看看它们是怎么影响模拟过程的 —— 这是你用 Go 语言写的第一个 OpenGL 程序，很酷吧？
 
@@ -231,20 +244,18 @@ const (
 
 这是《OpenGL 与 Go 教程》的最后一节，但是这不意味着到此而止。这里有些新的挑战，能够增进你对 OpenGL （以及 Go）的理解。
 
-1.  给每个 cell 一种不同的颜色。
-2.  让用户能够通过命令行参数指定格子尺寸，帧率，种子和阈值。在 GitHub 上的 [github.com/KyleBanks/conways-gol][4] 里你可以看到一个已经实现的程序。
+1.  给每个细胞一种不同的颜色。
+2.  让用户能够通过命令行参数指定格子尺寸、帧率、种子和阈值。在 GitHub 上的 [github.com/KyleBanks/conways-gol][4] 里你可以看到一个已经实现的程序。
 3.  把格子的形状变成其它更有意思的，比如六边形。
-4.  用颜色表示 cell 的状态 —— 比如，在第一帧把存活状态的格子设成绿色，如果它们存活了超过三帧的时间，就变成黄色。
-5.  如果模拟过程结束了，就自动关闭窗口，也就是说所有 cell 都消亡了，或者是最后两帧里没有格子的状态有改变。
+4.  用颜色表示细胞的状态 —— 比如，在第一帧把存活状态的格子设成绿色，如果它们存活了超过三帧的时间，就变成黄色。
+5.  如果模拟过程结束了，就自动关闭窗口，也就是说所有细胞都消亡了，或者是最后两帧里没有格子的状态有改变。
 6.  将着色器源代码放到单独的文件中，而不是把它们用字符串的形式放在 Go 的源代码中。
 
 ### 总结
 
 希望这篇教程对想要入门 OpenGL （或者是 Go）的人有所帮助！这很有趣，因此我也希望理解学习它也很有趣。
 
-正如我所说的，OpenGL 可能是非常恐怖的，但只要你开始着手了就不会太差。你只用制定一个个可达成的小目标，然后享受每一次成功，因为尽管 OpenGL 不会总像它看上去的那么难，但也肯定有些难懂的东西。我发现，当遇到一个难于用 go-gl 方式理解的 OpenGL 问题时，你总是可以参考一下在网上更流行的当作教程的 C 语言代码，这很有用。通常 C 语言和 Go 语言的唯一区别是在 Go 中，gl 的前缀是 gl. 而不是 GL_。这极大地增加了你的绘制知识！
-
-[第一节: Hello, OpenGL][14]  |  [第二节: 绘制游戏面板][15]  |  [第三节：实现游戏功能][16] 
+正如我所说的，OpenGL 可能是非常恐怖的，但只要你开始着手了就不会太差。你只用制定一个个可达成的小目标，然后享受每一次成功，因为尽管 OpenGL 不会总像它看上去的那么难，但也肯定有些难懂的东西。我发现，当遇到一个难于理解用 go-gl 生成的代码的 OpenGL 问题时，你总是可以参考一下在网上更流行的当作教程的 C 语言代码，这很有用。通常 C 语言和 Go 语言的唯一区别是在 Go 中，gl 函数的前缀是 `gl.` 而不是 `gl`，常量的前缀是 `gl` 而不是 `GL_`。这可以极大地增加了你的绘制知识！
 
 该教程的完整源代码可从 [GitHub][17] 上获得。
 
@@ -419,22 +430,22 @@ func (c *cell) checkState(cells [][]*cell) {
 
     liveCount := c.liveNeighbors(cells)
     if c.alive {
-		// 1\. 当任何一个存活的 cell 的附近少于 2 个存活的 cell 时，该 cell 将会消亡，就像人口过少所导致的结果一样
+		// 1. 当任何一个存活的 cell 的附近少于 2 个存活的 cell 时，该 cell 将会消亡，就像人口过少所导致的结果一样
         if liveCount < 2 {
             c.aliveNext = false
         }
 
-		// 2\. 当任何一个存活的 cell 的附近有 2 至 3 个存活的 cell 时，该 cell 在下一代中仍然存活。
+		// 2. 当任何一个存活的 cell 的附近有 2 至 3 个存活的 cell 时，该 cell 在下一代中仍然存活。
         if liveCount == 2 || liveCount == 3 {
             c.aliveNext = true
         }
 
-		// 3\. 当任何一个存活的 cell 的附近多于 3 个存活的 cell 时，该 cell 将会消亡，就像人口过多所导致的结果一样
+		// 3. 当任何一个存活的 cell 的附近多于 3 个存活的 cell 时，该 cell 将会消亡，就像人口过多所导致的结果一样
         if liveCount > 3 {
             c.aliveNext = false
         }
     } else {
-		// 4\. 任何一个消亡的 cell 附近刚好有 3 个存活的 cell，该 cell 会变为存活的状态，就像重生一样。
+		// 4. 任何一个消亡的 cell 附近刚好有 3 个存活的 cell，该 cell 会变为存活的状态，就像重生一样。
         if liveCount == 3 {
             c.aliveNext = true
         }
@@ -570,9 +581,9 @@ func compileShader(source string, shaderType uint32) (uint32, error) {
 
 via: https://kylewbanks.com/blog/tutorial-opengl-with-golang-part-3-implementing-the-game
 
-作者：[kylewbanks ][a]
+作者：[kylewbanks][a]
 译者：[GitFuture](https://github.com/GitFuture)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -584,14 +595,14 @@ via: https://kylewbanks.com/blog/tutorial-opengl-with-golang-part-3-implementing
 [5]:https://kylewbanks.com/category/golang
 [6]:https://kylewbanks.com/category/opengl
 [7]:https://twitter.com/kylewbanks
-[8]:https://kylewbanks.com/blog/tutorial-opengl-with-golang-part-1-hello-opengl
-[9]:https://kylewbanks.com/blog/tutorial-opengl-with-golang-part-2-drawing-the-game-board
+[8]:https://linux.cn/article-8933-1.html
+[9]:https://linux.cn/article-8937-1.html
 [10]:https://kylewbanks.com/blog/tutorial-opengl-with-golang-part-3-implementing-the-game
 [11]:https://github.com/KyleBanks/conways-gol
-[12]:https://kylewbanks.com/blog/tutorial-opengl-with-golang-part-1-hello-opengl
+[12]:https://linux.cn/article-8933-1.html
 [13]:https://kylewbanks.com/blog/[Part%202:%20Drawing%20the%20Game%20Board](/blog/tutorial-opengl-with-golang-part-2-drawing-the-game-board)
-[14]:https://kylewbanks.com/blog/tutorial-opengl-with-golang-part-1-hello-opengl
-[15]:https://kylewbanks.com/blog/tutorial-opengl-with-golang-part-2-drawing-the-game-board
+[14]:https://linux.cn/article-8933-1.html
+[15]:https://linux.cn/article-8937-1.html
 [16]:https://kylewbanks.com/blog/tutorial-opengl-with-golang-part-3-implementing-the-game
 [17]:https://github.com/KyleBanks/conways-gol
 [18]:https://twitter.com/kylewbanks
