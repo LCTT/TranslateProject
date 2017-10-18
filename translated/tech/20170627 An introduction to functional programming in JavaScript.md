@@ -1,32 +1,23 @@
-Translating by trnhoe.
-An introduction to functional programming in JavaScript
+JavaScript 函数式编程介绍
 ============================================================
 
-### Explore functional programming and how using it can make your programs easier to read and debug.
+### 探索函数式编程和通过它让你的程序更具有可读性和易于调试
 
- 
+
 ![An introduction to functional programming in JavaScript](https://opensource.com/sites/default/files/styles/image-full-size/public/images/business/bus-rocket.png?itok=vHKRzkyW "An introduction to functional programming in JavaScript")
 >Image credits : Steve Jurvetson via [Flickr][80] (CC-BY-2.0)
 
-When Brendan Eich created JavaScript in 1995, he intended to do [Scheme in the browser][81]. Scheme, being a dialect of Lisp, is a functional programming language. Things changed when Eich was told that the new language should be the scripting language companion to Java. Eich eventually settled on a language that has a C-style syntax (as does Java), yet has first-class functions. Java technically did not have first-class functions until version 8, however you could simulate first-class functions using anonymous classes. Those first-class functions are what makes functional programming possible in JavaScript.
+当 Brendan Eich 在 1995 年创造了 JavaScript，他打算[将 Scheme 移植到浏览器里][81] 。Scheme 作为 Lisp 的方言，是一种函数式编程语言。而当 Eich 被告知新的语言应该是一种可以与 Java 相比的脚本语言后，他最终确立了一种拥有 C 风格语法的语言（也和 Java 一样），但将函数视作一等公民。Java 直到版本 8 才从技术上将函数视为一等公民，虽然你可以用匿名类来模拟它。这个特性允许 JavaScript 通过函数式范式编程。
 
-JavaScript is a multi-paradigm language that allows you to freely mix and match object-oriented, procedural, and functional paradigms. Recently there has been a growing trend toward functional programming. In frameworks such as [Angular][82]and [React][83], you'll actually get a performance boost by using immutable data structures. Immutability is a core tenet of functional programming. It, along with pure functions, makes it easier to reason about and debug your programs. Replacing procedural loops with functions can increase the readability of your program and make it more elegant. Overall, there are many advantages to functional programming.
+JavaScript 是一个多范式语言，允许你自由地混合和使用面向对象式，过程式和函数式的范式。最近，函数式编程越来越火热。在诸如 [Angular][82] 和 [React ][83]这样的框架中,通过使用不可变数据结构实际上可以提高性能。不可变是函数式编程的核心原则，纯函数和它使得编写和调试程序变得更加容易。使用函数来代替程序的循环可以提高程序的可读性并使它更加优雅。总之，函数式编程拥有很多优点。
 
-### What functional programming isn't
+### 什么不是函数式编程
 
-Before we talk about what functional programming is, let's talk about what it is not. In fact, let's talk about all the language constructs you should throw out (goodbye, old friends):
+在讨论什么是函数式编程前，让我们先排除那些不属于函数式编程的东西。实际上它们是你需要丢弃的语言组件（再见，老朋友）：
 
-Programming and development
 
-*   [New Python content][1]
 
-*   [Our latest JavaScript articles][2]
-
-*   [Recent Perl posts][3]
-
-*   [Red Hat Developers Blog][4]
-
-*   Loops
+*   循环
     *   **while**
 
     *   **do...while**
@@ -36,14 +27,10 @@ Programming and development
     *   **for...of**
 
     *   **for...in**
-
-*   Variable declarations with **var** or **let**
-
-*   Void functions
-
-*   Object mutation (for example: **o.x = 5;**)
-
-*   Array mutator methods
+*   用 **var** 或者 **let** 来声明变量
+*   没有返回值的函数
+*   改变对象的属性 (比如: **o.x = 5;**)
+*   改变 Array 本身的方法
     *   **copyWithin**
 
     *   **fill**
@@ -61,32 +48,29 @@ Programming and development
     *   **splice**
 
     *   **unshift**
-
-*   Map mutator methods
+*   改变 Map 本身的方法
     *   **clear**
 
     *   **delete**
 
     *   **set**
-
-*   Set mutator methods
+*   改变 Set 本身的方法
     *   **add**
 
     *   **clear**
 
     *   **delete**
 
-How can you possibly program without those features? That's exactly what we are going to explore in the next few sections.
+脱离这些特性应该如何编写程序呢？这是我们将在后面探索的问题。
 
-### Pure functions
+### 纯函数
 
-Just because your program contains functions does not necessarily mean that you are doing functional programming. Functional programming distinguishes between pure and impure functions. It encourages you to write pure functions. A pure function must satisfy both of the following properties:
+你的程序中包含函数不一定意味着你正在进行函数式编程。函数式范式将纯函数和非纯函数区分开。鼓励你编写纯函数。纯函数必须满足下面的两个属性：
 
-*   **Referential transparency:** The function always gives the same return value for the same arguments. This means that the function cannot depend on any mutable state.
+*   **引用透明:**函数在传入相同的参数后永远返回相同的返回值。这意味着该函数不依赖于任何可变状态。
+*   **Side-effect free无函数副作用:**函数不能导致任何副作用。副作用可能包括 I/O(比如 向终端或者日志文件写入)，改变一个不可变的对象，对变量重新赋值等等。
 
-*   **Side-effect free:** The function cannot cause any side effects. Side effects may include I/O (e.g., writing to the console or a log file), modifying a mutable object, reassigning a variable, etc.
-
-Let's illustrate with a few examples. First, the **multiply** function is an example of a pure function. It always returns the same output for the same input, and it causes no side effects.
+我们来看一些例子。首先，**multiply** 就是一个纯函数的例子，它在传入相同的参数后永远返回相同的返回值，并且不会导致副作用。
 
 
 ```
@@ -97,7 +81,7 @@ function multiply(a, b) {
 
 [view raw][5][pure-function-example.js][6] hosted with ❤ by [GitHub][7]
 
-The following are examples of impure functions. The **canRide** function depends on the captured **heightRequirement** variable. Captured variables do not necessarily make a function impure, but mutable (or re-assignable) ones do. In this case it was declared using **let**, which means that it can be reassigned. The **multiply** function is impure because it causes a side-effect by logging to the console.
+下面是非纯函数的例子。**canRide** 函数依赖捕获的 **heightRequirement** 变量。被捕获的变量不一定导致一个函数是非纯函数，除非它是一个可变的变量（或者可以被重新赋值）。这种情况下使用  **let** 来声明这个变量，意味着可以对它重新赋值。**multiply** 函数是非纯函数，因为它会导致在 console 上输出。
 
 ```
 let heightRequirement = 46;
@@ -117,7 +101,7 @@ function multiply(a, b) {
 
 [view raw][8][impure-functions.js][9] hosted with ❤ by [GitHub][10]
 
-The following list contains several built-in functions in JavaScript that are impure. Can you state which of the two properties each one does not satisfy?
+下面的列表包含着 JavaScript 内置的非纯函数。你可以指出它们不满足两个属性中的哪个吗？
 
 *   **console.log**
 
@@ -127,23 +111,23 @@ The following list contains several built-in functions in JavaScript that are im
 
 *   **Date.now**
 
-*   **$.ajax** (where **$** == the Ajax library of your choice)
+*   **$.ajax** (**$** 代表你使用的 Ajax 库)
 
-Living in a perfect world in which all our functions are pure would be nice, but as you can tell from the list above, any meaningful program will contain impure functions. Most of the time we will need to make an Ajax call, check the current date, or get a random number. A good rule of thumb is to follow the 80/20 rule: 80% of your functions should be pure, and the remaining 20%, of necessity, will be impure.
+理想的程序中所有的函数都是纯函数，但是从上面的函数列表可以看出，任何有意义的程序都将包含非纯函数。大多时候我们需要进行 AJAX 调用，检查当前日期或者获取一个随机数。一个好的经验法则是遵循80/20规则：函数中有80％应该是纯函数，剩下的20％的必要性将不可避免地是非纯函数。
 
-There are several benefits to pure functions:
+使用纯函数有几个优点：
 
-*   They're easier to reason about and debug because they don't depend on mutable state.
+*   它们很容易导出和调试，因为它们不依赖于可变的状态。
 
-*   The return value can be cached or "memoized" to avoid recomputing it in the future.
+*   返回值可以被缓存或者“记忆”来避免以后重复计算。
 
-*   They're easier to test because there are no dependencies (such as logging, Ajax, database, etc.) that need to be mocked.
+*   它们很容易测试，因为没有需要模拟（mock）的依赖（比如日志，AJAX，数据库等等）。
 
-If a function you're writing or using is void (i.e., it has no return value), that's a clue that it's impure. If the function has no return value, then either it's a no-op or it's causing some side effect. Along the same lines, if you call a function but do not use its return value, again, you're probably relying on it to do some side effect, and it is an impure function.
+你编写或者使用的函数返回空（换句话说它没有返回值），那代表它是非纯函数。
 
-### Immutability
+### 不变性
 
-Let's return to the concept of captured variables. Above, we looked at the **canRide** function. We decided that it is an impure function, because the **heightRequirement** could be reassigned. Here is a contrived example of how it can be reassigned with unpredictable results:
+让我们回到捕获变量的概念上。来看看 **canRide** 函数。我们认为它是一个非纯函数，因为 **heightRequirement** 变量可以被重新赋值。下面是一个构造出来的例子来说明如何用不可预测的值来对它重新赋值。
 
 ```
 let heightRequirement = 46;
@@ -165,7 +149,7 @@ setInterval(() => console.log(canRide(mySonsHeight)), 500);
 
 [view raw][11][mutable-state.js][12] hosted with ❤ by [GitHub][13]
 
-Let me reemphasize that captured variables do not necessarily make a function impure. We can rewrite the **canRide** function so that it is pure by simply changing how we declare the **heightRequirement** variable.
+我要再次强调被捕获的变量不一定会使函数成为非纯函数。我们可以通过只是简单地改变 **heightRequirement** 的声明方式来使 **canRide** 函数成为纯函数。
 
 ```
 const heightRequirement = 46;
@@ -178,7 +162,7 @@ function canRide(height) {
 
 [view raw][14][immutable-state.js][15] hosted with ❤ by [GitHub][16]
 
-Declaring the variable with **const** means that there is no chance that it will be reassigned. If an attempt is made to reassign it, the runtime engine will throw an error; however, what if instead of a simple number we had an object that stored all our "constants"?
+通过用 **const** 来声明变量意味着它不能被再次赋值。如果尝试对它重新赋值，运行时引擎将抛出错误；那么，如果用对象来代替数字来存储所有的“常量”怎么样？
 
 ```
 const constants = {
@@ -194,55 +178,55 @@ function canRide(height) {
 
 [view raw][17][captured-mutable-object.js][18] hosted with ❤ by [GitHub][19]
 
-We used **const** so the variable cannot be reassigned, but there's still a problem. The object can be mutated. As the following code illustrates, to gain true immutability, you need to prevent the variable from being reassigned, and you also need immutable data structures. The JavaScript language provides us with the **Object.freeze** method to prevent an object from being mutated.
+我们用了 **const** ，所以这个变量不能被重新赋值，但是还有一个问题：这个对象可以被改变。下面的代码展示了，为了真正使其不可变，你不仅需要防止它被重新赋值，你也需要不可变的数据结构。JavaScript 语言提供了 **Object.freeze** 方法来阻止对象被改变。
 
 ```
 'use strict';
 
-// CASE 1: The object is mutable and the variable can be reassigned.
+// CASE 1: The object is mutable and the variable can be reassigned.对象的属性是可变的，并且变量可以被再次赋值。
 let o1 = { foo: 'bar' };
 
-// Mutate the object
+// Mutate the object改变对象的属性
 o1.foo = 'something different';
 
-// Reassign the variable
+// Reassign the variable对变量再次赋值
 o1 = { message: "I'm a completely new object" };
 
 
-// CASE 2: The object is still mutable but the variable cannot be reassigned.
+// CASE 2: The object is still mutable but the variable cannot be reassigned.对象的属性还是可变的，但是变量不能被再次赋值。
 const o2 = { foo: 'baz' };
 
 // Can still mutate the object
 o2.foo = 'Something different, yet again';
 
-// Cannot reassign the variable
+// Cannot reassign the variable不能对变量再次赋值
 // o2 = { message: 'I will cause an error if you uncomment me' }; // Error!
 
 
-// CASE 3: The object is immutable but the variable can be reassigned.
+// CASE 3: The object is immutable but the variable can be reassigned.对象的属性是不可变的，但是变量可以被再次赋值。
 let o3 = Object.freeze({ foo: "Can't mutate me" });
 
-// Cannot mutate the object
+// Cannot mutate the object不能改变对象的属性
 // o3.foo = 'Come on, uncomment me. I dare ya!'; // Error!
 
-// Can still reassign the variable
+// Can still reassign the variable还是可以对变量再次赋值
 o3 = { message: "I'm some other object, and I'm even mutable -- so take that!" };
 
 
-// CASE 4: The object is immutable and the variable cannot be reassigned. This is what we want!!!!!!!!
+// CASE 4: The object is immutable and the variable cannot be reassigned. This is what we want!!!!!!!!对象的属性是不可变的，并且变量不能被再次赋值。这是我们想要的！！！！！！！！
 const o4 = Object.freeze({ foo: 'never going to change me' });
 
-// Cannot mutate the object
+// Cannot mutate the object不能改变对象的属性
 // o4.foo = 'talk to the hand' // Error!
 
-// Cannot reassign the variable
+// Cannot reassign the variable不能对变量再次赋值
 // o4 = { message: "ain't gonna happen, sorry" }; // Error
 ```
 
 
 [view raw][20][immutability-vs-reassignment.js][21] hosted with ❤ by [GitHub][22]
 
-Immutability pertains to all data structures, which includes arrays, maps, and sets. That means that we cannot call mutator methods such as **array.prototype.push** because that modifies the existing array. Instead of pushing an item onto the existing array, we can create a new array with all the same items as the original array, plus the one additional item. In fact, every mutator method can be replaced by a function that returns a new array with the desired changes.
+不变性适用于所有的数据结构，包括数组，映射和集合。它意味着不能调用例如 **Array.prototype.push** 等会导致本身改变的方法，因为它会改变已经存在的数组。可以通过创建一个含有原来元素和新加元素的新数组，代替将新元素加入一个已经存在的数组。其实所有会导致数组本身被修改的方法都可以通过一个返回修改好的新数组的函数代替。**这里一段mutator的翻译大概有些啰嗦。**
 
 ```
 'use strict';
@@ -267,7 +251,7 @@ const f = R.sort(myCompareFunction, a); // R = Ramda
 // Instead of: a.reverse();
 const g = R.reverse(a); // R = Ramda
 
-// Exercise for the reader:
+// Exercise for the reader留给读者的练习:
 // copyWithin
 // fill
 // splice
@@ -276,7 +260,7 @@ const g = R.reverse(a); // R = Ramda
 
 [view raw][23][array-mutator-method-replacement.js][24] hosted with ❤ by [GitHub][25]
 
-The same thing goes when using a [**Map**][84] or a [**Set**][85]. We can avoid mutator methods by returning a new **Map** or **Set** with the desired changes.
+[**Map**][84] 和 [**Set**][85] 也很相似。可以通过返回一个新的修改好的 Map 或者 Set 来代替使用会修改其本身的函数。
 
 ```
 const map = new Map([
@@ -314,7 +298,7 @@ const set4 = new Set();
 
 [view raw][29][set-mutator-method-replacement.js][30] hosted with ❤ by [GitHub][31]
 
-I would like to add that if you are using TypeScript (I am a huge fan of TypeScript), then you can use the **Readonly<T>**, **ReadonlyArray<T>**, **ReadonlyMap<K, V>**, and **ReadonlySet<T>** interfaces to get a compile-time error if you attempt to mutate any of those objects. If you call **Object.freeze** on an object literal or an array, then the compiler will automatically infer that it is read-only. Because of how Maps and Sets are represented internally, calling **Object.freeze** on those data structures does not work the same. But it's easy enough to tell the compiler that you would like them to be read-only.
+我想提一句如果你在使用 TypeScript（我非常喜欢TypeScript），你可以用 **Readonly<T>**, **ReadonlyArray<T>**, **ReadonlyMap<K, V>**, 和 **ReadonlySet<T>** 接口来在编译期检查你是否尝试更改这些对象，有则抛出编译错误。如果在对一个对象字面量或者数组调用 **Object.freeze**，编译器会自动推断它是只读的。由于映射和集合在其内部表达，所以在这些数据结构上调用 **Object.freeze** 不起作用。但是你可以轻松地告诉编译器它们是只读的变量。
 
 ### [typescript-readonly.png][32]
 
@@ -323,7 +307,7 @@ I would like to add that if you are using TypeScript (I am a huge fan of TypeScr
 
 TypeScript read-only interfaces
 
-Okay, so we can create new objects instead of mutating existing ones, but won't that adversely affect performance? Yes, it can. Be sure to do performance testing in your own app. If you need a performance boost, then consider using [Immutable.js][86]. Immutable.js implements [Lists][87], [Stacks][88], [Maps][89], [Sets][90], and other data structures using [persistent data structures][91]. This is the same technique used internally by functional programming languages such as Clojure and Scala.
+好，所以我们可以通过创建新的对象来代替修改原来的对象，但是这样不会导致性能损失吗？当然会。确保在你自己的应用中做了性能测试。如果你需要提高性能，可以考虑使用 [Immutable.js][86]。Immutable.js 用[持久的数据结构][91] 实现了[链表][87],，[堆栈][88]， [映射][89]，[集合][90]和其他数据结构。使用了和比如 Clojure 和 Scala 的函数式语言中相同的技术。
 
 ```
 // Use in place of `[]`.
@@ -356,15 +340,15 @@ console.log([...set2]); // [1, 2, 3, 4, 5]
 
 [view raw][33][immutable-js-demo.js][34] hosted with ❤ by [GitHub][35]
 
-### Function composition
+### 函数组合（不确定是这个叫法
 
-Remember back in high school when you learned something that looked like **(f ∘ g)(x)**? Remember thinking, "When am I ever going to use this?" Well, now you are. Ready? **f ∘ g** is read "**f composed with g**." There are two equivalent ways of thinking of it, as illustrated by this identity: **(f ∘ g)(x) = f(g(x))**. You can either think of **f ∘ g** as a single function or as the result of calling function **g** and then taking its output and passing that to **f**. Notice that the functions get applied from right to left—that is, we execute **g**, followed by **f**.
+好，你准备好听解答了吗？**f ∘ g **读作 **“函数 f 和函数 g 组合”（不确定 没搜到中文资料**。它的定义是 **(f ∘ g)(x) = f(g(x))**，你也可以认为 **f ∘ g** 是一个单独的函数，它将调用函数 **g** 的结果作为参数传给函数 **f**。注意这些函数是从右向左以此调用的，先执行 **g**，接下来执行 **f**。
 
-A couple of important points about function composition:
+关于函数组合的几个要点:
 
-1.  We can compose any number of functions (we're not limited to two).
+1.  我们可以组合任意数量的函数（不仅限于 2 个）。
 
-2.  One way to compose functions is simply to take the output from one function and pass it to the next (i.e., **f(g(x))**).
+2.  组合函数的一个方式是简单地把一个函数的输出作为下一个函数的输入。（比如 **f(g(x))**)）
 
 ```
 // h(x) = x + 1
@@ -392,7 +376,7 @@ console.log(y); // '4'
 
 [view raw][36][function-composition-basic.js][37] hosted with ❤ by [GitHub][38]
 
-There are libraries such as [Ramda][92] and [lodash][93] that provide a more elegant way of composing functions. Instead of simply passing the return value from one function to the next, we can treat function composition in the more mathematical sense. We can create a single composite function made up from the others (i.e., **(f ∘ g)(x)**).
+[Ramda][92] 和 [lodash][93] 之类的库提供了更优雅的方式来组合函数。我们可以在更多的在数学意义上处理函数组合，而不是简单地将一个函数的返回值传递给下一个函数。我们可以创建一个由这些函数组成的单一复合函数(就是，**(f ∘ g)(x)**)。
 
 ```
 // h(x) = x + 1
@@ -424,15 +408,15 @@ console.log(y); // '4'
 
 [view raw][39][function-composition-elegant.js][40] hosted with ❤ by [GitHub][41]
 
-Okay, so we can do function composition in JavaScript. What's the big deal? Well, if you're really onboard with functional programming, then ideally your entire program will be nothing but function composition. There will be no loops (**for**, **for...of**, **for...in**, **while**, **do**) in your code. None (period). But that's impossible, you say! Not so. That leads us to the next two topics: recursion and higher-order functions.
+我们可以在 JavaScript 中组合函数。接下来呢？好，如果你已经入门了函数式编程，理想中你的程序将只有函数的组合。代码里没有循环（**for**, **for...of**, **for...in**, **while**, **do**），基本没有。你说但是那不可能。并不是这样。我们下面的两个话题是：递归和高阶函数。
 
-### Recursion
+### 递归
 
-Let's say that you would like to implement a function that computes the factorial of a number. Let's recall the definition of factorial from mathematics:
+假设你想实现一个计算数字的阶乘的函数。 让我们回顾一下数学中阶乘的定义：
 
 **n! = n * (n-1) * (n-2) * ... * 1**.
 
-That is, **n!** is the product of all the integers from **n** down to **1**. We can write a loop that computes that for us easily enough.
+**n!** 是从 **n** 到 **1** 的所有整数的乘积。我们可以编写一个循环轻松地计算出结果。
 
 ```
 function iterativeFactorial(n) {
@@ -447,15 +431,13 @@ function iterativeFactorial(n) {
 
 [view raw][42][iterative-factorial.js][43] hosted with ❤ by [GitHub][44]
 
-Notice that both **product** and **i** are repeatedly being reassigned inside the loop. This is a standard procedural approach to solving the problem. How would we solve it using a functional approach? We would need to eliminate the loop and make sure we have no variables being reassigned. Recursion is one of the most powerful tools in the functional programmer's toolbelt. Recursion asks us to break down the overall problem into sub-problems that resemble the overall problem.
+注意 **product** 和 **i** 都在循环中被反复重新赋值。这是解决这个问题的标准过程式方法。如何用函数式的方法解决这个问题呢？我们需要消除循环，确保没有变量被重新赋值。递归是函数式程序员的最有力的工具之一。递归需要我们将整体问题分解为类似整体问题的子问题。
 
-Computing the factorial is a perfect example. To compute **n!**, we simply need to take **n** and multiply it by all the smaller integers. That's the same thing as saying: 
+计算阶乘是一个很好的例子，为了计算 **n!** 我们需要将 n 乘以所有比它小的正整数。它的意思就相当于：
 
 **n! = n * (n-1)!** 
 
-A-ha! We found a sub-problem to solve **(n-1)!** and it resembles the overall problem **n!**. There's one more thing to take care of: the base case. The base case tells us when to stop the recursion. If we didn't have a base case, then recursion would go on forever. In practice, you'll get a stack overflow error if there are too many recursive calls.
-
-What is the base case for the factorial function? At first you might think that it's when **n == 1**, but due to some [complex math stuff][94], it's when **n == 0**. **0!** is defined to be **1**. With this information in mind, let's write a recursive factorial function.
+ A-ha！我们发现了一个类似于整个问题 **n!** 的子问题来解决 **(n-1)!**。还有一个需要注意的地方就是基础条件。基础条件告诉我们何时停止递归。 如果我们没有基础条件，那么递归将永远持续。 实际上，如果有太多的递归调用，程序会抛出一个堆栈溢出错误。A-HA！
 
 ```
 function recursiveFactorial(n) {
@@ -470,25 +452,25 @@ function recursiveFactorial(n) {
 
 [view raw][45][recursive-factorial.js][46] hosted with ❤ by [GitHub][47]
 
-Okay, so let's compute **recursiveFactorial(20000)**, because... well, why not! When we do, we get this:
+然后我们来计算 **recursiveFactorial(20000)** 因为...，为什么不呢？当我们这样做的时候，我们得到了这个结果：
 
 ### [stack-overflow.png][48]
 
 ![Stack overflow error](https://opensource.com/sites/default/files/u128651/stack-overflow.png "Stack overflow error")
 
-Stack overflow error
+堆栈溢出错误
 
-So what's going on here? We got a stack overflow error! It's not because of infinite recursion. We know that we handled the base case (i.e., **n === 0**). It's because the browser has a finite stack and we have exceeded it. Each call to **recursiveFactorial** causes a new frame to be put on the stack. We can visualize the stack as a set of boxes stacked on top of each other. Each time **recursiveFactorial** gets called, a new box is added to the top. The following diagram shows a stylized version of what the stack might look like when computing **recursiveFactorial(3)**. Note that in a real stack, the frame on top would store the memory address of where it should return after executing, but I have chosen to depict the return value using the variable **r**. I did this because JavaScript developers don't normally need to think about memory addresses.
+这里发生了什么？我们得到一个堆栈溢出错误！这不是无穷的递归导致的。我们已经处理了基础条件(**n === 0** 的情况)。那是因为浏览器的堆栈大小是有限的，而我们的代码使用了越过了这个大小的堆栈。每次对 **recursiveFactorial** 的调用导致了新的帧被压入堆栈中，就像一个盒子压在另一个盒子上。每当 **recursiveFactorial** 被调用，一个新的盒子被放在最上面。下图展示了在计算 **recursiveFactorial(3)** 时堆栈的样子。注意在真实的堆栈中，堆栈顶部的帧将存储在执行完成后应该返回的内存地址，但是我选择用变量 **r** 来表示返回值，因为 JavaScript 开发者一般不需要考虑内存地址。
 
 ### [stack-frames.png][49]
 
 ![The stack for recursively calculating 3! (three factorial)](https://opensource.com/sites/default/files/u128651/stack-frames.png "The stack for recursively calculating 3! (three factorial)")
 
-The stack for recursively calculating 3! (three factorial)
+递归计算 3! 的堆栈（三次乘法）
 
-You can imagine that the stack for **n = 20000** would be much higher. Is there anything we can do about that? It turns out that, yes, there is something we can do about it. As part of the **ES2015** (aka **ES6**) specification, an optimization was added to address this issue. It's called the  _proper tail calls optimization_  (PTC). It allows the browser to elide, or omit, stack frames if the last thing that the recursive function does is call itself and return the result. Actually, the optimization works for mutually recursive functions as well, but for simplicity we're just going to focus on a single recursive function.
+你可能会想象当计算 **n = 20000** 时堆栈会更高。我们可以做些什么优化它吗？当然可以。作为 **ES2015** (又名 **ES6**) 标准的一部分，有一个优化用来解决这个问题。它被称作_尾调用优化_。它使得浏览器删除或者忽略堆栈帧，当递归函数做的最后一件事是调用自己并返回结果的时候。实际上，这个优化对于相互递归函数也是有效的，但是为了简单起见，我们还是来看单递归函数。
 
-You'll notice in the stack above that after the recursive function call, there is still an additional computation to be made (i.e., **n * r**). That means that the browser cannot optimize it using PTC; however, we can rewrite the function in such a way so that the last step is the recursive call. One trick to doing that is to pass the intermediate result (in this case the **product**) into the function as an argument.
+你可能会注意到，在递归函数调用之后，还要进行一次额外的计算(**n * r**)。那意味着浏览器不能通过 PTC 来优化递归；然而，我们可以通过重写函数使最后一步变成递归调用以便优化。一个窍门是将中间结果（在这里是**乘积**）作为参数传递给函数。
 
 ```
 'use strict';
@@ -505,27 +487,27 @@ function factorial(n, product = 1) {
 
 [view raw][50][factorial-tail-recursion.js][51] hosted with ❤ by [GitHub][52]
 
-Let's visualize the optimized stack now when computing **factorial(3)**. As the following diagram shows, in this case the stack never grows beyond two frames. The reason is that we are passing all necessary information (i.e., the **product**) into the recursive function. So, after the **product** has been updated, the browser can throw out that stack frame. You'll notice in this diagram that each time the top frame falls down and becomes the bottom frame, the previous bottom frame gets thrown out. It's no longer needed.
+让我们来看看优化后的计算 **factorial(3)** 时的堆栈。如下图所示，堆栈不会增长到超过两层。原因是我们把必要的信息都传到了递归函数中（比如**乘积**）。所以，在**乘积**被更新后，浏览器可以丢弃掉堆栈中原先的帧。你可以在图中看到每次最上面的帧下沉变成了底部的帧，原先底部的帧被丢弃，因为不再需要它了。
 
 ### [optimized-stack-frames.png][53]
 
 ![The optimized stack for recursively calculating 3! (three factorial) using PTC](https://opensource.com/sites/default/files/u128651/optimized-stack-frames.png "The optimized stack for recursively calculating 3! (three factorial) using PTC")
 
-The optimized stack for recursively calculating 3! (three factorial) using PTC
+递归计算 3! 的堆栈（三次乘法）使用 PTC
 
-Now run that in a browser of your choice, and assuming that you ran it in Safari, then you will get the answer, which is **Infinity** (it's a number higher than the maximum representable number in JavaScript). But we didn't get a stack overflow error, so that's good! Now what about all the other browsers? It turns out that Safari is the only browser that has implemented PTC, and it might be the only browser to ever implement it. See the following compatibility table:
+现在选一个浏览器运行吧，假设你在使用 Safari，你会得到**无穷大**（它是比在 JavaScript 中能表达的最大值更大的数）。但是我们没有得到堆栈溢出错误，那很不错！现在在其他的浏览器中呢怎么样呢？Safari 可能现在乃至将来是实现 PTC 的唯一一个浏览器。看看下面的兼容性表格：
 
 ### [ptc-compatibility.png][54]
 
 ![PTC compatibility](https://opensource.com/sites/default/files/u128651/ptc-compatibility.png "PTC compatibility")
 
-PTC compatibility
+PTC 兼容性
 
-Other browsers have put forth a competing standard called [syntactic tail calls][95](STC). "Syntactic" means that you will have to specify via new syntax that you would like the function to participate in the tail-call optimization. Even though there is not widespread browser support yet, it's still a good idea to write your recursive functions so that they are ready for tail-call optimization whenever (and however) it comes.
+其他浏览器提出了一种被称作[语法级尾调用][95](STC)的竞争标准。"Syntactic"意味着你需要用新的语法来标识你想要执行尾递归优化的函数。，即使浏览器还没有广泛支持，但是把你的递归函数写成支持尾递归优化的样子还是一个好主意。
 
-### Higher-order functions
+### 高阶函数
 
-We already know that JavaScript has first-class functions that can be passed around just like any other value. So, it should come as no surprise that we can pass a function to another function. We can also return a function from a function. Voilà! We have higher-order functions. You're probably already familiar with several higher order functions that exist on the **Array.prototype**. For example, **filter**, **map**, and **reduce**, among others. One way to think of a higher-order function is: It's a function that accepts (what's typically called) a callback function. Let's see an example of using built-in higher-order functions:
+我们已经知道 JavaScript 将函数视作一等公民，可以把函数像其他值一样传递。所以，把一个函数传给另一个函数也很常见。我们也可以让函数返回一个函数。就是它！我们有高阶函数。你可能已经很熟悉几个在 **Array.prototype** 中的高阶函数。比如 **filter**，**map**，和 **reduce** 就在其中。对高阶函数的一种理解是：它是接受（一般会调用）一个回调函数参数的函数。让我们来看看一些内置的高阶函数的例子：
 
 ```
 const vehicles = [
@@ -552,7 +534,7 @@ console.log(averageSUVPrice); // 33399
 
 [view raw][55][built-in-higher-order-functions.js][56] hosted with ❤ by [GitHub][57]
 
-Notice that we are calling methods on an array object, which is characteristic of object-oriented programming. If we wanted to make this a bit more representative of functional programming, we could use functions provided by Ramda or lodash/fp instead. We can also use function composition, which we explored in a previous section. Note that we would need to reverse the order of the functions if we use **R.compose**, since it applies the functions right to left (i.e., bottom to top); however, if we want to apply them left to right (i.e., top to bottom), as in the example above, then we can use **R.pipe**. Both examples are given below using Ramda. Note that Ramda has a **mean** function that can be used instead of **reduce**.
+注意我们在一个数组对象上调用其方法，这是面向对象编程的特性。如果我们想要更函数式一些，我们可以用 Rmmda 或者 lodash/fp 提供的函数。注意如果我们使用 **R.compose** 的话，需要倒转函数的顺序，因为它从右向左依次调用函数（从底向上）;然而，如果我们想从左向右调用函数就像上面的例子，我们可以用 **R.pipe**。下面两个例子用了 Rmmda。注意 Rmmda 有一个 **mean** 函数用来代替 **reduce** 。
 
 ```
 const vehicles = [
@@ -590,11 +572,11 @@ console.log(averageSUVPrice2); // 33399
 
 [view raw][58][composing-higher-order-functions.js][59] hosted with ❤ by [GitHub][60]
 
-The advantage of the functional programming approach is that it clearly separates the data (i.e., **vehicles**) from the logic (i.e., the functions **filter**, **map**, and **reduce**). Contrast that with the object-oriented code that blends data and functions in the form of objects with methods.
+使用函数式方法的优点是清楚地分开了数据（**车辆**）和逻辑（函数 **filter**，**map** 和 **reduce**）面向对象的代码相比之下把数据和函数用以方法的对象的形式混合在了一起。
 
-### Currying
+### 柯里化
 
-Informally, **currying** is the process of taking a function that accepts **n** arguments and turning it into **n** functions that each accepts a single argument. The **arity** of a function is the number of arguments that it accepts. A function that accepts a single argument is **unary**, two arguments **binary**, three arguments **ternary**, and **n** arguments is **n-ary**. Therefore, we can define currying as the process of taking an **n-ary** function and turning it into **n** unary functions. Let's start with a simple example, a function that takes the dot product of two vectors. Recall from linear algebra that the dot product of two vectors **[a, b, c]** and **[x, y, z]** is equal to **ax + by + cz**.
+不规范地说，柯里化是把一个接受 **n** 个参数的函数变成 **n** 个每个接受单个参数的函数的过程。函数的 **arity** 是它接受参数的个数。接受一个参数的函数是 **unary**，两个的是 **binary**，三个的是 **ternary**，**n**个的是 **n-ary**。那么，我们可以把柯里化定义成将一个 **n-ary** 函数转换成 **n** 个 unary 函数的过程。让我们通过简单的例子开始，一个计算两个向量点积的函数。回忆一下线性代数，两个向量 **[a, b, c]** 和 **[x, y, z]** 的点积是 **ax + by + cz**。
 
 ```
 function dot(vector1, vector2) {
@@ -610,7 +592,7 @@ console.log(dot(v1, v2)); // 1(4) + 3(-2) + (-5)(-1) = 4 - 6 + 5 = 3
 
 [view raw][61][dot-product.js][62] hosted with ❤ by [GitHub][63]
 
-The **dot** function is binary since it accepts two arguments; however, we can manually convert it into two unary functions, as the following code example shows. Notice how **curriedDot** is a unary function that accepts a vector and returns another unary function that then accepts the second vector.
+**dot** 函数是 binary 因为它接受两个参数；然而我们可以将它手动转换成两个 unary 函数，就像下面的例子。注意 **curriedDot** 是一个 unary 函数，它接受一个向量并返回另一个接受第二个向量的 unary 函数。
 
 ```
 function curriedDot(vector1) {
@@ -630,7 +612,7 @@ console.log(sumElements([4, -2, -1])); // 1
 
 [view raw][64][manual-currying.js][65] hosted with ❤ by [GitHub][66]
 
-Fortunately for us, we don't have to manually convert each one of our functions to a curried form. Libraries including [Ramda][96] and [lodash][97] have functions that will do it for us. In fact, they do a hybrid type of currying, where you can either call the function one argument at a time, or you can continue to pass in all the arguments at once, just like the original.
+很幸运，我们不需要把每一个函数都手动转换成柯里化以后的形式。[Ramda][96] 和 [lodash][97] 等库可以为我们做这些工作。实际上，它们是柯里化的混合形式。你既可以每次传递一个参数，也可以像原来一样一次传递所有参数。
 
 ```
 function dot(vector1, vector2) {
@@ -654,7 +636,7 @@ console.log(curriedDot(v1, v2)); // 3
 
 [view raw][67][fancy-currying.js][68] hosted with ❤ by [GitHub][69]
 
-Both Ramda and lodash also allow you to "skip over" an argument and specify it later. They do this using a placeholder. Because taking the dot product is commutative, it won't make a difference in which order we passed the vectors into the function. Let's use a different example to illustrate using a placeholder. Ramda uses a double underscore as its placeholder.
+Ramda 和 lodash 都允许你“跳过”一些变量之后再指定它们。它们使用置位符来做这些工作。因为点积的计算可以交换两项。传入向量的顺序不影响结果。让我们换一个例子来阐述如何使用一个置位符。Ramda 使用双下划线作为其置位符。
 
 ```
 const giveMe3 = R.curry(function(item1, item2, item3) {
@@ -677,12 +659,12 @@ console.log(result);
 
 [view raw][70][currying-placeholder.js][71] hosted with ❤ by [GitHub][72]
 
-One final point before we complete the topic of currying, and that is partial application. Partial application and currying often go hand in hand, though they really are separate concepts. A curried function is still a curried function even if it hasn't been given any arguments. Partial application, on the other hand, is when a function has been given some, but not all, of its arguments. Currying is often used to do partial application, but it's not the only way.
+在我们结束探讨柯里化之前最后的议题是偏函数应用。偏函数应用和柯里化经常同时出场，尽管它们实际上是不同的概念。一个柯里化的函数还是柯里化的函数，即使没有给它任何参数。偏函数应用，另一方面是仅仅给一个函数传递部分而不是所有参数。柯里化是偏函数应用常用的方法之一，但是不是唯一的。
 
-The JavaScript language has a built-in mechanism for doing partial application without currying. This is done using the [**function.prototype.bind**][98] method. One idiosyncrasy of this method is that it requires you to pass in the value of **this** as the first argument. If you're not doing object-oriented programming, then you can effectively ignore **this** by passing in **null**.
+JavaScript 拥有一个内置机制可以不依靠柯里化来偏函数应用。那就是 [**function.prototype.bind**][98] 方法。这个方法的一个特殊之处在于，它要求你将 **this** 作为第一个参数传入。 如果你不进行面向对象编程，那么你可以通过传入 **null** 来忽略 **this**。
 
 ```
-function giveMe3(item1, item2, item3) {
+1function giveMe3(item1, item2, item3) {
   return `
     1: ${item1}
     2: ${item2}
@@ -703,11 +685,11 @@ console.log(result);
 
 [view raw][73][partial-application-using-bind.js][74] hosted with ❤ by [GitHub][75]
 
-### Wrapping up
+### 总结
 
-I hope you enjoyed exploring functional programming in JavaScript with me! For some it may be a completely new programming paradigm, but I hope you will give it a chance. I think you'll find that your programs are easier to read and debug. Immutability will also allow you to take advantage of performance optimizations in Angular and React.
+我希望你享受探索 JavaScript 中函数式编程的过程。对一些人来说，它可能是一个全新的编程范式，但我希望你能尝试它。你会发现你的程序更易于阅读和调试。不变性还将允许你优化 Angular 和 React 的性能。
 
- _This article is based on Matt's OpenWest talk, [JavaScript the Good-er Parts][77]. [OpenWest][78] will be held July 12-15, 2017 in Salt Lake City, Utah._
+ _这篇文章基于 Matt 在 OpenWest 的演讲 [JavaScript the Good-er Parts][77]. [OpenWest][78] ~~将~~在 6/12-15 ,2017 在 Salt Lake City, Utah 举行。_
 
 --------------------------------------------------------------------------------
 
@@ -715,12 +697,14 @@ I hope you enjoyed exploring functional programming in JavaScript with me! For s
 
 Matt Banz - Matt graduated from the University of Utah with a degree in mathematics in May of 2008. One month later he landed a job as a web developer, and he's been loving it ever since! In 2013, he earned a Master of Computer Science degree from North Carolina State University. He has taught courses in web development for LDS Business College and the Davis School District Community Education program. He is currently a Senior Front-End Developer for Motorola Solutions.
 
+Matt Banz - Matt 于 2008 年五月在犹他大学获得了数学学位毕业。一个月后他得到了一份 web 开发者的工作，他从那时起就爱上了它！在 2013 年，他在北卡罗莱纳州立大学获得了计算机科学硕士学位。他在 LDS 商学院和戴维斯学区社区教育计划教授 Web 课程。他现在是就职于 Motorola Solutions 公司的高级前端开发者。
+
 --------------
 
 via: https://opensource.com/article/17/6/functional-javascript
 
 作者：[Matt Banz ][a]
-译者：[chenxinlong](https://github.com/chenxinlong)
+译者：[trnhoe](https://github.com/trnhoe)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -729,7 +713,7 @@ via: https://opensource.com/article/17/6/functional-javascript
 [1]:https://opensource.com/tags/python?src=programming_resource_menu1
 [2]:https://opensource.com/tags/javascript?src=programming_resource_menu2
 [3]:https://opensource.com/tags/perl?src=programming_resource_menu3
-[4]:https://developers.redhat.com/?intcmp=7016000000127cYAAQ&src=programming_resource_menu4
+[4]:https://developers.redhat.com/?intcmp=7016000000127cYAAQ&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;src=programming_resource_menu4
 [5]:https://gist.github.com/battmanz/62fa0a78841aa0fe29d99e80ba8db2b1/raw/fd586c5da7c936235a6d99b11cb80c9c67e4deaf/pure-function-example.js
 [6]:https://gist.github.com/battmanz/62fa0a78841aa0fe29d99e80ba8db2b1#file-pure-function-example-js
 [7]:https://github.com/
