@@ -1,17 +1,21 @@
-----
+如何跟 NASA 顶级程序员一样编程—10 条重要原则
+===
 
-![](http://upload-images.jianshu.io/upload_images/2489863-791757ae6bd313e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-**引言:** 你知道 NASA 顶级程序员如何编写重要任务代码么？为了确保代码更清楚、更安全、且更容易理解，NASA  的喷气推进实验室制定了 10 条编码规则。
+**[![rules of coding nasa](http://upload-images.jianshu.io/upload_images/2489863-791757ae6bd313e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)][1] 引言:** 你知道 NASA 顶级程序员如何编写重要任务代码么？为了确保代码更清楚、更安全、且更容易理解，NASA  的喷气推进实验室制定了 10 条编码规则。
+  
+  
 
-NASA　的开发者是编程界最有挑战性的工作之一。他们编写代码并将开发安全的关键任务应用程序作为其主要关注点。
+NASA 的开发者是编程界最有挑战性的工作之一。他们编写代码并将开发安全的关键任务应用程序作为其主要关注点。
 
 在这种情形下，遵守一些重要的编码规则是重要的。这些规则覆盖软件开发的多个方面，例如软件应该被如何编码、哪些语言特性应该被使用等。
 
-尽管很难就一个好的编码标准达成共识，NASA　的喷气推进实验室（JPL）遵守一个[编码规则](http://pixelscommander.com/wp-content/uploads/2014/12/P10.pdf)，其名为“The Power of Ten–Rules for Developing Safety Critical Code”。
+尽管很难就一个好的编码标准达成共识，NASA　的喷气推进实验室（JPL）遵守一个[编码规则][2]，其名为“The Power of Ten–Rules for Developing Safety Critical Code”。
 
 由于 JPL 长期使用 C 语言，这个规则主要是针对于 C 程序语言编写。但是这些规则也可以很容地应用到其它的程序语言。
 
 该规则由 JPL 的首席科学家 Gerard J. Holzmann 制定，这些严格的编码规则主要是聚焦于安全。
+
+![][3]
 
 NASA 的 10 条编写关键任务代码的规则：
 1. 限制所有代码为极为简单的控制流结构—不用 `goto` 语句、`setjmp` 或 `longjmp` 结构，不用间接或直接的递归调用。
@@ -38,11 +42,26 @@ NASA 的 10 条编写关键任务代码的规则：
 
 这些规则就像汽车中的安全带一样，刚开始你可能感到有一点不适，但是一段时间后就会养成习惯并且不使用它对你来说变得不可想象。
 
-[来源](http://pixelscommander.com/wp-content/uploads/2014/12/P10.pdf)
+[来源][4]
 
 此文是否对你有帮助？不要忘了在下面的评论区写下你的反馈。
 
 ---
 作者简介：
 Adarsh Verma 是 Fossbytes 的共同创始人，他是一个令人尊敬的企业家，他一直对开源、技术突破和完全保持密切关注。可以通过邮件联系他  — [adarsh.verma@fossbytes.com](mailto:adarsh.verma@fossbytes.com)
----
+
+------------------
+
+via: https://fossbytes.com/nasa-coding-programming-rules-critical/
+
+作者：[Adarsh Verma ][a]
+译者：[penghuster](https://github.com/penghuster)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+
+[a]:https://fossbytes.com/author/adarsh/
+[1]:http://fossbytes.com/wp-content/uploads/2016/06/rules-of-coding-nasa.jpg
+[2]:http://pixelscommander.com/wp-content/uploads/2014/12/P10.pdf
+[3]:https://fossbytes.com/wp-content/uploads/2016/12/learn-to-code-banner-ad-content-1.png
+[4]:http://pixelscommander.com/wp-content/uploads/2014/12/P10.pdf
