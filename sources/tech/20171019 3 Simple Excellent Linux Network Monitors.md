@@ -1,3 +1,6 @@
+translating by CherryMill
+---
+
 3 Simple, Excellent Linux Network Monitors
 ============================================================
 
