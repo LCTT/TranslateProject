@@ -1,3 +1,5 @@
+translating by firmianay
+
 Examining network connections on Linux systems
 ============================================================
 

@@ -1,3 +1,5 @@
+Translating by Chao-zhi
+ 
 8 best languages to blog about
 ============================================================
 

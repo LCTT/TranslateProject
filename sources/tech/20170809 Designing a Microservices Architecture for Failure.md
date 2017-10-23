@@ -1,3 +1,5 @@
+translating  by penghuster
+
 Designing a Microservices Architecture for Failure
 ============================================================ 
 
