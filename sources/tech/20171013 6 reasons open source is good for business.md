@@ -1,4 +1,4 @@
-6 reasons open source is good for business
+Translating by ZH1122 6 reasons open source is good for business
 ============================================================
 
 ### Here's why businesses should choose the open source model.
