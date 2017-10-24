@@ -1,3 +1,5 @@
+translating---geekpi
+
 PingCAP Launches TiDB 1.0
 ============================================================
 
