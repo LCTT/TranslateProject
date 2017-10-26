@@ -1,3 +1,5 @@
+translating---geekpi
+
 # Introducing CRI-O 1.0
 
 Last year, the Kubernetes project introduced its [Container Runtime Interface][11] (CRI) -- a plugin interface that gives kubelet (a cluster node agent used to create pods and start containers) the ability to use different OCI-compliant container runtimes, without needing to recompile Kubernetes. Building on that work, the [CRI-O][12] project ([originally known as OCID][13]) is ready to provide a lightweight runtime for Kubernetes.
