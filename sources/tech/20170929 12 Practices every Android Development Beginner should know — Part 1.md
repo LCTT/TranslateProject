@@ -1,3 +1,4 @@
+zpl1025 translating
 12 Practices every Android Development Beginner should know — Part 1
 ============================================================
 
