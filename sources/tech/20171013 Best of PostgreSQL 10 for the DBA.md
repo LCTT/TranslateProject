@@ -1,3 +1,5 @@
+translating---geekpi
+
 Best of PostgreSQL 10 for the DBA
 ============================================================
 
