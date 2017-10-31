@@ -1,3 +1,4 @@
+Translating by qhwdw
 How to run DOS programs in Linux
 ============================================================
 
