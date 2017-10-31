@@ -1,3 +1,4 @@
+Translating by qhwdw
 Getting Started Analyzing Twitter Data in Apache Kafka through KSQL
 ============================================================ 
 
