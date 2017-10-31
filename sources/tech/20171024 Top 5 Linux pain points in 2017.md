@@ -1,3 +1,5 @@
+translating---geekpi
+
 Top 5 Linux pain points in 2017
 ============================================================
 
