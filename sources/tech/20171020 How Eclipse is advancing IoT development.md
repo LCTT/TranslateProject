@@ -1,3 +1,5 @@
+apply for translating
+
 How Eclipse is advancing IoT development
 ============================================================
 
