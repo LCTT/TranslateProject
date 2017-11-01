@@ -1,3 +1,4 @@
+Translating by qhwdw
 How to set up a Postgres database on a Raspberry Pi
 ============================================================
 
