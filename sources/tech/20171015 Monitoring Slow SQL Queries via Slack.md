@@ -1,3 +1,4 @@
+Translating by qhwdw
 # Monitoring Slow SQL Queries via Slack
 
 ### A simple Go recipe for getting notified about slow SQL queries, unexpected errors and other important logs.
