@@ -1,3 +1,4 @@
+Translating by qhwdw
 # A tour of Postgres Index Types
 
 At Citus we spend a lot of time working with customers on data modeling, optimizing queries, and adding [indexes][3] to make things snappy. My goal is to be as available for our customers as we need to be, in order to make you successful. Part of that is keeping your Citus cluster well tuned and [performant][4] which [we take care][5]of for you. Another part is helping you with everything you need to know about Postgres and Citus. After all a healthy and performant database means a fast performing app and who wouldn’t want that. Today we’re going to condense some of the information we’ve shared directly with customers about Postgres indexes.
