@@ -1,3 +1,4 @@
+Translating by qhwdw
 Tips to Secure Your Network in the Wake of KRACK
 ============================================================
 
