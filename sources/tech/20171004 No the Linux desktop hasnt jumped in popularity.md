@@ -1,4 +1,4 @@
-No, the Linux desktop hasn't jumped in popularity
+Translating by qhwdw No, the Linux desktop hasn't jumped in popularity
 ============================================================
 
 Stories have been circulating that the Linux desktop had jumped in popularity and was used more than macOS. Alas, it's not so.
