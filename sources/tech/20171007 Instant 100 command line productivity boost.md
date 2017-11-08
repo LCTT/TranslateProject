@@ -1,4 +1,4 @@
-Instant +100% command line productivity boost
+Translating by qhwdw Instant +100% command line productivity boost
 ============================================================
 
 Being productive is fun.
