@@ -1,4 +1,4 @@
-Learn how to program in Python by building a simple dice game
+Translating by qhwdw Learn how to program in Python by building a simple dice game
 ============================================================
 
 ### Python is a good language for young and old, with or without any programming experience.
