@@ -1,3 +1,4 @@
+translating by hkurj
 What every software engineer should know about search
 ============================================================
 
