@@ -1,4 +1,4 @@
-[Considering Python's Target Audience][40]
+Translating by qhwdw [Considering Python's Target Audience][40]
 ============================================================
 
 Who is Python being designed for?
