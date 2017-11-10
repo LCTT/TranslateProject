@@ -1,4 +1,4 @@
-How to implement cloud-native computing with Kubernetes
+Translating by qhwdw How to implement cloud-native computing with Kubernetes
 ============================================================
 
 ![](https://insights.hpe.com/content/hpe-nxt/en/articles/2017/10/how-to-implement-cloud-native-computing-with-kubernetes/_jcr_content/article-image.transform/1043x496-crop/image.jpeg)
