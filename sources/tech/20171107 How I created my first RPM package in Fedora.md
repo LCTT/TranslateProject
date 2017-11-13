@@ -1,4 +1,4 @@
-# How I created my first RPM package in Fedora
+Translating by qhwdw # How I created my first RPM package in Fedora
 
 ![](https://i0.wp.com/blog.justinwflory.com/wp-content/uploads/2017/11/newpackage.png?resize=1024%2C433&ssl=1)
 
