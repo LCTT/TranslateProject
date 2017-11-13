@@ -1,4 +1,4 @@
-How to manage Docker containers in Kubernetes with Java
+Translating by qhwdw How to manage Docker containers in Kubernetes with Java
 ==========================
 
 
