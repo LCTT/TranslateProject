@@ -1,3 +1,4 @@
+Translating By name1e5s
 The long goodbye to C
 ============================================================
 
