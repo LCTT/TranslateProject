@@ -1,4 +1,4 @@
-LinchPin: A simplified cloud orchestration tool using Ansible
+Translating by qhwdw LinchPin: A simplified cloud orchestration tool using Ansible
 ============================================================
 
 ### Launched in late 2016, LinchPin now has a Python API and a growing community.
