@@ -1,3 +1,5 @@
+translated---geekpi
+
 AWS adopts home-brewed KVM as new hypervisor
 ============================================================
 
