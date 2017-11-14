@@ -1,4 +1,4 @@
-How to use cron in Linux
+Translating by qhwdw How to use cron in Linux
 ============================================================
 
 ### No time for commands? Scheduling tasks with cron means programs can run but you don't have to stay up late.
