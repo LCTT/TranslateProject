@@ -1,100 +1,93 @@
-怎么去使用 Kubernetes 实现私有云计算
+原生云计算：你所不知道的 Kubernetes 特性和工具
 ============================================================
 
-![](https://insights.hpe.com/content/hpe-nxt/en/articles/2017/10/how-to-implement-cloud-native-computing-with-kubernetes/_jcr_content/article-image.transform/1043x496-crop/image.jpeg)
+![](https://www.hpe.com/content/dam/hpe/insights/articles/2017/10/how-to-implement-cloud-native-computing-with-kubernetes/featuredStory/How-to-implement-cloud-native-computing-with-containers-and-Kubernetes-1742.jpg.transform/nxt-1043x496-crop/image.jpeg)
 
-开源容器倡导者和私有云计算基金会的代表说，Kubernetes 和容器可以在降低程序员和系统管理员成本（costs）的同时加速部署进程，从不被看好的 Kubernetes 特性（像命令空间）开始，去利用 Kubernetes 和它的相关工具运行一个私有云架构
+> 开放容器计划（OCI）和原生云计算基金会（CNCF）的代表说，Kubernetes 和容器可以在降低程序员和系统管理成本的同时加速部署进程，从被忽视的 Kubernetes 特性（比如命令空间）开始，去利用 Kubernetes 和它的相关工具运行一个原生云架构。
 
-[Kubernetes][2] 不止是一个云容器管理器。正如 Steve Pousty，他是[Red Hat][3]支持的[OpenShift][4]的首席开发者，在[Linux 基金会][5]的[开源提交者][6]的一个报告中解释的那样，Kubernetes 提供作为一个 “使用容器进行私有云计算的一个通用操作面（common operating plane）”。
+[Kubernetes][2] 不止是一个云容器管理器。正如 Steve Pousty，他是 [Red Hat][3] 支持的 [OpenShift][4] 的首席开发者，在 [Linux 基金会][5]的[开源峰会][6]上的讲演中解释的那样，Kubernetes 提供了一个 “使用容器进行原生云计算的通用操作平台”。
 
-Pousty 的意思是什么？让我们复习一下基础知识。
+Pousty 的意思是什么？先让我们复习一下基础知识。
 
-[开源容器倡议][7] (OCI) 和 [私有云计算基金会][8] (CNCF) 的执行董事 Chris Aniszczyk 的解释是，“私有云计算使用一个开源软件栈去部署作为微服务的应用程序，打包每一个部分到它自己的容器中，并且动态排布这些容器去优化资源使用”，[Kubernetes 关注私有云计算的最新要素][9]。最终将导致 IT 中很大的一部分发生转变，从服务器到虚拟机到构建包 （buildpacks） 到现在的 [容器][10]。
+[开源容器计划][7]（OCI）和 [原生云计算基金会][8] （CNCF）的执行董事 Chris Aniszczyk 的解释是，“原生云计算使用开源软件栈将应用程序部署为微服务，打包每一个部分到其容器中，并且动态地编排这些容器以优化资源使用”。[Kubernetes 一直在关注着原生云计算的最新要素][9]。这将最终将导致 IT 中很大的一部分发生转变，如从服务器到虚拟机，从<ruby>构建包<rt>buildpack</rt></ruby>到现在的 [容器][10]。
 
-会议主持人说，数据中心的演变将节省相当可观的成本， 部分原因是它需要更少的专职员工。例如，据 Aniszczyk 说，通过使用 Kubernetes，谷歌每 10000 台机器仅需要一个网站可靠性工程师（译者注：即SRE）。
+会议主持人表示，数据中心的演变将节省相当可观的成本，部分原因是它需要更少的专职员工。例如，据 Aniszczyk 说，通过使用 Kubernetes，谷歌每 10000 台机器仅需要一个网站可靠性工程师（LCTT 译注：即 SRE）。
 
-实际上，系统管理员可以利用新的 Kubernetes 相关的工具并可以去开发喜欢的功能。
+实际上，系统管理员可以利用新的 Kubernetes 相关的工具的优势，并了解那些被低估的功能。
 
-### 构建一个私有云平台
+### 构建一个原生云平台
 
-Pousty 解释说，“对于 Red Hat， Kubernetes 是云 Linux 内核。它是每个人都可以在上面构建的基础设施”。
+Pousty 解释说，“对于 Red Hat 来说，Kubernetes 是云 Linux 的内核。它是每个人都可以构建于其上的基础设施”。
 
-例如，假如你在一个容器镜像中有一个应用程序。你怎么知道它是安全的呢？ Red Hat 和其它的公司使用 [OpenSCAP][11]，它是基于 [安全内容自动化协议][12] (SCAP)的，是使用标准化的方式去表达和操作安全数据的一个规范。OpenSCAP 项目提供了一个开源的强化指南和配置基准。你选择一个合适的安全策略，然后，使用 OpenSCAP 认可的安全工具去使某些在你的 Kubernetes 控制的容器中的程序遵守这些定制的安全标准。
+例如，假如你在一个容器镜像中有一个应用程序。你怎么知道它是安全的呢？ Red Hat 和其它的公司使用 [OpenSCAP][11]，它是基于 <ruby>[安全内容自动化协议][12]<rt>Security Content Automation Protocol</rt></ruby>（SCAP）的，是使用标准化的方式表达和操作安全数据的一个规范。OpenSCAP 项目提供了一个开源的强化指南和配置基准。选择一个合适的安全策略，然后，使用 OpenSCAP 认可的安全工具去使某些由 Kubernetes 控制的容器中的程序遵守这些定制的安全标准。
 
-还没有搞明白怎么去使用容器？好吧，我现在指导你。
+Red Hat 将使用<ruby>[原子扫描][13]<rt>Atomic Scan</rt></ruby>来自动处理这个过程；它借助 OpenSCAP <ruby>提供者<rt>provider</rt></ruby>来扫描容器镜像中已知的安全漏洞和策略配置问题。原子扫描会以只读方式加载文件系统。这些通过扫描的容器，会在一个可写入的目录存放扫描器的输出。
 
-[傻瓜式获得容器（Get Containers for Dummies）][1]
+Pousty 指出，这种方法有几个好处，主要是，“你可以扫描一个容器镜像而不用实际运行它”。因此，如果在容器中有糟糕的代码或有缺陷的安全策略，它不会影响到你的系统。
 
-Red Hat 将使用[原子扫描（Atomic Scan）][13]自动处理这个过程；它用 OpenSCAP 提供的工具去扫描容器镜像中的已知安全漏洞和策略配置问题。原子扫描加载了只读的文件系统。这些通过扫描的容器，随着一个可写入扫描器的目录一起输出。
-
-Pousty 指出，这种方法有几个好处，主要是，“你可以在不实际运行它的情况下，去扫描一个容器镜像”。因此，如果在容器中有糟糕的代码或有缺陷的安全策略，它不会对你的系统做任何事情。
-
-原子扫描比手动运行 OpenSCAP 快很多。 因为，容器从启用到消毁可能就在几分钟或几小时内，原子扫描允许 Kubernetes 用户在容器启用期间去保持容器安全，而不用花费太多的系统管理时间。
+原子扫描比手动运行 OpenSCAP 快很多。 因为容器从启用到消毁可能就在几分钟或几小时内，原子扫描允许 Kubernetes 用户在（很快的）容器生命期间保持容器安全，而不是在更缓慢的系统管理时间跨度里进行。
 
 ### 关于工具
 
-帮助 Kubernetes 进行大部分的系统管理和开发运营（DevOps）操作的另一个工具是 [CRI-O][14]。这是一个基于 OCI 实现的 [Kubernetes 容器运行时接口][15]。CRI-O 是一个守护进程， Kubernetes 可以用于运行存储在 Docker registries 中的容器镜像，Dan Walsh 解释说，它是 Red Hat 的顾问工程师和 [SELinux][16] 项目领导者。它允许你直接从 Kubernetes 中启动容器镜像，而不用花费时间和 CPU 周期在 [Docker 引擎][17] 上启动。并且它的镜像格式是与容器无关的。
+帮助系统管理员和 DevOps 管理大部分 Kubernetes 操作的另一个工具是 [CRI-O][14]。这是一个基于 OCI 实现的 [Kubernetes 容器运行时接口][15]。CRI-O 是一个守护进程， Kubernetes 可以用于运行存储在 Docker 仓库中的容器镜像，Dan Walsh 解释说，他是 Red Hat 的顾问工程师和 [SELinux][16] 项目领导者。它允许你直接从 Kubernetes 中启动容器镜像，而不用花费时间和 CPU 处理时间在 [Docker 引擎][17] 上启动。并且它的镜像格式是与容器无关的。
 
-在 Kubernetes 中， [kubelets][18] 管理 pods、或者容器的集群。使用 CRI-O，Kubernetes 和 它的 kubelets 可以管理整个容器的生命周期。这个工具也不是和 Docker 镜像结合在一起的。你也可以使用新的 [OCI 镜像格式][19] 和 [CoreOS 的 rkt][20] 容器镜像。
+在 Kubernetes 中， [kubelet][18] 管理 pod（容器集群）。使用 CRI-O，Kubernetes 及其 kubelet 可以管理容器的整个生命周期。这个工具也不是和 Docker 镜像捆绑在一起的。你也可以使用新的 [OCI 镜像格式][19] 和 [CoreOS 的 rkt][20] 容器镜像。
 
-同时，这些工具正在成为一个 Kubernetes 栈：Orchestrator、[容器运行时接口][21] (CRI)、和 CRI-O。Kubernetes 首席工程师 Kelsey Hightower 说，“我们实际上不需要这么多的容器运行时—无论它是 Docker 还是 [rkt][22]。仅需要给我们一个到内核的 API”，结果，对这些技术人员的承诺，是推动容器比以往更快发展的强大动力。
+同时，这些工具正在成为一个 Kubernetes 栈：编排系统、[容器运行时接口][21] （CRI）和 CRI-O。Kubernetes 首席工程师 Kelsey Hightower 说，“我们实际上不需要这么多的容器运行时——无论它是 Docker 还是 [rkt][22]。只需要给我们一个到内核的 API 就行”，这个结果是这些技术人员的承诺，是推动容器比以往更快发展的强大动力。
 
-Kubernetes 也可以加速构建容器镜像。直到最近，这是 [构建容器的三种方法][23]。第一种方法是通过一个 Docker 或者 CoreOS 去构建容器。第二种方法是注入客户代码到一个预构建镜像中。最后一种方法是，资产生成管理（Asset Generation Pipelines）使用容器去编译那些资产（assets）包含到随后生成的镜像中，它使用了 Dockers 的[多阶段构建][24]去构建镜像。
+Kubernetes 也可以加速构建容器镜像。目前为止，有[三种方法来构建容器][23]。第一种方法是通过一个 Docker 或者 CoreOS 去构建容器。第二种方法是注入定制代码到一个预构建镜像中。最后一种方法是，<ruby>资产生成管道<rt>Asset Generation Pipeline</rt></ruby>使用容器去编译那些<ruby>资产<rt>asset</rt></ruby>，然后其被包含到使用 Docker 的<ruby>[多阶段构建][24]<rt>Multi-Stage Build</rt></ruby>所构建的随后镜像中。
 
-现在，还有一个 Kubernetes 的私有方法：Red Hat 的 [Buildah][25]， [一个脚本化的 shell 工具][26] 用于快速高效地构建 OCI 兼容的镜像和容器。Buildah 降低了容器环境的学习曲线（learning curve），简化了创建、构建和更新镜像的难度。Pousty 说。你可以使用它和 Kubernetes 一起去创建和推动容器基于一个应用程序上的调用自动化。Buildah 也节省系统资源，因为它不需要容器运行时守护进程。
+现在，还有一个 Kubernetes 原生的方法：Red Hat 的 [Buildah][25]， 这是[一个脚本化的 shell 工具][26] 用于快速、高效地构建 OCI 兼容的镜像和容器。Buildah 降低了容器环境的学习曲线，简化了创建、构建和更新镜像的难度。Pousty 说。你可以使用它和 Kubernetes 一起基于应用程序的调用来自动创建和使用容器。Buildah 也更节省系统资源，因为它不需要容器运行时守护进程。
 
-因此，比起真实地引导一个容器和容器内的按步骤操作，Pousty 说，“你加载一个文件系统，在你的机器上做一些正常操作，如果它是一个常规的文件系统，并且在最后去提交”。
+因此，比起真实地引导一个容器和在容器内按步骤操作，Pousty 说，“挂载该文件系统，就如同它是一个常规的文件系统一样做一些正常操作，并且在最后提交”。
 
-这意味着你可以从一个 Registry 中销毁一个镜像，创建它匹配的容器，并且优化它。然后，你可以使用 Kubernetes 中的 Buildah 在你需要时去创建一个新的运行镜像。最终结果是，他说，运行 Kubernetes 管理的容器化应用程序比以往速度更快，需要的资源更少。
+这意味着你可以从一个仓库中拉取一个镜像，创建它所匹配的容器，并且优化它。然后，你可以使用 Kubernetes 中的 Buildah 在你需要时去创建一个新的运行镜像。最终结果是，他说，运行 Kubernetes 管理的容器化应用程序比以往速度更快，需要的资源更少。
 
-### 你不知道的 Kubernetes 所拥有的特性
+### 你所不知道的 Kubernetes 拥有的特性
 
 你不需要在其它地方寻找工具。Kubernetes 有几个被低估的特性。
 
- 根据谷歌云全球产品经理 Allan Naim 的说法，其中一个是，[Kubernetes 命名空间][27]。Naim 在“Kubernetes 最佳实践”中的开源总结上的演讲中说，“很少有人使用命名空间，这是一个失误（mistake）”
+根据谷歌云全球产品经理 Allan Naim 的说法，其中一个是 [Kubernetes 命名空间][27]。Naim 在开源峰会上谈及 “Kubernetes 最佳实践”，他说，“很少有人使用命名空间，这是一个失误。”
 
-“命名空间是区分一个单个的 Kubernetes 集群到多个虚拟集群的方法”，Naim 说。例如，“你可以认为命名空间就是家族名（family names）”，因此，如果 “Simth” 标识一个家族，一个成员，Steve Smith，它仅是“Steve”，但是，家族范围之外的，它就是“Steve Smith” 也或许为“来自 Chicago 的 Steve Smith”。
+“命名空间是将一个单个的 Kubernetes 集群分成多个虚拟集群的方法”，Naim 说。例如，“你可以认为命名空间就是<ruby>姓氏<rt>family name</rt></ruby>”，因此，假如说 “Simth” 用来标识一个家族，如果有个成员 Steve Smith，他的名字就是 “Steve”，但是，家族范围之外的，它就是 “Steve Smith” 或称 “来自 Chicago 的 Steve Smith”。
 
-严格来说，“命名空间是一个逻辑的分区技术，它允许一个 Kubernetes 集群被多个用户、用户团队或者在多个应用程序上不能混淆的一个用户使用。Naim 解释说，“每个用户、用户团队、或者可以存在于它的命名空间中的应用程序，与集群中的其他用户是隔离的，并且操作它就像你是这个集群的唯一用户一样。”
+严格来说，“命名空间是一个逻辑分区技术，它允许一个 Kubernetes 集群被多个用户、用户团队或者一个用户的多个不能混淆的应用程序所使用。Naim 解释说，“每个用户、用户团队、或者应用程序都可以存在于它的命名空间中，与集群中的其他用户是隔离的，并且可以像你是这个集群的唯一用户一样操作它。”
 
-Practically说，你可以使用命名空间去构建一个企业的多个业务/技术整体进入 Kubernetes。例如，云架构可以通过映射产品、位置、团队和成本中心为命名空间，去定义公司命名空间策略。
+Practically 说，你可以使用命名空间去构建一个企业的多个业务/技术的实体进入 Kubernetes。例如，云架构可以通过映射产品、地点、团队和成本中心为命名空间，从而定义公司的命名空间策略。
 
-Naim 建议的另外的方法是，去使用命名空间区分软件开发流程（pipelines）到分离的命名空间中。如测试、质量保证、分段（staging）和成品。或者命名空间可以用于管理单独的客户。例如，你可以为每个客户、客户项目、或者客户业务单元去创建一个命名空间。它可以更容易地区分项目，避免重用相同名字的资源。
+Naim 建议的另外的方法是，去使用命名空间将软件开发<ruby>流程<rt>pipeline</rt></ruby>划分到分离的命名空间中，如测试、质量保证、<ruby>预演<rt>staging</rt></ruby>和成品等常见阶段。或者命名空间也可以用于管理单独的客户。例如，你可以为每个客户、客户项目、或者客户业务单元去创建一个单独的命名空间。它可以更容易地区分项目，避免重用相同名字的资源。
 
-然而，Kubernetes 现在还没有提供一个跨命名空间访问的控制机制。因此，Naim 建议你不要使用这种方法去对外公开程序。还要注意的是，命名空间也不是一个管理的“万能药”。例如，你不能将命名空间嵌套在另一个命名空间中。另外，也没有跨命名空间的强制的安全机制。
+然而，Kubernetes 现在还没有提供一个跨命名空间访问的控制机制。因此，Naim 建议你不要使用这种方法去对外公开程序。还要注意的是，命名空间也不是一个管理的“万能药”。例如，你不能将命名空间嵌套在另一个命名空间中。另外，也没有跨命名空间的强制安全机制。
 
 尽管如此，小心地使用命名空间，还是很有用的。
 
-### 友情提示
+### 以人为中心的建议
 
-转换到较深奥的（deep）技术去做项目管理，Pousty 建议，在转移到私有云和微服务架构时，在你的团队中使用一个微服务操作人员。“如果你去做微服务，你的团队将结束使用 Ops-y 工作。并且，不去使用已经知道这种操作的人是愚蠢的行为”，他说。“你需要一个正确的团队核心能力。我不想开发人员重新使用 Operations Wheel”。
+从谈论较深奥的技术换到项目管理。Pousty 建议，在转移到原生云和微服务架构时，在你的团队中要有一个微服务操作人员。“如果你去做微服务，你的团队最终做的就是 Ops-y。并且，不去使用已经知道这种操作的人是愚蠢的行为”，他说。“你需要一个正确的团队核心能力。我不想开发人员重新打造运维的轮子”。
 
-而是，将你的工作流彻底地改造成一个能够使用容器和云的过程，对此，Kubernetes 是很好的。
+而是，将你的工作流彻底地改造成一个能够使用容器和云的过程，对此，Kubernetes 是很适用的。
 
-### 使用 Kubernetes 的私有云计算：领导者的课程
+### 使用 Kubernetes 的原生云计算：领导者的课程
 
-*   迅速扩大的私有云生态系统。寻找可以扩展你使用容器的方法的工具。
-
+*   迅速扩大的原生云生态系统。寻找可以扩展你使用容器的方法的工具。
 *   探索鲜为人知的 Kubernetes 特性，如命名空间。它们可以改善你的组织和自动化程度。
-
 *   确保部署到容器的开发团队有一个 Ops 人员参与。否则，冲突将不可避免。
 
 --------------------------------------------------------------------------------
 
 作者简介：
 
-Steven J. Vaughan-Nichols, CEO, Vaughan-Nichols & Associates 
+Steven J. Vaughan-Nichols,  Vaughan-Nichols & Associates 的 CEO
 
-Steven J. Vaughan-Nichols, 又名叫 sjvn，是一个技术方面的作家，自 CP/M-80 以来一直从事与前沿技术、PC 操作系统等商业技术的写作；300bps 是非常快的因特网连接； WordStar 是最先进的文字处理程序；而且我喜欢它。他的作品已经发布在了技术含量非常高的主流出版社 (Washington Post, San Francisco Chronicle, BusinessWeek)的出版物上（IEEE Computer、 ACM Network、 Byte)，去商业化推广 (eWEEK、InformationWeek、ZDNet) 流行的技术 (Computer Shopper、PC Magazine、PC World)。
+Steven J. Vaughan-Nichols，即 sjvn，是一个技术方面的作家，从 CP/M-80 还是前沿技术、PC 操作系统、300bps 是非常快的因特网连接、WordStar 是最先进的文字处理程序的那个时候开始，一直从事于商业技术的写作，而且喜欢它。他的作品已经发布在了从高科技出版物（IEEE Computer、ACM Network、 Byte）到商业出版物（eWEEK、 InformationWeek、ZDNet），从大众科技（Computer Shopper、PC Magazine、PC World）再到主流出版商（Washington Post、San Francisco Chronicle、BusinessWeek) 等媒体之上。
 
 ---------------------
 
-
 via: https://insights.hpe.com/articles/how-to-implement-cloud-native-computing-with-kubernetes-1710.html
 
-作者：[ Steven J. Vaughan-Nichols][a]
+作者：[Steven J. Vaughan-Nichols][a]
 译者：[qhwdw](https://github.com/qhwdw)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
