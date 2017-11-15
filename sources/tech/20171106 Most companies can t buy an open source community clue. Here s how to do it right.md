@@ -1,3 +1,5 @@
+translating---geekpi
+
 Most companies can't buy an open source community clue. Here's how to do it right
 ============================================================
 
