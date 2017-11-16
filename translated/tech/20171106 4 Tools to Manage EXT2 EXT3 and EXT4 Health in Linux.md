@@ -1,30 +1,29 @@
 Linux 中管理 EXT2、 EXT3 和 EXT4 健康状况的 4 个工具
 ============================================================
 
-
-一个文件系统是一个在电脑上帮你去管理数据怎么去存储和检索的数据结构。一个文件系统也可以认为是在磁盘上的物理（或扩展）分区。如果它没有很好地被维护或定期监视，它可能在长期运行中出现各种各样的错误或损坏。
+文件系统是一个在计算机上帮你去管理数据怎么去存储和检索的数据结构。文件系统也可以被视作是磁盘上的物理（或扩展）分区。如果它没有很好地被维护或定期监视，它可能在长期运行中出现各种各样的错误或损坏。
 
 这里有几个可能导致文件系统出问题的因素：系统崩溃、硬件或软件故障、 有问题的驱动和程序、不正确的优化、大量的数据过载加上一些小故障。
 
-这其中的任何一个问题都可以导致 Linux 不能完美地去加载（或卸载）一个文件系统，从而导致系统故障。
+这其中的任何一个问题都可以导致 Linux 不能顺利地挂载（或卸载）一个文件系统，从而导致系统故障。
 
 扩展阅读：[Linux 中判断文件系统类型（Ext2, Ext3 或 Ext4）的 7 种方法][7]
 
-另外，一个受损的文件系统运行在你的系统上，可能导致操作系统中的组件或用户应用程序的运行时错误，它可能会进一步扩大到服务器数据的丢失。为避免文件系统错误或损坏，你需要去持续关注它的健康状况。
+另外，受损的文件系统运行在你的系统上可能导致操作系统中的组件或用户应用程序的运行时错误，它可能会进一步扩大到服务器数据的丢失。为避免文件系统错误或损坏，你需要去持续关注它的健康状况。
 
-在这篇文章中，我们将介绍去监视或维护一个 ext2、ext3 和 ext4 文件系统健康状况的工具。在这里描述的所有工具都需要一个 root 用户权限，因此，需要使用 [sudo 命令][8]去运行它们。
+在这篇文章中，我们将介绍监视或维护一个 ext2、ext3 和 ext4 文件系统健康状况的工具。在这里描述的所有工具都需要 root 用户权限，因此，需要使用 [sudo 命令][8]去运行它们。
 
 ### 怎么去查看 EXT2/EXT3/EXT4 文件系统信息
 
-dumpe2fs 是一个命令行工具，用于去转储 ext2/ext3/ext4 文件系统信息，音味着它可以显示设备上文件系统的超级块和块组信息。
+`dumpe2fs` 是一个命令行工具，用于去转储 ext2/ext3/ext4 文件系统信息，这意味着它可以显示设备上文件系统的超级块和块组信息。
 
-在运行 dumpe2fs 之前，先去运行 [df -hT][9] 命令，确保知道文件系统的设备名。
+在运行 `dumpe2fs` 之前，先去运行 [df -hT][9] 命令，确保知道文件系统的设备名。
 
 ```
 $ sudo dumpe2fs /dev/sda10
 ```
 
-##### 示例输出
+**示例输出：**
 
 ```
 dumpe2fs 1.42.13 (17-May-2015)
@@ -79,26 +78,26 @@ Journal sequence:         0x00580f0c
 Journal start:            12055
 ```
 
-你可以通过 `-b` 标记去显示文件系统中的任何保留块，比如坏块（无输出说明没有坏块）：
+你可以通过 `-b` 选项来显示文件系统中的任何保留块，比如坏块（无输出说明没有坏块）：
 
 ```
-$ dumpe2fs -b
+$ sudo dumpe2fs -b
 ```
 
 ### 检查 EXT2/EXT3/EXT4 文件系统的错误
 
-e2fsck 是用于去检查 ext2/ext3/ext4 文件系统的错误，并且 fsck 检查并可选去 [修复一个 Linux 文件系统][10]；它实际上是底层 Linux 提供的一系列文件系统检查器 （示例中的fsck.fstype、fsck.ext3、fsck.sfx 等等） 的前端程序。
+`e2fsck` 用于去检查 ext2/ext3/ext4 文件系统的错误。`fsck` 可以检查并且可选地 [修复 Linux 文件系统][10]；它实际上是底层 Linux 提供的一系列文件系统检查器 （fsck.fstype，例如 fsck.ext3、fsck.sfx 等等） 的前端程序。
 
-记住，在系统引导时，Linux去检查 /etc/fstab 配置文件中的分区，并自动运行 e2fsck/fsck。在一个文件系统没有被干净地卸载之后，一般也会运行它。
+记住，在系统引导时，Linux 会为 `/etc/fstab` 配置文件中被标为“检查”的分区自动运行 `e2fsck`/`fsck`。而在一个文件系统没有被干净地卸载时，一般也会运行它。
 
-注意：不要在已加载的文件系统上运行 e2fsck 或 fsck，在你运行这些工具之前，首先要去卸载一个分区，如下所示。
+注意：不要在已挂载的文件系统上运行 e2fsck 或 fsck，在你运行这些工具之前，首先要去卸载分区，如下所示。
 
 ```
 $ sudo unmount /dev/sda10
 $ sudo fsck /dev/sda10
 ```
 
-或者，使用 `-V` 开关去启用详细输出，并且使用 `-t` 去指定文件系统类型，像这样：
+此外，可以使用 `-V` 开关去启用详细输出，使用 `-t` 去指定文件系统类型，像这样：
 
 ```
 $ sudo fsck -Vt ext4 /dev/sda10
@@ -106,7 +105,7 @@ $ sudo fsck -Vt ext4 /dev/sda10
 
 ### 调优 EXT2/EXT3/EXT4 文件系统
 
-我们前面提到过，导致文件系统损坏的其中一个因素就是不正确的调优。你可以使用 tune2fs 实用程序去改变 ext2/ext3/ext4 文件系统的可调优参数，像下面讲的那样。
+我们前面提到过，导致文件系统损坏的其中一个因素就是不正确的调优。你可以使用 `tune2fs` 实用程序去改变 ext2/ext3/ext4 文件系统的可调优参数，像下面讲的那样。
 
 去查看文件系统的超级块，包括参数的当前值，使用 `-l` 选项，如下所示。
 
@@ -114,7 +113,7 @@ $ sudo fsck -Vt ext4 /dev/sda10
 $ sudo tune2fs -l /dev/sda10
 ```
 
-##### 示例输出
+**示例输出：**
 
 ```
 tune2fs 1.42.13 (17-May-2015)
@@ -164,7 +163,7 @@ Directory Hash Seed:      9da5dafb-bded-494d-ba7f-5c0ff3d9b805
 Journal backup:           inode blocks
 ```
 
-接下来，使用 `-c` 标识，你可以设置文件系统通过 e2fsck 检查后加载的分区数量。这个命令指示系统每加载 4 个分区之后，去对 `/dev/sda10` 运行 e2fsck。
+接下来，使用 `-c` 标识，你可以设置文件系统在挂载多少次后将进行 `e2fsck` 检查。下面这个命令指示系统每挂载 4 次之后，去对 `/dev/sda10` 运行 `e2fsck`。
 
 ```
 $ sudo tune2fs -c 4 /dev/sda10
@@ -172,7 +171,7 @@ tune2fs 1.42.13 (17-May-2015)
 Setting maximal mount count to 4
 ```
 
-你也可以在两个文件系统检查之间，使用 `-i` 选项去定义一个时间。下列的命令在文件系统检查之间设置了一个 2 天的时间间隔。
+你也可以使用 `-i` 选项定义两次文件系统检查的时间间隔。下列的命令在两次文件系统检查之间设置了一个 2 天的时间间隔。
 
 ```
 $ sudo tune2fs  -i  2d  /dev/sda10
@@ -180,13 +179,13 @@ tune2fs 1.42.13 (17-May-2015)
 Setting interval between checks to 172800 seconds
 ```
 
-现在，如果你运行下面的命令，对 `/dev/sda10` 已经设置了文件系统检查的时间间隔。
+现在，如果你运行下面的命令，你可以看到对 `/dev/sda10` 已经设置了文件系统检查的时间间隔。
 
 ```
 $ sudo tune2fs -l /dev/sda10
 ```
 
-##### 示例输出
+**示例输出：**
 
 ```
 Filesystem created:       Sun Jul 31 16:19:36 2016
@@ -211,15 +210,15 @@ Directory Hash Seed:      9da5dafb-bded-494d-ba7f-5c0ff3d9b805
 Journal backup:           inode blocks
 ```
 
-去改变缺省的日志参数，使用 `-J` 选项。这个选项也有一个子选项： size=journal-size （设置日志的大小）、device=external-journal （指定日志存储的设备）和 location=journal-location （定义日志的位置）。
+要改变缺省的日志参数，可以使用 `-J` 选项。这个选项也有子选项： `size=journal-size` （设置日志的大小）、`device=external-journal` （指定日志存储的设备）和 `location=journal-location` （定义日志的位置）。
 
-注意，这里仅可以为文件系统设置一个日志大小或设备选项：
+注意，这里一次仅可以为文件系统设置一个日志大小或设备选项：
 
 ```
 $ sudo tune2fs -J size=4MB /dev/sda10
 ```
 
-最后，同样重要的是，可以去使用 `-L` 选项设置文件系统的卷标签，如下所示。
+最后，同样重要的是，可以去使用 `-L` 选项设置文件系统的卷标，如下所示。
 
 ```
 $ sudo tune2fs -L "ROOT" /dev/sda10
@@ -227,15 +226,15 @@ $ sudo tune2fs -L "ROOT" /dev/sda10
 
 ### 调试 EXT2/EXT3/EXT4 文件系统
 
-debugfs 是一个简单的、交互式的、基于 ext2/ext3/ext4 文件系统的命令行调试器。它允许你去交互式地修改文件系统参数。输入 `"?"`，去查看子命令或要求。
+`debugfs` 是一个简单的、交互式的、基于 ext2/ext3/ext4 文件系统的命令行调试器。它允许你去交互式地修改文件系统参数。输入 `?` 查看子命令或请求。
 
 ```
 $ sudo debugfs /dev/sda10
 ```
 
-缺省情况下，文件系统将以读写模式打开，使用 `-w` 标识去以读写模式打开它。使用 `-c` 选项以灾难（catastrophic）模式打开它。
+缺省情况下，文件系统将以只读模式打开，使用 `-w` 标识去以读写模式打开它。使用 `-c` 选项以灾难（catastrophic）模式打开它。
 
-##### 示例输出
+**示例输出：**
 
 ```
 debugfs 1.42.13 (17-May-2015)
@@ -256,13 +255,13 @@ change_root_directory, chroot
 ....
 ```
 
-去展示未使用空间的碎片，必须使用  `freefrag`，像这样。
+要展示未使用空间的碎片，使用 `freefrag` 请求，像这样：
 
 ```
 debugfs: freefrag
 ```
 
-##### 示例输出
+**示例输出：**
 
 ```
 Device: /dev/sda10
@@ -297,24 +296,20 @@ Extent Size Range :  Free extents   Free Blocks  Percent
 debugfs:  
 ```
 
-通过去简单浏览提供的详细描述，你可以探索更多的其它需求，比如，创建或删除文件或目录，改变当前工作目录等等。去退出 debugfs，使用 `q`。
+通过去简单浏览它所提供的简要描述，你可以试试更多的请求，比如，创建或删除文件或目录，改变当前工作目录等等。要退出 `debugfs`，使用 `q`。
 
 现在就这些！我们收集了不同分类下的相关文章，你可以在里面找到对你有用的内容。
 
-#### 文件系统使用信息：
+**文件系统使用信息：**
 
 1.  [12 Useful “df” Commands to Check Disk Space in Linux][1]
-
 2.  [Pydf an Alternative “df” Command to Check Disk Usage in Different Colours][2]
-
 3.  [10 Useful du (Disk Usage) Commands to Find Disk Usage of Files and Directories][3]
 
-#### 检查磁盘或分区健康状况：
+**检查磁盘或分区健康状况：**
 
 1.  [3 Useful GUI and Terminal Based Linux Disk Scanning Tools][4]
-
 2.  [How to Check Bad Sectors or Bad Blocks on Hard Disk in Linux][5]
-
 3.  [How to Repair and Defragment Linux System Partitions and Directories][6]
 
 维护一个健康的文件系统可以提升你的 Linux 系统的整体性能。如果你有任何问题或更多的想法，可以使用下面的评论去分享。
@@ -325,7 +320,7 @@ via: https://www.tecmint.com/manage-ext2-ext3-and-ext4-health-in-linux/
 
 作者：[Aaron Kili][a]
 译者：[qhwdw](https://github.com/qhwdw)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -336,8 +331,8 @@ via: https://www.tecmint.com/manage-ext2-ext3-and-ext4-health-in-linux/
 [4]:https://www.tecmint.com/linux-disk-scanning-tools/
 [5]:https://www.tecmint.com/check-linux-hard-disk-bad-sectors-bad-blocks/
 [6]:https://www.tecmint.com/defragment-linux-system-partitions-and-directories/
-[7]:https://www.tecmint.com/find-linux-filesystem-type/
-[8]:https://www.tecmint.com/su-vs-sudo-and-how-to-configure-sudo-in-linux/
+[7]:https://linux.cn/article-8289-1.html
+[8]:https://linux.cn/article-8278-1.html
 [9]:https://www.tecmint.com/how-to-check-disk-space-in-linux/
 [10]:https://www.tecmint.com/defragment-linux-system-partitions-and-directories/
 [11]:https://www.tecmint.com/author/aaronkili/
