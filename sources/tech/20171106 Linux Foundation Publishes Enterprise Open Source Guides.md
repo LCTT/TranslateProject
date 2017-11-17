@@ -1,4 +1,4 @@
-# Linux Foundation Publishes Enterprise Open Source Guides
+Translating by qhwdw# Linux Foundation Publishes Enterprise Open Source Guides
 
 ![](https://adtmag.com/articles/2017/11/06/~/media/ECG/VirtualizationReview/Images/introimages2014/GEN1BottomShotofOpenBookpages.ashx)
 
