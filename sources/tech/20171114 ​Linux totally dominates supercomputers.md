@@ -1,4 +1,4 @@
-Linux totally dominates supercomputers
+Translating by qhwdw Linux totally dominates supercomputers
 ============================================================
 
 It finally happened. Today, all 500 of the world's top 500 supercomputers are running Linux.
