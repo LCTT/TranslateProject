@@ -1,4 +1,5 @@
-# [使用 Ansible Container 构建和测试应用程序][1]
+使用 Ansible Container 构建和测试应用程序
+=======
 
 ![](https://fedoramagazine.org/wp-content/uploads/2017/10/ansible-container-945x400.jpg)
 
@@ -6,20 +7,20 @@
 
 ### 入门
 
-这个例子使用了一个简单的 Flask Hello World 程序。这个程序就像在生产中一样由 Apache HTTP 服务器提供服务。首先，安装必要的 _docker_ 包：
+这个例子使用了一个简单的 Flask Hello World 程序。这个程序就像在生产环境中一样由 Apache HTTP 服务器提供服务。首先，安装必要的 `docker` 包：
 
 ```
 sudo dnf install docker
 ```
 
-Ansible Container 需要通过本地套接字与 Docker 服务进行通信。以下命令将更改套接字所有者，并将你添加到可访问此套接字的 _docker_ 组：
+Ansible Container 需要通过本地套接字与 Docker 服务进行通信。以下命令将更改套接字所有者，并将你添加到可访问此套接字的 `docker` 用户组：
 
 ```
 sudo groupadd docker && sudo gpasswd -a $USER docker
 MYGRP=$(id -g) ; newgrp docker ; newgrp $MYGRP
 ```
 
-运行 _id_ 命令以确保 _docker_ 组在你的组成员中列出。最后，[使用 sudo ][2]启用并启动 docker 服务：
+运行 `id` 命令以确保 `docker` 组在你的组成员中列出。最后，[使用 sudo ][2]启用并启动 docker 服务：
 
 ```
 sudo systemctl enable docker.service
@@ -40,7 +41,7 @@ source .venv/bin/activate
 pip install ansible-container[docker]
 ```
 
-这些命令用 Docker 引擎安装 Ansible Container。 Ansible Container 提供三种引擎：Docker、Kubernetes 和 Openshift。
+这些命令将安装 Ansible Container 及 Docker 引擎。 Ansible Container 提供三种引擎：Docker、Kubernetes 和 Openshift。
 
 ### 设置项目
 
@@ -52,21 +53,17 @@ ansible-container init
 
 来看看这个命令在当前目录中创建的文件：
 
-*   _ansible.cfg_ 
+*   `ansible.cfg` 
+*   `ansible-requirements.txt` 
+*   `container.yml` 
+*   `meta.yml` 
+*   `requirements.yml` 
 
-*   _ansible-requirements.txt_ 
-
-*   _container.yml_ 
-
-*   _meta.yml_ 
-
-*   _requirements.yml_ 
-
-该项目仅使用 _container.yml_ 来描述程序服务。有关其他文件的更多信息，请查看 Ansible Container 的[入门][3]文档。
+该项目仅使用 `container.yml` 来描述程序服务。有关其他文件的更多信息，请查看 Ansible Container 的[入门][3]文档。
 
 ### 定义容器
 
-如下更新 _container.yml_：
+如下更新 `container.yml`：
 
 ```
 version: "2"
@@ -99,22 +96,22 @@ services:
       - $PWD/flask-helloworld:/flaskapp:Z
 ```
 
-_conductor_ 部分更新了基本设置以使用 Fedora 26容器基础镜像。
+`conductor` 部分更新了基本设置以使用 Fedora 26 容器基础镜像。
 
-_services_ 部分添加了 _web_ 服务。这个服务使用 Fedora 26，后面有一个名为 _base_ 的 _角色_。它还设置容器和主机之间的端口映射。Apache HTTP 服务器为容器的端口 80 上的 Flask 程序提供服务，该容器重定向到主机的端口 5000。然后这个文件定义了一个 _volume_，它将 Flask 程序源代码挂载到容器中的 _/flaskapp_ 中。
+`services` 部分添加了 `web` 服务。这个服务使用 Fedora 26，后面有一个名为 `base` 的角色。它还设置容器和主机之间的端口映射。Apache HTTP 服务器为容器的端口 80 上的 Flask 程序提供服务，该容器重定向到主机的端口 5000。然后这个文件定义了一个卷，它将 Flask 程序源代码挂载到容器中的 `/flaskapp` 中。
 
-最后，容器启动时运行 _command_ 配置。这个例子中使用 [dumb-init][4]，一个简单的进程管理器并初始化系统启动 Apache HTTP 服务器。
+最后，容器启动时运行 `command` 配置。这个例子中使用 [dumb-init][4]，一个简单的进程管理器并初始化系统启动 Apache HTTP 服务器。
 
 ### Ansible 角色
 
-现在已经设置完了容器，创建一个 Ansible 角色来安装并配置 Flask 程序所需的依赖关系。首先，创建 _base_ 角色。
+现在已经设置完了容器，创建一个 Ansible 角色来安装并配置 Flask 程序所需的依赖关系。首先，创建 `base` 角色。
 
 ```
 mkdir -p roles/base/tasks
 touch roles/base/tasks/main.yml
 ```
 
-现在编辑 _main.yml_ ，它看起来像这样：
+现在编辑 `main.yml` ，它看起来像这样：
 
 ```
 ---
@@ -139,7 +136,7 @@ touch roles/base/tasks/main.yml
 
 ### Apache HTTP 配置
 
-接下来，通过创建 _flask-helloworld.conf_ 来配置 Apache HTTP 服务器：
+接下来，通过创建 `flask-helloworld.conf` 来配置 Apache HTTP 服务器：
 
 ```
 $ mkdir -p roles/base/files
@@ -163,11 +160,11 @@ $ touch roles/base/files/flask-helloworld.conf
 </VirtualHost>
 ```
 
-这个文件的重要部分是 _WSGIScriptAlias_。该指令将脚本 _flask-helloworld.wsgi_ 映射到 “/”。有关 Apache HTTP 服务器和 mod_wsgi 的更多详细信息，请阅读[ Flask 文档][6]。
+这个文件的重要部分是 `WSGIScriptAlias`。该指令将脚本 `flask-helloworld.wsgi` 映射到 `/`。有关 Apache HTTP 服务器和 mod_wsgi 的更多详细信息，请阅读 [Flask 文档][6]。
 
 ### Flask “hello world”
 
-最后，创建一个简单的 Flask 程序和 _ flask-helloworld.wsgi_ 脚本。
+最后，创建一个简单的 Flask 程序和 ` flask-helloworld.wsgi` 脚本。
 
 ```
 mkdir flask-helloworld
@@ -175,7 +172,7 @@ touch flask-helloworld/app.py
 touch flask-helloworld/flask-helloworld.wsgi
 ```
 
-将以下内容添加到 _app.py_ **：**
+将以下内容添加到 `app.py`：
 
 ```
 from flask import Flask
@@ -186,7 +183,7 @@ def hello():
     return "Hello World!"
 ```
 
-然后编辑 _flask-helloworld.wsgi_ 添加这个：
+然后编辑 `flask-helloworld.wsgi` ，添加这个：
 
 ```
 import sys
@@ -197,7 +194,7 @@ from app import app as application
 
 ### 构建并运行
 
-现在是时候使用 _ansible-container build_ 和 _ansible-container run_ 命令来构建和运行容器。
+现在是时候使用 `ansible-container build` 和 `ansible-container run` 命令来构建和运行容器。
 
 ```
 ansible-container build
@@ -209,7 +206,7 @@ ansible-container build
 ansible-container run
 ```
 
-你现在可以通过以下 URL 访问你的 flask 程序：_http://localhost:5000/_
+你现在可以通过以下 URL 访问你的 flask 程序： http://localhost:5000/
 
 ### 结论
 
@@ -219,9 +216,9 @@ ansible-container run
 
 via: https://fedoramagazine.org/build-test-applications-ansible-container/
 
-作者：[Clement Verna ][a]
+作者：[Clement Verna][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
