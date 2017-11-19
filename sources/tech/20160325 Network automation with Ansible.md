@@ -1,5 +1,3 @@
-translating by flankershen 
-
 Network automation with Ansible
 ================
 

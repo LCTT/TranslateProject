@@ -1,4 +1,3 @@
-(翻译中 by runningwater)
 Understanding Firewalld in Multi-Zone Configurations
 ============================================================
 
