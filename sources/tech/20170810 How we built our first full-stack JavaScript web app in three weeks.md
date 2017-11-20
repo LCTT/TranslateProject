@@ -1,3 +1,5 @@
+Translating by geekrainy
+
 The user’s home dashboard in our app, AlignHow we built our first full-stack JavaScript web app in three weeks
 ============================================================
 
