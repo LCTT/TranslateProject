@@ -1,3 +1,4 @@
+Translating by qhwdw
 Understanding Firewalld in Multi-Zone Configurations
 ============================================================
 
