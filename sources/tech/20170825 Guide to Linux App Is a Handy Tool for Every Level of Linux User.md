@@ -1,4 +1,4 @@
-[JanzenLiu Translating...] Guide to Linux App Is a Handy Tool for Every Level of Linux User
+Translating by qhwdw Guide to Linux App Is a Handy Tool for Every Level of Linux User
 ============================================================
 
 ![Guide to Linux](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/guide-to-linux.png?itok=AAcrxjjc "Guide to Linux")
