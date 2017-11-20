@@ -1,4 +1,4 @@
-Understanding Firewalld in Multi-Zone Configurations
+Translating by qhwdw Understanding Firewalld in Multi-Zone Configurations
 ============================================================
 
 Stories of compromised servers and data theft fill today's news. It isn't difficult for someone who has read an informative blog post to access a system via a misconfigured service, take advantage of a recently exposed vulnerability or gain control using a stolen password. Any of the many internet services found on a typical Linux server could harbor a vulnerability that grants unauthorized access to the system.
