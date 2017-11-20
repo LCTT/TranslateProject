@@ -1,4 +1,4 @@
-(翻译中 by runningwater)
+Translating by qhwdw
 Understanding Firewalld in Multi-Zone Configurations
 ============================================================
 
