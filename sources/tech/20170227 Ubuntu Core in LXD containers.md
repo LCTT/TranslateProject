@@ -1,6 +1,3 @@
-Translating By LHRchina
-
-
 Ubuntu Core in LXD containers
 ============================================================
 
