@@ -1,7 +1,7 @@
 #mandeler Translating Getting started with OpenFaaS on minikube
 ============================================================
 
-本文将介绍如何借助 [minikube][4] 在 Kubernetes 1.8 上搭建 OpenFaaS-Serverless Functions Made Simple。minikube 是一个 [Kubernetes][5] 发行版，借助它，你可以在笔记本电脑上运行 Kubernetes 群集，minikube 支持 Mac 和 Linux ，但是在 MacOS 上使用得多一些。
+本文将介绍如何借助 [minikube][4] 在 Kubernetes 1.8 上搭建 OpenFaaS（让 Serverless Function 变得更简单）。minikube 是一个 [Kubernetes][5] 发行版，借助它，你可以在笔记本电脑上运行 Kubernetes 群集，minikube 支持 Mac 和 Linux 操作系统，但是在 MacOS 上使用得更多一些。
 
 > 本文基于我们最新的部署手册 [Official Kubernetes Deployment guide][6]
 
@@ -16,27 +16,31 @@
 2.  [参照官方文档][3] 安装 minikube 
 
 3.  安装 `faas-cli` ：
-  使用 brew 安装
+
+  `使用 brew 安装`
+
   `brew install faas-cli` 
-  使用官方安装脚本
+
+  `使用官方安装脚本`
+
   `curl -sL cli.openfaas.com | sudo sh`
 
 4.  用 brew 安装 `helm` ：
+
   `brew install kubernetes-helm`
 
 5.  运行 minikube :
+
   `minikube start`
 
-> Docker Captain 的小贴士: Docker Inc 从某个时候开始（译者注：Moby 项目开源的时候） Mac 和 Windows 版本就集成了 Kubernetes 的支持。这样我们在使用 Kubernetes 的时候，就不需要再安装额外的软件了。
+> Docker Captain 的小贴士: 从某个版本开始，Mac 和 Windows 版本的 Docker 就集成了对 Kubernetes 的支持。现在我们在使用 Kubernetes 的时候，已经不需要再安装额外的软件了。
 
 ### 在 minikube 上面部署 OpenFaaS
 
 1.  给 Helm’s 服务器组件新建账号 tiller:
 
   `kubectl -n kube-system create sa tiller &&  kubectl create clusterrolebinding tiller \`
-  
   `--clusterrole cluster-admin \`
-
   `--serviceaccount=kube-system:tiller`
 
 2.  安装 Helm 的服务端组件 tiller:
@@ -51,10 +55,10 @@
 
   `helm upgrade --install --debug --reset-values --set async=false --set rbac=false openfaas openfaas/`
 
- # 译者注：RBAC（Role-Based access control）基于角色的访问权限控制，在计算机权限管理中较为常用，详情请参考以下链接：
-   https://en.wikipedia.org/wiki/Role-based_access_control
+  译者注：RBAC（Role-Based access control）基于角色的访问权限控制，在计算机权限管理中较为常用，详情请参考以下链接：
+  https://en.wikipedia.org/wiki/Role-based_access_control
 
-现在，你可以看到 OpenFaaS 实例（ 原文为 pods ）已经在你的 minikube 群集上运行起来了。输入 `kubectl get pods` 以查看 OpenFaaS 实例:
+现在，你可以看到 OpenFaaS pods 已经在你的 minikube 群集上运行起来了。输入 `kubectl get pods` 以查看 OpenFaaS pods:
 
 ```
 NAME                            READY     STATUS    RESTARTS   AGE
@@ -78,41 +82,41 @@ prometheus-64f9844488-t2mvn     1/1       Running   0          1m
 
 30,000ft:
 
-API gateway 进程包含了一个 [用于测试的最小化 UI] [7] ，同时开放了用于功能管理的 [RESTful API][8] 。
-faas-netesd 守护进程是一种 Kubernetes 控制器，用来连接 Kubernetes API 服务实现对 Kubernetes 服务、部署和密码的管理功能。
-Prometheus 和 AlertManager 进程协同工作，实现 OpenFaaS 功能的弹性缩放，以满足业务需求。通过 Prometheus metrics 我们可以查看系统的整体运行状态，还可以用来开发功能强悍的控制面板（Dashboard）。
+API gateway 进程包含了一个 [用于测试的最小化 UI][7] ，同时开放了用于功能管理的 [RESTful API][8] 。
+faas-netesd 守护进程是一种 Kubernetes 控制器，用来连接 Kubernetes API 服务实现对 Kubernetes 函数、部署和密码的管理功能。
+Prometheus 和 AlertManager 进程协同工作，实现 OpenFaaS 函数的弹性缩放，以满足业务需求。通过 Prometheus metrics 我们可以查看系统的整体运行状态，还可以用来开发功能强悍的控制面板（Dashboard）。
 
-Prometheus dashboard example:
+Prometheus 面板示例:
 
 ![](https://cdn-images-1.medium.com/max/1600/1*b0RnaFIss5fOJXkpIJJgMw.jpeg)
 
-### Build/ship/run
+### 部署/迁移/运行
 
-OpenFaaS uses the Docker image format for the creation and versioning of functions which means that unlike many other FaaS projects you can use this in production to do:
+和很多其他的 FaaS 项目不同，OpenFaaS 的创建和函数版本控制使用的是 Docker 镜像格式，这意味着咱可以在生产环境中使用 OpenFaaS 实现以下目标：
 
-*   vulnerability scanning
+*   漏洞扫描（vulnerability scanning；译者注：此处我觉得应该理解为更快地实现漏洞补丁）
 
-*   CI/CD
+*   CI/CD （Continuous integration and continuous deployment 持续集成/持续开发 ）
 
-*   rolling upgrades
+*   滚动更新
 
-You can also deploy OpenFaaS to your existing production cluster and make use of spare capacity. The core services require around 10–30MB of RAM each.
+你也可以在现有的生产环境群集中利用空闲资源部署 OpenFaaS。每个核心服务组件内存占用大概在 10-30MB 。
 
-> A key advantage of OpenFaaS is that it works with the container orchestration platform’s API, which means we integrate natively with both Kubernetes and Docker Swarm. Also, since our functions are properly versioned within a Docker registry, we can scale our functions on demand without any additional latency associated with frameworks that build functions on demand.
+> OpenFaaS 一个关键的优势在于，它可以使用容器编排平台的 API ，这样可以和 Kubernetes 以及 Docker Swarm 进行本地集成。同时，由于使用Docker registry 进行函数的版本控制，咱可以按需扩展函数。同时不会对按需开发函数的框架造成额外的延时。
 
-### Scaffold a new function
+### 新建 function
 
 `faas-cli new --lang python hello`
 
-This will create `hello.yml` along with a `handler` folder containing your handler.py file and requirements.txt for any pip modules you may need. You can edit these at any time without worrying about maintaining a Dockerfile — we do that and use best practices:
+以上命令创建文件 `hello.yml` 以及文件夹 `handler`，文件夹有两个文件 handler.py 、requirements.txt ，包含了你可能需要用到的任何 pip 模块。你可以随时编辑这些文件和文件夹，不需要担心如何维护 Dockerfile--我们为你维护，并且使用以下最佳实践：
 
-*   multi-stage builds
+*   分级创建（multi-stage builds）
 
-*   non-root users
+*   非 root 用户（non-root users）
 
-*   Official Docker Alpine Linux builds for the base (this is swappable)
+*   以 Docker Alpine Linux 版本为基础进行镜像构建 (可变更)
 
-### Build your function
+### 开发 function
 
 Your function will be built on your local machine and then pushed to a Docker registry. Let’s use the Docker Hub — just edit the `hello.yml` file and enter your user account name:
 
