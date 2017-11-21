@@ -1,9 +1,9 @@
 #mandeler Translating Getting started with OpenFaaS on minikube
 ============================================================
 
-本文将介绍如何借助 minikube [4] 在 Kubernetes 1.8 上搭建 OpenFaaS-Serverless Functions Made Simple。minikube 是一个 [Kubernetes][5] 发行版，借助它，你可以在笔记本电脑上运行 Kubernetes 群集，minikube 支持 Mac 和 Linux ，但是在 MacOS 上使用得多一些。
+本文将介绍如何借助 [minikube][4] 在 Kubernetes 1.8 上搭建 OpenFaaS-Serverless Functions Made Simple。minikube 是一个 [Kubernetes][5] 发行版，借助它，你可以在笔记本电脑上运行 Kubernetes 群集，minikube 支持 Mac 和 Linux ，但是在 MacOS 上使用得多一些。
 
-> This post is based upon our [Official Kubernetes Deployment guide][6]
+> 本文基于我们最新的部署手册 [Official Kubernetes Deployment guide][6]
 
  ** 此处有Canvas,请手动处理 ** 
 
@@ -13,12 +13,12 @@
 
 1.  安装 [xhyve driver][1] 或 [VirtualBox][2] ，然后在上面安装 Liux 虚拟机以部署 minikube 。根据我的经验，VirtualBox更稳定一些
 
-2.  参照官方文档  [3] 安装 minikube 
+2.  [参照官方文档][3] 安装 minikube 
 
 3.  安装 `faas-cli` ：
- # 使用 brew 安装
+  使用 brew 安装
   `brew install faas-cli`
- # 使用官方安装脚本
+  使用官方安装脚本
   `curl -sL cli.openfaas.com | sudo sh`
 
 4.  用 brew 安装 `helm` ：
