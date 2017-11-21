@@ -19,21 +19,27 @@ Most of the system is read-only. All installed applications come from snap packa
 当前版本是在 2016 年 11 月发布的 Ubuntu Core 16。
 The current release of Ubuntu Core is called series 16 and was released in November 2016.
 
-注意，Ubuntu Core 限制只能安装 snap 包（非“传统”包），并且有相当数量的 snap 包在当前环境下不能正常运行，或者需要人工干预（创建用户和用户组等）。
-由于新版本的snapd和“核心”管理单元被发布，Ubuntu Core每周都会得到改进。
+注意，Ubuntu Core 限制只能安装 snap 包（非“传统”包），并且有相当数量的 snap 包在当前环境下不能正常运行，或者需要人工干预（创建用户和用户组等）。由于新版本的snapd和“核心”管理单元被发布，Ubuntu Core每周都会得到改进。
 Note that on Ubuntu Core systems, only snap packages using confinement can be installed (no “classic” snaps) and that a good number of snaps will not fully work in this environment or will require some manual intervention (creating user and groups, …). Ubuntu Core gets improved on a weekly basis as new releases of snapd and the “core” snap are put out.
 
+### 需求
 ### Requirements
 
+就 LXD 而言，Ubuntu Core 仅仅是另一个 Linux 发行版。也就是说，anapd 需要无特权的挂载 FUSE 和 AppArmor 命名空间和堆栈，你需要下面这样：
 As far as LXD is concerned, Ubuntu Core is just another Linux distribution. That being said, snapd does require unprivileged FUSE mounts and AppArmor namespacing and stacking, so you will need the following:
 
+*   一个最新版的传统内核的 Ubuntu 系统
 *   An up to date Ubuntu system using the official Ubuntu kernel
 
+*   一个最新版本的 LXD
 *   An up to date version of LXD
 
+### 创建一个 Ubuntu Core 容器
 ### Creating an Ubuntu Core container
 
+Ubuntu Core 镜像当前发布在社区的镜像服务器。
 The Ubuntu Core images are currently published on the community image server.
+你可以这样启动一个新的容器
 You can launch a new container with:
 
 ```
@@ -42,8 +48,10 @@ Creating ubuntu-core
 Starting ubuntu-core
 ```
 
+这个容器启动需要一点点时间，首先会执行第一阶段的加载程序，加载程序会确定使用哪一个只读的镜像，并且设置一个可读层，你不想在这一阶段中断容器，执行 “lxc exec”将会出错，这个时候没有作用。
 The container will take a few seconds to start, first executing a first stage loader that determines what read-only image to use and setup the writable layers. You don’t want to interrupt the container in that stage and “lxc exec” will likely just fail as pretty much nothing is available at that point.
 
+几秒钟之后，执行“lxc list”将会展示容器的 IP 地址，这表明已经启动了 Ubuntu Core：
 Seconds later, “lxc list” will show the container IP address, indicating that it’s booted into Ubuntu Core:
 
 ```
@@ -55,6 +63,7 @@ stgraber@dakara:~$ lxc list
 +-------------+---------+----------------------+----------------------------------------------+------------+-----------+
 ```
 
+之后你就可以像使用别的交互一样和这个容器交互：
 You can then interact with that container the same way you would any other:
 
 ```
@@ -67,10 +76,13 @@ pc-kernel  4.4.0-45-4  37   canonical  -
 root@ubuntu-core:~#
 ```
 
+### 更新容器
 ### Updating the container
 
+如果你一直关注着 Ubuntu Core 的开发，你应该知道上面的版本是很老的。这是因为被用作 Ubuntu LXD 镜像的代码每隔几个月就会更新。Ubuntu Core 系统在重启之后会检查更新并自动更新版本（失败则回退）。
 If you’ve been tracking the development of Ubuntu Core, you’ll know that those versions above are pretty old. That’s because the disk images that are used as the source for the Ubuntu Core LXD images are only refreshed every few months. Ubuntu Core systems will automatically update once a day and then automatically reboot to boot onto the new version (and revert if this fails).
 
+如果你想马上更新，你可以这样做：
 If you want to immediately force an update, you can do it with:
 
 ```
@@ -85,6 +97,7 @@ series 16
 root@ubuntu-core:~#
 ```
 
+之后重启 Ubuntu Core 系统然后检查一下 snapd 的版本。
 And then reboot the system and check the snapd version again:
 
 ```
@@ -99,6 +112,7 @@ series 16
 root@ubuntu-core:~#
 ```
 
+你也可以像下面这样查看所有 snapd 的历史
 You can get an history of all snapd interactions with
 
 ```
@@ -109,11 +123,13 @@ ID  Status  Spawn                 Ready                 Summary
 3   Done    2017-01-31T05:21:30Z  2017-01-31T05:22:45Z  Refresh all snaps in the system
 ```
 
+### 安装 Snap 软件包
 ### Installing some snaps
 
+以一个最简单是开始，经典的 Hello World：
 Let’s start with the simplest snaps of all, the good old Hello World:
 
-```
+```                   
 stgraber@dakara:~$ lxc exec ubuntu-core bash
 root@ubuntu-core:~# snap install hello-world
 hello-world 6.3 from 'canonical' installed
@@ -121,6 +137,7 @@ root@ubuntu-core:~# hello-world
 Hello World!
 ```
 
+现在让我们看一些更有用的：
 And then move on to something a bit more useful:
 
 ```
@@ -131,6 +148,7 @@ nextcloud 11.0.1snap2 from 'nextcloud' installed
 
 Then hit your container over HTTP and you’ll get to your newly deployed Nextcloud instance.
 
+如果你想直接通过 git 测试最新版 LXD，你可以这样做：
 If you feel like testing the latest LXD straight from git, you can do so with:
 
 ```
@@ -160,6 +178,7 @@ What IPv6 address should be used (CIDR subnet notation, “auto” or “none”
 LXD has been successfully configured.
 ```
 
+因为
 And because container inception never gets old, lets run Ubuntu Core 16 inside Ubuntu Core 16:
 
 ```
@@ -174,9 +193,12 @@ root@ubuntu-core:~# lxc list
 +-------------+---------+---------------------+-----------------------------------------------+------------+-----------+
 ```
 
+### 写在最后
 ### Conclusion
 
+如果你只是想试用一下 Ubuntu Core，这会是一个好的方法。对于 snap 作者来说，这也是一个不错的工具来测试你的 snap 包能否在不同的环境下正常运行。
 If you ever wanted to try Ubuntu Core, this is a great way to do it. It’s also a great tool for snap authors to make sure their snap is fully self-contained and will work in all environments.
+
 
 Ubuntu Core is a great fit for environments where you want to ensure that your system is always up to date and is entirely reproducible. This does come with a number of constraints that may or may not work for you.
 
