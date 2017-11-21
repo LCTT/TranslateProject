@@ -1,3 +1,5 @@
+Translated by name1e5s
+
 The big break in computer languages
 ============================================================
 
