@@ -78,7 +78,7 @@ VM 虚拟机和 container 容器实现以上功能的原理并不一样，虚拟
 
 ---
 
-原文链接:  https://opensource.com/article/17/10/what-are-containers
+via:  https://opensource.com/article/17/10/what-are-containers
 
 作者：[Mike Bursell][a]
 译者：[jrglinux](https://github.com/jrglinux)
