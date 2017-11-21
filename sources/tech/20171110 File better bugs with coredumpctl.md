@@ -73,7 +73,11 @@ thread apply all bt full
 
 Now you can type  _quit_  to quit the debugger. The  _mybacktrace.txt_  file includes backtrace information you can attach to a bug or issue. Or if you’re working with someone in real time, you can upload the text to a pastebin. Either way, you can now provide more assistance to the developer to fix the problem.
 
-#### Paul W. Frields
+---------------------------------
+
+作者简介：
+
+Paul W. Frields
 
 Paul W. Frields has been a Linux user and enthusiast since 1997, and joined the Fedora Project in 2003, shortly after launch. He was a founding member of the Fedora Project Board, and has worked on documentation, website publishing, advocacy, toolchain development, and maintaining software. He joined Red Hat as Fedora Project Leader from February 2008 to July 2010, and remains with Red Hat as an engineering manager. He currently lives with his wife and two children in Virginia.
 
