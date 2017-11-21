@@ -1,4 +1,4 @@
-Getting started with OpenFaaS on minikube
+#mandeler Translating Getting started with OpenFaaS on minikube
 ============================================================
 
 This is a guide on how to setup OpenFaaS —  _Serverless Functions Made Simple_ on Kubernetes 1.8 with [minikube][4]. minikube is a [Kubernetes][5] distribution which lets you run a Kubernetes cluster on your laptop — it’s available for Mac and Linux, but is most commonly used with MacOS.
