@@ -4,7 +4,7 @@
 
 **下图抽象的形容了 containers 容器和虚拟机是那么的相似，又是那么的不同！**（图片来自 opensource.com ）
 
-![Alt 图片来自opensource.com](container.png)
+![but I dont know what a container is](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/container-ship.png?itok=pqZYgQ7K "But I don't know what a container is")
 
 在近期的一些会议和学术交流会上，我一直在讲述有关 DevOps（还有 DevSecOps ）的安全问题。通常，我首先都会问一个问题：“在座的各位有谁知道什么是 containers 容器？” 通常并没有很多人举手，所以我都会先简单介绍一下什么是 containers 容器，然后再进行深层次的讨论交流。
 
