@@ -17,7 +17,7 @@
 
 3.  安装 `faas-cli` ：
   使用 brew 安装
-  `brew install faas-cli`
+  `brew install faas-cli` 
   使用官方安装脚本
   `curl -sL cli.openfaas.com | sudo sh`
 
@@ -27,24 +27,30 @@
 5.  运行 minikube :
   `minikube start`
 
-> Docker Captain 的小贴士: Docker Inc 从某个时候开始（译者注：Moby 项目开源的时候） Mac 和 Windows 版本就继承了 Kubernetes 的支持。这样我们在使用 Kubernetes 的时候，就不需要再安装额外的软件了。
+> Docker Captain 的小贴士: Docker Inc 从某个时候开始（译者注：Moby 项目开源的时候） Mac 和 Windows 版本就集成了 Kubernetes 的支持。这样我们在使用 Kubernetes 的时候，就不需要再安装额外的软件了。
 
 ### 在 minikube 上面部署 OpenFaaS
 
 1.  给 Helm’s 服务器组件新建账号 tiller:
-  `kubectl -n kube-system create sa tiller 
-  && kubectl create clusterrolebinding tiller \
-  --clusterrole cluster-admin \
-  --serviceaccount=kube-system:tiller`
+
+  `kubectl -n kube-system create sa tiller &&  kubectl create clusterrolebinding tiller \`
+  
+  `--clusterrole cluster-admin \`
+
+  `--serviceaccount=kube-system:tiller`
 
 2.  安装 Helm 的服务端组件 tiller:
+
   `helm init --skip-refresh --upgrade --service-account tiller`
 
 3.  Git Clone faas-netes (Kubernetes 上面的 OpenFaaS 驱动程序): 
+
   `git clone https://github.com/openfaas/faas-netes && cd faas-netes`
 
 4.  Minikube 没有配置 RBAC, 这里我们需要把 RBAC 关闭:
+
   `helm upgrade --install --debug --reset-values --set async=false --set rbac=false openfaas openfaas/`
+
  # 译者注：RBAC（Role-Based access control）基于角色的访问权限控制，在计算机权限管理中较为常用，详情请参考以下链接：
    https://en.wikipedia.org/wiki/Role-based_access_control
 
