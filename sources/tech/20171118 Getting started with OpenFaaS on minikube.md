@@ -1,7 +1,7 @@
 #mandeler Translating Getting started with OpenFaaS on minikube
 ============================================================
 
-This is a guide on how to setup OpenFaaS —  _Serverless Functions Made Simple_ on Kubernetes 1.8 with [minikube][4]. minikube is a [Kubernetes][5] distribution which lets you run a Kubernetes cluster on your laptop — it’s available for Mac and Linux, but is most commonly used with MacOS.
+本文将介绍如何借助 minikube [4] 在 Kubernetes 1.8 上搭建 OpenFaaS-Serverless Functions Made Simple。minikube 是一个 [Kubernetes][5] 发行版，借助它，你可以在笔记本电脑上运行 Kubernetes 群集，minikube 支持 Mac 和 Linux ，但是在 MacOS 上使用得多一些。
 
 > This post is based upon our [Official Kubernetes Deployment guide][6]
 
@@ -9,34 +9,46 @@ This is a guide on how to setup OpenFaaS —  _Serverless Functions Made Sim
 
 ![](https://cdn-images-1.medium.com/max/1600/1*C9845SlyaaT1_xrAGOBURg.png)
 
-### Getting set up with Minikube
+### 安装部署 Minikube
 
-1.  Install the [xhyve driver][1] or [VirtualBox][2] which will be used to create a Linux VM for minikube. I find the VirtualBox option to be the most reliable.
+1.  安装 [xhyve driver][1] 或 [VirtualBox][2] ，然后在上面安装 Liux 虚拟机以部署 minikube 。根据我的经验，VirtualBox更稳定一些
 
-2.  Setup minikube using the [official docs][3]
+2.  参照官方文档  [3] 安装 minikube 
 
-3.  Install `faas-cli` using `brew` or `curl -sL cli.openfaas.com | sudo sh`
+3.  安装 `faas-cli` ：
+ # 使用 brew 安装
+  `brew install faas-cli`
+ # 使用官方安装脚本
+  `curl -sL cli.openfaas.com | sudo sh`
 
-4.  Install the `helm` CLI via brew: `brew install kubernetes-helm`
+4.  用 brew 安装 `helm` ：
+  `brew install kubernetes-helm`
 
-5.  Start minikube: `minikube start`
+5.  运行 minikube :
+  `minikube start`
 
-> Docker Captain’s tip: look out for when Docker Inc starts to ship Kubernetes built-into Docker for Mac and Windows. This will let you use Kubernetes without having to install additional software.
+> Docker Captain 的小贴士: Docker Inc 从某个时候开始（译者注：Moby 项目开源的时候） Mac 和 Windows 版本就继承了 Kubernetes 的支持。这样我们在使用 Kubernetes 的时候，就不需要再安装额外的软件了。
 
-### Deploy OpenFaaS to minikube
+### 在 minikube 上面部署 OpenFaaS
 
-1.  Create a service account for Helm’s server component (tiller): `kubectl -n kube-system create sa tiller \
-     && kubectl create clusterrolebinding tiller \
-     --clusterrole cluster-admin \
-     --serviceaccount=kube-system:tiller`
+1.  给 Helm’s 服务器组件新建账号 tiller:
+  `kubectl -n kube-system create sa tiller 
+  && kubectl create clusterrolebinding tiller \
+  --clusterrole cluster-admin \
+  --serviceaccount=kube-system:tiller`
 
-2.  Install `tiller` which is Helm’s server-side component: `helm init --skip-refresh --upgrade --service-account tiller`
+2.  安装 Helm 的服务端组件 tiller:
+  `helm init --skip-refresh --upgrade --service-account tiller`
 
-3.  Clone faas-netes (Kubernetes driver for OpenFaaS): `git clone https://github.com/openfaas/faas-netes && cd faas-netes`
+3.  Git Clone faas-netes (Kubernetes 上面的 OpenFaaS 驱动程序): 
+  `git clone https://github.com/openfaas/faas-netes && cd faas-netes`
 
-4.  Minikube is not configured for RBAC, so we’ll pass an additional flag to turn it off: `helm upgrade --install --debug --reset-values --set async=false --set rbac=false openfaas openfaas/`
+4.  Minikube 没有配置 RBAC, 这里我们需要把 RBAC 关闭:
+  `helm upgrade --install --debug --reset-values --set async=false --set rbac=false openfaas openfaas/`
+ # 译者注：RBAC（Role-Based access control）基于角色的访问权限控制，在计算机权限管理中较为常用，详情请参考以下链接：
+   https://en.wikipedia.org/wiki/Role-based_access_control
 
-You’ll now see the OpenFaaS pods being installed on your minikube cluster. Type in `kubectl get pods` to see them:
+现在，你可以看到 OpenFaaS 实例（ 原文为 pods ）已经在你的 minikube 群集上运行起来了。输入 `kubectl get pods` 以查看 OpenFaaS 实例:
 
 ```
 NAME                            READY     STATUS    RESTARTS   AGE
@@ -60,9 +72,9 @@ prometheus-64f9844488-t2mvn     1/1       Running   0          1m
 
 30,000ft:
 
-The API Gateway contains a [minimal UI for testing functions][7] and exposes a [RESTful API][8] for function management. The faas-netesd daemon is a Kubernetes controller which connects to the Kubernetes API server to manage Services, Deployments and Secrets.
-
-Prometheus and AlertManager work in tandem to enable auto-scaling of functions to match demand. Prometheus metrics give you operational oversight and allow you to build powerful dashboards.
+API gateway 进程包含了一个 [用于测试的最小化 UI] [7] ，同时开放了用于功能管理的 [RESTful API][8] 。
+faas-netesd 守护进程是一种 Kubernetes 控制器，用来连接 Kubernetes API 服务实现对 Kubernetes 服务、部署和密码的管理功能。
+Prometheus 和 AlertManager 进程协同工作，实现 OpenFaaS 功能的弹性缩放，以满足业务需求。通过 Prometheus metrics 我们可以查看系统的整体运行状态，还可以用来开发功能强悍的控制面板（Dashboard）。
 
 Prometheus dashboard example:
 
