@@ -1,6 +1,6 @@
-#Translating by aiwhj 
 
 Ubuntu Core in LXD containers
+使用 LXD 容器运行 Ubuntu Core
 ============================================================
 
 
@@ -8,14 +8,19 @@ Ubuntu Core in LXD containers
 
 ![LXD logo](https://linuxcontainers.org/static/img/containers.png)
 
-### What’s Ubuntu Core?
+### Ubuntu Core 是什么？
 
+Ubuntu Core 整个基于 snap 包构建并且完全事务化的版本。
 Ubuntu Core is a version of Ubuntu that’s fully transactional and entirely based on snap packages.
 
+整个系统只读，所以已经安装过的包都是 snap 包，使用事务化更新。这意味着不管在系统更新还是安装包的时候遇到错误，整个系统都可以回退到之前的状态并且记录这个错误。
 Most of the system is read-only. All installed applications come from snap packages and all updates are done using transactions. Meaning that should anything go wrong at any point during a package or system update, the system will be able to revert to the previous state and report the failure.
 
+当前版本是在 2016 年 11 月发布的 Ubuntu Core 16。
 The current release of Ubuntu Core is called series 16 and was released in November 2016.
 
+注意，Ubuntu Core 限制只能安装 snap 包（非“传统”包），并且有相当数量的 snap 包在当前环境下不能正常运行，或者需要人工干预（创建用户和用户组等）。
+由于新版本的snapd和“核心”管理单元被发布，Ubuntu Core每周都会得到改进。
 Note that on Ubuntu Core systems, only snap packages using confinement can be installed (no “classic” snaps) and that a good number of snaps will not fully work in this environment or will require some manual intervention (creating user and groups, …). Ubuntu Core gets improved on a weekly basis as new releases of snapd and the “core” snap are put out.
 
 ### Requirements
