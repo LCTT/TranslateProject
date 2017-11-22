@@ -39,9 +39,9 @@
 
 1.  给 Helm’s 服务器组件新建账号 tiller:
 
-    kubectl -n kube-system create sa tiller && kubectl create clusterrolebinding tiller \
-    --verbose_rbose_usterrole cluster-admin \
-    --verbose_rviceaccount=kube-system:tiller
+  >kubectl -n kube-system create sa tiller && kubectl create clusterrolebinding tiller \
+  >--verbose_rbose_usterrole cluster-admin \
+  >--verbose_rviceaccount=kube-system:tiller
 
 2.  安装 Helm 的服务端组件 tiller:
 
