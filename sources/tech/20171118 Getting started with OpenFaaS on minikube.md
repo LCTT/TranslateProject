@@ -17,13 +17,13 @@
 
 3.  安装 `faas-cli` ：
 
-  `使用 brew 安装`
+  使用 brew 安装
 
-  `brew install faas-cli` 
+  ```brew install faas-cli```
 
-  `使用官方安装脚本`
+  使用官方安装脚本
 
-  `curl -sL cli.openfaas.com | sudo sh`
+  ```curl -sL cli.openfaas.com | sudo sh```
 
 4.  用 brew 安装 `helm` ：
 
@@ -33,15 +33,15 @@
 
   `minikube start`
 
-> Docker Captain 的小贴士: 从某个版本开始，Mac 和 Windows 版本的 Docker 就集成了对 Kubernetes 的支持。现在我们在使用 Kubernetes 的时候，已经不需要再安装额外的软件了。
+> Docker Captain 的小贴士: Mac 和 Windows 版本的 Docker 已经集成了对 Kubernetes 的支持。现在我们使用 Kubernetes 的时候，已经不需要再安装额外的软件了。
 
 ### 在 minikube 上面部署 OpenFaaS
 
 1.  给 Helm’s 服务器组件新建账号 tiller:
 
-  `kubectl -n kube-system create sa tiller &&  kubectl create clusterrolebinding tiller \`
-  `--clusterrole cluster-admin \`
-  `--serviceaccount=kube-system:tiller`
+  ```kubectl -n kube-system create sa tiller &&  kubectl create clusterrolebinding tiller \
+  --clusterrole cluster-admin \
+  --serviceaccount=kube-system:tiller```
 
 2.  安装 Helm 的服务端组件 tiller:
 
@@ -84,9 +84,9 @@ prometheus-64f9844488-t2mvn     1/1       Running   0          1m
 
 API gateway 进程包含了一个 [用于测试的最小化 UI][7] ，同时开放了用于功能管理的 [RESTful API][8] 。
 faas-netesd 守护进程是一种 Kubernetes 控制器，用来连接 Kubernetes API 服务实现对 Kubernetes 函数、部署和密码的管理功能。
-Prometheus 和 AlertManager 进程协同工作，实现 OpenFaaS 函数的弹性缩放，以满足业务需求。通过 Prometheus metrics 我们可以查看系统的整体运行状态，还可以用来开发功能强悍的控制面板（Dashboard）。
+Prometheus 和 AlertManager 进程协同工作，实现 OpenFaaS 函数的弹性缩放，以满足业务需求。通过 Prometheus metrics 我们可以查看系统的整体运行状态，还可以用来开发功能强悍的仪表盘（Dashboard）。
 
-Prometheus 面板示例:
+Prometheus 仪表盘示例:
 
 ![](https://cdn-images-1.medium.com/max/1600/1*b0RnaFIss5fOJXkpIJJgMw.jpeg)
 
@@ -110,15 +110,15 @@ Prometheus 面板示例:
 
 以上命令创建文件 `hello.yml` 以及文件夹 `handler`，文件夹有两个文件 handler.py 、requirements.txt ，包含了你可能需要用到的任何 pip 模块。你可以随时编辑这些文件和文件夹，不需要担心如何维护 Dockerfile--我们为你维护，并且使用以下最佳实践：
 
-*   分级创建（multi-stage builds）
+*   分级创建版本（multi-stage builds）
 
 *   非 root 用户（non-root users）
 
 *   以 Docker Alpine Linux 版本为基础进行镜像构建 (可变更)
 
-### 开发 function
+### build function
 
-Your function will be built on your local machine and then pushed to a Docker registry. Let’s use the Docker Hub — just edit the `hello.yml` file and enter your user account name:
+先在本地创建函数，然后 push 到 Docker registry 。 使用 Docker Hub ，打开文件 `hello.yml` 然后输入你的账号名：
 
 ```
 provider:
@@ -152,19 +152,19 @@ functions:
     image: alexellis2/hello
 ```
 
-Now invoke a build. You will need Docker on your local system.
+现在，调用一个 build 版本。你的系统上需要安装 Docker 。
 
 `faas-cli build -f hello.yml`
 
-Push the versioned Docker image which contains your function up to the Docker Hub. If you’ve not logged into the Docker hub then type in `docker login` before carrying on.
+把封装好函数的 Docker 镜像版本 push 到 Docker Hub。如果还没有登录 Docker hub ，继续前需要先输入命令 `docker login` 。
 
 `faas-cli push -f hello.yml`
 
-Once you have multiple functions you can use the `--parallel=N` flag to build or push with multiple cores at once. The CLI also supports options such as `--no-cache` and `--squash`.
+当系统中有多个函数的时候，可以使用 `--parallel=N` 来调用多核并行处理 build 或 push 任务。命令也支持这些选项 /-/-/> `--no-cache`  `--squash` 。
 
-### Deploy and test your function
+### 部署及测试 function
 
-Now you can deploy your function, see it listed and invoke it. Each time you invoke the function we collect metrics which are made available through Prometheus.
+现在，可以部署、列出、调用函数了。每次调用函数时，可以通过 Prometheus 收集 metric 值。
 
 ```
 $ export gw=http://$(minikube ip):31112
@@ -187,13 +187,13 @@ Deployed.
 URL: http://192.168.99.100:31112/function/hello
 ```
 
-You are given a standard route for invoking the function in the deployment message, but can also use the CLI to save on typing:
+上面给到的是部署时调用函数的标准方法，你也可以使用下面的命令：
 
 ```
 $ echo test | faas-cli invoke hello --gateway $gw
 ```
 
-Now list the functions deployed and you will see the invocation count has gone up.
+现在可以通过以下命令列出部署好的函数，你将看到调用计数器数值增加。
 
 ```
 $ faas-cli list --gateway $gw
@@ -204,7 +204,7 @@ Function                       Invocations     Replicas
 hello                          1               1
 ```
 
- _Note: this command also accepts a _  `_--verbose_`  _ flag for more information._ 
+ _提示：这条命令也可以 also accepts a _  `_--verbose_`  _ flag for more information._ 
 
 Since we are running OpenFaaS on a remote cluster (a Linux VM) we set up a `--gateway` override environmental variable. This could also be a remote host on a cloud platform. The alternative is to update the gateway value in your .yml file.
 
