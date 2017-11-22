@@ -1,4 +1,4 @@
-#mandeler Translating Getting started with OpenFaaS on minikube
+#借助 minikube 上手 OpenFaaS
 ============================================================
 
 本文将介绍如何借助 [minikube][4] 在 Kubernetes 1.8 上搭建 OpenFaaS（让 Serverless Function 变得更简单）。minikube 是一个 [Kubernetes][5] 发行版，借助它，你可以在笔记本电脑上运行 Kubernetes 群集，minikube 支持 Mac 和 Linux 操作系统，但是在 MacOS 上使用得更多一些。
@@ -39,9 +39,9 @@
 
 1.  给 Helm’s 服务器组件新建账号 tiller:
 
-  ```kubectl -n kube-system create sa tiller &&  kubectl create clusterrolebinding tiller \
-  --clusterrole cluster-admin \
-  --serviceaccount=kube-system:tiller```
+    kubectl -n kube-system create sa tiller && kubectl create clusterrolebinding tiller \
+    --verbose_rbose_usterrole cluster-admin \
+    --verbose_rviceaccount=kube-system:tiller
 
 2.  安装 Helm 的服务端组件 tiller:
 
@@ -160,7 +160,7 @@ functions:
 
 `faas-cli push -f hello.yml`
 
-当系统中有多个函数的时候，可以使用 `--parallel=N` 来调用多核并行处理 build 或 push 任务。命令也支持这些选项 /-/-/> `--no-cache`  `--squash` 。
+当系统中有多个函数的时候，可以使用 `--parallel=N` 来调用多核并行处理 build 或 push 任务。命令也支持这些选项： `--no-cache`  `--squash` 。
 
 ### 部署及测试 function
 
