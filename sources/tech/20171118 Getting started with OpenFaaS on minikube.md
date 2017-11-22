@@ -204,32 +204,35 @@ Function                       Invocations     Replicas
 hello                          1               1
 ```
 
- _提示：这条命令也可以 also accepts a _  `_--verbose_`  _ flag for more information._ 
+ _提示：这条命令也可以 also accepts a `_--verbose_` flag for more information._ 
 
-Since we are running OpenFaaS on a remote cluster (a Linux VM) we set up a `--gateway` override environmental variable. This could also be a remote host on a cloud platform. The alternative is to update the gateway value in your .yml file.
+由于我们是在远端群集（ Linux 虚拟机）上面运行 OpenFaaS，命令里面加上一条 `--gateway` 用来来覆盖环境变量. 这个选项同样适用于云平台上的远程主机。除了加上这条选项以外，还可以通过编辑 .yml 文件里面的 gateway 值来达到同样的效果。
 
-### Moving beyond minikube
+### 迁移到 minikube 以外的环境
 
-Once you are familiar with OpenFaaS on minikube you can deploy to any Kubernetes cluster running on Linux hosts. Here’s an example of OpenFaaS running on Kubernetes on Google’s GKE platform by Stefan Prodan of WeaveWorks demonstrating the built-in auto-scaling capabilities:
+一旦你在熟悉了在 minikube 上运行 OpenFaaS ，就可以在任意 Linux 主机上搭建 Kubernetes 群集来部署 OpenFaaS 了。下图是由来自 WeaveWorks 的 Stefan Prodan 做的 OpenFaaS Demo ，这个 Demo 部署在 Google GKE 平台上的 Kubernetes 上面。图片上展示的是 OpenFaaS 内置的自动扩容的功能：
+>译者注：下面图片来自twitter，可能访问不了
 
+![](https://twitter.com/stefanprodan/status/931490255684939777/photo/1)
 
-### Keep learning
+### 继续学习
 
-We have dozens of guides and blog available to get you up and running on the “FaaS Train” — head over to GitHub and bookmark our guides:
+我们的 Github上面有很多手册和博文，可以带你轻松“上车”，把我们的页面保存成书签吧：
 
 [openfaas/faas
 faas - OpenFaaS - Serverless Functions Made Simple for Docker & Kubernetesgithub.com][9][][10]
 
-I’ve included a short 15min video from Dockercon 2017 in Copenhagen where I gave an overview of Serverless and OpenFaaS at the Moby Summit.
+2017 哥本哈根 Dockercon Moby 峰会上，我做了关于 Serverless 和 OpenFaaS 的概述演讲，这里我把视频放上来，视频不长，大概 15 分钟左右(译者注：视频在youtube,需要科学访问)。
+[Youtube视频](https://youtu.be/UaReIKa2of8)
 
-Make sure to follow [OpenFaaS on Twitter][11] for all the latest Cool Hacks, demos and news.
+最后，别忘了关注 [OpenFaaS on Twitter][11] 这里有最潮的新闻、最酷的技术和 Demo 展示。
 
 --------------------------------------------------------------------------------
 
 via: https://medium.com/@alexellisuk/getting-started-with-openfaas-on-minikube-634502c7acdf
 
 作者：[Alex Ellis ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[mandeler](https://github.com/mandeler)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
