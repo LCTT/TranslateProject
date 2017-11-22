@@ -1,3 +1,5 @@
+translating by flowsnow
+
 High Dynamic Range (HDR) Imaging using OpenCV (C++/Python)
 ============================================================
 
@@ -396,8 +398,8 @@ via: http://www.learnopencv.com/high-dynamic-range-hdr-imaging-using-opencv-cpp-
 [4]:http://www.learnopencv.com/wp-content/uploads/2017/10/hdr.zip
 [5]:http://www.learnopencv.com/wp-content/uploads/2017/10/hdr.zip
 [6]:https://bigvisionllc.leadpages.net/leadbox/143948b73f72a2%3A173c9390c346dc/5649050225344512/
-[7]:https://itunes.apple.com/us/app/autobracket-hdr/id923626339?mt=8&ign-mpt=uo%3D8
-[8]:https://play.google.com/store/apps/details?id=com.almalence.opencam&hl=en
+[7]:https://itunes.apple.com/us/app/autobracket-hdr/id923626339?mt=8&amp;ign-mpt=uo%3D8
+[8]:https://play.google.com/store/apps/details?id=com.almalence.opencam&amp;hl=en
 [9]:http://www.learnopencv.com/wp-content/uploads/2017/10/hdr-image-sequence.jpg
 [10]:https://www.howtogeek.com/289712/how-to-see-an-images-exif-data-in-windows-and-macos
 [11]:https://www.sno.phy.queensu.ca/~phil/exiftool
@@ -410,9 +412,9 @@ via: http://www.learnopencv.com/high-dynamic-range-hdr-imaging-using-opencv-cpp-
 [18]:http://www.learnopencv.com/wp-content/uploads/2017/10/hdr-Drago.jpg
 [19]:https://people.csail.mit.edu/fredo/PUBLI/Siggraph2002/DurandBilateral.pdf
 [20]:http://www.learnopencv.com/wp-content/uploads/2017/10/hdr-Durand.jpg
-[21]:http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.106.8100&rep=rep1&type=pdf
+[21]:http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.106.8100&amp;rep=rep1&amp;type=pdf
 [22]:http://www.learnopencv.com/wp-content/uploads/2017/10/hdr-Reinhard.jpg
-[23]:http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.60.4077&rep=rep1&type=pdf
+[23]:http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.60.4077&amp;rep=rep1&amp;type=pdf
 [24]:http://www.learnopencv.com/wp-content/uploads/2017/10/hdr-Mantiuk.jpg
 [25]:https://bigvisionllc.leadpages.net/leadbox/143948b73f72a2%3A173c9390c346dc/5649050225344512/
 [26]:https://bigvisionllc.leadpages.net/leadbox/143948b73f72a2%3A173c9390c346dc/5649050225344512/
