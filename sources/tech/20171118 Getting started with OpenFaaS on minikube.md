@@ -1,11 +1,9 @@
-#mandeler Translating Getting started with OpenFaaS on minikube
+#使用 minikube 上手 OpenFaaS
 ============================================================
 
 本文将介绍如何借助 [minikube][4] 在 Kubernetes 1.8 上搭建 OpenFaaS（让 Serverless Function 变得更简单）。minikube 是一个 [Kubernetes][5] 发行版，借助它，你可以在笔记本电脑上运行 Kubernetes 群集，minikube 支持 Mac 和 Linux 操作系统，但是在 MacOS 上使用得更多一些。
 
 > 本文基于我们最新的部署手册 [Official Kubernetes Deployment guide][6]
-
- ** 此处有Canvas,请手动处理 ** 
 
 ![](https://cdn-images-1.medium.com/max/1600/1*C9845SlyaaT1_xrAGOBURg.png)
 
@@ -37,7 +35,7 @@
 
 ### 在 minikube 上面部署 OpenFaaS
 
-1.  给 Helm’s 服务器组件新建账号 tiller:
+1.  给 Helm 的服务器组件新建账号 tiller:
 
   ```kubectl -n kube-system create sa tiller &&  kubectl create clusterrolebinding tiller \
   --clusterrole cluster-admin \
@@ -102,7 +100,7 @@ Prometheus 仪表盘示例:
 
 你也可以在现有的生产环境群集中利用空闲资源部署 OpenFaaS。每个核心服务组件内存占用大概在 10-30MB 。
 
-> OpenFaaS 一个关键的优势在于，它可以使用容器编排平台的 API ，这样可以和 Kubernetes 以及 Docker Swarm 进行本地集成。同时，由于使用Docker registry 进行函数的版本控制，咱可以按需扩展函数。同时不会对按需开发函数的框架造成额外的延时。
+> OpenFaaS 一个关键的优势在于，它可以调用容器编排平台的 API ，这样可以和 Kubernetes 以及 Docker Swarm 进行本地集成。同时，由于使用Docker registry 进行函数的版本控制，咱可以按需扩展函数。同时不会对按需开发的函数的框架造成额外的延时。
 
 ### 新建 function
 
@@ -116,9 +114,9 @@ Prometheus 仪表盘示例:
 
 *   以 Docker Alpine Linux 版本为基础进行镜像构建 (可变更)
 
-### build function
+### 编辑 function
 
-先在本地创建函数，然后 push 到 Docker registry 。 使用 Docker Hub ，打开文件 `hello.yml` 然后输入你的账号名：
+先在本地创建函数，然后 push 到 Docker registry 。在 Docker Hub 里面，打开文件 `hello.yml` ，输入你的账号名：
 
 ```
 provider:
@@ -152,7 +150,7 @@ functions:
     image: alexellis2/hello
 ```
 
-现在，调用一个 build 版本。你的系统上需要安装 Docker 。
+接着，调用一个 build 版本。注意你的系统上需要安装好了 Docker 。
 
 `faas-cli build -f hello.yml`
 
@@ -160,7 +158,7 @@ functions:
 
 `faas-cli push -f hello.yml`
 
-当系统中有多个函数的时候，可以使用 `--parallel=N` 来调用多核并行处理 build 或 push 任务。命令也支持这些选项 /-/-/> `--no-cache`  `--squash` 。
+当系统中有多个函数的时候，可以增加选项 `--parallel=N` 来调用多核并行处理 build 或 push 任务。命令也支持这些选项 /-/-/> `--no-cache`  `--squash` 。
 
 ### 部署及测试 function
 
@@ -193,7 +191,7 @@ URL: http://192.168.99.100:31112/function/hello
 $ echo test | faas-cli invoke hello --gateway $gw
 ```
 
-现在可以通过以下命令列出部署好的函数，你将看到调用计数器数值增加。
+然后可以通过以下命令列出部署好的函数，你将看到调用计数器数值增加。
 
 ```
 $ faas-cli list --gateway $gw
@@ -204,32 +202,35 @@ Function                       Invocations     Replicas
 hello                          1               1
 ```
 
- _提示：这条命令也可以 also accepts a _  `_--verbose_`  _ flag for more information._ 
+ _ 提示：这条命令后面可以添加  `_--verbose_`  选项，以显示更多信息。_ 
 
-Since we are running OpenFaaS on a remote cluster (a Linux VM) we set up a `--gateway` override environmental variable. This could also be a remote host on a cloud platform. The alternative is to update the gateway value in your .yml file.
+由于我们是在远端群集（ Linux 虚拟机）上面运行 OpenFaaS，命令里面加上一条 `--gateway` 用来来覆盖环境变量. 这个选项同样适用于云平台上的远程主机。除了加上这条选项以外，还可以通过编辑 .yml 文件里面的 gateway 值来达到同样的效果。
 
-### Moving beyond minikube
+### 迁移到 minikube 以外的环境
 
-Once you are familiar with OpenFaaS on minikube you can deploy to any Kubernetes cluster running on Linux hosts. Here’s an example of OpenFaaS running on Kubernetes on Google’s GKE platform by Stefan Prodan of WeaveWorks demonstrating the built-in auto-scaling capabilities:
+一旦你在熟悉了在 minikube 上运行 OpenFaaS ，就可以在任意 Linux 主机上搭建 Kubernetes 群集来部署 OpenFaaS 了。下图是由来自 WeaveWorks 的 Stefan Prodan 做的 OpenFaaS Demo ，这个 Demo 部署在 Google GKE 平台上的 Kubernetes 上面。图片上展示的是 OpenFaaS 内置的自动扩容的功能：
+
+>译者注：下面图片来自twitter，可能访问不了
+![]（https://twitter.com/stefanprodan/status/931490255684939777/photo/1）
 
 
-### Keep learning
+### 继续学习
 
-We have dozens of guides and blog available to get you up and running on the “FaaS Train” — head over to GitHub and bookmark our guides:
+我们的 Github 上面有很多手册和博文，可以带你轻松“上车”，把我们的页面保存成书签吧：
 
 [openfaas/faas
 faas - OpenFaaS - Serverless Functions Made Simple for Docker & Kubernetesgithub.com][9][][10]
 
-I’ve included a short 15min video from Dockercon 2017 in Copenhagen where I gave an overview of Serverless and OpenFaaS at the Moby Summit.
+2017 哥本哈根 Dockercon Moby 峰会上，我做了关于 Serverless 和 OpenFaaS 的概述演讲，这里我把视频放上来，视频不长，大概 15 分钟左右。
 
-Make sure to follow [OpenFaaS on Twitter][11] for all the latest Cool Hacks, demos and news.
+最后，别忘了关注 [ OpenFaaS 的 Twitter ][11] 这里有最潮的新闻、最酷的技术和 Demo 展示。
 
 --------------------------------------------------------------------------------
 
 via: https://medium.com/@alexellisuk/getting-started-with-openfaas-on-minikube-634502c7acdf
 
 作者：[Alex Ellis ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[mandeler](https://github.com/mandeler)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
