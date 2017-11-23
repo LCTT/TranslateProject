@@ -1,17 +1,24 @@
 Translating by aiwhj
 # How to Improve a Legacy Codebase
-
+# 如何改善遗留的代码库
 
 It happens at least once in the lifetime of every programmer, project manager or teamleader. You get handed a steaming pile of manure, if you’re lucky only a few million lines worth, the original programmers have long ago left for sunnier places and the documentation - if there is any to begin with - is hopelessly out of sync with what is presently keeping the company afloat.
 
-Your job: get us out of this mess.
+它在每一个程序员，项目管理员，团队领导的一生中都会发生至少一次。原来的程序员离开了这个地方，只留下了文档，和一坨几百万行屎一样的代码。一旦接管这些代码，想要跟上公司的进度简直让人绝望。
 
+Your job: get us out of this mess.
+你的任务：让大家摆脱这个混乱的局面
+
+当你的第一反应过去之后，你开始去熟悉这个项目，公司的管理层都在关注着，项目只能成功，然而，看了一遍之后却发现了许多的错误。该怎么做呢？
 After your first instinctive response (run for the hills) has passed you start on the project knowing full well that the eyes of the company senior leadership are on you. Failure is not an option. And yet, by the looks of what you’ve been given failure is very much in the cards. So what to do?
 
+幸运（不幸）的是我已经遇到好几次这种情况了，我和我的小伙伴发现将这坨热气腾腾的屎变成一个健康可维护的项目是很值得的。下面这些是我使用的一些小技巧：
 I’ve been (un)fortunate enough to be in this situation several times and me and a small band of friends have found that it is a lucrative business to be able to take these steaming piles of misery and to turn them into healthy maintainable projects. Here are some of the tricks that we employ:
 
 ### Backup
+### 备份
 
+在你去做任何事情之前备份与之相关的所有东西。这样可以确保不会丢失任何信息，这些信息可能会在一些地方很重要，
 Before you start to do anything at all make a backup of  _everything_  that might be relevant. This to make sure that no information is lost that might be of crucial importance somewhere down the line. All it takes is a silly question that you can’t answer to eat up a day or more once the change has been made. Especially configuration data is susceptible to this kind of problem, it is usually not versioned and you’re lucky if it is taken along in the periodic back-up scheme. So better safe than sorry, copy everything to a very safe place and never ever touch that unless it is in read-only mode.
 
 ### Important pre-requisite, make sure you have a build process and that it actually produces what runs in production
