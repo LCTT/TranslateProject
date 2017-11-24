@@ -1,3 +1,5 @@
+translating---geekpi
+
 # Understanding Docker "Container Host" vs. "Container OS" for Linux and Windows Containers
 
 
