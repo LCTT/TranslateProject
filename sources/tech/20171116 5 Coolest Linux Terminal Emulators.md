@@ -1,3 +1,5 @@
+Translated by cnobelw
+
 5 Coolest Linux Terminal Emulators
 ============================================================
 
