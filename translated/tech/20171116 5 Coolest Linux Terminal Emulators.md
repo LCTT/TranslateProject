@@ -77,7 +77,7 @@ Tilda 有一个漂亮的选项组件， 包括默认的大小、位置、外观
 via: https://www.linux.com/learn/intro-to-linux/2017/11/5-coolest-linux-terminal-emulators
 
 作者：[CARLA SCHRODER ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/cnobelw)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
