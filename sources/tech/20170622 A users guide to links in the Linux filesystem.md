@@ -1,4 +1,4 @@
-Translating by Snapcrafter
+Translating by yongshouzhang
 A user's guide to links in the Linux filesystem
 ============================================================
 
