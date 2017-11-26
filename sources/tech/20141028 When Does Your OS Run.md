@@ -5,6 +5,7 @@ When Does Your OS Run?
 你的操作系统都在何时运行？
 
 Here’s a question: in the time it takes you to read this sentence, has your OS been  _running_ ? Or was it only your browser? Or were they perhaps both idle, just waiting for you to  _do something already_ ?
+请考虑这样一个问题：在你此时此地读到这个句子的时候，你决定你的操作系统是在_运行着_么？还是只是你的浏览器在运行着？又或者它们都处于等待状态，仅仅在等着你去_作成某些已经的操作_？
 
 These questions are simple but they cut through the essence of how software works. To answer them accurately we need a good mental model of OS behavior, which in turn informs performance, security, and troubleshooting decisions. We’ll build such a model in this post series using Linux as the primary OS, with guest appearances by OS X and Windows. I’ll link to the Linux kernel sources for those who want to delve deeper.
 
