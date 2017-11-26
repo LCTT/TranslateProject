@@ -1,7 +1,6 @@
 Translating by yongshouzhang
 
 
->>>>>>> 1563bbe1de2eeca62e56312950525707690c3447
 A user's guide to links in the Linux filesystem
 ============================================================
 
