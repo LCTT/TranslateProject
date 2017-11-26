@@ -1,3 +1,5 @@
+"amesy translating."
+
 Education of a Programmer
 ============================================================
 
