@@ -1,3 +1,5 @@
+Translating by Cwndmiao
+
 When Does Your OS Run?
 ============================================================
 
