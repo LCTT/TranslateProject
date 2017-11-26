@@ -161,3 +161,5 @@ via: https://medium.freecodecamp.org/lessons-from-my-first-year-of-live-coding-o
 [14]:https://twitter.com/mpjme
 [15]:https://www.youtube.com/channel/UCO1cgjhGzsSYb1rsB4bFe4Q
 [16]:https://gist.github.com/noopkat/5de56cb2c5917175c5af3831a274a2c8
+
+Translating by ValoniaK
