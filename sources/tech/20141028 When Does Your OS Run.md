@@ -1,7 +1,8 @@
 【yasenstar翻译中】
+
 When Does Your OS Run?
 ============================================================
-
+你的操作系统都在何时运行？
 
 Here’s a question: in the time it takes you to read this sentence, has your OS been  _running_ ? Or was it only your browser? Or were they perhaps both idle, just waiting for you to  _do something already_ ?
 
