@@ -1,3 +1,4 @@
+Translating by ValoniaK
 Lessons from my first year of live coding on Twitch
 ============================================================
 
