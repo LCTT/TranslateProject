@@ -1,4 +1,3 @@
-XYenChi is translating
 Image Processing on Linux
 ============================================================
 

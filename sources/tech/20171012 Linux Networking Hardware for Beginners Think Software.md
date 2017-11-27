@@ -1,4 +1,3 @@
-translating by sugarfillet
 Linux Networking Hardware for Beginners: Think Software
 ============================================================
 
