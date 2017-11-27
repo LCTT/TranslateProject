@@ -1,5 +1,4 @@
-翻译中 by zionfuo
-
+zpl1025
 How to take screenshots on Linux using Scrot
 ============================================================
 

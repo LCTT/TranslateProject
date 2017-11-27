@@ -1,4 +1,4 @@
-translating by @explosic4
+"amesy translating."
 
 Education of a Programmer
 ============================================================
