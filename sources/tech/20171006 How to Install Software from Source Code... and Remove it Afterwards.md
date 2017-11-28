@@ -1,3 +1,5 @@
+translating by leowang8023
+
 How to Install Software from Source Code… and Remove it Afterwards
 ============================================================
 
