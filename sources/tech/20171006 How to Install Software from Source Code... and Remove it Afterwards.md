@@ -1,4 +1,3 @@
-"Translating by syys96"
 How to Install Software from Source Code… and Remove it Afterwards
 ============================================================
 

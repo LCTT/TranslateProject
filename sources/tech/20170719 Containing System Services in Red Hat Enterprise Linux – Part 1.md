@@ -1,4 +1,3 @@
-> translating by rieonke
 Containing System Services in Red Hat Enterprise Linux – Part 1
 ============================================================
 
