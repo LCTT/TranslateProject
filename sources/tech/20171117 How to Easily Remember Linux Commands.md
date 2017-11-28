@@ -1,3 +1,4 @@
+translating by darksun
 # How to Easily Remember Linux Commands
 
 ![](https://www.maketecheasier.com/assets/uploads/2017/10/rc-feat.jpg)
