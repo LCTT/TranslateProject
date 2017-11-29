@@ -1,5 +1,3 @@
-yixunx翻译中
-
 Designing a Microservices Architecture for Failure
 ============================================================ 
 
