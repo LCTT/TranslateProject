@@ -9,7 +9,7 @@ Linux 新手往往对命令行心存畏惧。部分原因是因为需要记忆�
 
 ![Linux Bash History 命令](https://www.maketecheasier.com/assets/uploads/2017/10/rc-bash-history.jpg)
 
-首先要介绍的是命令行工具 history。它能帮你记住那些你曾经用过的命令。大多数 [Linux shells](https://www.maketecheasier.com/remember-linux-commands/<https:/www.maketecheasier.com/alternative-linux-shells/>)，包括应用最广泛的 Bash，都会创建一个历史文件来包含那些你输入过的命令。如果你用的是 Bash，这个历史文件就是 "/home/<username>/.bash_history"。
+首先要介绍的是命令行工具 history。它能帮你记住那些你曾经用过的命令。大多数 [Linux shells][1]，包括应用最广泛的 Bash，都会创建一个历史文件来包含那些你输入过的命令。如果你用的是 Bash，这个历史文件就是 "/home/<username>/.bash_history"。
 这个历史文件是纯文本格式的，你可以用任意的文本编辑器打开来浏览和搜索。
 ## Apropos
 
@@ -36,7 +36,7 @@ Linux 新手往往对命令行心存畏惧。部分原因是因为需要记忆�
 
 ![Linux Apropos -a Flag](https://www.maketecheasier.com/assets/uploads/2017/10/rc-apropos-a.jpg)
 
-你会觉得应该会有一些匹配的内容出现，比如 [grep](https://www.maketecheasier.com/remember-linux-commands/<https:/www.maketecheasier.com/what-is-grep-and-uses/>) 对吗? 
+你会觉得应该会有一些匹配的内容出现，比如 [grep][2] 对吗? 
 然而，实际上并没有匹配出任何结果。再说一次，apropos 只会根据字面内容进行搜索。
 现在让我们试着用 `-a` 标志来把单词分割开来。
 
@@ -50,12 +50,12 @@ apropos 是一个很棒的工具，不过你需要留意它的缺陷。
 
 ![Linux ZSH Autocomplete](https://www.maketecheasier.com/assets/uploads/2017/10/rc-zsh.jpg)
 
-ZSH 其实并不是用于记忆命令的工具。它其实是一种 shell。你可以用 [ZSH](https://www.maketecheasier.com/remember-linux-commands/<https:/www.maketecheasier.com/understanding-the-different-shell-in-linux-zsh-shell/>) 来替代 Bash 作为你的命令行 shell。ZSH 包含了自动纠错机制，能在你输入命令的时候给你予提示。
-开启该功能后，它会提示你相近的选择想面。在 ZSH 中你可以像往常一样使用命令行，同时你还能享受到极度安全的网络以及其他一些非常好用的特性。充分利用 ZSH 的最简单方法就是使用 [Oh-My-ZSH](https://www.maketecheasier.com/remember-linux-commands/<https:/github.com/robbyrussell/oh-my-zsh>)。
+ZSH 其实并不是用于记忆命令的工具。它其实是一种 shell。你可以用 [ZSH][3] 来替代 Bash 作为你的命令行 shell。ZSH 包含了自动纠错机制，能在你输入命令的时候给你予提示。
+开启该功能后，它会提示你相近的选择想面。在 ZSH 中你可以像往常一样使用命令行，同时你还能享受到极度安全的网络以及其他一些非常好用的特性。充分利用 ZSH 的最简单方法就是使用 [Oh-My-ZSH][4]。
 ## Cheat Sheet
 
-最后，也可能是最间的方法就是使用 [cheat sheet](https://www.maketecheasier.com/remember-linux-commands/<https:/www.maketecheasier.com/premium/cheatsheet/linux-command-line/>)。
-有很多在线的 cheat sheet，比如[这个](https://www.maketecheasier.com/remember-linux-commands/<https:/www.cheatography.com/davechild/cheat-sheets/linux-command-line/>) 可以帮助你快速查询命令。
+最后，也可能是最间的方法就是使用 [cheat sheet][5]。
+有很多在线的 cheat sheet，比如[这个][6] 可以帮助你快速查询命令。
 ![linux-commandline-cheatsheet](https://www.maketecheasier.com/assets/uploads/2013/10/linux-commandline-cheatsheet.gif)
 
 为了快速查询，你可以寻找图片格式的 cheat sheet 然后将它设置为你的桌面墙纸。
@@ -72,3 +72,11 @@ via: https://www.maketecheasier.com/remember-linux-commands/
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+
+[a]: https://www.maketecheasier.com/author/nickcongleton/
+[1]: https://www.maketecheasier.com/alternative-linux-shells/
+[2]: https://www.maketecheasier.com/what-is-grep-and-uses/
+[3]: https://www.maketecheasier.com/understanding-the-different-shell-in-linux-zsh-shell/
+[4]: https://github.com/robbyrussell/oh-my-zsh
+[5]: https://www.maketecheasier.com/premium/cheatsheet/linux-command-line/
+[6]: https://www.cheatography.com/davechild/cheat-sheets/linux-command-line/ 
