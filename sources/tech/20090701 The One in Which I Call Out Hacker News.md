@@ -1,3 +1,5 @@
+##Translating by XiatianSummer
+
 # [The One in Which I Call Out Hacker News][14]
 
 
