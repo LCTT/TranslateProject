@@ -1,3 +1,4 @@
+translating by zrszrszrs
 # [Mark McIntyre: How Do You Fedora?][1]
 
 
