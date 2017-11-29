@@ -1,3 +1,4 @@
+Translating by qhwdw
 An introduction to the Django ORM
 ============================================================
 
