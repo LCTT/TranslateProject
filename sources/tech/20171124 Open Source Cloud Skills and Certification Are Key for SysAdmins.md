@@ -1,3 +1,6 @@
+translating by wangy325...
+
+
 Open Source Cloud Skills and Certification Are Key for SysAdmins
 ============================================================
 
