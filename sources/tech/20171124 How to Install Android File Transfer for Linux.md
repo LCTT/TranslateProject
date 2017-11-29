@@ -1,3 +1,4 @@
+Translating by wenwensnow
 # How to Install Android File Transfer for Linux
 
 If you’re struggling to mount your Android phone on Ubuntu you might want to give [Android File Transfer for Linux][4] a try.
