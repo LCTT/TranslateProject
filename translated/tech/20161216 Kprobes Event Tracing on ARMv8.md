@@ -1,5 +1,5 @@
 ﻿# Kprobes Event Tracing on ARMv8
- 
+
 ![core-dump](http://www.linaro.org/wp-content/uploads/2016/02/core-dump.png) 
 
 ### 介绍
@@ -48,17 +48,17 @@ Perf 工具为 Kprobes 提供了另一个命令行接口。特别地，“perf p
 
 上述所有 kprobes 的方面现在都在 arm64 上得到实现，然而实际上与其它架构上的有一些不同：
 
-*   注册名称参数当然是依架构而特定的，并且可以在 ARM ARM 中找到。
+*   注册名称参数当然是依架构而特定的，并且可以在 ARM ARM 中找到。
 
-*   目前不是所有的指令类型都可被探测。当前不可探测的指令包括 mrs/msr（除了 DAIF 读），异常生成指令，eret 和 hint（除了 nop 变体）。在这些情况下，只探测一个附近的指令来代替是最简单的。这些指令在探测的黑名单里是因为在 kprobes 单步执行或者指令模拟时它们对处理器状态造成的改变是不安全的，这是由于 kprobes 构造的单步执行上下文和指令所需要的不一致，或者是由于指令不能容忍在 kprobes 中额外的处理时间和异常处理（ldx/stx）。
+*   目前不是所有的指令类型都可被探测。当前不可探测的指令包括 mrs/msr（除了 DAIF 读），异常生成指令，eret 和 hint（除了 nop 变体）。在这些情况下，只探测一个附近的指令来代替是最简单的。这些指令在探测的黑名单里是因为在 kprobes 单步执行或者指令模拟时它们对处理器状态造成的改变是不安全的，这是由于 kprobes 构造的单步执行上下文和指令所需要的不一致，或者是由于指令不能容忍在 kprobes 中额外的处理时间和异常处理（ldx/stx）。
 
-*   试图识别在 ldx/stx 序列中的指令并且防止探测，但是理论上这种检查可能会失败，导致允许探测到的原子序列永远不会成功。当探测原子代码序列附近时应该小心。
+*   试图识别在 ldx/stx 序列中的指令并且防止探测，但是理论上这种检查可能会失败，导致允许探测到的原子序列永远不会成功。当探测原子代码序列附近时应该小心。
 
-*   注意由于 linux ARM64 调用约定的具体信息，为探测函数可靠地复制栈帧是不可能的，基于此不要试图用 jprobes 这样做，这一点与支持 jprobes 的大多数其它架构不同。这样的原因是被调用者没有足够的信息来确定需要的栈数量。
+*   注意由于 linux ARM64 调用约定的具体信息，为探测函数可靠地复制栈帧是不可能的，基于此不要试图用 jprobes 这样做，这一点与支持 jprobes 的大多数其它架构不同。这样的原因是被调用者没有足够的信息来确定需要的栈数量。
 
-*   注意当探针被击中时，一个探针记录的栈指针信息将反映出使用中的特定栈指针，它是内核栈指针或者中断栈指针。
+*   注意当探针被击中时，一个探针记录的栈指针信息将反映出使用中的特定栈指针，它是内核栈指针或者中断栈指针。
 
-*   有一组内核函数是不能被探测的，通常因为它们作为 kprobes 处理的一部分被调用。这组函数的一部分是依架构特定的，并且也包含如异常入口代码等。
+*   有一组内核函数是不能被探测的，通常因为它们作为 kprobes 处理的一部分被调用。这组函数的一部分是依架构特定的，并且也包含如异常入口代码等。
 
 ### 使用 Kprobes 事件追踪
 
@@ -68,49 +68,222 @@ Kprobes 一个常用的例子是检测函数入口和/或出口。因为只需�
 
 检测 USB 以太网驱动程序复位功能：
 
-```_$ pwd/sys/kernel/debug/tracing$ cat > kprobe_events <<EOFp ax88772_reset %x0EOF$ echo 1 > events/kprobes/enable_```
+```
+_$ pwd
+/sys/kernel/debug/tracing
+$ cat > kprobe_events <<EOF
+p ax88772_reset %x0
+EOF
+$ echo 1 > events/kprobes/enable_
+```
 
 此时每次驱动器的 *ax8872_reset()* 函数被调用，追踪事件都将会被记录。这个事件将显示指向通过 作为此函数的唯一参数的 X0（按照 ARMv8 调用标准）传入的 _usbnet_ 结构的指针。插入需要以太网驱动程序的USB加密狗后，我们看见以下追踪信息：
 
-```_$ cat trace# tracer: nop## entries-in-buffer/entries-written: 1/1   #P:8##                           _—–=> irqs-off#                          / _—-=> need-resched#                         | / _—=> hardirq/softirq#                         || / _–=> preempt-depth#                         ||| / delay#        TASK-PID   CPU#  |||| TIMESTAMP  FUNCTION#           | |    |   ||||    |      |kworker/0:0-4             [000] d… 10972.102939:   p_ax88772_reset_0:(ax88772_reset+0x0/0x230)   arg1=0xffff800064824c80_```
+```
+_$ cat trace
+# tracer: nop
+#
+# entries-in-buffer/entries-written: 1/1   #P:8
+#
+#                           _—–=> irqs-off
+#                          / _—-=> need-resched
+#                         | / _—=> hardirq/softirq
+#                         || / _–=> preempt-depth
+#                         ||| / delay
+#        TASK-PID   CPU#  |||| TIMESTAMP  FUNCTION
+#           | |    |   ||||    |      |
+kworker/0:0-4             [000] d… 10972.102939:   p_ax88772_reset_0:
+(ax88772_reset+0x0/0x230)   arg1=0xffff800064824c80_
+```
 
 这里我们可以看见传入到我们的探测函数的指针参数的值。由于我们没有使用 kprobes 事件追踪的可选标签功能，我们需要的信息自动被标注为 _arg1_。注意这个指向我们需要 kprobes 记录这个探针的一组值的第一个，而不是函数参数的实际位置。在这个例子中它也只是碰巧是我们探测函数的第一个参数。 
 
 ### 例子: 函数入口和返回探测
 
 Kretprobe 功能专门用于探测函数返回。在函数入口 kprobes 子系统将会被调用并且建立钩子以便在函数返回时调用，钩子将记录需求事件信息。对最常见情况，返回信息通常在 X0 寄存器中，这是非常有用的。在 %x0 中返回值也可以被称为 _$retval_。以下例子也演示了如何提供一个可读的标签来展示有趣的信息。 
+
 使用 kprobes 和 kretprobe 检测内核 *_do_fork()* 函数来记录参数和结果的例子：
 
-```_$ cd /sys/kernel/debug/tracing$ cat > kprobe_events <<EOFp _do_fork %x0 %x1 %x2 %x3 %x4 %x5r _do_fork pid=%x0EOF$ echo 1 > events/kprobes/enable_```
+```
+_$ cd /sys/kernel/debug/tracing
+$ cat > kprobe_events <<EOF
+p _do_fork %x0 %x1 %x2 %x3 %x4 %x5
+r _do_fork pid=%x0
+EOF
+$ echo 1 > events/kprobes/enable_
+```
 
 此时每次对 _do_fork() 的调用都会产生两个记录到 “_trace_” 文件的 kprobe 事件，一个报告调用参数值，另一个报告返回值。返回值在 trace 文件中将被标记为“_pid_”。这里是三次 fork 系统调用执行后的 trace 文件的内容： 
-```_$ cat trace# tracer: nop## entries-in-buffer/entries-written: 6/6   #P:8##                              _—–=> irqs-off#                             / _—-=> need-resched#                            | / _—=> hardirq/softirq#                            || / _–=> preempt-depth#                            ||| /     delay#           TASK-PID   CPU#  ||||    TIMESTAMP  FUNCTION#              | |       |   ||||       |         |              bash-1671  [001] d…   204.946007: p__do_fork_0: (_do_fork+0x0/0x3e4) arg1=0x1200011 arg2=0x0 arg3=0x0 arg4=0x0 arg5=0xffff78b690d0 arg6=0x0              bash-1671  [001] d..1   204.946391: r__do_fork_0: (SyS_clone+0x18/0x20 <- _do_fork) pid=0x724              bash-1671  [001] d…   208.845749: p__do_fork_0: (_do_fork+0x0/0x3e4) arg1=0x1200011 arg2=0x0 arg3=0x0 arg4=0x0 arg5=0xffff78b690d0 arg6=0x0              bash-1671  [001] d..1   208.846127: r__do_fork_0: (SyS_clone+0x18/0x20 <- _do_fork) pid=0x725              bash-1671  [001] d…   214.401604: p__do_fork_0: (_do_fork+0x0/0x3e4) arg1=0x1200011 arg2=0x0 arg3=0x0 arg4=0x0 arg5=0xffff78b690d0 arg6=0x0              bash-1671  [001] d..1   214.401975: r__do_fork_0: (SyS_clone+0x18/0x20 <- _do_fork) pid=0x726_```
+
+```
+_$ cat trace
+# tracer: nop
+#
+# entries-in-buffer/entries-written: 6/6   #P:8
+#
+#                              _—–=> irqs-off
+#                             / _—-=> need-resched
+#                            | / _—=> hardirq/softirq
+#                            || / _–=> preempt-depth
+#                            ||| /     delay
+#           TASK-PID   CPU#  ||||    TIMESTAMP  FUNCTION
+#              | |       |   ||||       |         |
+              bash-1671  [001] d…   204.946007: p__do_fork_0: (_do_fork+0x0/0x3e4) arg1=0x1200011 arg2=0x0 arg3=0x0 arg4=0x0 arg5=0xffff78b690d0 arg6=0x0
+              bash-1671  [001] d..1   204.946391: r__do_fork_0: (SyS_clone+0x18/0x20 <- _do_fork) pid=0x724
+              bash-1671  [001] d…   208.845749: p__do_fork_0: (_do_fork+0x0/0x3e4) arg1=0x1200011 arg2=0x0 arg3=0x0 arg4=0x0 arg5=0xffff78b690d0 arg6=0x0
+              bash-1671  [001] d..1   208.846127: r__do_fork_0: (SyS_clone+0x18/0x20 <- _do_fork) pid=0x725
+              bash-1671  [001] d…   214.401604: p__do_fork_0: (_do_fork+0x0/0x3e4) arg1=0x1200011 arg2=0x0 arg3=0x0 arg4=0x0 arg5=0xffff78b690d0 arg6=0x0
+              bash-1671  [001] d..1   214.401975: r__do_fork_0: (SyS_clone+0x18/0x20 <- _do_fork) pid=0x726_
+```
 
 ### 例子： 解引用指针参数
+
 对于指针值，kprobes 事件处理子系统也允许解引用和打印所需的内存内容，适用于各种基本数据类型。为了展示所需字段，手动计算结构的偏移量是必要的。
+
 检测 `_do_wait()` 函数：
-```_$ cat > kprobe_events <<EOFp:wait_p do_wait wo_type=+0(%x0):u32 wo_flags=+4(%x0):u32r:wait_r do_wait $retvalEOF$ echo 1 > events/kprobes/enable_```
+
+```
+_$ cat > kprobe_events <<EOF
+p:wait_p do_wait wo_type=+0(%x0):u32 wo_flags=+4(%x0):u32
+r:wait_r do_wait $retval
+EOF
+$ echo 1 > events/kprobes/enable_
+```
+
 注意在第一个探针中使用的参数标签是可选的，并且可用于更清晰地识别记录在追踪日志中的信息。带符号的偏移量和括号表明了寄存器参数是指向记录在追踪日志中的内存内容的指针。“_:u32_”表明了内存位置包含一个无符号的4字节宽的数据(在这个例子中指局部定义的结构中的一个 emum 和一个 int)
+
 探针标签（冒号后）是可选的，并且将用来识别日志中的探针。对每个探针来说标签必须是独一无二的。如果没有指定，将从附近的符号名称自动生成一个有用的标签，如前面的例子所示。
+
 也要注意“_$retval_”参数可以只是指定为“_%x0_”。
+
 这里是两次 fork 系统调用执行后的 “_trace_” 文件的内容：
-```_$ cat trace# tracer: nop## entries-in-buffer/entries-written: 4/4   #P:8##                              _—–=> irqs-off#                             / _—-=> need-resched#                            | / _—=> hardirq/softirq#                            || / _–=> preempt-depth#                            ||| /     delay#           TASK-PID   CPU#  ||||    TIMESTAMP  FUNCTION#              | |       |   ||||       |         |             bash-1702  [001] d…   175.342074: wait_p: (do_wait+0x0/0x260) wo_type=0x3 wo_flags=0xe             bash-1702  [002] d..1   175.347236: wait_r: (SyS_wait4+0x74/0xe4 <- do_wait) arg1=0x757             bash-1702  [002] d…   175.347337: wait_p: (do_wait+0x0/0x260) wo_type=0x3 wo_flags=0xf             bash-1702  [002] d..1   175.347349: wait_r: (SyS_wait4+0x74/0xe4 <- do_wait) arg1=0xfffffffffffffff6_```
+
+```
+_$ cat trace
+# tracer: nop
+#
+# entries-in-buffer/entries-written: 4/4   #P:8
+#
+#                              _—–=> irqs-off
+#                             / _—-=> need-resched
+#                            | / _—=> hardirq/softirq
+#                            || / _–=> preempt-depth
+#                            ||| /     delay
+#           TASK-PID   CPU#  ||||    TIMESTAMP  FUNCTION
+#              | |       |   ||||       |         |
+             bash-1702  [001] d…   175.342074: wait_p: (do_wait+0x0/0x260) wo_type=0x3 wo_flags=0xe
+             bash-1702  [002] d..1   175.347236: wait_r: (SyS_wait4+0x74/0xe4 <- do_wait) arg1=0x757
+             bash-1702  [002] d…   175.347337: wait_p: (do_wait+0x0/0x260) wo_type=0x3 wo_flags=0xf
+             bash-1702  [002] d..1   175.347349: wait_r: (SyS_wait4+0x74/0xe4 <- do_wait) arg1=0xfffffffffffffff6_
+```
+
 ### 例子: 探测任意指令地址
+
 在前面的例子中，我们已经为函数的入口和出口插入探针，然而探测一个任意指令（除少数例外）是可能的。如果我们正在 C 函数中放置一个探针，第一步是查看代码的汇编版本以确定我们要放置探针的位置。一种方法是在 vmlinux 文件上使用 gdb,并在要放置探针的函数中展示指令。下面是一个在 arch/arm64/kernel/modules.c 中 _module_alloc_ 函数执行此操作的示例。在这种情况下，因为 gdb 似乎更喜欢使用弱符号定义，并且它是与这个函数关联的存根代码，所以我们从 System.map 中来获取符号值： 
-```_$ grep module_alloc System.mapffff2000080951c4 T module_allocffff200008297770 T kasan_module_alloc_```
+
+```
+_$ grep module_alloc System.map
+ffff2000080951c4 T module_alloc
+ffff200008297770 T kasan_module_alloc_
+```
+
 在这个例子中我们使用了交叉开发工具，并且在我们的主机系统上调用 gdb 来检查指令包含我们感兴趣函数。 
-```_$ ${CROSS_COMPILE}gdb vmlinux(gdb) x/30i 0xffff2000080951c4        0xffff2000080951c4 <module_alloc>:    sub    sp, sp, #0x30        0xffff2000080951c8 <module_alloc+4>:    adrp    x3, 0xffff200008d70000        0xffff2000080951cc <module_alloc+8>:    add    x3, x3, #0x0        0xffff2000080951d0 <module_alloc+12>:    mov    x5, #0x713             // #1811        0xffff2000080951d4 <module_alloc+16>:    mov    w4, #0xc0              // #192        0xffff2000080951d8 <module_alloc+20>:              mov    x2, #0xfffffffff8000000    // #-134217728        0xffff2000080951dc <module_alloc+24>:    stp    x29, x30, [sp,#16]         0xffff2000080951e0 <module_alloc+28>:    add    x29, sp, #0x10        0xffff2000080951e4 <module_alloc+32>:    movk    x5, #0xc8, lsl #48        0xffff2000080951e8 <module_alloc+36>:    movk    w4, #0x240, lsl #16        0xffff2000080951ec <module_alloc+40>:    str    x30, [sp]         0xffff2000080951f0 <module_alloc+44>:    mov    w7, #0xffffffff        // #-1        0xffff2000080951f4 <module_alloc+48>:    mov    x6, #0x0               // #0        0xffff2000080951f8 <module_alloc+52>:    add    x2, x3, x2        0xffff2000080951fc <module_alloc+56>:    mov    x1, #0x8000            // #32768        0xffff200008095200 <module_alloc+60>:    stp    x19, x20, [sp,#32]         0xffff200008095204 <module_alloc+64>:    mov    x20, x0        0xffff200008095208 <module_alloc+68>:    bl    0xffff2000082737a8 <__vmalloc_node_range>        0xffff20000809520c <module_alloc+72>:    mov    x19, x0        0xffff200008095210 <module_alloc+76>:    cbz    x0, 0xffff200008095234 <module_alloc+112>        0xffff200008095214 <module_alloc+80>:    mov    x1, x20        0xffff200008095218 <module_alloc+84>:    bl    0xffff200008297770 <kasan_module_alloc>        0xffff20000809521c <module_alloc+88>:    tbnz    w0, #31, 0xffff20000809524c <module_alloc+136>        0xffff200008095220 <module_alloc+92>:    mov    sp, x29        0xffff200008095224 <module_alloc+96>:    mov    x0, x19        0xffff200008095228 <module_alloc+100>:    ldp    x19, x20, [sp,#16]         0xffff20000809522c <module_alloc+104>:    ldp    x29, x30, [sp],#32        0xffff200008095230 <module_alloc+108>:    ret        0xffff200008095234 <module_alloc+112>:    mov    sp, x29        0xffff200008095238 <module_alloc+116>:    mov    x19, #0x0               // #0_```
+
+```
+_$ ${CROSS_COMPILE}gdb vmlinux
+(gdb) x/30i 0xffff2000080951c4
+        0xffff2000080951c4 <module_alloc>:    sub    sp, sp, #0x30
+        0xffff2000080951c8 <module_alloc+4>:    adrp    x3, 0xffff200008d70000
+        0xffff2000080951cc <module_alloc+8>:    add    x3, x3, #0x0
+        0xffff2000080951d0 <module_alloc+12>:    mov    x5, #0x713             // #1811
+        0xffff2000080951d4 <module_alloc+16>:    mov    w4, #0xc0              // #192
+        0xffff2000080951d8 <module_alloc+20>:
+              mov    x2, #0xfffffffff8000000    // #-134217728
+        0xffff2000080951dc <module_alloc+24>:    stp    x29, x30, [sp,#16]         0xffff2000080951e0 <module_alloc+28>:    add    x29, sp, #0x10
+        0xffff2000080951e4 <module_alloc+32>:    movk    x5, #0xc8, lsl #48
+        0xffff2000080951e8 <module_alloc+36>:    movk    w4, #0x240, lsl #16
+        0xffff2000080951ec <module_alloc+40>:    str    x30, [sp]         0xffff2000080951f0 <module_alloc+44>:    mov    w7, #0xffffffff        // #-1
+        0xffff2000080951f4 <module_alloc+48>:    mov    x6, #0x0               // #0
+        0xffff2000080951f8 <module_alloc+52>:    add    x2, x3, x2
+        0xffff2000080951fc <module_alloc+56>:    mov    x1, #0x8000            // #32768
+        0xffff200008095200 <module_alloc+60>:    stp    x19, x20, [sp,#32]         0xffff200008095204 <module_alloc+64>:    mov    x20, x0
+        0xffff200008095208 <module_alloc+68>:    bl    0xffff2000082737a8 <__vmalloc_node_range>
+        0xffff20000809520c <module_alloc+72>:    mov    x19, x0
+        0xffff200008095210 <module_alloc+76>:    cbz    x0, 0xffff200008095234 <module_alloc+112>
+        0xffff200008095214 <module_alloc+80>:    mov    x1, x20
+        0xffff200008095218 <module_alloc+84>:    bl    0xffff200008297770 <kasan_module_alloc>
+        0xffff20000809521c <module_alloc+88>:    tbnz    w0, #31, 0xffff20000809524c <module_alloc+136>
+        0xffff200008095220 <module_alloc+92>:    mov    sp, x29
+        0xffff200008095224 <module_alloc+96>:    mov    x0, x19
+        0xffff200008095228 <module_alloc+100>:    ldp    x19, x20, [sp,#16]         0xffff20000809522c <module_alloc+104>:    ldp    x29, x30, [sp],#32
+        0xffff200008095230 <module_alloc+108>:    ret
+        0xffff200008095234 <module_alloc+112>:    mov    sp, x29
+        0xffff200008095238 <module_alloc+116>:    mov    x19, #0x0               // #0_
+```
+
 在这种情况下，我们将在此函数中显示以下源代码行的结果：
-```_p = __vmalloc_node_range(size, MODULE_ALIGN, VMALLOC_START,VMALLOC_END, GFP_KERNEL, PAGE_KERNEL_EXEC, 0,NUMA_NO_NODE, __builtin_return_address(0));_```
+
+```
+_p = __vmalloc_node_range(size, MODULE_ALIGN, VMALLOC_START,
+VMALLOC_END, GFP_KERNEL, PAGE_KERNEL_EXEC, 0,
+NUMA_NO_NODE, __builtin_return_address(0));_
+```
+
 …以及在此代码行的函数调用的返回值：
-```_if (p && (kasan_module_alloc(p, size) < 0)) {_```
+
+```
+_if (p && (kasan_module_alloc(p, size) < 0)) {_
+```
+
 我们可以在从调用外部函数的汇编代码中识别这些。为了展示这些值，我们将在目标系统上的0xffff20000809520c 和 0xffff20000809521c 处放置探针。
-```_$ cat > kprobe_events <<EOFp 0xffff20000809520c %x0p 0xffff20000809521c %x0EOF$ echo 1 > events/kprobes/enable_```
+
+```
+_$ cat > kprobe_events <<EOF
+p 0xffff20000809520c %x0
+p 0xffff20000809521c %x0
+EOF
+$ echo 1 > events/kprobes/enable_
+```
+
 现在将一个以太网适配器加密狗插入到 USB 端口后，我们看到以下写入追踪日志的内容：
-```_$ cat trace# tracer: nop## entries-in-buffer/entries-written: 12/12   #P:8##                           _—–=> irqs-off#                          / _—-=> need-resched#                         | / _—=> hardirq/softirq#                         || / _–=> preempt-depth#                         ||| / delay#        TASK-PID   CPU#  |||| TIMESTAMP  FUNCTION#           | |    |   ||||    |      |      systemd-udevd-2082  [000] d… 77.200991: p_0xffff20000809520c: (module_alloc+0x48/0x98) arg1=0xffff200001188000      systemd-udevd-2082  [000] d… 77.201059: p_0xffff20000809521c: (module_alloc+0x58/0x98) arg1=0x0      systemd-udevd-2082  [000] d… 77.201115: p_0xffff20000809520c: (module_alloc+0x48/0x98) arg1=0xffff200001198000      systemd-udevd-2082  [000] d… 77.201157: p_0xffff20000809521c: (module_alloc+0x58/0x98) arg1=0x0      systemd-udevd-2082  [000] d… 77.227456: p_0xffff20000809520c: (module_alloc+0x48/0x98) arg1=0xffff2000011a0000      systemd-udevd-2082  [000] d… 77.227522: p_0xffff20000809521c: (module_alloc+0x58/0x98) arg1=0x0      systemd-udevd-2082  [000] d… 77.227579: p_0xffff20000809520c: (module_alloc+0x48/0x98) arg1=0xffff2000011b0000      systemd-udevd-2082  [000] d… 77.227635: p_0xffff20000809521c: (module_alloc+0x58/0x98) arg1=0x0      modprobe-2097  [002] d… 78.030643: p_0xffff20000809520c: (module_alloc+0x48/0x98) arg1=0xffff2000011b8000      modprobe-2097  [002] d… 78.030761: p_0xffff20000809521c: (module_alloc+0x58/0x98) arg1=0x0      modprobe-2097  [002] d… 78.031132: p_0xffff20000809520c: (module_alloc+0x48/0x98) arg1=0xffff200001270000      modprobe-2097  [002] d… 78.031187: p_0xffff20000809521c: (module_alloc+0x58/0x98) arg1=0x0_```
+
+```
+_$ cat trace
+# tracer: nop
+#
+# entries-in-buffer/entries-written: 12/12   #P:8
+#
+#                           _—–=> irqs-off
+#                          / _—-=> need-resched
+#                         | / _—=> hardirq/softirq
+#                         || / _–=> preempt-depth
+#                         ||| / delay
+#        TASK-PID   CPU#  |||| TIMESTAMP  FUNCTION
+#           | |    |   ||||    |      |
+      systemd-udevd-2082  [000] d… 77.200991: p_0xffff20000809520c: (module_alloc+0x48/0x98) arg1=0xffff200001188000
+      systemd-udevd-2082  [000] d… 77.201059: p_0xffff20000809521c: (module_alloc+0x58/0x98) arg1=0x0
+      systemd-udevd-2082  [000] d… 77.201115: p_0xffff20000809520c: (module_alloc+0x48/0x98) arg1=0xffff200001198000
+      systemd-udevd-2082  [000] d… 77.201157: p_0xffff20000809521c: (module_alloc+0x58/0x98) arg1=0x0
+      systemd-udevd-2082  [000] d… 77.227456: p_0xffff20000809520c: (module_alloc+0x48/0x98) arg1=0xffff2000011a0000
+      systemd-udevd-2082  [000] d… 77.227522: p_0xffff20000809521c: (module_alloc+0x58/0x98) arg1=0x0
+      systemd-udevd-2082  [000] d… 77.227579: p_0xffff20000809520c: (module_alloc+0x48/0x98) arg1=0xffff2000011b0000
+      systemd-udevd-2082  [000] d… 77.227635: p_0xffff20000809521c: (module_alloc+0x58/0x98) arg1=0x0
+      modprobe-2097  [002] d… 78.030643: p_0xffff20000809520c: (module_alloc+0x48/0x98) arg1=0xffff2000011b8000
+      modprobe-2097  [002] d… 78.030761: p_0xffff20000809521c: (module_alloc+0x58/0x98) arg1=0x0
+      modprobe-2097  [002] d… 78.031132: p_0xffff20000809520c: (module_alloc+0x48/0x98) arg1=0xffff200001270000
+      modprobe-2097  [002] d… 78.031187: p_0xffff20000809521c: (module_alloc+0x58/0x98) arg1=0x0_
+```
+
 Kprobes 事件系统的另一个功能是记录统计信息，这可在 inkprobe_profile 中找到。在以上追踪后，该文件的内容为：
-```_$ cat kprobe_profile p_0xffff20000809520c                                    6            0p_0xffff20000809521c                                    6            0_```
+
+```
+_$ cat kprobe_profile
+ p_0xffff20000809520c                                    6            0
+p_0xffff20000809521c                                    6            0_
+```
+
 这表明我们设置的两处断点每个共发生了 8 次击中，这当然与追踪日志数据是一致的。在 kprobetrace 文档中有更多 kprobe_profile 的功能描述。
+
 也可以进一步过滤 kprobes 事件。用来控制这点的 debugfs 文件在 kprobetrace 文档中被列出，然而他们内容的详细信息大多在 trace events 文档中被描述。
 
 ### 总结
@@ -120,15 +293,44 @@ Kprobes 事件系统的另一个功能是记录统计信息，这可在 inkprobe
 * * *
 
 参考文献
+
 [[1]][5] Jim Keniston, Prasanna S. Panchamukhi, Masami Hiramatsu. “Kernel Probes (Kprobes).” _GitHub_. GitHub, Inc., 15 Aug. 2016\. Web. 13 Dec. 2016.
+
 [[2]][6] Ts’o, Theodore, Li Zefan, and Tom Zanussi. “Event Tracing.” _GitHub_. GitHub, Inc., 3 Mar. 2016\. Web. 13 Dec. 2016.
+
 [[3]][7] Hiramatsu, Masami. “Kprobe-based Event Tracing.” _GitHub_. GitHub, Inc., 18 Aug. 2016\. Web. 13 Dec. 2016.
+
+
 ----------------
 
-作者简介 ： [David Long][8] David在 Linaro Kernel - Core Development 团队中担任工程师。 在加入 Linaro 之前，他在商业和国防行业工作了数年，既做嵌入式实时工作又为Unix提供软件开发工具。之后，在 Digital（又名 Compaq）公司工作了十几年，负责 Unix 标准，C 编译器和运行时库的工作。之后 David 又去了一系列初创公司做嵌入式 Linux  和安卓系统，嵌入式定制操作系统和 Xen 虚拟化。他拥有 MIPS，Alpha 和 ARM 平台的经验（等等）。他使用过从 1979 年贝尔实验室 V6 开始的大部分Unix操作系统，并且长期以来一直是 Linux 用户和倡导者。他偶尔也因使用烙铁和数字示波器调试设备驱动而知名。
+作者简介 ： [David Long][8] David在 Linaro Kernel - Core Development 团队中担任工程师。 在加入 Linaro 之前，他在商业和国防行业工作了数年，既做嵌入式实时工作又为Unix提供软件开发工具。之后，在 Digital（又名 Compaq）公司工作了十几年，负责 Unix 标准，C 编译器和运行时库的工作。之后 David 又去了一系列初创公司做嵌入式 Linux  和安卓系统，嵌入式定制操作系统和 Xen 虚拟化。他拥有 MIPS，Alpha 和 ARM 平台的经验（等等）。他使用过从 1979 年贝尔实验室 V6 开始的大部分Unix操作系统，并且长期以来一直是 Linux 用户和倡导者。他偶尔也因使用烙铁和数字示波器调试设备驱动而知名。
 
 --------------------------------------------------------------------------------
+
 via: http://www.linaro.org/blog/kprobes-event-tracing-armv8/
-作者：[ David Long][a]译者：[kimii](https://github.com/kimii)校对：[校对者ID](https://github.com/校对者ID)
+
+作者：[ David Long][a]
+译者：[kimii](https://github.com/kimii)
+校对：[校对者ID](https://github.com/校对者ID)
+
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
-[a]:http://www.linaro.org/author/david-long/[1]:http://www.linaro.org/blog/kprobes-event-tracing-armv8/#[2]:https://github.com/torvalds/linux/blob/master/Documentation/kprobes.txt[3]:https://github.com/torvalds/linux/blob/master/Documentation/trace/events.txt[4]:https://github.com/torvalds/linux/blob/master/Documentation/trace/kprobetrace.txt[5]:https://github.com/torvalds/linux/blob/master/Documentation/kprobes.txt[6]:https://github.com/torvalds/linux/blob/master/Documentation/trace/events.txt[7]:https://github.com/torvalds/linux/blob/master/Documentation/trace/kprobetrace.txt[8]:http://www.linaro.org/author/david-long/[9]:http://www.linaro.org/blog/kprobes-event-tracing-armv8/#comments[10]:http://www.linaro.org/blog/kprobes-event-tracing-armv8/#[11]:http://www.linaro.org/tag/arm64/[12]:http://www.linaro.org/tag/armv8/[13]:http://www.linaro.org/tag/jprobes/[14]:http://www.linaro.org/tag/kernel/[15]:http://www.linaro.org/tag/kprobes/[16]:http://www.linaro.org/tag/kretprobes/[17]:http://www.linaro.org/tag/perf/[18]:http://www.linaro.org/tag/tracing/
+
+[a]:http://www.linaro.org/author/david-long/
+[1]:http://www.linaro.org/blog/kprobes-event-tracing-armv8/#
+[2]:https://github.com/torvalds/linux/blob/master/Documentation/kprobes.txt
+[3]:https://github.com/torvalds/linux/blob/master/Documentation/trace/events.txt
+[4]:https://github.com/torvalds/linux/blob/master/Documentation/trace/kprobetrace.txt
+[5]:https://github.com/torvalds/linux/blob/master/Documentation/kprobes.txt
+[6]:https://github.com/torvalds/linux/blob/master/Documentation/trace/events.txt
+[7]:https://github.com/torvalds/linux/blob/master/Documentation/trace/kprobetrace.txt
+[8]:http://www.linaro.org/author/david-long/
+[9]:http://www.linaro.org/blog/kprobes-event-tracing-armv8/#comments
+[10]:http://www.linaro.org/blog/kprobes-event-tracing-armv8/#
+[11]:http://www.linaro.org/tag/arm64/
+[12]:http://www.linaro.org/tag/armv8/
+[13]:http://www.linaro.org/tag/jprobes/
+[14]:http://www.linaro.org/tag/kernel/
+[15]:http://www.linaro.org/tag/kprobes/
+[16]:http://www.linaro.org/tag/kretprobes/
+[17]:http://www.linaro.org/tag/perf/
+[18]:http://www.linaro.org/tag/tracing/
