@@ -1,3 +1,5 @@
+HankChow Translating
+
 In Device We Trust: Measure Twice, Compute Once with Xen, Linux, TPM 2.0 and TXT
 ============================================================
 
