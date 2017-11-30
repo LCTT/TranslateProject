@@ -1,45 +1,48 @@
 yixunx translating
 
-# Search DuckDuckGo from the Command Line
-
+# 在命令行中使用DuckDuckGo搜索
  ![](http://www.omgubuntu.co.uk/wp-content/uploads/2017/11/duckduckgo.png)
-When we showed you how to [search Google from the command line][3] a lot of you to say you use [Duck Duck Go][4], the awesome privacy-focused search engine.
 
-Well, now there’s a tool to search DuckDuckGo from the command line. It’s called [ddgr][6] (pronounced, in my head, as  _dodger_ ) and it’s pretty neat.
+此前我们介绍了[如何在命令行中使用 Google 搜索][3]。许多读者反馈说他们平时使用 [Duck Duck Go][4]，一个功能强大而且保密性很强的搜索引擎。
 
-Like [Googler][7], ddgr is totally open-source and totally unofficial. Yup, the app is unaffiliated with DuckDuckGo in any way. So, should it start returning unsavoury search results for innocent terms, make sure you quack in this dev’s direction, and not the search engine’s!
+正巧，最近出现了一款能够从命令行搜索 DuckDuckGo 的工具。它叫做 ddgr（我把它读作 _dodger_），非常好用。
 
-### DuckDuckGo Terminal App
+像 [Googler][7] 一样，ddgr 是一个完全开源而且非官方的工具。没错，它并不属于 DuckDuckGo。所以，如果你发现它返回的结果有些奇怪，请先询问这个工具的开发者，而不是搜索引擎的开发者。
+
+### DuckDuckGo 命令行应用
 
 ![](http://www.omgubuntu.co.uk/wp-content/uploads/2017/11/ddgr-gif.gif)
 
-[DuckDuckGo Bangs][8] makes finding stuff on DuckDuckGo super easy (there’s even a bang for  _this_  site) and, dutifully, ddgr supports them.
+[DuckDuckGo Bangs（DuckDuckGo 快捷搜索）][8] 可以帮助你轻易地在 DuckDuckGo 上找到想要的信息（甚至 _本网站_ 都有快捷搜索）。ddgr 非常忠实地呈现了这个功能。
 
-Unlike the web interface, you can specify the number of search results you would like to see per page. It’s more convenient than skimming through 30-odd search results per page. The default interface is carefully designed to use minimum space without sacrificing readability.
+和网页版不同的是，你可以更改每页返回多少结果。这比起比起每次查询都要看三十多条结果要方便一些。默认界面经过了精心设计，在不影响可读性的情况下尽量减少了占用空间。
 
-`ddgr` has a number of features, including:
+`ddgr` 有许多功能和亮点，包括：
 
-*   Choose number of search results to fetch
+*   更改搜索结果数
 
-*   Support for Bash autocomplete
+*   支持 Bash 自动补全
 
-*   Use !bangs
+*   使用 DuckDuckGo Bangs
 
-*   Open URLs in a browser
+*   在浏览器中打开链接
 
-*   “I’m feeling lucky” option
+*   ”手气不错“选项
 
-*   Filter by time, region, file type, etc
+*   基于时间、地区、文件类型等的筛选功能
 
-*   Minimal dependencies
+*   极少的依赖项
 
-You can download `ddgr` for various systems direct from the Github project page:
 
-[Download ‘ddgr’ from Github][9]
+你可以从 Github 的项目页面上下载支持各种系统的 `ddgr`：
 
-You can also install ddgr on Ubuntu 16.04 LTS and up from a PPA. This repo is maintained by the developer of ddgr and is recommended should you want to stay up-to-date with new releases as and when they appear.
+[从 Github 下载 “ddgr”][9]
 
-Do note that at the time of writing the latest version of ddgr is  _not_  in the PPA, but an older version (lacking –num support) is:
+另外，在 Ubuntu 16.04 LTS 或更新版本中，你可以使用 PPA 安装 ddgr。这个仓库由 ddgr 的开发者维护。如果你想要保持在最新版本的话，推荐使用这种方式安装。
+
+需要提醒的是，在本文创作时，这个 PPA 中的 ddgr _并不是_ 最新版本，而是一个稍旧的版本（缺少 -num 选项）。
+
+使用以下命令添加 PPA：
 
 ```
 sudo add-apt-repository ppa:twodopeshaggy/jarun
@@ -49,33 +52,34 @@ sudo add-apt-repository ppa:twodopeshaggy/jarun
 sudo apt-get update
 ```
 
-### How To Use ddgr to Search DuckDuckGo from the Comand Line
+### 如何使用 ddgr 在命令行中搜索 DuckDuckGo
 
-To use ddgr once you installed all you need to do is pop open your terminal emulator of choice and run:
+安装完毕后，你只需打开你的终端模拟器，并运行：
 
 ```
 ddgr
 ```
 
-Next enter a search term:
+然后输入查询内容：
 
 ```
 search-term
 ```
 
-To limit the number of results returned run:
+你可以限制搜索结果数：
 
 ```
 ddgr --num 5 search-term
 ```
 
-To instantly open the first matching result for a search term in your browser run:
+或者自动在浏览器中打开第一条搜索结果：
+
 
 ```
 ddgr -j search-term
 ```
 
-You can pass arguments and flags to narrow down your search. To see a comprehensive list inside the terminal run:
+你可以使用参数和选项来提高搜索精确度。使用以下命令来查看所有的参数：
 
 ```
 ddgr -h
@@ -85,8 +89,8 @@ ddgr -h
 
 via: http://www.omgubuntu.co.uk/2017/11/duck-duck-go-terminal-app
 
-作者：[JOEY SNEDDON  ][a]
-译者：[译者ID](https://github.com/译者ID)
+作者：[JOEY SNEDDON][a]
+译者：[yixunx](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
