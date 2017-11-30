@@ -1,5 +1,3 @@
-yixunx translating
-
 # 在命令行中使用DuckDuckGo搜索
  ![](http://www.omgubuntu.co.uk/wp-content/uploads/2017/11/duckduckgo.png)
 
