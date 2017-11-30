@@ -88,7 +88,7 @@ ddgr -h
 via: http://www.omgubuntu.co.uk/2017/11/duck-duck-go-terminal-app
 
 作者：[JOEY SNEDDON][a]
-译者：[yixunx](https://github.com/译者ID)
+译者：[yixunx](https://github.com/yixunx)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
