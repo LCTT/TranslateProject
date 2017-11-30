@@ -1,3 +1,4 @@
+Translating by qhwdw
 How to use SVG as a Placeholder, and Other Image Loading Techniques
 ============================================================
 
