@@ -1,3 +1,4 @@
+translate by darksun
 Translate Shell – A Tool To Use Google Translate From Command Line In Linux
 ============================================================
 
