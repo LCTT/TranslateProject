@@ -1,28 +1,27 @@
 Translating by yongshouzhang
 
-
-A user's guide to links in the Linux filesystem
+linux 文件链接用户指南
 ============================================================
 
-### Learn how to use links, which make tasks easier by providing access to files from multiple locations in the Linux filesystem directory tree.
+### 学习如何使用链接，通过提供对 linux 文件系统多个位置的文件访问，来让日常工作变得轻松
 
 
 ![A user's guide to links in the Linux filesystem](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/links.png?itok=AumNmse7 "A user's guide to links in the Linux filesystem")
 Image by : [Paul Lewin][8]. Modified by Opensource.com. [CC BY-SA 2.0][9]
 
-In articles I have written about various aspects of Linux filesystems for Opensource.com, including [An introduction to Linux's EXT4 filesystem][10]; [Managing devices in Linux][11]; [An introduction to Linux filesystems][12]; and [A Linux user's guide to Logical Volume Management][13], I have briefly mentioned an interesting feature of Linux filesystems that can make some tasks easier by providing access to files from multiple locations in the filesystem directory tree.
+在我为 opensource.com 写过的关于linux文件系统方方面面的文章中，包括 [An introduction to Linux's EXT4 filesystem][10]; [Managing devices in Linux][11]; [An introduction to Linux filesystems][12]; and [A Linux user's guide to Logical Volume Management][13]，我曾简要的提到过linux文件系统一个有趣的特性，它允许用户访问linux文件目录树中多个位置的文件来简化一些任务
 
-There are two types of Linux filesystem links: hard and soft. The difference between the two types of links is significant, but both types are used to solve similar problems. They both provide multiple directory entries (or references) to a single file, but they do it quite differently. Links are powerful and add flexibility to Linux filesystems because [everything is a file][14].
+linux 文件系统中有两种链接：硬链接和软链接。虽然二者差别显著，但都用来解决相似的问题。它们都提供了对单个文件进行多个目录项的访问（引用），但实现却大为不同。链接的强大功能赋予了 linux 文件系统灵活性，因为[一切即文件][14]。
 
-More Linux resources
+更多 linux 资源
 
-*   [What is Linux?][1]
+*   [什么是 linux ？][1]
 
-*   [What are Linux containers?][2]
+*   [什么是 linux 容器？][2]
 
-*   [Download Now: Linux commands cheat sheet][3]
+*   [现在下载: linux 命令速查表][3]
 
-*   [Advanced Linux commands cheat sheet][4]
+*   [linux 高级命令速查表][4]
 
 *   [Our latest Linux articles][5]
 
