@@ -168,7 +168,7 @@ via: https://www.linuxtechi.com
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:https://www.linuxtechi.comhttps://www.linuxtechi.com/author/pradeep/
+[a]:https://www.linuxtechi.com/author/pradeep/
 [1]:https://www.linuxtechi.com/author/pradeep/
 [2]:https://www.linuxtechi.com/wp-content/uploads/2017/11/wireshark-Debian-9-Ubuntu-16.04-17.10.jpg
 [3]:https://www.linuxtechi.com/wp-content/uploads/2017/11/Configure-Wireshark-Debian9.jpg
