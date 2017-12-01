@@ -382,14 +382,13 @@ $ man trans
 
 via: https://www.2daygeek.com/translate-shell-a-tool-to-use-google-translate-from-command-line-in-linux/
 
-作者：[ ][a]
+作者：[Magesh Maruthamuthu][a]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:https://www.2daygeek.com
-[1]:https://www.2daygeek.com/author/magesh/
+[a]:https://www.2daygeek.com/author/magesh/
 [2]:https://github.com/soimort/translate-shell
 [3]:https://www.2daygeek.com/apt-get-apt-cache-command-examples-manage-packages-debian-ubuntu-systems/
 [4]:https://www.2daygeek.com/apt-command-examples-manage-packages-debian-ubuntu-systems/
