@@ -1,3 +1,5 @@
+translating---geekpi
+
 # Search DuckDuckGo from the Command Line
 
  ![](http://www.omgubuntu.co.uk/wp-content/uploads/2017/11/duckduckgo.png)
