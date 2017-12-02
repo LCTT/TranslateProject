@@ -17,9 +17,9 @@ Photon通过只安装Docker守护进程所必需的东西来保持它的轻量�
 
 *   内核根据[内核自防护项目][6](KSPP)进行了加固。
 
-*   所有安装的软件包都根据加固的安全标志(hardened security flags)来构建。
+*   所有安装的软件包都根据加固的安全标识来构建。
 
-*   操作系统以信任验证(validated trust)启动。
+*   操作系统在信任验证后启动。
 
 *   Photon管理进程管理防火墙，网络，软件包，和远程登录在Photon机子上的用户。
 
@@ -77,7 +77,7 @@ systemctl start docker
 systemctl enable docker
 ```
 
-现在我们需要创建一个标准用户(standard user)，因此我们没有以root去运行docker命令。为此，执行以下命令：
+现在我们需要创建一个标准用户，因此我们没有以root去运行docker命令。为此，执行以下命令：
 
 ```
 useradd -m USERNAME
