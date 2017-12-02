@@ -1,82 +1,82 @@
-translate by darksun
-Translate Shell – A Tool To Use Google Translate From Command Line In Linux
+Translate Shell: 一款在 Linux 命令行中使用 Google Translate的工具
 ============================================================
 
-I love to work and share about CLI apps since i’m very much interested on CLI applications. Basically i prefer CLI because most of the time i will be sitting in front of the black screen and it’s became habit for me to go with CLI apps instead of GUI.
+我对 CLI 应用非常感兴趣，因此热衷于使用并分享 CLI 应用。 我之所以更喜欢 CLI 很大原因是因为我在大多数的时候都使用的是字符界面（black screen），已经习惯了使用 CLI 应用而不是 GUI 应用.
 
-We have wrote many articles about CLI applications in past. Recently i came to know about google CLI utilities such as “Google Translator”, “Google Calendar”, and “Google Contacts”. so, i just want to share about it.
+我写过很多关于 CLI 应用的文章。 最近我发现了一些 google 的 CLI 工具，像 “Google Translator”, “Google Calendar”, 和 “Google Contacts”。 这里，我想在给大家分享一下。
 
-Today we are going to discuss about “Google Translator”. I use many times in a day to know the meanings since my native language is Tamil.
+今天我们要介绍的是 “Google Translator” 工具。 由于母语是泰米尔语，我在一天内用了很多次才理解了它的意义。
 
-Google translate is widely used by other language speakers.
+`Google translate` 为其他语系的人们所广泛使用。
 
-#### What is Translate Shell
+### 什么是 Translate Shell
 
-[Translate Shell][2] (formerly known as Google Translate CLI) is a command-line translator powered by Google Translate (default), Bing Translator, Yandex.Translate and Apertium. It allows you to access to one of these translation engines right from your terminal. Translate Shell is designed work on most of the Linux distributions.
+[Translate Shell][2] (之前叫做 Google Translate CLI) 是一款借助 `Google Translate`(默认), `Bing Translator`, `Yandex.Translate` 以及 `Apertium` 来翻译的命令行翻译器。 
+它让你可以在终端访问这些翻译引擎. `Translate Shell` 在大多数Linux发行版中都能使用。
 
-#### How to Install Translate Shell
+### 如何安装 Translate Shell
 
-We can install the Translate Shell application in three methods.
+有三种方法安装 `Translate Shell`。
 
-*   Download self-contained executable file
+*   下载自包含的可执行文件
 
-*   Manual Method
+*   手工安装
 
-*   Via Package Manager
+*   通过包挂力气安装
 
-#### Method-1 : Download self-contained executable file
+#### 方法-1 : 下载自包含的可执行文件
 
-Just Download the self-contained executable file and move into /usr/bin directory.
+下载自包含的可执行文件放到 `/usr/bin` 目录中。
 
-```
+```shell
 $ wget git.io/trans
 $ chmod +x ./trans
 $ sudo mv trans /usr/bin/
 ```
 
-#### Method-2 : Manual Method
+#### 方法-2 : 手工安装
 
-Just clone the Translate Shell github repository and compile manually for any distributions.
+克隆 `Translate Shell` github 仓库然后手工编译。
 
-```
+```shell
 $ git clone https://github.com/soimort/translate-shell && cd translate-shell
 $ make
 $ sudo make install
 ```
 
-#### Method-3 : Via Package Manager
+#### 方法-3 : Via Package Manager
 
-Translate Shell is available in few of the distribution official repository that can be installed through package manager.
+有些发行版的官方仓库中包含了 `Translate Shell`，可以通过包管理器来安装。
 
-For Debian/Ubuntu, use [APT-GET Command][3] or [APT Command][4]to install Translate Shell.
+对于 Debian/Ubuntu, 使用 [APT-GET Command][3] 或者 [APT Command][4]来安装。
 
-```
+```shell
 $ sudo apt-get install translate-shell
 ```
 
-For Fedora, use [DNF Command][5] to install Translate Shell.
+对于 Fedora, 使用 [DNF Command][5] 来安装。
 
-```
+```shell
 $ sudo dnf install translate-shell
 ```
 
-For Arch Linux based systems, use [Yaourt Command][6] or [Packer Command][7] to install Translate Shell from AUR repository.
+对于基于 Arch Linux 的系统, 使用 [Yaourt Command][6] 或 [Packer Command][7] 来从 AUR 仓库中安装。
 
-```
+```shell
 $ yaourt -S translate-shell
 or
 $ packer -S translate-shell
 ```
 
-#### How To Use Translate Shell
+### 如何使用 Translate Shell
 
-After successfully installed, open your terminal and fire the following command. Google Translate can identify the language of the source text automatically, and Translate Shell by default translates the source text into the language of your locale.
+安装好后，打开终端闭关输入下面命令。 `Google Translate` 会自动探测源文本是哪种语言，并且在默认情况下将之翻译成你的 `locale` 所对应的语言。
 
 ```
 $ trans [Words]
 ```
 
-I’m going to translated a Tamil word “நன்றி” (Nanri) to English. It’s use to thank people.
+下面我将泰米尔语中的单词 “நன்றி” (Nanri) 翻译成英语。 这个单词的意思是感谢别人。
 
 ```
 $ trans நன்றி
@@ -98,7 +98,7 @@ noun
     Thanks
 ```
 
-Alternatively translate a word into Tamil using following command.
+使用下面命令也能将英语翻译成泰米尔语。
 
 ```
 $ trans :ta thanks
@@ -119,7 +119,7 @@ thanks
     நன்றி
 ```
 
-To Translate a word into more than one language use following command (In this example, i’m going to translate a word into Tamil & Hindi).
+要将一个单词翻译到多个语种可以使用下面命令(本例中， 我将单词翻译成泰米尔语以及印地语)。
 
 ```
 $ trans :ta+hi thanks
@@ -156,7 +156,7 @@ thanks
     धन्यवाद, शुक्रिया
 ```
 
-To Translate words into one argument (phrase) use following command (just quote the sentence into one argument).
+使用下面命令可以将多个单词当成一个参数（句子）来进行翻译。(只需要把句子应用起来作为一个参数就行了)。
 
 ```
 $ trans :ta "what is going on your life?"
@@ -172,7 +172,7 @@ what is going on your life?
     உங்கள் வாழ்க்கையில் என்ன நடக்கிறது?
 ```
 
-To Translate Translate each word alone.
+下面命令独立地翻译各个单词。
 
 ```
 $ trans :ta curios happy
@@ -208,14 +208,14 @@ happy
     சந்தோஷமாக, மகிழ்ச்சி, இனிய, சந்தோஷமா
 ```
 
-Brief Mode : By default, Translate Shell displays translations in a verbose manner. If you prefer to see only the brief information, just add -b option.
+简洁模式: 默认情况下，`Translate Shell` 尽可能多的显示翻译信息. 如果你希望只显示简要信息，只需要加上`-b`选项。
 
 ```
 $ trans -b :ta thanks
 நன்றி
 ```
 
-Dictionary Mode : To use Translate Shell as a dictionary, just add -d option.
+字典模式: 加上 `-d` 可以把 `Translate Shell` 当成字典来用.
 
 ```
 $ trans -d :en thanks
@@ -294,14 +294,14 @@ See also
     Thanks!, thank, many thanks, thanks to, thanks to you, special thanks, give thanks, thousand thanks, Many thanks!, render thanks, heartfelt thanks, thanks to this
 ```
 
-To Translate a File using Translate Shell, use the following format.
+使用下面格式可以使用 `Translate Shell` 来翻译文件。
 
-```
+```shell
 $ trans :ta file:///home/magi/gtrans.txt
 உங்கள் வாழ்க்கையில் என்ன நடக்கிறது?
 ```
 
-To open interactive Translate Shell, run the following command. Make sure you have to specify the source language and the target language(s) before starting an interactive shell. In this example, i’m going to translate a word from English to Tamil.
+下面命令可以让 `Translate Shell` 进入交互模式. 在进入交互模式之前你需要明确指定源语言和目标语言。本例中，我将英文单词翻译成泰米尔语。
 
 ```
 $ trans -shell en:ta thanks
@@ -324,11 +324,13 @@ thanks
     நன்றி
 ```
 
-To know the language code, just fire the following command.
+想知道语言代码，可以执行下面语言。
 
-```
+```shell
 $ trans -R
-or
+```
+或者
+```shell
 $ trans -T
 ┌───────────────────────┬───────────────────────┬───────────────────────┐
 │ Afrikaans      -   af │ Hindi          -   hi │ Punjabi        -   pa │
@@ -373,9 +375,9 @@ $ trans -T
 └───────────────────────┴───────────────────────┴───────────────────────┘
 ```
 
-To know more options, navigate to man page.
+想了解更多选项的内容，可以查看 `man` 页.
 
-```
+```shell
 $ man trans
 ```
 
