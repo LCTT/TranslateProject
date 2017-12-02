@@ -137,7 +137,7 @@ Resource:
 
 via: https://www.ostechnix.com/undistract-get-notification-long-running-terminal-commands-complete/
 
-作者：[ ][a]
+作者：[sk][a]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
