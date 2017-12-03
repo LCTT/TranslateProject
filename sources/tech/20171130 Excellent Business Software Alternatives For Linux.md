@@ -95,15 +95,15 @@ Now you have all the right information; it's time to weigh all the pros and cons
 
 --------------------------------------------------------------------------------
 
-via: linuxblog.darkduck.com/2017/11/excellent-business-software.html
+via: http://linuxblog.darkduck.com/2017/11/excellent-business-software.html
 
-作者：[ ][a]
+作者：[DarkDuck][a]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:linuxblog.darkduck.com/2017/11/excellent-business-software.html
+[a]:http://linuxblog.darkduck.com/
 [1]:http://linuxblog.darkduck.com/2015/08/pivot-tables-in-libreoffice-calc.html
 [3]:https://4.bp.blogspot.com/-xwLuDRdB6sw/Whxx0Z5pI5I/AAAAAAAADhU/YWHID8GU9AgrXRfeTz4HcDZkG-XWZNbSgCLcBGAs/s1600/4444061098_6eeaa7dc1a_z.jpg
 [4]:https://www.linkedin.com/pulse/benefits-using-microsoft-word-fareed/
