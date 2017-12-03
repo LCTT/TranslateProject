@@ -1,5 +1,4 @@
-translating by lujun9972
-### System Logs: Understand Your Linux System
+### 系统日志: 了解你的Linux系统
 
 ![chabowski](https://www.suse.com/communities/blog/files/2016/03/chabowski_avatar_1457537819-100x100.jpg)
  By: [chabowski][1]
@@ -25,34 +24,40 @@ Photo by Markus Spiske on Unsplash
 Jul 06 11:53:47 aaathats3as pulseaudio[2216]: [pulseaudio] alsa-util.c: Disabling timer-based scheduling because running inside a VM.
 ```
 
-This individual log entry contains (in order) the date and time of the entry, the hostname of the computer, the name of the process that logged the entry, the PID (process ID number) of the process that logged the entry, and then the log entry itself.
+这条独立的日志记录以此包含了记录的日期和时间, 计算机名, 记录日志的进程名, 记录日志的进程PID, 以及日志内容本身.
 
-If a program running on your system is misbehaving, look at the log file and search (with the “/” key followed by the search term) for the name of the program. Chances are that if the program is reporting errors that are causing it to malfunction, then the errors will show up in the system log. Sometimes errors are verbose enough for you to be able to fix them yourself. Other times, you have to search for a solution on the Web. Google is usually the most convenient search engine to use for weird Linux problems 
+若系统中某个程序运行出问题了, 则可以查看日志文件并搜索(使用 “/” 加上要搜索的关键字)程序名称. 有可能导致该程序出问题的错误会记录到系统日志中. 
+有时，错误信息会足够详细让你能够修复该问题. 其他时候, 你需要在Web上搜索解决方案. Google就很适合来搜索奇怪的Linux问题.
 ![](https://www.suse.com/communities/blog/files/2017/09/Sunglasses_Emoji-450x450.png)
-. However, be sure that you only enter the actual log entry, because the rest of the information at the beginning of the line (date, host name, PID) is unnecessary and could return false positives.
+不过搜索时请注意你只输入了日志的内容, 行首的那些信息(日期, 主机名, 进程ID) 是无意义的，会干扰搜索结果.
 
-After you search for the problem, the first few results are usually pages containing various things that you can try for solutions. Of course, you shouldn’t just follow random instructions that you find on the Internet: always be sure to do additional research into what exactly you will be doing and what the effects of it are before following any instructions. With that being said, the results for a specific entry from the system’s log file are usually much more useful than results from searching more generic terms that describe the malfunctioning of the program directly. This is because many different things could cause a program to misbehave, and multiple problems could cause identical misbehaviors.
+解决方法一般在搜索结果的前几个连接中就会有了. 当然，你不能只是无脑得运行从互联网上找到的那些命令: 请一定先搞清楚你要做的事情是什么，它的效果会是什么. 
+据说, 从系统日志中查询日志要比直接搜索描述故障的关键字要有用的多. 因为程序出错有很多原因, 而且同样的故障表现也可能由多种问题引发的.
 
-For example, a lack of audio on the system could be due to a massive amount of different reasons, ranging from speakers not being plugged in, to back end sound systems misbehaving, to a lack of the proper drivers. If you search for a general problem, you’re likely to see a lot of irrelevant solutions and you’ll end up wasting your time on a wild goose chase. With a specific search of an actual line from a log file, you can see other people who have had the same log entry. See Picture 1 and Picture 2 to compare and contrast between the two types of searching.
+比如, 系统无法发声的原因有很多, 可能是播放器没有插好, 也可能是声音系统出故障了, 还可能是缺少合适的驱动程序. 
+如果你只是泛泛的描述故障表现, 你会找到很多无关的解决方法,而你也会浪费大量的时间. 而指定搜索日志文件中的内容, 你只会查询出他人也有相同日志内容的结果.
+你可以对比一下图1和图2.
 
 ![](https://www.suse.com/communities/blog/files/2017/11/picture1-450x450.png)
 
-Picture 1 shows generic, unspecific Google results for a general misbehavior of the system. This type of searching generally doesn’t help much.
+图 1 搜索系统的故障表现只会显示泛泛的，不精确的结果. 这种搜索通常没什么用.
 
 ![](https://www.suse.com/communities/blog/files/2017/11/picture2-450x450.png)
 
-Picture 2 shows more specific, helpful Google results for a particular log file line. This type of searching is generally very helpful.
+图 2 搜索特定的日志行会显示出精确的，有用的结果. 这种搜索通常很有用.
 
-There are some systems that log their actions outside of journalctl. The most important ones that you may find yourself dealing with on a desktop system are /var/log/zypper.log for openSUSE’s package manager, /var/log/boot.log for those messages that scroll by too fast to be read when you turn your system on, and /var/log/ntp if your Network Time Protocol Daemon is having troubles syncing time. One more important place to look for errors if you’re having problems with specific hardware is the Kernel Ring Buffer, which you can read by typing the dmesg -H command (this opens in the less pager as well). The Kernel Ring Buffer is stored in RAM, so you lose it when you reboot your system, but it contains important messages from the Linux kernel about important events, such as hardware being added, modules being loaded, or strange network errors.
+也有一些系统不用 `journalctl` 来记录日志. 在桌面系统中最常见的这类日志包括用于 `/var/log/zypper.log` 记录openSUSE包管理器的行为; `/var/log/boot.log` 记录系统启动时的消息，这类消息往往滚动的特别块，根本看不过来; `/var/log/ntp` 用来记录 Network Time Protocol 守护进程同步时间时发生的错误. 
+另一个存放硬件故障信息的地方是 `Kernel Ring Buffer`(内核环状缓冲区), 你可以输入 `demesg -H` 命令来查看(这条命令也会调用 `less` 分页器来查看).
+`Kernel Ring Buffer` 存储在内存中, 因此会在重启电脑后丢失. 不过它包含了Linux内核中的重要事件, 比如新增了硬件, 加载了模块, 以及奇怪的网络错误.
 
-Hopefully you are prepared now to understand your Linux system better! Have a lot of fun!
+希望你已经准备好深入了解你的Linux系统了! 祝你玩的开心!
 
 --------------------------------------------------------------------------------
 
 via: https://www.suse.com/communities/blog/system-logs-understand-linux-system/
 
 作者：[chabowski]
-译者：[译者ID](https://github.com/译者ID)
+译者：[lujun9972](https://github.com/lujun9972)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
