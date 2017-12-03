@@ -1,4 +1,4 @@
-Sysadmin 101: Patch Management
+【翻译中 @haoqixu】Sysadmin 101: Patch Management
 ============================================================ 
 
 *   [HOW-TOs][1]
