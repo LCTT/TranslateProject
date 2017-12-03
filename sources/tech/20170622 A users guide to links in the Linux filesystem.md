@@ -6,7 +6,7 @@ linux 文件链接用户指南
 ### 学习如何使用链接，通过提供对 linux 文件系统多个位置的文件访问，来让日常工作变得轻松
 
 
-![A user's guide to links in the Linux filesystem](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/links.png?itok=AumNmse7 "A user's guide to links in the Linux filesystem")
+![linux 文件链接用户指南](https://opensource.com/sites/default/files/styles/image-full-size/public/images/life/links.png?itok=AumNmse7 "A user's guide to links in the Linux filesystem")
 Image by : [Paul Lewin][8]. Modified by Opensource.com. [CC BY-SA 2.0][9]
 
 在我为 opensource.com 写过的关于linux文件系统方方面面的文章中，包括 [An introduction to Linux's EXT4 filesystem][10]; [Managing devices in Linux][11]; [An introduction to Linux filesystems][12]; and [A Linux user's guide to Logical Volume Management][13]，我曾简要的提到过linux文件系统一个有趣的特性，它允许用户访问linux文件目录树中多个位置的文件来简化一些任务
@@ -186,9 +186,9 @@ ln: failed to create hard link '/tmp/link3.file.txt' => 'link2.file.txt':
 Invalid cross-device link
 ```
 
-为什么会出现这个错误呢？ 原因是每一个单独的挂载文件系统都有一套自己的节点号。 Simply referring to a file by an inode number across the entire Linux directory structure can result in confusion because the same inode number can exist in each mounted filesystem.
+为什么会出现这个错误呢？ 原因是每一个单独的挂载文件系统都有一套自己的节点号。简单的通过文件节点号来跨越整个文件系统结构引用一个文件会使系统困惑，因为相同的节点号会存在于每个已挂载的文件系统中。
 
-There may be a time when you will want to locate all the hard links that belong to a single inode. You can find the inode number using the **ls -li** command. Then you can use the **find** command to locate all links with that inode number.
+有时你可能会想找到一个文件节点的所有硬链接。你可以使用 **ls -li** 命令。然后使用 **find** 命令找到所有硬链接的节点号。
 
 ```
 [dboth@david temp]$ find . -inum 657024 
@@ -197,7 +197,7 @@ There may be a time when you will want to locate all the hard links that belong 
 ./link2.file.txt
 ```
 
-Note that the **find** command did not find all four of the hard links to this inode because we started at the current directory of **~/temp**. The **find** command only finds files in the PWD and its subdirectories. To find all the links, we can use the following command, which specifies your home directory as the starting place for the search.
+注意 **find** 命令不能找到所属该节点的四个硬链接，因为我们在 **~/temp** 目录中查找。 **find** 命令仅在当前工作目录及其子目录中中查找文件。要找到所有的硬链接，我们可以使用下列命令，注定你的主目录作为起始查找条件。 
 
 ```
 [dboth@david temp]$ find ~ -samefile main.file.txt 
@@ -207,13 +207,13 @@ Note that the **find** command did not find all four of the hard links to this
 /home/dboth/main.file.txt
 ```
 
-You may see error messages if you do not have permissions as a non-root user. This command also uses the **-samefile** option instead of specifying the inode number. This works the same as using the inode number and can be easier if you know the name of one of the hard links.
+如果你是非超级用户没有权限，可能会看到错误信息。这个命令也使用了 **-samefile** 选项而不是指定文件的节点号。这个效果和使用文件节点号一样且更容易，如果你知道其中一个硬链接名称的话。
 
-### **Experimenting with soft links**
+### **对软链接进行实验**
 
-As you have just seen, creating hard links is not possible across filesystem boundaries; that is, from a filesystem on one LV or partition to a filesystem on another. Soft links are a means to answer that problem with hard links. Although they can accomplish the same end, they are very different, and knowing these differences is important.
+如你刚才看到的，不能越过文件系统交叉创建硬链接，即在逻辑卷或文件系统中从一个文件系统到另一个文件系统。软链接给出了这个问题的解决方案。虽然他们可以达到相同的目的，但他们是非常不同的，知道这些差异是很重要的。
 
-Let's start by creating a symlink in our **~/temp** directory to start our exploration.
+让我们在 **~/temp** 目录中创建一个符号链接来开始我们的探索。
 
 ```
 [dboth@david temp]$ ln -s link2.file.txt link3.file.txt ; ls -li
@@ -226,9 +226,9 @@ link2.file.txt
 657863 -rw-rw-r-- 1 dboth dboth    0 Jun 14 08:18 unlinked.file
 ```
 
-The hard links, those that have the inode number **657024**, are unchanged, and the number of hard links shown for each has not changed. The newly created symlink has a different inode, number **658270**. The soft link named **link3.file.txt**points to **link2.file.txt**. Use the **cat** command to display the contents of **link3.file.txt**. The file mode information for the symlink starts with the letter "**l**" which indicates that this file is actually a symbolic link.
+拥有节点号 **657024** 的那些硬链接没有变化，且硬链接的数目也没有变化。新创建的符号链接有不同的文件节点号 **658270**。 名为**link3.file.txt** 的软链接指向了 **link2.file.txt** 文件。使用 **cat** 命令查看 **link3.file.txt** 文件的内容。符号链接的文件节点信息以字母 "**l**" 开头，意味着这个文件实际是个符号链接。
 
-The size of the symlink **link3.file.txt** is only 14 bytes in the example above. That is the size of the text **link3.file.txt -> link2.file.txt**, which is the actual content of the directory entry. The directory entry **link3.file.txt** does not point to an inode; it points to another directory entry, which makes it useful for creating links that span file system boundaries. So, let's create that link we tried before from the **/tmp** directory.
+上例中软链接文件 **link3.file.txt** 的大小只有 14 字节。这是文本内容 **link3.file.txt -> link2.file.txt** 的大小，实际上是目录项的内容。目录项 **link3.file.txt** 并不指向一个文件节点；它指向了另一个目录项，这在跨越文件系统建立链接时很有帮助。现在试着创建一个软链接，之前在 **/tmp** 目录中尝试过的。
 
 ```
 [dboth@david temp]$ ln -s /home/dboth/temp/link2.file.txt 
@@ -237,11 +237,11 @@ lrwxrwxrwx 1 dboth dboth 31 Jun 14 21:53 /tmp/link3.file.txt ->
 /home/dboth/temp/link2.file.txt
 ```
 
-### **Deleting links**
+### **删除链接**
 
-There are some other things that you should consider when you need to delete links or the files to which they point.
+当你删除硬链接或硬链接所指的文件时，需要考虑一些问题。
 
-First, let's delete the link **main.file.txt**. Remember that every directory entry that points to an inode is simply a hard link.
+首先，让我们删除硬链接文件 **main.file.txt**。注意每个硬链接都指向了一个文件节点。
 
 ```
 [dboth@david temp]$ rm main.file.txt ; ls -li
@@ -253,9 +253,9 @@ link2.file.txt
 657863 -rw-rw-r-- 1 dboth dboth    0 Jun 14 08:18 unlinked.file
 ```
 
-The link **main.file.txt** was the first link created when the file was created. Deleting it now still leaves the original file and its data on the hard drive along with all the remaining hard links. To delete the file and its data, you would have to delete all the remaining hard links.
+**main.file.txt** 是第一个硬链接文件，当该文件被创建时。现在删除它仍然保留原始文件和硬盘上的数据以及所有剩余的硬链接。要删除原始文件，你必须删除它的所有硬链接。
 
-Now delete the **link2.file.txt** hard link.
+现在山村 **link2.file.txt** 硬链接文件。
 
 ```
 [dboth@david temp]$ rm link2.file.txt ; ls -li 
@@ -267,26 +267,26 @@ link2.file.txt
 657863 -rw-rw-r-- 1 dboth dboth    0 Jun 14 08:18 unlinked.file
 ```
 
-Notice what happens to the soft link. Deleting the hard link to which the soft link points leaves a broken link. On my system, the broken link is highlighted in colors and the target hard link is flashing. If the broken link needs to be fixed, you can create another hard link in the same directory with the same name as the old one, so long as not all the hard links have been deleted. You could also recreate the link itself, with the link maintaining the same name but pointing to one of the remaining hard links. Of course, if the soft link is no longer needed, it can be deleted with the **rm** command.
+注意软链接的变化。删除软链接所指的硬链接会使该软链接失效。在我的系统中，断开的链接用颜色高亮显示，目标硬链接闪烁。如果需要修改软链接，你需要在同一目录下建立一个和旧链接相同名字的硬链接，只要不是所有硬链接都已删除。 您还可以重新创建链接本身，链接保持相同的名称，但指向剩余的硬链接中的一个。当然如果软链接不再需要，可以使用 **rm** 命令删除它们。
 
-The **unlink** command can also be used to delete files and links. It is very simple and has no options, as the **rm** command does. It does, however, more accurately reflect the underlying process of deletion, in that it removes the link—the directory entry—to the file being deleted.
+**unlink** 命令在删除文件和链接时也有用。它非常简单且没有选项，就像 **rm** 命令一样。然而，它更准确地反映了删除的基本过程，因为它删除了目录项与被删除文件的链接。
 
 ### Final thoughts
 
-I worked with both types of links for a long time before I began to understand their capabilities and idiosyncrasies. It took writing a lab project for a Linux class I taught to fully appreciate how links work. This article is a simplification of what I taught in that class, and I hope it speeds your learning curve.
+我曾与这两种类型的链接很长一段时间后，我开始了解他们的能力和特质。为我所教的Linux课程编写了一个实验室项目，以充分理解链接是如何工作的，并且我希望增进你的理解。
 
 --------------------------------------------------------------------------------
 
 作者简介：
 
-David Both - David Both is a Linux and Open Source advocate who resides in Raleigh, North Carolina. He has been in the IT industry for over forty years and taught OS/2 for IBM where he worked for over 20 years. While at IBM, he wrote the first training course for the original IBM PC in 1981. He has taught RHCE classes for Red Hat and has worked at MCI Worldcom, Cisco, and the State of North Carolina. He has been working with Linux and Open Source Software for almost 20 years. 
+戴维.布斯 - 戴维.布斯是Linux和开源倡导者，居住在Raleigh的北卡罗莱纳。他在IT行业工作了四十年，为IBM工作了20年多的OS 2。在IBM时，他在1981编写了最初的IBM PC的第一个培训课程。他教了RHCE班红帽子和曾在MCI世通公司，思科，和北卡罗莱纳州。他已经用Linux和开源软件工作将近20年了。
 
 ---------------------------------
 
 via: https://opensource.com/article/17/6/linking-linux-filesystem
 
 作者：[David Both ][a]
-译者：[runningwater](https://github.com/runningwater)
+译者：[yongshouzhang](https://github.com/yongshouzhang)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
