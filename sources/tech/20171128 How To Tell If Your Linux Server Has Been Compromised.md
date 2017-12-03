@@ -1,3 +1,4 @@
+translating by lujun9972
 How To Tell If Your Linux Server Has Been Compromised
 --------------
 
@@ -146,8 +147,8 @@ The only sensible course of action is to copy off all the data that you need and
 
 via: https://bash-prompt.net/guides/server-hacked/
 
-作者：[ ][a]
-译者：[译者ID](https://github.com/译者ID)
+作者：[Elliot Cooper][a]
+译者：[lujun9972](https://github.com/lujun9972)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
