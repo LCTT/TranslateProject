@@ -4,19 +4,22 @@ translating by lujun9972
 ![chabowski](https://www.suse.com/communities/blog/files/2016/03/chabowski_avatar_1457537819-100x100.jpg)
  By: [chabowski][1]
 
-The following article is part of a series of articles that provide tips and tricks for Linux newbies  – or Desktop users that are not yet experienced with regard to certain topics). This series intends to complement the special edition #30 “[Getting Started with Linux][2]” based on [openSUSE Leap][3], recently published by the [Linux Magazine,][4] with valuable additional information.
+本文摘自教授Linux小白(或者非资深桌面用户)技巧的系列文章. 该系列文章旨在为由LinuxMagazine基于 [openSUSE Leap][3] 发布的第30期特别版 “[Getting Started with Linux][2]” 提供补充说明.
 
-This article has been contributed by Romeo S. Romeo is a PDX-based enterprise Linux professional specializing in scalable solutions for innovative corporations looking to disrupt the marketplace.
+本文作者是 Romeo S. Romeo, 他是一名 PDX-based enterprise Linux 专家，转为创新企业提供富有伸缩性的解决方案.
 
-System logs are incredibly important files in Linux. Special programs that run in the background (usually called daemons or servers) handle most of the tasks on your Linux system. Whenever these daemons do anything, they write the details of the task to a log file as a sort of “history” of what they’ve been up to. These daemons perform actions ranging from syncing your clock with an atomic clock to managing your network connection. All of this is written to log files so that if something goes wrong, you can look into the specific log file and see what happened.
+Linux系统日志非常重要. 后台运行的程序(通常被称为守护进程或者服务进程)处理了你Linux系统中的大部分任务. 当这些守护进程工作时,它们将任务的详细信息记录进日志文件中，作为他们做过什么的历史信息. 这些守护进程的工作内容涵盖从使用原子钟同步时钟到管理网络连接. 所有这些都被记录进日志文件，这样当有错误发生时，你可以通过查阅特定的日志文件来看出发生了什么.
 
 ![](https://www.suse.com/communities/blog/files/2017/11/markus-spiske-153537-300x450.jpg)
 
 Photo by Markus Spiske on Unsplash
 
-There are many different logs on your Linux computer. Historically, they were mostly stored in the /var/log directory in a plain text format. Quite a few still are, and you can read them easily with the less pager. On your freshly installed openSUSE Leap 42.3 system, and on most modern systems, important logs are stored by the systemd init system. This is the system that handles starting up daemons and getting the computer ready for use on startup. The logs handled by systemd are stored in a binary format, which means that they take up less space and can more easily be viewed or exported in various formats, but the downside is that you need a special tool to view them. Luckily, this tool comes installed on your system: it’s called journalctl and by default, it records all of the logs from every daemon to one location.
+有很多不同的日志. 历史上, 他们一般以纯文本的格式存储到 `/var/log` 目录中. 现在依然有很多日志这样做, 你可以很方便的使用 `less` 来查看它们. 
+在新装的 `openSUSE Leap 42.3` 以及大多数现代操作系统上,重要的日志由 `systemd` 初始化系统存储. `systemd`这套系统负责启动守护进程并在系统启动时让计算机做好被使用的准备。
+由 `systemd` 记录的日志以二进制格式存储, 这使地它们消耗的空间更小,更容易被浏览，也更容易被导出成其他各种格式,不过坏处就是你必须使用特定的工具才能查看.
+好在, 这个工具已经预安装在你的系统上了: 它的名字叫 `journalctl`,而且默认情况下, 它会将每个守护进程的所有日志都记录到一个地方.
 
-To take a look at your systemd log, just run the journalctl command. This will open up the combined logs in the less pager. To get a better idea of what you’re looking at, see a single log entry from journalctl here:
+只需要运行 `journalctl` 命令就能查看你的 `systemd` 日志了. 它会用 `less` 分页器显示各种日志. 为了让你有个直观的感受, 下面是`journalctl` 中摘录的一条日志记录:
 
 ```
 Jul 06 11:53:47 aaathats3as pulseaudio[2216]: [pulseaudio] alsa-util.c: Disabling timer-based scheduling because running inside a VM.
