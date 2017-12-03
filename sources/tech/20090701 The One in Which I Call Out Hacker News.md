@@ -1,3 +1,5 @@
+translating by hopefully2333
+
 # [The One in Which I Call Out Hacker News][14]
 
 
