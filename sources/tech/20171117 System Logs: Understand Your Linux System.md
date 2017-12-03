@@ -1,3 +1,4 @@
+translating by lujun9972
 ### System Logs: Understand Your Linux System
 
 ![chabowski](https://www.suse.com/communities/blog/files/2016/03/chabowski_avatar_1457537819-100x100.jpg)
