@@ -1,3 +1,6 @@
+
+ translating by HardworkFish
+
 Wake up and Shut Down Linux Automatically
 ============================================================
 
