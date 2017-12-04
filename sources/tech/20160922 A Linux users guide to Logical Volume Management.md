@@ -1,4 +1,4 @@
-Translating by qhwdw A Linux user's guide to Logical Volume Management
+A Linux user's guide to Logical Volume Management
 ============================================================ 
 
 ![Logical Volume Management (LVM)](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/rh_003499_01_other11x_cc.png?itok=I_kCDYj0 "Logical Volume Management (LVM)")
