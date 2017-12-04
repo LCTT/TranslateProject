@@ -1,6 +1,3 @@
-translating---geekpi
-
-Cool vim feature: sessions!
 vim 的酷功能：会话！
 ============================================================•
 
