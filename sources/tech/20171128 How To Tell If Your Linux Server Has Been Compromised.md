@@ -1,28 +1,27 @@
-translating by lujun9972
-How To Tell If Your Linux Server Has Been Compromised
+如何判断Linux服务器是否被入侵
 --------------
 
-A server being compromised or hacked for the purpose of this guide is an unauthorized person or bot logging into the server in order to use it for their own, usually negative ends.
+本指南中所谓的服务器被入侵或者说被黑了的意思是指未经认证的人或程序为了自己的目的登录到服务器上去并使用其计算资源, 通常会产生不好的影响.
 
-Disclaimer: If your server has been compromised by a state organization like the NSA or a serious criminal group then you will not notice any problems and the following techniques will not register their presence.
+免责声明: 若你的服务器被类似NSA这样的国家机关或者某个犯罪集团如请，那么你并不会发现有任何问题，这些技术也无法发觉他们的存在.
 
-However, the majority of compromised servers are carried out by bots i.e. automated attack programs, in-experienced attackers e.g. “script kiddies”, or dumb criminals.
+然而, 大多数被攻破的服务器都是被类似自动攻击程序这样的程序或者类似“脚本小子”这样的廉价攻击者，以及蠢蛋犯罪所入侵的.
 
-These sorts of attackers will abuse the server for all it’s worth whilst they have access to it and take few precautions to hide what they are doing.
+这类攻击者会在访问服务器的同时滥用服务器资源，并且不怎么会采取措施来隐藏他们正在做的事情.
 
-### Symptoms of a compromised server
+### 入侵服务器的症状
 
-When a server has been compromised by an in-experienced or automated attacker they will usually do something with it that consumes 100% of a resource. This resource will usually be either the CPU for something like crypt-currency mining or email spamming, or bandwidth for launching a DOS attack.
+当服务器被没有经验攻击者或者自动攻击程序入侵了的话，他们往往会消耗100%的资源. 他们可能消耗CPU资源来进行数字货币的采矿或者发送垃圾邮件,也可能消耗带宽来发动 `DoS` 攻击.
 
-This means that the first indication that something is amiss is that the server is “going slow”. This could manifest in the website serving pages much slower than usual, or email taking many minutes to deliver or send.
+因此出现问题的第一个表现就是服务器 “变慢了”. 这可能表现在网站的页面打开的很慢, 或者电子邮件要花很长时间才能发送出去.
 
-So what should you look for?
+那么你应该查看那些东西呢?
 
-### Check 1 - Who’s currently logged in?
+#### 检查 1 - 当前都有谁在登录?
 
-The first thing you should look for is who is currently logged into the server. It is not uncommon to find the attacker actually logged into the server and working on it.
+你首先要查看当前都有谁登录在服务器上. 发现攻击者登录到服务器上进行操作并不罕见.
 
-The shell command to do this is w. Running w gives the following output:
+其对应的命令是 `w`. 运行 `w` 会输出如下结果:
 
 ```
  08:32:55 up 98 days,  5:43,  2 users,  load average: 0.05, 0.03, 0.00
@@ -32,19 +31,19 @@ root     pts/1    78.31.109.1      08:26    0.00s  0.01s  0.00s w
 
 ```
 
-One of those IP’s is a UK IP and the second is Vietnamese. That’s probably not a good thing.
+第一个IP是英国IP，而第二个IP是越南IP. 这个不是个好兆头.
 
-Stop and take a breath, don’t panic and simply kill their SSH connection. Unless you can stop then re-entering the server they will do so quickly and quite likely kick you off and stop you getting back in.
+停下来做个深呼吸, 不要紧，只需要杀掉他们的SSH连接就好了. Unless you can stop then re-entering the server they will do so quickly and quite likely kick you off and stop you getting back in.
 
-Please see the What should I do if I’ve been compromised section at the end of this guide no how to proceed if you do find evidence of compromise.
+请参阅本文最后的 `入侵之后怎么办` 这一章节来看发现被入侵的证据后应该怎么办.
 
-The whois command can be run on IP addresses and will tell you what all the information about the organization that the IP is registered to, including the country.
+`whois` 命令可以接一个IP地址然后告诉你IP注册的组织的所有信息, 当然就包括所在国家的信息.
 
-### Check 2 - Who has logged in?
+#### 检查 2 - 谁曾经登录过?
 
-Linux servers keep a record of which users logged in, from what IP, when and for how long. This information is accessed with the last command.
+Linux 服务器会记录下哪些用户，从哪个IP，在什么时候登录的以及登陆了多长时间这些信息. 使用 `last` 命令可以查看这些信息.
 
-The output looks like this:
+输出类似这样:
 
 ```
 root     pts/1        78.31.109.1      Thu Nov 30 08:26   still logged in
@@ -55,53 +54,56 @@ root     pts/0        14.176.196.1     Mon Nov 27 13:32 - 13:53  (00:21)
 
 ```
 
-There is a mix of my UK IP’s and some Vietnamese ones, with the top two still logged in. If you see any IP’s that are not authorized then refer to the final section.
+这里可以看到英国IP和越南IP交替出现, 而且最上面两个IP现在还处于登录状态. 如果你看到任何未经授权的IP，那么请参阅最后章节.
 
-The login history is contained in a text file at ~/.bash_history and is therefore easily removable. Often, attackers will simply delete this file to try to cover their tracks. Consequently, if you run last and only see your current login, this is a Bad Sign.
+登录历史记录会以文本格式记录到 `~/.bash_history`(注：这里作者应该写错了)中，因此很容易被删除.
+通常攻击者会直接把这个文件删掉，以掩盖他们的攻击行为. 因此, 若你运行了 `last` 命令却只看得见你的当前登录，那么这就是个不妙的信号.
 
-If there is no login history be very, very suspicious and continue looking for indications of compromise.
+如果没有登录历史的话，请一定小心，继续留意入侵的其他线索.
 
-### Check 3 - Review the command history
+#### 检查 3 - 回顾命令历史
 
-This level of attacker will frequently take no precautions to leave no command history so running the history command will show you everything they have done. Be on the lookout for wget or curl commands to download out-of-repo software such as spam bots or crypto miners.
+这个层次的攻击者通常不会注意掩盖命令的历史记录,因此运行 `history` 命令会显示出他们曾经做过的所有事情.
+一定留意有没有用 `wget` 或 `curl` 命令来下载类似垃圾邮件机器人或者挖矿程序之类的软件.
 
-The command history is contained in the ~/.bash_history file so some attackers will delete this file to cover what they have done. Just as with the login history, if you run history and don’t see anything then the history file has been deleted. Again this is a Bad Sign and you should review the server very carefully.
+命令历史存储在 `~/.bash_history` 文件中，因此有些攻击者会删除该文件以掩盖他们的所作所为.
+跟登录历史一样, 若你运行 `history` 命令却没有输出任何东西那就表示历史文件被删掉了. 这也是个不妙的信号，你需要很小心地检查一下服务器了.
 
-### Check 4 - What’s using all the CPU?
+#### 检查 4 - 哪些进程在消耗CPU?
 
-The sorts of attackers that you will encounter usually don’t take too many precautions to hide what they are doing. So they will run processes that consume all the CPU. This generally makes it pretty easy to spot them. Simply run top and look at the highest process.
+你常遇到的这类攻击者通常不怎么会去掩盖他们做的事情. 他们会运行一些特别消耗CPU的进程. 这就很容易发着这些进程了. 只需要运行 `top` 然后看最前的那几个进程就行了.
 
-This will also show people exploiting your server without having logged in. This could be, for example, someone using an unprotected form-mail script to relay spam.
+这也能显示出那些未登录的攻击者来. 比如，可能有人在用未受保护的邮件脚本来发送垃圾邮件.
 
-If you don’t recognize the top process then either Google its name or investigate what it’s doing with losf or strace.
+如果你最上面的进程对不了解，那么你可以google一下进程名称,或者通过 `losf` 和 `strace` 来看看它做的事情是什么.
 
-To use these tools first copy its PID from top and run:
+使用这些工具，第一步从 `top` 中拷贝出进程的 PID，然后运行:
 
-```
+```shell
 strace -p PID
 
 ```
 
-This will display all the system calls the process is making. It’s a lot of information but looking through it will give you a good idea what’s going on.
+这会显示出进程调用的所有系统调用. 它产生的内容会很多,但这些信息能告诉你这个进程在做什么.
 
 ```
 lsof  -p PID
 
 ```
 
-This program will list the open files that the process has. Again, this will give you a good idea what it’s doing by showing you what files it is accessing.
+这个程序会列出进程打开的文件. 通过查看它访问的文件可以很好的理解它在做的事情.
 
-### Check 5 - Review the all the system processes
+#### Check 5 - Review the all the system processes
 
 If an unauthorized process is not consuming enough CPU to get listed noticeably on top it will still get displayed in a full process listing with ps. My proffered command is ps auxf for providing the most information clearly.
 
-You should be looking for any processes that you don’t recognize. The more times you run ps on your servers (which is a good habit to get into) the more obvious an alien process will stand out.
+You should be looking for any processes that you don’t recognize. The more times you run ps on your servers (which is a good habikkt to get into) the more obvious an alien process will stand out.
 
-### Check 6 - Review network usage by process
+#### Check 6 - Review network usage by process
 
 The command iftop functions like top to show a ranked list of processes that are sending and receiving network data along with their source and destination. A process like a DOS attack or spam bot will immediately show itself at the top of the list.
 
-### Check 7 - What processes are listening for network connections?
+#### Check 7 - What processes are listening for network connections?
 
 Often an attacker will install a program that doesn’t do anything except listen on the network port for instructions. This does not consume CPU or bandwidth whilst it is waiting so can get overlooked in the top type commands.
 
