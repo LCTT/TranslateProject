@@ -1,21 +1,20 @@
 检查 Linux 系统上的网络连接
 ============================================================
 
-### Linux 系统提供了许多有用的命令来检查网络配置和连接。下面来看几个，包括 ifquery、ifup、ifdown 和 ifconfig。
-
+> Linux 系统提供了许多有用的命令来检查网络配置和连接。下面来看几个，包括 `ifquery`、`ifup`、`ifdown` 和 `ifconfig`。
 
 Linux 上有许多可用于查看网络设置和连接的命令。在今天的文章中，我们将会通过一些非常方便的命令来看看它们是如何工作的。
 
 ### ifquery 命令
 
-一个非常有用的命令是 **ifquery**。这个命令应该会显示一个网络接口列表。但是，你可能只会看到类似这样的内容 - 仅显示回环接口：
+一个非常有用的命令是 `ifquery`。这个命令应该会显示一个网络接口列表。但是，你可能只会看到类似这样的内容 - 仅显示回环接口：
 
 ```
 $ ifquery --list
 lo
 ```
 
-如果是这种情况，那么你的 **/etc/network/interfaces** 不包括除了回环接口之外的网络接口信息。在下面的例子中，假设你使用 DHCP 来分配地址，且如果你希望它更有用的话，你可以添加例子最后的两行。
+如果是这种情况，那说明你的 `/etc/network/interfaces` 不包括除了回环接口之外的网络接口信息。在下面的例子中，假设你使用 DHCP 来分配地址，且如果你希望它更有用的话，你可以添加例子最后的两行。
 
 ```
 # interfaces(5) file used by ifup(8) and ifdown(8)
@@ -27,14 +26,11 @@ iface eth0 inet dhcp
 
 ### ifup 和 ifdown 命令
 
-可以使用相关的 **ifup** 和 **ifdown** 命令来打开网络连接并根据需要将其关闭，只要该文件具有所需的描述性数据即可。请记住，“if” 在这里意思是“接口” （interface），这与 **ifconfig** 命令中的一样，而不是“如果我只有一个大脑” （if I only had a brain） 中的 “if”。
-
-
-<aside class="nativo-promo smartphone" id="" style="overflow: hidden; margin-bottom: 16px; max-width: 620px;"></aside>
+可以使用相关的 `ifup` 和 `ifdown` 命令来打开网络连接并根据需要将其关闭，只要该文件具有所需的描述性数据即可。请记住，“if” 在这里意思是<ruby>接口<rt>interface</rt></ruby>，这与 `ifconfig` 命令中的一样，而不是<ruby>如果我只有一个大脑<rt>if I only had a brain</rt></ruby> 中的 “if”。
 
 ### ifconfig 命令
 
-另外，**ifconfig** 命令完全不读取 /etc/network/interfaces，但是在网络接口上仍然提供了相当多的有用信息 - 配置数据以及数据包计数可以告诉你每个接口有多忙。ifconfig 命令也可用于关闭和重新启动网络接口（例如：ifconfig eth0 down）。
+另外，`ifconfig` 命令完全不读取 `/etc/network/interfaces`，但是仍然提供了网络接口相当多的有用信息 —— 配置数据以及可以告诉你每个接口有多忙的数据包计数。`ifconfig` 命令也可用于关闭和重新启动网络接口（例如：`ifconfig eth0 down`）。
 
 ```
 $ ifconfig eth0
@@ -49,15 +45,13 @@ eth0      Link encap:Ethernet  HWaddr 00:1e:4f:c8:43:fc
           Interrupt:21 Memory:fe9e0000-fea00000
 ```
 
-输出中的 RX 和 TX 数据包计数很低。此外，没有报告错误或数据包冲突。**uptime** 命令可能会确认此系统最近才重新启动。
+输出中的 RX 和 TX 数据包计数很低。此外，没有报告错误或数据包冲突。或许可以用 `uptime` 命令确认此系统最近才重新启动。
 
-上面显示的广播 （Bcast） 和网络掩码 （Mask） 地址表明系统运行在 C 类等效网络（默认）上，所以本地地址范围从 192.168.0.1 到 192.168.0.254。
+上面显示的广播 （Bcast） 和网络掩码 （Mask） 地址表明系统运行在 C 类等效网络（默认）上，所以本地地址范围从 `192.168.0.1` 到 `192.168.0.254`。
 
 ### netstat 命令
 
-**netstat** 命令提供有关路由和网络连接的信息。**netstat -rn** 命令显示系统的路由表。
-
-<aside class="nativo-promo tablet desktop" id="" style="overflow: hidden; margin-bottom: 16px; max-width: 620px;"></aside>
+`netstat` 命令提供有关路由和网络连接的信息。`netstat -rn` 命令显示系统的路由表。192.168.0.1 是本地网关 （Flags=UG)。
 
 ```
 $ netstat -rn
@@ -68,7 +62,7 @@ Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
 192.168.0.0     0.0.0.0         255.255.255.0   U         0 0          0 eth0
 ```
 
-上面输出中的 **169.254.0.0** 条目仅在你正在使用或计划使用本地链路通信时才有必要。如果不是这样的话，你可以在 **/etc/network/if-up.d/avahi-autoipd** 中注释掉相关的行：
+上面输出中的 `169.254.0.0` 条目仅在你正在使用或计划使用本地链路通信时才有必要。如果不是这样的话，你可以在 `/etc/network/if-up.d/avahi-autoipd` 中注释掉相关的行：
 
 ```
 $ tail -12 /etc/network/if-up.d/avahi-autoipd
@@ -87,7 +81,7 @@ $ tail -12 /etc/network/if-up.d/avahi-autoipd
 
 ### netstat -a 命令
 
-**netstat -a** 命令将显示 **_所有_** 网络连接。为了将其限制为正在监听和已建立的连接（通常更有用），请改用 **netstat -at** 命令。
+`netstat -a` 命令将显示“所有”网络连接。为了将其限制为显示正在监听和已建立的连接（通常更有用），请改用 `netstat -at` 命令。
 
 ```
 $ netstat -at
@@ -103,21 +97,9 @@ tcp6       0      0 ip6-localhost:ipp       [::]:*                  LISTEN
 tcp6       0      0 ip6-localhost:smtp      [::]:*                  LISTEN
 ```
 
-### netstat -rn 命令
-
-**netstat -rn** 展示系统的路由表。192.168.0.1 是本地网关 （Flags=UG)。
-
-```
-$ netstat -rn
-Kernel IP routing table
-Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
-0.0.0.0         192.168.0.1     0.0.0.0         UG        0 0          0 eth0
-192.168.0.0     0.0.0.0         255.255.255.0   U         0 0          0 eth0
-```
-
 ### host 命令
 
-**host** 命令就像 **nslookup** 一样，用来查询远程系统的 IP 地址，但是还提供系统的邮箱处理地址。
+`host` 命令就像 `nslookup` 一样，用来查询远程系统的 IP 地址，但是还提供系统的邮箱处理地址。
 
 ```
 $ host world.std.com
@@ -127,7 +109,7 @@ world.std.com mail is handled by 10 smtp.theworld.com.
 
 ### nslookup 命令
 
-**nslookup** 还提供系统中（本例中是本地系统）提供 DNS 查询服务的信息。
+`nslookup` 还提供系统中（本例中是本地系统）提供 DNS 查询服务的信息。
 
 ```
 $ nslookup world.std.com
@@ -141,7 +123,7 @@ Address: 192.74.137.5
 
 ### dig 命令
 
-**dig** 命令提供了很多有关连接到远程系统的信息 - 包括与我们通信的名称服务器以及查询需要多长时间进行响应，并经常用于故障排除。
+`dig` 命令提供了很多有关连接到远程系统的信息 - 包括与我们通信的名称服务器以及查询需要多长时间进行响应，并经常用于故障排除。
 
 ```
 $ dig world.std.com
@@ -168,7 +150,7 @@ world.std.com.          78146   IN      A       192.74.137.5
 
 ### nmap 命令
 
-**nmap** 经常用于探查远程系统，但是同样也用于报告本地系统提供的服务。在下面的输出中，我们可以看到登录可以使用 ssh、smtp 用于电子邮箱、web 站点也是启用的，并且 ipp 打印服务正在运行。
+`nmap` 经常用于探查远程系统，但是同样也用于报告本地系统提供的服务。在下面的输出中，我们可以看到登录可以使用 ssh、smtp 用于电子邮箱、web 站点也是启用的，并且 ipp 打印服务正在运行。
 
 ```
 $ nmap localhost
@@ -186,7 +168,7 @@ PORT    STATE SERVICE
 Nmap done: 1 IP address (1 host up) scanned in 0.09 seconds
 ```
 
-Linux 系统提供了很多有用的命令用于查看网络配置和连接。如果你都探索完了，请记住 **apropos network** 或许会让你了解更多。
+Linux 系统提供了很多有用的命令用于查看网络配置和连接。如果你都探索完了，请记住 `apropos network` 或许会让你了解更多。
 
 --------------------------------------------------------------------------------
 
@@ -194,7 +176,7 @@ via: https://www.networkworld.com/article/3230519/linux/examining-network-connec
 
 作者：[Sandra Henry-Stocker][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
