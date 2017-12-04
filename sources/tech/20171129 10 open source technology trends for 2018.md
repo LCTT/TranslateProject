@@ -1,3 +1,6 @@
+translating by wangy325...
+
+
 10 open source technology trends for 2018
 ============================================================
 
