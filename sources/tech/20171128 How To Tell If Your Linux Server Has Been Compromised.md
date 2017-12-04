@@ -93,15 +93,16 @@ lsof  -p PID
 
 这个程序会列出进程打开的文件. 通过查看它访问的文件可以很好的理解它在做的事情.
 
-#### Check 5 - Review the all the system processes
+#### 检查 5 - 检查所有的系统进程
 
-If an unauthorized process is not consuming enough CPU to get listed noticeably on top it will still get displayed in a full process listing with ps. My proffered command is ps auxf for providing the most information clearly.
+消耗CPU不严重的未认证进程可能不会在 `top` 中显露出来,不过它依然可以通过 `ps` 列出来. 命令 `ps auxf` 就能显示足够清晰的信息了。
 
-You should be looking for any processes that you don’t recognize. The more times you run ps on your servers (which is a good habikkt to get into) the more obvious an alien process will stand out.
+你需要检查一下每个不认识的进程. 经常运行 `ps` (这是个好习惯) 能帮助你发现奇怪的进程.
 
-#### Check 6 - Review network usage by process
+#### 检查 6 - 检查进程的网络使用情况
 
-The command iftop functions like top to show a ranked list of processes that are sending and receiving network data along with their source and destination. A process like a DOS attack or spam bot will immediately show itself at the top of the list.
+`iftop` 的功能类似 `top`，他会显示一系列收发网络数据的进程以及他们的源地址和目的地址.
+类似 `DoS` 攻击或垃圾制造器这样的进程很容易显示在列表的最顶端.
 
 #### Check 7 - What processes are listening for network connections?
 
