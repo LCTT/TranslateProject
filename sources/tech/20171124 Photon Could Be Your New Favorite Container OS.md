@@ -1,5 +1,8 @@
+KeyLD Translating
+
 Photon Could Be Your New Favorite Container OS
 ============================================================
+
 
 ![Photon OS](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/photon-linux.jpg?itok=jUFHPR_c "Photon OS")
 Jack Wallen says Photon OS is an outstanding platform, geared specifically for containers.[Creative Commons Zero][5]Pixabay
@@ -106,9 +109,9 @@ Give Photon a try and see if it doesn’t make deploying Docker containers and/o
 
 --------------------------------------------------------------------------------
 
-via: 网址
+via: https://www.linux.com/learn/intro-to-linux/2017/11/photon-could-be-your-new-favorite-container-os
 
-作者：[ JACK WALLEN][a]
+作者：[JACK WALLEN ][a]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
