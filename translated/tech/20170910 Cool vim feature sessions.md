@@ -1,5 +1,5 @@
 vim 的酷功能：会话！
-============================================================•
+============================================================
 
 昨天我在编写我的[vimrc][5]的时候了解到一个很酷的 vim 功能！（主要为了添加 fzf 和 ripgrep 插件）。这是一个内置功能，不需要特别的插件。
 
@@ -17,9 +17,7 @@ vim 的酷功能：会话！
 一些 vim 插件给 vim 会话添加了额外的功能：
 
 *   [https://github.com/tpope/vim-obsession][1]
-
 *   [https://github.com/mhinz/vim-startify][2]
-
 *   [https://github.com/xolox/vim-session][3]
 
 这是漫画：
@@ -30,9 +28,9 @@ vim 的酷功能：会话！
 
 via: https://jvns.ca/blog/2017/09/10/vim-sessions/
 
-作者：[Julia Evans ][a]
+作者：[Julia Evans][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
