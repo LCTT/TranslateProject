@@ -1,136 +1,128 @@
-translating by lujun9972
-How to Encrypt and Decrypt Individual Files With GPG
+如何使用 GPG 加解密文件
 ------
-### Objective
+### 目标
 
-Encrypt individual files with GPG.
+使用 GPG 加密文件
 
-### Distributions
+### 发行版
 
-This will work with any Linux distribution.
+适用于任何发行版
 
-### Requirements
+### 要求
 
-A working Linux install with GPG installed or root privileges to install it.
+安装了 GPG 的Linux 或者拥有 root 权限来安装它.
 
-### Difficulty
+### 难度
 
-Easy
+简单
 
-### Conventions
+### 约定
 
-*   # - requires given command to be executed with root privileges either directly as a root user or by use of sudo command
+*   # - 需要使用root权限来执行指定命令,可以直接使用root用户来执行也可以使用sudo命令
 
-*   $ - given command to be executed as a regular non-privileged user
+*   $ - 可以使用普通用户来执行指定命令
 
-### Introduction
+### 介绍
 
-Encryption is important. It's absolutely vital to protecting sensitive information. Your personal files are worth encrypting, and GPG provides the perfect solution.
+加密非常重要. 它对于保护敏感信息来说是必不可少的.
+你的私人文件应该要被加密, 而 GPG 提供了很好的解决方案.
 
-### Install GPG
+### 安装 GPG
 
-GPG is a widely used piece of software. You can find it in nearly every distribution's repositories. If you don't have it already, install it on your computer.
+GPG 的使用非常广泛. 你在几乎每个发行版的仓库中都能找到它.
+如果你还没有安装它，那现在就来安装一下吧.
 
-### Debian/Ubuntu
+#### Debian/Ubuntu
 
-```
+```shell
 $ sudo apt install gnupg
 ```
-
-```
+#### Fedora
+```shell
 # dnf install gnupg2
 ```
-
-```
+#### Arch
+```shell
 # pacman -S gnupg
 ```
-
-```
+#### Gentoo
+```shell
 # emerge --ask app-crypt/gnupg
 ```
+### Create a Key
+你需要一个密钥对来加解密文件. 如果你为 SSH 已经生成过了密钥对,那么你可以直接使用它.
+如果没有，GPG包含工具来生成密钥对.
 
-You need a key pair to be able to encrypt and decrypt files. If you already have a key pair that you generated for SSH, you can actually use those here. If not, GPG includes a utility to generate them.
-
-```
+```shell
 $ gpg --full-generate-key
 ```
+GPG 有一个命令行程序帮你一步一步的生成密钥. 它还有一个简单得多的工具，但是这个工具不能让你设置密钥类型，密钥的长度以及过期时间，因此不推荐使用这个工具.
 
-The first thing GPG will ask for is the type of key. Use the default, if there isn't anything specific that you need.
+GPG 首先会询问你密钥的类型. 没什么特别的话选择默认值就好.
 
-The next thing that you'll need to set is the key size.
+下一步需要设置密钥长度. `4096` 是一个不错的选择.
 
-`4096`
+之后, 可以设置过期的日期. 如果希望密钥永不过期则设置为 `0`
 
-is probably best.
+然后，输入你的名称.
 
-After that, you can set an expiration date. Set it to
+最后, 输入电子邮件地址.
 
-`0`
+如果你需要的话，还能添加一个注释.
 
-if you want the key to be permanent.
+所有这些都完成后, GPG 会让你校验一下这些信息.
 
-Then, it will ask you for your name.
+GPG 还会问你是否需要为密钥设置密码. 这一步是可选的, 但是会增加保护的程度.
+若需要设置密码，则 GPG 会收集你的操作信息来增加密钥的健壮性. 所有这些都完成后, GPG 会显示密钥相关的信息.
 
-Finally, it asks for your email address.
+### 加密的基本方法
 
-You can add a comment if you need to too.
+现在你拥有了自己的密钥, 加密文件非常简单. 使用虾米那命令在 `/tmp` 目录中创建一个空白文本文件.
 
-When it has everything, GPG will ask you to verify the information.
-
-GPG will ask if you want a password for your key. This is optional, but adds a degree of protection. As it's doing that, GPG will collect entropy from your actions to increase the strength of your key. When it's done, GPG will print out the information pertaining to the key you just created.
-
-### Basic Encryption
-
-Now that you have your key, encrypting files is very easy. Create a blank text file in your
-
-`/tmp`
-
-directory to practice with.
-
-```
+```shell
 $ touch /tmp/test.txt
 ```
-`-e`
 
-flag tells GPG that you'll be encrypting a file, and the
+然后用 GPG 来加密它. 这里 `-e` 标志告诉 GPG 你想要加密文件, `-r` 标志指定接收者.
 
-`-r`
-
-flag specifies a recipient.
-
-```
+```shell
 $ gpg -e -r "Your Name" /tmp/test.txt
 ```
 
-### Basic Decryption
+GPG 需要知道这个文件的接收者和发送者. 由于这个文件给是你的,因此无需指定发送者,而接收者就是你自己. 
 
-You have an encrypted file. Try decrypting it. You don't need to specify any keys. That information is encoded with the file. GPG will try the keys that it has to decrypt it.
+### 解密的基本方法
 
-```
+你收到加密文件后,就需要对它进行解密. 你无需指定解密用的密钥. 这个信息被编码在文件中. GPG 会尝试用其中的密钥进行解密.
+
+```shel
 $ gpg -d /tmp/test.txt.gpg
 ```
 
-Say you
+### 发送文件
+假设你需要发送文件给别人. 你需要有接收者的公钥. 具体怎么获得密钥由你自己决定. 你可以让他们直接把公钥发送给你, 也可以通过密钥服务器来获取.
 
- _do_ 
+收到对方公钥后, 导入公钥到GPG 中.
 
-need to send the file. You need to have the recipient's public key. How you get that from them is up to you. You can ask them to send it to you, or it may be publicly available on a keyserver.
-
-Once you have it, import the key into GPG.
-
-```
+```shell
 $ gpg --import yourfriends.key
 ```
 
-```
+这些公钥与你自己创建的密钥一样，自带了名称和电子邮件地址的信息. 
+记住，为了让别人能解密你的文件，别人也需要你的公钥. 因此导出公钥并将之发送出去. 
+
+```shell
 gpg --export -a "Your Name" > your.key
 ```
 
+现在可以开始加密要发送的文件了. 它跟之前的步骤差不多, 只是需要指定你自己为发送人. 
 ```
 $ gpg -e -u "Your Name" -r "Their Name" /tmp/test.txt
 ```
 
-That's mostly it. There are some more advanced options available, but you won't need them ninety-nine percent of the time. GPG is that easy to use. You can also use the key pair that you created to send and receive encrypted email in much the same way as this, though most email clients automate the process once they have the keys.
+### 结语
+就这样了. GPG 还有一些高级选项, 不过你在 99% 的时间内都不会用到这些高级选项. GPG 就是这么易于使用.
+你也可以使用创建的密钥对来发送和接受加密邮件，其步骤跟上面演示的差不多, 不过大多数的电子邮件客户端在拥有密钥的情况下会自动帮你做这个动作.
 
 --------------------------------------------------------------------------------
 
