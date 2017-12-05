@@ -1,10 +1,6 @@
 30 Best Linux Games On Steam You Should Play in 2017
 ============================================================
 
-Last updated December 4, 2017 By [Ankush Das][1] 
-
-
-
 When it comes to Gaming, a system running on Windows platform is what anyone would recommend. It still is a superior choice for gamers with better graphics driver support and perfect hardware compatibility. But, what about the thought of [gaming on a Linux system][9]? Well, yes, of course – it is possible – maybe you thought of it at some point in time but the collection of Linux games on [Steam for Linux][10] platform wasn’t appealing at all few years back.
 
 However, that’s not true at all for the current scene. The Steam store now has a lot of great games listed for Linux platform (including a lot of major titles). So, in this article, we’ll be taking a look at the best Linux games on Steam.
