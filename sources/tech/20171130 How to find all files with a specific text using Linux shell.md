@@ -286,7 +286,7 @@ directory which do not contain string
 via: https://linuxconfig.org/how-to-find-all-files-with-a-specific-text-using-linux-shell
 
 作者：[Lubos Rendek][a]
-译者：[lujun9972](https://github.com/译者ID)
+译者：[lujun9972](https://github.com/lujun9972)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
