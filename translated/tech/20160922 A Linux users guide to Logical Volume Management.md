@@ -142,7 +142,7 @@ e2label /dev/MyVG01/Stuff Stuff
 via: https://opensource.com/business/16/9/linux-users-guide-lvm
 
 作者：[David Both](a)
-译者：[qhwdw](https://github.com/译者ID)
+译者：[qhwdw](https://github.com/qhwdw)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
