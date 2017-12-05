@@ -60,7 +60,7 @@ Figure 1: My system BIOS has an easy-to-use wakeup scheduler.
 
 远程唤醒是仅次于 BIOS 唤醒的又一种可靠的唤醒方法。这需要你从第二台计算机发送信号到所要打开的计算机。可以使用 Arduino 或 树莓派（Raspberry Pi） 发送基于 Linux 的路由器或者任何 Linux 计算机的唤醒信号。首先，查看系统主板 BIOS 是否支持 Wake-On-LAN ，要是支持的话，必须先启动它，因为它被默认为禁用。
 
-然后，需要一个支持 Wake-On-LAN 的网卡；无线网卡并不支持。你需要运行 ethtool 命令查看网卡是否支持 Wake-On-LAN ： 
+然后，需要一个支持 Wake-On-LAN 的网卡；无线网卡并不支持。你需要运行 `ethtool` 命令查看网卡是否支持 Wake-On-LAN ： 
 
 ```
 # ethtool eth0 | grep -i wake-on
@@ -85,7 +85,7 @@ Figure 1: My system BIOS has an easy-to-use wakeup scheduler.
 
 *   s -- 设有密码的 magic packet 唤醒 
 
-man ethtool 命令并没说清楚 p 选项的作用；这表明任何信号都会导致唤醒。然而，在我的测试中它并没有这么做。想要实现远程唤醒主机，必须支持的功能是g -- magic packet 唤醒，而且显示这个功能已经在启用了。如果它没有被启用，你可以通过 ethtool 命令来启用它。
+man ethtool 命令并没说清楚 p 选项的作用；这表明任何信号都会导致唤醒。然而，在我的测试中它并没有这么做。想要实现远程唤醒主机，必须支持的功能是 `g -- magic packet` 唤醒，而且显示这个功能已经在启用了。如果它没有被启用，你可以通过 `ethtool` 命令来启用它。
 
 ```
 # ethtool -s eth0 wol g
