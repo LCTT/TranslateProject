@@ -104,11 +104,11 @@ lsof  -p PID
 `iftop` 的功能类似 `top`，他会显示一系列收发网络数据的进程以及他们的源地址和目的地址.
 类似 `DoS` 攻击或垃圾制造器这样的进程很容易显示在列表的最顶端.
 
-#### Check 7 - What processes are listening for network connections?
+#### 检查 7 - 哪些进程在监听网络连接?
 
-Often an attacker will install a program that doesn’t do anything except listen on the network port for instructions. This does not consume CPU or bandwidth whilst it is waiting so can get overlooked in the top type commands.
+通常攻击者会安装一个后门程序专门监听网络端口接受指令. 该进程等待期间是不会消耗CPU和带宽的,因此也就不容易通过 `top` 之类的命令发现.
 
-The commands lsof and netstat will both list all networked processes. I use them with the following options:
+`lsof` 和 `netstat` 命令都会列出所有的联网进程. 我通常会让他们带上下面这些参数:
 
 ```
 lsof -i
@@ -120,31 +120,35 @@ netstat -plunt
 
 ```
 
-You should look for any process that is listed as in the LISTEN or ESTABLISHED status as these processes are either waiting for a connection (LISTEN) or have a connection open (ESTABLISHED). If you don’t recognize these processes use strace or lsof to try to see what they are doing.
+你需要留意那些处于 `LISTEN` 和 `ESTABLISHED` 状态的进程,这些进程要么正在等待连接(LISTEN),要么已经连接(ESTABLISHED). 
+如果遇到不认识的进程，使用 `strace` 和 `lsof` 来看看它们在做什么东西.
 
-### What should I do if I’ve been compromised?
+### 被入侵之后该怎么办呢?
 
-The first thing to do is not to panic, especially if the attacker is currently logged in. You need to be able to take back control of the machine before the attacker is aware that you know about them. If they realize you know about them they may well lock you out of your server and start destroying any assets out of spite.
+首先，不要紧张, 尤其当攻击者正处于登陆状态时更不能紧张. 你需要在攻击者警觉到你已经发现他之前夺回机器的控制权.
+如果他发现你已经发觉到他了，那么他可能会锁死你不让你登陆服务器，然后开始毁尸灭迹.
 
-If you are not very technical then simply shut down the server. Either from the server itself with shutdown -h now or systemctl poweroff. Or log into your hosting provider’s control panel and shut down the server. Once it’s powered off you can work on the needed firewall rules and consult with your provider in your own time.
+如果你技术不太好那么就直接关机吧. 你可以在服务器上运行 `shutdown -h now` 或者 `systemctl poweroff` 这两条命令. 也可以登陆主机提供商的控制面板中关闭服务器.
+关机后，你就可以开始配置防火墙或者咨询一下供应商的意见.
 
-If you’re feeling a bit more confident and your hosting provider has an upstream firewall then create and enable the following two rules in this order:
+如果你对自己颇有自信，而你的主机提供商也有提供上游防火墙，那么你只需要以此创建并启用下面两条规则就行了:
 
-1.  Allow SSH traffic from only your IP address.
+1. 只允许从你的IP地址登陆SSH
 
-2.  Block everything else, not just SSH but every protocol on every port.
+2. 封禁除此之外的任何东西，不仅仅是SSH，还包括任何端口上的任何协议.
 
-This will immediately kill their SSH session and give only you access to the server.
+这样会立即关闭攻击者的SSH会话，而只留下你访问服务器.
 
-If you don’t have access to an upstream firewall then you will have to create and enable these firewall rules on the server itself and then, when they are in place kill the attacker’s ssh session with the kill command.
+如果你无法访问上游防火墙，那么你就需要在服务器本身创建并启用这些防火墙策略,然后在防火墙规则起效后使用 `kill` 命令关闭攻击者的ssh会话.
 
-A final method, where available, is to log into the server via an out-of-band connection such as the serial console and stop networking with systemctl stop network.service. This will completely stop any network access so you can now enable the firewall rules in your own time.
+最后还有一种方法, 就是通过诸如串行控制台之类的带外连接登陆服务器，然后通过 `systemctl stop network.service` 停止网络功能.
+这会关闭所有服务器上的网络连接，这样你就可以慢慢的配置那些防火墙规则了.
 
-Once you have regained control of the server do not trust it.
+重夺服务器的控制权后，也不要以为就万事大吉了.
 
-Do not attempt to fix things up and continue using the server. You can never be sure what the attacker did and so you can never sure the server is secure.
+不要试着修复这台服务器，让后接着用. 你永远不知道攻击者做过什么因此你也永远无法保证这台服务器还是安全的.
 
-The only sensible course of action is to copy off all the data that you need and start again from a fresh install.
+最好的方法就是拷贝出所有的资料，然后重装系统.
 
 --------------------------------------------------------------------------------
 
