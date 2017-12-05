@@ -31,7 +31,7 @@
 ```
 您可以为不同的日期和时间创建多个cron作业。 通过命令 ``man 5 crontab`` 可以了解所有时间和日期的字段。
 
-一个快速、容易的方式是，使用 /etc/crontab 文件。但这样你必须指定用户：
+一个快速、容易的方式是，使用 `/etc/crontab ` 文件。但这样你必须指定用户：
 
 ```
 15 23 * * 1-5 root shutdown -h now
@@ -67,7 +67,7 @@ Figure 1: My system BIOS has an easy-to-use wakeup scheduler.
         Supports Wake-on: pumbg
         Wake-on: g
 ```
-这条命令输出的 Supports Wake-on字段会告诉你你的网卡现在开启了哪些功能：
+这条命令输出的 Supports Wake-on 字段会告诉你你的网卡现在开启了哪些功能：
 　　　
 *   d -- 禁用
 
@@ -103,9 +103,9 @@ Figure 2: Enable Wake on LAN.
 
 [Used with permission][9]
 
-另一个选择是最近的网络管理器版本有一个很好的小复选框来启用Wake-On-LAN（图2）。
+另一个选择是最近的网络管理器版本有一个很好的小复选框来启用 Wake-On-LAN（图2）。
 
-这里有一个可以用于设置密码的地方，但是如果你的网络接口不支持 Secure On password，它就不起作用。
+这里有一个可以用于设置密码的地方，但是如果你的网络接口不支持安全密码，它就不起作用。
 
 现在你需要配置第二台计算机来发送唤醒信号。你并不需要 root 权限，所以你可以为你的用户创建 cron 任务。你需要用到的是想要唤醒的机器的网络接口和MAC地址信息。
 
