@@ -1,5 +1,6 @@
 translating by zrszrszrs
 # [Mark McIntyre: How Do You Fedora?][1]
+# [Mark McIntyre: 你是如何使用Fedora的？][1]
 
 
 ![](https://fedoramagazine.org/wp-content/uploads/2017/11/mock-couch-945w-945x400.jpg)
