@@ -1,256 +1,252 @@
-yixunx translating
-
-30 Best Linux Games On Steam You Should Play in 2017
+2017 年最好的 30 款支持 Linux 的 Steam 游戏
 ============================================================
 
-When it comes to Gaming, a system running on Windows platform is what anyone would recommend. It still is a superior choice for gamers with better graphics driver support and perfect hardware compatibility. But, what about the thought of [gaming on a Linux system][9]? Well, yes, of course – it is possible – maybe you thought of it at some point in time but the collection of Linux games on [Steam for Linux][10] platform wasn’t appealing at all few years back.
+说到游戏，人们一般都会推荐使用 Windows 系统。Windows 能提供更好的显卡支持和硬件兼容性，所以对于游戏爱好者来说的确是个更好的选择。但你是否想过[在 Linux 系统上玩游戏][9]？这的确是可能的，也许你以前还曾经考虑过。但在几年之前， [Steam for Linux][10] 上可玩的游戏并不是很吸引人。
 
-However, that’s not true at all for the current scene. The Steam store now has a lot of great games listed for Linux platform (including a lot of major titles). So, in this article, we’ll be taking a look at the best Linux games on Steam.
+但现在情况完全不一样了。Steam 商店里现在有许多支持 Linux 平台的游戏（包括很多主流大作）。我们在本文中将介绍 Steam 上最好的一些 Linux 游戏。
 
-But before we do that, let me tell you a money saving trick. If you are an avid gamer who spends plenty of time and money on gaming, you should subscribe to Humble Monthly. This monthly subscription program from [Humble Bundle][11] gives you $100 in games for just $12 each month.
+在进入正题之前，先介绍一个省钱小窍门。如果你是个狂热的游戏爱好者，在游戏上花费很多时间和金钱的话，我建议你订阅 [Humble 每月包(Humble Monthly)][11]。这是个每月收费的订阅服务，每月只用 12 美元就能获得价值 100 美元的游戏。
 
-Not all games might be available on Linux though but it is still a good deal because you get additional 10% discount on any games or books you buy from [Humble Bundle website][12].
+这个游戏包中可能有些游戏不支持 Linux，但除了 Steam 游戏之外，它还会让 [Humble Bundle 网站][12]上所有的游戏和书籍都打九折，所以这依然是个不错的优惠。
 
-The best thing here is that every purchase you make supports a charity organization. So, you are not just gaming, you are also making a difference to the world.
+更棒的是，你在 Humble Bundle 上所有的消费都会捐出一部分给慈善机构。所以你在享受游戏的同时还在帮助改变世界。
 
-### Best Linux games on Steam
+### Steam 上最好的 Linux 游戏
 
-The list of best Linux games on steam is in no particular ranking order.
+以下排名无先后顺序。
 
-Additional Note: While there’s a lot of games available on Steam for Linux, there are still a lot of problems you would face as a Linux gamer. You can refer to one of our articles to know about the [annoying experiences every Linux gamer encounters][14].
+额外提示：虽然在 Steam 上有很多支持 Linux 的游戏，但你在 Linux 上玩游戏时依然可能会遇到各种问题。你可以阅读我们之前的文章：[每个 Linux 游戏玩家都会遇到的烦人问题][14]
 
-Jump Directly to your preferred genre of Games:
+可以点击以下链接跳转到你喜欢的游戏类型：
 
-*   [Action Games][3] 
+*   [动作类游戏][3]
 
-*   [RPG Games][4]
+*   [角色扮演类游戏][4]
 
-*   [Racing/Sports/Simulation Games][5]
+*   [赛车/运动/模拟类游戏][5]
 
-*   [Adventure Games][6] 
+*   [冒险类游戏][6]
 
-*   [Indie Games][7]
+*   [独立游戏][7]
 
-*   [Strategy Games][8]
+*   [策略类游戏][8]
 
-### Best Action Games for Linux On Steam
+### Steam 上最佳 Linux 动作类游戏
 
-### 1\. Counter-Strike: Global Offensive (Multiplayer)
+### 1\. 反恐精英：全球攻势（Counter-Strike: Global Offensive）（多人）
 
-CS GO is definitely one of the best FPS games for Linux on Steam. I don’t think this game needs an introduction but in case you are unaware of it – I must mention that it is one of the most enjoyable FPS multiplayer game you would ever play. You’ll observe CS GO is one of the games contributing a major part to the e-sports scene. To up your rank – you need to play competitive matches. In either case, you can continue playing casual matches.
+《CS:GO》毫无疑问是 Steam 上支持 Linux 的最好的 FPS 游戏之一。我觉得这款游戏无需介绍，但如果你没有听说过它，我要告诉你这将会是你玩过的最好玩的多人 FPS 游戏之一。《CS:GO》还是电子竞技中的一个主流项目。想要提升等级的话，你需要在天梯上和其他玩家同台竞技。但你也可以选择更加轻松的休闲模式。
 
-I could have listed Rainbow Six siege instead of Counter-Strike, but we still don’t have it for Linux/Steam OS.
+我本想写《彩虹六号：围攻行动》，但它目前还不支持 Linux 或 Steam OS。
 
-[CS: GO (Purchase)][15]
+[购买《CS: GO》][15]
 
-### 2\. Left 4 Dead 2 (Multiplayer/Singleplayer)
+### 2\. 求生之路 2（多人/单机）
 
-One of the most loved first-person zombie shooter multiplayer game. You may get it for as low as 1.3 USD on a Steam sale. It is an interesting game which gives you the chills and thrills you’d expect from a zombie game. The game features swamps, cities, cemetries, and a lot more environments to keep things interesting and horrific. The guns aren’t super techy but definitely provides a realistic experience considering it’s an old game.
+这是最受欢迎的僵尸主题多人 FPS 游戏之一。在 Steam 优惠时，价格可以低至 1.3 美元。这是个有趣的游戏，能让你体会到你在僵尸游戏中期待的寒意和紧张感。游戏中的环境包括了沼泽、城市、墓地等等，让游戏既有趣又吓人。游戏中的枪械并不是非常先进，但作为一个老游戏来说，它已经提供了足够真实的体验。
 
-[Left 4 Dead 2 (Purchase)][16]
+[购买《求生之路 2》][16]
 
-### 3\. Borderlands 2 (Singleplayer/Co-op)
+### 3\. 无主之地 2（Borderlands 2）（单机/协作）
 
-Borderlands 2 is an interesting take on FPS games for PC. It isn’t anything like you experienced before. The graphics look sketchy and cartoony but that does not let you miss the real action you always look for in a first-person shooter game. You can trust me on that!
+《无主之地 2》是个很有意思的 FPS 游戏。它和你以前玩过的游戏完全不同。画风看上去有些诡异和卡通化，但我可以保证，游戏体验可一点也不逊色！
 
-If you are looking for one of the best Linux games with tons of DLC – Borderlands 2 will definitely suffice.
+如果你在寻找一个好玩而且有很多 DLC 的 Linux 游戏，《无主之地 2》绝对是个不错的选择。
 
-[Borderlands 2 (Purchase)][17]
+[购买《无主之地 2》][17]
 
-### 4\. Insurgency (Multiplayer)
+### 4\. 叛乱（Insurgency）（多人）
 
-Insurgency is yet another impressive FPS game available on Steam for Linux machines. It takes a different approach by eliminating the HUD or the ammo counter. As most of the reviewers mentioned – pure shooting game focusing on the weapon and the tactics of your team. It may not be the best FPS game – but it surely is one of them if you like – Delta Force kinda shooters along with your squad. 
+《叛乱》是 Steam 上又一款支持 Linux 的优秀的 FPS 游戏。它剑走偏锋，从屏幕上去掉了 HUD 和弹药数量指示。如同许多评论者所说，这是款注重武器和团队战术的纯粹的射击游戏。这也许不是最好的 FPS 游戏，但如果你想玩和《三角洲部队》类似的多人游戏的话，这绝对是最好的游戏之一。
 
-[Insurgency (Purchase)][18]
+[购买《叛乱》][18]
 
-### 5\. Bioshock: Infinite (Singleplayer)
+### 5\. 生化奇兵：无限（Bioshock: Infinite）(单机)
 
-Bioshock Infinite would definitely remain as one of the best singleplayer FPS games ever developed for PC. You get unrealistic powers to kill your enemies. And, so do your enemies have a lot of tricks up in the sleeves. It is a story-rich FPS game which you should not miss playing on your Linux system!
+《生化奇兵：无限》毫无疑问将会作为 PC 平台最好的单机 FPS 游戏之一而载入史册。你可以利用很多强大的能力来杀死你的敌人。同时你的敌人也各个身怀绝技。游戏的剧情也非常丰富。你不容错过！
 
-[BioShock: Infinite (Purchase)][19]
+[购买《生化奇兵：无限》][19]
 
-### 6\. HITMAN – Game of the Year Edition (Singleplayer)
+### 6\. 《杀手（年度版）》（HITMAN - Game of the Year Edition）（单机）
 
-The Hitman series is obviously one of the most loved game series for a PC gamer. The recent iteration of HITMAN series saw an episodic release which wasn’t appreciated much but now with Square Enix gone, the GOTY edition announced with a few more additions is back to the spotlight. Make sure to get creative with your assassinations in the game Agent 47!
+《杀手》系列无疑是 PC 游戏爱好者们的最爱之一。本系列的最新作开始按章节发布，让很多玩家觉得不满。但现在 Square Enix 撤出了开发，而最新的年度版带着新的内容重返舞台。在游戏中发挥你的想象力暗杀你的目标吧，杀手47！
 
-[HITMAN (GOTY)][20]
+[购买（杀手（年度版））][20]
 
-### 7\. Portal 2
+### 7\. 传送门 2
 
-Portal 2 is the perfect blend of action and adventure. It is a puzzle game which lets you join co-op sessions and create interesting puzzles. The co-op mode features a completely different campaign when compared to the single player mode.
+《传送门 2》完美地结合了动作与冒险。这是款解谜类游戏，你可以与其他玩家协作，并开发有趣的谜题。协作模式提供了和单机模式截然不同的游戏内容。
 
-[Portal 2 (Purchase)][21]
+[购买《传送门2》][21]
 
-### 8\. Deux Ex: Mankind Divided
+### 8\. 杀出重围：人类分裂
 
-If you are on the lookout for a shooter game focused on stealth skills – Deux Ex would be the perfect addition to your Steam library. It is indeed a very beautiful game with some state-of-the-art weapons and crazy fighting mechanics.
+如果你在寻找隐蔽类的射击游戏，《杀出重围》是个完美的选择。这是个非常华丽的游戏，有着最先进的武器和超乎寻常的战斗机制。
 
-[Deus Ex: Mankind Divided (Purchase)][22]
+[购买《杀出重围：人类分裂》][22]
 
-### 9\. Metro 2033 Redux / Metro Last Light Redux
+### 9\. 地铁 2033 重置版（Metro 2033 Redux） / 地铁：最后曙光 重置版（Metro Last Light Redux）
 
-Both Metro 2033 Redux and the Last Light are the definitive editions of the classic hit Metro 2033 and Last Light. The game has a post-apocalyptic setting. You need to eliminate all the mutants in order to ensure the survival of mankind. You should explore the rest when you get to play it!
+《地铁 2033 重置版》和《地铁：最后曙光 重置版》是经典的《地铁 2033》和《地铁：最后曙光》的最终版本。故事发生在世界末日之后。你需要消灭所有的变种人来保证人类的生存。剩下的就交给你自己去探索了！
 
-[Metro 2033 Redux (Purchase)][23]
+[购买《地铁 2033 重置版》][23]
 
-[Metro Last Light Redux (Purchase)][24]
+[购买《地铁：最后曙光 重置版》][24]
 
-### 10\. Tannenberg (Multiplayer)
+### 10\. 坦能堡（Tannenberg）（多人）
 
-Tannenberg is a brand new game – announced a month before this article was published. The game is based on the Eastern Front (1914-1918) as a part of World War I. It is a multiplayer-only game. So, if you want to experience WWI gameplay experience, look no further!
+《坦能堡》是个全新的游戏 - 在本文发表一个月前刚刚发售。游戏背景是第一次世界大战的东线战场（1914-1918）。这款游戏只有多人模式。如果你想要在游戏中体验第一次世界大战，不要错过这款游戏！
 
-[Tannenberg (Purchase)][25]
+[购买《坦能堡》][25]
 
-### Best RPG Games for Linux on Steam
+### Steam 上最佳 Linux 角色扮演类游戏
 
-### 11\. Shadow of Mordor
+### 11\. 中土世界：暗影魔多（Shadow of Mordor）
 
-Shadow of Mordor is one of the most exciting open world RPG game you will find listed on Steam for Linux systems. You have to fight as a ranger (Talion) with the bright master (Celebrimbor) to defeat Sauron’s army (and then approach killing him). The fighting mechanics are very impressive. It is a must try game!
+《中土世界：暗影魔多》 是 Steam 上支持 Linux 的最好的开放式角色扮演类游戏之一。你将扮演一个游侠（塔里昂），和光明领主（凯勒布理鹏）并肩作战击败索隆的军队（并最终和他直接交手）。战斗机制非常出色。这是款不得不玩的游戏！
 
-[SOM (Purchase)][26]
+[购买《中土世界：暗影魔多》][26]
 
-### 12\. Divinity: Original Sin – Enhanced Edition
+### 12\. 神界：原罪加强版（Divinity: Original Sin – Enhanced Edition）
 
-Divinity: Original is a kick-ass Indie-RPG game that’s unique in itself and very much enjoyable. It is probably one of the highest rated RPG games with a mixture of Adventure & Strategy. The enhanced edition includes new game modes and a complete revamp of voice-overs, controller support, co-op sessions, and so much more.
+《神界：原罪》是一款极其优秀的角色扮演类独立游戏。它非常独特而又引人入胜。这或许是评分最高的带有冒险和策略元素的角色扮演游戏。加强版添加了新的游戏模式，并且完全重做了配音、手柄支持、协作任务等等。
 
-[Divinity: Original Sin (Purchase)][27]
+[购买《神界：原罪加强版》][27]
 
-### 13\. Wasteland 2: Director’s Cut
+### 13\. 废土 2：导演剪辑版（Wasteland 2: Director’s Cut）
 
-Wasteland 2 is an amazing CRPG game. If Fallout 4 was to be ported down as a CRPG as well – this is what we would have expected it to be. The director’s cut edition includes a complete visual overhaul with hundred new characters.
+《废土 2》是一款出色的 CRPG 游戏。如果《辐射 4》被移植成 CRPG 游戏，大概就是这种感觉。导演剪辑版完全重做了画面，并且增加了一百多名新人物。
 
-[Wasteland 2 (Purchase)][28]
+[购买《废土 2》][28]
 
-### 14\. Darkwood 
+### 14\. 阴暗森林（Darkwood）
 
-A horror-filled top-down view RPG game. You get to explore the world, scavenging materials, and craft weapons to survive.
+一个充满恐怖的俯视角角色扮演类游戏。你将探索世界、搜集材料、制作武器来生存下去。
 
-[Darkwood (Purchase)][29]
+[购买《阴暗森林》][29]
 
-### Best Racing/Sports/Simulation Games
+### 最佳赛车 / 运动 / 模拟类游戏
 
-### 15\. Rocket League
+### 15\. 火箭联盟（Rocket League）
 
-Rocket League is an action-packed soccer game conceptualized by rocket-powered battle cars. Not just driving the car and heading to the goal – you can even make your opponents go – kaboom! 
+《火箭联盟》是一款充满刺激的足球游戏。游戏中你将驾驶用火箭助推的战斗赛车。你不仅是要驾车把球带进对方球门，你甚至还可以让你的对手化为灰烬！
 
-A fantastic sports-action game every gamer must have installed!
+这是款超棒的体育动作类游戏，每个游戏爱好者都值得拥有！
 
-[Rocket League (Purchase)][30]
+[购买《火箭联盟》][30]
 
-### 16\. Road Redemption
+### 16\. 公路救赎（Road Redemption）
 
-Missing Road Rash? Well, Road Redemption will quench your thirst as a spiritual successor to Road Rash. Ofcourse, it is not officially “Road Rash II” – but it is equally enjoyable. If you loved Road Rash, you’ll like it too.
+想念《暴力摩托》了？作为它精神上的续作，《公路救赎》可以缓解你的饥渴。当然，这并不是真正的《暴力摩托 2》，但它一样有趣。如果你喜欢《暴力摩托》，你也会喜欢这款游戏。
 
-[Road Redemption (Purchase)][31]
+[购买《公路救赎》][31]
 
-### 17\. Dirt Rally
+### 17\. 尘埃拉力赛（Dirt Rally）
 
-Dirt Rally is for the gamers who want to experience off-road and on-road racing game. The visuals are breathtaking and the game is enjoyable with near to perfect driving mechanics.
+《尘埃拉力赛》是为想要体验公路和越野赛车的玩家准备的。画面非常有魄力，驾驶手感也近乎完美。
 
-[Dirt Rally (Purchase)][32]
+[购买《尘埃拉力赛》][32]
 
 ### 18\. F1 2017
 
-F1 2017 is yet another impressive car racing game from the developers of Dirt Rally (Codemasters & Feral Interactive). It features all of the iconic F1 racing cars that you need to experience. 
+《F1 2017》是另一款令人印象深刻的赛车游戏。由《尘埃拉力赛》的开发者 Codemasters & Feral Interactive 制作。游戏中包含了所有标志性的 F1 赛车，值得你去体验。
 
-[F1 2017 (Purchase)][33]
+[购买《F1 2017》][33]
 
-### 19. GRID Autosport
+### 19. 超级房车赛：汽车运动（GRID Autosport）
 
-GRID is one of the most underrated car racing games available out there. GRID Autosport is the sequel to GRID 2\. The gameplay seems stunning to me. With even better cars than GRID 2, the GRID Autosport is a recommended racing game for every PC gamer out there. The game also supports a multiplayer mode where you can play with your friends – representing as a team. 
+《超级房车赛》是最被低估的赛车游戏之一。《超级房车赛：汽车运动》是《超级房车赛》的续作。这款游戏的可玩性令人惊艳。游戏中的赛车也比前作更好。推荐所有的 PC 游戏玩家尝试这款赛车游戏。游戏还支持多人模式，你可以和你的朋友组队参赛。
 
-[GRID Autosport (Purchase)][34]
+[购买《超级房车赛：汽车运动》][34]
 
-### Best Adventure Games 
+### 最好的冒险游戏
 
-### 20\. ARK: Survival Evolved
+### 20\. 方舟：生存进化（ARK: Survival Evolved）
 
-ARK Survival Evolved is a quite decent survival game with exciting adventures following in the due course. You find yourself in the middle of nowhere (ARK Island) and have got no choice except training the dinosaurs, teaming up with other players, hunt someone to get the required resources, and craft items to maximize your chances to survive and escape the Island.
+《方舟：生存进化》是一款不错的生存游戏，里面有着激动人心的冒险。你发现自己身处一个未知孤岛（方舟岛），为了生存下去并逃离这个孤岛，你必须去驯服恐龙、与其他玩家合作、猎杀其他人来抢夺资源、以及制作物品。
 
-[ARK: Survival Evolved (Purchase)][35]
+[购买《方舟：生存进化》][35]
 
-### 21\. This War of Mine
+### 21\. 这是我的战争（This War of Mine）
 
-A unique game where you aren’t a soldier but a civilian facing the hardships of wartime. You’ve to make your way through highly-skilled enemies and help out other survivors as well.
+一款独特的战争游戏。你不是扮演士兵，而是要作为一个平民来面对战争带来的艰难。你需要在身经百战的敌人手下逃生，并帮助其他的幸存者。
 
-[This War of Mine (Purchase)][36]
+[购买《这是我的战争》][36]
 
-### 22\. Mad Max
+### 22\. 疯狂的麦克斯（Mad Max）
 
-Mad Max is all about survival and brutality. It includes powerful cars, an open-world setting, weapons, and hand-to-hand combat. You need to keep exploring the place and also focus on upgrading your vehicle to prepare for the worst. You need to think carefully and have a strategy before you make a decision.
+生存和暴力概括了《疯狂的麦克斯》的全部内容。游戏中有性能强大的汽车，开放性的世界，各种武器，以及徒手肉搏。你要不断地探索世界，并注意升级你的汽车来防患于未然。在做决定之前，你要仔细思考并设计好策略。
 
-[Mad Max (Purchase)][37]
+[购买《疯狂的麦克斯》][37]
 
-### Best Indie Games
+### 最佳独立游戏
 
-### 23\. Terraria
+### 23\. 泰拉瑞亚（Terraria）
 
-It is a 2D game which has received overwhelmingly positive reviews on Steam. Dig, fight, explore, and build to keep your journey going. The environments are automatically generated. So, it isn’t anything static. You might encounter something first and your friend might encounter the same after a while. You’ll also get to experience creative 2D action-packed sequences.
+这是款在 Steam 上广受好评的 2D 游戏。你在旅途中需要去挖掘、战斗、探索、建造。游戏地图是自动生成的，而不是静止的。也许你刚刚遇到的东西，你的朋友过一会儿才会遇到。你还将体验到富有新意的 2D 动作场景。
 
-[Terraria (Purchase)][38]
+[购买《泰拉瑞亚》][38]
 
-### 24\. Kingdoms and Castles
+### 24\. 王国与城堡（Kingdoms and Castles）
 
-With Kingdoms and Castles, you get to build your own kingdom. You have to manage your kingdom by collecting tax (as funds necessary) from the people, take care of the forests, handle the city 
+在《王国与城堡》中，你将建造你自己的王国。在管理你的王国的过程中，你需要收税、保护森林、规划城市，并且发展国防来防止别人入侵你的王国。
 
-design, and also make sure no one raids your kingdom by implementing proper defences.
+这是款比较新的游戏，但在独立游戏中已经相对获得了比较高的人气。
 
-It is a fairly new game but quite trending among the Indie genre of games.
+[购买《王国与城堡》][39]
 
-[Kingdoms and Castles][39]
+### Steam 上最佳 Linux 策略类游戏
 
-### Best Strategy Games on Steam For Linux Machines
+### 25\. 文明 5（Sid Meier’s Civilization V）
 
-### 25\. Sid Meier’s Civilization V
+《文明 5》是 PC 上评价最高的策略游戏之一。如果你想的话，你可以去玩《文明 6》。但是依然有许多玩家喜欢《文明 5》，觉得它更有独创性，游戏细节也更富有创造力。
 
-Sid Meier’s Civilization V is one of the best-rated strategy game available for PC. You could opt for Civilization VI – if you want. But, the gamers still root for Sid Meier’s Civilization V because of its originality and creative implementation.
+[购买《文明 5》][40]
 
-[Civilization V (Purchase)][40]
+### 26\. 全面战争：战锤（Total War: Warhammer）
 
-### 26\. Total War: Warhammer
+《全面战争：战锤》是 PC 平台上一款非常出色的回合制策略游戏。可惜的是，新作《战锤 2》依然不支持Linux。但如果你喜欢使用飞龙和魔法来建造与毁灭帝国的话，2016 年的《战锤》依然是个不错的选择。
 
-Total War: Warhammer is an incredible turn-based strategy game available for PC. Sadly, the Warhammer II isn’t available for Linux as of yet. But 2016’s Warhammer is still a great choice if you like real-time battles that involve building/destroying empires with flying creatures and magical powers.
+[购买《全面战争：战锤》][41]
 
-[Warhammer I (Purchase)][41]
+### 27\. 轰炸小队《Bomber Crew》
 
-### 27\. Bomber Crew
+想要一款充满乐趣的策略游戏？《轰炸小队》就是为你准备的。你需要选择合适的队员并且让你的队伍稳定运转来取得最终的胜利。
 
-Wanted a strategy simulation game that’s equally fun to play? Bomber Crew is the answer to it. You need to choose the right crew and maintain it in order to win it all.
+[购买《轰炸小队》][42]
 
-[Bomber Crew (Purchase)][42]
+### 28\. 奇迹时代 3（Age of Wonders III）
 
-### 28\. Age of Wonders III
+非常流行的策略游戏，包含帝国建造、角色扮演、以及战争元素。这是款精致的回合制策略游戏，请一定要试试！
 
-A very popular strategy title with a mixture of empire building, role playing, and warfare. A polished turn-based strategy game you must try!
+[购买《奇迹时代 3》][43]
 
-[Age of Wonders III (Purchase)][43]
+### 29\. 城市：天际线（Cities: Skylines）
 
-### 29\. Cities: Skylines
+一款非常简洁的游戏。你要从零开始建造一座城市，并且管理它的全部运作。你将体验建造和管理城市带来的愉悦与困难。我不觉得每个玩家都会喜欢这款游戏——它的用户群体非常明确。
 
-A pretty straightforward strategy game to build a city from scratch and manage everything in it. You’ll experience the thrills and hardships of building and maintaining a city. I wouldn’t expect every gamer to like this game – it has a very specific userbase.
+[购买《城市：天际线》][44]
 
-[Cities: Skylines (Purchase)][44]
+### 30\. 幽浮 2（XCOM 2）
 
-### 30\. XCOM 2
+《幽浮 2》是 PC 上最好的回合制策略游戏之一。我在想如果《幽浮 2》能够被制作成 FPS 游戏的话该有多棒。不过它现在已经是一款好评如潮的杰作了。如果你有多余的预算能花在这款游戏上，建议你购买“天选之战（War of the Chosen)“ DLC。
 
-XCOM 2 is one of the best turn-based strategy game available for PC. I wonder how crazy it could have been to have XCOM 2 as a first person shooter game. However, it’s still a masterpiece with an overwhelming response from almost everyone who bought the game. If you have the budget to spend more on this game, do get the – “War of the Chosen” – DLC.
+[购买《幽浮 2》][45]
 
-[XCOM 2 (Purchase)][45]
+### 总结
 
-### Wrapping Up
+我们从所有支持 Linux 的游戏中挑选了大部分的主流大作以及一些评价很高的新作。
 
-Among all the games available for Linux, we did include most of the major titles and some the latest games with an overwhelming response from the gamers. 
+你觉得我们遗漏了你最喜欢的支持 Linux 的 Steam 游戏么？另外，你还希望哪些 Steam 游戏开始支持 Linux 平台？
 
-Do you think we missed any of your favorite Linux game available on Steam? Also, what are the games that you would like to see on Steam for Linux platform?
-
-Let us know your thoughts in the comments below.
+请在下面的回复中告诉我们你的想法。
 
 --------------------------------------------------------------------------------
 
 via: https://itsfoss.com/best-linux-games-steam/
 
 作者：[Ankush Das][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[yixunx](https://github.com/yixunx)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
