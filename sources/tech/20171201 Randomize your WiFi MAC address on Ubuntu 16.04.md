@@ -1,3 +1,4 @@
+translating by wenwensnow
 Randomize your WiFi MAC address on Ubuntu 16.04
 ============================================================
 
