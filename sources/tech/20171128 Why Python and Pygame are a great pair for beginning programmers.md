@@ -1,3 +1,4 @@
+(translating by runningwater)
 Why Python and Pygame are a great pair for beginning programmers
 ============================================================
 
@@ -101,7 +102,7 @@ Despite my recommendation, I always suspect that kids soon move to JavaScript. A
 via: https://opensource.com/article/17/11/pygame
 
 作者：[Craig Oda  ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

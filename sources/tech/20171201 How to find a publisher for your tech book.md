@@ -1,3 +1,5 @@
+
+Translating by FelixYFZ
 How to find a publisher for your tech book
 ============================================================
 
