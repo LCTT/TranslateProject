@@ -35,7 +35,7 @@ Our language and project data was extracted from the  _GitHub Archive_ , a data
 
 **Identifying top languages.** We aggregate projects based on their primary language. Then we select the languages with the most projects for further analysis, as shown in [Table 1][48]. A given project can use many languages; assigning a single language to it is difficult. Github Archive stores information gathered from GitHub Linguist which measures the language distribution of a project repository using the source file extensions. The language with the maximum number of source files is assigned as the  _primary language_  of the project.
 
- [![t1.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/t1.jpg)][49] 
+ [![t1.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/t1.jpg)][49]
 **Table 1\. Top 3 projects in each language.**
 
 **Retrieving popular projects.** For each selected language, we filter the project repositories written primarily in that language by its popularity based on the associated number of  _stars._ This number indicates how many people have actively expressed interest in the project, and is a reasonable proxy for its popularity. Thus, the top 3 projects in C are  _linux, git_ , and  _php-src_ ; and for C++ they are  _node-webkit, phantomjs_ , and  _mongo_ ; and for `Java` they are  _storm, elasticsearch_ , and  _ActionBarSherlock._  In total, we select the top 50 projects in each language.
@@ -46,7 +46,7 @@ To ensure that these projects have a sufficient development history, we drop the
 
 [Table 2][51] summarizes our data set. Since a project may use multiple languages, the second column of the table shows the total number of projects that use a certain language at some capacity. We further exclude some languages from a project that have fewer than 20 commits in that language, where 20 is the first quartile value of the total number of commits per project per language. For example, we find 220 projects that use more than 20 commits in C. This ensures sufficient activity for each language–project pair.
 
- [![t2.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/t2.jpg)][52] 
+ [![t2.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/t2.jpg)][52]
 **Table 2\. Study subjects.**
 
 In summary, we study 728 projects developed in 17 languages with 18 years of history. This includes 29,000 different developers, 1.57 million commits, and 564,625 bug fix commits.
@@ -56,14 +56,14 @@ In summary, we study 728 projects developed in 17 languages with 18 years of his
 
 We define language classes based on several properties of the language thought to influence language quality,[7][9], [8][10], [12][11] as shown in [Table 3][53]. The  _Programming Paradigm_  indicates whether the project is written in an imperative procedural, imperative scripting, or functional language. In the rest of the paper, we use the terms procedural and scripting to indicate imperative procedural and imperative scripting respectively.
 
- [![t3.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/t3.jpg)][54] 
+ [![t3.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/t3.jpg)][54]
 **Table 3\. Different types of language classes.**
 
  _Type Checking_  indicates static or dynamic typing. In statically typed languages, type checking occurs at compile time, and variable names are bound to a value and to a type. In addition, expressions (including variables) are classified by types that correspond to the values they might take on at run-time. In dynamically typed languages, type checking occurs at run-time. Hence, in the latter, it is possible to bind a variable name to objects of different types in the same program.
 
  _Implicit Type Conversion_  allows access of an operand of type T1 as a different type T2, without an explicit conversion. Such implicit conversion may introduce type-confusion in some cases, especially when it presents an operand of specific type T1, as an instance of a different type T2\. Since not all implicit type conversions are immediately a problem, we operationalize our definition by showing examples of the implicit type confusion that can happen in all the languages we identified as allowing it. For example, in languages like `Perl, JavaScript`, and `CoffeeScript` adding a string to a number is permissible (e.g., "5" + 2 yields "52"). The same operation yields 7 in `Php`. Such an operation is not permitted in languages such as `Java` and `Python` as they do not allow implicit conversion. In C and C++ coercion of data types can result in unintended results, for example, `int x; float y; y=3.5; x=y`; is legal C code, and results in different values for x and y, which, depending on intent, may be a problem downstream.[a][12] In `Objective-C` the data type  _id_  is a generic object pointer, which can be used with an object of any data type, regardless of the class.[b][13] The flexibility that such a generic data type provides can lead to implicit type conversion and also have unintended consequences.[c][14]Hence, we classify a language based on whether its compiler  _allows_  or  _disallows_  the implicit type conversion as above; the latter explicitly detects type confusion and reports it.
 
-Disallowing implicit type conversion could result from static type inference within a compiler (e.g., with `Java`), using a type-inference algorithm such as Hindley[10][15] and Milner,[17][16] or at run-time using a dynamic type checker. In contrast, a type-confusion can occur silently because it is either undetected or is unreported. Either way, implicitly allowing type conversion provides flexibility but may eventually cause errors that are difficult to localize. To abbreviate, we refer to languages allowing implicit type conversion as  _implicit_  and those that disallow it as  _explicit._ 
+Disallowing implicit type conversion could result from static type inference within a compiler (e.g., with `Java`), using a type-inference algorithm such as Hindley[10][15] and Milner,[17][16] or at run-time using a dynamic type checker. In contrast, a type-confusion can occur silently because it is either undetected or is unreported. Either way, implicitly allowing type conversion provides flexibility but may eventually cause errors that are difficult to localize. To abbreviate, we refer to languages allowing implicit type conversion as  _implicit_  and those that disallow it as  _explicit._
 
  _Memory Class_  indicates whether the language requires developers to manage memory. We treat `Objective-C` as unmanaged, in spite of it following a hybrid model, because we observe many memory errors in its codebase, as discussed in RQ4 in Section 3.
 
@@ -76,7 +76,7 @@ We classify the studied projects into different domains based on their features 
 
 We detect 30 distinct domains, that is, topics, and estimate the probability that each project belonging to each domain. Since these auto-detected domains include several project-specific keywords, for example, facebook, it is difficult to identify the underlying common functions. In order to assign a meaningful name to each domain, we manually inspect each of the 30 domains to identify projectname-independent, domain-identifying keywords. We manually rename all of the 30 auto-detected domains and find that the majority of the projects fall under six domains: Application, Database, CodeAnalyzer, Middleware, Library, and Framework. We also find that some projects do not fall under any of the above domains and so we assign them to a catchall domain labeled as  _Other_ . This classification of projects into domains was subsequently checked and confirmed by another member of our research group. [Table 4][57] summarizes the identified domains resulting from this process.
 
- [![t4.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/t4.jpg)][58] 
+ [![t4.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/t4.jpg)][58]
 **Table 4\. Characteristics of domains.**
 
 ![*](http://dl.acm.org/images/bullet.gif)
@@ -86,7 +86,7 @@ While fixing software bugs, developers often leave important information in the 
 
 First, we categorize the bugs based on their  _Cause_  and  _Impact. Causes_  are further classified into disjoint subcategories of errors: Algorithmic, Concurrency, Memory, generic Programming, and Unknown. The bug  _Impact_  is also classified into four disjoint subcategories: Security, Performance, Failure, and Other unknown categories. Thus, each bug-fix commit also has an induced Cause and an Impact type. [Table 5][59] shows the description of each bug category. This classification is performed in two phases:
 
- [![t5.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/t5.jpg)][60] 
+ [![t5.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/t5.jpg)][60]
 **Table 5\. Categories of bugs and their distribution in the whole dataset.**
 
 **(1) Keyword search.** We randomly choose 10% of the bug-fix messages and use a keyword based search technique to automatically categorize them as potential bug types. We use this annotation, separately, for both Cause and Impact types. We chose a restrictive set of keywords and phrases, as shown in [Table 5][61]. Such a restrictive set of keywords and phrases helps reduce false positives.
@@ -118,7 +118,7 @@ We begin with a straightforward question that directly addresses the core of wha
 
 We use a regression model to compare the impact of each language on the number of defects with the average impact of all languages, against defect fixing commits (see [Table 6][64]).
 
- [![t6.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/t6.jpg)][65] 
+ [![t6.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/t6.jpg)][65]
 **Table 6\. Some languages induce fewer defects than other languages.**
 
 We include some variables as controls for factors that will clearly influence the response. Project age is included as older projects will generally have a greater number of defect fixes. Trivially, the number of commits to a project will also impact the response. Additionally, the number of developers who touch a project and the raw size of the project are both expected to grow with project activity.
@@ -127,11 +127,11 @@ The sign and magnitude of the estimated coefficients in the above model relates 
 
 One should take care not to overestimate the impact of language on defects. While the observed relationships are statistically significant, the effects are quite small. Analysis of deviance reveals that language accounts for less than 1% of the total explained deviance.
 
- [![ut1.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/ut1.jpg)][66] 
+ [![ut1.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/ut1.jpg)][66]
 
 We can read the model coefficients as the expected change in the log of the response for a one unit change in the predictor with all other predictors held constant; that is, for a coefficient  _β<sub style="border: 0px; outline: 0px; font-size: smaller; vertical-align: sub; background: transparent;">i</sub>_ , a one unit change in  _β<sub style="border: 0px; outline: 0px; font-size: smaller; vertical-align: sub; background: transparent;">i</sub>_  yields an expected change in the response of e _βi_ . For the factor variables, this expected change is compared to the average across all languages. Thus, if, for some number of commits, a particular project developed in an  _average_  language had four defective commits, then the choice to use C++ would mean that we should expect one additional defective commit since e0.18 × 4 = 4.79\. For the same project, choosing `Haskell` would mean that we should expect about one fewer defective commit as  _e_ −0.26 × 4 = 3.08\. The accuracy of this prediction depends on all other factors remaining the same, a challenging proposition for all but the most trivial of projects. All observational studies face similar limitations; we address this concern in more detail in Section 5.
 
-**Result 1:**  _Some languages have a greater association with defects than other languages, although the effect is small._ 
+**Result 1:**  _Some languages have a greater association with defects than other languages, although the effect is small._
 
 In the remainder of this paper we expand on this basic result by considering how different categories of application, defect, and language, lead to further insight into the relationship between languages and defect proneness.
 
@@ -149,26 +149,26 @@ Rather than considering languages individually, we aggregate them by language cl
 
 As with language (earlier in [Table 6][67]), we are comparing language  _classes_  with the average behavior across all language classes. The model is presented in [Table 7][68]. It is clear that `Script-Dynamic-Explicit-Managed` class has the smallest magnitude coefficient. The coefficient is insignificant, that is, the z-test for the coefficient cannot distinguish the coefficient from zero. Given the magnitude of the standard error, however, we can assume that the behavior of languages in this class is very close to the average across all languages. We confirm this by recoding the coefficient using `Proc-Static-Implicit-Unmanaged` as the base level and employing treatment, or dummy coding that compares each language class with the base level. In this case, `Script-Dynamic-Explicit-Managed` is significantly different with  _p_  = 0.00044\. We note here that while choosing different coding methods affects the coefficients and z-scores, the models are identical in all other respects. When we change the coding we are rescaling the coefficients to reflect the comparison that we wish to make.[4][28] Comparing the other language classes to the grand mean, `Proc-Static-Implicit-Unmanaged` languages are more likely to induce defects. This implies that either implicit type conversion or memory management issues contribute to greater defect proneness as compared with other procedural languages.
 
- [![t7.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/t7.jpg)][69] 
+ [![t7.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/t7.jpg)][69]
 **Table 7\. Functional languages have a smaller relationship to defects than other language classes whereas procedural languages are greater than or similar to the average.**
 
 Among scripting languages we observe a similar relationship between languages that allow versus those that do not allow implicit type conversion, providing some evidence that implicit type conversion (vs. explicit) is responsible for this difference as opposed to memory management. We cannot state this conclusively given the correlation between factors. However when compared to the average, as a group, languages that do not allow implicit type conversion are less error-prone while those that do are more error-prone. The contrast between static and dynamic typing is also visible in functional languages.
 
 The functional languages as a group show a strong difference from the average. Statically typed languages have a substantially smaller coefficient yet both functional language classes have the same standard error. This is strong evidence that functional static languages are less error-prone than functional dynamic languages, however, the z-tests only test whether the coefficients are different from zero. In order to strengthen this assertion, we recode the model as above using treatment coding and observe that the `Functional-Static-Explicit-Managed` language class is significantly less defect-prone than the `Functional-Dynamic-Explicit-Managed`language class with  _p_  = 0.034.
 
- [![ut2.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/ut2.jpg)][70] 
+ [![ut2.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/ut2.jpg)][70]
 
 As with language and defects, the relationship between language class and defects is based on a small effect. The deviance explained is similar, albeit smaller, with language class explaining much less than 1% of the deviance.
 
 We now revisit the question of application domain. Does domain have an interaction with language class? Does the choice of, for example, a functional language, have an advantage for a particular domain? As above, a Chi-square test for the relationship between these factors and the project domain yields a value of 99.05 and  _df_  = 30 with  _p_  = 2.622e–09 allowing us to reject the null hypothesis that the factors are independent. Cramer's-V yields a value of 0.133, a weak level of association. Consequently, although there is some relation between domain and language, there is only a weak relationship between domain and language class.
 
-**Result 2:**  _There is a small but significant relationship between language class and defects. Functional languages are associated with fewer defects than either procedural or scripting languages._ 
+**Result 2:**  _There is a small but significant relationship between language class and defects. Functional languages are associated with fewer defects than either procedural or scripting languages._
 
 It is somewhat unsatisfying that we do not observe a strong association between language, or language class, and domain within a project. An alternative way to view this same data is to disregard projects and aggregate defects over all languages and domains. Since this does not yield independent samples, we do not attempt to analyze it statistically, rather we take a descriptive, visualization-based approach.
 
 We define  _Defect Proneness_  as the ratio of bug fix commits over total commits per language per domain. [Figure 1][71] illustrates the interaction between domain and language using a heat map, where the defect proneness increases from lighter to darker zone. We investigate which language factors influence defect fixing commits across a collection of projects written across a variety of languages. This leads to the following research question:
 
- [![f1.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/f1.jpg)][72] 
+ [![f1.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/f1.jpg)][72]
 **Figure 1\. Interaction of language's defect proneness with domain. Each cell in the heat map represents defect proneness of a language (row header) for a given domain (column header). The "Overall" column represents defect proneness of a language over all the domains. The cells with white cross mark indicate null value, that is, no commits were made corresponding to that cell.**
 
 **RQ3\. Does language defect proneness depend on domain?**
@@ -177,9 +177,9 @@ In order to answer this question we first filtered out projects that would have 
 
 We see only a subdued variation in this heat map which is a result of the inherent defect proneness of the languages as seen in RQ1\. To validate this, we measure the pairwise rank correlation between the language defect proneness for each domain with the overall. For all of the domains except Database, the correlation is positive, and p-values are significant (<0.01). Thus, w.r.t. defect proneness, the language ordering in each domain is strongly correlated with the overall language ordering.
 
- [![ut3.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/ut3.jpg)][74] 
+ [![ut3.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/ut3.jpg)][74]
 
-**Result 3:**  _There is no general relationship between application domain and language defect proneness._ 
+**Result 3:**  _There is no general relationship between application domain and language defect proneness._
 
 We have shown that different languages induce a larger number of defects and that this relationship is not only related to particular languages but holds for general classes of languages; however, we find that the type of project does not mediate this relationship to a large degree. We now turn our attention to categorization of the response. We want to understand how language relates to specific kinds of defects and how this relationship compares to the more general relationship that we observe. We divide the defects into categories as described in [Table 5][75] and ask the following question:
 
@@ -187,12 +187,12 @@ We have shown that different languages induce a larger number of defects and tha
 
 We use an approach similar to RQ3 to understand the relation between languages and bug categories. First, we study the relation between bug categories and language class. A heat map ([Figure 2][76]) shows aggregated defects over language classes and bug types. To understand the interaction between bug categories and languages, we use an NBR regression model for each category. For each model we use the same control factors as RQ1 as well as languages encoded with weighted effects to predict defect fixing commits.
 
- [![f2.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/f2.jpg)][77] 
+ [![f2.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/f2.jpg)][77]
 **Figure 2\. Relation between bug categories and language class. Each cell represents percentage of bug fix commit out of all bug fix commits per language class (row header) per bug category (column header). The values are normalized column wise.**
 
 The results along with the anova value for language are shown in [Table 8][78]. The overall deviance for each model is substantially smaller and the proportion explained by language for a specific defect type is similar in magnitude for most of the categories. We interpret this relationship to mean that language has a greater impact on specific categories of bugs, than it does on bugs overall. In the next section we expand on these results for the bug categories with significant bug counts as reported in [Table 5][79]. However, our conclusion generalizes for all categories.
 
- [![t8.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/t8.jpg)][80] 
+ [![t8.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/t8.jpg)][80]
 **Table 8\. While the impact of language on defects varies across defect category, language has a greater impact on specific categories than it does on defects in general.**
 
 **Programming errors.** Generic programming errors account for around 88.53% of all bug fix commits and occur in all the language classes. Consequently, the regression analysis draws a similar conclusion as of RQ1 (see [Table 6][81]). All languages incur programming errors such as faulty error-handling, faulty definitions, typos, etc.
@@ -201,7 +201,7 @@ The results along with the anova value for language are shown in [Table 8][78].
 
 **Concurrency errors.** 1.99% of the total bug fix commits are related to concurrency errors. The heat map shows that `Proc-Static-Implicit-Unmanaged` dominates this error type. C and C++ introduce 19.15% and 7.89% of the errors, and they are distributed across the projects.
 
- [![ut4.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/ut4.jpg)][84] 
+ [![ut4.jpg](http://deliveryimages.acm.org/10.1145/3130000/3126905/ut4.jpg)][84]
 
 Both of the `Static-Strong-Managed` language classes are in the darker zone in the heat map confirming, in general static languages produce more concurrency errors than others. Among the dynamic languages, only `Erlang` is more prone to concurrency errors, perhaps relating to the greater use of this language for concurrent applications. Likewise, the negative coefficients in [Table 8][85] shows that projects written in dynamic languages like `Ruby` and `Php` have fewer concurrency errors. Note that, certain languages like `JavaScript, CoffeeScript`, and `TypeScript` do not support concurrency, in its traditional form, while `Php` has a limited support depending on its implementations. These languages introduce artificial zeros in the data, and thus the concurrency model coefficients in [Table 8][86] for those languages cannot be interpreted like the other coefficients. Due to these artificial zeros, the average over all languages in this model is smaller, which may affect the sizes of the coefficients, since they are given w.r.t. the average, but it will not affect their relative relationships, which is what we are after.
 
@@ -209,7 +209,7 @@ A textual analysis based on word-frequency of the bug fix messages suggests that
 
 **Security and other impact errors.** Around 7.33% of all the bug fix commits are related to Impact errors. Among them `Erlang, C++`, and `Python` associate with more security errors than average ([Table 8][87]). `Clojure` projects associate with fewer security errors ([Figure 2][88]). From the heat map we also see that `Static` languages are in general more prone to failure and performance errors, these are followed by `Functional-Dynamic-Explicit-Managed` languages such as `Erlang`. The analysis of deviance results confirm that language is strongly associated with failure impacts. While security errors are the weakest among the categories, the deviance explained by language is still quite strong when compared with the residual deviance.
 
-**Result 4:**  _Defect types are strongly associated with languages; some defect type like memory errors and concurrency errors also depend on language primitives. Language matters more for specific categories than it does for defects overall._ 
+**Result 4:**  _Defect types are strongly associated with languages; some defect type like memory errors and concurrency errors also depend on language primitives. Language matters more for specific categories than it does for defects overall._
 
 [Back to Top][89]
 
