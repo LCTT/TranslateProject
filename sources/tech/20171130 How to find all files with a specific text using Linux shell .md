@@ -1,36 +1,36 @@
-translating by lujun9972
-How to find all files with a specific text using Linux shell 
+如何在Linux shell中找出所有包含指定文本的文件
 ------
 ### 目标
 
-The following article provides some useful tips on how to find all files within any specific directory or entire file-system containing any specific word or string.
+本文提供一些关于如何搜索出指定目录或整个文件系统中那些包含指定单词或字符串的文件.
 
 ### 难度
 
-EASY
+容易
 
 ### 约定
 
-*   # - requires given command to be executed with root privileges either directly as a root user or by use of sudo command
+*   \# - 需要使用 root 权限来执行指定命令，可以直接使用 root 用户来执行也可以使用 sudo 命令
 
-*   $ - given command to be executed as a regular non-privileged user
+*   \$ - 可以使用普通用户来执行指定命令
 
 ### 案例
 
-#### Find all files with a specific string non-recursively
+#### 非递归搜索包含指定字符串的文件
 
-The first command example will search for a string `stretch` in all files within `/etc/` directory while excluding any sub-directories:
+第一个例子让我们来搜索 `/etc/` 目录下所有包含 `stretch` 字符串的文件，但不去搜索其中的子目录:
 
 ```shell
 # grep -s stretch /etc/*
 /etc/os-release:PRETTY_NAME="Debian GNU/Linux 9 (stretch)"
 /etc/os-release:VERSION="9 (stretch)"
 ```
-The `-s` grep option will suppress error messages about nonexistent or unreadable files. The output shows filenames as well as prints the actual line containing requested string.
+grep 的 `-s` 选项会在发现不能存在或者不能读取的文件时抑制报错信息. 结果现实除了文件名外还有包含请求字符串的行也被一起输出了.
 
-#### Find all files with a specific string recursively
+#### 递归地搜索包含指定字符串的文件
 
-The above command omitted all sub-directories. To search recursively means to also traverse all sub-directories. The following command will search for a string `stretch` in all files within `/etc/` directory including all sub-directories:
+上面案例中忽略了所有的子目录. 所谓递归搜索就是指同时搜索所有的子目录.
+下面的命令会在 `/etc/` 及其子目录中搜索包含 `stretch` 字符串的文件:
 
 ```shell
 # grep -R stretch /etc/*
@@ -66,8 +66,8 @@ The above command omitted all sub-directories. To search recursively means to al
 /etc/os-release:VERSION="9 (stretch)"
 ```
 
-#### Search for all files containing a specific word
-The above `grep` command example lists all files containing string `stretch` . Meaning the lines with `stretches` , `stretched` etc. are also shown. Use grep's `-w` option to show only a specific word:
+#### 搜索所有包含特定单词的文件
+上面 `grep` 命令的案例中列出的是所有包含字符串 `stretch` 的文件. 也就是说包含 `stretches` , `stretched` 等内容的行也会被显示. 使用 grep 的 `-w` 选项会只显示包含特定单词的行:
 
 ```shell
 # grep -Rw stretch /etc/*
@@ -84,8 +84,8 @@ The above `grep` command example lists all files containing string `stretch` . M
 /etc/os-release:VERSION="9 (stretch)"
 ```
 
-#### List only files names containing a specific text
-The above commands may produce an unnecessary output. The next example will only show all file names containing string `stretch` within `/etc/` directory recursively:
+#### 显示包含特定文本文件的文件名
+上面的命令都会产生多余的输出. 下一个案例则会递归地搜索 `etc` 目录中包含 `stretch` 的文件并只输出文件名:
 
 ```shell
 # grep -Rl stretch /etc/*
@@ -95,8 +95,9 @@ The above commands may produce an unnecessary output. The next example will only
 /etc/os-release
 ```
 
-#### Perform case-insensitive search
-All searches are by default case sensitive which means that any search for a string `stretch` will only show files containing the exact uppercase and lowercase match. By using grep's `-i` option the command will also list any lines containing `Stretch` , `STRETCH` , `StReTcH` etc., hence, to perform case-insensitive search.
+#### 大小写不敏感的搜索
+默认情况下搜索hi大小写敏感的,也就是说当搜索字符串 `stretch` 时只会包含大小写一致内容的文件.
+通过使用 grep 的 `-i` 选项，grep 命令还会列出所有包含 `Stretch` , `STRETCH` , `StReTcH` 等内容的文件，也就是说进行的是大小写不敏感的搜索.
 
 ```shell
 # grep -Ril stretch /etc/*
@@ -107,8 +108,8 @@ All searches are by default case sensitive which means that any search for a str
 /etc/os-release
 ```
 
-#### Include or Exclude specific files names from search
-Using `grep` command it is also possible to include only specific files as part of the search. For example we only would like to search for a specific text/string within configuration files with extension `.conf` . The next example will find all files with extension `.conf` within `/etc` directory containing string `bash` :
+#### 搜索是包含/排除指定文件
+`grep` 命令也可以只在指定文件中进行搜索. 比如，我们可以只在配置文件(扩展名为`.conf`)中搜索指定的文本/字符串. 下面这个例子就会在 `/etc` 目录中搜索带字符串 `bash` 且所有扩展名为 `.conf` 的文件:
 
 ```shell
 # grep -Ril bash /etc/*.conf
@@ -117,7 +118,7 @@ OR
 /etc/adduser.conf
 ```
 
-Similarly, using `--exclude` option we can exclude any specific filenames:
+类似的, 也可以使用 `--exclude` 来排除特定的文件:
 
 ```shell
 # grep -Ril --exclude=\*.conf bash /etc/*
@@ -144,8 +145,9 @@ Similarly, using `--exclude` option we can exclude any specific filenames:
 /etc/skel/.bash_logout
 ```
 
-#### Exclude specific Directories from search
-Same as with files grep can also exclude specific directories from the search. Use `--exclude-dir` option to exclude directory from search. The following search example will find all files containing string `stretch` within `/etc` directory and exclude `/etc/grub.d` from search:
+#### 搜索时排除指定目录
+跟文件一样，grep 也能在搜索时排除指定目录. 使用 `--exclude-dir` 选项就行.
+下面这个例子会搜索 `/etc` 目录中搜有包含字符串 `stretch` 的文件，但不包括 `/etc/grub.d` 目录下的文件:
 
 ```shell
 # grep --exclude-dir=/etc/grub.d -Rwl stretch /etc/*
@@ -154,16 +156,17 @@ Same as with files grep can also exclude specific directories from the search. U
 /etc/os-release
 ```
 
-#### Display a line number containing searched string
-By using `-n` option grep will also provide an information regarding a line number where the specific string was found: 
+#### 显示包含搜索字符串的行号
+`-n` 选项还会显示指定字符串所在行的行号: 
 
 ```shell
 # grep -Rni bash /etc/*.conf
 /etc/adduser.conf:6:DSHELL=/bin/bash
 ```
 
-#### Find all files not containing a specific string
-The last example will use `-v` option to list all files NOT containing a specific keyword. For example the following search will list all files within `/etc/` directory which do not contain string `stretch` :
+#### 寻找不包含指定字符串的文件
+最后这个例子使用 `-v` 来列出所有 *不* 包含指定字符串的文件.
+例如下面命令会搜索 `/etc` 目录中不包含 `stretch` 的所有文件:
 
 ```shell
 # grep -Rlv stretch /etc/*
