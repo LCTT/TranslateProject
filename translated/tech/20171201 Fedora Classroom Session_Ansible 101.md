@@ -34,7 +34,7 @@ Fedora 课堂会议本周继续进行本周的主题是 Ansible。 会议的时�
 
 我们有两位经验丰富的讲师进行这次会议。
 
-[Geoffrey Marr][7]，IRC 聊天室中名字叫 coremodule，是 Red Hat 的一名员工和 Fedora 的贡献者，拥有 Linux 和云技术的背景。工作时, 他潜心于 [Fedora QA][8] wiki 和测试页面下。业余时间, 他热衷于 RaspberryPi 项目, 尤其是专注于那些软件无线电（Software-defined radio）项目。
+[Geoffrey Marr][7]，IRC 聊天室中名字叫 coremodule，是 Red Hat 的一名员工和 Fedora 的贡献者，拥有 Linux 和云技术的背景。工作时，他潜心于 [Fedora QA][8] wiki 和测试页面下。业余时间， 他热衷于 RaspberryPi 项目，尤其是专注于那些软件无线电（Software-defined radio）项目。
 
 [Vipul Siddharth][9] 是Red Hat的实习生，他也在Fedora上工作。他喜欢贡献开源，借此机会传播自由开源软件。
 
