@@ -1,54 +1,52 @@
-translating by zrszrszrs
-# [Mark McIntyre: How Do You Fedora?][1]
 # [Mark McIntyre: 你是如何使用Fedora的？][1]
 
 
 ![](https://fedoramagazine.org/wp-content/uploads/2017/11/mock-couch-945w-945x400.jpg)
 
-We recently interviewed Mark McIntyre on how he uses Fedora. This is [part of a series][2] on the Fedora Magazine. The series profiles Fedora users and how they use Fedora to get things done. Contact us on the [feedback form][3] to express your interest in becoming a interviewee.
+最近我们采访了 Mark  McIntyre，谈来他是如何使用 Fedora 系统的。这也是Fedora 杂志上[本系列的一部分][2]。该系列简要介绍了 Fedora 用户，以及他们是如何用 Fedora 把事情做好的。通过[反馈表][3]与我们联系，表达你想成为采访对象的意愿。
 
-### Who is Mark McIntyre?
+### Mark McIntyre 是谁?
 
-Mark McIntyre is a geek by birth and Linux by choice. “I started coding at the early age of 13 learning BASIC on my own and finding the excitement of programming which led me down a path of becoming a professional coder,” he says. McIntyre and his niece are big fans of pizza. “My niece and I started a quest last fall to try as many of the pizza joints in Knoxville. You can read about our progress at [https://knox-pizza-quest.blogspot.com/][4]” Mark is also an amateur photographer and [publishes his images][5] on Flickr.
+Mark McIntyre 是一个天生的极客，后天的 Linux 爱好者。他说：“我在 13 岁开始编程，当时自学 BASIC  语言，我体会到其中的乐趣，并在乐趣的引导下，一步步成为专业的码农。”Mark 和他的侄女都是披萨饼的死忠粉。“去年秋天，我和我的侄女尽可能多地光顾了诺克斯维尔的披萨饼连锁店。 点击 [https://knox-pizza-quest.blogspot.com/][4] 可以了解我们的进展情况。”Mark 也是一名业余的摄影爱好者，并且在 Flickr 上 [发布自己的作品][5]。
 
 ![](https://fedoramagazine.org/wp-content/uploads/2017/11/31456893222_553b3cac4d_k-1024x575.jpg)
 
-Mark has a diverse background as a developer. He has worked with Visual Basic for Applications, LotusScript, Oracle’s PL/SQL, Tcl/Tk and Python with Django as the framework. His strongest skill is Python which he uses in his current job as a systems engineer. “I am using Python on a regular basis. As my job is morphing into more of an automation engineer, that became more frequent.”
+作为一名开发者，Mark 有着丰富的工作背景。他用过 Visual Basic 编写应用程序，用过 LotusScript、 PL/SQL(Oracle)、 Tcl/TK 编写代码，也用过基于 Python 的 Django 框架。他的强项是 Python。这也是目前他作为系统工程师的工作语言。“我用 Python 比较规律。但当我的工作变得更像是自动化工程师时，Python 用得就更频繁了。”
 
-McIntyre is a self-described nerd and loves sci-fi movies, but his favorite movie falls out of that genre. “As much as I am a nerd and love the Star Trek and Star Wars and related movies, the movie Glory is probably my favorite of all time.” He also mentioned that Serenity was a fantastic follow-up to a great TV series.
+McIntyre 自称是个书呆子，喜欢科幻电影，但他最喜欢的一部电影却不是科幻片。“尽管我是个书呆子，喜欢看《星际迷航》、《星球大战》之类的影片，但《光荣战役》或许才是我最喜欢的电影。”他还提到，电影《冲出宁静号》实属著名电视剧《萤火虫》的精彩后续。
 
-Mark values humility, knowledge and graciousness in others. He appreciates people who act based on understanding the situation that other people are in. “If you add a decision to serve another, you have the basis for someone you’d want to be around instead of someone who you have to tolerate.”
+Mark 比较看重他人的谦逊、知识与和气。他欣赏能够设身处地为他人着想的人。“如果你决定为另一个人服务，那么你会选择自己愿意亲近的人，而不是让自己备受折磨的人。”
 
-McIntyre works for [Scripps Networks Interactive][6], which is the parent company for HGTV, Food Network, Travel Channel, DIY, GAC, and several other cable channels. “Currently, I function as a systems engineer for the non-linear video content, which is all the media purposed for online consumption.” He supports a few development teams who write applications to publish the linear video from cable TV into the online formats such as Amazon and Hulu. The systems include both on-premise and cloud systems. Mark also develops automation tools for deploying these applications primarily to a cloud infrastructure.
+McIntyre 目前在 [Scripps Networks Interactive][6] 工作，这家公司是 HGTV、Food Network、Travel Channel、DIY、GAC 以及其他几个有线电视频道的母公司。“我现在是一名系统工程师，负责非线性视频内容，这是全部媒体开展线上消费的计划。”他支持一些开发团队编写应用程序，将线性视频从有线电视发布到线上平台，比如亚马逊、葫芦。这些系统既包含预置系统，也包含云系统。Mark 还开发了一些自动化工具，将这些应用程序主要部署到云基础结构中。
 
-### The Fedora community
+### Fedora 社区
 
-Mark describes the Fedora community as an active community filled with people who enjoy life as Fedora users. “From designers to packagers, this group is still very active and feels alive.” McIntyre continues, “That gives me a sense of confidence in the operating system.”
+Mark 形容 Fedora 社区是一个富有活力的社区，充满着像 Fedora 用户一样热爱生活的人。“从设计师到包装师，这个团体依然非常活跃，生机勃勃。” 他继续说道：“这使我对操作系统抱有一种信心。”
 
-He started frequenting the #fedora channel on IRC around 2002: “Back then, Wi-Fi functionality was still done a lot by hand in starting the adapter and configuring the modules.” In order to get his Wi-Fi working he had to recompile the Fedora kernel. Shortly after, he started helping others in the #fedora channel.
+2002年左右，Mark 开始经常使用 IRC 上的 #fedora 频道：“那时候，Wi-Fi 在启用适配器和配置模块功能时，有许多还是靠手工实现的。”为了让他的 Wi-Fi 能够工作，他不得不重新去编译 Fedora 内核。
 
-McIntyre encourages others to get involved in the Fedora Community. “There are many different areas of opportunity in which to be involved. Front-end design, testing deployments, development, packaging of applications, and new technology implementation.” He recommends picking an area of interest and asking questions of that group. “There are many opportunities available to jump in to contribute.”
+McIntyre 鼓励他人参与 Fedora 社区。“这里有许多来自不同领域的机会。前端设计、测试部署、开发、应用程序包装以及新型技术实现。”他建议选择一个感兴趣的领域，然后向那个团体提出疑问。“这里有许多机会去奉献自己。”
 
-He credits a fellow community member with helping him get started: “Ben Williams was very helpful in my first encounters with Fedora, helping me with some of my first installation rough patches in the #fedora support channel.” Ben also encouraged Mark to become an [Ambassador][7].
+对于帮助他起步的社区成员，Mark 赞道：“Ben Williams 非常乐于助人。在我第一次接触Fedora时，他帮我搞定了一些#fedora支持频道中的安装补丁。”Ben 也鼓励 Mark 去做 Fedora [代表][7]。
 
-### What hardware and software?
+### 什么样的硬件和软件?
 
-McIntyre uses Fedora Linux on all his laptops and desktops. On servers he chooses CentOS, due to the longer support lifecycle. His current desktop is self-built and equipped with an Intel Core i5 processor, 32 GB of RAM and 2 TB of disk space. “I have a 4K monitor attached which gives me plenty of room for viewing all my applications at once.” His current work laptop is a Dell Inspiron 2-in-1 13-inch laptop with 16 GB RAM and a 525 GB m.2 SSD.
+McIntyre 将 Fedora Linux 系统用在他的笔记本和台式机上。在服务器上他选择了 CentOS，因为它有更长的生命周期支持。他现在的台式机是自己组装的，配有 Intel 酷睿 i5 处理器，32GB 的内存和2TB 的硬盘。“我装了个 4K 的显示屏，有足够大的地方来同时查看所有的应用。”他目前工作用的笔记本是戴尔灵越二合一，配备 13 英寸的屏，16 GB 的内存和 525 GB 的 m.2 固态硬盘。
 
 ![](https://fedoramagazine.org/wp-content/uploads/2017/11/Screenshot-from-2017-10-26-08-51-41-1024x640.png)
 
-Mark currently runs Fedora 26 on any box he setup in the past few months. When it comes to new versions he likes to avoid the rush when the version is officially released. “I usually try to get the latest version as soon as it goes gold, with the exception of one of my workstations running the next version’s beta when it is closer to release.” He usually upgrades in place: “The in-place upgrade using  _dnf system-upgrade_  works very well these days.”
+Mark 现在将 Fedora 26 运行在他过去几个月装配的所有盒子中。当一个新版本正式发布的时候，他倾向于避开这个高峰期。“除非在它即将发行的时候，我的工作站中有个正在运行下一代测试版本，通常情况下，一旦它发展成熟，我都会试着去获取最新的版本。”他经常采取就地更新：“这种就地更新方法利用 dnf 系统升级插件，目前表现得非常好。”
 
-To handle his photography, McIntyre uses [GIMP][8] and [Darktable][9], along with a few other photo viewing and quick editing packages. When not using web-based email, he uses [Geary][10] along with [GNOME Calendar][11]. Mark’s IRC client of choice is [HexChat][12] connecting to a [ZNC bouncer][13]running on a Fedora Server instance. His department’s communication is handled via Slack.
+为了搞摄影，McIntyre 用上了 [GIMP][8]、[Darktable][9]，以及其他一些照片查看包和快速编辑包。当不启用网络电子邮件时，Mark 会使用 [Geary][10]，还有[GNOME Calendar][11]。Mark 选用 HexChat 作为 IRC 客户端，[HexChat][12] 与在 Fedora 服务器实例上运行的 [ZNC bouncer][13] 联机。他的部门通过 Slave 进行沟通交流。
 
-“I have never really been a big IDE fan, so I spend time in [vim][14] for most of my editing.” Occasionally, he opens up a simple text editor like [gedit][15] or [xed][16]. Mark uses [GPaste][17] for  copying and pasting. “I have become a big fan of [Tilix][18] for my terminal choice.” McIntyre manages the podcasts he likes with [Rhythmbox][19], and uses [Epiphany][20] for quick web lookups.
+“我从来都不是 IDE 粉，所以大多数的编辑任务都是在 [vim][14] 上完成的。”Mark 偶尔也会打开一个简单的文本编辑器，如 [gedit][15]，或者 [xed][16]。他用 [GPaste][17] 做复制和粘贴工作。“对于终端的选择，我已经变成 [Tilix][18] 的忠粉。” McIntyre 通过 [Rhythmbox][19] 来管理他喜欢的播客，并用 [Epiphany][20] 实现快速网络查询。
 
 --------------------------------------------------------------------------------
 
 via: https://fedoramagazine.org/mark-mcintyre-fedora/
 
 作者：[Charles Profitt][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zrszrs](https://github.com/zrszrszrs)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
