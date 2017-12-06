@@ -3,7 +3,7 @@
 
 ![](https://fedoramagazine.org/wp-content/uploads/2017/11/mock-couch-945w-945x400.jpg)
 
-最近我们采访了 Mark  McIntyre，谈来他是如何使用 Fedora 系统的。这也是 Fedora 杂志上[本系列的一部分][2]。该系列简要介绍了 Fedora 用户，以及他们是如何用 Fedora 把事情做好的。通过[反馈表][3]与我们联系，表达你想成为采访对象的意愿。
+最近我们采访了 Mark  McIntyre，谈了他是如何使用 Fedora 系统的。这也是 Fedora 杂志上[本系列的一部分][2]。该系列简要介绍了 Fedora 用户，以及他们是如何用 Fedora 把事情做好的。通过[反馈表][3]与我们联系，表达你想成为采访对象的意愿。
 
 ### Mark McIntyre 是谁?
 
