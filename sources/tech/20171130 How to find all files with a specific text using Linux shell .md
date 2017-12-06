@@ -1,56 +1,38 @@
 translating by lujun9972
 How to find all files with a specific text using Linux shell 
 ------
-### Objective
+### 目标
 
 The following article provides some useful tips on how to find all files within any specific directory or entire file-system containing any specific word or string.
 
-### Difficulty
+### 难度
 
 EASY
 
-### Conventions
+### 约定
 
 *   # - requires given command to be executed with root privileges either directly as a root user or by use of sudo command
 
 *   $ - given command to be executed as a regular non-privileged user
 
-### Examples
+### 案例
 
-### Find all files with a specific string non-recursively
+#### Find all files with a specific string non-recursively
 
-The first command example will search for a string
+The first command example will search for a string `stretch` in all files within `/etc/` directory while excluding any sub-directories:
 
-`stretch`
-
-in all files within
-
-`/etc/`
-
-directory while excluding any sub-directories:
-
-```
+```shell
 # grep -s stretch /etc/*
 /etc/os-release:PRETTY_NAME="Debian GNU/Linux 9 (stretch)"
 /etc/os-release:VERSION="9 (stretch)"
 ```
-`-s`
+The `-s` grep option will suppress error messages about nonexistent or unreadable files. The output shows filenames as well as prints the actual line containing requested string.
 
-grep option will suppress error messages about nonexistent or unreadable files. The output shows filenames as well as prints the actual line containing requested string.
+#### Find all files with a specific string recursively
 
-### Find all files with a specific string recursively
+The above command omitted all sub-directories. To search recursively means to also traverse all sub-directories. The following command will search for a string `stretch` in all files within `/etc/` directory including all sub-directories:
 
-The above command omitted all sub-directories. To search recursively means to also traverse all sub-directories. The following command will search for a string
-
-`stretch`
-
-in all files within
-
-`/etc/`
-
-directory including all sub-directories:
-
-```
+```shell
 # grep -R stretch /etc/*
 /etc/apt/sources.list:# deb cdrom:[Debian GNU/Linux testing _Stretch_ - Official Snapshot amd64 NETINST Binary-1 20170109-05:56]/ stretch main
 /etc/apt/sources.list:#deb cdrom:[Debian GNU/Linux testing _Stretch_ - Official Snapshot amd64 NETINST Binary-1 20170109-05:56]/ stretch main
@@ -84,29 +66,10 @@ directory including all sub-directories:
 /etc/os-release:VERSION="9 (stretch)"
 ```
 
-The above
+#### Search for all files containing a specific word
+The above `grep` command example lists all files containing string `stretch` . Meaning the lines with `stretches` , `stretched` etc. are also shown. Use grep's `-w` option to show only a specific word:
 
-`grep`
-
-command example lists all files containing string
-
-`stretch`
-
-. Meaning the lines with
-
-`stretches`
-
-,
-
-`stretched`
-
-etc. are also shown. Use grep's
-
-`-w`
-
-option to show only a specific word:
-
-```
+```shell
 # grep -Rw stretch /etc/*
 /etc/apt/sources.list:# deb cdrom:[Debian GNU/Linux testing _Stretch_ - Official Snapshot amd64 NETINST Binary-1 20170109-05:56]/ stretch main
 /etc/apt/sources.list:#deb cdrom:[Debian GNU/Linux testing _Stretch_ - Official Snapshot amd64 NETINST Binary-1 20170109-05:56]/ stretch main
@@ -121,17 +84,10 @@ option to show only a specific word:
 /etc/os-release:VERSION="9 (stretch)"
 ```
 
-The above commands may produce an unnecessary output. The next example will only show all file names containing string
+#### List only files names containing a specific text
+The above commands may produce an unnecessary output. The next example will only show all file names containing string `stretch` within `/etc/` directory recursively:
 
-`stretch`
-
-within
-
-`/etc/`
-
-directory recursively:
-
-```
+```shell
 # grep -Rl stretch /etc/*
 /etc/apt/sources.list
 /etc/dictionaries-common/words
@@ -139,29 +95,10 @@ directory recursively:
 /etc/os-release
 ```
 
-All searches are by default case sensitive which means that any search for a string
+#### Perform case-insensitive search
+All searches are by default case sensitive which means that any search for a string `stretch` will only show files containing the exact uppercase and lowercase match. By using grep's `-i` option the command will also list any lines containing `Stretch` , `STRETCH` , `StReTcH` etc., hence, to perform case-insensitive search.
 
-`stretch`
-
-will only show files containing the exact uppercase and lowercase match. By using grep's
-
-`-i`
-
-option the command will also list any lines containing
-
-`Stretch`
-
-,
-
-`STRETCH`
-
-,
-
-`StReTcH`
-
-etc., hence, to perform case-insensitive search.
-
-```
+```shell
 # grep -Ril stretch /etc/*
 /etc/apt/sources.list
 /etc/dictionaries-common/default.hash
@@ -170,39 +107,19 @@ etc., hence, to perform case-insensitive search.
 /etc/os-release
 ```
 
-Using
+#### Include or Exclude specific files names from search
+Using `grep` command it is also possible to include only specific files as part of the search. For example we only would like to search for a specific text/string within configuration files with extension `.conf` . The next example will find all files with extension `.conf` within `/etc` directory containing string `bash` :
 
-`grep`
-
-command it is also possible to include only specific files as part of the search. For example we only would like to search for a specific text/string within configuration files with extension
-
-`.conf`
-
-. The next example will find all files with extension
-
-`.conf`
-
-within
-
-`/etc`
-
-directory containing string
-
-`bash`
-
-:
-
-```
+```shell
 # grep -Ril bash /etc/*.conf
 OR
 # grep -Ril --include=\*.conf bash /etc/*
 /etc/adduser.conf
 ```
-`--exclude`
 
-option we can exclude any specific filenames:
+Similarly, using `--exclude` option we can exclude any specific filenames:
 
-```
+```shell
 # grep -Ril --exclude=\*.conf bash /etc/*
 /etc/alternatives/view
 /etc/alternatives/vim
@@ -227,57 +144,28 @@ option we can exclude any specific filenames:
 /etc/skel/.bash_logout
 ```
 
-Same as with files grep can also exclude specific directories from the search. Use
+#### Exclude specific Directories from search
+Same as with files grep can also exclude specific directories from the search. Use `--exclude-dir` option to exclude directory from search. The following search example will find all files containing string `stretch` within `/etc` directory and exclude `/etc/grub.d` from search:
 
-`--exclude-dir`
-
-option to exclude directory from search. The following search example will find all files containing string
-
-`stretch`
-
-within
-
-`/etc`
-
-directory and exclude
-
-`/etc/grub.d`
-
-from search:
-
-```
+```shell
 # grep --exclude-dir=/etc/grub.d -Rwl stretch /etc/*
 /etc/apt/sources.list
 /etc/dictionaries-common/words
 /etc/os-release
 ```
 
-By using
+#### Display a line number containing searched string
+By using `-n` option grep will also provide an information regarding a line number where the specific string was found: 
 
-`-n`
-
-option grep will also provide an information regarding a line number where the specific string was found:
-
-```
+```shell
 # grep -Rni bash /etc/*.conf
 /etc/adduser.conf:6:DSHELL=/bin/bash
 ```
 
-The last example will use
+#### Find all files not containing a specific string
+The last example will use `-v` option to list all files NOT containing a specific keyword. For example the following search will list all files within `/etc/` directory which do not contain string `stretch` :
 
-`-v`
-
-option to list all files NOT containing a specific keyword. For example the following search will list all files within
-
-`/etc/`
-
-directory which do not contain string
-
-`stretch`
-
-:
-
-```
+```shell
 # grep -Rlv stretch /etc/*
 ```
 
