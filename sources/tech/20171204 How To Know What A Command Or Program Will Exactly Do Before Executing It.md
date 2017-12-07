@@ -1,3 +1,5 @@
+translating by imquanquan
+
 How To Know What A Command Or Program Will Exactly Do Before Executing It
 ======
 Ever wondered what a Unix command will do before executing it? Not everyone knows what a particular command or program will do. Of course, you can check it with [Explainshell][2]. You need to copy/paste the command in Explainshell website and it let you know what each part of a Linux command does. However, it is not necessary. Now, we can easily know what a command or program will exactly do before executing it, right from the Terminal. Say hello to “maybe”, a simple tool that allows you to run a command and see what it does to your files without actually doing it! After reviewing the output listed, you can then decide whether you really want to run it or not.
