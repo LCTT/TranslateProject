@@ -1,4 +1,4 @@
-translating--imquanquan
+translating by imquanquan
 
 How To Know What A Command Or Program Will Exactly Do Before Executing It
 ======
