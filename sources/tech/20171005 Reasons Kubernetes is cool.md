@@ -1,3 +1,4 @@
+Translating by qhwdw
 Reasons Kubernetes is cool
 ============================================================
 
