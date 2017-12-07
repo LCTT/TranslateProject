@@ -29,7 +29,6 @@ Linux上优秀的商业软件替代品
 	Gnumeric
 这些软件的运行方式和Microsoft Excel完全相同，所以你能用他们来解决诸如会计和库存控制类的问题。你甚至可以用它来查看员工的工作和考勤情况。这些软件的可能性只受你的想象力限制。
  
-
 ### Adobe Photoshop的替代品 
 
  [![](https://3.bp.blogspot.com/-Id9Dm3CIXmc/WhxzGIlv3zI/AAAAAAAADho/VfIRCAbJMjMZzG2M97-uqLV9mOhqN7IWACLcBGAs/s400/32206185926_c69accfcef_z.jpg)][7] 
