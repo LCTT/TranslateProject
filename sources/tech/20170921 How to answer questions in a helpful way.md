@@ -1,3 +1,6 @@
+
+translating by HardworkFish
+
 How to answer questions in a helpful way
 ============================================================
 
