@@ -1,103 +1,128 @@
-translating by lujun9972
-translating by lujun9972
-NETSTAT Command: Learn to use netstat with examples
+NETSTAT 命令: 通过案例学习使用 netstate
 ======
-Netstat is a command line utility that tells us about all the tcp/udp/unix socket connections on our system. It provides list of all connections that are currently established or are in waiting state. This tool is extremely useful in identifying the port numbers on which an application is working and we can also make sure if an application is working or not on the port it is supposed to work.
+Netstat 是一个告诉我们系统中所有 tcp/udp/unix socket 连接状态的命令行工具。它会列出所有已经连接或者等待连接状态的连接。 该工具在识别某个应用监听哪个端口时特别有用，我们也能用它来判断某个应用是否正常的在监听某个端口。
 
-Netstat command also displays various other network related information such as routing tables, interface statistics, masquerade connections, multicast memberships etc.,
+Netstat 命令还能显示其他各种各样的网络相关信息，例如路由表， 网卡统计信息， 虚假连接以及多播成员等。
 
-In this tutorial, we will learn about Netstat with examples.
+本文中，我们会通过几个例子来学习 Netstat。
 
-(Recommended Read: [Learn to use CURL command with examples][1] )
+(推荐阅读: [Learn to use CURL command with examples][1] )
 
 Netstat with examples
 ============================================================
 
-### 1- Checking all connections
+### 1- 检查所有的连接
 
-To list out all the connections on a system, we can use ‘a’ option with netstat command,
-
+使用 `a` 选项可以列出系统中的所有连接，
+```shell
 $ netstat -a
+```
 
-This will produce all tcp, udp & unix connections from the system.
+这会显示系统所有的 tcp，udp 以及 unix 连接。
 
-### 2- Checking all tcp or udp or unix socket connections
+### 2- 检查所有的 tcp/udp/unix socket 连接
 
-To list only the tcp connections our system, use ‘t’ options with netstat,
+使用 `t` 选项只列出 tcp 连接，
 
+```shell
 $ netstat -at
+```
 
-Similarly to list out only the udp connections on our system, we can use ‘u’ option with netstat,
+类似的，使用 `u` 选项只列出 udp 连接 to list out only the udp connections on our system， we can use ‘u’ option with netstat，
 
+```shell
 $ netstat -au
+```
 
-To only list out Unix socket connections, we can use ‘x’ options,
+使用 `x` 选项只列出 Unix socket 连接，we can use ‘x’ options，
 
+```shell
 $ netstat -ax
+```
 
-### 3- List process id/Process Name with
+### 3- 同时列出进程 ID/进程名称
 
-To get list of all connections along with PID or process name, we can use ‘p’ option & it can be used in combination with any other netstat option,
+使用 `p` 选项可以在列出连接的同时也显示 PID 或者进程名称，而且它还能与其他选项连用，
 
+```shell
 $ netstat -ap
+```
 
-### 4- List only port number & not the name
+### 4- 列出端口号而不是服务名
 
-To speed up our output, we can use ‘n’ option as it will perform any reverse lookup & produce output with only numbers. Since no lookup is performed, our output will much faster.
+使用 `n` 选项可以加快输出，它不会执行任何反向查询（译者注：这里原文说的是 "it will perform any reverse lookup"，应该是写错了），而是直接输出数字。 由于无需查询，因此结果输出会快很多。
 
+```shell
 $ netstat -an
+```
 
-### 5- Print only listening ports
+### 5- 只输出监听端口
 
-To print only the listening ports , we will use ‘l’ option with netstat. It will not be used with ‘a’ as it prints all ports,
+使用 `l` 选项只输出监听端口。它不能与 `a` 选项连用，因为 `a` 会输出所有端口，
 
+```shell
 $ netstat -l
+```
 
-### 6- Print network stats
+### 6- 输出网络状态
 
-To print network statistics of each protocol like packet received or transmitted, we can use ‘s’ options with netstat,
+使用 `s` 选项输出每个协议的统计信息，包括接收/发送的包数量
 
+```shell
 $ netstat -s
+```
 
-### 7- Print interfaces stats
+### 7- 输出网卡状态
 
-To display only the statistics on network interfaces, use ‘I’ option,
+使用 `I` 选项只显示网卡的统计信息，
 
+```shell
 $ netstat -i
+```
 
-### 8-Display multicast group information
+### 8- 显示多播组(multicast group)信息
 
-With option ‘g’ , we can print the multicast group information for IPV4 & IPV6,
+使用 `g` 选项输出 IPV4 以及 IPV6 的多播组信息，
 
+```shell
 $ netstat -g
+```
 
-### 9- Display the network routing information
+### 9- 显示网络路由信息
 
-To print the network routing information, use ‘r’ option,
+使用 `r` 输出网络路由信息，
 
+```shell
 $ netstat -r
+```
 
-### 10- Continuous output
+### 10- 持续输出
 
-To get continuous output of netstat, use ‘c’ option
+使用 `c` 选项持续输出结果
 
+```shell
 $ netstat -c
+```
 
-### 11- Filtering a single port
+### 11- 过滤出某个端口
 
-To filter a single port connections, we can combine ‘grep’ command with netstat,
+与 `grep` 连用来过滤出某个端口的连接，
 
+```shell
 $ netstat -anp | grep 3306
+```
 
-### 12- Count number of connections
+### 12- 统计连接个数
 
-To count the number of connections from port, we can further add ‘wc’ command with netstat & grep command,
+通过与 wc 和 grep 命令连用，可以统计指定端口的连接数量
 
+```shell
 $ netstat -anp | grep 3306 | wc -l
+```
 
-This will print the number of connections for the port mysql port i.e. 3306.
+这回输出 mysql 服务端口（即 3306）的连接数。
 
-This was our brief tutorial on Netstat with examples, hope it was informative enough. If you have any query or suggestion, please mention it in the comment box below.
+这就是我们间断的案例指南了，希望它带给你的信息量足够。 有任何疑问欢迎提出。
 
 --------------------------------------------------------------------------------
 
