@@ -1,28 +1,27 @@
 translating by yongshouzhang
 
-How to use cron in Linux
+如何在linux中使用cron
 ============================================================
 
-### No time for commands? Scheduling tasks with cron means programs can run but you don't have to stay up late.
-
+### 没有时间键入命令？ 使用 cron 调度任务意味着你不必熬夜守着程序，就可以让它运行。
  [![](https://opensource.com/sites/default/files/styles/byline_thumbnail/public/david-crop.jpg?itok=Wnz6HdS0)][10]  06 Nov 2017 [David Both][11] [Feed][12] 
 
 27[up][13]
 
  [9 comments][14]
-![How to use cron in Linux](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/linux-penguins.png?itok=yKOpaJM_)
+![如何在 linux 中使用cron](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/linux-penguins.png?itok=yKOpaJM_)
 
 Image by : 
 
 [Internet Archive Book Images][15]. Modified by Opensource.com. [CC BY-SA 4.0][16]
 
-One of the challenges (among the many advantages) of being a sysadmin is running tasks when you'd rather be sleeping. For example, some tasks (including regularly recurring tasks) need to run overnight or on weekends, when no one is expected to be using computer resources. I have no time to spare in the evenings to run commands and scripts that have to operate during off-hours. And I don't want to have to get up at oh-dark-hundred to start a backup or major update.
+作为系统管理员的一个挑战（也是众多优势之一）就是在你想睡觉时如何让任务运行。例如，一些任务（包括定期循环的作业）需要整夜或每逢周末运行，当没人想占用计算机资源时。晚上我没有空闲时间去运行在非高峰时间必须运行的命令和脚本。我也不想摸黑起床，进行备份和主更新。
 
-Instead, I use two service utilities that allow me to run commands, programs, and tasks at predetermined times. The [cron][17] and at services enable sysadmins to schedule tasks to run at a specific time in the future. The at service specifies a one-time task that runs at a certain time. The cron service can schedule tasks on a repetitive basis, such as daily, weekly, or monthly.
+与之代替的是，我用了两个能够在既定时间运行命令，程序，任务的服务实用程序。[cron][17] 和 at 服务能够让系统管理雨在未来特定时间内运行计划任务。at 服务指定一个在特定时间运行的一次性任务。cron服务可在重复的基础上调度任务，如每天，每周或每月。 
 
-In this article, I'll introduce the cron service and how to use it.
+在本文中我将会介绍 cron 服务以及如何使用。
 
-### Common (and uncommon) cron uses
+### cron 的常见（和不常见）用法
 
 I use the cron service to schedule obvious things, such as regular backups that occur daily at 2 a.m. I also use it for less obvious things.
 
