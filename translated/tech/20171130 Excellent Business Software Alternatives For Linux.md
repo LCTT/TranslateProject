@@ -18,7 +18,6 @@ Linux上优秀的商业软件替代品
 	LaTeX
 接下来，你只需要读一些网上的评论，然后根据你的需求，下载一个最好的文字处理软件。当然，如果你没有找到满意的解决方案，你就应该看看在那份表单中的其他的软件了。在大多数情况下，我们所提到的软件都是能良好工作的。
 
-
 ### Microsoft Excel 的替代品 
 
  [![](https://4.bp.blogspot.com/-XdS6bSLQbOU/WhxyeWZeeCI/AAAAAAAADhc/C3hGY6rgzX4m2emunot80-4URu9-aQx8wCLcBGAs/s400/28929069495_e85d2626ba_z.jpg)][5] 
