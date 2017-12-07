@@ -1,4 +1,5 @@
 translating by lujun9972
+translating by lujun9972
 NETSTAT Command: Learn to use netstat with examples
 ======
 Netstat is a command line utility that tells us about all the tcp/udp/unix socket connections on our system. It provides list of all connections that are currently established or are in waiting state. This tool is extremely useful in identifying the port numbers on which an application is working and we can also make sure if an application is working or not on the port it is supposed to work.
