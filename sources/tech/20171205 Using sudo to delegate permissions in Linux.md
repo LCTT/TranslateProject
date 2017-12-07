@@ -1,92 +1,91 @@
-translating by lujun9972
-Using sudo to delegate permissions in Linux
+Linux下使用sudo进行赋权
 ======
-I recently wrote a short Bash program to copy MP3 files from a USB thumb drive on one network host to another network host. The files are copied to a specific directory on the server that I run for a volunteer organization, from where the files can be downloaded and played.
+我最近写了一个简短的 Bash 程序来将 MP3 文件从一台网络主机的 UBS 盘中拷贝到另一台网络主机上去。拷贝出来的文件存放在一台志愿者组织所属服务器的特定目录下， 在那里，这些文件可以被下载和播放。
 
-My program does a few other things, such as changing the name of the files before they are copied so they are automatically sorted by date on the webpage. It also deletes all the files on the USB drive after verifying that the transfer completed correctly. This nice little program has a few options, such as -h to display help, -t for test mode, and a couple of others.
+我的程序还会做些其他事情，比如为了自动在网页上根据日期排序，在拷贝文件之前会先对这些文件重命名。 在验证拷贝完成后，还会删掉 USB 盘中的所有文件。 这个小程序还有一些其他选项，比如 `-h` 会显示帮助， `-t` 进入测试模式等等。
 
-My program, as wonderful as it is, must run as root to perform its primary functions. Unfortunately, this organization has only a few people who have any interest in administering our audio and computer systems, which puts me in the position of finding semi-technical people and training them to log into the computer used to perform the transfer and run this little program.
+我的程序需要以 root 运行才能发挥作用。然而， 这个组织中之后很少的人对管理音频和计算机系统有兴趣的，这使得我不得不找那些半吊子的科技人员来，并培训他们登陆用于传输的计算机，运行这个小程序。
 
-It is not that I cannot run the program myself, but for various reasons, including travel and illness, I am not always there. Even when I am present, as the "lazy sysadmin," I like to have others do my work for me. So, I write scripts to automate those tasks and use sudo to anoint a couple of users to run the scripts. Many Linux commands require the user to be root in order to run. This protects the system against accidental damage, such as that caused by my own stupidity, and intentional damage by a user with malicious intent.
+倒不是说我不能亲自运行这个程序，但由于外出和疾病等等各种原因， 我不是时常在场的。 即使我在场， 作为一名 "懒惰的系统管理员"， 我也希望别人能替我把事情给做了。 因此我写了一些脚本来自动完成这些人物并通过 sudo 来指定某些人来运行这些脚本。 很多 Linux 命令都需要用户以 root 身份来运行。 sudo 能够保护系统免遭一时糊涂造成的意外损坏以及恶意用户的故意破坏。
 
 ### Do that sudo that you do so well
 
-The sudo program is a handy tool that allows me as a sysadmin with root access to delegate responsibility for all or a few administrative tasks to other users of the computer. It allows me to perform that delegation without compromising the root password, thus maintaining a high level of security on the host.
+sudo 是一个很方便的工具，它让我一个 root 管理员可以分配所有或者部分管理性的任务给其他用户， 而且还无需告诉他们 root 密码， 从而保证主机的高安全性。
 
-Let's assume, for example, that I have given regular user, "ruser," access to my Bash program, "myprog," which must be run as root to perform parts of its functions. First, the user logs in as ruser with their own password, then uses the following command to run myprog.
+假设，我给了普通用户 "ruser" 访问我 Bash 程序 "myprog" 的权限， 而这个程序的部分功能需要 root 权限。 那么该用户可以以 ruser 的身份登陆，然后通过以下命令运行 myprog。
 
+```shell
+sudo myprog
 ```
-        sudo myprog
-```
 
-I find it helpful to have the log of each command run by sudo for training. I can see who did what and whether they entered the command correctly.
+我发现在训练时记录下每个用 sudo 执行的命令会很有帮助。我可以看到谁执行了哪些命令，他们是否输对了。
 
-I have done this to delegate authority to myself and one other user to run a single program; however, sudo can be used to do so much more. It can allow the sysadmin to delegate authority for managing network functions or specific services to a single person or to a group of trusted users. It allows these functions to be delegated while protecting the security of the root password.
+我委派了权限给自己和另一个人来运行那个程序; 然而，sudo 可以做更多的事情。 它允许系统管理员委派网络管理或特定的服务器权限给某个人或某组人，以此来保护 root 密码的安全性。
 
-### Configuring the sudoers file
+### 配置 sudoers 文件
 
-As a sysadmin, I can use the /etc/sudoers file to allow users or groups of users access to a single command, defined groups of commands, or all commands. This flexibility is key to both the power and the simplicity of using sudo for delegation.
+作为一名系统管理员，我使用 `/etc/sudoers` 文件来设置某些用户或某些用户组可以访问某个命令，或某组命令，或所有命令。 这种灵活性是使用 sudo 进行委派时能兼顾功能与简易性的关键。
 
-I found the sudoers file very confusing at first, so below I have copied and deconstructed the entire sudoers file from the host on which I am using it. Hopefully it won't be quite so obscure for you by the time you get through this analysis. Incidentally, I've found that the default configuration files in Red Hat-based distributions tend to have lots of comments and examples to provide guidance, which makes things easier, with less online searching required.
+我一开始对 `sudoers` 文件感到很困惑，因此下面我会拷贝并分解我所使用主机上的完整 `sudoers` 文件。 希望在分析的过程中不会让你感到困惑。 我意外地发现， 基于 Red Hat 的发行版中默认的配置文件都会很多注释以及例子来指导你如何做出修改，这使得修改配置文件变得简单了很多，也不需要在互联网上搜索那么多东西了。
 
-Do not use your standard editor to modify the sudoers file. Use the visudo command because it is designed to enable any changes as soon as the file is saved and you exit the editor. It is possible to use editors besides Vi in the same way as visudo.
+不要直接用编辑起来修改 sudoers 文件，而应该用 `visudo` 命令，因为该命令会在你保存并退出编辑器后就立即生效这些变更。 visudo 也可以使用除了 `Vi` 之外的其他编辑器。
 
-Let's start analyzing this file at the beginning with a couple types of aliases.
+让我们首先来分析一下文件中的各种别名。
 
-### Host aliases
+#### Host aliases(主机别名)
 
-The host aliases section is used to create groups of hosts on which commands or command aliases can be used to provide access. The basic idea is that this single file will be maintained for all hosts in an organization and copied to /etc of each host. Some hosts, such as servers, can thus be configured as a group to give some users access to specific commands, such as the ability to start and stop services like HTTPD, DNS, and networking; to mount filesystems; and so on.
+host aliases 用于创建主机分组，在不同主机上可以设置允许访问不同的命令或命令别名 (command aliases)。 它的基本思想是，该文件由组织中的所有主机共同维护，然后拷贝到每台主机中的 `/etc` 中。 其中有些主机， 例如各种服务器， 可以配置成一个组来赋予用户访问特定命令的权限， 比如可以启停类似 HTTPD， DNS， 以及网络服务; 可以挂载文件系统等等。
 
-IP addresses can be used instead of host names in the host aliases.
+在设置主机别名时也可以用 IP 地址替代主机名。
 
 ```
 ## Sudoers allows particular users to run various commands as
-## the root user, without needing the root password.
+## the root user，without needing the root password。
 ##
 ## Examples are provided at the bottom of the file for collections
-## of related commands, which can then be delegated out to particular
-## users or groups.
+## of related commands，which can then be delegated out to particular
+## users or groups。
 ## 
-## This file must be edited with the 'visudo' command.
+## This file must be edited with the 'visudo' command。
 
 ## Host Aliases
-## Groups of machines. You may prefer to use hostnames (perhaps using 
-## wildcards for entire domains) or IP addresses instead.
-# Host_Alias     FILESERVERS = fs1, fs2
-# Host_Alias     MAILSERVERS = smtp, smtp2
+## Groups of machines。You may prefer to use hostnames (perhaps using 
+## wildcards for entire domains) or IP addresses instead。
+# Host_Alias     FILESERVERS = fs1，fs2
+# Host_Alias     MAILSERVERS = smtp，smtp2
 
 ## User Aliases
-## These aren't often necessary, as you can use regular groups
-## (ie, from files, LDAP, NIS, etc) in this file - just use %groupname 
+## These aren't often necessary，as you can use regular groups
+## (ie，from files， LDAP， NIS， etc) in this file - just use %groupname 
 ## rather than USERALIAS
-# User_Alias ADMINS = jsmith, mikem
-User_Alias AUDIO = dboth, ruser
+# User_Alias ADMINS = jsmith，mikem
+User_Alias AUDIO = dboth，ruser
 
 ## Command Aliases
-## These are groups of related commands...
+## These are groups of related commands。.。
 
 ## Networking
-# Cmnd_Alias NETWORKING = /sbin/route, /sbin/ifconfig,
- /bin/ping, /sbin/dhclient, /usr/bin/net, /sbin/iptables, 
-/usr/bin/rfcomm, /usr/bin/wvdial, /sbin/iwconfig, /sbin/mii-tool
+# Cmnd_Alias NETWORKING = /sbin/route，/sbin/ifconfig，
+ /bin/ping，/sbin/dhclient， /usr/bin/net， /sbin/iptables， 
+/usr/bin/rfcomm，/usr/bin/wvdial， /sbin/iwconfig， /sbin/mii-tool
 
 ## Installation and management of software
-# Cmnd_Alias SOFTWARE = /bin/rpm, /usr/bin/up2date, /usr/bin/yum
+# Cmnd_Alias SOFTWARE = /bin/rpm，/usr/bin/up2date， /usr/bin/yum
 
 ## Services
-# Cmnd_Alias SERVICES = /sbin/service, /sbin/chkconfig
+# Cmnd_Alias SERVICES = /sbin/service，/sbin/chkconfig
 
 ## Updating the locate database
 # Cmnd_Alias LOCATE = /usr/bin/updatedb
 
 ## Storage
-# Cmnd_Alias STORAGE = /sbin/fdisk, /sbin/sfdisk, /sbin/parted, /sbin/partprobe, /bin/mount, /bin/umount
+# Cmnd_Alias STORAGE = /sbin/fdisk，/sbin/sfdisk， /sbin/parted， /sbin/partprobe， /bin/mount， /bin/umount
 
 ## Delegating permissions
-# Cmnd_Alias DELEGATING = /usr/sbin/visudo, /bin/chown, /bin/chmod, /bin/chgrp 
+# Cmnd_Alias DELEGATING = /usr/sbin/visudo，/bin/chown， /bin/chmod， /bin/chgrp 
 
 ## Processes
-# Cmnd_Alias PROCESSES = /bin/nice, /bin/kill, /usr/bin/kill, /usr/bin/killall
+# Cmnd_Alias PROCESSES = /bin/nice，/bin/kill， /usr/bin/kill， /usr/bin/killall
 
 ## Drivers
 # Cmnd_Alias DRIVERS = /sbin/modprobe
@@ -94,9 +93,9 @@ User_Alias AUDIO = dboth, ruser
 # Defaults specification
 
 #
-# Refuse to run if unable to disable echo on the tty.
+# Refuse to run if unable to disable echo on the tty。
 #
-Defaults   !visiblepw
+Defaults！visiblepw
 
 Defaults    env_reset
 Defaults    env_keep =  "COLORS DISPLAY HOSTNAME HISTSIZE KDEDIR LS_COLORS"
@@ -109,19 +108,19 @@ Defaults    secure_path = /sbin:/bin:/usr/sbin:/usr/bin:/usr/local/bin
 
 ## Next comes the main part: which users can run what software on 
 ## which machines (the sudoers file can be shared between multiple
-## systems).
+## systems)。
 ## Syntax:
 ##
 ##      user    MACHINE=COMMANDS
 ##
-## The COMMANDS section may have other options added to it.
+## The COMMANDS section may have other options added to it。
 ##
 ## Allow root to run any commands anywhere 
 root    ALL=(ALL)       ALL
 
-## Allows members of the 'sys' group to run networking, software, 
-## service management apps and more.
-# %sys ALL = NETWORKING, SOFTWARE, SERVICES, STORAGE, DELEGATING, PROCESSES, LOCATE, DRIVERS
+## Allows members of the 'sys' group to run networking，software， 
+## service management apps and more。
+# %sys ALL = NETWORKING，SOFTWARE， SERVICES， STORAGE， DELEGATING， PROCESSES， LOCATE， DRIVERS
 
 ## Allows people in group wheel to run all commands
 %wheel  ALL=(ALL)       ALL
@@ -131,7 +130,7 @@ root    ALL=(ALL)       ALL
 
 ## Allows members of the users group to mount and unmount the 
 ## cdrom as root
-# %users  ALL=/sbin/mount /mnt/cdrom, /sbin/umount /mnt/cdrom
+# %users  ALL=/sbin/mount /mnt/cdrom，/sbin/umount /mnt/cdrom
 
 ## Allows members of the users group to shutdown this system
 # %users  localhost=/sbin/shutdown -h now
@@ -140,81 +139,82 @@ root    ALL=(ALL)       ALL
 #includedir /etc/sudoers.d
 
 ################################################################################
-# Added by David Both, 11/04/2017 to provide limited access to myprog          #
+# Added by David Both，11/04/2017 to provide limited access to myprog          #
 ################################################################################
 #
 AUDIO   guest1=/usr/local/bin/myprog
 ```
 
-### User aliases
+#### User aliases(用户别名)
 
-The user alias configuration allows root to sort users into aliased groups so that an entire group can have access to certain root capabilities. This is the section to which I have added the line User_Alias AUDIO = dboth, ruser, which defines the alias AUDIO and assigns two users to that alias.
+user alias 允许 root 将用户整理成组并按组来分配权限。在这部分内容中我加了一行 `User_Alias AUDIO = dboth， ruser`，他定义了一个别名 `AUDIO` 用来指代了两个用户。
 
-It is possible, as stated in the sudoers file, to simply use groups defined in the /etc/groups file instead of aliases. If you already have a group defined there that meets your needs, such as "audio," use that group name preceded by a % sign like so: %audio when assigning commands that will be made available to groups later in the sudoers file.
+正如 `sudoers` 文件中所阐明的，也可以直接使用 `/etc/groups` 中定义的组而不用自己设置别名。 如果你定义好的组(假设组名为 "audio")已经能满足要求了， 那么在后面分配命令时只需要在组名前加上 `%` 号，像这样: %audio。
 
-### Command aliases
+#### Command aliases(命令别名)
 
-Further down in the sudoers file is a command aliases section. These aliases are lists of related commands, such as networking commands or commands required to install updates or new RPM packages. These aliases allow the sysadmin to easily permit access to groups of commands.
+再后面是 command aliases 部分。这些别名表示的是一系列相关的命令， 比如网络相关命令，或者 RPM 包管理命令。 这些别名允许系统管理员方便地为一组命令分配权限。
 
-A number of aliases are already set up in this section that make it easy to delegate access to specific types of commands.
+该部分内容已经设置好了许多别名，这使得分配权限给某类命令变得方便很多。
 
-### Environment defaults
+#### Environment defaults(环境默认值)
 
-The next section sets some default environment variables. The item that is most interesting in this section is the !visiblepw line, which prevents sudo from running if the user environment is set to show the password. This is a security precaution that should not be overridden.
+下部分内容设置默认的环境变量。这部分最值得关注的是 `！visiblepw` 这一行， 它表示当用户环境设置成显示密码时禁止 `sudo` 的运行。 这个安全措施不应该被修改掉。
 
-### Command section
+#### Command section(命令部分)
 
-The command section is the main part of the sudoers file. Everything you need to do can be done without all the aliases by adding enough entries here. The aliases just make it a whole lot easier.
+command 部分是 `sudoers` 文件的主体。不使用别名并不会影响你完成要实现 的效果。 它只是让整个配置工作大幅简化而已。
 
-This section uses the aliases you've already defined to tell sudo who can do what on which hosts. The examples are self-explanatory once you understand the syntax in this section. Let's look at the syntax that we find in the command section.
+这部分使用之前定义的别名来告诉 `sudo` 哪些人可以在哪些机器上执行哪些操作。一旦你理解了这部分内容的语法，你会发现这些例子都非常的直观。 下面我们来看看它的语法。
 
 ```
 ruser           ALL=(ALL) ALL 
 ```
 
-This is a generic entry for our user, ruser. The first ALL in the line indicates that this rule applies on all hosts. The second ALL allows ruser to run commands as any other user. By default, commands are run as root user, but ruser can specify on the sudo command line that a program be run as any other user. The last ALL means that ruser can run all commands without restriction. This would effectively make ruser root.
+这是一条为用户 ruser 做出的配置。行中第一个 `ALL` 表示该条规则在所有主机上生效。 第二个 `ALL` 允许 ruser 以其他用户的身份运行命令。 默认情况下， 命令以 root 用户的身份运行， 但 ruser 可以在 sudo 命令行指定程序以其他用户的身份运行。 最后这个 ALL 表示 ruser 可以运行所有命令而不受限制。 这让 ruser 实际上就变成了 root。
 
-Note that there is an entry for root, as shown below. This allows root to have all-encompassing access to all commands on all hosts.
+注意到下面还有一条针对 root 的配置。这允许 root 能通过 sudo 在任何主机上运行任何命令。
 
 ```
 root    ALL=(ALL) ALL 
 ```
 
-To try this out, I commented out the line and, as root, tried to run chown without sudo. That did work—much to my surprise. Then I used sudo chown and that failed with the message, "Root is not in the sudoers file. This incident will be reported." This means that root can run everything as root, but nothing when using the sudo command. This would prevent root from running commands as other users via the sudo command, but root has plenty of ways around that restriction.
+为了实验一下效果，我注释掉了这行， 然后以 root 的身份， 试着直接运行 chown。 出乎意料的是这样是能成功的。 然后我试了下 sudo chown，结果失败了，提示信息 "Root is not in the sudoers file。 This incident will be reported"。 也就是说 root 可以直接运行任何命令， 但当加上 sudo 时则不行。 这会阻止 root 像其他用户一样使用 sudo 命令来运行其他命令， 但是 root 有太多中方法可以绕过这个约束了。
 
-The code below is the one I added to control access to myprog. It specifies that users who are listed in the AUDIO group, as defined near the top of the sudoers file, have access to only one program, myprog, on one host, guest1.
+下面这行是我新增来控制访问 myprog 的。它指定了只有上面定义的 AUDIO 组中的用户才能在 guest1  这台主机上使用 myprog 这个命令。
 
 ```
 AUDIO   guest1=/usr/local/bin/myprog
 ```
 
-Note that the syntax of the line above specifies only the host on which this access is to be allowed and the program. It does not specify that the user may run the program as any other user.
+注意，上面这一行只指定了允许访问的主机名和程序， 而没有说用户可以以其他用户的身份来运行该程序。
 
-### Bypassing passwords
+#### 省略密码
 
-You can also use NOPASSWORD to allow the users specified in the group AUDIO to run myprog without the need for entering their passwords. Here's how:
+你也可以通过 NOPASSWORD 来让 AUDIO 组中的用户无需密码就能运行 myprog。像这样 Here's how:
 
 ```
 AUDIO   guest1=NOPASSWORD : /usr/local/bin/myprog
 ```
 
-I did not do this for my program, because I believe that users with sudo access must stop and think about what they are doing, and this may help a bit with that. I used the entry for my little program as an example.
+我并没有这样做，因为哦我觉得使用 sudo 的用户必须要停下来想清楚他们正在做的事情，这对他们有好处。 我这里只是举个例子。
 
-### wheel
+#### wheel
 
-The wheel specification in the command section of the sudoers file, as shown below, allows all users in the "wheel" group to run all commands on any host. The wheel group is defined in the /etc/group file, and users must be added to the group there for this to work. The % sign preceding the group name means that sudo should look for that group in the /etc/group file.
+`sudoers` 文件中命令部分的 `wheel` 说明(如下所示)允许所有在 "wheel" 组中的用户在任何机器上运行任何命令。wheel 组在 `/etc/group` 文件中定义， 用户必须加入该组后才能工作。 组名前面的 % 符号表示 sudo 应该去 `/etc/group` 文件中查找该组。
 
 ```
 %wheel          ALL = (ALL) ALL 
 ```
 
-This is a good way to delegate full root access to multiple users without providing the root password. Just adding a user to the wheel group gives them access to full root powers. It also provides a means to monitor their activities via the log entries created by sudo. Some distributions, such as Ubuntu, add users' IDs to the wheel group in /etc/group, which allows them to use the sudo command for all privileged commands.
+这种方法很好的实现了为多个用户赋予完全的 root 权限而不用提供 root 密码。只需要把哦嗯虎加入 wheel 组中就能给他们提供完整的 root 的能力。 它也提供了一个种通过 sudo 创建的日志来监控他们行为的途径。 有些 Linux 发行版， 比如 Ubuntu， 会自动将用户的 ID 加入 `/etc/group` 中的 wheel 组中， 这使得他们能够用 sudo 命令运行所有的特权命令。
 
-### Final thoughts
+### 结语
 
-I have used sudo here for a very limited objective—providing one or two users with access to a single command. I accomplished this with two lines (if you ignore my own comments). Delegating authority to perform certain tasks to users who do not have root access is simple and can save you, as a sysadmin, a good deal of time. It also generates log entries that can help detect problems.
+我这里只是小试了一把 sudo — 我只是给一到两个用户以 root 权限运行单个命令的权限。完成这些只添加了两行配置(不考虑注释)。 将某项任务的权限委派给其他非 root 用户非常简单，而且可以节省你大量的时间。 同时它还会产生日志来帮你发现问题。
 
-The sudoers file offers a plethora of capabilities and options for configuration. Check the man files for sudo and sudoers for the down-and-dirty details.
+`sudoers` 文件还有许多其他的配置和能力。查看 sudo 和 sudoers 的 man 手册可以深入了解详细信息。
+
 
 --------------------------------------------------------------------------------
 
