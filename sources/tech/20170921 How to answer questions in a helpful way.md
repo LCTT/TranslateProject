@@ -1,175 +1,171 @@
 
-translating by HardworkFish
 
-How to answer questions in a helpful way
-============================================================
 
-Your coworker asks you a slightly unclear question. How do you answer? I think asking questions is a skill (see [How to ask good questions][1]) and that answering questions in a helpful way is also a skill! Both of them are super useful.
+如何以有用的方式回答问题
+=============================
 
-To start out with – sometimes the people asking you questions don’t respect your time, and that sucks. I’m assuming here throughout that that’s not what happening – we’re going to assume that the person asking you questions is a reasonable person who is trying their best to figure something out and that you want to help them out. Everyone I work with is like that and so that’s the world I live in :)
+如果你的同事问你一个不太清晰的问题，你会怎么回答？我认为提问题是一种技巧（可以看 [如何提出有意义的问题][1]) 同时以合理的方式回答问题也是一种技巧。他们都是非常实用的。
 
-Here are a few strategies for answering questions in a helpful way!
+开始 - 有时问你问题的人不尊重你的时间，这很糟糕。
 
-### If they’re not asking clearly, help them clarify
+我假设 - 我们来假设问你问题的人是一个合理的人并且正在尽力解决问题而你想帮助他们。和我一起工作的人是这样，我所生活的世界也是这样。
 
-Often beginners don’t ask clear questions, or ask questions that don’t have the necessary information to answer the questions. Here are some strategies you can use to help them clarify.
+下面是有助于回答问题的一些策略！
 
-*   **Rephrase a more specific question** back at them (“Are you asking X?”)
+### 如果他们提问不清楚，帮他们澄清
 
-*   **Ask them for more specific information** they didn’t provide (“are you using IPv6?”)
+通常初学者不会提出很清晰的问题，或者问一些对回答问题没有必要信息的问题。
 
-*   **Ask what prompted their question**. For example, sometimes people come into my team’s channel with questions about how our service discovery works. Usually this is because they’re trying to set up/reconfigure a service. In that case it’s helpful to ask “which service are you working with? Can I see the pull request you’re working on?”
+* ** 重述为一个更明确的问题 ** 回复他们（”你是想问 X ？“)
 
-A lot of these strategies come from the [how to ask good questions][2] post. (though I would never say to someone “oh you need to read this Document On How To Ask Good Questions before asking me a question”)
+* ** 问他们更具体的信息 ** 他们并没有提供（”你使用 IPv6 ?”）
 
-### Figure out what they know already
+* ** 问是什么导致了他们的问题 ** 例如，有时有些人会进入我的团队频道，询问我们的 service discovery 如何工作的。这通常是因为他们试图设置/重新配置服务。在这种情况下，如果问“你正在使用哪种服务？可以给我看看你正在进行的 pull 请求吗？”是有帮助的。这些策略很多来自 [如何提出有意义的问题][2]。（尽管我永远不会对某人说“oh 你得先看完文档 “如何提出有意义的问题” 再来问我问题）
 
-Before answering a question, it’s very useful to know what the person knows already!
+这些策略很多来自[如何提出有意义的问题][2]中的要点。
 
-Harold Treen gave me a great example of this:
+### 明白什么是他们已经知道的
 
-> Someone asked me the other day to explain “Redux Sagas”. Rather than dive in and say “They are like worker threads that listen for actions and let you update the store!” 
-> I started figuring out how much they knew about Redux, actions, the store and all these other fundamental concepts. From there it was easier to explain the concept that ties those other concepts together.
+在回答问题之前，知道对方已经知道什么是非常有用的！
 
-Figuring out what your question-asker knows already is important because they may be confused about fundamental concepts (“What’s Redux?”), or they may be an expert who’s getting at a subtle corner case. An answer building on concepts they don’t know is confusing, and an answer that recaps things they know is tedious.
+Harold Treen 给了我一个很好的例子：
 
-One useful trick for asking what people know – instead of “Do you know X?”, maybe try “How familiar are you with X?”.
+> 前几天，有人请我解释“ Redux-Sagas ”。与其深入解释不如说“ 他们就像 worker threads 监听行为，让你更新 Redux store 。
 
-### Point them to the documentation
+> 我开始搞清楚他们对 Redux 、行为（actions）、store 以及其他基本概念了解多少。将这些概念都联系在一起来解释概念会容易得多。
 
-“RTFM” is the classic unhelpful answer to a question, but pointing someone to a specific piece of documentation can actually be really helpful! When I’m asking a question, I’d honestly rather be pointed to documentation that actually answers my question, because it’s likely to answer other questions I have too.
+弄清楚问你问题的人已经知道什么是非常重要的。因为有时他们可能会对基础概念感到疑惑（“ Redux 是什么？“），或者他们可是是专家并恰遇到了微妙的极端情况（corner case）。如果答案建立在他们不知道的概念上会令他们困惑，且重述他们已经知道的的会是乏味的。
 
-I think it’s important here to make sure you’re linking to documentation that actually answers the question, or at least check in afterwards to make sure it helped. Otherwise you can end up with this (pretty common) situation:
+这里有一个有用的技巧问他们已经知道什么 - 比如可以尝试用“你对 X 了解多少？”而不是问“你知道 X 吗？”。
 
-*   Ali: How do I do X?
+### 给他们一个文档
 
-*   Jada: <link to documentation>
+“RTFM” （“去读那些他妈的手册”（Read The Fucking Manual））是一个典型的无用的回答，但事实上如果向他们指明一个特定的文档会是非常有用的！当我提问题的时候，我非常乐意被指明那些事实上能够解决我的问题的文档，因为它可能解决了其他我也想问的问题。
 
-*   Ali: That doesn’t actually explain how to X, it only explains Y!
+我认为明确你所指明的文档确实能够解决问题或者至少经过查阅明确它有用是非常重要的。否则，你可能将以下面这种情形结束对话（非常常见）：
 
-If the documentation I’m linking to is very long, I like to point out the specific part of the documentation I’m talking about. The [bash man page][3] is 44,000 words (really!), so just saying “it’s in the bash man page” is not that helpful :)
+* Ali：我应该如何处理 X ？
 
-### Point them to a useful search
+* Jada：<文档链接>
 
-Often I find things at work by searching for some Specific Keyword that I know will find me the answer. That keyword might not be obvious to a beginner! So saying “this is the search I’d use to find the answer to that question” can be useful. Again, check in afterwards to make sure the search actually gets them the answer they need :)
+* Ali: 这个并有实际解释如何处理 X ，它仅仅解释了如何处理 Y !
 
-### Write new documentation
+如果我所给的文档特别长，我会指明文档中那个我将会谈及的特定部分。[bash 手册][3] 有44000个字（真的！），所以只说“它在 bash 手册中有说明”是没有用的：）
 
-People often come and ask my team the same questions over and over again. This is obviously not the fault of the people (how should  _they_  know that 10 people have asked this already, or what the answer is?). So we’re trying to, instead of answering the questions directly,
+### 告诉他们一个有用的搜索
 
-1.  Immediately write documentation
+在工作中，经常我发现我可以利用我所知道的关键字进行搜索找到能够解决我的问题的答案。对于初学者来说，这些关键字往往不是那么明显。所以说“这是我用来寻找这个答案的搜索”可能有用些。再次说明，回答时请经检查后以确保搜索能够得到他们所需要的答案。
 
-2.  Point the person to the new documentation we just wrote
+### 写新文档
 
-3.  Celebrate!
+人们经常一次又一次地问我的团队重复的问题。很显然这并不是人们的错（他们怎么能够知道在他们之前已经有10个人问了这个问题，且知道答案是什么呢？）因此，我们尝试写文档，而不是直接回答回答问题。
 
-Writing documentation sometimes takes more time than just answering the question, but it’s often worth it! Writing documentation is especially worth it if:
+1. 马上写新文档
 
-a. It’s a question which is being asked again and again b. The answer doesn’t change too much over time (if the answer changes every week or month, the documentation will just get out of date and be frustrating)
+2. 给他们我们刚刚写好的新文档
 
-### Explain what you did
+3. 公示
 
-As a beginner to a subject, it’s really frustrating to have an exchange like this:
+写文档有时往往比回答问题需要花很多时间，但这是值得的。写文档尤其值得如果：
 
-*   New person: “hey how do you do X?”
+a. 这个问题被问了一遍又一遍
 
-*   More Experienced Person: “I did it, it is done.”
+b. 随着时间的推移，这个答案不会变化太大（如果这个答案每一个星期或者一个月就会变化，文档就会过时并且令人受挫）
 
-*   New person: ….. but what did you DO?!
+### 解释你做了什么
 
-If the person asking you is trying to learn how things work, it’s helpful to:
+对于一个话题，作为初学者来说，这样的交流会真让人沮丧：
 
-*   Walk them through how to accomplish a task instead of doing it yourself
+* 新人：“hey 你如何处理 X ？”
 
-*   Tell them the steps for how you got the answer you gave them!
+* 更加有经验的人：“我做了，它完成了”
 
-This might take longer than doing it yourself, but it’s a learning opportunity for the person who asked, so that they’ll be better equipped to solve such problems in the future.
+* 新人：”...... 但是你做了什么？！“
 
-Then you can have WAY better exchanges, like this:
+如果问你问题的人想知道事情是如何进行的，这样是有帮助的：
 
-*   New person: “I’m seeing errors on the site, what’s happening?”
+* 让他们去完成任务而不是自己做
 
-*   More Experienced Person: (2 minutes later) “oh that’s because there’s a database failover happening”
+* 把你是如何得到你给他们的答案的步骤告诉他们。
 
-*   New person: how did you know that??!?!?
+这可能比你自己做的时间还要长，但对于被问的人来说这是一个学习机会，因为那样做使得他们将来能够更好地解决问题。
 
-*   More Experienced Person: “Here’s what I did!”:
-    1.  Often these errors are due to Service Y being down. I looked at $PLACE and it said Service Y was up. So that wasn’t it.
+这样，你可以进行更好的交流，像这：
 
-    2.  Then I looked at dashboard X, and this part of that dashboard showed there was a database failover happening.
+* 新人：“这个网站出现了错误，发生了什么？”
 
-    3.  Then I looked in the logs for the service and it showed errors connecting to the database, here’s what those errors look like.
+* 有经验的人：（2分钟后）”oh 这是因为发生了数据库故障转移“
 
-If you’re explaining how you debugged a problem, it’s useful both to explain how you found out what the problem was, and how you found out what the problem wasn’t. While it might feel good to look like you knew the answer right off the top of your head, it feels even better to help someone improve at learning and diagnosis, and understand the resources available.
+* 新人： ”你是怎么知道的？？！？！？“
 
-### Solve the underlying problem
+* 有经验的人：“以下是我所做的！“：
 
-This one is a bit tricky. Sometimes people think they’ve got the right path to a solution, and they just need one more piece of information to implement that solution. But they might not be quite on the right path! For example:
+1. 通常这些错误是因为服务器 Y 被关闭了。我查看了一下 `$PLACE` 但它表明服务器 Y 开着。所以，并不是这个原因导致的。
 
-*   George: I’m doing X, and I got this error, how do I fix it
+2. 然后我查看仪表 X ，这个仪表的这个部分显示这里发生了数据库故障转移。
 
-*   Jasminda: Are you actually trying to do Y? If so, you shouldn’t do X, you should do Z instead
+3. 然后我在日志中找到了相应服务器，并且它显示连接数据库错误，看起来错误就是这里。
 
-*   George: Oh, you’re right!!! Thank you! I will do Z instead.
+如果你正在解释你是如何调试一个问题，解释你是如何发现问题，以及如何找出问题是非常有用的当看起来似乎你已经得到正确答案时，感觉是很棒的。这比你帮助他人提高学习和诊断能力以及明白充分利用可用资源的感觉还要好。
 
-Jasminda didn’t answer George’s question at all! Instead she guessed that George didn’t actually want to be doing X, and she was right. That is helpful!
+### 解决根本问题
 
-It’s possible to come off as condescending here though, like
+这一点有点狡猾。有时候人们认为他们依旧找到了解决问题的正确途径，且他们只需要一条信息就可以把问题解决。但他们可能并不是走在正确的道路上！比如：
 
-*   George: I’m doing X, and I got this error, how do I fix it?
+* George：”我在处理 X 的时候遇到了错误，我该如何修复它？“ 
 
-*   Jasminda: Don’t do that, you’re trying to do Y and you should do Z to accomplish that instead.
+* Jasminda：”你是正在尝试解决 Y 吗？如果是这样，你不应该处理 X ，反而你应该处理 Z 。“
 
-*   George: Well, I am not trying to do Y, I actually want to do X because REASONS. How do I do X?
+* George：“噢，你是对的！！！谢谢你！我回反过来处理 Z 的。“
 
-So don’t be condescending, and keep in mind that some questioners might be attached to the steps they’ve taken so far! It might be appropriate to answer both the question they asked and the one they should have asked: “Well, if you want to do X then you might try this, but if you’re trying to solve problem Y with that, you might have better luck doing this other thing, and here’s why that’ll work better”.
+Jasminda 一点都没有回答 George 的问题！反而，她猜测 George 并不想处理 X ，并且她是猜对了。这是非常有用的！
 
-### Ask “Did that answer your question?”
+如果你这样做可能会产生居高临下的感觉：
 
-I always like to check in after I  _think_  I’ve answered the question and ask “did that answer your question? Do you have more questions?”.
+* George：”我在处理 X 的时候遇到了错误，我该如何修复它？“ 
 
-It’s good to pause and wait after asking this because often people need a minute or two to know whether or not they’ve figured out the answer. I especially find this extra “did this answer your questions?” step helpful after writing documentation! Often when writing documentation about something I know well I’ll leave out something very important without realizing it.
+* Jasminda：不要这样做，如果你想处理 Y ，你应该反过来完成 Z 。
 
-### Offer to pair program/chat in real life
+* George：“好吧，我并不是想处理 Y 。实际上我想处理 X 因为某些原因（REASONS）。所以我该如何处理 X 。
 
-I work remote, so many of my conversations at work are text-based. I think of that as the default mode of communication.
+所以不要居高临下，且要记住有时有些提问者可能已经偏离根本问题很远了。同时回答提问者提出的问题以及他们本该提出的问题的恰当的：“嗯，如果你想处理 X ，那么你可能需要这么做，但如果你想用这个解决 Y 问题，可能通过处理其他事情你可以更好地解决这个问题，这就是为什么可以做得更好的原因。
 
-Today, we live in a world of easy video conferencing & screensharing! At work I can at any time click a button and immediately be in a video call/screensharing session with someone. Some problems are easier to talk about using your voices!
+### 询问”那个回答可以解决您的问题吗？”
 
-For example, recently someone was asking about capacity planning/autoscaling for their service. I could tell there were a few things we needed to clear up but I wasn’t exactly sure what they were yet. We got on a quick video call and 5 minutes later we’d answered all their questions.
+我总是喜欢在我回答了问题之后核实是否真的已经解决了问题：”那个回答解决了您的问题吗？您还有其他问题吗？“在问完这个之后等待一会是很好的，因为人们通常需要一两分钟来知道他们是否已经找到了答案。
 
-I think especially if someone is really stuck on how to get started on a task, pair programming for a few minutes can really help, and it can be a lot more efficient than email/instant messaging.
+我发现尤其是问“这个回答解决了您的问题吗”这句在写文档时是非常有用的。通常，在写我关于我熟悉的东西的文档时，我会忽略掉重要的东西。
 
-### Don’t act surprised
+### Offer to。。。。
 
-This one’s a rule from the Recurse Center: [no feigning surprise][4]. Here’s a relatively common scenario
+我是远程工作的，所以我的很多对话都是基于文本的。我认为这是默认的沟通方式。
 
-*   Human 1: “what’s the Linux kernel?”
+今天，我们生活在一个简单的视频会议和屏幕共享的世界！在工作时候，我可以在任何时间点击一个按钮并快速处在与他人的视频对话或者屏幕共享的对话中！
 
-*   Human 2: “you don’t know what the LINUX KERNEL is?!!!!?!!!???”
+例如，最近有人问我关于容量规划/自动缩放。。。
 
-Human 2’s reaction (regardless of whether they’re  _actually_  surprised or not) is not very helpful. It mostly just serves to make Human 1 feel bad that they don’t know what the Linux kernel is.
+### 不要表现得过于惊讶
 
-I’ve worked on actually pretending not to be surprised even when I actually am a bit surprised the person doesn’t know the thing and it’s awesome.
+这是源自 Recurse Center 的一则法则：[不要假装惊讶][4]。这里有一个常见的情景：
 
-### Answering questions well is awesome
+* 某人1：“什么是 Linux 内核”
 
-Obviously not all these strategies are appropriate all the time, but hopefully you will find some of them helpful! I find taking the time to answer questions and teach people can be really rewarding.
+* 某人2：“你竟然不知道什么是 Linux 内核（LINUX KERNEL）？！！！！？！！！？？？？”
 
-Special thanks to Josh Triplett for suggesting this post and making many helpful additions, and to Harold Treen, Vaibhav Sagar, Peter Bhat Harkins, Wesley Aptekar-Cassels, and Paul Gowder for reading/commenting.
+某人2表现（无论他们是否真的如此惊讶）是没有帮助的。这大部分只会让某人1感觉不好，因为他们不知道什么的 Linux 内核。
 
---------------------------------------------------------------------------------
+我一直在假装不惊讶即使我事实上确实有点惊讶那个人不知道这种东西但它是令人敬畏的。
 
-via: https://jvns.ca/blog/answer-questions-well/
+### 回答问题是令人敬畏的
 
-作者：[ Julia Evans][a]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+很显然，这些策略并不是一直都是适当的，但希望你能够发现这里有些是有用的！我发现花时间去回答问题并教人们是其实是很有收获的。
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+特别感谢 Josh Triplett 的一些建议并做了很多有益的补充，以及感谢 Harold Treen、Vaibhav Sagar、Peter Bhat Hatkins、Wesley Aptekar Cassels 和 Paul Gowder的阅读或评论。
 
-[a]:https://jvns.ca/about
-[1]:https://jvns.ca/blog/good-questions/
-[2]:https://jvns.ca/blog/good-questions/
-[3]:https://linux.die.net/man/1/bash
-[4]:https://jvns.ca/blog/2017/04/27/no-feigning-surprise/
+ 
+
+
+
+
+
+
