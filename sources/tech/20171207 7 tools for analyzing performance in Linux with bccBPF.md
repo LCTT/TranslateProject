@@ -3,7 +3,7 @@ translating by yongshouzhang
 7 tools for analyzing performance in Linux with bcc/BPF
 ============================================================
 
-### Look deeply into your Linux code with these Berkeley Packet Filter (BPF) Compiler Collection (bcc) tools.
+###使用伯克利的包过滤（BPF）编译器集合（BCC）工具深度探查你的 linux 代码。 
 
  [![](https://opensource.com/sites/default/files/styles/byline_thumbnail/public/pictures/brendan_face2017_620d.jpg?itok=xZzBQNcY)][7]  21 Nov 2017 [Brendan Gregg][8] [Feed][9] 
 
@@ -12,11 +12,11 @@ translating by yongshouzhang
  [4 comments][11]
 ![7 superpowers for Fedora bcc/BPF performance analysis](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/penguins%20in%20space_0.jpg?itok=umpCTAul)
 
-Image by : 
+图片来源 : 
 
 opensource.com
 
-A new technology has arrived in Linux that can provide sysadmins and developers with a large number of new tools and dashboards for performance analysis and troubleshooting. It's called the enhanced Berkeley Packet Filter (eBPF, or just BPF), although these enhancements weren't developed in Berkeley, they operate on much more than just packets, and they do much more than just filtering. I'll discuss one way to use BPF on the Fedora and Red Hat family of Linux distributions, demonstrating on Fedora 26.
+在 linux 中出现的一种新技术能够为系统管理员和开发者提供大量用于性能分析和故障排除的新工具和仪表盘。 它被称为增强的伯克利数据包过滤器（eBPF，或BPF），虽然这些改进并不由伯克利开发，它们不仅仅是处理数据包，更多的是过滤。我将讨论在 Fedora 和 Red Hat Linux 发行版中使用 BPF 的一种方法，并在 Fedora 26 上演示。
 
 BPF can run user-defined sandboxed programs in the kernel to add new custom capabilities instantly. It's like adding superpowers to Linux, on demand. Examples of what you can use it for include:
 
