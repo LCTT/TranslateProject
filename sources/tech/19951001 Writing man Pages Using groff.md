@@ -1,3 +1,4 @@
+translating by wxy
 Writing man Pages Using groff
 ===================
 
