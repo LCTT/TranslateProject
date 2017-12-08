@@ -1,12 +1,10 @@
-translating by lujun9972
-translating by lujun9972
-How to Use the Date Command in Linux
+如何使用 Date 命令
 ======
-In this post, we will show you some examples on how to use the date command in Linux. The date command can be used to print or set the system date and time. Using the Date Command in Linux its simple, just follow the examples and the syntax below.
+在本文中, 我们会通过一些案例来演示如何使用 linux 中的 date 命令. date 命令可以用户输出/设置系统日期和时间. Date 命令很简单, 请参见下面的例子和语法.
 
-By default when running the date command in Linux, without any arguments it will display the current system date and time:
+默认情况下，当不带任何参数运行 date 命令时，它会输出当前系统日期和时间:
 
-```
+```shell
 date
 ```
 
@@ -14,7 +12,7 @@ date
 Sat  2 Dec 12:34:12 CST 2017
 ```
 
-#### Syntax
+#### 语法
 
 ```
 Usage: date [OPTION]... [+FORMAT]
@@ -23,133 +21,133 @@ Display the current time in the given FORMAT, or set the system date.
 
 ```
 
-### Date examples
+### 案例
 
-The following examples will show you how to use the date command to find the date and time from a period of time in the past or future.
+下面这些案例会向你演示如何使用 date 命令来查看前后一段时间的日期时间.
 
-### 1\. Find the date 5 weeks in the future
+#### 1\. 查找5周后的日期
 
-```
+```shell
 date -d "5 weeks"
 Sun Jan  7 19:53:50 CST 2018
 
 ```
 
-### 2\. Find the date 5 weeks and 4 days in the future
+#### 2\. 查找5周后又过4天的日期
 
-```
+```shell
 date -d "5 weeks 4 days"
 Thu Jan 11 19:55:35 CST 2018
 
 ```
 
-### 3\. Get the next month date
+#### 3\. 获取下个月的日期
 
-```
+```shell
 date -d "next month"
 Wed Jan  3 19:57:43 CST 2018
 ```
 
-### 4\. Get the last sunday date
+#### 4\. 获取下周日的日期
 
-```
+```shell
 date -d last-sunday
 Sun Nov 26 00:00:00 CST 2017
 ```
 
-The date command comes with various formatting option, the following examples will show you how to format the date command output.
+date 命令还有很多格式化相关的选项, 下面的例子向你演示如何格式化 date 命令的输出.
 
-### 5\. Display the date in yyyy-mm-dd format
+#### 5\. 以 yyyy-mm-dd 的格式显示日期
 
-```
+```shell
 date +"%F"
 2017-12-03
 ```
 
-### 6\. Display date in mm/dd/yyyy format
+#### 6\. 以 mm/dd/yyyy 的格式显示日期
 
-```
+```shell
 date +"%m/%d/%Y"
 12/03/2017
 
 ```
 
-### 7\. Display only the time
+#### 7\. 只显示时间
 
-```
+```shell
 date +"%T"
 20:07:04
 
 ```
 
-### 8\. Display the day of the year
+#### 8\. 显示今天是一年中的第几天
 
-```
+```shell
 date +"%j"
 337
 
 ```
 
-### 9\. Formatting Options
+#### 9\. 与格式化相关的选项
 
-| **%%** | A literal percent sign (“**%**“). |
-| **%a** | The abbreviated weekday name (e.g., **Sun**). |
-| **%A** | The full weekday name (e.g., **Sunday**). |
-| **%b** | The abbreviated month name (e.g., **Jan**). |
-| **%B** | Locale’s full month name (e.g., **January**). |
-| **%c** | The date and time (e.g., **Thu Mar 3 23:05:25 2005**). |
-| **%C** | The current century; like **%Y**, except omit last two digits (e.g., **20**). |
-| **%d** | Day of month (e.g., **01**). |
-| **%D** | Date; same as **%m/%d/%y**. |
-| **%e** | Day of month, space padded; same as **%_d**. |
-| **%F** | Full date; same as **%Y-%m-%d**. |
-| **%g** | Last two digits of year of ISO week number (see **%G**). |
-| **%G** | Year of ISO week number (see **%V**); normally useful only with **%V**. |
-| **%h** | Same as **%b**. |
-| **%H** | Hour (**00**..**23**). |
-| **%I** | Hour (**01**..**12**). |
-| **%j** | Day of year (**001**..**366**). |
-| **%k** | Hour, space padded ( **0**..**23**); same as **%_H**. |
-| **%l** | Hour, space padded ( **1**..**12**); same as **%_I**. |
-| **%m** | Month (**01**..**12**). |
-| **%M** | Minute (**00**..**59**). |
-| **%n** | A newline. |
-| **%N** | Nanoseconds (**000000000**..**999999999**). |
-| **%p** | Locale’s equivalent of either **AM** or **PM**; blank if not known. |
-| **%P** | Like **%p**, but lower case. |
-| **%r** | Locale’s 12-hour clock time (e.g., **11:11:04 PM**). |
-| **%R** | 24-hour hour and minute; same as **%H:%M**. |
-| **%s** | Seconds since 1970-01-01 00:00:00 UTC. |
-| **%S** | Second (**00**..**60**). |
-| **%t** | A tab. |
-| **%T** | Time; same as **%H:%M:%S**. |
-| **%u** | Day of week (**1**..**7**); 1 is **Monday**. |
-| **%U** | Week number of year, with Sunday as first day of week (**00**..**53**). |
-| **%V** | ISO week number, with Monday as first day of week (**01**..**53**). |
-| **%w** | Day of week (**0**..**6**); 0 is **Sunday**. |
-| **%W** | Week number of year, with Monday as first day of week (**00**..**53**). |
-| **%x** | Locale’s date representation (e.g., **12/31/99**). |
-| **%X** | Locale’s time representation (e.g., **23:13:48**). |
-| **%y** | Last two digits of year (**00**..**99**). |
-| **%Y** | Year. |
-| **%z** | +hhmm numeric time zone (e.g., **-0400**). |
-| **%:z** | +hh:mm numeric time zone (e.g., **-04:00**). |
-| **%::z** | +hh:mm:ss numeric time zone (e.g., **-04:00:00**). |
-| **%:::z** | Numeric time zone with “**:**” to necessary precision (e.g., **-04**, **+05:30**). |
-| **%Z** | Alphabetic time zone abbreviation (e.g., EDT). |
+| **%%** | 百分号 (“**%**“). |
+| **%a** | 星期的缩写形式 (像这样, **Sun**). |
+| **%A** | 星期的完整形式 (像这样, **Sunday**). |
+| **%b** | 缩写的月份 (像这样, **Jan**). |
+| **%B** | 当前区域的月份全称 (像这样, **January**). |
+| **%c** | 日期以及时间 (像这样, **Thu Mar 3 23:05:25 2005**). |
+| **%C** | 本世纪; 类似 **%Y**, 但是会省略最后两位 (像这样, **20**). |
+| **%d** | 月中的第几日 (像这样, **01**). |
+| **%D** | 日期; 效果与 **%m/%d/%y** 一样. |
+| **%e** | 月中的第几日, 会填充空格; 与 **%_d** 一样. |
+| **%F** | 完整的日期; 跟 **%Y-%m-%d** 一样. |
+| **%g** | 年份的后两位 (参见 **%G**). |
+| **%G** | 年份 (参见 **%V**); 通常跟 **%V** 连用. |
+| **%h** | 同 **%b**. |
+| **%H** | 小时 (**00**..**23**). |
+| **%I** | 小时 (**01**..**12**). |
+| **%j** | 一年中的第几天 (**001**..**366**). |
+| **%k** | 小时, 用空格填充 ( **0**..**23**); same as **%_H**. |
+| **%l** | 小时, 用空格填充 ( **1**..**12**); same as **%_I**. |
+| **%m** | 月份 (**01**..**12**). |
+| **%M** | 分钟 (**00**..**59**). |
+| **%n** | 换行. |
+| **%N** | 纳秒 (**000000000**..**999999999**). |
+| **%p** | 当前区域时间是上午 **AM** 还是下午 **PM**; 未知则为空哦. |
+| **%P** | 类似 **%p**, 但是用小写字母现实. |
+| **%r** | 当前区域的12小时制现实时间 (像这样, **11:11:04 PM**). |
+| **%R** | 24-小时制的小时和分钟; 同 **%H:%M**. |
+| **%s** | 从 1970-01-01 00:00:00 UTC 到现在经历的秒数. |
+| **%S** | 秒数 (**00**..**60**). |
+| **%t** | tab 制表符.  |
+| **%T** | 时间; 同 **%H:%M:%S**. |
+| **%u** | 星期 (**1**..**7**); 1 表示 **星期一**. |
+| **%U** | 一年中的第几个星期, 以周日为一周的开始 (**00**..**53**). |
+| **%V** | 一年中的第几个星期，以周一为一周的开始 (**01**..**53**). |
+| **%w** | 用数字表示周几 (**0**..**6**); 0 表示 **周日**. |
+| **%W** | 一年中的第几个星期, 周一为一周的开始 (**00**..**53**). |
+| **%x** | Locale’s date representation (像这样, **12/31/99**). |
+| **%X** | Locale’s time representation (像这样, **23:13:48**). |
+| **%y** | 年份的后面两位 (**00**..**99**). |
+| **%Y** | 年. |
+| **%z** | +hhmm 指定数字时区 (像这样, **-0400**). |
+| **%:z** | +hh:mm 指定数字时区 (像这样, **-04:00**). |
+| **%::z** | +hh:mm:ss 指定数字时区 (像这样, **-04:00:00**). |
+| **%:::z** | 指定数字时区, with “**:**” to necessary precision (e.g., **-04**, **+05:30**). |
+| **%Z** | 时区的字符缩写(例如, EDT). |
 
-### 10\. Set the system clock
+#### 10\. 设置系统时间
 
-With the date command in Linux, you can also manually  set the system clock using the --set switch, in the following example we will set the system date to 4:22pm August 30, 2017
+你也可以使用 date 来手工设置系统时间，方法是使用 `--set` 选项, 下面的例子会将系统时间设置成2017年8月30日下午4点22分
 
-```
+```shell
 date --set="20170830 16:22"
 
 ```
 
-Of course, if you use one of our [VPS Hosting services][1], you can always contact and ask our expert Linux admins (via chat or ticket) about date command in linux and anything related to date examples on Linux. They are available 24×7 and will provide information or assistance immediately.
+当然, 如果你使用的是我们的 [VPS Hosting services][1], 你总是可以联系并咨询我们的Linux专家管理员 (通过客服电话或者下工单的方式) 关于 date 命令的任何东西. 他们是 24×7 在线的，会立即向您提供帮助.
 
-PS. If you liked this post on How to Use the Date Command in Linux please share it with your friends on the social networks using the buttons below or simply leave a reply. Thanks.
+PS. 如果你喜欢这篇帖子，请点击下面的按钮分享或者留言. 谢谢.
 
 --------------------------------------------------------------------------------
 
