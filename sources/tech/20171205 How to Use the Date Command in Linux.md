@@ -1,4 +1,5 @@
 translating by lujun9972
+translating by lujun9972
 How to Use the Date Command in Linux
 ======
 In this post, we will show you some examples on how to use the date command in Linux. The date command can be used to print or set the system date and time. Using the Date Command in Linux its simple, just follow the examples and the syntax below.
