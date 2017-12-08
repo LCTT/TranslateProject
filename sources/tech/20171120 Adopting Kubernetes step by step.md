@@ -1,3 +1,5 @@
+translating by aiwhj
+
 Adopting Kubernetes step by step
 ============================================================
 
