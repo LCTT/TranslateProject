@@ -1,3 +1,4 @@
+Translating by kimii
 How To Install Fish, The Friendly Interactive Shell, In Linux
 ======
 Fish, acronym of friendly interactive shell, is a well equipped, smart and user-friendly shell for Unix-like systems. Fish comes with many significant features, such as autosuggestions, syntax highlighting, searchable history (like CTRL+r in Bash), smart search functionality, glorious VGA color support, web based configuration, man page completions and many, out of the box. Just install it and start using it in no time. No more extra configuration or you don’t have to install any extra add-ons/plug-ins!
