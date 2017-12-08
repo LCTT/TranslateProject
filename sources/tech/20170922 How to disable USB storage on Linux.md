@@ -1,5 +1,4 @@
-translating by lujun9972
-How to disable USB storage on Linux
+Linux上如何禁用 USB 存储
 ======
 To secure our infrastructure of data breaches, we use software & hardware firewalls to restrict unauthorized access from outside but data breaches can occur from inside as well. To remove such a possibility, organizations limit & monitor the access to internet & also disable usb storage devices.
 
