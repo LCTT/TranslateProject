@@ -1,52 +1,51 @@
-translating by lujun9972
-How to extract substring in Bash
+如何在 Bash 中抽取子字符串
 ======
-A substring is nothing but a string is a string that occurs “in”. For example “3382” is a substring of “this is a 3382 test”. One can extract the digits or given string using various methods.
+子字符串不是别的，就是出现在其他字符串内的字符串。 比如 “3382” 就是 “this is a 3382 test” 的子字符串。 我们有多种方法可以从中把数字或指定部分字符串抽取出来。
 
  [![How to Extract substring in Bash Shell on Linux or Unix](https://www.cyberciti.biz/media/new/faq/2017/12/How-to-Extract-substring-in-Bash-Shell-on-Linux-or-Unix.jpg)][2] 
 
-This quick tutorial shows how to obtain or finds substring when using bash shell.
+本文会向你展示在 bash shell 中如何获取或者说查找出子字符串。
 
-### Extract substring in Bash
+### 在 Bash 中抽取子字符串
 
-The syntax is: ## syntax ## ${parameter:offset:length} The substring expansion is a bash feature. It expands to up to length characters of the value of parameter starting at the character specified by offset. For example, $u defined as follows:
-
-| 
+其语法为:
+```shell
+## syntax ## 
+${parameter:offset:length} 
 ```
+子字符串扩展是 bash 的一项功能。它会扩展成 parameter 值中以 offset 为开始，长为 length 个字符的字符串。 假设， $u 定义如下:
+
+```shell
 ## define var named u ##
 u="this is a test"
 ```
- |
 
-The following substring parameter expansion performs substring extraction:
+那么下面参数的子字符串扩展会抽取出子字符串:
 
-| 
-```
+```shell
 var="${u:10:4}"
 echo "${var}"
 ```
- |
 
-Sample outputs:
+结果为:
 
 ```
 test
 ```
 
-*   10 : The offset
+其中这些参数分别表示：
++   10 : 偏移位置
++   4 : 长度
 
-*   4 : The length
+### 使用 IFS
 
-### Using IFS
+根据 bash 的 man 页说明:
 
-From the bash man page:
+> The Internal Field Separator that is used for word splitting after expansion and to split lines into words with the read builtin command。The default value is<space><tab><newline>。
 
-> The Internal Field Separator that is used for word splitting after expansion and to split lines into words with the read builtin command. The default value is .
+另一种 POSIX 就绪（POSIX ready) 的方案如下:
 
-Another POSIX ready solution is as follows:
-
-| 
-```
+```shell
 u="this is a test"
 set -- $u
 echo "$1"
@@ -54,20 +53,20 @@ echo "$2"
 echo "$3"
 echo "$4"
 ```
- |
 
-Sample outputs:
+输出为:
 
-```
+```shell
 this
 is
 a
 test
 ```
 
-| 
-```
-#!/bin/bash
+下面是一段 bash 代码，用来从 Cloudflare cache 中去除带主页的 url
+
+```shell
+#！/bin/bash
 ####################################################
 ## Author - Vivek Gite {https://www.cyberciti.biz/}
 ## Purpose - Purge CF cache
@@ -98,7 +97,7 @@ get_home_url(){
 }
 
 echo
-echo "Purging cache from Cloudflare..."
+echo "Purging cache from Cloudflare。.。"
 echo
 for u in $urls
 do
@@ -108,21 +107,22 @@ do
           -H "X-Auth-Email: ${email_id}" \
           -H "X-Auth-Key: ${api_key}" \
           -H "Content-Type: application/json" \
-          --data "{\"files\":[\"${u}\",\"${amp_url}\",\"${home_url}\"]}"
+          --data "{\"files\":[\"${u}\"，\"${amp_url}\"，\"${home_url}\"]}"
      echo
 done
 echo
 ```
- |
 
-I can run it as follows: ~/bin/cf.clear.cache https://www.cyberciti.biz/faq/bash-for-loop/ https://www.cyberciti.biz/tips/linux-security.html
-
-### Say hello to cut command
-
-One can remove sections from each line of file or variable using the cut command. The syntax is:
-
-| 
+它的使用方法为:
+```shell
+~/bin/cf.clear.cache https://www.cyberciti.biz/faq/bash-for-loop/ https://www.cyberciti.biz/tips/linux-security.html
 ```
+
+### 借助 cut 命令
+
+可以使用 cut 命令来将文件中每一行或者变量中的一部分删掉。它的语法为:
+
+```shell
 u="this is a test"
 echo "$u" | cut -d' ' -f 4
 echo "$u" | cut --delimiter=' ' --fields=4
@@ -134,9 +134,14 @@ echo "$u" | cut --delimiter=' ' --fields=4
 var="$(cut -d' ' -f 4 <<< $u)"
 echo "${var}"
 ```
- |
 
-For more info read bash man page: man bash man cut See also: [Bash String Comparison: Find Out IF a Variable Contains a Substring][1]
+想了解更多请阅读 bash 的 man 页:
+```shell
+man bash
+man cut
+```
+
+另请参见: [Bash String Comparison: Find Out IF a Variable Contains a Substring][1]
 
 --------------------------------------------------------------------------------
 
