@@ -54,7 +54,7 @@ translating by wenwensnow
 ![Screenshot of NetworkManager's edit connection dialog, showing a text entry for a cloned mac address](https://www.paulfurley.com/img/network-manager-cloned-mac-address.png)
 
 网络管理器也支持消息处理 - 任何位于 `/etc/NetworkManager/dispatcher.d/pre-up.d/` 的脚本在建立网络连接之前都会被执行。
-NetworkManager also supports hooks - any script placed in `/etc/NetworkManager/dispatcher.d/pre-up.d/` is run before a connection is brought up.
+
 
 ### 分配随机生成的伪MAC地址
 
@@ -91,13 +91,13 @@ virgintrainswifi     7d0c57de-d81a-11e7-9bae-5be89b161d22  802-11-wireless  --
 有可能某些路由器会拒绝自己指定的MAC地址，但是我还没有遇到过这种情况。
 
 
-每一次连接到一个网络，这一脚本都会用`nmcli` 来指定一个随机生成的伪MAC地址：
-On every connection up, the script calls `nmcli` to set the spoofed MAC address for every connection:
+每次连接到一个网络，这一脚本都会用`nmcli` 来指定一个随机生成的伪MAC地址：
+
 
 ![A terminal window show a number of nmcli command line calls](https://www.paulfurley.com/img/terminal-window-nmcli-commands.png)
 
 最后，我查看了 `ifconfig`的输出结果，我发现端口MAC地址已经变成了随机生成的地址，而不是我真实的MAC地址。
-As a final check, if I look at `ifconfig` I can see that the `HWaddr` is the spoofed one, not my real MAC address:
+
 
 ```
 > ifconfig
@@ -154,7 +154,7 @@ done
 
 wait
 ```
-Enjoy!
+
 
  _Update: [Use locally administered MAC addresses][5] to avoid clashing with real Intel ones. Thanks [@_fink][6]_
 
