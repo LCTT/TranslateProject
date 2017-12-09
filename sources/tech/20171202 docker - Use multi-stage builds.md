@@ -111,7 +111,8 @@ COPY --from=builder /go/src/github.com/alexellis/href-counter/app .
 CMD ["./app"]  
 ```
 
-> 译者话: 1.此文章系译者第一次翻译英文文档，有描述不清楚或错误的地方，请读者给予反馈，不胜感激。2.本文只是简单介绍多阶段构建，如果读者需要深入了解，请自行查阅资料。
+> 译者话: 1.此文章系译者第一次翻译英文文档，有描述不清楚或错误的地方，请读者给予反馈(2727586680@qq.com)，不胜感激。
+         2.本文只是简单介绍多阶段构建，不够深入，如果读者需要深入了解，请自行查阅相关资料。
 --------------------------------------------------------------------------------
 
 via: https://docs.docker.com/engine/userguide/eng-image/multistage-build/#name-your-build-stages
