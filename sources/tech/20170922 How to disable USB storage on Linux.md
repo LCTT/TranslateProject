@@ -1,48 +1,61 @@
-Linux上如何禁用 USB 存储
+Linux 上如何禁用 USB 存储
 ======
-To secure our infrastructure of data breaches, we use software & hardware firewalls to restrict unauthorized access from outside but data breaches can occur from inside as well. To remove such a possibility, organizations limit & monitor the access to internet & also disable usb storage devices.
+为了保护数据不被泄漏，我们使用软件和硬件防火墙来限制外部未经授权的访问，但是数据泄露也可能发生在内部。 为了消除这种可能性，机构会限制和监测访问互联网，同时禁用 USB 存储设备。
 
-In this tutorial, we are going to discuss three different ways to disable USB storage devices on Linux machines. All the three methods have been tested on CentOS 6 & 7 machine & are working as they are supposed to . So let’s discuss all the three methods one by one,
+在本教程中，我们将讨论三种不同的方法来禁用 Linux 机器上的 USB 存储设备。所有这三种方法都在 CentOS 6＆7 机器上通过测试。那么让我们一一讨论这三种方法，
 
-( Also Read : [Ultimate guide to securing SSH sessions][1] )
+( 另请阅读: [Ultimate guide to securing SSH sessions][1] )
 
-### Method 1 – Fake install
+### 方法 1 – 伪安装
 
-In this method, we add a line ‘install usb-storage /bin/true’ which causes the ‘/bin/true’ to run instead of installing usb-storage module & that’s why it’s also called ‘Fake Install’ . To do this, create and open a file named ‘block_usb.conf’ (it can be something as well) in the folder ‘/etc/modprobe.d’,
+在本方法中，我们往配置文件中添加一行 `install usb-storage /bin/true`， 这会让安装 usb-storage 模块的操作实际上变成运行 `/bin/true`， 这也是为什么这种方法叫做`伪安装`的原因。 具体来说就是， 在文件夹 `/etc/modprobe.d` 中创建并打开一个名为 `block_usb.conf` (也可能教其他名字) ，
 
+```shell
 $ sudo vim /etc/modprobe.d/block_usb.conf
+```
 
-& add the below mentioned line,
+然后将下行内容添加进去，
 
+```shell
 install usb-storage /bin/true
+```
 
-Now save the file and exit.
+最后保存文件并退出。
 
-### Method 2 – Removing the USB driver
+### 方法 2 – 删除 UBS 驱动
 
-Using this method, we can remove/move the drive for usb-storage (usb_storage.ko) from our machines, thus making it impossible to access a usb-storage device from the mahcine. To move the driver from it’s default location, execute the following command,
+这种方法要求我们将 usb 存储的驱动程序(usb_storage.ko)删掉或者移走，从而达到无法再访问 usb 存储设备的目的。 执行下面命令可以将驱动从它默认的位置移走， execute the following command，
 
+```shell
 $ sudo mv /lib/modules/$(uname -r)/kernel/drivers/usb/storage/usb-storage.ko /home/user1
+```
 
-Now the driver is not available on its default location & thus would not be loaded when a usb-storage device is attached to the system & device would not be able to work. But this method has one little issue, that is when the kernel of the system is updated the usb-storage module would again show up in it’s default location.
+现在在默认的位置上无法再找到驱动程序了，因此当 USB 存储器连接道系统上时也就无法加载到驱动程序了，从而导致磁盘不可用。 但是这个方法有一个小问题，那就是当系统内核更新的时候，usb-storage 模块会再次出现在它的默认位置。
 
-### Method 3- Blacklisting USB-storage
+### 方法 3- 将 USB-storage 纳入黑名单
 
-We can also blacklist usb-storage using the file ‘/etc/modprobe.d/blacklist.conf’. This file is available on RHEL/CentOS 6 but might need to be created on 7\. To blacklist usb-storage, open/create the above mentioned file using vim,
+我们也可以通过 `/etc/modprobe.d/blacklist.conf` 文件将 usb-storage 纳入黑名单。这个文件在 RHEL/CentOS 6 是现成就有的，但在 7 上可能需要自己创建。 要将 usb 存储列入黑名单，请使用 vim 打开/创建上述文件，
 
+```shell
 $ sudo vim /etc/modprobe.d/blacklist.conf
+```
 
-& enter the following line to blacklist the usb,
+并输入以下行将 USB 纳入黑名单，
 
+```
 blacklist usb-storage
+```
 
-Save file & exit. USB-storage will now be blocked on the system but this method has one major downside i.e. any privileged user can load the usb-storage module by executing the following command,
+保存文件并退出。`usb-storage` 就在就会被系统阻止加载，但这种方法有一个很大的缺点，即任何特权用户都可以通过执行以下命令来加载 `usb-storage` 模块，
 
+```shell
 $ sudo modprobe usb-storage
+```
 
-This issue makes this method somewhat not desirable but it works well for non-privileged users.
+这个问题使得这个方法不是那么理想，但是对于非特权用户来说，这个方法效果很好。
 
-Reboot your system after the changes have been made to implement the changes made for all the above mentioned methods. Do check these methods to disable usb storage & let us know if you face any issue or have a query using the comment box below.
+在更改完成后重新启动系统，以使更改生效。请尝试用这些方法来禁用 USB 存储，如果您遇到任何问题或有什么问题，请告知我们。
+
 
 --------------------------------------------------------------------------------
 
@@ -52,7 +65,7 @@ via: http://linuxtechlab.com/disable-usb-storage-linux/
 译者：[lujun9972](https://github.com/lujun9972)
 校对：[校对者ID](https://github.com/校对者ID)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject)原创编译，[Linux 中国](https://linux.cn/)荣誉推出
 
 [a]:http://linuxtechlab.com/author/shsuain/
 [1]:http://linuxtechlab.com/ultimate-guide-to-securing-ssh-sessions/
