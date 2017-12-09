@@ -1,3 +1,5 @@
+translating by ucasFL
+
 More Unknown Linux Commands
 ============================================================
 
