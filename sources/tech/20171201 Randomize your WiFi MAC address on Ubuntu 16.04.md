@@ -1,50 +1,65 @@
 translating by wenwensnow
-Randomize your WiFi MAC address on Ubuntu 16.04
+
+在Ubuntu 16.04下随机生成你的WiFi MAC地址
 ============================================================
 
- _Your device’s MAC address can be used to track you across the WiFi networks you connect to. That data can be shared and sold, and often identifies you as an individual. It’s possible to limit this tracking by using pseudo-random MAC addresses._ 
+你设备的MAC地址可以在不同的WiFi网络中记录你的活动。这些信息能被共享后出售，用于识别特定的个体。但可以用随机生成的伪MAC地址来阻止这一行为。
+
 
 ![A captive portal screen for a hotel allowing you to log in with social media for an hour of free WiFi](https://www.paulfurley.com/img/captive-portal-our-hotel.gif)
 
  _Image courtesy of [Cloudessa][4]_ 
 
-Every network device like a WiFi or Ethernet card has a unique identifier called a MAC address, for example `b4:b6:76:31:8c:ff`. It’s how networking works: any time you connect to a WiFi network, the router uses that address to send and receive packets to your machine and distinguish it from other devices in the area.
+每一个诸如WiFi或者以太网卡这样的网络设备，都有一个叫做MAC地址的唯一标识符，如：`b4:b6:76:31:8c:ff`。这就是你能上网的原因：每当你连接上WiFi，路由器就会用这一地址来向你接受和发送数据，并且用它来区别你和这一网络的其他设备。
 
-The snag with this design is that your unique, unchanging MAC address is just perfect for tracking you. Logged into Starbucks WiFi? Noted. London Underground? Logged.
+这一设计的缺陷在于唯一性，不变的MAC地址正好可以用来追踪你。连上了星巴克的WiFi? 好，注意到了。在伦敦的地铁上? 也记录下来。
 
-If you’ve ever put your real name into one of those Craptive Portals on a WiFi network you’ve now tied your identity to that MAC address. Didn’t read the terms and conditions? You might assume that free airport WiFi is subsidised by flogging ‘customer analytics’ (your personal information) to hotels, restaurant chains and whomever else wants to know about you.
+如果你曾经在某一个WiFi验证页面上输入过你的真实姓名，你就已经把自己和这一MAC地址建立了联系。没有仔细阅读许可服务条款? 你可以认为，机场的免费WiFi正通过出售所谓的 ‘顾客分析数据’(你的个人信息)获利。出售的对象包括酒店，餐饮业，和任何想要了解你的人。
 
-I don’t subscribe to being tracked and sold by mega-corps, so I spent a few hours hacking a solution.
 
-### MAC addresses don’t need to stay the same
+我不想信息被记录，再出售给多家公司，所以我花了几个小时想出了一个解决方案。
 
-Fortunately, it’s possible to spoof your MAC address to a random one without fundamentally breaking networking.
 
-I wanted to randomize my MAC address, but with three particular caveats:
+### MAC 地址不一定总是不变的
 
-1.  The MAC should be different across different networks. This means Starbucks WiFi sees a different MAC from London Underground, preventing linking my identity across different providers.
+幸运的是，在不断开网络的情况下，是可以随机生成一个伪MAC地址的。
 
-2.  The MAC should change regularly to prevent a network knowing that I’m the same person who walked past 75 times over the last year.
 
-3.  The MAC stays the same throughout each working day. When the MAC address changes, most networks will kick you off, and those with Craptive Portals will usually make you sign in again - annoying.
+我想随机生成我的MAC地址，但是有三个要求：
 
-### Manipulating NetworkManager
 
-My first attempt of using the `macchanger` tool was unsuccessful as NetworkManager would override the MAC address according to its own configuration.
+1.MAC地址在不同网络中是不相同的。这意味着，我在星巴克和在伦敦地铁网络中的MAC地址是不相同的，这样在不同的服务提供商中就无法将我的活动联系起来
 
-I learned that NetworkManager 1.4.1+ can do MAC address randomization right out the box. If you’re using Ubuntu 17.04 upwards, you can get most of the way with [this config file][7]. You can’t quite achieve all three of my requirements (you must choose  _random_ or  _stable_  but it seems you can’t do  _stable-for-one-day_ ).
 
-Since I’m sticking with Ubuntu 16.04 which ships with NetworkManager 1.2, I couldn’t make use of the new functionality. Supposedly there is some randomization support but I failed to actually make it work, so I scripted up a solution instead.
+2.MAC地址需要经常更换，这样在网络上就没人知道我就是去年在这儿经过了75次的那个人
 
-Fortunately NetworkManager 1.2 does allow for spoofing your MAC address. You can see this in the ‘Edit connections’ dialog for a given network:
+
+3. MAC地址一天之内应该保持不变。当MAC地址更改时，大多数网络都会与你断开连接，然后必须得进入验证页面再次登陆 - 这很烦人。
+
+
+### 操作网络管理器
+
+我第一次尝试用一个叫做 `macchanger`的工具，但是失败了。网络管理器会根据它自己的设置恢复默认的MAC地址。 
+
+
+我了解到，网络管理器1.4.1以上版本可以自动生成随机的MAC地址。如果你在使用Ubuntu 17.04 版本，你可以根据这一配置文件实现这一目的。但这并不能完全符合我的三个要求 （你必须在随机和稳定这两个选项之中选择一个，但没有一天之内保持不变这一选项）
+
+
+因为我使用的是Ubuntu 16.04，网络管理器版本为1.2，不能直接使用高版本这一新功能。可能网络管理器有一些随机化方法支持，但我没能成功。所以我编了一个脚本来实现这一目标。
+
+
+幸运的是，网络管理器1.2 允许生成随机MAC地址。你在已连接的网络中可以看见 ‘编辑连接’这一选项：
+
 
 ![Screenshot of NetworkManager's edit connection dialog, showing a text entry for a cloned mac address](https://www.paulfurley.com/img/network-manager-cloned-mac-address.png)
 
+网络管理器也支持消息处理 - 任何位于 `/etc/NetworkManager/dispatcher.d/pre-up.d/` 的脚本在建立网络连接之前都会被执行。
 NetworkManager also supports hooks - any script placed in `/etc/NetworkManager/dispatcher.d/pre-up.d/` is run before a connection is brought up.
 
-### Assigning pseudo-random MAC addresses
+### 分配随机生成的伪MAC地址
 
-To recap, I wanted to generate random MAC addresses based on the  _network_  and the  _date_ . We can use the NetworkManager command line, nmcli, to show a full list of networks:
+我想根据网络ID和日期来生成新的随机MAC地址。 我们可以使用网络管理器的命令行工具，nmcli,来显示所有可用网络：
+
 
 ```
 > nmcli connection
@@ -56,7 +71,7 @@ virgintrainswifi     7d0c57de-d81a-11e7-9bae-5be89b161d22  802-11-wireless  --
 
 ```
 
-Since each network has a unique identifier, to achieve my scheme I just concatenated the UUID with today’s date and hashed the result:
+因为每个网络都有一个唯一标识符，为了实现我的计划，我将UUID和日期拼接在一起，然后使用MD5生成hash值:
 
 ```
 
@@ -67,17 +82,21 @@ Since each network has a unique identifier, to achieve my scheme I just concaten
 53594de990e92f9b914a723208f22b3f  -
 
 ```
+生成的结果可以代替MAC地址的最后八个字节。
 
-That produced bytes which can be substituted in for the last octets of the MAC address.
 
-Note that the first byte `02` signifies the address is [locally administered][8]. Real, burned-in MAC addresses start with 3 bytes designing their manufacturer, for example `b4:b6:76` for Intel.
+值得注意的是，最开始的字节 `02` 代表这个地址是自行指定的。实际上，真实MAC地址的前三个字节是由制造商决定的，例如 `b4:b6:76` 就代表Intel。
 
-It’s possible that some routers may reject locally administered MACs but I haven’t encountered that yet.
 
+有可能某些路由器会拒绝自己指定的MAC地址，但是我还没有遇到过这种情况。
+
+
+每一次连接到一个网络，这一脚本都会用`nmcli` 来指定一个随机生成的伪MAC地址：
 On every connection up, the script calls `nmcli` to set the spoofed MAC address for every connection:
 
 ![A terminal window show a number of nmcli command line calls](https://www.paulfurley.com/img/terminal-window-nmcli-commands.png)
 
+最后，我查看了 `ifconfig`的输出结果，我发现端口MAC地址已经变成了随机生成的地址，而不是我真实的MAC地址。
 As a final check, if I look at `ifconfig` I can see that the `HWaddr` is the spoofed one, not my real MAC address:
 
 ```
@@ -92,8 +111,8 @@ wlp1s0    Link encap:Ethernet  HWaddr b4:b6:76:45:64:4d
           RX bytes:11627977017 (11.6 GB)  TX bytes:20700627733 (20.7 GB)
 
 ```
+完整的脚本可以在Github上查看。
 
-The full script is [available on Github][9].
 
 ```
 #!/bin/sh
