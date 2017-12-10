@@ -1,3 +1,4 @@
+translating by zrszrszrs
 GitHub Is Building a Coder’s Paradise. It’s Not Coming Cheap
 ============================================================
 
