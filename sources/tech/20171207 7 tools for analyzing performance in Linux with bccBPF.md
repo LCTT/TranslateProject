@@ -18,27 +18,28 @@ opensource.com
 
 在 linux 中出现的一种新技术能够为系统管理员和开发者提供大量用于性能分析和故障排除的新工具和仪表盘。 它被称为增强的伯克利数据包过滤器（eBPF，或BPF），虽然这些改进并不由伯克利开发，它们不仅仅是处理数据包，更多的是过滤。我将讨论在 Fedora 和 Red Hat Linux 发行版中使用 BPF 的一种方法，并在 Fedora 26 上演示。
 
-BPF can run user-defined sandboxed programs in the kernel to add new custom capabilities instantly. It's like adding superpowers to Linux, on demand. Examples of what you can use it for include:
+BPF 可以运行自定义沙盒程序在内核中即刻添加新的自定义功能。这就像可按需给 Linux 系统添加超能力一般。 你可以使用它的例子包括如下：
 
-*   Advanced performance tracing tools: programmatic low-overhead instrumentation of filesystem operations, TCP events, user-level events, etc.
+* 高级性能跟踪工具：文件系统操作、TCP事件、用户级事件等的编程低开销指令。
 
-*   Network performance: dropping packets early on to improve DDOS resilience, or redirecting packets in-kernel to improve performance
+* 网络性能 : 尽早丢弃数据包以提高DDoS的恢复能力，或者在内核中重定向数据包以提高性能。
 
-*   Security monitoring: 24x7 custom monitoring and logging of suspicious kernel and userspace events
+* 安全监控 : 24x7 小时全天候自定义检测和记录内核空间与用户空间内的可疑事件。
 
-BPF programs must pass an in-kernel verifier to ensure they are safe to run, making it a safer option, where possible, than writing custom kernel modules. I suspect most people won't write BPF programs themselves, but will use other people's. I've published many on GitHub as open source in the [BPF Compiler Collection (bcc)][12] project. bcc provides different frontends for BPF development, including Python and Lua, and is currently the most active project for BPF tooling.
+在可能的情况下，BPF 程序必须通过一个内核验证机制来保证它们的安全运行，这比写自定义的内核模块更安全。我在此假设大多数人并不编写自己的 BPF 程序，而是使用别人写好的。在 GitHub 上的 [BPF Compiler Collection (bcc)][12] 项目中，我已发布许多。开源代码。bcc 提供不同的 BPF 开发前端支持，包括Python和Lua，并且是目前最活跃的 BPF 模具项目。
 
-### 7 useful new bcc/BPF tools
+### 7 个有用的 bcc/BPF 新工具
 
+为了了解BCC / BPF工具和他们的乐器，我创建了下面的图表并添加到项目中
 To understand the bcc/BPF tools and what they instrument, I created the following diagram and added it to the bcc project:
 
-### [bcc_tracing_tools.png][13]
+### [bcc_跟踪工具.png][13]
 
-![Linux bcc/BPF tracing tools diagram](https://opensource.com/sites/default/files/u128651/bcc_tracing_tools.png)
+![Linux bcc/BPF 跟踪工具图](https://opensource.com/sites/default/files/u128651/bcc_tracing_tools.png)
 
 Brendan Gregg, [CC BY-SA 4.0][14]
 
-These are command-line interface (CLI) tools you can use over SSH (secure shell). Much analysis nowadays, including at my employer, is conducted using GUIs and dashboards. SSH is a last resort. But these CLI tools are still a good way to preview BPF capabilities, even if you ultimately intend to use them only through a GUI when available. I've began adding BPF capabilities to an open source GUI, but that's a topic for another article. Right now I'd like to share the CLI tools, which you can use today.
+这些是命令行界面工具，你可以通过 SSH (安全外壳）使用它们。目前大多数分析，包括我的老板，是用 GUIs 和仪表盘进行的。SSH是最后的手段。但这些命令行工具仍然是预览BPF能力的好方法，即使你最终打算通过一个可用的 GUI 使用它。我已着手向一个开源 GUI 添加BPF功能，但那是另一篇文章的主题。现在我想分享你今天可以使用的 CLI 工具。
 
 ### 1\. execsnoop
 
