@@ -1,3 +1,5 @@
+translating by liuxinyu123      
+
 Long-term Linux support future clarified
 ============================================================
 
