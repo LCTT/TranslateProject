@@ -1,3 +1,4 @@
+translating by zrszrszr 
 12 MySQL/MariaDB Security Best Practices for Linux
 ============================================================
 
