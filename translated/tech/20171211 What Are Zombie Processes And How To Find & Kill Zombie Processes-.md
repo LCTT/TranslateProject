@@ -1,79 +1,67 @@
-translating by lujun9972
-What Are Zombie Processes And How To Find & Kill Zombie Processes?
+什么是僵尸进程以及如何找到并杀掉僵尸进程？
 ======
- [![What Are Zombie Processes And How To Find & Kill Zombie Processes?](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/what-are-the-zombie-processes_orig.jpg)][1] 
+ [![What Are Zombie Processes And How To Find & Kill Zombie Processes？](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/what-are-the-zombie-processes_orig.jpg)][1] 
 
-If you are a regular Linux user, you must have encountered the term `Zombie Processes`. So what are the Zombie Processes? How do they get created? Are they harmful to the system? How do I kill these processes?  Keep reading for the answers to all these questions.
+如果你经常使用 Linux，你应该遇到这个术语 `僵尸进程`。 那么什么是僵尸进程？ 它们是怎么产生的？ 他们是否对系统有害？ 我要怎样杀掉这些进程？ 下面将会回答这些问题。
 
-### What are Zombie Processes?
+### 什么是僵尸进程？
 
-So we all know how processes work. We launch a program, start our task & once our task is over, we end that process. Once the process has ended, it has to be removed from the processes table.
+我们都知道进程的工作原理。我们启动一个程序，开始我们的任务，然后等任务结束了，我们就停止这个进程。 进程停止后， 该进程就会从进程表中移除。
 
-​
+你可以通过 `System-Monitor` 查看当前进程。
 
-You can see the current processes in the ‘System-Monitor’.
+ [![](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/linux-check-zombie-processes_orig.jpg)][2] 
 
- [![Replace the pid with the id of the parent process so that the parent process will remove all the child processes that are dead and completed. Imagine it Like this : “You find a dead body in the middle of the road, you call the dead body’s family and they take that body away from the road.” But a lot of programs are not programmed well enough to remove these child zombies because if they were, you wouldn’t have those zombies in the first place. So the only thing guaranteed to remove Child Zombies is killing the parent.](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/linux-check-zombie-processes_orig.jpg)][2] 
+但是，有时候有些程序即使执行完了也依然留在进程表中。
 
-But, sometimes some of these processes stay in the processes table even after they have completed execution.
+那么，这些完成了生命周期但却依然留在进程表中的进程，我们称之为 `僵尸进程`。
 
-​
+### 他们是如何产生的？
 
-So these processes that have completed their life of execution but still exist in the processes table are called ‘Zombie Processes’.
+当你运行一个程序时，它会产生一个父进程以及很多子进程。 所有这些子进程都会消耗内核分配给他们的内存和 CPU 资源。
 
-### And How Exactly do they get Created?
+这些子进程完成执行后会发送一个 Exit 信号然后死掉。这个 Exit 信号需要被父进程所读取。父进程需要随后调用 `wait` 命令来读取子进程的退出状态并将子进程从进程表中移除。
 
-Whenever we run a program it creates a parent process and a lot of child processes. All of these child processes use resources such as memory and CPU allocated to them by the kernel.
+若父进程正确第读取了子进程的 Exit 信号，则子进程会从进程表中删掉。
 
-​
+但若父进程未能读取到子进程的 Exit 信号，则这个子进程虽然完成执行处于死亡的状态，但也不会从进程表中删掉。
 
-Once these child processes have finished executing they send an Exit call and die. This Exit call has to be read by the parent process which later calls the wait command to read the exit_status of the child process so that the child process can be removed from the processes table.
+### 僵尸进程对系统有害吗 Are Zombie processes harmful to the System？
 
-If the Parent reads the Exit call correctly sent by the Child Process, the process is removed from the processes table.
+**不会**。由于僵尸进程并不做任何事情， 不会使用任何资源也不会影响其他进程， 因此存在僵尸进程也没什么坏处。 不过由于进程表中的退出状态以及其他一些进程信息也是存储在内存中的，因此存在太多僵尸进程有时也会是一些问题。
 
-But, if the parent fails to read the exit call from the child process, the child process which has already finished its execution and is now dead will not be removed from the processes table.
+**你可以想象成这样:** 
 
-### Are Zombie processes harmful to the System?
+“你是一家建筑公司的老板。你每天根据工人们的工作量来支付工资。 有一个工人每天来到施工现场，就坐在那里， 你不用付钱， 它也不做任何工作。 他只是每天都来然后呆坐在那，仅此而已！”
 
-**No. **
+这个工人就是僵尸进程的一个活生生的例子。**但是**， 如果你有很多僵尸工人， 你的建设工地就会很拥堵从而让那些正常的工人难以工作。
 
-Since zombie process is not doing any work, not using any resources or affecting any other process, there is no harm in having a zombie process. But since the exit_status and other process information from the process table are stored in the RAM, having too many Zombie processes can sometimes be an issue.
+### 那么如何找出僵尸进程呢？
 
- **_Imagine it Like this :_** 
+打开终端并输入下面命令:
 
-“
-
- _You are the owner of a construction company. You pay daily wages to all your workers depending upon how they work. _  _A worker comes to the construction site every day, just sits there, you don’t have to pay him, he doesn’t do any work. _  _He just comes every day and sits, that’s it !”_  
-
-Such a worker is the living example of a zombie process. 
-
-**But,**
-
-if you have a lot of zombie workers, your construction site will get crowded and it might get difficult for the people that are actually working.
-
-### So how to find Zombie Processes?
-
-Fire up a terminal and type the following command -
-
+```
 ps aux | grep Z
+```
 
-You will now get details of all zombie processes in the processes table.
+会列出进程表中所有僵尸进程的详细内容。
 
-### How to kill Zombie processes?
+### 如何杀掉僵尸进程？
 
-Normally we kill processes with the SIGKILL command but zombie processes are already dead. You Cannot kill something that is already dead. So what you do is you type this command -
+正常情况下我们可以用 `SIGKILL` 信号来杀死进程，但是僵尸进程已经死了， 你不能杀死已经死掉的东西。 因此你需要输入的命令应该是
 
+```
 kill -s SIGCHLD pid
+```
 
-​Replace the pid with the id of the parent process so that the parent process will remove all the child processes that are dead and completed.
+将这里的 pid 替换成父进程的 id，这样父进程就会删除所有以及完成并死掉的子进程了。
 
- **_Imagine it Like this :_** 
+**你可以把它想象成:** 
 
-“
+"你在道路中间发现一具尸体，于是你联系了死者的家属，随后他们就会将尸体带离道路了。"
 
- _You find a dead body in the middle of the road, you call the dead body’s family and they take that body away from the road.”_ 
+不过许多程序写的不是那么好，无法删掉这些子僵尸(否则你一开始也见不到这些僵尸了)。 因此确保删除子僵尸的唯一方法就是杀掉它们的父进程。
 
-But a lot of programs are not programmed well enough to remove these child zombies because if they were, you wouldn’t have those zombies in the first place. So the only thing guaranteed to remove Child Zombies is killing the parent.
 
 --------------------------------------------------------------------------------
 
