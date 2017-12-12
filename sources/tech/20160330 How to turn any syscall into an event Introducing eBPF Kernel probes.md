@@ -1,4 +1,4 @@
-How to turn any syscall into an event: Introducing eBPF Kernel probes
+Translating by qhwdw How to turn any syscall into an event: Introducing eBPF Kernel probes
 ============================================================
 
 
@@ -359,3 +359,5 @@ via: https://blog.yadutaf.fr/2016/03/30/turn-any-syscall-into-event-introducing-
 [15]:http://lxr.free-electrons.com/source/kernel/trace/bpf_trace.c#L86
 [16]:https://github.com/iovisor/bcc/blob/master/tools/solisten.py
 [17]:http://www.brendangregg.com/blog/2015-05-15/ebpf-one-small-step.html
+
+
