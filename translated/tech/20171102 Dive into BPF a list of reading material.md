@@ -1,455 +1,455 @@
-Translating by qhwdw Dive into BPF: a list of reading material
+深入理解 BPF：一个阅读清单
 ============================================================
 
-*   [What is BPF?][143]
+*   [什么是 BPF?][143]
 
-*   [Dive into the bytecode][144]
+*   [深入理解字节码（ bytecode）][144]
 
-*   [Resources][145]
-    *   [Generic presentations][23]
-        *   [About BPF][1]
+*   [资源][145]
+    *   [简介][23]
+        *   [关于 BPF][1]
 
-        *   [About XDP][2]
+        *   [关于 XDP][2]
 
-        *   [About other components related or based on eBPF][3]
+        *   [关于 基于 eBPF 或者 eBPF 相关的其它组件][3]
 
-    *   [Documentation][24]
-        *   [About BPF][4]
+    *   [文档][24]
+        *   [关于 BPF][4]
 
-        *   [About tc][5]
+        *   [关于 tc][5]
 
-        *   [About XDP][6]
+        *   [关于 XDP][6]
 
-        *   [About P4 and BPF][7]
+        *   [关于 P4 和 BPF][7]
 
-    *   [Tutorials][25]
+    *   [教程][25]
 
-    *   [Examples][26]
-        *   [From the kernel][8]
+    *   [示例][26]
+        *   [来自内核的示例][8]
 
-        *   [From package iproute2][9]
+        *   [来自包 iproute2 的示例][9]
 
-        *   [From bcc set of tools][10]
+        *   [来自 bcc 工具集的示例][10]
 
-        *   [Manual pages][11]
+        *   [手册页面][11]
 
-    *   [The code][27]
-        *   [BPF code in the kernel][12]
+    *   [代码][27]
+        *   [内核中的 BPF 代码][12]
 
-        *   [XDP hooks code][13]
+        *   [XDP 钩子（hook）代码][13]
 
-        *   [BPF logic in bcc][14]
+        *   [bcc 中的 BPF 逻辑][14]
 
-        *   [Code to manage BPF with tc][15]
+        *   [通过 tc 使用代码去管理 BPF][15]
 
-        *   [BPF utilities][16]
+        *   [BPF 实用工具][16]
 
-        *   [Other interesting chunks][17]
+        *   [其它感兴趣的 chunks][17]
 
-        *   [LLVM backend][18]
+        *   [LLVM 后端][18]
 
-        *   [Running in userspace][19]
+        *   [在用户空间中运行][19]
 
-        *   [Commit logs][20]
+        *   [提交日志][20]
 
-    *   [Troubleshooting][28]
-        *   [Errors at compilation time][21]
+    *   [排错][28]
+        *   [编译时的错误][21]
 
-        *   [Errors at load and run time][22]
+        *   [加载和运行时的错误][22]
 
-    *   [And still more!][29]
+    *   [更多][29]
 
- _~ [Updated][146] 2017-11-02 ~_ 
+ _~ [更新于][146] 2017-11-02 ~_ 
 
-# What is BPF?
+# 什么是 BPF?
 
-BPF, as in **B**erkeley **P**acket **F**ilter, was initially conceived in 1992 so as to provide a way to filter packets and to avoid useless packet copies from kernel to userspace. It initially consisted in a simple bytecode that is injected from userspace into the kernel, where it is checked by a verifier—to prevent kernel crashes or security issues—and attached to a socket, then run on each received packet. It was ported to Linux a couple of years later, and used for a small number of applications (tcpdump for example). The simplicity of the language as well as the existence of an in-kernel Just-In-Time (JIT) compiling machine for BPF were factors for the excellent performances of this tool.
+BPF，是伯克利包过滤器（**B**erkeley **P**acket **F**ilter）的第一个字母的组合,最初构想于 1992 年，是为了提供一种过滤包的方法，以避免从内核到用户空间的无用的数据包副本。它最初是由从用户空间注入到内核的一个简单的字节码构成，它在哪里通过一个校验器进行检查 — 以避免内核崩溃或者安全问题 — 并附加到一个套接字上，然后运行在每个接收到的包上。几年后它被移植到 Linux 上，并且应用于一小部分应用程序上（例如，tcpdump）。简化的语言以及存在于内核中的即时编译器（JIT），使 BPF 成为一个性能卓越的工具。
 
-Then in 2013, Alexei Starovoitov completely reshaped it, started to add new functionalities and to improve the performances of BPF. This new version is designated as eBPF (for “extended BPF”), while the former becomes cBPF (“classic” BPF). New features such as maps and tail calls appeared. The JIT machines were rewritten. The new language is even closer to native machine language than cBPF was. And also, new attach points in the kernel have been created.
+然后，在 2013 年，Alexei Starovoitov 对 BPF 进行彻底地改造，并增加了新的功能，改善了它的性能。这个新版本被命名为 eBPF （意思是 “extended BPF”），同时将以前的变成 cBPF（意思是 “classic” BPF）。出现了如映射（maps）和 tail 调用（calls）。JIT 编译器被重写了。新的语言比 cBPF 更接近于原生机器语言。并且，在内核中创建了新的附加点。
 
-Thanks to those new hooks, eBPF programs can be designed for a variety of use cases, that divide into two fields of applications. One of them is the domain of kernel tracing and event monitoring. BPF programs can be attached to kprobes and they compare with other tracing methods, with many advantages (and sometimes some drawbacks).
+感谢那些新的钩子，eBPF 程序才可以被设计用于各种各样的使用案例，它分为两个应用领域。其中一个应用领域是内核跟踪和事件监控。BPF 程序可以被附加到 kprobes，并且它与其它跟踪模式相比，有很多的优点（有时也有一些缺点）。
 
-The other application domain remains network programming. In addition to socket filter, eBPF programs can be attached to tc (Linux traffic control tool) ingress or egress interfaces and perform a variety of packet processing tasks, in an efficient way. This opens new perspectives in the domain.
+其它的应用领域是网络程序。除了套接字过滤器，eBPF 程序可以附加到 tc（Linux 流量控制工具） ingress 或者 egress 接口，并且用一种高效的方式去执行各种包处理任务。它在这个领域打开了一个新的思路。
 
-And eBPF performances are further leveraged through the technologies developed for the IO Visor project: new hooks have also been added for XDP (“eXpress Data Path”), a new fast path recently added to the kernel. XDP works in conjunction with the Linux stack, and relies on BPF to perform very fast packet processing.
+并且 eBPF 的性能通过为 IO Visor 项目开发的技术进一步得到提升：也为 XDP（“eXpress Data Path”）增加了新的钩子，它是不久前增加到内核中的一种新的快速路径。XDP 与 Linux 栈一起工作，并且依赖 BPF 去执行更快的包处理。
 
-Even some projects such as P4, Open vSwitch, [consider][155] or started to approach BPF. Some others, such as CETH, Cilium, are entirely based on it. BPF is buzzing, so we can expect a lot of tools and projects to orbit around it soon…
+甚至一些项目，如 P4、Open vSwitch、[考虑][155] 或者开始去接近（approach）BPF。其它的一些，如 CETH、Cilium，则是完全基于它的。BPF 是如此流行，因此，我们可以预计到不久后，将围绕它有很多工具和项目出现 …
 
-# Dive into the bytecode
+# 深入理解字节码
 
-As for me: some of my work (including for [BEBA][156]) is closely related to eBPF, and several future articles on this site will focus on this topic. Logically, I wanted to somehow introduce BPF on this blog before going down to the details—I mean, a real introduction, more developed on BPF functionalities that the brief abstract provided in first section: What are BPF maps? Tail calls? What do the internals look like? And so on. But there are a lot of presentations on this topic available on the web already, and I do not wish to create “yet another BPF introduction” that would come as a duplicate of existing documents.
+就像我一样：我的一些工作（包括 [BEBA][156]）是非常依赖 eBPF 的，并且在这个网站上以后的几篇文章将关注于这个主题。从逻辑上说，在这篇文章中我在深入到细节之前，希望以某种方式去介绍 BPF — 我的意思是，一个真正的介绍，更多的在 BPF 上开发的功能，它在开始节已经提供了一些简短的摘要：什么是 BPF 映射？ Tail 调用？内部结构是什么样子？等等。但是，在这个网站上已经有很多这个主题的介绍了，并且，我也不希望去创建 “另一个 BPF 介绍” 的重复的文章。
 
-So instead, here is what we will do. After all, I spent some time reading and learning about BPF, and while doing so, I gathered a fair amount of material about BPF: introductions, documentation, but also tutorials or examples. There is a lot to read, but in order to read it, one has to  _find_  it first. Therefore, as an attempt to help people who wish to learn and use BPF, the present article introduces a list of resources. These are various kinds of readings, that hopefully will help you dive into the mechanics of this kernel bytecode.
+毕竟，我花费了很多的时间去阅读和学习关于 BPF 的知识，并且，也是这么做的，因此，在这里我们将要做的是，我收集了非常多的关于 BPF 的阅读材料：介绍、文档、也有教程或者示例。这里有很多的材料可以去阅读，但是，为了去阅读它，首先要去 _找到_ 它。因此，为了能够帮助更多想去学习和使用 BPF 的人，现在的这篇文章是介绍了一个资源列表。这里有各种阅读材料，它可以帮你深入理解内核字节码的机制。
 
-# Resources
+# 资源
 
 ![](https://qmonnet.github.io/whirl-offload/img/icons/pic.svg)
 
-### Generic presentations
+### 简介
 
-The documents linked below provide a generic overview of BPF, or of some closely related topics. If you are very new to BPF, you can try picking a couple of presentation among the first ones and reading the ones you like most. If you know eBPF already, you probably want to target specific topics instead, lower down in the list.
+这篇文章中下面的链接提供了一个 BPF 的基本的概述，或者，一些与它密切相关的一些主题。如果你对 BPF 非常陌生，你可以在这些介绍文章中挑选出一篇你喜欢的文章去阅读。如果你已经理解了 BPF，你可以针对特定的主题去阅读，下面是阅读清单。
 
-### About BPF
+### 关于 BPF
 
-Generic presentations about eBPF:
+关于 eBPF 的简介：
 
-*   [_Making the Kernel’s Networking Data Path Programmable with BPF and XDP_][53]  (Daniel Borkmann, OSSNA17, Los Angeles, September 2017):
-    One of the best set of slides available to understand quickly all the basics about eBPF and XDP (mostly for network processing).
+*   [_利用 BPF 和 XDP 实现可编程的内核网络数据路径_][53]  (Daniel Borkmann, OSSNA17, Los Angeles, September 2017):
+    快速理解所有的关于 eBPF 和 XDP 的基础概念的许多文章中的一篇（大多数是关于网络处理的）
 
-*   [The BSD Packet Filter][54] (Suchakra Sharma, June 2017): 
-    A very nice introduction, mostly about the tracing aspects.
+*   [BSD 包过滤器][54] (Suchakra Sharma, June 2017): 
+    一篇非常好的介绍文章，大多数是关于跟踪方面的。
 
-*   [_BPF: tracing and more_][55]  (Brendan Gregg, January 2017):
-    Mostly about the tracing use cases.
+*   [_BPF：跟踪及更多_][55]  (Brendan Gregg, January 2017):
+    大多数内容是跟踪使用案例相关的。
 
-*   [_Linux BPF Superpowers_][56]  (Brendan Gregg, March 2016):
-    With a first part on the use of **flame graphs**.
+*   [_Linux BPF 的超强功能_][56]  (Brendan Gregg, March 2016):
+    第一部分是关于 **火焰图（flame graphs）** 的使用。
 
 *   [_IO Visor_][57]  (Brenden Blanco, SCaLE 14x, January 2016):
-    Also introduces **IO Visor project**.
+    介绍了 **IO Visor 项目**。
 
-*   [_eBPF on the Mainframe_][58]  (Michael Holzheu, LinuxCon, Dubin, October 2015)
+*   [_大型机上的 eBPF_][58]  (Michael Holzheu, LinuxCon, Dubin, October 2015)
 
-*   [_New (and Exciting!) Developments in Linux Tracing_][59]  (Elena Zannoni, LinuxCon, Japan, 2015)
+*   [_在 Linux 上新的（令人激动的）跟踪新产品_][59]  (Elena Zannoni, LinuxCon, Japan, 2015)
 
-*   [_BPF — in-kernel virtual machine_][60]  (Alexei Starovoitov, February 2015):
-    Presentation by the author of eBPF.
+*   [_BPF — 内核中的虚拟机_][60]  (Alexei Starovoitov, February 2015):
+    eBPF 的作者写的一篇介绍文章。
 
-*   [_Extending extended BPF_][61]  (Jonathan Corbet, July 2014)
+*   [_扩展 extended BPF_][61]  (Jonathan Corbet, July 2014)
 
-**BPF internals**:
+**BPF 内部结构**：
 
-*   Daniel Borkmann has been doing an amazing work to present **the internals** of eBPF, in particular about **its use with tc**, through several talks and papers.
-    *   [_Advanced programmability and recent updates with tc’s cls_bpf_][30]  (netdev 1.2, Tokyo, October 2016):
-        Daniel provides details on eBPF, its use for tunneling and encapsulation, direct packet access, and other features.
+*   Daniel Borkmann 正在做的一项令人称奇的工作，它用于去展现 eBPF 的 **内部结构**，特别是通过几次关于 **eBPF 用于 tc ** 的演讲和论文。
+    *   [_使用 tc 的 cls_bpf 的高级可编程和它的最新更新_][30]  (netdev 1.2, Tokyo, October 2016):
+        Daniel 介绍了 eBPF 的细节，它使用了隧道和封装、直接包访问、和其它特性。
 
-    *   [_cls_bpf/eBPF updates since netdev 1.1_][31]  (netdev 1.2, Tokyo, October 2016, part of [this tc workshop][32])
+    *   [_自 netdev 1.1 以来的 cls_bpf/eBPF 更新_][31]  (netdev 1.2, Tokyo, October 2016, part of [this tc workshop][32])
 
-    *   [_On getting tc classifier fully programmable with cls_bpf_][33]  (netdev 1.1, Sevilla, February 2016):
-        After introducing eBPF, this presentation provides insights on many internal BPF mechanisms (map management, tail calls, verifier). A must-read! For the most ambitious, [the full paper is available here][34].
+    *   [_使用 cls_bpf 实现完全可编程的 tc 分类器_][33]  (netdev 1.1, Sevilla, February 2016)：
+        介绍 eBPF 之后，它提供了许多 BPF 内部机制（映射管理、tail 调用、校验器）的见解。对于大多数有志于 BPF 的人来说，这是必读的！[全文在这里][34]。
 
-    *   [_Linux tc and eBPF_][35]  (fosdem16, Brussels, Belgium, January 2016)
+    *   [_Linux tc 和 eBPF_][35]  (fosdem16, Brussels, Belgium, January 2016)
 
-    *   [_eBPF and XDP walkthrough and recent updates_][36]  (fosdem17, Brussels, Belgium, February 2017)
+    *   [_eBPF 和 XDP 攻略和最新更新_][36]  (fosdem17, Brussels, Belgium, February 2017)
 
-    These presentations are probably one of the best sources of documentation to understand the design and implementation of internal mechanisms of eBPF.
+    这些介绍可能是理解 eBPF 内部机制设计与实现的最佳文档资源之一。
 
-The [**IO Visor blog**][157] has some interesting technical articles about BPF. Some of them contain a bit of marketing talks.
+[**IO Visor 博客**][157] 有一些关于 BPF 感兴趣的技术文章。它们中的一些包含了许多营销讨论。
 
-**Kernel tracing**: summing up all existing methods, including BPF:
+**内核跟踪**：总结了所有的已有的方法，包括 BPF：
 
-*   [_Meet-cute between eBPF and Kerne Tracing_][62]  (Viller Hsiao, July 2016):
-    Kprobes, uprobes, ftrace
+*   [_邂逅 eBPF 和内核跟踪_][62]  (Viller Hsiao, July 2016):
+    Kprobes、uprobes、ftrace
 
-*   [_Linux Kernel Tracing_][63]  (Viller Hsiao, July 2016):
-    Systemtap, Kernelshark, trace-cmd, LTTng, perf-tool, ftrace, hist-trigger, perf, function tracer, tracepoint, kprobe/uprobe…
+*   [_Linux 内核跟踪_][63]  (Viller Hsiao, July 2016):
+    Systemtap、Kernelshark、trace-cmd、LTTng、perf-tool、ftrace、hist-trigger、perf、function tracer、tracepoint、kprobe/uprobe …
 
-Regarding **event tracing and monitoring**, Brendan Gregg uses eBPF a lot and does an excellent job at documenting some of his use cases. If you are in kernel tracing, you should see his blog articles related to eBPF or to flame graphs. Most of it are accessible [from this article][158] or by browsing his blog.
+关于 **事件跟踪和监视**，Brendan Gregg 使用 eBPF 的一些心得，它使用 eBPFR 的一些案例，他做的非常出色。如果你正在做一些内核跟踪方面的工作，你应该去看一下他的关于 eBPF 和火焰图相关的博客文章。其中的大多数都可以 [从这篇文章中][158] 访问，或者浏览他的博客。
 
-Introducing BPF, but also presenting **generic concepts of Linux networking**:
+介绍 BPF，也介绍 **Linux 网络的一般概念**：
 
-*   [_Linux Networking Explained_][64]  (Thomas Graf, LinuxCon, Toronto, August 2016)
+*   [_Linux 网络详解_][64]  (Thomas Graf, LinuxCon, Toronto, August 2016)
 
-*   [_Kernel Networking Walkthrough_][65]  (Thomas Graf, LinuxCon, Seattle, August 2015)
+*   [_内核网络攻略_][65]  (Thomas Graf, LinuxCon, Seattle, August 2015)
 
-**Hardware offload**:
+**硬件 offload**（译者注：offload 是指原本由软件来处理的一些操作交由硬件来完成，以提升吞吐量，降低 CPU 负荷。）：
 
-*   eBPF with tc or XDP supports hardware offload, starting with Linux kernel version 4.9 and introduced by Netronome. Here is a presentation about this feature:
-    [eBPF/XDP hardware offload to SmartNICs][147] (Jakub Kicinski and Nic Viljoen, netdev 1.2, Tokyo, October 2016)
+*   eBPF 与 tc 或者 XDP 一起支持硬件 offload，开始于 Linux 内核版本 4.9，并且由  Netronome 提出的。这里是关于这个特性的介绍：[eBPF/XDP hardware offload to SmartNICs][147] (Jakub Kicinski 和 Nic Viljoen, netdev 1.2, Tokyo, October 2016)
 
-About **cBPF**:
+关于 **cBPF**：
 
-*   [_The BSD Packet Filter: A New Architecture for User-level Packet Capture_][66]  (Steven McCanne and Van Jacobson, 1992):
-    The original paper about (classic) BPF.
+*   [_BSD 包过滤器：一个用户级包捕获的新架构_][66] (Steven McCanne 和 Van Jacobson, 1992)：
+    它是关于（classic）BPF 的最早的论文。
 
-*   [The FreeBSD manual page about BPF][67] is a useful resource to understand cBPF programs.
+*   [关于 BPF 的 FreeBSD 手册][67] 是理解 cBPF 程序的可用资源。
 
-*   Daniel Borkmann realized at least two presentations on cBPF, [one in 2013 on mmap, BPF and Netsniff-NG][68], and [a very complete one in 2014 on tc and cls_bpf][69].
+*   关于 cBPF,Daniel Borkmann 实现的至少两个演示，[一是，在 2013 年 mmap 中，BPF 和 Netsniff-NG][68]，以及 [在 2014 中关于 tc 和 cls_bpf 的的一个非常完整的演示][69]。
 
-*   On Cloudflare’s blog, Marek Majkowski presented his [use of BPF bytecode with the `xt_bpf`module for **iptables**][70]. It is worth mentioning that eBPF is also supported by this module, starting with Linux kernel 4.10 (I do not know of any talk or article about this, though).
+*   在 Cloudflare 的博客上，Marek Majkowski 提出的它的 [BPF 字节码与 **iptables** 的 `xt_bpf` 模块一起的应用][70]。值得一提的是，从 Linux 内核 4.10 开始，eBPF 也是通过这个模块支持的。(虽然，我并不知道关于这件事的任何讨论或者文章）
 
-*   [Libpcap filters syntax][71]
+*   [Libpcap 过滤器语法][71]
 
-### About XDP
+### 关于 XDP
 
-*   [XDP overview][72] on the IO Visor website.
+*   在 IO Visor 网站上的 [XDP 概述][72]。
 
 *   [_eXpress Data Path (XDP)_][73]  (Tom Herbert, Alexei Starovoitov, March 2016):
-    The first presentation about XDP.
+    这是第一个关于 XDP 的演示。
 
-*   [_BoF - What Can BPF Do For You?_][74]  (Brenden Blanco, LinuxCon, Toronto, August 2016).
+*   [_BoF - BPF 能为你做什么？_][74]  (Brenden Blanco, LinuxCon, Toronto, August 2016)。
 
-*   [_eXpress Data Path_][148]  (Brenden Blanco, Linux Meetup at Santa Clara, July 2016):
-    Contains some (somewhat marketing?) **benchmark results**! With a single core:
-    *   ip routing drop: ~3.6 million packets per second (Mpps)
+*   [_eXpress Data Path_][148]  (Brenden Blanco, Linux Meetup at Santa Clara, July 2016)：
+    包含一些（有点营销的意思？）**benchmark 结果**！使用一个单核心：
+    *   ip 路由丢弃： ~3.6 百万包每秒（Mpps）
 
-    *   tc (with clsact qdisc) drop using BPF: ~4.2 Mpps
+    *   使用 BPF，tc（使用 clsact qdisc）丢弃： ~4.2 Mpps
 
-    *   XDP drop using BPF: 20 Mpps (<10 % CPU utilization)
+    *   使用 BPF，XDP 丢弃：20 Mpps （CPU 利用率 < 10%）
 
-    *   XDP forward (on port on which the packet was received) with rewrite: 10 Mpps
+    *   XDP 重写转发（在端口上它接收到的包）：10 Mpps
 
-    (Tests performed with the mlx4 driver).
+    （测试是用 mlx4 驱动执行的）。
 
-*   Jesper Dangaard Brouer has several excellent sets of slides, that are essential to fully understand the internals of XDP.
+*   Jesper Dangaard Brouer 有几个非常好的幻灯片，它可以从本质上去理解 XDP 的内部结构。
     *   [_XDP − eXpress Data Path, Intro and future use-cases_][37]  (September 2016):
-         _“Linux Kernel’s fight against DPDK”_ . **Future plans** (as of this writing) for XDP and comparison with DPDK.
+         _“Linux 内核与 DPDK 的斗争”_ 。**未来的计划**（在写这篇文章时）它用 XDP 和 DPDK 进行比较。
 
-    *   [_Network Performance Workshop_][38]  (netdev 1.2, Tokyo, October 2016):
-        Additional hints about XDP internals and expected evolution.
+    *   [_网络性能研讨_][38]  (netdev 1.2, Tokyo, October 2016):
+        关于 XDP 内部结构和预期演化的附加提示。
 
-    *   [_XDP – eXpress Data Path, Used for DDoS protection_][39]  (OpenSourceDays, March 2017):
-        Contains details and use cases about XDP, with **benchmark results**, and **code snippets** for **benchmarking** as well as for **basic DDoS protection** with eBPF/XDP (based on an IP blacklisting scheme).
+    *   [_XDP – eXpress Data Path, 可用于 DDoS 防护_][39]  (OpenSourceDays, March 2017):
+        包含了关于 XDP 的详细情况和使用案例、用于 **benchmarking** 的 **benchmark 结果**、和 **代码片断**，以及使用 eBPF/XDP（基于一个 IP 黑名单模式）的用于 **基本的 DDoS 防护**。
 
-    *   [_Memory vs. Networking, Provoking and fixing memory bottlenecks_][40]  (LSF Memory Management Summit, March 2017):
-        Provides a lot of details about current **memory issues** faced by XDP developers. Do not start with this one, but if you already know XDP and want to see how it really works on the page allocation side, this is a very helpful resource.
+    *   [_内存 vs. 网络，激发和修复内存瓶颈_][40]  (LSF Memory Management Summit, March 2017):
+        面对 XDP 开发者提出关于当前 **内存问题** 的许多细节。不要从这一个开始，如果你已经理解了 XDP，并且想去了解它在页面分配方面的真实工作方式，这是一个非常有用的资源。
 
-    *   [_XDP for the Rest of Us_][41]  (netdev 2.1, Montreal, April 2017), with Andy Gospodarek:
-        How to get started with eBPF and XDP for normal humans. This presentation was also summarized by Julia Evans on [her blog][42].
+    *   [_XDP 能为其它人做什么_][41]（netdev 2.1, Montreal, April 2017），with Andy Gospodarek：
+        对于普通人使用 eBPF 和 XDP 怎么去开始。这个演示也由 Julia Evans 在 [他的博客][42] 上做了总结。
 
-    (Jesper also created and tries to extend some documentation about eBPF and XDP, see [related section][75].)
+    （ Jesper 也创建了并且尝试去扩展了有关 eBPF 和 XDP 的一些文档，查看 [相关节][75]。）
 
-*   [_XDP workshop — Introduction, experience, and future development_][76]  (Tom Herbert, netdev 1.2, Tokyo, October 2016) — as of this writing, only the video is available, I don’t know if the slides will be added.
+*   [_XDP 研讨 — 介绍、体验、和未来发展_][76]（Tom Herbert, netdev 1.2, Tokyo, October 2016) — 在这篇文章中，只有视频可用，我不知道是否有幻灯片。
 
-*   [_High Speed Packet Filtering on Linux_][149]  (Gilberto Bertin, DEF CON 25, Las Vegas, July 2017) — an excellent introduction to state-of-the-art packet filtering on Linux, oriented towards DDoS protection, talking about packet processing in the kernel, kernel bypass, XDP and eBPF.
+*   [_在 Linux 上进行高速包过滤_][149]  (Gilberto Bertin, DEF CON 25, Las Vegas, July 2017) — 在 Linux 上的最先进的包过滤的介绍，面向 DDoS 的保护、讨论了关于在内核中进行包处理、内核旁通、XDP 和 eBPF。
 
-### About other components related or based on eBPF
+### 关于 基于 eBPF 或者 eBPF 相关的其它组件
 
-*   [_P4 on the Edge_][77]  (John Fastabend, May 2016):
-    Presents the use of **P4**, a description language for packet processing, with BPF to create high-performance programmable switches.
+*   [_在边缘上的 P4_][77]  (John Fastabend, May 2016):
+    提出了使用 **P4**，一个包处理的描述语言，使用 BPF 去创建一个高性能的可编程交换机。
 
-*   If you like audio presentations, there is an associated [OvS Orbit episode (#11), called  _**P4** on the Edge_][78] , dating from August 2016\. OvS Orbit are interviews realized by Ben Pfaff, who is one of the core maintainers of Open vSwitch. In this case, John Fastabend is interviewed.
+*   如果你喜欢音频的介绍，这里有一个相关的 [OvS Orbit 片断(#11)，叫做 _在边缘上的 **P4**_][78]，日期是 2016 年 8 月。OvS Orbit 是对 Ben Pfaff 的访谈，它是 Open vSwitch 的其中一个核心维护者。在这个场景中，John Fastabend 是被访谈者。
 
-*   [_P4, EBPF and Linux TC Offload_][79]  (Dinan Gunawardena and Jakub Kicinski, August 2016):
-    Another presentation on **P4**, with some elements related to eBPF hardware offload on Netronome’s **NFP** (Network Flow Processor) architecture.
+*   [_P4, EBPF 和 Linux TC Offload_][79]  (Dinan Gunawardena and Jakub Kicinski, August 2016):
+    另一个演示 **P4** 的，使用一些相关的元素在 Netronome 的 **NFP**（网络流处理器）架构上去实现 eBPF 硬件 offload。
 
-*   **Cilium** is a technology initiated by Cisco and relying on BPF and XDP to provide “fast in-kernel networking and security policy enforcement for containers based on eBPF programs generated on the fly”. [The code of this project][150] is available on GitHub. Thomas Graf has been performing a number of presentations of this topic:
-    *   [_Cilium: Networking & Security for Containers with BPF & XDP_][43] , also featuring a load balancer use case (Linux Plumbers conference, Santa Fe, November 2016)
+*   **Cilium** 是一个由 Cisco 最先发起的技术，它依赖 BPF 和 XDP 去提供 “在容器中基于 eBPF 程序，在运行中生成的强制实施的快速的内核中的网络和安全策略”。[这个项目的代码][150] 在 GitHub 上可以访问到。Thomas Graf 对这个主题做了很多的演示：
+    *   [_Cilium: 对容器利用 BPF & XDP 实现网络 & 安全_][43]，也特别展示了一个负载均衡的使用案例（Linux Plumbers conference, Santa Fe, November 2016）
 
-    *   [_Cilium: Networking & Security for Containers with BPF & XDP_][44]  (Docker Distributed Systems Summit, October 2016 — [video][45])
+    *   [_Cilium: 对容器利用 BPF & XDP 实现网络 & 安全_][44] （Docker Distributed Systems Summit, October 2016 — [video][45]）
 
-    *   [_Cilium: Fast IPv6 container Networking with BPF and XDP_][46]  (LinuxCon, Toronto, August 2016)
+    *   [_Cilium: 使用 BPF 和 XDP 的快速 IPv6 容器网络_][46] （LinuxCon, Toronto, August 2016）
 
-    *   [_Cilium: BPF & XDP for containers_][47]  (fosdem17, Brussels, Belgium, February 2017)
+    *   [_Cilium: 为窗口使用 BPF & XDP_][47] （fosdem17, Brussels, Belgium, February 2017）
 
-    A good deal of contents is repeated between the different presentations; if in doubt, just pick the most recent one. Daniel Borkmann has also written [a generic introduction to Cilium][80] as a guest author on Google Open Source blog.
+    在不同的演示中重复了大量的内容；如果有疑问，就选最近的一个。Daniel Borkmann 作为 Google 开源博客的特邀作者，也写了 [Cilium 简介][80]。
 
-*   There are also podcasts about **Cilium**: an [OvS Orbit episode (#4)][81], in which Ben Pfaff interviews Thomas Graf (May 2016), and [another podcast by Ivan Pepelnjak][82], still with Thomas Graf about eBPF, P4, XDP and Cilium (October 2016).
+*   这里也有一个关于 **Cilium** 的播客节目：一个 [OvS Orbit episode (#4)][81]，它是 Ben Pfaff 访谈 Thomas Graf （2016 年 5 月），和 [另外一个 Ivan Pepelnjak 的播客][82]，仍然是 Thomas Graf 的与 eBPF、P4、XDP 和 Cilium （2016 年 10 月）。
 
-*   **Open vSwitch** (OvS), and its related project **Open Virtual Network** (OVN, an open source network virtualization solution) are considering to use eBPF at various level, with several proof-of-concept prototypes already implemented:
+*   **Open vSwitch** (OvS)，它是 **Open Virtual Network**（OVN，一个开源的网络虚拟化解决方案）相关的项目，正在考虑在不同的层次上使用 eBPF，它已经实现了几个概念验证原型：
 
-    *   [Offloading OVS Flow Processing using eBPF][48] (William (Cheng-Chun) Tu, OvS conference, San Jose, November 2016)
+    *   [使用 eBPF 的 Offloading OVS 流处理器][48] (William (Cheng-Chun) Tu, OvS conference, San Jose, November 2016)
 
-    *   [Coupling the Flexibility of OVN with the Efficiency of IOVisor][49] (Fulvio Risso, Matteo Bertrone and Mauricio Vasquez Bernal, OvS conference, San Jose, November 2016)
+    *   [将 OVN 的灵活性与 IOVisor 的高效率相结合][49] (Fulvio Risso, Matteo Bertrone and Mauricio Vasquez Bernal, OvS conference, San Jose, November 2016)
 
-    These use cases for eBPF seem to be only at the stage of proposals (nothing merge to OvS main branch) as far as I know, but it will be very interesting to see what comes out of it.
+    据我所知，这些 eBPF 的使用案例看上去仅处于提议阶段（并没有合并到 OvS 的主分支中），但是，看它带来了什么将是非常有趣的事情。
 
-*   XDP is envisioned to be of great help for protection against Distributed Denial-of-Service (DDoS) attacks. More and more presentations focus on this. For example, the talks from people from Cloudflare ( [_XDP in practice: integrating XDP in our DDoS mitigation pipeline_][83] ) or from Facebook ( [_Droplet: DDoS countermeasures powered by BPF + XDP_][84] ) at the netdev 2.1 conference in Montreal, Canada, in April 2017, present such use cases.
+*   XDP 的设计对分布式拒绝访问（DDoS）攻击是非常有用的。越来越多的演示都关注于它。例如，从 Cloudflare 中的人们的讨论（[_XDP in practice: integrating XDP in our DDoS mitigation pipeline_][83]）或者从 Facebook 上（[_Droplet: DDoS countermeasures powered by BPF + XDP_][84]）在 netdev 2.1 会议上，在 Montreal、Canada、在 2017 年 4 月，都存在这样的很多使用案例。
 
-*   [_CETH for XDP_][85]  (Yan Chan and Yunsong Lu, Linux Meetup, Santa Clara, July 2016):
-    **CETH** stands for Common Ethernet Driver Framework for faster network I/O, a technology initiated by Mellanox.
+*   [_CETH for XDP_][85] （Yan Chan 和 Yunsong Lu、Linux Meetup、Santa Clara、July 2016）：
+    **CETH**，是由 Mellanox 发起的，为实现更快的网络 I/O 而主张的通用以太网驱动程序架构。
 
-*   [**The VALE switch**][86], another virtual switch that can be used in conjunction with the netmap framework, has [a BPF extension module][87].
+*   [**VALE 交换机**][86]，另一个虚拟交换机，它可以与 netmap 框架结合，有 [一个 BPF 扩展模块][87]。
 
-*   **Suricata**, an open source intrusion detection system, [seems to rely on eBPF components][88] for its “capture bypass” features:
+*   **Suricata**，一个开源的入侵检测系统，它的捕获旁通特性 [似乎是依赖于 eBPF 组件][88]：
      [_The adventures of a Suricate in eBPF land_][89]  (Éric Leblond, netdev 1.2, Tokyo, October 2016)
      [_eBPF and XDP seen from the eyes of a meerkat_][90]  (Éric Leblond, Kernel Recipes, Paris, September 2017)
 
-*   [InKeV: In-Kernel Distributed Network Virtualization for DCN][91] (Z. Ahmed, M. H. Alizai and A. A. Syed, SIGCOMM, August 2016):
-    **InKeV** is an eBPF-based datapath architecture for virtual networks, targeting data center networks. It was initiated by PLUMgrid, and claims to achieve better performances than OvS-based OpenStack solutions.
+*   [InKeV: 对于 DCN 的内核中分布式网络虚拟化][91] (Z. Ahmed, M. H. Alizai and A. A. Syed, SIGCOMM, August 2016):
+    **InKeV** 是一个基于 eBPF 的虚拟网络、目标数据中心网络的数据路径架构。它最初由 PLUMgrid 提出，并且声称相比基于 OvS 的 OpenStack 解决方案可以获得更好的性能。
 
-*   [_**gobpf** - utilizing eBPF from Go_][92]  (Michael Schubert, fosdem17, Brussels, Belgium, February 2017):
-    A “library to create, load and use eBPF programs from Go”
+*   [_**gobpf** - 从 Go 中利用 eBPF_][92] （Michael Schubert, fosdem17, Brussels, Belgium, February 2017）：
+    “一个从 Go 中的库，可以去创建、加载和使用 eBPF 程序”
 
-*   [**ply**][93] is a small but flexible open source dynamic **tracer** for Linux, with some features similar to the bcc tools, but with a simpler language inspired by awk and dtrace, written by Tobias Waldekranz.
+*   [**ply**][93] 是为 Linux 实现的一个小的但是非常灵活的开源动态 **跟踪器**，它的一些特性非常类似于 bcc 工具，是受 awk 和 dtrace 启发，但使用一个更简单的语言。它是由 Tobias Waldekranz 写的。
 
-*   If you read my previous article, you might be interested in this talk I gave about [implementing the OpenState interface with eBPF][151], for stateful packet processing, at fosdem17.
+*   如果你读过我以前的文章，你可能对我在这篇文章中的讨论感兴趣，[使用 eBPF 实现 OpenState 接口][151]，关于包状态处理，在 fosdem17 中。
 
 ![](https://qmonnet.github.io/whirl-offload/img/icons/book.svg)
 
-### Documentation
+### 文档
 
-Once you managed to get a broad idea of what BPF is, you can put aside generic presentations and start diving into the documentation. Below are the most complete documents about BPF specifications and functioning. Pick the one you need and read them carefully!
+一旦你对 BPF 是做什么的有一个大体的理解。你可以抛开一般的演示而深入到文档中了。下面是 BPF 的规范和功能的最全面的文档，按你的需要挑一个开始阅读吧！
 
-### About BPF
+### 关于 BPF
 
-*   The **specification of BPF** (both classic and extended versions) can be found within the documentation of the Linux kernel, and in particular in file[linux/Documentation/networking/filter.txt][94]. The use of BPF as well as its internals are documented there. Also, this is where you can find **information about errors thrown by the verifier** when loading BPF code fails. Can be helpful to troubleshoot obscure error messages.
+*   **BPF 的规范**（包含 classic 和 extended 版本）可以在 Linux 内核的文档中，和特定的文件 [linux/Documentation/networking/filter.txt][94] 中找到。BPF 使用以及它的内部结构也被记录在那里。此外，当加载 BPF 代码失败时，在这里可以找到 **被校验器抛出的错误信息**，这有助于你排除不明确的错误信息。
 
-*   Also in the kernel tree, there is a document about **frequent Questions & Answers** on eBPF design in file [linux/Documentation/bpf/bpf_design_QA.txt][95].
+*   此外，在内核树中，在 eBPF 那里有一个关于 **常见的问 & 答** 的文档，它在文件 [linux/Documentation/bpf/bpf_design_QA.txt][95] 中。
 
-*   … But the kernel documentation is dense and not especially easy to read. If you look for a simple description of eBPF language, head for [its **summarized description**][96] on the IO Visor GitHub repository instead.
+*   … 但是，内核文档是非常难懂的，并且非常不容易阅读。如果你只是去查找一个简单的 eBPF 语言的描述，可以去 IO Visor 的 GitHub 仓库，那儿有 [它的 **概括性描述**][96]。
 
-*   By the way, the IO Visor project gathered a lot of **resources about BPF**. Mostly, it is split between[the documentation directory][97] of its bcc repository, and the whole content of [the bpf-docs repository][98], both on GitHub. Note the existence of this excellent [BPF **reference guide**][99] containing a detailed description of BPF C and bcc Python helpers.
+*   顺便说一下，IO Visor 项目收集了许多 **关于 BPF 的资源**。大部分，分别在 bcc 仓库的 [文档目录][97] 中，和 [bpf-docs 仓库][98] 的整个内容中，它们都在 GitHub 上。注意，这个非常好的 [BPF **参考指南**][99] 包含一个详细的 BPF C 和 bcc Python 的 helper 的描述。
 
-*   To hack with BPF, there are some essential **Linux manual pages**. The first one is [the `bpf(2)` man page][100] about the `bpf()` **system call**, which is used to manage BPF programs and maps from userspace. It also contains a description of BPF advanced features (program types, maps and so on). The second one is mostly addressed to people wanting to attach BPF programs to tc interface: it is [the `tc-bpf(8)` man page][101], which is a reference for **using BPF with tc**, and includes some example commands and samples of code.
+*   想深入到 BPF，那里有一些必要的 **Linux 手册页**。第一个是 [`bpf(2)` man page][100] 关于 `bpf()` **系统调用**，它用于从用户空间去管理 BPF 程序和映射。它也包含一个 BPF 高级特性的描述（程序类型、映射、等等）。第二个是主要去处理希望去附加到 tc 接口的 BPF 程序：它是 [`tc-bpf(8)` man page][101]，它是 **使用 BPF 和 tc** 的一个参考，并且包含一些示例命令和参考代码。
 
-*   Jesper Dangaard Brouer initiated an attempt to **update eBPF Linux documentation**, including **the different kinds of maps**. [He has a draft][102] to which contributions are welcome. Once ready, this document should be merged into the man pages and into kernel documentation.
+*   Jesper Dangaard Brouer 发起了一个 **更新 eBPF Linux 文档** 的尝试，包含 **不同的映射**。[他有一个草案][102]，欢迎去贡献。一旦完成，这个文档将被合并进 man 页面并且进入到内核文档。
 
-*   The Cilium project also has an excellent [**BPF and XDP Reference Guide**][103], written by core eBPF developers, that should prove immensely useful to any eBPF developer.
+*   Cilium 项目也有一个非常好的 [**BPF 和 XDP 参考指南**][103]，它是由核心的 eBPF 开发者写的，它被证明对于 eBPF 开发者是极其有用的。
 
-*   David Miller has sent several enlightening emails about eBPF/XDP internals on the [xdp-newbies][152]mailing list. I could not find a link that gathers them at a single place, so here is a list:
-    *   [bpf.h and you…][50]
+*   David Miller 在 [xdp-newbies][152] 邮件列表中发了几封关于 eBPF/XDP 内部结构的富有启发性的电子邮件。我找不到一个单独的地方收集它们的链接，因此，这里是一个列表：
+
+    *   [bpf.h 和你 …][50]
 
     *   [Contextually speaking…][51]
 
-    *   [BPF Verifier Overview][52]
+    *   [BPF 校验器概述][52]
 
-    The last one is possibly the best existing summary about the verifier at this date.
+    最后一个可能是目前来说关于校验器的最佳的总结。
 
-*   Ferris Ellis started [a **blog post series about eBPF**][104]. As I write this paragraph, the first article is out, with some historical background and future expectations for eBPF. Next posts should be more technical, and look promising.
+*   Ferris Ellis 发布的 [一个关于 **eBPF 的系列博客文章**][104]。作为我写的这个短文，第一篇文章是关于 eBPF 的历史背景和未来期望。接下来的文章将更多的是技术方面，和前景展望。
 
-*   [A **list of BPF features per kernel version**][153] is available in bcc repository. Useful is you want to know the minimal kernel version that is required to run a given feature. I contributed and added the links to the commits that introduced each feature, so you can also easily access the commit logs from there.
+*   [一个 **每个内核版本的 BPF 特性列表**][153] 在 bcc 仓库中可以找到。如果你想去知道运行一个给定的特性所要求的最小的内核版本，它是非常有用的。我贡献和添加了链接到提交中，它介绍了每个特性，因此，你也可以从那里很容易地去访问提交历史。
 
-### About tc
+### 关于 tc
 
-When using BPF for networking purposes in conjunction with tc, the Linux tool for **t**raffic **c**ontrol, one may wish to gather information about tc’s generic functioning. Here are a couple of resources about it.
+当为了网络目的使用 BPF 与 tc 进行结合时，Linux 流量控制（**t**raffic **c**ontrol）工具，它可用于去采集关于 tc 的可用功能的信息。这里有几个关于它的资源。
 
-*   It is difficult to find simple tutorials about **QoS on Linux**. The two links I have are long and quite dense, but if you can find the time to read it you will learn nearly everything there is to know about tc (nothing about BPF, though). There they are:  [_Traffic Control HOWTO_  (Martin A. Brown, 2006)][105], and the  [_Linux Advanced Routing & Traffic Control HOWTO_  (“LARTC”) (Bert Hubert & al., 2002)][106].
+*   找到关于 **Linux 上 QoS** 的简单教程是很困难的。这里有两个链接，它们很长而且很难懂，但是，如果你可以抽时间去阅读它，你将学习到几乎关于 tc 的任何东西（虽然，关于 BPF 它什么也没有)。它们在这里：[_怎么去实现流量控制_  (Martin A. Brown, 2006)][105]，和 [_怎么去实现 Linux 的高级路由 & 流量控制_  (“LARTC”) (Bert Hubert & al., 2002)][106]。
 
-*   **tc manual pages** may not be up-to-date on your system, since several of them have been added lately. If you cannot find the documentation for a particular queuing discipline (qdisc), class or filter, it may be worth checking the latest [manual pages for tc components][107].
+*   在你的系统上的 **tc 手册页面** 并不是最新日期的，因为它们中的几个最近已经增加了。如果你没有找到关于特定的队列规则、分类或者过滤器的文档，它可能在最新的 [tc 组件的手册页面][107] 中。
 
-*   Some additional material can be found within the files of iproute2 package itself: the package contains [some documentation][108], including some files that helped me understand better [the functioning of **tc’s actions**][109].
-    **Edit:** While still available from the Git history, these files have been deleted from iproute2 in October 2017.
+*   一些额外的材料可以在 iproute2 包自已的文件中找到：这个包中有 [一些文档][108]，包括一些文件，它可以帮你去理解 [**tc 的 action** 的功能][109]。
+    **注意：** 这些文件在 2017 年 10 月 已经从 iproute2 中删除，然而，从 Git 历史中却一直可用。
 
-*   Not exactly documentation: there was [a workshop about several tc features][110] (including filtering, BPF, tc offload, …) organized by Jamal Hadi Salim during the netdev 1.2 conference (October 2016).
+*   非精确资料：这里是 [一个关于 tc 的几个特性的研讨会][110]（包含过滤、BPF、tc offload、…） 由 Jamal Hadi Salim 在 netdev 1.2 会议上组织的（October 2016）。
 
-*   Bonus information—If you use `tc` a lot, here are some good news: I [wrote a bash completion function][111] for this tool, and it should be shipped with package iproute2 coming with kernel version 4.6 and higher!
+*   额外信息 — 如果你使用 `tc` 较多，这里有一些好消息：我用这个工具 [写了一个 bash 完整的功能][111]，并且它被包 iproute2 带到内核版本 4.6 和更高版中！
 
-### About XDP
+### 关于 XDP
 
-*   Some [work-in-progress documentation (including specifications)][112] for XDP started by Jesper Dangaard Brouer, but meant to be a collaborative work. Under progress (September 2016): you should expect it to change, and maybe to be moved at some point (Jesper [called for contribution][113], if you feel like improving it).
+*   对于 XDP 的一些 [进展中的文档（包括规范）][112] 已经由 Jesper Dangaard Brouer 启动，并且意味着将成为一个合作的工作。正在推进（2016 年 9 月）：你期望它去改变，并且或许在一些节点上移动（Jesper [称为贡献][113]，如果你想去改善它）。
 
-*   The [BPF and XDP Reference Guide][114] from Cilium project… Well, the name says it all.
+*   自来 Cilium 项目的 [BPF 和 XDP 参考指南][114] … 好吧，这个名字已经说明了一切。
 
-### About P4 and BPF
+### 关于 P4 和 BPF
 
-[P4][159] is a language used to specify the behavior of a switch. It can be compiled for a number of hardware or software targets. As you may have guessed, one of these targets is BPF… The support is only partial: some P4 features cannot be translated towards BPF, and in a similar way there are things that BPF can do but that would not be possible to express with P4\. Anyway, the documentation related to **P4 use with BPF** [used to be hidden in bcc repository][160]. This changed with P4_16 version, the p4c reference compiler including [a backend for eBPF][161].
+[P4][159] 是一个用于指定交换机行为的语言。它可以被编译为许多种目标硬件或软件。因此，你可能猜到了，这些目标中的一个就是 BPF … 仅部分支持的：一些 P4 特性并不能被转化到 BPF 中，并且，用类似的方法，BPF 可以做的事情，而使用 P4 却不能表达出现。不过，**P4 与 BPF 使用** 的相关文档，[用于去隐藏在 bcc 仓库中][160]。这个改变在 P4_16 版本中，p4c 引用的编辑器包含 [一个 eBPF 后端][161]。
 
 ![](https://qmonnet.github.io/whirl-offload/img/icons/flask.svg)
 
-### Tutorials
+### 教程
 
-Brendan Gregg has produced excellent **tutorials** intended for people who want to **use bcc tools** for tracing and monitoring events in the kernel. [The first tutorial about using bcc itself][162] comes with eleven steps (as of today) to understand how to use the existing tools, while [the one **intended for Python developers**][163] focuses on developing new tools, across seventeen “lessons”.
+Brendan Gregg 为想去 **使用 bcc 工具** 跟踪和监视内核中的事件的人制作了一个非常好的 **教程**。[第一个教程是关于如何使用 bcc 工具][162]，它总共有十一步，教你去理解怎么去使用已有的工具，而 [**针对 Python 开发者** 的一个目标][163] 是专注于开发新工具，它总共有十七节 “课程”。
 
-Sasha Goldshtein also has some  [_**Linux Tracing Workshops Materials**_][164]  involving the use of several BPF tools for tracing.
+Sasha Goldshtein 也有一些 [_**Linux 跟踪研究材料**_][164] 涉及到使用几个 BPF 去进行跟踪。
 
-Another post by Jean-Tiare Le Bigot provides a detailed (and instructive!) example of [using perf and eBPF to setup a low-level tracer][165] for ping requests and replies
+作者为 Jean-Tiare Le Bigot 的文章为 ping 请求和回复，提供了一个详细的（和有指导意义的）[使用 perf 和 eBPF 去设置一个低级的跟踪器][165] 的示例。
 
-Few tutorials exist for network-related eBPF use cases. There are some interesting documents, including an  _eBPF Offload Starting Guide_ , on the [Open NFP][166] platform operated by Netronome. Other than these, the talk from Jesper,  [_XDP for the Rest of Us_][167] , is probably one of the best ways to get started with XDP.
+对于网络相关的 eBPF 使用案例也有几个教程。那里有一些有趣的文档，包含一个 _eBPF Offload 入门指南_，由 Netronome 在 [Open NFP][166] 平台上操作的。其它的那些，来自 Jesper 的演讲，[_XDP 能为其它人做什么_][167]，可能是 XDP 入门的最好的方法之一。
 
 ![](https://qmonnet.github.io/whirl-offload/img/icons/gears.svg)
 
-### Examples
+### 示例
 
-It is always nice to have examples. To see how things really work. But BPF program samples are scattered across several projects, so I listed all the ones I know of. The examples do not always use the same helpers (for instance, tc and bcc both have their own set of helpers to make it easier to write BPF programs in C language).
+有示例是非常好的。看看它们是如何工作的。但是 BPF 程序示例是分散在几个项目中的，因此，我列出了我所知道的所有的示例。示例并不是使用相同的 helper（例如，tc 和 bcc 都有一套它们自己的 helper，使它可以很容易地去用 C 语言写 BPF 程序）
 
-### From the kernel
+### 来自内核的示例
 
-The kernel contains examples for most types of program: filters to bind to sockets or to tc interfaces, event tracing/monitoring, and even XDP. You can find these examples under the [linux/samples/bpf/][168]directory.
+主要的程序类型都包含在内核的示例中：过滤器绑定到套接字或者到 tc 接口、事件跟踪/监视、甚至是 XDP。你可以在 [linux/samples/bpf/][168] 目录中找到这些示例。
 
-Also do not forget to have a look to the logs related to the (git) commits that introduced a particular feature, they may contain some detailed example of the feature.
+也不要忘记去看一下 git 相关的提交历史，它们有一些指定的特性的介绍，它们也包含一些特性的详细的示例。
 
-### From package iproute2
+### 来自包 iproute2 的示例
 
-The iproute2 package provide several examples as well. They are obviously oriented towards network programming, since the programs are to be attached to tc ingress or egress interfaces. The examples dwell under the [iproute2/examples/bpf/][169] directory.
+iproute2 包也提供了几个示例。它们都很明显地偏向网络编程，因此，这个程序是附加到 tc ingress 或者 egress 接口上。这些示例在 [iproute2/examples/bpf/][169] 目录中。
 
-### From bcc set of tools
+### 来自 bcc 工具集的示例
 
-Many examples are [provided with bcc][170]:
+许多示例都 [与 bcc 一起提供][170]：
 
-*   Some are networking example programs, under the associated directory. They include socket filters, tc filters, and a XDP program.
+*   一些网络编程的示例在关联的目录下面。它们包括套接字过滤器、tc 过滤器、和一个 XDP 程序。
 
-*   The `tracing` directory include a lot of example **tracing programs**. The tutorials mentioned earlier are based on these. These programs cover a wide range of event monitoring functions, and some of them are production-oriented. Note that on certain Linux distributions (at least for Debian, Ubuntu, Fedora, Arch Linux), these programs have been [packaged][115] and can be “easily” installed by typing e.g. `# apt install bcc-tools`, but as of this writing (and except for Arch Linux), this first requires to set up IO Visor’s own package repository.
+*   `tracing` 目录包含许多 **跟踪编程** 的示例。前面的教程中提到的都在那里。那些程序涉及了事件跟踪的很大的一个范围，并且，它们中的一些是面向生产系统的。注意，某些 Linux 分发版（至少是 Debian、Ubuntu、Fedora、Arch Linux）、这些程序已经被 [打包了][115] 并且可以很 “容易地” 通过比如 `# apt install bcc-tools` 进行安装。但是在写这篇文章的时候（除了 Arch Linux），第一个要求是去安装 IO Visor 的包仓库。
 
-*   There are also some examples **using Lua** as a different BPF back-end (that is, BPF programs are written with Lua instead of a subset of C, allowing to use the same language for front-end and back-end), in the third directory.
+*   那里也有 **使用 Lua** 作为一个不同的 BPF 后端（那是因为 BPF 程序是用 Lua 写的，它是 C 语言的一个子集，它允许为前端和后端使用相同的语言）的一些示例，它在第三个目录中。
 
-### Manual pages
+### 手册页面
 
-While bcc is generally the easiest way to inject and run a BPF program in the kernel, attaching programs to tc interfaces can also be performed by the `tc` tool itself. So if you intend to **use BPF with tc**, you can find some example invocations in the [`tc-bpf(8)` manual page][171].
+虽然 bcc 一般可以用很容易的方式在内核中去注入和运行一个 BPF 程序，通过 `tc` 工具去将程序附加到 tc 接口也可以被执行。因此，如果你打算将 **BPF 与 tc 一起使用**，你可以在 [`tc-bpf(8)` 手册页面][171] 中找到一些调用示例。
 
 ![](https://qmonnet.github.io/whirl-offload/img/icons/srcfile.svg)
 
-### The code
+### 代码
 
-Sometimes, BPF documentation or examples are not enough, and you may have no other solution that to display the code in your favorite text editor (which should be Vim of course) and to read it. Or you may want to hack into the code so as to patch or add features to the machine. So here are a few pointers to the relevant files, finding the functions you want is up to you!
+有时候，BPF 文档或者示例并不足够多，而且你可能没有其它的方式在你喜欢的文本编辑器（它当然应该是 Vim）中去显示代码并去阅读它。或者，你可能深入到代码中想去做一个补丁程序或者为机器增加一些新特性。因此，这里对有关的文件的几个建议，找到你想要的功能取决于你自己！
 
-### BPF code in the kernel
+### 在内核中的 BPF 代码
 
-*   The file [linux/include/linux/bpf.h][116] and its counterpart [linux/include/uapi/bpf.h][117] contain **definitions** related to eBPF, to be used respectively in the kernel and to interface with userspace programs.
+*   文件 [linux/include/linux/bpf.h][116] 和它的副本 [linux/include/uapi/bpf.h][117] 包含有关 eBPF 的 **定义**，它分别被内核中和用户空间程序的接口使用。
 
-*   On the same pattern, files [linux/include/linux/filter.h][118] and [linux/include/uapi/filter.h][119] contain information used to **run the BPF programs**.
+*   相同的方式，文件 [linux/include/linux/filter.h][118] 和 [linux/include/uapi/filter.h][119] 包含的信息被 **运行的 BPF 程序** 使用。
 
-*   The **main pieces of code** related to BPF are under [linux/kernel/bpf/][120] directory. **The different operations permitted by the system call**, such as program loading or map management, are implemented in file `syscall.c`, while `core.c` contains the **interpreter**. The other files have self-explanatory names: `verifier.c` contains the **verifier** (no kidding), `arraymap.c` the code used to interact with **maps** of type array, and so on.
+*   BPF 相关的 **主要的代码片断** 在 [linux/kernel/bpf/][120] 目录下面。**被系统以不同的操作许可调用** 比如，程序加载或者映射管理是在文件 `syscall.c` 中实现，虽然 `core.c` 包含在 **解析器** 中。其它的文件有明显的命名：`verifier.c` 包含在 **校验器** 中（不是开玩笑的），`arraymap.c` 的代码用于与阵列类型的 **映射** 去互动，等等。
 
-*   The **helpers**, as well as several functions related to networking (with tc, XDP…) and available to the user, are implemented in [linux/net/core/filter.c][121]. It also contains the code to migrate cBPF bytecode to eBPF (since all cBPF programs are now translated to eBPF in the kernel before being run).
+*  **helpers**，以及几个网络（与 tc、XDP 一起）和用户可用的相关功能是实现在 [linux/net/core/filter.c][121] 中。它也包含代码去移植 cBPF 字节码到 eBPF 中（因为在运行之前，内核中的所有的 cBPF 程序被转换成 eBPF）
 
-*   The **JIT compilers** are under the directory of their respective architectures, such as file[linux/arch/x86/net/bpf_jit_comp.c][122] for x86.
+*   **JIT 编译器** 在它们各自的架构目录下面，比如，x86 架构的在 [linux/arch/x86/net/bpf_jit_comp.c][122] 中。
 
-*   You will find the code related to **the BPF components of tc** in the [linux/net/sched/][123] directory, and in particular in files `act_bpf.c` (action) and `cls_bpf.c` (filter).
+*   在 [linux/net/sched/][123] 目录下，你可以找到 **tc 的 BPF 组件** 相关的代码，尤其是在文件 `act_bpf.c` （action）和 `cls_bpf.c`（filter）中。
 
-*   I have not hacked with **event tracing** in BPF, so I do not really know about the hooks for such programs. There is some stuff in [linux/kernel/trace/bpf_trace.c][124]. If you are interested in this and want to know more, you may dig on the side of Brendan Gregg’s presentations or blog posts.
+*   我并没有在 BPF 上深入到 **事件跟踪** 中，因此，我并不真正了解这些程序的钩子。在 [linux/kernel/trace/bpf_trace.c][124] 那里有一些东西。如果你对它感 兴趣，并且想去了解更多，你可以在 Brendan Gregg 的演示或者博客文章上去深入挖掘。
 
-*   Nor have I used **seccomp-BPF**. But the code is in [linux/kernel/seccomp.c][125], and some example use cases can be found in [linux/tools/testing/selftests/seccomp/seccomp_bpf.c][126].
+*   我也没有使用过 **seccomp-BPF**。但它的代码在 [linux/kernel/seccomp.c][125]，并且可以在 [linux/tools/testing/selftests/seccomp/seccomp_bpf.c][126] 中找到一些它的使用示例。
 
-### XDP hooks code
+### XDP 钩子代码
 
-Once loaded into the in-kernel BPF virtual machine, **XDP** programs are hooked from userspace into the kernel network path thanks to a Netlink command. On reception, the function `dev_change_xdp_fd()` in file [linux/net/core/dev.c][172] is called and sets a XDP hook. Such hooks are located in the drivers of supported NICs. For example, the mlx4 driver used for some Mellanox hardware has hooks implemented in files under the [drivers/net/ethernet/mellanox/mlx4/][173] directory. File en_netdev.c receives Netlink commands and calls `mlx4_xdp_set()`, which in turns calls for instance `mlx4_en_process_rx_cq()` (for the RX side) implemented in file en_rx.c.
+一旦将 BPF 虚拟机加载进内核，由一个 Netlink 命令将 **XDP** 程序从用户空间钩入到内核网络路径中。接收它的是在 [linux/net/core/dev.c][172] 文件中的被调用的 `dev_change_xdp_fd()` 函数，并且由它设置一个 XDP 钩子。比如，钩子位于在 NICs 支持的驱动中。例如，为一些 Mellanox 硬件使用的 mlx4 驱动的钩子实现在 [drivers/net/ethernet/mellanox/mlx4/][173] 目录下的文件中。文件 en_netdev.c 接收 Netlink 命令并调用 `mlx4_xdp_set()`，它再被在文件 en_rx.c 实现的实例 `mlx4_en_process_rx_cq()` 调用（对于 RX 侧）。
 
-### BPF logic in bcc
+### 在 bcc 中的 BPF 逻辑 
 
-One can find the code for the **bcc** set of tools [on the bcc GitHub repository][174]. The **Python code**, including the `BPF` class, is initiated in file [bcc/src/python/bcc/__init__.py][175]. But most of the interesting stuff—to my opinion—such as loading the BPF program into the kernel, happens [in the libbcc **C library**][176].
+[在 bcc 的 GitHub 仓库][174] 上找到的 **bcc** 工具集的其中一个代码。**Python 代码**，包含在 `BPF` 类中，最初它在文件 [bcc/src/python/bcc/__init__.py][175] 中。但是许多感兴趣的东西 — 我的意见是 — 比如，加载 BPF 程序到内核中，碰巧在 [libbcc 的 **C 库**][176]中。
 
-### Code to manage BPF with tc
+### 使用 tc 去管理 BPF 的代码
 
-The code related to BPF **in tc** comes with the iproute2 package, of course. Some of it is under the[iproute2/tc/][177] directory. The files f_bpf.c and m_bpf.c (and e_bpf.c) are used respectively to handle BPF filters and actions (and tc `exec` command, whatever this may be). File q_clsact.c defines the `clsact` qdisc especially created for BPF. But **most of the BPF userspace logic** is implemented in[iproute2/lib/bpf.c][178] library, so this is probably where you should head to if you want to mess up with BPF and tc (it was moved from file iproute2/tc/tc_bpf.c, where you may find the same code in older versions of the package).
+**在 tc** 中与 iproute2 包中一起带来的与 BPF 相关的代码。其中的一些在 [iproute2/tc/][177] 目录中。文件 f_bpf.c 和 m_bpf.c（和 e_bpf.c）是各自用于处理 BPF 的过滤器和动作的（和tc `exec` 命令，或许什么命令都可以）。文件 q_clsact.c 定义了 `clsact`，qdisc 是为 BPF 特别创建的。但是，**大多数的 BPF 用户空间逻辑** 是在 [iproute2/lib/bpf.c][178] 库中实现的，因此，如果你想去使用 BPF 和 tc，这里可能是会将你搞混乱的地方（它是从文件 iproute2/tc/tc_bpf.c 中来的，你也可以在旧版本的包中找到代码相同的地方）。
 
-### BPF utilities
+### BPF 实用工具
 
-The kernel also ships the sources of three tools (`bpf_asm.c`, `bpf_dbg.c`, `bpf_jit_disasm.c`) related to BPF, under the [linux/tools/net/][179] or [linux/tools/bpf/][180] directory depending on your version:
+内核中也带有 BPF 相关的三个工具的源代码（`bpf_asm.c`, `bpf_dbg.c`, `bpf_jit_disasm.c`)、根据你的版本不同，在 [linux/tools/net/][179] 或者 [linux/tools/bpf/][180] 目录下面：
 
-*   `bpf_asm` is a minimal cBPF assembler.
+*   `bpf_asm` 是一个极小的汇编程序。
 
-*   `bpf_dbg` is a small debugger for cBPF programs.
+*   `bpf_dbg` 是一个很小的 cBPF 程序调试器。
 
-*   `bpf_jit_disasm` is generic for both BPF flavors and could be highly useful for JIT debugging.
+*   `bpf_jit_disasm` 对于两种 BPF 都是通用的，并且对于 JIT 调试来说非常有用。
 
-*   `bpftool` is a generic utility written by Jakub Kicinski, and that can be used to interact with eBPF programs and maps from userspace, for example to show, dump, pin programs, or to show, create, pin, update, delete maps.
+*   `bpftool` 是由 Jakub Kicinski 写的通用工具，并且它可以与 eBPF 程序和来自用户空间的映射进行交互，例如，去展示、转储、pin 程序、或者去展示、创建、pin、更新、删除映射。
 
-Read the comments at the top of the source files to get an overview of their usage.
+阅读在源文件顶部的注释可以得到一个它们使用方法的概述。
 
-### Other interesting chunks
+### 其它感兴趣的 chunks
 
-If you are interested the use of less common languages with BPF, bcc contains [a **P4 compiler** for BPF targets][181] as well as [a **Lua front-end**][182] that can be used as alternatives to the C subset and (in the case of Lua) to the Python tools.
+如果你对关于 BPF 的不常见的语言的使用感兴趣，bcc 包含 [一个为 BPF 目标的 **P4 编译器**][181]以及 [一个 **Lua 前端**][182]，它可以被使用，它以代替 C 的一个子集，并且（在 Lua 的案例中）可以用于 Python 工具。
 
-### LLVM backend
+### LLVM 后端
 
-The BPF backend used by clang / LLVM for compiling C into eBPF was added to the LLVM sources in[this commit][183] (and can also be accessed on [the GitHub mirror][184]).
+在 [这个提交][183] 中，clang / LLVM 用于将 C 编译成 BPF 后端，将它添加到 LLVM 源（也可以在 [the GitHub mirror][184] 上访问）。
 
-### Running in userspace
+### 在用户空间中运行
 
-As far as I know there are at least two eBPF userspace implementations. The first one, [uBPF][185], is written in C. It contains an interpreter, a JIT compiler for x86_64 architecture, an assembler and a disassembler.
+到目前为止，我知道那里有至少两种 eBPF 用户空间实现。第一个是 [uBPF][185]，它是用 C 写的。它包含一个解析器、一个 x86_64 架构的 JIT 编译器、一个汇编器和一个反汇编器。
 
-The code of uBPF seems to have been reused to produce a [generic implementation][186], that claims to support FreeBSD kernel, FreeBSD userspace, Linux kernel, Linux userspace and MacOSX userspace. It is used for the [BPF extension module for VALE switch][187].
+uBPF 的代码似乎被重用了，去产生了一个 [通用实现][186]，claims 支持 FreeBSD 内核、FreeBSD 用户空间、Linux 内核、Linux 用户空间和 Mac OSX 用户空间。它被 [VALE 交换机的 BPF 扩展模块][187]使用。
 
-The other userspace implementation is my own work: [rbpf][188], based on uBPF, but written in Rust. The interpreter and JIT-compiler work (both under Linux, only the interpreter for MacOSX and Windows), there may be more in the future.
+其它用户空间的实现是我做的：[rbpf][188]，基于 uBPF，但是用 Rust 写的。写了解析器和 JIT 编译器 （Linux 下两个都有，Mac OSX 和 Windows 下仅有解析器），以后可能会有更多。
 
-### Commit logs
+### 提交日志
 
-As stated earlier, do not hesitate to have a look at the commit log that introduced a particular BPF feature if you want to have more information about it. You can search the logs in many places, such as on [git.kernel.org][189], [on GitHub][190], or on your local repository if you have cloned it. If you are not familiar with git, try things like `git blame <file>` to see what commit introduced a particular line of code, then `git show <commit>` to have details (or search by keyword in `git log` results, but this may be tedious). See also [the list of eBPF features per kernel version][191] on bcc repository, that links to relevant commits.
+正如前面所说的，如果你希望得到更多的关于它的信息，不要犹豫，去看一些提交日志，它介绍了一些特定的 BPF 特性。你可以在许多地方搜索日志，比如，在 [git.kernel.org][189]、[在 GitHub 上][190]、或者如果你克隆过它还有你的本地仓库中。如果你不熟悉 git，你可以尝试像这些去做 `git blame <file>` 去看看介绍特定代码行的提交内容，然后，`git show <commit>` 去看详细情况（或者在 `git log` 的结果中按关键字搜索，但是这样做通常比较单调乏味）也可以看在 bcc 仓库中的 [按内核版本区分的 eBPF 特性列表][191]，它链接到相关的提交上。
 
 ![](https://qmonnet.github.io/whirl-offload/img/icons/wand.svg)
 
-### Troubleshooting
+### 排错
 
-The enthusiasm about eBPF is quite recent, and so far I have not found a lot of resources intending to help with troubleshooting. So here are the few I have, augmented with my own recollection of pitfalls encountered while working with BPF.
+对 eBPF 的狂热是最近的事情，因此，到目前为止我还找不到许多关于怎么去排错的资源。所以这里只有几个，在使用 BPF 进行工作的时候，我对自己遇到的问题进行了记录。
 
-### Errors at compilation time
+### 编译时的错误
 
-*   Make sure you have a recent enough version of the Linux kernel (see also [this document][127]).
+*   确保你有一个最新的 Linux 内核版本（也可以看 [这个文档][127]）。
 
-*   If you compiled the kernel yourself: make sure you installed correctly all components, including kernel image, headers and libc.
+*   如果你自己编译内核：确保你安装了所有正确的组件，包括内核镜像、头文件和 libc。
 
-*   When using the `bcc` shell function provided by `tc-bpf` man page (to compile C code into BPF): I once had to add includes to the header for the clang call:
+*   当使用 `tc-bpf`（用于去编译 C 代码到 BPF 中）的 man 页面提供的 `bcc` shell 函数时：我只是添加包含 clang 调用的头部：
 
     ```
     __bcc() {
@@ -463,55 +463,55 @@ The enthusiasm about eBPF is quite recent, and so far I have not found a lot of 
 
     (seems fixed as of today).
 
-*   For other problems with `bcc`, do not forget to have a look at [the FAQ][128] of the tool set.
+*   对于使用 `bcc` 的其它问题，不要忘了去看一看这个工具集的 [答疑][128]。
 
-*   If you downloaded the examples from the iproute2 package in a version that does not exactly match your kernel, some errors can be triggered by the headers included in the files. The example snippets indeed assume that the same version of iproute2 package and kernel headers are installed on the system. If this is not the case, download the correct version of iproute2, or edit the path of included files in the examples to point to the headers included in iproute2 (some problems may or may not occur at runtime, depending on the features in use).
+*   如果你从一个并不精确匹配你的内核版本的 iproute2 包中下载了示例，可能会通过在文件中包含的头文件触发一些错误。这些示例片断都假设安装在你的系统中内核的头文件与 iproute2 包是相同版本的。如果不是这种情况，下载正确的 iproute2 版本，或者编辑示例中包含的文件的路径，指向到 iproute2 中包含的头文件上（在运行时一些问题可能或者不可能发生，取决于你使用的特性）。
 
-### Errors at load and run time
+### 在加载和运行时的错误
 
-*   To load a program with tc, make sure you use a tc binary coming from an iproute2 version equivalent to the kernel in use.
+*   使用 tc 去加载一个程序，确保你使用了一个与使用中的内核版本等价的 iproute2 中的 tc 二进制文件。
 
-*   To load a program with bcc, make sure you have bcc installed on the system (just downloading the sources to run the Python script is not enough).
+*   使用 bcc 去加载一个程序，确保在你的系统上安装了 bcc（仅下载源代码去运行 Python 脚本是不够的）。
 
-*   With tc, if the BPF program does not return the expected values, check that you called it in the correct fashion: filter, or action, or filter with “direct-action” mode.
+*   使用 tc，如果 BPF 程序不能返回一个预期值，检查调用它的方式：过滤器、或者动作、或者使用 “直接传动” 模式的过滤器。
 
-*   With tc still, note that actions cannot be attached directly to qdiscs or interfaces without the use of a filter.
+*   静态使用 tc，注意不使用过滤器，动作不会直接附加到 qdiscs 或者接口。
 
-*   The errors thrown by the in-kernel verifier may be hard to interpret. [The kernel documentation][129]may help, so may [the reference guide][130] or, as a last resort, the source code (see above) (good luck!). For this kind of errors it is also important to keep in mind that the verifier  _does not run_  the program. If you get an error about an invalid memory access or about uninitialized data, it does not mean that these problems actually occurred (or sometimes, that they can possibly occur at all). It means that your program is written in such a way that the verifier estimates that such errors could happen, and therefore it rejects the program.
+*   通过内核校验器抛出错误到解析器可能很难。[内核文档][129]或许可以提供帮助，因此，可以 [参考指南][130] 或者，万不得一的情况下，可以去看源代码（祝你好运！）。记住，校验器 _不运行_ 程序，对于这种类型的错误，它也是非常重要的。如果你得到一个关于无效内存访问或者关于未初始化的数据的错误，它并不意味着那些问题真实发生了（或者有时候，它们完全有可能发生）。它意味着你的程序是以校验器预计可能发生错误的方式写的，并且因此而拒绝这个程序。
 
-*   Note that `tc` tool has a verbose mode, and that it works well with BPF: try appending `verbose`at the end of your command line.
+*   注意 `tc` 工具有一个 `verbose` 模式，它与 BPF 一起工作的很好：在你的命令行尾部尝试追加一个 `verbose`。
 
-*   bcc also has verbose options: the `BPF` class has a `debug` argument that can take any combination of the three flags `DEBUG_LLVM_IR`, `DEBUG_BPF` and `DEBUG_PREPROCESSOR` (see details in [the source file][131]). It even embeds [some facilities to print output messages][132] for debugging the code.
+*   bcc 也有一个 verbose 选项：`BPF` 类有一个 `debug` 参数，它可以带 `DEBUG_LLVM_IR`、`DEBUG_BPF` 和 `DEBUG_PREPROCESSOR` 三个标志中任何组合（详细情况在 [源文件][131]中）。 为调试代码，它甚至嵌入了 [一些条件去打印输出代码][132]。
 
-*   LLVM v4.0+ [embeds a disassembler][133] for eBPF programs. So if you compile your program with clang, adding the `-g` flag for compiling enables you to later dump your program in the rather human-friendly format used by the kernel verifier. To proceed to the dump, use:
+*   LLVM v4.0+ 为 eBPF 程序 [嵌入一个反汇编器][133]。因此，如果你用 clang 编译你的程序，在编译时添加 `-g` 标志允许你通过内核校验器去以人类可读的格式去转储你的程序。处理转储文件，使用：
 
     ```
     $ llvm-objdump -S -no-show-raw-insn bpf_program.o
 
     ```
 
-*   Working with maps? You want to have a look at [bpf-map][134], a very userful tool in Go created for the Cilium project, that can be used to dump the contents of kernel eBPF maps. There also exists [a clone][135] in Rust.
+*   使用映射工作？你想去看 [bpf-map][134]，一个为 Cilium 项目而用 Go 创建的非常有用的工具，它可以用于去转储内核中 eBPF 映射的内容。那里也有在 Rust 中的 [一个克隆][135]。
 
-*   There is an old [`bpf` tag on **StackOverflow**][136], but as of this writing it has been hardly used—ever (and there is nearly nothing related to the new eBPF version). If you are a reader from the Future though, you may want to check whether there has been more activity on this side.
+*   那里有一个旧的 [在 **StackOverflow** 上的 `bpf` 标签][136]，但是，在这篇文章中它一直没有被使用过（并且那里几乎没有与新的 eBPF 相关的东西）。如果你是一位来自未来的阅读者，你可能想去看看在这方面是否有更多的活动。
 
 ![](https://qmonnet.github.io/whirl-offload/img/icons/zoomin.svg)
 
-### And still more!
+### 更多！
 
-*   In case you would like to easily **test XDP**, there is [a Vagrant setup][137] available. You can also **test bcc**[in a Docker container][138].
+*   如果你想很容易地去 **测试 XDP**，那是 [一个 Vagrant 设置][137] 可以使用。你也可以 **测试 bcc**[在一个 Docker 容器中][138]。
 
-*   Wondering where the **development and activities** around BPF occur? Well, the kernel patches always end up [on the netdev mailing list][139] (related to the Linux kernel networking stack development): search for “BPF” or “XDP” keywords. Since April 2017, there is also [a mailing list specially dedicated to XDP programming][140] (both for architecture or for asking for help). Many discussions and debates also occur [on the IO Visor mailing list][141], since BPF is at the heart of the project. If you only want to keep informed from time to time, there is also an [@IOVisor Twitter account][142].
+*   想知道围绕 BPF 的 **开发和活动** 在哪里吗？好吧，内核补丁总是结束于 [netdev 上的邮件列表][139]（相关 Linux 内核的网络栈开发）：以关键字 “BPF” 或者 “XDP” 来搜索。自 2017 年 4 月开始，那里也有 [一个专门用于 XDP 编程的邮件列表][140]（是为了架构或者寻求帮助）。[在 IO Visor 的邮件列表上][141]也有许多的讨论和辨论，因为 BPF 是一个重要的项目。如果你只是想随时了解情况，那里也有一个 [@IOVisor Twitter 帐户][142]。
 
-And come back on this blog from time to time to see if they are new articles [about BPF][192]!
+我经常会回到这篇博客中，来看一看 [关于 BPF][192] 有没有新的文章！
 
- _Special thanks to Daniel Borkmann for the numerous [additional documents][154] he pointed to me so that I could complete this collection._
+_特别感谢 Daniel Borkmann 指引我找到了许多的 [附加的文档][154]，因此我才完成了这个合集。_
 
 --------------------------------------------------------------------------------
 
 via: https://qmonnet.github.io/whirl-offload/2016/09/01/dive-into-bpf/
 
 作者：[Quentin Monnet ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[qhwdw](https://github.com/qhwdw)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -529,7 +529,7 @@ via: https://qmonnet.github.io/whirl-offload/2016/09/01/dive-into-bpf/
 [10]:https://qmonnet.github.io/whirl-offload/2016/09/01/dive-into-bpf/#from-bcc-set-of-tools
 [11]:https://qmonnet.github.io/whirl-offload/2016/09/01/dive-into-bpf/#manual-pages
 [12]:https://qmonnet.github.io/whirl-offload/2016/09/01/dive-into-bpf/#bpf-code-in-the-kernel
-[13]:https://qmonnet.github.io/whirl-offload/2016/09/01/dive-into-bpf/#xdp-hooks-code
+[13]:https://qmonnet.github.io/whirl-offload/2016/09/01/dive-into-bpf/#xdp-·s-code
 [14]:https://qmonnet.github.io/whirl-offload/2016/09/01/dive-into-bpf/#bpf-logic-in-bcc
 [15]:https://qmonnet.github.io/whirl-offload/2016/09/01/dive-into-bpf/#code-to-manage-bpf-with-tc
 [16]:https://qmonnet.github.io/whirl-offload/2016/09/01/dive-into-bpf/#bpf-utilities
