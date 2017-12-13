@@ -1,21 +1,23 @@
-如何获知一个命令或程序在执行前将会做什么
+如何在执行一个命令或程序之前就了解它会做什么
 ======
 
-有没有想过一个 Unix 命令在执行前将会干些什么呢？并不是每个人都会知道一个特定的命令或者程序将会做什么。当然，你可以用 [Explainshell][2] 来查看它。你可以在 Explainshell 网站中粘贴你的命令，然后它可以让你了解命令的每个部分做了什么。但是，这是没有必要的。现在，我们从终端就可以轻易地知道一个命令或者程序在执行前会做什么。 `maybe` ，一个简单的工具，它允许你运行一条命令并可以查看此命令对你的文件系统做了什么而实际上这条命令却并未执行！在查看 `maybe` 的输出列表后，你可以决定是否真的想要运行这条命令。
+有没有想过在执行一个 Unix 命令前就知道它干些什么呢？并不是每个人都会知道一个特定的命令或者程序将会做什么。当然，你可以用 [Explainshell][2] 来查看它。你可以在 Explainshell 网站中粘贴你的命令，然后它可以让你了解命令的每个部分做了什么。但是，这是没有必要的。现在，我们从终端就可以轻易地在执行一个命令或者程序前就知道它会做什么。 `maybe` ，一个简单的工具，它允许你运行一条命令并可以查看此命令对你的文件做了什么，而实际上这条命令却并未执行！在查看 `maybe` 的输出列表后，你可以决定是否真的想要运行这条命令。
 
-#### “maybe”是如何工作的
+![](https://www.ostechnix.com/wp-content/uploads/2017/12/maybe-2-720x340.png)
 
-根据开发者的介绍
+### `maybe` 是如何工作的
 
-> `maybe` 利用 `python-ptrace` 库运行了一个在 `ptrace` 控制下的进程。当它截取到一个即将更改文件系统的系统调用时，它会记录该调用，然后修改 CPU 寄存器，将这个调用重定向到一个无效的系统调用 ID（将其变成一个无效操作（no-op）），并将这个无效操作（no-op）的返回值设置为有效操作的返回值。结果，这个进程认为，它所做的一切都发生了，实际上什么都没有改变。
+根据开发者的介绍：
 
-警告: 在生产环境或者任何你所关心的系统里面使用这个工具时都应该小心。它仍然可能造成严重的损失，因为它只能阻止少数系统调用。
+> `maybe` 利用 `python-ptrace` 库在 `ptrace` 控制下运行了一个进程。当它截取到一个即将更改文件系统的系统调用时，它会记录该调用，然后修改 CPU 寄存器，将这个调用重定向到一个无效的系统调用 ID（效果上将其变成一个无效操作（no-op）），并将这个无效操作（no-op）的返回值设置为有效操作的返回值。结果，这个进程认为，它所做的一切都发生了，实际上什么都没有改变。
 
-#### 安装 “maybe”
+警告：在生产环境或者任何你所关心的系统里面使用这个工具时都应该小心。它仍然可能造成严重的损失，因为它只能阻止少数系统调用。
+
+#### 安装 `maybe`
 
 确保你已经在你的 Linux 系统中已经安装了 `pip` 。如果没有，可以根据您使用的发行版，按照如下指示进行安装。
 
-在  Arch Linux  及其衍生产品（如 Antergos，Manjaro Linux）上，使用以下命令安装 `pip` ：
+在  Arch Linux  及其衍生产品（如 Antergos、Manjaro Linux）上，使用以下命令安装 `pip` ：
 
 ```
 sudo pacman -S python-pip
@@ -25,8 +27,6 @@ sudo pacman -S python-pip
 
 ```
 sudo yum install epel-release
-```
-```
 sudo yum install python-pip
 ```
 
@@ -34,8 +34,6 @@ sudo yum install python-pip
 
 ```
 sudo dnf install epel-release
-```
-```
 sudo dnf install python-pip
 ```
 
@@ -45,19 +43,19 @@ sudo dnf install python-pip
 sudo apt-get install python-pip
 ```
 
-在 SUSE, openSUSE 上:
+在 SUSE、 openSUSE 上：
 
 ```
 sudo zypper install python-pip
 ```
 
-安装 `pip` 后，运行以下命令安装 `maybe` 。
+安装 `pip` 后，运行以下命令安装 `maybe` ：
 
 ```
 sudo pip install maybe
 ```
 
-#### 了解一个命令或程序在执行前会做什么
+### 了解一个命令或程序在执行前会做什么
 
 用法是非常简单的！只要在要执行的命令前加上 `maybe` 即可。
 
@@ -83,8 +81,7 @@ Do you want to rerun rm -r ostechnix/ and permit these operations? [y/N] y
 
  [![](http://www.ostechnix.com/wp-content/uploads/2017/12/maybe-1.png)][3] 
 
-
- `maybe` 执行 5 个文件系统操作，并向我显示该命令（rm -r ostechnix /）究竟会做什么。现在我可以决定是否应该执行这个操作。是不是很酷呢？确实很酷！
+ `maybe` 执行了 5 个文件系统操作，并向我显示该命令（`rm -r ostechnix/`）究竟会做什么。现在我可以决定是否应该执行这个操作。是不是很酷呢？确实很酷！
 
 这是另一个例子。我要为 Gmail 安装 Inboxer 桌面客户端。这是我得到的输出：
 
@@ -122,9 +119,9 @@ maybe has not detected any file system operations from sudo pacman -Syu.
 
 Cheers!
 
-资源:
+资源：
 
-*   [“maybe” GitHub page][1]
+*   [`maybe` GitHub 主页][1]
 
 --------------------------------------------------------------------------------
 
@@ -132,7 +129,7 @@ via: https://www.ostechnix.com/know-command-program-will-exactly-executing/
 
 作者：[SK][a]
 译者：[imquanquan](https://github.com/imquanquan)
-校对：[校对ID](https://github.com/校对ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

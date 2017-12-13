@@ -3,27 +3,27 @@ AWS 帮助构建 ONNX 开源 AI 平台
 ![onnx-open-source-ai-platform](https://www.linuxinsider.com/article_images/story_graphics_xlarge/xl-2017-onnx-1.jpg)
 
 
-AWS 已经成为最近加入深度学习社区的开放神经网络交换（ONNX）协作的最新技术公司，最近在无摩擦和可互操作的环境中推出了高级人工智能。由 Facebook 和微软领头。
+AWS 最近成为了加入深度学习社区的<ruby>开放神经网络交换<rt>Open Neural Network Exchange</rt></ruby>（ONNX）协作的技术公司，最近在<ruby>无障碍和可互操作<rt>frictionless and interoperable</rt></ruby>的环境中推出了高级人工智能。由 Facebook 和微软领头了该协作。
 
-作为该合作的一部分，AWS 将其开源 Python 软件包 ONNX-MxNet 作为一个深度学习框架提供，该框架提供跨多种语言的编程接口，包括 Python、Scala 和开源统计软件 R。
+作为该合作的一部分，AWS 开源其深度学习框架 Python 软件包 ONNX-MXNet，该框架提供了跨多种语言的编程接口（API），包括 Python、Scala 和开源统计软件 R。
 
-AWS 深度学习工程经理 Hagay Lupesko 和软件开发人员 Roshani Nagmote 上周在一篇帖子中写道：ONNX 格式将帮助开发人员构建和训练其他框架的模型，包括 PyTorch、Microsoft Cognitive Toolkit 或 Caffe2。它可以让开发人员将这些模型导入 MXNet，并运行它们进行推理。
+AWS 深度学习工程经理 Hagay Lupesko 和软件开发人员 Roshani Nagmote 上周在一篇帖子中写道，ONNX 格式将帮助开发人员构建和训练其它框架的模型，包括 PyTorch、Microsoft Cognitive Toolkit 或 Caffe2。它可以让开发人员将这些模型导入 MXNet，并运行它们进行推理。
 
 ### 对开发者的帮助
 
 今年夏天，Facebook 和微软推出了 ONNX，以支持共享模式的互操作性，来促进 AI 的发展。微软提交了其 Cognitive Toolkit、Caffe2 和 PyTorch 来支持 ONNX。
 
-微软表示：Cognitive Toolkit 和其他框架使开发人员更容易构建和运行代表神经网络的计算图。
+微软表示：Cognitive Toolkit 和其他框架使开发人员更容易构建和运行计算图以表达神经网络。
 
-Github 上提供了[ ONNX 代码和文档][4]的初始版本。
+[ONNX 代码和文档][4]的初始版本已经放到了 Github。
 
 AWS 和微软上个月宣布了在 Apache MXNet 上的一个新 Gluon 接口计划，该计划允许开发人员构建和训练深度学习模型。
 
-[Tractica][5] 的研究总监 Aditya Kaul 观察到：“Gluon 是他们与 Google 的 Tensorflow 竞争的合作伙伴关系的延伸”。
+[Tractica][5] 的研究总监 Aditya Kaul 观察到：“Gluon 是他们试图与 Google 的 Tensorflow 竞争的合作伙伴关系的延伸”。
 
-他告诉 LinuxInsider，“谷歌在这点上的疏忽是非常明显的，但也说明了他们在市场上的主导地位。
+他告诉 LinuxInsider，“谷歌在这点上的疏忽是非常明显的，但也说明了他们在市场上的主导地位。”
 
-Kaul 说：“甚至 Tensorflow 是开源的，所以开源在这里并不是什么大事，但这归结到底是其他生态系统联手与谷歌竞争。”
+Kaul 说：“甚至 Tensorflow 也是开源的，所以开源在这里并不是什么大事，但这归结到底是其他生态系统联手与谷歌竞争。”
 
 根据 AWS 的说法，本月早些时候，Apache MXNet 社区推出了 MXNet 的 0.12 版本，它扩展了 Gluon 的功能，以便进行新的尖端研究。它的新功能之一是变分 dropout，它允许开发人员使用 dropout 技术来缓解递归神经网络中的过拟合。
 
@@ -52,15 +52,15 @@ Tractica 的 Kaul 指出：“框架互操作性是一件好事，这会帮助�
 越来越多的大型科技公司已经宣布使用开源技术来加快 AI 协作开发的计划，以便创建更加统一的开发和研究平台。
 
 AT＆T 几周前宣布了与 TechMahindra 和 Linux 基金会合作[推出 Acumos 项目][8]的计划。该平台旨在开拓电信、媒体和技术方面的合作。
-![](https://www.ectnews.com/images/end-enn.gif)
+
 
 --------------------------------------------------------------------------------
 
 via: https://www.linuxinsider.com/story/AWS-to-Help-Build-ONNX-Open-Source-AI-Platform-84971.html
 
-作者：[ David Jones ][a]
+作者：[David Jones][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
