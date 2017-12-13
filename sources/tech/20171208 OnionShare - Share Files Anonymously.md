@@ -1,3 +1,4 @@
+translating by lujun9972
 OnionShare - Share Files Anonymously
 ======
 In this Digital World, we share our media, documents, important files via the Internet using different cloud storage like Dropbox, Mega, Google Drive and many more. But every cloud storage comes with two major problems, one is the Size and the other Security. After getting used to Bit Torrent the size is not a matter anymore, but the security is.
@@ -63,7 +64,7 @@ In this article, I have explained how to **share your documents, files anonymous
 via: https://www.theitstuff.com/onionshare-share-files-anonymously-2
 
 作者：[Anirudh Rayapeddi][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[lujun9972](https://github.com/lujun9972)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
