@@ -1,121 +1,57 @@
-translating by lujun9972
-7 rules for avoiding documentation pitfalls
+防止文档陷阱的 7 条准则
 ======
-English serves as _lingua franca_ in the open source community. To reduce
-translation costs, many teams have switched to English as the source language
-for their documentation. But surprisingly, writing in English for an
-international audience does not necessarily put native English speakers in a
-better position. On the contrary, they tend to forget that the document 's
-language might not be the audience's first language.
+英语是开源社区的通用语言。为了减少翻译成本，很多团队都改成用英语来写他们的文档。 但奇怪的是，为国际读者写英语并不一定就意味着英语为母语的人就占据更多的优势。 相反， 他们往往忘记了写文档用的语言可能并不是读者的母语。
 
-Let's have a look at the following simple sentence as an example: "Encrypt the
-password using the `foo bar` command." Grammatically, the sentence is correct.
-Given that '-ing' forms (gerunds) are frequently used in the English language
-and most native speakers consider them an elegant way of expressing things,
-native speakers usually do not hesitate to phrase a sentence like this. On
-closer inspection, the sentence is ambiguous because "using" may refer either
-to the object ("the password") or to the verb ("encrypt"). Thus, the sentence
-can be interpreted in two different ways:
+我们以下面这个简单的句子为例: "Encrypt the password using the `foo bar` command。" 语法上来说，这个句子是正确的。 鉴于动名词的 '-ing' 形式在英语中很常见，大多数的母语人士都认为这是一种优雅的表达方式， 他们通常会很自然的写出这样的句子。 但是仔细观察， 这个句子存在歧义因为 "using" 可能指的宾语 ("the password") 也可能指的动词 ("encrypt")。 因此这个句子有两种解读方式:
 
-  * "Encrypt the password that uses the `foo bar` command."
-  * "Encrypt the password by using the `foo bar` command."
+  * "加密使用了 `foo bar` 命令的密码。"
+  * "使用命令 `foo bar` 来加密密码。"
 
-As long as you have previous knowledge about the topic (password encryption or
-the `foo bar` command), you can resolve this ambiguity and correctly decide
-that the second version is the intended meaning of this sentence. But what if
-you lack in-depth knowledge of the topic? What if you are not an expert, but a
-translator with only general knowledge of the subject? Or if you are a non-
-native speaker of English, unfamiliar with advanced grammatical forms like
-gerunds?
+如果你有相关的先验知识 (密码加密或这 `foo bar` 命令)，你可以消除这种不确定性并且明白第二种方式才是真正的意思。 但是若你没有足够深入的知识怎么办呢？ 如果你并不是这方面的专家，而只是一个拥有泛泛相关知识的翻译者而已怎么办呢？ 再或者，如果你只是个非母语人士且对像动名词这种高级语法不熟悉怎么办呢？
 
-Even native English speakers need training to write clear and straightforward
-technical documentation. The first step is to raise awareness about the
-usability of texts and potential problems, so let's look at seven rules that
-can help avoid common pitfalls.
+即使是英语为母语的人也需要经过训练才能写出清晰直接的技术文档。训练的第一步就是提高对文本可用性以及潜在问题的警觉性， 下面让我们来看一下可以帮助避免常见陷阱的 7 条规则。
 
-### 1. Know your target audience and step into their shoes.
+### 1。了解你的目标读者并代入其中。
 
-If you are a developer writing for end users, view the product from their
-perspective. Does the structure reflect the users' goals? The [persona
-technique][1] can help you to focus on the target audience and provide the
-right level of detail for your readers.
+如果你是一名开发者，而写作的对象是终端用户， 那么你需要站在他们的角度来看这个产品。 文档的结构是否反映了用户的目标？ [人格面具 (persona) 技术][1] 能帮你专注于目标受众并为你的读者提供合适层次的细节。
 
-### 2. Follow the KISS principle--keep it short and simple.
+### 2。准训 KISS 原则--保持文档简短而简单
 
-The principle can be applied on several levels, such as grammar, sentences, or
-words. Here are examples:
+这个原则适用于多个层次，从语法，句子到单词。 比如:
 
-  * Use the simplest tense that is appropriate. For example, use present tense when mentioning the result of an action: 
-    * " ~~Click 'OK.' The 'Printer Options' dialog will appear.~~" -> "Click 'OK.' The 'Printer Options' dialog appears."
-  * As a rule of thumb, present one idea in one sentence; however, short sentences are not automatically easy to understand (especially if they are an accumulation of nouns). Sometimes, trimming down sentences to a certain word count can introduce ambiguities. In turn, this makes the sentences more difficult to understand.
-  * Uncommon and long words slow reading and might be obstacles for non-native speakers. Use simpler alternatives:  
-
+  * 使用合适的最简单时态。比如， 当提到一个动作的结果时使用现在时: 
+    * " ~~Click 'OK。' The 'Printer Options' dialog will appear。~~" -> "Click 'OK。' The 'Printer Options' dialog appears。"
+  * 按经验来说，一个句子表达一个主题; 然而， 短句子并不一定就容易理解(尤其当这些句子都是由名词组成时)。 有时， 将句子裁剪过度可能会引起歧义，而反过来太多单词则又难以理解。
+  * 不常用的以及很长的单词会降低阅读速度，而且可能成为非母语人士的障碍。 使用更简单的替代词语:  
     * " ~~utilize~~ " -> "use"
-    * " ~~indicate~~ " -> "show," "tell," or "say"
+    * " ~~indicate~~ " -> "show，" "tell，" or "say"
     * " ~~prerequisite~~ " -> "requirement"
 
-### 3. Avoid disturbing the reading flow.
+### 3。不要干扰阅读流
 
-Move particles or longer parentheses to the beginning or end of a sentence:
+将虚词和较长的插入语移到句子的首部或者尾部:
 
-  * " ~~They are not, however, marked as installed.~~ " -> "However, they are not marked as installed."
+  * " ~~They are not，however， marked as installed。~~ " -> "However， they are not marked as installed。"
 
-Place long commands at the end of a sentence. This also results in better
-segmentation of sentences for automatic or semi-automatic translations.
+将长命令放在句子的末尾可以让自动/半自动的翻译拥有更好的断句。
 
-### 4. Discriminate between two basic information types.
+### 4。区别对待两种基本的信息类型
 
-Discriminating between _descriptive information_ and _task-based information_
-is useful. Typical examples for descriptive information are command-line
-references, whereas how-to 's are task-based information; however, both
-information types are needed in technical writing. On closer inspection, many
-texts contain a mixture of both information types. Clearly separating the
-information types is helpful. For better orientation, label them accordingly.
-Titles should reflect a section's content and information type. Use noun-based
-titles for descriptive sections ("Types of Frobnicators") and verbally phrased
-titles for task-based sections ("Installing Frobnicators"). This helps readers
-quickly identify the sections they are interested in and allows them to skip
-the ones they don't need at the moment.
+描述型信息以及任务导向型信息有必要区分开来。描述型信息的一个典型例子就是命令行参考， 而 how-to 则是属于基于任务的信息; 然而， 技术写作中都会涉及这两种类型的信息。 仔细观察， 就会发现许多文本都同时包含了两种类型的信息。 然而如果能够清晰地划分这两种类型的信息那必是极好的。 为了跟好地区分他们，可以对他们进行分别标记(For better orientation， label them accordingly)。 标题应该能够反应章节的内容以及信息的类型。 对描述性章节使用基于名词的标题(比如"Types of Frobnicators")，而对基于任务的章节使用口头表达式的标题(例如"Installing Frobnicators")。 这可以让读者快速定位感兴趣的章节而跳过他无用的章节。
 
-### 5. Consider different reading situations and modes of text consumption.
+### 5。考虑不同的阅读场景和阅读模式
 
-Some of your readers are already frustrated when they turn to the product
-documentation because they could not achieve a certain goal on their own. They
-might also work in a noisy environment that makes it hard to focus on reading.
-Also, do not expect your audience to read cover to cover, as many people skim
-or browse texts for keywords or look up topics by using tables, indexes, or
-full-text search. With that in mind, look at your text from different
-perspectives. Often, compromises are needed to find a text structure that
-works well for multiple situations.
+有些读者在转向阅读产品文档时会由于自己搞不定而感到十分的沮丧。他们也在一个嘈杂的环境中工作，很难专注于阅读。 同时，不要期望你的读者会一页一页的进行阅读，很多人都是快速浏览文本搜索关键字或者通过表格，索引以及全文搜索的方式来查找主题。 请牢记这一点， 从不同的角度来看待你的文字。 通常需要妥协才能找到一种适合多种情况的文本结构。
 
-### 6. Break down complex information into smaller chunks.
+### 6。将复杂的信息分成小块。
 
-This makes it easier for the audience to remember and process the information.
-For example, procedures should not exceed seven to 10 steps (according to
-[Miller's Law][2] in cognitive psychology). If more steps are required, split
-the task into separate procedures.
+这会让读者更容易记住和吸收信息。例如， 过程不应该超过 7 到 10 个步骤(根据认知心理学中的 [Miller's Law][2])。 如果需要更多的步骤， 那么就将任务分拆成不同的过程。
 
-### 7. Form follows function.
+### 7。形式遵循功能
 
-Examine your text according to the question: What is the _purpose_ (function)
-of a certain sentence, a paragraph, or a section? For example, is it an
-instruction? A result? A warning? For instructions, use active voice:
-"Configure the system." Passive voice may be appropriate for descriptions:
-"The system is configured automatically." Add warnings _before_ the step or
-action where danger arises. Focusing on the purpose also helps detect
-redundant content to help eliminate fillers like  "basically" or "easily,"
-unnecessary modifications like " ~~already~~ existing " or " ~~completely~~
-new, " or any content that is not relevant for your target audience.
+根据以下问题检查你的文字: 某句话/段落/章节的 _目的_ (功能)是什么？比如， 它是一个指令呢？还是一个结果呢？还是一个警告呢？如果是指令， 使用主动语气: "Configure the system。" 被动语气可能适合于进行描述: "The system is configured automatically。" 将警告放在危险操作的 _前面_ 。 专注于目的还有助于发现冗余的内容，可以清除类似 "basically" 或者 "easily" 这一类的填充词，类似 " ~~already~~ existing " or " ~~completely~~ new" 这一类的不必要的修改， 以及任何与你的目标大众无关的内容。
 
-As you might have guessed by now, writing is re-writing. Good writing requires
-effort and practice. Even if you write only occasionally, you can
-significantly improve your texts by focusing on the target audience and
-following the rules above. The better the readability of a text, the easier it
-is to process, even for audiences with varying language skills. Especially
-when it comes to localization, good quality of the source text is important:
-"Garbage in, garbage out." If the original text has deficiencies, translating
-the text takes longer, resulting in higher costs. In the worst case, flaws are
-multiplied during translation and must be corrected in various languages.
+你现在可能已经猜到了，写作就是一个不断重写的过程。 好的写作需要付出努力和练习。 即使你只是偶尔写点东西， 你也可以通过关注目标大众并遵循上述规则来显著地改善你的文字。 文字的可读性越好， 理解就越容易， 这一点对不同语言能力的读者来说都是适合的。 尤其是当进行本地化时， 高质量的原始文本至关重要: "垃圾进， 垃圾出"。 如果原始文本就有缺陷， 翻译所需要的时间就会变长， 从而导致更高的成本。 最坏的情况下， 翻译会导致缺陷成倍增加，需要在不同的语言版本中修正这个缺陷。
 
 
 --------------------------------------------------------------------------------
