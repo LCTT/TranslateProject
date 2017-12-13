@@ -1,42 +1,39 @@
-(translating by runningwater)
-Why Python and Pygame are a great pair for beginning programmers
+为什么说 Python 和 Pygame 最适合初学者
 ============================================================
 
-### We look at three reasons Pygame is a good choice for learning to program.
+### 我们有三个理由来说明 Pygame 对初学编程者是最好的选择。
 
 
 ![What's the best game platform for beginning programmers?](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/code_development_programming.png?itok=M_QDcgz5 "What's the best game platform for beginning programmers?")
-Image by : 
+ 图片来源: [opensource.com](https://opensource.com)
 
-opensource.com
+上个月，[Scott Nesbitt][10] 发表了一篇标题为[ Mozilla 支出 50 万美元来支持开源项目][11]的文章。其中 Phaser，一个基于 HTML/JavaScript 的游戏平台项目，获得了 50,000 美元的奖励。整整一年里，我都在使用 Phaser 平台来教我的小女儿，用来学习的话，它是最简单也是最好的 HTML 游戏开发平台。然而，对于初学者来说，使用[ Pygame ][13]也许效果更好。原因如下：
 
-Last month, [Scott Nesbitt][10] wrote about [Mozilla awarding $500K to support open source projects][11]. Phaser, a HTML/JavaScript game platform, was [awarded $50,000][12]. I’ve been teaching Phaser to my pre-teen daughter for a year, and it's one of the best and easiest HTML game development platforms to learn. [Pygame][13], however, may be a better choice for beginners. Here's why.
+### 1\. 小段代码块
 
-### 1\. One long block of code
+Pygame，基于 Python，[在介绍计算机课程中最流行的语言][14]。Python 非常适合用一小段代码来实现我们的想法,孩子们可以从单个文件和单个代码块起开始学习，在掌握函数 (function) 或类 (class) 对象之前，就可以写出意大利面条似的代码。 很像手指画，所想即所得。
 
-Pygame is based on Python, the [most popular language for introductory computer courses][14]. Python is great for writing out ideas in one long block of code. Kids start off with a single file and with a single block of code. Before they can get to functions or classes, they start with code that will soon resemble spaghetti. It’s like finger-painting, as they throw thoughts onto the page.
+更多 Python 资源链接
 
-More Python Resources
+*   [Python 是什么?][1]
 
-*   [What is Python?][1]
+*   [最热门 Python IDEs][2]
 
-*   [Top Python IDEs][2]
+*   [最热门 Python GUI 框架][3]
 
-*   [Top Python GUI frameworks][3]
+*   [最新 Python 话题][4]
 
-*   [Latest Python content][4]
+*   [更多开发资源][5]
 
-*   [More developer resources][5]
+以这样的方式来学习，当编写的代码越来越难于管理的时候，孩子们很自然就的就会把代码分解成函数模块和类模块。在学习函数之前就学习了 Python 语言的语法，学生将掌握基本的编程知识，对了解全局作用域和局部作用域起到更好的作用。
 
-This approach to learning works. Kids will naturally start to break things into functions and classes as their code gets more difficult to manage. By learning the syntax of a language like Python prior to learning about functions, the student will gain basic programming knowledge before using global and local scope.
+大多数 HTML 游戏在一定程度上会将结构、样式和编程逻辑分为 HTML、CSS和JavaScript，并且需要 CSS 和 HTML 的知识。从长远来看，虽然拆分更好，但对初学者来说是个障碍。一旦孩子们发现他们可以用 HTML 和 CSS 快速构建网页，很有可能就会被颜色、字体和图形的视觉刺激分散注意力。即使有仅仅只专注于 JavaScript 代码的，也需要学习基本的文档结构模型，以使 JavaScript 代码能够嵌入进去。
 
-Most HTML games separate the structure, style, and programming logic into HTML, CSS, and JavaScript to some degree and require knowledge of CSS and HTML. While the separation is better in the long term, it can be a barrier for beginners. Once kids realize that they can quickly build web pages with HTML and CSS, they may get distracted by the visual excitement of colors, fonts, and graphics. Even those who stay focused on JavaScript coding will still need to learn the basic document structure that the JavaScript code sits in.
+### 2\. 全局变量更清晰
 
-### 2\. Global variables are more obvious
+Python 和 JavaScript 都使用动态类型变量，这意味着变量只有在赋值才能确定其类型为一个字符串、一个整数或一个浮点数，其中 JavaScript 更容易出错。类似于类型变量，JavaScript 和 Python 都有全局变量和局部变量之分。Python 中，如果在函数块内要使用全局变量，就会以 `global` 关键字区分出来。
 
-Both Python and JavaScript use dynamically typed variables, meaning that a variable becomes a string, an integer, or float when it’s assigned; however, making mistakes is easier in JavaScript. Similar to typed variables, both JavaScript and Python have global and local variable scopes. In Python, global variables inside of a function are identified with the global keyword.
-
-Let’s look at the basic [Making your first Phaser game tutorial][15], by Alvin Ourrad and Richard Davey, to understand the challenge of using Phaser to teach programming to beginners. In JavaScript, global variables—variables that can be accessed anywhere in the program—are difficult to keep track of and often are the source of bugs that are challenging to solve. Richard and Alvin are expert programmers and use global variables intentionally to keep things concise.
+要理解在 Phaser 上教授编程初学者所面临的挑战的话，让我们以基本的[制作您的第一个 Phaser 游戏教程][15]为例子，它是由 Alvin Ourrad 和 Richard Davey 开发制作的。在 JavaScript 中，程序中任何地方都可以访问的全局变量很难追踪调试，常常引起 Bug 且很难解决。因为 Richard 和 Alvin 是专业程序员，所以在这儿特意使用全局变量以使程序简洁。
 
 ```
 var game = new Phaser.Game(800, 600, Phaser.AUTO, '', { preload: preload, create: create, update: update });
@@ -55,31 +52,31 @@ function create() {
 …
 ```
 
-In their Phaser programming book  [_Interphase_ ,][16] Richard Davey and Ilija Melentijevic explain that global variables are commonly used in many Phaser projects because they make it easier to get things done quickly.
+在他们的 Phaser 编程手册 [《Interphase》][16] 中，Richard Davey 和 Ilija Melentijevic 解释说：在很多 Phaser 项目中通常都会使用全局变量，原因是使用它们完成任务更容易、更快捷。
 
-> “If you’ve ever worked on a game of any significant size then this approach is probably already making you cringe slightly... So why do we do it? The reason is simply because it’s the most concise and least complicated way to demonstrate what Phaser can do.”
+> “如果您开发过游戏，只要代码量到一定规模，那么（使用全局变量）这种做法会使您陷入困境的，可是我们为什么还要这样做？原因很简单，仅仅只是要使我们的 Phaser 项目容易完成，更简单而已。”
 
-Although structuring a Phaser application to use local variables and split things up nicely into separation of concerns is possible, that’s tough for kids to understand when they’re first learning to program.
+针对一个 Phaser 应用程序，虽然可以使用局部变量和拆分代码块来达到关注点隔离这些手段来重构代码，但要使第一次学习编程的小孩能理解,显然很有难度的。
 
-If you’re set on teaching your kids to code with JavaScript, or if they already know how to code in another language like Python, a good Phaser course is [The Complete Mobile Game Development Course][17], by [Pablo Farias Navarro][18]. Although the title focuses on mobile games, the actual course focuses on JavaScript and Phaser. The JavaScript and Phaser apps are moved to a mobile phone with [PhoneGap][19].
+如果您想教你的孩子学习 JavaScript，或者如果他们已经知道怎样使用像 Python 来编程的话，有个好的 Phaser 课程推荐: [完整的手机游戏开发课程] [17]，是由 [ Pablo Farias Navarro ] [18] 开发制作的。虽然标题看着是移动游戏，但实际是关于 JavaScript 和 Phaser 的。JavaScript 和 Phaser 移动应用开发已经转移到 [PhoneGap][19] 话题去了。
 
-### 3\. Pygame comes with less assembly required
+### 3\. Pygame 无依赖要求
 
-Thanks to [Python Wheels][20], Pygame is now super [easy to install][21]. You can also install it on Fedora/Red Hat with the **yum** package manager:
+由于 [Python Wheels][20] 的出现，Pygame 超级[容易安装][21]。在 Fedora/Red Hat 系统下也可使用 **yum** 包管理器来安装：
 
 ```
 sudo yum install python3-pygame
 ```
 
-See the official [Pygame installation documentation][22] for more information.
+更多消息请参考官网[Pygame 安装说明文档][22]。
 
-Although Phaser itself is even easier to install, it does require more knowledge to use. As mentioned previously, the student will need to assemble their JavaScript code within an HTML document with some CSS. In addition to the three languages—HTML, CSS, and JavaScript—Phaser also requires the use of Firefox or Chrome development tools and an editor. The most common editors for JavaScript are Sublime, Atom, VS Code (probably in that order).
+相比来说，虽然 Phaser 本身更容易安装，但需要掌握更多的知识。前面提到的，学生需要在 HTML 文档中组装他们的 JavaScript 代码，同时还需要些 CSS。除了这三种语言（HTML、CSS、JavaScript），还需要使用火狐或谷歌开发工具和编辑器。JavaScript 最常用的编辑器有 Sublime、Atom、VS Code（按使用多少排序）等。
 
-Phaser applications will not run if you open the HTML file in a browser directly, due to [same-origin policy][23]. You must run a web server and access the files by connecting to the web server. Fortunately, you don’t need to run Apache on your local computer; you can run something lightweight like [httpster][24] for most projects.
+由于[浏览器同源策略][23]的原因，如果您直接在浏览器中打开 HTML 文件的话，Phaser 应用是不会运行的。您必须运行 Web 服务，并通过服务访问这些文件。还好，对于大多数工程项目，可以不用在本地运行 Apache 服务，只需要运行一些轻量级的服务就可以，比如 [httpster][24]。
 
-### Advantages of Phaser and JavaScript
+### Phaser 和 JavaScript 的优势
 
-With all the challenges of JavaScript and Phaser, why am I teaching them? Honestly, I held off for a long time. I worried about students learning variable hoisting and scope. I developed my own curriculum based on Pygame and Python, then I developed one based on Phaser. Eventually, I decided to use Pablo’s pre-made curriculum as a starting point. 
+JavaScript 和 Phaser 有着种种的不好，为什么我还继续教授他们？老实说，我考虑了很长一段时间，我在担心着学生学习变量申明提升和变量作用域的揪心。所有我开发出基于 Pygame 和 Python 的课程，随后也开发出一涛基于 Phaser 的。最终，我决定使用 Pablo 预先制定的课程作为起点。
 
 There are really two reasons that I moved to JavaScript. First, JavaScript has emerged as a serious language used in serious applications. In addition to web applications, it’s used for mobile and server applications. JavaScript is everywhere, and it’s used widely in applications kids see every day. If their friends code in JavaScript, they'll likely want to as well. As I saw the momentum behind JavaScript, I looked into alternatives that could compile into JavaScript, primarily Dart and TypeScript. I didn’t mind the extra conversion step, but I still looked at JavaScript.
 
