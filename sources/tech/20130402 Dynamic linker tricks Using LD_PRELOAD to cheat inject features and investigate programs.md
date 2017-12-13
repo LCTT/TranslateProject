@@ -1,3 +1,4 @@
+Translating by qhwdw
 # Dynamic linker tricks: Using LD_PRELOAD to cheat, inject features and investigate programs
 
 **This post assumes some basic C skills.**
@@ -209,3 +210,5 @@ via: https://rafalcieslak.wordpress.com/2013/04/02/dynamic-linker-tricks-using-l
 
 [a]:https://rafalcieslak.wordpress.com/
 [1]:http://www.zlibc.linux.lu/index.html
+
+
