@@ -3,7 +3,7 @@
 
 Photo
 ![](https://static01.nyt.com/images/2017/06/08/business/08BITS-GURUS1/08BITS-GURUS1-superJumbo.jpg)
-来自 CloudFlare 公司的网络安全专家 Marc Rogers（左）和来自 Lookout 的 Kevin Mahaffey 能够通过直接连接在汽车上的笔记本电脑控制特斯拉的进行许多操作。图为他们在 CloudFlare 的大厅里的的熔岩灯前的合影，这些熔岩灯被用来生成密匙。纽约时报 CreditChristie Hemm Klok拍摄
+来自 CloudFlare 公司的网络安全专家 Marc Rogers（左）和来自 Lookout 的 Kevin Mahaffey 能够通过直接连接在汽车上的笔记本电脑控制特斯拉的进行许多操作。图为他们在 CloudFlare 的大厅里的的熔岩灯前的合影，这些熔岩灯被用来生成密匙。纽约时报 CreditChristie Hemm Klok 拍摄
 
 大约在七年前，伊朗的数位顶级核科学家经历过一系列形式类似的暗杀：凶手的摩托车接近他们乘坐的汽车，把磁性炸弹吸附在汽车上，然后逃离并引爆炸弹。
 
