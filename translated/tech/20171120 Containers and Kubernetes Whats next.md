@@ -1,6 +1,6 @@
 容器技术和 k8s 的下一站：
 ============================================================
-### 想知道容器编排管理和 K8s 的最新展望么？来看看专家怎么说。
+### 想知道容器编排管理和  K8s 的最新展望么？来看看专家怎么说。
 
 ![CIO_Big Data Decisions_2](https://enterprisersproject.com/sites/default/files/styles/620x350/public/images/CIO_Big%20Data%20Decisions_2.png?itok=Y5zMHxf8 "CIO_Big Data Decisions_2")
 
