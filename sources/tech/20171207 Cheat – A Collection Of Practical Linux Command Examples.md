@@ -1,3 +1,5 @@
+translating---geekpi
+
 Cheat – A Collection Of Practical Linux Command Examples
 ======
 Many of us very often checks **[Man Pages][1]** to know about command switches
