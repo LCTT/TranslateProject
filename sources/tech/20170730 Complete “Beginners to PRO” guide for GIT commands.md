@@ -1,3 +1,5 @@
+translating by liuxinyu123    
+
 Complete “Beginners to PRO” guide for GIT commands
 ======
 In our [**earlier tutorial,**][1] we have learned to install git on our machines. In this tutorial, we will discuss  how we can use git i.e. various commands that are used with git. So let's start,In our earlier tutorial, we have learned to install git on our machines. In this tutorial, we will discuss  how we can use git i.e. various commands that are used with git. So let's start,
