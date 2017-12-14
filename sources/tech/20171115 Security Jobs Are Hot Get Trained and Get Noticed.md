@@ -1,3 +1,5 @@
+translating---geekpi
+
 Security Jobs Are Hot: Get Trained and Get Noticed
 ============================================================
 
