@@ -1,3 +1,5 @@
+translating by liuxinyu123    
+
 Creating a blog with pelican and Github pages
 ======
 
