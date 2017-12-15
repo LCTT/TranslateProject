@@ -1,3 +1,4 @@
+translating by kimii
 Bash Scripting: Learn to use REGEX (Basics)
 ======
 Regular expressions or regex or regexp are basically strings of character that define a search pattern, they can be used for performing 'Search' or 'Search & Replace' operations as well as can be used to validate a condition like password policy etc.
