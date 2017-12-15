@@ -1,2 +1,2 @@
-language: ruby
-script: make check
+language: c
+script: make -s check
