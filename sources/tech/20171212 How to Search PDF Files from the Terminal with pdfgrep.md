@@ -1,3 +1,5 @@
+translating---geekpi
+
 How to Search PDF Files from the Terminal with pdfgrep
 ======
 Command line utilities such as [grep][1] and [ack-grep][2] are great for searching plain-text files for patterns matching a specified [regular expression][3]. But have you ever tried using these utilities to search for patterns in a PDF file? Well, don't! You will not get any result as these tools cannot read PDF files; they only read plain-text files.
