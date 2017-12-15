@@ -12,10 +12,10 @@ check: $(CHANGE_FILE)
 	cat $(CHANGE_FILE)
 	echo
 	echo 'Check for rules...'
-	make -k $(RULES) 2>/dev/null | grep '^Rule Matched: '
+	make -k $(RULES) | grep '^Rule Matched: '
 
 $(CHANGE_FILE):
-	git --no-pager diff '$(TRAVIS_BRANCH)' FETCH_HEAD --no-renames --name-status > $@
+	git --no-pager diff $(TRAVIS_BRANCH) FETCH_HEAD --no-renames --name-status > $@
 
 rule-source-added:
 	[[ $(shell grep '^A\s\+sources/' $(CHANGE_FILE) | wc -l) -ge 1 ]]
