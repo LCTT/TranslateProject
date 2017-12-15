@@ -15,7 +15,7 @@ check: $(CHANGE_FILE)
 	make -k $(RULES) 2>/dev/null | grep '^Rule Matched: '
 
 $(CHANGE_FILE):
-	git --no-pager diff '$(TRAVIS_PULL_REQUEST_BRANCH)' FETCH_HEAD --no-renames --name-status > $@
+	git --no-pager diff '$(TRAVIS_BRANCH)' FETCH_HEAD --no-renames --name-status > $@
 
 rule-source-added:
 	[[ $(shell grep '^A\s\+sources/' $(CHANGE_FILE) | wc -l) -ge 1 ]]
