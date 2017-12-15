@@ -19,22 +19,27 @@ $(CHANGE_FILE):
 
 rule-source-added:
 	[ $(shell grep '^A\s\+sources/' $(CHANGE_FILE) | wc -l) -ge 1 ]
+	[ $(shell grep -v '^A\s\+sources/' $(CHANGE_FILE) | wc -l) = 0 ]
 	echo 'Rule Matched: $(@)'
 
 rule-translation-requested:
 	[ $(shell grep '^M\s\+sources/' $(CHANGE_FILE) | wc -l) = 1 ]
+	[ $(shell cat $(CHANGE_FILE) | wc -l) = 1 ]
 	echo 'Rule Matched: $(@)'
 
 rule-translation-completed:
 	[ $(shell grep '^D\s\+sources/' $(CHANGE_FILE) | wc -l) = 1 ]
 	[ $(shell grep '^A\s\+translated/' $(CHANGE_FILE) | wc -l) = 1 ]
+	[ $(shell cat $(CHANGE_FILE) | wc -l) = 2 ]
 	echo 'Rule Matched: $(@)'
 
 rule-translation-revised:
 	[ $(shell grep '^M\s\+translated/' $(CHANGE_FILE) | wc -l) = 1 ]
+	[ $(shell cat $(CHANGE_FILE) | wc -l) = 1 ]
 	echo 'Rule Matched: $(@)'
 
 rule-translation-published:
 	[ $(shell grep '^D\s\+translated/' $(CHANGE_FILE) | wc -l) = 1 ]
 	[ $(shell grep '^A\s\+published/' $(CHANGE_FILE) | wc -l) = 1 ]
+	[ $(shell cat $(CHANGE_FILE) | wc -l) = 2 ]
 	echo 'Rule Matched: $(@)'
