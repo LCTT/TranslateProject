@@ -1,5 +1,10 @@
 Top 5 Linux Music Players
 ======
+
+![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/live-music.jpg?itok=Ejbo4rf7_
+>Jack Wallen rounds up his five favorite Linux music players. Creative Commons Zero 
+>Pixabay
+
 No matter what you do, chances are you enjoy a bit of music playing in the background. Whether you're a coder, system administrator, or typical desktop user, enjoying good music might be at the top of your list of things you do on the desktop. And, with the holidays upon us, you might wind up with some gift cards that allow you to purchase some new music. If your music format of choice is of a digital nature (mine happens to be vinyl) and your platform is Linux, you're going to want a good GUI player to enjoy that music.
 
 Fortunately, Linux has no lack of digital music players. In fact, there are quite a few, most of which are open source and available for free. Let's take a look at a few such players, to see which one might suit your needs.
