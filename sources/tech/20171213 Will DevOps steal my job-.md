@@ -1,5 +1,11 @@
 Will DevOps steal my job?
 ======
+
+>Are you worried automation will replace people in the workplace? You may be right, but here's why that's not a bad thing.
+
+![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/BIZ_question_B.png?itok=f88cyt00)
+>Image by : opensource.com
+
 It's a common fear: Will DevOps be the end of my job? After all, DevOps means developers doing operations, right? DevOps is automation. What if I automate myself out of a job? Do continuous delivery and containers mean operations staff are obsolete? DevOps is all about coding: infrastructure-as-code and testing-as-code and this-or-that-as-code. What if I don't have the skill set to be a part of this?
 
 [DevOps][1] is a looming change, disruptive in the field, with seemingly fanatical followers talking about changing the world with the [Three Ways][2]--the three underpinnings of DevOps--and the tearing down of walls. It can all be overwhelming. So what's it going to be--is DevOps going to steal my job?
