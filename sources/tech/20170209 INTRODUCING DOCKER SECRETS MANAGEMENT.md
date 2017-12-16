@@ -1,35 +1,38 @@
-INTRODUCING DOCKER SECRETS MANAGEMENT
-============================================================
 
-Containers are changing how we view apps and infrastructure. Whether the code inside containers is big or small, container architecture introduces a change to how that code behaves with hardware – it fundamentally abstracts it from the infrastructure. Docker believes that there are three key components to container security and together they result in inherently safer apps.
+Dockers Secrets 管理介绍
+=========================
+
+容器正在改变我们对应用程序和基础设施的看法。无论容器内的代码量是大还是小，容器架构引入了一种代码与硬件起作用方式的变化 – 它从根本上将其从基础设施中抽象出来。对于容器安全来说，Docker这里有三个关键部分。且他们共同引起了本质上更安全的应用程序。
 
  ![Docker Security](https://i2.wp.com/blog.docker.com/wp-content/uploads/e12387a1-ab21-4942-8760-5b1677bc656d-1.jpg?w=1140&ssl=1) 
+ 
+构建更安全的应用程序的一个关键因素是与其他应用程序和系统进行安全通信，这通常需要证书、tokens、密码和其他类型的验证信息凭证--通常称为应用程序 secret。我们很高兴介绍Docker Sercets，Docker Secrets 是容器的本土解决方案，是加强容器安全的可信赖交付组件，用户可以在容器平台上直接集成 secret 分配功能。
 
-A critical element of building safer apps is having a secure way of communicating with other apps and systems, something that often requires credentials, tokens, passwords and other types of confidential information—usually referred to as application secrets. We are excited to introduce Docker Secrets, a container native solution that strengthens the Trusted Delivery component of container security by integrating secret distribution directly into the container platform.
+有了容器，现在应用程序在多环境下是动态的、可移植的。这使得现存的 secret 分布解决方案略显不足，因为他们都是针对静态环境。不幸的是，这导致了应用程序secrets不善管理的增加，使其总是找到安全的，本土的解决方案，比如像GitHub嵌入secrets到版本控制系统，或着同样糟糕是像马后炮一样的定点解决。
 
-With containers, applications are now dynamic and portable across multiple environments. This  made existing secrets distribution solutions inadequate because they were largely designed for static environments. Unfortunately, this led to an increase in mismanagement of application secrets, making it common to find insecure, home-grown solutions, such as embedding secrets into version control systems like GitHub, or other equally bad—bolted on point solutions as an afterthought.
+### Docker Secerts 管理介绍
 
-### Introducing Docker Secrets Management
+根本上我们认为，如果有一个标准的接口来访问secrets，应用程序就更安全了。任何好的解决方案也必须遵循安全性实践，例如在传输的过程中，对secrets进行加密；在休息的时候对secrets进行加密；防止无意中泄露最终应用所消耗的secrets；并严格遵守最小特权原则即应用程序只能访问所需的secrets，不能多也不能不少。通过将secrets整合向docker的业务流程，我们能够在遵循这些确切的原则下为secrets管理问题提供一种解决方案。
 
-We fundamentally believe that apps are safer if there is a standardized interface for accessing secrets. Any good solution will also have to follow security best practices, such as encrypting secrets while in transit; encrypting secrets at rest; preventing secrets from unintentionally leaking when consumed by the final application; and strictly adhere to the principle of least-privilege, where an application only has access to the secrets that it needs—no more, no less.
+下图提供了一个高层次视图，并展示了Docker swarm mode结构是如何将一种新类型的对象安全地传递给我们的容器：一个secret对象。
 
-By integrating secrets into Docker orchestration, we are able to deliver a solution for the secrets management problem that follows these exact principles.
+![Docker Secrets Management](https://i0.wp.com/blog.docker.com/wp-content/uploads/b69d2410-9e25-44d8-aa2d-f67b795ff5e3.jpg?w=1140&ssl=1) 
 
-The following diagram provides a high-level view of how the Docker swarm mode architecture is applied to securely deliver a new type of object to our containers: a secret object.
-
- ![Docker Secrets Management](https://i0.wp.com/blog.docker.com/wp-content/uploads/b69d2410-9e25-44d8-aa2d-f67b795ff5e3.jpg?w=1140&ssl=1) 
-
-In Docker, a secret is any blob of data, such as a password, SSH private key, TLS Certificate, or any other piece of data that is sensitive in nature. When you add a secret to the swarm (by running `docker secret create`), Docker sends the secret over to the swarm manager over a mutually authenticated TLS connection, making use of the [built-in Certificate Authority][17] that gets automatically created when bootstrapping a new swarm.
+ 
+在Docker中，一个secret是任意的数据块，比如密码、SSH 密钥、TLS凭证，或者对自然界敏感的每一块数据。当你将一个secret加入swarm（通过执行`docker secret create`）时，docker利用在引导一个新的swarm时自动创建的内置的证书权威，通过相互认证的TLS连接把secret交给swarm管理。
 
 ```
 $ echo "This is a secret" | docker secret create my_secret_data -
 ```
 
-Once the secret reaches a manager node, it gets saved to the internal Raft store, which uses NACL’s Salsa20Poly1305 with a 256-bit key to ensure no data is ever written to disk unencrypted. Writing to the internal store gives secrets the same high availability guarantees that the the rest of the swarm management data gets.
+一旦，secret 达到一个管理节点，它就会被保存在采用NaCl的salsa20poly1305与一个256位的密钥来确保没有任何数据写入磁盘加密的 Raft store 中。 向内部存储写入secrets，保证了数据管理的大量获取。
 
-When a swarm manager starts up, the encrypted Raft logs containing the secrets is decrypted using a data encryption key that is unique per-node. This key, and the node’s TLS credentials used to communicate with the rest of the cluster, can be encrypted with a cluster-wide key encryption key, called the unlock key, which is also propagated using Raft and will be required on manager start.
+当 swarm 管理器启动的时，包含secrets的被加密过的Raft日志通过每一个节点唯一的数据密钥进行解密。此密钥和用于与集群其余部分通信的节点的TLS凭据可以使用一个集群范围的密钥加密密钥进行加密，该密钥称为“解锁密钥”，还使用Raft进行传播，将且会在管理器启动的时候被要求。
 
-When you grant a newly-created or running service access to a secret, one of the manager nodes (only managers have access to all the stored secrets stored) will send it over the already established TLS connection exclusively to the nodes that will be running that specific service. This means that nodes cannot request the secrets themselves, and will only gain access to the secrets when provided to them by a manager – strictly for the services that require them.
+当授予新创建或运行的服务访问某个secret时，管理器节的其中一个节点（只有管理人员可以访问被存储的所有存储secrets），将已建立的TLS连接发送给正在运行特定服务的节点。这意味着节点自己不能请求secrets，并且只有在管理员提供给他们的secrets时才能访问这些secrets——严格地要求那些需要他们的服务。
+
+
+如果一个服务被删除了，或者被重新安排在其他地方，管理员能够很快的注意到那些不再需要访问将它从内存中消除的secret 的所有节点，且那节点将不能够访问应用程序的secret。
 
 ```
 $ docker service  create --name="redis" --secret="my_secret_data" redis:alpine
@@ -53,7 +56,7 @@ $ docker exec -it $(docker ps --filter name=redis -q) cat /run/secrets/my_secret
 cat: can't open '/run/secrets/my_secret_data': No such file or directory
 ```
 
-Check out the [Docker secrets docs][18] for more information and examples on how to create and manage your secrets. And a special shout out to Laurens Van Houtven (https://www.lvh.io/[)][19] in collaboration with the Docker security and core engineering team to help make this feature a reality.
+为了获得更多的信息和一些说明如何创建和管理secrets的例子可以看Docker secrets 文档。同时，特别推荐Docker 安全合作团 Laurens Van Houtven (https://www.lvh.io/) 和是这一特性成为现实的团队。
 
 [Get safer apps for dev and ops w/ new #Docker secrets management][5]
 
@@ -64,7 +67,7 @@ Check out the [Docker secrets docs][18] for more information and examples on h
 
 ### Safer Apps with Docker
 
-Docker secrets is designed to be easily usable by developers and IT ops teams to build and run safer apps. Docker secrets is a container first architecture designed to keep secrets safe and used only when needed by the exact container that needs that secret to operate. From defining apps and secrets with Docker Compose through an IT admin deploying that Compose file directly in Docker Datacenter, the services, secrets, networks and volumes will travel securely, safely with the application.
+Docker secrets 为开发者设计成更易于使用且IT 运维团队用它来构建和运行更加安全的运用程序。Docker secrets 是首个被设计为既能保持secret安全又能仅在当被需要secret操作的确切容器需要的使用的容器结构。从通过直接在Docker 数据中心开发部件文件的IT管理员并使用Docker 组件来定义应用程序和secrets 来看，服务器、secrets、网络和volumes将能够安全可靠地使用应用程序。
 
 Resources to learn more:
 
@@ -83,7 +86,7 @@ Resources to learn more:
 via: https://blog.docker.com/2017/02/docker-secrets-management/
 
 作者：[ Ying Li][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[HardworkFish](https://github.com/HardworkFish)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
