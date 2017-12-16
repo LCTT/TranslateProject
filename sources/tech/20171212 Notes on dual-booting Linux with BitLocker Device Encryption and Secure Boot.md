@@ -1,5 +1,9 @@
 Notes on dual-booting Linux with BitLocker Device Encryption and Secure Boot
 ======
+
+![](https://www.ctrl.blog/media/dualboot-tpm-windows-linux-704x396.jpeg)
+
+
 Take some precautions, have a backup plan, and you can leave your Windows partition encrypted and keep your system using secure boot alongside a Linux distribution.
 
 These notes are meant to help you setup a dual-booting system with Linux on a computer running Windows 10 Professional with BitLocker Device Encryption, Modern Standby (a.k.a. Fast Boot), and Secure Boot. Linux (or another secondary operating system) installation is only covered in brief as these notes will focus on preserving the Windows pre-boot UEFI environment in such a setup.
