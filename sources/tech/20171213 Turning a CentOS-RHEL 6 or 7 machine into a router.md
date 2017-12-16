@@ -1,3 +1,4 @@
+Translate by lujun9972
 Turning a CentOS/RHEL 6 or 7 machine into a router
 ======
 In this tutorial we are going to learn to convert RHEL/CentOS 6 & 7 machines into a router by using NATting. Router as we know is layer 3 networking device that is used to connect 2 or more networks i.e. either connecting LAN to WAN or LAN to LAN etc. Router devices are quite expensive & especially for small organizations, that might be a reason for concern. So rather than using a dedicated Hardware, we can use any Linux machine & convert it into a router.
@@ -75,7 +76,7 @@ We can also check by browsing websites via our web browser.
 via: http://linuxtechlab.com/turning-centosrhel-6-7-machine-router/
 
 作者：[][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[lujun9972](https://github.com/lujun9972)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
