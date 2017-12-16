@@ -1,11 +1,13 @@
 How to find and tar files into a tar ball
 ======
 
-The find command used to search for files in a directory hierarchy as per given criteria. The tar command is an archiving utility for Linux and Unix-like system to create tarballs.
-[![How to find and tar files on linux unix][1]][1]
-Let us see how to combine tar command with find command to create a tarball in a single command line option.
+I would like to find all documents file *.doc and create a tarball of those files and store in /nfs/backups/docs/file.tar. Is it possible to find and tar files on a Linux or Unix-like system?
 
-I would like to find all documents file *.doc and create a tarball of those files and store in /nfs/backups/docs/file.tar. Is it possible to find and tar files on a Linux or Unix-like system?The find command used to search for files in a directory hierarchy as per given criteria. The tar command is an archiving utility for Linux and Unix-like system to create tarballs.Let us see how to combine tar command with find command to create a tarball in a single command line option.
+The find command used to search for files in a directory hierarchy as per given criteria. The tar command is an archiving utility for Linux and Unix-like system to create tarballs.
+
+[![How to find and tar files on linux unix][1]][1]
+
+Let us see how to combine tar command with find command to create a tarball in a single command line option.
 
 ## Find command
 
@@ -97,6 +99,11 @@ $ man xargs
 $ man bash
 ```
 
+------------------------------
+
+作者简介：
+
+The author is the creator of nixCraft and a seasoned sysadmin and a trainer for the Linux operating system/Unix shell scripting. He has worked with global clients and in various industries, including IT, education, defense and space research, and the nonprofit sector. Follow him on Twitter, Facebook, Google+.
 
 --------------------------------------------------------------------------------
 
