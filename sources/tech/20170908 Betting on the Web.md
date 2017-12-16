@@ -1,4 +1,5 @@
-translate by hwlife
+voidpainter is translating
+---
 [Betting on the Web][27]
 ============================================================
 
