@@ -1,6 +1,8 @@
 6 open source home automation tools
 ======
 
+![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/osdc_520x292_openlightbulbs.png?itok=nrv9hgnH)
+
 The [Internet of Things][13] isn't just a buzzword, it's a reality that's expanded rapidly since we last published a review article on home automation tools in 2016\. In 2017, [26.5% of U.S. households][14] already had some type of smart home technology in use; within five years that percentage is expected to double.
 
 With an ever-expanding number of devices available to help you automate, protect, and monitor your home, it has never been easier nor more tempting to try your hand at home automation. Whether you're looking to control your HVAC system remotely, integrate a home theater, protect your home from theft, fire, or other threats, reduce your energy usage, or just control a few lights, there are countless devices available at your disposal.
