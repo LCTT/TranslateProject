@@ -40,13 +40,13 @@ Will DevOps take away your job? Yes, but it will give you a better one.
 
 via: https://opensource.com/article/17/12/will-devops-steal-my-job
 
-作者：[About The Author;Chris Collins;Chris Collins Is A Senior Automation Engineer;The Web Architecture Lead At Duke University S Office Of Information Technology. He S A Container;Automation Evangelist;Helps Leads Adoption Of Containers Within The University;Loves To Talk About Them With Anyone Who Will Listen;Much To The Annoyance Of The Co-Workers Who Sit Closest To Him.][a]
+作者：[Chris Collins][a]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:https://opensource.com
-[1]:/resources/devops
+[a]:https://opensource.com/users/clcollins
+[1]:https://opensource.com/resources/devops
 [2]:http://itrevolution.com/the-three-ways-principles-underpinning-devops/
 [3]:https://theagileadmin.com/what-is-devops/
