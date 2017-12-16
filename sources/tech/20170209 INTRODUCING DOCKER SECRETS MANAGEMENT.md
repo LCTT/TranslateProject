@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+
+translating by HardworkFish
+
+INTRODUCING DOCKER SECRETS MANAGEMENT
+============================================================
+>>>>>>> 7162ea6a1c215c9d3bafdc90adc5cb9fdbdfa989
 
 Dockers Secrets 管理介绍
 =========================
