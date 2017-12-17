@@ -1,3 +1,6 @@
+
+translating by HardworkFish
+
 INTRODUCING DOCKER SECRETS MANAGEMENT
 ============================================================
 
