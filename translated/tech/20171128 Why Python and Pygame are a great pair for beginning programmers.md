@@ -78,15 +78,15 @@ sudo yum install python3-pygame
 
 JavaScript 和 Phaser 有着种种的不好，为什么我还继续教授他们？老实说，我考虑了很长一段时间，我在担心着学生学习变量申明提升和变量作用域的揪心。所有我开发出基于 Pygame 和 Python 的课程，随后也开发出一涛基于 Phaser 的。最终，我决定使用 Pablo 预先制定的课程作为起点。
 
-There are really two reasons that I moved to JavaScript. First, JavaScript has emerged as a serious language used in serious applications. In addition to web applications, it’s used for mobile and server applications. JavaScript is everywhere, and it’s used widely in applications kids see every day. If their friends code in JavaScript, they'll likely want to as well. As I saw the momentum behind JavaScript, I looked into alternatives that could compile into JavaScript, primarily Dart and TypeScript. I didn’t mind the extra conversion step, but I still looked at JavaScript.
+我转用 JavaScript 有两个原因。首先，JavaScript 已经成为正式应用的正式语言。除了 Web 应用外，也可使用于移动和服务应用方面。JavaScript 无处不在，其广泛应用于孩子们每天都能看到的应用中。如果他们的朋友使用 Javascript 来编程，他们很可能也会受影响而使用之。正如我看到了 JavaScript 背后的动力，所以深入研究了可编译成 JavaScript 的替代语言，主要是 Dart 和 TypeScript 两种。虽然我不介意额外的转换步骤，但还是最喜欢 JavaScript。
 
-In the end, I chose to use Phaser and JavaScript because I realized that the problems could be solved with JavaScript and a bit of work. High-quality debugging tools and the work of some exceptionally smart people have made JavaScript a language that is both accessible and useful for teaching kids to code.
+最后，我选择使用 Phaser 和 JavaScript 的组合，是因为我意识到上面那些问题在 JavaScript 可以被解决，仅仅只是一些工作量而已。高质量的调试工具和一些大牛们的人的工作使得 JavaScript 成为教育孩子编码的可用和有用的语言。
 
-### Final word: Python vs. JavaScript
+### 最后话题: Python 对垒 JavaScript
 
-When people ask me what language to start their kids with, I immediately suggest Python and Pygame. There are tons of great curriculum options, many of which are free. I used ["Making Games with Python & Pygame"][25] by Al Sweigart with my son. I also used  _[Think Python: How to Think Like a Computer Scientist][7]_ by Allen B. Downey. You can get Pygame on your Android phone with [RAPT Pygame][26] by [Tom Rothamel][27].
+当家长问我使用的什么语言作为孩子的入门语言时，我会立即推荐 Python 和 Pygame。因为有成千上万的课程可选，而且大多数都是免费的。我为我的儿子选择了 Al Sweigart 的 [使用 Python 和 Pygame 开发游戏][25] 课程，同时也在使用 Allen B. Downey 的 [Python 编程思想：如何像计算机科学家一样思考][7]。在 Android 手机上可以使用 [ Tom Rothame ][27]的[ PAPT Pyame][26] 来安装 Pygame 游戏。
 
-Despite my recommendation, I always suspect that kids soon move to JavaScript. And that’s okay—JavaScript is a mature language with great tools. They’ll have fun with JavaScript and learn a lot. But after years of helping my daughter’s older brother create cool games in Python, I’ll always have an emotional attachment to Python and Pygame.
+那是好事。JavaScript 是一门成熟的编程语言，有很多很多辅助工具。但有多年的帮助大儿子使用 Python 创建炫酷游戏经历的我，依然钟情于 Python 和 Pygame。
 
 ### About the author
 
