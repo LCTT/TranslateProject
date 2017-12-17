@@ -1,3 +1,4 @@
+(translating by runningwater)
 Peeking into your Linux packages
 ======
 Do you ever wonder how many _thousands_ of packages are installed on your Linux system? And, yes, I said "thousands." Even a fairly modest Linux system is likely to have well over a thousand packages installed. And there are many ways to get details on what they are.
@@ -117,7 +118,7 @@ Note that the command above would have removed the package binaries along with t
 via: https://www.networkworld.com/article/3242808/linux/peeking-into-your-linux-packages.html
 
 作者：[Sandra Henry-Stocker][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
