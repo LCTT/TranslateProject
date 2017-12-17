@@ -1,21 +1,19 @@
-yixunx translating
-
-Love Your Bugs
+热爱你的 Bug
 ============================================================
 
-In early October I gave a keynote at [Python Brasil][1] in Belo Horizonte. Here is an aspirational and lightly edited transcript of the talk. There is also a video available [here][2].
+十月初的时候我在贝洛奥里藏特的[<ruby>巴西 Python 大会<rt>Python Brasil</rt></ruby>][1]上做了主题演讲。这是稍加改动过的演讲文稿。你可以在[这里][2]观看演讲视频。
 
-### I love bugs
+### 我爱 bug
 
-I’m currently a senior engineer at [Pilot.com][3], working on automating bookkeeping for startups. Before that, I worked for [Dropbox][4] on the desktop client team, and I’ll have a few stories about my work there. Earlier, I was a facilitator at the [Recurse Center][5], a writers retreat for programmers in NYC. I studied astrophysics in college and worked in finance for a few years before becoming an engineer.
+我目前是 [Pilot.com][3] 的一位高级工程师，负责给创业公司提供自动记账服务。在此之前，我曾是 [Dropbox][4] 的桌面客户端组的成员，我今天将分享关于我当时工作的一些故事。更早之前，我是 [Recurse Center][5] 的导师，给身在纽约的程序员提供临时的训练环境。在成为工程师之前，我在大学攻读天体物理学并在金融界工作过几年。
 
-But none of that is really important to remember – the only thing you need to know about me is that I love bugs. I love bugs because they’re entertaining. They’re dramatic. The investigation of a great bug can be full of twists and turns. A great bug is like a good joke or a riddle – you’re expecting one outcome, but the result veers off in another direction.
+但这些都不重要——关于我你唯一需要知道的是，我爱 bug。我爱 bug 因为它们有趣。它们富有戏剧性。调试一个好的 bug 的过程可以非常迂回曲折。一个好的 bug 像是一个有趣的笑话或者或者谜语——你期望看到某种结果，但却事与愿违。
 
-Over the course of this talk I’m going to tell you about some bugs that I have loved, explain why I love bugs so much, and then convince you that you should love bugs too.
+在这个演讲中我会给你们讲一些我曾经热爱过的 bug，解释为什么我如此爱 bug，然后说服你们也同样去热爱 bug。
 
-### Bug #1
+### Bug 1 号
 
-Ok, straight into bug #1\. This is a bug that I encountered while working at Dropbox. As you may know, Dropbox is a utility that syncs your files from one computer to the cloud and to your other computers.
+好，让我们直接来看第一个 bug。这是我在 Dropbox 工作时遇到的一个 bug。你们或许听说过，Dropbox 是一个将你的文件从一个电脑上同步到云端和其他电脑上的应用。
 
 
 
@@ -35,70 +33,62 @@ Ok, straight into bug #1\. This is a bug that I encountered while working at Dro
 ```
 
 
-Here’s a vastly simplified diagram of Dropbox’s architecture. The desktop client runs on your local computer listening for changes in the file system. When it notices a changed file, it reads the file, then hashes the contents in 4MB blocks. These blocks are stored in the backend in a giant key-value store that we call blockserver. The key is the digest of the hashed contents, and the values are the contents themselves.
+这是个极度简化的 Dropbox 架构图。桌面客户端在你的电脑本地运行，监听文件系统的变动。当它检测到文件改动时，它读取改变的文件，并把它的内容 hash 成 4 MB 大小的文件块。这些文件块被存放在后端一个叫做<ruby>块服务器<rt>blockserver</rt></ruby>的巨大的<ruby>键值对数据库<rt>key-value store</rt></ruby>中。
 
-Of course, we want to avoid uploading the same block multiple times. You can imagine that if you’re writing a document, you’re probably mostly changing the end – we don’t want to upload the beginning over and over. So before uploading a block to the blockserver the client talks to a different server that’s responsible for managing metadata and permissions, among other things. The client asks metaserver whether it needs the block or has seen it before. The “metaserver” responds with whether or not each block needs to be uploaded.
+当然，我们想避免多次上传同一个文件块。可以想见，如果你在编写一份文档，你应该大部分时候都在改动文档最底部——我们不想一遍又一遍地上传开头部分。所以在上传文件块到块服务器之前之前，客户端会先和一个负责管理元数据和权限等等的服务器沟通。客户端会询问这个<ruby>元数据服务器<rt>metaserver</rt></ruby>它是需要这个文件块，还是已经见过这个文件块了。元数据服务器会返回每一个文件块是否需要上传。
 
-So the request and response look roughly like this: The client says, “I have a changed file made up of blocks with hashes `'abcd,deef,efgh'`”. The server responds, “I have those first two, but upload the third.” Then the client sends the block up to the blockserver.
-
+所以这些请求和响应看上去大概是这样：客户端说“我有一个改动过的文件，分为这些文件块，它们的 hash 是 `'abcd,deef,efgh'`。服务器响应说“我有前两块，但需要你上传第三块”。然后客户端会把那个文件块上传到块服务器。
 
 ```
                 +--------------+     +---------------+
                 |              |     |               |
-                |  METASERVER  |     |  BLOCKSERVER  |
+                |  元数据服务器  |     |     块服务器    |
                 |              |     |               |
                 +-+--+---------+     +---------+-----+
                   ^  |                         ^
-                  |  | 'ok, ok, need'          |
-'abcd,deef,efgh'  |  |     +----------+        | efgh: [contents]
+                  |  | '有, 有, 无'             |
+'abcd,deef,efgh'  |  |     +----------+        | efgh: [内容]
                   |  +---> |          |        |
-                  |        |  CLIENT  +--------+
+                  |        |   客户端   +--------+
                   +--------+          |
                            +----------+
 ```
 
- 
-
-That’s the setup. So here’s the bug.
-
-
+这是问题的背景。下面是 bug。
 
 ```
                 +--------------+
                 |              |
-                |  METASERVER  |
+                |    块服务器    |
                 |              |
                 +-+--+---------+
                   ^  |
                   |  |   '???'
 'abcdldeef,efgh'  |  |     +----------+
      ^            |  +---> |          |
-     ^            |        |  CLIENT  +
+     ^            |        |   客户端  +
                   +--------+          |
                            +----------+
 ```
 
-Sometimes the client would make a weird request: each hash value should have been sixteen characters long, but instead it was thirty-three characters long – twice as many plus one. The server wouldn’t know what to do with this and would throw an exception. We’d see this exception get reported, and we’d go look at the log files from the desktop client, and really weird stuff would be going on – the client’s local database had gotten corrupted, or python would be throwing MemoryErrors, and none of it would make sense.
+有时候客户端会提交一个奇怪的请求：每个 hash 值应该包含 16 个字母，但它却发送了 33 个字母——所需数量的两倍加一。服务器不知道该怎么处理它，于是会抛出一个异常。我们收到这个异常的报告，于是去查看客户端的记录文件，然后会看到非常奇怪的事情——客户端的本地数据库损坏了，或者 python 抛出 MemoryError，没有一个合乎情理的。
 
-If you’ve never seen this problem before, it’s totally mystifying. But once you’d seen it once, you can recognize it every time thereafter. Here’s a hint: the middle character of each 33-character string that we’d often see instead of a comma was `l`. These are the other characters we’d see in the middle position:
-
+如果你以前没见过这个问题，可能会觉得毫无头绪。但当你见过一次之后，你以后每次看到都能轻松地认出它来。给你一个提示：在那些 33 个字母的字符串中，`l` 经常会代替逗号出现。其他经常出现的字符是：
 
 ```
 l \x0c < $ ( . -
 ```
 
-The ordinal value for an ascii comma – `,` – is 44\. The ordinal value for `l` is 108\. In binary, here’s how those two are represented:
+英文逗号的 ASCII 码是44。`l` 的 ASCII 码是 108。它们的二进制表示如下：
 
 ```
 bin(ord(',')): 0101100  
 bin(ord('l')): 1101100  
 ```
 
-You’ll notice that an `l` is exactly one bit away from a comma. And herein lies your problem: a bitflip. One bit of memory that the desktop client is using has gotten corrupted, and now the desktop client is sending a request to the server that is garbage.
+你会注意到 `l` 和逗号只差了一位。问题就出在这里：发生了位反转。桌面客户端使用的内存中的一位发生了错误，于是客户端开始向服务器发送错误的请求。
 
-And here are the other characters we’d frequently see instead of the comma when a different bit had been flipped.
-
-
+这是其他经常代替逗号出现的字符的 ASCII 码：
 
 ```
 ,    : 0101100
@@ -112,176 +102,176 @@ $    : 0100100
 ```
 
 
-### Bitflips are real!
+### 位反转是真的！
 
-I love this bug because it shows that bitflips are a real thing that can happen, not just a theoretical concern. In fact, there are some domains where they’re more common than others. One such domain is if you’re getting requests from users with low-end or old hardware, which is true for a lot of laptops running Dropbox. Another domain with lots of bitflips is outer space – there’s no atmosphere in space to protect your memory from energetic particles and radiation, so bitflips are pretty common.
+我爱这个 bug 因为它证明了位反转是可能真实发生的事情，而不只是一个理论上的问题。实际上，它在某些情况下会比平时更容易发生。其中一种情况是用户使用的是低配或者老旧的硬件，而运行 Dropbox 的电脑很多都是这样。另外一种会造成很多位反转的地方是外太空——在太空中没有大气层来保护你的内存不受高能粒子和辐射的影响，所以位反转会十分常见。
 
-You probably really care about correctness in space – your code might be keeping astronauts alive on the ISS, for example, but even if it’s not mission-critical, it’s hard to do software updates to space. If you really need your application to defend against bitflips, there are a variety of hardware & software approaches you can take, and there’s a [very interesting talk][6] by Katie Betchold about this.
+你大概非常在乎在宇宙中运行的程序的正确性——你的代码或许事关国际空间站中宇航员的性命，但即使没有那么重要，也还要考虑到在宇宙中很难进行软件更新。如果你的确需要让你的程序能够处理位反转，有很多硬件和软件措施可供你选择，Katie Betchold 还关于这个问题做过一个[非常有意思的讲座][6]。
 
-Dropbox in this context doesn’t really need to protect against bitflips. The machine that is corrupting memory is a user’s machine, so we can detect if the bitflip happens to fall in the comma – but if it’s in a different character we don’t necessarily know it, and if the bitflip is in the actual file data read off of disk, then we have no idea. There’s a pretty limited set of places where we could address this, and instead we decide to basically silence the exception and move on. Often this kind of bug resolves after the client restarts.
+在刚才那种情况下，Dropbox 并不需要处理位反转。出现内存损坏的是用户的电脑，所以即使我们可以检测到逗号字符的位反转，但如果这发生在其他字符上我们就不一定能检测到了，而且如果从硬盘中读取的文件本身发生了位反转，那我们根本无从得知。我们能改进的地方很少，于是我们决定无视这个异常并继续程序的运行。这种 bug 一般都会在客户端重启之后自动解决。
 
-### Unlikely bugs aren’t impossible
+### 不常见的 bug 并非不可能发生
 
-This is one of my favorite bugs for a couple of reasons. The first is that it’s a reminder of the difference between unlikely and impossible. At sufficient scale, unlikely events start to happen at a noticable rate.
+这是我最喜欢的 bug 之一，有几个原因。第一，它提醒我注意不常见和不可能之间的区别。当规模足够大的时候，不常见的现象会以值得注意的频率发生。
 
-### Social bugs
+### 覆盖面广的 bug
 
-My second favorite thing about this bug is that it’s a tremendously social one. This bug can crop up anywhere that the desktop client talks to the server, which is a lot of different endpoints and components in the system. This meant that a lot of different engineers at Dropbox would see versions of the bug. The first time you see it, you can  _really_  scratch your head, but after that it’s easy to diagnose, and the investigation is really quick: you look at the middle character and see if it’s an `l`.
+这个 bug 第二个让我喜欢的地方是它覆盖面非常广。每当桌面客户端和服务器交流的时候，这个 bug 都可能悄然出现，而这可能会发生在系统里很多不同的端点和组件当中。这意味着许多不同的 Dropbox 工程师会看到这个 bug 的各种版本。你第一次看到它的时候，你 _真的_ 会满头雾水，但在那之后诊断这个 bug 就变得很容易了，而调查过程也非常简短：你只需找到中间的字母，看它是不是个 `l`。
 
-### Cultural differences
+### 文化差异
 
-One interesting side-effect of this bug was that it exposed a cultural difference between the server and client teams. Occasionally this bug would be spotted by a member of the server team and investigated from there. If one of your  _servers_  is flipping bits, that’s probably not random chance – it’s probably memory corruption, and you need to find the affected machine and get it out of the pool as fast as possible or you risk corrupting a lot of user data. That’s an incident, and you need to respond quickly. But if the user’s machine is corrupting data, there’s not a lot you can do.
+这个 bug 的一个有趣的副作用是它展示了服务器组和客户端组之间的文化差异。有时候这个 bug 会被服务器组的成员发现并展开调查。如果你的 _服务器_ 上发生了位反转，那应该不是个偶然——这很可能是内存损坏，你需要找到受影响的主机并尽快把它从集群中移除，不然就会有损坏大量用户数据的风险。这是个事故，而你必须迅速做出反应。但如果是用户的电脑在破坏数据，你并没有什么可以做的。
 
-### Share your bugs
+### 分享你的 bug
 
-So if you’re investigating a confusing bug, especially one in a big system, don’t forget to talk to people about it. Maybe your colleagues have seen a bug shaped like this one before. If they have, you might save a lot of time. And if they haven’t, don’t forget to tell people about the solution once you’ve figured it out – write it up or tell the story in your team meeting. Then the next time your teams hits something similar, you’ll all be more prepared.
+如果你在调试一个难搞的 bug，特别是在大型系统中，不要忘记跟别人讨论。也许你的同事以前就遇到过类似的 bug。若是如此，你可能会节省很多时间。就算他们没有见过，也不要忘记在你解决了问题之后告诉他们解决方法——写下来或者在组会中分享。这样下次你们组遇到类似的问题时，你们都会早有准备。
 
-### How bugs can help you learn
+### Bug 如何帮助你进步
 
 ### Recurse Center
 
-Before I joined Dropbox, I worked for the Recurse Center. The idea behind RC is that it’s a community of self-directed learners spending time together getting better as programmers. That is the full extent of the structure of RC: there’s no curriculum or assignments or deadlines. The only scoping is a shared goal of getting better as a programmer. We’d see people come to participate in the program who had gotten CS degrees but didn’t feel like they had a solid handle on practical programming, or people who had been writing Java for ten years and wanted to learn Clojure or Haskell, and many other profiles as well.
+在加入 Dropbox 之前，我曾在 Recurse Center 工作。它的理念是建立一个社区让正在自学的程序员们聚到一起来提高能力。这就是 Recurse Center 的全部了：我们没有大纲、作业、截止日期等等。唯一的前提条件是我们都想要成为更好的程序员。参与者中有的人有计算机学位但对自己的实际编程能力不够自信，有的人已经写了十年 Java 但想学 Clojure 或者 Haskell，还有各式各样有着其他的背景的参与者。
 
-My job there was as a facilitator, helping people make the most of the lack of structure and providing guidance based on what we’d learned from earlier participants. So my colleagues and I were very interested in the best techniques for learning for self-motivated adults.
+我在那里是一位导师，帮助人们更好地利用这个自由的环境，并参考我们从以前的参与者那里学到的东西来提供指导。所以我的同事们和我本人都非常热衷于寻找对成年自学者最有帮助的学习方法。
 
-### Deliberate Practice
+### 刻意练习
 
-There’s a lot of different research in this space, and one of the ones I think is most interesting is the idea of deliberate practice. Deliberate practice is an attempt to explain the difference in performance between experts & amateurs. And the guiding principle here is that if you look just at innate characteristics – genetic or otherwise – they don’t go very far towards explaining the difference in performance. So the researchers, originally Ericsson, Krampe, and Tesch-Romer, set out to discover what did explain the difference. And what they settled on was time spent in deliberate practice.
+在学习方法这个领域有很多不同的研究，其中我觉得最有意思的研究之一是刻意练习的概念。刻意练习理论意在解释专业人士和业余爱好者的表现的差距。它的基本思想是如果你只看内在的特征——不论先天与否——它们都无法非常好地解释这种差距。于是研究者们，包括最初的 Ericsson、Krampe 和 Tesch-Romer，开始寻找能够解释这种差距的理论。他们最终的答案是在刻意练习上所花的时间。
 
-Deliberate practice is pretty narrow in their definition: it’s not work for pay, and it’s not playing for fun. You have to be operating on the edge of your ability, doing a project appropriate for your skill level (not so easy that you don’t learn anything and not so hard that you don’t make any progress). You also have to get immediate feedback on whether or not you’ve done the thing correctly.
+他们给刻意练习的定义非常精确：不是为了收入而工作，也不是为了乐趣而玩耍。你必须尽自己能力的极限，去做一个和你的水平相称的任务（不能太简单导致你学不到东西，也不能太难导致你无法取得任何进展）。你还需要获得即时的反馈，知道自己是否做得正确。
 
-This is really exciting, because it’s a framework for how to build expertise. But the challenge is that as programmers this is really hard advice to apply. It’s hard to know whether you’re operating at the edge of your ability. Immediate corrective feedback is very rare – in some cases you’re lucky to get feedback ever, and in other cases maybe it takes months. You can get quick feedback on small things in the REPL and so on, but if you’re making a design decision or picking a technology, you’re not going to get feedback on those things for quite a long time.
+这非常令人兴奋，因为这是一套能够用来建立专业技能的系统。但难点在于对于程序员来说这些建议非常难以实施。你很难知道你是否处在自己能力的极限。也很少有即时的反馈帮助你改进——有时候你能得到任何反馈都已经算是很幸运了，还有时候你需要等几个月才能得到反馈。对于在 REPL 中做的简单的事情你可以很快地得到反馈，但如果你在做一个设计上的决定或者技术上的选择，你在很长一段时间里都无法得到反馈。
 
-But one category of programming where deliberate practice is a useful model is debugging. If you wrote code, then you had a mental model of how it worked when you wrote it. But your code has a bug, so your mental model isn’t quite right. By definition you’re on the boundary of your understanding – so, great! You’re about to learn something new. And if you can reproduce the bug, that’s a rare case where you can get immediate feedback on whether or not your fix is correct.
+但是在有一类编程工作中刻意练习是非常有用的，它就是 debug。如果你写了一份代码，那么当时你是理解这份代码是如何工作的。但你的代码有 bug，所以你的理解并不完全正确。根据定义来说，你正处在你理解能力的极限上——这很好！你马上要学到新东西了。如果你可以重现这个 bug，那么这是个宝贵的机会，你可以获得即时的反馈，知道自己的修改是否正确。
 
-A bug like this might teach you something small about your program, or you might learn something larger about the system your code is running in. Now I’ve got a story for you about a bug like that.
+像这样的 bug 也许能让你学到关于你的程序的一些小知识，但你也可能会学到一些关于运行你的代码的系统的一些更复杂的知识。我接下来要讲一个关于这种 bug 的故事。
 
-### Bug #2
+### Bug 2 号
 
-This bug also one that I encountered at Dropbox. At the time, I was investigating why some desktop client weren’t sending logs as consistently as we expected. I’d started digging into the client logging system and discovered a bunch of interesting bugs. I’ll tell you only the subset of those bugs that is relevant to this story.
+这也是我在 Dropbox 工作时遇到的 bug。当时我正在调查为什么有些桌面客户端没有像我们预期的那样持续发送日志。我开始调查客户端的日志系统并且发现了很多有意思的 bug。我会挑一些跟这个故事有关的 bug 来讲。
 
-Again here’s a very simplified architecture of the system.
+和之前一样，这是一个非常简化的系统架构。
 
 
 ```
                                    +--------------+
                                    |              |
-               +---+  +----------> |  LOG SERVER  |
-               |log|  |            |              |
+               +---+  +----------> |   日志服务器   |
+               |日志|  |            |              |
                +---+  |            +------+-------+
                       |                   |
                 +-----+----+              |  200 ok
                 |          |              |
-                |  CLIENT  |  <-----------+
+                |  客户端   |  <-----------+
                 |          |
                 +-----+----+
                       ^
                       +--------+--------+--------+
                       |        ^        ^        |
                    +--+--+  +--+--+  +--+--+  +--+--+
-                   | log |  | log |  | log |  | log |
+                   | 日志 |  | 日志 |  | 日志 |  | 日志 |
                    |     |  |     |  |     |  |     |
                    |     |  |     |  |     |  |     |
                    +-----+  +-----+  +-----+  +-----+
 ```
 
-The desktop client would generate logs. Those logs were compress, encrypted, and written to disk. Then every so often the client would send them up to the server. The client would read a log off of disk and send it to the log server. The server would decrypt it and store it, then respond with a 200.
+桌面客户端会生成日志。这些日志会被压缩、加密并写入硬盘。然后客户端会间歇性地把它们发送给服务器。客户端从硬盘读取日志并发送给日志服务器。服务器会将它解码并存储，然后返回 200。
 
-If the client couldn’t reach the log server, it wouldn’t let the log directory grow unbounded. After a certain point it would start deleting logs to keep the directory under a maximum size.
+如果客户端无法连接到日志服务器，它不会让日志目录无限地增长。超过一定大小之后，它会开始删除日志来让目录大小不超过一个最大值。
 
-The first two bugs were not a big deal on their own. The first one was that the desktop client sent logs up to the server starting with the oldest one instead of starting with the newest. This isn’t really what you want – for example, the server would tell the client to send logs if the client reported an exception, so probably you care about the logs that just happened and not the oldest logs that happen to be on disk.
+最初的两个 bug 本身并不严重。第一个 bug 是桌面客户端向服务器发送日志时会从最早的日志而不是最新的日志开始。这并不是很好——比如服务器会在客户端报告异常的时候让客户端发送日志，所以你可能最在乎的是刚刚生成的日志而不是在硬盘上的最早的日志。
 
-The second bug was similar to the first: if the log directory hit its maximum size, the client would delete the logs starting with the newest instead of starting with the oldest. Again, you lose log files either way, but you probably care less about the older ones.
+第二个 bug 和第一个相似：如果日志目录的大小达到了上限，客户端会从最新的日志而不是最早的日志开始删除。同理，你总是会丢失一些日志文件，但你大概更不在乎那些较早的日志。
 
-The third bug had to do with the encryption. Sometimes, the server would be unable to decrypt a log file. (We generally didn’t figure out why – maybe it was a bitflip.) We weren’t handling this error correctly on the backend, so the server would reply with a 500\. The client would behave reasonably in the face of a 500: it would assume that the server was down. So it would stop sending log files and not try to send up any of the others.
+第三个 bug 和加密有关。有时服务器会无法对一个日志文件解码（我们一般不知道为什么——也许发生了位反转）。我们在后端没有正确地处理这个错误，而服务器会返回 500。客户端看到 500 之后会做合理的反应：它会认为服务器停机了。所以它会停止发送日志文件并且不再尝试发送其他的日志。
 
-Returning a 500 on a corrupted log file is clearly not the right behavior. You could consider returning a 400, since it’s a problem with the client request. But the client also can’t fix the problem – if the log file can’t be decrypted now, we’ll never be able to decrypt it in the future. What you really want the client to do is just delete the log and move on. In fact, that’s the default behavior when the client gets a 200 back from the server for a log file that was successfully stored. So we said, ok – if the log file can’t be decrypted, just return a 200.
+对于一个损坏的日志文件返回 500 显然不是正确的行为。你可以考虑返回 400，因为问题出在客户端的请求上。但客户端同样无法修复这个问题——如果日志文件现在无法解码，我们后也永远无法将它解码。客户端正确的做法是直接删除日志文件然后继续运行。实际上，这正是客户端在成功上传日志文件并从服务器收到 200 的响应时的默认行为。所以我们说，好——如果日志文件无法解码，就返回 200。
 
-All of these bugs were straightforward to fix. The first two bugs were on the client, so we’d fixed them on the alpha build but they hadn’t gone out to the majority of clients. The third bug we fixed on the server and deployed.
+所有这些 bug 都很容易修复。前两个 bug 出在客户端上，所以我们在 alpha 版本修复了它们，但大部分的客户端还没有获得这些改动。我们在服务器代码中修复了第三个 bug 并部署了新版的服务器。
 
 ### 📈
 
-Suddenly traffic to the log cluster spikes. The serving team reaches out to us to ask if we know what’s going on. It takes me a minute to put all the pieces together.
+突然日志服务器集群的流量开始激增。客服团队找到我们并问我们是否知道原因。我花了点时间把所有的部分拼到一起。
 
-Before these fixes, there were four things going on:
+在修复之前，这四件事情会发生：
 
-1.  Log files were sent up starting with the oldest
+1.  日志文件从最早的开始发送
 
-2.  Log files were deleted starting with the newest
+2.  日志文件从最新的开始删除
 
-3.  If the server couldn’t decrypt a log file it would 500
+3.  如果服务器无法解码日志文件，它会返回 500
 
-4.  If the client got a 500 it would stop sending logs
+4.  如果客户端收到 500，它会停止发送日志
 
-A client with a corrupted log file would try to send it, the server would 500, the client would give up sending logs. On its next run, it would try to send the same file again, fail again, and give up again. Eventually the log directory would get full, at which point the client would start deleting its newest files, leaving the corrupted one on disk.
+一个存有损坏的日志文件的客户端会试着发送这个文件，服务器会返回 500，客户端会放弃发送日志。在下一次运行时，它会尝试再次发送同样的文件，再次失败，并再次放弃。最终日志目录会被填满，然后客户端会开始删除最新的日志文件，而把损坏的文件继续保留在硬盘上。
 
-The upshot of these three bugs: if a client ever had a corrupted log file, we would never see logs from that client again.
+这三个 bug 导致的结果是：如果客户端在任何时候生成了损坏的日志文件，我们就再也不会收到那个客户端的日志了。
 
-The problem is that there were a lot more clients in this state than we thought. Any client with a single corrupted file had been dammed up from sending logs to the server. Now that dam was cleared, and all of them were sending up the rest of the contents of their log directories.
+问题是，处于这种状态的客户端比我们想象的要多很多。任何有一个损坏文件的客户端都会像被关在堤坝里一样，无法再发送日志。现在这个堤坝被清除了，所有这些客户端都开始发送它们的日志目录的剩余内容。
 
-### Our options
+###　我们的选择
 
-Ok, there’s a huge flood of traffic coming from machines around the world. What can we do? (This is a fun thing about working at a company with Dropbox’s scale, and particularly Dropbox’s scale of desktop clients: you can trigger a self-DDOS very easily.)
+好的，现在文件从世界各地的电脑如洪水般涌来。我们能做什么？（当你在一个有 Dropbox 这种规模，尤其是这种桌面客户端的规模的公司工作时，会遇到这种有趣的事情：你可以非常轻易地对自己造成 DDOS 攻击）。
 
-The first option when you do a deploy and things start going sideways is to rollback. Totally reasonable choice, but in this case, it wouldn’t have helped us. The state that we’d transformed wasn’t the state on the server but the state on the client – we’d deleted those files. Rolling back the server would prevent additional clients from entering this state but it wouldn’t solve the problem.
+当你部署的新版本发生问题时，第一个选项是回滚。这是非常合理的选择，但对于这个问题，它无法帮助我们。我们改变的不是服务器的状态而是客户端的——我们删除了那些出错文件。将服务器回滚可以防止更多客户端进入这种状态，但它并不能解决根本问题。
 
-What about increasing the size of the logging cluster? We did that – and started getting even more requests, now that we’d increased our capacity. We increased it again, but you can’t do that forever. Why not? This cluster isn’t isolated. It’s making requests into another cluster, in this case to handle exceptions. If you have a DDOS pointed at one cluster, and you keep scaling that cluster, you’re going to knock over its depedencies too, and now you have two problems.
+那扩大日志集群的规模呢？我们试过了——然后因为处理能力增加了，我们开始收到更多的请求。我们又扩大了一次，但你不可能一直这么下去。为什么不能？因为这个集群并不是独立的。它会向另一个集群发送请求，在这里是为了处理异常。如果你的一个集群正在被 DDOS，而你持续扩大那个集群，你最终会把它依赖的集群也弄坏，然后你就有两个问题了。
 
-Another option we considered was shedding load – you don’t need every single log file, so can we just drop requests. One of the challenges here was that we didn’t have an easy way to tell good traffic from bad. We couldn’t quickly differentiate which log files were old and which were new.
+我们考虑过的另一个选择是减低负载——你不需要每一个日志文件，所以我们可以直接无视一些请求。一个难点是我们并没有一个很好的方法来区分好的请求和坏的请求。我们无法快速地判断哪些日志文件是旧的，哪些是新的。
 
-The solution we hit on is one that’s been used at Dropbox on a number of different occassions: we have a custom header, `chillout`, which every client in the world respects. If the client gets a response with this header, then it doesn’t make any requests for the provided number of seconds. Someone very wise added this to the Dropbox client very early on, and it’s come in handy more than once over the years. The logging server didn’t have the ability to set that header, but that’s an easy problem to solve. So two of my colleagues, Isaac Goldberg and John Lai, implemented support for it. We set the logging cluster chillout to two minutes initially and then managed it down as the deluge subsided over the next couple of days.
+我们最终使用的是一个 Dropbox 里许多不同场合都用过的一个解决方法：我们有一个自定义的头字段，`chillout`，全世界所有的客户端都遵守它。如果客户端收到一个有这个头字段的响应，它将在字段所标注的时间内不再发送任何请求。很早以前一个英明的程序员把它加到了 Dropbox 客户端里，在之后这些年中它已经不止一次地起了作用。
 
-### Know your system
+### 了解你的系统
 
-The first lesson from this bug is to know your system. I had a good mental model of the interaction between the client and the server, but I wasn’t thinking about what would happen when the server was interacting with all the clients at once. There was a level of complexity that I hadn’t thought all the way through.
+这个 bug 的第一个教训是要了解你的系统。我对于客户端和服务器之间的交互有不错的理解，但我并没有考虑到当服务器和所有这些客户端同时交互的时候会发生什么。这是一个我没有完全搞懂的层面。
 
-### Know your tools
+### 了解你的工具
 
-The second lesson is to know your tools. If things go sideways, what options do you have? Can you reverse your migration? How will you know if things are going sideways and how can you discover more? All of those things are great to know before a crisis – but if you don’t, you’ll learn them during a crisis and then never forget.
+第二个教训是要了解你的工具。如果出了差错，你有哪些选项？你能撤销你做的迁移吗？你如何知道事情出了差错，你又如何发现更多信息？所有这些事情都应该在危机发生之前就了解好——但如果你没有，你会在危机发生时学到它们并不会再忘记。
 
-### Feature flags & server-side gating
+### 功能开关 & 服务器端功能控制
 
-The third lesson is for you if you’re writing a mobile or a desktop application:  _You need server-side feature gating and server-side flags._  When you discover a problem and you don’t have server-side controls, the resolution might take days or weeks as you push out a new release or submit a new version to the app store. That’s a bad situation to be in. The Dropbox desktop client isn’t going through an app store review process, but just pushing out a build to tens of millions of clients takes time. Compare that to hitting a problem in your feature and flipping a switch on the server: ten minutes later your problem is resolved.
+第三个教训是专门针对移动端和桌面应用开发者的：_你需要服务器端功能控制和功能开关_。当你发现一个问题时如果你没有服务器端的功能控制，你可能需要几天或几星期来推送新版本或者提交新版本到应用商店中，然后问题才能得到解决。这是个很糟糕的处境。Dropbox 桌面客户端不需要经过应用商店的审查过程，但光是把一个版本推送给上千万的用户就已经要花很多时间。相比之下，如果你能在新功能遇到问题的时候在服务器上翻转一个开关：十分钟之后你的问题就已经解决了。
 
-This strategy is not without its costs. Having a bunch of feature flags in your code adds to the complexity dramatically. You get a combinatoric problem with your testing: what if feature A is enabled and feature B, or just one, or neither – multiplied across N features. It’s extremely difficult to get engineers to clean up their feature flags after the fact (and I was also guilty of this). Then for the desktop client there’s multiple versions in the wild at the same time, so it gets pretty hard to reason about.
+这个策略也有它的代价。加入很多的功能开关会大幅提高你的代码的复杂度。而你的测试代码更是会成指数地复杂化：要考虑 A 功能和 B 功能都开启，或者仅开启一个，或者都不开启的情况——然后每个功能都要相乘一遍。让工程师们在事后清理他们的功能开关是一件很难的事情（我自己也有这个毛病）。另外，桌面客户端会同时有好几个版本有人使用，也会加大思考难度。
 
-But the benefit – man, when you need it, you really need it.
+但是它的好处——啊，当你需要它的时候，你真的是很需要它。
 
-# How to love bugs
+# 如何去爱 bug
 
-I’ve talked about some bugs that I love and I’ve talked about why to love bugs. Now I want to tell you how to love bugs. If you don’t love bugs yet, I know of exactly one way to learn, and that’s to have a growth mindset.
+我讲了几个我爱的 bug，也讲了为什么要爱 bug。现在我想告诉你如何去爱 bug。如果你现在还不爱 bug，我知道唯一一种改变的方法，那就是要有成长型心态。
 
-The sociologist Carol Dweck has done a ton of interesting research about how people think about intelligence. She’s found that there are two different frameworks for thinking about intelligence. The first, which she calls the fixed mindset, holds that intelligence is a fixed trait, and people can’t change how much of it they have. The other mindset is a growth mindset. Under a growth mindset, people believe that intelligence is malleable and can increase with effort.
+社会学家 Carol Dweck 做了很多关于人们如何看待智力的研究。她找到两种不同的看待智力的心态。第一种，她叫做固定型心态，认为智力是一个固定的特征，人类无法改变自己智力的多寡。另一种心态叫做成长型心态。在成长型心态下，人们相信智力是可变的而且可以通过努力来增强。
 
-Dweck found that a person’s theory of intelligence – whether they hold a fixed or growth mindset – can significantly influence the way they select tasks to work on, the way they respond to challenges, their cognitive performance, and even their honesty.
+Dweck 发现一个人看待智力的方式——固定型还是成长型心态——可以很大程度地影响他们选择任务的方式、面对挑战的反应、认知能力、甚至是他们的诚信度。
 
-[I also talked about a growth mindset in my Kiwi PyCon keynote, so here are just a few excerpts. You can read the full transcript [here][7].]
+【我在新西兰 Kiwi Pycon 会议所做的主题演讲中也讨论过成长型心态，所以在此只摘录一部分内容。你可以在[这里][7]找到完整版的演讲稿】
 
-Findings about honesty:
+关于诚信的发现：
 
-> After this, they had the students write letters to pen pals about the study, saying “We did this study at school, and here’s the score that I got.” They found that  _almost half of the students praised for intelligence lied about their scores_ , and almost no one who was praised for working hard was dishonest.
+> 在这之后，他们让学生们给笔友写信讲这个实验，信中说“我们在学校做了这个实验，这是我得的分数”。他们发现 _因智力而受到表扬的学生中几乎一半人谎报了自己的分数_ ，而因努力而受表扬的学生则几乎没有人不诚实。
 
-On effort:
+关于努力：
 
-> Several studies found that people with a fixed mindset can be reluctant to really exert effort, because they believe it means they’re not good at the thing they’re working hard on. Dweck notes, “It would be hard to maintain confidence in your ability if every time a task requires effort, your intelligence is called into question.”
+> 数个研究发现有着固定型心态的人会不愿真正去努力，因为他们认为这意味着他们不擅长做他们正努力去做的这件事情。Dweck 写道，“如果每当一个任务需要努力的时候你就会怀疑自己的智力，那么你会很难对自己的能力保持自信。”
 
-On responding to confusion:
+关于面对困惑：
 
-> They found that students with a growth mindset mastered the material about 70% of the time, regardless of whether there was a confusing passage in it. Among students with a fixed mindset, if they read the booklet without the confusing passage, again about 70% of them mastered the material. But the fixed-mindset students who encountered the confusing passage saw their mastery drop to 30%. Students with a fixed mindset were pretty bad at recovering from being confused.
+> 他们发现有成长型心态的学生大约能理解 70% 的内容，不论里面是否有难懂的段落。在有固定型心态的学生中，那些被分配没有难懂段落的手册的学生同样可以理解大约 70%。但那些看到了难懂段落的持固定型心态的学生的记忆则降到了 30%。有着固定型心态的学生非常不擅长从困惑中恢复。
 
-These findings show that a growth mindset is critical while debugging. We have to recover from confusion, be candid about the limitations of our understanding, and at times really struggle on the way to finding solutions – all of which is easier and less painful with a growth mindset.
+这些发现表明成长型心态对 debug 至关重要。我们必须从从困惑中重整旗鼓，诚实地面对我们理解上的不足，并时不时地在寻找答案的路上努力奋斗——成长型心态会让这些都变得更简单而且不那么痛苦。
 
-### Love your bugs
+### 热爱你的 bug
 
-I learned to love bugs by explicitly celebrating challenges while working at the Recurse Center. A participant would sit down next to me and say, “[sigh] I think I’ve got a weird Python bug,” and I’d say, “Awesome, I  _love_  weird Python bugs!” First of all, this is definitely true, but more importantly, it emphasized to the participant that finding something where they struggled an accomplishment, and it was a good thing for them to have done that day.
+我在 Recurse Center 工作时会直白地欢迎挑战，我就是这样学会热爱我的 bug 的。有时参与者会坐到我身边说“唉，我觉得我遇到了个奇怪的 Python bug”，然后我会说“太棒了，我 _爱_ 奇怪的 Python bug！” 首先，这百分之百是真的，但更重要的是，我这样是在对参与者强调，找到让自己觉得困难的事情是一种成就，而他们做到了这一点，这是件好事。
 
-As I mentioned, at the Recurse Center there are no deadlines and no assignments, so this attitude is pretty much free. I’d say, “You get to spend a day chasing down this weird bug in Flask, how exciting!” At Dropbox and later at Pilot, where we have a product to ship, deadlines, and users, I’m not always uniformly delighted about spending a day on a weird bug. So I’m sympathetic to the reality of the world where there are deadlines. However, if I have a bug to fix, I have to fix it, and being grumbly about the existence of the bug isn’t going to help me fix it faster. I think that even in a world where deadlines loom, you can still apply this attitude.
+像我之前说过的，在 Recurse Center 没有截止日期也没有作业，所以这种态度没有任何成本。我会说，“你现在可以花一整天去在 Flask 里找出这个奇怪的 bug 了，多令人兴奋啊！”在 Dropbox 和之后的 Pilot，我们有产品需要发布，有截止日期，还有用户，于是我并不总是对在奇怪的 bug 上花一整天而感到兴奋。所以我对有截止日期的现实也是感同身受。但是如果我有 bug 需要解决，我就必须得去解决它，而抱怨它的存在并不会帮助我之后更快地解决它。我觉得就算在截止日期临近的时候，你也依然可以保持这样的心态。
 
-If you love your bugs, you can have more fun while you’re working on a tough problem. You can be less worried and more focused, and end up learning more from them. Finally, you can share a bug with your friends and colleagues, which helps you and your teammates.
+如果你热爱你的 bug，你可以在解决困难问题时获得更多乐趣。你可以担心得更少而更加专注，并且从中学到更多。最后，你可以和你的朋友和同事分享你的 bug，这将会同时帮助你自己和你的队友们。
 
-### Obrigada!
+### 鸣谢！
 
-My thanks to folks who gave me feedback on this talk and otherwise contributed to my being there:
+在此向给我的演讲提出反馈以及给我的演讲提供其他帮助的人士表示感谢：
 
 *   Sasha Laundy
 
@@ -291,14 +281,14 @@ My thanks to folks who gave me feedback on this talk and otherwise contributed t
 
 *   Julian Cooper
 
-*   Raphael Passini Diniz and the rest of the Python Brasil organizing team
+*   Raphael Passini Diniz 以及其他的 Python Brasil 组织团队成员
 
 --------------------------------------------------------------------------------
 
 via: http://akaptur.com/blog/2017/11/12/love-your-bugs/
 
 作者：[Allison Kaptur ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[yixunx](https://github.com/yixunx)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
