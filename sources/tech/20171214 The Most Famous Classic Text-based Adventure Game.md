@@ -1,3 +1,4 @@
+yixunx translating
 The Most Famous Classic Text-based Adventure Game
 ======
 **Colossal Cave Adventure** , also known as **ADVENT** , **Colossal Cave** , or **Adventure** , is a most popular text-based adventure game in the period of early 80s and late 90s. This game is also known to be historic first "interactive fiction" game. In 1976, a Programmer named **Will Crowther** wrote the early version of this game, and later a fellow programmer **Don Woods** improved the game with many features by adding scoring system, more fantasy characters and locations. This game is originally developed for **PDP-10** , a good-old giant Mainframe computer. Later, it was ported to normal home desktop computers like IBM PC and Commodore 64. The original game was written using Fortran, and later it was introduced in MS-DOS 1.0 in the early 1980s by Microsoft.
