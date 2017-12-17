@@ -1,5 +1,6 @@
 A tour of containerd 1.0
 ======
+XiaochenCui translating
 
 ![containerd][1]
 
