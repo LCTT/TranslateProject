@@ -1,4 +1,6 @@
  
+ translating by HardworkFish
+
  [![Linux vs. Unix](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/unix-vs-linux_orig.jpg)][1] 
 
 ​In computer time, a substantial part of the population has a misconception that the **Unix** and **Linux** operating systems are one and the same. However, the opposite is true. Let's look at it from a closer look.
