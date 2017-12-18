@@ -1,3 +1,4 @@
+translating by wenwensnow 
 How to Install Arch Linux [Step by Step Guide]
 ======
 **Brief: This tutorial shows you how to install Arch Linux in easy to follow steps.**

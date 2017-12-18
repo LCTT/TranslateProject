@@ -1,6 +1,5 @@
-### [Fedora 课堂会议: Ansible 101][2]
-
-### By Sachin S Kamath
+Fedora 课堂会议：Ansible 101
+==========
 
 ![](https://fedoramagazine.org/wp-content/uploads/2017/07/fedora-classroom-945x400.jpg)
 
@@ -13,19 +12,12 @@ Fedora 课堂会议本周继续进行，本周的主题是 Ansible。 会议的�
 本课堂课程涵盖以下主题：
 
 1.  SSH 简介
-
 2.  了解不同的术语
-
 3.  Ansible 简介
-
 4.  Ansible 安装和设置
-
 5.  建立无密码连接
-
 6.  Ad-hoc 命令
-
 7.  管理 inventory
-
 8.  Playbooks 示例
 
 之后还将有 Ansible 102 的后续会议。该会议将涵盖复杂的 playbooks，playbooks 角色（roles），动态 inventory 文件，流程控制和 Ansible Galaxy 命令行工具.
@@ -43,7 +35,6 @@ Fedora 课堂会议本周继续进行，本周的主题是 Ansible。 会议的�
 本次会议将在 [BlueJeans][10] 上进行。下面的信息可以帮你加入到会议:
 
 *   网址: [https://bluejeans.com/3466040121][1]
-
 *   会议 ID (桌面版):  3466040121
 
 我们希望您可以参加，学习，并享受这个会议！如果您对会议有任何反馈意见，有什么新的想法或者想要主持一个会议, 可以随时在这篇文章发表评论或者查看[课堂 wiki 页面][11].
@@ -54,7 +45,7 @@ via: https://fedoramagazine.org/fedora-classroom-session-ansible-101/
 
 作者：[Sachin S Kamath]
 译者：[imquanquan](https://github.com/imquanquan)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
