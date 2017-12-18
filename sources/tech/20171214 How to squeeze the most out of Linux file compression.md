@@ -1,3 +1,5 @@
+								Translating ---> Octopus
+
 How to squeeze the most out of Linux file compression
 ======
 If you have any doubt about the many commands and options available on Linux systems for file compression, you might want to take a look at the output of the **apropos compress** command. Chances are you'll be surprised by the many commands that you can use for compressing and decompressing files, as well as for comparing compressed files, examining and searching through the content of compressed files, and even changing a compressed file from one format to another (i.e., .z format to .gz format).
