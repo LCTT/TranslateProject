@@ -1,3 +1,4 @@
+translating by imquanquan
 Useful GNOME Shell Keyboard Shortcuts You Might Not Know About
 ======
 As Ubuntu has moved to Gnome Shell in its 17.10 release, many users may be interested to discover some of the most useful shortcuts in Gnome as well as how to create your own shortcuts. This article will explain both.

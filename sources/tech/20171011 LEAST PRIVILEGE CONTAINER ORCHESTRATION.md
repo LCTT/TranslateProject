@@ -1,3 +1,4 @@
+Translating by qhwdw
 # LEAST PRIVILEGE CONTAINER ORCHESTRATION
 
 
@@ -172,3 +173,5 @@ via: https://blog.docker.com/2017/10/least-privilege-container-orchestration/
 [10]:https://blog.docker.com/tag/least-privilege-orchestrator/
 [11]:https://blog.docker.com/tag/tls/
 [12]:https://diogomonica.com/2017/03/27/why-you-shouldnt-use-env-variables-for-secret-data/
+
+

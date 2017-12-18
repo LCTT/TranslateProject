@@ -1,3 +1,5 @@
+translating by liuxinyu123   
+
 Useful Linux Commands that you should know
 ======
 If you are Linux system administrator or just a Linux enthusiast/lover, than
