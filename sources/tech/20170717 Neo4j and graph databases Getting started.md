@@ -6,9 +6,8 @@ Neo4j 和图数据库: 开始
 ### 这是三篇文章系列中的第二篇，安装Neo4j并通过使用网页端在图中插入和查询数据。
 
 ![Neo4j 和图数据库: 开始](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/LIFE_wavegraph.png?itok=z4pXCf_c "Neo4j and graph databases: Getting started")
-图片来源 : 
 
-opensource.com
+图片来源 : opensource.com
 
 在系列的 [第一篇][8] 中，我们介绍了图数据库中的一些核心概念。在这篇，我们将安装 [Neo4j][9] 并通过网页端在图中插入并查询数据。
 
