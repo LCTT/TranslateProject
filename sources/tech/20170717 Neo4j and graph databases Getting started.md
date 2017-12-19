@@ -11,9 +11,9 @@ Neo4j 和图数据库: 开始
 
 在系列的 [第一篇][8] 中，我们介绍了图数据库中的一些核心概念。在这篇，我们将安装 [Neo4j][9] 并通过网页端在图中插入并查询数据。
 
-下载社区版的Neo4j可通过此 [传送门][10]！你可以下载Windows或OSX版来测试，也有各Linux发行版对应的版本，还有Docker版。
+下载社区版的 Neo4j 可通过此 [传送门][10]！你可以下载 Windows 或 OSX 版来测试，也有各 Linux 发行版对应的版本，还有 Docker 版。
 
-我会在Debian 9 (stretch)上安装软件。你可通过 [传送门][11] 来查看完整说明。如果你正在使用Debian 8 (jessie)或更老的版本，你可以安装现在的版本，但会出现的问题是jessie中并没有安装Neo4j运行所需要的Java 8环境。
+我会在 Debian 9 (stretch) 上安装软件。你可通过 [传送门][11] 来查看完整说明。如果你正在使用 Debian 8 (jessie)或更老的版本，你可以安装现在的版本，但会出现的问题是 jessie 中并没有安装 Neo4j 运行所需要的 Java 8 环境。
 
 ```
 wget -O - https://debian.neo4j.org/neotechnology.gpg.key | sudo apt-key add - echo 'deb https://debian.neo4j.org/repo stable/' | sudo tee /etc/apt/sources.list.d/neo4j.list sudo apt-get update sudo apt-get install neo4j
@@ -30,7 +30,7 @@ dbms.connectors.default_listen_address=0.0.0.0
 
 ![Installing Neo4J](https://opensource.com/sites/default/files/u128651/article_2_image_1.jpg "Installing Neo4J")
 
-我们在Neo4j上创建上篇文章中使用过的图。如下图：
+我们在 Neo4j 上创建上篇文章中使用过的图。如下图：
 
 ### [图数据库节点图_2.jpg][2]
 
@@ -46,7 +46,7 @@ CREATE (a:Person { name: 'Jane Doe', favorite_color: 'purple' }) CREATE (b:Perso
 
 注意，在标签前的字符就是变量。这些信息会在各处展示，但我们在这里并不会用到。但你不能不指定 (without assignment) 相应信息就盲目创建，所以我们使用它们然后就忽略它们。
 
-在上面一共创建了10个节点和13个属性。想查看它们？通过下面语句来匹配查询所有节点：
+在上面一共创建了 10 个节点和 13 个属性。想查看它们？ 通过下面语句来匹配查询所有节点：
 
 ```
 MATCH (n) RETURN n
@@ -86,19 +86,19 @@ MATCH (a:Person),(b:Person),(c:Person),(d:Person),(e:Person),(f:Person),(t:City)
 MATCH (a)-[b:MARRIAGE]->(c) RETURN a,b,c
 ```
 
-在一个更复杂的图中，你可以做更多的细节查询。(译者注：此例子为Neo4j自带例子的) 例如，你有关于电影和人的节点，还有像 ACTED IN, DIRECTED, WROTE SCREENPLAY 等属性的关系，你可以运行下面这个查询：
+在一个更复杂的图中，你可以做更多的细节查询。(译者注：此例子为 Neo4j 自带例子的) 例如，你有关于电影和人的节点，还有像 ACTED IN, DIRECTED, WROTE SCREENPLAY 等属性的关系，你可以运行下面这个查询：
 
 ```
 MATCH (p:Person { name: 'Mel Gibson' })--(m:Movie) RETURN m.title
 ```
 
-... 上述是查询和Mel Gibson相关的所有影片。但如果你想查询他演过的所有电影，下面这条语句会更有用：
+... 上述是查询和 Mel Gibson 相关的所有影片。但如果你想查询他演过的所有电影，下面这条语句会更有用：
 
 ```
 MATCH (p:Person { name: 'Mel Gibson' })-[r:ACTED_IN]->(m:movie) RETURN m.title,r.role
 ```
 
-还有更多更炫酷的Cypher语句可以使用，但我们就简单介绍这些。更详细完整的 Cypher 语句可以在 Neo4j 的[官网][12]上查看, 并且也有很多例子可以练习。
+还有更多更炫酷的 Cypher 语句可以使用，但我们就简单介绍这些。更详细完整的 Cypher 语句可以在 Neo4j 的[官网][12]上查看, 并且也有很多例子可以练习。
 
 在此系列的下篇文章中，我们会通过写些 Perl 脚本来展示如何在应用中使用图数据库。
 
