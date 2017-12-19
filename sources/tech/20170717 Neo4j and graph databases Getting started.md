@@ -75,7 +75,7 @@ MATCH (a:Person),(b:Person),(c:Person),(d:Person),(e:Person),(f:Person),(t:City)
 
 重新运行 MATCH 语句，你将会看到下面图像：
 
-### [Match查询.jpg][4]
+### [Match 查询.jpg][4]
 
 ![Graph after re-querying with MATCH](https://opensource.com/sites/default/files/u128651/article_2_image_3.jpg "Graph after re-querying with MATCH")
 
