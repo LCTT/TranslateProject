@@ -18,28 +18,28 @@ $(CHANGE_FILE):
 	git --no-pager diff $(TRAVIS_BRANCH) FETCH_HEAD --no-renames --name-status > $@
 
 rule-source-added:
-	[ $(shell grep '^A\s\+sources/(news|talk|tech)/\d{6} [a-zA-Z0-9_-.,\(\)\[\] ]*\.md' $(CHANGE_FILE) | wc -l) -ge 1 ]
+	[ $(shell grep '^A\s\+sources/(news|talk|tech)/\d{8} [a-zA-Z0-9_.,\-\(\)\[\] ]*\.md' $(CHANGE_FILE) | wc -l) -ge 1 ]
 	[ $(shell grep -v '^A\s\+sources/(news|talk|tech)/\d{6} [a-zA-Z0-9_-.,\(\)\[\] ]*\.md' $(CHANGE_FILE) | wc -l) = 0 ]
 	echo 'Rule Matched: $(@)'
 
 rule-translation-requested:
-	[ $(shell grep '^M\s\+sources/(news|talk|tech)/\d{6} [a-zA-Z0-9_-.,\(\)\[\] ]*\.md' $(CHANGE_FILE) | wc -l) = 1 ]
+	[ $(shell grep '^M\s\+sources/(news|talk|tech)/\d{8} [a-zA-Z0-9_.,\-\(\)\[\] ]*\.md' $(CHANGE_FILE) | wc -l) = 1 ]
 	[ $(shell cat $(CHANGE_FILE) | wc -l) = 1 ]
 	echo 'Rule Matched: $(@)'
 
 rule-translation-completed:
-	[ $(shell grep '^D\s\+sources/(news|talk|tech)/\d{6} [a-zA-Z0-9_-.,\(\)\[\] ]*\.md' $(CHANGE_FILE) | wc -l) = 1 ]
-	[ $(shell grep '^A\s\+translated/(news|talk|tech)/\d{6} [a-zA-Z0-9_-.,\(\)\[\] ]*\.md' $(CHANGE_FILE) | wc -l) = 1 ]
+	[ $(shell grep '^D\s\+sources/(news|talk|tech)/\d{8} [a-zA-Z0-9_.,\-\(\)\[\] ]*\.md' $(CHANGE_FILE) | wc -l) = 1 ]
+	[ $(shell grep '^A\s\+translated/(news|talk|tech)/\d{8} [a-zA-Z0-9_.,\-\(\)\[\] ]*\.md' $(CHANGE_FILE) | wc -l) = 1 ]
 	[ $(shell cat $(CHANGE_FILE) | wc -l) = 2 ]
 	echo 'Rule Matched: $(@)'
 
 rule-translation-revised:
-	[ $(shell grep '^M\s\+translated/(news|talk|tech)/\d{6} [a-zA-Z0-9_-.,\(\)\[\] ]*\.md' $(CHANGE_FILE) | wc -l) = 1 ]
+	[ $(shell grep '^M\s\+translated/(news|talk|tech)/\d{8} [a-zA-Z0-9_.,\-\(\)\[\] ]*\.md' $(CHANGE_FILE) | wc -l) = 1 ]
 	[ $(shell cat $(CHANGE_FILE) | wc -l) = 1 ]
 	echo 'Rule Matched: $(@)'
 
 rule-translation-published:
-	[ $(shell grep '^D\s\+translated/(news|talk|tech)/\d{6} [a-zA-Z0-9_-.,\(\)\[\] ]*\.md' $(CHANGE_FILE) | wc -l) = 1 ]
-	[ $(shell grep '^A\s\+published/\d{6} [a-zA-Z0-9_-.,\(\)\[\] ]*\.md' $(CHANGE_FILE) | wc -l) = 1 ]
+	[ $(shell grep '^D\s\+translated/(news|talk|tech)/\d{8} [a-zA-Z0-9_.,\-\(\)\[\] ]*\.md' $(CHANGE_FILE) | wc -l) = 1 ]
+	[ $(shell grep '^A\s\+published/\d{8} [a-zA-Z0-9_.,\-\(\)\[\] ]*\.md' $(CHANGE_FILE) | wc -l) = 1 ]
 	[ $(shell cat $(CHANGE_FILE) | wc -l) = 2 ]
 	echo 'Rule Matched: $(@)'
