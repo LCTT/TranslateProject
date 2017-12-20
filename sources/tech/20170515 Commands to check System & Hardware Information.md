@@ -1,3 +1,5 @@
+happygeorge01 is translating
+
 Commands to check System & Hardware Information
 ======
 Hello linux-fanatics, in this post i will be discussing some important that will make your life as System Administrator. As we all know being a good System Administrator means knowing everything about your IT Infrastructure & having all the information about your servers, whether its hardware or OS. So following commands will help you out in extracting out all the hardware & system information.
