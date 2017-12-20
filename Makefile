@@ -19,7 +19,7 @@ $(CHANGE_FILE):
 
 rule-source-added:
 	[ $(shell grep '^A\s\+sources/(news|talk|tech)/\d{8} [a-zA-Z0-9_.,\-\(\)\[\] ]*\.md' $(CHANGE_FILE) | wc -l) -ge 1 ]
-	[ $(shell grep -v '^A\s\+sources/(news|talk|tech)/\d{6} [a-zA-Z0-9_-.,\(\)\[\] ]*\.md' $(CHANGE_FILE) | wc -l) = 0 ]
+	[ $(shell grep -v '^A\s\+sources/(news|talk|tech)/\d{8} [a-zA-Z0-9_-.,\(\)\[\] ]*\.md' $(CHANGE_FILE) | wc -l) = 0 ]
 	echo 'Rule Matched: $(@)'
 
 rule-translation-requested:
