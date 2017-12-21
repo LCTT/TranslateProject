@@ -1,6 +1,8 @@
-How to Install Arch Linux [Step by Step Guide]
+如何安装 Arch Linux [详细安装步骤指导]
 ======
-**Brief: This tutorial shows you how to install Arch Linux in easy to follow steps.**
+**简要说明：这一教程会教你如何用简单步骤安装Arch Linux.**
+
+[Arch Linux][1] 是一个在喜欢自己定制Linux系统和Linux 爱好者
 
 [Arch Linux][1] is a x86-64 general-purpose Linux distribution which has been popular among the [DIY][2] enthusiasts and hardcore Linux users. The default installation covers only a minimal base system and expects the end user to configure and use it. Based on the KISS - Keep It Simple, Stupid! principle, Arch Linux focus on elegance, code correctness, minimalist system and simplicity.
 
