@@ -1,7 +1,7 @@
 Top 5 Linux Music Players
 ======
 
-![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/live-music.jpg?itok=Ejbo4rf7_
+![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/live-music.jpg?itok=Ejbo4rf7_)
 >Jack Wallen rounds up his five favorite Linux music players. Creative Commons Zero 
 >Pixabay
 
