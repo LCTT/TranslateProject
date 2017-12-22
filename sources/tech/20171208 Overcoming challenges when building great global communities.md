@@ -1,6 +1,8 @@
 translating lujun9972
 Overcoming challenges when building great global communities
 ======
+![配图][https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/BUSINESS_community2.png?itok=1blC7-NY]
+
 Today's open source communities include people from all around the world. What challenges can you expect when establishing an online community, and how can you help overcome them?
 
 People contributing to an open source community share a commitment to the software they're helping to develop. In the past, people communicated by meeting in person at a set place and time, or through letters or phone calls. Today, technology has fostered growth of online communities--people can simply pop into a chat room or messaging channel and start working together. You might work with someone in Morocco in the morning, for example, and with someone in Hawaii that evening.
