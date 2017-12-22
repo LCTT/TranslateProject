@@ -2,93 +2,108 @@
 ======
 **简要说明：这一教程会教你如何用简单步骤安装Arch Linux.**
 
-[Arch Linux][1] 是一个在喜欢自己定制Linux系统和Linux 爱好者
+[Arch Linux][1] 是一个在喜欢自己定制系统和Linux爱好者中很流行的x86-64多用途发行版。默认的安装文件只含有一个最基本的系统，它希望使用者自己配置并使用Arch系统。根据KISS  - 使它保持简单这一原则(愚蠢!)，Arch Linux 是一个优雅，注重源代码正确性，体积尽可能小，简洁的操作系统。
 
-[Arch Linux][1] is a x86-64 general-purpose Linux distribution which has been popular among the [DIY][2] enthusiasts and hardcore Linux users. The default installation covers only a minimal base system and expects the end user to configure and use it. Based on the KISS - Keep It Simple, Stupid! principle, Arch Linux focus on elegance, code correctness, minimalist system and simplicity.
 
-Arch Linux supports the Rolling release model and has its own package manager - [pacman][3]. With the aim to provide a cutting-edge operating system, Arch never misses out to have an up-to-date repository. The fact that it provides a minimal base system gives you a choice to install it even on low-end hardware and then install only the required packages over it.
 
-Also, its one of the most popular OS for learning Linux from scratch. If you like to experiment with a DIY attitude, you should give Arch Linux a try. It's what many Linux users consider a core Linux experience.
+Arch 支持滚动升级并且有自己的包管理器 - [pacman][3]。为了始终让自己处在操作系统的前沿，Arch从不错过任何一个最新的源。实际上，只含有一个基本的操作系统，能让你在低端硬件上也能安装Arch,并且安装过程中只会包含系统正常运行所需要的包。
 
-In this article, we will see how to install and set up Arch Linux and then a desktop environment over it.
 
-## How to install Arch Linux
+同时，它也是从头开始学习Linux的一个很好的操作系统。如果你想自己动手安装Linux,你不妨尝试一下Arch Linux. 这是许多Linux 用户觉得很有益处的一次体验。
+
+
+在这篇文章里，我们会了解到如何安装,配置Arch并安装桌面环境。
+
+
+## 如何安装Arch Linux
+
 
 ![How to install Arch Linux][4]
 
 ![How to install Arch Linux][5]
 
-The method we are going to discuss here **wipes out existing operating system** (s) from your computer and install Arch Linux on it. So if you are going to follow this tutorial, make sure that you have backed up your files or else you'll lose all of it. You have been warned.
-
-But before we see how to install Arch Linux from a USB, please make sure that you have the following requirements:
-
-### Requirements for installing Arch Linux:
-
-  * A x86_64 (i.e. 64 bit) compatible machine
-  * Minimum 512 MB of RAM (recommended 2 GB)
-  * At least 1 GB of free disk space (recommended 20 GB for basic usage)
-  * An active internet connection
-  * A USB drive with minimum 2 GB of storage capacity
-  * Familiarity with Linux command line
+我们在这里讨论的安装方法是从你的电脑上"完全删除已有的操作系统" ，而后安装Arch Linux. 如果你想根据这一教程安装Arch,确保你已经备份了所有文件。否则你就会失去全部数据，这里已经提醒过你了。
 
 
+但是在你从USB上安装Arch 之前，确保你已经满足了以下条件：
 
-Once you have made sure that you have all the requirements, let's proceed to install Arch Linux.
+### 安装Arch Linux 的条件：
 
-### Step 1: Download the ISO
 
-You can download the ISO from the [official website][6]. Arch Linux requires a x86_64 (i.e. 64 bit) compatible machine with a minimum of 512 MB RAM and 800 MB disk space for a minimal installation. However, it is recommended to have 2 GB of RAM and at least 20 GB of storage for a GUI to work without hassle.
+  * 一个兼容x86_64(例如 64位)的机器
+  * 最小 512M 内存(建议 2GB)
+  * 最少 1G 的磁盘空余空间 (日常使用推荐 20GB)
+  * 可以访问网络
+  * A USB drive with minimum 2 GB of storage capacity  至少有2G存储空间的U盘
+  * Familiarity with Linux command line 熟悉Linux 命令行
 
-### Step 2: Create a live USB of Arch Linux
 
-We will have to create a live USB of Arch Linux from the ISO you just downloaded.
+一旦你确认满足所有条件，就可以开始安装Arch Linux了。
 
-If you are on Linux, you can use **dd command** to create a live USB. Replace /path/to/archlinux.iso with the path where you have downloaded ISO file, and /dev/sdx with your drive in the example below. You can get your drive information using [lsblk][7] command.
+
+### 第一步：下载ISO 文件
+
+你可以从官网上下载ISO。安装Arch Linux 需要一个至少有512M内存和800M磁盘空间，并兼容x86_64的机器。不过，建议至少有2G内存和20G磁盘空间，这样安装桌面环境时就不会遇到麻烦。
+
+
+### 第二步：创建一个Arch Linux 的 live USB
+
+我们需要用你刚刚下载的ISO文件创建一个Arch Linux 的live USB。
+
+如果你使用Linux，你可以用 **dd** 命令来创建live USB。 记得参考下面的例子将 /path/to/archlinux.iso 改成你ISO文件的实际存储位置，/dev/sdx 改成你的磁盘设备号 (i.e /dev/sdb)。你可以通过 [lsblk][7] 命令来了解你的设备信息。
+
+
 ```
 dd bs=4M if=/path/to/archlinux.iso of=/dev/sdx status=progress && sync
 ```
+在Windows下，有多种方法来创建live USB。 推荐工具是 Rufus。我们之前已经有如何使用这一工具创建Antergos live USB的教程。因为Antergos发行版是基于Arch的,你可以使用同一教程。
 
-On Windows, there are several tools to create a live USB. The recommended tool is Rufus. We have already covered a tutorial on [how to create a live USB of Antergos Linux using Rufus][8] in the past. Since Antergos is based on Arch, you can follow the same tutorial.
+### 步骤三：从 live USB 上启动
 
-### Step 3: Boot from the live USB
+一旦你已经创建了Arch Linux 的live USB,关闭你的电脑。插上你的U盘然后启动系统。在开机启动时，持续按F2,F10或F1(根据你的电脑型号)进入启动设置。在这里，选择从U盘或可移除设备启动 这一项。
 
-Once you have created a live USB for Arch Linux, shut down your PC. Plugin your USB and boot your system. While booting keep pressing F2, F10 or F1dependinging upon your system) to go into boot settings. In here, select to boot from USB or removable disk.
-
-Once you select that, you should see an option like this:
+一旦你选择了它，你会看到这样一个选项：
 
 ![Arch Linux][4]
 
 ![Arch Linux][9]  
-Select Boot Arch Linux (x86_64). After various checks, Arch Linux will boot to login prompt with root user. 
 
+选择启动 Arch Linux (x86_64)。检查后，Arch Linux 会启动root用户的命令行界面。
 Select Boot Arch Linux (x86_64). After various checks, Arch Linux will boot to login prompt with root user.
 
-Next steps include partitioning disk, creating the filesystem and mounting it.
+接下来的步骤会包括磁盘分区，创建文件系统并挂载它。
 
-### Step 4: Partitioning the disks
+### 第四步：磁盘分区
 
-The first step includes partitioning your hard disk. A single root partition is the simplest one where we will create a root partition (/), a swapfile and home partition.
+第一步就是给你的硬盘分区。只有一个硬盘很简单，就在它上面创建根分区(/)分区和home分区。
 
-I have a 19 GB disk where I want to install Arch Linux. To create a disk, type
+
+
+我有一个19G的硬盘，我想在这儿安装Arch Linux。为了创建分区，输入：
+
 ```
 fdisk /dev/sda
 ```
 
-Type "n" for a new partition. Type in "p" for a primary partition and select the partition number.
+按 "n" 创建新分区。按"p" 创建主分区，然后选择分区号。
 
-The First sector is automatically selected and you just need to press Enter. For Last sector, type the size you want to allocate for this partition.
+第一扇区会被自动选择，你只要按回车键。在确定分区的最后一个扇区时，请输入这一分区的大小。
 
-Create two more partitions similarly for home and swap, and press 'w' to save the changes and exit.
+
+用相同的方法为home和swap创建两个分区，按"w" 来保存修改并退出。
+
 
 ![root partition][4]
 
 ![root partition][10]
 
-### Step 4: Creating filesystem
 
-Since we have created 3 different partitions, the next step is to format the partition and create a filesystem.
+### 第四步:创建文件系统
 
-We will use mkfs for root and home partition and mkswap for creating swap space. We are formatting our disk with ext4 filesystem.
+因为我们已经有了三个分区，接下来就是格式化分区并创建文件系统
+
+我们 用mkfs命令在root和home分区上创建文件系统，用mkswap创建swap空间。我们用ext4文件系统格式化磁盘。
+
 ```
 mkfs.ext4 /dev/sda1
 mkfs.ext4 /dev/sda3
@@ -96,107 +111,130 @@ mkfs.ext4 /dev/sda3
 mkswap /dev/sda2
 swapon /dev/sda2
 ```
+将这些分区挂载在root 和 home下
 
-Lets mount these filesystems to root and home
 ```
 mount /dev/sda1 /mnt
 mkdir /mnt/home
 mount /dev/sda3 /mnt/home
 ```
 
-### Step 5: Installation
+### 第五步:安装
 
-Since we have created partitioning and mounted it, let's install the base package. A base package contains all the necessary package to run a system, some of which are the GNU BASH shell, data compression tool, file system utilities, C library, compression tools, Linux kernels and modules, library packages, system utilities, USB devices utilities, vi text editor etc.
+我们已经创建分区并挂载了分区，开始安装最基本的包。一个最基本的软件包包括所有系统运行所必需的部件。比如有GNU BASH shell,文件压缩工具，文件系统管理工具，C语言库，压缩工具，Linux 内核和 模块，系统工具，USB管理工具，Vi 文本编辑器等等。
+
+
 ```
 pacstrap /mnt base base-devel
 ```
 
-### **Step 6: Configuring the system**
+### **第六步：配置系统**
 
-Generate a fstab file to define how disk partitions, block devices or remote file systems are mounted into the filesystem.
+
+生成一个 fstab 文件来规定磁盘分区，块设备，或者远程文件系统是如何挂载进文件系统中的。
+
 ```
 genfstab -U /mnt >> /mnt/etc/fstab
 ```
 
-Change root into the new system, this allows changing the root directory for the current running process and the child process.
+进入chroot环境，这样可以为当前进程以及子进程切换当前根目录。
+
 ```
 arch-chroot /mnt
 ```
+一些需要与数据总线保持连接的系统工具不能再chroot环境下使用，所以需要从当前环境退出。想要退出chroot,就用下面的命令:
 
-Some systemd tools which require an active dbus connection can not be used inside a chroot, hence it would be better if we exit from it. To exit chroot, simpy use the below command:
 ```
 exit
 ```
 
-### Step 7. Setting Timezone
+### 第七步: 设定时区
 
-Use below command to set the time zone.
+
+用下面这条命令设定时区
+
 ```
 ln -sf /usr/share/<zoneinfo>/<Region>/<City> /etc/localtime
 ```
+获取时区列表，输入
 
-To get a list of zone, type
 ```
 ls /usr/share/zoneinfo
 ```
 
-Run hwclock to set the hardware clock.
+
+用 hwclock 命令设定硬件时钟
 ```
 hwclock --systohc --utc
 ```
 
-### Step 8. Setting up Locale.
 
-File /etc/locale.gen contains all the local settings and system language in a commented format. Open the file using vi editor and un-comment the language you prefer. I had done it for **en_GB.UTF-8**.
+### 第八步: 设置地区
 
-Now generate the locale config in /etc directory file using the commands below:
+文件 /etc/locale.gen 在注释里包含了所有地区和系统语言设置。用 Vi打开它，然后去掉你希望选择语言前面的注释。 我选择了 **en_GB.UTF-8**。
+
+
+现在用下面的命令在 /etc 文件夹里生成 关于地区的配置文件:
+
+
 ```
 locale-gen
 echo LANG=en_GB.UTF-8 > /etc/locale.conf
 export LANG=en_GB.UTF-8
 ```
 
-### Step 9. Installing bootloader, setting up hostname and root password
+### 第九步 ：安装 bootloader,设置主机名和root 密码
 
-Create a /etc/hostname file and add a matching entry to host.
+
+创建 /etc/hostname 文件 然后添加一个对应的主机名
+
 
 127.0.1.1 myhostname.localdomain myhostname
 
-I am adding ItsFossArch as a hostname:
+我添加了 ItsFossArch 作为我的主机名:
+
 ```
 echo ItsFossArch > /etc/hostname
 ```
+然后也将它添加到 /etc/hosts 中
 
-and then to the /etc/hosts file.
+为了安装 bootloader 使用下面的命令：
 
-To install a bootloader use below commands :
+
 ```
 pacman -S grub
 grub-install /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-To create root password, type
+创建root密码，输入：
+
 ```
 passwd
 ```
 
-and enter your desired password.
+输入你想要的密码。
 
-Once done, update your system. Chances are that you already have an updated system since you have downloaded the latest ISO file.
+
+完成之后，更新你的系统。但很有可能你的系统已经是最新的，因为你下载的是最近的ISO。
+
+
 ```
 pacman -Syu
 ```
 
-Congratulations! You have successfully installed a minimal command line Arch Linux.
+恭喜! 你已经安装了 Arch Linux 的命令行版本。
 
-In the next step, we will see how to set up a desktop environment or Graphical User Interface for the Arch Linux. I am a big fan of GNOME desktop environment, and we will be working on installing the same.
 
-### Step 10: Install a desktop environment (GNOME in this case)
+接下来，我们会了解到如何为Arch设置并安装一个桌面环境。我很喜欢GNOME的桌面环境，所以在这儿也就选择了这个。
 
-Before you can install a desktop environment, you will need to configure the network first.
 
-You can see the interface name with below command:
+### 第十步：安装桌面 (这一例子中是GNOME)
+
+在你安装桌面之前，你需要先设置网络。
+
+你可以用下面的命令看见你的端口：
+
 ```
 ip link
 ```
@@ -205,9 +243,11 @@ ip link
 
 ![][11]
 
-For me, it's **enp0s3.**
+在我的电脑上，端口名是 **enp0s3.**
 
-Add the following entries in the file
+
+将下面这一段加进文件中
+
 ```
 vi /etc/systemd/network/enp0s3.network
 
@@ -216,48 +256,54 @@ name=en*
 [Network]
 DHCP=yes
 ```
+保存并退出。重启网络来应用你刚才的改动。
 
-Save and exit. Restart your systemd network for the changes to reflect.
 ```
 systemctl restart systemd-networkd
 systemctl enable systemd-networkd
 ```
+将下面这两句话加进 /etc/resolv.conf 中
 
-And then add the below two entries in /etc/resolv.conf file.
 ```
 nameserver 8.8.8.8
 nameserver 8.8.4.4
 ```
 
-Next step is to install X environment.
+下一步是安装 X 环境。
 
-Type the below command to install the Xorg as display server.
+输入下面的命令安装 Xorg,并将它作为显示服务器。
+
 ```
 pacman -S xorg xorg-server
 ```
+gnome 包含了基本的 GNOME桌面，gnome-extra 则包含 GNOME 应用，压缩包管理器，磁盘管理器，文本编辑器和其他的应用。
 
-gnome contains the base GNOME desktop. gnome-extra contains GNOME applications, archive manager, disk manager, text editors and more.
 ```
 pacman -S gnome gnome-extra
 ```
 
-The last step includes enabling the display manager GDM for Arch.
+最后一步是在Arch上开启GDM显示管理器。
+
 ```
 systemctl start gdm.service
 systemctl enable gdm.service
 ```
+重启你的系统，你就会看见 GNOME的登录界面。
 
-Restart your system and you can see the GNOME login screen.
 
-## Final Words on Arch Linux installation
+## Arch Linux 安装总结
 
-A similar approach has been demonstrated in this video (watch in full screen to see the commands) by It's FOSS reader Gonzalo Tormo:
+我们在视频中展示了一个由Foss读者 Gonzalo Tormo 提供的相似的安装方法（全屏观看，能更好的看清命令)：
 
-You might have realized by now that installing Arch Linux is not as easy as [installing Ubuntu][12]. However, with a little patience, you can surely accomplish it and then tell the world that you use Arch Linux.
 
-Arch Linux installation itself provides a great deal of learning. And once you have installed it, I recommend referring to its comprehensive [wiki][13] where you can find steps to install various other desktop environments and learn more about the OS. You can keep playing with it and see how powerful Arch is.
+你也许意识到安装Arch不像安装Ubuntu 一样简单。不过，只要有耐心，你一定可以安装好它，并且向全世界宣布你在用Arch Linux.
 
-Let us know in the comments if you face any difficulty while installing Arch Linux.
+
+Arch Linux 安装过程本身就是一个学习的机会。一旦安装完毕，我建议你参考它的Wiki去尝试其他的桌面环境，从而更深入了解这一操作系统。你可以探索它，发现它的强大之处。
+
+
+如果你在安装Arch 的过程中遇到任何问题，请在评论中给我们留言。
+
 
 --------------------------------------------------------------------------------
 
