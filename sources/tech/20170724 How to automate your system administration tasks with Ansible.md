@@ -1,6 +1,7 @@
 translating by lujun9972
 How to automate your system administration tasks with Ansible
 ======
+![配图][https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/BUSINESS_google_wave.png?itok=2oh8TpUi]
 Do you want to sharpen your system administration or Linux skills? Perhaps you have some stuff running on your local LAN and you want to make your life easier--where do you begin? In this article, I'll explain how to set up tooling to simplify administering multiple machines.
 
 When it comes to remote administration tools, SaltStack, Puppet, Chef, and [Ansible][1] are a few popular options. Throughout this article, I'll focus on Ansible and explain how it can be helpful whether you have 5 virtual machines or a 1,000.
