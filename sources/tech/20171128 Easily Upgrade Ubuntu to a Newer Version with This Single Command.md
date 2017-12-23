@@ -1,3 +1,5 @@
+translating---geekpi
+
 Easily Upgrade Ubuntu to a Newer Version with This Single Command
 ======
 [zzupdate][1] is an open source command line utility that makes the task of upgrading Ubuntu Desktop and Server to newer versions a tad bit easier by combining several update commands into one single command.
