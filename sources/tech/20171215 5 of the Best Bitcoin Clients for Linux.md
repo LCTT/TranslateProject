@@ -1,3 +1,5 @@
+translating-----geekpi
+
 5 of the Best Bitcoin Clients for Linux
 ======
 By now you have probably heard of [Bitcoin][1] or the [Blockchain][2]. The price of Bitcoin has skyrocketed several times in the past months, and the trend continues almost daily. The demand for Bitcoin seems to grow astronomically by the minute.
