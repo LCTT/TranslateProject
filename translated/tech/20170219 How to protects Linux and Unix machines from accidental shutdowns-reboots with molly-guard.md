@@ -6,10 +6,10 @@
 
 最新我在 tweet 上发了一通牢骚：
 
-> I seems to run into this stuff again and again :( Instead of typing：
+> 我总是一遍又一遍地犯下同样的错误 :( 本来应该输入Instead of typing：
 > sudo virsh reboot d1
 >
-> I just typed & rebooted my own box
+> 缺总是输错重启了自己的电脑
 > sudo reboot d1
 >
 > -- nixCraft (@nixcraft) [February 19，2017][5]
@@ -21,11 +21,11 @@
 
 Molly-Guard **尝试阻止你不小心关闭或重启 Linux 服务器**。它在 Debian/Ubuntu 中的包描述为：
 
-> The package installs a shell script that overrides the existing shutdown/reboot/halt/poweroff/coldreboot/pm-hibernate/pm-suspend* commands and first runs a set of scripts，which all have to exit successfully， before molly-guard invokes the real command。 One of the scripts checks for existing SSH sessions。 If any of the four commands are called interactively over an SSH session， the shell script prompts you to enter the name of the host you wish to shut down。 This should adequately prevent you from accidental shutdowns and reboots。
+> 这个包会安装一个 shell 脚本来屏蔽已经存在的 shutdown/reboot/halt/poweroff/coldreboot/pm-hibernate/pm-suspend* 命令。 molly-gurad 会首先运行一系列的脚本，只有在所有的脚本都返回成功的条件下， 才会调用真正的命令。 其中一个脚本会检查是否存在 SSH 会话。 如果是通过 SSH 会话调用的命令， shell 脚本会提示你输入相关闭主机的名称。 这应该足够防止你发生意外的关机或重启了。
 
 貌似 [molly-guard][6] 还是个专有名词：
 
-> A shield to prevent tripping of some Big Red Switch by clumsy or ignorant hands。Originally used of the plexiglass covers improvised for the BRS on an IBM 4341 after a programmer's toddler daughter (named Molly) frobbed it twice in one day。 Later generalized to covers over stop/reset switches on disk drives and networking equipment。 In hardware catalogues， you'll see the much less interesting description "guarded button"。
+> 一种用于防止由于笨拙或者不小心触碰道大红开关的屏障。最初指的临时盖在 IBM 4341 的大红按钮上的有机玻璃，因为有一个程序员蹒跚学步的女儿(名叫Molly)一天之内重启了它两次。 后来这个东西也被用来盖住磁盘和网络设备上的停止/重启按钮。在硬件目录中，你很少会看到 “guarded button” 这样无趣的描"。
 
 ### 如何安装 molly guard
 
