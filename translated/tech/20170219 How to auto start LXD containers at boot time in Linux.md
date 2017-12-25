@@ -1,14 +1,13 @@
-translating---geekpi
-
-How to auto start LXD containers at boot time in Linux
+如何在 Linux 启动时自动启动 LXD 容器
 ======
-I am using LXD ("Linux container") based VM. How do I set an LXD container to start on boot in Linux operating system?
+我正在使用基于 LXD（“Linux 容器”）的虚拟机。如何在 Linux 系统中启动时自动启动 LXD 容器？
 
-You can always start the container when LXD starts on boot. You need to set boot.autostart to true. You can define the order to start the containers in (starting with highest first) using boot.autostart.priority (default value is 0) option. You can also define the number of seconds to wait after the container started before starting the next one using boot.autostart.delay (default value 0) option.
+你可以在 LXD 启动后启动容器。你需要将 boot.autostart 设置为 true。你可以使用 boot.autostart.priority（默认值为 0）选项来定义启动容器的顺序（从最高开始）。你也可以使用 boot.autostart.delay（默认值0）选项定义在启动一个容器后等待几秒后启动另一个容器。
 
-### Syntax
+### 语法
 
-Above discussed keys can be set using the lxc tool with the following syntax:
+上面讨论的关键字可以使用 lxc 工具用下面的语法来设置：
+
 ```
 $ lxc config set {vm-name} {key} {value}
 $ lxc config set {vm-name} boot.autostart {true|false}
@@ -16,30 +15,30 @@ $ lxc config set {vm-name} boot.autostart.priority integer
 $ lxc config set {vm-name} boot.autostart.delay integer
 ```
 
-### How do I set an LXD container to start on boot in Ubuntu Linux 16.10?
+### 如何在 Ubuntu Linux 16.10 中让 LXD 容器在启动时启动？
 
-Type the following command:
+输入以下命令：
 `$ lxc config set {vm-name} boot.autostart true`
-Set an LXD container name 'nginx-vm' to start on boot
+设置一个 LXD 容器名称 “nginx-vm” 以在启动时启动
 `$ lxc config set nginx-vm boot.autostart true`
-You can verify setting using the following syntax:
+你可以使用以下语法验证设置：
 ```
 $ lxc config get {vm-name} boot.autostart
 $ lxc config get nginx-vm boot.autostart
 ```
-Sample outputs:
+示例输出：
 ```
 true
 ```
 
-You can the 10 seconds to wait after the container started before starting the next one using the following syntax:
+你可以使用下面的语法在启动容器后等待 10 秒钟后启动另一个容器：
 `$ lxc config set nginx-vm boot.autostart.delay 10`
-Finally, define the order to start the containers in by setting with highest value. Make sure db_vm container start first and next start nginx_vm
+最后，通过设置最高值来定义启动容器的顺序。确保 db_vm 容器首先启动，然后再启动 nginx_vm。
 ```
 $ lxc config set db_vm boot.autostart.priority 100
 $ lxc config set nginx_vm boot.autostart.priority 99
 ```
-Use [the following bash for loop on Linux to view all][1] values:
+使用[下面的 bash 循环在 Linux 上查看所有][1]值：
 ```
 #!/bin/bash
 echo 'The current values of each vm boot parameters:'
@@ -55,7 +54,7 @@ done
 ```
 
 
-Sample outputs:
+示例输出：
 ![Fig.01: Get autostarting LXD containers values using a bash shell script][2]
 
 
@@ -64,7 +63,7 @@ Sample outputs:
 via: https://www.cyberciti.biz/faq/how-to-auto-start-lxd-containers-at-boot-time-in-linux/
 
 作者：[Vivek Gite][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
