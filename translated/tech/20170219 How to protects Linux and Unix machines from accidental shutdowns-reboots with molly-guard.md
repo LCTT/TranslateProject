@@ -9,7 +9,7 @@
 > 我总是一遍又一遍地犯下同样的错误 :( 本来应该输入Instead of typing：
 > sudo virsh reboot d1
 >
-> 缺总是输错重启了自己的电脑
+> 却总是输错重启了自己的电脑
 > sudo reboot d1
 >
 > -- nixCraft (@nixcraft) [February 19，2017][5]
