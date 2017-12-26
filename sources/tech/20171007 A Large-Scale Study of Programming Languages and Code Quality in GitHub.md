@@ -1,4 +1,4 @@
-
+Translating by qhwdw
 A Large-Scale Study of Programming Languages and Code Quality in GitHub
 ============================================================
 
@@ -411,3 +411,5 @@ via: https://cacm.acm.org/magazines/2017/10/221326-a-large-scale-study-of-progra
 [91]:https://cacm.acm.org/magazines/2017/10/221326-a-large-scale-study-of-programming-languages-and-code-quality-in-github/fulltext?imm_mid=0f7103&cmp=em-prog-na-na-newsltr_20171007#PageTop
 [92]:https://cacm.acm.org/magazines/2017/10/221326-a-large-scale-study-of-programming-languages-and-code-quality-in-github/fulltext?imm_mid=0f7103&cmp=em-prog-na-na-newsltr_20171007#PageTop
 [93]:https://cacm.acm.org/magazines/2017/10/221326-a-large-scale-study-of-programming-languages-and-code-quality-in-github/fulltext?imm_mid=0f7103&cmp=em-prog-na-na-newsltr_20171007#PageTop
+
+
