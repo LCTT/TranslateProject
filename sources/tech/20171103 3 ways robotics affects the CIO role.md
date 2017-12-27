@@ -1,5 +1,6 @@
 3 ways robotics affects the CIO role
 ======
+![配图](https://enterprisersproject.com/sites/default/files/styles/620x350/public/cio_ai.png?itok=toMIgELj)
 As 2017 comes to a close, many CIOs are solidifying their goals for 2018. Perhaps yours involve robotic process automation (RPA.) For years, RPA has been a distant concept for many companies. But as organizations are forced to become ever more nimble and efficient, the potential benefits of RPA bear examining.
 
 According to a recent[ survey][1] by Redwood Software and Sapio Research, IT decision makers believe that 59 percent of business processes can be automated in the next five years, creating new speed and efficiency while relieving their human counterparts of repetitive manual workloads. However, 20 percent of companies with more than 1000 employees currently have no RPA strategy in place.
