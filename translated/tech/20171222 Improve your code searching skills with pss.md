@@ -1,6 +1,6 @@
 使用 pss 提升你的代码搜索能力
 ======
-![](https://fedoramagazine.org/wp-content/uploads/2017/12/pss-945x400.jpg)
+![](https：//fedoramagazine.org/wp-content/uploads/2017/12/pss-945x400.jpg)
 搜索代码库是开发者每天都要做的事情。从修改 bug 到学习新代码，或者查看如何调用某个 api，能快速在代码库中导航的能力都是一大助力。幸运的是，我们有专门的工具来搜索代码。[**pss**][1] 就是其中一个工具，让我们来看看如何安装和使用它吧。
 
 ### 什么是 pss？
