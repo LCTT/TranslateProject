@@ -1,5 +1,6 @@
 使用 pss 提升你的代码搜索能力
 ======
+![](translate-MjAxNzEyMjIgSW1wcm92ZSB5b3VyIGNvZGUgc2VhcmNoaW5nIHNraWxscyB3aXRoIHBzcy5tZAo=)
 搜索代码库是开发者每天都要做的事情。从修改 bug 到学习新代码，或者查看如何调用某个 api，能快速在代码库中导航的能力都是一大助力。幸运的是，我们有专门的工具来搜索代码。[**pss**][1] 就是其中一个工具，让我们来看看如何安装和使用它吧。
 
 ### 什么是 pss？
