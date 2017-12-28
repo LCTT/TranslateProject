@@ -1,3 +1,5 @@
+translating---geekpi
+
 Dockerizing Compiled Software ┈ Tianon's Ramblings ✿
 ======
 I recently went through a stint of closing a huge number of issues in the [docker-library/php][1] repository, and one of the oldest (and longest) discussions was related to installing depedencies for a compiling extensions, and I wrote a [semi-long comment][2] explaining how I do this in a general way for any software I wish to Dockerize.
