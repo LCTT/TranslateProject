@@ -1,5 +1,8 @@
 Finding Files with mlocate: Part 2
 ======
+
+![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/question-mark-locate_0.jpg?itok=JfoE_G5f)
+
 [In the previous article][1], we discussed some ways to find a specific file out of the thousands that may be present on your filesystems and introduced the locate tool for the job. Here we explain how the important updatedb tool can help.
 
 ### Well Situated
