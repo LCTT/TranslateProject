@@ -1,3 +1,6 @@
+GParted The Complete Partition Editor For Linux
+======
+
 ![](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/gparted-the-complete-partition-editor-for-linux_orig.jpg)
 **Partition editing**is a task which not only requires carefulness but also a stable environment. Today GParted is one of the leading partition editing tools on Linux environment.
 
@@ -89,7 +92,7 @@ Remember to always check out in the last what you are applying and is it right o
 
 via: http://www.linuxandubuntu.com/home/gparted-the-complete-partition-editor-for-linux
 
-作者：[ ][a]
+作者：[LinuxAndUbuntu][a]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
