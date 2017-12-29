@@ -1,11 +1,10 @@
+translating by lujun9972
 How to rename user in Linux (also rename group & home directory)
 ======
 We might have come across a situation where we might want to rename user in Linux system, for whatever reasons. We can easily rename user in Linux & also we can rename the home directory or its UID as well.
 
 In this short tutorial, we will be discussing these things only. Let's start by renaming user in Linux first,
-
- **(Recommended Read:[How to use FIND command to locate anything in Linux][1])**
-
+**(Recommended Read:[How to use FIND command to locate anything in Linux][1])** 
 ### Rename user in Linux
 
 For renaming user in Linux systems, we will use ** 'usermod'** command. Syntax for the command is,
@@ -56,7 +55,7 @@ With this we end this tutorial on how to rename user in Linux. Please let us kno
 via: http://linuxtechlab.com/rename-user-in-linux-rename-home-directory/
 
 作者：[Shusain][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[lujun9972](https://github.com/lujun9972)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
