@@ -1,5 +1,7 @@
 Finding Files with mlocate: Part 3
 ======
+
+![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/question-mark-2492009_1920.jpg?itok=stJ3GxL2)
 In the previous articles in this short series, we [introduced the mlocate][1] (or just locate) command, and then discussed some ways [the updatedb tool][2] can be used to help you find that one particular file in a thousand.
 
 You are probably also aware of xargs as well as the find command. Our trusty friend locate can also play nicely with the --null option of xargs by outputting all of the results onto one line (without spaces which isn't great if you want to read it yourself) by using the -0 switch like this:
@@ -126,13 +128,13 @@ Chris Binnie's latest book, Linux Server Security: Hack and Defend, shows how ha
 
 via: https://www.linux.com/blog/learn/2017/11/finding-files-mlocate-part-3
 
-作者：[][a]
+作者：[Chris Binnie][a]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:https://www.linux.com
+[a]:https://www.linux.com/users/chrisbinnie
 [1]:https://www.linux.com/blog/learn/intro-to-linux/2017/11/finding-files-mlocate
 [2]:https://www.linux.com/blog/learn/intro-to-linux/finding-files-mlocate-part-2
 [3]:http://jvns.ca/blog/2015/03/05/how-the-locate-command-works-and-lets-rewrite-it-in-one-minute/
