@@ -1,29 +1,31 @@
 Translating by zjon
-How to enable Nested Virtualization in KVM on CentOS 7 / RHEL 7
+如何在 CentOS 7 / RHEL 7 的 KVM 上启用嵌套虚拟化
 ======
-**Nested virtualization** means to configure virtualization environment inside a virtual machine. In other words we can say nested virtualization is a feature in the hypervisor which allows us to install  & run a virtual machine inside a virtual server via hardware acceleration from the **hypervisor** (host).
+**嵌套虚拟化**意味着在虚拟机内配置虚拟化环境。换句话说，我们可以说嵌套虚拟化是虚拟机管理程序的一个特性，它允许我们通过**虚拟化管理程序**（主机）的硬件加速在虚拟服务器内安装核运行虚拟机。
 
-In this article, we will discuss how to enable nested virtualization in KVM on CentOS 7 / RHEL 7. I am assuming you have already configured KVM hypervisor. In case you have not familiar on how to install and configure **KVM hypervisor** , then refer the following article
+在这篇文章中，我们将讨论如何在 CentOS 7 / RHEL 7 的 KVM 上启用嵌套虚拟化。我假定您已经配置过 KVM 管理程序。如果您不熟悉如何安装和配置 KVM 管理程序，请参考一下文章。
 
-Let's jump into the hypervisor and verify whether nested virtualization is enabled or not on your KVM host
+让我们跳进虚拟化管理程序，验证您的 KVM 主机是否启用了嵌套虚拟化。
 
-For Intel based Processors run the command,
+
+基于 Intel 的处理器运行以下命令，
 ```
 [root@kvm-hypervisor ~]# cat /sys/module/kvm_intel/parameters/nested
 N
 [root@kvm-hypervisor ~]#
 ```
 
-For AMD based Processors run the command,
+基于 AMD 的处理器运行以下命令，
+
 ```
 [root@kvm-hypervisor ~]# cat /sys/module/kvm_amd/parameters/nested
 N
 [root@kvm-hypervisor ~]#
 ```
 
-In the above command output 'N' indicates that Nested virtualization is disabled. If we get the output as 'Y' then it indicates that nested virtualization is enabled on your host.
+一下命令输出 'N' 表示嵌套虚拟化是禁用的。如果我们得到的输出是 'Y' 则表示在您的主机已启用嵌套虚拟化
 
-Now to enable nested virtualization, create a file with the name " **/etc/modprobe.d/kvm-nested.conf** " with the following content.
+现在启用嵌套虚拟化，使用以下内容创建一个文件名为 "**/etc/modprobe.d/kvm-nested.conf**" 的文件
 ```
 [root@kvm-hypervisor ~]# vi /etc/modprobe.d/kvm-nested.conf
 options kvm-intel nested=1
@@ -32,16 +34,16 @@ options kvm-intel enable_apicv=1
 options kvm-intel ept=1
 ```
 
-Save & exit the file
+保存并退出文件
 
-Now remove ' **kvm_intel** ' module and then add the same module with modprobe command. Before removing the module, make sure VMs are shutdown otherwise we will get error message like " **modprobe: FATAL: Module kvm_intel is in use** "
+现在移除 '**kvm_intel**' 模块然后通过 modprobe 命令添加同样的模块。在移除模块之前，确保虚拟机已关机，否则我们会得到像 "**modprobe: FATAL: Module kvm_intel is in use**" 这样的错误信息。
 ```
 [root@kvm-hypervisor ~]# modprobe -r kvm_intel
 [root@kvm-hypervisor ~]# modprobe -a kvm_intel
 [root@kvm-hypervisor ~]#
 ```
 
-Now verify whether nested virtualization feature enabled or not.
+现在验证嵌套虚拟化功能是否启用。
 ```
 [root@kvm-hypervisor ~]# cat /sys/module/kvm_intel/parameters/nested
 Y
@@ -50,15 +52,16 @@ Y
 
 ####
 
-Test Nested Virtualization
+测试嵌套虚拟化
 
-Let's suppose we have a VM with name "director" on KVM hypervisor on which I have enabled nested virtualization. Before testing, make sure CPU mode for the VM is either as " **host-model** " or " **host-passthrough** " , to check cpu mode of a virtual machine use either Virt-Manager GUI or virsh edit command
+假设我们在 KVM 管理程序上有一台名为 "director" 的虚拟机，我已经启用了嵌套虚拟化。在测试之前，确保 CPU 模式为 "host-modle" 或 "host-passthrough" ,使用 Virt-Manager 或 virtsh 编译命令检查虚拟机 cpu 模式。
 
 ![cpu_mode_vm_kvm][1]
 
 ![cpu_mode_vm_kvm][2]
 
-Now login to the director VM and run lscpu and lsmod command
+现在登录 director 这台虚拟机并运行 lscpu 和 lsmod 命令
+
 ```
 [root@kvm-hypervisor ~]# ssh 192.168.126.1 -l root
 root@192.168.126.1's password:
@@ -75,7 +78,8 @@ irqbypass              13503  1 kvm
 
 ![lscpu_command_rhel7_centos7][3]
 
-Let's try creating a virtual machine either from virtual manager GUI or virt-install inside the director vm, in my case i am using virt-install command
+让我们试着在 director 这台虚拟机的虚拟管理器 GUI 或 virt-install 创建一台虚拟机，在我的情况下我使用 virt-install 命令
+
 ```
 [root@director ~]# virt-install  -n Nested-VM  --description "Test Nested VM"  --os-type=Linux  --os-variant=rhel7  --ram=2048  --vcpus=2  --disk path=/var/lib/libvirt/images/nestedvm.img,bus=virtio,size=10  --graphics none  --location /var/lib/libvirt/images/CentOS-7-x86_64-DVD-1511.iso --extra-args console=ttyS0
 Starting install...
@@ -96,16 +100,16 @@ Escape character is ^]
 
 ![cli-installer-virt-install-command-kvm][4]
 
-This confirms that nested virtualization has been enabled successfully as we are able to create virtual machine inside a virtual machine.
+这证实了嵌套虚拟化已成功启用，因为我们能在虚拟机内创建虚拟机。
 
-This Concludes the article, please do share your feedback and comments.
+这篇文章到此结束，请分享您的反馈和意见。
 
 --------------------------------------------------------------------------------
 
 via: https://www.linuxtechi.com/enable-nested-virtualization-kvm-centos-7-rhel-7/
 
 作者：[Pradeep Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zjon](https://github.com/zjon)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -115,3 +119,5 @@ via: https://www.linuxtechi.com/enable-nested-virtualization-kvm-centos-7-rhel-7
 [2]:https://www.linuxtechi.com/wp-content/uploads/2017/12/cpu_mode_vm_kvm.jpg
 [3]:https://www.linuxtechi.com/wp-content/uploads/2017/12/lscpu_command_rhel7_centos7-1024x408.jpg
 [4]:https://www.linuxtechi.com/wp-content/uploads/2017/12/cli-installer-virt-install-command-kvm.jpg
+
+
