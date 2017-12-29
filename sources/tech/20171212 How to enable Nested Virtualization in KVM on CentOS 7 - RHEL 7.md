@@ -1,3 +1,4 @@
+Translating by zjon
 How to enable Nested Virtualization in KVM on CentOS 7 / RHEL 7
 ======
 **Nested virtualization** means to configure virtualization environment inside a virtual machine. In other words we can say nested virtualization is a feature in the hypervisor which allows us to install  & run a virtual machine inside a virtual server via hardware acceleration from the **hypervisor** (host).
