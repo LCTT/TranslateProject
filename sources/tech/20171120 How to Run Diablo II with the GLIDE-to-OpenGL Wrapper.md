@@ -1,5 +1,7 @@
 How to Run Diablo II with the GLIDE-to-OpenGL Wrapper
 ======
+![](http://www.thelinuxrain.com/content/01-articles/198-how-to-run-diablo-2-glide-opengl-wrapper/headimage.jpg)
+
 **[Diablo II][1] is usually a breeze to run on Linux, thanks to WINE and so often times you need no special tricks. However, if you're like me and experience a few glitches and washed out colours in the standard fullscreen mode, you have two options: run the game in windowed mode and go without cinematics, or install a GLIDE-OpenGL wrapper and get the game running properly in its fullscreen glory again, without the glitches and colour problems. I detail how to do that in this article.**
 
 Yes, that's right, unless you run Diablo II in fullscreen, the cinematics won't work for some reason! I'm fairly sure this happens even on Windows if the game is in windowed mode, so while it's a curious side effect, it is what it is. And this is a game from 2001 we're talking about!
