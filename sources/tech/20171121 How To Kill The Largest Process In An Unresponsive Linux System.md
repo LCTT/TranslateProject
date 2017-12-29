@@ -1,5 +1,7 @@
 How To Kill The Largest Process In An Unresponsive Linux System
 ======
+![](https://www.ostechnix.com/wp-content/uploads/2017/11/Kill-The-Largest-Process-720x340.png)
+
 I, as a blog writer, have bookmarked many blogs, websites and forums to refer Linux and Unix related notes. Sometimes, I had a lot of open tabs in my browser, so my system goes unresponsive for several minutes. I couldn't move the mouse cursor, or kill a process or close any opened tabs. At that times, I had no choice but to forcibly reset the system. Of course, I use **OneTab** and The **Great Suspender** extensions, but they didn 't help much either. I often ran out of memory. This is where **Early OOM** comes in help. For those wondering, it will kill the largest process in an unresponsive system when it has absolutely no other choices. Early OOM checks the amount of available memory and free swap 10 times a second. If both are below 10%, it will kill the largest process.
 
 ### Why Early OOM? Why not built-in OOM killer?
