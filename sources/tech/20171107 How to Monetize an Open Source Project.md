@@ -1,5 +1,7 @@
 How to Monetize an Open Source Project
 ======
+
+![](http://www.itprotoday.com/sites/itprotoday.com/files/styles/article_featured_standard/public/ThinkstockPhotos-629994230_0.jpg?itok=5dZ68OTn)
 The problem for any small group of developers putting the finishing touches on a commercial open source application is figuring out how to monetize the software in order to keep the bills paid and food on the table. Often these small pre-startups will start by deciding which of the recognized open source business models they're going to adapt, whether that be following Red Hat's lead and offering professional services, going the SaaS route, releasing as open core or something else.
 
 Steven Grandchamp, general manager for MariaDB's North America operations and CEO for Denver-based startup [Drud Tech][1], thinks that might be putting the cart before the horse. With an open source project, the best first move is to get people downloading and using your product for free.
