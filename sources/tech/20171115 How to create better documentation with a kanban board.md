@@ -11,7 +11,7 @@ I've found [kanban][1] boards are a great tool for these situations. They allow 
 
 I often use Trello for card sorting, but there are several [open source alternatives][2] that you might want to try.
 
-## How it works
+### How it works
 
 My most successful kanban experiment was when I was working on documentation for [Gluster][3], a free and open source scalable network-attached storage filesystem. I needed to take a large pile of documentation that had grown over time and break it into categories to create a navigation system. BEcause I didn't have the technical knowledge necessary to sort it, I turned to the Gluster team and developer community for guidance.
 
@@ -19,7 +19,7 @@ First, I created a shared Kanban board. I gave the columns general names that wo
 
 Dealing with all the screen captures was the trickiest part. I wish there was a merge or consensus feature that would've helped me aggregate everyone's data, rather than having to examine a bunch of screen captures. Fortunately, after the first person sorted the cards, people more or less agreed on the structure and made only minor modifications. When opinions differed on a topic's placement, I set up flash meetings where people could explain their thinking and we could hash out the disagreements.
 
-## Using the data
+### Using the data
 
 From here, it was easy to convert the information I captured into menus and refine it. If users thought items should become submenus, they usually told me in comments or when we talked on the phone. Perceptions of menu organization vary depending upon people's job tasks, so you never have complete agreement, but testing with users means you won't have as many blind spots about what people use and where they will look for it.
 
