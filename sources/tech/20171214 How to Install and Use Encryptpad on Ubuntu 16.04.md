@@ -1,3 +1,5 @@
+translateing by singledo
+
 How to Install and Use Encryptpad on Ubuntu 16.04
 ======
 
