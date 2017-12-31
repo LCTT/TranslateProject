@@ -1,9 +1,10 @@
-Linux 下如何修改用户名(同时修改用户组名和 home 目录)
+Linux 下如何修改用户名（同时修改用户组名和家目录）
 ======
-有时候，由于某些原因，我们可能会需要重命名用户名。我们可以很容易地修改用户名以及对应的 home 目录和 UID。
 
-本教程将会讨论这些东西。让我们先从修改用户名开始，
-**(推荐阅读：[Linux 下如何用 FIND 命令查找想要东西的路径 ][1])** 
+有时候，由于某些原因，我们可能会需要重命名用户名。我们可以很容易地修改用户名以及对应的家目录和 UID。
+
+本教程将会讨论这些东西。让我们先从修改用户名开始。
+
 ### 修改用户名
 
 我们使用 `usermod` 来修改用户名。其语法为，
@@ -12,30 +13,30 @@ Linux 下如何修改用户名(同时修改用户组名和 home 目录)
 $ usermod -l new_username old_username
 ```
 
-举个例子，假设我们有一个名叫 `dan` 的用户想要重命名为 `susan`，那么在终端下执行下面命令;
+举个例子，假设我们有一个名叫 `dan` 的用户想要重命名为 `susan`，那么在终端下执行下面命令：
 
 ```
 $ sudo usermod -l susan dan
 ```
 
-这只会更改用户名，而其他的东西，比如用户组，home 目录，UID 等都保持不变。
+这只会更改用户名，而其他的东西，比如用户组，家目录，UID 等都保持不变。
 
- **注意：-** 你需要从要改名的帐号中登出并杀掉该用户的所有进程，要杀掉该用户的所有进程可以执行下面命令，
+**注意：-** 你需要从要改名的帐号中登出并杀掉该用户的所有进程，要杀掉该用户的所有进程可以执行下面命令，
 
 ```
 $ sudo pkill -u dan
 $ sudo pkill -9 -u dan
 ```
 
-### 修改 Home 目录
+### 修改家目录
 
-要同时更改 home 目录，我们需要在执行 `usermod` 命令的同时加上 `-d` 选项，
+要同时更改家目录，我们需要在执行 `usermod` 命令的同时加上 `-d` 选项，
 
 ```
 $ sudo usermod -d /home/susan -m susan
 ```
 
-### 更改用户 UDI
+### 更改用户 UID
 
 执行下面命令修改用户 UID，
 
@@ -68,7 +69,7 @@ via: http://linuxtechlab.com/rename-user-in-linux-rename-home-directory/
 
 作者：[Shusain][a]
 译者：[lujun9972](https://github.com/lujun9972)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
