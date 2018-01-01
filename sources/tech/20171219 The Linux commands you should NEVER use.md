@@ -1,3 +1,5 @@
+translating by CYLeft
+
 The Linux commands you should NEVER use
 ======
 Unless, of course, you like killing your machines.
