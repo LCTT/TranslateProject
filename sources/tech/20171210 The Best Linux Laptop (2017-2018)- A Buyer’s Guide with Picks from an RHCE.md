@@ -1,4 +1,4 @@
-The Best Linux Laptop (2017-2018): A Buyer’s Guide with Picks from an RHCE
+Translating by qhwdw The Best Linux Laptop (2017-2018): A Buyer’s Guide with Picks from an RHCE
 ======
 ![][1]
 
@@ -222,3 +222,5 @@ via: https://www.hecticgeek.com/2017/12/best-linux-laptop/
 [32]:https://linuxmint.com/
 [33]:https://twitter.com/share
 [34]:https://www.hecticgeek.com/2017/12/best-linux-laptop/?share=email (Click to email this to a friend)
+
+
