@@ -106,7 +106,7 @@ $ xzmore textfile.xz | head -1
 --------------------------------------------------------------------------------
 via: https://www.networkworld.com/article/3240938/linux/how-to-squeeze-the-most-out-of-linux-file-compression.html
 
-作者 ：[ Sandra Henry-Stocker ][1] 译者：[ singledp ][2] 校对：校对者ID
+作者 ：[ Sandra Henry-Stocker ][1] 译者：[ singledo ][2] 校对：校对者ID
 
 本文由 [ LCTT ][3]原创编译，Linux中国 荣誉推出
 
