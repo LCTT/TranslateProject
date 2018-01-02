@@ -1,3 +1,4 @@
+translating by lujun9972
 How to use/run bash aliases over ssh based session
 ======
 
@@ -113,7 +114,7 @@ $ help command
 via: https://www.cyberciti.biz/faq/use-bash-aliases-ssh-based-session/
 
 作者：[Vivek Gite][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[lujun9972](https://github.com/lujun9972)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
