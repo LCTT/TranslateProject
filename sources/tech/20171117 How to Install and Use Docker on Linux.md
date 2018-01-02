@@ -1,6 +1,7 @@
 translating by lujun9972
 How to Install and Use Docker on Linux
 ======
+![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/use-containers.jpg?itok=s3YLmYHs)
 Containers are all the rage in IT -- with good reason. Containers are lightweight, standalone packages that contain everything needed to run an application (code, libraries, runtime, system settings, and dependencies). Each container is deployed with its own CPU, memory, block I/O, and network resources, all without having to depend upon an individual kernel and operating system. And that is the biggest difference between a container and a virtual machine; whereas a virtual machine is a full-blown operating system platform, running on a host OS, a container is not.
 
 Containers allow you to expand your company offerings (either internal or external) in ways you could not otherwise. For example, you can quickly deploy multiple instances of NGINX (even with multiple stagings -- such as development and production). Unlike doing this with Virtual Machines, containers will not put nearly the hit on your system resources.
