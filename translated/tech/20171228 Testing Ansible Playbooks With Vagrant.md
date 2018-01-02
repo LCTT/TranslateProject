@@ -1,52 +1,49 @@
-translating by lujun9972
-Testing Ansible Playbooks With Vagrant
+使用 Vagrant 测试 Ansible Playbooks
 ======
-I use Ansible to automate the deployments of my websites ([LinuxJobs.fr][1], [Journal du hacker][2]) and my applications ([Feed2toot][3], [Feed2tweet][4]). I'll describe in this blog post my setup in order to test my Ansible Playbooks locally on my laptop.
+我使用 Ansible 来自动部署站点 ([LinuxJobs.fr][1]，[Journal du hacker][2]) 与应用 ([Feed2toot][3]，[Feed2tweet][4])。在本文中将会讲述我是如何配置以实现在本地测试 ansbile playbook 的。
 
-![ansible](https://carlchenet.com/wp-content/uploads/2017/12/ansible-300x300.png)
+![ansible](https：//carlchenet.com/wp-content/uploads/2017/12/ansible-300x300.png)
 
-### Why testing the Ansible Playbooks
+### 为何要测试 Ansible Playbooks
 
-I need a simple and a fast way to test the deployments of my Ansible Playbooks locally on my laptop, especially at the beginning of writing a new Playbook, because deploying directly on the production server is both reeeeally slow… and risky for my services in production.
+我需要一种简单而迅速的方法来在我的本地笔记本上测试 Ansible Playbook 的部署情况，尤其在刚开始写一个新 Playbook 的时候，因为直接部署到生产服务器上不仅特别慢而且风险还很大。
 
-Instead of deploying on a remote server, I'll deploy my Playbooks on a [VirtualBox][5] using [Vagrant][6]. This allows getting quickly the result of a new modification, iterating and fixing as fast as possible.
+我使用 [Vagrant][6] 来将 Playbook 部署到 [VirtualBox][5] 虚拟机上而不是部署到远程服务器。这使得修改的结果很快就能看到，以实现快速迭代和修正。
 
-Disclaimer: I am not a profesionnal programmer. There might exist better solutions and I'm only describing one solution of testing Ansible Playbooks I find both easy and efficient for my own use cases.
+责任声明：我并不是专业程序员。我只是描述一种我觉得适合我的，即简单又有效的用来测试 Ansible Playbook 的解决方案，但可能还有其他更好的方法。
 
-### My process
+###  我的流程
 
-  1. Begin writing the new Ansible Playbook
-  2. Launch a fresh virtual machine (VM) and deploy the playbook on this VM using Vagrant
-  3. Fix the issues either from the playbook either from the application deployed by Ansible itself
-  4. Relaunch the deployment on the VM
-  5. If more errors, go back to step 3. Otherwise destroy the VM, recreate it and deploy to test a last time with a fresh install
-  6. If no error remains, tag the version of your Ansible Playbook and you're ready to deploy in production
+  1。开始写新的 Ansible Playbook
+  2。启动一台新的虚拟机 (VM) 并使用 Vagrantt 将 playbook 部署到这台虚拟机中
+  3。修复 playbook 或应用中的错误
+  4。重新运行虚拟机中的部署
+  5。如果还有问题，回到第三步。否则销毁这台虚拟机，重新创建新虚拟机然后最后测试一次全新部署
+  6。若没有问题出现，则给你的 Ansible Playbook 版本加上标签，可以在生产环境上发布产品了
 
+### 你需要哪些东西
 
-
-### What you need
-
-First, you need Virtualbox. If you use the [Debian][7] distribution, [this link][8] describes how to install it, either from the Debian repositories either from the upstream.
+首先，你需要 Virtualbox。若你使用的是 [Debian][7] 发行版，[这个链接 ][8] 描述了安装的方法，可以从 Debian 仓库中安装，也可以通过官网来安装。
 
 [![][9]][5]
 
-Second, you need Vagrant. Why Vagrant? Because it's a kind of middleware between your development environment and your virtual machine, allowing programmatically reproducible operations and easy linking your deployments and the virtual machine. Install it with the following command:
+其次，你需要 Vagrant。为什么要 Vagrant？因为它是介于开发环境和虚拟机之间的中间件，它允许通过编程的方式重复操作，而且可以很方便地将你的发布与虚拟机连接起来。通过下面命令可以安装 Vagrant：
 ```
 # apt install vagrant
 ```
 
 [![][10]][6]
 
-### Setting up Vagrant
+### 设置 Vagrant
 
-Everything about Vagrant lies in the file Vagrantfile. Here is mine:
+Vagrant 的一切信息都存放在 Vagrantfile 文件中。这是我的内容：
 ```
 Vagrant.require_version ">= 2.0.0"
 
 Vagrant.configure(1) do |config|
 
  config.vm.box = "debian/stretch64"
- config.vm.provision "shell", inline: "apt install --yes git python3-pip"
+ config.vm.provision "shell"，inline："apt install --yes git python3-pip"
  config.vm.provision "ansible" do |ansible|
  ansible.verbose = "v"
  ansible.playbook = "site.yml"
@@ -55,54 +52,52 @@ Vagrant.configure(1) do |config|
 end
 
 ```
-  1. The 1st line defines what versions of Vagrant should execute your Vagrantfile.
-  2. The first loop of the file, you could define the following operations for as many virtual machines as you wish (here just 1).
-  3. The 3rd line defines the official Vagrant image we'll use for the virtual machine.
-  4. The 4th line is really important: those are the missing apps we miss on the VM. Here we install git and python3-pip with apt.
-  5. The next line indicates the start of the Ansible configuration.
-  6. On the 6th line, we want a verbose output of Ansible.
-  7. On the 7th line, we define the entry point of your Ansible Playbook.
-  8. On the 8th line, if you use Ansible Vault to encrypt some files, just define here the file with your Ansible Vault passphrase.
+  1。第一行指明了需要用哪个版本的 Vagrant 来执行 Vagrantfile。
+  2。文件中的第一个循环，你要定义为多少台虚拟机执行下面的操作(这里为 1)。
+  3。第三行指定了用来创建虚拟机的官方 Vagrant 镜像。
+  4。第四行非常重要：有一些需要的应用没有安装到虚拟机中。这里我们用 apt 安装 git 和 python3-pip。
+  5。下一行指明了 Ansible 配置开始的地方
+  6。第六行说明我们想要 Ansible 输出详细信息。
+  7。第 7 行，我们定义了 Ansible Playbook 的入口。
+  8。第八行，若你使用 Ansible Vault 加密了一些文件，在这里指定这些文件。
 
-
-
-When Vagrant launches Ansible, it's going to launch something like:
+当 Vagrant 启动 Ansible 时，类似于执行这样的操作：
 ```
 $  ansible-playbook --inventory-file=/home/me/ansible/test-ansible-playbook/.vagrant/provisioners/ansible/inventory -v --vault-password-file=vault_password_file site.yml
 ```
 
-### Executing Vagrant
+### 执行 Vagrant
 
-After writing your Vagrantfile, you need to launch your VM. It's as simple as using the following command:
+写好 Vagrantfile 后，就可以启动虚拟机了。只需要简单地运行下面命令：
 ```
 $ vagrant up
 ```
 
-That's a slow operation, because the VM will be launched, the additionnal apps you defined in the Vagrantfile will be installed and finally your Playbook will be deployed on it. You should sparsely use it.
+这个操作会很慢，因为它会启动虚拟机，安装 Vagrantfile 中定义的附加软件，最用应用你的 Playbook。你不要太频繁地使用这条命令。
 
-Ok, now we're really ready to iterate fast. Between your different modifications, in order to test your deployments fast and on a regular basis, just use the following command:
+Ok，现在你可以快速迭代了。在做出修改后，可以通过下面命令来快速测试你的部署：
 ```
 $ vagrant provision
 ```
 
-Once your Ansible Playbook is finally ready, usually after lots of iterations (at least that's my case), you should test it on a fresh install, because your different iterations may have modified your virtual machine and could trigger unexpected results.
+Ansible Playbook 搞定后，通常要经过多次迭代(至少我是这样的)，你应该一个全新安装的虚拟机上再测试一次，因为你在迭代的过程中可能会对虚拟机造成修改从而引发意料之外的结果。
 
-In order to test it from a fresh install, use the following command:
+使用下面命令进行全新测试：
 ```
 $ vagrant destroy && vagrant up
 ```
 
-That's again a slow operation. You should use it when you're pretty sure your Ansible Playbook is almost finished. After testing your deployment on a fresh VM, you're now ready to deploy in production.Or at least better prepared :p
+这又是一个很慢的操作。你应该十分肯定 Ansible Playbook 差不多完成了的情况下才这样做。在全新虚拟机上测试部署之后，就可以发布到生产上去了。至少准备要充分不少了吧：p
 
-### Possible improvements? Let me know
+### 有什么改进意见？请告诉我
 
-I find the setup described in this blog post quite useful for my use cases. I can iterate quite fast especially when I begin writing a new playbook, not only on the playbook but sometimes on my own latest apps, not yet ready to be deployed in production. Deploying on a remote server would be both slow and dangerous for my services in production.
+本文中描述的配置对我自己来说很有用。我可以做到快速迭代(尤其在编写新的 playbook 的时候)，除了 playbook 外，对我的最新应用，尚未准备好部署到生产环境上的应用也很有帮助。直接部署到远程服务器上对我的生产服务来说不仅缓慢而且很危险。
 
-I could use a continous integration (CI) server, but that's not the topic of this blog post. As said before, the goal is to iterate as fast as possible in the beginning of writing a new Ansible Playbook.
+我本也可以使用持续集成 (CI) 服务器，但这不是本文的主题。如前所述，本文的目的是在编写新的 Ansible Playbook 之初尽可能的快速迭代。
 
-Commiting, pushing to your Git repository and waiting for the execution of your CI tests is overkill at the beginning of your Ansible Playbook, when it's full of errors waiting to be debugged one by one. I think CI is more useful later in the life of the Ansible Playbooks, especially when different people work on it and you have a set or code quality rules to enforce. That's only my opinion and it's open to discussion, one more time I'm not a professionnal programmer.
+在编写 Ansible Playbook 之初就提交，推送到你的 Git 仓库然后等待 CI 测试的执行结果，这有点太过了，因为这个时期的错误总是很多，你需要一一个地去调试。我觉得 CI 在编写 Ansible Playbook 的后期会有用的多，尤其当多个人同时对它进行修改而且你有一整套代码质量规范要遵守的时候。不过，这只是我自己的观念，还有带讨论，再重申一遍，我不是个专业的程序员。
 
-If you have better solutions to test Ansible Playbooks or to improve the one describe here, let me know by writing a comment or by contacting me through my accounts on social networks below, I'll be delighted to listen to your improvements.
+如果你有更好的测试 Ansible Playbook 的方案或者能对这里描述的方法做出一些改进，请告诉我。你可以把它写到留言框中或者通过社交网络联系我，我会很高兴的。
 
 
 
