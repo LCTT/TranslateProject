@@ -1,3 +1,5 @@
+translating---geekpi
+
 Autorandr: automatically adjust screen layout
 ======
 Like many laptop users, I often plug my laptop into different monitor setups (multiple monitors at my desk, projector when presenting, etc.) Running xrandr commands or clicking through interfaces gets tedious, and writing scripts isn't much better.
