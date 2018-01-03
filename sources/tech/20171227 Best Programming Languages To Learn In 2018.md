@@ -1,4 +1,4 @@
-Best Programming Languages To Learn In 2018
+Translating by qhwdw Best Programming Languages To Learn In 2018
 ======
 
 ![](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/best-programming-languages-learn-for-2018_orig.jpg)
@@ -127,3 +127,5 @@ via: http://www.linuxandubuntu.com/home/best-programming-languages-to-learn-in-2
 [6]:http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/1200px-php-logo-svg_orig.png
 [7]:http://www.linuxandubuntu.com/home/wordpress-how-to-host-and-manage-on-web-server-in-linuxubuntu-step-by-step-guide
 [8]:http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/sql-database-language_orig.png
+
+
