@@ -1,3 +1,5 @@
+Translating by stevenzdg988
+
 Which Official Ubuntu Flavor Is Best for You?
 ============================================================
 
