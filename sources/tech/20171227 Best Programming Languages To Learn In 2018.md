@@ -1,11 +1,11 @@
-Translating by qhwdw Best Programming Languages To Learn In 2018
+在 2018 年最值得去学习的编程语言
 ======
 
 ![](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/best-programming-languages-learn-for-2018_orig.jpg)
 
-Programming is growing as one of the most sought-after profession unlike olden times when software making was limited to just a handful of **programming languages** . Today we have a large variety of choices when it comes to programming languages. With the cross-platform support growing, most programming languages can be used for multiple tasks. Here let us have a look at some programming languages that you might want to learn in 2018 if you have not already.
+编程现在已经变成最受欢迎的职业之一，不像以前，制作软件只局限于少数几种 **编程语言**。现在，我们有很多种编程语言可以选择。随着跨平台支持需求的增多，大多数编程语言都可以被用于多种任务。如果，你还没有准备好，让我们看一下在 2018 年你可能会学习的编程语言有哪些。
 
-## Best programming languages to learn in 2018
+## 在 2018 年最值得去学习的编程语言
 
 ### Python
 
