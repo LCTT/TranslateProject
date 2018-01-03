@@ -1,4 +1,4 @@
-The current state of kernel page-table isolation
+Translating by qhwdw The current state of kernel page-table isolation
 ============================================================
 
 At the end of October, the [KAISER][8] patch set was unveiled; this work separates the page tables used by the kernel from those belonging to user space in an attempt to address x86 processor bugs that can disclose the layout of the kernel to an attacker. Those patches have seen significant work in the weeks since their debut, but they appear to be approaching a final state. It seems like an appropriate time for another look.
@@ -50,3 +50,5 @@ via: https://lwn.net/SubscriberLink/741878/eb6c9d3913d7cb2b/
 [6]:https://lwn.net/Articles/117749/
 [7]:http://man7.org/linux/man-pages/man2/modify_ldt.2.html
 [8]:https://lwn.net/Articles/738975/
+
+
