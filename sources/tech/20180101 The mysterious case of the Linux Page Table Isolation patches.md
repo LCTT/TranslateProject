@@ -1,3 +1,4 @@
+Translating by qhwdw
 # [The mysterious case of the Linux Page Table Isolation patches][14]
 
 * * *
@@ -135,3 +136,5 @@ via: http://pythonsweetness.tumblr.com/post/169166980422/the-mysterious-case-of-
 [13]:http://t.umblr.com/redirect?z=https%3A%2F%2Farxiv.org%2Fabs%2F1710.00551&t=ZjAyMDUzZWRmYjExNGNlYzRlMjE1NTliMTI2M2Y4YjkxMTFhMjI0OCxXRG55eVpXNw%3D%3D&b=t%3AqBH2b-yWL63V8acbuG-EUQ&p=http%3A%2F%2Fpythonsweetness.tumblr.com%2Fpost%2F169166980422%2Fthe-mysterious-case-of-the-linux-page-table&m=1
 [14]:http://pythonsweetness.tumblr.com/post/169166980422/the-mysterious-case-of-the-linux-page-table
 [15]:http://pythonsweetness.tumblr.com/
+
+
