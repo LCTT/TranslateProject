@@ -1,161 +1,127 @@
-translating by stevenzdg988
+translated by stevenzdg988
 
-Set Ubuntu Derivatives Back to Default with Resetter
+利用 Resetter 将 Ubuntu 衍生版重置为初始状态
 ======
-How many times have you dived deep into Ubuntu (or a Ubuntu derivative), configuring things and installing software, only to find that your desktop (or server) platform isn't exactly what you wanted. This situation can be problematic when you already have all of your user files on the machine. In this case, you have a choice, you can either back up all your data, reinstall the operating system, and copy your data back onto the machine, or you can give a tool like [Resetter][1] a go.
 有多少次你投入到Ubuntu（或Ubuntu衍生版本），配置某项内容和安装软件，却发现你的桌面（或服务器）平台并不是你想要的。当在机器上产生了大量的用户文件时，这种情况可能会出现问题。既然这样，你有一个选择，你或者可以备份你所有的数据，重新安装操作系统，然后将您的数据复制回本机，或者也可以利用一种类似于[Resetter][1]的工具做同样的事情。
-Resetter is a new tool (written by Canadian developer that goes by the name "[gaining][2]"), written in Python and pyqt, that will reset Ubuntu, Linux Mint (and a few other, Ubuntu-based distributions) back to stock configurations. Resetter offers two different reset options: Automatic and Custom. With the Automatic option, the tool will:
-Resetter 是一个新的工具（由加拿大开发商，被称为“获得”），用python和PyQt，将重置Ubuntu，Linux Mint（和一些其他的，基于Ubuntu的衍生版）回到初始配置。Resetter 提供了两种不同的复位选项：自动和自定义。利用自动选项，工具就会完成以下内容：
-  * Remove user-installed apps 删除用换装的应用软件
 
-  * Delete users and home directories 删除用户及其家目录
+Resetter 是一个新的工具（由加拿大开发者，被称为"[gaining][2]"），用python和PyQt，将重置Ubuntu，Linux Mint（和一些其他的，基于Ubuntu的衍生版）回到初始配置。Resetter 提供了两种不同的复位选项：自动和自定义。利用自动选项，工具就会完成以下内容：
+  * 删除用户安装的应用软件
 
-  * Create default backup user 创建默认的备份用户
+  * 删除用户及家目录
 
-  * Auto install missing pre-installed apps (MPIAs) 自动安装预装的应用软件
+  * 创建默认备份用户
 
-  * Remove non-default users 删除为初始化的用户
+  * 自动安装预装的应用软件(MPIAs) 
 
-  * Remove snap packages 删除协议软件包
+  * 删除非默认用户
 
+  * 删除协议软件包
 
+自定义选项:
 
+ * 删除用户安装的应用程序或者允许你选择要删除的应用程序
 
-The Custom option will:
+ * 删除旧的内核
 
-  * Remove user-installed apps or allow you to select which apps to remove
+ * 允许你选择用户进行删除
 
-  * Remove  old kernels
+ * 删除用户及家目录
 
-  * Allow you to choose users to delete
+ * 创建默认备份用户
 
-  * Delete users and home directories
+ * 允许您创建自定义备份用户
 
-  * Create default backup user
+ * 自动安装MPIAs或选择MPIAs进行安装
 
-  * Allow you to create custom backup user
+ * 删除非默认用户
 
-  * Auto install MPIAs or chose which MPIAs to install
+ * 查看所有相关依赖包
 
-  * Remove non-default users
+ * 删除协议软件包
 
-  * View all dependent packages
-
-  * Remove snap packages
-
-
-
-
-I'm going to walk you through the process of installing and using Resetter. However, I must tell you that this tool is very much in beta. Even so, resetter is definitely worth a go. In fact, I would encourage you to test the app and submit bug reports (you can either submit them via [GitHub][3] or send them directly to the developer's email address, [gaining7@outlook.com][4]).
-
+我将带领您完成安装和使用Resetter的过程。但是，我必须告诉你这个工具非常的测试版。即便如此，resetter绝对值得一试。实际上，我鼓励您测试应用程序并提交bug报告(您可以通过[GitHub][3]提交，或者直接发送给开发人员的电子邮件地址[gaining7@outlook.com][4])。
 It should also be noted that, at the moment, the only supported distributions are:
-
-  * Debian 9.2 (stable) Gnome edition
-
-  * Linux Mint 17.3+ (support for mint 18.3 coming soon)
-
-  * Ubuntu 14.04+ (Although I found 17.10 not supported)
-
+还应注意的是，目前仅支持的衍生版有:
+  * Debian 9.2(稳定)Gnome版本
+  * Linux Mint 17.3 +(支持Mint 18.3即将推出)
+  * Ubuntu 14.04+(虽然我发现不支持17.10)
   * Elementary OS 0.4+
-
   * Linux Deepin 15.4+
 
+说到这里，让我们安装和使用Resetter。我将在[Elementary OS Loki][5]平台展示
+### 安装
 
-
-
-With that said, let's install and use Resetter. I'll be demonstrating on [Elementary OS Loki][5].
-
-### Installation
-
-There are a couple of ways to install Resetter. The method I chose is by way of the gdebi helper app. Why? Because it will pick up all the necessary dependencies for installation. First, we must install that particular tool. Open up a terminal window and issue the command:
+有几种方法可以安装Resetter。我选择的方法是通过gdebi辅助应用程序，为什么?因为它将获取安装所需的所有依赖项。首先，我们必须安装那个特定的工具。打开终端窗口并发出命令:
 ```
 sudo apt install gdebi
 ```
-
-Once that is installed, point your browser to the [Resetter Download Page][6] and download the most recent version of the software. Once it has downloaded, open up the file manager, navigate to the downloaded file, and click (or double-click, depending on how you've configured your desktop) on the resetter_XXX-stable_all.deb file (where XXX is the release number). The gdebi app will open (Figure 1). Click on the Install Package button, type your sudo password, and Resetter will install.
-
+一旦安装完毕，请将浏览器指向[Resetter下载页面][6]，并下载该软件的最新版本。一旦下载完毕，打开文件管理器，导航到下载的文件，然后单击(或双击，这取决于你如何配置你的桌面)在resetter_xxx - stable_all.deb文件(XXX是版本号)。gdebi应用程序将会打开(图1)。点击安装包按钮，输入你的sudo密码，接下来 Resetter 将开始安装。
 ## [resetter_1.jpg][7]
 
 ![gdebi][8]
 
-Figure 1: Installing Resetter with gdebi.
+图1:利用gdebi安装Resetter
+[使用许可][9]
 
-[Used with permission][9]
+当安装完成，准备接下来的操作。
+### 使用 Resetter
 
-Once Resetter is installed, you're ready to go.
-
-### Using Resetter
-
-Remember, before you do this, you must back up your data. You've been warned.
-
-From your terminal window, issue the command sudo resetter. You'll be prompted for your sudo password. Once Resetter opens, it will automatically detect your distribution (Figure 2).
-
+记住，在做这个之前，必须备份数据。别怪我没提醒你。从终端窗口发出命令```sudo resetter```。您将被提示输入sudo密码。一旦Resetter打开，它将自动检测您的发行版(图2)。
 ## [resetter_2.jpg][10]
 
 ![Resetter][11]
 
-Figure 2: The Resetter main window.
+图2: Resetter 主窗口
+[使用许可][9]
 
-[Used with permission][9]
-
-We're going to test the Resetter waters by running an automatic reset. From the main window, click Automatic Reset. The app will offer up a clear warning that it is about to reset your operating system (in my case, Elementary OS 0.4.1 Loki) to its factory defaults (Figure 3).
-
+我们将通过自动重置来测试 Resetter 的流程。从主窗口，点击Automatic Reset（自动复位）。这款应用将提供一个明确的警告，它将把你的操作系统(的实例，Elementary OS 0.4.1 Loki)重新设置为出厂默认状态(图3)。
 ## [resetter_3.jpg][12]
 
-![warning][13]
+![警告][13]
 
-Figure 3: Resetter warns you before you continue on.
+图3:在继续之前，Resetter警告您。 
+[用户许可][9]
 
-[Used with permission][9]
-
-Once you click Yes, Resetter will display all of the packages it will remove (Figure 4). If you're okay with that, click OK and the reset will begin.
-
+单击Yes,Resetter将显示它将删除的所有包(图4)。如果您没有问题，单击OK，重置将开始。
 ## [resetter_4.jpg][14]
 
-![remove packages][15]
+![移除软件包][15]
 
-Figure 4: All of the packages to be removed, in order to reset Elementary OS to factory defaults.
+图4:所有要删除的包，以便将 Elementary OS 重置为出厂默认值。
+[使用许可][9]
 
-[Used with permission][9]
-
-During the reset, the application will display a progress window (Figure 5). Depending upon how much you've installed, the process shouldn't take too long.
-
+在重置过程中，应用程序将显示一个进度窗口(图5)。根据安装的数量，这个过程不应该花费太长时间。
 ## [resetter_5.jpg][16]
 
-![progress][17]
+![进度][17]
 
-Figure 5: The Resetter progress window.
+图5: Resetter 进度窗口
+[使用许可][9]
 
-[Used with permission][9]
-
-When the process completes, Resetter will display a new username and password for you to use, in order to log back into your newly reset distribution (Figure 6).
-
+当进程完成时，Resetter将显示一个新的用户名和密码，以便重新登录到新重置的发行版(图6)。
 ## [resetter_6.jpg][18]
 
-![new username][19]
+![新用户][19]
 
-Figure 6: New username and password.
+图6:新用户及密码
+[使用许可][9]
 
-[Used with permission][9]
+单击OK，然后在提示单击Yes以重新启动系统。当提示登录时，使用 Resetter 应用程序提供给您的新凭证。成功登录后，您需要重新创建您的原始用户。该用户的主目录仍然是完整的，所以您需要做的就是发出命令```sudo useradd USERNAME (USERNAME 是用户名)```。完成之后，发出命令```sudo passwd USERNAME (USERNAME 是用户名)```。使用设置的用户/密码，您可以注销并以旧用户的身份登录(在重新设置操作系统之前使用相同的家目录)。
+### 我的成果
 
-Click OK and then, when prompted, click Yes to reboot the system. Once you are prompted to login, use the new credentials given to you by the Resetter app. After a successful login, you'll need to recreate your original user. That user's home directory will still be intact, so all you need to do is issue the command sudo useradd USERNAME (where USERNAME is the name of the user). Once you've done that, issue the command sudo passwd USERNAME (where USERNAME is the name of the user). With the user/password set, you can log out and log back in as your old user (enjoying the same home directory you had before resetting the operating system).
+我必须承认，在将密码添加到我的老用户(并通过使用su命令对该用户进行更改)之后，我无法使用该用户登录到 Elementary OS 桌面。为了解决这个问题，我登录了Resetter-created 用户，移动了老用户的家目录，删除了老用户(使用命令``` sudo deluser jack```)，并重新创建了老用户(使用命令```sudo useradd -m jack```)。
 
-### My results
+这样做之后，我检查了原始的家目录，只发现了用户的所有权从 jack.jack 变成了 1000.1000。利用命令 ```sudo chown -R jack.jack /home/jack```，就可以容易的修正这个问题。这非常关键？如果您使用Resetter并发现无法用您的老用户登录(在您重新创建用户并设置一个新密码之后)，请确保更改用户的家目录的所有权限。
 
-I have to confess, after adding the password back to my old user (and testing it by using the su command to change to that user), I was unable to log into the Elementary OS desktop with that user. To solve that problem, I logged in with the Resetter-created user, moved the old user home directory, deleted the old user (with the command sudo deluser jack), and recreated the old user (with the command sudo useradd -m jack).
+在这个问题之外，Resetter在将 Elementary OS Loki 恢复到默认状态方面做了大量的工作。虽然 Resetter 处在测试中，但它是一个相当令人印象深刻的工具。试一试，看看你是否有和我一样出色的成绩。
 
-After doing that, I checked the original home directory, only to find out the ownership had been changed from jack.jack to 1000.1000. That could have been fixed simply by issuing the command sudo chown -R jack.jack /home/jack. The lesson? If you use Resetter and find you cannot log in with your old user (after you've re-created user and given it a new password), make sure to change the ownership of the user's home directory.
-
-Outside of that on issue, Resetter did a great job of taking Elementary OS Loki back to a default state. Although Resetter is in beta, it's a rather impressive tool. Give it a try and see if you don't have the same outstanding results I did.
-
-Learn more about Linux through the free ["Introduction to Linux" ][20]course from The Linux Foundation and edX.
-
+从Linux基金会和edX的免费[" Linux入门"][20]课程学习更多关于Linux的知识。
 --------------------------------------------------------------------------------
 
 via: https://www.linux.com/learn/intro-to-linux/2017/12/set-ubuntu-derivatives-back-default-resetter
 
 作者：[Jack Wallen][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[stevenzdg988](https://github.com/stevenzdg988)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
