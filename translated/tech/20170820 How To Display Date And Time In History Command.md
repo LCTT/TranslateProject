@@ -1,22 +1,19 @@
-translating by lujun9972
-How To Display Date And Time In History Command
+让 History 命令显示日期和时间
 ======
-We all are familiar with History command. It stores/keep all the commands executed by bash in terminal into `.bash_history` file, which will help us to recheck the previously executed commands by user for further investigation.
+我们都对 History 命令很熟悉。它将终端上 bash 执行过的所有命令存储到 `.bash_history` 文件中，来帮助我们复查用户之前执行过的命令。
 
-By default history command shows only the commands executed by users and it doesn't print the date and time but it logs the time when you ran a command.
+默认情况下 history 命令直接显示用户执行的命令而不会输出运行命令时的日期和时间，即使 history 命令记录了这个时间。
 
-Whenever you run history command, it looks for an environment variable called `HISTTIMEFORMAT`, which tells how to format date & time with history command.
+运行 history 命令时，它会检查一个叫做 `HISTTIMEFORMAT` 的环境变量，这个环境变量指明了如何格式化输出 history 命令中记录的这个时间。
 
-If the value is null or not set then it will shows default results like how most of the systems shows (Without date and time).
+若该值为 null 或者根本没有设置，则它跟大多数系统默认显示的一样，不会现实日期和时间。
 
-HISTTIMEFORMAT takes values from strftime (strftime - convert date and time to a string). When you have date and time in history command output, it might help you to track the issue easily.
+`HISTTIMEFORMAT` 使用 strftime 来格式化显示时间 (strftime - 将日期和时间转换为字符串)。history 命令输出日期和时间能够帮你更容易地追踪问题。
 
-  * **%T :** Replaced by the time ( %H : %M : %S ).
-  * **%F :** Equivalent to %Y - %m - %d (the ISO 8601:2000 standard date format).
+  * **%T：** 替换为时间 ( %H：%M：%S )。
+  * **%F：** 等同于 %Y-%m-%d (ISO 8601：2000 标准日期格式)。
 
-
-
-See below default history command output.
+下面是 history 命令默认的输出。
 ```
 # history
  1 yum install -y mysql-server mysql-client
@@ -52,57 +49,55 @@ See below default history command output.
 
 ```
 
-We can set this environment variable in three ways based on our requirements.
+根据需求，有三种不同的方法设置环境变量。
 
-  * Temporarily to current user
-  * Permanently to current/other user
-  * Permanently to all users
+  * 临时设置当前用户的环境变量
+  * 永久设置当前/其他用户的环境变量
+  * 永久设置所有用户的环境变量
 
+**注意：** 不要忘了在最后那个单引号前加上空格，否则输出会很混乱的。
 
+### 方法 -1：
 
-**Note :** Don 't forget to add space before the last single-quotes, otherwise the output would be messy.
-
-### Method-1 :
-
-Run the following command to set HISTTIMEFORMAT variable temporarily to current user. This will go away after reboot.
+运行下面命令为为当前用户临时设置 HISTTIMEFORMAT 变量。这会一直生效到下次重启。
 ```
 # export HISTTIMEFORMAT='%F %T '
 
 ```
 
-### Method-2 :
+### 方法 -2：
 
-Append following HISTTIMEFORMAT variable to `.bashrc` or `.bash_profile` file to make it permanent for every user.
+将 HISTTIMEFORMAT 变量加到 `.bashrc` 或 `.bash_profile` 文件中，让它永久生效。
 ```
 # echo 'HISTTIMEFORMAT="%F %T "' >> ~/.bashrc
-or
+或
 # echo 'HISTTIMEFORMAT="%F %T "' >> ~/.bash_profile
 
 ```
 
-Run the following command to to effect the changes made to the file.
+运行下面命令来让文件中的修改生效。
 ```
 # source ~/.bashrc
-or
+或
 # source ~/.bash_profile
 
 ```
 
-### Method-3 :
+### 方法 -3：
 
-Append following HISTTIMEFORMAT variable to `/etc/profile` file to make it permanent to all users.
+将 HISTTIMEFORMAT 变量加入 `/etc/profile` 文件中，让它对所有用户永久生效。
 ```
 # echo 'HISTTIMEFORMAT="%F %T "' >> /etc/profile
 
 ```
 
-Run the following command to to effect the changes made to the file.
+运行下面命令来让文件中的修改生效。
 ```
 # source /etc/profile
 
 ```
 
-See the sample output.
+输出结果为。
 ```
 # history
  1 2017-08-16 15:30:15 yum install -y mysql-server mysql-client
