@@ -6,7 +6,7 @@ Translated by stevenzdg988
 
 ![Ubuntu Budgie](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/ubuntu_budgie.jpg?itok=xpo3Ujfw "Ubuntu Budgie")
 
-Ubuntu Budgie 只是为数不多的乌班图官方认可的版本之一。Jack Wallen（杰克沃伦）发现了它们之间的重要的区别。[Used with permission][7]
+Ubuntu Budgie 只是为数不多的乌班图官方认可的版本之一。Jack Wallen（杰克沃伦）发现了它们之间的重要的区别。[使用许可][7]
 
 Ubuntu Linux 有一些官方认证版本，还有一些衍生版本：
 *   [Kubuntu][9] - Ubuntu with the KDE desktop
@@ -47,7 +47,7 @@ Kubuntu的优点之一是，你会发现它比你以前使用过的任何Windows
 
 图2: Kubuntu 提供了一个现代老用户体验。 [使用许可][2]
 
-官方的Ubuntu并不是提供桌面支持的唯一方式。Kubuntu用户也可以支付[commercial support][27]。注意，它不便宜。一个小时时间的支持将花费你103.88美分。
+官方的Ubuntu并不是提供桌面支持的唯一方式。Kubuntu用户也可以支付[商业支持][27]。注意，它不便宜。一个小时时间的支持将花费你103.88美分。
 ### Lubuntu
 
 如果你正在寻找一个易于使用的桌面，它是非常快的(因为旧的硬件会感觉像新的一样)，而且比你以前使用的任何桌面都灵活得多，那么 Lubuntu 就是你想要的。对Lubuntu唯一的警告是，你在桌面上看到的是一些更裸露的梗概，那么你可能已经习惯了。Lubuntu使用[LXDE 桌面][28]，并包含一个应用程序列表，该列表延续了轻量级主题。因此，如果你想在桌面上寻找快速的体验，Lubuntu 可能是个不错的选择。 然而，Lubuntu有一个警告，对于一些用户来说，这可能是一种破坏。随着Lubuntu的小规模开发，预先安装的应用程序可能无法胜任任务。例如，您将发现[AibWord字处理器][29]和[Gnumeric 电子表格][30]工具而不是成熟的办公套件。别误会,这两个都是很好的工具。然而，如果你正在寻找一款适合商业的软件，你会发现它们缺乏友好的支持。另一方面，如果你想要安装更多的以工作为中心的工具(例如LibreOffice)，Lubuntu包括了联合的软件包管理器来简化第三方软件的安装。
