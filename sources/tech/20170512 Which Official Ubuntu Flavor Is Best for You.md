@@ -111,7 +111,7 @@ _从Linux基金会和edX的免费[" Introduction to Linux"][31]课程学习更�
 via: https://www.linux.com/learn/intro-to-linux/2017/5/which-official-ubuntu-flavor-best-you
 
 作者：[ JACK WALLEN][a]
-译者：[译者ID](https://github.com/stevenzdg988)
+译者：[stevenzdg988](https://github.com/stevenzdg988)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
