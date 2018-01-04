@@ -3,20 +3,20 @@ translating by stevenzdg988
 Set Ubuntu Derivatives Back to Default with Resetter
 ======
 How many times have you dived deep into Ubuntu (or a Ubuntu derivative), configuring things and installing software, only to find that your desktop (or server) platform isn't exactly what you wanted. This situation can be problematic when you already have all of your user files on the machine. In this case, you have a choice, you can either back up all your data, reinstall the operating system, and copy your data back onto the machine, or you can give a tool like [Resetter][1] a go.
-
+有多少次你投入到Ubuntu（或Ubuntu衍生版本），配置某项内容和安装软件，却发现你的桌面（或服务器）平台并不是你想要的。当在机器上产生了大量的用户文件时，这种情况可能会出现问题。既然这样，你有一个选择，你或者可以备份你所有的数据，重新安装操作系统，然后将您的数据复制回本机，或者也可以利用一种类似于[Resetter][1]的工具做同样的事情。
 Resetter is a new tool (written by Canadian developer that goes by the name "[gaining][2]"), written in Python and pyqt, that will reset Ubuntu, Linux Mint (and a few other, Ubuntu-based distributions) back to stock configurations. Resetter offers two different reset options: Automatic and Custom. With the Automatic option, the tool will:
+Resetter 是一个新的工具（由加拿大开发商，被称为“获得”），用python和PyQt，将重置Ubuntu，Linux Mint（和一些其他的，基于Ubuntu的衍生版）回到初始配置。Resetter 提供了两种不同的复位选项：自动和自定义。利用自动选项，工具就会完成以下内容：
+  * Remove user-installed apps 删除用换装的应用软件
 
-  * Remove user-installed apps
+  * Delete users and home directories 删除用户及其家目录
 
-  * Delete users and home directories
+  * Create default backup user 创建默认的备份用户
 
-  * Create default backup user
+  * Auto install missing pre-installed apps (MPIAs) 自动安装预装的应用软件
 
-  * Auto install missing pre-installed apps (MPIAs)
+  * Remove non-default users 删除为初始化的用户
 
-  * Remove non-default users
-
-  * Remove snap packages
+  * Remove snap packages 删除协议软件包
 
 
 
