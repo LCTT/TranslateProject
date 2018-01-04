@@ -1,3 +1,5 @@
+translating by CYLeft
+
 Migrating to Linux: Graphical Environments
 ======
 This is the third article in our series on migrating to Linux. If you missed earlier articles, they provided an [introduction to Linux for new users][1] and an [overview of Linux files and filesystems][2]. In this article, we'll discuss graphical environments. One of the advantages of Linux is that you have lots of choices, and you can select a graphical interface and customize it to work just the way you like it.
