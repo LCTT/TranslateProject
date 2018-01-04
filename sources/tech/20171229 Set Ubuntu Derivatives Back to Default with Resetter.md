@@ -1,3 +1,5 @@
+translating by stevenzdg988
+
 Set Ubuntu Derivatives Back to Default with Resetter
 ======
 How many times have you dived deep into Ubuntu (or a Ubuntu derivative), configuring things and installing software, only to find that your desktop (or server) platform isn't exactly what you wanted. This situation can be problematic when you already have all of your user files on the machine. In this case, you have a choice, you can either back up all your data, reinstall the operating system, and copy your data back onto the machine, or you can give a tool like [Resetter][1] a go.
