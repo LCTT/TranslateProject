@@ -1,3 +1,4 @@
+translating by wenwensnow
 HTTP errors in WordPress
 ======
 ![http error wordpress][1]
