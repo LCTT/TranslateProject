@@ -110,7 +110,7 @@ There are plenty of Linux music players out there but those are the best you wou
 
 --------------------------------------------------------------------------------
 
-via: 网址
+via: http://www.linuxandubuntu.com/home/best-linux-music-players-to-stream-online-music
 
 作者：[LINUXANDUBUNTU][a]
 译者：[译者ID](https://github.com/译者ID)
@@ -118,7 +118,7 @@ via: 网址
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:
+[a]:http://www.linuxandubuntu.com
 [1]:http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/spotify_orig.png
 [2]:http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/amarok_orig.png
 [3]:http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/amarok_1_orig.png
