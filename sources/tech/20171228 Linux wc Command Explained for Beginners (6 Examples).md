@@ -1,3 +1,4 @@
+translating by cyleung
 Linux wc Command Explained for Beginners (6 Examples)
 ======
 
