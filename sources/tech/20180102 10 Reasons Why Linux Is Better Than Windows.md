@@ -122,7 +122,7 @@ The inventor Linus Torvalds himself would not have imagined about this kind of s
 
 --------------------------------------------------------------------------------
 
-via: 网址
+via: http://www.linuxandubuntu.com/home/10-reasons-why-linux-is-better-than-windows
 
 作者：[Ramakrishna Jujare][a]
 译者：[译者ID](https://github.com/译者ID)
