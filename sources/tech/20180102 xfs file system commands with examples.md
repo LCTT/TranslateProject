@@ -1,3 +1,4 @@
+translating by lujun9972
 xfs file system commands with examples
 ======
 
@@ -187,7 +188,7 @@ There are another XFS file system management commands which alters and manages i
 via: https://kerneltalks.com/commands/xfs-file-system-commands-with-examples/
 
 作者：[kerneltalks][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[lujun9972](https://github.com/lujun9972)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
