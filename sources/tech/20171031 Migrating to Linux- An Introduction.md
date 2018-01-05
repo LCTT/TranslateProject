@@ -1,3 +1,5 @@
+stevenzdg988 translating!!
+
 Migrating to Linux: An Introduction
 ======
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/migrating-to-linux.jpg?itok=sjcGK0SY)
