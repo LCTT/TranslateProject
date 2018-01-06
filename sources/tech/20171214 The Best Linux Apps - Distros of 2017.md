@@ -1,6 +1,6 @@
 The Best Linux Apps & Distros of 2017
 ======
-[![best linux distros 2017][1]][2]
+![best linux distros 2017][1]
 
 **In this post we look back at the best Linux distro and app releases that helped define 2017.**
 
@@ -18,7 +18,7 @@ But enough waffle: on we go!
 
 ## Distros
 
-### 1\. Ubuntu 17.10 'Artful Aardvark'
+### 1. Ubuntu 17.10 'Artful Aardvark'
 
 [![Ubuntu 17.10 desktop screenshot][3]][4]
 
@@ -40,7 +40,7 @@ The recurring theme among the [Ubuntu 17.10 reviews][9] was the Artful Aardvark 
 
 And with an long-term support release next up, long may the enthusiasm for it continue!
 
-### 2\. Solus 3
+### 2. Solus 3
 
 [![][10]][11]
 
@@ -60,7 +60,7 @@ If you like the look of Budgie you can use it on Ubuntu without damaging your ex
 
 If you get bored over the holidays I highly recommended you [download the Solus MATE edition][15] too. It combines the strength of Solus with the meticulously maintained MATE desktop, a combination that works incredibly well together.
 
-### 3\. Fedora 27
+### 3. Fedora 27
 
 [![][16]][17]
 
@@ -72,7 +72,7 @@ Fedora 27 features GNOME 3.26 (and all the niceties that brings, like color emoj
 
 ## Apps
 
-### 4\. Firefox 57 (aka 'Firefox Quantum').
+### 4. Firefox 57 (aka 'Firefox Quantum').
 
 [![firefox quantum on ubuntu][20]][21]
 
@@ -88,7 +88,7 @@ Like Ubuntu, Firefox has got its mojo back.
 
 Firefox will roll out support for client side decoration on the GNOME desktop (a feature already available in the latest nightly builds) sometime in 2018. This feature, along with further refinements to the finely-tuned under-the-hood mechanics, will add more icing atop an already fantastic base!
 
-### 5\. Ubuntu for Windows
+### 5. Ubuntu for Windows
 
 [![][22]][23]
 
@@ -106,7 +106,7 @@ The stocking of Ubuntu, openSUSE and Fedora on the shelves of the Windows Store 
 
 For many regular Linux will always be preferable to the rather odd hybrid that is the Windows Subsystem for Linux (WSL). But for others, mandated to use Microsoft products for work or study, the leeway to use Linux is a blessing.
 
-### 6\. GIMP 2.9.6
+### 6. GIMP 2.9.6
 
 [![gimp on ubuntu graphic][25]][26]
 
@@ -116,7 +116,7 @@ While GIMP 2.10 itself didn't see release in 2017 two sizeable development updat
 
 The former of these added ** experimental multi-threading in GEGL** (a fancy way of saying the app can now make better use of multi-core processors). It also added HiDPI tweaks, introduced color coded layer tags, added metadata editor, new filters, crop presets and -- take a breath -- improved the 'quit' dialog.
 
-### 7\. GNOME Desktop
+### 7. GNOME Desktop
 
 [![GNOME 3.26 desktop with apps][28]][29]
 
@@ -130,7 +130,7 @@ Both release came packed full of new features, and both bought an assembly of re
 
 GNOME isn't stopping there. GNOME 3.28 is due for release in March with plenty more changes, improvements and app updates planned. GNOME 3.28 is looking like it will be used in Ubuntu 18.04 LTS.
 
-### 8\. Atom IDE
+### 8. Atom IDE
 
 [![Atom IDE][32]][32]
 
@@ -140,7 +140,7 @@ But, for me, it was rather sudden appearance of **Atom IDE ** that caught my att
 
 [Atom IDE][33] is a set of packages for the Atom code editor that add more traditional [IDE][34] capabilities like context-aware auto-completion, code navigation, diagnostics, and document formatting.
 
-### 9\. Stacer 1.0.8
+### 9. Stacer 1.0.8
 
 [![Stacer is an Ubuntu cleaner app][35]][36]
 
@@ -159,7 +159,7 @@ Stacer has 8 dedicated sections offering control over system maintenance duties,
 
 The app is now my go-to recommendation for anyone looking for an Ubuntu system cleaner. Which reminds me: I should get around to adding the app to our list of ways to [free up space on Ubuntu][37]… Chores, huh?!
 
-### 10\. Geary 0.12
+### 10. Geary 0.12
 
 [![Geary 0.11 on Ubuntu 16.04][38]][39]
 
