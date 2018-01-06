@@ -1,3 +1,4 @@
+Tranlating by zjon
 What is a firewall?
 ======
 Network-based firewalls have become almost ubiquitous across US enterprises for their proven defense against an ever-increasing array of threats.
@@ -77,3 +78,5 @@ via: https://www.networkworld.com/article/3230457/lan-wan/what-is-a-firewall-per
 
 [a]:https://www.networkworld.com/author/Brandon-Butler/
 [1]:https://www.networkworld.com/article/3236448/lan-wan/what-to-consider-when-deploying-a-next-generation-firewall.html
+
+
