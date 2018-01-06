@@ -1,6 +1,4 @@
-Translated by stevenzdg988
-
-怎样在 Ubuntu 16.04 下安装 Moodle（魔灯”）
+怎样在 Ubuntu 16.04 下安装 Moodle（“魔灯”）
 ======
 ![怎样在 Ubuntu 16.04 下安装 Moodle```“魔灯”```][1]
 
