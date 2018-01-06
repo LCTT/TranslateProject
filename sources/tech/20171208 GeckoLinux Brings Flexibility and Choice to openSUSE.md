@@ -1,6 +1,11 @@
 GeckoLinux Brings Flexibility and Choice to openSUSE
 ======
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/gecko-linux.jpg?itok=bjKVnW1q)
+
+GeckoLinux is a unique distro that offers a few options that openSUSE does not. Jack Wallen takes a look.
+
+Creative Commons Zero
+
 I've been a fan of SUSE and openSUSE for a long time. I've always wanted to call myself an openSUSE user, but things seemed to get in the way--mostly [Elementary OS][1]. But every time an openSUSE spin is released, I take notice. Most recently, I was made aware of [GeckoLinux][2]--a unique take (offering both Static and Rolling releases) that offers a few options that openSUSE does not. Consider this list of features:
 
   * Live DVD / USB image
