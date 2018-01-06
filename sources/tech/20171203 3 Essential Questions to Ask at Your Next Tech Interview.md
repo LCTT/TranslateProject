@@ -2,6 +2,10 @@
 ======
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/os-jobs_0.jpg?itok=nDf5j7xC)
 
+Interviewing can be stressful, but 58 percent of companies tell Dice and the Linux Foundation that they need to hire open source talent in the months ahead. Learn how to ask the right questions.
+
+The Linux Foundation
+
 The annual [Open Source Jobs Report][1] from Dice and The Linux Foundation reveals a lot about prospects for open source professionals and hiring activity in the year ahead. In this year's report, 86 percent of tech professionals said that knowing open source has advanced their careers. Yet what happens with all that experience when it comes time for advancing within their own organization or applying for a new roles elsewhere?
 
 Interviewing for a new job is never easy. Aside from the complexities of juggling your current work while preparing for a new role, there's the added pressure of coming up with the necessary response when the interviewer asks "Do you have any questions for me?"
