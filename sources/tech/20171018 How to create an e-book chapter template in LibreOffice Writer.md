@@ -36,7 +36,6 @@ Like the template itself, styles provide a consistent look and feel for your doc
 
 The standard LibreOffice template comes with a number of styles that you can fiddle with to suit your needs. To do that, press **F11** to open the **Styles and Formatting** window.
 
-### [lo-paragraph-style.png][3]
 
 ![LibreOffice styles and formatting][4]
 
@@ -47,7 +46,6 @@ Right-click on a style and select **Modify** to edit it. Here are the main style
 
 Style Font Spacing/Alignment Heading 1 Liberation Sans, 36 pt 36 pt above, 48 pt below, aligned left Heading 2 Liberation Sans, 18 pt 12 pt above, 12 pt below, aligned left Heading 3 Liberation Sans, 14 pt 12 pt above, 12 pt below, aligned left Text Body Liberation Sans, 12 pt 12 pt above, 12 pt below, aligned left Footer Liberation Sans, 10 pt Aligned center
 
-### [lo-styles-in-action.png][5]
 
 ![LibreOffice styles in action][6]
 
@@ -70,7 +68,6 @@ Before you start writing, create a folder on your computer that will hold all th
 
 When you're ready to write, fire up LibreOffice Writer and select **File > New > Templates**. Then select your template from the list and click **Open**.
 
-### [lo-template-list.png][7]
 
 ![LibreOffice Writer template list][8]
 
@@ -109,13 +106,10 @@ via: https://opensource.com/article/17/10/creating-ebook-chapter-template-libreo
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://opensource.com/users/scottnesbitt
-[1]:/file/374456
 [2]:https://opensource.com/sites/default/files/images/life-uploads/lo-page-style.png (LibreOffice Page Style window)
-[3]:/file/374461
 [4]:https://opensource.com/sites/default/files/images/life-uploads/lo-paragraph-style.png (LibreOffice styles and formatting window)
 [5]:/file/374466
 [6]:https://opensource.com/sites/default/files/images/life-uploads/lo-styles-in-action.png (Example of LibreOffice styles)
-[7]:/file/374471
 [8]:https://opensource.com/sites/default/files/images/life-uploads/lo-template-list.png (Template list - LibreOffice Writer)
 [9]:https://help.libreoffice.org/Writer/Working_with_Master_Documents_and_Subdocuments
 [10]:https://help.libreoffice.org/Common/Export_as_PDF
