@@ -1,71 +1,64 @@
-Translating by stevenzdg988
+Translated by stevenzdg988
 
-How to Install Moodle on Ubuntu 16.04
+怎样在 Ubuntu 16.04 下安装 Moodle（魔灯”）
 ======
-![How to Install Moodle on Ubuntu 16.04][1]
+![怎样在 Ubuntu 16.04 下安装 Moodle```“魔灯”```][1]
 
-Step-by-step Installation Guide on how to Install Moodle on Ubuntu 16.04. Moodle (acronym of Modular-object-oriented dynamic learning environment') is a free and open source learning management system built to provide teachers, students and administrators single personalized learning environment. Moodle is built by the Moodle project which is led and coordinated by [Moodle HQ][2]
+关于如何在 Ubuntu 16.04 上按照指南逐步安装 Moodle 请继续往下看。Moodle (模块化面向对象动态学习环境的简称)是一种免费开源学习管理系统，为教师、学生和管理员提供个性化的学习环境。Moodle 由 Moodle 项目创建，由 [Moodle 总部][2]统一领导和协调。
 
-,
+**Moodle有很多非常实用的功能，比如:**
 
-**Moodle comes with a lot of useful features such as:**
+  * 现代和易于使用的界面
+  * 个性化仪表盘
+  * 协作工具和活动
+  * 一体式日历
+  * 简单的文本编辑器
+  * 进度跟踪
+  * 公告
+  * 不胜枚举…
 
-  * Modern and easy to use interface
-  * Personalised Dashboard
-  * Collaborative tools and activities
-  * All-in-one calendar
-  * Simple text editor
-  * Track progress
-  * Notifications
-  * and many more…
-
-
-
-In this tutorial we will guide you through the steps of installing the latest version of Moodle on an Ubuntu 16.04 VPS with Apache web server, MySQL and PHP 7.
-
-### 1. Login via SSH
+在本教程中，我们将指导您在 Ubuntu 16.04 VPS 上利用 Apache web服务器、MySQL 和 PHP 7 安装最新版本的 Moodle。
+### 1. 通过 SSH 登录
 
 First of all, login to your Ubuntu 16.04 VPS via SSH as user root
+首先，利用```root（是 Linux 和 Unix 系统中的超级管理员用户帐户，该帐户拥有整个系统至高无上的权力，所有对象他都可以操作。）```用户通过 SSH  登录到 Ubuntu 16.04 VPS
+### 2. 更新操作系统软件包
 
-### 2. Update the OS Packages
-
-Run the following command to update the OS packages and install some dependencies
+运行以下命令更新系统软件包并安装一些依赖软件
 ```
 apt-get update && apt-get upgrade
 apt-get install git-core graphviz aspell
 ```
 
-### 3. Install Apache Web Server
+### 3. 安装 Apache Web Server```（Apache WEB 服务器）```
 
-Install Apache web server from the Ubuntu repository
+利用下面命令，从 Ubuntu 软件仓库安装 Apache Web 服务器
 ```
 apt-get install apache2
 ```
 
-### 4. Start Apache Web Server
+### 4. 启动 Apache Web Server
 
-Once it is installed, start Apache and enable it to start automatically upon system boot
+一旦安装完毕，启动 Apache 并使它能够在系统启动时自动启动，利用下面命令：
 ```
 systemctl enable apache2
 ```
 
-### 5. Install PHP 7
+### 5. 安装 PHP 7
 
-Next, we will install PHP 7 and some additional PHP modules required by Moodle
+接下来，我们将安装 PHP 7 和 Moodle 所需的一些额外的 PHP 模块，命令是：
 ```
 apt-get install php7.0 libapache2-mod-php7.0 php7.0-pspell php7.0-curl php7.0-gd php7.0-intl php7.0-mysql php7.0-xml php7.0-xmlrpc php7.0-ldap php7.0-zip
 ```
 
-### 6. Install and Configure MySQL Database Server
+### 6. 安装和配置 MySQL Database Server```MySQL 数据库服务器```
 
-Moodle stores most of its data in a database, so we will install MySQL database server
+Moodle 将大部分数据存储在数据库中，所以我们将利用以下命令安装 MySQL 数据库服务器
 ```
 apt-get install mysql-client mysql-server
 ```
-
-After the installation, run the `mysql_secure_installation` script to set your MySQL root password and secure your MySQL installation.
-
-Login to the MySQL server as user root and create a user and database for the Moodle installation
+安装完成后，运行`mysql_secure_installation`脚本配置 MySQL 根用户```root```密码并确保 MySQL 得以安装。
+利用根用户```root```登录到 MySQL 服务器，并为 Moodle 创建一个数据库以及能访问它的用户，以下是具体操作指令：
 ```
 mysql -u root -p
 mysql> CREATE DATABASE moodle;
@@ -74,28 +67,28 @@ mysql> FLUSH PRIVILEGES;
 mysql> \q
 ```
 
-Don't forget to replace 'PASSWORD' with an actual strong password.
+一定要记得将`‘PASSWORD’`替换成一个安全性高强点的密码。
 
-### 7. Get Moodle from GitHub repository
+### 7. 从 GitHub ```（是一个面向开源及私有软件项目的托管平台）``` 知识库获取 Moodle
 
-Next, change the current working directory and clone Moodle from their official GitHub repository
+接下来，切换到当前工作目录并从 GitHub 官方知识库（存储库）中复制 Moodle`（Git是一个开源的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。其中要利用到命令 git。以下同）`
 ```
 cd /var/www/html/
 git clone https://github.com/moodle/moodle.git
 ```
 
-Go to the '/moodle' directory and check all available branches
+切换到`“/moodle”`目录，检查所有可用的分支
 ```
 cd moodle/
 git branch -a
 ```
 
-Select the latest stable version (currently it is MOODLE_34_STABLE) and run the following command to tell git which branch to track or use
+选择最新稳定版本(目前它是 MOODLE_34_ )，运行以下命令告诉 git 哪个分支可以跟踪或使用
 ```
 git branch --track MOODLE_34_STABLE origin/MOODLE_34_STABLE
 ```
 
-and checkout the specified version
+并切换至这个特定版本
 ```
 git checkout MOODLE_34_STABLE
 
@@ -103,20 +96,20 @@ Switched to branch 'MOODLE_34_STABLE'
 Your branch is up-to-date with 'origin/MOODLE_34_STABLE'.
 ```
 
-Create a directory for the Moodle data
+为存储 Moodle 数据创建目录
 ```
 mkdir /var/moodledata
 ```
 
-Set the correct ownership and permissions
+正确设置其所有权和访问权限
 ```
 chown -R www-data:www-data /var/www/html/moodle
 chown www-data:www-data /var/moodledata
 ```
 
-### 8. Configure Apache Web Server
+### 8. 配置 Apache Web Server
 
-Create Apache virtual host for your domain name with the following content
+使用以下内容为您的域名创建 Apache 虚拟主机
 ```
 nano /etc/apache2/sites-available/yourdomain.com.conf
 
@@ -135,7 +128,7 @@ nano /etc/apache2/sites-available/yourdomain.com.conf
 
 ```
 
-save the file and enable the virtual host
+保存文件并启用虚拟主机
 ```
 a2ensite yourdomain.com
 
@@ -144,25 +137,24 @@ To activate the new configuration, you need to run:
  service apache2 reload
 ```
 
-Finally, reload the web server as suggested, for the changes to take effect
+最后，重启 Apache WEB 服务器，以使配置生效
 ```
 service apache2 reload
 ```
 
-### 9. Follow the on-screen instructions and complete the installation
+### 9. 接下来按照提示完成安装
 
-Now, go to `http://yourdomain.com` and follow the on-screen instructions to complete the Moodle installation. For more information on how to configure and use Moodle, you can check their [official documentation][4].
+现在，点击“http://yourdomain.com”`（在浏览器的地址栏里输入以上域名并访问 Apache WEB 服务器）`，按照提示完成Moodle的安装。有关如何配置和使用  Moodle 的更多信息，您可以查看其[官方文档][4]。
 
-You don't have to install Moodle on Ubuntu 16.04, if you use one of our [optimized Moodle hosting][5], in which case you can simply ask our expert Linux admins to install and configure the latest version of Moodle on Ubuntu 16.04 for you. They are available 24×7 and will take care of your request immediately.
+如果您使用我们的[优化的 Moodle 托管主机服务][5]，您不必在 Ubuntu 16.04 上安装 Moodle，在这种情况下，您只需要求我们的专业 Linux 系统管理员在 Ubuntu 16.04 上安装和配置最新版本的 Moodle。他们将提供 24×7 及时响应的服务。
 
-**PS.** If you liked this post on how to install Moodle on Ubuntu 16.04, please share it with your friends on the social networks using the buttons on the left or simply leave a reply below. Thanks.
-
+**PS.** 如果你喜欢这篇关于如何在 Ubuntu 16.04 上安装 Moodle 的帖子，请在社交网络上与你的朋友分享，使用左边的按钮或者留下你的回复。谢谢。
 --------------------------------------------------------------------------------
 
 via: https://www.rosehosting.com/blog/how-to-install-moodle-on-ubuntu-16-04/
 
 作者：[RoseHosting][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[stevenzdg988](https://github.com/stevenzdg988)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
