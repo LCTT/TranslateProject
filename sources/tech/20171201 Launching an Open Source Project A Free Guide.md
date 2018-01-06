@@ -1,3 +1,5 @@
+translating by CYLeft
+
 Launching an Open Source Project: A Free Guide
 ============================================================
 
