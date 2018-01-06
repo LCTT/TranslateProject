@@ -1,7 +1,5 @@
 A tour of containerd 1.0
 ======
-XiaochenCui translating
-
 ![containerd][1]
 
 We have done a few talks in the past on different features of containerd, how it was designed, and some of the problems that we have fixed along the way. Containerd is used by Docker, Kubernetes CRI, and a few other projects but this is a post for people who may not know what containerd actually does within these platforms.  I would like to do more posts on the feature set and design of containerd in the future but for now, we will start with the basics.
