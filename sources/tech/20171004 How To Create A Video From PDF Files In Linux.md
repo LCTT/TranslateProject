@@ -87,13 +87,3 @@ via: https://www.ostechnix.com/create-video-pdf-files-linux/
 
 [a]:https://www.ostechnix.com/author/sk/
 [1]:https://www.ostechnix.com/20-ffmpeg-commands-beginners/
-[2]:https://www.ostechnix.com/create-video-pdf-files-linux/?share=reddit (Click to share on Reddit)
-[3]:https://www.ostechnix.com/create-video-pdf-files-linux/?share=twitter (Click to share on Twitter)
-[4]:https://www.ostechnix.com/create-video-pdf-files-linux/?share=facebook (Click to share on Facebook)
-[5]:https://www.ostechnix.com/create-video-pdf-files-linux/?share=google-plus-1 (Click to share on Google+)
-[6]:https://www.ostechnix.com/create-video-pdf-files-linux/?share=linkedin (Click to share on LinkedIn)
-[7]:https://www.ostechnix.com/create-video-pdf-files-linux/?share=pocket (Click to share on Pocket)
-[8]:whatsapp://send?text=How%20To%20Create%20A%20Video%20From%20PDF%20Files%20In%20Linux%20https%3A%2F%2Fwww.ostechnix.com%2Fcreate-video-pdf-files-linux%2F (Click to share on WhatsApp)
-[9]:https://www.ostechnix.com/create-video-pdf-files-linux/?share=telegram (Click to share on Telegram)
-[10]:https://www.ostechnix.com/create-video-pdf-files-linux/?share=email (Click to email this to a friend)
-[11]:https://www.ostechnix.com/create-video-pdf-files-linux/#print (Click to print)
