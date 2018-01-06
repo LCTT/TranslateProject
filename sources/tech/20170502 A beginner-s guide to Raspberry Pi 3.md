@@ -1,6 +1,7 @@
 A beginner’s guide to Raspberry Pi 3
 ======
 ![](https://images.techhive.com/images/article/2017/03/raspberry2-100711632-large.jpeg)
+
 This article is part of a weekly series where I'll create new projects using Raspberry Pi 3. The first article of the series focusses on getting you started and will cover the installation of Raspbian, with PIXEL desktop, setting up networking and some basics.
 
 ###  What you need:
@@ -19,8 +20,6 @@ This article is part of a weekly series where I'll create new projects using Ras
 There are many Linux-based operating systems available for Raspberry Pi that you can install directly, but if you're new to the Pi, I suggest NOOBS, the official OS installer for Raspberry Pi that simplifies the process of installing an OS on the device.
 
 Download NOOBS from [this link][1] on your system. It's a compressed .zip file. If you're on MacOS, just double click on it and MacOS will automatically uncompress the files. If you are on Windows, right-click on it, and select "extract here."
-
- **[ Give yourself a technology career advantage with[InfoWorld's Deep Dive technology reports and Computerworld's career trends reports][2]. GET A 15% DISCOUNT through Jan. 15, 2017: Use code 8TIISZ4Z. ]**
 
 If you're running desktop Linux, then how to unzip it really depends on the desktop environment you are running, as different DEs have different ways of doing the same thing. So the easiest way is to use the command line.
 
