@@ -1,4 +1,4 @@
-Translating by zjontranslating
+Translating by zjon
 What is a firewall?
 ======
 Network-based firewalls have become almost ubiquitous across US enterprises for their proven defense against an ever-increasing array of threats.
