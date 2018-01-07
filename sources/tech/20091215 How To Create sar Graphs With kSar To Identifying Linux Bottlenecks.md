@@ -317,23 +317,23 @@ via: https://www.cyberciti.biz/tips/identifying-linux-bottlenecks-sar-graphs-wit
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://www.cyberciti.biz
-[1]://www.cyberciti.biz/faq/rhel-centos-fedora-linux-yum-command-howto/ (See Linux/Unix yum command examples for more info)
+[1]:https://www.cyberciti.biz/faq/rhel-centos-fedora-linux-yum-command-howto/ (See Linux/Unix yum command examples for more info)
 [2]:https://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/
 [3]:https://github.com/vlsi/ksar
-[4]://www.cyberciti.biz/tips/linux-wget-your-ultimate-command-line-downloader.html
-[5]://www.cyberciti.biz/faq/howto-ubuntu-linux-install-configure-jdk-jre/
+[4]:https://www.cyberciti.biz/tips/linux-wget-your-ultimate-command-line-downloader.html
+[5]:https://www.cyberciti.biz/faq/howto-ubuntu-linux-install-configure-jdk-jre/
 [6]:https://www.cyberciti.biz/media/new/tips/2009/12/sar-welcome.png (kSar welcome screen)
 [7]:https://www.cyberciti.biz/media/new/tips/2009/12/screenshot-kSar-a-sar-grapher-01.png (kSar - the main window)
 [8]:https://www.cyberciti.biz/media/new/tips/2009/12/cpu-ksar.png (Linux kSar Processes for server1 )
 [9]:https://www.cyberciti.biz/media/new/tips/2009/12/disk-stats-ksar.png (Linux Disk I/O Stats Using kSar)
 [10]:https://www.cyberciti.biz/media/new/tips/2009/12/memory-ksar.png (Linux Memory paging and its utilization stats)
-[11]://www.cyberciti.biz/tips/how-do-i-find-out-linux-cpu-utilization.html
-[12]://www.cyberciti.biz/faq/check-running-services-in-rhel-redhat-fedora-centoslinux/
-[13]://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/
-[14]://www.cyberciti.biz/faq/show-all-running-processes-in-linux/
-[15]://www.cyberciti.biz/faq/howto-change-unix-linux-process-priority/
-[16]://www.cyberciti.biz/faq/taskset-cpu-affinity-command/
-[17]://www.cyberciti.biz/tips/load-balancer-open-source-software.html
+[11]:https://www.cyberciti.biz/tips/how-do-i-find-out-linux-cpu-utilization.html
+[12]:https://www.cyberciti.biz/faq/check-running-services-in-rhel-redhat-fedora-centoslinux/
+[13]:https://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/
+[14]:https://www.cyberciti.biz/faq/show-all-running-processes-in-linux/
+[15]:https://www.cyberciti.biz/faq/howto-change-unix-linux-process-priority/
+[16]:https://www.cyberciti.biz/faq/taskset-cpu-affinity-command/
+[17]:https://www.cyberciti.biz/tips/load-balancer-open-source-software.html
 [18]:https://www.cyberciti.biz/media/new/tips/2009/12/isag.cpu_.png (Fig.06: isag CPU utilization graphs)
 [19]:https://twitter.com/nixcraft
 [20]:https://facebook.com/nixcraft
