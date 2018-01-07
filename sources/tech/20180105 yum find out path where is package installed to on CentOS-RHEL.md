@@ -16,13 +16,18 @@ yum is similar to other high level package managers like [apt-get command][3]/[a
 ### yum where is package installed
 
 The syntax is as follows to install htop package for a demo purpose:
+
 `# yum install htop`
+
 To list the files installed by a yum package called htop, run the following rpm command:
+
 ```
 # rpm -q {packageNameHere}
 # rpm -ql htop
 ```
+
 Sample outputs:
+
 ```
 /usr/bin/htop
 /usr/share/doc/htop-2.0.2
@@ -38,9 +43,11 @@ Sample outputs:
 ### How to see the files installed by a yum package using repoquery command
 
 First install yum-utils package using [yum command][2]:
+
 ```
 # yum install yum-utils
 ```
+
 Sample outputs:
 
 ```
@@ -102,15 +109,24 @@ Complete!
 ### How do I list the contents of a installed package using YUM?
 
 Now run repoquery command as follows:
+
 `# repoquery --list htop`
+
 OR
+
 `# repoquery -l htop`
+
 Sample outputs:
+
 [![yum where is package installed][5]][5]
+
 You can also use the type command or command command to just find location of given binary file such as httpd or htop:
-`$ type -a httpd
+
+```
+$ type -a httpd
 $ type -a htop
-$ command -V htop`
+$ command -V htop
+```
 
 ### about the author
 
