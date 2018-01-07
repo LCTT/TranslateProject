@@ -37,7 +37,9 @@ Sometimes, there can be a requirement to add a delimiting character between entr
 
 For example, to apply a colon (:) as a delimiting character, use the paste command in the following way:
 
+```
 paste -d : file1.txt file2.txt file3.txt
+```
 
 Here's the output this command produced on our system:
 
@@ -49,7 +51,9 @@ By default, the paste command merges lines in a way that entries in the first co
 
 This you can do using the **-s** command line option.
 
+```
 paste -s file1.txt file2.txt file3.txt
+```
 
 Following is the output:
 
@@ -59,7 +63,9 @@ Following is the output:
 
 Yes, you can use multiple delimiters as well. For example, if you want to use both : and |, you can do that in the following way:
 
+```
 paste -d ':|' file1.txt file2.txt file3.txt
+```
 
 Following is the output:
 
@@ -69,7 +75,9 @@ Following is the output:
 
 By default, lines merged through paste end in a newline. However, if you want, you can make them NUL terminated, something which you can do using the **-z** option.
 
+```
 paste -z file1.txt file2.txt file3.txt
+```
 
 ### Conclusion
 
