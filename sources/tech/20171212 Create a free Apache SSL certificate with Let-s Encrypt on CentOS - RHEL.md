@@ -1,5 +1,6 @@
 Create a free Apache SSL certificate with Let’s Encrypt on CentOS & RHEL
 ======
+
 Let's Encrypt is a free, automated & open certificate authority that is supported by ISRG, Internet Security Research Group. Let's encrypt provides X.509 certificates for TLS (Transport Layer Security) encryption via automated process which includes creation, validation, signing, installation, and renewal of certificates for secure websites.
 
 In this tutorial, we are going to discuss how to create an apache SSL certificate with Let's Encrypt certificate on Centos/RHEL 6 & 7\. To automate the Let's encrypt process, we will use Let's encrypt recommended ACME client i.e. CERTBOT, there are other ACME Clients as well but we will be using Certbot only.
@@ -95,7 +96,7 @@ For creating a cron job, use
 
  **# crontab -e**
 
- **0 0 1 * comic core.md Dict.md lctt2014.md lctt2016.md LCTT翻译规范.md LICENSE Makefile published README.md sign.md sources translated 选题模板.txt 中文排版指北.md sh path/certbot-auto renew >> /var/log/letsencrypt.log**
+ **0 0 1 * * sh path/certbot-auto renew >> /var/log/letsencrypt.log**
 
 This was our tutorial on how to install and use let's encrypt on CentOS , RHEL 6 & 7 for creating a free SSL certificate for Apache servers. Please do leave your questions or queries down below.
 
