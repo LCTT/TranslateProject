@@ -1,3 +1,5 @@
+Translating by stevenzdg988
+
 Dual Boot Ubuntu And Arch Linux
 ======
 ![](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/dual-boot-ubuntu-and-arch-linux_orig.jpg)
