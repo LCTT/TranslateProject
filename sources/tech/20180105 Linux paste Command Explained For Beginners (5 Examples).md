@@ -9,7 +9,9 @@ But before we do that, it's worth mentioning that all examples mentioned in this
 
 As already mentioned above, the paste command merges lines of files. Here's the tool's syntax:
 
+```
 paste [OPTION]... [FILE]...
+```
 
 And here's how the mage of paste explains it:
 ```
