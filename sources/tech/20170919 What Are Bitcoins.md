@@ -28,67 +28,16 @@ Also Read - [Bitkey A Linux Distribution Dedicated To Bitcoin Transactions][2]
 
 ### How To Mine Bitcoins and The Applications to Accomplish Necessary Bitcoin Management Tasks
 
-​In the digital currency, BITCOIN mining and management requires additional software. There are numerous open source bitcoin management software that make it easy to make payments, receive payments, encrypt and backup of your bitcoins and also bitcoin mining software. There are sites such as; 
+​In the digital currency, BITCOIN mining and management requires additional software. There are numerous open source bitcoin management software that make it easy to make payments, receive payments, encrypt and backup of your bitcoins and also bitcoin mining software. There are sites such as; [Freebitcoin][4] where one earns free bitcoins by viewing ads, [MoonBitcoin][5] is another site that one can sign up for free and earn bitcoins. However, it is convenient if one has spare time and a sizable network of friends participating in the same. There are many sites offering bitcoin mining and one can easily sign up and start mining. One of the major secrets is referring as many people as you can to create a large network.
 
-[Freebitcoin][4]
-
-where one earns free bitcoins by viewing ads,
-
-[MoonBitcoin][5]
-
-is another site that one can sign up for free and earn bitcoins. However, it is convenient if one has spare time and a sizable network of friends participating in the same. There are many sites offering bitcoin mining and one can easily sign up and start mining. One of the major secrets is referring as many people as you can to create a large network.
-
-Applications required for use with bitcoins include the bitcoin wallet which allows one to safely keep bitcoins. This is just like the physical wallet using to keep hard cash but in a digital form. The wallet can be downloaded here -
-
-[Bitcoin - Wallet][6]
-
-. Other similar applications include;  the
-
-[Blockchain][7]
-
-which works similar to the Bitcoin Wallet.
+Applications required for use with bitcoins include the bitcoin wallet which allows one to safely keep bitcoins. This is just like the physical wallet using to keep hard cash but in a digital form. The wallet can be downloaded here - [Bitcoin - Wallet][6] . Other similar applications include;  the [Blockchain][7] which works similar to the Bitcoin Wallet.
 
 The screenshots below show the Freebitco and MoonBitco mining sites respectively. 
 
- [![freebitco bitcoin mining site](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/freebitco-bitcoin-mining-site_orig.jpg)][8]  [![moonbitcoin bitcoin mining site](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/moonbitcoin-bitcoin-mining-site_orig.png)][9] 
+ [![freebitco bitcoin mining site](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/freebitco-bitcoin-mining-site_orig.jpg)][8] 
+ [![moonbitcoin bitcoin mining site](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/moonbitcoin-bitcoin-mining-site_orig.png)][9] 
 
-​There are various ways of acquiring the bitcoin currency. Some of them include the use of bitcoin mining rigs, purchasing of bitcoins in exchange markets and doing free bitcoin mining online. Purchasing of bitcoins can be done at;
-
-[MtGox][10]
-
-,
-
-[bitNZ][11]
-
-,
-
-[Bitstamp][12]
-
-,
-
-[BTC-E][13]
-
-,
-
-[VertEx][14]
-
-, etc.. Several mining open source applications are available online. These applications include; Bitminter,
-
-[5OMiner][15]
-
-,
-
-[BFG Miner][16]
-
-among others. These applications make use of some graphics card and processor features to generate bitcoins. The efficiency of mining bitcoins on a pc largely depends on the type of graphics card and the processor of the mining rig. Besides, there are many secure online storages for backing up bitcoins. These sites provide bitcoin storage services free of charge. Examples of bitcoin managing sites include;
-
-[xapo][17]
-
-,
-
-[BlockChain][18]
-
-etc. signing up on these sites require a valid email and phone number for verification. Xapo offers additional security through the phone application by requesting for verification whenever a new sign in is made.  
+​There are various ways of acquiring the bitcoin currency. Some of them include the use of bitcoin mining rigs, purchasing of bitcoins in exchange markets and doing free bitcoin mining online. Purchasing of bitcoins can be done at; [MtGox][10] , [bitNZ][11] , [Bitstamp][12] , [BTC-E][13] , [VertEx][14] , etc.. Several mining open source applications are available online. These applications include; Bitminter, [5OMiner][15] , [BFG Miner][16] among others. These applications make use of some graphics card and processor features to generate bitcoins. The efficiency of mining bitcoins on a pc largely depends on the type of graphics card and the processor of the mining rig. Besides, there are many secure online storages for backing up bitcoins. These sites provide bitcoin storage services free of charge. Examples of bitcoin managing sites include; [xapo][17] , [BlockChain][18] etc. signing up on these sites require a valid email and phone number for verification. Xapo offers additional security through the phone application by requesting for verification whenever a new sign in is made.  
 
 ### Disadvantages Of Bitcoins
 
@@ -96,11 +45,7 @@ etc. signing up on these sites require a valid email and phone number for verifi
 
 ### Improvements Can be Made
 
-​Based on the infancy of the
-
-[bitcoin technology][19]
-
-, there is still room for changes to make it more secure and reliable. Given more time, the bitcoin currency will be developed enough to provide flexibility as a common currency. For the bitcoin to succeed, many people need to be made aware of it besides being given information on how it works and its benefits.
+​Based on the infancy of the [bitcoin technology][19] , there is still room for changes to make it more secure and reliable. Given more time, the bitcoin currency will be developed enough to provide flexibility as a common currency. For the bitcoin to succeed, many people need to be made aware of it besides being given information on how it works and its benefits.
 
 --------------------------------------------------------------------------------
 
