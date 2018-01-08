@@ -1,6 +1,3 @@
-ezio is translating
-
-
 Anatomy of a Program in Memory
 ============================================================
 
