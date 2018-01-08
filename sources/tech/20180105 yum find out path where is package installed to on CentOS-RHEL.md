@@ -1,7 +1,8 @@
+translating by cyleung
 yum find out path where is package installed to on CentOS/RHEL
 ======
 
-I have [install htop package on a CentOS/RHEL][1] . I wanted find out where and at what path htop package installed all files. Is there an easy way to tell yum where is package installed on a CentOS/RHEL? 
+I have [install htop package on a CentOS/RHEL][1] . I wanted find out where and at what path htop package installed all files. Is there an easy way to tell yum where is package installed on a CentOS/RHEL?
 
 [yum command][2] is an interactive, open source, rpm based, package manager for a CentOS/RHEL and clones. It can automatically perform the following operations for you:
 
@@ -60,9 +61,9 @@ Resolving Dependencies
 ---> Package libxml2-python.x86_64 0:2.9.1-6.el7_2.3 will be installed
 ---> Package python-kitchen.noarch 0:1.1.1-5.el7 will be installed
 --> Finished Dependency Resolution
- 
+
 Dependencies Resolved
- 
+
 =======================================================================================
  Package           Arch      Version             Repository                       Size
 =======================================================================================
@@ -71,11 +72,11 @@ Installing:
 Installing for dependencies:
  libxml2-python    x86_64    2.9.1-6.el7_2.3     rhui-rhel-7-server-rhui-rpms    247 k
  python-kitchen    noarch    1.1.1-5.el7         rhui-rhel-7-server-rhui-rpms    266 k
- 
+
 Transaction Summary
 =======================================================================================
 Install  1 Package (+2 Dependent packages)
- 
+
 Total download size: 630 k
 Installed size: 3.1 M
 Is this ok [y/d/N]: y
@@ -89,19 +90,19 @@ Running transaction check
 Running transaction test
 Transaction test succeeded
 Running transaction
-  Installing : python-kitchen-1.1.1-5.el7.noarch                                   1/3 
-  Installing : libxml2-python-2.9.1-6.el7_2.3.x86_64                               2/3 
-  Installing : yum-utils-1.1.31-42.el7.noarch                                      3/3 
-  Verifying  : libxml2-python-2.9.1-6.el7_2.3.x86_64                               1/3 
-  Verifying  : yum-utils-1.1.31-42.el7.noarch                                      2/3 
-  Verifying  : python-kitchen-1.1.1-5.el7.noarch                                   3/3 
- 
+  Installing : python-kitchen-1.1.1-5.el7.noarch                                   1/3
+  Installing : libxml2-python-2.9.1-6.el7_2.3.x86_64                               2/3
+  Installing : yum-utils-1.1.31-42.el7.noarch                                      3/3
+  Verifying  : libxml2-python-2.9.1-6.el7_2.3.x86_64                               1/3
+  Verifying  : yum-utils-1.1.31-42.el7.noarch                                      2/3
+  Verifying  : python-kitchen-1.1.1-5.el7.noarch                                   3/3
+
 Installed:
   yum-utils.noarch 0:1.1.31-42.el7                                                     
- 
+
 Dependency Installed:
   libxml2-python.x86_64 0:2.9.1-6.el7_2.3      python-kitchen.noarch 0:1.1.1-5.el7     
- 
+
 Complete!
 ```
 
