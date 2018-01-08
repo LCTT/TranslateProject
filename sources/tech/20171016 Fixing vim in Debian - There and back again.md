@@ -1,3 +1,5 @@
+translating---geekpi
+
 Fixing vim in Debian – There and back again
 ======
 I was wondering for quite some time why on my server vim behaves so stupid with respect to the mouse: Jumping around, copy and paste wasn't possible the usual way. All this despite having
