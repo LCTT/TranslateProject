@@ -1,76 +1,75 @@
-translating by lujun9972
-
-Vmware Linux Guest Add a New Hard Disk Without Rebooting Guest
+在不重启的情况下为 Vmware Linux 客户机添加新硬盘
 ======
 
-As a system admin, I need to use additional hard drives for to provide more storage space or to separate system data from user data. This procedure, adding physical block devices to virtualized guests, describes how to add a hard drive on the host to a virtualized guest using VMWare software running Linux as guest.
+作为一名系统管理员，我经常需要用额外的硬盘来扩充存储空间或将系统数据从用户数据中分离出来。将物理块设备加到虚拟主机的这个过程，告诉你如何将一个块主机上的硬盘加到一台使用 VMWare 软件虚拟化的 Linux 客户机上。
 
-It is possible to add or remove a SCSI device explicitly, or to re-scan an entire SCSI bus without rebooting a running Linux VM guest. This how to is tested under Vmware Server and Vmware Workstation v6.0 (but should work with older version too). All instructions are tested on RHEL, Fedora, CentOS and Ubuntu Linux guest / hosts operating systems.
+你可以显式的添加或删除一个 SCSI 设备，或者重新扫描整个 SCSI 总线而不用重启 Linux 虚拟机。本指南在 Vmware Server 和 Vmware Workstation v6.0 中通过测试(更老版本应该也支持)。所有命令在 RHEL，Fedora，CentOS 和 Ubuntu Linux 客户机 / 主机操作系统下都经过了测试。
 
 
-## Step # 1: Add a New Disk To Vm Guest
+## 步骤 # 1：添加新硬盘到虚拟客户机
 
-First, you need to add hard disk by visiting vmware hardware settings menu.
-Click on VM > Settings
+首先，通过 vmware 硬件设置菜单添加硬盘。
+点击 VM > Settings
 
-![Fig.01: Vmware Virtual Machine Settings ][1]
+![Fig.01：Vmware Virtual Machine Settings ][1]
 
-Alternatively you can press CTRL + D to bring settings dialog box.
+或者你也可以按下 CTRL + D 也能进入设置对话框。
 
-Click on Add+ to add new hardware to guest:
+点击 Add+ 添加新硬盘到客户机：
 
-![Fig.02: VMWare adding a new hardware][2]
+![Fig.02：VMWare adding a new hardware][2]
 
-Select hardware type Hard disk and click on Next
+选择硬件类型为 Hard disk 然后点击 Next
+
 ![Fig.03 VMware Adding a new disk wizard ][3]
 
-Select create a new virtual disk and click on Next
+选择 `create a new virtual disk` 然后点击 Next
 
-![Fig.04: Vmware Wizard Disk ][4]
+![Fig.04：Vmware Wizard Disk ][4]
 
-Set virtual disk type to SCSI and click on Next
+设置虚拟磁盘类型为 SCSI 然后点击 Next
 
-![Fig.05: Vmware Virtual Disk][5]
+![Fig.05：Vmware Virtual Disk][5]
 
-Set maximum disk size as per your requirements and click on Next
+按需要设置最大磁盘大小，然后点击 Next
 
-![Fig.06: Finalizing Disk Virtual Addition ][6]
+![Fig.06：Finalizing Disk Virtual Addition ][6]
 
-Finally, set file location and click on Finish.
+最后，选择文件存放位置然后点击 Finish。
 
-## Step # 2: Rescan the SCSI Bus to Add a SCSI Device Without rebooting the VM
+## 步骤 # 2：重新扫描 SCSI 总线，在不重启虚拟机的情况下添加 SCSI 设备
 
-A rescan can be issued by typing the following command:
+输入下面命令重新扫描 SCSI 总线：
 
 ```
-echo "- - -" > /sys/class/scsi_host/ **host#** /scan
+echo "- - -" > /sys/class/scsi_host/host# /scan
 fdisk -l
 tail -f /var/log/message
 ```
 
-Sample outputs:
+输出为：
 
 ![Linux Vmware Rescan New Scsi Disk Without Reboot][7]
 
-Replace host# with actual value such as host0. You can find scsi_host value using the following command:
+你需要将 `host#` 替换成真实的值，比如 host0。你可以通过下面命令来查出这个值：
 
 `# ls /sys/class/scsi_host`
 
-Output:
+输出：
 
 ```
 host0
 ```
 
-Now type the following to send a rescan request:
+然后输入下面过命令来请求重新扫描：
 
 ```
-echo "- - -" > /sys/class/scsi_host/ **host0** /scan
+echo "- - -" > /sys/class/scsi_host/host0/scan
 fdisk -l
 tail -f /var/log/message
 ```
 
-Sample Outputs:
+输出为：
 
 ```
 Jul 18 16:29:39 localhost kernel: Vendor: VMware, Model: VMware Virtual S Rev: 1.0
@@ -109,33 +108,33 @@ Jul 18 16:29:39 localhost kernel: sd 0:0:2:0: Attached scsi disk sdc
 Jul 18 16:29:39 localhost kernel: sd 0:0:2:0: Attached scsi generic sg2 type 0
 ```
 
-### How Do I Delete a Single Device Called /dev/sdc?
+### 如何删除 =/dev/sdc= 这块设备？
 
-In addition to re-scanning the entire bus, a specific device can be added or existing device deleted using the following command:
+除了重新扫描整个总线外，你也可以使用下面命令添加或删除指定磁盘：
 
 ```
 # echo 1 > /sys/block/devName/device/delete
-# echo 1 > /sys/block/ **sdc** /device/delete
+# echo 1 > /sys/block/sdc/device/delete
 ```
 
-### How Do I Add a Single Device Called /dev/sdc?
+### 如何添加 =/dev/sdc= 这块设备？
 
-To add a single device explicitly, use the following syntax:
+使用下面语法添加指定设备：
 
 ```
 # echo "scsi add-single-device <H> <B> <T> <L>" > /proc/scsi/scsi
 ```
 
-Where,
+这里，
 
-  * <H> : Host
-  * <B> : Bus (Channel)
-  * <T> : Target (Id)
-  * <L> : LUN numbers
+  * <H>：Host
+  * <B>：Bus (Channel)
+  * <T>：Target (Id)
+  * <L>：LUN numbers
 
 
 
-For e.g. add /dev/sdc with host # 0, bus # 0, target # 2, and LUN # 0, enter:
+例如。使用参数 host#0，bus#0，target#2，以及 LUN#0 来添加 /dev/sdc，则输入：
 
 ```
 # echo "scsi add-single-device 0 0 2 0">/proc/scsi/scsi
@@ -143,7 +142,7 @@ For e.g. add /dev/sdc with host # 0, bus # 0, target # 2, and LUN # 0, enter:
 # cat /proc/scsi/scsi
 ```
 
-Sample Outputs:
+结果输出：
 
 ```
 Attached devices:
@@ -158,9 +157,9 @@ Host: scsi0 Channel: 00 Id: 02 Lun: 00
  Type: Direct-Access ANSI SCSI revision: 02
 ```
 
-## Step #3: Format a New Disk
+## 步骤 #3：格式化新磁盘
 
-Now, you can create partition using [fdisk and format it using mkfs.ext3][8] command:
+现在使用 [fdisk 并通过 mkfs.ext3][8] 命令创建分区：
 
 ```
 # fdisk /dev/sdc
@@ -170,39 +169,39 @@ Now, you can create partition using [fdisk and format it using mkfs.ext3][8] com
 # mkfs.ext4 /dev/sdc3
 ```
 
-## Step #4: Create a Mount Point And Update /etc/fstab
+## 步骤 #4：创建挂载点并更新 /etc/fstab
 
 `# mkdir /disk3`
 
-Open /etc/fstab file, enter:
+打开 /etc/fstab 文件，输入：
 
 `# vi /etc/fstab`
 
-Append as follows:
+加入下面这行：
 
 ```
 /dev/sdc3 /disk3 ext3 defaults 1 2
 ```
 
-For ext4 fs:
+若是 ext4 文件系统则加入：
 
 ```
 /dev/sdc3 /disk3 ext4 defaults 1 2
 ```
 
-Save and close the file.
+保存并关闭文件。
 
-#### Optional Task: Label the partition
+#### 可选操作：为分区加标签
 
-[You can label the partition using e2label command][9]. For example, if you want to label the new partition /backupDisk, enter
+[你可以使用 e2label 命令为分区加标签 ][9]。假设，你想要为  /backupDisk 这块新分区加标签，则输入
 
 `# e2label /dev/sdc1 /backupDisk`
 
-See "[The importance of Linux partitions][10]
+详情参见 "[Linux 分区的重要性 ][10]
 
-## about the author
+## 关于作者
 
-The author is the creator of nixCraft and a seasoned sysadmin and a trainer for the Linux operating system/Unix shell scripting. He has worked with global clients and in various industries, including IT, education, defense and space research, and the nonprofit sector. Follow him on [Twitter][11], [Facebook][12], [Google+][13].
+作者即是 nixCraft 的创造者，也是一名经验丰富的系统管理员，还是 Linux 操作系统 /Unix shell 脚本培训师。他曾服务过全球客户并与多个行业合作过，包括 IT，教育，国防和空间研究，以及非盈利机构。你可以在 [Twitter][11]，[Facebook][12]，[Google+][13] 上关注它。
 
 --------------------------------------------------------------------------------
 

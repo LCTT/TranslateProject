@@ -1,32 +1,35 @@
-yum find out path where is package installed to on CentOS/RHEL
+在 CentOS/RHEL 上查找 yum 安裝软件的位置
 ======
 
-I have [install htop package on a CentOS/RHEL][1] . I wanted find out where and at what path htop package installed all files. Is there an easy way to tell yum where is package installed on a CentOS/RHEL? 
+我已经在 CentOS/RHEL 上[安装 htop][1] 。现在想知道软件被安装在哪个位置。有没有简单的方法能找到软件包安装的目录呢？
 
-[yum command][2] is an interactive, open source, rpm based, package manager for a CentOS/RHEL and clones. It can automatically perform the following operations for you:
+[yum 命令][2] 是可交互的，开源的，基于 rpm 的 CentOS/RHEL 的软件包管理工具。它会帮助你自动地完成以下操作：
 
-  1. Core system file updates
-  2. Package updates
-  3. Install a new packages
-  4. Delete of old packages
-  5. Perform queries on the installed and/or available packages
+  1. 操作系统内核更新
+  2. 软件包更新
+  3. 安装新的软件包
+  4. 删除旧的软件包
+  5. 查找已安装和可用的软件包
 
-yum is similar to other high level package managers like [apt-get command][3]/[apt command][4].
+和 yum 相似的软件包管理工具有： [apt-get command][3] 和 [apt command][4]。
 
-### yum where is package installed
+### yum 安装软件包的位置
 
-The syntax is as follows to install htop package for a demo purpose:
+我们以安装 htop 为例：
 
-`# yum install htop`
+```
+# yum install htop
+```
 
-To list the files installed by a yum package called htop, run the following rpm command:
+
+使用以下命令列出 yum 安装 htop 的文件：
 
 ```
 # rpm -q {packageNameHere}
 # rpm -ql htop
 ```
 
-Sample outputs:
+输出例子：
 
 ```
 /usr/bin/htop
@@ -40,15 +43,15 @@ Sample outputs:
 
 ```
 
-### How to see the files installed by a yum package using repoquery command
+### 如何使用 repoquery 命令查看 yum 安装的软件包的位置
 
-First install yum-utils package using [yum command][2]:
+首先使用 [yum 命令][2] 安装  yum-utils 软件包：
 
 ```
 # yum install yum-utils
 ```
 
-Sample outputs:
+例子输出：
 
 ```
 Resolving Dependencies
@@ -60,9 +63,9 @@ Resolving Dependencies
 ---> Package libxml2-python.x86_64 0:2.9.1-6.el7_2.3 will be installed
 ---> Package python-kitchen.noarch 0:1.1.1-5.el7 will be installed
 --> Finished Dependency Resolution
- 
+
 Dependencies Resolved
- 
+
 =======================================================================================
  Package           Arch      Version             Repository                       Size
 =======================================================================================
@@ -71,56 +74,56 @@ Installing:
 Installing for dependencies:
  libxml2-python    x86_64    2.9.1-6.el7_2.3     rhui-rhel-7-server-rhui-rpms    247 k
  python-kitchen    noarch    1.1.1-5.el7         rhui-rhel-7-server-rhui-rpms    266 k
- 
+
 Transaction Summary
 =======================================================================================
 Install  1 Package (+2 Dependent packages)
- 
+
 Total download size: 630 k
 Installed size: 3.1 M
 Is this ok [y/d/N]: y
 Downloading packages:
-(1/3): python-kitchen-1.1.1-5.el7.noarch.rpm                    | 266 kB  00:00:00     
-(2/3): libxml2-python-2.9.1-6.el7_2.3.x86_64.rpm                | 247 kB  00:00:00     
-(3/3): yum-utils-1.1.31-42.el7.noarch.rpm                       | 117 kB  00:00:00     
+(1/3): python-kitchen-1.1.1-5.el7.noarch.rpm                    | 266 kB  00:00:00
+(2/3): libxml2-python-2.9.1-6.el7_2.3.x86_64.rpm                | 247 kB  00:00:00
+(3/3): yum-utils-1.1.31-42.el7.noarch.rpm                       | 117 kB  00:00:00
 ---------------------------------------------------------------------------------------
-Total                                                     1.0 MB/s | 630 kB  00:00     
+Total                                                     1.0 MB/s | 630 kB  00:00
 Running transaction check
 Running transaction test
 Transaction test succeeded
 Running transaction
-  Installing : python-kitchen-1.1.1-5.el7.noarch                                   1/3 
-  Installing : libxml2-python-2.9.1-6.el7_2.3.x86_64                               2/3 
-  Installing : yum-utils-1.1.31-42.el7.noarch                                      3/3 
-  Verifying  : libxml2-python-2.9.1-6.el7_2.3.x86_64                               1/3 
-  Verifying  : yum-utils-1.1.31-42.el7.noarch                                      2/3 
-  Verifying  : python-kitchen-1.1.1-5.el7.noarch                                   3/3 
- 
+  Installing : python-kitchen-1.1.1-5.el7.noarch                                   1/3
+  Installing : libxml2-python-2.9.1-6.el7_2.3.x86_64                               2/3
+  Installing : yum-utils-1.1.31-42.el7.noarch                                      3/3
+  Verifying  : libxml2-python-2.9.1-6.el7_2.3.x86_64                               1/3
+  Verifying  : yum-utils-1.1.31-42.el7.noarch                                      2/3
+  Verifying  : python-kitchen-1.1.1-5.el7.noarch                                   3/3
+
 Installed:
-  yum-utils.noarch 0:1.1.31-42.el7                                                     
- 
+  yum-utils.noarch 0:1.1.31-42.el7
+
 Dependency Installed:
-  libxml2-python.x86_64 0:2.9.1-6.el7_2.3      python-kitchen.noarch 0:1.1.1-5.el7     
- 
+  libxml2-python.x86_64 0:2.9.1-6.el7_2.3      python-kitchen.noarch 0:1.1.1-5.el7
+
 Complete!
 ```
 
+### 如何列出通过 yum 安装的命令？
 
-### How do I list the contents of a installed package using YUM?
-
-Now run repoquery command as follows:
+使用 repoquery 命令：
 
 `# repoquery --list htop`
 
-OR
+或者
 
 `# repoquery -l htop`
 
-Sample outputs:
+例子输出：
 
 [![yum where is package installed][5]][5]
 
-You can also use the type command or command command to just find location of given binary file such as httpd or htop:
+你也可以使用 type 命令或者 command 命令查找指定二进制文件的位置，例如 httpd 或者 htop ：
+
 
 ```
 $ type -a httpd
@@ -128,19 +131,19 @@ $ type -a htop
 $ command -V htop
 ```
 
-### about the author
+### 关于作者
 
-The author is the creator of nixCraft and a seasoned sysadmin and a trainer for the Linux operating system/Unix shell scripting. He has worked with global clients and in various industries, including IT, education, defense and space research, and the nonprofit sector. Follow him on [Twitter][6], [Facebook][7], [Google+][8].
+作者是 nixCraft 的创始人，是经验丰富的系统管理员并且是 Linux 命令行脚本编程的教练。他拥有全球多行业合作的经验，客户包括 IT，教育，安防和空间研究。他的联系方式：[Twitter][6], [Facebook][7], [Google+][8]。
 
 --------------------------------------------------------------------------------
 
 via: https://www.cyberciti.biz/faq/yum-determining-finding-path-that-yum-package-installed-to/
 
 作者：[][a]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[译者 ID](https://github.com/cyleung)
+校对：[校对者 ID](https://github.com/ 校对者 ID)
 
-本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux 中国](https://linux.cn/) 荣誉推出
 
 [a]:https://www.cyberciti.biz
 [1]:https://www.cyberciti.biz/faq/centos-redhat-linux-install-htop-command-using-yum/
@@ -151,3 +154,5 @@ via: https://www.cyberciti.biz/faq/yum-determining-finding-path-that-yum-package
 [6]:https://twitter.com/nixcraft
 [7]:https://facebook.com/nixcraft
 [8]:https://plus.google.com/+CybercitiBiz
+
+
