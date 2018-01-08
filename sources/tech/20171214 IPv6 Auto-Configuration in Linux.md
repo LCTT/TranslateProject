@@ -1,7 +1,7 @@
 IPv6 Auto-Configuration in Linux
 ======
 
-![](http://www.omgubuntu.co.uk)
+![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/banner_5.png?itok=3kN83IjL)
 
 In [Testing IPv6 Networking in KVM: Part 1][1], we learned about unique local addresses (ULAs). In this article, we will learn how to set up automatic IP address configuration for ULAs.
 

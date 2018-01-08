@@ -1,3 +1,5 @@
+translating by CYLeft
+
 Linux/Unix desktop fun: Simulates the display from “The Matrix”
 ======
 The Matrix is a science fiction action movie from 1999. It was written and directed by the Wachowski Brothers. The film has falling green characters on screen. The digital rain is representing the activity of the virtual reality in "The Matrix." You can now have Matrix digital rain with CMatrix on a Linux or Unix terminal too.

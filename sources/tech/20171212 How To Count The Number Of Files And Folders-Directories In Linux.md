@@ -121,7 +121,7 @@ To experiment this, i'm going to create totally 7 files and 2 folders (5 regular
 
 **Example-10 :** Count all files in the current directory by using the echo command in combination with the wc command. `4` indicates the amount of files in the current directory.
 ```
-# echo core.md Dict.md lctt2014.md lctt2016.md LCTT翻译规范.md README.md sign.md 选题模板.txt 中文排版指北.md | wc
+# echo * | wc
 1 4 39
 
 ```

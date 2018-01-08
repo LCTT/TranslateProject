@@ -11,7 +11,7 @@ Installing omf is not a big deal. All you have to do is just run the following c
 curl -L https://get.oh-my.fish | fish
 ```
 
-[![][2]][3]
+![][3]
 
 Once the installation has completed, you will see the the prompt has automatically changed as shown in the above picture. Also, you will notice that the current time on the right of the shell window.
 
