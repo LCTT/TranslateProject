@@ -1,4 +1,4 @@
-How To Create Custom Ubuntu Live CD Image
+Translating by stevenzdg988 on How To Create Custom Ubuntu Live CD Image
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2017/10/Cubic-720x340.png)
 
