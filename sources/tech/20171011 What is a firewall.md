@@ -1,78 +1,75 @@
 Translating by zjon
 
-What is a firewall?
-======
-Network-based firewalls have become almost ubiquitous across US enterprises for their proven defense against an ever-increasing array of threats.
+什么是防火墙？
+=====
+基于网络的防火墙已经在美国企业无处不在，因为它们证实了抵御日益增长的威胁的防御能力。
 
-A recent study by network testing firm NSS Labs found that up to 80% of US large businesses run a next-generation firewall. Research firm IDC estimates the firewall and related unified threat management market was a $7.6 billion industry in 2015 and expected to reach $12.7 billion by 2020.
+通过网络测试公司 NSS 实验室最近的一项研究发现高达 80% 的美国大型企业运行着下一代防火墙。研究公司 IDC 评估防火墙和相关的统一威胁管理市场营业额在 2015 是 76 亿美元，预计到 2020 年底将达到 127 亿美元。
 
- **[ If you 're upgrading, here's [What to consider when deploying a next generation firewall][1].]**
+**如果你想提升，这里是[What to consider when deploying a next generation firewall][1]**
 
-### What is a firewall?
+### 什么是防火墙？
 
-Firewalls act as a perimeter defense tool that monitor traffic and either allow it or block it. Over the years functionality of firewalls has increased, and now most firewalls can not only block a set of known threats and enforce advanced access control list policies, but they can also deeply inspect individual packets of traffic and test packets to determine if they're safe. Most firewalls are deployed as network hardware that processes traffic and software that allow end users to configure and manage the system. Increasingly, software-only versions of firewalls are being deployed in highly virtualized environments to enforce policies on segmented networks or in the IaaS public cloud.
+防火墙充当一个监控流量的边界防御工具，要么允许它要么屏蔽它。 多年来，防火墙的功能不断增强，现在大多数防火墙不仅可以阻止已知的一组威胁，并执行高级访问控制列表策略，还可以深入检查各个包的流量和测试包，以确定它们是否安全。大多数防火墙被部署为网络硬件，用于处理流量和允许终端用户配置和管理系统的软件。越来越多的软件版防火墙部署到高度虚拟机环境中执行策略在被隔离的网络或 IaaS 公有云中。
 
-Advancements in firewall technology have created new options firewall deployments over the past decade, so now there are a handful of options for end users looking to deploy a firewall. These include:
+随着防火墙技术的进步在过去十年中创造了新的防火墙部署选项，所以现在对于部署防火墙的最终用户来说，有一些选择。这些选择包括： 
 
-### Stateful firewalls
+### 有状态的防火墙
+ 当首次创造防火墙时，它们是无状态的，这意味着流量通过硬件，在检查被监视的每个网络包流量的过程中，并单独屏蔽或允许它。从1990年代中后期开始，防火墙的第一个主要进展是引入状态。有状态防火墙在更全面的上下文中检查流量，同时考虑到网络连接的工作状态和特性，以提供更全面的防火墙。例如，维持这状态的防火墙允许某些流量访问某些用户，同时阻塞其他用户的同一流量。 
 
-When firewalls were first created they were stateless, meaning that the hardware that the traffic traverse through while being inspected monitored each packet of network traffic individually and either blocking or allowing it in isolation. Beginning in the mid to late 1990s, the first major advancements in firewalls was the introduction of state. Stateful firewalls examine traffic in a more holistic context, taking into account the operating state and characteristics of the network connection to provide a more holistic firewall. Maintaining this state allows the firewall to allow certain traffic to access certain users while blocking at same traffic to other users, for example.
+### 下一代防火墙
+ 多年来，防火墙增加了多种新的特性，包括深度包检查、入侵检测以及对加密流量的预防和检查。下一代防火墙（NGFWs）是指有许多先进的功能集成到防火墙的防火墙。 
 
-### Next-generation firewalls
+### 基于代理的防火墙
 
-Over the years firewalls have added myriad new features, including deep packet inspection, intrusion detection and prevention and inspection of encrypted traffic. Next-generation firewalls (NGFWs) refer to firewalls that have integrated many of these advanced features into the firewall.
+这些防火墙充当请求数据的最终用户和数据源之间的网关。在传递给最终用户之前，所有的流量都通过这个代理过滤。这通过掩饰信息的原始请求者的身份来保护客户端不受威胁。 
 
-### Proxy-based firewalls
+### Web 应用防火墙
 
-These firewalls act as a gateway between end users who request data and the source of that data. All traffic is filtered through this proxy before being passed on to the end user. This protects the client from exposure to threats by masking the identity of the original requester of the information.
+这些防火墙位于特定应用程序的前面，而不是在更广阔的网络的入口或则出口上。而基于代理的防火墙通常被认为是保护终端客户，WAFs 通常被认为是保护应用服务器。
 
-### Web application firewalls
+### 防火墙硬件
 
-These firewalls sit in front of specific applications as opposed to sitting on an entry or exit point of a broader network. Whereas proxy-based firewalls are typically thought of as protecting end-user clients, WAFs are typically thought of as protecting the application servers.
+防火墙硬件通常是一个简单的服务器，它可以充当路由器来过滤流量和运行防火墙软件。这些设备放置在企业网络的边缘，路由器和 Internet 服务提供商的连接点之间。通常企业可能在整个数据中心部署十几个物理防火墙。 用户需要根据用户基数的大小和 Internet 连接的速率来确定防火墙需要支持的吞吐量容量。 
 
-### Firewall hardware
+### 防火墙软件
 
-Firewall hardware is typically a straightforward server that can act as a router for filtering traffic and running firewall software. These devices are placed at the edge of a corporate network, between a router and the Internet service provider's connection point. A typical enterprise may deploy dozens of physical firewalls throughout a data center. Users need to determine what throughput capacity they need the firewall to support based on the size of the user base and speed of the Internet connection.
+通常，终端用户部署多个防火墙硬件端和一个中央防火墙软件系统来管理部署。 这个中心系统是配置策略和特性的地方，在那里可以进行分析，并可以对威胁作出响应。
 
-### Firewall software
+### 下一代防火墙
 
-Typically end users deploy multiple firewall hardware endpoints and a central firewall software system to manage the deployment. This central system is where policies and features are configured, where analysis can be done and threats can be responded to.
+多年来，防火墙增加了多种新的特性，包括深度包检查、入侵检测以及对加密流量的预防和检查。下一代防火墙（NGFWs）是指集成了这些先进功能的防火墙，这里描述的是它们中的一些。
 
-### Next-generation firewalls
+### 有状态的检测
 
-Over the years firewalls have added myriad new features, including deep packet inspection, intrusion detection and prevention and inspection of encrypted traffic. Next-generation firewalls (NGFWs) refer to firewalls that have integrated many of these advanced features, and here is a description of some of them.
+阻止已知不需要的流量，这是基本的防火墙功能。
 
-### Stateful inspection
+### 抵御病毒
 
-This is the basic firewall functionality in which the device blocks known unwanted traffic
+在网络流量中搜索已知病毒和漏洞，这个功能有助于防火墙接收最新威胁的更新，并不断更新以保护它们。
 
-### Anti-virus
+### 入侵防御系统
 
-This functionality that searches for known virus and vulnerabilities in network traffic is aided by the firewall receiving updates on the latest threats and being constantly updated to protect against them.
+这类安全产品可以部署为一个独立的产品，但 IPS 功能正逐步融入 NGFWs。 虽然基本的防火墙技术识别和阻止某些类型的网络流量，但 IPS 使用更多的细粒度安全措施，如签名跟踪和异常检测，以防止不必要的威胁进入公司网络。 IPS 系统已经取代了以前这一技术的版本，入侵检测系统（IDS）的重点是识别威胁而不是遏制它们。   
 
-### Intrusion Prevention Systems (IPS)
+### 深度包检测（DPI）
 
-This class of security products can be deployed as a standalone product, but IPS functionality is increasingly being integrated into NGFWs. Whereas basic firewall technologies identify and block certain types of network traffic, IPS uses more granular security measures such as signature tracing and anomaly detection to prevent unwanted threats from entering corporate networks. IPS systems have replaced the previous version of this technology, Intrusion Detection Systems (IDS) which focused more on identifying threats rather than containing them.
+DPI 可部分或用于与 IPS 的结合，但其仍然成为一个 NGFWs 的重要特征，因为它提供细粒度分析的能力，具体到流量包和流量数据的头文件。DPI 还可以用来监测出站流量，以确保敏感信息不会离开公司网络，这种技术称为数据丢失预防（DLP）。 
 
-### Deep Packet Inspection (DPI)
+### SSL 检测
 
-DPI can be part of or used in conjunction with an IPS, but its nonetheless become an important feature of NGFWs because of the ability to provide granular analysis of traffic, most specifically the headers of traffic packets and traffic data. DPI can also be used to monitor outbound traffic to ensure sensitive information is not leaving corporate networks, a technology referred to as Data Loss Prevention (DLP).
+安全套接字层（SSL）检测是一个检测加密流量来测试威胁的方法。随着越来越多的流量进行加密，SSL 检测成为 DPI 技术，NGFWs 正在实施的一个重要组成部分。SSL 检测作为一个缓冲区，它在送到最终目的地之前解码流量以检测它。
 
-### SSL Inspection
+### 沙盒
 
-Secure Sockets Layer (SSL) Inspection is the idea of inspecting encrypted traffic to test for threats. As more and more traffic is encrypted, SSL Inspection is becoming an important component of DPI technology that is being implemented in NGFWs. SSL Inspection acts as a buffer that unencrypts the traffic before it's delivered to the final destination to test it.
-
-### Sandboxing
-
-This is one of the newer features being rolled into NGFWs and refers to the ability of a firewall to take certain unknown traffic or code and run it in a test environment to determine if it is nefarious.
-
+这个是被卷入 NGFWs 中的一个较新的特性，它指防火墙接收某些未知的流量或者代码，并在一个测试环境运行，以确定它是否是邪恶的能力。
 
 --------------------------------------------------------------------------------
 
 via: https://www.networkworld.com/article/3230457/lan-wan/what-is-a-firewall-perimeter-stateful-inspection-next-generation.html
 
 作者：[Brandon Butler][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[zjon](https://github.com/zjon)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
