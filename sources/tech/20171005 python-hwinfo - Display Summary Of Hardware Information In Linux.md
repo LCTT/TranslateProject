@@ -1,4 +1,4 @@
-python-hwinfo : Display Summary Of Hardware Information In Linux
+Translating by Torival python-hwinfo : Display Summary Of Hardware Information In Linux
 ======
 Till the date, we have covered most of the utilities which discover Linux system hardware information & configuration but still there are plenty of commands available for the same purpose.
 

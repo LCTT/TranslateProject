@@ -1,3 +1,4 @@
+Translating by FelixYFZ
 How to test internet speed in Linux terminal
 ======
 Learn how to use speedtest cli tool to test internet speed in Linux terminal. Also includes one liner python command to get speed details right away.
