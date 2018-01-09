@@ -1,3 +1,4 @@
+Translating by stevenzdg988
 Making Vim Even More Awesome With These Cool Features
 ======
 
