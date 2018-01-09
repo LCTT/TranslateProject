@@ -13,11 +13,22 @@ Need to monitor Linux server performance? Try these built-in commands and a few 
 
 top command display Linux processes. It provides a dynamic real-time view of a running system i.e. actual process activity. By default, it displays the most CPU-intensive tasks running on the server and updates the list every five seconds.
 
+![](https://www.cyberciti.biz/tips/wp-content/uploads/2009/06/top-Linux-monitoring-command.jpg)
+
 #### Commonly Used Hot Keys With top Linux monitoring tools
 
 Here is a list of useful hot keys:
 
-Hot KeyUsagetDisplays summary information off and on.mDisplays memory information off and on.ASorts the display by top consumers of various system resources. Useful for quick identification of performance-hungry tasks on a system.fEnters an interactive configuration screen for top. Helpful for setting up top for a specific task.oEnables you to interactively select the ordering within top.rIssues renice command.kIssues kill command.zTurn on or off color/mono
+| Hot Key | Usage |
+|---|---|
+| t | Displays summary information off and on. |
+| m | Displays memory information off and on. |
+| A | Sorts the display by top consumers of various system resources. Useful for quick identification of performance-hungry tasks on a system. |
+| f | Enters an interactive configuration screen for top. Helpful for setting up top for a specific task. |
+| o | Enables you to interactively select the ordering within top. |
+| r | Issues renice command. |
+| k | Issues kill command. |
+| z | Turn on or off color/mono |
 
 [How do I Find Out Linux CPU Utilization?][1]
 
