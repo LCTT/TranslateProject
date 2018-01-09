@@ -1,3 +1,5 @@
+Translating by jessie-pang
+
 Linux Free Command Explained for Beginners (6 Examples)
 ======
 
