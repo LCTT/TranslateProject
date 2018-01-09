@@ -4,7 +4,7 @@ When people usually think of PC games, they think of big titles, like Call of Du
 
 I am going to review one such game that I love to play. It's called SuperTux.
 
-https://www.youtube.com/embed/pTax8-cdiZU?enablejsapi=1&autoplay=0&cc_load_policy=0&iv_load_policy=1&loop=0&modestbranding=1&rel=0&showinfo=0&fs=1&theme=dark&color=red&autohide=2&controls=2&playsinline=0&
+[video](https://www.youtube.com/embed/pTax8-cdiZU?enablejsapi=1&autoplay=0&cc_load_policy=0&iv_load_policy=1&loop=0&modestbranding=1&rel=0&showinfo=0&fs=1&theme=dark&color=red&autohide=2&controls=2&playsinline=0&)
 
 ### What is SuperTux
 
@@ -23,12 +23,10 @@ Playing SuperTux is very similar to Super Mario. You play through different leve
 
 Just like in Super Mario, Tux can jump and hit special blocks to get stuff. Most of the time, these blocks contain coins. You can also find powerups, such as eggs, which will allow you to become BigTux. The other [powerups][6] include Fireflowers, Iceflowers, Airflowers, and Earthflowers. According to the [SuperTux wiki][7]:
 
->   * Fireflowers will allow you to kill most badguys by pressing the action key, which makes Tux throw a fireball
->   * Iceflowers will allow you to freeze some badguys and kill some others by pressing the action key, which makes Tux throw a ball of ice. If they are frozen, you can kill most badguys by butt-jumping on them.
->   * Airflowers will allow you to jump further, sometimes even run faster. However, it can be difficult to do certain jumps as Air Tux.
->   * Earthflowers give you a light. Also, pressing the action key then down will turn you into a rock for a few seconds, which means Tux is completely invulnerable.
->
-
+   * Fireflowers will allow you to kill most badguys by pressing the action key, which makes Tux throw a fireball
+   * Iceflowers will allow you to freeze some badguys and kill some others by pressing the action key, which makes Tux throw a ball of ice. If they are frozen, you can kill most badguys by butt-jumping on them.
+   * Airflowers will allow you to jump further, sometimes even run faster. However, it can be difficult to do certain jumps as Air Tux.
+   * Earthflowers give you a light. Also, pressing the action key then down will turn you into a rock for a few seconds, which means Tux is completely invulnerable.
 
 Occasionally, you will see a bell. That is a checkpoint. If you touch it, you will respawn at that point when you die, instead of having to go back to the beginning. You are limited to three respawns at the checkpoint before you are sent to the beginning of the level.
 
