@@ -1,5 +1,8 @@
+Translating by Drshu
+
 Fake A Hollywood Hacker Screen in Linux Terminal
 ======
+
 **Brief: This tiny tool turns your Linux terminal into a Hollywood style real time hacking scene.**
 
 ![Hollywood hacking terminal in Linux][1]
