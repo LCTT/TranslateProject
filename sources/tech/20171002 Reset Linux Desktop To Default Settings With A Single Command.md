@@ -1,3 +1,5 @@
+translating---geekpi
+
 Reset Linux Desktop To Default Settings With A Single Command
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2017/10/Reset-Linux-Desktop-To-Default-Settings-720x340.jpg)
