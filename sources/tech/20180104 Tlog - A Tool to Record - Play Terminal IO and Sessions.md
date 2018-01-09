@@ -74,7 +74,7 @@ This command reads the previously recorded file tlog.log from the file path ment
 Tlog is an open-source package which can be used for implementing centralized user session recording. This is mainly intended to be used as part of a larger user session recording solution but is designed to be independent and reusable.This tool can be a great help for recording everything users do and store it somewhere on the server side safe for the future reference. You can get more details about this package usage in this [documentation][3]. I hope this article is useful to you. Please post your valuable suggestions and comments on this.
 
 ### About Saheetha Shameer(the author)
-I'M Working As A Senior System Administrator. I'M A Quick Learner;Have A Slight Inclination Towards Following The Current;Emerging Trends In The Industry. My Hobbies Include Hearing Music;Playing Strategy Computer Games;Reading;Gardening. I Also Have A High Passion For Experimenting With Various Culinary Delights;
+I'm working as a Senior System Administrator. I'm a quick learner and have a slight inclination towards following the current and emerging trends in the industry. My hobbies include hearing music, playing strategy computer games, reading and gardening. I also have a high passion for experimenting with various culinary delights :-)
 
 --------------------------------------------------------------------------------
 
