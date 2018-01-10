@@ -1,5 +1,8 @@
+Translating by Drshus
+
 Restore Corrupted USB Drive To Original State In Linux
 ======
+
 ![](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/restore-corrupted-usb-drive-to-original-state-in-linux_orig.jpg)
 Many times our storage devices like sd cards and Pen drives get corrupted and unusable due to one or other reasons.
 
