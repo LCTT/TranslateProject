@@ -1,3 +1,5 @@
+translated by hopefully2333
+
 Meltdown and Spectre Linux Kernel Status
 ============================================================
 
