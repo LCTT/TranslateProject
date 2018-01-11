@@ -1,3 +1,5 @@
+Translating by syys96
+
 New Year’s resolution: Donate to 1 free software project every month
 ============================================================
 
