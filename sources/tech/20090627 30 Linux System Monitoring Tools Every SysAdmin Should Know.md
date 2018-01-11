@@ -15,6 +15,8 @@ top command display Linux processes. It provides a dynamic real-time view of a r
 
 ![](https://www.cyberciti.biz/tips/wp-content/uploads/2009/06/top-Linux-monitoring-command.jpg)
 
+Fig.01: Linux top command
+
 #### Commonly Used Hot Keys With top Linux monitoring tools
 
 Here is a list of useful hot keys:
@@ -172,15 +174,23 @@ To turn on extra full mode (it will show command line arguments passed to proces
 
 #### Try To Display Only The Process IDs of Lighttpd
 
-`# ps -C lighttpd -o pid=`
+```
+# ps -C lighttpd -o pid=
+```
 OR
-`# pgrep lighttpd`
+```
+# pgrep lighttpd
+```
 OR
-`# pgrep -u vivek php-cgi`
+```
+# pgrep -u vivek php-cgi
+```
 
 #### Print The Name of PID 55977
 
-`# ps -p 55977 -o comm=`
+```
+# ps -p 55977 -o comm=
+```
 
 #### Top 10 Memory Consuming Process
 
@@ -205,6 +215,11 @@ Mem: 12302896 9739664 2563232 0 523124 5154740
 -/+ buffers/cache: 4061800 8241096
 Swap: 1052248 0 1052248
 ```
+
+1. [Linux Find Out Virtual Memory PAGESIZE][50]
+2. [Linux Limit CPU Usage Per Process][51]
+3. [How much RAM does my Ubuntu / Fedora Linux desktop PC have?][52]
+
 
 ### 7. iostat - Montor Linux average CPU load and disk activity
 
@@ -246,6 +261,10 @@ Linux 2.6.18-128.1.14.el5 (www03.nixcraft.in) 		06/26/2009
 06:45:32 PM all 3.53 0.00 0.25 0.03 0.00 96.19
 Average: all 2.02 0.00 0.27 0.01 0.00 97.70
 ```
+
++ [How to collect Linux system utilization data into a file][53]
++ [How To Create sar Graphs With kSar To Identifying Linux Bottlenecks][54]
+
 
 ### 9. mpstat - Monitor multiprocessor usage on Linux
 
@@ -331,6 +350,10 @@ Show all TCP sockets with process SELinux security contexts:
 `# ss -t -a -Z `
 See the following resources about ss and netstat commands:
 
++ [ss: Display Linux TCP / UDP Network and Socket Information][56]
++ [Get Detailed Information About Particular IP address Connections Using netstat Command][57]
+
+
 ### 13. iptraf - Get real-time network statistics on Linux
 
 iptraf command is interactive colorful IP LAN monitor. It is an ncurses-based IP LAN monitor that generates various network statistics including TCP info, UDP counts, ICMP and OSPF information, Ethernet load info, node stats, IP checksum errors, and others. It can provide the following info in easy to read format:
@@ -343,7 +366,11 @@ iptraf command is interactive colorful IP LAN monitor. It is an ncurses-based IP
 
 ![Fig.02: General interface statistics: IP traffic statistics by network interface ][9]
 
+Fig.02: General interface statistics: IP traffic statistics by network interface
+
 ![Fig.03 Network traffic statistics by TCP connection][10]
+
+Fig.03 Network traffic statistics by TCP connection
 
 [Install IPTraf on a Centos / RHEL / Fedora Linux To Get Network Statistics][11]
 
@@ -365,6 +392,7 @@ Use [wireshark to view detailed][12] information about files, enter:
 iotop command monitor, I/O usage information, using the Linux kernel. It shows a table of current I/O usage sorted by processes or threads on the server.
 `$ sudo iotop`
 Sample outputs:
+
 ![iotop monitoring linux disk read write IO][13]
 
 [Linux iotop: Check What's Stressing And Increasing Load On Your Hard Disks][14]
@@ -377,11 +405,18 @@ Sample outputs:
 
 ![htop process viewer for Linux][15]
 
+[CentOS / RHEL: Install htop An Interactive Text-mode Process Viewer][58]
+
+
 ### 17. atop - Advanced Linux system & process monitor
 
 atop is a very powerful and an interactive monitor to view the load on a Linux system. It displays the most critical hardware resources from a performance point of view. You can quickly see CPU, memory, disk and network performance. It shows which processes are responsible for the indicated load concerning CPU and memory load on a process level.
 `$ atop`
+
 ![atop Command Line Tools to Monitor Linux Performance][16]
+
+[CentOS / RHEL: Install atop (Advanced System & Process Monitor) Utility][59]
+
 
 ### 18. ac and lastcomm -
 
@@ -400,10 +435,12 @@ You must monitor process and login activity on your Linux server. The psacct or 
 
 Monit is a free and open source software that acts as process supervision. It comes with the ability to restart services which have failed. You can use Systemd, daemontools or any other such tool for the same purpose. [This tutorial shows how to install and configure monit as Process supervision on Debian or Ubuntu Linux][19].
 
+
 ### 20. nethogs- Find out PIDs that using most bandwidth on Linux
 
 NetHogs is a small but handy net top tool. It groups bandwidth by process name such as Firefox, wget and so on. If there is a sudden burst of network traffic, start NetHogs. You will see which PID is causing bandwidth surge.
 `$ sudo nethogs`
+
 ![nethogs linux monitoring tools open source][20]
 
 [Linux: See Bandwidth Usage Per Process With Nethogs Tool][21]
@@ -412,18 +449,26 @@ NetHogs is a small but handy net top tool. It groups bandwidth by process name s
 
 iftop command listens to network traffic on a given interface name such as eth0. [It displays a table of current bandwidth usage by pairs of host][22]s.
 `$ sudo iftop`
+
 ![iftop in action][23]
 
 ### 22. vnstat - A console-based network traffic monitor
 
 vnstat is easy to use console-based network traffic monitor for Linux. It keeps a log of hourly, daily and monthly network traffic for the selected interface(s).
 `$ vnstat `
+
 ![vnstat linux network traffic monitor][25]
+
++ [Keeping a Log Of Daily Network Traffic for ADSL or Dedicated Remote Linux Server][60]
++ [CentOS / RHEL: Install vnStat Network Traffic Monitor To Keep a Log Of Daily Traffic][61]
++ [CentOS / RHEL: View Vnstat Graphs Using PHP Web Interface Frontend][62]
+
 
 ### 23. nmon - Linux systems administrator, tuner, benchmark tool
 
 nmon is a Linux sysadmin's ultimate tool for the tunning purpose. It can show CPU, memory, network, disks, file systems, NFS, top process resources and partition information from the cli.
 `$ nmon`
+
 ![nmon command][26]
 
 [Install and Use nmon Tool To Monitor Linux Systems Performance][27]
@@ -432,6 +477,7 @@ nmon is a Linux sysadmin's ultimate tool for the tunning purpose. It can show CP
 
 glances is an open source cross-platform monitoring tool. It provides tons of information on the small screen. It can also work in client/server mode.
 `$ glances`
+
 ![Glances][28]
 
 [Linux: Keep An Eye On Your System With Glances Monitor][29]
@@ -464,6 +510,8 @@ KSysguard is a network enabled task and system monitor application for KDE deskt
 
 ![Fig.05 KDE System Guard][35]
 
+Fig.05 KDE System Guard {Image credit: Wikipedia}
+
 See [the KSysguard handbook][36] for detailed usage.
 
 ### 30. Gnome Linux system monitor
@@ -485,6 +533,8 @@ The System Monitor application enables you to display basic system information a
   * Lists all mounted filesystems along with basic information about each.
 
 ![Fig.06 The Gnome System Monitor application][37]
+
+Fig.06 The Gnome System Monitor application
 
 ### Bonus: Additional Tools
 
@@ -564,3 +614,15 @@ via: https://www.cyberciti.biz/tips/top-linux-monitoring-tools.html
 [45]:https://twitter.com/nixcraft
 [46]:https://facebook.com/nixcraft
 [47]:https://plus.google.com/+CybercitiBiz
+[50]:https://www.cyberciti.biz/faq/linux-check-the-size-of-pagesize/
+[51]:https://www.cyberciti.biz/faq/cpu-usage-limiter-for-linux/
+[52]:https://www.cyberciti.biz/tips/how-much-ram-does-my-linux-system.html
+[53]:https://www.cyberciti.biz/tips/howto-write-system-utilization-data-to-file.html
+[54]:https://www.cyberciti.biz/tips/identifying-linux-bottlenecks-sar-graphs-with-ksar.html
+[56]:https://www.cyberciti.biz/tips/linux-investigate-sockets-network-connections.html
+[57]:https://www.cyberciti.biz/tips/netstat-command-tutorial-examples.html
+[58]:https://www.cyberciti.biz/faq/centos-redhat-linux-install-htop-command-using-yum/
+[59]:https://www.cyberciti.biz/faq/centos-redhat-linux-install-atop-command-using-yum/
+[60]:https://www.cyberciti.biz/tips/linux-display-bandwidth-usage-on-network-interface-by-host.html
+[61]:https://www.cyberciti.biz/faq/centos-redhat-fedora-linux-install-vnstat-bandwidth-monitor/
+[62]:https://www.cyberciti.biz/faq/centos-redhat-fedora-linux-vnstat-php-webinterface-frontend-config/
