@@ -1,3 +1,4 @@
+Translating by qhwdw
 A beginner’s guide to Raspberry Pi 3
 ======
 ![](https://images.techhive.com/images/article/2017/03/raspberry2-100711632-large.jpeg)
