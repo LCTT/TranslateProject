@@ -1,103 +1,102 @@
-Translating by qhwdw
-A beginner’s guide to Raspberry Pi 3
+一个树莓派 3 的新手指南
 ======
 ![](https://images.techhive.com/images/article/2017/03/raspberry2-100711632-large.jpeg)
 
-This article is part of a weekly series where I'll create new projects using Raspberry Pi 3. The first article of the series focusses on getting you started and will cover the installation of Raspbian, with PIXEL desktop, setting up networking and some basics.
+这篇文章是我的使用树莓派 3 创建新项目的每周系列文章的一部分。该系列的第一篇文章专注于入门，它主要讲使用 PIXEL 桌面去安装树莓派、设置网络以及其它的基本组件。
 
-###  What you need:
+###  你需要：
 
-  * A Raspberry Pi 3
-  * A 5v 2mAh power supply with mini USB pin
-  * Micro SD card with at least 8GB capacity
-  * Wi-Fi or Ethernet cable
-  * Heat sink
-  * Keyboard and mouse
-  * a PC monitor
-  * A Mac or PC to prepare microSD card.
+  * 一台树莓派 3
+  * 一个 5v 2mAh 带 USB 接口的电源适配器
+  * 至少 8GB 容量的 Micro SD 卡
+  * Wi-Fi 或者以太网线
+  * 散热片
+  * 键盘和鼠标
+  * 一台 PC 显示器
+  * 一台用于准备 microSD 卡的 Mac 或者 PC
 
 
 
-There are many Linux-based operating systems available for Raspberry Pi that you can install directly, but if you're new to the Pi, I suggest NOOBS, the official OS installer for Raspberry Pi that simplifies the process of installing an OS on the device.
+现在市面上有很多基于 Linux 操作系统的树莓派，这种树莓派你可以直接安装它，但是，如果你是第一次接触树莓派，我推荐使用 NOOBS，它是树莓派官方的操作系统安装器，它安装操作系统到设备的过程非常简单。
 
-Download NOOBS from [this link][1] on your system. It's a compressed .zip file. If you're on MacOS, just double click on it and MacOS will automatically uncompress the files. If you are on Windows, right-click on it, and select "extract here."
+在你的电脑上从 [这个链接][1] 下载 NOOBS。它是一个 zip 压缩文件。如果你使用的是 MacOS，可以直接双击它，MacOS 会自动解压这个文件。如果你使用的是 Windows，右键单击它，选择“解压到这里”。
 
-If you're running desktop Linux, then how to unzip it really depends on the desktop environment you are running, as different DEs have different ways of doing the same thing. So the easiest way is to use the command line.
+如果你运行的是 Linux，如何去解压 zip 文件取决于你的桌面环境，因为，不同的桌面环境下解压文件的方法不一样，但是，使用命令行可以很容易地完成解压工作。
 
 `$ unzip NOOBS.zip`
 
-Irrespective of the operating system, open the unzipped file and check if the file structure looks like this:
+不管它是什么操作系统，打开解压后的文件，你看到的应该是如下图所示的样子：
 
 ![content][3] Swapnil Bhartiya
 
-Now plug the Micro SD card to your PC and format it to the FAT32 file system. On MacOS, use the Disk Utility tool and format the Micro SD card:
+现在，在你的 PC 上插入 Micro SD 卡，将它格式化成 FAT32 格式的文件系统。在 MacOS 上，使用磁盘实用工具去格式化 Micro SD 卡：
 
 ![format][4] Swapnil Bhartiya
 
-On Windows, just right click on the card and choose the formatting option. If you're on desktop Linux, different DEs use different tools, and covering all the DEs is beyond the scope of this story. I have written a tutorial [using the command line interface on Linux][5] to format an SD card with Fat32 file system.
+在 Windows 上，只需要右键单击这个卡，然后选择“格式化”选项。如果是在 Linux 上，不同的桌面环境使用不同的工具，就不一一去讲解了。在这里我写了一个教程，[在 Linux 上使用命令行接口][5] 去格式化 SD 卡为 Fat32 文件系统。
 
-Once you have the card formatted in the Fat32 partition, just copy the content of the downloaded NOOBS directory into the root directory of the device. If you are on MacOS or Linux, just rsync the content of NOOBS to the SD card. Open Terminal app in MacOS or Linux and run the rsync command in this format:
+在你拥有了 FAT32 格式的文件系统后，就可以去拷贝下载的 NOOBS 目录的内容到这个卡的根目录下。如果你使用的是 MacOS 或者 Linux，可以使用 rsync 将 NOOBS 的内容传到 SD 卡的根目录中。在 MacOS 或者 Linux 中打开终端应用，然后运行如下的 rsync 命令：
 
 `rsync -avzP /path_of_NOOBS /path_of_sdcard`
 
-Make sure to select the root directory of the sd card. In my case (on MacOS), it was:
+一定要确保选择了 SD 卡的根目录，在我的案例中（在 MacOS 上），它是：
 
 `rsync -avzP /Users/swapnil/Downloads/NOOBS_v2_2_0/ /Volumes/U/`
 
-Or you can copy and paste the content. Just make sure that all the files inside the NOOBS directory are copied into the root directory of the Micro SD Card and not inside any sub-directory.
+或者你也可以拷贝粘贴 NOOBS 目录中的内容。一定要确保将 NOOBS 目录中的内容全部拷贝到 Micro SD 卡的根目录下，千万不能放到任何的子目录中。
 
-Now plug the Micro SD Card into the Raspberry Pi 3, connect the monitor, the keyboard and power supply. If you do have wired network, I recommend using it as you will get faster download speed to download and install the base operating system. The device will boot into NOOBS that offers a couple of distributions to install. Choose Raspbian from the first option and follow the on-screen instructions.
+现在可以插入这张 Micro SD 卡到树莓派 3 中，连接好显示器、键盘鼠标和电源适配器。如果你拥有有线网络，我建议你使用它，因为有线网络下载和安装操作系统更快。树莓派将引导到 NOOBS，它将提供一个供你去选择安装的分发版列表。从第一个选项中选择树莓派，紧接着会出现如下图的画面。
 
 ![raspi config][6] Swapnil Bhartiya
 
-Once the installation is complete, Pi will reboot, and you will be greeted with Raspbian. Now it's time to configure it and run system updates. In most cases, we use Raspberry Pi in headless mode and manage it remotely over the networking using SSH. Which means you don't have to plug in a monitor or keyboard to manage your Pi.
+在你安装完成后，树莓派将重新启动，你将会看到一个欢迎使用树莓派的画面。现在可以去配置它，并且去运行系统更新。大多数情况下，我们都是在没有外设的情况下使用树莓派的，都是使用 SSH 基于网络远程去管理它。这意味着你不需要为了管理树莓派而去为它接上鼠标键盘和显示器。
 
-First of all, we need to configure the network if you are using Wi-Fi. Click on the network icon on the top panel, and select the network from the list and provide it with the password.
+开始使用它的第一步是，配置网络（假如你使用的是 Wi-Fi）。点击顶部面板上的网络图标，然后在出现的网络列表中，选择你要配置的网络并为它输入正确的密码。
 
 ![wireless][7] Swapnil Bhartiya
 
-Congrats, you are connected wirelessly. Before we proceed with the next step, we need to find the IP address of the device so we can manage it remotely.
+恭喜您，无线网络的连接配置完成了。在进入下一步的配置之前，你需要找到你的网络为树莓派分配的 IP 地址，因为远程管理会用到它。
 
-Open Terminal and run this command:
+打开一个终端，运行如下的命令：
 
 `ifconfig`
 
-Now, note down the IP address of the device in the wlan0 section. It should be listed as "inet addr."
+现在，记下这个设备的 wlan0 部分的 IP 地址。它一般显示为 “inet addr”
 
-Now it's time to enable SSH and configure the system. Open the terminal on Pi and open raspi-config tool.
+现在，可以去启用 SSH 了，在树莓派上打开一个终端，然后打开 raspi-config 工具。
 
 `sudo raspi-config`
 
-The default user and password for Raspberry Pi is "pi" and "raspberry" respectively. You'll need the password for the above command. The first option of Raspi Config tool is to change the default password, and I heavily recommend changing the password, especially if you want to use it over the network.
+树莓派的默认用户名和密码分别是 “pi” 和 “raspberry”。在上面的命令中你会被要求输入密码。树莓派配置工具的第一个选项是去修改默认密码，我强烈推荐你修改默认密码，尤其是你基于网络去使用它的时候。
 
-The second option is to change the hostname, which can be useful if you have more than one Pi on the network. A hostname makes it easier to identify each device on the network.
+第二个选项是去修改主机名，如果在你的网络中有多个树莓派时，主机名用于区分它们。一个有意义的主机名可以很容易在网络上识别每个设备。
 
-Then go to Interfacing Options and enable Camera, SSH, and VNC. If you're using the device for an application that involves multimedia, such as a home theater system or PC, then you may also want to change the audio output option. By default the output is set to HDMI, but if you're using external speakers, you need to change the set-up. Go to the Advanced Option tab of Raspi Config tool, and go to Audio. There choose 3.5mm as the default out.
+然后进入到接口选项，去启用摄像头、SSH、以及 VNC。如果你在树莓派上使用了一个涉及到多媒体的应用程序，比如，家庭影院系统或者 PC，你也可以去改变音频输出选项。缺省情况下，它的默认输出到 HDMI 接口，但是，如果你使用外部音响，你需要去改变音频输出设置。转到树莓派配置工具的高级配置选项，选择音频，然后选择 3.5mm 作为默认输出。
 
-[Tip: Use arrow keys to navigate and then Enter key to choose. ]
+[小提示：使用箭头键去导航，使用回车键去选择]
 
-Once all these changes are applied, the Pi will reboot. You can unplug the monitor and keyboard from your Pi as we will be managing it over the network. Now open Terminal on your local machine. If you're on Windows, you can use Putty or read my article to install Ubuntu Bash on Windows 10.
+一旦所有的改变被应用， 树莓派将要求重新启动。你可以从树莓派上拔出显示器、鼠标键盘，以后可以通过网络来管理它。现在可以在你的本地电脑上打开终端。如果你使用的是 Windows，你可以使用 Putty 或者去读我的文章 - 怎么在 Windows 10 上安装 Ubuntu Bash。
 
-Then ssh into your system:
+在你的本地电脑上输入如下的 SSH 命令：
 
 `ssh pi@IP_ADDRESS_OF_Pi`
 
-In my case it was:
+在我的电脑上，这个命令是这样的：
 
 `ssh pi@10.0.0.161`
 
-Provide it with the password and Eureka!, you are logged into your Pi and can now manage the device from a remote machine. If you want to manage your Raspberry Pi over the Internet, read my article on [enabling RealVNC on your machine][8].
+输入它的密码，你登入到树莓派了！现在你可以从一台远程电脑上去管理你的树莓派。如果你希望通过因特网去管理树莓派，可以去阅读我的文章 -   [如何在你的计算机上启用 RealVNC][8]。
 
-In the next follow-up article, I will talk about using Raspberry Pi to manage your 3D printer remotely.
+在该系列的下一篇文章中，我将讲解使用你的树莓派去远程管理你的 3D 打印机。
 
-**This article is published as part of the IDG Contributor Network.[Want to Join?][9]**
+**这篇文章是作为 IDG 投稿网络的一部分发表的。[想加入吗？][9]**
 
 --------------------------------------------------------------------------------
 
 via: https://www.infoworld.com/article/3176488/linux/a-beginner-s-guide-to-raspberry-pi-3.html
 
 作者：[Swapnil Bhartiya][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[qhwdw](https://github.com/qhwdw)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
