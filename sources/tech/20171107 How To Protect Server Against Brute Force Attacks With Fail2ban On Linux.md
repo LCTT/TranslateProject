@@ -1,5 +1,8 @@
+translating by Flowsnow
+
 How To Protect Server Against Brute Force Attacks With Fail2ban On Linux
 ======
+
 One of the important task for Linux administrator is to protect server against illegitimate attack or access. By default Linux system comes with well-configured firewall such as Iptables, Uncomplicated Firewall (UFW), ConfigServer Security Firewall (CSF), etc, which will prevent many kinds of attacks.
 
 Any machine which is connected to the internet is a potential target for malicious attacks. There is a tool called fail2ban is available to mitigate illegitimate access on server.
