@@ -1,6 +1,7 @@
 为小白准备的重要 Docker 命令说明
 ======
-在早先的教程中，我们学过了[在 RHEL\ CentOS 7 上安装 Docker 并创建 docker 容器 .][1] 在本教程中，我们会学习管理 docker 容器的其他命令。
+
+在早先的教程中，我们学过了[在 RHEL CentOS 7 上安装 Docker 并创建 docker 容器][1]。 在本教程中，我们会学习管理 docker 容器的其他命令。
 
 ### Docker 命令语法
 
@@ -61,7 +62,7 @@ volume  Manage Docker volumes
 wait  Block until a container stops, then print its exit code
 ```
 
-要进一步查看某个 command 支持的选项，运行
+要进一步查看某个命令支持的选项，运行：
 
 ```
 $ docker docker-subcommand info
@@ -77,7 +78,7 @@ $ docker docker-subcommand info
 $ docker run hello-world
 ```
 
-结果应该是，
+结果应该是：
 
 ```
 Hello from Docker.
@@ -95,17 +96,17 @@ This message shows that your installation appears to be working correctly.
 $ docker search Ubuntu
 ```
 
-我们应该会得到 age 可用的 Ubuntu 镜像的列表。记住，如果你想要的是官方的镜像，经检查 `official` 这一列上是否为 `[OK]`。
+我们应该会得到可用的 Ubuntu 镜像的列表。记住，如果你想要的是官方的镜像，请检查 `official` 这一列上是否为 `[OK]`。
 
 ### 下载镜像
 
-一旦搜索并找到了我们想要的镜像，我们可以运行下面语句来下载它，
+一旦搜索并找到了我们想要的镜像，我们可以运行下面语句来下载它：
 
 ```
 $ docker pull Ubuntu
 ```
 
-要查看所有已下载的镜像，运行
+要查看所有已下载的镜像，运行：
 
 ```
 $ docker images
@@ -113,17 +114,17 @@ $ docker images
 
 ### 运行容器
 
-使用已下载镜像来运行容器，使用下面命令
+使用已下载镜像来运行容器，使用下面命令：
 
 ```
 $ docker run -it Ubuntu
 ```
 
-这里，使用 '-it' 会打开一个 shell 与容器交互。容器启动并运行后，我们就可以像普通机器那样来使用它了，我们可以在容器中执行任何命令。
+这里，使用 `-it` 会打开一个 shell 与容器交互。容器启动并运行后，我们就可以像普通机器那样来使用它了，我们可以在容器中执行任何命令。
 
 ### 显示所有的 docker 容器
 
-要列出所有 docker 容器，运行
+要列出所有 docker 容器，运行：
 
 ```
 $ docker ps
@@ -133,7 +134,7 @@ $ docker ps
 
 ### 停止 docker 容器
 
-要停止 docker 容器，运行
+要停止 docker 容器，运行：
 
 ```
 $ docker stop container-id
@@ -141,7 +142,7 @@ $ docker stop container-id
 
 ### 从容器中退出
 
-要从容器中退出，执行
+要从容器中退出，执行：
 
 ```
 $ exit
@@ -149,25 +150,19 @@ $ exit
 
 ### 保存容器状态
 
-容器运行并更改后后(比如安装了 apache 服务器)，我们可以保存容器状态。这会在本地系统上保存新创建镜像。
+容器运行并更改后（比如安装了 apache 服务器），我们可以保存容器状态。这会在本地系统上保存新创建镜像。
 
-运行下面语句来提交并保存容器状态
+运行下面语句来提交并保存容器状态：
 
 ```
 $ docker commit 85475ef774 repository/image_name
 ```
 
-这里，**commit** 会保存容器状态
-
- **85475ef774**，是容器的容器 id，
-
- **repository**，通常为 docker hub 上的用户名 (或者新加的仓库名称)
-
- **image_name**，新镜像的名称
+这里，`commit` 命令会保存容器状态，`85475ef774`，是容器的容器 id，`repository`，通常为 docker hub 上的用户名 （或者新加的仓库名称）`image_name`，是新镜像的名称。
 
 我们还可以使用 `-m` 和 `-a` 来添加更多信息。通过 `-m`，我们可以留个信息说 apache 服务器已经安装好了，而 `-a` 可以添加作者名称。
 
- **像这样**
+像这样：
 
 ```
  docker commit -m "apache server installed"-a "Dan Daniels" 85475ef774 daniels_dan/Cent_container
@@ -182,7 +177,7 @@ via: http://linuxtechlab.com/important-docker-commands-beginners/
 
 作者：[Shusain][a]
 译者：[lujun9972](https://github.com/lujun9972)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
