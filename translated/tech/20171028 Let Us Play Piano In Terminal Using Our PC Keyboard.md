@@ -1,18 +1,17 @@
-translating by lujun9972
-Let Us Play Piano In Terminal Using Our PC Keyboard
+让我们使用 PC 键盘在终端演奏钢琴
 ======
-Feel bored at work? Come on guys, let us play Piano! Yeah, you read it right. Who needs a real Piano? We can now play or learn how to play Piano from command line using our PC keyboard. Meet **Piano-rs** - a simple utility, written in Rust programming language, that allows you to play the Piano in Terminal using PC keyboard. It is free, open source and licensed under MIT license. You can use it on any operating systems that supports Rust.
+厌倦了工作？那么来吧，让我们弹弹钢琴！是的，你没有看错。谁需要真的钢琴啊？我们可以用 PC 键盘在命令行下就能弹钢琴。向你们介绍一下 **Piano-rs** - 这是一款用 Rust 语言编写的，可以让你用 PC 键盘在终端弹钢琴的简单工具。它免费，开源，而且基于 MIT 协议。你可以在任何支持 Rust 的操作系统中使用它。
 
-### Piano-rs : Play Piano In Terminal Using Our PC Keyboard
+### Piano-rs：使用 PC 键盘在终端弹钢琴
 
-#### Installation
+#### 安装
 
-Make sure your system have Rust programming language installed. If you haven't installed Rust already, run the following command to install it.
+确保系统已经安装了 Rust 编程语言。若还未安装，运行下面命令来安装它。
 ```
 curl https://sh.rustup.rs -sSf | sh
 ```
 
-The installer will ask whether you want to proceed the installation with default values or customize the installation or cancel the installation. I want to install it with default values, so I typed **1** (Number one).
+安装程序会问你是否默认安装还是自定义安装还是取消安装。我希望默认安装，因此输入 **1** (数字一)。
 ```
 info: downloading installer
 
@@ -73,47 +72,47 @@ environment variable. Next time you log in this will be done automatically.
 To configure your current shell run source $HOME/.cargo/env
 ```
 
-Log out or reboot your system to get updated the cargo's bin directory in your PATH variable.
+登出然后重启系统来将 cargo 的 bin 目录纳入 PATH 变量中。
 
-Verify if Rust has been properly installed or not:
+校验 Rust 是否正确安装：
 ```
 $ rustc --version
 rustc 1.21.0 (3b72af97e 2017-10-09)
 ```
 
-Great! Rust is installed successfully. It is time build piano-rs application.
+太棒了！Rust 成功安装了。是时候构建 piano-rs 应用了。
 
-Git clone the Piano-rs repository using the following command:
+使用下面命令克隆 Piano-rs 仓库：
 ```
 git clone https://github.com/ritiek/piano-rs
 ```
 
-The above command will create a directory called "piano-rs" in the current working directory and download all contents in it. Change to that directory:
+上面命令会在当前工作目录创建一个名为 "piano-rs" 的目录并下载所有内容到其中。进入该目录：
 ```
 cd piano-rs
 ```
 
-Finally, run the following command to build Piano-rs:
+最后，运行下面命令来构建 Piano-rs：
 ```
 cargo build --release
 ```
 
-The compiling process will take a while.
+编译过程要花上一阵子。
 
 #### Usage
 
-Once the compilation process finished, run the following command from **piano-rs** directory:
+编译完成后，在 **piano-rs** 目录中运行下面命令：
 ```
 ./target/release/piano-rs
 ```
 
-Here is our Piano keyboard in Terminal! It is time play some notes. Press the keys to play the notes. Use **LEFT/RIGHT** arrow keys to adjust note frequency while playing. And, use **UP/Down** arrows to adjust note duration while playing.
+这就我们在终端上的钢琴键盘了！可以开始弹指一些音符了。按下按键可以弹奏相应音符。使用 **左/右** 方向键可以在弹奏时调整音频。而，使用 **上/下** 方向键可以在弹奏时调整音长。
 
 [![][1]][2]
 
-Piano-rs uses the same notes and key bindings as [**multiplayerpiano.com**][3]. Alternatively, use [**these notes**][4] to learn to play various popular songs.
+Piano-rs 使用与 [**multiplayerpiano.com**][3] 一样的音符和按键。另外，你可以使用[**这些音符 **][4] 来学习弹指各种流行歌曲。
 
-To view the help section. type:
+要查看帮助。输入：
 ```
 $ ./target/release/piano-rs -h
 ```
@@ -135,11 +134,11 @@ OPTIONS:
  -s, --sequence <SEQUENCE> Frequency sequence from 0 to 5 to begin with (Default: 2)
 ```
 
-I must admit that it is a super cool project. For those who couldn't afford to buy a Piano, use this application.
+我必须承认这是个超级酷的项目。对于那些买不起钢琴的人，很推荐使用这款应用。
 
-Have fun and happy weekend!!
+祝你周末愉快！！
 
-Cheers!
+此致敬礼！
 
 
 
