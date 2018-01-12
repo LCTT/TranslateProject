@@ -1,3 +1,6 @@
+translating---geekpi
+
+
 Working with Vi/Vim Editor : Advanced concepts
 ======
 Earlier we have discussed some basics about VI/VIM editor but VI & VIM are both very powerful editors and there are many other functionalities that can be used with these editors. In this tutorial, we are going to learn some advanced uses of VI/VIM editor.
