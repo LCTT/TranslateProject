@@ -1,3 +1,4 @@
+translating by cy
 Linux Free Command Explained for Beginners (6 Examples)
 ======
 
