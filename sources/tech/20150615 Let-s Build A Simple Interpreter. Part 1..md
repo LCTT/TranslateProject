@@ -1,3 +1,4 @@
+// Translating by Linchenguang
 Let’s Build A Simple Interpreter. Part 1.
 ======
 
