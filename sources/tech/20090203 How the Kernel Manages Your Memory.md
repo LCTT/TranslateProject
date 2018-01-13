@@ -1,65 +1,65 @@
-How the Kernel Manages Your Memory
+内核如何管理你的内存
 ============================================================
 
 
-After examining the [virtual address layout][1] of a process, we turn to the kernel and its mechanisms for managing user memory. Here is gonzo again:
+当我们看完了进程的[虚拟内存地址分布][1]之后，我们将方向转向内核，以及它管理用户内存的机制，这里我们仍然以 gonzo 为例：
 
 ![Linux kernel mm_struct](http://static.duartes.org/img/blogPosts/mm_struct.png)
 
-Linux processes are implemented in the kernel as instances of [task_struct][2], the process descriptor. The [mm][3] field in task_struct points to the memory descriptor, [mm_struct][4], which is an executive summary of a program’s memory. It stores the start and end of memory segments as shown above, the [number][5] of physical memory pages used by the process (rss stands for Resident Set Size), the [amount][6] of virtual address space used, and other tidbits. Within the memory descriptor we also find the two work horses for managing program memory: the set of virtual memory areas and the page tables. Gonzo’s memory areas are shown below:
+在内核中的实现的 Linux 进程是一个 [task_struct][2] 实例，是一个进程描述符。在 task_struct 中有一个 [mm][3] 域指向了一个内存描述符，[mm_struct][4] ，这是程序运行过程中的一个内存概览。如上图所示，它保存了内存段的开始和结束地址，进程使用物理内存页的[数量][5]，(rss 指的是 Resident Set Size)，使用的虚拟地址空间的[数量][6]，以及一些其他的琐碎的东西，在内存描述符里，我们看到了两个用于主要用于管理程序内存的结构：虚拟内存区域和页表。Ｇonzo 的内存区域如下所示：
 
 ![Kernel memory descriptor and memory areas](http://static.duartes.org/img/blogPosts/memoryDescriptorAndMemoryAreas.png)
 
-Each virtual memory area (VMA) is a contiguous range of virtual addresses; these areas never overlap. An instance of [vm_area_struct][7] fully describes a memory area, including its start and end addresses, [flags][8] to determine access rights and behaviors, and the [vm_file][9] field to specify which file is being mapped by the area, if any. A VMA that does not map a file is anonymous. Each memory segment above ( _e.g._ , heap, stack) corresponds to a single VMA, with the exception of the memory mapping segment. This is not a requirement, though it is usual in x86 machines. VMAs do not care which segment they are in.
+每一个虚拟内存区域都是一段连续的虚拟地址，这些内存区域不会重叠，[vm_area_struct][7] 能够完全描述一个内存区域，包括它的起始地址和结束地址，[flag][8] 决定了这个内存区域的访问权限和它的行为，如果有文件被映射的话 ，[vm_file][9] 指出了哪一个文件被映射到这个内存区域，虚拟内存区域不会映射匿名的文件，在上面的每一个内存段 (例如，堆，栈) 都对应一个单独的虚拟内存区域，除了内存映射段，这不是必须的，虽然这在 X86 机器上很常见。虚拟内存区域并不关心它们在哪一个段中。
 
-A program’s VMAs are stored in its memory descriptor both as a linked list in the [mmap][10] field, ordered by starting virtual address, and as a [red-black tree][11] rooted at the [mm_rb][12] field. The red-black tree allows the kernel to search quickly for the memory area covering a given virtual address. When you read file `/proc/pid_of_process/maps`, the kernel is simply going through the linked list of VMAs for the process and [printing each one][13].
+一个程序的 VMA 存储在它的内存描述符中，作为 [mmap][10] 字段中的一个链接列表，通过开始虚拟地址排序，以及以 [mm_rb][12] 字段为根的[红黑树][11]。红黑树允许内核能够快速的查找内存区域覆盖的虚拟内存地址，当你要读位于 `/proc/pid_of_process/maps` 的文件时,内核就会简单地通过查找进程的虚拟内存区域链表然后[打印出来][13]．
 
-In Windows, the [EPROCESS][14] block is roughly a mix of task_struct and mm_struct. The Windows analog to a VMA is the Virtual Address Descriptor, or [VAD][15]; they are stored in an [AVL tree][16]. You know what the funniest thing about Windows and Linux is? It’s the little differences.
+在 Windows 系统中，[EPROCESS][14] 块大致上是 task_struct 和 mm_struct 的组合体，在 Windows 系统中类似于 VMA 的是虚拟地址描述符，即 [VAD][15] ;它们被存储在平衡 [AVL tree][16] 中，你知道 Windows 和 Linux 最有趣的地方是什么吗？那就是它们几乎没什么不同。
 
-The 4GB virtual address space is divided into pages. x86 processors in 32-bit mode support page sizes of 4KB, 2MB, and 4MB. Both Linux and Windows map the user portion of the virtual address space using 4KB pages. Bytes 0-4095 fall in page 0, bytes 4096-8191 fall in page 1, and so on. The size of a VMA  _must be a multiple of page size_ . Here’s 3GB of user space in 4KB pages:
+4 GB 虚拟地址空间被分成许多页，X86 处理器在 32-bit 模式下支持的页面大小有 4 KB ， 2 MB 和 4 MB。Linux 和 Windows 系统都是将用户虚拟地址空间划分为 4 KB 大小的页面，字节 0-4095 在第 0 页上，字节4096-8191 在第 1 页上，以此类推。虚拟地址区域的大小必须是页面大小的整数倍，下图是一个 4 KB 页面组成的 3 GB 大小的用户空间。
 
 ![4KB Pages Virtual User Space](http://static.duartes.org/img/blogPosts/pagedVirtualSpace.png)
 
-The processor consults page tables to translate a virtual address into a physical memory address. Each process has its own set of page tables; whenever a process switch occurs, page tables for user space are switched as well. Linux stores a pointer to a process’ page tables in the [pgd][17] field of the memory descriptor. To each virtual page there corresponds one page table entry (PTE) in the page tables, which in regular x86 paging is a simple 4-byte record shown below:
+处理器通过查询页表来将虚拟地址转化成内存物理地址，每一个进程都有它自身的一个页表；当发生进程切换时，用户空间的页表也随之被切换。Linux 系统保存了一个指向在内存描述符中的 [pgd][17] 域中的一个进程页表的指针。对于每一个虚拟页都对应于页表中的一个表项( PTE ) ，在 X86 中，它是一个如下所示的 4 字节的记录：
 
 ![x86 Page Table Entry (PTE) for 4KB page](http://static.duartes.org/img/blogPosts/x86PageTableEntry4KB.png)
 
-Linux has functions to [read][18] and [set][19] each flag in a PTE. Bit P tells the processor whether the virtual page is present in physical memory. If clear (equal to 0), accessing the page triggers a page fault. Keep in mind that when this bit is zero, the kernel can do whatever it pleases with the remaining fields. The R/W flag stands for read/write; if clear, the page is read-only. Flag U/S stands for user/supervisor; if clear, then the page can only be accessed by the kernel. These flags are used to implement the read-only memory and protected kernel space we saw before.
+Linux 具有[读取][18]和[设置][19] PTE 中每一个标志位的功能。位 P 告诉处理器虚拟页是否存在于物理内存中，如果是 0 的话，将会触发一个页错误，记住，当这个位为 0 的时候，内核可以对记录中剩余的字段为所欲为。位 R/W 指示读写的权限，如果该位为 0 ,则这个页面只能读取。位 U/S 指明用户状态/内核状态；如果该位是 0 的话，那么这个页面只能被内核读取，这个标志主要用于实现内存只读以保护我们前面所见的内核空间。
 
-Bits D and A are for dirty and accessed. A dirty page has had a write, while an accessed page has had a write or read. Both flags are sticky: the processor only sets them, they must be cleared by the kernel. Finally, the PTE stores the starting physical address that corresponds to this page, aligned to 4KB. This naive-looking field is the source of some pain, for it limits addressable physical memory to [4 GB][20]. The other PTE fields are for another day, as is Physical Address Extension.
+位 D 和 A 为脏位和读取位，一个脏页已经被写入新的数据，当一个可以读取的页被写或读，两个标志都会被置位：处理器仅仅置位它们，它们只能被内核置 ０ ,最后，PTE 存储了这个虚拟地址页所对应的物理内存的起始地址，以 4 KB 对齐，这种原始的字段记录是麻烦的来源，因为它限制了可寻址的物理内存空间最大为 [4 GB][20]，其它的 PTE 字段我们将会在另外一天进行讲述，包括物理地址扩展也在另一天讲述。
 
-A virtual page is the unit of memory protection because all of its bytes share the U/S and R/W flags. However, the same physical memory could be mapped by different pages, possibly with different protection flags. Notice that execute permissions are nowhere to be seen in the PTE. This is why classic x86 paging allows code on the stack to be executed, making it easier to exploit stack buffer overflows (it’s still possible to exploit non-executable stacks using [return-to-libc][21] and other techniques). This lack of a PTE no-execute flag illustrates a broader fact: permission flags in a VMA may or may not translate cleanly into hardware protection. The kernel does what it can, but ultimately the architecture limits what is possible.
+ 一个虚拟页是内存保护的基本单元，因为页中的所有字节都共享 PTE 中的 U/S 和 R/W 字段，然而，相同的物理内存可能被映射到不同的页上，页可能具有不同的保护标志，请注意，可执行权限在 PTE 中是看不到的。这也就是为什么在 X86 的分页中允许执行在栈内的代码，这使得利用栈缓冲溢出更加的容易(也可能使用 [return-to-libc][21] 来利用不可执行的栈和一些其他的技术)。PTE 缺少不可执行的标志说明了一个更加广泛的事实：在虚拟内存区域中的权限标志可能会可能不会干净利索地被硬件保护理解。内核做它能做的，但最终架构限制了它的可能性。
 
-Virtual memory doesn’t store anything, it simply  _maps_  a program’s address space onto the underlying physical memory, which is accessed by the processor as a large block called the physical address space. While memory operations on the bus are [somewhat involved][22], we can ignore that here and assume that physical addresses range from zero to the top of available memory in one-byte increments. This physical address space is broken down by the kernel into page frames. The processor doesn’t know or care about frames, yet they are crucial to the kernel because the page frame is the unit of physical memory management. Both Linux and Windows use 4KB page frames in 32-bit mode; here is an example of a machine with 2GB of RAM:
+虚拟内存并不存储任何东西，它仅仅是将程序的地址空间映射到底层的物理内存上。处理器通过一个大的块通常叫做物理地址空间来访问它。尽管在总线上会稍微的涉及一点内存操作，在这里我们忽视它而且假定物理地址空间的范围是按字节增长的从 0 到可以读取内存空间的最大值。物理内存空间被内核划分成了许多的页框，处理器并不知道也并不关心页框，然而他们对于内核是至关重要的，因为页框是物理内存管理的基本单元。Linux 和 Windows 系统在 32-bit 模式下使用的都是 4 KB 的页框。下图是一个 2 GB RAM 机器的例子：
 
 ![Physical Address Space](http://static.duartes.org/img/blogPosts/physicalAddressSpace.png)
 
-In Linux each page frame is tracked by a [descriptor][23] and [several flags][24]. Together these descriptors track the entire physical memory in the computer; the precise state of each page frame is always known. Physical memory is managed with the [buddy memory allocation][25]technique, hence a page frame is free if it’s available for allocation via the buddy system. An allocated page frame might be anonymous, holding program data, or it might be in the page cache, holding data stored in a file or block device. There are other exotic page frame uses, but leave them alone for now. Windows has an analogous Page Frame Number (PFN) database to track physical memory.
+在 Linux 中，每一个页框都被一个[描述符][23]和若干[标志][24]所追踪。所有的这些描述符跟踪了计算机的全部物理内存；每一个页框的精确状态就能够被了解，物理内存是通过[buddy memory allocation][25] 技术来管理的，因此，对于 buddy 系统来说可以分配的页框都是空闲的。一个分配的页框可能是匿名的，保存程序的数据，或者可能在页缓存中，保存着文件中或块设备中的数据。这里还有一些另外的页框使用情况，但我们现在不谈他们。Windows 具有类似的页框号( PFN )来跟踪物理内存。
 
-Let’s put together virtual memory areas, page table entries and page frames to understand how this all works. Below is an example of a user heap:
+现在，我们将虚拟内存，页表以及页框放在一起来理解它们是如何工作的，下图是一个用户堆的例子：
 
 ![Physical Address Space](http://static.duartes.org/img/blogPosts/heapMapped.png)
 
-Blue rectangles represent pages in the VMA range, while arrows represent page table entries mapping pages onto page frames. Some virtual pages lack arrows; this means their corresponding PTEs have the Present flag clear. This could be because the pages have never been touched or because their contents have been swapped out. In either case access to these pages will lead to page faults, even though they are within the VMA. It may seem strange for the VMA and the page tables to disagree, yet this often happens.
+蓝色的矩形框代表的是在虚拟内存中的页，而箭头所表示的是页面映射到页框的页表项。一些虚拟页没有箭头，这就表示它们相对应的 PTEs 中的存在位是 0 ，这可能是因为这个页从未被使用或者这个页被换出。无论在哪种情况下都会导致页错误，即使是他们存在于虚拟内存中。对于虚拟内存来说这看起来有点奇怪，而且与页表不统一，但这的确经常发生。
 
-A VMA is like a contract between your program and the kernel. You ask for something to be done (memory allocated, a file mapped, etc.), the kernel says “sure”, and it creates or updates the appropriate VMA. But  _it does not_  actually honor the request right away, it waits until a page fault happens to do real work. The kernel is a lazy, deceitful sack of scum; this is the fundamental principle of virtual memory. It applies in most situations, some familiar and some surprising, but the rule is that VMAs record what has been  _agreed upon_ , while PTEs reflect what has  _actually been done_  by the lazy kernel. These two data structures together manage a program’s memory; both play a role in resolving page faults, freeing memory, swapping memory out, and so on. Let’s take the simple case of memory allocation:
+虚拟内存就像是一个介于程序和内核之间的联系表。你请求做一些事情 (内存分配，文件映射等) ，内核回应可以，然后它合理的创建或者更新了虚拟内存。但是，它并不是立即回应这些请求，它要一直等到发生页错误的时候。内核是懒惰和欺诈的，这是虚拟内存的基本原理。它适用于大部分情况，一些比较熟悉，一些令人惊喜。
 
 ![Example of demand paging and memory allocation](http://static.duartes.org/img/blogPosts/heapAllocation.png)
 
-When the program asks for more memory via the [brk()][26] system call, the kernel simply [updates][27]the heap VMA and calls it good. No page frames are actually allocated at this point and the new pages are not present in physical memory. Once the program tries to access the pages, the processor page faults and [do_page_fault()][28] is called. It [searches][29] for the VMA covering the faulted virtual address using [find_vma()][30]. If found, the permissions on the VMA are also checked against the attempted access (read or write). If there’s no suitable VMA, no contract covers the attempted memory access and the process is punished by Segmentation Fault.
+当一个程序通过系统调用 [brk()][26] 请求更多的内存时，内核仅仅是简单的 [更新][27]堆虚拟内存然后完成操作．这时并没有实际进行页框分配而且也没有新的页出现在物理内存中．一旦程序尝试访问页面，就会出现页错误然后 [do_page_fault()][28] 函数被调用．它通过使用 [find_vma()][30] 函数在虚拟内存中开始[查找][29]出错的地址，如果找到，核对访问( 读或写 )的权限，如果没有找到，在联系表中没有要尝试访问的内存，进程就会抛出一个段错误．
 
-When a VMA is [found][31] the kernel must [handle][32] the fault by looking at the PTE contents and the type of VMA. In our case, the PTE shows the page is [not present][33]. In fact, our PTE is completely blank (all zeros), which in Linux means the virtual page has never been mapped. Since this is an anonymous VMA, we have a purely RAM affair that must be handled by [do_anonymous_page()][34], which allocates a page frame and makes a PTE to map the faulted virtual page onto the freshly allocated frame.
+当一个虚拟内存区域发现内核必须通过查看 PTE 的内容以及虚拟内存区域的类型来处理这个错误．在我们这个例子中， PTE 显示这个页并不存在，事实上，我们的 PTE 是完全空白的(全部是 0 )，在 Linux 中，这意味着虚拟页从没有被映射，因为这一一个匿名的虚拟内存区域．我们有一个纯净的内存事务必须要使用 [do_anonymous_page()][34] 函数来处理，这会分配一个页框，然后修改 PTE 使发生错误的页映射到新分配的页框中．
 
-Things could have been different. The PTE for a swapped out page, for example, has 0 in the Present flag but is not blank. Instead, it stores the swap location holding the page contents, which must be read from disk and loaded into a page frame by [do_swap_page()][35] in what is called a [major fault][36].
+对于换出的页的 PTE，事情可能会有所不同．例如，在它的 P 位显示是 0 ，但它并不是空白的页．相反，它记录了存储页内容的交换位置，一定要通过 [do_swap_page()][35] 函数来从磁盘中读取然后装入页框中，这称为主错误．
 
-This concludes the first half of our tour through the kernel’s user memory management. In the next post, we’ll throw files into the mix to build a complete picture of memory fundamentals, including consequences for performance.
+ 我们通过内核对用户内存的管理结束了我们的前半部分。在下一篇文章中，我们将把文件扔到混合体中，构建一个完整的内存基础，包括对性能的影响。
 
 --------------------------------------------------------------------------------
 
 via: http://duartes.org/gustavo/blog/post/how-the-kernel-manages-your-memory/
 
 作者：[Gustavo Duarte][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/amwps290)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
