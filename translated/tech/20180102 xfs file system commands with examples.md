@@ -4,11 +4,11 @@ xfs file system commands with examples
 
 ![Learn xfs commands with examples][1]
 
-In our another article we walked you through [what is xfs, features of xfs etc][2]. In this article we will see some frequently used xfs administrative commands. We will see how to create xfs filesystem, how to grow xfs filesystem, how to repair xfs file system and check xfs filesystem along with command examples.
+在我们另一篇文章中，我带您领略了一下[什么事 xfs，xfs 的相关特性等内容 ][2]。本文我们来看一些常用的 xfs 管理命令。我们将会通过几个例子来讲解如何创建 xfs 文件系统，如何对 xfs 文件系统进行扩容，如何检测并修复 xfs 文件系统。
 
-### Create XFS filesystem
+### 创建 XFS 文件系统
 
-`mkfs.xfs` command is used to create xfs filesystem. Without any special switches command output looks like one below -
+`mkfs.xfs` 命令用来创建 xfs 文件系统。无需任何特别的参数，其输出如下：
 ```
 root@kerneltalks # mkfs.xfs /dev/xvdf
 meta-data=/dev/xvdf              isize=512    agcount=4, agsize=1310720 blks
@@ -22,11 +22,11 @@ log      =internal log           bsize=4096   blocks=2560, version=2
 realtime =none                   extsz=4096   blocks=0, rtextents=0
 ```
 
-> Note : Once XFS filesystem is created it can not be reduced. It can only be extended to bigger size.
+> 注意：一旦 XFS 文件系统创建完毕就不能在缩容而只能进行扩容了。
 
-### Resize XFS file system
+### 调整 XFS 文件系统容量
 
-In XFS, you can only extend file system and can not reduce it. To grow XFS file system use `xfs_growfs`. You need to specify new size of mount point along with `-D` switch. `-D` takes argument number as file system blocks. If you dont supply `-D` switch, `xfs_growfs` will grow filesystem to maximum available limit on that device.
+你职能对 XFS 进行扩容而不能缩容。我们使用 `xfs_growfs` 来进行扩容。你需要使用 `-D` 参数指定挂载点的新容量。`-D` 接受一个数字的参数，指定文件系统块的数量。若你没有提供 `-D` 参数，则 `xfs_growfs` 会将文件系统扩到最大。
 
 ```
 root@kerneltalks # xfs_growfs /dev/xvdf -D 256
@@ -42,7 +42,7 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 data size 256 too small, old size is 2883584
 ```
 
-In above output, observe last line. Since I supplied new size smaller than the existing size, `xfs_growfs`didnt change filesystem. This show you can not reduce XFS file system. You can only extend it.
+观察上面的输出中的最后一行。由于我分配的容量要小于现在的容量。它告诉你不能缩减 XFS 文件系统。你只能对他进行扩展。
 
 ```
 root@kerneltalks #  xfs_growfs /dev/xvdf -D 2883840
@@ -58,17 +58,17 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 data blocks changed from 2883584 to 2883840
 ```
 
-Now, I supplied new size 1GB extra and it successfully grew the file system.
+现在我多分配了 1GB 的空间，而且也成功地扩增了容量。
 
- **1GB blocks calculation :**
+ **1GB 块的计算方式：**
 
-Current filesystem has bsize=4096 i.e. block size of 4MB. We need 1 GB i.e. 256 blocks. So add 256 in current number of blocks i.e. 2883584 which gives you 2883840\. So I used 2883840 as argument to `-D` switch.
+当前文件系统 bsize 为 4096，意思是块的大小为 4MB。我们需要 1GB，也就是 256 个块。因此在当前块数，2883584 上加上 256 得到 2883840。因此我为 `-D` 传递参数 2883840。
 
-### Repair XFS file system
+### 修复 XFS 文件系统
 
-File system consistency check and repair of XFS can be performed using `xfs_repair` command. You can run command with `-n` switch so that it will not modify anything on filesystem. It will only scans and reports which modification to be done. If you are running it without -n switch, it will modify file system wherever necessary to make it clean.
+可以使用 `xfs_repair` 命令进行文件系统一致性检查和修复。使用 `-n` 参数则并不对文件系统做出什么实质性的修改。它只会搜索并报告要做哪些修改。若不带 `-n` 参数，则会修改文件系统以保证文件系统的纯净。
 
-Please note that you need to un-mount XFS filesystem before you can run checks on it. Otherwise you will see below error.
+请注意，在检查之前，你需要先卸载 XFS 文件系统。否则会报错。
 
 ```
 root@kerneltalks # xfs_repair -n /dev/xvdf
@@ -77,7 +77,7 @@ xfs_repair: /dev/xvdf contains a mounted and writable filesystem
  
 fatal error -- couldn't initialize XFS library
 ```
-Once successfully un-mounting file system you can run command on it.
+卸载后运行检查命令。
 ```
 root@kerneltalks # xfs_repair -n /dev/xvdf
 Phase 1 - find and verify superblock...
@@ -111,11 +111,7 @@ Phase 7 - verify link counts...
 No modify flag set, skipping filesystem flush and exiting.
 ```
 
-In above output you can observe, in each phase command shows possible modification which can be done to make file system healthy. If you want command to do those modification during scan then run command without any switch.
-
-```
-xfs_repair output
-```
+你可以看到，命令在每个阶段都显示出了为了文件系统变得健康可能做出的修改。若你希望命令在扫描时实际应用这些修改，则不带任何参数运行命令即可。
 
 ```
 root @ kerneltalks # xfs_repair /dev/xvdf
@@ -153,18 +149,18 @@ Phase 7 - verify and correct link counts . . .
 done
 ```
 
-In above output you can observer `xfs_repair` command is executing possible filesystem modification as well to make it healthy.
+你会发现 `xfs_repair` 命令对文件系统做出了修改让其变得健康。
 
-### Check XFS version and details
+### 查看 XFS 版本以及它的详细信息
 
-Checking xfs file system version is easy. Run `xfs_info` command with `-V` switch on mount point.
+查看 xfs 文件系统版本很简单。使用 `-V` 参数运行 `xfs_info` 再加上挂载点就行了。
 
 ```
 root@kerneltalks # xfs_info -V /shrikant
 xfs_info version 4.5.0
 ```
 
-To view details of XFS file system like block size and number of blocks which helps you in calculating new block number for growing XFS file system, use `xfs_info` without any switch.
+若要查看 XFS 文件系统的详细信息，比如想计算扩容 XFS 文件系统时要新增多少个块，需要了解块大小，块的个数等信息，则不带任何选项运行 `xfs_info` 加上挂载点。
 
 ```
 root@kerneltalks # xfs_info /shrikant
@@ -179,9 +175,9 @@ log      =internal               bsize=4096   blocks=2560, version=2
 realtime =none                   extsz=4096   blocks=0, rtextents=0
 ```
 
-It displays all details as it shows while creating XFS file system
+则会显示 XFS 文件系统的所有详细信息，就跟创建 XFS 文件系统时显示的信息一样。
 
-There are another XFS file system management commands which alters and manages its metadata. We will cover them in another article.
+此外还有一些 XFS 文件系统管理命令可以修改并管理 XFS 的元数据。我们将在另一篇文章中来讲解。
 
 --------------------------------------------------------------------------------
 
