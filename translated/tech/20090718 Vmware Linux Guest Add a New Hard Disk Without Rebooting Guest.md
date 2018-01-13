@@ -1,43 +1,41 @@
 在不重启的情况下为 Vmware Linux 客户机添加新硬盘
 ======
 
-作为一名系统管理员，我经常需要用额外的硬盘来扩充存储空间或将系统数据从用户数据中分离出来。将物理块设备加到虚拟主机的这个过程，告诉你如何将一个块主机上的硬盘加到一台使用 VMWare 软件虚拟化的 Linux 客户机上。
+作为一名系统管理员，我经常需要用额外的硬盘来扩充存储空间或将系统数据从用户数据中分离出来。我将告诉你在将物理块设备加到虚拟主机的这个过程中，如何将一个主机上的硬盘加到一台使用 VMWare 软件虚拟化的 Linux 客户机上。
 
-你可以显式的添加或删除一个 SCSI 设备，或者重新扫描整个 SCSI 总线而不用重启 Linux 虚拟机。本指南在 Vmware Server 和 Vmware Workstation v6.0 中通过测试(更老版本应该也支持)。所有命令在 RHEL，Fedora，CentOS 和 Ubuntu Linux 客户机 / 主机操作系统下都经过了测试。
+你可以显式的添加或删除一个 SCSI 设备，或者重新扫描整个 SCSI 总线而不用重启 Linux 虚拟机。本指南在 Vmware Server 和 Vmware Workstation v6.0 中通过测试（更老版本应该也支持）。所有命令在 RHEL、Fedora、CentOS 和 Ubuntu Linux 客户机 / 主机操作系统下都经过了测试。
 
+### 步骤 1：添加新硬盘到虚拟客户机
 
-## 步骤 # 1：添加新硬盘到虚拟客户机
-
-首先，通过 vmware 硬件设置菜单添加硬盘。
-点击 VM > Settings
+首先，通过 vmware 硬件设置菜单添加硬盘。点击 “VM > Settings”
 
 ![Fig.01：Vmware Virtual Machine Settings ][1]
 
-或者你也可以按下 CTRL + D 也能进入设置对话框。
+或者你也可以按下 `CTRL + D` 也能进入设置对话框。
 
-点击 Add+ 添加新硬盘到客户机：
+点击 “Add” 添加新硬盘到客户机：
 
 ![Fig.02：VMWare adding a new hardware][2]
 
-选择硬件类型为 Hard disk 然后点击 Next
+选择硬件类型为“Hard disk”然后点击 “Next”：
 
 ![Fig.03 VMware Adding a new disk wizard ][3]
 
-选择 `create a new virtual disk` 然后点击 Next
+选择 “create a new virtual disk” 然后点击 “Next”：
 
 ![Fig.04：Vmware Wizard Disk ][4]
 
-设置虚拟磁盘类型为 SCSI 然后点击 Next
+设置虚拟磁盘类型为 “SCSI” ，然后点击 “Next”：
 
 ![Fig.05：Vmware Virtual Disk][5]
 
-按需要设置最大磁盘大小，然后点击 Next
+按需要设置最大磁盘大小，然后点击 “Next”
 
 ![Fig.06：Finalizing Disk Virtual Addition ][6]
 
-最后，选择文件存放位置然后点击 Finish。
+最后，选择文件存放位置然后点击 “Finish”。
 
-## 步骤 # 2：重新扫描 SCSI 总线，在不重启虚拟机的情况下添加 SCSI 设备
+### 步骤 2：重新扫描 SCSI 总线，在不重启虚拟机的情况下添加 SCSI 设备
 
 输入下面命令重新扫描 SCSI 总线：
 
@@ -51,7 +49,7 @@ tail -f /var/log/message
 
 ![Linux Vmware Rescan New Scsi Disk Without Reboot][7]
 
-你需要将 `host#` 替换成真实的值，比如 host0。你可以通过下面命令来查出这个值：
+你需要将 `host#` 替换成真实的值，比如 `host0`。你可以通过下面命令来查出这个值：
 
 `# ls /sys/class/scsi_host`
 
@@ -108,7 +106,7 @@ Jul 18 16:29:39 localhost kernel: sd 0:0:2:0: Attached scsi disk sdc
 Jul 18 16:29:39 localhost kernel: sd 0:0:2:0: Attached scsi generic sg2 type 0
 ```
 
-### 如何删除 =/dev/sdc= 这块设备？
+#### 如何删除 /dev/sdc 这块设备？
 
 除了重新扫描整个总线外，你也可以使用下面命令添加或删除指定磁盘：
 
@@ -117,7 +115,7 @@ Jul 18 16:29:39 localhost kernel: sd 0:0:2:0: Attached scsi generic sg2 type 0
 # echo 1 > /sys/block/sdc/device/delete
 ```
 
-### 如何添加 =/dev/sdc= 这块设备？
+#### 如何添加 /dev/sdc 这块设备？
 
 使用下面语法添加指定设备：
 
@@ -127,14 +125,12 @@ Jul 18 16:29:39 localhost kernel: sd 0:0:2:0: Attached scsi generic sg2 type 0
 
 这里，
 
-  * <H>：Host
-  * <B>：Bus (Channel)
-  * <T>：Target (Id)
-  * <L>：LUN numbers
+  * <H>：主机
+  * <B>：总线（通道）
+  * <T>：目标 （Id）
+  * <L>：LUN 号
 
-
-
-例如。使用参数 host#0，bus#0，target#2，以及 LUN#0 来添加 /dev/sdc，则输入：
+例如。使用参数 `host#0`，`bus#0`，`target#2`，以及 `LUN#0` 来添加 `/dev/sdc`，则输入：
 
 ```
 # echo "scsi add-single-device 0 0 2 0">/proc/scsi/scsi
@@ -157,7 +153,7 @@ Host: scsi0 Channel: 00 Id: 02 Lun: 00
  Type: Direct-Access ANSI SCSI revision: 02
 ```
 
-## 步骤 #3：格式化新磁盘
+### 步骤 #3：格式化新磁盘
 
 现在使用 [fdisk 并通过 mkfs.ext3][8] 命令创建分区：
 
@@ -169,13 +165,17 @@ Host: scsi0 Channel: 00 Id: 02 Lun: 00
 # mkfs.ext4 /dev/sdc3
 ```
 
-## 步骤 #4：创建挂载点并更新 /etc/fstab
+### 步骤 #4：创建挂载点并更新 /etc/fstab
 
-`# mkdir /disk3`
+```
+# mkdir /disk3
+```
 
-打开 /etc/fstab 文件，输入：
+打开 `/etc/fstab` 文件，输入：
 
-`# vi /etc/fstab`
+```
+# vi /etc/fstab
+```
 
 加入下面这行：
 
@@ -193,15 +193,17 @@ Host: scsi0 Channel: 00 Id: 02 Lun: 00
 
 #### 可选操作：为分区加标签
 
-[你可以使用 e2label 命令为分区加标签 ][9]。假设，你想要为  /backupDisk 这块新分区加标签，则输入
+[你可以使用 e2label 命令为分区加标签 ][9]。假设，你想要为  `/backupDisk` 这块新分区加标签，则输入：
 
-`# e2label /dev/sdc1 /backupDisk`
+```
+# e2label /dev/sdc1 /backupDisk
+```
 
-详情参见 "[Linux 分区的重要性 ][10]
+详情参见 "[Linux 分区的重要性 ][10]。
 
-## 关于作者
+### 关于作者
 
-作者即是 nixCraft 的创造者，也是一名经验丰富的系统管理员，还是 Linux 操作系统 /Unix shell 脚本培训师。他曾服务过全球客户并与多个行业合作过，包括 IT，教育，国防和空间研究，以及非盈利机构。你可以在 [Twitter][11]，[Facebook][12]，[Google+][13] 上关注它。
+作者是 nixCraft 的创始人，也是一名经验丰富的系统管理员，还是 Linux 操作系统 /Unix shell 脚本培训师。他曾服务过全球客户并与多个行业合作过，包括 IT，教育，国防和空间研究，以及非盈利机构。你可以在 [Twitter][11]，[Facebook][12]，[Google+][13] 上关注他。
 
 --------------------------------------------------------------------------------
 
@@ -209,7 +211,7 @@ via: https://www.cyberciti.biz/tips/vmware-add-a-new-hard-disk-without-rebooting
 
 作者：[Vivek Gite][a]
 译者：[lujun9972](https://github.com/lujun9972)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
