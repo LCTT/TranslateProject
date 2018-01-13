@@ -1,3 +1,5 @@
+Translating by jessie-pang
+
 Mastering file searches on Linux
 ======
 
