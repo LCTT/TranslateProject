@@ -1,3 +1,4 @@
+translated by cyleft
 How To Find Files Based On their Permissions
 ======
 Finding files in Linux is not a big deal. There are plenty of free and open source graphical utilities available on the market. In my opinion, finding files from command line is much easier and faster. We already knew how to [**find and sort files based on access and modification date and time**][1]. Today, we will see how to find files based on their permissions in Unix-like operating systems.
