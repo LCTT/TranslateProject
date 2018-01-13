@@ -1,3 +1,4 @@
+translating by kimii
 More ways to examine network connections on Linux
 ======
 The ifconfig and netstat commands are incredibly useful, but there are many other commands that can help you see what's up with you network on Linux systems. Today's post explores some very handy commands for examining network connections.

@@ -1,7 +1,10 @@
+translating by Flowsnow
+
 What Are Bitcoins?
 ======
+
 ![what are bitcoins](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/what-are-bitcoins_orig.jpg)
- 
+
  **[Bitcoin][1]** is a digital currency or electronic cash the relies on peer to peer technology for completing transactions. Since peer to peer technology is used as the major network, bitcoins provide a community like managed economy. This is to mean, bitcoins eliminate the centralized authority way of managing currency and promotes community management of currency. Most Also of the software related to bitcoin mining and managing of bitcoin digital cash is open source. 
 
 ​The first Bitcoin software was developed by Satoshi Nakamoto and it's based on open source cryptographic protocol. Bitcoins smallest unit is known as the Satoshi which is basically one-hundredth millionth of a single bitcoin (0.00000001 BTC). 
