@@ -1,4 +1,4 @@
-Three steps to learning GDB
+Translating by Torival Three steps to learning GDB
 ============================================================
 
 Debugging C programs used to scare me a lot. Then I was writing my [operating system][2] and I had so many bugs to debug! I was extremely fortunate to be using the emulator qemu, which lets me attach a debugger to my operating system. The debugger is called `gdb`.
