@@ -1,5 +1,4 @@
-translating by lujun9972
-xfs file system commands with examples
+通过案例学习 xfs 文件系统相关命令
 ======
 
 ![Learn xfs commands with examples][1]
