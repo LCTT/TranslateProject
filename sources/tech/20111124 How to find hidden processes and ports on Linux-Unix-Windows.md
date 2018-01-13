@@ -1,3 +1,4 @@
+translating by ljgibbs
 How to find hidden processes and ports on Linux/Unix/Windows
 ======
 Unhide is a little handy forensic tool to find hidden processes and TCP/UDP ports by rootkits / LKMs or by another hidden technique. This tool works under Linux, Unix-like system, and MS-Windows operating systems. From the man page:
