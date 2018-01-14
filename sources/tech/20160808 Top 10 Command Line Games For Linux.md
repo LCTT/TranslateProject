@@ -1,3 +1,5 @@
+ translated by cyleft
+
 Top 10 Command Line Games For Linux
 ======
 Brief: This article lists the **best command line games for Linux**.
