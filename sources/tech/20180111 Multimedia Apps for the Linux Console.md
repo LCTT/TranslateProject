@@ -1,5 +1,9 @@
 Multimedia Apps for the Linux Console
 ======
+
+![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/multimedia.jpg?itok=v-XrnKRB)
+The Linux console supports multimedia, so you can enjoy music, movies, photos, and even read PDF files.
+
 When last we met, we learned that the Linux console supports multimedia. Yes, really! You can enjoy music, movies, photos, and even read PDF files without being in an X session with MPlayer, fbi, and fbgs. And, as a bonus, you can enjoy a Matrix-style screensaver for the console, CMatrix.
 
 You will probably have make some tweaks to your system to make this work. The examples used here are for Ubuntu Linux 16.04.
@@ -93,13 +97,13 @@ Learn more about Linux through the free ["Introduction to Linux" ][4]course from
 
 via: https://www.linux.com/learn/intro-to-linux/2018/1/multimedia-apps-linux-console
 
-作者：[][a]
+作者：[Carla Schroder][a]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:
+[a]:https://www.linux.com/users/cschroder
 [1]:https://www.mjmwired.net/kernel/Documentation/fb/fbcon.txt
 [2]:https://www.kraxel.org/blog/linux/fbida/
 [3]:http://www.asty.org/cmatrix/
