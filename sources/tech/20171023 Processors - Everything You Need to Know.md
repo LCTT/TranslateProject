@@ -1,4 +1,4 @@
-	translateing --- singledo
+                      translateing by singledo
 Processors - Everything You Need to Know
 ======
 ![](http://www.theitstuff.com/wp-content/uploads/2017/10/processors-all-you-need-to-know.jpg)
