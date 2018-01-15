@@ -1,3 +1,5 @@
+translating by Flowsnow
+
 The Fold Command Tutorial With Examples For Beginners
 ======
 
@@ -103,10 +105,10 @@ via: https://www.ostechnix.com/fold-command-tutorial-examples-beginners/
 
 [a]:https://www.ostechnix.com/author/sk/
 [1]:data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7
-[2]:http://www.ostechnix.com/wp-content/uploads/2018/01/fold-command-1.png ()
-[3]:http://www.ostechnix.com/wp-content/uploads/2018/01/fold-command-2.png ()
-[4]:http://www.ostechnix.com/wp-content/uploads/2018/01/fold-command-3-1.png ()
-[5]:http://www.ostechnix.com/wp-content/uploads/2018/01/fold-command-4.png ()
-[6]:http://www.ostechnix.com/wp-content/uploads/2018/01/fold-command-5-1.png ()
-[7]:http://www.ostechnix.com/wp-content/uploads/2018/01/fold-command-6-1.png ()
+[2]:http://www.ostechnix.com/wp-content/uploads/2018/01/fold-command-1.png
+[3]:http://www.ostechnix.com/wp-content/uploads/2018/01/fold-command-2.png
+[4]:http://www.ostechnix.com/wp-content/uploads/2018/01/fold-command-3-1.png
+[5]:http://www.ostechnix.com/wp-content/uploads/2018/01/fold-command-4.png
+[6]:http://www.ostechnix.com/wp-content/uploads/2018/01/fold-command-5-1.png
+[7]:http://www.ostechnix.com/wp-content/uploads/2018/01/fold-command-6-1.png
 [8]:https://www.ostechnix.com/uniq-command-tutorial-examples-beginners/
