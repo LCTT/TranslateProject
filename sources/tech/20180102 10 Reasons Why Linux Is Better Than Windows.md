@@ -1,3 +1,4 @@
+translate by cyleft
 10 Reasons Why Linux Is Better Than Windows
 ======
 It is often seen that people get confused over choosing Windows or Linux as host operating system in both
