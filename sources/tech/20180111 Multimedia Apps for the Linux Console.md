@@ -1,14 +1,18 @@
 Translating by Yinr
 
 Multimedia Apps for the Linux Console
+Linux 终端下的多媒体应用
 ======
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/multimedia.jpg?itok=v-XrnKRB)
 The Linux console supports multimedia, so you can enjoy music, movies, photos, and even read PDF files.
+Linux 终端是支持多媒体的，所以你可以在终端听音乐，看电影，看图片，甚至是阅读 PDF。
 
 When last we met, we learned that the Linux console supports multimedia. Yes, really! You can enjoy music, movies, photos, and even read PDF files without being in an X session with MPlayer, fbi, and fbgs. And, as a bonus, you can enjoy a Matrix-style screensaver for the console, CMatrix.
+在我们上次见面时（？），我们了解到 Linux 终端可以支持多媒体。是的，这是真的！你可以使用 Mplayer、fbi 和 fbgs 来实现不打开 X 进程就听音乐、看电影、看照片，甚至阅读 PDF。此外，你还可以通过 CMatrix 来体验黑客帝国（Matrix）风格的屏幕保护。
 
 You will probably have make some tweaks to your system to make this work. The examples used here are for Ubuntu Linux 16.04.
+不过你可能需要对系统进行一些修改才能达到前面这些目的。以下的操作都是在 Ubuntu 16.04 上演示的。
 
 ### MPlayer
 
@@ -100,7 +104,7 @@ Learn more about Linux through the free ["Introduction to Linux" ][4]course from
 via: https://www.linux.com/learn/intro-to-linux/2018/1/multimedia-apps-linux-console
 
 作者：[Carla Schroder][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Yinr](https://github.com/Yinr)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
