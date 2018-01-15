@@ -1,31 +1,28 @@
-[并发服务器：第四部分 - libuv][17]
+并发服务器（四）：libuv
 ============================================================
 
-这是写并发网络服务器系列文章的第四部分。在这一部分中，我们将使用 libuv 去再次重写我们的服务器，并且也讨论关于使用一个线程池在回调中去处理耗时任务。最终，我们去看一下底层的 libuv，花一点时间去学习如何用异步 API 对文件系统阻塞操作进行封装。
+这是并发网络服务器系列文章的第四部分。在这一部分中，我们将使用 libuv 再次重写我们的服务器，并且也会讨论关于使用一个线程池在回调中去处理耗时任务。最终，我们去看一下底层的 libuv，花一点时间去学习如何用异步 API 对文件系统阻塞操作进行封装。
 
-这一系列的所有文章包括：
+本系列的所有文章：
 
-*   [第一部分 - 简介][7]
+*   [第一节 - 简介][7]
+*   [第二节 - 线程][8]
+*   [第三节 - 事件驱动][9]
+*   [第四节 - libuv][10]
 
-*   [第二部分 - 线程][8]
+### 使用 libuv 抽象出事件驱动循环
 
-*   [第三部分 - 事件驱动][9]
+在 [第三节][11] 中，我们看到了基于 `select` 和 `epoll` 的服务器的相似之处，并且，我说过，在它们之间抽象出细微的差别是件很有吸引力的事。许多库已经做到了这些，所以在这一部分中我将去选一个并使用它。我选的这个库是 [libuv][12]，它最初设计用于 Node.js 底层的可移植平台层，并且，后来发现在其它的项目中已有使用。libuv 是用 C 写的，因此，它具有很高的可移植性，非常适用嵌入到像 JavaScript 和 Python 这样的高级语言中。
 
-*   [第四部分 - libuv][10]
-
-### 使用 Linux 抽象出事件驱动循环
-
-在 [第三部分][11] 中，我们看到了基于 `select` 和 `epoll` 的相似之处，并且，我说过，在它们之间抽象出细微的差别是件很有魅力的事。Numerous 库已经做到了这些，但是，因为在这一部分中，我将去选一个并使用它。我选的这个库是 [libuv][12]，它最初设计用于 Node.js 底层的轻便的平台层，并且，后来发现在其它的项目中已有使用。libuv 是用 C 写的，因此，它具有很高的可移植性，非常适用嵌入到像 JavaScript 和 Python 这样的高级语言中。
-
-虽然 libuv 为抽象出底层平台细节已经有了一个非常大的框架，但它仍然是一个以 _事件循环_ 思想为中心的。在我们第三部分的事件驱动服务器中，事件循环在 main 函数中是很明确的；当使用 libuv 时，循环通常隐藏在库自身中，而用户代码仅需要注册事件句柄（作为一个回调函数）和运行这个循环。此外，libuv 将为给定的平台实现更快的事件循环实现。对于 Linux 它是 epoll，等等。
+虽然 libuv 为抽象出底层平台细节已经变成了一个相当大的框架，但它仍然是以 _事件循环_ 思想为中心的。在我们第三部分的事件驱动服务器中，事件循环在 `main` 函数中是很明确的；当使用 libuv 时，该循环通常隐藏在库自身中，而用户代码仅需要注册事件句柄（作为一个回调函数）和运行这个循环。此外，libuv 会在给定的平台上使用更快的事件循环实现，对于 Linux 它是 epoll，等等。
 
 ![libuv loop](https://eli.thegreenplace.net/images/2017/libuvloop.png)
 
-libuv 支持多路事件循环，并且，因此一个事件循环在库中是非常重要的；它有一个句柄 - `uv_loop_t`，和创建/杀死/启动/停止循环的函数。也就是说，在这篇文章中，我将仅需要使用 “默认的” 循环，libuv 可通过 `uv_default_loop()` 提供它；多路循环大多用于多线程事件驱动的服务器，这是一个更高级别的话题，我将留在这一系列文章的以后部分。
+libuv 支持多路事件循环，并且，因此事件循环在库中是非常重要的；它有一个句柄 —— `uv_loop_t`，和创建/杀死/启动/停止循环的函数。也就是说，在这篇文章中，我将仅需要使用 “默认的” 循环，libuv 可通过 `uv_default_loop()` 提供它；多路循环大多用于多线程事件驱动的服务器，这是一个更高级别的话题，我将留在这一系列文章的以后部分。
 
 ### 使用 libuv 的并发服务器
 
-为了对 libuv 有一个更深的印象，让我们跳转到我们的可靠的协议服务器，它通过我们的这个系列已经有了一个强大的重新实现。这个服务器的结构与第三部分中的基于 select 和 epoll 的服务器有一些相似之处。因为，它也依赖回调。完整的 [示例代码在这里][13]；我们开始设置这个服务器的套接字绑定到一个本地端口：
+为了对 libuv 有一个更深的印象，让我们跳转到我们的可靠协议的服务器，它通过我们的这个系列已经有了一个强大的重新实现。这个服务器的结构与第三部分中的基于 select 和 epoll 的服务器有一些相似之处，因为，它也依赖回调。完整的 [示例代码在这里][13]；我们开始设置这个服务器的套接字绑定到一个本地端口：
 
 ```
 int portnum = 9090;
@@ -50,11 +47,11 @@ if ((rc = uv_tcp_bind(&server_stream, (const struct sockaddr*)&server_address, 0
 }
 ```
 
-除了它被封装进 libuv APIs 中之外，你看到的是一个相当标准的套接字。在它的返回中，我们取得一个可工作于任何 libuv 支持的平台上的轻便的接口。
+除了它被封装进 libuv API 中之外，你看到的是一个相当标准的套接字。在它的返回中，我们取得一个可工作于任何 libuv 支持的平台上的可移植接口。
 
-这些代码也很认真负责地演示了错误处理；多数的 libuv 函数返回一个整数状态，返回一个负数意味着出现了一个错误。在我们的服务器中，我们把这些错误按致命的问题处理，但也可以设想为一个更优雅的恢复。
+这些代码也展示了很认真负责的错误处理；多数的 libuv 函数返回一个整数状态，返回一个负数意味着出现了一个错误。在我们的服务器中，我们把这些错误看做致命问题进行处理，但也可以设想为一个更优雅的错误恢复。
 
-现在，那个套接字已经绑定，是时候去监听它了。这里我们运行一个回调注册：
+现在，那个套接字已经绑定，是时候去监听它了。这里我们运行首个回调注册：
 
 ```
 // Listen on the socket for new peers to connect. When a new peer connects,
@@ -64,9 +61,9 @@ if ((rc = uv_listen((uv_stream_t*)&server_stream, N_BACKLOG, on_peer_connected))
 }
 ```
 
-当新的对端连接到这个套接字，`uv_listen` 将被调用去注册一个事件循环回调。我们的回调在这里被称为 `on_peer_connected`，并且我们一会儿将去检测它。
+`uv_listen` 注册一个事件回调，当新的对端连接到这个套接字时将会调用事件循环。我们的回调在这里被称为 `on_peer_connected`，我们一会儿将去查看它。
 
-最终，main 运行这个 libuv 循环，直到它被停止（`uv_run` 仅在循环被停止或者发生错误时返回）
+最终，`main` 运行这个 libuv 循环，直到它被停止（`uv_run` 仅在循环被停止或者发生错误时返回）。
 
 ```
 // Run the libuv event loop.
@@ -76,7 +73,7 @@ uv_run(uv_default_loop(), UV_RUN_DEFAULT);
 return uv_loop_close(uv_default_loop());
 ```
 
-注意，那个仅是一个单一的通过 main 优先去运行的事件循环回调；我们不久将看到怎么去添加更多的另外的回调。在事件循环的整个运行时中，添加和删除回调并不是一个问题 - 事实上，大多数服务器就是这么写的。
+注意，在运行事件循环之前，只有一个回调是通过 main 注册的；我们稍后将看到怎么去添加更多的回调。在事件循环的整个运行过程中，添加和删除回调并不是一个问题 —— 事实上，大多数服务器就是这么写的。
 
 这是一个 `on_peer_connected`，它处理到服务器的新的客户端连接：
 
@@ -135,9 +132,8 @@ void on_peer_connected(uv_stream_t* server_stream, int status) {
 
 这些代码都有很好的注释，但是，这里有一些重要的 libuv 语法我想去强调一下：
 
-*   进入回调中的自定义数据：因为 C 还没有停用，这可能是个挑战，libuv 在它的处理类型中有一个 `void*` 数据域；这些域可以被用于进入到用户数据。例如，注意 `client->data` 是如何指向到一个 `peer_state_t` 结构上，以便于通过 `uv_write` 和 `uv_read_start` 注册的回调可以知道它们正在处理的是哪个客户端的数据。
-
-*   内存管理：事件驱动编程在语言中使用垃圾回收是非常容易的，因为，回调通常运行在一个它们注册的完全不同的栈框架中，使得基于栈的内存管理很困难。它总是需要传递堆分配的数据到 libuv 回调中（当所有回调运行时，除了 main，其它的都运行在栈上），并且，为了避免泄漏，许多情况下都要求这些数据去安全释放。这些都是些需要实践的内容 [[1]][6]。
+*   传入自定义数据到回调中：因为 C 还没有闭包，这可能是个挑战，libuv 在它的所有的处理类型中有一个 `void* data` 字段；这些字段可以被用于传递用户数据。例如，注意 `client->data` 是如何指向到一个 `peer_state_t` 结构上，以便于 `uv_write` 和 `uv_read_start` 注册的回调可以知道它们正在处理的是哪个客户端的数据。
+*   内存管理：在带有垃圾回收的语言中进行事件驱动编程是非常容易的，因为，回调通常运行在一个它们注册的完全不同的栈帧中，使得基于栈的内存管理很困难。它总是需要传递堆分配的数据到 libuv 回调中（当所有回调运行时，除了 main，其它的都运行在栈上），并且，为了避免泄漏，许多情况下都要求这些数据去安全释放。这些都是些需要实践的内容 [[1]][6]。
 
 这个服务器上对端的状态如下：
 
@@ -479,11 +475,11 @@ via: https://eli.thegreenplace.net/2017/concurrent-servers-part-4-libuv/
 [4]:https://eli.thegreenplace.net/tag/concurrency
 [5]:https://eli.thegreenplace.net/tag/c-c
 [6]:https://eli.thegreenplace.net/2017/concurrent-servers-part-4-libuv/#id4
-[7]:http://eli.thegreenplace.net/2017/concurrent-servers-part-1-introduction/
-[8]:http://eli.thegreenplace.net/2017/concurrent-servers-part-2-threads/
-[9]:http://eli.thegreenplace.net/2017/concurrent-servers-part-3-event-driven/
+[7]:https://linux.cn/article-8993-1.html
+[8]:https://linux.cn/article-9002-1.html
+[9]:https://linux.cn/article-9117-1.html
 [10]:http://eli.thegreenplace.net/2017/concurrent-servers-part-4-libuv/
-[11]:http://eli.thegreenplace.net/2017/concurrent-servers-part-3-event-driven/
+[11]:https://linux.cn/article-9117-1.html
 [12]:http://libuv.org/
 [13]:https://github.com/eliben/code-for-blog/blob/master/2017/async-socket-server/uv-server.c
 [14]:https://eli.thegreenplace.net/2017/concurrent-servers-part-4-libuv/#id5
