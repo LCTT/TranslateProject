@@ -1,19 +1,18 @@
-translating---geekpi
-
-Fixing vim in Debian – There and back again
+在 Debian 中修复 vim - 去而复得
 ======
 I was wondering for quite some time why on my server vim behaves so stupid with respect to the mouse: Jumping around, copy and paste wasn't possible the usual way. All this despite having
+我一直在想，为什么我服务器上 vim 为什么在鼠标方面表现得如此愚蠢：不能像平时那样跳转、复制、粘贴。尽管在 `/etc/vim/vimrc.local` 中已经设置了
 ```
  set mouse=
 ```
 
-in my `/etc/vim/vimrc.local`. Finally I found out why, thanks to bug [#864074][1] and fixed it.
+最后我终于知道为什么了，多谢 bug [#864074][1] 并且修复了它。
 
 ![][2]
 
-The whole mess comes from the fact that, when there is no `~/.vimrc`, vim loads `defaults.vim` **after** ` vimrc.local` and thus overwriting several settings put in there.
+原因是，当没有 `~/.vimrc` 的时候，vim在 `vimrc.local` **之后**加载 `defaults.vim`，从而覆盖了几个设置。
 
-There is a comment (I didn't see, though) in `/etc/vim/vimrc` explaining this:
+在 `/etc/vim/vimrc` 中有一个注释（虽然我没有看到）解释了这一点：
 ```
 " Vim will load $VIMRUNTIME/defaults.vim if the user does not have a vimrc.
 " This happens after /etc/vim/vimrc(.local) are loaded, so it will override
@@ -24,11 +23,11 @@ There is a comment (I didn't see, though) in `/etc/vim/vimrc` explaining this:
 ```
 
 
-I agree that this is a good way to setup vim on a normal installation of Vim, but the Debian package could do better. The problem is laid out clearly in the bug report: If there is no `~/.vimrc`, settings in `/etc/vim/vimrc.local` are overwritten.
+我同意这是在正常安装 vim 后设置 vim 的好方法，但 Debian 包可以做得更好。在错误报告中清楚地说明了这个问题：如果没有 `~/.vimrc`，`/etc/vim/vimrc.local` 中的设置被覆盖。
 
-This is as counterintuitive as it can be in Debian - and I don't know any other package that does it in a similar way.
+这在Debian中是违反直觉的 - 而且我也不知道其他包中是否采用类似的方法。
 
-Since the settings in `defaults.vim` are quite reasonable, I want to have them, but only fix a few of the items I disagree with, like the mouse. At the end what I did is the following in my `/etc/vim/vimrc.local`:
+由于 `defaults.vim` 中的设置非常合理，所以我希望使用它，但只修改了一些我不同意的项目，比如鼠标。最后，我在 `/etc/vim/vimrc.local` 中做了以下操作：
 ```
 if filereadable("/usr/share/vim/vim80/defaults.vim")
   source /usr/share/vim/vim80/defaults.vim
@@ -42,14 +41,14 @@ set mouse=
 ```
 
 
-There is probably a better way to get a generic load statement that does not depend on the Vim version, but for now I am fine with that.
+可能有更好的方式来获得一个不依赖于 vim 版本的通用加载语句, 但现在我对此很满意。
 
 --------------------------------------------------------------------------------
 
 via: https://www.preining.info/blog/2017/10/fixing-vim-in-debian/
 
 作者：[Norbert Preining][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
