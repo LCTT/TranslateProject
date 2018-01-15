@@ -1,4 +1,4 @@
-Notes on BPF & eBPF
+translating by qhwdw Notes on BPF & eBPF
 ============================================================
 
 Today it was Papers We Love, my favorite meetup! Today [Suchakra Sharma][6]([@tuxology][7] on twitter/github) gave a GREAT talk about the original BPF paper and recent work in Linux on eBPF. It really made me want to go write eBPF programs!

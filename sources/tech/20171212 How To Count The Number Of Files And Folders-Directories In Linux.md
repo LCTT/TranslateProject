@@ -1,5 +1,8 @@
+translating by Flowsnow
+
 How To Count The Number Of Files And Folders/Directories In Linux
 ======
+
 Hi folks, today again we came with set of tricky commands that help you in many ways. It's kind of manipulation commands which help you to count files and directories in the current directory, recursive count, list of files created by particular user, etc,.
 
 In this tutorial, we are going to show you, how to use more than one command like, all together to perform some advanced actions using ls, egrep, wc and find command. The below set of commands which helps you in many ways.
@@ -163,7 +166,6 @@ To experiment this, i'm going to create totally 7 files and 2 folders (5 regular
  11646 symlinks
 
 ```
-
 
 --------------------------------------------------------------------------------
 
