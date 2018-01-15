@@ -1,6 +1,6 @@
 AI and machine learning bias has dangerous implications
 ======
-Translating
+translating
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/LAW_goodbadugly.png?itok=ZxaimUWU)
 
