@@ -1,4 +1,4 @@
-ftrace: trace your kernel functions!
+Translating by qhwdw ftrace: trace your kernel functions!
 ============================================================
 
 Hello! Today we’re going to talk about a debugging tool we haven’t talked about much before on this blog: ftrace. What could be more exciting than a new debugging tool?!
