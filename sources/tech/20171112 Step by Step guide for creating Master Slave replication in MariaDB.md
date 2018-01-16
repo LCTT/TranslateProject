@@ -1,4 +1,4 @@
-Step by Step guide for creating Master Slave replication in MariaDB
+Translating by qhwdw Step by Step guide for creating Master Slave replication in MariaDB
 ======
 In our earlier tutorials,we have already learned [**to install & configure MariaDB**][1] & also [**learned some basic administration commands for managing MariaDB**][2]. We are now going to learn to setup a MASTER SLAVE replication for MariaDB server.
 
@@ -168,7 +168,6 @@ $ select * from test;
 You will see that the output shows the same value that we inserted on the master server, hence our replication is working fine without any issues.
 
 This concludes our tutorial, please send your queries/questions through the comment box below.
-
 
 --------------------------------------------------------------------------------
 
