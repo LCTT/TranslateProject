@@ -1,23 +1,26 @@
-在 RHEL/CentOS 系统上使用 YUM History 命令回滚升级操作
+在 RHEL/CentOS 系统上使用 YUM history 命令回滚升级操作
 ======
+
 为服务器打补丁是 Linux 系统管理员的一项重要任务，为的是让系统更加稳定，性能更加优化。厂商经常会发布一些安全/高危的补丁包，相关软件需要升级以防范潜在的安全风险。
 
-Yum (Yellowdog Update Modified) 是 CentOS 和 RedHat 系统上用的 RPM 包管理工具，Yum history 命令允许系统管理员将系统回滚到上一个状态，但由于某些限制，回滚不是在所有情况下都能成功，有时 yum 命令可能什么都不做，有时可能会删掉一些其他的包。
+Yum （Yellowdog Update Modified） 是 CentOS 和 RedHat 系统上用的 RPM 包管理工具，`yum history` 命令允许系统管理员将系统回滚到上一个状态，但由于某些限制，回滚不是在所有情况下都能成功，有时 `yum` 命令可能什么都不做，有时可能会删掉一些其他的包。
 
-我建议你在升级之前还是要做一个完整的系统备份，而 yum history 并不能用来替代系统备份的。系统备份能让你将系统还原到任意时候的节点状态。
+我建议你在升级之前还是要做一个完整的系统备份，而 `yum history` 并不能用来替代系统备份的。系统备份能让你将系统还原到任意时候的节点状态。
 
 **推荐阅读：**
-**(#)** [在 RHEL/CentOS 系统上使用 YUM 命令管理软件包 ][1]
-**(#)** [在 Fedora 系统上使用 DNF (YUM 的一个分支) 命令管理软件包 ][2]
-**(#)** [如何让 History 命令显示日期和时间 ][3]
 
-某些情况下，安装的应用程序在升级了补丁之后不能正常工作或者出现一些错误(可能是由于库不兼容或者软件包升级导致的)，那该怎么办呢？
+- [在 RHEL/CentOS 系统上使用 YUM 命令管理软件包][1]
+- [在 Fedora 系统上使用 DNF （YUM 的一个分支）命令管理软件包 ][2]
+- [如何让 history 命令显示日期和时间][3]
 
-与应用开发团队沟通，并找出导致库和软件包的问题所在，然后使用 yum history 命令进行回滚。
+某些情况下，安装的应用程序在升级了补丁之后不能正常工作或者出现一些错误（可能是由于库不兼容或者软件包升级导致的），那该怎么办呢？
+
+与应用开发团队沟通，并找出导致库和软件包的问题所在，然后使用 `yum history` 命令进行回滚。
+
 **注意：**
 
-  * 它不支持回滚 selinux，selinux-policy-*，kernel，glibc (以及依赖 glibc 的包，比如 gcc)。
-  * 不建议将系统降级到更低的版本(比如 CentOS 6.9 降到 CentOS 6.8)，这回导致系统处于不稳定的状态
+* 它不支持回滚 selinux，selinux-policy-*，kernel，glibc （以及依赖 glibc 的包，比如 gcc）。
+* 不建议将系统降级到更低的版本（比如 CentOS 6.9 降到 CentOS 6.8），这会导致系统处于不稳定的状态
 
 让我们先来看看系统上有哪些包可以升级，然后挑选出一些包来做实验。
 
@@ -66,10 +69,10 @@ Upgrade 4 Package(s)
 
 Total download size: 5.5 M
 Is this ok [y/N]: n
-
 ```
 
-你会发现 `git` 包可以被升级，那我们就用它来实验吧。运行下面命令获得软件包的版本信息(当前安装的版本和可以升级的版本)。
+你会发现 `git` 包可以被升级，那我们就用它来实验吧。运行下面命令获得软件包的版本信息（当前安装的版本和可以升级的版本）。
+
 ```
 # yum list git
 Loaded plugins: fastestmirror, security
@@ -80,10 +83,10 @@ Installed Packages
 git.x86_64 1.7.1-8.el6 @base
 Available Packages
 git.x86_64 1.7.1-9.el6_9 updates
-
 ```
 
 运行下面命令来将 `git` 从 `1.7.1-8` 升级到 `1.7.1-9`。
+
 ```
 # yum update git
 Loaded plugins: fastestmirror, presto
@@ -147,27 +150,29 @@ Dependency Updated:
  perl-Git.noarch 0:1.7.1-9.el6_9
 
 Complete!
-
 ```
 
 验证升级后的 `git` 版本.
+
 ```
 # yum list git
 Installed Packages
 git.x86_64 1.7.1-9.el6_9 @updates
 
-or
+或
 # rpm -q git
 git-1.7.1-9.el6_9.x86_64
-
 ```
 
-现在我们成功升级这个软件包，可以对它进行回滚了. 步骤如下.
+现在我们成功升级这个软件包，可以对它进行回滚了。步骤如下。
 
-首先，使用下面命令获取yum操作id. 下面的输出很清晰地列出了所有需要的信息，例如操作 id, 谁做的这个操作(用户名), 操作日期和时间, 操作的动作(安装还是升级), 操作影响的包数量.
+### 使用 YUM history 命令回滚升级操作
+
+首先，使用下面命令获取 yum 操作的 id。下面的输出很清晰地列出了所有需要的信息，例如操作 id、谁做的这个操作（用户名）、操作日期和时间、操作的动作（安装还是升级）、操作影响的包数量。
+
 ```
 # yum history
-or
+或
 # yum history list all
 Loaded plugins: fastestmirror, presto
 ID | Login user | Date and time | Action(s) | Altered
@@ -185,10 +190,10 @@ ID | Login user | Date and time | Action(s) | Altered
  3 | root | 2016-10-18 12:53 | Install | 1
  2 | root | 2016-09-30 10:28 | E, I, U | 31 EE
  1 | root | 2016-07-26 11:40 | E, I, U | 160 EE
-
 ```
 
-上面命令现实有两个包受到了影响，因为 git 还升级了它的依赖包 **perl-Git**. 运行下面命令来查看关于操作的详细信息.
+上面命令显示有两个包受到了影响，因为 `git` 还升级了它的依赖包 `perl-Git`。 运行下面命令来查看关于操作的详细信息。
+
 ```
 # yum history info 13
 Loaded plugins: fastestmirror, presto
@@ -214,7 +219,8 @@ history info
 
 ```
 
-运行下面命令来回滚 `git` 包到上一个版本.
+运行下面命令来回滚 `git` 包到上一个版本。
+
 ```
 # yum history undo 13
 Loaded plugins: fastestmirror, presto
@@ -279,21 +285,21 @@ Installed:
  git.x86_64 0:1.7.1-8.el6 perl-Git.noarch 0:1.7.1-8.el6
 
 Complete!
-
 ```
 
-回滚后, 使用下面命令来检查降级包的版本.
+回滚后，使用下面命令来检查降级包的版本。
+
 ```
 # yum list git
-or
+或
 # rpm -q git
 git-1.7.1-8.el6.x86_64
-
 ```
 
 ### 使用YUM downgrade 命令回滚升级
 
-此外，我们也可以使用 YUM downgrade 命令回滚升级.
+此外，我们也可以使用 YUM `downgrade` 命令回滚升级。
+
 ```
 # yum downgrade git-1.7.1-8.el6 perl-Git-1.7.1-8.el6
 Loaded plugins: search-disabled-repos, security, ulninfo
@@ -346,14 +352,14 @@ Installed:
  git.x86_64 0:1.7.1-8.el6 perl-Git.noarch 0:1.7.1-8.el6
 
 Complete!
-
 ```
 
-**注意 :** 你也需要降级依赖包, 否则它会删掉当前版本的依赖包而不是对依赖包做降级，因为downgrade命令无法处理依赖关系.
+注意： 你也需要降级依赖包，否则它会删掉当前版本的依赖包而不是对依赖包做降级，因为 `downgrade` 命令无法处理依赖关系。
 
 ### 至于 Fedora 用户
 
-命令是一样的，只需要将包管理器名称从YUM改成DNF就行了.
+命令是一样的，只需要将包管理器名称从 `yum` 改成 `dnf` 就行了。
+
 ```
 # dnf list git
 # dnf history
@@ -361,7 +367,6 @@ Complete!
 # dnf history undo
 # dnf list git
 # dnf downgrade git-1.7.1-8.el6 perl-Git-1.7.1-8.el6
-
 ```
 
 --------------------------------------------------------------------------------
@@ -370,7 +375,7 @@ via: https://www.2daygeek.com/rollback-fallback-updates-downgrade-packages-cento
 
 作者：[2daygeek][a]
 译者：[lujun9972](https://github.com/lujun9972)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
