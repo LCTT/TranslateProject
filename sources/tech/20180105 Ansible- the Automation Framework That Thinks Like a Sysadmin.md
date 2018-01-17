@@ -1,3 +1,5 @@
+translating by Flowsnow
+
 Ansible: the Automation Framework That Thinks Like a Sysadmin
 ======
 
@@ -184,7 +186,6 @@ ansible -m shell -a 'uptime' webservers
 You should see the results of the uptime command for each host in the webservers group.
 
 In a future article, I plan start to dig in to Ansible's ability to manage the remote computers. I'll look at various modules and how you can use the ad-hoc mode to accomplish in a few keystrokes what would take a long time to handle individually on the command line. If you didn't get the results you expected from the sample Ansible commands above, take this time to make sure authentication is working. Check out [the Ansible docs][1] for more help if you get stuck.
-
 
 --------------------------------------------------------------------------------
 
