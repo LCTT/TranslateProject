@@ -1,14 +1,14 @@
 在 Ubuntu 16.04 上安装并使用 YouTube-DL
 ======
 
-Youtube-dl 是一个免费而开源的命令行视频下载工具，可以用来从 Youtube 等类似的网站上下载视频，目前它支持的网站除了 Youtube 还有 Facebook，Dailymotion，Google Video，Yahoo 等等。它构架于 pygtk 之上，需要 Python 的支持来运行。它支持很多操作系统，包括 Windows，Mac 以及 Unix。Youtube-dl 还有断点续传，下载整个频道或者整个播放清单中的视频，添加自定义的标题，代理，等等其他功能。
+Youtube-dl 是一个自由开源的命令行视频下载工具，可以用来从 Youtube 等类似的网站上下载视频，目前它支持的网站除了 Youtube 还有 Facebook、Dailymotion、Google Video、Yahoo 等等。它构架于 pygtk 之上，需要 Python 的支持来运行。它支持很多操作系统，包括 Windows、Mac 以及 Unix。Youtube-dl 还有断点续传、下载整个频道或者整个播放清单中的视频、添加自定义的标题、代理等等其他功能。
 
-本文中，我们将来学习如何在 Ubuntu16.04 上安装并使用 Youtube-dl 和 Youtube-dlg。我们还会学习如何以不同质量，不同格式来下载 Youtube 中的视频。
+本文中，我们将来学习如何在 Ubuntu 16.04 上安装并使用 Youtube-dl 和 Youtube-dlg。我们还会学习如何以不同质量，不同格式来下载 Youtube 中的视频。
 
 ### 前置需求
 
-  * 一台运行 Ubuntu 16.04 的服务器。
-  * 非 root 用户但拥有 sudo 特权。
+* 一台运行 Ubuntu 16.04 的服务器。
+* 非 root 用户但拥有 sudo 特权。
 
 让我们首先用下面命令升级系统到最新版：
 
@@ -21,37 +21,37 @@ sudo apt-get upgrade -y
 
 ### 安装 Youtube-dl
 
-默认情况下，Youtube-dl 并不在 Ubuntu-16.04 仓库中。你需要从官网上来下载它。使用 curl 命令可以进行下载：
+默认情况下，Youtube-dl 并不在 Ubuntu-16.04 仓库中。你需要从官网上来下载它。使用 `curl` 命令可以进行下载：
 
-首先，使用下面命令安装 curl：
+首先，使用下面命令安装 `curl`：
 
 ```
 sudo apt-get install curl -y
 ```
 
-然后，下载 youtube-dl 的二进制包：
+然后，下载 `youtube-dl` 的二进制包：
 
 ```
 curl -L https://yt-dl.org/latest/youtube-dl -o /usr/bin/youtube-dl
 ```
 
-接着，用下面命令更改 youtube-dl 二进制包的权限：
+接着，用下面命令更改 `youtube-dl` 二进制包的权限：
 
 ```
 sudo chmod 755 /usr/bin/youtube-dl
 ```
 
-youtube-dl 有算是安装好了，现在可以进行下一步了。
+`youtube-dl` 算是安装好了，现在可以进行下一步了。
 
 ### 使用 Youtube-dl
 
-运行下面命令会列出 youtube-dl 的所有可选项：
+运行下面命令会列出 `youtube-dl` 的所有可选项：
 
 ```
 youtube-dl --h
 ```
 
-Youtube-dl 支持多种视频格式，像 Mp4，WebM，3gp，以及 FLV 都支持。你可以使用下面命令列出指定视频所支持的所有格式：
+`youtube-dl` 支持多种视频格式，像 Mp4，WebM，3gp，以及 FLV 都支持。你可以使用下面命令列出指定视频所支持的所有格式：
 
 ```
 youtube-dl -F https://www.youtube.com/watch?v=j_JgXJ-apXs
@@ -94,6 +94,7 @@ youtube-dl -f 18 https://www.youtube.com/watch?v=j_JgXJ-apXs
 ```
 
 该命令会下载 640x360 分辨率的 mp4 格式的视频：
+
 ```
 [youtube] j_JgXJ-apXs: Downloading webpage
 [youtube] j_JgXJ-apXs: Downloading video info webpage
@@ -101,7 +102,6 @@ youtube-dl -f 18 https://www.youtube.com/watch?v=j_JgXJ-apXs
 [youtube] j_JgXJ-apXs: Downloading MPD manifest
 [download] Destination: B.A. PASS 2 Trailer no 2 _ Filmybox-j_JgXJ-apXs.mp4
 [download] 100% of 6.90MiB in 00:47
-
 ```
 
 如果你想以 mp3 音频的格式下载 Youtube 视频，也可以做到：
@@ -122,7 +122,7 @@ youtube-dl -citw https://www.youtube.com/channel/UCatfiM69M9ZnNhOzy0jZ41A
 youtube-dl --proxy http://proxy-ip:port https://www.youtube.com/watch?v=j_JgXJ-apXs
 ```
 
-若想一条命令下载多个 Youtube 视频，那么首先把所有要下载的 Youtube 视频 URL 存在一个文件中（假设这个文件叫 youtube-list.txt），然后运行下面命令：
+若想一条命令下载多个 Youtube 视频，那么首先把所有要下载的 Youtube 视频 URL 存在一个文件中（假设这个文件叫 `youtube-list.txt`），然后运行下面命令：
 
 ```
 youtube-dl -a youtube-list.txt
@@ -130,7 +130,7 @@ youtube-dl -a youtube-list.txt
 
 ### 安装 Youtube-dl GUI
 
-若你想要图形化的界面，那么 youtube-dlg 是你最好的选择。youtube-dlg 是一款由 wxPython 所写的免费而开源的 youtube-dl 界面。
+若你想要图形化的界面，那么 `youtube-dlg` 是你最好的选择。`youtube-dlg` 是一款由 wxPython 所写的免费而开源的 `youtube-dl` 界面。
 
 该工具默认也不在 Ubuntu 16.04 仓库中。因此你需要为它添加 PPA。
 
@@ -138,14 +138,14 @@ youtube-dl -a youtube-list.txt
 sudo add-apt-repository ppa:nilarimogard/webupd8
 ```
 
-下一步，更新软件包仓库并安装 youtube-dlg：
+下一步，更新软件包仓库并安装 `youtube-dlg`：
 
 ```
 sudo apt-get update -y
 sudo apt-get install youtube-dlg -y
 ```
 
-安装好 Youtube-dl 后，就能在 `Unity Dash` 中启动它了：
+安装好 Youtube-dl 后，就能在 Unity Dash 中启动它了：
 
 [![][2]][3]
 
@@ -157,14 +157,13 @@ sudo apt-get install youtube-dlg -y
 
 恭喜你！你已经成功地在 Ubuntu 16.04 服务器上安装好了 youtube-dl 和 youtube-dlg。你可以很方便地从 Youtube 及任何 youtube-dl 支持的网站上以任何格式和任何大小下载视频了。
 
-
 --------------------------------------------------------------------------------
 
 via: https://www.howtoforge.com/tutorial/install-and-use-youtube-dl-on-ubuntu-1604/
 
 作者：[Hitesh Jethva][a]
 译者：[lujun9972](https://github.com/lujun9972)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

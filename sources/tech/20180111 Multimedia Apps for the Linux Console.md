@@ -1,3 +1,5 @@
+Translating by Yinr
+
 Multimedia Apps for the Linux Console
 ======
 
