@@ -1,3 +1,4 @@
+translate by cyleft
 How to Configure Linux for Children
 ======
 
