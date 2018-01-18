@@ -1,5 +1,8 @@
+Translating by Drshu
+
 How to bind ntpd to specific IP addresses on Linux/Unix
 ======
+
 By default, my ntpd/NTP server listens on all interfaces or IP address i.e 0.0.0.0:123. How do I make sure ntpd only listen on a specific IP address such as localhost or 192.168.1.1:123 on a Linux or FreeBSD Unix server?
 
 NTP is an acronym for Network Time Protocol. It is used for clock synchronization between computers. The ntpd program is an operating system daemon which sets and maintains the system time of day in synchronism with Internet standard time servers.

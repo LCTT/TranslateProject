@@ -1,13 +1,12 @@
-translating by kimii
-More ways to examine network connections on Linux
+检查 linux 上网络连接的更多方法
 ======
-The ifconfig and netstat commands are incredibly useful, but there are many other commands that can help you see what's up with you network on Linux systems. Today's post explores some very handy commands for examining network connections.
+ifconfig 和 netstat 命令当然非常有用，但还有很多其他命令能帮你查看 linux 系统上的网络状况。本文探索了一些检查网络连接的非常简便的命令。 
 
-### ip command
+### ip 命令
 
-The **ip** command shows a lot of the same kind of information that you'll get when you use **ifconfig**. Some of the information is in a different format  - e.g., "192.168.0.6/24" instead of "inet addr:192.168.0.6 Bcast:192.168.0.255" and ifconfig is better for packet counts, but the ip command has many useful options.
+**ip** 命令显示了许多与你使用 **ifconfig** 命令时的一样信息。其中一些信息以不同的格式呈现，比如使用“192.168.0.6/24”，而不是“inet addr:192.168.0.6 Bcast:192.168.0.255”，尽管 ifconfig 更适合数据包计数，但 ip 命令有许多有用的选项。
 
-First, here's the **ip a** command listing information on all network interfaces.
+首先，这里是 **ip a** 命令列出的所有网络接口的信息。
 ```
 $ ip a
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
@@ -25,7 +24,7 @@ $ ip a
 
 ```
 
-If you want only to see a simple list of network interfaces, you can limit its output with **grep**.
+如果你只想看到简单的网络接口列表，你可以用 **grep** 限制它的输出。
 ```
 $ ip a | grep inet
  inet 127.0.0.1/8 scope host lo
@@ -35,7 +34,7 @@ $ ip a | grep inet
 
 ```
 
-You can get a glimpse of your default route using a command like this:
+使用如下面的命令，你可以看到你的默认路由：
 ```
 $ ip route show
 default via 192.168.0.1 dev eth0
@@ -43,18 +42,18 @@ default via 192.168.0.1 dev eth0
 
 ```
 
-In this output, you can see that the default gateway is 192.168.0.1 through eth0 and that the local network is the fairly standard 192.168.0.0/24.
+在这个输出中，你可以看到通过 eth0 的默认网关是 192.168.0.1，并且本地网络是相当标准的 192.168.0.0/24。
 
-You can also use the **ip** command to bring network interfaces up and shut them down.
+你也可以使用 **ip** 命令来启用和禁用网络接口。
 ```
 $ sudo ip link set eth1 up
 $ sudo ip link set eth1 down
 
 ```
 
-### ethtool command
+### ethtool 命令
 
-Another very useful tool for examining networks is **ethtool**. This command provides a lot of descriptive data on network interfaces.
+另一个检查网络非常有用的工具是 **ethtool**。这个命令提供了网络接口上的许多描述性的数据。
 ```
 $ ethtool eth0
 Settings for eth0:
@@ -83,7 +82,7 @@ Cannot get wake-on-lan settings: Operation not permitted
 
 ```
 
-You can also use the **ethtool** command to examine ethernet driver settings.
+你也可以使用 **ethtool** 命令来检查以太网驱动设置。
 ```
 $ ethtool -i eth0
 driver: e1000e
@@ -99,7 +98,7 @@ supports-priv-flags: no
 
 ```
 
-The autonegotiation details can be displayed with a command like this:
+自动协商的详细信息可以用这样的命令来显示：
 ```
 $ ethtool -a eth0
 Pause parameters for eth0:
@@ -109,9 +108,10 @@ TX: on
 
 ```
 
-### traceroute command
+### traceroute 命令
 
-The **traceroute** command displays routing pathways. It works by using the TTL (time to live) field in the packet header in a series of packets to capture the path that packets take and how long they take to get from one hop to the next. Traceroute's output helps to gauge the health of network connections, since some routes might take much longer to reach the eventual destination.
+
+**traceroute** 命令显示路由路径。它通过在一系列数据包中设置数据包头的TTL（生存时间）字段来捕获数据包所经过的路径，以及数据包从一跳到下一跳需要的时间。Traceroute 的输出有助于评估网络连接的健康状况，因为某些路由可能需要花费更长的时间才能到达最终的目的地。
 ```
 $ sudo traceroute world.std.com
 traceroute to world.std.com (192.74.137.5), 30 hops max, 60 byte packets
@@ -133,13 +133,13 @@ traceroute to world.std.com (192.74.137.5), 30 hops max, 60 byte packets
 
 ```
 
-### tcptraceroute command
+### tcptraceroute 命令
 
-The **tcptraceroute** command does basically the same thing as traceroute except that it is able to bypass the most common firewall filters. As the command's man page explains, tcptraceroute sends out TCP SYN packets instead of UDP or ICMP ECHO packets, thus making it less susceptible to being blocked.
+**tcptraceroute** 命令与 traceroute 基本上是一样的，只是它能够绕过最常见的防火墙的过滤。正如该命令的手册页所述，tcptraceroute 发送 TCP SYN 数据包而不是 UDP 或 ICMP ECHO 数据包，所以其不易被阻塞。
 
-### tcpdump command
+### tcpdump 命令
 
-The **tcpdump** command allows you to capture network packets for later analysis. With the -D option, it lists available interfaces.
+**tcpdump** 命令允许你捕获网络数据包来进一步分析。使用 -D 选项列出可用的网络接口。
 ```
 $ tcpdump -D
 1.eth0 [Up, Running]
@@ -157,7 +157,7 @@ $ tcpdump -D
 
 ```
 
-The -v (verbose) option controls how much detail you will see -- more v's, more details, but more than three v's doesn't add anything more.
+-v（verbose）选项控制你看到的细节程度--越多的 v,越详细，但超过 3 个 v 不会有更多意义。
 ```
 $ sudo tcpdump -vv host 192.168.0.32
 tcpdump: listening on eth0, link-type EN10MB (Ethernet), capture size 262144 bytes
@@ -172,9 +172,10 @@ tcpdump: listening on eth0, link-type EN10MB (Ethernet), capture size 262144 byt
 
 ```
 
-Expect to see a _lot_ of output when you run commands like this one.
+当你运行像这样的命令时，会看到非常多的输出。
 
-This command captures 11 packets from a specific host and over eth0. The -w option identifies the file that will contain the capture packets. In this example command, we've only asked to capture 11 packets.
+这个命令捕获来自特定主机和 eth0 上的 11 个数据包。-w 选项标识保存捕获包的文件。在这个示例命令中，我们只要求捕获 11 个数据包。
+
 ```
 $ sudo tcpdump -c 11 -i eth0 src 192.168.0.32 -w packets.pcap
 tcpdump: listening on eth0, link-type EN10MB (Ethernet), capture size 262144 bytes
@@ -184,9 +185,10 @@ tcpdump: listening on eth0, link-type EN10MB (Ethernet), capture size 262144 byt
 
 ```
 
-### arp command
+### arp 命令
 
-The arp command maps IPv4 addresses to hardware addresses. The information provided can also be used to identify the systems to some extent, since the network adaptors in use can tell you something about the systems using them. The second MAC address below, starting with f8:8e:85, is easily identified as a Comtrend router.
+arp 命令将 IPv4 地址映射到硬件地址。它所提供的信息也可以在一定程度上用于识别系统，因为网络适配器可以告诉你使用它们的系统的一些信息。下面的第二个MAC 地址，从 f8：8e：85 开始，很容易被识别为 Comtrend 路由器。
+
 ```
 $ arp -a
 ? (192.168.0.12) at b0:c0:90:3f:10:15 [ether] on eth0
@@ -194,15 +196,14 @@ $ arp -a
 
 ```
 
-The first line above shows the MAC address for the network adaptor on the system itself. This network adaptor appears to have been manufactured by Chicony Electronics in Taiwan. You can look up MAC address associations fairly easily on the web with tools such as this one from Wireshark -- https://www.wireshark.org/tools/oui-lookup.html
-
+上面的第一行显示了系统本身的网络适配器的 MAC 地址。该网络适配器似乎已由台湾 Chicony 电子公司制造。你可以很容易地在网上查找 MAC 地址关联，例如来自 Wireshark 的这个工具 -- https://www.wireshark.org/tools/oui-lookup.html
 
 --------------------------------------------------------------------------------
 
 via: https://www.networkworld.com/article/3233306/linux/more-ways-to-examine-network-connections-on-linux.html
 
 作者：[Sandra Henry-Stocker][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[kimii](https://github.com/kimii)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
