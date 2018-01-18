@@ -1,19 +1,21 @@
-让 History 命令显示日期和时间
+让 history 命令显示日期和时间
 ======
-我们都对 History 命令很熟悉。它将终端上 bash 执行过的所有命令存储到 `.bash_history` 文件中，来帮助我们复查用户之前执行过的命令。
 
-默认情况下 history 命令直接显示用户执行的命令而不会输出运行命令时的日期和时间，即使 history 命令记录了这个时间。
+我们都对 `history` 命令很熟悉。它将终端上 bash 执行过的所有命令存储到 `.bash_history` 文件中，来帮助我们复查用户之前执行过的命令。
 
-运行 history 命令时，它会检查一个叫做 `HISTTIMEFORMAT` 的环境变量，这个环境变量指明了如何格式化输出 history 命令中记录的这个时间。
+默认情况下 `history` 命令直接显示用户执行的命令而不会输出运行命令时的日期和时间，即使 `history` 命令记录了这个时间。
 
-若该值为 null 或者根本没有设置，则它跟大多数系统默认显示的一样，不会现实日期和时间。
+运行 `history` 命令时，它会检查一个叫做 `HISTTIMEFORMAT` 的环境变量，这个环境变量指明了如何格式化输出 `history` 命令中记录的这个时间。
 
-`HISTTIMEFORMAT` 使用 strftime 来格式化显示时间 (strftime - 将日期和时间转换为字符串)。history 命令输出日期和时间能够帮你更容易地追踪问题。
+若该值为 null 或者根本没有设置，则它跟大多数系统默认显示的一样，不会显示日期和时间。
 
-  * **%T：** 替换为时间 ( %H：%M：%S )。
-  * **%F：** 等同于 %Y-%m-%d (ISO 8601：2000 标准日期格式)。
+`HISTTIMEFORMAT` 使用 `strftime` 来格式化显示时间（`strftime` - 将日期和时间转换为字符串）。`history` 命令输出日期和时间能够帮你更容易地追踪问题。
 
-下面是 history 命令默认的输出。
+* `%T`： 替换为时间（`%H:%M:%S`）。
+* `%F`： 等同于 `%Y-%m-%d` （ISO 8601:2000 标准日期格式）。
+
+下面是 `history` 命令默认的输出。
+
 ```
 # history
  1 yum install -y mysql-server mysql-client
@@ -46,36 +48,36 @@
  28 sysdig
  29 yum install httpd mysql
  30 service httpd start
-
 ```
 
-根据需求，有三种不同的方法设置环境变量。
+根据需求，有三种不同的设置环境变量的方法。
 
-  * 临时设置当前用户的环境变量
-  * 永久设置当前/其他用户的环境变量
-  * 永久设置所有用户的环境变量
+* 临时设置当前用户的环境变量
+* 永久设置当前/其他用户的环境变量
+* 永久设置所有用户的环境变量
 
 **注意：** 不要忘了在最后那个单引号前加上空格，否则输出会很混乱的。
 
-### 方法 -1：
+### 方法 1：
 
-运行下面命令为为当前用户临时设置 HISTTIMEFORMAT 变量。这会一直生效到下次重启。
+运行下面命令为为当前用户临时设置 `HISTTIMEFORMAT` 变量。这会一直生效到下次重启。
+
 ```
 # export HISTTIMEFORMAT='%F %T '
-
 ```
 
-### 方法 -2：
+### 方法 2：
 
-将 HISTTIMEFORMAT 变量加到 `.bashrc` 或 `.bash_profile` 文件中，让它永久生效。
+将 `HISTTIMEFORMAT` 变量加到 `.bashrc` 或 `.bash_profile` 文件中，让它永久生效。
+
 ```
 # echo 'HISTTIMEFORMAT="%F %T "' >> ~/.bashrc
 或
 # echo 'HISTTIMEFORMAT="%F %T "' >> ~/.bash_profile
-
 ```
 
 运行下面命令来让文件中的修改生效。
+
 ```
 # source ~/.bashrc
 或
@@ -83,21 +85,22 @@
 
 ```
 
-### 方法 -3：
+### 方法 3：
 
-将 HISTTIMEFORMAT 变量加入 `/etc/profile` 文件中，让它对所有用户永久生效。
+将 `HISTTIMEFORMAT` 变量加入 `/etc/profile` 文件中，让它对所有用户永久生效。
+
 ```
 # echo 'HISTTIMEFORMAT="%F %T "' >> /etc/profile
-
 ```
 
 运行下面命令来让文件中的修改生效。
+
 ```
 # source /etc/profile
-
 ```
 
-输出结果为。
+输出结果为：
+
 ```
 # history
  1 2017-08-16 15:30:15 yum install -y mysql-server mysql-client
@@ -130,7 +133,6 @@
  28 2017-08-16 15:30:15 sysdig
  29 2017-08-16 15:30:15 yum install httpd mysql
  30 2017-08-16 15:30:15 service httpd start
-
 ```
 --------------------------------------------------------------------------------
 
@@ -138,7 +140,7 @@ via: https://www.2daygeek.com/display-date-time-linux-bash-history-command/
 
 作者：[2daygeek][a]
 译者：[lujun9972](https://github.com/lujun9972)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
