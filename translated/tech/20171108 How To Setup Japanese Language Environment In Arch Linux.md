@@ -7,7 +7,7 @@
 
 ### 在Arch Linux中设置日语环境
 
-首先，安装必要的日语字体，以正确查看日语 ASCII 格式：
+首先，为了正确查看日语 ASCII 格式，先安装必要的日语字体：
 ```
 sudo pacman -S adobe-source-han-sans-jp-fonts otf-ipafont
 ```
@@ -27,7 +27,7 @@ pacaur -S ttf-monapo
 sudo pacman -S ibus ibus-anthy
 ```
 
-在 **~/.xprofile** 中添加以下行（如果不存在，创建一个）：
+在 **~/.xprofile** 中添加以下几行（如果不存在，创建一个）：
 ```
 # Settings for Japanese input
 export GTK_IM_MODULE='ibus'
@@ -38,7 +38,7 @@ export XMODIFIERS=@im='ibus'
 ibus-daemon -drx
 ```
 
-~/.xprofile 允许我们在窗口管理器启动之前在 X 用户会话开始时执行命令。
+~/.xprofile 允许我们在 X 用户会话开始时且在窗口管理器启动之前执行命令。
 
 
 保存并关闭文件。重启 Arch Linux 系统以使更改生效。
@@ -72,9 +72,9 @@ ibus-setup
 
 [![][2]][8]
 
-你还可以在键盘绑定中编辑默认的快捷键。完成所有更改后，单击应用并确定。就是这样。从任务栏中的 iBus 图标中选择日语，或者按下**Command/Window 键+空格键**来在日语和英语（或者系统中的其他默认语言）之间切换。你可以从 iBus 首选项窗口更改键盘快捷键。
+你还可以在键盘绑定中编辑默认的快捷键。完成所有更改后，点击应用并确定。就是这样。从任务栏中的 iBus 图标中选择日语，或者按下**SUPER 键+空格键**（LCTT译注：SUPER KEY 通常为 Command/Window KEY）来在日语和英语（或者系统中的其他默认语言）之间切换。你可以从 iBus 首选项窗口更改键盘快捷键。
 
-你现在知道如何在 Arch Linux 及其衍生版中使用日语了。如果你发现我们的指南很有用，那么请您在社交、专业网络上分享，并支持 OSTechNix。
+现在你知道如何在 Arch Linux 及其衍生版中使用日语了。如果你发现我们的指南很有用，那么请您在社交、专业网络上分享，并支持 OSTechNix。
 
 
 
@@ -84,7 +84,7 @@ via: https://www.ostechnix.com/setup-japanese-language-environment-arch-linux/
 
 作者：[][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Locez](https://github.com/locez)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
