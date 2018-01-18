@@ -1,3 +1,5 @@
+translating---geekpi
+
 Bash Bypass Alias Linux/Unix Command
 ======
 I defined mount bash shell alias as follows on my Linux system:
