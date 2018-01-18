@@ -1,3 +1,5 @@
+Translating by jessie-pang
+
 How to use special permissions: the setuid, setgid and sticky bits
 ======
 

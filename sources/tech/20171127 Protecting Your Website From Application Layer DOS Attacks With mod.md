@@ -1,3 +1,5 @@
+Translating by jessie-pang
+
 Protecting Your Website From Application Layer DOS Attacks With mod
 ======
 There exist many ways of maliciously taking a website offline. The more complicated methods involve technical knowledge of databases and programming. A far simpler method is known as a "Denial Of Service", or "DOS" attack. This attack derives its name from its goal which is to deny your regular clients or site visitors normal website service.
