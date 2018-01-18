@@ -84,7 +84,7 @@ via: https://www.networkworld.com/article/3233305/linux/using-the-linux-find-com
 
 作者：[Sandra Henry-Stocker][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Locez](https://github.com/locez)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
