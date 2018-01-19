@@ -1,3 +1,6 @@
+translated by cyleft
+======
+
 Linux directory structure: /lib explained
 ======
 [![lib folder linux][1]][1]
