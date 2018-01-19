@@ -1,3 +1,5 @@
+translating---geekpi
+
 Easy guide to secure VNC server with TLS encryption
 ======
 In this tutorial, we will learn to install VNC server & secure VNC server sessions with TLS encryption.
