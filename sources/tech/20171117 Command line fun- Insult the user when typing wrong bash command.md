@@ -1,3 +1,5 @@
+translated by cyleft
+
 Command line fun: Insult the user when typing wrong bash command
 ======
 You can configure sudo command to insult user when they type the wrong password. Now, it is possible to abuse insult the user when they enter the wrong command at the shell prompt.
