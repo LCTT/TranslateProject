@@ -1,17 +1,23 @@
 让我们使用 PC 键盘在终端演奏钢琴
 ======
-厌倦了工作？那么来吧，让我们弹弹钢琴！是的，你没有看错。谁需要真的钢琴啊？我们可以用 PC 键盘在命令行下就能弹钢琴。向你们介绍一下 **Piano-rs** - 这是一款用 Rust 语言编写的，可以让你用 PC 键盘在终端弹钢琴的简单工具。它免费，开源，而且基于 MIT 协议。你可以在任何支持 Rust 的操作系统中使用它。
+![](https://www.ostechnix.com/wp-content/uploads/2017/10/Play-Piano-In-Terminal-720x340.jpg)
 
-### Piano-rs：使用 PC 键盘在终端弹钢琴
+厌倦了工作？那么来吧，让我们弹弹钢琴！是的，你没有看错，根本不需要真的钢琴。我们可以用 PC 键盘在命令行下就能弹钢琴。向你们介绍一下 `piano-rs` —— 这是一款用 Rust 语言编写的，可以让你用 PC 键盘在终端弹钢琴的简单工具。它自由开源，基于 MIT 协议。你可以在任何支持 Rust 的操作系统中使用它。
+
+### piano-rs：使用 PC 键盘在终端弹钢琴
 
 #### 安装
 
 确保系统已经安装了 Rust 编程语言。若还未安装，运行下面命令来安装它。
+
 ```
 curl https://sh.rustup.rs -sSf | sh
 ```
 
-安装程序会问你是否默认安装还是自定义安装还是取消安装。我希望默认安装，因此输入 **1** (数字一)。
+（LCTT 译注：这种直接通过 curl 执行远程 shell 脚本是一种非常危险和不成熟的做法。）
+
+安装程序会问你是否默认安装还是自定义安装还是取消安装。我希望默认安装，因此输入 `1` （数字一）。
+
 ```
 info: downloading installer
 
@@ -43,7 +49,7 @@ default host triple: x86_64-unknown-linux-gnu
 1) Proceed with installation (default)
 2) Customize installation
 3) Cancel installation
-**1**
+1
 
 info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
 223.6 KiB / 223.6 KiB (100 %) 215.1 KiB/s ETA: 0 s
@@ -72,9 +78,10 @@ environment variable. Next time you log in this will be done automatically.
 To configure your current shell run source $HOME/.cargo/env
 ```
 
-登出然后重启系统来将 cargo 的 bin 目录纳入 PATH 变量中。
+登出然后重启系统来将 cargo 的 bin 目录纳入 `PATH` 变量中。
 
 校验 Rust 是否正确安装：
+
 ```
 $ rustc --version
 rustc 1.21.0 (3b72af97e 2017-10-09)
@@ -83,40 +90,44 @@ rustc 1.21.0 (3b72af97e 2017-10-09)
 太棒了！Rust 成功安装了。是时候构建 piano-rs 应用了。
 
 使用下面命令克隆 Piano-rs 仓库：
+
 ```
 git clone https://github.com/ritiek/piano-rs
 ```
 
-上面命令会在当前工作目录创建一个名为 "piano-rs" 的目录并下载所有内容到其中。进入该目录：
+上面命令会在当前工作目录创建一个名为 `piano-rs` 的目录并下载所有内容到其中。进入该目录：
+
 ```
 cd piano-rs
 ```
 
 最后，运行下面命令来构建 Piano-rs：
+
 ```
 cargo build --release
 ```
 
 编译过程要花上一阵子。
 
-#### Usage
+#### 用法
 
-编译完成后，在 **piano-rs** 目录中运行下面命令：
+编译完成后，在 `piano-rs` 目录中运行下面命令：
+
 ```
 ./target/release/piano-rs
 ```
 
-这就我们在终端上的钢琴键盘了！可以开始弹指一些音符了。按下按键可以弹奏相应音符。使用 **左/右** 方向键可以在弹奏时调整音频。而，使用 **上/下** 方向键可以在弹奏时调整音长。
+这就是我们在终端上的钢琴键盘了！可以开始弹指一些音符了。按下按键可以弹奏相应音符。使用 **左/右** 方向键可以在弹奏时调整音频。而，使用 **上/下** 方向键可以在弹奏时调整音长。
 
-[![][1]][2]
+![][2]
 
-Piano-rs 使用与 [**multiplayerpiano.com**][3] 一样的音符和按键。另外，你可以使用[**这些音符 **][4] 来学习弹指各种流行歌曲。
+Piano-rs 使用与 [multiplayerpiano.com][3] 一样的音符和按键。另外，你可以使用[这些音符][4] 来学习弹指各种流行歌曲。
 
 要查看帮助。输入：
+
 ```
 $ ./target/release/piano-rs -h
-```
-```
+
 piano-rs 0.1.0
 Ritiek Malhotra <ritiekmalhotra123@gmail.com>
 Play piano in the terminal using PC keyboard.
@@ -141,19 +152,18 @@ OPTIONS:
 此致敬礼！
 
 
-
 --------------------------------------------------------------------------------
 
 via: https://www.ostechnix.com/let-us-play-piano-terminal-using-pc-keyboard/
 
 作者：[SK][a]
 译者：[lujun9972](https://github.com/lujun9972)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://www.ostechnix.com/author/sk/
 [1]:data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7
-[2]:http://www.ostechnix.com/wp-content/uploads/2017/10/Piano.png ()
+[2]:http://www.ostechnix.com/wp-content/uploads/2017/10/Piano.png
 [3]:http://www.multiplayerpiano.com/
 [4]:https://pastebin.com/CX1ew0uB
