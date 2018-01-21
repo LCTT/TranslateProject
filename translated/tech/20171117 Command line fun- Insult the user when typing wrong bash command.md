@@ -1,21 +1,19 @@
-translate by cyleft
-
-Command line fun: Insult the user when typing wrong bash command
+命令行乐趣：恶搞输错 Bash 命令的用户
 ======
-You can configure sudo command to insult user when they type the wrong password. Now, it is possible to abuse insult the user when they enter the wrong command at the shell prompt.
+你可以通过配置 sudo 命令去恶搞输入错误密码的用户。但是之后，shell 的恶搞提示语可能会滥用于输入错误命令的用户。
 
 
-## Say hello bash-insulter
+## 你好 bash-insulter
 
-From the Github page:
+来自 Github 页面：
 
-> Randomly insults the user when typing wrong command. It use a new builtin error-handling function named command_not_found_handle in bash 4.x.
+> 当用户键入错误命令，随机嘲讽。它使用了一个 bash4.x. 版本的全新内置错误处理函数，叫 command_not_found_handle。
 
-## Installation
+## 安装
 
-Type the following git command to clone repo:
+键入下列 git 命令克隆一个仓库：
 `git clone https://github.com/hkbakke/bash-insulter.git bash-insulter`
-Sample outputs:
+示例输出：
 ```
 Cloning into 'bash-insulter'...
 remote: Counting objects: 52, done.
@@ -25,35 +23,35 @@ Unpacking objects: 100% (52/52), done.
 
 ```
 
-Edit your ~/.bashrc or /etc/bash.bashrc using a text editor such as vi command:
+用文本编辑器，编辑你的 ~/.bashrc 或者 /etc/bash.bashrc 文件，比如说使用 vi： 
 `$ vi ~/.bashrc`
-Append the following lines (see [if..else..fi statement][1] and [source command][2]):
+在其后追加这一行（具体了解请查看 [if..else..fi 声明][1] 和 [命令源码][2]）：
 ```
 if [ -f $HOME/bash-insulter/src/bash.command-not-found ]; then
     source $HOME/bash-insulter/src/bash.command-not-found
 fi
 ```
 
-Save and close the file. Login again or just run it manually if you do not want to logout:
+保存并关闭文件。重新登陆，如果不想退出账号也可以手动运行它：
 ```
 $ . $HOME/bash-insulter/src/bash.command-not-found
 ```
 
-## How do I use it?
+## 如何使用它？
 
-Just type some invalid commands:
+尝试键入一些无效命令：
 ```
 $ ifconfigs
 $ dates
 ```
-Sample outputs:
-[![An interesting bash hook feature to insult you when you type an invalid command. ][3]][3]
+示例输出:
+[![一个有趣的 bash 钩子功能，嘲讽输入了错误命令的你。][3]][3]
 
-## Customization
+## 自定义
 
-You need to edit $HOME/bash-insulter/src/bash.command-not-found:
+你需要编辑 $HOME/bash-insulter/src/bash.command-not-found：
 `$ vi $HOME/bash-insulter/src/bash.command-not-found`
-Sample code:
+示例代码：
 ```
 command_not_found_handle () {
     local INSULTS=(
@@ -91,7 +89,7 @@ command_not_found_handle () {
         "Pro tip: type a valid command!"
     )
  
-    # Seed "random" generator
+    # 设置“随机”种子发生器 
     RANDOM=$(date +%s%N)
     VALUE=$((${RANDOM}%2))
  
@@ -101,20 +99,20 @@ command_not_found_handle () {
  
     echo "-bash: $1: command not found"
  
-    # Return the exit code normally returned on invalid command
+    # 无效命令，常规返回已存在的代码
     return 127
 }
 ```
 
-## sudo insults
+## sudo 嘲讽
 
-Edit the sudoers file:
+编辑 sudoers 文件：
 `$ sudo visudo`
-Append the following line:
+追加下面这一行：
 `Defaults insults`
-Or update as follows i.e. add insults at the end of line:
+或者像下面尾行增加一句嘲讽语：
 `Defaults !lecture,tty_tickets,!fqdn,insults`
-Here is my file:
+这是我的文件：
 ```
 Defaults	env_reset
 Defaults	mail_badpass
@@ -148,21 +146,21 @@ $ sudo -k # clear old stuff so that we get a fresh prompt
 $ sudo ls /root/
 $ sudo -i
 ```
-Sample session:
-[![An interesting sudo feature to insult you when you type an invalid password.][4]][4]
+样例对话:
+[![当输入错误密码时，你会被一个有趣的的 sudo 嘲讽语戏弄。][4]][4]
 
-## Say hello to sl
+## 你好 sl
 
-[sl is a joke software or classic UNIX][5] game. It is a steam locomotive runs across your screen if you type "sl" (Steam Locomotive) instead of "ls" by mistake.
+[sl 或是 UNIX 经典捣蛋软件][5] 游戏。当你错误的把 “ls” 输入成 “sl”，将会有一辆蒸汽机车穿过你的屏幕。
 `$ sl`
-[![Linux / UNIX Desktop Fun: Steam Locomotive][6]][5]
+[![Linux / UNIX 桌面乐趣: 蒸汽机车][6]][5]
 
 --------------------------------------------------------------------------------
 
 via: https://www.cyberciti.biz/howto/insult-linux-unix-bash-user-when-typing-wrong-command/
 
 作者：[Vivek Gite][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[CYLeft](https://github.com/CYLeft)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
