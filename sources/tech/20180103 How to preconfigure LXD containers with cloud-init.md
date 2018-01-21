@@ -1,3 +1,4 @@
+kaneg is translating.
 How to preconfigure LXD containers with cloud-init
 ======
 You are creating containers and you want them to be somewhat preconfigured. For example, you want them to run automatically **apt update** as soon as they are launched. Or, get some packages pre-installed, or run a few commands. Here is how to perform this early initialization with [**cloud-init**][1] through [LXD to container images that support **cloud-init**][2].
