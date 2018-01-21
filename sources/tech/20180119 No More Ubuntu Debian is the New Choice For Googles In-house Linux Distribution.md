@@ -1,3 +1,5 @@
+Translating by jessie-pang
+
 No More Ubuntu! Debian is the New Choice For Google’s In-house Linux Distribution
 ============================================================
 
