@@ -1,3 +1,4 @@
+XYenChi is translating
 Why You Should Still Love Telnet
 ======
 Telnet, the protocol and the command line tool, were how system administrators used to log into remote servers. However, due to the fact that there is no encryption all communication, including passwords, are sent in plaintext meant that Telnet was abandoned in favour of SSH almost as soon as SSH was created.
