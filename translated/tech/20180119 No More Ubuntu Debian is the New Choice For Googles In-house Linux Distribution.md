@@ -60,8 +60,8 @@ gLinux 的开发计划
 
 #### 关于作者 Abhishek Prakash
 
-I am a professional software developer, and founder of It’s FOSS. I am an avid Linux lover and Open Source enthusiast. I use Ubuntu and believe in sharing knowledge. Apart from Linux, I love classic detective mysteries. I’m a huge fan of Agatha Christie’s work.
-我是一名专业的软件开发人员，也是 FOSS 的创始人。我是一个狂热的 Linux 爱好者和开源爱好者。我使用 Ubuntu 并相信知识共享。除了 Linux 之外，我还喜欢经典侦探的奥秘。我是阿加莎·克里斯蒂（Agatha Christie）作品的忠实粉丝。
+我是一名专业的软件开发人员，也是 FOSS 的创始人。我是一个狂热的 Linux 爱好者和开源爱好者。我使用 Ubuntu 并相信知识共享。除了 Linux 之外，我还喜欢经典的侦探推理故事。我是阿加莎·克里斯蒂（Agatha Christie）作品的忠实粉丝。
+
 
 --------------------------------------------------------------------------------
 
