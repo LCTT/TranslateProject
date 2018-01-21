@@ -1,4 +1,4 @@
-translated by cyleft
+translated by cyleft.
 
 Best Linux Screenshot and Screencasting Tools
 ======
