@@ -117,15 +117,11 @@ In my last article, I promised you that repetitive tasks can often be easily str
 
 Here I’ve shown concrete examples of the use of shell aliases and shell functions to streamline the synchronize and backup functionality of the cp command. If you’d like to learn more about this, check out the two articles cited above: [How to save keystrokes at the command line with alias][10] and [Shell scripting: An introduction to the shift method and custom functions][11], written by my colleagues Greg and Seth, respectively.
 
-### Topics
-
- [Linux][12]
 
 ### About the author
 
  [![](https://opensource.com/sites/default/files/styles/profile_pictures/public/clh_portrait2.jpg?itok=V1V-YAtY)][13] Chris Hermansen 
 
--
 
  Engaged in computing since graduating from the University of British Columbia in 1978, I have been a full-time Linux user since 2005 and a full-time Solaris, SunOS and UNIX System V user before that. On the technical side of things, I have spent a great deal of my career doing data analysis; especially spatial data analysis. I have a substantial amount of programming experience in relation to data analysis, using awk, Python, PostgreSQL, PostGIS and lately Groovy. I have also built a few... [more about Chris Hermansen][14]
 
