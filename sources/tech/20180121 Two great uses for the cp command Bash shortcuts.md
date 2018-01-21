@@ -3,16 +3,9 @@ Two great uses for the cp command: Bash shortcuts
 
 ### Here's how to streamline the backup and synchronize functions of the cp command.
 
- [![](https://opensource.com/sites/default/files/styles/byline_thumbnail/public/clh_portrait2.jpg?itok=w2fRuoKj)][1]  19 Jan 2018 [Chris Hermansen][2] [Feed][3] 
-
-8[up][4]
-
- [4 comments][5]
 ![Two great uses for the cp command: Bash shortcuts ](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/yearbook-haff-rx-linux-file-lead_0.png?itok=-i0NNfDC)
 
-Image by : 
-
-[Internet Archive Book Images][6]. Modified by Opensource.com. CC BY-SA 4.0
+>Image by : [Internet Archive Book Images][6]. Modified by Opensource.com. CC BY-SA 4.0
 
 Last July, I wrote about [two great uses for the cp command][7]: making a backup of a file, and synchronizing a secondary copy of a folder.
 
@@ -140,13 +133,13 @@ Here I’ve shown concrete examples of the use of shell aliases and shell functi
 
 via: https://opensource.com/article/18/1/two-great-uses-cp-command-update
 
-作者：[ ][a]
+作者：[Chris Hermansen][a]
 译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:
+[a]:https://opensource.com/users/clhermansen
 [1]:https://opensource.com/users/clhermansen
 [2]:https://opensource.com/users/clhermansen
 [3]:https://opensource.com/user/37806/feed
