@@ -1,3 +1,5 @@
+translating by ljgibbslf
+
 Working with VI editor : The Basics
 ======
 VI editor is a powerful command line based text editor that was originally created for Unix but has since been ported to various Unix & Linux distributions. In Linux there exists another, advanced version of VI editor called VIM (also known as VI IMproved ). VIM only adds funtionalities to already powefrul VI editor, some of the added functionalities a
