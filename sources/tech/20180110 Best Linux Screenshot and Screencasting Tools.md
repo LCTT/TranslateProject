@@ -1,3 +1,5 @@
+translated by cyleft
+
 Best Linux Screenshot and Screencasting Tools
 ======
 ![](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/best-linux-screenshot-and-screencasting-tools_orig.jpg)
