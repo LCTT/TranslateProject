@@ -1,7 +1,7 @@
 Debian 取代 Ubuntu 成为 Google 内部 Linux 发行版的新选择
 ============================================================
 
-_摘要：Google 多年来一直使用基于 Ubuntu 的内部操作系统 Goobuntu。如今，Goobuntu 正在被基于 Debian Testing 的 gLinux 所取代。
+_摘要_：Google 多年来一直使用基于 Ubuntu 的内部操作系统 Goobuntu。如今，Goobuntu 正在被基于 Debian Testing 的 gLinux 所取代。
 
 如果你读过 [Ubuntu facts][18]，你可能知道 Google 使用了一个名为 [Goobuntu][19] 的 Linux 发行版作为开发平台。这是一个定制化的 Linux 发行版，不难猜到，它是基于 Ubuntu 的。
 
@@ -61,7 +61,7 @@ gLinux 的开发计划
 #### 关于作者 Abhishek Prakash
 
 I am a professional software developer, and founder of It’s FOSS. I am an avid Linux lover and Open Source enthusiast. I use Ubuntu and believe in sharing knowledge. Apart from Linux, I love classic detective mysteries. I’m a huge fan of Agatha Christie’s work.
-我是一名专业的软件开发人员，也是 FOSS 的创始人。我是一个狂热的 Linux 爱好者和开源爱好者。我使用Ubuntu并相信知识共享。除了 Linux 之外，我还喜欢经典侦探的奥秘。我是阿加莎·克里斯蒂（Agatha Christie）作品的忠实粉丝。
+我是一名专业的软件开发人员，也是 FOSS 的创始人。我是一个狂热的 Linux 爱好者和开源爱好者。我使用 Ubuntu 并相信知识共享。除了 Linux 之外，我还喜欢经典侦探的奥秘。我是阿加莎·克里斯蒂（Agatha Christie）作品的忠实粉丝。
 
 --------------------------------------------------------------------------------
 
