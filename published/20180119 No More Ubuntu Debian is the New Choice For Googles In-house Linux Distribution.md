@@ -1,16 +1,17 @@
 Debian 取代 Ubuntu 成为 Google 内部 Linux 发行版的新选择
 ============================================================
 
-_摘要_：Google 多年来一直使用基于 Ubuntu 的内部操作系统 Goobuntu。如今，Goobuntu 正在被基于 Debian Testing 的 gLinux 所取代。
+> 摘要：Google 多年来一直使用基于 Ubuntu 的内部操作系统 Goobuntu。如今，Goobuntu 正在被基于 Debian Testing 的 gLinux 所取代。
 
-如果你读过 [Ubuntu facts][18]，你可能知道 Google 使用了一个名为 [Goobuntu][19] 的 Linux 发行版作为开发平台。这是一个定制化的 Linux 发行版，不难猜到，它是基于 Ubuntu 的。
+如果你读过那篇《[Ubuntu 十个令人惊奇的事实][18]》，你可能知道 Google 使用了一个名为 [Goobuntu][19] 的 Linux 发行版作为开发平台。这是一个定制化的 Linux 发行版，不难猜到，它是基于 Ubuntu 的。
 
 Goobuntu 基本上是一个 [采用轻量级的界面的 Ubuntu][20]，它是基于 Ubuntu LTS 版本的。如果你认为 Google 对 Ubuntu 的测试或开发做出了贡献，那么你就错了。Google 只是 Canonical 公司的 [Ubuntu Advantage Program][21] 计划的付费客户而已。[Canonical][22] 是 Ubuntu 的母公司。
 
 ### 遇见 gLinux：Google 基于 Debian Buster 的新 Linux 发行版
+
 ![gLinux from Goobuntu](https://itsfoss.com/wp-content/uploads/2018/01/glinux-announcement-800x450.jpg)
 
-在使用 Ubuntu 五年多以后，Google 正在用一个基于 Debian Testing 版本的 Linux 发行版—— gLinux 取代 Goobuntu。
+在使用 Ubuntu 五年多以后，Google 正在用一个基于 Debian Testing 版本的 Linux 发行版 —— gLinux 取代 Goobuntu。
 
 正如 [MuyLinux][23] 所报道的，gLinux 是从软件包的源代码中构建出来的，然后 Google 对其进行了修改，这些改动也将为上游做出贡献。
 
@@ -29,7 +30,8 @@ Google 计划如何转移到 Debian Testing？目前的 Debian Testing 版本是
 Google 还计划将这些改动发到 Debian 的上游项目中，从而为其发展做出贡献。
 
 ![gLinux testing plan from Google](https://itsfoss.com/wp-content/uploads/2018/01/glinux-testing-plan.jpg)
-gLinux 的开发计划
+
+*gLinux 的开发计划*
 
 ### Ubuntu 丢失了一个大客户！
 
@@ -43,18 +45,12 @@ gLinux 的开发计划
 
 如果你想使用 Goobuntu 或 gLinux，那得成为 Google 公司的雇员才行。因为这是 Google 的内部项目，不对公众开放。
 
-总的来说，这对 Debian 来说是一个好消息，尤其是如果他们改变了上游的话。对 Ubuntu 来说可就不同了。我已经联系了 Canonical 公司征求意见，但至今没有回应。
+总的来说，这对 Debian 来说是一个好消息，尤其是他们成为了上游发行版的话。对 Ubuntu 来说可就不同了。我已经联系了 Canonical 公司征求意见，但至今没有回应。
 
 更新：Canonical 公司回应称，他们“不共享与单个客户关系的细节”，因此他们不能提供有关收入和任何其他的细节。
 
 你对 Google 抛弃 Ubuntu 而选择 Debian 有什么看法？
 
-<footer class="entry-footer" style="box-sizing: inherit;">
-
-发表于：[新闻][15]
-标签：[glinux][16]、[goobuntu][17]
-
-</footer>
 
 ![](https://secure.gravatar.com/avatar/20749c268f5d3e4d2c785499eb6a17c0?s=125&d=mm&r=g)
 
@@ -67,9 +63,9 @@ gLinux 的开发计划
 
 via: https://itsfoss.com/goobuntu-glinux-google/
 
-作者：[Abhishek Prakash ][a]
+作者：[Abhishek Prakash][a]
 译者：[jessie-pang](https://github.com/jessie-pang)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -98,5 +94,5 @@ via: https://itsfoss.com/goobuntu-glinux-google/
 [22]:https://www.canonical.com/
 [23]:https://www.muylinux.com/2018/01/15/goobuntu-glinux-google/
 [24]:https://debconf17.debconf.org/talks/44/
-[25]:https://itsfoss.com/barcelona-open-source/
+[25]:https://linux.cn/article-9236-1.html
 [26]:https://itsfoss.com/eelo-mobile-os/
