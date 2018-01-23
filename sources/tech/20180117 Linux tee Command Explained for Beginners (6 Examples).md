@@ -1,3 +1,5 @@
+translated by cyleft
+
 Linux tee Command Explained for Beginners (6 Examples)
 ======
 
