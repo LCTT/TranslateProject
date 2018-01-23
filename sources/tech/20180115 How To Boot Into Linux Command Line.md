@@ -1,3 +1,5 @@
+translating---geekpi
+
 How To Boot Into Linux Command Line
 ======
 ![](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/how-to-boot-into-linux-command-line_orig.jpg)
