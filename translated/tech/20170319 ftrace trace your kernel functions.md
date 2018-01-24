@@ -3,43 +3,42 @@ ftrace：跟踪你的内核函数！
 
 大家好！今天我们将去讨论一个调试工具：ftrace，之前我的博客上还没有讨论过它。还有什么能比一个新的调试工具更让人激动呢？
 
-这个非常棒的 ftrace 并不是个新的工具！它大约在 Linux 的 2.6 内核版本中就有了，时间大约是在 2008 年。[这里是我用谷歌能找到的一些文档][10]。因此，如果你是一个调试系统的“老手”，可能早就已经使用它了！
+这个非常棒的 ftrace 并不是个新的工具！它大约在 Linux 的 2.6 内核版本中就有了，时间大约是在 2008 年。[这一篇是我用谷歌能找到的最早的文档][10]。因此，如果你是一个调试系统的“老手”，可能早就已经使用它了！
 
-我知道，ftrace 已经存在了大约 2.5 年了，但是还没有真正的去学习它。假设我明天要召开一个专题研究会，那么，关于 ftrace 应该讨论些什么？因此，今天是时间去讨论一下它了！
+我知道，ftrace 已经存在了大约 2.5 年了（LCTT 译注：距本文初次写作时），但是还没有真正的去学习它。假设我明天要召开一个专题研究会，那么，关于 ftrace 应该讨论些什么？因此，今天是时间去讨论一下它了！
 
 ### 什么是 ftrace？
 
 ftrace 是一个 Linux 内核特性，它可以让你去跟踪 Linux 内核的函数调用。为什么要这么做呢？好吧，假设你调试一个奇怪的问题，而你已经得到了你的内核版本中这个问题在源代码中的开始的位置，而你想知道这里到底发生了什么？
 
-每次在调试的时候，我并不会经常去读内核源代码，但是，极个别的情况下会去读它！例如，本周在工作中，我有一个程序在内核中卡死了。查看到底是调用了什么函数、哪些系统涉及其中，能够帮我更好的理解在内核中发生了什么！（在我的那个案例中，它是虚拟内存系统）
+每次在调试的时候，我并不会经常去读内核源代码，但是，极个别的情况下会去读它！例如，本周在工作中，我有一个程序在内核中卡死了。查看到底是调用了什么函数，能够帮我更好的理解在内核中发生了什么，哪些系统涉及其中！（在我的那个案例中，它是虚拟内存系统）。
 
-我认为 ftrace 是一个十分好用的工具（它肯定没有 strace 那样广泛被使用，使用难度也低于它），但是它还是值得你去学习。因此，让我们开始吧！
+我认为 ftrace 是一个十分好用的工具（它肯定没有 `strace` 那样使用广泛，也比它难以使用），但是它还是值得你去学习。因此，让我们开始吧！
 
 ### 使用 ftrace 的第一步
 
-不像 strace 和 perf，ftrace 并不是真正的 **程序** – 你不能只运行 `ftrace my_cool_function`。那样太容易了！
+不像 `strace` 和 `perf`，ftrace 并不是真正的 **程序** – 你不能只运行 `ftrace my_cool_function`。那样太容易了！
 
-如果你去读 [使用 Ftrace 调试内核][11]，它会告诉你从 `cd /sys/kernel/debug/tracing` 开始，然后做很多文件系统的操作。
+如果你去读 [使用 ftrace 调试内核][11]，它会告诉你从 `cd /sys/kernel/debug/tracing` 开始，然后做很多文件系统的操作。
 
-对于我来说，这种办法太麻烦 – 使用 ftrace 的一个简单例子应该像这样：
+对于我来说，这种办法太麻烦——一个使用 ftrace 的简单例子像是这样：
 
 ```
 cd /sys/kernel/debug/tracing
 echo function > current_tracer
 echo do_page_fault > set_ftrace_filter
 cat trace
-
 ```
 
-这个文件系统到跟踪系统的接口（“给这些神奇的文件赋值，然后该发生的事情就会发生”）理论上看起来似乎可用，但是它不是我的首选方式。
+这个文件系统是跟踪系统的接口（“给这些神奇的文件赋值，然后该发生的事情就会发生”）理论上看起来似乎可用，但是它不是我的首选方式。
 
-幸运的是，ftrace 团队也考虑到这个并不友好的用户界面，因此，它有了一个更易于使用的界面，它就是 **trace-cmd**！！！trace-cmd 是一个带命令行参数的普通程序。我们后面将使用它！我在 LWN 上找到了一个 trace-cmd 的使用介绍：[trace-cmd:  Ftrace 的一个前端][12]。
+幸运的是，ftrace 团队也考虑到这个并不友好的用户界面，因此，它有了一个更易于使用的界面，它就是 `trace-cmd`！！！`trace-cmd` 是一个带命令行参数的普通程序。我们后面将使用它！我在 LWN 上找到了一个 `trace-cmd` 的使用介绍：[trace-cmd:  Ftrace 的一个前端][12]。
 
-### 开始使用 trace-cmd：让 trace 仅跟踪一个函数
+### 开始使用 trace-cmd：让我们仅跟踪一个函数
 
 首先，我需要去使用 `sudo apt-get install trace-cmd` 安装 `trace-cmd`，这一步很容易。
 
-对于第一个 ftrace 的演示，我决定去了解我的内核如何去处理一个页面故障。当 Linux 分配内存时，它经常偷懒，（“你并不是  _真的_  计划去使用内存，对吗？”）。这意味着，当一个应用程序尝试去对分配给它的内存进行写入时，就会发生一个页面故障，而这个时候，内核才会真正的为应用程序去分配物理内存。
+对于第一个 ftrace 的演示，我决定去了解我的内核如何去处理一个页面故障。当 Linux 分配内存时，它经常偷懒，（“你并不是_真的_计划去使用内存，对吗？”）。这意味着，当一个应用程序尝试去对分配给它的内存进行写入时，就会发生一个页面故障，而这个时候，内核才会真正的为应用程序去分配物理内存。
 
 我们开始使用 `trace-cmd` 并让它跟踪 `do_page_fault` 函数！
 
@@ -47,7 +46,6 @@ cat trace
 $ sudo trace-cmd record -p function -l do_page_fault
   plugin 'function'
 Hit Ctrl^C to stop recording
-
 ```
 
 我将它运行了几秒钟，然后按下了 `Ctrl+C`。 让我大吃一惊的是，它竟然产生了一个 2.5MB 大小的名为 `trace.dat` 的跟踪文件。我们来看一下这个文件的内容！
@@ -68,7 +66,7 @@ $ sudo trace-cmd report
 
 ```
 
-看起来很整洁 – 它展示了进程名（chrome）、进程 ID （15144）、CPU（000）、以及它跟踪的函数。
+看起来很整洁 – 它展示了进程名（chrome）、进程 ID（15144）、CPU ID（000），以及它跟踪的函数。
 
 通过察看整个文件，（`sudo trace-cmd report | grep chrome`）可以看到，我们跟踪了大约 1.5 秒，在这 1.5 秒的时间段内，Chrome 发生了大约 500 个页面故障。真是太酷了！这就是我们做的第一个 ftrace！
 
@@ -81,14 +79,13 @@ $ sudo trace-cmd report
 ```
 sudo trace-cmd record --help # I read the help!
 sudo trace-cmd record -p function -P 25314 # record for PID 25314
-
 ```
 
 `sudo trace-cmd report` 输出了 18,000 行。如果你对这些感兴趣，你可以看 [这里是所有的 18,000 行的输出][13]。
 
 18,000 行太多了，因此，在这里仅摘录其中几行。
 
-当系统调用 `clock_gettime` 运行时，都发生了什么。
+当系统调用 `clock_gettime` 运行的时候，都发生了什么：
 
 ```
  compat_SyS_clock_gettime
@@ -99,7 +96,6 @@ sudo trace-cmd record -p function -P 25314 # record for PID 25314
              __getnstimeofday64
                 arch_counter_read
     __compat_put_timespec
-
 ```
 
 这是与进程调试相关的一些东西：
@@ -128,10 +124,9 @@ sudo trace-cmd record -p function -P 25314 # record for PID 25314
 
 ```
 sudo trace-cmd record -p function_graph -P 25314
-
 ```
 
-同样，这里只是一个片断（这次来自 futex 代码）
+同样，这里只是一个片断（这次来自 futex 代码）：
 
 ```
              |      futex_wake() {
@@ -149,7 +144,6 @@ sudo trace-cmd record -p function_graph -P 25314
   5.250 us   |          }
   0.583 us   |          put_page();
 + 24.208 us  |        }
-
 ```
 
 我们看到在这个示例中，在 `futex_wake` 后面调用了 `get_futex_key`。这是在源代码中真实发生的事情吗？我们可以检查一下！！[这里是在 Linux 4.4 中 futex_wake 的定义][15] (我的内核版本是 4.4）。
@@ -170,7 +164,6 @@ futex_wake(u32 __user *uaddr, unsigned int flags, int nr_wake, u32 bitset)
 		return -EINVAL;
 
 	ret = get_futex_key(uaddr, flags & FLAGS_SHARED, &key, VERIFY_READ);
-
 ```
 
 如你所见，在 `futex_wake` 中的第一个函数调用真的是 `get_futex_key`！ 太棒了！相比阅读内核代码，阅读函数跟踪肯定是更容易的找到结果的办法，并且让人高兴的是，还能看到所有的函数用了多长时间。
@@ -183,7 +176,7 @@ futex_wake(u32 __user *uaddr, unsigned int flags, int nr_wake, u32 bitset)
 
 现在，我们已经知道了怎么去跟踪内核中的函数，真是太酷了！
 
-还有一类我们可以跟踪的东西！有些事件与我们的函数调用并不相符。例如，你可能想去知道当一个程序被调度进入或者离开 CPU 时，都发生了什么事件！你可能想通过“盯着”函数调用计算出来，但是，我告诉你，不可行！
+还有一类我们可以跟踪的东西！有些事件与我们的函数调用并不相符。例如，你可能想知道当一个程序被调度进入或者离开 CPU 时，都发生了什么事件！你可能想通过“盯着”函数调用计算出来，但是，我告诉你，不可行！
 
 由于函数也为你提供了几种事件，因此，你可以看到当重要的事件发生时，都发生了什么事情。你可以使用 `sudo cat /sys/kernel/debug/tracing/available_events` 来查看这些事件的一个列表。 
 
@@ -193,7 +186,6 @@ futex_wake(u32 __user *uaddr, unsigned int flags, int nr_wake, u32 bitset)
 sudo cat /sys/kernel/debug/tracing/available_events
 sudo trace-cmd record -e sched:sched_switch
 sudo trace-cmd report
-
 ```
 
 输出如下：
@@ -207,23 +199,23 @@ sudo trace-cmd report
 
 ```
 
-现在，可以很清楚地看到这些切换，从 PID 24817 -> 15144 -> kernel -> 24817 -> 1561 -> 15114\。(所有的这些事件都发生在同一个 CPU 上）
+现在，可以很清楚地看到这些切换，从 PID 24817 -> 15144 -> kernel -> 24817 -> 1561 -> 15114。(所有的这些事件都发生在同一个 CPU 上）。
 
 ### ftrace 是如何工作的？
 
-ftrace 是一个动态跟踪系统。当启动 ftracing 去跟踪内核函数时，**函数的代码会被改变**。因此 – 我们假设去跟踪 `do_page_fault` 函数。内核将在那个函数的汇编代码中插入一些额外的指令，以便每次该函数被调用时去提示跟踪系统。内核之所以能够添加额外的指令的原因是，Linux 将额外的几个 NOP 指令编译进每个函数中，因此，当需要的时候，这里有添加跟踪代码的地方。
+ftrace 是一个动态跟踪系统。当我们开始 ftrace 内核函数时，**函数的代码会被改变**。让我们假设去跟踪 `do_page_fault` 函数。内核将在那个函数的汇编代码中插入一些额外的指令，以便每次该函数被调用时去提示跟踪系统。内核之所以能够添加额外的指令的原因是，Linux 将额外的几个 NOP 指令编译进每个函数中，因此，当需要的时候，这里有添加跟踪代码的地方。
 
 这是一个十分复杂的问题，因为，当不需要使用 ftrace 去跟踪我的内核时，它根本就不影响性能。而当我需要跟踪时，跟踪的函数越多，产生的开销就越大。
 
 （或许有些是不对的，但是，我认为的 ftrace 就是这样工作的）
 
-### 更容易地使用 ftrace：brendan gregg 的工具 & kernelshark
+### 更容易地使用 ftrace：brendan gregg 的工具及 kernelshark
 
 正如我们在文件中所讨论的，你需要去考虑很多的关于单个的内核函数/事件直接使用 ftrace 都做了些什么。能够做到这一点很酷！但是也需要做大量的工作！
 
-Brendan Gregg （我们的 linux 调试工具“大神”）有个工具仓库，它使用 ftrace 去提供关于像 I/O 延迟这样的各种事情的信息。这是它在 GitHub 上全部的 [perf-tools][16] 仓库。
+Brendan Gregg （我们的 Linux 调试工具“大神”）有个工具仓库，它使用 ftrace 去提供关于像 I/O 延迟这样的各种事情的信息。这是它在 GitHub 上全部的 [perf-tools][16] 仓库。
 
-这里有一个权衡（tradeoff），那就是这些工具易于使用，但是被限制仅用于 Brendan Gregg 认可的事情。决定将它做成一个工具，那需要做很多的事情！:)
+这里有一个权衡，那就是这些工具易于使用，但是你被限制仅能用于 Brendan Gregg 认可并做到工具里面的方面。它包括了很多方面！:)
 
 另一个工具是将 ftrace 的输出可视化，做的比较好的是 [kernelshark][17]。我还没有用过它，但是看起来似乎很有用。你可以使用 `sudo apt-get install kernelshark` 来安装它。
 
@@ -236,30 +228,22 @@ Brendan Gregg （我们的 linux 调试工具“大神”）有个工具仓库�
 最后，这里是我找到的一些 ftrace 方面的文章。它们大部分在 LWN （Linux 新闻周刊）上，它是 Linux 的一个极好的资源（你可以购买一个 [订阅][18]！）
 
 *   [使用 Ftrace 调试内核 - part 1][1] (Dec 2009, Steven Rostedt)
-
 *   [使用 Ftrace 调试内核 - part 2][2] (Dec 2009, Steven Rostedt)
-
 *   [Linux 函数跟踪器的秘密][3] (Jan 2010, Steven Rostedt)
-
 *   [trace-cmd：Ftrace 的一个前端][4] (Oct 2010, Steven Rostedt)
-
 *   [使用 KernelShark 去分析实时调试器][5] (2011, Steven Rostedt)
-
 *   [Ftrace: 神秘的开关][6] (2014, Brendan Gregg)
-
 *   内核文档：（它十分有用） [Documentation/ftrace.txt][7]
-
 *   你能跟踪的事件的文档 [Documentation/events.txt][8]
-
 *   linux 内核开发上的一些 ftrace 设计文档 （不是有用，而是有趣！) [Documentation/ftrace-design.txt][9]
 
 --------------------------------------------------------------------------------
 
 via: https://jvns.ca/blog/2017/03/19/getting-started-with-ftrace/
 
-作者：[Julia Evans ][a]
+作者：[Julia Evans][a]
 译者：[qhwdw](https://github.com/qhwdw)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
