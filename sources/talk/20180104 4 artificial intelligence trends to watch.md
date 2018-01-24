@@ -1,4 +1,5 @@
 4 artificial intelligence trends to watch
+Translating by Wuod3n
 ======
 
 ![](https://enterprisersproject.com/sites/default/files/styles/620x350/public/images/CIO%20Mentor.png?itok=K-6s_q2C)
