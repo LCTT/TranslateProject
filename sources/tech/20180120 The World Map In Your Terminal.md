@@ -1,3 +1,5 @@
+translating---geekpi
+
 The World Map In Your Terminal
 ======
 I just stumbled upon an interesting utility. The World map in the Terminal! Yes, It is so cool. Say hello to **MapSCII** , a Braille and ASCII world map renderer for your xterm-compatible terminals. It supports GNU/Linux, Mac OS, and Windows. I thought it is a just another project hosted on GitHub. But I was wrong! It is really impressive what they did there. We can use our mouse pointer to drag and zoom in and out a location anywhere in the world map. The other notable features are;
