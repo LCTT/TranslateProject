@@ -1,3 +1,4 @@
+zjon Translating
 How To Debug a Bash Shell Script Under Linux or UNIX
 ======
 From my mailbag:
