@@ -1,3 +1,5 @@
+translating---geekpi
+
 Ansible Tutorial: Intorduction to simple Ansible commands
 ======
 In our earlier Ansible tutorial, we discussed [**the installation & configuration of Ansible**][1]. Now in this ansible tutorial, we will learn some basic examples of ansible commands that we will use to manage our infrastructure. So let us start by looking at the syntax of a complete ansible command,
