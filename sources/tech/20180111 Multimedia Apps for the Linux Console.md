@@ -17,18 +17,25 @@ You will probably have make some tweaks to your system to make this work. The ex
 ### MPlayer
 
 You're probably familiar with the amazing and versatile MPlayer, which supports almost every video and audio format, and runs on nearly everything, including Linux, Android, Windows, Mac, Kindle, OS/2, and AmigaOS. Using MPLayer in your console will probably require some tweaking, depending on your Linux distribution. To start, try playing a video:
+你可能会比较熟悉功能丰富的 MPlayer。它支持几乎所有的视频与音频格式，并且能在绝大部分现有平台上运行，像 Linux，Android，Windows，Mac，Kindle，OS/2 甚至是 AmigaOS。不过要在你的终端运行 MPlayer 可能需要多做一点工作，这些工作与你使用的 Linux 发行版有关。来，我们试着播放一个视频：
+
 ```
-$ mplayer [video name]
+$ mplayer [视频文件名]
 
 ```
 
 If it works, then hurrah, and you can invest your time in learning useful MPlayer options, such as controlling the size of the video screen. However, some Linux distributions are managing the framebuffer differently than in the olden days, and you may have to adjust some settings to make it work. This is how to make it work on recent Ubuntu releases.
+如果上面的命令正常执行了，那么很好，接下来你可以把时间放在了解 MPlayer 的常用选项上了，譬如设定视频大小等。但是，有些 Linux 发行版在对帧缓冲（framebuffer）的处理方式上可能会与早期的不同，那么你就需要进行一些设置才能让其正常工作了。下面是在最近的 Ubuntu 发行版上需要做的一些操作。
 
 First, add yourself to the video group.
+首先，将你添加到 video 用户组。
 
 Second, verify that `/etc/modprobe.d/blacklist-framebuffer.conf` has this line: `#blacklist vesafb`. It should already be commented out, and if it isn't then comment it. All the other module lines should be un-commented, which prevents them from loading. Side note: if you want to dig more deeply into managing your framebuffer, the module for your video card may give better performance.
+其次，确认 `/etc/modprobe.d/blacklist-framebuffer.conf` 文件中包含这样一行：`#blacklist vesafb`。这一行应该默认被注释掉了，如果不是的话，那就手动把它注释掉。此外的其他模块行需要确认没有被注释，这样设置才能保证那些模块不会被载入。注：如果你想要对控制帧缓冲（framebuffer）有更深入的了解，针对你的显卡的这些模块将给你提供更深入的认识。
 
 Add these two modules to the end of `/etc/initramfs-tools/modules`, `vesafb` and `fbcon`, then rebuild the initramfs image:
+在 `/etc/initramfs-tools/modules` 的结尾增加两个模块：`vesafb` 和 `fbcon`，然后更新 iniramfs 镜像：
+
 ```
 $ sudo nano /etc/initramfs-tools/modules
  # List of modules that you want to include in your initramfs.
@@ -41,29 +48,39 @@ $ sudo update-initramfs -u
 ```
 
 [fbcon][1] is the Linux framebuffer console. It runs on top of the framebuffer and adds graphical features. It requires a framebuffer device, which is supplied by the `vesafb` module.
+[fbcon][1] 是 Linux 帧缓冲（framebuffer）终端，它运行在帧缓冲（framebuffer）之上并为其增加图形功能。[fbcon][1] 需要一个帧缓冲（framebuffer）设备，这则是由 `vesafb` 模块来提供的。
 
 Now you must edit your GRUB2 configuration. In `/etc/default/grub` you should see a line like this:
+接下来，你需要修改你的 GRUB2 配置。在 `/etc/default/grub` 中你将会看到类似下面的一行：
+
 ```
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
 
 ```
 
 It may have some other options, but it should be there. Add `vga=789`:
+它也可能还会有一些别的参数，不用管它，在其后加上 `vga=789`：
+
 ```
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash vga=789"
 
 ```
 
 Reboot and enter your console (Ctrl+Alt+F1), and try playing a video. This command selects the `fbdev2` video device; I haven't learned yet how to know which one to use, but I had to use it to play the video. The default screen size is 320x240, so I scaled it to 960:
+重启之后进入你的终端（Ctrl+Alt+F1）（LCTT 译注：在某些发行版中 Ctrl+Alt+F1 默认为图形界面，可以尝试 Ctrl+Alt+F2），然后就可以尝试播放一个视频了。下面的命令指定了 `fbdev2` 为视频输出设备，虽然我还没弄明白如何去选择用哪个输入设备，但是我用它成功过。默认的视频大小是 320x240，在此我给缩放到了 960：
+
 ```
 $ mplayer -vo fbdev2 -vf scale -zoom -xy 960 AlienSong_mp4.mov
 ```
 
 And behold Figure 1. It's grainy because I have a low-fi copy of this video, not because MPlayer is making it grainy.
+来看图1。粗糙的画面是由于我原视频的质量不高，而不是 MPlayer 的显示问题。
 
 MPLayer plays CDs, DVDs, network streams, and has a giant batch of playback options, which I shall leave as your homework to explore.
+MPlayer 可以播放 CD、DVD 以及网络视频流，并且还有一系列的回放选项，这些将作为作业让大家自己去发现。
 
 ### fbi Image Viewer
+### fbi 图片查看器
 
 `fbi`, the framebuffer image viewer, comes in the [fbida][2] package on most Linuxes. It has native support for the common image file formats, and uses `convert` (from Image Magick), if it is installed, for other formats. Its simplest use is to view a single image file:
 ```
