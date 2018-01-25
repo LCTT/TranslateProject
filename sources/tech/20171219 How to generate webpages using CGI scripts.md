@@ -1,3 +1,5 @@
+translating by ucasFL
+
 How to generate webpages using CGI scripts
 ======
 Back in the stone age of the Internet when I first created my first business website, life was good.
