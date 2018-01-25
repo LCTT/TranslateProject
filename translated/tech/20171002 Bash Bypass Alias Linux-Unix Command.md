@@ -1,26 +1,23 @@
-translating---geekpi
-
-Bash Bypass Alias Linux/Unix Command
+绕过 Linux/Unix 命令别名
 ======
-I defined mount bash shell alias as follows on my Linux system:
+我在我的 Linux 系统上定义了如下 mount 别名：
 ```
 alias mount='mount | column -t'
 ```
-However, I need to bash bypass alias for mounting the file system and another usage. How can I disable or bypass my bash shell aliases temporarily on a Linux, *BSD, macOS or Unix-like system?
+但是我需要在挂载文件系统和其他用途时绕过 bash 别名。我如何在  Linux、\*BSD、macOS 或者类 Unix 系统上临时禁用或者绕过 bash shell 呢？
 
 
-
-You can define or display bash shell aliases with alias command. Once bash shell aliases created, they take precedence over external or internal commands. This page shows how to bypass bash aliases temporarily so that you can run actual internal or external command.
+你可以使用 alias 命令定义或显示 bash shell 别名。一旦创建了 bash shell 别名，它们将优先于外部或内部命令。本文将展示如何暂时绕过 bash 别名，以便你可以运行实际的内部或外部命令。
 [![Bash Bypass Alias Linux BSD macOS Unix Command][1]][1]
 
-## Four ways to bash bypass alias
+## 4 种绕过 bash 别名的方法
 
 
-Try any one of the following ways to run a command that is shadowed by a bash shell alias. Let us [define an alias as follows][2]:
+尝试以下任意一种方法来运行被 bash shell 别名绕过的命令。让我们[如下定义一个别名][2]：
 `alias mount='mount | column -t'`
-Run it as follows:
+运行如下：
 `mount `
-Sample outputs:
+示例输出：
 ```
 sysfs                        on  /sys                             type  sysfs            (rw,nosuid,nodev,noexec,relatime)
 proc                         on  /proc                            type  proc             (rw,nosuid,nodev,noexec,relatime)
@@ -33,16 +30,16 @@ binfmt_misc                  on  /proc/sys/fs/binfmt_misc         type  binfmt_m
 lxcfs                        on  /var/lib/lxcfs                   type  fuse.lxcfs       (rw,nosuid,nodev,relatime,user_id=0,group_id=0,allow_other)
 ```
 
-### Method 1 - Use \command
+### 方法1 - 使用 \command
 
-Type the following command to temporarily bypass a bash alias called mount:
+输入以下命令暂时绕过名为 mount 的 bash 别名：
 `\mount`
 
-### Method 2 - Use "command" or 'command'
+### 方法2 - 使用 "command" 或 'command'
 
-Quote the mount command as follows to call actual /bin/mount:
+如下引用 mount 命令调用实际的 /bin/mount：
 `"mount"`
-OR
+或者
 `'mount'`
 
 ### Method 3 - Use full command path
@@ -51,27 +48,27 @@ Use full binary path such as /bin/mount:
 `/bin/mount
 /bin/mount /dev/sda1 /mnt/sda`
 
-### Method 4 - Use internal command
+### 方法3 - 使用完整的命令路径
 
-The syntax is:
+语法是：
 `command cmd
 command cmd arg1 arg2`
-To override alias set in .bash_aliases such as mount:
+要覆盖 .bash_aliases 中设置的别名，例如 mount：
 `command mount
 command mount /dev/sdc /mnt/pendrive/`
-[The 'command' run a simple command or display][3] information about commands. It runs COMMAND with ARGS suppressing shell function lookup or aliases, or display information about the given COMMANDs.
+[”command“ 运行命令或显示][3]关于命令的信息。它带参数运行命令会抑制 shell 函数查询或者别名，或者显示有关给定命令的信息。
 
-## A note about unalias command
+## 关于 unalias 命令的说明
 
-To remove each alias from the list of defined aliases from the current session use unalias command:
+要从当前会话的已定义别名列表中移除别名，请使用 unalias 命令：
 `unalias mount`
-To remove all alias definitions from the current bash session:
+要从当前 bash 会话中删除所有别名定义：
 `unalias -a`
-Make sure you update your ~/.bashrc or $HOME/.bash_aliases file. You must remove defined aliases if you want to remove them permanently:
+确保你更新你的 ~/.bashrc 或 $HOME/.bash_aliases。如果要永久删除定义的别名，则必须删除定义的别名：
 `vi ~/.bashrc`
-OR
+或者
 `joe $HOME/.bash_aliases`
-For more information see bash command man page online [here][4] or read it by typing the following command:
+想了解更多信息，参考[这里][4]的在线手册，或者输入下面的命令查看：
 ```
 man bash
 help command
@@ -85,7 +82,7 @@ help alias
 via: https://www.cyberciti.biz/faq/bash-bypass-alias-command-on-linux-macos-unix/
 
 作者：[Vivek Gite][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
