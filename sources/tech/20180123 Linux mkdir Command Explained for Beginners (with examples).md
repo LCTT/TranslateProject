@@ -1,3 +1,5 @@
+translating by ucasFL
+
 Linux mkdir Command Explained for Beginners (with examples)
 ======
 
