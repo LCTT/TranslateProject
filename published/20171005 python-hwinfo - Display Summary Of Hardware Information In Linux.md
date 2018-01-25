@@ -1,80 +1,81 @@
-# python-hwinfo：使用Linux系统工具展示硬件信息概况
+python-hwinfo：使用 Linux 系统工具展示硬件信息概况
+==========
 
----
-到目前为止，获取Linux系统硬件信息和配置已经被大部分工具所涵盖，不过也有许多命令可用于相同目的。
+到目前为止，我们已经介绍了大部分获取 Linux 系统硬件信息和配置的工具，不过也有许多命令可用于相同目的。
 
-而且，一些工具会显示所有硬件组成的详细信息，重置后，只显示特定设备的信息。
+而且，一些工具会显示所有硬件组件的详细信息，或只显示特定设备的信息。
 
-在这个系列中, 今天我们讨论一下关于[python-hwinfo][1]， 它是一个展示硬件信息概况和整洁配置的工具之一。
+在这个系列中, 今天我们讨论一下关于 [python-hwinfo][1]， 它是一个展示硬件信息概况的工具之一，并且其配置简洁。
 
-### 什么是python-hwinfo
+### 什么是 python-hwinfo
 
-这是一个通过解析系统工具（例如lspci和dmidecode）的输出，来检查硬件和设备的Python库。
+这是一个通过解析系统工具（例如 `lspci` 和 `dmidecode`）的输出，来检查硬件和设备的 Python 库。
 
-它提供了一个简单的命令行工具，可以用来检查本地，远程和捕获到的主机。用sudo运行命令以获得最大的信息。
+它提供了一个简单的命令行工具，可以用来检查本地、远程的主机和记录的信息。用 `sudo` 运行该命令以获得最大的信息。
 
-另外，你可以提供服务器IP或者主机名，用户名和密码，在远程的服务器上执行它。当然你也可以使用这个工具查看其它工具捕获的输出（例如demidecode输出的'dmidecode.out'，/proc/cpuinfo输出的'cpuinfo'，lspci -nnm输出的'lspci-nnm.out'）。
+另外，你可以提供服务器 IP 或者主机名、用户名和密码，在远程的服务器上执行它。当然你也可以使用这个工具查看其它工具捕获的输出（例如 `demidecode` 输出的 `dmidecode.out`，`/proc/cpuinfo` 输出的 `cpuinfo`，`lspci -nnm` 输出的 `lspci-nnm.out`）。
 
-**建议阅读 :**
-**(#)** [inxi - A Great Tool to Check Hardware Information on Linux][2]
-**(#)** [Dmidecode - Easy Way To Get Linux System Hardware Information][3]
-**(#)** [LSHW (Hardware Lister) - A Nifty Tool To Get A Hardware Information On Linux][4]
-**(#)** [hwinfo (Hardware Info) - A Nifty Tool To Detect System Hardware Information On Linux][5]
-**(#)** [How To Use lspci, lsscsi, lsusb, And lsblk To Get Linux System Devices Information][6]
+建议阅读：
 
-### Linux上如何安装python-hwinfo
+-  [Inxi：一个功能强大的获取 Linux 系统信息的命令行工具][2]
+-  [Dmidecode：获取 Linux 系统硬件信息的简易方式][3]
+-  [LSHW (Hardware Lister)： 一个在 Linux 上获取硬件信息的漂亮工具][4]
+-  [hwinfo (Hardware Info)：一个在 Linux 上检测系统硬件信息的漂亮工具][5]
+-  [如何使用 lspci、lsscsi、lsusb 和 lsblk 获取 Linux 系统设备信息][6]
 
-在绝大多数Linux发行版，都可以通过pip包安装。为了安装python-hwinfo， 确保你的系统已经有python和python-pip包作为先决条件。
+### Linux 上如何安装 python-hwinfo
 
-pip是Python附带的一个包管理工具，在Linux上安装Python包的推荐工具之一。
+在绝大多数 Linux 发行版，都可以通过 pip 包安装。为了安装 python-hwinfo， 确保你的系统已经有 Python 和python-pip 包作为先决条件。
 
-在**`Debian/Ubuntu`**平台，使用[APT-GET 命令][7] 或者 [APT 命令][8] 安装pip。
+`pip` 是 Python 附带的一个包管理工具，在 Linux 上安装 Python 包的推荐工具之一。
+
+在 Debian/Ubuntu 平台，使用 [APT-GET 命令][7] 或者 [APT 命令][8] 安装 `pip`。
+
 ```
 $ sudo apt install python-pip
-
 ```
 
-在**`RHEL/CentOS`**平台，使用[YUM 命令][9]安装pip。
+在 RHEL/CentOS 平台，使用 [YUM 命令][9]安装 `pip`。
+
 ```
 $ sudo yum install python-pip python-devel
-
 ```
 
-在**`Fedora`**平台，使用[DNF 命令][10]安装pip。
+在 Fedora 平台，使用 [DNF 命令][10]安装 `pip`。
+
 ```
 $ sudo dnf install python-pip
-
 ```
 
-在**`Arch Linux`**平台，使用[Pacman 命令][11]安装pip。
+在 Arch Linux 平台，使用 [Pacman 命令][11]安装 `pip`。
+
 ```
 $ sudo pacman -S python-pip
-
 ```
 
-在**`openSUSE`**平台，使用[Zypper 命令][12]安装pip。
+在 openSUSE 平台，使用 [Zypper 命令][12]安装 `pip`。
+
 ```
 $ sudo zypper python-pip
-
 ```
 
-最后，执行下面的pip命令安装python-hwinfo。
+最后，执行下面的 `pip` 命令安装 python-hwinfo。
+
 ```
 $ sudo pip install python-hwinfo
-
 ```
 
-### 怎么使用python-hwinfo在本地机器
+### 怎么在本地机器使用 python-hwinfo
 
 执行下面的命令，检查本地机器现有的硬件。输出很清楚和整洁，这是我在其他命令中没有看到的。
 
-它的输出分为了五类。
+它的输出分为了五类：
 
-  * **`Bios Info:`** bios供应商名称，系统产品名称， 系统序列号，系统唯一标识符，系统制造商，bios发布日期和bios版本。
-  * **`CPU Info:`** 处理器编号，供应商ID，cpu系列代号，型号，制作更新版本，型号名称，cpu主频。
-  * **`Ethernet Controller Info:`** 供应商名称，供应商ID，设备名称，设备ID，子供应商名称，子供应商ID，子设备名称，子设备ID。
-  * **`Storage Controller Info:`** 供应商名称，供应商ID，设备名称，设备ID，子供应商名称，子供应商ID，子设备名称，子设备ID。
-  * **`GPU Info:`** 供应商名称，供应商ID，设备名称，设备ID，子供应商名称，子供应商ID，子设备名称，子设备ID。
+* Bios Info（BIOS 信息）： BIOS 供应商名称、系统产品名称、系统序列号、系统唯一标识符、系统制造商、BIOS 发布日期和BIOS 版本。
+* CPU Info（CPU 信息）：处理器编号、供应商 ID，CPU 系列代号、型号、步进编号、型号名称、CPU 主频。
+* Ethernet Controller Info（网卡信息）： 供应商名称、供应商 ID、设备名称、设备 ID、子供应商名称、子供应商 ID，子设备名称、子设备 ID。
+* Storage Controller Info（存储设备信息）： 供应商名称、供应商 ID、设备名称、设备 ID、子供应商名称，子供应商 ID、子设备名称、子设备 ID。
+* GPU Info（GPU 信息）： 供应商名称、供应商 ID、设备名称、设备 ID、子供应商名称、子供应商 ID、子设备名称、子设备 ID。
   
 
 ```
@@ -136,20 +137,20 @@ GPU Info:
 
 ```
 
-### 怎么使用python-hwinfo在远处机器上
+### 怎么在远处机器上使用 python-hwinfo
 
-执行下面的命令检查远程机器现有的硬件，需要远程机器IP，用户名和密码
+执行下面的命令检查远程机器现有的硬件，需要远程机器 IP，用户名和密码：
+
 ```
 $ hwinfo -m x.x.x.x -u root -p password
-
 ```
 
-### 如何使用python-hwinfo读取捕获的输出
+### 如何使用 python-hwinfo 读取记录的输出
 
 执行下面的命令，检查本地机器现有的硬件。输出很清楚和整洁，这是我在其他命令中没有看到的。
+
 ```
 $ hwinfo -f [Path to file]
-
 ```
 
 --------------------------------------------------------------------------------
@@ -158,13 +159,13 @@ via: https://www.2daygeek.com/python-hwinfo-check-display-system-hardware-config
 
 作者：[2DAYGEEK][a]
 译者：[Torival](https://github.com/Torival)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://www.2daygeek.com/author/2daygeek/
 [1]:https://github.com/rdobson/python-hwinfo
-[2]:https://www.2daygeek.com/inxi-system-hardware-information-on-linux/
+[2]:https://linux.cn/article-8424-1.html
 [3]:https://www.2daygeek.com/dmidecode-get-print-display-check-linux-system-hardware-information/
 [4]:https://www.2daygeek.com/lshw-find-check-system-hardware-information-details-linux/
 [5]:https://www.2daygeek.com/hwinfo-check-display-detect-system-hardware-information-linux/
