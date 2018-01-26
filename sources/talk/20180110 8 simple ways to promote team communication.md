@@ -1,6 +1,6 @@
 8 simple ways to promote team communication
 ======
-
+translating
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/world_remote_teams.png?itok=Wk1yBFv6)
 
 Image by : opensource.com
