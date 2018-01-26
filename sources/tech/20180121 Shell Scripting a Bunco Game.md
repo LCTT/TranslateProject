@@ -1,22 +1,32 @@
 translating by wenwensnow
-Shell Scripting a Bunco Game
+Shell Scripting a Bunco Game  脚本编程之骰子游戏
 ======
+我已经有段时间没有编写游戏了，所以我觉得现在正是做一些这方面事情的时候。起初，我想 " 用脚本编一个Halo? " (Halo:微软的光晕系列游戏)，但我后来意识到这不太可能。来编一个叫Bunco的简单骰子游戏。你也许没有听说过，不过你母亲绝对知道 - 当一群年轻女孩聚在当地的酒吧或者小酒馆的时候，这是个很受欢迎的游戏。
+
 I haven't dug into any game programming for a while, so I thought it was high time to do something in that realm. At first, I thought "Halo as a shell script?", but then I came to my senses. Instead, let's look at a simple dice game called Bunco. You may not have heard of it, but I bet your Mom has—it's a quite popular game for groups of gals at a local pub or tavern.
 
+游戏一共六轮，有三个骰子，规则很简单。每次投三个骰子，投出的点数要和当前的轮数数字一致。如果三个骰子都和当前的轮数一致，(比如，在第三轮三个骰子都是3)，你这一轮的分数就是21。 如果三个骰子点数都相同但和轮数数字不同，你会得到最低的Bunco分数，只有5分。如果你投出的点数两者都不是，每一个和当前轮数相同的骰子得1分。
 Played in six rounds with three dice, the game is simple. You roll all three dice and have to match the current round number. If all three dice match the current round number (for example, three 3s in round three), you score 21\. If all three match but aren't the current round number, it's a Mini Bunco and worth five points. Failing both of those, each die with the same value as the round number is worth one point.
 
+要想玩这个游戏，它还涉及到团队，每一队(包括赢得那队)，每个人都付5美元现金，或为赢家设立其他类似现金奖励，并规定什么样的情况下才是赢了，例如"most Buncos" or "most points"。在这里我会跳过这些，只关注投骰子这一部分。
 Played properly, the game also involves teams, multiple tables including a winner's table, and usually cash prizes funded by everyone paying $5 or similar to play and based on specific winning scenarios like "most Buncos" or "most points". I'll skip that part here, however, and just focus on the dice part.
 
-### Let's Do the Math
+### Let's Do the Math  
 
+在专注于编程这方面的事之前，我先简单说说游戏背后的数学逻辑。要是有一个适当重量的骰子投骰子会变得很容易，任意一个值出现概率都是 1/6。
 Before I go too far into the programming side of things, let me talk briefly about the math behind the game. Dice are easy to work with because on a properly weighted die, the chance of a particular value coming up is 1:6.
 
+完全随机小提示：不确定你的骰子是否每个面都是一样重量? 把它们扔进盐水里然后转一下。YouTube上，有很多科学界的有趣视频向你展示怎么来做这个测试。
 Random tip: not sure whether your dice are balanced? Toss them in salty water and spin them. There are some really interesting YouTube videos from the D&D world showing how to do this test.
+
+所以三个骰子点数一样的几率有多大? 第一个骰子100%会有一个值 (这儿没什么可说的)，所以很简单。第二个则有16.66%的概率和第一个骰子的值一样，接下来第三个骰子也是一样。 但当然，总概率是三个概率相乘的结果，所以最后，三个骰子值相等的概率是2.7%。
 
 So what are the odds of three dice having the same value? The first die has a 100% chance of having a value (no leaners here), so that's easy. The second die has a 16.66% chance of being any particular value, and then the third die has the same chance of being that value, but of course, they multiply, so three dice have about a 2.7% chance of all having the same value.
 
+接下来，每个骰子和当前轮数数字相同的概率都是16.66%。从数学角度来说：0.166 * 0.166 * 0.166 = 0.00462。
 Then, it's a 16.66% chance that those three dice would be the current round's number—or, in mathematical terms: 0.166 * 0.166 * 0.166 = 0.00462.
 
+换句话说，你有0.46%的可能性投出Bunco
 In other words, you have a 0.46% chance of rolling a Bunco, which is a bit less than once out of every 200 rolls of three dice.
 
 It could be tougher though. If you were playing with five dice, the chance of rolling a Mini Bunco (or Yahtzee) is 0.077%, and if you were trying to accomplish a specific value, say just sixes, then it's 0.00012% likely on any given roll—which is to say, not bloody likely!
