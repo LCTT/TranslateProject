@@ -1,3 +1,6 @@
+DIR_PATTERN := (news|talk|tech)
+NAME_PATTERN := [0-9]{8} [a-zA-Z0-9_.,() -]*\.md
+
 RULES := rule-source-added \
 	 rule-translation-requested \
 	 rule-translation-completed \
@@ -18,28 +21,31 @@ $(CHANGE_FILE):
 	git --no-pager diff $(TRAVIS_BRANCH) FETCH_HEAD --no-renames --name-status > $@
 
 rule-source-added:
-	[ $(shell grep    '^A\s*sources/[^\/]*/[a-zA-Z0-9_.,\(\) \-]*\.md' $(CHANGE_FILE) | wc -l) -ge 1 ]
-	[ $(shell grep -v '^A\s*sources/[^\/]*/[a-zA-Z0-9_.,\(\) \-]*\.md' $(CHANGE_FILE) | wc -l) = 0 ]
+	echo 'Unmatched Files:'
+	egrep -v '^A\s*"?sources/$(DIR_PATTERN)/$(NAME_PATTERN)"?' $(CHANGE_FILE) || true
+	echo '[End of Unmatched Files]'
+	[ $(shell egrep    '^A\s*"?sources/$(DIR_PATTERN)/$(NAME_PATTERN)"?' $(CHANGE_FILE) | wc -l) -ge 1 ]
+	[ $(shell egrep -v '^A\s*"?sources/$(DIR_PATTERN)/$(NAME_PATTERN)"?' $(CHANGE_FILE) | wc -l) = 0 ]
 	echo 'Rule Matched: $(@)'
 
 rule-translation-requested:
-	[ $(shell grep    '^M\s*sources/[^\/]*/[a-zA-Z0-9_.,\(\) \-]*\.md' $(CHANGE_FILE) | wc -l) = 1 ]
+	[ $(shell egrep    '^M\s*"?sources/$(DIR_PATTERN)/$(NAME_PATTERN)"?' $(CHANGE_FILE) | wc -l) = 1 ]
 	[ $(shell cat $(CHANGE_FILE) | wc -l) = 1 ]
 	echo 'Rule Matched: $(@)'
 
 rule-translation-completed:
-	[ $(shell grep    '^D\s*sources/[^\/]*/[a-zA-Z0-9_.,\(\) \-]*\.md' $(CHANGE_FILE) | wc -l) = 1 ]
-	[ $(shell grep '^A\s*translated/[^\/]*/[a-zA-Z0-9_.,\(\) \-]*\.md' $(CHANGE_FILE) | wc -l) = 1 ]
+	[ $(shell egrep    '^D\s*"?sources/$(DIR_PATTERN)/$(NAME_PATTERN)"?' $(CHANGE_FILE) | wc -l) = 1 ]
+	[ $(shell egrep '^A\s*"?translated/$(DIR_PATTERN)/$(NAME_PATTERN)"?' $(CHANGE_FILE) | wc -l) = 1 ]
 	[ $(shell cat $(CHANGE_FILE) | wc -l) = 2 ]
 	echo 'Rule Matched: $(@)'
 
 rule-translation-revised:
-	[ $(shell grep '^M\s*translated/[^\/]*/[a-zA-Z0-9_.,\(\) \-]*\.md' $(CHANGE_FILE) | wc -l) = 1 ]
+	[ $(shell egrep '^M\s*"?translated/$(DIR_PATTERN)/$(NAME_PATTERN)"?' $(CHANGE_FILE) | wc -l) = 1 ]
 	[ $(shell cat $(CHANGE_FILE) | wc -l) = 1 ]
 	echo 'Rule Matched: $(@)'
 
 rule-translation-published:
-	[ $(shell grep '^D\s*translated/[^\/]*/[a-zA-Z0-9_.,\(\) \-]*\.md' $(CHANGE_FILE) | wc -l) = 1 ]
-	[ $(shell grep                   '^A\s*published/[a-zA-Z0-9_.,\(\) \-]*\.md' $(CHANGE_FILE) | wc -l) = 1 ]
+	[ $(shell egrep '^D\s*"?translated/$(DIR_PATTERN)/$(NAME_PATTERN)"?' $(CHANGE_FILE) | wc -l) = 1 ]
+	[ $(shell egrep '^A\s*"?published/$(NAME_PATTERN)' $(CHANGE_FILE) | wc -l) = 1 ]
 	[ $(shell cat $(CHANGE_FILE) | wc -l) = 2 ]
 	echo 'Rule Matched: $(@)'
