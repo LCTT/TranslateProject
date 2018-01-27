@@ -5,7 +5,7 @@
  
  ### 什么是 Unix？
  
-  [![what is unix](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/unix_orig.png)][2] 
+ [![what is unix](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/unix_orig.png)][2] 
 
   被创于1969年的美国新泽西 AT&T 的 Unix 作为操作系统而出现在 IT 领域。大多数的操作系统都受 Unix 的启发，但 Unix 也受到了未完成的 Multics 系统的启发。另一版本的 Unix 是贝尔实验室的 Play 9。
 
@@ -62,3 +62,21 @@ Linux 内核是 Unix 内核，基于 Unix 的基本特点以及 POSIX 和 Single
 因此账户准确地定义了系统控制权。
 
 企鹅 Tux Logo 的作者是 Larry Ewing。。。Linux Torvalds提出新的操作系统最初的名字为“Freax”免费+怪物+ X（UNIX系统），但它并没有像FTP服务器在Linux附带版本运行。 
+
+
+--------------------------------------------------------------------------------
+
+via: http://www.linuxandubuntu.com/home/linux-vs-unix
+
+作者：[linuxandubuntu][a]
+译者：[译者ID](https://github.com/译者ID)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+
+[a]:http://www.linuxandubuntu.com
+[1]:http://www.linuxandubuntu.com/home/linux-vs-unix
+[2]:http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/unix_orig.png
+[3]:http://www.unix.org/what_is_unix.html
+[4]:http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/linux_orig.png
+[5]:https://www.linux.com
