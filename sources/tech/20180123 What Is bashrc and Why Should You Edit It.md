@@ -1,3 +1,5 @@
+heart4lor translating
+
 What Is bashrc and Why Should You Edit It
 ======
 
