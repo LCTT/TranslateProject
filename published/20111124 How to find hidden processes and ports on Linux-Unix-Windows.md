@@ -220,7 +220,7 @@ $ man unhide-tcp
 via: https://www.cyberciti.biz/tips/linux-unix-windows-find-hidden-processes-tcp-udp-ports.html
 
 作者：[Vivek Gite][a]
-译者：[ljgibbs](https://github.com/ljgibbs)
+译者：[ljgibbslf](https://github.com/ljgibbslf)
 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
