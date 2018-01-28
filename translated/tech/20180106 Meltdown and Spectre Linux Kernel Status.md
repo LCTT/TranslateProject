@@ -1,89 +1,88 @@
-translated by hopefully2333
 
-Meltdown and Spectre Linux Kernel Status
+meltdown 和 spectre 影响下的 Linux 内核状况
 ============================================================
 
 
-By now, everyone knows that something “big” just got announced regarding computer security. Heck, when the [Daily Mail does a report on it][1] , you know something is bad…
+截止到目前为止，每个人都知道一件关乎电脑安全的“大事”发生了，真见鬼，等每日邮报报道的时候，你就知道什么是糟糕了...
 
-Anyway, I’m not going to go into the details about the problems being reported, other than to point you at the wonderfully written [Project Zero paper on the issues involved here][2]. They should just give out the 2018 [Pwnie][3] award right now, it’s that amazingly good.
+不管怎样，我不打算去跟进这个问题被报道出来的细节，除了告诉你问题涉及范围内的精彩的零日文章，他们应该直接发布 2018 的 Pwnie award 奖，这非常好。
 
-If you do want technical details for how we are resolving those issues in the kernel, see the always awesome [lwn.net writeup for the details][4].
+如果你想了解我们如何在内核中解决这些问题的技术细节，你可以持续关注了不起的 lwn.net，他们会把这些细节写成文章。
 
-Also, here’s a good summary of [lots of other postings][5] that includes announcements from various vendors.
+以此同时，很多的厂商发出了相关的公告，这有一条很好的关于这些公告的摘要。
 
-As for how this was all handled by the companies involved, well this could be described as a textbook example of how  _NOT_  to interact with the Linux kernel community properly. The people and companies involved know what happened, and I’m sure it will all come out eventually, but right now we need to focus on fixing the issues involved, and not pointing blame, no matter how much we want to.
+至于这些涉及的公司是如何处理这些问题的，这可以说是如何适当的与 Linux 内核社区保持距离的教科书般的例子。这件事涉及到的人和公司都知道发生了什么，我确定这件事最终会出现，但是目前我需要去关注的是如何修复这些涉及到的问题，然后不要去点名指责，不管我有多么的想去这么做。
 
-### What you can do right now
+### 你现在能做什么
 
-If your Linux systems are running a normal Linux distribution, go update your kernel. They should all have the updates in them already. And then keep updating them over the next few weeks, we are still working out lots of corner case bugs given that the testing involved here is complex given the huge variety of systems and workloads this affects. If your distro does not have kernel updates, then I strongly suggest changing distros right now.
+如果你的 Linux 系统正在运行一个正常的 Linux 分布式系统，那么升级你的内核。它们都应该已经更新了，然后在接下来的几个星期里保持更新。我们会统计大量在极端情况下出现的 bug ，这个情况的测试范围是复杂的，包括庞大的受影响的各种各样的系统和工作量。如果你的 Linux 发行版没有内核升级，我坚决的建议你马上更换你使用的 Linux 发行版。
 
-However there are lots of systems out there that are not running “normal” Linux distributions for various reasons (rumor has it that it is way more than the “traditional” corporate distros). They rely on the LTS kernel updates, or the normal stable kernel updates, or they are in-house franken-kernels. For those people here’s the status of what is going on regarding all of this mess in the upstream kernels you can use.
+然而有很多的系统因为各种各样的原因（它们比起相对“传统”的公司的分布式系统更加特殊）不是在运行“正常的”Linux 分布式系统。它们依靠长期支持版本的内核升级，或者是正常稳定的内核升级，或者是内部的 franken-kernels。对于这部分人，这个状况是在你能使用的上游的内核中关于这个混乱正在发生的。
 
 ### Meltdown – x86
 
-Right now, Linus’s kernel tree contains all of the fixes we currently know about to handle the Meltdown vulnerability for the x86 architecture. Go enable the CONFIG_PAGE_TABLE_ISOLATION kernel build option, and rebuild and reboot and all should be fine.
+现在，Linux 内核树包含所有我们当前知道的为 x86 架构解决 meltdown 漏洞的修复。去开启 CONFIG_PAGE_TABLE_ISOLATION 这个内核构建选项，然后进行重构和重启，所有的设备应该就安全了。
 
-However, Linus’s tree is currently at 4.15-rc6 + some outstanding patches. 4.15-rc7 should be out tomorrow, with those outstanding patches to resolve some issues, but most people do not run a -rc kernel in a “normal” environment.
+然而，Linux 的代码树分支在 4.15-rc6 这个版本加上一些出色的补丁。4.15-rc7 版本要明天才会推出，里面的一些补丁会解决一些问题。但是大部分的人不会运行 -rc kernel 在一个“正常”的环境里。
 
-Because of this, the x86 kernel developers have done a wonderful job in their development of the page table isolation code, so much so that the backport to the latest stable kernel, 4.14, has been almost trivial for me to do. This means that the latest 4.14 release (4.14.12 at this moment in time), is what you should be running. 4.14.13 will be out in a few more days, with some additional fixes in it that are needed for some systems that have boot-time problems with 4.14.12 (it’s an obvious problem, if it does not boot, just add the patches now queued up.)
+因为这个原因，x86 内核开发者在页表隔离代码开发过程中做了一个非常好的工作，好到以至于移植到了最新推出的稳定内核，4.14，对我们要做的事而言几乎是微不足道的了。这意味着最新的 4.14版本（现在是 4.14.12 版本），是你应该正在运行的版本，4.14.13 会在接下来的几天里推出，这个更新里有一些额外的修复补丁，这些补丁是一些运行 4.14.12 内核且有启动时间问题（这是一个显而易见的问题，如果它不启动，手动把这些补丁加入更新排队中）的系统所需要的。
 
-I would personally like to thank Andy Lutomirski, Thomas Gleixner, Ingo Molnar, Borislav Petkov, Dave Hansen, Peter Zijlstra, Josh Poimboeuf, Juergen Gross, and Linus Torvalds for all of the work they have done in getting these fixes developed and merged upstream in a form that was so easy for me to consume to allow the stable releases to work properly. Without that effort, I don’t even want to think about what would have happened.
+我个人要去感谢 Andy Lutomirski, Thomas Gleixner, Ingo Molnar, Borislav Petkov, Dave Hansen, Peter Zijlstra, Josh Poimboeuf, Juergen Gross, 和 Linus Torvalds。他们开发出了这些修复补丁，并且为了让我们能简单地更新到稳定版本来正常工作，还把这些补丁用一张表单融合到了上游分支里。没有这些工作，我甚至不会想要去思考到底发生了什么。
 
-For the older long term stable (LTS) kernels, I have leaned heavily on the wonderful work of Hugh Dickins, Dave Hansen, Jiri Kosina and Borislav Petkov to bring the same functionality to the 4.4 and 4.9 stable kernel trees. I had also had immense help from Guenter Roeck, Kees Cook, Jamie Iles, and many others in tracking down nasty bugs and missing patches. I want to also call out David Woodhouse, Eduardo Valentin, Laura Abbott, and Rik van Riel for their help with the backporting and integration as well, their help was essential in numerous tricky places.
+对于老的长期支持内核，我大量地依靠 Hugh Dickins, Dave Hansen, Jiri Kosina 和 Borislav Petkov 优秀的工作所带来的针对 4.4 到 4.9 稳定内核代码树分支的相同功能。我同样在追踪讨厌的bug和缺失的补丁方面从 Guenter Roeck, Kees Cook, Jamie Iles,以及其他很多人那里得到了极大的帮助。我要感谢 David Woodhouse, Eduardo Valentin, Laura Abbott, 和 Rik van Riel 在反向移植和集成方面的帮助，他们的帮助在许多棘手的地方是必不可少的。
 
-These LTS kernels also have the CONFIG_PAGE_TABLE_ISOLATION build option that should be enabled to get complete protection.
+这些长期支持版本的内核同样有 CONFIG_PAGE_TABLE_ISOLATION 这个内核构建选项，你应该开启它来获得全方面的保护。
 
-As this backport is very different from the mainline version that is in 4.14 and 4.15, there are different bugs happening, right now we know of some VDSO issues that are getting worked on, and some odd virtual machine setups are reporting strange errors, but those are the minority at the moment, and should not stop you from upgrading at all right now. If you do run into problems with these releases, please let us know on the stable kernel mailing list.
+主要版本 4.14 和 4.15 的移植是非常不一样的，他们会出现不同的 bug，我们现在知道了一些在工作中遇见的 VDSO 上的问题。一些特殊的虚拟机安装的时候会报一些奇怪的错，但这是只是现在出现的少部分情况，这中情况不会阻止你进行全部的升级，请让我们在稳定内核邮件列表中知道这件事。
 
-If you rely on any other kernel tree other than 4.4, 4.9, or 4.14 right now, and you do not have a distribution supporting you, you are out of luck. The lack of patches to resolve the Meltdown problem is so minor compared to the hundreds of other known exploits and bugs that your kernel version currently contains. You need to worry about that more than anything else at this moment, and get your systems up to date first.
+如果你依赖 4.4 和 4.9 以外的内核代码树分支或是现在的 4.14，并且没有分布式支持你的话，你就太不幸了。比起你当前版本内核包含的上百个已知的漏洞和 bug，缺少补丁去解决 meltdown 问题算是一个小问题了。你现在最需要考虑的就是马上把你的系统升级到最新。
 
-Also, go yell at the people who forced you to run an obsoleted and insecure kernel version, they are the ones that need to learn that doing so is a totally reckless act.
+以此同时，臭骂那些强迫你运行一个已被废弃且不安全的内核版本的人，他们是那些需要知道这是完全不顾后果的行为的人中的一份子。
 
 ### Meltdown – ARM64
 
-Right now the ARM64 set of patches for the Meltdown issue are not merged into Linus’s tree. They are [staged and ready to be merged][6] into 4.16-rc1 once 4.15 is released in a few weeks. Because these patches are not in a released kernel from Linus yet, I can not backport them into the stable kernel releases (hey, we have [rules][7] for a reason…)
+现在 ARM64 为解决 Meltdown 问题而开发的补丁还没有并入 Linux 的代码树分支，一旦 4.15 在接下来的几周里成功发布，他们就准备阶段式地并入 4.16-rc1，因为这些补丁还没有在一个已发布的 Linux 内核中，我不能把它们移植进一个稳定的内核版本里（额。。我们有这个规矩是有原因的）
 
-Due to them not being in a released kernel, if you rely on ARM64 for your systems (i.e. Android), I point you at the [Android Common Kernel tree][8] All of the ARM64 fixes have been merged into the [3.18,][9] [4.4,][10] and [4.9 branches][11] as of this point in time.
+由于它们还没有在一个已发布的内核版本中，如果你的系统是用的 ARM64 的芯片（例如 Android ），我建议你在现在所有并入 3.18,4.4 和 4.9 分支的 ARM64 补丁中选择 Android 公共内核代码树分支。
 
-I would strongly recommend just tracking those branches as more fixes get added over time due to testing and things catch up with what gets merged into the upstream kernel releases over time, especially as I do not know when these patches will land in the stable and LTS kernel releases at this point in time.
+我强烈建议你关注这些分支，看随着时间的过去，由于测试了已并入补丁的已发布的上游内核版本，会不会有更多的修复补丁被补充进来，特别是我不知道这些补丁会在什么时候加进稳定的长期支持内核版本里。
 
-For the 4.4 and 4.9 LTS kernels, odds are these patches will never get merged into them, due to the large number of prerequisite patches required. All of those prerequisite patches have been long merged and tested in the android-common kernels, so I think it is a better idea to just rely on those kernel branches instead of the LTS release for ARM systems at this point in time.
+对于 4.4 到 4.9 的长期支持内核版本，这些补丁有很大概率永远不会并入它们，因为需要大量的依赖性补丁。而所有的这些依赖性补丁长期以来都一直在 Android 公共内核版本中测试和合并，所以我认为现在对于 ARM 系统来说，仅仅依赖这些内核分支而不是长期支持的发行版是一个更好的主意。
 
-Also note, I merge all of the LTS kernel updates into those branches usually within a day or so of being released, so you should be following those branches no matter what, to ensure your ARM systems are up to date and secure.
+同样需要注意的是，我合并所有的长期支持内核版本的更新到这些分支后通常会在一天之内或者这个时间点左右进行发布，所以你无论如何都要关注这些分支，来确保你的 ARM 系统是最新且安全的。
 
 ### Spectre
 
-Now things get “interesting”…
+现在，事情变得“有趣”了...
 
-Again, if you are running a distro kernel, you  _might_  be covered as some of the distros have merged various patches into them that they claim mitigate most of the problems here. I suggest updating and testing for yourself to see if you are worried about this attack vector
+再一次，如果你正在运行一个发行版的内核。一些内核融入了各种各样的声称能缓解目前大部分问题的补丁，你的内核可能就被包含在其中。如果你担心这一类的攻击的话，我建议你更新并测试看看。
 
-For upstream, well, the status is there is no fixes merged into any upstream tree for these types of issues yet. There are numerous patches floating around on the different mailing lists that are proposing solutions for how to resolve them, but they are under heavy development, some of the patch series do not even build or apply to any known trees, the series conflict with each other, and it’s a general mess.
+对于上游来说，很好，现状就是仍然没有任何的上游代码树分支有合并这些类型的问题相关的修复补丁。有很多的邮件列表在讨论如何去解决这些问题的解决方案，大量的补丁在这些邮件列表中广为流传，但是它们被压在了沉重的开发下，一些补丁系列甚至没有被构建或者应用到任何已知的代码树，这些系列彼此之间相互冲突，这是常见的混乱。
 
-This is due to the fact that the Spectre issues were the last to be addressed by the kernel developers. All of us were working on the Meltdown issue, and we had no real information on exactly what the Spectre problem was at all, and what patches were floating around were in even worse shape than what have been publicly posted.
+这是由于 Spectre 问题是最近被内核开发者解决的。我们所有人都在 Meltdown 问题上工作，我们没有精确的 Spectre 问题全部的真实信息，也没有比公开发布更糟糕的情形下什么补丁会广为流传的的真实信息。
 
-Because of all of this, it is going to take us in the kernel community a few weeks to resolve these issues and get them merged upstream. The fixes are coming in to various subsystems all over the kernel, and will be collected and released in the stable kernel updates as they are merged, so again, you are best off just staying up to date with either your distribution’s kernel releases, or the LTS and stable kernel releases.
+因为所有的这些原因，我们打算在内核社区里花上几个星期去解决这些问题并把它们合并到内核中去。修复补丁会进入到所有内核的各种各样的子系统中，而且在它们被合并后，会集成并在稳定内核的更新中发布，所以再次提醒，你最好是在你使用的内核发行版和长期支持稳定的内核发行版中选择一个并保持更新到最新版。
 
-It’s not the best news, I know, but it’s reality. If it’s any consolation, it does not seem that any other operating system has full solutions for these issues either, the whole industry is in the same boat right now, and we just need to wait and let the developers solve the problem as quickly as they can.
+这不是最好的新闻，我知道，但是这就是现实。如果它是任意的安慰的话，它就不会显得其他的操作系统也为这些问题准备了完整的解决方案，现在整个产业都在同一条船上，我们只需要等待，并让开发者尽他们所能快地解决这些问题。
 
-The proposed solutions are not trivial, but some of them are amazingly good. The [Retpoline][12] post from Paul Turner is an example of some of the new concepts being created to help resolve these issues. This is going to be an area of lots of research over the next years to come up with ways to mitigate the potential problems involved in hardware that wants to try to predict the future before it happens.
+计划解决方案已经不重要了，但是它们中的一些还是非常好的。一些新概念会被创造出来来帮助解决这些问题，Paul Turner 提出的 Retpoline 方法就是其中的一个例子。这将是未来大量研究的一个领域，想出方法去减轻硬件中涉及的潜在问题，想在它发生前就去预言它。
 
-### Other arches
+### 其他的 arches 芯片
 
-Right now, I have not seen patches for any other architectures than x86 and arm64\. There are rumors of patches floating around in some of the enterprise distributions for some of the other processor types, and hopefully they will surface in the weeks to come to get merged properly upstream. I have no idea when that will happen, if you are dependant on a specific architecture, I suggest asking on the arch-specific mailing list about this to get a straight answer.
+现在，我没有看见任何 x86 和 arm64 架构以外的芯片架构的补丁，有一些谣传的补丁在一些企业为其他类型的处理器准备的分配方案中广为流传。希望他们在这几周里能在表面上适当地合并到开发者那里，这件事发生的时候我不知道，如果你使用着一个特殊的架构，我建议在 arch-specific 邮件列表上问这件事来得到一个直接的回答。
 
-### Conclusion
+### 结论
 
-Again, update your kernels, don’t delay, and don’t stop. The updates to resolve these problems will be continuing to come for a long period of time. Also, there are still lots of other bugs and security issues being resolved in the stable and LTS kernel releases that are totally independent of these types of issues, so keeping up to date is always a good idea.
+再次，更新你的内核，不要耽搁，不要停止。更新会在很长的一段时间里持续地解决这些问题。同样的，稳定和长期支持内核发行版里仍然有很多其他的bug和安全问题，他们和问题的类型无关，所以一直保持更新始终是一个好主意。
 
-Right now, there are a lot of very overworked, grumpy, sleepless, and just generally pissed off kernel developers working as hard as they can to resolve these issues that they themselves did not cause at all. Please be considerate of their situation right now. They need all the love and support and free supply of their favorite beverage that we can provide them to ensure that we all end up with fixed systems as soon as possible.
+现在，这里有很多非常劳累、坏脾气、缺少睡眠的人，他们通常会生气地让内核开发人员竭尽全力地解决这些问题，即使这些问题完全不是他们自己造成的。请关爱这些可怜的程序猿。他们需要爱、支持和我们可以为他们免费提供的他们最爱的饮料，以此来确保我们都可以尽可能快地结束修补系统。
 
 --------------------------------------------------------------------------------
 
 via: http://kroah.com/log/blog/2018/01/06/meltdown-status/
 
 作者：[Greg Kroah-Hartman ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[hopefully2333](https://github.com/hopefully2333)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
