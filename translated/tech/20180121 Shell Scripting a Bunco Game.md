@@ -1,9 +1,8 @@
 
 Shell Scripting a Bunco Game  脚本编程之骰子游戏
 ======
-我已经有段时间没有编写游戏了，所以我觉得现在正是做一些这方面事情的时候。起初，我想 " 用脚本编一个Halo? " (Halo:微软的光晕系列游戏)，但我后来意识到这不太可能。来编一个叫Bunco的简单骰子游戏。你也许没有听说过，不过你母亲绝对知道 - 当一群年轻女孩聚在当地的酒吧或者小酒馆的时候，这是个很受欢迎的游戏。
+我已经有段时间没有编写游戏了，所以我觉得现在正是做一些这方面事情的时候。起初，我想 " 用脚本编一个Halo? " (Halo:光晕系列游戏)，但我后来意识到这不太可能。来编一个叫Bunco的简单骰子游戏。你也许没有听说过，不过你母亲绝对知道 - 当一群年轻女孩聚在当地的酒吧或者小酒馆的时候，这是个很受欢迎的游戏。
 
-I haven't dug into any game programming for a while, so I thought it was high time to do something in that realm. At first, I thought "Halo as a shell script?", but then I came to my senses. Instead, let's look at a simple dice game called Bunco. You may not have heard of it, but I bet your Mom has—it's a quite popular game for groups of gals at a local pub or tavern.
 
 游戏一共六轮，有三个骰子，规则很简单。每次投三个骰子，投出的点数要和当前的轮数数字一致。如果三个骰子都和当前的轮数一致，(比如，在第三轮三个骰子都是3)，你这一轮的分数就是21。 如果三个骰子点数都相同但和轮数数字不同，你会得到最低的Bunco分数，只有5分。如果你投出的点数两者都不是，每一个和当前轮数相同的骰子得1分。
 
