@@ -1,4 +1,4 @@
-translating by wenwensnow
+
 Shell Scripting a Bunco Game  脚本编程之骰子游戏
 ======
 我已经有段时间没有编写游戏了，所以我觉得现在正是做一些这方面事情的时候。起初，我想 " 用脚本编一个Halo? " (Halo:微软的光晕系列游戏)，但我后来意识到这不太可能。来编一个叫Bunco的简单骰子游戏。你也许没有听说过，不过你母亲绝对知道 - 当一群年轻女孩聚在当地的酒吧或者小酒馆的时候，这是个很受欢迎的游戏。
@@ -6,36 +6,37 @@ Shell Scripting a Bunco Game  脚本编程之骰子游戏
 I haven't dug into any game programming for a while, so I thought it was high time to do something in that realm. At first, I thought "Halo as a shell script?", but then I came to my senses. Instead, let's look at a simple dice game called Bunco. You may not have heard of it, but I bet your Mom has—it's a quite popular game for groups of gals at a local pub or tavern.
 
 游戏一共六轮，有三个骰子，规则很简单。每次投三个骰子，投出的点数要和当前的轮数数字一致。如果三个骰子都和当前的轮数一致，(比如，在第三轮三个骰子都是3)，你这一轮的分数就是21。 如果三个骰子点数都相同但和轮数数字不同，你会得到最低的Bunco分数，只有5分。如果你投出的点数两者都不是，每一个和当前轮数相同的骰子得1分。
-Played in six rounds with three dice, the game is simple. You roll all three dice and have to match the current round number. If all three dice match the current round number (for example, three 3s in round three), you score 21\. If all three match but aren't the current round number, it's a Mini Bunco and worth five points. Failing both of those, each die with the same value as the round number is worth one point.
 
-要想玩这个游戏，它还涉及到团队，每一队(包括赢得那队)，每个人都付5美元现金，或为赢家设立其他类似现金奖励，并规定什么样的情况下才是赢了，例如"most Buncos" or "most points"。在这里我会跳过这些，只关注投骰子这一部分。
-Played properly, the game also involves teams, multiple tables including a winner's table, and usually cash prizes funded by everyone paying $5 or similar to play and based on specific winning scenarios like "most Buncos" or "most points". I'll skip that part here, however, and just focus on the dice part.
 
-### Let's Do the Math  
+要想玩这个游戏，它还涉及到团队合作，每一队(包括赢得那队)，每人付5美元现金，或赢家得到其他类似现金奖励，并规定什么样的情况下才是赢家，例如"most Buncos" or "most points"胜利。在这里我会跳过这些，而只关注投骰子这一部分。
+
+
+### 关于数学逻辑部分
 
 在专注于编程这方面的事之前，我先简单说说游戏背后的数学逻辑。要是有一个适当重量的骰子投骰子会变得很容易，任意一个值出现概率都是 1/6。
-Before I go too far into the programming side of things, let me talk briefly about the math behind the game. Dice are easy to work with because on a properly weighted die, the chance of a particular value coming up is 1:6.
+
 
 完全随机小提示：不确定你的骰子是否每个面都是一样重量? 把它们扔进盐水里然后转一下。YouTube上，有很多科学界的有趣视频向你展示怎么来做这个测试。
-Random tip: not sure whether your dice are balanced? Toss them in salty water and spin them. There are some really interesting YouTube videos from the D&D world showing how to do this test.
+
 
 所以三个骰子点数一样的几率有多大? 第一个骰子100%会有一个值 (这儿没什么可说的)，所以很简单。第二个则有16.66%的概率和第一个骰子的值一样，接下来第三个骰子也是一样。 但当然，总概率是三个概率相乘的结果，所以最后，三个骰子值相等的概率是2.7%。
 
-So what are the odds of three dice having the same value? The first die has a 100% chance of having a value (no leaners here), so that's easy. The second die has a 16.66% chance of being any particular value, and then the third die has the same chance of being that value, but of course, they multiply, so three dice have about a 2.7% chance of all having the same value.
+
 
 接下来，每个骰子和当前轮数数字相同的概率都是16.66%。从数学角度来说：0.166 * 0.166 * 0.166 = 0.00462。
-Then, it's a 16.66% chance that those three dice would be the current round's number—or, in mathematical terms: 0.166 * 0.166 * 0.166 = 0.00462.
 
-换句话说，你有0.46%的可能性投出Bunco
-In other words, you have a 0.46% chance of rolling a Bunco, which is a bit less than once out of every 200 rolls of three dice.
 
-It could be tougher though. If you were playing with five dice, the chance of rolling a Mini Bunco (or Yahtzee) is 0.077%, and if you were trying to accomplish a specific value, say just sixes, then it's 0.00012% likely on any given roll—which is to say, not bloody likely!
+换句话说，你有0.46%的可能性投出Bunco,比200次中出现一次的可能性还小一点。
 
-### And So into the Coding
 
-As with every game, the hardest part is really having a good random number generator that generates truly random values. That's actually hard to affect in a shell script though, so I'm going to sidestep this entire issue and assume that the shell's built-in random number generator will be sufficient.
+实际上还可以更难。如果你有5个骰子，投出 Mini Bunco (也可以叫做Yahtzee) 的概率为0.077%，如果你想所有的骰子的值都相同，假设都是6，那概率就是0.00012%，那就基本上没什么可能了。
 
-What's nice is that it's super easy to work with. Just reference $RANDOM, and you'll have a random value between 0 and MAXINT (32767):
+
+### 开始编程吧
+
+和所有游戏一样，最难的部分是有一个能生成随机数的随机数发生器。这一部分在shell 脚本中还是很难实现的，所以我需要一步步来，并假设shell内置的随机数发生器就够用了
+
+不过好在内置的随机数发生器很好用。用 $RANDOM 就能得到一个0到MAXINT(32767)之间的随机值：
 
 ```
 
@@ -44,7 +45,8 @@ $ echo $RANDOM $RANDOM $RANDOM
 
 ```
 
-To constrain that to values between 1–6 use the modulus function:
+为了确保产生的值一定是 1-6之中的某个值，使用取余函数： 
+
 
 ```
 
@@ -55,7 +57,8 @@ $ echo $(( $RANDOM % 6 ))
 
 ```
 
-Oops! I forgot to shift it one. Here's another try:
+哦！我忘了要加1，下面是另一次尝试：
+
 
 ```
 
@@ -64,7 +67,8 @@ $ echo $(( ( $RANDOM % 6 ) + 1 ))
 
 ```
 
-That's the dice-rolling feature. Let's make it a function where you can specify the variable you'd like to have the generated value as part of the invocation:
+下面要实现投骰子这一功能。这个函数中你可以声明一个局部变量来存储生成的随机值：
+
 
 ```
 
@@ -77,7 +81,7 @@ rolldie()
 
 ```
 
-The use of the eval is to ensure that the variable specified in the invocation is actually assigned the calculated value. It's easy to work with:
+使用 eval 确保生成的随机数被实际存储在变量中。这一部分也很容易：
 
 ```
 
@@ -85,7 +89,8 @@ rolldie die1
 
 ```
 
-That will load a random value between 1–6 into the variable die1. To roll your three dice, it's straightforward:
+这会为第一个骰子生成一个1-6之中的值。要为3个骰子都生成值，执行3次上面的函数：
+
 
 ```
 
@@ -93,7 +98,8 @@ rolldie die1 ; rolldie die2 ; rolldie die3
 
 ```
 
-Now to test the values. First, let's test for a Bunco where all three dice have the same value, and it's the value of the current round too:
+现在判断下生成的值。首先，判断是不是Bunco(3个骰子值相同)，然后是不是和当前轮数值也相同：
+
 
 ```
 
@@ -108,9 +114,11 @@ if [ $die1 -eq $die2 ] && [ $die2 -eq $die3 ] ; then
 
 ```
 
-That's probably the hardest of the tests, and notice the unusual use of test in the first conditional: [ cond1 ] && [ cond2 ]. If you're thinking that you could also write it as cond1 -a cond2, you're right. As with so much in the shell, there's more than one way to get to the solution.
+这可能是所有判断语句中最难的部分了，注意第一个条件语句中这种不常用的写法 ： [ cond1 ] && [ cond2 ]。如果你想写成 cond1 -a cond2 ，这样也可以。在shell编程中，解决问题的方法往往不止一种。
 
-The remainder of the code is straightforward; you just need to test for whether the die matches the current round value:
+
+代码剩下的部分很直白，你只需要判断每个骰子的值是不是和本轮数字相同：
+
 
 ```
 
@@ -126,9 +134,12 @@ fi
 
 ```
 
-The only thing to consider here is that you don't want to score die value vs. round if you've also scored a Bunco or Mini Bunco, so the entire second set of tests needs to be within the else clause of the first conditional (to see if all three dice have the same value).
+唯一要注意的是当出现 Bunco/Mini Bunco 就不需要再统计本轮分数了。所以整个第二部分的判断语句都要写在第一个条件语句的else中（为了判断3个骰子值是否都相同）。
 
-Put it together and specify the round number on the command line, and here's what you have at this point:
+
+
+把所有的综合起来，然后在命令行中输入轮数，下面是现在的脚本执行后的结果：
+
 
 ```
 
@@ -145,11 +156,15 @@ score = 25
 
 ```
 
-A Bunco so quickly? Well, as I said, there might be a slight issue with the randomness of the random number generator in the shell.
+竟然这么快就出现 Bunco 了? 好吧，就像我说的，shell内置的随机数发生器在随机数产生这方面可能有些问题。
 
-You can test it once you have the script working by running it a few hundred times and then checking to see what percentage are Bunco or Mini Bunco, but I'll leave that as an exercise for you, dear reader. Well, maybe I'll come back to it another time.
 
-Let's finish up this script by having it accumulate score and run for all six rounds instead of specifying a round on the command line. That's easily done, because it's just a wrapper around the entire script, or, better, the big conditional statement becomes a function all its own:
+
+你可以执行脚本几百次，从而让你的脚本得以正确运行，然后看看Bunco/Mini Bunco出现次数所占的百分比。但是我想把这部分作为练习，留给亲爱的读者你们。不过，也许我下次会抽时间完成剩下的部分。
+
+
+让我们完成这一脚本吧，还有分数统计和一次性执行6次投骰子(这次不用再在命令行中手动输入当前轮数了)这两个功能。这也很容易，因为只是将上面的内容整个嵌套在里面，换句话说，就是将一个复杂的条件嵌套结构全部写在了一个函数中：
+
 
 ```
 
@@ -194,9 +209,10 @@ BuncoRound()
 
 ```
 
-I admit, I couldn't resist a few improvements as I went along, including the addition of it showing either Bunco, Mini Bunco or a score value (that's what $hidescore does).
+我承认，我忍不住自己做了一点改进，包括判断当前是Bunco, Mini Bunco 还是其他需要计算分数的情况这一部分 (这就是$hidescore这一变量的作用).
 
-Invoking it is a breeze, and you'll use a for loop:
+
+实现这个简直是小菜一碟，只要一个循环就好了：
 
 ```
 
@@ -206,7 +222,7 @@ done
 
 ```
 
-That's about the entire program at this point. Let's run it once and see what happens:
+这就是现在所写的整个程序。让我们执行一下看看结果：
 
 ```
 
@@ -227,9 +243,10 @@ Game over. Your total score was 4
 
 ```
 
-Ugh. Not too impressive, but it's probably a typical round. Again, you can run it a few hundred—or thousand—times, just save the "Game over" line, then do some quick statistical analysis to see how often you score more than 3 points in six rounds. (With three dice to roll a given value, you should hit that 50% of the time.)
+嗯。并不是很令人满意，可能是因为它只是游戏的一次完整执行。不过，你可以将脚本执行几百几千次，记下"Game over"出现的位置，然后用一些快速分析工具来看看你在每6轮中有几次得分超过3分。(要让3个骰子值相同，这个概率大概在50%左右)。
 
-It's not a complicated game by any means, but it makes for an interesting little programming project. Now, what if they used 20-sided die and let you re-roll one die per round and had a dozen rounds?
+无论怎么说，这都不是一个复杂的游戏，但是它是一个很有意思的小程序项目。现在，如果有一个20面的骰子，每一轮游戏有好几十轮，每轮都掷同一个骰子，情况又会发生什么变化呢?
+
 
 
 --------------------------------------------------------------------------------
