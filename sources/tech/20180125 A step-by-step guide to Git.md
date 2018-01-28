@@ -1,3 +1,7 @@
+# translated by cyleft
+# translated by cyleft
+# translated by cyleft
+
 A step-by-step guide to Git
 ======
 
