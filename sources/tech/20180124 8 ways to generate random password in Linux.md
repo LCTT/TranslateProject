@@ -1,3 +1,5 @@
+translating by heart4lor
+
 8 ways to generate random password in Linux
 ======
 Learn 8 different ways to generate random password in Linux using Linux native commands or third party utilities.
