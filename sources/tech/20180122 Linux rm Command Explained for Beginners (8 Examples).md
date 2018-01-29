@@ -1,3 +1,5 @@
+Translating by yizhuoyan
+
 Linux rm Command Explained for Beginners (8 Examples)
 ======
 
