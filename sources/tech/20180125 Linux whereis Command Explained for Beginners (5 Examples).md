@@ -1,3 +1,4 @@
+translating by wenwensnow
 Linux whereis Command Explained for Beginners (5 Examples)
 ======
 
