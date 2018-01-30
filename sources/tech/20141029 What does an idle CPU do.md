@@ -1,4 +1,4 @@
-[What does an idle CPU do?][1]
+Translating by qhwdw [What does an idle CPU do?][1]
 ============================================================
 
 In the [last post][2] I said the fundamental axiom of OS behavior is that at any given time, exactly one and only one task is active on a CPU. But if there's absolutely nothing to do, then what?
