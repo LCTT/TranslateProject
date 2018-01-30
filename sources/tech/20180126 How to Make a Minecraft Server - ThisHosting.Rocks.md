@@ -1,3 +1,5 @@
+translating by heart4lor
+
 How to Make a Minecraft Server – ThisHosting.Rocks
 ======
 We’ll show you how to make a Minecraft server with beginner-friendly step-by-step instructions. It will be a persistent multiplayer server that you can play on with your friends from all around the world. You don’t have to be in a LAN.
