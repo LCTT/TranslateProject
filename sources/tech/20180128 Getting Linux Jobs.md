@@ -1,4 +1,4 @@
-www.reallylinux.com exclusive
+Getting Linux Jobs
 ======
 
 In a qualitative review of job posting websites, even highly skilled Linux administrators would be hamstrung to succeed in getting to the stage of an interview.
