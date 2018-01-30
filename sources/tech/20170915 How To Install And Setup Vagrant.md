@@ -1,3 +1,4 @@
+Translating by MjSeven
 How To Install And Setup Vagrant
 ======
 Vagrant is a powerful tool when it comes to virtual machines, here we will look at how to setup and use Vagrant with Virtualbox on Ubuntu to provision reproducible virtual machines.
