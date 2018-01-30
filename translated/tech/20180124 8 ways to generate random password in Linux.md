@@ -1,89 +1,90 @@
-translating by heart4lor
-
-8 ways to generate random password in Linux
+八种在 Linux 上生成随机密码的方法
 ======
-Learn 8 different ways to generate random password in Linux using Linux native commands or third party utilities.
+学习使用 8 种 Linux 原生命令或第三方组件来生成随机密码。
 
 ![][1]
 
-In this article, we will walk you through various different ways to generate random password in Linux terminal. Few of them are using native Linux commands and others are using third party tools or utilities which can easily be installed on Linux machine. Here we are looking at native commands like `openssl`, [dd][2], `md5sum`, `tr`, `urandom` and third party tools like mkpasswd, randpw, pwgen, spw, gpg, xkcdpass, diceware, revelation, keepaasx, passwordmaker.
+在这篇文章中，我们将引导你通过几种不同的方式在 Linux 中生成随机密码。其中几种利用原生 Linux 命令，另外几种则利用极易在 Linux 机器上安装的第三方工具或组件实现。在这里我们利用像 `openssl`, [dd][2], `md5sum`, `tr`, `urandom` 这样的原生命令和 mkpasswd，randpw，pwgen，spw，gpg，xkcdpass，diceware，revelation，keepaasx，passwordmaker 这样的第三方工具。
 
-These are actually ways to get some random alphanumeric string which can be utilized as password. Random passwords can be used for new users so that there will be uniqueness no matter how large your user base is. Without any further delay lets jump into those 15 different ways to generate random password in Linux.
+其实这些方法就是生成一些能被用作密码的随机字母字符串。随机密码可以用于新用户的密码，不管用户基数有多大，这些密码都是独一无二的。话不多说，让我们来看看 8 种不同的在 Linux 上生成随机密码的方法吧。
 
-##### Generate password using mkpasswd utility
+##### 使用 mkpasswd 组件生成密码
 
-`mkpasswd` comes with install of `expect` package on RHEL based systems. On Debian based systems `mkpasswd` comes with package `whois`. Trying to install `mkpasswd` package will results in error -
+`mkpasswd` 在基于 RHEL 的系统上随 `expect` 软件包一起安装。在基于 Debian 的系统上 `mkpasswd` 则在软件包 `whois` 中。直接安装 `mkpasswd` 软件包将会导致错误 -
 
-No package mkpasswd available. on RHEL system and E: Unable to locate package mkpasswd in Debian based.
+RHEL 系统：软件包 mkpasswd 不可用。
 
-So install their parent packages as mentioned above and you are good to go.
+Debian 系统：错误：无法定位软件包 mkpasswd。
 
-Run `mkpasswd` to get passwords
+所以按照上面所述安装他们的父软件包，就没问题了。
 
-```
+运行 `mkpasswd` 来获得密码
+
+```bash
 root@kerneltalks# mkpasswd << on RHEL
 zt*hGW65c
- 
-root@kerneltalks# mkpas
+
+root@kerneltalks# mkpasswd teststring << on Ubuntu
+XnlrKxYOJ3vik
 ```
 
-Command behaves differently on different systems so work accordingly. There are many switches which can be used to control length etc parameters. You can explore them from man pages.
+这个命令在不同的系统上表现得不一样，所以要对应工作。你也可以通过参数来控制长度等选项。你可以查阅 man 手册来探索。
 
-##### Generate password using openssl
+##### 使用 openssl 生成密码
 
-Openssl comes in build with almost all the Linux distributions. We can use its random function to get alphanumeric string generated which can be used as password.
+几乎所有 Linux 发行版都包含 openssl。我们可以利用它的随机功能来生成可以用作密码的随机字母字符串。
 
-```
+```bash
 root@kerneltalks # openssl rand -base64 10
 nU9LlHO5nsuUvw==
 ```
 
-Here, we are using `base64` encoding with random function and last digit for argument to `base64` encoding.
+这里我们使用 `base64` 编码随机函数，最后一个数字参数表示长度。
 
-##### Generate password using urandom
+##### 使用 urandom 生成密码
 
-Device file `/dev/urandom` is another source of getting random characters. We are using `tr` function and trimming output to get random string to use as password.
+设备文件 `/dev/urandom` 是另一个获得随机字符串的方法。我们使用 `tr` 功能裁剪输出来获得随机字符串，并把它作为密码。
 
-```
+```bash
 root@kerneltalks # strings /dev/urandom |tr -dc A-Za-z0-9 | head -c20; echo
 UiXtr0NAOSIkqtjK4c0X
 ```
 
-##### dd command to generate password
+##### 使用 dd 命令生成密码
 
-We can even use /dev/urandom device along with [dd command ][2]to get string of random characters.
+我们甚至可以使用 /dev/urandom 设备配合 [dd 命令][2] 来获取随机字符串。
 
-```
-oot@kerneltalks# dd if=/dev/urandom bs=1 count=15|base64 -w 0
+```bash
+root@kerneltalks# dd if=/dev/urandom bs=1 count=15|base64 -w 0
 15+0 records in
 15+0 records out
 15 bytes (15 B) copied, 5.5484e-05 s, 270 kB/s
 QMsbe2XbrqAc2NmXp8D0
 ```
 
-We need to pass output through `base64` encoding to make it human readable. You can play with count value to get desired length. For much cleaner output, redirect std2 to `/dev/null`. Clean command will be -
+我们需要将结果通过 `base64` 编码使它能被人类读懂。你可以使用计数值来获取想要的长度。想要获得更简洁的输出的话，可以将 std2 重定向到 `/dev/null`。简洁输出的命令是 -
 
-```
-oot@kerneltalks # dd if=/dev/urandom bs=1 count=15 2>/dev/null|base64 -w 0
+```bash
+root@kerneltalks # dd if=/dev/urandom bs=1 count=15 2>/dev/null|base64 -w 0
 F8c3a4joS+a3BdPN9C++
 ```
 
-##### Using md5sum to generate password
+##### 使用 md5sum 生成密码
 
-Another way to get array of random characters which can be used as password is to calculate MD5 checksum! s you know checksum value is indeed looks like random characters grouped together we can use it as password. Make sure you use source as something variable so that you get different checksum every time you run command. For example `date` ! [date command][3] always yields changing output.
+另一种获取可用作密码的随机字符串的方法是计算 MD5 校验值！校验值看起来确实像是随机字符串组合在一起，我们可以用作为密码。确保你的计算源是个变量，这样的话每次运行命令时生成的校验值都不一样。比如 `date`！[date 命令][3] 总会生成不同的输出。
 
-```
+```bash
 root@kerneltalks # date |md5sum
 4d8ce5c42073c7e9ca4aeffd3d157102  -
 ```
 
-Here we passed `date` command output to `md5sum` and get the checksum hash! You can use [cut command][4] to get desired length of output.
+在这里我们将 `date` 命令的输出通过 `md5sum` 得到了校验和！你也可以用 [cut 命令][4] 裁剪你需要的长度。
 
-##### Generate password using pwgen
+##### 使用 pwgen 生成密码
 
-`pwgen` package comes with [repositories like EPEL][5]. `pwgen` is more focused on generating passwords which are pronounceable but not a dictionary word or not in plain English. You may not find it in standard distribution repo. Install the package and run `pwgen` command. Boom !
+`pwgen` 软件包在[类 EPEL 仓库][5]（译者注：企业版 Linux 附加软件包）中。`pwgen` 更专注于生成可发音的密码，但它们不在英语词典中，也不是纯英文的。标准发行版仓库中可能并不包含这个工具。安装这个软件包然后运行 `pwgen` 命令行。Boom !
 
-```
+```bash
 root@kerneltalks # pwgen
 thu8Iox7 ahDeeQu8 Eexoh0ai oD8oozie ooPaeD9t meeNeiW2 Eip6ieph Ooh1tiet
 cootad7O Gohci0vo wah9Thoh Ohh3Ziur Ao1thoma ojoo6aeW Oochai4v ialaiLo5
@@ -91,28 +92,28 @@ aic2OaDa iexieQu8 Aesoh4Ie Eixou9ph ShiKoh0i uThohth7 taaN3fuu Iege0aeZ
 cah3zaiW Eephei0m AhTh8guo xah1Shoo uh8Iengo aifeev4E zoo4ohHa fieDei6c
 aorieP7k ahna9AKe uveeX7Hi Ohji5pho AigheV7u Akee9fae aeWeiW4a tiex8Oht
 ```
-You will be presented with list of passwords at your terminal! What else you want? Ok. You still want to explore, `pwgen` comes with many custom options which can be referred for man page.
+你的终端会呈现出一个密码列表！你还想要什么呢？好吧。你还想再仔细探索的话， `pwgen` 还有很多自定义选项，这些都可以在 man 手册里查阅到。
 
-##### Generate password using gpg tool
+##### 使用 gpg 工具生成密码
 
-GPG is a OpenPGP encryption and signing tool. Mostly gpg tool comes pre-installed (at least it is on my RHEL7). But if not you can look for `gpg` or `gpg2` package and [install][6] it.
+GPG 是一个遵循 OpenPGP 标准的加密及签名工具。大部分 gpg 工具都预先被安装好了（至少在我的 RHEL7 上是这样）。但如果没有的话你可以寻找 `gpg` 或 `gpg2` 软件包并[安装][6]它。
 
-Use below command to generate password from gpg tool.
+使用下面的命令以从 gpg 工具生成密码。
 
-```
+```bash
 root@kerneltalks # gpg --gen-random --armor 1 12
 mL8i+PKZ3IuN6a7a
 ```
 
-Here we are passing generate random byte sequence switch (`--gen-random`) of quality 1 (first argument) with count of 12 (second argument). Switch `--armor` ensures output is `base64` encoded.
+这里我们传了生成随机字节序列选项（`--gen-random`），质量为 1（第一个参数），次数 12 （第二个参数）。选项 `--armor` 保证以 `base64` 编码输出。
 
-##### Generate password using xkcdpass
+##### 使用 xkcdpass 生成密码
 
-Famous geek humor website [xkcd][7], published a very interesting post about memorable but still complex passwords. You can view it [here][8]. So `xkcdpass` tool took inspiration from this post and did its work! Its a python package and available on python's official website [here][9]
+著名的极客幽默网站 [xkcd][7]，发表了一篇非常有趣的文章，是关于好记但又复杂的密码的。你可以在[这里][8]阅读。所以 `xkcdpass` 工具就受这篇文章启发，做了这样的工作！这是一个 Python 软件包，可以在[这里][9]的 Python 的官网上找到它。
 
-All installation and usage instructions are mentioned on that page. Here is install steps and outputs from my test RHEL server for your reference.
+所有的安装使用说明都在上面那个页面提及了。这里是安装步骤和我的测试 RHEL 服务器的输出，以供参考。
 
-```
+```bash
 root@kerneltalks # wget https://pypi.python.org/packages/b4/d7/3253bd2964390e034cf0bba227db96d94de361454530dc056d8c1c096abc/xkcdpass-1.14.3.tar.gz#md5=5f15d52f1d36207b07391f7a25c7965f
 --2018-01-23 19:09:17--  https://pypi.python.org/packages/b4/d7/3253bd2964390e034cf0bba227db96d94de361454530dc056d8c1c096abc/xkcdpass-1.14.3.tar.gz
 Resolving pypi.python.org (pypi.python.org)... 151.101.32.223, 2a04:4e42:8::223
@@ -228,32 +229,32 @@ Processing dependencies for xkcdpass==1.14.3
 Finished processing dependencies for xkcdpass==1.14.3
 ```
 
-Now running xkcdpass command will give you random set of dictionary words like below -
+现在运行 xkcdpass 命令，将会随机给出你几个像下面这样的字典单词 -
 
-```
+```bash
 root@kerneltalks # xkcdpass
 broadside unpadded osmosis statistic cosmetics lugged
 ```
 
-You can use these words as input to other commands like `md5sum` to get random password (like below) or you can even use Nth letter of each words to form your password!
+你可以用这些单词作为其他命令，比如 `md5sum` 的输入，来获取随机密码（就像下面这样），甚至你也可以用每个单词的第 N 个字母来生成你的密码！
 
-```
-oot@kerneltalks # xkcdpass |md5sum
+```bash
+root@kerneltalks # xkcdpass |md5sum
 45f2ec9b3ca980c7afbd100268c74819  -
  
 root@kerneltalks # xkcdpass |md5sum
 ad79546e8350744845c001d8836f2ff2  -
 ```
-Or even you can use all those words together as such a long password which is easy to remember for a user and very hard to crack using computer program.
+或者你甚至可以把所有单词串在一起作为一个超长的密码，不仅非常好记，也不容易被电脑程序攻破。
 
-There are tools like [Diceware][10], [KeePassX][11], [Revelation][12], [PasswordMaker][13] for Linux which can be considered for making strong random passwords.
+Linux 上还有像 [Diceware][10], [KeePassX][11], [Revelation][12], [PasswordMaker][13] 这样的工具，也可以考虑用来生成强随机密码。
 
 --------------------------------------------------------------------------------
 
 via: https://kerneltalks.com/tips-tricks/8-ways-to-generate-random-password-in-linux/
 
 作者：[kerneltalks][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[heart4lor](https://github.com/heart4lor)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
