@@ -21,7 +21,6 @@ You're probably familiar with the amazing and versatile MPlayer, which supports 
 
 ```
 $ mplayer [视频文件名]
-
 ```
 
 If it works, then hurrah, and you can invest your time in learning useful MPlayer options, such as controlling the size of the video screen. However, some Linux distributions are managing the framebuffer differently than in the olden days, and you may have to adjust some settings to make it work. This is how to make it work on recent Ubuntu releases.
@@ -44,7 +43,6 @@ $ sudo nano /etc/initramfs-tools/modules
  vesafb
 
 $ sudo update-initramfs -u
-
 ```
 
 [fbcon][1] is the Linux framebuffer console. It runs on top of the framebuffer and adds graphical features. It requires a framebuffer device, which is supplied by the `vesafb` module.
@@ -55,7 +53,6 @@ Now you must edit your GRUB2 configuration. In `/etc/default/grub` you should se
 
 ```
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
-
 ```
 
 It may have some other options, but it should be there. Add `vga=789`:
@@ -63,7 +60,6 @@ It may have some other options, but it should be there. Add `vga=789`:
 
 ```
 GRUB_CMDLINE_LINUX_DEFAULT="quiet splash vga=789"
-
 ```
 
 Reboot and enter your console (Ctrl+Alt+F1), and try playing a video. This command selects the `fbdev2` video device; I haven't learned yet how to know which one to use, but I had to use it to play the video. The default screen size is 320x240, so I scaled it to 960:
@@ -74,7 +70,9 @@ $ mplayer -vo fbdev2 -vf scale -zoom -xy 960 AlienSong_mp4.mov
 ```
 
 And behold Figure 1. It's grainy because I have a low-fi copy of this video, not because MPlayer is making it grainy.
-来看图1。粗糙的画面是由于我原视频的质量不高，而不是 MPlayer 的显示问题。
+来看图 1。粗糙的画面是由于我原视频的质量不高，而不是 MPlayer 的显示问题。
+
+![图 1 播放视频](https://www.linux.com/sites/lcom/files/styles/floated_images/public/fig-1_3.jpg?itok=PtSoKepn)
 
 MPLayer plays CDs, DVDs, network streams, and has a giant batch of playback options, which I shall leave as your homework to explore.
 MPlayer 可以播放 CD、DVD 以及网络视频流，并且还有一系列的回放选项，这些将作为作业让大家自己去发现。
@@ -83,38 +81,51 @@ MPlayer 可以播放 CD、DVD 以及网络视频流，并且还有一系列的�
 ### fbi 图片查看器
 
 `fbi`, the framebuffer image viewer, comes in the [fbida][2] package on most Linuxes. It has native support for the common image file formats, and uses `convert` (from Image Magick), if it is installed, for other formats. Its simplest use is to view a single image file:
-```
-$ fbi filename
+`fbi` 是一个帧缓冲图片查看器。在大部分的 Linux 发行版中都，它被包含在 [fbida][2] 包中。它原生支持一些常见的图片格式，而如果你安装了 `convert`（来自于 Image Magick），那么它还能借此打开一些其他格式。最简单的用法是用来查看一个图片文件：
 
+```
+$ fbi 文件名
 ```
 
 Use the arrow keys to scroll a large image, + and - to zoom, and r and l to rotate 90 degress right and left. Press the Escape key to close the image. You can play a slideshow by giving `fbi` a list of files:
-```
-$ fbi --list file-list.txt
+你可以使用方向键来在大图片中移动视野，使用 + 和 - 来缩放，或者使用 r 或 l 来向右或向左旋转 90 度。Escape 键则可以关闭查看的图片。此外，你还可以给 `fbi` 一个文件列表来实现幻灯播放：
 
+```
+$ fbi --list 文件列表.txt
 ```
 
 `fbi` supports autozoom. With `-a` `fbi` controls the zoom factor. `--autoup` and `--autodown` tell `fbi` to only zoom up or down. Control the blend time between images with `--blend [time]`, in milliseconds. Press the k and j keys to jump behind and ahead in your file list.
+`fbi` 还支持自动缩放。还可以使用 `-a` 选项来控制缩放比例。`--autoup` 和 `--autodown` 则是用于告知 `fbi` 只进行放大或者缩小。要调整图片切换时淡入淡出的时间则可以使用 `--blend [时间]` 来指定一个毫秒为单位的时间长度。使用 k 和 j 键则可以切换文件列表中的上一张或下一张图片。
 
 `fbi` has commands for creating file lists from images you have viewed, and for exporting your commands to a file, and a host of other cool options. Check out `man fbi` for complete options.
+`fbi` 还提供了命令来为你浏览过的文件创建文件列表，或者将你的命令导出到文件中，以及一系列其它很棒的选项。你可以通过查看 `man fbi` 来查阅完整的选项列表。
 
 ### CMatrix Console Screensaver
+### CMatrix 终端屏保
 
 The Matrix screensaver is still my favorite (Figure 2), second only to the bouncing cow. [CMatrix][3] runs on the console. Simply type `cmatrix` to start it, and Ctrl+C stops it. Run `cmatrix -s` to launch it in screensaver mode, which exits on any keypress. `-C` changes the color. Your choices are green, red, blue, yellow, white, magenta, cyan, and black.
+黑客帝国（The Matrix）屏保仍然是我非常喜欢的屏保（图 2），仅次于弹跳牛（bouncing cow）。[CMatrix][3] 可以在终端运行。要运行它只需输入 `cmatrix`，然后可以用 Ctrl+C 来停止运行。执行 `cmatrix -s` 则启动屏保模式，这样的话按任意键都能退出屏保。`-C` 参数可以设定颜色，譬如绿色（green）、红色（red）、蓝色（blue）、黄色（yellow）、白色（white）、紫色（magenta）、青色（cyan）或者黑色（black）。
+
+![图 2 黑客帝国屏保](https://www.linux.com/sites/lcom/files/styles/floated_images/public/fig-2_0.jpg?itok=E3f26R7w)
 
 CMatrix supports asynchronous key presses, which means you can change options while it's running.
+CMatrix 还支持异步按键，这意味着你可以在它运行的时候改变设置选项。
 
 `-B` is all bold text, and `-B` is partially bold.
+`-B` 设置全部使用粗体，而 `-b`（LCTT 译注：原文误为 `-B`）则可以设置部分字体加粗。
 
 ### fbgs PDF Viewer
+### fbgs PDF 阅读器
 
 It seems that the addiction to PDF documents is pandemic and incurable, though PDFs are better than they used to be, with live hyperlinks, copy-paste, and good text search. The `fbgs` console PDF viewer is part of the `fbida` package. Options include page size, resolution, page selections, and most `fbi` options, with the exceptions listed in `man fbgs`. The main option I use is page size; you get `-l`, `xl`, and `xxl` to choose from:
+看起来，对 PDF 文档的上瘾是普遍而无法阻止的，尽管 PDF 比它之前好了很多，譬如实时超链接、复制粘贴以及更好的文本搜索功能等。`fbgs` 是 `fbida` 包中提供的一个 PDF 阅读器。它可以设置页面大小、分辨率、指定页码以及绝大部分 `fbi` 提供的选项，当然除了一些在 `man fbgs` 中列举出来的不可用选项之外。我主要用到的选项是页面大小，你可以选择 `-l`、`xl` 或者 `xxl`：
+
 ```
 $ fbgs -xl annoyingpdf.pdf
-
 ```
 
 Learn more about Linux through the free ["Introduction to Linux" ][4]course from The Linux Foundation and edX.
+欢迎通过 Linux 基金会与 edX 免费提供的[“Linux 入门”][4]课程学习更多 Linux 知识。
 
 --------------------------------------------------------------------------------
 
