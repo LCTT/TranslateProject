@@ -1,4 +1,4 @@
-用命令行查看比特币等加密货币价格
+用命令行查看比特币等加密货币的价格
 ======
 
 ![配图](https://www.ostechnix.com/wp-content/uploads/2017/11/bitcoin-1-720x340.jpg)
