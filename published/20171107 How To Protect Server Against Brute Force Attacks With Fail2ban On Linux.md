@@ -1,64 +1,65 @@
-如何在Linux上用Fail2ban保护服务器免受暴力攻击
+如何在 Linux 上用 Fail2Ban 保护服务器免受暴力攻击
 ======
 
-Linux管理员的一个重要任务是保护服务器免受非法攻击或访问。 默认情况下，Linux系统带有配置良好的防火墙，比如Iptables，Uncomplicated Firewall（UFW），ConfigServer Security Firewall（CSF）等，可以防止多种攻击。
+Linux 管理员的一个重要任务是保护服务器免受非法攻击或访问。 默认情况下，Linux 系统带有配置良好的防火墙，比如iptables、Uncomplicated Firewall（UFW），ConfigServer Security Firewall（CSF）等，可以防止多种攻击。
 
-任何连接到互联网的机器都是恶意攻击的潜在目标。 有一个名为fail2ban的工具可用来缓解服务器上的非法访问。
+任何连接到互联网的机器都是恶意攻击的潜在目标。 有一个名为 Fail2Ban 的工具可用来缓解服务器上的非法访问。
 
-### 什么是Fail2ban？
+### 什么是 Fail2Ban？
 
-[Fail2ban][1]是一款入侵防御软件，可以保护服务器免受暴力攻击。 它是用Python编程语言编写的。 Fail2ban基于auth日志文件工作，默认情况下它会扫描所有auth日志文件，如`/var/log/auth.log`，`/var/log/apache/access.log`等，并禁止带有恶意标志的IP，比如密码失败太多，寻找漏洞等等标志。
+[Fail2Ban][1] 是一款入侵防御软件，可以保护服务器免受暴力攻击。 它是用 Python 编程语言编写的。 Fail2Ban 基于auth 日志文件工作，默认情况下它会扫描所有 auth 日志文件，如 `/var/log/auth.log`、`/var/log/apache/access.log` 等，并禁止带有恶意标志的IP，比如密码失败太多，寻找漏洞等等标志。
 
-通常，fail2Ban用于更新防火墙规则，用于在指定的时间内拒绝IP地址。 它也会发送邮件通知。 Fail2Ban为各种服务提供了许多过滤器，如ssh，apache，nginx，squid，named，mysql，nagios等。
+通常，Fail2Ban 用于更新防火墙规则，用于在指定的时间内拒绝 IP 地址。 它也会发送邮件通知。 Fail2Ban 为各种服务提供了许多过滤器，如 ssh、apache、nginx、squid、named、mysql、nagios 等。
 
-Fail2Ban能够降低错误认证尝试的速度，但是它不能消除弱认证带来的风险。 这只是服务器防止暴力攻击的安全手段之一。
+Fail2Ban 能够降低错误认证尝试的速度，但是它不能消除弱认证带来的风险。 这只是服务器防止暴力攻击的安全手段之一。
 
-### 如何在Linux中安装Fail2ban
+### 如何在 Linux 中安装 Fail2Ban
 
-Fail2ban已经与大部分Linux发行版打包在一起了，所以只需使用你的发行包版的包管理器来安装它。
+Fail2Ban 已经与大部分 Linux 发行版打包在一起了，所以只需使用你的发行包版的包管理器来安装它。
 
-对于**`Debian / Ubuntu`**，使用[APT-GET命令][2]或[APT命令][3]安装。
+对于 Debian / Ubuntu，使用 [APT-GET 命令][2]或 [APT 命令][3]安装。
 
 ```
 $ sudo apt install fail2ban
 ```
 
-对于**`Fedora`**，使用[DNF命令][4]安装。
+对于 Fedora，使用 [DNF 命令][4]安装。
 
 ```
 $ sudo dnf install fail2ban
 ```
 
-对于 **`CentOS/RHEL`**，启用[EPEL库][5]或[RPMForge][6]库，使用[YUM命令][7]安装。
+对于 CentOS/RHEL，启用 [EPEL 库][5]或 [RPMForge][6] 库，使用 [YUM 命令][7]安装。
 
 ```
 $ sudo yum install fail2ban
 ```
 
-对于**`Arch Linux`**，使用[Pacman命令][8]安装。
+对于 Arch Linux，使用 [Pacman 命令][8]安装。
 
 ```
 $ sudo pacman -S fail2ban
 ```
 
-对于 **`openSUSE`** , 使用[Zypper命令][9]安装.
+对于 openSUSE , 使用 [Zypper命令][9]安装。
+
 ```
 $ sudo zypper in fail2ban
 ```
 
-### 如何配置Fail2ban
+### 如何配置 Fail2Ban
 
-默认情况下，Fail2ban将所有配置文件保存在`/etc/fail2ban/` 目录中。 主配置文件是`jail.conf`，它包含一组预定义的过滤器。 所以，不要编辑文件，这是不可取的，因为只要有新的更新配置就会重置为默认值。
+默认情况下，Fail2Ban 将所有配置文件保存在 `/etc/fail2ban/` 目录中。 主配置文件是 `jail.conf`，它包含一组预定义的过滤器。 所以，不要编辑该文件，这是不可取的，因为只要有新的更新，配置就会重置为默认值。
 
-只需在同一目录下创建一个名为`jail.local`的新配置文件，并根据您的意愿进行修改。
+只需在同一目录下创建一个名为 `jail.local` 的新配置文件，并根据您的意愿进行修改。
 
 ```
 # cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 ```
 
-默认情况下，大多数选项都已经配置的很完美了，如果要启用对任何特定IP的访问，则可以将IP地址添加到`ignoreip` 区域，对于多个ip的情况，用空格隔开ip地址。
+默认情况下，大多数选项都已经配置的很完美了，如果要启用对任何特定 IP 的访问，则可以将 IP 地址添加到 `ignoreip` 区域，对于多个 IP 的情况，用空格隔开 IP 地址。
 
-配置文件中的`DEFAULT`部分包含Fail2Ban遵循的基本规则集，您可以根据自己的意愿调整任何参数。
+配置文件中的 `DEFAULT` 部分包含 Fail2Ban 遵循的基本规则集，您可以根据自己的意愿调整任何参数。
 
 ```
 # nano /etc/fail2ban/jail.local
@@ -71,16 +72,14 @@ maxretry = 3
 destemail = 2daygeek@gmail.com
 ```
 
-  * **ignoreip：**本部分允许我们列出IP地址列表，Fail2ban不会禁止与列表中的地址匹配的主机
-* **bantime：**主机被禁止的秒数
-* **findtime：**如果在上次“findtime”秒期间已经发生了“maxretry”次重试，则主机会被禁止
-* **maxretry：**“maxretry”是主机被禁止之前的失败次数
-
-
+* `ignoreip`：本部分允许我们列出 IP 地址列表，Fail2Ban 不会禁止与列表中的地址匹配的主机
+* `bantime`：主机被禁止的秒数
+* `findtime`：如果在最近 `findtime` 秒期间已经发生了 `maxretry` 次重试，则主机会被禁止
+* `maxretry`：是主机被禁止之前的失败次数
 
 ### 如何配置服务
 
-Fail2ban带有一组预定义的过滤器，用于各种服务，如ssh，apache，nginx，squid，named，mysql，nagios等。 我们不希望对配置文件进行任何更改，只需在服务区域中添加`enabled = true`这一行就可以启用任何服务。 禁用服务时将true改为false即可。
+Fail2Ban 带有一组预定义的过滤器，用于各种服务，如 ssh、apache、nginx、squid、named、mysql、nagios 等。 我们不希望对配置文件进行任何更改，只需在服务区域中添加 `enabled = true` 这一行就可以启用任何服务。 禁用服务时将 `true` 改为 `false` 即可。
 
 ```
 # SSH servers
@@ -91,16 +90,15 @@ logpath = %(sshd_log)s
 backend = %(sshd_backend)s
 ```
 
-  * **enabled：** 确定服务是打开还是关闭。
-* **port ：**指的是特定的服务。 如果使用默认端口，则服务名称可以放在这里。 如果使用非传统端口，则应该是端口号。
-* **logpath：**提供服务日志的位置
-* **backend：**“后端”指定用于获取文件修改的后端。
+* `enabled`： 确定服务是打开还是关闭。
+* `port`：指明特定的服务。 如果使用默认端口，则服务名称可以放在这里。 如果使用非传统端口，则应该是端口号。
+* `logpath`：提供服务日志的位置
+* `backend`：指定用于获取文件修改的后端。
 
+### 重启 Fail2Ban
 
+进行更改后，重新启动 Fail2Ban 才能生效。
 
-### 重启Fail2Ban
-
-进行更改后，重新启动Fail2Ban才能生效。
 ```
 [For SysVinit Systems]
 # service fail2ban restart
@@ -109,9 +107,10 @@ backend = %(sshd_backend)s
 # systemctl restart fail2ban.service
 ```
 
-### 验证Fail2Ban iptables规则
+### 验证 Fail2Ban iptables 规则
 
-你可以使用下面的命令来确认是否在防火墙中成功添加了Fail2Ban iptables规则。
+你可以使用下面的命令来确认是否在防火墙中成功添加了Fail2Ban iptables 规则。
+
 ```
 # iptables -L
 Chain INPUT (policy ACCEPT)
@@ -135,9 +134,9 @@ target prot opt source destination
 RETURN all -- anywhere anywhere
 ```
 
-### 如何测试Fail2ban
+### 如何测试 Fail2Ban
 
-我做了一些失败的尝试来测试这个。 为了证实这一点，我要验证`/var/log/fail2ban.log` 文件。
+我做了一些失败的尝试来测试这个。 为了证实这一点，我要验证 `/var/log/fail2ban.log` 文件。
 
 ```
 2017-11-05 14:43:22,901 fail2ban.server [7141]: INFO Changed logging target to /var/log/fail2ban.log for Fail2ban v0.9.6
@@ -184,6 +183,7 @@ RETURN all -- anywhere anywhere
 ```
 
 要查看启用的监狱列表，请运行以下命令。
+
 ```
 # fail2ban-client status
 Status
@@ -191,7 +191,8 @@ Status
 `- Jail list:	apache-auth, sshd
 ```
 
-通过运行以下命令来获取禁止的IP地址。
+通过运行以下命令来获取禁止的 IP 地址。
+
 ```
 # fail2ban-client status ssh
 Status for the jail: ssh
@@ -205,18 +206,19 @@ Status for the jail: ssh
  `- Total banned: 1
 ```
 
-要从Fail2Ban中删除禁止的IP地址，请运行以下命令。
+要从 Fail2Ban 中删除禁止的 IP 地址，请运行以下命令。
+
 ```
 # fail2ban-client set ssh unbanip 192.168.1.115
 ```
 
 --------------------------------------------------------------------------------
 
-via: https://www.2daygeek.com/how-to-install-setup-configure-fail2ban-on-linux/#
+via: https://www.2daygeek.com/how-to-install-setup-configure-fail2ban-on-linux/
 
 作者：[Magesh Maruthamuthu][a]
 译者：[Flowsnow](https://github.com/Flowsnow)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
