@@ -1,3 +1,5 @@
+translating---geekpi
+
 How To Turn On/Off Colors For ls Command In Bash On a Linux/Unix
 ======
 
