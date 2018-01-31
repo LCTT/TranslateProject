@@ -1,3 +1,5 @@
+translating---geekpi
+
 Configuring MSMTP On Ubuntu 16.04 (Again)
 ======
 This post exists as a copy of what I had on my previous blog about configuring MSMTP on Ubuntu 16.04; I'm posting it as-is for posterity, and have no idea if it'll work on later versions. As I'm not hosting my own Ubuntu/MSMTP server anymore I can't see any updates being made to this, but if I ever do have to set this up again I'll create an updated post! Anyway, here's what I had…
