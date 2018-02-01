@@ -1,3 +1,5 @@
+translating---geekpi
+
 Monitoring network bandwidth with iftop command
 ======
 System Admins are required to monitor IT infrastructure to make sure that everything is up & running. We have to monitor performance of hardware i.e memory, hdds & CPUs etc & so does we have to monitor our network. We need to make sure that our network is not being over utilised or our applications, websites might not work. In this tutorial, we are going to learn to use IFTOP utility.
