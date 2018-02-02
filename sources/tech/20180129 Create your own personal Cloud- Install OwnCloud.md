@@ -1,4 +1,6 @@
-Create your own personal Cloud: Install OwnCloud
+translated by cyleft
+
+reate your own personal Cloud: Install OwnCloud
 ======
 Cloud is what everyone is talking about. We have a number of major players in the market that are offering cloud storage as well as other cloud based services. But we can also create a personal cloud for ourselves.
 
