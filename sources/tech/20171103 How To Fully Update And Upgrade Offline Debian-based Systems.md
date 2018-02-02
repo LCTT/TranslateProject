@@ -1,5 +1,8 @@
+Leemeans translatting
+
 How To Fully Update And Upgrade Offline Debian-based Systems
 ======
+
 ![](https://www.ostechnix.com/wp-content/uploads/2017/11/Upgrade-Offline-Debian-based-Systems-2-720x340.png)
 
 A while ago we have shown you how to install softwares in any[ **offline Ubuntu**][1] system and any [**offline Arch Linux**][2] system. Today, we will see how to fully update and upgrade offline Debian-based systems. Unlike the previous methods, we do not update/upgrade a single package, but the whole system. This method can be helpful where you don't have an active Internet connection or slow Internet speed.
@@ -122,4 +125,4 @@ via: https://www.ostechnix.com/fully-update-upgrade-offline-debian-based-systems
 [1]:https://www.ostechnix.com/install-softwares-offline-ubuntu-16-04/
 [2]:https://www.ostechnix.com/install-packages-offline-arch-linux/
 [3]:data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7
-[4]:http://www.ostechnix.com/wp-content/uploads/2017/11/apt-offline.png ()
+[4]:http://www.ostechnix.com/wp-content/uploads/2017/11/apt-offline.png
