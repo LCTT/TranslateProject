@@ -1,3 +1,5 @@
+ translated by cyleft
+
 Linux ln Command Tutorial for Beginners (5 Examples)
 ======
 
