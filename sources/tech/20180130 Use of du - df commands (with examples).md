@@ -1,3 +1,5 @@
+translating---geekpi
+
 Use of du & df commands (with examples)
 ======
 In this article I will discuss du & df commands. Both du & df commands are important utilities of Linux system & shows disk usage of Linux filesystem. Here we will share usage of both commands with some examples.
