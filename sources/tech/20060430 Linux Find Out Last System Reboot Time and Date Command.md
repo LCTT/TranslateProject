@@ -1,4 +1,4 @@
-Linux Find Out Last System Reboot Time and Date Command
+Linux Find Out Last System Reboot Time and Date Command    
 ======
 So, how do you find out your Linux or UNIX-like system was last rebooted? How do you display the system shutdown date and time? The last utility will either list the sessions of specified users, ttys, and hosts, in reverse time order, or list the users logged in at a specified date and time. Each line of output contains the user name, the tty from which the session was conducted, any hostname, the start and stop times for the session, and the duration of the session. To view Linux or Unix system reboot and shutdown date and time stamp using the following commands:
 
