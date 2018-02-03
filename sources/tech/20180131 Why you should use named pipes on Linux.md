@@ -1,3 +1,6 @@
+#Being translated by YPBlib
+======
+
 Why you should use named pipes on Linux
 ======
 
@@ -88,7 +91,6 @@ shs 80038 0.0 0.0 108488 764 pts/4 S 15:25 0:00 -bash
 ```
 
 Named pipes are different enough from the more commonly used Unix/Linux pipes to warrant a different name, but "pipe" really invokes a good image of how they move data between processes, so "named pipe" fits pretty well. Maybe you'll come across a task that will benefit significantly from this very clever Unix/Linux feature.
-
 
 --------------------------------------------------------------------------------
 
