@@ -1,3 +1,4 @@
+Translating by qhwdw
 # Tutorial on how to write basic udev rules in Linux
 
 Contents
