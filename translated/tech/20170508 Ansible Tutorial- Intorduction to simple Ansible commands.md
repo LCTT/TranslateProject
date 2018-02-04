@@ -1,12 +1,13 @@
 Ansible 教程：简单 Ansible 命令介绍
 ======
-在我们之前的 Ansible 教程中，我们讨论了[ **Ansible** 的安装和配置][1]。在这个 ansible 教程中，我们将学习一些基本的 ansible 命令的例子，我们将用它来管理基础设施。所以让我们先看看一个完整的 ansible 命令的语法：
+
+在我们之前的 Ansible 教程中，我们讨论了 [Ansible 的安装和配置][1]。在这个 Ansible 教程中，我们将学习一些基本的 Ansible 命令的例子，我们将用它来管理基础设施。所以让我们先看看一个完整的 Ansible 命令的语法：
 
 ```
 $ ansible <group> -m <module> -a <arguments>
 ```
 
-在这里，我们可以用单个主机或用 <group> 代替全部主机，<arguments> 代表可以提供的选项。现在我们来看看一些 ansible 的基本命令。	
+在这里，我们可以用单个主机或用 `<group>` 代替一组主机，`<arguments>` 是可选的参数。现在我们来看看一些 Ansible 的基本命令。	
 
 ### 检查主机的连通性
 
@@ -51,7 +52,7 @@ $ ansible <group> -m copy -a "src=/home/dan dest=/tmp/home"
 #### 创建新用户
 
 ```
- $ ansible <group> -m user -a "name=testuser password=<encrypted password>"
+$ ansible <group> -m user -a "name=testuser password=<encrypted password>"
 ```
 
 #### 删除用户
@@ -60,22 +61,22 @@ $ ansible <group> -m copy -a "src=/home/dan dest=/tmp/home"
 $ ansible <group> -m user -a "name=testuser state=absent"
 ```
 
-**注意：** 要创建加密密码，请使用 ”mkpasswd -method=sha-512“。
+**注意：** 要创建加密密码，请使用 `"mkpasswd -method=sha-512"`。
 
 ### 更改权限和所有者
 
 要改变已连接主机文件的所有者，我们使用名为 ”file“ 的模块，使用如下。
 
-### 更改文件权限
+#### 更改文件权限
 
 ```
 $ ansible <group> -m file -a "dest=/home/dan/file1.txt mode=777"
 ```
 
-### 更改文件的所有者
+#### 更改文件的所有者
 
 ```
- $ ansible <group> -m file -a "dest=/home/dan/file1.txt mode=777 owner=dan group=dan"
+$ ansible <group> -m file -a "dest=/home/dan/file1.txt mode=777 owner=dan group=dan"
 ```
 
 ### 管理软件包
@@ -128,16 +129,7 @@ $ ansible <group> -m service -a "name=httpd state=stopped"
 $ ansible <group> -m service -a "name=httpd state=restarted"
 ```
 
-这样我们简单的，只有一行的 ansible 命令的教程就完成了。此外，在未来的教程中，我们将学习创建 playbook，来帮助我们更轻松高效地管理主机。
-
-If you think we have helped you or just want to support us, please consider these :-
-如果你认为我们帮助到您，或者只是想支持我们，请考虑这些：
-
-关注我们：[Facebook][2] | [Twitter][3] | [Google Plus][4]
-
-成为支持者 - [通过 PayPal 捐助][5]
-
-Linux TechLab 感谢你的持续支持。
+这样我们简单的，单行 Ansible 命令的教程就完成了。此外，在未来的教程中，我们将学习创建 playbook，来帮助我们更轻松高效地管理主机。
 
 --------------------------------------------------------------------------------
 
@@ -145,7 +137,7 @@ via: http://linuxtechlab.com/ansible-tutorial-simple-commands/
 
 作者：[SHUSAIN][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
