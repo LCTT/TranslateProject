@@ -1,4 +1,4 @@
-Tuning MySQL: 3 Simple Tweaks
+Translating by qhwdw Tuning MySQL: 3 Simple Tweaks
 ============================================================
 
 If you don’t change the default MySQL configuration, your server is going to perform like a Ferrari that’s stuck in first gear…
