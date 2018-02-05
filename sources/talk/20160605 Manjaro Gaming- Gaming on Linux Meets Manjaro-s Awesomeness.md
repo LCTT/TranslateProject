@@ -1,3 +1,5 @@
+XLCYun 翻译中
+
 Manjaro Gaming: Gaming on Linux Meets Manjaro’s Awesomeness
 ======
 [![Meet Manjaro Gaming, a Linux distro designed for gamers with the power of Manjaro][1]][1]
