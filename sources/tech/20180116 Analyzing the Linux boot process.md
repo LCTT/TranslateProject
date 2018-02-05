@@ -1,3 +1,5 @@
+Translating by jessie-pang
+
 Analyzing the Linux boot process
 ======
 
