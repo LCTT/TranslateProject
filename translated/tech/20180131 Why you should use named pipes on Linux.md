@@ -94,7 +94,7 @@ shs 80038 0.0 0.0 108488 764 pts/4 S 15:25 0:00 -bash
 via: https://www.networkworld.com/article/3251853/linux/why-use-named-pipes-on-linux.html
 
 作者：[Sandra Henry-Stocker][a]
-译者：[译者ID](https://github.com/YPBlib)
+译者：[YPBlib](https://github.com/YPBlib)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
