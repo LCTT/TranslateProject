@@ -60,6 +60,9 @@ LCTT 的组成
 * 2017/03/13 制作了 LCTT 主页、成员列表和成员主页，LCTT 主页将移动至 https://linux.cn/lctt 。
 * 2017/03/16 提升 GHLandy、bestony、rusking 为新的 Core 成员。创建 Comic 小组。
 * 2017/04/11 启用头衔制，为各位重要成员颁发头衔。
+* 2017/11/21 鉴于 qhwdw 快速而上佳的翻译质量，提升 qhwdw 为新的 Core 成员。
+* 2017/11/19 wxy 在上海交大举办的 2017 中国开源年会上做了演讲：《[如何以翻译贡献参与开源社区](https://linux.cn/article-9084-1.html)》。
+* 2018/01/11 提升 lujun9972 成为核心成员，并加入选题组。
 
 核心成员
 -------------------------------
@@ -86,6 +89,8 @@ LCTT 的组成
 - 核心成员 @Locez,
 - 核心成员 @ucasFL,
 - 核心成员 @rusking,
+- 核心成员 @qhwdw,
+- 核心成员 @lujun9972
 - 前任选题 @DeadFire,
 - 前任校对 @reinoir222,
 - 前任校对 @PurlingNayuki,
