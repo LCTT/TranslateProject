@@ -1,3 +1,4 @@
+leemeans translating
 Getting Started with ncurses
 ======
 How to use curses to draw to the terminal screen.
