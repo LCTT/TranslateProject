@@ -1,27 +1,26 @@
-一步一步学习如何在 MariaDB 中配置主从复制
+循序渐进学习如何在 MariaDB 中配置主从复制
 ======
-在我们前面的教程中，我们已经学习了 [**如何安装和配置 MariaDB**][1]，也学习了 [**管理 MariaDB 的一些基础命令**][2]。现在我们来学习，如何在 MariaDB 服务器上配置一个主从复制。
 
-复制是用于为我们的数据库去创建多个副本，这些副本可以在其它数据库上用于运行查询，像一些非常繁重的查询可能会影响主数据库服务器的性能，或者我们可以使用它来做数据冗余，或者兼具以上两个目的。我们可以将这个过程自动化，即主服务器到从服务器的复制过程自动进行。执行备份而不影响在主服务器上的写操作。
+在我们前面的教程中，我们已经学习了 [如何安装和配置 MariaDB][1]，也学习了 [管理 MariaDB 的一些基础命令][2]。现在我们来学习，如何在 MariaDB 服务器上配置一个主从复制。
+
+复制是用于为我们的数据库创 建多个副本，这些副本可以在其它数据库上用于运行查询，像一些非常繁重的查询可能会影响主数据库服务器的性能，或者我们可以使用它来做数据冗余，或者兼具以上两个目的。我们可以将这个过程自动化，即主服务器到从服务器的复制过程自动进行。执行备份而不影响在主服务器上的写操作。
 
 因此，我们现在去配置我们的主-从复制，它需要两台安装了 MariaDB 的机器。它们的 IP 地址如下：
 
- **主服务器 -** 192.168.1.120 **主机名** master.ltechlab.com
+-  **主服务器 -** 192.168.1.120 **主机名 -** master.ltechlab.com
+-  **从服务器 -** 192.168.1.130 **主机名 -** slave.ltechlab.com
 
- **从服务器 -** 192.168.1.130 **主机名 -** slave.ltechlab.com
+MariaDB 安装到这些机器上之后，我们继续进行本教程。如果你需要安装和配置 MariaDB 的教程，请查看[**这个教程**][1]。
 
-MariaDB 安装到这些机器上之后，我们继续进行本教程。如果你需要安装和配置 MariaDB 的教程，请查看[ **这个教程**][1]。
+### 第 1 步 - 主服务器配置
 
-
-### **第 1 步 - 主服务器配置**
-
-我们现在进入到 MariaDB 中的一个命名为 ' **important '** 的数据库，它将被复制到我们的从服务器。为开始这个过程，我们编辑名为 ' **/etc/my.cnf** ' 的文件，它是 MariaDB 的配置文件。
+我们现在进入到 MariaDB 中的一个命名为 `important` 的数据库，它将被复制到我们的从服务器。为开始这个过程，我们编辑名为 `/etc/my.cnf` 的文件，它是 MariaDB 的配置文件。
 
 ```
 $ vi /etc/my.cnf
 ```
 
-在这个文件中找到 [mysqld] 节，然后输入如下内容：
+在这个文件中找到 `[mysqld]` 节，然后输入如下内容：
 
 ```
 [mysqld]
@@ -43,7 +42,7 @@ $ systemctl restart mariadb
 $ mysql -u root -p
 ```
 
-在它上面创建一个命名为 'slaveuser' 的为主从复制使用的新用户，然后运行如下的命令为它分配所需要的权限：
+在它上面创建一个命名为 `slaveuser` 的为主从复制使用的新用户，然后运行如下的命令为它分配所需要的权限：
 
 ```
 STOP SLAVE;
@@ -53,19 +52,19 @@ FLUSH TABLES WITH READ LOCK;
 SHOW MASTER STATUS;
 ```
 
-**注意： ** 我们配置主从复制需要 **MASTER_LOG_FILE 和 MASTER_LOG_POS ** 的值，它可以通过 'show master status' 来获得，因此，你一定要确保你记下了它们的值。
+**注意：** 我们配置主从复制需要 `MASTER_LOG_FILE` 和 `MASTER_LOG_POS` 的值，它可以通过 `show master status` 来获得，因此，你一定要确保你记下了它们的值。
 
-这些命令运行完成之后，输入 'exit' 退出这个会话。
+这些命令运行完成之后，输入 `exit` 退出这个会话。
 
 ### 第 2 步 - 创建一个数据库备份，并将它移动到从服务器上
 
-现在，我们需要去为我们的数据库 'important' 创建一个备份，可以使用 'mysqldump' 命令去备份。
+现在，我们需要去为我们的数据库 `important` 创建一个备份，可以使用 `mysqldump` 命令去备份。
 
 ```
 $ mysqldump -u root -p important > important_backup.sql
 ```
 
-备份完成后，我们需要重新登陆到 MariaDB 数据库，并解锁我们的表。
+备份完成后，我们需要重新登录到 MariaDB 数据库，并解锁我们的表。
 
 ```
 $ mysql -u root -p
@@ -78,7 +77,7 @@ $ UNLOCK TABLES;
 
 ### 第 3 步：配置从服务器
 
-我们再次去编辑 '/etc/my.cnf' 文件，找到配置文件中的 [mysqld] 节，然后输入如下内容：
+我们再次去编辑（从服务器上的） `/etc/my.cnf` 文件，找到配置文件中的 `[mysqld]` 节，然后输入如下内容：
 
 ```
 [mysqld]
@@ -93,7 +92,7 @@ replicate-do-db=important
 $ mysql -u root -p < /data/ important_backup.sql
 ```
 
-当这个恢复过程结束之后，我们将通过登入到从服务器上的 MariaDB，为数据库 'important' 上的用户 'slaveuser' 授权。
+当这个恢复过程结束之后，我们将通过登入到从服务器上的 MariaDB，为数据库 `important` 上的用户 'slaveuser' 授权。
 
 ```
 $ mysql -u root -p
@@ -110,9 +109,9 @@ FLUSH PRIVILEGES;
 $ systemctl restart mariadb
 ```
 
-### **第 4 步：启动复制**
+### 第 4 步：启动复制
 
-记住，我们需要 **MASTER_LOG_FILE 和 MASTER_LOG_POS** 变量的值，它可以通过在主服务器上运行 'SHOW MASTER STATUS' 获得。现在登入到从服务器上的 MariaDB，然后通过运行下列命令，告诉我们的从服务器它应该去哪里找主服务器。
+记住，我们需要 `MASTER_LOG_FILE` 和 `MASTER_LOG_POS` 变量的值，它可以通过在主服务器上运行 `SHOW MASTER STATUS` 获得。现在登入到从服务器上的 MariaDB，然后通过运行下列命令，告诉我们的从服务器它应该去哪里找主服务器。
 
 ```
 STOP SLAVE;
@@ -131,13 +130,13 @@ SHOW SLAVE STATUS\G;
 $ mysql -u root -p
 ```
 
-选择数据库为 'important'：
+选择数据库为 `important`：
 
 ```
 use important;
 ```
 
-在这个数据库上创建一个名为 ‘test’ 的表：
+在这个数据库上创建一个名为 `test` 的表：
 
 ```
 create table test (c int);
@@ -175,10 +174,10 @@ via: http://linuxtechlab.com/creating-master-slave-replication-mariadb/
 
 作者：[Shusain][a]
 译者：[qhwdw](https://github.com/qhwdw)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:http://linuxtechlab.com/author/shsuain/
-[1]:http://linuxtechlab.com/installing-configuring-mariadb-rhelcentos/
-[2]:http://linuxtechlab.com/mariadb-administration-commands-beginners/
+[1]:https://linux.cn/article-8320-1.html
+[2]:https://linux.cn/article-9306-1.html
