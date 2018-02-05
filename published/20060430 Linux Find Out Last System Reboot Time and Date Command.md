@@ -1,25 +1,31 @@
-Linux 系统查询机器最近重新启动的日期和时间的命令 
+如何在 Linux 系统查询机器最近重启时间 
 ======
 
-在你的 Linux 或 类 UNIX 系统中，你是如何查询系统重新启动的日期和时间？你是如何查询系统关机的日期和时间？ last 命令不仅可以按照时间从近到远的顺序列出指定的用户，终端和主机名，而且还可以列出指定日期和时间登录的用户。输出到终端的每一行都包括用户名，会话终端，主机名，会话开始和结束的时间，会话持续的时间。使用下面的命令来查看 Linux 或类 UNIX 系统重启和关机的时间和日期。
+在你的 Linux 或类 UNIX 系统中，你是如何查询系统上次重新启动的日期和时间？怎样显示系统关机的日期和时间？ `last` 命令不仅可以按照时间从近到远的顺序列出该会话的特定用户、终端和主机名，而且还可以列出指定日期和时间登录的用户。输出到终端的每一行都包括用户名、会话终端、主机名、会话开始和结束的时间、会话持续的时间。要查看 Linux 或类 UNIX 系统重启和关机的时间和日期，可以使用下面的命令。
 
-- last 命令
-- who 命令
+- `last` 命令
+- `who` 命令
 
 
 ### 使用 who 命令来查看系统重新启动的时间/日期
 
-你需要在终端使用 [who][1] 命令来打印有哪些人登陆了系统。who 命令同时也会显示上次系统启动的时间，使用 last 命令来查看系统重启和关机的日期和时间，运行：
+你需要在终端使用 [who][1] 命令来打印有哪些人登录了系统，`who` 命令同时也会显示上次系统启动的时间。使用 `last` 命令来查看系统重启和关机的日期和时间，运行：
 
-`$ who -b`
+```
+$ who -b
+```
 
 示例输出：
 
-`system boot 2017-06-20 17:41`
+```
+system boot 2017-06-20 17:41
+```
 
-使用 last 命令来查询最近登陆到系统的用户和系统重启的时间和日期。输入：
+使用 `last` 命令来查询最近登录到系统的用户和系统重启的时间和日期。输入：
 
-`$ last reboot | less`
+```
+$ last reboot | less
+```
 
 示例输出：
 
@@ -27,7 +33,9 @@ Linux 系统查询机器最近重新启动的日期和时间的命令
 
 或者，尝试输入：
 
-`$ last reboot | head -1`
+```
+$ last reboot | head -1
+```
 
 示例输出：
 
@@ -35,13 +43,15 @@ Linux 系统查询机器最近重新启动的日期和时间的命令
 reboot system boot 4.9.0-3-amd64 Sat Jul 15 19:19 still running
 ```
 
-last 命令通过查看文件 /var/log/wtmp 来显示自 wtmp 文件被创建时的所有登陆(和注销)的用户。每当系统重新启动时，伪用户将重启信息记录到日志。因此，`last reboot`  命令将会显示自日志文件被创建以来的所有重启信息。
+`last` 命令通过查看文件 `/var/log/wtmp` 来显示自 wtmp 文件被创建时的所有登录（和登出）的用户。每当系统重新启动时，这个伪用户 `reboot` 就会登录。因此，`last reboot` 命令将会显示自该日志文件被创建以来的所有重启信息。
 
 ### 查看系统上次关机的时间和日期
 
 可以使用下面的命令来显示上次关机的日期和时间：
 
-`$ last -x|grep shutdown | head -1`
+```
+$ last -x|grep shutdown | head -1
+```
 
 示例输出：
 
@@ -51,10 +61,10 @@ shutdown system down 2.6.15.4 Sun Apr 30 13:31 - 15:08 (01:37)
 
 命令中，
 
-  *  **-x**：显示系统开关机和运行等级改变信息
+* `-x`：显示系统关机和运行等级改变信息
 
 
-这里是 last 命令的其它的一些选项：
+这里是 `last` 命令的其它的一些选项：
 
 ```
 $ last
@@ -62,6 +72,7 @@ $ last -x
 $ last -x reboot
 $ last -x shutdown
 ```
+
 示例输出：
 
 ![Fig.01: How to view last Linux System Reboot Date/Time ][3]
@@ -70,7 +81,9 @@ $ last -x shutdown
 
 评论区的读者建议的另一个命令如下：
 
-`$ uptime -s`
+```
+$ uptime -s
+```
 
 示例输出：
 
@@ -82,7 +95,9 @@ $ last -x shutdown
 
 在终端输入下面的命令：
 
-`$ last reboot`
+```
+$ last reboot
+```
 
 在 OS X 示例输出结果如下：
 
@@ -108,7 +123,9 @@ wtmp begins Sat Oct 3 18:57
 
 查看关机日期和时间，输入：
 
-`$ last shutdown`
+```
+$ last shutdown
+```
 
 示例输出：
 
@@ -130,7 +147,7 @@ wtmp begins Sat Oct 3 18:57
 
 ### 如何查看是谁重启和关闭机器？
 
-你需要[启动 psacct 服务然后运行下面的命令][4]来查看执行过的命令，同时包括用户名，在终端输入 [lastcomm][5] 命令查看信息
+你需要[启用 psacct 服务然后运行下面的命令][4]来查看执行过的命令（包括用户名），在终端输入 [lastcomm][5] 命令查看信息
 
 ```
 # lastcomm userNameHere
@@ -138,9 +155,10 @@ wtmp begins Sat Oct 3 18:57
 # lastcomm | more
 # lastcomm reboot
 # lastcomm shutdown
-### OR see both reboot and shutdown time
+### 或者查看重启和关机时间
 # lastcomm | egrep 'reboot|shutdown'
 ```
+
 示例输出：
 
 ```
@@ -152,13 +170,11 @@ shutdown S root pts/1 0.00 secs Sun Dec 27 23:45
 
 ### 参见
 
-  * 更多信息可以查看 man 手册( man last )和参考文章 [如何在 Linux 服务器上使用 tuptime 命令查看历史和统计的正常的运行时间][6].
-
+* 更多信息可以查看 man 手册（`man last`）和参考文章 [如何在 Linux 服务器上使用 tuptime 命令查看历史和统计的正常的运行时间][6]。
 
 ### 关于作者
 
-作者是 nixCraft 的创立者同时也是一名经验丰富的系统管理员，也是 Linux，类 Unix 操作系统 shell 脚本的培训师。他曾与全球各行各业的客户工作过，包括 IT，教育，国防和空间研究以及非营利部门等等。你可以在 [Twitter][7] ,[Facebook][8]，[Google+][9] 关注他。
-
+作者是 nixCraft 的创立者，同时也是一名经验丰富的系统管理员，也是 Linux，类 Unix 操作系统 shell 脚本的培训师。他曾与全球各行各业的客户工作过，包括 IT，教育，国防和空间研究以及非营利部门等等。你可以在 [Twitter][7]、[Facebook][8]、[Google+][9] 关注他。
 
 
 --------------------------------------------------------------------------------
@@ -167,7 +183,7 @@ via: https://www.cyberciti.biz/tips/linux-last-reboot-time-and-date-find-out.htm
 
 作者：[Vivek Gite][a]
 译者：[amwps290](https://github.com/amwps290)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
