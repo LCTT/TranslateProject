@@ -1,4 +1,4 @@
-How to Use the ZFS Filesystem on Ubuntu Linux
+How to Use the ZFS Filesystem on Ubuntu Linux  
 ======
 There are a myriad of [filesystems available for Linux][1]. So why try a new one? They all work, right? They're not all the same, and some have some very distinct advantages, like ZFS.
 
