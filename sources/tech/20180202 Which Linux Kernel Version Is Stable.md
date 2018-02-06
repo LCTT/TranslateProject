@@ -1,3 +1,4 @@
+Translating by qhwdw
 Which Linux Kernel Version Is ‘Stable’?
 ============================================================
 
