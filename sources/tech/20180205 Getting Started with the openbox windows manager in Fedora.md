@@ -1,3 +1,4 @@
+translating by wenwensnow
 Getting Started with the openbox windows manager in Fedora
 ======
 
