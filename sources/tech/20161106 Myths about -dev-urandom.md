@@ -280,9 +280,9 @@ via: https://www.2uo.de/myths-about-urandom/
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://www.2uo.de/
-[1]:https://www.2uo.de/structure-no.png
-[2]:https://www.2uo.de/structure-yes.png
-[3]:https://www.2uo.de/structure-new.png
+[1]:https://www.2uo.de/myths-about-urandom/structure-no.png
+[2]:https://www.2uo.de/myths-about-urandom/structure-yes.png
+[3]:https://www.2uo.de/myths-about-urandom/structure-new.png
 [4]:http://blog.cr.yp.to/20140205-entropy.html
 [5]:http://www.mail-archive.com/cryptography@randombit.net/msg04763.html
 [6]:http://security.stackexchange.com/questions/3936/is-a-rand-from-dev-urandom-secure-for-a-login-key/3939#3939
