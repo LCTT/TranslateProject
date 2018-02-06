@@ -1,6 +1,7 @@
 八种在 Linux 上生成随机密码的方法
 ======
-学习使用 8 种 Linux 原生命令或第三方实用程序来生成随机密码。
+
+> 学习使用 8 种 Linux 原生命令或第三方实用程序来生成随机密码。
 
 ![][1]
 
@@ -8,13 +9,12 @@
 
 其实这些方法就是生成一些能被用作密码的随机字母字符串。随机密码可以用于新用户的密码，不管用户基数有多大，这些密码都是独一无二的。话不多说，让我们来看看 8 种不同的在 Linux 上生成随机密码的方法吧。
 
-##### 使用 mkpasswd 实用程序生成密码
+### 使用 mkpasswd 实用程序生成密码
 
-`mkpasswd` 在基于 RHEL 的系统上随 `expect` 软件包一起安装。在基于 Debian 的系统上 `mkpasswd` 则在软件包 `whois` 中。直接安装 `mkpasswd` 软件包将会导致错误 -
+`mkpasswd` 在基于 RHEL 的系统上随 `expect` 软件包一起安装。在基于 Debian 的系统上 `mkpasswd` 则在软件包 `whois` 中。直接安装 `mkpasswd` 软件包将会导致错误：
 
-RHEL 系统：软件包 mkpasswd 不可用。
-
-Debian 系统：错误：无法定位软件包 mkpasswd。
+- RHEL 系统：软件包 mkpasswd 不可用。
+- Debian 系统：错误：无法定位软件包 mkpasswd。
 
 所以按照上面所述安装他们的父软件包，就没问题了。
 
@@ -28,9 +28,9 @@ root@kerneltalks# mkpasswd teststring << on Ubuntu
 XnlrKxYOJ3vik
 ```
 
-这个命令在不同的系统上表现得不一样，所以要对应工作。你也可以通过参数来控制长度等选项，可以查阅 man 手册来探索。
+这个命令在不同的系统上表现得不一样，所以工作方式各异。你也可以通过参数来控制长度等选项，可以查阅 man 手册来探索。
 
-##### 使用 openssl 生成密码
+### 使用 openssl 生成密码
 
 几乎所有 Linux 发行版都包含 openssl。我们可以利用它的随机功能来生成可以用作密码的随机字母字符串。
 
@@ -41,7 +41,7 @@ nU9LlHO5nsuUvw==
 
 这里我们使用 `base64` 编码随机函数，最后一个数字参数表示长度。
 
-##### 使用 urandom 生成密码
+### 使用 urandom 生成密码
 
 设备文件 `/dev/urandom` 是另一个获得随机字符串的方法。我们使用 `tr` 功能并裁剪输出来获得随机字符串，并把它作为密码。
 
@@ -50,9 +50,9 @@ root@kerneltalks # strings /dev/urandom |tr -dc A-Za-z0-9 | head -c20; echo
 UiXtr0NAOSIkqtjK4c0X
 ```
 
-##### 使用 dd 命令生成密码
+### 使用 dd 命令生成密码
 
-我们甚至可以使用 /dev/urandom 设备配合 [dd 命令][2] 来获取随机字符串。
+我们甚至可以使用 `/dev/urandom` 设备配合 [dd 命令][2] 来获取随机字符串。
 
 ```bash
 root@kerneltalks# dd if=/dev/urandom bs=1 count=15|base64 -w 0
@@ -62,16 +62,16 @@ root@kerneltalks# dd if=/dev/urandom bs=1 count=15|base64 -w 0
 QMsbe2XbrqAc2NmXp8D0
 ```
 
-我们需要将结果通过 `base64` 编码使它能被人类读懂。你可以使用计数值来获取想要的长度。想要获得更简洁的输出的话，可以将 std2 重定向到 `/dev/null`。简洁输出的命令是 -
+我们需要将结果通过 `base64` 编码使它能被人类可读。你可以使用数值来获取想要的长度。想要获得更简洁的输出的话，可以将“标准错误输出”重定向到 `/dev/null`。简洁输出的命令是：
 
 ```bash
 root@kerneltalks # dd if=/dev/urandom bs=1 count=15 2>/dev/null|base64 -w 0
 F8c3a4joS+a3BdPN9C++
 ```
 
-##### 使用 md5sum 生成密码
+### 使用 md5sum 生成密码
 
-另一种获取可用作密码的随机字符串的方法是计算 MD5 校验值！校验值看起来确实像是随机字符串组合在一起，我们可以用作密码。确保你的计算源是个变量，这样的话每次运行命令时生成的校验值都不一样。比如 `date`！[date 命令][3] 总会生成不同的输出。
+另一种获取可用作密码的随机字符串的方法是计算 MD5 校验值！校验值看起来确实像是随机字符串组合在一起，我们可以用作密码。确保你的计算源是个变量，这样的话每次运行命令时生成的校验值都不一样。比如 `date` ！[date 命令][3] 总会生成不同的输出。
 
 ```bash
 root@kerneltalks # date |md5sum
@@ -80,9 +80,9 @@ root@kerneltalks # date |md5sum
 
 在这里我们将 `date` 命令的输出通过 `md5sum` 得到了校验和！你也可以用 [cut 命令][4] 裁剪你需要的长度。
 
-##### 使用 pwgen 生成密码
+### 使用 pwgen 生成密码
 
-`pwgen` 软件包在类似 [EPEL 软件仓库][5]（译者注：企业版 Linux 附加软件包）中。`pwgen` 更专注于生成可发音的密码，但它们不在英语词典中，也不是纯英文的。标准发行版仓库中可能并不包含这个工具。安装这个软件包然后运行 `pwgen` 命令行。Boom !
+`pwgen` 软件包在类似 [EPEL 软件仓库][5]（LCTT 译注：企业版 Linux 附加软件包）中。`pwgen` 更专注于生成可发音的密码，但它们不在英语词典中，也不是纯英文的。标准发行版仓库中可能并不包含这个工具。安装这个软件包然后运行 `pwgen` 命令行。Boom !
 
 ```bash
 root@kerneltalks # pwgen
@@ -92,9 +92,10 @@ aic2OaDa iexieQu8 Aesoh4Ie Eixou9ph ShiKoh0i uThohth7 taaN3fuu Iege0aeZ
 cah3zaiW Eephei0m AhTh8guo xah1Shoo uh8Iengo aifeev4E zoo4ohHa fieDei6c
 aorieP7k ahna9AKe uveeX7Hi Ohji5pho AigheV7u Akee9fae aeWeiW4a tiex8Oht
 ```
+
 你的终端会呈现出一个密码列表！你还想要什么呢？好吧。你还想再仔细探索的话， `pwgen` 还有很多自定义选项，这些都可以在 man 手册里查阅到。
 
-##### 使用 gpg 工具生成密码
+### 使用 gpg 工具生成密码
 
 GPG 是一个遵循 OpenPGP 标准的加密及签名工具。大部分 gpg 工具都预先被安装好了（至少在我的 RHEL7 上是这样）。但如果没有的话你可以寻找 `gpg` 或 `gpg2` 软件包并[安装][6]它。
 
@@ -107,9 +108,11 @@ mL8i+PKZ3IuN6a7a
 
 这里我们传了生成随机字节序列选项（`--gen-random`），质量为 1（第一个参数），次数 12 （第二个参数）。选项 `--armor` 保证以 `base64` 编码输出。
 
-##### 使用 xkcdpass 生成密码
+### 使用 xkcdpass 生成密码
 
 著名的极客幽默网站 [xkcd][7]，发表了一篇非常有趣的文章，是关于好记但又复杂的密码的。你可以在[这里][8]阅读。所以 `xkcdpass` 工具就受这篇文章启发，做了这样的工作！这是一个 Python 软件包，可以在[这里][9]的 Python 的官网上找到它。
+
+![](https://imgs.xkcd.com/comics/password_strength.png)
 
 所有的安装使用说明都在上面那个页面提及了。这里是安装步骤和我的测试 RHEL 服务器的输出，以供参考。
 
@@ -229,7 +232,7 @@ Processing dependencies for xkcdpass==1.14.3
 Finished processing dependencies for xkcdpass==1.14.3
 ```
 
-现在运行 xkcdpass 命令，将会随机给出你几个像下面这样的字典单词 -
+现在运行 `xkcdpass` 命令，将会随机给出你几个像下面这样的字典单词：
 
 ```bash
 root@kerneltalks # xkcdpass
@@ -245,9 +248,10 @@ root@kerneltalks # xkcdpass |md5sum
 root@kerneltalks # xkcdpass |md5sum
 ad79546e8350744845c001d8836f2ff2  -
 ```
+
 或者你甚至可以把所有单词串在一起作为一个超长的密码，不仅非常好记，也不容易被电脑程序攻破。
 
-Linux 上还有像 [Diceware][10], [KeePassX][11], [Revelation][12], [PasswordMaker][13] 这样的工具，也可以考虑用来生成强随机密码。
+Linux 上还有像 [Diceware][10]、 [KeePassX][11]、 [Revelation][12]、 [PasswordMaker][13] 这样的工具，也可以考虑用来生成强随机密码。
 
 --------------------------------------------------------------------------------
 
