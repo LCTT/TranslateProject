@@ -1,14 +1,14 @@
 八种在 Linux 上生成随机密码的方法
 ======
-学习使用 8 种 Linux 原生命令或第三方组件来生成随机密码。
+学习使用 8 种 Linux 原生命令或第三方实用程序来生成随机密码。
 
 ![][1]
 
-在这篇文章中，我们将引导你通过几种不同的方式在 Linux 中生成随机密码。其中几种利用原生 Linux 命令，另外几种则利用极易在 Linux 机器上安装的第三方工具或组件实现。在这里我们利用像 `openssl`, [dd][2], `md5sum`, `tr`, `urandom` 这样的原生命令和 mkpasswd，randpw，pwgen，spw，gpg，xkcdpass，diceware，revelation，keepaasx，passwordmaker 这样的第三方工具。
+在这篇文章中，我们将引导你通过几种不同的方式在 Linux 终端中生成随机密码。其中几种利用原生 Linux 命令，另外几种则利用极易在 Linux 机器上安装的第三方工具或实用程序实现。在这里我们利用像 `openssl`, [dd][2], `md5sum`, `tr`, `urandom` 这样的原生命令和 mkpasswd，randpw，pwgen，spw，gpg，xkcdpass，diceware，revelation，keepaasx，passwordmaker 这样的第三方工具。
 
 其实这些方法就是生成一些能被用作密码的随机字母字符串。随机密码可以用于新用户的密码，不管用户基数有多大，这些密码都是独一无二的。话不多说，让我们来看看 8 种不同的在 Linux 上生成随机密码的方法吧。
 
-##### 使用 mkpasswd 组件生成密码
+##### 使用 mkpasswd 实用程序生成密码
 
 `mkpasswd` 在基于 RHEL 的系统上随 `expect` 软件包一起安装。在基于 Debian 的系统上 `mkpasswd` 则在软件包 `whois` 中。直接安装 `mkpasswd` 软件包将会导致错误 -
 
@@ -28,7 +28,7 @@ root@kerneltalks# mkpasswd teststring << on Ubuntu
 XnlrKxYOJ3vik
 ```
 
-这个命令在不同的系统上表现得不一样，所以要对应工作。你也可以通过参数来控制长度等选项。你可以查阅 man 手册来探索。
+这个命令在不同的系统上表现得不一样，所以要对应工作。你也可以通过参数来控制长度等选项，可以查阅 man 手册来探索。
 
 ##### 使用 openssl 生成密码
 
@@ -43,7 +43,7 @@ nU9LlHO5nsuUvw==
 
 ##### 使用 urandom 生成密码
 
-设备文件 `/dev/urandom` 是另一个获得随机字符串的方法。我们使用 `tr` 功能裁剪输出来获得随机字符串，并把它作为密码。
+设备文件 `/dev/urandom` 是另一个获得随机字符串的方法。我们使用 `tr` 功能并裁剪输出来获得随机字符串，并把它作为密码。
 
 ```bash
 root@kerneltalks # strings /dev/urandom |tr -dc A-Za-z0-9 | head -c20; echo
@@ -71,7 +71,7 @@ F8c3a4joS+a3BdPN9C++
 
 ##### 使用 md5sum 生成密码
 
-另一种获取可用作密码的随机字符串的方法是计算 MD5 校验值！校验值看起来确实像是随机字符串组合在一起，我们可以用作为密码。确保你的计算源是个变量，这样的话每次运行命令时生成的校验值都不一样。比如 `date`！[date 命令][3] 总会生成不同的输出。
+另一种获取可用作密码的随机字符串的方法是计算 MD5 校验值！校验值看起来确实像是随机字符串组合在一起，我们可以用作密码。确保你的计算源是个变量，这样的话每次运行命令时生成的校验值都不一样。比如 `date`！[date 命令][3] 总会生成不同的输出。
 
 ```bash
 root@kerneltalks # date |md5sum
@@ -82,7 +82,7 @@ root@kerneltalks # date |md5sum
 
 ##### 使用 pwgen 生成密码
 
-`pwgen` 软件包在[类 EPEL 仓库][5]（译者注：企业版 Linux 附加软件包）中。`pwgen` 更专注于生成可发音的密码，但它们不在英语词典中，也不是纯英文的。标准发行版仓库中可能并不包含这个工具。安装这个软件包然后运行 `pwgen` 命令行。Boom !
+`pwgen` 软件包在类似 [EPEL 软件仓库][5]（译者注：企业版 Linux 附加软件包）中。`pwgen` 更专注于生成可发音的密码，但它们不在英语词典中，也不是纯英文的。标准发行版仓库中可能并不包含这个工具。安装这个软件包然后运行 `pwgen` 命令行。Boom !
 
 ```bash
 root@kerneltalks # pwgen
@@ -255,7 +255,7 @@ via: https://kerneltalks.com/tips-tricks/8-ways-to-generate-random-password-in-l
 
 作者：[kerneltalks][a]
 译者：[heart4lor](https://github.com/heart4lor)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[Locez](https://github.com/locez)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
