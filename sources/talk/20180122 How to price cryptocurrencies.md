@@ -1,3 +1,4 @@
+translating by wyxplus
 How to price cryptocurrencies
 ======
 

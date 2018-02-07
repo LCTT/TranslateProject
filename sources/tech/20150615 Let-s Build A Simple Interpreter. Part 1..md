@@ -1,4 +1,5 @@
-// Translating by Linchenguang....
+BriFuture is translating this article
+
 Let’s Build A Simple Interpreter. Part 1.
 ======
 
