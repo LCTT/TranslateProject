@@ -1,3 +1,4 @@
+Translating by qhwdw
 Custom Embedded Linux Distributions
 ======
 ### Why Go Custom?
