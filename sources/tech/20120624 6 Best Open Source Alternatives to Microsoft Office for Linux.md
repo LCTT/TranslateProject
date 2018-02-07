@@ -1,4 +1,4 @@
-6 Best Open Source Alternatives to Microsoft Office for Linux
+6 Best Open Source Alternatives to Microsoft Office for Linux  
 ======
 **Brief: Looking for Microsoft Office in Linux? Here are the best free and open source alternatives to Microsoft Office for Linux.**
 
