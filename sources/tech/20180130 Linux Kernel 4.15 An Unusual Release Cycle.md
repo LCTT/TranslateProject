@@ -1,3 +1,4 @@
+Translating by qhwdw
 Linux Kernel 4.15: 'An Unusual Release Cycle'
 ============================================================
 
