@@ -1,4 +1,4 @@
-Linear Regression Classifier from scratch using Numpy and Stochastic gradient descent as an optimization technique
+Translating by Torival Linear Regression Classifier from scratch using Numpy and Stochastic gradient descent as an optimization technique
 ======
 
 ![](https://process.filestackapi.com/cache=expiry:max/resize=width:700/compress/cKkX2ryQteXTdZYSR6t7)
