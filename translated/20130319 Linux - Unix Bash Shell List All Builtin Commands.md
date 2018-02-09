@@ -1,31 +1,32 @@
 KarenMrzhang Tranlating
-Linux / Unix Bash Shell List All Builtin Commands
+
+Linux / Unix Bash Shell 列出所有内置命令
 ======
 
-Builtin commands contained within the bash shell itself. How do I list all built-in bash commands on Linux / Apple OS X / *BSD / Unix like operating systems without reading large size bash man page?
+内置命令包含在 bash shell 本身。我该如何在 Linux / Apple OS X / *BSD / Unix 上像操作系统不用去读大篇的 bash 操作说明页就可以列出所有的内置 bash 命令呢?
 
-A shell builtin is nothing but command or a function, called from a shell, that is executed directly in the shell itself. The bash shell executes the command directly, without invoking another program. You can view information for Bash built-ins with help command. There are different types of built-in commands.
-
-
-### built-in command types
-
-  1. Bourne Shell Builtins: Builtin commands inherited from the Bourne Shell.
-  2. Bash Builtins: Table of builtins specific to Bash.
-  3. Modifying Shell Behavior: Builtins to modify shell attributes and optional behavior.
-  4. Special Builtins: Builtin commands classified specially by POSIX.
+一个 shell 内置函数是一个命令或一个函数，从shell中调用，它直接在shell中执行。 bash shell 是直接执行命令没有调用其他程序的。你可以使用帮助命令查看 Bash 内置命令的信息。以下是几种不同类型的内置命令。
 
 
+### 内置命令的类型
 
-### How to see all bash builtins
+  1. Bourne Shell 内置命令：内置命令继承自 Bourne Shell。
+  2. Bash 内置命令：特定于 Bash 的内置命令表。
+  3. 修改 Shell 行为：修改 shell 属性和选择行为的内置命令。
+  4. 特别的内置命令：由 POSIX 特别分类的内置命令。
 
-Type the following command:
+
+
+### 如何查看所有 bash 内置命令
+
+有以下的命令：
 ```
 $ help
 $ help | less
 $ help | grep read 
 ```
 
-Sample outputs:
+样例输出：
 ```
 GNU bash, version 4.1.5(1)-release (x86_64-pc-linux-gnu)
 These shell commands are defined internally.  Type `help' to see this list.
@@ -75,20 +76,20 @@ A star (*) next to a name means that the command is disabled.
  help [-dms] [pattern ...]               { COMMANDS ; }
 ```
 
-### Viewing information for Bash built-ins
+### 查看 Bash 的内置命令信息
 
-To get detailed info run:
+运行以下得到详细信息：
 ```
 help command
 help read
 ```
-To just get a list of all built-ins with a short description, execute:
+仅得到所有带简短描述的内置命令的列表，执行如下:
 
 `$ help -d`
 
-### Find syntax and other options for builtins
+### 查找内置命令的语法和其他选项
 
-Use the following syntax ' to find out more about the builtins commands:
+使用下列语法去找出更多的相关内置命令：
 ```
 help name 
 help cd 
@@ -98,7 +99,7 @@ help read
 help :
 ```
 
-Sample outputs:
+样例输出:
 ```
 :: :
  Null command.
@@ -109,9 +110,9 @@ Sample outputs:
  Always succeeds
 ```
 
-### Find out if a command is internal (builtin) or external
+### 找出一个命令是内部的(内置的)还是外部的。
 
-Use the type command or command command:
+使用类型命令或命令命令：
 ```
 type -a command-name-here 
 type -a cd 
@@ -121,12 +122,12 @@ type -a ls
 ```
 
 
-OR
+或者
 ```
 type -a cd uname : ls uname
 ```
 
-Sample outputs:
+样例输出：
 ```
 cd is a shell builtin
 uname is /bin/uname
@@ -141,7 +142,7 @@ l ()
 
 ```
 
-OR
+或者
 ```
 command -V ls 
 command -V cd 
@@ -150,16 +151,16 @@ command -V foo
 
 [![View list bash built-ins command info on Linux or Unix][1]][1]
 
-### about the author
+### 关于作者
 
-The author is the creator of nixCraft and a seasoned sysadmin and a trainer for the Linux operating system/Unix shell scripting. He has worked with global clients and in various industries, including IT, education, defense and space research, and the nonprofit sector. Follow him on [Twitter][2], [Facebook][3], [Google+][4].
+作者是网站站长的发起人和季度系统管理员和 Linux 操作系统/Unix shell 脚本教练。他与全球客户以及包括IT、教育、国防和空间研究以及非营利部门在内的各个行业合作。可以在 [Twitter][2], [Facebook][3], [Google+][4] 上关注他。
 
 --------------------------------------------------------------------------------
 
 via: https://www.cyberciti.biz/faq/linux-unix-bash-shell-list-all-builtin-commands/
 
 作者：[Vivek Gite][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[KarenMrzhang](https://github.com/KarenMrzhang)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
