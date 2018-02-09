@@ -1,20 +1,18 @@
-translating---geekpi
-
-Use of du & df commands (with examples)
+du 及 df 命令的使用（附带示例）
 ======
-In this article I will discuss du & df commands. Both du & df commands are important utilities of Linux system & shows disk usage of Linux filesystem. Here we will share usage of both commands with some examples.
+在本文中，我将讨论 du 和 df 命令。du 和 df 命令都是 Linux 系统的重要工具，来显示 Linux 文件系统的磁盘使用情况。这里我们将通过一些例子来分享这两个命令的用法。
 
-**(Recommended Read:[Files transfer using scp & rsync commands][1])**
+**（推荐阅读：[使用 scp 和 rsync 命令传输文件][1]）**
 
- **(Also Read:[Cloning Disks using dd & cat commands for Linux systems][2])**
+**（另请阅读：[使用 dd 和 cat 命令为 Linux 系统克隆磁盘][2]）**
 
-### du COMMAND
+### du 命令
 
-du command (short for disk usage) is useful command which is used to find disk usage for files & directories. du command when used with various options provides results in many formats.
+du（disk usage 的简称）是用于查找文件和目录的磁盘使用情况的命令。du 命令在与各种选项一起使用时能以多种格式提供结果。
 
-Some of the examples are mentioned below:-
+下面是一些例子：
 
- **1- To find out summary of disk usage for a directory with all its sub-directories**
+ **1- 得到一个目录下所有子目录的磁盘使用概况**
 
 ```
  $ du /home
@@ -22,9 +20,9 @@ Some of the examples are mentioned below:-
 
 ![du command][4]
 
-Output of the command shows all the files & directories in /home with block size.
+该命令的输出将显示 /home 中的所有文件和目录以及显示块大小。
 
-**2- Disk usage with file/directory sizes in human readable format I.e. in kb, mb etc**
+**2- 以人类可读格式也就是 kb、mb 等显示文件/目录大小**
 
 ```
  $ du -h /home
@@ -32,7 +30,7 @@ Output of the command shows all the files & directories in /home with block size
 
 ![du command][6]
 
-**3- Total disk size of a directory**
+**3- 目录的总磁盘大小**
 
 ```
  $ du -s /home
@@ -40,15 +38,15 @@ Output of the command shows all the files & directories in /home with block size
 
 ![du command][8]
 
-It will total size of /home directory.
+它是 /home 目录的总大小
 
-### df COMMAND
+### df 命令
 
-df command (short for disk filesystem) is used to show disk utilization for a Linux system.
+df（disk filesystem 的简称）用于显示 Linux 系统的磁盘利用率。
 
-Some examples are shared below.
+下面是一些例子。
 
- **1- To display information of device name, total blocks, total disk space, used disk space, available disk space and mount points on a file system.**
+**1- 显示设备名称、总块数、总磁盘空间、已用磁盘空间、可用磁盘空间和文件系统上的挂载点。**
 
 ```
  $ df
@@ -57,7 +55,7 @@ Some examples are shared below.
 
 ![df command][10]
 
-**2- Information in human readable format**
+**2- 人类可读格式的信息**
 
 ```
  $ df -h
@@ -65,9 +63,9 @@ Some examples are shared below.
 
 ![df command][12]
 
-Above command displays information in human readable format.
+上面的命令以人类可读格式显示信息。
 
-**3- Display information of a particular partition**
+**3- 显示特定分区的信息**
 
 ```
  $ df -hT /etc
@@ -75,21 +73,20 @@ Above command displays information in human readable format.
 
 ![df command][14]
 
-Using -hT with a target directory will show information of /etc/ in human readable format.
+-hT 加上目标目录将以可读格式显示 /etc 的信息。
 
-Though there are many more options that can be used with du & df commands, but these should get you started. If you don't find what you are looking for here then you can always refer to man pages for the concerned command.
+虽然 du 和 df 命令有更多选项，但是这些例子可以让你初步了解。如果在这里找不到你要找的东西，那么你可以参考有关命令的 man 页面。
 
-Also, read my other posts [**HERE**][15] where i have shared some other important & frequently used Linux.
+另外，[**在这**][15]阅读我的其他帖子，在那里我分享了一些其他重要和经常使用的 Linux 命令。
 
-And as always your comments/queries are really appreciated, so please leave your comments/queries down below & I will get back to you.
-
+如往常一样，你的评论和疑问是受欢迎的，因此在下面留下你的评论和疑问，我会回复你。
 
 --------------------------------------------------------------------------------
 
 via: http://linuxtechlab.com/du-df-commands-examples/
 
 作者：[SHUSAIN][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
