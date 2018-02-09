@@ -1,37 +1,36 @@
-Translating by ghsgz | Simple TensorFlow Examples
+TensorFlow 的简单例子
 ======
 
 ![](https://process.filestackapi.com/cache=expiry:max/resize=width:700/compress/XWiMrodDQb2Qg6RxyDDG)
 
-In this post, we are going to see some TensorFlow examples and see how it’s easy to define tensors, perform math operations using tensors, and other machine learning examples.
+在本次推送中，我们将看一些例子，并从中感受到在定义张量和使用张量做数学计算方面有多么容易，我还会举些别的机器学习相关的例子。
 
-## What is TensorFlow?
+## TensorFlow 是什么?
 
-TensorFlow is a library which was developed by Google for solving complicated mathematical problems which takes much time.
+TensorFlow 是 Google 为了解决复杂计算耗时过久的问题而开发的一个库。
 
-Actually, TensorFlow can do many things like:
+事实上，TensorFlow 能干许多事。比如：
 
-  * Solving complex mathematical expressions.
-  * Machine learning techniques, where you give it a sample of data for training, then you give another sample of data to predict the result based on the training data. This is the artificial intelligence!!
-  * GPU support. You can use GPU (Graphical Processing Unit) instead of CPU for faster processing. There are two versions of TensorFlow, CPU version and GPU version.
+  * 解复杂数学表达式
+  * 机器学习技术。你往其中输入一组数据样本用以训练，接着给出另一组数据样本用以预测基于训练的数据的结果。这就是人工智能了！
+  * 支持 GPU 。你可以使用 GPU （图像处理单元）替代 CPU 以更快的运算。 TensorFlow 有两个版本： CPU 版本和 GPU 版本。
 
 
+开始写例子前，需要了解一些基本知识。
 
-Before we start working with TensorFlow examples, we need to know some basics.
+## 什么是张量？
 
-## What is a Tensor?
+张量是 TensorFlow 使用的主要的数据块，它很像 TensorFlow 用来处理数据的变量。张量拥有维度和类型的属性。
 
-The tensor is the main blocks of data that TensorFlow uses, it’s like the variables that TensorFlow uses to work with data. Each tensor has a dimension and a type.
+维度指张量的行和列数，读到后面你就知道了，可以定义一维张量、二维张量和三维张量。
 
-The dimension is the rows and columns of the tensor, you can define one-dimensional tensor, two-dimensional tensor, and three-dimensional tensor as we will see later.
+类型指张量元素的数据类型。
 
-The type is the data type for the elements of the tensor.
+## 定义一维张量
 
-## Define one-dimensional Tensor
+可以这样来定义一个张量：创建一个 NumPy （译者注：NumPy 系统是 Python 的一种开源数字扩展，包含一个强大的 N 维数组对象 Array，用来存储和处理大型矩阵 ）或者一个 [Python list][1] ，然后使用 tf_convert_to_tensor 函数将其转化成张量。
 
-To define a tensor, we will create a NumPy array or a [Python list][1] and convert it to a tensor using the tf_convert_to_tensor function.
-
-We will use NumPy to create an array like this:
+可以像下面这样，使用 NumPy 创建一个数组：
 ```
 import numpy as np arr = np.array([1, 5.5, 3, 15, 20])
 
@@ -39,7 +38,7 @@ arr = np.array([1, 5.5, 3, 15, 20])
 
 ```
 
-You can see from the results the dimension and shape of the array.
+运行结果显示了这个数组的维度和形状。
 ```
 import numpy as np
 
@@ -55,9 +54,9 @@ print (arr.dtype)
 
 ```
 
-It looks like the Python list but here there is no comma between the items.
+它和 Python list 很像，但是在这里，元素之间没有逗号。
 
-Now we will convert this array to a tensor using tf_convert_to_tensor function.
+现在使用 tf_convert_to_tensor 函数把这个数组转化为张量。
 ```
 import numpy as np
 
@@ -71,9 +70,9 @@ print(tensor)
 
 ```
 
-From the results, you can see the tensor definition, but you can’t see the tensor elements.
+这次的运行结果显示了张量具体的含义，但是不会展示出张量元素。
 
-Well, to see the tensor elements, you can run a session like this:
+要想看到张量元素，需要像下面这样，运行一个会话：
 ```
 import numpy as np
 
@@ -91,15 +90,15 @@ print(sess.run(tensor[1]))
 
 ```
 
-## Define Two-dimensional Tensor
+## 定义二维张量
 
-The same way as the one-dimensional array, but this time we will define the array like this:
+定义二维张量，其方法和定义一维张量是一样的，但要这样来定义数组：
 
 ```
 arr = np.array([(1, 5.5, 3, 15, 20),(10, 20, 30, 40, 50), (60, 70, 80, 90, 100)])
 ```
 
-And you can convert it to a tensor like this:
+接着转化为张量：
 ```
 import numpy as np
 
@@ -115,11 +114,11 @@ print(sess.run(tensor))
 
 ```
 
-Now you know how to define tensors, what about performing some math operations between them?
+现在你应该知道怎么定义张量了，那么，怎么在张量之间跑数学运算呢？
 
-## Performing Math on Tensors
+## 在张量上进行数学运算
 
-Suppose that we have 2 arrays like this:
+假设我们有以下两个数组：
 ```
 arr1 = np.array([(1,2,3),(4,5,6)])
 
@@ -127,9 +126,9 @@ arr2 = np.array([(7,8,9),(10,11,12)])
 
 ```
 
-We need to get the sum of them. You can perform many math operations using TensorFlow.
+利用 TenserFlow ，你能做许多数学运算。现在我们需要对这两个数组求和。
 
-You can use the add function like this:
+使用加法函数来求和：
 ```
 import numpy as np
 
@@ -149,7 +148,7 @@ print(tensor)
 
 ```
 
-You can multiply arrays like this:
+也可以把数组相乘：
 ```
 import numpy as np
 
@@ -169,17 +168,17 @@ print(tensor)
 
 ```
 
-Now you got the idea.
+现在你知道了吧。
 
-## Three-dimensional Tensor
+## 三维张量
 
-We saw how to work with one and two-dimensional tensors, now we will see the three-dimensional tensors, but this time we won’t use numbers, we will use an RGB image where each piece of the image is specified by x, y, and z coordinates.
+我们已经知道了怎么使用一维张量和二维张量，现在，来看一下三维张量吧，不过这次我们不用数字了，而是用一张 RGB 图片。在这张图片上，每一块像素都由 x，y，z 组合表示。
 
-These coordinates are the width, height, and color depth.
+这些组合形成了图片的宽度、高度以及颜色深度。
 
-First, let’s import the image using matplotlib. You can install matplotlib [using pip][2] if it’s not installed on your system.
+首先使用 matplotlib 库导入一张图片。如果你的系统中没有 matplotlib ，可以 [使用pip][2]来安装它。
 
-Now, put your file in the same directory with your Python file and import the image using matplotlib like this:
+将图片放在 Python 文件的同一目录下，接着使用 matplotlib 导入图片：
 ```
 import matplotlib.image as img
 
@@ -193,9 +192,9 @@ print(myimage.shape)
 
 ```
 
-As you can see, it’s a three-dimensional image where the width is 150 and the height is 150 and the color depth is 3.
+从运行结果中，你应该能看到，这张三维图片的宽为 150 、高为 150 、颜色深度为 3 。
 
-You can view the image like this:
+你还可以查看这张图片：
 ```
 import matplotlib.image as img
 
@@ -211,33 +210,33 @@ plot.show()
 
 ```
 
-Cool!!
+真酷！
 
-What about manipulating the image using TensorFlow? Super easy.
+那怎么使用 TensorFlow 处理图片呢？超级容易。
 
-## Crop Or Slice Image Using TensorFlow
+## 使用 TensorFlow 生成或裁剪图片
 
-First, we put the values on a placeholder like this:
+首先，向一个占位符赋值：
 ```
 myimage = tf.placeholder("int32",[None,None,3])
 
 ```
 
-To slice the image, we will use the slice operator like this:
+使用裁剪操作来裁剪图像：
 ```
 cropped = tf.slice(myimage,[10,0,0],[16,-1,-1])
 
 ```
 
-Finally, run the session:
+最后，运行这个会话：
 ```
 result = sess.run(cropped, feed\_dict={slice: myimage})
 
 ```
 
-Then you can see the result image using matplotlib.
+然后，你就能看到使用 matplotlib 处理过的图像了。
 
-So the whole code will be like this:
+这是整段代码：
 ```
 import tensorflow as tf
 
@@ -263,13 +262,13 @@ plot.show()
 
 ```
 
-Awesome!!
+是不是很神奇？
 
-## Transpose Images using TensorFlow
+## 使用 TensorFlow 改变图像
 
-In this TensorFlow example, we will do a simple transformation using TensorFlow.
+在本例中，我们会使用 TensorFlow 做一下简单的转换。
 
-First, specify the input image and initialize TensorFlow variables:
+首先，指定待处理的图像，并初始化 TensorFlow 变量值：
 ```
 myfile = "likegeeks.png"
 
@@ -281,7 +280,7 @@ vars = tf.global_variables_initializer()
 
 ```
 
-Then we will use the transpose function which flips the 0 and 1 axes of the input grid:
+然后调用 transpose 函数转换，这个函数用来翻转输入网格的 0 轴和 1 轴。
 ```
 sess = tf.Session()
 
@@ -293,7 +292,7 @@ result=sess.run(flipped)
 
 ```
 
-Then you can show the resulting image using matplotlib.
+接着你就能看到使用 matplotlib 处理过的图像了。
 ```
 import tensorflow as tf
 
@@ -323,14 +322,14 @@ plot.show()
 
 ```
 
-All these TensorFlow examples show you how easy it’s to work with TensorFlow.
+以上例子都向你表明了使用 TensorFlow 有多么容易。
 
 --------------------------------------------------------------------------------
 
 via: https://www.codementor.io/likegeeks/define-and-use-tensors-using-simple-tensorflow-examples-ggdgwoy4u
 
 作者：[LikeGeeks][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ghsgz](https://github.com/ghsgz)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
