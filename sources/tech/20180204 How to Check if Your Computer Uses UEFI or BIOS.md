@@ -1,3 +1,5 @@
+translating---geekpi
+
 How to Check if Your Computer Uses UEFI or BIOS
 ======
 **Brief: A quick tutorial to tell you if your system uses the modern UEFI or the legacy BIOS. Instructions for both Windows and Linux have been provided.**
