@@ -3,8 +3,6 @@ Getting started with Turtl, an open source alternative to Evernote
 
 ![Using Turtl as an open source alternative to Evernote](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/BUS_brainstorm_island_520px.png?itok=6IUPyxkY)
 
-sdasdsadsasadsadasdasd
-
 Just about everyone I know takes notes, and many people use an online note-taking application like Evernote, Simplenote, or Google Keep. Those are all good tools, but you have to wonder about the security and privacy of your information—especially in light of [Evernote's privacy flip-flop of 2016](https://blog.evernote.com/blog/2016/12/15/evernote-revisits-privacy-policy/). If you want more control over your notes and your data, you really need to turn to an open source tool.
 
 Whatever your reasons for moving away from Evernote, there are open source alternatives out there. Let's look at one of those alternatives: Turtl.
