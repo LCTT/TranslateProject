@@ -1,3 +1,4 @@
+Translating by qhwdw
 Learn your tools: Navigating your Git History
 ============================================================
 
