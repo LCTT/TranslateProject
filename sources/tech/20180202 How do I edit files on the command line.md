@@ -1,3 +1,5 @@
+translated by cyleft
+
 How do I edit files on the command line?
 ======
 

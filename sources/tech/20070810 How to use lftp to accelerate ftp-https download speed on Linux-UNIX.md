@@ -1,3 +1,5 @@
+translating---geekpi
+
 How to use lftp to accelerate ftp/https download speed on Linux/UNIX
 ======
 lftp is a file transfer program. It allows sophisticated FTP, HTTP/HTTPS, and other connections. If the site URL is specified, then lftp will connect to that site otherwise a connection has to be established with the open command. It is an essential tool for all a Linux/Unix command line users. I have already written about [Linux ultra fast command line download accelerator][1] such as Axel and prozilla. lftp is another tool for the same job with more features. lftp can handle seven file access methods:
