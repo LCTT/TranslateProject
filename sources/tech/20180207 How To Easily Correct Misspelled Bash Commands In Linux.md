@@ -1,3 +1,5 @@
+translating---geekpi
+
 How To Easily Correct Misspelled Bash Commands In Linux
 ======
 
