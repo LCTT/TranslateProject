@@ -1,3 +1,4 @@
+Leemeans translating
 Programming in Color with ncurses
 ======
 In parts [one][1] and [two][2] of my article series about programming with the ncurses library, I introduced a few curses functions to draw text on the screen, query characters from the screen and read from the keyboard. To demonstrate several of these functions, I created a simple adventure game in curses that drew a game map and player character using simple characters. In this follow-up article, I show how to add color to a curses program.
