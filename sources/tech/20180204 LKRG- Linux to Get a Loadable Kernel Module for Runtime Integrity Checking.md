@@ -1,3 +1,4 @@
+Translating by qhwdw
 LKRG: Linux to Get a Loadable Kernel Module for Runtime Integrity Checking
 ======
 ![LKRG logo][1]
