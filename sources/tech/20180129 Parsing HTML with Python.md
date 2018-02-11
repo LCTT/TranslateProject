@@ -190,6 +190,11 @@ This wasn't the end of the story, since the next question was: What about zombie
 
 I'll conclude by saying that this was a simpler task than this image search, and it was greatly helped by the processes I had already developed.
 
+
+### About the author
+
+ [![](https://opensource.com/sites/default/files/styles/profile_pictures/public/20150529_gregp.jpg?itok=nv02g6PV)][7] Greg Pittman - Greg is a retired neurologist in Louisville, Kentucky, with a long-standing interest in computers and programming, beginning with Fortran IV in the 1960s. When Linux and open source software came along, it kindled a commitment to learning more, and eventually contributing. He is a member of the Scribus Team.[More about me][8]
+
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/18/1/parsing-html-python
@@ -203,3 +208,5 @@ via: https://opensource.com/article/18/1/parsing-html-python
 [a]:https://opensource.com/users/greg-p
 [1]:https://www.crummy.com/software/BeautifulSoup/
 [2]:https://www.kde.org/applications/utilities/kwrite/
+[7]:https://opensource.com/users/greg-p
+[8]:https://opensource.com/users/greg-p

@@ -1,3 +1,4 @@
+translating by leowang
 Moving to Linux from dated Windows machines
 ======
 
