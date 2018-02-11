@@ -1,3 +1,5 @@
+translating by cncuckoo
+
 Linux mv Command Explained for Beginners (8 Examples)
 ======
 
