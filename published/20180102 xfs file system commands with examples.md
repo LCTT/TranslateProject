@@ -3,11 +3,12 @@
 
 ![Learn xfs commands with examples][1]
 
-在我们另一篇文章中，我带您领略了一下[什么事 xfs，xfs 的相关特性等内容 ][2]。本文我们来看一些常用的 xfs 管理命令。我们将会通过几个例子来讲解如何创建 xfs 文件系统，如何对 xfs 文件系统进行扩容，如何检测并修复 xfs 文件系统。
+在我们另一篇文章中，我带您领略了一下[什么是 xfs，xfs 的相关特性等内容][2]。本文我们来看一些常用的 xfs 管理命令。我们将会通过几个例子来讲解如何创建 xfs 文件系统，如何对 xfs 文件系统进行扩容，如何检测并修复 xfs 文件系统。
 
 ### 创建 XFS 文件系统
 
 `mkfs.xfs` 命令用来创建 xfs 文件系统。无需任何特别的参数，其输出如下：
+
 ```
 root@kerneltalks # mkfs.xfs /dev/xvdf
 meta-data=/dev/xvdf              isize=512    agcount=4, agsize=1310720 blks
@@ -25,7 +26,7 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 
 ### 调整 XFS 文件系统容量
 
-你职能对 XFS 进行扩容而不能缩容。我们使用 `xfs_growfs` 来进行扩容。你需要使用 `-D` 参数指定挂载点的新容量。`-D` 接受一个数字的参数，指定文件系统块的数量。若你没有提供 `-D` 参数，则 `xfs_growfs` 会将文件系统扩到最大。
+你只能对 XFS 进行扩容而不能缩容。我们使用 `xfs_growfs` 来进行扩容。你需要使用 `-D` 参数指定挂载点的新容量。`-D` 接受一个数字的参数，指定文件系统块的数量。若你没有提供 `-D` 参数，则 `xfs_growfs` 会将文件系统扩到最大。
 
 ```
 root@kerneltalks # xfs_growfs /dev/xvdf -D 256
@@ -41,7 +42,7 @@ realtime =none                   extsz=4096   blocks=0, rtextents=0
 data size 256 too small, old size is 2883584
 ```
 
-观察上面的输出中的最后一行。由于我分配的容量要小于现在的容量。它告诉你不能缩减 XFS 文件系统。你只能对他进行扩展。
+观察上面的输出中的最后一行。由于我分配的容量要小于现在的容量。它告诉你不能缩减 XFS 文件系统。你只能对它进行扩展。
 
 ```
 root@kerneltalks #  xfs_growfs /dev/xvdf -D 2883840
@@ -59,7 +60,7 @@ data blocks changed from 2883584 to 2883840
 
 现在我多分配了 1GB 的空间，而且也成功地扩增了容量。
 
- **1GB 块的计算方式：**
+**1GB 块的计算方式：**
 
 当前文件系统 bsize 为 4096，意思是块的大小为 4MB。我们需要 1GB，也就是 256 个块。因此在当前块数，2883584 上加上 256 得到 2883840。因此我为 `-D` 传递参数 2883840。
 
@@ -76,7 +77,9 @@ xfs_repair: /dev/xvdf contains a mounted and writable filesystem
  
 fatal error -- couldn't initialize XFS library
 ```
+
 卸载后运行检查命令。
+
 ```
 root@kerneltalks # xfs_repair -n /dev/xvdf
 Phase 1 - find and verify superblock...
@@ -184,10 +187,10 @@ via: https://kerneltalks.com/commands/xfs-file-system-commands-with-examples/
 
 作者：[kerneltalks][a]
 译者：[lujun9972](https://github.com/lujun9972)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://kerneltalks.com
-[1]:https://c3.kerneltalks.com/wp-content/uploads/2018/01/xfs-commands.png
+[1]:https://a3.kerneltalks.com/wp-content/uploads/2018/01/xfs-commands.png
 [2]:https://kerneltalks.com/disk-management/xfs-filesystem-in-linux/
