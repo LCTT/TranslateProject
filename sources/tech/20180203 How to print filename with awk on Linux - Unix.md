@@ -1,5 +1,3 @@
-translated by cyleft
-
 How to print filename with awk on Linux / Unix
 ======
 
