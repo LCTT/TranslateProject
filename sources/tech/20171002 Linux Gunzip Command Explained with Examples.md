@@ -1,3 +1,6 @@
+Translating by erialin
+
+
 Linux Gunzip Command Explained with Examples
 ======
 
