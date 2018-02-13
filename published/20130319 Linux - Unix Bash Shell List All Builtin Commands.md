@@ -1,25 +1,21 @@
-KarenMrzhang Tranlating
-
-Linux / Unix Bash Shell 列出所有内置命令
+如何列出所有的 Bash Shell 内置命令
 ======
 
-内置命令包含在 bash shell 本身。我该如何在 Linux / Apple OS X / *BSD / Unix 上像操作系统不用去读大篇的 bash 操作说明页就可以列出所有的内置 bash 命令呢?
+内置命令包含在 bash shell 本身里面。我该如何在 Linux / Apple OS X / *BSD / Unix 类操作系统列出所有的内置 bash 命令，而不用去读大篇的 bash 操作说明页？
 
-一个 shell 内置函数是一个命令或一个函数，从shell中调用，它直接在shell中执行。 bash shell 是直接执行命令没有调用其他程序的。你可以使用帮助命令查看 Bash 内置命令的信息。以下是几种不同类型的内置命令。
-
+shell 内置命令就是一个命令或一个函数，从 shell 中调用，它直接在 shell 中执行。 bash shell 直接执行该命令而无需调用其他程序。你可以使用 `help` 命令查看 Bash 内置命令的信息。以下是几种不同类型的内置命令。
 
 ### 内置命令的类型
 
-  1. Bourne Shell 内置命令：内置命令继承自 Bourne Shell。
-  2. Bash 内置命令：特定于 Bash 的内置命令表。
-  3. 修改 Shell 行为：修改 shell 属性和选择行为的内置命令。
-  4. 特别的内置命令：由 POSIX 特别分类的内置命令。
-
-
+1. Bourne Shell 内置命令：内置命令继承自 Bourne Shell。
+2. Bash 内置命令：特定于 Bash 的内置命令表。
+3. 修改 Shell 行为：修改 shell 属性和可选行为的内置命令。
+4. 特别的内置命令：由 POSIX 特别分类的内置命令。
 
 ### 如何查看所有 bash 内置命令
 
 有以下的命令：
+
 ```
 $ help
 $ help | less
@@ -27,6 +23,7 @@ $ help | grep read
 ```
 
 样例输出：
+
 ```
 GNU bash, version 4.1.5(1)-release (x86_64-pc-linux-gnu)
 These shell commands are defined internally.  Type `help' to see this list.
@@ -76,20 +73,32 @@ A star (*) next to a name means that the command is disabled.
  help [-dms] [pattern ...]               { COMMANDS ; }
 ```
 
+另外一种选择是使用下列命令：
+
+```
+compgen -b
+compgen -b | more
+```
+
 ### 查看 Bash 的内置命令信息
 
 运行以下得到详细信息：
+
 ```
 help command
 help read
 ```
-仅得到所有带简短描述的内置命令的列表，执行如下:
 
-`$ help -d`
+要仅得到所有带简短描述的内置命令的列表，执行如下:
+
+```
+$ help -d
+```
 
 ### 查找内置命令的语法和其他选项
 
 使用下列语法去找出更多的相关内置命令：
+
 ```
 help name 
 help cd 
@@ -99,7 +108,8 @@ help read
 help :
 ```
 
-样例输出:
+样例输出：
+
 ```
 :: :
  Null command.
@@ -110,9 +120,10 @@ help :
  Always succeeds
 ```
 
-### 找出一个命令是内部的(内置的)还是外部的。
+### 找出一个命令是内部的（内置）还是外部的
 
-使用类型命令或命令命令：
+使用 `type` 命令或 `command` 命令：
+
 ```
 type -a command-name-here 
 type -a cd 
@@ -121,13 +132,14 @@ type -a :
 type -a ls
 ```
 
+或者：
 
-或者
 ```
 type -a cd uname : ls uname
 ```
 
 样例输出：
+
 ```
 cd is a shell builtin
 uname is /bin/uname
@@ -142,7 +154,8 @@ l ()
 
 ```
 
-或者
+或者：
+
 ```
 command -V ls 
 command -V cd 
@@ -153,7 +166,7 @@ command -V foo
 
 ### 关于作者
 
-作者是网站站长的发起人和季度系统管理员和 Linux 操作系统/Unix shell 脚本教练。他与全球客户以及包括IT、教育、国防和空间研究以及非营利部门在内的各个行业合作。可以在 [Twitter][2], [Facebook][3], [Google+][4] 上关注他。
+作者是 nixCraft 网站的发起人和经验丰富的系统管理员，以及 Linux 操作系统/Unix shell 脚本编程培训师。他与全球客户以及包括 IT、教育、国防和空间研究以及非营利部门在内的各个行业合作。可以在 [Twitter][2]、[Facebook][3]、 [Google+][4] 上关注他。
 
 --------------------------------------------------------------------------------
 
@@ -161,7 +174,7 @@ via: https://www.cyberciti.biz/faq/linux-unix-bash-shell-list-all-builtin-comman
 
 作者：[Vivek Gite][a]
 译者：[KarenMrzhang](https://github.com/KarenMrzhang)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
