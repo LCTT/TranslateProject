@@ -1,3 +1,4 @@
+translating by wyxplus
 Become a Hollywood movie hacker with these three command line tools
 ======
 
