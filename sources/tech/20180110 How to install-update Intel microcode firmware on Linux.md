@@ -1,3 +1,4 @@
+Translating by qhwdw
 How to install/update Intel microcode firmware on Linux
 ======
 
