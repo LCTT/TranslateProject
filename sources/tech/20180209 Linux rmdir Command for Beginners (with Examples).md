@@ -1,4 +1,4 @@
-Linux rmdir Command for Beginners (with Examples)
+Linux rmdir Command for Beginners (with Examples)  
 ======
 
 So we've already discussed [the rm command][1] that's primarily used for deleting files and directories from the Linux command line. However, there's another, related command line utility that is specifically aimed at removing directories. The tool in question is **rmdir** , and in this tutorial, we will discuss the basics of it using some easy to understand examples.
