@@ -1,3 +1,4 @@
+translated by cyleft
 Linux rmdir Command for Beginners (with Examples)
 ======
 
