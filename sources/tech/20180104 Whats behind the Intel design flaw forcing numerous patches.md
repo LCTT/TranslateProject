@@ -1,3 +1,4 @@
+Translating by qhwdw
 What’s behind the Intel design flaw forcing numerous patches?
 ============================================================
 
