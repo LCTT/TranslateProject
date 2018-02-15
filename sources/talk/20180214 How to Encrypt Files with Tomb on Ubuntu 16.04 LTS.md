@@ -1,3 +1,5 @@
+translating by Auk7F7
+
 How to Encrypt Files with Tomb on Ubuntu 16.04 LTS
 ==================================================
 
