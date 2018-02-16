@@ -1,17 +1,16 @@
-Leemeans translating
-Programming in Color with ncurses
+使用ncurses进行颜色编程
 ======
-In parts [one][1] and [two][2] of my article series about programming with the ncurses library, I introduced a few curses functions to draw text on the screen, query characters from the screen and read from the keyboard. To demonstrate several of these functions, I created a simple adventure game in curses that drew a game map and player character using simple characters. In this follow-up article, I show how to add color to a curses program.
+在我的使用ncurses库进行编程的系列文章的[第一篇][1]和[第二篇][2]中，我已经介绍了一些curses的函数来在屏幕上作画、从屏幕上查询和从键盘读取字符。为了搞清楚这些函数，我使用curses来利用简单字符绘制游戏地图和玩家字符创建了一个简单的冒险游戏。在这篇紧接着的文章里，我展示了如何为你的curses程序添加颜色。
 
-Drawing on the screen is all very well and good, but if it's all white-on-black text, your program might seem dull. Colors can help convey more information—for example, if your program needs to indicate success or failure. In such a case, you could display text in green or red to help emphasize the outcome. Or, maybe you simply want to use colors to "snazz" up your program to make it look prettier.
+在屏幕上绘图一切都挺好的，但是如果只有黑底白字的文本，你的程序可能看起来很无趣。颜色可以帮助传递更多的信息。举个例子，如果你的程序需要报告(执行)成功或者(执行)失败时。在这样的情况下你可以使用绿色或者红色来帮助强调输出。或者，你只是简单地想要“潮艺”一下给你的程序来让它看起来更美观。
 
-In this article, I use a simple example to demonstrate color manipulation via the curses functions. In my previous article, I wrote a basic adventure-style game that lets you move a player character around a crudely drawn map. However, the map was entirely black and white text, relying on shapes to suggest water (~) or mountains (^), so let's update the game to use colors.
+在这篇文章中，我用一个简单的例子来展示通过curses函数进行颜色操作。在我先前的文章中，我写了一个允许你在一个粗糙绘制的地图上移动玩家字符的初级冒险类游戏。但是那里面的地图完全是白色和黑色的文本，通过形状来表明是水(～)或者山(^)。所以，让我们将游戏更新到使用颜色(的版本)吧。
 
-### Color Essentials
+### 颜色要素
 
-Before you can use colors, your program needs to know if it can rely on the terminal to display the colors correctly. On modern systems, this always should be true. But in the classic days of computing, some terminals were monochromatic, such as the venerable VT52 and VT100 terminals, usually providing white-on-black or green-on-black text.
+在你可以使用颜色之前，你的程序得要知道它是否可以依靠终端正确地显示颜色。在现代操作系统上，此处应该永远为true。但是在经典的计算机上，一些终端是单色的，例如令人尊敬的VT52和VT100终端，一般(它们)提供黑底白色或者黑底绿色的文本。
 
-To query the terminal capability for colors, use the has_colors() function. This will return a true value if the terminal can display color, and a false value if not. It is usually used to start an if block, like this:
+可以使用has_colors()函数查询终端的颜色功能。这个函数将会在终端可以显示颜色的时候返回true，否则将会返回false。这个函数一般用于if块的开头，就像这样：
 
 ```
 
@@ -23,9 +22,9 @@ if (has_colors() == FALSE) {
 
 ```
 
-Having determined that the terminal can display color, you then can set up curses to use colors with the start_color() function. Now you're ready to define the colors your program will use.
+在知道终端可以显示颜色之后，你可以使用start_color()函数来设置curses使用颜色。现在是时候定义程序将要使用的颜色了。
 
-In curses, you define colors in pairs: a foreground color on a background color. This allows curses to set both color attributes at once, which often is what you want to do. To establish a color pair, use init_pair() to define a foreground and background color, and associate it to an index number. The general syntax is:
+在curses中，你应该按对定义颜色：一个前景色放在一个背景色上。这样允许curses一次性设置两个颜色属性，这也是一般你想要使用的方式。通过init_pair()函数可以定义一个前景色和背景色并关联到索引数字来设置颜色对。大致语法如下：
 
 ```
 
@@ -33,7 +32,7 @@ init_pair(index, foreground, background);
 
 ```
 
-Consoles support only eight basic colors: black, red, green, yellow, blue, magenta, cyan and white. These colors are defined for you with the following names:
+控制台支持八种基础的颜色：黑色、红色、绿色、黄色、蓝色、品红色、青色和白色。这些颜色通过下面的名称为你定义好了：
 
 *   COLOR_BLACK
 
@@ -51,9 +50,9 @@ Consoles support only eight basic colors: black, red, green, yellow, blue, magen
 
 *   COLOR_WHITE
 
-### Applying the Colors
+### 应用颜色
 
-In my adventure game, I'd like the grassy areas to be green and the player's "trail" to be a subtle yellow-on-green dotted path. Water should be blue, with the tildes in the similar cyan color. I'd like mountains to be grey, but black text on a white background should make for a reasonable compromise. To make the player's character more visible, I'd like to use a garish red-on-magenta scheme. I can define these colors pairs like so:
+在我的冒险游戏中，我想要让草地呈现绿色而玩家的足迹变成不易察觉的绿底黄色点迹。水应该是蓝色，那些(表示波浪的)腭化符号应该是近似青色的。我想让山是灰色的，但是我可以用白底黑色文本做一个可用的折中方案。(译注：意为终端预设的颜色没有灰色，使用白底黑色文本做一个折中方案)为了让玩家的字符更易见，我想要使用一个刺目的品红底红色设计。我可以像这样定义这些颜色对：
 
 ```
 
@@ -65,8 +64,7 @@ init_pair(4, COLOR_RED, COLOR_MAGENTA);
 
 ```
 
-To make my color pairs easy to remember, my program defines a few symbolic constants:
-
+为了让颜色对更容易记忆，我的程序中定义了一些符号常量：
 ```
 
 #define GRASS_PAIR     1
@@ -77,8 +75,7 @@ To make my color pairs easy to remember, my program defines a few symbolic const
 
 ```
 
-With these constants, my color definitions become:
-
+有了这些常量，我的颜色定义就变成了：
 ```
 
 start_color();
@@ -89,8 +86,7 @@ init_pair(PLAYER_PAIR, COLOR_RED, COLOR_MAGENTA);
 
 ```
 
-Whenever you want to display text using a color, you just need to tell curses to set that color attribute. For good programming practice, you also should tell curses to undo the color combination when you're done using the colors. To set the color, use attron() before calling functions like mvaddch(), and then turn off the color attributes with attroff() afterward. For example, when I draw the player's character, I might do this:
-
+在任何时候你想要使用颜色显示文本，你只需要告诉curses设置那种颜色属性。为了更好的编程实践，你同样应该在你完成了颜色使用的时候告诉curses取消颜色组合。为了设置颜色，应该在调用像mvaddch()这样的函数之前使用attron()，然后通过attroff()关闭颜色属性。例如，在我绘制玩家的字符的时候，我应该这样做：
 ```
 
 attron(COLOR_PAIR(PLAYER_PAIR));
@@ -99,8 +95,7 @@ attroff(COLOR_PAIR(PLAYER_PAIR));
 
 ```
 
-Note that applying colors to your programs adds a subtle change to how you query the screen. Normally, the value returned by mvinch() is of type chtype Without color attributes, this is basically an integer and can be used as such. But, colors add extra attributes to the characters on the screen, so chtype carries extra color information in an extended bit pattern. If you use mvinch(), the returned value will contain this extra color value. To extract just the "text" value, such as in the is_move_okay() function, you need to apply a bitwise & with the A_CHARTEXT bit mask:
-
+记住将颜色应用到你的程序添加了不可见的改变到你如何查询屏幕。一般来讲，由mvinch()函数返回的值是**没有**带颜色属性的类型chtype，这个值基本上是一个整型值也可以就当作整型值来用。但是，由于(使用)颜色添加了额外的属性到屏幕上的字符上，所以chtype按照扩展的位模式携带了额外的颜色信息。一旦你使用mvinch()，返回值将会包含这些额外的颜色值。为了只提取**文本**值，例如在is_move_okay()函数中，你需要和A_CHARTEXT做&位运算：
 ```
 
 int is_move_okay(int y, int x)
@@ -116,8 +111,7 @@ int is_move_okay(int y, int x)
 
 ```
 
-With these changes, I can update the adventure game to use colors:
-
+通过这些修改，我可以用颜色更新这个冒险游戏：
 ```
 
 /* quest.c */
@@ -145,14 +139,14 @@ int main(void)
     int y, x;
     int ch;
 
-    /* initialize curses */
+    /* 初始化curses */
 
     initscr();
     keypad(stdscr, TRUE);
     cbreak();
     noecho();
 
-    /* initialize colors */
+    /* 初始化颜色 */
 
     if (has_colors() == FALSE) {
         endwin();
@@ -168,19 +162,18 @@ int main(void)
 
     clear();
 
-    /* initialize the quest map */
+    /* 初始化探索地图 */
 
     draw_map();
 
-    /* start player at lower-left */
+    /* 在左下角创建新角色 */
 
     y = LINES - 1;
     x = 0;
 
     do {
 
-        /* by default, you get a blinking cursor - use it to
-           indicate player * */
+        /* 默认情况下，你获得了一个闪烁的光标--用来指明玩家 * */
 
         attron(COLOR_PAIR(PLAYER_PAIR));
         mvaddch(y, x, PLAYER);
@@ -190,7 +183,7 @@ int main(void)
 
         ch = getch();
 
-        /* test inputted key and determine direction */
+        /* 测试输入键值并获取方向 */
 
         switch (ch) {
         case KEY_UP:
@@ -246,7 +239,7 @@ int is_move_okay(int y, int x)
 {
     int testch;
 
-    /* return true if the space is okay to move into */
+    /* 当空白处可以进入的时候返回true */
 
     testch = mvinch(y, x);
     return (((testch & A_CHARTEXT) == GRASS)
@@ -257,9 +250,9 @@ void draw_map(void)
 {
     int y, x;
 
-    /* draw the quest map */
+    /* 绘制探索地图 */
 
-    /* background */
+    /* 背景 */
 
     attron(COLOR_PAIR(GRASS_PAIR));
     for (y = 0; y < LINES; y++) {
@@ -267,7 +260,7 @@ void draw_map(void)
     }
     attroff(COLOR_PAIR(GRASS_PAIR));
 
-    /* mountains, and mountain path */
+    /* 山峰和山路 */
 
     attron(COLOR_PAIR(MOUNTAIN_PAIR));
     for (x = COLS / 2; x < COLS * 3 / 4; x++) {
@@ -279,7 +272,7 @@ void draw_map(void)
     mvhline(LINES / 4, 0, GRASS, COLS);
     attroff(COLOR_PAIR(GRASS_PAIR));
 
-    /* lake */
+    /* 湖 */
 
     attron(COLOR_PAIR(WATER_PAIR));
     for (y = 1; y < LINES / 2; y++) {
@@ -290,8 +283,7 @@ void draw_map(void)
 
 ```
 
-Unless you have a keen eye, you may not be able to spot all of the changes necessary to support color in the adventure game. The diff tool shows all the instances where functions were added or code was changed to support colors:
-
+你可能不能认出所有为了在冒险游戏里面支持颜色需要的修改，除非你目光敏锐。diff工具展示了所有为了支持颜色而添加的函数或者修改的代码：
 ```
 
 $ diff quest-color/quest.c quest/quest.c
@@ -361,34 +353,32 @@ $ diff quest-color/quest.c quest/quest.c
 
 ```
 
-### Let's Play—Now in Color
+### 开始玩吧--现在有颜色了
 
-The program now has a more pleasant color scheme, more closely matching the original tabletop gaming map, with green fields, blue lake and imposing gray mountains. The hero clearly stands out in red and magenta livery.
+程序现在有了更舒服的颜色设计了，更匹配起初的桌游地图，有绿地、蓝色的湖和壮观的灰色山峰。英雄穿着红色的制服十分夺目。
 
 ![](http://www.linuxjournal.com/files/linuxjournal.com/ufiles/imagecache/large-550px-centered/u1000009/quest-map_0.jpg)
 
-Figure 1\. A Simple Tabletop Game Map, with a Lake and Mountains
+图 1\. 一个简单的带湖和山的桌游地图
 
 ![](http://www.linuxjournal.com/files/linuxjournal.com/ufiles/imagecache/large-550px-centered/u1000009/quest-color-start.png)
 
-Figure 2\. The player starts the game in the lower-left corner.
+图 2\.玩家站在左下角
 
 ![](http://www.linuxjournal.com/files/linuxjournal.com/ufiles/imagecache/large-550px-centered/u1000009/quest-color-1.png)
 
-Figure 3\. The player can move around the play area, such as around the lake, through the mountain pass and into unknown regions.
+图 3\. 玩家可以在游戏区域移动，比如围绕湖，通过山的通道到达未知的区域。
 
-With colors, you can represent information more clearly. This simple example uses colors to indicate playable areas (green) versus impassable regions (blue or gray). I hope you will use this example game as a starting point or reference for your own programs. You can do so much more with curses, depending on what you need your program to do.
+通过颜色，你可以更清楚地展示信息。这个例子使用颜色指出可游戏的区域(绿色)相对着不可通过的区域(蓝色或者灰色)。我希望你可以使用这个示例游戏作为你自己的程序的一个起点或者参照。取决于你需要你的程序做什么，你可以通过curses做得更多。
 
-In a follow-up article, I plan to demonstrate other features of the ncurses library, such as how to create windows and frames. In the meantime, if you are interested in learning more about curses, I encourage you to read Pradeep Padala's [NCURSES Programming HOWTO][3], at the Linux Documentation Project.
-
-
+在下一篇文章，我计划展示ncurses库的其它特性，比如怎样创建窗口和边框。同时，如果你对于学习 curses 有兴趣，我建议你去读位于 [Linux 文档计划](http://www.tldp.org)的 Pradeep Padala 写的 [NCURSES Programming HOWTO](http://tldp.org/HOWTO/NCURSES-Programming-HOWTO)。
 
 --------------------------------------------------------------------------------
 
 via: http://www.linuxjournal.com/content/programming-color-ncurses
 
 作者：[Jim Hall][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[leemeans](https://github.com/leemeans)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
