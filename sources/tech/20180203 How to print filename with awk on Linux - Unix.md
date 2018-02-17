@@ -1,3 +1,4 @@
+**translating by amwps290
 How to print filename with awk on Linux / Unix
 ======
 
