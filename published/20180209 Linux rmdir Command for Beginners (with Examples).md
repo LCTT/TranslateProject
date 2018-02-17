@@ -75,5 +75,5 @@ via: https://www.howtoforge.com/linux-rmdir-command/
 [3]:https://www.howtoforge.com/images/command-tutorial/big/rm-basic-usage1.png
 [4]:https://www.howtoforge.com/images/command-tutorial/rmdir-ignore-nonempty.png
 [5]:https://www.howtoforge.com/images/command-tutorial/big/rmdir-ignore-nonempty.png
-[6]:https://www.howtoforge.com/linux-mkdir-command/
+[6]:https://linux.cn/article-9356-1.html
 [7]:https://linux.die.net/man/1/rmdir
