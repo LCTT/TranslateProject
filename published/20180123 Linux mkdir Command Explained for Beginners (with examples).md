@@ -1,11 +1,11 @@
 Linux mkdir 命令的初学者教程
 ======
 
-当你使用命令行的时候，无论什么时候，你都位于一个目录中，它告诉了命令行当前所位于的完整目录。在 Linux 中，你可以使用 `rm` 命令删除目录，但是首先，你需要使用 `mkdir` 命令来创建目录。在这篇教程中，我将使用一些易于理解的例子来讲解这个工具的基本用法。
+当你使用命令行的时候，无论什么时候，你都位于一个目录中，它告诉了命令行当前所位于的完整目录。在 Linux 中，你可以使用 [rm][10] 命令删除目录，但是首先，你需要使用 `mkdir` 命令来创建目录。在这篇教程中，我将使用一些易于理解的例子来讲解这个工具的基本用法。
 
 在开始之前，值得一提的是，这篇教程中的所有例子都已经在 Ubuntu 16.04 LTS 中测试过。
 
-### Linux `mkdir` 命令
+### Linux mkdir 命令
 
 正如上面所提到的，用户可以使用 `mkdir` 命令来创建目录。它的语法如下：
 
@@ -14,11 +14,10 @@ mkdir [OPTION]... DIRECTORY...
 ```
 
 下面的内容是 man 手册对这个工具的描述：
-```
-Create the DIRECTORY(ies), if they do not already exist.
-```
 
-下面这些问答式的例子将能够帮助你更好的理解 `mkdir` 这个命令是如何工作的。
+> 如果目录还不存在，则创建之。
+
+下面这些 Q&A 式的例子将能够帮助你更好的理解 `mkdir` 这个命令是如何工作的。
 
 ### Q1. 如何使用 `mkdir` 命令创建目录？
 
@@ -44,7 +43,7 @@ mkdir test-dir
 mkdir -p dir1/dir2/dir3
 ```
 
-[![How to make sure parent directories \(if non-existent\) are created][1]][2]
+[![How to make sure parent directories (if non-existent) are created][1]][2]
 
 ### Q3. 如何在创建目录时自定义权限？
 
@@ -79,7 +78,7 @@ via: https://www.howtoforge.com/linux-mkdir-command/
 
 作者：[Himanshu Arora][a]
 译者：[ucasFL](https://github.com/ucasFL)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -93,3 +92,4 @@ via: https://www.howtoforge.com/linux-mkdir-command/
 [7]:https://www.howtoforge.com/images/command-tutorial/mkdir-verbose.png
 [8]:https://www.howtoforge.com/images/command-tutorial/big/mkdir-verbose.png
 [9]:https://linux.die.net/man/1/mkdir
+[10]:https://linux.cn/article-9321-1.html
