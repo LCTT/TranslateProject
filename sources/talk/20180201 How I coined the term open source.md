@@ -1,3 +1,4 @@
+[fuzheng1998 tranlating]
 How I coined the term 'open source'
 ============================================================
 
