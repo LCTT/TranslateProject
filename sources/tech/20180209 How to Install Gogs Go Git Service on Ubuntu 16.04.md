@@ -1,3 +1,5 @@
+translated by cyleft
+
 How to Install Gogs Go Git Service on Ubuntu 16.04
 ======
 
