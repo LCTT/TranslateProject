@@ -1,3 +1,5 @@
+translate by cyleft
+
 New Linux User? Try These 8 Great Essential Linux Apps
 ======
 
