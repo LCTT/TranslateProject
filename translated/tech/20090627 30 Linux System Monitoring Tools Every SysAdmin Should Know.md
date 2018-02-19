@@ -37,8 +37,11 @@ top 命令显示 Linux 的进程。它提供了一个系统的实时动态视图
 ### 2. vmstat - 虚拟内存统计
 
 vmstat 命令报告有关进程、内存、分页、块 IO、陷阱和 cpu 活动等信息。
+
 `# vmstat 3`
+
 输出示例：
+
 ```
 procs -----------memory---------- ---swap-- -----io---- --system-- -----cpu------
  r b swpd free buff cache si so bi bo in cs us sy id wa st
@@ -58,16 +61,20 @@ procs -----------memory---------- ---swap-- -----io---- --system-- -----cpu-----
 #### 获取有关活动和非活动内存页面的信息
 
 `# vmstat -a`
+
 相关链接：[如何查看 Linux 的资源利用率从而找到系统瓶颈？][2]
 
 ### 3. w - 找出登录的用户以及他们在做什么
 
 [w 命令][3] 显示了当前登录在该系统上的用户及其进程。
+
 ```
 # w username
 # w vivek
 ```
+
 输出示例：
+
 ```
  17:58:47 up 5 days, 20:28, 2 users, load average: 0.36, 0.26, 0.24
 USER TTY FROM LOGIN@ IDLE JCPU PCPU WHAT
@@ -78,8 +85,11 @@ root pts/1 10.1.3.145 17:43 0.00s 0.03s 0.00s w
 ### 4. uptime - Linux 系统运行了多久
 
 uptime 命令可以用来查看服务器运行了多长时间：当前时间、已运行的时间、当前登录的用户连接数，以及过去 1 分钟、5 分钟和 15 分钟的系统负载平均值。
+
 `# uptime`
-输出实例：
+
+输出示例：
+
 ```
  18:02:41 up 41 days, 23:42, 1 user, load average: 0.00, 0.00, 0.00
 ```
@@ -89,8 +99,11 @@ uptime 命令可以用来查看服务器运行了多长时间：当前时间、�
 ### 5. ps - 显示系统进程
 
 ps 命令显示当前运行的进程。要显示所有的进程，请使用 -A 或 -e 选项：
+
 `# ps -A`
+
 输出示例：
+
 ```
  PID TTY TIME CMD
  1 ? 00:00:02 init
@@ -124,7 +137,9 @@ ps 与 top 类似，但它提供了更多的信息。
 #### 显示长输出格式
 
 `# ps -Al`
+
 显示完整输出格式（它将显示传递给进程的命令行参数）：
+
 `# ps -AlF`
 
 #### 显示线程（轻量级进程（LWP）和线程的数量（NLWP））
@@ -207,8 +222,11 @@ ps 与 top 类似，但它提供了更多的信息。
 ### 6. free - 内存使用情况
 
 free 命令显示了系统的可用和已用的物理内存及交换内存的总量，以及内核用到的缓存空间。
+
 `# free `
+
 输出示例：
+
 ```
  total used free shared buffers cached
 Mem: 12302896 9739664 2563232 0 523124 5154740
@@ -225,8 +243,11 @@ Swap: 1052248 0 1052248
 ### 7. iostat - CPU 平均负载和磁盘活动
 
 iostat 命令用于汇报 CPU 的使用情况，以及设备、分区和网络文件系统（NFS）的 IO 统计信息。
+
 `# iostat `
+
 输出示例：
+
 ```
 Linux 2.6.18-128.1.14.el5 (www03.nixcraft.in) 	06/26/2009
 
@@ -245,12 +266,19 @@ sda3 0.00 0.00 0.00 1615 0
 ### 8. sar - 监控、收集和汇报系统活动
 
 sar 命令用于收集、汇报和保存系统活动信息。要查看网络统计，请输入：
+
 `# sar -n DEV | more`
+
 显示 24 日的网络统计：
+
 `# sar -n DEV -f /var/log/sa/sa24 | more`
+
 您还可以使用 sar 显示实时使用情况：
+
 `# sar 4 5`
+
 输出示例：
+
 ```
 Linux 2.6.18-128.1.14.el5 (www03.nixcraft.in) 		06/26/2009
 
@@ -271,8 +299,11 @@ Average: all 2.02 0.00 0.27 0.01 0.00 97.70
 ### 9. mpstat - 监控多处理器的使用情况
 
 mpstat 命令显示每个可用处理器的使用情况，编号从 0 开始。命令 mpstat -P ALL 显示了每个处理器的平均使用率：
+
 `# mpstat -P ALL`
+
 输出示例：
+
 ```
 Linux 2.6.18-128.1.14.el5 (www03.nixcraft.in)	 	06/26/2009
 
@@ -293,10 +324,15 @@ Linux 2.6.18-128.1.14.el5 (www03.nixcraft.in)	 	06/26/2009
 ### 10. pmap - 监控进程的内存使用情况
 
 pmap 命令用以显示进程的内存映射，使用此命令可以查找内存瓶颈。
+
 `# pmap -d PID`
+
 显示 PID 为 47394 的进程的内存信息，请输入：
+
 `# pmap -d 47394`
+
 输出示例：
+
 ```
 47394: /usr/bin/php-cgi
 Address Kbytes Mode Offset Device Mapping
@@ -336,6 +372,7 @@ mapped: 933712K writeable/private: 4304K shared: 768000K
 ### 11. netstat - Linux 网络统计监控工具
 
 netstat 命令显示网络连接、路由表、接口统计、伪装连接和多播连接等信息。
+
 ```
 # netstat -tulpn
 # netstat -nat
@@ -344,11 +381,17 @@ netstat 命令显示网络连接、路由表、接口统计、伪装连接和多
 ### 12. ss - 网络统计
 
 ss 命令用于获取套接字统计信息。它可以显示类似于 netstat 的信息。不过 netstat 几乎要过时了，ss 命令更具优势。要显示所有 TCP 或 UDP 套接字：
+
 `# ss -t -a`
+
 或
+
 `# ss -u -a `
+
 显示所有带有 SELinux 安全上下文（Security Context）的 TCP 套接字：
+
 `# ss -t -a -Z `
+
 请参阅以下关于 ss 和 netstat 命令的资料：
 
 + [ss：显示 Linux TCP / UDP 网络套接字信息][56]
@@ -378,20 +421,31 @@ iptraf 命令是一个基于 ncurses 的交互式 IP 网络监控工具。它可
 ### 14. tcpdump - 详细的网络流量分析
 
 tcpdump 命令是简单的分析网络通信的命令。您需要充分了解 TCP/IP 协议才便于使用此工具。例如，要显示有关 DNS 的流量信息，请输入：
+
 `# tcpdump -i eth1 'udp port 53'`
+
 查看所有去往和来自端口 80 的 IPv4 HTTP 数据包，仅打印真正包含数据的包，而不是像 SYN、FIN 和仅含 ACK 这类的数据包，请输入：
+
 `# tcpdump 'tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)'`
+
 显示所有目标地址为 202.54.1.5 的 FTP 会话，请输入：
+
 `# tcpdump -i eth1 'dst 202.54.1.5 and (port 21 or 20'`
+
 打印所有目标地址为 192.168.1.5 的 HTTP 会话：
+
 `# tcpdump -ni eth0 'dst 192.168.1.5 and tcp and port http'`
+
 使用 [wireshark][12] 查看文件的详细内容，请输入：
+
 `# tcpdump -n -i eth1 -s 0 -w output.txt src or dst port 80`
 
 ### 15. iotop - I/O 监控
 
 iotop 命令利用 Linux 内核监控 I/O 使用情况，它按进程或线程的顺序显示 I/O 使用情况。
+
 `$ sudo iotop`
+
 输出示例：
 
 ![iotop monitoring linux disk read write IO][13]
@@ -401,7 +455,9 @@ iotop 命令利用 Linux 内核监控 I/O 使用情况，它按进程或线程�
 ### 16. htop - 交互式的进程查看器
 
 htop 是一款免费并开源的基于 ncurses 的  Linux 进程查看器。它比 top 命令更简单易用。您无需使用 PID、无需离开 htop 界面，便可以杀掉进程或调整其调度优先级。
+
 `$ htop`
+
 输出示例：
 
 ![htop process viewer for Linux][15]
@@ -412,6 +468,7 @@ htop 是一款免费并开源的基于 ncurses 的  Linux 进程查看器。它�
 ### 17. atop - 高级版系统与进程监控工具
 
 atop 是一个非常强大的交互式 Linux 系统负载监控器，它从性能的角度显示最关键的硬件资源信息。您可以快速查看 CPU、内存、磁盘和网络性能。它还可以从进程的级别显示哪些进程造成了相关 CPU 和内存的负载。
+
 `$ atop`
 
 ![atop Command Line Tools to Monitor Linux Performance][16]
@@ -438,6 +495,7 @@ Monit 是一个免费且开源的进程监控软件，它可以自动重启停�
 ### 20. nethogs - 找出占用带宽的进程
 
 NetHogs 是一个轻便的网络监控工具，它按照进程名称（如 Firefox、wget 等）对带宽进行分组。如果网络流量突然爆发，启动 NetHogs，您将看到哪个进程（PID）导致了带宽激增。
+
 `$ sudo nethogs`
 
 ![nethogs linux monitoring tools open source][20]
@@ -447,6 +505,7 @@ NetHogs 是一个轻便的网络监控工具，它按照进程名称（如 Firef
 ### 21. iftop - 显示主机上网络接口的带宽使用情况
 
 iftop 命令监听指定接口（如 eth0）上的网络通信情况。[它显示了一对主机的带宽使用情况][22]。
+
 `$ sudo iftop`
 
 ![iftop in action][23]
@@ -454,6 +513,7 @@ iftop 命令监听指定接口（如 eth0）上的网络通信情况。[它显�
 ### 22. vnstat - 基于控制台的网络流量监控工具
 
 vnstat 是一个简单易用的基于控制台的网络流量监视器，它为指定网络接口保留每小时、每天和每月网络流量日志。
+
 `$ vnstat `
 
 ![vnstat linux network traffic monitor][25]
@@ -467,6 +527,7 @@ vnstat 是一个简单易用的基于控制台的网络流量监视器，它为�
 ### 23. nmon - Linux 系统管理员的调优和基准测量工具
 
 nmon 是 Linux 系统管理员用于性能调优的利器，它在命令行显示 CPU、内存、网络、磁盘、文件系统、NFS、消耗资源最多的进程和分区信息。
+
 `$ nmon`
 
 ![nmon command][26]
@@ -476,6 +537,7 @@ nmon 是 Linux 系统管理员用于性能调优的利器，它在命令行显�
 ### 24. glances - 密切关注 Linux 系统
 
 glances 是一款开源的跨平台监控工具。它在小小的屏幕上提供了大量的信息，还可以用作客户端-服务器架构。
+
 `$ glances`
 
 ![Glances][28]
@@ -489,6 +551,7 @@ glances 是一款开源的跨平台监控工具。它在小小的屏幕上提供
 ### 26. /proc/ 文件系统 - 各种内核信息
 
 /proc 文件系统提供了不同硬件设备和 Linux 内核的详细信息。更多详细信息，请参阅 [Linux 内核 /proc][31] 文档。常见的 /proc 例子：
+
 ```
 # cat /proc/cpuinfo
 # cat /proc/meminfo
