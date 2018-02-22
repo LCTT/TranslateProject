@@ -1,3 +1,7 @@
+Translating by shipsw
+
+
+
 Top 20 OpenSSH Server Best Security Practices
 ======
 ![OpenSSH Security Tips][1]
