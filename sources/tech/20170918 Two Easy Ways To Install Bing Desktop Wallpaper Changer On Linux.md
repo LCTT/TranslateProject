@@ -1,3 +1,5 @@
+Translating by MjSeven
+
 Two Easy Ways To Install Bing Desktop Wallpaper Changer On Linux
 ======
 Are you bored with Linux desktop background and wants to set good looking wallpapers but don't know where to find? Don't worry we are here to help you.
