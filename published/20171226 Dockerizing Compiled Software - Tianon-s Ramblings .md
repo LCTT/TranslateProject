@@ -1,11 +1,11 @@
-Docker 化编译的软件 ┈ Tianon's Ramblings ✿
+如何 Docker 化编译的软件
 ======
-我最近在 [docker-library/php][1] 仓库中关闭了大量问题，最老的（并且是最长的）讨论之一是关于安装编译扩展的依赖关系，我写了一个[中篇评论][2]解释了我如何用通常的方式为我想要的软件 Docker 化的。
 
-I'm going to copy most of that comment here and perhaps expand a little bit more in order to have a better/cleaner place to link to!
-我要在这复制大部分的评论，或许扩展一点点，以便有一个更好的/更干净的链接！
+我最近在 [docker-library/php][1] 仓库中关闭了大量问题，最老的（并且是最长的）讨论之一是关于安装编译扩展的依赖关系，我写了一个[中等篇幅的评论][2]解释了我如何用常规的方式为我想要的软件进行 Docker 化的。
 
-我第一步是编写 `Dockerfile` 的原始版本：下载源码，运行 `./configure && make` 等，清理。然后我尝试构建我的原始版本，并希望在这过程中看到错误消息。（对真的！）
+我要在这里复制大部分的评论内容，或许扩展一点点，以便有一个更好的/更干净的链接！
+
+我第一步是编写 `Dockerfile` 的原始版本：下载源码，运行 `./configure && make` 等，清理。然后我尝试构建我的原始版本，并希望在这过程中看到错误消息。（对，真的！）
 
 错误信息通常以 `error: could not find "xyz.h"` 或 `error: libxyz development headers not found` 的形式出现。
 
@@ -13,9 +13,9 @@ I'm going to copy most of that comment here and perhaps expand a little bit more
 
 如果我在 Alpine 中构建，我将使用 <https://pkgs.alpinelinux.org/contents> 进行类似的搜索。
 
-“libxyz development headers” 在某种程度上也是一样的，但是根据我的经验，对于这些 Google 对开发者来说效果更好，因为不同的发行版和项目会以不同的名字来调用这些开发包，所以有时候更难确切的知道哪一个是“正确”的。
+“libxyz development headers” 在某种程度上也是一样的，但是根据我的经验，对于这些用 Google 对开发者来说效果更好，因为不同的发行版和项目会以不同的名字来调用这些开发包，所以有时候更难确切的知道哪一个是“正确”的。
 
-当我得到包名后，我将这个包名称添加到我的 `Dockerfile` 中，清理之后，然后重复操作。最终通常会构建成功。偶尔我发现某些库不在 Debian 或 Alpine 中，或者是不够新的，由此我必须从源码构建它，但这些情况在我的经验中很少见 - 因人而异。
+当我得到包名后，我将这个包名称添加到我的 `Dockerfile` 中，清理之后，然后重复操作。最终通常会构建成功。偶尔我发现某些库不在 Debian 或 Alpine 中，或者是不够新的，由此我必须从源码构建它，但这些情况在我的经验中很少见 —— 因人而异。
 
 我还会经常查看 Debian（通过 <https://sources.debian.org>）或 Alpine（通过 <https://git.alpinelinux.org/cgit/aports/tree>）我要编译的软件包源码，特别关注 `Build-Depends`（如 [`php7.0=7.0.26-1` 的 `debian/control` 文件][3]）以及/或者 `makedepends` （如 [`php7` 的 `APKBUILD` 文件][4]）用于包名线索。
 
@@ -31,7 +31,7 @@ via: https://tianon.github.io/post/2017/12/26/dockerize-compiled-software.html
 
 作者：[Tianon Gravi][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
