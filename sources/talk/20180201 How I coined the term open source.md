@@ -7,11 +7,11 @@
 ![How I coined the term 'open source'](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/hello-name-sticker-badge-tag.png?itok=fAgbMgBb "How I coined the term 'open source'")
 图片来自: opensource.com
 
-In a few days, on February 3, the 20th anniversary of the introduction of the term "[开源软件][6]" is upon us. As open source software grows in popularity and powers some of the most robust and important innovations of our time, we reflect on its rise to prominence.
+几天后, 2 月 3 日, 术语 "[开源软件][6]" 首次使用的20周年纪念日即将到来。 As open source software grows in popularity and powers some of the most robust and important innovations of our time, we reflect on its rise to prominence.
 
-I am the originator of the term "open source software" and came up with it while executive director at Foresight Institute. Not a software developer like the rest, I thank Linux programmer Todd Anderson for supporting the term and proposing it to the group.
+我是 “开源软件” 这个词的始作俑者而且他在前瞻技术协会（Foresight Institute）担任执行董事时想出了它。Not a software developer like the rest, I thank Linux programmer Todd Anderson for supporting the term and proposing it to the group.
 
-This is my account of how I came up with it, how it was proposed, and the subsequent reactions. Of course, there are a number of accounts of the coining of the term, for example by Eric Raymond and Richard Stallman, yet this is mine, written on January 2, 2006.
+这是我对于它如何想到的，如何提出的，以及后续影响的记叙。当然，还有一些关于该术语的记叙，例如 Eric Raymond 和 Richard Stallman 创造的，但这是我的，写于2006年1月2日。
 
 直到今天，它才公诸于世。
 
@@ -23,13 +23,13 @@ This term had long been used in an "intelligence" (i.e., spying) context, but to
 
 ### 计算机安全会议
 
-In late 1997, weekly meetings were being held at Foresight Institute to discuss computer security. Foresight is a nonprofit think tank focused on nanotechnology and artificial intelligence, and software security is regarded as central to the reliability and security of both. We had identified free software as a promising approach to improving software security and reliability and were looking for ways to promote it. Interest in free software was starting to grow outside the programming community, and it was increasingly clear that an opportunity was coming to change the world. However, just how to do this was unclear, and we were groping for strategies.
+在1997年的晚些时候，为期一周的会议将被在前瞻技术协会（Foresight Insttitue) 举行来讨论计算机安全问题。这个协会是一个非盈利性智库，它专注于纳米技术和人工智能，并且认为软件安全是二者的安全性以及可靠性的核心。我们在那确定了自由软件是一个改进软件安全可靠性具有发展前景的方法并将寻找推动它的方式。 对自由软件的兴趣开始在编程社区外开始增长，而且越来越清晰一个改变世界的机会正在来临。然而，该怎么做我们并不清楚，因为我们当时正在摸索策略中。
 
 At these meetings, we discussed the need for a new term due to the confusion factor. The argument was as follows: those new to the term "free software" assume it is referring to the price. Oldtimers must then launch into an explanation, usually given as follows: "We mean free as in freedom, not free as in beer." At this point, a discussion on software has turned into one about the price of an alcoholic beverage. The problem was not that explaining the meaning is impossible—the problem was that the name for an important idea should not be so confusing to newcomers. A clearer term was needed. No political issues were raised regarding the free software term; the issue was its lack of clarity to those new to the concept.
 
 ### 网景发布
 
-On February 2, 1998, Eric Raymond arrived on a visit to work with Netscape on the plan to release the browser code under a free-software-style license. We held a meeting that night at Foresight's office in Los Altos to strategize and refine our message. In addition to Eric and me, active participants included Brian Behlendorf, Michael Tiemann, Todd Anderson, Mark S. Miller, and Ka-Ping Yee. But at that meeting, the field was still described as free software or, by Brian, "source code available" software.
+1998 年 2 月 2 日，Eric Raymond arrived on a visit to work with Netscape on the plan to 发布了浏览器代码 under a free-software-style license. We held a meeting that night at Foresight's office in Los Altos to strategize and refine our message.除了 Eric 和我，活跃的参与者还有 included Brian Behlendorf, Michael Tiemann, Todd Anderson, Mark S. Miller, and Ka-Ping Yee. But at that meeting, the field was still described as free software or, by Brian, "source code available" software.
 
 While in town, Eric used Foresight as a base of operations. At one point during his visit, he was called to the phone to talk with a couple of Netscape legal and/or marketing staff. When he was finished, I asked to be put on the phone with them—one man and one woman, perhaps Mitchell Baker—so I could bring up the need for a new term. They agreed in principle immediately, but no specific term was agreed upon.
 
@@ -57,11 +57,11 @@ For the name to succeed, it was necessary, or at least highly desirable, that Ti
 
 After this, there was a period during which the term was promoted by Eric Raymond to the media, by Tim O'Reilly to business, and by both to the programming community. It seemed to spread very quickly.
 
-On April 7, 1998, Tim O'Reilly held a meeting of key leaders in the field. Announced in advance as the first "[Freeware Summit][10]," by April 14 it was referred to as the first "[Open Source Summit][11]."
+On April 7, 1998, Tim O'Reilly held a meeting of key leaders in the field. 提前宣布 as the first "[Freeware Summit][10]," by April 14 it was referred to as the first "[Open Source Summit][11]."
 
-These months were extremely exciting for open source. Every week, it seemed, a new company announced plans to participate. Reading Slashdot became a necessity, even for those like me who were only peripherally involved. I strongly believe that the new term was helpful in enabling this rapid spread into business, which then enabled wider use by the public.
+These months were extremely exciting for open source.这是对于开源来说激动人心的几个月。 Every week, it seemed, a new company announced plans to participate. Reading Slashdot became a necessity, even for those like me who were only peripherally involved. I strongly believe that the new term was helpful in enabling this rapid spread into business, which then enabled wider use by the public.
 
-A quick Google search indicates that "open source" appears more often than "free software," but there still is substantial use of the free software term, which remains useful and should be included when communicating with audiences who prefer it.
+快捷的谷歌搜索表明“开源”比“自由软件”出现的更多，但后者仍然有大量的使用，和偏爱它的人们沟通的时候就特别有用。
 
 ### A happy twinge
 
@@ -69,7 +69,7 @@ When an [early account][12] of the terminology change written by Eric Raymond 
 
 Coming up with a phrase is a small contribution, but I admit to being grateful to those who remember to credit me with it. Every time I hear it, which is very often now, it gives me a little happy twinge.
 
-The big credit for persuading the community goes to Eric Raymond and Tim O'Reilly, who made it happen. Thanks to them for crediting me, and to Todd Anderson for his role throughout. The above is not a complete account of open source history; apologies to the many key players whose names do not appear. Those seeking a more complete account should refer to the links in this article and elsewhere on the net.
+说服团队的大功劳归功于Eric Raymond和 Tim O'Reilly，是他们搞定的它。感谢他们对我的评价，并感谢Todd Anderson 在整个过程中的角色。以上内容并非完整的开源历史记录，对很多没有无名人士表示歉意。那些寻求更完整讲述的人应该参考本文和网上其他地方的链接。
 
 ### 关于作者
 
