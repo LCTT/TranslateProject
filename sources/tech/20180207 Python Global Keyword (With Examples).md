@@ -1,3 +1,5 @@
+Translating by MjSeven
+
 Python Global Keyword (With Examples)
 ======
 Before reading this article, make sure you have got some basics of [Python Global, Local and Nonlocal Variables][1].
