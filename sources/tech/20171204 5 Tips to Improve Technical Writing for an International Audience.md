@@ -1,3 +1,5 @@
+translating by yizhuoyan
+
 5 Tips to Improve Technical Writing for an International Audience
 ============================================================
 
