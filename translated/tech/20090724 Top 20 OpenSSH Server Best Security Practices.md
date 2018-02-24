@@ -1,4 +1,4 @@
-Translating by shipsw
+Translated by shipsw
 
 20 个 OpenSSH 安全实践  
 ======  
