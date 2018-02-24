@@ -3,19 +3,19 @@ Kali Linux 是什么，你需要它吗？
 
 ![](https://www.maketecheasier.com/assets/uploads/2018/01/kl-feat.jpg)
 
-如果你听到一个 13 岁的黑客吹嘘它是多么的牛逼，是有可能的，因为有 Kali Linux 的存在。尽管有可能会被称为“脚本小子”，但是事实上，Kali 仍旧是安全专家手头的重要工具（或工具集）。
+如果你听到一个 13 岁的黑客吹嘘他是多么的牛逼，是有可能的，因为有 Kali Linux 的存在。尽管有可能会被称为“脚本小子”，但是事实上，Kali 仍旧是安全专家手头的重要工具（或工具集）。
 
-Kali 是一个基于 Debian 的 Linux 发行版。它的目标就是为了简单；在一个实用的工具包里尽可能多的包含渗透和审计工具。Kali 实现了这个目标。大多数做安全测试的开源工具都被囊括在内。
+Kali 是一个基于 Debian 的 Linux 发行版。它的目标就是为了简单：在一个实用的工具包里尽可能多的包含渗透和审计工具。Kali 实现了这个目标。大多数做安全测试的开源工具都被囊括在内。
 
-**相关** ： [4 个极好的为隐私和案例设计的 Linux 发行版][1]
+**相关** ： [4 个极好的为隐私和安全设计的 Linux 发行版][1]
 
 ### 为什么是 Kali？
 
 ![Kali Linux Desktop][2]
 
-[Kali][3] 是由 Offensive Security （https://www.offensive-security.com/）公司开发和维护的。它在安全领域是一家知名的、值得信赖的公司，它甚至还有一些受人尊敬的认证，来对安全从业人员做资格认证。
+[Kali][3] 是由 [Offensive Security](https://www.offensive-security.com/) 公司开发和维护的。它在安全领域是一家知名的、值得信赖的公司，它甚至还有一些受人尊敬的认证，来对安全从业人员做资格认证。
 
-Kali 也是一个简便的安全解决方案。Kali 并不要求你自己去维护一个 Linux，或者收集你自己的软件和依赖。它是一个“交钥匙工程”。所有这些繁杂的工作都不需要你去考虑，因此，你只需要专注于要审计的真实工作上，而不需要去考虑准备测试系统。
+Kali 也是一个简便的安全解决方案。Kali 并不要求你自己去维护一个 Linux 系统，或者你自己去收集软件和依赖项。它是一个“交钥匙工程”。所有这些繁杂的工作都不需要你去考虑，因此，你只需要专注于要审计的真实工作上，而不需要去考虑准备测试系统。
 
 ### 如何使用它？
 
@@ -61,7 +61,7 @@ via: https://www.maketecheasier.com/what-is-kali-linux-and-do-you-need-it/
 
 作者：[Nick Congleton][a]
 译者：[qhwdw](https://github.com/qhwdw)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
