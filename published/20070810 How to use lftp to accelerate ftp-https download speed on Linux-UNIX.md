@@ -1,22 +1,22 @@
 如何使用 lftp 来加速 Linux/UNIX 上的 ftp/https 下载速度
 ======
 
-`lftp` 是一个文件传输程序。它可以用复杂的 FTP、 HTTP/HTTPS 和其他连接。如果指定了站点 URL，那么 `lftp` 将连接到该站点，否则会使用 `open` 命令建立连接。它是所有 Linux/Unix 命令行用户的必备工具。我目前写了一些关于 [Linux 下超快命令行下载加速器][1]，比如 Axel 和 prozilla。`lftp` 是另一个能做相同的事，但有更多功能的工具。`lftp` 可以处理七种文件访问方式：
+`lftp` 是一个文件传输程序。它可以用于复杂的 FTP、 HTTP/HTTPS 和其他连接。如果指定了站点 URL，那么 `lftp` 将连接到该站点，否则会使用 `open` 命令建立连接。它是所有 Linux/Unix 命令行用户的必备工具。我目前写了一些关于 [Linux 下超快命令行下载加速器][1]，比如 Axel 和 prozilla。`lftp` 是另一个能做相同的事，但有更多功能的工具。`lftp` 可以处理七种文件访问方式：
 
-  1. ftp
-  2. ftps
-  3. http
-  4. https
-  5. hftp
-  6. fish
-  7. sftp
-  8. file
+1. ftp
+2. ftps
+3. http
+4. https
+5. hftp
+6. fish
+7. sftp
+8. file
 
 ### 那么 lftp 的独特之处是什么？
 
-  * `lftp` 中的每个操作都是可靠的，即任何非致命错误都被忽略，并且重复进行操作。所以如果下载中断，它会自动重新启动。即使 FTP 服务器不支持 `REST` 命令，lftp 也会尝试从开头检索文件，直到文件传输完成。
-  * `lftp` 具有类似 shell 的命令语法，允许你在后台并行启动多个命令。
-  * `lftp` 有一个内置的镜像功能，可以下载或更新整个目录树。还有一个反向镜像功能（`mirror -R`），它可以上传或更新服务器上的目录树。镜像也可以在两个远程服务器之间同步目录，如果可用的话会使用 FXP。
+* `lftp` 中的每个操作都是可靠的，即任何非致命错误都被忽略，并且重复进行操作。所以如果下载中断，它会自动重新启动。即使 FTP 服务器不支持 `REST` 命令，lftp 也会尝试从开头检索文件，直到文件传输完成。
+* `lftp` 具有类似 shell 的命令语法，允许你在后台并行启动多个命令。
+* `lftp` 有一个内置的镜像功能，可以下载或更新整个目录树。还有一个反向镜像功能（`mirror -R`），它可以上传或更新服务器上的目录树。镜像也可以在两个远程服务器之间同步目录，如果可用的话会使用 FXP。
 
 ### 如何使用 lftp 作为下载加速器
 
@@ -42,18 +42,19 @@ lftp :~>quit
 
 这里：
 
-  1. `pget` - 并行下载文件
-  2. `-n 5` - 将最大连接数设置为 5
-  3. `-c` - 如果当前目录存在 `lfile.lftp-pget-status`，则继续中断的传输
+1. `pget` - 并行下载文件
+2. `-n 5` - 将最大连接数设置为 5
+3. `-c` - 如果当前目录存在 `lfile.lftp-pget-status`，则继续中断的传输
 
 ### 如何在 Linux/Unix 中使用 lftp 来加速 ftp/https下载
 
 再尝试添加 `exit` 命令：
 
 ```
-$ lftp -e 'pget -n 10 -c https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.15.tar.xz; exit'`
+$ lftp -e 'pget -n 10 -c https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.15.tar.xz; exit'
+```
 
-[Linux-lftp-command-demo][https://www.cyberciti.biz/tips/wp-content/uploads/2007/08/Linux-lftp-command-demo.mp4]
+[Linux-lftp-command-demo](https://www.cyberciti.biz/tips/wp-content/uploads/2007/08/Linux-lftp-command-demo.mp4)
 
 ### 关于并行下载的说明
 
