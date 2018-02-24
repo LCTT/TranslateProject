@@ -306,5 +306,5 @@ via: http://www.linuxjournal.com/content/creating-adventure-game-terminal-ncurse
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:http://www.linuxjournal.com/users/jim-hall
-[1]:http://www.linuxjournal.com/content/getting-started-ncurses
+[1]:https://linux.cn/article-9348-1.html
 [2]:http://tldp.org/HOWTO/NCURSES-Programming-HOWTO
