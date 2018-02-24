@@ -29,7 +29,7 @@ At these meetings, we discussed the need for a new term due to the confusion fac
 
 ### 网景发布
 
-1998 年 2 月 2 日，Eric Raymond arrived on a visit to work with Netscape on the plan to 发布了浏览器代码 under a free-software-style license. We held a meeting that night at Foresight's office in Los Altos to strategize and refine our message.除了 Eric 和我，活跃的参与者还有 Brian Behlendorf，Michael Tiemann，Todd Anderson，Mark S. Miller and Ka-Ping Yee。But at that meeting, the field was still described as free software or, by Brian, “可获得源代码的” 软件。
+1998 年 2 月 2 日，Eric Raymond arrived on a visit to work with Netscape on the plan to 采用免费软件样式的许可证发布浏览器代码 under a free-software-style license. We held a meeting that night at Foresight's office in Los Altos to strategize and refine our message.除了 Eric 和我，活跃的参与者还有 Brian Behlendorf，Michael Tiemann，Todd Anderson，Mark S. Miller and Ka-Ping Yee。但在那次会议上，这个领域仍然被描述成自由软件，或者用 Brian 的话说， 叫“可获得源代码的” 软件。
 
 While in town, Eric used Foresight as a base of operations. At one point during his visit, he was called to the phone to talk with a couple of Netscape legal and/or marketing staff. When he was finished, I asked to be put on the phone with them—one man and one woman, perhaps Mitchell Baker—so I could bring up the need for a new term. They agreed in principle immediately, but no specific term was agreed upon.
 
@@ -57,7 +57,7 @@ For the name to succeed, it was necessary, or at least highly desirable, that Ti
 
 在那之后，有一段时间，这条术语由 Eric Raymond 推向媒体，由 Tim O'Reilly 推向商业，并由二人推向编程社区，那似乎传播的相当快。
 
-On April 7, 1998, Tim O'Reilly held a meeting of key leaders in the field. 提前宣布 as the first "[Freeware Summit][10]," by April 14 it was referred to as the first "[Open Source Summit][11]."
+On April 7, 1998, Tim O'Reilly 提前宣布 as the first "[Freeware Summit][10]," by April 14 it was referred to as the first "[Open Source Summit][11]."
 
 这几个月对于开源来说是相当激动人心的。似乎每周都有一个新公司宣布加入计划。Reading Slashdot became a necessity, even for those like me who were only peripherally involved. I strongly believe that the new term was helpful in enabling this rapid spread into business, which then enabled wider use by the public.
 
