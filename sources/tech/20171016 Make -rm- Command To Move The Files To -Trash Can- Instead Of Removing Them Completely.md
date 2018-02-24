@@ -1,4 +1,5 @@
-Make “rm” Command To Move The Files To “Trash Can” Instead Of Removing Them Completely
+amwps290 translating
+Make “rm” Command To Move The Files To “Trash Can” Instead Of Removing Them Completely  
 ======
 Human makes mistake because we are not a programmed devices so, take additional care while using `rm` command and don't use `rm -rf *` at any point of time. When you use rm command it will delete the files permanently and doesn't move those files to `Trash Can` like how file manger does.
 
