@@ -1,3 +1,5 @@
+Translating by MjSeven
+
 How slowing down made me a better leader
 ======
 
