@@ -1,3 +1,5 @@
+translated by cyleft
+
 How to Get Started Using WSL in Windows 10
 ======
 
