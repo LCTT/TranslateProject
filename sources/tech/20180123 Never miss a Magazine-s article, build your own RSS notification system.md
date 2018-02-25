@@ -1,3 +1,4 @@
+Translating by qhwdw
 Never miss a Magazine's article, build your own RSS notification system
 ======
 
