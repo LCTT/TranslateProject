@@ -2,7 +2,7 @@
 我是如何创造“开源”这个词的
 ============================================================
 
-### Christine Peterson 最终发布了对于二十年前那决定命运一天的陈述。
+### Christine Peterson 最终公开讲述了二十年前那决定命运一天。
 
 ![How I coined the term 'open source'](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/hello-name-sticker-badge-tag.png?itok=fAgbMgBb "How I coined the term 'open source'")
 图片来自: opensource.com
@@ -63,13 +63,13 @@ On April 7, 1998, Tim O'Reilly 提前宣布 as the first "[Freeware Summit][10],
 
 尽管快捷的谷歌搜索表明“开源”比“自由软件”出现的更多，但后者仍然有大量的使用，和偏爱它的人们沟通的时候就特别有用。
 
-### A happy twinge
+### A happy twinge喜出望外
 
 When an [early account][12] of the terminology change written by Eric Raymond was posted on the Open Source Initiative website, I was listed as being at the VA brainstorming meeting, but not as the originator of the term. This was my own fault; I had neglected to tell Eric the details. My impulse was to let it pass and stay in the background, but Todd felt otherwise. He suggested to me that one day I would be glad to be known as the person who coined the name "open source software." He explained the situation to Eric, who promptly updated his site.
 
-Coming up with a phrase is a small contribution, but I admit to being grateful to those who remember to credit me with it. Every time I hear it, which is very often now, it gives me a little happy twinge.
+想出这个短语只是一个小贡献，但是我得承认我十分感激那些把它归功于我的人。每次我听到它，它都给我些许激动的喜悦，到现在也时常感受到。
 
-说服团队的大功劳归功于Eric Raymond和 Tim O'Reilly，是他们搞定的它。感谢他们对我的评价，并感谢Todd Anderson 在整个过程中的角色。以上内容并非完整的开源历史记录，对很多没有无名人士表示歉意。那些寻求更完整讲述的人应该参考本文和网上其他地方的链接。
+说服团队的大功劳归功于Eric Raymond和 Tim O'Reilly，这是他们搞定的。感谢他们对我的评价，并感谢Todd Anderson 在整个过程中的角色。以上内容并非完整的开源历史记录，对很多没有无名人士表示歉意。那些寻求更完整讲述的人应该参考本文和网上其他地方的链接。
 
 ### 关于作者
 
