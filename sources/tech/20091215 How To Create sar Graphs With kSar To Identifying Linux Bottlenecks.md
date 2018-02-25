@@ -1,3 +1,4 @@
+Translating by qhwdw
 How To Create sar Graphs With kSar To Identifying Linux Bottlenecks
 ======
 The sar command collects, report, or save UNIX / Linux system activity information. It will save selected counters in the operating system to the /var/log/sa/sadd file. From the collected data, you get lots of information about your server:

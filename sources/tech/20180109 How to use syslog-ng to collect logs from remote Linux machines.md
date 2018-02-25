@@ -1,3 +1,4 @@
+Translating by qhwdw
 How to use syslog-ng to collect logs from remote Linux machines
 ======
 ![linuxhero.jpg][1]

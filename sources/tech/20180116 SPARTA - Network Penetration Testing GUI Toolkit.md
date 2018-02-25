@@ -1,3 +1,4 @@
+Translating by qhwdw
 SPARTA – Network Penetration Testing GUI Toolkit
 ======
 

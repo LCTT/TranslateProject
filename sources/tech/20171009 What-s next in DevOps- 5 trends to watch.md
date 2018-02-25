@@ -1,3 +1,4 @@
+Translating by qhwdw
 What’s next in DevOps: 5 trends to watch
 ======
 
