@@ -1,3 +1,4 @@
+Translating by qhwdw
 How to Manage PGP and SSH Keys with Seahorse
 ============================================================
 
