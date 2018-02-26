@@ -1,49 +1,47 @@
-20180220 How to Get Started Using WSL in Windows 10.md
-
-How to Get Started Using WSL in Windows 10
+如何在 Windows 10 上开启 WSL（Windows Subsystem for Linux） 之旅
 ======
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/wsl-main.png?itok=wJ5WrU9U)
 
-In the [previous article][1], we talked about the Windows Subsystem for Linux (WSL) and its target audience. In this article, we will walk through the process of getting started with WSL on your Windows 10 machine.
+在 [上一篇文章][1] 中，我们讨论过关于 Windows 的子系统 Linux（WSL）的目标用户。本文，我们将在 Windows 10 的设备上，开启 WSL 的旅程。
 
-### Prepare your system for WSL
+### 为 WSL 做准备
 
-You must be running the latest version of Windows 10 with Fall Creator Update installed. Then, check which version of Windows 10 is installed on your system by searching on “About” in the search box of the Start menu. You should be running version 1709 or the latest to use WSL.
+您必须使用最新版本的 Windows 10 Fall Creator Update。之后，通过在开始菜单栏搜索 “About”，检查 Windows 10 的版本。为了使用 WSL，您的版本应当为 1709 或者最新版。
 
-Here is a screenshot from my system.
+这里有一张关于我的操作系统的截图。
 
 ![kHFKOvrbG1gXdB9lsbTqXC4N4w0Lbsz1Bul5ey9m][2]
 
-If an older version is installed, you need to download and install the Windows 10 Fall Creator Update (FCU) from [this][3] page. Once FCU is installed, go to Update Settings (just search for “updates” in the search box of the Start menu) and install any available updates.
+如果您安装了之前的版本，您有必要在 [这里][3] 下载并且安装 Windows 10 Fall Creator Update (FCU)。安装完毕后，更新设置（在开始菜单的搜索框中搜索 “updates”）。
 
-Go to Turn Windows Features On or Off (you know the drill by now) and scroll to the bottom and tick on the box Windows Subsystem for Linux, as shown in the following figure. Click Ok. It will download and install the needed packages.
+前往 `启用或关闭 Windows 功能` 页面，然后滚动至底部，如截图所示，勾选 `适用于 Linux 的 Windows 子系统`，点击确定。它将会下载安装需要的包。
 
 ![oV1mDqGe3zwQgL0N3rDasHH6ZwHtxaHlyrLzjw7x][4]
 
-Upon the completion of the installation, the system will offer to restart. Go ahead and reboot your machine. WSL won’t launch without a system reboot, as shown below:
+安装完成之后，系统将会询问是否重启。是的，重启设备吧。WSL 在系统重启之前不会启动，如下所示：
 
 ![GsNOQLJlHeZbkaCsrDIhfVvEoycu3D0upoTdt6aN][5]
 
-Once your system starts, go back to the Turn features on or off setting to confirm that the box next to Windows Subsystem for Linux is selected.
+一旦您的系统重启，返回 `启用或关闭 Windows 功能` 页面，确认 `适用于 Linux 的 Windows 子系统` 已经被勾选。
 
-### Install Linux in Windows
+### 在 Windows 中安装 Linux
 
-There are many ways to install Linux on Windows, but we will choose the easiest way. Open the Windows Store and search for Linux. You will see the following option:
+在 Windows 中安装 Linux，有很多方式，这里我们选择一种最简单的方式。打开 Microsoft Store，搜索 Linux。您将看到下面的选项：
 
 ![YAR4UgZiFAy2cdkG4U7jQ7_m81lrxR6aHSMOdED7][6]
 
-Click on Get the apps, and Windows Store will provide you with three options: Ubuntu, openSUSE Leap 42, and SUSE Linux Enterprise Server. You can install all three distributions side by side and run all three distributions simultaneously. To be able to use SLE, you need a subscription.
+点击 `获取`，之后 Windows 商店将会提供三个选项：Ubuntu，openSUSE Leap 42 和 SUSE Linux Enterprise Server。您可以一并安装上述三个发行版，并且它们可以同时运行。为了能使用 SLE，您需要订阅消息。
 
-In this case, I am installing openSUSE Leap 42 and Ubuntu. Select your desired distro and click on the Get button to install it. Once installed, you can launch openSUSE in Windows. It can be pinned to the Start menu for quick access.
+在此，我将安装 openSUSE Leap 42 和 Ubuntu。选中您想要的发行版，点击获得按钮并安装。一旦安装完毕，您就可以在 Windows 中启动 openSUSE。为了方便访问，可以将其固定到开始菜单中。
 
 ![4LU6eRrzDgBprDuEbSFizRuP1J_zS3rBnoJbU2OA][7]
 
-### Using Linux in Windows
+### 在 Windwods 中使用 Linux
 
-When you launch the distro, it will open the Bash shell and install the distro. Once installed, you can go ahead and start using it. Simple. Just bear in mind that there is no user in openSUSE and it runs as root user, whereas Ubuntu will ask you to create a user. On Ubuntu, you can perform administrative tasks as sudo user.
+当您启动发行版，它将会打开一个 Bash Shell 并且安装此发行版。安装完毕之后，您就可以开始使用了。您需要留意，openSUSE 中并没有用户，它直接运行在 root 用户下，但是 Ubuntu 会询问您是否创建用户。在 Ubuntu，您可以执行 sudo 用户管理任务。
 
-You can easily create a user on openSUSE:
+在 openSUSE 上，您可以很轻松的创建一个用户：
 ```
 # useradd [username]
 
@@ -51,7 +49,7 @@ You can easily create a user on openSUSE:
 
 ```
 
-Create a new password for the user and you are all set. For example:
+为此用户创建一个新的密码。例如：
 ```
 # useradd swapnil
 
@@ -59,21 +57,21 @@ Create a new password for the user and you are all set. For example:
 
 ```
 
-You can switch from root to this use by running the su command:
+您可以通过 su 命令从 root 用户切换过来。
 ```
 su swapnil
 
 ```
 
-You do need non-root use to perform many tasks, like using commands like rsync to move files on your local machine.
+您需要非根用户来执行许多任务，比如使用 rsync 移动文件到本地设备。
 
-The first thing you need to do is update the distro. For openSUSE:
+而首要任务是更新发行版。对于 openSUSE 来说，您应该：
 ```
 zypper up
 
 ```
 
-For Ubuntu:
+而对于 Ubuntu：
 ```
 sudo apt-get update
 
@@ -83,28 +81,28 @@ sudo apt-get dist-upgrade
 
 ![7cRgj1O6J8yfO3L4ol5sP-ZCU7_uwOuEoTzsuVW9][8]
 
-You now have native Linux Bash shell on Windows. Want to ssh into your server from Windows 10? There’s no need to install puTTY or Cygwin. Just open Bash and then ssh into your server. Easy peasy.
+现在，您就在 Windows 上拥有了原生 Linux Bash shell。想在 Windows 10 上通过 ssh 连接您的服务器？不需要安装 puTTY 或是 Cygwin。打开 Bash 之后，就可以通过 ssh 进入您的服务器。简单之至。
 
-Want to rsync files to your server? Go ahead and use rsync. It really transforms Windows into a usable machine for those Windows users who want to use native Linux command linux tools on their machines without having to deal with VMs.
+想通过 rsync 同步文件到您的服务器？直接使用 rsync。它切实的将我们的 Windows 设备转变得更为实用，帮助那些需要使用原生 Linux 命令和 Linux 工具的用户避开虚拟机，大开方便之门。
 
-### Where is Fedora?
+### 找不到 Fedora?
 
-You may be wondering about Fedora. Unfortunately, Fedora is not yet available through the store. Matthew Miller, the release manager of Fedora said on Twitter, “We're working on resolving some non-technical issues. I'm afraid I don't have any more than that right now.”
+您可能想了解 Fedora。可惜，商城里并没有 Fedora。Fedora 项目发布负责人在 Twitter 上表示，“我们正在解决一些非技术性问题。现在可能提供不了更多了。”
 
-We don’t know yet what these non-technical issues are. When some users asked why the WSL team could not publish Fedora themselves --- after all it’s an open source project -- Rich Turner, a project manager at Microsoft [responded][9], “We have a policy of not publishing others' IP into the store. We believe that the community would MUCH prefer to see a distro published by the distro owner vs. seeing it published by Microsoft or anyone else that isn't the authoritative source.”
+我们并不确定这些非技术性问题是什么。当一些用户询问 WSL 团队为何不发布 Fedora，毕竟它也是一个开源项目。项目负责人 Rich Turner 在 Microsoft  [回应][9]，“我们没有发布其他 IP 到应用商店的政策。我们相信，相较于被微软或是其他非权威人士，社区更希望看到发行版由发行版所有者发布。”
 
-So, Microsoft can’t just go ahead and publish Debian or Arch Linux on Windows Store. The onus is on the official communities to bring their distros to Windows 10 users.
+因此，微软不方便在 Windows 商店中直接发布 Debian 或是 Arch 系统。这些任务应该落在他们的官方团队中，应该由他们将发行版带给 Windows 10 的用户。
 
-### What’s next
+### 欲知后事，下回分解
 
-In the next article, we will talk about using Windows 10 as a Linux machine and performing most of the tasks that you would perform on your Linux system using the command-line tools.
+下一篇文章，我们会讨论关于将 Windows 10 作为 Linux 设备，并且向您展示，您可能会在 Linux 系统上使用的命令行工具。
 
 --------------------------------------------------------------------------------
 
 via: https://www.linux.com/blog/learn/2018/2/how-get-started-using-wsl-windows-10
 
 作者：[SWAPNIL BHARTIYA][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[CYLeft](https://github.com/CYLeft)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
