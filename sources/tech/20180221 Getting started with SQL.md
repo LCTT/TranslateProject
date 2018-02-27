@@ -1,3 +1,5 @@
+Translating by MjSeven
+
 Getting started with SQL
 ======
 
