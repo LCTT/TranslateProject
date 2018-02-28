@@ -1,3 +1,5 @@
+translating by Auk7F7
+
 Create a wiki on your Linux desktop with Zim
 ======
 
