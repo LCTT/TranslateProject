@@ -1,5 +1,7 @@
 The List Of Useful Bash Keyboard Shortcuts
 ======
+translating by heart4lor
+
 ![](https://www.ostechnix.com/wp-content/uploads/2018/02/Bash-720x340.jpg)
 
 Nowadays, I spend more time in Terminal, trying to accomplish more in CLI than GUI. I learned many BASH tricks over time. And, here is the list of useful of BASH shortcuts that every Linux users should know to get things done faster in their BASH shell. I won’t claim that this list is a complete list of BASH shortcuts, but just enough to move around your BASH shell faster than before. Learning how to navigate faster in BASH Shell not only saves some time, but also makes you proud of yourself for learning something worth. Well, let’s get started.
