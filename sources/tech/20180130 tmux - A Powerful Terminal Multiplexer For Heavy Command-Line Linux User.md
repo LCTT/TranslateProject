@@ -1,3 +1,6 @@
+erialin translating
+
+
 tmux – A Powerful Terminal Multiplexer For Heavy Command-Line Linux User
 ======
 tmux stands for terminal multiplexer, it allows users to create/enable multiple terminals (vertical & horizontal) in single window, this can be accessed and controlled easily from single window when you are working with different issues.
