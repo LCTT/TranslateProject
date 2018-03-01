@@ -1,3 +1,4 @@
+translating by kimii
 Protecting Code Integrity with PGP — Part 1: Basic Concepts and Tools
 ======
 
