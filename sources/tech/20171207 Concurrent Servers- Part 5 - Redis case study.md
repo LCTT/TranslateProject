@@ -1,3 +1,4 @@
+Translating by qhwdw
 Concurrent Servers: Part 5 - Redis case study
 ======
 This is part 5 in a series of posts on writing concurrent network servers. After discussing techniques for constructing concurrent servers in parts 1-4, this time we're going to do a case study of an existing production-quality server - [Redis][10].
