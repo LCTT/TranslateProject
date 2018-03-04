@@ -1,3 +1,4 @@
+translating by sugarfillet
 Plasma Mobile Could Give Life to a Mobile Linux Experience
 ======
 
