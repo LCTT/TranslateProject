@@ -33,9 +33,9 @@ At these meetings, we discussed the need for a new term due to the confusion fac
 
 While in town, Eric used Foresight as a base of operations. At one point during his visit, he was called to the phone to talk with a couple of Netscape legal and/or marketing staff. When he was finished, I asked to be put on the phone with them—one man and one woman, perhaps Mitchell Baker—so I could bring up the need for a new term. They agreed in principle immediately, but no specific term was agreed upon.
 
-在那周的会议中，我仍然关注Between meetings that week, I was still focused on the need for a better name and came up with the term "open source software." While not ideal, it struck me as good enough. I ran it by at least four others: Eric Drexler, Mark Miller, and Todd Anderson liked it, while a friend in marketing and public relations felt the term "open" had been overused and abused and believed we could do better. 理论上它是对的，我想不出更好的了，所以我想尝试并推广它。 事后一想我应该简单地向 Eric Raymond 提案，但在那时我并不是很了解他，所以我采取了间接的策略。
+在那周的会议中，我仍然关注一个更好的名字Between meetings that week, I was still focused on the need for a better name and 提出术语 “开源软件”came up with the term "open source software." While not ideal, it struck me as good enough. I ran it by at least four others: Eric Drexler, Mark Miller, and Todd Anderson liked it, while a friend in marketing and public relations felt the term "open" had been overused and abused and 相信我们能做的更好。理论上它是对的，可我想不出更好的了，所以我想尝试并推广它。 事后一想我应该直接向 Eric Raymond 提案，但在那时我并不是很了解他，所以我采取了间接的策略。
 
-Todd 强烈同意需要新的术语并提供协助推广它。这很有帮助，因为作为一个非编程人员，我在自由软件社区的影响力很弱。我在纳米技术的工作是一个加分项，但不足以让我认真地接受自由软件问题的工作。作为一个Linux程序员，Todd 将会更仔细地聆听它。
+Todd 强烈同意需要新的术语并提供协助推广它。这很有帮助，因为作为一个非编程人员，我在自由软件社区的影响力很弱。我从事的纳米技术是一个加分项，但不足以让我认真地接受自由软件问题的工作。作为一个Linux程序员，Todd 将会更仔细地聆听它。
 
 ### 关键的会议
 
@@ -55,9 +55,9 @@ For the name to succeed, it was necessary, or at least highly desirable, that Ti
 
 ### 名字的诞生
 
-在那之后，有一段时间，这条术语由 Eric Raymond 推向媒体，由 Tim O'Reilly 推向商业，并由二人推向编程社区，那似乎传播的相当快。
+在那之后，有一段时间，这条术语由 Eric Raymond 向媒体推广，由 Tim O'Reilly 向商业推广，并由二人向编程社区推广，那似乎传播的相当快。
 
-On April 7, 1998, Tim O'Reilly 提前宣布 as the first "[Freeware Summit][10]," by April 14 it was referred to as the first "[Open Source Summit][11]."
+1998 年 4 月 17 日, Tim O'Reilly 提前宣布 首届 “[自由软件峰会][10]” 在 4 月14 日之前，它以首届 “[开源峰会][11]” 被提及。
 
 这几个月对于开源来说是相当激动人心的。似乎每周都有一个新公司宣布加入计划。Reading Slashdot became a necessity, even for those like me who were only peripherally involved. I strongly believe that the new term was helpful in enabling this rapid spread into business, which then enabled wider use by the public.
 
