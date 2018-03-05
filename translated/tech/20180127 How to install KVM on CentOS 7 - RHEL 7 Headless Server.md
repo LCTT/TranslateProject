@@ -321,7 +321,7 @@ Pool centos7-vm1 created
 
 --------------------------------------------------------------------------------
 
-via: [https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/][https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/]
+via: [https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/](https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/)
 
 作者：[Vivek Gite][a]
 译者：[MjSeven](https://github.com/MjSeven)
