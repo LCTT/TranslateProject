@@ -1,8 +1,8 @@
-[fuzheng1998 tranlating]
+[fuzheng1998 translating]
 我是如何创造“开源”这个词的
 ============================================================
 
-### Christine Peterson 最终公开讲述了二十年前那决定命运一天。
+### Christine Peterson 最终公开讲述了二十年前那决定命运的一天。
 
 ![How I coined the term 'open source'](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/hello-name-sticker-badge-tag.png?itok=fAgbMgBb "How I coined the term 'open source'")
 图片来自: opensource.com
@@ -17,7 +17,7 @@
 
 * * *
 
-The introduction of the term "open source software" was a deliberate effort to make this field of endeavor more understandable to newcomers and to business, which was viewed as necessary to its spread to a broader community of users. The problem with the main earlier label, "free software," was not its political connotations, but that—to newcomers—its seeming focus on price is distracting. A term was needed that focuses on the key issue of source code and that does not immediately confuse those new to the concept. The first term that came along at the right time and fulfilled these requirements was rapidly adopted: open source.
+The introduction of the term "open source software" was 是特地为了这个领域让新手和商业人士更加易懂a deliberate effort to make this field of endeavor more understandable to newcomers and to business, which was viewed as necessary to its spread to a broader community of users. 早期称号的问题是，“自由软件”，并非有政治含义，但是那对于新手来说貌似对于价格的关注令人心烦意乱。一个术语需要聚焦于源代码的关键问题而且不会被立即把概念跟那些新东西混淆。一个恰好想出并且满足这些要求的第一个术语被快速接受：开源。
 
 This term had long been used in an "intelligence" (i.e., spying) context, 但据我所知but to my knowledge, use of the term with respect to software prior to 1998 has not been confirmed. 下面这个就是讲述了术语“开源软件”如何流行起来并且变成了一项产业和一场运动的名字。
 
