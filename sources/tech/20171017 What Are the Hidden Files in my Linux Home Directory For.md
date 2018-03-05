@@ -1,3 +1,5 @@
+Translating by MjSeven
+
 What Are the Hidden Files in my Linux Home Directory For?
 ======
 
