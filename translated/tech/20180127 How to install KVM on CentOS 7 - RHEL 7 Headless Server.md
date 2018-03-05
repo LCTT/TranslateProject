@@ -257,6 +257,7 @@ Pool centos7-vm1 created
 ##### 查找虚拟机的 IP 地址
 
 `# virsh net-dhcp-leases default`
+
 [![CentOS7-VM1- Created][15]][15]
 
 ##### 登录到你的虚拟机
