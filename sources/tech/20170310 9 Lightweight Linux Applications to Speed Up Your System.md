@@ -1,3 +1,5 @@
+translating by imquanquan
+
 9 Lightweight Linux Applications to Speed Up Your System
 ======
 **Brief:** One of the many ways to [speed up Ubuntu][1] system is to use lightweight alternatives of the popular applications. We have already seen [must have Linux application][2] earlier. we'll see the lightweight alternative applications for Ubuntu and other Linux distributions.
