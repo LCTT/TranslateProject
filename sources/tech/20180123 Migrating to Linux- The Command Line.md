@@ -1,3 +1,5 @@
+translated by cyleft
+
 Migrating to Linux: The Command Line
 ======
 
