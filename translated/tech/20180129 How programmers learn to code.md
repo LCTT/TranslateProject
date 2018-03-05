@@ -1,44 +1,42 @@
-translating----geekpi
-
-How programmers learn to code
+程序员如何学习编码
 ============================================================
 
  [![How programmers learn to code](https://mybroadband.co.za/news/wp-content/uploads/2016/01/Programmer-working-computer-code.jpg)][8] 
 
 
-HackerRank recently published the results of its 2018 Developer Skills Report, in which it asked programmers when they started coding.
+HackerRank 最近公布了 2018 年开发者技能报告的结果，其中向程序员询问了他们何时开始编码。
 
-39,441 professional and student developers completed the online survey from 16 October to 1 November 2016, with over 25% of the developers surveyed writing their first piece of code before they were 16 years old.
+39,441 名专业和学生开发者于 2016 年 10 月 16 日至 11 月 1 日完成了在线调查，超过 25％ 的被调查的开发者在 16 岁前编写了他们的第一段代码。
 
-### How programmers learn
+### 程序员是如何学习的
 
-In terms of how programmers learnt to code, self-teaching is the norm for developers of all ages, stated the report.
+报告称，就程序员如何学习编码而言，自学是所有年龄段开发者的常态。
 
-“Even though 67% of developers have computer science degrees, roughly 74% said they were at least partially self-taught.”
+“尽管 67％ 的开发者拥有计算机科学学位，但大约 74％ 的人表示他们至少一部分是自学的。”
 
-On average, developers know four languages, but they want to learn four more.
+开发者平均了解四种语言，但他们想学习更多语言。
 
-The thirst for learning varies by generations – developers between 18 and 24 plan to learn six languages, whereas developers older than 35 only plan to learn three.
+对学习的渴望因人而异 - 18 至 24 岁的开发者计划学习 6 种语言，而 35 岁以上的开发者只计划学习 3 种语言。
 
  [![HackerRank 2018 how did you learn to code](https://mybroadband.co.za/news/wp-content/uploads/2018/01/HackerRank-2018-how-did-you-learn-to-code.jpg)][5] 
 
-### What programmers want
+### 程序员想要什么
 
-HackerRank also looked at what developers want most from an employer.
+HackerRank 还研究了开发者最想从雇主那里得到什么。
 
-On average, a good work-life balance, closely followed by professional growth and learning, was the most desired requirement.
+平均而言，良好的工作与生活平衡，紧随其后的是专业成长与学习，是最理想的要求。
 
-Segmenting the data by region revealed that Americans crave work-life balance more than developers Asia and Europe.
+按地区划分的数据显示，美国人比亚洲和欧洲的开发者更渴望工作与生活的平衡。
 
-Students tend to rank growth and learning over work-life balance, while professionals rate compensation more highly than students do.
+学生倾向于将成长和学习列在工作与生活的平衡之上，而专业人员对薪酬的排名比学生高得多。
 
-People who work in smaller companies tended to rank work-life balance lower, but it was still in their top three.
+在小公司工作的人倾向于降低工作与生活的平衡，但仍处于前三名。
 
-Age also made a difference, with developers 25 and older rating work-life balance as most important, while those between 18 and 24 rate it as less important.
+年龄也制造了不同，25 岁以上的开发者将工作与生活的平衡评为最重要的，而 18 岁至 24 岁的人们则认为其重要性较低。
 
-“In some ways, we’ve discovered a slight contradiction here. Developers want work-life balance, but they also have an insatiable thirst and need for learning,” said HackerRank.
+HackerRank 说：“在某些方面，我们发现了一个小矛盾。开发人员需要工作与生活的平衡，但他们也渴望学习“。
 
-It advised that focusing on doing what you enjoy, as opposed to trying to learning everything, can help strike a better work-life balance.
+它建议，专注于做你喜欢的事情，而不是试图学习一切，这可以帮助实现更好的工作与生活的平衡。
 
  [![HackerRank 2018 what do developers want most](https://mybroadband.co.za/news/wp-content/uploads/2018/01/HackerRank-2018-what-do-developers-want-most-640x342.jpg)][6] 
 
@@ -49,7 +47,7 @@ It advised that focusing on doing what you enjoy, as opposed to trying to learni
 via: https://mybroadband.co.za/news/smartphones/246583-how-programmers-learn-to-code.html
 
 作者：[Staff Writer ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
