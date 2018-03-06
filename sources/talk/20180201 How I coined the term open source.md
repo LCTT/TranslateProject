@@ -19,13 +19,13 @@
 
 The introduction of the term "open source software" was 是特地为了这个领域让新手和商业人士更加易懂a deliberate effort to make this field of endeavor more understandable to newcomers and to business, which was viewed as necessary to its spread to a broader community of users. 早期称号的问题是，“自由软件”，并非有政治含义，但是那对于新手来说貌似对于价格的关注令人心烦意乱。一个术语需要聚焦于源代码的关键问题而且不会被立即把概念跟那些新东西混淆。一个恰好想出并且满足这些要求的第一个术语被快速接受：开源。
 
-This term had long been used in an "intelligence" (i.e., spying) context, 但据我所知but to my knowledge, use of the term with respect to software prior to 1998 has not been confirmed. 下面这个就是讲述了术语“开源软件”如何流行起来并且变成了一项产业和一场运动的名字。
+这个术语很长一段时间被用在“情报”（即间谍活动）的情境下，但据我所知but to my knowledge, use of the term with respect to software prior to 1998 has not been confirmed. 下面这个就是讲述了术语“开源软件”如何流行起来并且变成了一项产业和一场运动的名字。
 
 ### 计算机安全会议
 
 在1997年的晚些时候，为期一周的会议将被在前瞻技术协会（Foresight Insttitue) 举行来讨论计算机安全问题。这个协会是一个非盈利性智库，它专注于纳米技术和人工智能，并且认为软件安全是二者的安全性以及可靠性的核心。我们在那确定了自由软件是一个改进软件安全可靠性且具有发展前景的方法并将寻找推动它的方式。 对自由软件的兴趣开始在编程社区外开始增长，而且越来越清晰，一个改变世界的机会正在来临。然而，该怎么做我们并不清楚，因为我们当时正在摸索中。
 
-At these meetings, we discussed the need for a new term due to the confusion factor. 观点主要有以下：对于那些新接触“自由软件”的人把它（free）当成了价格。 Oldtimers must then launch into an explanation, usually given as follows: "We mean free as in freedom, not free as in beer." At this point, a discussion on software has turned into one about the price of an alcoholic beverage. The problem was not that explaining the meaning is impossible—the problem was that the name for an important idea should not be so confusing to newcomers. A clearer term was needed. No political issues were raised regarding the free software term; the issue was its lack of clarity to those new to the concept.
+At these meetings, we discussed the need for a new term due to the confusion factor. 观点主要有以下：对于那些新接触“自由软件”的人把它（free）当成了价格。 Oldtimers must then launch into an explanation, usually given as follows: “我们的意思是自由上的，而不是啤酒免费上的。"在这个点子上，一个软件方面的讨论变成了一个关于酒精价格的讨论。At this point, a discussion on software has turned into one about the price of an alcoholic beverage. The problem was not that explaining the meaning is impossible—the problem was that the name for an important idea should not be so confusing to newcomers. A clearer term was needed. No political issues were raised regarding the free software term; the issue was its lack of clarity to those new to the concept.
 
 ### 网景发布
 
@@ -55,7 +55,7 @@ For the name to succeed, it was necessary, or at least highly desirable, that Ti
 
 ### 名字的诞生
 
-在那之后，有一段时间，这条术语由 Eric Raymond 向媒体推广，由 Tim O'Reilly 向商业推广，并由二人向编程社区推广，那似乎传播的相当快。
+在那之后的一段时间，这条术语由 Eric Raymond 向媒体推广，由 Tim O'Reilly 向商业推广，并由二人向编程社区推广，那似乎传播的相当快。
 
 1998 年 4 月 17 日, Tim O'Reilly 提前宣布 首届 “[自由软件峰会][10]” 在 4 月14 日之前，它以首届 “[开源峰会][11]” 被提及。
 
@@ -65,7 +65,7 @@ For the name to succeed, it was necessary, or at least highly desirable, that Ti
 
 ### 一丝快感
 
-When an [early account][12] of the terminology change written by Eric Raymond was posted on the Open Source Initiative website, I was listed as being at the VA brainstorming meeting, but not as the originator of the term. 这是我自己的错，我没告诉 Eric 细节。我一时冲动只想让它表决通过然后我呆在后台，但是 Todd 不这样认为。他认为我总有一天将作为“开源软件”这个名词的创造者而感到高兴。他向 Eric 解释了这个情况，Eric 及时更新了它的网站。
+当一个被 Eric Raymond写的有关修改术语的早期的陈述被发布在了开放源代码促进会的网站上时，我上了 VA 头脑风暴会议的名单，但并不是作为一个术语的创始人。这是我自己的错，我没告诉 Eric 细节。我一时冲动只想让它表决通过然后我呆在后台，但是 Todd 不这样认为。他认为我总有一天将作为“开源软件”这个名词的创造者而感到高兴。他向 Eric 解释了这个情况，Eric 及时更新了它的网站。
 
 想出这个短语只是一个小贡献，但是我得承认我十分感激那些把它归功于我的人。每次我听到它，它都给我些许激动的喜悦，到现在也时常感受到。
 
