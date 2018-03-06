@@ -1,3 +1,5 @@
+translating---geekpi
+
 How to create better documentation with a kanban board
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/open%20source_collaboration.png?itok=68kU6BHy)
