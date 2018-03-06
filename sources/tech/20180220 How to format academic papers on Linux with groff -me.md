@@ -1,3 +1,4 @@
+translating by amwps290
 How to format academic papers on Linux with groff -me
 ======
 
