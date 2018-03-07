@@ -25,7 +25,7 @@ The introduction of the term "open source software" was 是特地为了这个领
 
 在1997年的晚些时候，为期一周的会议将被在前瞻技术协会（Foresight Insttitue) 举行来讨论计算机安全问题。这个协会是一个非盈利性智库，它专注于纳米技术和人工智能，并且认为软件安全是二者的安全性以及可靠性的核心。我们在那确定了自由软件是一个改进软件安全可靠性且具有发展前景的方法并将寻找推动它的方式。 对自由软件的兴趣开始在编程社区外开始增长，而且越来越清晰，一个改变世界的机会正在来临。然而，该怎么做我们并不清楚，因为我们当时正在摸索中。
 
-At these meetings, we discussed the need for a new term due to the confusion factor. 观点主要有以下：对于那些新接触“自由软件”的人把它（free）当成了价格。 Oldtimers must then launch into an explanation, usually given as follows: “我们的意思是自由上的，而不是啤酒免费上的。"在这个点子上，一个软件方面的讨论变成了一个关于酒精价格的讨论。At this point, a discussion on software has turned into one about the price of an alcoholic beverage. The problem was not that explaining the meaning is impossible—the problem was that the name for an important idea should not be so confusing to newcomers. A clearer term was needed. No political issues were raised regarding the free software term; the issue was its lack of clarity to those new to the concept.
+在这些会议中，我们讨论了由于一些使人迷惑不解的原因而产生一个新术语的必要性。观点主要有以下：对于那些新接触“自由软件”的人把它（free）当成了价格。老资格的成员们肯定开始一个解释，通常像下面所说的那样：“我们的意思是自由上的，而不是免费啤酒上的。"在这个点子上，一个软件方面的讨论变成了一个关于酒精价格的讨论。问题不在于解释不了含义——问题是重要概念的名称不应该使新手们感到困惑。A clearer term was needed. No political issues were raised regarding the free software term; the issue was its lack of clarity to those new to the concept.
 
 ### 网景发布
 
