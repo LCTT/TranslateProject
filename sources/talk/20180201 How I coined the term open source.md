@@ -29,7 +29,7 @@ The introduction of the term "open source software" was 是特地为了这个领
 
 ### 网景发布
 
-1998 年 2 月 2 日，Eric Raymond 抵达访问网景并与它一起计划采用免费软件样式的许可证发布浏览器代码。We held a meeting that night at Foresight's office in Los Altos to strategize and refine our message.除了 Eric 和我，活跃的参与者还有 Brian Behlendorf，Michael Tiemann，Todd Anderson，Mark S. Miller and Ka-Ping Yee。但在那次会议上，这个领域仍然被描述成“自由软件”，或者用 Brian 的话说， 叫“可获得源代码的” 软件。
+1998 年 2 月 2 日，Eric Raymond 抵达访问网景并与它一起计划采用免费软件样式的许可证发布浏览器代码。我们那晚在前瞻位于罗斯阿尔托斯（Los Altos）的办公室制定了策略并改进了我们的要旨。除了 Eric 和我，活跃的参与者还有 Brian Behlendorf，Michael Tiemann，Todd Anderson，Mark S. Miller and Ka-Ping Yee。但在那次会议上，这个领域仍然被描述成“自由软件”，或者用 Brian 的话说， 叫“可获得源代码的” 软件。
 
 While in town, Eric used Foresight as a base of operations. At one point during his visit, he was called to the phone to talk with a couple of Netscape legal and/or marketing staff. When he was finished, I asked to be put on the phone with them—one man and one woman, perhaps Mitchell Baker—so I could bring up the need for a new term. They agreed in principle immediately, but no specific term was agreed upon.
 
@@ -57,7 +57,7 @@ For the name to succeed, it was necessary, or at least highly desirable, that Ti
 
 在那之后的一段时间，这条术语由 Eric Raymond 向媒体推广，由 Tim O'Reilly 向商业推广，并由二人向编程社区推广，那似乎传播的相当快。
 
-1998 年 4 月 17 日, Tim O'Reilly 提前宣布 首届 “[自由软件峰会][10]” 在 4 月14 日之前，它以首届 “[开源峰会][11]” 被提及。
+1998 年 4 月 17 日, Tim O'Reilly 提前宣布首届 “[自由软件峰会][10]” ，在 4 月14 日之前，它以首届 “[开源峰会][11]” 被提及。
 
 这几个月对于开源来说是相当激动人心的。似乎每周都有一个新公司宣布加入计划。Reading Slashdot became a necessity, even for those like me who were only peripherally involved. I strongly believe that the new term was helpful in enabling this rapid spread into business, which then enabled wider use by the public.
 
