@@ -1,3 +1,6 @@
+translating by szcf-weiya
+
+
 Getting started with the RStudio IDE
 ======
 
