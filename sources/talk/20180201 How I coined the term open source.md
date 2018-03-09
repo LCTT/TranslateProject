@@ -25,13 +25,13 @@ The introduction of the term "open source software" was 是特地为了这个领
 
 在1997年的晚些时候，为期一周的会议将被在前瞻技术协会（Foresight Insttitue) 举行来讨论计算机安全问题。这个协会是一个非盈利性智库，它专注于纳米技术和人工智能，并且认为软件安全是二者的安全性以及可靠性的核心。我们在那确定了自由软件是一个改进软件安全可靠性且具有发展前景的方法并将寻找推动它的方式。 对自由软件的兴趣开始在编程社区外开始增长，而且越来越清晰，一个改变世界的机会正在来临。然而，该怎么做我们并不清楚，因为我们当时正在摸索中。
 
-在这些会议中，我们讨论了由于一些使人迷惑不解的原因而产生一个新术语的必要性。观点主要有以下：对于那些新接触“自由软件”的人把它（free）当成了价格。老资格的成员们肯定开始一个解释，通常像下面所说的那样：“我们的意思是自由上的，而不是免费啤酒上的。"在这个点子上，一个软件方面的讨论变成了一个关于酒精价格的讨论。问题不在于解释不了含义——问题是重要概念的名称不应该使新手们感到困惑。A clearer term was needed. No political issues were raised regarding the free software term; the issue was its lack of clarity to those new to the concept.
+在这些会议中，我们讨论了由于一些使人迷惑不解的因素而产生一个新术语的必要性。观点主要有以下：对于那些新接触“自由软件”的人把 "free" 当成了价格上的 “免费” 。老资格的成员们开始解释，通常像下面所说的那样：“我们的意思是自由的，而不是免费啤酒上的。"在这个点子上，一个软件方面的讨论变成了一个关于酒精价格的讨论。问题不在于解释不了含义——问题是重要概念的名称不应该使新手们感到困惑。所以需要一个更清晰的术语了。关于自由软件术语并没有政治上的问题；问题是缺乏对新概念的认识。
 
 ### 网景发布
 
 1998 年 2 月 2 日，Eric Raymond 抵达访问网景并与它一起计划采用免费软件样式的许可证发布浏览器代码。我们那晚在前瞻位于罗斯阿尔托斯（Los Altos）的办公室制定了策略并改进了我们的要旨。除了 Eric 和我，活跃的参与者还有 Brian Behlendorf，Michael Tiemann，Todd Anderson，Mark S. Miller and Ka-Ping Yee。但在那次会议上，这个领域仍然被描述成“自由软件”，或者用 Brian 的话说， 叫“可获得源代码的” 软件。
 
-While in town, Eric used Foresight as a base of operations. At one point during his visit, he was called to the phone to talk with a couple of Netscape legal and/or marketing staff. When he was finished, I asked to be put on the phone with them—one man and one woman, perhaps Mitchell Baker—so I could bring up the need for a new term. They agreed in principle immediately, but no specific term was agreed upon.
+在这个镇上，Eric 把前瞻协会（Foresight） 作为行动的大本营。他一开始访问行程，他就被几个网景法律和市场部门的员工通电话。当他挂电话后，我被要求带着电话跟他们——一男一女，可能是 Mitchell Baker——这样我才能谈论对于新术语的需求。他们原则上是立即同意了，但详细条款并未达成协议。
 
 在那周的会议中，我仍然关注一个更好的名字Between meetings that week, I was still focused on the need for a better name and 提出术语 “开源软件”came up with the term "open source software." While not ideal, it struck me as good enough. I ran it by at least four others: Eric Drexler, Mark Miller, and Todd Anderson liked it, while a friend in marketing and public relations felt the term "open" had been overused and abused and 相信我们能做的更好。理论上它是对的，可我想不出更好的了，所以我想尝试并推广它。 事后一想我应该直接向 Eric Raymond 提案，但在那时我并不是很了解他，所以我采取了间接的策略。
 
