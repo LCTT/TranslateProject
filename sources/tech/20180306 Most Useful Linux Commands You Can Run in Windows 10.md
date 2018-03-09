@@ -1,3 +1,5 @@
+translated by cyleft
+
 Most Useful Linux Commands You Can Run in Windows 10
 ======
 
