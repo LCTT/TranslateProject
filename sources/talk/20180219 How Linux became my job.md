@@ -1,4 +1,4 @@
-How Linux became my job
+How Linux became my job translation by ranchong
 ======
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/linux_penguin_green.png?itok=ENdVzW22)

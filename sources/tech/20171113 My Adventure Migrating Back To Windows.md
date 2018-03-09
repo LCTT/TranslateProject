@@ -1,3 +1,5 @@
+Translating by MjSeven
+
 My Adventure Migrating Back To Windows
 ======
 I have had linux as my primary OS for about a decade now, and primarily use Ubuntu. But with the latest release I have decided to migrate back to an OS I generally dislike, Windows 10.

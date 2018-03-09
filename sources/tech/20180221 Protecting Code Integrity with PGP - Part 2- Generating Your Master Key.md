@@ -1,3 +1,4 @@
+translating by kimii
 Protecting Code Integrity with PGP — Part 2: Generating Your Master Key
 ======
 

@@ -1,3 +1,5 @@
+translating---geekpi
+
 An old DOS BBS in a Docker container
 ======
 Awhile back, I wrote about [my Debian Docker base images][1]. I decided to extend this concept a bit further: to running DOS applications in Docker.
