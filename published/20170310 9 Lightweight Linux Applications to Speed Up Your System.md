@@ -1,45 +1,42 @@
 9 个提高系统运行速度的轻量级 Linux 应用
 ======
-**简介:** [加速 Ubuntu ][1]有很多方法，众多办法之一是使用轻量级应用来替代一些常用应用程序。可以查看之前发布的一篇文章[ Linux 必备的应用程序][2]。我们将分享这些应用程序在 Ubuntu 或其他 Linux 发行版的轻量级替代方案。
+
+**简介：** [加速 Ubuntu 系统][1]有很多方法，办法之一是使用轻量级应用来替代一些常用应用程序。我们之前之前发布过一篇 [Linux 必备的应用程序][2]，如今将分享这些应用程序在 Ubuntu 或其他 Linux 发行版的轻量级替代方案。
 
 ![在 ubunt 使用轻量级应用程序替代方案][4]
 
-## 9 个常用 Linux 应用程序的轻量级替代方案
+### 9 个常用 Linux 应用程序的轻量级替代方案
 
-你的 Linux 系统很慢吗？应用程序是不是很久才能打开？你最好的选择是使用[轻量级的 Linux 系统][5]。但是重装系统并非总是可行，不是吗?
+你的 Linux 系统很慢吗？应用程序是不是很久才能打开？你最好的选择是使用[轻量级的 Linux 系统][5]。但是重装系统并非总是可行，不是吗？
 
 所以如果你想坚持使用你现在用的 Linux 发行版，但是想要提高性能，你应该使用更轻量级应用来替代你一些常用的应用。这篇文章会列出各种 Linux 应用程序的轻量级替代方案。
 
 由于我使用的是 Ubuntu，因此我只提供了基于 Ubuntu 的 Linux 发行版的安装说明。但是这些应用程序可以用于几乎所有其他 Linux 发行版。你只需去找这些轻量级应用在你的 Linux 发行版中的安装方法就可以了。
 
-### 1. Midori: Web 浏览器
+### 1. Midori： Web 浏览器
 
-Midori 是与现代互联网环境具有良好兼容性的最轻量级网页浏览器之一。它是开源的，使用与 Google Chrome 最初构建的相同的渲染引擎引擎 - WebKit。并且超快速，最小化但高度可定制。
+[Midori][8] 是与现代互联网环境具有良好兼容性的最轻量级网页浏览器之一。它是开源的，使用与 Google Chrome 最初所基于的相同的渲染引擎 —— WebKit。并且超快速，最小化但高度可定制。
 
 ![Midori Browser][6]
 
 Midori 浏览器有很多可以定制的扩展和选项。如果你有最高权限，使用这个浏览器也是一个不错的选择。如果在浏览网页的时候遇到了某些问题，请查看其网站上[常见问题][7]部分 -- 这包含了你可能遇到的常见问题及其解决方案。
 
-[Midori][8]
 
 #### 在基于 Ubuntu 的发行版上安装 Midori
 
-在 Ubuntu 上，可通过官方源找到Midori 。运行以下指令即可安装它：
+在 Ubuntu 上，可通过官方源找到 Midori 。运行以下指令即可安装它：
 
 ```
- sudo apt install midori
+sudo apt install midori
 ```
-
 
 ### 2. Trojita：电子邮件客户端
 
-Trojita 是一款开源强大的 IMAP 电子邮件客户端。它速度快，资源效率高。我可以肯定地称它是 [Linux 最好的电子邮件客户端之一][9]。如果你只需在电子邮件客户端上提供 IMAP 支持，那么也许你不用再往更深一层去考虑了。
+[Trojita][11] 是一款开源强大的 IMAP 电子邮件客户端。它速度快，资源利用率高。我可以肯定地称它是 [Linux 最好的电子邮件客户端之一][9]。如果你只需电子邮件客户端提供 IMAP 支持，那么也许你不用再进一步考虑了。
 
 ![Trojitá][10]
 
-Trojita 使用各种技术 - 按需电子邮件加载，离线缓存，带宽节省模式等 -- 以实现其令人印象深刻的性能。
-
-[Trojita][11]
+Trojita 使用各种技术 —— 按需电子邮件加载、离线缓存、带宽节省模式等 —— 以实现其令人印象深刻的性能。
 
 #### 在基于 Ubuntu 的发行版上安装 Trojita
 
@@ -57,13 +54,13 @@ sudo apt install trojita
 
 有时您需要快速安装 DEB 软件包。Ubuntu 软件中心是一个消耗资源严重的应用程序，仅用于安装 .deb 文件并不明智。
 
-Gdebi 无疑是一款可以完成同样目的的漂亮工具，而它只需最小化的图形界面。
+Gdebi 无疑是一款可以完成同样目的的漂亮工具，而它只有个极简的图形界面。
 
 ![GDebi][12]
 
 GDebi 是完全轻量级的，完美无缺地完成了它的工作。你甚至应该[让 Gdebi 成为 DEB 文件的默认安装程序][13]。
 
-#### 在基于Ubuntu的发行版上安装GDebi
+#### 在基于 Ubuntu 的发行版上安装 GDebi
 
 只需一行指令，你便可以在 Ubuntu 上安装 GDebi：
 
@@ -73,13 +70,11 @@ sudo apt install gdebi
 
 ### 4. App Grid：软件中心
 
-如果您经常在 Ubuntu 上使用软件中心搜索，安装和管理应用程序，则 App Grid 是必备的应用程序。它是默认的 Ubuntu 软件中心最具视觉吸引力且速度最快的替代方案。
+如果您经常在 Ubuntu 上使用软件中心搜索、安装和管理应用程序，则 [App Grid][15] 是必备的应用程序。它是默认的 Ubuntu 软件中心最具视觉吸引力且速度最快的替代方案。
 
 ![App Grid][14]
 
-App Grid 支持应用程序的评分，评论和屏幕截图。
-
-[App Grid][15]
+App Grid 支持应用程序的评分、评论和屏幕截图。
 
 #### 在基于 Ubuntu 的发行版上安装 App Grid
 
@@ -93,17 +88,15 @@ sudo apt install appgrid
 
 ### 5. Yarock：音乐播放器
 
-Yarock 是一个优雅的音乐播放器，拥有现代而最轻量级的用户界面。尽管在设计上是轻量级的，但 Yarock 有一个全面的高级功能列表。
+[Yarock][17] 是一个优雅的音乐播放器，拥有现代而最轻量级的用户界面。尽管在设计上是轻量级的，但 Yarock 有一个全面的高级功能列表。
 
 ![Yarock][16]
 
 Yarock 的主要功能包括多种音乐收藏、评级、智能播放列表、多种后端选项、桌面通知、音乐剪辑、上下文获取等。
 
-[Yarock][17]
-
 ### 在基于 Ubuntu 的发行版上安装 Yarock
 
-您得通过PPA使用以下指令在 Ubuntu上 安装 Yarock：
+您得通过 PPA 使用以下指令在 Ubuntu 上安装 Yarock：
 
 ```
 sudo add-apt-repository ppa:nilarimogard/webupd8
@@ -113,17 +106,15 @@ sudo apt install yarock
 
 ### 6. VLC：视频播放器
 
-谁不需要视频播放器？谁还从未听说过 VLC？我想并不需要对它做任何介绍。
+谁不需要视频播放器？谁还从未听说过 [VLC][19]？我想并不需要对它做任何介绍。
 
 ![VLC][18]
 
-VLC 能满足你在 Ubuntu 上播放各种媒体文件的全部需求，而且他非常轻便。它甚至可以再非常旧的 PC 上完美运行。
-
-[VLC][19]
+VLC 能满足你在 Ubuntu 上播放各种媒体文件的全部需求，而且它非常轻便。它甚至可以在非常旧的 PC 上完美运行。
 
 #### 在基于 Ubuntu 的发行版上安装 VLC 
 
-VLC 为 Ubuntu 提供官方PPA。可以输入以下命令来安装它：
+VLC 为 Ubuntu 提供官方 PPA。可以输入以下命令来安装它：
 
 ```
 sudo apt install vlc
@@ -163,18 +154,17 @@ sudo apt install mousepad
 
 ### 9. GNOME Office：办公软件
 
-许多人需要经常使用办公应用程序。通常，大多数办公应用程序体积庞大且资源匮乏。Gnome Office 在这方面非常轻便。Gnome Office 在技术上不是一个完整的办公套件。它由不同的独立应用程序组成，在这之中 AbiWord＆Gnumeric 脱颖而出。
+许多人需要经常使用办公应用程序。通常，大多数办公应用程序体积庞大且很耗资源。Gnome Office 在这方面非常轻便。Gnome Office 在技术上不是一个完整的办公套件。它由不同的独立应用程序组成，在这之中 AbiWord＆Gnumeric 脱颖而出。
 
-**AbiWord** 是文字处理器。它比其他替代品轻巧并且快得多。但是这样做是有代价的 -- 你可能会失去宏、语法检查等一些功能。AdiWord 并不完美，但它可以满足你基本的需求。
+**AbiWord** 是文字处理器。它比其他替代品轻巧并且快得多。但是这样做是有代价的 —— 你可能会失去宏、语法检查等一些功能。AdiWord 并不完美，但它可以满足你基本的需求。
+
 ![AbiWord][22]
 
 **Gnumeric** 是电子表格编辑器。就像 AbiWord 一样，Gnumeric 也非常快速，提供了精确的计算功能。如果你正在寻找一个简单轻便的电子表格编辑器，Gnumeric 已经能满足你的需求了。
 
 ![Gnumeric][23]
 
-下面列出一些其他 Gnome Office 应用程序。你可以在官方页面找到它们。
-
-[Gnome Office][24]
+在 [Gnome Office][24] 下面还有一些其它应用程序。你可以在官方页面找到它们。
 
 #### 在基于 Ubuntu 的发行版上安装 AbiWord＆Gnumeric
 
@@ -190,7 +180,7 @@ via: https://itsfoss.com/lightweight-alternative-applications-ubuntu/
 
 作者：[Munif Tanjim][a]
 译者：[imquanquan](https://github.com/imquanquan)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -203,7 +193,7 @@ via: https://itsfoss.com/lightweight-alternative-applications-ubuntu/
 [7]:http://midori-browser.org/faqs/
 [8]:http://midori-browser.org/
 [9]:https://itsfoss.com/best-email-clients-linux/
-[10]:https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2017/03/Trojit%C3%A1-800x608.png
+[10]:http://trojita.flaska.net/img/2016-03-22-trojita-home.png
 [11]:http://trojita.flaska.net/
 [12]:https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2017/03/GDebi.png
 [13]:https://itsfoss.com/gdebi-default-ubuntu-software-center/
