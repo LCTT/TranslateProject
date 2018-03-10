@@ -1,3 +1,5 @@
+lontow Translating
+
 Evolutional Steps of Computer Systems
 ======
 Throughout the history of the modern computer, there were several evolutional steps related to the way we interact with the system. I tend to categorize those steps as following:
