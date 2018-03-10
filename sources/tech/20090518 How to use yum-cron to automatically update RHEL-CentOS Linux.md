@@ -1,3 +1,5 @@
+translating by shipsw
+
 How to use yum-cron to automatically update RHEL/CentOS Linux
 ======
 The yum command line tool is used to install and update software packages under RHEL / CentOS Linux server. I know how to apply updates using [yum update command line][1], but I would like to use cron to update packages where appropriate manually. How do I configure yum to install software patches/updates [automatically with cron][2]?
