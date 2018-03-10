@@ -51,7 +51,7 @@ Toward the end of the meeting, the [question of terminology][8] was brought up
 
 But I was elated. These were some key leaders in the community, and they liked the new name, or at least didn't object. This was a very good sign. There was probably not much more I could do to help; Eric Raymond was far better positioned to spread the new meme, and he did. Bruce Perens signed on to the effort immediately, helping set up [Opensource.org][9] and playing a key role in spreading the new term.
 
-For the name to succeed, it was necessary, or at least highly desirable, that Tim O'Reilly agree and actively use it in his many projects on behalf of the community. Also helpful would be use of the term in the upcoming official release of the Netscape Navigator code. By late February, both O'Reilly & Associates and Netscape had started to use the term.
+对于成功的名字，那很必要，甚至是相当渴望， 因此 Tim O'Reilly 同意以社区的名义在公司积极使用它。 Also helpful would be use of the term in the upcoming official release of the Netscape Navigator code. 到二月底， O'Reilly & Associates 还有网景公司（Netscape） 已经开始使用新术语。
 
 ### 名字的诞生
 
@@ -59,7 +59,7 @@ For the name to succeed, it was necessary, or at least highly desirable, that Ti
 
 1998 年 4 月 17 日, Tim O'Reilly 提前宣布首届 “[自由软件峰会][10]” ，在 4 月14 日之前，它以首届 “[开源峰会][11]” 被提及。
 
-这几个月对于开源来说是相当激动人心的。似乎每周都有一个新公司宣布加入计划。Reading Slashdot became a necessity, even for those like me who were only peripherally involved. I strongly believe that the new term was helpful in enabling this rapid spread into business, which then enabled wider use by the public.
+这几个月对于开源来说是相当激动人心的。似乎每周都有一个新公司宣布加入计划。Reading Slashdot became a necessity, even for those like me who were only peripherally involved. 我十分相信新术语能对快速传播到商业很有帮助，能被公众广泛使用。
 
 尽管快捷的谷歌搜索表明“开源”比“自由软件”出现的更多，但后者仍然有大量的使用，特别是和偏爱它的人们沟通的时候。
 
@@ -69,7 +69,7 @@ For the name to succeed, it was necessary, or at least highly desirable, that Ti
 
 想出这个短语只是一个小贡献，但是我得承认我十分感激那些把它归功于我的人。每次我听到它，它都给我些许激动的喜悦，到现在也时常感受到。
 
-说服团队的大功劳归功于Eric Raymond和 Tim O'Reilly，这是他们搞定的。感谢他们对我的评价，并感谢Todd Anderson 在整个过程中的角色。以上内容并非完整的开源历史记录，对很多没有无名人士表示歉意。那些寻求更完整讲述的人应该参考本文和网上其他地方的链接。
+说服团队的大功劳归功于 Eric Raymond 和 Tim O'Reilly，这是他们搞定的。感谢他们对我的评价，并感谢 Todd Anderson 在整个过程中的角色。以上内容并非完整的开源历史记录，对很多没有无名人士表示歉意。那些寻求更完整讲述的人应该参考本文和网上其他地方的链接。
 
 ### 关于作者
 
