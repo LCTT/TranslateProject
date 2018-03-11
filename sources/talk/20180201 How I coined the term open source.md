@@ -43,7 +43,7 @@ Todd 强烈同意需要新的术语并提供协助推广它。这很有帮助，
 
 会议的主要议题是推广策略，特别是要接洽的公司。 我几乎没说什么，而是在寻找机会推广已经提交讨论的术语。我觉得突然脱口而出那句话没什么用，“你们技术人员应当开始讨论我的新术语了。”他们大多数与会者不认识我，而且据我所知，他们可能甚至不同意对新术语的急切需求，或者是某种渴望。I felt that it wouldn't work for me to just blurt out, "All you technical people should start using my new term." Most of those attending didn't know me, and for all I knew, they might not even agree that a new term was greatly needed, or even somewhat desirable.
 
-Fortunately, Todd was on the ball. Instead of making an assertion that the community should use this specific new term, he did something less directive—a smart thing to do with this community of strong-willed individuals. He simply used the term in a sentence on another topic—just dropped it into the conversation to see what happened. I went on alert, hoping for a response, but there was none at first. The discussion continued on the original topic. It seemed only he and I had noticed the usage.
+Fortunately, Todd was on the ball. 他没有主张社区应该用哪个特定的术语，而是间接地做了一些事——一件和社区里有强烈意愿的人做的明智之举。他简单地在其他话题中使用那个术语——把他放进对话里看看会发生什么。我警觉起来，希望得到一个答复，但是起初什么也没有。讨论继续进行原来的话题。似乎只有他和我注意了术语的使用。
 
 Not so—memetic evolution was in action. A few minutes later, one of the others used the term, evidently without noticing, still discussing a topic other than terminology. Todd and I looked at each other out of the corners of our eyes to check: yes, we had both noticed what happened. I was excited—it might work! But I kept quiet: I still had low status in this group. Probably some were wondering why Eric had invited me at all.
 
