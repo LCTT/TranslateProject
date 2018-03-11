@@ -39,9 +39,9 @@ Todd 强烈同意需要新的术语并提供协助推广它。这很有帮助，
 
 ### 关键的会议
 
-Later that week, on February 5, 1998, a group was assembled at VA Research to brainstorm on strategy. Attending—in addition to Eric Raymond, Todd, and me—were Larry Augustin, Sam Ockman, and attending by phone, Jon "maddog" Hall.
+那周之后，1998 年的 2 月 5 日，一伙人在 VA research 进行头脑风暴商量对策。与会者——除了 Eric Raymond，Todd和我之外，还有 Larry Augustin，Sam Ockman，还有Jon“maddog”Hall 的电话。
 
-会议的主要议题是推广策略，特别是要接洽的公司。 我几乎没说什么，而是在寻找机会推广已经提交讨论的术语。I felt that it wouldn't work for me to just blurt out, "All you technical people should start using my new term." Most of those attending didn't know me, and for all I knew, they might not even agree that a new term was greatly needed, or even somewhat desirable.
+会议的主要议题是推广策略，特别是要接洽的公司。 我几乎没说什么，而是在寻找机会推广已经提交讨论的术语。我觉得突然脱口而出那句话没什么用，“你们技术人员应当开始讨论我的新术语了。”他们大多数与会者不认识我，而且据我所知，他们可能甚至不同意对新术语的急切需求，或者是某种渴望。I felt that it wouldn't work for me to just blurt out, "All you technical people should start using my new term." Most of those attending didn't know me, and for all I knew, they might not even agree that a new term was greatly needed, or even somewhat desirable.
 
 Fortunately, Todd was on the ball. Instead of making an assertion that the community should use this specific new term, he did something less directive—a smart thing to do with this community of strong-willed individuals. He simply used the term in a sentence on another topic—just dropped it into the conversation to see what happened. I went on alert, hoping for a response, but there was none at first. The discussion continued on the original topic. It seemed only he and I had noticed the usage.
 
@@ -51,7 +51,7 @@ Toward the end of the meeting, the [question of terminology][8] was brought up
 
 But I was elated. These were some key leaders in the community, and they liked the new name, or at least didn't object. This was a very good sign. There was probably not much more I could do to help; Eric Raymond was far better positioned to spread the new meme, and he did. Bruce Perens signed on to the effort immediately, helping set up [Opensource.org][9] and playing a key role in spreading the new term.
 
-对于成功的名字，那很必要，甚至是相当渴望， 因此 Tim O'Reilly 同意以社区的名义在公司积极使用它。 Also helpful would be use of the term in the upcoming official release of the Netscape Navigator code. 到二月底， O'Reilly & Associates 还有网景公司（Netscape） 已经开始使用新术语。
+对于这个成功的名字，那很必要，甚至是相当渴望， 因此 Tim O'Reilly 同意以社区的名义在公司积极使用它。 Also helpful would be use of the term in the upcoming official release of the Netscape Navigator code. 到二月底， O'Reilly & Associates 还有网景公司（Netscape） 已经开始使用新术语。
 
 ### 名字的诞生
 
@@ -65,7 +65,7 @@ But I was elated. These were some key leaders in the community, and they liked t
 
 ### 一丝快感
 
-当一个被 Eric Raymond写的有关修改术语的早期的陈述被发布在了开放源代码促进会的网站上时，我上了 VA 头脑风暴会议的名单，但并不是作为一个术语的创始人。这是我自己的错，我没告诉 Eric 细节。我一时冲动只想让它表决通过然后我呆在后台，但是 Todd 不这样认为。他认为我总有一天将作为“开源软件”这个名词的创造者而感到高兴。他向 Eric 解释了这个情况，Eric 及时更新了它的网站。
+当一个被 Eric Raymond 写的有关修改术语的早期的陈述被发布在了开放源代码促进会的网站上时，我上了 VA 头脑风暴会议的名单，但并不是作为一个术语的创始人。这是我自己的错，我没告诉 Eric 细节。我当时一时冲动只想让它表决通过然后我只是呆在后台，但是 Todd 不这样认为。他认为我总有一天将作为“开源软件”这个名词的创造者而感到高兴。他向 Eric 解释了这个情况，Eric 及时更新了它的网站。
 
 想出这个短语只是一个小贡献，但是我得承认我十分感激那些把它归功于我的人。每次我听到它，它都给我些许激动的喜悦，到现在也时常感受到。
 
