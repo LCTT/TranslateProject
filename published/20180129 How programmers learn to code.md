@@ -3,10 +3,9 @@
 
  [![How programmers learn to code](https://mybroadband.co.za/news/wp-content/uploads/2016/01/Programmer-working-computer-code.jpg)][8] 
 
-
 HackerRank 最近公布了 2018 年开发者技能报告的结果，其中向程序员询问了他们何时开始编码。
 
-39,441 名专业和学生开发者于 2016 年 10 月 16 日至 11 月 1 日完成了在线调查，超过 25％ 的被调查的开发者在 16 岁前编写了他们的第一段代码。
+39,441 名专业人员和学生开发者于 2016 年 10 月 16 日至 11 月 1 日完成了在线调查，超过 25％ 的被调查的开发者在 16 岁前编写了他们的第一段代码。（LCTT 译注：日期恐有误）
 
 ### 程序员是如何学习的
 
@@ -16,7 +15,7 @@ HackerRank 最近公布了 2018 年开发者技能报告的结果，其中向程
 
 开发者平均了解四种语言，但他们想学习更多语言。
 
-对学习的渴望因人而异 - 18 至 24 岁的开发者计划学习 6 种语言，而 35 岁以上的开发者只计划学习 3 种语言。
+对学习的渴望因人而异 —— 18 至 24 岁的开发者计划学习 6 种语言，而 35 岁以上的开发者只计划学习 3 种语言。
 
  [![HackerRank 2018 how did you learn to code](https://mybroadband.co.za/news/wp-content/uploads/2018/01/HackerRank-2018-how-did-you-learn-to-code.jpg)][5] 
 
@@ -46,9 +45,9 @@ HackerRank 说：“在某些方面，我们发现了一个小矛盾。开发人
 
 via: https://mybroadband.co.za/news/smartphones/246583-how-programmers-learn-to-code.html
 
-作者：[Staff Writer ][a]
+作者：[Staff Writer][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
