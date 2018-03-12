@@ -77,7 +77,7 @@ $ sudo systemctl start radvd
 
 这个示例在我的 Ubuntu 测试系统中遇到了一个怪事；radvd 总是停止，我查看它的状态却没有任何问题，做任何改变之后都需要重新启动 radvd。
 
-启动成功后没有任何输出，并且失败也是如此，因此，需要运行 `sudo systemctl radvd status` 去查看它的运行状态。如果有错误，`systemctl` 会告诉你。一般常见的错误都是 `/etc/radvd.conf` 中的语法错误。
+启动成功后没有任何输出，并且失败也是如此，因此，需要运行 `sudo systemctl status radvd` 去查看它的运行状态。如果有错误，`systemctl` 会告诉你。一般常见的错误都是 `/etc/radvd.conf` 中的语法错误。
 
 在 Twitter 上抱怨了上述问题之后，我学到了一件很酷的技巧：当你运行 ` journalctl -xe --no-pager` 去调试 `systemctl` 错误时，你的输出会被换行，然后，你就可以看到错误信息。
 
