@@ -1,3 +1,5 @@
+translating by Flowsnow
+
 How to check your network connections on Linux
 ======
 
@@ -84,7 +86,6 @@ default via 192.168.0.1 dev enp0s25 proto static metric 100
 ```
 
 The **ip** command is extremely versatile. You can get a helpful cheat sheet on the **ip** command and its options from [Red Hat][1].
-
 
 --------------------------------------------------------------------------------
 
