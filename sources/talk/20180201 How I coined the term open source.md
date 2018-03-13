@@ -33,7 +33,7 @@
 
 在这个镇上，Eric 把前瞻协会（Foresight） 作为行动的大本营。他一开始访问行程，他就被几个网景法律和市场部门的员工通电话。当他挂电话后，我被要求带着电话跟他们——一男一女，可能是 Mitchell Baker——这样我才能谈论对于新术语的需求。他们原则上是立即同意了，但详细条款并未达成协议。
 
-在那周的会议中，我仍然专注于起一个更好的名字并提出术语 “开源软件”came up with the term "open source software." While not ideal, it struck me as good enough. I ran it by at least four others: Eric Drexler, Mark Miller, and Todd Anderson liked it, 然而一个从事市场公关朋友觉得术语“open”被滥用了并且相信我们能做更好再说。理论上它是对的，可我想不出更好的了，所以我想尝试并推广它。 事后一想我应该直接向 Eric Raymond 提案，但在那时我并不是很了解他，所以我采取了间接的策略。
+在那周的会议中，我仍然专注于起一个更好的名字并提出术语 “开源软件”came up with the term "open source software." While not ideal, it struck me as good enough. I ran it by at least four others: Eric Drexler, Mark Miller, and Todd Anderson liked it, 然而一个从事市场公关的朋友觉得术语“open”被滥用了并且相信我们能做更好再说。理论上它是对的，可我想不出更好的了，所以我想尝试并推广它。 事后一想我应该直接向 Eric Raymond 提案，但在那时我并不是很了解他，所以我采取了间接的策略。
 
 Todd 强烈同意需要新的术语并提供协助推广它。这很有帮助，因为作为一个非编程人员，我在自由软件社区的影响力很弱。我从事的纳米技术是一个加分项，但不足以让我认真地接受自由软件问题的工作。作为一个Linux程序员，Todd 将会更仔细地聆听它。
 
@@ -43,11 +43,11 @@ Todd 强烈同意需要新的术语并提供协助推广它。这很有帮助，
 
 会议的主要议题是推广策略，特别是要接洽的公司。 我几乎没说什么，而是在寻找机会推广已经提交讨论的术语。我觉得突然脱口而出那句话没什么用，“你们技术人员应当开始讨论我的新术语了。”他们大多数与会者不认识我，而且据我所知，他们可能甚至不同意对新术语的急切需求，或者是某种渴望。I felt that it wouldn't work for me to just blurt out, "All you technical people should start using my new term." Most of those attending didn't know me, and for all I knew, they might not even agree that a new term was greatly needed, or even somewhat desirable.
 
-Fortunately, Todd was on the ball. 他没有主张社区应该用哪个特定的术语，而是间接地做了一些事——一件和社区里有强烈意愿的人做的明智之举。他简单地在其他话题中使用那个术语——把他放进对话里看看会发生什么。我警觉起来，希望得到一个答复，但是起初什么也没有。讨论继续进行原来的话题。似乎只有他和我注意了术语的使用。
+幸运的是，Todd 是明智的。他没有主张社区应该用哪个特定的术语，而是间接地做了一些事——一件和社区里有强烈意愿的人做的明智之举。他简单地在其他话题中使用那个术语——把他放进对话里看看会发生什么。我警觉起来，希望得到一个答复，但是起初什么也没有。讨论继续进行原来的话题。似乎只有他和我注意了术语的使用。
 
 Not so—memetic evolution was in action. A few minutes later, one of the others used the term, evidently without noticing, still discussing a topic other than terminology. Todd and I looked at each other out of the corners of our eyes to check: yes, we had both noticed what happened. I was excited—it might work! But I kept quiet: I still had low status in this group. Probably some were wondering why Eric had invited me at all.
 
-临近会议尾声，Toward the end of the meeting, the [question of terminology][8] was brought up explicitly, probably by Todd or Eric. Maddog mentioned "freely distributable" as an earlier term, and "cooperatively developed" as a newer term. Eric listed "free software," "open source," and "sourceware" as the main options. Todd advocated the "open source" model, and Eric endorsed this. I didn't say much, letting Todd and Eric pull the (loose, informal) consensus together around the open source name. It was clear that to most of those at the meeting, the name change was not the most important thing discussed there; a relatively minor issue. 只有大约10%我在会议中的说明都放在了术语问答中。
+临近会议尾声，可能是 Todd or Eric，[术语问题][8] 被明确提出。Maddog 提及了一个早期的术语“可自由分发的，和一个新的术语“合作开发的”。Eric列出了“自由软件”、“开源软件”，并把[unknown]作为主要选项。Todd宣传“开源”模型，然后Eric 支持了他。我什么也没说，letting Todd and Eric pull the (loose, informal) consensus together around the open source name. It was clear that to most of those at the meeting, the name change was not the most important thing discussed there; a relatively minor issue. 只有我在会议中大约10%的说明放在了术语问答中。
 
 But I was elated. These were some key leaders in the community, and they liked the new name, or at least didn't object. This was a very good sign. There was probably not much more I could do to help; Eric Raymond was far better positioned to spread the new meme, and he did. Bruce Perens signed on to the effort immediately, helping set up [Opensource.org][9] and playing a key role in spreading the new term.
 
