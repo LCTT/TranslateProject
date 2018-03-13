@@ -1,3 +1,5 @@
+Translating by MjSeven
+
 How to Use GNOME Shell Extensions [Complete Guide]
 ======
 **Brief: This is a detailed guide showing you how to install GNOME Shell Extensions manually or easily via a browser. **
