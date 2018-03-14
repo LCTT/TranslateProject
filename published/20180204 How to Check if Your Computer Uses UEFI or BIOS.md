@@ -1,21 +1,20 @@
 如何检查你的计算机使用的是 UEFI 还是 BIOS
 ======
-**简介：一个快速的教程，来告诉你的系统使用的是现代 UEFI 或者传统 BIOS。同时提供 Windows 和 Linux 的说明。**
 
-当你尝试[双启动 Linux 和 Windows ][1]时，你需要知道系统上是否有 UEFI 或 BIOS 启动模式。它可以帮助你决定安装 Linux 的分区。
+**简介：这是一个快速的教程，来告诉你的系统使用的是现代 UEFI 或者传统 BIOS。同时提供 Windows 和 Linux 的说明。**
+
+当你尝试[双启动 Linux 和 Windows][1] 时，你需要知道系统上是否有 UEFI 或 BIOS 启动模式。它可以帮助你决定安装 Linux 的分区。
 
 我不打算在这里讨论[什么是 BIOS][2]。不过，我想通过 BIOS 告诉你一些 [UEFI][3] 的优点。
 
-UEFI 或者说统一可扩展固件接口旨在克服 BIO S的某些限制。它增加了使用大于 2TB 磁盘的能力，并具有独立于 CPU 的体系结构和驱动程序。采用模块化设计，即使没有安装操作系统，也可以支持远程诊断和修复，以及灵活的无操作系统环境（包括网络功能）。
+UEFI 即（<ruby>统一可扩展固件接口<rt>Unified Extensible Firmware Interface</rt></ruby>）旨在克服 BIOS 的某些限制。它增加了使用大于 2TB 磁盘的能力，并具有独立于 CPU 的体系结构和驱动程序。采用模块化设计，即使没有安装操作系统，也可以支持远程诊断和修复，以及灵活的无操作系统环境（包括网络功能）。
 
-### UEFI 优于 BIOS 的点
+### UEFI 优于 BIOS 的地方
 
-  * UEFI在初始化硬件时速度更快。
+  * UEFI 在初始化硬件时速度更快。
   * 提供安全启动，这意味着你在加载操作系统之前加载的所有内容都必须签名。这为你的系统提供了额外的保护层。
   * BIOS 不支持超过 2TB 的分区。
   * 最重要的是，如果你是双引导，那么建议始终在相同的引导模式下安装两个操作系统。
-
-
 
 ![How to check if system has UEFI or BIOS][4]
 
@@ -27,39 +26,39 @@ UEFI 或者说统一可扩展固件接口旨在克服 BIO S的某些限制。它
 
 ![][5]
 
-**另一个方法**：如果你使用 Windows 10，可以打开文件资源管理器并进入到  C:\Windows\Panther 来查看你使用的是 UEFI 还是 BIOS。打开文件 setupact.log 并搜索下面的字符串。
+**另一个方法**：如果你使用 Windows 10，可以打开文件资源管理器并进入到  `C:\Windows\Panther` 来查看你使用的是 UEFI 还是 BIOS。打开文件 setupact.log 并搜索下面的字符串。
+
 ```
 Detected boot environment
-
 ```
 
-我建议在 notepad++ 中打开这个文件，因为这是一个很大的文件和记事本可能挂起（至少它对我来说是 6GB ）。
+我建议在 notepad++ 中打开这个文件，因为这是一个很大的文件，记事本很可能挂起（至少它对我来说是 6GB ！）。
 
 你会看到几行有用的信息。
+
 ```
 2017-11-27 09:11:31, Info IBS Callback_BootEnvironmentDetect:FirmwareType 1.
 2017-11-27 09:11:31, Info IBS Callback_BootEnvironmentDetect: Detected boot environment: BIOS
-
 ```
 
 ### 在 Linux 中检查使用的是 UEFI 还是 BIOS
 
-最简单地找出使用的是 UEFI 还是 BIOS 的方法是查找 /sys/firmware/efi 文件夹。如果使用的 BIOS 那么文件夹不存在。
+最简单地找出使用的是 UEFI 还是 BIOS 的方法是查找 `/sys/firmware/efi` 文件夹。如果使用的 BIOS 那么该文件夹不存在。
 
 ![Find if system uses UEFI or BIOS on Ubuntu Linux][6]
 
 **另一种方法**：安装名为 efibootmgr 的软件包。
 
 在基于 Debian 和 Ubuntu 的发行版中，你可以使用以下命令安装 efibootmgr 包：
+
 ```
 sudo apt install efibootmgr
-
 ```
 
 完成后，输入以下命令：
+
 ```
 sudo efibootmgr
-
 ```
 
 如果你的系统支持 UEFI，它会输出不同的变量。如果没有，你将看到一条消息指出 EFI 变量不支持。
@@ -76,7 +75,7 @@ via: https://itsfoss.com/check-uefi-or-bios/
 
 作者：[Ambarish Kumar][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
