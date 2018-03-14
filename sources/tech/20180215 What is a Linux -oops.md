@@ -1,3 +1,5 @@
+translating----geekpi
+
 What is a Linux 'oops'?
 ======
 If you check the processes running on your Linux systems, you might be curious about one called "kerneloops." And that’s “kernel oops,” not “kerne loops” just in case you didn’t parse that correctly.
