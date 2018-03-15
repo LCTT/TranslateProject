@@ -1,5 +1,8 @@
+translating by Flowsnow
+
 How To Check All Running Services In Linux
 ======
+
 There are many ways and tools to check and list all running services in Linux. Usually most of the administrator use `service service-name status` or `/etc/init.d/service-name status` for sysVinit system and `systemctl status service-name` for systemd systems.
 
 The above command clearly shows that the mentioned service is running on server or not. It is very simple and basic command that should known by every Linux administrator.
