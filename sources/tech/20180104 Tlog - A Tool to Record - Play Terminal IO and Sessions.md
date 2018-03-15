@@ -1,3 +1,5 @@
+translating---geekpi
+
 Tlog - A Tool to Record / Play Terminal IO and Sessions
 ======
 Tlog is a terminal I/O recording and playback package for Linux Distros. It's suitable for implementing centralized user session recording. It logs everything that passes through as JSON messages. The primary purpose of logging in JSON format is to eventually deliver the recorded data to a storage service such as Elasticsearch, where it can be searched and queried, and from where it can be played back. At the same time, they retain all the passed data and timing.
