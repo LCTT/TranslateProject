@@ -1,3 +1,4 @@
+Translating by qhwdw
 Will DevOps steal my job?
 ======
 
