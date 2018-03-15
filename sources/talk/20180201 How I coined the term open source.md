@@ -45,7 +45,7 @@ Todd 强烈同意需要新的术语并提供协助推广它。这很有帮助，
 
 幸运的是，Todd 是明智的。他没有主张社区应该用哪个特定的术语，而是间接地做了一些事——一件和社区里有强烈意愿的人做的明智之举。他简单地在其他话题中使用那个术语——把他放进对话里看看会发生什么。我警觉起来，希望得到一个答复，但是起初什么也没有。讨论继续进行原来的话题。似乎只有他和我注意了术语的使用。
 
-Not so—memetic evolution was in action. A few minutes later, one of the others used the term, evidently without noticing, still discussing a topic other than terminology. Todd and I looked at each other out of the corners of our eyes to check: yes, we had both noticed what happened. I was excited—it might work! But I kept quiet: I still had low status in this group. Probably some were wondering why Eric had invited me at all.
+不仅如此——模因演化（人类学术语）在起作用。几分钟后，另一个人明显地，没有提醒地，在仍然进行话题讨论而没说术语的情况下，用了这个术语。Todd 和我面面相觑对视：是的我们都注意到了发生的事。我很激动——它起作用了！但我保持了安静：我在小组中仍然地位不高。可能有些人都奇怪为什么 Eric 会最终邀请我。
 
 临近会议尾声，可能是 Todd or Eric，[术语问题][8] 被明确提出。Maddog 提及了一个早期的术语“可自由分发的，和一个新的术语“合作开发的”。Eric列出了“自由软件”、“开源软件”，并把[unknown]作为主要选项。Todd宣传“开源”模型，然后Eric 支持了他。我什么也没说，letting Todd and Eric pull the (loose, informal) consensus together around the open source name. It was clear that to most of those at the meeting, the name change was not the most important thing discussed there; a relatively minor issue. 只有我在会议中大约10%的说明放在了术语问答中。
 
