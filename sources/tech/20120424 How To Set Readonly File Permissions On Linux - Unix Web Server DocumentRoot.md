@@ -1,3 +1,5 @@
+translating by yizhuoyan
+
 How To Set Readonly File Permissions On Linux / Unix Web Server DocumentRoot
 ======
 

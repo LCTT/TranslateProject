@@ -1,3 +1,5 @@
+Translating by MjSeven
+
 How to use GNU Stow to manage programs installed from source and dotfiles
 ======
 
