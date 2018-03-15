@@ -25,7 +25,7 @@
 
 在1997年的晚些时候，为期一周的会议将被在前瞻技术协会（Foresight Insttitue) 举行来讨论计算机安全问题。这个协会是一个非盈利性智库，它专注于纳米技术和人工智能，并且认为软件安全是二者的安全性以及可靠性的核心。我们在那确定了自由软件是一个改进软件安全可靠性且具有发展前景的方法并将寻找推动它的方式。 对自由软件的兴趣开始在编程社区外开始增长，而且越来越清晰，一个改变世界的机会正在来临。然而，该怎么做我们并不清楚，因为我们当时正在摸索中。
 
-在这些会议中，我们讨论了由于一些使人迷惑不解的因素而产生一个新术语的必要性。观点主要有以下：对于那些新接触“自由软件”的人把 "free" 当成了价格上的 “免费” 。老资格的成员们开始解释，通常像下面所说的那样：“我们的意思是自由的，而不是免费啤酒上的。"在这个点子上，一个软件方面的讨论变成了一个关于酒精价格的讨论。问题不在于解释不了含义——问题是重要概念的名称不应该使新手们感到困惑。所以需要一个更清晰的术语了。关于自由软件术语并没有政治上的问题；问题是缺乏对新概念的认识。
+在这些会议中，我们讨论了一些由于使人迷惑不解的因素而产生一个新术语的必要性。观点主要有以下：对于那些新接触“自由软件”的人把 "free" 当成了价格上的 “免费” 。老资格的成员们开始解释，通常像下面所说的那样：“我们的意思是自由的，而不是免费啤酒上的。"在这个点子上，一个软件方面的讨论变成了一个关于酒精价格的讨论。问题不在于解释不了含义——问题是重要概念的名称不应该使新手们感到困惑。所以需要一个更清晰的术语了。关于自由软件术语并没有政治上的问题；问题是缺乏对新概念的认识。
 
 ### 网景发布
 
@@ -49,9 +49,9 @@ Not so—memetic evolution was in action. A few minutes later, one of the others
 
 临近会议尾声，可能是 Todd or Eric，[术语问题][8] 被明确提出。Maddog 提及了一个早期的术语“可自由分发的，和一个新的术语“合作开发的”。Eric列出了“自由软件”、“开源软件”，并把[unknown]作为主要选项。Todd宣传“开源”模型，然后Eric 支持了他。我什么也没说，letting Todd and Eric pull the (loose, informal) consensus together around the open source name. It was clear that to most of those at the meeting, the name change was not the most important thing discussed there; a relatively minor issue. 只有我在会议中大约10%的说明放在了术语问答中。
 
-But I was elated. These were some key leaders in the community, and they liked the new name, or at least didn't object. This was a very good sign. There was probably not much more I could do to help; Eric Raymond was far better positioned to spread the new meme, and he did. Bruce Perens signed on to the effort immediately, helping set up [Opensource.org][9] and playing a key role in spreading the new term.
+但是我很高兴。那有许多社区的关键领导人，并且他们喜欢新名字，或者至少没反对。这是一个好的信号信号。可能我帮不上什么忙； Eric Raymond was far better positioned to spread the new meme, and he did. Bruce Perens signed on to the effort immediately, 帮助建立 [Opensource.org][9] 并在新术语的宣传中扮演一个重要角色。
 
-对于这个成功的名字，那很必要，甚至是相当渴望， 因此 Tim O'Reilly 同意以社区的名义在公司积极使用它。 Also helpful would be use of the term in the upcoming official release of the Netscape Navigator code. 到二月底， O'Reilly & Associates 还有网景公司（Netscape） 已经开始使用新术语。
+对于这个成功的名字，那很必要，甚至是相当渴望， 因此 Tim O'Reilly 同意以社区的名义在公司积极使用它。 Also helpful would be use of the term in the upcoming official release of the Netscape Navigator（网景浏览器）代码。 到二月底， O'Reilly & Associates 还有网景公司（Netscape） 已经开始使用新术语。
 
 ### 名字的诞生
 
@@ -59,7 +59,7 @@ But I was elated. These were some key leaders in the community, and they liked t
 
 1998 年 4 月 17 日, Tim O'Reilly 提前宣布首届 “[自由软件峰会][10]” ，在 4 月14 日之前，它以首届 “[开源峰会][11]” 被提及。
 
-这几个月对于开源来说是相当激动人心的。似乎每周都有一个新公司宣布加入计划。Reading Slashdot became a necessity, even for those like me who were only peripherally involved. 我十分相信新术语能对快速传播到商业很有帮助，能被公众广泛使用。
+这几个月对于开源来说是相当激动人心的。似乎每周都有一个新公司宣布加入计划。读 Slashdot（科技资讯网站）已经成了一个必需操作, even for those like me who were only peripherally involved. 我十分相信新术语能对快速传播到商业很有帮助，能被公众广泛使用。
 
 尽管快捷的谷歌搜索表明“开源”比“自由软件”出现的更多，但后者仍然有大量的使用，特别是和偏爱它的人们沟通的时候。
 
