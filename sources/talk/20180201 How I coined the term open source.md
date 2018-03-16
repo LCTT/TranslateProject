@@ -41,17 +41,17 @@ Todd 强烈同意需要新的术语并提供协助推广它。这很有帮助，
 
 那周之后，1998 年的 2 月 5 日，一伙人在 VA research 进行头脑风暴商量对策。与会者——除了 Eric Raymond，Todd和我之外，还有 Larry Augustin，Sam Ockman，还有 Jon“maddog”Hall 的电话。
 
-会议的主要议题是推广策略，特别是要接洽的公司。 我几乎没说什么，而是在寻找机会推广已经提交讨论的术语。我觉得突然脱口而出那句话没什么用，“你们技术人员应当开始讨论我的新术语了。”他们大多数与会者不认识我，而且据我所知，他们可能甚至不同意对新术语的急切需求，或者是某种渴望。I felt that it wouldn't work for me to just blurt out, "All you technical people should start using my new term." Most of those attending didn't know me, and for all I knew, they might not even agree that a new term was greatly needed, or even somewhat desirable.
+会议的主要议题是推广策略，特别是要接洽的公司。 我几乎没说什么，而是在寻找机会推广已经提交讨论的术语。我觉得突然脱口而出那句话没什么用，“你们技术人员应当开始讨论我的新术语了。”他们大多数与会者不认识我，而且据我所知，他们可能甚至不同意对新术语的急切需求，或者是某种渴望。
 
 幸运的是，Todd 是明智的。他没有主张社区应该用哪个特定的术语，而是间接地做了一些事——一件和社区里有强烈意愿的人做的明智之举。他简单地在其他话题中使用那个术语——把他放进对话里看看会发生什么。我警觉起来，希望得到一个答复，但是起初什么也没有。讨论继续进行原来的话题。似乎只有他和我注意了术语的使用。
 
 不仅如此——模因演化（人类学术语）在起作用。几分钟后，另一个人明显地，没有提醒地，在仍然进行话题讨论而没说术语的情况下，用了这个术语。Todd 和我面面相觑对视：是的我们都注意到了发生的事。我很激动——它起作用了！但我保持了安静：我在小组中仍然地位不高。可能有些人都奇怪为什么 Eric 会最终邀请我。
 
-临近会议尾声，可能是 Todd or Eric，[术语问题][8] 被明确提出。Maddog 提及了一个早期的术语“可自由分发的，和一个新的术语“合作开发的”。Eric列出了“自由软件”、“开源软件”，并把[unknown]作为主要选项。Todd宣传“开源”模型，然后Eric 支持了他。我什么也没说，letting Todd and Eric pull the (loose, informal) consensus together around the open source name. It was clear that to most of those at the meeting, the name change was not the most important thing discussed there; a relatively minor issue. 只有我在会议中大约10%的说明放在了术语问答中。
+临近会议尾声，可能是 Todd or Eric，[术语问题][8] 被明确提出。Maddog 提及了一个早期的术语“可自由分发的，和一个新的术语“合作开发的”。Eric 列出了“自由软件”、“开源软件”，并把[unknown]作为主要选项。Todd宣传“开源”模型，然后Eric 支持了他。我什么也没说，letting Todd and Eric pull the (loose, informal) consensus together around the open source name. It was clear that to most of those at the meeting, the name change was not the most important thing discussed there; a relatively minor issue. 只有我在会议中大约10%的说明放在了术语问答中。
 
-但是我很高兴。那有许多社区的关键领导人，并且他们喜欢新名字，或者至少没反对。这是一个好的信号信号。可能我帮不上什么忙； Eric Raymond was far better positioned to spread the new meme, and he did. Bruce Perens signed on to the effort immediately, 帮助建立 [Opensource.org][9] 并在新术语的宣传中扮演一个重要角色。
+但是我很高兴。在那有许多社区的关键领导人，并且他们喜欢这新名字，或者至少没反对。这是一个好的信号信号。可能我帮不上什么忙； Eric Raymond 被相当好地放在了一个宣传模因的好位子上，而且他的确做到了。立即签约参加行动，帮助建立 [Opensource.org][9] 并在新术语的宣传中发挥重要作用。
 
-对于这个成功的名字，那很必要，甚至是相当渴望， 因此 Tim O'Reilly 同意以社区的名义在公司积极使用它。 Also helpful would be use of the term in the upcoming official release of the Netscape Navigator（网景浏览器）代码。 到二月底， O'Reilly & Associates 还有网景公司（Netscape） 已经开始使用新术语。
+对于这个成功的名字，那很必要，甚至是相当渴望， 因此 Tim O'Reilly 同意以社区的名义在公司积极使用它。在官方即将发布的 the Netscape Navigator（网景浏览器）代码中的术语使用也为此帮了忙。 到二月底， O'Reilly & Associates 还有网景公司（Netscape） 已经开始使用新术语。
 
 ### 名字的诞生
 
