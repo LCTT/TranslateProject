@@ -1,3 +1,4 @@
+translating by kimii
 How To Safely Generate A Random Number — Quarrelsome
 ======
 ### Use urandom

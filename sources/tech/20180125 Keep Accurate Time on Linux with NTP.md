@@ -1,3 +1,4 @@
+Translating by qhwdw
 Keep Accurate Time on Linux with NTP
 ======
 
