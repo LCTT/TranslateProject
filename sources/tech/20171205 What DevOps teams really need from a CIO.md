@@ -1,3 +1,4 @@
+Translating by qhwdw
 What DevOps teams really need from a CIO
 ======
 IT leaders can learn from plenty of material exploring [DevOps][1] and the challenging cultural shift required for [making the DevOps transition][2]. But are you in tune with the short and long term challenges that a DevOps team faces - and what they really need from a CIO?
