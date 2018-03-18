@@ -1,3 +1,5 @@
+Translating by MjSeven
+
 How to clone, modify, add, and delete files in Git
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/LIFE_cat.png?itok=ta54QTAf)
