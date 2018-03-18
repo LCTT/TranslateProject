@@ -1,3 +1,5 @@
+translating by szcf-weiya
+
 10 Quick Tips About sudo command for Linux systems
 ======
 
