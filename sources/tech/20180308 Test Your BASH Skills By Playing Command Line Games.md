@@ -1,3 +1,5 @@
+Translating by MjSeven
+
 Test Your BASH Skills By Playing Command Line Games
 ======
 
