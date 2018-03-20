@@ -73,7 +73,7 @@ Todd 强烈同意需要新的术语并提供协助推广它。这很有帮助，
 
 ### 关于作者
 
- [![photo of Christine Peterson](https://opensource.com/sites/default/files/styles/profile_pictures/public/pictures/cp2016_crop2_185.jpg?itok=vUkSjFig)][13] Christine Peterson - Christine Peterson 撰写，举办讲座 lectures, and briefs the media on coming powerful technologies, especially nanotechnology, artificial intelligence, and longevity. She is Cofounder and Past President of Foresight Institute, the leading nanotech public interest group. Foresight educates the public, technical community, and policymakers on coming powerful technologies and how to guide their long-term impact. She serves on the Advisory Board of the [Machine Intelligence... ][2][more about Christine Peterson][3][More about me][4]
+ [![photo of Christine Peterson](https://opensource.com/sites/default/files/styles/profile_pictures/public/pictures/cp2016_crop2_185.jpg?itok=vUkSjFig)][13] Christine Peterson - Christine Peterson 撰写，举办讲座，并向媒体介绍未来强大的技术，特别是纳米技术，人工智能和长寿。她是著名的纳米科技公共利益集团的创始人和过去的前瞻技术协会主席。前瞻向公众、技术团体和政策制定者提供未来强大的技术的教育以及告诉它是如何引导他们的长期影响。她服务于 [机器智能 ][2]咨询委员会……[更多关于 Christine Peterson][3][关于我][4]
 
 --------------------------------------------------------------------------------
 
