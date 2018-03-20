@@ -1,3 +1,5 @@
+translating---geekpi
+
 How to resolve mount.nfs: Stale file handle error
 ======
 Learn how to resolve mount.nfs: Stale file handle error on Linux platform. This is Network File System error can be resolved from client or server end.
