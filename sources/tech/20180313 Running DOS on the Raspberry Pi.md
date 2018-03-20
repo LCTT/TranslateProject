@@ -1,3 +1,5 @@
+hankchow translating
+
 Running DOS on the Raspberry Pi
 ======
 
