@@ -595,7 +595,7 @@ via: https://sipb.mit.edu/iap/6.828/lab/lab1/
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:
+[a]:https://sipb.mit.edu
 [1]:http://www.git-scm.com/
 [2]:http://www.kernel.org/pub/software/scm/git/docs/user-manual.html
 [3]:http://eagain.net/articles/git-for-computer-scientists/
