@@ -1,20 +1,27 @@
 leemeans translating
 How to block local spoofed addresses using the Linux firewall
+如何使用Linux防火墙隔离局域网受欺骗地址
 ======
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/EDU_UnspokenBlockers_1110_A.png?itok=x8A9mqVA)
 
 Attackers are finding sophisticated ways to penetrate even remote networks that are protected by intrusion detection and prevention systems. No IDS/IPS can halt or minimize attacks by hackers who are determined to take over your network. Improper configuration allows attackers to bypass all implemented network security measures.
+即便是被入侵检测和隔离系统保护的远程网络，黑客们也在寻找精致的方法入侵。IDS/IPS是不能停止或者减少那些想要接管你的网络的黑客的攻击的。不恰当的配置允许攻击者绕过所有部署的安全措施。
 
 In this article, I will explain how security engineers or system administrators can prevent these attacks.
+在这篇文章中，我将会解释安全工程师或者系统管理员怎样可以避免这些攻击。
 
 Almost all Linux distributions come with a built-in firewall to secure processes and applications running on the Linux host. Most firewalls are designed as IDS/IPS solutions, whose primary purpose is to detect and prevent malicious packets from gaining access to a network.
+几乎所有的Linux发行版都带着一个内建的防火墙来保护运行在Linux宿主机上的进程和应用程序。大多数都按照IDS/IPS解决方案设计，这样的设计的主要目的是检测和避免恶意包获取网络的进入权。
 
 A Linux firewall usually comes with two interfaces: iptables and ipchains. Most people refer to these interfaces as the "iptables firewall" or the "ipchains firewall." Both interfaces are designed as packet filters. Iptables acts as a stateful firewall, making decisions based on previous packets. Ipchains does not make decisions based on previous packets; hence, it is designed as a stateless firewall.
+Linux防火墙通常带有两个接口：iptable和ipchain程序。大多数人将这些接口称作iptables防火墙或者ipchains防火墙。这两个接口都被设计成包过滤器。iptables是有状态防火墙，基于先前的包做出决定。
 
 In this article, we will focus on the iptables firewall, which comes with kernel version 2.4 and beyond.
+在这篇文章中，我们将会专注于内核2.4之后出现的iptables防火墙。
 
 With the iptables firewall, you can create policies, or ordered sets of rules, which communicate to the kernel how it should treat specific classes of packets. Inside the kernel is the Netfilter framework. Netfilter is both a framework and the project name for the iptables firewall. As a framework, Netfilter allows iptables to hook functions designed to perform operations on packets. In a nutshell, iptables relies on the Netfilter framework to build firewall functionality such as filtering packet data.
+有了iptables防火墙，你可以创建策略或者有序的规则集，规则集可以告诉内核如何对待特定的数据包。在内核中的是Netfilter框架。Netfilter既是框架也是iptables防火墙的工程名。作为一个框架，Netfilter允许iptables勾取被设计来操作数据包的函数。概括地说，iptables依靠Netfilter框架构筑诸如过滤数据包数据的功能。
 
 Each iptables rule is applied to a chain within a table. An iptables chain is a collection of rules that are compared against packets with similar characteristics, while a table (such as nat or mangle) describes diverse categories of functionality. For instance, a mangle table alters packet data. Thus, specialized rules that alter packet data are applied to it, and filtering rules are applied to the filter table because the filter table filters packet data.
 
