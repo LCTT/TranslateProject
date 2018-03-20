@@ -10,6 +10,7 @@ This article looks at computer versions of popular board and card games. I have 
 
 ### Kajongg
 
+![](https://opensource.com/sites/default/files/styles/panopoly_image_original/public/images/life-uploads/kajongg.png?itok=iAyT2m5T)
 There are many applications that are called [Mahjong][2], but almost all are versions of the tile-matching solitaire game that uses Mahjong tiles. [Kajongg][3] is a rare exception because it is an implementation of the classic rummy-style game for four players. This traditional multi-player version of Mahjong is most popular throughout East and Southeast Asia, but there are players throughout the world. This means there are many variations of [Mahjong rules][4]. Unfortunately, Kajongg does not support them all, but it does allow players to play a fairly standard game of Mahjong with two different rules variants. Kajongg can be played locally against computer players or online versus human opponents.
 
 To install Kajongg, run the following command:
@@ -19,6 +20,8 @@ On Fedora: `dnf install kajongg`
 On Debian/Ubuntu: `apt install kajongg`
 
 ### Pioneers
+
+![](https://opensource.com/sites/default/files/styles/panopoly_image_original/public/images/life-uploads/pioneers.png?itok=Np5vRroe)
 
 Klaus Teuber's [The Settlers of Catan][5] board game and its various expansions introduced many players to a world of board games that were more complex and more interesting than some of the most familiar board games like [Monopoly][6], [Sorry!][7], and [Risk][8].
 
@@ -34,6 +37,8 @@ On Debian/Ubuntu: `apt install pioneers`
 
 ### PokerTH
 
+![](https://opensource.com/sites/default/files/styles/panopoly_image_original/public/images/life-uploads/pokerth.png?itok=r5axdedL)
+
 [PokerTH][10] is a computer version of [Texas hold 'em poker][11], complete with online multiplayer (but no real gambling). Play against the computer locally, or go online to compete against other people. PokerTH is available for multiple platforms, so there are plenty of people playing it online. PokerTH's implementation of Texas hold 'em is polished and the game is feature-complete, with solid online play. Any fan of Texas hold 'em should check out PokerTH.
 
 To install PokerTH, run the following command:
@@ -44,6 +49,8 @@ On Debian/Ubuntu: `apt install pokerth`
 
 ### TripleA
 
+![](https://opensource.com/sites/default/files/styles/panopoly_image_original/public/images/life-uploads/triplea.png?itok=z0pVwnY9)
+
 [TripleA][12] is a turn-based strategy game styled after the [Axis & Allies][13] board game and other similar board games. TripleA's gameplay is very much like Axis & Allies, but there are many different maps available for TripleA that can alter the experience. The standard game board is based on World War II, but there are other maps that feature other settings—some historical, some fantastical, like J.R.R. Tolkien's Middle Earth. There are also maps that make the game behave like the board game [Diplomacy][14]. TripleA can be played locally against the computer or against other people in hot seat mode. Online play is also available using either the network option or the play by email/forum post option.
 
 To install TripleA, run the following command:
@@ -53,6 +60,8 @@ On Debian/Ubuntu: `apt install triplea`
 Unfortunately, TripleA is not packaged for Fedora, but a [Linux installer][15] is available from the project's website.
 
 ### XBoard
+
+![](https://opensource.com/sites/default/files/styles/panopoly_image_original/public/images/life-uploads/xboard.png?itok=oXk6eXim)
 
 There are so many [chess computer programs][16], it is hard to pick just one, even from just the open source offerings. However, [XBoard][17] is a good choice for most users. XBoard supports multiple chess engines, can handle non-Western and non-traditional chess variants and has online and play-by-email capabilities. Some of the other open source chess applications might look a little nicer, but XBoard provides many features that make up for the lack of graphical polish. If you are looking for a lighter chess application with fancy 3D chessmen, you might want to look elsewhere, but if you want a powerful program that can help you analyze and improve your chess skills, XBoard is the superior open source option.
 
