@@ -1,3 +1,4 @@
+(Translating by runningwater)
 Managing users on Linux systems
 ======
 Your Linux users may not be raging bulls, but keeping them happy is always a challenge as it involves managing their accounts, monitoring their access rights, tracking down the solutions to problems they run into, and keeping them informed about important changes on the systems they use. Here are some of the tasks and tools that make the job a little easier.
@@ -215,7 +216,7 @@ Managing user accounts on a busy server depends in part on starting out with wel
 via: https://www.networkworld.com/article/3225109/linux/managing-users-on-linux-systems.html
 
 作者：[Sandra Henry-Stocker][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

@@ -1,3 +1,5 @@
+translating---geekpi
+
 Quick Look at the Arch Based Indie Linux Distribution: MagpieOS
 ======
 Most of the Linux distros that are in use today are either created and developed in the US or Europe. A young developer from Bangladesh wants to change all that.
