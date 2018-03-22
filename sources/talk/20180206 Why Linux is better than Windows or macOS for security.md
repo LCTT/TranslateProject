@@ -9,9 +9,9 @@ Enterprises invest a lot of time, effort and money in keeping their systems secu
 
 But how many have given much thought to one of the cornerstones of their digital operations: the operating systems deployed on the workforce’s PCs? Was security even a factor when the desktop OS was selected?
 
-This raises a question that every IT person should be able to answer: Which operating system is the most secure for general deployment?
+这就产生了一个 IT 人士都应该能回答的问题：哪种操作系统对于一般性使用最安全呢？
 
-We asked some experts what they think of the security of these three choices: Windows, the ever-more-complex platform that’s easily the most popular desktop system; macOS X, the FreeBSD Unix-based operating system that powers Apple Macintosh systems; and Linux, by which we mean all the various Linux distributions and related Unix-based systems.
+我们问了一些专家他们对于以下三种选项的看法：Windows， the ever-more-complex platform that’s easily the most popular desktop system; macOS X, the FreeBSD Unix-based operating system that powers Apple Macintosh systems; and Linux, by which we mean all the various Linux distributions and related Unix-based systems.
 
 ### 我们怎么会这样How we got here
 
