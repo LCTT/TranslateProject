@@ -1,6 +1,6 @@
 fuzheng1998 translating
 
-Why Linux is better than Windows or macOS for security
+为什么 Linux 比 Windows 和 macOS 的安全性好
 ======
 
 ![](https://images.idgesg.net/images/article/2018/02/linux_security_vs_macos_and_windows_locks_data_thinkstock-100748607-large.jpg)
@@ -13,7 +13,7 @@ This raises a question that every IT person should be able to answer: Which oper
 
 We asked some experts what they think of the security of these three choices: Windows, the ever-more-complex platform that’s easily the most popular desktop system; macOS X, the FreeBSD Unix-based operating system that powers Apple Macintosh systems; and Linux, by which we mean all the various Linux distributions and related Unix-based systems.
 
-### How we got here
+### 我们怎么会这样How we got here
 
 One reason enterprises might not have evaluated the security of the OS they deployed to the workforce is that they made the choice years ago. Go back far enough and all operating systems were reasonably safe, because the business of hacking into them and stealing data or installing malware was in its infancy. And once an OS choice is made, it’s hard to consider a change. Few IT organizations would want the headache of moving a globally dispersed workforce to an entirely new OS. Heck, they get enough pushback when they move users to a new version of their OS of choice.
 
@@ -23,7 +23,7 @@ Certainly the threats confronting enterprise systems have changed in the last fe
 
 Like many of you, I have firsthand experience of the threats that are out there: I have been infected by malware and viruses on numerous Windows computers, and I even had macro viruses that infected files on my Mac. More recently, a widespread automated hack circumvented the security on my website and infected it with malware. The effects of such malware were always initially subtle, something you wouldn’t even notice, until the malware ended up so deeply embedded in the system that performance started to suffer noticeably. One striking thing about the infestations was that I was never specifically targeted by the miscreants; nowadays, it’s as easy to attack 100,000 computers with a botnet as it is to attack a dozen.
 
-### Does the OS really matter?
+### 操作系统真的重要吗？Does the OS really matter?
 
 The OS you deploy to your users does make a difference for your security stance, but it isn’t a sure safeguard. For one thing, a breach these days is more likely to come about because an attacker probed your users, not your systems. A [survey][1] of hackers who attended a recent DEFCON conference revealed that “84 percent use social engineering as part of their attack strategy.” Deploying a secure operating system is an important starting point, but without user education, strong firewalls and constant vigilance, even the most secure networks can be invaded. And of course there’s always the risk of user-downloaded software, extensions, utilities, plug-ins and other software that appears benign but becomes a path for malware to appear on the system.
 
@@ -35,7 +35,7 @@ Because the bottom line is that every decision you make regarding your systems w
 
 **[ To comment on this story, visit[Computerworld's Facebook page][3]. ]**
 
-### Windows, the popular choice
+### Windows，流行之选
 
 If you’re a security manager, it is extremely likely that the questions raised by this article could be rephrased like so: Would we be more secure if we moved away from Microsoft Windows? To say that Windows dominates the enterprise market is to understate the case. [NetMarketShare][4] estimates that a staggering 88% of all computers on the internet are running a version of Windows.
 
@@ -46,7 +46,7 @@ As Troy Wilkinson, CEO of Axiom Cyber Solutions, explains, “Windows always com
 
 It’s certainly true that, from Melissa to WannaCry and beyond, much of the malware the world has seen has been aimed at Windows systems.
 
-### macOS X and security through obscurity
+### macOS X 以及用默默无闻换取的安全security through obscurity
 
 If the most popular OS is always going to be the biggest target, then can using a less popular option ensure security? That idea is a new take on the old — and entirely discredited — concept of “security through obscurity,” which held that keeping the inner workings of software proprietary and therefore secret was the best way to defend against attacks.
 
@@ -58,7 +58,7 @@ Security researcher Lee Muson of Comparitech says that “macOS is likely to be 
 
 Joe Moore of Wolf Solutions gives Apple a bit more credit, saying that “off the shelf, macOS X has a great track record when it comes to security, in part because it isn’t as widely targeted as Windows and in part because Apple does a pretty good job of staying on top of security issues.”
 
-### And the winner is … 
+### 最终胜者是 … 
 
 You probably knew this from the beginning: The clear consensus among experts is that Linux is the most secure operating system. But while it’s the OS of choice for servers, enterprises deploying it on the desktop are few and far between.
 
@@ -78,7 +78,7 @@ Another factor cited by PC World is Linux’s better user privileges model: Wind
 
 Noyes also noted that the diversity possible within Linux environments is a better hedge against attacks than the typical Windows monoculture: There are simply a lot of different distributions of Linux available. And some of them are differentiated in ways that specifically address security concerns. Security Researcher Lee Muson of Comparitech offers this suggestion for a Linux distro: “The[Qubes OS][7] is as good a starting point with Linux as you can find right now, with an [endorsement from Edward Snowden][8] massively overshadowing its own extremely humble claims.” Other security experts point to specialized secure Linux distributions such as [Tails Linux][9], designed to run securely and anonymously directly from a USB flash drive or similar external device.
 
-### Building security momentum
+### 构建安全性的动力Building security momentum
 
 Inertia is a powerful force. Although there is clear consensus that Linux is the safest choice for the desktop, there has been no stampede to dump Windows and Mac machines in favor of it. Nonetheless, a small but significant increase in Linux adoption would probably result in safer computing for everyone, because in market share loss is one sure way to get Microsoft’s and Apple’s attention. In other words, if enough users switch to Linux on the desktop, Windows and Mac PCs are very likely to become more secure platforms.
 
@@ -87,7 +87,7 @@ Inertia is a powerful force. Although there is clear consensus that Linux is the
 via: https://www.computerworld.com/article/3252823/linux/why-linux-is-better-than-windows-or-macos-for-security.html
 
 作者：[Dave Taylor][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[fuzheng1998](https://github.com/fuzheng1998)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
