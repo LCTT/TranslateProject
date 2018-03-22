@@ -51,7 +51,7 @@ via: https://www.linux.com/blog/intro-to-Linux/2017/12/what-are-containers-and-w
 
 作者：[SWAPNIL BHARTIYA][a]
 译者：[lonaparte](https://github.com/lonaparte)
-校对：[wxy](https://github.com/wxy)
+校对：[wxy](https://github.com/wxy) 
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
