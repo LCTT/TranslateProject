@@ -1,3 +1,4 @@
+translating by amwps290
 The Command line Personal Assistant For Your Linux System
 ======
 
