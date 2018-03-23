@@ -1,3 +1,5 @@
+Translating by rockouc
+
 Why pair writing helps improve documentation
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/doc-dish-lead-2.png?itok=lPO6tqPd)

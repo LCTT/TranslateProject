@@ -1,3 +1,5 @@
+Translating by MjSeven
+
 How to setup and configure network bridge on Debian Linux
 ======
 
