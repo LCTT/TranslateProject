@@ -5,13 +5,13 @@ fuzheng1998 translating
 
 ![](https://images.idgesg.net/images/article/2018/02/linux_security_vs_macos_and_windows_locks_data_thinkstock-100748607-large.jpg)
 
-Enterprises invest a lot of time, effort and money in keeping their systems secure. The most security-conscious might have a security operations center. They of course use firewalls and antivirus tools. They probably spend a lot of time monitoring their networks, looking for telltale anomalies that could indicate a breach. What with IDS, SIEM and NGFWs, they deploy a veritable alphabet of defenses.
+企业投入了大量时间、精力和金钱来保障系统的安全性。The most security-conscious might have a security operations center. They of course use firewalls and antivirus tools. They probably spend a lot of time monitoring their networks, looking for telltale anomalies that could indicate a breach. What with IDS, SIEM and NGFWs, they deploy a veritable alphabet of defenses.
 
 But how many have given much thought to one of the cornerstones of their digital operations: the operating systems deployed on the workforce’s PCs? Was security even a factor when the desktop OS was selected?
 
 这就产生了一个 IT 人士都应该能回答的问题：哪种操作系统对于一般性使用最安全呢？
 
-我们问了一些专家他们对于以下三种选项的看法：Windows， the ever-more-complex platform that’s easily the most popular desktop system; macOS X, the FreeBSD Unix-based operating system that powers Apple Macintosh systems; and Linux, by which we mean all the various Linux distributions and related Unix-based systems.
+我们问了一些专家他们对于以下三种选项的看法：Windows， 最复杂的平台也是最易受欢迎的桌面操作系统；macOS X，基于 FreeBSD 的 Unix 操作系统，驱动着苹果的 Macintosh 系列机运行；还有 Linux，这里我们的意思是所有的 Linux 发行版以及与基于 Unix 的操作系统相关的系统。
 
 ### 我们怎么会这样How we got here
 
