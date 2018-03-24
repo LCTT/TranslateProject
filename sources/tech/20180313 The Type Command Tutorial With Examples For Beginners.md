@@ -1,3 +1,5 @@
+translating---geekpi
+
 The Type Command Tutorial With Examples For Beginners
 ======
 

@@ -1,3 +1,5 @@
+Translating By MjSeven
+
 How to install software applications on Linux
 ======
 
