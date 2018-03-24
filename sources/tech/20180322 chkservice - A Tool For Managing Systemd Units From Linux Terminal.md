@@ -1,3 +1,4 @@
+translating by amwps290
 chkservice – A Tool For Managing Systemd Units From Linux Terminal
 ======
 systemd stand for system daemon is a new init system and system manager which is become very popular and widely adapted new standard init system by most of Linux distributions.
