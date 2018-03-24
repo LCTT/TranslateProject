@@ -1,16 +1,14 @@
-translating---geekpi
-
-How to resolve mount.nfs: Stale file handle error
+如何解决 mount.nfs：失效的文件句柄错误
 ======
-Learn how to resolve mount.nfs: Stale file handle error on Linux platform. This is Network File System error can be resolved from client or server end.
+了解如何解决 mount.nfs：Linux 平台上的失效文件句柄错误。它是可以在客户端或者服务端解决的网络文件系统错误。
 
  _![][1]_
 
-When you are using Network File System in your environment, you must have seen`mount.nfs: Stale file handle` error at times. This error denotes that NFS share is unable to mount since something has changed since last good known configuration.
+当你在你的环境中使用网络文件系统时，你一定不时看到 `mount.nfs：Stale file handle` 错误。此错误表示 NFS 共享无法挂载，因为自上次配置后有些东西已经更改。
 
-Whenever you reboot NFS server or some of the NFS processes are not running on client or server or share is not properly exported at server; these can be reasons for this error. Moreover its irritating when this error comes to previously mounted NFS share. Because this means configuration part is correct since it was previously mounted. In such case once can try following commands:
+无论何时你重启 NFS 服务器或某些 NFS 进程未在客户端或服务器上运行，或者共享未在服务器上正确导出，这些都可能是这个错误的原因。此外，当这个错误发生在先前挂载的 NFS 共享上时，它会它令人不快。因为这意味着配置部分是正确的，因为是以前挂载的。在这种情况下，可以尝试下面的命令：
 
-Make sure NFS service are running good on client and server.
+确保 NFS 服务在客户端和服务器上运行良好。
 
 ```
 #  service nfs status
@@ -20,9 +18,9 @@ nfsd (pid 12009 12008 12007 12006 12005 12004 12003 12002) is running...
 rpc.rquotad (pid 11988) is running...
 ```
 
-> Stay connected to your favorite windows applications from anywhere on any device with [ windows 7 cloud desktop ][2] from CloudDesktopOnline.com. Get Office 365 with expert support and free migration from [ Apps4Rent.com ][3].
+>通过 CloudDesktopOnline.com 上的[ Windows 7 云桌面][2]在任意位置的任何设备上保持与你最喜爱的 Windows 程序的连接。从 [Apps4Rent.com][3] 获得有专家支持的 Office 365 和免费迁移。
 
-If NFS share currently mounted on client, then un-mount it forcefully and try to remount it on NFS client. Check if its properly mounted by `df` command and changing directory inside it.
+如果 NFS 共享目前挂载在客户端上，则强制卸载它并尝试在 NFS 客户端上重新挂载它。通过 `df` 命令检查它是否正确挂载，并更改其中的目录。
 
 ```
 # umount -f /mydata_nfs
@@ -34,9 +32,9 @@ If NFS share currently mounted on client, then un-mount it forcefully and try to
 server:/nfs_share 41943040  892928  41050112   3% /mydata_nfs
 ```
 
-In above mount command, server can be IP or [hostname ][4]of NFS server.
+在上面的挂载命令中，服务器可以是 NFS 服务器的 IP 或[主机名][4]。
 
-If you are getting error while forcefully un-mounting like below :
+如果你在强制取消挂载时遇到像下面错误：
 
 ```
 # umount -f /mydata_nfs
@@ -45,7 +43,7 @@ umount: /mydata_nfs: device is busy
 umount2: Device or resource busy
 umount: /mydata_nfs: device is busy
 ```
-Then you can check which all processes or users are using that mount point with `lsof` command like below:
+然后你可以用 `lsof` 命令来检查哪个进程或用户正在使用该挂载点，如下所示：
 
 ```
 # lsof |grep mydata_nfs
@@ -57,9 +55,9 @@ bash      20092  oracle11  cwd   unknown                                        
 bash      25040  oracle11  cwd   unknown                                                   /mydata_nfs/MUYR (stat: Stale NFS file handle)
 ```
 
-If you see in above example that 4 PID are using some files on said mount point. Try killing them off to free mount point. Once done you will be able to un-mount it properly.
+如果你在上面的示例中看到共有 4 个 PID 正在使用该挂载点上的某些文件。尝试杀死它们以释放挂载点。完成后，你将能够正确卸载它。
 
-Sometimes it still give same error for mount command. Then try mounting after restarting NFS service at client using below command.
+有时 mount 命令会有相同的错误。接着使用下面的命令在客户端重启 NFS 服务后挂载。
 
 ```
 #  service nfs restart
@@ -73,18 +71,18 @@ Starting NFS mountd:                                       [  OK  ]
 Starting NFS daemon:                                       [  OK  ]
 ```
 
-Also read : [How to restart NFS step by step in HPUX][5]
+另请阅读：[如何在 HPUX 中逐步重启 NFS][5]
 
-Even if this didnt solve your issue, final step is to restart services at NFS server. Caution! This will disconnect all NFS shares which are exported from NFS server. All clients will see mount point disconnect. This step is where 99% you will get your issue resolved. If not then [NFS configurations][6] must be checked, provided you have changed configuration and post that you started seeing this error.
+即使这没有解决你的问题，最后一步是在 NFS 服务器上重启服务。警告！这将断开从该 NFS 服务器导出的所有 NFS 共享。所有客户端将看到挂载点断开。这一步将 99％ 解决你的问题。如果没有，请务必检查[ NFS 配置][6]，提供你修改的配置并发布你启动时看到的错误。
 
-Outputs in above post are from RHEL6.3 server. Drop us your comments related to this post.
+上面文章中的输出来自 RHEL6.3 服务器。请将你的评论发送给我们。
 
 --------------------------------------------------------------------------------
 
 via: https://kerneltalks.com/troubleshooting/resolve-mount-nfs-stale-file-handle-error/
 
 作者：[KernelTalks][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

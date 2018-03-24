@@ -1,36 +1,35 @@
-How to setup and configure network bridge on Debian Linux
-======
+如何在 Debian Linux 上设置和配置网桥
+=====
 
-I am new Debian Linux user. I want to setup Bridge for virtualised environments (KVM) running on Debian Linux. How do I setup network bridging in /etc/network/interfaces on Debian Linux 9.x server?
+我是一个新 Debian Linux 用户，我想为 Debian Linux 上运行的虚拟化环境（KVM）设置网桥。那么我该如何在 Debian Linux 9.x 服务器上的  /etc/network/interfaces 中设置桥接网络呢？
 
-If you want to assign IP addresses to your virtual machines and make them accessible from your LAN you need to setup network bridge. By default, a private network bridge created when using KVM. You need to set up interfaces manually, avoiding conflicts with, network manager.
+如何你想为你的虚拟机分配 IP 地址并使其可从你的局域网访问，则需要设置网络桥接器。默认情况下，虚拟机使用 KVM 创建的专用网桥。但你需要手动设置接口，避免与网络管理员发生冲突。
 
-### How to install the brctl
+### 怎样安装 brctl
 
-Type the following [nixcmdn name=”apt”]/[apt-get command][1]:
+输入以下命令 [nixcmdn name=”apt”]/[apt-get 命令][1]:
 `$ sudo apt install bridge-utils`
 
-### How to setup network bridge on Debian Linux
+### 怎样在 Debian Linux 上设置网桥
 
-You need to edit /etc/network/interface file. However, I recommend to drop a brand new config in /etc/network/interface.d/ directory. The procedure to configure network bridge on Debian Linux is as follows:
+你需要编辑  /etc/network/interface 文件。不过，我建议在 /etc/network/interface.d/ 目录下放置一个全新的配置。在 Debian Linux 配置网桥的过程如下：
 
-#### Step 1 – Find out your physical interface
+#### 步骤 1 - 找出你的物理接口
 
-Use the [ip command][2]:
+使用 [ip 命令][2]:
 `$ ip -f inet a s`
-Sample outputs:
+示例输出如下：
 ```
 2: eno1: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc pfifo_fast state UP group default qlen 1000
  inet 192.168.2.23/24 brd 192.168.2.255 scope global eno1
  valid_lft forever preferred_lft forever
 ```
 
+eno1 是我的物理网卡。
 
-eno1 is my physical interface.
+#### 步骤 2 - 更新 /etc/network/interface 文件
 
-#### Step 2 – Update /etc/network/interface file
-
-Make sure only lo (loopback is active in /etc/network/interface). Remove any config related to eno1. Here is my config file printed using [cat command][3]:
+确保只有 lo（loopback 在 /etc/network/interface 中处于活动状态）。（译注：loopback 指本地环回接口，也称为回送地址）删除与 eno1 相关的任何配置。这是我使用 [cat 命令][3] 打印的配置文件：
 `$ cat /etc/network/interface`
 ```
 # This file describes the network interfaces available on your system
@@ -44,11 +43,11 @@ iface lo inet loopback
 ```
 
 
-#### Step 3 – Configuring bridging (br0) in /etc/network/interfaces.d/br0
+#### 步骤 3 - 在 /etc/network/interfaces.d/br0 中配置网桥（br0）
 
-Create a text file using a text editor such as vi command:
+使用文本编辑器创建一个 text 文件，比如 vi 命令：
 `$ sudo vi /etc/network/interfaces.d/br0`
-Append the following config:
+在其中添加配置：
 ```
 ## static ip config file for br0 ##
 auto br0
@@ -68,7 +67,7 @@ iface br0 inet static
     bridge_fd 0 # no forwarding delay
 ```
 
-If you want bridge to get an IP address using DHCP:
+如果你想使用 DHCP 来获得 IP 地址：
 ```
 ## DHCP ip config file for br0 ##
 auto br0
@@ -78,35 +77,35 @@ auto br0
   bridge_ports eno1
 ```
 
+[在 vi/vim 中保存并关闭文件][4]。
 
-[Save and close the file in vi/vim][4].
+#### 步骤 4 - [重新启动网络服务][5]
 
-#### Step 4 – [Restart networking service in Linux][5]
-
-Before you restart the networking service make sure firewall is disabled. The firewall may refer to older interface such as eno1. Once service restarted, you must update firewall rule for interface br0. Type the following restart the networking service:
+在重新启动网络服务之前，请确保防火墙已关闭。防火墙可能会引用较老的接口，例如 eno1。一旦服务重新启动，你必须更新 br0 接口的防火墙规则。键入以下命令重新启动防火墙：
 `$ sudo systemctl restart network-manager`
-Verify that service has been restarted:
+确认服务已经重新启动：
 `$ systemctl status network-manager`
-Look for new br0 interface and routing table with the help of [ip command][2]:
+借助 [ip 命令][2]寻找新的 br0 接口和路由表：
 `$ ip a s $ ip r $ ping -c 2 cyberciti.biz`
-Sample outputs:
+示例输出：
 ![](https://www.cyberciti.biz/media/new/faq/2018/02/How-to-setup-and-configure-network-bridge-on-Debian-Linux.jpg)
-You can also use the brctl command to view info about your bridges:
+你可以使用 brctl 命令查看网桥有关信息：
 `$ brctl show`
-Show current bridges:
+显示当前网桥：
 `$ bridge link`
 ![](https://www.cyberciti.biz/media/new/faq/2018/02/Show-current-bridges-and-what-interfaces-they-are-connected-to-on-Linux.jpg)
 
-### About the author
 
-The author is the creator of nixCraft and a seasoned sysadmin, DevOps engineer, and a trainer for the Linux operating system/Unix shell scripting. Get the **latest tutorials on SysAdmin, Linux/Unix and open source topics via[RSS/XML feed][6]** or [weekly email newsletter][7].
+### 关于作者
+
+作者是 nixCraft 的创建者，也是经验丰富的系统管理员，DevOps 工程师以及 Linux 操作系统/ Unix shell 脚本的培训师。通过订阅 [RSS/XML feed][6] 或者 [weekly email newsletter][7]获得**关于  SysAdmin, Linux/Unix 和开源主题的最新教程。**
 
 --------------------------------------------------------------------------------
 
 via: https://www.cyberciti.biz/faq/how-to-configuring-bridging-in-debian-linux/
 
 作者：[Vivek GIte][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[MjSeven](https://github.com/MjSeven)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
