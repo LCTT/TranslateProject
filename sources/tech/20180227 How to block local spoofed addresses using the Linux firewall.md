@@ -24,10 +24,14 @@ With the iptables firewall, you can create policies, or ordered sets of rules, w
 有了iptables防火墙，你可以创建策略或者有序的规则集，规则集可以告诉内核如何对待特定的数据包。在内核中的是Netfilter框架。Netfilter既是框架也是iptables防火墙的工程名。作为一个框架，Netfilter允许iptables勾取被设计来操作数据包的函数。概括地说，iptables依靠Netfilter框架构筑诸如过滤数据包数据的功能。
 
 Each iptables rule is applied to a chain within a table. An iptables chain is a collection of rules that are compared against packets with similar characteristics, while a table (such as nat or mangle) describes diverse categories of functionality. For instance, a mangle table alters packet data. Thus, specialized rules that alter packet data are applied to it, and filtering rules are applied to the filter table because the filter table filters packet data.
+每个iptables规则都被应用到一个含表的链中。一个iptables链就是一个比较包中相似字符的规则的集合。而表(例如nat或者mangle)则描述不同的功能目录。例如，一个mangle表转化包数据。因此，特定的改变包数据的规则被应用到这里，而过滤规则被应用到filter表，因为filter表过滤包数据。
 
 Iptables rules have a set of matches, along with a target, such as `Drop` or `Deny`, that instructs iptables what to do with a packet that conforms to the rule. Thus, without a target and a set of matches, iptables can’t effectively process packets. A target simply refers to a specific action to be taken if a packet matches a rule. Matches, on the other hand, must be met by every packet in order for iptables to process them.
+iptables规则有一系列匹配，伴随着一个诸如`Drop`或者`Deny`的目标，这可以告诉iptables对一个包做什么符合规则。因此，没有一个目标和一系列匹配，iptables就不能有效地处理包。如果一个包匹配一条规则，一个目标简单地指向一个将要采取的特定措施。另一方面，为了让iptables处理，匹配必须被每个包满足吗。
+
 
 Now that we understand how the iptables firewall operates, let's look at how to use iptables firewall to detect and reject or drop spoofed addresses.
+现在我们已经知道iptables防火墙如何工作，开始着眼于如何使用iptables防火墙检测并拒绝或丢弃被欺骗的地址吧。
 
 ### Turning on source address verification
 
