@@ -5,13 +5,13 @@ fuzheng1998 translating
 
 ![](https://images.idgesg.net/images/article/2018/02/linux_security_vs_macos_and_windows_locks_data_thinkstock-100748607-large.jpg)
 
-企业投入了大量时间、精力和金钱来保障系统的安全性。The most security-conscious might have a security operations center. They of course use firewalls and antivirus tools. They probably spend a lot of time monitoring their networks, looking for telltale anomalies that could indicate a breach. What with IDS, SIEM and NGFWs, they deploy a veritable alphabet of defenses.
+企业投入了大量时间、精力和金钱来保障系统的安全性。安全意识最强的可能就是有一个安全的运转中心。他们肯定用了防火墙以及反病毒软件。他们也可能花费大量时间监控网络，They probably spend a lot of time monitoring their networks, looking for telltale anomalies that could indicate a breach. What with IDS, SIEM and NGFWs, they deploy a veritable alphabet of defenses.
 
 But how many have given much thought to one of the cornerstones of their digital operations: the operating systems deployed on the workforce’s PCs? Was security even a factor when the desktop OS was selected?
 
 这就产生了一个 IT 人士都应该能回答的问题：哪种操作系统对于一般性使用最安全呢？
 
-我们问了一些专家他们对于以下三种选项的看法：Windows， 最复杂的平台也是最易受欢迎的桌面操作系统；macOS X，基于 FreeBSD 的 Unix 操作系统，驱动着苹果的 Macintosh 系列机运行；还有 Linux，这里我们的意思是所有的 Linux 发行版以及与基于 Unix 的操作系统相关的系统。
+我们问了一些专家他们对于以下三种选项的看法：Windows， 最复杂的平台也是最易受欢迎的桌面操作系统；macOS X，基于 FreeBSD 的 Unix 操作系统，驱动着苹果的 Macintosh 系列机运行；还有 Linux，这里我们指的是所有的 Linux 发行版以及与基于 Unix 的操作系统相关的系统。
 
 ### 我们怎么会这样How we got here
 
@@ -19,7 +19,7 @@ One reason enterprises might not have evaluated the security of the OS they depl
 
 Still, would it be wise to reconsider? Are the three leading desktop OSes different enough in their approach to security to make a change worthwhile?
 
-Certainly the threats confronting enterprise systems have changed in the last few years. Attacks have become far more sophisticated. The lone teen hacker that once dominated the public imagination has been supplanted by well-organized networks of criminals and shadowy, government-funded organizations with vast computing resources.
+当然商业系统面临的威胁近几年已经改变了。攻击变得成熟多了。Certainly the threats confronting enterprise systems have changed in the last few years. Attacks have become far more sophisticated. The lone teen hacker that once dominated the public imagination has been supplanted by well-organized networks of criminals and shadowy, government-funded organizations with vast computing resources.
 
 Like many of you, I have firsthand experience of the threats that are out there: I have been infected by malware and viruses on numerous Windows computers, and I even had macro viruses that infected files on my Mac. More recently, a widespread automated hack circumvented the security on my website and infected it with malware. The effects of such malware were always initially subtle, something you wouldn’t even notice, until the malware ended up so deeply embedded in the system that performance started to suffer noticeably. One striking thing about the infestations was that I was never specifically targeted by the miscreants; nowadays, it’s as easy to attack 100,000 computers with a botnet as it is to attack a dozen.
 
