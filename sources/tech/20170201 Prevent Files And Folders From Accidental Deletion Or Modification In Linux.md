@@ -1,3 +1,5 @@
+translating by yizhuoyan
+
 Prevent Files And Folders From Accidental Deletion Or Modification In Linux
 ======
 
