@@ -1,3 +1,5 @@
+hankchow translating
+
 Check Linux Distribution Name and Version
 ======
 You have joined new company and want to install some software’s which is requested by DevApp team, also want to restart few of the service after installation. What to do?
