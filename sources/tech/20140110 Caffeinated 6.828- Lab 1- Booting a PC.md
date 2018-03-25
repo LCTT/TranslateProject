@@ -1,3 +1,4 @@
+Translating by qhwdw
 Caffeinated 6.828: Lab 1: Booting a PC
 ======
 

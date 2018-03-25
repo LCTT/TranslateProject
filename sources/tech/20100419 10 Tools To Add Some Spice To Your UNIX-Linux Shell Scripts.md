@@ -1,3 +1,4 @@
+【Pgmalion666 Translating】 
 10 Tools To Add Some Spice To Your UNIX/Linux Shell Scripts
 ======
 There are some misconceptions that shell scripts are only for a CLI environment. You can efficiently use various tools to write GUI and network (socket) scripts under KDE or Gnome desktops. Shell scripts can make use of some of the GUI widget (menus, warning boxes, progress bars, etc.). You can always control the final output, cursor position on the screen, various output effects, and more. With the following tools, you can build powerful, interactive, user-friendly UNIX / Linux bash shell scripts.

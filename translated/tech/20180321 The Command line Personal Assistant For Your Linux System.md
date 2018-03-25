@@ -1,46 +1,51 @@
-The Command line Personal Assistant For Your Linux System
-======
+# 您的 Linux 系统命令行个人助理
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/03/Yoda-720x340.png)
-A while ago, we wrote about a command line virtual assistant named [**“Betty”**][1]. Today, I stumbled upon a similar utility called **“Yoda”**. Yoda is a command line personal assistant who can help you to do some trivial tasks in Linux. It is a free, open source application written in Python. In this guide, we will see how to install and use Yoda in GNU/Linux.
 
-### Installing Yoda, the command line personal assistant
+不久前，我们写了一个名为 [**“Betty”**][1] 的命令行虚拟助手。今天，我偶然发现了一个类似的实用程序，叫做  **“Yoda”**。Yoda 是一个命令行个人助理，可以帮助您在 Linux 中完成一些琐碎的任务。它是用 Python 编写的一个免费的开源应用程序。在本指南中，我们将了解如何在 GNU/Linux 中安装和使用 Yoda。
 
-Yoda requires **Python 2** and PIP. If PIP is not installed in your Linux box, refer the following guide to install it. Just make sure you have installed **python2-pip.** Yoda may not support Python 3.
+### 安装 Yoda，命令行私人助理。
 
-**Note:** I recommend you to try Yoda under a virtual environment. Not just Yoda, always try any Python applications in a virtual environment, so they won’t interfere with globally installed packages. You can setup a virtual environment as described in the above link under the section titled “Creating Virtual Environments”.
+Yoda 需要 **Python 2** 和 PIP 。如果在您的 Linux 中没有安装 PIP，请参考下面的指南来安装它。只要确保已经安装了 **python2-pip** 。Yoda 可能不支持 Python 3。
 
-Once you have installed pip on your system, git clone Yoda repository.
+**注意**：我建议你在虚拟环境下试用 Yoda。 不仅仅是 Yoda，总是在虚拟环境中尝试任何 Python 应用程序，让它们不会干扰全局安装的软件包。 您可以按照上文链接中标题为“创建虚拟环境”一节中所述设置虚拟环境。
+
+在您的系统上安装了 pip 之后，使用下面的命令克隆 Yoda 库。
+
 ```
 $ git clone https://github.com/yoda-pa/yoda
 
 ```
 
-The above command will create a directory named “yoda” in your current working directory and clone all contents in it. Go to the Yoda directory:
+上面的命令将在当前工作目录中创建一个名为 “yoda” 的目录，并在其中克隆所有内容。转到 Yoda 目录:
+
 ```
 $ cd yoda/
 
 ```
 
-Run the following command to install Yoda application.
+运行以下命令安装Yoda应用程序。
+
 ```
 $ pip install .
 
 ```
 
-Please note the dot (.) at the end. Now, all required packages will be downloaded and installed.
+请注意最后的点（.）。 现在，所有必需的软件包将被下载并安装。
 
-### Configure Yoda
+### 配置 Yoda
 
-First, setup configuration to save your information on your local system.
+首先，设置配置以将您的信息保存在本地系统上。
 
-To do so, run:
+运行下面的命令：
+
 ```
 $ yoda setup new
 
 ```
 
-Answer the following questions:
+填写下列的问题：
+
 ```
 Enter your name:
 Senthil Kumar
@@ -57,15 +62,17 @@ y
 
 ```
 
-Your password is saved in the config file after encrypting, so don’t worry about it.
+你的密码在加密后保存在配置文件中，所以不用担心。
 
-To check the current configuration, run:
+要检查当前配置，请运行：
+
 ```
 $ yoda setup check
 
 ```
 
-You will see an output something like below.
+你会看到如下的输出。
+
 ```
 Name: Senthil Kumar
 Email: [email protected]
@@ -73,23 +80,26 @@ Github username: sk
 
 ```
 
-By default, your information is stored in **~/.yoda** directory.
+默认情况下，您的信息存储在  **~/.yoda** 目录中。
 
-To delete the existing configuration, do:
+要删除现有配置，请执行以下操作：
+
 ```
 $ yoda setup delete
 
 ```
 
-### Usage
+### 用法
 
-Yoda contains a simple chat bot. You can interact with it using **chat** command like below.
+Yoda 包含一个简单的聊天机器人。您可以使用下面的聊天命令与它交互。
+
 ```
 $ yoda chat who are you
 
 ```
 
-Sample output:
+样例输出:
+
 ```
 Yoda speaks:
 I'm a virtual agent
@@ -100,11 +110,12 @@ I'm doing very well. Thanks!
 
 ```
 
-Here is the list of things we can do with Yoda:
+以下是我们可以用 Yoda 做的事情:
 
-**Test Internet speed**
+**测试网络速度**
 
-Let us ask Yoda about the Internet speed. To do so, run:
+让我们问一下 Yoda 关于互联网速度的问题。运行:
+
 ```
 $ yoda speedtest
 Speed test results:
@@ -114,9 +125,10 @@ Upload: 1.95 Mb/s
 
 ```
 
-**Shorten and expand URLs**
+**缩短并展开网址**
 
-Yoda also helps to shorten any URL.
+Yoda 还有助于缩短任何网址。
+
 ```
 $ yoda url shorten https://www.ostechnix.com/
 Here's your shortened URL:
@@ -124,7 +136,8 @@ https://goo.gl/hVW6U0
 
 ```
 
-To expand the shortened URL:
+要展开缩短的网址：
+
 ```
 $ yoda url expand https://goo.gl/hVW6U0
 Here's your original URL:
@@ -132,9 +145,11 @@ https://www.ostechnix.com/
 
 ```
 
-**Read Hacker News**
 
-I am regular visitor of Hacker News website. If you’re anything like me, you can read the news from Hacker News website using Yoda like below.
+**阅读黑客新闻**
+
+我是 Hacker News 网站的常客。 如果你像我一样，你可以使用 Yoda 从下面的 Hacker News 网站阅读新闻。
+
 ```
 $ yoda hackernews
 News-- 1/513
@@ -147,13 +162,14 @@ Continue? [press-"y"]
 
 ```
 
-Yoda will display one item at a time. To read the next news, simply type “y” and hit ENTER.
+Yoda 将一次显示一个项目。 要阅读下一条新闻，只需输入 “y” 并按下 ENTER。
 
-**Manage personal diaries**
+**管理个人日记**
 
-We can also maintain a personal diary to note important events.
+我们也可以保留个人日记以记录重要事件。
 
-Create a new diary using command:
+使用命令创建一个新的日记：
+
 ```
 $ yoda diary nn
 Input your entry for note:
@@ -161,9 +177,10 @@ Today I learned about Yoda
 
 ```
 
-To create a new note, run the above command again.
+要创建新笔记，请再次运行上述命令。
 
-To view all notes:
+查看所有笔记：
+
 ```
 $ yoda diary notes
 Today's notes:
@@ -174,9 +191,10 @@ Today's notes:
 
 ```
 
-Not just notes, Yoda can also help you to create tasks.
+不仅仅是笔记，Yoda 还可以帮助你创建任务。
 
-To create a new task, run:
+要创建新任务，请运行：
+
 ```
 $ yoda diary nt
 Input your entry for task:
@@ -184,7 +202,8 @@ Write an article about Yoda and publish it on OSTechNix
 
 ```
 
-To view the list of tasks, run:
+要查看任务列表，请运行：
+
 ```
 $ yoda diary tasks
 Today's agenda:
@@ -201,7 +220,8 @@ Completed tasks: 0
 
 ```
 
-As you see above, I have one incomplete task. To mark it as completed, run the following command and type the completed task serial number and hit ENTER:
+正如你在上面看到的，我有一个未完成的任务。 要将其标记为已完成，请运行以下命令并输入已完成的任务序列号并按下 ENTER 键：
+
 ```
 $ yoda diary ct
 Today's agenda:
@@ -214,7 +234,8 @@ Enter the task number that you would like to set as completed
 
 ```
 
-You can analyze the current month’s tasks at any time using command:
+您可以随时使用命令分析当前月份的任务：
+
 ```
 $ yoda diary analyze
 Percentage of incomplete task : 0
@@ -223,17 +244,19 @@ Frequency of adding task (Task/Day) : 3
 
 ```
 
-Sometimes, you may want to maintain a profile about a person you love, admire.
+有时候，你可能想要记录一个关于你爱的或者敬佩的人的个人资料。
 
-**Take notes about loved ones**
+**记录关于爱人的笔记**
 
-First, you need to setup configuration to store your friend’s details. To do so, run:
+首先，您需要设置配置来存储朋友的详细信息。 请运行：
+
 ```
 $ yoda love setup
 
 ```
 
-Enter the details of your friend:
+输入你的朋友的详细信息：
+
 ```
 Enter their name:
 Abdul Kalam
@@ -244,14 +267,16 @@ Rameswaram
 
 ```
 
-To view the details of the person, run:
+要查看此人的详细信息，请运行：
+
 ```
 $ yoda love status
 {'place': 'Rameswaram', 'name': 'Abdul Kalam', 'sex': 'M'}
 
 ```
 
-To add the birthday of your love one:
+要添加你的爱人的生日：
+
 ```
 $ yoda love addbirth
 Enter birthday
@@ -259,21 +284,24 @@ Enter birthday
 
 ```
 
-To view the birth date:
+查看生日：
+
 ```
 $ yoda love showbirth
 Birthday is 15-10-1931
 
 ```
 
-You could even add notes about that person:
+你甚至可以添加关于该人的笔记：
+
 ```
 $ yoda love note
 Avul Pakir Jainulabdeen Abdul Kalam better known as A. P. J. Abdul Kalam, was the 11th President of India from 2002 to 2007.
 
 ```
 
-You can view the notes using command:
+您可以使用命令查看笔记：
+
 ```
 $ yoda love notes
 Notes:
@@ -281,7 +309,8 @@ Notes:
 
 ```
 
-You can also write the things that person like:
+你也可以写下这个人喜欢的东西：
+
 ```
 $ yoda love like
 Add things they like
@@ -291,7 +320,8 @@ n
 
 ```
 
-To view the things they like, run:
+要查看他们喜欢的东西，请运行：
+
 ```
 $ yoda love likes
 Likes:
@@ -299,17 +329,21 @@ Likes:
 
 ```
 
-**Tracking money expenses**
+****
 
-You don’t need a separate tool to maintain your financial expenditure. Yoda got your back.
+**跟踪资金费用**
 
-First, setup configuration for your money expenses using command:
+您不需要单独的工具来维护您的财务支出。 Yoda 会替您处理好。
+
+首先，使用命令设置您的金钱支出配置：
+
 ```
 $ yoda money setup
 
 ```
 
-Enter your currency code and the initial amount:
+输入您的货币代码和初始金额：
+
 ```
 Enter default currency code:
 INR
@@ -321,14 +355,16 @@ Enter initial amount:
 
 ```
 
-To view the money configuration, just run:``
+要查看金钱配置，只需运行：
+
 ```
 $ yoda money status
 {'initial_money': 10000, 'currency_code': 'INR'}
 
 ```
 
-Let us say you bought a book that costs 250 INR. To add this expense, run:
+让我们假设你买了一本价值 250 卢比的书。 要添加此费用，请运行：
+
 ```
 $ yoda money exp
 Spend 250 INR on books
@@ -336,64 +372,76 @@ output:
 
 ```
 
-To view the expenses, run:
+要查看花费，请运行：
+
 ```
 $ yoda money exps
 2018-03-21 17:12:31 INR 250 books
 
 ```
 
-**Creating Idea lists**
+****
 
-To create a new idea:
+**创建想法列表**
+
+创建一个新的想法:
+
 ```
 $ yoda ideas add --task <task_name> --inside <project_name>
 
 ```
 
-List the ideas:
+列出想法:
+
 ```
 $ yoda ideas show
 
 ```
 
-To remove a idea from the project:
+从任务中移除一个想法:
+
 ```
 $ yoda ideas remove --task <task_name> --inside <project_name>
 
 ```
 
-To remove the idea completely, run:
+要完全删除这个想法，请运行:
+
 ```
 $ yoda ideas remove --project <project_name>
 
 ```
 
-**Learning English Vocabulary**
+****
 
-Yoda helps you to learn random English words and track your learning progress.
+**学习英语词汇**
 
-To learn a new word, type:
+Yoda 帮助你学习随机英语单词并追踪你的学习进度。
+
+要学习一个新单词，请输入：
+
 ```
 $ yoda vocabulary word
 
 ```
 
-It will display a random word. Press ENTER to display the meaning of the word. Again, Yoda asks you if you already know the meaning of the word. If you know it already, type “yes”. If you don’t know, type “no”. This can help you to track your progress. Use the following command to know your progress.
+它会随机显示一个单词。 按 ENTER 键显示单词的含义。 再一次，Yoda 问你是否已经知道这个词的意思。 如果您已经知道，请输入“是”。 如果您不知道，请输入“否”。 这可以帮助你跟踪你的进度。 使用以下命令来了解您的进度。
+
 ```
 $ yoda vocabulary accuracy
 
 ```
 
-Also, Yoda can help you to do few other things like finding the definition of a word and creating flashcards to easily learn anything. For more details and list of available options, refer the help section.
+此外，Yoda 可以帮助您做其他一些事情，比如找到单词的定义和创建插卡以轻松学习任何内容。 有关更多详细信息和可用选项列表，请参阅帮助部分。
+
 ```
 $ yoda --help
 
 ```
 
-More good stuffs to come. Stay tuned!
+更多好的东西来了。请继续关注!
 
-Cheers!
+干杯!
 
 
 
@@ -402,7 +450,7 @@ Cheers!
 via: https://www.ostechnix.com/yoda-the-command-line-personal-assistant-for-your-linux-system/
 
 作者：[SK][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[amwps290](https://github.com/amwps290)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
