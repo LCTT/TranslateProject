@@ -5,7 +5,7 @@ fuzheng1998 translating
 
 ![](https://images.idgesg.net/images/article/2018/02/linux_security_vs_macos_and_windows_locks_data_thinkstock-100748607-large.jpg)
 
-企业投入了大量时间、精力和金钱来保障系统的安全性。安全意识最强的可能就是有一个安全的运转中心。他们肯定用了防火墙以及反病毒软件。他们也可能花费大量时间监控网络，They probably spend a lot of time monitoring their networks, looking for telltale anomalies that could indicate a breach. What with IDS, SIEM and NGFWs, they deploy a veritable alphabet of defenses.
+企业投入了大量时间、精力和金钱来保障系统的安全性。安全意识最强的可能就是有一个安全的运转中心。他们肯定用了防火墙以及反病毒软件。他们也可能花费大量时间监控网络，寻找可能违约的泄密异常。 What with IDS, SIEM and NGFWs, they deploy a veritable alphabet of defenses.
 
 But how many have given much thought to one of the cornerstones of their digital operations: the operating systems deployed on the workforce’s PCs? Was security even a factor when the desktop OS was selected?
 
