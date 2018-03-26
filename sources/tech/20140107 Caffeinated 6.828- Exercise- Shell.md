@@ -1,3 +1,5 @@
+translating---geekpi
+
 Caffeinated 6.828: Exercise: Shell
 ======
 
