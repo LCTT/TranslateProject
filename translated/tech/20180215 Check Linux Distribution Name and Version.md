@@ -1,26 +1,14 @@
-hankchow translating
-
-Check Linux Distribution Name and Version
+查看 Linux 发行版名称和版本号的8种方法
 ======
-You have joined new company and want to install some software’s which is requested by DevApp team, also want to restart few of the service after installation. What to do?
+如果你加入了一家新公司，要为开发团队安装所需的软件并重启服务，这个时候首先要弄清楚它们运行在什么发行版以及哪个版本的系统上，你才能正确完成后续的工作。作为系统管理员，充分了解系统信息是首要的任务。
 
-In this situation at least you should know what Distribution & Version is running on it. It will help you perform the activity without any issue.
+查看 Linux 发行版名称和版本号有很多种方法。你可能会问，为什么要去了解这些基本信息呢？
 
-Administrator should gather some of the information about the system before doing any activity, which is first task for him.
+因为对于诸如 RHEL、Debian、openSUSE、Arch Linux 这几种主流发行版来说，它们各自拥有不同的包管理器来管理系统上的软件包，如果不知道所使用的是哪一个发行版的系统，在包安装的时候就会无从下手，而且由于大多数发行版都是用 systemd 命令而不是 SysVinit 脚本，在重启服务的时候也难以执行正确的命令。
 
-There are many ways to find the Linux distribution name and version. You might ask, why i want to know this basic things?
+下面来看看可以使用那些基本命令来查看 Linux 发行版名称和版本号。
 
-We have four major distributions such as RHEL, Debian, openSUSE & Arch Linux. Each distribution comes with their own package manager which help us to install packages on the system.
-
-If you don’t know the distribution name then you wont be able to perform the package installation.
-
-Also you won’t able to run the proper command for service bounces because most of the distributions implemented systemd command instead of SysVinit script.
-
-It’s good to have the basic commands which will helps you in many ways.
-
-Use the following Methods to Check Your Linux Distribution Name and Version.
-
-### List of methods
+### 方法总览
 
   * lsb_release command
   * /etc/*-release file
@@ -33,9 +21,10 @@ Use the following Methods to Check Your Linux Distribution Name and Version.
 
 
 
-### Method-1: lsb_release Command
+### 方法1: lsb_release 命令
 
-LSB stands for Linux Standard Base that prints distribution-specific information such as Distribution name, Release version and codename.
+LSB（Linux Standard Base，Linux 标准库）能够打印发行版的具体信息，包括发行版名称、版本号、代号等。
+
 ```
 # lsb_release -a
 No LSB modules are available.
@@ -46,11 +35,10 @@ Codename: xenial
 
 ```
 
-### Method-2: /etc/arch-release /etc/os-release File
+### 方法2: /etc/arch-release /etc/os-release File
 
-release file typically known as Operating system identification. The `/etc` directory contains many files that contains various information about the distribution. Each distribution has their own set of files, which display this information.
+版本文件通常被视为操作系统的标识。在 `/etc` 目录下放置了很多记录着发行版各种信息的文件，每个发行版都各自有一套这样记录着相关信息的文件。下面是一组在 Ubuntu/Debian 系统上显示出来的文件内容。
 
-The below set of files are present on Ubuntu/Debian system.
 ```
 # cat /etc/issue
 Ubuntu 16.04.3 LTS \n \l
@@ -82,7 +70,7 @@ UBUNTU_CODENAME=xenial
 
 ```
 
-The below set of files are present on RHEL/CentOS/Fedora system. The `/etc/redhat-release` & `/etc/system-release` files symlinks with `/etc/[distro]-release` file.
+下面这一组是在 RHEL/CentOS/Fedora 系统上显示出来的文件内容。其中 `/etc/redhat-release` 和 `/etc/system-release` 文件是指向 `/etc/[发行版名称]-release` 文件的一个连接。
 ```
 # cat /etc/centos-release
 CentOS release 6.9 (Final)
@@ -115,34 +103,34 @@ Fedora release 27 (Twenty Seven)
 
 ```
 
-### Method-3: uname Command
+### 方法3: uname 命令
 
-uname (stands for unix name) is an utility that prints the system information like kernel name, version and other details about the system and the operating system running on it.
+uname（unix name） 是一个打印系统信息的工具，包括内核名称、版本号、系统详细信息以及所运行的操作系统等等。
 
-**Suggested Read :** [6 Methods To Check The Running Linux Kernel Version On System][1]
+**建议阅读：** [6种查看系统 Linux 内核的方法][1]
 ```
 # uname -a
 Linux localhost.localdomain 4.12.14-300.fc26.x86_64 #1 SMP Wed Sep 20 16:28:07 UTC 2017 x86_64 x86_64 x86_64 GNU/Linux
 
 ```
 
-The above colored words describe the version of operating system as Fedora Core 26.
+以上运行结果说明使用的操作系统版本是 Fedora 26。
 
-### Method-4: /proc/version File
+### 方法4: /proc/version File
 
-This file specifies the version of the Linux kernel, the version of gcc used to compile the kernel, and the time of kernel compilation. It also contains the kernel compiler’s user name (in parentheses).
+这个文件记录了 Linux 内核的版本、用于编译内核的 gcc 的版本、内核编译的时间，以及内核编译者的用户名。
 ```
 # cat /proc/version
-Linux version 4.12.14-300.fc26.x86_64 ([email protected]) (gcc version 7.2.1 20170915 (Red Hat 7.2.1-2) (GCC) ) #1 SMP Wed Sep 20 16:28:07 UTC 2017
+Linux version 4.12.14-300.fc26.x86_64 ([email protected]) (gcc version 7.2.1 20170915 (Red Hat 7.2.1-2) (GCC) ) #1 SMP Wed Sep 20 16:28:07 UTC 2017
 
 ```
 
-### Method-5: dmesg Command
+### Method-5: dmesg 命令
 
-dmesg (stands for display message or driver message) is a command on most Unix-like operating systems that prints the message buffer of the kernel.
+dmesg（display message/driver message，展示信息/驱动程序信息）是大多数类 Unix 操作系统上的一个命令，用于打印内核上消息缓冲区的信息。
 ```
 # dmesg | grep "Linux"
-[ 0.000000] Linux version 4.12.14-300.fc26.x86_64 ([email protected]) (gcc version 7.2.1 20170915 (Red Hat 7.2.1-2) (GCC) ) #1 SMP Wed Sep 20 16:28:07 UTC 2017
+[ 0.000000] Linux version 4.12.14-300.fc26.x86_64 ([email protected]) (gcc version 7.2.1 20170915 (Red Hat 7.2.1-2) (GCC) ) #1 SMP Wed Sep 20 16:28:07 UTC 2017
 [ 0.001000] SELinux: Initializing.
 [ 0.001000] SELinux: Starting in permissive mode
 [ 0.470288] SELinux: Registering netfilter hooks
@@ -154,11 +142,11 @@ dmesg (stands for display message or driver message) is a command on most Unix-l
 
 ```
 
-### Method-6: Yum/Dnf Command
+### Method-6: Yum/Dnf 命令
 
-Yum (Yellowdog Updater Modified) is one of the package manager utility in Linux operating system. Yum command is used to install, update, search & remove packages on some Linux distributions based on RedHat.
+Yum（Yellowdog Updater Modified）是 Linux 操作系统上的一个包管理工具，而 `yum` 命令则是一些基于 RedHat 的 Linux 发行版上用于安装、更新、查找、删除软件包的命令。
 
-**Suggested Read :** [YUM Command To Manage Packages on RHEL/CentOS Systems][2]
+**建议阅读：** [在 RHEL/CentOS 系统上使用 yum 命令管理软件包][2]
 ```
 # yum info nano
 Loaded plugins: fastestmirror, ovl
@@ -180,7 +168,7 @@ Description : GNU nano is a small and friendly text editor.
 
 ```
 
-The below yum repolist command shows that Base, Extras, and Updates repositories are coming from CentOS 7 repository.
+下面的 `yum repolist` 命令执行后显示了 yum 的基础源仓库、额外源仓库、更新源仓库都来自 CentOS 7 仓库。
 ```
 # yum repolist
 Loaded plugins: fastestmirror, ovl
@@ -196,9 +184,9 @@ repolist: 11908
 
 ```
 
-We can also use Dnf command to check distribution name and version.
+使用 `dnf` 命令也同样可以查看发行版名称和版本号。
 
-**Suggested Read :** [DNF (Fork of YUM) Command To Manage Packages on Fedora System][3]
+**建议阅读：** [在 Fedora 系统上使用 DNF（YUM 的一个分支）命令管理软件包][3]
 ```
 # dnf info nano
 Last metadata expiration check: 0:01:25 ago on Thu Feb 15 01:59:31 2018.
@@ -218,22 +206,22 @@ Description : GNU nano is a small and friendly text editor.
 
 ```
 
-### Method-7: RPM Command
+### Method-7: RPM 命令
 
-RPM stands for RedHat Package Manager is a powerful, command line Package Management utility for Red Hat based system such as CentOS, Oracle Linux & Fedora. This help us to identify the running system version.
+RPM（RedHat Package Manager, RedHat 包管理器）是在 CentOS、Oracle Linux、Fedora 这些基于 RedHat 的操作系统上的一个强大的命令行包管理工具，同样也可以帮助我们查看系统的版本信息。
 
-**Suggested Read :** [RPM commands to manage packages on RHEL based systems][4]
+**建议阅读：** [在基于 RHEL 的系统上使用 RPM 命令管理软件包][4]
 ```
 # rpm -q nano
 nano-2.8.7-1.fc27.x86_64
 
 ```
 
-### Method-8: APT-GET Command
+### Method-8: APT-GET 命令
 
-Apt-Get stands for Advanced Packaging Tool (APT). apg-get is a powerful command-line tool which is used to automatically download and install new software packages, upgrade existing software packages, update the package list index, and to upgrade the entire Debian based systems.
+Apt-Get（Advanced Packaging Tool）是一个强大的命令行工具，可以自动下载安装新软件包、更新已有的软件包、更新软件包列表索引，甚至更新整个 Debian 系统。
 
-**Suggested Read :** [Apt-Get & Apt-Cache commands to manage packages on Debian Based Systems][5]
+**建议阅读：** [在基于 Debian 的系统上使用 Apt-Get 和 Apt-Cache 命令管理软件包][5]
 ```
 # apt-cache policy nano
 nano:
@@ -253,7 +241,7 @@ nano:
 via: https://www.2daygeek.com/check-find-linux-distribution-name-and-version/
 
 作者：[Magesh Maruthamuthu][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[HankChow](https://github.com/HankChow)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
