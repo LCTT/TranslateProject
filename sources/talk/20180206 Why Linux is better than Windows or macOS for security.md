@@ -19,9 +19,9 @@ One reason enterprises might not have evaluated the security of the OS they depl
 
 Still, would it be wise to reconsider? Are the three leading desktop OSes different enough in their approach to security to make a change worthwhile?
 
-当然商业系统面临的威胁近几年已经改变了。攻击变得成熟多了。Certainly the threats confronting enterprise systems have changed in the last few years. Attacks have become far more sophisticated. The lone teen hacker that once dominated the public imagination has been supplanted by well-organized networks of criminals and shadowy, government-funded organizations with vast computing resources.
+当然商业系统面临的威胁近几年已经改变了。攻击变得成熟多了。The lone teen hacker that once dominated the public imagination has been supplanted by well-organized networks of criminals and shadowy, government-funded organizations with vast computing resources.
 
-Like many of you, I have firsthand experience of the threats that are out there: I have been infected by malware and viruses on numerous Windows computers, and I even had macro viruses that infected files on my Mac. More recently, a widespread automated hack circumvented the security on my website and infected it with malware. The effects of such malware were always initially subtle, something you wouldn’t even notice, until the malware ended up so deeply embedded in the system that performance started to suffer noticeably. One striking thing about the infestations was that I was never specifically targeted by the miscreants; nowadays, it’s as easy to attack 100,000 computers with a botnet as it is to attack a dozen.
+想你们许多人一样，我已经有了很多那儿的亲身经历：我曾经在许多 Windows 电脑上被恶意软件和病毒感染，我甚至被 Mac 文件的宏病毒感染了。 More recently, a widespread automated hack circumvented the security on my website and infected it with malware. The effects of such malware were always initially subtle, something you wouldn’t even notice, until the malware ended up so deeply embedded in the system that performance started to suffer noticeably. One striking thing about the infestations was that I was never specifically targeted by the miscreants; nowadays, it’s as easy to attack 100,000 computers with a botnet as it is to attack a dozen.
 
 ### 操作系统真的重要吗？Does the OS really matter?
 
