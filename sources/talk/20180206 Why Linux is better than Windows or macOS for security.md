@@ -7,7 +7,7 @@ fuzheng1998 translating
 
 企业投入了大量时间、精力和金钱来保障系统的安全性。安全意识最强的可能就是有一个安全的运转中心。他们肯定用了防火墙以及反病毒软件。他们也可能花费大量时间监控网络，寻找可能违约的泄密异常。 What with IDS, SIEM and NGFWs, they deploy a veritable alphabet of defenses.
 
-But how many have given much thought to one of the cornerstones of their digital operations: the operating systems deployed on the workforce’s PCs? Was security even a factor when the desktop OS was selected?
+然而又有多少人想过数字化操作的基石之一：就是部署在员工的个人电脑上的操作系统？选择桌面操作系统时安全性是一个考虑因素吗？
 
 这就产生了一个 IT 人士都应该能回答的问题：哪种操作系统对于一般性使用最安全呢？
 
