@@ -1,3 +1,5 @@
+translating---geekpi
+
 How To Find If A CPU Supports Virtualization Technology (VT)
 ======
 
