@@ -1,3 +1,5 @@
+translating by yizhuoyan
+
 Learn Blockchains by Building One
 ======
 
