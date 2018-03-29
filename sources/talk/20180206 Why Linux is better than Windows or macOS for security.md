@@ -27,9 +27,9 @@ Still, would it be wise to reconsider? Are the three leading desktop OSes differ
 
 给你的用户部署的那个操作系统确实对你的安全态度产生了影响，但那并不是一个可靠的安全措施For one thing, a breach these days is more likely to come about because an attacker probed your users, not your systems. A [survey][1] of hackers who attended a recent DEFCON conference revealed that “84 percent use social engineering as part of their attack strategy.” Deploying a secure operating system is an important starting point, but without user education, strong firewalls and constant vigilance, even the most secure networks can be invaded. And of course there’s always the risk of user-downloaded software, extensions, utilities, plug-ins and other software that appears benign but becomes a path for malware to appear on the system.
 
-And no matter which platform you choose, one of the best ways to keep your system secure is to ensure that you apply software updates promptly. Once a patch is in the wild, after all, the hackers can reverse engineer it and find a new exploit they can use in their next wave of attacks.
+无论你选择哪种平台，保持你系统安全最好的方法之一就是确保立即应用了软件更新。Once a patch is in the wild, after all, the hackers can reverse engineer it and find a new exploit they can use in their next wave of attacks.
 
-And don’t forget the basics. Don’t use root, and don’t grant guest access to even older servers on the network. Teach your users how to pick really good passwords and arm them with tools such as [1Password][2] that make it easier for them to have different passwords on every account and website they use.
+而且别忘了最基本的。别用 root 权限，别授权用户连接到网络中的老服务器上。教你的用户如何挑选一个真正的好密码并且使用例如 [1Password][2] 这样的工具让他们在使用不同密码网站和账户更加简单。
 
 Because the bottom line is that every decision you make regarding your systems will affect your security, even the operating system your users do their work on.
 
