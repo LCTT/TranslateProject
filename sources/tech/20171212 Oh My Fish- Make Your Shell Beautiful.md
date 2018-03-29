@@ -1,3 +1,5 @@
+Translating by MjSeven
+
 Oh My Fish! Make Your Shell Beautiful
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2017/12/oh-my-fish-720x340.jpg)
