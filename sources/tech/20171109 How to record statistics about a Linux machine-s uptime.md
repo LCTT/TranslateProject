@@ -1,3 +1,5 @@
+Translating by MjSeven
+
 How to record statistics about a Linux machine’s uptime
 ======
 Linux/Unix sysadmins have a weird obsession with server uptime. There is a xkcd comic devoted to this subject where a good sysadmin is an unstoppable force that it stands between the forces of darkness and your cat blog's servers.
