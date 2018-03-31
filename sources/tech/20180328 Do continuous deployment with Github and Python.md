@@ -1,3 +1,4 @@
+translating by kimii
 Do continuous deployment with Github and Python
 ======
 
