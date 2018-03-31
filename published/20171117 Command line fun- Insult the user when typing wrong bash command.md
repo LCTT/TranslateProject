@@ -1,57 +1,75 @@
-命令行乐趣：恶搞输错 Bash 命令的用户
+命令行乐趣：嘲讽输错 Bash 命令的用户
 ======
-你可以通过配置 sudo 命令去恶搞输入错误密码的用户。但是之后，shell 的恶搞提示语可能会滥用于输入错误命令的用户。
 
+你可以通过配置 `sudo` 命令去嘲讽输入错误密码的用户。但是现在，当用户在 shell 输错命令时，就能嘲讽他了（滥用？）。
 
-## 你好 bash-insulter
+### 你好 bash-insulter
 
 来自 Github 页面：
 
-> 当用户键入错误命令，随机嘲讽。它使用了一个 bash4.x. 版本的全新内置错误处理函数，叫 command_not_found_handle。
+> 当用户键入错误命令，随机嘲讽。它使用了一个 bash4.x. 版本的全新内置错误处理函数，叫 `command_not_found_handle`。
 
-## 安装
+### 安装
 
 键入下列 git 命令克隆一个仓库：
-`git clone https://github.com/hkbakke/bash-insulter.git bash-insulter`
+
+```
+git clone https://github.com/hkbakke/bash-insulter.git bash-insulter
+```
+
 示例输出：
+
 ```
 Cloning into 'bash-insulter'...
 remote: Counting objects: 52, done.
 remote: Compressing objects: 100% (49/49), done.
 remote: Total 52 (delta 12), reused 12 (delta 2), pack-reused 0
 Unpacking objects: 100% (52/52), done.
-
 ```
 
-用文本编辑器，编辑你的 ~/.bashrc 或者 /etc/bash.bashrc 文件，比如说使用 vi： 
-`$ vi ~/.bashrc`
-在其后追加这一行（具体了解请查看 [if..else..fi 声明][1] 和 [命令源码][2]）：
+用文本编辑器，比如说使用 `vi`，编辑你的 `~/.bashrc` 或者 `/etc/bash.bashrc` 文件：
+ 
+```
+$ vi ~/.bashrc
+```
+
+在其后追加这一行（具体了解请查看 [if..else..fi 声明][1] 和 [source 命令][2]）：
+
 ```
 if [ -f $HOME/bash-insulter/src/bash.command-not-found ]; then
     source $HOME/bash-insulter/src/bash.command-not-found
 fi
 ```
 
-保存并关闭文件。重新登陆，如果不想退出账号也可以手动运行它：
+保存并关闭文件。重新登录，如果不想退出账号也可以手动运行它：
+
 ```
 $ . $HOME/bash-insulter/src/bash.command-not-found
 ```
 
-## 如何使用它？
+### 如何使用它？
 
 尝试键入一些无效命令：
+
 ```
 $ ifconfigs
 $ dates
 ```
+
 示例输出:
+
 [![一个有趣的 bash 钩子功能，嘲讽输入了错误命令的你。][3]][3]
 
-## 自定义
+### 自定义
 
-你需要编辑 $HOME/bash-insulter/src/bash.command-not-found：
-`$ vi $HOME/bash-insulter/src/bash.command-not-found`
+你需要编辑 `$HOME/bash-insulter/src/bash.command-not-found`：
+
+```
+$ vi $HOME/bash-insulter/src/bash.command-not-found
+```
+
 示例代码：
+
 ```
 command_not_found_handle () {
     local INSULTS=(
@@ -104,15 +122,28 @@ command_not_found_handle () {
 }
 ```
 
-## sudo 嘲讽
+### 赠品：sudo 嘲讽
 
-编辑 sudoers 文件：
-`$ sudo visudo`
+编辑 `sudoers` 文件：
+
+```
+$ sudo visudo
+```
+
 追加下面这一行：
-`Defaults insults`
+
+```
+Defaults insults
+```
+
 或者像下面尾行增加一句嘲讽语：
-`Defaults !lecture,tty_tickets,!fqdn,insults`
+
+```
+Defaults !lecture,tty_tickets,!fqdn,insults
+```
+
 这是我的文件：
+
 ```
 Defaults	env_reset
 Defaults	mail_badpass
@@ -140,19 +171,26 @@ root ALL = (ALL:ALL) ALL
 #includedir /etc/sudoers.d
 ```
 
-Try it out:
+试一试：
+
 ```
-$ sudo -k # clear old stuff so that we get a fresh prompt
+$ sudo -k # 清除缓存，从头开始
 $ sudo ls /root/
 $ sudo -i
 ```
-样例对话:
+
+样例对话：
+
 [![当输入错误密码时，你会被一个有趣的的 sudo 嘲讽语戏弄。][4]][4]
 
-## 你好 sl
+### 赠品：你好 sl
 
-[sl 或是 UNIX 经典捣蛋软件][5] 游戏。当你错误的把 “ls” 输入成 “sl”，将会有一辆蒸汽机车穿过你的屏幕。
-`$ sl`
+[sl 或是 UNIX 经典捣蛋软件][5] 游戏。当你错误的把 `ls` 输入成 `sl`，将会有一辆蒸汽机车穿过你的屏幕。
+
+```
+$ sl
+```
+
 [![Linux / UNIX 桌面乐趣: 蒸汽机车][6]][5]
 
 --------------------------------------------------------------------------------
@@ -161,7 +199,7 @@ via: https://www.cyberciti.biz/howto/insult-linux-unix-bash-user-when-typing-wro
 
 作者：[Vivek Gite][a]
 译者：[CYLeft](https://github.com/CYLeft)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
