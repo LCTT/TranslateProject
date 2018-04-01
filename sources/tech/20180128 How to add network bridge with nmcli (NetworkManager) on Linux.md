@@ -26,7 +26,7 @@ nmcli con add type bridge ifname br0
 ```
 nmcli con add type bridge-slave ifname eno1 master br0
 ```
-5. br0上线:
+5. 打开br0:
 ```
 nmcli con up br0
 ```
@@ -35,7 +35,7 @@ nmcli con up br0
 
 ### 获取当前网络配置
 
-你可以通过NetworkManager的图像界面来了解本机的网络连接:
+你可以通过NetworkManager的GUI来了解本机的网络连接:
 [![Getting Network Info on Linux][1]][1]
 也可以使用如下命令行来查看:
 ```
@@ -43,7 +43,8 @@ $ nmcli con show
 $ nmcli connection show --active 
 ```
 [![View the connections with nmcli][2]][2]
-我有一个使用eno1网卡的“有线连接”。我的系统还有一个VPN接口。我将要创建一个名为br0的网桥，并连接一个网卡到eno1.
+
+我有一个使用eno1网卡的“有线连接”。我的系统还有一个VPN接口。我将要创建一个名为br0的网桥，并连接到eno1.
 
 ### 如何创建一个名为br0的网桥
 
@@ -53,6 +54,7 @@ $ sudo nmcli con add type bridge-slave ifname eno1 master br0
 $ nmcli connection show
 ```
 [![Create bridge interface using nmcli on Linux][3]][3]
+
 你也可以禁用STP:
 ```
 $ sudo nmcli con modify br0 bridge.stp no
@@ -80,7 +82,7 @@ $ sudo nmcli con down "Wired connection 1"
 $ sudo nmcli con up br0
 $ nmcli con show
 ```
-使用 [ip command][4] 来查看IP地址:
+使用 [ip 命令][4] 来查看IP地址:
 ```
 $ ip a s
 $ ip a s br0
@@ -107,7 +109,7 @@ $ ip a s br0
 # virsh net-autostart br0
 # virsh net-list --all
 ```
-输出样例:
+输出:
 ```
  Name State Autostart Persistent
 ----------------------------------------------------------
