@@ -37,6 +37,7 @@ nmcli con up br0
 
 你可以通过NetworkManager的GUI来了解本机的网络连接:
 [![Getting Network Info on Linux][1]][1]
+
 也可以使用如下命令行来查看:
 ```
 $ nmcli con show
@@ -82,7 +83,7 @@ $ sudo nmcli con down "Wired connection 1"
 $ sudo nmcli con up br0
 $ nmcli con show
 ```
-使用 [ip 命令][4] 来查看IP地址:
+使用 [ip 命令][4] 来查看IP信息:
 ```
 $ ip a s
 $ ip a s br0
