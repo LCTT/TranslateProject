@@ -1,5 +1,6 @@
 How To Manage Disk Partitions Using Parted Command
 ======
+Translating by zyk2290
 We all knows disk partitions is one of the important task for Linux administrator. They can not survive without knowing this.
 
 In worst cases, at least once in a week they would get this request from dependent team but in big environment admins used to get this request very often.
