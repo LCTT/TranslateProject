@@ -144,6 +144,7 @@ httpd (pid  14649) is running...
 Commands: Use arrow keys to move, '?' for help, 'q' to quit, '<-' to go back.
   Arrow keys: Up and Down to move.  Right to follow a link; Left to go back.
  H)elp O)ptions P)rint G)o M)ain screen Q)uit /=search [delete]=history list```
+```
 
 接下来，编辑您的 `index.html` 文件并添加一些 HTML 标记，使其看起来像这样：
 
