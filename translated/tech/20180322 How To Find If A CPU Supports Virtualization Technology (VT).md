@@ -1,35 +1,33 @@
-translating---geekpi
-
-How To Find If A CPU Supports Virtualization Technology (VT)
+如何知道 CPU 是否支持虚拟化技术 （VT）
 ======
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/03/Virtualization-Technology-720x340.png)
-We already knew how to [**check if your Linux OS is 32 bit or 64 bit**][1] and how to [**find if your Linux system is physical or virtual machine**][2]. Today, we are going to learn yet another useful topic – how to find if a CPU supports virtualization technology (VT) or not? This should be first thing you might want to verify before installing virtualization applications such as VirtualBox or VMWare workstation to run virtual machines on your Linux system. Now let us go and find out if your computer supports VT or not. Trust me, it is really easy!
+我们已经知道如何[**检查你的 Linux 操作系统是 32 位还是 64 位**] [1]以及如何[**知道你的 Linux 系统是物理机还是虚拟机**] [2]。今天，我们将学习另一个有用的话题 - 如何知道 CPU 是否支持虚拟化技术 （VT）？在安装虚拟化程序（如 VirtualBox 或 VMWare workstation）以在 Linux 系统上运行虚拟机之前，你应该首先验证这一点。现在让我们来看看你的电脑是否支持 VT。相信我，这真的很简单！
 
-### Find If A CPU Supports Virtualization Technology (VT)
+### 了解 CPU 是否支持虚拟化技术 （VT）
 
-We can check if the CPU supports VT in several methods. Here I present you four methods.
+我们可以通过几种方法检查 CPU 是否支持 VT。在这里我向你展示四种方法。
 
-#### Method 1: Using “egrep” command
+#### 方法 1：使用 “egrep” 命令
 
-**Egrep** is one of the variant of [**Grep**][3] command which is used to search text files with regular expressions. For the purpose of this guide, we are going to grep **/cpu/procinfo/** file to find out if the CPU supports VT or not.
+**egrep** 是 [**grep**][3] 命令的变体之一，用于使用正则表达式搜索文本文件。为了本指南的目的，我们将grep **/cpu/procinfo/** 文件来确定 CPU 是否支持 VT。
 
-To find out if your CPU supports VT using egrep command, run:
+要使用 egrep 命令查明你的CPU是否支持VT，请运行：
 ```
 $ egrep "(svm|vmx)" /proc/cpuinfo
 
 ```
 
-**Sample output:**
+**示例输出**
 
-You will get either **“vmx”** (Intel-VT technology) or **“svm”** (AMD-V support) in the output.
+你将在输出中看到 **“vmx”**（Intel-VT 技术）或 **“svm”** （AMD-V 支持）。
 ```
 flags : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx rdtscp lm constant_tsc arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf pni pclmulqdq dtes64 monitor ds_cpl vmx est tm2 ssse3 cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic popcnt tsc_deadline_timer xsave avx lahf_lm epb pti tpr_shadow vnmi flexpriority ept vpid xsaveopt dtherm arat pln pts
 [...]
 
 ```
 
-Since the output is very long, you may find it hard to find the words “vmx” or “svm” in the output. No worries! You can distinguish those terms with colors like below.
+由于输出很长，你可能会发现很难在输出中找到 “vmx” 或 “svm”。别担心！你可以像下面那样用颜色来区分这些术语。
 ```
 $ egrep --color -i "svm|vmx" /proc/cpuinfo
 
@@ -37,21 +35,21 @@ $ egrep --color -i "svm|vmx" /proc/cpuinfo
 
 ![][5]
 
-If you don’t get any output, it means that your system doesn’t support virtualization.
+如果你没有看到任何输出，这意味着你的系统不支持虚拟化。
 
-Please note that these CPU flags (vmx or svm) in the cpuinfo means that your system will support VT. In some CPU models, the VT support might be disabled in the BIOS, by default. In such cases, you should check your BIOS settings to enable VT support.
+请注意，cpuinfo 中的这些 CPU 标志（vmx 或 svm）表示你的系统支持 VT。在某些 CPU 型号中，默认情况下，可能会在 BIOS 中禁用 VT 支持。在这种情况下，你应该检查 BIOS 设置以启用 VT 支持。
 
-For more details about grep/egrep command, refer the man pages.
+有关 grep/egrep 命令的更多详细信息，请参阅手册页。
 ```
 $ man grep
 
 ```
 
-#### Method 2 – Using “lscpu” command
+#### 方法 2： 使用 “lscpu” 命令
 
-The “lscpu” command is used to display the information about your CPU architecture. It gathers information from sysfs, /proc/cpuinfo file and displays the number of CPUs, threads, cores, sockets, and Non-Uniform Memory Access (NUMA) nodes of your host system.
+“lscpu” 命令用于显示有关 CPU 架构的信息。它从 sysfs、/proc/cpuinfo 收集信息，并显示主机系统的 CPU、线程、内核、套接字和非统一内存访问 （NUMA） 节点的数量。
 
-To find out if the VT support is enabled or not, simply run:
+要确定是否启用 VT 支持，只需运行：
 ```
 $ lscpu
 
@@ -59,55 +57,55 @@ $ lscpu
 
 ![][6]
 
-For more details, check the man pages.
+有关更多详细信息，请查看手册页。
 ```
 $ man lscpu
 
 ```
 
-#### Method 3 – Using “Cpu-checker” utility
+#### 方法 3：使用 “Cpu-checker” 工具
 
-**Cpu-checker** is yet another useful utility to test your CPU for virtualization support. As far as I searched on the web, this utility is available for only Ubuntu-based systems. To install it, run:
+**Cpu-checker** 是另一个有用的工具，用于测试你的 CPU 是否支持虚拟化。就我在网上搜索得到的，该程序仅适用于基于 Ubuntu 的系统。要安装它，请运行：
 ```
 $ sudo apt-get install cpu-checker
 
 ```
 
-Once cpu-checker package is installed, run the following command to check whether VT support is enable or not:
+安装 cpu-checker 包之后，运行以下命令来检查是否启用 VT 支持：
 ```
 $ sudo kvm-ok
 
 ```
 
-If your CPU supports VT, you will get the following output:
+如果您的 CPU 支持 VT，你将得到以下输出：
 ```
 INFO: /dev/kvm exists
 KVM acceleration can be used
 
 ```
 
-If your CPU doesn’t support VT, you will see an output something like below.
+如果你的 CPU 不支持 VT，你会看到如下的输出。
 ```
 INFO: Your CPU does not support KVM extensions
 KVM acceleration can NOT be used
 
 ```
 
-#### Method 4 – Using “virt-host-validate ” tool
+#### 方法 4：使用 “virt-host-validate” 工具
 
-This tool is specifically for RHEL based distros like CentOS and Scientific Linux. The **libvirt-client** package provides **virt-host-validate** binary. So you need to install “libvert-client” package to use this tool.
+该工具专门用于基于 RHEL 的发行版，如 CentOS 和 Scientific Linux。 **libvirt-client** 包提供 **virt-host-validate** 二进制文件。所以你需要安装 “libvert-client” 包来使用这个工具。
 ```
 $ sudo yum install libvirt-client
 
 ```
 
-Now, run “virt-host-validate” command to find if VT is enabled or not in your RHEL-based systems.
+现在，运行 “virt-host-validate” 命令来确定基于 RHEL 的系统中是否启用了 VT。
 ```
 $ sudo virt-host-validate
 
 ```
 
-If you get **pass** for all results, your system supports VT.
+如果所有的结果是 **pass**，那么你的系统支持 VT。
 ```
  QEMU: Checking for hardware virtualization : PASS
  QEMU: Checking if device /dev/vhost-net exists : PASS
@@ -147,16 +145,16 @@ If you get **pass** for all results, your system supports VT.
 
 ```
 
-If your system doesn’t support VT, you will see an output like below.
+如果你的系统不支持 VT，你会看到下面的输出。
 ```
 QEMU: Checking for hardware virtualization : FAIL (Only emulated CPUs are available, performance will be significantly limited)
 [...]
 
 ```
 
-And, that’s all for now folks. In this guide, we have discussed various methods to find if a CPU supports VT or not. As you can see, it was very easy. Hope this was useful. More good stuffs to come. Stay tuned!
+就是这样了。在本文中，我们讨论了确定 CPU 是否支持 VT 的不同方法。如你所见，这很简单。希望这个有用。还有更多好的东西。敬请关注！
 
-Cheers!
+干杯！
 
 
 --------------------------------------------------------------------------------
@@ -164,7 +162,7 @@ Cheers!
 via: https://www.ostechnix.com/how-to-find-if-a-cpu-supports-virtualization-technology-vt/
 
 作者：[SK][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

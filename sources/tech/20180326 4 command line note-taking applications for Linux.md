@@ -1,3 +1,5 @@
+translating---geekpi
+
 4 command line note-taking applications for Linux
 ======
 
