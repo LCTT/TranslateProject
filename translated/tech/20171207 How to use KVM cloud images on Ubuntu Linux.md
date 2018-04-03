@@ -1,15 +1,15 @@
-How to use KVM cloud images on Ubuntu Linux
-======
+如何在 Ubuntu Linux 上使用 KVM 云镜像
+=====
 
-Kernel-based Virtual Machine (KVM) is a virtualization module for the Linux kernel that turns it into a hypervisor. You can create an Ubuntu cloud image with KVM from the command line using Ubuntu virtualisation front-end for libvirt and KVM.
+基于内核的虚拟机（KVM）时 Linux 内核的虚拟化模块，可将其转变为虚拟机管理程序。你可以使用 Ubuntu 虚拟化前端为 libvirt 和 KVM 在命令行中使用 KVM 创建 Ubuntu 云镜像。
 
-How do I download and use a cloud image with kvm running on an Ubuntu Linux server? How do I create create a virtual machine without the need of a complete installation on an Ubuntu Linux 16.04 LTS server?Kernel-based Virtual Machine (KVM) is a virtualization module for the Linux kernel that turns it into a hypervisor. You can create an Ubuntu cloud image with KVM from the command line using Ubuntu virtualisation front-end for libvirt and KVM.
+如何下载并使用运行在 Ubuntu Linux 服务器上的 KVM 云镜像？如何在 Ubuntu Linux 16.04 LTS 服务器上无需完整安装即可创建虚拟机？基于内核的虚拟机（KVM）时 Linux 内核的虚拟化模块，可将其转变为虚拟机管理程序。你可以使用 Ubuntu 虚拟化前端为 libvirt 和 KVM 在命令行中使用 KVM 创建 Ubuntu 云镜像。
 
-This quick tutorial shows to install and use uvtool that provides a unified and integrated VM front-end to Ubuntu cloud image downloads, libvirt, and cloud-init.
+这个快速教程展示了如何安装和使用 uvtool，它为 Ubuntu 云镜像下载，libvirt 和 clout_int 提供了统一的集成虚拟机前端。
 
-### Step 1 - Install KVM
+### 步骤 1 - 安装 KVM
 
-You must have kvm installed and configured. Use the [apt command][1]/[apt-get command][2] as follows:
+你必须安装并配置 KVM。使用 [apt 命令][1]/[apt-get 命令][2]，如下所示：
 ```
 $ sudo apt install qemu-kvm libvirt-bin virtinst bridge-utils cpu-checker
 $ kvm-ok
@@ -18,15 +18,17 @@ $ sudo vi /etc/network/interfaces
 $ sudo systemctl restart networking
 $ sudo brctl show
 ```
-See "[How to install KVM on Ubuntu 16.04 LTS Headless Server][4]" for more info.
 
-### Step 2 - Install uvtool
+参阅[如何在 Ubuntu 16.04 LTS Headless 服务器上安装 KVM][4] 以获得更多信息。（译注：Headless 服务器是指没有本地接口的计算设备，专用于向其他计算机及其用户提供服务。）
 
-Type the following [apt command][1]/[apt-get command][2]:
+### 步骤 2 - 安装 uvtool
+
+键入以下 [apt 命令][1]/[apt-get 命令][2]：
 ```
 $ sudo apt install uvtool
 ```
-Sample outputs:
+
+示例输出：
 ```
 [sudo] password for vivek: 
 Reading package lists... Done
@@ -96,47 +98,47 @@ Processing triggers for man-db (2.7.6.1-2) ...
 Setting up uvtool-libvirt (0~git122-0ubuntu1) ...
 ```
 
+### 步骤 3 - 下载 Ubuntu 云镜像
 
-### Step 3 - Download the Ubuntu Cloud image
-
-You need to use the uvt-simplestreams-libvirt command. It maintains a libvirt volume storage pool as a local mirror of a subset of images available from a simplestreams source, such as Ubuntu cloud images. To update uvtool's libvirt volume storage pool with all current amd64 images, run:
+你需要使用 uvt-simplestreams-libvirt 命令。它维护一个 libvirt 容量存储池，作为一个简单流源的图像子集的本地镜像，比如 Ubuntu 云镜像。要使用当前所有 amd64 镜像更新 uvtool 的 libvirt 容量存储此，运行：
 `$ uvt-simplestreams-libvirt sync arch=amd64`
-To just update/grab Ubuntu 16.04 LTS (xenial/amd64) image run:
+要更新/获取 Ubuntu 16.04 LTS (xenial/amd64) 镜像，运行：
 `$ uvt-simplestreams-libvirt --verbose sync release=xenial arch=amd64`
-Sample outputs:
+
+示例输出：
 ```
 Adding: com.ubuntu.cloud:server:16.04:amd64 20171121.1
 ```
 
-Pass the query option to queries the local mirror:
+通过 query 选项查询本地镜像：
 `$ uvt-simplestreams-libvirt query`
-Sample outputs:
+示例输出：
 ```
 release=xenial arch=amd64 label=release (20171121.1)
 ```
 
-Now, I have an image for Ubuntu xenial and I create the VM.
+现在，我为 Ubuntu xenial 创建了一个镜像，接下来我会创建虚拟机。
 
-### Step 4 - Create the SSH keys
+### 步骤 4 - 创建 SSH 密钥
 
-You need ssh keys for login into KVM VMs. Use the ssh-keygen command to create a new one if you do not have any keys at all.
+你需要使用 SSH 密钥才能登录到 KVM 虚拟机。如果你根本没有任何密钥，请使用 ssh-keygen 命令创建一个新的密钥。
 `$ ssh-keygen`
-See "[How To Setup SSH Keys on a Linux / Unix System][5]" and "[Linux / UNIX: Generate SSH Keys][6]" for more info.
+参阅“[如何在 Linux / Unix 系统上设置 SSH 密钥][5]” 和 “[Linux / UNIX: 生成 SSH 密钥][6]” 以获取更多信息。
 
-### Step 5 - Create the VM
+### 步骤 5 - 创建 VM
 
-It is time to create the VM named vm1 i.e. create an Ubuntu Linux 16.04 LTS VM:
+是时候创建虚拟机了，它叫 vm1，即创建一个 Ubuntu Linux 16.04 LTS 虚拟机:
 `$ uvt-kvm create vm1`
-By default vm1 created using the following characteristics:
+
+默认情况下 vm1 使用以下配置创建：
 
   1. RAM/memory : 512M
   2. Disk size: 8GiB
   3. CPU: 1 vCPU core
 
-
-
-To control ram, disk, cpu, and other characteristics use the following syntax:
-`$ uvt-kvm create vm1 \
+要控制 ram，disk，cpu 和其他配置，使用以下语法：
+```
+$ uvt-kvm create vm1 \
 --memory MEMORY \
 --cpu CPU \
 --disk DISK \
@@ -145,70 +147,72 @@ To control ram, disk, cpu, and other characteristics use the following syntax:
 --packages PACKAGES1, PACKAGES2, .. \
 --run-script-once RUN_SCRIPT_ONCE \
 --password PASSWORD
-`
-Where,
+```
 
-  1.  **\--password PASSWORD** : Set the password for the ubuntu user and allow login using the ubuntu user (not recommended use ssh keys).
-  2.  **\--run-script-once RUN_SCRIPT_ONCE** : Run RUN_SCRIPT_ONCE script as root on the VM the first time it is booted, but never again. Give full path here. This is useful to run custom task on VM such as setting up security or other stuff.
-  3.  **\--packages PACKAGES1, PACKAGES2, ..** : Install the comma-separated packages on first boot.
+其中
 
+ 1.  **\--password PASSWORD** : 设置 ubuntu 用户的密码和允许使用 ubuntu 的用户登录（不推荐使用 ssh 密钥）。
+ 2.  **\--run-script-once RUN_SCRIPT_ONCE** : 第一次启动时，在虚拟机上以 root 身份运行 RUN_SCRIPT_ONCE 脚本，但再也不会运行。这里给出完整的路径。这对于在虚拟机上运行自定义任务时非常有用，例如设置安全性或其他内容。
+ 3.  **\--packages PACKAGES1, PACKAGES2, ..** : 在第一次启动时安装逗号分隔的软件包。
 
-
-To get help, run:
+要获取帮助，运行：
 ```
 $ uvt-kvm -h
 $ uvt-kvm create -h
 ```
 
-#### How do I delete my VM?
+#### 如何删除虚拟机？
 
-To destroy/delete your VM named vm1, run (please use the following command with care as there would be no confirmation box):
+要销毁/删除名为 vm1 的虚拟机，运行（请小心使用以下命令，因为没有确认框）：
 `$ uvt-kvm destroy vm1`
 
-#### To find out the IP address of the vm1, run:
+#### 获取 vm1 的 IP 地址，运行：
 
 `$ uvt-kvm ip vm1`
 192.168.122.52
 
-#### To list all VMs run
+#### 列出所有运行的虚拟机
 
 `$ uvt-kvm list`
-Sample outputs:
+示例输出：
 ```
 vm1
 freebsd11.1
-
 ```
 
-### Step 6 - How to login to the vm named vm1
+### 步骤 6 - 如何登录 vm1
 
-The syntax is:
+语法是：
 `$ uvt-kvm ssh vm1`
-Sample outputs:
+示例输出：
 ```
 Welcome to Ubuntu 16.04.3 LTS (GNU/Linux 4.4.0-101-generic x86_64)
 
- comic core.md Dict.md lctt2014.md lctt2016.md LCTT翻译规范.md LICENSE Makefile published README.md sign.md sources translated 选题模板.txt 中文排版指北.md Documentation: https://help.ubuntu.com
- comic core.md Dict.md lctt2014.md lctt2016.md LCTT翻译规范.md LICENSE Makefile published README.md sign.md sources translated 选题模板.txt 中文排版指北.md Management: https://landscape.canonical.com
- comic core.md Dict.md lctt2014.md lctt2016.md LCTT翻译规范.md LICENSE Makefile published README.md sign.md sources translated 选题模板.txt 中文排版指北.md Support: https://ubuntu.com/advantage
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
 
- Get cloud support with Ubuntu Advantage Cloud Guest:
- http://www.ubuntu.com/business/services/cloud
+  Get cloud support with Ubuntu Advantage Cloud Guest:
+    http://www.ubuntu.com/business/services/cloud
 
 0 packages can be updated.
 0 updates are security updates.
 
 
-Last login: Thu Dec 7 09:55:06 2017 from 192.168.122.1
+Last login: Thu Dec  7 09:55:06 2017 from 192.168.122.1
 
 ```
 
-Another option is to use the regular ssh command from macOS/Linux/Unix/Windows client:
-`$ ssh [[email protected]][7]
-$ ssh -i ~/.ssh/id_rsa [[email protected]][7]`
-Sample outputs:
+另一个选择是从 macOS/Linux/Unix/Windows 客户端使用常规的 ssh 命令：
+```
+$ ssh ubuntu@192.168.122.52
+$ ssh -i ~/.ssh/id_rsa ubuntu@192.168.122.52
+```
+（上面的是根据原文修改的）
+示例输出：
 [![Connect to the running VM using ssh][8]][8]
-Once vim created you can use the virsh command as usual:
+
+一旦创建了 vim，你可以照常使用 virsh 命令：
 `$ virsh list`
 
 
@@ -217,7 +221,7 @@ Once vim created you can use the virsh command as usual:
 via: https://www.cyberciti.biz/faq/how-to-use-kvm-cloud-images-on-ubuntu-linux/
 
 作者：[Vivek Gite][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[MjSeven](https://github.com/MjSeven)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
