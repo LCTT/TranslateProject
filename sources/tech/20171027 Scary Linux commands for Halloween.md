@@ -1,3 +1,5 @@
+translating---geekpi
+
 Scary Linux commands for Halloween
 ======
 With Halloween so fast approaching, it's time for a little focus on the spookier side of Linux. What commands might bring up images of ghosts, witches and zombies? Which might encourage the spirit of trick or treat?
