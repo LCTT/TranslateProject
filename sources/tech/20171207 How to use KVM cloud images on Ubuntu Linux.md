@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 How to use KVM cloud images on Ubuntu Linux
 ======
 
