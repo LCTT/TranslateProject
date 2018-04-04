@@ -1,3 +1,5 @@
+translating-----geekpi
+
 How To Create/Extend Swap Partition In Linux Using LVM
 ======
 We are using LVM for flexible volume management so, why can’t we use LVM for swap space?
