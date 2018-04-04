@@ -31,7 +31,7 @@ nmcli con add type bridge-slave ifname eno1 master br0
 nmcli con up br0
 ```
 
-让我们从细节层面看看如何创建一个叫br0的网桥。
+让我们从细节层面看看如何创建一个名为br0的网桥。
 
 ### 获取当前网络配置
 
@@ -45,7 +45,7 @@ $ nmcli connection show --active
 ```
 [![View the connections with nmcli][2]][2]
 
-我有一个使用eno1网卡的“有线连接”。我的系统还有一个VPN接口。我将要创建一个名为br0的网桥，并连接到eno1.
+我有一个使用网卡eno1的“有线连接”。我的系统还有一个VPN接口。我将要创建一个名为br0的网桥，并连接到eno1.
 
 ### 如何创建一个名为br0的网桥
 
