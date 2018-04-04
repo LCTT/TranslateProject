@@ -230,7 +230,7 @@ rm ~/.config/fish/functions/fish_prompt.fish
 
 无论你何时遇到问题，只要运行 `omf doctor` 命令，并尝试所有的建议方法。
 
-###3 获取帮助
+#### 获取帮助
 
 显示帮助部分，运行：
 
