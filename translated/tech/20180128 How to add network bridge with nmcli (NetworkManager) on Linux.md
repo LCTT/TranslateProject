@@ -1,4 +1,3 @@
-Translating by kennethXia
 
 如何在Linux里使用nmcli （NetworkManager） 添加网桥
 ======
