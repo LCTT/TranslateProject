@@ -1,3 +1,5 @@
+Translating by MjSeven
+
 Best Linux Distros for the Enterprise
 ======
 In this article, I'll share the top Linux distros for enterprise environments. Some of these distros are used in server and cloud environments along with desktop duties. The one constant that all of these Linux options have is that they are enterprise grade Linux distributions -- so you can expect a high greater degree of functionality and, of course, support.
