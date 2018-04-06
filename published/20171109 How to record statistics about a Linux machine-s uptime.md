@@ -1,31 +1,37 @@
-如何记录有关 Linux 机器正常运行时间的统计信息
+如何记录 Linux 的系统运行时间的统计信息
 =====
 
-Linux/Unix 系统管理员对服务器正常运行时间有一种奇怪的痴迷。这有一个关于这个主题的 xkcd 漫画，一个好的系统管理员是一股不可阻挡的力量，它站在黑暗势力和你的猫博客服务器之间。（这句话实在理解不了。）
+Linux/Unix 系统管理员对服务器的系统运行时间有一种奇怪的痴迷。这里有一个关于这个主题的 xkcd 漫画，一个好的系统管理员是一股不可阻挡的力量，他伫立在你家猫咪博客的服务器之前，对抗黑暗势力。
 
 [![Fig.01: Devotion to Duty https://xkcd.com/705/][1]][1]
 
-我们可以使用 uptime 命令或 [w 命令][2] 或 top 命令来判断 Linux 系统运行了多久。我可以[获得系统的历史和统计运行时间的报告][3]，使用 tuptime 工具将其保持在重新启动之间。
+我们可以使用 `uptime` 命令或 [w 命令][2] 或 `top` 命令来判断 Linux 系统运行了多久。我可以使用 `tuptime` 工具保留每次重新启动的运行时间，以[获得系统运行时间的历史和统计报告][3]。
 
-就像 uptime 命令一样，但输出结果更令人印象深刻。最近我发现了另一种称为 uptimed 的工具，用于记录关于机器正常运行时间和统计信息。让我们看看如何使用 Linux 操作系统上的 uptimed 和 uprecords 来获得正常运行时间的记录统计信息。
+这就像 `uptime` 命令一样，但输出结果更令人印象深刻。最近我发现了另一种称为 `uptimed` 的工具，用于记录关于机器的系统运行时间和统计信息。让我们看看如何使用 Linux 操作系统上的 `uptimed` 和 `uprecords` 来获得运行时间的记录统计信息。
 
-查找正常运行时间非常简单，只需在基于 Linux 的系统上键入以下命令即可：
+查找系统运行时间非常简单，只需在基于 Linux 的系统上键入以下命令即可：
+
 ```
-$ **uptime -p**
+$ uptime -p
 up 2 weeks, 4 days, 7 hours, 28 minutes
 ```
 
-要保留有关 uptime 的历史统计信息，请使用 [tuptime][3] 或 uptime 工具。
+要保留有关 `uptime` 的历史统计信息，请使用 [tuptime][3] 或 `uptimed` 工具。
 
-## 安装 uptimed
+### 安装 uptimed
 
-安装 uptimed 的最简单的方式是通过你的软件包管理器，比如 apt/apt-get/yum，这些你的 Linux 发行版的朋友。
+安装 `uptimed` 的最简单的方式是通过你的软件包管理器，比如 apt/apt-get/yum 这些你的 Linux 发行版的朋友。
 
-### 在 Debian/Ubuntu Linux 上安装 uptimed
+#### 在 Debian/Ubuntu Linux 上安装 uptimed
 
-键入以下 [apt 命令][4]/[apt-get 命令][5]:
-`$ sudo apt-get install uptimed`
+键入以下 [apt 命令][4]/[apt-get 命令][5]：
+
+```
+$ sudo apt-get install uptimed
+```
+
 示例输出：
+
 ```
 Reading package lists... Done
 Building dependency tree       
@@ -59,13 +65,22 @@ Processing triggers for systemd (229-4ubuntu21) ...
 Processing triggers for ureadahead (0.100.0-19) ...
 ```
 
-### 在 CentOS/RHEL/Fedora/Oracle/Scientific Linux 上安装 uptimed
+#### 在 CentOS/RHEL/Fedora/Oracle/Scientific Linux 上安装 uptimed
 
-首先 [在 CentOS/RHEL 使用 EPEL repo][6]:
-`$ sudo yum -y install epel-release`
-然后，键入以下 [yum 命令][7]:
-`$ sudo yum install uptimed`
+首先 [在 CentOS/RHEL 使用 EPEL 仓库][6]：
+
+```
+$ sudo yum -y install epel-release
+```
+
+然后，键入以下 [yum 命令][7]：
+
+```
+$ sudo yum install uptimed
+```
+
 示例输出：
+
 ```
 Loaded plugins: fastestmirror
 Loading mirror speeds from cached hostfile
@@ -108,33 +123,51 @@ Installed:
 Complete!
 ```
 
-如果你正在使用 **Fedora Linux**，运行以下 dnf 命令：
-`$ sudo dnf install uptimed`
+如果你正在使用 Fedora Linux，运行以下 `dnf` 命令：
 
-### 在 Arch Linux 上安装 uptimed
+```
+$ sudo dnf install uptimed
+```
 
-键入以下 pacman 命令：
-`$ sudo pacman -S uptimed`
+#### 在 Arch Linux 上安装 uptimed
 
-### 在 Gentoo Linux 上安装 uptimed
+键入以下 `pacman` 命令：
 
-键入以下 emerge 命令：
-`$ sudo emerge --ask uptimed`
+```
+$ sudo pacman -S uptimed
+```
 
-## 如何配置 uptimed
+#### 在 Gentoo Linux 上安装 uptimed
 
-使用文本编辑器编辑 /etc/uptimed.conf 文件，例如 vim 命令：
-`$ sudo vim /etc/uptimed.conf`
-最少设置一个 email 地址来发送记录。假定发送邮件兼容 MTA。
+键入以下 `emerge` 命令：
+
+```
+$ sudo emerge --ask uptimed
+```
+
+### 如何配置 uptimed
+
+使用文本编辑器编辑 `/etc/uptimed.conf` 文件，例如 `vim` 命令：
+
+```
+$ sudo vim /etc/uptimed.conf
+```
+
+最少设置一个 email 地址来发送记录。假定有个兼容 sendmail 的 MTA 安装在 `/usr/lib/sendmail`。
+
 ```
 EMAIL=vivek@server1.cyberciti.biz
 ```
+
 保存并关闭文件。
 
 ### 如何在系统启动时启动 uptimed 服务？
 
-使用 systemctl 命令启动 uptimed 服务：
-`$ sudo systemctl enable uptimed`
+使用 `systemctl` 命令启动 `uptimed` 服务：
+
+```
+$ sudo systemctl enable uptimed
+```
 
 ### 我该如何 启动/停止/重启 或者查看 uptimed 服务的状态？
 
@@ -144,7 +177,9 @@ $ sudo systemctl stop uptimed ## stop it ##
 $ sudo systemctl restart uptimed ## restart it ##
 $ sudo systemctl status uptimed ## view status ##
 ```
+
 示例输出：
+
 ```
 ● uptimed.service - uptime record daemon
    Loaded: loaded (/lib/systemd/system/uptimed.service; enabled; vendor preset: enabled)
@@ -156,21 +191,26 @@ $ sudo systemctl status uptimed ## view status ##
 Nov 09 17:49:14 gfs04 systemd[1]: Started uptime record daemon.
 ```
 
-## 如何查看 uptime 记录
+### 如何查看 uptime 记录
 
-只需键入以下命令即可查看 uptimed(8) 程序的统计信息：
+只需键入以下命令即可查看 `uptimed(8)` 程序的统计信息：
+
 ```
 $ uprecords
 ```
 
 示例输出：
+
 [![Fig.02: uprecords in action][9]][9]
 
-uprecords 有一些选项：
+`uprecords` 有一些选项：
+
 ```
 $ uprecords -?
 ```
+
 示例输出：
+
 ```
 usage: uprecords [OPTION]...
  
@@ -191,9 +231,9 @@ usage: uprecords [OPTION]...
   -v             version information
 ```
 
-## 结论
+### 结论
 
-这是一个极好的小工具，可以显示服务器正常运行时间的记录，以证明机器正常运行时间和你的业务连续性。在相关说明中，你将获得官方的 [XKCD 系统管理员 T恤][10] 因为漫画被制作成衬衫，其中包括背面的新插图。
+这是一个极好的小工具，可以显示服务器正常运行时间的记录，以证明机器正常运行时间和你的业务连续性。在相关说明中，你可以看到官方的 [XKCD 系统管理员 T恤][10] 因为漫画被制作成衬衫，其中包括背面的新插图。
 
 [![Fig.03: Sysadmin XKCD shirt features the original comic on the front and a new illustration on the back.][11]][11]
 
@@ -201,9 +241,9 @@ usage: uprecords [OPTION]...
 
 via: https://www.cyberciti.biz/hardware/see-records-statistics-about-a-linux-servers-uptime/
 
-作者：[][a]
+作者：[Vivek Gite][a]
 译者：[MjSeven](https://github.com/MjSeven)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

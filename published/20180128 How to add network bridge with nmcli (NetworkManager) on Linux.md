@@ -1,65 +1,73 @@
-Translating by kennethXia
-
-How to add network bridge with nmcli (NetworkManager) on Linux
+如何在 Linux 里使用 nmcli 添加网桥
 ======
 
-I am using Debian Linux 9 "stretch" on the desktop. I would like to create network bridge with NetworkManager. But, I am unable to find the option to add br0. How can I create or add network bridge with nmcli for NetworkManager on Linux?
+Q：我正在电脑上使用 Debian Linux 9 “stretch”。 我想用 NetworkManager 来建网桥。但是根本就没有添加 br0的选项。我该如何在 Linux 里使用 nmcli 来为 NetworkManager 创建或者添加网桥呢？
 
-A bridge is nothing but a device which joins two local networks into one network. It works at the data link layer, i.e., layer 2 of the OSI model. Network bridge often used with virtualization and other software. Disabling NetworkManager for a simple bridge especially on Linux Laptop/desktop doesn't make any sense. The nmcli tool can create Persistent bridge configuration without editing any files. **This page shows how to create a bridge interface using the Network Manager command line tool called nmcli**.
+网桥没什么特别的，只是把两个网络连在一起。它工作在数据链路层，即 OSI 模型的第二层。网桥经常用在虚拟机或别的一些软件中。为了使用网桥而关闭桌面 Linux 上的 NetworkManager 显然是不明智的。`nmcli` 可以创建一个永久的网桥而不需要编辑任何文件。
 
+本文将展示如何使用 NetworkManager 的命令行工具 `nmcli` 来创建网桥。
 
+### 如何使用 nmcli 来创建/添加网桥
 
-### How to create/add network bridge with nmcli
+使用 NetworkManager 在 Linux 上添加网桥接口的步骤如下：
 
-The procedure to add a bridge interface on Linux is as follows when you want to use Network Manager:
-
-1. Open the Terminal app
-2. Get info about the current connection:
+1. 打开终端
+2. 获取当前连接状态：
 ```
 nmcli con show
 ```
-3. Add a new bridge:
+3. 添加新的网桥：
 ```
 nmcli con add type bridge ifname br0
 ```
-4. Create a slave interface:
+4. 创建子网卡：
 ```
 nmcli con add type bridge-slave ifname eno1 master br0
 ```
-5. Turn on br0:
+5. 打开 br0：
 ```
 nmcli con up br0
 ```
 
-Let us see how to create a bridge, named br0 in details.
+让我们从细节层面看看如何创建一个名为 br0 的网桥。
 
-### Get current network config
+### 获取当前网络配置
 
-You can view connection from the Network Manager GUI in settings:
+你可以通过 NetworkManager 的 GUI 来了解本机的网络连接：
+
 [![Getting Network Info on Linux][1]][1]
-Another option is to type the following command:
+
+也可以使用如下命令行来查看：
+
 ```
 $ nmcli con show
 $ nmcli connection show --active 
 ```
-[![View the connections with nmcli][2]][2]
-I have a "Wired connection 1" which uses the eno1 Ethernet interface. My system has a VPN interface too. I am going to setup a bridge interface named br0 and add, (or enslave) an interface to eno1.
 
-### How to create a bridge, named br0
+[![View the connections with nmcli][2]][2]
+
+我有一个使用网卡 `eno1` 的 “有线连接”。我的系统还有一个 VPN 接口。我将要创建一个名为 `br0` 的网桥，并连接到 `eno1`。
+
+### 如何创建一个名为 br0 的网桥
 
 ```
 $ sudo nmcli con add ifname br0 type bridge con-name br0
 $ sudo nmcli con add type bridge-slave ifname eno1 master br0
 $ nmcli connection show
 ```
+
 [![Create bridge interface using nmcli on Linux][3]][3]
-You can disable STP too:
+
+你也可以禁用 STP：
+
 ```
 $ sudo nmcli con modify br0 bridge.stp no
 $ nmcli con show
 $ nmcli -f bridge con show br0
 ```
-The last command shows the bridge settings including disabled STP:
+
+最后一条命令展示了禁用 STP 后的网桥参数：
+
 ```
 bridge.mac-address:                     --
 bridge.stp:                             no
@@ -71,27 +79,35 @@ bridge.ageing-time:                     300
 bridge.multicast-snooping:              yes
 ```
 
+### 如何打开网桥
 
-### How to turn on bridge interface
+你必须先关闭 `Wired connection 1` ，然后打开 `br0`：
 
-You must turn off "Wired connection 1" and turn on br0:
 ```
 $ sudo nmcli con down "Wired connection 1"
 $ sudo nmcli con up br0
 $ nmcli con show
 ```
-Use [ip command][4] to view the IP settings:
+
+使用 [ip 命令][4] 来查看 IP 信息：
+
 ```
 $ ip a s
 $ ip a s br0
 ```
+
 [![Build a network bridge with nmcli on Linux][5]][5]
 
-### Optional: How to use br0 with KVM
+### 附录: 如何在 KVM 上使用 br0
 
-Now you can connect VMs (virtual machine) created with KVM/VirtualBox/VMware workstation to a network directly without using NAT. Create a file named br0.xml for KVM using vi command or [cat command][6]:
-`$ cat /tmp/br0.xml`
-Append the following code:
+现在你可以使用 KVM/VirtualBox/VMware workstation 创建的 VM（虚拟机）来直接连接网络而非通过 NAT。使用 `vi` 或者 [cat 命令][6]为虚拟机创建一个名为 `br0.xml` 的文件：
+
+```
+$ cat /tmp/br0.xml
+```
+
+添加以下代码：
+
 ```
 <network>
   <name>br0</name>
@@ -100,14 +116,17 @@ Append the following code:
 </network>
 ```
 
-Run virsh command as follows:
+如下所示运行 `virsh`命令：
+
 ```
 # virsh net-define /tmp/br0.xml
 # virsh net-start br0
 # virsh net-autostart br0
 # virsh net-list --all
 ```
-Sample outputs:
+
+输出：
+
 ```
  Name State Autostart Persistent
 ----------------------------------------------------------
@@ -115,24 +134,24 @@ Sample outputs:
  default inactive no yes
 ```
 
+阅读 man 页面获取更多信息：
 
-For more info read the following man page:
 ```
 $ man ip
 $ man nmcli
 ```
 
-### about the author
+### 关于作者
 
-The author is the creator of nixCraft and a seasoned sysadmin and a trainer for the Linux operating system/Unix shell scripting. He has worked with global clients and in various industries, including IT, education, defense and space research, and the nonprofit sector. Follow him on [Twitter][7], [Facebook][8], [Google+][9].
+作者是 nixCraft 的创建者、老练的系统管理员和一个 Linux/Unix shell 脚本编程培训师。他为全球客户和各种公司工作，包括 IT，教育，国防，空间研究以及非营利组织。 他的联系方式 [Twitter][7]、 [Facebook][8]、 [Google+][9]。
 
 --------------------------------------------------------------------------------
 
 via: https://www.cyberciti.biz/faq/how-to-add-network-bridge-with-nmcli-networkmanager-on-linux/
 
 作者：[Vivek Gite][a]
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[kennethXia](https://github.com/kennethXia)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
