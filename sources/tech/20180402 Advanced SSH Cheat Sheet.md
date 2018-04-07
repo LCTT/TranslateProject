@@ -1,3 +1,5 @@
+Translating by KennethXia
+
 Opensource.com: Advanced SSH Cheat Sheet
 ===========================
 
