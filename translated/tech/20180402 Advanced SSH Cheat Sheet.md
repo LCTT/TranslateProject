@@ -1,5 +1,3 @@
-Translating by KennethXia
-
 Opensource.com: 高级 SSH 用法表
 ===========================
 
