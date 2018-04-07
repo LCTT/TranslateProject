@@ -1,15 +1,16 @@
 如何在 Ubuntu Linux 上使用 KVM 云镜像
 =====
 
-基于内核的虚拟机（KVM）时 Linux 内核的虚拟化模块，可将其转变为虚拟机管理程序。你可以使用 Ubuntu 虚拟化前端为 libvirt 和 KVM 在命令行中使用 KVM 创建 Ubuntu 云镜像。
+如何下载并使用运行在 Ubuntu Linux 服务器上的 KVM 云镜像？如何在 Ubuntu Linux 16.04 LTS 服务器上无需完整安装即可创建虚拟机？如何在 Ubuntu Linux 上使用 KVM 云镜像？
 
-如何下载并使用运行在 Ubuntu Linux 服务器上的 KVM 云镜像？如何在 Ubuntu Linux 16.04 LTS 服务器上无需完整安装即可创建虚拟机？基于内核的虚拟机（KVM）时 Linux 内核的虚拟化模块，可将其转变为虚拟机管理程序。你可以使用 Ubuntu 虚拟化前端为 libvirt 和 KVM 在命令行中使用 KVM 创建 Ubuntu 云镜像。
+基于内核的虚拟机（KVM）是 Linux 内核的虚拟化模块，可将其转变为虚拟机管理程序。你可以在命令行使用 Ubuntu 为 libvirt 和 KVM 提供的虚拟化前端通过 KVM 创建 Ubuntu 云镜像。
 
 这个快速教程展示了如何安装和使用 uvtool，它为 Ubuntu 云镜像下载，libvirt 和 clout_int 提供了统一的集成虚拟机前端。
 
 ### 步骤 1 - 安装 KVM
 
 你必须安装并配置 KVM。使用 [apt 命令][1]/[apt-get 命令][2]，如下所示：
+
 ```
 $ sudo apt install qemu-kvm libvirt-bin virtinst bridge-utils cpu-checker
 $ kvm-ok
@@ -19,16 +20,18 @@ $ sudo systemctl restart networking
 $ sudo brctl show
 ```
 
-参阅[如何在 Ubuntu 16.04 LTS Headless 服务器上安装 KVM][4] 以获得更多信息。（译注：Headless 服务器是指没有本地接口的计算设备，专用于向其他计算机及其用户提供服务。）
+参阅[如何在 Ubuntu 16.04 LTS Headless 服务器上安装 KVM][4] 以获得更多信息。（LCTT 译注：Headless 服务器是指没有本地接口的计算设备，专用于向其他计算机及其用户提供服务。）
 
 ### 步骤 2 - 安装 uvtool
 
 键入以下 [apt 命令][1]/[apt-get 命令][2]：
+
 ```
 $ sudo apt install uvtool
 ```
 
 示例输出：
+
 ```
 [sudo] password for vivek: 
 Reading package lists... Done
@@ -100,19 +103,32 @@ Setting up uvtool-libvirt (0~git122-0ubuntu1) ...
 
 ### 步骤 3 - 下载 Ubuntu 云镜像
 
-你需要使用 uvt-simplestreams-libvirt 命令。它维护一个 libvirt 容量存储池，作为一个简单流源的图像子集的本地镜像，比如 Ubuntu 云镜像。要使用当前所有 amd64 镜像更新 uvtool 的 libvirt 容量存储此，运行：
-`$ uvt-simplestreams-libvirt sync arch=amd64`
+你需要使用 `uvt-simplestreams-libvirt` 命令。它维护一个 libvirt 容量存储池，作为一个<ruby>简单流<rt>simplestreams</rt></ruby>源的镜像子集的本地镜像，比如 Ubuntu 云镜像。要使用当前所有 amd64 镜像更新 uvtool 的 libvirt 容量存储池，运行：
+
+```
+$ uvt-simplestreams-libvirt sync arch=amd64
+```
+
 要更新/获取 Ubuntu 16.04 LTS (xenial/amd64) 镜像，运行：
-`$ uvt-simplestreams-libvirt --verbose sync release=xenial arch=amd64`
+
+```
+$ uvt-simplestreams-libvirt --verbose sync release=xenial arch=amd64
+```
 
 示例输出：
+
 ```
 Adding: com.ubuntu.cloud:server:16.04:amd64 20171121.1
 ```
 
 通过 query 选项查询本地镜像：
-`$ uvt-simplestreams-libvirt query`
+
+```
+$ uvt-simplestreams-libvirt query
+```
+
 示例输出：
+
 ```
 release=xenial arch=amd64 label=release (20171121.1)
 ```
@@ -121,22 +137,30 @@ release=xenial arch=amd64 label=release (20171121.1)
 
 ### 步骤 4 - 创建 SSH 密钥
 
-你需要使用 SSH 密钥才能登录到 KVM 虚拟机。如果你根本没有任何密钥，请使用 ssh-keygen 命令创建一个新的密钥。
-`$ ssh-keygen`
+你需要使用 SSH 密钥才能登录到 KVM 虚拟机。如果你根本没有任何密钥，请使用 `ssh-keygen` 命令创建一个新的密钥。
+
+```
+$ ssh-keygen
+```
+
 参阅“[如何在 Linux / Unix 系统上设置 SSH 密钥][5]” 和 “[Linux / UNIX: 生成 SSH 密钥][6]” 以获取更多信息。
 
 ### 步骤 5 - 创建 VM
 
-是时候创建虚拟机了，它叫 vm1，即创建一个 Ubuntu Linux 16.04 LTS 虚拟机:
-`$ uvt-kvm create vm1`
+是时候创建虚拟机了，它叫 vm1，即创建一个 Ubuntu Linux 16.04 LTS 虚拟机：
+
+```
+$ uvt-kvm create vm1
+```
 
 默认情况下 vm1 使用以下配置创建：
 
-  1. RAM/memory : 512M
-  2. Disk size: 8GiB
-  3. CPU: 1 vCPU core
+  1. 内存：512M
+  2. 磁盘大小：8GiB
+  3. CPU：1 vCPU core
 
-要控制 ram，disk，cpu 和其他配置，使用以下语法：
+要控制内存、磁盘、CPU 和其他配置，使用以下语法：
+
 ```
 $ uvt-kvm create vm1 \
 --memory MEMORY \
@@ -151,11 +175,12 @@ $ uvt-kvm create vm1 \
 
 其中
 
- 1.  **\--password PASSWORD** : 设置 ubuntu 用户的密码和允许使用 ubuntu 的用户登录（不推荐使用 ssh 密钥）。
- 2.  **\--run-script-once RUN_SCRIPT_ONCE** : 第一次启动时，在虚拟机上以 root 身份运行 RUN_SCRIPT_ONCE 脚本，但再也不会运行。这里给出完整的路径。这对于在虚拟机上运行自定义任务时非常有用，例如设置安全性或其他内容。
- 3.  **\--packages PACKAGES1, PACKAGES2, ..** : 在第一次启动时安装逗号分隔的软件包。
+ 1.  `--password PASSWORD`：设置 ubuntu 用户的密码和允许使用 ubuntu 的用户登录（不推荐，使用 ssh 密钥）。
+ 2.  `--run-script-once RUN_SCRIPT_ONCE` : 第一次启动时，在虚拟机上以 root 身份运行 `RUN_SCRIPT_ONCE` 脚本，但再也不会运行。这里给出完整的路径。这对于在虚拟机上运行自定义任务时非常有用，例如设置安全性或其他内容。
+ 3.  `--packages PACKAGES1, PACKAGES2, ..` : 在第一次启动时安装以逗号分隔的软件包。
 
 要获取帮助，运行：
+
 ```
 $ uvt-kvm -h
 $ uvt-kvm create -h
@@ -164,17 +189,26 @@ $ uvt-kvm create -h
 #### 如何删除虚拟机？
 
 要销毁/删除名为 vm1 的虚拟机，运行（请小心使用以下命令，因为没有确认框）：
-`$ uvt-kvm destroy vm1`
+
+```
+$ uvt-kvm destroy vm1
+```
 
 #### 获取 vm1 的 IP 地址，运行：
 
-`$ uvt-kvm ip vm1`
+```
+$ uvt-kvm ip vm1
 192.168.122.52
+```
 
 #### 列出所有运行的虚拟机
 
-`$ uvt-kvm list`
+```
+$ uvt-kvm list
+```
+
 示例输出：
+
 ```
 vm1
 freebsd11.1
@@ -183,8 +217,13 @@ freebsd11.1
 ### 步骤 6 - 如何登录 vm1
 
 语法是：
-`$ uvt-kvm ssh vm1`
+
+```
+$ uvt-kvm ssh vm1
+```
+
 示例输出：
+
 ```
 Welcome to Ubuntu 16.04.3 LTS (GNU/Linux 4.4.0-101-generic x86_64)
 
@@ -200,21 +239,24 @@ Welcome to Ubuntu 16.04.3 LTS (GNU/Linux 4.4.0-101-generic x86_64)
 
 
 Last login: Thu Dec  7 09:55:06 2017 from 192.168.122.1
-
 ```
 
 另一个选择是从 macOS/Linux/Unix/Windows 客户端使用常规的 ssh 命令：
+
 ```
 $ ssh ubuntu@192.168.122.52
 $ ssh -i ~/.ssh/id_rsa ubuntu@192.168.122.52
 ```
-（上面的是根据原文修改的）
+
 示例输出：
+
 [![Connect to the running VM using ssh][8]][8]
 
-一旦创建了 vim，你可以照常使用 virsh 命令：
-`$ virsh list`
+一旦创建了 vim，你可以照常使用 `virsh` 命令：
 
+```
+$ virsh list
+```
 
 --------------------------------------------------------------------------------
 
@@ -222,7 +264,7 @@ via: https://www.cyberciti.biz/faq/how-to-use-kvm-cloud-images-on-ubuntu-linux/
 
 作者：[Vivek Gite][a]
 译者：[MjSeven](https://github.com/MjSeven)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
