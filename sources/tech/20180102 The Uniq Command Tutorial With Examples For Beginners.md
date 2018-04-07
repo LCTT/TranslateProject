@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 The Uniq Command Tutorial With Examples For Beginners
 ======
 If you're working mostly on command line and dealing with a lot of text files every day, you should be aware of **Uniq** command. This command helps you to find repeated/duplicate lines from a file easily. It is not just for finding duplicates, but also we can use uniq command to remove the duplicates, display the number of occurrences of the duplicate lines, display only the repeated lines and display only the unique lines etc. Since the uniq command is part of GNU coreutils package, it comes preinstalled in most Linux distributions. Let us not bother with installation and see some practical examples.
