@@ -1,3 +1,5 @@
+translating by kennethXia
+
 5 keys to building open hardware
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/openhardwaretools.png?itok=DC1RC_1f)
