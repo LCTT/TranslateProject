@@ -57,7 +57,7 @@ Twitter @opensourceway  |  facebook.com/opensourceway  |  IRC: #opensource.com o
 
 作者简介：
 
-Ben Cotton是业余气象学家和专业高性能计算工程师。Ben 是微软 Azure 的产品营销经理，专注于高性能计算。他是一个Fedora用户和贡献者，共同创立了一个当地的开放源码群，并且是开源促进会的成员和保护自由软件的支持者。通过以下方式联系他 Twitter (@FunnelFiasco) 或者 FunnelFiasco.com.
+Ben Cotton是业余的气象学家和职业的高性能计算工程师。Ben 是微软 Azure 的产品营销经理，专注于高性能计算。他是一个 Fedora 用户和贡献者，共同创立了一个当地的开放源码群，并且是开源促进会的成员和保护自由软件的支持者。通过以下方式联系他 Twitter (@FunnelFiasco) 或者 FunnelFiasco.com.
 
 -------------
 
