@@ -1,54 +1,56 @@
 Translating by KennethXia
 
-Opensource.com: Advanced SSH Cheat Sheet
+Opensource.com: 高级 SSH 用法表
 ===========================
 
+所有人都知道 SSH 是一种远程登录工具，但它也有多种其他用途。
 Most people know SSH as a tool for remote login, which it is, but it can be used in many other ways. 
 
 ```
-Create a SOCKS proxy to tunnel your web traffic (like when you’re traveling) 
-ssh -D <port> <remote_host> 
-Set your web browser to use localhost:<port> as the proxy. 
+创建一个 SOCKS 代理来浏览网页（也就是翻墙啦）
+ssh -D <port> <remote_host>
+设置　localhost:<port>　作为你浏览器的代理
 
+连接一个躲在防御服务器背后的　Windows　RDP 主机
 Connect to a Windows RDP host behind a bastion server 
 ssh -L <port>:<target_host>:3389 <bastion_server> 
+让你的 RDP 客户端连接到 localhost:<port> 
 Set your RDP client to connect to localhost:<port> 
 
-Connect to your remote machine’s VNC server without opening the VNC port 
+在不使用 VNC 端口的情况下，连接远程 VNC 主机
 ssh -L 5901:localhost:5901 <remote_host> 
-Set your VNC client to to connect to localhost:5901 
-You can follow this pattern with other ports you don’t want to open to the world:  LDAP (389), 631 (CUPS), 8080 (alternate HTTP), and so on. 
+让你的 VNC 客户端连接到 localhost:5901 
+按照这个思路，你可以映射任意端口： LDAP (389), 631 (CUPS), 8080 (alternate HTTP)，等等
 
-Generate a new SSH key pair 
+产生一个新的 SSH 密钥对
 ssh-keygen 
 
-Update the passphrase on an existing SSH key-pair 
+更新密钥对的密码
 ssh-keygen -p 
 
-Copy a public SSH key to a remote host 
+把公钥复制到远程主机上
 ssh-copy-id -i <identity file> <remote_host> 
 
-SSH has a lot of command-line options, but if you use the same options for a host regularly, you can put an entry in the SSH configuration file (${HOME}/.ssh/config) instead. For example: 
+SSH 有一堆命令行选项，但是如果有一些是你经常使用的，你可以为他们在 SSH 配置文件 (${HOME}/.ssh/config) 里创建一个入口。比如：
 host myhouse 
     User itsme 
-    HostName house.example.com 
-Then you can type ssh myhouse instead of ssh itsme@house.example.com. 
+    HostName house.example.com 
+那么你就可以输入 ssh myhouse 来代替 ssh itsme@house.example.com. 
 ```
 
-Here are common command-line options and their configuration file equivalents. Some are simplified for common use cases. See the ssh(1) and ssh_config(5) manual pages for full details.
-
+以下是常用的命令行选项和他们的配置文件写法。一些是常用的简化写法。请查看 ssh(1) 和 ssh_config(5) 的手册页来获取详尽信息。
 
 |Command Line| Configuration File|Description
 |:--|:--|:--|
-|-l \<login name\>| User \<login name\>The login name on the remote machine. 
-|-i \<identity file\> |IdentityFile \<identity file\> |The identity file (SSH keypair) to use for authentication. |
-|-p \<remote port\>| Port \<remote port\>|The port on which the remote SSH daemon is listening. (default: 22) |
-|-C|Compression \<yes\|no\>|Compress traffic between hosts. (default: no) |
-|-D \<port\>|DynamicForward \<port\>|Forward traffic on the local port to the remote machine. |
-|-X|ForwardX11 \<yes\|no\>|Display X11 graphical programs from your remote host on the local host. (default: no) |
-|-A|ForwardAgent \<yes\|no\>|Forward the authentication agent to the remote host. This is helpful if you’ll then connect to a third host. (default: no) |
-|-4  (use IPv4 only)  -6  (use IPv6 only)|AddressFamily \<any\|inet4\|inet6\> |Specify whether to use IPv4 or IPv6 only. |
-|-L  \<local port\>:\<target host\>:\<target port\> |LocalForward \<local port\>:\<target host\>:\<target port\> |Forward local traffic on the specified to port to the remote host and port. |
+|-l \<login name\>| User \<login name\>|远程主机的登录用户名。| 
+|-i \<identity file\> |IdentityFile \<identity file\> |指定要使用的鉴权文件（SSH 密码对）。 |
+|-p \<remote port\>| Port \<remote port\>|远程 SSH 守护进程监听的端口号。 (默认为 22) |
+|-C|Compression \<yes\|no\>|压缩往来信息。 (默认为 no) |
+|-D \<port\>|DynamicForward \<port\>|把本地端口的报文转发到远程主机。 |
+|-X|ForwardX11 \<yes\|no\>|把 X11 的图像数据转发到远程主机的端口. (默认为 no) |
+|-A|ForwardAgent \<yes\|no\>|把授权代理的报文转发给远程主机。如果你使用第三方主机登录，这个功能将很有用。 (默认为 no) |
+|-4  (use IPv4 only)  -6  (use IPv6 only)|AddressFamily \<any\|inet4\|inet6\> |指定仅使用 IPv4 或者 IPv6. |
+|-L  \<local port\>:\<target host\>:\<target port\> |LocalForward \<local port\>:\<target host\>:\<target port\> |把本地主机指定端口的报文转发到远程主机的某个端口。|
 
 opensource.com
 
