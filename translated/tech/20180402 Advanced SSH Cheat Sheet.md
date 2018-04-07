@@ -3,44 +3,41 @@ Translating by KennethXia
 Opensource.com: 高级 SSH 用法表
 ===========================
 
-所有人都知道 SSH 是一种远程登录工具，但它也有多种其他用途。
-Most people know SSH as a tool for remote login, which it is, but it can be used in many other ways. 
+所有人都知道 SSH 是一种远程登录工具，然而它也有许多其他用途。
 
 ```
-创建一个 SOCKS 代理来浏览网页（也就是翻墙啦）
+创建一个 SOCKS 代理来浏览网页（也就是翻墙啦）：
 ssh -D <port> <remote_host>
 设置　localhost:<port>　作为你浏览器的代理
 
-连接一个躲在防御服务器背后的　Windows　RDP 主机
-Connect to a Windows RDP host behind a bastion server 
+连接一个躲在防御服务器背后的　Windows　RDP 主机：
 ssh -L <port>:<target_host>:3389 <bastion_server> 
 让你的 RDP 客户端连接到 localhost:<port> 
-Set your RDP client to connect to localhost:<port> 
 
-在不使用 VNC 端口的情况下，连接远程 VNC 主机
+在不使用 VNC 端口的情况下，连接远程 VNC 主机：
 ssh -L 5901:localhost:5901 <remote_host> 
 让你的 VNC 客户端连接到 localhost:5901 
-按照这个思路，你可以映射任意端口： LDAP (389), 631 (CUPS), 8080 (alternate HTTP)，等等
+按照这个思路，你可以映射任意端口： LDAP (389), 631 (CUPS), 8080 (alternate HTTP)，等等。
 
-产生一个新的 SSH 密钥对
+产生一个新的 SSH 密钥对：
 ssh-keygen 
 
-更新密钥对的密码
+更新密钥对的密码：
 ssh-keygen -p 
 
-把公钥复制到远程主机上
+把公钥复制到远程主机上：
 ssh-copy-id -i <identity file> <remote_host> 
 
 SSH 有一堆命令行选项，但是如果有一些是你经常使用的，你可以为他们在 SSH 配置文件 (${HOME}/.ssh/config) 里创建一个入口。比如：
 host myhouse 
     User itsme 
     HostName house.example.com 
-那么你就可以输入 ssh myhouse 来代替 ssh itsme@house.example.com. 
+那么你就可以输入 'ssh myhouse' 来代替 'ssh itsme@house.example.com'. 
 ```
 
 以下是常用的命令行选项和他们的配置文件写法。一些是常用的简化写法。请查看 ssh(1) 和 ssh_config(5) 的手册页来获取详尽信息。
 
-|Command Line| Configuration File|Description
+|命令行|配置文件|描述
 |:--|:--|:--|
 |-l \<login name\>| User \<login name\>|远程主机的登录用户名。| 
 |-i \<identity file\> |IdentityFile \<identity file\> |指定要使用的鉴权文件（SSH 密码对）。 |
@@ -62,14 +59,14 @@ Twitter @opensourceway  |  facebook.com/opensourceway  |  IRC: #opensource.com o
 
 作者简介：
 
-Ben Cotton is a meteorologist by training and a high-performance computing engineer by trade. Ben works as a product marketing manger at Microsoft Azure focused on high performance computing. He is a Fedora user and contributor, co-founded a local open source meetup group, and is a member of the Open Source Initiative and a supporter of Software Freedom Conservancy. Find him on Twitter (@FunnelFiasco) or at FunnelFiasco.com.
+Ben Cotton是业余气象学家和专业高性能计算工程师。Ben 是微软 Azure 的产品营销经理，专注于高性能计算。他是一个Fedora用户和贡献者，共同创立了一个当地的开放源码群，并且是开源促进会的成员和保护自由软件的支持者。通过以下方式联系他 Twitter (@FunnelFiasco) 或者 FunnelFiasco.com.
 
 -------------
 
 via: https://opensource.com/sites/default/files/gated-content/cheat_sheet_ssh_v03.pdf
 
 作者：[ BEN COTTON ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[kennethXia](https://github.com/kennethXia)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
