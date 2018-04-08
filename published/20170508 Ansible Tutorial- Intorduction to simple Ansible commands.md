@@ -39,7 +39,7 @@ $ ansible <group> -m setup -a "filter=ansible_distribution"
 
 ### 传输文件
 
-对于传输文件，我们使用模块 “copy” ，完整的命令是这样的：
+对于传输文件，我们使用模块 `copy` ，完整的命令是这样的：
 
 ```
 $ ansible <group> -m copy -a "src=/home/dan dest=/tmp/home"
@@ -47,7 +47,7 @@ $ ansible <group> -m copy -a "src=/home/dan dest=/tmp/home"
 
 ### 管理用户
 
-要管理已连接主机上的用户，我们使用一个名为 “user” 的模块，并如下使用它。
+要管理已连接主机上的用户，我们使用一个名为 `user` 的模块，并如下使用它。
 
 #### 创建新用户
 
@@ -65,7 +65,7 @@ $ ansible <group> -m user -a "name=testuser state=absent"
 
 ### 更改权限和所有者
 
-要改变已连接主机文件的所有者，我们使用名为 ”file“ 的模块，使用如下。
+要改变已连接主机文件的所有者，我们使用名为 `file` 的模块，使用如下。
 
 #### 更改文件权限
 
@@ -81,7 +81,7 @@ $ ansible <group> -m file -a "dest=/home/dan/file1.txt mode=777 owner=dan group=
 
 ### 管理软件包
 
-我们可以通过使用 ”yum“ 和 ”apt“ 模块来管理所有已连接主机的软件包，完整的命令如下：
+我们可以通过使用 `yum` 和 `apt` 模块来管理所有已连接主机的软件包，完整的命令如下：
 
 #### 检查包是否已安装并更新
 
@@ -109,7 +109,7 @@ $ ansible <group> -m yum -a "name=ntp state=absent"
 
 ### 管理服务
 
-要管理服务，我们使用模块 “service” ，完整命令如下：
+要管理服务，我们使用模块 `service` ，完整命令如下：
 
 #### 启动服务
 
@@ -129,7 +129,7 @@ $ ansible <group> -m service -a "name=httpd state=stopped"
 $ ansible <group> -m service -a "name=httpd state=restarted"
 ```
 
-这样我们简单的，单行 Ansible 命令的教程就完成了。此外，在未来的教程中，我们将学习创建 playbook，来帮助我们更轻松高效地管理主机。
+这样我们简单的、单行 Ansible 命令的教程就完成了。此外，在未来的教程中，我们将学习创建 playbook，来帮助我们更轻松高效地管理主机。
 
 --------------------------------------------------------------------------------
 
