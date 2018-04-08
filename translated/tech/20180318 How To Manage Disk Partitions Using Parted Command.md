@@ -1,63 +1,63 @@
-How To Manage Disk Partitions Using Parted Command
+怎样用 Parted 管理硬盘分区
 ======
 Translating by zyk2290
 
-We all knows disk partitions is one of the important task for Linux administrator. They can not survive without knowing this.
+众所周知，硬盘分区对Linux管理员来说是其中一项最重要的管理任务，他们不能不知道这个。
 
-In worst cases, at least once in a week they would get this request from dependent team but in big environment admins used to get this request very often.
+在最糟糕的时候，你至少每周一次会收到从依赖小组的请求，在大的环境里会更加频繁 。
 
-You may ask why we need to use parted instead of fdisk? What is the difference? It’s a good question, i will give you more details about this.
+你可能会问为什么我们要用Parted而不是fdisk? 有什么区别? 好问题, 我会告诉你这两者的区别。
 
-  * Parted allow users to create a partition when the disk size is larger than 2TB but fdisk doesn’t allow.
-  * Parted is a higher-level tool than fdisk.
-  * It supports multiple partition table which includes GPT.
-  * It allows users to resize the partition but while shrinking the partition it does not worked as expected and i got error most of the time so, i would advise users to do not shrink the partition.
+  * Parted支持用户在大于2TB的硬盘上创建硬盘分区， 但fdisk命令不支持
+  * 对比fdisk来说， Parted是一个更高级的工具
+  * 支持更多的分区表类型，包括GPT ( LCTT译者注：全局唯一标识分区表 )。
+  * 它允许用户调整分区大小， 但当缩减分区空间的时候，它没有在我意料之内工作， 在大部分时候， 我会得到错误。 所以 我会建议用户不要用Parted来缩减分区大小。
 
 
 
-### What Is Parted
+### 什么是 Parted
 
-Parted is a program to manipulate disk partitions. It supports multiple partition table formats, including MS-DOS and GPT.
+Parted 是一个操作硬盘分区的程序. 它支持多种分区表类型，包括 MS-DOS和 GPT .
 
-It allows user to create, delete, resize, shrink, move and copy partitions, reorganizing disk usage, and copying data to new hard disks. GParted is a GUI frontend of parted.
+它允许用户创建， 删除， 调整 ，缩减，移动和复制分区 ，以及重新组织硬盘的使用， 复制数据到新的硬盘上。GParted是parted的图形界面前端。
 
-### How To Install Parted
+### 怎样安装Parted
 
-Parted package is pre-installed on most of the Linux distribution. If not, use the following commands to install parted package.
+大部分发行版已经预安装了Parted 如果没有, 用下列命令来安装Parted.
 
-For **`Debian/Ubuntu`** , use [APT-GET Command][1] or [APT Command][2] to install parted.
+对于 **`Debian/Ubuntu`** 用户, 使用 [APT-GET Command][1] 或者 [APT Command][2] 来安装Parted。
 ```
 $ sudo apt install parted
 
 ```
 
-For **`RHEL/CentOS`** , use [YUM Command][3] to install parted.
+对于 **`RHEL/CentOS`** , 用 [YUM Command][3] 来安装parted。
 ```
 $ sudo yum install parted
 
 ```
 
-For **`Fedora`** , use [DNF Command][4] to install parted.
+对于 **`Fedora`** , 用 [DNF Command][4] 命令来安装parted。
 ```
 $ sudo dnf install parted
 
 ```
 
-For **`Arch Linux`** , use [Pacman Command][5] to install parted.
+对于 **`Arch Linux`** , 用 [Pacman Command][5] 命令来安装parted。
 ```
 $ sudo pacman -S parted
 
 ```
 
-For **`openSUSE`** , use [Zypper Command][6] to install parted.
+对于 **`openSUSE`** , 用 [Zypper Command][6] 命令来安装parted。
 ```
 $ sudo zypper in parted
 
 ```
 
-### How To Launch Parted
+### 怎样启动Parted
 
-The below parted command picks the `/dev/sda` disk automatically, because this is the first hard drive in this system.
+下面的parted命令会自动选择 `/dev/sda` , 因为这是系统的第一个硬盘。
 ```
 $ sudo parted
 GNU Parted 3.2
@@ -67,7 +67,7 @@ Welcome to GNU Parted! Type 'help' to view a list of commands.
 
 ```
 
-Also we can go to the corresponding disk by selecting the appropriate disk using below command.
+同时我们也可以用下面的命令来重新选择对应的的硬盘。
 ```
 (parted) select /dev/sdb
 Using /dev/sdb
@@ -75,7 +75,7 @@ Using /dev/sdb
 
 ```
 
-If you wants to go to particular disk, use the following format. In our case we are going to use `/dev/sdb`.
+如果你想选择特定的硬盘, 用下列的格式来输入命令。 这次 ，我们将选择`/dev/sdb`.
 ```
 $ sudo parted [Device Name]
 
@@ -87,9 +87,9 @@ Welcome to GNU Parted! Type 'help' to view a list of commands.
 
 ```
 
-### How To List Available Disks Using Parted Command
+### 怎样用 Parted列出所有可用的硬盘
 
-If you don’t know what are the disks are added in your system. Just run the following command, which will display all the available disks name, and other useful information such as Disk Size, Model, Sector Size, Partition Table, Disk Flags, and partition information.
+如果你不知道你的电脑上有什么硬盘， 只需要运行下列命令，该命令会显示所有可用硬盘的名字， 以及其它的有用信息比如储存空间， 型号， 扇区大小，硬盘旗帜以及分区信息。
 ```
 $ sudo parted -l
 Model: ATA VBOX HARDDISK (scsi)
@@ -111,17 +111,18 @@ Disk Flags:
 
 ```
 
-The above error message clearly shows there is no valid disk label for the disk `/dev/sdb`. Hence, we have to set `disk label` first as it doesn’t take any label automatically.
+上面的错误信息清晰地显示出硬盘  `/dev/sdb` 没有有效的硬盘标签 (disk label) 。 它不会自动选择硬盘标签 (disk label) ，所以， 我们便要自己设置硬盘标签 (disk label) 。
 
-### How To Create Disk Partition Using Parted Command
+### 怎样用Parted创建硬盘分区
 
-Parted allows us to create primary or extended partition. Procedure is same for both but make sure you have to pass an appropriate partition type like `primary` or `extended` while creating the partition.
+Parted允许用户创建主分区或者拓展分区。 创建这两种类型的分区的步骤还是一样，但请确保你已经指定了需要的分区类型，比如 `primary` 或者`extended`。
 
-To perform this activity, we have added a new `50GB` hard disk in the system, which falls under `/dev/sdb`.
+为了演示这项操作 ，我们安装了一个新的`50 GB` 的硬盘到到电脑上，挂载在`/dev/sdb`上
 
-In two ways we can create a partition, one is detailed way and other one is single command. In the below example we are going to add one primary partition in detailed way. Make a note, we should set `disk label` first as it doesn’t take any label automatically.
+有两种方法创建分区，第一种是更详细的方法，另一种只是一个命令。 在下面的例子中，我们将用更详细的方法添加一个主分区。提醒一下， 我们应该先设置 `硬盘标签`（disk label），因为它不会自动设置任何标签。
 
-We are going to create a new partition with `10GB` of disk in the below example.
+在下面的例子中，我们将要创建一个`10 GB` 的分区 
+
 ```
 $ sudo parted /dev/sdb
 GNU Parted 3.2
@@ -149,9 +150,10 @@ Information: You may need to update /etc/fstab.
 
 ```
 
-Alternatively we can create a new partition using single parted command.
+同时，我们也可以使用单条Parted命令
 
-We are going to create second partition with `10GB` of disk in the below example.
+在下面的例子中，我们将在硬盘上创建一个`10 GB` 的分区 
+
 ```
 $ sudo parted [Disk Name] [mkpart] [Partition Type] [Filesystem Type] [Partition Start Size] [Partition End Size]
 
@@ -160,11 +162,12 @@ Information: You may need to update /etc/fstab.
 
 ```
 
-### How To Create A Partition With All Remaining Space
+### 怎样使用Parted用所有剩余空间创建分区
 
-You have created all required partitions except `/home` and you wants to use all the remaining space to `/home` partition, how to do that? use the following command to create a partition.
+你已经创建了所有要求的分区，除了`/home` ，而且你想要用硬盘上所有剩余的空间来创建`/home`分区，要怎样做？可以使用下面的命令来创建分区。
 
-The below command create a new partition with 33.7GB, which starts from `20GB` and ends with `53GB`. `100%` end size will allow users to create a new partition with remaining all available space in the disk.
+下面的命令创建了一个 33.7 GB 的分区，从  `20 GB` 开始到  `53 GB`结束。 `100%` 使用率允许用户用硬盘上所有剩余的空余空间。
+
 ```
 $ sudo parted [Disk Name] [mkpart] [Partition Type] [Filesystem Type] [Partition Start Size] [Partition End Size]
 
@@ -173,9 +176,10 @@ Information: You may need to update /etc/fstab.
 
 ```
 
-### How To List All Partitions using Parted
+### 怎样用Parted列出所有的分区
 
-As you aware of, we have created three partitions in the above step and if you want to list all available partitions on the disk use the print command.
+你也许注意到了，我们已经在上述步骤中创建了三个分区，如果你想要列出所有在硬盘上可用的分区，可以使用print命令。
+
 ```
 $ sudo parted /dev/sdb print
 Model: ATA VBOX HARDDISK (scsi)
@@ -191,9 +195,10 @@ Number Start End Size Type File system Flags
 
 ```
 
-### How To Create A File System On Partition Using mkfs
+### 怎样用mkfs格式化分区
 
-Users can create a file system on the partition using mkfs. Follow the below procedure to create a filesystem using mkfs.
+用户可以用mkfs命令格式化分区。下面的步骤会用mkfs来格式化分区。
+
 ```
 $ sudo mkfs.ext4 /dev/sdb1
 mke2fs 1.43.4 (31-Jan-2017)
@@ -209,14 +214,16 @@ Writing superblocks and filesystem accounting information: done
 
 ```
 
-Do the same for other partitions as well.
+同样的。
+
 ```
 $ sudo mkfs.ext4 /dev/sdb2
 $ sudo mkfs.ext4 /dev/sdb3
 
 ```
 
-Create necessary folders and mount the partitions on that.
+创建必要的文件夹然后将这些分区挂载在上面。
+
 ```
 $ sudo mkdir /par1 /par2 /par3
 
@@ -226,7 +233,8 @@ $ sudo mount /dev/sdb3 /par3
 
 ```
 
-Run the following command to check newly mounted partitions.
+运行下列命令来检查是否成功挂载上新创建的分区。
+
 ```
 $ df -h /dev/sdb[1-3]
 Filesystem Size Used Avail Use% Mounted on
@@ -236,9 +244,10 @@ Filesystem Size Used Avail Use% Mounted on
 
 ```
 
-### How To Check Free Space On The Disk
+### 怎样检查硬盘空闲空间
 
-Run the following command to check available free space on the disk. This disk has `25.7GB` of free disk space.
+运行下列命令来检查硬盘上的空闲空间，这块硬盘上有`25.7 GB`的空闲空间。
+
 ```
 $ sudo parted /dev/sdb print free
 Model: ATA VBOX HARDDISK (scsi)
@@ -256,11 +265,12 @@ Number Start End Size Type File system Flags
 
 ```
 
-### How To Resize Partition Using Parted Command
+### 怎样使用Parted命令来重新调整分区大小
 
-Parted allow users to resize the partitions to big and smaller size. As i told in the beginning of the article, do not shrink partitions because this leads to face disk error issue.
+Parted 允许用户重新调整分区大小。不过我已在文章的开头说了，不要缩小分区大小，不然会有许多错误。
 
-Run the following command to check disk partitions and available free space. I could see `25.7GB` of free space on this disk.
+运行下列命令来检查硬盘分区以及所有可用空间。 可以看到硬盘上有`25.7GB` 的可用空间
+
 ```
 $ sudo parted /dev/sdb print free
 Model: ATA VBOX HARDDISK (scsi)
@@ -278,7 +288,8 @@ Number Start End Size Type File system Flags
 
 ```
 
-Run the following command to resize the partition. We are going to resize (increase) the partition 3 end size from `28GB to 33GB`.
+运行下列命令来重新调整分区大小。 我们将要重新调整（增加）分区 3的结束位置从 `28GB 到 33GB`。
+
 ```
 $ sudo parted [Disk Name] [resizepart] [Partition Number] [Partition New End Size]
 
@@ -287,7 +298,8 @@ Information: You may need to update /etc/fstab.
 
 ```
 
-Run the following command to verify whether this partition is increased or not. Yes, i could see the partition 3 got increased from `8GB to 13GB`.
+运行下列命令来确认分区是否已经扩容。可以看到，分区 3 已经从`8GB`增加到`13GB`。
+
 ```
 $ sudo parted /dev/sdb print
 Model: ATA VBOX HARDDISK (scsi)
@@ -303,7 +315,8 @@ Number Start End Size Type File system Flags
 
 ```
 
-Resize the file system to grow the resized partition.
+重新调整文件系统大小。
+
 ```
 $ sudo resize2fs /dev/sdb3
 resize2fs 1.43.4 (31-Jan-2017)
@@ -312,7 +325,8 @@ The filesystem on /dev/sdb3 is now 3173952 (4k) blocks long.
 
 ```
 
-Finally, check whether the mount point has been successfully increased or not.
+最后，确认分区是否已经扩容。
+
 ```
 $ df -h /dev/sdb[1-3]
 Filesystem Size Used Avail Use% Mounted on
@@ -322,9 +336,10 @@ Filesystem Size Used Avail Use% Mounted on
 
 ```
 
-### How To Remove Partition Using Parted Command
+### 怎样用Parted删除分区
 
-We can simple remove the unused partition (if the partition is no longer use) using rm command. See the procedure below. We are going to remove partition 3 `/dev/sdb3` in this example.
+我们用rm命令方便地删除未使用的分区（如果该分区不会再被用到了）。下列步骤中，我们将会删除分区 3(`/dev/sdb3`)。
+
 ```
 $ sudo parted [Disk Name] [rm] [Partition Number]
 
@@ -338,7 +353,8 @@ Information: You may need to update /etc/fstab.
 
 ```
 
-We can check the same using below command. Yes, i could see that partition 3 has been removed successfully.
+我们也可以用下列的命令检查。可以看到，分区 3 已经被成功移除。
+
 ```
 $ sudo parted /dev/sdb print
 Model: ATA VBOX HARDDISK (scsi)
@@ -353,9 +369,9 @@ Number Start End Size Type File system Flags
 
 ```
 
-### How To Set/Change Partition Flag Using Parted Command
+### 怎样用Parted命令设置/更改分区旗帜
 
-We can easily change the partition flag using below command. We are going to set `lvm` flag to partition 2 `/dev/sdb2`.
+我们可以用下列的命令来轻易更改分区的旗帜。 我们将对`/dev/sdb2`设置 `lvm`  旗帜。
 ```
 $ sudo parted [Disk Name] [set] [Partition Number] [Flags Name] [Flag On/Off]
 
@@ -364,7 +380,8 @@ Information: You may need to update /etc/fstab.
 
 ```
 
-We can verify this modification by listing disk partitions.
+我们可以列出分区来验证这次的更改。
+
 ```
 $ sudo parted /dev/sdb print
 Model: ATA VBOX HARDDISK (scsi)
@@ -379,7 +396,7 @@ Number Start End Size Type File system Flags
 
 ```
 
-To know list of available flags, use the following command.
+如果你想知道可用的旗帜, 只需要用如下的命令。
 ```
 $ (parted) help set
  set NUMBER FLAG STATE change the FLAG on partition NUMBER
@@ -390,7 +407,7 @@ $ (parted) help set
 
 ```
 
-If you want to know the available options in parted, just navigate to `help` page.
+如果你想知道parted的其它可用命令， 只需要去到 `help` 页面.
 ```
 $ sudo parted
 GNU Parted 3.2
