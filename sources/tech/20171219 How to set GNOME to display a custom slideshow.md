@@ -1,3 +1,4 @@
+	translating by Auk7F7
 How to set GNOME to display a custom slideshow
 ======
 A very cool, yet lesser known, feature in GNOME is its ability to display a slideshow as your wallpaper. You can select a wallpaper slideshow from the background settings panel in the [GNOME Control Center][1]. Wallpaper slideshows can be distinguished from static wallpapers by a small clock emblem displayed in the lower-right corner of the preview.
