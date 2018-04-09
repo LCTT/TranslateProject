@@ -1,11 +1,11 @@
 pinewall Translating
-How to tell when moving to blockchain is a bad idea
+区块链技术不适用的若干场景
 ======
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/blocks_building.png?itok=eMOT-ire)
-So, there's this thing called "blockchain" that is quite popular…
+不错，区块链的概念异常的火热。
 
-You know that already, of course. I keep wondering whether we've hit "peak hype" for blockchain and related technologies yet, but so far there's no sign of it. When I'm talking about blockchain here, I'm including distributed ledger technologies (DLTs), which are, by some tight definitions of the term, not really blockchains at all. I'm particularly interested, from a professional point of view, in permissioned blockchains. You can read more about how that's defined in my article [Is blockchain a security topic?][1] The key point here is that I'm interested in business applications of blockchain beyond cryptocurrency.1
+众所周知，我一直关注区块链及相关技术的成熟度发展情况，思考其是否达到过高期望的峰值（peak hype）；但从目前的情况来看，还没有这个迹象。我在文中所说的区块链技术是广义上的，包含了狭义上不属于区块链的分布式账本技术（DLTs）。我对私有链更感兴趣，其中私有链的定义可以参考我的文章[区块链是安全性方面的话题吗？][1]简而言之，我对加密货币之外的区块链业务应用兴极大^{1}。
 
 And, if the hype is to be believed—and some of it probably should be2—then there is an almost infinite set of applications for blockchain. That's probably correct, but it doesn't mean all of them are good applications for blockchain. Some, in fact, are likely to be very bad applications for blockchain.
 
