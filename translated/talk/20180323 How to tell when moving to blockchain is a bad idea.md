@@ -5,74 +5,72 @@ pinewall Translating
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/blocks_building.png?itok=eMOT-ire)
 不错，区块链的概念异常的火热。
 
-众所周知，我一直关注区块链及相关技术的成熟度发展情况，思考其是否达到过高期望的峰值（peak hype）；但从目前的情况来看，还没有这个迹象。我在文中所说的区块链技术是广义上的，包含了狭义上不属于区块链的分布式账本技术（DLTs）。我对私有链更感兴趣，其中私有链的定义可以参考我的文章[区块链是安全性方面的话题吗？][1]简而言之，我对加密货币之外的区块链业务应用兴极大^{1}。
+众所周知，我一直关注区块链及相关技术的成熟度发展情况，思考其是否达到过高期望的峰值（peak hype）；但从目前的情况来看，还没有这个迹象。我在文中所说的区块链技术是广义上的，包含了狭义上不属于区块链的分布式账本技术（DLTs）。我对私有链更感兴趣，其中私有链的定义可以参考我的文章[区块链是安全性方面的话题吗？][1]简而言之，我对加密货币之外的区块链业务应用特别感兴趣[#1]。
 
-And, if the hype is to be believed—and some of it probably should be2—then there is an almost infinite set of applications for blockchain. That's probably correct, but it doesn't mean all of them are good applications for blockchain. Some, in fact, are likely to be very bad applications for blockchain.
+我们对区块链的技术成熟度的判断应该有一部分可以得到证实[#2]。如果我们判断正确，未来将会出现海量的区块链应用。这很可能会变成现实，但并不是所有的应用都是优秀的区块链应用，其中一部分很可能是非常糟糕的。
 
-The hype associated with blockchain, however, means that businesses are rushing to embrace this new technology3 without really understanding what they're doing. The drivers towards this are arguably three-fold:
+但区块链所处的技术成熟度意味着，大量业务将快速拥抱新技术[#3]，但对于可能的前景却一知半解。促成这种情况的原因可以大致分为三种：
 
-  1. You can, if you try, make almost any application with multiple users that stores data into a blockchain-enabled application.
-  2. There are lots of conferences and "gurus" telling people that if they don't embrace blockchain now, they'll go out of business within six months4.
-  3. It's not easy technology to understand fully, and lots of its proponents "on-the-ground" in organisations are techies.
+  1. 对于涉及多用户数据存储的业务应用，在投入精力的情况下，几乎都可以改造为基于区块链的版本；
+  2. 很多区块链相关的会议和“专家”呼吁尽快拥抱区块链，否则可能会在半年内被淘汰[#4]；
+  3. 完全理解区块链技术是很难的，支持其在企业中落地的往往是工程师。
 
+对于最后一条，我必须补充几句，不然很容易被引起众怒[#5]。作为一名工程师，我显然无意贬低工程师.工程师的天性使然，我们对见到的新鲜事物（亮点）热情澎湃，但由于对业务本身神交[#6]不足，对于新技术给业务带来的影响理解可能并不深刻。在业务领导者看来，这些影响不一定是有利的。
 
+上面提到的三种促因可能导致一种风险，即在没有充分评估利弊的情况下，将业务改造为区块链应用。在另一文（[区块链：每个人都应该参与进来吗？][2]）中提到几个场景，用于判断一个业务什么情况下适合采用区块链技术。这些场景是有益的，但更进一步，我坚人们更加需要的是，给出业务完全不适用区块链的几种简单的场景判定。我总结了三种场景判定，如果对于其中任何一个问题你给出了肯定的回答，那么很大概率上你并不需要区块链。
 
-I want to unpack that last statement before I get a hail of trolls flaming me.5 I have nothing against techies—I'm one myself—but one of our characteristics tends to be enormous enthusiasm about new things ("shinies") that we understand, but whose impact on the business we don't always fully grok.6 That's not always a positive for business leaders.
+### 场景判定1：业务是否需要集中式的管控或授权？
 
-The danger, then, is that the confluence of those three drivers may lead to businesses moving to blockchain applications without fully understanding whether it's a good idea. I wrote in another post ([Blockchain: should we all play?][2]) about some tests to decide when a process is a good fit for blockchain and when it's not. They were useful, but the more I think about it, the more I'm convinced that we need some simple tests to tell us when we should definitely not move a process or an application to a blockchain. I present my three tests. If your answer to any of these questions is "yes," then you almost certainly don't need a blockchain.
+如果你给出了肯定的回答，那么你并不需要区块链。
 
-### Test 1: Does it have a centralised controller or authority?
+例如，假设你是一个蒲团销售商，具有唯一的订单系统，那么对于何时发货你有唯一的授权，显然你基本不需要使用区块链。假设你是一个内容提供商，所有提供的内容都会经过唯一的编辑和发布过程，显然你基本不需要使用区块链。
 
-If the answer is "yes," then you don't need a blockchain.
+经验总结：只有当任务对应的执行流程及相应的认证流程是分布于众多主体时，区块链是有价值的。
 
-If, for instance, you're selling, I don't know, futons, and you have a single ordering system, then you have a single authority for deciding when to send out a futon. You almost certainly don't need to make this a blockchain. If you are a purveyor of content that has to pass through a single editorial and publishing process, you almost certainly don't need to make this a blockchain.
+### 场景判定2：业务使用经典数据库是否工作良好？
 
-The lesson is: Blockchains really don't make sense unless the tasks required in the process execution—and the trust associated with those tasks—is distributed among multiple entities.
+如果你给出了肯定的回答，那么你并不需要区块链。
 
-### Test 2: Could it work fine with a standard database?
+该场景似乎与上一个场景是强相关的，但并不总是如此。在一些应用中，处理流程是分布的，但信息存储是中心化的；在另外一些应用中，处理流程需要中心化的授权，但信息存储是分布的，即总有一个并不是分布式的。但如果业务使用经典数据库可以工作量良好的话，使用经典数据库是一个好主意。
 
-If the answer to this question is "yes," then you don't need a blockchain.
+经典数控不仅性能良好，在设计与运营成本方面低比区块链或分布式账本，而且我们在这方面技术积累丰厚。区块链让所有人[#8]可以查看和持有数据，但间接成本和潜在成本都比较高昂。
 
-This and the previous question are somewhat intertwined but don't need to be. There are applications where you have distributed processes but need to store information centrally, or you have centralised authorities but distributed data, where one answer may be "yes" and the other is "no." But if your answer to this question is "yes," use a standard database.
+### 场景判定3：业务采用新技术是否成本高昂或对合作伙伴有负面效果？
 
-Databases are good at what they do, they are cheaper in terms of design and operations than running a blockchain or distributed ledger, and we know how to make them work. Blockchains are about letting everybody8 see and hold data, but the overheads can be high and the implications costly.
+如果你给出了肯定的回答，那么你并不需要区块链。
 
-### Test 3: Is adoption going to be costly or annoying to some stakeholders?
+我曾听过这种观点，即区块链会让所有人收益。但这显然是不可能的。假设你正在为某个流程设计一个应用，改变合作伙伴与你及应用的交互方式，那么你需要判断这个改变是否符合合作伙伴的兴趣。不论是否涉及区块链，可以很容易的设计并引入一个应用，虽然降低了你自己的业务阻力，但与此同时增加了合作伙伴的业务阻力。
 
-If the answer to this question is "yes," then you don't need a blockchain.
+假设我为汽车行业生产发动机配件，那么使用区块链追溯和管理配件会让我受益匪浅。例如，我可以查看购买的滚珠轴承的生产商、生产时间和钢铁材料供应商等。换一个角度，假设我是滚珠轴承生产商，已经为40多个客户公司建立了处理流程。为一家客户引入新的流程会涉及工作方式、系统体系、储藏和安全性标准等方面的变更，这无法让我感兴趣，相反，这会导致复杂性和高开销。
 
-I've heard assertions that blockchains always benefit all users. This is patently false. If you are creating an application for a process and changing the way your stakeholders interact with you and it, you need to consider whether that change is in their best interests. It's very easy to create and introduce an application, blockchain or not, that reduces business friction for the owner of the process but increases it for other stakeholders.
+### 总结
 
-If I make engine parts for the automotive industry, it may benefit me immensely to be able to track and manage the parts on a blockchain. I may be able to see at a glance who supplied what, when, and the quality of the steel used in the (for example) ball bearings I buy. On the other hand, if I'm a ball-bearing producer with an established process that works for the 40 other companies to whom I sell ball bearings, adopting a new process for one company—with associated changes to my method of work, systems, storage, and security requirements—is unlikely to be in my best interests. It's going to be both costly and annoying.
+这几个场景判定用于提纲挈领，并不是一成不变的。其中数据库相关的那个场景判定更像是技术方面的，但也是紧密结合业务定位和功能的。希望这几个判定可以为区块链技术引进促因带来的过热进行降温。
 
-### In summary
+[#1]\. 请不要误解我的意思，加密货币显然是一种有趣的区块链业务应用，只是不在本文的讨论范畴而已。 
 
-Tests are guidelines; they're not fixed in stone. One of these tests looks like a technical test (the database one), but it's really as much about business roles and responsibilities as the other two. All of them, hopefully, can be used as a counterbalance to the three drivers of blockchain adoption I mentioned.
+[#2]\. 知道具体是哪些部分是很有意义的，如果你知道，请告诉我好吗？
 
-1\. Which, don't get me wrong, is definitely interesting and a business application—it's just not what I'm going to talk about in this post.
+[#3]\. 坦率的说，它其实更像是一大堆技术的集合体。
 
-2\. The trick is knowing which bits. Let me know if you work out how, OK?
+[#4]\. 这显然是假的，如果被淘汰的主体是这些会议和“专家”本身倒十分有可能。
 
-3\. It's actually quite a large set of technologies, to be honest.
+[#5]\. 由于比方打得有些不恰当，估计还是会引起众怒。
 
-4\. Which is patently untrue, unless the word "they" refers to the conferences and gurus, in which case it's probably correct.
+[#6]\. 我太喜欢这个grok单词了，我把它放在这里作为我的工程师标志[#7]。
 
-5\. Which may happen anyway due to my egregious mixing of metaphors.
+[#7]\. 你可能已经想到了，我读过_Stranger in a Strange Land_一书，包括删减版和原版。
 
-6\. There's a word to love. I've put it in to exhibit my techie credentials.7
+[#8]\. 合理地。
 
-7\. And before you doubt them, yes, I've read the book, in both cut and uncut versions.
-
-8\. Within reason.
-
-This article originally appeared on [Alice, Eve, and Bob – a security blog][3] and is republished with permission.
+原文最初发表于[爱丽丝, 夏娃和鲍勃 – 一个安全性主题博客][3]，以获得转载许可。
 
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/18/3/3-tests-not-moving-blockchain
 
 作者：[Mike Bursell][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[pinewall](https://github.com/pinewall)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
