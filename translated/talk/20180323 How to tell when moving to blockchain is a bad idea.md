@@ -64,11 +64,11 @@
 
 <a name="footnote8">8</a>\. 在合理的情况下。
 
-原文最初发表于[爱丽丝, 夏娃和鲍勃 – 一个安全性主题博客][3]，以获得转载许可。
+原文最初发表于[爱丽丝, 夏娃和鲍勃 – 一个安全性主题博客][3]，已获得转载许可。
 
 --------------------------------------------------------------------------------
 
-via: https://opensource.com/article/18/3/3-tests-not-moving-blockchain
+原文链接: https://opensource.com/article/18/3/3-tests-not-moving-blockchain
 
 作者：[Mike Bursell][a]
 译者：[pinewall](https://github.com/pinewall)
