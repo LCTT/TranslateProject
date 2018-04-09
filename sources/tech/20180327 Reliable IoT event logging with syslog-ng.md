@@ -1,3 +1,4 @@
+Translating by qhwdw
 Reliable IoT event logging with syslog-ng
 ======
 

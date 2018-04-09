@@ -1,3 +1,4 @@
+Translating by qhwdw
 How to build a digital pinhole camera with a Raspberry Pi
 ======
 
