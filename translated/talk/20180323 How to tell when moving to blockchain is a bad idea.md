@@ -60,7 +60,7 @@
 
 <a name="footnote6">6</a>\. 我太喜欢grok这个单词了，我把它放在这里作为我的工程师标志<sup>[7](#footnote7)</sup>。
 
-<a name="footnote7">7</a>\. 你可能已经想到了，我读过_Stranger in a Strange Land_一书，包括删减版和原版。
+<a name="footnote7">7</a>\. 你可能已经想到了，我读过*Stranger in a Strange Land*一书，包括删减版和原版。
 
 <a name="footnote8">8</a>\. 在合理的情况下。
 
