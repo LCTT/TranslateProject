@@ -1,3 +1,4 @@
+Translating by qhwdw
 How to apply Machine Learning to IoT using Android Things and TensorFlow
 ============================================================ 
 

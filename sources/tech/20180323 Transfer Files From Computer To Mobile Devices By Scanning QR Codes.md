@@ -1,3 +1,5 @@
+translating---geekpi
+
 Transfer Files From Computer To Mobile Devices By Scanning QR Codes
 ======
 

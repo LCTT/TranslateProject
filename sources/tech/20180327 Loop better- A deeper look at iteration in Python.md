@@ -1,3 +1,5 @@
+Translating by MjSeven
+
 Loop better: A deeper look at iteration in Python
 ======
 
