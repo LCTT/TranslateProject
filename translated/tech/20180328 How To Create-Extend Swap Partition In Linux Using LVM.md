@@ -1,52 +1,49 @@
-translating-----geekpi
-
-
-How To Create/Extend Swap Partition In Linux Using LVM
+如何在 Linux 中使用 LVM 创建/扩展交换分区
 ======
-We are using LVM for flexible volume management so, why can’t we use LVM for swap space?
+我们使用 LVM 进行灵活的卷管理，为什么我们不能将 LVM 用于交换分区呢？
 
-This allow users to increase the swap partition whenever we need.
+这让用户在需要时增加交换分区。
 
-If you upgraded the RAM in your system, it is necessary to add more swap space.
+如果你升级系统中的内存，则需要添加更多交换空间。
 
-This help you to manage the system that run applications that require a large amount of memory.
+这有助于你管理运行需要大量内存的应用的系统。
 
-Swap can be created in three ways
+可以通过三种方式创建交换分区
 
-  * Create a new swap partition
-  * Create a new swap file
-  * Extend swap on an existing logical volume (LVM)
+  * 创建一个新的交换分区
+  * 创建一个新的交换文件
+  * 在现有逻辑卷（LVM）上扩展交换分区
 
 
 
-It’s recommended to create a dedicated swap partition instead of swap file.
+建议创建专用交换分区而不是交换文件。
 
-**Suggested Read :**
-**(#)** [3 Easy Ways To Create Or Extend Swap Space In Linux][1]
-**(#)** [Automatically Create/Remove And Mount Swap File In Linux Using Shell Script][2]
+**建议阅读：**
+**(#)** [3 种简单的方法在 Linux 中创建或扩展交换空间][1]
+**(#)** [使用 Shell 脚本在 Linux 中自动创建/删除和挂载交换文件][2]
 
-What is the recommended swap size in Linux?
+Linux 中推荐的交换大小是多少？
 
-### What Is Swap Space
+### 什么是交换空间
 
-Swap space in Linux is used when the amount of physical memory (RAM) is full. When physical RAM is full, inactive pages in memory are moved to the swap space.
+当物理内存 （RAM） 已满时，将使用 Linux 中的交换空间。当物理内存已满时，内存中的非活动页将移到交换空间。
 
-This helps system to run the application continuously but it’s not considered a replacement for more RAM.
+这有助于系统连续运行应用程序，但它不被认为是更多内存的替代品。
 
-Swap space is located on hard drives so, it would not processing the request like physical RAM.
+交换空间位于硬盘上，因此它不会像物理内存那样处理请求。
 
-### How To Create A Swap Partition Using LVM
+### 如何使用LVM创建交换分区
 
-As we already know how to create logical volume do the same for swap as well. Just follow the below procedure.
+由于我们已经知道如何创建逻辑卷，所以交换分区也是如此。只需按照以下过程。
 
-Create a logical volume which you required. In my case i’m going to create `5GB` of swap partition.
+创建你需要的逻辑卷。在我这里，我要创建 `5GB` 的交换分区。
 ```
 $ sudo lvcreate -L 5G -n LogVol_swap1 vg00
  Logical volume "LogVol_swap1" created.
 
 ```
 
-Format the new swap space.
+格式化新的交换空间。
 ```
 $ sudo mkswap /dev/vg00/LogVol_swap1
 Setting up swapspace version 1, size = 5 GiB (5368705024 bytes)
@@ -54,14 +51,14 @@ no label, UUID=d278e9d6-4c37-4cb0-83e5-2745ca708582
 
 ```
 
-Add the following entry to the `/etc/fstab` file.
+将以下条目添加到 `/etc/fstab` 中。
 ```
 # vi /etc/fstab
 /dev/mapper/vg00-LogVol_swap1 swap swap defaults 0 0
 
 ```
 
-Enable the extended logical volume.
+启用扩展逻辑卷。
 ```
 $ sudo swapon -va
 swapon: /swapfile: already active -- ignored
@@ -71,7 +68,7 @@ swapon /dev/mapper/vg00-LogVol_swap1
 
 ```
 
-Test that the swap space has been added properly.
+测试交换空间是否已正确添加。
 ```
 $ cat /proc/swaps
 Filename                Type        Size    Used    Priority
@@ -85,18 +82,18 @@ Swap: 6 0 6
 
 ```
 
-### How To Expand A Swap Partition Using LVM
+### 如何使用 LVM 扩展交换分区
 
-Just follow the below procedure to extend an LVM swap logical volume.
+只需按照以下过程来扩展 LVM 交换逻辑卷。
 
-Disable swapping for the associated logical volume.
+禁用相关逻辑卷的交换。
 ```
 $ sudo swapoff -v /dev/vg00/LogVol_swap1
 swapoff /dev/vg00/LogVol_swap1
 
 ```
 
-Resize the logical volume. I’m going to increase the swap volume from `5GB to 11GB`.
+调整逻辑卷的大小。我将把交换空间从 `5GB 增加到 11GB`。
 ```
 $ sudo lvresize /dev/vg00/LogVol_swap1 -L +6G
  Size of logical volume vg00/LogVol_swap1 changed from 5.00 GiB (1280 extents) to 11.00 GiB (2816 extents).
@@ -104,7 +101,7 @@ $ sudo lvresize /dev/vg00/LogVol_swap1 -L +6G
 
 ```
 
-Format the new swap space.
+格式化新的交换空间。
 ```
 $ sudo mkswap /dev/vg00/LogVol_swap1
 mkswap: /dev/vg00/LogVol_swap1: warning: wiping old swap signature.
@@ -113,7 +110,7 @@ no label, UUID=2e3b2ee0-ad0b-402c-bd12-5a9431b73623
 
 ```
 
-Enable the extended logical volume.
+启用扩展逻辑卷。
 ```
 $ sudo swapon -va
 swapon: /swapfile: already active -- ignored
@@ -123,7 +120,7 @@ swapon /dev/mapper/vg00-LogVol_swap1
 
 ```
 
-Test that the logical volume has been extended properly.
+测试逻辑卷是否已正确扩展。
 ```
 $ free -g
  total used free shared buff/cache available
@@ -142,7 +139,7 @@ Filename                Type        Size    Used    Priority
 via: https://www.2daygeek.com/how-to-create-extend-swap-partition-in-linux-using-lvm/
 
 作者：[Ramya Nuvvula][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
