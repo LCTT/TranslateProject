@@ -1,3 +1,5 @@
+Translating by MjSeven
+
 10 fundamental commands for new Linux users
 ======
 
