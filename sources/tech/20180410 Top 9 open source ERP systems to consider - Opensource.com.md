@@ -1,5 +1,6 @@
 Top 9 open source ERP systems to consider | Opensource.com
 ======
+![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/BUSINESS_orgchart1.png?itok=tukiFj89)
 Businesses with more than a handful of employees have a lot to balance including pricing, product planning, accounting and finance, managing payroll, dealing with inventory, and more. Stitching together a set of disparate tools to handle those jobs is a quick, cheap, and dirty way to get things done.
 
 That approach isn't scalable. It's difficult to efficiently move data between the various pieces of such an ad-hoc system. As well, it can be difficult to maintain.
@@ -103,7 +104,7 @@ via: https://opensource.com/tools/enterprise-resource-planning
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]: opensource.com
+[a]:https://opensource.com
 [1]:http://en.wikipedia.org/wiki/Enterprise_resource_planning
 [2]:http://www.adempiere.net/welcome
 [3]:http://wiki.adempiere.net/License
