@@ -1,3 +1,6 @@
+translating---geekpi
+
+
 A Kernel Module That Forcibly Shutdown Your System
 ======
 
