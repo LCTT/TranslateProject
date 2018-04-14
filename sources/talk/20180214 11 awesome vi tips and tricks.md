@@ -1,3 +1,5 @@
+translating by MZqk
+
 11 awesome vi tips and tricks
 ======
 
