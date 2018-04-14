@@ -1,3 +1,5 @@
+translating---geekpi
+
 How to Create, Revert and Delete KVM Virtual machine snapshot with virsh command
 ======
 [![KVM-VirtualMachine-Snapshot][1]![KVM-VirtualMachine-Snapshot][2]][2]
