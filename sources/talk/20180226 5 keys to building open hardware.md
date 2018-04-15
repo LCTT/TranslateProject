@@ -42,22 +42,28 @@ If you are interested in designing open hardware for scientific projects, these 
   * Minimize the amount of material and the cost of production.
   * 尽量使用方便易得的工具（比如 RepRap 3D 打印机）进行部件的分布式或数字化生产。
   * Maximize the use of components that can be distributed or digitally manufactured by using widespread and accessible tools such as the open source [RepRap 3D printer][16].
-  * 
+  * 对部件进行[参数化设计][17]，这使他人可以对你的设计进行个性化改动。相较于特例化设计，参数化设计会更有用。在未来的项目中，使用者可以通过修改核心参数来继续利用它们。
   * Create [parametric designs][17] with predesigned components, which enable others to customize your design. By making parametric designs rather than solving a specific case, all future cases can also be solved while enabling future users to alter the core variables to make the device useful for them.
+  * 所有不能使用开源硬件进行分布制造的零件，必须选择现货产品以方便采购
   * All components that are not easily and economically fabricated with existing open hardware equipment in a distributed fashion should be chosen from off-the-shelf parts that are readily available throughout the world.
 
-
+  3. 验证功能设计
   3. Validate the design for the targeted function(s).
 
-
+  4. 提供关于设计、生产、装配、校准和操作的详尽文档。包括原始设计文件而不仅仅是设计输出。开源硬件协会对于开源设计的发布和文档化有额外的指南，总结如下：
   4. Meticulously document the design, manufacture, assembly, calibration, and operation of the device. This should include the raw source of the design, not just the files used for production. The Open Source Hardware Association has extensive [guidelines][18] for properly documenting and releasing open source designs, which can be summarized as follows:
 
-
+  * 以通用的形式分享设计文件
   * Share design files in a universal type.
+  * 提供详尽的材料清单，包括价格和采购信息
   * Include a fully detailed bill of materials, including prices and sourcing information.
+  * 如果包含软件，确保代码对大众来说清晰易懂
   * If software is involved, make sure the code is clear and understandable to the general public.
+  * 作为生产时的参考，必须提供足够的照片，以确保没有任何被遮挡的部分。
   * Include many photos so that nothing is obscured, and they can be used as a reference while manufacturing.
+  * 在描述方法的章节，整个制作过程必须被细化成简单步骤以便复制此设计。
   * In the methods section, the entire manufacturing process must be detailed to act as instructions for users to replicate the design.
+  * 在线上分享并指定许可证。
   * Share online and specify a license. This gives users information on what constitutes fair use of the design.
 
 
