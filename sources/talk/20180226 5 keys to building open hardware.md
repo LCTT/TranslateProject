@@ -63,14 +63,14 @@ If you are interested in designing open hardware for scientific projects, these 
   * Include many photos so that nothing is obscured, and they can be used as a reference while manufacturing.
   * 在描述方法的章节，整个制作过程必须被细化成简单步骤以便复制此设计。
   * In the methods section, the entire manufacturing process must be detailed to act as instructions for users to replicate the design.
-  * 在线上分享并指定许可证。
+  * 在线上分享并指定许可证。这为用户提供了合理使用设计的信息。
   * Share online and specify a license. This gives users information on what constitutes fair use of the design.
 
+  5. 主动分享！为了使 FOSH 发扬光大，设计必须被广泛、频繁和有效地分享以提升他们的存在感。所有的文档应该在开放存取文献中发表，并与适当的社区共享。[开源科学框架][19]是一个值得考虑的优雅的通用存储库，它由开源科学中心主办，该中心设置为接受任何类型的文件并处理大型数据集。
+  5. Share aggressively! For FOSH to proliferate, designs must be shared widely, frequently, and noticeably to raise awareness of their existence. All documentation should be published in the open access literature and shared with appropriate communities. One nice universal repository to consider is the [Open Science Framework][19], hosted by the Center for Open Science, which is set up to take any type of file and handle large datasets.
 
-  5. Share aggressively! For FOSH to proliferate, designs must be shared widely, frequently, and noticeably to raise awareness of their existence. All documentation should be published in the open access literature and shared with appropriate communities. One nice universal repository to consider is the [Open Science Framework][19], hosted by the Center for Open Science, which is set up to take any type of file and handle large datasets.
 
-
-
+这篇文章得到了 [Fulbright Finland][20] 的支持，该公司赞助了芬兰 Fulbright-Aalto 大学的特聘校席 Joshua Pearce 在开源科学硬件方面的研究工作。
 This article was supported by [Fulbright Finland][20], which is sponsoring Joshua Pearce's research in open source scientific hardware in Finland as the Fulbright-Aalto University Distinguished Chair.
 
 --------------------------------------------------------------------------------
@@ -78,7 +78,7 @@ This article was supported by [Fulbright Finland][20], which is sponsoring Joshu
 via: https://opensource.com/article/18/2/5-steps-creating-successful-open-hardware
 
 作者：[Joshua Pearce][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[kennethXia](https://github.com/kennethXia)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
