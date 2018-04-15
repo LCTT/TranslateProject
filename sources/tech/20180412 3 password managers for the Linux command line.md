@@ -1,3 +1,5 @@
+translated by hopefully2333
+
 3 password managers for the Linux command line
 ======
 
