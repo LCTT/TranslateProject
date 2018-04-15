@@ -7,11 +7,13 @@ translating by kennethXia
 科学社区正在加速拥抱自由和开源硬件([FOSH][1]). 研究员正忙于[改进他们自己的装备][2]并创造数以百计基于分布式数字制造模型的设备来推动他们的研究。
 The science community is increasingly embracing free and open source hardware ([FOSH][1]). Researchers have been busy [hacking their own equipment][2] and creating hundreds of devices based on the distributed digital manufacturing model to advance their scientific experiments.
 
-热衷于 FOSH 的主要原因还是钱： 有研究表明，和专用设备相比，FOSH 可以节约90%到99%的花费。基于开源硬件商业模式的科学 FOSH 的商业化已经快速地推动了开发科学 FOSH 的工程领域。
+热衷于 FOSH 的主要原因还是钱： 有研究表明，和专用设备相比，FOSH 可以[节约90%到99%的花费][3]。基于[开源硬件商业模式][4]的科学 FOSH 的商业化已经推动其快速地发展为一个新的工程领域，并为此定期[举行年会][5]。
 A major reason for all this interest in distributed digital manufacturing of scientific FOSH is money: Research indicates that FOSH [slashes costs by 90% to 99%][3] compared to proprietary tools. Commercializing scientific FOSH with [open hardware business models][4] has supported the rapid growth of an engineering subfield to develop FOSH for science, which comes together annually at the [Gathering for Open Science Hardware][5].
 
+特别的是，不止一本，而是两本关于这个主题的学术期刊：[Journal of Open Hardware] (由Ubiquity出版，一个新的开放访问出版商，同时出版了[Journal of Open Research Software][8])以及[HardwareX][9](由Elsevier出版的一种[自由访问期刊][10]，它是世界上最大的学术出版商之一)。
 Remarkably, not one, but [two new academic journals][6] are devoted to the topic: the [Journal of Open Hardware][7] (from Ubiquity Press, a new open access publisher that also publishes the [Journal of Open Research Software][8] ) and [HardwareX][9] (an [open access journal][10] from Elsevier, one of the world's largest academic publishers).
 
+由于学术社区的支持，科学 FOSH 的开发者在设计开源硬件获取乐趣并快速推进科学发展的同时获得学术成就。
 Because of the academic community's support, scientific FOSH developers can get academic credit while having fun designing open hardware and pushing science forward faster.
 
 ### 5 steps for scientific FOSH
