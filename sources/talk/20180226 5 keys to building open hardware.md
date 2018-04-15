@@ -1,11 +1,13 @@
 translating by kennethXia
 
 5 keys to building open hardware
+构建开源硬件的5个关键点
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/openhardwaretools.png?itok=DC1RC_1f)
-
+科学社区正在加速拥抱自由和开源硬件([FOSH][1]). 研究员正忙于[改进他们自己的装备][2]并创造数以百计基于分布式数字制造模型的设备来推动他们的研究。
 The science community is increasingly embracing free and open source hardware ([FOSH][1]). Researchers have been busy [hacking their own equipment][2] and creating hundreds of devices based on the distributed digital manufacturing model to advance their scientific experiments.
 
+热衷于 FOSH 的主要原因还是钱： 有研究表明，和专用设备相比，FOSH 可以节约90%到99%的花费。基于开源硬件商业模式的科学 FOSH 的商业化已经快速地推动了开发科学 FOSH 的工程领域。
 A major reason for all this interest in distributed digital manufacturing of scientific FOSH is money: Research indicates that FOSH [slashes costs by 90% to 99%][3] compared to proprietary tools. Commercializing scientific FOSH with [open hardware business models][4] has supported the rapid growth of an engineering subfield to develop FOSH for science, which comes together annually at the [Gathering for Open Science Hardware][5].
 
 Remarkably, not one, but [two new academic journals][6] are devoted to the topic: the [Journal of Open Hardware][7] (from Ubiquity Press, a new open access publisher that also publishes the [Journal of Open Research Software][8] ) and [HardwareX][9] (an [open access journal][10] from Elsevier, one of the world's largest academic publishers).
