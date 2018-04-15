@@ -1,3 +1,4 @@
+gongqi0632 translating
 Lessons Learned from Growing an Open Source Project Too Fast
 ======
 ![open source project][1]
