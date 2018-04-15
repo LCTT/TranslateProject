@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 12 Git tips for Git's 12th birthday
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/party_anniversary_flag_birthday_celebrate.jpg?itok=KqfMENa7)
