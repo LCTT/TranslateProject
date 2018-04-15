@@ -13,27 +13,36 @@ A major reason for all this interest in distributed digital manufacturing of sci
 特别的是，不止一本，而是两本关于这个主题的学术期刊：[Journal of Open Hardware] (由Ubiquity出版，一个新的开放访问出版商，同时出版了[Journal of Open Research Software][8])以及[HardwareX][9](由Elsevier出版的一种[自由访问期刊][10]，它是世界上最大的学术出版商之一)。
 Remarkably, not one, but [two new academic journals][6] are devoted to the topic: the [Journal of Open Hardware][7] (from Ubiquity Press, a new open access publisher that also publishes the [Journal of Open Research Software][8] ) and [HardwareX][9] (an [open access journal][10] from Elsevier, one of the world's largest academic publishers).
 
-由于学术社区的支持，科学 FOSH 的开发者在设计开源硬件获取乐趣并快速推进科学发展的同时获得学术成就。
+由于学术社区的支持，科学 FOSH 的开发者在获取制作乐趣并推进科学快速发展的同时获得学术声望。
 Because of the academic community's support, scientific FOSH developers can get academic credit while having fun designing open hardware and pushing science forward faster.
 
 ### 5 steps for scientific FOSH
+### 科学 FOSH 的5个步骤
 
+协恩 （Shane Oberloier）和我在名为Designes的自由问工程期刊上共同发表了一篇关于设计 FOSH 科学设备原则的文章。我们以滑动烘干机为例，制造成本低于20美元，仅是专用设备价格的三百分之一。[科学][1]和[医疗][12]设备往往比较复杂，开发 FOSH 替代品将带来巨大的回报。
 Shane Oberloier and I co-authored a new [article][11] published in Designs, an open access engineering design journal, about the principles of designing FOSH scientific equipment. We used the example of a slide dryer, fabricated for under $20, which costs up to 300 times less than proprietary equivalents. [Scientific][1] and [medical][12] equipment tends to be complex with huge payoffs for developing FOSH alternatives.
 
+我总结了5个步骤（包括6条设计原则），它们在协恩和我发表的文章里有详细阐述。这些设计原则也推广到非科学设备，而且制作越复杂的设计越能带来更大的潜在收益。
 I've summarized the five steps (including six design principles) that Shane and I detail in our Designs article. These design principles can be generalized to non-scientific devices, although the more complex the design or equipment, the larger the potential savings.
 
+如果你对科学项目的开源硬件设计感兴趣，这些步骤将使你的项目的影响最大化。
 If you are interested in designing open hardware for scientific projects, these steps will maximize your project's impact.
 
+  1. 评估类似现有工具的功能，你的 FOSH 设计目标应该针对实际效果而不是现有的设计（译者注：作者的意思应该是不要被现有设计缚住手脚）。必要的时候需进行概念证明。
   1. Evaluate similar existing tools for their functions but base your FOSH design on replicating their physical effects, not pre-existing designs. If necessary, evaluate a proof of concept.
 
-
+  2. 使用下列设计原则：
   2. Use the following design principles:
 
-
+  * 在设备生产中，仅适用自由和开源的软件工具链（比如，开源的CAD工具，例如[OpenSCAD][13], [FreeCAD][14], or [Blender][15]）和开源硬件。
   * Use only free and open source software toolchains (e.g., open source CAD packages such as [OpenSCAD][13], [FreeCAD][14], or [Blender][15]) and open hardware for device fabrication.
+  * 尝试减少部件的数量和类型并降低工具的复杂度
   * Attempt to minimize the number and type of parts and the complexity of the tools.
+  * 减少材料的数量和制造成本。
   * Minimize the amount of material and the cost of production.
+  * 尽量使用方便易得的工具（比如 RepRap 3D 打印机）进行部件的分布式或数字化生产。
   * Maximize the use of components that can be distributed or digitally manufactured by using widespread and accessible tools such as the open source [RepRap 3D printer][16].
+  * 
   * Create [parametric designs][17] with predesigned components, which enable others to customize your design. By making parametric designs rather than solving a specific case, all future cases can also be solved while enabling future users to alter the core variables to make the device useful for them.
   * All components that are not easily and economically fabricated with existing open hardware equipment in a distributed fashion should be chosen from off-the-shelf parts that are readily available throughout the world.
 
