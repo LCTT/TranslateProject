@@ -1,21 +1,17 @@
-Translating by FelixYFZ
-How to test internet speed in Linux terminal
+如何在Linux的终端测试网速
 ======
-Learn how to use speedtest cli tool to test internet speed in Linux terminal. Also includes one liner python command to get speed details right away.
+学习如何在Linux终端使用命令行工具测试网速,或者仅用一条python命令立刻获得网速的测试结果。 
+![在Linux终端测试网速][1]
 
-![test internet speed in linux terminal][1]
+我们都会在连接网络或者wifi的时候去测试网络带宽。 为什么不用我们自己的服务器！下面将会教你如何在Linux终端测试网速。
 
-Most of us check the internet bandwidth speed whenever we connect to new network or wifi. So why not our servers! Here is a tutorial which will walk you through to test internet speed in Linux terminal.
+我们多数都会使用[Mb/s][2]标准来测试网速。 仅仅只是桌面上的一个简单的操作，访问他们的网站点击浏览。
+它将使用最近的服务器来扫描你的本地主机来测试网速。 如果你使用的是移动设备，他们有对应的移动端APP。但如果你使用的是只有命令行终端界面的则会有些不同。下面让我们一起看看如何在Linux的终端来测试网速。
+如果你只是想偶尔的做一次网速测试而不想去下载测试工具,那么请往下看如何使用命令完成测试。
 
-Everyone of us generally uses [Speedtest by Ookla][2] to check internet speed. Its pretty simple process for a desktop. Goto their website and just click GO button. It will scans your location and speed test with nearest server. If you are on mobile, they have their app for you. But if you are on terminal with command line interface things are little different. Lets see how to check internet speed from Linux terminal.
+### 第一步：下载网速测试命令行工具。
 
-If you want to speed check only once and dont want to download tool on server, jump here and see one liner command.
-
-### Step 1 : Download speedtest cli tool
-
-First of all, you have to download speedtest CLI tool from [github repository][3]. Now a days, its also included in many well known Linux repositories as well. If its their in yours then you can directly [install that package on your Linux distro][4].
-
-Lets proceed with Github download and install process. [Install git package][4] depending on your distro. Then clone Github repo of speedtest like belwo :
+首先，你需要从github上下载网速测试命令行工具。现在，上面也包含许多其他的Linu相关的仓库，如果已经在你的库中，你可以直接在你的Linux上进行安装。 让我们继续下载和安装过程，安装的git包取决于你的Linux发行版。然后按照下面的方法来克隆Github speedtest存储库
 
 ```
 [root@kerneltalks ~]# git clone https://github.com/sivel/speedtest-cli.git
@@ -27,7 +23,7 @@ Resolving deltas: 100% (518/518), done.
  
 ```
 
-It will be cloned to your present working directory. New directory named `speedtest-cli` will be created. You can see below files in it.
+它将会被克隆到你当前的工作目录，新的名为speedtest-cli的目录将会被创建,你将在新的目录下看到如下的文件。
 
 ```
 [root@kerneltalks ~]# cd speedtest-cli
@@ -45,13 +41,11 @@ total 96
 -rw-r--r--. 1 root root   333 Oct  7 16:55 tox.ini
 ```
 
-The python script `speedtest.py` is the one we will be using to check internet speed.
+名为speedtest.py的脚本文件就是用来测试网速的。你可以在/usr/bin执行环境下将这个脚本链接到一条命令以便这台机器上的所有用户都能使用。或者你可以为这个脚本创建一个命令别名这样就能让所有用户很容易使用它。
 
-You can link this script for a command in /usr/bin so that all users on server can use it. Or you can even create [command alias][5] for it and it will be easy for all users to use it.
+### 运行python脚本
 
-### Step 2 : Run python script
-
-Now, run python script without any argument and it will search nearest server and test your internet speed.
+现在，直接运行这个脚本，不需要添加任何参数它将会搜寻最近的服务器来测试你的网速。
 
 ```
 [root@kerneltalks speedtest-cli]# python speedtest.py
@@ -66,13 +60,13 @@ Testing upload speed............................................................
 Upload: 323.95 Mbit/s
 ```
 
-Oh! Dont amaze with speed. 😀 I am on [AWS EC2 Linux server][6]. Thats the bandwidth of Amazon data center! 🙂
+Oh！ 不要被这个网速惊讶道。😀我在AWE EX2的服务器上。那是亚马逊数据中心的网速！🙂
 
-### Different options with script
+### 这个脚本可以添加有不同的选项。
 
-Few options which might be useful are as below :
+下面的几个选项对这个脚本可能会很有用处：
 
- **To search speedtest servers** nearby your location use `--list` switch and `grep` for your location name.
+ ** 用搜寻你附近的网路测试服务器，使用 --list和grep加上本地名来列出所有附件的服务器。
 
 ```
 [root@kerneltalks speedtest-cli]#  python speedtest.py --list | grep -i mumbai
@@ -90,11 +84,10 @@ Few options which might be useful are as below :
  6403) YOU Broadband India Pvt Ltd., Mumbai (Mumbai, India) [1.15 km]
 ```
 
-You can see here, first column is server identifier followed by name of company hosting that server, location and finally its distance from your location.
+然后你就能从搜寻结果中看到，第一列是服务器识别号，紧接着是公司的名称和所在地，最后是离你的距离。
 
- **To test internet speed using specific server** use `--server` switch and server identifier from previous output as argument.
-
-```
+ ** 如果要使用指定的服务器来测试网速，后面跟上命令 --server 加上服务器的识别号。
+ 
 [root@kerneltalks speedtest-cli]# python speedtest.py --server 2827
 Retrieving speedtest.net configuration...
 Testing from Amazon (35.154.184.126)...
@@ -107,7 +100,7 @@ Testing upload speed............................................................
 Upload: 69.25 Mbit/s
 ```
 
-**To get share link of your speed test** , use `--share` switch. It will give you URL of your test hosted on speedtest website. You can share this URL.
+** 如果想得到你的测试结果的共享链接，使用命令 --share,你将会得到测试结果的链接。
 
 ```
 [root@kerneltalks speedtest-cli]# python speedtest.py --share
@@ -124,21 +117,20 @@ Share results: http://www.speedtest.net/result/6687428141.png
  
 ```
 
-Observe last line which includes URL of your test result. If I download that image its the one below :
+输出中的最后一行就是你的测试结果的链接。下载下来的图片内容如下 :
 
 ![Speedtest result on Linux][7]
 
-Thats it! But hey if you dont want all this technical jargon, you can even use below one liner to get speed test done right away.
+这就是全部的过程！如果你不想子结果中看到这些技术术语，你也可以使用如下的命令迅速测出你的网速
 
-### Internet speed test using one liner in terminal
+### 要想在终端使用一条命令测试网速。
 
-We are going to use [curl tool ][8]to fetch above said python script online and supply it to python for execution on the go!
+我们将使用Curl工具来在线抓取上面使用的python脚本然后直接用python执行脚本
 
 ```
 [root@kerneltalks ~]# curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
 ```
-
-Above command will run the script and show you result on screen!
+上面的脚本将会运行脚本输出结果到屏幕上。
 
 ```
 [root@kerneltalks speedtest-cli]# curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
@@ -153,14 +145,12 @@ Testing upload speed............................................................
 Upload: 355.84 Mbit/s
 ```
 
-I tested this tool on RHEL 7 server but process is same on Ubuntu, Debian, Fedora or CentOS.
-
 --------------------------------------------------------------------------------
 
-via: https://kerneltalks.com/tips-tricks/how-to-test-internet-speed-in-linux-terminal/
+这是在RHEL 7上执行的结果，在Ubuntu,Debian, Fedora或者Centos上一样可以执行。
 
 作者：[Shrikant Lavhate][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[FelixYFZ ](https://github.com/FelixYFZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
