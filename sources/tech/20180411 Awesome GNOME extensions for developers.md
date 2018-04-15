@@ -1,3 +1,5 @@
+translated by hopefully2333
+
 Awesome GNOME extensions for developers
 ======
 
