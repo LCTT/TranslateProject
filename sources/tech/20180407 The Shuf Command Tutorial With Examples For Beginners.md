@@ -1,3 +1,5 @@
+translating---geekpi
+
 The Shuf Command Tutorial With Examples For Beginners
 ======
 
