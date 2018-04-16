@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 9 Useful touch command examples in Linux
 ======
 Touch command is used to create empty files and also changes the timestamps of existing files on Unix & Linux System. Changing timestamps here means updating the access and modification time of files and directories.
