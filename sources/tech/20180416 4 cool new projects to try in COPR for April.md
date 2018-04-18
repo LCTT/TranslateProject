@@ -1,3 +1,5 @@
+translating---geekpi
+
 4 cool new projects to try in COPR for April
 ======
 
