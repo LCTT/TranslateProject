@@ -1,3 +1,5 @@
+Translating by valoniakim
+
 How to start an open source program in your company
 ======
 

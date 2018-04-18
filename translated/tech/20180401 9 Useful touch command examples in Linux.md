@@ -1,24 +1,25 @@
-9 Useful touch command examples in Linux
-======
-Touch command is used to create empty files and also changes the timestamps of existing files on Unix & Linux System. Changing timestamps here means updating the access and modification time of files and directories.
+在 Linux 下 9 个有用的 touch 命令示例
+=====
+
+touch 命令用于创建空文件，并且更改 Unix 和 Linux 系统上现有文件时间戳。这里更改时间戳意味着更新文件和目录的访问以及修改时间。
 
 [![touch-command-examples-linux][1]![touch-command-examples-linux][2]][2]
 
-Let’s have a look on the syntax and options used in touch command,
+让我们来看看 touch 命令的语法和选项：
 
-**Syntax** : # touch {options} {file}
+**语法**： # touch {选项} {文件}
 
-Options used in touch command,
+touch 命令中使用的选项：
 
 ![touch-command-options][1]
 
 ![touch-command-options][3]
 
-In this article we will walk through 9 useful touch command examples in Linux,
+在这篇文章中，我们将介绍 Linux 中 9 个有用的 touch 命令示例。
 
-### Example:1 Create an empty file using touch
+### 示例:1 使用 touch 创建一个空文件
 
-To create an empty file using touch command on Linux systems, type touch followed by the file name, example is shown below,
+要在 Linux 系统上使用 touch 命令创建空文件，键入 touch，然后输入文件名。如下所示：
 ```
 [root@linuxtechi ~]# touch devops.txt
 [root@linuxtechi ~]# ls -l devops.txt
@@ -27,26 +28,26 @@ To create an empty file using touch command on Linux systems, type touch followe
 
 ```
 
-### Example:2 Create empty files in bulk using touch
+### 示例:2 使用 touch 创建批量空文件
 
-There can be some scenario where we have to create lots of empty files for some testing, this can be easily achieved using touch command,
+可能会出现一些情况，我们必须为某些测试创建大量空文件，这可以使用 touch 命令轻松实现：
 ```
 [root@linuxtechi ~]# touch sysadm-{1..20}.txt
 
 ```
 
-In the above example we have created 20 empty files with name sysadm-1.txt to sysadm-20.txt, you can change the name and numbers based on your requirements.
+在上面的例子中，我们创建了 20 个名为 sysadm-1.txt 到 sysadm-20.txt 的空文件，你可以根据需要更改名称和数字。
 
-### Example:3 Change / Update access time of a file and directory
+### 示例:3 改变/更新文件和目录的访问时间
 
-Let’s assume we want to change access time of a file called “ **devops.txt** “, to do this use ‘ **-a** ‘ option in touch command followed by file name, example is shown below,
+假设我们想要改变名为 **devops.txt** 文件的访问时间，在 touch 命令中使用 **-a** 选项，然后输入文件名。如下所示：
 ```
 [root@linuxtechi ~]# touch -a devops.txt
 [root@linuxtechi ~]#
 
 ```
 
-Now verify whether access time of a file has been updated or not using ‘stat’ command
+现在使用 `stat` 命令验证文件的访问时间是否已更新：
 ```
 [root@linuxtechi ~]# stat devops.txt
   File: ‘devops.txt’
@@ -62,9 +63,9 @@ Change: 2018-03-29 23:03:10.902000000 -0400
 
 ```
 
-**Change access time of a directory** ,
+**改变目录的访问时间**
 
-Let’s assume we have a ‘nfsshare’ folder under /mnt, Let’s change the access time of this folder using the below command,
+假设我们在 /mnt 目录下有一个 ‘nfsshare’ 文件夹，让我们用下面的命令改变这个文件夹的访问时间：
 ```
 [root@linuxtechi ~]# touch -m /mnt/nfsshare/
 [root@linuxtechi ~]#
@@ -83,9 +84,9 @@ Change: 2018-03-29 23:34:38.095000000 -0400
 
 ```
 
-### Example:4 Change Access time without creating new file
+### 示例:4 更改访问时间而不用创建新文件
 
-There can be some situations where we want to change access time of a file if it exists and avoid creating the file. Using ‘ **-c** ‘ option in touch command, we can change access time of a file if it exists and will not a create a file, if it doesn’t exist.
+在某些情况下，如果文件存在，我们希望更改文件的访问时间，并避免创建文件。在 touch 命令中使用 **-c** 选项即可，如果文件存在，那么我们可以改变文件的访问时间，如果不存在，我们也可不会创建它。
 ```
 [root@linuxtechi ~]# touch -c sysadm-20.txt
 [root@linuxtechi ~]# touch -c winadm-20.txt
@@ -95,18 +96,18 @@ ls: cannot access winadm-20.txt: No such file or directory
 
 ```
 
-### Example:5 Change Modification time of a file and directory
+### 示例:5 更改文件和目录的修改时间
 
-Using ‘ **-m** ‘ option in touch command, we can change the modification time of a file and directory,
+在 touch 命令中使用 **-m** 选项，我们可以更改文件和目录的修改时间。
 
-Let’s change the modification time of a file called “devops.txt”,
+让我们更改名为 “devops.txt” 文件的更改时间：
 ```
 [root@linuxtechi ~]# touch -m devops.txt
 [root@linuxtechi ~]#
 
 ```
 
-Now verify whether modification time has been changed or not using stat command,
+现在使用 stat 命令来验证修改时间是否改变：
 ```
 [root@linuxtechi ~]# stat devops.txt
   File: ‘devops.txt’
@@ -122,23 +123,14 @@ Change: 2018-03-29 23:59:49.106000000 -0400
 
 ```
 
-Similarly, we can change modification time of a directory,
+同样的，我们可以改变一个目录的修改时间：
 ```
 [root@linuxtechi ~]# touch -m /mnt/nfsshare/
 [root@linuxtechi ~]#
 
 ```
 
-### Example:6 Changing access and modification time in one go
-
-Use “ **-am** ” option in touch command to change the access and modification together or in one go, example is shown below,
-```
-[root@linuxtechi ~]# touch -am devops.txt
-[root@linuxtechi ~]#
-
-```
-
-Cross verify the access and modification time using stat,
+使用 stat 交叉验证访问和修改时间：
 ```
 [root@linuxtechi ~]# stat devops.txt
   File: ‘devops.txt’
@@ -154,45 +146,43 @@ Change: 2018-03-30 00:06:20.145000000 -0400
 
 ```
 
-### Example:7 Set the Access & modification time to a specific date and time
+### 示例:7 将访问和修改时间设置为特定的日期和时间
 
-Whenever we do change access and modification time of a file & directory using touch command, then it set the current time as access & modification time of that file or directory,
+每当我们使用 touch 命令更改文件和目录的访问和修改时间时，它将当前时间设置为该文件或目录的访问和修改时间。
 
-Let’s assume we want to set specific date and time as access & modification time of a file, this is can be achieved using ‘-c’ & ‘-t’ option in touch command,
+假设我们想要将特定的日期和时间设置为文件的访问和修改时间，这可以使用 touch 命令中的 ‘-c’ 和 ‘-t’ 选项来实现。
 
-Date and Time can be specified in the format: {CCYY}MMDDhhmm.ss
+日期和时间可以使用以下格式指定：{CCYY}MMDDhhmm.ss
 
-Where:
+其中：
 
-  * CC – First two digits of a year
-  * YY – Second two digits of a year
-  * MM – Month of the Year (01-12)
-  * DD – Day of the Month (01-31)
-  * hh – Hour of the day (00-23)
-  * mm – Minutes of the hour (00-59)
+  * CC – 年份的前两位数字
+  * YY – 年份的后两位数字
+  * MM – 月份 (01-12)
+  * DD – 天 (01-31)
+  * hh – 小时 (00-23)
+  * mm – 分钟 (00-59)
 
-
-
-Let’s set the access & modification time of devops.txt file for future date and time( 2025 year, 10th Month, 19th day of month, 18th hours and 20th minute)
+让我们将 devops.txt file 文件的访问和修改时间设置为未来的一个时间( 2025 年, 10 月, 19 日, 18 时 20 分)。
 ```
 [root@linuxtechi ~]# touch -c -t 202510191820 devops.txt
 
 ```
 
-Use stat command to view the update access & modification time,
+使用 stat 命令查看更新访问和修改时间：
 
 ![stat-command-output-linux][1]
 
 ![stat-command-output-linux][4]
 
-Set the Access and Modification time based on date string, Use ‘-d’ option in touch command and then specify the date string followed by the file name, example is shown below,
+根据日期字符串设置访问和修改时间，在 touch 命令中使用 ‘-d’ 选项，然后指定日期字符串，后面跟文件名。如下所示：
 ```
 [root@linuxtechi ~]# touch -c -d "2010-02-07 20:15:12.000000000 +0530" sysadm-29.txt
 [root@linuxtechi ~]#
 
 ```
 
-Verify the status using stat command,
+使用 stat 命令验证文件的状态：
 ```
 [root@linuxtechi ~]# stat sysadm-20.txt
   File: ‘sysadm-20.txt’
@@ -208,24 +198,24 @@ Change: 2018-03-30 10:23:31.584000000 +0530
 
 ```
 
-**Note:** In above commands, if we don’t specify ‘-c’ then touch command will create a new file in case it doesn’t exist on the system and will set the timestamps whatever is mentioned in the command.
+**注意：**在上述命令中，如果我们不指定 ‘-c’，那么 touch 命令将创建一个新文件以防系统中存在该文件，并将时间戳设置为命令中给出的。
 
-### Example:8 Set the timestamps to a file using a reference file (-r)
+### 示例:8 使用参考文件设置时间戳（-r）
 
-In touch command we can use a reference file for setting the timestamps of file or directory. Let’s assume I want to set the same timestamps of file “sysadm-20.txt” on “devops.txt” file. This can be easily achieved using ‘-r’ option in touch.
+在 touch 命令中，我们可以使用参考文件来设置文件或目录的时间戳。假设我想在 “devops.txt” 文件上设置与文件 “sysadm-20.txt” 文件相同的时间戳，touch 命令中使用 ‘-r’ 选项可以轻松实现。
 
-**Syntax:** # touch -r {reference-file} actual-file
+**语法：**# touch -r {参考文件} 真正文件
 ```
 [root@linuxtechi ~]# touch -r sysadm-20.txt devops.txt
 [root@linuxtechi ~]#
 
 ```
 
-### Example:9 Change Access & Modification time on symbolic link file
+### 示例:9 在符号链接文件上更改访问和修改时间
 
-By default, whenever we try to change timestamps of a symbolic link file using touch command then it will change the timestamps of original file only, In case you want to change timestamps of a symbolic link file then this can be achieved using ‘-h’ option in touch command,
+默认情况下，每当我们尝试使用 touch 命令更改符号链接文件的时间戳时，它只会更改原始文件的时间戳。如果你想更改符号链接文件的时间戳，则可以使用 touch 命令中的 ‘-h’ 选项来实现。
 
-**Syntax:** # touch -h {symbolic link file}
+**语法：** # touch -h {符号链接文件}
 ```
 [root@linuxtechi opt]# ls -l /root/linuxgeeks.txt
 lrwxrwxrwx. 1 root root 15 Mar 30 10:56 /root/linuxgeeks.txt -> linuxadmins.txt
@@ -236,14 +226,14 @@ lrwxrwxrwx. 1 root root 15 Oct 19  2030 linuxgeeks.txt -> linuxadmins.txt
 
 ```
 
-That’s all from this tutorial, I hope these examples help you to understand touch command. Please do share your valuable feedback and comments.
+这就是本教程的全部了。我希望这些例子能帮助你理解 touch 命令。请分享你的宝贵意见和评论。
 
 --------------------------------------------------------------------------------
 
 via: https://www.linuxtechi.com/9-useful-touch-command-examples-linux/
 
 作者：[Pradeep Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[MjSeven](https://github.com/MjSeven)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

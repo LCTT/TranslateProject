@@ -1,3 +1,5 @@
+translating by MZqk
+
 What’s next in IT automation: 6 trends to watch
 ======
 
