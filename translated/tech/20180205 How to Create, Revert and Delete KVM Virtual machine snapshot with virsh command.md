@@ -1,26 +1,24 @@
-translating---geekpi
-
-How to Create, Revert and Delete KVM Virtual machine snapshot with virsh command
+如何使用 virsh 命令创建、还原和删除 KVM 虚拟机快照
 ======
 [![KVM-VirtualMachine-Snapshot][1]![KVM-VirtualMachine-Snapshot][2]][2]
 
-While working on the virtualization platform system administrators usually take the snapshot of virtual machine before doing any major activity like deploying the latest patch and code.
+在虚拟化平台上进行系统管理工作时经常在开始主要活动比如部署补丁和代码前先设置一个虚拟机快照。
 
-Virtual machine **snapshot** is a copy of virtual machine’s disk at the specific point of time. In other words we can say snapshot keeps or preserve the state and data of a virtual machine at given point of time.
+虚拟机**快照**是特定时间点的虚拟机磁盘的副本。换句话说，快照保存了给定的时间点虚拟机的状态和数据。
 
-### Where we can use VM snapshots ..?
+### 我们可以在哪里使用虚拟机快照？
 
-If you are working on **KVM** based **hypervisors** we can take virtual machines or domain snapshot using the virsh command. Snapshot becomes very helpful in a situation where you have installed or apply the latest patches on the VM but due to some reasons, application hosted in the VMs becomes unstable and application team wants to revert all the changes or patches. If you had taken the snapshot of the VM before applying patches then we can restore or revert the VM to its previous state using snapshot.
+如果你在使用基于 **KVM** 的**虚拟机管理程序**，那么可以使用 virsh 命令获取虚拟机或域快照。快照在一种情况下变得非常有用，当你已经在虚拟机上安装或应用了最新的补丁，但是由于某些原因，虚拟机上的程序变得不稳定，程序团队想要还原所有的更改和补丁。如果你在应用补丁之前设置了虚拟机的快照，那么可以使用快照将虚拟机恢复到之前的状态。
 
-**Note:** We can only take the snapshot of the VMs whose disk format is **Qcow2** and raw disk format is not supported by kvm virsh command, Use below command to convert the raw disk format to qcow2
+**注意：**我们只能设置磁盘格式为 **Qcow2** 的虚拟机的快照，并且 kvm virsh 命令不支持 raw 磁盘格式，请使用以下命令将原始磁盘格式转换为 qcow2。
 ```
 # qemu-img convert -f raw -O qcow2 image-name.img image-name.qcow2
 
 ```
 
-### Create KVM Virtual Machine (domain) Snapshot
+### 创建 KVM 虚拟机（域）快照
 
-I am assuming KVM hypervisor is already configured on CentOS 7 / RHEL 7 box and VMs are running on it. We can list the all the VMs on hypervisor using below virsh command,
+我假设 KVM 管理程序已经在 CentOS 7 / RHEL 7 机器上配置好了，并且有虚拟机正在运行。我们可以使用下面的 virsh 命令列出虚拟机管理程序中的所有虚拟机，
 ```
 [root@kvm-hypervisor ~]# virsh list --all
  Id    Name                           State
@@ -35,9 +33,9 @@ I am assuming KVM hypervisor is already configured on CentOS 7 / RHEL 7 box and 
 
 ```
 
-Let’s suppose we want to create the snapshot of ‘ **webserver** ‘ VM, run the below command,
+假设我们想创建 ‘ **webserver** ‘ 虚拟机的快照，运行下面的命令，
 
-**Syntax :**
+**语法：**
 
 ```
 # virsh snapshot-create-as –domain {vm_name} –name {snapshot_name} –description “enter description here”
@@ -49,7 +47,7 @@ Domain snapshot webserver_snap created
 
 ```
 
-Once the snapshot is created then we can list snapshots related to the VM using below command,
+创建快照后，我们可以使用下面的命令列出与虚拟机相关的快照，
 ```
 [root@kvm-hypervisor ~]# virsh snapshot-list webserver
  Name                 Creation Time             State
@@ -59,7 +57,7 @@ Once the snapshot is created then we can list snapshots related to the VM using 
 
 ```
 
-To list the detailed info of VM’s snapshot, run the beneath virsh command,
+要列出虚拟机快照的详细信息，请运行下面的 virsh 命令，
 ```
 [root@kvm-hypervisor ~]# virsh snapshot-info --domain webserver --snapshotname webserver_snap
 Name:           webserver_snap
@@ -75,7 +73,7 @@ Metadata:       yes
 
 ```
 
-We can view the size of snapshot using below qemu-img command,
+我们可以使用下面的 qemu-img 命令查看快照的大小，
 ```
 [root@kvm-hypervisor ~]# qemu-img info /var/lib/libvirt/images/snaptestvm.img
 
@@ -83,11 +81,11 @@ We can view the size of snapshot using below qemu-img command,
 
 [![qemu-img-command-output-kvm][1]![qemu-img-command-output-kvm][3]][3]
 
-### Revert / Restore KVM virtual Machine to Snapshot
+### 还原 KVM 虚拟机快照
 
-Let’s assume we want to revert or restore webserver VM to the snapshot that we have created in above step. Use below virsh command to restore Webserver VM to its snapshot “ **webserver_snap** ”
+假设我们想要将 webserver 虚拟机还原到我们在上述步骤中创建的快照。使用下面的 virsh 命令将 Webserver 虚拟机恢复到其快照 “**webserver_snap**” 上。
 
-**Syntax :**
+**语法：**
 
 ```
 # virsh snapshot-revert {vm_name} {snapshot_name}
@@ -98,9 +96,9 @@ Let’s assume we want to revert or restore webserver VM to the snapshot that we
 
 ```
 
-### Delete KVM virtual Machine Snapshots
+### 删除 KVM 虚拟机快照
 
-To delete KVM virtual machine snapshots, first get the VM’s snapshot details using “ **virsh snapshot-list** ” command and then use “ **virsh snapshot-delete** ” command to delete the snapshot. Example is shown below:
+要删除 KVM 虚拟机快照，首先使用 “**virsh snapshot-list**” 命令获取虚拟机的快照详细信息，然后使用 “**virsh snapshot-delete**” 命令删除快照。如下示例所示：
 ```
 [root@kvm-hypervisor ~]# virsh snapshot-list --domain webserver
  Name                 Creation Time             State
@@ -114,14 +112,14 @@ Domain snapshot webserver_snap deleted
 
 ```
 
-That’s all from this article, I hope you guys get an idea on how to manage KVM virtual machine snapshots using virsh command. Please do share your feedback and don’t hesitate to share it among your technical friends 🙂
+这就是本文的全部内容，我希望你们能够了解如何使用 virsh 命令来管理 KVM 虚拟机快照。请分享你的反馈，并不要犹豫地分享给你的技术朋友🙂
 
 --------------------------------------------------------------------------------
 
 via: https://www.linuxtechi.com/create-revert-delete-kvm-virtual-machine-snapshot-virsh-command/
 
 作者：[Pradeep Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
