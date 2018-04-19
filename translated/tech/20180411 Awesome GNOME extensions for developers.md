@@ -1,80 +1,79 @@
-translated by hopefully2333
-
-Awesome GNOME extensions for developers
+对开发者来说非常好的GNOME扩展
 ======
 
 ![](https://fedoramagazine.org/wp-content/uploads/2018/04/gnome-extensions-for-developers-816x345.jpg)
-Extensions add immense flexibility to the GNOME 3 desktop environment. They give users the advantage of customizing their desktop while adding ease and efficiency to their workflow. The Fedora Magazine has already covered some great desktop extensions such as [EasyScreenCast][1], [gTile][2], and [OpenWeather][3]. This article continues that coverage by focusing on extensions tailored for developers.
+这个扩展给与了 GNOME3 桌面环境以非常大的灵活性，这种灵活性赋予了用户在定制化桌面上的优势，从而使他们的工作流程变得更加舒适和有效率。Fedora 系统已经已经包含了一部分例如 EasyScreenCast, gTile, 和 OpenWeather 这样很好的桌面扩展，本文接下来会重点报道这些为开发者而改变的扩展。
 
-If you need assistance installing GNOME extensions, refer to the article [How to install a GNOME Shell extension][4].
+如果你需要帮助来安装 GNOME 扩展，那么可以参考《如何安装一个 GNOME 命令行扩展》这篇文章。
 
 ### ![Docker Integration extension icon][5] Docker Integration
 
 ![Docker Integration extension status menu][6]
 
-The [Docker Integration][7] extension is a must for developers using Docker for their apps. The status menu provides a list of Docker containers with the option to start, stop, pause and even remove them. The list updates automatically as new containers are added to the system.
+对于为自己的应用使用 docker 的开发者而言，这个 docker 集成扩展是必不可少的。这个状态菜单提供了一个带着启动、停止、暂停、甚至删除的这些选项的 docker 容器的列表，这个列表会在新容器加入到这个系统时自动更新。
 
-After installing this extension, Fedora users may get the message: “Error occurred when fetching containers.” This is because Docker commands require sudo or root permissions by default. To configure your user account to run Docker, refer to the [Docker Installation page on the Fedora Developer Portal][8].
+在安装完这些扩展后，Fedora 用户可能会收到这么一条消息：“加载容器时发生错误”。这是因为 docker 命令需要在命令前加 sudo，或者得到默认的 root 权限。去设置你的用户权限再去运行 docker，可以参考 Fedora 门户网站上的 docker 安装这一页。
 
-You can find more information on the [extension’s website][9].
+你可以在这个扩展的站点上找到更多的信息。
 
 ### ![Jenkins CI Server Indicator icon][10] Jenkins CI Server Indicator
 
 ![Jenkins CI Server Indicator extension status menu][11]
 
-The [Jenkins CI Server Indicator][12] extension makes it easy for developers to build their apps on a Jenkins CI Server. It displays a menu with a list of jobs and the state of those jobs. It also includes features such as easy access to the Jenkins web front-end, notifications for completed jobs, and the ability to trigger and filter jobs.
+Jenkins CI 服务器指向仪这个扩展使开发者把他们的应用建立在 Jenkins CI 服务器上的这个过程更加简单，它展示了一个菜单，菜单中有一个带有进程和进程状态的列表。他同样包含了很多特点，比如很容易就能创建 Jenkins 的前端，为完整的进程做通知，而且能够触发或者过滤进程。
 
-For more information, visit the [developer’s site][13].
+如果想要更多的信息，请去浏览开发者站点。
 
 ### ![android-tool extension icon][14] android-tool
 
-![android-tool extension status menu][15][android-tool][16] can be a valuable extension for Android developers. Features include capturing bug reports, device screenshots and screen-recording. It can also connect to the Android device via USB or TCP.
+Android-tool 对于 Android 开发者来说会是一个非常有价值的扩展，它的特点包括捕捉错误报告，设备截屏和屏幕录像。它可以通过 usb 和 tcp 连接两种方式来连接 Android 设备。
 
-This extension does require the adb package. To install adb from the official Fedora repository [run this command][17]:
+这个扩展需要 adb 的包，从 Fedora 官方仓库安装 adb 只需要运行这条命令：
 ```
 sudo dnf install android-tools
 
 ```
 
-You can find more information at [the extension Github site][18].
+你可以在这个扩展的 GitHub 网页里找到更多信息。
 
 ### ![GnomeHub extension icon][19] GnomeHub
 
-![GnomeHub extension status menu][20][GnomeHub][21] is a great extension for GNOME users using Github for their projects. It displays Github repositories and notifies the user of opened pull requests. In addition, users can add their favorite repositories in the extension’s settings.
+对于为自己的项目使用 GitHub 的 GNOME 用户来说，GnomeHub 是一个非常好的扩展，它可以显示 Github 上的仓库，还可以通知用户有新提交的 pull requests。除此之外，用户可以把他们最喜欢的仓库加在这个扩展的设置里。
 
-For more information, refer to [the project’s Github page][22].
+如果想要更多信息，可以参考一下这个项目的 GitHub 页面。
 
 ### ![gistnotes extension icon][23] gistnotes
 
-Quite simply, [gistnotes][24] provides easy access for gist users to create, store and manage notes or code snippets. For more information refer to [the project’s website][25].
+简单地说，gistnotes 为 gist 用户提供了一种简单的方式来创建、存储和管理注释和代码片段。如果想要更多的信息，可以参考这个项目的网站。
 
 ![gistnotes window][26]
 
 ### ![Arduino Control extension icon][27] Arduino Control
 
-The [Arduino Control][28] extension allows users to connect to, and control, their Arduino boards. It also lets users add sliders and switches in the status menu. In addition, the developer includes scripts in the extension’s directory to connect to the board via Ethernet or USB.
+这个 Arduino 控制扩展允许用户去连接或者控制他们自己的单片机电路板，它同样允许用户在状态菜单里增加滑块或者开关。除此之外，开发者模式允许扩展目录里的脚本通过以太网或者 usb 来连接电路板。
 
-Most importantly, this extension can be customized to fit your project. An example provided in the README file is the ability to “Control your Room Lights from any Computer on the Network.”
+最重要的是，这个扩展可以被定制化来适合你的项目，在 README 文件里的例子是，它能够“通过网络上任意的电脑来控制你房间里的灯”。
 
-You can read more about the features and setup of this extension on [the project’s Github page][29].
+你可以从这个项目的 GitHub 页面上得到更多的产品信息并安装这个扩展。
 
 ### ![Hotel Manager extension icon][30] Hotel Manager
 
 ![Hotel Manager extension status menu.][31]
 
-Developers using the Hotel process manager for their web apps should explore the [Hotel Manager][32] extension. It displays a list of web apps added to Hotel, and gives users the ability to start, stop and restart those apps. Furthermore, the computers icon to the right gives quick access to open, or view, that web app. The extension can also start, stop, or restart the Hotel daemon.
+使用 Hotel process manager 开发网站的开发人员，应该尝试一下 Hotel Manager 这个扩展。它展示了一个增加到 hotel 里的网页应用的列表，并给与了用户去开始、停止和重启这些应用的能力。
+此外，还可以通过电脑图标快速打开、浏览这些网页应用。这个扩展同样可以启动、停止或重启 hotel 的后台程序。
 
-As of the publication of this article, Hotel Manager version 4 for GNOME 3.26 does not list the web apps in the extension’s drop-down menu. Version 4 also gives errors when installing on Fedora 28 (GNOME 3.28). However, version 3 works with Fedora 27 and Fedora 28.
+作为本文的出版物，GNOME 3.26 版本的 Hotel Manager 版本 4 没有在扩展的下拉式菜单里列出网页应用。版本 4 还会在 Fedora 28 (GNOME 3.28) 上安装时报错。然而，版本 3 工作在 Fedora 27 和 Fedora 28。
 
-For more details, see [the project’s Github page][33].
+如果想要更多细节，可以去看这个项目在 GitHub 上的网页。
 
 ### VSCode Search Provider
 
-[VSCode Search Provider][34] is a simple extension that displays Visual Studio Code projects in the GNOME overview search results. For heavy VSCode users, this extension saves time by giving developers quick access to their projects. You can find more information on [the project’s Github page][35].
+VSCode Search Provider 是一个简单的扩展，它能够在 GNOME 综合搜索结果里展示可视化工作代码项目。对于大部分的 VSCode 用户来说，这个扩展可以让用户快速连接到他们的项目，从而节省时间。你可以从这个项目在 GitHub 上的页面来得到更多的信息。
 
 ![GNOME Overview search results showing VSCode projects.][36]
 
-Do you have a favourite extension you use for development? Let us know in the comments.
+在开发环境方面，你有没有一个最喜欢的扩展呢？发在评论区里，一起来讨论下吧。
 
 
 --------------------------------------------------------------------------------
@@ -82,7 +81,7 @@ Do you have a favourite extension you use for development? Let us know in the co
 via: https://fedoramagazine.org/awesome-gnome-extensions-developers/
 
 作者：[Shaun Assam][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[hopefully2333](https://github.com/hopefully2333)
 校对：[校对者ID](https://github.com/校对者ID)
 选题：[lujun9972](https://github.com/lujun9972)
 
