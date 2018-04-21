@@ -1,6 +1,8 @@
 2 scientific calculators for the Linux desktop
 ======
 
+Translating by zyk2290
+
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/osdc_OpenData_CityNumbers.png?itok=lC03ce76)
 
 Image by : opensource.com

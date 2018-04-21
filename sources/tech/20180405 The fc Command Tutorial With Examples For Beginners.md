@@ -1,3 +1,4 @@
+[ dotcra translating ]
 The fc Command Tutorial With Examples For Beginners
 ======
 
