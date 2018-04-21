@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 Finding what you’re looking for on Linux
 ======
 
