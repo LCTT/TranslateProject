@@ -1,24 +1,21 @@
-Translating by MjSeven
-
-
-Working with calendars on Linux
-======
+在 Linux 上使用日历
+=====
 
 ![](https://images.idgesg.net/images/article/2018/03/calendars-100753173-large.jpg)
-Linux systems can provide more help with your schedule than just reminding you what day today is. You have a lot of options for displaying calendars — some that are likely to prove helpful and others that just might boggle your mind.
+Linux 系统可以为你的日程安排提供更多帮助，而不仅仅是提醒你今天是星期几。日历显示有很多选项 -- 有些可能会证明有帮助，有些可能会让你大开眼界。
 
-### date
+### 日期
 
-To begin, you probably know that you can show the current date with the **date** command.
+首先，你可能知道可以使用 **date** 命令显示当前日期。
 ```
 $ date
 Mon Mar 26 08:01:41 EDT 2018
 
 ```
 
-### cal and ncal
+### cal 和 ncal
 
-You can show the entire month with the **cal** command. With no arguments, cal displays the current month and, by default, highlights the current day by reversing the foreground and background colors.
+你可以使用 **cal** 命令显示整个月份。没有参数时，cal 显示当前月份，默认情况下，通过反转前景色和背景颜色来突出显示当天。
 ```
 $ cal
  March 2018
@@ -31,7 +28,7 @@ Su Mo Tu We Th Fr Sa
 
 ```
 
-If you want to display the current month in a “sideways” format, you can use the **ncal** command.
+如果你想以“横向”格式显示当前月份，则可以使用 **ncal** 命令。
 ```
 $ ncal
  March 2018
@@ -45,14 +42,14 @@ Sa 3 10 17 24 31
 
 ```
 
-That command can be especially useful if, for example, you just want to see the dates for some particular day of the week.
+例如，如果你只想查看一周特定某天的日期，这个命令可能特别有用。
 ```
 $ ncal | grep Th
 Th 1 8 15 22 29
 
 ```
 
-The ncal command can also display the entire year in the "sideways" format. Just provide the year along with the command.
+ncal 命令还可以以“横向”格式显示一整年，只需在命令后提供年份。
 ```
 $ ncal 2018
  2018
@@ -68,7 +65,7 @@ Sa 6 13 20 27 3 10 17 24 3 10 17 24 31 7 14 21 28
 
 ```
 
-You can also display the entire year with **cal**. Just remember that you need all four digits for the year. If you type  "cal 18", you'll get a calendar year for 18 AD, not 2018.
+你也可以使用 **cal** 命令显示一整年。请记住，你需要输入年份的四位数字。如果你输入 "cal 18"，你将获得公元 18 年的历年，而不是 2018 年。
 ```
 $ cal 2018
  2018
@@ -110,7 +107,7 @@ Su Mo Tu We Th Fr Sa Su Mo Tu We Th Fr Sa Su Mo Tu We Th Fr Sa
 
 ```
 
-For a particular year and month, use the -d option win a command like this.
+对于特定的年份和月份，使用 -d 选项，如下所示：
 ```
 $ cal -d 1949-03
  March 1949
@@ -123,7 +120,7 @@ Su Mo Tu We Th Fr Sa
 
 ```
 
-Another potentially useful calendaring option is the **cal** command’s -j option. Let's take a look at what that shows you.
+另一个可能有用的日历选项是 **cal** 命令的 -j 选项。让我们来看看它显示的是什么。
 ```
 $ cal -j
  March 2018
@@ -136,7 +133,7 @@ $ cal -j
 
 ```
 
-"What???" you might be asking. OK, that -j option is displaying Julian dates — the numeric day of the year that runs from 1 to 365 most years. So, 1 is January 1st and 32 is February 1st. The command **cal -j 2018** will show you the entire year, ending like this:
+你可能会问：“什么？？？” OK，那么 -j 选项显示 Julian 日期 -- 一年中从 1 到 365 年的数字日期。所以，1 是 1 月 1 日，32 是 2 月 1 日。命令 **cal -j 2018** 将显示一整年的数字，像这样：
 ```
 $ cal -j 2018 | tail -9
 
@@ -151,9 +148,9 @@ $ cal -j 2018 | tail -9
 
 ```
 
-This kind of display might help remind you of how many days have gone by since you made that New Year's resolution that you haven't yet acted on.
+这种显示可能有助于提醒你，自从你做了新年计划之后，你已经有多少天没有采取行动了。
 
-Run a similar command for 2020, and you’ll note that it’s a leap year.
+运行类似的命令，使用 2020 年，你会注意到这是一个闰年：
 ```
 $ cal -j 2020 | tail -9
 
@@ -167,9 +164,9 @@ $ cal -j 2020 | tail -9
 
 ```
 
-### calendar
+### 日历
 
-Another interesting and potentially overwhelming command can inform you about holidays. This command has a lot of options, but let’s just say that you’d like to see a list of upcoming holidays and noteworthy days. The calendar's **-l** option allows you to select how many days you want to see beyond today, so 0 means  "today only".
+另一个有趣但潜在的令人沮丧的命令可以告诉你关于假期的事情，这个命令有很多选项，但我们只是说，你想看到即将到来的假期和值得注意的日历列表。日历的 **-l** 选项允许你选择今天想要查看的天数，因此 0 表示“仅限今天”。
 ```
 $ calendar -l 0
 Mar 26 Benjamin Thompson born, 1753, Count Rumford; physicist
@@ -188,7 +185,7 @@ Mar 26 Emánuel
 
 ```
 
-For most of us, that's a bit more celebrating than we can manage in a single day. If you're seeing something like this, you can blame it on your **calendar.all** file that's telling the system what international calendars you'd like to include. You can, of course, pare this down by removing some of the lines in this file that include other files. The lines look like these:
+对于我们大多数人来说，这比我们在一天之内可以管理的庆祝活动要多一点。如果你看到类似这样的内容，可以将其归咎于你的 **calendar.all** 文件，该文件告诉系统你希望包含哪些国际日历。当然，你可以通过删除此文件中包含其他文件的一些行来削减此问题。文件看起来像这样：
 ```
 #include <calendar.world>
 #include <calendar.argentina>
@@ -200,7 +197,7 @@ For most of us, that's a bit more celebrating than we can manage in a single day
 
 ```
 
-Say we cut our display down to world calendars only by removing all but the first #include line shown above. We'd then see this:
+假设我们只通过移除除上面显示的第一个 #include 行之外的所有行，将我们的显示切换到世界日历。 我们会看到这个：
 ```
 $ calendar -l 0
 Mar 26 Benjamin Thompson born, 1753, Count Rumford; physicist
@@ -214,9 +211,9 @@ Mar 26 Ludwig van Beethoven dies in Vienna, Austria, 1827
 
 ```
 
-Clearly, the world calendar's special days are quite numerous. A display like this could, however, keep you from forgetting the all-important Popeye statue unveiling day and its role in observing the "spinach capital of the world."
+显然，世界日历的特殊日子非常多。但是，像这样的展示可以让你忘记所有重要的“大力神雕像”揭幕日以及它在观察“世界菠菜之都”中的作用。
 
-A more useful calendaring choice might be to put work-related calendars in a special file and use that calendar in the calendar.all file to determine what events you will see when you run the command.
+更有用的日历选择可能是将与工作相关的日历放入特殊文件中，并在 calendar.all 文件中使用该日历来确定在运行命令时将看到哪些事件。
 ```
 $ cat /usr/share/calendar/calendar.all
 /*
@@ -240,7 +237,7 @@ $ cat /usr/share/calendar/calendar.all
 
 ```
 
-The format for calendar files is very simple — mm/dd for the date, a tab, and the event's description.
+日历文件的格式非常简单 - mm/dd 格式日期，空格和事件描述。
 ```
 $ cat calendar.work
 03/26 Describe how the cal and calendar commands work
@@ -248,20 +245,20 @@ $ cat calendar.work
 
 ```
 
-### notes and nostalgia
+### 注意事项和 nostalgia
 
-Note that the calendar command might not be available for all Linux distributions. You might have to remember the Popeye statue unveiling day on your own.
+注意，有关日历的命令可能不适用于所有 Linux 发行版，你可能必须记住自己的“大力水手”雕像。
 
-And in case you're wondering, you can display a calendar as far ahead as the year 9999 — even for the prophetic [2525][1].
+如果你想知道，你可以显示一个日历，远远早于 9999 -- 即使是预言性的 [2525][1]。
 
-Join the Network World communities on [Facebook][2] and [LinkedIn][3] to comment on topics that are top of mind.
+在 [Facebook][2] 和 [LinkedIn][3] 上加入网络社区，对那些重要的话题发表评论。
 
 --------------------------------------------------------------------------------
 
 via: https://www.networkworld.com/article/3265752/linux/working-with-calendars-on-linux.html
 
 作者：[Sandra Henry-Stocker][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[MjSeven](https://github.com/MjSeven)
 校对：[校对者ID](https://github.com/校对者ID)
 选题：[lujun9972](https://github.com/lujun9972)
 
