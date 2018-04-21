@@ -1,3 +1,4 @@
+translating by kennethXia
 Why I love ARM and PowerPC
 ======
 
