@@ -1,31 +1,30 @@
-leemeans translating
-A Command Line Productivity Tool For Tracking Work Hours
+一个用于追踪工作时间的命令行生产力工具
 ======
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/03/Moro-720x340.jpg)
-Keeping track of your work hours will give you an insight about the amount of work you get done in a specific time frame. There are plenty of GUI-based productivity tools available on the Internet for tracking work hours. However, I couldn’t find a good CLI-based tool. Today, I stumbled upon a a simple, yet useful tool named **“Moro”** for tracking work hours. Moro is a Finnish word which means “Hello”. Using Moro, you can find how much time you take to complete a specific task. It is free, open source and written using **NodeJS**.
+保持对你的工作小时数的追踪将让你知晓在一个特定时间区间内你所完成的工作总量。在网络上有大量的基于GUI的生产力工具可以用来追踪工作小时数。但我却不能找到一个基于CLI的工具。今天我偶然发现了一个简单而奏效的叫做 **“Moro”** 的追踪工作时间数的工具。Moro是一个芬兰词汇，意为"Hello"。通过使用Moro,你可以找到你在完成某项特定任务时花费了多少时间。这个工具是免费且开源的，它是通过**NodeJS**编写的。
 
-### Moro – A Command Line Productivity Tool For Tracking Work Hours
+### Moro - 一个追踪工作时间的命令行生产力工具
 
-Since Moro is written using NodeJS, make sure you have installed it on your system. If you haven’t installed it already, follow the link given below to install NodeJS and NPM in your Linux box.
+由于Moro是使用NodeJS编写的，保证你的系统上已经安装了(NodeJS)。如果你没有安装好NodeJS，跟随下面的链接在你的Linux中安装NodeJS和NPM。
 
-Once NodeJS and Npm installed, run the following command to install Moro.
+NodeJS和NPM一旦装好，运行下面的命令来安装Moro。
 ```
 $ npm install -g moro
 
 ```
 
-### Usage
+### 用法
 
-Moro’s working concept is very simple. It saves your work staring time, ending time and the break time in your system. At the end of each day, it will tell you how many hours you have worked!
+Moro的工作概念非常简单。它记录了你的工作开始时间，结束时间和在你的系统上的休息时间。在每天结束时，它将会告知你已经工作了多少时间。
 
-When you reached to office, just type:
+当你到达办公室时，只需键入：
 ```
 $ moro
 
 ```
 
-Sample output:
+示例输出：
 ```
 💙 Moro \o/
 
@@ -33,15 +32,15 @@ Sample output:
 
 ```
 
-Moro will register this time as your starting time.
+Moro将会把这个时间注册为你的开始时间。
 
-When you leave the office, again type:
+当你离开办公室时，再次键入：
 ```
 $ moro
 
 ```
 
-Sample output:
+示例输出：
 ```
 💙 Moro \o/
 
@@ -64,21 +63,21 @@ Sample output:
 
 ```
 
-Moro will registers that time as your ending time.
+Moro将会把这个时间注册为你的结束时间。
 
-Now, More will subtract the starting time from ending time and then subtracts another 30 minutes for break time from the total and gives you the total working hours on that day. Sorry I am really terrible at explaining Math calculations. Let us say you came to work at 10 am in the morning and left 17.30 in the evening. So, the total hours you spent on the office is 7.30 hours (i.e 17.30-10). Then subtract the break time (default is 30 minutes) from the total. Hence, your total working time is 7 hours. Understood? Great!
+现在，Moro将会从结束时间减去开始时间然后从总的时间减去另外的30分钟作为休息时间并给你在那天总的工作时间。抱歉，我的数学计算过程解释实在糟糕。假设你在早上10:00来工作并在晚上17：30离开。所以，你总共在办公室呆了7.30小时(例如17.30-10)。然后在总的时间减去休息时间(默认是30分钟)。因此，你的总工作时间是7小时。明白了？很好！
 
-**Note:** Don’t confuse “moro” with “more” command like I did while writing this guide.
+**注意:**不要像我在写这个手册的时候一样把“moro”和“more”弄混了。
 
-To see all your registered hours, run:
+查看你注册的所有小时数，运行：
 ```
 $ moro report --all
 
 ```
 
-Just in case, you forgot to register the start time or end time, you can specify that later on the same.
+以防万一，如果你忘记注册开始时间或者结束时间，你一样可以在之后指定这些值。
 
-For example, to register 10 am as start time, run:
+例如，将上午10点注册为开始时间，运行：
 ```
 $ moro hi 10:00
 
@@ -90,7 +89,7 @@ $ moro hi 10:00
 
 ```
 
-To register 17.30 as end time:
+注册17：30作为结束时间：
 ```
 $ moro bye 17:30
 
@@ -115,15 +114,15 @@ $ moro bye 17:30
 
 ```
 
-You already know Moro will subtract 30 minutes for break time, by default. If you wanted to set a custom break time, you could simply set it using command:
+你已经知道Moro默认将会减去30分钟的休息时间。如果你需要设置一个自定义的休息时间，你可以简单使用以下命令：
 ```
 $ moro break 45
 
 ```
 
-Now, the break time is 45 minutes.
+现在，休息时间是45分钟了。
 
-To clear all data:
+若要清除所有的数据：
 ```
 $ moro clear --yes
 
@@ -133,60 +132,60 @@ $ moro clear --yes
 
 ```
 
-**Add notes**
+**添加笔记**
 
-Sometimes, you may want to add note while working. Don’t look for a separate note taking application. Moro will help you to add notes. To add a note, just run:
+有时候，你想要在工作时添加笔记。不必去寻找一个独立的作笔记的应用。Moro将会帮助你添加笔记。要添加笔记，只需运行：
 ```
 $ moro note mynotes
 
 ```
 
-To search for the registered notes at later time, simply do:
+要在之后搜索所有已经注册的笔记，只需做：
 ```
 $ moro search mynotes
 
 ```
 
-**Change default settings**
+**修改默认设置**
 
-The default full work day is 7.5 hours. Since the developer is from Finland, it’s the official work hours. You can, however, change this settings as per your country’s work hours.
+默认的完整工作时间是7.5小时。这是因为开发者来自芬兰，这是官方的工作小时数。但是你也可以修改这个设置为你的国家的工作小时数。
 
-Say for example, to set it 7 hours, run:
+举个例子，要将其设置为7小时，运行：
 ```
 $ moro config --day 7
 
 ```
 
-Also the default break time can be changed from 30 minutes like below:
+同样地，默认的休息时间也可以像下面这样从30分钟修改：
 ```
 $ moro config --break 45
 
 ```
 
-**Backup your data**
+**备份你的数据**
 
-Like I already said, Moro stores the tracking time data in your home directory, and the file name is **.moro-data.db**.
+正如我已经说了的，Moro将时间追踪信息存储在你的家目录，文件名是**.moro-data.db**。
 
-You can can, however, save the backup database file to different location. To do so, move the **.more-data.db** file to a different location of your choice and tell Moro to use that database file like below.
+但是，你可以保存备份数据库到不同的位置。要这样做的话，像下面这样将**.moro-data.db**文件移到你选择的一个不同的位置并告知Moro使用那个数据库文件。
+
 ```
 $ moro config --database-path /home/sk/personal/moro-data.db
 
 ```
 
-As per above command, I have assigned the default database file’s location to **/home/sk/personal** directory.
+在上面的每一个命令，我都已经把默认的数据库文件分配到了**/home/sk/personal**目录。
 
-For help, run:
+需要帮助的话，运行：
 ```
 $ moro --help
 
 ```
 
-As you can see, Moro is very simple, yet useful to track how much time you’ve spent to get your work done. It is will be useful for freelancers and also anyone who must get things done under a limited time frame.
+正如你所见，Moro是非常简单而又能用于追踪你完成你的工作使用了多少时间的。对于自由职业者和任何想要在一定时间范围内完成事情的人，它将会是有用的。
 
-And, that’s all for today. Hope this helps. More good stuffs to come. Stay tuned!
+并且，这些只是今天的(内容)。希望这些(内容)能够有所帮助。更多的好东西将会出现。请保持关注！
 
-Cheers!
-
+干杯！
 
 
 --------------------------------------------------------------------------------
@@ -194,7 +193,7 @@ Cheers!
 via: https://www.ostechnix.com/moro-a-command-line-productivity-tool-for-tracking-work-hours/
 
 作者：[SK][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[leemeans](https://github.com/leemeans)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
