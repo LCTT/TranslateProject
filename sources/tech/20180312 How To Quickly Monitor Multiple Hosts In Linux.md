@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 How To Quickly Monitor Multiple Hosts In Linux
 ======
 
