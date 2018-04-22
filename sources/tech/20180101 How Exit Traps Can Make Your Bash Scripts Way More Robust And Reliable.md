@@ -1,3 +1,4 @@
+[ translating by Dotcra ]
 How "Exit Traps" Can Make Your Bash Scripts Way More Robust And Reliable
 ============================================================
 
