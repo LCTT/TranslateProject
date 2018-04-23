@@ -1,3 +1,5 @@
+Translating by kennethXia
+
 Bootiso Lets You Safely Create Bootable USB Drive
 ======
 
