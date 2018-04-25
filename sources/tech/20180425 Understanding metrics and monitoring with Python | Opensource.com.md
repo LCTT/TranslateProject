@@ -1,7 +1,5 @@
 # Understanding metrics and monitoring with Python
 
-## Demystify Python application monitoring by learning the meaning of key words and concepts.
-
 ![Understanding metrics and monitoring with Python](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/metrics_graph_stats_blue.png?itok=OKCc_60D "Understanding metrics and monitoring with Python")
 
 Image by : 
@@ -28,7 +26,15 @@ Let's get started!
 
 ## Software prerequisites
 
-All the demos discussed in this article are available on [my GitHub repo][1]. You will need to have docker and docker-compose installed to play with them.
+More Python Resources
+
+*   [What is Python?][1]
+*   [Top Python IDEs][2]
+*   [Top Python GUI frameworks][3]
+*   [Latest Python content][4]
+*   [More developer resources][5]
+
+All the demos discussed in this article are available on [my GitHub repo][6]. You will need to have docker and docker-compose installed to play with them.
 
 ## Why should I monitor?
 
@@ -75,7 +81,7 @@ A histogram metric can increase or decrease.
 
 ## Demo 1: Calculating and reporting metrics
 
-[Demo 1][2] is a basic web application written using the [Flask][3] framework. It demonstrates how we can _calculate_ and _report_ metrics.
+[Demo 1][7] is a basic web application written using the [Flask][8] framework. It demonstrates how we can _calculate_ and _report_ metrics.
 
 The src directory has the application in app.py with the src/helpers/middleware.py containing the following:
 
@@ -161,7 +167,7 @@ In our Demo 1 application above, when we calculate and report a request latency,
 *   The HTTP method
 *   The identifier of the host/node where it's running
 
-If we attach these characteristics to a metric observation, we have more context around each metric. Let's explore adding characteristics to our metrics in [Demo 2][4].
+If we attach these characteristics to a metric observation, we have more context around each metric. Let's explore adding characteristics to our metrics in [Demo 2][9].
 
 The src/helpers/middleware.py file now writes multiple columns to the CSV file when writing metrics:
 
@@ -192,7 +198,7 @@ Since this is a demo, I have taken the liberty of reporting random IPs as the no
 
 ### Analyzing metrics with pandas
 
-We'll now analyze this CSV file with [pandas][5]. Running docker-compose up will print a URL that we will use to open a [Jupyter][6] session. Once we upload the Analysis.ipynb notebook into the session, we can read the CSV file into a pandas DataFrame:
+We'll now analyze this CSV file with [pandas][10]. Running docker-compose up will print a URL that we will use to open a [Jupyter][11] session. Once we upload the Analysis.ipynb notebook into the session, we can read the CSV file into a pandas DataFrame:
 
 ```
 import pandas as pd
@@ -276,11 +282,11 @@ Essentially, there are two patterns for reporting metrics from a Python applicat
 
 ![Pull and push models](https://opensource.com/sites/default/files/styles/panopoly_image_original/public/u128651/pull_push_model.png?itok=U093wSy8 "Pull and push models")
 
-An example of a monitoring system working in the _pull_ model is [Prometheus][7]. [StatsD][8] is an example of a monitoring system where the application _pushes_ the metrics to the system.
+An example of a monitoring system working in the _pull_ model is [Prometheus][12]. [StatsD][13] is an example of a monitoring system where the application _pushes_ the metrics to the system.
 
 ### Integrating StatsD
 
-To integrate StatsD into a Python application, we would use the [StatsD Python client][9], then update our metric-reporting code to push data into StatsD using the appropriate library calls.
+To integrate StatsD into a Python application, we would use the [StatsD Python client][14], then update our metric-reporting code to push data into StatsD using the appropriate library calls.
 
 First, we need to create a client instance:
 
@@ -304,11 +310,11 @@ statsd.incr(key)
 
 To associate metadata with a metric, a key is defined as metadata1.metadata2.metric, where each metadataX is a field that allows aggregation and grouping.
 
-The demo application [StatsD][10] is a complete example of integrating a Python Flask application with statsd.
+The demo application [StatsD][15] is a complete example of integrating a Python Flask application with statsd.
 
 ### Integrating Prometheus
 
-To use the Prometheus monitoring system, we will use the [Promethius Python client][11]. We will first create objects of the appropriate metric class:
+To use the Prometheus monitoring system, we will use the [Promethius Python client][16]. We will first create objects of the appropriate metric class:
 
 ```
 REQUEST_LATENCY = Histogram('request_latency_seconds', 'Request latency',
@@ -332,15 +338,15 @@ def metrics():
     return Response(prometheus_client.generate_latest(), mimetype=CONTENT_TYPE_LATEST)
 ```
 
-The demo application [Prometheus][12] is a complete example of integrating a Python Flask application with prometheus.
+The demo application [Prometheus][17] is a complete example of integrating a Python Flask application with prometheus.
 
 ### Which is better: StatsD or Prometheus?
 
 The natural next question is: Should I use StatsD or Prometheus? I have written a few articles on this topic, and you may find them useful:
 
-*   [Your options for monitoring multi-process Python applications with Prometheus][13]
-*   [Monitoring your synchronous Python web applications using Prometheus][14]
-*   [Monitoring your asynchronous Python web applications using Prometheus][15]
+*   [Your options for monitoring multi-process Python applications with Prometheus][18]
+*   [Monitoring your synchronous Python web applications using Prometheus][19]
+*   [Monitoring your asynchronous Python web applications using Prometheus][20]
 
 ## Ways to use metrics
 
@@ -348,17 +354,17 @@ We've learned a bit about why we want to set up monitoring in our applications, 
 
 ### Using metrics for alerting
 
-A key use of metrics is creating alerts. For example, you may want to send an email or pager notification to relevant people if the number of HTTP 500s over the past five minutes increases. What we use for setting up alerts depends on our monitoring setup. For Prometheus we can use [Alertmanager][16] and for StatsD, we use [Nagios][17].
+A key use of metrics is creating alerts. For example, you may want to send an email or pager notification to relevant people if the number of HTTP 500s over the past five minutes increases. What we use for setting up alerts depends on our monitoring setup. For Prometheus we can use [Alertmanager][21] and for StatsD, we use [Nagios][22].
 
 ### Using metrics for autoscaling
 
-Not only can metrics allow us to understand if our current infrastructure is over- or under-provisioned, they can also help implement autoscaling policies in a cloud infrastructure. For example, if worker process usage on our servers routinely hits 90% over the past five minutes, we may need to horizontally scale. How we would implement scaling depends on the cloud infrastructure. AWS Auto Scaling, by default, allows scaling policies based on system CPU usage, network traffic, and other factors. However, to use application metrics for scaling up or down, we must publish [custom CloudWatch metrics][18].
+Not only can metrics allow us to understand if our current infrastructure is over- or under-provisioned, they can also help implement autoscaling policies in a cloud infrastructure. For example, if worker process usage on our servers routinely hits 90% over the past five minutes, we may need to horizontally scale. How we would implement scaling depends on the cloud infrastructure. AWS Auto Scaling, by default, allows scaling policies based on system CPU usage, network traffic, and other factors. However, to use application metrics for scaling up or down, we must publish [custom CloudWatch metrics][23].
 
 ## Application monitoring in a multi-service architecture
 
-When we go beyond a single application architecture, such that a client request can trigger calls to multiple services before a response is sent back, we need more from our metrics. We need a unified view of latency metrics so we can see how much time each service took to respond to the request. This is enabled with [distributed tracing][19].
+When we go beyond a single application architecture, such that a client request can trigger calls to multiple services before a response is sent back, we need more from our metrics. We need a unified view of latency metrics so we can see how much time each service took to respond to the request. This is enabled with [distributed tracing][24].
 
-You can see an example of distributed tracing in Python in my blog post [Introducing distributed tracing in your Python application via Zipkin][20].
+You can see an example of distributed tracing in Python in my blog post [Introducing distributed tracing in your Python application via Zipkin][25].
 
 ## Points to remember
 
@@ -377,112 +383,106 @@ Following are some of the resources I found very useful along my monitoring educ
 
 ### General
 
-*   [Monitoring distributed systems][21]
-*   [Observability and monitoring best practices][22]
-*   [Who wants seconds?][23]
+*   [Monitoring distributed systems][26]
+*   [Observability and monitoring best practices][27]
+*   [Who wants seconds?][28]
 
 ### StatsD/Graphite
 
-*   [StatsD metric types][24]
+*   [StatsD metric types][29]
 
 ### Prometheus
 
-*   [Prometheus metric types][25]
-*   [How does a Prometheus gauge work?][26]
-*   [Why are Prometheus histograms cumulative?][27]
-*   [Monitoring batch jobs in Python][28]
-*   [Prometheus: Monitoring at SoundCloud][29]
+*   [Prometheus metric types][30]
+*   [How does a Prometheus gauge work?][31]
+*   [Why are Prometheus histograms cumulative?][32]
+*   [Monitoring batch jobs in Python][33]
+*   [Prometheus: Monitoring at SoundCloud][34]
 
 ## Avoiding mistakes (i.e., Stage 3 learnings)
 
 As we learn the basics of monitoring, it's important to keep an eye on the mistakes we don't want to make. Here are some insightful resources I have come across:
 
-*   [How not to measure latency][30]
-*   [Histograms with Prometheus: A tale of woe][31]
-*   [Why averages suck and percentiles are great][32]
-*   [Everything you know about latency is wrong][33]
-*   [Who moved my 99th percentile latency?][34]
-*   [Logs and metrics and graphs][35]
-*   [HdrHistogram: A better latency capture method][36]
+*   [How not to measure latency][35]
+*   [Histograms with Prometheus: A tale of woe][36]
+*   [Why averages suck and percentiles are great][37]
+*   [Everything you know about latency is wrong][38]
+*   [Who moved my 99th percentile latency?][39]
+*   [Logs and metrics and graphs][40]
+*   [HdrHistogram: A better latency capture method][41]
 
 ---
 
-To learn more, attend Amit Saha's talk, [Counter, gauge, upper 90—Oh my!][37], at [PyCon Cleveland 2018][38].
-
-## Topics
-
-[Python][39]
-
-[PyCon][40]
-
-[Programming][41]
+To learn more, attend Amit Saha's talk, [Counter, gauge, upper 90—Oh my!][42], at [PyCon Cleveland 2018][43].
 
 ## About the author
 
-[![](https://opensource.com/sites/default/files/styles/profile_pictures/public/osdc_default_avatar_1.png?itok=mmbfqFXm)][42]
+[![](https://opensource.com/sites/default/files/styles/profile_pictures/public/osdc_default_avatar_1.png?itok=mmbfqFXm)][44]
 
 Amit Saha \- I am a software engineer interested in infrastructure, monitoring and tooling. I am the author of "Doing Math with Python" and creator and the maintainer of Fedora Scientific Spin.
 
-[More about me][43]
+[More about me][45]
 
-*   [Learn how you can contribute][44]
+*   [Learn how you can contribute][46]
 
 ---
 
-via: [https://opensource.com/article/18/4/metrics-monitoring-and-python][45]
+via: [https://opensource.com/article/18/4/metrics-monitoring-and-python][47]
 
-作者: [undefined][46] 选题者: [@lujun9972][47] 译者: [译者ID][48] 校对: [校对者ID][49]
+作者: [Amit Saha][48] 选题者: [@lujun9972][49] 译者: [译者ID][50] 校对: [校对者ID][51]
 
-本文由 [LCTT][50] 原创编译，[Linux中国][51] 荣誉推出
+本文由 [LCTT][52] 原创编译，[Linux中国][53] 荣誉推出
 
-[1]: https://github.com/amitsaha/python-monitoring-talk
-[2]: https://github.com/amitsaha/python-monitoring-talk/tree/master/demo1
-[3]: http://flask.pocoo.org/
-[4]: https://github.com/amitsaha/python-monitoring-talk/tree/master/demo2
-[5]: https://pandas.pydata.org/
-[6]: http://jupyter.org/
-[7]: https://prometheus.io/
-[8]: https://github.com/etsy/statsd
-[9]: https://pypi.python.org/pypi/statsd
-[10]: https://github.com/amitsaha/python-monitoring-talk/tree/master/statsd
-[11]: https://pypi.python.org/pypi/prometheus_client
-[12]: https://github.com/amitsaha/python-monitoring-talk/tree/master/prometheus
-[13]: http://echorand.me/your-options-for-monitoring-multi-process-python-applications-with-prometheus.html
-[14]: https://blog.codeship.com/monitoring-your-synchronous-python-web-applications-using-prometheus/
-[15]: https://blog.codeship.com/monitoring-your-asynchronous-python-web-applications-using-prometheus/
-[16]: https://github.com/prometheus/alertmanager
-[17]: https://www.nagios.org/about/overview/
-[18]: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html
-[19]: http://opentracing.io/documentation/
-[20]: http://echorand.me/introducing-distributed-tracing-in-your-python-application-via-zipkin.html
-[21]: https://landing.google.com/sre/book/chapters/monitoring-distributed-systems.html
-[22]: http://www.integralist.co.uk/posts/monitoring-best-practices/?imm_mid=0fbebf&cmp=em-webops-na-na-newsltr_20180309
-[23]: https://www.robustperception.io/who-wants-seconds/
-[24]: https://github.com/etsy/statsd/blob/master/docs/metric_types.md
-[25]: https://prometheus.io/docs/concepts/metric_types/
-[26]: https://www.robustperception.io/how-does-a-prometheus-gauge-work/
-[27]: https://www.robustperception.io/why-are-prometheus-histograms-cumulative/
-[28]: https://www.robustperception.io/monitoring-batch-jobs-in-python/
-[29]: https://developers.soundcloud.com/blog/prometheus-monitoring-at-soundcloud
-[30]: https://www.youtube.com/watch?v=lJ8ydIuPFeU&feature=youtu.be
-[31]: http://linuxczar.net/blog/2017/06/15/prometheus-histogram-2/
-[32]: https://www.dynatrace.com/news/blog/why-averages-suck-and-percentiles-are-great/
-[33]: https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/
-[34]: https://engineering.linkedin.com/performance/who-moved-my-99th-percentile-latency
-[35]: https://grafana.com/blog/2016/01/05/logs-and-metrics-and-graphs-oh-my/
-[36]: http://psy-lob-saw.blogspot.com.au/2015/02/hdrhistogram-better-latency-capture.html
-[37]: https://us.pycon.org/2018/schedule/presentation/133/
-[38]: https://us.pycon.org/2018/
-[39]: https://opensource.com/tags/python
-[40]: https://opensource.com/tags/pycon
-[41]: https://opensource.com/tags/programming
-[42]: https://opensource.com/users/amitsaha
-[43]: https://opensource.com/users/amitsaha
-[44]: https://opensource.com/participate
-[45]: https://opensource.com/article/18/4/metrics-monitoring-and-python
-[46]: undefined
-[47]: https://github.com/lujun9972
-[48]: https://github.com/译者ID
-[49]: https://github.com/校对者ID
-[50]: https://github.com/LCTT/TranslateProject
-[51]: https://linux.cn/
+[1]: https://opensource.com/resources/python?intcmp=7016000000127cYAAQ
+[2]: https://opensource.com/resources/python/ides?intcmp=7016000000127cYAAQ
+[3]: https://opensource.com/resources/python/gui-frameworks?intcmp=7016000000127cYAAQ
+[4]: https://opensource.com/tags/python?intcmp=7016000000127cYAAQ
+[5]: https://developers.redhat.com/?intcmp=7016000000127cYAAQ
+[6]: https://github.com/amitsaha/python-monitoring-talk
+[7]: https://github.com/amitsaha/python-monitoring-talk/tree/master/demo1
+[8]: http://flask.pocoo.org/
+[9]: https://github.com/amitsaha/python-monitoring-talk/tree/master/demo2
+[10]: https://pandas.pydata.org/
+[11]: http://jupyter.org/
+[12]: https://prometheus.io/
+[13]: https://github.com/etsy/statsd
+[14]: https://pypi.python.org/pypi/statsd
+[15]: https://github.com/amitsaha/python-monitoring-talk/tree/master/statsd
+[16]: https://pypi.python.org/pypi/prometheus_client
+[17]: https://github.com/amitsaha/python-monitoring-talk/tree/master/prometheus
+[18]: http://echorand.me/your-options-for-monitoring-multi-process-python-applications-with-prometheus.html
+[19]: https://blog.codeship.com/monitoring-your-synchronous-python-web-applications-using-prometheus/
+[20]: https://blog.codeship.com/monitoring-your-asynchronous-python-web-applications-using-prometheus/
+[21]: https://github.com/prometheus/alertmanager
+[22]: https://www.nagios.org/about/overview/
+[23]: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html
+[24]: http://opentracing.io/documentation/
+[25]: http://echorand.me/introducing-distributed-tracing-in-your-python-application-via-zipkin.html
+[26]: https://landing.google.com/sre/book/chapters/monitoring-distributed-systems.html
+[27]: http://www.integralist.co.uk/posts/monitoring-best-practices/?imm_mid=0fbebf&cmp=em-webops-na-na-newsltr_20180309
+[28]: https://www.robustperception.io/who-wants-seconds/
+[29]: https://github.com/etsy/statsd/blob/master/docs/metric_types.md
+[30]: https://prometheus.io/docs/concepts/metric_types/
+[31]: https://www.robustperception.io/how-does-a-prometheus-gauge-work/
+[32]: https://www.robustperception.io/why-are-prometheus-histograms-cumulative/
+[33]: https://www.robustperception.io/monitoring-batch-jobs-in-python/
+[34]: https://developers.soundcloud.com/blog/prometheus-monitoring-at-soundcloud
+[35]: https://www.youtube.com/watch?v=lJ8ydIuPFeU&feature=youtu.be
+[36]: http://linuxczar.net/blog/2017/06/15/prometheus-histogram-2/
+[37]: https://www.dynatrace.com/news/blog/why-averages-suck-and-percentiles-are-great/
+[38]: https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/
+[39]: https://engineering.linkedin.com/performance/who-moved-my-99th-percentile-latency
+[40]: https://grafana.com/blog/2016/01/05/logs-and-metrics-and-graphs-oh-my/
+[41]: http://psy-lob-saw.blogspot.com.au/2015/02/hdrhistogram-better-latency-capture.html
+[42]: https://us.pycon.org/2018/schedule/presentation/133/
+[43]: https://us.pycon.org/2018/
+[44]: https://opensource.com/users/amitsaha
+[45]: https://opensource.com/users/amitsaha
+[46]: https://opensource.com/participate
+[47]: https://opensource.com/article/18/4/metrics-monitoring-and-python
+[48]: https://opensource.com/users/amitsaha
+[49]: https://github.com/lujun9972
+[50]: https://github.com/译者ID
+[51]: https://github.com/校对者ID
+[52]: https://github.com/LCTT/TranslateProject
+[53]: https://linux.cn/
