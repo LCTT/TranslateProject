@@ -1,4 +1,4 @@
-注重隐私的开源桌面 YouTube 播放器
+FreeTube：注重隐私的开源桌面 YouTube 播放器
 ======
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/03/Freetube-720x340.png)
@@ -13,36 +13,34 @@
 * 本地存储订阅、历史记录和已保存的视频。
 * 导入/备份订阅。
 * 迷你播放器。
-* 轻/黑暗的主题。
+* 亮/暗的主题。
 * 免费、开源。
 * 跨平台。
 
-
-
 ### 安装 FreeTube
 
-进入[**发布页面**][1]并根据你使用的操作系统获取版本。在本指南中，我将使用 **.tar.gz** 文件。
+进入[发布页面][1]并根据你使用的操作系统获取版本。在本指南中，我将使用 **.tar.gz** 文件。
+
 ```
 $ wget https://github.com/FreeTubeApp/FreeTube/releases/download/v0.1.3-beta/FreeTube-linux-x64.tar.xz
-
 ```
 
 解压下载的归档：
+
 ```
 $ tar xf FreeTube-linux-x64.tar.xz
-
 ```
 
 进入 Freetube 文件夹：
+
 ```
 $ cd FreeTube-linux-x64/
-
 ```
 
 使用命令启动 Freeube：
+
 ```
 $ ./FreeTub
-
 ```
 
 这就是 FreeTube 默认界面的样子。
@@ -51,7 +49,7 @@ $ ./FreeTub
 
 ### 用法
 
-FreeTube 目前使用 **YouTube API ** 搜索视频。然后，它使用 **Youtube-dl HTTP API** 获取原始视频文件并在基础的 HTML5 视频播放器中播放它们。由于订阅、历史记录和已保存的视频都存储在本地系统中，因此你的详细信息将不会发送给 Google 或其他任何人。
+FreeTube 目前使用 **YouTube API** 搜索视频。然后，它使用 **Youtube-dl HTTP API** 获取原始视频文件并在基础的 HTML5 视频播放器中播放它们。由于订阅、历史记录和已保存的视频都存储在本地系统中，因此你的详细信息将不会发送给 Google 或其他任何人。
 
 在搜索框中输入视频名称，然后按下回车键。FreeTube 会根据你的搜索查询列出结果。
 
@@ -67,9 +65,7 @@ FreeTube 目前使用 **YouTube API ** 搜索视频。然后，它使用 **Youtu
 
 请注意，FreeTube 仍处于 **beta** 阶段，所以仍然有 bug。如果有任何 bug，请在本指南最后给出的 GitHub 页面上报告。
 
-干杯!
-
-
+干杯！
 
 --------------------------------------------------------------------------------
 
@@ -77,7 +73,7 @@ via: https://www.ostechnix.com/freetube-an-open-source-desktop-youtube-player-fo
 
 作者：[SK][a]
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
