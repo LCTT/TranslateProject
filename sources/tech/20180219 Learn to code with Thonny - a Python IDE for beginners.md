@@ -1,3 +1,5 @@
+translating by Auk7F7
+
 Learn to code with Thonny — a Python IDE for beginners
 ======
 

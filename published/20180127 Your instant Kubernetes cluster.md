@@ -1,19 +1,15 @@
 “开箱即用” 的 Kubernetes 集群
 ============================================================
 
-
-这是我以前的 [10 分钟内配置 Kubernetes][10] 教程的精简版和更新版。我删除了一些我认为可以去掉的内容，所以，这个指南仍然是可理解的。当你想在云上创建一个集群或者尽可能快地构建基础设施时，你可能会用到它。
+这是我以前的 [10 分钟内配置 Kubernetes][10] 教程的精简版和更新版。我删除了一些我认为可以去掉的内容，所以，这个指南仍然是通顺的。当你想在云上创建一个集群或者尽可能快地构建基础设施时，你可能会用到它。
 
 ### 1.0 挑选一个主机
 
 我们在本指南中将使用 Ubuntu 16.04，这样你就可以直接拷贝/粘贴所有的指令。下面是我用本指南测试过的几种环境。根据你运行的主机，你可以从中挑选一个。
 
 *   [DigitalOcean][1] - 开发者云
-
 *   [Civo][2] - UK 开发者云
-
 *   [Packet][3] - 裸机云
-
 *   2x Dell Intel i7 服务器 —— 它在我家中
 
 > Civo 是一个相对较新的开发者云，我比较喜欢的一点是，它开机时间只有 25 秒，我就在英国，因此，它的延迟很低。
@@ -25,14 +21,12 @@
 下面是一些其他的指导原则：
 
 *   最好选至少有 2 GB 内存的双核主机
-
 *   在准备主机的时候，如果你可以自定义用户名，那么就不要使用 root。例如，Civo 通常让你在 `ubuntu`、`civo` 或者 `root` 中选一个。
 
-现在，在每台机器上都运行以下的步骤。它将需要 5-10 钟时间。如果你觉得太慢了，你可以使用我的脚本 [kept in a Gist][11]：
+现在，在每台机器上都运行以下的步骤。它将需要 5-10 钟时间。如果你觉得太慢了，你可以使用我[放在 Gist][11] 的脚本 ：
 
 ```
 $ curl -sL https://gist.githubusercontent.com/alexellis/e8bbec45c75ea38da5547746c0ca4b0c/raw/23fc4cd13910eac646b13c4f8812bab3eeebab4c/configure.sh | sh
-
 ```
 
 ### 1.2 登入和安装 Docker
@@ -42,7 +36,6 @@ $ curl -sL https://gist.githubusercontent.com/alexellis/e8bbec45c75ea38da5547746
 ```
 $ sudo apt-get update \
   && sudo apt-get install -qy docker.io
-
 ```
 
 ### 1.3 禁用 swap 文件
@@ -69,7 +62,6 @@ $ sudo apt-get update \
   kubelet \
   kubeadm \
   kubernetes-cni
-
 ```
 
 ### 1.5 创建集群
@@ -80,7 +72,6 @@ $ sudo apt-get update \
 
 ```
 $ sudo kubeadm init
-
 ```
 
 如果你错过一个步骤或者有问题，`kubeadm` 将会及时告诉你。
@@ -90,41 +81,37 @@ $ sudo kubeadm init
 ```
 mkdir -p $HOME/.kube  
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config  
-sudo chown $(id -u):$(id -g) $HOME/.kube/config  
-
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 
-确保你一定要记下如下的加入 token 命令。
+确保你一定要记下如下的加入 `token` 的命令。
 
 ```
 $ sudo kubeadm join --token c30633.d178035db2b4bb9a 10.0.0.5:6443 --discovery-token-ca-cert-hash sha256:<hash>
-
 ```
 
 ### 2.0 安装网络
 
-Kubernetes 可用于任何网络供应商的产品或服务，但是，默认情况下什么也没有，因此，我们使用来自  [Weaveworks][12] 的 Weave Net，它是 Kebernetes 社区中非常流行的选择之一。它倾向于不需要额外配置的 “开箱即用”。
+许多网络提供商提供了 Kubernetes 支持，但是，默认情况下 Kubernetes 都没有包括。这里我们使用来自  [Weaveworks][12] 的 Weave Net，它是 Kebernetes 社区中非常流行的选择之一。它近乎不需要额外配置的 “开箱即用”。
 
 ```
 $ kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')"
-
 ```
 
-如果在你的主机上启用了私有网络，那么，你可能需要去修改 Weavenet 使用的私有子网络，以便于为 Pods（容器）分配 IP 地址。下面是命令示例：
+如果在你的主机上启用了私有网络，那么，你可能需要去修改 Weavenet 使用的私有子网络，以便于为 Pod（容器）分配 IP 地址。下面是命令示例：
 
 ```
 $ curl -SL "https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\n')&env.IPALLOC_RANGE=172.16.6.64/27" \
 | kubectl apply -f -
-
 ```
 
-> Weave 也有很酷的称为 Weave Cloud 的可视化工具。它是免费的，你可以在它上面看到你的 Pods 之间的路径流量。[这里有一个使用 OpenFaaS 项目的示例][6]。
+> Weave 也有很酷的称为 Weave Cloud 的可视化工具。它是免费的，你可以在它上面看到你的 Pod 之间的路径流量。[这里有一个使用 OpenFaaS 项目的示例][6]。
 
 ### 2.2 在集群中加入工作节点
 
 现在，你可以切换到你的每一台工作节点，然后使用 1.5 节中的 `kubeadm join` 命令。运行完成后，登出那个工作节点。
 
-### 3.0 收益
+### 3.0 收获
 
 到此为止 —— 我们全部配置完成了。你现在有一个正在运行着的集群，你可以在它上面部署应用程序。如果你需要设置仪表板 UI，你可以去参考 [Kubernetes 文档][13]。
 
@@ -134,21 +121,21 @@ NAME        STATUS    ROLES     AGE       VERSION
 openfaas1   Ready     master    20m       v1.9.2  
 openfaas2   Ready     <none>    19m       v1.9.2  
 openfaas3   Ready     <none>    19m       v1.9.2  
-
 ```
 
 如果你想看到我一步一步创建集群并且展示 `kubectl` 如何工作的视频，你可以看下面我的视频，你可以订阅它。
 
+![](https://youtu.be/6xJwQgDnMFE)
 
-想在你的 Mac 电脑上，使用 Minikube 或者 Docker 的 Mac Edge 版本，安装一个 “开箱即用” 的 Kubernetes 集群，[阅读在这里的我的评估和第一印象][14]。
+你也可以在你的 Mac 电脑上，使用 Minikube 或者 Docker 的 Mac Edge 版本，安装一个 “开箱即用” 的 Kubernetes 集群。[阅读在这里的我的评估和第一印象][14]。
 
 --------------------------------------------------------------------------------
 
 via: https://blog.alexellis.io/your-instant-kubernetes-cluster/
 
-作者：[Alex Ellis ][a]
+作者：[Alex Ellis][a]
 译者：[qhwdw](https://github.com/qhwdw)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

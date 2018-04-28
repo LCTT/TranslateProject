@@ -1,3 +1,6 @@
+translating---geekpi
+
+
 Easily Install Android Studio in Ubuntu And Linux Mint
 ======
 [Android Studio][1], Google’s own IDE for Android development, is a nice alternative to Eclipse with ADT plugin. Android Studio can be installed from its source code but in this quick post, we shall see **how to install Android Studio in Ubuntu 18.04, 16.04 and corresponding Linux Mint variants**.
