@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 A Simple Command-line Snippet Manager
 ======
 
