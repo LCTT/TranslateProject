@@ -7,12 +7,20 @@
 
 When I talk to customers--yes, they let me talk to customers sometimes--and to folks in the field2 this comes up quite frequently. In a previous article, "[Review by many eyes does not always prevent buggy code][1]", I talked about how open source software--particularly security software--isn't magically more secure than proprietary software, but I'd still go with open source over proprietary every time. But the way I've heard the particular question--about open source software being less secure--suggests that sometimes it's not enough to just explain that open source needs work, but we must also actively engage in [apologetics][2]3.
 
+当我和顾客讨论的时候，是的，他们有时候会让我和顾客交谈，对于场景2的人来说这是很常见的。在前一篇文章中，"[许多人的评论并不一定能防止错误代码]"，我会
+谈论尤其是安全的软件这块--并没有如外界所说的那样比专利软件安全，但是个专有软件比起来，我每次还是比较青睐开源软件。但我听到的特定问题--关于开源软件不是很安全--表明了有时候仅仅解释开源需要工作投入是不够的，但是我们也需要积极的参与进去。
+
 
 So here goes. I don't expect it to be up to Newton's or Wittgenstein's levels of logic, but I'll do what I can, and I'll summarise at the bottom so you have a quick list of the points if you want it.
 
+我并不期望能够达到牛顿或者维特根斯坦的逻辑水平，但是我会尽我所能，而且我会在结尾做个总结，如果你感兴趣的话可以去快速的浏览一下。
 ### The arguments
 
+### 关键因素
+
 First, we should accept that no software is perfect6. Not proprietary software, not open source software. Second, we should accept that good proprietary software exists, and third, there is also some bad open source software out there. Fourth, there are extremely intelligent, gifted, and dedicated architects, designers, and software engineers who create proprietary software.
+
+首先，我们必须明白没有任何一款软件是绝对安全的。
 
 But here's the rub: fifth, there is a limited pool of people who will work on or otherwise look at proprietary software. And you can never hire all the best people. Even in government and public sector organisations--who often have a larger talent pool available to them, particularly for cough security-related cough applications--the pool is limited.
 
