@@ -1,8 +1,12 @@
 10 easy steps from proprietary to open source
+从专有到开源的十个简单步骤
 ======
 "But surely open source software is less secure, because everybody can see it, and they can just recompile it and replace it with bad stuff they've written." Hands up: who's heard this?1
 
+"开源软件的确不是很安全，因为每个人都能使用它，而且他们能够随意的进行便宜并且用他们自己写的不好的东西进行替换。"举手示意：谁之前听说过这个？1
+
 When I talk to customers--yes, they let me talk to customers sometimes--and to folks in the field2 this comes up quite frequently. In a previous article, "[Review by many eyes does not always prevent buggy code][1]", I talked about how open source software--particularly security software--isn't magically more secure than proprietary software, but I'd still go with open source over proprietary every time. But the way I've heard the particular question--about open source software being less secure--suggests that sometimes it's not enough to just explain that open source needs work, but we must also actively engage in [apologetics][2]3.
+
 
 So here goes. I don't expect it to be up to Newton's or Wittgenstein's levels of logic, but I'll do what I can, and I'll summarise at the bottom so you have a quick list of the points if you want it.
 
