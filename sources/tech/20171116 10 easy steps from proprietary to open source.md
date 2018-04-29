@@ -1,55 +1,42 @@
-10 easy steps from proprietary to open source
 从专有到开源的十个简单步骤
 ======
-"But surely open source software is less secure, because everybody can see it, and they can just recompile it and replace it with bad stuff they've written." Hands up: who's heard this?1
 
-"开源软件的确不是很安全，因为每个人都能使用它，而且他们能够随意的进行便宜并且用他们自己写的不好的东西进行替换。"举手示意：谁之前听说过这个？1
-
-When I talk to customers--yes, they let me talk to customers sometimes--and to folks in the field2 this comes up quite frequently. In a previous article, "[Review by many eyes does not always prevent buggy code][1]", I talked about how open source software--particularly security software--isn't magically more secure than proprietary software, but I'd still go with open source over proprietary every time. But the way I've heard the particular question--about open source software being less secure--suggests that sometimes it's not enough to just explain that open source needs work, but we must also actively engage in [apologetics][2]3.
+"开源软件的确不是很安全，因为每个人都能使用它，而且他们能够随意的进行编译并且用他们自己写的不好的东西进行替换。"举手示意：谁之前听说过这个？1
 
 当我和顾客讨论的时候，是的，他们有时候会让我和顾客交谈，对于场景2的人来说这是很常见的。在前一篇文章中，"[许多人的评论并不一定能防止错误代码]"，我会
-谈论尤其是安全的软件这块--并没有如外界所说的那样比专利软件安全，但是个专有软件比起来，我每次还是比较青睐开源软件。但我听到的特定问题--关于开源软件不是很安全--表明了有时候仅仅解释开源需要工作投入是不够的，但是我们也需要积极的参与进去。
-
-
-So here goes. I don't expect it to be up to Newton's or Wittgenstein's levels of logic, but I'll do what I can, and I'll summarise at the bottom so you have a quick list of the points if you want it.
+谈论尤其是安全的软件这块--并没有如外界所说的那样比专有软件安全，但是和专有软件比起来，我每次还是比较青睐开源软件。但我听到--关于开源软件不是很安全--表明了有时候仅仅解释开源需要工作投入是不够的，但是我们也需要积极的参与进去。
 
 我并不期望能够达到牛顿或者维特根斯坦的逻辑水平，但是我会尽我所能，而且我会在结尾做个总结，如果你感兴趣的话可以去快速的浏览一下。
-### The arguments
 
 ### 关键因素
 
-First, we should accept that no software is perfect6. Not proprietary software, not open source software. Second, we should accept that good proprietary software exists, and third, there is also some bad open source software out there. Fourth, there are extremely intelligent, gifted, and dedicated architects, designers, and software engineers who create proprietary software.
+首先，我们必须明白没有任何一款软件是绝对安全的。无论是专有软件还是开源软件。第二，我们应该接受确实还是存在一些很不错的专利软件的。第三，也存在一些不好的开源软件。第四，有很多优秀的，很有天赋的，专业的架构师，设计师和软件工程师设计开发专利软件。
 
-首先，我们必须明白没有任何一款软件是绝对安全的。无论是专利软件还是开源软件。第二，我们应该接受确实还是存在一些很不错的专利软件的。第三，也存在一些不好的开源软件。第四，有很多优秀的，很有天赋的，专业的架构师，设计师和软件工程师设计开发专利软件。
+但也有些摩擦：第五点，从事专有软件的人员是有限的，而且你不可能总是能够雇佣到最好的员工。即使在政府部门或者公共组织--他们拥有丰富的人才资源池，但在安全应用这块，他们的人才也是有限的。
 
-But here's the rub: fifth, there is a limited pool of people who will work on or otherwise look at proprietary software. And you can never hire all the best people. Even in government and public sector organisations--who often have a larger talent pool available to them, particularly for cough security-related cough applications--the pool is limited.
+第六点，开发，测试，提升改善开源软件的人总是无限的，而且还包含最好的人才。第七(也是我最欢的一)，这群人找那个包含很多编写专有软件的人才。第八，许多政府或者公共组织开发的软件也都逐渐开源了。
 
+第九，如果你在担心你在运行的软件的不被支持或者来源不明，好消息是：有一批组织会来检查软件代码的来源，提供支持和补丁更新。他们会按照专利软件模式那样去运行开源软件：他们的技术标准就是去签署认证以便你可以验证你正在运行的开源软件不是来源不明或者是恶意的软件。
 
+第十点（也是这篇文章的重点），当你运行，测试，在问题上进行反馈，发现问题并且报告的时候，你正在为共福利贡献知识，专业技能以及经验，这就是开源，正因为你的所做的这些而变得更好。如果你是通过个人或者提供支持的商业组织，，你已经成为了这个组织的一部分了。开源让软件变得越来越好，你可以看到它们的变化。没有什么是隐藏封闭的，它是完全开放的。事情会变坏吗？是的，但是我们能够及时发现问题并且修复。
 
-Sixth, the pool of people available to look at, test, improve, break, re-improve, and roll out open source software is almost unlimited and does include the best people. Seventh (and I love this one), the pool also includes many of the people writing the proprietary software. Eighth, many of the applications being written by public sector and government organisations are open sourced anyway.
+这个共享福利并不适用于专有软件：保持隐藏的东西是不能照亮个丰富世界的。
 
-Ninth, if you're worried about running open source software that is unsupported or comes from dodgy, un-provenanced sources, then good news: There are a bunch of organisations7 who will check the provenance of that code, support, maintain, and patch it. They'll do it along the same type of business lines that you'd expect from a proprietary software provider. You can also ensure that the software you get from them is the right software: Their standard technique is to sign bundles of software so you can verify that what you're installing isn't from some random bad person who's taken that code and done Bad Things™ with it.
+我知道作为一个英国人在使用联邦这个词的时候要小心谨慎的；它和帝国连接着的，但我所表达的不是这个意思。它不是克伦威尔在对这个词所表述的意思，无论如何，他是一个有争议的历史人物。我所表达的意思是这个词有共同和福利连接，福利不是指钱而是全人类都能拥有的福利。
 
-Tenth (and here's the point of this article), when you run open source software, when you test it, when you provide feedback on issues, when you discover errors and report them, you are tapping into--and adding to--the commonwealth of knowledge and expertise and experience that is open source, which is made only greater by your doing so. If you do this yourself, or through one of the businesses that support open source software8, you are part of this commonwealth. Things get better with open source software, and you can see them getting better. Nothing is hidden--it's, well, open. Can things get worse? Yes, they can, but we can see when that happens and fix it.
+我真的很相信这点的。如果i想从这篇文章中国得到一些虔诚的信息的话，那应该是第十条：共享福利是我们的遗产，我们的经验，我们的知识，我们的责任。共享福利是全人类都能拥有的。我们共同拥有它而且它是一笔无法估量的财富。
 
-This commonwealth does not apply to proprietary software: what stays hidden does not enlighten or enrich the world.
-
-I know that I need to be careful about the use of the "commonwealth" as a Briton; it has connotations of (faded…) empires, which I don't intend in this case. It's probably not what Cromwell9 had in mind when he talked about the "Commonwealth," either, and anyway, he's a somewhat controversial historical figure. What I'm talking about is a concept in which I think the words deserve concatenation--"common" and "wealth"--to show that we're talking about something more than just money, but shared wealth available to all of humanity.
-
-I really believe in this. If you want to take away a religious message from this article, it should be this10: the commonwealth is our heritage, our experience, our knowledge, our responsibility. The commonwealth is available to all of humanity. We have it in common, and it is an almost inestimable wealth.
-
-### A handy crib sheet
-
-  1. (Almost) no software is perfect.
-  2. There is good proprietary software.
-  3. There is bad open source software.
-  4. There are clever, talented, and devoted people who create proprietary software.
-  5. The pool of people available to write and improve proprietary software is limited, even within the public sector and government realm.
-  6. The corresponding pool of people for open source is virtually unlimited…
-  7. …and includes a goodly number of the talent pool of people writing proprietary software.
-  8. Public sector and government organisations often open source their software anyway.
-  9. There are businesses that will support open source software for you.
-  10. Contribution--even usage--adds to the commonwealth.
+### 便利贴
+  1. （几乎）没有一款软件是完美无缺的。
+  2. 有很好的专有软件。
+  3. 有不好的专有软件。
+  4. 有聪明，有才能，专注的人开开发专有软件。
+  5. 从事开发完善专有软件的人是有限的，即使在政府或者公共组织也是如此。
+  6. 相对来说从事开源软件的人是无限的。
+  7. …而且包括很多从事专有软件的人才。
+  8. 政府和公共组织的人经常开源它们的软件.
+  9. 有商业组织会为你的开源软件提供支持.
+  10. 贡献--即使使用--为开源软件贡献.
 
 
 
@@ -80,7 +67,7 @@ This article originally appeared on [Alice, Eve, and Bob - a security blog][5] a
 via: https://opensource.com/article/17/11/commonwealth-open-source
 
 作者：[Mike Bursell][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[FelixYFZ](https://github.com/FelixYFZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
