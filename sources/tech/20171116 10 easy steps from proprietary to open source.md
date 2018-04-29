@@ -1,4 +1,4 @@
-10 easy steps from proprietary to open source
+Translating by FelixYFZ 10 easy steps from proprietary to open source
 ======
 "But surely open source software is less secure, because everybody can see it, and they can just recompile it and replace it with bad stuff they've written." Hands up: who's heard this?1
 
