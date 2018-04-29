@@ -20,9 +20,11 @@ So here goes. I don't expect it to be up to Newton's or Wittgenstein's levels of
 
 First, we should accept that no software is perfect6. Not proprietary software, not open source software. Second, we should accept that good proprietary software exists, and third, there is also some bad open source software out there. Fourth, there are extremely intelligent, gifted, and dedicated architects, designers, and software engineers who create proprietary software.
 
-首先，我们必须明白没有任何一款软件是绝对安全的。
+首先，我们必须明白没有任何一款软件是绝对安全的。无论是专利软件还是开源软件。第二，我们应该接受确实还是存在一些很不错的专利软件的。第三，也存在一些不好的开源软件。第四，有很多优秀的，很有天赋的，专业的架构师，设计师和软件工程师设计开发专利软件。
 
 But here's the rub: fifth, there is a limited pool of people who will work on or otherwise look at proprietary software. And you can never hire all the best people. Even in government and public sector organisations--who often have a larger talent pool available to them, particularly for cough security-related cough applications--the pool is limited.
+
+
 
 Sixth, the pool of people available to look at, test, improve, break, re-improve, and roll out open source software is almost unlimited and does include the best people. Seventh (and I love this one), the pool also includes many of the people writing the proprietary software. Eighth, many of the applications being written by public sector and government organisations are open sourced anyway.
 
