@@ -1,3 +1,5 @@
+translating by kennethXia
+
 Getting started with Jenkins Pipelines
 ======
 
