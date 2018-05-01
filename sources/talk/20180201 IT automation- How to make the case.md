@@ -1,10 +1,17 @@
 IT automation: How to make the case
+IT自动化:如何去实现
 ======
 At the start of any significant project or change initiative, IT leaders face a proverbial fork in the road.
 
+在任何项目或者初始变化开始的时候，TI的管理者在前进的道路书面临着普遍的抉择。
+
 Path #1 might seem to offer the shortest route from A to B: Simply force-feed the project to everyone by executive mandate, essentially saying, “You’re going to do this – or else.”
 
+第一条路径看上去是提供了一个从A到B的最短路径：简单的把项目强制分配给每个人去执行，本质来说就是你要么按照要求去做要么就不要做了。
+
 Path #2 might appear less direct, because on this journey you take the time to explain the strategy and the reasons behind it. In fact, you’re going to be making pit stops along this route, rather than marathoning from start to finish: “Here’s what we’re doing – and why we’re doing it.”
+
+
 
 Guess which path bears better results?
 
