@@ -1,3 +1,4 @@
+transalting by wyxplus
 4 Tools for Network Snooping on Linux
 ======
 Computer networking data has to be exposed, because packets can't travel blindfolded, so join us as we use `whois`, `dig`, `nmcli`, and `nmap` to snoop networks.
