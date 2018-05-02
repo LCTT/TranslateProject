@@ -2,6 +2,7 @@ Configuring local storage in Linux with Stratis
 ======
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/bus-storage.png?itok=95-zvHYl)
+
 Configuring local storage is something desktop Linux users do very infrequently—maybe only once, during installation. Linux storage tech moves slowly, and many storage tools used 20 years ago are still used regularly today. But some things have improved since then. Why aren't people taking advantage of these new capabilities?
 
 This article is about Stratis, a new project that aims to bring storage advances to all Linux users, from the simple laptop single SSD to a hundred-disk array. Linux has the capabilities, but its lack of an easy-to-use solution has hindered widespread adoption. Stratis's goal is to make Linux's advanced storage features accessible.
