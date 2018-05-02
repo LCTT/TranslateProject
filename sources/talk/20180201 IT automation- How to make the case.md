@@ -11,13 +11,20 @@ Path #1 might seem to offer the shortest route from A to B: Simply force-feed th
 
 Path #2 might appear less direct, because on this journey you take the time to explain the strategy and the reasons behind it. In fact, you’re going to be making pit stops along this route, rather than marathoning from start to finish: “Here’s what we’re doing – and why we’re doing it.”
 
-
+第二条路径可能看上去会不是很直接，因为要通过这条路径你要花时间去解释项目背后的策略以及原因。你会沿着这条路线设置停靠站点而不是从起点到终点的马拉松：
+“着就是我们正在做的-和为什么我们这么做。”
 
 Guess which path bears better results?
 
+猜想一下哪条路径会赢得更好的结果？
+
 If you said #2, you’ve traveled both paths before – and experienced the results first-hand. Getting people on board with major changes beforehand is almost always the smarter choice.
 
+如果你猜的是路径2，你肯定是以前都经历过这两条路径-而且经历了第一手的结局。让人们参与重大变革总会是最明智的选择。
+
 IT leaders know as well as anyone that with significant change often comes [significant fear][1], skepticism, and other challenges. It may be especially true with IT automation. The term alone sounds scary to some people, and it is often tied to misconceptions. Helping people understand the what, why, and how of your company’s automation strategy is a necessary step to achieving your goals associated with that strategy.
+
+IT领导者也知道重大的变革总会带来严重的恐慌、怀疑，和其他的挑战。IT自动化确实是很正确的改变。这个术语对某些人来说是很可怕的，而且容易被曲解。帮助人们理解你的公司需要IT自动化的必要性的原因以及如何去实现是达到你的目标和策略的重要步骤。
 
 [ **Read our related article,** [**IT automation best practices: 7 keys to long-term success**][2]. ]
 
