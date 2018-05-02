@@ -1,6 +1,5 @@
 What Stratis learned from ZFS, Btrfs, and Linux Volume Manager | Opensource.com
 ======
-
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/cloud-windows-building-containers.png?itok=0XvZLZ8k)
 
 As discussed in [Part 1][1] of this series, Stratis is a volume-managing filesystem (VMF) with functionality similar to [ZFS][2] and [Btrfs][3]. In designing Stratis, we studied the choices that developers of existing solutions made.
