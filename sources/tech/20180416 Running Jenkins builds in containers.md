@@ -56,6 +56,10 @@ Note: This solution is not related to OpenShift's [Source-to-Image (S2I)][15] bu
 
 There are several good blogs and documentation about Jenkins builds on OpenShift. The following are good to start with:
 
+  * [OpenShift Jenkins][29] image documentation and [source][30]
+  * [CI/CD with OpenShift][31] webcast
+  * [External Jenkins Integration][32] playbook
+
 Take a look at them to understand the overall solution. In this article, we'll look at the different issues that come up while applying those practices.
 
 ### Build my application
@@ -954,3 +958,7 @@ via: https://opensource.com/article/18/4/running-jenkins-builds-containers
 [26]:http://maven.apache.org/surefire/maven-surefire-plugin/examples/fork-options-and-parallel-execution.html
 [27]:http://maven.apache.org/surefire/maven-surefire-plugin/test-mojo.html#argLine
 [28]:https://itnext.io/running-jenkins-builds-in-containers-458e90ff2a7b
+[29]:https://docs.openshift.com/container-platform/3.7/using_images/other_images/jenkins.html
+[30]:https://github.com/openshift/jenkins
+[31]:https://blog.openshift.com/cicd-with-openshift/
+[32]:http://v1.uncontained.io/playbooks/continuous_delivery/external-jenkins-integration.html
