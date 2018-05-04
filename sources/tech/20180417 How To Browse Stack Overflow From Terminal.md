@@ -1,3 +1,5 @@
+[translating by Dotcra]
+
 How To Browse Stack Overflow From Terminal
 ======
 
