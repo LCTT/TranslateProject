@@ -59,6 +59,7 @@ There are several good blogs and documentation about Jenkins builds on OpenShift
   * [OpenShift Jenkins][29] image documentation and [source][30]
   * [CI/CD with OpenShift][31] webcast
   * [External Jenkins Integration][32] playbook
+
 Take a look at them to understand the overall solution. In this article, we'll look at the different issues that come up while applying those practices.
 
 ### Build my application
