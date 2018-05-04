@@ -114,3 +114,17 @@ and debugging information.
 
 To dig deeper into how the SSA package works, including its passes and rules,
 head to `cmd/compile/internal/ssa/README.md`.
+
+
+
+--------------------------------------------------------------------------------
+
+via: https://github.com/golang/go/blob/master/src/cmd/compile/README.md
+
+作者：[mvdan ][a]
+译者：[译者ID](https://github.com/译者ID)
+校对：[校对者ID](https://github.com/校对者ID)
+
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+
+[a]: https://github.com/mvdan
