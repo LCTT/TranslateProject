@@ -34,9 +34,10 @@ With that in mind, we asked a variety of IT leaders for their advice on making t
 ## 1. 向人们展示它的优点
 Let’s face it: Self-interest and self-preservation are natural instincts. Tapping into that human tendency is a good way to get people on board: Show people how your automation strategy will benefit them and their jobs. Will automating a particular process in the software pipeline mean fewer middle-of-the-night calls for team members? Will it enable some people to dump low-skill, manual tasks in favor of more strategic, higher-order work – the sort that helps them take the next step in their career?
 
-
-
+我们要面对的一点事实是：自我利益和自我保护是本能。利用人们的这种本能是一个吸引他们的好方法：向他们展示自动化策略将如何让他们和他们的工作获益。自动化将会是软件管道中的一个特定过程意味着将会减少在半夜呼叫团队同事来解决故障？他将能让一些人丢弃技术含量低的技能，用更有策略，高效的有序工作代替手动作业，这将会帮助他们的职业生涯更进一步？
 “Convey what’s in it for them, and how it will benefit clients and the whole company,” advises Vipul Nagrath, global CIO at [ADP][3]. “Compare the current state to a brighter future state, where the company enjoys greater stability, agility, efficiency, and security.”
+
+”向他们传达他们能得到什么好处，自动化将会如何让他们的客户和公司受益，“
 
 The same approach holds true when making the case outside of IT; just lighten up on the jargon when explaining the benefits to non-technical stakeholders, Nagrath says.
 
