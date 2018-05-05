@@ -29,10 +29,12 @@ IT领导者也知道重大的变革总会带来严重的恐慌、怀疑，和其
 [ **Read our related article,** [**IT automation best practices: 7 keys to long-term success**][2]. ]
 [**阅读我们的相关文章，**[**IT自动化最佳实践：持久成功的7个关键点**][2]. ]
 With that in mind, we asked a variety of IT leaders for their advice on making the case for automation in your organization:
-
+考虑到这一点，我们咨询了许多IT管理者关于如何在你的组织中实现IT自动化。
 ## 1. Show people what’s in it for them
-
+## 1. 向人们展示它的优点
 Let’s face it: Self-interest and self-preservation are natural instincts. Tapping into that human tendency is a good way to get people on board: Show people how your automation strategy will benefit them and their jobs. Will automating a particular process in the software pipeline mean fewer middle-of-the-night calls for team members? Will it enable some people to dump low-skill, manual tasks in favor of more strategic, higher-order work – the sort that helps them take the next step in their career?
+
+
 
 “Convey what’s in it for them, and how it will benefit clients and the whole company,” advises Vipul Nagrath, global CIO at [ADP][3]. “Compare the current state to a brighter future state, where the company enjoys greater stability, agility, efficiency, and security.”
 
