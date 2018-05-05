@@ -27,7 +27,7 @@ IT leaders know as well as anyone that with significant change often comes [sign
 IT领导者也知道重大的变革总会带来严重的恐慌、怀疑，和其他的挑战。IT自动化确实是很正确的改变。这个术语对某些人来说是很可怕的，而且容易被曲解。帮助人们理解你的公司需要IT自动化的必要性的原因以及如何去实现是达到你的目标和策略的重要步骤。
 
 [ **Read our related article,** [**IT automation best practices: 7 keys to long-term success**][2]. ]
-
+[**阅读我们的相关文章，**[**IT自动化最佳实践：持久成功的7个关键点**][2]. ]
 With that in mind, we asked a variety of IT leaders for their advice on making the case for automation in your organization:
 
 ## 1. Show people what’s in it for them
