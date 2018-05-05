@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 Useful Resources for Those Who Want to Know More About Linux
 ======
 
