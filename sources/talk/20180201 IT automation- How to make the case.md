@@ -37,13 +37,19 @@ Let’s face it: Self-interest and self-preservation are natural instincts. Tapp
 我们要面对的一点事实是：自我利益和自我保护是本能。利用人们的这种本能是一个吸引他们的好方法：向他们展示自动化策略将如何让他们和他们的工作获益。自动化将会是软件管道中的一个特定过程意味着将会减少在半夜呼叫团队同事来解决故障？他将能让一些人丢弃技术含量低的技能，用更有策略，高效的有序工作代替手动作业，这将会帮助他们的职业生涯更进一步？
 “Convey what’s in it for them, and how it will benefit clients and the whole company,” advises Vipul Nagrath, global CIO at [ADP][3]. “Compare the current state to a brighter future state, where the company enjoys greater stability, agility, efficiency, and security.”
 
-”向他们传达他们能得到什么好处，自动化将会如何让他们的客户和公司受益，“
+”向他们传达他们能得到什么好处，自动化将会如何让他们的客户和公司受益，“来自vipual的建议，ADP全球首席技术官。”将现在的状态和未来光明的未来进行对比，展现公司将会变得如何稳定，敏捷，高效和安全。“
 
 The same approach holds true when making the case outside of IT; just lighten up on the jargon when explaining the benefits to non-technical stakeholders, Nagrath says.
 
+这样的方法同样适用于IT领域之外的其他领域；只要在向非技术领域的股东们全是利益的时候解释清楚一些术语即可，Nagrath 说道。
+
 Setting up a before-and-after picture is a good storytelling device for helping people see the upside.
 
+设置好前后的情景是一个不错的帮助人们理解的更透彻的故事机。
+
 “You want to paint a picture of the current state that people can relate to,” Nagrath says. “Present what’s working, but also highlight what’s causing teams to be less than agile.” Then explain how automating certain processes will improve that current state.
+
+
 
 ## 2. Connect automation to specific business goals
 
