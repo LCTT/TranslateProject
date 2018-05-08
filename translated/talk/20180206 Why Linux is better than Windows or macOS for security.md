@@ -1,4 +1,3 @@
-fuzheng1998 translating
 
 为什么 Linux 比 Windows 和 macOS 的安全性好
 ======
