@@ -49,13 +49,18 @@ Setting up a before-and-after picture is a good storytelling device for helping 
 
 “You want to paint a picture of the current state that people can relate to,” Nagrath says. “Present what’s working, but also highlight what’s causing teams to be less than agile.” Then explain how automating certain processes will improve that current state.
 
-
+“你要描述一副人们能够联想到的当前状态的画面，”Nagrath 说。“描述现在是什么工作，但也要重点强调是什么导致团队的工作效率不够敏捷。”然后再阐释自动化过程将如何提高现在的状态。
 
 ## 2. Connect automation to specific business goals
+## 2.将自动化和特定的商业目标绑定在一起
 
 Part of making a strong case entails making sure people understand that you’re not just trend-chasing. If you’re automating simply for the sake of automating, people will sniff that out and become more resistant – perhaps especially within IT.
 
+一个强有力的案列的一部分要确保人们理解你不只是在追逐潮流趋势。如果i只是为了自动化而自动化，人们会很快察觉到进而会更加抵制的-也许在IT界更是如此。
+
 “The case for automation needs to be driven by a business demand signal, such as revenue or operating expense,” says David Emerson, VP and deputy CISO at [Cyxtera][4]. “No automation endeavor is self-justifying, and no technical feat, generally, should be a means unto itself, unless it’s a core competency of the company.”
+
+“”
 
 Like Nagrath, Emerson recommends promoting the incentives associated with achieving the business goals of automation, and working toward these goals (and corresponding incentives) in an iterative, step-by-step fashion.
 
