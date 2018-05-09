@@ -1,74 +1,72 @@
-translating---geekpi
-
-Enhance your Python with an interactive shell
+使用交互式 shell 来增强你的 Python
 ======
 ![](https://fedoramagazine.org/wp-content/uploads/2018/03/python-shells-816x345.jpg)
-The Python programming language has become one of the most popular languages used in IT. One reason for this success is it can be used to solve a variety of problems. From web development to data science, machine learning to task automation, the Python ecosystem is rich in popular frameworks and libraries. This article presents some useful Python shells available in the Fedora packages collection to make development easier.
+Python 编程语言已经成为 IT 中使用的最流行的语言之一。成功的一个原因是它可以用来解决各种问题。从网站开发到数据科学、机器学习到任务自动化，Python 生态系统有丰富的框架和库。本文将介绍 Fedora 软件包集合中提供的一些有用的 Python shell 来简化开发。
 
 ### Python Shell
 
-The Python Shell lets you use the interpreter in an interactive mode. It’s very useful to test code or try a new library. In Fedora you can invoke the default shell by typing python3 in a terminal session. Some more advanced and enhanced shells are available to Fedora, though.
+Python Shell 让你以交互模式使用解释器。在测试代码或尝试新库时非常有用。在 Fedora 中，你可以通过在终端会话中输入 python3 来调用默认的 shell。虽然 Fedora 提供了一些更高级和增强的 shell。
 
 ### IPython
 
-IPython provides many useful enhancements to the Python shell. Examples include tab completion, object introspection, system shell access and command history retrieval. Many of these features are also used by the [Jupyter Notebook][1] , since it uses IPython underneath.
+IPython 为 Python shell 提供了许多有用的增强功能。例子包括 tab 补全，对象内省，系统 shell 访问和命令历史检索。许多功能也被 [Jupyter Notebook][1] 使用，因为它底层使用 IPython。
 
-#### Install and run IPython
+#### 安装和运行 IPython
 ```
 dnf install ipython3
 ipython3
 
 ```
 
-Using tab completion prompts you with possible choices. This features comes in handy when you use an unfamiliar library.
+使用 tab 补全会提示你可能的选择。当你使用不熟悉的库时，此功能会派上用场。
 
 ![][2]
 
-If you need more information, use the documentation by typing the ? command. For more details, you can use the ?? command.
+如果你需要更多信息，输入 ? 命令使用文档。有关更多详细信息，你可以使用 ?? 命令。
 
 ![][3]
 
-Another cool feature is the ability to execute a system shell command using the ! character. The result of the command can then be referenced in the IPython shell.
+另一个很酷的功能是使用 ! 字符执行系统 shell 命令的能力。然后可以在 IPython shell 中引用该命令的结果。
 
 ![][4]
 
-A comprehensive list of IPython features is available in the [official documentation][5].
+IPython 完整的功能列表可在[官方文档][5]中找到。
 
 ### bpython
 
-bpython doesn’t do as much as IPython, but nonetheless it provides a useful set of features in a simple and lightweight package. Among other features, bpython provides:
+bpython 并不能像 IPython 做那么多，但它却在一个简单轻量级包中提供了一系列有用功能。除其他功能之外，bpython 提供：
 
-  * In-line syntax highlighting
-  * Autocomplete with suggestions as you type
-  * Expected parameter list
-  * Ability to send or save code to a pastebin service or file
+  * 内嵌语法高亮显示
+  * 在你输入时提供自动补全建议
+  * 可预期的参数列表
+  * 能够将代码发送或保存到 pastebin 服务或文件中
 
 
 
-#### Install and run bpython
+#### 安装和运行 bpython
 ```
 dnf install bpython3
 bpython3
 
 ```
 
-As you type, bpython offers you choices to autocomplete your code.
+在你输入的时候，bpython 为你提供了选择来自动补全你的代码。
 
 ![][6]
 
-When you call a function or method, the expected parameters and the docstring are automatically displayed.
+当你调用函数或方法时，会自动显示需要的参数和文档字符串。
 
 ![][7]
 
-Another neat feature is the ability to open the current bpython session in an external editor (Vim by default) using the function key F7. This is very useful when testing more complex programs.
+另一个很好的功能是可以使用功能键 F7 在外部编辑器（默认为 Vim）中打开当前的 bpython 会话。这在测试更复杂的程序时非常有用。
 
-For more details about configuration and features, consult the bpython [documentation][8].
+有关配置和功能的更多细节，请参考 bpython [文档][8]。
 
-### Conclusion
+### 总结
 
-Using an enhanced Python shell is a good way to increase productivity. It gives you enhanced features to write a quick prototype or try out a new library. Are you using an enhanced Python shell? Feel free to mention it in the comment section below.
+使用增强的 Python shell 是提高生产力的好方法。它为你提供增强的功能来编写快速原型或尝试新库。你在使用增强的 Python shell 吗？请随意在评论区留言。
 
-Photo by [David Clode][9] on [Unsplash][10]
+图片由 [David Clode][9] 在 [Unsplash][10] 上发布
 
 
 --------------------------------------------------------------------------------
@@ -77,7 +75,7 @@ via: https://fedoramagazine.org/enhance-python-interactive-shell/
 
 作者：[Clément Verna][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
