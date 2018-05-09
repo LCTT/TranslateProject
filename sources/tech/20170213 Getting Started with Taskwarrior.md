@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 Getting Started with Taskwarrior
 ======
 Taskwarrior is a flexible [command-line task management program][1]. In their [own words][2]:
