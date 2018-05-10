@@ -1,3 +1,5 @@
+Translating by XiatianSummer@Github
+
 zzupdate - Single Command To Upgrade Ubuntu
 ======
 Ubuntu 18.04 was already out and got good feedback from multiple community because Ubuntu 18.04 is the most exciting release of Ubuntu in years.
