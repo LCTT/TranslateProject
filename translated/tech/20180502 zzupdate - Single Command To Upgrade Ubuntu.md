@@ -1,36 +1,35 @@
-zzupdate - Single Command To Upgrade Ubuntu
+zzupdate —— 升级 Ubuntu 的简单命令
 ======
-Ubuntu 18.04 was already out and got good feedback from multiple community because Ubuntu 18.04 is the most exciting release of Ubuntu in years.
+Ubuntu 18.04 版本已经发布，并得到各个社区的一致好评，因为 Ubuntu 18.04 可能是 Ubuntu 多年来最令人兴奋的版本。
 
-By default Ubuntu and it’s derivatives can be upgraded from one version to another version using standard commands, which is official and recommended way to upgrade the system to latest version.
+通常情况下，Ubuntu 及其衍生版可以使用命令从一个版本升级到最新版本或者其它版本，这也是官方推荐的升级方式。
 
-### Ubuntu 18.04 Features/Highlights
+### Ubuntu 18.04 特性/亮点
 
-This release is contains vast of improvement and features and i picked only major things. Navigate to [Ubuntu 18.04 official][1] release page, if you want to know more detailed release information.
+这次更新包含大量改进和新功能，这里只列举的几个主要的。如果您想要更详细的更新信息，请访问 [Ubuntu 18.04 官方][1] 页面。
 
-  * It ships with Linux kernel 4.15, which delivers new features inherited from upstream.
-  * It feature the latest GNOME 3.28
-  * It offers minimal install option similar to RHEL, this allow users to install basic desktop environment with a web browser and core system utilities.
-  * For new installs, a swap file will be used by default instead of a swap partition.
-  * You can enable Livepatch to install Kernel updates without rebooting.
-  * laptops will automatically suspend after 20 minutes of inactivity while on battery power
-  * 32-bit installer images are no longer provided for Ubuntu Desktop
+  - 使用 Linux 4.15 内核，提供了从上游继承的新功能
+  - 它具有最新版本的 GNOME 3.28
+  - 它提供了与 RHEL 相似的最简安装选项，该选项可安装只包含一个 web 浏览器和核心系统程序的基本桌面环境
+  - 对于新安装，交换文件将取代默认的交换分区
+  - 您可以启用 Livepatch 安装内核更新而无需重新启动
+  - 笔记本电脑在使用电池供电时会在无操作 20 分钟后自动待机
+  - 不再提供 32 位的 Ubuntu 桌面安装程序映像
 
 
+**注意：**
+1. 不要忘记备份重要数据。如果升级出现问题，我们将重新安装并恢复数据。
+2. 安装所需时间取决于您的网络状况和安装的程序。
 
-**Note :**
-1) Don’t forget to take backup of your important/valuable data. If something goes wrong we will install freshly and restore the data.
-2) Upgrade will take time based on your Internet connection and application which you have installed.
+### zzupdate 是什么？
 
-### What Is zzupdate?
+我们可以通过使用 [zzupdate][2] 工具中的单个命令将 Ubuntu PC/Server 从一个版本升级到另一个版本。它是一个免费的开源工具，使用它不需要任何脚本知识，因为它只需要配置文件即可运行。
 
-We can upgrade Ubuntu PC/Server from one version to another version with just a single command using [zzupdate][2] utility. It’s a free and open source utility and it doesn’t required any scripting knowledge to work on this because it’s purely configfile-driven script.
+工具中提供两个默认 shell 文件。`setup.sh` 自动安装、更新代码，将脚本转换为一个简单的 zzupdate shell 命令。`zzupdate.sh` 将执行版本间的升级。
 
-There were two shell files are available in the utility, which make the utility to do the work as expected. The provided setup.sh auto-installs/updates the code and makes the script available as a new, simple shell command (zzupdate). The zzupdate.sh will do the actual upgrade from one version to next available version.
+### 如何安装 zzipdate？
 
-### How To Install zzupdate?
-
-To install zzupdate, just execute the following command.
+要安装 zzupdate，只需执行以下命令。
 ```
 $ curl -s https://raw.githubusercontent.com/TurboLabIt/zzupdate/master/setup.sh | sudo sh
 .
@@ -50,21 +49,21 @@ See https://github.com/TurboLabIt/zzupdate for the quickstart guide.
 
 ```
 
-To upgrade the Ubuntu system from one version to another version, you don’t want to run multiple commands and also no need to initiate the reboot. Just fire the below zzupdate command and sit back rest it will take care.
+将 Ubuntu 系统从一个版本升级到另一个版本，您不需要输入很多命令，也不需要重新启动，只需要运行下面的 zzupdate 命令并坐下喝杯咖啡就可以了。
 
-Make a note, When you are upgrading the remote system, i would advise you to use any of the one below utility because it will help you to reconnect the session in case of any disconnection.
+请注意，当您远程升级系统时，建议您使用以下的工具来帮助您在任何断开连接时重新连接会话。
 
-**Suggested Read :** [How To Keep A Process/Command Running After Disconnecting SSH Session][3]
+**建议阅读：** [如何让一个进程/命令在 SSH 连接断开后继续运行][3]
 
-### How To Configure zzupdate [optional]
+### 如何配置 zzupdate（可选）
 
-By default zzupdate works out of the box and no need to configure anything. It’s optional and if you want to configure something yes, you can. To do so, copy the provided sample configuration file `zzupdate.default.conf` to your own `zzupdate.conf` and set your preference.
+默认情况下，zzupdate 可以直接使用，不需要配置任何东西。当然，如果您想要自己配置一些内容，可以的。复制提供的实例配置文件 `zzupdate.default.conf` 到 `zzupdate.conf` 并在 `zzupdate.conf` 中配置您的首选项。
 ```
 $ sudo cp /usr/local/turbolab.it/zzupdate/zzupdate.default.conf /etc/turbolab.it/zzupdate.conf
 
 ```
 
-Open the file and the default values are below.
+打开文件，默认配置如下。
 ```
 $ sudo nano /etc/turbolab.it/zzupdate.conf
 
@@ -77,16 +76,16 @@ SWITCH_PROMPT_TO_NORMAL=0
 
 ```
 
-  * **`REBOOT=1 :`**System will automatically reboot once upgrade is done.
-  * **`REBOOT_TIMEOUT=15 :`**Default time out value for reboot.
-  * **`VERSION_UPGRADE=1 :`**It perform version upgrade from one version to another.
-  * **`VERSION_UPGRADE_SILENT=0 :`**It disable automatic upgrade perform version upgrade from one version to another.
-  * **`COMPOSER_UPGRADE=1 :`**This will automatically upgrade the composer.
-  * **`SWITCH_PROMPT_TO_NORMAL=0 :`**If it’s “0” then it looks for same kind of version upgrade. If you are running on LTS version then it will looking for LTS version upgrade and not for the normal release upgrade. If it’s “1” then it looks for the latest release whether you are running an LTS or a normal release.
+  * **`REBOOT=1 :`**系统在更新完成后自动重启
+  * **`REBOOT_TIMEOUT=15 :`**重启的默认超时值
+  * **`VERSION_UPGRADE=1 :`**执行从一个版本到另一个版本的版本升级 
+  * **`VERSION_UPGRADE_SILENT=0 :`**禁用自动升级
+  * **`COMPOSER_UPGRADE=1 :`**自动升级
+  * **`SWITCH_PROMPT_TO_NORMAL=0 :`**如果值为 `0`，将寻找相同种类的版本升级。例如您正在运行 LTS 的版本，那么将寻找 LTS 的版本升级，而不是用于正常版本升级。如果值为 `1`，那么无论您是运行 LTS 还是正常版本，都会查找最新版本
 
 
 
-I’m currently running Ubuntu 17.10 and see the details.
+我现在使用 Ubuntu 17.10 并查看详细信息。
 ```
 $ cat /etc/*-release
 DISTRIB_ID=Ubuntu
@@ -108,7 +107,7 @@ UBUNTU_CODENAME=artful
 
 ```
 
-To upgrade the Ubuntu to latest release, just execute the below command.
+要升级 Ubuntu 到最新版本，只需要执行以下命令。
 ```
 $ sudo zzupdate
 
@@ -185,7 +184,7 @@ Reading state information... Done
 
 ```
 
-We need to disable `Third Party` repository by hitting the `Enter` button to move forward the upgrade.
+我们需要按下 `Enter` 按钮禁用 `Third Party` 仓库以继续升级。
 ```
 Updating repository information
 
@@ -213,7 +212,7 @@ Calculating the changes
 
 ```
 
-Start Downloading the `Ubuntu 18.04 LTS` packages, It will take a while based on your Internet connection. Its time to have a cup of coffee.
+开始下载 `Ubuntu 18.04 LTS` 软件包，所需时间取决于您的网络状况，一般情况下这将需要几分钟。
 ```
 Do you want to start the upgrade?
 
@@ -248,7 +247,7 @@ Fetched 999 MB in 6s (721 kB/s)
 
 ```
 
-Few services need to be restart, While installing new packages. Hit `Yes` button, it will automatically restart the required services.
+安装新软件包时，很少有服务需要重新启动。 点击 `Yes` 按钮，它会自动重启所需的服务。
 ```
 Upgrading
 Inhibiting until Ctrl+C is pressed...
@@ -280,7 +279,7 @@ Progress: [ 95%]
 
 ```
 
-It’s time to remove obsolete (Which is anymore needed for system) packages. Hit `y` to remove it.
+现在删除旧版的、系统不再需要的包。点击  `y` 以删除。
 ```
 Searching for obsolete software
  ing package lists... 97%
@@ -313,7 +312,7 @@ Fetched 0 B in 0s (0 B/s)
 
 ```
 
-Upgrade is successfully completed and need to restart the system. Hit `Y` to restart the system.
+升级成功，需要重启系统。点击 `Y` 以重启系统。
 ```
 System upgrade is complete.
 
@@ -326,9 +325,9 @@ Continue [yN]y
 
 ```
 
-**`Note :`** Few times, it will ask you to confirm the configuration file replacement to move forward the installation.
+**注意：** 少数情况下，会要求您确认配置文件替换以继续安装。
 
-See the upgraded system details.
+查看升级后的系统详情。
 ```
 $ cat /etc/*-release
 DISTRIB_ID=Ubuntu
@@ -356,7 +355,7 @@ via: https://www.2daygeek.com/zzupdate-single-command-to-upgrade-ubuntu-18-04/
 
 作者：[PRAKASH SUBRAMANIAN][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[XiatianSummer](https://github.com/XiatianSummer)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
