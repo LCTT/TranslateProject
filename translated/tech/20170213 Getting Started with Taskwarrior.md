@@ -1,23 +1,21 @@
-Translating by MjSeven
+Taskwarrior 入门
+=====
 
+Taskwarrior 是一个灵活的[命令行任务管理程序][1]，用他们[自己的话说][2]：
 
-Getting Started with Taskwarrior
-======
-Taskwarrior is a flexible [command-line task management program][1]. In their [own words][2]:
+Taskwarrior 是从你的命令行管理你的 TODO 列表。它灵活，快速，高效，不显眼，它默默做自己的事情让你避免自己管理。
 
-Taskwarrior manages your TODO list from your command line. It is flexible, fast, efficient, unobtrusive, does its job then gets out of your way.
+Taskwarrior 是高度可定制的，但也可以“立即使用”。在本文中，我们将向你展示添加和完成任务的基本命令，然后我们将介绍几个更高级的命令。最后，我们将向你展示一些基本的配置设置，以开始自定义你的设置。
 
-Taskwarrior is highly customizable, but can also be used "right out of the box." In this article, we'll show you the basic commands to add and complete tasks. Then we'll cover a couple more advanced commands. And finally, we'll show you some basic configuration settings to begin customizing your setup.
+### 安装 Taskwarrior
 
-### Installing Taskwarrior
-
-Taskwarrior is available in the Fedora repositories, so installing it is simple:
+Taskwarrior 在 Fedora 仓库中是可用的，所有安装它很容易：
 ```
 sudo dnf install task
 
 ```
 
-Once installed, run `task`. This first run will create a `~/.taskrc` file for you.
+一旦完成安装，运行 `task`。第一次运行将会创建一个 `~/.taskrc` 文件。
 ```
 $ **task**
 A configuration file could not be found in ~
@@ -28,16 +26,16 @@ No matches.
 
 ```
 
-### Adding Tasks
+### 添加任务
 
-Adding tasks is fast and unobtrusive.
+添加任务快速而不显眼。
 ```
 $ **task add Plant the wheat**
 Created task 1.
 
 ```
 
-Run `task` or `task list` to show upcoming tasks.
+运行 `task` 或者 `task list` 来显示即将来临的任务。
 ```
 $ **task list**
 
@@ -48,7 +46,7 @@ ID Age Description Urg
 
 ```
 
-Let's add a few more tasks to round out the example.
+让我们添加一些任务来完成这个示例。
 ```
 $ **task add Tend the wheat**
 Created task 2.
@@ -61,7 +59,7 @@ Created task 5.
 
 ```
 
-Run `task` again to view the list.
+再次运行 `task` 来查看列表。
 ```
 [task next]
 
@@ -76,9 +74,9 @@ ID Age Description Urg
 
 ```
 
-### Completing Tasks
+### 完成任务
 
-To mark a task as complete, look up its ID and run:
+将一个任务标记为完成， 查找其 ID 并运行：
 ```
 $ **task 1 done**
 Completed task 1 'Plant the wheat'.
@@ -86,7 +84,7 @@ Completed 1 task.
 
 ```
 
-You can also mark a task done with its description.
+你也可以用它的描述来标记一个任务已完成。
 ```
 $ **task 'Tend the wheat' done**
 Completed task 1 'Tend the wheat'.
@@ -94,31 +92,32 @@ Completed 1 task.
 
 ```
 
-With `add`, `list` and `done`, you're all ready to get started with Taskwarrior.
+通过使用 `add`, `list` 和 `done`，你可以说已经入门了。
 
-### Setting Due Dates
+### 设定截止日期
 
-Many tasks do not require a due date:
+很多任务不需要一个截止日期：
 ```
 task add Finish the article on Taskwarrior
 
 ```
 
-But sometimes, setting a due date is just the kind of motivation you need to get productive. Use the `due` modifier when adding a task to set a specific due date.
+但是有时候，设定一个截止日期正是你需要提高效率的动力。在添加任务时使用 `due` 修饰符来设置特定的截止日期。
+
 ```
 task add Finish the article on Taskwarrior due:tomorrow
 
 ```
 
-`due` is highly flexible. It accepts specific dates ("2017-02-02"), or ISO-8601 ("2017-02-02T20:53:00Z"), or even relative time ("8hrs"). See the [Date & Time][3] documentation for all the examples.
+`due` 非常灵活。它接受特定日期 ("2017-02-02") 或 ISO-8601 ("2017-02-02T20:53:00Z")，甚至相对时间 ("8hrs")。可以查看所有示例的 [Date & Time][3] 文档。
 
-Dates go beyond due dates too. Taskwarrior has `scheduled`, `wait`, and `until`.
+日期也会超出截止日期，Taskwarrior 有 `scheduled`, `wait` 和 `until` 选项。
 ```
 task add Proof the article on Taskwarrior scheduled:thurs
 
 ```
 
-Once the date (Thursday in this example) passes, the task is tagged with the `READY` virtual tag. It will then show up in the `ready` report.
+一旦日期（本例中的星期四）通过，该任务就会被标记为 `READY` 虚拟标记。它会显示在 `ready` 报告中。
 ```
 $ **task ready**
 
@@ -127,15 +126,15 @@ ID Age S Description Urg
 
 ```
 
-To remove a date, `modify` the task with a blank value:
+要移除一个日期，使用空白值来 `modify` 任务：
 ```
 $ task 1 modify scheduled:
 
 ```
 
-### Searching Tasks
+### 查找任务
 
-No task list is complete without the ability to search with regular expressions, right?
+如果没有使用正则表达式搜索的能力，任务列表是不完整的，对吧？
 ```
 $ **task '/.* the wheat/' list**
 
@@ -147,9 +146,9 @@ ID Age Project Description Urg
 
 ```
 
-### Customizing Taskwarrior
+### 自定义 Taskwarrior
 
-Remember that file we created back in the beginning (`~/.taskrc`). Let's take at the defaults:
+记得我们在开头创建的文件 (`~/.taskrc`)吗？让我们来看看默认设置：
 ```
 # [Created by task 2.5.1 2/9/2017 16:39:14]
 # Taskwarrior program configuration file.
@@ -185,13 +184,13 @@ data.location=~/.task
 
 ```
 
-The only active option right now is `data.location=~/.task`. To view active configuration settings (including the built-in defaults), run `show`.
+现在唯一有效的选项是 `data.location=~/.task`。要查看活动配置设置（包括内置的默认设置），运行 `show`。
 ```
 task show
 
 ```
 
-To change a setting, use `config`.
+改变设置，使用 `config`。
 ```
 $ **task config displayweeknumber no**
 Are you sure you want to add 'displayweeknumber' with a value of 'no'? (yes/no) yes
@@ -199,29 +198,29 @@ Config file /home/link/.taskrc modified.
 
 ```
 
-### Examples
+### 示例
 
-These are just some of the things you can do with Taskwarrior.
+这些只是你可以用 Taskwarrior 做的一部分事情。
 
-Assign a project to your tasks:
+为你的任务分配一个项目：
 ```
 task 'Fix leak in the roof' modify project:Home
 
 ```
 
-Use `start` to mark what you were working on. This can help you remember what you were working on after the weekend:
+使用 `start` 来标记你正在做的事情，这可以帮助你回忆起你周末后在做什么：
 ```
 task 'Fix bug #141291' start
 
 ```
 
-Use relevant tags:
+使用相关的标签：
 ```
 task add 'Clean gutters' +weekend +house
 
 ```
 
-Be sure to read the [complete documentation][4] to learn all the ways you can catalog and organize your tasks.
+务必阅读[完整文档][4]以了解你可以编目和组织任务的所有方式。
 
 
 --------------------------------------------------------------------------------
@@ -229,7 +228,7 @@ Be sure to read the [complete documentation][4] to learn all the ways you can ca
 via: https://fedoramagazine.org/getting-started-taskwarrior/
 
 作者：[Link Dupont][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[MjSeven](https://github.com/MjSeven)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
