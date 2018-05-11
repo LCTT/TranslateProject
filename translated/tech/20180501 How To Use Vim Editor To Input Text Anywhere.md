@@ -89,14 +89,3 @@ via: https://www.ostechnix.com/how-to-use-vim-editor-to-input-text-anywhere/
 [a]:https://www.ostechnix.com/author/sk/
 [2]:http://www.ostechnix.com/wp-content/uploads/2018/05/vim-anywhere-1-1.png
 [3]:http://www.ostechnix.com/wp-content/uploads/2018/05/vim-anywhere-2.png
-
-
-
-
-
-
-
-
-
-
-
