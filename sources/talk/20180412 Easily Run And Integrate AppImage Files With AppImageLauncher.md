@@ -1,3 +1,5 @@
+translating---geekpi
+
 Easily Run And Integrate AppImage Files With AppImageLauncher
 ======
 Did you ever download an AppImage file and you didn't know how to use it? Or maybe you know how to use it but you have to navigate to the folder where you downloaded the .AppImage file every time you want to run it, or manually create a launcher for it.
