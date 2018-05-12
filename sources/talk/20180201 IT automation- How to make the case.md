@@ -60,19 +60,30 @@ Part of making a strong case entails making sure people understand that you’re
 
 “The case for automation needs to be driven by a business demand signal, such as revenue or operating expense,” says David Emerson, VP and deputy CISO at [Cyxtera][4]. “No automation endeavor is self-justifying, and no technical feat, generally, should be a means unto itself, unless it’s a core competency of the company.”
 
-“”
+“自动化需要商业需求的驱动，列如收入和运营开销，” David说道，Cyxtera的副总裁和首席信息安全官。“没有自动化的努力是自我辩护的，而且任何技术专长都不应该被当做一种手段，除非它是公司的一项核心能力”
 
 Like Nagrath, Emerson recommends promoting the incentives associated with achieving the business goals of automation, and working toward these goals (and corresponding incentives) in an iterative, step-by-step fashion.
 
+像Nagrath一样，Emerson建议将达到自动化的商业目标和奖励措施挂钩，用迭代式的循序渐进的方式推进这些目标和相关的激励措施。
+
 ## 3. Break the automation plan into manageable pieces
+## 3. 将自动化计划分解为可管理的条目
 
 Even if your automation strategy is literally “automate everything,” that’s a tough sell (and probably unrealistic) for most organizations. You’ll make a stronger case with a plan that approaches automation manageable piece by manageable piece, and that enables greater flexibility to adapt along the way.
 
+即使你的自动化策略字面上是“一切都自动化，”对大多数组织来说那也是很艰难的而且可能是没有灵活性的。你需要一个能够将自动化目标分解为可管理的目标的计划来制定一个强有力的方案。而且这将能够创造很大的灵活性来适应之后漫长的道路。
+
 “When making a case for automation, I recommend clearly illustrating the incentive to move to an automated process, and allowing iteration toward that goal to introduce and prove the benefits at lower risk,” Emerson says.
+
+“当制定一个自动化方案的时候，我建议详细的阐明推进自动化进程的奖励措施，而且允许迭代朝着目标前进来介绍和证明利益处于一个低风险水平，”Emerson说道。
 
 Sergey Zuev, founder at [GA Connector][5], shares an in-the-trenches account of why automating incrementally is crucial – and how it will help you build a stronger, longer-lasting argument for your strategy. Zuev should know: His company’s tool automates the import of data from CRM applications into Google Analytics. But it was actually the company’s internal experience automating its own customer onboarding process that led to a lightbulb moment.
 
+Sergey Zuev, GA Connector的创始人，分享了一个为什么自动化如此重要的快节奏体验的报告-它将如何帮助你的策略建立一个强壮持久的论点。Zuevz应该知道：他的公司的自动化工具将公司的客户关系应用数据导入谷歌分析。但实际上是公司的内部经验使顾客的培训进程自动化从而出现了一个闪耀的时刻。
+
 “At first, we tried to build the whole onboarding funnel at once, and as a result, the project dragged [on] for months,” Zuev says. “After realizing that it [was] going nowhere, we decided to select small chunks that would have the biggest immediate effect, and start with that. As a result, we managed to implement one of the email sequences in just a week, and are already reaping the benefits of the desecrated manual effort.”
+
+
 
 ## 4. Sell the big-picture benefits too
 
