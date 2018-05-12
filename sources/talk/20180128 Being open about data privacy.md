@@ -1,4 +1,4 @@
-Being open about data privacy
+Translating by FelixYFZ Being open about data privacy
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/GOV_opendata.png?itok=M8L2HGVx)
 
