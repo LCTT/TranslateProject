@@ -1,132 +1,77 @@
-IT automation: How to make the case
 IT自动化:如何去实现
 ======
-At the start of any significant project or change initiative, IT leaders face a proverbial fork in the road.
 
-在任何项目或者初始变化开始的时候，TI的管理者在前进的道路书面临着普遍的抉择。
-
-Path #1 might seem to offer the shortest route from A to B: Simply force-feed the project to everyone by executive mandate, essentially saying, “You’re going to do this – or else.”
+在任何重要的项目或变更刚开始的时候，TI的管理者在前进的道路上面临着普遍的抉择。
 
 第一条路径看上去是提供了一个从A到B的最短路径：简单的把项目强制分配给每个人去执行，本质来说就是你要么按照要求去做要么就不要做了。
 
-Path #2 might appear less direct, because on this journey you take the time to explain the strategy and the reasons behind it. In fact, you’re going to be making pit stops along this route, rather than marathoning from start to finish: “Here’s what we’re doing – and why we’re doing it.”
-
 第二条路径可能看上去会不是很直接，因为要通过这条路径你要花时间去解释项目背后的策略以及原因。你会沿着这条路线设置停靠站点而不是从起点到终点的马拉松：
-“着就是我们正在做的-和为什么我们这么做。”
-
-Guess which path bears better results?
+“这就是我们正在做的-和为什么我们这么做。”
 
 猜想一下哪条路径会赢得更好的结果？
 
-If you said #2, you’ve traveled both paths before – and experienced the results first-hand. Getting people on board with major changes beforehand is almost always the smarter choice.
-
-如果你猜的是路径2，你肯定是以前都经历过这两条路径-而且经历了第一手的结局。让人们参与重大变革总会是最明智的选择。
-
-IT leaders know as well as anyone that with significant change often comes [significant fear][1], skepticism, and other challenges. It may be especially true with IT automation. The term alone sounds scary to some people, and it is often tied to misconceptions. Helping people understand the what, why, and how of your company’s automation strategy is a necessary step to achieving your goals associated with that strategy.
+如果你选的是路径2，你肯定是以前都经历过这两条路径-而且经历了第一次的结局。让人们参与到重大变革中总会是最明智的选择。
 
 IT领导者也知道重大的变革总会带来严重的恐慌、怀疑，和其他的挑战。IT自动化确实是很正确的改变。这个术语对某些人来说是很可怕的，而且容易被曲解。帮助人们理解你的公司需要IT自动化的必要性的原因以及如何去实现是达到你的目标和策略的重要步骤。
 
-[ **Read our related article,** [**IT automation best practices: 7 keys to long-term success**][2]. ]
 [**阅读我们的相关文章，**[**IT自动化最佳实践：持久成功的7个关键点**][2]. ]
-With that in mind, we asked a variety of IT leaders for their advice on making the case for automation in your organization:
-考虑到这一点，我们咨询了许多IT管理者关于如何在你的组织中实现IT自动化。
-## 1. Show people what’s in it for them
-## 1. 向人们展示它的优点
-Let’s face it: Self-interest and self-preservation are natural instincts. Tapping into that human tendency is a good way to get people on board: Show people how your automation strategy will benefit them and their jobs. Will automating a particular process in the software pipeline mean fewer middle-of-the-night calls for team members? Will it enable some people to dump low-skill, manual tasks in favor of more strategic, higher-order work – the sort that helps them take the next step in their career?
 
-我们要面对的一点事实是：自我利益和自我保护是本能。利用人们的这种本能是一个吸引他们的好方法：向他们展示自动化策略将如何让他们和他们的工作获益。自动化将会是软件管道中的一个特定过程意味着将会减少在半夜呼叫团队同事来解决故障？他将能让一些人丢弃技术含量低的技能，用更有策略，高效的有序工作代替手动作业，这将会帮助他们的职业生涯更进一步？
-“Convey what’s in it for them, and how it will benefit clients and the whole company,” advises Vipul Nagrath, global CIO at [ADP][3]. “Compare the current state to a brighter future state, where the company enjoys greater stability, agility, efficiency, and security.”
+考虑到这一点，我们咨询了许多IT管理者关于如何在你的组织中实现IT自动化。
+
+## 1. 向人们展示它的优点
+
+我们要面对的一点事实是：自我利益和自我保护是本能。利用人们的这种本能是一个吸引他们的好方法：向他们展示自动化策略将如何让他们和他们的工作获益。自动化将会是软件管道中的一个特定过程意味着将会减少在半夜呼叫团队同事来解决故障？他将能让一些人丢弃技术含量低的技能，用更有策略，高效的有序工作代替手工作业，这将会帮助他们的职业生涯更进一步？
 
 ”向他们传达他们能得到什么好处，自动化将会如何让他们的客户和公司受益，“来自vipual的建议，ADP全球首席技术官。”将现在的状态和未来光明的未来进行对比，展现公司将会变得如何稳定，敏捷，高效和安全。“
 
-The same approach holds true when making the case outside of IT; just lighten up on the jargon when explaining the benefits to non-technical stakeholders, Nagrath says.
-
-这样的方法同样适用于IT领域之外的其他领域；只要在向非技术领域的股东们全是利益的时候解释清楚一些术语即可，Nagrath 说道。
-
-Setting up a before-and-after picture is a good storytelling device for helping people see the upside.
+这样的方法同样适用于IT领域之外的其他领域；只要在向非技术领域的股东们解读利益的时候解释清楚一些术语即可，Nagrath 说道。
 
 设置好前后的情景是一个不错的帮助人们理解的更透彻的故事机。
 
-“You want to paint a picture of the current state that people can relate to,” Nagrath says. “Present what’s working, but also highlight what’s causing teams to be less than agile.” Then explain how automating certain processes will improve that current state.
+“你要描述一幅人们能够联想到的当前状态的画面，”Nagrath 说。“描述现在是什么工作，但也要重点强调是什么导致团队的工作效率不够敏捷。”然后再阐释自动化过程将如何提高现在的状态。
 
-“你要描述一副人们能够联想到的当前状态的画面，”Nagrath 说。“描述现在是什么工作，但也要重点强调是什么导致团队的工作效率不够敏捷。”然后再阐释自动化过程将如何提高现在的状态。
-
-## 2. Connect automation to specific business goals
 ## 2.将自动化和特定的商业目标绑定在一起
-
-Part of making a strong case entails making sure people understand that you’re not just trend-chasing. If you’re automating simply for the sake of automating, people will sniff that out and become more resistant – perhaps especially within IT.
 
 一个强有力的案列的一部分要确保人们理解你不只是在追逐潮流趋势。如果i只是为了自动化而自动化，人们会很快察觉到进而会更加抵制的-也许在IT界更是如此。
 
-“The case for automation needs to be driven by a business demand signal, such as revenue or operating expense,” says David Emerson, VP and deputy CISO at [Cyxtera][4]. “No automation endeavor is self-justifying, and no technical feat, generally, should be a means unto itself, unless it’s a core competency of the company.”
-
 “自动化需要商业需求的驱动，列如收入和运营开销，” David说道，Cyxtera的副总裁和首席信息安全官。“没有自动化的努力是自我辩护的，而且任何技术专长都不应该被当做一种手段，除非它是公司的一项核心能力”
-
-Like Nagrath, Emerson recommends promoting the incentives associated with achieving the business goals of automation, and working toward these goals (and corresponding incentives) in an iterative, step-by-step fashion.
 
 像Nagrath一样，Emerson建议将达到自动化的商业目标和奖励措施挂钩，用迭代式的循序渐进的方式推进这些目标和相关的激励措施。
 
-## 3. Break the automation plan into manageable pieces
 ## 3. 将自动化计划分解为可管理的条目
-
-Even if your automation strategy is literally “automate everything,” that’s a tough sell (and probably unrealistic) for most organizations. You’ll make a stronger case with a plan that approaches automation manageable piece by manageable piece, and that enables greater flexibility to adapt along the way.
 
 即使你的自动化策略字面上是“一切都自动化，”对大多数组织来说那也是很艰难的而且可能是没有灵活性的。你需要一个能够将自动化目标分解为可管理的目标的计划来制定一个强有力的方案。而且这将能够创造很大的灵活性来适应之后漫长的道路。
 
-“When making a case for automation, I recommend clearly illustrating the incentive to move to an automated process, and allowing iteration toward that goal to introduce and prove the benefits at lower risk,” Emerson says.
-
 “当制定一个自动化方案的时候，我建议详细的阐明推进自动化进程的奖励措施，而且允许迭代朝着目标前进来介绍和证明利益处于一个低风险水平，”Emerson说道。
-
-Sergey Zuev, founder at [GA Connector][5], shares an in-the-trenches account of why automating incrementally is crucial – and how it will help you build a stronger, longer-lasting argument for your strategy. Zuev should know: His company’s tool automates the import of data from CRM applications into Google Analytics. But it was actually the company’s internal experience automating its own customer onboarding process that led to a lightbulb moment.
 
 Sergey Zuev, GA Connector的创始人，分享了一个为什么自动化如此重要的快节奏体验的报告-它将如何帮助你的策略建立一个强壮持久的论点。Zuevz应该知道：他的公司的自动化工具将公司的客户关系应用数据导入谷歌分析。但实际上是公司的内部经验使顾客培训进程自动化从而出现了一个闪耀的时刻。
 
-“At first, we tried to build the whole onboarding funnel at once, and as a result, the project dragged [on] for months,” Zuev says. “After realizing that it [was] going nowhere, we decided to select small chunks that would have the biggest immediate effect, and start with that. As a result, we managed to implement one of the email sequences in just a week, and are already reaping the benefits of the desecrated manual effort.”
-
 “起初， 我们曾尝试去建立整个培训机制，结果这个项目搁浅了好几个月，”Zuev说道。“认识到这将无法继续下去之后，我们决定挑选其中的一个能够有巨大的时效的领域，而且立即启动。结果我们只用了一周就实现了其中的电子邮件序列的目标，而且我们已经从被亵渎的体力劳动中获益。”
 
-## 4. Sell the big-picture benefits too
 ## 4. 出售主要部分也有好处
-A step-by-step approach does not preclude painting a bigger picture. Just as it’s a good idea to make the case at the individual or team level, it’s also a good idea for help people understand the company-wide benefits.
 
 循序渐进的方法并不会阻碍构建一个宏伟的蓝图。就像以个人或者团队的水平来制定方案是一个好主意，帮助人们理解全公司的利益也是一个不错的主意。
 
-“If we can accelerate the time it takes for the business to get what it needs, it will silence the skeptics.”
-
-“如果我们能够加速达到商业需求所需的时间，那么将会消除一切质疑。”
-
-Eric Kaplan, CTO at [AHEAD][6], agrees that using small wins to show automation’s value is a smart strategy for winning people over. But the value those so-called “small” wins reveal can actually help you sharpen the big picture for people. Kaplan points to the value of individual and organizational time as an area everyone can connect with easily
+“如果我们能够加速达到商业需求所需的时间，那么一切质疑将会平息。”
 
 Eric Kaplan, AHEAD的首席技术官，赞同通过小范围的胜利来展示自动化的价值是一个赢得人心的聪明策略。但是那些所谓的“小的”的价值揭示能够帮助你提高人们的整体形象。Kaplan指出个人和组织间的价值是每个人都可以容易联系到的领域。
 
-“The best place to do this is where you can show savings in terms of time,” Kaplan says. “If we can accelerate the time it takes for the business to get what it needs, it will silence the skeptics.”
-
 “最能展现的地方就是你能够在节约多少时间，”Kaaplan说。“如果我们能够加速达到商业需求所需的时间，那么一切质疑将会消失。”
 
-Time and scalability are powerful benefits business and IT colleagues, both charged with growing the business, can grasp.
 时间和可伸缩性是业务和IT同事的强大优势，都被业务的增长控制，能够被控制。
 
-“The result of automation is scalability – less effort per person to maintain and grow your IT environment, as [Red Hat][7] VP, Global Services John Allessio recently [noted][8]. “If adding manpower is the only way to grow your business, then scalability is a pipe dream. Automation reduces your manpower requirements and provides the flexibility required for continued IT evolution.” (See his full article, [What DevOps teams really need from a CIO][8].)
+“自动化的结果是伸缩灵活的-每个人只需较少的努力就能保持和改善你的IT环境”，红帽的全球服务副总裁John最近提到。“如果增加人力是提升你的商业的唯一途径，那么伸缩灵活就是白日梦。自动化减少了你的人力需求而且提供了IT演进所需的灵活性和韧性。”(详细内容请参考他的文章，[DevOps团队对CIO的真正需求是什么。])
 
-“自动化的结果是伸缩灵活的-每个人只需较少的努力就能保持个改善你的IT环境”，红帽的全球服务副总裁John最近提到。“如果增加人力是提升你的商业的唯一途径，那么伸缩灵活就是白日梦。自动化减少了你的人力需求而且提供了IT演进所需的灵活性和韧性。”(详细内容请参考他的文章，[DevOps团队对CIO的真正需求是什么。])
-
-## 5. Promote the heck out of your results
 ## 5. 推广你的成果。
 
-At the outset of your automation strategy, you’ll likely be making the case based on goals and the anticipated benefits of achieving those goals. But as your automation strategy evolves, there’s no case quite as convincing as one grounded in real-world results.
 在你自动化策略的开始时，你可能是在目标和要达到目标的预期利益上制定方案。但随着你的自动化策略的不断演进，没有什么能够比现实中的实际结果令人信服。
 
-“Seeing is believing,” says Nagrath, ADP’s CIO. “Nothing quiets skeptics like a track record of delivery.”
-“眼见为实，”ADP的首席技术官Nagrath说。“没有什么比追踪记录能够平息怀疑论。”
+“眼见为实，”ADP的首席技术官Nagrath说。“没有什么比追踪记录能够平息质疑。”
 
+那意味着，不仅仅要达到你的目标，还要准时的完成-这是迭代的循序渐进的方法论的另一个不错的解释。
 
-That means, of course, not only achieving your goals, but also doing so on time – another good reason for the iterative, step-by-step approach.
-那意味着，不仅仅要达到你的目标，还有准时的完成-这是迭代的循序渐进的方法论的另一个不错的说辞。
-
-While quantitative results such as percentage improvements or cost savings can speak loudly, Nagrath advises his fellow IT leaders not to stop there when telling your automation story.
 而量化的结果如比列的提高或者成本的节省可以大声宣扬出来，Nagrath建议他的IT领导者的同事们在讲述你们的自动化故事的时候不要仅仅止步于此。
 
-“Making a case for automation is also a qualitative discussion, where we can promote the issues prevented, overall business continuity, reductions in failures/errors, and associates taking on [greater] responsibility as they tackle more value-added tasks.”
 为自动化提供案列也是一个定性的讨论，通过它我们能够促进问题的预防，归总商业的连续性，减伤失败或错误，而且能够在他们处理更有价值的任务时承担更多的责任。
 
 --------------------------------------------------------------------------------
@@ -134,7 +79,7 @@ While quantitative results such as percentage improvements or cost savings can s
 via: https://enterprisersproject.com/article/2018/1/how-make-case-it-automation
 
 作者：[Kevin Casey][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[FelixYFZ](https://github.com/FelixYFZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
