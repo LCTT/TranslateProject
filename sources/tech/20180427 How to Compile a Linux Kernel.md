@@ -1,3 +1,5 @@
+icecoobe translating
+
 How to Compile a Linux Kernel
 ======
 
