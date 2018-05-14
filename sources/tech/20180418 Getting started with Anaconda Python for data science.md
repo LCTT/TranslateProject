@@ -26,9 +26,7 @@ $ bash Anaconda3-5.1.0-Linux-x86_64.sh
 
 ```
 
-`/home/<user>/.bashrc`?" I allowed it and restarted the shell, which I found was necessary for the `.bashrc` environment to work correctly.
-
-I followed the installation directions exactly, and the well-scripted install took about five minutes to complete. When the installation prompted: "Do you wish the installer to prepend the Anaconda install location to PATH in your?" I allowed it and restarted the shell, which I found was necessary for theenvironment to work correctly.
+I followed the installation directions exactly, and the well-scripted install took about five minutes to complete. When the installation prompted: "Do you wish the installer to prepend the Anaconda install location to PATH in your `/home/<user>/.bashrc`?" I allowed it and restarted the shell, which I found was necessary for the `.bashrc` environment to work correctly.
 
 After completing the install, I launched Anaconda Navigator by entering the following at the command prompt in the shell:
 ```
