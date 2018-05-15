@@ -41,28 +41,17 @@
 
 
 
-1 OK--you can put your hands down now.
-
-2 Should this be capitalized? Is there a particular field, or how does it work? I'm not sure.
-
-3 I have a degree in English literature and theology--this probably won't surprise regular readers of my articles.4
-
-4 Not, I hope, because I spout too much theology,5 but because it's often full of long-winded, irrelevant humanities (U.S. English: "liberal arts") references.
-
-5 Emacs. Every time.
-
-6 Not even Emacs. And yes, I know that there are techniques to prove the correctness of some software. (I suspect that Emacs doesn't pass many of them…)
-
-7 Hand up here: I'm employed by one of them, [Red Hat][3]. Go have a look--it's a fun place to work, and [we're usually hiring][4].
-
-8 Assuming that they fully abide by the rules of the open source licence(s) they're using, that is.
-
-9 Erstwhile "Lord Protector of England, Scotland, and Ireland"--that Cromwell.
-
-10 Oh, and choose Emacs over Vi variants, obviously.
-
-This article originally appeared on [Alice, Eve, and Bob - a security blog][5] and is republished with permission.
-
+1 好的--你现在可以放下手了
+2 这应该大写吗？有特定的领域吗？后者他是如何工作的？我不确定。
+3 我有一个英国文学和神学的学位--这可能不会使我的文章的普通读者感到惊讶
+4 我希望不是，因为我说的太多了，但是它经常是冗余的，无关紧要的人文。
+5 每次编辑
+6 即使是编辑器。而且是的，我知道有技术能够去证明一些软件的正确性。(我怀疑编辑器不能使它们全部通过...)
+7 注意这里：我被他们其中之一雇佣，去查看一下--它是一个有趣的工作地方，E而且[我们通常招聘][4]
+8 假设他们完全遵守他们正在使用的开源软件的认证。
+9 昔日的“英格兰、苏格兰、爱尔兰的上帝守护者”--比克伦威尔
+10 很明显，选择Vi 编辑器
+这篇文章原载于[Alice, Eve, and Bob - a security blog] 而且已经 被授权重新出版。
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/17/11/commonwealth-open-source
