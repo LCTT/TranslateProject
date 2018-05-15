@@ -1,3 +1,5 @@
+FSSlc translating
+
 How To Check Laptop Battery Status In Terminal In Linux
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2016/12/Check-Laptop-Battery-Status-In-Terminal-In-Linux-720x340.png)
