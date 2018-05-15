@@ -1,6 +1,3 @@
-Translating by MjSeven
-
-
 How to create mobile-friendly documentation
 ======
 ![配图](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/idea_innovation_mobile_phone.png?itok=RqVtvxkd)
