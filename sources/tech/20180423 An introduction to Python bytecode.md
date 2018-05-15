@@ -1,3 +1,4 @@
+Translating by qhwdw
 An introduction to Python bytecode
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/code_computer_development_programming.png?itok=4OM29-82)

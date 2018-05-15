@@ -1,3 +1,5 @@
+translating----geekpi
+
 College student reflects on getting started in open source
 ======
 
