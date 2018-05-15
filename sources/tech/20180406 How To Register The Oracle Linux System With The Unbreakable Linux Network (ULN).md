@@ -1,3 +1,4 @@
+Translating by qhwdw
 How To Register The Oracle Linux System With The Unbreakable Linux Network (ULN)
 ======
 Most of us knows about RHEL subscription but only few of them knows about Oracle subscription and its details.
