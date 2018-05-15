@@ -1,3 +1,4 @@
+Translating KevinSJ -- 05142018
 How To Display Images In The Terminal
 ======
 

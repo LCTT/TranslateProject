@@ -1,3 +1,4 @@
+Translating by qhwdw
 How To Improve Application Startup Time In Linux
 ======
 
