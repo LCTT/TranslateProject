@@ -1,3 +1,4 @@
+Translating by qhwdw
 3 ways robotics affects the CIO role
 ======
 ![配图](https://enterprisersproject.com/sites/default/files/styles/620x350/public/cio_ai.png?itok=toMIgELj)

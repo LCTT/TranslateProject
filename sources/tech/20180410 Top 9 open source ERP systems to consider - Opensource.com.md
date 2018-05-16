@@ -1,3 +1,4 @@
+Translating by qhwdw
 Top 9 open source ERP systems to consider | Opensource.com
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/BUSINESS_orgchart1.png?itok=tukiFj89)
