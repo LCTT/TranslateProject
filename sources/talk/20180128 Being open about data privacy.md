@@ -1,4 +1,5 @@
 Translating by FelixYFZ Being open about data privacy
+对数据隐私持开放的态度
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/GOV_opendata.png?itok=M8L2HGVx)
 
@@ -6,15 +7,18 @@ Translating by FelixYFZ Being open about data privacy
 Image by : opensource.com
 
 Today is [Data Privacy Day][1], ("Data Protection Day" in Europe), and you might think that those of us in the open source world should think that all data should be free, [as information supposedly wants to be][2], but life's not that simple. That's for two main reasons:
-
-  1. Most of us (and not just in open source) believe there's at least some data about us that we might not feel happy sharing (I compiled an example list in [a post][3] I published a while ago).
-  2. Many of us working in open source actually work for commercial companies or other organisations subject to legal requirements around what they can share.
-
+今天是[数据隐私日][1]，(在欧洲叫"数据保护日")，你可能会认为现在我们处于一个开源的世界中，所有的数据都应该免费，[就像人们想的那样][2],但是现实并没那么简单。主要有两个原因：
+1. Most of us (and not just in open source) believe there's at least some data about us that we might not feel happy sharing (I compiled an example list in [a post][3] I published a while ago).
+1. 我们中的大多数（不仅仅是在开源中）认为至少有些关于我们自己的数据是不愿意分享出去的（我在之前发表的一篇文章中列举了一些列子）
+2. Many of us working in open source actually work for commercial companies or other organisations subject to legal requirements around what they can share.
+2. 我们很多人虽然在开源中工作，但事实上是为了一些商业公司或者其他一些合组织工作，也是在合法的要求范围内分享数据。
 
 
 So actually, data privacy is something that's important for pretty much everybody.
+所以实际上，数据隐私对于每个人来说是很重要的。
 
 It turns out that the starting point for what data people and governments believe should be available for organisations to use is somewhat different between the U.S. and Europe, with the former generally providing more latitude for entities--particularly, the more cynical might suggest, large commercial entities--to use data they've collected about us as they will. Europe, on the other hand, has historically taken a more restrictive view, and on the 25th of May, Europe's view arguably will have triumphed.
+
 
 ### The impact of GDPR
 
