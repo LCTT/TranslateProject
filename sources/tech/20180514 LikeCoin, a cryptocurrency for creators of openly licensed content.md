@@ -1,3 +1,5 @@
+translating----geekpi
+
 LikeCoin, a cryptocurrency for creators of openly licensed content
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/osdc_whitehurst_money.png?itok=ls-SOzM0)
