@@ -1,3 +1,5 @@
+translating---geekpi
+
 How to kill a process or stop a program in Linux
 ======
 
