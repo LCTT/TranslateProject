@@ -19,15 +19,22 @@ So actually, data privacy is something that's important for pretty much everybod
 
 It turns out that the starting point for what data people and governments believe should be available for organisations to use is somewhat different between the U.S. and Europe, with the former generally providing more latitude for entities--particularly, the more cynical might suggest, large commercial entities--to use data they've collected about us as they will. Europe, on the other hand, has historically taken a more restrictive view, and on the 25th of May, Europe's view arguably will have triumphed.
 
-事实证明，在美国和欧洲之间，人们和政府认为让组织使用的数据的起点是有些不同的。
+事实证明，在美国和欧洲之间，人们和政府认为让组织使用的数据的起点是有些不同的。前者通常为实体提供更多的自由度，更愤世嫉俗的是--大型的商业体利用他们收集到的关于我们的数据。在欧洲，完全是另一方面，一直以来持有的多是有更多约束限制的观念，而且在5月25日，欧洲的观点可说取得了胜利。
 
 ### The impact of GDPR
+## 通用数据保护条例的影响
 
 That's a rather sweeping statement, but the fact remains that this is the date on which a piece of legislation called the General Data Protection Regulation (GDPR), enacted by the European Union in 2016, becomes enforceable. The GDPR basically provides a stringent set of rules about how personal data can be stored, what it can be used for, who can see it, and how long it can be kept. It also describes what personal data is--and it's a pretty broad set of items, from your name and home address to your medical records and on through to your computer's IP address.
 
-What is important about the GDPR, though, is that it doesn't apply just to European companies, but to any organisation processing data about EU citizens. If you're an Argentinian, Japanese, U.S., or Russian company and you're collecting data about an EU citizen, you're subject to it.
+那是一个相当全面的声明，其实事实上就是欧盟在2016年通过的一项关于通用数据保护的立法，使它变得可实施。数据通用保护条例在私人数据怎样才能被保存，如何才能被使用，谁能使用，能被持有多长时间这些方面设置了严格的规则。它描述了什么数据属于私人数据--而且涉及的条目范围非常广泛，从你的姓名家庭住址到你的医疗记录以及接通你电脑的IP地址。
+
+What is important about the GDPR, though, is that it doesn't apply just to European companies, but to any organisation processing data about EU citizens. If you're an Argentinian, Japanese, U.S., or Russian company and you're collecting data about an EU citizen, you're subject to it. 而是适用于任何在涉及处理关于欧盟居民的数据的任何组织。
+
+通用数据保护条例的重要之处是他并不仅仅适用于欧洲的公司，如果你是阿根廷人，日本人，美国人或者是俄罗斯的公司而且你正在收集涉及到欧盟居民的数据，你就要受到这个条例的约束管辖。
 
 "Pah!" you may say,1 "I'm not based in the EU: what can they do to me?" The answer is simple: If you want to continue doing any business in the EU, you'd better comply, because if you breach GDPR rules, you could be liable for up to four percent of your global revenues. Yes, that's global revenues: not just revenues in a particular country in Europe or across the EU, not just profits, but global revenues. Those are the sorts of numbers that should lead you to talk to your legal team, who will direct you to your exec team, who will almost immediately direct you to your IT group to make sure you're compliant in pretty short order.
+
+
 
 This may seem like it's not particularly relevant to non-EU citizens, but it is. For most companies, it's going to be simpler and more efficient to implement the same protection measures for data associated with all customers, partners, and employees they deal with, rather than just targeting specific measures at EU citizens. This has got to be a good thing.2
 
