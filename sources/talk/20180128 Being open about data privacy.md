@@ -19,6 +19,7 @@ So actually, data privacy is something that's important for pretty much everybod
 
 It turns out that the starting point for what data people and governments believe should be available for organisations to use is somewhat different between the U.S. and Europe, with the former generally providing more latitude for entities--particularly, the more cynical might suggest, large commercial entities--to use data they've collected about us as they will. Europe, on the other hand, has historically taken a more restrictive view, and on the 25th of May, Europe's view arguably will have triumphed.
 
+事实证明，在美国和欧洲之间，人们和政府认为让组织使用的数据的起点是有些不同的。
 
 ### The impact of GDPR
 
