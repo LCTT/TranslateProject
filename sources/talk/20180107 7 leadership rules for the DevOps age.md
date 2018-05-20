@@ -18,8 +18,7 @@ A healthy DevOps culture, however, depends upon redefining failure - IT leaders 
 “在开发运营之前，我们曾有一种惩罚失败者的文化，”罗伯特·里夫斯说,[Datical][3]的首席技术官兼联合创始人。“我们学到的仅仅是去避免错误。在IT领域避免错误的首要措施就是不要去改变任何东西：不要加速版本迭代的日程，不要迁移到云中，不要去做任何不同的事”
 That's a playbook for a bygone era and, as Reeves puts plainly, it doesn't work. In fact, that kind of stasis is actual failure.
 那是过去的一个时代的剧本，里夫斯坦诚的说，它已经不起作用了，事实上，那种停滞是失败的。
-"Companies that release slowly and avoid the cloud are paralyzed by fear - and they will fail," Reeves says. "IT leaders must embrace failure as an opportunity. Humans not only learn from their mistakes, they learn from others' mistakes. A culture of openness and ['psychological safety'][4] fosters learning and improvement."
-“那些缓慢的释放并逃避云的公司被恐惧所麻痹-他们将会走向失败，”里夫斯说道。“IT领导者必须拥抱失败并把它当做成一个机遇。人们不仅仅从他们的过错中学习，也会从其他的错误中学习。一种开放和[安全心里][4]的文化促进过了学习和提高”
+"Companies that release slowly and avoid the cloud are paralyzed by fear - and they will fail," Reeves says. "IT leaders must embrace failure as an opportunity. Humans not only learn from their mistakes, they learn from others' mistakes. A culture of openness and ['psychological safety'][4] fosters learning and improvement."“那些缓慢的释放并逃避云的公司被恐惧所麻痹-他们将会走向失败，”里夫斯说道。“IT领导者必须拥抱失败并把它当做成一个机遇。人们不仅仅从他们的过错中学习，也会从其他的错误中学习。一种开放和[安全心里][4]的文化促进过了学习和提高”
 **[ Related article: [Why agile leaders must move beyond talking about "failure."][5] ]**
 **[相关文章：[为什么敏捷领导者谈论“失败”必须超越它本义]]
 ### 2. Live, eat, and breathe DevOps in the C-suite
@@ -45,17 +44,17 @@ One fundamental reason for such disconnects: People might be operating with diff
 "DevOps can mean different things to different people," Choy says. "It is important for C-level [and] VP-level execs to define the goals of DevOps, clearly stating the expected outcome, understand how this outcome can benefit the business and be able to measure and report on success along the way."
 “DevOps 对不同的人可能意味着不同的含义，”德里克解释道。“对高管层和副总裁层来说，执行明确的DevOps的目标，清楚的声明期望的收益，充分理解带来的收益将如何使公司的商业受益并且能够衡量和报告成功的过程。”
 Indeed, beyond the baseline definition and vision, DevOps requires ongoing and frequent communication, not just in the trenches but throughout the organization. IT leaders must make that a priority.
-
+事实上，在基线和视野之上，DevOps要求正在进行和频繁的交流，不是仅仅在小团队里，而是要贯穿到整个组织。IT领导者必须为它设置优先级。
 "Inevitably, there will be hiccups, there will be failures and disruptions to the business," Choy says. "Leaders need to clearly communicate the journey to the rest of the company and what they can expect as part of the process."
-
+“不可避免的，将会有些阻碍，在商业中将会存在失败和破坏，”德里克说道。“领导者名需要清楚的将这个过程向公司的其他人阐述清楚告诉他们他们作为这个过程的一份子能够期待的结果。”
 ### 4.DevOps is as much about business as technology 
-
+### 4. DevOps和技术同样重要
 IT leaders running successful DevOps shops have embraced its culture and practices as a business strategy as much as an approach to building and operating software. DevOps culture is a great enabler of IT's shift from support arm to strategic business unit.
-
+IT领导者们成功的将DevOps商店的这种文化和实践当做一项商业策略，与构建和运营软件的方法相结合。DevOps是将IT从支持部门转向战略部门的推动力。
 "IT leaders must shift their thinking and approach from being cost/service centers to driving business outcomes, and a DevOps culture helps speed up those outcomes via automation and stronger collaboration," says Mike Kail, CTO and co-founder at [CYBRIC][9].
-
+IT领导者们必须转变他们的思想和方法，从成本和服务中心转变到驱动商业收益，而且DevOps的文化能够通过自动化和强大的协作加速收益。来自[CYBRIC][9]的首席技术官和联合创始人迈克说道。
 Indeed, this is a strong current that runs through much of these new "rules" for leading in the age of DevOps.
-
+事实上，这是一个强烈的趋势通过更多的这些规则在DevOps时代走在前沿。
 "Promoting innovation and encouraging team members to take smart risks is a key part of a DevOps culture and IT leaders need to clearly communicate that on a continuous basis," Kail says.
 
 "An effective IT leader will need to be more engaged with the business than ever before," says Evan Callendar, director, performance services at [West Monroe Partners][10]. "Gone are the days of yearly or quarterly reviews - you need to welcome the [practice of] [bi-weekly backlog grooming][11]. The ability to think strategically at the year level, but interact at the sprint level, will be rewarded when business expectations are met."
