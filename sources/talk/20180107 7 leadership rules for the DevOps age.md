@@ -5,25 +5,25 @@
 ![](https://enterprisersproject.com/sites/default/files/styles/620x350/public/images/CIO_DigitalAcumen_2.png?itok=TGeMQYs4)
 
 If [DevOps][1] is ultimately more about culture than any particular technology or platform, then remember this: There isn't a finish line. It's about continuous change and improvement - and the C-suite doesn't get a pass.
-
+入过[开发运营]最终更多的是关于文化而不是任何其他的技术或者平台，那么请记住：没有终点线。而是继续改变和提高--而且最高管理层并没有通过。
 Rather, leaders need to [revise some of their traditional approaches][2] if they expect DevOps to help drive the outcomes they seek. Let's consider seven ideas for more effective IT leadership in the DevOps era.
-
+然而，如果期望开发运营能够帮助获得更多的收入，领导者需要[修订他们的一些传统的方法][2]让我们考虑7个在开发运营时代更有效的IT领导的想法。
 ### 1. Say "yes" to failure
-
+### 1. 向失败说“是的”
 The word "failure" has long had very specific connotations in IT, and they're almost universally bad: server failure, backup failure, hard drive failure - you get the picture.
-
+“失败”这个词在IT领域中一直包含着特殊的内涵，而且通常是普遍糟糕的意思：服务器失败，备份失败，硬盘驱动器失败-你得了解这些情况。
 A healthy DevOps culture, however, depends upon redefining failure - IT leaders should rewrite their thesaurus to make the word synonymous with "opportunity."
-
+然而一种健康的开发运营文化取决于重新定义失败-IT领导者在他们的字典里应该重新定义这个单词将它的含义和“机会”对等起来。
 "Prior to DevOps, we had a culture of punishing failure," says Robert Reeves, CTO and co-founder of [Datical][3]. "The only learning we had was to avoid mistakes. The number one way to avoid mistakes in IT is to not change anything: Don't accelerate the release schedule, don't move to the cloud, don't do anything differently!"
-
+“在开发运营之前，我们曾有一种惩罚失败者的文化，”罗伯特·里夫斯说,[Datical][3]的首席技术官兼联合创始人。“我们学到的仅仅是去避免错误。在IT领域避免错误的首要措施就是不要去改变任何东西：不要加速版本迭代的日程，不要迁移到云中，不要去做任何不同的事”
 That's a playbook for a bygone era and, as Reeves puts plainly, it doesn't work. In fact, that kind of stasis is actual failure.
-
+那是过去的一个时代的剧本，里夫斯坦诚的说，它已经不起作用了，事实上，那种停滞是失败的。
 "Companies that release slowly and avoid the cloud are paralyzed by fear - and they will fail," Reeves says. "IT leaders must embrace failure as an opportunity. Humans not only learn from their mistakes, they learn from others' mistakes. A culture of openness and ['psychological safety'][4] fosters learning and improvement."
-
+“那些缓慢的释放并逃避云的公司被恐惧所麻痹-他们将会走向失败，”里夫斯说道。“IT领导者必须拥抱失败并把它当做成一个机遇。人们不仅仅从他们的过错中学习，也会从其他的错误中学习。一种开放和[安全心里][4]的文化促进过了学习和提高”
 **[ Related article: [Why agile leaders must move beyond talking about "failure."][5] ]**
-
+**[相关文章：[为什么敏捷领导者谈论“失败”必须超越它本义]]
 ### 2. Live, eat, and breathe DevOps in the C-suite
-
+### 2. 在管理层渗透开发运营的理念
 While DevOps culture can certainly grow organically in all directions, companies that are shifting from monolithic, siloed IT practices - and likely encountering headwinds en route - need total buy-in from executive leadership. Without it, you're sending mixed messages and likely emboldening those who'd rather push a _but this is the way we 've always done things_ agenda. [Culture change is hard][6]; people need to see leadership fully invested in that change for it to actually happen.
 
 "Top management must fully support DevOps in order for it to be successful in delivering the benefits," says Derek Choy, CIO at [Rainforest QA][7].
