@@ -70,7 +70,7 @@ What does this all mean to us? Well, I've written before on Opensource.com about
   2. Data that's known, shared, and confidential: visible to A and B, but nobody else
   2. 数据是已知的，共享的，和机密的：A和B可得到，但其他人不能得到。
   3. Data that's company-confidential: visible to A, but not B
-  3. 数据是公司级别上保密的：A公司可以得到，但B顾客不能
+  3. 数据是公司级别上保密的：A公司可以得到，但B顾客不能
   4. Data that's customer-confidential: visible to B, but not A
   4. 数据是顾客级别保密的：B顾客可以得到，但A公司不能
 
@@ -82,44 +82,53 @@ First of all, maybe we should be a bit more open about data and default to putti
 ### Some concrete steps
 ### 一些具体的措施
 So, what can we do around data privacy and being open? Here are a few concrete steps that occurred to me: please use the comments to contribute more.
-
-  * Check to see whether your organisation is taking GDPR seriously. If it isn't, push for it.
-  * Default to encrypting sensitive data (or hashing where appropriate), and deleting when it's no longer required--there's really no excuse for data to be in the clear to these days except for when it's actually being processed.
-  * Consider what information you disclose when you sign up to services, particularly social media.
-  * Discuss this with your non-technical friends.
-  * Educate your children, your friends' children, and their friends. Better yet, go and talk to their teachers about it and present something in their schools.
-  * Encourage the organisations you work for, volunteer for, or interact with to make data open by default. Rather than thinking, "why should I make this public?" start with "why shouldn't I make this public?"
-  * Try accessing some of the open data sources out there. Mine it, create apps that use it, perform statistical analyses, draw pretty graphs,10 make interesting music, but consider doing something with it. Tell the organisations that sourced it, thank them, and encourage them to do more.
-
+我们如何处理数据的隐私和开放？下面是我想到的一些具体的措施：欢迎大家评论做出更多的贡献。
+  * Check to see whether your organisation is taking GDPR seriously. If it isn't, push for it.
+  * 检查你的组织是否正在认证严格的执行通用数据保护条例。如果没有，去推动实施它。
+  * Default to encrypting sensitive data (or hashing where appropriate), and deleting when it's no longer required--there's really no excuse for data to be in the clear to these days except for when it's actually being processed.
+  * 要默认去加密敏感数据（或者适当的时候用散列算法），当不再需要的时候及时删掉--除非数据正在被处理使用没有任何借口让数据清晰可见。
+  * Consider what information you disclose when you sign up to services, particularly social media.
+  * 当你注册一个服务的时候考虑一下你公开了什么信息，特别是社交媒体类的。
+  * Discuss this with your non-technical friends.
+  * 和你的非技术朋友讨论这个话题。
+  * Educate your children, your friends' children, and their friends. Better yet, go and talk to their teachers about it and present something in their schools.
+  * 教育你的孩子，你朋友的孩子以及他们的朋友。然而最好是去他们的学校和他们的老师交谈在他们的学校中展示。
+  * Encourage the organisations you work for, volunteer for, or interact with to make data open by default. Rather than thinking, "why should I make this public?" start with "why shouldn't I make this public?"
+  * 鼓励你工作志愿服务的组织，或者和他们互动推动数据的默认开放。不是去思考为什么我要使数据开放而是以我为什么不让数据开放开始。
+  * Try accessing some of the open data sources out there. Mine it, create apps that use it, perform statistical analyses, draw pretty graphs,10 make interesting music, but consider doing something with it. Tell the organisations that sourced it, thank them, and encourage them to do more.
+  * 尝试去访问一些开源数据。开采使用它。开发应用来使用它，进行数据分析，画漂亮的图，10 制作有趣的音乐，考虑使用它来做些事。告诉组织去使用它们，感谢它们，而且鼓励他们去做更多。
 
 
 1. Though you probably won't, I admit.
+1. 我承认你可能尽管不会
 
 2. Assuming that you believe that your personal data should be protected.
+2. 假设你坚信你的个人数据应该被保护。
 
 3. If you're wondering what "dandy" means, you're not alone at this point.
+3. 如果你在思考“极好的”的寓意，在这点上你并不孤独。
 
 4. Exactly how public these institutions seem to you will probably depend on where you live: [YMMV][5].
-
+4. 事实上这些机构能够有多开放取决于你所居住的地方。
 5. And given that I'm British, that's a really very, very heavy dose.
-
+5. 假设我是英国人，那是非常非常大的剂量。
 6. And they're likely to be big corporations: nobody else can afford all of that storage and the infrastructure to keep it available.
-
+6. 他们可能是巨大的公司：没有其他人能够负担得起这么大的存储和基础架构来使数据保持可用。
 7. No. The answer's "no."
-
+7. 不，答案是“不”。
 8. Although the example works for people, too. Oh, look: A could be Alice, B could be Bob…
-
+8. 尽管这个列子也同样适用于个人。看看：A可能是Alice,B 可能是BOb...
 9. Not that we should be exposing personal data or data that actually needs to be confidential, of course--not that type of data.
-
+9. 并不是说我们应该暴露个人的数据或者是这样的数据应该被保密，当然--不是那类的数据。
 10. A friend of mine decided that it always seemed to rain when she picked her children up from school, so to avoid confirmation bias, she accessed rainfall information across the school year and created graphs that she shared on social media.
-
+10. 我的一个朋友当她接孩子放学的时候总是下雨，所以为了避免确认失误，她在整个学年都访问天气信息并制作了图表分享到社交媒体上。
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/18/1/being-open-about-data-privacy
 
 作者：[Mike Bursell][a]
 译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[校对者FelixYFZ](https://github.com/FelixYFZ)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
