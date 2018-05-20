@@ -25,28 +25,30 @@ That's a playbook for a bygone era and, as Reeves puts plainly, it doesn't work.
 ### 2. Live, eat, and breathe DevOps in the C-suite
 ### 2. 在管理层渗透开发运营的理念
 While DevOps culture can certainly grow organically in all directions, companies that are shifting from monolithic, siloed IT practices - and likely encountering headwinds en route - need total buy-in from executive leadership. Without it, you're sending mixed messages and likely emboldening those who'd rather push a _but this is the way we 've always done things_ agenda. [Culture change is hard][6]; people need to see leadership fully invested in that change for it to actually happen.
-
+尽管开发运营文化可以在各个方向有机的发展，那些正在从整体中转变，孤立的IT实，而且可能遭遇逆风的公司-需要执行领导层的全面支持。你正在传达模糊的信息
+而且可能会鼓励那些愿意推一把的人，这是我们一贯的做事方式。[改变文化是困难的][6];人们需要看到领导层完全投入进去并且知道改变已经实际发生了。
 "Top management must fully support DevOps in order for it to be successful in delivering the benefits," says Derek Choy, CIO at [Rainforest QA][7].
-
+“为了成功的实现利益的兑现高层管理必须全力支持开发运营，”来自[Rainforest QA][7]的首席技术官说道。
 Becoming a DevOps shop. Choy notes, touches pretty much everything in the organization, from technical teams to tools to processes to roles and responsibilities.
+成为一个开发运营商店。德里克指出，涉及到公司的一切，ongoing技术团队到工具到进程到规则和责任。
 
 "Without unified sponsorship from top management, DevOps implementation will not be successful," Choy says. "Therefore, it is important to have leaders aligned at the top level before transitioning to DevOps."
-
+"没有高层管理的统一赞助支持，开发运营的实施将很难成功，"德里克说道。"因此，在转变到开发运营之前在高层中有支持的领导同盟是很重要的。"
 ### 3. Don 't just declare "DevOps" - define it
-
+### 3. 不要只是声明“DevOps”-要明确它
 Even in IT organizations that have welcomed DevOps with open arms, it's possible that's not everyone's on the same page.
-
+即使IT公司也已经开始拥抱欢迎DevOps,每个人可能不是在同一个进程上。
 **[Read our related article,**[ **3 areas where DevOps and CIOs must get on the same page**][8] **.]**
-
+**[参考我们的相关文章，**][**3 阐明了DevOps和首席技术官们必须在同一进程上**][8] **.]**
 One fundamental reason for such disconnects: People might be operating with different definitions for what the term even means.
-
+造成这种脱节的一个根本原因是：人们对这个术语的有着不同的定义理解。
 "DevOps can mean different things to different people," Choy says. "It is important for C-level [and] VP-level execs to define the goals of DevOps, clearly stating the expected outcome, understand how this outcome can benefit the business and be able to measure and report on success along the way."
-
+“DevOps 对不同的人可能意味着不同的含义，”德里克解释道。“对高管层和副总裁层来说，执行明确的DevOps的目标，清楚的声明期望的收益，充分理解带来的收益将如何使公司的商业受益并且能够衡量和报告成功的过程。”
 Indeed, beyond the baseline definition and vision, DevOps requires ongoing and frequent communication, not just in the trenches but throughout the organization. IT leaders must make that a priority.
 
 "Inevitably, there will be hiccups, there will be failures and disruptions to the business," Choy says. "Leaders need to clearly communicate the journey to the rest of the company and what they can expect as part of the process."
 
-### 4.DevOps is as much about business as technology
+### 4.DevOps is as much about business as technology 
 
 IT leaders running successful DevOps shops have embraced its culture and practices as a business strategy as much as an approach to building and operating software. DevOps culture is a great enabler of IT's shift from support arm to strategic business unit.
 
