@@ -1,38 +1,36 @@
-pinewall translating
-
-3 Methods To Install Latest Python3 Package On CentOS 6 System
+在 CentOS 6 系统上安装最新版 Python3 软件包的 3 种方法
 ======
-CentOS is RHEL clone and comes with free of cost. It’s a industry standard and cutting edge operating system, this has been used by 90% of webhosting provider since it’s supporting the leading edge server control panel called cPanel/WHM.
+CentOS 克隆自 RHEL，无需付费即可使用。CentOS 是一个企业级标准的、前沿的操作系统，被超过 90% 的网络主机托管商采用，因为它提供了技术领先的服务器控制面板 cPanel/WHM。
 
-This control panel allowing users to manage everything through control panel without entering into terminal.
+该控制面板使得用户无需进入命令行即可通过其管理一切。
 
-As we already know that RHEL has long term support and doesn’t offer the latest version of packages due to stability.
+众所周知，RHEL 提供长期支持，出于稳定性考虑，不提供最新版本的软件包。
 
-If you want to install latest version of packages, which is not available in the default repository and you have to install manually by compiling the source package.
+如果你想安装的最新版本软件包不在默认源中，你需要手动编译源码安装。
 
-It’s a high risk because we can’t upgrade the manually installed packages to latest version if they release new version and we have to reinstall manually.
+但手动编译安装的方式有不小的风险，即如果出现新版本，无法升级手动安装的软件包；你不得不重新手动安装。
 
-In this case what will be the solution and suggested method to install latest version of package? Yes, this can be done by adding the necessary third party repository to system.
+那么在这种情况下，安装最新版软件包的推荐方法和方案是什么呢？是的，可以通过为系统添加所需的第三方源来达到目的。
 
-There are many third party repositories are available for Enterprise Linux but only few of repositories are suggested to use by CentOS communicant, which doesn’t alter the base packages in large scale.
+可供企业级 Linux 使用的第三方源有很多，但只有几个是 CentOS 社区推荐使用的，它们在很大程度上不修改基础软件包。
 
-They are usually well maintained and provide a substantial number of additional packages to CentOS.
+这几个推荐的源维护的很好，为 CentOS 提供大量补充软件包。
 
-In this tutorial, we will teach you, how to install latest Python 3 package on CentOS 6 system.
+在本教程中，我们将向你展示，如何在 CentOS 6 操作系统上安装最新版本的 Python 3 软件包。
 
-### Method-1 : Using Software Collections Repository (SCL)
+### 方法 1：使用 Software Collections 源 (SCL)
 
-The SCL repository is now maintained by a CentOS SIG, which rebuilds the Red Hat Software Collections and also provides some additional packages of their own.
+SCL 源目前由 CentOS SIG 维护，除了重新编译构建 Red Hat 的 Software Collections 外，还额外提供一些它们自己的软件包。
 
-It contains newer versions of various programs that can be installed alongside existing older packages and invoked by using the scl command.
+该源中包含不少程序的更高版本，可以在不改变原有旧版本程序包的情况下安装，使用时需要通过 scl 命令调用。
 
-Run the following command to install Software Collections Repository on CentOS
+运行如下命令可以在 CentOS 上安装 SCL 源：
 ```
 # yum install centos-release-scl
 
 ```
 
-Check the available python 3 version.
+检查可用的 Python 3 版本：
 ```
 # yum info rh-python35
 Loaded plugins: fastestmirror, security
@@ -53,49 +51,49 @@ Description : This is the main package for rh-python35 Software Collection.
 
 ```
 
-Run the below command to install latest available python 3 package from scl.
+运行如下命令从 scl 源安装可用的最新版 python 3：
 ```
 # yum install rh-python35
 
 ```
 
-Run the below special scl command to enable the installed package version at the shell.
+运行如下特殊的 scl 命令，在当前 shell 中启用安装的软件包：
 ```
 # scl enable rh-python35 bash
 
 ```
 
-Run the below command to check installed python3 version.
+运行如下命令检查安装的 python3 版本：
 ```
 # python --version
 Python 3.5.1
 
 ```
 
-Run the following command to get a list of SCL packages have been installed on system.
+运行如下命令获取系统已安装的 SCL 软件包列表：
 ```
 # scl -l
 rh-python35
 
 ```
 
-### Method-2 : Using EPEL Repository (Extra Packages for Enterprise Linux)
+### 方法 2：使用 EPEL 源 (Extra Packages for Enterprise Linux)
 
-EPEL stands for Extra Packages for Enterprise Linux maintained by Fedora Special Interest Group.
+EPEL 是 Extra Packages for Enterprise Linux 的缩写，该源由 Fedora SIG (Special Interest Group) 维护。
 
-They creates, maintains, and manages a high quality set of additional packages for Enterprise Linux, including, but not limited to, Red Hat Enterprise Linux (RHEL), CentOS and Scientific Linux (SL), Oracle Linux (OL).
+该 SIG 为企业级 Linux 创建、维护并管理一系列高品质补充软件包，受益的企业级 Linux 发行版包括但不限于红帽企业级 Linux (RHEL), CentOS, Scientific Linux (SL) 和 Oracle Linux (OL)等。
 
-EPEL packages are usually based on their Fedora counterparts and will never conflict with or replace packages in the base Enterprise Linux distributions.
+EPEL 通常基于 Fedora 对应代码提供软件包，不会与企业级 Linux 发行版中的基础软件包冲突或替换其中的软件包。
 
-**Suggested Read :** [Install / Enable EPEL Repository on RHEL, CentOS, Oracle Linux & Scientific Linux][1]
+**推荐阅读：** [在 RHEL, CentOS, Oracle Linux 或 Scientific Linux 上安装启用 EPEL 源][1]
 
-EPEL package is included in the CentOS Extras repository and enabled by default so, we can install this by running below command.
+EPEL 软件包位于 CentOS 的 Extra 源中，已经默认启用，故我们只需运行如下命令即可：
 ```
 # yum install epel-release
 
 ```
 
-Check the available python 3 version.
+检查可用的 python 3 版本：
 ```
 # yum --disablerepo="*" --enablerepo="epel" info python34
 Loaded plugins: fastestmirror, security
@@ -119,13 +117,13 @@ Description : Python 3 is a new version of the language that is incompatible wit
 
 ```
 
-Run the below command to install latest available python 3 package from EPEL repository.
+运行如下命令从 EPEL 源安装可用的最新版 python 3 软件包：
 ```
 # yum --disablerepo="*" --enablerepo="epel" install python34
 
 ```
 
-By default this will not install matching pip & setuptools and we have to install by running below command.
+默认情况下并不会安装 pip 和 setuptools，我们需要运行如下命令手动安装：
 ```
 # curl -O https://bootstrap.pypa.io/get-pip.py
  % Total % Received % Xferd Average Speed Time Time Time Current
@@ -146,28 +144,28 @@ Successfully installed pip-10.0.1 setuptools-39.1.0 wheel-0.31.0
 
 ```
 
-Run the below command to check installed python3 version.
+运行如下命令检查已安装的 python3 版本：
 ```
 # python3 --version
 Python 3.4.5
 
 ```
 
-### Method-3 : Using IUS Community Repository
+### 方法 3：使用 IUS 社区源
 
-IUS Community is a CentOS Community Approved third-party RPM repository which contains latest upstream versions of PHP, Python, MySQL, etc.., packages for Enterprise Linux (RHEL & CentOS) 5, 6 & 7.
+IUS 社区是 CentOS 社区批准的第三方 RPM 源，为企业级 Linux (RHEL 和 CentOS) 5, 6 和 7 版本提供最新上游版本的 PHP, Python, MySQL 等软件包。
 
-IUS Community Repository have dependency with EPEL Repository so we have to install EPEL repository prior to IUS repository installation. Follow the below steps to install & enable EPEL & IUS Community Repository to RPM systems and install the packages.
+IUS 社区源依赖于 EPEL 源，故我们需要先安装 EPEL 源，然后再安装 IUS 社区源。按照下面的步骤安装启用 EPEL 源和 IUS 社区源，利用该 RPM 系统安装软件包。
 
-**Suggested Read :** [Install / Enable IUS Community Repository on RHEL & CentOS][2]
+**推荐阅读：** [在 RHEL 或 CentOS 上安装启用 IUS 社区源][2]
 
-EPEL package is included in the CentOS Extras repository and enabled by default so, we can install this by running below command.
+EPEL 软件包位于 CentOS 的 Extra 源中，已经默认启用，故我们只需运行如下命令即可：
 ```
 # yum install epel-release
 
 ```
 
-Download IUS Community Repository Shell script
+下载 IUS 社区源安装脚本：
 ```
 # curl 'https://setup.ius.io/' -o setup-ius.sh
  % Total % Received % Xferd Average Speed Time Time Time Current
@@ -176,13 +174,13 @@ Download IUS Community Repository Shell script
 
 ```
 
-Install/Enable IUS Community Repository.
+安装启用 IUS 社区源：
 ```
 # sh setup-ius.sh
 
 ```
 
-Check the available python 3 version.
+检查可用的 python 3 版本：
 ```
 # yum --enablerepo=ius info python36u
 Loaded plugins: fastestmirror, security
@@ -220,13 +218,13 @@ Description : Python is an accessible, high-level, dynamically typed, interprete
 
 ```
 
-Run the below command to install latest available python 3 package from IUS repository.
+运行如下命令从 IUS 源安装最新可用版本的 python 3 软件包：
 ```
 # yum --enablerepo=ius install python36u
 
 ```
 
-Run the below command to check installed python3 version.
+运行如下命令检查已安装的 python3 版本：
 ```
 # python3.6 --version
 Python 3.6.5
@@ -239,7 +237,7 @@ via: https://www.2daygeek.com/3-methods-to-install-latest-python3-package-on-cen
 
 作者：[PRAKASH SUBRAMANIAN][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[pinewall](https://github.com/pinewall)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
