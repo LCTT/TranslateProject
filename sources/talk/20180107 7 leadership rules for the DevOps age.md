@@ -56,22 +56,24 @@ IT领导者们必须转变他们的思想和方法，从成本和服务中心转
 Indeed, this is a strong current that runs through much of these new "rules" for leading in the age of DevOps.
 事实上，这是一个强烈的趋势通过更多的这些规则在DevOps时代走在前沿。
 "Promoting innovation and encouraging team members to take smart risks is a key part of a DevOps culture and IT leaders need to clearly communicate that on a continuous basis," Kail says.
+“促进创新并且鼓励团队成员去聪明的冒险是DevOps文化的一个关键部分，IT领导者们需要在一个持续的基础上清楚的和他们交流，”凯尔说道。
 
 "An effective IT leader will need to be more engaged with the business than ever before," says Evan Callendar, director, performance services at [West Monroe Partners][10]. "Gone are the days of yearly or quarterly reviews - you need to welcome the [practice of] [bi-weekly backlog grooming][11]. The ability to think strategically at the year level, but interact at the sprint level, will be rewarded when business expectations are met."
-
+“一个高效的IT领导者需要比以往任何时候都要积极的参与到商业中去，”来自[West Monroe Partners][10]的性能服务部门的主任埃文说道。“每年或季度回顾的日子一去不复返了-你需要欢迎没两周一次的待办事项。[11]你需要有在年度水平上的思考战略能力，在冲刺阶段的互动能力，在商业期望满足时将会被给予一定的奖励。”
 ### 5. Change anything that hampers DevOps goals
-
+### 5. 改变妨碍DevOps目标的任何事情
 
 While DevOps veterans generally agree that DevOps is much more a matter of culture than technology, success does depend on enabling that culture with the right processes and tools. Declaring your department a DevOps shop while resisting the necessary changes to processes or technologies is like buying a Ferrari but keeping the engine from your 20-year-old junker that billows smoke each time you turn the key.
+虽然DevOps的老兵们普遍认为DevOps更多的是一种文化而不是技术，成功取决于通过正确的过程和工具激活文化。当你声称自己的部门是一个DevOps商店却决绝对进程或技术做必要的改变，这就是你买了辆法拉利却使用了用过20年的引擎，每次转动钥匙都会冒烟。
 
 Exhibit A: [Automation][12]. It's critical parallel strategy for DevOps success.
-
+展览 A： [自动化][12].这是DevOps成功的重要并行策略。
 "IT leadership has to put an emphasis on automation," Callendar says. "This will be an upfront investment, but without it, DevOps simply will engulf itself with inefficiency and lack of delivery."
-
+“IT领导者需要重点强调自动化，”卡伦德说。“这将是DevOps的前期投资，但是如果没有它，DevOps将会很容易被低效吞噬自己而且将会无法完整交付。”
 Automation is a fundamental, but change doesn't stop there.
-
+自动化是基石，但改变不止于此。
 "Leaders need to push for automation, monitoring, and a continuous delivery process. This usually means changes to many existing practices, processes, team structures, [and] roles," Choy says. "Leaders need to be willing to change anything that'll hinder the team's ability to fully automate the process."
-
+“领导者们需要推动自动化，监控和持续的交付过程。这意着对现有的实践，过程，团队架构以及规则的很多改变，”Choy说。“领导者们需要改变一切会阻碍隐藏团队去权利实现自动化的因素。”
 ### 6. Rethink team structure and performance metrics
 
 While we're on the subject of change...if that org chart collecting dust on your desktop is the same one you've been plugging names into for the better part of a decade (or more), it's time for an overhaul.
