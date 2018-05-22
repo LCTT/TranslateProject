@@ -1,3 +1,4 @@
+Translating by qhwdw
 Some Common Concurrent Programming Mistakes
 ============================================================
 
