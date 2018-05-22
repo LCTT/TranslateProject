@@ -1,3 +1,5 @@
+translating---geekpi
+
 Protect your Fedora system against this DHCP flaw
 ======
 ![](https://fedoramagazine.org/wp-content/uploads/2018/05/dhcp-cve-816x345.jpg)
