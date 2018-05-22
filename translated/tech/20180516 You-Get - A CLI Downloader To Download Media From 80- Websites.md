@@ -1,53 +1,51 @@
-pinewall translating
-
-You-Get – A CLI Downloader To Download Media From 80+ Websites
+You-Get - 支持 80+ 网站的命令行多媒体下载器
 ======
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/05/you-get-1-720x340.jpg)
 
-Most of you may used or heard about **Youtube-dl** , a command line program to download videos from youtube and other 100+ websites. I just stumbled upon a similar utility named **“You-Get”**. It is also a CLI downloader written in Python. It allows you to download images, audios and videos from popular websites like Youtube, Facebook, Twitter and a lot more. Currently, there are 80+ websites are supported. Click [**here**][1] to read the full list of supported sites.
+你们大多数人可能用过或听说过 **Youtube-dl**，这个命令行程序可以从包括 Youtube 在内的 100+ 网站下载视频。我偶然发现了一个类似的工具，名字叫做 **"You-Get"**。这是一个 Python 编写的命令行下载器，可以让你从 Youtube，Facebook，Twitter 等很多热门网站下载图片，音频和视频。目前该下载器支持 80+ 站点，点击[**这里**][1]查看所有支持的网站。
 
-You-Get is not only a downloader, but also can stream the online videos in your media player. It even allows you to search for videos on google. Just pass the search term and You-Get will google it and download the most relevant videos. Another notable feature, it allows you to pause and resume the downloads. It is completely free, open source and cross-platform application that on Linux, Mac OS and Windows.
+You-Get 不仅仅是一个下载器，它还可以将在线视频导流至你的视频播放器。更进一步，它还允许你在 Google 上搜索视频，只要给出搜索项，You-Get 使用 Google 搜索并下载相关度最高的视频。另外值得一提的特性是，它允许你暂停和恢复下载过程。它是一个完全自由、开源及跨平台的应用，适用于 Linux，MacOS 及 Windows。
 
-### Install You-Get
+### 安装 You-Get
 
-Make sure you have installed the following prerequisites.
+确保你已经安装如下依赖项：
 
 + Python 3
-+ FFmpeg (strongly recommended) or Libav
-+ (Optional) RTMPDump
++ FFmpeg (强烈推荐) 或 Libav
++ (可选) RTMPDump
 
-You-Get can be installed in many ways. The officially recommended method is using Pip package manager. If you haven’t installed PIP yet, refer the following link.
+有多种方式安装 You-Get，其中官方推荐采用 pip 包管理器安装。如果你还没有安装 pip，可以参考如下链接：
 
-[How To Manage Python Packages Using Pip][https://www.ostechnix.com/manage-python-packages-using-pip/]
+[如何使用 pip 管理 Python 软件包][2]
 
-Please note that you must install Python 3 version of pip.
+需要注意的是，你需要安装 Python 3 版本的 pip。
 
-Now, run the following command to install You-Get:
+接下来，运行如下命令安装 You-Get：
 ```
 $ pip3 install you-get
 
 ```
 
-You can upgrade You-Get to its latest version using command:
+可以使用命令升级 You-Get 至最新版本：
 ```
 $ pip3 install --upgrade you-get
 
 ```
 
-### Getting Started With You-Get
+### 开始使用 You-Get
 
-The usage is pretty much same as Youtube-dl utility.
+使用方式与 Youtube-dl 工具基本一致。
 
-**Download Videos**
+**下载视频**
 
-To download a video, just run:
+下载视频，只需运行：
 ```
 $ you-get https://www.youtube.com/watch?v=HXaglTFJLMc
 
 ```
 
-Sample output:
+输出示例：
 ```
 site: YouTube
 title: The Last of The Mohicans by Alexandro Querevalú
@@ -63,19 +61,19 @@ Downloading The Last of The Mohicans by Alexandro Querevalú.mp4 ...
 
 ```
 
-You may want to view the details of the video before downloading. You-Get can do that for using **“–info”** or **“-i”** flag. This option will get you all available quality and formats of the given video.
+下载视频前，你可能希望查看视频的细节信息。You-Get 提供了 **“–info”** 或 **“-i”** 参数，使用该参数可以获得给定视频所有可用的分辨率和格式。
 ```
 $ you-get -i https://www.youtube.com/watch?v=HXaglTFJLMc
 
 ```
 
-Or,
+或者
 ```
-$ you-get -info https://www.youtube.com/watch?v=HXaglTFJLMc
+$ you-get --info https://www.youtube.com/watch?v=HXaglTFJLMc
 
 ```
 
-Sample output would be:
+输出示例如下：
 ```
 site: YouTube
 title: The Last of The Mohicans by Alexandro Querevalú
@@ -126,15 +124,15 @@ streams: # Available quality and codecs
 
 ```
 
-By default, You-Get will download the format marked with **DEFAULT**. If you don’t like that format or quality, you can pick any other format you like. Use the itag value given in the each format.
+默认情况下，You-Get 会下载标记为 **DEFAULT** 的格式。如果你对格式或分辨率不满意，可以选择你喜欢的格式，使用格式对应的 itag 值即可。
 ```
 $ you-get --itag=244 https://www.youtube.com/watch?v=HXaglTFJLMc
 
 ```
 
-**Download Audios**
+**下载音频**
 
-The following command will download an audio from soundcloud website.
+执行下面的命令，可以从 soundcloud 网站下载音频：
 ```
 $ you-get 'https://soundcloud.com/uiceheidd/all-girls-are-same-999-prod-nick-mira'
 Site: SoundCloud.com
@@ -147,29 +145,30 @@ Downloading ALL GIRLS ARE THE SAME (PROD. NICK MIRA).mp3 ...
 
 ```
 
-To view the details of the audio file, use **-i** flag.
+查看音频文件细节，使用 **-i** 参数：
 ```
 $ you-get -i 'https://soundcloud.com/uiceheidd/all-girls-are-same-999-prod-nick-mira'
 
 ```
 
-**Download Images**
+**下载图片**
 
-To download an image, run:
+运行如下命令下载图片：
 ```
 $ you-get https://pixabay.com/en/mountain-crumpled-cyanus-montanus-3393209/
 
 ```
 
+You-Get 也可以下载网页中的全部图片：
 You-Get can also download all images from a web page.
 ```
 $ you-get https://www.ostechnix.com/pacvim-a-cli-game-to-learn-vim-commands/
 
 ```
 
-**Search Videos**
+**搜索视频**
 
-You-Get doesn’t even a valid URL. You can just pass a random search terms. You-Get will google it and download the most relevant video based on your search string.
+你只需向 You-Get 传递一个任意的搜索项，而无需给出有效的 URL；You-Get 会使用 Google 搜索并下载与你给出搜索项最相关的视频。(译者注：Google 的机器人检测机制可能导致 503 报错导致该功能无法使用）。
 ```
 $ you-get 'Micheal Jackson'
 Google Videos search:
@@ -188,23 +187,23 @@ Downloading Michael Jackson - Beat It (Official Video).webm ...
 
 ```
 
-**Watch Videos**
+**观看视频**
 
-You-Get can able to stream the online videos in your media player or browser, just without ads or comment section.
+You-Get 可以将在线视频导流至你的视频播放器或浏览器，跳过广告和评论部分。（译者注：使用 -p 参数需要对应的 vlc/chrominum 命令可以调用，一般适用于具有图形化界面的操作系统）。
 
-To watch videos in a media player, for example VLC, run the following command:
+以 VLC 视频播放器为例，使用如下命令在其中观看视频：
 ```
 $ you-get -p vlc https://www.youtube.com/watch?v=HXaglTFJLMc
 
 ```
 
-Or,
+或者
 ```
 $ you-get --player vlc https://www.youtube.com/watch?v=HXaglTFJLMc
 
 ```
 
-Similarly, to stream the videos in your browser, for example chromium, use:
+类似地，将视频导流至以 chromium 为例的浏览器中，使用如下命令：
 ```
 $ you-get -p chromium https://www.youtube.com/watch?v=HXaglTFJLMc
 
@@ -212,31 +211,31 @@ $ you-get -p chromium https://www.youtube.com/watch?v=HXaglTFJLMc
 
 ![][3]
 
-As you can see in the above screenshot, there is no ads, comment section. Just a plain page with the video.
+在上述屏幕截图中，可以看到并没有广告和评论部分，只是一个包含视频的简单页面。
 
-**Set path and file name for downloaded videos**
+**设置下载视频的路径及文件名**
 
-By default, the videos will be downloaded in the current working directory with default video titles. You can, of course, change them as per your liking using **–output-dir/-o** flag to set the path and **–output-filename/-O** to set the name of the downloaded file.
+默认情况下，使用视频标题作为默认文件名，下载至当前工作目录。当然，你可以按照你的喜好进行更改，使用 **–output-dir/-o** 参数可以指定路径，使用 **–output-filename/-O** 参数可以指定下载文件的文件名。
 ```
 $ you-get -o ~/Videos -O output.mp4 https://www.youtube.com/watch?v=HXaglTFJLMc
 
 ```
 
-**Pause and resume downloads**
+**暂停和恢复下载**
 
-Press **CTRL+C** to cancel a download. A temporary **.download** file will be saved in the output directory. Next time you run you-get with the same arguments, the download process will resume from the last session.
+按 **CTRL+C** 可以取消下载。一个以 **.download** 为扩展名的临时文件会保存至输出路径。下次你使用相同的参数下载时，下载过程将延续上一次的过程。
 
-In case the file is completely downloaded, the temporary .download extension will be gone, and you-get will just skip the download. To enforce re-downloading, use the **–force/-f** option.
+当文件下载完成后，以 .download 为扩展名的临时文件会自动消失。如果这时你使用同样参数下载，You-Get 会跳过下载；如果你想强制重新下载，可以使用 **–force/-f** 参数。
 
-For more details, refer the help section by running the following command.
+查看命令的帮助部分可以获取更多细节，命令如下：
 ```
 $ you-get --help
 
 ```
 
-And, that’s all for now. More good stuffs to come. Stay tuned!
+这次的分享到此结束，后续还会介绍更多的优秀工具，敬请期待！
 
-Cheers!
+感谢各位阅读！
 
 
 
@@ -246,11 +245,12 @@ via: https://www.ostechnix.com/you-get-a-cli-downloader-to-download-media-from-8
 
 作者：[SK][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[pinewall](https://github.com/pinewall)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://www.ostechnix.com/author/sk/
 [1]:https://you-get.org/#supported-sites
+[2]:https://www.ostechnix.com/manage-python-packages-using-pip/
 [3]:http://www.ostechnix.com/wp-content/uploads/2018/05/you-get.jpg
