@@ -1,3 +1,5 @@
+translated by hopefully2333
+
 Using machine learning to color cartoons
 ======
 
