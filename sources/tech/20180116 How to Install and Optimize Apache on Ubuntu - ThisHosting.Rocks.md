@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 How to Install and Optimize Apache on Ubuntu
 ======
 
