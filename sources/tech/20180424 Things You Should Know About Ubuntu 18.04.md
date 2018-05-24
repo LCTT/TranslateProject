@@ -1,3 +1,4 @@
+translating by wyxplus
 Things You Should Know About Ubuntu 18.04
 ======
 [Ubuntu 18.04 release][1] is just around the corner. I can see lots of questions from Ubuntu users in various Facebook groups and forums. I also organized Q&A sessions on Facebook and Instagram to know what Ubuntu users are wondering about Ubuntu 18.04.
