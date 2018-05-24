@@ -1,3 +1,5 @@
+translating by cizezsy
+
 How To Kill The Largest Process In An Unresponsive Linux System
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2017/11/Kill-The-Largest-Process-720x340.png)
