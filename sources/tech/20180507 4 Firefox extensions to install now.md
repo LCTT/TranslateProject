@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 4 Firefox extensions to install now
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/redpanda_firefox_pet_animal.jpg?itok=aSpKsyna)
