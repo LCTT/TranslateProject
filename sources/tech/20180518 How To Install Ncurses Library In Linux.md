@@ -1,3 +1,5 @@
+translating---geekpi
+
 How To Install Ncurses Library In Linux
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2018/05/install-ncurses-720x340.png)
