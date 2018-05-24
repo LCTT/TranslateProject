@@ -75,15 +75,15 @@ Automation is a fundamental, but change doesn't stop there.
 "Leaders need to push for automation, monitoring, and a continuous delivery process. This usually means changes to many existing practices, processes, team structures, [and] roles," Choy says. "Leaders need to be willing to change anything that'll hinder the team's ability to fully automate the process."
 “领导者们需要推动自动化，监控和持续的交付过程。这意着对现有的实践，过程，团队架构以及规则的很多改变，”Choy说。“领导者们需要改变一切会阻碍隐藏团队去权利实现自动化的因素。”
 ### 6. Rethink team structure and performance metrics
-
+### 6. 重新思考团队架构和能力指标
 While we're on the subject of change...if that org chart collecting dust on your desktop is the same one you've been plugging names into for the better part of a decade (or more), it's time for an overhaul.
-
+当你想改变时...如果你桌面上的组织结构图和你过去大部分时候嵌入的名字都是一样的，那么你是时候该考虑改革了。
 "IT executives need to take a completely different approach to organizational structure in this new era of DevOps culture," Kail says. "Remove strict team boundaries, which tend to hamper collaboration, and allow for the teams to be self-organizing and agile."
-
+“在这个DevOps的新时代文化中，IT执行者需要采取一个全新的方法来组织架构。”Kail说。“消除组织的边界限制，它会阻碍团队间的合作，允许团队自我组织，敏捷管理。”
 Kail says this kind of rethinking can and should extend to other areas in the DevOps age, too, including how you measure individual and team success, and even how you interact with people.
-
+Kail告诉我们在DevOps时代，这种反思也应该拓展应用到其他领域，包括你怎样衡量个人或者团队的成功，甚至是你和人们的互动。
 "Measure initiatives in terms of business outcomes and overall positive impact," Kail advises. "Finally, and something that I believe to be the most important aspect of management: Be empathetic."
-
+“根据业务成果和总体的积极影响来衡量主动性，”Kail建议。“最后，我认为管理中最重要的一个方面是：有同理心。”
 Beware easily collected measurements that are not truly DevOps metrics, writes [Red Hat ][13]technology evangelist Gordon Haff. "DevOps metrics should be tied to business outcomes in some manner," he notes. "You probably don't really care about how many lines of code your developers write, whether a server had a hardware failure overnight, or how comprehensive your test coverage is. In fact, you may not even directly care about the responsiveness of your website or the rapidity of your updates. But you do care to the degree such metrics can be correlated with customers abandoning shopping carts or leaving for a competitor." See his full article, [DevOps metrics: Are you measuring what matters?][14]
 
 ### 7. Chuck conventional wisdom out the window
