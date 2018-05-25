@@ -1,4 +1,4 @@
-7 leadership rules for the DevOps age
+Translating by FelixYFZ 7 leadership rules for the DevOps age
 ======
 
 ![](https://enterprisersproject.com/sites/default/files/styles/620x350/public/images/CIO_DigitalAcumen_2.png?itok=TGeMQYs4)
