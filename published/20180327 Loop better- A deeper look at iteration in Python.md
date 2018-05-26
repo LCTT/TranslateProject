@@ -258,8 +258,8 @@ def funky_for_loop(iterable, action_to_do):
 2. 反复从迭代器中获得下一项
 3. 如果我们成功获得下一项，就执行 `for` 循环的主体
 4. 如果我们在获得下一项时得到了一个 `StopIteration` 异常，那么就停止循环
-```
 
+```
 def funky_for_loop(iterable, action_to_do):
     iterator = iter(iterable)
     done_looping = False
