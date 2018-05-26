@@ -1,3 +1,4 @@
+translating by wyxplus
 How to Install and Configure KVM on Ubuntu 18.04 LTS Server
 ======
 **KVM** (Kernel-based Virtual Machine) is an open source full virtualization solution for Linux like systems, KVM provides virtualization functionality using the virtualization extensions like **Intel VT** or **AMD-V**. Whenever we install KVM on any linux box then it turns it into the hyervisor by loading the kernel modules like **kvm-intel.ko** ( for intel based machines) and **kvm-amd.ko** ( for amd based machines).
