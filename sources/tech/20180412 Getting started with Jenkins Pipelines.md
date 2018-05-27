@@ -1,4 +1,4 @@
-translating by kennethXia
+translating by 
 
 Getting started with Jenkins Pipelines
 ======
