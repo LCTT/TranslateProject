@@ -1,58 +1,57 @@
-Translating by qhwdw
-How To Register The Oracle Linux System With The Unbreakable Linux Network (ULN)
+Oracle Linux 系统如何去注册使用坚不可摧 Linux 网络（ULN） 
 ======
-Most of us knows about RHEL subscription but only few of them knows about Oracle subscription and its details.
+大多数人都知道 RHEL 的订阅 ，但是知道 Oracle 订阅及细节的人却很少。
 
-Even i don’t know the information about this and i recently came to know about this and wants to share this with others so, i’m going to write a article which will guide you to register the Oracle Linux system with the Unbreakable Linux Network (ULN).
+甚至我也不知道关于它的信息，我是最近才了解了有关它的信息，想将这些内容共享给其他人。因此写了这篇文章，它将指导你去注册 Oracle Linux 系统去使用坚不可摧 Linux 网络（ULN） 。
 
-This allows the register systems to get software update and other patches ASAP.
+这将允许你去注册系统以获得软件更新和其它的 ASAP 补丁。
 
-### What Is Unbreakable Linux Network
+### 什么是坚不可摧 Linux 网络
 
-ULN stands for Unbreakable Linux Network which is owned by Oracle. If you have a active subscription to Oracle OS Support, you can register your system with Unbreakable Linux Network (ULN).
+ULN 代表坚不可摧 Linux 网络，它是由 Oracle 所拥有的。如果你去 Oracle OS 支持中去激活这个订阅，你就可以注册你的系统去使用坚不可摧 Linux 网络（ULN）。
 
-ULN offers software patches, updates, and fixes for Oracle Linux and Oracle VM, as well as information on yum, Ksplice, and support policies. You can also download useful packages that are not included in the original distribution.
+ULN 为 Oracle Linux 和 Oracle VM 提供软件补丁、更新、以及修复，此外还有在 yum、Ksplice、以及支持策略上的信息。你也可以通过它来下载原始发行版中没有包含的有用的安装包。
 
-The ULN Alert Notification Tool periodically checks with ULN and alerts you when updates are available.
+ULN 的告警提示工具周期性地使用 ULN 去检查，当有更新的时候它给你发送警报信息。
 
-If you want to use ULN repository with yum to manage your systems, make sure your system should registered with ULN and subscribe each system to one or more ULN channels. When you register a system with ULN, automatically it will choose latest version of channel based on the system architecture and OS.
+如果你想在 yum 上使用 ULN 仓库去管理你的系统，需要确保你的系统已经注册到 ULN 上，并且订阅了一个或多个 ULN 频道。当你注册一个系统使用 ULN，它将基于你的系统架构和操作系统去自动选择频道中最新的版本。
 
-### How To Register As A ULN User
+### 如何注册为一个 ULN 用户
 
-To register as a ULN user, make sure you have a valid customer support identifier (CSI) for Oracle Linux support or Oracle VM support.
+去注册为一个 ULN 用户，需要你有一个 Oracle Linux 支持或者 Oracle VM 支持的有效客户支持代码（CSI）。
 
-Follow the below steps to register as a ULN user.
+请按以下步骤去注册为一个 ULN 用户。
 
-Visit @ [linux.oracle.com][1]
+请访问 [linux.oracle.com][1]
 ![][3]
 
-If you already have an SSO account, click Sign On.
+如果你已经有一个 SSO 帐户，请点击 “Sign On”。
 ![][4]
 
-If you don’t have a account, click Create New Single Signon Account and follow the onscreen instructions to create one.
+如果你没有帐户，点击 “Create New Single Signon Account” 然后按屏幕上的要求去创建一个帐户。
 ![][5]
 
-Verify your email address to complete your account setup.
+验证你的电子邮件地址以完成帐户设置。
 
-Log in using your SSO user name and password. On the Create New ULN User page, enter your CSI and click Create New User.
+使用你的 SSO 帐户的用户名和密码去登入。在 “Create New ULN User” 页面上，输入你的 CSI 然后点击 “Create New User”。
 ![][6]
 
-**Note :**
+**注意：**
 
-  * If no administrator is currently assigned to manage the CSI, you are prompted to click Confirm to become the CSI administrator.
-  * If your user name already exists on the system, you are prompted to proceed to ULN by clicking the link Unbreakable Linux Network.
+  * 如果当前没有分配管理员去管理 CSI，将会提示你去点击确认让你成为 CSI 管理员。
+  * 如果你的用户名已经在系统上存在，你将被提示通过点击坚不可摧 Linux 网络的链接去操作 ULN。
 
 
 
-### How To Register The Oracle Linux 6/7 System With ULN
+### 如何注册 Oracle Linux 6/7 系统使用 ULN
 
-Just run the below command and follow the instruction to register the system.
+只需要运行下列的命令，并按随后的指令提示去注册系统。
 ```
 # uln_register
 
 ```
 
-Make sure your system is having active internet connection. Also keep ready your Oracle Single Sign-On Login & password (SSO) details then hit `Next`.
+确保你的系统有一个活动的因特网连接。同时准备好你的 Oracle 单点登陆帐户（SSO）的用户名和密码，然后点击 `Next`。
 ```
 Copyright Â© 2006--2010 Red Hat, Inc. All rights reserved.
 
@@ -78,7 +77,7 @@ Copyright Â© 2006--2010 Red Hat, Inc. All rights reserved.
 
 ```
 
-Input your login information for Unbreakable Linux Network, then hit `Next`.
+输入你的 ULN 登陆信息，然后点击 `Next`。
 ```
 Copyright Â© 2006--2010 Red Hat, Inc. All rights reserved.
 
@@ -101,7 +100,7 @@ Copyright Â© 2006--2010 Red Hat, Inc. All rights reserved.
 
 ```
 
-Register a System Profile – Hardware information, then hit `Next`.
+注册一个系统概要 – 硬件信息，然后点击 `Next`。
 ```
 Copyright Â© 2006--2010 Red Hat, Inc. All rights reserved.
 
@@ -130,7 +129,7 @@ Copyright Â© 2006--2010 Red Hat, Inc. All rights reserved.
 
 ```
 
-Register a System Profile – Packages configuration, then hit `Next`.
+注册一个系统概要 – 包配置，然后点击 `Next`。
 ```
 Copyright Â© 2006--2010 Red Hat, Inc. All rights reserved.
 
@@ -168,7 +167,7 @@ Copyright Â© 2006--2010 Red Hat, Inc. All rights reserved.
 
 ```
 
-Press “Next” to send this System Profile to Unbreakable Linux Network.
+按下 “Next” 去发送系统概要到 ULN。
 ```
 Copyright Â© 2006--2010 Red Hat, Inc. All rights reserved.
 
@@ -188,7 +187,7 @@ Copyright Â© 2006--2010 Red Hat, Inc. All rights reserved.
 
 ```
 
-Sending Profile to Unbreakable Linux Network is under processing.
+发送概要到 ULN 是如下的一个过程。
 ```
 Copyright Â© 2006--2010 Red Hat, Inc. All rights reserved.
 
@@ -202,7 +201,7 @@ Copyright Â© 2006--2010 Red Hat, Inc. All rights reserved.
 
 ```
 
-ULN registration has been done and review system subscription details. If everything is fine, then hit `ok`.
+ULN 注册做完后，重新回顾系统订阅的详细情况。如果一切正确，然后点击 `ok`。
 ```
 Copyright Â© 2006--2010 Red Hat, Inc. All rights reserved.
 
@@ -237,7 +236,7 @@ Copyright Â© 2006--2010 Red Hat, Inc. All rights reserved.
 
 ```
 
-Finally hit `Finish` to complete the registration.
+最后点击 `Finish` 完成注册。
 ```
 Copyright Â© 2006--2010 Red Hat, Inc. All rights reserved.
 
@@ -256,7 +255,7 @@ Copyright Â© 2006--2010 Red Hat, Inc. All rights reserved.
 
 ```
 
-ULN registration has been done successfully, in order to get repository from ULN run the following command.
+ULN 注册已经成功，为了从 ULN 中得到仓库，运行如下的命令。
 ```
 # yum repolist
 Loaded plugins: aliases, changelog, presto, refresh-packagekit, rhnplugin, security, tmprepo, ulninfo, verify, versionlock
@@ -271,13 +270,13 @@ repolist: 40,966
 
 ```
 
-Also, you can check the same in ULN website. Go to the `System` tab to view the list of registered systems.
+另外，你也可以在 ULN 网站上查看到相同的信息。转到 `System` 标签页去查看已注册的系统列表。
 ![][7]
 
-To view list of the enabled repositories. Go to the `System` tab then hit the corresponding system. Also, you can able to see the available updates for the system for errata.
+去查看已经启用的仓库列表。转到 `System` 标签页，然后点击相应的系统。另外，你也能够看到系统勘误及可用更新。
 ![][8]
 
-To manage subscription channel. Go to the `System` tab, then hit appropriate `system name` and finally hit `Manage Subscriptions`.
+去管理订阅的频道。转到 `System` 标签页，然后点击有关的 `system name`，最后点击 `Manage Subscriptions`。
 ![][9]
 
 --------------------------------------------------------------------------------
@@ -285,7 +284,7 @@ To manage subscription channel. Go to the `System` tab, then hit appropriate `sy
 via: https://www.2daygeek.com/how-to-register-the-oracle-linux-system-with-the-unbreakable-linux-network-uln/
 
 作者：[Vinoth Kumar][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[qhwdw](https://github.com/qhwdw)
 校对：[校对者ID](https://github.com/校对者ID)
 选题：[lujun9972](https://github.com/lujun9972)
 
