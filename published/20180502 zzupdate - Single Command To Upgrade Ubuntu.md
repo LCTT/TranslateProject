@@ -1,5 +1,6 @@
-zzupdate —— 升级 Ubuntu 的简单命令
+zzupdate：单条命令升级 Ubuntu 18.04 LTS
 ======
+
 Ubuntu 18.04 版本已经发布，并得到各个社区的一致好评，因为 Ubuntu 18.04 可能是 Ubuntu 多年来最令人兴奋的版本。
 
 通常情况下，Ubuntu 及其衍生版可以使用命令从一个版本升级到最新版本或者其它版本，这也是官方推荐的升级方式。
@@ -16,20 +17,21 @@ Ubuntu 18.04 版本已经发布，并得到各个社区的一致好评，因为 
   - 笔记本电脑在使用电池供电时会在无操作 20 分钟后自动待机
   - 不再提供 32 位的 Ubuntu 桌面安装程序映像
 
+注意：
 
-**注意：**
 1. 不要忘记备份重要数据。如果升级出现问题，我们将重新安装并恢复数据。
 2. 安装所需时间取决于您的网络状况和安装的程序。
 
 ### zzupdate 是什么？
 
-我们可以通过使用 [zzupdate][2] 工具中的单个命令将 Ubuntu PC/Server 从一个版本升级到另一个版本。它是一个免费的开源工具，使用它不需要任何脚本知识，因为它只需要配置文件即可运行。
+我们可以只通过一条命令使用 [zzupdate][2] 工具中将 Ubuntu PC/Server 从一个版本升级到另一个版本。它是一个自由开源工具，使用它不需要任何脚本知识，因为它只需要配置文件即可运行。
 
 工具中提供两个默认 shell 文件。`setup.sh` 自动安装、更新代码，将脚本转换为一个简单的 zzupdate shell 命令。`zzupdate.sh` 将执行版本间的升级。
 
-### 如何安装 zzipdate？
+### 如何安装 zzupdate？
 
-要安装 zzupdate，只需执行以下命令。
+要安装 `zzupdate`，只需执行以下命令：
+
 ```
 $ curl -s https://raw.githubusercontent.com/TurboLabIt/zzupdate/master/setup.sh | sudo sh
 .
@@ -46,24 +48,24 @@ Already up-to-date.
 Setup completed!
 ----------------
 See https://github.com/TurboLabIt/zzupdate for the quickstart guide.
-
 ```
 
-将 Ubuntu 系统从一个版本升级到另一个版本，您不需要输入很多命令，也不需要重新启动，只需要运行下面的 zzupdate 命令并坐下喝杯咖啡就可以了。
+将 Ubuntu 系统从一个版本升级到另一个版本，您不需要输入很多命令，也不需要重新启动，只需要运行下面的 `zzupdate` 命令并坐下喝杯咖啡就可以了。
 
 请注意，当您远程升级系统时，建议您使用以下的工具来帮助您在任何断开连接时重新连接会话。
 
-**建议阅读：** [如何让一个进程/命令在 SSH 连接断开后继续运行][3]
+建议阅读： [如何让一个进程/命令在 SSH 连接断开后继续运行][3]
 
 ### 如何配置 zzupdate（可选）
 
-默认情况下，zzupdate 可以直接使用，不需要配置任何东西。当然，如果您想要自己配置一些内容，可以的。复制提供的实例配置文件 `zzupdate.default.conf` 到 `zzupdate.conf` 并在 `zzupdate.conf` 中配置您的首选项。
+默认情况下，`zzupdate` 可以开箱即用，不需要配置任何东西。当然，如果您想要自己配置一些内容也是可以的。复制提供的示例配置文件 `zzupdate.default.conf` 到 `zzupdate.conf`，并在 `zzupdate.conf` 中配置您的首选项。
+
 ```
 $ sudo cp /usr/local/turbolab.it/zzupdate/zzupdate.default.conf /etc/turbolab.it/zzupdate.conf
-
 ```
 
 打开文件，默认配置如下。
+
 ```
 $ sudo nano /etc/turbolab.it/zzupdate.conf
 
@@ -73,19 +75,18 @@ VERSION_UPGRADE=1
 VERSION_UPGRADE_SILENT=0
 COMPOSER_UPGRADE=1
 SWITCH_PROMPT_TO_NORMAL=0
-
 ```
 
-  * **`REBOOT=1 :`**系统在更新完成后自动重启
-  * **`REBOOT_TIMEOUT=15 :`**重启的默认超时值
-  * **`VERSION_UPGRADE=1 :`**执行从一个版本到另一个版本的版本升级 
-  * **`VERSION_UPGRADE_SILENT=0 :`**禁用自动升级
-  * **`COMPOSER_UPGRADE=1 :`**自动升级
-  * **`SWITCH_PROMPT_TO_NORMAL=0 :`**如果值为 `0`，将寻找相同种类的版本升级。例如您正在运行 LTS 的版本，那么将寻找 LTS 的版本升级，而不是用于正常版本升级。如果值为 `1`，那么无论您是运行 LTS 还是正常版本，都会查找最新版本
+  * `REBOOT=1`：系统在更新完成后自动重启
+  * `REBOOT_TIMEOUT=15`：重启的默认超时值
+  * `VERSION_UPGRADE=1`：执行从一个版本到另一个版本的版本升级 
+  * `VERSION_UPGRADE_SILENT=0`：禁用自动升级
+  * `COMPOSER_UPGRADE=1`：自动升级
+  * `SWITCH_PROMPT_TO_NORMAL=0`：如果值为 `0`，将寻找相同种类的版本升级。例如您正在运行 LTS 的版本，那么将寻找 LTS 的版本升级，而不是用于正常版本升级。如果值为 `1`，那么无论您是运行 LTS 还是正常版本，都会查找最新版本
 
 
+我现在正在使用 Ubuntu 17.10 ，查看一下详细信息。
 
-我现在使用 Ubuntu 17.10 并查看详细信息。
 ```
 $ cat /etc/*-release
 DISTRIB_ID=Ubuntu
@@ -107,7 +108,8 @@ UBUNTU_CODENAME=artful
 
 ```
 
-要升级 Ubuntu 到最新版本，只需要执行以下命令。
+要升级 Ubuntu 到最新版本，只需要执行以下命令：
+
 ```
 $ sudo zzupdate
 
@@ -181,10 +183,10 @@ Fetched 0 B in 6s (0 B/s)
 Reading package lists... Done
 Building dependency tree
 Reading state information... Done
-
 ```
 
-我们需要按下 `Enter` 按钮禁用 `Third Party` 仓库以继续升级。
+我们需要按下回车键禁用第三方仓库以继续升级。
+
 ```
 Updating repository information
 
@@ -209,10 +211,10 @@ Reading state information... Done
 Calculating the changes
 
 Calculating the changes
-
 ```
 
 开始下载 `Ubuntu 18.04 LTS` 软件包，所需时间取决于您的网络状况，一般情况下这将需要几分钟。
+
 ```
 Do you want to start the upgrade?
 
@@ -244,10 +246,10 @@ Get:1480 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 usb-modeswitch am
 Get:1481 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 usb-modeswitch-data all 20170806-2 [30.7 kB]
 Get:1482 http://in.archive.ubuntu.com/ubuntu bionic/main amd64 xbrlapi amd64 5.5-4ubuntu2 [61.8 kB]
 Fetched 999 MB in 6s (721 kB/s)
-
 ```
 
 安装新软件包时，很少有服务需要重新启动。 点击 `Yes` 按钮，它会自动重启所需的服务。
+
 ```
 Upgrading
 Inhibiting until Ctrl+C is pressed...
@@ -279,7 +281,8 @@ Progress: [ 95%]
 
 ```
 
-现在删除旧版的、系统不再需要的包。点击  `y` 以删除。
+现在删除旧版的、系统不再需要的包。点击 `y` 以删除。
+
 ```
 Searching for obsolete software
  ing package lists... 97%
@@ -312,7 +315,8 @@ Fetched 0 B in 0s (0 B/s)
 
 ```
 
-升级成功，需要重启系统。点击 `Y` 以重启系统。
+升级成功，需要重启系统。点击 `y` 以重启系统。
+
 ```
 System upgrade is complete.
 
@@ -325,9 +329,10 @@ Continue [yN]y
 
 ```
 
-**注意：** 少数情况下，会要求您确认配置文件替换以继续安装。
+注意： 少数情况下，会要求您确认配置文件替换以继续安装。
 
-查看升级后的系统详情。
+查看升级后的系统详情：
+
 ```
 $ cat /etc/*-release
 DISTRIB_ID=Ubuntu
@@ -346,7 +351,6 @@ BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
 PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
 VERSION_CODENAME=bionic
 UBUNTU_CODENAME=bionic
-
 ```
 
 --------------------------------------------------------------------------------
@@ -356,7 +360,7 @@ via: https://www.2daygeek.com/zzupdate-single-command-to-upgrade-ubuntu-18-04/
 作者：[PRAKASH SUBRAMANIAN][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[XiatianSummer](https://github.com/XiatianSummer)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
