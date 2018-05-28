@@ -1,3 +1,5 @@
+translating---geekpi
+
 /dev/[u]random: entropy explained
 ======
 ### Entropy

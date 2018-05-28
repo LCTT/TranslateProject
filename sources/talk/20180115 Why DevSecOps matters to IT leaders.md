@@ -1,4 +1,4 @@
-Why DevSecOps matters to IT leaders
+ Translating  by FelixYFZ Why DevSecOps matters to IT leaders
 ======
 
 ![](https://enterprisersproject.com/sites/default/files/styles/620x350/public/images/TEP_SecurityTraining1_620x414_1014.png?itok=zqxqJGDG)
