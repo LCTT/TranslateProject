@@ -1,15 +1,17 @@
-translating by wyxplus
-How to Install and Configure KVM on Ubuntu 18.04 LTS Server
+如何在 Ubuntu 18.04 服务器上安装和配置 KVM
+
 ======
-**KVM** (Kernel-based Virtual Machine) is an open source full virtualization solution for Linux like systems, KVM provides virtualization functionality using the virtualization extensions like **Intel VT** or **AMD-V**. Whenever we install KVM on any linux box then it turns it into the hyervisor by loading the kernel modules like **kvm-intel.ko** ( for intel based machines) and **kvm-amd.ko** ( for amd based machines).
 
-KVM allows us to install and run multiple virtual machines (Windows & Linux). We can create and manage KVM based virtual machines either via **virt-manager** graphical user interface or **virt-install** & **virsh** cli commands.
+**KVM**（基于内核的虚拟机）是一款为类 Linux 系统提供的开源全虚拟化解决方案，KVM 使用虚拟化扩展（如 **Intel VT** 或 **AMD-V**）提供虚拟化功能。无论何时我们在任何 Linux 机器上安装 KVM，都会通过加载诸如 kvm-intel.ko（基于 Intel 的机器）和 kvm-amd.ko（基于 amd 的机器）的内核模块，使其成为<ruby>管理程序<rt>hyervisor</rt></ruby>（LCTT 译者注：一种监控和管理虚拟机运行的核心软件层）。
 
-In this article we will discuss how to install and configure **KVM hypervisor** on Ubuntu 18.04 LTS server. I am assuming you have already installed Ubuntu 18.04 LTS server on your system. Login to your server and perform the following steps.
+KVM 允许我们安装和运行多个虚拟机（Windows 和 Linux）。我们可以通过 **virt-manager** 的图形用户界面或使用 **virt-install** 和 **virsh** 命令在命令行界面来创建和管理基于 KVM 的虚拟机。
 
-### Step:1 Verify Whether your system support hardware virtualization
+在本文中，我们将讨论如何在Ubuntu 18.04 LTS 服务器上安装和配置 **KVM 管理程序**。我假设你已经在你的服务器上安装了 Ubuntu 18.04 LTS 。接下来登录到您的服务器执行以下步骤。
 
-Execute below egrep command to verify whether your system supports hardware virtualization or not,
+### 第一步：确认您的硬件是否支持虚拟化
+
+执行 egrep 命令以验证您的服务器的硬件是否支持虚拟化，
+
 ```
 linuxtechi@kvm-ubuntu18-04:~$ egrep -c '(vmx|svm)' /proc/cpuinfo
 1
@@ -17,15 +19,17 @@ linuxtechi@kvm-ubuntu18-04:~$
 
 ```
 
-If the output is greater than 0 then it means your system supports Virtualization else reboot your system, then go to BIOS settings and enable VT technology.
+如果输出结果大于 0，就意味着您的硬件支持虚拟化。重启，进入 BIOS 设置中启用 VT 技术。
 
-Now Install “ **kvm-ok** ” utility using below command, it is used to determine if your server is capable of running hardware accelerated KVM virtual machines
+现在使用下面的命令安装“ **kvm-ok** ”实用程序，该程序用于确定您的服务器是否能够运行硬件加速的 KVM 虚拟机
+
 ```
 linuxtechi@kvm-ubuntu18-04:~$ sudo apt install cpu-checker
 
 ```
 
-Run kvm-ok command and verify the output,
+运行 kvm-ok 命令确认输出结果，
+
 ```
 linuxtechi@kvm-ubuntu18-04:~$ sudo kvm-ok
 INFO: /dev/kvm exists
@@ -34,41 +38,44 @@ linuxtechi@kvm-ubuntu18-04:~$
 
 ```
 
-### Step:2 Install KVM and its required packages
+### 第二步：安装 KVM 及其依赖包
 
-Run the below apt commands to install KVM and its dependencies
+
+运行下面的 apt 命令安装 KVM 及其依赖项
 ```
 linuxtechi@kvm-ubuntu18-04:~$ sudo apt update
 linuxtechi@kvm-ubuntu18-04:~$ sudo apt install qemu qemu-kvm libvirt-bin  bridge-utils  virt-manager
-
 ```
 
-Once the above packages are installed successfully, then your local user (In my case linuxtechi) will be added to the group libvirtd automatically.
+只要上图相应的软件包安装成功，那么你的本地用户（对于我来说是 linuxtechi）将被自动添加到 libvirtd 群组。
 
-### Step:3 Start & enable libvirtd service
+### 第三步：启动并启用 libvirtd 服务
 
-Whenever we install qemu & libvirtd packages in Ubuntu 18.04 Server then it will automatically start and enable libvirtd service, In case libvirtd service is not started and enabled then run beneath commands,
+我们在 Ubuntu 18.04 服务器上安装 qemu 和 libvirtd 软件包之后，它就会自动启动并启用 libvirtd 服务，如果 libvirtd 服务没有开启，则运行以下命令开启，
+
 ```
 linuxtechi@kvm-ubuntu18-04:~$ sudo service libvirtd start
 linuxtechi@kvm-ubuntu18-04:~$ sudo update-rc.d libvirtd enable
 
 ```
 
-Now verify the status of libvirtd service using below command,
+现在使用下面的命令确认 libvirtd 服务的状态，
+
 ```
 linuxtechi@kvm-ubuntu18-04:~$ service libvirtd status
 
 ```
 
-Output would be something like below:
+输出结果如下所示：
 
 [![libvirtd-command-ubuntu18-04][1]![libvirtd-command-ubuntu18-04][2]][3]
 
-### Step:4 Configure Network Bridge for KVM virtual Machines
+### 第四步：为 KVM 虚拟机配置桥接网络
 
-Network bridge is required to access the KVM based virtual machines outside the KVM hypervisor or host. In Ubuntu 18.04, network is managed by netplan utility, whenever we freshly installed Ubuntu 18.04 server then a file with name “ **/etc/netplan/50-cloud-init.yaml** ” is created automatically, to configure static IP and bridge, netplan utility will refer this file.
+只有通过桥接网络，KVM 虚拟机才能访问外部的 KVM 管理程序或主机。在Ubuntu 18.04中，网络由 netplan 实用程序管理，每当我们新安装一个 Ubuntu 18.04 系统时，会自动创建一个名称为 “**/etc/netplan/50-cloud-init.yaml**” 文件，其配置了静态 IP 和桥接网络，netplan 实用工具将引用这个文件。
 
-As of now I have already configured the static IP via this file and content of this file is below:
+截至目前，我已经在此文件配置了静态 IP，文件的具体内容如下：
+
 ```
 network:
     ethernets:
@@ -83,7 +90,8 @@ network:
 
 ```
 
-Let’s add the network bridge definition in this file,
+我们在这个文件中添加桥接网络的配置信息，
+
 ```
 linuxtechi@kvm-ubuntu18-04:~$ sudo vi /etc/netplan/50-cloud-init.yaml
 
@@ -105,20 +113,23 @@ network:
 
 ```
 
-As you can see we have removed the IP address from interface(ens33) and add the same IP to the bridge ‘ **br0** ‘ and also added interface (ens33) to the bridge br0. Apply these changes using below netplan command,
+正如你所看到的，我们已经从接口（ens33）中删除了 IP 地址，并将该 IP 添加到 '**br0**' 中，并且还将接口（ens33）添加到 br0。使用下面的 netplan 命令使更改生效，
+
 ```
 linuxtechi@kvm-ubuntu18-04:~$ sudo netplan apply
 linuxtechi@kvm-ubuntu18-04:~$
 
 ```
 
-If you want to see the debug logs then use the below command,
+如果您想查看 debug 日志请使用以下命令，
+
 ```
 linuxtechi@kvm-ubuntu18-04:~$ sudo netplan --debug  apply
 
 ```
 
-Now Verify the bridge status using following methods:
+现在使用以下方法确认网络桥接状态：
+
 ```
 linuxtechi@kvm-ubuntu18-04:~$ sudo networkctl status -a
 
@@ -132,18 +143,18 @@ linuxtechi@kvm-ubuntu18-04:~$ ifconfig
 
 [![ifconfig-command-output-ubuntu18-04][1]![ifconfig-command-output-ubuntu18-04][5]][5]
 
-### Start:5 Creating Virtual machine (virt-manager or virt-install command )
+### 第五步：创建虚拟机（使用 virt-manager 或 virt-install 命令）
 
-There are two ways to create virtual machine:
+有两种方式创建虚拟机：
 
-  * virt-manager (GUI utility)
-  * virt-install command (cli utility)
+  * virt-manager（图形化工具）
+  * virt-install（命令行工具）
 
 
+**使用 virt-manager 创建虚拟机：**
 
-**Creating Virtual machine using virt-manager:**
+通过执行下面的命令启动 virt-manager，
 
-Start the virt-manager by executing the beneath command,
 ```
 linuxtechi@kvm-ubuntu18-04:~$ sudo virt-manager
 
@@ -151,39 +162,42 @@ linuxtechi@kvm-ubuntu18-04:~$ sudo virt-manager
 
 [![Start-Virt-Manager-Ubuntu18-04][1]![Start-Virt-Manager-Ubuntu18-04][6]][6]
 
-Create a new virtual machine
+创建一个新的虚拟机
 
 [![ISO-file-Virt-Manager][1]![ISO-file-Virt-Manager][7]][7]
 
-Click on forward and select the ISO file, in my case I am using RHEL 7.3 iso file.
+点击下一步然后选择 ISO 镜像文件，我使用的是 RHEL 7.3 iso 镜像。
 
 [![Select-ISO-file-virt-manager-Ubuntu18-04-Server][1]![Select-ISO-file-virt-manager-Ubuntu18-04-Server][8]][8]
 
-Click on Forward
+点击下一步
 
-In the next couple of windows, you will be prompted to specify the RAM, CPU and disk for the VM.
+在接下来的几个窗口中，系统会提示要求您为 VM 分配内存，处理器数量和磁盘空间。
 
-Now Specify the Name of the Virtual Machine and network,
+并指定虚拟机名字和桥接网络名，
 
 [![VM-Name-Network-Virt-Manager-Ubuntu18-04][1]![VM-Name-Network-Virt-Manager-Ubuntu18-04][9]][9]
 
-Click on Finish
+点击结束
 
 [![RHEL7-3-Installation-Virt-Manager][1]![RHEL7-3-Installation-Virt-Manager][10]][10]
 
-Now follow the screen instruction and complete the installation,
+接下来只需要按照屏幕指示安装系统，
 
-**Creating Virtual machine from CLI using virt-install command,**
+**使用virt-install命令从命令行界面创建虚拟机，**
 
-Use the below virt-install command to create a VM from terminal, it will start the installation in CLI, replace the name of the VM, description, location of ISO file and network bridge as per your setup.
+使用下面的 virt-install 命令从终端创建一个虚拟机，它将在命令行界面中开始安装，并根据您对虚拟机的名字，说明，ISO 文件位置和桥接配置的设置创建虚拟机。
+
 ```
 linuxtechi@kvm-ubuntu18-04:~$ sudo virt-install  -n DB-Server  --description "Test VM for Database"  --os-type=Linux  --os-variant=rhel7  --ram=1096  --vcpus=1  --disk path=/var/lib/libvirt/images/dbserver.img,bus=virtio,size=10  --network bridge:br0 --graphics none  --location /home/linuxtechi/rhel-server-7.3-x86_64-dvd.iso --extra-args console=ttyS0
 
 ```
 
-That’s conclude the article, I hope this article help you to install KVM on your Ubuntu 18.04 Server. Apart from this, KVM is the default hypervisor for Openstack.
+本文到此为止，我希望这篇文章能帮助你能够在 Ubuntu 18.04 服务器上成功安装 KVM。 除此之外，KVM 也是 Openstack 默认的管理程序。
 
-Read More On : “[ **How to Create, Revert and Delete KVM Virtual machine (domain) snapshot with virsh command**][11]“
+
+阅读更多：“[**如何使用 virsh 命令创建，还原和删除 KVM 虚拟机快照**][11]”
+
 
 --------------------------------------------------------------------------------
 
@@ -191,7 +205,7 @@ via: https://www.linuxtechi.com/install-configure-kvm-ubuntu-18-04-server/
 
 作者：[Pradeep Kumar][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[wyxplus](https://github.com/wyxplus)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
