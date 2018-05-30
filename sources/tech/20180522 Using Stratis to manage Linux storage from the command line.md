@@ -1,3 +1,5 @@
+translating----geekpi
+
 Using Stratis to manage Linux storage from the command line
 ======
 
