@@ -1,3 +1,4 @@
+Translating by zhouzhuowei
 Getting started with Python for data science
 ======
 
