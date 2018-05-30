@@ -1,3 +1,5 @@
+Translating by MjSeven
+
 The Best Linux Tools for Teachers and Students
 ======
 Linux is a platform ready for everyone. If you have a niche, Linux is ready to meet or exceed the needs of said niche. One such niche is education. If you are a teacher or a student, Linux is ready to help you navigate the waters of nearly any level of the educational system. From study aids, to writing papers, to managing classes, to running an entire institution, Linux has you covered.
