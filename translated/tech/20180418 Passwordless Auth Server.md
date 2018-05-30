@@ -1,45 +1,44 @@
-Translating by qhwdw
-Passwordless Auth: Server
+无密码验证：服务器
 ============================================================
 
-Passwordless authentication allows logging in without a password, just an email. It’s a more secure way of doing than the classic email/password login.
+无密码验证可以让你只输入一个 email 而无需输入密码即可登入系统。这是一种比传统的电子邮件/密码验证方式登入更安全的方法。
 
-I’ll show you how to code an HTTP API in [Go][6] that provides this service.
+下面我将为你展示，如何在 [Go][6] 中实现一个 HTTP API 去提供这种服务。
 
-### Flow
+### 业务流
 
-*   User inputs his email.
+*   用户输入他的电子邮件地址。
 
-*   Server creates a temporal on-time-use code associated with the user (like a temporal password) and mails it to the user in form of a “magic link”.
+*   服务器创建一个临时的一次性使用的代码（就像一个临时密码一样）关联到用户，然后给用户邮箱中发送一个“魔法链接”。
 
-*   User clicks the magic link.
+*   用户点击魔法链接。
 
-*   Server extract the code from the magic link, fetch the user associated and redirects to the client with a new JWT.
+*   服务器提取魔法链接中的代码，获取关联的用户，并且使用一个新的 JWT 重定向到客户端。
 
-*   Client will use the JWT in every new request to authenticate the user.
+*   在每次有新请求时，客户端使用 JWT 去验证用户。
 
-### Requisites
+### 必需条件
 
-*   Database: We’ll use an SQL database called [CockroachDB][1] for this. It’s much like postgres, but writen in Go.
+*   数据库：我们为这个服务使用了一个叫 [CockroachDB][1] 的 SQL 数据库。它非常像 postgres，但它是用 Go 写的。
 
-*   SMTP Server: To send mails we’ll use a third party mailing service. For development we’ll use [mailtrap][2]. Mailtrap sends all the mails to it’s inbox, so you don’t have to create multiple fake email accounts to test it.
+*   SMTP 服务器：我们将使用一个第三方的邮件服务器去发送邮件。开发的时我们使用 [mailtrap][2]。Mailtrap 发送所有的邮件到它的收件箱，因此，你在测试它们时不需要创建多个假冒邮件帐户。
 
-Install Go from [it’s page][7] and check your installation went ok with `go version`(1.10.1 atm).
+从 [它的主页][7] 上安装 Go，然后使用 `go version`（1.10.1 atm）命令去检查它能否正常工作。
 
-Download CockroachDB from [it’s page][8], extract it and add it to your `PATH`. Check that all went ok with `cockroach version` (2.0 atm).
+从 [它的主页][8] 上下载 CockroachDB，展开它并添加到你的 `PATH` 变量中。使用 `cockroach version`（2.0 atm）命令检查它能否正常工作。
 
-### Database Schema
+### 数据库模式
 
-Now, create a new directory for the project inside `GOPATH` and start a new CockroachDB node with `cockroach start`:
+现在，我们在 `GOPATH` 目录下为这个项目创建一个目录，然后使用 `cockroach start` 启动一个新的 CockroachDB 节点：
 
 ```
 cockroach start --insecure --host 127.0.0.1
 
 ```
 
-It will print some things, but check the SQL address line, it should said something like `postgresql://root@127.0.0.1:26257?sslmode=disable`. We’ll use this to connect to the database later.
+它会输出一些内容，找到 SQL 地址行，它将显示像 `postgresql://root@127.0.0.1:26257?sslmode=disable` 这样的内容。稍后我们将使用它去连接到数据库。
 
-Create a `schema.sql` file with the following content.
+使用如下的内容去创建一个 `schema.sql` 文件。
 
 ```
 DROP DATABASE IF EXISTS passwordless_demo CASCADE;
@@ -63,28 +62,28 @@ INSERT INTO users (email, username) VALUES
 
 ```
 
-This script creates a database `passwordless_demo`, two tables: `users` and `verification_codes`, and inserts a fake user just to test it later. Each verification code is associated with a user and stores the creation date, useful to check if the code is expired or not.
+这个脚本创建了一个名为 `passwordless_demo` 的数据库、两个名为 `users` 和 `verification_codes` 的表，以及为了稍后测试而插入的一些假冒用户。每个验证代码都与用户关联并保存代码创建数据，以用于去检查代码是否过期。
 
-To execute this script use `cockroach sql` in other terminal:
+在另外的终端中使用 `cockroach sql` 命令去运行这个脚本：
 
 ```
 cat schema.sql | cockroach sql --insecure
 
 ```
 
-### Environment Configuration
+### 环境配置
 
-I want you to set two environment variables: `SMTP_USERNAME` and `SMTP_PASSWORD` that you can get from your mailtrap account. These two will be required by our program.
+需要配置两个环境变量：`SMTP_USERNAME` 和 `SMTP_PASSWORD`，你可以从你的 mailtrap 帐户中获得它们。将在我们的程序中用到它们。
 
-### Go Dependencies
+### Go 依赖
 
-For Go we’ll need the following packages:
+我们需要下列的 Go 包：
 
-*   [github.com/lib/pq][3]: Postgres driver which CockroachDB uses.
+*   [github.com/lib/pq][3]：它是 CockroachDB 使用的 postgres 驱动
 
-*   [github.com/matryer/way][4]: Router.
+*   [github.com/matryer/way][4]: 路由器
 
-*   [github.com/dgrijalva/jwt-go][5]: JWT implementation.
+*   [github.com/dgrijalva/jwt-go][5]: JWT 实现
 
 ```
 go get -u github.com/lib/pq
@@ -93,11 +92,11 @@ go get -u github.com/dgrijalva/jwt-go
 
 ```
 
-### Coding
+### 代码
 
-### Init Function
+### 初始化函数
 
-Create the `main.go` and start by getting some configuration from the environment inside the `init` function.
+创建 `main.go` 并且通过 `init` 函数里的环境变量中取得一些配置来启动。
 
 ```
 var config struct {
@@ -137,23 +136,23 @@ func env(key, fallbackValue string) string {
 
 ```
 
-*   `appURL` will allow us to build the “magic link”.
+*   `appURL` 将去构建我们的 “魔法链接”。
 
-*   `port` in which the HTTP server will start.
+*   `port` 将要启动的 HTTP 服务器。
 
-*   `databaseURL` is the CockroachDB address, I added `/passwordless_demo` to the previous address to indicate the database name.
+*   `databaseURL` 是 CockroachDB 地址，我添加 `/passwordless_demo` 前面的数据库地址去表示数据库名字。
 
-*   `jwtKey` used to sign JWTs.
+*   `jwtKey` 用于签名 JWTs。
 
-*   `smtpAddr` is a join of `SMTP_HOST` + `SMTP_PORT`; we’ll use it to to send mails.
+*   `smtpAddr` 是 `SMTP_HOST` + `SMTP_PORT` 的联合；我们将使用它去发送邮件。
 
-*   `smtpUsername` and `smtpPassword` are the two required vars.
+*   `smtpUsername` 和 `smtpPassword` 是两个必需的变量。
 
-*   `smtpAuth` is also used to send mails.
+*   `smtpAuth` 也是用于发送邮件。
 
-The `env` function allow us to get an environment variable with a fallback value in case it doesn’t exist.
+`env` 函数允许我们去获得环境变量，不存在时返回一个 fallback value。
 
-### Main Function
+### 主函数
 
 ```
 var db *sql.DB
@@ -181,7 +180,7 @@ func main() {
 
 ```
 
-First, it opens a database connection. Remember to load the driver.
+首先，打开数据库连接。记得要加载驱动。
 
 ```
 import (
@@ -190,11 +189,11 @@ import (
 
 ```
 
-Then, we create the router and define some endpoints. For the passwordless flow we use two endpoints: `/api/passwordless/start` mails the magic link and `/api/passwordless/verify_redirect` respond with the JWT.
+然后，我们创建路由器并定义一些端点。对于无密码业务流来说，我们使用两个端点：`/api/passwordless/start` 发送魔法链接，和 `/api/passwordless/verify_redirect` 用 JWT 响应。
 
-Finally, we start the server.
+最后，我们启动服务器。
 
-You can create empty handlers and middlewares to test that the server starts.
+你可以创建空处理程序和中间件去测试服务器启动。
 
 ```
 func createUser(w http.ResponseWriter, r *http.Request) {
@@ -227,7 +226,7 @@ func authRequired(next http.HandlerFunc) http.HandlerFunc {
 
 ```
 
-Now:
+接下来：
 
 ```
 go build
@@ -235,11 +234,11 @@ go build
 
 ```
 
-I’m on a directory called “passwordless-demo”, but if yours is different, `go build` will create an executable with that name. If you didn’t close the previous cockroach node and you setted `SMTP_USERNAME` and `SMTP_PASSWORD` vars correctly, you should see `starting server at http://localhost/ 🚀` without errors.
+我们在目录中有了一个 “passwordless-demo”，但是你的目录中可能与示例不一样，`go build` 将创建一个同名的可执行文件。如果你没有关闭前面的 cockroach 节点，并且你正确配置了 `SMTP_USERNAME` 和 `SMTP_PASSWORD` 变量，你将看到命令 `starting server at http://localhost/ 🚀` 没有错误输出。
 
-### JSON Required Middleware
+### JSON 要求的中间件
 
-Endpoints that need to decode JSON from the request body need to make sure the request is of type `application/json`. Because that is a common thing, I decoupled it to a middleware.
+端点需要从请求体中解码 JSON，因此要确保请求是 `application/json` 类型。因为它是一个通用的东西，我将它解耦到中间件。
 
 ```
 func jsonRequired(next http.HandlerFunc) http.HandlerFunc {
@@ -256,11 +255,11 @@ func jsonRequired(next http.HandlerFunc) http.HandlerFunc {
 
 ```
 
-As easy as that. First it gets the request content type from the headers, then check if it starts with “application/json”, otherwise it early return with `415 Unsupported Media Type`.
+实现很容易。首先它从请求头中获得内容的类型，然后检查它是否是以 “application/json” 开始，如果不是则以 `415 Unsupported Media Type` 提前返回。
 
-### Respond JSON Function
+### 响应 JSON 函数
 
-Responding with JSON is also a common thing so I extracted it to a function.
+以 JSON 响应是非常通用的做法，因此我把它提取到函数中。
 
 ```
 func respondJSON(w http.ResponseWriter, payload interface{}, code int) {
@@ -284,11 +283,11 @@ func respondJSON(w http.ResponseWriter, payload interface{}, code int) {
 
 ```
 
-First, it does a type assertion for primitive types to wrap they in a `map`. Then it marshalls to JSON, sets the response content type and status code, and writes the JSON. In case the JSON marshalling fails, it respond with an internal error.
+首先，对原始类型做一个类型判断，并将它们封装到一个 `map`。然后将它们编组到 JSON，设置响应内容类型和状态码，并写 JSON。如果 JSON 编组失败，则响应一个内部错误。
 
-### Respond Internal Error Function
+### 响应内部错误的函数
 
-`respondInternalError` is a funcion that respond with `500 Internal Server Error`, but it also logs the error to the console.
+`respondInternalError` 是一个响应 `500 Internal Server Error` 的函数，但是也同时将错误输出到控制台。
 
 ```
 func respondInternalError(w http.ResponseWriter, err error) {
@@ -300,9 +299,9 @@ func respondInternalError(w http.ResponseWriter, err error) {
 
 ```
 
-### Create User Handler
+### 创建用户处理程序
 
-I’ll start coding the `createUser` handler because is the more easy and REST-ish.
+下面开始编写 `createUser` 处理程序，因为它非常容易并且是 REST 式的。
 
 ```
 type User struct {
@@ -313,7 +312,7 @@ type User struct {
 
 ```
 
-The `User` type is just like the `users` table.
+`User` 类型和 `users` 表相似。
 
 ```
 var (
@@ -323,9 +322,9 @@ var (
 
 ```
 
-These regular expressions are to validate email and username respectively. These are very basic, feel free to adapt they as you need.
+这些正则表达式是分别用于去验证电子邮件和用户名的。这些都很简单，可以根据你的需要随意去适配。
 
-Now, **inside** `createUser` function we’ll start by decoding the request body.
+现在，在 `createUser` 函数内部，我们将开始解码请求体。
 
 ```
 var user User
@@ -337,7 +336,7 @@ defer r.Body.Close()
 
 ```
 
-We create a JSON decoder using the request body and decode to a user pointer. In case of error we return with a `400 Bad Request`. Don’t forget to close the body reader.
+我们将使用请求体去创建一个 JSON 解码器来解码出一个用户指针。如果发生错误则返回一个 `400 Bad Request`。不要忘记关闭请求体读取器。
 
 ```
 errs := make(map[string]string)
@@ -358,7 +357,7 @@ if len(errs) != 0 {
 
 ```
 
-This is how I make validation; a simple `map` and check if `len(errs) != 0` to return with `422 Unprocessable Entity`.
+这是我如何做验证；一个简单的 `map` 并检查如果 `len(errs) != 0`，则使用 `422 Unprocessable Entity` 去返回。
 
 ```
 err := db.QueryRowContext(r.Context(), `
@@ -381,18 +380,18 @@ if errPq, ok := err.(*pq.Error); ok && errPq.Code.Name() == "unique_violation" {
 
 ```
 
-This SQL query inserts a new user with the given email and username, and returns the auto generated id. Each `$` will be replaced by the next arguments passed to `QueryRowContext`.
+这个 SQL 查询使用一个给定的 email 和用户名去插入一个新用户，并返回自动生成的 id，每个 `$` 将被接下来传递给 `QueryRowContext` 的参数替换掉。
 
-Because the `users` table had unique constraints on the `email` and `username`fields I check for the “unique_violation” error to return with `403 Forbidden` or I return with an internal error.
+因为 `users` 表在 `email` 和 `username` 字段上有唯一性约束，因此我将检查 “unique_violation” 错误并返回 `403 Forbidden` 或者返回一个内部错误。
 
 ```
 respondJSON(w, user, http.StatusCreated)
 
 ```
 
-Finally I just respond with the created user.
+最后使用创建的用户去响应。
 
-### Passwordless Start Handler
+### 无密码验证开始部分的处理程序
 
 ```
 type PasswordlessStartRequest struct {
@@ -402,14 +401,14 @@ type PasswordlessStartRequest struct {
 
 ```
 
-This struct holds the `passwordlessStart` request body. The email of the user who wants to log in. The redirect URI comes from the client (the app that will use our API) ex: `https://frontend.app/callback`.
+这个结构体持有 `passwordlessStart` 的请求体。希望去登入的用户 email。来自客户端的重定向 URI（这个应用中将使用我们的 API）如：`https://frontend.app/callback`。
 
 ```
 var magicLinkTmpl = template.Must(template.ParseFiles("templates/magic-link.html"))
 
 ```
 
-We’ll use the golang template engine to build the mailing so I’ll need you to create a `magic-link.html` file inside a `templates` directory with a content like so:
+我们将使用 golang 模板引擎去构建邮件，因此需要你在 `templates` 目录中，用如下的内容创建一个 `magic-link.html` 文件：
 
 ```
 <!DOCTYPE html>
@@ -428,9 +427,9 @@ We’ll use the golang template engine to build the mailing so I’ll need you t
 
 ```
 
-This template is the mail we’ll send to the user with the magic link. Feel free to style it how you want.
+这个模板是给用户发送魔法链接邮件用的。你可以根据你的需要去随意调整它。
 
-Now, **inside** `passwordlessStart` function:
+现在， 进入 `passwordlessStart` 函数**内部**：
 
 ```
 var input PasswordlessStartRequest
@@ -442,7 +441,7 @@ defer r.Body.Close()
 
 ```
 
-First, we decode the request body like before.
+首先，我们像前面一样解码请求体。
 
 ```
 errs := make(map[string]string)
@@ -463,7 +462,7 @@ if len(errs) != 0 {
 
 ```
 
-For the redirect URI validation we use the golang URL parser and check that the URI is absolute.
+我们使用 golang 的 URL 解析器去验证重定向 URI，检查那个 URI 是否为绝对地址。
 
 ```
 var verificationCode string
@@ -482,7 +481,7 @@ if errPq, ok := err.(*pq.Error); ok && errPq.Code.Name() == "not_null_violation"
 
 ```
 
-This SQL query will insert a new verification code associated with a user with the given email and return the auto generated id. Because the user could not exist, that subquery can resolve to `NULL` which will fail the `NOT NULL`constraint on the `user_id` field so I do a check on that and return with `404 Not Found` in case or an internal error otherwise.
+这个 SQL 查询将插入一个验证代码，这个代码通过给定的 email 关联到用户，并且返回一个自动生成的 id。因为有可能会出现用户不存在的情况，那样的话子查询可能解析为 `NULL`，这将导致在 `user_id` 字段上因违反 `NOT NULL` 约束而导致失败，因此需要对这种情况进行检查，如果用户不存在，则返回 `404 Not Found` 或者一个内部错误。
 
 ```
 q := make(url.Values)
@@ -494,7 +493,7 @@ magicLink.RawQuery = q.Encode()
 
 ```
 
-Now, I build the magic link and set the `verification_code` and `redirect_uri`inside the query string. Ex: `http://localhost/api/passwordless/verify_redirect?verification_code=some_code&redirect_uri=https://frontend.app/callback`.
+现在，构建魔法链接并设置查询字符串中的 `verification_code` 和 `redirect_uri` 的值。如：`http://localhost/api/passwordless/verify_redirect?verification_code=some_code&redirect_uri=https://frontend.app/callback`。
 
 ```
 var body bytes.Buffer
@@ -506,7 +505,7 @@ if err := magicLinkTmpl.Execute(&body, data); err != nil {
 
 ```
 
-We’ll get the magic link template content saving it to a buffer. In case of error I return with an internal error.
+我们将得到的魔法链接模板的内容保存到缓冲区中。如果发生错误则返回一个内部错误。
 
 ```
 to := mail.Address{Address: input.Email}
@@ -517,16 +516,16 @@ if err := sendMail(to, "Magic Link", body.String()); err != nil {
 
 ```
 
-To mail the user I make use of `sendMail` function that I’ll code now. In case of error I return with an internal error.
+现在来写给用户发邮件的 `sendMail` 函数。如果发生错误则返回一个内部错误。
 
 ```
 w.WriteHeader(http.StatusNoContent)
 
 ```
 
-Finally, I just set the response status code to `204 No Content`. The client doesn’t need more data than a success status code.
+最后，设置响应状态码为 `204 No Content`。对于成功的状态码，客户端不需要很多数据。
 
-### Send Mail Function
+### 发送邮件函数
 
 ```
 func sendMail(to mail.Address, subject, body string) error {
@@ -557,18 +556,18 @@ func sendMail(to mail.Address, subject, body string) error {
 
 ```
 
-This function creates the structure of a basic HTML mail and sends it using the SMTP server. There is a lot of things you can customize of a mail, but I kept it simple.
+这个函数创建一个基本的 HTML 邮件结构体并使用 SMTP 服务器去发送它。邮件的内容你可以随意定制，我喜欢使用比较简单的内容。
 
-### Passwordless Verify Redirect Handler
+### 无密码验证重定向处理程序
 
 ```
 var rxUUID = regexp.MustCompile("^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$")
 
 ```
 
-First, this regular expression is to validate an UUID (the verification code).
+首先，这个正则表达式去验证一个 UUID（验证代码）。
 
-Now, **inside** `passwordlessVerifyRedirect` function:
+现在进入 `passwordlessVerifyRedirect` 函数 **内部**：
 
 ```
 q := r.URL.Query()
@@ -577,7 +576,7 @@ redirectURI := q.Get("redirect_uri")
 
 ```
 
-`/api/passwordless/verify_redirect` is a `GET` endpoint so we read data from the query string.
+`/api/passwordless/verify_redirect` 是一个 `GET` 端点，以便于我们从查询字符串中读取数据。
 
 ```
 errs := make(map[string]string)
@@ -600,7 +599,7 @@ if len(errs) != 0 {
 
 ```
 
-Pretty similar validation, but we store the parsed redirect URI into a `callback`variable.
+类似的验证，我们保存解析后的重定向 URI 到一个 `callback` 变量中。
 
 ```
 var userID string
@@ -619,7 +618,7 @@ if err := db.QueryRowContext(r.Context(), `
 
 ```
 
-This SQL query deletes a verification code with the given id and makes sure it has been created no more than 15 minutes ago, it also returns the `user_id`associated. In case of no rows, means the code didn’t exist or it was expired so we respond with that, otherwise an internal error.
+这个 SQL 查询通过给定的 id 去删除相应的验证代码，并且确保它创建之后时间不超过 15 分钟，它也返回关联的 `user_id`。如果没有检索到内容，意味着代码不存在或者已过期，我们返回一个响应信息，否则就返回一个内部错误。
 
 ```
 expiresAt := time.Now().Add(time.Hour * 24 * 60)
@@ -634,7 +633,7 @@ if err != nil {
 
 ```
 
-This is how the JWT is created. We set an expiration date for the JWT within 60 days. Maybe you can give it less time (~2 weeks) and add a new endpoint to refresh tokens, but I didn’t want to add more complexity.
+这些是如何去创建 JWT。我们为 JWT 设置一个 60 天的过期值，你也可以设置更短的时间（大约 2 周），并添加一个新端点去刷新令牌，但是不要搞的过于复杂。
 
 ```
 expiresAtB, err := expiresAt.MarshalText()
@@ -649,24 +648,24 @@ callback.Fragment = f.Encode()
 
 ```
 
-We plan to redirect; you could use the query string to add the JWT, but I’ve seen that a hash fragment is more used. Ex: `https://frontend.app/callback#jwt=token_here&expires_at=some_date`.
+我们去规划重定向；你可使用查询字符串去添加 JWT，但是更常见的是使用一个哈希片段。如：`https://frontend.app/callback#jwt=token_here&expires_at=some_date`.
 
-The expiration date could be extracted from the JWT, but then the client will have to implement a JWT library to decode it, so to make the life easier I just added it there too.
+过期日期可以从 JWT 中提取出来，但是这样做的话，就需要在客户端上实现一个 JWT 库来解码它，因此为了简化，我将它加到这里。
 
 ```
 http.Redirect(w, r, callback.String(), http.StatusFound)
 
 ```
 
-Finally we just redirect with a `302 Found`.
+最后我们使用一个 `302 Found` 重定向。
 
 * * *
 
-The passwordless flow is completed. Now we just need to code the `getAuthUser`endpoint which is to get info about the current authenticated user. If you rememeber, this endpoint makes use of `authRequired` middleware.
+无密码的工作流已经完成。现在需要去写 `getAuthUser` 端点的代码了，它用于获取当前验证用户的信息。你应该还记得，这个端点使用了 `authRequired` 中间件。
 
-### With Auth Middleware
+### 使用 Auth 中间件
 
-Before coding the `authRequired` middleware, I’ll code one that doesn’t require authentication. I mean, if no JWT is passed, it just continues without authenticating the user.
+在编写 `authRequired` 中间件之前，我将编写一个不需要验证的分支。目的是，如果没有传递 JWT，它将不去验证用户。
 
 ```
 type ContextKey int
@@ -711,13 +710,13 @@ func withAuth(next http.HandlerFunc) http.HandlerFunc {
 
 ```
 
-The JWT will come in every request inside the “Authorization” header in the form of “Bearer <token_here>”. So if no token is present, we just pass to the next middleware.
+JWT 将在每次请求时以 “Bearer <token_here>” 格式包含在 “Authorization” 头中。因此，如果没有提供令牌，我们将直接通过，进入接下来的中间件。
 
-We create a parser and parse the token. If fails, we return with `401 Unauthorized`.
+我们创建一个解析器来解析令牌。如果解析失败则返回 `401 Unauthorized`。
 
-Then we extract the claims inside the JWT and add the `Subject` (which is the user ID) to the request context.
+然后我们从 JWT 中提取出要求的内容，并添加 `Subject`（就是用户 ID）到需要的地方。
 
-### Auth Required Middleware
+### Auth 需要的中间件
 
 ```
 func authRequired(next http.HandlerFunc) http.HandlerFunc {
@@ -731,13 +730,14 @@ func authRequired(next http.HandlerFunc) http.HandlerFunc {
     })
 }
 
+
 ```
 
-Now, `authRequired` will make use of `withAuth` and will try to extract the authenticated user ID from the request context. If fails, it returns with `401 Unauthorized` otherwise continues.
+现在，`authRequired` 将使用 `withAuth` 并从请求内容中提取出验证用户的 ID。如果提取失败，它将返回 `401 Unauthorized`，提取成功则继续下一步。
 
-### Get Auth User
+### 获取 Auth 用户
 
-**Inside** `getAuthUser` handler:
+在 `getAuthUser` 处理程序**内部**：
 
 ```
 ctx := r.Context()
@@ -756,11 +756,11 @@ respondJSON(w, user, http.StatusOK)
 
 ```
 
-First we extract the ID of the authenticated user from the request context, we use that to fetch the user. In case of no row returned, we send a `418 I'm a teapot` or an internal error otherwise. Lastly we just respond with the user 😊
+首先，我们从请求内容中提取验证用户的 ID，我们使用这个 ID 去获取用户。如果没有获取到内容，则发送一个 `418 I'm a teapot`，或者一个内部错误。最后，我们将用这个用户去响应 😊
 
-### Fetch User Function
+### 获取 User 函数
 
-You saw a `fetchUser` function there.
+下面你看到的是 `fetchUser` 函数。
 
 ```
 func fetchUser(ctx context.Context, id string) (User, error) {
@@ -773,24 +773,24 @@ func fetchUser(ctx context.Context, id string) (User, error) {
 
 ```
 
-I decoupled it because fetching a user by ID is a common thing.
+我将它解耦是因为通过 ID 来获取用户是个常做的事。
 
 * * *
 
-That’s all the code. Build it and test it yourself. You can try a live demo [here][9].
+以上就是全部的代码。你可以自己去构建它和测试它。[这里][9] 还有一个 demo 你可以试用一下。
 
-If you have problems about `Blocked script execution because the document's frame is sandboxed and the 'allow-scripts' permission is not set` after clicking the magic link on mailtrap, try doing a right click + “Open link in new tab”. This is a security thing where the mail content is [sandboxed][10]. I had this problem sometimes on `localhost`, but I think you should be fine once you deploy the server with `https://`.
+如果你在 mailtrap 上点击之后出现有关 `脚本运行被拦截，因为文档的框架是沙箱化的，并且没有设置 'allow-scripts' 权限` 的问题，你可以尝试右键点击 “在新标签中打开链接“。这样做是安全的，因为邮件内容是 [沙箱化的][10]。我在 `localhost` 上有时也会出现这个问题，但是我认为你一旦以 `https://` 方式部署到服务器上应该不会出现这个问题了。
 
-Please leave any issues on the [GitHub repo][11] or feel free to send PRs 👍
+如果有任何问题，请在我的 [GitHub repo][11] 留言或者提交 PRs 👍
 
-I’ll write a second part for this post coding a client for the API.
+以后，我将为这个 API 写一个客户端作为这篇文章的第二部分。
 
 --------------------------------------------------------------------------------
 
 via: https://nicolasparada.netlify.com/posts/passwordless-auth-server/
 
 作者：[Nicolás Parada ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[qhwdw](https://github.com/qhwdw)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
