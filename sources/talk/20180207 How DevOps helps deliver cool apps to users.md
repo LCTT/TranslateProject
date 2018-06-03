@@ -1,4 +1,4 @@
-How DevOps helps deliver cool apps to users
+Translating by FelixYFZ How DevOps helps deliver cool apps to users
 ======
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/gears_wheels.png?itok=KRvpBttl)
