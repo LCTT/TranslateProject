@@ -166,7 +166,7 @@ linuxtechi@kvm-ubuntu18-04:~$ sudo virt-manager
 
 点击“结束”。
 
-[![RHEL7-3-Installation-Virt-Manager][1]![RHEL7-3-Installation-Virt-Manager][10]][10]
+![][10]
 
 接下来只需要按照屏幕指示安装系统。
 
