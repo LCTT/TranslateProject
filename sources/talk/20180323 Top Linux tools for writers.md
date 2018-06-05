@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 Top Linux tools for writers
 ======
 
