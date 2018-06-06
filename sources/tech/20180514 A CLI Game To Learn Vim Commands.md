@@ -1,3 +1,5 @@
+translating---geekpi
+
 A CLI Game To Learn Vim Commands
 ======
 
