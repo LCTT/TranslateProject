@@ -114,9 +114,12 @@ array(['HANDS',   'FIREARM',   'HANDS',   ..., 'FIREARM',   'FIREARM',   'F
 
 [这篇文章][13]列举出了一些非常好并且免费的关于机器学习相关的资源，包括有大量的指导教程。根据你自己的兴趣爱好，还可以找到许多的开源数据集。可以首先看看一直在被[Kaggle][14]维护着的数据集，可以从他的官网上找到很多非常不错的资源。
 
-其他python相关的资源：
---------------------------------------------------------------------------------
-> * 什么是python?
+**其他python相关的资源：**
+> * [什么是python?][16]
+> * [常用的python IDEs][17]
+> * [常用的python GUI框架][18]
+> * [最新的python相关文章][19]
+> * [更多的开发资源][20]
 
 via: https://opensource.com/article/18/3/getting-started-data-science
 
@@ -142,3 +145,9 @@ via: https://opensource.com/article/18/3/getting-started-data-science
 [13]:https://machinelearningmastery.com/best-machine-learning-resources-for-getting-started/
 [14]:https://www.kaggle.com/
 [15]:https://register.socallinuxexpo.org/reg6/
+[16]:https://opensource.com/resources/python?intcmp=7016000000127cYAAQ
+[17]:https://opensource.com/resources/python/ides?intcmp=7016000000127cYAAQ
+[18]:https://opensource.com/resources/python/gui-frameworks?intcmp=7016000000127cYAAQ
+[19]:https://opensource.com/tags/python?intcmp=7016000000127cYAAQ
+[20]:https://developers.redhat.com/?intcmp=7016000000127cYAAQ
+
