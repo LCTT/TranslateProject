@@ -23,7 +23,7 @@ Ubuntu 麒麟的外观和感觉很像 Ubuntu 的现代版本。它拥有的 [Uni
 via: http://thevarguy.com/open-source-application-software-companies/091515/ubuntu-linux-based-open-source-os-runs-42-percent-dell-pc
 
 作者：[Christopher Tozzi][a]
-译者：[geekpi](https://github.com/geeekpi)
+译者：[geekpi](https://github.com/geekpi)
 校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创翻译，[Linux中国](https://linux.cn/) 荣誉推出
