@@ -1,4 +1,7 @@
-# GDPR 将如何影响开源社区？
+GDPR 将如何影响开源社区？
+===========
+
+> 许多组织正在争先恐后地了解隐私法的变化如何影响他们的工作。
 
 ![How will the GDPR impact open source communities?](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/OSDC_EU_flag.png?itok=4n9j74tL "GDPR 法案将如何影响开源社区？")
 
@@ -70,17 +73,16 @@ GDPR 赋予欧盟公民更多的权利。其中一项权利是向企业查询个
 
 [![](https://opensource.com/sites/default/files/styles/profile_pictures/public/robinm-low-3-square.jpg?itok=8qH6iUZh)][7]
 
-Robin Muilwijk \- Robin Muilwijk 是一名互联网和电子政务顾问，在 Red Hat 旗下在线发布平台 Opensource.com 担任社区版主，在 Open Organization 担任大使。此外，Robin 还是 eZ 社区董事会成员，[eZ 系统][8] 社区的管理员。Robin 活跃在社交媒体中，促进和支持商业和生活领域的开源项目。可以在 Twitter 上关注 [Robin Muilwijk][9] 以获取更多关于他的信息。
+Robin Muilwijk 是一名互联网和电子政务顾问，在 Red Hat 旗下在线发布平台 Opensource.com 担任社区版主，在 Open Organization 担任大使。此外，Robin 还是 eZ 社区董事会成员，[eZ 系统][8] 社区的管理员。Robin 活跃在社交媒体中，促进和支持商业和生活领域的开源项目。可以在 Twitter 上关注 [Robin Muilwijk][9] 以获取更多关于他的信息。
 
 [更多关于我的信息][10]
 
-*   [学习如何做出贡献][11]
 
 ---
 
 via: [https://opensource.com/article/18/4/gdpr-impact][12]
 
-作者: [Robin Muilwijk][13] 选题者: [@lujun9972][14] 译者: [pinewall][15] 校对: [校对者ID][16]
+作者: [Robin Muilwijk][13] 选题者: [lujun9972][14] 译者: [pinewall][15] 校对: [wxy][16]
 
 本文由 [LCTT][17] 原创编译，[Linux中国][18] 荣誉推出
 
@@ -99,6 +101,6 @@ via: [https://opensource.com/article/18/4/gdpr-impact][12]
 [13]: https://opensource.com/users/robinmuilwijk
 [14]: https://github.com/lujun9972
 [15]: https://github.com/pinewall
-[16]: https://github.com/校对者ID
+[16]: https://github.com/wxy
 [17]: https://github.com/LCTT/TranslateProject
 [18]: https://linux.cn/
