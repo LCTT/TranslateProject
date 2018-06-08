@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 What is a Linux server and why does your business need one?
 ======
 
