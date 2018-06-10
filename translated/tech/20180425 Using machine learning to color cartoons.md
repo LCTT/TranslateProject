@@ -101,7 +101,7 @@ via: https://opensource.com/article/18/4/dragonpaint-bootstrapping
 
 作者：[K. Gretchen Greene][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/hopefully2333)
+译者：[hopefully2333](https://github.com/hopefully2333)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
