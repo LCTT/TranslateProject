@@ -1,27 +1,29 @@
-S9mtAt translating
 
-How to enable repository using subscription-manager in RHEL
+如何在RHEL中使用subscription-manager启用存储库
 ======
-Learn how to enable repository using subscription-manager in RHEL. Article also includes steps to register system with Red Hat, attach subscription and errors along with resolutions.
+了解如何在RHEL中使用subscription-manager启用存储库。 这篇文章还包括了使用 Red Hat 注册系统的步骤，添加订阅，发生错误的解决方案。
 
 ![Enable repository using subscription-manager][1]
 
-In this article we will walk you through step by step process to enable Red Hat repository in RHEL fresh installed server.
+（图中文字：了解在RHEL中使用subscription-manager启用存储库）
 
-Repository can be enabled using `subscription-manager` command like below –
+在本文中，我们将逐步介绍如何在RHEL刚安装的服务器中启用Red Hat存储库。
+
+可以利用 `subscription-manager` 命令启用存储库，如下所示 –
 
 ```
 root@kerneltalks # subscription-manager repos --enable rhel-6-server-rhv-4-agent-beta-debug-rpms
 Error: 'rhel-6-server-rhv-4-agent-beta-debug-rpms' does not match a valid repository ID. Use "subscription-manager repos --list" to see valid repositories.
 
 ```
-You will see above error when your subscription is not in place. Lets go through step by step procedure to enable repositories via `subscription-manager`
+当您的订阅不到位时，您会看到上述错误。让我们一步一步地通过 `subscription-manager` 来启用存储库。
 
-##### Step 1 : Register your system with Red Hat
+##### 步骤 1 : 使用 Red Hat 注册您的系统
 
-We are considering you have freshly installed system and its not yet registered with Red Hat. If you have registered system already then you can ignore this step.
 
-You can check if your system is registered with Red Hat for subscription using below command –
+我们正在考虑您已经安装了新系统并且尚未在Red Hat上注册。如果您已经注册了系统，那么您可以忽略此步骤。
+
+您可以使用下面的命令来检查您的系统是否已使用 Red Hat 注册以订阅 –
 
 ```
 # subscription-manager version
@@ -32,7 +34,8 @@ subscription-manager: 1.18.10-1.el6
 python-rhsm: 1.18.6-1.el6
 
 ```
-Here, in first line of output you can see system is not registered. So, lets start with registering system. You need to use `subscription-manager` command with `register` switch. You need to use your Red Hat account credentials here.
+
+在这里输出的第一行中，您可以看到系统未注册。那么，让我们开始注册系统。您需要在 `register` 开关中使用 `subscription-manager` 命令。在这一步需要使用您的 Red Hat 帐户凭证。
 
 ```
 root@kerneltalks # subscription-manager register
@@ -42,7 +45,7 @@ Password:
 Network error, unable to connect to server. Please see /var/log/rhsm/rhsm.log for more information.
 ```
 
-If you are getting above error then your server is not able to reach RedHat. Check internet connection & if you are able to [resolve site name][2]s. Sometimes even if you are able to ping subscription server, you will see this error. This might be because of you have proxy server in your environment. In such case, you need to add its details in file `/etc/rhsm/rhsm.conf`. Below proxy details should be populated :
+如果您遇到上述错误，那么您的服务器无法连接到 RedHat。检查您的网络连接，或者您能[解决网站名称的问题][2]。有时候，即使你能够 ping 通订阅服务器，你也会看到这个错误。这可能是因为您的环境中有代理服务器。在这种情况下，您需要将其详细信息添加到文件 `/etc/rhsm/rhsm.conf` 中。以下代理详细信息应被填充为：
 
 ```
 # an http proxy server to use
@@ -59,7 +62,7 @@ If you are getting above error then your server is not able to reach RedHat. Che
  
 ```
 
-Once you are done, recheck if `subscription-manager` taken up new proxy details by using below command –
+一旦你完成了这些，重新检查 `subscription-manager` 是否通过使用下面的命令获得了新的代理信息 –
 
 ```
 root@kerneltalks # subscription-manager config
@@ -98,7 +101,7 @@ root@kerneltalks # subscription-manager config
 [] - Default value in use
 ```
 
-Now, try registering your system again.
+现在，请尝试重新注册您的系统。
 
 ```
 root@kerneltalks # subscription-manager register
@@ -108,7 +111,7 @@ Password:
 You must first accept Red Hat's Terms and conditions. Please visit https://www.redhat.com/wapps/tnc/termsack?event[]=signIn . You may have to log out of and back into the Customer Portal in order to see the terms.
 ```
 
-You will see above error if you are adding server to your Red Hat account for the first time. Go to the [URL ][3]and accept the terms. Come back to terminal and try again.
+如果您是第一次将服务器添加到 Red Hat 帐户，您将看到上述错误。转到 [URL ][3]并接受条款。回到终端，然后再试一次。
 
 ```
 oot@kerneltalks # subscription-manager register
@@ -118,7 +121,7 @@ Password:
 The system has been registered with ID: xxxxb2-xxxx-xxxx-xxxx-xx8e199xxx
 ```
 
-Bingo! System is registered with Red Hat now. You can again verify it with `version` switch.
+Bingo！系统现在已在 Red Hat 上注册。你可以再次用 `version` 开关来验证它。
 
 ```
 #subscription-managerversionservertype:RedHatSubscriptionManagementsubscriptionmanagementserver:2.0.43-1subscriptionmanagementrules:5.26subscription-manager:1.18.10-1.el6python-rhsm:1.18.6-1.el6" decode="true"  ]root@kerneltalks # subscription-manager version
@@ -129,18 +132,18 @@ subscription-manager: 1.18.10-1.el6
 python-rhsm: 1.18.6-1.el6
 ```
 
-##### Step 2 : Attach subscription to your server
+##### 步骤 2 : 将订阅添加到您的服务器
 
-First try to list repositories. You wont be able to list any since we haven’t attached any subscription to our server yet.
+首先尝试列出存储库。您将无法列出任何内容，因为我们尚未在我们的服务器中添加任何订阅。
 
 ```
 root@kerneltalks # subscription-manager repos --list
 This system has no repositories available through subscriptions.
 ```
 
-As you can see `subscription-manager` couldn’t found any repositories, you need to attach subscriptions to your server. Once subscription is attached, `subscription-manager` will be able to list repositories under it.
+正如您所看到 `subscription-manager` 找不到任何存储库，您需要将订阅添加到您的服务器上。一旦订阅被添加，`subscription-manager` 将能够列出下列的存储库。
 
-To attach subscription, first check all available subscriptions for your server with below command –
+要添加订阅，请先使用以下命令检查服务器的所有可用订阅 –
 
 ```
 root@kerneltalks # subscription-manager list --available
@@ -172,15 +175,16 @@ Ends: 12/01/2018
 System Type: Virtual
 ```
 
-You will get list of such subscriptions available for your server. You need to read through what it provides and note down `Pool ID` of subscriptions which are useful/required for you.
+您将获得可用于您的服务器的此类订阅的列表。您需要阅读它提供的内容并记下对您有用或需要的订阅的 `Pool ID`。
 
-Now, attach subscriptions to your server by using pool ID.
+现在，使用 pool ID 将订阅附加到您的服务器。
+
 ```
 # subscription-manager attach --pool=8a85f98c6011059f0160110a2ae6000f
 Successfully attached a subscription for: Red Hat Enterprise Linux for Virtual Datacenters, Standard
 ```
 
-If you are not sure which one to pick, you can simple attach subscriptions automatically which are best suited for your server with below command –
+如果您不确定选择哪一个，则可以使用下面的命令自动地添加最适合您的服务器的订阅 –
 
 ```
 root@kerneltalks # subscription-manager attach --auto
@@ -189,18 +193,18 @@ Product Name: Red Hat Enterprise Linux Server
 Status: Subscribed
 ```
 
-Move on to final step to enable repository.
+接下来是最后一步启用存储库。
 
-##### Step 3 : Enable repository
+##### 步骤 3 : 启用存储库
 
-Now you will be enable repository which is available under your attached subscription.
+现在您将能够启用存储库，该存储库在您的附加订阅下可用。
 
 ```
 root@kerneltalks # subscription-manager repos --enable rhel-6-server-rhv-4-agent-beta-debug-rpms
 Repository 'rhel-6-server-rhv-4-agent-beta-debug-rpms' is enabled for this system.
 ```
 
-Thats it. You are done. You can [list repositories with yum command][4] and confirm.
+到这里，您已经完成了。您可以[用 yum 命令列出存储库][4]并确认
 
 --------------------------------------------------------------------------------
 
