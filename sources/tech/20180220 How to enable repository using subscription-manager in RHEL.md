@@ -1,3 +1,5 @@
+S9mtAt translating
+
 How to enable repository using subscription-manager in RHEL
 ======
 Learn how to enable repository using subscription-manager in RHEL. Article also includes steps to register system with Red Hat, attach subscription and errors along with resolutions.
