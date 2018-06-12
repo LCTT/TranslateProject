@@ -1,5 +1,6 @@
 Intel and AMD Reveal New Processor Designs
 ======
+[translating by softpaopao](#)
 
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/whiskey-lake.jpg?itok=b1yuW71L)
 
