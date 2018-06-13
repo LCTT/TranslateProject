@@ -1,8 +1,6 @@
 Create a Clean-Code App with Kotlin Coroutines and Android Architecture Components
 ============================================================
 
-Translating by S9mtAt
-
 ### Full demo weather app included.
 
 Android development is evolving fast. A lot of developers and companies are trying to address common problems and create some great tools or libraries that can totally change the way we structure our apps.

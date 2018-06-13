@@ -1,5 +1,3 @@
-yangjiaqiang 翻译中
-
 How To Set Up PF Firewall on FreeBSD to Protect a Web Server
 ======
 

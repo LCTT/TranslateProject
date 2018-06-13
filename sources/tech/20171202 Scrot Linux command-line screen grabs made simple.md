@@ -1,5 +1,3 @@
-Translating by filefi
-
 # Scrot: Linux command-line screen grabs made simple
 
 by [Scott Nesbitt][a] · November 30, 2017
@@ -58,7 +56,7 @@ It's basic, but Scrot gets the job done nicely.
 via: https://opensource.com/article/17/11/taking-screen-captures-linux-command-line-scrot
 
 作者：[Scott Nesbitt][a]
-译者：[filefi](https://github.com/filefi)
+译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

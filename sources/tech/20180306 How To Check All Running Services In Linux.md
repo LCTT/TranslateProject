@@ -1,5 +1,3 @@
-translating by Flowsnow
-
 How To Check All Running Services In Linux
 ======
 
