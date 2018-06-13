@@ -1,4 +1,3 @@
-**translating by [erlinux](https://github.com/erlinux)**
 Operating a Kubernetes network
 ============================================================
 
