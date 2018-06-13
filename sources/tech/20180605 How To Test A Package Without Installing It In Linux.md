@@ -1,3 +1,5 @@
+translating---geekpi
+
 How To Test A Package Without Installing It In Linux
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2018/06/nix-720x340.png)
