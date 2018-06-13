@@ -1,4 +1,3 @@
-translating by amwps290
 Simple Load Balancing with DNS on Linux
 ======
 
