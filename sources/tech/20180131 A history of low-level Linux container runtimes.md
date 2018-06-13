@@ -1,5 +1,3 @@
-pinewall translating
-
 A history of low-level Linux container runtimes
 ======
 

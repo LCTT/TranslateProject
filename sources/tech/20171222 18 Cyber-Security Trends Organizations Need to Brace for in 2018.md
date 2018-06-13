@@ -1,4 +1,4 @@
-【翻译中】18 Cyber-Security Trends Organizations Need to Brace for in 2018
+18 Cyber-Security Trends Organizations Need to Brace for in 2018
 ======
 
 ### 18 Cyber-Security Trends Organizations Need to Brace for in 2018

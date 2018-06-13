@@ -1,5 +1,3 @@
-Translating by lonaparte
-
 Container Basics: Terms You Need to Know
 ======
 
