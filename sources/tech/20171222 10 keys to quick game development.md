@@ -1,7 +1,6 @@
-翻译中 by zky001
 10 keys to quick game development
 ======
-![配图](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/computer_keyboard_laptop_development_code_woman.png?itok=vbYz6jjb)
+![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/computer_keyboard_laptop_development_code_woman.png?itok=vbYz6jjb)
 
 In early October, the inaugural [Open Jam][1] sponsored by Opensource.com drew 45 entries from teams located around the world. The teams had just three days to create a game using open source software to enter into the competition, and [three teams came out on top][2].
 
@@ -72,7 +71,7 @@ Have you participated in Open Jam or another a game jam and have other advice? O
 via: https://opensource.com/article/17/12/10-keys-rapid-open-source-game-development
 
 作者：[Ryan Estes][a]
-译者：[zky001](https://github.com/zky001)
+译者：[译者ID](https://github.com/译者ID)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

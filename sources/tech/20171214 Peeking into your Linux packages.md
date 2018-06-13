@@ -1,4 +1,3 @@
-(translating by runningwater)
 Peeking into your Linux packages
 ======
 Do you ever wonder how many _thousands_ of packages are installed on your Linux system? And, yes, I said "thousands." Even a fairly modest Linux system is likely to have well over a thousand packages installed. And there are many ways to get details on what they are.
