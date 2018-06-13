@@ -1,8 +1,11 @@
-Stratis 从 ZFS, Btrfs 和 LVM 学到哪些
+Stratis 从 ZFS、Btrfs 和 LVM 学到哪些
 ======
+
+> 深入了解这个强大而不繁琐的 Linux 存储管理系统。
+
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/cloud-windows-building-containers.png?itok=0XvZLZ8k)
 
-在本系列[第一部分][1]中提到，Stratis 是一个<ruby>卷管理文件系统<rt>volume-managing filesystem, VMF</rt></ruby>，功能特性类似于 [ZFS][2] 和 [Btrfs][3]。在设计 Stratis 过程中，我们研究了已有解决方案开发者做出的取舍。
+在本系列[第一部分][1]中提到，Stratis 是一个<ruby>卷管理文件系统<rt>volume-managing filesystem</rt></ruby>（VMF），功能特性类似于 [ZFS][2] 和 [Btrfs][3]。在设计 Stratis 过程中，我们研究了已有解决方案开发者做出的取舍。
 
 ### 为何不使用已有解决方案
 
@@ -14,7 +17,7 @@ Stratis 从 ZFS, Btrfs 和 LVM 学到哪些
 
 ### Stratis 如何与众不同
 
-ZFS 和 Btrfs 让我们知道一件事情，即编写一个内核支持的 VMF 文件系统需要花费极大的时间和精力，以便消除漏洞、增强稳定性。涉及核心数据时，提供正确性保证是必要的。如果 Stratis 也采用这种方案并从零开始的话，开发工作也需要十数年，这是无法接受的。
+ZFS 和 Btrfs 让我们知道一件事情，即编写一个内核支持的 VMF 文件系统需要花费极大的时间和精力，才能消除漏洞、增强稳定性。涉及核心数据时，提供正确性保证是必要的。如果 Stratis 也采用这种方案并从零开始的话，开发工作也需要十数年，这是无法接受的。
 
 相反地，Stratis 采用 Linux 内核的其它一些已有特性：[device mapper][6] 子系统以及久经考验的高性能文件系统 [XFS][7]，其中前者被 LVM 用于提供 RAID、精简配置和其它块设备特性而广为人知。Stratis 将已有技术作为（技术架构中的）层来创建存储池，目标是通过集成为用户提供一个看似无缝的整体。
 
@@ -24,13 +27,13 @@ ZFS 和 Btrfs 让我们知道一件事情，即编写一个内核支持的 VMF �
 
 对于增加新硬盘或将已有硬盘替换为更大容量的硬盘，ZFS 有一些限制，尤其是存储池做了冗余配置的时候，这一点让我们不太满意。当然，这么设计也是有其原因的，但我们更愿意将其视为可以改进的空间。
 
-最后，一旦掌握了 ZFS 的命令行工具，用户体验很好。我们希望让 Stratis 的命令行工具能够保持这种体验；同时，我们也很喜欢 ZFS 命令行工具的发展趋势，包括使用<ruby>必选参数<rt>positional parameters</rt></ruby>和控制每个命令需要的键盘输入量。
+最后，一旦掌握了 ZFS 的命令行工具，用户体验很好。我们希望让 Stratis 的命令行工具能够保持这种体验；同时，我们也很喜欢 ZFS 命令行工具的发展趋势，包括使用<ruby>位置参数<rt>positional parameters</rt></ruby>和控制每个命令需要的键盘输入量。
 
 （LCTT 译注：位置参数来自脚本，$n 代表第 n 个参数）
 
 ### Stratis 从 Btrfs 学到哪些
 
-Btrfs 让我们满意的一点是，有单一的包含必选子命令的命令行工具。Btrfs 也将冗余（选择对应的 Btrfs profiles）视为存储池的特性之一。而且和 ZFS 相比实现方式更好理解，也允许增加甚至移除硬盘。
+Btrfs 让我们满意的一点是，有单一的包含位置子命令的命令行工具。Btrfs 也将冗余（选择对应的 Btrfs profiles）视为存储池的特性之一。而且和 ZFS 相比实现方式更好理解，也允许增加甚至移除硬盘。
 
 （LCTT 译注：Btrfs profiles 包括 single/DUP 和 各种 RAID 等类型）
 
@@ -55,12 +58,12 @@ via: https://opensource.com/article/18/4/stratis-lessons-learned
 作者：[Andy Grover][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[pinewall](https://github.com/pinewall)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://opensource.com/users/agrover
-[1]:https://opensource.com/article/18/4/stratis-easy-use-local-storage-management-linux
+[1]:https://linux.cn/article-9736-1.html
 [2]:https://en.wikipedia.org/wiki/ZFS
 [3]:https://en.wikipedia.org/wiki/Btrfs
 [4]:https://en.wikipedia.org/wiki/Common_Development_and_Distribution_License
