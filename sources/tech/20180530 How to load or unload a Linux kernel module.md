@@ -1,3 +1,4 @@
+translate by amwps290
 How to load or unload a Linux kernel module
 ======
 
