@@ -1,5 +1,3 @@
-KevinSJ translating
-
 How CERN Is Using Linux and Open Source
 ============================================================
 
