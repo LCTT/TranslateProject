@@ -1,7 +1,10 @@
-大学生对开始开源的反思
+大学生对开源的反思
 ======
 
+> 开源工具的威力和开源运动的重要性。
+
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/OSDC_women_computing_2.png?itok=JPlR5aCA)
+
 我刚刚完成大学二年级的第一学期，我正在思考我在课堂上学到的东西。有一节课特别引起了我的注意：“[开源世界的基础][1]”，它由杜克大学的 Bryan Behrenshausen 博士讲授。我在最后一刻参加了课程，因为它看起来很有趣，诚实地来说，因为它符合我的日程安排。
 
 第一天，Behrenshausen 博士问我们学生是否知道或使用过任何开源程序。直到那一天，我几乎没有听过[术语“开源”][2]，当然也不知道任何属于该类别的产品。然而，随着学期的继续，对我而言，如果没有开源，我对事业抱负的激情就不会存在。
@@ -12,7 +15,7 @@
 
 几周后，我偶然在互联网上看到了一只有着  Pop-Tart 躯干并且后面拖着彩虹在太空飞行的猫。我搜索了“如何制作动态图像”，并发现了一个开源的图形编辑器 [GIMP][3]，并用它为我兄弟做了一张“辛普森一家”的 GIF 作为生日礼物。
 
-我萌芽的兴趣成长为完全的痴迷：在我笨重的、落后的笔记本上制作艺术品。由于我没有很好的炭笔，油彩或水彩，所以我用[图形设计][4]作为创意的表达。我花了几个小时在计算机实验室上[W3Schools][5]学习 HTML 和 CSS 的基础知识，以便我可以用我幼稚的 GIF 填充在线作品集。几个月后，我在 [WordPress][6] 发布了我的第一个网站。
+我萌芽的兴趣成长为完全的痴迷：在我笨重的、落后的笔记本上制作艺术品。由于我没有很好的炭笔，油彩或水彩，所以我用[图形设计][4]作为创意的表达。我花了几个小时在计算机实验室上 [W3Schools][5] 学习 HTML 和 CSS 的基础知识，以便我可以用我幼稚的 GIF 填充在线作品集。几个月后，我在 [WordPress][6] 发布了我的第一个网站。
 
 ### 为什么开源
 
@@ -29,9 +32,9 @@
 via: https://opensource.com/article/18/3/college-getting-started
 
 作者：[Christine Hwang][a]
-译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
 选题：[lujun9972](https://github.com/lujun9972)
+译者：[geekpi](https://github.com/geekpi)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
