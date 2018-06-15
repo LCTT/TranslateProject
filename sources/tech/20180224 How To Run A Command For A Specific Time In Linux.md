@@ -1,3 +1,5 @@
+translating---geekpi
+
 How To Run A Command For A Specific Time In Linux
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2018/02/Run-A-Command-For-A-Specific-Time-In-Linux-1-720x340.png)
