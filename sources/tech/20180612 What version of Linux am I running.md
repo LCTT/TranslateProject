@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 What version of Linux am I running?
 ======
 
