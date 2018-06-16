@@ -160,7 +160,7 @@ func main() {
     router.Handle("GET", "/api/auth_user", authRequired(getAuthUser))
 
     addr := fmt.Sprintf(":%d", config.port)
-    log.Printf("starting server at %s 🚀\n", config.appURL)
+    log.Printf("starting server at %s \n", config.appURL)
     log.Fatalf("could not start server: %v\n", http.ListenAndServe(addr, router))
 }
 
@@ -220,7 +220,7 @@ go build
 
 ```
 
-我们在目录中有了一个 “passwordless-demo”，但是你的目录中可能与示例不一样，`go build` 将创建一个同名的可执行文件。如果你没有关闭前面的 cockroach 节点，并且你正确配置了 `SMTP_USERNAME` 和 `SMTP_PASSWORD` 变量，你将看到命令 `starting server at http://localhost/ 🚀` 没有错误输出。
+我们在目录中有了一个 “passwordless-demo”，但是你的目录中可能与示例不一样，`go build` 将创建一个同名的可执行文件。如果你没有关闭前面的 cockroach 节点，并且你正确配置了 `SMTP_USERNAME` 和 `SMTP_PASSWORD` 变量，你将看到命令 `starting server at http://localhost/ ` 没有错误输出。
 
 #### 请求 JSON 的中间件
 
@@ -764,7 +764,7 @@ func fetchUser(ctx context.Context, id string) (User, error) {
 
 如果你在 mailtrap 上点击之后出现有关 `脚本运行被拦截，因为文档的框架是沙箱化的，并且没有设置 'allow-scripts' 权限` 的问题，你可以尝试右键点击 “在新标签中打开链接“。这样做是安全的，因为邮件内容是 [沙箱化的][10]。我在 `localhost` 上有时也会出现这个问题，但是我认为你一旦以 `https://` 方式部署到服务器上应该不会出现这个问题了。
 
-如果有任何问题，请在我的 [GitHub repo][11] 留言或者提交 PRs 👍
+如果有任何问题，请在我的 [GitHub repo][11] 留言或者提交 PRs 
 
 以后，我为这个 API 写了一个客户端作为这篇文章的[第二部分][13]。
 
