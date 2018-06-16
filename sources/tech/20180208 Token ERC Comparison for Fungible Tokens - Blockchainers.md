@@ -1,3 +1,4 @@
+Translating by qhwdw
 Token ERC Comparison for Fungible Tokens – Blockchainers
 ======
 “The good thing about standards is that there are so many to choose from.” [_Andrew S. Tanenbaum_][1]
