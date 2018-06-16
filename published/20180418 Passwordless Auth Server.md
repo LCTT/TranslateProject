@@ -5,27 +5,22 @@
 
 下面我将为你展示，如何在 [Go][6] 中实现一个 HTTP API 去提供这种服务。
 
-### 业务流
+### 流程
 
 *   用户输入他的电子邮件地址。
-
 *   服务器创建一个临时的一次性使用的代码（就像一个临时密码一样）关联到用户，然后给用户邮箱中发送一个“魔法链接”。
-
 *   用户点击魔法链接。
-
 *   服务器提取魔法链接中的代码，获取关联的用户，并且使用一个新的 JWT 重定向到客户端。
-
 *   在每次有新请求时，客户端使用 JWT 去验证用户。
 
 ### 必需条件
 
 *   数据库：我们为这个服务使用了一个叫 [CockroachDB][1] 的 SQL 数据库。它非常像 postgres，但它是用 Go 写的。
+*   SMTP 服务器：我们将使用一个第三方的邮件服务器去发送邮件。开发的时我们使用 [mailtrap][2]。Mailtrap 发送所有的邮件到它的收件箱，因此，你在测试时不需要创建多个假邮件帐户。
 
-*   SMTP 服务器：我们将使用一个第三方的邮件服务器去发送邮件。开发的时我们使用 [mailtrap][2]。Mailtrap 发送所有的邮件到它的收件箱，因此，你在测试它们时不需要创建多个假冒邮件帐户。
+从 [Go 的主页][7] 上安装它，然后使用 `go version`（1.10.1 atm）命令去检查它能否正常工作。
 
-从 [它的主页][7] 上安装 Go，然后使用 `go version`（1.10.1 atm）命令去检查它能否正常工作。
-
-从 [它的主页][8] 上下载 CockroachDB，展开它并添加到你的 `PATH` 变量中。使用 `cockroach version`（2.0 atm）命令检查它能否正常工作。
+从 [CockroachDB 的主页][8] 上下载它，展开它并添加到你的 `PATH` 变量中。使用 `cockroach version`（2.0 atm）命令检查它能否正常工作。
 
 ### 数据库模式
 
@@ -33,7 +28,6 @@
 
 ```
 cockroach start --insecure --host 127.0.0.1
-
 ```
 
 它会输出一些内容，找到 SQL 地址行，它将显示像 `postgresql://root@127.0.0.1:26257?sslmode=disable` 这样的内容。稍后我们将使用它去连接到数据库。
@@ -62,7 +56,7 @@ INSERT INTO users (email, username) VALUES
 
 ```
 
-这个脚本创建了一个名为 `passwordless_demo` 的数据库、两个名为 `users` 和 `verification_codes` 的表，以及为了稍后测试而插入的一些假冒用户。每个验证代码都与用户关联并保存代码创建数据，以用于去检查代码是否过期。
+这个脚本创建了一个名为 `passwordless_demo` 的数据库、两个名为 `users` 和 `verification_codes` 的表，以及为了稍后测试而插入的一些假用户。每个验证代码都与用户关联并保存创建时间，以用于去检查验证代码是否过期。
 
 在另外的终端中使用 `cockroach sql` 命令去运行这个脚本：
 
@@ -80,9 +74,7 @@ cat schema.sql | cockroach sql --insecure
 我们需要下列的 Go 包：
 
 *   [github.com/lib/pq][3]：它是 CockroachDB 使用的 postgres 驱动
-
 *   [github.com/matryer/way][4]: 路由器
-
 *   [github.com/dgrijalva/jwt-go][5]: JWT 实现
 
 ```
@@ -94,7 +86,7 @@ go get -u github.com/dgrijalva/jwt-go
 
 ### 代码
 
-### 初始化函数
+#### 初始化函数
 
 创建 `main.go` 并且通过 `init` 函数里的环境变量中取得一些配置来启动。
 
@@ -137,22 +129,16 @@ func env(key, fallbackValue string) string {
 ```
 
 *   `appURL` 将去构建我们的 “魔法链接”。
-
 *   `port` 将要启动的 HTTP 服务器。
-
 *   `databaseURL` 是 CockroachDB 地址，我添加 `/passwordless_demo` 前面的数据库地址去表示数据库名字。
-
-*   `jwtKey` 用于签名 JWTs。
-
+*   `jwtKey` 用于签名 JWT。
 *   `smtpAddr` 是 `SMTP_HOST` + `SMTP_PORT` 的联合；我们将使用它去发送邮件。
-
 *   `smtpUsername` 和 `smtpPassword` 是两个必需的变量。
-
 *   `smtpAuth` 也是用于发送邮件。
 
-`env` 函数允许我们去获得环境变量，不存在时返回一个 fallback value。
+`env` 函数允许我们去获得环境变量，不存在时返回一个回退值。
 
-### 主函数
+#### 主函数
 
 ```
 var db *sql.DB
@@ -174,7 +160,7 @@ func main() {
     router.Handle("GET", "/api/auth_user", authRequired(getAuthUser))
 
     addr := fmt.Sprintf(":%d", config.port)
-    log.Printf("starting server at %s 🚀\n", config.appURL)
+    log.Printf("starting server at %s \n", config.appURL)
     log.Fatalf("could not start server: %v\n", http.ListenAndServe(addr, router))
 }
 
@@ -189,7 +175,7 @@ import (
 
 ```
 
-然后，我们创建路由器并定义一些端点。对于无密码业务流来说，我们使用两个端点：`/api/passwordless/start` 发送魔法链接，和 `/api/passwordless/verify_redirect` 用 JWT 响应。
+然后，我们创建路由器并定义一些端点。对于无密码流程来说，我们使用两个端点：`/api/passwordless/start` 发送魔法链接，和 `/api/passwordless/verify_redirect` 用 JWT 响应。
 
 最后，我们启动服务器。
 
@@ -234,9 +220,9 @@ go build
 
 ```
 
-我们在目录中有了一个 “passwordless-demo”，但是你的目录中可能与示例不一样，`go build` 将创建一个同名的可执行文件。如果你没有关闭前面的 cockroach 节点，并且你正确配置了 `SMTP_USERNAME` 和 `SMTP_PASSWORD` 变量，你将看到命令 `starting server at http://localhost/ 🚀` 没有错误输出。
+我们在目录中有了一个 “passwordless-demo”，但是你的目录中可能与示例不一样，`go build` 将创建一个同名的可执行文件。如果你没有关闭前面的 cockroach 节点，并且你正确配置了 `SMTP_USERNAME` 和 `SMTP_PASSWORD` 变量，你将看到命令 `starting server at http://localhost/ ` 没有错误输出。
 
-### JSON 要求的中间件
+#### 请求 JSON 的中间件
 
 端点需要从请求体中解码 JSON，因此要确保请求是 `application/json` 类型。因为它是一个通用的东西，我将它解耦到中间件。
 
@@ -257,7 +243,7 @@ func jsonRequired(next http.HandlerFunc) http.HandlerFunc {
 
 实现很容易。首先它从请求头中获得内容的类型，然后检查它是否是以 “application/json” 开始，如果不是则以 `415 Unsupported Media Type` 提前返回。
 
-### 响应 JSON 函数
+#### 响应 JSON 的函数
 
 以 JSON 响应是非常通用的做法，因此我把它提取到函数中。
 
@@ -285,7 +271,7 @@ func respondJSON(w http.ResponseWriter, payload interface{}, code int) {
 
 首先，对原始类型做一个类型判断，并将它们封装到一个 `map`。然后将它们编组到 JSON，设置响应内容类型和状态码，并写 JSON。如果 JSON 编组失败，则响应一个内部错误。
 
-### 响应内部错误的函数
+#### 响应内部错误的函数
 
 `respondInternalError` 是一个响应 `500 Internal Server Error` 的函数，但是也同时将错误输出到控制台。
 
@@ -299,7 +285,7 @@ func respondInternalError(w http.ResponseWriter, err error) {
 
 ```
 
-### 创建用户处理程序
+#### 创建用户的处理程序
 
 下面开始编写 `createUser` 处理程序，因为它非常容易并且是 REST 式的。
 
@@ -391,7 +377,7 @@ respondJSON(w, user, http.StatusCreated)
 
 最后使用创建的用户去响应。
 
-### 无密码验证开始部分的处理程序
+#### 无密码验证开始部分的处理程序
 
 ```
 type PasswordlessStartRequest struct {
@@ -401,7 +387,7 @@ type PasswordlessStartRequest struct {
 
 ```
 
-这个结构体持有 `passwordlessStart` 的请求体。希望去登入的用户 email。来自客户端的重定向 URI（这个应用中将使用我们的 API）如：`https://frontend.app/callback`。
+这个结构体含有 `passwordlessStart` 的请求体：希望去登入的用户 email、来自客户端的重定向 URI（这个应用中将使用我们的 API）如：`https://frontend.app/callback`。
 
 ```
 var magicLinkTmpl = template.Must(template.ParseFiles("templates/magic-link.html"))
@@ -429,7 +415,7 @@ var magicLinkTmpl = template.Must(template.ParseFiles("templates/magic-link.html
 
 这个模板是给用户发送魔法链接邮件用的。你可以根据你的需要去随意调整它。
 
-现在， 进入 `passwordlessStart` 函数**内部**：
+现在， 进入 `passwordlessStart` 函数内部：
 
 ```
 var input PasswordlessStartRequest
@@ -525,7 +511,7 @@ w.WriteHeader(http.StatusNoContent)
 
 最后，设置响应状态码为 `204 No Content`。对于成功的状态码，客户端不需要很多数据。
 
-### 发送邮件函数
+#### 发送邮件函数
 
 ```
 func sendMail(to mail.Address, subject, body string) error {
@@ -558,16 +544,16 @@ func sendMail(to mail.Address, subject, body string) error {
 
 这个函数创建一个基本的 HTML 邮件结构体并使用 SMTP 服务器去发送它。邮件的内容你可以随意定制，我喜欢使用比较简单的内容。
 
-### 无密码验证重定向处理程序
+#### 无密码验证重定向的处理程序
 
 ```
 var rxUUID = regexp.MustCompile("^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$")
 
 ```
 
-首先，这个正则表达式去验证一个 UUID（验证代码）。
+首先，这个正则表达式去验证一个 UUID（即验证代码）。
 
-现在进入 `passwordlessVerifyRedirect` 函数 **内部**：
+现在进入 `passwordlessVerifyRedirect` 函数内部：
 
 ```
 q := r.URL.Query()
@@ -661,22 +647,18 @@ http.Redirect(w, r, callback.String(), http.StatusFound)
 
 * * *
 
-无密码的工作流已经完成。现在需要去写 `getAuthUser` 端点的代码了，它用于获取当前验证用户的信息。你应该还记得，这个端点使用了 `authRequired` 中间件。
+无密码的流程已经完成。现在需要去写 `getAuthUser` 端点的代码了，它用于获取当前验证用户的信息。你应该还记得，这个端点使用了 `guard` 中间件。
 
-### 使用 Auth 中间件
+#### 使用 Auth 中间件
 
-在编写 `authRequired` 中间件之前，我将编写一个不需要验证的分支。目的是，如果没有传递 JWT，它将不去验证用户。
+在编写 `guard` 中间件之前，我将编写一个不需要验证的分支。目的是，如果没有传递 JWT，它将不去验证用户。
 
 ```
-type ContextKey int
-
-const (
-    keyAuthUserID ContextKey = iota
-)
-
-func jwtKeyFunc(*jwt.Token) (interface{}, error) {
-    return config.jwtKey, nil
+type ContextKey struct {
+    Name string
 }
+
+var keyAuthUserID = ContextKey{"auth_user_id"}
 
 func withAuth(next http.HandlerFunc) http.HandlerFunc {
     return func(w http.ResponseWriter, r *http.Request) {
@@ -689,7 +671,11 @@ func withAuth(next http.HandlerFunc) http.HandlerFunc {
         tokenString := a[7:]
 
         p := jwt.Parser{ValidMethods: []string{jwt.SigningMethodHS256.Name}}
-        token, err := p.ParseWithClaims(tokenString, &jwt.StandardClaims{}, jwtKeyFunc)
+        token, err := p.ParseWithClaims(
+            tokenString,
+            &jwt.StandardClaims{},
+            func (*jwt.Token) (interface{}, error) { return config.jwtKey, nil },
+        )
         if err != nil {
             respondJSON(w, http.StatusText(http.StatusUnauthorized), http.StatusUnauthorized)
             return
@@ -707,19 +693,18 @@ func withAuth(next http.HandlerFunc) http.HandlerFunc {
         next(w, r.WithContext(ctx))
     }
 }
-
 ```
 
-JWT 将在每次请求时以 “Bearer <token_here>” 格式包含在 “Authorization” 头中。因此，如果没有提供令牌，我们将直接通过，进入接下来的中间件。
+JWT 将在每次请求时以 `Bearer <token_here>` 格式包含在 `Authorization` 头中。因此，如果没有提供令牌，我们将直接通过，进入接下来的中间件。
 
 我们创建一个解析器来解析令牌。如果解析失败则返回 `401 Unauthorized`。
 
 然后我们从 JWT 中提取出要求的内容，并添加 `Subject`（就是用户 ID）到需要的地方。
 
-### Auth 需要的中间件
+#### Guard 中间件
 
 ```
-func authRequired(next http.HandlerFunc) http.HandlerFunc {
+func guard(next http.HandlerFunc) http.HandlerFunc {
     return withAuth(func(w http.ResponseWriter, r *http.Request) {
         _, ok := r.Context().Value(keyAuthUserID).(string)
         if !ok {
@@ -729,15 +714,13 @@ func authRequired(next http.HandlerFunc) http.HandlerFunc {
         next(w, r)
     })
 }
-
-
 ```
 
-现在，`authRequired` 将使用 `withAuth` 并从请求内容中提取出验证用户的 ID。如果提取失败，它将返回 `401 Unauthorized`，提取成功则继续下一步。
+现在，`guard` 将使用 `withAuth` 并从请求内容中提取出验证用户的 ID。如果提取失败，它将返回 `401 Unauthorized`，提取成功则继续下一步。
 
-### 获取 Auth 用户
+#### 获取 Auth 用户
 
-在 `getAuthUser` 处理程序**内部**：
+在 `getAuthUser` 处理程序内部：
 
 ```
 ctx := r.Context()
@@ -756,9 +739,9 @@ respondJSON(w, user, http.StatusOK)
 
 ```
 
-首先，我们从请求内容中提取验证用户的 ID，我们使用这个 ID 去获取用户。如果没有获取到内容，则发送一个 `418 I'm a teapot`，或者一个内部错误。最后，我们将用这个用户去响应 😊
+首先，我们从请求内容中提取验证用户的 ID，我们使用这个 ID 去获取用户。如果没有获取到内容，则发送一个 `418 I'm a teapot`，或者一个内部错误。最后，我们将用这个用户去响应。
 
-### 获取 User 函数
+#### 获取 User 函数
 
 下面你看到的是 `fetchUser` 函数。
 
@@ -781,17 +764,17 @@ func fetchUser(ctx context.Context, id string) (User, error) {
 
 如果你在 mailtrap 上点击之后出现有关 `脚本运行被拦截，因为文档的框架是沙箱化的，并且没有设置 'allow-scripts' 权限` 的问题，你可以尝试右键点击 “在新标签中打开链接“。这样做是安全的，因为邮件内容是 [沙箱化的][10]。我在 `localhost` 上有时也会出现这个问题，但是我认为你一旦以 `https://` 方式部署到服务器上应该不会出现这个问题了。
 
-如果有任何问题，请在我的 [GitHub repo][11] 留言或者提交 PRs 👍
+如果有任何问题，请在我的 [GitHub repo][11] 留言或者提交 PRs 
 
-以后，我将为这个 API 写一个客户端作为这篇文章的第二部分。
+以后，我为这个 API 写了一个客户端作为这篇文章的[第二部分][13]。
 
 --------------------------------------------------------------------------------
 
 via: https://nicolasparada.netlify.com/posts/passwordless-auth-server/
 
-作者：[Nicolás Parada ][a]
+作者：[Nicolás Parada][a]
 译者：[qhwdw](https://github.com/qhwdw)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
@@ -808,3 +791,4 @@ via: https://nicolasparada.netlify.com/posts/passwordless-auth-server/
 [10]:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#attr-sandbox
 [11]:https://github.com/nicolasparada/go-passwordless-demo
 [12]:https://twitter.com/intent/retweet?tweet_id=986602458716803074
+[13]:https://nicolasparada.netlify.com/posts/passwordless-auth-client/

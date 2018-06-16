@@ -1,21 +1,20 @@
-translating---geekpi
-
-How To Test A Package Without Installing It In Linux
+如何在 Linux 中不安装软测试一个软件包
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2018/06/nix-720x340.png)
-For some reason, you might want to test a package before installing it in your Linux system. If so, you’re lucky! Today, I will show you how to do it in Linux using **Nix** package manager. One of the notable feature of Nix package manager is it allows the users to test the packages without having to install them first. This can be helpful when you want to use a particular application temporarily.
+出于某种原因，你可能需要在将软件包安装到你的 Linux 系统之前对其进行测试。如果是这样，你很幸运！今天，我将向你展示如何在 Linux 中使用 **Nix** 包管理器来实现。Nix 包管理器的一个显著特性是它允许用户测试软件包而无需先安装它们。当你想要临时使用特定的程序时，这会很有帮助。
 
-### Test A Package Without Installing It In Linux
 
-Make sure you have installed Nix package manager first. If you haven’t installed it yet, refer the following guide.
+### 测试一个软件包而不在 Linux 中安装它
 
-For instance, let us say you want to test your C++ code. You don’t have to install GCC. Just run the following command:
+确保你先安装了 Nix 包管理器。如果尚未安装，请参阅以下指南。
+
+例如，假设你想测试你的  C++ 代码。你不必安装 GCC。只需运行以下命令：
 ```
 $ nix-shell -p gcc
 
 ```
 
-This command builds or downloads gcc package and its dependencies, then drops you into a Bash shell where the **gcc** command is present, all without affecting your normal environment.
+该命令会构建或下载 gcc 软件包及其依赖项，然后将其放入一个存在 **gcc** 命令的 Bash shell 中，所有这些都不会影响正常环境。
 ```
  LANGUAGE = (unset),
 LC_ALL = (unset),
@@ -55,7 +54,7 @@ Dload Upload Total Spent Left Speed
 
 ```
 
-Check the GCC version:
+检查GCC版本：
 ```
 [nix-shell:~]$ gcc -v
 Using built-in specs.
@@ -68,46 +67,46 @@ gcc version 5.4.0 (GCC)
 
 ```
 
-Now, go ahead and test the code. Once you are done, type **exit** to return back to your console.
+现在，继续并测试代码。完成后，输入 **exit** 返回到控制台。
 ```
 [nix-shell:~]$ exit
 exit
 
 ```
 
-Once you are exit from the nix-shell, you can’t use GCC.
+一旦你从 nix-shell 中退出，你就不能使用 GCC。
 
-Here is another example.
+这是另一个例子。
 ```
 $ nix-shell -p hello
 
 ```
 
-This builds or downloads GNU Hello and its dependencies, then drops you into a Bash shell where the **hello** command is present, all without affecting your normal environment:
+这会构建或下载 GNU Hello 和它的依赖关系，然后将其放入 **hello** 命令所在的 Bash shell 中，所有这些都不会影响你的正常环境：
 ```
 [nix-shell:~]$ hello
 Hello, world!
 
 ```
 
-Type exit to return back to the console.
+输入 exit 返回到控制台。
 ```
 [nix-shell:~]$ exit
 
 ```
 
-Now test if hello program is available or not.
+现在测试你的 hello 程序是否可用。
 ```
 $ hello
 hello: command not found
 
 ```
 
-For more details about Nix package manager, refer the following guide.
+有关 Nix 包管理器的更多详细信息，请参阅以下指南。
 
-Hope this helps! More good stuffs to come. Stay tuned!!
+希望本篇对你有帮助！还会有更好的东西。敬请关注！！
 
-Cheers!
+干杯!
 
 
 
@@ -117,7 +116,7 @@ via: https://www.ostechnix.com/how-to-test-a-package-without-installing-it-in-li
 
 作者：[SK][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
