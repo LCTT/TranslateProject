@@ -1,7 +1,11 @@
 机器人学影响 CIO 角色的 3 种方式
 ======
+
+> 机器人流程自动化如何影响 CIO ？考虑这些可能。
+
 ![配图](https://enterprisersproject.com/sites/default/files/styles/620x350/public/cio_ai.png?itok=toMIgELj)
-随着 2017 即将结束，许多 CIO 们的 2018 年目标也将确定。或许你们将参与到机器人流程自动化（RPA）中。多年以来，RPA 对许多公司来说只是一个可望不可及的概念。但是随着组织被迫变得越来越敏捷高效，RPA 所具有的潜在优势开始受到重视。
+
+随着 2017 的结束，许多 CIO 们的 2018 年目标也将确定。或许你们将参与到机器人流程自动化（RPA）中。多年以来，RPA 对许多公司来说只是一个可望不可及的概念。但是随着组织被迫变得越来越敏捷高效，RPA 所具有的潜在优势开始受到重视。
 
 根据 Redwood Sofeware 和 Sapio Research 的最新 [研究报告][1]，IT 决策者们相信，未来 5 年有 59% 的业务可以被自动化处理，从而产生新的速度和效率，并且消减相应的重复性的人工工作量的岗位。但是，目前在相应岗位上没有实施 RPA 的公司中，有 20% 的公司员工超过 1000 人。
 
@@ -43,7 +47,7 @@ via: https://enterprisersproject.com/article/2017/11/3-ways-robotics-affects-cio
 
 作者：[Dennis Walsh][a]
 译者：[qhwdw](https://github.com/qhwdw)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
