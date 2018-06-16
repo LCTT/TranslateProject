@@ -1,3 +1,4 @@
+translating by amwps290
 How to clean up your data in the command line
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/osdc_520x292_opendata_0613mm.png?itok=UIjD_jhK)
