@@ -1,3 +1,4 @@
+Translating by qhwdw
 The Cost of Cloud Computing
 ============================================================
 

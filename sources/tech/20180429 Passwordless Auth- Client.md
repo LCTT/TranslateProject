@@ -1,3 +1,4 @@
+Translating by qhwdw
 Passwordless Auth: Client
 ======
 Time to continue with the [passwordless auth][1] posts. Previously, we wrote an HTTP service in Go that provided with a passwordless authentication API. Now, we are gonna code a JavaScript client for it.
