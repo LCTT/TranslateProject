@@ -1,3 +1,4 @@
+translating by amwps290
 How To Convert DEB Packages Into Arch Linux Packages
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2017/10/Debtap-720x340.png)
