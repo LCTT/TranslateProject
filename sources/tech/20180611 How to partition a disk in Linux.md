@@ -1,3 +1,4 @@
+translating  by amwps290
 How to partition a disk in Linux
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/bus-storage.png?itok=95-zvHYl)
