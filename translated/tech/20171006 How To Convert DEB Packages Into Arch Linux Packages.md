@@ -1,37 +1,41 @@
-translating by amwps290
-How To Convert DEB Packages Into Arch Linux Packages
-======
+# 将 DEB 软件包转换成 Arch Linux 软件包
+
 ![](https://www.ostechnix.com/wp-content/uploads/2017/10/Debtap-720x340.png)
 
-We already learned how to [**build packages for multiple platforms**][1], and how to **[build packages from source][2]**. Today, we are going to learn how to convert DEB packages into Arch Linux packages. You might ask, **AUR** is the large software repository on the planet, and almost all software are available in it. Why would I need to convert a DEB package into Arch Linux package? True! However, some packages cannot be compiled (closed source packages) or cannot be built from AUR for various reasons like error during compiling or unavailable files. Or, the developer is too lazy to build a package in AUR or s/he doesn 't like to create an AUR package. In such cases, we can use this quick and dirty method to convert DEB packages into Arch Linux packages.
+我们已经学会了如何[**为多个平台构建包**][1]，以及如何从[**源代码构建包**][2]。 今天，我们将学习如何将 DEB 包转换为 Arch Linux 包。 您可能会问，AUR 是这个星球上的大型软件存储库，几乎所有的软件都可以在其中使用。 为什么我需要将 DEB 软件包转换为 Arch Linux 软件包？ 这的确没错！ 但是，某些软件包无法编译（封闭源代码软件包），或者由于各种原因（如编译时出错或文件不可用）而无法从 AUR 生成。 或者，开发人员懒得在 AUR 中构建一个包，或者他/她不想创建 AUR 包。 在这种情况下，我们可以使用这种快速但有点粗糙的方法将 DEB 包转换成 Arch Linux 包。
 
-### Debtap - Convert DEB Packages Into Arch Linux Packages
+### Debtap - 将 DEB 包转换成 Arch Linux 包
 
-For this purpose, we are going to use an utility called **" Debtap"**. It stands **DEB** **T** o **A** rch (Linux) **P** ackage. Debtap is available in AUR, so you can install it using the AUR helper tools such as [**Pacaur**][3], [**Packer**][4], or [**Yaourt**][5].
+为此，我们将使用名为 “Debtap” 的实用程序。 它代表了 **DEB**  **T** o **A** rch （Linux） **P** ackage。 Debtap 在 AUR 中可以使用，因此您可以使用 AUR 辅助工具（如 [Pacaur][3]，[Packer][4] 或 [Yaourt][5] ）来安装它。
 
-To unstall debtap using pacaur, run:
+使用 pacaur 安装 debtap 运行：
+
 ```
 pacaur -S debtap
 ```
 
-Using Packer:
+使用 Packer 安装：
+
 ```
 packer -S debtap
 ```
 
-Using Yaourt:
+使用 Yaourt 安装：
+
 ```
 yaourt -S debtap
 ```
 
-Also, your Arch system should have **bash,** **binutils** , **pkgfile** and **fakeroot ** packages installed.
+同时，你的 Arch 系统也应该已经安装好了 **bash**， **binutils** ，**pkgfile** 和 **fakeroot** 包。
 
-After installing Debtap and all above mentioned dependencies, run the following command to create/update pkgfile and debtap database.
+在安装 Debtap 和所有上述依赖关系之后，运行以下命令来创建/更新 pkgfile 和 debtap 数据库。
+
 ```
 sudo debtap -u
 ```
 
-Sample output would be:
+示例输出是：
+
 ```
 ==> Synchronizing pkgfile database...
 :: Updating 6 repos...
@@ -69,20 +73,22 @@ Sample output would be:
 ==> All steps successfully completed!
 ```
 
-You must run the above command at least once.
+你至少需要运行上述命令一次
 
-Now, it's time for package conversion.
+现在是时候开始转换包了。
 
-To convert any DEB package, say **Quadrapassel** , to Arch Linux package using debtap, do:
+比如说要使用 debtap 转换包 **Quadrapassel**，你可以这样做：
+
 ```
 debtap quadrapassel_3.22.0-1.1_arm64.deb
 ```
 
-The above command will convert the given .deb file into a Arch Linux package. You will be asked to enter the name of the package maintainer and license. Just enter them and hit ENTER key to start the conversion process.
+上述的命令会将 DEB 包文件转换为 Arch Linux 包。你需要输入包的维护者和许可证，输入他们，然后按下回车键就可以开始转换了。
 
-The package conversion will take from a few seconds to several minutes depending upon your CPU speed. Grab a cup of coffee.
+包转换的过程可能依赖于你的 CPU 的速度从几秒到几分钟不等。喝一杯咖啡等一等。
 
-Sample output would be:
+示例输出：
+
 ```
 ==> Extracting package data...
 ==> Fixing possible directories structure differencies...
@@ -110,24 +116,28 @@ gsettings-backend
 ==> Removing leftover files...
 ```
 
-**Note:** Quadrapassel package is already available in the Arch Linux official repositories. I used it just for demonstration purpose.
+**注**：Quadrapassel 在 Arch Linux 官方的软件库中早已可用，我只是用它来说明一下。
 
-If you don't want to answer any questions during package conversion, use **-q** flag to bypass all questions, except for editing metadata file(s).
+如果在包转化的过程中，你不想回答任何问题，使用 **-q** 略过除了编辑元数据的所有问题。
+
 ```
 debtap -q quadrapassel_3.22.0-1.1_arm64.deb
 ```
 
-To bypass all questions (not recommended though), use -Q flag.
+为了略过所有的问题（不推荐），使用 -Q。
+
 ```
 debtap -Q quadrapassel_3.22.0-1.1_arm64.deb
 ```
 
-Once the conversion is done, you can install the newly converted package using "pacman" in your Arch system as shown below.
+转换完成后，您可以使用 “pacman” 在 Arch 系统中安装新转换的软件包，如下所示。
+
 ```
 sudo pacman -U <package-name>
 ```
 
-To display the help section, use **-h** flag:
+显示帮助文档，使用 -h：
+
 ```
 $ debtap -h
 Syntax: debtap [options] package_filename
@@ -144,11 +154,11 @@ Options:
  -P --P -Pkgbuild --Pkgbuild Generate a PKGBUILD file only
 ```
 
-And, that's all for now folks. Hope this utility helps. If you find our guides useful, please spend a moment to share them on your social, professional networks and support OSTechNix!
+这就是现在要讲的。希望这个工具有所帮助。如果你发现我们的指南有用，请花一点时间在你的社交、专业网络分享并在 OSTechNix 支持我们!
 
-More good stuffs to come. Stay tuned!
+更多的好东西来了。请继续关注!
 
-Cheers!
+干杯!
 
 
 
@@ -157,7 +167,7 @@ Cheers!
 via: https://www.ostechnix.com/convert-deb-packages-arch-linux-packages/
 
 作者：[SK][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[amwps290](https://github.com/amwps290)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
