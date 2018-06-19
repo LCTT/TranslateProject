@@ -1,3 +1,5 @@
+translating----geekpi
+
 Python Debugging Tips
 ======
 When it comes to debugging, there’s a lot of choices that you can make. It is hard to give generic advice that always works (other than “Have you tried turning it off and back on?”).
