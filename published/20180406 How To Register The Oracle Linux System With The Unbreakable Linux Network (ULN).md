@@ -5,13 +5,13 @@ Oracle Linux 系统如何去注册使用坚不可摧 Linux 网络（ULN）
 
 甚至我也不知道关于它的信息，我是最近才了解了有关它的信息，想将这些内容共享给其他人。因此写了这篇文章，它将指导你去注册 Oracle Linux 系统去使用坚不可摧 Linux 网络（ULN） 。
 
-这将允许你去注册系统以尽快获得软件更新和其它的补丁。
+这将允许你去注册系统以获得软件更新和其它的 ASAP 补丁。
 
 ### 什么是坚不可摧 Linux 网络
 
 ULN 代表<ruby>坚不可摧 Linux 网络<rt>Unbreakable Linux Network</rt></ruby>，它是由 Oracle 所拥有的。如果你去 Oracle OS 支持中去激活这个订阅，你就可以注册你的系统去使用坚不可摧 Linux 网络（ULN）。
 
-ULN 为 Oracle Linux 和 Oracle VM 提供软件补丁、更新、以及修复，此外还有在 yum、Ksplice、以及支持策略上的信息。你也可以通过它来下载原始发行版中没有包含的有用的安装包。
+ULN 为 Oracle Linux 和 Oracle VM 提供软件补丁、更新、以及修复，这些信息同时提供在 yum、Ksplice、并提供支持策略。你也可以通过它来下载原始发行版中没有包含的有用的安装包。
 
 ULN 的告警提示工具会周期性地使用 ULN 进行检查，当有更新的时候它给你发送警报信息。
 
