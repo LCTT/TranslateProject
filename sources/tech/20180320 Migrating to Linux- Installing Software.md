@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 Migrating to Linux: Installing Software
 ======
 
