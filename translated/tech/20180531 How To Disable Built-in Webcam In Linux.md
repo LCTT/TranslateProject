@@ -10,12 +10,13 @@
 ### 在 Linux 中禁用内置摄像头
 
 首先，使用如下命令找到网络摄像头驱动：
+
 ```
 $ sudo lsmod | grep uvcvideo
-
 ```
 
-**示例输出：**
+示例输出：
+
 ```
 uvcvideo 114688 1
 videobuf2_vmalloc 16384 1 uvcvideo
@@ -24,7 +25,6 @@ videobuf2_common 53248 2 uvcvideo,videobuf2_v4l2
 videodev 208896 4 uvcvideo,videobuf2_common,videobuf2_v4l2
 media 45056 2 uvcvideo,videodev
 usbcore 286720 9 uvcvideo,usbhid,usb_storage,ehci_hcd,ath3k,btusb,uas,ums_realtek,ehci_pci
-
 ```
 
 这里，**uvcvideo** 是我的网络摄像头驱动。
@@ -32,45 +32,45 @@ usbcore 286720 9 uvcvideo,usbhid,usb_storage,ehci_hcd,ath3k,btusb,uas,ums_realte
 现在，让我们禁用网络摄像头。
 
 为此，请编辑以下文件（如果文件不存在，只需创建它）：
+
 ```
 $ sudo nano /etc/modprobe.d/blacklist.conf
-
 ```
 
 添加以下行：
+
 ```
 ##Disable webcam.
 blacklist uvcvideo
-
 ```
 
-**“##Disable webcam”** 这行不是必需的。为了便于理解，我添加了它。
+`##Disable webcam` 这行不是必需的。为了便于理解，我添加了它。
 
 保存并退出文件。重启系统以使更改生效。
 
 要验证网络摄像头是否真的被禁用，请打开任何即时通讯程序或网络摄像头软件，如 Cheese 或 Guvcview。你会看到如下的空白屏幕。
 
-**Cheese 输出：**
+Cheese 输出：
 
 ![][2]
 
-**Guvcview 输出：**
+Guvcview 输出：
 
 ![][3]
 
 看见了么？网络摄像头被禁用而无法使用。
 
 要启用它，请编辑：
+
 ```
 $ sudo nano /etc/modprobe.d/blacklist.conf
-
 ```
 
 注释掉你之前添加的行。
+
 ```
 ##Disable webcam.
 #blacklist uvcvideo
-
 ```
 
 保存并关闭文件。然后，重启计算机以启用网络摄像头。
@@ -90,7 +90,7 @@ via: https://www.ostechnix.com/how-to-disable-built-in-webcam-in-ubuntu/
 作者：[SK][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
