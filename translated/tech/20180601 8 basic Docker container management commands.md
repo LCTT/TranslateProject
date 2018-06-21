@@ -1,16 +1,18 @@
 8 个基本的 Docker 容器管理命令
 ======
-利用这 8 个命令可以学习 Docker 容器的基本管理方式。这是一个为 Docker 初学者准备的，带有示范命令输出的指南。
+
+> 利用这 8 个命令可以学习 Docker 容器的基本管理方式。这是一个为 Docker 初学者准备的，带有示范命令输出的指南。
 
 ![Docker 容器管理命令][1]
 
-在这篇文章中，我们将带你学习 8 个基本的 Docker 容器命令，它们操控着 Docker 容器的基本活动，例如 <ruby>运行<rt>run</rt></ruby>, <ruby>列举<rt>list</rt></ruby>, <ruby>停止<rt>stop</rt></ruby>, <ruby>查看历史纪录<rt>view logs</rt></ruby>, <ruby>删除<rt>delete</rt></ruby>, 等等。如果你对 Docker 的概念很陌生，推荐你看看我们的 [介绍指南][2]，来了解 Docker 的基本内容以及 [如何][3] 在 Linux 上安装 Docker. 现在让我们赶快进入要了解的命令：
+在这篇文章中，我们将带你学习 8 个基本的 Docker 容器命令，它们操控着 Docker 容器的基本活动，例如 <ruby>运行<rt>run</rt></ruby>、 <ruby>列举<rt>list</rt></ruby>、 <ruby>停止<rt>stop</rt></ruby>、 查看<ruby>历史纪录<rt>logs</rt></ruby>、 <ruby>删除<rt>delete</rt></ruby> 等等。如果你对 Docker 的概念很陌生，推荐你看看我们的 [介绍指南][2]，来了解 Docker 的基本内容以及 [如何][3] 在 Linux 上安装 Docker。 现在让我们赶快进入要了解的命令：
 
 ### 如何运行 Docker 容器？
 
-众所周知，Docker 容器只是一个运行于<ruby>宿主操作系统<rt>host OS</rt></ruby>上的应用进程，所以你需要一个镜像来运行它。Docker 镜像运行时的进程就叫做 Docker 容器。你可以加载本地 Docker 镜像，也可以从 Docker Hub 上下载。Docker Hub 是一个提供公有和私有镜像来进行<ruby>拉取<rt>pull</rt></ruby>操作的集中仓库。官方的 Docker Hub 位于 [hub.docker.com][4]. 当你指示 Docker 引擎运行容器时，它会首先搜索本地镜像，如果没有找到，它会从 Docker Hub 上拉取相应的镜像。
+众所周知，Docker 容器只是一个运行于<ruby>宿主操作系统<rt>host OS</rt></ruby>上的应用进程，所以你需要一个镜像来运行它。Docker 镜像以进程的方式运行时就叫做 Docker 容器。你可以加载本地 Docker 镜像，也可以从 Docker Hub 上下载。Docker Hub 是一个提供公有和私有镜像来进行<ruby>拉取<rt>pull</rt></ruby>操作的集中仓库。官方的 Docker Hub 位于 [hub.docker.com][4]。 当你指示 Docker 引擎运行容器时，它会首先搜索本地镜像，如果没有找到，它会从 Docker Hub 上拉取相应的镜像。
 
-让我们运行一个 Apache web-server 的 Docker 镜像，比如 httpd 进程。你需要运行 `docker container run` 命令。旧的命令为 `docker run`, 但后来 Docker 添加了子命令部分，所以新版本支持<ruby>附属命令<rt>below command</rt></ruby> -
+让我们运行一个 Apache web 服务器的 Docker 镜像，比如 httpd 进程。你需要运行 `docker container run` 命令。旧的命令为 `docker run`， 但后来 Docker 添加了子命令部分，所以新版本支持下列命令：
+
 
 ```
 root@kerneltalks # docker container run -d -p 80:80 httpd
@@ -28,18 +30,16 @@ Status: Downloaded newer image for httpd:latest
 c46f2e9e4690f5c28ee7ad508559ceee0160ac3e2b1688a61561ce9f7d99d682
 ```
 
-Docker 的 `run` 命令将镜像名作为强制参数，另外还有很多可选参数。常用的参数有 -
+Docker 的 `run` 命令将镜像名作为强制参数，另外还有很多可选参数。常用的参数有：
 
-  * `-d` : Detach container from current shell
-  * `-p X:Y` : Bind container port Y with host’s port X
-  * `--name` : Name your container. If not used, it will be assigned randomly generated name
-  * `-e` : Pass environmental variables and their values while starting container
+  * `-d`：从当前 shell 脱离容器
+  * `-p X:Y`：绑定容器的端口 Y 到宿主机的端口 X
+  * `--name`：命名你的容器。如果未指定，它将被赋予随机生成的名字
+  * `-e`：当启动容器时传递环境编辑及其值
 
+通过以上输出你可以看到，我们将 `httpd` 作为镜像名来运行容器。接着，本地镜像没有找到，Docker 引擎从 Docker Hub 拉取了它。注意，它下载了镜像 `httpd:latest`， 其中 `:` 后面跟着版本号。如果你需要运行特定版本的容器，你可以在镜像名后面注明版本名。如果不提供版本名，Docker 引擎会自动拉取最新的版本。
 
-
-通过以上输出你可以看到，我们将 `httpd` 作为镜像名来运行容器。接着，本地镜像没有找到，Docker 引擎从 Docker Hub 拉取了它。注意，它下载了镜像 **httpd:latest**, 其中 : 后面跟着版本号。如果你需要运行特定版本的容器，你可以在镜像名后面注明版本名。如果不提供版本名，Docker 引擎会自动拉取最新的版本。
-
-输出的最后一行显示了你新运行的 httpd 容器的特有 ID。
+输出的最后一行显示了你新运行的 httpd 容器的唯一 ID。
 
 ### 如何列出所有运行中的 Docker 容器？
 
@@ -51,9 +51,9 @@ CONTAINER ID        IMAGE               COMMAND              CREATED            
 c46f2e9e4690        httpd               "httpd-foreground"   11 minutes ago      Up 11 minutes       0.0.0.0:80->80/tcp   cranky_cori
 ```
 
-列出的结果是按列显示的。每一列的值分别为 - 
+列出的结果是按列显示的。每一列的值分别为：
 
-1. Container ID ：一开始的几个字符对应你特有的容器 ID
+1. Container ID ：一开始的几个字符对应你的容器的唯一 ID
 2. Image ：你运行容器的镜像名
 3. Command ：容器启动后运行的命令
 4. Created ：创建时间
@@ -61,11 +61,9 @@ c46f2e9e4690        httpd               "httpd-foreground"   11 minutes ago     
 6. Ports ：与宿主端口相连接的端口信息
 7. Names ：容器名（如果你没有命名你的容器，那么会随机创建）
 
-
-
 ### 如何查看 Docker 容器的历史纪录？
 
-在第一步我们使用了 -d 参数来将容器，在它一开始运行的时候，就从当前的 shell 中分离出来。在这种情况下，我们不知道容器里面发生了什么。所以为了查看容器的历史纪录，Docker 提供了 `logs` 命令。它采用容器名称或 ID 作为参数。
+在第一步我们使用了 `-d` 参数来将容器，在它一开始运行的时候，就从当前的 shell 中脱离出来。在这种情况下，我们不知道容器里面发生了什么。所以为了查看容器的历史纪录，Docker 提供了 `logs` 命令。它采用容器名称或 ID 作为参数。
 
 ```
 root@kerneltalks # docker container logs cranky_cori
@@ -99,7 +97,7 @@ bin      15731 15702  0 18:35 ?        00:00:00 httpd -DFOREGROUND
 root     15993 15957  0 18:59 pts/0    00:00:00 grep --color=auto -i 15702
 ```
 
-在第一个输出中，列出了容器产生的进程的列表。它包含了所有细节，包括用途，<ruby>进程号<rt>pid</rt></ruby>，<ruby>父进程号<rt>ppid</rt></ruby>，开始时间，命令，等等。这里所有的进程号你都可以在宿主的进程表里搜索到。这就是我们在第二个命令里做得。这证明了容器确实是宿主系统中的进程。
+在第一个输出中，列出了容器产生的进程的列表。它包含了所有细节，包括<ruby>用户号<rt>uid</rt></ruby>、<ruby>进程号<rt>pid</rt></ruby>，<ruby>父进程号<rt>ppid</rt></ruby>、开始时间、命令，等等。这里所有的进程号你都可以在宿主的进程表里搜索到。这就是我们在第二个命令里做得。这证明了容器确实是宿主系统中的进程。
 
 ### 如何停止 Docker 容器？
 
@@ -128,7 +126,7 @@ CONTAINER ID        IMAGE               COMMAND              CREATED            
 c46f2e9e4690        httpd               "httpd-foreground"   33 minutes ago      Exited (0) 2 minutes ago                       cranky_cori
 ```
 
-有了 `-a` 参数，现在我们可以查看已停止的容器。注意这些容器的状态被标注为 <ru by>已退出<rt>exited</rt></ruby>。既然容器只是一个进程，那么用“退出”比“停止”更合适！
+有了 `-a` 参数，现在我们可以查看已停止的容器。注意这些容器的状态被标注为 <ruby>已退出<rt>exited</rt></ruby>。既然容器只是一个进程，那么用“退出”比“停止”更合适！
 
 ### 如何（重新）启动 Docker 容器？
 
@@ -145,7 +143,7 @@ c46f2e9e4690        httpd               "httpd-foreground"   35 minutes ago     
 
 ### 如何移除 Docker 容器？
 
-我们使用 `rm` 命令来移处容器。你不可以移除运行中的容器。移除之前需要先停止容器。你可以使用 `-f` 参数搭配 `rm` 命令来强制移除容器，但并不推荐这么做。
+我们使用 `rm` 命令来移除容器。你不可以移除运行中的容器。移除之前需要先停止容器。你可以使用 `-f` 参数搭配 `rm` 命令来强制移除容器，但并不推荐这么做。
 
 ```
 root@kerneltalks # docker container rm cranky_cori
@@ -162,8 +160,8 @@ via: https://kerneltalks.com/virtualization/8-basic-docker-container-management-
 
 作者：[Shrikant Lavhate][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[lonaparte](https://github.com/译者ID/lonaparte)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[lonaparte](https://github.com/lonaparte)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
