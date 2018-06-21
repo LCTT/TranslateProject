@@ -33,7 +33,7 @@ long ptrace(enum __ptrace_request request, pid_t pid, void *addr, void *data);
 
 
 
-我们可以各种各样的请求停止进程，但我们如何获得被调试者的状态？进程的状态大多是通过其寄存器捕获的，所以当然 `ptrace` 有一个请求来获得（或修改）寄存器：
+我们可以通过各种各样的请求停止进程，但我们如何获得被调试者的状态？进程的状态大多是通过其寄存器捕获的，所以当然 `ptrace` 有一个请求来获得（或修改）寄存器：
 
   * `PTRACE_GETREGS`：这个请求将给出被跟踪者刚刚被停止时的寄存器的状态。
   * `PTRACE_SETREGS`：如果跟踪器之前通过调用 `PTRACE_GETREGS` 得到了寄存器的值，它可以在参数结构中修改相应寄存器的值并使用 `PTRACE_SETREGS` 将寄存器设为新值。
