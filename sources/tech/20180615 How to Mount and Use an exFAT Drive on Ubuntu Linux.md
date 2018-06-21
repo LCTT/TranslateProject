@@ -1,3 +1,5 @@
+translating----geekpi
+
 How to Mount and Use an exFAT Drive on Ubuntu Linux
 ======
 **Brief: This quick tutorial shows you how to enable exFAT file system support on Ubuntu and other Ubuntu-based Linux distributions. This way you won’t see any error while mounting exFAT drives on your system.**
