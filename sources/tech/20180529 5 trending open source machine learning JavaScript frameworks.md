@@ -1,3 +1,5 @@
+translated by hopefully2333
+
 5 trending open source machine learning JavaScript frameworks
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/web-spider-frame-framework-2.png?itok=ng6O0fd4)
