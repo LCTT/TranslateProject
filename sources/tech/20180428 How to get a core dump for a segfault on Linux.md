@@ -1,3 +1,4 @@
+translating by stenphenxs
 How to get a core dump for a segfault on Linux
 ============================================================
 
