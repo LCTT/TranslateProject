@@ -1,3 +1,4 @@
+translater by octopus
 Use this vi setup to keep and organize your notes
 ======
 
