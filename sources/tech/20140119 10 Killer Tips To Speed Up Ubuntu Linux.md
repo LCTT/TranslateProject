@@ -1,3 +1,4 @@
+"Darsh8 Translating"
 10 Killer Tips To Speed Up Ubuntu Linux
 ======
 **Brief** : Some practical **tips to speed up Ubuntu** Linux. Tips here are valid for most versions of Ubuntu and can also be applied in Linux Mint and other Ubuntu based distributions.
