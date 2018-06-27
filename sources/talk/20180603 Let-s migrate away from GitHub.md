@@ -1,3 +1,5 @@
+translating---geekpi
+
 Let's migrate away from GitHub
 ======
 As many of you heard today, [Microsoft is acquiring GitHub][1]. What this means for the future of GitHub is not yet clear, but [the folks at Gitlab][2] think Microsoft's end goal is to integrate GitHub in their Azure empire. To me, this makes a lot of sense.

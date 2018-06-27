@@ -1,28 +1,27 @@
-Translating by qhwdw
-Passwordless Auth: Client
+无密码验证：客户端
 ======
-Time to continue with the [passwordless auth][1] posts. Previously, we wrote an HTTP service in Go that provided with a passwordless authentication API. Now, we are gonna code a JavaScript client for it.
+我们继续 [无密码验证][1] 的文章。上一篇文章中，我们用 Go 写了一个 HTTP 服务，用这个服务来做无密码验证 API。今天，我们为它再写一个 JavaScript 客户端。
 
-We’ll go with a single page application (SPA) using the technique I showed [here][2]. Read it first if you haven’t yet.
+我们将使用 [这里的][2] 这个单页面应用程序（SPA）来展示使用的技术。如果你还没有读过它，请先读它。
 
-For the root URL (`/`) we’ll show two different pages depending on the auth state: a page with an access form or a page greeting the authenticated user. Another page is for the auth callback redirect.
+我们将根据验证的状态分别使用两个不同的根 URL（`/`）：一个是访问状态的页面或者是欢迎已验证用户的页面。另一个页面是验证失败后重定向到验证页面。
 
 ### Serving
 
-I’ll serve the client with the same Go server, so let’s add some routes to the previous `main.go`:
+我们将使用相同的 Go 服务器来为客户端提供服务，因此，在我们前面的  `main.go` 中添加一些路由：
 ```
 router.Handle("GET", "/js/", http.FileServer(http.Dir("static")))
 router.HandleFunc("GET", "/...", serveFile("static/index.html"))
 
 ```
 
-This serves files under `static/js`, and `static/index.html` is served for everything else.
+这个伺服文件在 `static/js` 下，而 `static/index.html` 文件是为所有的访问提供服务的。
 
-You can use your own server apart, but you’ll have to enable [CORS][3] on the server.
+你可以使用你自己的服务器，但是你得在服务器上启用 [CORS][3]。
 
 ### HTML
 
-Let’s see that `static/index.html`.
+我们来看一下那个 `static/index.html` 文件。
 ```
 <!DOCTYPE html>
 <html lang="en">
@@ -38,13 +37,13 @@ Let’s see that `static/index.html`.
 
 ```
 
-Single page application left all the rendering to JavaScript, so we have an empty body and a `main.js` file.
+单页面应用程序剩余的渲染由 JavaScript 来完成，因此，我们使用了一个空的 body 部分和一个 `main.js` 文件。
 
-I’ll user the Router from the [last post][2].
+我们将使用 [上篇文章][2] 中的 Router。
 
 ### Rendering
 
-Now, create a `static/js/main.js` file with the following content:
+现在，我们使用下面的内容来创建一个 `static/js/main.js` 文件：
 ```
 import Router from 'https://unpkg.com/@nicolasparada/router'
 import { isAuthenticated } from './auth.js'
@@ -73,11 +72,11 @@ function guard(fn1, fn2 = view('welcome')) {
 
 ```
 
-Differing from the last post, we implement an `isAuthenticated()` function and a `guard()` function that uses it to render one or another page. So when a user visits `/` it will show the home or welcome page whether the user is authenticated or not.
+与上篇文章不同的是，我们实现了一个 `isAuthenticated()` 函数和一个 `guard()` 函数，使用它去渲染两种验证状态的页面。因此，当用户访问 `/` 时，它将根据用户是否通过了验证来展示 home 页面或者是欢迎页面。
 
 ### Auth
 
-Now, let’s write that `isAuthenticated()` function. Create a `static/js/auth.js` file with the following content:
+现在，我们来编写 `isAuthenticated()` 函数。使用下面的内容来创建一个 `static/js/auth.js` 文件：
 ```
 export function getAuthUser() {
  const authUserItem = localStorage.getItem('auth_user')
@@ -102,18 +101,18 @@ export function isAuthenticated() {
 
 ```
 
-When someone login, we save the JSON web token, expiration date of it and the current authenticated user on `localStorage`. This module uses that.
+当有人登入时，我们将保存 JSON 格式的 web 令牌、过期日期、以及在 `localStorage` 上的当前已验证用户。这个模块就是这个用处。
 
-  * `getAuthUser()` gets the authenticated user from `localStorage` making sure the JSON Web Token hasn’t expired yet.
-  * `isAuthenticated()` makes use of the previous function to check whether it doesn’t return `null`.
+  * `getAuthUser()` 用于从 `localStorage` 获取已认证的用户，以确认 JSON 格式的 Web 令牌没有过期。
+  * `isAuthenticated()` 在前面的函数中用于去检查它是否返回了 `null`。
 
 
 
 ### Fetch
 
-Before continuing with the pages, I’ll code some HTTP utilities to work with the server API.
+在继续这个页面之前，我将写一些与服务器 API 一起使用的 HTTP 工具。
 
-Let’s create a `static/js/http.js` file with the following content:
+我们使用以下的内容去创建一个 `static/js/http.js` 文件：
 ```
 import { isAuthenticated } from './auth.js'
 
@@ -160,11 +159,11 @@ export default {
 
 ```
 
-This module exports `get()` and `post()` functions. They are wrappers around the `fetch` API. Both functions inject an `Authorization: Bearer <token_here>` header to the request when the user is authenticated; that way the server can authenticate us.
+这个模块导出了 `get()` 和 `post()` 函数。它们是 `fetch` API 的封装。当用户是已验证的，这二个函数注入一个 `Authorization: Bearer <token_here>` 头到请求中；这样服务器就能对我们进行身份验证。
 
 ### Welcome Page
 
-Let’s move to the welcome page. Create a `static/js/pages/welcome-page.js` file with the following content:
+我们现在来到欢迎页面。用如下的内容创建一个 `static/js/pages/welcome-page.js` 文件：
 ```
 const template = document.createElement('template')
 template.innerHTML = `
@@ -187,11 +186,11 @@ export default function welcomePage() {
 
 ```
 
-This page uses an `HTMLTemplateElement` for the view. It is just a simple form to enter the user’s email.
+正如你所见，这个页面使用一个 `HTMLTemplateElement`。这是一个只输入用户 email 的简单表格。
 
-To not make this boring, I’ll skip error handling and just log them to console.
+为了不让代码太乏味，我将跳过错误处理部分，只是将它们输出到控制台上。
 
-Now, let’s code that `onAccessFormSubmit()` function.
+现在，我们来写 `onAccessFormSubmit()` 函数。
 ```
 import http from '../http.js'
 
@@ -225,7 +224,7 @@ function wantToCreateAccount() {
 
 ```
 
-It does a `POST` request to `/api/passwordless/start` with the email and redirectUri in the body. In case it returns with `404 Not Found` status code, we’ll create a user.
+它使用 email 做了一个 `POST` 请求到 `/api/passwordless/start`，然后在 body 中做了 URI 转向。在本例中使用 `404 Not Found` 状态码返回，我们将创建一个用户。
 ```
 function runCreateUserProgram(email) {
  const username = prompt("Enter username")
@@ -239,11 +238,11 @@ function runCreateUserProgram(email) {
 
 ```
 
-The user creation program, first, ask for username and does a `POST` request to `/api/users` with the email and username in the body. On success, it sends a magic link for the user created.
+这个用户创建程序，首先询问用户名，然后使用 email 和用户名，在 body 中做一个 `POST` 请求到 `/api/users`。成功之后，给创建的用户发送一个魔法链接。
 
 ### Callback Page
 
-That was all the functionality for the access form, let’s move to the callback page. Create a `static/js/pages/callback-page.js` file with the following content:
+这就是访问表格的所有功能，现在我们来做回调页面。使用如下的内容来创建一个 `static/js/pages/callback-page.js` 文件：
 ```
 import http from '../http.js'
 
@@ -279,13 +278,13 @@ export default function callbackPage() {
 
 ```
 
-To remember… when clicking the magic link, we go to `/api/passwordless/verify_redirect` which redirect us to the redirect URI we pass (`/callback`) with the JWT and expiration date in the URL hash.
+请记住 … 当点击魔法链接时，我们来到 `/api/passwordless/verify_redirect`，我们通过 （`/callback`）在 URL 的哈希中传递 JWT 和过期日期，将我们转向到重定向 URI。
 
-The callback page decodes the hash from the URL to extract those parameters to do a `GET` request to `/api/auth_user` with the JWT saving all the data to `localStorage`. Finally, it just redirects to home.
+回调页面解码 URL 中的哈希，提取这些参数去做一个 `GET` 请求到 `/api/auth_user`，用 JWT 保存所有数据到 `localStorage` 中。最后，重定向到主页面。
 
 ### Home Page
 
-Create a `static/pages/home-page.js` file with the following content:
+创建如下内容的 `static/pages/home-page.js` 文件：
 ```
 import { getAuthUser } from '../auth.js'
 
@@ -314,9 +313,9 @@ function logout() {
 
 ```
 
-This page greets the authenticated user and also has a logout button. The `logout()` function just clears `localStorage` and reloads the page.
+这个页面欢迎已验证用户，同时也有一个登出按钮。`logout()` 函数的功能只是清理掉 `localStorage` 并重载这个页面。
 
-There is it. I bet you already saw the [demo][4] before. Also, the source code is in the same [repository][5].
+这就是全部内容了。我敢说你在此之前已经看过这个 [demo][4] 了。当然，这些源代码也在同一个 [仓库][5] 中。
 
 👋👋👋
 
@@ -326,7 +325,7 @@ via: https://nicolasparada.netlify.com/posts/passwordless-auth-client/
 
 作者：[Nicolás Parada][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[qhwdw](https://github.com/qhwdw)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

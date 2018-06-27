@@ -1,3 +1,5 @@
+translating---geekpi
+
 How To Record Everything You Do In Terminal
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2017/03/Record-Everything-You-Do-In-Terminal-720x340.png)

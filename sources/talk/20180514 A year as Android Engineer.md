@@ -1,3 +1,4 @@
+(translating by runningwater)
 A year as Android Engineer
 ============================================================
 
@@ -121,7 +122,7 @@ The engineer role isn't just coding, but rather a broad range of skills. I am s
 via: https://proandroiddev.com/a-year-as-android-engineer-55e2a428dfc8
 
 作者：[Lara Martín][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[runningwater](https://github.com/runningwater)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
