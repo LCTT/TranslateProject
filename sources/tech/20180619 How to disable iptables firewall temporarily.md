@@ -1,17 +1,15 @@
-translating---geekpi
-
-How to disable iptables firewall temporarily
+如何暂时禁用 iptables 防火墙
 ======
 
-Learn how to disable iptables firewall in Linux temporarily for troubleshooting purpose. Also learn how to save policies and how to restore them back when you enable firewall back.
+了解如何在 Linux 中暂时禁用 iptables 防火墙来进行故障排除。还要学习如何保存策略以及如何在启用防火墙时恢复它们。
 
 ![How to disable iptables firewall temporarily][1]
 
-Sometimes you have the requirement to turn off iptables firewall to do some connectivity troubleshooting and then you need to turn it back on. While doing it you also want to save all your [firewall policies][2] as well. In this article, we will walk you through how to save firewall policies and how to disable/enable iptables firewall. For more details about iptables firewall and policies [read our article][3] on it.
+有时你需要关闭 iptables 防火墙来做一些连接故障排除，然后你需要重新打开它。在执行此操作时，你还需要保存所有[防火墙策略][2]。在本文中，我们将引导你了解如何保存防火墙策略以及如何禁用/启用 iptables 防火墙。有关 iptables 防火墙和策略的更多详细信息[请阅读我们的文章][3]。
 
-### Save iptables policies
+### 保存 iptables 策略
 
-The first step while disabling iptables firewall temporarily is to save existing firewall rules/policies. `iptables-save` command lists all your existing policies which you can save in a file on your server.
+临时禁用 iptables 防火墙的第一步是保存现有的防火墙规则/策略。`iptables-save` 命令列出你可以保存到服务器中的所有现有策略。
 
 ```
 root@kerneltalks # # iptables-save
@@ -27,13 +25,13 @@ root@kerneltalks # # iptables-save
 root@kerneltalks # iptables-save > /root/firewall_rules.backup
 ```
 
-So iptables-save is the command with you can take iptables policy backup.
+因此，iptables-save 是可以用来备份 iptables 策略的命令。
 
-### Stop/disable iptables firewall
+### 停止/禁用 iptables 防火墙
 
-For older Linux kernels you have an option of stopping service iptables with `service iptables stop` but if you are on the new kernel, you just need to wipe out all the policies and allow all traffic through the firewall. This is as good as you are stopping the firewall.
+对于较老的 Linux 内核，你可以选择使用 `service iptables stop` 停止 iptables 服务，但是如果你在用新内核，则只需清除所有策略并允许所有流量通过防火墙。这和你停止防火墙效果一样。
 
-Use below list of commands to do that.
+使用下面的命令列表来做到这一点。
 ```
 root@kerneltalks # iptables -F
 root@kerneltalks # iptables -X
@@ -42,15 +40,15 @@ root@kerneltalks # iptables -P OUTPUT ACCEPT
 root@kerneltalks # iptables -P FORWARD ACCEPT
 ```
 
-Where –
+这里 –
 
-  * -F : Flush all policy chains
-  * -X : Delete user defined chains
-  * -P INPUT/OUTPUT/FORWARD : Accept specified traffic
+  * -F：删除所有策略链
+  * -X：删除用户定义的链
+  * -P INPUT/OUTPUT/FORWARD ：接受指定的流量
 
 
 
-Once done, check current firewall policies. It should looks like below which means everything is accepted (as good as your firewall is disabled/stopped)
+完成后，检查当前的防火墙策略。它应该看起来像下面这样接受所有流量（和禁用/停止防火墙一样）
 
 ```
 # iptables -L
@@ -64,16 +62,16 @@ Chain OUTPUT (policy ACCEPT)
 target     prot opt source               destination
 ```
 
-### Restore firewall policies
+### 恢复防火墙策略
 
-Once you are done with troubleshooting and you want to turn iptables back on with all its configurations. You need to first restore policies from the backup we took in first step.
+故障排除后，你想要重新打开 iptables 的所有配置。你需要先从我们在第一步中执行的备份中恢复策略。
 
 ```
 root@kerneltalks # iptables-restore </root/firewall_rules.backup
 ```
-### Start iptables firewall
+### 启动 iptables 防火墙
 
-And then start iptables service in case you have stopped it in previous step using `service iptables start`. If you havnt stopped service then only restoring policies will do for you. Check if all policies are back in iptables firewall configurations :
+然后启动 iptables 服务，以防止你在上一步中使用 `service iptables start` 停止了它。如果你已经停止服务，那么只有恢复策略才能有用。检查所有策略是否恢复到 iptables 配置中：
 
 ```
 #  iptables -L
@@ -87,7 +85,7 @@ DOCKER-ISOLATION-STAGE-1  all  --  anywhere             anywhere
 -----output truncated-----
 ```
 
-That’s it! You have successfully disabled and enabled firewall without loosing your policy rules.
+就是这些了！你已成功禁用并启用了防火墙，而不会丢失你的策略规则。
 
 --------------------------------------------------------------------------------
 
@@ -95,7 +93,7 @@ via: https://kerneltalks.com/howto/how-to-disable-iptables-firewall-temporarily/
 
 作者：[kerneltalks][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[geekpi](https://github.com/geekpi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
