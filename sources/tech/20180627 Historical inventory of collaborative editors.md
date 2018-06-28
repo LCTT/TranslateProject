@@ -1,3 +1,4 @@
+    【翻译中 by ZenMoore】 
 Historical inventory of collaborative editors
 ======
 A quick inventory of major collaborative editor efforts, in chronological order.
