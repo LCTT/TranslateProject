@@ -1,30 +1,55 @@
 translating by stenphenxs
-How to get a core dump for a segfault on Linux
+在 Linux 上如何得到一个段错误的核心转储
 ============================================================
 
 This week at work I spent all week trying to debug a segfault. I’d never done this before, and some of the basic things involved (get a core dump! find the line number that segfaulted!) took me a long time to figure out. So here’s a blog post explaining how to do those things!
 
+本周工作中，我花了整整一周的时间来尝试调试一个段错误。我以前从来没有这样做过，我花了很长时间才弄清楚其中涉及的一些基本事情（获得核心转储，找到导致段错误的行号！）。于是便有了这篇博客来解释如何做那些事情！
+
+
 At the end of this blog post, you should know how to go from “oh no my program is segfaulting and I have no idea what is happening” to “well I know what its stack / line number was when it segfaulted at at least!“.
+
+在这篇博客的最后，你应该知道如何从“哦，我的程序出现段错误，但我不知道正在发生什么”到“我知道它出现段错误时的堆栈/行号了！ “。
 
 ### what’s a segfault?
 
+### 什么是段错误？
+
 A “segmentation fault” is when your program tries to access memory that it’s not allowed to access, or tries to . This can be caused by:
+
+一个“段错误”是指你的程序尝试访问不允许访问或尝试访问的内存地址的情况。这可能是由于：（第二个tries to存疑）
 
 *   trying to dereference a null pointer (you’re not allowed to access the memory address `0`)
 
+*   试图解引用空指针（你不被允许访问内存地址 `0`）
+
 *   trying to dereference some other pointer that isn’t in your memory
+
+*   试图解引用其他一些不在你内存（译者注：指合法的内存地址空间）中的指针
 
 *   a C++ vtable pointer that got corrupted and is pointing to the wrong place, which causes the program to try to execute some memory that isn’t executable
 
+*   一个被破坏并且指向错误的地方的 C++ 虚表指针，它导致程序尝试把一些没有执行权限的内存地址空间当成指令执行
+
 *   some other things that I don’t understand, like I think misaligned memory accesses can also segfault
+
+*   其他一些我不明白的事情，比如我认为访问未对齐的内存地址也可能会导致段错误
 
 This “C++ vtable pointer” thing is what was happening to my segfaulting program. I might explain that in a future blog post because I didn’t know any C++ at the beginning of this week and this vtable lookup thing was a new way for a program to segfault that I didn’t know about.
 
+这个“C++ 虚表指针”是我的程序发生段错误的情况。我可能会在未来的博客中解释，因为我最初并不知道任何关于 C++的知识，并且这种虚表查找导致程序段错误的情况也是我所不了解的。
+
 But! This blog post isn’t about C++ bugs. Let’s talk about the basics, like, how do we even get a core dump?
+
+但是！这篇博客后不是关于 C++ 问题的。让我们谈论的基本的东西，比如，我们如何得到一个核心转储？
 
 ### step 1: run valgrind
 
+### 步骤1：运行 valgrind
+
 I found the easiest way to figure out why my program is segfaulting was to use valgrind: I ran
+
+我发现找出为什么我的程序出现段错误的最简单的方式是使用valgrind：我运行
 
 ```
 valgrind -v your-program
@@ -32,6 +57,8 @@ valgrind -v your-program
 ```
 
 and this gave me a stack trace of what happened. Neat!
+
+这给了我一个（故障时的）堆栈调用序列。 简洁！
 
 But I wanted also wanted to do a more in-depth investigation and find out more than just what valgrind was telling me! So I wanted to get a core dump and explore it.
 
