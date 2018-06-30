@@ -1,3 +1,4 @@
+      翻译中 by ZenMoore
 World Cup football on the command line
 ======
 
