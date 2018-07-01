@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 Can we build a social network that serves users rather than advertisers?
 ======
 
