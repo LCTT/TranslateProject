@@ -1,10 +1,3 @@
----
-date: 2018-07-02 09:16
-status: public
-title: '20180627 Historical inventory of collaborative editors'
----
-
-    【翻译中 by ZenMoore】 
 协同编辑器的历史性发明
 ======
 不妨按时间顺序快速列出在主要协同编辑器上付出的努力。
