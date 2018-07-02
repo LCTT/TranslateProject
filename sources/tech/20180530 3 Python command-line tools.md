@@ -71,7 +71,7 @@ Hello Lacey!
 
 `help` and `version` flags.
 
-Docopt is very particular about how you format the required docstring at the top of your file. The top element in your docstring after the name of your tool must be "Usage," and it should list the ways you expect your command to be called (e.g., by itself, with arguments, etc.). Usage should include **help** and **version** flags.
+Docopt is very particular about how you format the required docstring at the top of your file. The top element in your docstring after the name of your tool must be "Usage," and it should list the ways you expect your command to be called (e.g., by itself, with arguments, etc.). Usage should includeandflags.
 
 The second element in your docstring should be "Options," and it should provide more information about the options and arguments you identified in "Usage." The content of your docstring becomes the content of your help text.
 ```
