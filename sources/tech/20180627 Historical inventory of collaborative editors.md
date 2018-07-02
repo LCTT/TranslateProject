@@ -1,43 +1,38 @@
-    【翻译中 by ZenMoore】 
-Historical inventory of collaborative editors
+协同编辑器的历史性发明
 ======
-A quick inventory of major collaborative editor efforts, in chronological order.
+不妨按时间顺序快速列出在主要协同编辑器上付出的努力。
 
-As with any such list, it must start with an honorable mention to [the mother of all demos][25] during which [Doug Engelbart][26] presented what is basically an exhaustive list of all possible software written since 1968\. This includes not only a collaborative editor, but graphics, programming and math editor.
+正如任何如此的清单一样，它必定会在一开始便提到受人尊敬的所有编辑器的先祖，道格·恩格尔巴特描述了在那期间什么基本是 1968 年来所写的所有可能软件的详尽清单。这不仅包括协同编辑器，还包括图形、编程和数学编辑器。
 
-Everything else after that demo is just a slower implementation to compensate for the acceleration of hardware.
+那个示范之后的所有编辑器仅仅是为了弥补硬件发展的加速度的更缓慢的实现。
 
-> Software gets slower faster than hardware gets faster. - Wirth's law
+> 软件加快的速度比硬件加快的速度慢。——沃斯定律
 
-So without further ado, here is the list of notable collaborative editors that I could find. By "notable" i mean that they introduce a notable feature or implementation detail.
+因此没有进一步的麻烦的话，这里是我找到的可圈可点的协同编辑器的清单。我说“可圈可点”的意思是他们具有可圈可点的特征或者实现细节。
 
-   
-| Project | Date | Platform | Notes |
+| 项目 | 日期 | 平台 | 说明 |
 | --- | --- | --- | --- |
-| [SubEthaEdit][1] | 2003-2015? | Mac-only | first collaborative, real-time, multi-cursor editor I could find. [reverse-engineering attempt in Emacs][2] |
-| [DocSynch][3] | 2004-2007 | ? | built on top of IRC 
-![(!)](https://anarc.at/smileys/idea.png)
- |
-| [Gobby][4] | 2005-now | C, multi-platform | first open, solid and reliable implementation. still around! protocol ("[libinfinoted][5]") notoriously hard to port to other editors (e.g. [Rudel][6] failed to implement this in Emacs. 0.7 release in jan 2017 adds possible python bindings that might improve this. Interesting plugins: autosave to disk. |
-| [moonedit][7] | 2005-2008? | ? | Original website died. Other user's cursors visible and emulated keystrokes noises. Calculator and music sequencer. |
-| [synchroedit][8] | 2006-2007 | ? | First web app. |
-| [Etherpad][9] | 2008-now | Web | First solid webapp. Originally developped as a heavy Java app in 2008, acquired and opensourced by google in 2009, then rewritten in Node.js in 2011\. Widely used. |
-| [CRDT][10] | 2011 | Specification | Standard for replicating a document's datastructure among different computers reliably. |
-| [Operational transform][11] | 2013 | Specification | Similar to CRDT, yet, well, different. |
-| [Floobits][12] | 2013-now | ? | Commercial, but opensource plugins for different editors |
-| [HackMD][13] | 2015-now | ? | Commercial but [opensource][14]. Inspired by hackpad, which was bought up by Dropbox. |
-| [Cryptpad][15] | 2016-now | web? | spin-off of xwiki. encrypted, "zero-knowledge" on server |
-| [Prosemirror][16] | 2016-now | Web, Node.JS | "Tries to bridge the gap between Markdown text editing and classical WYSIWYG editors." Not really an editor, but something that can be used to build one. |
-| [Qill][17] | 2013-now | Web, Node.JS | Rich text editor, also javascript. Not sure it is really collaborative. |
-| [Nextcloud][18] | 2017-now | Web | Some sort of Google docs equivalent |
-| [Teletype][19] | 2017-now | WebRTC, Node.JS | For the GitHub's [Atom editor][20], introduces "portal" idea that makes guests follow what the host is doing across multiple docs. p2p with webRTC after visit to introduction server, CRDT based. |
-| [Tandem][21] | 2018-now | Node.JS? | Plugins for atom, vim, neovim, sublime... uses a relay to setup p2p connexions CRDT based. [Dubious license issues][22] were resolved thanks to the involvement of Debian developers, which makes it a promising standard to follow in the future. |
+| [SubEthaEdit][1] | 2003-2015? | 仅 Mac|首次协同, 实时的, 我能找到的多指针编辑器， [在 Emacs 上的逆向工程的尝试。][2] |
+| [DocSynch][3] | 2004-2007 | ? | 在互联网交互式聊天程序之上构造! [(!)](https://anarc.at/smileys/idea.png)|
+| [Gobby][4] | 2005 至今 | C, 多平台 | 首次开放,实现稳固可靠。 仍然存在！众所周知 ("[libinfinoted][5]") 协议很难移植到其他编辑器中 (例如： [Rudel][6] 不能在 Emacs 上实现此协议。 2017 年 1 月发行的 0.7 版本添加了也许可以改善这种状况的 Python 捆绑。 有趣的插件: 自动保存到磁盘。|
+| [moonedit][7] | 2005-2008? | ? | 原网站已关闭。其他用户的光标可见并且会模仿击键的声音。 计算器和音乐定序器。 |
+| [synchroedit][8] | 2006-2007 | ? |首款网络应用。|
+| [Etherpad][9] | 2008 至今 | 网络 |首款稳定的网络应用。 最初在 2008 年被开发为一款大型 Java 应用，在 2009 年被谷歌获取并开源，然后在 2011 年被用 Node.JS 重写。广泛使用。|
+| [CRDT][10] | 2011 | 特定平台| 对在不同电脑间可靠地复制一个文件的数据结构是标准的。 |
+| [Operational transform][11] | 2013 | 特定平台| 与 CRDT 类似, 然而, 确切地说, 两者是不同的。 |
+| [Floobits][12] | 2013 至今 | ? | 对不同编辑器是商业的但开源的插件。 |
+| [HackMD][13] | 2015 至今| ? | 商业的但是[开源][14]。受 hackpad 的启发( hackpad 已被 Dropbox 收购)。 |
+| [Cryptpad][15] | 2016 至今 | 网络? |Xwiki 的副产品。加密的, 在服务器"零知识"。|
+| [Prosemirror][16] | 2016 至今 | 网络, Node.JS | "试图架起 Markdown 文本编辑和 传统 WYSIWYG 编辑器之间隔阂的桥梁。"不是完全意义上的编辑器，但是一种可以用来构建编辑器的工具。 |
+| [Qill][17] | 2013 至今 | 网络, Node.JS | 富文本编辑器,同时支持 JavaScript.不确定是否是协同式的。 |
+| [Nextcloud][18] | 2017 至今 | Web |一种类似谷歌文档的文档。 |
+| [Teletype][19] | 2017 至今 | WebRTC, Node.JS | 为 GitHub 的[ Atom 编辑器][20] 引入了 "可移植"的想法，这种想法使访客可以跟踪主人在对多个文档做什么.访问介绍服务器后使用实时通讯的点对点技术( P2P ),基于 CRDT. |
+| [Tandem][21] | 2018 至今 | Node.JS? | Atom, Vim, Neovim, Sublime 等的插件。 使用中继安装基于 CRDT 的 P2P 连接。多亏 Debian 开发者的参与,[可疑证书问题][22]已被解决，这使它成为很有希望在未来被遵循的标准。 |
 
-### Other lists
+### 其他清单
 
-*   [Emacs wiki][23]
-
-*   [Wikipedia][24]
+*   Emacs 维基
+*   维基百科
 
 
 
@@ -47,7 +42,7 @@ via: https://anarc.at/blog/2018-06-26-collaborative-editors-history/
 
 作者：[Anacr][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[ZenMoore](https://github.com/ZenMoore)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
