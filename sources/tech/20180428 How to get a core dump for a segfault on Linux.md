@@ -62,23 +62,43 @@ and this gave me a stack trace of what happened. Neat!
 
 But I wanted also wanted to do a more in-depth investigation and find out more than just what valgrind was telling me! So I wanted to get a core dump and explore it.
 
+但我想也希望做一个更深入调查，并找出些valgrind没告诉我的信息！ 所以我想获得一个核心转储并探索它。
+
 ### How to get a core dump
+
+### 如何获得一个核心转储
 
 A core dump is a copy of your program’s memory, and it’s useful when you’re trying to debug what went wrong with your problematic program.
 
+一个核心转储是您的程序内存的一个副本，并且当您试图调试您的有问题的程序哪里出错的时候它非常有用。
+
 When your program segfaults, the Linux kernel will sometimes write a core dump to disk. When I originally tried to get a core dump, I was pretty frustrated for a long time because – Linux wasn’t writing a core dump!! Where was my core dump????
+
+当您的程序出现段错误，Linux 的内核有时会把一个核心转储写到磁盘。 当我最初试图获得一个核心转储时，我很长一段时间非常沮丧，因为 -  Linux 不在生成核心转储！我的核心转储在哪里？
 
 Here’s what I ended up doing:
 
+这就是我最后做了什么：
+
 1.  Run `ulimit -c unlimited` before starting my program
+
+1.  在启动我的程序之前运行 `ulimit -c unlimited`
 
 2.  Run `sudo sysctl -w kernel.core_pattern=/tmp/core-%e.%p.%h.%t`
 
+2.  运行 `sudo sysctl -w kernel.core_pattern=/tmp/core-%e.%p.%h.%t`
+
 ### ulimit: set the max size of a core dump
+
+### ulimit：设置核心转储的最大尺寸
 
 `ulimit -c` sets the maximum size of a core dump. It’s often set to 0, which means that the kernel won’t write core dumps at all. It’s in kilobytes. ulimits are per process – you can see a process’s limits by running `cat /proc/PID/limit`
 
+`ulimit -c` 设置核心转储的最大尺寸。 它往往设置为 0，这意味着内核根本不会写核心转储。 它以千字节为单位。 分别为每个进程设置 ulimit - 你可以通过运行 `cat /proc/PID/limit` 看到一个进程的各种资源限制。
+
 For example these are the limits for a random Firefox process on my system:
+
+例如这些是我的系统上一个随机Firefox进程的资源限制：
 
 ```
 $ cat /proc/6309/limits 
@@ -104,17 +124,31 @@ Max realtime timeout      unlimited            unlimited            us
 
 The kernel uses the soft limit (in this case, “max core file size = 0”) when deciding how big of a core file to write. You can increase the soft limit up to the hard limit using the `ulimit` shell builtin (`ulimit -c unlimited`!)
 
+内核在决定写入多大的核心转储文件时使用 soft limit（在这种情况下，“最大的核心文件大小= 0”）。 您可以使用shell内置命令 `ulimit`（`ulimit -c unlimited`） 将 soft limit 增加到 hard limit。
+
 ### kernel.core_pattern: where core dumps are written
+
+### kernel.core_pattern：核心转储保存在哪里
 
 `kernel.core_pattern` is a kernel parameter or a “sysctl setting” that controls where the Linux kernel writes core dumps to disk.
 
+`kernel.core_pattern` 是一个内核参数，或者叫“sysctl 设置”，它控制 Linux 内核将核心转储文件写到磁盘的哪里。
+
 Kernel parameters are a way to set global settings on your system. You can get a list of every kernel parameter by running `sysctl -a`, or use `sysctl kernel.core_pattern` to look at the `kernel.core_pattern` setting specifically.
+
+内核参数是一种设定您的系统全局设置的方法。您可以通过运行 `sysctl -a` 得到一个包含每个内核参数的列表，或使用 `sysctl kernel.core_pattern` 来专门查看 `kernel.core_pattern` 设置。
 
 So `sysctl -w kernel.core_pattern=/tmp/core-%e.%p.%h.%t` will write core dumps to `/tmp/core-<a bunch of stuff identifying the process>`
 
+所以 `sysctl -w kernel.core_pattern=/tmp/core-%e.%p.%h.%t` 将核心转储保存到目录 `/tmp` 下并以 `core` 加上一系列能够标识（出故障的）进程的参数构成的后缀为文件名。
+
 If you want to know more about what these `%e`, `%p` parameters read, see [man core][1].
 
+如果你想知道这些形如 `%e`、`%p` 的参数都表示什么，请参考 [man core][1]。
+
 It’s important to know that `kernel.core_pattern` is a global settings – it’s good to be a little careful about changing it because it’s possible that other systems depend on it being set a certain way.
+
+有一点很重要，`kernel.core_pattern` 是一个全局设置 - 修改它的时候最好小心一点，因为有可能其它系统功能依赖于把它被设置为一个特定的方式（才能正常工作）。
 
 ### kernel.core_pattern & Ubuntu
 
