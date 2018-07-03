@@ -60,6 +60,20 @@ $ cat my_terminal_activities
 
 示例输出：
 
+```
+Script started on Thu 09 Mar 2017 03:33:44 PM IST
+[sk@sk]: ~>$ mkdir ostechnix
+[sk@sk]: ~>$ cd ostechnix/
+[sk@sk]: ~/ostechnix>$ touch hello_world.txt
+[sk@sk]: ~/ostechnix>$ cd ..
+[sk@sk]: ~>$ uname -r
+4.9.11-1-ARCH
+[sk@sk]: ~>$ exit
+exit
+
+Script done on Thu 09 Mar 2017 03:37:49 PM IST
+```
+
 正如你在上面的输出中看到的，`script` 命令记录了我所有的终端活动，包括 `script` 命令的开始和结束时间。真棒，不是吗？使用 `script` 命令的原因不仅仅是记录命令，还有命令的输出。简单地说，脚本命令将记录你在终端上执行的所有操作。
 
 ### 结论
