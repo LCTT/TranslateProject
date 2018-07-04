@@ -1,4 +1,3 @@
-XLCYun 翻译中
 How to get into DevOps
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/rh_003784_02_os.comcareers_resume_rh1x.png?itok=S3HGxi6E)

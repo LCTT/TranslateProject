@@ -1,5 +1,3 @@
-Translating by MjSeven
-
 Linux command line tools for working with non-Linux users
 ======
 ![](https://images.techhive.com/images/article/2016/06/linux-shell-100666628-large.jpg)
