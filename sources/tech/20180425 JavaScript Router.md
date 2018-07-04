@@ -1,3 +1,4 @@
+Translating by qhwdw
 JavaScript Router
 ======
 There are a lot of frameworks/libraries to build single page applications, but I wanted something more minimal. I’ve come with a solution and I just wanted to share it 🙂
