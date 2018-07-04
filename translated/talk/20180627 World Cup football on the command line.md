@@ -1,9 +1,3 @@
----
-date: 2018-07-04 08:52
-status: public
-title: '20180627 World Cup football on the command line'
----
-
 命令行中的世界杯
 ======
 
