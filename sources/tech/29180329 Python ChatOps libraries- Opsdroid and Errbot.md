@@ -1,3 +1,5 @@
+Translating by shipsw
+
 Python ChatOps libraries: Opsdroid and Errbot
 ======
 
