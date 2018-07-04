@@ -1,9 +1,3 @@
----
-date: 2018-07-04 08:55
-status: public
-title: '20180626 5 open source puzzle games for Linux'
----
-
 Linux 上的五个开源益智游戏
 ======
 
