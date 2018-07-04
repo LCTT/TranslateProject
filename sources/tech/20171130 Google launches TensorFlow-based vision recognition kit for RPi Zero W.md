@@ -1,3 +1,4 @@
+Transating by qhwdw
 # [Google launches TensorFlow-based vision recognition kit for RPi Zero W][26]
 
 
