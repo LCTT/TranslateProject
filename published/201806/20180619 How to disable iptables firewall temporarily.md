@@ -1,7 +1,7 @@
 如何暂时禁用 iptables 防火墙
 ======
 
-了解如何在 Linux 中暂时禁用 iptables 防火墙来进行故障排除。还要学习如何保存策略以及如何在启用防火墙时恢复它们。
+> 了解如何在 Linux 中暂时禁用 iptables 防火墙来进行故障排除。还要学习如何保存策略以及如何在启用防火墙时恢复它们。
 
 ![How to disable iptables firewall temporarily][1]
 
@@ -32,6 +32,7 @@ root@kerneltalks # iptables-save > /root/firewall_rules.backup
 对于较老的 Linux 内核，你可以选择使用 `service iptables stop` 停止 iptables 服务，但是如果你在用新内核，则只需清除所有策略并允许所有流量通过防火墙。这和你停止防火墙效果一样。
 
 使用下面的命令列表来做到这一点。
+
 ```
 root@kerneltalks # iptables -F
 root@kerneltalks # iptables -X
@@ -42,11 +43,9 @@ root@kerneltalks # iptables -P FORWARD ACCEPT
 
 这里 –
 
-  * -F：删除所有策略链
-  * -X：删除用户定义的链
-  * -P INPUT/OUTPUT/FORWARD ：接受指定的流量
-
-
+  * `-F`：删除所有策略链
+  * `-X`：删除用户定义的链
+  * `-P INPUT/OUTPUT/FORWARD` ：接受指定的流量
 
 完成后，检查当前的防火墙策略。它应该看起来像下面这样接受所有流量（和禁用/停止防火墙一样）
 
@@ -69,6 +68,7 @@ target     prot opt source               destination
 ```
 root@kerneltalks # iptables-restore </root/firewall_rules.backup
 ```
+
 ### 启动 iptables 防火墙
 
 然后启动 iptables 服务，以防止你在上一步中使用 `service iptables start` 停止了它。如果你已经停止服务，那么只有恢复策略才能有用。检查所有策略是否恢复到 iptables 配置中：
@@ -94,7 +94,7 @@ via: https://kerneltalks.com/howto/how-to-disable-iptables-firewall-temporarily/
 作者：[kerneltalks][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
