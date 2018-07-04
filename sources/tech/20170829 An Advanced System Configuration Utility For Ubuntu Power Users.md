@@ -1,3 +1,4 @@
+translating by wenwensnow
 An Advanced System Configuration Utility For Ubuntu Power Users
 ======
 
