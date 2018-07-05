@@ -1,3 +1,5 @@
+Translating by vk
+
 How to make a career move from proprietary to open source technology
 ======
 
