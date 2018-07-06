@@ -1,9 +1,3 @@
----
-date: 2018-07-04 08:54
-status: public
-title: 20180626 How to build a professional network when you work in a bazaar
----
-
 在市场工作时如何建立一个职业网络
 ======
 
