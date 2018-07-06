@@ -1,5 +1,3 @@
-Translating by cncuckoo
-
 Rediscovering make: the power behind rules
 ======
 

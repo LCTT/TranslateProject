@@ -1,5 +1,3 @@
-申请翻译  WangYueScream
-================================
 Best Websites to Download Linux Games
 ======
 Brief: New to Linux gaming and wondering where to **download Linux games** from? We list the best resources from where you can **download free Linux games** as well as buy premium Linux games.

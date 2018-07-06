@@ -1,5 +1,3 @@
-voidpainter is translating
----
 [Betting on the Web][27]
 ============================================================
 

@@ -1,5 +1,3 @@
-Translating by jessie-pang
-
 Understanding Linux filesystems: ext4 and beyond
 ======
 

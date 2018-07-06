@@ -1,4 +1,4 @@
-@qhh0205 翻译中
+Translating by qhwdw
 Running a Python application on Kubernetes
 ============================================================
 

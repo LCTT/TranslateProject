@@ -1,4 +1,3 @@
-(Translating by runningwater)
 Managing users on Linux systems
 ======
 Your Linux users may not be raging bulls, but keeping them happy is always a challenge as it involves managing their accounts, monitoring their access rights, tracking down the solutions to problems they run into, and keeping them informed about important changes on the systems they use. Here are some of the tasks and tools that make the job a little easier.
