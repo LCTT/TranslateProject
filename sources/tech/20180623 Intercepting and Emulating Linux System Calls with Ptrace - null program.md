@@ -1,3 +1,4 @@
+Translating by qhwdw
 Intercepting and Emulating Linux System Calls with Ptrace « null program
 ======
 
