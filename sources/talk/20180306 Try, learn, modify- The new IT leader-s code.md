@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 Try, learn, modify: The new IT leader's code
 ======
 
