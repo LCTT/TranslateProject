@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 How To Find The Installed Proprietary Packages In Arch Linux
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2018/01/Absolutely-Proprietary-720x340.jpg)
