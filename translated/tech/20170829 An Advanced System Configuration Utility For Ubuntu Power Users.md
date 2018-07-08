@@ -9,16 +9,16 @@
 以上提到的所有功能都可以通过鼠标点击完成.你不需要再依赖于命令行模式,下面是你能用Ubunsys 做到的事:
 
 
-  * 	安装，删除，更新包
-  * 	更新和升级软件源
+  * 安装，删除，更新包
+  * 更新和升级软件源
   *  安装主线内核
   *  删除旧的和不再使用的内核
   *  系统整体更新
   *  将系统升级到下一个可用的版本
   *  将系统升级到最新的开发版本
-  * 	清理系统垃圾文件
+  * 清理系统垃圾文件
   *  在不输入密码的情况下启用或者禁用sudo 权限
-  * 	当你在terminal输入密码时使Sudo 密码可见
+  * 当你在terminal输入密码时使Sudo 密码可见
   *  启用或禁用系统冬眠
   *  启用或禁用防火墙 
   *  打开,备份和导入 sources.list.d 和sudoers 文件.
@@ -28,7 +28,7 @@
   *  启用或禁用锁屏
   *  智能系统更新
   *  使用脚本管理器更新/一次性执行脚本
-  * 	从git执行常规用户安装脚本
+  * 从git执行常规用户安装脚本
   *  检查系统完整性和缺失的GPG keys.
   *  修复网络
   *  修复已破损的包
@@ -53,7 +53,7 @@ sudo apt-get install ubunsys
 
 ```
 
-If the PPA doesn’t work, head over to the [**releases page**][1], download and install the Ubunsys package depending upon the architecture you use.
+
 如果ppa 无法使用,你可以在[**发布页面**][1]根据你自己当前系统,选择正确的安装包,直接下载并安装Ubunsys
 
 #### 用途
@@ -116,7 +116,6 @@ If the PPA doesn’t work, head over to the [**releases page**][1], download and
 
 ![][7]
 
-As you can see, Ubunsys helps you to do any system configuration, maintenance and software management tasks with few mouse clicks. You don’t need to depend on Terminal anymore. Ubunsys can help you to accomplish any advanced tasks. Again, I warn you, It’s not for beginners and it is not stable yet. So, you can expect bugs and crashes when using it. Use it with care after studying options and impact.
 
 正如你所见,Ubunsys可以在几次点击下就能完成诸如系统配置,系统维护和软件维护之类的任务.你不需要一直依赖于Terminal. Ubunsys 能帮你完成任何高级任务.再次声明,我警告你,这个应用不适合新手,而且它并不稳定.所以当你使用的时候,可能会出现bug或者系统崩溃.在仔细研究过每一个选项的影响之后再使用它.
 
