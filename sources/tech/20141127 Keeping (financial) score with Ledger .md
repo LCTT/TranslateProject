@@ -1,3 +1,5 @@
+translating---geekpi
+
 Keeping (financial) score with Ledger –
 ======
 I’ve used [Ledger CLI][1] to keep track of my finances since 2005, when I moved to Canada. I like the plain-text approach, and its support for virtual envelopes means that I can reconcile both my bank account balances and my virtual allocations to different categories. Here’s how we use those virtual envelopes to manage our finances separately.

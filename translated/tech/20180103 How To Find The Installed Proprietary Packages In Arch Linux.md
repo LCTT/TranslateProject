@@ -1,34 +1,34 @@
-How To Find The Installed Proprietary Packages In Arch Linux
+如何在 Arch Linux 中查找已安装的专有软件包？
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2018/01/Absolutely-Proprietary-720x340.jpg)
-Are you an avid free software supporter and currently using any Arch based distribution? I've got a small tip for you! Now, you can easily find the installed proprietary packages in Arch Linux and its variants such as Antergos, Manjaro Linux etc. You don't need to refer the license details of the installed package in its website or use any external tool to find out whether the package is free or proprietary.
+你是狂热的自由软件支持者吗？你目前在使用任何基于 Arch 的 Linux 发行版吗？我有一个小小的提示送给你！现在，你可以轻松地在 Arch Linux 及其变体（如 Antergos, Manjaro Linux 等）中找到已安装的专有软件包。你无需在已安装软件包的网站中参考其许可细节，也无需使用任何外部工具来查明软件包是自由的还是专有的。（译注：其实下面还是借助了一个外部程序）
 
-### Find The Installed Proprietary Packages In Arch Linux
+### 在 Arch Linux 中查找已安装的专有软件包
 
-A fellow developer has developed an utility named **" Absolutely Proprietary"**, a proprietary package detector for arch-based distributions. It compares all installed packages in your Arch based system against Parabola's package [blacklist][1] and [aur-blacklist][2] and then prints your **Stallman Freedom Index** (free/total). Additionally, you can save the list to a file and share or compare it with other systems/users.
+一位开发人员开发了一个名为 **"Absolutely Proprietary"** 的实用程序，它是一种用于基于 Arch 发行版的专有软件包检测器。它将基于 Arch 系统中的所有安装包与 Parabola 的 [blacklist（黑名单）][1]软件包和 [aur-blacklist][2] 进行比较，然后打印你的 **Stallman Freedom Index（ Stallman 自由指数）** (free/total（自由/总计）)。此外，你可以将列表保存到文件中，并与其他系统/用户共享或比较。
 
-Before installing it, Make sure you have installed **python** and **git**.
+在安装之前，确保你安装了 **python** 和 **git**。
 
-Then, git clone the repository:
+然后，git clone 仓库：
 ```
 git clone https://github.com/vmavromatis/absolutely-proprietary.git
 ```
 
-This command will download all contents in a directory called 'absolutely-proprietary' in your current working directory.
+这条命令将会下载所有内容到你当前工作目录中的 'absolutely-proprietary' 目录。
 
-Change to that directory:
+进入此目录：
 ```
 cd absolutely-proprietary
 ```
 
-And, find the installed proprietary packages using command:
+接着，使用以下命令查找已安装的专有软件：
 ```
 python main.py
 ```
 
-This command will download the blacklist.txt, aur-blacklist.txt and compare the locally installed packages with the remote packages and displays the
+这条命令将会下载 blacklist.txt, aur-blacklist.txt，并将本地已安装的软件包与远程软件包进行比较并显示（to 校正者：原文这里似乎没写完）不同。
 
-Here is the sample output from my Arch Linux desktop:
+以下是在我的 Arch Linux 桌面的示例输出:
 ```
 Retrieving local packages (including AUR)...
 Downloading https://git.parabola.nu/blacklist.git/plain/blacklist.txt
@@ -75,7 +75,7 @@ Save list to file? (Y/n)
 
 [![][3]][4]
 
-As you can see, I have 47 proprietary packages in my system. Like I said already, we can save it to a file and review them later. To do so, jut press 'y' when you are prompted to save the list in a file. Then press 'y' to accept the defaults or hit 'n' to save it in your preferred format and location.
+如你所见，我的系统中有 47 个专有软件包。就像我说的那样，我们可以将它保存到文件中稍后查看。为此，当提示你将列表保存在文件时，请按 ‘y’。然后按 ‘y’ 接受默认值或点击 ‘n’，以你喜欢的格式和位置来保存它。
 ```
 Save list to file? (Y/n) y
 Save as markdown table? (Y/n) y
@@ -87,20 +87,17 @@ using the "less -S /home/sk/absolutely-proprietary/y.md"
 or, if installed, the "most /home/sk/absolutely-proprietary/y.md" commands
 ```
 
-As you may noticed, I have only the **nonfree** packages. It will display two more type of packages such as semifree, uses-nonfree.
+你可能已经注意到，我只有 **nonfree** 包。它还会显示另外两种类型的软件包，例如 semifree, uses-nonfree。
 
-  * **nonfree** : This package is blatantly nonfree software.
-  * **semifree** : This package is mostly free, but contains some nonfree software.
-  * **uses-nonfree** : This package depends on, recommends, or otherwise inappropriately integrates with other nonfree software or services.
+  * **nonfree**：这个软件包是公然的非自由软件。
+  * **semifree**：这个软件包大部分是免费的，但包含一些非自由软件。
+  * **uses-nonfree**：这个软件包依赖，推荐或不恰当地与其他自由软件或服务集成。
 
+该使用程序的另一个显著特点是它不仅显示了专有软件包，而且还显示这些包的替代品。
 
+希望这有些帮助。我很快就会在这里提供另一份有用的指南。敬请关注！
 
-Another notable feature of this utility is it's not just displays the propriety packages, but also alternatives to such packages.
-
-Hope this helps. I will be soon here with another useful guide soon. Stay tuned!
-
-Cheers!
-
+干杯!
 
 
 --------------------------------------------------------------------------------
@@ -108,7 +105,7 @@ Cheers!
 via: https://www.ostechnix.com/find-installed-proprietary-packages-arch-linux/
 
 作者：[SK][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[MjSeven](https://github.com/MjSeven)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
