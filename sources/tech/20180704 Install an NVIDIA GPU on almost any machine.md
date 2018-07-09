@@ -1,3 +1,5 @@
+translated by hopefully2333
+
 Install an NVIDIA GPU on almost any machine
 ======
 
