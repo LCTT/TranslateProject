@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 Customizing your text colors on the Linux command line
 ======
 
