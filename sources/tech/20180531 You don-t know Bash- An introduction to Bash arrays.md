@@ -1,3 +1,5 @@
+BriFuture is translating
+
 You don't know Bash: An introduction to Bash arrays
 ======
 
