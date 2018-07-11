@@ -51,7 +51,7 @@
 
 对于基于 Debian 的发行版，包括 Debian、Ubuntu、Linux Mint、Elementary OS 等，它们的底层命令行工具是 dpkg，高级工具称为 apt。在 Ubuntu 上管理已安装软件的图形工具是 Ubuntu Software（图 3）。对于 Debian 和 Linux Mint，图形工具称为<ruby>新立得<rt>Synaptic</rt></ruby>，它也可以安装在 Ubuntu 上。
 
-你也可以在 Debian 相关发行版上安装一个基于文本的图形化工具 aptitude。它比 <ruby>新立得<rt>synaptic</rt></ruy>更强大，并且即使你只能访问命令行也能工作。如果你想通过各种选项进行各种操作，你可以试试这个，但它使用起来比新立得更复杂。其它发行版也可能有自己独特的工具。
+你也可以在 Debian 相关发行版上安装一个基于文本的图形化工具 aptitude。它比新立得更强大，并且即使你只能访问命令行也能工作。如果你想通过各种选项进行各种操作，你可以试试这个，但它使用起来比新立得更复杂。其它发行版也可能有自己独特的工具。
 
 ### 命令行工具
 
