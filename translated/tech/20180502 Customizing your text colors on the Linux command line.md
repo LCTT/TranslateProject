@@ -1,15 +1,12 @@
-Translating by MjSeven
-
-
-Customizing your text colors on the Linux command line
+在 Linux 命令行中自定义文本颜色
 ======
 
 ![](https://images.idgesg.net/images/article/2018/05/numbers-100756457-large.jpg)
-If you spend much time on the Linux command line (and you probably wouldn't be reading this if you didn't), you've undoubtedly noticed that the ls command displays your files in a number of different colors. You've probably also come to recognize some of the distinctions — directories appearing in one color, executable files in another, etc.
+如果你在 Linux 命令行上花费了大量的时间（如果没有，那么你可能不会读这篇文章），你无疑注意到了 ls 以多种不同的颜色显示文件。你可能也注意到了一些区别 -- 目录是一种颜色，可执行文件是另一种颜色等等。
 
-How that all happens and what options are available for you to change the color assignments might not be so obvious.
-
-One way to get a big dose of data showing how these colors are assigned is to run the **dircolors** command. It will show you something like this:
+这一切是如何发生的呢？而且，你可以选择哪些选项来改变颜色分配可能不是那么明显。
+ 
+获取大量数据显示如何分配这些颜色的一种方法是运行 **dircolors** 命令。它会显示以下这些东西：
 ```
 $ dircolors
 LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do
@@ -41,7 +38,7 @@ export LS_COLORS
 
 ```
 
-If you're good at parsing, you probably noticed that there's a pattern to this listing. Break it on the colons, and you'll see something like this:
+如果你擅长解析文件，那么你可能会注意到这个列表有一个模式。加上冒号，你会看到这样的东西：
 ```
 $ dircolors | tr ":" "\n" | head -10
 LS_COLORS='rs=0
@@ -57,13 +54,13 @@ or=40;31;01
 
 ```
 
-OK, so we have a pattern here — a series of definitions that have one to three numeric components. Let's hone in on one of definition.
+好的，我们在这里有一个模式 -- 一系列定义，有一到三个数字组件。让我们来看看其中的一个定义。
 ```
 pi=40;33
 
 ```
 
-The first question someone is likely to ask is "What is pi?" We're working with colors and file types here, so this clearly isn't the intriguing number that starts with 3.14. No, this "pi" stands for "pipe" — a particular type of file on Linux systems that makes it possible to send data from one program to another. So, let's set one up.
+有些人可能会问的第一个问题是“ pi 是什么？”我们在这里处理颜色和文件类型，所以这显然不是以 3.14 开头的有趣数字。当然不是，这个“ pi ” 代表“ pipe (管道)” -- Linux 系统上的一种特殊类型的文件，它可以将数据从一个程序发送到另一个程序。所以，让我们建立一个。
 ```
 $ mknod /tmp/mypipe p
 $ ls -l /tmp/mypipe
@@ -71,15 +68,15 @@ prw-rw-r-- 1 shs shs 0 May 1 14:00 /tmp/mypipe
 
 ```
 
-When we look at our pipe and a couple other files in a terminal window, the color differences are quite obvious.
+当我们在终端窗口中查看我们的管道和其他几个文件时，颜色差异非常明显。
 
 ![font colors][1] Sandra Henry-Stocker
 
-The "40" in the definition of pi (shown above) makes the file show up in the terminal (or PuTTY) window with a black background. The 31 makes the font color red. Pipes are special files, and this special handling makes them stand out in a directory listing.
+在 pi 的定义中（如上所示），“40” 是文件显示在带有黑色背景的终端（或 PuTTY）窗口中，31 使字体颜色变红。管道是特殊的文件，这种特殊的处理使它们在目录列表中突出显示。
 
-The **bd** and **cd** definitions are identical to each other — 40;33;01 and have an extra setting. The settings cause block (bd) and character (cd) devices to be displayed with a black background, an orange font, and one other effect — the characters will be in bold.
+**bd** 和 **cd** 定义是相同的 - 40;33;01 并且有一个额外的设置。设置会导致块（bd）和字符（cd）设备以黑色背景，橙色字体和另一种效果显示 -- 字符将以粗体显示。
 
-The following list shows the color and font assignments that are made by **file type** :
+以下列表显示由 **file type** 创建的颜色和字体分配：
 ```
 setting           file type
 =======         =========
@@ -104,7 +101,7 @@ ex=01;93        executable
 
 ```
 
-You may have noticed that in our **dircolors** command output, most of our definitions started with asterisks (e.g., *.wav=00;36). These define display attributes by **file extension** rather than file type. Here's a sampling:
+你可能已经注意到，在我们的 **dircolors** 命令输出中，我们的大多数定义都以星号开头（例如，*.wav=00;36）。这些按**文件扩展名**而不是文件类型定义显示属性。这有一个示例：
 ```
 $ dircolors | tr ":" "\n" | tail -10
 *.mpc=00;36
@@ -120,34 +117,33 @@ export LS_COLORS
 
 ```
 
-These settings (all 00:36 in the listing above) would have these file names displaying in cyan. The available colors are shown below.
+这些设置（上面列表中的所有 00:36）将使这些文件名以青色显示。可用颜色如下所示。
 
 ![all colors][2] Sandra Henry-Stocker
 
-### How to change your settings
+### 如何改变设置
 
-The colors and font changes described require that you use an alias for ls that turns on the color feature. This is usually the default on Linux systems and will look like this:
+所描述的颜色和字体变化要求你使用 ls 的别名来打开颜色功能。这通常是 Linux 系统上的默认设置，看起来是这样的：
 ```
 alias ls='ls --color=auto'
 
 ```
 
-If you wanted to turn off font colors, you could run the **unalias ls** command and your file listings would then show in only the default font color.
+如果要关闭字体颜色，可以运行 **unalias ls** 命令，然后文件列表将仅以默认字体颜色显示。
 
-You can alter your text colors by modifying your $LS_COLORS settings and exporting the modified setting:
+你可以通过修改 $LS_COLORS 设置和导出修改后的设置来更改文本颜色。
 ```
 $ export LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;...
 
 ```
 
-NOTE: The command above is truncated.
+注意：上面的命令被截断了。
 
-If you want your modified text colors to be permanent, you would need to add your modified LS_COLORS definition to one of your startup files (e.g., .bashrc).
+如果希望修改后的文本颜色是永久性的，则需要将修改后的 LS_COLORS 定义添加到一个启动文件中，例如 .bashrc。
 
-### More on command line text
+### 更多关于命令行文本
 
-You can find additional information on text colors in this [November 2016][3] post on NetworkWorld.
-
+你可以在 NetworkWorld 的 [2016 年 11 月][3]的帖子中找到有关文本颜色的其他信息。
 
 --------------------------------------------------------------------------------
 
@@ -155,7 +151,7 @@ via: https://www.networkworld.com/article/3269587/linux/customizing-your-text-co
 
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[MjSeven  ](https://github.com/MjSeven  )
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
