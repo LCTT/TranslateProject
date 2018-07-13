@@ -1,3 +1,5 @@
+translating-----geekpi
+
 How To Upgrade Everything Using A Single Command In Linux
 ======
 
