@@ -1,42 +1,44 @@
 使用 Ledger 记录（财务）情况
 ======
+
 自 2005 年搬到加拿大以来，我使用 [Ledger CLI][1] 来跟踪我的财务状况。我喜欢纯文本的方式，它支持虚拟信封意味着我可以同时将我的银行帐户余额和我的虚拟分配到不同的目录下。以下是我们如何使用这些虚拟信封分别管理我们的财务状况。
 
 每个月，我都有一个条目将我生活开支分配到不同的目录中，包括家庭开支的分配。W- 不要求太多， 所以我要谨慎地处理这两者之间的差别和我自己的生活费用。我们处理它的方式是我支付固定金额，这是贷记我支付的杂货。由于我们的杂货总额通常低于我预算的家庭开支，因此任何差异都会留在标签上。我过去常常给他写支票，但最近我只是支付偶尔额外的大笔费用。
 
 这是个示例信封分配：
+
 ```
 2014.10.01 * Budget
  [Envelopes:Living]
  [Envelopes:Household] $500
  ;; More lines go here
-
 ```
 
 这是设置的信封规则之一。它鼓励我正确地分类支出。所有支出都从我的 “Play” 信封中取出。
+
 ```
 = /^Expenses/
  (Envelopes:Play) -1.0
-
 ```
 
 这个为家庭支出报销 “Play” 信封，将金额从 “Household” 信封转移到 “Play” 信封。
+
 ```
 = /^Expenses:House$/
  (Envelopes:Play) 1.0
  (Envelopes:Household) -1.0
-
 ```
 
 我有一套定期的支出来模拟我的预算中的家庭开支。例如，这是 10 月份的。
+
 ```
 2014.10.1 * House
  Expenses:House
  Assets:Household $-500
-
 ```
 
 这是杂货交易的形式：
+
 ```
 2014.09.28 * No Frills
  Assets:Household:Groceries $70.45
@@ -61,7 +63,7 @@ via: http://sachachua.com/blog/2014/11/keeping-financial-score-ledger/
 作者：[Sacha Chua][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
