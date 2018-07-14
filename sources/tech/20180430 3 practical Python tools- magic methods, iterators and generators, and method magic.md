@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 3 practical Python tools: magic methods, iterators and generators, and method magic
 ======
 
