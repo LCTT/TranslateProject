@@ -1,4 +1,4 @@
-What is the Difference Between the macOS and Linux Kernels
+tranWhat is the Difference Between the macOS and Linux Kernels
 ======
 Some people might think that there are similarities between the macOS and the Linux kernel because they can handle similar commands and similar software. Some people even think that Apple’s macOS is based on Linux. The truth is that both kernels have very different histories and features. Today, we will take a look at the difference between macOS and Linux kernels.
 
