@@ -1,3 +1,5 @@
+Translating by SunWave...
+
 How to use dd in Linux without destroying your disk
 ======
 
