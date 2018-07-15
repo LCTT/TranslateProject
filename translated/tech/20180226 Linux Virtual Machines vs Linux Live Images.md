@@ -12,15 +12,22 @@ I'll be the first to admit（认可） that I tend（照顾） to try out new [L
 
 When I test out a brand new Linux distro for the first time, the method I use depends heavily（沉重的） on the resources（资源） of the PC I'm currently（目前的） on. If I have access to my desktop PC, I'm going to run the distro to be tested in a virtual machine. The reason（理由） for this approach（靠近） is that I can download and test the distro in not only a live environment（环境）, but also（也） as an installed product with persistent（稳定的） storage abilities（能力）.
 
-为了第一时间去做 Linux 发型版本的依赖测试，我把它们运行在我目前所拥有的所有类型的 PC 上。如果我用我的台式机，我将运行一个 Linux 虚拟机做测试。
+为了第一时间去做 Linux 发型版本的依赖测试，我把它们运行在我目前所拥有的所有类型的 PC 上。如果我用我的台式机，我将运行一个 Linux 虚拟机做测试。使用这种方法的原因是，不仅仅是生活环境下我可以下载测并测试发行版，但也会用稳定的生产环境安装。
 
-On the other hand, if I am working with much less robust hardware on a PC, then testing out a distro with a virtual machine installation of Linux is counter-productive. I'd be pushing that PC to its limits and honestly would be better off using a live Linux image instead running from a flash drive.
+On the other hand, if I am working with much less robust（强力的） hardware on a PC, then testing out a distro with a virtual machine installation of Linux is counter-productive. I'd be pushing that PC to its limits（范围） and honestly（真诚的） would be better off（富裕的） using a live Linux image instead running from a flash drive.
+
+在另一方面，如果我在工作中我的PC不具备强力的硬件条件的，在一个虚拟机上测试 Linux 发型版本的时候将会产生相反的效果。老实的讲，我会将电脑性能压榨到极限，如果在经济条件服务的情况下我会使用实体机运行 Linux 镜像替代虚拟机
 
 ### Touring software on a new Linux distro
+### 在一个新的 Linux 发行版本上运行旅游软件
 
-If you're interested in checking out a distro's desktop environment or the available software, you can't go wrong with a live image of the distro. A live environment provides you with a birds eye view of what to expect in terms of overall layout, applications provided and how the user experience flows overall.
+If you're interested in checking out a distro's desktop environment（环境） or the available software（购买软件）, you can't go wrong with a live image of the distro. A live environment provides（提供） you with a birds eye view of what to expect（期望） in terms of overall layout（总体布局）, applications provided and how the user experience（体验） flows overall.
+
+如果你有兴趣查看发行版本的桌面环境或购买软件，你不能因为发行版本的一个实时图片而诽谤它。一个生活环境提供给你希望的鸟瞰全局的视角，如何使用户体验更好是由应用程序提供的。
 
 To be fair, you could do the same thing with a virtual machine installation, but it may be a bit overkill if you would rather avoid filling up hard drive space with yet more data. After all, this is a simple tour of the distro. Remember what I said in the first section – I like to run Linux in a virtual machine to test it. This means I'm going to see how it installs, what the partition options look like and other elements you wouldn't see from using a live image of any given distro.
+
+公平的说，一个虚拟化安装你也可以做同样的事，但是
 
 Touring usually indicates that you're only looking to take a quick look at a distro, so in this case the method that can be done with the least amount of resistance and time investment is a good course of action.
 
