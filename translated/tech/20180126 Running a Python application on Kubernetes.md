@@ -1,31 +1,30 @@
-Translating by qhwdw
-Running a Python application on Kubernetes
+在 Kubernetes 上运行一个 Python 应用程序
 ============================================================
 
-### This step-by-step tutorial takes you through the process of deploying a simple Python application on Kubernetes.
+### 这个分步指导教程教你通过在 Kubernetes 上部署一个简单的 Python 应用程序来学习部署的流程。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/build_structure_tech_program_code_construction.png?itok=nVsiLuag)
-Image by : opensource.com
+图片来源：opensource.com
 
-Kubernetes is an open source platform that offers deployment, maintenance, and scaling features. It simplifies management of containerized Python applications while providing portability, extensibility, and self-healing capabilities.
+Kubernetes 是一个具备部署、维护、和可伸缩特性的开源平台。它在提供可移植性、可扩展性、以及自我修复能力的同时，简化了容器化 Python 应用程序的管理。
 
-Whether your Python applications are simple or more complex, Kubernetes lets you efficiently deploy and scale them, seamlessly rolling out new features while limiting resources to only those required.
+不论你的 Python 应用程序是简单还是复杂，Kubernetes 都可以帮你高效地部署和伸缩它们，在有限的资源范围内滚动升级新特性。
 
-In this article, I will describe the process of deploying a simple Python application to Kubernetes, including:
+在本文中，我将描述在 Kubernetes 上部署一个简单的 Python 应用程序的过程，它包括：
 
-*   Creating Python container images
+*   创建 Python 容器镜像
 
-*   Publishing the container images to an image registry
+*   发布容器镜像到镜像注册中心
 
-*   Working with persistent volume
+*   使用持久卷
 
-*   Deploying the Python application to Kubernetes
+*   在 Kubernetes 上部署 Python 应用程序
 
-### Requirements
+### 必需条件
 
-You will need Docker, kubectl, and this [source code][10].
+你需要 Docker、kubectl、以及这个 [源代码][10]。
 
-Docker is an open platform to build and ship distributed applications. To install Docker, follow the [official documentation][11]. To verify that Docker runs your system:
+Docker 是一个构建和承载已发布的应用程序的开源平台。可以参照 [官方文档][11] 去安装 Docker。运行如下的命令去验证你的系统上运行的 Docker：
 
 ```
 $ docker info
@@ -41,25 +40,25 @@ WARNING: No memory limit support
 WARNING: No swap limit support
 ```
 
-kubectl is a command-line interface for executing commands against a Kubernetes cluster. Run the shell script below to install kubectl:
+kubectl 是在 Kubernetes 集群上运行命令的一个命令行界面。运行下面的 shell 脚本去安装 kubectl：
 
 ```
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
 ```
 
-Deploying to Kubernetes requires a containerized application. Let's review containerizing Python applications.
+部署到 Kubernetes 的应用要求必须是一个容器化的应用程序。我们来回顾一下 Python 应用程序的容器化过程。
 
-### Containerization at a glance
+### 一句话了解容器化
 
-Containerization involves enclosing an application in a container with its own operating system. This full machine virtualization option has the advantage of being able to run an application on any machine without concerns about dependencies.
+容器化是指将一个应用程序所需要的东西打包进一个自带操作系统的容器中。这种完整机器虚拟化的好处是，一个应用程序能够在任何机器上运行而无需考虑它的依赖项。
 
-Roman Gaponov's [article][12] serves as a reference. Let's start by creating a container image for our Python code.
+我们以 Roman Gaponov 的 [文章][12] 为参考，来为我们的 Python 代码创建一个容器。
 
-### Create a Python container image
+### 创建一个 Python 容器镜像
 
-To create these images, we will use Docker, which enables us to deploy applications inside isolated Linux software containers. Docker is able to automatically build images using instructions from a Docker file.
+为创建这些镜像，我们将使用 Docker，它可以让我们在一个隔离的 Linux 软件容器中部署应用程序。Docker 可以使用来自一个 `Docker file` 中的指令来自动化构建镜像。
 
-This is a Docker file for our Python application:
+这是我们的 Python 应用程序的 `Docker file`：
 
 ```
 FROM python:3.6
@@ -91,43 +90,43 @@ VOLUME ["/app-data"]
 CMD ["python", "app.py"]
 ```
 
-This Docker file contains instructions to run our sample Python code. It uses the Python 3.5 development environment.
+这个 `Docker file` 包含运行我们的示例 Python 代码的指令。它使用的开发环境是 Python 3.5。
 
-### Build a Python Docker image
+### 构建一个 Python Docker 镜像
 
-We can now build the Docker image from these instructions using this command:
+现在，我们可以使用下面的这个命令按照那些指令来构建 Docker 镜像：
 
 ```
 docker build -t k8s_python_sample_code .
 ```
 
-This command creates a Docker image for our Python application.
+这个命令为我们的 Python 应用程序创建了一个 Docker 镜像。
 
-### Publish the container images
+### 发布容器镜像
 
-We can publish our Python container image to different private/public cloud repositories, like Docker Hub, AWS ECR, Google Container Registry, etc. For this tutorial, we'll use Docker Hub.
+我们可以将我们的 Python 容器镜像发布到不同的私有/公共云仓库中，像 Docker Hub、AWS ECR、Google Container Registry 等等。本教程中我们将发布到 Docker Hub。
 
-Before publishing the image, we need to tag it to a version:
+在发布镜像之前，我们需要给它标记一个版本号：
 
 ```
 docker tag k8s_python_sample_code:latest k8s_python_sample_code:0.1
 ```
 
-### Push the image to a cloud repository
+### 推送镜像到一个云仓库
 
-Using a Docker registry other than Docker Hub to store images requires you to add that container registry to the local Docker daemon and Kubernetes Docker daemons. You can look up this information for the different cloud registries. We'll use Docker Hub in this example.
+如果使用一个 Docker 注册中心而不是 Docker Hub 去保存镜像，那么你需要在你本地的 Docker 守护程序和 Kubernetes Docker 守护程序上添加一个容器注册中心。对于不同的云注册中心，你可以在它上面找到相关信息。我们在示例中使用的是 Docker Hub。
 
-Execute this Docker command to push the image:
+运行下面的 Docker 命令去推送镜像：
 
 ```
 docker push k8s_python_sample_code
 ```
 
-### Working with CephFS persistent storage
+### 使用 CephFS 持久卷
 
-Kubernetes supports many persistent storage providers, including AWS EBS, CephFS, GlusterFS, Azure Disk, NFS, etc. I will cover Kubernetes persistence storage with CephFS.
+Kubernetes 支持许多的持久存储提供商，包括 AWS EBS、CephFS、GlusterFS、Azure Disk、NFS 等等。我在示例中使用 CephFS 做为 Kubernetes 的持久卷。
 
-To use CephFS for persistent data to Kubernetes containers, we will create two files:
+为使用 CephFS 存储 Kubernetes 的容器数据，我们将创建两个文件：
 
 persistent-volume.yml
 
@@ -167,20 +166,20 @@ spec:
     storage: 10Gi
 ```
 
-We can now use kubectl to add the persistent volume and claim to the Kubernetes cluster:
+现在，我们将使用 kubectl 去添加持久卷并声明到 Kubernetes 集群中：
 
 ```
 $ kubectl create -f persistent-volume.yml
 $ kubectl create -f persistent-volume-claim.yml
 ```
 
-We are now ready to deploy to Kubernetes.
+现在，我们准备去部署 Kubernetes。
 
-### Deploy the application to Kubernetes
+### 在 Kubernetes 上部署应用程序
 
-To manage the last mile of deploying the application to Kubernetes, we will create two important files: a service file and a deployment file.
+为管理部署应用程序到 Kubernetes 上的最后一步，我们将创建两个重要文件：一个服务文件和一个部署文件。
 
-Create a file and name it `k8s_python_sample_code.service.yml` with the following content:
+使用下列的内容创建服务文件，并将它命名为 `k8s_python_sample_code.service.yml`：
 
 ```
 apiVersion: v1
@@ -198,7 +197,7 @@ spec:
   k8s-app: k8s_python_sample_code
 ```
 
-Create a file and name it `k8s_python_sample_code.deployment.yml` with the following content:
+使用下列的内容创建部署文件并将它命名为 `k8s_python_sample_code.deployment.yml`：
 
 ```
 apiVersion: extensions/v1beta1
@@ -228,35 +227,35 @@ spec:
              claimName: appclaim1
 ```
 
-Finally, use kubectl to deploy the application to Kubernetes:
+最后，我们使用 kubectl 将应用程序部署到 Kubernetes：
 
 ```
 $ kubectl create -f k8s_python_sample_code.deployment.yml $ kubectl create -f k8s_python_sample_code.service.yml
 ```
 
-Your application was successfully deployed to Kubernetes.
+现在，你的应用程序已经成功部署到 Kubernetes。
 
-You can verify whether your application is running by inspecting the running services:
+你可以通过检查运行的服务来验证你的应用程序是否在运行：
 
 ```
 kubectl get services
 ```
 
-May Kubernetes free you from future deployment hassles!
+或许 Kubernetes 可以解决未来你部署应用程序的各种麻烦！
 
- _Want to learn more about Python? Nanjekye's book, [Python 2 and 3 Compatibility][7]offers clean ways to write code that will run on both Python 2 and 3, including detailed examples of how to convert existing Python 2-compatible code to code that will run reliably on both Python 2 and 3._ 
+ _想学习更多关于 Python 的知识？Nanjekye 的书，[和平共处的 Python 2 和 3][7] 提供了完整的方法，让你写的代码在 Python 2 和 3 上完美运行，包括如何转换已有的 Python 2 代码为能够可靠运行在 Python 2 和 3 上的代码的详细示例。_ 
 
 
-### About the author
+### 关于作者
 
- [![](https://opensource.com/sites/default/files/styles/profile_pictures/public/pictures/joannah-nanjekye.jpg?itok=F4RqEjoA)][13] Joannah Nanjekye - Straight Outta 256 , I choose Results over Reasons, Passionate Aviator, Show me the code.[More about me][8]
+ [![](https://opensource.com/sites/default/files/styles/profile_pictures/public/pictures/joannah-nanjekye.jpg?itok=F4RqEjoA)][13] Joannah Nanjekye - Straight Outta 256 , 只要结果不问原因，充满激情的飞行员，喜欢用代码说话。[关于我的更多信息][8]
 
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/18/1/running-python-application-kubernetes
 
 作者：[Joannah Nanjekye ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[qhwdw](https://github.com/qhwdw)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出

@@ -1,11 +1,18 @@
 ## sober-wang 翻译中
+
 Linux Virtual Machines vs Linux Live Images
+Linxu 虚拟机 vs Linux 实体机
 ======
-I'll be the first to admit that I tend to try out new [Linux distros][1] on a far too frequent basis. Yet the method I use to test them, does vary depending on my goals for each instance. In this article, we're going to look at both running Linux virtual machines and running Linux live images. There are advantages to each method, but there are some hurdles with each method as well.
+I'll be the first to admit（认可） that I tend（照顾） to try out new [Linux distros（发行版本）][1] on a far（远） too frequent（频繁） basis. Yet the method(方法) I use to test them, does vary depending（依赖） on my goals（目标） for each instance（每一个）. In this article（文章）, we're going to look at both（两个） running Linux virtual machines and running Linux live images. There are advantages（优势/促进/有利于） to each method（方法）, but there are some hurdles（障碍） with each method（方法/函数） as well（同样的）.
+
+首先我得承认，我非常倾向于频繁尝试新的[ linux 发行版本 ][1]，我的目标是为了解决每一个 Linux 发行版的依赖，所以我用一些方法来测试它们。在一些文章中，我们将会看到两种运行 Linux 的模式，虚拟机或实体机。每一种方式都存在优势，但是有一些障碍会伴随着这两种方式。
 
 ### Testing out a new Linux distro for the first time
+### 第一时间测试一个新的 Linux 发行版
 
-When I test out a brand new Linux distro for the first time, the method I use depends heavily on the resources of the PC I'm currently on. If I have access to my desktop PC, I'm going to run the distro to be tested in a virtual machine. The reason for this approach is that I can download and test the distro in not only a live environment, but also as an installed product with persistent storage abilities.
+When I test out a brand new Linux distro for the first time, the method I use depends heavily（沉重的） on the resources（资源） of the PC I'm currently（目前的） on. If I have access to my desktop PC, I'm going to run the distro to be tested in a virtual machine. The reason（理由） for this approach（靠近） is that I can download and test the distro in not only a live environment（环境）, but also（也） as an installed product with persistent（稳定的） storage abilities（能力）.
+
+为了第一时间去做 Linux 发型版本的依赖测试，我把它们运行在我目前所拥有的所有类型的 PC 上。如果我用我的台式机，我将运行一个 Linux 虚拟机做测试。
 
 On the other hand, if I am working with much less robust hardware on a PC, then testing out a distro with a virtual machine installation of Linux is counter-productive. I'd be pushing that PC to its limits and honestly would be better off using a live Linux image instead running from a flash drive.
 
