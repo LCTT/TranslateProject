@@ -328,7 +328,7 @@ LANG=en_US.UTF-8
 输入下面的命令来同步时区：
 
 ```
-ls usr/share/zoneinfo
+ls /usr/share/zoneinfo
 ```
 
 下面你将看到整个世界的时区列表。
@@ -340,7 +340,7 @@ ls usr/share/zoneinfo
 输入下面的命令来选择你所在的时区：
 
 ```
-ls –s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 
+ln –s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime 
 ```
 
 或者你可以从下面的列表中选择其它名称。
