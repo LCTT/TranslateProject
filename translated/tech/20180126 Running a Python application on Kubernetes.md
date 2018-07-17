@@ -1,28 +1,24 @@
 在 Kubernetes 上运行一个 Python 应用程序
 ============================================================
 
-### 这个分步指导教程教你通过在 Kubernetes 上部署一个简单的 Python 应用程序来学习部署的流程。
+> 这个分步指导教程教你通过在 Kubernetes 上部署一个简单的 Python 应用程序来学习部署的流程。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/build_structure_tech_program_code_construction.png?itok=nVsiLuag)
-图片来源：opensource.com
 
-Kubernetes 是一个具备部署、维护、和可伸缩特性的开源平台。它在提供可移植性、可扩展性、以及自我修复能力的同时，简化了容器化 Python 应用程序的管理。
+Kubernetes 是一个具备部署、维护和可伸缩特性的开源平台。它在提供可移植性、可扩展性以及自我修复能力的同时，简化了容器化 Python 应用程序的管理。
 
 不论你的 Python 应用程序是简单还是复杂，Kubernetes 都可以帮你高效地部署和伸缩它们，在有限的资源范围内滚动升级新特性。
 
 在本文中，我将描述在 Kubernetes 上部署一个简单的 Python 应用程序的过程，它包括：
 
 *   创建 Python 容器镜像
-
 *   发布容器镜像到镜像注册中心
-
 *   使用持久卷
-
 *   在 Kubernetes 上部署 Python 应用程序
 
 ### 必需条件
 
-你需要 Docker、kubectl、以及这个 [源代码][10]。
+你需要 Docker、`kubectl` 以及这个 [源代码][10]。
 
 Docker 是一个构建和承载已发布的应用程序的开源平台。可以参照 [官方文档][11] 去安装 Docker。运行如下的命令去验证你的系统上运行的 Docker：
 
@@ -40,7 +36,7 @@ WARNING: No memory limit support
 WARNING: No swap limit support
 ```
 
-kubectl 是在 Kubernetes 集群上运行命令的一个命令行界面。运行下面的 shell 脚本去安装 kubectl：
+`kubectl` 是在 Kubernetes 集群上运行命令的一个命令行界面。运行下面的 shell 脚本去安装 `kubectl`：
 
 ```
 curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
@@ -56,9 +52,9 @@ curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s�
 
 ### 创建一个 Python 容器镜像
 
-为创建这些镜像，我们将使用 Docker，它可以让我们在一个隔离的 Linux 软件容器中部署应用程序。Docker 可以使用来自一个 `Docker file` 中的指令来自动化构建镜像。
+为创建这些镜像，我们将使用 Docker，它可以让我们在一个隔离的 Linux 软件容器中部署应用程序。Docker 可以使用来自一个 Dockerfile 中的指令来自动化构建镜像。
 
-这是我们的 Python 应用程序的 `Docker file`：
+这是我们的 Python 应用程序的 Dockerfile：
 
 ```
 FROM python:3.6
@@ -90,7 +86,7 @@ VOLUME ["/app-data"]
 CMD ["python", "app.py"]
 ```
 
-这个 `Docker file` 包含运行我们的示例 Python 代码的指令。它使用的开发环境是 Python 3.5。
+这个 Dockerfile 包含运行我们的示例 Python 代码的指令。它使用的开发环境是 Python 3.5。
 
 ### 构建一个 Python Docker 镜像
 
@@ -128,45 +124,45 @@ Kubernetes 支持许多的持久存储提供商，包括 AWS EBS、CephFS、Glus
 
 为使用 CephFS 存储 Kubernetes 的容器数据，我们将创建两个文件：
 
-persistent-volume.yml
+`persistent-volume.yml` ：
 
 ```
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: app-disk1
-  namespace: k8s_python_sample_code
+  name: app-disk1
+  namespace: k8s_python_sample_code
 spec:
-  capacity:
-  storage: 50Gi
-  accessModes:
-  - ReadWriteMany
-  cephfs:
-  monitors:
-    - "172.17.0.1:6789"
-  user: admin
-  secretRef:
-    name: ceph-secret
-  readOnly: false
+  capacity:
+  storage: 50Gi
+  accessModes:
+  - ReadWriteMany
+  cephfs:
+  monitors:
+    - "172.17.0.1:6789"
+  user: admin
+  secretRef:
+    name: ceph-secret
+  readOnly: false
 ```
 
-persistent_volume_claim.yaml
+`persistent_volume_claim.yaml`：
 
 ```
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: appclaim1
-  namespace: k8s_python_sample_code
+  name: appclaim1
+  namespace: k8s_python_sample_code
 spec:
-  accessModes:
-  - ReadWriteMany
-  resources:
-  requests:
-    storage: 10Gi
+  accessModes:
+  - ReadWriteMany
+  resources:
+  requests:
+    storage: 10Gi
 ```
 
-现在，我们将使用 kubectl 去添加持久卷并声明到 Kubernetes 集群中：
+现在，我们将使用 `kubectl` 去添加持久卷并声明到 Kubernetes 集群中：
 
 ```
 $ kubectl create -f persistent-volume.yml
@@ -185,16 +181,16 @@ $ kubectl create -f persistent-volume-claim.yml
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-  k8s-app: k8s_python_sample_code
-  name: k8s_python_sample_code
-  namespace: k8s_python_sample_code
+  labels:
+  k8s-app: k8s_python_sample_code
+  name: k8s_python_sample_code
+  namespace: k8s_python_sample_code
 spec:
-  type: NodePort
-  ports:
-  - port: 5035
-  selector:
-  k8s-app: k8s_python_sample_code
+  type: NodePort
+  ports:
+  - port: 5035
+  selector:
+  k8s-app: k8s_python_sample_code
 ```
 
 使用下列的内容创建部署文件并将它命名为 `k8s_python_sample_code.deployment.yml`：
@@ -227,7 +223,7 @@ spec:
              claimName: appclaim1
 ```
 
-最后，我们使用 kubectl 将应用程序部署到 Kubernetes：
+最后，我们使用 `kubectl` 将应用程序部署到 Kubernetes：
 
 ```
 $ kubectl create -f k8s_python_sample_code.deployment.yml $ kubectl create -f k8s_python_sample_code.service.yml
@@ -248,15 +244,15 @@ kubectl get services
 
 ### 关于作者
 
- [![](https://opensource.com/sites/default/files/styles/profile_pictures/public/pictures/joannah-nanjekye.jpg?itok=F4RqEjoA)][13] Joannah Nanjekye - Straight Outta 256 , 只要结果不问原因，充满激情的飞行员，喜欢用代码说话。[关于我的更多信息][8]
+ [![](https://opensource.com/sites/default/files/styles/profile_pictures/public/pictures/joannah-nanjekye.jpg?itok=F4RqEjoA)][13] Joannah Nanjekye - Straight Outta 256，只要结果不问原因，充满激情的飞行员，喜欢用代码说话。[关于我的更多信息][8]
 
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/18/1/running-python-application-kubernetes
 
-作者：[Joannah Nanjekye ][a]
+作者：[Joannah Nanjekye][a]
 译者：[qhwdw](https://github.com/qhwdw)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
