@@ -1,17 +1,15 @@
-Translating by Auk7F7
-
-Install Microsoft Windows Fonts In Ubuntu 18.04 LTS
+  在 Ubuntu 18.04 LTS 上安装 Microsoft Windows 字体
 ======
 
 ![](https://www.ostechnix.com/wp-content/uploads/2016/07/Install-Microsoft-Windows-Fonts-in-Ubuntu-1-720x340.png)
 
-Most of the educational institutions are still using Microsoft Fonts. I am not sure about other countries. But, in Tamilnadu (An Indian state), **Times New Roman** and **Arial** fonts are being mostly used by almost all sorts of documentation works, projects, and assignments in colleges and schools. Not only the educational institutions, some small organizations, offices, and shops are still using MS Windows Fonts. Just in case, if you are in a situation where you need to use Microsoft fonts in your Ubuntu Linux desktop, here is how to do it.
+大多数教育机构仍在使用 Microsoft 字体， 我不清楚其他国家是什么情况。但在泰米尔纳德邦（印度的一个州）， **Times New Roman**  和  **Arial**  字体主要被用于大学和学校的几乎所有文档工作，项目和作业。不仅是教育机构，而且一些小型组织，办公室和商店仍在使用 MS Windows 字体。以防万一，如果你需要在 Ubuntu 桌面版上使用 Microsoft 字体，请按照以下步骤安装。
 
-**Disclaimer:** Microsoft has released its core fonts for free. However, **Please be aware that usage of Microsoft fonts is prohibited in other operating systems**. Read the EULA carefully before installing MS Fonts in any Linux operating system. We (OSTechNix) are not responsible for any kind of piracy act.
+**免责声明**： Microsoft 已免费发布其核心字体。 但**请不要在其他操作系统中禁止使用 Microsoft 字体**。在任何 Linux 操作系统中安装 MS 字体之前请仔细阅读 EULA 。我们（OSTechNix）不负责这种任何种类的盗版行为。
 
-### Install MS Fonts in Ubuntu 18.04 LTS desktop
+### 在 Ubuntu 18.04 LTS 桌面版上安装 MS 字体
 
-Install MS TrueType Fonts as shown below:
+如下所示安装 MS TrueType 字体：
 ```
 $ sudo apt update
 
@@ -19,21 +17,21 @@ $ sudo apt install ttf-mscorefonts-installer
 
 ```
 
-Microsoft’s End user agreement wizard will appear. Click **OK** to continue.
+然后将会出现 Microsoft 的最终用户协议向导，点击 **OK**  以继续。
 
 ![][2]
 
-Click **Yes** to accept the Microsoft agreement:
+点击 **Yes** 已接受 Microsoft 的协议：
 
 ![][3]
 
-After installing the fonts, we need to update the font cache using command:
+安装字体之后， 我们需要使用命令行来更新字体缓存：
 ```
 $ sudo fc-cache -f -v
 
 ```
 
-**Sample output:**
+**示例输出:**
 ```
 /usr/share/fonts: caching, new cache contents: 0 fonts, 6 dirs
 /usr/share/fonts/X11: caching, new cache contents: 0 fonts, 4 dirs
@@ -111,25 +109,26 @@ fc-cache: succeeded
 
 ```
 
-### Install MS Fonts in Dual boot with Linux and Windows
+### 在 Linux 和 Windows 双启动的机器上安装 MS 字体 
 
-If you have dual boot system with Linux and Windows operating system, you can easily install the MS fonts from Windows C drive. All you have to do is mount the Windows partition (C:/Windows).
+如果你有 Linux 和 Windows 的双启动系统，你可以轻松地从 Windows C 驱动器上安装 MS 字体。
+你所要做的就是挂载 Windows 分区（C:/windows)。
 
-I assume you have mounted the **C:\Windows** partition at **/Windowsdrive** directory in linux.
+我假设你已经在 Linux 中将 **C:\Windows** 分区挂载在了 **/Windowsdrive** 目录下。
 
-Now, link the fonts location to your Linux system’s fonts folder as shown below.
+现在，将字体位置链接到你的 Linux 系统的字体文件夹，如下所示。
 ```
 ln -s /Windowsdrive/Windows/Fonts /usr/share/fonts/WindowsFonts
 
 ```
 
-After linking the fonts folder, regenerate the fontconfig cache using command:
+链接字体文件之后，使用命令行重新生成 fontconfig 缓存：:
 ```
 fc-cache
 
 ```
 
-Alternatively, copy all Windows fonts to **/usr/share/fonts** directory and install the fonts using the following commands:
+或者，将所有的 Windows 字体复制到 **/usr/share/fonts** 目录下并使用一下命令安装字体：
 ```
 mkdir /usr/share/fonts/WindowsFonts
 
@@ -139,23 +138,25 @@ chmod 755 /usr/share/fonts/WindowsFonts/*
 
 ```
 
-Finally, regenerate the fontconfig cache using command:
+最后，使用命令行重新生成 fontconfig 缓存：
 ```
 fc-cache
 
 ```
 
-### Test Windows font
 
-Open LibreOffice or GIMP after installing MS Fonts. Now, you will see there the Microsoft coretype fonts.
+### 测试 Windows 字体
+
+
+安装 MS 字体后打开 LibreOffice 或 GIMP。 现在，你将会看到 Microsoft coretype 字体。
 
 ![][4]
 
-That’s it. Hope this guide useful. Again, I warn you usage of MS fonts in other operating system is prohibited. Please read the Microsoft License agreement before installing the MS fonts.
+就是这样， 希望这本指南有用。我再次警告你，在其他操作系统中使用 MS 字体是被禁止的。在安装 MS 字体之前请先阅读 Microsoft 许可协议。
 
-If you find our guides useful, please share them on your social, professional networks and support OSTechNix. More good stuffs to come. Keep visiting!
+如果你觉得我们的指南有用，请在你的社区、专业网络上分享并支持 OSTechNix。还有更多好东西在等着我们。持续访问！ 
 
-Cheers!!
+庆祝吧!!
 
 
 
@@ -165,7 +166,7 @@ via: https://www.ostechnix.com/install-microsoft-windows-fonts-ubuntu-16-04/
 
 作者：[SK][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[Auk7F7](https://github.com/Auk7F7)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
