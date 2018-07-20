@@ -1,3 +1,5 @@
+Translating by Auk7F7
+
 Install Microsoft Windows Fonts In Ubuntu 18.04 LTS
 ======
 
