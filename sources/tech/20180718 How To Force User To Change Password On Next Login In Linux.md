@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 How To Force User To Change Password On Next Login In Linux
 ======
 When you created the users account with a default password, you have to force the users to change their password on next login.
