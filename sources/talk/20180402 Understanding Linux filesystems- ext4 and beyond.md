@@ -1,29 +1,30 @@
-Translating by HardworkFish 
 
-Understanding Linux filesystems: ext4 and beyond
-======
+理解 Linux 文件系统：ext4 以及更多文件系统
+==========================================
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/rh_003499_01_linux11x_cc.png?itok=XMDOouJR)
 
-The majority of modern Linux distributions default to the ext4 filesystem, just as previous Linux distributions defaulted to ext3, ext2, and—if you go back far enough—ext.
+目前的大部分 Linux 文件系统都默认采用 ext4 文件系统, 正如以前的 Linux 发行版默认使用 ext3、ext2 以及更久前的 ext。对于不熟悉 Linux 或文件系统的朋友而言，你可能不清楚 ext4 相对于上一版本 ext3 带来了什么变化。你可能还想知道在一连串关于可替代文件系统例如 btrfs、xfs 和 zfs 的新闻不断被发表下，ext4 是否仍然能得到积极的发展 。
+  
+在一篇文章中，我们不可能覆盖文件系统的所有方面，但我们尝试让您尽快了解 Linux 默认文件系统的发展历史，包括它的产生以及未来发展。我仔细研究了 维基百科里的各种 ext 文件系统文章、kernel.org‘s 维基百科中关于 ext4 的条目以及结合自己的经验总结文件系统。
 
-If you're new to Linux—or to filesystems—you might wonder what ext4 brings to the table that ext3 didn't. You might also wonder whether ext4 is still in active development at all, given the flurries of news coverage of alternate filesystems such as btrfs, xfs, and zfs.
+### ext 简史
 
-We can't cover everything about filesystems in a single article, but we'll try to bring you up to speed on the history of Linux's default filesystem, where it stands, and what to look forward to.
+#### MINIX 文件系统
 
-I drew heavily on Wikipedia's various ext filesystem articles, kernel.org's wiki entries on ext4, and my own experiences while preparing this overview.
+在有 ext之前, 使用的是 MINIX 文件系统。如果你不熟悉 Linux 历史, 那么可以理解为 MINIX 相对于 IBM PC/AT 微型计算机来说是一个非常小的类 Unix 系统。Andrew Tannenbaum
+为了教学的目的而开发了它并于1987年发布了源代码（印刷版！）。
 
-### A brief history of ext
-
-#### MINIX filesystem
-
-Before there was ext, there was the MINIX filesystem. If you're not up on your Linux history, MINIX was a very small Unix-like operating system for IBM PC/AT microcomputers. Andrew Tannenbaum developed it for teaching purposes and released its source code (in print form!) in 1987.
 
 ![](https://opensource.com/sites/default/files/styles/panopoly_image_original/public/u128651/ibm_pc_at.jpg?itok=Tfk3hQYB)
 
-Although you could peruse MINIX's source, it was not actually free and open source software (FOSS). The publishers of Tannebaum's book required a $69 license fee to operate MINIX, which was included in the cost of the book. Still, this was incredibly inexpensive for the time, and MINIX adoption took off rapidly, soon exceeding Tannenbaum's original intent of using it simply to teach the coding of operating systems. By and throughout the 1990s, you could find MINIX installations thriving in universities worldwide—and a young Linus Torvalds used MINIX to develop the original Linux kernel, first announced in 1991, and released under the GPL in December 1992.
 
-But wait, this is a filesystem article, right? Yes, and MINIX had its own filesystem, which early versions of Linux also relied on. Like MINIX, it could uncharitably be described as a "toy" example of its kind—the MINIX filesystem could handle filenames only up to 14 characters and address only 64MB of storage. In 1991, the typical hard drive was already 40-140MB in size. Linux clearly needed a better filesystem!
+虽然你可以读阅 MINIX 的源代码，但实际上它并不是免费的来源软件（FOSS）。Tannebaum 书的出版商要求你花69美元的许可费来操作 MINIX，而这笔费用包含在书籍的费用中。尽管 如此，在那时来说
+非常便宜，并且 MINIX 的使用得到迅速发展，很快超过了 Tannebaum 当初使用它来教授操作系统编码的意图。在整个 20 世纪 90 年代，你可以发现 MINIX 安装在世界各个大学里面非常流行。
+而此时，年轻的 Lius Torvalds 使用 MINIX 来开发原始 Linux 内核，并于 1991 年首次公布。而后在 1992 年 12 月在 GPL 下发布。
+
+但是等等，这是一篇以*文件系统*为主题的文章不是吗？是的，MINIX 有自己的文件系统，早期的 Linux 版本依赖于它。就像 MINIX 一样，Linux 也可以含糊地被描述为同类的 “玩具” 示例————MINX 文件系统最多能处理
+14个字符的文件名，并且只能处理 64MB 的存储空间。到了 1991 年，典型的硬盘尺寸已经达到了 40-140MB。很显然，Linux 需要一个更好的文件系统。
 
 #### ext
 
