@@ -178,6 +178,3 @@ via: http://antirez.com/news/114
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: http://antirez.com/
-[1]: http://antirez.com/news/114
-[2]: http://antirez.com/user/antirez
-[3]: https://www.youtube.com/watch?v=ELDzy9lCFHQ
