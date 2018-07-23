@@ -28,25 +28,27 @@
 
 #### ext
 
-While Linus hacked away on the fledgling Linux kernel, Rémy Card worked on the first ext filesystem. First implemented in 1992—only a year after the initial announcement of Linux itself!—ext solved the worst of the MINIX filesystem's problems.
+当 Linus 开发出刚起步的 Linux 内核时，Rémy Card 开始开发第一个 ext 文件系统。 ext 文件系统在 1992 首次实现并发布 ———— 仅在 Linux 首次发布后的一年! ———— ext 解决了MINIX 
+文件系统中最糟糕的问题。
 
-1992's ext used the new virtual filesystem (VFS) abstraction layer in the Linux kernel. Unlike the MINIX filesystem before it, ext could address up to 2GB of storage and handle 255-character filenames.
+1992年的 ext 使用在 Linux 内核中的新虚拟文件系统（VFS）抽象层。与之前的 MINIX 文件系统不同的是，ext 可以处理高达 2GB 存储空间并处理 255 个字符的文件名。
 
-But ext didn't have a long reign, largely due to its primitive timestamping (only one timestamp per file, rather than the three separate stamps for inode creation, file access, and file modification we're familiar with today). A mere year later, ext2 ate its lunch.
+但 ext 并没有长时间占统治地位，主要是由于它的原始时间戳（每个文件仅有一个时间戳，而不是今天我们所熟悉的 inode 创建、文件访问和文件修改都有三个独立的标记。）仅仅一年后，ext2 就替代了它。
 
 #### ext2
 
-Rémy clearly realized ext's limitations pretty quickly, since he designed ext2 as its replacement a year later. While ext still had its roots in "toy" operating systems, ext2 was designed from the start as a commercial-grade filesystem, along the same principles as BSD's Berkeley Fast File System.
+Rémy 很快就意识到 ext 的局限性，所以一年后他设计出 ext2 替代它。虽然 ext 是源自 "玩具”操作系统，但 ext2 从一开始就被设计为一个商业级文件系统，沿用 BSD 的Berkeley 文件系统原则。
 
-Ext2 offered maximum filesizes in the gigabytes and filesystem sizes in the terabytes, placing it firmly in the big leagues for the 1990s. It was quickly and widely adopted, both in the Linux kernel and eventually in MINIX, as well as by third-party modules making it available for MacOS and Windows.
+Ext2 提供了 TB 级的千兆字节和文件系统规格的最大文件大小，使其在 20 世纪 90 年代牢牢地位于大联盟中。很快它被广泛地使用，无论是在 Linux 内核中还是最终在 MINIX 中，且第三方模块使其可以用于 MacOs 和 Windows。
 
-There were still problems to solve, though: ext2 filesystems, like most filesystems of the 1990s, were prone to catastrophic corruption if the system crashed or lost power while data was being written to disk. They also suffered from significant performance losses due to fragmentation (the storage of a single file in multiple places, physically scattered around a rotating disk) as time went on.
+但这里仍然有一些问题需要解决：ext2 文件系统与 20世纪90年代的大多数文件系统一样，如果在将要写入数据到磁盘的时候，系统发生奔溃或断电，则容易发生灾难性的数据损坏。
+随着时间的推移，由于碎片（单个文件存储在多个位置，物理上其分散在旋转的磁盘上），它们也遭受了严重的性能损失。
 
-Despite these problems, ext2 is still used in some isolated cases today—most commonly, as a format for portable USB thumb drives.
+尽管存在这些问题，但今天 ext2 还是用在某些特殊的情况下 ———— 最常见的是，作为便携式 USB 拇指驱动器的格式。
 
 #### ext3
 
-In 1998, six years after ext2's adoption, Stephen Tweedie announced he was working on significantly improving it. This became ext3, which was adopted into mainline Linux with kernel version 2.4.15, in November 2001.
+1998 年, 在 ext2 被采用后的6年后，Stephen Tweedie 宣布他正在致力于改进 ext2。这成了 ext3，并于 2001 年 11 月被 2.4.15 内核版本采用进主线 Linux。
 
 
 ![Packard Bell computer][2]
@@ -230,7 +232,7 @@ The ongoing status of btrfs is controversial; SUSE Enterprise Linux adopted it a
 via: https://opensource.com/article/18/4/ext4-filesystem
 
 作者：[Jim Salter][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/HardworkFish)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
