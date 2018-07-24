@@ -1,3 +1,4 @@
+translating by wyxplus
 CIP: Keeping the Lights On with Linux
 ======
 
