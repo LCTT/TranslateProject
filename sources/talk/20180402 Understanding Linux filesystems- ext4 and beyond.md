@@ -51,21 +51,26 @@ Ext2 提供了 TB 级的千兆字节和文件系统规格的最大文件大小�
 1998 年, 在 ext2 被采用后的6年后，Stephen Tweedie 宣布他正在致力于改进 ext2。这成了 ext3，并于 2001 年 11 月被 2.4.15 内核版本采用进主线 Linux。
 
 
-![Packard Bell computer][2]
+![Packard Bell 计算机][2]
 
-Mid-1990s Packard Bell computer, [Spacekid][3], [CC0][4]
+20世纪90年代中期的 Packard Bell 计算机, [Spacekid][3], [CC0][4]
 
-Ext2 had done very well by Linux distributions for the most part, but—like FAT, FAT32, HFS, and other filesystems of the time—it was prone to catastrophic corruption during power loss. If you lose power while writing data to the filesystem, it can be left in what's called an inconsistent state—one in which things have been left half-done and half-undone. This can result in loss or corruption of vast swaths of files unrelated to the one being saved or even unmountability of the entire filesystem.
+在大部分情况下，Ext2 在 Linux 发行版中做得很好，但像 FAT、FAT32、HFS和当时的其他文件系统一样—— 在断电时容易发生灾难性的破坏。如果在将数据写入文件系统时候发生断电，则可能会将其留在所谓 *不一致* 的状态 —— 
 
-Ext3, and other filesystems of the late 1990s, such as Microsoft's NTFS, uses journaling to solve this problem. The journal is a special allocation on disk where writes are stored in transactions; if the transaction finishes writing to disk, its data in the journal is committed to the filesystem itself. If the system crashes before that operation is committed, the newly rebooted system recognizes it as an incomplete transaction and rolls it back as though it had never taken place. This means that the file being worked on may still be lost, but the filesystem itself remains consistent, and all other data is safe. Three levels of journaling are available in the Linux kernel implementation of ext3: **journal** , **ordered** , and **writeback**.
-
-  * **Journal** is the lowest risk mode, writing both data and metadata to the journal before committing it to the filesystem. This ensures consistency of the file being written to, as well as the filesystem as a whole, but can significantly decrease performance.
-  * **Ordered** is the default mode in most Linux distributions; ordered mode writes metadata to the journal but commits data directly to the filesystem. As the name implies, the order of operations here is rigid: First, metadata is committed to the journal; second, data is written to the filesystem, and only then is the associated metadata in the journal flushed to the filesystem itself. This ensures that, in the event of a crash, the metadata associated with incomplete writes is still in the journal, and the filesystem can sanitize those incomplete writes while rolling back the journal. In ordered mode, a crash may result in corruption of the file or files being actively written to during the crash, but the filesystem itself—and files not actively being written to—are guaranteed safe.
-  * **Writeback** is the third—and least safe—journaling mode. In writeback mode, like ordered mode, metadata is journaled, but data is not. Unlike ordered mode, metadata and data alike may be written in whatever order makes sense for best performance. This can offer significant increases in performance, but it's much less safe. Although writeback mode still offers a guarantee of safety to the filesystem itself, files that were written to during or before the crash are vulnerable to loss or corruption.
+事情只完成一半而另一半未完成。这可能导致大量文件丢失或损坏，这些文件与正在保存的文件无关甚至导致整个文件系统无法卸载。
 
 
+Ext3 和 20世纪90年代后期的其他文件系统，如微软的 NTFS ，使用*日志*来解决这个问题。 日志是磁盘上的一种特殊分配，其写入是在存储在事务中；如果事务完成写入磁盘，则日志中的数据将提交给
+文件系统它本身。如果文件在它提交操作前崩溃，则重新启动的系统识别其为未完成的事务而将其进行回滚，就像从未发生过一样。这意味着正在处理的文件可能依然会丢失，但文件系统本身保持一致，且其他所有数据都是安全的。
 
-Like ext2 before it, ext3 uses 16-bit internal addressing. This means that with a blocksize of 4K, the largest filesize it can handle is 2 TiB in a maximum filesystem size of 16 TiB.
+在使用 ext3 文件系统的 Linux 内核中实现了三个级别的日志记录方式: **journal** , **ordered** , and **writeback**.
+
+  * **Journal** 是最低风险模式，在将数据和元数据提交给文件系统之前将其写入日志。这可以保证正在写入的文件与整个文件系统的一致性，但其显著降低了性能。
+  * **Ordered** 是大多数 Linux 发行版默认是模式；ordered 模式将元数据写入日志且直接将数据提交到文件系统。顾名思义，这里的操作顺序是固定的：首先，元数据提交到日志；其次，数据写入文件系统，然后才将日志中关联的元数据更新到文件系统。这确保了在发生奔溃时，与未整写入相关联的元数据仍在日志汇总，且文件系统可以在回滚日志时清理那些不完整的写入事务。在 ordered 模式下，系统崩溃可能导致在崩溃期间文件被主动写入或损坏，但文件系统它本身 —— 以及未被主动写入的文件 —— 确保是安全的。
+  * **Writeback** 是第三种 —— 且最不安全的日志模式。在 writeback 模式下,像 ordered 模式一样，元数据是被记录的，但数据不是。与 ordered 模式不同，元数据和数据都可以以任何有意义的顺序写入以获得最佳性能。这可以显著提高性能，但安全性低很多。尽管 wireteback 模式仍然保证文件系统本身的安全性，但在奔溃或之前写入的文件很容易丢失或损坏。
+
+
+跟之前的 ext2 类似，ext3 使用 16 位内部寻址。这意味着对于有着 4K 块大小的 ext3 在最大规格为 16TiB 的文件系统中可以处理的最大文件大小为 2TiB。
 
 #### ext4
 
