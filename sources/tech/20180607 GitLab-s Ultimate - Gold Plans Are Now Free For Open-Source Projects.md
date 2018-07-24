@@ -1,3 +1,5 @@
+translating---geekpi
+
 GitLab’s Ultimate & Gold Plans Are Now Free For Open-Source Projects
 ======
 A lot has happened in the open-source community recently. First, [Microsoft acquired GitHub][1] and then people started to look for [GitHub alternatives][2] without even taking a second to think about it while Linus Torvalds released the [Linux Kernel 4.17][3]. Well, if you’ve been following us, I assume that you know all that.
