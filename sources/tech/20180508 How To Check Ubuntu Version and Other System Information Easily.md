@@ -1,3 +1,6 @@
+Translating by DavidChenLiang.
+
+
 How To Check Ubuntu Version and Other System Information Easily
 ======
 **Brief: Wondering which Ubuntu version are you using? Here’s how to check Ubuntu version, desktop environment and other relevant system information.**
