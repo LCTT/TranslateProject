@@ -112,11 +112,12 @@ Ext4 在将存储快写入磁盘之前对存储块的分配方式进行了大量
 
 Ext3 为每一个新分配的块调用一次块分配器。当多个编写器同时打开时，这很容易导致严重的碎片。然而，ext4 使用延迟分配，这允许它合并写入并更好地决定如何为尚未提交的写入分配快
 
-##### Persistent pre-allocation
+##### 持续的预分配
 
-When pre-allocating disk space for a file, most file systems must write zeroes to the blocks for that file on creation. Ext4 allows the use of `fallocate()` instead, which guarantees the availability of the space (and attempts to find contiguous space for it) without first needing to write to it. This significantly increases performance in both writes and future reads of the written data for streaming and database applications.
+在为文件预分配磁盘空间时，大部分文件系统必须在创建时将零写入该文件的块中。Ext4 允许使用 `fallocate()`，它保证了空间的可用性（并试图为它找到连续的空间），而不需要县写入它。
+这显著提高了写入和将来读取流和数据库应用程序的写入数据的性能。
 
-##### Delayed allocation
+##### 延迟分配
 
 This is a chewy—and contentious—feature. Delayed allocation allows ext4 to wait to allocate the actual blocks it will write data to until it's ready to commit that data to disk. (By contrast, ext3 would allocate blocks immediately, even while the data was still flowing into a write cache.)
 
