@@ -74,23 +74,26 @@ Ext3 和 20世纪90年代后期的其他文件系统，如微软的 NTFS ，使�
 
 #### ext4
 
-Theodore Ts'o (who by then was ext3's principal developer) announced ext4 in 2006, and it was added to mainline Linux two years later, in kernel version 2.6.28. Ts'o describes ext4 as a stopgap technology which significantly extends ext3 but is still reliant on old technology. He expects it to be supplanted eventually by a true next-generation filesystem.
+Theodore Ts'o (是当时 ext3 主要开发人员) 在2006年宣布了 ext4 ,并于两年后在2.6.28内核版本中加入到了 Linux 主线。
+Ts’o 将 ext4 描述为一个显著扩展 ext3 的临时技术，但它仍然依赖于旧技术。他预计 ext4 终将会被真正的下一代文件系统所取代。
 
 ![](https://opensource.com/sites/default/files/styles/panopoly_image_original/public/u128651/dell_precision_380_workstation.jpeg?itok=3EjYXY2i)
 
-Ext4 is functionally very similar to ext3, but brings large filesystem support, improved resistance to fragmentation, higher performance, and improved timestamps.
+Ext4 在功能上与 Ext3 在功能上非常相似，但大大支持文件系统、提高了对碎片的抵抗力，有更高的性能以及改进了时间戳。
 
 ### Ext4 vs ext3
 
-Ext3 and ext4 have some very specific differences, which I'll focus on here.
+Ext3 和 Ext4 有一些非常明确的差别，在这里集中讨论下。
 
-#### Backwards compatibility
+#### 向后兼容性
 
-Ext4 was specifically designed to be as backward-compatible as possible with ext3. This not only allows ext3 filesystems to be upgraded in place to ext4; it also permits the ext4 driver to automatically mount ext3 filesystems in ext3 mode, making it unnecessary to maintain the two codebases separately.
+Ext4 特地设计为尽可能地向后兼容 ext3。这不仅允许 ext3 文件系统升级到 ext4；也允许 ext4 驱动程序在 ext3 模式下自动挂载 ext3 文件系统，making
 
-#### Large filesystems
+因此使它无需单独维护两个代码库。
 
-Ext3 filesystems used 32-bit addressing, limiting them to 2 TiB files and 16 TiB filesystems (assuming a 4 KiB blocksize; some ext3 filesystems use smaller blocksizes and are thus limited even further).
+#### 大文件系统
+
+Ext3 文进系统使用 32 为寻址，将它们限制为 2 个 TiB 文件以及16个TiB文件系统（假设assuming a 4 KiB blocksize; some ext3 filesystems use smaller blocksizes and are thus limited even further).
 
 Ext4 uses 48-bit internal addressing, making it theoretically possible to allocate files up to 16 TiB on filesystems up to 1,000,000 TiB (1 EiB). Early implementations of ext4 were still limited to 16 TiB filesystems by some userland utilities, but as of 2011, e2fsprogs has directly supported the creation of >16TiB ext4 filesystems. As one example, Red Hat Enterprise Linux contractually supports ext4 filesystems only up to 50 TiB and recommends ext4 volumes no larger than 100 TiB.
 
