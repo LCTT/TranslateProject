@@ -1,3 +1,4 @@
+Translating by qhwdw
 How to reset, revert, and return to previous states in Git
 ======
 

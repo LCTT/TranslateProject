@@ -1,3 +1,4 @@
+Translating by qhwdw
 Everything old is new again: Microservices – DXC Blogs
 ======
 ![](https://csccommunity.files.wordpress.com/2018/05/old-building-with-modern-addition.jpg?w=610)
