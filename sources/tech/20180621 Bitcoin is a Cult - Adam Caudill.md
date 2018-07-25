@@ -1,3 +1,4 @@
+Translating by qhwdw
 Bitcoin is a Cult — Adam Caudill
 ======
 The Bitcoin community has changed greatly over the years; from technophiles that could explain a [Merkle tree][1] in their sleep, to speculators driven by the desire for a quick profit & blockchain startups seeking billion dollar valuations led by people who don’t even know what a Merkle tree is. As the years have gone on, a zealotry has been building around Bitcoin and other cryptocurrencies driven by people who see them as something far grander than they actually are; people who believe that normal (or fiat) currencies are becoming a thing of the past, and the cryptocurrencies will fundamentally change the world’s economy.
