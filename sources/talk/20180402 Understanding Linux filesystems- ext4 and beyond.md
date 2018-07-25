@@ -93,21 +93,24 @@ Ext4 特地设计为尽可能地向后兼容 ext3。这不仅允许 ext3 文件�
 
 #### 大文件系统
 
-Ext3 文进系统使用 32 为寻址，将它们限制为 2 个 TiB 文件以及16个TiB文件系统（假设assuming a 4 KiB blocksize; some ext3 filesystems use smaller blocksizes and are thus limited even further).
+Ext3 文进系统使用 32 为寻址，将它们限制为 2 个 TiB 文件系统和16个TiB文件系统
 
-Ext4 uses 48-bit internal addressing, making it theoretically possible to allocate files up to 16 TiB on filesystems up to 1,000,000 TiB (1 EiB). Early implementations of ext4 were still limited to 16 TiB filesystems by some userland utilities, but as of 2011, e2fsprogs has directly supported the creation of >16TiB ext4 filesystems. As one example, Red Hat Enterprise Linux contractually supports ext4 filesystems only up to 50 TiB and recommends ext4 volumes no larger than 100 TiB.
+（假设一个 4 KiB 块大小；一些 ext3 文件系统使用较小的块大小，因此对其进一步做了限制）。
 
-#### Allocation improvements
+Ext4 使用48位的内部寻址，理论上可以在文件系统上分配高达 16TiB 的文件，其中最高可达 1000 000 TiB（1EiB）。
+有些用户区实用程序仍然将 ext4 早期实现限制为 16TiB文件系统，但截至2011年，e2fsprogs 已经直接支持 >16TiB ext4文件系统。例如，红帽企业 Linux 合同上仅支持最高 50TiB 的 ext4 文件系统，并建议不超过 100TiB的卷。
 
-Ext4 introduces a lot of improvements in the ways storage blocks are allocated before writing them to disk, which can significantly increase both read and write performance.
+#### 分配改进
 
-##### Extents
+Ext4 在将存储快写入磁盘之前对存储块的分配方式进行了大量改进，这可以显著提高读写性能。
 
-An extent is a range of contiguous physical blocks (up to 128 MiB, assuming a 4 KiB block size) that can be reserved and addressed at once. Utilizing extents decreases the number of inodes required by a given file and significantly decreases fragmentation and increases performance when writing large files.
+##### 区段（extent）
 
-##### Multiblock allocation
+区段是一系列连续的物理块大小 (最多达 128 MiB，假设是一个 4KiB块大小），可以一次性保留和寻址。使用区段可以减少给定未见所需的 inode 数量，并显著减少碎片并提高写入大文件时的性能。
 
-Ext3 called its block allocator once for each new block allocated. This could easily result in heavy fragmentation when multiple writers are open concurrently. However, ext4 uses delayed allocation, which allows it to coalesce writes and make better decisions about how to allocate blocks for the writes it has not yet committed.
+##### 多块分配
+
+Ext3 为每一个新分配的块调用一次块分配器。当多个编写器同时打开时，这很容易导致严重的碎片。然而，ext4 使用延迟分配，这允许它合并写入并更好地决定如何为尚未提交的写入分配快
 
 ##### Persistent pre-allocation
 
