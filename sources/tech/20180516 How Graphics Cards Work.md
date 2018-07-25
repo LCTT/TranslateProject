@@ -1,3 +1,5 @@
+pinewall translating
+
 How Graphics Cards Work
 ======
 ![AMD-Polaris][1]
