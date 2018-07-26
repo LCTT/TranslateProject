@@ -1,3 +1,4 @@
+Translating by qhwdw
 How to Run Windows Apps on Android with Wine
 ======
 
