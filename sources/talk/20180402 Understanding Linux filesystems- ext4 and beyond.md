@@ -119,25 +119,29 @@ Ext3 为每一个新分配的块调用一次块分配器。当多个编写器同
 
 ##### 延迟分配
 
-This is a chewy—and contentious—feature. Delayed allocation allows ext4 to wait to allocate the actual blocks it will write data to until it's ready to commit that data to disk. (By contrast, ext3 would allocate blocks immediately, even while the data was still flowing into a write cache.)
+这是一个耐人嚼味而有争议性的功能。延迟分配允许 ext4 等待分配将写入数据的实际块，直到它准备好将数据提交到磁盘。（相比之下，即使数据仍然在流入一个写缓存，ext3 也会立即分配块。）
 
-Delaying allocation of blocks as data accumulates in cache allows the filesystem to make saner choices about how to allocate those blocks, reducing fragmentation (write and, later, read) and increasing performance significantly. Unfortunately, it increases the potential for data loss in programs that have not been specifically written to call `fsync()` when the programmer wants to ensure data has been flushed entirely to disk.
+当缓存中的数据累积时，延迟分配允块许文件系统做出分配这些块的更好的选择。不幸的是，当程序员想确保数据完全刷新到磁盘时，它增加了在还没有专门编写调用 ‘fsync（）’方法的程序中的数据丢失的可能性。 
 
-Let's say a program rewrites a file entirely:
+假设一个程序完全重写了一个文件：
 
 `fd=open("file" ,O_TRUNC); write(fd, data); close(fd);`
 
-With legacy filesystems, `close(fd);` is sufficient to guarantee that the contents of `file` will be flushed to disk. Even though the write is not, strictly speaking, transactional, there's very little risk of losing the data if a crash occurs after the file is closed.
+使用旧的文件系统, `close(fd);` 足以保证 `file` 中的内存刷新到磁盘。即使严格来说，写不是事务性的，但如果文件关闭后发生崩溃，则丢失数据的风险很小。
+如果写入不成功（由于程序上的错误、磁盘上的错误、断电等），文件的原始版本和交新版本都可能丢失数据或损坏。如果其他进程在写入文件时访问文件，则会看到损坏的版本。
+如果其他进程打开文件并且不希望其内容发生更改 —— 如果其他进程在写入文件时访问该文件，则会看到损坏的版本。入股其他进程打开文件并且不希望其内容大声更改 —— 例如，隐射到多个正在运行的程序的共享库 —— 它们可能会崩溃。
 
-If the write does not succeed (due to errors in the program, errors on the disk, power loss, etc.), both the original version and the newer version of the file may be lost or corrupted. If other processes access the file as it is being written, they will see a corrupted version. And if other processes have the file open and do not expect its contents to change—e.g., a shared library mapped into multiple running programs—they may crash.
-
-To avoid these issues, some programmers avoid using `O_TRUNC` at all. Instead, they might write to a new file, close it, then rename it over the old one:
+为了避免这些问题，一些程序员完全避免使用 `O_TRUNC`。相反，他们可能会写入一个新文件，关闭它，然后将其重命名为旧文件名：
 
 `fd=open("newfile"); write(fd, data); close(fd); rename("newfile", "file");`
 
-Under filesystems without delayed allocation, this is sufficient to avoid the potential corruption and crash problems outlined above: Since `rename()` is an atomic operation, it won't be interrupted by a crash; and running programs will continue to reference the old, now unlinked version of `file` for as long as they have an open filehandle to it. But because ext4's delayed allocation can cause writes to be delayed and re-ordered, the `rename("newfile","file")` may be carried out before the contents of `newfile` are actually written to disk, which opens the problem of parallel processes getting bad versions of `file` all over again.
+在没有延迟分配的文件系统下，这足以避免上面列出的潜在的损坏和崩溃问题：因为`rename()` 是原子操作，所以它不会被崩溃中断；并且运行的程序将引用旧的。现在 `file` 的未链接版本主要有一个打开的文件文件句柄即可。
+但是因为 ext4 的延迟分配会导致写入被延迟和重新排序，`rename("newfile","file")` 可以在 `newfile` 的内容实际写入磁盘内容之前执行，这打开了并行进行再次获得 `file` 坏版本的问题。
 
-To mitigate this, the Linux kernel (since version 2.6.30) attempts to detect these common code cases and force the files in question to be allocated immediately. This reduces, but does not prevent, the potential for data loss—and it doesn't help at all with new files. If you're a developer, please take note: The only way to guarantee data is written to disk immediately is to call `fsync()` appropriately.
+
+为了缓解这种情况，Linux 内核（自版本 2.6.30 ）尝试检测这些常见代码情况并强制立即分配。这减少但不能防止数据丢失的可能性 —— 并且它对新文件没有任何帮助。如果你是一位开发人员，请注意：
+
+保证数据立即写入磁盘的方法是正确调用 `fsync()` 。
 
 #### Unlimited subdirectories
 
@@ -244,7 +248,7 @@ The ongoing status of btrfs is controversial; SUSE Enterprise Linux adopted it a
 via: https://opensource.com/article/18/4/ext4-filesystem
 
 作者：[Jim Salter][a]
-译者：[译者ID](https://github.com/HardworkFish)
+译者：[HardworkFish](https://github.com/HardworkFish)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
