@@ -1,3 +1,5 @@
+translating by bestony
+
 How to use Fio (Flexible I/O Tester) to Measure Disk Performance in Linux
 ======
 ![](https://wpmojo.com/wp-content/uploads/2017/08/wpmojo.com-how-to-use-fio-to-measure-disk-performance-in-linux-dotlayer.com-how-to-use-fio-to-measure-disk-performance-in-linux-816x457.jpeg)
