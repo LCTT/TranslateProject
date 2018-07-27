@@ -3,16 +3,6 @@
 
 Python 是为谁设计的？
 
-* [Python 的参考解析器使用情况][8]
-* [CPython 主要服务于哪些受众？][9]
-* [这些相关问题的原因是什么?][10]
-* [适合进入 PyPI 规划的方面有哪些？][11]
-* [当添加它们到标准库中时，为什么一些 API 会被改变？][12]
-* [为什么一些 API 是以<ruby>临时<rt>provisional</rt></ruby>的形式被添加的？][13]
-* [为什么只有一些标准库 API 被升级？][14]
-* [标准库任何部分都有独立的版本吗？][15]
-* [这些注意事项为什么很重要？][16]
-
 几年前，我在 python-dev 邮件列表中，以及在活跃的 CPython 核心开发人员和认为参与这一过程不是有效利用他们个人时间和精力的人中[强调][38]说，“CPython 的发展太快了也太慢了”是很多冲突的原因之一。
 
 我一直认为事实确实如此，但这也是一个要点，在这几年中我也花费了一些时间去反思它。在我写那篇文章的时候，我还在<ruby>波音防务澳大利亚公司<rt>Boeing Defence Australia</rt></ruby>工作。下个月，我将离开波音进入<ruby>红帽亚太<rt>Red Hat Asia-Pacific</rt></ruby>，并且开始在大企业的[开源供应链管理][39]上获得<ruby>再分发者<rt>redistributor</rt></ruby>层面的视角。
@@ -192,18 +182,6 @@ via: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-a
 [5]: https://github.com/python/core-workflow
 [6]: http://www.vfxplatform.com/
 [7]: http://www.curiousefficiency.org/posts/2015/10/languages-to-improve-your-python.html#broadening-our-horizons
-[8]: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-audience.html#use-cases-for-python-s-reference-interpreter
-[9]: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-audience.html#which-audience-does-cpython-primarily-serve
-[10]: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-audience.html#why-is-this-relevant-to-anything
-[11]: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-audience.html#where-does-pypi-fit-into-the-picture
-[12]: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-audience.html#why-are-some-apis-changed-when-adding-them-to-the-standard-library
-[13]: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-audience.html#why-are-some-apis-added-in-provisional-form
-[14]: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-audience.html#why-are-only-some-standard-library-apis-upgraded
-[15]: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-audience.html#will-any-parts-of-the-standard-library-ever-be-independently-versioned
-[16]: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-audience.html#why-do-these-considerations-matter
-[17]: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-audience.html#id1
-[18]: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-audience.html#id2
-[19]: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-audience.html#id3
 [20]: https://twitter.com/ncoghlan_dev/status/916994106819088384
 [21]: https://www.python.org/dev/peps/pep-0411/
 [22]: https://twitter.com/ncoghlan_dev/status/917092464355241984
@@ -213,15 +191,5 @@ via: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-a
 [26]: http://python-notes.curiousefficiency.org/en/latest/python3/questions_and_answers.html#doesn-t-this-make-python-look-like-an-immature-and-unstable-platform
 [27]: http://python-notes.curiousefficiency.org/en/latest/python3/questions_and_answers.html#what-about-insert-other-shiny-new-feature-here
 [28]: http://www.curiousefficiency.org/posts/2016/09/python-packaging-ecosystem.html
-[29]: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-audience.html#id4
-[30]: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-audience.html#id5
-[31]: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-audience.html#id6
-[32]: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-audience.html#id7
-[33]: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-audience.html#id8
-[34]: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-audience.html#id9
-[35]: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-audience.html#
-[36]: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-audience.html#disqus_thread
-[37]: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-audience.rst
 [38]: http://www.curiousefficiency.org/posts/2011/04/musings-on-culture-of-python-dev.html
 [39]: http://community.redhat.com/blog/2015/02/the-quid-pro-quo-of-open-infrastructure/
-[40]: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-audience.html#
