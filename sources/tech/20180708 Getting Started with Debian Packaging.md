@@ -1,3 +1,5 @@
+translating by bestony
+
 Getting Started with Debian Packaging
 ======
 
