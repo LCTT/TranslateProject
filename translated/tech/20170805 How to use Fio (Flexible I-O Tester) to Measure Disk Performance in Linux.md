@@ -1,49 +1,41 @@
-translating by bestony
 
-How to use Fio (Flexible I/O Tester) to Measure Disk Performance in Linux
+如何在 Linux 中使用 Fio 来测评硬盘性能
 ======
 ![](https://wpmojo.com/wp-content/uploads/2017/08/wpmojo.com-how-to-use-fio-to-measure-disk-performance-in-linux-dotlayer.com-how-to-use-fio-to-measure-disk-performance-in-linux-816x457.jpeg)
 
-Fio which stands for Flexible I/O Tester [is a free and open source][1] disk I/O tool used both for benchmark and stress/hardware verification developed by Jens Axboe.
+Fio（Flexible I/O Tester） 是一款由 Jens Axboe 开发的用于测评和压力/硬件验证的[免费开源][1]的软件
 
-It has support for 19 different types of I/O engines (sync, mmap, libaio, posixaio, SG v3, splice, null, network, syslet, guasi, solarisaio, and more), I/O priorities (for newer Linux kernels), rate I/O, forked or threaded jobs, and much more. It can work on block devices as well as files.
+它支持 19 种不同类型的 I/O 引擎 (sync, mmap, libaio, posixaio, SG v3, splice, null, network, syslet, guasi, solarisaio, 以及更多), I/O 优先级（针对较新的 Linux 内核），I/O 速度，复刻或线程任务，和其他更多的东西。它能够在块设备和文件上工作。
 
-Fio accepts job descriptions in a simple-to-understand text format. Several example job files are included. Fio displays all sorts of I/O performance information, including complete IO latencies and percentiles.
+Fio 接受一种非常简单易于理解的文本格式作为任务描述。软件默认包含了许多示例任务文件。 Fio 展示了所有类型的 I/O 性能信息，包括完整的 IO 延迟和百分比。
 
-It is in wide use in many places, for both benchmarking, QA, and verification purposes. It supports Linux, FreeBSD, NetBSD, OpenBSD, OS X, OpenSolaris, AIX, HP-UX, Android, and Windows.
+它被广泛的应用在非常多的地方，包括测评、QA，以及验证用途。它支持 Linux 、 FreeBSD 、 NetBSD、 OpenBSD、 OS X、 OpenSolaris、 AIX、 HP-UX、 Android 以及 Windows。
 
-In this tutorial, we will be using Ubuntu 16 and you are required to have sudo or root privileges to the computer. We will go over the installation and use of fio.
+在这个教程，我们将使用 Ubuntu 16 ，你需要拥有这台电脑的 sudo 或 root 权限。我们将完整的进行安装和 Fio 的使用。
 
-### Installing fio from Source
+### 使用源码安装 Fio
 
-We are going to clone the repo on GitHub. Install the prerequisites, and then we will build the packages from the source code. Lets' start by making sure we have git installed.
+我们要去克隆 Github 上的仓库。安装所需的依赖，然后我们将会从源码构建应用。首先，确保我们安装了 Git 。
+
 ```
-
 sudo apt-get install git
-
-
 ```
 
-For centOS users you can use:
+CentOS 用户可以执行下述命令：
 ```
-
 sudo yum install git
-
-
 ```
 
-Now we change directory to /opt and clone the repo from Github:
-```
+现在，我们切换到 /opt 目录，并从 Github 上克隆仓库：
 
+```
 cd /opt
 git clone https://github.com/axboe/fio
-
-
 ```
 
-You should see the output below:
-```
+你应该会看到下面这样的输出
 
+```
 Cloning into 'fio'...
 remote: Counting objects: 24819, done.
 remote: Compressing objects: 100% (44/44), done.
@@ -51,72 +43,59 @@ remote: Total 24819 (delta 39), reused 62 (delta 32), pack-reused 24743
 Receiving objects: 100% (24819/24819), 16.07 MiB | 0 bytes/s, done.
 Resolving deltas: 100% (16251/16251), done.
 Checking connectivity... done.
-
-
 ```
 
-Now, we change directory into the fio codebase by typing the command below inside the opt folder:
-```
+现在，我们通过在 opt 目录下输入下方的命令切换到 Fio 的代码目录：
 
+```
 cd fio
-
-
 ```
 
-We can finally build fio from source using the `make` build utility bu using the commands below:
-```
+最后，我们可以使用下面的命令来使用 `make` 从源码构建软件：
 
+```
 # ./configure
 # make
 # make install
-
-
 ```
 
-### Installing fio on Ubuntu
+### 在 Ubuntu 上安装 Fio
 
-For Ubuntu and Debian, fio is available on the main repository. You can easily install fio using the standard package managers such as yum and apt-get.
+对于 Ubuntu 和 Debian 来说， Fio 已经在主仓库内。你可以很容易的使用类似 yum 和 apt-get 的标准包管理器来安装 Fio。
 
-For Ubuntu and Debian you can simple use:
+对于 Ubuntu 和 Debian ，你只需要简单的执行下述命令：
+
 ```
-
 sudo apt-get install fio
-
-
 ```
 
-For CentOS/Redhat you can simple use:
-On CentOS, you might need to install EPEL repository to your system before you can have access to fio. You can install it by running the following command:
-```
+对于 CentOS/Redhat 你只需要简单执行下述命令：
+在 CentOS ，你可能在你能安装 Fio 前需要去安装 EPEL 仓库到你的系统中。你可以通过执行下述命令来安装它：
 
+```
 sudo yum install epel-release -y
-
-
 ```
 
-You can then install fio using the command below:
-```
+你可以执行下述命令来安装 Fio：
 
+```
 sudo yum install fio -y
-
-
 ```
 
-### Disk Performace testing with Fio
+###  使用 Fio 进行磁盘性能测试
 
-With Fio is installed on your system. It's time to see how to use Fio with some examples below. We are going to perform a random write, read and read and write test.
 
-### Performing a Random Write Test
+现在 Fio 已经安装到了你的系统中。现在是时候看一些如何使用 Fio 的例子了。我们将进行随机写、读和读写测试。
 
-Let's start by running the following command. This command will write a total 4GB file [4 jobs x 512 MB = 2GB] running 2 processes at a time:
+### 执行随机写测试
+
+执行下面的命令来开始。这个命令将要同一时间执行两个进程，写入共计 4GB（ 4 个任务 x 512MB = 2GB） 文件：
+
 ```
-
 sudo fio --name=randwrite --ioengine=libaio --iodepth=1 --rw=randwrite --bs=4k --direct=0 --size=512M --numjobs=2 --runtime=240 --group_reporting
-
-
-```
 ```
 
+```
 ...
 fio-2.2.10
 Starting 2 processes
@@ -149,9 +128,9 @@ Disk stats (read/write):
 
 ```
 
-### Performing a Random Read Test
+### 执行随机读测试
 
-We are going to perform a random read test now, we will be trying to read a random 2Gb file
+我们将要执行一个随机读测试，我们将会尝试读取一个随机的 2GB 文件。
 ```
 
 sudo fio --name=randread --ioengine=libaio --iodepth=16 --rw=randread --bs=4k --direct=0 --size=512M --numjobs=4 --runtime=240 --group_reporting
@@ -159,7 +138,7 @@ sudo fio --name=randread --ioengine=libaio --iodepth=16 --rw=randread --bs=4k --
 
 ```
 
-You should see the output below:
+你应该会看到下面这样的输出
 ```
 
 ...
@@ -201,21 +180,18 @@ Disk stats (read/write):
 
 ```
 
-Finally, we want to show a sample read-write test to see how the kind out output that fio returns.
+最后，我们想要展示一个简单的随机读-写测试来看一看 Fio 返回的输出类型。
 
-### Read Write Performance Test
+### 读写性能测试
 
-The command below will measure random read/write performance of USB Pen drive (/dev/sdc1):
+下述命令将会测试 USB Pen 驱动器 (/dev/sdc1) 的随机读写性能：
+
 ```
-
 sudo fio --randrepeat=1 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=test --filename=random_read_write.fio --bs=4k --iodepth=64 --size=4G --readwrite=randrw --rwmixread=75
-
-
 ```
 
-Below is the outout we get from the command above.
+下面的内容是我们从上面的命令得到的输出：
 ```
-
 fio-2.2.10
 Starting 1 process
 Jobs: 1 (f=1): [m(1)] [100.0% done] [217.8MB/74452KB/0KB /s] [55.8K/18.7K/0 iops] [eta 00m:00s]
@@ -235,11 +211,11 @@ Run status group 0 (all jobs):
 
 Disk stats (read/write):
  sda: ios=774141/258944, merge=1463/899, ticks=748800/150316, in_queue=900720, util=99.35%
-
-
 ```
 
 We hope you enjoyed this tutorial and enjoyed following along, Fio is a very useful tool and we hope you can use it in your next debugging activity. If you enjoyed reading this post feel free to leave a comment of questions. Go ahead and clone the repo and play around with the code.
+
+我们希望你能喜欢这个教程并且享受接下来的内容，Fio 是一个非常有用的工具，并且我们希望你能在你下一次 Debugging 活动中使用到它。如果你喜欢这个文章，欢迎留下评论和问题。
 
 
 --------------------------------------------------------------------------------
@@ -247,7 +223,7 @@ We hope you enjoyed this tutorial and enjoyed following along, Fio is a very use
 via: https://wpmojo.com/how-to-use-fio-to-measure-disk-performance-in-linux/
 
 作者：[Alex Pearson][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[Bestony](https://github.com/bestony)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
