@@ -63,7 +63,7 @@ sudo apt install xenlism-minimalism-theme xenlism-storm-icon-theme xenlism-wild
 
 你喜欢 Xenlism 主题吗？如果不喜欢，你最喜欢什么主题？在下面的评论部分分享你的意见。
 
-#### 关于作者
+### 关于作者
 
 我是一名专业软件开发人员，也是 It's FOSS 的创始人。我是一名狂热的 Linux 爱好者和开源爱好者。我使用 Ubuntu 并相信分享知识。除了Linux，我喜欢经典侦探之谜。我是 Agatha Christie 作品的忠实粉丝。
 
@@ -71,7 +71,7 @@ sudo apt install xenlism-minimalism-theme xenlism-storm-icon-theme xenlism-wild
 
 via: https://itsfoss.com/xenlism-theme/
 
-作者：[Abhishek Prakash ][a]
+作者：[Abhishek Prakash][a]
 译者：[geekpi](https://github.com/geekpi)
 校对：[wxy](https://github.com/wxy)
 
