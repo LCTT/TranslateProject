@@ -1,3 +1,5 @@
+Translating... by SunWave
+
 3 Methods to List All The Users in Linux System
 ======
 Everyone knows user information was residing in `/etc/passwd` file.
