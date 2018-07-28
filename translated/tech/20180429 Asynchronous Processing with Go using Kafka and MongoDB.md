@@ -1,34 +1,33 @@
-Translating by qhwdw
-Asynchronous Processing with Go using Kafka and MongoDB
+使用 Kafka 和 MongoDB 进行 Go 异步处理
 ============================================================
 
-In my previous blog post ["My First Go Microservice using MongoDB and Docker Multi-Stage Builds"][9], I created a Go microservice sample which exposes a REST http endpoint and saves the data received from an HTTP POST to a MongoDB database.
+在我前面的博客文章 ["使用 MongoDB 和 Docker 多阶段构建我的第一个 Go 微服务][9] 中，我创建了一个 Go 微服务示例，它发布一个 REST 式的 http 端点，并将从 HTTP POST 中接收到的数据保存到 MongoDB 数据库。
 
-In this example, I decoupled the saving of data to MongoDB and created another microservice to handle this. I also added Kafka to serve as the messaging layer so the microservices can work on its own concerns asynchronously.
+在这个示例中，我将保存数据到 MongoDB 和创建另一个微服务去处理它解耦了。我还添加了 Kafka 为消息层服务，这样微服务就可以异步地处理它自己关心的东西了。
 
-> In case you have time to watch, I recorded a walkthrough of this blog post in the [video below][1] :)
+> 如果你有时间去看，我将这个博客文章的整个过程录制到 [这个视频中了][1] :)
 
-Here is the high-level architecture of this simple asynchronous processing example wtih 2 microservices.
+下面是这个使用了两个微服务的简单的异步处理示例的高级架构。
 
 ![rest-kafka-mongo-microservice-draw-io](https://www.melvinvivas.com/content/images/2018/04/rest-kafka-mongo-microservice-draw-io.jpg)
 
-Microservice 1 - is a REST microservice which receives data from a /POST http call to it. After receiving the request, it retrieves the data from the http request and saves it to Kafka. After saving, it responds to the caller with the same data sent via /POST
+微服务 1 —— 是一个 REST 式微服务，它从一个 /POST http 调用中接收数据。接收到请求之后，它从 http 请求中检索数据，并将它保存到 Kafka。保存之后，它通过 /POST 发送相同的数据去响应调用者。
 
-Microservice 2 - is a microservice which subscribes to a topic in Kafka where Microservice 1 saves the data. Once a message is consumed by the microservice, it then saves the data to MongoDB.
+微服务 2 —— 是一个在 Kafka 中订阅一个主题的微服务，在这里就是微服务 1 保存的数据。一旦消息被微服务消费之后，它接着保存数据到 MongoDB 中。
 
-Before you proceed, we need a few things to be able to run these microservices:
+在你继续之前，我们需要能够去运行这些微服务的几件东西：
 
-1.  [Download Kafka][2] - I used version kafka_2.11-1.1.0
+1.  [下载 Kafka][2] —— 我使用的版本是 kafka_2.11-1.1.0
 
-2.  Install [librdkafka][3] - Unfortunately, this library should be present in the target system
+2.  安装 [librdkafka][3] —— 不幸的是，这个库应该在目标系统中
 
-3.  Install the [Kafka Go Client by Confluent][4]
+3.  安装 [Kafka Go 客户端][4]
 
-4.  Run MongoDB. You can check my [previous blog post][5] about this where I used a MongoDB docker image.
+4.  运行 MongoDB。你可以去看我的 [以前的文章][5] 中关于这一块的内容，那篇文章中我使用了一个 MongoDB docker 镜像。
 
-Let's get rolling!
+我们开始吧！
 
-Start Kafka first, you need Zookeeper running before you run the Kafka server. Here's how
+首先，启动 Kafka，在你运行 Kafka 服务器之前，你需要运行 Zookeeper。下面是示例：
 
 ```
 $ cd /<download path>/kafka_2.11-1.1.0
@@ -36,14 +35,14 @@ $ bin/zookeeper-server-start.sh config/zookeeper.properties
 
 ```
 
-Then run Kafka - I am using port 9092 to connect to Kafka. If you need to change the port, just configure it in config/server.properties. If you are just a beginner like me, I suggest to just use default ports for now.
+接着运行 Kafka ——  我使用 9092 端口连接到 Kafka。如果你需要改变端口，只需要在 `config/server.properties` 中配置即可。如果你像我一样是个新手，我建议你现在还是使用默认端口。
 
 ```
 $ bin/kafka-server-start.sh config/server.properties
 
 ```
 
-After running Kafka, we need MongoDB. To make it simple, just use this docker-compose.yml.
+Kafka 跑起来之后，我们需要 MongoDB。它很简单，只需要使用这个 `docker-compose.yml` 即可。
 
 ```
 version: '3'
@@ -65,14 +64,14 @@ networks:
 
 ```
 
-Run the MongoDB docker container using Docker Compose
+使用 Docker Compose 去运行  MongoDB docker 容器。
 
 ```
 docker-compose up
 
 ```
 
-Here is the relevant code of Microservice 1. I just modified my previous example to save to Kafka rather than MongoDB.
+这里是微服务 1 的相关代码。我只是修改了我前面的示例去保存到 Kafka 而不是 MongoDB。
 
 [rest-to-kafka/rest-kafka-sample.go][10]
 
@@ -137,7 +136,7 @@ func saveJobToKafka(job Job) {
 
 ```
 
-Here is the code of Microservice 2. What is important in this code is the consumption from Kafka, the saving part I already discussed in my previous blog post. Here are the important parts of the code which consumes the data from Kafka.
+这里是微服务 2 的代码。在这个代码中最重要的东西是从 Kafka 中消耗数据，保存部分我已经在前面的博客文章中讨论过了。这里代码的重点部分是从 Kafka 中消费数据。
 
 [kafka-to-mongo/kafka-mongo-sample.go][11]
 
@@ -210,51 +209,51 @@ func saveJobToMongo(jobString string) {
 
 ```
 
-Let's get down to the demo, run Microservice 1\. Make sure Kafka is running.
+ 我们来演示一下，运行微服务 1。确保 Kafka 已经运行了。
 
 ```
 $ go run rest-kafka-sample.go
 
 ```
 
-I used Postman to send data to Microservice 1
+我使用 Postman 向微服务 1 发送数据。
 
 ![Screenshot-2018-04-29-22.20.33](https://www.melvinvivas.com/content/images/2018/04/Screenshot-2018-04-29-22.20.33.png)
 
-Here is the log you will see in Microservice 1\. Once you see this, it means data has been received from Postman and saved to Kafka
+这里是日志，你可以在微服务 1 中看到。当你看到这些的时候，说明已经接收到了来自 Postman 发送的数据，并且已经保存到了 Kafka。
 
 ![Screenshot-2018-04-29-22.22.00](https://www.melvinvivas.com/content/images/2018/04/Screenshot-2018-04-29-22.22.00.png)
 
-Since we are not running Microservice 2 yet, the data saved by Microservice 1 will just be in Kafka. Let's consume it and save to MongoDB by running Microservice 2.
+因为我们尚未运行微服务 2，数据被微服务 1 只保存在了 Kafka。我们来消费它并通过运行的微服务 2 来将它保存到 MongoDB。
 
 ```
 $ go run kafka-mongo-sample.go
 
 ```
 
-Now you'll see that Microservice 2 consumes the data and saves it to MongoDB
+现在，你将在微服务 2 上看到消费的数据，并将它保存到了 MongoDB。
 
 ![Screenshot-2018-04-29-22.24.15](https://www.melvinvivas.com/content/images/2018/04/Screenshot-2018-04-29-22.24.15.png)
 
-Check if data is saved in MongoDB. If it is there, we're good!
+检查一下数据是否保存到了 MongoDB。如果有数据，我们成功了！
 
 ![Screenshot-2018-04-29-22.26.39](https://www.melvinvivas.com/content/images/2018/04/Screenshot-2018-04-29-22.26.39.png)
 
-Complete source code can be found here
+完整的源代码可以在这里找到
 [https://github.com/donvito/learngo/tree/master/rest-kafka-mongo-microservice][12]
 
-Shameless plug! If you like this blog post, please follow me in Twitter [@donvito][6]. I tweet about Docker, Kubernetes, GoLang, Cloud, DevOps, Agile and Startups. Would love to connect in [GitHub][7] and [LinkedIn][8]
+现在是广告时间：如果你喜欢这篇文章，请在 Twitter [@donvito][6] 上关注我。我的 Twitter 上有关于 Docker、Kubernetes、GoLang、Cloud、DevOps、Agile 和 Startups 的内容。欢迎你们在 [GitHub][7] 和 [LinkedIn][8] 关注我。
 
-[VIDEO](https://youtu.be/xa0Yia1jdu8)
+[视频](https://youtu.be/xa0Yia1jdu8)
 
-Enjoy!
+开心地玩吧！
 
 --------------------------------------------------------------------------------
 
 via: https://www.melvinvivas.com/developing-microservices-using-kafka-and-mongodb/
 
 作者：[Melvin Vivas ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[qhwdw](https://github.com/qhwdw)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
