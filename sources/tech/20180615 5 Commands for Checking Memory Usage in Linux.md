@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 5 Commands for Checking Memory Usage in Linux
 ======
 
