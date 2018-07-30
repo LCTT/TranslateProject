@@ -1,4 +1,4 @@
-translating---geelkpi
+translating---geekpi
 
 Textricator: Data extraction made simple
 ======
