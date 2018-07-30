@@ -1,3 +1,7 @@
+Translating by DavidChenLiang
+
+
+
 How To View Detailed Information About A Package In Linux
 ======
 This is know topic and we can write so many articles because most of the time we would stick with package managers for many reasons.
