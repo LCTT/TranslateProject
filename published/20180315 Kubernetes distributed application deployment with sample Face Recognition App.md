@@ -1,9 +1,11 @@
-Kubernetes 分布式应用部署实战 -- 以人脸识别应用为例
+Kubernetes 分布式应用部署实战：以人脸识别应用为例
 ============================================================
 
-# 简介
+![](https://skarlso.github.io/img/2018/03/kube_overview.png)
 
-伙计们，请做好准备，下面将是一段漫长的旅程，期望你能够乐在其中。
+## 简介
+
+伙计们，请搬好小板凳坐好，下面将是一段漫长的旅程，期望你能够乐在其中。
 
 我将基于 [Kubernetes][5] 部署一个分布式应用。我曾试图编写一个尽可能真实的应用，但由于时间和精力有限，最终砍掉了很多细节。
 
@@ -11,17 +13,17 @@ Kubernetes 分布式应用部署实战 -- 以人脸识别应用为例
 
 让我们开始吧。
 
-# 应用
+## 应用
 
 ### TL;DR
 
 ![kube overview](https://skarlso.github.io/img/kube_overview.png)
 
-应用本身由 6 个组件构成。代码可以从如下链接中找到：[Kubenetes 集群示例][6]。
+该应用本身由 6 个组件构成。代码可以从如下链接中找到：[Kubenetes 集群示例][6]。
 
 这是一个人脸识别服务，通过比较已知个人的图片，识别给定图片对应的个人。前端页面用表格形式简要的展示图片及对应的个人。具体而言，向 [接收器][6] 发送请求，请求包含指向一个图片的链接。图片可以位于任何位置。接受器将图片地址存储到数据库 (MySQL) 中，然后向队列发送处理请求，请求中包含已保存图片的 ID。这里我们使用 [NSQ][8] 建立队列。
 
-[图片处理][9]服务一直监听处理请求队列，从中获取任务。处理过程包括如下几步：获取图片 ID，读取图片，通过 [gRPC][11] 将图片路径发送至 Python 编写的[人脸识别][10]后端。如果识别成功，后端给出图片对应个人的名字。图片处理器进而根据个人 ID 更新图片记录，将其标记为处理成功。如果识别不成功，图片被标记为待解决。如果图片识别过程中出现错误，图片被标记为失败。
+[图片处理][9] 服务一直监听处理请求队列，从中获取任务。处理过程包括如下几步：获取图片 ID，读取图片，通过 [gRPC][11] 将图片路径发送至 Python 编写的 [人脸识别][10] 后端。如果识别成功，后端给出图片对应个人的名字。图片处理器进而根据个人 ID 更新图片记录，将其标记为处理成功。如果识别不成功，图片被标记为待解决。如果图片识别过程中出现错误，图片被标记为失败。
 
 标记为失败的图片可以通过计划任务等方式进行重试。
 
@@ -33,39 +35,31 @@ Kubernetes 分布式应用部署实战 -- 以人脸识别应用为例
 
 ```
 curl -d '{"path":"/unknown_images/unknown0001.jpg"}' http://127.0.0.1:8000/image/post
-
 ```
 
-此时，接收器将<ruby>路径<rt>path</rt></ruby>存储到共享数据库集群中，对应的条目包括数据库服务提供的 ID。本应用采用”持久层提供条目对象唯一标识“的模型。获得条目 ID 后，接收器向 NSQ 发送消息，至此接收器的工作完成。
+此时，接收器将<ruby>路径<rt>path</rt></ruby>存储到共享数据库集群中，该实体存储后将从数据库服务收到对应的 ID。本应用采用“<ruby>实体对象<rt>Entity Object</rt></ruby>的唯一标识由持久层提供”的模型。获得实体 ID 后，接收器向 NSQ 发送消息，至此接收器的工作完成。
 
 ### 图片处理器
 
-从这里开始变得有趣起来。图片处理器首次运行时会创建两个 Go routines，具体为：
+从这里开始变得有趣起来。图片处理器首次运行时会创建两个 Go <ruby>协程<rt>routine</rt></ruby>，具体为：
 
 ### Consume
 
-这是一个 NSQ 消费者，需要完成三项任务。首先，监听队列中的消息。其次，当有新消息到达时，将对应的 ID 追加到一个线程安全的 ID 片段中，以供第二个 routine 处理。最后，告知第二个 routine 处理新任务，方法为 [sync.Condition][12]。
+这是一个 NSQ 消费者，需要完成三项必需的任务。首先，监听队列中的消息。其次，当有新消息到达时，将对应的 ID 追加到一个线程安全的 ID 片段中，以供第二个协程处理。最后，告知第二个协程处理新任务，方法为 [sync.Condition][12]。
 
 ### ProcessImages
 
-该 routine 会处理指定 ID 片段，直到对应片段全部处理完成。当处理完一个片段后，该 routine 并不是在一个通道上睡眠等待，而是进入悬挂状态。对每个 ID，按如下步骤顺序处理：
+该协程会处理指定 ID 片段，直到对应片段全部处理完成。当处理完一个片段后，该协程并不是在一个通道上睡眠等待，而是进入悬挂状态。对每个 ID，按如下步骤顺序处理：
 
 *   与人脸识别服务建立 gRPC 连接，其中人脸识别服务会在人脸识别部分进行介绍
-
-*   从数据库获取图片对应的条目
-
+*   从数据库获取图片对应的实体
 *   为 [断路器][1] 准备两个函数
     *   函数 1: 用于 RPC 方法调用的主函数
-
     *   函数 2: 基于 ping 的断路器健康检查
-
 *   调用函数 1 将图片路径发送至人脸识别服务，其中路径应该是人脸识别服务可以访问的，最好是共享的，例如 NFS
-
-*   如果调用失败，将图片条目状态更新为 FAILEDPROCESSING
-
+*   如果调用失败，将图片实体状态更新为 FAILEDPROCESSING
 *   如果调用成功，返回值是一个图片的名字，对应数据库中的一个个人。通过联合 SQL 查询，获取对应个人的 ID
-
-*   将数据库中的图片条目状态更新为 PROCESSED，更新图片被识别成的个人的 ID
+*   将数据库中的图片实体状态更新为 PROCESSED，更新图片被识别成的个人的 ID
 
 这个服务可以复制多份同时运行。
 
@@ -89,7 +83,7 @@ curl -d '{"path":"/unknown_images/unknown0001.jpg"}' http://127.0.0.1:8000/image
 
 注意：我曾经试图使用 [GoCV][14]，这是一个极好的 Go 库，但欠缺所需的 C 绑定。推荐马上了解一下这个库，它会让你大吃一惊，例如编写若干行代码即可实现实时摄像处理。
 
-这个 Python 库的工作方式本质上很简单。准备一些你认识的人的图片，把信息记录下来。对于我而言，我有一个图片文件夹，包含若干图片，名称分别为 `hannibal_1.jpg, hannibal_2.jpg, gergely_1.jpg, john_doe.jpg`。在数据库中，我使用两个表记录信息，分别为 `person, person_images`，具体如下：
+这个 Python 库的工作方式本质上很简单。准备一些你认识的人的图片，把信息记录下来。对于我而言，我有一个图片文件夹，包含若干图片，名称分别为 `hannibal_1.jpg`、 `hannibal_2.jpg`、 `gergely_1.jpg`、 `john_doe.jpg`。在数据库中，我使用两个表记录信息，分别为 `person`、 `person_images`，具体如下：
 
 ```
 +----+----------+
@@ -126,13 +120,13 @@ NSQ 是 Go 编写的小规模队列，可扩展且占用系统内存较少。NSQ
 
 ### 配置
 
-为了尽可能增加灵活性以及使用 Kubernetes 的 ConfigSet 特性，我在开发过程中使用 .env 文件记录配置信息，例如数据库服务的地址以及 NSQ 的查询地址。在生产环境或 Kubernetes 环境中，我将使用环境变量属性配置。
+为了尽可能增加灵活性以及使用 Kubernetes 的 ConfigSet 特性，我在开发过程中使用 `.env` 文件记录配置信息，例如数据库服务的地址以及 NSQ 的查询地址。在生产环境或 Kubernetes 环境中，我将使用环境变量属性配置。
 
 ### 应用小结
 
 这就是待部署应用的全部架构信息。应用的各个组件都是可变更的，他们之间仅通过数据库、消息队列和 gRPC 进行耦合。考虑到更新机制的原理，这是部署分布式应用所必须的；在部署部分我会继续分析。
 
-# 使用 Kubernetes 部署应用
+## 使用 Kubernetes 部署应用
 
 ### 基础知识
 
@@ -144,55 +138,51 @@ Kubernetes 是容器化服务及应用的管理器。它易于扩展，可以管
 
 在 Kubernetes 中，你给出期望的应用状态，Kubernetes 会尽其所能达到对应的状态。状态可以是已部署、已暂停，有 2 个副本等，以此类推。
 
-Kubernetes 使用标签和注释标记组件，包括服务，部署，副本组，守护进程组等在内的全部组件都被标记。考虑如下场景，为了识别 pod 与 应用的对应关系，使用 `app: myapp` 标签。假设应用已部署 2 个容器，如果你移除其中一个容器的 `app` 标签，Kubernetes 只能识别到一个容器（隶属于应用），进而启动一个新的具有 `myapp` 标签的实例。
+Kubernetes 使用标签和注释标记组件，包括服务、部署、副本组、守护进程组等在内的全部组件都被标记。考虑如下场景，为了识别 pod 与应用的对应关系，使用 `app: myapp` 标签。假设应用已部署 2 个容器，如果你移除其中一个容器的 `app` 标签，Kubernetes 只能识别到一个容器（隶属于应用），进而启动一个新的具有 `myapp` 标签的实例。
 
 ### Kubernetes 集群
 
-要使用 Kubernetes，需要先搭建一个 Kubernetes 集群。搭建 Kubernetes 集群可能是一个痛苦的经历，但所幸有工具可以帮助我们。Minikube 为我们在本地搭建一个单节点集群。AWS 的一个 beta 服务工作方式类似于 Kubernetes 集群，你只需请求 Nodes 并定义你的部署即可。Kubernetes 集群组件的文档如下：[Kubernetes 集群组件][17]。
+要使用 Kubernetes，需要先搭建一个 Kubernetes 集群。搭建 Kubernetes 集群可能是一个痛苦的经历，但所幸有工具可以帮助我们。Minikube 为我们在本地搭建一个单节点集群。AWS 的一个 beta 服务工作方式类似于 Kubernetes 集群，你只需请求节点并定义你的部署即可。Kubernetes 集群组件的文档如下：[Kubernetes 集群组件][17]。
 
-### 节点 (Nodes)
+### 节点
 
-节点是工作单位，形式可以是虚拟机、物理机，也可以是各种类型的云主机。
+<ruby>节点<rt>node</rt></ruby>是工作单位，形式可以是虚拟机、物理机，也可以是各种类型的云主机。
 
-### Pods
+### Pod
 
-Pods 是本地容器组成的集合，即一个 Pod 中可能包含若干个容器。Pod 创建后具有自己的 DNS 和 虚拟 IP，这样 Kubernetes 可以对到达流量进行负载均衡。你几乎不需要直接和容器打交道；即使是调试的时候，例如查看日志，你通常调用 `kubectl logs deployment/your-app -f` 查看部署日志，而不是使用 `-c container_name` 查看具体某个容器的日志。`-f` 参数表示从日志尾部进行流式输出。
+Pod 是本地容器逻辑上组成的集合，即一个 Pod 中可能包含若干个容器。Pod 创建后具有自己的 DNS 和虚拟 IP，这样 Kubernetes 可以对到达流量进行负载均衡。你几乎不需要直接和容器打交道；即使是调试的时候，例如查看日志，你通常调用 `kubectl logs deployment/your-app -f` 查看部署日志，而不是使用 `-c container_name` 查看具体某个容器的日志。`-f` 参数表示从日志尾部进行流式输出。
 
-### 部署 (Deployments)
+### 部署
 
-在 Kubernetes 中创建任何类型的资源时，后台使用一个部署，它指定了资源的期望状态。使用部署对象，你可以将 Pod 或服务变更为另外的状态，也可以更新应用或上线新版本应用。你一般不会直接操作副本组 (后续会描述)，而是通过部署对象创建并管理。
+在 Kubernetes 中创建任何类型的资源时，后台使用一个<ruby>部署<rt>deployment</rt></ruby>组件，它指定了资源的期望状态。使用部署对象，你可以将 Pod 或服务变更为另外的状态，也可以更新应用或上线新版本应用。你一般不会直接操作副本组 (后续会描述)，而是通过部署对象创建并管理。
 
-### 服务 (Services)
+### 服务
 
-默认情况下，Pod 会获取一个 IP 地址。但考虑到 Pod 是 Kubernetes 中的易失性组件，我们需要更加持久的组件。不论是队列，mysql，内部 API 或前端，都需要长期运行并使用保持不变的 IP 或 更佳的 DNS 记录。
+默认情况下，Pod 会获取一个 IP 地址。但考虑到 Pod 是 Kubernetes 中的易失性组件，我们需要更加持久的组件。不论是队列，MySQL、内部 API 或前端，都需要长期运行并使用保持不变的 IP 或更好的 DNS 记录。
 
-为解决这个问题，Kubernetes 提供了服务组件，可以定义访问模式，支持的模式包括负载均衡，简单 IP 或 内部 DNS。
+为解决这个问题，Kubernetes 提供了<ruby>服务<rt>service</rt></ruby>组件，可以定义访问模式，支持的模式包括负载均衡、简单 IP 或内部 DNS。
 
 Kubernetes 如何获知服务运行正常呢？你可以配置健康性检查和可用性检查。健康性检查是指检查容器是否处于运行状态，但容器处于运行状态并不意味着服务运行正常。对此，你应该使用可用性检查，即请求应用的一个特别<ruby>接口<rt>endpoint</rt></ruby>。
 
-由于服务非常重要，推荐你找时间阅读以下文档：[服务][18]。严肃的说，需要阅读的东西很多，有 24 页 A4 纸的篇幅，涉及网络，服务及自动发现。这也有助于你决定是否真的打算在生产环境中使用 Kubernetes。
+由于服务非常重要，推荐你找时间阅读以下文档：[服务][18]。严肃的说，需要阅读的东西很多，有 24 页 A4 纸的篇幅，涉及网络、服务及自动发现。这也有助于你决定是否真的打算在生产环境中使用 Kubernetes。
 
 ### DNS / 服务发现
 
-在 Kubernetes 集群中创建服务后，该服务会从名为 kube-proxy 和 kube-dns 的特殊 Kubernetes 部署中获取一个 DNS 记录。他们两个用于提供集群内的服务发现。如果你有一个正在运行的 mysql 服务并配置 `clusterIP: no`，那么集群内部任何人都可以通过 `mysql.default.svc.cluster.local` 访问该服务，其中：
+在 Kubernetes 集群中创建服务后，该服务会从名为 `kube-proxy` 和 `kube-dns` 的特殊 Kubernetes 部署中获取一个 DNS 记录。它们两个用于提供集群内的服务发现。如果你有一个正在运行的 MySQL 服务并配置 `clusterIP: no`，那么集群内部任何人都可以通过 `mysql.default.svc.cluster.local` 访问该服务，其中：
 
 *   `mysql` – 服务的名称
-
 *   `default` – 命名空间的名称
-
 *   `svc` – 对应服务分类
-
 *   `cluster.local` – 本地集群的域名
 
-可以使用自定义设置更改本地集群的域名。如果想让服务可以从集群外访问，需要使用 DNS 提供程序并使用例如 Nginx 将 IP 地址绑定至记录。服务对应的对外 IP 地址可以使用如下命令查询：
+可以使用自定义设置更改本地集群的域名。如果想让服务可以从集群外访问，需要使用 DNS 服务，并使用例如 Nginx 将 IP 地址绑定至记录。服务对应的对外 IP 地址可以使用如下命令查询：
 
 *   节点端口方式 – `kubectl get -o jsonpath="{.spec.ports[0].nodePort}" services mysql`
-
 *   负载均衡方式 – `kubectl get -o jsonpath="{.spec.ports[0].LoadBalancer}" services mysql`
 
 ### 模板文件
 
-类似 Docker Compose, TerraForm 或其它的服务管理工具，Kubernetes 也提供了基础设施描述模板。这意味着，你几乎不用手动操作。
+类似 Docker Compose、TerraForm 或其它的服务管理工具，Kubernetes 也提供了基础设施描述模板。这意味着，你几乎不用手动操作。
 
 以 Nginx 部署为例，查看下面的 yaml 模板：
 
@@ -218,26 +208,26 @@ spec: #(4)
         image: nginx:1.7.9
         ports:
         - containerPort: 80
-
 ```
 
 在这个示例部署中，我们做了如下操作：
 
-*   (1) 使用 kind 关键字定义模板类型
-*   (2) 使用 metadata 关键字，增加该部署的识别信息，使用 labels 标记每个需要创建的资源 (3)
-*   (4) 然后使用 spec 关键字描述所需的状态
-    *   (5) nginx 应用需要 3 个副本
-    *   (6) Pod 中容器的模板定义部分
-    *   容器名称为 nginx
-    *   容器模板为 nginx:1.7.9 （本例使用 Docker 镜像）
+*   (1) 使用 `kind` 关键字定义模板类型
+*   (2) 使用 `metadata` 关键字，增加该部署的识别信息
+*      (3)   使用 `labels` 标记每个需要创建的资源
+*   (4) 然后使用 `spec` 关键字描述所需的状态
+*   (5) nginx 应用需要 3 个副本
+*   (6) Pod 中容器的模板定义部分
+*   容器名称为 nginx
+*   容器模板为 nginx:1.7.9 （本例使用 Docker 镜像）
 
-### 副本组 (ReplicaSet)
+### 副本组
 
-副本组是一个底层的副本管理器，用于保证运行正确数目的应用副本。相比而言，部署是更高层级的操作，应该用于管理副本组。除非你遇到特殊的情况，需要控制副本的特性，否则你几乎不需要直接操作副本组。
+<ruby>副本组<rt>ReplicaSet</rt></ruby>是一个底层的副本管理器，用于保证运行正确数目的应用副本。相比而言，部署是更高层级的操作，应该用于管理副本组。除非你遇到特殊的情况，需要控制副本的特性，否则你几乎不需要直接操作副本组。
 
-### 守护进程组 (DaemonSet)
+### 守护进程组
 
-上面提到 Kubernetes 始终使用标签，还有印象吗？守护进程组是一个控制器，用于确保守护进程化的应用一直运行在具有特定标签的节点中。
+上面提到 Kubernetes 始终使用标签，还有印象吗？<ruby>守护进程组<rt>DaemonSet</rt></ruby>是一个控制器，用于确保守护进程化的应用一直运行在具有特定标签的节点中。
 
 例如，你将所有节点增加 `logger` 或 `mission_critical` 的标签，以便运行日志 / 审计服务的守护进程。接着，你创建一个守护进程组并使用 `logger` 或 `mission_critical` 节点选择器。Kubernetes 会查找具有该标签的节点，确保守护进程的实例一直运行在这些节点中。因而，节点中运行的所有进程都可以在节点内访问对应的守护进程。
 
@@ -253,7 +243,7 @@ spec: #(4)
 
 ### Kubernetes 部分小结
 
-Kubernetes 是容器编排的便捷工具，工作单元为 Pods，具有分层架构。最顶层是部署，用于操作其它资源，具有高度可配置性。对于你的每个命令调用，Kubernetes 提供了对应的 API，故理论上你可以编写自己的代码，向 Kubernetes API 发送数据，得到与 `kubectl` 命令同样的效果。
+Kubernetes 是容器编排的便捷工具，工作单元为 Pod，具有分层架构。最顶层是部署，用于操作其它资源，具有高度可配置性。对于你的每个命令调用，Kubernetes 提供了对应的 API，故理论上你可以编写自己的代码，向 Kubernetes API 发送数据，得到与 `kubectl` 命令同样的效果。
 
 截至目前，Kubernetes 原生支持所有主流云服务供应商，而且完全开源。如果你愿意，可以贡献代码；如果你希望对工作原理有深入了解，可以查阅代码：[GitHub 上的 Kubernetes 项目][22]。
 
@@ -272,7 +262,7 @@ kubectl get nodes -o yaml
 
 ### 构建容器
 
-Kubernetes 支持大多数现有的容器技术。我这里使用 Docker。每一个构建的服务容器，对应代码库中的一个 Dockerfile 文件。我推荐你仔细阅读它们，其中大多数都比较简单。对于 Go 服务，我采用了最近引入的多步构建的方式。Go 服务基于 Alpine Linux 镜像创建。人脸识别程序使用 Python，NSQ 和 MySQL 使用对应的容器。
+Kubernetes 支持大多数现有的容器技术。我这里使用 Docker。每一个构建的服务容器，对应代码库中的一个 Dockerfile 文件。我推荐你仔细阅读它们，其中大多数都比较简单。对于 Go 服务，我采用了最近引入的多步构建的方式。Go 服务基于 Alpine Linux 镜像创建。人脸识别程序使用 Python、NSQ 和 MySQL 使用对应的容器。
 
 ### 上下文
 
@@ -293,9 +283,9 @@ Switched to context "kube-face-cluster".
 ```
 此后，所有 `kubectl` 命令都会使用 `face` 命名空间。
 
-（译注：作者后续并没有使用 face 命名空间，模板文件中的命名空间仍为 default，可能 face 命名空间用于开发环境。如果希望使用 face 命令空间，需要将内部 DNS 地址中的 default 改成 face；如果只是测试，可以不执行这两条命令。）
+（LCTT 译注：作者后续并没有使用 face 命名空间，模板文件中的命名空间仍为 default，可能 face 命名空间用于开发环境。如果希望使用 face 命令空间，需要将内部 DNS 地址中的 default 改成 face；如果只是测试，可以不执行这两条命令。）
 
-### 应用部署
+## 应用部署
 
 Pods 和 服务概览:
 
@@ -318,7 +308,6 @@ type: Opaque
 data:
   mysql_password: base64codehere
   mysql_userpassword: base64codehere
-
 ```
 
 其中 base64 编码通过如下命令生成：
@@ -326,10 +315,9 @@ data:
 ```
 echo -n "ubersecurepassword" | base64
 echo -n "root:ubersecurepassword" | base64
-
 ```
 
-（LCTT 译注：secret yaml 文件中的 data 应该有两条，一条对应 mysql_password, 仅包含密码；另一条对应 mysql_userpassword，包含用户和密码。后文会用到 mysql_userpassword，但没有提及相应的生成）
+（LCTT 译注：secret yaml 文件中的 data 应该有两条，一条对应 `mysql_password`，仅包含密码；另一条对应 `mysql_userpassword`，包含用户和密码。后文会用到 `mysql_userpassword`，但没有提及相应的生成）
 
 我的部署 yaml 对应部分如下：
 
@@ -362,13 +350,12 @@ echo -n "root:ubersecurepassword" | base64
 
 其中 `presistentVolumeClain` 是关键，告知 Kubernetes 当前资源需要持久化存储。持久化存储的提供方式对用户透明。类似 Pods，如果想了解更多细节，参考文档：[Kubernetes 持久化存储][27]。
 
-（LCTT 译注：使用 presistentVolumeClain 之前需要创建 presistentVolume，对于单节点可以使用本地存储，对于多节点需要使用共享存储，因为 Pod 可以能调度到任何一个节点）
+（LCTT 译注：使用 `presistentVolumeClain` 之前需要创建 `presistentVolume`，对于单节点可以使用本地存储，对于多节点需要使用共享存储，因为 Pod 可以能调度到任何一个节点）
 
 使用如下命令部署 MySQL 服务：
 
 ```
 kubectl apply -f mysql.yaml
-
 ```
 
 这里比较一下 `create` 和 `apply`。`apply` 是一种<ruby>宣告式<rt>declarative</rt></ruby>的对象配置命令，而 `create` 是<ruby>命令式<rt>imperative</rt>的命令。当下我们需要知道的是，`create` 通常对应一项任务，例如运行某个组件或创建一个部署；相比而言，当我们使用 `apply` 的时候，用户并没有指定具体操作，Kubernetes 会根据集群目前的状态定义需要执行的操作。故如果不存在名为 `mysql` 的服务，当我执行 `apply -f mysql.yaml` 时，Kubernetes 会创建该服务。如果再次执行这个命令，Kubernetes 会忽略该命令。但如果我再次运行 `create`，Kubernetes 会报错，告知服务已经创建。
@@ -460,7 +447,7 @@ volumes:
 
 ```
 
-（LCTT 译注：数据库初始化脚本需要改成对应的路径，如果是多节点，需要是共享存储中的路径。另外，作者给的 sql 文件似乎有误，person_images 表中的 person_id 列数字都小 1，作者默认 id 从 0 开始，但应该是从 1 开始）
+（LCTT 译注：数据库初始化脚本需要改成对应的路径，如果是多节点，需要是共享存储中的路径。另外，作者给的 sql 文件似乎有误，`person_images` 表中的 `person_id` 列数字都小 1，作者默认 `id` 从 0 开始，但应该是从 1 开始）
 
 运行如下命令查看引导脚本是否正确执行：
 
@@ -489,7 +476,6 @@ mysql>
 
 ```
 kubectl logs deployment/mysql -f
-
 ```
 
 ### NSQ 查询
@@ -505,7 +491,7 @@ NSQ 查询将以内部服务的形式运行。由于不需要外部访问，这�
 
 ```
 
-那么，内部 DNS 对应的条目类似于：`nsqlookup.default.svc.cluster.local`。
+那么，内部 DNS 对应的实体类似于：`nsqlookup.default.svc.cluster.local`。
 
 无头服务的更多细节，可以参考：[无头服务][32]。
 
@@ -517,7 +503,7 @@ args: ["--broadcast-address=nsqlookup.default.svc.cluster.local"]
 
 ```
 
-你可能会疑惑，`--broadcast-address` 参数是做什么用的？默认情况下，nsqlookup 使用 `hostname` （LCTT 译注：这里是指容器的主机名，而不是 hostname 字符串本身）作为广播地址；这意味着，当用户运行回调时，回调试图访问的地址类似于 `http://nsqlookup-234kf-asdf:4161/lookup?topics=image`，但这显然不是我们期望的。将广播地址设置为内部 DNS 后，回调地址将是 `http://nsqlookup.default.svc.cluster.local:4161/lookup?topic=images`，这正是我们期望的。
+你可能会疑惑，`--broadcast-address` 参数是做什么用的？默认情况下，`nsqlookup` 使用容器的主机名作为广播地址；这意味着，当用户运行回调时，回调试图访问的地址类似于 `http://nsqlookup-234kf-asdf:4161/lookup?topics=image`，但这显然不是我们期望的。将广播地址设置为内部 DNS 后，回调地址将是 `http://nsqlookup.default.svc.cluster.local:4161/lookup?topic=images`，这正是我们期望的。
 
 NSQ 查询还需要转发两个端口，一个用于广播，另一个用于 nsqd 守护进程的回调。在 Dockerfile 中暴露相应端口，在 Kubernetes 模板中使用它们，类似如下：
 
@@ -533,6 +519,7 @@ NSQ 查询还需要转发两个端口，一个用于广播，另一个用于 nsq
 ```
 
 服务模板：
+
 ```
 spec:
   ports:
@@ -592,13 +579,13 @@ NSQ 守护进程也需要一些调整的参数配置：
 
 ```
 
-其中我们配置了 lookup-tcp-address 和 broadcast-address 参数。前者是 nslookup 服务的 DNS 地址，后者用于回调，就像 nsqlookupd 配置中那样。
+其中我们配置了 `lookup-tcp-address` 和 `broadcast-address` 参数。前者是 nslookup 服务的 DNS 地址，后者用于回调，就像 nsqlookupd 配置中那样。
 
 #### 对外公开
 
 下面即将创建第一个对外公开的服务。有两种方式可供选择。考虑到该 API 负载较高，可以使用负载均衡的方式。另外，如果希望将其部署到生产环境中的任选节点，也应该使用负载均衡方式。
 
-但由于我使用的本地集群只有一个节点，那么使用 `节点端口` 的方式就足够了。`节点端口` 方式将服务暴露在对应节点的固定端口上。如果未指定端口，将从 30000-32767 数字范围内随机选其一个。也可以指定端口，可以在模板文件中使用 `nodePort` 设置即可。可以通过 `<NodeIP>:<NodePort>` 访问该服务。如果使用多个节点，负载均衡可以将多个 IP 合并为一个 IP。
+但由于我使用的本地集群只有一个节点，那么使用 `NodePort` 的方式就足够了。`NodePort` 方式将服务暴露在对应节点的固定端口上。如果未指定端口，将从 30000-32767 数字范围内随机选其一个。也可以指定端口，可以在模板文件中使用 `nodePort` 设置即可。可以通过 `<NodeIP>:<NodePort>` 访问该服务。如果使用多个节点，负载均衡可以将多个 IP 合并为一个 IP。
 
 更多信息，请参考文档：[服务发布][33]。
 
@@ -643,7 +630,7 @@ spec:
 
 ### 图片处理器
 
-图片处理器用于将图片传送至识别组件。它需要访问 nslookupd, mysql 以及后续部署的人脸识别服务的 gRPC 接口。事实上，这是一个无聊的服务，甚至其实并不是服务（LCTT 译注：第一个服务是指在整个架构中，图片处理器作为一个服务；第二个服务是指 Kubernetes 服务）。它并需要对外暴露端口，这是第一个只包含部署的组件。长话短说，下面是完整的模板：
+图片处理器用于将图片传送至识别组件。它需要访问 nslookupd、 mysql 以及后续部署的人脸识别服务的 gRPC 接口。事实上，这是一个无聊的服务，甚至其实并不是服务（LCTT 译注：第一个服务是指在整个架构中，图片处理器作为一个服务；第二个服务是指 Kubernetes 服务）。它并需要对外暴露端口，这是第一个只包含部署的组件。长话短说，下面是完整的模板：
 
 ```
 ---
@@ -781,7 +768,7 @@ curl -d '{"path":"/unknown_people/unknown220.jpg"}' http://192.168.99.100:30251/
 
 ```
 
-图像处理器会在 `/unknown_people` 目录搜索名为 unknown220.jpg 的图片，接着在 known_foler 文件中找到 unknown220.jpg 对应个人的图片，最后返回匹配图片的名称。
+图像处理器会在 `/unknown_people` 目录搜索名为 unknown220.jpg 的图片，接着在 `known_folder` 文件中找到 `unknown220.jpg` 对应个人的图片，最后返回匹配图片的名称。
 
 查看日志，大致信息如下：
 
@@ -861,9 +848,9 @@ receiver-deployment-5cb4797598-sf5ds          1/1       Running   0          26s
 
 ```
 
-### 滚动更新 (Rolling Update)
+## 滚动更新
 
-滚动更新过程中会发生什么呢？
+<ruby>滚动更新<rt>Rolling Update</rt></ruby>过程中会发生什么呢？
 
 ![kube rotate](https://skarlso.github.io/img/kube_rotate.png)
 
@@ -871,7 +858,7 @@ receiver-deployment-5cb4797598-sf5ds          1/1       Running   0          26s
 
 目前的 API 一次只能处理一个图片，不能批量处理，对此我并不满意。
 
-#### 代码
+### 代码
 
 目前，我们使用下面的代码段处理单个图片的情形：
 
@@ -900,7 +887,7 @@ func main() {
 
 这里，你可能会说你并不需要保留旧代码；某些情况下，确实如此。因此，我们打算直接修改旧代码，让其通过少量参数调用新代码。这样操作操作相当于移除了旧代码。当所有客户端迁移完毕后，这部分代码也可以安全地删除。
 
-#### 新的 Endpoint
+### 新的接口
 
 让我们添加新的路由方法：
 
@@ -941,7 +928,7 @@ func PostImage(w http.ResponseWriter, r *http.Request) {
 
 ```
 
-当然，方法名可能容易混淆，但你应该能够理解我想表达的意思。我将请求中的单个路径封装成新方法所需格式，然后将其作为请求发送给新接口处理。仅此而已。在 [滚动更新批量图片 PR][34] 中可以找到更多的修改方式。
+当然，方法名可能容易混淆，但你应该能够理解我想表达的意思。我将请求中的单个路径封装成新方法所需格式，然后将其作为请求发送给新接口处理。仅此而已。在 [滚动更新批量图片的 PR][34] 中可以找到更多的修改方式。
 
 至此，我们使用两种方法调用接收器：
 
@@ -958,7 +945,7 @@ curl -d '{"paths":[{"path":"unknown4456.jpg"}]}' http://127.0.0.1:8000/images/po
 
 为了简洁，我不打算为 NSQ 和其它组件增加批量图片处理的能力。这些组件仍然是一次处理一个图片。这部分修改将留给你作为扩展内容。 :)
 
-#### 新镜像
+### 新镜像
 
 为实现滚动更新，我首先需要为接收器服务创建一个新的镜像。新镜像使用新标签，告诉大家版本号为 v1.1。
 
@@ -969,11 +956,11 @@ docker build -t skarlso/kube-receiver-alpine:v1.1 .
 
 新镜像创建后，我们可以开始滚动更新了。
 
-#### 滚动更新
+### 滚动更新
 
 在 Kubernetes 中，可以使用多种方式完成滚动更新。
 
-##### 手动更新
+#### 手动更新
 
 不妨假设在我配置文件中使用的容器版本为 `v1.0`，那么实现滚动更新只需运行如下命令：
 
@@ -991,7 +978,7 @@ kubectl rolling-update receiver --rollback
 
 容器将回滚到使用上一个版本镜像，操作简捷无烦恼。
 
-##### 应用新的配置文件
+#### 应用新的配置文件
 
 手动更新的不足在于无法版本管理。
 
@@ -1051,7 +1038,7 @@ kubectl delete services -all
 
 ```
 
-# 写在最后的话
+## 写在最后的话
 
 各位看官，本文就写到这里了。我们在 Kubernetes 上编写、部署、更新和扩展（老实说，并没有实现）了一个分布式应用。
 
@@ -1065,9 +1052,9 @@ Gergely 感谢你阅读本文。
 
 via: https://skarlso.github.io/2018/03/15/kubernetes-distributed-application/
 
-作者：[hannibal  ][a]
+作者：[hannibal][a]
 译者：[pinewall](https://github.com/pinewall)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
