@@ -1,5 +1,5 @@
 如何使用 Android Things 和 TensorFlow 在物联网上应用机器学习
-============================================================ 
+=============================
 
 ![](https://www.survivingwithandroid.com/wp-content/uploads/2018/03/Apply_Machine_Learning_to_IoT.png)
 
