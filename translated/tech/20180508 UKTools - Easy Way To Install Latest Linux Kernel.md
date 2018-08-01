@@ -1,41 +1,40 @@
-Translating by MjSeven
-
-
-UKTools - Easy Way To Install Latest Linux Kernel
+UKTools - 安装最新 Linux 内核的简便方法
 ======
-There are multiple utilities is available for Ubuntu to upgrade Linux kernel to latest stable version. We had already wrote about those utility in the past such as Linux Kernel Utilities (LKU), Ubuntu Kernel Upgrade Utility (UKUU) and Ubunsys.
 
-Also few utilities are available and we will be planning to include in the further article like, ubuntu-mainline-kernel.sh and manual method from mainline kernel.
+Ubuntu 中有许多实用程序可以将 Linux 内核升级到最新的稳定版本。我们之前已经写过关于这些实用程序的文章，例如 Linux Kernel Utilities (LKU), Ubuntu Kernel Upgrade Utility (UKUU) 和 Ubunsys。
 
-Today also we are going to teach you the similar utility called UKTools. You can try any one of these utilities to get your Linux kernels to the latest releases.
 
-Latest kernel release comes with security bug fixes and some improvements so, better to keep latest one to get reliable, secure and better hardware performance.
+另外还有一些其它实用程序可供使用。我们计划在其它文章中包含这些，例如 ubuntu-mainline-kernel.sh 和 manual method from mainline kernel.
 
-Some times the latest kernel version might be buggy and can crash your system so, it’s your own risk. I would like to advise you to not to install on production environment.
+今天我们还会教你类似的使用工具 -- UKTools。你可以尝试使用这些实用程序中的任何一个来将 Linux 内核升级至最新版本。
 
-**Suggested Read :**
-**(#)** [Linux Kernel Utilities (LKU) – A Set Of Shell Scripts To Compile, Install & Update Latest Kernel In Ubuntu/LinuxMint][1]
-**(#)** [Ukuu – An Easy Way To Install/Upgrade Linux Kernel In Ubuntu based Systems][2]
-**(#)** [6 Methods To Check The Running Linux Kernel Version On System][3]
+最新的内核版本附带了安全漏洞修复和一些改进，因此，最好保持最新的内核版本以获得可靠，安全和更好的硬件性能。
 
-### What Is UKTools
+有时候最新的内核版本可能会有一些漏洞，并且会导致系统崩溃，这是你的风险。我建议你不要在生产环境中安装它。
 
-[UKTools][4] stands for Ubuntu Kernel Tools, that contains two shell scripts `ukupgrade` and `ukpurge`.
+**建议阅读:**
+**(#)** [Linux 内核实用程序（LKU）- 在 Ubuntu/LinuxMint 中编译，安装和更新最新内核的一组 Shell 脚本][1]
+**(#)** [Ukuu - 在基于 Ubuntu 的系统中安装或升级 Linux 内核的简便方法][2]
+**(#)** [6 种检查系统上正在运行的 Linux 内核版本的方法][3]
 
-ukupgrade stands for “Ubuntu Kernel Upgrade”, which allows user to upgrade Linux kernel to latest stable version for Ubuntu/Mint and derivatives based on [kernel.ubuntu.com][5].
+### 什么是 UKTools
 
-ukpurge stands for “Ubuntu Kernel Purge”, which allows user to remove old Linux kernel images/headers in machine for Ubuntu/ Mint and derivatives. It will keep only three kernel versions.
+[UKTools][4] 意思是 Ubuntu 内核工具，它包含两个 shell 脚本 `ukupgrade` 和 `ukpurge`。
 
-There is no GUI for this utility, however it looks very simple and straight forward so, newbie can perform the upgrade without any issues.
+ukupgrade 意思是 “Ubuntu Kernel Upgrade”，它允许用户将 Linux 内核升级到 Ubuntu/Mint 的最新稳定版本以及基于 [kernel.ubuntu.com][5] 的衍生版本。
 
-I’m running Ubuntu 17.10 and the current kernel version is below.
+ukpurge 意思是 “Ubuntu Kernel Purge”，它允许用户在机器中删除旧的 Linux 内核镜像或头文件，用于 Ubuntu/Mint 和其衍生版本。它将只保留三个内核版本。
+
+此实用程序没有 GUI，但它看起来非常简单直接，因此，新手可以在没有任何问题的情况下进行升级。
+
+我正在运行 Ubuntu 17.10，目前的内核版本如下：
 ```
 $ uname -a
 Linux ubuntu 4.13.0-39-generic #44-Ubuntu SMP Thu Apr 5 14:25:01 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
 
 ```
 
-Run the following command to get the list of installed kernel on your system (Ubuntu and derivatives). Currently i’m holding `seven` kernels.
+运行以下命令来获取系统上已安装内核的列表（Ubuntu 及其衍生产品）。目前我持有 `7` 个内核。
 ```
 $ dpkg --list | grep linux-image
 ii linux-image-4.13.0-16-generic 4.13.0-16.19 amd64 Linux kernel image for version 4.13.0 on 64 bit x86 SMP
@@ -56,23 +55,23 @@ ii linux-image-generic 4.13.0.39.42 amd64 Generic Linux kernel image
 
 ```
 
-### How To Install UKTools
+### 如何安装 UKTools
 
-Just run the below commands to install UKTools on Ubuntu and derivatives.
+在 Ubuntu 及其衍生产品上，只需运行以下命令来安装 UKTools 即可。
 
-Run the below command to clone UKTools repository on your system.
+在你的系统上运行以下命令来克隆 UKTools 仓库：
 ```
 $ git clone https://github.com/usbkey9/uktools
 
 ```
 
-Navigate to uktools directory.
+进入 uktools 目录：
 ```
 $ cd uktools
 
 ```
 
-Run the Makefile to generate the necessary files. Also this will automatically install latest available kernel. Just reboot the system in order to use the latest kernel.
+运行 Makefile 以生成必要的文件。此外，这将自动安装最新的可用内核。只需重新启动系统即可使用最新的内核。
 ```
 $ sudo make
 [sudo] password for daygeek:
@@ -192,27 +191,27 @@ Give it a star: https://github.com/MarauderXtreme/uktools
 
 ```
 
-Restart the system to activate the latest kernel.
+重新启动系统以激活最新的内核。
 ```
 $ sudo shutdown -r now
 
 ```
 
-Once the system back to up, re-check the kernel version.
+一旦系统重新启动，重新检查内核版本。
 ```
 $ uname -a
 Linux ubuntu 4.16.7-041607-generic #201805021131 SMP Wed May 2 15:34:55 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
 
 ```
 
-This make command will drop the below files into `/usr/local/bin` directory.
+此 make 命令会将下面的文件放到 `/usr/local/bin` 目录中。
 ```
 do-kernel-upgrade
 do-kernel-purge
 
 ```
 
-To remove old kernels, run the following command.
+要移除旧内核，运行以下命令：
 ```
 $ do-kernel-purge
 
@@ -368,7 +367,7 @@ Thanks for using this script!!!
 
 ```
 
-Re-check the list of installed kernels using the below command. This will keep only old three kernels.
+使用以下命令重新检查已安装内核的列表。它将只保留三个旧的内核。
 ```
 $ dpkg --list | grep linux-image
 ii linux-image-4.13.0-38-generic 4.13.0-38.43 amd64 Linux kernel image for version 4.13.0 on 64 bit x86 SMP
@@ -380,14 +379,15 @@ ii linux-image-unsigned-4.16.7-041607-generic 4.16.7-041607.201805021131 amd64 L
 
 ```
 
-For next time you can call `do-kernel-upgrade` utility for new kernel installation. If any new kernel is available then it will install. If no, it will report no kernel update is available at the moment.
+下次你可以调用 `do-kernel-upgrade` 实用程序来安装新的内核。如果有任何新内核可用，那么它将安装。如果没有，它将报告当前没有可用的内核更新。
 ```
 $ do-kernel-upgrade
 Kernel up to date. Finishing
 
 ```
 
-Run the `do-kernel-purge` command once again to confirm on this. If this found more than three kernels then it will remove. If no, it will report nothing to remove message.
+再次运行 `do-kernel-purge` 命令以确认。如果发现超过三个内核，那么它将移除。如果不是，它将报告没有删除消息。
+
 ```
 $ do-kernel-purge
 
@@ -403,13 +403,14 @@ Thanks for using this script!!!
 
 ```
 
+
 --------------------------------------------------------------------------------
 
 via: https://www.2daygeek.com/uktools-easy-way-to-install-latest-stable-linux-kernel-on-ubuntu-mint-and-derivatives/
 
 作者：[Prakash Subramanian][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[MjSeven](https://github.com/MjSeven)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
