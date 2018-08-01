@@ -25,15 +25,20 @@ If you're interested in checking out a distro's desktop environment（环境） 
 
 如果你有兴趣查看发行版本的桌面环境或购买软件，你不能因为发行版本的一个实时图片而诽谤它。一个生活环境提供给你希望的鸟瞰全局的视角，如何使用户体验更好是由应用程序提供的。
 
-To be fair, you could do the same thing with a virtual machine installation, but it may be a bit overkill if you would rather avoid filling up hard drive space with yet more data. After all, this is a simple tour of the distro. Remember what I said in the first section – I like to run Linux in a virtual machine to test it. This means I'm going to see how it installs, what the partition options look like and other elements you wouldn't see from using a live image of any given distro.
+To be fair, you could do the same thing with a virtual machine installation, but it may be a bit overkill if you would rather（宁可） avoid（消除） filling（填充） up hard drive space with yet more data. After all（毕竟）, this is a simple tour of the distro. Remember what I said in the first section – I like to run Linux in a virtual machine to test it. This means I'm going to see how it installs, what the partition（区分） options look like and other elements（原理） you wouldn't see from using a live image of any given distro.
 
-公平的说，一个虚拟化安装你也可以做同样的事，但是
+公平的说，一个虚拟化安装你也可以做同样的事，但是它有点不好，如果这么做你将要消除硬件上的许多数据。毕竟这是一个简单的发行版。记得我说过在第一部分-我做测试喜欢在虚拟机上运行 Linux 。这个方式我就能看见如何去安装它，使用镜像安装时你讲看不见有区别的操作和其他工作原理。
 
-Touring usually indicates that you're only looking to take a quick look at a distro, so in this case the method that can be done with the least amount of resistance and time investment is a good course of action.
+Touring usually indicates（表明） that you're only looking to take a quick look at a distro, so in this case（情况） the method（方法） that can be done with the least amount（最少的数量） of resistance（阻力） and time investment（时间的投入） is a good course（过程） of action.
+
+通常你仅能看见一个关于发行版本的简短介绍，关于功能用最少的阻力和时间投入，是解决这个问题的好办法。
 
 ### Taking a Linux distro with you
+### 随身携带一个发行版本
 
-While it's not as common as it was a few years ago, the ability to take a Linux distro with you may be a consideration for some users. Obviously, virtual machine installations don't necessarily lend themselves favorably to portability. However a live image of a Linux distro is actually quite portable. A live image can be written to a DVD or copied onto a flash drive for easy traveling.
+While it's not as common（共同的） as it was a few（很少数） years ago, the ability（有……能力） to take a Linux distro with you may be a consideration（担心） for some users. Obviously, virtual machine installations don't necessarily（必要的） lend（提供） themselves favorably（适合他们自己的） to portability（可携带）. However a live image of a Linux distro is actually quite portable. A live image can be written to a DVD or copied onto a flash drive for easy traveling.
+
+这个话题虽然不像几年前那样普遍，使用 Linux 发行版的能力可能是许多用户所顾虑的。明显，适合他们自己携带的系统，虚拟机是无法提供的。无论如何，一个 Linux 发行版本的镜像都十分轻便。一个镜像能够轻松的写入到 DVD 或者 Flash 存储设备中。
 
 Expanding on this concept of Linux portability, it's also beneficial to have a live image on a flash drive when showing off how Linux works on a friend's computer. This empowers you to demonstrate how Linux can enrich their life while not relying on running a virtual machine on their PC. It's a bit of a win-win in favor of using a live image.
 
