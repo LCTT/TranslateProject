@@ -1,3 +1,5 @@
+**Translating by XiatianSummer**
+
 How to edit Adobe InDesign files with Scribus and Gedit
 ======
 
