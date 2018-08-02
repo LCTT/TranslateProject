@@ -1,5 +1,7 @@
-系统管理员的一个网络管理指南
+面向系统管理员的网络管理指南
 ======
+
+> 一个使管理服务器和网络更轻松的 Linux 工具和命令的参考列表。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/openwires_fromRHT_520_0612LL.png?itok=PqZi55Ab)
 
@@ -16,8 +18,6 @@
   * IPv4: `ping <ip address>/<fqdn>`
   * IPv6: `ping6 <ip address>/<fqdn>`
 
-
-
 你也可以使用 `ping` 去解析出网站所对应的 IP 地址，如下图所示：
 
 ![](https://opensource.com/sites/default/files/uploads/ping-screen-0.png)
@@ -32,15 +32,11 @@
 
   * `traceroute <ip address>/<fqdn>`
 
-
-
 ### Telnet
 
 **语法：**
 
   * `telnet <ip address>/<fqdn>` 是用于 [telnet][3] 进入任何支持该协议的服务器。
-
-
 
 ### Netstat
 
@@ -69,19 +65,13 @@
 **语法：**
 
   * `nmcli device` 列出网络上的所有设备。
-
   * `nmcli device show <interface>` 显示指定接口的网络相关的详细情况。
-
   * `nmcli connection` 检查设备的连接情况。
-
   * `nmcli connection down <interface>` 关闭指定接口。
-
   * `nmcli connection up <interface>` 打开指定接口。
-
   * `nmcli con add type vlan con-name <connection-name> dev <interface> id <vlan-number> ipv4 <ip/cidr> gw4 <gateway-ip>` 在特定的接口上使用指定的 VLAN 号添加一个虚拟局域网（VLAN）接口、IP 地址、和网关。
 
   ![](https://opensource.com/sites/default/files/uploads/nmcli.png)
-
 
 ### 路由
 
@@ -101,13 +91,13 @@
 
   * `ip neighbor` 显示当前的邻接表和用于去添加、改变、或删除新的邻居。
 
-![](https://opensource.com/sites/default/files/uploads/ip-neighbor.png)
+	![](https://opensource.com/sites/default/files/uploads/ip-neighbor.png)
 
-![](https://opensource.com/sites/default/files/uploads/ip-neigh-help.png)
+	![](https://opensource.com/sites/default/files/uploads/ip-neigh-help.png)
 
   * `arp` （它的全称是 “地址解析协议”）类似于 `ip neighbor`。`arp` 映射一个系统的 IP 地址到它相应的 MAC（介质访问控制）地址。
 
-![](https://opensource.com/sites/default/files/uploads/arp.png)
+	![](https://opensource.com/sites/default/files/uploads/arp.png)
 
 ### Tcpdump 和 Wireshark
 
@@ -117,7 +107,7 @@ Linux 提供了许多包捕获工具，比如 `tcpdump`、`wireshark`、`tshark`
 
   * `tcpdump -i <interface-name>` 显示指定接口上实时通过的数据包。通过在命令中添加一个 `-w` 标志和输出文件的名字，可以将数据包保存到一个文件中。例如：`tcpdump -w <output-file.> -i <interface-name>`。
 
-![](https://opensource.com/sites/default/files/uploads/tcpdump-i.png)
+	![](https://opensource.com/sites/default/files/uploads/tcpdump-i.png)
 
   * `tcpdump -i <interface> src <source-ip>` 从指定的源 IP 地址上捕获数据包。
   * `tcpdump -i <interface> dst <destination-ip>` 从指定的目标 IP 地址上捕获数据包。
@@ -135,21 +125,15 @@ Linux 提供了许多包捕获工具，比如 `tcpdump`、`wireshark`、`tshark`
   * `iptables -L` 列出所有已存在的 `iptables` 规则。
   * `iptables -F` 删除所有已存在的规则。
 
-
-
 下列命令允许流量从指定端口到指定接口：
 
   * `iptables -A INPUT -i <interface> -p tcp –dport <port-number> -m state –state NEW,ESTABLISHED -j ACCEPT`
   * `iptables -A OUTPUT -o <interface> -p tcp -sport <port-number> -m state – state ESTABLISHED -j ACCEPT`
 
-
-
 下列命令允许<ruby>环回<rt>loopback</rt></ruby>接口访问系统：
 
   * `iptables -A INPUT -i lo -j ACCEPT`
   * `iptables -A OUTPUT -o lo -j ACCEPT`
-
-
 
 ### Nslookup
 
@@ -159,7 +143,6 @@ Linux 提供了许多包捕获工具，比如 `tcpdump`、`wireshark`、`tshark`
 
   * `nslookup <website-name.com>` 显示你的服务器组中 DNS 服务器的 IP 地址，它后面就是你想去访问网站的 IP 地址。
   * `nslookup -type=any <website-name.com>` 显示指定网站/域中所有可用记录。
-
 
 
 ### 网络/接口调试
@@ -182,7 +165,6 @@ Linux 提供了许多包捕获工具，比如 `tcpdump`、`wireshark`、`tshark`
   * `/etc/ntp.conf` 指定 NTP 服务器域名。
 
 
-
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/18/7/sysadmin-guide-networking-commands
@@ -190,7 +172,7 @@ via: https://opensource.com/article/18/7/sysadmin-guide-networking-commands
 作者：[Archit Modi][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[qhwdw](https://github.com/qhwdw)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
