@@ -1,41 +1,38 @@
-FSSlc is translating
-
-4 Essential and Practical Usage of Cut Command in Linux
+Linux 下 cut 命令的 4 个本质且实用的示例
 ============================================================
 
-The cut command is the canonical tool to remove “columns” from a text file. In this context, a “column” can be defined as a range of characters or bytes identified by their physical position on the line, or a range of fields delimited by a separator.
+`cut` 命令是用来从文本文件中移除“某些列”的经典工具。在本文中的“一列”可以被定义为按照一行中位置区分的一系列字符串或者字节， 或者是以某个分隔符为间隔的某些域。
 
-I have written about [using AWK commands][13] earlier. In this detailed guide, I’ll explain four essential and practical examples of cut command in Linux that will help you big time.
+先前我已经介绍了[如何使用 AWK 命令][13]。在本文中，我将解释 linux 下 `cut` 命令的 4 个本质且实用的例子，有时这些例子将帮你节省很多时间。
 
-![Cut Linux command examples](https://i1.wp.com/linuxhandbook.com/wp-content/uploads/2018/07/cut-command-linux.jpeg?resize=702%2C395&ssl=1)
+![Cut Linux 命令示例](https://i1.wp.com/linuxhandbook.com/wp-content/uploads/2018/07/cut-command-linux.jpeg?resize=702%2C395&ssl=1)
 
-### 4 Practical examples of Cut command in Linux
+### Linux 下 cut 命令的 4 个实用示例
 
-If you prefer, you can watch this video explaining the same practical examples of cut command that I have listed in the article.
+假如你想，你可以观看下面的视频，视频中解释了本文中我列举的 cut 命令的使用例子。
 
+目录:
 
-Table of Contents:
+*   [作用在一系列字符上][8]
+    *   [范围如何定义？][1]
 
-*   [Working with character ranges][8]
-    *   [What’s a range?][1]
+*   [作用在一系列字节上][9]
+    *   [作用在多字节编码的字符上][2]
 
-*   [Working with byte ranges][9]
-    *   [Working with multibyte characters][2]
+*   [作用在域上][10]
+    *   [处理不包含分隔符的行][3]
 
-*   [Working with fields][10]
-    *   [Handling lines not containing the delimiter][3]
+    *   [改变输出的分隔符][4]
 
-    *   [Changing the output delimiter][4]
+*   [非 POSIX GNU 扩展][11]
 
-*   [Non-POSIX GNU extensions][11]
+### 1\. 作用在一系列字符上
 
-### 1\. Working with character ranges
+当启用 `-c` 命令行选项时，cut 命令将移除一系列字符。
 
-When invoked with the `-c` command line option, the cut command will remove characterranges.
+和其他的过滤器类似， cut 命令不会就地改变输入的文件，它将复制已修改的数据到它的标准输出里去。你可以通过重定向命令的结果到一个文件中来保存修改后的结果，或者使用管道将结果送到另一个命令的输入中，这些都由你来负责。
 
-Like any other filter, the cut command does not change the input file in place but it will copy the modified data to its standard output. It is your responsibility to redirect the command output to a file to save the result or to use a pipe to send it as input to another command.
-
-If you’ve downloaded the [sample test files][26] used in the video above, you can see the `BALANCE.txt` data file, coming straight out of an accounting software my wife is using at her work:
+假如你已经下载了上面视频中的[示例测试文件][26]，你将看到一个名为 `BALANCE.txt` 的数据文件，这些数据是直接从我妻子在她工作中使用的某款会计软件中导出的：
 
 ```
 sh$ head BALANCE.txt
@@ -51,9 +48,9 @@ ACCDOC    ACCDOCDATE    ACCOUNTNUM ACCOUNTLIB              ACCDOCLIB            
 6         1012017       623795     TOURIST GUIDE BOOK      FACT FA00006253 - BIT QUIROBEN   00000001531,00
 ```
 
-This is a fixed-width text file since the data fields are padded with a variable number of spaces to ensure they are displayed as a nicely aligned table.
+上述文件是一个固定宽度的文本文件，因为对于每一项数据，都使用了不定长的空格做填充，使得它看起来是一个对齐的列表。
 
-As a corollary, a data column always starts and ends at the same character position on each line. There is a little pitfall though: despite its name, the `cut` command actually requires you to specify the range of data you want to  _keep_ , not the range you want to  _remove_ . So, if I need  _only_  the `ACCOUNTNUM` and `ACCOUNTLIB` columns in the data file above, I would write that:
+这样一来，每一列数据开始和结束的位置都是一致的。从 cut 命令的字面意思去理解会给我们带来一个小陷阱：`cut` 命令实际上需要你指出你想_保留_的数据范围，而不是你想_移除_的范围。所以，假如我_只_需要上面文件中的 `ACCOUNTNUM` 和 `ACCOUNTLIB` 列，我需要这么做：
 
 ```
 sh$ cut -c 25-59 BALANCE.txt | head
@@ -69,38 +66,38 @@ ACCOUNTNUM ACCOUNTLIB
 623795     TOURIST GUIDE BOOK
 ```
 
-#### What’s a range?
+#### 范围如何定义？
 
-As we have just seen it, the cut command requires we specify the  _range_  of data we want to keep. So, let’s introduce more formally what is a range: for the `cut` command, a range is defined by a starting and ending position separated by a hyphen. Ranges are 1-based, that is the first item of the line is the item number 1, not 0\. Ranges are inclusive: the start and end will be preserved in the output, as well as all characters between them. It is an error to specify a range whose ending position is before (“lower”) than its starting position. As a shortcut, you can omit the start  _or_  end value as described in the table below:
+正如我们上面看到的那样， cut 命令需要我们特别指定需要保留的数据的_范围_。所以，下面我将更正式地介绍如何定义范围：对于 `cut` 命令来说，范围是由连字符(`-`)分隔的起始和结束位置组成，范围是基于 1 计数的，即每行的第一项是从 1 开始计数的，而不是从 0 开始。范围是一个闭区间，开始和结束位置都将包含在结果之中，正如它们之间的所有字符那样。如果范围中的结束位置比起始位置小，则这种表达式是错误的。作为快捷方式，你可以省略起始_或_结束值，正如下面的表格所示：
 
 
 |||
 |--|--|
-| `a-b` | the range between a and b (inclusive) |
-|`a` | equivalent to the range `a-a` |
-| `-b` | equivalent to `1-a` |
-| `b-` | equivalent to `b-∞` |
+| `a-b` | a 和 b 之间的范围（闭区间） |
+|`a` | 与范围 `a-a` 等价 |
+| `-b` | 与范围 `1-a` 等价 |
+| `b-` | 与范围 `b-∞`  等价 |
 
-The cut commands allow you to specify several ranges by separating them with a comma. Here are a couple of examples:
+cut 命令允许你通过逗号分隔多个范围，下面是一些示例：
 
 ```
-# Keep characters from 1 to 24 (inclusive)
+# 保留 1 到 24 之间（闭区间）的字符
 cut -c -24 BALANCE.txt
 
-# Keep characters from 1 to 24 and 36 to 59 (inclusive)
+# 保留 1 到 24（闭区间）以及 36 到 59（闭区间）之间的字符
 cut -c -24,36-59 BALANCE.txt
 
-# Keep characters from 1 to 24, 36 to 59 and 93 to the end of the line (inclusive)
+# 保留 1 到 24（闭区间）、36 到 59（闭区间）和 93 到该行末尾之间的字符
 cut -c -24,36-59,93- BALANCE.txt
 ```
 
-One limitation (or feature, depending on the way you see it) of the `cut` command is it will  _never reorder the data_ . So the following command will produce exactly the same result as the previous one, despite the ranges being specified in a different order:
+`cut` 命令的一个限制（或者是特性，取决于你如何看待它）是它将 _不会对数据进行重排_。所以下面的命令和先前的命令将产生相同的结果，尽管范围的顺序做了改变：
 
 ```
 cut -c 93-,-24,36-59 BALANCE.txt
 ```
 
-You can check that easily using the `diff` command:
+你可以轻易地使用 `diff` 命令来验证：
 
 ```
 diff -s <(cut -c -24,36-59,93- BALANCE.txt) \
@@ -108,7 +105,7 @@ diff -s <(cut -c -24,36-59,93- BALANCE.txt) \
 Files /dev/fd/63 and /dev/fd/62 are identical
 ```
 
-Similarly, the `cut` command  _never duplicates data_ :
+类似的，`cut` 命令 _不会重复数据_：
 
 ```
 # One might expect that could be a way to repeat
@@ -121,15 +118,15 @@ ACCDOC
 5
 ```
 
-Worth mentioning there was a proposal for a `-o` option to lift those two last limitations, allowing the `cut` utility to reorder or duplicate data. But this was [rejected by the POSIX committee][14] _“because this type of enhancement is outside the scope of the IEEE P1003.2b draft standard.”_ 
+值得提及的是，曾经有一个提议，建议使用 `-o` 选项来实现上面提到的两个限制，使得 `cut` 工具可以重排或者重复数据。但这个提议被 [POSIX 委员会拒绝了][14]，_“因为这类增强不属于 IEEE P1003.2b 草案标准的范围”_。
 
-As of myself, I don’t know any cut version implementing that proposal as an extension. But if you do, please, share that with us using the comment section!
+据我所知，我还没有见过哪个版本的 cut 程序实现了上面的提议，以此来作为扩展，假如你知道某些例外，请使用下面的评论框分享给大家！
 
-### 2\. Working with byte ranges
+### 2\. 作用在一系列字节上
 
-When invoked with the `-b` command line option, the cut command will remove byte ranges.
+当使用 `-b` 命令行选项时，cut 命令将移除字节范围。
 
-At first sight, there is no obvious difference between  _character_  and  _byte_  ranges:
+咋一看，使用_字符_范围和使用_字节_没有什么明显的不同：
 
 ```
 sh$ diff -s <(cut -b -24,36-59,93- BALANCE.txt) \
@@ -137,18 +134,18 @@ sh$ diff -s <(cut -b -24,36-59,93- BALANCE.txt) \
 Files /dev/fd/63 and /dev/fd/62 are identical
 ```
 
-That’s because my sample data file is using the [US-ASCII character encoding][27] (“charset”) as the `file -i` command can correctly guess it:
+这是因为我们的示例数据文件使用的是 [US-ASCII 编码][27]（字符集），使用 `file -i` 便可以正确地猜出来：
 
 ```
 sh$ file -i BALANCE.txt
 BALANCE.txt: text/plain; charset=us-ascii
 ```
 
-In that character encoding, there is a one-to-one mapping between characters and bytes. Using only one byte, you can theoretically encode up to 256 different characters (digits, letters, punctuations, symbols, … ) In practice, that number is much lower since character encodings make provision for some special values (like the 32 or 65 [control characters][28]generally found). Anyway, even if we could use the full byte range, that would be far from enough to store the variety of human writing. So, today, the one-to-one mapping between characters and byte is more the exception than the norm and is almost always replaced by the ubiquitous UTF-8 multibyte encoding. Let’s see now how the cut command could handle that.
+在 US-ASCII 编码中，字符和字节是一一对应的。理论上，你只需要使用一个字节就可以表示 256 个不同的字符（数字、字母、标点符号和某些符号等）。实际上，你能表达的字符数比 256 要更少一些，因为字符编码中为某些特定值做了规定（例如 32 或 65 就是[控制字符][28]）。即便我们能够使用上述所有的字节范围，但对于存储种类繁多的人类手写符号来说，256 是远远不够的。所以如今字符和字节间的一一对应更像是某种例外，并且几乎总是被无处不在的 UTF-8 多字节编码所取代。下面让我们看看如何来处理多字节编码的情形。
 
-#### Working with multibyte characters
+#### 作用在多字节编码的字符上
 
-As I said previously, the sample data files used as examples for that article are coming from an accounting software used by my wife. It appends she updated that software recently and, after that, the exported text files were subtlely different. I let you try spotting the difference by yourself:
+正如我前面提到的那样，示例数据文件来源于我妻子使用的某款会计软件。最近好像她升级了那个软件，然后呢，导出的文本就完全不同了，你可以试试和上面的数据文件相比，找找它们之间的区别：
 
 ```
 sh$ head BALANCE-V2.txt
@@ -164,7 +161,7 @@ ACCDOC    ACCDOCDATE    ACCOUNTNUM ACCOUNTLIB              ACCDOCLIB            
 6         1012017       623795     TOURIST GUIDE BOOK      FACT FA00006253 - BIT QUIROBEN   00000001531,00
 ```
 
-The title of this section might help you in finding what has changed. But, found or not, let see now the consequences of that change:
+上面的标题栏或许能够帮助你找到什么被改变了，但无论你找到与否，现在让我们看看上面的更改过后的结果：
 
 ```
 sh$ cut -c 93-,-24,36-59 BALANCE-V2.txt
@@ -200,23 +197,23 @@ ACCDOC    ACCDOCDATE    ACCOUNTLIB              DEBIT          CREDIT
 36        1012017       VAT BS/ENC                00000000013,83
 ```
 
-I have copied above the command output  _in-extenso_  so it should be obvious something has gone wrong with the column alignment.
+我已经_毫无删减地_复制了上面命令的输出。所以可以很明显地看出列对齐那里有些问题。
 
-The explanation is the original data file contained only US-ASCII characters (symbol, punctuations, numbers and Latin letters without any diacritical marks)
+对此我的解释是原来的数据文件只包含 US-ASCII 编码的字符（符号、标点符号、数字和没有发音符号的拉丁字母）。
 
-But if you look closely at the file produced after the software update, you can see that new export data file now preserves accented letters. For example, the company named “ALNÉENRE” is now properly spelled whereas it was previously exported as “ALNEENRE” (no accent)
+但假如你仔细地查看经软件升级后产生的文件，你可以看到新导出的数据文件保留了带发音符号的字母。例如名为“ALNÉENRE”的公司现在被合理地记录了，而不是先前的 “ALNEENRE”（没有发音符号）。
 
-The `file -i` utility did not miss that change since it reports now the file as being [UTF-8 encoded][15]:
+`file -i` 正确地识别出了改变，因为它报告道现在这个文件是 [UTF-8 编码][15] 的。
 
 ```
 sh$ file -i BALANCE-V2.txt
 BALANCE-V2.txt: text/plain; charset=utf-8
 ```
 
-To see how are encoded accented letters in an UTF-8 file, we can use the `[hexdump][12]` utility that allows us to look directly at the bytes in a file:
+如果想看看 UTF-8 文件中那些带发音符号的字母是如何编码的，我们可以使用 `[hexdump][12]`，它可以让我们直接以字节形式查看文件：
 
 ```
-# To reduce clutter, let's focus only on the second line of the file
+# 为了减少输出，让我们只关注文件的第 2 行
 sh$ sed '2!d' BALANCE-V2.txt
 4         1012017       623477     TIDE SCHEDULE           ALNÉENRE-4701-LOC                00000001615,00
 sh$ sed '2!d' BALANCE-V2.txt  | hexdump -C
@@ -231,32 +228,31 @@ sh$ sed '2!d' BALANCE-V2.txt  | hexdump -C
 0000007c
 ```
 
-On the line 00000030 of the `hexdump` output, after a bunch of spaces (byte `20`), you can see:
+在 `hexdump`  输出的 00000030 那行，在一系列的空格（字节 `20`）之后，你可以看到：
 
-*   the letter `A` is encoded as the byte `41`,
+*   字母 `A` 被编码为 `41`，
 
-*   the letter `L` is encoded a the byte `4c`,
+*   字母 `L` 被编码为 `4c`，
 
-*   and the letter `N` is encoded as the byte `4e`.
+*   字母 `N` 被编码为 `4e`。
 
-But, the uppercase [LATIN CAPITAL LETTER E WITH ACUTE][16] (as it is the official name of the letter  _É_  in the Unicode standard) is encoded using the  _two_  bytes `c3 89`
+但对于大写的[带有注音的拉丁大写字母 E][16] （这是它在 Unicode 标准中字母 _É_ 的官方名称），则是使用 _2_ 个字节 `c3 89` 来编码的。
 
-And here is the problem: using the `cut` command with ranges expressed as byte positions works well for fixed length encodings, but not for variable length ones like UTF-8 or [Shift JIS][17]. This is clearly explained in the following [non-normative extract of the POSIX standard][18]:
+这样便出现问题了：对于使用固定宽度编码的文件， 使用字节位置来表示范围的 `cut` 命令工作良好，但这并不适用于使用变长编码的 UTF-8 或者 [Shift JIS][17] 编码。这种情况在下面的 [POSIX标准的非规范性摘录][18] 中被明确地解释过：
 
-> Earlier versions of the cut utility worked in an environment where bytes and characters were considered equivalent (modulo <backspace> and <tab> processing in some implementations). In the extended world of multi-byte characters, the new -b option has been added.
+> 先前版本的 cut 程序将字节和字符视作等同的环境下运作（正如在某些实现下对 退格键<backspace> 和制表键<tab> 的处理）。在针对多字节字符的情况下，特别增加了 `-b` 选项。
 
-Hey, wait a minute! I wasn’t using the `-b` option in the “faulty” example above, but the `-c`option. So,  _shouldn’t_  that have worked?!?
+嘿，等一下！我并没有在上面“有错误”的例子中使用 '-b' 选项，而是 `-c` 选项呀！所以，难道_不应该_能够成功处理了吗！？
 
-Yes, it  _should_ : it is unfortunate, but we are in 2018 and despite that, as of GNU Coreutils 8.30, the GNU implementation of the cut utility still does not handle multi-byte characters properly. To quote the [GNU documentation][19], the `-c` option is  _“The same as -b for now, but internationalization will change that[… ]”_  — a mention that is present since more than 10 years now!
+是的，确实_应该_：但是很不幸，即便我们现在已身处 2018 年，GNU Coreutils 的版本为 8.30 了，cut 程序的 GNU 版本实现仍然不能很好地处理多字节字符。引用 [GNU 文档][19] 的话说，_`-c` 选项“现在和 `-b` 选项是相同的，但对于国际化的情形将有所不同[...]”_。需要提及的是，这个问题距今已有 10 年之久了！
 
-On the other hand, the [OpenBSD][20] implementation of the cut utility is POSIX compliant, and will honor the current locale settings to handle multi-byte characters properly:
+另一方面，[OpenBSD][20] 的实现版本和 POSIX 相吻合，这将归功于当前的本地化(locale) 设定来合理地处理多字节字符：
 
 ```
-# Ensure subseauent commands will know we are using UTF-8 encoded
-# text files
+# 确保随后的命令知晓我们现在处理的是 UTF-8 编码的文本文件
 openbsd-6.3$ export LC_CTYPE=en_US.UTF-8
 
-# With the `-c` option, cut works properly with multi-byte characters
+# 使用 `-c` 选项， cut 能够合理地处理多字节字符
 openbsd-6.3$ cut -c -24,36-59,93- BALANCE-V2.txt
 ACCDOC    ACCDOCDATE    ACCOUNTLIB              DEBIT          CREDIT
 4         1012017       TIDE SCHEDULE           00000001615,00
@@ -290,7 +286,7 @@ ACCDOC    ACCDOCDATE    ACCOUNTLIB              DEBIT          CREDIT
 36        1012017       VAT BS/ENC              00000000013,83
 ```
 
-As expected, when using the `-b` byte mode instead of the `-c` character mode, the OpenBSD cut implementation behave like the legacy `cut`:
+正如期望的那样，当使用 `-b` 选项而不是 `-c` 选项后， OpenBSD 版本的 cut 实现和传统的 `cut` 表现是类似的：
 
 ```
 openbsd-6.3$ cut -b -24,36-59,93- BALANCE-V2.txt
@@ -326,11 +322,11 @@ ACCDOC    ACCDOCDATE    ACCOUNTLIB              DEBIT          CREDIT
 36        1012017       VAT BS/ENC                00000000013,83
 ```
 
-### 3\. Working with fields
+### 3\. 作用在域上
 
-In some sense, working with fields in a delimited text file is easier for the `cut` utility, since it will only have to locate the (one byte) field delimiters on each row, copying then verbatim the field content to the output without bothering with any encoding issues.
+从某种意义上说，使用 `cut` 来处理用特定分隔符隔开的文本文件要更加容易一些，因为只需要确定好每行中域之间的分隔符，然后复制域的内容到输出就可以了，而不需要烦恼任何与编码相关的问题。
 
-Here is a sample delimited text file:
+下面是一个用分隔符隔开的示例文本文件：
 
 ```
 sh$ head BALANCE.csv
@@ -346,9 +342,9 @@ ACCDOC;ACCDOCDATE;ACCOUNTNUM;ACCOUNTLIB;ACCDOCLIB;DEBIT;CREDIT
 6;1012017;623795;TOURIST GUIDE BOOK;FACT FA00006253 - BIT QUIROBEN;00000001531,00;
 ```
 
-You may know that file format as [CSV][29] (for Comma-separated Value), even if the field separator is not always a comma. For example, the semi-colon (`;`) is frequently encountered as a field separator, and it is often the default choice when exporting data as “CSV” in countries already using the comma as the [decimal separator][30] (like we do in France — hence the choice of that character in my sample file). Another popular variant uses a [tab character][31] as the field separator, producing what is sometimes called a [tab-separated values][32] file. Finally, in the Unix and Linux world, the colon (`:`) is yet another relatively common field separator you may find, for example, in the standard `/etc/passwd` and `/etc/group` files.
+你可能知道上面文件是一个 [CSV][29] 格式的文件（它以逗号来分隔），即便有时候域分隔符不是逗号。例如分号（`;`）也常被用来作为分隔符，并且对于那些总使用逗号作为 [十进制分隔符][30]的国家（例如法国，所以上面我的示例文件中选用了他们国家的字符），当导出数据为 "CSV" 格式时，默认将使用分号来分隔数据。另一种常见的情况是使用 [tab 键][32] 来作为分隔符，从而生成叫做 [tab 分隔数值][32] 的文件。最后，在 Unix 和 Linux 领域，冒号 (`:`) 是另一种你能找到的常见分隔符号，例如在标准的 `/etc/passwd` 和 `/etc/group` 这两个文件里。
 
-When using a delimited text file format, you provide to the cut command the range of fields to keep using the `-f` option, and you have to specify the delimiter using the `-d` option (without the `-d` option, the cut utility defaults to a tab character for the separator):
+当处理使用分隔符隔开的文本文件格式时，你可以向带有 `-f` 选项的 cut 命令提供需要保留的域的范围，并且你也可以使用 `-d` 选项来制定分隔符（当没有使用 `-d` 选项时，默认以 tab 字符来作为分隔符）：
 
 ```
 sh$ cut -f 5- -d';' BALANCE.csv | head
@@ -364,11 +360,11 @@ FACT FA00006253 - BIT QUIROBEN;00000000306,20;
 FACT FA00006253 - BIT QUIROBEN;00000001531,00;
 ```
 
-#### Handling lines not containing the delimiter
+#### 处理不包含分隔符的行
 
-But what if some line in the input file does not contain the delimiter? It is tempting to imagine that as a row containing only the first field. But this is  _not_  what the cut utility does.
+但要是输入文件中的某些行没有分隔符又该怎么办呢？很容易地认为可以将这样的行视为只包含第一个域。但 cut 程序并 _不是_ 这样做的。 
 
-By default, when using the `-f` option, the cut utility will always output verbatim a line that does not contain the delimiter (probably assuming this is a non-data row like a header or comment of some sort):
+默认情况下，当使用 `-f` 选项时， cut 将总是原样输出不包含分隔符的那一行（可能假设它是非数据行，就像表头或注释等）：
 
 ```
 sh$ (echo "# 2018-03 BALANCE"; cat BALANCE.csv) > BALANCE-WITH-HEADER.csv
@@ -381,7 +377,7 @@ DEBIT;CREDIT
 ;00000001938,00
 ```
 
-Using the `-s` option, you can reverse that behavior, so `cut` will always ignore such line:
+使用 `-s` 选项，你可以做出相反的行为，这样 `cut` 将总是忽略这些行：
 
 ```
 sh$ cut -s -f 6,7 -d';' BALANCE-WITH-HEADER.csv | head -5
@@ -392,16 +388,17 @@ DEBIT;CREDIT
 00000001333,00;
 ```
 
-If you are in a hackish mood, you can exploit that feature as a relatively obscure way to keep only lines containing a given character:
+假如你好奇心强，你还可以探索这种特性，来作为一种相对   
+隐晦的方式去保留那些只包含给定字符的行：
 
 ```
-# Keep lines containing a `e`
+# 保留含有一个 `e` 的行
 sh$ printf "%s\n" {mighty,bold,great}-{condor,monkey,bear} | cut -s -f 1- -d'e'
 ```
 
-#### Changing the output delimiter
+#### 改变输出的分隔符
 
-As an extension, the GNU implementation of cut allows to use a different field separator for the output using the `--output-delimiter` option:
+作为一种扩展， GNU 版本实现的 cut 允许通过使用 `--output-delimiter` 选项来为结果指定一个不同的域分隔符：
 
 ```
 sh$ cut -f 5,6- -d';' --output-delimiter="*" BALANCE.csv | head
@@ -417,32 +414,31 @@ FACT FA00006253 - BIT QUIROBEN*00000000306,20*
 FACT FA00006253 - BIT QUIROBEN*00000001531,00*
 ```
 
-Notice, in that case, all occurrences of the field separator are replaced, and not only those at the boundary of the ranges specified on the command line arguments.
+需要注意的是，在上面这个例子中，所有出现域分隔符的地方都被替换掉了，而不仅仅是那些在命令行中指定的作为域范围边界的分隔符。
 
-### 4\. Non-POSIX GNU extensions
+### 4\. 非 POSIX GNU 扩展
 
-Speaking of non-POSIX GNU extension, a couple of them that can be particularly useful. Worth mentioning the following extensions work equally well with the byte, character (for what that means in the current GNU implementation) or field ranges:
+说到非 POSIX GNU 扩展，它们中的某些特别有用。特别需要提及的是下面的扩展也同样对字节、字符或者域范围工作良好（相对于当前的 GNU 实现来说）。
 
-Think of that option like the exclamation mark in a sed address (`!`); instead of keeping the data matching the given range, `cut` will keep data NOT matching the range
+想想在 sed 地址中的感叹符号(`!`)，使用它，`cut` 将只保存**没有**被匹配到的范围:
 
 ```
-# Keep only field 5
+# 只保留第 5 个域
 sh$ cut -f 5 -d';' BALANCE.csv |head -3
 ACCDOCLIB
 ALNEENRE-4701-LOC
 ALNEENRE-4701-LOC
 
-# Keep all but field 5
+# 保留除了第 5 个域之外的内容
 sh$ cut --complement -f 5 -d';' BALANCE.csv |head -3
 ACCDOC;ACCDOCDATE;ACCOUNTNUM;ACCOUNTLIB;DEBIT;CREDIT
 4;1012017;623477;TIDE SCHEDULE;00000001615,00;
 4;1012017;445452;VAT BS/ENC;00000000323,00;
 ```
 
-use the [NUL character][6] as the line terminator instead of the [newline character][7]. The `-z`option is particularly useful when your data may contain embedded newline characters, like when working with filenames (since newline is a valid character in a filename, but NUL isn’t).
+使用 [NUL 字符][6] 来作为行终止符，而不是 [新行（newline）字符][7]。当你的数据包含 新行 字符时， `-z` 选项就特别有用了，例如当处理文件名的时候（因为在文件名中 新行 字符是可以使用的，而 NUL 则不可以）。
 
-
-To show you how the `-z` option works, let’s make a little experiment. First, we will create a file whose name contains embedded new lines:
+为了展示 `-z` 选项，让我们先做一点实验。首先，我们将创建一个文件名中包含换行符的文件：
 
 ```
 bash$ touch $'EMPTY\nFILE\nWITH FUNKY\nNAME'.txt
@@ -452,7 +448,7 @@ BALANCE-V2.txt
 EMPTY?FILE?WITH FUNKY?NAME.txt
 ```
 
-Let’s now assume I want to display the first 5 characters of each `*.txt` file name. A naive solution will miserably fail here:
+现在假设我想展示每个 `*.txt` 文件的前 5 个字符。一个想当然的解法将会失败：
 
 ```
 sh$ ls -1 *.txt | cut -c 1-5
@@ -464,7 +460,7 @@ WITH
 NAME.
 ```
 
-You may have already read `[ls][21]` was designed for [human consumption][33], and using it in a command pipeline is an anti-pattern (it is indeed). So let’s use the `[find][22]` command instead:
+你可以已经知道 `[ls][21]` 是为了[方便人类使用][33]而特别设计的，并且在一个命令管道中使用它是一个反模式（确实是这样的）。所以让我们用 `[find][22]` 来替换它：
 
 ```
 sh$ find . -name '*.txt' -printf "%f\n" | cut -c 1-5
@@ -476,33 +472,32 @@ NAME.
 BALAN
 ```
 
-and … that produced basically the same erroneous result as before (although in a different order because `ls` implicitly sorts the filenames, something the `find` command does not do)
+上面的命令基本上产生了与先前类似的结果（尽管以不同的次序，因为 `ls` 会隐式地对文件名做排序，而 `find` 则不会）。
 
-The problem is in both cases, the `cut` command can’t make the distinction between a newline character being part of a data field (the filename), and a newline character used as an end of record marker. But, using the NUL byte (`\0`) as the line terminator clears the confusion so we can finally obtain the expected result:
+在上面的两个例子中，都有一个相同的问题，`cut` 命令不能区分 新行 字符是数据域的一部分（即文件名），还是作为最后标记的 新行 记号。但使用 NUL 字节（`\0`）来作为行终止符就将排除掉这种混淆的情况，使得我们最后可以得到期望的结果：
 
 ```
-# I was told (?) some old versions of tr require using \000 instead of \0
-# to denote the NUL character (let me know if you needed that change!)
+# 我被告知在某些旧版的 `tr` 程序中需要使用 `\000` 而不是 `\0` 来代表 NUL 字符（假如你需要这种改变请让我知晓！）
 sh$ find . -name '*.txt' -printf "%f\0" | cut -z -c 1-5| tr '\0' '\n'
 BALAN
 EMPTY
 BALAN
 ```
 
-With that latest example, we are moving away from the core of this article that was the `cut`command. So, I will let you try to figure by yourself the meaning of the funky `"%f\0"` after the `-printf` argument of the `find` command or why I used the `[tr][23]` command at the end of the pipeline.
+通过上面最后的例子，我们就达到了本文的最后部分了，所以我将让你自己试试 `-printf` 后面那个有趣的 `"%f\0"` 参数或者理解为什么我在管道的最后使用了 `[tr][23]` 命令。
 
-### A lot more can be done with Cut command
+### 使用 cut 命令可以实现更多功能
 
-I just showed the most common and in my opinion the most essential usage of Cut command. You can apply the command in even more practical ways. It depends on your logical reasoning and imagination.
+我只是列举了 cut 命令的最常见且在我眼中最实质的使用方式。你甚至可以将它以更加实用的方式加以运用，这取决于你的逻辑和想象。
 
-Don’t hesitate to use the comment section below to post your findings. And, as always, if you like this article, don’t forget to share it on your favorite websites and social media!
+不要再犹豫了，请使用下面的评论框贴出你的发现。最后一如既往的，假如你喜欢这篇文章，请不要忘记将它分享到你最喜爱网站和社交媒体中！
 
 --------------------------------------------------------------------------------
 
 via: https://linuxhandbook.com/cut-command/
 
 作者：[Sylvain Leroux ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[FSSlc](https://github.com/FSSlc)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
