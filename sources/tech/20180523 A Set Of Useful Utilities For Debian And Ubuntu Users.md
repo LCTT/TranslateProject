@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 A Set Of Useful Utilities For Debian And Ubuntu Users
 ======
 

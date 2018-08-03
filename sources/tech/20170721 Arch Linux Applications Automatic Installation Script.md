@@ -1,3 +1,5 @@
+fuowang 翻译中
+
 Arch Linux Applications Automatic Installation Script
 ======
 
