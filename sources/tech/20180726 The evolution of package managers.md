@@ -1,3 +1,5 @@
+Translating by DavidChenLiang
+
 The evolution of package managers
 ======
 
