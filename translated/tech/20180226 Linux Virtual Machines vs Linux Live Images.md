@@ -38,13 +38,18 @@ Touring usually indicates（表明） that you're only looking to take a quick l
 
 While it's not as common（共同的） as it was a few（很少数） years ago, the ability（有……能力） to take a Linux distro with you may be a consideration（担心） for some users. Obviously, virtual machine installations don't necessarily（必要的） lend（提供） themselves favorably（适合他们自己的） to portability（可携带）. However a live image of a Linux distro is actually quite portable. A live image can be written to a DVD or copied onto a flash drive for easy traveling.
 
-这个话题虽然不像几年前那样普遍，使用 Linux 发行版的能力可能是许多用户所顾虑的。明显，适合他们自己携带的系统，虚拟机是无法提供的。无论如何，一个 Linux 发行版本的镜像都十分轻便。一个镜像能够轻松的写入到 DVD 或者 Flash 存储设备中。
+这个话题虽然不像几年前那样普遍，使用 Linux 发行版的能力可能是许多用户所顾虑的。明显，适合他们自己携带的系统，虚拟机是无法提供的。无论如何，一个 Linux 发行版本的镜像是具有可移植性的。一个镜像能够轻松的写入到 DVD 或者 Flash 存储设备中。
 
-Expanding on this concept of Linux portability, it's also beneficial to have a live image on a flash drive when showing off how Linux works on a friend's computer. This empowers you to demonstrate how Linux can enrich their life while not relying on running a virtual machine on their PC. It's a bit of a win-win in favor of using a live image.
+Expanding（花费） on this concept（概念） of Linux portability（轻便/便携）, it's also beneficial（有益处） to have a live image on a flash drive when showing off how Linux works on a friend's computer. This empowers（授权） you to demonstrate（证明） how Linux can enrich（充实/使丰富） their life while not relying on running a virtual machine on their PC. It's a bit of a win-win in favor（喜爱） of using a live image.
+
+在 Linux 可移植性的概念上花费时间，这有益于在一个朋友的电脑上使用 Flash 存储设备安装镜像版 Linux 。这个授权使你能证明 Linux 能充实他们的生活，虽然在他们的 PC 上运行一个虚拟机是不可靠的。在喜爱使用镜像的用户哪里，它是双赢的。
 
 ### Alternative to dual-booting Linux
+### 选择做双系统 Linux
 
-This next item is a huge one. Consider this – perhaps you're a Windows user. You like playing with Linux, but would rather not take the plunge. Dual-booting is out of the question in case something goes wrong or perhaps you're not comfortable identifying individual partitions. Whatever the case may be, both using Linux in a virtual machine or from a live image might be a great option for you.
+This next item is a huge one. Consider this – perhaps you're a Windows user. You like playing with Linux, but would rather not take the plunge. Dual-booting is out of the question in case（情况） something goes wrong or perhaps you're not comfortable identifying individual partitions. Whatever the case may be, both using Linux in a virtual machine or from a live image might be a great option for you.
+
+这是一个巨大的项目。考虑一些事，例如你在使用 Windows .你喜欢玩 Linux ，但是宁可不获取插件。在一些出状况或考虑你不是拥有单独分区，双系统将是一个问题。不管什么样的情况，同时使用 Linux 虚拟机和镜像系统都对于你是一个很好的选择。
 
 Now I'm going to take a rather odd stance on something. I think you'll get far more value in the long term running Linux on a flash drive using a live image than with a virtual machine. There are two reasons for this. First of all, you'll get used to truly running Linux vs running it inside of a virtual machine on top of Windows. Second, you can setup your flash drive to contain user data with persistent storage.
 
