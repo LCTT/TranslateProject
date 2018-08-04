@@ -34,7 +34,7 @@ via: https://opensource.com/article/18/7/textricator
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:
+[a]:https://opensource.com/users/stephenbyrne-mfj
 [1]:https://textricator.mfj.io/
 [2]:https://tabula.technology/
 [3]:https://github.com/measuresforjustice/textricator
