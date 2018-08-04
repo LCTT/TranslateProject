@@ -1,3 +1,5 @@
+Translating by jessie-pang
+
 How To Check All Running Services In Linux
 ======
 
