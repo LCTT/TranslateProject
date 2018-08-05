@@ -143,105 +143,133 @@ Ext3 为每一个新分配的块调用一次块分配器。当多个编写器同
 
 保证数据立即写入磁盘的方法是正确调用 `fsync()` 。
 
-#### Unlimited subdirectories
+#### 无限制的子目录
 
-Ext3 was limited to a total of 32,000 subdirectories; ext4 allows an unlimited number. Beginning with kernel 2.6.23, ext4 uses HTree indices to mitigate performance loss with huge numbers of subdirectories.
+Ext3 仅限于 32000 个子目录；ext4 允许w无限数量的子目录。从 2.6.23内核版本开始，ext4 使用 HTree 索引来减少大量子目录的性能损失。
 
-#### Journal checksumming
+#### 日志校验
 
-Ext3 did not checksum its journals, which presented problems for disk or controller devices with caches of their own, outside the kernel's direct control. If a controller or a disk with its own cache did writes out of order, it could break ext3's journaling transaction order, potentially corrupting files being written to during (or for some time preceding) a crash.
+Ext3 没有对日志进行校验，这给内核直接控制之外的磁盘或控制器设备带来了自己的缓存问题。如果控制器或具有子集对缓存的磁盘确实无序写入，则可能会破坏 ext3 的日记事务顺序，
+从而可能破坏在崩溃期间（或之前一段时间）写入的文件。
+ 
+理论上，这个问题可以使用 write barriers—— 在安装文件系统时，你在挂载选项设置`barrier=1` ，然后将设备 `fsync` 一直向下调用直到 metal。通过实践，可以发现存储设备和控制器经常不遵守 write barriers —— 提高性能（和 benchmarks，跟竞争对手比较），但
+增加了本应该防止数据损坏的可能性。
 
-In theory, this problem is resolved by the use of write barriers—when mounting the filesystem, you set `barrier=1` in the mount options, and the device will then honor `fsync()` calls all the way down to the metal. In practice, it's been discovered that storage devices and controllers frequently do not honor write barriers—improving performance (and benchmarks, where they're compared to their competitors) but opening up the possibility of data corruption that should have been prevented.
+对日志进行校验和允许文件系统奔溃后意识到其某些条目在第一次安装时无效或无序。因此，这避免了即使部分存储设备不存在 barriers ，也会回滚部分或无序日志条目和进一步损坏的文件系统的错误。rolling back partial or out-of-order journal entries and further damaging the filesystem—even if the storage devices lie and don't honor barriers.
 
-Checksumming the journal allows the filesystem to realize that some of its entries are invalid or out-of-order on the first mount after a crash. This thereby avoids the mistake of rolling back partial or out-of-order journal entries and further damaging the filesystem—even if the storage devices lie and don't honor barriers.
+#### 快速文件系统检查
 
-#### Fast filesystem checks
+在 ext3 下，整个文件系统 —— 包括已删除或空文件 —— 在 `fsck` 被调用时需要检查。相比之下，ext4 标记了未分配块和 inode 表的小部分，从而允许 `fsck` 完全跳过它们。
+这大大减少了在大多数文件系统上运行 `fsck` 的时间，并从内核 2.6.24 开始实现。
 
-Under ext3, the entire filesystem—including deleted and empty files—required checking when `fsck` is invoked. By contrast, ext4 marks unallocated blocks and sections of the inode table as such, allowing `fsck` to skip them entirely. This greatly reduces the time to run `fsck` on most filesystems and has been implemented since kernel 2.6.24.
+#### 改进的时间戳
 
-#### Improved timestamps
+Ext3提供粒度为一秒的时间戳。虽然足以满足大多数用途，但任务关键型应用程序经常需要更严格的时间控制。Ext4 通过提供纳秒级的时间戳，使其可用于那些企业，科学以及任务关键型的应用程序。
 
-Ext3 offered timestamps granular to one second. While sufficient for most uses, mission-critical applications are frequently looking for much, much tighter time control. Ext4 makes itself available to those enterprise, scientific, and mission-critical applications by offering timestamps in the nanoseconds.
+Ext3文件系统也没有提供足够的位来存储 2038年1月18日以后的日期。Ext4 在这里增加了两位，将 [the Unix epoch][5] 扩展了 408年。如果你在公元 2446 年读到这篇文章，
+你有希望已经转移到一个更好的文件系统 - 但是如果你还在测量 UTC 00:00，1970年1月1日以来的时间，它会让我非常非常高兴。
 
-Ext3 filesystems also did not provide sufficient bits to store dates beyond January 18, 2038. Ext4 adds an additional two bits here, extending [the Unix epoch][5] another 408 years. If you're reading this in 2446 AD, you have hopefully already moved onto a better filesystem—but it'll make me posthumously very, very happy if you're still measuring the time since UTC 00:00, January 1, 1970.
+#### 在线碎片整理
 
-#### Online defragmentation
+ext2 和 ext3 都不直接支持在线碎片整理 —— 即在挂载时会对文件系统进行碎片整理。Ext2有一个包含的实用程序，**e2defrag**，它的名字暗示 —— 但它需要在文件系统未挂载时脱机运行。
+（显然，这对于根文件系统来说非常有问题。）在 ext3 中的情况甚至更糟糕 - 虽然 ext3 比 ext2 更不容易受到严重碎片的影响，但 ext3 文件系统运行 **e2defrag** 可能会导致灾难性损坏
+和数据丢失。
 
-Neither ext2 nor ext3 directly supported online defragmentation—that is, defragging the filesystem while mounted. Ext2 had an included utility, **e2defrag** , that did what the name implies—but it needed to be run offline while the filesystem was not mounted. (This is, obviously, especially problematic for a root filesystem.) The situation was even worse in ext3—although ext3 was much less likely to suffer from severe fragmentation than ext2 was, running **e2defrag** against an ext3 filesystem could result in catastrophic corruption and data loss.
+尽管 ext3 最初被认为“不受碎片影响”，但对同一文件（例如 BitTorrent）采用大规模并行写入过程的过程清楚地表明情况并非完全如此。一些用户空间攻击和解决方法，例如 [Shake][6]，
+以这种或那种方式解决了这个问题 —— 但它们比真正的、文件系统感知的、内核级碎片整理过程更慢并且在各方面都不太令人满意。
 
-Although ext3 was originally deemed "unaffected by fragmentation," processes that employ massively parallel write processes to the same file (e.g., BitTorrent) made it clear that this wasn't entirely the case. Several userspace hacks and workarounds, such as [Shake][6], addressed this in one way or another—but they were slower and in various ways less satisfactory than a true, filesystem-aware, kernel-level defrag process.
+Ext4通过 **e4defrag** 解决了这个问题，且是一个在线、内核模式、文件系统感知、块和范围级别的碎片整理实用程序。
 
-Ext4 addresses this problem head on with **e4defrag** , an online, kernel-mode, filesystem-aware, block-and-extent-level defragmentation utility.
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+### 正在进行的ext4开发
 
-### Ongoing ext4 development
+正如 Monty Python （ plague victim？？）曾经说过的那样，Ext4 “还没完全死！” 虽然它的[主要开发人员][7]认为它只是一个真正的[下一代文件系统][8]的权宜之计，但是在一段时间内，没有任何可能的候选人准备好（由于技术或许可问题）部署为根文件系统。
 
-Ext4 is, as the Monty Python plague victim once said, "not quite dead yet!" Although [its principal developer regards it][7] as a mere stopgap along the way to a truly [next-generation filesystem][8], none of the likely candidates will be ready (due to either technical or licensing problems) for deployment as a root filesystem for some time yet.
+在未来的 ext4 版本中仍然有一些关键功能，包括元数据校验和、一流的配额支持和大型分配块。
 
-There are still a few key features being developed into future versions of ext4, including metadata checksumming, first-class quota support, and large allocation blocks.
+#### 元数据校验和
 
-#### Metadata checksumming
+由于 ext4 具有冗余超级块，因此为文件系统校验其中的元数据提供了一种方法，可以自行确定主超级块是否已损坏并需要使用备用块。可以在没有校验和的情况下
+从损坏的超级块恢复 —— 但是用户首先需要意识到它已损坏，然后尝试使用备用方法手动挂载文件系统。由于在某些情况下，使用损坏的主超级块安装文件系统读写
+可能会造成进一步的损坏，即使是经验丰富的用户也无法避免，这也不是一个完美的解决方案！
 
-Since ext4 has redundant superblocks, checksumming the metadata within them offers the filesystem a way to figure out for itself whether the primary superblock is corrupt and needs to use an alternate. It is possible to recover from a corrupt superblock without checksumming—but the user would first need to realize that it was corrupt, and then try manually mounting the filesystem using an alternate. Since mounting a filesystem read-write with a corrupt primary superblock can, in some cases, cause further damage, this isn't a sufficient solution, even with a sufficiently experienced user!
+与 btrfs 或 zfs 等下一代文件系统提供的极其强大的每块校验和相比，ext4 的元数据校验和功能非常弱。但它总比没有好。
 
-Compared to the extremely robust per-block checksumming offered by next-gen filesystems such as btrfs or zfs, ext4's metadata checksumming is a pretty weak feature. But it's much better than nothing.
+虽然校验和所有的事情都听起来很简单！—— 事实上，将校验和连接到文件系统有一些重大的挑战； 请参阅[设计文档][9]了解详细信息。
 
-Although it sounds like a no-brainer—yes, checksum ALL THE THINGS!—there are some significant challenges to bolting checksums into a filesystem after the fact; see [the design document][9] for the gritty details.
+#### 一流的配额支持
 
-#### First-class quota support
+等等，配额？！从 ext2 出现的那条开始我们就有了这些！是的，但他们一直都是事后的想法，而且他们总是有点傻逼。这里可能不值得详细介绍，
+但[设计文档][10]列出了配额将从用户空间移动到内核中的方式，并且能够更加正确和高效地执行。
 
-Wait, quotas?! We've had those since the ext2 days! Yes, but they've always been an afterthought, and they've always kinda sucked. It's probably not worth going into the hairy details here, but the [design document][10] lays out the ways quotas will be moved from userspace into the kernel and more correctly and performantly enforced.
+#### 大分配块
+随着时间的推移，那些讨厌的存储系统不断变得越来越大。由于一些固态硬盘已经使用 8K 硬件模块，因此 ext4 对 4K 模块的当前限制越来越受到限制。
+较大的存储块可以显着减少碎片并提高性能，代价是增加“松弛”空间（当您只需要块的一部分来存储文件或文件的最后一块时留下的空间）。
 
-#### Large allocation blocks
+您可以在[设计文档][11]中查看详细说明。
++++++++++++++++++++++++++++++++++++++++++++++==
 
-As time goes by, those pesky storage systems keep getting bigger and bigger. With some solid-state drives already using 8K hardware blocksizes, ext4's current limitation to 4K blocks gets more and more limiting. Larger storage blocks can decrease fragmentation and increase performance significantly, at the cost of increased "slack" space (the space left over when you only need part of a block to store a file or the last piece of a file).
+### ext4的实际限制
 
-You can view the hairy details in the [design document][11].
+Ext4是一个健壮，稳定的文件系统。它是大多数人应该在 2018 年用作根文件系统的东西，但它无法处理所有内容。让我们简单地谈谈你不应该期待的一些事情 —— 现在或可能在未来。
 
-### Practical limitations of ext4
+虽然 ext4 可以处理高达 1 EiB 相当于 1,000,000 TiB 的数据，但你真的、真的不应该尝试这样做。除了仅仅能够记住更多块的地址之外，还存在规模上的问题
+并且现在 ext4 不会处理（并且可能永远不会）超过 50 —— 100TiB 的数据。
 
-Ext4 is a robust, stable filesystem, and it's what most people should probably be using as a root filesystem in 2018. But it can't handle everything. Let's talk briefly about some of the things you shouldn't expect from ext4—now or probably in the future.
+Ext4 也不足以保证数据的完整性。随着日志记录的重大进展又回到了前 3 天，它并未涵盖数据损坏的许多常见原因。如果数据已经在磁盘上被[破坏][12]——由于故障硬件，
+宇宙射线的影响（是的，真的），或者数据随时间的简单降级 —— ext4无法检测或修复这种损坏。
 
-Although ext4 can address up to 1 EiB—equivalent to 1,000,000 TiB—of data, you really, really shouldn't try to do so. There are problems of scale above and beyond merely being able to remember the addresses of a lot more blocks, and ext4 does not now (and likely will not ever) scale very well beyond 50-100 TiB of data.
+在最后两个项目的基础上，ext4 只是一个纯文件系统，而不是存储卷管理器。这意味着，即使你有多个磁盘 —— 因此也就是奇偶校验或冗余，理论上你可以恢复损坏的数据从 —— ext4 
+但无法知道使用它是否对你有利。虽然理论上可以在离散层中分离文件系统和存储卷管理系统而不会丢失自动损坏检测和修复功能，但这不是当前存储系统的设计方式，
+并且它将给新设计带来重大挑战。
++++++++++++++++++++++++++++++++++=
 
-Ext4 also doesn't do enough to guarantee the integrity of your data. As big an advancement as journaling was back in the ext3 days, it does not cover a lot of the common causes of data corruption. If data is [corrupted][12] while already on disk—by faulty hardware, impact of cosmic rays (yes, really), or simple degradation of data over time—ext4 has no way of either detecting or repairing such corruption.
+### 备用文件系统
+在我们开始之前，提醒一句：要非常小心这是没有内置任何备用的文件系统，并直接支持为您分配的主线内核的一部分！
 
-Building on the last two items, ext4 is only a pure filesystem, and not a storage volume manager. This means that even if you've got multiple disks—and therefore parity or redundancy, which you could theoretically recover corrupt data from—ext4 has no way of knowing that or using it to your benefit. While it's theoretically possible to separate a filesystem and storage volume management system in discrete layers without losing automatic corruption detection and repair features, that isn't how current storage systems are designed, and it would present significant challenges to new designs.
+即使文件系统是安全的，如果在内核升级期间出现问题，使用它作为根文件系统也是绝对可怕的。如果你没有充分的想法通过一个 chroot 去使用介质引导，耐心地操作内核模块和 grub 配置，
+和 DKMS...不要去预订系统的根文件系统很重要。
 
-### Alternate filesystems
-
-Before we get started, a word of warning: Be very careful with any alternate filesystem which isn't built into and directly supported as a part of your distribution's mainline kernel!
-
-Even if a filesystem is safe, using it as the root filesystem can be absolutely terrifying if something hiccups during a kernel upgrade. If you aren't extremely comfortable with the idea of booting from alternate media and poking manually and patiently at kernel modules, grub configs, and DKMS from a chroot... don't go off the reservation with the root filesystem on a system that matters to you.
-
-There may well be good reasons to use a filesystem your distro doesn't directly support—but if you do, I strongly recommend you mount it after the system is up and usable. (For example, you might have an ext4 root filesystem, but store most of your data on a zfs or btrfs pool.)
+可能有充分的理由使用您的发行版不直接支持的文件系统 —— 但如果您这样做，我强烈建议您在系统启动并可用后再安装它。
+（例如，您可能有一个 ext4 根文件系统，但是将大部分数据存储在 zfs 或 btrfs 池中。）
 
 #### XFS
 
-XFS is about as mainline as a non-ext filesystem gets under Linux. It's a 64-bit, journaling filesystem that has been built into the Linux kernel since 2001 and offers high performance for large filesystems and high degrees of concurrency (i.e., a really large number of processes all writing to the filesystem at once).
+XFS 与 非 ext 文件系统在Linux下的主线一样。它是一个 64 位的日志文件系统，自 2001 年以来内置于 Linux 内核中，为大型文件系统和高度并发性提供了高性能
+（即，大量的进程都会立即写入文件系统）。
 
-XFS became the default filesystem for Red Hat Enterprise Linux, as of RHEL 7. It still has a few disadvantages for home or small business users—most notably, it's a real pain to resize an existing XFS filesystem, to the point it usually makes more sense to create another one and copy your data over.
+从RHEL 7开始，XFS 成为 Red Hat Enterprise Linux 的默认文件系统。对于家庭或小型企业用户来说，它仍然有一些缺点 —— 最值得注意的是，重新调整现有 XFS 文件系统
+是一件非常痛苦的事情，不如创建另一个并复制数据更有意义。
 
-While XFS is stable and performant, there's not enough of a concrete end-use difference between it and ext4 to recommend its use anywhere that it isn't the default (e.g., RHEL7) unless it addresses a specific problem you're having with ext4, such as >50 TiB capacity filesystems.
+虽然 XFS 是稳定且是高性能的，但它和 ext4 之间没有足够的具体的最终用途差异来推荐它在非默认值的任何地方使用（例如，RHEL7），除非它解决了对 ext4 的特定问题，例如> 50 TiB容量的文件系统。
 
-XFS is not in any way a "next-generation" filesystem in the ways that ZFS, btrfs, or even WAFL (a proprietary SAN filesystem) are. Like ext4, it should most likely be considered a stopgap along the way towards [something better][8].
+XFS 在任何方面都不是 ZFS，btrfs 甚至 WAFL（专有 SAN 文件系统）的“下一代”文件系统。就像 ext4 一样，它应该被视为一种更好的方式的权宜之计。
 
 #### ZFS
 
-ZFS was developed by Sun Microsystems and named after the zettabyte—equivalent to 1 trillion gigabytes—as it could theoretically address storage systems that large.
+ZFS 由 Sun Microsystems 开发，以 zettabyte 命名 —— 相当于 1 万亿 GB —— 因为它理论上可以解决大型存储系统。
 
-A true next-generation filesystem, ZFS offers volume management (the ability to address multiple individual storage devices in a single filesystem), block-level cryptographic checksumming (allowing detection of data corruption with an extremely high accuracy rate), [automatic corruption repair][12] (where redundant or parity storage is available), rapid [asynchronous incremental replication][13], inline compression, and more. [A lot more][14].
+作为真正的下一代文件系统，ZFS 提供卷管理（能够在单个文件系统中处理多个单独的存储设备），块级加密校验和（允许以极高的准确率检测数据损坏），
+[自动损坏修复][12]（其中冗余或奇偶校验存储可用），[快速异步增量复制][13]，内联压缩等，[还有更多][14]。
 
-The biggest problem with ZFS, from a Linux user's perspective, is the licensing. ZFS was licensed CDDL, which is a semi-permissive license that conflicts with the GPL. There is a lot of controversy over the implications of using ZFS with the Linux kernel, with opinions ranging from "it's a GPL violation" to "it's a CDDL violation" to "it's perfectly fine, it just hasn't been tested in court." Most notably, Canonical has included ZFS code inline in its default kernels since 2016 without legal challenge so far.
+从 Linux 用户的角度来看，ZFS 的最大问题是许可证问题。ZFS 获得了 CDDL 许可证，这是一种与 GPL 冲突的半许可许可证。关于在 Linux 内核中使用 ZFS 的意义存在很多争议，
+其争议范围从“它是 GPL 违规”到“它是 CDDL 违规”到“它完全没问题，它还没有在法庭上进行过测试。 “ 最值得注意的是，自2016年以来，Canonical 已将 ZFS 代码内联
+在其默认内核中，而且目前尚无法律挑战。
 
-At this time, even as a very avid ZFS user myself, I would not recommend ZFS as a root Linux filesystem. If you want to leverage the benefits of ZFS on Linux, set up a small root filesystem on ext4, then put ZFS on your remaining storage, and put data, applications, whatever you like on it—but keep root on ext4, until your distribution explicitly supports a zfs root.
+此时，即使我作为一个非常狂热于 ZFS 的用户，我也不建议将 ZFS 作为 Linux的 root 文件系统。如果你想在 Linux 上利用 ZFS 的优势，在 ext4 上设置一个小的根文件系统，
+然后将 ZFS 放在你剩余的存储上，把数据，应用程序以及你喜欢的东西放在它上面 —— 但在 ext4 上保持 root，直到你的发行版明显支持 zfs 根目录。
 
-#### btrfs
+#### BTRFS
 
-Btrfs—short for B-Tree Filesystem, and usually pronounced "butter"—was announced by Chris Mason in 2007 during his tenure at Oracle. Btrfs aims at most of the same goals as ZFS, offering multiple device management, per-block checksumming, asynchronous replication, inline compression, and [more][8].
+Btrfs 是 B-Tree Filesystem 的简称，通常发音为“butter” —— 由 Chris Mason 于 2007 年在 Oracle 任职期间宣布。BTRFS 旨在跟 ZFS 有大部分相同的目标，
+提供多种设备管理，每块校验、异步复制、直列压缩等，[还有更多][8]。
 
-As of 2018, btrfs is reasonably stable and usable as a standard single-disk filesystem but should probably not be relied on as a volume manager. It suffers from significant performance problems compared to ext4, XFS, or ZFS in many common use cases, and its next-generation features—replication, multiple-disk topologies, and snapshot management—can be pretty buggy, with results ranging from catastrophically reduced performance to actual data loss.
+截至2018年，btrfs 相当稳定，可用作标准的单磁盘文件系统，但可能不应该依赖于卷管理器。与许多常见用例中的 ext4，XFS 或 ZFS 相比，它存在严重的性能问题，
+其下一代功能 —— 复制，多磁盘拓扑和快照管理 —— 可能非常多，其结果可能是从灾难性地性能降低到实际数据的丢失。
 
-The ongoing status of btrfs is controversial; SUSE Enterprise Linux adopted it as its default filesystem in 2015, whereas Red Hat announced it would no longer support btrfs beginning with RHEL 7.4 in 2017. It is probably worth noting that production, supported deployments of btrfs use it as a single-disk filesystem, not as a multiple-disk volume manager a la ZFS—even Synology, which uses btrfs on its storage appliances, but layers it atop conventional Linux kernel RAID (mdraid) to manage the disks.
+btrfs 的持续状态是有争议的; SUSE Enterprise Linux 在 2015 年采用它作为默认文件系统，而 Red Hat 宣布它将不再支持从 2017 年开始使用 RHEL 7.4 的 btrfs。
+可能值得注意的是，生产，支持的 btrfs 部署将其用作单磁盘文件系统，而不是作为一个多磁盘卷管理器 —— a la ZFS —— 甚至 Synology 在它的存储设备使用 BTRFS，
+但是它在传统 Linux 内核 RAID（mdraid）之上分层来管理磁盘。
 
 --------------------------------------------------------------------------------
 
