@@ -1,3 +1,4 @@
+translating by Flowsnow
 A sysadmin's guide to Bash
 ======
 
