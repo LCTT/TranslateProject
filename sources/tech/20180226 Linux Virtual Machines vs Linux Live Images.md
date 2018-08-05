@@ -1,3 +1,4 @@
+## sober-wang 翻译中
 Linux Virtual Machines vs Linux Live Images
 ======
 I'll be the first to admit that I tend to try out new [Linux distros][1] on a far too frequent basis. Yet the method I use to test them, does vary depending on my goals for each instance. In this article, we're going to look at both running Linux virtual machines and running Linux live images. There are advantages to each method, but there are some hurdles with each method as well.

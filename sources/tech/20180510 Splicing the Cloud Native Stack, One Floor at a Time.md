@@ -1,3 +1,4 @@
+Translating by qhwdw
 Splicing the Cloud Native Stack, One Floor at a Time
 ======
 At Packet, our value (automated infrastructure) is super fundamental. As such, we spend an enormous amount of time looking up at the players and trends in all the ecosystems above us - as well as the very few below!
