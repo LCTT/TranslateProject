@@ -277,7 +277,7 @@ via: https://fedoramagazine.org/use-fedora-server-create-router-gateway/
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:
+[a]:https://fedoramagazine.org/author/elajoie/
 [1]:https://getfedora.org/en/server/
 [2]:https://www.draytek.com/en/products/products-a-z/router.all/vigornic-132-series/
 [3]:https://fedoraproject.org/wiki/Architectures/ARM/Raspberry_Pi
