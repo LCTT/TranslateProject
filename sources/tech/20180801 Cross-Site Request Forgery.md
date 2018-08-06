@@ -1,3 +1,5 @@
+translating---geekpi
+
 Cross-Site Request Forgery
 ======
 ![](http://www.linuxandubuntu.com/uploads/2/1/1/5/21152474/understanding-csrf-cross-site-forgery_orig.jpg)
