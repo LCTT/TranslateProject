@@ -1,3 +1,5 @@
+translating by Auk7F7
+
 How to Manage Fonts in Linux
 ======
 
