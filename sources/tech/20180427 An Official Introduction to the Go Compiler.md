@@ -5,44 +5,68 @@
 
 ## Introduction to the Go compiler
 
+## Go编译器介绍
+
 `cmd/compile` contains the main packages that form the Go compiler. The compiler
 may be logically split in four phases, which we will briefly describe alongside
 the list of packages that contain their code.
+
+`cmd/compile` 包含构成 Go 编译器主要的包。编译器在逻辑上可以被分为四个阶段，我们将简要介绍这几个阶段以及包含相应代码的包的列表。
 
 You may sometimes hear the terms "front-end" and "back-end" when referring to
 the compiler. Roughly speaking, these translate to the first two and last two
 phases we are going to list here. A third term, "middle-end", often refers to
 much of the work that happens in the second phase.
 
+在谈到编译器时，有时可能会听到“前端”和“后端”这两个术语。粗略地说，这些对应于我们将在此列出的前两个和后两个阶段。第三个术语“中间端”通常指的是第二阶段执行的大部分工作。
+
 Note that the `go/*` family of packages, such as `go/parser` and `go/types`,
 have no relation to the compiler. Since the compiler was initially written in C,
 the `go/*` packages were developed to enable writing tools working with Go code,
 such as `gofmt` and `vet`.
 
+请注意，`go/parser` 和 `go/types` 等 `go/*` 系列包与编译器无关。由于编译器最初是用C编写的，所以这些 `go/*` 包被开发出来以便于能够写出和 `Go` 代码一起工作的工具，例如 `gofmt` 和 `vet`。
+
 It should be clarified that the name "gc" stands for "Go compiler", and has
 little to do with uppercase GC, which stands for garbage collection.
 
+需要澄清的是，名称“gc”代表“Go 编译器”，与大写 GC 无关，后者代表垃圾收集。
+
 ### 1. Parsing
 
+### 1. 解析
+
 * `cmd/compile/internal/syntax` (lexer, parser, syntax tree)
+
+* `cmd/compile/internal/syntax` （词法分析器、解析器、语法树）
 
 In the first phase of compilation, source code is tokenized (lexical analysis),
 parsed (syntactic analyses), and a syntax tree is constructed for each source
 file.
+
+在编译的第一阶段，源代码被标记化（词法分析），解析（语法分析），并为每个源文件构造语法树（译注：这里标记指token，它是一组预定义、能够识别的字符串，通常由名字和值构成，其中名字一般是词法的类别，如标识符、关键字、分隔符、操作符、文字和注释等）。
 
 Each syntax tree is an exact representation of the respective source file, with
 nodes corresponding to the various elements of the source such as expressions,
 declarations, and statements. The syntax tree also includes position information
 which is used for error reporting and the creation of debugging information.
 
+每棵语法树都是相应源文件的确切表示，其中节点对应于源文件的各种元素，例如表达式，声明和语句。语法树还包括位置信息，用于错误报告和创建调试信息。
+
 ### 2. Type-checking and AST transformations
 
+### 2. 类型检查和AST变形
+
 * `cmd/compile/internal/gc` (create compiler AST, type checking, AST transformations)
+
+* `cmd/compile/internal/gc` （创建编译器AST，类型检查，AST变形）
 
 The gc package includes an AST definition carried over from when it was written
 in C. All of its code is written in terms of it, so the first thing that the gc
 package must do is convert the syntax package's syntax tree to the compiler's
 AST representation. This extra step may be refactored away in the future.
+
+gc 包中包含一个继承自（早期）C 语言实现的版本的 AST 定义。所有代码都是根据该 AST 编写的，所以 gc 包必须做的第一件事就是将 syntax 包（定义）的语法树转换为编译器的 AST 表示法。这个额外步骤可能会在将来重构（译注：AST，Abstract Syntax Tree，抽象语法树，用树来表达程序设计语言的语法结构，通常叶子节点是操作数，其它节点是操作码）。
 
 The AST is then type-checked. The first steps are name resolution and type
 inference, which determine which object belongs to which identifier, and what
