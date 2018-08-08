@@ -243,14 +243,14 @@ Image credits : [JanBaby][13], via Pixabay [CC0][14].
 ### 作者简介
 
 Alex Callejas - Alex Callejas 是位于墨西哥城的红帽公司拉丁美洲区的一名技术客服经理。作为一名系统管理员，他已有超过 10 年的经验。在基础设施强化方面具有很强的专业知识。对开源抱有热情，通过在不同的公共事件和大学中分享他的知识来支持社区。天生的极客，当然他一般选择使用 Fedora Linux 发行版。[这里][11]有更多关于我的信息。
-
+ 
 --------------------------------------------------------------------------------
 
 via: https://opensource.com/article/18/7/sysadmin-guide-selinux
 
 作者：[Alex Callejas][a]
 译者：[FSSlc](https://github.com/FSSlc)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
