@@ -1,3 +1,4 @@
+translating by Flowsnow
 What is behavior-driven Python?
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/checklist_hands_team_collaboration.png?itok=u82QepPk)
