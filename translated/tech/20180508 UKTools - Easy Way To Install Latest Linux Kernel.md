@@ -1,40 +1,41 @@
-UKTools - 安装最新 Linux 内核的简便方法
+UKTools：安装最新 Linux 内核的简便方法
 ======
 
-Ubuntu 中有许多实用程序可以将 Linux 内核升级到最新的稳定版本。我们之前已经写过关于这些实用程序的文章，例如 Linux Kernel Utilities (LKU), Ubuntu Kernel Upgrade Utility (UKUU) 和 Ubunsys。
+Ubuntu 中有许多实用程序可以将 Linux 内核升级到最新的稳定版本。我们之前已经写过关于这些实用程序的文章，例如 Linux Kernel Utilities (LKU)、 Ubuntu Kernel Upgrade Utility (UKUU) 和 Ubunsys。
 
+另外还有一些其它实用程序可供使用。我们计划在其它文章中包含这些，例如 `ubuntu-mainline-kernel.sh` 和从主线内核手动安装的方式。
 
-另外还有一些其它实用程序可供使用。我们计划在其它文章中包含这些，例如 ubuntu-mainline-kernel.sh 和 manual method from mainline kernel.
+今天我们还会教你类似的使用工具 —— UKTools。你可以尝试使用这些实用程序中的任何一个来将 Linux 内核升级至最新版本。
 
-今天我们还会教你类似的使用工具 -- UKTools。你可以尝试使用这些实用程序中的任何一个来将 Linux 内核升级至最新版本。
-
-最新的内核版本附带了安全漏洞修复和一些改进，因此，最好保持最新的内核版本以获得可靠，安全和更好的硬件性能。
+最新的内核版本附带了安全漏洞修复和一些改进，因此，最好保持最新的内核版本以获得可靠、安全和更好的硬件性能。
 
 有时候最新的内核版本可能会有一些漏洞，并且会导致系统崩溃，这是你的风险。我建议你不要在生产环境中安装它。
 
-**建议阅读:**
-**(#)** [Linux 内核实用程序（LKU）- 在 Ubuntu/LinuxMint 中编译，安装和更新最新内核的一组 Shell 脚本][1]
-**(#)** [Ukuu - 在基于 Ubuntu 的系统中安装或升级 Linux 内核的简便方法][2]
-**(#)** [6 种检查系统上正在运行的 Linux 内核版本的方法][3]
+**建议阅读：**
+
+- [Linux 内核实用程序（LKU）- 在 Ubuntu/LinuxMint 中编译，安装和更新最新内核的一组 Shell 脚本][1]
+- [Ukuu - 在基于 Ubuntu 的系统中安装或升级 Linux 内核的简便方法][2]
+- [6 种检查系统上正在运行的 Linux 内核版本的方法][3]
 
 ### 什么是 UKTools
 
 [UKTools][4] 意思是 Ubuntu 内核工具，它包含两个 shell 脚本 `ukupgrade` 和 `ukpurge`。
 
-ukupgrade 意思是 “Ubuntu Kernel Upgrade”，它允许用户将 Linux 内核升级到 Ubuntu/Mint 的最新稳定版本以及基于 [kernel.ubuntu.com][5] 的衍生版本。
+`ukupgrade` 意思是 “Ubuntu Kernel Upgrade”，它允许用户将 Linux 内核升级到 Ubuntu/Mint 的最新稳定版本以及基于 [kernel.ubuntu.com][5] 的衍生版本。
 
-ukpurge 意思是 “Ubuntu Kernel Purge”，它允许用户在机器中删除旧的 Linux 内核镜像或头文件，用于 Ubuntu/Mint 和其衍生版本。它将只保留三个内核版本。
+`ukpurge` 意思是 “Ubuntu Kernel Purge”，它允许用户在机器中删除旧的 Linux 内核镜像或头文件，用于 Ubuntu/Mint 和其衍生版本。它将只保留三个内核版本。
 
 此实用程序没有 GUI，但它看起来非常简单直接，因此，新手可以在没有任何问题的情况下进行升级。
 
 我正在运行 Ubuntu 17.10，目前的内核版本如下：
+
 ```
 $ uname -a
 Linux ubuntu 4.13.0-39-generic #44-Ubuntu SMP Thu Apr 5 14:25:01 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
-
 ```
 
 运行以下命令来获取系统上已安装内核的列表（Ubuntu 及其衍生产品）。目前我持有 `7` 个内核。
+
 ```
 $ dpkg --list | grep linux-image
 ii linux-image-4.13.0-16-generic 4.13.0-16.19 amd64 Linux kernel image for version 4.13.0 on 64 bit x86 SMP
@@ -52,7 +53,6 @@ ii linux-image-extra-4.13.0-37-generic 4.13.0-37.42 amd64 Linux kernel extra mod
 ii linux-image-extra-4.13.0-38-generic 4.13.0-38.43 amd64 Linux kernel extra modules for version 4.13.0 on 64 bit x86 SMP
 ii linux-image-extra-4.13.0-39-generic 4.13.0-39.44 amd64 Linux kernel extra modules for version 4.13.0 on 64 bit x86 SMP
 ii linux-image-generic 4.13.0.39.42 amd64 Generic Linux kernel image
-
 ```
 
 ### 如何安装 UKTools
@@ -60,18 +60,19 @@ ii linux-image-generic 4.13.0.39.42 amd64 Generic Linux kernel image
 在 Ubuntu 及其衍生产品上，只需运行以下命令来安装 UKTools 即可。
 
 在你的系统上运行以下命令来克隆 UKTools 仓库：
+
 ```
 $ git clone https://github.com/usbkey9/uktools
-
 ```
 
 进入 uktools 目录：
+
 ```
 $ cd uktools
-
 ```
 
-运行 Makefile 以生成必要的文件。此外，这将自动安装最新的可用内核。只需重新启动系统即可使用最新的内核。
+运行 `Makefile` 以生成必要的文件。此外，这将自动安装最新的可用内核。只需重新启动系统即可使用最新的内核。
+
 ```
 $ sudo make
 [sudo] password for daygeek:
@@ -188,30 +189,30 @@ done
 
 Thanks for using this script! Hope it helped.
 Give it a star: https://github.com/MarauderXtreme/uktools
-
 ```
 
 重新启动系统以激活最新的内核。
+
 ```
 $ sudo shutdown -r now
-
 ```
 
 一旦系统重新启动，重新检查内核版本。
+
 ```
 $ uname -a
 Linux ubuntu 4.16.7-041607-generic #201805021131 SMP Wed May 2 15:34:55 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
-
 ```
 
 此 make 命令会将下面的文件放到 `/usr/local/bin` 目录中。
+
 ```
 do-kernel-upgrade
 do-kernel-purge
-
 ```
 
 要移除旧内核，运行以下命令：
+
 ```
 $ do-kernel-purge
 
@@ -364,10 +365,10 @@ run-parts: executing /etc/kernel/postrm.d/initramfs-tools 4.13.0-37-generic /boo
 run-parts: executing /etc/kernel/postrm.d/zz-update-grub 4.13.0-37-generic /boot/vmlinuz-4.13.0-37-generic
 
 Thanks for using this script!!!
-
 ```
 
 使用以下命令重新检查已安装内核的列表。它将只保留三个旧的内核。
+
 ```
 $ dpkg --list | grep linux-image
 ii linux-image-4.13.0-38-generic 4.13.0-38.43 amd64 Linux kernel image for version 4.13.0 on 64 bit x86 SMP
@@ -376,14 +377,13 @@ ii linux-image-extra-4.13.0-38-generic 4.13.0-38.43 amd64 Linux kernel extra mod
 ii linux-image-extra-4.13.0-39-generic 4.13.0-39.44 amd64 Linux kernel extra modules for version 4.13.0 on 64 bit x86 SMP
 ii linux-image-generic 4.13.0.39.42 amd64 Generic Linux kernel image
 ii linux-image-unsigned-4.16.7-041607-generic 4.16.7-041607.201805021131 amd64 Linux kernel image for version 4.16.7 on 64 bit x86 SMP
-
 ```
 
 下次你可以调用 `do-kernel-upgrade` 实用程序来安装新的内核。如果有任何新内核可用，那么它将安装。如果没有，它将报告当前没有可用的内核更新。
+
 ```
 $ do-kernel-upgrade
 Kernel up to date. Finishing
-
 ```
 
 再次运行 `do-kernel-purge` 命令以确认。如果发现超过三个内核，那么它将移除。如果不是，它将报告没有删除消息。
@@ -400,7 +400,6 @@ Linux Kernel 4.16.7-041607 Generic (linux-image-4.16.7-041607-generic)
 Nothing to remove!
 
 Thanks for using this script!!!
-
 ```
 
 
@@ -411,7 +410,7 @@ via: https://www.2daygeek.com/uktools-easy-way-to-install-latest-stable-linux-ke
 作者：[Prakash Subramanian][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[MjSeven](https://github.com/MjSeven)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
