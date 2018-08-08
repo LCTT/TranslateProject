@@ -74,25 +74,41 @@ type each expression has. Type-checking includes certain extra checks, such as
 "declared and not used" as well as determining whether or not a function
 terminates.
 
+然后对 AST 进行类型检查。第一步是名字解析和类型推断，它们确定哪个对象属于哪个标识符，以及每个表达式具有的类型。类型检查包括特定的额外检查，例如“声明但未使用”以及确定函数是否会终止。
+
 Certain transformations are also done on the AST. Some nodes are refined based
 on type information, such as string additions being split from the arithmetic
 addition node type. Some other examples are dead code elimination, function call
 inlining, and escape analysis.
 
+特定转换也基于 AST 上完成。一些节点被基于类型信息而细化，例如把字符串加法从算术加法的节点类型中拆分出来。其他一些例子是死代码消除，函数调用内联和逃逸分析（译注：逃逸分析是一种分析指针有效范围的方法）。
+
 ### 3. Generic SSA
 
+### 3. 通用SSA
+
 * `cmd/compile/internal/gc` (converting to SSA)
+
+* `cmd/compile/internal/gc` （转换成 SSA）
+
 * `cmd/compile/internal/ssa` (SSA passes and rules)
 
+* `cmd/compile/internal/ssa` （SSA 相关的遍和规则）
+
+（译注：许多常见高级语言的编译器无法通过一次扫描源代码或 AST 就完成所有编译工作，取而代之的做法是多次扫描，每次完成一部分工作，并将输出结果作为下次扫描的输入，直到最终产生目标代码。这里每次扫描称作一遍，即pass；最后一遍之前所有的遍数得到的结果都可称作中间表示法，本文中 AST、SSA 等都属于中间表示法）。
 
 In this phase, the AST is converted into Static Single Assignment (SSA) form, a
 lower-level intermediate representation with specific properties that make it
 easier to implement optimizations and to eventually generate machine code from
 it.
 
+在此阶段，AST 将被转换为静态单赋值形式（SSA）形式，这是一种具有特定属性的低级中间表示法，可以更轻松地实现优化并最终从它生成机器代码（译注：静态单赋值形式SSA是中间表示法的一种性质，它要求每个变量只被赋值一次且在使用前被定义，补充如何轻松实现优化）。
+
 During this conversion, function intrinsics are applied. These are special
 functions that the compiler has been taught to replace with heavily optimized
 code on a case-by-case basis.
+
+在这个转换过程中，将完成内置函数的处理。 这些是特殊的函数，编译器被告知逐个分析这些函数并决定是否用深度优化的代码替换它们（译注：内置函数指由语言本身定义的函数，通常编译器的处理方式是使用相应实现函数的指令序列代替对函数的调用指令，有点类似内联函数）。
 
 Certain nodes are also lowered into simpler components during the AST to SSA
 conversion, so that the rest of the compiler can work with them. For instance,
@@ -100,13 +116,19 @@ the copy builtin is replaced by memory moves, and range loops are rewritten into
 for loops. Some of these currently happen before the conversion to SSA due to
 historical reasons, but the long-term plan is to move all of them here.
 
+在 AST 转化成 SSA 的过程中，特定节点也被低级化为更简单的组件，以便于剩余的编译阶段可以基于它们工作。例如，内建的拷贝被替换为内存移动，range循环被改写为for循环(range需要翻译！！！）。由于历史原因，这里面有些目前在转化到 SSA 之前发生，但长期计划则是把它们都移到这里（转化 SSA）。
+
 Then, a series of machine-independent passes and rules are applied. These do not
 concern any single computer architecture, and thus run on all `GOARCH` variants.
+
+然后，一系列机器无关的规则和遍会被执行。这些并不考虑特定计算机体系结构，因此对所有 `GOARCH` 变量的值都会运行。
 
 Some examples of these generic passes include dead code elimination, removal of
 unneeded nil checks, and removal of unused branches. The generic rewrite rules
 mainly concern expressions, such as replacing some expressions with constant
 values, and optimizing multiplications and float operations.
+
+这类通用的遍的一些例子包括，死代码消除，移除不必要的空指针检查，以及移除无用的分支等。通用改写规则主要考虑表达式，例如将一些表达式替换为常量，优化乘法和浮点操作。
 
 ### 4. Generating machine code
 
