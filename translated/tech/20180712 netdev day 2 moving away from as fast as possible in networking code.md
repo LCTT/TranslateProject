@@ -1,115 +1,112 @@
-FSSlc  is translating
-
-
-netdev day 2: moving away from "as fast as possible" in networking code
+netdev 第二天：从网络代码中移除“尽可能快”这个目标
 ============================================================
 
-Hello! Today was day 2 of netdev. I only made it to the morning of the conference, but the morning was VERY EXCITING. The highlight of this morning was a keynote by [Van Jacobson][1] about the future of congestion control on the internet (!!!) called “Evolving from As Fast As Possible: Teaching NICs about time”
+嗨！今天是 netdev 会议的第 2 天，我只参加了早上的会议，但它_非常有趣_。今早会议的主角是 [Van Jacobson][1] 给出的一场名为 “从尽可能快中变化：教网卡以时间”的演讲，它的主题是 关于网络中拥塞控制的未来！！！
 
-I’m going to try to summarize what I learned from this talk. I almost certainly have some things wrong, but let’s go!
+下面我将尝试着对我从这次演讲中学到的东西做总结，我几乎肯定下面的内容有些错误，但不管怎样，让我们开始吧！
 
-This talk was about how the internet has changed since 1988, why we need new algorithms today, and how we can change Linux’s networking stack to implement those algorithms more easily.
+这次演讲是关于互联网是如何从 1988 开始改变的，为什么现在我们需要新的算法，以及我们可以怎样改变 Linux 的网络栈来更容易地实现这些算法。
 
-### what’s congestion control?
+### 什么是拥塞控制？
 
-Everyone on the internet is sending packets all at once, all the time. The links on the internet are of dramatically different speeds (some are WAY slower than others), and sometimes they get full! When a device on the internet receives packets at a rate faster than it can handle, it drops the packets.
+在网络上的任何成员总是无时无刻地发送信息包，而在互联网上的连接之间有着极其不同的速度（某些相比其他极其缓慢），而有时候它们将被塞满！当互联网的一个设备以超过它能处理的速率接收信息包时，它将丢弃某些信息包。
 
-The most naive you way you could imagine sending packets is:
+你所能想象的最天真的发送信息包方式是：
 
-1.  Send all the packets you have to send all at once
+1. 将你必须发送的信息包一次性发送完。
 
-2.  If you discover any of those packets got dropped, resend the packet right away
+2. 假如你发现其中有的信息包被丢弃了，就马上重新发送这些包。
 
-It turns out that if you implemented TCP that way, the internet would collapse and grind to a halt. We know that it would collapse because it did kinda collapse, in 1986\. To fix this, folks invented congestion control algorithms – the original paper describing how they avoided collapsing the internet is [Congestion Avoidance and Control][2], by Van Jacobson from 1988\. (30 years ago!)
+结果表明假如你按照上面的思路来实现 TCP，互联网将会崩溃并停止运转。我们知道它会崩溃是因为在 1986 年确实发生了崩溃的现象。为了解决这个问题，专家发明了拥塞控制算法--描述如何避免互联网的崩溃的原始论文是 Van Jacobson 于 1988 年发表的 [拥塞避免与控制][2]（30 年前！）。
 
-### How has the internet changed since 1988?
+### 从 1988 年后互联网发生了什么改变？
 
-The main thing he said has changed about the internet is – it used to be that switches would always have faster network cards than servers on the internet. So the servers in the middle of the internet would be a lot faster than the clients, and it didn’t matter as much how fast clients sent packets.
+在演讲中，Van Jacobson 说互联网的这些已经发生了改变：在以前的互联网上，交换机可能总是拥有比服务器更快的网卡，所以位于互联网中间层的服务器也可能比客户端更快，并且这些改变并不能对客户端发送信息包的速率有多大影响。
 
-Today apparently that’s not true! As we all know, computers today aren’t really faster than computers 5 years ago (we ran into some problems with the speed of light). So what happens (I think) is that the big switches in routers are not really that much faster than the NICs on servers in datacenters.
+很显然今天已经不是这样的了！众所周知，今天的计算机相比于 5 年前的计算机在速度上并没有多大的提升（我们遇到了某些有关光速的问题）。所以我想路由器上的大型交换机并不会在速度上大幅领先于数据中心里服务器上的网卡。
 
-This is bad because it means that clients are much more easily able to saturate the links in the middle, which results in the internet getting slower. (and there’s [buffer bloat][3] which results in high latency)
+这听起来有些糟糕，因为这意味着在中间层的客户端更容易在连接中达到饱和，而这将导致互联网变慢（而且 [缓冲膨胀][3] 将带来更高的延迟）。
 
-So to improve performance on the internet and not saturate all the queues on every router, clients need to be a little better behaved and to send packets a bit more slowly.
+所以为了提高互联网的性能且不让每个路由上的任务队列都达到饱和，客户端需要表现得更好并且在发送信息包的时候慢一点。
 
-### sending more packets more slowly results in better performance
+### 以更慢的速率发送更多的信息包以达到更好的性能
 
-Here’s an idea that was really surprising to me – sending packets more slowly often actually results in better performance (even if you are the only one doing it). Here’s why!
+下面的结论真的让我非常意外 -- 以更慢的速率发送信息包实际上可能会带来更好的性能（即便你是在整个传输过程中，这样做的唯一的人），下面是原因：
 
-Suppose you’re trying to send 10MB of data, and there’s a link somewhere in the middle between you and the client you’re trying to talk to that is SLOW, like 1MB/s or something. Assuming that you can tell the speed of this slow link (more on that later), you have 2 choices:
+假设你打算发送 10MB 的数据，在你和你需要连接的客户端之间有一个中间层，并且它的传输速率_非常低_，例如 1MB/s。假设你可以辨别这个慢连接（或者更多的后续中间层）的速度，那么你有 2 个选择：
 
-1.  Send the entire 10MB of data at once and see what happens
+1. 一次性将这 10MB 的数据发送完，然后看看会发生什么。
 
-2.  Slow it down so you send it at 1MB/s
+2. 减慢速率使得你能够以 1MB/s 的速率传给它。
 
-Now – either way, you’re probably going to end up with some packet loss. So it seems like you might as well just send all the data at once if you’re going to end up with packet loss either way, right? No!! The key observation is that packet loss in the middle of your stream is much better than packet loss at the end of your stream. If a few packets in the middle are dropped, the client you’re sending to will realize, tell you, and you can just resend them. No big deal! But if packets at the END are dropped, the client has no way of knowing you sent those packets at all! So you basically need to time out at some point when you don’t get an ACK for those packets and resend it. And timeouts typically take a long time to happen!
+现在，无论你选择何种方式，你可能都会发生丢包的现象。所以这样看起来，你可能需要选择一次性发送所有的信息包这种方式，对吧？不！！实际上在你的数据流的中间环节丢包要比在你的数据流的最后丢包要好得多。假如在中间环节有些包被丢弃了，你需要送往的那个客户端可以察觉到这个事情，然后再告诉你，这样你就可以再次发送那些被丢弃的包，这样便没有多大的损失。但假如信息包在最末端被丢弃，那么客户端将完全没有办法知道你一次性发送了所有的信息包！所以基本上在某个时刻被丢弃的包没有让你收到 ACK 信号时，你需要启用超时机制，并且还得重新发送它们。而超时往往意味着需要花费很长时间！
 
-So why is sending data more slowly better? Well, if you send data faster than the bottleneck for the link, what will happen is that all the packets will pile up in a queue somewhere, the queue will get full, and then the packets at the END of your stream will get dropped. And, like we just explained, the packets at the end of the stream are the worst packets to drop! So then you have all these timeouts, and sending your 10MB of data will take way longer than if you’d just sent your packets at the correct speed in the first place.
+所以为什么以更慢的速率发送数据会更好呢？假如你发送数据的速率快于连接中的瓶颈，这时所有的信息包将会在某个地方堆积成一个队列，这个队列将会被塞满，然后在你的数据流的最末端的信息包将会被丢弃。并且像我们刚才解释的那样，处于数据流最后面的信息包很有可能丢弃！所以相比于最初以合适的速率发送信息包，一次性发送它们将会触发超时机制，发送 10MB 的数据将会花费更长的时间。
 
-I thought this was really cool because it doesn’t require cooperation from anybody else on the internet – even if everybody else is sending all their packets really fast, it’s  _still_  more advantageous for you to send your packets at the correct rate (the rate of the bottleneck in the middle)
+我认为这非常酷，因为这个过程并不需要与互联网中的其他人合作 —— 即便其他的所有人都已非常快的速率传送他们的信息包，对你来说以合适的速率（中间层的瓶颈速率）传送你自己的信息包_仍然_更有优势。
 
-### how to tell the right speed to send data at: BBR!
+### 如何辨别发送数据的合适速率：BBR！
 
-Earlier I said “assuming that you can tell the speed of the slow link between your client and server…“. How do you do that? Well, some folks from Google (where Jacobson works) came up with an algorithm for measuring the speed of bottlenecks! It’s called BBR. This post is already long enough, but for more about BBR, see [BBR: Congestion-based congestion control][4] and [the summary from the morning paper][5].
+在上面我说过：“假设你可以辨别出位于你的终端和服务器之间慢连接的速率。。。”，那么如何做到呢？来自 Google（Jacobson 工作的地方）的某些专家已经提出了一个算法来估计瓶颈的速率！它叫做 BBR，由于本次的分享已经很长了，所以这里不做具体介绍，但你可以参考 [BBR：基于拥塞的拥塞控制][4] 和 [来自晨读论文的总结][5] 这两处链接。
 
-(as an aside, [https://blog.acolyer.org][6]’s daily “the morning paper” summaries are basically the only way I learn about / understand CS papers, it’s possibly the greatest blog on the internet)
+（另外，[https://blog.acolyer.org][6] 的每日“晨读论文”总结基本上是我学习和理解计算机科学论文的唯一方式，它有可能是整个互联网上最好的博客之一！）
 
-### networking code is designed to run “as fast as possible”
+### 网络代码被设计为运行得“尽可能快“
 
-So! Let’s say we believe we want to send data a little more slowly, at the speed of the bottleneck in our connection. This is all very well, but networking software isn’t really designed to send data at a controlled rate! This (as far as I understand it) is how most networking stuff is designed:
+所以，假设我们相信我们想以一个更慢的速率（例如以我们连接中的瓶颈速率）来传输数据。这很好，但网络软件并不是被设计为以一个可控速率来传输数据的！下面是我所理解的大多数网络软件怎么做的：
 
-1.  There’s a queue of packets coming in
+1. 现在有一个队列的信息包来临；
 
-2.  It reads off the queue and sends the packets out as as fast as possible
+2. 然后软件读取队列并尽可能快地发送信息包；
 
-3.  That’s it
+3. 就这样，没有了。
 
-This is pretty inflexible! Like – suppose I have one really fast connection I’m sending packets on, and one really slow connection. If all I have is a queue to put packets on, I don’t get that much control over when the packets I’m sending actually get sent out. I can’t slow down the queue!
+这个过程非常呆板——假设我以一个非常快的速率发送信息包，而另一端的连接却非常慢。假如我所拥有的就是一个放置所有信息包的队列，当我实际要发送数据时，我并没有办法来控制这个发送过程，所以我便不能减慢这个队列传输的速率。
 
-### a better way: give every packet an “earliest departure time”
+### 一个更好的方式：给每个信息包一个”最早的出发时间“
 
-His proposal was to modify the skb data structure in the Linux kernel (which is the data structure used to represent network packets) to have a TIMESTAMP on it representing the earliest time that packet should go out.
+BBR 协议将会修改 Linux 内核中 skb 的数据结构（这个数据结构被用来表达网络信息包），使得它有一个时间戳，这个时间戳代表着这个信息包应该被发送出去的最早时间。
 
-I don’t know a lot about the Linux network stack, but the interesting thing to me about this proposal is that it doesn’t sound like a huge change! It’s just an extra timestamp.
+对于 Linux 网络栈我不知道更多的详情了，但对于我来说，这个协议最有趣的地方是这个改动并不是一个非常大的改动！它只是添加了一个额外的时间戳而已。
 
-### replace queues with timing wheels!!!
+### 用时间轮盘替换队列！！！
 
-Once we have all these packets with times on them, how do we get them sent out at the right time? TIMING WHEELS!
+一旦我们将时间戳打到这些信息包上，我们怎样在合适的时间将它们发送出去呢？使用_时间轮盘_！
 
-At Papers We Love a while back ([some good links in the meetup description][7]) there was a talk about timing wheels. Timing wheels are the algorithm the Linux process scheduler decides when to run processes.
+在前不久的”我们喜爱的论文“活动中（这是关于这次聚会的描述的[某些好的链接][7]），有一个演讲谈论了关于时间轮盘的话题。时间轮盘是一类用来指导 Linux 的进程调度器决定何时运行进程的算法。
 
-He said that timing wheels actually perform better than queues for scheduling work – they both offer constant time operations, but the timing wheels constant is smaller because of some stuff to do with cache performance. I didn’t really follow the performance arguments.
+Van Jacobson 说道：时间轮盘实际上比队列调度工作得更好——它们都提供常数时间的操作，但因为某些缓存机制，时间轮盘的常数要更小一些。我真的没有太明白这里他说的关于性能的解释。
 
-One point he made about timing wheels is that you can easily implement a queue with a timing wheel (though not vice versa!) – if every time you add a new packet, you say that you want it to be sent RIGHT NOW at the earliest, then you effectively end up with a queue. So this timing wheel approach is backwards compatible, but it makes it much easier to implement more complex traffic shaping algorithms where you send out different packets at different rates.
+他说道：关于时间轮盘的一个关键点是你可以很轻松地用时间轮盘实现一个队列（但反之不能！）——假如每次你增加一个新的信息包，在最开始你说我想让它_现在_就被发送走，很显然这样你就可以得到一个队列了。而这个时间轮盘方法是向后兼容的，它使得你可以更容易地实现某些更加复杂的对流量非常敏感的算法，例如让你针对不同的信息包以不同的速率去发送它们。
 
-### maybe we can fix the internet by improving Linux!
+### 或许我们可以通过改善 Linux 来修复互联网！
 
-With any internet-scale problem, the tricky thing about making progress on it is that you need cooperation from SO MANY different parties to change how internet protocols are implemented. You have Linux machines, BSD machines, Windows machines, different kinds of phones, Juniper/Cisco routers, and lots of other devices!
+对于任何影响到整个互联网规模的问题，最为棘手的问题是当你要做出改善时，例如改变互联网协议的实现，你需要面对各种不同的设备。你要面对 Linux 的机子，BSD 的机子， Windows 的机子，各种各样的手机，瞻博或者思科的路由器以及数量繁多的其他设备！
 
-But Linux is in kind of an interesting position in the networking landscape!
+但是在网络环境中 Linux 处于某种有趣的位置上！
 
-*   Android phones run Linux
+* Android 手机运行着 Linux
 
-*   Most consumer wifi routers run Linux
+* 大多数的消费级 WiFi 路由器运行着 Linux
 
-*   Lots of servers run Linux
+* 无数的服务器运行着 Linux
 
-So in any given network connection, you’re actually relatively likely to have a Linux machine at both ends (a linux server, and either a Linux router or Android device).
+所以在任何给定的网络连接中，实际上很有可能在不同的终端有一台 Linux 机子（例如一个 Linux 服务器，或者一个 Linux 路由器，一台 Android 设备）。
 
-So the point is that if you want to improve congestion on the internet in general, it would make a huge difference to just change the Linux networking stack. (and maybe the iOS networking stack too) Which is why there was a keynote at this Linux networking conference about it!
+所以重点是假如你想大幅改善互联网上的拥塞状况，只需要改变 Linux 网络栈就会大所不同（或许 iOS 网络栈也是类似的）。这也就是为什么在本次的 Linux 网络会议上有这样的一个演讲！
 
-### the internet is still changing! Cool!
+### 互联网仍在改变！酷！
 
-I usually think of TCP/IP as something that we figured out in the 80s, so it was really fascinating to hear that folks think that there are still serious issues with how we’re designing our networking protocols, and that there’s work to do to design them differently.
+通常我以为 TCP/IP 仍然是上世纪 80 年代的东西，所以当从这些专家口中听说这些我们正在设计的网路协议仍然有许多严重的问题时，真的是非常有趣，并且听说现在有不同的方式来设计它们。
 
-And of course it makes sense – the landscape of networking hardware and the relative speeds of everything and the kinds of things people are using the internet for (netflix!) is changing all the time, so it’s reasonable that at some point we need to start designing our algorithms differently for the internet of 2018 instead of the internet of 1998.
+当然也确实是这样——网络硬件以及和速度相关的任何设备，以及人们使用网络来干的各种事情（例如观看网飞 Netflix 的节目）等等，一直都在随着时间发生着改变，所以正因为这样，我们需要为 2018 年的互联网而不是为 1988 年的互联网设计我们不同的算法。
 
 --------------------------------------------------------------------------------
 
 via: https://jvns.ca/blog/2018/07/12/netdev-day-2--moving-away-from--as-fast-as-possible/
 
 作者：[Julia Evans][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[FSSlc](https://github.com/FSSlc)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
