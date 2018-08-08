@@ -1,41 +1,39 @@
-
-FSSlc is translating
-
-netdev day 1: IPsec!
+netdev 第一天：IPsec！
 ============================================================
 
-Hello! This year, like last year, I’m at the [netdev conference][3]. (here are my [notes from last year][4]).
+嗨！和去年一样，今年我又参加了 [netdev 会议][3]。（[这里][14]是我上一年所做的笔记）。
 
-Today at the conference I learned a lot about IPsec, so we’re going to talk about IPsec! There was an IPsec workshop given by Sowmini Varadhan and [Paul Wouters][5]. All of the mistakes in this post are 100% my fault though :).
+在今天的会议中，我学到了很多有关 IPsec 的知识，所以下面我将介绍它们！其中 Sowmini Varadhan 和 [Paul Wouters][5] 做了一场关于 IPsec 的专题研讨会。本文中的错误 100% 都是我的错:)。
 
-### what’s IPsec?
+### 什么是 IPsec？
 
-IPsec is a protocol used to encrypt IP packets. Some VPNs are implemented with IPsec. One big thing I hadn’t really realized until today is that there isn’t just one protocol used for VPNs – I think VPN is just a general term meaning “your IP packets get encrypted and sent through another server” and VPNs can be implemented using a bunch of different protocols (OpenVPN, PPTP, SSTP, IPsec, etc) in a bunch of different ways.
+IPsec 是一个用来加密 IP 包的协议。某些 VPN 已经是通过使用 IPsec 来实现的。直到今天我才真正意识到 VPN 使用了不只一种协议，原来我以为 VPN 只是一个通用术语，指的是“你的数据包将被加密，然后通过另一台服务器去发送“。VPN 可以使用一系列不同的协议（OpenVPN、PPTP、SSTP、IPsec 等）以不同的方式来实现。
 
-Why is IPsec different from other VPN protocols? (like, why was there a tutorial about it at netdev and not the other protocols?) My understanding is that there are 2 things that make it different:
+为什么 IPsec 和其他的 VPN 协议如此不同呢？（或者说，为什么在本次 netdev 会议中，将会给出 IPsec 的教学而不是其他的协议呢？）我的理解是有 2 点使得它如此不同：
 
-*   It’s an IETF standard, documented in eg [RFC 6071][1] (did you know the IETF is the group that makes RFCs? I didn’t until today!)
+* 它是一个 IETF 标准，例如可以在文档 [RFC 6071][1] 等中查到（你知道 IETF 是制定 RFC 标准的组织吗？我也是直到今天才知道的！）。
 
-*   it’s implemented in the Linux kernel (so it makes sense that there was a netdev tutorial on it, since netdev is a Linux kernel networking conference :))
+* 它在 Linux 内核中被实现了（所以这才是为什么本次 netdev 会议中有关于它的教学，因为 netdev 是一个跟 Linux 内核网络有关的会议 :)）。
 
-### How does IPsec work?
+### IPsec 是如何工作的？
 
-So let’s say your laptop is using IPsec to encrypt its packets and send them through another device. How does that work? There are 2 parts to IPsec: a userspace part, and a kernel part.
+假如说你的笔记本正使用 IPsec 来加密数据包并通过另一台设备来发送它们，那这是怎么工作的呢？对于 IPsec 来说，它有 2 个部分：一个是用户空间部分，另一个是内核空间部分。
 
-The userspace part of IPsec is responsible for key exchange, using a protocol called [IKE][6] (“internet key exchange”). Basically when you open a new VPN connection, you need to talk to the VPN server and negotiate a key to do encryption.
+IPsec 的用户空间部分负责**密钥的交换**，使用名为 [IKE][6] （"internet key exchange"，网络密钥传输）的协议。总的来说，当你打开一个 VPN 连接的时候，你需要与 VPN 服务器通信，并且和它协商使用一个密钥来进行加密。
 
-The kernel part of IPsec is responsible for the actual encryption of packets – once a key is generated using IKE, the userspace part of IPsec will tell the kernel which encryption key to use. Then the kernel will use that key to encrypt packets!
+IPsec 的内核部分负责数据包的实际加密工作——一旦使用 `IKE` 生成了一个密钥，IPsec 的用户空间部分便会告诉内核使用哪个密钥来进行加密。然后内核便会使用该密钥来加密数据包！
 
-### Security Policy & Security Associations
+### 安全策略以及安全关联
+(译者注：security association 我翻译为安全关联， 参考自 https://zh.wikipedia.org/wiki/%E5%AE%89%E5%85%A8%E9%97%9C%E8%81%AF)
 
-The kernel part of IPSec has two databases: the security policy database(SPD) and the security association database (SAD).
+IPSec 的内核部分有两个数据库：**安全策略数据库**（SPD）和**安全关联数据库**（SAD）。
 
-The security policy database has IP ranges and rules for what to do to packets for that IP range (“do IPsec to it”, “drop the packet”, “let it through”). I find this a little confusing because I’m used to rules about what to do to packets in various IP ranges being in the route table (`sudo ip route list`), but apparently you can have IPsec rules too and they’re in a different place!
+安全策略数据库包含 IP 范围和用于该范围的数据包需要执行的操作（对其执行 IPsec、丢弃数据包、让数据包通过）。对于这点我有点迷糊，因为针对不同 IP 范围的数据包所采取的规则已经在路由表（`sudo ip route list`）中使用过，但显然你也可以设定 IPsec 规则，但它们位于不同的地方！
 
-The security association database I think has the encryption keys to use for various IPs.
+而在我眼中，安全关联数据库存放有用于各种不同 IP 的加密密钥。
 
-The way you inspect these databases is, extremely unintuitively, using a command called `ip xfrm`. What does xfrm mean? I don’t know!
-
+查看这些数据库的方式却是非常不直观的，需要使用一个名为 `ip xfrm` 的命令，至于 `xfrm` 是什么意思呢？我也不知道！
+(译者注：我在 https://www.allacronyms.com/XFMR/Transformer 上查到 xfmr 是 Transformer 的简写，又根据 man7 上 http://man7.org/linux/man-pages/man8/ip-xfrm.8.html 的简介， 我认为这个说法可信。)
 ```
 # security policy database
 $ sudo ip xfrm policy
@@ -47,64 +45,66 @@ $ sudo ip x s
 
 ```
 
-### Why is IPsec implemented in the Linux kernel and TLS isn’t?
+### 为什么 IPsec 被实现在 Linux 内核中而 TLS 没有？
 
-For both TLS and IPsec, you need to do a key exchange when opening the connection (using Diffie-Hellman or something). For some reason that might be obvious but that I don’t understand yet (??) people don’t want to do key exchange in the kernel.
+对于 TLS 和 IPsec 来说，当打开一个连接时，它们都需要做密钥交换（使用 Diffie-Hellman 或者其他算法）。基于某些可能很明显但我现在还没有理解（？？）的原因，在内核中人们并不想做密钥的交换。
 
-The reason IPsec is easier to implement in the kernel is that with IPsec, you need to negotiate key exchanges much less frequently (once for every IP address you want to open a VPN connection with), and IPsec sessions are much longer lived. So it’s easy for userspace to do a key exchange, get the key, and hand it off to the kernel which will then use that key for every IP packet.
+IPsec 更容易在内核实现的原因是使用 IPsec 你可以更少频率地协商密钥的交换（对于每个你想通过 VPN 来连接的 IP 只需要一次），并且 IPsec 会话存活得更长。所以对于用户空间来说，使用 IPsec 来做密钥交换、密钥的获取和将密钥传递给内核将更容易，内核得到密钥后将使用该密钥来处理每个 IP 数据包。
 
-With TLS, there are a couple of problems:
+而对于 TLS 来说，则存在一些问题：
 
-a. you’re constantly doing new key exchanges every time you open a new TLS connection, and TLS connections are shorter-lived b. there isn’t a natural protocol boundary where you need to start doing encryption – with IPsec, you just encrypt every IP packet in a given IP range, but with TLS you need to look at your TCP stream, recognize whether the TCP packet is a data packet or not, and decide to encrypt it
+a. 当你每一打开一个 TLS 连接时，每次你都要做新的密钥交换，并且 TLS 连接存活时间较短。
 
-There’s actually a patch [implementing TLS in the Linux kernel][7] which lets userspace do key exchange and then pass the kernel the keys, so this obviously isn’t impossible, but it’s a much newer thing and I think it’s more complicated with TLS than with IPsec.
+b. 当你需要开始做加密时，使用 IPsec 没有一个自然的协议边界，你只需要加密给定 IP 范围内的每个 IP 包即可，但如果使用 TLS，你需要查看 TCP 流，辨别 TCP 包是否是一个数据包，然后决定是否加密它。
 
-### What software do you use to do IPsec?
+实际上存在一个补丁用于 [在 Linux 内核中实现 TLS][7]，它让用户空间做密钥交换，然后传给内核密钥，所以很明显，使用 TLS 不是不可能的，但它是一个新事物，并且我认为相比使用 IPsec，使用 TLS 更加复杂。
 
-The ones I know about are Libreswan and Strongswan. Today’s tutorial focused on Libreswan.
+### 使用什么软件来实现 IPsec 呢？
 
-Somewhat confusingly, even though Libreswan and Strongswan are different software packages, they both install a binary called `ipsec` for managing IPsec connections, and the two `ipsec` binaries are not the same program (even though they do have the same role).
+据我所知有 Libreswan 和 Strongswan 两个软件。今天的教程关注的是 libreswan。
 
-Strongswan and Libreswan do what’s described in the “how does IPsec work” section above – they do key exchange with IKE and tell the kernel about keys to configure it to do encryption.
+有些让人迷糊的是，尽管 Libreswan 和 Strongswan 是不同的程序包，但它们都会安装一个名为 `ipsec` 的二进制文件来管理 IPsec 连接，并且这两个 `ipsec` 二进制文件并不是相同的程序（尽管它们担任同样的角色）。
 
-### IPsec isn’t only for VPNs!
+在上面的“IPsec 如何工作”部分，我已经描述了 Strongswan 和 Libreswan 做了什么——使用 IKE 做密钥交换，并告诉内核有关如何使用密钥来做加密。
 
-At the beginning of this post I said “IPsec is a VPN protocol”, which is true, but you don’t have to use IPsec to implement VPNs! There are actually two ways to use IPsec:
+### VPN 不是只能使用 IPsec 来实现！
 
-1.  “transport mode”, where the IP header is unchanged and only the contents of the IP packet are encrypted. This mode is a little more like using TLS – you talk to the server you’re communicating with directly (not through a VPN server or something), it’s just that the contents of the IP packet get encrypted
+在本文的开头我说“IPsec 是一个 VPN 协议”，这是对的，但你并不必须使用 IPsec 来实现 VPN！实际上有两种方式来使用 IPsec：
 
-2.  “tunnel mode”, where the IP header and its contents are all encrypted and encapsulated into another UDP packet. This is the mode that’s used for VPNs – you take your packet that you’re sending to secret_site.com, encrypt it, send it to your VPN server, and the VPN server passes it on for you.
+1. “传输模式”，其中 IP 表头没有改变，只有 IP 数据包的内容被加密。这种模式有点类似于使用 TLS -- 你直接告诉服务器你正在通信（而不是通过一个 VPN 服务器或其他设备），只有 IP 包里的内容被加密。 
+
+2. ”隧道模式“，其中 IP 表头和它的内容都被加密了，并且被封装进另一个 UDP 包内。这个模式被 VPN 所使用 --  你获取你正传送给一个秘密网站的包，然后加密它，并将它送给你的 VPN 服务器，然后 VPN 服务器再传送给你。
 
 ### opportunistic IPsec
 
-An interesting application of “transport mode” IPsec I learned about today (where you open an IPsec connection directly with the host you’re communicating with instead of some other intermediary server) is this thing called “opportunistic IPsec”. There’s an opportunistic IPsec server here:[http://oe.libreswan.org/][8].
+今天我学到了 IPsec “传输模式”的一个有趣应用，它叫做 “opportunistic IPsec”（通过它，你可以通过开启一个 IPsec 连接来直接和你要通信的主机连接，而不是通过其他的中介服务器），现在已经有一个 opportunistic IPsec 服务器了，它位于 [http://oe.libreswan.org/][8]。
 
-I think the idea is that if you set up Libreswan and unbound up on your computer, then when you connect to [http://oe.libreswan.org][9], what happens is:
+我认为当你在你的电脑上设定好 `libreswan` 和 unbound DNS 程序后，当你连接到 [http://oe.libreswan.org][8] 时，主要发生了如下的几件事：
 
-1.  `unbound` makes a DNS query for the IPSECKEY record of oe.libreswan.org (`dig ipseckey oe.libreswan.org`) to get a public key to use for that domain. (this requires DNSSEC to be secure which when I learn about it will be a whole other blog post, but you can just run that DNS query with dig and it will work if you want to see the results)
+1. `unbound` 做一次 DNS 查询来获取 `oe.libreswan.org` (`dig ipseckey oe.libreswan.org`) 的 IPSECKEY 记录，以便获取到公钥来用于该网站（这需要 DNSSEC 是安全的，并且当我获得足够多这方面的知识后，我将用另一篇文章来说明它。假如你想看到相关的结果，并且如果你只是使用 dig 命令来运行此次 DNS 查询的话，它也可以工作）。
 
-2.  `unbound` gives the public key to libreswan, which uses it to do a key exchange with the IKE server running on oe.libreswan.org
+2. `unbound` 将公钥传给 `libreswan` 程序，然后 `libreswan` 使用它来和运行在  `oe.libreswan.org` 网站上的 IKE 服务器做一次密钥交换。
 
-3.  `libreswan` finishes the key exchange, gives the encryption key to the kernel, and tells the kernel to use that encryption key when talking to `oe.libreswan.org`
+3. `libreswan`  完成了密钥交换，将加密密钥传给内核并告诉内核当和 `oe.libreswan.org` 做通信时使用该密钥。
 
-4.  Your connection is now encrypted! Even though it’s a HTTP connection! so interesting!
+4. 你的连接现在被加密了！即便它是 HTTP 连接！有趣吧！
 
-### IPsec and TLS learn from each other
+### IPsec 和 TLS 相互借鉴
 
-One interesting tidbit from the tutorial today was that the IPsec and TLS protocols have actually learned from each other over time – like they said IPsec’s IKE protocol had perfect forward secrecy before TLS, and IPsec has also learned some things from TLS. It’s neat to hear about how different internet protocols are learning & changing over time!
+在今天的教程中听到一个有趣的花絮是 IPsec 和 TLS 协议实际上总是从对方学习 -- 正如他们说在 TLS 出现前， IPsec 的 IKE 协议有着完美的正向加密，而 IPsec 也从 TLS 那里学了很多。很高兴能听到不同的网络协议之间是如何从对方那里学习并与时俱进的事实！
 
-### IPsec is interesting!
+### IPsec 是有趣的！
 
-I’ve spent quite a lot of time learning about TLS, which is obviously a super important networking protocol (let’s encrypt the internet! :D). But IPsec is an important internet encryption protocol too, and it has a different role from TLS! Apparently some mobile phone protocols (like 5G/LTE) use IPsec to encrypt their network traffic!
+我已经花了很长时间来学习 TLS，很明显它是一个超级重要的网络协议（让我们来加密网络吧！:D）。但 IPsec 也是一个很重要的网络加密协议，它与 TLS 有着不同的角色！很明显有些移动电话协议（例如 5G/LTE）使用 IPsec 来加密它们的网络流量！
 
-I’m happy I know a little more about it now! As usual several things in this post are probably wrong, but hopefully not too wrong :)
+现在我很高兴我知道更多关于 IPsec 的知识！和以前一样可能本文有些错误，但希望不会错的太多 :)
 
 --------------------------------------------------------------------------------
 
 via: https://jvns.ca/blog/2018/07/11/netdev-day-1--ipsec/
 
 作者：[ Julia Evans][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[FSSlc](https://github.com/FSSlc)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -118,4 +118,3 @@ via: https://jvns.ca/blog/2018/07/11/netdev-day-1--ipsec/
 [6]:https://en.wikipedia.org/wiki/Internet_Key_Exchange
 [7]:https://blog.filippo.io/playing-with-kernel-tls-in-linux-4-13-and-go/
 [8]:http://oe.libreswan.org/
-[9]:http://oe.libreswan.org/
