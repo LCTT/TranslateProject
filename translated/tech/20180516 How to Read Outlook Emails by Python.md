@@ -1,32 +1,31 @@
-translating by lujun9972
-How to Read Outlook Emails by Python
+如何用 Python 读取 Outlook 中的电子邮件
 ======
 
-![](https://process.filestackapi.com/cache=expiry:max/resize=width:700/compress/OVArLzhmRzOEQZsvGavF)
+![](https://process.filestackapi.com/cache=expiry：max/resize=width：700/compress/OVArLzhmRzOEQZsvGavF)
 
-when you start e-mail marketing , You need opt-in email address list. You have opt-in list. You are using email client software and If you can export your list from your email client, You will have good list.
+从事电子邮件营销，准入邮箱列表是必不可少的。你可能已经有了准入列表，同时还使用电子邮件客户端软件。如果你能从电子邮件客户端中导出准入列表，那这份列表想必是极好的。
 
-Now I am trying to explain my codes to write all emails into test file from your outlook profile.
+我使用一些代码来将 outlook 配置中的所有邮件写入一个临时文件中，现在让我来尝试解释一下这些代码。
 
-First you should import win32com.client, You need to install pywin32
+首先你需要倒入 win32com.client，为此你需要安装 pywin32
 ```
 pip install pywin32
 
 ```
 
-We should connect to Outlook by MAPI
+我们需要通过 MAPI 协议连接 Outlok
 ```
 outlook = win32com.client.Dispatch("Outlook.Application").GetNamespace("MAPI")
 
 ```
 
-Then we should get all accounts in your outlook profile.
+然后从 outlook 配置中获取所有的账户。
 ```
 accounts= win32com.client.Dispatch("Outlook.Application").Session.Accounts;
 
 ```
 
-Then You need to get emails from inbox folder that is named emailleri_al.
+在然后需要从名为 emaileri_al 的收件箱中获取邮件。
 ```
 def emailleri_al(folder):
     messages = folder.Items
@@ -49,7 +48,7 @@ def emailleri_al(folder):
                  pass
 ```
 
-You should go to all account and get inbox folder and get emails
+你需要进入所有账户的所有收件箱中获取电子邮件
 ```
 for account in accounts:
     global inbox
@@ -78,7 +77,7 @@ for account in accounts:
                 print("*************************************************", file=
 ```
 
-All Code is as the following
+下面是完整的代码
 ```
 import win32com.client
 import win32com
