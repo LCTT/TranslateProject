@@ -116,7 +116,7 @@ the copy builtin is replaced by memory moves, and range loops are rewritten into
 for loops. Some of these currently happen before the conversion to SSA due to
 historical reasons, but the long-term plan is to move all of them here.
 
-在 AST 转化成 SSA 的过程中，特定节点也被低级化为更简单的组件，以便于剩余的编译阶段可以基于它们工作。例如，内建的拷贝被替换为内存移动，range循环被改写为for循环(range需要翻译！！！）。由于历史原因，这里面有些目前在转化到 SSA 之前发生，但长期计划则是把它们都移到这里（转化 SSA）。
+在 AST 转化成 SSA 的过程中，特定节点也被低级化为更简单的组件，以便于剩余的编译阶段可以基于它们工作。例如，内建的拷贝被替换为内存移动，range循环被改写为for循环。由于历史原因，这里面有些目前在转化到 SSA 之前发生，但长期计划则是把它们都移到这里（转化 SSA）。
 
 Then, a series of machine-independent passes and rules are applied. These do not
 concern any single computer architecture, and thus run on all `GOARCH` variants.
@@ -132,24 +132,39 @@ values, and optimizing multiplications and float operations.
 
 ### 4. Generating machine code
 
+### 4. 生成机器码
+
 * `cmd/compile/internal/ssa` (SSA lowering and arch-specific passes)
+
+* `cmd/compile/internal/ssa` （SSA 低级化和体系结构特定的遍）
+
 * `cmd/internal/obj` (machine code generation)
+
+* `cmd/internal/obj` （机器代码生成）
 
 The machine-dependent phase of the compiler begins with the "lower" pass, which
 rewrites generic values into their machine-specific variants. For example, on
 amd64 memory operands are possible, so many load-store operations may be combined.
 
+编译器中机器相关的阶段开始于“低级”的遍，该阶段将通用变量改写为它们的机器相关变形形式。例如，在 amd64 体系结构中操作数可以在内存中，这样许多装载-存储操作就可以被合并。
+
 Note that the lower pass runs all machine-specific rewrite rules, and thus it
 currently applies lots of optimizations too.
+
+注意低级的遍运行所有机器特定的重写规则，因此它也应用了很多优化。
 
 Once the SSA has been "lowered" and is more specific to the target architecture,
 the final code optimization passes are run. This includes yet another dead code
 elimination pass, moving values closer to their uses, the removal of local
 variables that are never read from, and register allocation.
 
+一旦 SSA 被“低级化”并且更具体地针对目标体系结构，就要运行最终代码优化的遍了。这包含了另外一个死代码消除的遍，它将变量移动到更靠近它们使用的地方，移除从来没有被读过的局部变量，以及寄存器分配。
+
 Other important pieces of work done as part of this step include stack frame
 layout, which assigns stack offsets to local variables, and pointer liveness
 analysis, which computes which on-stack pointers are live at each GC safe point.
+
+本步骤中完成的其它重要工作包括堆栈布局，它将指定局部变量在堆栈中的偏移位置，以及指针活性分析，后者计算每个垃圾收集安全点上的哪些堆栈指针仍然是活动的（译注：不活动的指针就可以……）。
 
 At the end of the SSA generation phase, Go functions have been transformed into
 a series of obj.Prog instructions. These are passed to the assembler
@@ -157,19 +172,23 @@ a series of obj.Prog instructions. These are passed to the assembler
 final object file. The object file will also contain reflect data, export data,
 and debugging information.
 
+在 SSA 生成阶段结束时，Go 函数已被转换为一系列 obj.Prog 指令。它们被传递给汇编程序（`cmd/internal/obj`），后者将它们转换为机器代码并输出最终的目标文件。目标文件还将包含反射数据，导出数据和调试信息。
+
 ### Further reading
+
+### 后续读物
 
 To dig deeper into how the SSA package works, including its passes and rules,
 head to `cmd/compile/internal/ssa/README.md`.
 
-
+要深入了解 SSA 包的工作方式，包括其遍和规则，请转到 cmd/compile/internal/ssa/README.md。
 
 --------------------------------------------------------------------------------
 
 via: https://github.com/golang/go/blob/master/src/cmd/compile/README.md
 
 作者：[mvdan ][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[stephenxs](https://github.com/stephenxs)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
