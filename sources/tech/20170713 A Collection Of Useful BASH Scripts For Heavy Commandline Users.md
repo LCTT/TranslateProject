@@ -1,3 +1,5 @@
+Translating by MjSeven
+
 A Collection Of Useful BASH Scripts For Heavy Commandline Users
 ======
 
