@@ -1,3 +1,5 @@
+translating----geekpi
+
 UNIX curiosities
 ======
 Recently I've been doing more UNIXy things in various tools I'm writing, and I hit two interesting issues. Neither of these are "bugs", but behaviors that I wasn't expecting. 
