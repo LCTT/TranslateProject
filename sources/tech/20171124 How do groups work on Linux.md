@@ -1,5 +1,3 @@
-HankChow Translating
-
 How do groups work on Linux?
 ============================================================
 

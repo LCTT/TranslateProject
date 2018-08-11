@@ -1,6 +1,3 @@
-Translating by filefi
-
-
 How to Install and Use Wireshark on Debian 9 / Ubuntu 16.04 / 17.10
 ============================================================
 
