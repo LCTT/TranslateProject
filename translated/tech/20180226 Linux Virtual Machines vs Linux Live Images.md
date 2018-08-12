@@ -51,7 +51,13 @@ This next item is a huge one. Consider this – perhaps you're a Windows user. Y
 
 这是一个巨大的项目。考虑一些事，例如你在使用 Windows .你喜欢玩 Linux ，但是宁可不获取插件。在一些出状况或考虑你不是拥有单独分区，双系统将是一个问题。不管什么样的情况，同时使用 Linux 虚拟机和镜像系统都对于你是一个很好的选择。
 
-Now I'm going to take a rather odd stance on something. I think you'll get far more value in the long term running Linux on a flash drive using a live image than with a virtual machine. There are two reasons for this. First of all, you'll get used to truly running Linux vs running it inside of a virtual machine on top of Windows. Second, you can setup your flash drive to contain user data with persistent storage.
+Now I'm going to take a rather odd（奇怪的） stance（立场） on something. I think you'll get far（能走多远） more value in the long term running Linux on a flash drive using a live image than with a virtual machine. There are two reasons（原因） for this. First of all, you'll get used to truly （真正的）running Linux vs running it inside of a virtual machine on top of Windows. Second, you can setup your flash drive to contain（包含） user data with persistent storage.
+
+
+
+现在，我在一些事物上采取奇怪的立场。长期运行 Linux 镜像在 Flash 存储或虚拟机，我知道你将为了更多的价值走更远。对于这个说法有两个原因。第一个，在 Windows 中安装一个虚拟机 VS 真正的运行的 Linux 。第二，用一个持续的存储设备你的 Flash 存储，安装 Linux 和你的数据。
+
+
 
 I'll grant you the same could be said with a virtual machine running Linux, however you will never have an update break anything using the live image approach. Why? Because you're not updating a host OS or the guest OS. Remember there are entire distros that are designed to be nothing more than persistent storage Linux distros. Puppy Linux is one great example. Not only can it run on PCs that would otherwise be recycled or thrown away, it allows you to never be bothered again with tedious system updates thanks to the way the distro handles security. It's not a normal Linux distro and it's walled off in such a way that the persistent live image is free from anything scary.
 
