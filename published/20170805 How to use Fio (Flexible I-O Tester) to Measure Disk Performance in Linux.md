@@ -1,39 +1,40 @@
-
 如何在 Linux 中使用 Fio 来测评硬盘性能
 ======
+
 ![](https://wpmojo.com/wp-content/uploads/2017/08/wpmojo.com-how-to-use-fio-to-measure-disk-performance-in-linux-dotlayer.com-how-to-use-fio-to-measure-disk-performance-in-linux-816x457.jpeg)
 
-Fio（Flexible I/O Tester） 是一款由 Jens Axboe 开发的用于测评和压力/硬件验证的[免费开源][1]的软件
+Fio（Flexible I/O Tester） 是一款由 Jens Axboe 开发的用于测评和压力/硬件验证的[自由开源][1]的软件。
 
-它支持 19 种不同类型的 I/O 引擎 (sync, mmap, libaio, posixaio, SG v3, splice, null, network, syslet, guasi, solarisaio, 以及更多), I/O 优先级（针对较新的 Linux 内核），I/O 速度，复刻或线程任务，和其他更多的东西。它能够在块设备和文件上工作。
+它支持 19 种不同类型的 I/O 引擎 (sync、mmap、libaio、posixaio、SG v3、splice、null、network、 syslet、guasi、solarisaio，以及更多)， I/O 优先级（针对较新的 Linux 内核），I/O 速度，fork 的任务或线程任务等等。它能够在块设备和文件上工作。
 
-Fio 接受一种非常简单易于理解的文本格式作为任务描述。软件默认包含了许多示例任务文件。 Fio 展示了所有类型的 I/O 性能信息，包括完整的 IO 延迟和百分比。
+Fio 接受一种非常简单易于理解的文本格式的任务描述。软件默认包含了几个示例任务文件。 Fio 展示了所有类型的 I/O 性能信息，包括完整的 IO 延迟和百分比。
 
-它被广泛的应用在非常多的地方，包括测评、QA，以及验证用途。它支持 Linux 、 FreeBSD 、 NetBSD、 OpenBSD、 OS X、 OpenSolaris、 AIX、 HP-UX、 Android 以及 Windows。
+它被广泛的应用在非常多的地方，包括测评、QA，以及验证用途。它支持 Linux 、FreeBSD 、NetBSD、 OpenBSD、 OS X、 OpenSolaris、 AIX、 HP-UX、 Android 以及 Windows。
 
-在这个教程，我们将使用 Ubuntu 16 ，你需要拥有这台电脑的 sudo 或 root 权限。我们将完整的进行安装和 Fio 的使用。
+在这个教程，我们将使用 Ubuntu 16 ，你需要拥有这台电脑的 `sudo` 或 root 权限。我们将完整的进行安装和 Fio 的使用。
 
 ### 使用源码安装 Fio
 
-我们要去克隆 Github 上的仓库。安装所需的依赖，然后我们将会从源码构建应用。首先，确保我们安装了 Git 。
+我们要去克隆 GitHub 上的仓库。安装所需的依赖，然后我们将会从源码构建应用。首先，确保我们安装了 Git 。
 
 ```
 sudo apt-get install git
 ```
 
 CentOS 用户可以执行下述命令：
+
 ```
 sudo yum install git
 ```
 
-现在，我们切换到 /opt 目录，并从 Github 上克隆仓库：
+现在，我们切换到 `/opt` 目录，并从 Github 上克隆仓库：
 
 ```
 cd /opt
 git clone https://github.com/axboe/fio
 ```
 
-你应该会看到下面这样的输出
+你应该会看到下面这样的输出：
 
 ```
 Cloning into 'fio'...
@@ -45,7 +46,7 @@ Resolving deltas: 100% (16251/16251), done.
 Checking connectivity... done.
 ```
 
-现在，我们通过在 opt 目录下输入下方的命令切换到 Fio 的代码目录：
+现在，我们通过在 `/opt` 目录下输入下方的命令切换到 Fio 的代码目录：
 
 ```
 cd fio
@@ -61,7 +62,7 @@ cd fio
 
 ### 在 Ubuntu 上安装 Fio
 
-对于 Ubuntu 和 Debian 来说， Fio 已经在主仓库内。你可以很容易的使用类似 yum 和 apt-get 的标准包管理器来安装 Fio。
+对于 Ubuntu 和 Debian 来说， Fio 已经在主仓库内。你可以很容易的使用类似 `yum` 和 `apt-get` 的标准包管理器来安装 Fio。
 
 对于 Ubuntu 和 Debian ，你只需要简单的执行下述命令：
 
@@ -69,7 +70,8 @@ cd fio
 sudo apt-get install fio
 ```
 
-对于 CentOS/Redhat 你只需要简单执行下述命令：
+对于 CentOS/Redhat 你只需要简单执行下述命令。
+
 在 CentOS ，你可能在你能安装 Fio 前需要去安装 EPEL 仓库到你的系统中。你可以通过执行下述命令来安装它：
 
 ```
@@ -124,23 +126,20 @@ Run status group 0 (all jobs):
 
 Disk stats (read/write):
  sda: ios=0/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00%
-
-
 ```
 
 ### 执行随机读测试
 
 我们将要执行一个随机读测试，我们将会尝试读取一个随机的 2GB 文件。
+
 ```
 
 sudo fio --name=randread --ioengine=libaio --iodepth=16 --rw=randread --bs=4k --direct=0 --size=512M --numjobs=4 --runtime=240 --group_reporting
-
-
 ```
 
-你应该会看到下面这样的输出
-```
+你应该会看到下面这样的输出：
 
+```
 ...
 fio-2.2.10
 Starting 4 processes
@@ -176,15 +175,13 @@ Run status group 0 (all jobs):
 
 Disk stats (read/write):
  sda: ios=521587/871, merge=0/1142, ticks=96664/612, in_queue=97284, util=99.85%
-
-
 ```
 
 最后，我们想要展示一个简单的随机读-写测试来看一看 Fio 返回的输出类型。
 
 ### 读写性能测试
 
-下述命令将会测试 USB Pen 驱动器 (/dev/sdc1) 的随机读写性能：
+下述命令将会测试 USB Pen 驱动器 (`/dev/sdc1`) 的随机读写性能：
 
 ```
 sudo fio --randrepeat=1 --ioengine=libaio --direct=1 --gtod_reduce=1 --name=test --filename=random_read_write.fio --bs=4k --iodepth=64 --size=4G --readwrite=randrw --rwmixread=75
@@ -213,8 +210,6 @@ Disk stats (read/write):
  sda: ios=774141/258944, merge=1463/899, ticks=748800/150316, in_queue=900720, util=99.35%
 ```
 
-We hope you enjoyed this tutorial and enjoyed following along, Fio is a very useful tool and we hope you can use it in your next debugging activity. If you enjoyed reading this post feel free to leave a comment of questions. Go ahead and clone the repo and play around with the code.
-
 我们希望你能喜欢这个教程并且享受接下来的内容，Fio 是一个非常有用的工具，并且我们希望你能在你下一次 Debugging 活动中使用到它。如果你喜欢这个文章，欢迎留下评论和问题。
 
 
@@ -224,7 +219,7 @@ via: https://wpmojo.com/how-to-use-fio-to-measure-disk-performance-in-linux/
 
 作者：[Alex Pearson][a]
 译者：[Bestony](https://github.com/bestony)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

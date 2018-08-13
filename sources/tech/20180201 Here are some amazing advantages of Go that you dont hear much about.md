@@ -1,3 +1,5 @@
+Translatin by imquanquan
+
 Here are some amazing advantages of Go that you don’t hear much about
 ============================================================
 
