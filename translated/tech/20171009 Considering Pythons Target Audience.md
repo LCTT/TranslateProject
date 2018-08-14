@@ -3,9 +3,9 @@
 
 Python 是为谁设计的？
 
-几年前，我在 python-dev 邮件列表中，以及在活跃的 CPython 核心开发人员和认为参与这一过程不是有效利用个人时间和精力的人中[强调][38]说，“CPython 的发展太快了也太慢了” 是很多冲突的原因之一。
+几年前，我在 python-dev 邮件列表中，以及在活跃的 CPython 核心开发人员和认为参与这一过程不是有效利用个人时间和精力的人中[强调][17]说，“CPython 的发展太快了也太慢了” 是很多冲突的原因之一。
 
-我一直认为事实确实如此，但这也是一个要点，在这几年中我也花费了很多时间去反思它。在我写那篇文章的时候，我还在波音防务澳大利亚公司（Boeing Defence Australia）工作。下个月，我离开了波音进入红帽亚太（Red Hat Asia-Pacific），并且开始在大企业的[开源供应链管理][39]方面收获了<ruby>再分发者<rt>redistributor</rt></ruby>层面的视角。
+我一直认为事实确实如此，但这也是一个要点，在这几年中我也花费了很多时间去反思它。在我写那篇文章的时候，我还在波音防务澳大利亚公司（Boeing Defence Australia）工作。下个月，我离开了波音进入红帽亚太（Red Hat Asia-Pacific），并且开始在大企业的[开源供应链管理][18]方面收获了<ruby>再分发者<rt>redistributor</rt></ruby>层面的视角。
 
 ### Python 的参考解析器使用情况
 
@@ -85,13 +85,13 @@ Python 是为谁设计的？
 
 ### 这些相关问题的原因是什么？
 
-这篇文章很大程度上是受 Twitter 上对[我的这个评论][20]的讨论的启发，它援引了定义在 [PEP 411][21] 中<ruby>临时<rt>Provisional</rt></ruby> API 的情形，作为一个开源项目的例子，对用户发出事实上的邀请，请其作为共同开发者去积极参与设计和开发过程，而不是仅被动使用已准备好的最终设计。
+这篇文章很大程度上是受 Twitter 上对[我的这个评论][8]的讨论的启发，它援引了定义在 [PEP 411][9] 中<ruby>临时<rt>Provisional</rt></ruby> API 的情形，作为一个开源项目的例子，对用户发出事实上的邀请，请其作为共同开发者去积极参与设计和开发过程，而不是仅被动使用已准备好的最终设计。
 
 这些回复包括一些在更高级别的库中支持临时 API 的困难程度的一些沮丧性表述，没有这些库做临时状态的传递，因此而被限制为只有临时 API 的最新版本才支持这些相关特性，而不是任何早期版本的迭代。
 
-我的[主要回应][22]是，建议开源提供者应该强制实施有限支持，通过这种强制的有限支持可以让个人的维护努力变得可持续。这意味着，如果对临时 API 的老版本提供迭代支持是非常痛苦的，那么，只有在项目开发人员自己需要、或有人为此支付费用时，他们才会去提供支持。这与我的这个观点是类似的，那就是，志愿者提供的项目是否应该免费支持老的、商业性质的、长周期的 Python 版本，这对他们来说是非常麻烦的事，我[不认为他们应该这样做][23]，正如我所期望的那样，大多数这样的需求都来自于管理差劲的惯性，而不是真正的需求（真正的需求，应该去支付费用来解决问题）。
+我的[主要回应][10]是，建议开源提供者应该强制实施有限支持，通过这种强制的有限支持可以让个人的维护努力变得可持续。这意味着，如果对临时 API 的老版本提供迭代支持是非常痛苦的，那么，只有在项目开发人员自己需要、或有人为此支付费用时，他们才会去提供支持。这与我的这个观点是类似的，那就是，志愿者提供的项目是否应该免费支持老的、商业性质的、长周期的 Python 版本，这对他们来说是非常麻烦的事，我[不认为他们应该这样做][11]，正如我所期望的那样，大多数这样的需求都来自于管理差劲的惯性，而不是真正的需求（真正的需求，应该去支付费用来解决问题）。
 
-而我的[第二个回应][24]是去实现这一点，尽管多年来一直在讨论这个问题（比如，在上面链接中最早在 2011 年的一篇的文章中，以及在 Python 3 问答的回复中的[这里][25]、[这里][26]、和[这里][27]，以及去年的这篇文章 [Python 包生态系统][28]中也提到了一些)，但我从来没有真实地尝试直接去解释它在标准库设计过程中的影响。
+而我的[第二个回应][12]是去实现这一点，尽管多年来一直在讨论这个问题（比如，在上面链接中最早在 2011 年的一篇的文章中，以及在 Python 3 问答的回复中的[这里][13]、[这里][14]、和[这里][15]，以及去年的这篇文章 [Python 包生态系统][16]中也提到了一些)，但我从来没有真实地尝试直接去解释它在标准库设计过程中的影响。
 
 如果没有这些背景，设计过程中的一部分，比如临时 API 的引入，或者是<ruby>受启发而不同于它<rt>inspired-by-not-the-same-as</rt></ruby>的引入，看起来似乎是完全没有意义的，因为他们看起来似乎是在尝试对 API 进行标准化，而实际上并没有。
 
@@ -182,14 +182,14 @@ via: http://www.curiousefficiency.org/posts/2017/10/considering-pythons-target-a
 [5]: https://github.com/python/core-workflow
 [6]: http://www.vfxplatform.com/
 [7]: http://www.curiousefficiency.org/posts/2015/10/languages-to-improve-your-python.html#broadening-our-horizons
-[20]: https://twitter.com/ncoghlan_dev/status/916994106819088384
-[21]: https://www.python.org/dev/peps/pep-0411/
-[22]: https://twitter.com/ncoghlan_dev/status/917092464355241984
-[23]: http://www.curiousefficiency.org/posts/2015/04/stop-supporting-python26.html
-[24]: https://twitter.com/ncoghlan_dev/status/917088410162012160
-[25]: http://python-notes.curiousefficiency.org/en/latest/python3/questions_and_answers.html#wouldn-t-a-python-2-8-release-help-ease-the-transition
-[26]: http://python-notes.curiousefficiency.org/en/latest/python3/questions_and_answers.html#doesn-t-this-make-python-look-like-an-immature-and-unstable-platform
-[27]: http://python-notes.curiousefficiency.org/en/latest/python3/questions_and_answers.html#what-about-insert-other-shiny-new-feature-here
-[28]: http://www.curiousefficiency.org/posts/2016/09/python-packaging-ecosystem.html
-[38]: http://www.curiousefficiency.org/posts/2011/04/musings-on-culture-of-python-dev.html
-[39]: http://community.redhat.com/blog/2015/02/the-quid-pro-quo-of-open-infrastructure/
+[8]: https://twitter.com/ncoghlan_dev/status/916994106819088384
+[9]: https://www.python.org/dev/peps/pep-0411/
+[10]: https://twitter.com/ncoghlan_dev/status/917092464355241984
+[11]: http://www.curiousefficiency.org/posts/2015/04/stop-supporting-python26.html
+[12]: https://twitter.com/ncoghlan_dev/status/917088410162012160
+[13]: http://python-notes.curiousefficiency.org/en/latest/python3/questions_and_answers.html#wouldn-t-a-python-2-8-release-help-ease-the-transition
+[14]: http://python-notes.curiousefficiency.org/en/latest/python3/questions_and_answers.html#doesn-t-this-make-python-look-like-an-immature-and-unstable-platform
+[15]: http://python-notes.curiousefficiency.org/en/latest/python3/questions_and_answers.html#what-about-insert-other-shiny-new-feature-here
+[16]: http://www.curiousefficiency.org/posts/2016/09/python-packaging-ecosystem.html
+[17]: http://www.curiousefficiency.org/posts/2011/04/musings-on-culture-of-python-dev.html
+[18]: http://community.redhat.com/blog/2015/02/the-quid-pro-quo-of-open-infrastructure/
