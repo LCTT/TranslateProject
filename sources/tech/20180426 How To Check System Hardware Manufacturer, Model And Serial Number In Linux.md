@@ -1,3 +1,5 @@
+icecoobe translating
+
 How To Check System Hardware Manufacturer, Model And Serial Number In Linux
 ======
 Getting system hardware information is not a problem for Linux GUI and Windows users but CLI users facing trouble to get this details.
