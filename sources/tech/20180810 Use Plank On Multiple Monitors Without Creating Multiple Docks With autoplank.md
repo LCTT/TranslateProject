@@ -1,5 +1,8 @@
 Use Plank On Multiple Monitors Without Creating Multiple Docks With autoplank
 ======
+
+![](https://3.bp.blogspot.com/-BNHa6rP_kGk/W22cJrT3ghI/AAAAAAAABWA/TAKZgxJfYuwz-Me-M135-LWYl5qvs6cIwCLcBGAs/s640/plank-dock.png)
+
 **[autoplank][1] is a small tool written in Go which adds multi-monitor support to Plank dock without having to create [multiple][2] docks.**
 
 **When you move your mouse cursor to the bottom of a monitor, autoplank detect your mouse movement using** `xdotool` and it automatically moves Plank to that monitor. This tool **only works if Plank is set to run at the bottom of the screen** , at least for now.
