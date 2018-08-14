@@ -1,3 +1,5 @@
+translating by pityonline
+
 What is CI/CD?
 ======
 
