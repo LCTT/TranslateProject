@@ -1,24 +1,25 @@
-使用 MQTT 实现项目数据收发
+使用 MQTT 在项目中实现数据收发
 ======
+
+> 从开源数据到开源事件流，了解一下 MQTT 发布/订阅（pubsub）线路协议。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/toolbox-learn-draw-container-yearbook.png?itok=xDbwz1pP)
 
 去年 11 月我们购买了一辆电动汽车，同时也引发了有趣的思考：我们应该什么时候为电动汽车充电？对于电动汽车充电所用的电，我希望能够对应最小的二氧化碳排放，归结为一个特定的问题：对于任意给定时刻，每千瓦时对应的二氧化碳排放量是多少，一天中什么时间这个值最低？
 
-
 ### 寻找数据
 
-我住在纽约州，大约 80% 的电力消耗可以自给自足，主要来自天然气、水坝（大部分来自于<ruby>尼亚加拉<rt>Niagara</rt></ruby>大瀑布）、核能发电，少部分来自风力、太阳能和其它化石燃料发电。非盈利性组织 [<ruby>纽约独立电网运营商<rt>New York Independent System Operator</rt></ruby>][1] (NYISO) 负责整个系统的运作，实现发电机组发电与用电之间的平衡，同时也是纽约路灯系统的监管部门。
+我住在纽约州，大约 80% 的电力消耗可以自给自足，主要来自天然气、水坝（大部分来自于<ruby>尼亚加拉<rt>Niagara</rt></ruby>大瀑布）、核能发电，少部分来自风力、太阳能和其它化石燃料发电。非盈利性组织 [<ruby>纽约独立电网运营商<rt>New York Independent System Operator</rt></ruby>][1] （NYISO）负责整个系统的运作，实现发电机组发电与用电之间的平衡，同时也是纽约路灯系统的监管部门。
 
 尽管没有为公众提供公开 API，NYISO 还是尽责提供了[不少公开数据][2]供公众使用。每隔 5 分钟汇报全州各个发电机组消耗的燃料数据。数据以 CSV 文件的形式发布于公开的档案库中，全天更新。如果你了解不同燃料对发电瓦数的贡献比例，你可以比较准确的估计任意时刻的二氧化碳排放情况。
 
-在构建收集处理公开数据的工具时，我们应该时刻避免过度使用这些资源。相比将这些数据打包并发送给所有人，我们有更好的方案。我们可以创建一个低开销的<ruby>事件流<rt>event stream</rt></ruby>，人们可以订阅并第一时间得到消息。我们可以使用 [MQTT][3] 实现该方案。我的 ([ny-power.org][4]) 项目目标是收录到 [Home Assistant][5] 项目中；后者是一个开源的<ruby>家庭自动化<rt>home automation</rt></ruby>平台，拥有数十万用户。如果所有用户同时访问 CSV 文件服务器，估计 NYISO 不得不增加访问限制。
+在构建收集处理公开数据的工具时，我们应该时刻避免过度使用这些资源。相比将这些数据打包并发送给所有人，我们有更好的方案。我们可以创建一个低开销的<ruby>事件流<rt>event stream</rt></ruby>，人们可以订阅并第一时间得到消息。我们可以使用 [MQTT][3] 实现该方案。我的项目（[ny-power.org][4]）目标是收录到 [Home Assistant][5] 项目中；后者是一个开源的<ruby>家庭自动化<rt>home automation</rt></ruby>平台，拥有数十万用户。如果所有用户同时访问 CSV 文件服务器，估计 NYISO 不得不增加访问限制。
 
 ### MQTT 是什么？
 
-MQTT 是一个<ruby>发布订阅线协议<rt>publish/subscription wire protocol</rt></ruby>，为小规模设备设计。发布订阅系统工作原理类似于消息总线。你将一条消息发布到一个<ruby>主题<rt>topic</rt></ruby>上，那么所有订阅了该主题的客户端都可以获得该消息的一份拷贝。对于消息发送者而言，无需知道哪些人在订阅消息；你只需将消息发布到一系列主题，同时订阅一些你感兴趣的主题。就像参加了一场聚会，你选取并加入感兴趣的对话。
+MQTT 是一个<ruby>发布订阅线路协议<rt>publish/subscription wire protocol</rt></ruby>，为小规模设备设计。发布订阅系统工作原理类似于消息总线。你将一条消息发布到一个<ruby>主题<rt>topic</rt></ruby>上，那么所有订阅了该主题的客户端都可以获得该消息的一份拷贝。对于消息发送者而言，无需知道哪些人在订阅消息；你只需将消息发布到一系列主题，并订阅一些你感兴趣的主题。就像参加了一场聚会，你选取并加入感兴趣的对话。
 
-MQTT 可应用构建极为高效的应用。客户端订阅有限的几个主题，也只收到他们感兴趣的内容。不仅节省了处理时间，还降低了网络带宽使用。
+MQTT 能够构建极为高效的应用。客户端订阅有限的几个主题，也只收到它们感兴趣的内容。不仅节省了处理时间，还降低了网络带宽使用。
 
 作为一个开放标准，MQTT 有很多开源的客户端和服务端实现。对于你能想到的每种编程语言，都有对应的客户端库；甚至有嵌入到 Arduino 的库，可以构建传感器网络。服务端可供选择的也很多，我的选择是 Eclipse 项目提供的 [Mosquitto][6] 服务端，这是因为它体积小、用 C 编写，可以承载数以万计的订阅者。
 
@@ -34,7 +35,7 @@ MQTT 还有一些有趣的特性，其中之一是<ruby>遗嘱<rt>last-will-and-
 
 NYSO 公布的 CSV 文件中有一个是实时的燃料混合使用情况。每 5 分钟，NYSO 发布这 5 分钟内发电使用的燃料类型和相应的发电量（以兆瓦为单位）。
 
-The CSV file looks something like this:
+这个 CSV 文件看起来像这样：
 
 | 时间戳         | 时区 | 燃料类型     | 兆瓦为单位的发电量 |
 | --- | --- | --- | --- |
@@ -65,7 +66,6 @@ ny-power/upstream/fuel-mix/Other Fossil Fuels {"units": "MW", "value": 4, "ts": 
 ny-power/upstream/fuel-mix/Wind {"units": "MW", "value": 41, "ts": "05/09/2018 00:05:00"}
 ny-power/upstream/fuel-mix/Other Renewables {"units": "MW", "value": 226, "ts": "05/09/2018 00:05:00"}
 ny-power/upstream/fuel-mix/Nuclear {"units": "MW", "value": 4114, "ts": "05/09/2018 00:05:00"}
-
 ```
 
 这种直接的转换是种不错的尝试，可将公开数据转换为公开事件。我们后续会继续将数据转换为二氧化碳排放强度，但这些原始数据还可被其它应用使用，用于其它计算用途。
@@ -74,7 +74,7 @@ ny-power/upstream/fuel-mix/Nuclear {"units": "MW", "value": 4114, "ts": "05/09/2
 
 主题和<ruby>主题结构<rt>topic structure</rt></ruby>是 MQTT 的一个主要特色。与其它标准的企业级消息总线不同，MQTT 的主题无需事先注册。发送者可以凭空创建主题，唯一的限制是主题的长度，不超过 220 字符。其中 `/` 字符有特殊含义，用于创建主题的层次结构。我们即将看到，你可以订阅这些层次中的一些分片。
 
-基于开箱即用的 Mosquitto，任何一个客户端都可以向任何主题发布消息。在原型设计过程中，这种方式十分便利；但一旦部署到生产环境，你需要增加<ruby>访问控制列表<rt>access control list, ACL</rt></ruby>只允许授权的应用发布消息。例如，任何人都能以只读的方式访问我的应用的主题层级，但只有那些具有特定<ruby>凭证<rt>credentials</rt></ruby>的客户端可以发布内容。
+基于开箱即用的 Mosquitto，任何一个客户端都可以向任何主题发布消息。在原型设计过程中，这种方式十分便利；但一旦部署到生产环境，你需要增加<ruby>访问控制列表<rt>access control list</rt></ruby>（ACL）只允许授权的应用发布消息。例如，任何人都能以只读的方式访问我的应用的主题层级，但只有那些具有特定<ruby>凭证<rt>credentials</rt></ruby>的客户端可以发布内容。
 
 主题中不包含<ruby>自动样式<rt>automatic schema</rt></ruby>，也没有方法查找客户端可以发布的全部主题。因此，对于那些从 MQTT 总线消费数据的应用，你需要让其直接使用已知的主题和消息格式样式。
 
@@ -87,8 +87,8 @@ ny-power/upstream/fuel-mix/Nuclear {"units": "MW", "value": 4114, "ts": "05/09/2
   * `#` 以递归方式匹配，直到字符串结束
   * `+` 匹配下一个 `/` 之前的内容
 
-
 为便于理解，下面给出几个例子：
+
 ```
 ny-power/#  - 匹配 ny-power 应用发布的全部主题
 ny-power/upstream/#  - 匹配全部原始数据的主题
@@ -107,6 +107,7 @@ ny-power/+/+/Hydro - 匹配全部两次层级之后为 Hydro 类型的主题（�
 利用[<ruby>美国能源情报署<rt>U.S. Energy Information Administration</rt></ruby>][7] 给出的 2016 年纽约各类燃料发电及排放情况，我们可以给出各类燃料的[平均排放率][8]，单位为克/兆瓦时。
 
 上述结果被封装到一个专用的微服务中。该微服务订阅 `ny-power/upstream/fuel-mix/+`，即数据泵中燃料组成情况的原始数据，接着完成计算并将结果（单位为克/千瓦时）发布到新的主题层次结构上：
+
 ```
 ny-power/computed/co2 {"units": "g / kWh", "value": 152.9486, "ts": "05/09/2018 00:05:00"}
 ```
@@ -123,7 +124,6 @@ ny-power/computed/co2 {"units": "g / kWh", "value": 152.9486, "ts": "05/09/2018 
 
 ```
 mosquitto_sub -h mqtt.ny-power.org -t ny-power/# -v
-
 ```
 
 只要我编写或调试 MQTT 应用，我总会在一个终端中运行 `mosquitto_sub`。
@@ -132,7 +132,7 @@ mosquitto_sub -h mqtt.ny-power.org -t ny-power/# -v
 
 到目前为止，我们已经有提供公开事件流的应用，可以用微服务或命令行工具访问该应用。但考虑到互联网仍占据主导地位，因此让用户可以从浏览器直接获取事件流是很重要。
 
-MQTT 的设计者已经考虑到了这一点。协议标准支持三种不同的传输协议：[TCP][10]，[UDP][11] 和 [WebSockets][12]。主流浏览器都支持 WebSockets，可以维持持久连接，用于实时应用。
+MQTT 的设计者已经考虑到了这一点。协议标准支持三种不同的传输协议：[TCP][10]、[UDP][11] 和 [WebSockets][12]。主流浏览器都支持 WebSockets，可以维持持久连接，用于实时应用。
 
 Eclipse 项目提供了 MQTT 的一个 JavaScript 实现，叫做 [Paho][13]，可包含在你的应用中。工作模式为与服务器建立连接、建立一些订阅，然后根据接收到的消息进行响应。
 
@@ -187,21 +187,19 @@ function onMessageArrived(message) {
         };
         Plotly.newPlot('co2_graph', plot, layout);
     }
-
 ```
 
 上述应用订阅了不少主题，因为我们将要呈现若干种不同类型的数据；其中 `ny-power/computed/co2` 主题为我们提供当前二氧化碳排放的参考值。一旦收到该主题的新消息，网站上的相应内容会被相应替换。
 
-
 ![NYISO 二氧化碳排放图][15]
 
-[ny-power.org][4] 网站提供的 NYISO 二氧化碳排放图。
+*[ny-power.org][4] 网站提供的 NYISO 二氧化碳排放图。*
 
 `ny-power/archive/co2/24h` 主题提供了时间序列数据，用于为 [Plotly][16] 线表提供数据。`ny-power/upstream/fuel-mix` 主题提供当前燃料组成情况，为漂亮的柱状图提供数据。
 
 ![NYISO 燃料组成情况][18]
 
-[ny-power.org][4] 网站提供的燃料组成情况。
+*[ny-power.org][4] 网站提供的燃料组成情况。*
 
 这是一个动态网站，数据不从服务器拉取，而是结合 MQTT 消息总线，监听对外开放的 WebSocket。就像数据泵和打包器程序那样，网站页面也是一个发布订阅客户端，只不过是在你的浏览器中执行，而不是在公有云的微服务上。
 
@@ -223,8 +221,8 @@ via: https://opensource.com/article/18/6/mqtt
 
 作者：[Sean Dague][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
-校对：[校对者ID](https://github.com/校对者ID)
+译者：[pinewall](https://github.com/pinewall)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
