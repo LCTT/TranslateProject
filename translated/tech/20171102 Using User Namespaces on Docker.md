@@ -1,11 +1,10 @@
-translating by lujun9972
-Using User Namespaces on Docker
+使用 Docker 的 User Namespaces 功能
 ======
-User Namespaces is officially added to Docker ver. 1.10, which allows the host system to map its own `uid` and `gid` to some different `uid` and `gid` for containers' processes. This is a big improvement in Docker's security. So I will show an example of the problem that User Namespaces can resolve, and then show how to enable it.
+User Namespaces 于 Docker1.10 版正式纳入其中，该功能允许主机系统将自身的 `uid` 和 `gid` 映射为容器进程中的另一个其他 `uid` 和 `gid`。这对 Docker 的安全性来说是一项巨大的改进。下面我会通过一个案例来展示一下 User Namespaces 能够解决的问题，以及如何启用该功能。
 
-### Creating a Docker Machine
+### 创建一个 Docker Machine
 
-If you already have a docker machine to try out the User Namaspaces, you can skip this step. I'm using Docker Toolbox on my Macbook, so I simply create a Docker Machine on VirutalBox with `docker-machine` command (e.g. hostname=`host1`):
+如果你已经创建好了一台用来实验 User Namespaces 的 docker machine，那么可以跳过这一步。我在自己的 Macbook 上安装了 Docker Toolbox，因此我只需要使用 `docker-machine` 命令就很简单地创建一个基于 VirtualBox 的 Docker Machine( 这里假设主机名为 `host1`)：
 ```
 # Create host1
 $ docker-machine create --driver virtualbox host1
@@ -15,9 +14,9 @@ $ docker-machine ssh host1
 
 ```
 
-### Understanding what a non-root user can do if User Namespaces is not enabled
+### 理解在 User Napespaces 未启用的情况下，非 root 用户能够做什么
 
-Before setting up User Namespaces, let's see what the problem is. What was actually wrong with Docker? First of all, one of the great benefits on using Docker is that user can have root privilege on containers so that user can easily install software packages. But this is like a double-edged sword in Linux container technology. With some little twist, non-root user can get root access to, for instance, `/etc` of the host system. Here's how to do it.
+在启用 User Namespaces 前，我们先来看一下会有什么问题。Docker 到底哪个地方做错了？首先，使用 Docker 的一大优势在于用户在容器中可以拥有 root 权限，因此用户可以很方便地安装软件包。但是该项 Linux 容器技术是一把双刃剑。只要经过少许操作，非 root 用户就能以 root 的权限访问主机系统中的内容，比如 `/etc` . 下面是操作步骤。
 ```
 # Run a container and mount host1's /etc onto /root/etc
 $ docker run --rm -v /etc:/root/etc -it ubuntu
@@ -33,9 +32,9 @@ $ cat /etc/hosts
 
 ```
 
-As you can see, it is surprizingly easy, and it's obvious that Docker wasn't designed for shared computers. But now, with the User Namespaces, Docker lets you avoid this problem.
+你可以看到，步骤简单到难以置信，很明显 Docker 并不适用于运行在多人共享的电脑上。但是现在，通过 User Namespaces，Docker 可以让你避免这个问题。
 
-### Enabling User Namespaces
+### 启用 User Namespaces
 ```
 # Create a user called "dockremap"
 $ sudo adduser dockremap
@@ -46,7 +45,7 @@ $ sudo sh -c 'echo dockremap:500000:65536 > /etc/subgid'
 
 ```
 
-And then, open `/etc/init.d/docker`, and add `--userns-remap=default` next to `/usr/local/bin/docker daemon` like this:
+然后，打开 `/etc/init.d/docker`，并在 `/usr/local/bin/docker daemon` 后面加上 `--userns-remap=default`，像这样：
 ```
 $ sudo vi /etc/init.d/docker
  :
@@ -57,28 +56,28 @@ $ sudo vi /etc/init.d/docker
 
 ```
 
-And restart Docker:
+然后重启 Docker：
 ```
 $ sudo /etc/init.d/docker restart
 
 ```
 
-That's all!
+这就完成了！
 
-**Note:** If you're using CentOS 7, there are two things you need to know.
+**注意：** 若你使用的是 CentOS 7，则你需要了解两件事。
 
-**1.** User Namespaces is not enabled on the kernel by default. You can enable it by executing the following command and restart the system.
+**1。** 内核默认并没有启用 User Namespaces。运行下面命令并重启系统，可以启用该功能。
 ```
 sudo grubby --args="user_namespace.enable=1" \
  --update-kernel=/boot/vmlinuz-3.10.0-XXX.XX.X.el7.x86_64
 
 ```
 
-**2.** CentOS 7 uses systemctl to manage services, so the file you need to edit is `/usr/lib/systemd/system/docker.service`.
+**2。** CentOS 7 使用 systemctl 来管理服务，因此你需要编辑的文件是 `/usr/lib/systemd/system/docker.service`。
 
-### Checking if User Namespaces is working properly
+### 确认 User Namespaces 是否正常工作
 
-If everything's set properly, you shouldn't be able to edit host1's `/etc` from a container. So let's check it out.
+若一切都配置妥当，则你应该无法再在容器中编辑 host1 上的 `/etc` 了。让我们来试一下。
 ```
 # Create a container and mount host1's /etc to container's /root/etc
 $ docker run --rm -v /etc:/root/etc -it ubuntu
@@ -104,7 +103,7 @@ rm: cannot remove '/root/etc/hostname': Permission denied
 
 ```
 
-Okay, great. This is how User Namespaces works.
+好了，太棒了。这就是 User Namespaces 的工作方式。
 
 --------------------------------------------------------------------------------
 
