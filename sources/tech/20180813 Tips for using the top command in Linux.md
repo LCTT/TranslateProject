@@ -1,3 +1,5 @@
+translating by ypingcn
+
 Tips for using the top command in Linux
 ======
 
