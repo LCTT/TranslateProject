@@ -1,10 +1,9 @@
-translating by lujun9972
-A gawk script to convert smart quotes
+一个转换花引号的 gawk 脚本
 ======
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/osdc_520x292_opensourceprescription.png？itok=gFrc_GTH)
 
-我管理者一个个人网站，同时手工编辑网站上的网页。由于网站上的页面并不多，这种方法对我很适合，可以让我对网站代码的细节一清二楚。
+我管理着一个个人网站，同时手工编辑网站上的网页。由于网站上的页面并不多，这种方法对我很适合，可以让我对网站代码的细节一清二楚。
 
 最近我升级了网站的设计样式，我决定把所有的普通引号都转换成 "花引号"，即在打印材料中使用的那种引号：用 “” 来代替 ""。
 
