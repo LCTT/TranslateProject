@@ -1,3 +1,5 @@
+translated by hopefully2333
+
 5 open source role-playing games for Linux
 ======
 
