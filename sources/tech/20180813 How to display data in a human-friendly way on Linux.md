@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 How to display data in a human-friendly way on Linux
 ======
 
