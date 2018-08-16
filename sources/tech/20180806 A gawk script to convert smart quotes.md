@@ -1,3 +1,4 @@
+translating by lujun9972
 A gawk script to convert smart quotes
 ======
 
@@ -16,175 +17,96 @@ You can use different methods to convert quotes. Greg Pittman wrote a [Python sc
 To start, I wrote a simple gawk function to evaluate a single character. If that character is a quote, the function determines if it should output a plain quote or a smart quote. The function looks at the previous character; if the previous character is a space, the function outputs a left smart quote. Otherwise, the function outputs a right smart quote. The script does the same for single quotes.
 ```
 function smartquote (char, prevchar) {
-
         # print smart quotes depending on the previous character
-
         # otherwise just print the character as-is
 
-
-
         if (prevchar ~ /\s/) {
-
                 # prev char is a space
-
                 if (char == "'") {
-
                         printf("&lsquo;");
-
                 }
-
                 else if (char == "\"") {
-
                         printf("&ldquo;");
-
                 }
-
                 else {
-
                         printf("%c", char);
-
                 }
-
         }
-
         else {
-
                 # prev char is not a space
-
                 if (char == "'") {
-
                         printf("&rsquo;");
-
                 }
-
                 else if (char == "\"") {
-
                         printf("&rdquo;");
-
                 }
-
                 else {
-
                         printf("%c", char);
-
                 }
-
         }
-
 }
-
 ```
 
 With that function, the body of the gawk script processes the HTML input file character by character. The script prints all text verbatim when inside an HTML tag (for example, `<html lang="en">`. Outside any HTML tags, the script uses the `smartquote()` function to print text. The `smartquote()` function does the work of evaluating when to print plain quotes or smart quotes.
 ```
 function smartquote (char, prevchar) {
-
         ...
-
 }
-
-
 
 BEGIN {htmltag = 0}
 
-
-
 {
-
         # for each line, scan one letter at a time:
-
-
 
         linelen = length($0);
 
-
-
         prev = "\n";
 
-
-
         for (i = 1; i <= linelen; i++) {
-
                 char = substr($0, i, 1);
 
-
-
                 if (char == "<") {
-
                         htmltag = 1;
-
                 }
-
-
 
                 if (htmltag == 1) {
-
                         printf("%c", char);
-
                 }
-
                 else {
-
                         smartquote(char, prev);
-
                         prev = char;
-
                 }
-
-
 
                 if (char == ">") {
-
                         htmltag = 0;
-
                 }
-
         }
 
-
-
         # add trailing newline at end of each line
-
         printf ("\n");
-
 }
-
 ```
 
 Here's an example:
 ```
 gawk -f quotes.awk test.html > test2.html
-
 ```
 
 Sample input:
 ```
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
   <title>Test page</title>
-
   <link rel="stylesheet" type="text/css" href="/test.css" />
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width" />
-
 </head>
-
 <body>
-
   <h1><a href="/"><img src="logo.png" alt="Website logo" /></a></h1>
-
   <p>"Hi there!"</p>
-
   <p>It's and its.</p>
-
 </body>
-
 </html>
 
 ```
@@ -192,33 +114,19 @@ Sample input:
 Sample output:
 ```
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
   <title>Test page</title>
-
   <link rel="stylesheet" type="text/css" href="/test.css" />
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width" />
-
 </head>
-
 <body>
-
   <h1><a href="/"><img src="logo.png" alt="Website logo" /></a></h1>
-
   <p>&ldquo;Hi there!&rdquo;</p>
-
   <p>It&rsquo;s and its.</p>
-
 </body>
-
 </html>
-
 ```
 
 --------------------------------------------------------------------------------
@@ -227,7 +135,7 @@ via: https://opensource.com/article/18/8/gawk-script-convert-smart-quotes
 
 作者：[Jim Hall][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[lujun9972](https://github.com/lujun9972)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
