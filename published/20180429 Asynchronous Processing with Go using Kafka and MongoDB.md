@@ -1,28 +1,25 @@
 使用 Kafka 和 MongoDB 进行 Go 异步处理
 ============================================================
 
-在我前面的博客文章 ["使用 MongoDB 和 Docker 多阶段构建我的第一个 Go 微服务][9] 中，我创建了一个 Go 微服务示例，它发布一个 REST 式的 http 端点，并将从 HTTP POST 中接收到的数据保存到 MongoDB 数据库。
+在我前面的博客文章 “[我的第一个 Go 微服务：使用 MongoDB 和 Docker 多阶段构建][9]” 中，我创建了一个 Go 微服务示例，它发布一个 REST 式的 http 端点，并将从 HTTP POST 中接收到的数据保存到 MongoDB 数据库。
 
-在这个示例中，我将保存数据到 MongoDB 和创建另一个微服务去处理它解耦了。我还添加了 Kafka 为消息层服务，这样微服务就可以异步地处理它自己关心的东西了。
+在这个示例中，我将数据的保存和 MongoDB 分离，并创建另一个微服务去处理它。我还添加了 Kafka 为消息层服务，这样微服务就可以异步处理它自己关心的东西了。
 
 > 如果你有时间去看，我将这个博客文章的整个过程录制到 [这个视频中了][1] :)
 
-下面是这个使用了两个微服务的简单的异步处理示例的高级架构。
+下面是这个使用了两个微服务的简单的异步处理示例的上层架构图。
 
 ![rest-kafka-mongo-microservice-draw-io](https://www.melvinvivas.com/content/images/2018/04/rest-kafka-mongo-microservice-draw-io.jpg)
 
 微服务 1 —— 是一个 REST 式微服务，它从一个 /POST http 调用中接收数据。接收到请求之后，它从 http 请求中检索数据，并将它保存到 Kafka。保存之后，它通过 /POST 发送相同的数据去响应调用者。
 
-微服务 2 —— 是一个在 Kafka 中订阅一个主题的微服务，在这里就是微服务 1 保存的数据。一旦消息被微服务消费之后，它接着保存数据到 MongoDB 中。
+微服务 2 —— 是一个订阅了 Kafka 中的一个主题的微服务，微服务 1 的数据保存在该主题。一旦消息被微服务消费之后，它接着保存数据到 MongoDB 中。
 
 在你继续之前，我们需要能够去运行这些微服务的几件东西：
 
 1.  [下载 Kafka][2] —— 我使用的版本是 kafka_2.11-1.1.0
-
 2.  安装 [librdkafka][3] —— 不幸的是，这个库应该在目标系统中
-
 3.  安装 [Kafka Go 客户端][4]
-
 4.  运行 MongoDB。你可以去看我的 [以前的文章][5] 中关于这一块的内容，那篇文章中我使用了一个 MongoDB docker 镜像。
 
 我们开始吧！
@@ -32,14 +29,12 @@
 ```
 $ cd /<download path>/kafka_2.11-1.1.0
 $ bin/zookeeper-server-start.sh config/zookeeper.properties
-
 ```
 
 接着运行 Kafka ——  我使用 9092 端口连接到 Kafka。如果你需要改变端口，只需要在 `config/server.properties` 中配置即可。如果你像我一样是个新手，我建议你现在还是使用默认端口。
 
 ```
 $ bin/kafka-server-start.sh config/server.properties
-
 ```
 
 Kafka 跑起来之后，我们需要 MongoDB。它很简单，只需要使用这个 `docker-compose.yml` 即可。
@@ -61,17 +56,15 @@ volumes:
 
 networks:
    network1:
-
 ```
 
 使用 Docker Compose 去运行  MongoDB docker 容器。
 
 ```
 docker-compose up
-
 ```
 
-这里是微服务 1 的相关代码。我只是修改了我前面的示例去保存到 Kafka 而不是 MongoDB。
+这里是微服务 1 的相关代码。我只是修改了我前面的示例去保存到 Kafka 而不是 MongoDB：
 
 [rest-to-kafka/rest-kafka-sample.go][10]
 
@@ -133,15 +126,13 @@ func saveJobToKafka(job Job) {
 		}, nil)
 	}
 }
-
 ```
 
-这里是微服务 2 的代码。在这个代码中最重要的东西是从 Kafka 中消耗数据，保存部分我已经在前面的博客文章中讨论过了。这里代码的重点部分是从 Kafka 中消费数据。
+这里是微服务 2 的代码。在这个代码中最重要的东西是从 Kafka 中消费数据，保存部分我已经在前面的博客文章中讨论过了。这里代码的重点部分是从 Kafka 中消费数据：
 
 [kafka-to-mongo/kafka-mongo-sample.go][11]
 
 ```
-
 func main() {
 
 	//Create MongoDB session
@@ -206,14 +197,12 @@ func saveJobToMongo(jobString string) {
 	fmt.Printf("Saved to MongoDB : %s", jobString)
 
 }
-
 ```
 
- 我们来演示一下，运行微服务 1。确保 Kafka 已经运行了。
+我们来演示一下，运行微服务 1。确保 Kafka 已经运行了。
 
 ```
 $ go run rest-kafka-sample.go
-
 ```
 
 我使用 Postman 向微服务 1 发送数据。
@@ -228,7 +217,6 @@ $ go run rest-kafka-sample.go
 
 ```
 $ go run kafka-mongo-sample.go
-
 ```
 
 现在，你将在微服务 2 上看到消费的数据，并将它保存到了 MongoDB。
@@ -239,12 +227,11 @@ $ go run kafka-mongo-sample.go
 
 ![Screenshot-2018-04-29-22.26.39](https://www.melvinvivas.com/content/images/2018/04/Screenshot-2018-04-29-22.26.39.png)
 
-完整的源代码可以在这里找到
+完整的源代码可以在这里找到：
+
 [https://github.com/donvito/learngo/tree/master/rest-kafka-mongo-microservice][12]
 
 现在是广告时间：如果你喜欢这篇文章，请在 Twitter [@donvito][6] 上关注我。我的 Twitter 上有关于 Docker、Kubernetes、GoLang、Cloud、DevOps、Agile 和 Startups 的内容。欢迎你们在 [GitHub][7] 和 [LinkedIn][8] 关注我。
-
-[视频](https://youtu.be/xa0Yia1jdu8)
 
 开心地玩吧！
 
@@ -252,14 +239,14 @@ $ go run kafka-mongo-sample.go
 
 via: https://www.melvinvivas.com/developing-microservices-using-kafka-and-mongodb/
 
-作者：[Melvin Vivas ][a]
+作者：[Melvin Vivas][a]
 译者：[qhwdw](https://github.com/qhwdw)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://www.melvinvivas.com/author/melvin/
-[1]:https://www.melvinvivas.com/developing-microservices-using-kafka-and-mongodb/#video1
+[1]:https://youtu.be/xa0Yia1jdu8
 [2]:https://kafka.apache.org/downloads
 [3]:https://github.com/confluentinc/confluent-kafka-go
 [4]:https://github.com/confluentinc/confluent-kafka-go
