@@ -1,5 +1,5 @@
 Slices from the ground up
-============================================================
+======
 
 这篇文章最初的灵感来源于我与一个使用切片作栈的同事的一次聊天。那次聊天，话题最后拓展到了 Go 语言中的切片是如何工作的。我认为把这些知识记录下来会帮到别人。
 
@@ -7,9 +7,9 @@ Slices from the ground up
 
 任何关于 Go 语言的切片的讨论都要从另一个数据结构，也就是 Go 语言的数组开始。Go 语言的数组有两个特性：
 
-1. 数组的长度是固定的；`[5]int` 是由 5 个 `unt` 构成的数组，和`[3]int` 不同。
-
+1. 数组的长度是固定的；`[5]int` 是由 5 个 `unt` 构成的数组，和 `[3]int` 不同。
 2. 数组是值类型。考虑如下示例：
+
     ```
     package main
 
@@ -23,19 +23,19 @@ Slices from the ground up
     }
     ```
 
-    语句 `b := a` 定义了一个新的变量 `b`，类型是 `[5]int`，然后把 `a` 中的内容_复制_到 `b` 中。改变 `b` 中的值对 `a` 中的内容没有影响，因为 `a` 和 `b` 是相互独立的值。 [1][1]
+    语句 `b := a` 定义了一个新的变量 `b`，类型是 `[5]int`，然后把 `a` 中的内容 _复制_ 到 `b` 中。改变 `b` 中的值对 `a` 中的内容没有影响，因为 `a` 和 `b` 是相互独立的值。[1][1]
 
 ### 切片
 
 Go 语言的切片和数组的主要有如下两个区别：
 
 1. 切片没有一个固定的长度。切片的长度不是它类型定义的一部分，而是由切片内部自己维护的。我们可以使用内置的 `len` 函数知道他的长度。
-
 2. 将一个切片赋值给另一个切片时 _不会_ 将切片进行复制操作。这是因为切片没有直接保存它的内部数据，而是保留了一个指向 _底层数组_ [3][3]的指针。数据都保留在底层数组里。
 
 基于第二个特性，两个切片可以享有共同的底层数组。考虑如下示例：
 
 1. 对切片取切片
+
     ```
     package main
 
@@ -49,9 +49,10 @@ Go 语言的切片和数组的主要有如下两个区别：
     }
     ```
 
-    在这个例子里，`a` 和 `b` 享有共同的底层数组 —— 尽管 `b` 的起始值在数组里的偏移不同，两者的长度也不同。通过 `b` 修改底层数组的值也会导致 `a` 里的值的改变。 
+    在这个例子里，`a` 和 `b` 享有共同的底层数组 —— 尽管 `b` 的起始值在数组里的偏移不同，两者的长度也不同。通过 `b` 修改底层数组的值也会导致 `a` 里的值的改变。
 
 2. 将切片传进函数
+
     ```
     package main
 
@@ -75,7 +76,7 @@ Go 语言的切片和数组的主要有如下两个区别：
 大多数程序员都能直观地了解 Go 语言切片的底层数组是如何工作的，因为它与其他语言中类似数组的工作方式类似。比如下面就是使用 Python 重写的这一小节的第一个示例：
 
 ```
-Python 2.7.10 (default, Feb  7 2017, 00:08:15) 
+Python 2.7.10 (default, Feb  7 2017, 00:08:15)
 [GCC 4.2.1 Compatible Apple LLVM 8.0.0 (clang-800.0.34)] on darwin
 Type "help", "copyright", "credits" or "license" for more information.
 >>> a = [1,2,3,4,5]
@@ -102,7 +103,7 @@ irb(main):004:0> a
 
 ### 切片头
 
-让切片得以同时拥有值和指针的特性的魔法来源于切片实际上是一个结构体类型。这个结构体通常叫做 _切片头_，这里是 [反射包内的相关定义][20]。且片头的定义大致如下：
+让切片得以同时拥有值和指针的特性的魔法来源于切片实际上是一个结构体类型。这个结构体通常叫做 _切片头_，这里是[反射包内的相关定义][20]。且片头的定义大致如下：
 
 ![](https://dave.cheney.net/wp-content/uploads/2018/07/slice.001-300x257.png)
 
@@ -116,7 +117,7 @@ type slice struct {
 }
 ```
 
-这个头很重要，因为和[ `map` 以及 `chan` 这两个类型不同][21]，切片是值类型，当被赋值或者被作为函数的参数时候会被复制过去。
+这个头很重要，因为和 [`map` 以及 `chan` 这两个类型不同][21]，切片是值类型，当被赋值或者被作为函数的参数时候会被复制过去。
 
 程序员们都能理解 `square` 的形参 `v` 和 `main` 中声明的 `v` 的是相互独立的，我们一次为例。
 
@@ -136,7 +137,7 @@ func main() {
 }
 ```
 
-因此 `square` 对自己的形参 `v` 的操作没有影响到 `main` 中的 `v`。下面这个示例中的 `s` 也是 `main` 中声明的切片 `s` 的独立副本，_而不是_指向 `main` 的 `s` 的指针。
+因此 `square` 对自己的形参 `v` 的操作没有影响到 `main` 中的 `v`。下面这个示例中的 `s` 也是 `main` 中声明的切片 `s` 的独立副本， _而不是_ 指向 `main` 的 `s` 的指针。
 
 ```
 package main
@@ -198,35 +199,26 @@ level: 0 slice: [0]
 
 如果你想要了解更多 Go 语言内切片运行的原理，我建议看看 Go 博客里的这些文章：
 
-*   [Go Slices: usage and internals][11] (blog.golang.org)
-
-*   [Arrays, slices (and strings): The mechanics of ‘append’][12] (blog.golang.org)
+* [Go Slices: usage and internals][11] (blog.golang.org)
+* [Arrays, slices (and strings): The mechanics of 'append'][12] (blog.golang.org)
 
 ### 注释
 
-1. 这不是数组才有的特性，在 Go 语言里，_一切_ 赋值都是复制过去的，
-
+1. 这不是数组才有的特性，在 Go 语言里， _一切_ 赋值都是复制过去的，
 2. 你可以在对数组使用 `len` 函数，但是得到的结果是多少人尽皆知。[][14]
-
 3. 也叫做后台数组，以及更不严谨的说法是后台切片。[][15]
-
 4. Go 语言里我们倾向于说值类型以及指针类型，因为 C++ 的引用会使使用引用类型这个词产生误会。但是在这里我说引用类型是没有问题的。[][16]
-
-5. 如果你的结构体有[定义在其上的方法或者实现了什么接口][17],那么这个比率可以飙升到接近 100%。[][18]
-
+5. 如果你的结构体有[定义在其上的方法或者实现了什么接口][17]，那么这个比率可以飙升到接近 100%。[][18]
 6. 证明留做习题。
 
 ### 相关文章：
 
-1.  [If a map isn’t a reference variable, what is it?][4]
+1. [If a map isn't a reference variable, what is it?][4]
+2. [What is the zero value, and why is it useful?][5]
+3. [The empty struct][6]
+4. [Should methods be declared on T or *T][7]
 
-2.  [What is the zero value, and why is it useful ?][5]
-
-3.  [The empty struct][6]
-
-4.  [Should methods be declared on T or *T][7]
-
---------------------------------------------------------------------------------
+---
 
 via: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up
 
@@ -236,25 +228,25 @@ via: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:https://dave.cheney.net/
-[1]:https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-bottom-1-3265
-[2]:https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-bottom-2-3265
-[3]:https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-bottom-3-3265
-[4]:https://dave.cheney.net/2017/04/30/if-a-map-isnt-a-reference-variable-what-is-it
-[5]:https://dave.cheney.net/2013/01/19/what-is-the-zero-value-and-why-is-it-useful
-[6]:https://dave.cheney.net/2014/03/25/the-empty-struct
-[7]:https://dave.cheney.net/2016/03/19/should-methods-be-declared-on-t-or-t
-[8]:https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-bottom-4-3265
-[9]:https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-bottom-5-3265
-[10]:https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-bottom-6-3265
-[11]:https://blog.golang.org/go-slices-usage-and-internals
-[12]:https://blog.golang.org/slices
-[13]:https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-1-3265
-[14]:https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-2-3265
-[15]:https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-3-3265
-[16]:https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-4-3265
-[17]:https://dave.cheney.net/2016/03/19/should-methods-be-declared-on-t-or-t
-[18]:https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-5-3265
-[19]:https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-6-3265
-[20]:https://golang.org/pkg/reflect/#SliceHeader
-[21]:https://dave.cheney.net/2017/04/30/if-a-map-isnt-a-reference-variable-what-is-it
+[a]: https://dave.cheney.net/
+[1]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-bottom-1-3265
+[2]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-bottom-2-3265
+[3]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-bottom-3-3265
+[4]: https://dave.cheney.net/2017/04/30/if-a-map-isnt-a-reference-variable-what-is-it
+[5]: https://dave.cheney.net/2013/01/19/what-is-the-zero-value-and-why-is-it-useful
+[6]: https://dave.cheney.net/2014/03/25/the-empty-struct
+[7]: https://dave.cheney.net/2016/03/19/should-methods-be-declared-on-t-or-t
+[8]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-bottom-4-3265
+[9]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-bottom-5-3265
+[10]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-bottom-6-3265
+[11]: https://blog.golang.org/go-slices-usage-and-internals
+[12]: https://blog.golang.org/slices
+[13]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-1-3265
+[14]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-2-3265
+[15]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-3-3265
+[16]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-4-3265
+[17]: https://dave.cheney.net/2016/03/19/should-methods-be-declared-on-t-or-t
+[18]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-5-3265
+[19]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-6-3265
+[20]: https://golang.org/pkg/reflect/#SliceHeader
+[21]: https://dave.cheney.net/2017/04/30/if-a-map-isnt-a-reference-variable-what-is-it
