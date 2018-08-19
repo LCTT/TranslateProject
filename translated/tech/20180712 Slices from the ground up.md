@@ -23,14 +23,14 @@
     }
     ```
 
-    语句 `b := a` 定义了一个类型是 `[5]int` 的新变量 `b`，然后把 `a` 中的内容 _复制_ 到 `b` 中。改变 `b` 对 `a` 中的内容没有影响，因为 `a` 和 `b` 是相互独立的值。[1][1]
+    语句 `b := a` 定义了一个类型是 `[5]int` 的新变量 `b`，然后把 `a` 中的内容 _复制_ 到 `b` 中。改变 `b` 对 `a` 中的内容没有影响，因为 `a` 和 `b` 是相互独立的值。[^1]
 
 ### 切片
 
 Go 语言的切片和数组的主要有如下两个区别：
 
-1. 切片没有一个固定的长度。切片的长度不是它类型定义的一部分，而是由切片内部自己维护的。我们可以使用内置的 `len` 函数知道它的长度。[2][2]
-2. 将一个切片赋值给另一个切片时 _不会_ 对切片进行复制操作。这是因为切片没有直接保存它的内部数据，而是保留了一个指向 _底层数组_ [3][3] 的指针。数据都保留在底层数组里。
+1. 切片没有一个固定的长度。切片的长度不是它类型定义的一部分，而是由切片内部自己维护的。我们可以使用内置的 `len` 函数知道它的长度。[^2]
+2. 将一个切片赋值给另一个切片时 _不会_ 对切片进行复制操作。这是因为切片没有直接保存它的内部数据，而是保留了一个指向 _底层数组_ [^3] 的指针。数据都保留在底层数组里。
 
 基于第二个特性，两个切片可以享有共同的底层数组。看下面的示例：
 
@@ -99,11 +99,11 @@ irb(main):004:0> a
 => [1, 2, 0, 4, 5]
 ```
 
-在大多数将数组视为对象或者是引用类型的语言也是如此。[4][8]
+在大多数将数组视为对象或者是引用类型的语言也是如此。[^4]
 
 ### 切片头
 
-切片同时拥有值和指针特性的神奇之处在于理解切片实际上是一个<ruby>结构体<rt>struct</rt></ruby>类型。这个结构体通常叫做 _切片头_，这里是[<ruby>反射<rt>reflect</rt></ruby>包内的相关定义][20]。切片头的定义大致如下：
+切片同时拥有值和指针特性的神奇之处在于理解切片实际上是一个<ruby>结构体<rt>struct</rt></ruby>类型。这个结构体通常叫做 _切片头_，这里是[<ruby>反射<rt>reflect</rt></ruby>包内的相关定义][7]。切片头的定义大致如下：
 
 ![](https://dave.cheney.net/wp-content/uploads/2018/07/slice.001-300x257.png)
 
@@ -117,7 +117,7 @@ type slice struct {
 }
 ```
 
-这很重要，因为和 [`map` 以及 `chan` 这两个类型不同][21]，切片是值类型，当被赋值或者被作为参数传入函数时候会被复制过去。
+这很重要，因为和 [`map` 以及 `chan` 这两个类型不同][7]，切片是值类型，当被赋值或者被作为参数传入函数时候会被复制过去。
 
 程序员们都能理解 `square` 的形参 `v` 和 `main` 中声明的 `v` 的是相互独立的。请看下面的例子：
 
@@ -155,7 +155,7 @@ func main() {
 }
 ```
 
-Go 的切片是作为值传递的这一点很是不寻常。当你在 Go 内定义一个结构体时，90% 的时间里传递的都是这个结构体的指针。[5][9]切片的传递方式真的很不寻常，我能想到的唯一与之相同的例子只有 `time.Time`。
+Go 的切片是作为值传递的这一点很是不寻常。当你在 Go 内定义一个结构体时，90% 的时间里传递的都是这个结构体的指针[^5]。切片的传递方式真的很不寻常，我能想到的唯一与之相同的例子只有 `time.Time`。
 
 切片作为值传递而不是作为指针传递这一特殊行为会让很多想要理解切片的工作原理的 Go 程序员感到困惑，这是可以理解的。你只需要记住，当你对切片进行赋值，取切片，传参或者作为返回值等操作时，你是在复制切片头结构的三个字段：指向底层数组的指针，长度，以及容量。
 
@@ -193,30 +193,30 @@ level: 1 slice: [0 1]
 level: 0 slice: [0]
 ```
 
-你可以注意到在每一个 `level` 内 `s` 的值没有被别的 `f` 的调用影响，尽管当计算更高的 `level` 时作为 `append` 的副产品，调用栈内的四个 `f` 函数创建了四个底层数组，但是没有影响到当前各自的切片。
+你可以注意到在每一个 `level` 内 `s` 的值没有被别的 `f` 的调用影响，尽管当计算更高的 `level` 时作为 `append` 的副产品，调用栈内的四个 `f` 函数创建了四个底层数组[^6]，但是没有影响到当前各自的切片。
 
 ### 扩展阅读
 
 如果你想要了解更多 Go 语言内切片运行的原理，我建议看看 Go 博客里的这些文章：
 
-* [Go Slices: usage and internals][11] (blog.golang.org)
-* [Arrays, slices (and strings): The mechanics of 'append'][12] (blog.golang.org)
+* [Go Slices: usage and internals][5] (blog.golang.org)
+* [Arrays, slices (and strings): The mechanics of 'append'][6] (blog.golang.org)
 
 ### 注释
 
-1. 这不是数组才有的特性，在 Go 语言里中 _一切_ 赋值都是复制过去的。[][13]
-2. 你也可以在对数组使用 `len` 函数，但是得到的结果是多少人尽皆知。[][14]
-3. 有时也叫做<ruby>后台数组<rt>backing array</rt></ruby>，以及更不严谨的说法是后台切片。[][15]
-4. Go 语言里我们倾向于说值类型以及指针类型，因为 C++ 的<ruby>引用<rt>reference</rt></ruby>类型这个词产生误会。但在这里我认为调用数组作为引用类型是没有问题的。[][16]
-5. 如果你的结构体有[定义在其上的方法或者用于满足某个接口][17]，那么你传入结构体指针的比率可以飙升到接近 100%。[][18]
-6. 证明留做习题。[][19]
+[^1]: 这不是数组才有的特性，在 Go 语言里中 _一切_ 赋值都是复制过去的。
+[^2]: 你也可以在对数组使用 `len` 函数，但是得到的结果是多少人尽皆知。
+[^3]: 有时也叫做<ruby>后台数组<rt>backing array</rt></ruby>，以及更不严谨的说法是后台切片。
+[^4]: Go 语言里我们倾向于说值类型以及指针类型，因为 C++ 的<ruby>引用<rt>reference</rt></ruby>类型这个词产生误会。但在这里我认为调用数组作为引用类型是没有问题的。
+[^5]: 如果你的结构体有[定义在其上的方法或者用于满足某个接口][7]，那么你传入结构体指针的比率可以飙升到接近 100%。
+[^6]: 证明留做习题。
 
 ### 相关文章：
 
-1. [If a map isn't a reference variable, what is it?][4]
-2. [What is the zero value, and why is it useful?][5]
-3. [The empty struct][6]
-4. [Should methods be declared on T or *T][7]
+1. [If a map isn't a reference variable, what is it?][1]
+2. [What is the zero value, and why is it useful?][2]
+3. [The empty struct][3]
+4. [Should methods be declared on T or *T][4]
 
 ---
 
@@ -229,24 +229,10 @@ via: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]: https://dave.cheney.net/
-[1]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-bottom-1-3265
-[2]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-bottom-2-3265
-[3]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-bottom-3-3265
-[4]: https://dave.cheney.net/2017/04/30/if-a-map-isnt-a-reference-variable-what-is-it
-[5]: https://dave.cheney.net/2013/01/19/what-is-the-zero-value-and-why-is-it-useful
-[6]: https://dave.cheney.net/2014/03/25/the-empty-struct
-[7]: https://dave.cheney.net/2016/03/19/should-methods-be-declared-on-t-or-t
-[8]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-bottom-4-3265
-[9]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-bottom-5-3265
-[10]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-bottom-6-3265
-[11]: https://blog.golang.org/go-slices-usage-and-internals
-[12]: https://blog.golang.org/slices
-[13]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-1-3265
-[14]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-2-3265
-[15]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-3-3265
-[16]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-4-3265
-[17]: https://dave.cheney.net/2016/03/19/should-methods-be-declared-on-t-or-t
-[18]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-5-3265
-[19]: https://dave.cheney.net/2018/07/12/slices-from-the-ground-up#easy-footnote-6-3265
-[20]: https://golang.org/pkg/reflect/#SliceHeader
-[21]: https://dave.cheney.net/2017/04/30/if-a-map-isnt-a-reference-variable-what-is-it
+[1]: https://dave.cheney.net/2017/04/30/if-a-map-isnt-a-reference-variable-what-is-it
+[2]: https://dave.cheney.net/2013/01/19/what-is-the-zero-value-and-why-is-it-useful
+[3]: https://dave.cheney.net/2014/03/25/the-empty-struct
+[4]: https://dave.cheney.net/2016/03/19/should-methods-be-declared-on-t-or-t
+[5]: https://blog.golang.org/go-slices-usage-and-internals
+[6]: https://blog.golang.org/slices
+[7]: https://golang.org/pkg/reflect/#SliceHeader
