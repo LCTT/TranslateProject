@@ -11,9 +11,9 @@
 
 这可以通过 6 种方法来实现，下面我来演示一下怎么做。
 
-### 方法一：使用 `Dmidecode` 命令
+### 方法一：使用 dmidecode 命令
 
-`Dmidecode` 是一个读取电脑 DMI（<ruby>桌面管理接口<rt>Desktop Management Interface</rt></ruby>）表内容并且以人类可读的格式显示系统硬件信息的工具。（也有人说是读取 SMBIOS —— <ruby>系统管理 BIOS<rt>System Management BIOS</rt></ruby>）
+`dmidecode` 是一个读取电脑 DMI（<ruby>桌面管理接口<rt>Desktop Management Interface</rt></ruby>）表内容并且以人类可读的格式显示系统硬件信息的工具。（也有人说是读取 SMBIOS —— <ruby>系统管理 BIOS<rt>System Management BIOS</rt></ruby>）
 
 这个表包含系统硬件组件的说明，也包含如序列号、制造商、发布日期以及 BIOS 修订版本号等其它有用的信息。
 
@@ -50,7 +50,7 @@ System Boot Information
 
 **推荐阅读：** [Dmidecode –– 获取 Linux 系统硬件信息的简单方式][1]
 
-### 方法二：使用 `inxi` 命令
+### 方法二：使用 inxi 命令
 
 `inxi` 是 Linux 上查看硬件信息的一个灵巧的小工具，它提供了大量的选项来获取所有硬件信息，这是我在现有的其它 Linux 工具集里所没见到过的。它是从 locsmif 编写的古老的但至今看来都异常灵活的 `infobash` fork 出来的。
 
@@ -64,7 +64,7 @@ Machine: Device: server System: IBM product: N/A v: 0B serial: MK2RL11
 
 **推荐阅读：** [inxi —— 一个很棒的查看 Linux 硬件信息的工具][2]
 
-### 方法三：使用 `lshw` 命令
+### 方法三：使用 lshw 命令
 
 `lshw`（指<ruby>硬件监听器<rt>Hardware Lister</rt></ruby>）是一个小巧灵活的工具，可以生成如内存配置、固件版本、主板配置、CPU 版本和速度、缓存配置、USB、网卡、显卡、多媒体、打印机以及总线速度等机器中各种硬件组件的详细报告。
 
@@ -87,7 +87,7 @@ enal-dbo01t
 
 **推荐阅读：** [LSHW (Hardware Lister) –– 获取 Linux 硬件信息的灵巧的小工具][3]
 
-### 方法四：使用 `/sys` 文件系统
+### 方法四：使用 /sys 文件系统
 
 内核在 `/sys` 目录下的文件中公开了一些 DMI 信息。因此，我们可以通过如下方式运行 `grep` 命令来轻易地获取机器类型。
 
@@ -111,7 +111,7 @@ MK2RL11
 -[VVE134MUS-1.50]-
 ```
 
-### 方法五：使用 `dmesg` 命令
+### 方法五：使用 dmesg 命令
 
 `dmesg` 命令是在 Linux 上 `syslogd` 或 `klogd` 启动前用来记录内核消息（启动阶段的消息）的。它通过读取内核的环形缓冲区来获取数据。在排查问题或只是尝试获取系统硬件信息时，`dmesg` 非常有用。
 
@@ -120,7 +120,7 @@ MK2RL11
 DMI: System x2530 M4: -[1214AC1]-/00Y8494, BIOS -[VVE134MUS-1.50]- 08/30/2013
 ```
 
-### 方法六：使用 `hwinfo` 命令
+### 方法六：使用 hwinfo 命令
 
 `hwinfo`（<ruby>硬件信息<rt>hardware information</rt></ruby>）是另一个很棒的工具，用于检测当前系统存的硬件，并以人类可读的方式显示各种硬件模块的详细信息。
 
