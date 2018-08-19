@@ -1,28 +1,25 @@
-Translating by MjSeven
-
-
-How to display data in a human-friendly way on Linux
+在 Linux 中如何以人性化的方式显示数据
 ======
 
 ![](https://images.idgesg.net/images/article/2018/08/smile-face-on-hand-100767756-large.jpg)
 
-Not everyone thinks in binary or wants to mentally insert commas into large numbers to come to grips with the sizes of their files. So, it's not surprising that Linux commands have evolved over several decades to incorporate more human-friendly ways of displaying information to its users. In today’s post, we look at some of the options provided by various commands that make digesting data just a little easier.
+不是每个人都以二进制方式思考，他们不想在大脑中插入逗号来处理大量数字并获得文件的大小。因此，Linux 命令在过去的几十年里不断发展，以更人性化的方式向用户显示信息，这一点也不奇怪。在今天的文章中，我们将看一看各种命令所提供的一些选项，它们使得数据变得更容易理解。
 
-### Why not default to friendly?
+### 为什么默认显示不更友好一些？
 
-If you’re wondering why human-friendliness isn’t the default –- we humans are, after all, the default users of computers — you might be asking yourself, “Why do we have to go out of our way to get command responses that will make sense to everyone?” The answer is primarily that changing the default output of commands would likely interfere with numerous other processes that were built to expect the default responses. Other tools, as well as scripts, that have been developed over the decades might break in some very ugly ways if they were suddenly fed output in a very different format than what they were built to expect.
+如果你想知道为什么默认不显示得更人性化，原因是：我们人类毕竟是计算机的默认用户（to 校正：这里分很不理解，感觉不对，既然人类是默认用户，那么为什么不人性化呢）。你可能会问自己：“为什么我们不竭尽全力去获得对每个人都有意义的命令的响应？”答案是：改变命令的默认输出可能会干扰许多其它进程，这些进程是在期望默认响应之上构建的。其它的工具，以及过去几十年开发的脚本，如果突然以一种完全不同的格式输出，而不是它们过去所期望的那样，可能会被一种非常丑陋的方式破坏。
 
-It’s probably also true that some of us might prefer to see all of the digits in our file sizes — 1338277310 instead of 1.3G. In any case, switching defaults could be very disruptive, while promoting some easy options for more human-friendly responses only involves us learning some command options.
+说真的，也许我们中的一些人可能更愿意看文件大小中的所有数字，即 1338277310 而不是 1.3G。在任何情况下，切换默认值都可能造成破坏，但是为更加人性化的响应提供一些简单的选项只会让我们学习一些命令选项。
 
-### Commands for displaying human-friendly data
+### 可以显示人性化数据的命令
 
-What are some of the easy options for making the output of Unix commands a little easier to parse? Let's check some command by command.
+有哪些简单的选项可以使 Unix 命令的输出更容易解析呢？让我们来看一些命令。
 
 #### top
 
-You may not have noticed this, but you can change the display of overall memory usage in top by typing " **E** " (i.e., capital E) once top is running. Successive presses will change the numeric display from KiB to MiB to GiB to TiB to PiB to EiB and back to KiB.
+你可能没有注意到这个命令，但是在 top 命令中，你可以通过输入 “**E**”（大写字母 E）来更改显示全部内存使用的方式。连续按下将数字显示从 KiB 到 MiB, 再到 GiB, 接着是 TiB, PiB, EiB，最后回到 KiB。
 
-OK with those units? These and a couple more are defined here:
+认识这些单位吧？这里有一组定义：
 ```
 2**10 = 1,024 = 1 KiB (kibibyte)
 2**20 = 1,048,576 = 1 MiB (mebibyte)
@@ -35,14 +32,14 @@ OK with those units? These and a couple more are defined here:
 
 ```
 
-These units are closely related to kilobytes, megabytes, and gigabytes, etc. But, while close, there's still a significant difference between them. One set is based on powers of 10 and the other powers of 2. Comparing kilobytes and kibibytes, for example, we can see how they diverge:
+这些单位与千字节，兆字节和千兆字节密切相关。虽然它们很接近，但是它们之间仍有很大的区别：一组是基于 10 的幂，另一组是基于 2 的幂。例如，比较千字节和千比字节，我们可以看看它们不同点：
 ```
 KB = 1000 = 10**3
 KiB = 1024 = 2**10
 
 ```
 
-Here's an example of top output using the default display in KiB:
+以下是 top 命令输出示例，使用 KiB 为单位默认显示：
 ```
 top - 10:49:06 up 5 days, 35 min, 1 user, load average: 0.05, 0.04, 0.01
 Tasks: 158 total, 1 running, 118 sleeping, 0 stopped, 0 zombie
@@ -52,7 +49,7 @@ KiB Swap: 2097148 total, 2097148 free, 0 used. 5407432 avail Mem
 
 ```
 
-After one press of an E, it changes to MiB:
+在按下 E 之后，单位变成了 MiB：
 ```
 top - 10:49:31 up 5 days, 36 min, 1 user, load average: 0.03, 0.04, 0.01
 Tasks: 158 total, 2 running, 118 sleeping, 0 stopped, 0 zombie
@@ -62,7 +59,7 @@ MiB Swap: 2047.996 total, 2047.996 free, 0.000 used. 5280.684 avail Mem
 
 ```
 
-After a second E, we get GiB:
+再次按下 E，单位变为 GiB：
 ```
 top - 10:49:49 up 5 days, 36 min, 1 user, load average: 0.02, 0.03, 0.01
 Tasks: 158 total, 1 running, 118 sleeping, 0 stopped, 0 zombie
@@ -72,7 +69,7 @@ GiB Swap: 2.000 total, 2.000 free, 0.000 used. 5.157 avail Mem
 
 ```
 
-You can also change the numbers displaying per-process memory usage by pressing the letter “ **e** ”. It will change from the default of KiB to MiB to GiB to TiB to PiB (expect to see LOTS of zeroes!) and back. Here's some top output after one press of an " **e** ":
+你还可以通过按字母 “**e**” 来更改为显示每个进程使用内存的数字单位。它将从默认的 KiB 到 MiB，再到 GiB, TiB，接着到 PiB（期望看到很多0 (to 校正者：意思是以 PB 为单位前面很多 0)），然后返回 KiB。下面是按了一下 “**e**” 之后的 top 输出：
 ```
 top - 08:45:28 up 4 days, 22:32, 1 user, load average: 0.02, 0.03, 0.00
 Tasks: 167 total, 1 running, 118 sleeping, 0 stopped, 0 zombie
@@ -90,7 +87,7 @@ KiB Swap: 2097148 total, 2097148 free, 0 used. 5406396 avail Mem
 
 #### du
 
-The du command, which shows how much disk space files or directories use, adjusts the sizes to the most appropriate measurement if the **-h** option is used. By default, it reports in kilobytes.
+du 命令显示磁盘空间文件或目录使用了多少，如果使用 **-h** 选项，则将输出大小调整为最合适的单位。默认情况下，它以千字节（KB）为单位。
 ```
 $ du camper*
 360 camper_10.jpg
@@ -105,7 +102,7 @@ $ du -h camper*
 
 #### df
 
-The df command also offers a -h option. Note in the example below how sizes are reported in both gigabytes and megabytes.
+df 命令也提供了一个 -h 选项。请注意在下面的示例中是如何以千兆字节（GB）和兆字节（MB）输出的：
 ```
 $ df -h | grep -v loop
 Filesystem Size Used Avail Use% Mounted on
@@ -121,7 +118,7 @@ tmpfs 596M 0 596M 0% /run/user/1000
 
 ```
 
-The command below uses the **-h** option, but also includes **-T** to display the type of file system we are looking at.
+下面的命令使用了 **-h** 选项，同时使用 **-T** 选项来显示我们正在查看的文件系统的类型。
 ```
 $ df -hT /mnt2
 Filesystem Type Size Used Avail Use% Mounted on
@@ -131,7 +128,7 @@ Filesystem Type Size Used Avail Use% Mounted on
 
 #### ls
 
-Even ls gives us the option of adjusting size displays to the measurements that are the most reasonable.
+即使是 ls，它也为我们提供了调整大小显示的选项，保证是最合理的。
 ```
 $ ls -l camper*
 -rw-rw-r-- 1 shs shs 365091 Jul 14 19:42 camper_10.jpg
@@ -146,7 +143,7 @@ $ ls -lh camper*
 
 #### free
 
-The free command allows you to report memory usage in bytes, kilobytes, megabytes, and gigabytes.
+free 命令允许你以字节（B），千字节（KB），兆字节（MB）和千兆字节（GB）为单位查看内存使用情况。
 ```
 $ free -b
  total used free shared buff/cache available
@@ -169,7 +166,7 @@ Swap: 1 0 1
 
 #### tree
 
-While not related to file or memory measurements, the tree command also provides very human-friendly view of files by displaying them in a hierarchical display to illustrate how the files are organized. This kind of display can be very useful when trying to get an idea for how the contents of a directory are arranged.
+虽然 tree 命令与文件或内存计算无关，但它也提供了非常人性化的文件视图，它分层显示文件以说明文件是如何组织的。当你试图了解如何安排目录内容时，这种显示方式非常有用。
 ```
 $ tree
 .g to
@@ -190,7 +187,7 @@ $ tree
 
 #### stat
 
-The stat command is another that displays information in a very human-friendly format. It provides a lot more metadata on files, including the file sizes in bytes and blocks, the file types, device and inode, owner and group (names and numeric IDs), file permissions in both numeric and rwx format and the dates the file was last accessed and modified. In some circumstances, it might also display when the file was initially created.
+stat 命令是另一个以非常人性化的格式显示信息的命令。它提供了更多关于文件的元数据，包括文件大小（以字节和块为单位），文件类型，设备和 inode（索引节点），文件所有者和组（名称和数字 ID），以数字和 rwx 格式显示的文件权限以及文件的最后访问和修改日期。在某些情况下，它也可能显示最初创建文件的时间。
 ```
 $ stat camper*
  File: camper_10.jpg
@@ -212,11 +209,12 @@ Change: 2018-07-14 19:41:46.882024039 -0400
 
 ```
 
-### Wrap-up
+### 总结
 
-Linux provides many command options that can make their output easier for users to understand or compare. For many commands, the **-h** option brings up the friendlier output format. For others, you might have to specify how you'd prefer to see your output by using some specific option or pressing a key as with **top**. I hope that some of these choices will make your Linux systems seem just a little friendlier.
+Linux 命令提供了许多选项，可以让用户更容易理解或比较它们的输出。对于许多命令，**-h** 选项会显示更友好的输出格式。对于其它的，你可能必须通过使用某些特定选项或者按下某个键来查看你希望的输出。我希望这其中一些选项会让你的 Linux 系统看起来更友好一点。
 
-Join the Network World communities on [Facebook][1] and [LinkedIn][2] to comment on topics that are top of mind.
+加入[Facebook][1] 和 [LinkedIn][2] 上的网络世界社区，一起来评论重要的话题吧。
+
 
 --------------------------------------------------------------------------------
 
@@ -224,7 +222,7 @@ via: https://www.networkworld.com/article/3296631/linux/displaying-data-in-a-hum
 
 作者：[Sandra Henry-Stocker][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[MjSeven](https://github.com/MjSeven)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
