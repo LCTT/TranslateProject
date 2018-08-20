@@ -35,11 +35,11 @@ gc 包中包含一个继承自（早期）C 语言实现的版本的 AST 定义�
 
 * `cmd/compile/internal/gc` （转换成 SSA）
 
-* `cmd/compile/internal/ssa` （SSA 相关的pass和规则）
+* `cmd/compile/internal/ssa` （SSA 相关的 pass 和规则）
 
-（译注：许多常见高级语言的编译器无法通过一次扫描源代码或 AST 就完成所有编译工作，取而代之的做法是多次扫描，每次完成一部分工作，并将输出结果作为下次扫描的输入，直到最终产生目标代码。这里每次扫描称作一遍，即pass；最后一遍之前所有的遍数得到的结果都可称作中间表示法，本文中 AST、SSA 等都属于中间表示法。SSA，静态单赋值形式，是中间表示法的一种性质，它要求每个变量只被赋值一次且在使用前被定义，补充如何轻松实现优化）。
+（译注：许多常见高级语言的编译器无法通过一次扫描源代码或 AST 就完成所有编译工作，取而代之的做法是多次扫描，每次完成一部分工作，并将输出结果作为下次扫描的输入，直到最终产生目标代码。这里每次扫描称作一遍，即 pass；最后一遍之前所有的 pass 得到的结果都可称作中间表示法，本文中 AST、SSA 等都属于中间表示法。SSA，静态单赋值形式，是中间表示法的一种性质，它要求每个变量只被赋值一次且在使用前被定义）。
 
-在此阶段，AST 将被转换为静态单赋值形式（SSA）形式，这是一种具有特定属性的低级中间表示法，可以更轻松地实现优化并最终从它生成机器代码（译注：）。
+在此阶段，AST 将被转换为静态单赋值形式（SSA）形式，这是一种具有特定属性的低级中间表示法，可以更轻松地实现优化并最终从它生成机器代码。
 
 在这个转换过程中，将完成内置函数的处理。 这些是特殊的函数，编译器被告知逐个分析这些函数并决定是否用深度优化的代码替换它们（译注：内置函数指由语言本身定义的函数，通常编译器的处理方式是使用相应实现函数的指令序列代替对函数的调用指令，有点类似内联函数）。
 
@@ -47,7 +47,7 @@ gc 包中包含一个继承自（早期）C 语言实现的版本的 AST 定义�
 
 然后，一系列机器无关的规则和pass会被执行。这些并不考虑特定计算机体系结构，因此对所有 `GOARCH` 变量的值都会运行。
 
-这类通用的pass的一些例子包括，死代码消除，移除不必要的空指针检查，以及移除无用的分支等。通用改写规则主要考虑表达式，例如将一些表达式替换为常量，优化乘法和浮点操作。
+这类通用的 pass 的一些例子包括，死代码消除，移除不必要的空指针检查，以及移除无用的分支等。通用改写规则主要考虑表达式，例如将一些表达式替换为常量，优化乘法和浮点操作。
 
 ### 4. 生成机器码
 
@@ -55,46 +55,19 @@ gc 包中包含一个继承自（早期）C 语言实现的版本的 AST 定义�
 
 * `cmd/internal/obj` （机器代码生成）
 
-The machine-dependent phase of the compiler begins with the "lower" pass, which
-rewrites generic values into their machine-specific variants. For example, on
-amd64 memory operands are possible, so many load-store operations may be combined.
+编译器中机器相关的阶段开始于“低级”的 pass，该阶段将通用变量改写为它们的机器相关变形形式。例如，在 amd64 体系结构中操作数可以在内存中，这样许多装载-存储操作就可以被合并。
 
-编译器中机器相关的阶段开始于“低级”的遍，该阶段将通用变量改写为它们的机器相关变形形式。例如，在 amd64 体系结构中操作数可以在内存中，这样许多装载-存储操作就可以被合并。
+注意低级的 pass 运行所有机器特定的重写规则，因此它也应用了很多优化。
 
-Note that the lower pass runs all machine-specific rewrite rules, and thus it
-currently applies lots of optimizations too.
+一旦 SSA 被“低级化”并且更具体地针对目标体系结构，就要运行最终代码优化的 pass 了。这包含了另外一个死代码消除的 pass，它将变量移动到更靠近它们使用的地方，移除从来没有被读过的局部变量，以及寄存器分配。
 
-注意低级的遍运行所有机器特定的重写规则，因此它也应用了很多优化。
-
-Once the SSA has been "lowered" and is more specific to the target architecture,
-the final code optimization passes are run. This includes yet another dead code
-elimination pass, moving values closer to their uses, the removal of local
-variables that are never read from, and register allocation.
-
-一旦 SSA 被“低级化”并且更具体地针对目标体系结构，就要运行最终代码优化的遍了。这包含了另外一个死代码消除的遍，它将变量移动到更靠近它们使用的地方，移除从来没有被读过的局部变量，以及寄存器分配。
-
-Other important pieces of work done as part of this step include stack frame
-layout, which assigns stack offsets to local variables, and pointer liveness
-analysis, which computes which on-stack pointers are live at each GC safe point.
-
-本步骤中完成的其它重要工作包括堆栈布局，它将指定局部变量在堆栈中的偏移位置，以及指针活性分析，后者计算每个垃圾收集安全点上的哪些堆栈指针仍然是活动的（译注：不活动的指针就可以……）。
-
-At the end of the SSA generation phase, Go functions have been transformed into
-a series of obj.Prog instructions. These are passed to the assembler
-(`cmd/internal/obj`), which turns them into machine code and writes out the
-final object file. The object file will also contain reflect data, export data,
-and debugging information.
+本步骤中完成的其它重要工作包括堆栈布局，它将指定局部变量在堆栈中的偏移位置，以及指针活性分析，后者计算每个垃圾收集安全点上的哪些堆栈上的指针仍然是活动的。
 
 在 SSA 生成阶段结束时，Go 函数已被转换为一系列 obj.Prog 指令。它们被传递给汇编程序（`cmd/internal/obj`），后者将它们转换为机器代码并输出最终的目标文件。目标文件还将包含反射数据，导出数据和调试信息。
 
-### Further reading
-
 ### 后续读物
 
-To dig deeper into how the SSA package works, including its passes and rules,
-head to `cmd/compile/internal/ssa/README.md`.
-
-要深入了解 SSA 包的工作方式，包括其遍和规则，请转到 cmd/compile/internal/ssa/README.md。
+要深入了解 SSA 包的工作方式，包括它的 pass 和规则，请转到 cmd/compile/internal/ssa/README.md。
 
 --------------------------------------------------------------------------------
 
