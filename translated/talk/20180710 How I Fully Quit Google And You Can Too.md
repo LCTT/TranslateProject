@@ -1,11 +1,11 @@
 逃离 Google，重获自由（与君共勉）
-============================================================
+======
 
 原名：How I Fully Quit Google (And You Can, Too)
 
->寻求挣脱科技巨头的一次开创性尝试
+> 寻求挣脱科技巨头的一次开创性尝试
 
-在过去的六个月里，难以想象我到底经历了些什么。时间密集，启发性质的探索，最终换来的只是完全摒弃一家公司——Google（谷歌）——的产品。本该是件简简单单的任务，但真要去做，花费在研究和测试上的又何止几个小时。但我成功了。现在，我已经不需要 Google 了，作为西方世界中极其少数的群体中的一份子，不再使用世界上最有价值的两家科技公司的产品（是的，我也不用 [Facebook（脸书）][6]）。
+在过去的六个月里，难以想象我到底经历了些什么。时间密集，启发性质的探索，最终换来的只是完全摒弃一家公司 —— Google（谷歌）—— 的产品。本该是件简简单单的任务，但真要去做，花费在研究和测试上的又何止几个小时。但我成功了。现在，我已经不需要 Google 了，作为西方世界中极其少数的群体中的一份子，不再使用世界上最有价值的两家科技公司的产品（是的，我也不用 [Facebook（脸书）][6]）。
 
 本篇指南将向你展示我逃离 Google 生态的始末。以及根据本人的研究和个人需求，选择的替代方案。我不是技术方面的专家，或者说程序员，但作为记者，我的工作要求我对安全和隐私的问题保持关注。
 
@@ -15,15 +15,15 @@
 
 你们说这事情整的，我和 Google 可无冤无仇。事实上，不久前我还是个忠实的 Google 粉。还是记得是 90 年代末，当时我还在读高中，我和 Google 搜索引擎的第一次邂逅，那一瞬的美简直惊为天人。那时候的 Google 可比 Yahoo、Altavista、Ask Jeeves 等公司前卫了好几年。实打实的去帮用户找到他们想在网络上找的东西，但同样是那个时代，乌七八糟的网站和糟糕的索引遍地横生。
 
-Google 很快就从仅提供检索服务转向提供其他服务，其中的许多都是我欣然拥抱的服务。早在 2005 年，当时你们可能还只能 [通过邀请][7] 加入 Gmail 的时候，我就已经是早期使用者了。Gmail 采用了线程对话、归档、标签，毫无疑问是我使用过的最好的电子邮件服务。 当 Google 在 2006 年推出其日历工具时，那种对操作的改进绝对是革命性的。针对不同日历使用不同的颜色进行编排、检索事件、以及发送可共享的邀请，操作极其简单。2007 年登陆的 Google Docs 同样令人惊叹。在我的第一份全职工作期间，我还促成我们团队使用支持多人同时编辑的 Google 电子表格、文档和演示文稿来完成我们的日常工作。
+Google 很快就从仅提供检索服务转向提供其他服务，其中的许多都是我欣然拥抱的服务。早在 2005 年，当时你们可能还只能[通过邀请][7]加入 Gmail 的时候，我就已经是早期使用者了。Gmail 采用了线程对话、归档、标签，毫无疑问是我使用过的最好的电子邮件服务。当 Google 在 2006 年推出其日历工具时，那种对操作的改进绝对是革命性的。针对不同日历使用不同的颜色进行编排、检索事件、以及发送可共享的邀请，操作极其简单。2007 年登陆的 Google Docs 同样令人惊叹。在我的第一份全职工作期间，我还促成我们团队使用支持多人同时编辑的 Google 电子表格、文档和演示文稿来完成我们的日常工作。
 
-和许多人样，我也是 Google 开疆拓土过程中的受害者。从搜索（引擎）到电子邮件、文档、分析、再到照片，许多其他服务都建立在彼此之上，相互勾连。Google 从一家发布实用产品的公司转变成诱困用户公司，于此同时将整个互联网，转变为牟利和数据采集的设备。Google 在我们的数字生活中几乎无处不在，这种程度的存在远非其他公司可以比拟。与之相比使用其他科技巨头的产品想要抽身就相对容易。对于 Apple（苹果），你要么身处 iWorld 之中，要么是局外人。亚马逊亦是如此，甚至连 Facebook 也不过是拥有少数的几个平台，不用（Facebook）更多的是 [心理挑战][8] 实际上并没有多么困难。
+和许多人样，我也是 Google 开疆拓土过程中的受害者。从搜索（引擎）到电子邮件、文档、分析、再到照片，许多其他服务都建立在彼此之上，相互勾连。Google 从一家发布实用产品的公司转变成诱困用户公司，于此同时将整个互联网，转变为牟利和数据采集的设备。Google 在我们的数字生活中几乎无处不在，这种程度的存在远非其他公司可以比拟。与之相比使用其他科技巨头的产品想要抽身就相对容易。对于 Apple（苹果），你要么身处 iWorld 之中，要么是局外人。亚马逊亦是如此，甚至连 Facebook 也不过是拥有少数的几个平台，不用（Facebook）更多的是[心理挑战][8]实际上并没有多么困难。
 
-然而，Google 无处不在。 无论是笔记本电脑、智能手机或者平板电脑，我猜之中至少会有那么一个 Google 的应用程序。在大多数智能手机上，Google 就是搜索（引擎）、地图、电子邮件、浏览器和操作系统的代名词。甚至还有些应用有赖于其提供的 “[服务][9]” 和分析，比方说 Uber 便需要采用 Google Maps 来运营其乘车服务。
+然而，Google 无处不在。无论是笔记本电脑、智能手机或者平板电脑，我猜之中至少会有那么一个 Google 的应用程序。在大多数智能手机上，Google 就是搜索（引擎）、地图、电子邮件、浏览器和操作系统的代名词。甚至还有些应用有赖于其提供的“[服务][9]”和分析，比方说 Uber 便需要采用 Google Maps 来运营其乘车服务。
 
 Google 现在俨然已是许多语言中的单词，但彰显其超然全球统治地位的方面显然不止于此。可以说只要你不是极其注重个人隐私，那其庞大而成套的工具几乎没有多少众所周知或广泛使用的替代品。这恰好也是大家选择 Google 的原因，在很多方面能更好的替代现有的产品。但现在，使我们的难以割舍的主要原因其实是 Google 已经成为了默认选择，或者说由于其主导地位导致替代品无法对我们构成足够的吸引。
 
-事实上，替代方案是存在的，这些年自 Edward Snowden（爱德华·斯诺登）披露 Google 涉事 [Prism（棱镜）][10] 以来，又陆续涌现了许多替代品。我从去年年底开始着手这个项目。经过六个月的研究，测试以及大量的尝试和失败，我终于找到了所有我正在使用的 Google 产品对应的注重个人隐的私替代品。令我感到吃惊的是，其中的一些替代品比 Google 的做的还要好。
+事实上，替代方案是存在的，这些年自 Edward Snowden（爱德华·斯诺登）披露 Google 涉事 [Prism（棱镜）][10]以来，又陆续涌现了许多替代品。我从去年年底开始着手这个项目。经过六个月的研究，测试以及大量的尝试和失败，我终于找到了所有我正在使用的 Google 产品对应的注重个人隐的私替代品。令我感到吃惊的是，其中的一些替代品比 Google 的做的还要好。
 
 ### 一些注意事项
 
@@ -39,25 +39,25 @@ Google 现在俨然已是许多语言中的单词，但彰显其超然全球统�
 
 [DuckDuckGo][12] 和 [startpage][13] 都是以保护个人隐私为中心的搜索引擎，不收集任何搜索数据。我用这两个搜索引擎来负责之前用 Google 检索的所有内容。
 
-其他的替代方案：实际上并不多， Google 坐拥全球 74% 的市场份额时，剩下的那些主要是因为中国的封锁。不过还有 Ask.com，以及 Bing……
+其他的替代方案：实际上并不多，Google 坐拥全球 74% 的市场份额时，剩下的那些主要是因为中国的封锁。不过还有 Ask.com，以及 Bing……
 
 #### Chrome
 
-[Mozilla Firefox][14] — 近期的 [一次大升级][15]，是对早期版本的巨大改进。是一个由积极致力于保护隐私的非营利基金会打造的浏览器。它的存在让你觉得没有必要死守 Chrome。
+[Mozilla Firefox][14] —— 近期的[一次大升级][15]，是对早期版本的巨大改进。是一个由积极致力于保护隐私的非营利基金会打造的浏览器。它的存在让你觉得没有必要死守 Chrome。
 
 其他的替代方案：考虑到 Opera 和 Vivaldi 都基于 Chrome。[Brave][16] 浏览器是我的第二选择。
 
-#### Hangouts（环聊） 和 Google Chat
+#### Hangouts（环聊）和 Google Chat
 
-[Jitsi Meet][17] — 一款 Google Hangouts 的开源免费替代方案。你可以直接在浏览器上使用或下载应用程序。快速，安全，几乎适用于所有平台。
+[Jitsi Meet][17] —— 一款 Google Hangouts 的开源免费替代方案。你可以直接在浏览器上使用或下载应用程序。快速，安全，几乎适用于所有平台。
 
 其他的替代方案：Zoom 在专业领域受到欢迎，但大部分的特性需要付费。[Signal][18]，一个开源、安全的用于发消息的应用程序，可以用来打电话，不过仅限于移动设备。不推荐 Skype，既耗流量，界面还糟。
 
 #### Google Maps（地图）
 
-桌面端：[HERE WeGo][19] — 加载速度更快，所有你能在 Google Maps 找到的你几乎都能找到。不过由于某些原因，还缺了一些国家，如日本。
+桌面端：[HERE WeGo][19] —— 加载速度更快，所有你能在 Google Maps 找到的你几乎都能找到。不过由于某些原因，还缺了一些国家，如日本。
 
-移动端：[MAPS.ME][20] — 我一开始用的就是这款地图，但是这款 APP 的导航模式有点鸡肋。MAPS.ME 还是相当不错的，并且具有比 Google 更好的离线功能，这对像我这样的经常旅行的人来说非常好用。
+移动端：[MAPS.ME][20] —— 我一开始用的就是这款地图，但是这款 APP 的导航模式有点鸡肋。MAPS.ME 还是相当不错的，并且具有比 Google 更好的离线功能，这对像我这样的经常旅行的人来说非常好用。
 
 其他的替代方案：[OpenStreetMap][21] 是我全面支持的一个项目，不过功能严重缺乏。甚至无法找到我在奥克兰的家庭住址。
 
@@ -71,7 +71,7 @@ Google 现在俨然已是许多语言中的单词，但彰显其超然全球统�
 
 #### Gmail
 
-[ProtonMail][22] — 由前 CERN（欧洲核子研究中心）的科学家创立，总部设在瑞士，一个拥有强大隐私保护的国家。 但 ProtonMail 真正吸引我的地方是，它与大多数其他注重隐私的电子邮件程序不同，用户体验友好。界面类似于 Gmail，带标签，有过滤器和文件夹，无需了解任何有关安全性或隐私的信息即可使用。
+[ProtonMail][22] —— 由前 CERN（欧洲核子研究中心）的科学家创立，总部设在瑞士，一个拥有强大隐私保护的国家。但 ProtonMail 真正吸引我的地方是，它与大多数其他注重隐私的电子邮件程序不同，用户体验友好。界面类似于 Gmail，带标签，有过滤器和文件夹，无需了解任何有关安全性或隐私的信息即可使用。
 
 免费版只提供 500MB 的存储空间。而我选择的是付费 5GB 帐户及其 VPN 服务。
 
@@ -79,7 +79,7 @@ Google 现在俨然已是许多语言中的单词，但彰显其超然全球统�
 
 #### Calendar（日历）
 
-[Fastmail][26] 日历 — 这个决定异常艰难，也抛出了另一个问题。Google 的产品的存在在很多方面，可以用无处不在来形容，这导致初创公司甚至不再费心去创造替代品。在尝试了其他一些平庸的选项后，我最后还是推荐并选择 Fastmail 同时作为备用电子邮件和日历的选项。
+[Fastmail][26] 日历 —— 这个决定异常艰难，也抛出了另一个问题。Google 的产品的存在在很多方面，可以用无处不在来形容，这导致初创公司甚至不再费心去创造替代品。在尝试了其他一些平庸的选项后，我最后还是推荐并选择 Fastmail 同时作为备用电子邮件和日历的选项。
 
 ### 进阶
 
@@ -87,7 +87,7 @@ Google 现在俨然已是许多语言中的单词，但彰显其超然全球统�
 
 #### Google Docs（文档）、Drive（云端硬盘）、Photos（照片）和 Contacts（联系人）
 
-[Nextcloud][27] — 一个功能齐全、安全并且开源的云套件，具有直观、用户友好的界面。问题是你需要自己有主机才能使用 Nextcloud。我拥有一个用于部署自己网站的主机，并且能够使用 Softaculous 在我的主机的 C-Panel 上快速安装 Nextcloud。你需要一个 HTTPS 证书，我从 [Let's Encrypt][28] 上免费获得了一个。不似开通 Google Drive 帐户那般容易，但也不是很难。
+[Nextcloud][27] —— 一个功能齐全、安全并且开源的云套件，具有直观、用户友好的界面。问题是你需要自己有主机才能使用 Nextcloud。我拥有一个用于部署自己网站的主机，并且能够使用 Softaculous 在我的主机的 C-Panel 上快速安装 Nextcloud。你需要一个 HTTPS 证书，我从 [Let's Encrypt][28] 上免费获得了一个。不似开通 Google Drive 帐户那般容易，但也不是很难。
 
 我也同时在用 Nextcloud 作为 Google 的照片存储和联系人的替代方案，然后通过 CalDev 与手机同步。
 
@@ -95,7 +95,7 @@ Google 现在俨然已是许多语言中的单词，但彰显其超然全球统�
 
 #### Google Analytics（分析）
 
-[Matomo][31] — 正式名为 Piwic，这是一个自托管的分析平台。虽然不像 Google 分析那样功能丰富，但可以很好地理解基本的网站流量，还有一个额外的好处，就是你无需为 Google 贡献流量数据了。
+[Matomo][31] —— 正式名为 Piwic，这是一个自托管的分析平台。虽然不像 Google 分析那样功能丰富，但可以很好地理解基本的网站流量，还有一个额外的好处，就是你无需为 Google 贡献流量数据了。
 
 其他的替代方案：真的不多。[OpenWebAnalytics][32] 是另一个开源选项，还有一些营利性的选择，比如 GoStats 和 Clicky。
 
@@ -105,7 +105,7 @@ Google 现在俨然已是许多语言中的单词，但彰显其超然全球统�
 
 因此，只能选择次一级的 Lineage OS：一款注重隐私的、开源的 Android 版本，独立于 Google 服务及 APP，可单独安装。需要一些技术知识，因为安装的整个过程并不是那么一帆风顺，但运行状况良好，且不似大多数 Android 那般有大量预置软件。
 
-其他的替代方案：emmm... Windows 10 Mobile？ [PureOS][35] 看起来有那么点意思，[UbuntuTouch][36] 也差不多。
+其他的替代方案：emmm... Windows 10 Mobile？[PureOS][35] 看起来有那么点意思，[UbuntuTouch][36] 也差不多。
 
 ### 意想不到的挑战
 
@@ -113,7 +113,7 @@ Google 现在俨然已是许多语言中的单词，但彰显其超然全球统�
 
 但最棘手的是电子邮件，这与 ProtonMail 或 Google 无关。
 
-在我 2004 年加入 Gmail 之前，我可能每年都会切换一次电子邮件。我的第一个帐户是使用 Hotmail，然后我使用了 Mail.com，Yahoo Mail 以及像 Bigfoot 这样长期被遗忘的服务。当我在变更电子邮件提供商时，我未曾记得有这般麻烦。我会告诉所有朋友，更新他们的地址簿，并更改其他网络帐户的邮箱地址。以前定期更改邮箱地址非常必要——还记得曾几何时垃圾邮件是如何盘踞你旧收件箱的吗？
+在我 2004 年加入 Gmail 之前，我可能每年都会切换一次电子邮件。我的第一个帐户是使用 Hotmail，然后我使用了 Mail.com，Yahoo Mail 以及像 Bigfoot 这样长期被遗忘的服务。当我在变更电子邮件提供商时，我未曾记得有这般麻烦。我会告诉所有朋友，更新他们的地址簿，并更改其它网络帐户的邮箱地址。以前定期更改邮箱地址非常必要 —— 还记得曾几何时垃圾邮件是如何盘踞你旧收件箱的吗？
 
 事实上，Gmail 最好的创新之一就是能够将垃圾邮件过滤掉。这意味着不需频繁更改邮箱地址。
 
@@ -147,72 +147,70 @@ Google 现在俨然已是许多语言中的单词，但彰显其超然全球统�
 
 你不必完全脱离 Google。但最好给其他选择一个机会。到时候时你可能会感到惊讶，并想起那些年上网的初衷。
 
-* * *
+---
 
-#### 其他资源
+### 其他资源
 
 我并未打算让这篇文章成为包罗万象的指南，这只不过是一个关于我如何脱离 Google 的故事。以下的那些资源会向你展示其他替代方案。其中有一些对我来说过于专业，还有一些我还没有时间去探索。
 
-*   [Localization Lab][2] 一份开源或隐私技术的项目的详细清单 — 有些技术含量高，有些比较用户友好。
-
-*   [Framasoft][3] 有一整套针对 Google 的替代方案，大部分是开源的，虽然大部分是法语。
-
-*   Restore Privacy 也 [整理了一份替代方案的清单][4].
+* [Localization Lab][2] 一份开源或隐私技术的项目的详细清单 —— 有些技术含量高，有些比较用户友好。
+* [Framasoft][3] 有一整套针对 Google 的替代方案，大部分是开源的，虽然大部分是法语。
+* Restore Privacy 也 [整理了一份替代方案的清单][4]。
 
 到你了。你可以直接回复或者通过 Twitter 来分享你喜欢的 Google 制品的替代方案。我确信我遗漏了许多，也非常乐意尝试。我并不打算一直固守我列出的这些方案。
 
---------------------------------------------------------------------------------
+---
 
 作者简介：
 
 Nithin Coca
 
-自由撰稿人，涵盖政治，环境和人权以及全球科技的社会影响。 更多参考 http://www.nithincoca.com
+自由撰稿人，涵盖政治，环境和人权以及全球科技的社会影响。更多参考 http://www.nithincoca.com
 
---------------------------------------------------------------------------------
+---
 
 via: https://medium.com/s/story/how-i-fully-quit-google-and-you-can-too-4c2f3f85793a
 
 作者：[Nithin Coca][a]
 译者：[martin2011qi](https://github.com/martin2011qi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[pityonline](https://github.com/pityonline)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:https://medium.com/@excinit
-[1]:https://medium.com/@excinit
-[2]:https://www.localizationlab.org/projects/
-[3]:https://framasoft.org/?l=en
-[4]:https://restoreprivacy.com/google-alternatives/
-[5]:https://medium.com/@excinit
-[6]:https://www.nithincoca.com/2011/11/20/7-months-no-facebook/
-[7]:https://www.quora.com/How-long-was-Gmail-in-private-%28invitation-only%29-beta
-[8]:https://www.theverge.com/2018/4/28/17293056/facebook-deletefacebook-social-network-monopoly
-[9]:https://en.wikipedia.org/wiki/Google_Play_Services
-[10]:https://www.theguardian.com/world/2013/jun/06/us-tech-giants-nsa-data
-[11]:https://takeout.google.com/settings/takeout
-[12]:https://duckduckgo.com/
-[13]:https://www.startpage.com/
-[14]:https://www.mozilla.org/en-US/firefox/new/
-[15]:https://www.seattletimes.com/business/firefox-is-back-and-its-time-to-give-it-a-try/
-[16]:https://brave.com/
-[17]:https://jitsi.org/jitsi-meet/
-[18]:https://signal.org/
-[19]:https://wego.here.com/
-[20]:https://maps.me/
-[21]:https://www.openstreetmap.org/
-[22]:https://protonmail.com/
-[23]:https://www.fastmail.com/
-[24]:https://www.hushmail.com/
-[25]:https://tutanota.com/
-[26]:https://www.fastmail.com/
-[27]:https://nextcloud.com/
-[28]:https://letsencrypt.org/
-[29]:https://owncloud.org/
-[30]:https://www.openstack.org/
-[31]:https://matomo.org/
-[32]:http://www.openwebanalytics.com/
-[33]:https://lineageos.org/
-[34]:https://f-droid.org/en/
-[35]:https://puri.sm/posts/tag/pureos/
-[36]:https://ubports.com/
+[a]: https://medium.com/@excinit
+[1]: https://medium.com/@excinit
+[2]: https://www.localizationlab.org/projects/
+[3]: https://framasoft.org/?l=en
+[4]: https://restoreprivacy.com/google-alternatives/
+[5]: https://medium.com/@excinit
+[6]: https://www.nithincoca.com/2011/11/20/7-months-no-facebook/
+[7]: https://www.quora.com/How-long-was-Gmail-in-private-%28invitation-only%29-beta
+[8]: https://www.theverge.com/2018/4/28/17293056/facebook-deletefacebook-social-network-monopoly
+[9]: https://en.wikipedia.org/wiki/Google_Play_Services
+[10]: https://www.theguardian.com/world/2013/jun/06/us-tech-giants-nsa-data
+[11]: https://takeout.google.com/settings/takeout
+[12]: https://duckduckgo.com/
+[13]: https://www.startpage.com/
+[14]: https://www.mozilla.org/en-US/firefox/new/
+[15]: https://www.seattletimes.com/business/firefox-is-back-and-its-time-to-give-it-a-try/
+[16]: https://brave.com/
+[17]: https://jitsi.org/jitsi-meet/
+[18]: https://signal.org/
+[19]: https://wego.here.com/
+[20]: https://maps.me/
+[21]: https://www.openstreetmap.org/
+[22]: https://protonmail.com/
+[23]: https://www.fastmail.com/
+[24]: https://www.hushmail.com/
+[25]: https://tutanota.com/
+[26]: https://www.fastmail.com/
+[27]: https://nextcloud.com/
+[28]: https://letsencrypt.org/
+[29]: https://owncloud.org/
+[30]: https://www.openstack.org/
+[31]: https://matomo.org/
+[32]: http://www.openwebanalytics.com/
+[33]: https://lineageos.org/
+[34]: https://f-droid.org/en/
+[35]: https://puri.sm/posts/tag/pureos/
+[36]: https://ubports.com/
