@@ -1,89 +1,88 @@
-Translatin by imquanquan
-
-Here are some amazing advantages of Go that you don’t hear much about
+你没听说过的 Go 语言惊人优点
 ============================================================
 
 ![](https://cdn-images-1.medium.com/max/2000/1*NDXd5I87VZG0Z74N7dog0g.png)
 
-Artwork from [https://github.com/ashleymcnamara/gophers][1]
+来自 [https://github.com/ashleymcnamara/gophers][1] 的图稿
 
-In this article, I discuss why you should give Go a chance and where to start.
+在这篇文章中，我将讨论为什么你需要尝试一下 Go，以及应该从哪里学起。
 
-Golang is a programming language you might have heard about a lot during the last couple years. Even though it was created back in 2009, it has started to gain popularity only in recent years.
-
+Golang 是可能是最近几年里你经常听人说起的编程语言。尽管它在 2009 年已经发布，但它最近才开始流行起来。
 
 ![](https://cdn-images-1.medium.com/max/2000/1*cQ8QzhCPiFXqk_oQdUk_zw.png)
-Golang popularity according to Google Trends
 
-This article is not about the main selling points of Go that you usually see.
+根据 Google 趋势，Golang 语言非常流行。
 
-Instead, I would like to present to you some rather small but still significant features that you only get to know after you’ve decided to give Go a try.
+这篇文章不会讨论一些你经常看到的 Golang 的主要特性。
 
-These are amazing features that are not laid out on the surface, but they can save you weeks or months of work. They can also make software development more enjoyable.
+相反，我想向您介绍一些相当小众但仍然很重要的功能。在您决定尝试Go后，您才会知道这些功能。
 
-Don’t worry if Go is something new for you. This article does not require any prior experience with the language. I have included a few extra links at the bottom, in case you would like to learn a bit more.
+这些都是表面上没有体现出来的惊人特性，但它们可以为您节省数周或数月的工作量。而且这些特性还可以使软件开发更加愉快。
 
-We will go through such topics as:
+阅读本文不需要任何语言经验，所以不比担心 Golang 对你来说是新的事物。如果你想了解更多，可以看看我在底部列出的一些额外的链接，。
+
+我们将讨论以下主题：
 
 *   GoDoc
 
-*   Static code analysis
+*   静态代码分析
 
-*   Built-in testing and profiling framework
+*   内置的测试和分析框架
 
-*   Race condition detection
+*   竞争条件检测
 
-*   Learning curve
+*   学习曲线
 
-*   Reflection
+*   反射（Reflection）
 
-*   Opinionatedness
+*   专制独裁的 Go
 
-*   Culture
+*   文化
 
 Please, note that the list doesn’t follow any particular order. It is also opinionated as hell.
+请注意，这个列表不遵循任何特定顺序来讨论。
 
 ### GoDoc
 
-Documentation in code is taken very seriously in Go. So is simplicity.
+Golang 非常重视代码中的文档，简洁也是如此。
 
-[GoDoc][4] is a static code analyzing tool that creates beautiful documentation pages straight out of your code. A remarkable thing about GoDoc is that it doesn’t use any extra languages, like JavaDoc, PHPDoc, or JSDoc to annotate constructions in your code. Just English.
+[GoDoc][4] 是一个静态代码分析工具，可以直接从代码中创建漂亮的文档页面。GoDoc 的一个显着特点是它不使用任何其他的语言，如 JavaDoc，PHPDoc 或 JSDoc 来注释代码中的结构，只需要用英语。
 
-It uses as much information as it can get from the code to outline, structure, and format the documentation. And it has all the bells and whistles, such as cross-references, code samples, and direct links to your version control system repository.
+它使用从代码中获取的尽可能多的信息来概述、构造和格式化文档。它有多而全的功能，比如：交叉引用，代码示例以及一个指向版本控制系统仓库的链接。
 
-All you can do is to add a good old `// MyFunc transforms Foo into Bar` kind of comment which would be reflected in the documentation, too. You can even add [code examples][5] which are actually runnable via the web interface or locally.
+而你需要做的只有添加一些好的，像 `// MyFunc transforms Foo into Bar` 这样子的注释，而这些注释也会反映在的文档中。你甚至可以添加一些通过网络接口或者在本地可以实际运行的 [代码示例][5]。
 
-GoDoc is the only documentation engine for Go that is used by the whole community. This means that every library or application written in Go has the same format of documentation. In the long run, it saves you tons of time while browsing those docs.
+GoDoc 是 Go 的唯一文档引擎，供整个社区使用。这意味着用 Go 编写的每个库或应用程序都具有相同的文档格式。从长远来看，它可以帮你在浏览这些文档时节省大量时间。
 
-Here, for example, is the GoDoc page for my recent pet project: [pullkee — GoDoc][6].
+例如，这是我最近一个小项目的 GoDoc 页面：[pullkee — GoDoc][6]。
 
-### Static code analysis
+### 静态代码分析
 
-Go heavily relies on static code analysis. Examples include [godoc][7] for documentation, [gofmt][8] for code formatting, [golint][9] for code style linting, and many others.
+Go 严重依赖于静态代码分析。例子包括 godoc 文档，gofmt 代码格式化，golint 代码风格统一，等等。
 
-There are so many of them that there’s even an everything-included-kind-of project called [gometalinter][10] to compose them all into a single utility.
+There are so many of them that there’s even an everything-included-kind-of project called [gometalinter][10] to compose them all into a single utility.
 
-Those tools are commonly implemented as stand-alone command line applications and integrate easily with any coding environment.
+这些工具通常作为独立的命令行应用程序实现，并可轻松与任何编码环境集成。
 
-Static code analysis isn’t actually something new to modern programming, but Go sort of brings it to the absolute. I can’t overestimate how much time it saved me. Also, it gives you a feeling of safety, as though someone is covering your back.
+静态代码分析实际上并不是现代编程的新概念，但是 Go 将其带入了绝对的范畴。我无法估量它为我节省了多少时间。此外，它给你一种安全感，就像有人在你背后支持你一样。
 
-It’s very easy to create your own analyzers, as Go has dedicated built-in packages for parsing and working with Go sources.
+创建自己的分析器非常简单，因为 Go 有专门的内置包来解析和加工 Go 源码。
 
-You can learn more from this talk: [GothamGo Kickoff Meetup: Go Static Analysis Tools by Alan Donovan][11].
+你可以从这个链接中了解到更多相关内容: [GothamGo Kickoff Meetup: Go Static Analysis Tools by Alan Donovan][11].
 
-### Built-in testing and profiling framework
+### 内置的测试和分析框架
 
-Have you ever tried to pick a testing framework for a Javascript project you are starting from scratch? If so, you might understand that struggle of going through such an analysis paralysis. You might have also realized that you were not using like 80% of the framework you have chosen.
+您是否曾尝试为一个从头开始的 Javascript 项目选择测试框架？如果是这样，你可能会明白经历这种分析瘫痪的斗争。您可能也意识到您没有使用其中 80％ 的框架。
 
-The issue repeats over again once you need to do some reliable profiling.
+一旦您需要进行一些可靠的分析，问题就会重复出现。
 
-Go comes with a built-in testing tool designed for simplicity and efficiency. It provides you the simplest API possible, and makes minimum assumptions. You can use it for different kinds of testing, profiling, and even to provide executable code examples.
+Go 附带内置测试工具，旨在简化和提高效率。它为您提供了最简单的 API，并做出最小的假设。您可以将它用于不同类型的测试，分析，甚至可以提供可执行代码示例。
 
-It produces CI-friendly output out-of-box, and the usage is usually as easy as running `go test`. Of course, it also supports advanced features like running tests in parallel, marking them skipped, and many more.
+它可以开箱即用地生成持续集成友好的输出，而且它的用法很简单，只需运行 `go test`。当然，它还支持高级功能，如并行运行测试，跳过标记代码，以及其他更多功能。
 
 ### Race condition detection
 
-You might already know about Goroutines, which are used in Go to achieve concurrent code execution. If you don’t, [here’s][12] a really brief explanation.
+You might already know about Goroutines, which are used in Go to achieve concurrent code execution. If you don’t, [here’s][12] a really brief explanation.
 
 Concurrent programming in complex applications is never easy regardless of the specific technique, partly due to the possibility of race conditions.
 
@@ -91,13 +90,13 @@ Simply put, race conditions happen when several concurrent operations finish in 
 
 All that said, concurrent programming is taken very seriously in Go and, luckily, we have quite a powerful tool to hunt those race conditions down. It is fully integrated into Go’s toolchain.
 
-You can read more about it and learn how to use it here: [Introducing the Go Race Detector — The Go Blog][13].
+You can read more about it and learn how to use it here: [Introducing the Go Race Detector — The Go Blog][13].
 
 ### Learning curve
 
 You can learn ALL Go’s language features in one evening. I mean it. Of course, there are also the standard library, and the best practices in different, more specific areas. But two hours would totally be enough time to get you confidently writing a simple HTTP server, or a command-line app.
 
-The project has [marvelous documentation][14], and most of the advanced topics have already been covered on their blog: [The Go Programming Language Blog][15].
+The project has [marvelous documentation][14], and most of the advanced topics have already been covered on their blog: [The Go Programming Language Blog][15].
 
 Go is much easier to bring to your team than Java (and the family), Javascript, Ruby, Python, or even PHP. The environment is easy to setup, and the investment your team needs to make is much smaller before they can complete your first production code.
 
@@ -107,19 +106,19 @@ Code reflection is essentially an ability to sneak under the hood and access dif
 
 Given that Go is a statically typed language, it’s exposed to a number of various limitations when it comes to more loosely typed abstract programming. Especially compared to languages like Javascript or Python.
 
-Moreover, Go [doesn’t implement a concept called Generics][16] which makes it even more challenging to work with multiple types in an abstract way. Nevertheless, many people think it’s actually beneficial for the language because of the amount of complexity Generics bring along. And I totally agree.
+Moreover, Go [doesn’t implement a concept called Generics][16] which makes it even more challenging to work with multiple types in an abstract way. Nevertheless, many people think it’s actually beneficial for the language because of the amount of complexity Generics bring along. And I totally agree.
 
 According to Go’s philosophy (which is a separate topic itself), you should try hard to not over-engineer your solutions. And this also applies to dynamically-typed programming. Stick to static types as much as possible, and use interfaces when you know exactly what sort of types you’re dealing with. Interfaces are very powerful and ubiquitous in Go.
 
 However, there are still cases in which you can’t possibly know what sort of data you are facing. A great example is JSON. You convert all the kinds of data back and forth in your applications. Strings, buffers, all sorts of numbers, nested structs and more.
 
-In order to pull that off, you need a tool to examine all the data in runtime that acts differently depending on its type and structure. Reflection to rescue! Go has a first-class [reflect][17] package to enable your code to be as dynamic as it would be in a language like Javascript.
+In order to pull that off, you need a tool to examine all the data in runtime that acts differently depending on its type and structure. Reflection to rescue! Go has a first-class [reflect][17] package to enable your code to be as dynamic as it would be in a language like Javascript.
 
 An important caveat is to know what price you pay for using it — and only use it when there is no simpler way.
 
-You can read more about it here: [The Laws of Reflection — The Go Blog][18].
+You can read more about it here: [The Laws of Reflection — The Go Blog][18].
 
-You can also read some real code from the JSON package sources here: [src/encoding/json/encode.go — Source Code][19]
+You can also read some real code from the JSON package sources here: [src/encoding/json/encode.go — Source Code][19]
 
 ### Opinionatedness
 
@@ -161,9 +160,9 @@ Always use the best tool for the job!
 
 You might have heard of Go before. Or maybe it’s something that has been staying out of your radar for a while. Either way, chances are, Go can be a very decent choice for you or your team when starting a new project or improving the existing one.
 
-This is not a complete list of all the amazing things about Go. Just the undervalued ones.
+This is not a complete list of all the amazing things about Go. Just the undervalued ones.
 
-Please, give Go a try with [A Tour of Go][20] which is an incredible place to start.
+Please, give Go a try with [A Tour of Go][20] which is an incredible place to start.
 
 If you wish to learn more about Go’s benefits, you can check out these links:
 
@@ -181,7 +180,7 @@ Always be looking for the best tools for your craft!
 
 If you like this article, please consider following me for more, and clicking on those funny green little hands right below this text for sharing. 👏👏👏
 
-Check out my [Github][21] and follow me on [Twitter][22]!
+Check out my [Github][21] and follow me on [Twitter][22]!
 
 --------------------------------------------------------------------------------
 
