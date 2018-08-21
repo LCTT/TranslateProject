@@ -1,6 +1,8 @@
 在 Linux 中使用 top 命令的建议
 ======
 
+> 通过这篇教程提升你的 `top` 命令的知识。
+
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/linux_penguin_green.png?itok=ENdVzW22)
 
 尝试找出你的机器正在运行什么程序，以及哪个进程耗尽了内存导致系统非常非常慢 —— 这是 `top` 命令所能胜任的工作。
