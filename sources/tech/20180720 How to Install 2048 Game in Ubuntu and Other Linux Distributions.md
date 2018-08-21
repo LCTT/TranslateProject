@@ -1,3 +1,5 @@
+translating---geekpi
+
 How to Install 2048 Game in Ubuntu and Other Linux Distributions
 ======
 **Popular mobile puzzle game 2048 can also be played on Ubuntu and Linux distributions. Heck! You can even play 2048 in Linux terminal. Don’t blame me if your productivity goes down because of this addictive game.**
