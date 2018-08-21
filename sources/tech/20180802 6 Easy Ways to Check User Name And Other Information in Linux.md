@@ -1,3 +1,6 @@
+Translting by MjSeven
+
+
 6 Easy Ways to Check User Name And Other Information in Linux
 ======
 This is very basic topic, everyone knows how to find a user information in Linux using **id** command. Some of the users are filtering a user information from **/etc/passwd** file.

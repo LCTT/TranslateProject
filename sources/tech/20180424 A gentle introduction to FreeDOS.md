@@ -1,3 +1,5 @@
+icecoobe translating
+
 A gentle introduction to FreeDOS
 ======
 
