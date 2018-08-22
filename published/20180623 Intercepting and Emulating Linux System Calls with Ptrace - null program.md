@@ -1,7 +1,7 @@
 使用 Ptrace 去拦截和仿真 Linux 系统调用
 ======
 
-`ptrace(2)`（“<ruby>进程跟踪<rt>process trace</rt></ruby>）系统调用通常都与调试有关。它是类 Unix 系统上通过原生调试器监测被调试进程的主要机制。它也是实现 [strace][1]（<ruby>系统调用跟踪<rt>system call trace</rt></ruby>）的常见方法。使用 Ptrace，跟踪器可以暂停被跟踪过程，[检查和设置寄存器和内存][2]，监视系统调用，甚至可以<ruby>拦截<rt>intercepting</rt></ruby>系统调用。
+`ptrace(2)`（“<ruby>进程跟踪<rt>process trace</rt></ruby>）系统调用通常都与调试有关。它是类 Unix 系统上通过原生调试器监测被调试进程的主要机制。它也是实现 [strace][1]（<ruby>系统调用跟踪<rt>system call trace</rt></ruby>）的常见方法。使用 Ptrace，跟踪器可以暂停被跟踪进程，[检查和设置寄存器和内存][2]，监视系统调用，甚至可以<ruby>拦截<rt>intercepting</rt></ruby>系统调用。
 
 通过拦截功能，意味着跟踪器可以篡改系统调用参数，篡改系统调用的返回值，甚至阻塞某些系统调用。言外之意就是，一个跟踪器本身完全可以提供系统调用服务。这是件非常有趣的事，因为这意味着**一个跟踪器可以仿真一个完整的外部操作系统**，而这些都是在没有得到内核任何帮助的情况下由 Ptrace 实现的。
 
