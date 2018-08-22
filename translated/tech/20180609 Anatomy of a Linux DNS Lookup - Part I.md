@@ -1,49 +1,37 @@
-Linux DNS 查询剖析 – 第一部分
-============================================================
+Linux DNS 查询剖析（第一部分）
+======
 
-我经常与虚拟机集群打交道（[文1][3], [文2][4], [文3][5], [文4][6], [文5][7], [文6][8]），期间花费了大量时间试图掌握 [DNS 查询][9]的工作原理。遇到问题时，我有时只是不求甚解的使用 StackOverflow 上的“解决方案”；甚至那些“解决方案”有时并不工作。
+我经常与虚拟机集群打交道（[文1][3]、[文2][4]、[文3][5]、[文4][6]、[文5][7]、[文6][8]），因此最终花费了大量时间试图掌握 [DNS 查询][9]的工作原理。遇到问题时，我只是不求甚解的使用 StackOverflow 上的“解决方案”，而不知道它们为什么有时工作，有时不工作。
 
-最终我决定改变这种情况，决定一并找出所有问题的原因。我没有在网上找到完整手册或类似的其它东西，我问过一些同事，他们也是如此。
+最终我对此感到了厌倦，决定一并找出所有问题的原因。我没有在网上找到完整的指南，我问过一些同事，他们不知所以然（或许是问题太具体了）。
 
 既然如此，我开始自己写这样的手册。
 
- _如果你在找第二部分, 点击 [这里][1]_
-
-结果发现，“Linux 执行一次 DNS 查询”的背后有相当多的工作。
-
-* * *
+结果发现，“Linux 执行一次 DNS 查询”这句话的背后有相当多的工作。
 
 ![linux-dns-0](https://zwischenzugs.files.wordpress.com/2018/06/linux-dns-0.png?w=121)
 
 _“究竟有多难呢？”_
 
-* * *
+**本系列文章试图将 Linux 主机上程序获取（域名对应的） IP 地址的过程及期间涉及的组件进行分块剖析。**如果不理解这些块的协同工作方式，调试解决 `dnsmasq`、`vagrant landrush` 和 `resolvconf` 等相关的问题会让人感到眼花缭乱。
 
-本系列文章试图将 Linux 主机上程序获取（域名对应的） IP 地址的过程及期间涉及的组件进行分块剖析。如果不理解这些块的协同工作方式，调试并解决 `dnsmasq`，`vagrant landrush` 和 `resolvconf` 等相关的问题会让人感到眼花缭乱。
-
-同时这也是一份有价值的说明，指出原本很简单的东西可以如何随着时间的推移变得相当复杂。在弄清楚 DNS 查询的原理的过程中，我了解了大量不同的技术及其发展历程。
+同时这也是一份有价值的说明，指出原本很简单的东西是如何随着时间的推移变得相当复杂。在弄清楚 DNS 查询的原理的过程中，我了解了大量不同的技术及其发展历程。
 
 我甚至编写了一些[自动化脚本][10]，可以让我在虚拟机中进行实验。欢迎读者参与贡献或勘误。
 
-请注意，本系列主题并不是“DNS 工作原理”，而是与查询 Linux 主机配置的真实 DNS 服务器（这里假设查询了 DNS 服务器，但后面你会看到有时并不需要查询）相关的内容，以及如何确定使用哪个查询结果，或者何时使用其它方式确定 IP 地址。
-
-* * *
+**请注意，本系列主题并不是“DNS 工作原理”**，而是与查询 Linux 主机配置的真实 DNS 服务器（这里假设查询了一台 DNS 服务器，但后面你会看到有时并不需要）相关的内容，以及如何确定使用哪个查询结果，或者如何使用其它方式确定 IP 地址。
 
 ### 1) 其实并没有名为“DNS 查询”的系统调用
 
-* * *
-
 ![linux-dns-1](https://zwischenzugs.files.wordpress.com/2018/06/linux-dns-1.png?w=121)
 
- _工作方式并非如此_ 
+_工作方式并非如此_ 
 
-* * *
+**首先要了解的一点是，Linux 上并没有一个单独的方法可以完成 DNS 查询工作**；没有一个有这样的明确接口的核心<ruby>系统调用<rt>system call</rt></ruby>。
 
-首先要了解的一点是，Linux 上并没有一个单独的方法可以完成 DNS 查询工作；至少没有如此<ruby>明确接口<rt>clean interface</rt></ruby>的核心<ruby>系统调用<rt>system call</rt></ruby>。
+不过，有一个标准 C 库函数调用 [`getaddrinfo`][2]，不少程序使用了该调用；但不是所有程序或应用都使用该调用！
 
-有一个标准 C 库函数调用 `[getaddrinfo][2]`，不少程序使用了该调用；但不是所有程序或应用都使用该调用！
-
-我们只考虑两个简单的标准程序：`ping` 和 `host`：
+让我们看一下两个简单的标准程序：`ping` 和 `host`：
 
 ```
 root@linuxdns1:~# ping -c1 bbc.co.uk | head -1
@@ -100,17 +88,15 @@ google.com has address 216.58.204.46
 
 下面我们依次查看这两个 `.conf` 扩展名的文件。
 
-* * *
-
 ### 2) NSSwitch 与 `/etc/nsswitch.conf`
 
-我们已经确认应用可以自主决定选用哪个 DNS 服务器。很多应用（例如 `ping`）通过配置文件 `/etc/nsswitch.conf` （根据具体实现 (*)）参考 NSSwitch 完成选择。
+我们已经确认应用可以自主决定选用哪个 DNS 服务器。很多应用（例如 `ping`）通过配置文件 `/etc/nsswitch.conf` （根据具体实现[^1] ）参考 NSSwitch 完成选择。
 
-###### (*) ping 实现的变种之多令人惊叹。我 _不_ 希望在这里讨论过多。
+[^1]: `ping` 实现的变种之多令人惊叹。我 _不_ 希望在这里讨论过多。
 
 NSSwitch 不仅用于 DNS 查询，例如，还用于密码与用户信息查询。
 
-NSSwitch 最初是 Solaris OS 的一部分，可以让应用无需将查询所需的文件或服务硬编码，而是在其它集中式的、无需应用开发人员管理的配置文件中找到。
+NSSwitch 最初是 Solaris OS 的一部分，可以让应用无需硬编码查询所需的文件或服务，而是在其它集中式的、无需应用开发人员管理的配置文件中找到。
 
 下面是我的 `nsswitch.conf`：
 
@@ -130,12 +116,13 @@ netgroup:       nis
 
 我们需要关注的是 `hosts` 行。我们知道 `ping` 用到 `nsswitch.conf` 文件，那么我们修改这个文件（的 `hosts` 行），看看能够如何影响 `ping`。
 
-
-*   ### 修改 `nsswitch.conf`， `hosts` 行仅保留 `files`
+#### 修改 `nsswitch.conf`， `hosts` 行仅保留 `files`
 
 如果你修改 `nsswitch.conf`，将 `hosts` 行仅保留 `files`：
 
-`hosts: files`
+```
+hosts: files
+```
 
 此时， `ping` 无法获取 google.com 对应的 IP 地址：
 
@@ -161,11 +148,13 @@ google.com has address 216.58.206.110
 
 毕竟如我们之前看到的那样，`host` 不受 `nsswitch.conf` 影响。
 
-*   ### 修改 `nsswitch.conf`， `hosts` 行仅保留 `dns`
+#### 修改 `nsswitch.conf`， `hosts` 行仅保留 `dns`
 
 如果你修改 `nsswitch.conf`，将 `hosts` 行仅保留 `dns`：
 
-`hosts: dns`
+```
+hosts: dns
+```
 
 此时，google.com 的解析恢复正常：
 
@@ -184,13 +173,9 @@ ping: unknown host localhost
 
 下图给出默认 NSSwitch 中 `hosts` 行对应的查询逻辑：
 
-* * *
-
 ![linux-dns-2 (1)](https://zwischenzugs.files.wordpress.com/2018/06/linux-dns-2-11.png?w=525)
 
- _我的 `hosts:` 配置是 `nsswitch.conf` 给出的默认值_ 
-
-* * *
+_我的 `hosts:` 配置是 `nsswitch.conf` 给出的默认值_ 
 
 ### 3) `/etc/resolv.conf`
 
@@ -221,16 +206,16 @@ $ ping -c1 google.com
 ping: unknown host google.com
 ```
 
-解析失败了，这是因为没有可用的 nameserver (*)。
+解析失败了，这是因为没有可用的名字服务器 [^2]。
 
-
-###### * 另一个需要注意的地方： `host` 在没有指定 nameserver 的情况下会尝试 127.0.0.1:53。
+[^2]: 另一个需要注意的地方： `host` 在没有指定 nameserver 的情况下会尝试 127.0.0.1:53。
 
 该文件中还可以使用其它选项。例如，你可以在 `resolv.conf` 文件中增加如下行：
 
 ```
 search com
 ```
+
 然后执行 `ping google` （不写 `.com`）
 
 ```
@@ -248,10 +233,9 @@ PING google.com (216.58.204.14) 56(84) bytes of data.
 
 *   操作系统中并不存在“DNS 查询”这个系统调用
 *   不同程序可能采用不同的策略获取名字对应的 IP 地址
-    *   例如, `ping` 使用 `nsswitch`，后者进而使用（或可以使用） `/etc/hosts`，`/etc/resolv.conf` 以及主机名得到解析结果
-
+    *   例如, `ping` 使用 `nsswitch`，后者进而使用（或可以使用） `/etc/hosts`、`/etc/resolv.conf` 以及主机名得到解析结果
 *   `/etc/resolv.conf` 用于决定：
-    *   查询什么地址（LCTT 译注：这里可能指 search 带来的影响）
+    *   查询什么地址（LCTT 译注：这里可能指 `search` 带来的影响）
     *   使用什么 DNS 服务器执行查询
 
 如果你曾认为 DNS 查询很复杂，请跟随这个系列学习吧。
@@ -262,7 +246,7 @@ via: https://zwischenzugs.com/2018/06/08/anatomy-of-a-linux-dns-lookup-part-i/
 
 作者：[dmatech][a]
 译者：[pinewall](https://github.com/pinewall)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
