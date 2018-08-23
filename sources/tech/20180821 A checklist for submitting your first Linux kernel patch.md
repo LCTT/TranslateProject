@@ -83,7 +83,7 @@ mutt -H /tmp/0001-<whatever your filename is>
 
 ```
 
-To know the list of maintainers to whom to send the patch, use the [get_maintainer.pl script][14].
+To know the list of maintainers to whom to send the patch, use the [get_maintainer.pl script][11].
 
 
 ### What to know before submitting your first patch
@@ -141,10 +141,6 @@ _09:00 am would be alright._
   * The [Eudyptula challenge][10] is a great way to learn kernel basics.
 
 
-
-
-To know the list of maintainers to whom to send the patch, use the [get_maintainer.pl script][11]
-
 To learn more, read the [KernelNewbies First Kernel Patch tutorial][1]. After that, if you still have any questions, ask on the [kernelnewbies mailing list][12] or in the [#kernelnewbies IRC channel][13].
 
 --------------------------------------------------------------------------------
@@ -172,4 +168,3 @@ via: https://opensource.com/article/18/8/first-linux-kernel-patch
 [11]:https://github.com/torvalds/linux/blob/master/scripts/get_maintainer.pl
 [12]:https://kernelnewbies.org/MailingList
 [13]:https://kernelnewbies.org/IRC
-[14]: https://github.com/torvalds/linux/blob/master/scripts/get_maintainer.pl
