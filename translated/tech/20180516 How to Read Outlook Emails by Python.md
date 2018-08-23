@@ -1,31 +1,32 @@
 如何用 Python 读取 Outlook 中的电子邮件
 ======
 
-![](https://process.filestackapi.com/cache=expiry：max/resize=width：700/compress/OVArLzhmRzOEQZsvGavF)
+![](https://process.filestackapi.com/cache=expiry:max/resize=width:700/compress/OVArLzhmRzOEQZsvGavF)
 
-从事电子邮件营销，准入邮箱列表是必不可少的。你可能已经有了准入列表，同时还使用电子邮件客户端软件。如果你能从电子邮件客户端中导出准入列表，那这份列表想必是极好的。
+从事电子邮件营销，<ruby>准入<rt>opt-in</rt></ruby>邮箱列表是必不可少的。你可能已经有了准入列表，同时还使用电子邮件客户端软件。如果你能从电子邮件客户端中导出准入列表，那这份列表想必是极好的。
 
 我使用一些代码来将 outlook 配置中的所有邮件写入一个临时文件中，现在让我来尝试解释一下这些代码。
 
-首先你需要倒入 win32com.client，为此你需要安装 pywin32
+首先你需要导入 win32com.client，为此你需要安装 pywin32：
+
 ```
 pip install pywin32
-
 ```
 
-我们需要通过 MAPI 协议连接 Outlok
+我们需要通过 MAPI 协议连接 Outlok：
+
 ```
 outlook = win32com.client.Dispatch("Outlook.Application").GetNamespace("MAPI")
-
 ```
 
-然后从 outlook 配置中获取所有的账户。
+然后从 outlook 配置中获取所有的账户：
+
 ```
 accounts= win32com.client.Dispatch("Outlook.Application").Session.Accounts;
-
 ```
 
-在然后需要从名为 emaileri_al 的收件箱中获取邮件。
+在然后需要从名为 emaileri_al 的收件箱中获取邮件：
+
 ```
 def emailleri_al(folder):
     messages = folder.Items
@@ -48,7 +49,8 @@ def emailleri_al(folder):
                  pass
 ```
 
-你需要进入所有账户的所有收件箱中获取电子邮件
+你需要进入所有账户的所有收件箱中获取电子邮件：
+
 ```
 for account in accounts:
     global inbox
@@ -77,7 +79,8 @@ for account in accounts:
                 print("*************************************************", file=
 ```
 
-下面是完整的代码
+下面是完整的代码：
+
 ```
 import win32com.client
 import win32com
@@ -148,7 +151,7 @@ via: https://www.codementor.io/aliacetrefli/how-to-read-outlook-emails-by-python
 作者：[A.A. Cetrefli][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[lujun9972](https://github.com/lujun9972)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
