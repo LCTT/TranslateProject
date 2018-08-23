@@ -1,11 +1,11 @@
-使用 Docker 的 User Namespaces 功能
+使用 Docker 的用户名字空间功能
 ======
 
-User Namespaces 于 Docker 1.10 版本正式纳入其中，该功能允许主机系统将自身的 `uid` 和 `gid` 映射为容器进程中的另一个其他 `uid` 和 `gid`。这对 Docker 的安全性来说是一项巨大的改进。下面我会通过一个案例来展示一下 User Namespaces 能够解决的问题，以及如何启用该功能。
+<ruby>用户名字空间<rt>User Namespaces</rt></ruby> 于 Docker 1.10 版本正式纳入其中，该功能允许主机系统将自身的 `uid` 和 `gid` 映射为容器进程中的另一个 `uid` 和 `gid`。这对 Docker 的安全性来说是一项巨大的改进。下面我会通过一个案例来展示一下用户名字空间能够解决的问题，以及如何启用该功能。
 
 ### 创建一个 Docker Machine
 
-如果你已经创建好了一台用来试验 User Namespaces 的 docker machine，那么可以跳过这一步。我在自己的 Macbook 上安装了 Docker Toolbox，因此我只需用 `docker-machine` 命令就很简单地创建一个基于 VirtualBox 的 Docker Machine（这里假设主机名为 `host1`）：
+如果你已经创建好了一台用来试验用户名字空间的 docker <ruby>机器<rt>Machine</rt></ruby>，那么可以跳过这一步。我在自己的 Macbook 上安装了 Docker Toolbox，因此我只需用 `docker-machine` 命令就很简单地创建一个基于 VirtualBox 的 Docker 机器（这里假设主机名为 `host1`）：
 
 ```
 # Create host1
@@ -15,9 +15,9 @@ $ docker-machine create --driver virtualbox host1
 $ docker-machine ssh host1
 ```
 
-### 理解在 User Napespaces 未启用的情况下，非 root 用户能做什么
+### 理解在用户名字空间未启用的情况下，非 root 用户能做什么
 
-在启用 User Namespaces 前，我们先来看一下会有什么问题。Docker 到底哪个地方做错了？首先，使用 Docker 的一大优势在于用户在容器中可以拥有 root 权限，因此用户可以很方便地安装软件包。但是在 Linux 容器技术中这也是一把双刃剑。只要经过少许操作，非 root 用户就能以 root 的权限访问主机系统中的内容，比如 `/etc`。下面是操作步骤。
+在启用用户名字空间前，我们先来看一下会有什么问题。Docker 到底哪个地方做错了？首先，使用 Docker 的一大优势在于用户在容器中可以拥有 root 权限，因此用户可以很方便地安装软件包。但是在 Linux 容器技术中这也是一把双刃剑。只要经过少许操作，非 root 用户就能以 root 的权限访问主机系统中的内容，比如 `/etc`。下面是操作步骤。
 
 ```
 # Run a container and mount host1's /etc onto /root/etc
@@ -33,9 +33,9 @@ root@34ef23438542:/# exit
 $ cat /etc/hosts
 ```
 
-你可以看到，步骤简单到难以置信，很明显 Docker 并不适用于运行在多人共享的电脑上。但是现在，通过 User Namespaces，Docker 可以避免这个问题。
+你可以看到，步骤简单到难以置信，很明显 Docker 并不适用于运行在多人共享的电脑上。但是现在，通过用户名字空间，Docker 可以避免这个问题。
 
-### 启用 User Namespaces
+### 启用用户名字空间
 
 ```
 # Create a user called "dockremap"
@@ -64,16 +64,16 @@ $ sudo /etc/init.d/docker restart
 
 **注意**：若你使用的是 CentOS 7，则你需要了解两件事。
 
-1. 内核默认并没有启用 User Namespaces。运行下面命令并重启系统，可以启用该功能。
+1. 内核默认并没有启用用户名字空间。运行下面命令并重启系统，可以启用该功能。
 
     ```
     sudo grubby --args="user_namespace.enable=1" \
         --update-kernel=/boot/vmlinuz-3.10.0-XXX.XX.X.el7.x86_64
     ```
 
-2. CentOS 7 使用 systemctl 来管理服务，因此你需要编辑的文件是 `/usr/lib/systemd/system/docker.service`。
+2. CentOS 7 使用 `systemctl` 来管理服务，因此你需要编辑的文件是 `/usr/lib/systemd/system/docker.service`。
 
-### 确认 User Namespaces 是否正常工作
+### 确认用户名字空间是否正常工作
 
 若一切都配置妥当，则你应该无法再在容器中编辑 host1 上的 `/etc` 了。让我们来试一下。
 
@@ -99,7 +99,7 @@ root@d5802c5e670a:/# rm /root/etc/hostname
 rm: cannot remove '/root/etc/hostname': Permission denied
 ```
 
-好了，太棒了。这就是 User Namespaces 的工作方式。
+好了，太棒了。这就是用户名字空间的工作方式。
 
 ---
 
