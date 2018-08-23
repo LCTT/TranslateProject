@@ -10,8 +10,9 @@ I work primarily in my Linux desktop environment, and most of my office colleagu
 It's been over four years since [Máirin Duffy reviewed Linux diagramming tools][1], so I decided to take a look at what's out there now for open source flowchart makers. I identified the following nine candidates:
 
 | Candidate name        | Linux desktop | Available for Windows? | Available for MacOS? |
+|-----------------------| --------------|------------------------|----------------------|
 | [Dia][2]              | GNOME         | Yes                    | Yes                  |
-| [LibreOffice Draw][3] | GNOME         | Yes                    | Yes                  |
+| [LibreOffice Draw][3]   | GNOME         | Yes                    | Yes                  |
 | [Inkscape][4]         | GNOME         | Yes                    | Yes                  |
 | [Calligra Flow][5]    | KDE           | Preliminary            | Preliminary          |
 | [Diagramo][6]         | Browser       | Browser                | Browser              |
