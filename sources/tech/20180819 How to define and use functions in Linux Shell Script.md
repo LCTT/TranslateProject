@@ -1,3 +1,4 @@
+LuuMing Translating
 How to define and use functions in Linux Shell Script
 ======
 Function is a reusable block of code. Often we put repeated code in a function and call that function from various places. Library is a collection of functions. We can define commonly used function in a library and other scripts can use them without duplicating code.
