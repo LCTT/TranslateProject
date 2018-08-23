@@ -1,11 +1,11 @@
 使用 Docker 的 User Namespaces 功能
 ======
 
-User Namespaces 于 Docker 1.10 版正式纳入其中，该功能允许主机系统将自身的 `uid` 和 `gid` 映射为容器进程中的另一个其他 `uid` 和 `gid`。这对 Docker 的安全性来说是一项巨大的改进。下面我会通过一个案例来展示一下 User Namespaces 能够解决的问题，以及如何启用该功能。
+User Namespaces 于 Docker 1.10 版本正式纳入其中，该功能允许主机系统将自身的 `uid` 和 `gid` 映射为容器进程中的另一个其他 `uid` 和 `gid`。这对 Docker 的安全性来说是一项巨大的改进。下面我会通过一个案例来展示一下 User Namespaces 能够解决的问题，以及如何启用该功能。
 
 ### 创建一个 Docker Machine
 
-如果你已经创建好了一台用来实验 User Namespaces 的 docker machine，那么可以跳过这一步。我在自己的 Macbook 上安装了 Docker Toolbox，因此我只需要使用 `docker-machine` 命令就很简单地创建一个基于 VirtualBox 的 Docker Machine（这里假设主机名为 `host1`）：
+如果你已经创建好了一台用来试验 User Namespaces 的 docker machine，那么可以跳过这一步。我在自己的 Macbook 上安装了 Docker Toolbox，因此我只需用 `docker-machine` 命令就很简单地创建一个基于 VirtualBox 的 Docker Machine（这里假设主机名为 `host1`）：
 
 ```
 # Create host1
@@ -15,9 +15,9 @@ $ docker-machine create --driver virtualbox host1
 $ docker-machine ssh host1
 ```
 
-### 理解在 User Napespaces 未启用的情况下，非 root 用户能够做什么
+### 理解在 User Napespaces 未启用的情况下，非 root 用户能做什么
 
-在启用 User Namespaces 前，我们先来看一下会有什么问题。Docker 到底哪个地方做错了？首先，使用 Docker 的一大优势在于用户在容器中可以拥有 root 权限，因此用户可以很方便地安装软件包。但是该项 Linux 容器技术是一把双刃剑。只要经过少许操作，非 root 用户就能以 root 的权限访问主机系统中的内容，比如 `/etc`。下面是操作步骤。
+在启用 User Namespaces 前，我们先来看一下会有什么问题。Docker 到底哪个地方做错了？首先，使用 Docker 的一大优势在于用户在容器中可以拥有 root 权限，因此用户可以很方便地安装软件包。但是在 Linux 容器技术中这也是一把双刃剑。只要经过少许操作，非 root 用户就能以 root 的权限访问主机系统中的内容，比如 `/etc`。下面是操作步骤。
 
 ```
 # Run a container and mount host1's /etc onto /root/etc
@@ -33,7 +33,7 @@ root@34ef23438542:/# exit
 $ cat /etc/hosts
 ```
 
-你可以看到，步骤简单到难以置信，很明显 Docker 并不适用于运行在多人共享的电脑上。但是现在，通过 User Namespaces，Docker 可以让你避免这个问题。
+你可以看到，步骤简单到难以置信，很明显 Docker 并不适用于运行在多人共享的电脑上。但是现在，通过 User Namespaces，Docker 可以避免这个问题。
 
 ### 启用 User Namespaces
 
