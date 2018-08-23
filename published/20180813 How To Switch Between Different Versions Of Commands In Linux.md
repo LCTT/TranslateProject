@@ -3,7 +3,7 @@
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/08/alt-tool-720x340.png)
 
-几天前，我们曾经讨论如何[`如何在不同的 PHP 版本之间进行切换`][1]。在那篇文章中，我们使用 `update-alternatives` 命令实现从一个 PHP 版本切换到另一个 PHP 版本。也就是说，`update-alternatives` 命令可以将<ruby>系统范围<rt>system wide</rt></ruby>默认使用的 PHP 版本设置为我们希望的版本。通俗的来说，你可以通过 `update-alternatives` 命令从系统范围设置程序的版本。如果你希望可以在不同目录动态设置不同的程序版本，该如何完成呢？在这种情况下，`alt` 工具可以大显身手。`alt` 是一个命令行工具，可以让你在类 Unix 系统中切换相同程序的不同版本。该工具简单易用，是 Rust 语言编写的自由、开源软件。
+几天前，我们曾经讨论[`如何在不同的 PHP 版本之间进行切换`][1]。在那篇文章中，我们使用 `update-alternatives` 命令实现从一个 PHP 版本切换到另一个 PHP 版本。也就是说，`update-alternatives` 命令可以将<ruby>系统范围<rt>system wide</rt></ruby>默认使用的 PHP 版本设置为我们希望的版本。通俗的来说，你可以通过 `update-alternatives` 命令从系统范围设置程序的版本。如果你希望可以在不同目录动态设置不同的程序版本，该如何完成呢？在这种情况下，`alt` 工具可以大显身手。`alt` 是一个命令行工具，可以让你在类 Unix 系统中切换相同程序的不同版本。该工具简单易用，是 Rust 语言编写的自由、开源软件。
 
 ### 安装
 
