@@ -7,36 +7,55 @@ What I Learned from Programming Interviews
 
 ![](https://cdn-images-1.medium.com/max/1250/1*DXPdaGPM4oM6p5nSkup7IQ.jpeg)
 Whiteboard programming interviews
-
+白板编程面试
 
 In 2017, I went to the [Grace Hopper Celebration][1] of women in computing. It’s the largest gathering of this kind, with 17,000 women attending last year.
 
+在2017，我参加了[Grace Hopper Celebration][1]‘信息科技中的女性’这一活动。这是个这类科技聚会中最大的一个，有17,000名女性IT工作者参加。
+
 This conference has a huge career fair where companies interview attendees. Some even get offers. Walking around the area, I noticed that some people looked stressed and worried. I overheard conversations, and some talked about how they didn’t do well in the interview.
+
+这个会议有个配套的招聘会，会上有招聘公司来面试参加者。有些人甚至现场拿到offer.我在现场晃荡了一下，我注意了一些应聘者看上去非常紧张忧虑。我听到应聘者之间的谈话，其中一些人谈到在面试中做的并不好。
 
 I approached a group of people that I overheard and gave them advice. I considered some of the advice I gave to be basic, such as “it’s okay to think of the naive solution first.” But people were surprised by most of the advice I gave them.
 
+我走近她们中的一些人和她们聊了起来，最后给了一些面试上的小建议。我想我的建议还是比较基本的，如“（在面试时）一开始给出个能工作的解决方案也还行啊”。但是她们听到我的一些其他的建议时还是颇为吃惊。
+
 I wanted to help more people with this. I gathered a list of tips that worked for me and published a [podcast episode][2] about them. They’re also the topic of this post.
+
+为了能更多的帮到像她们一样的白面面试者，后来我收集了一些过去对我有用的小点子，这些小点子我已经发表在了[prodcast episode][2]上。它们也是这篇文章的主题。
 
 I’ve had many programming interviews both for internships and full-time jobs. When I was in college studying Computer Science, there was a career fair every fall semester where the first round of interviews took place. I have failed at the first and final rounds of interviews. After each interview, I reflected on what I could’ve done better and had mock up interviews with friends who gave me feedback.
 
+为了实习生职位和全职工作，我做过很多次的面试。当我还在大学主修计算机科学时，每个秋季学期都有招聘会，第一轮招聘会在校园里举行。我在第一和最后一轮都搞砸过。不过，每次面试后，我都会反思哪些方面我能做的更好，我还会和朋友们做模拟面试，这样我就能从他们那儿得到更多的面试反馈。
+
 Whether we find a job through a job portal, networking, or university recruiting, part of the process involves doing a technical interview.
+
+不过我们怎么样找工作: 工作中介，网络，或者学校招聘，他们都有一些共同的流程:
 
 In recent years we’ve seen different interview formats emerge:
 
+近来，我也注意到了一些新的不同的面试形式出现了：
 *   Pair programming with an engineer
-
+*   与招聘方的一位工程师结对编程
 *   Online quiz and online coding
-
+*   网络上在线测试及在线编码
 *   Whiteboard interviews
+*   白板编程（译者注： 这种形式应该不新了）
 
 I’ll focus on the whiteboard interview because it’s the one that I have experienced. I’ve had many interviews. Some of them have gone well, while others haven’t.
 
+我将集中谈谈白板面试，这种形式我经历的最多。我有过很多次面试，有些挺不错的，有些被我搞砸了。
+
 ### What I did wrong
+### 我做错的地方
 
 First, I want to go over the things I did wrong in my interviews. This helps see the problems and what to improve.
+首先，我想先过一下我做的不好的地方。知错能改，善莫大焉。
 
 When an interviewer gave me a technical problem, I immediately went to the whiteboard and started trying to solve it.  _Without saying a word._ 
 
+当面试者提出一个要我解决的问题时， 我立即马上立刻开始在白板上写代码,_什么都不问。_
 I made two mistakes here:
 
 #### Not clarifying information that is crucial to solve a problem
