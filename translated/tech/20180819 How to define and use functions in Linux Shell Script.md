@@ -1,4 +1,3 @@
-How to define and use functions in Linux Shell Script
 如何在 Linux Shell 脚本中定义和使用函数
 ======
 函数是一段可复用的代码。我们通常把重复的代码放进函数中并且在不同的地方去调用它。库是函数的集合。我们可以在库中定义经常使用的函数，这样其他脚本便可以不再重复代码而使用这些函数。
