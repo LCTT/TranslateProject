@@ -10,7 +10,7 @@ Linux DNS 查询剖析（第二部分）
 
 并且发现大多数程序选择要查询的 DNS 服务器时会参考 `/etc/resolv.conf` 配置文件。
 
-这种方式在 Linux 上比较普遍[^1]。虽然我使用了特定的发行版 Ubuntu，但背后的原理与 Debian 甚至是那些基于 CentOS 的发行版与相通的地方；当然，与更低或更高的 Ubuntu 版本相比，差异还是存在的。
+这种方式在 Linux 上比较普遍[^1]。虽然我使用了特定的发行版 Ubuntu，但背后的原理与 Debian 甚至是那些基于 CentOS 的发行版有相通的地方；当然，与更低或更高的 Ubuntu 版本相比，差异还是存在的。
 
 [^1]: 事实上，这是相对于 POSIX 标准的，故不限于 Linux （我从上一篇文章的一条极好的[回复][2]中了解到这一点）
 
@@ -70,7 +70,7 @@ Add or overwrite the record IFACE.PROG then run the update scripts
 if updating is enabled.
 ```
 
-（LCTT 译注：增加或覆盖 IFACE.PROG 记录，如果开启更新选项，则运行更新脚本）
+（增加或覆盖 IFACE.PROG 记录，如果开启更新选项，则运行更新脚本）
 
 故而也许我们可以直接调用该命令增加 `namserver`：
 
@@ -86,7 +86,7 @@ nameserver 10.0.2.3
 nameserver 10.10.10.10
 ```
 
-是否已经找到答案，这就是 `/etc/resolv.conf` 更新的逻辑？调用 `resolvconf` 将 `nameserver` 添加到某个地方的数据库，然后（如果配置了更新，先不管具体什么含义）更新 `resolv.conf` 文件。
+是否已经找到答案，这就是 `/etc/resolv.conf` 更新的逻辑？调用 `resolvconf` 将 `nameserver` 添加到某个地方的数据库，然后（“如果配置了更新”，先不管具体什么含义）更新 `resolv.conf` 文件。
 
 并非如此。
 
