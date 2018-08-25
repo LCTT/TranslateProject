@@ -1,3 +1,5 @@
+Translating by DavidChenLiang
+
 What I Learned from Programming Interviews
 ============================================================
 
