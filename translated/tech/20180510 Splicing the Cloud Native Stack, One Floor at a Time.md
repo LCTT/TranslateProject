@@ -5,9 +5,9 @@
 
 在 Packet，我们的工作价值（基础设施自动化）是非常基础的。因此，我们花费大量的时间来研究我们之上所有生态系统中的参与者和趋势 —— 以及之下的极少数！
 
-当你在任何生态系统的汪洋大海中徜徉时，很容易困惑或迷失方向。我知道这是事实，因为当我去年进入 Packet 工作时，从 Bryn Mawr 获得的英语学位，并没有让我完全得到一个 Kubernetes 的认证。 :)
+当你在任何生态系统的汪洋大海中徜徉时，很容易困惑或迷失方向。我知道这是事实，因为当我去年进入 Packet 工作时，从 Bryn Mawr 获得的英语学位，并没有让我完全得到一个 Kubernetes 的认证。:)
 
-由于它超快的演进和巨大的影响，云原生生态系统打破了先例。似乎每眨一次眼睛，之前全新的技术（更不用说所有相关的理念了）就变得有意义 ... 或至少有趣了。和其他许多人一样，我依据无处不在的 CNCF 的 “[云原生蓝图][1]” 作为我去了解这个空间的参考标准。尽管如此，如果有一个定义这个生态系统的元素，那它一定是贡献和控制它们的人。
+由于它超快的演进和巨大的影响，云原生生态系统打破了先例。似乎每眨一次眼睛，之前全新的技术（更不用说所有相关的理念了）就变得有意义……或至少有趣了。和其他许多人一样，我依据无处不在的 CNCF 的 “[云原生蓝图][1]” 作为我去了解这个空间的参考标准。尽管如此，如果有一个定义这个生态系统的元素，那它一定是贡献和控制它们的人。
 
 所以，在 12 月份一个很冷的下午，当我们走回办公室时，我们偶然发现了一个给投资人解释“云原生”的创新方式，当我们谈到从 Aporeto 中区分 Cilium 的细微差别时，以及为什么从 CoreDNS 和 Spiffe 到 Digital Rebar 和 Fission 的所有这些都这么有趣时，他的眼睛中充满了兴趣。
 
@@ -17,7 +17,7 @@
 
 于是，我们开始了把云原生栈逐层拼接起来的旅程。让我们一起探索它，给你一个“仅限今日有效”的福利。（LCTT 译注：意即云原生领域变化很快，可能本文/本图中所述很快过时。）
 
-[[查看高清大图][3]] （25Mb）或给我们发邮件索取副本。
+[查看高清大图][3]（25Mb）或给我们发邮件索取副本。
 
 ### 从最底层开始
 
@@ -25,7 +25,7 @@
 
 从大家公认的像 Intel、AMD 和华为（传言他们雇佣的工程师接近 80000 名）这样的巨头，到像 Mellanox 这样的细分市场参与者，硬件生态系统现在非常火。事实上，随着数十亿美元投入去攻克新的 offload（LCTT 译注：网卡的 offload 特性是将本来该操作系统进行的一些诸如数据包分片、重组等处理任务放到网卡硬件中去做，降低系统 CPU 消耗的同时，提高处理的性能）、GPU、定制协处理器，我们可能正在进入硬件的黄金时代。
 
-著名的软件先驱<ruby>阿伦凯<rt>Alan Kay</rt></ruby> 在 25 年前说过：“对软件非常认真的人都应该去制造他自己的硬件” ，为阿伦凯打 call！
+著名的软件先驱<ruby>阿伦凯<rt>Alan Kay</rt></ruby>在 25 年前说过：“对软件非常认真的人都应该去制造他自己的硬件”，为阿伦凯打 call！
 
 ### 云即资本
 
@@ -45,7 +45,7 @@
 
 因为我们花费大量的时间去研究数据中心和连通性，需要注意的一件事情是，这一部分的变化非常快，尤其是在 5G 正式商用时，某些负载开始不再那么依赖中心化的基础设施了。
 
-接入即将到来！ :-)
+接入即将到来！:-)
 
 ![][6]
 
@@ -85,7 +85,7 @@ Packet 为我们的客户提供了 11 种主要的操作系统可供选择，包
 
 ### 编排
 
-在过去的这些年里，编排层全是 Kubernetes 了，因此我们选取了其中一位著名的布道者（Kelsey Hightower），并在这个古怪的会议场景中给他一个特写。在我们的团队中有一些 Nomad （LCTT 译注：一个管理机器集群并在集群上运行应用程序的工具）的忠实粉丝，并且如果抛开 Docker 和它的工具集的影响，就无从谈起云原生。
+在过去的这些年里，编排层全是 Kubernetes 了，因此我们选取了其中一位著名的布道者（Kelsey Hightower），并在这个古怪的会议场景中给他一个特写。在我们的团队中有一些 Nomad（LCTT 译注：一个管理机器集群并在集群上运行应用程序的工具）的忠实粉丝，并且如果抛开 Docker 和它的工具集的影响，就无从谈起云原生。
 
 虽然负载编排应用程序在我们栈中的地位非常高，我们看到的各种各样的证据表明，这些强大的工具开始去深入到栈中，以帮助用户利用 GPU 和其它特定硬件的优势。请继续关注 —— 我们正处于容器化革命的早期阶段！
 
@@ -119,7 +119,7 @@ Packet 为我们的客户提供了 11 种主要的操作系统可供选择，包
 
 由于我们的工作负载开始到处移动，规模也越来越大，这里没有一件事情能够像一个非常好用的 Grafana 仪表盘、或方便的 Datadog 代理让人更加欣慰了。由于复杂度的提升，“SRE” 一代开始越来越多地依赖警报和其它智能事件去帮我们感知发生的事件，出现越来越多的自我修复的基础设施和应用程序。
 
-在未来的几个月或几年中，我们将看到什么样的公司进入这一领域 … 或许是一些人工智能、区块链、机器学习支撑的仪表盘？:-)
+在未来的几个月或几年中，我们将看到什么样的公司进入这一领域……或许是一些人工智能、区块链、机器学习支撑的仪表盘？:-)
 
 ![][15]
 
@@ -152,25 +152,25 @@ via: https://www.packet.net/blog/splicing-the-cloud-native-stack/
 作者：[Zoe Allen][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[qhwdw](https://github.com/qhwdw)
-校对：[wxy](https://github.com/wxy)
+校对：[wxy](https://github.com/wxy)、[pityonline](https://github.com/pityonline)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:https://www.packet.net/about/zoe-allen/
-[1]:https://landscape.cncf.io/landscape=cloud
-[2]:https://assets.packet.net/media/images/PIFg-30.vesey.street.ny.jpg
-[3]:https://www.dropbox.com/s/ujxk3mw6qyhmway/Packet_Cloud_Native_Building_Stack.jpg?dl=0
-[4]:https://assets.packet.net/media/images/3vVx-there.is.no.cloud.jpg
-[5]:https://assets.packet.net/media/images/X0b9-the.bank.jpg
-[6]:https://assets.packet.net/media/images/2Etm-ping.and.power.jpg
-[7]:https://assets.packet.net/media/images/C800-infrastructure.jpg
-[8]:https://assets.packet.net/media/images/0V4O-provisioning.jpg
-[9]:https://assets.packet.net/media/images/eMYp-operating.system.jpg
-[10]:https://assets.packet.net/media/images/9BII-run.time.jpg
-[11]:https://assets.packet.net/media/images/njak-orchestration.jpg
-[12]:https://assets.packet.net/media/images/1QUS-platforms.jpg
-[13]:https://assets.packet.net/media/images/TeS9-security.jpg
-[14]:https://assets.packet.net/media/images/SFgF-apps.jpg
-[15]:https://assets.packet.net/media/images/SXoj-observability.jpg
-[16]:https://assets.packet.net/media/images/tKhf-traffic.management.jpg
-[17]:https://assets.packet.net/media/images/7cpe-users.jpg
+[a]: https://www.packet.net/about/zoe-allen/
+[1]: https://landscape.cncf.io/landscape=cloud
+[2]: https://assets.packet.net/media/images/PIFg-30.vesey.street.ny.jpg
+[3]: https://www.dropbox.com/s/ujxk3mw6qyhmway/Packet_Cloud_Native_Building_Stack.jpg?dl=0
+[4]: https://assets.packet.net/media/images/3vVx-there.is.no.cloud.jpg
+[5]: https://assets.packet.net/media/images/X0b9-the.bank.jpg
+[6]: https://assets.packet.net/media/images/2Etm-ping.and.power.jpg
+[7]: https://assets.packet.net/media/images/C800-infrastructure.jpg
+[8]: https://assets.packet.net/media/images/0V4O-provisioning.jpg
+[9]: https://assets.packet.net/media/images/eMYp-operating.system.jpg
+[10]: https://assets.packet.net/media/images/9BII-run.time.jpg
+[11]: https://assets.packet.net/media/images/njak-orchestration.jpg
+[12]: https://assets.packet.net/media/images/1QUS-platforms.jpg
+[13]: https://assets.packet.net/media/images/TeS9-security.jpg
+[14]: https://assets.packet.net/media/images/SFgF-apps.jpg
+[15]: https://assets.packet.net/media/images/SXoj-observability.jpg
+[16]: https://assets.packet.net/media/images/tKhf-traffic.management.jpg
+[17]: https://assets.packet.net/media/images/7cpe-users.jpg
