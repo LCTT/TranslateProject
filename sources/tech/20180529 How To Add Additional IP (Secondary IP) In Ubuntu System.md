@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 How To Add Additional IP (Secondary IP) In Ubuntu System
 ======
 Linux admin should be aware of this because it’s a routine task. Many of you wondering why we need to add more than one IP address in server? why we need add this to single network card? am i right?
