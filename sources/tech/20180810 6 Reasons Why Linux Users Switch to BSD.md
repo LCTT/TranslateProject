@@ -1,3 +1,4 @@
+LuuMing translating
 6 Reasons Why Linux Users Switch to BSD
 ======
 Thus far I have written several articles about [BSD][1] for It’s FOSS. There is always at least one person in the comments asking “Why bother with BSD?” I figure that the best way to respond was to write an article on the topic.
