@@ -1,3 +1,5 @@
+translating---geekpi
+
 5 applications to manage your to-do list on Fedora
 ======
 

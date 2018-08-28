@@ -1,32 +1,36 @@
-Translating by DavidChenLiang
 
-
-
-How To View Detailed Information About A Package In Linux
+如何在Linux上检查一个包（package）的详细信息
 ======
-This is know topic and we can write so many articles because most of the time we would stick with package managers for many reasons.
 
-Each distribution clones has their own package manager, each has comes with their unique features that allow users to perform many actions such as installing new software packages, removing unnecessary software packages, updating the existing software packages, searching for specific software packages, and updating the system to latest available version, etc.
 
-Whoever is sticking with command-line most of the time they would preferring the CLI based package managers. The major CLI package managers for Linux are Yum, Dnf, Rpm,Apt, Apt-Get, Deb, pacman and zypper.
+我们可以就这个已经被广泛讨论的话题写出大量的文档，大多数情况下，因为各种各样的原因，我们都愿意让包管理器（package manager）来帮我们做这些事情。
 
-**Suggested Read :**
+每个Linux发行版都有自己的包管理器，并且每个都有各自有不同的特性，这些特性包括允许用户执行安装新软件包，删除无用的软件包，更新现存的软件包，搜索某些具体的软件包，以及更新整个系统到其最新的状态之类的操作。
+
+习惯于命令行的用户大多数时间都会使用基于命令行方式的包管理器。对于Linux而言，这些基于命令行的包管理器有Yum，Dnf, Rpm, Apt, Apt-Get, Deb, pacman 和zypper.
+
+
+**推荐阅读**
 **(#)** [List of Command line Package Managers For Linux & Usage][1]
 **(#)** [A Graphical frontend tool for Linux Package Manager][2]
 **(#)** [How To Search If A Package Is Available On Your Linux Distribution Or Not][3]
 **(#)** [How To Add, Enable And Disable A Repository By Using The DNF/YUM Config Manager Command On Linux][4]
 
-As a system administrator you should aware of from where packages are coming, which repository, version of the package, size of the package, release, package source url, license info, etc,.
 
-This will help you to understand the package usage in simple way since it’s coming with package summary & Description. Run the below commands based on your distribution to get detailed information about given package.
+作为一个系统管理员你应该熟知以下事实：安装包来自何方，具体来自哪个软件仓库，包的具体版本，包的大小，发行版的版本，包的源URL，包的许可证信息，等等等等。
 
-### [YUM Command][5] : View Package Information On RHEL & CentOS Systems
 
-YUM stands for Yellowdog Updater, Modified is an open-source command-line front-end package-management utility for RPM based systems such as Red Hat Enterprise Linux (RHEL) and CentOS.
+这篇短文将用尽可能简单的方式帮你理解包管理器的用法，这些用法正是来自随包自带的总结和描述文件。按你所使用的Linux发行版的不同，运行下面相应的命令，你能得到你所使用的发行版下的包的详细信息。
 
-Yum is the primary tool for getting, installing, deleting, querying, and managing RPM packages from distribution repositories, as well as other third-party repositories.
+### [YUM 命令][5] : 在RHEL和CentOS系统上获得包的信息
+
+
+YUM 英文直译是黄狗更新器--修改版，它是一个开源的基于命令行的包管理器前端实用工具。它被广泛应用在基于RPM的系统上，例如：RHEL和CentOS。
+
+Yum是用于在官方发行版仓库以及其他第三方发行版仓库下获取，安装，删除，查询RPM包的主要工具。
+
 ```
-# yum info python
+# yum info python（LCTT译注：用yum info 获取python包的信息）
 Loaded plugins: fastestmirror, security
 Loading mirror speeds from cached hostfile
  * epel: epel.mirror.constant.com
@@ -60,11 +64,13 @@ Description : Python is an interpreted, interactive, object-oriented programming
 
 ```
 
-### YUMDB Command : View Package Information On RHEL & CentOS Systems
+### YUMDB 命令： 查看RHEL和CentOS系统上的包信息
 
-Yumdb info provides information similar to yum info but additionally it provides package checksum data, type, user info (who installed the package). Since yum 3.2.26 yum has started storing additional information outside of the rpmdatabase (where user indicates it was installed by the user, and dep means it was brought in as a dependency).
+
+Yumdb info这个命令提供与yum info相类似的的信息，不过它还额外提供了诸如包校验值，包类型，用户信息（由何人安装）。从yum 3.2.26版本后，yum开始在rpm数据库外储存额外的信息了（下文输出的用户信息指该python由该用户安装，而dep说明该包是被作为被依赖的包而被安装的）。
+
 ```
-# yumdb info python
+# yumdb info python（LCTT译注：用yumdb info 来获取Python的信息）
 Loaded plugins: fastestmirror
 python-2.6.6-66.el6_8.x86_64
  changed_by = 4294967295
@@ -81,11 +87,13 @@ python-2.6.6-66.el6_8.x86_64
 
 ```
 
-### [RPM Command][6] : View Package Information On RHEL/CentOS/Fedora Systems
+### [RPM 命令][6] : 在RHEL/CentOS/Fedora系统上查看包的信息
 
-RPM stands for Red Hat Package Manager is a powerful, command line Package Management utility for Red Hat based system such as (RHEL, CentOS, Fedora, openSUSE & Mageia) distributions. The utility allow you to install, upgrade, remove, query & verify the software on your Linux system/server. RPM files comes with .rpm extension. RPM package built with required libraries and dependency which will not conflicts other packages were installed on your system.
+
+RPM 英文直译为红帽包管理器，这是一个在RedHat以及其变种发行版（如RHEL， CentOS， Fedora， openSUSE，Megeia）下的功能强大的命令行包管理工具。它能让你轻松的安装，升级，删除，查询以及校验你的系统或服务器上的软件。RPM文件以.rpm结尾。RPM包由它所依赖的软件库以及其他依赖构成，它不会与系统上已经安装的包冲突。
+
 ```
-# rpm -qi nano
+# rpm -qi nano （LCTT译注：用RPM -qi 查询nano包的具体信息）
 Name : nano Relocations: (not relocatable)
 Version : 2.0.9 Vendor: CentOS
 Release : 7.el6 Build Date: Fri 12 Nov 2010 02:18:36 AM EST
@@ -101,11 +109,13 @@ GNU nano is a small and friendly text editor.
 
 ```
 
-### [DNF Command][7] : View Package Information On Fedora System
+### [DNF 命令][7] : 在Fedora系统上查看报信息
 
-DNF stands for Dandified yum. We can tell DNF, the next generation of yum package manager (Fork of Yum) using hawkey/libsolv library for backend. Aleš Kozumplík started working on DNF since Fedora 18 and its implemented/launched in Fedora 22 finally. Dnf command is used to install, update, search & remove packages on Fedora 22 and later system. It automatically resolve dependencies and make it smooth package installation without any trouble.
+
+DNF指时髦版的Yum,我们也可以认为DNF是下一代的YUM包管理器（Yum的一个分支），它在后台使用了hawkey/libsolv库。Aleš Kozumplík在Fedora 18上开始开发DNF，在Fedora 22上正式最后发布。 DNF命令用来在Fedora 22及以后系统安装， 更新，搜索以及删除包。它能自动的解决包安装过程中的包依赖问题。
+
 ```
-$ dnf info tilix
+$ dnf info tilix （LCTT译注： 用dnf info 查看tilix的包信息）
 Last metadata expiration check: 27 days, 10:00:23 ago on Wed 04 Oct 2017 06:43:27 AM IST.
 Installed Packages
 Name : tilix
@@ -139,11 +149,13 @@ Description : Tilix is a tiling terminal emulator with the following features:
 
 ```
 
-### [Zypper Command][8] : View Package Information On openSUSE System
+### [Zypper 命令][8] : 在openSUSE系统上查看包信息
 
-Zypper is a command line package manager which makes use of libzypp. Zypper provides functions like repository access, dependency solving, package installation, etc.
+
+Zypper是一个使用libzypp库的命令行包管理器。Zypper提供诸如软件仓库访问，安装依赖解决，软件包安装等等功能。
+
 ```
-$ zypper info nano
+$ zypper info nano （译注： 用zypper info查询nano的信息）
 
 Loading repository data...
 Reading installed packages...
@@ -167,11 +179,12 @@ Description :
 
 ```
 
-### [pacman Command][9] : View Package Information On Arch Linux & Manjaro Systems
+### [pacman 命令][9] ：在ArchLinux及Manjaro系统上查看包信息
 
-Pacman stands for package manager utility. pacman is a simple command-line utility to install, build, remove and manage Arch Linux packages. Pacman uses libalpm (Arch Linux Package Management (ALPM) library) as a back-end to perform all the actions.
+Pacman指包管理器实用工具。pacman是一个用于安装，构建，删除，管理Arch Linux上包的命令行工具。它后端使用libalpm(Arch Linux package Manager（ALPM）库)来完成所有功能。
+
 ```
-$ pacman -Qi bash
+$ pacman -Qi bash （LCTT译注： 用pacman -Qi 来查询bash）
 Name : bash
 Version : 4.4.012-2
 Description : The GNU Bourne Again shell
@@ -203,11 +216,14 @@ Validated By : Signature
 
 ```
 
-### [Apt-Cache Command][10] : View Package Information On Debian/Ubuntu/Mint Systems
+### [Apt-Cache 命令][10] ：在Debian/Ubuntu/Mint系统上查看包信息
 
-The apt-cache command can display much of the information stored in APT’s internal database. This information is a sort of cache since it is gathered from the different sources listed in the sources.list file. This happens during the apt update operation.
+
+apt-cache命令能显示Apt内部数据库中的大量信息。这些信息是从sources.list中的不同的软件源中搜集而来，因此从某种意义上这些信息也可以被认为是某种缓存。
+这些信息搜集工作是在运行apt update命令时执行的。
+
 ```
-$ sudo apt-cache show apache2
+$ sudo apt-cache show apache2 （LCTT译注：用管理员权限查询apache2的信息）
 Package: apache2
 Priority: optional
 Section: web
@@ -244,11 +260,13 @@ Task: lamp-server, mythbuntu-frontend, mythbuntu-desktop, mythbuntu-backend-slav
 
 ```
 
-### [APT Command][11] : View Package Information On Debian/Ubuntu/Mint Systems
+### [APT 命令][11] : 查看Debian/Ubuntu/Mint系统上的包信息
 
-APT stands for Advanced Packaging Tool (APT) which is replacement for apt-get, like how DNF came to picture instead of YUM. It’s feature rich command-line tools with included all the futures in one command (APT) such as apt-cache, apt-search, dpkg, apt-cdrom, apt-config, apt-key, etc..,. and several other unique features. For example we can easily install .dpkg packages through APT but we can’t do through Apt-Get similar more features are included into APT command. APT-GET replaced by APT Due to lock of futures missing in apt-get which was not solved.
+
+APT意为高级打包工具，就像DNF将如何替代YUM一样，APT是apt-get的替代物。它功能丰富的命令行工具包括了如下所有命令的功能如apt-cache,apt-search,dpkg, apt-cdrom, apt-config, apt-key等等，我们可以方便的通过apt来安装.dpkg包，但是我们却不能通过apt-get来完成这一点，还有一些其他的类似的功能也不能用apt-get来完成，所以apt-get因为没有解决上述功能缺乏的原因而被apt所取代。
+
 ```
-$ apt show nano
+$ apt show nano （LCTT译注： 用apt show查看nano）
 Package: nano
 Version: 2.8.6-3
 Priority: standard
@@ -290,11 +308,13 @@ Description: small, friendly text editor inspired by Pico
 
 ```
 
-### [dpkg Command][12] : View Package Information On Debian/Ubuntu/Mint Systems
+### [dpkg 命令][12] : 查看Debian/Ubuntu/Mint系统上的包信息
 
-dpkg stands for Debian package manager (dpkg). dpkg is a command-line tool to install, build, remove and manage Debian packages. dpkg uses Aptitude (primary and more user-friendly) as a front-end to perform all the actions. Other utility such as dpkg-deb and dpkg-query uses dpkg as a front-end to perform some action. Now a days most of the administrator using Apt, Apt-Get & Aptitude to manage packages easily without headache and its robust management too. Even though still we need to use dpkg to perform some software installation where it’s necessary.
+
+dpkg意指Debian包管理器（dpkg）。dpkg用于Debian系统上的安装，构建，移除以及管理Debian包的命令行工具。dpkg 使用Aptitude（因为它更为主流及用户友好）作为前端工具来完成所有的功能。其他的工具如dpkg-deb和dpkg-query使用dpkg做为前端来实现功能。尽管系统管理员还是时不时会在必要时使用dpkg来完成一些软件安装的任务，他大多数情况下还是会因为APt，Apt-Get以及Aptitude的健壮性而使用后者。
+
 ```
-$ dpkg -s python
+$ dpkg -s python （LCTT译注： 用dpkg -s查看python）
 Package: python
 Status: install ok installed
 Priority: optional
@@ -324,9 +344,11 @@ Original-Maintainer: Matthias Klose
 
 ```
 
-Alternatively we can use `-p` option with dpkg that provides information similar to `dpkg -s` info but additionally it provides package checksum data and type.
+
+我们也可使用dpkg的‘-p’选项，这个选项提供和‘dpkg -s’相类似的信息，但是它还提供了包的校验值和包类型。
+
 ```
-$ dpkg -p python3
+$ dpkg -p python3 （LCTT译注： 用dpkg -p查看python3的信息）
 Package: python3
 Priority: important
 Section: python
@@ -357,11 +379,13 @@ Supported: 9m
 
 ```
 
-### Aptitude Command : View Package Information On Debian/Ubuntu/Mint Systems
+### Aptitude 命令 : 查看Debian/Ubuntu/Mint 系统上的包信息
 
-aptitude is a text-based interface to the Debian GNU/Linux package system. It allows the user to view the list of packages and to perform package management tasks such as installing, upgrading, and removing packages. Actions may be performed from a visual interface or from the command-line.
+
+aptitude是Debian GNU/Linux包管理系统的面向文本的接口。它允许用户查看已安装的包的列表，以及完成诸如安装，升级，删除包之类的包管理任务。这些管理行为也能从图形接口来执行。
+
 ```
-$ aptitude show htop
+$ aptitude show htop （LCTT译注： 用aptitude show查看htop信息）
 Package: htop
 Version: 2.0.2-1
 State: installed
@@ -388,7 +412,7 @@ via: https://www.2daygeek.com/how-to-view-detailed-information-about-a-package-i
 
 作者：[Prakash Subramanian][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[DavidChenLiang](https://github.com/davidchenliang)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
