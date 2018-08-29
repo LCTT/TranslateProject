@@ -106,7 +106,7 @@ function func_return_value {
 }
 ```
 
-上面的函数向调用者返回 10。让我们执行这个函数：
+上面的函数向调用者返回 `10`。让我们执行这个函数：
 
 ```
 $ func_return_value
@@ -119,7 +119,7 @@ $ echo "Value returned by function is: $?"
 Value returned by function is: 10
 ```
 
-**提示**：在 Bash 中使用 `$?` 去获取函数的返回值
+**提示**：在 Bash 中使用 `$?` 去获取函数的返回值。
 
 ### 函数技巧
 
