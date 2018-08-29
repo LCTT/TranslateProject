@@ -29,7 +29,7 @@
 
 ### 云即资本
 
-就像我们的 CEO Zac Smith 多次跟我说的：都是钱的问题。不仅要制造它，还要消费它！在云中，数十亿美元的投入才能让数据中心出现计算机，这样才能让开发者消费它。换句话说（根本没云，它只是别人的电脑而已）：
+就像我们的 CEO Zac Smith 多次跟我说的：一切都是钱的事。不仅要制造它，还要消费它！在云中，数十亿美元的投入才能让数据中心出现计算机，这样才能让开发者消费它。换句话说（根本没云，它只是别人的电脑而已）：
 
 ![][4]
 
@@ -45,7 +45,7 @@
 
 因为我们花费大量的时间去研究数据中心和连通性，需要注意的一件事情是，这一部分的变化非常快，尤其是在 5G 正式商用时，某些负载开始不再那么依赖中心化的基础设施了。
 
-边缘接入即将到来！:-)
+边缘计算即将到来！:-)
 
 ![][6]
 
@@ -53,7 +53,7 @@
 
 居于“连通”和“动力”之上的这一层，我们爱称为“处理器层”。这是奇迹发生的地方 —— 我们将来自下层的创新和实物投资转变成一个 API 终端的某些东西。
 
-由于这是纽约的一个大楼，我们让在这里的云供应商处于纽约的中心。这就是为什么你会看到（[Digital Ocean][Digital Ocean] 系的）鲨鱼 Sammy 和在 Google 之上的 “meet me” 的房间中和我打招呼的原因了。
+由于这是纽约的一个大楼，我们让在这里的云供应商处于纽约的中心。这就是为什么你会看到（[Digital Ocean][Digital Ocean] 系的）鲨鱼 Sammy 和对 “meet me” 房间里面的 Google 标志的致意的原因了。
 
 正如你所见，这个场景是非常写实的。它是由多层机架堆叠起来的。尽管我们爱 EWR1 的设备经理（Michael Pedrazzini），我们努力去尽可能减少这种体力劳动。毕竟布线专业的博士学位是很难拿到的。
 
@@ -61,7 +61,7 @@
 
 ### 供给
 
-再上一层，在基础设施层之上是供给层。这是我们最喜欢的地方之一，它以前被我们称为<ruby>配置管理<rt>confing management</rt></ruby>。但是现在到处都是一开始就是<ruby>不可变基础设施<rt>immutable infrastructure</rt></ruby>和自动化：[Terraform][Terraform]、[Ansible][Ansible]、[Quay.io][Quay.io] 等等类似的东西。你可以看出软件是按它的方式来工作的，对吗？
+再上一层，在基础设施层之上是供给层。这是我们最喜欢的地方之一，它以前被我们称为<ruby>配置管理<rt>config management</rt></ruby>。但是现在到处都是一开始就是<ruby>不可变基础设施<rt>immutable infrastructure</rt></ruby>和自动化：[Terraform][Terraform]、[Ansible][Ansible]、[Quay.io][Quay.io] 等等类似的东西。你可以看出软件是按它的方式来工作的，对吗？
 
 Kelsey Hightower 最近写道“呆在无聊的基础设施中是一个让人兴奋的时刻”，我不认为这说的是物理部分（虽然我们认为它非常让人兴奋），但是由于软件持续侵入到栈的所有层，那必将是一个疯狂的旅程。
 
@@ -152,7 +152,7 @@ via: https://www.packet.net/blog/splicing-the-cloud-native-stack/
 作者：[Zoe Allen][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[qhwdw](https://github.com/qhwdw)
-校对：[wxy](https://github.com/wxy)、[pityonline](https://github.com/pityonline)
+校对：[wxy](https://github.com/wxy), [pityonline](https://github.com/pityonline)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
