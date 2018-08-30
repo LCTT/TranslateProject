@@ -28,7 +28,7 @@ sudo dnf install fstransform
 
 ![][2]
 
-`fstransform1 命令的语法非常简单：`fstransform <源设备> <目标文件系统>`。请记住，它需要 root 权限才能运行，所以不要忘记在开头添加 `sudo`。这是一个例子：
+`fstransform` 命令的语法非常简单：`fstransform <源设备> <目标文件系统>`。请记住，它需要 root 权限才能运行，所以不要忘记在开头添加 `sudo`。这是一个例子：
 
 ```
 sudo fstransform /dev/sdb1 ext4
@@ -38,7 +38,7 @@ sudo fstransform /dev/sdb1 ext4
 
 ### 更多支持的文件系统
 
-如上所述，可以尝试在 ntfs、btrfs、fat 和 exfat 分区使用 Fstransform。这些类型是早期实验性的，没有人能保证完美转换。尽管如此，还是有许多成功案例，你可以通过在测试分区上使用示例数据集测试 Fstransform 来添加自己的成功案例。可以使用 `-force-untested-file-systems` 参数启用这些额外的文件系统：
+如上所述，可以尝试在 ntfs、btrfs、fat 和 exfat 分区使用 Fstransform。这些类型是早期实验性的，没有人能保证完美转换。尽管如此，还是有许多成功案例，你可以通过在测试分区上使用示例数据集测试 Fstransform 来添加自己的成功案例。可以使用 `--force-untested-file-systems` 参数启用这些额外的文件系统：
 
 ```
 sudo fstransform /dev/sdb1 ntfs --force-untested-file-systems
