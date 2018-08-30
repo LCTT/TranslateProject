@@ -1,3 +1,5 @@
+Translating by DavidChenLiang
+
 Installing and using Git and GitHub on Ubuntu Linux: A beginner's guide
 ======
 
