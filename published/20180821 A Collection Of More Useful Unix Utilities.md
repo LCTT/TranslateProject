@@ -1,19 +1,19 @@
-打包更多有用的 Unix 实用程序
+一套有用的 Unix 实用程序
 ======
 
 ![](https://www.ostechnix.com/wp-content/uploads/2017/08/Moreutils-720x340.png)
 
-我们都了解 **<ruby>GNU 核心实用程序<rt>GNU Core Utilities</rt></ruby>**，所有类 Unix 操作系统都预装了它们。它们是 GNU 操作系统中与文件、Shell 和 文本处理相关的基础实用工具。GNU 核心实用程序包括很多日常操作命令，例如 `cat`，`ls`, `rm`，`mkdir`，`rmdir`，`touch`，`tail` 和 `wc` 等。除了这些实用程序，还有更多有用的实用程序没有预装在类 Unix 操作系统中，它们汇集起来构成了 `moreutilis` 这个日益增长的集合。`moreutils` 可以在 GNU/Linux 和包括 FreeBSD，openBSD 及 Mac OS 在内的多种 Unix 类型操作系统上安装。
+我们都了解 <ruby>GNU 核心实用程序<rt>GNU Core Utilities</rt></ruby>，所有类 Unix 操作系统都预装了它们。它们是 GNU 操作系统中与文件、Shell 和 文本处理相关的基础实用工具。GNU 核心实用程序包括很多日常操作命令，例如 `cat`、`ls`、`rm`、`mkdir`、`rmdir`、`touch`、`tail` 和 `wc` 等。除了这些实用程序，还有更多有用的实用程序没有预装在类 Unix 操作系统中，它们汇集起来构成了 `moreutilis` 这个日益增长的集合。`moreutils` 可以在 GNU/Linux 和包括 FreeBSD，openBSD 及 Mac OS 在内的多种 Unix 类型操作系统上安装。
 
 截至到编写这份指南时，  `moreutils` 提供如下实用程序：
 
 * `chronic` – 运行程序并忽略正常运行的输出
-* `combine` – 使用布尔操作合并文件
+* `combine` – 使用布尔操作合并文件的行
 * `errno` – 查询 errno 名称及描述
 * `ifdata` – 获取网络接口信息，无需解析 `ifconfig` 的结果
 * `ifne` – 在标准输入非空的情况下运行程序
 * `isutf8` – 检查文件或标准输入是否采用 UTF-8 编码
-* `lckdo` – 运行程序时考虑文件锁
+* `lckdo` – 带锁运行程序
 * `mispipe` – 使用管道连接两个命令，返回第一个命令的退出状态
 * `parallel` – 同时运行多个任务
 * `pee` – 将标准输入传递给多个管道
@@ -56,7 +56,7 @@ $ sudo apt-get install moreutils
 
 让我们看一下几个 `moreutils` 工具的用法细节。
 
-##### combine 实用程序
+#### combine 实用程序
 
 正如 `combine` 名称所示，moreutils 中的这个实用程序可以使用包括 `and`，`not`，`or` 和 `xor` 在内的布尔操作，合并两个文件中的行。
 
@@ -102,7 +102,7 @@ where
 
 从上面的输出中可以看出，`not` 操作输出 `file1` 包含但 `file2` 不包含的行。
 
-##### ifdata 实用程序
+#### ifdata 实用程序
 
 `ifdata` 实用程序可用于检查网络接口是否存在，也可用于获取网络接口的信息，例如 IP 地址等。与预装的 `ifconfig` 和 `ip` 命令不同，`ifdata` 的输出更容易解析，这种设计的初衷是便于在 Shell 脚本中使用。
 
@@ -134,7 +134,7 @@ $ ifdata -pe wlp9s0
 yes
 ```
 
-##### pee 命令
+#### pee 命令
 
 该命令某种程度上类似于 `tee` 命令。
 
@@ -157,7 +157,7 @@ Welcome to OSTechNIx
 
 从上面的命令输出中可以看出，有两个 `cat` 命令实例获取 `echo` 命令的输出并执行，因而终端中出现两个同样的输出。
 
-##### sponge 实用程序
+#### sponge 实用程序
 
 这是 `moreutils` 软件包中的另一个有用的实用程序。`sponge` 读取标准输入并写入到指定的文件中。与 Shell 中的重定向不同，`sponge` 接收到完整输入后再写入输出文件。
 
@@ -197,7 +197,7 @@ You
 
 看到了吧？并不需要创建新文件。在脚本编程中，这非常有用。另一个好消息是，如果待写入的文件已经存在，`sponge` 会保持其<ruby>权限信息<rt>permissions</rt></ruby>不变。
 
-##### ts 实用程序
+#### ts 实用程序
 
 正如名称所示，`ts` 命令在每一行输出的行首增加<ruby>时间戳<rt>timestamp</rt></ruby>。
 
@@ -238,7 +238,7 @@ Aug 21 13:34:25 drwxr-xr-x 24 sk users 12288 Aug 21 13:06 Downloads
 [...]
 ```
 
-##### vidir 实用程序
+#### vidir 实用程序
 
 `vidir` 实用程序可以让你使用 `vi` 编辑器（或其它 `$EDITOR` 环境变量指定的编辑器）编辑指定目录的内容。如果没有指定目录，`vidir` 会默认编辑你当前的目录。
 
@@ -274,7 +274,7 @@ $ vidir *.png
 
 这时命令只会编辑当前目录下以 `.PNG` 为后缀的文件。
 
-##### vipe 实用程序
+#### vipe 实用程序
 
 `vipe` 命令可以让你使用默认编辑器接收 Unix 管道输入，编辑之后使用管道输出供下一个程序使用。
 
@@ -285,7 +285,7 @@ $ echo "Welcome to OSTechNIx" | vipe
 Hello World
 ```
 
-从上面的输出可以看出，我通过管道将“Welcome to OSTechNix”输入到 `vi` 编辑器中，将内容编辑为“Hello World”，最后显示该内容。
+从上面的输出可以看出，我通过管道将 “Welcome to OSTechNix” 输入到 `vi` 编辑器中，将内容编辑为 “Hello World”，最后显示该内容。
 
 好了，就介绍这么多吧。我只介绍了一小部分实用程序，而 `moreutils` 包含更多有用的实用程序。我在文章开始的时候已经列出目前 `moreutils` 软件包内包含的实用程序，你可以通过 `man` 帮助页面获取更多相关命令的细节信息。举个例子，如果你想了解 `vidir` 命令，请运行：
 
@@ -304,7 +304,7 @@ via: https://www.ostechnix.com/moreutils-collection-useful-unix-utilities/
 作者：[SK][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[pinewall](https://github.com/pinewall)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
