@@ -1,34 +1,32 @@
-Translating by MjSeven
-
-
-How To Add Additional IP (Secondary IP) In Ubuntu System
+如何在 Ubuntu 系统中添加一个辅助 IP 地址
 ======
-Linux admin should be aware of this because it’s a routine task. Many of you wondering why we need to add more than one IP address in server? why we need add this to single network card? am i right?
 
-Also you can have a question like, how to assign multiple IP addresses to single network card in linux. In this article you can get an answer for this.
+Linux 管理员应该意识到这一点，因为这是一项例行任务。很多人想知道为什么我们需要在服务器中添加多个 IP 地址，以及为什么我们需要将它添加到单块网卡中？我说的对吗？
 
-When we setup a new server, ideally it will have one IP address, which is server main IP address and linked with server hostname.
+你可能也会有类似的问题：在 Linux 中如何为单块网卡分配多个 IP 地址？在本文中，你可以得到答案。
 
-We should not host any application in server main IP address, which is not advisable. If you want to host any application on server, we should add additional IP or Secondary IP for that.
+当我们对一个新服务器进行设置时，理想情况下它将有一个 IP 地址，即服务器主 IP 地址，它与服务器主机名对应。
 
-This is the best practices in industry, this allows users to install SSL certificate. Most of the system comes with single network card, which is more than enough to add additional IP address.
+我们不应在服务器主 IP 地址上托管任何应用程序，这是不可取的。如果要在服务器上托管任何应用程序，我们应该为此添加辅助 IP。
 
-**Suggested Read :**
-**(#)** [9 Methods To Check Your Public IP Address In Linux Command Line][1]
-**(#)** [3 Easy Ways To Check DNS (Domain Name Server) Records In Linux Terminal][2]
-**(#)** [Check DNS (Domain Name Server) Records On Linux Using Dig Command][3]
-**(#)** [Check DNS (Domain Name Server) Records On Linux Using Nslookup Command][4]
-**(#)** [Check DNS (Domain Name Server) Records On Linux Using Host Command][5]
+这是业界的最佳实践，它允许用户安装 SSL 证书。大多数系统都配有单块网卡，这足以添加额外的 IP 地址。
 
-We can add IP address in the same interface or create sub interface on the same device then add IP in that. By default interface name comes `ethX (eth0)` till Ubuntu 14.04 LTS but from Ubuntu 15.10 network interfaces names have been changed from `ethX` to `enXXXXX` (For server ens33 & For desktop enp0s3).
+**建议阅读：**
+**(#)** [在 Linux 命令行中 9 种方法检查公共 IP 地址][1]
+**(#)** [在 Linux 终端中 3 种简单的方式来检查 DNS（域名服务器）记录][2]
+**(#)** [在 Linux 上使用 Dig 命令检查 DNS（域名服务器）记录][3]
+**(#)** [在 Linux 上使用 Nslookup 命令检查 DNS（域名服务器）记录][4]
+**(#)** [在 Linux 上使用 Host 命令检查 DNS（域名服务器）记录][5]
 
-In this article we will teach you how to perform this on Ubuntu and it is derivative.
+我们可以在同一个接口上添加 IP 地址，或者在同一设备上创建子接口，然后在其中添加 IP。默认情况下，一直到 Ubuntu 14.04 LTS，接口给名称为 `ethX (eth0)`，但是从 Ubuntu 15.10 之后网络接口名称已从 `ethX` 更改为 `enXXXXX`（对于服务器是 ens33，桌面版是 enp0s3）。
 
-**`Make a note:`** You should not add IP address entry after DNS details. If so, DNS wont work.
+在本文中，我们将教你如何在 Ubuntu 上执行此操作，并且衍生到其它发行版（to 校正：这句自己加的）。
 
-### How To Add Secondary IP Address Temporarily In Ubuntu 14.04 LTS
+**`注意：`**别在 DNS 详细信息后添加 IP 地址。如果是这样，DNS 将无法正常工作。
 
-Before adding IP address in system. Just verify the server main IP address by running any of the below commands.
+### 如何在 Ubuntu 14.04 LTS 中添加临时辅助 IP 地址
+
+在系统中添加 IP 地址之前，运行以下任一命令即可验证服务器主 IP 地址：
 ```
 # ifconfig
 
@@ -65,13 +63,13 @@ lo Link encap:Local Loopback
 
 ```
 
-As i can see, the server main IP address is `192.168.56.150` so, i’m going to assign next IP `192.168.56.151` as a secondary IP. This can be done using below method.
+如我所见，服务器主 IP 地址是 `192.168.56.150`，我将下一个 IP `192.168.56.151` 作为辅助 IP，使用以下方法完成：
 ```
 # ip addr add 192.168.56.151/24 broadcast 192.168.56.255 dev eth0 label eth0:1
 
 ```
 
-Fire the following command to check newly added IP address. If you reboot the server then the newly added IP address go off because we have added this temporarily.
+输入以下命令以检查新添加的 IP 地址。如果你重新启动服务器，那么新添加的 IP 地址会消失，因为我们的 IP 是临时添加的。
 ```
 # ip addr
 1: lo: mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
@@ -97,9 +95,9 @@ Fire the following command to check newly added IP address. If you reboot the se
 
 ```
 
-### How To Add Secondary IP Address Permanently In Ubuntu 14.04 LTS
+### 如何在 Ubuntu 14.04 LTS 中添加永久辅助 IP 地址
 
-To add secondary IP address permanently on Ubuntu system, just edit `/etc/network/interfaces` file and add the requires IP details.
+要在 Ubuntu 系统上添加永久辅助 IP 地址，只需编辑 `/etc/network/interfaces` 文件并添加所需的 IP 详细信息。
 ```
 # vi /etc/network/interfaces
 
@@ -123,7 +121,7 @@ iface eth0:1 inet static
 
 ```
 
-Save and close the file then restart the network interface
+保存并关闭文件，然后重启网络接口服务。
 ```
 # service networking restart
 or
@@ -131,7 +129,7 @@ or
 
 ```
 
-Verify the newly added IP address.
+验证新添加的 IP 地址：
 ```
 # ifconfig
 eth0 Link encap:Ethernet HWaddr 08:00:27:98:b7:36
@@ -167,12 +165,11 @@ lo Link encap:Local Loopback
 
 ```
 
-### How To Add Secondary IP Address Temporarily In Ubuntu 16.04 LTS
+### 如何在 Ubuntu 16.04 LTS 中临时添加辅助 IP 地址
 
-As discussed in the beginning of the article, network interfaces names have been changed
-from ‘ethX’ to ‘enXXXX’ (enp0s3) since Ubuntu 15.10 so, replace your interface name instead of us.
+正如本文开头所述，网络接口名称从 Ubuntu 15.10 就开始从 ‘ethX’ 更改为 ‘enXXXX’ (enp0s3)，所以，替换你的接口名称。
 
-Let me check the IP information on my system before performing this.
+在执行此操作之前，先检查系统上的 IP 信息：
 ```
 # ifconfig
 or
@@ -207,13 +204,13 @@ lo: flags=73 mtu 65536
 
 ```
 
-As i can see, the server main IP address is `192.168.56.201` so, i’m going to assign next IP `192.168.56.202` as a secondary IP. This can be done using below command.
+如我所见，服务器主 IP 地址是 `192.168.56.201`，所以，我将下一个 IP `192.168.56.202` 作为辅助 IP，使用以下命令完成。
 ```
 # ip addr add 192.168.56.202/24 broadcast 192.168.56.255 dev enp0s3
 
 ```
 
-Run the below command to check if the new IP has been assigned or not. This will go off when you reboot the machine.
+运行以下命令来检查是否已分配了新的 IP。当你重启机器时，它会消失。
 ```
 # ip addr
 1: lo: mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
@@ -239,13 +236,13 @@ Run the below command to check if the new IP has been assigned or not. This will
 
 ```
 
-### How To Add Secondary IP Address Permanently In Ubuntu 16.04 LTS
+### 如何在 Ubuntu 16.04 LTS 中添加永久辅助 IP 地址
 
-To add secondary IP address permanently on Ubuntu system, just edit `/etc/network/interfaces` file and add the requires IP details.
+要在 Ubuntu 系统上添加永久辅助 IP 地址，只需编辑 `/etc/network/interfaces` 文件并添加所需 IP 的详细信息。
 
-We should not add secondary IP address after dns-nameservers because it wont work and add the IP details in the below format.
+我们不应该在 dns-nameservers 之后添加辅助 IP 地址，因为它不会起作用，应该以下面的格式添加 IP 详情。
 
-Moreover we don’t need to add sub interface (how we did previously in Ubuntu 14.04 LTS).
+此外，我们不需要添加子接口（我们之前在 Ubuntu 14.04 LTS 中的做法）：
 ```
 # vi /etc/network/interfaces
 
@@ -271,7 +268,7 @@ dns-search 2daygeek.local
 
 ```
 
-Save and close the file then restart the network interface
+保存并关闭文件，然后重启网络接口服务：
 ```
 # systemctl restart networking
 or
@@ -279,7 +276,7 @@ or
 
 ```
 
-Run the below command to check if the new IP has been assigned or not.
+运行以下命令来检查是否已经分配了新的 IP：
 ```
 # ip addr
 1: lo: mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
@@ -305,7 +302,7 @@ Run the below command to check if the new IP has been assigned or not.
 
 ```
 
-Also, let me ping the new IP address.
+让我来 ping 一下新 IP 地址：
 ```
 # ping 192.168.56.202 -c 4
 PING 192.168.56.202 (192.168.56.202) 56(84) bytes of data.
@@ -326,7 +323,7 @@ via: https://www.2daygeek.com/how-to-add-additional-ip-secondary-ip-in-ubuntu-de
 
 作者：[Prakash Subramanian][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[MjSeven](https://github.com/MjSeven)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
