@@ -1,3 +1,5 @@
+translating by ypingcn
+
 How to capture and analyze packets with tcpdump command on Linux
 ======
 tcpdump is a well known command line **packet analyzer** tool. Using tcpdump command we can capture the live TCP/IP packets and these packets can also be saved to a file. Later on these captured packets can be analyzed via tcpdump command. tcpdump command becomes very handy when it comes to troubleshooting on network level.
