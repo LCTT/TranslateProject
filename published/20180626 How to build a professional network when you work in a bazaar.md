@@ -75,7 +75,7 @@
 
 via: https://opensource.com/open-organization/18/6/building-professional-social-networks-openly
 
-作者：[Heidi Hess;von Ludewig][a]
+作者：[Heidi Hess von Ludewig][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[ZenMoore](https://github.com/ZenMoore)
 校对：[wxy](https://github.com/wxy)
