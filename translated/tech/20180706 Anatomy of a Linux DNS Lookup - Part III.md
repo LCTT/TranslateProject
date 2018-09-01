@@ -8,7 +8,7 @@ Linux DNS 查询剖析（第三部分）
 * `/etc/resolv.conf`
 * `ping` 与 `host` 查询方式的对比
 
-and in [Linux DNS 查询剖析（第二部分）][2]，我们介绍了：
+而在 [Linux DNS 查询剖析（第二部分）][2]，我们介绍了：
 
 * `systemd` 和对应的 `networking` 服务
 * `ifup` 和 `ifdown`
@@ -17,21 +17,17 @@ and in [Linux DNS 查询剖析（第二部分）][2]，我们介绍了：
 
 剖析进展如下：
 
-* * *
-
 ![linux-dns-2 (2)][4]
 
  _（大致）准确的关系图_ 
 
 很可惜，故事还没有结束，还有不少东西也会影响 DNS 查询。在第三部分中，我将介绍 `NetworkManager` 和 `dnsmasq`，简要说明它们如何影响 DNS 查询。
 
-* * *
-
 ### 1) NetworkManager
 
 在第二部分已经提到，我们现在介绍的内容已经偏离 POSIX 标准，涉及的 DNS 解析管理部分在各个发行版上形式并不统一。
 
-在我使用的发行版 （Ubuntu）中，有一个名为 [NetworkManager][3] 的服务，它通常作为一些其它软件包的依赖被安装而且处于<ruby>激活<rt>available</rt></ruby>状态。它实际上是 RedHat 在 2004 年开发的一个服务，用于帮助你管理网络接口。
+在我使用的发行版 （Ubuntu）中，有一个名为 [NetworkManager][3] 的<ruby>可用<rt>available</rt></ruby>服务，它通常作为一些其它软件包的依赖被安装。它实际上是 RedHat 在 2004 年开发的一个服务，用于帮助你管理网络接口。
 
 它与 DNS 查询有什么关系呢？让我们安装这个服务并找出答案：
 
@@ -52,8 +48,6 @@ managed=false
 ```
 
 看到 `dns=dnsmasq` 了吧？这意味着 `NetworkManager` 将使用 `dnsmasq` 管理主机上的 DNS。
-
-* * *
 
 ### 2) dnsmasq
 
@@ -89,13 +83,13 @@ search home
 
 可见，并没有被 `NetworkManager` 修改。
 
-如果安装 `dnsmasq`:
+如果安装 `dnsmasq`：
 
 ```
 $ apt-get install -y dnsmasq
 ```
 
-这时，`dnsmasq` 已经启动运行：
+然后启动运行 `dnsmasq`：
 
 ```
 $ ps -ef | grep dnsmasq
@@ -130,14 +124,11 @@ udp        0      0 0.0.0.0:68        0.0.0.0:*               
 udp        0      0 0.0.0.0:68        0.0.0.0:*               10185/dhclient
 ```
 
-* * *
-
 ### 3) 分析 dnsmasq
 
 在目前的情况下，所有的 DNS 查询都会使用 `127.0.0.1:53` 这个 DNS 服务器，下一步会发生什么呢？
 
-我再次查看 `/var/run` 目录，可以发现一个线索：
-`resolvconf` 目录下 `resolv.conf` 文件中的配置也相应变更，变更为 `dnsmasq` 对应的 DNS 服务器：
+我再次查看 `/var/run` 目录，可以发现一个线索：`resolvconf` 目录下 `resolv.conf` 文件中的配置也相应变更，变更为 `dnsmasq` 对应的 DNS 服务器：
 
 ```
 $ cat /var/run/resolvconf/resolv.conf 
@@ -159,8 +150,6 @@ nameserver 10.0.2.2
 该文件包含我们从 `DHCP` 获取的 `nameserver`。
 
 虽然可以推导出这个结论，但如何查看具体的调用逻辑呢？
-
-* * *
 
 ### 4) 调试 dnsmasq
 
@@ -200,7 +189,7 @@ Jul  3 19:56:07 ubuntu-xenial dnsmasq[15372]: query[A] bbc.co.uk from 127.0.0.1
 
 可以清晰看出 `dnsmasq` 收到的查询、查询被转发到了哪里以及收到的回复。
 
-如果查询被缓存命中（或者说，本地的查询结果还在<ruby>存活时间<rt>time-to-live</rt></ruby>内，并未过期），日志显示如下：
+如果查询被缓存命中（或者说，本地的查询结果还在<ruby>存活时间<rt>time-to-live</rt></ruby> TTL 内，并未过期），日志显示如下：
 
 ```
 [...] query[A] bbc.co.uk from 127.0.0.1
@@ -219,7 +208,7 @@ $ kill -SIGUSR1 $(cat /run/dnsmasq/dnsmasq.pid)
 
 （LCTT 译注：原文中命令执行报错，已变更成最接近且符合作者意图的命令）
 
-导记录对应如下输出：
+导出记录对应如下输出：
 
 ```
 Jul  3 15:08:08 ubuntu-xenial dnsmasq[15697]: time 1530630488
@@ -245,7 +234,7 @@ Jul  3 15:08:08 ubuntu-xenial dnsmasq[15697]: time 1530630488
 [...] ip6-allrouters   ff02::2         6FRI   H
 ```
 
-在上面的输出中，我猜测（并不确认，`?` 代表我比较疯狂的猜测）如下：
+在上面的输出中，我猜测（并不确认，`?` 代表我比较无根据的猜测）如下：
 
 * `4` 代表 IPv4
 * `6` 代表 IPv6
@@ -262,8 +251,6 @@ Jul  3 15:08:08 ubuntu-xenial dnsmasq[15697]: time 1530630488
 #### dnsmasq 的替代品
 
 `NetworkManager` 配置中的 `dns` 字段并不是只能使用 `dnsmasq`，可选项包括 `none`，`default`，`unbound` 和 `dnssec-triggered` 等。使用 `none` 时，`NetworkManager` 不会改动 `/etc/resolv.conf`；使用 `default` 时，`NetworkManager` 会根据当前的<ruby>活跃连接<rt>active connections</rt></ruby>更新 `resolv.conf`；使用 `unbound` 时，`NetworkManager` 会与 `unbound` 服务通信；`dnssec-triggered` 与 DNS 安全相关，不在本文讨论范围。
-
-* * *
 
 ### 第三部分总结
 
@@ -288,7 +275,7 @@ via: https://zwischenzugs.com/2018/07/06/anatomy-of-a-linux-dns-lookup-part-iii/
 
 作者：[ZWISCHENZUGS][a]
 译者：[pinewall](https://github.com/pinewall)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
