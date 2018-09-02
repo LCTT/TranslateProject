@@ -1,28 +1,29 @@
-理解 Python 的 Dataclasses -- 第一部分
+理解 Python 的 Dataclasses（一）
 ======
 
 ![](https://cdn-images-1.medium.com/max/900/1*7pr8EL8EDsP296pxL7Wz_g.png)
 
-如果你正在阅读本文，那么你已经意识到了 Python 3.7 以及它所包含的新特性。就我个人而言，我对 `Dataclasses` 感到非常兴奋，因为我有一段时间在等待它了。
+如果你正在阅读本文，那么你已经意识到了 Python 3.7 以及它所包含的新特性。就我个人而言，我对 `Dataclasses` 感到非常兴奋，因为我等了它一段时间了。
 
 本系列包含两部分：
-1\. Dataclass 特点概述
-2\. 在下一篇文章概述 Dataclass 的 `fields`
+
+1. Dataclass 特点概述
+2. 在下一篇文章概述 Dataclass 的 `fields`
 
 ### 介绍
 
-`Dataclasses` 是 Python 的类（译注：更准确的说，它是一个模块），适用于存储数据对象。你可能会问什么是数据对象？下面是定义数据对象的一个不太详细的特性列表：
+`Dataclasses` 是 Python 的类（LCTT 译注：更准确的说，它是一个模块），适用于存储数据对象。你可能会问什么是数据对象？下面是定义数据对象的一个不太详细的特性列表：
 
-  * 它们存储数据并代表某种数据类型。例如：一个数字。对于熟悉 ORM 的人来说，模型实例是一个数据对象。它代表一种特定的实体。它包含那些定义或表示实体的属性。
-
-  * 它们可以与同一类型的其他对象进行比较。例如：一个数字可以是 `greater than（大于）`, `less than（小于）` 或 `equal（等于）` 另一个数字。
+* 它们存储数据并代表某种数据类型。例如：一个数字。对于熟悉 ORM 的人来说，模型实例就是一个数据对象。它代表一种特定的实体。它包含那些定义或表示实体的属性。
+* 它们可以与同一类型的其他对象进行比较。例如：一个数字可以是 `greater than`（大于）、`less than`（小于） 或 `equal`（等于） 另一个数字。
 
 当然还有更多的特性，但是这个列表足以帮助你理解问题的关键。
 
 为了理解 `Dataclasses`，我们将实现一个包含数字的简单类，并允许我们执行上面提到的操作。
+
 首先，我们将使用普通类，然后我们再使用 `Dataclasses` 来实现相同的结果。
 
-但在我们开始之前，先来谈谈 `dataclasses` 的用法。
+但在我们开始之前，先来谈谈 `Dataclasses` 的用法。
 
 Python 3.7 提供了一个装饰器 [dataclass][2]，用于将类转换为 `dataclass`。
 
@@ -33,7 +34,7 @@ from dataclasses import dataclass
 
 @dataclass
 class A:
- …
+ ...
 ```
 
 现在，让我们深入了解一下 `dataclass` 带给我们的变化和用途。
@@ -65,10 +66,10 @@ class Number:
 >>> 1
 ```
 
-以下是 dataclass 装饰器带来的变化：
+以下是 `dataclass` 装饰器带来的变化：
 
-1\. 无需定义 `__init__`，然后将值赋给 `self.d` 负责处理它（to 校正：这里真不知道 d 在哪里）
-2\. 我们以更加易读的方式预先定义了成员属性，以及[类型提示][3]。我们现在立即能知道 `val` 是 `int` 类型。这无疑比一般定义类成员的方式更具可读性。
+1. 无需定义 `__init__`，然后将值赋给 `self`，`dataclass` 负责处理它（LCTT 译注：此处原文可能有误，提及一个不存在的 `d`）
+2. 我们以更加易读的方式预先定义了成员属性，以及[类型提示][3]。我们现在立即能知道 `val` 是 `int` 类型。这无疑比一般定义类成员的方式更具可读性。
 
 > Python 之禅: 可读性很重要
 
@@ -133,15 +134,11 @@ class Number:
 
 两个对象 `a` 和 `b` 之间的比较通常包括以下操作：
 
-*   a < b
-
-*   a > b
-
-*   a == b
-
-*   a >= b
-
-*   a <= b
+*   `a < b`
+*   `a > b`
+*   `a == b`
+*   `a >= b`
+*   `a <= b`
 
 在 Python 中，能够在可以执行上述操作的类中定义[方法][4]。为了简单起见，不让这篇文章过于冗长，我将只展示 `==` 和 `<` 的实现。
 
@@ -200,7 +197,7 @@ def __eq__(self, other):
     return (self.name, self.age) == ( other.name, other.age)
 ```
 
-请注意属性的顺序。它们总是按照你在 dataclass 类中定义的顺序生成。
+请注意属性的顺序。它们总是按照你在 `dataclass` 类中定义的顺序生成。
 
 同样，等效的 `__le__` 函数类似于：
 
@@ -234,7 +231,7 @@ def __le__(self, other):
 
 ### `dataclass` 作为一个可调用的装饰器
 
-定义所有的 `dunder`（译注：这是指双下划线方法，即魔法方法）方法并不总是值得的。你的用例可能只包括存储值和检查相等性。因此，你只需定义 `__init__` 和  `__eq__` 方法。如果我们可以告诉装饰器不生成其他方法，那么它会减少一些开销，并且我们将在数据对象上有正确的操作。
+定义所有的 `dunder`（LCTT 译注：这是指双下划线方法，即魔法方法）方法并不总是值得的。你的用例可能只包括存储值和检查相等性。因此，你只需定义 `__init__` 和  `__eq__` 方法。如果我们可以告诉装饰器不生成其他方法，那么它会减少一些开销，并且我们将在数据对象上有正确的操作。
 
 幸运的是，这可以通过将 `dataclass` 装饰器作为可调用对象来实现。
 
@@ -247,11 +244,8 @@ class C:
 ```
 
 1. `init`：默认将生成 `__init__` 方法。如果传入 `False`，那么该类将不会有 `__init__` 方法。  
-
 2. `repr`：`__repr__` 方法默认生成。如果传入 `False`，那么该类将不会有 `__repr__` 方法。
-
 3. `eq`：默认将生成 `__eq__` 方法。如果传入 `False`，那么 `__eq__` 方法将不会被 `dataclass` 添加，但默认为 `object.__eq__`。
-
 4. `order`：默认将生成 `__gt__`、`__ge__`、`__lt__`、`__le__` 方法。如果传入 `False`，则省略它们。
 
 我们在接下来会讨论 `frozen`。由于 `unsafe_hash` 参数复杂的用例，它值得单独发布一篇文章。
@@ -332,7 +326,6 @@ dataclasses.FrozenInstanceError: cannot assign to field ‘val’
 因此，一个 `frozen` 实例是一种很好方式来存储：
 
 * 常数
-
 * 设置
 
 这些通常不会在应用程序的生命周期内发生变化，任何企图修改它们的行为都应该被禁止。
@@ -476,7 +469,7 @@ class B(A):
 
 ### 结论
 
-因此，以上是 dataclasses 使 Python 开发人员变得更轻松的几种方法。
+因此，以上是 `dataclass` 使 Python 开发人员变得更轻松的几种方法。
 
 我试着彻底覆盖大部分的用例，但是，没有人是完美的。如果你发现了错误，或者想让我注意相关的用例，请联系我。
 
@@ -493,7 +486,7 @@ via: https://medium.com/mindorks/understanding-python-dataclasses-part-1-c3ccd43
 
 作者：[Shikhar Chauhan][a]
 译者：[MjSeven](https://github.com/MjSeven)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
