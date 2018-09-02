@@ -59,21 +59,57 @@ Now I'm going to take a rather odd（奇怪的） stance（立场） on somethin
 
 
 
-I'll grant you the same could be said with a virtual machine running Linux, however you will never have an update break anything using the live image approach. Why? Because you're not updating a host OS or the guest OS. Remember there are entire distros that are designed to be nothing more than persistent storage Linux distros. Puppy Linux is one great example. Not only can it run on PCs that would otherwise be recycled or thrown away, it allows you to never be bothered again with tedious system updates thanks to the way the distro handles security. It's not a normal Linux distro and it's walled off in such a way that the persistent live image is free from anything scary.
+I'll grant you the same（如此） could be said（说） with a virtual machine running Linux, however you will never have an update break（打破） anything using the live image approach. Why? Because you're not updating a host OS or the guest OS. Remember（还记得） there are entire（整个） distros（发行版） that are designed to be nothing more than persistent storage Linux distros. Puppy Linux is one great example. Not only can it run on PCs that would otherwise（否则） be recycled（循环） or thrown away, it allows you to never be bothered（困扰） again with tedious（单调的） system updates thanks to the way the distro handles（处理） security. It's not a normal（正常的） Linux distro and it's walled off in such a way that the persistent（持续） live image is free from anything scary.
+
+
+
+我知道你会说用一个虚拟机运行 Linux 也是如此，无论如何你都无法升级到用镜像安装的地步。为什么？你不会更新你的宿主系统或者客户系统。记住，有一些发行 Linux 发行版本被设定为只能在持久存储中运行。Puppy Linux 就是一个非常好的例子。它仅能运行在个人 PC 上，否则它将进入死循环或被丢弃，它允许你永远不被单调的系统省级困扰，由于发行版会安全的处理这些更新。它不是一个正常的 Linux 发行版，有一个持久的免费镜像这样的方式用一堵墙个离开，多么可怕。
 
 ### When a Linux virtual machine is absolutely the best option
 
+### Linux 虚拟机是一个绝好的选择
+
 As I bring this article to a close, let me leave you with this. There is one instance where using a virtual machine such as Virtual Box is absolutely better than using a live image – recording the desktop environment of any Linux distro.
 
-For example, I make videos that provide a tour and review of a variety of Linux distros. Doing this with live images would require me to capture the screen with a hardware device or install a software capture device from the live image's repositories. Clearly, a virtual machine is better suited for this job than a live image of a Linux distro.
 
-Once you toss audio capture into the mix, there is no question that if you're going to use software to capture your review, you really want to have a host OS that has all the basic needs covered for a reasonably decent capture environment. Again, you could do all of this with a hardware device...but that might be cost prohibitive if you're only do video/audio capturing as a part time endeavor.
+
+我就讲到这里，这篇文章是时候结束了。Virtual Box 绝对是一个非常不错的运行 Linux 虚拟机的虚拟化产品。
+
+
+
+For example, I make videos that provide a tour and review of a variety of Linux distros. Doing this with live images would require（需要） me to capture（捕获） the screen（屏幕） with a hardware device or install a software capture device from the live image's repositories（存储苦）. Clearly（很明显）, a virtual machine is better suited for this job than a live image of a Linux distro.
+
+
+
+例如，我制作了一个录像，里面介绍和评论了许多 Linux 发行版。硬件安装或者虚拟机安装一个从 Linux 发行版镜像库获得的镜像，一个实时的操作我们需要通过屏幕去捕获它。很明显，虚拟机运行 Linux 和 镜像安装更适合。
+
+
+
+Once you toss audio capture into the mix, there is no question that if you're going to use software to capture your review, you really want to have a host OS that has all the basic needs covered（覆盖） for a reasonably（合理的） decent capture environment（环境）. Again, you could do all of this with a hardware device...but that might（可能） be cost prohibitive if you're only do video/audio capturing as a part（部分） time endeavor.
+
+
+
+一旦你需要在音频资料中采集到混音，这没有问题，那如果你用软件去采集你的信息，为了一个合理的采集环境，你将需要一个本地安装的系统，这里面包含了所有的基本要求。在一次，用一个硬件安装方式，但是这开销可能很大，如果你仅仅是用与视频和音频操作，这需要花费一部分时间。
+
+
 
 ### A Linux virtual machine vs a Linux live image
 
-What is your preferred method of trying out new distros? Perhaps you're someone who is fine with formatting their hard drive and throwing caution to the wind, thus, making the idea of any of this unneeded?
+### Linux 虚拟机 VS Linux 镜像
 
-Most people I've interacted with online tend to follow much of the methodology I've touched on above, but I'd love to hear what approach works best for you. Hit the comments, let me know which method you prefer when checking out the greatest and latest from the Linux distro world.
+What is your preferred method of trying out new distros? Perhaps（也许） you're someone who is fine with formatting（格式化） their hard drive and throwing caution to the wind, thus, making the idea of any of this unneeded?
+
+
+
+你最喜欢尝试新发行版的方式是那些？也许，你会格式化磁盘，然后豁出去了，因此，不需要任何理由
+
+
+
+Most people I've interacted（互动） with online tend to follow much of the methodology I've touched on above, but I'd love to hear what approach works best for you. Hit the comments, let me know which method you prefer when checking out the greatest and latest from the Linux distro world.
+
+
+
+大多数人告诉我他们喜欢上面的方法，但是我很像知道哪种方式更加适合你。点击评论，让我知道在 Linux 发行世界最伟大和最新的版本时，您更喜欢哪种方法。
 
 --------------------------------------------------------------------------------
 
