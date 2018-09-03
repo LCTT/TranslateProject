@@ -1,38 +1,32 @@
-translating by distant1219
-
-An Introduction to Using Git
+Git 使用简介
 ======
 ![](https://www.linux.com/sites/lcom/files/styles/rendered_file/public/developer-3461405_1920.png?itok=6H3sYe80)
-If you’re a developer, then you know your way around development tools. You’ve spent years studying one or more programming languages and have perfected your skills. You can develop with GUI tools or from the command line. On your own, nothing can stop you. You code as if your mind and your fingers are one to create elegant, perfectly commented, source for an app you know will take the world by storm.
 
-But what happens when you’re tasked with collaborating on a project? Or what about when that app you’ve developed becomes bigger than just you? What’s the next step? If you want to successfully collaborate with other developers, you’ll want to make use of a distributed version control system. With such a system, collaborating on a project becomes incredibly efficient and reliable. One such system is [Git][1]. Along with Git comes a handy repository called [GitHub][2], where you can house your projects, such that a team can check out and check in code.
+如果你是一个开发者，那你应该熟悉许多开发工具。你已经花了多年时间来学习一种或者多种编程语言并完善你的技巧。你可以熟练运用图形工具或者命令行工具开发。在你看来，没有任何事可以阻挡你。你的代码, 好像你的思想和你的手指一样，将会创建一个优雅的，完美评价的应用程序，并会风靡世界。
 
-I will walk you through the very basics of getting Git up and running and using it with GitHub, so the development on your game-changing app can be taken to the next level. I’ll be demonstrating on Ubuntu 18.04, so if your distribution of choice is different, you’ll only need to modify the Git install commands to suit your distribution’s package manager.
+然而，如果你和其他人共同开发一个项目会发生什么呢？或者，你开发的应用程序变地越来越大，下一步你将如何去做？如果你想成功地和其他开发者合作，你定会想用一个分布式版本控制系统。使用这样一个系统，合作开发一个项目变得非常高效和可靠。这样的一个系统便是[ Git ][1]。还有一个叫[ GitHub ][2]的方便的存储仓库，存储你的项目代码，这样你的团队可以检查和修改代码。
 
-### Git and GitHub
+我将向你介绍让 Git 启动、运行并和 GitHub 一起使用的基础知识，可以让你的应用程序的开发可以提升到一个新的水平。 我将在 Ubuntu 18.04 上进行演示，因此如果您选择的发行版本不同，您只需要修改 Git 安装命令以适合你的发行版的软件包管理器。
+### Git 和 GitHub
 
-The first thing to do is create a free GitHub account. Head over to the [GitHub signup page][3] and fill out the necessary information. Once you’ve done that, you’re ready to move on to installing Git (you can actually do these two steps in any order).
+第一件事就是创建一个免费的 GitHub 账号，打开[ GitHub 注册页面][3]，然后填上需要的信息。完成这个之后，你就注备好开始安装 Git 了（这两件事谁先谁后都可以）。
 
-Installing Git is simple. Open up a terminal window and issue the command:
+安装 Git 非常简单，打开一个命令行终端，并输入命令：
 ```
 sudo apt install git-all
 
 ```
+这将会安装大量依赖包，但是你将了解使用 Git 和 GitHub 所需的一切。
 
-This will include a rather large number of dependencies, but you’ll wind up with everything you need to work with Git and GitHub.
-
-On a side note: I use Git quite a bit to download source for application installation. There are times when a piece of software isn’t available via the built-in package manager. Instead of downloading the source files from a third-party location, I’ll often go the project’s Git page and clone the package like so:
+注意：我使用 Git 来下载程序的安装源码。有许多时候，内置的软件管理器不提供某个软件，除了去第三方库中下载源码，我经常去这个软件项目的 Git 主页，像这样克隆：
 ```
 git clone ADDRESS
 
 ```
+ADDRESS就是那个软件项目的 Git 主页。这样我就可以确保自己安装那个软件的最新发行版了。
 
-Where ADDRESS is the URL given on the software’s Git page.
-Doing this most always ensures I am installing the latest release of a package.
-
-Create a local repository and add a file
-
-The next step is to create a local repository on your system (we’ll call it newproject and house it in ~/). Open up a terminal window and issue the commands:
+创建一个本地仓库并添加一个文件。
+下一步就是在你的电脑里创建一个本地仓库（本文称之为newproject，位于~/目录下），打开一个命令行终端，并输入下面的命令：
 ```
 cd ~/
 
@@ -42,125 +36,110 @@ cd newproject
 
 ```
 
-Now we must initialize the repository. In the ~/newproject folder, issue the command git init. When the command completes, you should see that the empty Git repository has been created (Figure 1).
+现在你需要初始化这个仓库。在 ~/newproject 目录下，输入命令 git init，当命令运行完，你就可以看到一个刚刚创建的空的 Git 仓库了（图1）。
 
 ![new repository][5]
 
-Figure 1: Our new repository has been initialized.
+图 1:初始化完成的新仓库
 
 [Used with permission][6]
 
-Next we need to add a file to the project. From within the root folder (~/newproject) issue the command:
+下一步就是往项目里添加文件。我们在项目根目录（~/newproject）输入下面的命令：
+
 ```
 touch readme.txt
 
 ```
 
-You will now have an empty file in your repository. Issue the command git status to verify that Git is aware of the new file (Figure 2).
+现在项目里多了个空文件。输入 git status 来验证 Git 已经检测到多了个新文件（图2）。
 
 ![readme][8]
 
-Figure 2: Git knows about our readme.txt file.
+图 2: Git 检测到新文件readme.txt
 
 [Used with permission][6]
 
-Even though Git is aware of the file, it hasn’t actually been added to the project. To do that, issue the command:
+即使 Git 检测到新的文件，但它并没有被真正的加入这个项目仓库。为此，你要输入下面的命令：
+
 ```
 git add readme.txt
 
 ```
 
-Once you’ve done that, issue the git status command again to see that readme.txt is now considered a new file in the project (Figure 3).
-
+一旦完成这个命令，再输入 git status 命令，可以看到，readme.txt 已经是这个项目里的新文件了（图3）。
 ![file added][10]
 
-Figure 3: Our file now has now been added to the staging environment.
+图 3: 我们的文件已经被添加进临时环境
 
 [Used with permission][6]
-
-### Your first commit
-
-With the new file in the staging environment, you are now ready to create your first commit. What is a commit? Easy: A commit is a record of the files you’ve changed within the project. Creating the commit is actually quite simple. It is important, however, that you include a descriptive message for the commit. By doing this, you are adding notes about what the commit contains (such as what changes you’ve made to the file). Before we do this, however, we have to inform Git who we are. To do this, issue the command:
+### 第一次提交
+当新文件添加进临时环境之后，我们现在就准备好第一次提交了。什么是提交呢？它是很简单的，一次提交就是记录你更改的项目的文件。创建一次提交也是非常简单的。但是，为提交创建一个描述信息非常重要。通过这样做，你将添加有关提交包含的内容的注释，比如你对文件做出的修改。然而，在这样做之前，我们需要确认我们的 Git 账户，输入以下命令：
 ```
 git config --global user.email EMAIL
 
 git config --global user.name “FULL NAME”
 
 ```
-
-Where EMAIL is your email address and FULL NAME is your name.
-
-Now we can create the commit by issuing the command:
+EMAIL 即你的 email 地址，FULL NAME 则是你的姓名。现在你可以通过以下命令创建一个提交：
 ```
 git commit -m “Descriptive Message”
 
 ```
-
-Where Descriptive Message is your message about the changes within the commit. For example, since this is the first commit for the readme.txt file, the commit could be:
+Descriptive Message 即为你的提交的描述性信息。比如，当你第一次提交是提交一个 readme.txt 文件，你可以这样提交：
 ```
 git commit -m “First draft of readme.txt file”
 
 ```
 
-You should see output indicating that 1 file has changed and a new mode was created for readme.txt (Figure 4).
+你可以看到输出显示一个文件已经修改，并且，为r eadnme.txt 创建了一个新模式（图4）
 
 ![success][12]
 
-Figure 4: Our commit was successful.
+图4：提交成功
 
-[Used with permission][6]
-
-### Create a branch and push it to GitHub
-
-Branches are important, as they allow you to move between project states. Let’s say you want to create a new feature for your game-changing app. To do that, create a new branch. Once you’ve completed work on the feature you can merge this feature from the branch to the master branch. To create the new branch, issue the command:
-
+### 创建分支并推送至GitHub
+分支是很重要的，它允许你从项目状态间中移动。假如，你想给你的应用创建一个新的特性。为了这样做，你创建了个新分支。一旦你完成你的新特性，你可以把这个新分支合并到你的主分支中去，使用以下命令创建一个新分支：
+```
 git checkout -b BRANCH
 
-where BRANCH is the name of the new branch. Once the command completes, issue the command git branch to see that it has been created (Figure 5).
+```
+BRANCH 即为你新分支的名字，一旦执行完命令，输入 git branch 命令来查看是否创建了新分支（图5）
 
 ![featureX][14]
 
-Figure 5: Our new branch, called featureX.
+图5:名为 featureX 的新分支
 
 [Used with permission][6]
 
-Next we need to create a repository on GitHub. If you log into your GitHub account, click the New Repository button from your account main page. Fill out the necessary information and click Create repository (Figure 6).
+图6:在 GitHub 上新建一个仓库
 
-![new repository][16]
-
-Figure 6: Creating the new repository on GitHub.
-
-[Used with permission][6]
-
-After creating the repository, you will be presented with a URL to use for pushing our local repository. To do this, go back to the terminal window (still within ~/newproject) and issue the commands:
+在创建完一个仓库之后，你可以看到一个用于推送本地仓库的地址。若要推送，返回命令行窗口（ ~/newproject 目录中），输入以下命令：
 ```
 git remote add origin URL
 
 git push -u origin master
 
 ```
+URL 即为我们 GitHub 上新建的仓库地址。
 
-Where URL is the url for our new GitHub repository.
+系统会提示您，输入 GitHub 的用户名和密码，一旦授权成功，你的项目将会被推送到 GitHub 仓库中。
 
-You will be prompted for your GitHub username and password. Once you successfully authenticate, the project will be pushed to your GitHub repository and you’re ready to go.
+### 拉取项目
 
-### Pulling the project
-
-Say your collaborators make changes to the code on the GitHub project and have merged those changes. You will then need to pull the project files to your local machine, so the files you have on your system match those on the remote account. To do this, issue the command (from within ~/newproject):
+如果你的同事改变了你们 GitHub 上项目的代码，并且已经合并那些更改，你可以拉取那些项目文件到你的本地机器，这样，你系统中的文件就可以和远程用户的文件保持匹配。你可以输入以下命令来做这件事（ ~/newproject 在目录中），
 ```
 git pull origin master
 
 ```
 
-The above command will pull down any new or changed files to your local repository.
+以上的命令可以拉取任何新文件或修改过的文件到你的本地仓库。
+### 基础
 
-### The very basics
+这就是从命令行使用 Git 来处理存储在 GitHub 上的项目的基础知识。 还有很多东西需要学习，所以我强烈建议你使用 man git，man git-push 和 man git-pull 命令来更深入地了解 git 命令可以做什么。
 
-And that is the very basics of using Git from the command line to work with a project stored on GitHub. There is quite a bit more to learn, so I highly recommend you issue the commands man git, man git-push, and man git-pull to get a more in-depth understanding of what the git command can do.
+开发快乐！
 
-Happy developing!
-
-Learn more about Linux through the free ["Introduction to Linux" ][17]course from The Linux Foundation and edX.
+了解更多关于 Linux的 内容，请访问来自 Linux 基金会和 edX 的免费的 ["Introduction to Linux" ][17]课程。
 
 --------------------------------------------------------------------------------
 
@@ -168,7 +147,7 @@ via: https://www.linux.com/learn/intro-to-linux/2018/7/introduction-using-git
 
 作者：[Jack Wallen][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[distant1219](https://github.com/distant1219)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
