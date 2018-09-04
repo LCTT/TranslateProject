@@ -1,3 +1,5 @@
+translating---geekpi
+
 How To Reset MySQL Or MariaDB Root Password
 ======
 
