@@ -9,7 +9,7 @@ Go 编译器介绍
 
 需要澄清的是，名称 “gc” 代表 “<ruby>Go 编译器<rt>Go compiler</rt></ruby>”，与大写 GC 无关，后者代表<ruby>垃圾收集<rt>garbage collection</rt></ruby>。
 
-### 1、 解析
+### 1、解析
 
 * `cmd/compile/internal/syntax`（<ruby>词法分析器<rt>lexer</rt></ruby>、<ruby>解析器<rt>parser</rt></ruby>、<ruby>语法树<rt>syntax tree</rt></ruby>）
 
@@ -17,7 +17,7 @@ Go 编译器介绍
 
 每个语法树都是相应源文件的确切表示，其中节点对应于源文件的各种元素，例如表达式、声明和语句。语法树还包括位置信息，用于错误报告和创建调试信息。
 
-### 2、 类型检查和 AST 变换
+### 2、类型检查和 AST 变换
 
 * `cmd/compile/internal/gc`（创建编译器 AST，<ruby>类型检查<rt>type-checking</rt></ruby>，<ruby>AST 变换<rt>AST transformation</rt></ruby>）
 
@@ -27,7 +27,7 @@ gc 包中包含一个继承自（早期）C 语言实现的版本的 AST 定义�
 
 特定变换也基于 AST 完成。一些节点被基于类型信息而细化，例如把字符串加法从算术加法的节点类型中拆分出来。其它一些例子是<ruby>死代码消除<rt>dead code elimination</rt></ruby>，<ruby>函数调用内联<rt>function call inlining</rt></ruby>和<ruby>逃逸分析<rt>escape analysis</rt></ruby>（LCTT 译注：逃逸分析是一种分析指针有效范围的方法）。
 
-### 3、 通用 SSA
+### 3、通用 SSA
 
 * `cmd/compile/internal/gc`（转换成 SSA）
 * `cmd/compile/internal/ssa`（SSA 相关的<ruby>环节<rt>pass</rt></ruby>和规则）
@@ -44,9 +44,9 @@ gc 包中包含一个继承自（早期）C 语言实现的版本的 AST 定义�
 
 这类通用的编译环节的一些例子包括，死代码消除、移除不必要的空值检查，以及移除无用的分支等。通用改写规则主要考虑表达式，例如将一些表达式替换为常量，优化乘法和浮点操作。
 
-### 4、 生成机器码
+### 4、生成机器码
 
-* `cmd/compile/internal/ssa`（SSA 低级化和架构特定的 pass）
+* `cmd/compile/internal/ssa`（SSA 低级化和架构特定的环节）
 * `cmd/internal/obj`（机器码生成）
 
 编译器中机器相关的阶段开始于“低级”的编译环节，该阶段将通用变量改写为它们的特定的机器码形式。例如，在 amd64 架构中操作数可以在内存中操作，这样许多<ruby>加载-存储<rt>load-store</rt></ruby>操作就可以被合并。
@@ -61,13 +61,13 @@ gc 包中包含一个继承自（早期）C 语言实现的版本的 AST 定义�
 
 ### 扩展阅读
 
-要深入了解 SSA 包的工作方式，包括它的 pass 和规则，请转到 [cmd/compile/internal/ssa/README.md][1]。
+要深入了解 SSA 包的工作方式，包括它的环节和规则，请转到 [cmd/compile/internal/ssa/README.md][1]。
 
 --------------------------------------------------------------------------------
 
 via: https://github.com/golang/go/blob/master/src/cmd/compile/README.md
 
-作者：[mvdan][a] 
+作者：[mvdan][a]
 译者：[stephenxs](https://github.com/stephenxs)
 校对：[pityonline](https://github.com/pityonline), [wxy](https://github.com/wxy)
 
