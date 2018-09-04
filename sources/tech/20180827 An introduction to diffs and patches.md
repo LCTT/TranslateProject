@@ -1,3 +1,5 @@
+Translating by DavidChenLiang
+
 An introduction to diffs and patches
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/find-file-linux-code_magnifying_glass_zero.png?itok=E2HoPDg0)
