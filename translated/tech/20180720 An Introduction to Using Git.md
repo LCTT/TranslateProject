@@ -156,17 +156,11 @@ via: https://www.linux.com/learn/intro-to-linux/2018/7/introduction-using-git
 [1]:https://git-scm.com/
 [2]:https://github.com/
 [3]:https://github.com/join?source=header-home
-[4]:/files/images/git1jpg
 [5]:https://www.linux.com/sites/lcom/files/styles/rendered_file/public/git_1.jpg?itok=FKkr5Mrk (new repository)
 [6]:https://www.linux.com/licenses/category/used-permission
-[7]:/files/images/git2jpg
 [8]:https://www.linux.com/sites/lcom/files/styles/rendered_file/public/git_2.jpg?itok=54G9KBHS (readme)
-[9]:/files/images/git3jpg
 [10]:https://www.linux.com/sites/lcom/files/styles/rendered_file/public/git_3.jpg?itok=KAJwRJIB (file added)
-[11]:/files/images/git4jpg
 [12]:https://www.linux.com/sites/lcom/files/styles/rendered_file/public/git_4.jpg?itok=qR0ighDz (success)
-[13]:/files/images/git5jpg
 [14]:https://www.linux.com/sites/lcom/files/styles/rendered_file/public/git_5.jpg?itok=6m9RTWg6 (featureX)
-[15]:/files/images/git6jpg
 [16]:https://www.linux.com/sites/lcom/files/styles/rendered_file/public/git_6.jpg?itok=d2toRrUq (new repository)
 [17]:https://training.linuxfoundation.org/linux-courses/system-administration-training/introduction-to-linux
