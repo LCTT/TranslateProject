@@ -1,3 +1,5 @@
+translating---geekpi
+
 How to Update Firmware on Ubuntu 18.04
 ======
 Usually, the default software center in Ubuntu and other Linux handle the update of the firmware of your system. But if you encounter errors with it, you can use fwupd command line tool for updating the firmware of your system.
