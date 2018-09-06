@@ -3,7 +3,7 @@
 
 ![AMD-Polaris][1]
 
-自从 sdfx 推出最初的 Voodoo 加速器以来，不起眼的显卡对你的 PC 是否可以玩游戏起到决定性作用，PC 上任何其它设备都无法与其相比。其它组件当然也很重要，但对于一个拥有 32GB 内存、价值 500 美金的 CPU 和 基于 PCIe 的存储设备的高端 PC，如果使用 10 年前的显卡，都无法以最高分辨率和细节质量运行当前<ruby>最高品质的游戏<rt>AAA titles</rt></ruby>，会发生卡顿甚至无响应。显卡（也常被称为 GPU，即<ruby>图形处理单元<rt>Graphic Processing Unit</rt></ruby>），对游戏性能影响极大，我们反复强调这一点；但我们通常并不会深入了解显卡的工作原理。
+自从 3dfx 推出最初的 Voodoo 加速器以来，不起眼的显卡对你的 PC 是否可以玩游戏起到决定性作用，PC 上任何其它设备都无法与其相比。其它组件当然也很重要，但对于一个拥有 32GB 内存、价值 500 美金的 CPU 和 基于 PCIe 的存储设备的高端 PC，如果使用 10 年前的显卡，都无法以最高分辨率和细节质量运行当前<ruby>最高品质的游戏<rt>AAA titles</rt></ruby>，会发生卡顿甚至无响应。显卡（也常被称为 GPU，即<ruby>图形处理单元<rt>Graphic Processing Unit</rt></ruby>），对游戏性能影响极大，我们反复强调这一点；但我们通常并不会深入了解显卡的工作原理。
 
 出于实际考虑，本文将概述 GPU 的上层功能特性，内容包括 AMD 显卡、Nvidia 显卡、Intel 集成显卡以及 Intel 后续可能发布的独立显卡之间共同的部分。也应该适用于 Apple、Imagination Technologies、Qualcomm、ARM 和其它显卡生产商发布的移动平台 GPU。
 
