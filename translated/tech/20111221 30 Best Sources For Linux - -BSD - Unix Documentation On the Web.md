@@ -11,9 +11,13 @@
 
 Man pages are written by sys-admin and developers for IT techs, and are intended more as a reference than as a how to. Man pages are very useful for people who are already familiar with Linux, Unix, and BSD operating systems. Use man pages when you just need to know the syntax for particular commands or configuration file, but they are not helpful for new Linux users. Man pages are not good for learning something new for the first time. Here are thirty best documentation sites on the web for learning Linux and Unix like operating systems.
 
+首先我要说 Man 手册是为系统管理员和开发人员编写的，多数时间它是用来查询信息，而不是用于学习。Man 手册对于熟悉 Linux , Unix , BSD 系统操作的人来说非常有用。当您只需要知道特定命令或配置文件的语法时，请使用 Man 手册，但它们对新 Linux 用户没有帮助。 手册页不适合第一次学习新东西。 这里有三十个最好的文档站点，用于学习 Linux 和 Unix 之类的操作系统。
+
 ![Dennis Ritchie and Ken Thompson working with UNIX PDP11][1]
 
 Please note that BSD manpages are usually better as compare to Linux.
+
+请注意 BSD 的 Man 手册比 Linux 的更好一些。
 
 ## #1: Red Hat Enterprise Linux
 
@@ -21,8 +25,12 @@ Please note that BSD manpages are usually better as compare to Linux.
 
 RHEL is developed by Red Hat and targeted toward the commercial market. It has one of the best documentations covering basis of RHEL to advanced topics like security, SELinux, virtualization, directory server, clustering, JBOSS, HPC, and much more. Red Hat documentation has been translated into twenty-two languages and is available in multi-page HTML, single-page HTML, PDF, and EPUB formats. The good news is you can use the same documentation for CentOS or Scientific Linux (community enterprise distros). All of these documents ship with the OS, so if you don't have a network connection, then you have them there as well. The RHEL docs **covers everything from installation to configuring clusters**. The only downside is you need to be a paid customer. This is perfect for an enterprise company.
 
-  1. RHEL Documentation: [in HTML/PDF format][3]
-  2. Support forums: Only available to Red Hat customer portal to submit a support case.
+RHEL 由 Red Hat 开发，面向商业市场的 Linux 发行版。 它有一个最好的文档，涵盖 RHEL 的基础，如安全性，SELinux，虚拟化，目录服务器，集群，JBOSS ，HPC 等高级主题。 Red Hat 文档已被翻译成二十二种语言，并提供多页 HTML，单页 HTML ，PDF 和 EPUB 格式。 好消息是您可以使用 CentOS 或 Scientific Linux（社区企业发行版）的相同文档。 所有这些文件都附带在操作系统里，因此如果您没有网络连接，那么您也可以使用它们。 RHEL文档涵盖从安装到配置集群的所有内容。 唯一的缺点是你需要成为付费客户。 这对于企业公司来说是完美的。
+
+    1. RHEL Documentation: [in HTML/PDF format][3]
+    2. RHEL 官方文档连接：[in HTML/PDF format][3]
+    3. Support forums: Only available to Red Hat customer portal to submit a support case.
+    4. 技术支持论坛：仅适用于 Red Hat 客户提交报告使用
 
 
 
