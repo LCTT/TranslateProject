@@ -1,37 +1,38 @@
 fuzheng1998 translating
 ======
-Cloud Commander – A Web File Manager With Console And Editor
+Cloud Commander – 一个有控制台和编辑器在Web 上的文件管家
 ======
 
 ![](https://www.ostechnix.com/wp-content/uploads/2016/05/Cloud-Commander-A-Web-File-Manager-With-Console-And-Editor-720x340.png)
 
-**Cloud commander** is a web-based file manager application that allows you to view, access, and manage the files and folders of your system from any computer, mobile, and tablet Pc via a web browser. It has two simple and classic panels, and automatically converts it’s size as per your device’s display size. It also has two built-in editors namely **Dword** and **Edward** with support of Syntax-highlighting and one **Console** with support of your system’s command line. So you can edit your files on the go. Cloud Commander server is a cross-platform application that runs on Linux, Windows and Mac OS X operating systems, and the client will run on any web browser. It is written using **JavaScript/Node.Js** , and is licensed under **MIT**.
+**Cloud Commander** 是一个基于 web 的文件管理程序，它允许你通过任何计算机、移动端或平板电脑的 web 浏览器查看、访问或管理系统文件或文件夹。他有两个简单而又经典的面板，并且会自动。It has two simple and classic panels, and automatically converts it’s size as per your device’s display size. It also has two built-in editors namely **Dword** and **Edward** with support of Syntax-highlighting and one **Console** with support of your system’s command line. So you can edit your files on the go. Cloud Commander server is a cross-platform application that runs on Linux, Windows and Mac OS X operating systems, and 客户端将在任何一款浏览器上运行the client will run on any web browser. 它是用 **JavaScript/Node.Js**，and is licensed under **MIT**.
 
-In this brief tutorial, let us see how to install Cloud Commander in Ubuntu 18.04 LTS server.
+在这个简易教程中，让我们看一看如何在 Ubuntu 18.04 LTS 服务器上安装 Cloud Commander。
 
-### Prerequisites
+### 前提条件
 
-As I mentioned earlier, Cloud Commander is written using Node.Js. So, in order to install Cloud Commander we need to install Node.Js first. To do so, refer the following guide.
+像我之前提到的，是用 Node.js 写的。所以为了安装 Cloud Commander，我们需要首先安装 Node.js。To do so, refer the following guide.
 
-### Install Cloud Commander
+### 安装 Cloud Commander
 
-After installing Node.Js, run the following command to install Cloud Commander:
+在安装 Node.js 之后，运行下列命令安装 Cloud Commander:
 ```
 $ npm i cloudcmd -g
 
 ```
 
-Congratulations! Cloud Commander has been installed. Let us go ahead and see the basic usage of Cloud Commander.
+祝贺！Cloud Commander 已经被安装了。让我们往下继续看看 Cloud Commander 的基本使用。
 
-### Getting started with Cloud Commander
+### 开始使用 Cloud Commander
 
-Run the following command to start Cloud Commander:
+运行以下命令启动 Cloud Commander:
 ```
 $ cloudcmd
 
 ```
 
-**Sample output:**
+**输出示例：**
+
 ```
 url: http://localhost:8000
 
@@ -43,82 +44,82 @@ From now on, you can create, delete, view, manage files or folders right in the 
 
 ![][2]
 
-As you can see in the above screenshot, Cloud Commander has two panels, ten hotkeys (F1 to F10), and Console.
+当你看见上面的截图时，Clouder Commander 有两个面板，十个热键 (F1 to F10)，和控制台。
 
-Each hotkey does a unique job.
+每个热键执行的都是一个任务。
 
-  * F1 – Help
-  * F2 – Rename file/folder
-  * F3 – View files and folders
-  * F4 – Edit files
-  * F5 – Copy files/folders
-  * F6 – Move files/folders
-  * F7 – Create new directory
-  * F8 – Delete file/folder
-  * F9 – Open Menu
-  * F10 – Open config
+  * F1 – 帮助
+  * F2 – 重命名文件/文件夹
+  * F3 – 查看文件/文件夹
+  * F4 – 编辑文件
+  * F5 – 复制文件/文件夹
+  * F6 – 移动文件/文件夹
+  * F7 – 创建新目录
+  * F8 – 删除文件/文件夹
+  * F9 – 打开菜单
+  * F10 – 打开设置
 
 
 
-#### Cloud Commander console
+#### Cloud Commmander 控制台
 
-Click on the Console icon. This will open your default system’s shell.
+点击控制台图标。 This will open your default system’s shell.
 
 ![][3]
 
-From this console you can do all sort of administration tasks such as installing packages, removing packages, update your system etc. You can even shutdown or reboot system. Therefore, Cloud Commander is not just a file manager, but also has the functionality of a remote administration tool.
+在此控制台中，您可以执行各种管理任务，例如安装软件包，删除软件包，更新系统等。您甚至可以关闭或重新引导系统。 因此，Cloud Commander 不仅仅是一个文件管理器，还具有远程管理工具的功能。
 
-#### Creating files/folders
+#### 创建文件/文件夹
 
-To create a new file or folder Right click on any empty place and go to **New - >File or Directory**.
+要创建新的文件或文件夹 Right click on any empty place and go to **New - >File or Directory**.
 
 ![][4]
 
-#### View files
+#### 查看文件
 
-You can view pictures, watch audio and video files.
+你可以查看图片，查看音视频文件。
 
 ![][5]
 
-#### Upload files
+#### 上传文件
 
-The other cool feature is we can easily upload a file to Cloud Commander system from any system or device.
+另一个很酷的特性是我们可以从任何系统或设备简单地上传一个文件到 Cloud Commander 系统。
 
-To upload a file, right click on any empty space in the Cloud Commander panel, and click on the **Upload** option.
+要上传文件，右键单击 Cloud Commander 面板的任意空白处，并且单击**上传**选项。
 
 ![][6]
 
-Select the files you want to upload.
+选择你想要上传的文件。
 
 Also, you can upload files from the Cloud services like Google drive, Dropbox, Amazon cloud drive, Facebook, Twitter, Gmail, GtiHub, Picasa, Instagram and many.
 
-To upload files from Cloud, right click on any empty space in the panel and select **Upload from Cloud**.
+要从云端上传文件, 右键单击面板的任意空白处，并且右键单击面板任意空白处并选择**从云端上传**。
 
 ![][7]
 
-Select any web service of your choice, for example Google drive. Click **Connect to Google drive** button.
+选择任意一个你选择的网络服务，例如谷歌云盘。点击**连接到谷歌云盘**按钮。
 
 ![][8]
 
-In the next step, authenticate your google drive with Cloud Commander. Finally, select the files from your Google drive and click **Upload**.
+下一步，用 Cloud Commander 验证你的谷歌云端硬盘，从谷歌云端硬盘选择文件并点击**上传**。
 
 ![][9]
 
-#### Update Cloud Commander
+#### 更新 Cloud Commander
 
-To update Cloud Commander to the latest available version, run the following command:
+要更新到最新的可提供版本，执行下面的命令：
 ```
 $ npm update cloudcmd -g
 
 ```
 
-#### Conclusion
+#### 总结
 
 As far as I tested Cloud Commander, It worked like charm. I didn’t face a single issue during the testing in my Ubuntu server. Also, Cloud Commander is not just a web-based file manager, but also acts as a remote administration tool that performs most Linux administration tasks. You can create a files/folders, rename, delete, edit, and view them. Also, You can install, update, upgrade, and remove any package as the way you do in the local system from the Terminal. And, of course, you can even shutdown or restart the system from the Cloud Commander console itself. What do you need more? Give it a try, you will find it useful.
 
 That’s all for now. I will be here soon with another interesting article. Until then, stay tuned with OSTechNix.
 
-Cheers!
+祝贺！
 
 
 
