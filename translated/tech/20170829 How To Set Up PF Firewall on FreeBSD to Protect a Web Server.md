@@ -1,85 +1,84 @@
-How To Set Up PF Firewall on FreeBSD to Protect a Web Server
+如何在 FreeBSD 上设置 PF 防火墙来保护 Web 服务器
 ======
 
-I am a new FreeBSD server user and moved from netfilter on Linux. How do I setup a firewall with PF on FreeBSD server to protect a web server with single public IP address and interface?
+[![How To Set Up a Firewall with PF on FreeBSD to Protect a Web Server][1]][1]
 
+我是从 Linux 迁移过来的 FreeBSD 新用户，Linux 中使用的是 netfilter 防火墙框架（LCTT 译注：netfilter 是由 Rusty Russell 提出的 Linux 2.4 内核防火墙框架）。那么在 FreeBSD 上，我该如何设置 PF 防火墙，从而来保护只有一个公共 IP 地址和端口的 web 服务器呢？
 
-PF is an acronym for packet filter. It was created for OpenBSD but has been ported to FreeBSD and other operating systems. It is a stateful packet filtering engine. This tutorial will show you how to set up a firewall with PF on FreeBSD 10.x and 11.x server to protect your web server.
+PF 是<ruby>包过滤器<rt>packet filter</rt></ruby>的简称。它是为 OpenBSD开发的，但是已经被移植到了 FreeBSD 以及其它操作系统上。PF 是一个状态包过滤引擎。在这篇教程中，我将向你展示如何在 FreeBSD 10.x 以及 11.x 中设置 PF 防火墙，从而来保护 web 服务器。
 
+### 第一步：开启 PF 防火墙
 
-## Step 1 - Turn on PF firewall
+你需要把下面这几行内容添加到文件 “/etc/rc.conf” 文件中：
 
-You need to add the following three lines to /etc/rc.conf file:
 ```
 # echo 'pf_enable="YES"' >> /etc/rc.conf
 # echo 'pf_rules="/usr/local/etc/pf.conf"' >> /etc/rc.conf
 # echo 'pflog_enable="YES"' >> /etc/rc.conf
 # echo 'pflog_logfile="/var/log/pflog"' >> /etc/rc.conf
 ```
-Where,
+在这里：
 
-  1.  **pf_enable="YES"** - Turn on PF service.
-  2.  **pf_rules="/usr/local/etc/pf.conf"** - Read PF rules from this file.
-  3.  **pflog_enable="YES"** - Turn on logging support for PF.
-  4.  **pflog_logfile="/var/log/pflog"** - File where pflogd should store the logfile i.e. store logs in /var/log/pflog file.
+  1.  **pf_enable="YES"** - 开启 PF 服务
+  2.  **pf_rules="/usr/local/etc/pf.conf"** - 从文件 “/usr/local/etc/pf.conf” 中读取 PF 规则
+  3.  **pflog_enable="YES"** - 为 PF 服务打开日志支持
+  4.  **pflog_logfile="/var/log/pflog"** - 存储日志的文件，即日志存于文件 “/var/log/pflog” 中
 
+### 第二步：在 “/usr/local/etc/pf.conf” 文件中创建防火墙规则
 
+输入下面这个命令打开文件（超级用户模式下）：
 
-[![How To Set Up a Firewall with PF on FreeBSD to Protect a Web Server][1]][1]
-
-## Step 2 - Creating firewall rules in /usr/local/etc/pf.conf
-
-Type the following command:
 ```
 # vi /usr/local/etc/pf.conf
 ```
-Append the following PF rulesets :
+在文件中添加下面这些 PF 规则集：
+
 ```
 # vim: set ft=pf
 # /usr/local/etc/pf.conf
  
-## Set your public interface ##
+## 设置公共端口 ##
 ext_if="vtnet0"
  
-## Set your server public IP address ##
+## 设置服务器公共 IP 地址 ##
 ext_if_ip="172.xxx.yyy.zzz"
  
-## Set and drop these IP ranges on public interface ##
+## 设置并删除下面这些公共端口上的 IP 范围 ##
 martians = "{ 127.0.0.0/8, 192.168.0.0/16, 172.16.0.0/12, \
 	      10.0.0.0/8, 169.254.0.0/16, 192.0.2.0/24, \
 	      0.0.0.0/8, 240.0.0.0/4 }"
  
-## Set http(80)/https (443) port here ##
+## 设置 http(80)/https (443) 端口 ##
 webports = "{http, https}"
  
-## enable these services ##
+## 启用下面这些服务 ##
 int_tcp_services = "{domain, ntp, smtp, www, https, ftp, ssh}"
 int_udp_services = "{domain, ntp}"
  
-## Skip loop back interface - Skip all PF processing on interface ##
+## 跳过回环端口 - 跳过端口上的所有 PF 处理 ##
 set skip on lo
  
-## Sets the interface for which PF should gather statistics such as bytes in/out and packets passed/blocked ##
+## 设置 PF 应该统计的端口信息，如发送/接收字节数，通过/禁止的包的数目 ##
 set loginterface $ext_if
  
-## Set default policy ##
+## 设置默认策略 ##
 block return in log all
 block out all
  
-# Deal with attacks based on incorrect handling of packet fragments 
+# 基于 IP 分片的错误处理来防御攻击 
 scrub in all
  
-# Drop all Non-Routable Addresses 
+# 删除所有不可达路由地址
 block drop in quick on $ext_if from $martians to any
 block drop out quick on $ext_if from any to $martians
  
-## Blocking spoofed packets
+## 禁止欺骗包
 antispoof quick for $ext_if
  
-# Open SSH port which is listening on port 22 from VPN 139.xx.yy.zz Ip only
-# I do not allow or accept ssh traffic from ALL for security reasons 
+# 打开 SSH 端口，SSH 服务仅从 VPN IP 139.xx.yy.zz 监听 22 号端口
+# 出于安全原因，我不允许/接收 SSH 流量
 pass in quick on $ext_if inet proto tcp from 139.xxx.yyy.zzz to $ext_if_ip port = ssh flags S/SA keep state label "USER_RULE: Allow SSH from 139.xxx.yyy.zzz"
-## Use the following rule to enable ssh for ALL users from any IP address #
+## 使用下面这些规则来为所有来自任何 IP 地址的用户开启 SSH 服务 #
 ## pass in inet proto tcp to $ext_if port ssh
 ### [ OR ] ###
 ## pass in inet proto tcp to $ext_if port 22 
@@ -90,44 +89,46 @@ pass inet proto icmp icmp-type echoreq
 # All access to our Nginx/Apache/Lighttpd Webserver ports 
 pass proto tcp from any to $ext_if port $webports
  
-# Allow essential outgoing traffic 
+# 允许重要的发送流量
 pass out quick on $ext_if proto tcp to any port $int_tcp_services
 pass out quick on $ext_if proto udp to any port $int_udp_services
  
-# Add custom rules below
+# 在下面添加自定义规则
 ```
 
-Save and close the file. PR [welcome here to improve rulesets][2]. To check for syntax error, run:
+保存并关闭文件。欢迎来参考我的[规则集][2]。如果要检查语法错误，可以运行：
+
 `# service pf check`
-OR
+或
 `/etc/rc.d/pf check`
-OR
+或
 `# pfctl -n -f /usr/local/etc/pf.conf `
 
-## Step 3 - Start PF firewall
+### 第三步：开始运行 PF 防火墙
 
-The commands are as follows. Be careful you might be disconnected from your server over ssh based session:
+命令如下。请小心，如果是基于 SSH 的会话，你可能会和服务器断开连接。
 
-### Start PF
+*开启 PF 防火墙：*
 
 `# service pf start`
 
-### Stop PF
+*停用 PF 防火墙：*
 
 `# service pf stop`
 
-### Check PF for syntax error
+*检查语法错误：*
 
 `# service pf check`
 
-### Restart PF
+*重启服务：*
 
 `# service pf restart`
 
-### See PF status
+*查看 PF 状态：*
 
 `# service pf status`
-Sample outputs:
+示例输出：
+
 ```
 Status: Enabled for 0 days 00:02:18           Debug: Urgent
  
@@ -165,24 +166,24 @@ Counters
   map-failed                             0            0.0/s
 ```
 
+#### 开启/关闭/重启 pflog 服务的命令
 
-### Command to start/stop/restart pflog service
-
-Type the following commands:
+输入下面这些命令
 ```
 # service pflog start
 # service pflog stop
 # service pflog restart
 ```
 
-## Step 4 - A quick introduction to pfctl command
+### 第四步：`pfctl` 命令的简单介绍
 
-You need to use the pfctl command to see PF ruleset and parameter configuration including status information from the packet filter. Let us see all common commands:
+你需要使用 `pfctl` 命令来查看 PF 规则集和参数配置，包括来自<ruby>包过滤器<rt>packet filter</rt></ruby>的状态信息。让我们来看一下所有常见命令：
 
-### Show PF rules information
+#### 显示 PF 规则信息
 
 `# pfctl -s rules`
-Sample outputs:
+示例输出：
+
 ```
 block return in log all
 block drop out all
@@ -201,15 +202,15 @@ pass out quick on vtnet0 proto udp from any to any port = domain keep state
 pass out quick on vtnet0 proto udp from any to any port = ntp keep state
 ```
 
-#### Show verbose output for each rule
+#### 显示每条规则的详细内容
 
 `# pfctl -v -s rules`
 
-#### Add rule numbers with verbose output for each rule
+在每条规则的详细输出中添加规则编号：
 
 `# pfctl -vvsr show`
 
-#### Show state
+#### 显示状态信息
 
 ```
 # pfctl -s state
@@ -217,18 +218,19 @@ pass out quick on vtnet0 proto udp from any to any port = ntp keep state
 # pfctl -s state | grep 'something'
 ```
 
-### How to disable PF from the CLI
+#### 如何在命令行中禁止 PF 服务
 
 `# pfctl -d `
 
-### How to enable PF from the CLI
+#### 如何在命令行中启用 PF 服务
 
 `# pfctl -e `
 
-### How to flush ALL PF rules/nat/tables from the CLI
+#### 如何在命令行中刷新 PF 规则/NAT/路由表
 
 `# pfctl -F all`
-Sample outputs:
+示例输出：
+
 ```
 rules cleared
 nat cleared
@@ -239,27 +241,29 @@ pf: statistics cleared
 pf: interface flags reset
 ```
 
-#### How to flush only the PF RULES from the CLI
+#### 如何在命令行中仅刷新 PF 规则
 
 `# pfctl -F rules `
 
-#### How to flush only queue's from the CLI
+#### 如何在命令行中仅刷新队列
 
 `# pfctl -F queue `
 
-#### How to flush all stats that are not part of any rule from the CLI
+#### 如何在命令行中刷新统计信息（它不是任何规则的一部分）
 
 `# pfctl -F info`
 
-#### How to clear all counters from the CLI
+#### 如何在命令行中清除所有计数器
 
 `# pfctl -z clear `
 
-## Step 5 - See PF log
+### 第五步：查看 PF 日志
 
-PF logs are in binary format. To see them type:
+PF 日志是二进制格式的。使用下面这一命令来查看：
+
 `# tcpdump -n -e -ttt -r /var/log/pflog`
-Sample outputs:
+示例输出：
+
 ```
 Aug 29 15:41:11.757829 rule 0/(match) block in on vio0: 86.47.225.151.55806 > 45.FOO.BAR.IP.23: S 757158343:757158343(0) win 52206 [tos 0x28]
 Aug 29 15:41:44.193309 rule 0/(match) block in on vio0: 5.196.83.88.25461 > 45.FOO.BAR.IP.26941: S 2224505792:2224505792(0) ack 4252565505 win 17520 (DF) [tos 0x24]
@@ -295,30 +299,32 @@ Aug 29 15:55:07.001743 rule 0/(match) block in on vio0: 190.83.174.214.58863 > 4
 Aug 29 15:55:51.269549 rule 0/(match) block in on vio0: 142.217.201.69.26112 > 45.FOO.BAR.IP.22: S 757158343:757158343(0) win 22840 <mss 1460>
 Aug 29 15:58:41.346028 rule 0/(match) block in on vio0: 169.1.29.111.29765 > 45.FOO.BAR.IP.23: S 757158343:757158343(0) win 28509
 Aug 29 15:59:11.575927 rule 0/(match) block in on vio0: 187.160.235.162.32427 > 45.FOO.BAR.IP.5358: S 22445:22445(0) win 14600 [tos 0x28]
-Aug 29 15:59:37.826598 rule 0/(match) block in on vio0: 94.74.81.97.54656 > 45.FOO.BAR.IP.3128: S 2720157526:2720157526(0) win 1024 [tos 0x28]
+Aug 29 15:59:37.826598 rule 0/(match) block in on vio0: 94.74.81.97.54656 > 45.FOO.BAR.IP.3128: S 2720157526:2720157526(0) win 1024 [tos 0x28]stateful
 Aug 29 15:59:37.991171 rule 0/(match) block in on vio0: 94.74.81.97.54656 > 45.FOO.BAR.IP.3128: R 2720157527:2720157527(0) win 1200 [tos 0x28]
 Aug 29 16:01:36.990050 rule 0/(match) block in on vio0: 182.18.8.28.23299 > 45.FOO.BAR.IP.445: S 1510146048:1510146048(0) win 16384
 ```
 
-To see live log run:
+如果要查看实时日志，可以运行：
 `# tcpdump -n -e -ttt -i pflog0`
-For more info the [PF FAQ][3], [FreeBSD HANDBOOK][4] and the following man pages:
+
+如果你想了解更多信息，可以访问 [PF FAQ][3] 和 [FreeBSD HANDBOOK][4] 以及下面这些 man 页面：
+
 ```
 # man tcpdump
 # man pfctl
 # man pf
 ```
 
-## about the author:
+### 关于作者
 
-The author is the creator of nixCraft and a seasoned sysadmin and a trainer for the Linux operating system/Unix shell scripting. He has worked with global clients and in various industries, including IT, education, defense and space research, and the nonprofit sector. Follow him on [Twitter][5], [Facebook][6], [Google+][7].
+我是 nixCraft 的创立者，一个经验丰富的系统管理员，同时也是一位 Linux 操作系统/Unix shell 脚本培训师。我在不同的行业与全球客户工作过，包括 IT、教育、国防和空间研究、以及非营利组织。你可以在 [Twitter][5]、[Facebook][6] 或 [Google+][7] 上面关注我。 
 
 --------------------------------------------------------------------------------
 
 via: https://www.cyberciti.biz/faq/how-to-set-up-a-firewall-with-pf-on-freebsd-to-protect-a-web-server/
 
 作者：[Vivek Gite][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[ucasFL](https://github.com/ucasFL)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
