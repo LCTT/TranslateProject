@@ -1,3 +1,4 @@
+Zafiry translating...
 What is a Makefile and how does it work?
 ======
 
