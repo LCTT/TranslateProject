@@ -98,21 +98,21 @@ VS Code 的一个重要特点是它可以运行任务。需要运行的任务保
 
 ```
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
-    "version": "2.0.0",
-    "tasks": [
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
     {
 
-    "label": "Run Debug Server",
-    "type": "shell",
-    "command": "${workspaceRoot}/.venv/bin/flask run -h 0.0.0.0 -p 5000",
-    "group": {
-    "kind": "build",
-    "isDefault": true
+      "label": "Run Debug Server",
+      "type": "shell",
+      "command": "${workspaceRoot}/.venv/bin/flask run -h 0.0.0.0 -p 5000",
+      "group": {
+          "kind": "build",
+          "isDefault": true
+       }
     }
-    }
-    ]
+  ]
 }
 ```
 
