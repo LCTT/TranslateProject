@@ -15,7 +15,7 @@ Github 是一个存放着世界上最棒的一些软件项目的宝藏，这些�
 sudo apt-get install git
 ```
 
-上面的命令适用于 Ubuntu 并且应该在所有最新版的 Ubuntu 上都能工作，它们在 Ubuntu 16.04 和 Ubuntu 18.04 LTS （Bionic Beaver）上都测试过，在将来的版本上应该也能工作。
+上面的命令适用于 Ubuntu 并且应该在所有最新版的 Ubuntu 上都能工作，它们在 Ubuntu 16.04 和 Ubuntu 18.04 LTS（Bionic Beaver）上都测试过，在将来的版本上应该也能工作。
 
 ### 2、配置 GitHub
 
@@ -76,8 +76,8 @@ This is a git repo
 #include<stdio.h>
 int main()
 {
-printf("hello world");
-return 0;
+    printf("hello world");
+    return 0;
 }
 ```
 
@@ -100,11 +100,11 @@ git add smaple.c
 git commit -m "some_message"
 ```
 
-“some_message” 在上面的命令里可以是一些简单的信息如“我的第一次提交”或者“ 编辑了readme 文件”，等等。
+“some_message” 在上面的命令里可以是一些简单的信息如“我的第一次提交”或者“编辑了readme 文件”，等等。
 
 ### 7、在 GitHub 上创建一个仓库
 
-在 GitHub 上创建一个仓库。请注意仓库的名字必须和你本地创建的仓库的名字严格一致。在这个例子里是 “Mytest”。请首先登录你的 [GitHub](https://github.com) 账户 。点击页面右上角的 “+” 符号，并选择“create nw repository”。如下图所示填入详细信息，点击 “create repository”。
+在 GitHub 上创建一个仓库。请注意仓库的名字必须和你本地创建的仓库的名字严格一致。在这个例子里是 “Mytest”。请首先登录你的 [GitHub](https://github.com) 账户。点击页面右上角的 “+” 符号，并选择“create nw repository”。如下图所示填入详细信息，点击 “create repository”。
 
 [![Creating a repository on GitHub][5]][6]
 
@@ -126,7 +126,7 @@ git push origin master
 
 当提示登录名和密码时键入登录名和密码。
 
-下面的图片显示了步骤5到步骤8的流程
+下面的图片显示了步骤 5 到步骤 8 的流程
 
 [![Pushing files in local repository to GitHub repository][7]][8]
 
