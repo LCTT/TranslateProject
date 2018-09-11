@@ -7,9 +7,7 @@ Kubernetes 网络运维
 
 *   避免生产系统网络中断非常重要
 *   运维联网软件是很难的
-*   有关你的网络基础设施的重要变化值得深思熟虑，以及这种变化对可靠性的影响。
-
-虽然非常“牛x”的谷歌人常说“这是我们在谷歌正在用的”（谷歌工程师在 Kubernetes 上正做着很重大的工作！但是我认为重要的仍然是研究架构，并确保它对你的组织有意义）。
+*   有关你的网络基础设施的重要变化值得深思熟虑，以及这种变化对可靠性的影响。虽然非常“牛x”的谷歌人常说“这是我们在谷歌正在用的”（谷歌工程师在 Kubernetes 上正做着很重大的工作！但是我认为重要的仍然是研究架构，并确保它对你的组织有意义）。
 
 我肯定不是 Kubernetes 网络方面的专家，但是我在配置 Kubernetes 网络时遇到了一些问题，并且比以前更加了解 Kubernetes 网络了。
 
@@ -35,7 +33,7 @@ Kubernetes 网络运维
 
 在本文中我们将要讨论的 Kubernetes 网络组件有：
 
-*   网络覆盖后端（像 flannel/calico/weave 网络/romana）
+*   <ruby>覆盖网络<rt>overlay network</rt></ruby>的后端（像 flannel/calico/weave 网络/romana）
 *   `kube-dns`
 *   `kube-proxy`
 *   入站控制器 / 负载均衡器
@@ -166,7 +164,7 @@ kube-proxy 像如下这样为每个目标主机创建一个 `iptables` 规则：
 
 via: https://jvns.ca/blog/2017/10/10/operating-a-kubernetes-network/
 
-作者：[Julia Evans ][a]
+作者：[Julia Evans][a]
 译者：[qhwdw](https://github.com/qhwdw)
 校对：[wxy](https://github.com/wxy)
 
