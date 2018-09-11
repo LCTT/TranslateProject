@@ -1,3 +1,5 @@
+translating---geekpi
+
 Distrochooser Helps Linux Beginners To Choose A Suitable Linux Distribution
 ======
 ![](https://www.ostechnix.com/wp-content/uploads/2018/08/distrochooser-logo-720x340.png)
