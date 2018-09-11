@@ -1,3 +1,5 @@
+heguangzhi Translating 
+
 8 Linux commands for effective process management
 ======
 
