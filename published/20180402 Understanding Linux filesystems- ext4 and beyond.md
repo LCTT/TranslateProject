@@ -1,4 +1,4 @@
-理解 Linux 文件系统：ext4 等文件系统
+理解 ext4 等 Linux 文件系统
 ======
 
 > 了解 ext4 的历史，包括其与 ext3 和之前的其它文件系统之间的区别。
@@ -237,7 +237,7 @@ via: https://opensource.com/article/18/4/ext4-filesystem
 
 作者：[Jim Salter][a]
 译者：[HardworkFish](https://github.com/HardworkFish)
-校对：[wxy](https://github.com/wxy)、[pityonline](https://github.com/pityonline)
+校对：[wxy](https://github.com/wxy), [pityonline](https://github.com/pityonline)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
