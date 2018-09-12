@@ -1,13 +1,18 @@
-8 Linux commands for effective process management
+heguangzhi Translating 
+
+8个Linux命令用于有效的进程管理
 ======
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/command_line_prompt.png?itok=wbGiJ_yg)
 
-Generally, an application process' lifecycle has three main states: start, run, and stop. Each state can and should be managed carefully if we want to be competent administrators. These eight commands can be used to manage processes through their lifecycles.
+一般来说，应用程序的生命周期有三种主要状态:启动、运行和停止。如果我们想成为称职的管理员，每个状态都可以而且应该得到认真的管理。这八个命令可用于管理进程的整个生命周期。
 
-### Starting a process
 
-The easiest way to start a process is to type its name at the command line and press Enter. If you want to start an Nginx web server, type **nginx**. Perhaps you just want to check the version.
+### 启动进程
+
+
+启动进程的最简单方法是在命令行中键入其名称，然后按 Enter 键。如果要启动 Nginx web 服务器，请键入 **nginx** 。也许您只是想看看其版本。
+
 ```
 alan@workstation:~$ nginx
 
@@ -15,9 +20,11 @@ alan@workstation:~$ nginx -v
 nginx version: nginx/1.14.0
 ```
 
-### Viewing your executable path
 
-The above demonstration of starting a process assumes the executable file is located in your executable path. Understanding this path is key to reliably starting and managing a process. Administrators often customize this path for their desired purpose. You can view your executable path using **echo $PATH**.
+###  查看您的可执行路径
+
+以上启动进程的演示是假设可执行文件位于您的可执行路径中。理解这条路径是是否启动和管理进程的关键。管理员通常会为他们想要的目的定制这条路径。您可以使用 **echo $PATH** 查看您的可执行路径。
+
 ```
 alan@workstation:~$ echo $PATH
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
@@ -25,26 +32,36 @@ alan@workstation:~$ echo $PATH
 
 #### WHICH
 
-Use the which command to view the full path of an executable file.
+
+使用 which 命令查看可执行文件的完整路径。
+
 ```
 alan@workstation:~$ which nginx                                                    
 /opt/nginx/bin/nginx
 ```
 
-I will use the popular web server software Nginx for my examples. Let's assume that Nginx is installed. If the command **which nginx** returns nothing, then Nginx was not found because which searches only your defined executable path. There are three ways to remedy a situation where a process cannot be started simply by name. The first is to type the full path. Although, I'd rather not have to type all of that, would you?
+
+我将使用流行的 web 服务器软件 Nginx 作为我的例子。假设安装了 Nginx。如果执行 **which nginx** 的命令什么也不返回，那么 Nginx 就找不到了，因为它只搜索您指定的可执行路径。有三种方法可以补救一个进程不能简单地通过名字启动的情况。首先是键入完整路径。虽然，我不情愿输入全部路径，您会吗？
+
+
 ```
 alan@workstation:~$ /home/alan/web/prod/nginx/sbin/nginx -v
 nginx version: nginx/1.14.0
 ```
 
-The second solution would be to install the application in a directory in your executable's path. However, this may not be possible, particularly if you don't have root privileges.
 
-The third solution is to update your executable path environment variable to include the directory where the specific application you want to use is installed. This solution is shell-dependent. For example, Bash users would need to edit the PATH= line in their .bashrc file.
+第二个解决方案是将应用程序安装在可执行文件路径中的目录中。然而，这可能是不可能的，特别是如果您没有 root 权限。
+
+
+第三个解决方案是更新您的可执行路径环境变量，包括要使用的特定应用程序的安装目录。这个解决方案是  shell-dependent。例如，Bash 用户需要在他们的 .bashrc 文件中编辑 PATH= line。
+
 ```
 PATH="$HOME/web/prod/nginx/sbin:$PATH"
 ```
 
-Now, repeat your echo and which commands or try to check the version. Much easier!
+
+现在，重复您的 echo 和 which命令或者尝试检查版本。容易多了！
+
 ```
 alan@workstation:~$ echo $PATH
 /home/alan/web/prod/nginx/sbin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
@@ -56,24 +73,27 @@ alan@workstation:~$ nginx -v                                   
 nginx version: nginx/1.14.0
 ```
 
-### Keeping a process running
+### 保持进程运行
 
 #### NOHUP
 
-A process may not continue to run when you log out or close your terminal. This special case can be avoided by preceding the command you want to run with the nohup command. Also, appending an ampersand (&) will send the process to the background and allow you to continue using the terminal. For example, suppose you want to run myprogram.sh.
+
+注销或关闭终端时，进程可能不会继续运行。这种特殊情况可以通过在要使用 nohup 命令放在要运行的命令前面让进程持续运行。此外，附加一个&符号将会把进程发送到后台，并允许您继续使用终端。例如，假设您想运行 myprogram.sh 。
 ```
 nohup myprogram.sh &
 ```
 
-One nice thing nohup does is return the running process's PID. I'll talk more about the PID next.
+nohup 会返回运行进程的PID。接下来我会更多地谈论PID。
 
-### Manage a running process
+###  管理正在运行的进程
 
-Each process is given a unique process identification number (PID). This number is what we use to manage each process. We can also use the process name, as I'll demonstrate below. There are several commands that can check the status of a running process. Let's take a quick look at these.
+
+每个进程都有一个唯一的进程标识号 (PID) 。这个数字是我们用来管理每个进程的。我们还可以使用进程名称，我将在下面演示。有几个命令可以检查正在运行的进程的状态。让我们快速看看这些命令。
 
 #### PS
 
-The most common is ps. The default output of ps is a simple list of the processes running in your current terminal. As you can see below, the first column contains the PID.
+最常见的是 ps 命令。ps 的默认输出是当前终端中运行的进程的简单列表。如下所示，第一列包含PID。
+
 ```
 alan@workstation:~$ ps
 PID TTY          TIME CMD
@@ -81,7 +101,8 @@ PID TTY          TIME CMD
 24148 pts/0    00:00:00 ps
 ```
 
-I'd like to view the Nginx process I started earlier. To do this, I tell ps to show me every running process ( **-e** ) and a full listing ( **-f** ).
+
+我想看看我之前开始的 Nginx 进程。为此，我告诉 ps 给我展示每一个正在运行的进程( **-e** )  和完整的列表 ( **-f** )。
 ```
 alan@workstation:~$ ps -ef
 UID        PID  PPID  C STIME TTY          TIME CMD
@@ -107,25 +128,29 @@ alan     20536 20526  0 10:39 pts/0    00:00:00 pager
 alan     20564 20496  0 10:40 pts/1    00:00:00 bash
 ```
 
-You can see the Nginx processes in the output of the ps command above. The command displayed almost 300 lines, but I shortened it for this illustration. As you can imagine, trying to handle 300 lines of process information is a bit messy. We can pipe this output to grep to filter out nginx.
+
+您可以在上面 ps 命令的输出中看到 Nginx 进程。这个命令显示了将近300行，但是我在这个例子中缩短了它。可以想象，试图处理300行过程信息有点混乱。我们可以将这个输出输送到 grep, 过滤一下仅显示 nginx。
 ```
 alan@workstation:~$ ps -ef |grep nginx
 alan     20520  1454  0 10:39 ?        00:00:00 nginx: master process nginx
 alan     20521 20520  0 10:39 ?        00:00:00 nginx: worker process
 ```
 
-That's better. We can quickly see that Nginx has PIDs of 20520 and 20521.
+
+确实更好了。我们可以很快看到，Nginx 有20520和2052的PIDs。
 
 #### PGREP
 
-The pgrep command was created to further simplify things by removing the need to call grep separately.
+pgrep 命令更加简化单独调用 grep 遇到的问题。
+
 ```
 alan@workstation:~$ pgrep nginx
 20520
 20521
 ```
 
-Suppose you are in a hosting environment where multiple users are running several different instances of Nginx. You can exclude others from the output with the **-u** option.
+假设您在一个托管环境中，多个用户正在运行几个不同的 Nginx 实例。您可以使用 **-u** 选项将其他人排除在输出之外。
+
 ```
 alan@workstation:~$ pgrep -u alan nginx
 20520
@@ -134,7 +159,8 @@ alan@workstation:~$ pgrep -u alan nginx
 
 #### PIDOF
 
-Another nifty one is pidof. This command will check the PID of a specific binary even if another process with the same name is running. To set up an example, I copied my Nginx to a second directory and started it with the prefix set accordingly. In real life, this instance could be in a different location, such as a directory owned by a different user. If I run both Nginx instances, the **ps -ef** output shows all their processes.
+
+另一个好用的是pidof。此命令将检查特定二进制文件的 PID，即使另一个同名进程正在运行。为了建立一个例子，我将我的 Nginx 复制到第二个目录，并以相应的前缀集开始。在现实生活中，这个实例可能位于不同的位置，例如由不同用户拥有的目录。如果我运行两个 Nginx 实例，则pidof 输出显示它们的所有进程。
 ```
 alan@workstation:~$ ps -ef |grep nginx
 alan     20881  1454  0 11:18 ?        00:00:00 nginx: master process ./nginx -p /home/alan/web/prod/nginxsec
@@ -143,7 +169,8 @@ alan     20895  1454  0 11:19 ?        00:00:00 nginx: master process ng
 alan     20896 20895  0 11:19 ?        00:00:00 nginx: worker process
 ```
 
-Using grep or pgrep will show PID numbers, but we may not be able to discern which instance is which.
+使用 grep 或 pgrep 将显示 PID 数字，但我们可能无法辨别哪个实例是哪个。
+
 ```
 alan@workstation:~$ pgrep nginx
 20881
@@ -152,7 +179,8 @@ alan@workstation:~$ pgrep nginx
 20896
 ```
 
-The pidof command can be used to determine the PID of each specific Nginx instance.
+pidof 命令可用于确定每个特定 Nginx 实例的PID。
+
 ```
 alan@workstation:~$ pidof /home/alan/web/prod/nginxsec/sbin/nginx
 20882 20881
@@ -163,7 +191,7 @@ alan@workstation:~$ pidof /home/alan/web/prod/nginx/sbin/nginx
 
 #### TOP
 
-The top command has been around a long time and is very useful for viewing details of running processes and quickly identifying issues such as memory hogs. Its default view is shown below.
+top 命令已经有很长时间了，对于查看运行进程的细节和快速识别内存消耗等问题是非常有用的。其默认视图如下所示。
 ```
 top - 11:56:28 up 1 day, 13:37,  1 user,  load average: 0.09, 0.04, 0.03
 Tasks: 292 total,   3 running, 225 sleeping,   0 stopped,   0 zombie
@@ -182,7 +210,7 @@ KiB Swap:        0 total,        0 free,        0 used. 14176540 ava
     7 root      20   0       0      0      0 S   0.0  0.0   0:00.08 ksoftirqd/0
 ```
 
-The update interval can be changed by typing the letter **s** followed by the number of seconds you prefer for updates. To make it easier to monitor our example Nginx processes, we can call top and pass the PID(s) using the **-p** option. This output is much cleaner.
+可以通过键入字母 **s** 和您喜欢的更新秒数来更改更新间隔。为了更容易监控我们的示例 Nginx 进程，我们可以使用 **-p** 选项调用top并通过PID。这个输出要干净得多。
 ```
 alan@workstation:~$ top -p20881 -p20882 -p20895 -p20896
 
@@ -198,13 +226,17 @@ KiB Swap:        0 total,        0 free,        0 used. 14177928 ava
 20896 alan      20   0   12460   1628    912 S   0.0  0.0   0:00.00 nginx
 ```
 
-It is important to correctly determine the PID when managing processes, particularly stopping one. Also, if using top in this manner, any time one of these processes is stopped or a new one is started, top will need to be informed of the new ones.
+在管理进程，特别是终止进程时，正确确定PID是非常重要。此外，如果以这种方式使用top，每当这些进程中的一个停止或一个新进程开始时，top都需要被告知有新的更新。
 
-### Stopping a process
+### 终止进程
 
 #### KILL
 
 Interestingly, there is no stop command. In Linux, there is the kill command. Kill is used to send a signal to a process. The most commonly used signal is "terminate" (SIGTERM) or "kill" (SIGKILL). However, there are many more. Below are some examples. The full list can be shown with **kill -L**.
+
+
+有趣的是，没有 stop 命令。在 Linux中，有 kill 命令。kill 用于向进程发送信号。最常用的信号是“终止”( SIGTERM )或“杀死”( SIGKILL )。然而，还有更多。下面是一些例子。完整的列表可以用 **kill -L** 显示。
+
 ```
  1) SIGHUP       2) SIGINT       3) SIGQUIT      4) SIGILL       5) SIGTRAP
  6) SIGABRT      7) SIGBUS       8) SIGFPE       9) SIGKILL     10) SIGUSR1
@@ -213,6 +245,10 @@ Interestingly, there is no stop command. In Linux, there is the kill command. Ki
 ```
 
 Notice signal number nine is SIGKILL. Usually, we issue a command such as **kill -9 20896**. The default signal is 15, which is SIGTERM. Keep in mind that many applications have their own method for stopping. Nginx uses a **-s** option for passing a signal such as  "stop" or "reload." Generally, I prefer to use an application's specific method to stop an operation. However, I'll demonstrate the kill command to stop Nginx process 20896 and then confirm it is stopped with pgrep. The PID 20896 no longer appears.
+
+注意第九号信号是 SIGKILL。通常，我们会发布一个命令，比如 **kill -9 20896** 。默认信号是15，这是SIGTERM。请记住，许多应用程序都有自己的停止方法。Nginx 使用 **-s** 选项传递信号，如“停止”或“重新加载”。“通常，我更喜欢使用应用程序的特定方法来停止操作。然而，我将演示 kill 命令来停止 Nginx process 20896，然后用 pgrep 确认它已经停止。PID 20896 就不再出现。
+
+
 ```
 alan@workstation:~$ kill -9 20896
  
@@ -226,6 +262,9 @@ alan@workstation:~$ pgrep nginx
 #### PKILL
 
 The command pkill is similar to pgrep in that it can search by name. This means you have to be very careful when using pkill. In my example with Nginx, I might not choose to use it if I only want to kill one Nginx instance. I can pass the Nginx option **-s** **stop** to a specific instance to kill it, or I need to use grep to filter on the full ps output.
+
+命令 pkill 类似于 pgrep，因为它可以按名称搜索。这意味着在使用 pkill 时必须非常小心。在我的 Nginx 示例中，如果我只想杀死一个 Nginx 实例，我可能不会选择使用它。我可以将 Nginx 选项 **-s** **stop**  传递给特定的实例来消除它，或者我需要使用grep来过滤整个 ps 输出。
+
 ```
 /home/alan/web/prod/nginx/sbin/nginx -s stop
 
@@ -233,6 +272,9 @@ The command pkill is similar to pgrep in that it can search by name. This means 
 ```
 
 If I want to use pkill, I can include the **-f** option to ask pkill to filter across the full command line argument. This of course also applies to pgrep. So, first I can check with **pgrep -a** before issuing the **pkill -f**.
+
+如果我想使用 pkill，我可以包括 **-f** 选项，让 pkill 过滤整个命令行参数。这当然也适用于 pgrep。所以，在执行 **pkill -f** 之前，首先我可以用 **pgrep -a** 确认一下。
+
 ```
 alan@workstation:~$ pgrep -a nginx
 20881 nginx: master process ./nginx -p /home/alan/web/prod/nginxsec
@@ -242,6 +284,10 @@ alan@workstation:~$ pgrep -a nginx
 ```
 
 I can also narrow down my result with **pgrep -f**. The same argument used with pkill stops the process.
+
+我也可以用 **pgrep -f** 缩小我的结果。pkill 使用的相同参数会停止该进程。
+
+
 ```
 alan@workstation:~$ pgrep -f nginxsec
 20881
@@ -251,7 +297,13 @@ alan@workstation:~$ pkill -f nginxsec
 
 The key thing to remember with pgrep (and especially pkill) is that you must always be sure that your search result is accurate so you aren't unintentionally affecting the wrong processes.
 
+pgrep (尤其是pkill )要记住的关键点是，您必须始终确保搜索结果准确性，这样您就不会无意中影响到错误的进程。
+
 Most of these commands have many command line options, so I always recommend reading the [man page][1] on each one. While most of these exist across platforms such as Linux, Solaris, and BSD, there are a few differences. Always test and be ready to correct as needed when working at the command line or writing scripts.
+
+
+
+大多数这些命令都有许多命令行选项，所以我总是建议阅读每一个命令的 [man page][1]。虽然大多数这些都存在于 Linux、Solaris 和 BSD 等平台上，但也有一些不同之处。在命令行工作或编写脚本时，始终测试并随时准备根据需要进行更正。
 
 --------------------------------------------------------------------------------
 
