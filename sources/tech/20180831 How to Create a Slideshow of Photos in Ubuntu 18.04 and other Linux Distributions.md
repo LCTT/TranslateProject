@@ -1,3 +1,5 @@
+translating---geekpi
+
 How to Create a Slideshow of Photos in Ubuntu 18.04 and other Linux Distributions
 ======
 Creating a slideshow of photos is a matter of a few clicks. Here’s how to make a slideshow of pictures in Ubuntu 18.04 and other Linux distributions.
