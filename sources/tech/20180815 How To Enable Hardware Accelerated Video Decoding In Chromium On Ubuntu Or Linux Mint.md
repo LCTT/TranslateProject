@@ -1,4 +1,4 @@
-How To Enable Hardware Accelerated Video Decoding In Chromium On Ubuntu Or Linux Mint
+Grave Accent翻译中 How To Enable Hardware Accelerated Video Decoding In Chromium On Ubuntu Or Linux Mint
 ======
 You may have noticed that watching HD videos from Youtube and other similar websites in Google Chrome or Chromium browsers on Linux considerably increases your CPU usage and, if you use a laptop, it gets quite hot and the battery drains very quickly. That's because Chrome / Chromium (Firefox too but there's no way to force this) doesn't support hardware accelerated video decoding on Linux.
 
