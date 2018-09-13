@@ -1,53 +1,53 @@
-Visualize Disk Usage On Your Linux System
+可视化查看 Linux 系统上的磁盘使用情况
 ======
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/09/filelight-720x340.png)
 
-Finding disk space usage is no big deal in Unix-like operating systems. We have a built-in command named [**du**][1] that can be used to calculate and summarize the disk space usage in minutes. And, we have some third-party tools like [**Ncdu**][2] and [**Agedu**][3] which can also be used to track down the disk usage. As you already know, these are all command line utilities and you will see the disk usage results in plain-text format. However, some of you’d like to view the results in visual or kind of image format. No worries! I know one such GUI tool to find out the disk usage details. Say hello to **“Filelight”** , a graphical utility to visualize disk usage on your Linux system and displays the disk usage results in a colored radial layout. Filelight is one of the oldest project and it has been around for a long time. It is completely free to use and open source.
+查看硬盘使用情况对于类 Unix 操作系统来说不是什么大问题。我们有一个名为 [**du**][1] 的内置命令，可以在分钟之内计算和汇总磁盘空间的使用情况。此外，我们还有一些第三方工具，比如 [**Ncdu**][2] and [**Agedu**][3]，它们也可以用来追踪磁盘使用情况。如您所见，这些都是命令行中的实用程序，磁盘使用情况将以纯文本的形式显示。但是，有些人希望以可视化、图表的形式查看结果。别担心！我知道一个 GUI 工具可以显示磁盘使用细节。它就是**“Filelight”**，这是一个图形化实用程序，用于可视化显示 Linux 系统上的磁盘使用情况，并以彩色径向图显示结果。Filelight 是历史最悠久的项目之一，它已经存在了很长时间，它完全免费使用并开源。
 
-### Installing Filelight
+### 安装 Filelight
 
-Filelight is part of KDE applications and comes pre-installed with KDE-based Linux distributions.
+Filelight 是 KDE 应用程序的一部分，并预装在基于 KDE 的 Linux 发行版上。
 
-If you’re using non-KDE distros, Filelight is available in the official repositories, so you can install it using the default package manager.
+如果您使用的是非 KDE 发行版，官方存储库中包含了 Filelight，因此您可以使用默认的包管理器进行安装。
 
-On Arch Linux and its variants such as Antergos, Manjaro Linux, Filelight can be installed as below.
+在 Arch Linux 及其衍生版，如 Antergos，Manjaro Linux 中，Filelight 可以按照如下方法安装。
 
 ```
 $ sudo pacman -S filelight
 ```
 
-On Debian, Ubuntu, Linux Mint:
+在 Debian、Ubuntu、Linux Mint 中，
 
 ```
 $ sudo apt install filelight
 ```
 
-On Fedora:
+在 Fedora 中，
 
 ```
 $ sudo dnf install filelight
 ```
 
-On openSUSE:
+在 openSUSE 中，
 
 ```
 $ sudo zypper install filelight
 ```
 
-### Visualize Disk Usage On Your Linux System
+### 可视化查看 Linux 系统上的磁盘使用情况
 
-Once installed, launch Filelight from Menu or application launcher.
+安装后，从菜单或应用程序启动器启动 Filelight。
 
-FIlelight graphically represents your filesystem as a set of concentric segmented-rings.
+Filelight 以图形方式将您的文件系统表示为一组同心圆环段。
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/09/filelight-1-1.png)
 
-As you can see, Filelight displays the disk usage of the **/** and **/boot** filesystems by default.
+如您所见，Filelight 默认显示磁盘中 **/** 和 **/boot** 文件系统的使用情况。
 
-You can also scan the individual folders of your choice to view the disk usage of that particular folder. To do so, go to **Filelight - > Scan -> Scan Folder** and choose the folder you want to scan.
+您还可以选择扫描的各个文件夹，以查看该特定文件夹的磁盘使用情况。为此，请到 **Filelight - > Scan -> Scan Folder** 并选择要扫描的文件夹。
 
-Filelight excludes the following directories from scanning:
+Filelight 在扫描时排除以下目录：
 
   * /dev
   * /proc
@@ -56,35 +56,33 @@ Filelight excludes the following directories from scanning:
 
 
 
-This option is helpful to skip the directories that you may not have permissions to read, or folders that are part of a virtual filesystem, such as /proc.
+此选项有助于跳过您可能没有权限读取的目录，或者属于虚拟文件系统的文件夹，例如 **/proc**。
 
-If you want to add any folder in this list, go to **Filelight - > Settings -> Scanning** and click “add” button and choose the folder you want to add in this list.
+如果您想要在此列表中增加文件夹，请到 **Filelight - > Settings -> Scanning** 并点击“Add”按钮然后选择您想要增加的文件夹。
 
 ![](http://www.ostechnix.com/wp-content/uploads/2018/09/filelight-settings.png)
 
-Similarly, to remove a folder from the list, choose the folder and click on “Remove”.
+类似的，要想从此列表中移除某个文件夹，选择文件夹并点击“Remove”。
 
-If you want to change the way filelight looks, go to **Settings - > Appearance** tab and change the color scheme as per your liking.
+如果您想要改变 Filelight 的外观，请到 **Settings - > Appearance** 栏，按照您的喜好改变配色方案。
 
-Each segment in the radial layout is represented with different colors. The following image represents the entire radial layout of **/** filesystem. To view the full information of files and folders, just hover the mouse pointer over them.
+径向图中的每个段用不同的颜色表示。下图显示了 **/** 文件系统的整个径向布局。要查看文件和文件夹的完整信息，只需将鼠标指针悬停在它们上边。
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/09/filelight-2.png)
 
-You can navigate around the the filesystem by simply clicking on the respective segment. To view the disk usage of any file or folder, just click on them and you will get the complete disk usage details of that particular folder/file.
+只需点击相应的段即可浏览文件系统。要查看某个文件或文件夹的磁盘使用情况，只需单击它们即可获得该特定文件夹、文件的完整磁盘使用情况。
 
-Not just local filesystem, Filelight can able to scan your local, remote and removable disks. If you’re using any KDE-based Linux distribution, it can be integrated into file managers like Konqueror, Dolphin and Krusader.
+不仅仅是本地文件系统，Filelight 还能够扫描远程磁盘和可移动磁盘。 如果您使用任何基于 KDE 的 Linux 发行版，它可以集成到 Konqueror，Dolphin 和 Krusader 等文件管理器中。
 
-Unlike the CLI utilities, you don’t have to use any extra arguments or options to view the results in human-readable format. Filelight will display the disk usage in human-readable format by default.
+与 CLI 实用程序不同，您不必使用任何额外的参数或选项来以易读的（而非乱码的）格式查看结果。 默认情况下，Filelight 将自动以易读的格式显示磁盘使用情况。
 
-### Conclusion
+### 总结
 
-By using Filelight, you can quickly discover where exactly your diskspace is being used in your filesystem and free up the space wherever necessary by deleting the unwanted files or folders. If you are looking for some simple and user-learnedly graphical disk usage viewer, Filelight is worth trying.
+使用 Filelight，您可以快速找到文件系统中占用磁盘空间的位置，并通过删除不需要的文件或文件夹释放空间。 如果您正在寻找一些简单且易上手的图形界面磁盘使用情况查看器，那么 Filelight 值得一试。
 
-And, that’s all for now. Hope this was useful. More good stuffs to come. Stay tuned!
+就是这样。希望这篇文章对您有用。更多的好文章，敬请关注！
 
-Cheers!
-
-
+干杯！
 
 --------------------------------------------------------------------------------
 
@@ -92,7 +90,7 @@ via: https://www.ostechnix.com/filelight-visualize-disk-usage-on-your-linux-syst
 
 作者：[SK][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[XiatianSummer](https://github.com/XiatianSummer)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
