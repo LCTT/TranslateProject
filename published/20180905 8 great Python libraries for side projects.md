@@ -1,5 +1,7 @@
-8 个用于<ruby>业余项目<rt>side projects</rt></ruby>的优秀 Python 库
+8 个用于业余项目的优秀 Python 库
 ======
+
+> 这些库可以使你更容易构架个人项目。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/python-programming-code-keyboard.png?itok=fxiSpmnd)
 
@@ -9,7 +11,7 @@
 
 ### 在数据库中即时保存数据：Dataset
 
-当我们想要在不知道最终数据库表长什么样的情况下，快速收集数据并保存到数据库中的时候，[Dataset][1] 库将是我们的最佳选择。Dataset 库有一个简单但功能强大的 API，因此我们可以很容易的把数据保存下来，之后再进行排序。
+当我们想要在不知道最终数据库表长什么样的情况下，快速收集数据并保存到数据库中的时候，[Dataset][1] 库将是我们的最佳选择。Dataset 库有一个简单但功能强大的 API，因此我们可以很容易的把数据保存下来，之后再进行整理。
 
 Dataset 建立在 SQLAlchemy 之上，所以如果需要对它进行扩展，你会感到非常熟悉。使用 Django 内建的 [inspectdb][2] 管理命令可以很容易地把底层数据库模型导入 Django 中，这使得和现有数据库一同工作不会出现任何障碍。
 
@@ -35,13 +37,13 @@ Dataset 建立在 SQLAlchemy 之上，所以如果需要对它进行扩展，你
 
 ### 把 CSV 文件转换到 API 中：DataSette
 
-[DataSette][8] 是一个神奇的工具，它可以很容易地把 CSV 文件转换进全特性只读 REST JSON API，同时，不要把它和 Dataset 库混淆。Datasette 有许多特性，包括创建图表和 geo（用于创建交互式图表），并且很容易通过容器或第三方网络主机进行部署。
+[DataSette][8] 是一个神奇的工具，它可以很容易地把 CSV 文件转换为全特性的只读 REST JSON API，同时，不要把它和 Dataset 库混淆。Datasette 有许多特性，包括创建图表和 geo（用于创建交互式地图），并且很容易通过容器或第三方网络主机进行部署。
 
 ### 处理环境变量等：Envparse
 
-如果你不想在源代码中保存 API 密钥、数据库凭证或其他敏感信息，那么你便需要解析环境变量，这时候 [envparse][9] 是最好的选择。Envparse 能够处理环境变量、ENV 文件、变量类型，甚至还可以进行预处理和后处理（例如，你想要确保变量名总是大写或小写的）
+如果你不想在源代码中保存 API 密钥、数据库凭证或其他敏感信息，那么你便需要解析环境变量，这时候 [envparse][9] 是最好的选择。Envparse 能够处理环境变量、ENV 文件、变量类型，甚至还可以进行预处理和后处理（例如，你想要确保变量名总是大写或小写的）。
 
-有什么你最喜欢的用于<ruby>业余项目<rt>side projects</rt></ruby>的 Python 库不在这个列表中吗？请在评论中和我们分享。
+有什么你最喜欢的用于业余项目的 Python 库不在这个列表中吗？请在评论中和我们分享。
 
 --------------------------------------------------------------------------------
 
@@ -50,7 +52,7 @@ via: https://opensource.com/article/18/9/python-libraries-side-projects
 作者：[Jeff Triplett][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[ucasFL](https://github.com/ucasFL)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
