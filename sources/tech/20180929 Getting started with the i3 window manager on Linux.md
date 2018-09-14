@@ -1,3 +1,4 @@
+[sd886393]翻译中
 Getting started with the i3 window manager on Linux
 ======
 
