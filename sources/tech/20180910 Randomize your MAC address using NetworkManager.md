@@ -1,3 +1,5 @@
+HankChow translating
+
 Randomize your MAC address using NetworkManager
 ======
 
