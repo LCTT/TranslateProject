@@ -1,6 +1,8 @@
 5 tips to improve productivity with zsh
 ======
 
+### **[翻译中] by tnuoccalanosrep** 
+
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/features_solutions_command_data.png?itok=4_VQN3RK)
 
 The Z shell known as [zsh][1] is a [shell][2] for Linux/Unix-like operating systems. It has similarities to other shells in the `sh` (Bourne shell) family, such as as `bash` and `ksh`, but it provides many advanced features and powerful command line editing options, such as enhanced Tab completion.
