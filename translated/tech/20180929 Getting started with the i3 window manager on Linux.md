@@ -1,5 +1,4 @@
-[sd886393]翻译中
-Getting started with the i3 window manager on Linux
+在Linux上使用 i3 作为窗口管理器的入门教程
 ======
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/windows-tiling-windows-wall.png?itok=mTH7uVrn)
