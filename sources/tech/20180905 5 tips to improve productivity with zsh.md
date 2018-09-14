@@ -1,19 +1,32 @@
 5 tips to improve productivity with zsh
 ======
 
+用 zsh 提高生产力的5个 tips
+======
+
 ### **[翻译中] by tnuoccalanosrep** 
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/features_solutions_command_data.png?itok=4_VQN3RK)
 
 The Z shell known as [zsh][1] is a [shell][2] for Linux/Unix-like operating systems. It has similarities to other shells in the `sh` (Bourne shell) family, such as as `bash` and `ksh`, but it provides many advanced features and powerful command line editing options, such as enhanced Tab completion.
 
+Z shell (亦称 zsh) 是 *unx 系统中的命令解析器 。 它跟 `sh` (Bourne shell) 家族的其他解析器 ( 如 `bash` 和 `ksh` ) 有着相似的特点，但它还提供了更多高级的特性以及强大的命令行编辑功能（选项？），如增强版tab补全。
+
 It would be impossible to cover all the options of zsh here; there are literally hundreds of pages [documenting][3] its many features. In this article, I'll present five tips to make you more productive using the command line with zsh.
+
+由于 zsh 有好几百页的文档去描述他的特性，所以我无法在这里阐明 zsh 的所有功能。在本文，我会列出5个 tips，让你通过使用 zsh 来提高你的生产力。
 
 ### 1\. Themes and plugins
 
+### 1\. 主题和插件
+
 Through the years, the open source community has developed countless themes and plugins for zsh. A theme is a predefined prompt configuration, while a plugin is a set of useful aliases and functions that make it easier to use a specific command or programming language.
 
+多年来，开源社区已经为 zsh 开发了数不清的主题和插件。主题是用来配置预定义提示符，而插件则是一组常用的别名命令和功能，让你更方便的使用一种特定的命令或者编程语言。
+
 The quickest way to get started using themes and plugins is to use a zsh configuration framework. There are many available, but the most popular is [Oh My Zsh][4]. By default, it enables some sensible zsh configuration options and it comes loaded with hundreds of themes and plugins.
+
+如果你现在想开始用 zsh 的主题和插件，那么使用 zsh 的配置框架 (configuiration framework) 是你最快的入门方式。在众多的配置框架中，最受欢迎的则是 [Oh My Zsh][4]。在默认配置中，他就已经为 zsh 启用了一些合理的配置，同时它也自带多个主题和插件。
 
 A theme makes you more productive as it adds useful information to your prompt, such as the status of your Git repository or Python virtualenv in use. Having this information at a glance saves you from typing the equivalent commands to obtain it, and it's a cool look. Here's an example of [Powerlevel9k][5], my theme of choice:
 
