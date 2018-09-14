@@ -1,3 +1,5 @@
+HankChow translating
+
 7 Python libraries for more maintainable code
 ======
 
