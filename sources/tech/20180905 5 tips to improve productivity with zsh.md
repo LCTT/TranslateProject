@@ -10,7 +10,7 @@
 
 The Z shell known as [zsh][1] is a [shell][2] for Linux/Unix-like operating systems. It has similarities to other shells in the `sh` (Bourne shell) family, such as as `bash` and `ksh`, but it provides many advanced features and powerful command line editing options, such as enhanced Tab completion.
 
-Z shell (亦称 zsh) 是 *unx 系统中的命令解析器 。 它跟 `sh` (Bourne shell) 家族的其他解析器 ( 如 `bash` 和 `ksh` ) 有着相似的特点，但它还提供了更多高级的特性以及强大的命令行编辑功能（选项？），如增强版tab补全。
+Z shell (亦称 zsh) 是 *unx 系统中的命令解析器 。 它跟 `sh` (Bourne shell) 家族的其他解析器 ( 如 `bash` 和 `ksh` ) 有着相似的特点，但它还提供了大量的高级特性以及强大的命令行编辑功能（选项？），如增强版tab补全。
 
 It would be impossible to cover all the options of zsh here; there are literally hundreds of pages [documenting][3] its many features. In this article, I'll present five tips to make you more productive using the command line with zsh.
 
@@ -77,25 +77,37 @@ grep='grep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 ```
 
 In addition to command aliases, zsh enables two additional useful alias types: the suffix alias and the global alias.
+
 除了命令别名意外， zsh 还自带两种额外常用的别名类型：后缀别名和全局别名。
 
 A suffix alias allows you to open the file you type in the command line using the specified program based on the file extension. For example, to open YAML files using vim, define the following alias:
+
+后缀别名可以让你在基于文件后缀的前提下，在命令行中利用指定程序打开这个文件。比如，要用 vim 打开 YAML 文件，可以定义以下命令行别名：
+
 ```
 alias -s {yml,yaml}=vim
 ```
 
 Now if you type any file name ending with `yml` or `yaml` in the command line, zsh opens that file using vim:
+
+现在，如果你在命令行中输入任何后缀名为 `yml` 或 `yaml` 文件， zsh 都会用 vim 打开这个文件
+
 ```
 $ playbook.yml
 # Opens file playbook.yml using vim
 ```
 
 A global alias enables you to create an alias that is expanded anywhere in the command line, not just at the beginning. This is very useful to replace common filenames or piped commands. For example:
+
+全局别名可以让你在使用命令行的任何时刻创建命令别名，而不仅仅是在开始的时候。这个在你想替换常用文件名或者管道命令的时候就显得非常有用了。比如
+
 ```
 alias -g G='| grep -i'
 ```
 
 To use this alias, type `G` anywhere you would type the piped command:
+
+要使用这个别名，只要你在想用管道命令的时候输入 `G` 就好了：
 ```
 $ ls -l G do
 drwxr-xr-x.  5 rgerardi rgerardi 4096 Aug  7 14:08 Documents
@@ -104,14 +116,23 @@ drwxr-xr-x.  6 rgerardi rgerardi 4096 Aug 24 14:51 Downloads
 
 Next, let's see how zsh helps to navigate the filesystem.
 
+接着，我们就来看看 zsh 是如何导航文件系统的。
+
 ### 3\. Easy directory navigation
+### 3\. 便捷的目录导航
 
 When you're using the command line, navigating across different directories is one of the most common tasks. Zsh makes this easier by providing some useful directory navigation features. These features are enabled with Oh My Zsh, but you can enable them by using this command:
+
+当你使用命令行的时候， 在不同的目录之间切换访问是最常见的工作。 zsh 提供了一些十分有用的目录导航功能来简化这个操作。这些功能已经集成到 Oh My Zsh 中了， 而你可以用以下命令来启用它
+
 ```
 setopt  autocd autopushd \ pushdignoredups
 ```
 
 With these options set, you don't need to type `cd` to change directories. Just type the directory name, and zsh switches to it:
+
+使用了上面的配置后，你就不用输入 `cd` 来切换目录了，只需要输入目录名称，zsh 就会自动切换到这个目录中：
+
 ```
 $ pwd
 /home/rgerardi
@@ -122,7 +143,12 @@ $ pwd
 
 To move back, type `-`:
 
+如果想要回退，只要输入 `-`:
+
 Zsh keeps the history of directories you visited so you can quickly switch to any of them. To see the list, type `dirs -v`:
+
+Zsh 会记录你访问过的目录，这样下次你就可以快速切换到这些目录中。如果想要看这个目录列表，只要输入 `dirs -v`：
+
 ```
 $ dirs -v
 0       ~
@@ -139,6 +165,9 @@ $ dirs -v
 ```
 
 Switch to any directory in this list by typing `~#` where # is the number of the directory in the list. For example:
+
+如果想要切换到这个列表中的其中一个目录，只需输入 `~#` （`#` 代表目录在列表中的序号）就可以了。比如
+
 ```
 $ pwd
 /home/rgerardi
@@ -148,6 +177,9 @@ $ pwd
 ```
 
 Combine these with aliases to make it even easier to navigate:
+
+你甚至可以用别名组合这些命令，这样切换起来就变得更简单：
+
 ```
 d='dirs -v | head -10'
 1='cd -'
@@ -162,6 +194,9 @@ d='dirs -v | head -10'
 ```
 
 Now you can type `d` to see the first ten items in the list and the number to switch to it:
+
+现在你可以通过输入 `d` 来查看这个目录列表的前10个，然后用目录的序号来进行切换：
+
 ```
 $ d
 0       /usr/local
@@ -183,6 +218,9 @@ $ pwd
 ```
 
 Finally, zsh automatically expands directory names with Tab completion. Type the first letters of the directory names and `TAB` to use it:
+
+最后，你可以在 zsh 中利用 Tab 来自动补全目录名称。你可以先输入目录的首字母，然后用 `TAB` 来补全它们：
+
 ```
 $ pwd
 /home/rgerardi
@@ -192,11 +230,18 @@ $ Projects/Opensource.com/zsh-5tips/
 
 This is just one of the features enabled by zsh's powerful Tab completion system. Let's look at some more.
 
+以上仅仅是 zsh 强大的 Tab 补全系统中的一个功能。接来下我们来探索它更多的功能。
+
 ### 4\. Advanced Tab completion
+### 4\. 先进的 Tab 补全
 
 Zsh's powerful completion system is one of its hallmarks. For simplification, I call it Tab completion, but under the hood, more than one thing is happening. There's usually expansion and command completion. I'll discuss them together here. For details, check this [User's Guide][8].
 
+Zsh 强大的补全系统是它其中一个卖点。为了简便起见，我称它为 Tab 补全，然而在系统底层，它不仅仅只做一件事。这里通常包括扩展以及命令的补全，我会在这里同时讨论它们。如果想了解更多，详见 [用户手册][8] ( [User's Guide][8] )。
+
 Command completion is enabled by default with Oh My Zsh. To enable it, add the following lines to your `.zshrc` file:
+
+
 ```
 autoload -U compinit
 compinit
@@ -301,7 +346,7 @@ via: https://opensource.com/article/18/9/tips-productivity-zsh
 
 作者：[Ricardo Gerardi][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[译者ID](https://github.com/tnuoccalanosrep)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
