@@ -22,7 +22,7 @@ It would be impossible to cover all the options of zsh here; there are literally
 
 Through the years, the open source community has developed countless themes and plugins for zsh. A theme is a predefined prompt configuration, while a plugin is a set of useful aliases and functions that make it easier to use a specific command or programming language.
 
-多年来，开源社区已经为 zsh 开发了数不清的主题和插件。主题是用来配置预定义提示符，而插件则是一组常用的别名命令和功能，让你更方便的使用一种特定的命令或者编程语言。
+多年来，开源社区已经为 zsh 开发了数不清的主题和插件。主题是预定义提示符的配置，而插件则是一组常用的别名命令和功能，让你更方便的使用一种特定的命令或者编程语言。
 
 The quickest way to get started using themes and plugins is to use a zsh configuration framework. There are many available, but the most popular is [Oh My Zsh][4]. By default, it enables some sensible zsh configuration options and it comes loaded with hundreds of themes and plugins.
 
@@ -30,11 +30,19 @@ The quickest way to get started using themes and plugins is to use a zsh configu
 
 A theme makes you more productive as it adds useful information to your prompt, such as the status of your Git repository or Python virtualenv in use. Having this information at a glance saves you from typing the equivalent commands to obtain it, and it's a cool look. Here's an example of [Powerlevel9k][5], my theme of choice:
 
+由于主题会在你的命令行提示符之前添加一些常用的信息，比如你 Git 仓库的状态，或者是当前使用的 Python 虚拟环境，所以它会让你的工作更高效。只需要看到这些信息，你就不用再敲命令去重新获取它们，而且这些提示也相当酷炫。
+下图就是我（作者）选用的主题 [Powerlevel9k][5] 
+
 ![zsh Powerlevel9K theme][7]
 
 The Powerlevel9k theme for zsh
 
+zsh 主题 Powerlevel9k
+
 In addition to themes, Oh My Zsh bundles tons of useful plugins for zsh. For example, enabling the Git plugin gives you access to a number of useful aliases, such as:
+
+除了主题，Oh my Zsh 还自带了大量常用的 zsh 插件。比如，通过启用 Git 插件，你可以用一组简便的命令别名操作 Git， 比如
+
 ```
 $ alias | grep -i git | sort -R | head -10
 g=git
@@ -50,19 +58,26 @@ glg='git log --stat'
 ```
 
 There are plugins available for many programming languages, packaging systems, and other tools you commonly use on the command line. Here's a list of plugins I use in my Fedora workstation:
+
+zsh 还有许多插件是用于多种编程语言，打包系统和一些平时在命令行中常用的工具。
+以下是我 Ferdora 工作站中用到的插件表：
+
 ```
 git golang fedora docker oc sudo vi-mode virtualenvwrapper
 ```
 
 ### 2\. Clever aliases
-
+### 2\. 智能的命令别名
 Aliases are very useful in zsh. Defining aliases for your most-used commands saves you a lot of typing. Oh My Zsh configures several useful aliases by default, including aliases to navigate directories and replacements for common commands with additional options such as:
+
+命令别名在 zsh 中十分常用。为你常用的命令定义别名可以节省你的打字时间。Oh My Zsh 默认配置了一些常用的命令别名，包括目录导航命令别名，为常用的命令添加额外的选项，比如：
 ```
 ls='ls --color=tty'
 grep='grep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 ```
 
 In addition to command aliases, zsh enables two additional useful alias types: the suffix alias and the global alias.
+除了命令别名意外， zsh 还自带两种额外常用的别名类型：后缀别名和全局别名。
 
 A suffix alias allows you to open the file you type in the command line using the specified program based on the file extension. For example, to open YAML files using vim, define the following alias:
 ```
