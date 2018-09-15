@@ -1,3 +1,5 @@
+[translating by jamelouis]
+
 Mastering CI/CD at OpenDev
 ======
 
