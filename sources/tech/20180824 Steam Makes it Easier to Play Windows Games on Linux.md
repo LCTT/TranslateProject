@@ -1,3 +1,5 @@
+translated by hopefully2333
+
 Steam Makes it Easier to Play Windows Games on Linux
 ======
 ![Steam Wallpaper][1]
