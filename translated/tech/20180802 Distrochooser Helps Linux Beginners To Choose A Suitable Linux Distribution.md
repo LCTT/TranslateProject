@@ -1,8 +1,9 @@
 Distrochooser 帮助 Linux 初学者选择合适的 Linux 发行版
 ======
-![](https://www.ostechnix.com/wp-content/uploads/2018/08/distrochooser-logo-720x340.png)
-你好 Linux 新手！今天，我为你们带来了一个好消息！你也许想知道如何选择合适的 Linux 发行版。当然，你可能已经咨询过一些 Linux 专家来帮助你的需要选择 Linux 发行版。你们中的一些人可能已经用 Google 搜索并浏览了各种资源、Linux 论坛、网站和博客来寻找完美的发行版。好了，你不必再那样做了。有了 **Distrochooser**，一个帮助你轻松找到 Linux 发行版的网站。
 
+![](https://www.ostechnix.com/wp-content/uploads/2018/08/distrochooser-logo-720x340.png)
+
+你好 Linux 新手！今天，我为你们带来了一个好消息！你也许想知道如何选择合适的 Linux 发行版。当然，你可能已经咨询过一些 Linux 专家来帮助你的需要选择 Linux 发行版。你们中的一些人可能已经用 Google 搜索并浏览了各种资源、Linux 论坛、网站和博客来寻找完美的发行版。好了，你不必再那样做了。有了 **Distrochooser**，一个帮助你轻松找到 Linux 发行版的网站。
 
 ### Distrochooser 如何帮助 Linux 初学者选择合适的 Linux 发行版？
 
@@ -11,6 +12,7 @@ Distrochooser 会根据你的答案向你询问一系列问题并建议你尝试
 ![][2]
 
 你将被重定向到 Distrochooser 主页，其中有一个小测试在等待你注册。
+
 ![](https://www.ostechnix.com/wp-content/uploads/2018/08/distrochooser-home-page.png)
 
 你需要回答一系列问题（准确地说是 16 个问题）。问题同时有单选和多选。以下是完整的问题列表。
@@ -32,8 +34,6 @@ Distrochooser 会根据你的答案向你询问一系列问题并建议你尝试
   15. 软件：管理
   16. 软件：更新
 
-
-
 仔细阅读问题并在相应问题下面选择合适的答案。Distrochooser 提供了更多选择来选择接近完美的发行版。
 
   * 你总是可以跳过问题，
@@ -42,9 +42,7 @@ Distrochooser 会根据你的答案向你询问一系列问题并建议你尝试
   * 你可以随时删除答案，
   * 你可以在测试结束时对属性进行加权，以强调对你来说重要的内容。
 
-
-
-选择问题的答案后，单击**继续**以转到下一个问题。完成后，单击**获取结果**按钮。你也可以通过单击答案下面的**“清除”**按钮随时清除选择。
+选择问题的答案后，单击“Proceed”以转到下一个问题。完成后，单击“Get Result”按钮。你也可以通过单击答案下面的“Clear”按钮随时清除选择。
 
 ### 结果？
 
@@ -69,7 +67,7 @@ via: https://www.ostechnix.com/distrochooser-helps-linux-beginners-to-choose-a-s
 作者：[SK][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
