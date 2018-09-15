@@ -1,6 +1,3 @@
-[translating by jamelouis]
-
-Mastering CI/CD at OpenDev
 在OpenDev上，掌握CI/CD(持续集成/持续发布)
 ======
 
