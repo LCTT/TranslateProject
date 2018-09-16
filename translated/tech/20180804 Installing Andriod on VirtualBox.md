@@ -7,7 +7,7 @@
 
 ### 准备工作
 
-首先，你需要在你的系统上安装 VirtualBox，可从]这里][1]下载 windows 版本、macOS 版本或者各种 Linux 版本的 VitualBox。然后，你需要一个能在 x86 平台运行的 Andriod 镜像，因为 VirtualBox 为虚拟机提供运行 x86 或者 x86_64（包括 AMD64）平台的功能。
+首先，你需要在你的系统上安装 VirtualBox，可从[这里][1]下载 windows 版本、macOS 版本或者各种 Linux 版本的 VitualBox。然后，你需要一个能在 x86 平台运行的 Andriod 镜像，因为 VirtualBox 为虚拟机提供运行 x86 或者 x86_64（包括 AMD64）平台的功能。
 
 虽然大部分 Andriod 设备都在 ARM 上运行，但我们依然可以在 x86 平台上获得 [Andriod 项目帮助][2]。这些优秀的开发者已经将 Andriod 移植到 x86 平台上运行（包括实体机和虚拟机），我们可以下载最新版本的 Andriod 7.1。你也可以用之前更为稳定的版本，本文写作时最新稳定版是 Andriod 6.0。
 
