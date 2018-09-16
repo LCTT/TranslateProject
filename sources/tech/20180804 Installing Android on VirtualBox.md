@@ -1,3 +1,5 @@
+Translating by jrglinux!!!!!!
+
 Installing Android on VirtualBox
 ======
 If you are developing mobile apps Android can be a bit of a hassle. While iOS comes with its niceties, provided you are using macOS, Android comes with just Android Studio which is designed to support more than a few Android version, including wearables.
