@@ -1,3 +1,5 @@
+Translating by Ryze-Borgia
+
 Linux vs Mac: 7 Reasons Why Linux is a Better Choice than Mac
 ======
 Recently, we highlighted a few points about [why Linux is better than Windows][1]. Unquestionably, Linux is a superior platform. But, like other operating systems it has its drawbacks as well. For a very particular set of tasks (such as Gaming), Windows OS might prove to be better. And, likewise, for another set of tasks (such as video editing), a Mac-powered system might come in handy. It all trickles down to your preference and what you would like to do with your system. So, in this article, we will highlight a number of reasons why Linux is better than Mac.
