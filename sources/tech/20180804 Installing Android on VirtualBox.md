@@ -1,4 +1,4 @@
-Translating by jrglinux!!!!!!
+[Translating by jrglinux!!!!!!]
 
 Installing Android on VirtualBox
 ======
