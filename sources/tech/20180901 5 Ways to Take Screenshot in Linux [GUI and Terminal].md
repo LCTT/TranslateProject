@@ -1,3 +1,5 @@
+HankChow translating
+
 5 Ways to Take Screenshot in Linux [GUI and Terminal]
 ======
 Here are several ways you can take screenshots and edit the screenshots by adding text, arrows etc. Instructions and mentioned screenshot tools are valid for Ubuntu and other major Linux distributions.
