@@ -48,6 +48,7 @@ sub_target: sub_target.c
 目标并不要求是一个文件，也可以只是步骤的名字，就如我们的例子中一样。我们称之为“伪目标”。
 
 再回到上面的示例中，当 `make` 被执行时，整条指令 `echo "Hello World"` 都被显示出来，之后才是真正的执行结果。如果不希望指令本身被打印处理，需要在 `echo` 前添加 `@`。
+
 ```
 say_hello:
         @echo "Hello World"
