@@ -1,3 +1,6 @@
+Translating by z52527
+
+
 A Cat Clone With Syntax Highlighting And Git Integration
 ======
 
