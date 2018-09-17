@@ -1,5 +1,4 @@
-[sd886393]翻译中
-Getting started with the i3 window manager on Linux
+在Linux上使用 i3 作为窗口管理器的入门教程
 ======
 本篇文章会介绍如何在Fedora系统中，安装、配置、使用i3桌面管理器。
 
