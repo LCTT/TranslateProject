@@ -316,14 +316,14 @@ After typing `TAB`, you can use the arrow keys to navigate the options list and 
 
 There are many options available. The best way to find what is most helpful to you is by using it.
 
-zsh 还有更多有用的功能。只有当你用它，你才知道哪些对你才是最有用的。
+zsh 还有很多有用的功能。当你用它的时候，你就知道哪些对你才是最有用的。
 
 ### 5\. Command line editing and history
 ### 5\. 命令行编辑与历史记录
 
 Zsh's command line editing capabilities are also useful. By default, it emulates emacs. If, like me, you prefer vi/vim, enable vi bindings with the following command:
 
-Zsh 的命令行编辑功能也十分有效。默认条件下，他是模拟 emacs 编辑器的。如果你是跟我一样更喜欢用 vi/vim，你可以用以下命令启用 vi 的编辑绑定。
+Zsh 的命令行编辑功能也十分有效。默认条件下，他是模拟 emacs 编辑器的。如果你是跟我一样更喜欢用 vi/vim，你可以用以下命令启用 vi 编辑。
 
 ```
 $ bindkey -v
@@ -335,11 +335,11 @@ If you're using Oh My Zsh, the `vi-mode` plugin enables additional bindings and 
 
 After enabling vi bindings, you can edit the command line using vi commands. For example, press `ESC+/` to search the command line history. While searching, pressing `n` brings the next matching line, and `N` the previous one. Most common vi commands work after pressing `ESC` such as `0` to jump to the start of the line, `$` to jump to the end, `i` to insert, `a` to append, etc. Even commands followed by motion work, such as `cw` to change a word.
 
-当启用 vi 的绑定后，你可以再命令行中使用 vi 命令进行编辑。比如，输入 `ESC+/` 来查找命令行记录。在查找的时候，输入 `n` 来找下一个匹配行，输入 `N` 来找上一个。输入 `ESC` 后，最常用的 vi 命令有以下几个，如 输入 `0` 跳转到第一行， 输入 `$` 跳转到最后一行，输入 `i` 来插入文本， 输入 `a` 来追加文本等等，一些直接操作的命令也同样有效，比如输入 `cw` 来修改单词。 
+当启用 vi 的绑定后，你可以再命令行中使用 vi 命令进行编辑。比如，输入 `ESC+/` 来查找命令行记录。在查找的时候，输入 `n` 来找下一个匹配行，输入 `N` 来找上一个。输入 `ESC` 后，最常用的 vi 命令有以下几个，如输入 `0` 跳转到第一行，输入 `$` 跳转到最后一行，输入 `i` 来插入文本，输入 `a` 来追加文本等等，一些直接操作的命令也同样有效，比如输入 `cw` 来修改单词。
 
 In addition to command line editing, zsh provides several useful command line history features if you want to fix or re-execute previous used commands. For example, if you made a mistake, typing `fc` brings the last command in your favorite editor to fix it. It respects the `$EDITOR` variable and by default uses vi.
 
-除了命令行编辑，如果你想修改或重新执行之前使用过的命令，zsh 还提供几个常用的命令行历史功能。比如，你打错了一个命令，输入 `fc`，你可以在你喜欢的编辑中修复最后一条命令。这个是参照 `$EDITOR` 变量的，而默认是使用 vi。 
+除了命令行编辑，如果你想修改或重新执行之前使用过的命令，zsh 还提供几个常用的命令行历史功能。比如，你打错了一个命令，输入 `fc`，你可以在你偏好的编辑器中修复最后一条命令。使用哪个编辑是参照 `$EDITOR` 变量的，而默认是使用 vi。 
 
 Another useful command is `r`, which re-executes the last command; and `r <WORD>`, which executes the last command that contains the string `WORD`.
 
@@ -385,7 +385,7 @@ via: https://opensource.com/article/18/9/tips-productivity-zsh
 
 作者：[Ricardo Gerardi][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/tnuoccalanosrep)
+译者：[tnuoccalanosrep](https://github.com/tnuoccalanosrep)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
