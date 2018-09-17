@@ -1,9 +1,10 @@
 在Linux上使用 i3 作为窗口管理器的入门教程
 ======
+本篇文章会介绍如何在Fedora系统中，安装、配置、使用i3桌面管理器。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/windows-tiling-windows-wall.png?itok=mTH7uVrn)
 
-在我的文章[5 reasons the i3 window manager makes Linux better][1]，我分享了选择 [i3 window manager][2] 作为一种Linux桌面替代方案的最主要五个理由。
+在我的文章[i3 桌面让Linux更好的5个理由][1]，我分享了选择 [i3 桌面管理器][2] 作为一种Linux桌面替代方案的最主要五个理由。
 在本篇文章中，我将向大家展示，如何在 Fedora 28 上安装与配置 i3。
 
 ### 1\. 安装
