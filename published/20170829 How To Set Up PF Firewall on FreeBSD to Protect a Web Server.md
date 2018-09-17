@@ -3,13 +3,13 @@
 
 [![How To Set Up a Firewall with PF on FreeBSD to Protect a Web Server][1]][1]
 
-我是从 Linux 迁移过来的 FreeBSD 新用户，Linux 中使用的是 netfilter 防火墙框架（LCTT 译注：netfilter 是由 Rusty Russell 提出的 Linux 2.4 内核防火墙框架）。那么在 FreeBSD 上，我该如何设置 PF 防火墙，从而来保护只有一个公共 IP 地址和端口的 web 服务器呢？
+我是从 Linux 迁移过来的 FreeBSD 新用户，Linux 中使用的是 netfilter 防火墙框架（LCTT 译注：netfilter 是由 Rusty Russell 提出的 Linux 2.4 内核防火墙框架）。那么在 FreeBSD 上，我该如何设置 PF 防火墙，来保护只有一个公共 IP 地址和端口的 web 服务器呢？
 
-PF 是<ruby>包过滤器<rt>packet filter</rt></ruby>的简称。它是为 OpenBSD开发的，但是已经被移植到了 FreeBSD 以及其它操作系统上。PF 是一个状态包过滤引擎。在这篇教程中，我将向你展示如何在 FreeBSD 10.x 以及 11.x 中设置 PF 防火墙，从而来保护 web 服务器。
+PF 是<ruby>包过滤器<rt>packet filter</rt></ruby>的简称。它是为 OpenBSD 开发的，但是已经被移植到了 FreeBSD 以及其它操作系统上。PF 是一个包状态过滤引擎。在这篇教程中，我将向你展示如何在 FreeBSD 10.x 以及 11.x 中设置 PF 防火墙，从而来保护 web 服务器。
 
 ### 第一步：开启 PF 防火墙
 
-你需要把下面这几行内容添加到文件 “/etc/rc.conf” 文件中：
+你需要把下面这几行内容添加到文件 `/etc/rc.conf` 文件中：
 
 ```
 # echo 'pf_enable="YES"' >> /etc/rc.conf
@@ -17,20 +17,22 @@ PF 是<ruby>包过滤器<rt>packet filter</rt></ruby>的简称。它是为 OpenB
 # echo 'pflog_enable="YES"' >> /etc/rc.conf
 # echo 'pflog_logfile="/var/log/pflog"' >> /etc/rc.conf
 ```
+
 在这里：
 
-  1.  **pf_enable="YES"** - 开启 PF 服务
-  2.  **pf_rules="/usr/local/etc/pf.conf"** - 从文件 “/usr/local/etc/pf.conf” 中读取 PF 规则
-  3.  **pflog_enable="YES"** - 为 PF 服务打开日志支持
-  4.  **pflog_logfile="/var/log/pflog"** - 存储日志的文件，即日志存于文件 “/var/log/pflog” 中
+  1.  `pf_enable="YES"` - 开启 PF 服务
+  2.  `pf_rules="/usr/local/etc/pf.conf"` - 从文件 `/usr/local/etc/pf.conf` 中读取 PF 规则
+  3.  `pflog_enable="YES"` - 为 PF 服务打开日志支持
+  4.  `pflog_logfile="/var/log/pflog"` - 存储日志的文件，即日志存于文件 `/var/log/pflog` 中
 
-### 第二步：在 “/usr/local/etc/pf.conf” 文件中创建防火墙规则
+### 第二步：在 `/usr/local/etc/pf.conf` 文件中创建防火墙规则
 
 输入下面这个命令打开文件（超级用户模式下）：
 
 ```
 # vi /usr/local/etc/pf.conf
 ```
+
 在文件中添加下面这些 PF 规则集：
 
 ```
@@ -98,35 +100,56 @@ pass out quick on $ext_if proto udp to any port $int_udp_services
 
 保存并关闭文件。欢迎来参考我的[规则集][2]。如果要检查语法错误，可以运行：
 
-`# service pf check`
+```
+# service pf check
+```
+
 或
-`/etc/rc.d/pf check`
+
+```
+/etc/rc.d/pf check
+```
+
 或
-`# pfctl -n -f /usr/local/etc/pf.conf `
+
+```
+# pfctl -n -f /usr/local/etc/pf.conf
+```
 
 ### 第三步：开始运行 PF 防火墙
 
 命令如下。请小心，如果是基于 SSH 的会话，你可能会和服务器断开连接。
 
-*开启 PF 防火墙：*
+#### 开启 PF 防火墙：
 
-`# service pf start`
+```
+# service pf start
+```
 
-*停用 PF 防火墙：*
+#### 停用 PF 防火墙：
 
-`# service pf stop`
+```
+# service pf stop
+```
 
-*检查语法错误：*
+#### 检查语法错误：
 
-`# service pf check`
+```
+# service pf check
+```
 
-*重启服务：*
+#### 重启服务：
 
-`# service pf restart`
+```
+# service pf restart
+```
 
-*查看 PF 状态：*
+#### 查看 PF 状态：
 
-`# service pf status`
+```
+# service pf status
+```
+
 示例输出：
 
 ```
@@ -168,7 +191,8 @@ Counters
 
 #### 开启/关闭/重启 pflog 服务的命令
 
-输入下面这些命令
+输入下面这些命令：
+
 ```
 # service pflog start
 # service pflog stop
@@ -181,7 +205,10 @@ Counters
 
 #### 显示 PF 规则信息
 
-`# pfctl -s rules`
+```
+# pfctl -s rules
+```
+
 示例输出：
 
 ```
@@ -204,11 +231,15 @@ pass out quick on vtnet0 proto udp from any to any port = ntp keep state
 
 #### 显示每条规则的详细内容
 
-`# pfctl -v -s rules`
+```
+# pfctl -v -s rules
+```
 
 在每条规则的详细输出中添加规则编号：
 
-`# pfctl -vvsr show`
+```
+# pfctl -vvsr show
+```
 
 #### 显示状态信息
 
@@ -220,15 +251,22 @@ pass out quick on vtnet0 proto udp from any to any port = ntp keep state
 
 #### 如何在命令行中禁止 PF 服务
 
-`# pfctl -d `
+```
+# pfctl -d
+```
 
 #### 如何在命令行中启用 PF 服务
 
-`# pfctl -e `
+```
+# pfctl -e
+```
 
 #### 如何在命令行中刷新 PF 规则/NAT/路由表
 
-`# pfctl -F all`
+```
+# pfctl -F all
+```
+
 示例输出：
 
 ```
@@ -243,25 +281,36 @@ pf: interface flags reset
 
 #### 如何在命令行中仅刷新 PF 规则
 
-`# pfctl -F rules `
+```
+# pfctl -F rules
+```
 
 #### 如何在命令行中仅刷新队列
 
-`# pfctl -F queue `
+```
+# pfctl -F queue
+```
 
 #### 如何在命令行中刷新统计信息（它不是任何规则的一部分）
 
-`# pfctl -F info`
+```
+# pfctl -F info
+```
 
 #### 如何在命令行中清除所有计数器
 
-`# pfctl -z clear `
+```
+# pfctl -z clear
+```
 
 ### 第五步：查看 PF 日志
 
 PF 日志是二进制格式的。使用下面这一命令来查看：
 
-`# tcpdump -n -e -ttt -r /var/log/pflog`
+```
+# tcpdump -n -e -ttt -r /var/log/pflog
+```
+
 示例输出：
 
 ```
@@ -305,7 +354,10 @@ Aug 29 16:01:36.990050 rule 0/(match) block in on vio0: 182.18.8.28.23299 > 45.F
 ```
 
 如果要查看实时日志，可以运行：
-`# tcpdump -n -e -ttt -i pflog0`
+
+```
+# tcpdump -n -e -ttt -i pflog0
+```
 
 如果你想了解更多信息，可以访问 [PF FAQ][3] 和 [FreeBSD HANDBOOK][4] 以及下面这些 man 页面：
 
@@ -325,7 +377,7 @@ via: https://www.cyberciti.biz/faq/how-to-set-up-a-firewall-with-pf-on-freebsd-t
 
 作者：[Vivek Gite][a]
 译者：[ucasFL](https://github.com/ucasFL)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
