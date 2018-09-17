@@ -241,7 +241,7 @@ Zsh 强大的补全系统是它其中一个卖点。为了简便起见，我称�
 
 Command completion is enabled by default with Oh My Zsh. To enable it, add the following lines to your `.zshrc` file:
 
-
+在 Oh My Zsh 中，命令补全是默认可用的。要启用它，你只要在 `.zshrc` 文件中添加以下命令：
 ```
 autoload -U compinit
 compinit
@@ -249,15 +249,26 @@ compinit
 
 Zsh's completion system is smart. It tries to suggest only items that can be used in certain contexts—for example, if you type `cd` and `TAB`, zsh suggests only directory names as it knows `cd` does not work with anything else.
 
+Zsh 的补全系统非常智能。他会根据当前上下文来进行命令的提示——比如，你输入了 `cd` 和 `TAB`，zsh 只会为你提示目录名，因为它知道
+当前的 `cd` 没有任何作用。
+
 Conversely, it suggests usernames when running user-related commands or hostnames when using `ssh` or `ping`, for example.
 
+反之，如果你使用 `ssh` 或者 `ping` 这类与用户或者主机相关的命令， zsh 便会提示用户名。
+
 It has a vast completion library and understands many different commands. For example, if you're using the `tar` command, you can press Tab to see a list of files available in the package as candidates for extraction:
+
+`zsh` 拥有一个巨大而又完整的库，因此它能识别许多不同的命令。比如，如果你使用 `tar` 命令， 你可以按 Tab 键，他会为你展示一个可以用于解压的文件列表:
+
 ```
 $ tar -xzvf test1.tar.gz test1/file1 (TAB)
 file1 file2
 ```
 
 Here's a more advanced example, using `git`. In this example, when typing `TAB`, zsh automatically completes the name of the only file in the repository that can be staged:
+
+如果使用 `git` 的话，这里有个更高级的示例。在这个示例中，当你按 `TAB` 键， zsh 会自动补全当前库可以操作的文件：
+
 ```
 $ ls
 original  plan.txt  zsh-5tips.md  zsh_theme_small.png
@@ -277,6 +288,8 @@ $ git add zsh-5tips.md
 ```
 
 It also understands command line options and suggests only the ones that are relevant to the subcommand selected:
+
+zsh 还能识别命令行选项，同时他只会提示与选中子命令相关的命令列表：
 ```
 $ git commit - (TAB)
 --all                  -a       -- stage all modified and deleted paths
@@ -299,24 +312,43 @@ $ git commit - (TAB)
 
 After typing `TAB`, you can use the arrow keys to navigate the options list and select the one you need. Now you don't need to memorize all those Git options.
 
+在按 `TAB` 键之后，你可以使用方向键来选择你想用的命令。现在你就不用记住所有的 Git 命令项了。
+
 There are many options available. The best way to find what is most helpful to you is by using it.
 
+zsh 还有更多有用的功能。只有当你用它，你才知道哪些对你才是最有用的。
+
 ### 5\. Command line editing and history
+### 5\. 命令行编辑与历史记录
 
 Zsh's command line editing capabilities are also useful. By default, it emulates emacs. If, like me, you prefer vi/vim, enable vi bindings with the following command:
+
+Zsh 的命令行编辑功能也十分有效。默认条件下，他是模拟 emacs 编辑器的。如果你是跟我一样更喜欢用 vi/vim，你可以用以下命令启用 vi 的编辑绑定。
+
 ```
 $ bindkey -v
 ```
 
 If you're using Oh My Zsh, the `vi-mode` plugin enables additional bindings and a mode indicator on your prompt—very useful.
 
+如果你使用 Oh My Zsh，`vi-mode` 插件可以启用额外的绑定，同时会在你的命令提示符上增加 vi 的模式提示--这个非常有用。
+
 After enabling vi bindings, you can edit the command line using vi commands. For example, press `ESC+/` to search the command line history. While searching, pressing `n` brings the next matching line, and `N` the previous one. Most common vi commands work after pressing `ESC` such as `0` to jump to the start of the line, `$` to jump to the end, `i` to insert, `a` to append, etc. Even commands followed by motion work, such as `cw` to change a word.
+
+当启用 vi 的绑定后，你可以再命令行中使用 vi 命令进行编辑。比如，输入 `ESC+/` 来查找命令行记录。在查找的时候，输入 `n` 来找下一个匹配行，输入 `N` 来找上一个。输入 `ESC` 后，最常用的 vi 命令有以下几个，如 输入 `0` 跳转到第一行， 输入 `$` 跳转到最后一行，输入 `i` 来插入文本， 输入 `a` 来追加文本等等，一些直接操作的命令也同样有效，比如输入 `cw` 来修改单词。 
 
 In addition to command line editing, zsh provides several useful command line history features if you want to fix or re-execute previous used commands. For example, if you made a mistake, typing `fc` brings the last command in your favorite editor to fix it. It respects the `$EDITOR` variable and by default uses vi.
 
+除了命令行编辑，如果你想修改或重新执行之前使用过的命令，zsh 还提供几个常用的命令行历史功能。比如，你打错了一个命令，输入 `fc`，你可以在你喜欢的编辑中修复最后一条命令。这个是参照 `$EDITOR` 变量的，而默认是使用 vi。 
+
 Another useful command is `r`, which re-executes the last command; and `r <WORD>`, which executes the last command that contains the string `WORD`.
 
+另外一个有用的命令是 `r`， 他会重新执行上一条命令；而 `r <WORD>` 则会执行上一条包含 `WORD` 的命令。
+
 Finally, typing double bangs (`!!`) brings back the last command anywhere in the line. This is useful, for instance, if you forgot to type `sudo` to execute commands that require elevated privileges:
+
+最后，输入两个感叹号( `!!` )，可以在命令行中回溯最后一条命令。这个十分有用，比如，当你忘记使用 `sudo` 去执行需要权限的命令时：
+
 ```
 $ less /var/log/dnf.log
 /var/log/dnf.log: Permission denied
@@ -326,9 +358,14 @@ $ sudo less /var/log/dnf.log
 
 These features make it easier to find and re-use previously typed commands.
 
+这个功能让查找并且重新执行之前命令的操作更加方便。
+
 ### Where to go from here?
+### 何去何从？
 
 These are just a few of the zsh features that can make you more productive; there are many more. For additional information, consult the following resources:
+
+这里仅仅介绍了几个可以让你提高生产率的 zsh 特性；其实还有更多功能带你发掘；想知道更多的信息，你可以访问以下的资源
 
 [An Introduction to the Z Shell][9]
 
@@ -339,6 +376,8 @@ These are just a few of the zsh features that can make you more productive; ther
 [zsh-lovers][12]
 
 Do you have any zsh productivity tips to share? I would love to hear about them in the comments below.
+
+你有使用 zsh 提高生产力的tips可以分享吗？我（作者）很乐意在下方评论看到它们。
 
 --------------------------------------------------------------------------------
 
