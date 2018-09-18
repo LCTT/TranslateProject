@@ -1,13 +1,18 @@
 20 questions DevOps job candidates should be prepared to answer
+DevOps应聘者应该准备回答的20个问题
 ======
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/hire-job-career.png?itok=SrZo0QJ3)
 Hiring the wrong person is [expensive][1]. Recruiting, hiring, and onboarding a new employee can cost a company as much as $240,000, according to Jörgen Sundberg, CEO of Link Humans. When you make the wrong hire:
-
+聘请一个错误的人代价是很高的。根据Link人力资源的首席执行官Jörgen Sundberg的统计，招聘，雇佣一名新员工将会花费公司$240,000之多，当你进行了一次错误的招聘：
   * You lose what they know.
+  * 你失去了他们所知道的。
   * You lose who they know.
+  * 你失去了他们认识的人
   * Your team could go into the [storming][2] phase of group development.
+  * 你的团队将可能进入到一个组织发展的震荡阶段
   * Your company risks disorganization.
+  * 你的公司将会面临组织破裂的风险
 
 
 
