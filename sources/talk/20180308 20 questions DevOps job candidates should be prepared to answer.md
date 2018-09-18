@@ -17,16 +17,18 @@ Hiring the wrong person is [expensive][1]. Recruiting, hiring, and onboarding a 
 
 
 When you lose an employee, you lose a piece of the fabric of the company. It's also worth mentioning the pain on the other end. The person hired into the wrong job may experience stress, feelings of overall dissatisfaction, and even health issues.
-
+当你失去一名员工的时候，你就像丢失了公司图谱中的一块。同样值得一提的是另一端的疼痛。应聘到一个错误工作岗位的员工会感受到很大的压力以及整个身心的不满意，甚至是健康问题。
 On the other hand, when you get it right, your new hire will:
-
+另外一方面，当你招聘到合适的人时，新的员工将会：
   * Enhance the existing culture, making your organization an even a better place to work. Studies show that a positive work culture helps [drive long-term financial performance][3] and that if you work in a happy environment, you’re more likely to do better in life.
+  * 丰富公司现有的文化，使你的组织成为一个更好的工作场所。研究表明一个积极的工作文化能够帮助驱动一个更长久的财务业绩，而且如果你在一个欢快的环境中工作，你更有可能在生活中做的更好。
   * Love working with your organization. When people love what they do, they tend to do it well.
+  * 热爱和你的组织在一起工作。当人们热爱他们所在做的，他们会趋向于做的更好。
 
 
 
 Hiring to fit or enhance your existing culture is essential in DevOps and agile teams. That means hiring someone who can encourage effective collaboration so that individual contributors from varying backgrounds, and teams with different goals and working styles, can work together productively. Your new hire should help teams collaborate to maximize their value while also increasing employee satisfaction and balancing conflicting organizational goals. He or she should be able to choose tools and workflows wisely to complement your organization. Culture is everything.
-
+招聘适合的或者加强现有的文化在DevOps和敏捷团多中是必不可少的。也就是说雇佣到一个能够鼓励积极合作的人，以便来自不同背景，有着不同目标和工作方式的团队能够在一起有效的工作。你新雇佣的员工因应该能够帮助团队合作来充分发挥放大他们的价值同时也能够增加员工的满意度以及平衡组织目标的冲突。他或者她应该能够通过明智的选择工具和工作流来补足你的组织，文化就是一切。
 As a follow-up to our November 2017 post, [20 questions DevOps hiring managers should be prepared to answer][4], this article will focus on how to hire for the best mutual fit.
 
 ### Why hiring goes wrong
