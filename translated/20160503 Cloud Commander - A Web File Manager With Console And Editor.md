@@ -1,4 +1,4 @@
-Cloud Commander – 一个有控制台和编辑器在Web 上的文件管家
+Cloud Commander – 一个有控制台和编辑器在 Web 上的文件管家
 ======
 
 ![](https://www.ostechnix.com/wp-content/uploads/2016/05/Cloud-Commander-A-Web-File-Manager-With-Console-And-Editor-720x340.png)
