@@ -1,5 +1,3 @@
-fuzheng1998 translating
-======
 Cloud Commander – 一个有控制台和编辑器在Web 上的文件管家
 ======
 
