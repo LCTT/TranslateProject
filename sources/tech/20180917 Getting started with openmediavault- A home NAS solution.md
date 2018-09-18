@@ -1,3 +1,4 @@
+[translating by jamelouis]
 Getting started with openmediavault: A home NAS solution
 ======
 This network-attached file server offers a solid array of features and is easy to install and configure.
