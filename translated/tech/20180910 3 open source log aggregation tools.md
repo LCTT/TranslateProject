@@ -1,4 +1,4 @@
-heguangzhi  Translating
+
 
 
 3个开源日志聚合工具
@@ -86,7 +86,7 @@ via: https://opensource.com/article/18/9/open-source-log-aggregation-tools
 
 作者：[Dan Barker][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[heguangzhi](https://github.com/heguangzhi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -115,3 +115,4 @@ via: https://opensource.com/article/18/9/open-source-log-aggregation-tools
 [21]: https://aws.amazon.com/blogs/aws/all-your-data-fluentd/
 [22]: https://cloud.google.com/logging/docs/agent/
 [23]: https://opensource.com/resources/what-is-kubernetes
+
