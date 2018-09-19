@@ -1,4 +1,4 @@
-Trash-Cli : Linux 上的命令行回收站工具
+Trash-Cli：Linux 上的命令行回收站工具
 ======
 
 相信每个人都对<ruby>回收站<rt>trashcan</rt></ruby>很熟悉，因为无论是对 Linux 用户，还是 Windows 用户，或者 Mac 用户来说，它都很常见。当你删除一个文件或目录的时候，该文件或目录会被移动到回收站中。
@@ -33,31 +33,27 @@ $ sudo apt install trash-cli
 
 ```
 $ sudo yum install trash-cli
-
 ```
 
 对于 Fedora 用户，使用 [dnf][6] 命令来安装 Trash-Cli： 
 
 ```
 $ sudo dnf install trash-cli
-
 ```
 
 对于 Arch Linux 用户，使用 [pacman][7] 命令来安装 Trash-Cli：
 
 ```
 $ sudo pacman -S trash-cli
-
 ```
 
 对于 openSUSE 用户，使用 [zypper][8] 命令来安装 Trash-Cli：
 
 ```
 $ sudo zypper in trash-cli
-
 ```
 
-如果你的发行版中没有提供 Trash-Cli 的安装包，那么你也可以使用 pip 来安装。为了能够安装 python 包，你的系统中应该会有 pip 包管理器。
+如果你的发行版中没有提供 Trash-Cli 的安装包，那么你也可以使用 `pip` 来安装。为了能够安装 python 包，你的系统中应该会有 `pip` 包管理器。
 
 ```
 $ sudo pip install trash-cli
@@ -66,7 +62,6 @@ Collecting trash-cli
 Installing collected packages: trash-cli
  Running setup.py bdist_wheel for trash-cli ... done
 Successfully installed trash-cli-0.17.1.14
-
 ```
 
 ### 如何使用 Trash-Cli
@@ -81,7 +76,7 @@ Trash-Cli 的使用不难，因为它提供了一个很简单的语法。Trash-C
 
 下面，让我们通过一些例子来试验一下。
 
-1)删除文件和目录：在这个例子中，我们通过运行下面这个命令，将 2g.txt 这一文件和 magi 这一文件夹移动到回收站中。
+1) 删除文件和目录：在这个例子中，我们通过运行下面这个命令，将 `2g.txt` 这一文件和 `magi` 这一文件夹移动到回收站中。
 
 ```
 $ trash-put 2g.txt magi
@@ -89,7 +84,7 @@ $ trash-put 2g.txt magi
 
 和你在文件管理器中看到的一样。
 
-2)列出被删除了的文件和目录：为了查看被删除了的文件和目录，你需要运行下面这个命令。之后，你可以在输出中看到被删除文件和目录的详细信息，比如名字、删除日期和时间，以及文件路径。
+2) 列出被删除了的文件和目录：为了查看被删除了的文件和目录，你需要运行下面这个命令。之后，你可以在输出中看到被删除文件和目录的详细信息，比如名字、删除日期和时间，以及文件路径。
 
 ```
 $ trash-list
@@ -97,7 +92,7 @@ $ trash-list
 2017-10-01 01:40:50 /home/magi/magi/magi
 ```
 
-3)从回收站中恢复文件或目录：任何时候，你都可以通过运行下面这个命令来恢复文件和目录。它将会询问你来选择你想要恢复的文件或目录。在这个例子中，我打算恢复 2g.txt 文件，所以我的选择是 0 。
+3) 从回收站中恢复文件或目录：任何时候，你都可以通过运行下面这个命令来恢复文件和目录。它将会询问你来选择你想要恢复的文件或目录。在这个例子中，我打算恢复 `2g.txt` 文件，所以我的选择是 `0` 。
 
 ```
 $ trash-restore
@@ -106,7 +101,7 @@ $ trash-restore
 What file to restore [0..1]: 0
 ```
 
-4)从回收站中删除文件：如果你想删除回收站中的特定文件，那么可以运行下面这个命令。在这个例子中，我将删除 magi 目录。
+4) 从回收站中删除文件：如果你想删除回收站中的特定文件，那么可以运行下面这个命令。在这个例子中，我将删除 `magi` 目录。
 
 ```
 $ trash-rm magi
@@ -118,11 +113,10 @@ $ trash-rm magi
 $ trash-empty
 ```
 
-6)删除超过 X 天的垃圾文件：或者，你可以通过运行下面这个命令来删除回收站中超过 X 天的文件。在这个例子中，我将删除回收站中超过 10 天的项目。
+6)删除超过 X 天的垃圾文件：或者，你可以通过运行下面这个命令来删除回收站中超过 X 天的文件。在这个例子中，我将删除回收站中超过 `10` 天的项目。
 
 ```
 $ trash-empty 10
-
 ```
 
 Trash-Cli 可以工作的很好，但是如果你想尝试它的一些替代品，那么你也可以试一试 [gvfs-trash][9] 和 [autotrash][10] 。
@@ -133,7 +127,7 @@ via: https://www.2daygeek.com/trash-cli-command-line-trashcan-linux-system/
 
 作者：[2daygeek][a]
 译者：[ucasFL](https://github.com/ucasFL)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
