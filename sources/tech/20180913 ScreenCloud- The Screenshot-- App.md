@@ -1,3 +1,5 @@
+translating---geekpi
+
 ScreenCloud: The Screenshot++ App
 ======
 [ScreenCloud][1] is an amazing little app, that you don’t even know you need. The default screenshot procedure on desktop Linux is great (Prt Scr Button) and we even have some[powerful screenshot utilities][2]like [Shutter][3]. But ScreenCloud brings one more really simple yet really convenient feature that I just fell in love with. But before we get into it, let’s catch a little backstory.
