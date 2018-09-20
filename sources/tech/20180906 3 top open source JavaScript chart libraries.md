@@ -1,3 +1,5 @@
+BriFuture is translating
+
 3 top open source JavaScript chart libraries
 ======
 
