@@ -30,33 +30,41 @@ On the other hand, when you get it right, your new hire will:
 Hiring to fit or enhance your existing culture is essential in DevOps and agile teams. That means hiring someone who can encourage effective collaboration so that individual contributors from varying backgrounds, and teams with different goals and working styles, can work together productively. Your new hire should help teams collaborate to maximize their value while also increasing employee satisfaction and balancing conflicting organizational goals. He or she should be able to choose tools and workflows wisely to complement your organization. Culture is everything.
 招聘适合的或者加强现有的文化在DevOps和敏捷团多中是必不可少的。也就是说雇佣到一个能够鼓励积极合作的人，以便来自不同背景，有着不同目标和工作方式的团队能够在一起有效的工作。你新雇佣的员工因应该能够帮助团队合作来充分发挥放大他们的价值同时也能够增加员工的满意度以及平衡组织目标的冲突。他或者她应该能够通过明智的选择工具和工作流来补足你的组织，文化就是一切。
 As a follow-up to our November 2017 post, [20 questions DevOps hiring managers should be prepared to answer][4], this article will focus on how to hire for the best mutual fit.
-
+作为我们2017年11月发布的一篇文章，[DevOps的招聘经理应该准备回答的20个问题][4],这篇文章将会重点关注在如何招聘最适合的人。
 ### Why hiring goes wrong
-
+### 为什么招聘走错了方向
 The typical hiring strategy many companies use today is based on a talent surplus:
+很多公司现在在用的典型的雇佣策略是基于才能盈余的基础上：
 
   * Post on job boards.
+  * 职位公告栏。
   * Focus on candidates with the skills they need.
+  * 关注和所需才能符合的应聘者。
   * Find as many candidates as possible.
+  * 尽可能找多的候选者。
   * Interview to weed out the weak.
+  * 通过面试淘汰弱者。
   * Conduct formal interviews to do more weeding.
+  * 通过正式的面试淘汰更多的弱者。
   * Assess, vote, and select.
+  * 评估，投票，选择。
   * Close on compensation.
+  * 渐渐接近补偿。
 
 ![](https://opensource.com/sites/default/files/styles/panopoly_image_original/public/images/life-uploads/hiring_graphic.png?itok=1udGbkhB)
 
 Job boards were invented during the Great Depression when millions of people were out of work and there was a talent surplus. There is no talent surplus in today's job market, yet we’re still using a hiring strategy that's based on one.
-
+职位公告栏是有成千上万失业者人才过剩的经济大萧条时期发明的。在今天的求职市场上已经没有人才过剩了，然而我们仍然在使用基于此的招聘策略。
 ![](https://opensource.com/sites/default/files/styles/panopoly_image_original/public/images/life-uploads/732px-unemployed_men_queued_outside_a_depression_soup_kitchen_opened_in_chicago_by_al_capone_02-1931_-_nara_-_541927.jpg?itok=HSs4NjCN)
 
 ### Hire for mutual fit: Use culture and emotions
-
+### 雇佣最合适的人员：运用文化和情感
 The idea behind the talent surplus hiring strategy is to design jobs and then slot people into them.
-
+在人才过剩雇佣策略背后的思想是去设计工作岗位然后将人员安排进去。
 Instead, do the opposite: Find talented people who will positively add to your business culture, then find the best fit for them in a job they’ll love. To do this, you must be open to creating jobs around their passions.
-
+相反，做相反的事情：寻找将会积极融入你的商业文化的人才，然后为他们寻找他们热爱的最合适的岗位。要想如此实现，你必须能够围绕他们热情为他们创造工作岗位。
 **Who is looking for a job?** According to a 2016 survey of more than 50,000 U.S. developers, [85.7% of respondents][5] were either not interested in new opportunities or were not actively looking for them. And of those who were looking, a whopping [28.3% of job discoveries][5] came from referrals by friends. If you’re searching only for people who are looking for jobs, you’re missing out on top talent.
-
+**谁正在寻找一份工作？** 根据一份2016年对美国50，000名开发者的调查显示，[85.7%的受访对象][5]要么对新的机会不感兴趣，要么对于寻找新工作没有积极性。在寻找工作的那部分中，有将近[28.3%的求职者][5]来自于朋友的推荐。如果你只是在那些在找工作的人中寻找人才，你将会错过高端的人才。
 **Use your team to find and vet potential recruits**. For example, if Diane is a developer on your team, chances are she has [been coding for years][6] and has met fellow developers along the way who also love what they do. Wouldn’t you think her chances of vetting potential recruits for skills, knowledge, and intelligence would be higher than having someone from HR find and vet potential recruits? And before asking Diane to share her knowledge of fellow recruits, inform her of the upcoming mission, explain your desire to hire a diverse team of passionate explorers, and describe some of the areas where help will be needed in the future.
 
 **What do employees want?** A comprehensive study comparing the wants and needs of Millennials, GenX’ers, and Baby Boomers shows that within two percentage points, we all [want the same things][7]:
