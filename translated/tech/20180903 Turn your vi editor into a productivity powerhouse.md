@@ -1,5 +1,3 @@
-
-
 增强 Vim 编辑器，提高编辑效率
 ======
 
@@ -27,11 +25,11 @@
 
   * 首先，[安装 gvim][1]
   * 打开 `gvim`
-  * 单击 `编辑` -> `启动设置`，打开 `.vimrc` 文件
-  * 复制本文最后的 `选项列表` 粘贴到 `.vimrc` 文件
+  * 单击 `编辑` -> `启动设置`，打开 `_vimrc` 文件
+  * 复制本文最后的 `选项列表` 粘贴到 `_vimrc` 文件
   * 单击 `文件` -> `保存`
 
-译者注：此处应注意不要使用 `Windows` 自带的记事本编辑该 `.vimrc` 文件。
+译者注：此处应注意不要使用 `Windows` 自带的记事本编辑该 `_vimrc` 文件。
 
 下面，我们将深入研究提高 `Vim` 编辑效率的选项。主要分为以下几类：
 
@@ -348,7 +346,7 @@ via: https://opensource.com/article/18/9/vi-editor-productivity-powerhouse
 作者：[Girish Managoli][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[idea2act](https://github.com/idea2act)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[apemost](https://github.com/apemost)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
