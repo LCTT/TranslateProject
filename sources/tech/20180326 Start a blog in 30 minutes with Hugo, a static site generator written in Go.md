@@ -1,3 +1,6 @@
+【翻译中】translating by jrglinux!
+
+
 Start a blog in 30 minutes with Hugo, a static site generator written in Go
 ======
 

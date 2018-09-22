@@ -1,35 +1,36 @@
 增强 Vim 编辑器，提高编辑效率
 ======
+> 这 20 多个有用的命令可以增强你使用 Vi 的体验。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/checklist_hands_team_collaboration.png?itok=u82QepPk)
 
-编者注：标题和文章最初提到的 `vi` 编辑器，现已更新为编辑器的正确名称：`Vim`。
+*编者注：标题和文章最初称呼的 `vi` 编辑器，现已更新为编辑器的正确名称：`Vim`。*
 
 `Vim` 作为一款功能强大、选项丰富的编辑器，为许多用户所热爱。本文介绍了一些在 `Vim` 中默认未启用但实际非常有用的选项。虽然可以在每个 `Vim` 会话中单独启用，但为了创建一个开箱即用的高效编辑环境，还是建议在 `Vim` 的配置文件中配置这些命令。
 
-## 开始前的准备
+### 开始前的准备
 
 这里所说的选项或配置均位于用户主目录中的 `Vim` 启动配置文件 `.vimrc`。 按照下面的说明在 `.vimrc` 中设置选项：
 
 （注意：`vimrc` 文件也用于 `Linux` 中的全局配置，如 `/etc/vimrc` 或 `/etc/vim/vimrc`。本文所说的 `.vimrc` 均是指位于用户主目录中的 `.vimrc` 文件。）
 
-`Linux` 系统中：
+Linux 系统中：
 
   * 用 `Vim` 打开 `.vimrc` 文件： `vim ~/.vimrc`
   * 复制本文最后的 `选项列表` 粘贴到 `.vimrc` 文件
   * 保存并关闭 (`:wq`)
 
-译者注：此处不建议使用 `Vim` 编辑 `.vimrc` 文件，因为很可能无法粘贴成功，可以选择 `gedit` 编辑器编辑 `.vimrc` 文件。
+（LCTT 译注：此处不建议使用 `Vim` 编辑 `.vimrc` 文件，因为很可能无法粘贴成功，可以选择 `gedit` 编辑器编辑 `.vimrc` 文件。）
 
-`Windows` 系统中：
+Windows 系统中：
 
   * 首先，[安装 gvim][1]
   * 打开 `gvim`
-  * 单击 `编辑` -> `启动设置`，打开 `_vimrc` 文件
-  * 复制本文最后的 `选项列表` 粘贴到 `_vimrc` 文件
-  * 单击 `文件` -> `保存`
+  * 单击 “编辑” -> “启动设置”，打开 `_vimrc` 文件
+  * 复制本文最后的 “选项列表” 粘贴到 `_vimrc` 文件
+  * 单击 “文件” -> “保存”
 
-译者注：此处应注意不要使用 `Windows` 自带的记事本编辑该 `_vimrc` 文件。
+（LCTT 译注：此处应注意不要使用 `Windows` 自带的记事本编辑该 `_vimrc` 文件，否则可能会因为行结束符不同而导致问题。）
 
 下面，我们将深入研究提高 `Vim` 编辑效率的选项。主要分为以下几类：
 
@@ -40,7 +41,7 @@
   5. 拼写
   6. 其他选项
 
-## 1. 缩进 & 制表符
+### 1. 缩进 & 制表符
 
 使 `Vim` 在创建新行的时候使用与上一行同样的缩进：
 
@@ -56,7 +57,7 @@ set smartindent
 
 注意：`Vim` 具有语言感知功能，且其默认设置可以基于文件中的编程语言来改变配置以提高效率。有许多默认的配置选项，包括 `axs cindent`，`cinoptions`，`indentexpr` 等，没有在这里说明。 `syn` 是一个非常有用的命令，用于设置文件的语法以更改显示模式。
 
-译者注：这里的 `syn` 是指 `syntax`，可用于设置文件所用的编程语言，开启对应的语法高亮，以及执行自动事件 (`autocmd`)。
+（LCTT 译注：这里的 `syn` 是指 `syntax`，可用于设置文件所用的编程语言，开启对应的语法高亮，以及执行自动事件 (`autocmd`)。）
 
 设置文件里的制表符 `(TAB)` 的宽度（以空格的数量表示）：
 
@@ -78,7 +79,7 @@ set expandtab
 
 注意：这可能会导致依赖于制表符的 `Python` 等编程语言出现问题。这时，你可以根据文件类型设置该选项（请参考 `autocmd`）。
 
-## 2. 显示 & 格式化
+### 2. 显示 & 格式化
 
 要在每行的前面显示行号：
 
@@ -100,9 +101,9 @@ set textwidth=80
 set wrapmargin=2
 ```
 
-译者注：如果 `textwidth` 选项不等于零，本选项无效。
+（LCTT 译注：如果 `textwidth` 选项不等于零，本选项无效。)
 
-插入括号时，短暂地跳转到匹配的括号：
+当光标遍历文件时经过括号时，高亮标识匹配的括号：
 
 ```vim
 set showmatch
@@ -110,7 +111,7 @@ set showmatch
 
 ![](https://opensource.com/sites/default/files/uploads/picture02-03.jpg)
 
-## 3. 搜索
+### 3. 搜索
 
 高亮搜索内容的所有匹配位置：
 
@@ -142,20 +143,22 @@ set smartcase
 
 例如，如果文件内容是：
 
-> test\
-> Test
+```
+test
+Test
+```
 
 当打开 `ignorecase` 和 `smartcase` 选项时，搜索 `test` 时的突出显示：
 
-> <font color=yellow>test</font>\
+> <font color=yellow>test</font>
 > <font color=yellow>Test</font>
 
 搜索 `Test` 时的突出显示：
 
-> test\
+> test
 > <font color=yellow>Test</font>
 
-## 4. 浏览 & 滚动
+### 4. 浏览 & 滚动
 
 为获得更好的视觉体验，你可能希望将光标放在窗口中间而不是第一行，以下选项使光标距窗口上下保留 5 行。
 
@@ -163,7 +166,7 @@ set smartcase
 set scrolloff=5
 ```
 
-一个例子:
+一个例子：
 
 第一张图中 `scrolloff=0`，第二张图中 `scrolloff=5`。
 
@@ -179,7 +182,7 @@ set laststatus=2
 
 ![](https://opensource.com/sites/default/files/picture08.png)
 
-## 5. 拼写
+### 5. 拼写
 
 `Vim` 有一个内置的拼写检查器，对于文本编辑和编码非常有用。`Vim` 可以识别文件类型并仅对代码中的注释进行拼写检查。使用下面的选项打开英语拼写检查：
 
@@ -187,9 +190,9 @@ set laststatus=2
 set spell spelllang=en_us
 ```
 
-译者注：中文、日文或其它东亚语字符通常会在打开拼写检查时被标为拼写错误，因为拼写检查不支持这些语种，可以在 `spelllang` 选项中加入 `cjk` 来忽略这些错误标注。
+（LCTT 译注：中文、日文或其它东亚语字符通常会在打开拼写检查时被标为拼写错误，因为拼写检查不支持这些语种，可以在 `spelllang` 选项中加入 `cjk` 来忽略这些错误标注。）
 
-## 6. 其他选项
+### 6. 其他选项
 
 禁止创建备份文件：启用此选项后，`Vim` 将在覆盖文件前创建一个备份，文件成功写入后保留该备份。如果不想保留该备份文件，可以按下面的方式关闭：
 
@@ -227,9 +230,7 @@ set errorbells
 set visualbell
 ```
 
-## 惊喜
-
-vi provides long-format as well as short-format commands. Either format can be used to set or unset the configuration.
+### 惊喜
 
 `Vim` 提供长格式和短格式命令，两种格式都可用于设置或取消选项配置。
 
@@ -244,8 +245,6 @@ set autoindent
 ```vim
 set ai
 ```
-
-To see the current configuration setting of a command without changing its current value, use `?` at the end:
 
 要在不更改选项当前值的情况下查看其当前设置，可以在 `Vim` 的命令行上使用在末尾加上 `?` 的命令：
 
@@ -271,71 +270,43 @@ set noautoindent
 
 ![](https://opensource.com/sites/default/files/uploads/picture10-11.jpg)
 
-注意：此处列出的命令仅对 `Linux` 上的 `Vim 7.4` 版本和 `Windows` 上的 `Vim 8.0` 版本进行了测试。
+注意：此处列出的命令仅对 Linux 上的 Vim 7.4 版本和 Windows 上的 Vim 8.0 版本进行了测试。
 
 这些有用的命令肯定会增强您的 `Vim` 使用体验。你会推荐哪些其他有用的命令?
 
-## 选项列表
+### 选项列表
 
 复制该选项列表粘贴到 `.vimrc` 文件中：
 
 ```vim
 " Indentation & Tabs
-
 set autoindent
-
 set smartindent
-
 set tabstop=4
-
 set shiftwidth=4
-
 set expandtab
-
 set smarttab
-
 " Display & format
-
 set number
-
 set textwidth=80
-
 set wrapmargin=2
-
 set showmatch
-
 " Search
-
 set hlsearch
-
 set incsearch
-
 set ignorecase
-
 set smartcase
-
 " Browse & Scroll
-
 set scrolloff=5
-
 set laststatus=2
-
 " Spell
-
 set spell spelllang=en_us
-
 " Miscellaneous
-
 set nobackup
-
 set noswapfile
-
 set autochdir
-
 set undofile
-
 set visualbell
-
 set errorbells
 ```
 
@@ -346,7 +317,7 @@ via: https://opensource.com/article/18/9/vi-editor-productivity-powerhouse
 作者：[Girish Managoli][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[idea2act](https://github.com/idea2act)
-校对：[apemost](https://github.com/apemost)
+校对：[apemost](https://github.com/apemost), [wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
