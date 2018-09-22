@@ -33,7 +33,6 @@
 
 ```
 $ ssh-keygen
-
 ```
 
 上面的命令将会创建一个 2048 位的 RSA 密钥对。输入两次密码。更重要的是，记住你的密码。后面将会用到它。
@@ -61,7 +60,6 @@ The key's randomart image is:
 | +.*o+o |
 | .o*=OO+ |
 +----[SHA256]-----+
-
 ```
 
 如果你已经创建了密钥对，你将看到以下信息。输入 ‘y’ 就会覆盖已存在的密钥。
@@ -69,7 +67,6 @@ The key's randomart image is:
 ```
 /home/username/.ssh/id_rsa already exists.
 Overwrite (y/n)?
-
 ```
 
 请注意**密码是可选的**。如果你输入了密码，那么每次通过 SSH 访问远程系统时都要求输入密码，除非你使用了 SSH 代理保存了密码。如果你不想要密码（虽然不安全），简单地输入两次 ENTER。不过，我们建议你使用密码。从安全的角度来看，使用无密码的 ssh 密钥对大体上不是一个很好的主意。 这种方式应该限定在特殊的情况下使用，例如，没有用户介入的服务访问远程系统。（例如，用 rsync 远程备份...）
@@ -78,7 +75,6 @@ Overwrite (y/n)?
 
 ```
 $ ssh-keygen -p -f ~/.ssh/id_rsa
-
 ```
 
 样例输出：
@@ -87,14 +83,12 @@ $ ssh-keygen -p -f ~/.ssh/id_rsa
 Enter new passphrase (empty for no passphrase):
 Enter same passphrase again:
 Your identification has been saved with the new passphrase.
-
 ```
 
 现在，我们已经在本地系统上创建了密钥对。接下来，使用下面的命令将 SSH 公钥拷贝到你的远程 SSH 服务端上。
 
 ```
 $ ssh-copy-id sk@192.168.225.22
-
 ```
 
 在这，我把本地（Arch Linux）系统上的公钥拷贝到了远程系统（Ubuntu 18.04 LTS）上。从技术上讲，上面的命令会把本地系统 **~/.ssh/id_rsa.pub key** 文件中的内容拷贝到远程系统**~/.ssh/authorized_keys** 中。明白了吗？非常棒。
@@ -110,14 +104,12 @@ Number of key(s) added: 1
 
 Now try logging into the machine, with: "ssh '[email protected]'"
 and check to make sure that only the key(s) you wanted were added.
-
 ```
 
 如果你已经拷贝了密钥，但想要替换为新的密码，使用 **-f** 选项覆盖已有的密钥。
 
 ```
 $ ssh-copy-id -f sk@192.168.225.22
-
 ```
 
 我们现在已经成功地将本地系统的 SSH 公钥添加进了远程系统。现在，让我们在远程系统上完全禁用掉基于密码认证的方式。因为，我们已经配置了密钥认证，因此我们不再需要密码认证了。
@@ -130,21 +122,18 @@ $ ssh-copy-id -f sk@192.168.225.22
 
 ```
 $ sudo vi /etc/ssh/sshd_config
-
 ```
 
 找到下面这一行，去掉注释然后将值设为 **no**
 
 ```
 PasswordAuthentication no
-
 ```
 
 重启 ssh 服务让它生效。
 
 ```
 $ sudo systemctl restart sshd
-
 ```
 
 ### 从本地系统访问远程系统
@@ -153,7 +142,6 @@ $ sudo systemctl restart sshd
 
 ```
 $ ssh sk@192.168.225.22
-
 ```
 
 输入密码。
@@ -164,7 +152,6 @@ $ ssh sk@192.168.225.22
 Enter passphrase for key '/home/sk/.ssh/id_rsa':
 Last login: Mon Jul 9 09:59:51 2018 from 192.168.225.37
 [email protected]:~$
-
 ```
 
 现在，你就能 SSH 你的远程系统了。如你所见，我们已经使用之前 **ssh-keygen** 创建的密码登录进了远程系统的账户，而不是使用账户实际的密码。
@@ -179,7 +166,6 @@ ECDSA key fingerprint is 67:fc:69:b7:d4:4d:fd:6e:38:44:a8:2f:08:ed:f4:21.
 Are you sure you want to continue connecting (yes/no)? yes
 Warning: Permanently added '192.168.225.22' (ECDSA) to the list of known hosts.
 Permission denied (publickey).
-
 ```
 
 如你所见，除了 CentOS （译注：根据上文，这里应该是 Arch） 系统外，我不能通过其他任何系统 SSH 访问我的远程系统 Ubuntu 18.04。
@@ -192,7 +178,6 @@ Permission denied (publickey).
 
 ```
 $ ssh-keygen
-
 ```
 
 输入两次密码。现在， ssh 密钥对已经生成了。你需要手动把公钥（不是私钥）拷贝到远程服务端上。
@@ -201,28 +186,24 @@ $ ssh-keygen
 
 ```
 $ cat ~/.ssh/id_rsa.pub
-
 ```
 
 应该会输出如下信息：
 
 ```
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCt3a9tIeK5rPx9p74/KjEVXa6/OODyRp0QLS/sLp8W6iTxFL+UgALZlupVNgFjvRR5luJ9dLHWwc+d4umavAWz708e6Na9ftEPQtC28rTFsHwmyLKvLkzcGkC5+A0NdbiDZLaK3K3wgq1jzYYKT5k+IaNS6vtrx5LDObcPNPEBDt4vTixQ7GZHrDUUk5586IKeFfwMCWguHveTN7ykmo2EyL2rV7TmYq+eY2ZqqcsoK0fzXMK7iifGXVmuqTkAmZLGZK8a3bPb6VZd7KFum3Ezbu4BXZGp7FVhnOMgau2kYeOH/ItKPzpCAn+dg3NAAziCCxnII9b4nSSGz3mMY4Y7 ostechnix@centosserver
-
 ```
 
 拷贝所有内容（通过 USB 驱动器或者其它任何介质），然后去你的远程服务端的控制台。像下面那样，在 home 下创建文件夹叫做 **ssh**。你需要以 root 身份执行命令。
 
 ```
 $ mkdir -p ~/.ssh
-
 ```
 
 现在，将前几步创建的客户端系统的公钥添加进文件中。
 
 ```
 echo {Your_public_key_contents_here} >> ~/.ssh/authorized_keys
-
 ```
 
 在远程系统上重启 ssh 服务。现在，你可以在新的客户端上 SSH 远程服务端了。
@@ -238,8 +219,6 @@ echo {Your_public_key_contents_here} >> ~/.ssh/authorized_keys
 不久我就会带来另一篇有用的文章。到那时，继续关注 OSTechNix。
 
 干杯！
-
-
 
 --------------------------------------------------------------------------------
 
