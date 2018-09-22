@@ -110,15 +110,17 @@ Hugo，30分钟搭建博客，一个Go语言开发的静态站点生成工具
  meta = "false" #Do not display tags or categories
  +++
  > Waves are the practice of the water. Shunryu Suzuki
+ 
  ```
  当你启动你的服务器并输入：`http://localhost:1313/`，你将会看到你的博客。（访问我 Gihub 主页上的 [例子][6] ）如果你想让文章的菜单栏和 Github 相似，给 `themes/kiera/static/css/styles.css` 打上这个 [补丁][7]。
- --------------------------------------------------------------------------------
- via: https://opensource.com/article/18/3/start-blog-30-minutes-hugo
- 作者：[Marek Czernek][a]
+
+--------------------------------------------------------------------------------
+via: https://opensource.com/article/18/3/start-blog-30-minutes-hugo
+作者：[Marek Czernek][a]
 译者：[jrg](https://github.com/jrglinux)
 校对：[校对者ID](https://github.com/校对者ID)
- 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
- [a]:https://opensource.com/users/mczernek
+本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
+[a]:https://opensource.com/users/mczernek
 [1]:https://gohugo.io/
 [2]:https://github.com/gohugoio/hugo/releases
 [3]:https://gohugo.io/getting-started/installing/
