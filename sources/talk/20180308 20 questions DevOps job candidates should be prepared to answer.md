@@ -66,7 +66,7 @@ Instead, do the opposite: Find talented people who will positively add to your b
 **Who is looking for a job?** According to a 2016 survey of more than 50,000 U.S. developers, [85.7% of respondents][5] were either not interested in new opportunities or were not actively looking for them. And of those who were looking, a whopping [28.3% of job discoveries][5] came from referrals by friends. If you’re searching only for people who are looking for jobs, you’re missing out on top talent.
 **谁正在寻找一份工作？** 根据一份2016年对美国50，000名开发者的调查显示，[85.7%的受访对象][5]要么对新的机会不感兴趣，要么对于寻找新工作没有积极性。在寻找工作的那部分中，有将近[28.3%的求职者][5]来自于朋友的推荐。如果你只是在那些在找工作的人中寻找人才，你将会错过高端的人才。
 **Use your team to find and vet potential recruits**. For example, if Diane is a developer on your team, chances are she has [been coding for years][6] and has met fellow developers along the way who also love what they do. Wouldn’t you think her chances of vetting potential recruits for skills, knowledge, and intelligence would be higher than having someone from HR find and vet potential recruits? And before asking Diane to share her knowledge of fellow recruits, inform her of the upcoming mission, explain your desire to hire a diverse team of passionate explorers, and describe some of the areas where help will be needed in the future.
-
+**运用团队力量去发现和寻找潜力的雇员**。列如，戴安娜是你的团队总的一名开发者，她所提供的机会即使她已经从事编程很多年而且在期间已经结识了很多从事热爱他们所从事的工作的人。难道你不认为她所推荐的潜在员工在技能，只是和智慧上要比HR所寻找的要优秀吗？在要求戴安娜分享她同伴之前，通知她即将到来额使命任务，向她阐明你要雇佣潜在有探索精神的团队，描述在将来会需要的知识领域。
 **What do employees want?** A comprehensive study comparing the wants and needs of Millennials, GenX’ers, and Baby Boomers shows that within two percentage points, we all [want the same things][7]:
 
   1. To make a positive impact on the organization
