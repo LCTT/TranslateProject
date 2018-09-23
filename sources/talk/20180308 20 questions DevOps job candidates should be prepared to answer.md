@@ -68,15 +68,17 @@ Instead, do the opposite: Find talented people who will positively add to your b
 **Use your team to find and vet potential recruits**. For example, if Diane is a developer on your team, chances are she has [been coding for years][6] and has met fellow developers along the way who also love what they do. Wouldn’t you think her chances of vetting potential recruits for skills, knowledge, and intelligence would be higher than having someone from HR find and vet potential recruits? And before asking Diane to share her knowledge of fellow recruits, inform her of the upcoming mission, explain your desire to hire a diverse team of passionate explorers, and describe some of the areas where help will be needed in the future.
 **运用团队力量去发现和寻找潜力的雇员**。列如，戴安娜是你的团队总的一名开发者，她所提供的机会即使她已经从事编程很多年而且在期间已经结识了很多从事热爱他们所从事的工作的人。难道你不认为她所推荐的潜在员工在技能，只是和智慧上要比HR所寻找的要优秀吗？在要求戴安娜分享她同伴之前，通知她即将到来额使命任务，向她阐明你要雇佣潜在有探索精神的团队，描述在将来会需要的知识领域。
 **What do employees want?** A comprehensive study comparing the wants and needs of Millennials, GenX’ers, and Baby Boomers shows that within two percentage points, we all [want the same things][7]:
-
+**雇员想要什么？**一份来自千禧年，婴儿潮实时期出生的人的对比综合性研究显示，20% 的人所想要的是相同的：
   1. To make a positive impact on the organization
+  1. 对组织产生积极的影响
   2. To help solve social and/or environmental challenges
+  2. 帮助解决社交或者环境上的挑战
   3. To work with a diverse group of people
-
+  3. 和一群有动力的人一起工作
 
 
 ### The interview challenge
-
+### 面试的挑战
 The interview should be a two-way conversation for finding a mutual fit between the person hiring and the person interviewing. Focus your interview on CQ ([Cultural Quotient][7]) and EQ ([Emotional Quotient][8]): Will this person reinforce and add to your culture and love working with you? Can you help make them successful at their job?
 
 **For the hiring manager:** Every interview is an opportunity to learn how your organization could become more irresistible to prospective team members, and every positive interview can be your best opportunity to finding talent, even if you don’t hire that person. Everyone remembers being interviewed if it is a positive experience. Even if they don’t get hired, they will talk about the experience with their friends, and you may get a referral as a result. There is a big upside to this: If you’re not attracting this talent, you have the opportunity to learn the reason and fix it.
