@@ -80,53 +80,53 @@ Instead, do the opposite: Find talented people who will positively add to your b
 ### The interview challenge
 ### 面试的挑战
 The interview should be a two-way conversation for finding a mutual fit between the person hiring and the person interviewing. Focus your interview on CQ ([Cultural Quotient][7]) and EQ ([Emotional Quotient][8]): Will this person reinforce and add to your culture and love working with you? Can you help make them successful at their job?
-
+面试应该是招聘者和应聘者双方为了寻找最合适的人才进行的一次双方之间的对话。将面试聚焦在企业文化和情感对话两个问题上：这个应聘者将会丰富你的企业文化并且会热爱和你在一起工作吗？你能够在工作中帮他们取得成功吗？
 **For the hiring manager:** Every interview is an opportunity to learn how your organization could become more irresistible to prospective team members, and every positive interview can be your best opportunity to finding talent, even if you don’t hire that person. Everyone remembers being interviewed if it is a positive experience. Even if they don’t get hired, they will talk about the experience with their friends, and you may get a referral as a result. There is a big upside to this: If you’re not attracting this talent, you have the opportunity to learn the reason and fix it.
-
+**对于招聘经理来说：** 每一次的面试都是你学习如何将自己的组织变得对未来的团队成员更有吸引力，并且每次积极的面试多都可能是你发现人才（即使你不会雇佣）的机会。每个人都将会记得积极有效的面试的经验。即使他们不会被雇佣，他们将会和他们的朋友谈论这次经历，你竟会得到一个被推荐的机会。这又很大的好处：如果你无法吸引到这个人才，你也将会从中学习吸取经验并且改善。
 **For the interviewee** : Each interview experience is an opportunity to unlock your passions.
-
+**对面试者来说**：每次的面试都是你释放激情的机会
 ### 20 questions to help you unlock the passions of potential hires
-
+### 助你释放潜在雇员激情的20个问题
   1. What are you passionate about?
-
+  1. 你热爱什么？
   2. What makes you think, "I can't wait to get to work this morning!”
-
+  2. “今天早晨我已经迫不及待的要去工作”你怎么看待这句话？
   3. What is the most fun you’ve ever had?
-
+  3. 你曾经最快乐的是什么？
   4. What is your favorite example of a problem you’ve solved, and how did you solve it?
-
+  4. 你曾经解决问题的最典型的例子是什么，你是如何解决的？
   5. How do you feel about paired learning?
-
+  5. 你如何看待配对学习？
   6. What’s at the top of your mind when you arrive at, and leave, the office?
-
+  6. 你到达办公室和离开办公室心里最先想到的是什么？
   7. If you could have changed one thing in your previous/current job, what would it be?
-
+  7. 你如果你有一次改变你之前或者现在的共工作的一件事的机会，将会是什么事？
   8. What are you excited to learn while working here?
-
+  8. 当你在这工作的时候，你最兴奋去学习什么？
   9. What do you aspire to in life, and how are you pursuing it?
-
+  9. 你一生中渴望追求什么，你打算如何去实现？
   10. What do you want, or feel you need, to learn to achieve these aspirations?
-
+  10. 你在学会如何去实现你的追求的时候想要或者需要什么？
   11. What values do you hold?
-
+  11. 你的价值观是什么？
   12. How do you live those values?
-
+  12. 你是如何坚守自己的价值观的？
   13. What does balance mean in your life?
-
+  13. 在你生活中平衡意味着什么？
   14. What work interactions are you are most proud of? Why?
-
+  14. 你最引以为傲的工作交流能力是什么？为什么？
   15. What type of environment do you like to create?
-
+  15. 你最喜欢营造什么样的环境？
   16. How do you like to be treated?
-
+  16. 你喜欢别人怎样对待你？
   17. What do you trust vs. verify?
-
+  17. 你信任我们什么，如何验证？
   18. Tell me about a recent learning you had when working on a project.
-
+  18. 告诉我们你在最近的一个项目中学习到什么？
   19. What else should we know about you?
-
+  19. 我们还能知道你的其他方面的什么？
   20. If you were hiring me, what questions would you ask me?
-
+  20. 如果你正在雇佣我，你将会问我什么问题？
 
 
 
@@ -135,7 +135,7 @@ The interview should be a two-way conversation for finding a mutual fit between 
 via: https://opensource.com/article/18/3/questions-devops-employees-should-answer
 
 作者：[Catherine Louis][a]
-译者：[译者ID](https://github.com/译者ID)
+译者：[FelixYFZ](https://github.com/FelixYFZ)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
