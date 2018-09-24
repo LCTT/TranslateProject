@@ -3,7 +3,7 @@
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/09/GPM-1-720x340.png)
 
-我使用 Oracle VirtualBox 来测试各种类 Unix 操作系统。我的大多数虚拟机都是无头服务器，它们没有图形桌面环境。很长一段时间，我一直想知道如何在无头 Linux 服务器的基于文本的终端中使用鼠标。感谢 **GPM**，今天我了解到我们可以在虚拟控制台中使用鼠标进行复制和粘贴操作。 **GPM**，**G** eneral **P** urpose **M** ouse 的首字母缩写，它是一个守护程序，可以帮助你配置 Linux 虚拟控制台的鼠标支持。请不要将 GPM 与 **GDM**（GNOME 显示管理器）混淆。两者有完全不同的用途。
+我使用 Oracle VirtualBox 来测试各种类 Unix 操作系统。我的大多数虚拟机都是<ruby>无头<rt>headless</rt></ruby>服务器，它们没有图形桌面环境。很长一段时间，我一直想知道如何在无头 Linux 服务器的基于文本的终端中使用鼠标。感谢 **GPM**，今天我了解到我们可以在虚拟控制台中使用鼠标进行复制和粘贴操作。 **GPM**，是<ruby>通用鼠标<rt>General Purpose Mouse</rt></ruby>的首字母缩写，它是一个守护程序，可以帮助你配置 Linux 虚拟控制台的鼠标支持。请不要将 GPM 与 **GDM**（<ruby>GNOME 显示管理器<rt>GNOME Display manager</rt></ruby>）混淆。两者有完全不同的用途。
 
 GPM 在以下场景中特别有用：
 
@@ -11,8 +11,6 @@ GPM 在以下场景中特别有用：
   * 在虚拟终端/控制台中使用复制/粘贴操作。
   * 在基于文本的编辑器和浏览器中使用复制/粘贴（例如，emacs、lynx）。
   * 在文本文件管理器中使用复制/粘贴（例如 Ranger、Midnight commander）。
-
-
 
 在这个简短的教程中，我们将看到如何在类 Unix 操作系统中在基于文本的终端中使用鼠标。
 
@@ -76,11 +74,9 @@ $ sudo systemctl start gpm
   * 右键用于扩展选择，就像在 `xterm` 中。
   * 如果你使用的是双键鼠标，请使用右键粘贴文本。
 
-
-
 就这么简单！
 
-就像我已经说过的那样，GPM 工作得很好，并且不需要额外的配置。以下是 GPM 配置文件 **/etc/gpm.conf**（或在某些发行版中是 `/etc/conf.d/gpm`）的示例内容：
+就像我已经说过的那样，GPM 工作得很好，并且不需要额外的配置。以下是 GPM 配置文件 `/etc/gpm.conf`（或在某些发行版中是 `/etc/conf.d/gpm`）的示例内容：
 
 ```
 # protected from evaluation (i.e. by quoting them).
@@ -96,7 +92,7 @@ append=''
 sample_rate=
 ```
 
-在我的例子中，我使用 USB 鼠标。如果你使用的是其他鼠标，则可能需要更改 **device=/dev/input/mice** 和 **type=exps2** 参数的值。
+在我的例子中，我使用 USB 鼠标。如果你使用的是其他鼠标，则可能需要更改 `device=/dev/input/mice` 和 `type=exps2` 参数的值。
 
 有关更多详细信息，请参阅手册页。
 
@@ -108,16 +104,11 @@ $ man gpm
 
 干杯!
 
-
-
 --------------------------------------------------------------------------------
 
 via: https://www.ostechnix.com/how-to-configure-mouse-support-for-linux-virtual-consoles/
 
-作者：[SK][a]
-选题：[lujun9972](https://github.com/lujun9972)
-译者：[geekpi](https://github.com/geekpi)
-校对：[校对者ID](https://github.com/校对者ID)
+作者：[SK][a]  选题：[lujun9972](https://github.com/lujun9972)  译者：[geekpi](https://github.com/geekpi)  校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 

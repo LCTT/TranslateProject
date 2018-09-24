@@ -1,3 +1,5 @@
+[翻译中]translating by jrg!
+
 Host your own cloud with Raspberry Pi NAS
 ======
 
