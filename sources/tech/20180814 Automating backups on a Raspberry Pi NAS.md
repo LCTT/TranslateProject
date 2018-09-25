@@ -1,3 +1,5 @@
+[翻译中]translating by jrg!
+
 Automating backups on a Raspberry Pi NAS
 ======
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/brain_data.png?itok=RH6NA32X)
