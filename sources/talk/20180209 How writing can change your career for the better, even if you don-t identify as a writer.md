@@ -1,15 +1,17 @@
 How writing can change your career for the better, even if you don't identify as a writer
+写作是如何让你的职业生涯变得更好，即使你不是一个作家。
 ======
 Have you read Marie Kondo's book [The Life-Changing Magic of Tidying Up][1]? Or did you, like me, buy it and read a little bit and then add it to the pile of clutter next to your bed?
-
+你曾经读过Marie Kondo的书[整理生活的魔力][1]吗？或者你像我一样，购买了它并且读了少许然后就把它放在床头了？
 Early in the book, Kondo talks about keeping possessions that "spark joy." In this article, I'll examine ways writing about what we and other people are doing in the open source world can "spark joy," or at least how writing can improve your career in unexpected ways.
-
+在这本书的开头，Kondo谈论了拥有“点燃快乐”的财产，在这篇文章中，我将会研究写出我们和其他人在开源世界中“点燃快乐”的方法，或者至少是找出写作是如何出其不意的提高你的职业生涯。
 Because I'm a community manager and editor on Opensource.com, you might be thinking, "She just wants us to [write for Opensource.com][2]." And that is true. But everything I will tell you about why you should write is true, even if you never send a story in to Opensource.com. Writing can change your career for the better, even if you don't identify as a writer. Let me explain.
-
+因为我是开源网站的一名经理和编辑，你可能会想，“她只是想让我们为开源网站写文章。”这到也不错。但是我所告诉关于为什么你应该写作的一切都是真的，即使你从未向开源网站投过一篇文章。写作能够将你的职业生涯变得更好，即使你并不是一名作家。下面我来想你解释一下。
 ### How I started writing
+### 我如何开始写作
 
 Early in the first decade of my career, I transitioned from a customer service-related role at a tech publishing company into an editing role on Sys Admin Magazine. I was plugging along, happily laying low in my career, and then that all changed when I started writing about open source technologies and communities, and the people in them. But I did _not_ start writing voluntarily. The tl;dr: of it is that my colleagues at Linux New Media eventually talked me into launching our first blog on the [Linux Pro Magazine][3] site. And as it turns out, it was one of the best career decisions I've ever made. I would not be working on Opensource.com today had I not started writing about what other people in open source were doing all those years ago.
-
+在我职业生涯的前十年，我从一个在技术出版公司的一个顾客服务相关的角色转变成一个杂志管理的编辑。我一直在努力，在我的职业生涯中快乐而低调。然后当我开始写关于开源技术和社区团体的文章时一切都改变了，
 When I first started writing, my goal was to raise awareness of the company I worked for and our publications, while also helping raise the visibility of women in tech. But soon after I started writing, I began seeing unexpected results.
 
 #### My network started growing
