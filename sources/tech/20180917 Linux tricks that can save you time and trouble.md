@@ -1,3 +1,5 @@
+HankChow translating
+
 Linux tricks that can save you time and trouble
 ======
 Some command line tricks can make you even more productive on the Linux command line.
