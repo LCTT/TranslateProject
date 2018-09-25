@@ -1,3 +1,5 @@
+translating---geekpi
+
 [Solved] “sub process usr bin dpkg returned an error code 1″ Error in Ubuntu
 ======
 If you are encountering “sub process usr bin dpkg returned an error code 1” while installing software on Ubuntu Linux, here is how you can fix it.
