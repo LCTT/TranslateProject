@@ -1,5 +1,5 @@
 
-steam 让 Windows 上的游戏在 Linux 上运行得更加容易
+steam 让我们在 Linux 上玩 Windows 的游戏更加容易
 ======
 ![Steam Wallpaper][1]
 
