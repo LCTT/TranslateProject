@@ -1,5 +1,5 @@
 
-Steam Makes it Easier to Play Windows Games on Linux
+steam 让 Windows 上的游戏在 Linux 上运行得更加容易
 ======
 ![Steam Wallpaper][1]
 
