@@ -1,26 +1,27 @@
 如何在 Linux 上使用 tcpdump 命令捕获和分析数据包
 ======
-tcpdump 是一个有名的命令行**数据包分析**工具。我们可以使用 tcpdump 命令捕获实时 TCP/IP 数据包，这些数据包也可以保存到文件中。之后这些捕获的数据包可以通过 tcpdump 命令进行分析。tcpdump 命令在网络级故障排除时变得非常方便。
+
+`tcpdump` 是一个有名的命令行**数据包分析**工具。我们可以使用 `tcpdump` 命令捕获实时 TCP/IP 数据包，这些数据包也可以保存到文件中。之后这些捕获的数据包可以通过 `tcpdump` 命令进行分析。`tcpdump` 命令在网络层面进行故障排除时变得非常方便。
 
 ![](https://www.linuxtechi.com/wp-content/uploads/2018/08/tcpdump-command-examples-linux.jpg)
 
-tcpdump 在大多数 Linux 发行版中都能用，对于基于 Debian 的Linux，可以使用 apt 命令安装它
+`tcpdump` 在大多数 Linux 发行版中都能用，对于基于 Debian 的Linux，可以使用 `apt` 命令安装它。
 
 ```
 # apt install tcpdump -y
 ```
 
-在基于 RPM 的 Linux 操作系统上，可以使用下面的 yum 命令安装 tcpdump
+在基于 RPM 的 Linux 操作系统上，可以使用下面的 `yum` 命令安装 `tcpdump`。
 
 ```
 # yum install tcpdump -y
 ```
 
-当我们在没用任何选项的情况下运行 tcpdump 命令时，它将捕获所有接口的数据包。因此，要停止或取消 tcpdump 命令，请输入 '**ctrl+c**'。在本教程中，我们将使用不同的实例来讨论如何捕获和分析数据包，
+当我们在没用任何选项的情况下运行 `tcpdump` 命令时，它将捕获所有接口的数据包。因此，要停止或取消 `tcpdump` 命令，请键入 `ctrl+c`。在本教程中，我们将使用不同的实例来讨论如何捕获和分析数据包。
 
-### 示例: 1) 从特定接口捕获数据包
+### 示例：1）从特定接口捕获数据包
 
-当我们在没用任何选项的情况下运行 tcpdump 命令时，它将捕获所有接口上的数据包，因此，要从特定接口捕获数据包，请使用选项 '**-i**'，后跟接口名称。
+当我们在没用任何选项的情况下运行 `tcpdump` 命令时，它将捕获所有接口上的数据包，因此，要从特定接口捕获数据包，请使用选项 `-i`，后跟接口名称。
 
 语法：
 
@@ -28,7 +29,7 @@ tcpdump 在大多数 Linux 发行版中都能用，对于基于 Debian 的Linux�
 # tcpdump -i {接口名}
 ```
 
-假设我想从接口“enp0s3”捕获数据包
+假设我想从接口 `enp0s3` 捕获数据包。
 
 输出将如下所示，
 
@@ -49,21 +50,21 @@ listening on enp0s3, link-type EN10MB (Ethernet), capture size 262144 bytes
 
 ```
 
-### 示例: 2) 从特定接口捕获特定数量数据包
+### 示例：2）从特定接口捕获特定数量数据包
 
-假设我们想从特定接口(如“enp0s3”)捕获12个数据包，这可以使用选项 '**-c {数量} -I {接口名称}**' 轻松实现
+假设我们想从特定接口（如 `enp0s3`）捕获 12 个数据包，这可以使用选项 `-c {数量} -I {接口名称}` 轻松实现。
 
 ```
 root@compute-0-1 ~]# tcpdump -c 12 -i enp0s3
 ```
 
-上面的命令将生成如下所示的输出
+上面的命令将生成如下所示的输出，
 
 [![N-Number-Packsets-tcpdump-interface][1]][2]
 
-### 示例: 3) 显示 tcpdump 的所有可用接口
+### 示例：3）显示 tcpdump 的所有可用接口
 
-使用 '**-D**' 选项显示 tcpdump 命令的所有可用接口，
+使用 `-D` 选项显示 `tcpdump` 命令的所有可用接口，
 
 ```
 [root@compute-0-1 ~]# tcpdump -D
@@ -86,11 +87,11 @@ root@compute-0-1 ~]# tcpdump -c 12 -i enp0s3
 [[email protected] ~]#
 ```
 
-我正在我的一个openstack计算节点上运行tcpdump命令，这就是为什么在输出中你会看到数字接口、标签接口、网桥和vxlan接口
+我正在我的一个 openstack 计算节点上运行 `tcpdump` 命令，这就是为什么在输出中你会看到数字接口、标签接口、网桥和 vxlan 接口
 
-### 示例: 4) 捕获带有可读时间戳(-tttt 选项)的数据包
+### 示例：4）捕获带有可读时间戳的数据包（`-tttt` 选项）
 
-默认情况下，在tcpdump命令输出中，没有显示可读性好的时间戳，如果您想将可读性好的时间戳与每个捕获的数据包相关联，那么使用 '**-tttt**'选项，示例如下所示，
+默认情况下，在 `tcpdump` 命令输出中，不显示可读性好的时间戳，如果您想将可读性好的时间戳与每个捕获的数据包相关联，那么使用 `-tttt` 选项，示例如下所示，
 
 ```
 [[email protected] ~]# tcpdump -c 8 -tttt -i enp0s3
@@ -108,12 +109,11 @@ listening on enp0s3, link-type EN10MB (Ethernet), capture size 262144 bytes
 134 packets received by filter
 69 packets dropped by kernel
 [[email protected] ~]#
-
 ```
 
-### 示例: 5) 捕获数据包并将其保存到文件( -w 选项)
+### 示例：5）捕获数据包并将其保存到文件（`-w` 选项）
 
-使用 tcpdump 命令中的 '**-w**' 选项将捕获的 TCP/IP 数据包保存到一个文件中，以便我们可以在将来分析这些数据包以供进一步分析。
+使用 `tcpdump` 命令中的 `-w` 选项将捕获的 TCP/IP 数据包保存到一个文件中，以便我们可以在将来分析这些数据包以供进一步分析。
 
 语法：
 
@@ -121,9 +121,9 @@ listening on enp0s3, link-type EN10MB (Ethernet), capture size 262144 bytes
 # tcpdump -w 文件名.pcap -i {接口名}
 ```
 
-注意:文件扩展名必须为 **.pcap**
+注意：文件扩展名必须为 `.pcap`。
 
-假设我要把 '**enp0s3**' 接口捕获到的包保存到文件名为 **enp0s3-26082018.pcap**
+假设我要把 `enp0s3` 接口捕获到的包保存到文件名为 `enp0s3-26082018.pcap`。
 
 ```
 [root@compute-0-1 ~]# tcpdump -w enp0s3-26082018.pcap -i enp0s3
@@ -140,24 +140,23 @@ tcpdump: listening on enp0s3, link-type EN10MB (Ethernet), capture size 262144 b
 [root@compute-0-1  ~]# ls
 anaconda-ks.cfg enp0s3-26082018.pcap
 [root@compute-0-1  ~]#
-
 ```
 
-捕获并保存大小**大于 N 字节**的数据包
+捕获并保存大小**大于 N 字节**的数据包。
 
 ```
 [root@compute-0-1  ~]# tcpdump -w enp0s3-26082018-2.pcap greater 1024
 ```
 
-捕获并保存大小**小于 N 字节**的数据包
+捕获并保存大小**小于 N 字节**的数据包。
 
 ```
 [root@compute-0-1  ~]# tcpdump -w enp0s3-26082018-3.pcap less 1024
 ```
 
-### 示例: 6) 从保存的文件中读取数据包( -r 选项)
+### 示例：6）从保存的文件中读取数据包（`-r` 选项）
 
-在上面的例子中，我们已经将捕获的数据包保存到文件中，我们可以使用选项 '**-r**' 从文件中读取这些数据包，例子如下所示，
+在上面的例子中，我们已经将捕获的数据包保存到文件中，我们可以使用选项 `-r` 从文件中读取这些数据包，例子如下所示，
 
 ```
 [root@compute-0-1 ~]# tcpdump -r enp0s3-26082018.pcap
@@ -183,12 +182,11 @@ p,TS val 81359114 ecr 81350901], length 508
 2018-08-25 22:03:17.647502 IP controller0.example.com.amqp > compute-0-1.example.com.57788: Flags [.], ack 1956, win 1432, options [nop,nop,TS val 813
 52753 ecr 81359114], length 0
 .........................................................................................................................
-
 ```
 
-### 示例: 7) 仅捕获特定接口上的 IP 地址数据包( -n 选项)
+### 示例：7）仅捕获特定接口上的 IP 地址数据包（`-n` 选项）
 
-使用 tcpdump 命令中的 -n 选项，我们能只捕获特定接口上的 IP 地址数据包，示例如下所示，
+使用 `tcpdump` 命令中的 `-n` 选项，我们能只捕获特定接口上的 IP 地址数据包，示例如下所示，
 
 ```
 [root@compute-0-1 ~]# tcpdump -n -i enp0s3
@@ -211,19 +209,18 @@ listening on enp0s3, link-type EN10MB (Ethernet), capture size 262144 bytes
 22:22:28.539595 IP 169.144.0.1.39406 > 169.144.0.20.ssh: Flags [.], ack 1572, win 9086, options [nop,nop,TS val 20666614 ecr 82510006], length 0
 22:22:28.539760 IP 169.144.0.20.ssh > 169.144.0.1.39406: Flags [P.], seq 1572:1912, ack 1, win 291, options [nop,nop,TS val 82510007 ecr 20666614], length 340
 .........................................................................
-
 ```
 
-您还可以使用 tcpdump 命令中的 -c 和 -N 选项捕获 N 个 IP 地址包，
+您还可以使用 `tcpdump` 命令中的 `-c` 和 `-N` 选项捕获 N 个 IP 地址包，
 
 ```
 [root@compute-0-1  ~]# tcpdump -c 25 -n -i enp0s3
 ```
 
 
-### 示例: 8) 仅捕获特定接口上的TCP数据包
+### 示例：8）仅捕获特定接口上的 TCP 数据包
 
-在 tcpdump 命令中，我们能使用 '**tcp**' 选项来只捕获TCP数据包，
+在 `tcpdump` 命令中，我们能使用 `tcp` 选项来只捕获 TCP 数据包，
 
 ```
 [root@compute-0-1  ~]# tcpdump -i enp0s3 tcp
@@ -241,9 +238,9 @@ listening on enp0s3, link-type EN10MB (Ethernet), capture size 262144 bytes
 ...................................................................................................................................................
 ```
 
-### 示例: 9) 从特定接口上的特定端口捕获数据包
+### 示例：9）从特定接口上的特定端口捕获数据包
 
-使用 tcpdump 命令，我们可以从特定接口 enp0s3 上的特定端口(例如 22 )捕获数据包
+使用 `tcpdump` 命令，我们可以从特定接口 `enp0s3` 上的特定端口（例如 22）捕获数据包。
 
 语法：
 
@@ -262,13 +259,12 @@ listening on enp0s3, link-type EN10MB (Ethernet), capture size 262144 bytes
 22:54:55.038564 IP 169.144.0.1.39406 > compute-0-1.example.com.ssh: Flags [.], ack 940, win 9177, options [nop,nop,TS val 21153238 ecr 84456505], length 0
 22:54:55.038708 IP compute-0-1.example.com.ssh > 169.144.0.1.39406: Flags [P.], seq 940:1304, ack 1, win 291, options [nop,nop,TS val 84456506 ecr 21153238], length 364
 ............................................................................................................................
-[root@compute-0-1  ~]#
 ```
 
 
-### 示例: 10) 在特定接口上捕获来自特定来源 IP 的数据包
+### 示例：10）在特定接口上捕获来自特定来源 IP 的数据包
 
-在tcpdump命令中，使用 '**src**' 关键字后跟 '**IP 地址**'，我们可以捕获来自特定来源 IP 的数据包，
+在 `tcpdump` 命令中，使用 `src` 关键字后跟 IP 地址，我们可以捕获来自特定来源 IP 的数据包，
 
 语法：
 
@@ -296,17 +292,16 @@ listening on enp0s3, link-type EN10MB (Ethernet), capture size 262144 bytes
 10 packets captured
 12 packets received by filter
 0 packets dropped by kernel
-[root@compute-0-1  ~]#
-
 ```
 
-### 示例: 11) 在特定接口上捕获来自特定目的IP的数据包
+### 示例：11）在特定接口上捕获来自特定目的 IP 的数据包
 
 语法：
 
 ```
 # tcpdump -n -i {接口名} dst {IP 地址}
 ```
+
 ```
 [root@compute-0-1  ~]# tcpdump -n -i enp0s3 dst 169.144.0.1
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
@@ -318,42 +313,39 @@ listening on enp0s3, link-type EN10MB (Ethernet), capture size 262144 bytes
 23:10:43.522157 IP 169.144.0.20.ssh > 169.144.0.1.39406: Flags [P.], seq 800:996, ack 1, win 291, options [nop,nop,TS val 85404989 ecr 21390359], length 196
 23:10:43.522346 IP 169.144.0.20.ssh > 169.144.0.1.39406: Flags [P.], seq 996:1192, ack 1, win 291, options [nop,nop,TS val 85404989 ecr 21390359], length 196
 .........................................................................................
-
 ```
 
-### 示例: 12) 捕获两台主机之间的 TCP 数据包通信
+### 示例：12）捕获两台主机之间的 TCP 数据包通信
 
 假设我想捕获两台主机 169.144.0.1 和 169.144.0.20 之间的 TCP 数据包，示例如下所示，
 
 ```
 [root@compute-0-1  ~]# tcpdump -w two-host-tcp-comm.pcap -i enp0s3 tcp and \(host 169.144.0.1 or host 169.144.0.20\)
-
 ```
 
-使用 tcpdump 命令只捕获两台主机之间的 SSH 数据包流，
+使用 `tcpdump` 命令只捕获两台主机之间的 SSH 数据包流，
 
 ```
 [root@compute-0-1  ~]# tcpdump -w ssh-comm-two-hosts.pcap -i enp0s3 src 169.144.0.1 and port 22 and dst 169.144.0.20 and port 22
-
 ```
 
-示例: 13) 捕获两台主机之间的 UDP 网络数据包(来回)
+### 示例：13）捕获两台主机之间（来回）的 UDP 网络数据包
 
 语法：
 
 ```
 # tcpdump -w -s -i udp and \(host and host \)
 ```
+
 ```
 [root@compute-0-1  ~]# tcpdump -w two-host-comm.pcap -s 1000 -i enp0s3 udp and \(host 169.144.0.10 and host 169.144.0.20\)
-
 ```
 
-### 示例: 14) 捕获十六进制和ASCII格式的数据包
+### 示例：14）捕获十六进制和 ASCII 格式的数据包
 
-使用 tcpdump 命令，我们可以以 ASCII 和十六进制格式捕获 TCP/IP 数据包，
+使用 `tcpdump` 命令，我们可以以 ASCII 和十六进制格式捕获 TCP/IP 数据包，
 
-要使用** -A **选项捕获ASCII格式的数据包，示例如下所示:
+要使用 `-A` 选项捕获 ASCII 格式的数据包，示例如下所示:
 
 ```
 [root@compute-0-1  ~]# tcpdump -c 10 -A -i enp0s3
@@ -376,7 +368,7 @@ root@compute-0-1 @..........
 ..................................................................................................................................................
 ```
 
-要同时以十六进制和 ASCII 格式捕获数据包，请使用** -XX **选项
+要同时以十六进制和 ASCII 格式捕获数据包，请使用 `-XX` 选项。
 
 ```
 [root@compute-0-1  ~]# tcpdump -c 10 -XX -i enp0s3
@@ -406,10 +398,9 @@ listening on enp0s3, link-type EN10MB (Ethernet), capture size 262144 bytes
 0x0030: 3693 7c0e 0000 0101 080a 015a a734 0568 6.|........Z.4.h
 0x0040: 39af
 .......................................................................
-
 ```
 
-这就是本文的全部内容，我希望您能了解如何使用 tcpdump 命令捕获和分析 TCP/IP 数据包。请分享你的反馈和评论。
+这就是本文的全部内容，我希望您能了解如何使用 `tcpdump` 命令捕获和分析 TCP/IP 数据包。请分享你的反馈和评论。
 
 --------------------------------------------------------------------------------
 
@@ -418,7 +409,7 @@ via: https://www.linuxtechi.com/capture-analyze-packets-tcpdump-command-linux/
 作者：[Pradeep Kumar][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[ypingcn](https://github.com/ypingcn)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
