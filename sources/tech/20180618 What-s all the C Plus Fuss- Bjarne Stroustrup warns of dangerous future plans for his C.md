@@ -1,3 +1,4 @@
+Translating by qhwdw
 What's all the C Plus Fuss? Bjarne Stroustrup warns of dangerous future plans for his C++
 ======
 

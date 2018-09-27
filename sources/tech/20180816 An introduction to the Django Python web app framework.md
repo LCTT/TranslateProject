@@ -1,3 +1,6 @@
+Translating by MjSeven
+
+
 An introduction to the Django Python web app framework
 ======
 
