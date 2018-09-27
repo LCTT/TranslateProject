@@ -16,11 +16,7 @@ Linux DNS 查询剖析（第四部分）
 
 在第四部分中，我将介绍容器如何完成 DNS 查询。你想的没错，也不是那么简单。
 
-* * *
-
 ### 1) Docker 和 DNS
-
-============================================================
 
 在 [Linux DNS 查询剖析（第三部分）][3] 中，我们介绍了 `dnsmasq`，其工作方式如下：将 DNS 查询指向到 localhost 地址 `127.0.0.1`，同时启动一个进程监听 `53` 端口并处理查询请求。
 
@@ -72,29 +68,29 @@ google.com.             112     IN      A       172.217.23.14
 
 在这个问题上，Docker 的解决方案是忽略所有可能的复杂情况，即无论主机中使用什么 DNS 服务器，容器内都使用 Google 的 DNS 服务器 `8.8.8.8` 和 `8.8.4.4` 完成 DNS 查询。
 
- _我的经历：在 2013 年，我遇到了使用 Docker 以来的第一个问题，与 Docker 的这种 DNS 解决方案密切相关。我们公司的网络屏蔽了 `8.8.8.8` 和 `8.8.4.4`，导致容器无法解析域名。_
+_我的经历：在 2013 年，我遇到了使用 Docker 以来的第一个问题，与 Docker 的这种 DNS 解决方案密切相关。我们公司的网络屏蔽了 `8.8.8.8` 和 `8.8.4.4`，导致容器无法解析域名。_
 
-这就是 Docker 容器的情况，但对于包括 Kubernetes 在内的容器 _<ruby>编排引擎<rt>orchestrators</rt></ruby>_，情况又有些不同。
+这就是 Docker 容器的情况，但对于包括 Kubernetes 在内的容器 <ruby>编排引擎<rt>orchestrators</rt></ruby>，情况又有些不同。
 
 ### 2) Kubernetes 和 DNS
 
-在 Kubernetes 中，最小部署单元是 `pod`；`pod` 是一组相互协作的容器，共享 IP 地址（和其它资源）。
+在 Kubernetes 中，最小部署单元是 pod；它是一组相互协作的容器，共享 IP 地址（和其它资源）。
 
 Kubernetes 面临的一个额外的挑战是，将 Kubernetes 服务请求（例如，`myservice.kubernetes.io`）通过对应的<ruby>解析器<rt>resolver</rt></ruby>，转发到具体服务地址对应的<ruby>内网地址<rt>private network</rt></ruby>。这里提到的服务地址被称为归属于“<ruby>集群域<rt>cluster domain</rt></ruby>”。集群域可由管理员配置，根据配置可以是 `cluster.local` 或 `myorg.badger` 等。
 
-在 Kubernetes 中，你可以为 `pod` 指定如下四种 `pod` 内 DNS 查询的方式。
+在 Kubernetes 中，你可以为 pod 指定如下四种 pod 内 DNS 查询的方式。
 
-* Default
+**Default**
 
-在这种（名称容易让人误解）的方式中，`pod` 与其所在的主机采用相同的 DNS 查询路径，与前面介绍的主机 DNS 查询一致。我们说这种方式的名称容易让人误解，因为该方式并不是默认选项！`ClusterFirst` 才是默认选项。
+在这种（名称容易让人误解）的方式中，pod 与其所在的主机采用相同的 DNS 查询路径，与前面介绍的主机 DNS 查询一致。我们说这种方式的名称容易让人误解，因为该方式并不是默认选项！`ClusterFirst` 才是默认选项。
 
 如果你希望覆盖 `/etc/resolv.conf` 中的条目，你可以添加到 `kubelet` 的配置中。
 
-* ClusterFirst
+**ClusterFirst**
 
 在 `ClusterFirst`  方式中，遇到 DNS 查询请求会做有选择的转发。根据配置的不同，有以下两种方式：
 
-第一种方式配置相对古老但更简明，即采用一个规则：如果请求的域名不是集群域的子域，那么将其转发到 `pod` 所在的主机。
+第一种方式配置相对古老但更简明，即采用一个规则：如果请求的域名不是集群域的子域，那么将其转发到 pod 所在的主机。
 
 第二种方式相对新一些，你可以在内部 DNS 中配置选择性转发。
 
@@ -115,27 +111,27 @@ data:
 
 在 `stubDomains` 条目中，可以为特定域名指定特定的 DNS 服务器；而 `upstreamNameservers` 条目则给出，待查询域名不是集群域子域情况下用到的 DNS 服务器。
 
-这是通过在一个 `pod` 中运行我们熟知的 `dnsmasq` 实现的。
+这是通过在一个 pod 中运行我们熟知的 `dnsmasq` 实现的。
 
 ![kubedns](https://zwischenzugs.files.wordpress.com/2018/08/kubedns.png?w=525)
 
 剩下两种选项都比较小众：
 
-* ClusterFirstWithHostNet
+**ClusterFirstWithHostNet**
 
-适用于 `pod` 使用主机网络的情况，例如绕开 Docker 网络配置，直接使用与 `pod` 对应主机相同的网络。
+适用于 pod 使用主机网络的情况，例如绕开 Docker 网络配置，直接使用与 pod 对应主机相同的网络。
 
-* None
+**None**
 
 `None` 意味着不改变 DNS，但强制要求你在 `pod` <ruby>规范文件<rt>specification</rt></ruby>的 `dnsConfig` 条目中指定 DNS 配置。
 
 ### CoreDNS 即将到来
 
-除了上面提到的那些，一旦 `CoreDNS` 取代Kubernetes 中的 `kube-dns`，情况还会发生变化。`CoreDNS` 相比 `kube-dns` 具有可配置性更高、效率更高等优势。
+除了上面提到的那些，一旦 `CoreDNS` 取代 Kubernetes 中的 `kube-dns`，情况还会发生变化。`CoreDNS` 相比 `kube-dns` 具有可配置性更高、效率更高等优势。
 
 如果想了解更多，参考[这里][5]。
 
-如果你对 OpenShift 的网络感兴趣，我曾写过一篇[文章][6]可供你参考。但文章中 OpenShift 的版本是 `3.6`，可能有些过时。
+如果你对 OpenShift 的网络感兴趣，我曾写过一篇[文章][6]可供你参考。但文章中 OpenShift 的版本是 3.6，可能有些过时。
 
 ### 第四部分总结
 
@@ -152,14 +148,14 @@ via: https://zwischenzugs.com/2018/08/06/anatomy-of-a-linux-dns-lookup-part-iv/
 
 作者：[zwischenzugs][a]
 译者：[pinewall](https://github.com/pinewall)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[wxy](https://github.com/wxy)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://zwischenzugs.com/
-[1]:https://zwischenzugs.com/2018/06/08/anatomy-of-a-linux-dns-lookup-part-i/
-[2]:https://zwischenzugs.com/2018/06/18/anatomy-of-a-linux-dns-lookup-part-ii/
-[3]:https://zwischenzugs.com/2018/07/06/anatomy-of-a-linux-dns-lookup-part-iii/
+[1]:https://linux.cn/article-9943-1.html
+[2]:https://linux.cn/article-9949-1.html
+[3]:https://linux.cn/article-9972-1.html
 [4]:https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/#impacts-on-pods
 [5]:https://coredns.io/
 [6]:https://zwischenzugs.com/2017/10/21/openshift-3-6-dns-in-pictures/
