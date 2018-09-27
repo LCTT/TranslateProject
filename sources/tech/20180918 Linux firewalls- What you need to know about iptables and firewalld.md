@@ -12,23 +12,28 @@ Linux 防火墙: 关于 iptables 和 firewalld，你需要知道些什么
 
 A firewall is a set of rules. When a data packet moves into or out of a protected network space, its contents (in particular, information about its origin, target, and the protocol it plans to use) are tested against the firewall rules to see if it should be allowed through. Here’s a simple example:
 
-![firewall filtering request][3]
+防火墙是一组规则。当数据包进出受保护的网络时，进出内容(特别是关于其来源、目标和使用的协议等信息)会根据防火墙规则进行检测，以确定是否允许其通过。下面是一个简单的例子:
 
-A firewall can filter requests based on protocol or target-based rules.
 
-On the one hand, [iptables][4] is a tool for managing firewall rules on a Linux machine.
+![防火墙过滤请求] [3]
 
-On the other hand, [firewalld][5] is also a tool for managing firewall rules on a Linux machine.
+防火墙可以根据协议或基于目标的规则过滤请求。
 
-You got a problem with that? And would it spoil your day if I told you that there was another tool out there, called [nftables][6]?
+一方面， [iptables][4] 是 Linux 机器上管理防火墙规则的工具。
 
-OK, I’ll admit that the whole thing does smell a bit funny, so let me explain. It all starts with Netfilter, which controls access to and from the network stack at the Linux kernel module level. For decades, the primary command-line tool for managing Netfilter hooks was the iptables ruleset.
+另一方面，[firewalld][5]也是 Linux 机器上管理防火墙规则的工具。
 
-Because the syntax needed to invoke those rules could come across as a bit arcane, various user-friendly implementations like [ufw][7] and firewalld were introduced as higher-level Netfilter interpreters. Ufw and firewalld are, however, primarily designed to solve the kinds of problems faced by stand-alone computers. Building full-sized network solutions will often require the extra muscle of iptables or, since 2014, its replacement, nftables (through the nft command line tool).
+你有什么问题吗？如果我告诉你还有另外一种工具，叫做 [nftables][6]，这会不会糟蹋你的一天呢？
 
-iptables hasn’t gone anywhere and is still widely used. In fact, you should expect to run into iptables-protected networks in your work as an admin for many years to come. But nftables, by adding on to the classic Netfilter toolset, has brought some important new functionality.
+好吧，我承认整件事确实有点好笑，所以让我解释一下了。这一切都从 Netfilter 开始，在 Linux 内核模块级别， Netfilter 控制访问网络栈。几十年来，管理 Netfilter 钩子的主要命令行工具是 iptables 规则集。
 
-From here on, I’ll show by example how firewalld and iptables solve simple connectivity problems.
+因为调用这些规则所需的语法看起来有点晦涩难懂，所以各种用户友好的实现方式，如[ufw][7] 和 firewalld 被引入作，并为更高级别的 Netfilter 解释器。然而，Ufw 和 firewalld 主要是为解决独立计算机面临的各种问题而设计的。构建全方面的网络解决方案通常需要 iptables，或者从2014年起，它的替代品 nftables (nft 命令行工具)。
+
+
+iptables 没有消失，仍然被广泛使用着。事实上，在未来的许多年里，作为一名管理员，你应该会使用 iptables 来保护的网络。但是nftables 通过操作经典的 Netfilter 工具集而带来了一些重要的新功能。
+
+
+从现在开始，我将通过示例展示 firewalld 和 iptables 如何解决简单的连接问题。
 
 ### Configure HTTP access using firewalld
 
