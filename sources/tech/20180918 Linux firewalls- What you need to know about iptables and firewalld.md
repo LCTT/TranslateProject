@@ -30,43 +30,44 @@ A firewall is a set of rules. When a data packet moves into or out of a protecte
 因为调用这些规则所需的语法看起来有点晦涩难懂，所以各种用户友好的实现方式，如[ufw][7] 和 firewalld 被引入作，并为更高级别的 Netfilter 解释器。然而，Ufw 和 firewalld 主要是为解决独立计算机面临的各种问题而设计的。构建全方面的网络解决方案通常需要 iptables，或者从2014年起，它的替代品 nftables (nft 命令行工具)。
 
 
-iptables 没有消失，仍然被广泛使用着。事实上，在未来的许多年里，作为一名管理员，你应该会使用 iptables 来保护的网络。但是nftables 通过操作经典的 Netfilter 工具集而带来了一些重要的新功能。
+iptables 没有消失，仍然被广泛使用着。事实上，在未来的许多年里，作为一名管理员，你应该会使用 iptables 来保护的网络。但是nftables 通过操作经典的 Netfilter 工具集带来了一些重要的崭新的功能。
 
 
 从现在开始，我将通过示例展示 firewalld 和 iptables 如何解决简单的连接问题。
 
-### Configure HTTP access using firewalld
+### 使用 firewalld 配置 HTTP 访问
 
-As you might have guessed from its name, firewalld is part of the [systemd][8] family. Firewalld can be installed on Debian/Ubuntu machines, but it’s there by default on Red Hat and CentOS. If you’ve got a web server like Apache running on your machine, you can confirm that the firewall is working by browsing to your server’s web root. If the site is unreachable, then firewalld is doing its job.
+正如你能从它的名字中猜到的，firewalld 是 [systemd][8] 家族的一部分。Firewalld 可以安装在 Debian/Ubuntu 机器上，不过， 它默认安装在 RedHat 和 CentOS 上。如果您的计算机上运行着像 Apache 这样的 web 服务器，您可以通过浏览服务器的 web 根目录来确认防火墙是否正在工作。如果网站不可访问，那么 firewalld 正在工作。
 
-You’ll use the `firewall-cmd` tool to manage firewalld settings from the command line. Adding the `–state` argument returns the current firewall status:
+你可以使用 `firewall-cmd` 工具从命令行管理 firewalld 设置。添加 `–state`  参数将返回当前防火墙的状态:
 
 ```
 # firewall-cmd --state
 running
 ```
 
-By default, firewalld will be active and will reject all incoming traffic with a couple of exceptions, like SSH. That means your website won’t be getting too many visitors, which will certainly save you a lot of data transfer costs. As that’s probably not what you had in mind for your web server, though, you’ll want to open the HTTP and HTTPS ports that by convention are designated as 80 and 443, respectively. firewalld offers two ways to do that. One is through the `–add-port` argument that references the port number directly along with the network protocol it’ll use (TCP in this case). The `–permanent` argument tells firewalld to load this rule each time the server boots:
+默认情况下，firewalld 将处于运行状态，并将拒绝所有传入流量，但有几个例外，如 SSH。这意味着你的网站不会有太多的访问者，这无疑会为你节省大量的数据传输成本。然而，这不是你对 web 服务器的要求，你希望打开 HTTP 和 HTTPS 端口，按照惯例，这两个端口分别被指定为80和443。firewalld 提供了两种方法来实现这个功能。一个是通过 `–add-port` 参数，该参数直接引用端口号及其将使用的网络协议(在本例中为TCP )。 另外一个是通过`–permanent` 参数，它告诉 firewalld 在每次服务器启动时加载此规则:
+
 
 ```
 # firewall-cmd --permanent --add-port=80/tcp
 # firewall-cmd --permanent --add-port=443/tcp
 ```
 
-The `–reload` argument will apply those rules to the current session:
+ `–reload` 参数将这些规则应用于当前会话:
 
 ```
 # firewall-cmd --reload
 ```
 
-Curious as to the current settings on your firewall? Run `–list-services`:
+查看当前防火墙上的设置, 运行 `–list-services` :
 
 ```
 # firewall-cmd --list-services
 dhcpv6-client http https ssh
 ```
 
-Assuming you’ve added browser access as described earlier, the HTTP, HTTPS, and SSH ports should now all be open—along with `dhcpv6-client`, which allows Linux to request an IPv6 IP address from a local DHCP server.
+假设您已经如前所述添加了浏览器访问，那么 HTTP、HTTPS 和 SSH 端口现在都应该是开放的—— `dhcpv6-client` ，它允许 Linux 从本地 DHCP 服务器请求 IPv6 IP地址。
 
 ### Configure a locked-down customer kiosk using iptables
 
