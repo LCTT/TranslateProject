@@ -6,9 +6,9 @@ Linux 防火墙: 关于 iptables 和 firewalld，你需要知道些什么
 以下是如何使用 iptables 和 firewalld 工具来管理 Linux 防火墙规则。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/openwires_fromRHT_520_0612LL.png?itok=PqZi55Ab)
-This article is excerpted from my book, [Linux in Action][1], and a second Manning project that’s yet to be released.
+这篇文章摘自我的书[Linux in Action][1]，第二 Manning project  尚未发布。
 
-### The firewall
+### 防火墙
 
 A firewall is a set of rules. When a data packet moves into or out of a protected network space, its contents (in particular, information about its origin, target, and the protocol it plans to use) are tested against the firewall rules to see if it should be allowed through. Here’s a simple example:
 
