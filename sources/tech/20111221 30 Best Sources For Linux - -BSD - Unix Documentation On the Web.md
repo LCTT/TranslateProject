@@ -1,5 +1,12 @@
-30 Best Sources For Linux / *BSD / Unix Documentation On the Web
+# sober-wang 翻译中
+
+
+
+30 Best Sources For Linux / *BSD / Unix Documentation On the We
 ======
+
+
+
 Man pages are written by sys-admin and developers for IT techs, and are intended more as a reference than as a how to. Man pages are very useful for people who are already familiar with Linux, Unix, and BSD operating systems. Use man pages when you just need to know the syntax for particular commands or configuration file, but they are not helpful for new Linux users. Man pages are not good for learning something new for the first time. Here are thirty best documentation sites on the web for learning Linux and Unix like operating systems.
 
 ![Dennis Ritchie and Ken Thompson working with UNIX PDP11][1]
@@ -12,8 +19,8 @@ Please note that BSD manpages are usually better as compare to Linux.
 
 RHEL is developed by Red Hat and targeted toward the commercial market. It has one of the best documentations covering basis of RHEL to advanced topics like security, SELinux, virtualization, directory server, clustering, JBOSS, HPC, and much more. Red Hat documentation has been translated into twenty-two languages and is available in multi-page HTML, single-page HTML, PDF, and EPUB formats. The good news is you can use the same documentation for CentOS or Scientific Linux (community enterprise distros). All of these documents ship with the OS, so if you don't have a network connection, then you have them there as well. The RHEL docs **covers everything from installation to configuring clusters**. The only downside is you need to be a paid customer. This is perfect for an enterprise company.
 
-  1. RHEL Documentation: [in HTML/PDF format][3]
-  2. Support forums: Only available to Red Hat customer portal to submit a support case.
+    1. RHEL Documentation: [in HTML/PDF format][3]
+    2. Support forums: Only available to Red Hat customer portal to submit a support case.
 
 
 
@@ -366,87 +373,87 @@ via: https://www.cyberciti.biz/tips/linux-unix-bsd-documentations.html
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
 [a]:https://www.cyberciti.biz
-[1]:https://www.cyberciti.biz/media/new/tips/2011/12/unix-pdp11.jpg (Dennis Ritchie and Ken Thompson working with UNIX PDP11)
-[2]:https://www.cyberciti.biz/media/new/tips/2011/12/redhat-enterprise-linux-docs-150x150.png (Red hat Enterprise Linux Docs)
+[1]:https://www.cyberciti.biz/media/new/tips/2011/12/unix-pdp11.jpg "Dennis Ritchie and Ken Thompson working with UNIX PDP11"
+[2]:https://www.cyberciti.biz/media/new/tips/2011/12/redhat-enterprise-linux-docs-150x150.png "Red hat Enterprise Linux Docs"
 [3]:https://access.redhat.com/documentation/en-us/
-[4]:https://www.cyberciti.biz/media/new/tips/2011/12/centos-linux-wiki-150x150.png (Centos Linux Wiki, Support, Documents)
-[5]:https://www.cyberciti.biz/media/new/tips/2011/12/arch-linux-wiki-150x150.png (Arch Linux wiki and tutorials )
+[4]:https://www.cyberciti.biz/media/new/tips/2011/12/centos-linux-wiki-150x150.png "Centos Linux Wiki, Support, Documents"
+[5]:https://www.cyberciti.biz/media/new/tips/2011/12/arch-linux-wiki-150x150.png "Arch Linux wiki and tutorials "
 [6]:https://wiki.archlinux.org/index.php/Category:Networking_%28English%29
 [7]:https://bbs.archlinux.org/
 [8]:https://wiki.archlinux.org/
-[9]:https://www.cyberciti.biz/media/new/tips/2011/12/gentoo-linux-wiki1-150x150.png (Gentoo Linux Handbook and Wiki)
+[9]:https://www.cyberciti.biz/media/new/tips/2011/12/gentoo-linux-wiki1-150x150.png "Gentoo Linux Handbook and Wiki"
 [10]:http://www.gentoo.org/doc/en/handbook/
 [11]:https://wiki.gentoo.org
 [12]:https://forums.gentoo.org/
 [13]:http://gentoo-wiki.com
-[14]:https://www.cyberciti.biz/media/new/tips/2011/12/ubuntu-linux-wiki.png (Ubuntu Linux Wiki and Forums)
+[14]:https://www.cyberciti.biz/media/new/tips/2011/12/ubuntu-linux-wiki.png "Ubuntu Linux Wiki and Forums"
 [15]:https://help.ubuntu.com/community
 [16]:https://help.ubuntu.com/
 [17]:https://ubuntuforums.org/
-[18]:https://www.cyberciti.biz/media/new/tips/2011/12/ibm-devel.png (IBM: Technical for Linux programmers and system administrators)
+[18]:https://www.cyberciti.biz/media/new/tips/2011/12/ibm-devel.png "IBM: Technical for Linux programmers and system administrators"
 [19]:https://www.ibm.com/developerworks/learn/linux/index.html
 [20]:https://www.ibm.com/developerworks/community/forums/html/public?lang=en
-[21]:https://www.cyberciti.biz/media/new/tips/2011/12/freebsd-docs.png (Freebsd Documentation)
-[22]:https://www.cyberciti.biz/media/new/tips/2011/12/bash-hackers-wiki-150x150.png (Bash hackers wiki for bash users)
+[21]:https://www.cyberciti.biz/media/new/tips/2011/12/freebsd-docs.png "Freebsd Documentation"
+[22]:https://www.cyberciti.biz/media/new/tips/2011/12/bash-hackers-wiki-150x150.png "Bash hackers wiki for bash users"
 [23]:http://wiki.bash-hackers.org/doku.php
-[24]:https://www.cyberciti.biz/media/new/tips/2011/12/bash-faq-150x150.png (Bash FAQ: Answers to frequently asked questions about GNU/BASH)
+[24]:https://www.cyberciti.biz/media/new/tips/2011/12/bash-faq-150x150.png "Bash FAQ: Answers to frequently asked questions about GNU/BASH"
 [25]:http://mywiki.wooledge.org/BashPitfalls
 [26]:https://mywiki.wooledge.org/BashFAQ
-[27]:https://www.cyberciti.biz/media/new/tips/2011/12/howtoforge-150x150.png (Howtoforge tutorials)
+[27]:https://www.cyberciti.biz/media/new/tips/2011/12/howtoforge-150x150.png "Howtoforge tutorials"
 [28]:https://howtoforge.com/
-[29]:https://www.cyberciti.biz/media/new/tips/2011/12/openbsd-faq-150x150.png (OpenBSD Documenation)
+[29]:https://www.cyberciti.biz/media/new/tips/2011/12/openbsd-faq-150x150.png "OpenBSD Documenation"
 [30]:https://www.openbsd.org/faq/index.html
 [31]:https://www.openbsd.org/mail.html
-[32]:https://www.cyberciti.biz/media/new/tips/2011/12/calomel_org.png (Open Source Research and Reference Documentation)
+[32]:https://www.cyberciti.biz/media/new/tips/2011/12/calomel_org.png "Open Source Research and Reference Documentation"
 [33]:https://calomel.org
-[34]:https://www.cyberciti.biz/media/new/tips/2011/12/slackware-linux-book-150x150.png (Slackware Linux Book and Documentation )
+[34]:https://www.cyberciti.biz/media/new/tips/2011/12/slackware-linux-book-150x150.png "Slackware Linux Book and Documentation "
 [35]:http://www.slackbook.org/
-[36]:https://www.cyberciti.biz/media/new/tips/2011/12/tldp-150x150.png (Linux Learning Site and Documentation )
+[36]:https://www.cyberciti.biz/media/new/tips/2011/12/tldp-150x150.png "Linux Learning Site and Documentation "
 [37]:http://tldp.org/LDP/abs/html/index.html
 [38]:http://tldp.org/HOWTO/HOWTO-INDEX/howtos.html
 [39]:http://tldp.org/
-[40]:https://www.cyberciti.biz/media/new/tips/2011/12/linuxhomenetworking-150x150.png (Linux Home Networking )
+[40]:https://www.cyberciti.biz/media/new/tips/2011/12/linuxhomenetworking-150x150.png "Linux Home Networking "
 [41]:http://www.linuxhomenetworking.com/
-[42]:https://www.cyberciti.biz/media/new/tips/2011/12/linux-action-show-150x150.png (Linux Podcast )
+[42]:https://www.cyberciti.biz/media/new/tips/2011/12/linux-action-show-150x150.png "Linux Podcast "
 [43]:http://www.jupiterbroadcasting.com/show/linuxactionshow/
 [44]:https://www.commandlinefu.com/commands/browse/sort-by-votes
-[45]:https://www.cyberciti.biz/media/new/tips/2011/12/commandlinefu.png (The best Unix / Linux Commands )
+[45]:https://www.cyberciti.biz/media/new/tips/2011/12/commandlinefu.png "The best Unix / Linux Commands "
 [46]:https://commandlinefu.com/
 [47]:https://www.debian-administration.org/hof
-[48]:https://www.cyberciti.biz/media/new/tips/2011/12/debian-admin.png (Debian Linux Adminstration: Tips and Tutorial For Sys Admin)
+[48]:https://www.cyberciti.biz/media/new/tips/2011/12/debian-admin.png "Debian Linux Adminstration: Tips and Tutorial For Sys Admin"
 [49]:https://www.debian-administration.org/
-[50]:https://www.cyberciti.biz/media/new/tips/2011/12/catonmat-150x150.png (Sed, Awk, Perl Tutorials)
+[50]:https://www.cyberciti.biz/media/new/tips/2011/12/catonmat-150x150.png "Sed, Awk, Perl Tutorials"
 [51]:http://www.catonmat.net/blog/worlds-best-introduction-to-sed/
 [52]:https://www.catonmat.net/blog/sed-one-liners-explained-part-one/
 [53]:https://www.catonmat.net/blog/the-definitive-guide-to-bash-command-line-history/
 [54]:https://www.catonmat.net/blog/awk-one-liners-explained-part-one/
 [55]:https://catonmat.net/
-[56]:https://www.cyberciti.biz/media/new/tips/2011/12/debian-wiki-150x150.png (Debian Linux Tutorials and Wiki)
+[56]:https://www.cyberciti.biz/media/new/tips/2011/12/debian-wiki-150x150.png "Debian Linux Tutorials and Wiki"
 [57]:https://www.debian.org/doc/
 [58]:https://wiki.debian.org/
 [59]:https://www.debian.org/support
 [60]:http://swift.siphos.be/linux_sea/
-[61]:https://www.cyberciti.biz/media/new/tips/2011/12/orelly-150x150.png (Oreilly Free Linux / Unix / Php / Javascript / Ubuntu Books)
+[61]:https://www.cyberciti.biz/media/new/tips/2011/12/orelly-150x150.png "Oreilly Free Linux / Unix / Php / Javascript / Ubuntu Books"
 [62]:http://commons.oreilly.com/wiki/index.php/O%27Reilly_Commons
-[63]:https://www.cyberciti.biz/media/new/tips/2011/12/ubuntu-guide-150x150.png (Ubuntu Book For New Users)
+[63]:https://www.cyberciti.biz/media/new/tips/2011/12/ubuntu-guide-150x150.png "Ubuntu Book For New Users"
 [64]:http://ubuntupocketguide.com/
-[65]:https://www.cyberciti.biz/media/new/tips/2011/12/rute-150x150.png (GNU/LINUX system administration free book)
+[65]:https://www.cyberciti.biz/media/new/tips/2011/12/rute-150x150.png "GNU/LINUX system administration free book"
 [66]:https://web.archive.org/web/20160204213406/http://rute.2038bug.com/rute.html.gz
-[67]:https://www.cyberciti.biz/media/new/tips/2011/12/advanced-linux-programming-150x150.png (Download Advanced Linux Programming PDF version)
+[67]:https://www.cyberciti.biz/media/new/tips/2011/12/advanced-linux-programming-150x150.png "Download Advanced Linux Programming PDF version"
 [68]:https://github.com/MentorEmbedded/advancedlinuxprogramming
-[69]:https://www.cyberciti.biz/media/new/tips/2011/12/lpic-150x150.png (Download Linux Professional Institute Certification PDF Book)
+[69]:https://www.cyberciti.biz/media/new/tips/2011/12/lpic-150x150.png "Download Linux Professional Institute Certification PDF Book"
 [70]:http://academy.delmar.edu/Courses/ITSC1358/eBooks/LPI-101.LinuxTrainingCourseNotes.pdf
 [71]://www.cyberciti.biz/faq/top5-linux-video-editing-system-software/
-[72]:https://www.cyberciti.biz/media/new/tips/2011/12/floss-manuals.png (Download manuals about free and open source software)
+[72]:https://www.cyberciti.biz/media/new/tips/2011/12/floss-manuals.png "Download manuals about free and open source software"
 [73]:https://flossmanuals.net/
-[74]:https://www.cyberciti.biz/media/new/tips/2011/12/linux-starter-150x150.png (New to Linux? Start Linux starter book [ PDF version ])
+[74]:https://www.cyberciti.biz/media/new/tips/2011/12/linux-starter-150x150.png "New to Linux? Start Linux starter book [ PDF version ]"
 [75]:http://www.tuxradar.com/linuxstarterpack
 [76]:https://linux.com
 [77]:https://lwn.net/
 [78]:http://hints.macworld.com/
 [79]:https://developer.apple.com/library/mac/navigation/
 [80]:https://developer.apple.com/library/mac/#documentation/OpenSource/Conceptual/ShellScripting/Introduction/Introduction.html
-[81]:https://support.apple.com/kb/index?page=search&locale=en_US&q=
+[81]:https://support.apple.com/kb/index?page=search&amp;locale=en_US&amp;q=
 [82]:https://www.netbsd.org/docs/
 [83]:https://www.flickr.com/photos/9479603@N02/3311745151/in/set-72157614479572582/
 [84]:https://twitter.com/nixcraft

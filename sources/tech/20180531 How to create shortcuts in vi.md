@@ -1,4 +1,4 @@
-How to create shortcuts in vi
+【sd886393认领翻译中】How to create shortcuts in vi
 ======
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/documentation-type-keys-yearbook.png?itok=Q-ELM2rn)
