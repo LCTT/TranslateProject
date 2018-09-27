@@ -1,8 +1,9 @@
 heguangzhi  translating
 
-Linux firewalls: What you need to know about iptables and firewalld
+Linux 防火墙: 关于 iptables 和 firewalld，你需要知道些什么
 ======
-Here's how to use the iptables and firewalld tools to manage Linux firewall connectivity rules.
+
+以下是如何使用 iptables 和 firewalld 工具来管理 Linux 防火墙规则。
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/openwires_fromRHT_520_0612LL.png?itok=PqZi55Ab)
 This article is excerpted from my book, [Linux in Action][1], and a second Manning project that’s yet to be released.
@@ -148,7 +149,7 @@ via: https://opensource.com/article/18/9/linux-iptables-firewalld
 
 作者：[David Clinton][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[heguangzhi](https://github.com/heguangzhi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
