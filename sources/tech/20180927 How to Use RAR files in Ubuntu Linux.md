@@ -1,3 +1,5 @@
+HankChow translating
+
 How to Use RAR files in Ubuntu Linux
 ======
 [RAR][1] is a quite good archive file format. But, it isn’t the best when you’ve got 7-zip offering great compression ratios and Zip files being easily supported across multiple platforms by default. It is one of the most popular archive formats, but, [Ubuntu][2]‘s archive manager does not support extracting RAR files nor does it let you create RAR files.
