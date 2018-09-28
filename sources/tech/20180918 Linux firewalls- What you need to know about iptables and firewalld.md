@@ -83,22 +83,17 @@ dhcpv6-client http https ssh
 
 为了说明这一切，让我们想象一下，我们为一家名为 BigMart 的大型连锁商店工作。它们已经存在了几十年；事实上，我们想象中的祖父母可能是在那里购物并长大的。但是这些天，BigMart 公司总部的人可能只是在数着亚马逊将他们永远赶下去的时间。
 
-
-Nevertheless, BigMart’s IT department is doing its best, and they’ve just sent you some WiFi-ready kiosk devices that you’re expected to install at strategic locations throughout your store. The idea is that they’ll display a web browser logged into the BigMart.com products pages, allowing them to look up merchandise features, aisle location, and stock levels. The kiosks will also need access to bigmart-data.com, where many of the images and video media are stored.
-
-
 尽管如此，BigMart 的IT部门正在尽他们最大努力提供解决方案，他们向你发放了一些具有 WiFi 功能信息亭设备，你在整个商店的战略位置使用这些设备。其想法是，登录到 BigMart.com 产品页面，允许查找商品特征、过道位置和库存水平。信息亭还允许进入 bigmart-data.com，那里储存着许多图像和视频媒体信息。
 
 除此之外，您还需要允许下载软件包更新。最后，您还希望只允许从本地工作站访问SSH，并阻止其他人登录。下图说明了它将如何工作:
-
 
 ![信息亭流量IP表] [10] 
 
 信息亭业务流由 iptables 控制。 
 
-### The script
+### 脚本
 
-Here’s how that will all fit into a Bash script:
+以下是 Bash 脚本内容:
 
 ```
 #!/bin/bash
@@ -112,24 +107,25 @@ iptables -A INPUT -p tcp -s 10.0.3.1 --dport 22 -j ACCEPT
 iptables -A INPUT -p tcp -s 0.0.0.0/0 --dport 22 -j DROP
 ```
 
-The basic anatomy of our rules starts with `-A`, telling iptables that we want to add the following rule. `OUTPUT` means that this rule should become part of the OUTPUT chain. `-p` indicates that this rule will apply only to packets using the TCP protocol, where, as `-d` tells us, the destination is [bigmart.com][11]. The `-j` flag points to `ACCEPT` as the action to take when a packet matches the rule. In this first rule, that action is to permit, or accept, the request. But further down, you can see requests that will be dropped, or denied.
+我们从基本规则 `-A` 开始分析，它告诉iptables 我们要添加规则。`OUTPUT` 意味着这条规则应该成为输出的一部分。`-p` 表示该规则仅使用TCP协议的数据包，正如`-d` 告诉我们的，目的地址是 [bigmart.com][11]。`-j` 参数作用为数据包符合规则时要采取的操作是 `ACCEPT`。第一条规则表示允许或接受请求。但，最后一条规则表示删除或拒绝的请求。
 
-Remember that order matters. And that’s because iptables will run a request past each of its rules, but only until it gets a match. So an outgoing browser request for, say, [youtube.com][12] will pass the first four rules, but when it gets to either the `–dport 80` or `–dport 443` rule—depending on whether it’s an HTTP or HTTPS request—it’ll be dropped. iptables won’t bother checking any further because that was a match.
+规则顺序是很重要的。iptables 仅仅允许匹配规则的内容请求通过。一个向外发出的浏览器请求，比如访问[youtube.com][12] 是会通过的，因为这个请求匹配第四条规则，但是当它到达“dport 80”或“dport 443”规则时——取决于是HTTP还是HTTPS请求——它将被删除。iptables不再麻烦检查了，因为那是一场比赛。
 
-On the other hand, a system request to ubuntu.com for a software upgrade will get through when it hits its appropriate rule. What we’re doing here, obviously, is permitting outgoing HTTP or HTTPS requests to only our BigMart or Ubuntu destinations and no others.
+另一方面，向ubuntu.com 发出软件升级的系统请求，只要符合其适当的规则，就会通过。显然，我们在这里做的是，只允许向我们的 BigMart 或 Ubuntu 发送 HTTP 或 HTTPS 请求，而不允许向其他目的地发送。
 
-The final two rules will deal with incoming SSH requests. They won’t already have been denied by the two previous drop rules since they don’t use ports 80 or 443, but 22. In this case, login requests from my workstation will be accepted but requests for anywhere else will be dropped. This is important: Make sure the IP address you use for your port 22 rule matches the address of the machine you’re using to log in—if you don’t do that, you’ll be instantly locked out. It's no big deal, of course, because the way it’s currently configured, you could simply reboot the server and the iptables rules will all be dropped. If you’re using an LXC container as your server and logging on from your LXC host, then use the IP address your host uses to connect to the container, not its public address.
+最后两条规则将处理 SSH 请求。因为它不使用端口80或443端口，而是使用22端口，所以之前的两个丢弃规则不会拒绝它。在这种情况下，来自我的工作站的登录请求将被接受，但是对其他任何地方的请求将被拒绝。这一点很重要:确保用于端口22规则的IP地址与您用来登录的机器的地址相匹配——如果不这样做，将立即被锁定。当然，这没什么大不了的，因为按照目前的配置方式，只需重启服务器，iptables 规则就会全部丢失。如果使用 LXC 容器作为服务器并从 LXC 主机登录，则使用主机 IP 地址连接容器，而不是其公共地址。
 
-You’ll need to remember to update this rule if my machine’s IP ever changes; otherwise, you’ll be locked out.
+如果机器的IP发生变化，请记住更新这个规则；否则，你会被拒绝访问。
 
-Playing along at home (hopefully on a throwaway VM of some sort)? Great. Create your own script. Now I can save the script, use `chmod` to make it executable, and run it as `sudo`. Don’t worry about that `bigmart-data.com not found` error—of course it’s not found; it doesn’t exist.
+在家玩(是在某种性虚拟机上)？太好了。创建自己的脚本。现在我可以保存脚本，使用`chmod` 使其可执行，并以`sudo` 的形式运行它。不要担心  `igmart-data.com没找到`错误——当然没找到；它不存在。
 
 ```
 chmod +X scriptname.sh
 sudo ./scriptname.sh
 ```
 
-You can test your firewall from the command line using `cURL`. Requesting ubuntu.com works, but [manning.com][13] fails.
+你可以使用`cURL` 命令行测试防火墙。请求 ubuntu.com 奏效，但请求 [manning.com][13]是失败的 。
+
 
 ```
 curl ubuntu.com
