@@ -69,25 +69,32 @@ dhcpv6-client http https ssh
 
 假设您已经如前所述添加了浏览器访问，那么 HTTP、HTTPS 和 SSH 端口现在都应该是开放的—— `dhcpv6-client` ，它允许 Linux 从本地 DHCP 服务器请求 IPv6 IP地址。
 
-### Configure a locked-down customer kiosk using iptables
+### 使用 iptables 配置锁定的客户信息亭
 
-I’m sure you’ve seen kiosks—they’re the tablets, touchscreens, and ATM-like PCs in a box that airports, libraries, and business leave lying around, inviting customers and passersby to browse content. The thing about most kiosks is that you don’t usually want users to make themselves at home and treat them like their own devices. They’re not generally meant for browsing, viewing YouTube videos, or launching denial-of-service attacks against the Pentagon. So to make sure they’re not misused, you need to lock them down.
+我相信你已经看到了信息亭——它们是放在机场、图书馆和商务场所的盒子里的平板电脑、触摸屏和ATM类电脑，邀请顾客和路人浏览内容。大多数信息亭的问题是，你通常不希望用户像在自己家一样，把他们当成自己的设备。它们通常不是用来浏览、观看 YouTube 视频或对五角大楼发起拒绝服务攻击的。因此，为了确保它们没有被滥用，你需要锁定它们。
 
-One way is to apply some kind of kiosk mode, whether it’s through clever use of a Linux display manager or at the browser level. But to make sure you’ve got all the holes plugged, you’ll probably also want to add some hard network controls through a firewall. In the following section, I'll describe how I would do it using iptables.
 
-There are two important things to remember about using iptables: The order you give your rules is critical, and by themselves, iptables rules won’t survive a reboot. I’ll address those here one at a time.
+一种方法是应用某种信息亭模式，无论是通过巧妙使用Linux显示管理器还是在浏览器级别。但是为了确保你已经堵塞了所有的漏洞，你可能还想通过防火墙添加一些硬网络控制。在下一节中，我将讲解如何使用iptables 来完成。
 
-### The kiosk project
 
-To illustrate all this, let’s imagine we work for a store that’s part of a larger chain called BigMart. They’ve been around for decades; in fact, our imaginary grandparents probably grew up shopping there. But these days, the guys at BigMart corporate headquarters are probably just counting the hours before Amazon drives them under for good.
+关于使用iptables，有两件重要的事情需要记住:你给规则的顺序非常关键，iptables 规则本身在重新启动后将无法存活。我会一次一个地在解释这些。
+
+### 信息亭项目 
+
+为了说明这一切，让我们想象一下，我们为一家名为 BigMart 的大型连锁商店工作。它们已经存在了几十年；事实上，我们想象中的祖父母可能是在那里购物并长大的。但是这些天，BigMart 公司总部的人可能只是在数着亚马逊将他们永远赶下去的时间。
+
 
 Nevertheless, BigMart’s IT department is doing its best, and they’ve just sent you some WiFi-ready kiosk devices that you’re expected to install at strategic locations throughout your store. The idea is that they’ll display a web browser logged into the BigMart.com products pages, allowing them to look up merchandise features, aisle location, and stock levels. The kiosks will also need access to bigmart-data.com, where many of the images and video media are stored.
 
-Besides those, you’ll want to permit updates and, whenever necessary, package downloads. Finally, you’ll want to permit inbound SSH access only from your local workstation, and block everyone else. The figure below illustrates how it will all work:
 
-![kiosk traffic flow ip tables][10]
+尽管如此，BigMart 的IT部门正在尽他们最大努力提供解决方案，他们向你发放了一些具有 WiFi 功能信息亭设备，你在整个商店的战略位置使用这些设备。其想法是，登录到 BigMart.com 产品页面，允许查找商品特征、过道位置和库存水平。信息亭还允许进入 bigmart-data.com，那里储存着许多图像和视频媒体信息。
 
-The kiosk traffic flow being controlled by iptables.
+除此之外，您还需要允许下载软件包更新。最后，您还希望只允许从本地工作站访问SSH，并阻止其他人登录。下图说明了它将如何工作:
+
+
+![信息亭流量IP表] [10] 
+
+信息亭业务流由 iptables 控制。 
 
 ### The script
 
