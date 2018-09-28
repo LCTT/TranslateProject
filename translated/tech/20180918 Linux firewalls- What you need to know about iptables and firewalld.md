@@ -8,7 +8,6 @@ Linux 防火墙: 关于 iptables 和 firewalld，你需要知道些什么
 
 ### 防火墙
 
-A firewall is a set of rules. When a data packet moves into or out of a protected network space, its contents (in particular, information about its origin, target, and the protocol it plans to use) are tested against the firewall rules to see if it should be allowed through. Here’s a simple example:
 
 防火墙是一组规则。当数据包进出受保护的网络时，进出内容(特别是关于其来源、目标和使用的协议等信息)会根据防火墙规则进行检测，以确定是否允许其通过。下面是一个简单的例子:
 
@@ -137,8 +136,6 @@ curl manning.com
 然后我可以告诉系统每次启动时运行一个相关的工具，叫做`iptables-restore`  。我们在上一模块中看到的常规cron 作业，因为它们在设定的时间运行，但是我们不知道什么时候我们的计算机可能会决定崩溃和重启。
 
 有许多方法来处理这个问题。这里有一个:
-
-On my Linux machine, I’ll install a program called [anacron][14] that will give us a file in the /etc/ directory called anacrontab. I’ll edit the file and add this `iptables-restore` command, telling it to load the current values of that .rules file into iptables each day (when necessary) one minute after a boot. I’ll give the job an identifier (`iptables-restore`) and then add the command itself. Since you’re playing along with me at home, you should test all this out by rebooting your system.
 
 
 在我的 Linux 机器上，我将安装一个名为 [anacron][14] 的程序，该程序将在 /etc/ 目录中为我们提供一个名为anacrondab 的文件。我将编辑该文件并添加这个 `iptables-restore`  命令，告诉它加载该文件的当前值。引导后一分钟，规则每天(必要时)加载到 iptables 中。我会给作业一个标识符( `iptables-restore` )，然后添加命令本身。如果你在家和我一起这样，你应该通过重启系统来测试一下。
