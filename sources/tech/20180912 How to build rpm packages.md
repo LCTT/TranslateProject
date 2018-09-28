@@ -1,3 +1,5 @@
+translating by Flowsnow
+
 How to build rpm packages
 ======
 
