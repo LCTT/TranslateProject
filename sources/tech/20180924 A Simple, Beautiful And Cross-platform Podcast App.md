@@ -1,3 +1,5 @@
+translating by Flowsnow
+
 A Simple, Beautiful And Cross-platform Podcast App
 ======
 
