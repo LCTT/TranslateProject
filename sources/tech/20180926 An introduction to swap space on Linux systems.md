@@ -292,7 +292,7 @@ via: https://opensource.com/article/18/9/swap-space-linux-systems
 
 作者：[David Both][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[heguangzhi](https://github.com/heguangzhi)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
