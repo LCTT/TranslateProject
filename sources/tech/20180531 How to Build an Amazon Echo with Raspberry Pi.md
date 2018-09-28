@@ -1,5 +1,3 @@
-heart4lor translating
-
 How to Build an Amazon Echo with Raspberry Pi
 ======
 

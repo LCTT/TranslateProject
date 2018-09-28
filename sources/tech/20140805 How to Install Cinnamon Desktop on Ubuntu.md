@@ -1,4 +1,4 @@
-How to Install Cinnamon Desktop on Ubuntu
+dianbanjiu Tranting How to Install Cinnamon Desktop on Ubuntu
 ======
 **This tutorial shows you how to install Cinnamon desktop environment on Ubuntu.**
 
