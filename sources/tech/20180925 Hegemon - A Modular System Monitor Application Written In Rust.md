@@ -1,3 +1,5 @@
+translating---geekpi
+
 Hegemon – A Modular System Monitor Application Written In Rust
 ======
 
