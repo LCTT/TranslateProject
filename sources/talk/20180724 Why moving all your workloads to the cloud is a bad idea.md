@@ -1,5 +1,3 @@
-Translating by jessie-pang
-
 Why moving all your workloads to the cloud is a bad idea
 ======
 
