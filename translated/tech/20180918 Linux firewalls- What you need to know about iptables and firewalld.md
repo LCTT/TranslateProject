@@ -1,5 +1,3 @@
-heguangzhi  translating
-
 Linux 防火墙: 关于 iptables 和 firewalld，你需要知道些什么
 ======
 
@@ -132,15 +130,18 @@ curl ubuntu.com
 curl manning.com
 ```
 
-### Configuring iptables to load on system boot
+### 配置 iptables 以在系统启动时加载
 
-Now, how do I get these rules to automatically load each time the kiosk boots? The first step is to save the current rules to a .rules file using the `iptables-save` tool. That’ll create a file in the root directory containing a list of the rules. The pipe, followed by the tee command, is necessary to apply my `sudo` authority to the second part of the string: the actual saving of a file to the otherwise restricted root directory.
+现在，我如何让这些规则在每次 kiosk 启动时自动加载？第一步是将当前规则保存。使用`iptables-save` 工具保存规则文件。将在根目录中创建一个包含规则列表的文件。管道后面跟着 tee 命令，是将我的`sudo` 权限应用于字符串的第二部分:将文件实际保存到否则受限的根目录。
 
-I can then tell the system to run a related tool called `iptables-restore` every time it boots. A regular cron job of the kind we saw in the previous module won’t help because they’re run at set times, but we have no idea when our computer might decide to crash and reboot.
+然后我可以告诉系统每次启动时运行一个相关的工具，叫做`iptables-restore`  。我们在上一模块中看到的常规cron 作业，因为它们在设定的时间运行，但是我们不知道什么时候我们的计算机可能会决定崩溃和重启。
 
-There are lots of ways to handle this problem. Here’s one:
+有许多方法来处理这个问题。这里有一个:
 
 On my Linux machine, I’ll install a program called [anacron][14] that will give us a file in the /etc/ directory called anacrontab. I’ll edit the file and add this `iptables-restore` command, telling it to load the current values of that .rules file into iptables each day (when necessary) one minute after a boot. I’ll give the job an identifier (`iptables-restore`) and then add the command itself. Since you’re playing along with me at home, you should test all this out by rebooting your system.
+
+
+在我的 Linux 机器上，我将安装一个名为 [anacron][14] 的程序，该程序将在 /etc/ 目录中为我们提供一个名为anacrondab 的文件。我将编辑该文件并添加这个 `iptables-restore`  命令，告诉它加载该文件的当前值。引导后一分钟，规则每天(必要时)加载到 iptables 中。我会给作业一个标识符( `iptables-restore` )，然后添加命令本身。如果你在家和我一起这样，你应该通过重启系统来测试一下。
 
 ```
 sudo iptables-save | sudo tee /root/my.active.firewall.rules
@@ -150,7 +151,7 @@ sudo nano /etc/anacrontab
 
 ```
 
-I hope these practical examples have illustrated how to use iptables and firewalld for managing connectivity issues on Linux-based firewalls.
+我希望这些实际例子已经说明了如何使用 iptables 和 firewalld 来管理基于Linux的防火墙上的连接问题。
 
 --------------------------------------------------------------------------------
 
