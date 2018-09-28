@@ -11,19 +11,19 @@ Because I'm a community manager and editor on Opensource.com, you might be think
 ### 我如何开始写作
 
 Early in the first decade of my career, I transitioned from a customer service-related role at a tech publishing company into an editing role on Sys Admin Magazine. I was plugging along, happily laying low in my career, and then that all changed when I started writing about open source technologies and communities, and the people in them. But I did _not_ start writing voluntarily. The tl;dr: of it is that my colleagues at Linux New Media eventually talked me into launching our first blog on the [Linux Pro Magazine][3] site. And as it turns out, it was one of the best career decisions I've ever made. I would not be working on Opensource.com today had I not started writing about what other people in open source were doing all those years ago.
-在我职业生涯的前十年，我从一个在技术出版公司的一个顾客服务相关的角色转变成一个杂志管理的编辑。我一直在努力，在我的职业生涯中快乐而低调。然后当我开始写关于开源技术和社区团体的文章时一切都改变了，
+在我职业生涯的前十年，我从一个在技术出版公司的一个顾客服务相关的角色转变成一个杂志管理的编辑。我一直在努力，在我的职业生涯中快乐而低调。然后当我开始写关于开源技术和社区团体以及在他们中人的文章时一切都改变了。但我并不是自愿开始写作的。是我在Linux新媒体的同事说服我在[Linux Pro Maganize][3]上发表我们的第一篇博客。结果证明，那是我职业生涯中做过的最明智的决定。如果我当初那些年没有开始写关于在开源世界中其他人都在做什么的文章我今天将不会在Opensource.com 工作。
 When I first started writing, my goal was to raise awareness of the company I worked for and our publications, while also helping raise the visibility of women in tech. But soon after I started writing, I began seeing unexpected results.
-
+当我第一次开始写作的时候，我的目标是引起我所工作的共公司和出版社的注意，同样也希望能够帮助提高女性在科技领域中的知名度。但当我开始写作后的很快的时间内，我开始看到了未预料到的结果。
 #### My network started growing
-
+### 我的关系网络开始迅速成长
 When I wrote about a person, an organization, or a project, I got their attention. Suddenly the people I wrote about knew who I was. And because I was sharing knowledge—that is to say, I wasn't being a critic—I'd generally become an ally, and in many cases, a friend. I had a platform and an audience, and I was sharing them with other people in open source.
-
+当我写关于一个人，一个组织，或者一个项目的文章时，我引起了他们的注意。突然间我写的那个人知道了我是谁。而且我是在分享知识，我并不是一个评论家而是变成了一个盟友，在很多情况下，是一个朋友。我有了一个平台和一个观众，并且我正在和开源世界中的其他人分享他们。
 #### I was learning
-
+### 我在不断学习
 In addition to promoting our website and magazine and growing my network, the research and fact-checking I did when writing articles helped me become more knowledgeable in my field and improve my tech chops.
-
+除了提升我们的网站和杂志并且增长我的网络关系网，我在写文章时做的调查和事实核查丰富了我的专业知识提高了我的技术实力。
 #### I started meeting more people IRL
-
+### 
 When I went to conferences, I found that my blog posts helped me meet people. I introduced myself to people I'd written about or learned about during my research, and I met new people to interview. People started knowing who I was because they'd read my articles. Sometimes people were even excited to meet me because I'd highlighted them, their projects, or someone or something they were interested in. I had no idea writing could be so exciting and interesting away from the keyboard.
 
 #### My conference talks improved
