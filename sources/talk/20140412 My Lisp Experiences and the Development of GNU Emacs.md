@@ -1,4 +1,3 @@
-Translating by zhousiyu325
 My Lisp Experiences and the Development of GNU Emacs
 ======
 
