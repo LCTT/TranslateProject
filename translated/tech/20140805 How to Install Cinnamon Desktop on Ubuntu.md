@@ -31,7 +31,7 @@ Cinnamon安装完成后，退出当前会话，在登陆界面，点击用户名
 
 ![](https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2014/08/Install_Cinnamon_Ubuntu.jpeg)  
 
-现在你应该已经登陆到有着 Cinnamon 桌面环境的 Ubuntu 中了。你还可以通过同样的方式再回到 Unity 桌面。这里有一张以 Cinnaon 做为桌面环境的 Ubuntu 桌面截图。  
+现在你应该已经登陆到有着 Cinnamon 桌面环境的 Ubuntu 中了。你还可以通过同样的方式再回到 Unity 桌面。这里有一张以 Cinnamon 做为桌面环境的 Ubuntu 桌面截图。  
 
 ![](https://4bds6hergc-flywheel.netdna-ssl.com/wp-content/uploads/2014/08/Cinnamon_Ubuntu_1404.jpeg)  
 
