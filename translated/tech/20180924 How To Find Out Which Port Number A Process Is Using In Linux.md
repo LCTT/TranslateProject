@@ -1,36 +1,24 @@
-HankChow translating
-
-How To Find Out Which Port Number A Process Is Using In Linux
+如何在 Linux 中查看进程占用的端口号
 ======
-As a Linux administrator, you should know whether the corresponding service is binding/listening with correct port or not.
+对于 Linux 系统管理员来说，清楚某个服务是否正确地绑定或监听某个端口，是至关重要的。如果你需要处理端口相关的问题，这篇文章可能会对你有用。
 
-This will help you to easily troubleshoot further when you are facing port related issues.
+端口是 Linux 系统上特定进程之间逻辑连接的标识，包括物理端口和软件端口。由于 Linux 操作系统是一个软件，因此本文只讨论软件端口。软件端口始终与主机的 IP 地址和相关的通信协议相关联，因此端口常用于区分应用程序。大部分涉及到网络的服务都必须打开一个套接字来监听传入的网络请求，而每个服务都使用一个独立的套接字。
 
-A port is a logical connection that identifies a specific process on Linux. There are two kind of port are available like, physical and software.
+**推荐阅读：**
+**(#)** [在 Linux 上查看进程 ID 的 4 种方法][1]
+**(#)** [在 Linux 上终止进程的 3 种方法][2]
 
-Since Linux operating system is a software hence, we are going to discuss about software port.
+套接字是和 IP 地址，软件端口和协议结合起来使用的，而端口号对传输控制协议（Transmission Control Protocol, TCP）和 用户数据报协议（User Datagram Protocol, UDP）协议都适用，TCP 和 UDP 都可以使用0到65535之间的端口号进行通信。
 
-Software port is always associated with an IP address of a host and the relevant protocol type for communication. The port is used to distinguish the application.
+以下是端口分配类别：
 
-Most of the network related services have to open up a socket to listen incoming network requests. Socket is unique for every service.
-
-**Suggested Read :**
-**(#)** [4 Easiest Ways To Find Out Process ID (PID) In Linux][1]
-**(#)** [3 Easy Ways To Kill Or Terminate A Process In Linux][2]
-
-Socket is combination of IP address, software Port and protocol. The port numbers area available for both TCP and UDP protocol.
-
-The Transmission Control Protocol (TCP) and the User Datagram Protocol (UDP) use port numbers for communication. It is a value from 0 to 65535.
-
-Below are port assignments categories.
-
-  * `0-1023:` Well Known Ports or System Ports
-  * `1024-49151:` Registered Ports for applications
-  * `49152-65535:` Dynamic Ports or Private Ports
+  * `0-1023:` 常用端口和系统端口
+  * `1024-49151:` 软件的注册端口
+  * `49152-65535:` 动态端口或私有端口
 
 
 
-You can check the details of the reserved ports in the /etc/services file on Linux.
+在 Linux 上的 `/etc/services` 文件可以查看到更多关于保留端口的信息。
 
 ```
 # less /etc/services
@@ -89,24 +77,25 @@ lmtp 24/udp # LMTP Mail Delivery
 
 ```
 
-This can be achieved using the below six methods.
+可以使用以下六种方法查看端口信息。
 
-  * `ss:` ss is used to dump socket statistics.
-  * `netstat:` netstat is displays a list of open sockets.
-  * `lsof:` lsof – list open files.
-  * `fuser:` fuser – list process IDs of all processes that have one or more files open
-  * `nmap:` nmap – Network exploration tool and security / port scanner
-  * `systemctl:` systemctl – Control the systemd system and service manager
+  * `ss:` ss 可以用于转储套接字统计信息。
+  * `netstat:` netstat 可以显示打开的套接字列表。
+  * `lsof:` lsof 可以列出打开的文件。
+  * `fuser:` fuser 可以列出那些打开了文件的进程的进程 ID。
+  * `nmap:` nmap 是网络检测工具和端口扫描程序。
+  * `systemctl:` systemctl 是 systemd 系统的控制管理器和服务管理器。
 
 
 
-In this tutorial we are going to find out which port number the SSHD daemon is using.
+以下我们将找出 `sshd` 守护进程所使用的端口号。
 
-### Method-1: Using ss Command
+### 方法1：使用 ss 命令
 
-ss is used to dump socket statistics. It allows showing information similar to netstat. It can display more TCP and state informations than other tools.
+`ss` 一般用于转储套接字统计信息。它能够输出类似于 `netstat` 输出的信息，但它可以比其它工具显示更多的 TCP 信息和状态信息。
 
-It can display stats for all kind of sockets such as PACKET, TCP, UDP, DCCP, RAW, Unix domain, etc.
+它还可以显示所有类型的套接字统计信息，包括 PACKET、TCP、UDP、DCCP、RAW、Unix 域等。
+
 
 ```
 # ss -tnlp | grep ssh
@@ -114,7 +103,7 @@ LISTEN 0 128 *:22 *:* users:(("sshd",pid=997,fd=3))
 LISTEN 0 128 :::22 :::* users:(("sshd",pid=997,fd=4))
 ```
 
-Alternatively you can check this with port number as well.
+也可以使用端口号来检查。
 
 ```
 # ss -tnlp | grep ":22"
@@ -122,11 +111,11 @@ LISTEN 0 128 *:22 *:* users:(("sshd",pid=997,fd=3))
 LISTEN 0 128 :::22 :::* users:(("sshd",pid=997,fd=4))
 ```
 
-### Method-2: Using netstat Command
+### 方法2：使用 netstat 命令
 
-netstat – Print network connections, routing tables, interface statistics, masquerade connections, and multicast memberships.
+`netstat` 能够显示网络连接、路由表、接口统计信息、伪装连接以及多播成员。
 
-By default, netstat displays a list of open sockets. If you don’t specify any address families, then the active sockets of all configured address families will be printed. This program is obsolete. Replacement for netstat is ss.
+默认情况下，`netstat` 会列出打开的套接字。如果不指定任何地址族，则会显示所有已配置地址族的活动套接字。但 `netstat` 已经过时了，一般会使用 `ss` 来替代。
 
 ```
 # netstat -tnlp | grep ssh
@@ -134,7 +123,7 @@ tcp 0 0 0.0.0.0:22 0.0.0.0:* LISTEN 997/sshd
 tcp6 0 0 :::22 :::* LISTEN 997/sshd
 ```
 
-Alternatively you can check this with port number as well.
+也可以使用端口号来检查。
 
 ```
 # netstat -tnlp | grep ":22"
@@ -142,9 +131,9 @@ tcp 0 0 0.0.0.0:22 0.0.0.0:* LISTEN 1208/sshd
 tcp6 0 0 :::22 :::* LISTEN 1208/sshd
 ```
 
-### Method-3: Using lsof Command
+### 方法3：使用 lsof 命令
 
-lsof – list open files. The Linux lsof command lists information about files that are open by processes running on the system.
+`lsof` 能够列出打开的文件，并列出系统上被进程打开的文件的相关信息。
 
 ```
 # lsof -i -P | grep ssh
@@ -154,7 +143,7 @@ sshd 11584 root 4u IPv6 27627 0t0 TCP *:22 (LISTEN)
 sshd 11592 root 3u IPv4 27744 0t0 TCP vps.2daygeek.com:ssh->103.5.134.167:49902 (ESTABLISHED)
 ```
 
-Alternatively you can check this with port number as well.
+也可以使用端口号来检查。
 
 ```
 # lsof -i tcp:22
@@ -164,9 +153,9 @@ sshd 1208 root 4u IPv6 20921 0t0 TCP *:ssh (LISTEN)
 sshd 11592 root 3u IPv4 27744 0t0 TCP vps.2daygeek.com:ssh->103.5.134.167:49902 (ESTABLISHED)
 ```
 
-### Method-4: Using fuser Command
+### 方法4：使用 fuser 命令
 
-The fuser utility shall write to standard output the process IDs of processes running on the local system that have one or more named files open.
+`fuser` 工具会将本地系统上打开了文件的进程的进程 ID 显示在标准输出中。
 
 ```
 # fuser -v 22/tcp
@@ -176,11 +165,11 @@ The fuser utility shall write to standard output the process IDs of processes ru
  root 49339 F.... sshd
 ```
 
-### Method-5: Using nmap Command
+### 方法5：使用 nmap 命令
 
-Nmap (“Network Mapper”) is an open source tool for network exploration and security auditing. It was designed to rapidly scan large networks, although it works fine against single hosts.
+`nmap`（“Network Mapper”）是一款用于网络检测和安全审计的开源工具。它最初用于对大型网络进行快速扫描，但它对于单个主机的扫描也有很好的表现。
 
-Nmap uses raw IP packets in novel ways to determine what hosts are available on the network, what services (application name and version) those hosts are offering, what operating systems (and OS versions) they are running, what type of packet filters/firewalls are in use, and dozens of other characteristics.
+`nmap` 使用原始 IP 数据包来确定网络上可用的主机，这些主机的服务（包括应用程序名称和版本）、主机运行的操作系统（包括操作系统版本等信息）、正在使用的数据包过滤器或防火墙的类型，以及很多其它信息。
 
 ```
 # nmap -sV -p 22 localhost
@@ -196,13 +185,13 @@ Service detection performed. Please report any incorrect results at http://nmap.
 Nmap done: 1 IP address (1 host up) scanned in 0.44 seconds
 ```
 
-### Method-6: Using systemctl Command
+### 方法6：使用 systemctl 命令
 
-systemctl – Control the systemd system and service manager. This is the replacement of old SysV init system management and most of the modern Linux operating systems were adapted systemd.
+`systemctl` 是 systemd 系统的控制管理器和服务管理器。它取代了旧的 SysV init 系统管理，目前大多数现代 Linux 操作系统都采用了 systemd。
 
-**Suggested Read :**
-**(#)** [chkservice – A Tool For Managing Systemd Units From Linux Terminal][3]
-**(#)** [How To Check All Running Services In Linux][4]
+**推荐阅读：**
+**(#)** [chkservice – Linux 终端上的 systemd 单元管理工具][3]
+**(#)** [如何查看 Linux 系统上正在运行的服务][4]
 
 ```
 # systemctl status sshd
@@ -223,7 +212,7 @@ Sep 23 02:09:15 vps.2daygeek.com sshd[11589]: Connection closed by 103.5.134.167
 Sep 23 02:09:41 vps.2daygeek.com sshd[11592]: Accepted password for root from 103.5.134.167 port 49902 ssh2
 ```
 
-The above out will be showing the actual listening port of SSH service when you start the SSHD service recently. Otherwise it won’t because it updates recent logs in the output frequently.
+以上输出的内容显示了最近一次启动 `sshd` 服务时 `ssh` 服务的监听端口。但它不会将最新日志更新到输出中。
 
 ```
 # systemctl status sshd
@@ -250,7 +239,7 @@ Sep 23 12:50:40 vps.2daygeek.com sshd[23911]: Connection closed by 95.210.113.14
 Sep 23 12:50:40 vps.2daygeek.com sshd[23909]: Connection closed by 95.210.113.142 port 51666 [preauth]
 ```
 
-Most of the time the above output won’t shows the process actual port number. in this case i would suggest you to check the details using the below command from the journalctl log file.
+大部分情况下，以上的输出不会显示进程的实际端口号。这时更建议使用以下这个 `journalctl` 命令检查日志文件中的详细信息。
 
 ```
 # journalctl | grep -i "openssh\|sshd"
@@ -268,7 +257,7 @@ via: https://www.2daygeek.com/how-to-find-out-which-port-number-a-process-is-usi
 
 作者：[Prakash Subramanian][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[HankChow](https://github.com/HankChow)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -278,3 +267,4 @@ via: https://www.2daygeek.com/how-to-find-out-which-port-number-a-process-is-usi
 [2]: https://www.2daygeek.com/kill-terminate-a-process-in-linux-using-kill-pkill-killall-command/
 [3]: https://www.2daygeek.com/chkservice-a-tool-for-managing-systemd-units-from-linux-terminal/
 [4]: https://www.2daygeek.com/how-to-check-all-running-services-in-linux/
+
