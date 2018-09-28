@@ -1,3 +1,5 @@
+translating---geekpi
+
 Add YouTube Player Controls To Your Linux Desktop With browser-mpris2 (Chrome Extension)
 ======
 A Unity feature that I miss (it only actually worked for a short while though) is automatically getting player controls in the Ubuntu Sound Indicator when visiting a website like YouTube in a web browser, so you could pause or stop the video directly from the top bar, as well as see the video / song information and a preview.
