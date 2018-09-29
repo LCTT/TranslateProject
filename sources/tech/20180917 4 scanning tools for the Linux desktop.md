@@ -1,3 +1,5 @@
+Translating by way-ww
+
 4 scanning tools for the Linux desktop
 ======
 Go paperless by driving your scanner with one of these open source applications.

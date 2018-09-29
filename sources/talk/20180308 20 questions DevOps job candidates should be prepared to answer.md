@@ -1,4 +1,4 @@
-Translating by FelixYFZ 20 questions DevOps job candidates should be prepared to answer 
+20 questions DevOps job candidates should be prepared to answer  Translating by FelixYFZ
 ======
 
 ![](https://opensource.com/sites/default/files/styles/image-full-size/public/lead-images/hire-job-career.png?itok=SrZo0QJ3)
