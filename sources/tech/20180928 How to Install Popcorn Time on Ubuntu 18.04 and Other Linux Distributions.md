@@ -1,4 +1,4 @@
-How to Install Popcorn Time on Ubuntu 18.04 and Other Linux Distributions
+Translating by dianbanjiu How to Install Popcorn Time on Ubuntu 18.04 and Other Linux Distributions
 ======
 **Brief: This tutorial shows you how to install Popcorn Time on Ubuntu and other Linux distributions. Some handy Popcorn Time tips have also been discussed.**
 
