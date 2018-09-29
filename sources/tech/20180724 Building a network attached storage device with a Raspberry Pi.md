@@ -1,4 +1,3 @@
-translating by wyxplus
 Building a network attached storage device with a Raspberry Pi
 ======
 
