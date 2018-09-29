@@ -13,7 +13,7 @@ $ sudo pacman -S bat
 
 ```
 
-在 Debian,Ubuntu, Linux Mint 等系统中，从[**发布页面**][1] 下载 **.deb** 文件，然后用下面的命令来安装。
+在 Debian,Ubuntu, Linux Mint 等系统中，从[**发布页面**][1] 下载 **.deb** 文件，然后用下面的命令来安装。
 ```
 $ sudo apt install gdebi
 
@@ -31,7 +31,7 @@ $ cargo install bat
 
 ```
 
-或者，你可以从 [**Linuxbrew**][2] 软件包管理中来安装它。
+或者，你可以从 [**Linuxbrew**][2] 软件包管理中来安装它。
 ```
 $ brew install bat
 
@@ -83,7 +83,7 @@ $ bat -n reverse.py
 **Sample output:**
 ![](https://www.ostechnix.com/wp-content/uploads/2018/08/bat-command-output-3.png)
 
-另一个 Bat 命令中值得注意的特性是它支持<ruby>自动分页<rt>automatic paging</rt></ruby>。 它的意思是当文件的输出对于屏幕来说太大的时候，bat 命令自动将自己的输出内容传输到 **less** 命令中，所以你可以一页一页的查看输出内容。
+另一个 Bat 命令中值得注意的特性是它支持<ruby>自动分页<rt>automatic paging</rt></ruby>。 它的意思是当文件的输出对于屏幕来说太大的时候，bat 命令自动将自己的输出内容传输到 **less** 命令中，所以你可以一页一页的查看输出内容。
 
 让我给你看一个例子，使用cat命令查看跨多个页面的文件的内容时，提示快速跳至文件的最后一页，你看不到内容的开头和中间部分。
 
@@ -113,7 +113,7 @@ $ bat reverse.py
 现在按下 ENTER 键去往下一页。
 
 bat 命令也支持 <ruby>Git 集成<rt>**GIT integration**</rt></ruby>，
-这样您就可以轻松查看/编辑Git存储库中的文件。 它与 Git 连接可以显示关于索引的修改。（看左栏）
+这样您就可以轻松查看/编辑Git存储库中的文件。 它与 Git 连接可以显示关于索引的修改。（看左栏）
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/08/bat-command-output-2.png)
 
@@ -121,7 +121,7 @@ bat 命令也支持 <ruby>Git 集成<rt>**GIT integration**</rt></ruby>，
 
 如果你不喜欢默认主题，你也可以修改它。Bat 同样有修改它的选项。
 
-若要显示可用主题，只需运行：
+若要显示可用主题，只需运行：
 ```
 $ bat --list-themes
 1337
@@ -137,16 +137,16 @@ TwoDark
 ```
 
 
-要使用其他主题，例如 TwoDark，请运行：
+要使用其他主题，例如 TwoDark，请运行：
 ```
 $ bat --theme=TwoDark file.txt
 
 ```
 
-如果你想永久改变主题，在你的 shells startup 文件中加入 `export BAT_THEME="TwoDark"`。
+如果你想永久改变主题，在你的 shells startup 文件中加入 `export BAT_THEME="TwoDark"`。
 
 
-Bat还可以选择修改输出的外观。使用 `--style` 选项来修改输出外观。仅显示 Git 的更改和行号但不显示网格和文件头，请使用 `--style=numbers,changes`.
+Bat还可以选择修改输出的外观。使用 `--style` 选项来修改输出外观。仅显示 Git 的更改和行号但不显示网格和文件头，请使用 `--style=numbers,changes`.
 
 
 更多详细信息，请参阅 Bat 项目的 GitHub 库（链接在文末）
