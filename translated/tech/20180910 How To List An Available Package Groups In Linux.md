@@ -1,43 +1,33 @@
-How To List An Available Package Groups In Linux
+如何在 Linux 中列出可用的软件包组
 ======
-As we know, if we want to install any packages in Linux we need to use the distribution package manager to get it done.
+我们知道，如果想要在 Linux 中安装软件包，可以使用软件包管理器来进行安装。由于系统管理员需要频繁用到软件包管理器，所以它是 Linux 当中的一个重要工具。
 
-Package manager is playing major role in Linux as this used most of the time by admin.
+但是如果想一次性安装一个软件包组，在 Linux 中有可能吗？又如何通过命令去实现呢？
 
-If you would like to install group of package in one shot what would be the possible option.
+在 Linux 中确实可以用软件包管理器来达到这样的目的。很多软件包管理器都有这样的选项来实现这个功能，但就我所知，`apt` 或 `apt-get` 软件包管理器却并没有这个选项。因此对基于 Debian 的系统，需要使用的命令是 `tasksel`，而不是 `apt`或 `apt-get` 这样的官方软件包管理器。
 
-Is it possible in Linux? if so, what would be the command for it.
+在 Linux 中安装软件包组有很多好处。对于 LAMP 来说，安装过程会包含多个软件包，但如果安装软件包组命令来安装，只安装一个包就可以了。
 
-Yes, this can be done in Linux by using the package manager. Each package manager has their own option to perform this task, as i know apt or apt-get package manager doesn’t has this option.
+当你的团队需要安装 LAMP，但不知道其中具体包含哪些软件包，这个时候软件包组就派上用场了。软件包组是 Linux 系统上一个很方便的工具，它能让你轻松地完成一组软件包的安装。
 
-For Debian based system we need to use tasksel command instead of official package managers called apt or apt-get.
+软件包组是一组用于公共功能的软件包，包括系统工具、声音和视频。 安装软件包组的过程中，会获取到一系列的依赖包，从而大大节省了时间。
 
-What is the benefit if we install group of package in Linux? Yes, there is lot of benefit is available in Linux when we install group of package because if you want to install LAMP separately we need to include so many packages but that can be done using single package when we use group of package command.
+**推荐阅读：**
+**(#)** [如何在 Linux 上按照大小列出已安装的软件包][1]
+**(#)** [如何在 Linux 上查看/列出可用的软件包更新][2]
+**(#)** [如何在 Linux 上查看软件包的安装/更新/升级/移除/卸载时间][3]
+**(#)** [如何在 Linux 上查看一个软件包的详细信息][4]
+**(#)** [如何查看一个软件包是否在你的 Linux 发行版上可用][5]
+**(#)** [萌新指导：一个可视化的 Linux 包管理工具][6]
+**(#)** [老手必会：命令行软件包管理器的用法][7]
 
-Say for example, as you get a request from Application team to install LAMP but you don’t know what are the packages needs to be installed, this is where group of package comes into picture.
+### 如何在 CentOS/RHEL 系统上列出可用的软件包组
 
-Group option is a handy tool for Linux systems which will install Group of Software in a single click on your system without headache.
+RHEL 和 CentOS 系统使用的是 RPM 软件包，因此可以使用 `yum` 软件包管理器来获取相关的软件包信息。
 
-A package group is a collection of packages that serve a common purpose, for instance System Tools or Sound and Video. Installing a package group pulls a set of dependent packages, saving time considerably.
+`yum` 是 Yellowdog Updater, Modified 的缩写，它是一个用于基于 RPM 系统（例如 RHEL 和 CentOS）的，开源的命令行软件包管理工具。它是从分发库或其它第三方库中获取、安装、删除、查询和管理 RPM 包的主要工具。
 
-**Suggested Read :**
-**(#)** [How To List Installed Packages By Size (Largest) On Linux][1]
-**(#)** [How To View/List The Available Packages Updates In Linux][2]
-**(#)** [How To View A Particular Package Installed/Updated/Upgraded/Removed/Erased Date On Linux][3]
-**(#)** [How To View Detailed Information About A Package In Linux][4]
-**(#)** [How To Search If A Package Is Available On Your Linux Distribution Or Not][5]
-**(#)** [Newbies corner – A Graphical frontend tool for Linux Package Manager][6]
-**(#)** [Linux Expert should knows, list of Command line Package Manager & Usage][7]
-
-### How To List An Available Package Groups In CentOS/RHEL Systems
-
-RHEL & CentOS systems are using RPM packages hence we can use the `Yum Package Manager` to get this information.
-
-YUM stands for Yellowdog Updater, Modified is an open-source command-line front-end package-management utility for RPM based systems such as Red Hat Enterprise Linux (RHEL) and CentOS.
-
-Yum is the primary tool for getting, installing, deleting, querying, and managing RPM packages from distribution repositories, as well as other third-party repositories.
-
-**Suggested Read :** [YUM Command To Manage Packages on RHEL/CentOS Systems][8]
+**推荐阅读：** [使用 yum 命令在 RHEL/CentOS 系统上管理软件包][8]
 
 ```
 # yum grouplist
@@ -82,7 +72,7 @@ Done
 
 ```
 
-If you would like to list what are the packages is associated on it, run the below command. In this example we are going to list what are the packages is associated with “Performance Tools” group.
+如果需要列出相关联的软件包，可以执行以下这个命令。下面的例子是列出和 Performance Tools 组相关联的软件包。
 
 ```
 # yum groupinfo "Performance Tools"
@@ -116,17 +106,17 @@ Group: Performance Tools
 
 ```
 
-### How To List An Available Package Groups In Fedora
+### 如何在 Fedora 系统上列出可用的软件包组
 
-Fedora system uses DNF package manager hence we can use the Dnf Package Manager to get this information.
+Fedora 系统使用的是 DNF 软件包管理器，因此可以通过 DNF 软件包管理器来获取相关的信息。
 
-DNF stands for Dandified yum. We can tell DNF, the next generation of yum package manager (Fork of Yum) using hawkey/libsolv library for backend. Aleš Kozumplík started working on DNF since Fedora 18 and its implemented/launched in Fedora 22 finally.
+DNF 的含义是 Dandified yum。、DNF 软件包管理器是 YUM 软件包管理器的一个分支，它使用 hawkey/libsolv 库作为后端。从 Fedora 18 开始，Aleš Kozumplík 开始着手 DNF 的开发，直到在Fedora 22 开始加入到系统中。
 
-Dnf command is used to install, update, search & remove packages on Fedora 22 and later system. It automatically resolve dependencies and make it smooth package installation without any trouble.
+`dnf` 命令可以在 Fedora 22 及更高版本上安装、更新、搜索和删除软件包， 它可以自动解决软件包的依赖关系并其顺利安装，不会产生问题。
 
-Yum replaced by DNF due to several long-term problems in Yum which was not solved. Asked why ? he did not patches the Yum issues. Aleš Kozumplík explains that patching was technically hard and YUM team wont accept the changes immediately and other major critical, YUM is 56K lines but DNF is 29K lies. So, there is no option for further development, except to fork.
+由于一些长期未被解决的问题的存在，YUM 被 DNF 逐渐取代了。而 Aleš Kozumplík 的 DNF 却并未对 yum 的这些问题作出修补，他认为这是技术上的难题，YUM 团队也从不接受这些更改。而且 YUM 的代码量有 5.6 万行，而 DNF 只有 2.9 万行。因此已经不需要沿着 YUM 的方向继续开发了，重新开一个分支才是更好的选择。
 
-**Suggested Read :** [DNF (Fork of YUM) Command To Manage Packages on Fedora System][9]
+**推荐阅读：** [在 Fedora 系统上使用 DNF 命令管理软件包][9]
 
 ```
 # dnf grouplist
@@ -180,7 +170,7 @@ Available Groups:
 
 ```
 
-If you would like to list what are the packages is associated on it, run the below command. In this example we are going to list what are the packages is associated with “Editor” group.
+如果需要列出相关联的软件包，可以执行以下这个命令。下面的例子是列出和 Editor 组相关联的软件包。
 
 ```
 
@@ -215,13 +205,13 @@ Group: Editors
  zile
 ```
 
-### How To List An Available Package Groups In openSUSE System
+### 如何在 openSUSE 系统上列出可用的软件包组
 
-openSUSE system uses zypper package manager hence we can use the zypper Package Manager to get this information.
+openSUSE 系统使用的是 zypper 软件包管理器，因此可以通过 zypper 软件包管理器来获取相关的信息。
 
-Zypper is a command line package manager for suse & openSUSE distributions. It’s used to install, update, search & remove packages & manage repositories, perform various queries, and more. Zypper command-line interface to ZYpp system management library (libzypp).
+Zypper 是 suse 和 openSUSE 发行版的命令行包管理器。它可以用于安装、更新、搜索和删除软件包，还有管理存储库，执行各种查询等功能。 Zypper 命令行界面用到了 ZYpp 系统管理库（libzypp）。
 
-**Suggested Read :** [Zypper Command To Manage Packages On openSUSE & suse Systems][10]
+**推荐阅读：** [在 openSUSE 和 suse 系统使用 zypper 命令管理软件包][10]
 
 ```
 # zypper patterns
@@ -277,8 +267,7 @@ i | yast2_basis | 20150918-25.1 | @System |
  | yast2_install_wf | 20150918-25.1 | Main Repository (OSS) |
 ```
 
-If you would like to list what are the packages is associated on it, run the below command. In this example we are going to list what are the packages is associated with “file_server” group.
-Additionally zypper command allows a user to perform the same action with different options.
+如果需要列出相关联的软件包，可以执行以下这个命令。下面的例子是列出和 file_server 组相关联的软件包。另外 `zypper` 还允许用户使用不同的选项执行相同的操作。
 
 ```
 # zypper info file_server
@@ -317,7 +306,7 @@ Contents :
  | yast2-tftp-server | package | Recommended
 ```
 
-If you would like to list what are the packages is associated on it, run the below command.
+如果需要列出相关联的软件包，可以执行以下这个命令。
 
 ```
 # zypper pattern-info file_server
@@ -357,7 +346,7 @@ Contents :
  | yast2-tftp-server | package | Recommended
 ```
 
-If you would like to list what are the packages is associated on it, run the below command.
+如果需要列出相关联的软件包，可以执行以下这个命令。
 
 ```
 # zypper info pattern file_server
@@ -396,7 +385,7 @@ Contents :
  | yast2-tftp-server | package | Recommended
 ```
 
-If you would like to list what are the packages is associated on it, run the below command.
+如果需要列出相关联的软件包，可以执行以下这个命令。
 
 ```
 # zypper info -t pattern file_server
@@ -436,17 +425,17 @@ Contents :
  | yast2-tftp-server | package | Recommended
 ```
 
-### How To List An Available Package Groups In Debian/Ubuntu Systems
+### 如何在 Debian/Ubuntu 系统上列出可用的软件包组
 
-Since APT or APT-GET package manager doesn’t offer this option for Debian/Ubuntu based systems hence, we are using tasksel command to get this information.
+由于 APT 或 APT-GET 软件包管理器没有为基于 Debian/Ubuntu 的系统提供这样的选项，因此需要使用 `tasksel` 命令来获取相关信息。
 
-[Tasksel][11] is a handy tool for Debian/Ubuntu systems which will install Group of Software in a single click on your system. Tasks are defined in `.desc` files and located at `/usr/share/tasksel`.
+[tasksel][11] 是 Debian/Ubuntu 系统上一个很方便的工具，只需要很少的操作就可以用它来安装好一组软件包。可以在 `/usr/share/tasksel` 目录下的 `.desc` 文件中安排软件包的安装任务。
 
-By default, tasksel tool installed on Debian system as part of Debian installer but it’s not installed on Ubuntu desktop editions. This functionality is similar to that of meta-packages, like how package managers have.
+默认情况下，`tasksel` 工具是作为 Debian 系统的一部分安装的，但桌面版 Ubuntu 则没有自带 `tasksel`，类似软件包管理器中的元包（meta-packages）。
 
-Tasksel tool offer a simple user interface based on zenity (popup Graphical dialog box in command line).
+`tasksel` 工具带有一个基于 zenity 的简单用户界面，例如命令行中的弹出图形对话框。
 
-**Suggested Read :** [Tasksel – Install Group of Software in A Single Click on Debian/Ubuntu][12]
+**推荐阅读：** [使用 tasksel 在 Debian/Ubuntu 系统上快速安装软件包组][12]
 
 ```
 # tasksel --list-task
@@ -494,20 +483,20 @@ u openssh-server OpenSSH server
 u server Basic Ubuntu server
 ```
 
-If you would like to list what are the packages is associated on it, run the below command. In this example we are going to list what are the packages is associated with “file_server” group.
+如果需要列出相关联的软件包，可以执行以下这个命令。下面的例子是列出和 lamp-server 组相关联的软件包。
 
 ```
 # tasksel --task-desc "lamp-server"
 Selects a ready-made Linux/Apache/MySQL/PHP server.
 ```
 
-### How To List An Available Package Groups In Arch Linux based Systems
+### 如何在基于 Arch Linux 的系统上列出可用的软件包组
 
-Arch Linux based systems are using pacman package manager hence we can use the pacman Package Manager to get this information.
+基于 Arch Linux 的系统使用的是 pacman 软件包管理器，因此可以通过 pacman 软件包管理器来获取相关的信息。
 
-pacman stands for package manager utility (pacman). pacman is a command-line utility to install, build, remove and manage Arch Linux packages. pacman uses libalpm (Arch Linux Package Management (ALPM) library) as a back-end to perform all the actions.
+pacman 是 package manager 的缩写。`pacman` 可以用于安装、构建、删除和管理 Arch Linux 软件包。`pacman` 使用 libalpm（Arch Linux Package Management 库，ALPM）作为后端来执行所有操作。
 
-**Suggested Read :** [Pacman Command To Manage Packages On Arch Linux Based Systems][13]
+**推荐阅读：** [使用 pacman 在基于 Arch Linux 的系统上管理软件包][13]
 
 ```
 # pacman -Sg
@@ -550,7 +539,7 @@ vim-plugins
 
 ```
 
-If you would like to list what are the packages is associated on it, run the below command. In this example we are going to list what are the packages is associated with “gnome” group.
+如果需要列出相关联的软件包，可以执行以下这个命令。下面的例子是列出和 gnome 组相关联的软件包。
 
 ```
 # pacman -Sg gnome
@@ -589,7 +578,7 @@ gnome simple-scan
 
 ```
 
-Alternatively we can check the same by running following command.
+也可以执行以下这个命令实现同样的效果。
 
 ```
 # pacman -S gnome
@@ -609,7 +598,7 @@ Interrupt signal received
 
 ```
 
-To know exactly how many packages is associated on it, run the following command.
+可以执行以下命令检查相关软件包的数量。
 
 ```
 # pacman -Sg gnome | wc -l
@@ -623,7 +612,7 @@ via: https://www.2daygeek.com/how-to-list-an-available-package-groups-in-linux/
 
 作者：[Prakash Subramanian][a]
 选题：[lujun9972](https://github.com/lujun9972)
-译者：[译者ID](https://github.com/译者ID)
+译者：[HankChow](https://github.com/HankChow)
 校对：[校对者ID](https://github.com/校对者ID)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
@@ -642,3 +631,4 @@ via: https://www.2daygeek.com/how-to-list-an-available-package-groups-in-linux/
 [11]: https://wiki.debian.org/tasksel
 [12]: https://www.2daygeek.com/tasksel-install-group-of-software-in-a-single-click-or-single-command-on-debian-ubuntu/
 [13]: https://www.2daygeek.com/pacman-command-examples-manage-packages-arch-linux-system/
+
