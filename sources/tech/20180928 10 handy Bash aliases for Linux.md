@@ -1,3 +1,5 @@
+translating---geekpi
+
 10 handy Bash aliases for Linux
 ======
 Get more efficient by using condensed versions of long Bash commands.
