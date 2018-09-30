@@ -1,5 +1,3 @@
-hankchow translating
-
 Build a bikesharing app with Redis and Python
 ======
 
