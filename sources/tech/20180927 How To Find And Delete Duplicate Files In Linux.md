@@ -1,3 +1,4 @@
+Translating by pygmalion666
 How To Find And Delete Duplicate Files In Linux
 ======
 
