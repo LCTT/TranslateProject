@@ -1,33 +1,35 @@
-如何在 Linux 中配置基于密钥认证的 SSH 
+如何在 Linux 中配置基于密钥认证的 SSH
 ======
 
 ![](https://www.ostechnix.com/wp-content/uploads/2017/01/Configure-SSH-Key-based-Authentication-In-Linux-720x340.png)
 
-### 什么是基于 SSH密钥的认证？
+### 什么是基于 SSH 密钥的认证？
 
-众所周知，**Secure Shell**，又称 **SSH**，是允许你通过无安全网络(例如 Internet)和远程系统之间安全访问/通信的加密网络协议。无论何时使用 SSH 在无安全网络上发送数据，它都会在源系统上自动地被加密，并且在目的系统上解密。SSH 提供了四种加密方式，**基于密码认证**，**基于密钥认证**，**基于主机认证**和**键盘认证**。最常用的认证方式是基于密码认证和基于密钥认证。
+众所周知，**Secure Shell**，又称 **SSH**，是允许你通过无安全网络（例如 Internet）和远程系统之间安全访问/通信的加密网络协议。无论何时使用 SSH 在无安全网络上发送数据，它都会在源系统上自动地被加密，并且在目的系统上解密。SSH 提供了四种加密方式，**基于密码认证**，**基于密钥认证**，**基于主机认证**和**键盘认证**。最常用的认证方式是基于密码认证和基于密钥认证。
 
-在基于密码认证中，你需要的仅仅是远程系统上用户的密码。如果你知道远程用户的密码，你可以使用**“ssh[[email protected]][1]”**访问各自的系统。另一方面，在基于密钥认证中，为了通过 SSH 通信，你需要生成 SSH 密钥对，并且为远程系统上传 SSH 公钥。每个 SSH 密钥对由私钥与公钥组成。私钥应该保存在客户系统上，公钥应该上传给远程系统。你不应该将私钥透露给任何人。希望你已经对 SSH 和它的认证方式有了基本的概念。
+在基于密码认证中，你需要的仅仅是远程系统上用户的密码。如果你知道远程用户的密码，你可以使用 `ssh user@remote-system-name` 访问各自的系统。另一方面，在基于密钥认证中，为了通过 SSH 通信，你需要生成 SSH 密钥对，并且为远程系统上传 SSH 公钥。每个 SSH 密钥对由私钥与公钥组成。私钥应该保存在客户系统上，公钥应该上传给远程系统。你不应该将私钥透露给任何人。希望你已经对 SSH 和它的认证方式有了基本的概念。
 
-这篇教程，我们将讨论如何在 linux 上配置基于密钥认证的 SSH。
+这篇教程，我们将讨论如何在 Linux 上配置基于密钥认证的 SSH。
 
-### 在 Linux 上配置基于密钥认证的SSH
+### 在 Linux 上配置基于密钥认证的 SSH
 
 为本篇教程起见，我将使用 Arch Linux 为本地系统，Ubuntu 18.04 LTS 为远程系统。
 
 本地系统详情：
-  * **OS** : Arch Linux Desktop
-  * **IP address** : 192.168.225.37 /24
+
+* OS: Arch Linux Desktop
+* IP address: 192.168.225.37/24
 
 远程系统详情：
-  * **OS** : Ubuntu 18.04 LTS Server
-  * **IP address** : 192.168.225.22/24
+
+* OS: Ubuntu 18.04 LTS Server
+* IP address: 192.168.225.22/24
 
 ### 本地系统配置
 
-就像我之前所说，在基于密钥认证的方法中，想要通过 SSH 访问远程系统，就应该将公钥上传给它。公钥通常会被保存在远程系统的一个文件**~/.ssh/authorized_keys** 中。
+就像我之前所说，在基于密钥认证的方法中，想要通过 SSH 访问远程系统，就应该将公钥上传给它。公钥通常会被保存在远程系统的一个文件 `~/.ssh/authorized_keys` 中。
 
-**注意事项：**不要使用**root** 用户生成密钥对，这样只有 root 用户才可以使用。使用普通用户创建密钥对。
+**注意事项**：不要使用 **root** 用户生成密钥对，这样只有 root 用户才可以使用。使用普通用户创建密钥对。
 
 现在，让我们在本地系统上创建一个 SSH 密钥对。只需要在客户端系统上运行下面的命令。
 
@@ -37,7 +39,7 @@ $ ssh-keygen
 
 上面的命令将会创建一个 2048 位的 RSA 密钥对。输入两次密码。更重要的是，记住你的密码。后面将会用到它。
 
-**样例输出**
+样例输出：
 
 ```
 Generating public/private rsa key pair.
@@ -62,16 +64,16 @@ The key's randomart image is:
 +----[SHA256]-----+
 ```
 
-如果你已经创建了密钥对，你将看到以下信息。输入 ‘y’ 就会覆盖已存在的密钥。
+如果你已经创建了密钥对，你将看到以下信息。输入 y 就会覆盖已存在的密钥。
 
 ```
 /home/username/.ssh/id_rsa already exists.
 Overwrite (y/n)?
 ```
 
-请注意**密码是可选的**。如果你输入了密码，那么每次通过 SSH 访问远程系统时都要求输入密码，除非你使用了 SSH 代理保存了密码。如果你不想要密码（虽然不安全），简单地输入两次 ENTER。不过，我们建议你使用密码。从安全的角度来看，使用无密码的 ssh 密钥对大体上不是一个很好的主意。 这种方式应该限定在特殊的情况下使用，例如，没有用户介入的服务访问远程系统。（例如，用 rsync 远程备份...）
+请注意**密码是可选的**。如果你输入了密码，那么每次通过 SSH 访问远程系统时都要求输入密码，除非你使用了 SSH 代理保存了密码。如果你不想要密码（虽然不安全），简单地输入两次 ENTER。不过，我们建议你使用密码。从安全的角度来看，使用无密码的 ssh 密钥对大体上不是一个很好的主意。这种方式应该限定在特殊的情况下使用，例如，没有用户介入的服务访问远程系统。（例如，用 rsync 远程备份……）
 
-如果你已经在个人文件 **~/.ssh/id_rsa** 中有了无密码的密钥对，但想要更新为带密码的密钥。使用下面的命令：
+如果你已经在个人文件 `~/.ssh/id_rsa` 中有了无密码的密钥对，但想要更新为带密码的密钥。使用下面的命令：
 
 ```
 $ ssh-keygen -p -f ~/.ssh/id_rsa
@@ -91,9 +93,9 @@ Your identification has been saved with the new passphrase.
 $ ssh-copy-id sk@192.168.225.22
 ```
 
-在这，我把本地（Arch Linux）系统上的公钥拷贝到了远程系统（Ubuntu 18.04 LTS）上。从技术上讲，上面的命令会把本地系统 **~/.ssh/id_rsa.pub key** 文件中的内容拷贝到远程系统**~/.ssh/authorized_keys** 中。明白了吗？非常棒。
+在这，我把本地（Arch Linux）系统上的公钥拷贝到了远程系统（Ubuntu 18.04 LTS）上。从技术上讲，上面的命令会把本地系统 `~/.ssh/id_rsa.pub` 文件中的内容拷贝到远程系统 `~/.ssh/authorized_keys` 中。明白了吗？非常棒。
 
-输入 **yes** 来继续连接你的远程 SSH 服务端。接着，输入远程系统 root 用户的密码。
+输入 yes 来继续连接你的远程 SSH 服务端。接着，输入远程系统 root 用户的密码。
 
 ```
 /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
@@ -106,7 +108,7 @@ Now try logging into the machine, with: "ssh '[email protected]'"
 and check to make sure that only the key(s) you wanted were added.
 ```
 
-如果你已经拷贝了密钥，但想要替换为新的密码，使用 **-f** 选项覆盖已有的密钥。
+如果你已经拷贝了密钥，但想要替换为新的密码，使用 `-f` 选项覆盖已有的密钥。
 
 ```
 $ ssh-copy-id -f sk@192.168.225.22
@@ -118,13 +120,13 @@ $ ssh-copy-id -f sk@192.168.225.22
 
 你需要在 root 或者 sudo 用户下执行下面的命令。
 
-为了禁用基于密码的认证，你需要在远程系统的控制台上编辑 **/etc/ssh/sshd_config** 配置文件：
+为了禁用基于密码的认证，你需要在远程系统的控制台上编辑 `/etc/ssh/sshd_config` 配置文件：
 
 ```
 $ sudo vi /etc/ssh/sshd_config
 ```
 
-找到下面这一行，去掉注释然后将值设为 **no**
+找到下面这一行，去掉注释然后将值设为 `no`：
 
 ```
 PasswordAuthentication no
@@ -156,7 +158,7 @@ Last login: Mon Jul 9 09:59:51 2018 from 192.168.225.37
 
 现在，你就能 SSH 你的远程系统了。如你所见，我们已经使用之前 **ssh-keygen** 创建的密码登录进了远程系统的账户，而不是使用账户实际的密码。
 
-如果你试图从其他客户端系统 ssh （远程系统），你将会得到这条错误信息。比如，我试图通过命令从 CentOS SSH 访问 Ubuntu 系统：
+如果你试图从其它客户端系统 ssh（远程系统），你将会得到这条错误信息。比如，我试图通过命令从 CentOS SSH 访问 Ubuntu 系统：
 
 **样例输出:**
 
@@ -168,7 +170,7 @@ Warning: Permanently added '192.168.225.22' (ECDSA) to the list of known hosts.
 Permission denied (publickey).
 ```
 
-如你所见，除了 CentOS （译注：根据上文，这里应该是 Arch） 系统外，我不能通过其他任何系统 SSH 访问我的远程系统 Ubuntu 18.04。
+如你所见，除了 CentOS（译注：根据上文，这里应该是 Arch）系统外，我不能通过其它任何系统 SSH 访问我的远程系统 Ubuntu 18.04。
 
 ### 为 SSH 服务端添加更多客户端系统的密钥
 
@@ -180,7 +182,7 @@ Permission denied (publickey).
 $ ssh-keygen
 ```
 
-输入两次密码。现在， ssh 密钥对已经生成了。你需要手动把公钥（不是私钥）拷贝到远程服务端上。
+输入两次密码。现在，ssh 密钥对已经生成了。你需要手动把公钥（不是私钥）拷贝到远程服务端上。
 
 使用命令查看公钥：
 
@@ -194,7 +196,7 @@ $ cat ~/.ssh/id_rsa.pub
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCt3a9tIeK5rPx9p74/KjEVXa6/OODyRp0QLS/sLp8W6iTxFL+UgALZlupVNgFjvRR5luJ9dLHWwc+d4umavAWz708e6Na9ftEPQtC28rTFsHwmyLKvLkzcGkC5+A0NdbiDZLaK3K3wgq1jzYYKT5k+IaNS6vtrx5LDObcPNPEBDt4vTixQ7GZHrDUUk5586IKeFfwMCWguHveTN7ykmo2EyL2rV7TmYq+eY2ZqqcsoK0fzXMK7iifGXVmuqTkAmZLGZK8a3bPb6VZd7KFum3Ezbu4BXZGp7FVhnOMgau2kYeOH/ItKPzpCAn+dg3NAAziCCxnII9b4nSSGz3mMY4Y7 ostechnix@centosserver
 ```
 
-拷贝所有内容（通过 USB 驱动器或者其它任何介质），然后去你的远程服务端的控制台。像下面那样，在 home 下创建文件夹叫做 **ssh**。你需要以 root 身份执行命令。
+拷贝所有内容（通过 USB 驱动器或者其它任何介质），然后去你的远程服务端的控制台。像下面那样，在 `$HOME` 下创建文件夹叫做 `.ssh`。你需要以 root 身份执行命令。
 
 ```
 $ mkdir -p ~/.ssh
@@ -227,9 +229,8 @@ via: https://www.ostechnix.com/configure-ssh-key-based-authentication-linux/
 作者：[SK][a]
 选题：[lujun9972](https://github.com/lujun9972)
 译者：[LuuMing](https://github.com/LuuMing)
-校对：[校对者ID](https://github.com/校对者ID)
+校对：[pityonline](https://github.com/pityonline)
 
 本文由 [LCTT](https://github.com/LCTT/TranslateProject) 原创编译，[Linux中国](https://linux.cn/) 荣誉推出
 
-[a]:https://www.ostechnix.com/author/sk/
-[1]:https://www.ostechnix.com/cdn-cgi/l/email-protection
+[a]: https://www.ostechnix.com/author/sk/
