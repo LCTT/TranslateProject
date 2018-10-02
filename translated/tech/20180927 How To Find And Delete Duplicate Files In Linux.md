@@ -3,7 +3,6 @@
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/09/Find-And-Delete-Duplicate-Files-720x340.png)
 
-
 在编辑或修改配置文件或旧文件前，我经常会把它们备份到硬盘的某个地方，因此我如果意外地改错了这些文件，我可以从备份中恢复它们。但问题是如果我忘记清理备份文件，一段时间之后，我的磁盘会被这些大量重复文件填满。我觉得要么是懒得清理这些旧文件，要么是担心可能会删掉重要文件。如果你们像我一样，在类 Unix 操作系统中，大量多版本的相同文件放在不同的备份目录，你可以使用下面的工具找到并删除重复文件。
 
 **提醒一句：**
@@ -28,8 +27,6 @@
 **Rdfind** 代表找到找到冗余数据，是一个通过访问目录和子目录来找出重复文件的免费、开源的工具。它是基于文件内容而不是文件名来比较。Rdfind 使用**排序**算法来区分原始文件和重复文件。如果你有两个或者更多的相同文件，Rdfind 会很智能的找到原始文件并认定剩下的文件为重复文件。一旦找到副本文件，它会向你报告。你可以决定是删除还是使用[**硬链接**或者**符号（软）链接**][2]代替它们。
 
 **安装 Rdfind**
-
-Rdfind is available in [**AUR**][3]. So, you can install it in Arch-based systems using any AUR helper program like [**Yay**][4] as shown below.
 
 Rdfind 存在于 [**AUR**][3] 中。因此，在基于 Arch 的系统中，你可以像下面一样使用任一如 [**Yay**][4] AUR 程序助手安装它。
 
@@ -71,8 +68,6 @@ $ rdfind ~/Downloads
 ```
 
 ![](https://www.ostechnix.com/wp-content/uploads/2018/09/rdfind-1.png)
-
-As you see in the above screenshot, Rdfind command will scan ~/Downloads directory and save the results in a file named **results.txt** in the current working directory. You can view the name of the possible duplicate files in results.txt file.
 
 正如你看到上面的截屏，Rdfind 命令将扫描 ~/Downloads 目录，并将结果存储到当前工作目录下一个名为 **results.txt** 的文件中。你可以在 results.txt 文件中看到可能是重复文件的名字。
 
@@ -169,8 +164,6 @@ $ man rdfind
 **安装 Fdupes**
 
 Fdupes 存在于大多数 Linux 发行版的默认仓库中。
-
-On Arch Linux and its variants like Antergos, Manjaro Linux, install it using Pacman like below.
 
 在 Arch Linux 和它的变种如 Antergos、Manjaro Linux 上，如下使用 Pacman 安装它。
 
